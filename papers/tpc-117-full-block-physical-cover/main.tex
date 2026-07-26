@@ -1,0 +1,399 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+ citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={The TPC-18 Full-Block Physical Remainder},
+ pdfauthor={Liang Wang},
+ pdfsubject={TPC-117 exact cover, canonical residual, and dual stop certificate},
+ pdfkeywords={full-block cover, physical remainder, Moore-Penrose inverse, dual certificate, fixed shift}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Ran}{\operatorname{ran}}
+\newcommand{\Ker}{\operatorname{ker}}
+\newcommand{\Block}{\mathcal B}
+
+\title{\textbf{The TPC-18 Full-Block Physical Remainder:}\\
+Exact Range Tests, Canonical Residuals,\\
+and Literal Dual Stop Certificates}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-18 derives a powerful determinant-dispersion estimate on
+admissible hyperbola blocks, but its global fixed-shift conclusion is
+conditional on those blocks covering the full physical tail, or on
+the uncovered physical remainder being \(o(X)\).  We isolate that
+condition as a finite exact range problem.
+
+Let \(w_X\) be the literal physical coefficient vector on the
+complete active atom set, and let
+\[
+ B_X:\C^{\Block_X}\longrightarrow\C^{\Omega_X}
+\]
+be the synthesis whose columns are the actual TPC-18 blocks with
+their inherited overlap weights, signs, cutoffs and normalization.
+Writing \(P_X=B_XB_X^\dagger\), we prove
+\[
+ w_X\in\Ran B_X
+ \iff (I-P_X)w_X=0
+ \iff \langle y,w_X\rangle=0
+       \quad\text{for all }y\in\Ker B_X^*.
+\]
+The canonical coefficient and residual are
+\[
+ c_X^*=B_X^\dagger w_X,\qquad
+ r_X^*=(I-P_X)w_X,
+\]
+and the physical scalar splits exactly into a block term plus
+\(\nu_X\langle a_X,r_X^*\rangle\).  The sharp distance to the block
+carrier is \(\|r_X^*\|\); when it is nonzero, a maximizing unit dual
+witness lies in \(\Ker B_X^*\).  Thus one nonzero exact witness disproves exact
+cover, while a nonzero residual is still compatible with the route
+only if its literal physical pairing is separately \(o(X)\).
+
+Exact cover alone is not an arithmetic estimate: transporting a
+block theorem costs the actual canonical coefficients or the
+relevant singular-value bound, and that cost enters the physical
+ledger.  The present repository does not contain a machine-readable
+growing TPC-18 block matrix and coefficient vector from which the
+range test could be executed.  Accordingly the full-block
+hypothesis remains open.  The result is an \(\Lzero/\Lone\) cover
+audit, not an \(\Ltwo\) fixed-shift saving or a twin-prime theorem.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+full-block reassembly; exact cover; physical residual; dual witness;
+least squares; endpoint ledger.
+
+\medskip
+\noindent\textbf{Literal-carrier convention.}
+The row set is required to be the complete physical atom set
+specified by a verified TPC-116 archive.  A
+column is an actual admissible TPC-18 block, not an abstract block of
+similar dimensions.  Overlap weights, both polarizations, cutoffs,
+prime-power errors, the fixed \(h_0\ne0\), and the global
+normalization are part of the matrix data.
+
+\section{The inherited gap}
+
+TPC-18 constructs a Type-II tail interface and proves conditional
+block estimates under a determinant-dispersion hypothesis
+\citep{WangTPC18}.  Its conditional fixed-shift conclusion assumes
+an additional global all-block identity
+\[
+ H_{h_0,R;V}^{\mathrm{HB}}(X)
+ =\sum_{b\in\Block_X}\bigl(C_b+T_b\bigr)+o(X),
+\]
+including every geometric and normalization requirement.  The paper
+does not prove that global cover.  TPC-92 later stresses that an
+exact full-block cover is sufficient, while any nonzero residual
+requires a separate physical theorem \citep{WangTPC92}.  TPC-116
+returns the same issue after completing the complement taxonomy
+\citep{WangTPC116}.
+
+The word ``cover'' can mean three different things:
+\begin{enumerate}[leftmargin=2em]
+\item every atom belongs to at least one set-theoretic block;
+\item the incidence columns span the coefficient support;
+\item the \emph{weighted signed physical vector} belongs to the
+  range of the literal block synthesis.
+\end{enumerate}
+Only the third statement supplies the identity needed by TPC-18.
+The first two can fail after overlap weights, masks and signs are
+restored.
+
+\section{The literal finite model}
+
+Let \(\Omega\) be the finite active atom set and equip
+\(\mathcal H=\C^\Omega\) with its declared physical inner product.
+Let \(w\in\mathcal H\) be the literal coefficient vector.  For the
+finite block set \(\Block\), define
+\[
+ B:\C^\Block\to\mathcal H,\qquad
+ Bc=\sum_{b\in\Block}c_b\,v_b,
+\]
+where \(v_b\) contains every atom weight contributed by block \(b\).
+The matrix is allowed to have repeated, dependent or zero columns.
+Every adjoint, orthogonal projection, norm and Moore--Penrose inverse
+below is computed relative to this declared physical inner product
+and the declared coefficient-space inner product; a hidden change to
+an unweighted Euclidean geometry changes the certificate.
+Put
+\[
+ P=BB^\dagger,\qquad
+ c^*=B^\dagger w,\qquad
+ r^*=(I-P)w.
+\]
+
+\begin{theorem}[Exact cover alternatives]
+\label{thm:cover}
+The following are equivalent:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item \(w\in\Ran B\);
+\item \(Pw=w\);
+\item \(r^*=0\);
+\item \(\langle y,w\rangle=0\) for every \(y\in\Ker B^*\).
+\end{enumerate}
+When they hold, \(c^*\) is the unique least-norm exact cover:
+\[
+ Bc^*=w,\qquad
+ \|c^*\|_2=\min_{Bc=w}\|c\|_2.
+\]
+\end{theorem}
+
+\begin{proof}
+The Moore--Penrose identity makes \(P=BB^\dagger\) the orthogonal
+projection onto \(\Ran B\).  Hence (i)--(iii) are equivalent.
+Finite-dimensional orthogonality gives
+\((\Ran B)^\perp=\Ker B^*\), proving (iv).  The least-norm property of
+\(B^\dagger w\) follows by decomposing any solution into
+\((\Ker B)^\perp\oplus\Ker B\).
+\end{proof}
+
+\begin{proposition}[Sharp residual and dual certificate]
+\label{prop:dual}
+For every \(w\),
+\[
+ \boxed{\quad
+ \operatorname{dist}(w,\Ran B)=\|r^*\|_2
+ =\max_{\substack{y\in\Ker B^*\\\|y\|_2\le1}}
+ |\langle y,w\rangle|.
+ \quad}
+\]
+If \(r^*\ne0\), the maximum is attained by
+\(y=r^*/\|r^*\|_2\).  Thus any exact vector
+\(y\in\Ker B^*\) with \(\langle y,w\rangle\ne0\) is a literal
+certificate that the proposed block family does not cover \(w\).
+\end{proposition}
+
+\begin{proof}
+Orthogonal projection gives the distance identity.  For
+\(y\in\Ker B^*=(\Ran B)^\perp\),
+\(\langle y,w\rangle=\langle y,r^*\rangle\), so
+Cauchy--Schwarz gives the upper bound and the stated vector attains
+it when \(r^*\ne0\).  When \(r^*=0\), the vector \(y=0\) belongs to
+the closed unit ball and attains the value zero.
+\end{proof}
+
+\begin{remark}[A range witness is stronger than a missing-set label]
+A set-theoretically uncovered atom gives a coordinate witness only
+when no block column has any component in that coordinate.  In
+general, signed overlap can create subtler cokernel vectors.
+\Cref{prop:dual} detects both mechanisms without changing the
+physical weights.
+\end{remark}
+
+\section{The physical scalar and the allowed remainder}
+
+Let \(a\in\mathcal H\) be the physical evaluation vector and let
+\(\nu_X\) be the inherited scalar normalization.  The target is
+\[
+ H_X=\nu_X\langle a,w\rangle.
+\]
+
+\begin{theorem}[Exact block--remainder identity]
+\label{thm:physical}
+For the canonical pair \(c^*,r^*\),
+\[
+ \boxed{\quad
+ H_X
+ =\nu_X\langle B^*a,c^*\rangle
+  +\nu_X\langle a,r^*\rangle.
+ \quad}
+\]
+Consequently the TPC-18 cover gate closes if either:
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item \(r^*=0\) and the complete block term is \(o(X)\); or
+\item the complete block term is \(o(X)\) and the literal physical
+  residual satisfies
+  \(\nu_X\langle a,r^*\rangle=o(X)\).
+\end{enumerate}
+No smallness of \(\|r^*\|_2\) is necessary if the physical pairing is
+proved small; conversely, \(r^*\ne0\) alone does not prove that its
+physical pairing is large.
+\end{theorem}
+
+\begin{proof}
+Since \(w=Bc^*+r^*\), take its inner product with \(a\) and use
+adjointness.  The two sufficient alternatives are immediate.
+\end{proof}
+
+\begin{corollary}[A norm-based sufficient residual estimate]
+If
+\[
+ \nu_X\|a\|_2\|r^*\|_2=o(X),
+\]
+then the physical residual in \cref{thm:physical} is \(o(X)\).
+This criterion is sufficient and sharp given only the two norms.
+\end{corollary}
+
+\begin{proof}
+Cauchy--Schwarz proves the bound; collinear vectors show sharpness.
+\end{proof}
+
+\section{Exact cover is not an estimate}
+
+Suppose a block theorem bounds the vector of block evaluations
+\[
+ q=B^*a,\qquad |q_b|\le U_b.
+\]
+Even under exact cover,
+\[
+ |H_X|
+ \le\nu_X\sum_{b\in\Block}|c_b^*|U_b.
+\]
+Thus the number, size and conditioning of the canonical coefficients
+matter.
+
+\begin{proposition}[Coefficient transport costs]
+\label{prop:transport}
+If \(r^*=0\), then
+\[
+ |H_X|
+ \le\nu_X\|c^*\|_2\|B^*a\|_2
+ \le\nu_X\|B^\dagger\|\,\|w\|_2\,\|B^*a\|_2.
+\]
+Both inequalities have optimal constant one.  If instead individual
+block bounds are inserted, the exact triangle cost is
+\(\sum_b|c_b^*|U_b\).  Neither cost may be omitted merely because
+the cover is exact.
+\end{proposition}
+
+\begin{proof}
+Use Cauchy--Schwarz, then
+\(\|c^*\|=\|B^\dagger w\|\le\|B^\dagger\|\|w\|\).
+Equality examples are supplied by singular vectors and collinear
+evaluation vectors.
+\end{proof}
+
+\begin{remark}[Relation to TPC-113]
+TPC-113 identifies the quotient condition number of a literal
+physical synthesis \citep{WangTPC113}.  Here \(B\) is a different,
+specific full-block synthesis.  A previously paid frame cost may be
+reused only through an exact factorization identifying the same
+operator event; otherwise \(\|B^\dagger\|\) is a new ledger input.
+\end{remark}
+
+\section{What an executable TPC-18 archive must contain}
+
+An actual range decision requires:
+\begin{enumerate}[leftmargin=2em]
+\item a stable row identifier for every physical atom returned by
+  the complete TPC-116 partition;
+\item a stable column identifier for every \(C_b\) and \(T_b\), with
+  the allowed \(L,K,I\) and primitive/nonprimitive status;
+\item exact or certified interval entries including overlap weights,
+  cutoffs, both polarizations, M\"obius/von Mangoldt factors and the
+  prime-power correction;
+\item the literal vector \(w_X\), evaluation \(a_X\), global
+  normalization \(\nu_X\), and fixed \(h_0\);
+\item a certificate \(Bc=w\), or a dual witness
+  \(B^*y=0\), \(\langle y,w\rangle\ne0\), or the canonical residual
+  plus a quantitative physical estimate; and
+\item the coefficient/conditioning cost used to transport the block
+  dispersion theorem.
+\end{enumerate}
+Dimensions and set-theoretic coverage statistics are useful
+diagnostics but do not replace these fields.
+
+\section{Finite exact regression certificate}
+
+The script
+\texttt{experiments/tpc117\_cover\_certificate.py} uses
+\texttt{fractions.Fraction} to verify on an overlapping block matrix:
+\begin{enumerate}[leftmargin=2em]
+\item an exact cover \(Bc=w\);
+\item an exact cokernel vector \(B^*y=0\);
+\item a perturbed vector with nonzero dual pairing;
+\item the canonical rational residual and distance identity,
+  including the full-row-rank case \(\Ker B^*=\{0\}\); and
+\item the exact physical block--remainder decomposition.
+\end{enumerate}
+The example demonstrates the certificate format only.  It is not a
+sample of the growing TPC-18 carrier.
+
+\section{Stop/go verdict and claim boundary}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.19\textwidth}p{0.38\textwidth}X@{}}
+\toprule
+Status & Certificate & Consequence\\
+\midrule
+Go exact &
+Literal archive and verified \(B_Xc_X=w_X\), with affordable
+transport cost &
+No physical cover residual; pass the charged block estimate to the
+endpoint ledger.\\
+Go with remainder &
+Canonical identity plus
+\(\nu_X\langle a_X,r_X^*\rangle=o(X)\) &
+The nonzero residual is separately controlled at the original
+normalization.\\
+Stop the exact-cover subroute &
+Exact \(B_X^*y_X=0\) and
+\(\langle y_X,w_X\rangle\ne0\), with no residual theorem &
+Exact cover is false; enlarge/change the carrier or prove the
+physical residual small.\\
+Current TPC state &
+TPC-18 states the global cover as an additional hypothesis; no
+machine-readable growing matrix/vector certificate is available
+here &
+H6 is mathematically OPEN; its present range test is
+NOT-TESTABLE-FROM-CURRENT-ARTIFACTS, and its ledger cost is unknown.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Established.}
+\Cref{thm:cover,prop:dual,thm:physical,prop:transport} are exact
+\(\Lzero\) finite-dimensional theorems.  The required literal
+TPC-18 archive schema and original-scale pairing are \(\Lone\)
+interfaces.
+
+\paragraph{Not established.}
+We do not prove that the actual TPC-18 blocks cover the growing
+physical vector, and we do not bound their canonical residual or
+transport cost.  No determinant-dispersion hypothesis is upgraded.
+There is no new \(\Ltwo\) fixed-\(h_0\) estimate, parity
+breakthrough, Hardy--Littlewood asymptotic, prime-pair lower bound or
+twin-prime theorem.  The next gate is the nonduplicated strict
+\(1/400\) endpoint ledger.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

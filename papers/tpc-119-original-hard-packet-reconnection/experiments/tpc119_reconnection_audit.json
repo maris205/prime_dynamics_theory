@@ -1,0 +1,29 @@
+{
+  "schema": "tpc119-hard-packet-reconnection-audit-v1",
+  "status": "PASS",
+  "assertions_checked": 12,
+  "native_atoms": 3,
+  "canonical_leaves": 5,
+  "column_sums": {
+    "a0": "1",
+    "a1": "1",
+    "a2": "1"
+  },
+  "adversarial_cases": {
+    "deletion_rejected": true,
+    "global_rescaling_rejected": true,
+    "wrong_fixed_shift_rejected": true,
+    "second_normalization_rejected": true,
+    "scalar_preserving_null_pair_rejected": true,
+    "equal_value_surrogate_provenance_rejected": true
+  },
+  "route_verdict": {
+    "finite_certificate_theorem": "PROVED_L0",
+    "tpc15_native_atom_anchor": "PROVED_L1",
+    "full_composite_leaf_archive_present": false,
+    "H8_canonical_leaf_audit": "NOT_TESTABLE_FROM_CURRENT_ARTIFACTS",
+    "snapshot_date": "2026-07-26",
+    "fixed_h0_L2_progress": false,
+    "prime_pair_or_twin_prime_theorem": false
+  }
+}

@@ -1,0 +1,417 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.8in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+ citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Literal Residual Grouping and the Native Gram},
+ pdfauthor={Liang Wang},
+ pdfsubject={TPC-114 exact divisor collision grouping and native Gram intertwining},
+ pdfkeywords={residual grouping, divisor collision, native Gram, aliasing, fixed shift}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Res}{\mathcal R}
+\newcommand{\Nat}{\mathcal P}
+\newcommand{\Syn}{\mathcal S}
+
+\title{\textbf{Literal Residual Grouping and the Native Gram:}\\
+Divisor-Collision Parametrization, Exact Coarea Singular Values,\\
+and a Provenance Intertwining}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The current TPC physical route contains two distinct identifications.
+Source records first collide at the literal residual label
+\[
+ q(u)=(\gamma_u,j_u,s_u),\qquad s_u=d(m_u)r_u,
+\]
+and residual labels may then collide after passage to a native
+frequency label \(\pi(q(u))\).  Treating these operations as one
+informal ``grouping'' hides both their kernels and their losses.
+
+We separate them as a weighted residual coarea map
+\[
+ \Res_a e_u=a_u e_{q(u)}
+\]
+and an unweighted native forgetting map
+\(\Nat e_y=e_{\pi(y)}\).  Three exact results follow.  First,
+\(dr=d'r'\) has the complete coprime parametrization
+\[
+ d=ga,\quad d'=gb,\quad r=bt,\quad r'=at,
+ \qquad (a,b)=1.
+\]
+Second,
+\[
+ \Res_a\Res_a^*=\operatorname{diag}(W_y),
+ \qquad
+ W_y=\sum_{q(u)=y}|a_u|^2,
+\]
+so every nonzero singular value of \(\Res_a\) is exactly
+\(\sqrt{W_y}\).  Third, the residual and native Grams are
+\[
+ G_{\rm res}=\Res_a^*\Res_a,\qquad
+ G_{\rm nat}=\Res_a^*\Nat^*\Nat\Res_a,
+\]
+and their difference is exactly the exchange between unequal
+residuals sharing one native label.  For any upstream synthesis
+\(\Syn\), the complete native observation satisfies
+\[
+ (\Nat\Res_a\Syn)^*(\Nat\Res_a\Syn)
+ =\Syn^*G_{\rm nat}\Syn.
+\]
+
+The upper \(\ell^2\)-energy factor is the largest native multiplicity,
+and the corresponding \(\ell^2\)-amplitude norm is its square root.
+Neither is automatically the H9 max-packet-to-scalar cost.  When a
+native fiber contains at least two residual labels, no positive lower
+transfer exists on the full space without excluding the cancellation
+kernel: two residuals may add or cancel exactly after native
+forgetting.  Thus this paper supplies an exact \(\Lzero\) algebra and
+an \(\Lone\) provenance dictionary, but no growing multiplicity
+bound, fixed-\(h_0\) \(\Ltwo\) estimate, parity breakthrough, or
+prime-pair theorem.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+divisor collision; residual coarea; native Gram; alias exchange;
+physical provenance; fixed shift.
+
+\medskip
+\noindent\textbf{Literal convention.}
+Every record \(u\), coefficient \(a_u\), divisor value \(d(m_u)\),
+residual coordinate \(r_u\), and surviving label is inherited.
+Neither a coefficient nor a collision multiplicity may be normalized
+away after the fact.  All Hilbert spaces below use their declared
+counting measures.
+
+\section{Why two groupings are necessary}
+
+TPC-46 proves that Bohr--Fourier orthogonality retains a literal
+residual label and that positivity-only localization can spend the
+full alias mass \citep{WangTPC46}.  TPC-58 introduces a native affine
+alias Gram, while TPC-61 identifies the remaining cofactor/parity
+kernel \citep{WangTPC58,WangTPC61}.  TPC-113 gives the correct
+quotient condition number for any declared finite physical synthesis
+\citep{WangTPC113}.  The missing dictionary is the exact map between
+the source, residual, and native levels.
+
+Let \(U\) be a finite set of source records.  A record carries
+\[
+ u=(m_u,r_u,\gamma_u,j_u,\xi_u),\qquad
+ a_u\in\C,\qquad d_u=d(m_u)\in\mathbb N.
+\]
+The auxiliary label \(\xi_u\) records any remaining provenance but
+does not enter the residual key
+\[
+ q(u)=(\gamma_u,j_u,d_ur_u)\in Y.
+\]
+Let \(\pi:Y\to I\) be the exact native label map supplied by the
+application.  We do not assume it is injective.
+
+\section{The divisor-collision normal form}
+
+\begin{lemma}[Complete product-collision parametrization]
+\label{lem:collision}
+For positive integers \(d,d',r,r'\), the equality \(dr=d'r'\) holds
+if and only if there exist \(g,a,b,t\in\mathbb N\) such that
+\[
+ d=ga,\qquad d'=gb,\qquad (a,b)=1,\qquad
+ r=bt,\qquad r'=at.
+\]
+The parameters are unique with
+\(g=(d,d')\).
+\end{lemma}
+
+\begin{proof}
+Write \(d=ga\), \(d'=gb\), where \(g=(d,d')\) and \((a,b)=1\).
+Then \(dr=d'r'\) is \(ar=br'\).  Coprimality gives \(b\mid r\)
+and \(a\mid r'\), hence \(r=bt\) and \(r'=at\) for the same \(t\).
+The converse is immediate, and the gcd choice proves uniqueness.
+\end{proof}
+
+\begin{remark}[What the lemma does not count]
+\Cref{lem:collision} identifies every arithmetic collision, but it
+does not bound how many admissible quadruples occur in the actual
+active support.  Such a bound must retain the masks on \(m,r,\gamma\)
+and \(j\).  Replacing them by a rectangular ambient box would change
+the physical fiber.
+\end{remark}
+
+\section{Weighted residual coarea}
+
+Let \(\{e_u:u\in U\}\) and \(\{e_y:y\in Y\}\) be orthonormal bases.
+Define
+\[
+ \Res_a:\C^U\to\C^Y,\qquad
+ \Res_a e_u=a_u e_{q(u)}.
+\]
+Zero-weight records are allowed.  Put
+\[
+ W_y=\sum_{\substack{u\in U\\q(u)=y}}|a_u|^2.
+\]
+
+\begin{theorem}[Exact coarea singular values]
+\label{thm:coarea}
+The weighted grouping map satisfies
+\[
+ \boxed{\quad
+ \Res_a\Res_a^*=\operatorname{diag}_{y\in Y}(W_y).
+ \quad}
+\]
+Consequently its nonzero singular values, with multiplicity, are
+\(\{\sqrt{W_y}:W_y>0\}\), and
+\[
+ \|\Res_a\|^2=\max_yW_y,\qquad
+ \|\Res_a^\dagger\|^2=\frac1{\min_{W_y>0}W_y},
+\]
+\[
+ \kappa_{\rm grp}(\Res_a)^2
+ =\frac{\max_yW_y}{\min_{W_y>0}W_y}.
+\]
+\end{theorem}
+
+\begin{proof}
+For \(y,y'\in Y\),
+\[
+ \langle e_y,\Res_a\Res_a^*e_{y'}\rangle
+ =\sum_{u\in U}|a_u|^2
+   \one_{\{q(u)=y\}}\one_{\{q(u)=y'\}}.
+\]
+The expression vanishes for \(y\ne y'\) and equals \(W_y\) on the
+diagonal.  The remaining assertions follow from the singular-value
+decomposition and the quotient convention of TPC-113.
+\end{proof}
+
+\begin{remark}[Weighted, not cardinality-only]
+If \(|a_u|\) varies, the fiber cardinality is not the coarea weight.
+The exact quantity is \(W_y\).  A divisor-bound estimate for the
+number of records is therefore insufficient unless the physical
+weights are controlled on the same support.
+\end{remark}
+
+\section{The native Gram and alias exchange}
+
+Define the native forgetting map
+\[
+ \Nat:\C^Y\to\C^I,\qquad \Nat e_y=e_{\pi(y)}.
+\]
+For \(i\in I\), write
+\[
+ k_i=\#\{y\in Y:\pi(y)=i\}.
+\]
+
+\begin{proposition}[Native multiplicity spectrum]
+\label{prop:native}
+One has
+\[
+ \Nat\Nat^*=\operatorname{diag}_{i\in I}(k_i),
+ \qquad
+ \|\Nat\|^2=\max_i k_i.
+\]
+The nonzero singular values are \(\sqrt{k_i}\) for \(k_i>0\).
+\end{proposition}
+
+\begin{proof}
+The rows of \(\Nat\) have disjoint supports, and row \(i\) has exactly
+\(k_i\) unit entries.  The result is \cref{thm:coarea} with all
+weights equal to one and grouping map \(\pi\).
+\end{proof}
+
+The two source-side Grams are
+\[
+ G_{\rm res}=\Res_a^*\Res_a,\qquad
+ G_{\rm nat}=\Res_a^*\Nat^*\Nat\Res_a.
+\]
+
+\begin{theorem}[Exact Gram dictionary]
+\label{thm:dictionary}
+For all \(u,v\in U\),
+\begin{align*}
+ (G_{\rm res})_{uv}
+ &=\overline{a_u}a_v\,\one_{\{q(u)=q(v)\}},\\
+ (G_{\rm nat})_{uv}
+ &=\overline{a_u}a_v\,
+   \one_{\{\pi(q(u))=\pi(q(v))\}},
+\end{align*}
+and hence
+\[
+ \boxed{\quad
+ (G_{\rm nat}-G_{\rm res})_{uv}
+ =\overline{a_u}a_v\,
+  \one_{\{q(u)\ne q(v),\ \pi(q(u))=\pi(q(v))\}}.
+ \quad}
+\]
+Thus the difference contains exactly the exchange between distinct
+residual fibers that alias to the same native label.
+\end{theorem}
+
+\begin{proof}
+The first formula is the matrix coefficient of
+\(\Res_a^*\Res_a\).  Since
+\((\Nat^*\Nat)_{yy'}=\one_{\{\pi(y)=\pi(y')\}}\), insertion between
+\(\Res_a^*\) and \(\Res_a\) gives the second.  Subtraction leaves
+precisely equal-native, unequal-residual pairs.
+\end{proof}
+
+\begin{remark}[The exchange is not a positive correction]
+Although both \(G_{\rm nat}\) and \(G_{\rm res}\) are positive
+semidefinite, their difference need not be.  The exchange terms can
+add or cancel depending on the coefficient phases, so they may not be
+entered as an automatic energy gain.
+\end{remark}
+
+\begin{corollary}[Exact provenance intertwining]
+\label{cor:intertwining}
+Let \(\Syn:\C^\Theta\to\C^U\) be any upstream literal synthesis and
+set \(T=\Nat\Res_a\Syn\).  Then
+\[
+ \boxed{\qquad T^*T=\Syn^*G_{\rm nat}\Syn.\qquad}
+\]
+In particular, every native quadratic estimate on the inherited
+coefficient is a statement about this compressed physical Gram, not
+about \(G_{\rm res}\) alone.
+\end{corollary}
+
+\begin{proof}
+Expand \(T^*T\) and use the definition of \(G_{\rm nat}\).
+\end{proof}
+
+\section{Sharp lower-transfer obstruction}
+
+\begin{proposition}[Addition and cancellation in one native fiber]
+\label{prop:cancellation}
+Suppose \(y_1\ne y_2\) and \(\pi(y_1)=\pi(y_2)\).  On their span,
+\[
+ \|e_{y_1}+e_{y_2}\|^2=2,\qquad
+ \|\Nat(e_{y_1}+e_{y_2})\|^2=4,
+\]
+whereas
+\[
+ \|e_{y_1}-e_{y_2}\|^2=2,\qquad
+ \Nat(e_{y_1}-e_{y_2})=0.
+\]
+Therefore the upper energy factor \(k_{\max}\) is sharp, while no
+positive lower comparison
+\(\|\Nat z\|^2\ge c\|z\|^2\) can hold on the full residual space.
+\end{proposition}
+
+\begin{proof}
+Both residual basis vectors map to the same native basis vector.
+The displayed identities follow by addition and subtraction.
+\end{proof}
+
+\begin{remark}[Collision is necessary for this obstruction]
+If every native fiber is a singleton, then \(\Nat\) is an isometry
+onto its range and the cancellation example is unavailable.  An
+actual stop certificate must also show that the distinguished
+coefficient, or the relevant range of \(\Res_a\Syn\), meets the
+collision kernel.
+\end{remark}
+
+\begin{remark}[Why separate losses must not be multiplied blindly]
+\Cref{cor:intertwining} computes the complete Gram before any
+condition-number estimate.  Bounding \(\Syn\), \(\Res_a\), and
+\(\Nat\) separately can be convenient, but multiplying the three
+worst-case costs may charge directions that never coexist.  The
+native physical condition number should be measured from
+\(\Syn^*G_{\rm nat}\Syn\) whenever that matrix is available.
+\end{remark}
+
+\section{Finite exact certificate}
+
+The script
+\texttt{experiments/tpc114\_grouping\_certificate.py} uses rational
+arithmetic.  It enumerates product collisions, constructs
+\(\Res_a,\Nat,G_{\rm res},G_{\rm nat}\), and checks:
+\begin{enumerate}[leftmargin=2em]
+\item the coprime normal form in \cref{lem:collision};
+\item \(\Res_a\Res_a^*=\operatorname{diag}(W_y)\);
+\item \(\Nat\Nat^*=\operatorname{diag}(k_i)\);
+\item both entrywise Gram formulas and the exchange identity; and
+\item the sharp addition/cancellation pair.
+\end{enumerate}
+The JSON certificate is finite exact algebra.  It is not evidence
+that actual TPC fibers have bounded multiplicity.
+
+\section{Stop/go verdict and claim boundary}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.19\textwidth}p{0.38\textwidth}X@{}}
+\toprule
+Status & Required next certificate & Consequence\\
+\midrule
+Go &
+Actual weighted fibers \(W_y\), native degrees \(k_i\), and the
+relevant positive spectrum of
+\(\Syn^*G_{\rm nat}\Syn\) are controlled on the inherited support &
+Charge the proved physical loss once and attempt fixed-\(h_0\)
+localization.\\
+Stop this projection &
+The actual coefficient has a nonnegligible component in
+\(\ker(\Nat\Res_a\Syn)\), or the strict endpoint is exhausted &
+Native forgetting cannot recover the required direction; retain more
+labels or change the observation.\\
+Open &
+Only divisor counts, ambient supports, or unweighted fibers are known &
+Do not infer a native frame bound.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Established.}
+\Cref{lem:collision,thm:coarea,prop:native,thm:dictionary,cor:intertwining,prop:cancellation}
+give a complete finite-dimensional
+dictionary.  The matrix identities and sharp obstruction are
+\(\Lzero\).  Declaring \(q(u)=(\gamma,j,d(m)r)\) and retaining all
+literal weights is the \(\Lone\) arithmetic interface anticipated by
+TPC-MVP1 \citep{WangMVP1}.
+
+\paragraph{Not established.}
+We prove no asymptotic bound for \(W_y\), \(k_i\), or the positive
+spectrum of the actual growing native Gram.  We do not identify a
+protected complement to the cancellation kernel, recover one
+prescribed \(h_0\), or prove a fixed-power arithmetic saving.  There
+is no automatic conversion from the \(\ell^2\) norm
+\(\sqrt{k_{\max}}\) to the H9 max-packet-to-scalar norm; that requires
+the actual operator chain.  There
+is no \(\Ltwo\) advance, parity breakthrough, Hardy--Littlewood
+asymptotic, prime-pair lower bound, or twin-prime theorem.  Nothing is
+specialized to \(h_0=2\).
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

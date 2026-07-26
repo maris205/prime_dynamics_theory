@@ -1,0 +1,446 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+ citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Strict Endpoint Optimization for the Physical TPC Route},
+ pdfauthor={Liang Wang},
+ pdfsubject={TPC-118 nonduplicated loss ledger and exact rational primal-dual certificates},
+ pdfkeywords={endpoint budget, linear programming, dual certificate, loss ledger, fixed shift}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Lam}{\Lambda_{\mathrm{phys}}}
+\newcommand{\epsend}{\frac1{400}}
+
+\title{\textbf{Strict Endpoint Optimization for the Physical TPC Route:}\\
+A Nonduplicated Loss Registry, Exact Rational\\
+Primal--Dual Certificates, and the Equality Stop}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-MVP1 requires every physical reconstruction loss to be charged
+exactly once and the final fixed-power loss to satisfy the
+\emph{strict} inequality
+\[
+ \Lambda_{\mathrm{phys}}<\frac1{400}.
+\]
+Recent papers isolate the literal costs of physical-frame
+reassembly, residual grouping, fixed-shift localization, complete
+tail return and TPC-18 full-block cover.  Their existence does not
+yet imply endpoint compatibility: the costs may overlap, may be
+unknown on the growing carrier, or may exhaust the whole reserve.
+
+We define a canonical amplitude-loss registry.  Each physical
+operator event receives one provenance identifier and one
+energy-to-amplitude convention.  Exact duplicates are merged;
+distinct events are added; a joint theorem replaces its constituent
+tokens rather than being charged in addition to them.  On each
+fixed route and affine scale cell, endpoint optimization becomes the
+rational linear program
+\[
+ \Lambda_*=\min\{c^\mathsf Tx+d:
+                 Ax\ge b,\ x\ge0\}.
+\]
+Its dual is
+\[
+ \max\{b^\mathsf Ty+d:
+       A^\mathsf Ty\le c,\ y\ge0\}.
+\]
+An exact feasible primal point below \(1/400\) is a strict
+compatibility certificate.  An exact dual point at or above
+\(1/400\) is a stop certificate only for the same complete actual
+theorem-backed registry.  Matching rational
+primal and dual objectives equal to \(1/400\) prove that equality is
+unavoidable and therefore \emph{does not} pass.
+
+Applying the registry to the present TPC interfaces yields a
+deliberately incomplete verdict: the growing exponents for several
+frame, grouping, localization, tail and cover tokens are not proved,
+so assigning them value zero would be invalid.  The paper supplies
+the exact endpoint decision mechanism and a rerouting rule, but no
+strict physical certificate for the actual fixed-shift carrier, no
+new \(\Ltwo\) estimate and no twin-prime theorem.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+strict endpoint; physical loss ledger; linear programming; dual
+certificate; provenance; stop--go audit.
+
+\medskip
+\noindent\textbf{Ledger convention.}
+All tokens below are amplitude exponents.  If an inherited theorem
+is stated for squared norms, its exponent is converted once before
+entry.  The determinant--zero reserve and the H5 compatibility
+reserve are separate ledgers and may not be spent here.
+
+\section{Why strict optimization is a theorem gate}
+
+TPC-112 proves that determinant--zero compatibility and the physical
+endpoint are independent unless a map-specific intertwining theorem
+is supplied \citep{WangTPC112}.  TPC-113 identifies the canonical
+physical-frame cost; TPC-114 the residual grouping/native-Gram cost;
+TPC-115 the exact fixed-\(h_0\) localization cost; TPC-116 the
+complete tail return; and TPC-117 the full-block cover/remainder
+interface \citep{WangTPC113,WangTPC114,WangTPC115,WangTPC116,WangTPC117}.
+Each is a necessary input, not a free estimate.
+
+Suppose an upstream raw packet has the fixed reserve
+\[
+ X^{1-\epsend+o(1)}.
+\]
+If physical transport costs \(X^{\Lam+o(1)}\), a positive
+fixed-power margin remains only when
+\[
+ \boxed{\Lam<\epsend.}
+\]
+At equality the result is \(X^{1+o(1)}\) at best.  The unspecified
+\(o(1)\) cannot be assigned a favorable sign, so equality is a hard
+stop for this route.
+
+\section{Canonical nonduplicated loss tokens}
+
+\begin{definition}[Physical loss token]
+\label{def:token}
+A token is a record
+\[
+ \tau=(\mathrm{id},\mathrm{map},\mathrm{scope},
+       \mathrm{norm},\lambda,\mathrm{source},\mathrm{deps}),
+\]
+where:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item \(\mathrm{id}\) names the literal operator event;
+\item \(\mathrm{map}\) includes domain, codomain and normalization;
+\item \(\mathrm{scope}\) lists the actual active labels and fixed
+  shift;
+\item \(\mathrm{norm}\) records whether the source estimate was an
+  amplitude or energy estimate;
+\item \(\lambda\ge0\) is the converted amplitude exponent;
+\item \(\mathrm{source}\) is the theorem supplying the bound; and
+\item \(\mathrm{deps}\) lists constituent events already absorbed by
+  a joint bound.
+\end{enumerate}
+An unknown \(\lambda\) is denoted \(?\), not \(0\).
+\end{definition}
+
+\begin{definition}[Canonical registry]
+\label{def:registry}
+For one route, first convert every theorem to an amplitude exponent.
+Merge records only when their identifiers, literal maps, scopes and
+normalizations are identical.  If a joint token \(\tau_J\) is used,
+delete precisely the constituent tokens listed in
+\(\mathrm{deps}(\tau_J)\).  The remaining identifiers form the
+canonical registry \(\mathcal T\), and
+\[
+ \Lam=\sum_{\tau\in\mathcal T}\lambda_\tau.
+\]
+This sum describes one literal multiplicative loss chain.  Parallel
+branches, mutually exclusive routes and alternative joint
+factorizations have separate registries and are optimized routewise;
+they are not added unless a theorem identifies them as factors in the
+same physical composition.
+When different theorems bound the same physical event, they are
+alternative evidence, not additional events: a declared route selects
+one theorem-backed bound (or a proved joint improvement) before
+summing the registry.
+\end{definition}
+
+\begin{proposition}[No-double-charge alternatives]
+\label{prop:registry}
+Assume every physical operator event in a route occurs in exactly
+one retained registry token, either individually or as a declared
+dependency of one joint token.  Then \(\Lam\) charges every event
+once.  In contrast:
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item retaining a joint token and one of its dependencies
+  double-charges that event;
+\item merging two equal numerical exponents with different maps can
+  omit a real loss;
+\item entering an unknown token as zero asserts an unproved
+  \(X^{o(1)}\) theorem; and
+\item subtracting a ``gain'' already built into an upstream packet
+  spends the same cancellation twice.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The first statement is the disjoint union of event identifiers.
+Items (a)--(c) violate that union or replace missing information by a
+new estimate.  For (d), the upstream exponent already contains the
+gain, so subtracting it again changes the proved bound.
+\end{proof}
+
+\begin{remark}[Composition can improve the sum]
+The product estimate
+\(\|T_k\cdots T_1\|\le\prod_i\|T_i\|\) adds individual exponents.
+A direct bound for the literal composition may be smaller.  It is
+legitimate precisely when recorded as a joint token replacing, not
+supplementing, the individual tokens.
+\end{remark}
+
+\section{The current physical registry}
+
+The canonical names below implement Hypothesis H9 of TPC-MVP1
+\citep{WangMVP1}.  They are not assertions that the corresponding
+exponents are known.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.19\textwidth}p{0.29\textwidth}p{0.20\textwidth}X@{}}
+\toprule
+Token & Literal event & Amplitude conversion & Present status\\
+\midrule
+\(\lambda_{\rm frame}\) &
+TPC-113 canonical physical synthesis &
+Exponent of the actual H9 composite norm.  For a matching
+\(\mathcal S Q\mathcal S^\dagger\) factorization,
+\(\kappa_{\rm q}\|Q\|\) is only a uniform upper certificate; a route
+stop requires an actual composite lower certificate &
+Growing operator factorization and norm cost unknown.\\
+\(\lambda_{\rm group}\) &
+TPC-114 residual grouping/native forgetting &
+Derived from the actual H9 norm; in \(\ell^2\), the amplitude norm is
+\(\sqrt{k_{\max}}\) and the energy factor is \(k_{\max}\) &
+Actual growing fiber census and max-packet-to-scalar conversion not
+certified.\\
+\(\lambda_{\rm loc}\) &
+TPC-115 evaluation at fixed \(h_0\) &
+\(\tfrac12\log_X K_{h_0}\) from energy recovery &
+Actual physical profile regularity unknown.\\
+\(\lambda_{\rm tail}\) &
+TPC-116 complete high/ultra-tail return &
+Literal aggregate amplitude exponent &
+Complete outer bound unknown.\\
+\(\lambda_{\rm cover}\) &
+TPC-117 TPC-18 cover/residual transport &
+Canonical coefficient or residual cost &
+Growing matrix/vector certificate absent.\\
+\(\lambda_{\rm bdry}\) &
+Remaining boundary, mask and normalization transport &
+Direct amplitude exponent &
+Must be identified, not hidden in \(o(1)\).\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+If, for example, the TPC-114 native-Gram event is already part of a
+direct joint Gram theorem with the TPC-113 frame, one replaces the
+two corresponding tokens by that proved joint token.  Without this
+literal factorization they remain distinct.  Numerically similar
+costs are not automatically duplicates.
+
+\section{Routewise linear programming}
+
+Scale parameters such as frequency cutoffs and block lengths often
+enter the exponent bounds piecewise affinely.  Split the allowed
+region into finitely many route/cell choices.  On one cell, introduce
+\(x\in\R^n_{\ge0}\) and write all proved scale restrictions as
+\[
+ Ax\ge b.
+\]
+After the registry has removed duplicates, its loss is
+\[
+ \Lam(x)=c^\mathsf Tx+d.
+\]
+All entries should be exact rationals when a strict endpoint is
+certified; decimal approximations cannot decide equality.
+
+\begin{theorem}[Exact primal--dual endpoint certificates]
+\label{thm:lp}
+For one fixed route and one complete actual theorem-backed registry,
+let every constraint and objective coefficient below refer to that
+same registry.  For the primal problem
+\[
+ \Lambda_*=\inf\{c^\mathsf Tx+d:Ax\ge b,\ x\ge0\},
+\]
+consider the dual feasible set
+\[
+ y\ge0,\qquad A^\mathsf Ty\le c,
+\]
+with objective \(b^\mathsf Ty+d\).  Then:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item every primal feasible \(x\) with
+  \(c^\mathsf Tx+d<\epsend\) certifies strict endpoint
+  compatibility for that complete theorem-backed registry;
+\item every dual feasible \(y\) with
+  \(b^\mathsf Ty+d\ge\epsend\) proves that this route cannot pass the
+  strict endpoint;
+\item if exact rational primal and dual points have the same
+  objective, that value is \(\Lambda_*\); in particular, a common
+  value \(\epsend\) is an exact equality stop.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For primal feasible \(x\) and dual feasible \(y\),
+\[
+ b^\mathsf Ty
+ \le (Ax)^\mathsf Ty
+ =x^\mathsf TA^\mathsf Ty
+ \le x^\mathsf Tc.
+\]
+This is weak duality.  It proves (i) directly and (ii) by comparing
+every primal point with the dual lower bound.  Equality of one
+primal and one dual objective traps the infimum between the same
+number, proving (iii).
+\end{proof}
+
+\begin{remark}[A feasible scale point is not an arithmetic theorem]
+Item (i) is callable only when every registry token is backed by the
+theorem whose hypotheses define the LP constraints.  Filling an
+unknown arithmetic exponent with an optimizer variable and allowing
+the LP to choose it freely is not a proof.
+\end{remark}
+
+\begin{corollary}[Finite route menu]
+If a program has finitely many literal routes, it passes the endpoint
+when at least one complete route has a theorem-backed primal
+certificate below \(1/400\).  A route is stopped only by a dual
+certificate at or above \(1/400\) for that same complete, actual,
+theorem-backed registry.  If every route is stopped, a new
+representation or genuinely stronger arithmetic input is required.
+\end{corollary}
+
+\section{Equality, uncertainty and rerouting}
+
+\begin{proposition}[Total three-valued endpoint audit]
+\label{prop:logic}
+For a declared route, assign the first applicable certified state:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item \textbf{GO}: every token is theorem-backed and an exact upper
+  certificate gives \(\Lam<1/400\);
+\item \textbf{STOP ROUTE}: for the same complete actual registry, an
+  exact lower/dual certificate gives \(\Lambda_*\ge1/400\);
+\item \textbf{INCOMPLETE}: neither certificate is available.  This
+  includes an unknown token or constraint, unresolved primal
+  feasibility or boundedness, an incomplete registry, or simply the
+  absence of matching certified upper/lower information.
+\end{enumerate}
+These rules assign exactly one audit label: weak duality makes GO and
+STOP ROUTE incompatible, and INCOMPLETE contains every remaining
+case.
+The state INCOMPLETE may not be silently promoted to GO by setting
+unknown exponents to zero.
+\end{proposition}
+
+\begin{proof}
+The first two alternatives are \cref{thm:lp}.  A strict primal upper
+bound below \(1/400\) and a dual lower bound at or above \(1/400\)
+cannot coexist by weak duality.  If neither certified alternative
+holds, the definition assigns INCOMPLETE, irrespective of why the
+certification is missing.
+\end{proof}
+
+At a STOP ROUTE certificate, the permitted reroutes are concrete:
+\begin{enumerate}[leftmargin=2em]
+\item prove a direct joint operator theorem and replace costly
+  constituent tokens;
+\item choose a different lossless physical frame or full-block
+  carrier;
+\item retain signed cancellation before a positive majorant;
+\item prove the TPC-117 physical residual small without exact cover;
+  or
+\item record the obstruction as a negative theorem and move to a
+  different branch.
+\end{enumerate}
+None of these operations changes the endpoint inequality; each
+changes the theorem-backed registry.
+
+\section{Exact rational regression certificate}
+
+The standard-library script
+\texttt{experiments/tpc118\_endpoint\_certificate.py} verifies:
+\begin{enumerate}[leftmargin=2em]
+\item deterministic merging only of identical full physical-event
+  keys, nonmerging of distinct maps, and rejection of conflicting or
+  alternative-source records for one event;
+\item exact replacement of declared dependencies by a joint token,
+  with unresolved dependencies rejected;
+\item exact rational primal and dual feasibility;
+\item matching optima strictly below, exactly equal to and strictly
+  above \(1/400\);
+\item weak duality in each certificate; and
+\item refusal to declare GO when one required token is unknown.
+\end{enumerate}
+The three small LPs are certificate-format regressions, not fitted
+exponents for the actual TPC carrier.
+
+\section{Current verdict and claim boundary}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.19\textwidth}p{0.39\textwidth}X@{}}
+\toprule
+Status & Exact requirement & TPC consequence\\
+\midrule
+Go &
+Complete theorem-backed registry and rational primal value
+\(<1/400\) &
+A strict physical margin exists; proceed to final synthesis without
+reusing any token.\\
+Equality stop &
+Matching primal/dual value \(=1/400\) &
+No fixed-power margin remains; this route does not pass.\\
+Above-endpoint stop &
+Dual value \(>1/400\) &
+The current route is quantitatively impossible; reroute.\\
+Current state &
+Several growing physical exponents in the registry are unknown &
+INCOMPLETE, not GO and not a negative theorem for twin primes.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Established.}
+The canonical registry logic, weak-duality endpoint test and exact
+equality stop are \(\Lzero\) results.  The mapping from
+TPC-113--TPC-117 interfaces to nonduplicated physical tokens is an
+\(\Lone\) audit.
+
+\paragraph{Not established.}
+No complete actual-carrier token table with proved growing exponents
+is supplied, so no strict \(\Lam<1/400\) certificate is claimed.
+There is no new \(\Ltwo\) fixed-\(h_0\) estimate, determinant-energy
+gain, parity breakthrough, Hardy--Littlewood asymptotic, prime-pair
+lower bound or twin-prime theorem.  The next productive step is to
+measure or bound the unknown tokens one by one, beginning with the
+largest certifiable lower/upper interval, and to rerun the exact
+primal--dual audit after each theorem.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

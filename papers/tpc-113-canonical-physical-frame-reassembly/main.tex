@@ -1,0 +1,479 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.8in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+ citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Canonical Physical Frame Conditioning and Reassembly Audit},
+ pdfauthor={Liang Wang},
+ pdfsubject={TPC-113 exact quotient conditioning envelope and reassembly audit},
+ pdfkeywords={physical frame, synthesis, quotient Gram, condition number, fixed shift, endpoint budget}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Syn}{\mathcal S}
+
+\title{\textbf{Canonical Physical Frame Conditioning and Reassembly Audit:}\\
+Exact Quotient Singular Values, a Sharp Coherence Obstruction,\\
+and the Strict Endpoint Gate}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-51 identifies the correct representation space for the inherited
+Mellin/residue synthesis: the source space must be quotiented by the
+kernel of the physical synthesis map.  TPC-112 then separates the
+determinant--zero compatibility cone from the strict physical loss
+ledger.  The missing interface is an invariant measurement of the
+declared quotient conditioning itself and a proof of whether the
+actual H9 operator chain pays that conditioning.
+
+For one finite literal packet let
+\[
+ \Syn_X:\C^{\Theta_X}\longrightarrow\mathcal H_X,\qquad
+ \Syn_Xc=\sum_{\theta\in\Theta_X}c_\theta A_{X,\theta},
+\]
+where every column retains its physical coefficient, support and
+provenance, and let
+\(\mathcal K_X=(\ker\Syn_X)^\perp\).  For the declared literal source
+norm, we prove that the exact quotient condition number is
+\[
+ \boxed{\;
+ \kappa_{\rm q}(X)
+ =
+ \frac{\sigma_{\max}(\Syn_X)}
+      {\sigma_{\min}^{+}(\Syn_X)}
+ =
+ \sqrt{\frac{\lambda_{\max}^{+}(G_X)}
+              {\lambda_{\min}^{+}(G_X)}} ,
+ \qquad G_X=\Syn_X^*\Syn_X .\;}
+\]
+The Moore--Penrose inverse gives the exact optimal recovery constant
+on \(\operatorname{ran}\Syn_X\); quotienting removes kernel
+zero-directions, while the positive spectrum still depends on the
+declared literal presentation.  More precisely,
+\(\kappa_{\rm q}\) is the sharp uniform envelope
+\[
+ \sup_{\|Q\|\le1}
+ \|\Syn_XQ\Syn_X^\dagger\|=\kappa_{\rm q}
+\]
+for an arbitrary intervening operator \(Q\) on the quotient source.
+It is not an inevitable round-trip loss:
+\(\Syn_X\Syn_X^\dagger\) is the identity on the physical range and
+has norm one.  The actual H9 cost is the norm of its literal
+composite (possibly in a different norm), not
+\(\kappa_{\rm q}\) automatically.
+
+We also prove a sharp two-column subframe obstruction without
+rescaling the physical columns.  If their norms are
+\(\alpha,\beta>0\) and their normalized coherence is \(\rho\), the
+two-column Gram has exact eigenvalues
+\[
+ \lambda_\pm=\frac{\alpha^2+\beta^2\pm
+ \sqrt{(\alpha^2-\beta^2)^2+4\alpha^2\beta^2\rho^2}}2,
+\]
+and hence
+\[
+ \kappa_{{\rm q},{\rm pair}}^2=\frac{\lambda_+}{\lambda_-}
+ \ge\frac{1+\rho}{1-\rho}.
+\]
+Equality in the lower bound occurs for equal column norms.
+This obstruction transfers to the complete frame only when the pair
+is a reducing block, or when a full-Gram Rayleigh certificate proves
+the same costly direction.  Under that explicit inheritance
+condition, \(1-\rho\le X^{-2\chi+o(1)}\) forces the uniform quotient
+envelope to be at least \(X^{\chi+o(1)}\).  This alone does not stop
+the strict physical endpoint: a stop additionally requires a lower
+bound for the actual unavoidable H9 composite or a proof that it
+aligns the extremal singular directions.  The
+theorem is exact \(\Lzero\) frame algebra with a conditional
+\(\Lone\) bridge.  We do not estimate the smallest
+positive Gram eigenvalue for the growing TPC carrier, obtain an
+\(\Ltwo\) fixed-shift saving, or claim a parity or twin-prime
+breakthrough.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+canonical synthesis; quotient Gram; physical reassembly; condition
+number; fixed shift; endpoint obstruction.
+
+\medskip
+\noindent\textbf{Literal-frame convention.}
+The column set below is the declared physical column set after exact
+provenance aggregation.  A column may not be rescaled, duplicated or
+deleted merely to improve a frame constant.  One prescribed
+\(h_0\ne0\), the actual active support and the inherited global
+normalization remain fixed throughout.
+
+\section{The inherited interface}
+
+TPC-51 constructs a canonical synthesis from residue/Mellin
+provenance and proves that a lower frame bound on the full source
+space is impossible whenever the source has a nontrivial kernel
+\citep{WangTPC51}.  Its correct reduced space is
+\[
+ \mathcal K_X=(\ker\Syn_X)^\perp
+ =\operatorname{ran}\Syn_X^*.
+\]
+The actual coefficient is a distinguished physical direction, not a
+freely optimized representation.  Related TPC-49--TPC-52 results
+show why an arbitrary projective presentation or a fixed-complexity
+subpacket cannot replace the inherited full synthesis
+\citep{WangTPC49,WangTPC52}.
+
+TPC-112 proves that any physical cost is independent of the
+determinant reserve unless an explicit map-specific intertwining is
+supplied \citep{WangTPC112}.  The present paper measures one candidate
+round-trip condition number.  It does not identify that number with
+the forward H9 synthesis norm, import a determinant exponent, or
+spend determinant reserve.
+
+\section{Canonical quotient cost}
+
+Let \(\Theta\) be a finite provenance set, let \(\mathcal H\) be a
+finite-dimensional Hilbert space, and let
+\[
+ \Syn:\C^\Theta\to\mathcal H,\qquad
+ \Syn c=\sum_{\theta\in\Theta}c_\theta A_\theta .
+\]
+Zero columns are allowed, because an inherited mask may delete a
+source coordinate.  Put
+\[
+ G=\Syn^*\Syn,\qquad
+ \mathcal K=(\ker\Syn)^\perp.
+\]
+
+\begin{definition}[Declared quotient and recovery constants]
+If \(\Syn=0\), set both costs to zero.  Otherwise define
+\[
+ C_{\rm rec}(\Syn)=\|\Syn^\dagger\|
+ =\frac1{\sigma_{\min}^{+}(\Syn)}
+\]
+and
+\[
+ \kappa_{\rm q}(\Syn)
+ =\|\Syn\|\,\|\Syn^\dagger\|
+ =\frac{\sigma_{\max}(\Syn)}
+        {\sigma_{\min}^{+}(\Syn)}.
+\]
+Here \(^{\dagger}\) is the Moore--Penrose inverse and \(+\) means the
+smallest positive singular or spectral value.
+\end{definition}
+
+\begin{theorem}[Exact quotient-frame reassembly]
+\label{thm:quotient}
+For every \(c\in\mathcal K\),
+\[
+ \sigma_{\min}^{+}(\Syn)\|c\|_2
+ \le\|\Syn c\|_{\mathcal H}
+ \le\sigma_{\max}(\Syn)\|c\|_2.
+\]
+For every \(y\in\operatorname{ran}\Syn\), the unique least-norm
+coefficient is \(c_y=\Syn^\dagger y\), and
+\[
+ \|c_y\|_2\le C_{\rm rec}(\Syn)\|y\|_{\mathcal H}.
+\]
+Both constants are optimal.  If \(\Syn\ne0\), moreover
+\[
+ \boxed{\;
+ \kappa_{\rm q}(\Syn)^2
+ =
+ \frac{\lambda_{\max}^{+}(G)}
+      {\lambda_{\min}^{+}(G)} .\;}
+\]
+\end{theorem}
+
+\begin{proof}
+Restrict \(\Syn\) to \(\mathcal K\).  It is injective and has the same
+nonzero singular values as \(\Syn\).  The singular-value
+decomposition gives the two-sided inequality and the least-norm
+inverse.  Singular vectors at the extremal singular values show
+optimality.  The positive eigenvalues of \(G=\Syn^*\Syn\) are the
+squares of the nonzero singular values.
+\end{proof}
+
+\begin{remark}[Why the quotient is compulsory]
+The raw Gram always has a zero eigenvalue when exact redundant
+coordinates are retained.  Declaring its ordinary condition number
+infinite confuses a representation kernel with a physical
+obstruction.  Conversely, silently deleting a nearly dependent but
+nonredundant column can erase real conditioning.  The positive
+spectrum is canonical only relative to the declared literal source
+metric.  It is invariant under unitary source changes, but not under
+arbitrary redundant expansions or nonunitary reparameterizations.
+For example, \(I_2\) has quotient condition number \(1\), whereas
+the same physical range presented by columns
+\([e_1,e_1,e_2]\) has positive singular values
+\(\sqrt2,1\) and quotient condition number \(\sqrt2\).
+\end{remark}
+
+\section{Uniform conjugation envelope and the actual H9 norm}
+
+\begin{proposition}[Sharp uniform conjugation envelope]
+\label{prop:square}
+Assume \(\Syn\ne0\).  For operators
+\(Q:\mathcal K\to\mathcal K\),
+\[
+ \boxed{\quad
+ \sup_{\|Q\|\le1}
+ \|\Syn Q\Syn^\dagger\|_{\operatorname{ran}\Syn\to
+                         \operatorname{ran}\Syn}
+ =\kappa_{\rm q}(\Syn).
+ \quad}
+\]
+Consequently
+\(\|\Syn Q\Syn^\dagger\|
+\le\kappa_{\rm q}\|Q\|\), and the corresponding uniform squared-norm
+envelope is \(\kappa_{\rm q}^2\|Q\|^2\).  However,
+\[
+ \Syn I_{\mathcal K}\Syn^\dagger
+ =I_{\operatorname{ran}\Syn},
+\]
+so the identity intermediate operator has amplitude cost one, not
+\(\kappa_{\rm q}\).  If
+\[
+ \kappa_{\rm q}(X)=X^{\chi+o(1)},
+\]
+then \(\chi\) (or \(2\chi\) for squared norms) is a safe uniform
+envelope only for a matching composite; it is not an automatic H9
+token.
+\end{proposition}
+
+\begin{proof}
+Submultiplicativity gives the upper bound.  Let
+\(v_{\min},v_{\max}\in\mathcal K\) be right singular vectors for
+\(\sigma_{\min}^+\) and \(\sigma_{\max}\), and take the norm-one
+rank-one operator \(Qv_{\min}=v_{\max}\), zero on
+\(v_{\min}^\perp\).  Applied to the corresponding left singular
+vector, \(\Syn Q\Syn^\dagger\) has norm
+\(\sigma_{\max}/\sigma_{\min}^+=\kappa_{\rm q}\), proving sharpness.
+The identity formula is the Moore--Penrose range-projection identity.
+\end{proof}
+
+\begin{remark}[Actual direction versus uniform frame]
+TPC-51 also defines an actual-direction ratio.  A good bound for that
+one direction can be sufficient if every subsequent operation
+preserves it exactly.  A theorem applied uniformly to a family must
+instead use the reduced Gram on the declared family.  This paper does
+not replace one quantifier by the other.
+\end{remark}
+
+\begin{remark}[Not automatically the H9 norm]
+The MVP1 endpoint controls a literal map from packet amplitudes to a
+scalar, naturally with a max-packet input norm.  Depending on the
+proved factorization, that map may pay only \(\|\Syn\|\), only
+\(\|\Syn^\dagger\|\), the actual composite
+\(\|\Syn Q\Syn^\dagger\|\), or a different
+\(\ell^\infty\)-to-scalar norm.  The uniform bound
+\(\kappa_{\rm q}\|Q\|\) can certify an upper cost, but a large
+\(\kappa_{\rm q}\) does not certify a lower cost.  No entry may be
+placed in the H9 ledger until that operator chain and its norm
+conversions are displayed.
+\end{remark}
+
+\section{A sharp physical coherence obstruction}
+
+For each nonzero physical column write
+\[
+ \alpha_\theta=\|A_\theta\|,\qquad
+ u_\theta=\frac{A_\theta}{\alpha_\theta}.
+\]
+The directions are used only to define coherence; the synthesis
+itself retains the literal column norms.
+
+\begin{theorem}[Exact two-column obstruction]
+\label{thm:coherence}
+Let two declared nonzero physical columns have norms
+\(\alpha,\beta>0\) and normalized coherence
+\[
+ \rho=|\langle u_\theta,u_{\theta'}\rangle|<1.
+\]
+Let \(\Syn_{\rm pair}:\C^2\to\mathcal H\) be the synthesis consisting
+of precisely these two literal columns.  Put
+\[
+ \Delta=\sqrt{(\alpha^2-\beta^2)^2
+                 +4\alpha^2\beta^2\rho^2}.
+\]
+Then
+\[
+ \lambda_\pm(\Syn_{\rm pair}^*\Syn_{\rm pair})
+ =\frac{\alpha^2+\beta^2\pm\Delta}{2}
+\]
+and
+\[
+ \boxed{\quad
+ \kappa_{\rm q}(\Syn_{\rm pair})^2
+ =\frac{\alpha^2+\beta^2+\Delta}
+        {\alpha^2+\beta^2-\Delta}
+ \ge\frac{1+\rho}{1-\rho}.
+ \quad}
+\]
+The inequality is an equality if and only if \(\alpha=\beta\).
+\end{theorem}
+
+\begin{proof}
+After multiplying one column by a unit phase, the principal
+two-column literal Gram is
+\[
+ \begin{pmatrix}
+  \alpha^2&\alpha\beta\rho\\
+  \alpha\beta\rho&\beta^2
+ \end{pmatrix},
+\]
+whose eigenvalues are the displayed \(\lambda_\pm\).  Moreover
+\[
+ \Delta^2-\rho^2(\alpha^2+\beta^2)^2
+ =(1-\rho^2)(\alpha^2-\beta^2)^2\ge0.
+\]
+Thus \(\Delta/(\alpha^2+\beta^2)\ge\rho\), which gives the ratio
+bound after applying the increasing function
+\(t\mapsto(1+t)/(1-t)\).  Equality holds exactly when
+\(\alpha=\beta\).
+\end{proof}
+
+\begin{corollary}[Polynomial near-collinearity envelope]
+Suppose an actual pair in the declared physical family
+satisfies
+\[
+ 1-\rho_X\le X^{-2\chi+o(1)},
+\]
+and suppose either:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item its two-dimensional source coordinate space is a reducing block
+  of the full Gram; or
+\item an independent full-Gram certificate proves
+  \(\kappa_{\rm q}(\Syn_X)\ge
+    \kappa_{\rm q}(\Syn_{{\rm pair},X})\).
+\end{enumerate}
+then
+\[
+ \kappa_{\rm q}(X)\ge X^{\chi+o(1)}.
+\]
+This quotient lower bound alone is not a route stop.  If a separate
+literal certificate proves that the actual unavoidable H9 composite
+has amplitude norm at least \(X^{\chi+o(1)}\), for example by forced
+alignment of the relevant singular directions, then
+\(\chi\ge1/400\) is incompatible with the strict physical endpoint
+for that route.
+\end{corollary}
+
+\begin{proof}
+By \cref{thm:coherence}, the pair quotient condition number is at least
+\((1-\rho_X)^{-1/2}\).  Either inheritance hypothesis transfers this
+condition number to the complete frame.  The extra actual-composite
+lower bound then invokes the strict endpoint rule of TPC-MVP1
+\citep{WangMVP1}.
+\end{proof}
+
+\begin{remark}[A lower bound must be literal]
+An abstract pair of near-collinear vectors is only an \(\Lzero\)
+countermodel.  Adding further columns does not generically preserve
+the condition number of a principal two-column Gram block: the pair
+direction can mix with the kernel or the rest of the positive
+spectrum.  The exact two-column formula above retains the inherited
+column norms, but a physical full-frame stop certificate must
+additionally prove one of the inheritance hypotheses.  No such
+growing full-frame certificate is produced here.
+\end{remark}
+
+\section{Finite exact regression certificate}
+
+The script
+\texttt{experiments/tpc113\_frame\_certificate.py} uses exact rational
+arithmetic to check:
+\begin{enumerate}[leftmargin=2em]
+\item Gram and Moore--Penrose identities for several rectangular
+  full-row-rank synthesis matrices;
+\item the quotient projection and its idempotence;
+\item the nonzero singular-value ledger through \(SS^*\);
+\item the exact equal-norm two-column eigenvalues \(1\pm\rho\) for
+  rational Pythagorean pairs;
+\item the sharp condition-number ratio
+  \((1+\rho)/(1-\rho)\); and
+\item the identity-intermediate cost one and a swap intermediate that
+  attains the sharp uniform conjugation envelope.
+\end{enumerate}
+The committed JSON is a finite algebra certificate.  It is not
+numerical evidence for a lower frame bound on the growing TPC
+coefficient.
+
+\section{Stop/go verdict and claim boundary}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.23\textwidth}p{0.34\textwidth}X@{}}
+\toprule
+Status & Required certificate & Consequence\\
+\midrule
+Go &
+A proved actual H9 composite/norm upper bound below the remaining
+budget; \(\kappa_{\rm q}\|Q\|\) may be used as a uniform upper
+certificate for a matching \(\Syn Q\Syn^\dagger\) factorization &
+Charge the exponent of the proved actual upper bound exactly once,
+then continue to residual grouping.\\
+Stop this frame &
+An actual unavoidable pair or subspace forces a quotient obstruction
+and a separate certificate lower-bounds the actual H9 composite by
+\(X^{\chi+o(1)}\) with \(\chi\ge1/400\) &
+The strict physical endpoint fails for this frame; seek a different
+lossless representation.\\
+Open &
+Only finite spectra, model frames or selected directions are known &
+Do not assign exponent zero.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Established.}
+\Cref{thm:quotient,prop:square,thm:coherence} give an exact declared
+quotient condition number, its sharp uniform conjugation envelope and
+a sharp coherence obstruction.  The finite algebra is \(\Lzero\);
+attachment to H9 is only a conditional \(\Lone\) bridge requiring the
+actual operator factorization and norm conversion.
+
+\paragraph{Not established.}
+No asymptotic lower bound for the smallest positive physical Gram
+eigenvalue is proved.  No actual polynomial obstruction is exhibited.
+No equality between \(\kappa_{\rm q}\) and the H9 forward synthesis
+or actual composite norm is asserted, and no lower bound for the
+actual H9 composite follows from a large quotient condition number.
+No residual grouping, native-Gram comparison, fixed-\(h_0\)
+localization, high-frequency return or full-block reassembly is
+closed.  There is no \(\Ltwo\) fixed-power arithmetic saving, parity
+breakthrough, Hardy--Littlewood asymptotic, prime-pair lower bound or
+twin-prime theorem.  Nothing is specialized to \(h_0=2\).
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

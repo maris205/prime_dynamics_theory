@@ -1,0 +1,438 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\textbf{A Fiber Phase-Coherence Certificate for Post-Bin
+Determinant Energy}\\
+\large Exact Mean-Fluctuation Splitting, Sector Lower Bounds, and the
+Remaining Arithmetic Gate}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-110 identified the post-bin determinant energy as the squared
+norm of the literal coefficient after summation on equal-determinant
+fibers.  Its kernel-angle factorization is exact but does not say what
+coefficient-specific fact could force a positive angle.  We give two
+such refinements.  First, the pre-bin energy splits orthogonally into
+fiber-mean coherence and within-fiber fluctuation, while the
+determinant energy is exactly the fiber-size-weighted coherent part.
+Second, a phase-sector certificate lower-bounds a fiber sum when a
+good absolute-mass component lies in one half-plane and the remaining
+absolute mass is smaller than the projected good mass.  The missing
+amplification is measured by the effective participation ratio of the
+good mass.  At the growing scale, a diagonal mass exponent
+\(\lambda_E\), participation gain \(\gamma_R\), and phase-margin
+exponent \(\lambda_\phi\) imply
+\[
+ \lambda_D^{\rm cert}
+ =(\lambda_E+2\lambda_\phi-\gamma_R)_+.
+\]
+Combining this with the TPC-112 compatibility cone gives an explicit
+three-input requirement.  None of the growing inputs or the zero-mode
+saving is proved here.  The result turns an opaque kernel angle into
+literal coefficient tests; it is an exact \(\Lzero/\Lone\) gate, not
+an \(\Ltwo\) arithmetic advance.
+\end{abstract}
+
+\section{Literal post-bin fibers}
+
+Fix the prescribed nonzero shift \(h_0\).  Import the inverse-aggregated
+actual carrier \(\cT_X\), determinant label
+\(\nu:\cT_X\to\cN_X\), and literal coefficients
+\(u=(u_t)_{t\in\cT_X}\) from TPC-110 \citep{WangTPC110}.  For every
+nonempty fiber
+\[
+ F_n=\{t\in\cT_X:\nu(t)=n\},\qquad m_n=|F_n|,
+\]
+put
+\[
+ A_X(n)=\sum_{t\in F_n}u_t,\qquad
+ E_X=\sum_{t\in\cT_X}|u_t|^2,\qquad
+ D_X=\sum_{n\in\cN_X}|A_X(n)|^2.
+\]
+All coefficients, determinant labels, and fibers are literal.  No
+random phases, ambient support, or averaged shift is inserted.
+
+For each fiber define
+\[
+ \mu_n=\frac1{m_n}\sum_{t\in F_n}u_t,\qquad
+ C_n=m_n|\mu_n|^2,\qquad
+ V_n=\sum_{t\in F_n}|u_t-\mu_n|^2.
+\]
+Here \(C_n\) is the squared norm of the constant-on-fiber projection
+and \(V_n\) is its orthogonal complement.
+
+\begin{theorem}[Exact mean-fluctuation splitting]
+\label{thm:splitting}
+One has
+\[
+ \boxed{E_X=C_X+V_X,}
+ \qquad
+ C_X=\sum_n C_n,\quad V_X=\sum_nV_n,
+\]
+and
+\[
+ \boxed{D_X=\sum_nm_nC_n.}
+\]
+If \(C_X>0\), the coherent effective multiplicity
+\[
+ \overline m_X^{\rm coh}
+ =\frac{\sum_nm_nC_n}{\sum_nC_n}
+\]
+satisfies
+\[
+ m_{\min}\le\overline m_X^{\rm coh}\le m_{\max},
+ \qquad
+ D_X=C_X\overline m_X^{\rm coh}.
+\]
+\end{theorem}
+
+\begin{proof}
+On \(F_n\), the constant vector \((\mu_n)_{t\in F_n}\) is orthogonal
+to \((u_t-\mu_n)_{t\in F_n}\), because the latter sums to zero.
+Pythagoras gives
+\[
+ \sum_{t\in F_n}|u_t|^2=m_n|\mu_n|^2+V_n.
+\]
+Also \(A_X(n)=m_n\mu_n\), hence
+\[
+ |A_X(n)|^2=m_n^2|\mu_n|^2=m_nC_n.
+\]
+Summation proves both identities.  The effective multiplicity is a
+weighted average of the nonempty \(m_n\).
+\end{proof}
+
+\begin{remark}
+This is equivalent to the TPC-110 kernel-angle identity, but exposes
+the missing input locally: a determinant lower bound requires the
+literal coefficient to have substantial fiber means, not merely
+many collisions or large pre-bin energy.
+\end{remark}
+
+\section{A coefficient-specific phase certificate}
+
+The next lemma is deterministic.  It is stated so that every term can
+be checked on an actual fiber.
+
+\begin{lemma}[Good-sector minus bad-mass bound]
+\label{lem:sector}
+Let \(F=G\sqcup B\) be one fiber and let \(u_t\in\C\).  Suppose that
+there are a unit complex number \(\zeta\), a number
+\(\kappa\in[0,1]\), and \(\theta\ge0\) such that
+\[
+ \Re(\overline\zeta u_t)\ge\kappa|u_t|
+ \quad(t\in G),
+\]
+and
+\[
+ \sum_{t\in B}|u_t|
+ \le\theta\sum_{t\in G}|u_t|.
+\]
+Then
+\[
+ \boxed{
+ \left|\sum_{t\in F}u_t\right|
+ \ge(\kappa-\theta)_+
+ \sum_{t\in G}|u_t|.}
+\]
+Consequently,
+\[
+ \left|\sum_{t\in F}u_t\right|^2
+ \ge(\kappa-\theta)_+^2
+ \left(\sum_{t\in G}|u_t|\right)^2
+ \ge(\kappa-\theta)_+^2
+ \sum_{t\in G}|u_t|^2.
+\]
+\end{lemma}
+
+\begin{proof}
+Project the sum onto \(\zeta\):
+\[
+ \Re\left(\overline\zeta\sum_{t\in F}u_t\right)
+ \ge
+ \kappa\sum_{t\in G}|u_t|
+ -\sum_{t\in B}|u_t|.
+\]
+The first inequality follows.  The second uses
+\((\sum_{G}|u_t|)^2\ge\sum_G|u_t|^2\).
+\end{proof}
+
+\begin{definition}[Certified phase mass]
+For a nonempty family of fibers \(\cG_X\subseteq\cN_X\), choose literal
+partitions \(F_n=G_n\sqcup B_n\) and sector data
+\((\zeta_n,\kappa_n,\theta_n)\) satisfying
+\cref{lem:sector}.  Put
+\[
+ E_X^{\rm cert}=\sum_{n\in\cG_X}\sum_{t\in G_n}|u_t|^2,
+ \qquad
+ M_X^{\rm cert}
+ =\sum_{n\in\cG_X}
+ \left(\sum_{t\in G_n}|u_t|\right)^2,
+ \qquad
+ \rho_X=\min_{n\in\cG_X}(\kappa_n-\theta_n)_+.
+\]
+If \(E_X^{\rm cert}>0\), define the effective participation
+\[
+ R_X^{\rm cert}=\frac{M_X^{\rm cert}}{E_X^{\rm cert}}.
+\]
+It satisfies
+\[
+ 1\le R_X^{\rm cert}\le
+ \max_{n\in\cG_X}|G_n|.
+\]
+If \(E_X^{\rm cert}=0\), set \(R_X^{\rm cert}=0\).
+For the empty certified family, set
+\(E_X^{\rm cert}=M_X^{\rm cert}=\rho_X=R_X^{\rm cert}=0\).
+\end{definition}
+
+\begin{theorem}[Literal determinant lower certificate]
+\label{thm:certificate}
+Every certified family satisfies
+\[
+ \boxed{
+ D_X\ge\rho_X^2M_X^{\rm cert}
+ =\rho_X^2R_X^{\rm cert}E_X^{\rm cert}.}
+\]
+The certificate is invariant under a common phase rotation on each
+fiber and uses the actual post-bin sums.
+\end{theorem}
+
+\begin{proof}
+Apply the first squared conclusion of \cref{lem:sector} on each
+certified fiber and sum.  Discarding uncertified fibers is legitimate
+because their contributions to \(D_X\) are nonnegative.  The
+participation bounds follow from
+\[
+ \sum_G|u_t|^2\le
+ \left(\sum_G|u_t|\right)^2
+ \le |G|\sum_G|u_t|^2.
+\]
+\end{proof}
+
+\section{Exponent transfer and compatibility}
+
+Recall the high-\(\beta\) scales
+\[
+ Q_X=X^{267/400+o(1)},\qquad
+ J_X=X^{133/400+o(1)}.
+\]
+TPC-112 requires a lower bound
+\[
+ D_X\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2
+\]
+and a zero-mode exponent \(\eta_Z\) satisfying
+\(\lambda_D\le2\eta_Z\) \citep{WangTPC112}.
+
+\begin{corollary}[Three-input exponent ledger]
+\label{cor:ledger}
+Fix one predeclared \(X\)-indexed selection rule for the certified
+family, including its sets \(G_{X,n},B_{X,n}\) and sector data.
+Assume nonnegative
+exponents \(\lambda_E,\lambda_\phi,\gamma_R\) and future literal
+estimates
+\[
+ E_X^{\rm cert}
+ \ge X^{-\lambda_E+o(1)}Q_X^3J_X^2,
+\qquad
+ R_X^{\rm cert}\ge X^{\gamma_R+o(1)},
+ \qquad
+ \rho_X\ge X^{-\lambda_\phi+o(1)}.
+\]
+Then
+\[
+ D_X\ge
+ X^{-(\lambda_E+2\lambda_\phi-\gamma_R)+o(1)}
+ Q_X^3J_X^2.
+\]
+Thus one admissible nonnegative recorded exponent is
+\[
+ \boxed{
+ \lambda_D^{\rm cert}
+ =(\lambda_E+2\lambda_\phi-\gamma_R)_+.}
+\]
+This certificate is compatible with a separately proved zero-mode
+exponent precisely when
+\[
+ \boxed{
+ \lambda_D^{\rm cert}
+ \le2\eta_Z.}
+\]
+\end{corollary}
+
+\begin{proof}
+Insert the two assumed estimates into \cref{thm:certificate}, then
+apply the TPC-112 cone.
+\end{proof}
+
+\begin{remark}[No double charging]
+The phase loss occurs twice because the determinant energy is a
+squared magnitude.  The participation gain is used once and may not
+be recycled as physical synthesis slack.  Conversely, equality in
+the determinant cone is permitted with zero determinant reserve,
+while the independent physical condition remains strictly
+\(\Lambda_{\rm phys}<1/400\).
+\end{remark}
+
+\begin{remark}[Noncircular invocation]
+The three estimates in \cref{cor:ledger} must be proved on the same
+predeclared certified family and without invoking the target lower
+bound for \(D_X\).  In particular, defining either
+\(\gamma_R\) or \(\lambda_\phi\) from the already aggregated value
+\(D_X/E_X\) would merely rename the desired conclusion.
+\end{remark}
+
+\begin{corollary}[Participation is indispensable below loss one]
+\label{cor:participation}
+The imported diagonal envelope
+\[
+ E_X^{\rm cert}\le E_X
+ \ll X^{-1+o(1)}Q_X^3J_X^2
+\]
+shows that a certificate with
+\(\lambda_D^{\rm cert}<1\) must obtain a positive
+power from effective participation after paying the phase loss.  More
+precisely, the three-input ledger requires
+\[
+ \gamma_R> \lambda_E+2\lambda_\phi-1.
+\]
+\end{corollary}
+
+\begin{proof}
+The diagonal ceiling forces every matching lower exponent
+\(\lambda_E\) to be at least \(1\), up to \(o(1)\).  Rearrange
+\(\lambda_E+2\lambda_\phi-\gamma_R<1\).
+\end{proof}
+
+\section{Sharp limitations}
+
+\begin{proposition}[Magnitudes do not certify a phase margin]
+\label{prop:roots}
+For every \(m\ge2\) there are \(m\) unit-modulus coefficients on one
+fiber whose sum is zero.  Hence active support, equal magnitudes,
+fiber multiplicity, and diagonal energy alone do not imply
+\(\rho_X>0\), \(C_X>0\), or \(D_X>0\).
+\end{proposition}
+
+\begin{proof}
+Use the \(m\)-th roots of unity.
+\end{proof}
+
+\begin{proposition}[A half-plane condition is genuinely additional]
+If all coefficients of a fiber lie in an angular sector of width
+\(\Delta<\pi\), then \cref{lem:sector} applies with \(B=\varnothing\)
+and
+\[
+ \kappa=\cos(\Delta/2)>0.
+\]
+No sector of width \(\pi\) or more gives a uniform positive lower
+bound, since opposite phases can cancel.
+\end{proposition}
+
+\begin{proof}
+Rotate the sector midpoint to the positive real axis.  Every
+coefficient then has real projection at least
+\(\cos(\Delta/2)\) times its modulus.  Opposite unit vectors prove
+the endpoint obstruction.
+\end{proof}
+
+The literal phases contain the fixed \(h_0\), reconstruction
+multiplier, affine character, and arithmetic signs.  Establishing a
+growing phase margin for them may be as hard as controlling the
+signed arithmetic directly.  The certificate is a target, not a
+random-phase heuristic.
+
+\section{Certificate and claim boundary}
+
+The deterministic script
+\texttt{experiments/tpc121\_phase\_coherence\_audit.py} verifies:
+\begin{enumerate}[leftmargin=2em]
+\item the mean-fluctuation and weighted-coherence identities;
+\item the sector lower bound on a nonsymmetric complex example;
+\item exact cancellation by equal-modulus roots of unity; and
+\item the participation ratio, a two-fiber minimum-margin test, the
+diagonal-ceiling requirement, the determinant-zero compatibility
+check, and the exponent ledger
+\[
+\lambda_D^{\rm cert}
+=(\lambda_E+2\lambda_\phi-\gamma_R)_+.
+\]
+\end{enumerate}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.42\textwidth}X@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+Mean-fluctuation splitting and sector lemma
+& Exact finite-dimensional theorem (\(\Lzero\)).\\
+Attachment to TPC-110 actual determinant fibers
+& Literal fixed-\(h_0\) interface (\(\Lone\)).\\
+Growing lower bound for \(E_X^{\rm cert}\)
+& Open arithmetic input.\\
+Growing participation gain \(R_X^{\rm cert}\)
+& Open equal-determinant coherence input.\\
+Growing positive phase margin \(\rho_X\)
+& Open coefficient-specific arithmetic input.\\
+Fixed-\(h_0\) polynomial saving
+& Not proved; no \(\Ltwo\) advance.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+TPC-121 therefore advances the route by decomposing a sufficient lower
+certificate for the opaque coherent product
+\(D_X=C_X\overline m_X^{\rm coh}\) into three independently auditable
+inputs: certified diagonal mass, effective participation growth, and
+a literal fiber phase margin.  It does not show that any of them holds.
+TPC-122 treats the other side of the compatibility cone: conversion
+of ordered signed-prefix cancellation into a distinguished zero-mode
+exponent.
+
+\paragraph{Explicit exclusions.}
+No statement proves H3, a Möbius or Liouville cancellation estimate,
+a positive prime-pair lower bound, a Hardy--Littlewood asymptotic, a
+parity breach, or the twin-prime conjecture.  Nothing is averaged over
+or specialized to a substitute for the prescribed \(h_0\).
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

@@ -1,0 +1,461 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\textbf{Signed Prefixes and the Distinguished Zero Mode}\\
+\large Sharp Abel-BV Duality, an Exact Exponent Transfer, and the
+Remaining Fixed-Shift Input}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-111 showed that the distinguished determinant zero mode survives
+every provenance-preserving coarsening and proved the sharp
+signed-prefix/BV duality.  We turn that finite criterion into a
+complete exponent ledger.  For a growing family, a literal prefix
+saving \(X^{-\delta}\), an outer BV-envelope cost \(X^{\ell_Z}\), and
+a content-remainder exponent \(\eta_{\rm cont}\) imply
+\[
+ \eta_Z^{\rm cert}
+ =\min\{\delta-\ell_Z,\eta_{\rm cont}\}.
+\]
+Here \(\delta\ge\ell_Z\) is required; otherwise this certificate
+provides no nonnegative zero-mode exponent for the TPC-112 cone.
+Combined with the TPC-112 determinant compatibility cone, sufficient
+thresholds for this Abel/triangle certificate are
+\[
+ \delta\ge\ell_Z+\frac{\lambda_D}{2},
+ \qquad
+ \eta_{\rm cont}\ge\frac{\lambda_D}{2}.
+\]
+We also give the minimum rule for a subpower family of differently
+scaled fiber classes.  This is an exact transfer statement, not a
+proof of any growing input.  The finite duality is imported and
+restated self-contained; the typed fixed-\(h_0\) ledger is
+\(\Lzero/\Lone\).  No \(\Ltwo\) cancellation theorem is claimed.
+\end{abstract}
+
+\section{The literal ordered zero-mode pairing}
+
+Fix the prescribed nonzero shift \(h_0\).  At the verified
+outer-reassembly interface of TPC-111---that is, conditional on its
+content, masks, polarizations and native keys being retained and the
+literal outer reassembly being verified---the literal zero mode is
+indexed by outer affine keys \(\theta\in\Theta_X\), with canonically
+ordered intervals
+\[
+ \mathcal I_{\theta,X}
+ =\{r_{\theta,1}<\cdots<r_{\theta,m_\theta}\},
+\]
+and writes
+\[
+ Z_X=
+ \sum_{\theta\in\Theta_X}c_{\theta,X}
+ \sum_{i=1}^{m_\theta}
+ W_{\theta,X}(r_{\theta,i})
+ \sigma_{\theta,X}(r_{\theta,i})
+ +E_{\rm content,X}^{(111)}
+\]
+\citep{WangTPC111}.  Choose a predeclared retained set
+\(\cF_X\subseteq\Theta_X\).  For \(f=\theta\in\cF_X\), set
+\[
+ t_{f,i}=r_{\theta,i},\qquad
+ \sigma_{f,i}=\sigma_{\theta,X}(r_{\theta,i}),\qquad
+ w_{f,i}=c_{\theta,X}W_{\theta,X}(r_{\theta,i}).
+\]
+Define \(E_{\rm cont,X}\) to be the original content term plus the
+exact contributions of every outer key in
+\(\Theta_X\setminus\cF_X\).  Then the complete literal zero mode is
+\[
+ Z_X=\sum_{f\in\cF_X}Z_f+E_{\rm cont,X},\qquad
+ Z_f=\sum_{i=1}^{m_f}\sigma_{f,i}w_{f,i}.
+\]
+Thus \(\sigma_{f,i}\) retains the literal arithmetic sign and affine
+data, while \(w_{f,i}\) retains the outer coefficient and
+reconstruction multiplier.  The retained/content partition and this
+factor allocation are fixed before applying the estimate.  Moving a
+rough arithmetic factor between the two changes the gate and must be
+recorded.
+
+Define signed prefixes
+\[
+ S_{f,k}=\sum_{i=1}^k\sigma_{f,i},\qquad
+ \Delta_f=\max_{1\le k\le m_f}|S_{f,k}|,
+\]
+and the endpoint-anchored variation norm
+\[
+ \|w_f\|_{\mathrm{BV}_*}
+ =
+ |w_{f,m_f}|
+ +\sum_{k=1}^{m_f-1}|w_{f,k}-w_{f,k+1}|.
+\]
+
+\section{Imported Abel identity and sharp duality}
+
+The next theorem is the finite duality already proved in TPC-111.  We
+include its short proof to fix the exact norm used by the exponent
+ledger; it is not presented as a second new duality theorem.
+
+\begin{lemma}[Finite Abel identity]
+\label{lem:abel}
+For every complex pair of sequences
+\((\sigma_i)_{i=1}^m\) and \((w_i)_{i=1}^m\),
+\[
+ \boxed{
+ \sum_{i=1}^m\sigma_iw_i
+ =
+ S_mw_m+\sum_{k=1}^{m-1}S_k(w_k-w_{k+1}),}
+\qquad
+ S_k=\sum_{i=1}^k\sigma_i.
+\]
+\end{lemma}
+
+\begin{proof}
+Use \(\sigma_i=S_i-S_{i-1}\), with \(S_0=0\), and telescope.
+\end{proof}
+
+\begin{theorem}[Sharp signed-prefix/BV duality]
+\label{thm:duality}
+For a fixed signed sequence \(\sigma=(\sigma_i)_{i=1}^m\),
+\[
+ \boxed{
+ \sup_{\|w\|_{\mathrm{BV}_*}\le1}
+ \left|\sum_{i=1}^m\sigma_iw_i\right|
+ =\max_{1\le k\le m}|S_k|.}
+\]
+\end{theorem}
+
+\begin{proof}
+\Cref{lem:abel} and the triangle inequality give the upper bound.
+Choose \(k_*\) maximizing \(|S_k|\).  If \(S_{k_*}\ne0\), set
+\[
+ \omega=\frac{\overline{S_{k_*}}}{|S_{k_*}|},
+ \qquad
+ w_i=\begin{cases}
+ \omega,&i\le k_*,\\
+ 0,&i>k_*.
+ \end{cases}
+\]
+If \(k_*<m\), the norm has one jump of size one and zero endpoint;
+if \(k_*=m\), it has endpoint one and no jump.  Thus
+\(\|w\|_{\mathrm{BV}_*}=1\), while the pairing equals
+\(\omega S_{k_*}=|S_{k_*}|\).  The zero sequence is immediate.
+\end{proof}
+
+\begin{remark}[Fiberwise sharpness]
+The theorem is sharp for each fixed fiber.  After summing fibers, the
+triangle inequality
+\[
+ |Z_X|\le\sum_f\Delta_f\|w_f\|_{\mathrm{BV}_*}
+\]
+is a sufficient outer certificate, not a necessary one: additional
+inter-fiber cancellation may occur.
+\end{remark}
+
+\section{The growing exponent transfer}
+
+Let \(A_f\ge0\) be a literal comparison scale for the signed
+coefficient on fiber \(f\).  The future prefix theorem and the outer
+reassembly theorem must be stated separately.
+
+\begin{definition}[Typed prefix and envelope inputs]
+\label{def:inputs}
+For exponents \(\delta,\ell_Z\ge0\), define:
+\begin{align}
+\text{\rm(Prefix)}\qquad
+&\Delta_f\le
+ X^{-\delta+o(1)}A_f
+ \quad\text{uniformly on the retained actual outer fibers};
+\label{eq:prefix-input}\\
+\text{\rm(Envelope)}\qquad
+&\sum_{f\in\cF_X}
+ A_f\|w_f\|_{\mathrm{BV}_*}
+ \le X^{\ell_Z+o(1)}Q_X^2.
+\label{eq:envelope-input}
+\end{align}
+In addition, a complete certificate must record
+\begin{equation}
+ |E_{\rm cont,X}|
+ \le X^{-\eta_{\rm cont}+o(1)}Q_X^2
+\label{eq:content-input}
+\end{equation}
+for some \(\eta_{\rm cont}\ge0\).  All three statements use the same
+factor allocation and quantifier range.
+\end{definition}
+
+\begin{theorem}[Prefix-to-zero-mode transfer]
+\label{thm:transfer}
+If \eqref{eq:prefix-input}--\eqref{eq:content-input} hold and
+\(\delta\ge\ell_Z\), then
+\[
+ \boxed{
+ |Z_X|
+ \le
+ X^{-\eta_Z^{\rm cert}+o(1)}Q_X^2,}
+\]
+where the admissible zero-mode exponent is
+\[
+ \boxed{
+ \eta_Z^{\rm cert}
+ =\min\{\delta-\ell_Z,\eta_{\rm cont}\}.}
+\]
+\end{theorem}
+
+\begin{proof}
+Apply \cref{thm:duality} fiberwise and sum:
+\[
+ |Z_X|
+ \le\sum_f\Delta_f\|w_f\|_{\mathrm{BV}_*}
+ \le X^{-\delta+o(1)}
+ \sum_fA_f\|w_f\|_{\mathrm{BV}_*}.
+\]
+Now use the envelope input and add the content remainder.  The slower
+of the two powers controls the sum.
+\end{proof}
+
+\begin{remark}[A negative displayed exponent]
+If \(\delta<\ell_Z\), the prefix branch still gives
+\(X^{-(\delta-\ell_Z)+o(1)}Q_X^2\), but it does not certify a
+nonnegative saving exponent.  One must not enter a negative
+\(\eta_Z^{\rm cert}\) into the TPC-112 cone.
+\end{remark}
+
+\section{Compatibility with determinant energy}
+
+TPC-112 requires
+\[
+ D_X\ge X^{-\lambda_D+o(1)}Q_X^3J_X^2,
+\qquad
+ |Z_X|\le X^{-\eta_Z+o(1)}Q_X^2,
+\qquad
+ \lambda_D\le2\eta_Z
+\]
+on the same literal post-bin coefficient \citep{WangTPC112}.
+
+\begin{corollary}[Exact threshold for this Abel/triangle certificate]
+\label{cor:threshold}
+Under the typed inputs of \cref{def:inputs}, a separately certified
+determinant exponent \(\lambda_D\) is compatible whenever both
+\[
+ \boxed{
+ \delta\ge\ell_Z+\frac{\lambda_D}{2},
+ \qquad
+ \eta_{\rm cont}\ge\frac{\lambda_D}{2}.}
+\]
+The reserve in the determinant-zero cone is
+\[
+ \rho_{\rm det}
+ =
+ 2\min\{\delta-\ell_Z,\eta_{\rm cont}\}-\lambda_D.
+\]
+\end{corollary}
+
+\begin{proof}
+Insert the admissible exponent \(\eta_Z^{\rm cert}\) from
+\cref{thm:transfer} into \(\lambda_D\le2\eta_Z\).
+\end{proof}
+
+Combining with the phase certificate of TPC-121, where one admissible
+recorded exponent is
+\[
+\lambda_D^{\rm cert}
+=(\lambda_E+2\lambda_\phi-\gamma_R)_+,
+\]
+gives the explicit joint target
+\[
+ \boxed{\begin{aligned}
+ \delta&\ge
+ \ell_Z+
+ \frac{(\lambda_E+2\lambda_\phi-\gamma_R)_+}{2},\\
+ \eta_{\rm cont}&\ge
+ \frac{(\lambda_E+2\lambda_\phi-\gamma_R)_+}{2}.
+ \end{aligned}}
+\]
+This equation is bookkeeping, not a joint arithmetic theorem
+\citep{WangTPC121}.
+
+\begin{corollary}[Uniform subpower-class ledger]
+\label{cor:classes}
+Let \(\{\cF_{X,j}:j\in\mathcal J_X\}\) be a predeclared partition of
+the retained actual fibers.  Suppose there are a common constant
+\(C\), a common sequence \(\varepsilon_X\to0\), and nonnegative
+numbers \(\delta_{X,j},\ell_{X,j}\) such that
+\[
+ |\mathcal J_X|\le X^{\varepsilon_X},
+\]
+\[
+ \Delta_f\le
+ C X^{-\delta_{X,j}+\varepsilon_X}A_f
+ \quad(f\in\cF_{X,j}),
+ \qquad
+ \sum_{f\in\cF_{X,j}}
+ A_f\|w_f\|_{\mathrm{BV}_*}
+ \le C X^{\ell_{X,j}+\varepsilon_X}Q_X^2
+\]
+for every \(j\in\mathcal J_X\).  Assume also the content estimate
+\[
+ |E_{\rm cont,X}|
+ \le C X^{-\eta_{\rm cont}+\varepsilon_X}Q_X^2.
+\]
+For any fixed \(\eta_{\rm cls}\ge0\) satisfying
+\[
+ \eta_{\rm cls}
+ \le
+ \liminf_{X\to\infty}
+ \inf_{j\in\mathcal J_X}(\delta_{X,j}-\ell_{X,j}),
+\]
+where the infimum of the empty set is \(+\infty\) (in that case the
+retained sum is zero),
+one admissible recorded exponent is
+\[
+ \boxed{
+ \eta_Z^{\rm cert}
+ =\min\{\eta_{\rm cont},\eta_{\rm cls}\}.}
+\]
+\end{corollary}
+
+\begin{proof}
+On class \(j\), \cref{thm:duality} and the two uniform bounds give
+\[
+ \sum_{f\in\cF_{X,j}}
+ |Z_f|
+ \le
+ C^2X^{-(\delta_{X,j}-\ell_{X,j})+2\varepsilon_X}Q_X^2.
+\]
+The liminf condition makes
+\(\delta_{X,j}-\ell_{X,j}\ge\eta_{\rm cls}-o(1)\) uniformly in \(j\).
+Summing at most \(X^{\varepsilon_X}\) classes and adding the content
+remainder proves the claim.
+\end{proof}
+
+\begin{remark}[Typed losses and no double charging]
+The quantity \(\delta-\ell_Z\) and the content exponent
+\(\eta_{\rm cont}\) have zero-mode/soft-remainder roles;
+\(\lambda_D\) has the determinant-energy role; and
+\(\Lambda_{\rm phys}\) has the physical-reassembly role.  A source
+identifier may not be spent in two roles unless a theorem supplies
+the corresponding joint inequality and records the dependency
+replacement.  In particular, determinant reserve is not physical
+endpoint slack.
+\end{remark}
+
+\section{Why all prefixes are necessary}
+
+\begin{proposition}[The final sum is insufficient]
+\label{prop:final}
+For every \(N\ge1\) there is a real sequence of length \(2N\) with
+\[
+ S_{2N}=0,\qquad \max_{k\le2N}|S_k|=N.
+\]
+Hence cancellation of the complete unweighted fiber sum does not
+control the zero-mode pairing against varying multipliers.
+\end{proposition}
+
+\begin{proof}
+Take \(N\) entries equal to \(1\), followed by \(N\) entries equal to
+\(-1\).
+\end{proof}
+
+\begin{proposition}[Ordering is part of the certificate]
+The multiset of signed atoms determines the final sum but not the
+maximum prefix.  Therefore a prefix theorem must use the canonical
+literal order, or prove a permutation-uniform estimate strong enough
+to include it.  Choosing a favorable order after seeing the signs is
+not a provenance-preserving argument.
+\end{proposition}
+
+\begin{proof}
+For \(N\) signs \(+1\) and \(N\) signs \(-1\), grouping equal signs
+gives maximum prefix \(N\), whereas alternating signs gives maximum
+prefix \(1\).
+\end{proof}
+
+The signed sequence imported from TPC-107 and TPC-108 contains actual
+Möbius/Liouville-type factors \citep{WangTPC107,WangTPC108}.  A bound
+for independent random signs, an averaged shift, or a rearranged
+sequence does not prove \eqref{eq:prefix-input}.
+
+\section{Audit certificate and next decision}
+
+The deterministic script
+\texttt{experiments/tpc122\_prefix\_transfer\_audit.py} checks the
+complex Abel identity, the BV bound, the sharp step extremizer, the
+large-prefix/final-zero counterexample, the TPC-111 factor-allocation
+crosswalk, the content-aware compatibility/reserve ledger, and the
+uniform subpower-class minimum rule.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.42\textwidth}X@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+Abel identity and sharp BV duality
+& Exact finite theorem (\(\Lzero\)).\\
+Crosswalk \(f=\theta\), \(t_{f,i}=r_{\theta,i}\) to the TPC-111
+ordered affine outer fibers, with the declared factor allocation
+& Fixed-\(h_0\) interface (\(\Lone\)).\\
+Growing prefix input \eqref{eq:prefix-input}
+& Not proved; parity-facing arithmetic input.\\
+Outer BV envelope \eqref{eq:envelope-input}
+& Not proved on the complete actual family.\\
+Content remainder \eqref{eq:content-input}
+& Not proved at the required exponent.\\
+Positive zero-mode exponent or fixed-\(h_0\) saving
+& Not proved; no \(\Ltwo\) advance.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+TPC-122 reduces the zero-mode side to three typed estimates and
+computes the exact saving delivered by this certificate.  It does not establish
+any of them.  A next paper should inspect the literal ordering and
+factor allocation on one actual fiber class; if the multiplier has
+polynomial BV cost, the signed prefix saving must exceed that cost
+before the determinant exponent is even considered.
+
+\paragraph{Explicit exclusions.}
+Nothing here proves H3, the actual prefix estimate, a Möbius or
+Liouville cancellation theorem, a parity breach, a prime-pair lower
+bound, a Hardy--Littlewood asymptotic, or the twin-prime conjecture.
+The strict physical endpoint
+\(\Lambda_{\rm phys}<1/400\) remains independent.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

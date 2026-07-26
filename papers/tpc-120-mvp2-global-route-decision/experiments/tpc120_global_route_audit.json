@@ -1,0 +1,145 @@
+{
+  "assertions_checked": 13,
+  "audit_snapshot_date": "2026-07-26",
+  "claim_level": "L0/L1_AUDIT_ONLY",
+  "endpoint": {
+    "determinant_reserve_reusable": false,
+    "equality": "STOP_EQUALITY",
+    "strict_threshold": "1/400",
+    "unknown_costs": "NOT_ZERO_AND_NOT_TESTABLE"
+  },
+  "gate_status": {
+    "H1": "NOT_TESTABLE",
+    "H2": "OPEN",
+    "H3": "OPEN",
+    "H4": "OPEN",
+    "H5": "NOT_TESTABLE",
+    "H6": "NOT_TESTABLE",
+    "H7": "OPEN",
+    "H8": "NOT_TESTABLE",
+    "H9": "NOT_TESTABLE"
+  },
+  "global_verdict": "NOT_TESTABLE",
+  "next_gates": {
+    "121": "actual post-bin determinant-energy inputs",
+    "122": "signed-prefix/BV/content-remainder zero-mode transfer",
+    "123": "complete native-atom reconnection archive",
+    "124": "one literal fixed-shift H3 block test"
+  },
+  "paper_status": {
+    "103": {
+      "feeds": [
+        "H2"
+      ],
+      "status": "PROVED_L1"
+    },
+    "104": {
+      "feeds": [
+        "H2"
+      ],
+      "status": "OPEN_INPUT"
+    },
+    "105": {
+      "feeds": [
+        "H1",
+        "H2"
+      ],
+      "status": "PROVED_L1"
+    },
+    "106": {
+      "feeds": [
+        "H2"
+      ],
+      "status": "REROUTE_SUBROUTE"
+    },
+    "107": {
+      "feeds": [
+        "H2",
+        "H3"
+      ],
+      "status": "PROVED_L1"
+    },
+    "108": {
+      "feeds": [
+        "H3"
+      ],
+      "status": "OPEN_INPUT"
+    },
+    "109": {
+      "feeds": [
+        "H2",
+        "H3"
+      ],
+      "status": "REROUTE_SUBROUTE"
+    },
+    "110": {
+      "feeds": [
+        "H5"
+      ],
+      "status": "OPEN_INPUT"
+    },
+    "111": {
+      "feeds": [
+        "H5"
+      ],
+      "status": "OPEN_INPUT"
+    },
+    "112": {
+      "feeds": [
+        "H5",
+        "H9"
+      ],
+      "status": "CONDITIONAL_L1"
+    },
+    "113": {
+      "feeds": [
+        "H1",
+        "H9"
+      ],
+      "status": "OPEN_INPUT"
+    },
+    "114": {
+      "feeds": [
+        "H1",
+        "H9"
+      ],
+      "status": "OPEN_INPUT"
+    },
+    "115": {
+      "feeds": [
+        "H7",
+        "H9"
+      ],
+      "status": "OPEN_INPUT"
+    },
+    "116": {
+      "feeds": [
+        "H4",
+        "H9"
+      ],
+      "status": "OPEN_INPUT"
+    },
+    "117": {
+      "feeds": [
+        "H6",
+        "H9"
+      ],
+      "status": "NOT_TESTABLE"
+    },
+    "118": {
+      "feeds": [
+        "H9"
+      ],
+      "status": "INCOMPLETE"
+    },
+    "119": {
+      "feeds": [
+        "H8"
+      ],
+      "status": "NOT_TESTABLE"
+    }
+  },
+  "schema": "tpc-120-mvp2-global-route-audit-v1",
+  "status": "PASS",
+  "stopped_subroute_is_global_infeasibility": false
+}

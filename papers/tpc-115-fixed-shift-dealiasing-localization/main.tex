@@ -1,0 +1,394 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.8in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+ citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Fixed-Shift De-Aliasing after Frozen Averaging},
+ pdfauthor={Liang Wang},
+ pdfsubject={TPC-115 exact Christoffel localization cost and sharp obstruction},
+ pdfkeywords={fixed shift, de-aliasing, localization, Christoffel function, Gram pseudoinverse}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Om}{\boldsymbol\Omega}
+
+\title{\textbf{Fixed-\(h_0\) De-Aliasing after Frozen Averaging:}\\
+Exact Evaluation Norms, Christoffel Costs,\\
+and a Sharp Localization Obstruction}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A frozen-parameter or frequency-averaged estimate is not yet an
+estimate at one prescribed physical shift \(h_0\).  The missing
+operation is evaluation on the actual shift-profile subspace.  We
+give its exact finite-dimensional cost.
+
+Let \(A:E\to\C^I\) be the declared observation map, let
+\(\Om=\operatorname{diag}(p_i)\) with \(p_i\ge0\), and let
+\(\ell(x)=b_0^*x\) be the target functional.  With
+\(G=A^*\Om A\), a finite localization inequality
+\[
+ |\ell(x)|^2\le K\,\|Ax\|_{\Om}^2
+ \qquad(x\in E)
+\]
+exists if and only if \(b_0\in\operatorname{ran}G\), equivalently
+\(\ell\) annihilates \(\ker A_{\Om}\), where
+\(A_{\Om}=\Om^{1/2}A\).  In that case the sharp constant is
+\[
+ \boxed{\qquad K=b_0^*G^\dagger b_0.\qquad}
+\]
+For a profile space \(V=\operatorname{ran}B\), this becomes the
+Christoffel evaluation cost
+\[
+ K_V(h_0)=b(h_0)^*
+  (B^*\Om B)^\dagger b(h_0).
+\]
+
+The formula separates three regimes.  The unrestricted profile space
+costs exactly \(1/p_{h_0}\), reproducing the positivity-only
+localization loss.  Constants cost \(1\).  A \(d\)-character subspace
+under uniform averaging costs exactly \(d\), independent of the
+ambient number of shifts.  Conversely, if the target does not
+annihilate the observation kernel, no finite averaged estimate can
+recover it.
+
+This is a sharp conditional bridge, not a fixed-shift arithmetic
+estimate.  It advances the interface only after the actual TPC shift
+profile is proved to lie in a controlled subspace.  We prove no such
+regularity, no \(\Ltwo\) fixed-power saving, no parity breakthrough,
+and no prime-pair or twin-prime theorem.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+prescribed shift; localization; Christoffel cost; pseudoinverse;
+averaged estimate; de-aliasing.
+
+\medskip
+\noindent\textbf{Physical convention.}
+The target \(h_0\ne0\), averaging weights, active shift support and
+profile space are declared before optimization.  A profile space
+fitted after seeing the target is not a localization theorem.
+
+\section{The missing return from averages}
+
+TPC-46 exhibits the sharp positivity cost
+\(\sum_h\omega_h/\omega_{h_0}\) for recovering one shift from a
+weighted average with no regularity \citep{WangTPC46}.  Later frozen
+and spectral routes improve averaged or model estimates, but
+TPC-MVP1 requires an actual prescribed physical shift
+\citep{WangMVP1}.  TPC-113 fixes physical conditioning, and TPC-114
+identifies the residual/native Gram and its cancellation kernel
+\citep{WangTPC113,WangTPC114}.  The present paper isolates the exact
+evaluation norm after those maps.
+
+Let \(E\) be a finite-dimensional Hilbert space and
+\[
+ A:E\to\C^I,\qquad
+ \Om=\operatorname{diag}(p_i:i\in I),\qquad p_i\ge0.
+\]
+Write
+\[
+ \|z\|_{\Om}^2=z^*\Om z,\qquad
+ A_{\Om}=\Om^{1/2}A,\qquad G=A^*\Om A=A_{\Om}^*A_{\Om}.
+\]
+The target is \(\ell(x)=b_0^*x\).
+
+\section{The exact localization theorem}
+
+\begin{theorem}[Sharp evaluation through a semidefinite observation]
+\label{thm:sharp}
+There exists a finite \(K\) such that
+\[
+ |b_0^*x|^2\le K\,x^*Gx\qquad(x\in E)
+\]
+if and only if
+\[
+ b_0\perp\ker G,
+ \qquad\text{equivalently}\qquad
+ b_0\in\operatorname{ran}G.
+\]
+When this holds, the least possible constant is
+\[
+ \boxed{\quad K_{\rm loc}(A,\Om;b_0)
+ =b_0^*G^\dagger b_0.\quad}
+\]
+If it fails, the sharp constant is \(+\infty\).
+\end{theorem}
+
+\begin{proof}
+Since \(G=A_{\Om}^*A_{\Om}\),
+\(\ker G=\ker A_{\Om}\).  If \(b_0\) does not annihilate this kernel,
+some \(x\in\ker G\) has \(b_0^*x\ne0\), so no finite inequality is
+possible.
+
+Assume \(b_0\in\operatorname{ran}G\).  On
+\((\ker G)^\perp\), put \(y=G^{1/2}x\).  Then
+\[
+ b_0^*x=(G^{\dagger/2}b_0)^*y.
+\]
+Cauchy--Schwarz gives
+\[
+ |b_0^*x|^2
+ \le\|G^{\dagger/2}b_0\|^2\|G^{1/2}x\|^2
+ =(b_0^*G^\dagger b_0)(x^*Gx).
+\]
+Equality holds for
+\(y=G^{\dagger/2}b_0\), equivalently along
+\(x=G^\dagger b_0\), unless \(b_0=0\), when both sides vanish.
+Thus the constant is sharp.
+\end{proof}
+
+\begin{remark}[Kernel condition, not invertibility]
+The observation need not be injective on all of \(E\).  Only the
+target must vanish on its invisible directions.  Requiring a global
+inverse can therefore overstate the cost, while ignoring the kernel
+can assert an impossible de-aliasing.
+\end{remark}
+
+\begin{proposition}[Hilbert-valued extension]
+\label{prop:vector}
+Let \(\mathcal H\) be any Hilbert space and replace \(A\) by
+\(A\otimes I_{\mathcal H}\), and \(b_0^*\) by
+\(b_0^*\otimes I_{\mathcal H}\).  Under the condition of
+\cref{thm:sharp},
+\[
+ \|(b_0^*\otimes I_{\mathcal H})X\|_{\mathcal H}^2
+ \le K_{\rm loc}
+ \|(A_{\Om}\otimes I_{\mathcal H})X\|^2,
+\]
+with the same sharp constant.
+\end{proposition}
+
+\begin{proof}
+Apply the scalar inequality to the scalar products of the
+\(\mathcal H\)-valued coefficients against arbitrary unit vectors,
+or diagonalize \(G\) and sum the componentwise inequalities.
+Sharpness follows by tensoring a scalar extremizer with a unit vector.
+\end{proof}
+
+\section{Profile spaces and Christoffel cost}
+
+Let \(H\) be the finite shift set, let \(p_h\ge0\) with
+\(\sum_hp_h=1\), and let \(B:\C^d\to\C^H\) describe a declared
+profile space:
+\[
+ (Bc)(h)=b(h)^*c.
+\]
+Evaluation at \(h_0\) is \(b(h_0)^*c\).
+
+\begin{corollary}[Exact profile-space localization]
+\label{cor:profile}
+Put
+\[
+ G_V=B^*\Om B,\qquad
+ \Om=\operatorname{diag}(p_h:h\in H).
+\]
+If \(b(h_0)\in\operatorname{ran}G_V\), then
+\[
+ |(Bc)(h_0)|^2
+ \le K_V(h_0)\sum_{h\in H}p_h|(Bc)(h)|^2,
+\]
+where the sharp constant is
+\[
+ \boxed{\quad
+ K_V(h_0)=b(h_0)^*G_V^\dagger b(h_0).
+ \quad}
+\]
+If \(b(h_0)\notin\operatorname{ran}G_V\), no finite constant exists.
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:sharp} with \(A=B\) and \(b_0=b(h_0)\).
+\end{proof}
+
+\begin{proposition}[Three exact regimes]
+\label{prop:regimes}
+The following constants are sharp.
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item For the unrestricted profile space \(\C^H\),
+\[
+ K_{\C^H}(h_0)=\frac1{p_{h_0}}
+ \]
+when \(p_{h_0}>0\); it is infinite when \(p_{h_0}=0\).
+\item For the constant profile space, \(K_{\rm const}(h_0)=1\).
+\item Let \(H=\mathbb Z/N\mathbb Z\), use uniform weights \(1/N\),
+and let \(V\) be the span of any \(d\) distinct characters.  Then
+\[
+ K_V(h_0)=d
+ \qquad\text{for every }h_0.
+\]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For (i), \(B=I\), \(G_V=\Om\), and the target is \(e_{h_0}\).
+For (ii), \(B=\one\), so \(G_V=\sum_hp_h=1\).
+For (iii), character orthogonality gives
+\(B^*(N^{-1}I)B=I_d\), while the evaluation vector \(b(h_0)\)
+has \(d\) unit-modulus entries.  Hence
+\(b(h_0)^*b(h_0)=d\).
+\end{proof}
+
+\begin{remark}[The positivity cost is genuinely sharp]
+Writing \(p_h=\omega_h/\sum_t\omega_t\), part (i) gives
+\[
+ K_{\C^H}(h_0)=\frac{\sum_t\omega_t}{\omega_{h_0}},
+\]
+exactly the TPC-46 positivity cost.  It cannot be improved from an
+averaged inequality alone.  Any improvement must prove that the
+actual profile lies in a smaller declared space, as in parts (ii) or
+(iii), or establish another explicit regularity inequality.
+\end{remark}
+
+\section{Conditional fixed-shift transfer}
+
+\begin{theorem}[What an averaged arithmetic estimate would imply]
+\label{thm:conditional}
+Let \(F_X(h)\in\mathcal H_X\) be the literal physical shift profile.
+Assume:
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item \(F_X\) belongs to a declared Hilbert-valued profile space
+  \(V_X\otimes\mathcal H_X\);
+\item the averaged estimate
+  \[
+   \sum_h p_{X,h}\|F_X(h)\|_{\mathcal H_X}^2\le E_X
+  \]
+  holds on the same active support and normalization; and
+\item the target evaluation annihilates the observation kernel.
+\end{enumerate}
+Then
+\[
+ \boxed{\qquad
+ \|F_X(h_0)\|_{\mathcal H_X}^2
+ \le K_{V_X}(h_0)E_X.
+ \qquad}
+\]
+If \(K_{V_X}(h_0)=X^{\lambda+o(1)}\), localization spends
+\(\lambda\) in an energy ledger and \(\lambda/2\) in the corresponding
+amplitude ledger.
+\end{theorem}
+
+\begin{proof}
+Apply \cref{prop:vector,cor:profile}.  The exponent statement follows
+by taking square roots when converting squared norms to amplitudes.
+\end{proof}
+
+\begin{remark}[Strict endpoint accounting]
+The localization cost is charged exactly once, after the native Gram
+and before the prescribed-shift conclusion.  If the route uses the
+amplitude-normalized physical ledger of TPC-MVP1, the accumulated
+loss, including \(\lambda/2\), must remain strictly below \(1/400\).
+An endpoint equality is not a positive reserve.
+\end{remark}
+
+\section{Sharp invisibility obstruction}
+
+\begin{proposition}[Indistinguishable profiles]
+\label{prop:invisible}
+If \(x_1-x_2\in\ker A_{\Om}\) but
+\(\ell(x_1)\ne\ell(x_2)\), then no procedure using only the weighted
+observation \(A_{\Om}x\) can recover the target on both profiles.  In
+particular, no finite localization inequality exists.
+\end{proposition}
+
+\begin{proof}
+The observations of \(x_1\) and \(x_2\) coincide, whereas their target
+values differ.  Their difference is the kernel witness in
+\cref{thm:sharp}.
+\end{proof}
+
+For example, \(A=(1\ \ 1)\) observes only \(x_1+x_2\).  Evaluation of
+the first coordinate does not annihilate
+\(\ker A=\operatorname{span}\{(1,-1)\}\), so it is impossible.
+Evaluation of the observed sum itself has sharp cost \(1\).
+
+\section{Finite exact certificate and verdict}
+
+The script
+\texttt{experiments/tpc115\_localization\_certificate.py} checks with
+exact rational arithmetic:
+\begin{enumerate}[leftmargin=2em]
+\item unrestricted weighted costs \(6,3,2\) for weights
+  \(1/6,2/6,3/6\);
+\item constant-profile cost \(1\);
+\item Walsh-character subspace costs \(d=1,2,4,8\) on eight shifts;
+  and
+\item the invisible and visible functionals for \(A=(1\ \ 1)\).
+\end{enumerate}
+The certificate validates the finite formulas, not an arithmetic
+profile hypothesis.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}p{0.39\textwidth}X@{}}
+\toprule
+Status & Required certificate & Consequence\\
+\midrule
+Go &
+The actual profile belongs to \(V_X\), the averaged estimate is
+physical, and \(K_{V_X}(h_0)\) leaves strict endpoint reserve &
+Apply \cref{thm:conditional} and continue to high-frequency
+reassembly.\\
+Stop observation &
+Target evaluation is nonzero on the actual observation kernel &
+No de-aliasing from this average is possible; retain more labels or
+change the observation.\\
+Open &
+Only an averaged bound is known, with no verified profile space &
+Pay the full positivity cost or make no fixed-\(h_0\) claim.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Established.}
+\Cref{thm:sharp,prop:vector,cor:profile,prop:regimes,thm:conditional,prop:invisible}
+give the exact evaluation norm, its
+Hilbert-valued extension, and a sharp obstruction.  These are
+\(\Lzero\) finite-dimensional theorems.  Attaching them to the
+literal fixed-shift profile is an explicit \(\Lone\) conditional
+interface.
+
+\paragraph{Not established.}
+We do not prove that the actual TPC profile lies in a low-dimensional
+character or regularity space.  We prove no bound for its
+Christoffel cost, no new averaged arithmetic estimate, and no
+prescribed-shift saving.  There is no \(\Ltwo\) advance, parity
+breakthrough, Hardy--Littlewood asymptotic, prime-pair lower bound, or
+twin-prime theorem.  Nothing is specialized to \(h_0=2\).
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

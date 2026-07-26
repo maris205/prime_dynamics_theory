@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "alternative_dependency_rejection": 1,
+    "alternative_source_rejection": 1,
+    "conflicting_duplicate_rejection": 1,
+    "different_map_nonmerge": 1,
+    "full_provenance_duplicate_merge": 1,
+    "joint_dependency_replacement": 1,
+    "matching_primal_dual_certificates": 3,
+    "missing_dependency_rejection": 1,
+    "unknown_token_rejection": 1
+  },
+  "claim_boundary": {
+    "actual_complete_tpc_registry": false,
+    "actual_strict_endpoint_certificate": false,
+    "finite_exact_certificate": true,
+    "new_L2_fixed_shift_estimate": false,
+    "parity_breakthrough": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "classifications": {
+    "exact_equality": "STOP_EQUALITY",
+    "strict_above": "STOP_ABOVE",
+    "strict_below": "GO"
+  },
+  "objectives": {
+    "exact_equality": "1/400",
+    "strict_above": "3/1000",
+    "strict_below": "11/6000"
+  },
+  "schema": "tpc-118-strict-endpoint-certificate-v1",
+  "status": "PASS",
+  "threshold": "1/400"
+}

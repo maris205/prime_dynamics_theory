@@ -1,0 +1,450 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,microtype,tabularx,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+ citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{
+ pdftitle={Complete High-Frequency and Ultra-Tail Closure at the Original Physical Normalization},
+ pdfauthor={Liang Wang},
+ pdfsubject={TPC-116 exact tail partition, sharp Hilbert criterion, and phase-blind obstruction},
+ pdfkeywords={high-frequency tail, physical normalization, exact partition, phase obstruction, fixed shift}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Soft}{\mathsf S}
+\newcommand{\Ret}{\mathsf R}
+\newcommand{\Tail}{\mathcal T}
+\newcommand{\Low}{\mathrm{Low}}
+\newcommand{\High}{\mathrm{High}}
+\newcommand{\Ultra}{\mathrm{Ultra}}
+\newcommand{\Short}{\mathrm{Short}}
+\newcommand{\Boundary}{\mathrm{Boundary}}
+\newcommand{\Collision}{\mathrm{Collision}}
+
+\title{\textbf{Complete High-Frequency and Ultra-Tail Closure}\\
+\textbf{at the Original Physical Normalization:}\\
+An Exact Partition, an Optimal Hilbert Test,\\
+and a Sharp Phase-Blind Obstruction}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The TPC reconstruction program has several rigorous low-window
+interfaces, but its working Hypothesis H4 asks for more: every
+high-frequency, ultra-long, short-fiber, boundary, collision and
+polarization complement must return at the \emph{original physical
+normalization}.  A tail estimate in one row or one favorable sector
+does not by itself meet that quantifier.
+
+We give a finite exact closure theorem conditional on a declared
+complete mask family.  We characterize exact one-fold partition of
+the literal physical atom set into the low window and all complement
+classes.  On a frequency class, unitary Fourier
+coordinates give the optimal estimate
+\[
+ |\Tail_E|
+ \le \nu_X
+ \Big(\sum_{r\in E}|\widehat m_X(r)|^2\Big)^{1/2}
+ \Big(\sum_{r\in E}|\widehat A_X(r)|^2\Big)^{1/2};
+\]
+the constant one is sharp.  Combining this with complete outer
+absolute-mass bounds for soft classes and literal aggregate packet
+bounds for retained classes yields a sufficient original-scale
+closure.  Every reconstruction multiplier, provenance multiplicity
+and outer normalization must occur inside those returned bounds.
+
+We also prove a sharp obstruction.  If only the magnitudes of the
+physical atoms are known, the worst coherent choice of phases has
+size exactly their total absolute mass.  Hence support sparsity,
+shortness of individual fibers, or a partition into many blocks
+cannot yield a power saving without coefficient-sensitive
+cancellation or an absolute-mass theorem.  Existing TPC low-window
+tail reserves therefore remain valid local inputs, but H4 is not
+closed until their complete outer transport and every ultra-tail
+class are certified.  The result is exact \(\Lzero/\Lone\)
+bookkeeping; it proves no new \(\Ltwo\) fixed-shift estimate, parity
+breakthrough or twin-prime theorem.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+high-frequency complement; ultra-tail; physical normalization;
+Fourier energy; phase alignment; stop--go certificate.
+
+\medskip
+\noindent\textbf{Physical convention.}
+One fixed nonzero shift \(h_0\), the literal active atom set, both
+polarizations, all reconstruction multipliers, and one inherited
+global normalization \(\nu_X\) are retained.  No class may be
+dropped because it is inconvenient or re-normalized after being
+estimated.
+
+\section{Why a complete tail certificate is still needed}
+
+TPC-93 exports the complete literal low-frequency window and, under
+its stated moment/truncation inequality, gives a fixed-power reserve
+for the associated high-frequency reconstruction tail
+\citep{WangTPC93}.  It explicitly leaves the short, resonant and
+generic returned sectors to later arithmetic estimates.  TPC-102
+records that closing one resonant branch still leaves the
+high-frequency return, block-to-physical normalization and the
+strict endpoint ledger \citep{WangTPC102}.  TPC-MVP1 packages these
+requirements as Hypothesis H4 \citep{WangMVP1}.
+
+The logical issue is a mismatch of quantifiers.  A bound for one
+frequency row has the form
+\[
+ |\Tail_{E,\alpha}|\le B_{E,\alpha}.
+\]
+H4 asks for the scalar obtained only \emph{after} all outer labels
+\(\alpha\), signs, masks and multipliers have been reassembled.
+Summing the displayed row bounds is valid, but its total cost may
+erase the saving.  Keeping the signed sum may be much better, but
+then its cancellation must be proved.  The definitions below make
+the two routes explicit.
+
+\section{The literal atom partition}
+
+For each \(X\), let \(\Omega_X\) be the finite set of inherited
+physical atoms.  An atom \(\omega\) contains every outer label,
+frequency, polarization and provenance key.  Let
+\[
+ z_X(\omega)=c_X(\omega)A_X(\omega)\in\C
+\]
+be its literal scalar contribution before the one global
+normalization \(\nu_X>0\).  Thus
+\[
+ \mathcal H_X=\nu_X\sum_{\omega\in\Omega_X}z_X(\omega).
+\]
+
+\begin{definition}[Complete complement partition]
+\label{def:partition}
+A family of masks
+\[
+ \one_{\Low_X},\quad
+ \one_{\High_X},\quad
+ \one_{\Ultra_X},\quad
+ \one_{\Short_X},\quad
+ \one_{\Boundary_X},\quad
+ \one_{\Collision_X}
+\]
+is complete if each mask is \(0\)-\(1\), their supports are pairwise
+disjoint, and their sum is \(\one_{\Omega_X}\).  Empty classes are
+allowed.  Further literal classes may be added, but no atom may have
+coverage zero or greater than one.
+\end{definition}
+
+\begin{proposition}[Exact original-scale disintegration]
+\label{prop:disintegration}
+For a complete partition \(\mathcal C_X\),
+\[
+ \boxed{\quad
+ \mathcal H_X=\sum_{C\in\mathcal C_X}\mathcal H_{X,C},
+ \qquad
+ \mathcal H_{X,C}
+ =\nu_X\sum_{\omega\in C}z_X(\omega).
+ \quad}
+\]
+If the masks overlap with multiplicity \(d_X(\omega)\), the displayed
+sum instead equals
+\(\mathcal H_X+\nu_X\sum_\omega(d_X(\omega)-1)z_X(\omega)\).
+If they miss atoms, the corresponding omitted sum remains as a
+literal residual.
+\end{proposition}
+
+\begin{proof}
+Insert \(\sum_C\one_C(\omega)=1\) into the finite sum.  The overlap
+and missing formulas follow by retaining the actual coverage
+multiplicity.
+\end{proof}
+
+\begin{remark}[Classification is not estimation]
+\Cref{prop:disintegration} is an exact \(\Lzero\) identity.  It does
+not say that any class is small.  In particular, ``ultra-long'' and
+``short'' are geometric names, not analytic bounds.
+\end{remark}
+
+\section{An optimal frequency-tail test}
+
+Let \(G\) be a finite abelian frequency group and use a unitary
+Fourier transform.  A literal row has the form
+\[
+ \mathcal R_X
+ =\nu_X\sum_{r\in G}\widehat m_X(r)
+       \overline{\widehat A_X(r)}.
+\]
+The multiplier \(\widehat m_X\) includes the signed reconstruction
+filter.  The response \(\widehat A_X\) includes the complete
+coefficient and provenance aggregation for that row.
+
+\begin{theorem}[Sharp Hilbert tail certificate]
+\label{thm:hilbert}
+For every frequency set \(E\subseteq G\),
+\[
+ \left|\Tail_E\right|
+ :=
+ \nu_X\left|
+ \sum_{r\in E}\widehat m_X(r)
+       \overline{\widehat A_X(r)}
+ \right|
+ \le
+ \nu_X M_E^{1/2}A_E^{1/2},
+\]
+where
+\[
+ M_E=\sum_{r\in E}|\widehat m_X(r)|^2,
+ \qquad
+ A_E=\sum_{r\in E}|\widehat A_X(r)|^2.
+\]
+The constant \(1\) is optimal.  If
+\(\widehat m_X\one_E\ne0\), equality is attained by taking
+\(\widehat A_X\one_E=t\widehat m_X\one_E\) for any \(t\ge0\).
+\end{theorem}
+
+\begin{proof}
+This is Cauchy--Schwarz in \(\ell^2(E)\).  The stated proportional
+choice makes the two vectors collinear and gives equality.
+\end{proof}
+
+\begin{corollary}[Callable high-frequency return]
+\label{cor:callable}
+A proved pair of complete outer estimates
+\[
+ M_{\High_X}\le X^{\mu+o(1)},\qquad
+ A_{\High_X}\le X^{\alpha+o(1)}
+\]
+returns
+\[
+ |\Tail_{\High_X}|
+ \le\nu_X X^{(\mu+\alpha)/2+o(1)}.
+\]
+This Hilbert certificate yields \(o(X)\) exactly when its displayed
+right-hand side, with the literal \(\nu_X\), is \(o(X)\).  The actual
+tail can still be smaller through cancellation not used by the
+certificate.  A rowwise version is callable only after the sum of its
+rowwise right-hand sides is shown to have that same property, or after
+a coherent outer Hilbert estimate is proved.
+\end{corollary}
+
+\begin{remark}[What the theorem does not manufacture]
+Parseval may identify \(A_E\) with a physical energy, but it does not
+make that energy small.  Nor does the label ``high frequency'' force
+\(M_E\) to decay.  The two quantitative inputs in
+\cref{cor:callable} must come from the literal filter and arithmetic
+response.
+\end{remark}
+
+\section{Sharp phase-blind obstruction}
+
+The alternative to an energy estimate is often to bound every atom
+or block separately.  The next elementary identity is the exact
+limit of that strategy.
+
+\begin{theorem}[Worst coherent completion]
+\label{thm:phaseblind}
+Let \(a_\omega\ge0\) be prescribed magnitudes on a finite set
+\(\Omega\).  Then
+\[
+ \boxed{\quad
+ \sup_{|\varepsilon_\omega|=1}
+ \left|\sum_{\omega\in\Omega}
+       \varepsilon_\omega a_\omega\right|
+ =\sum_{\omega\in\Omega}a_\omega .
+ \quad}
+\]
+Consequently, from magnitude data
+\(|z_X(\omega)|\le a_\omega\) alone, the best uniform original-scale
+bound is
+\[
+ |\mathcal H_X|
+ \le\nu_X\sum_\omega a_\omega,
+\]
+and the constant one is sharp.
+\end{theorem}
+
+\begin{proof}
+The triangle inequality gives the upper bound.  Taking every
+\(\varepsilon_\omega=1\) attains it.
+\end{proof}
+
+\begin{corollary}[No support-only tail saving]
+\label{cor:no-support}
+Knowing only that a complement is sparse, decomposes into short
+fibers, or has bounded overlap cannot give an \(o(X)\) bound unless
+those facts imply
+\[
+ \nu_X\sum_{\omega\in\mathrm{complement}}|z_X(\omega)|=o(X).
+\]
+Otherwise a coefficient-sensitive signed theorem, an energy theorem
+with quantitative input, or a different exact representation is
+necessary.
+\end{corollary}
+
+\begin{remark}[A sharp local obstruction is not a global lower bound]
+\Cref{thm:phaseblind} says that the \emph{information supplied} cannot
+exclude alignment.  It does not assert that the actual arithmetic
+coefficients align, and therefore proves no lower bound for the
+physical tail.  Its conclusion is a stop certificate for a
+phase-blind proof route, not for the prime-pair problem.
+\end{remark}
+
+\section{Complete conditional closure}
+
+Split the complement classes into soft classes \(\Soft_X\) and
+retained packet classes \(\Ret_X\).  ``Soft'' means that an
+original-scale absolute or coherent estimate is actually available;
+it is not a geometric synonym.
+
+\begin{theorem}[Original-scale complement closure and H4 specialization]
+\label{thm:closure}
+Assume:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the masks form a complete partition in the sense of
+  \cref{def:partition};
+\item the complete signed low window is retained without changing
+  its normalization;
+\item the soft complements satisfy
+  \[
+  \sum_{C\in\Soft_X}|\mathcal H_{X,C}|=o(X);
+  \]
+\item after all reconstruction, provenance and outer reassembly
+  costs, the retained complement satisfies the \emph{aggregate}
+  estimate
+  \[
+  \left|\sum_{C\in\Ret_X}\mathcal H_{X,C}\right|
+  \le X^{1-\sigma+o(1)}
+  \quad\text{for some fixed }\sigma>0.
+  \]
+\end{enumerate}
+Then the complete complement is \(o(X)\), and
+\[
+ \mathcal H_X=\mathcal H_{X,\Low_X}+o(X)
+\]
+at the original physical normalization.  A high-frequency class may
+meet item (iii) or (iv) through \cref{thm:hilbert}, but only with its
+complete outer energies.  In addition, item (iv) supplies the
+retained-packet clause of MVP1 Hypothesis H4 only when one may take
+\[
+ \sigma\ge \sigma_*=\frac1{400}.
+\]
+An arbitrary fixed \(\sigma>0\) proves the displayed \(o(X)\)
+complement closure, but does not by itself preserve the raw H4 packet
+reserve.  Any later physical reassembly loss is charged separately in
+H9.
+\end{theorem}
+
+\begin{proof}
+Apply \cref{prop:disintegration}, then the hypotheses to the two
+disjoint complement sums.  Since a fixed power saving is \(o(X)\),
+their total is \(o(X)\).
+\end{proof}
+
+\begin{remark}[Per-packet estimates are insufficient by themselves]
+If there are \(N_X\) retained packets and only
+\(|\mathcal H_{X,C}|\le X^{1-\sigma+o(1)}\) is known separately,
+triangle summation costs \(N_X\).  The theorem requires the resulting
+aggregate exponent, including this cost, not the best packet
+exponent quoted in isolation.
+\end{remark}
+
+\section{Finite exact regression}
+
+The standard-library script
+\texttt{experiments/tpc116\_tail\_certificate.py} uses rational
+arithmetic to verify:
+\begin{enumerate}[leftmargin=2em]
+\item exact one-fold coverage and exact atom disintegration;
+\item the explicit overlap-defect identity;
+\item Cauchy--Schwarz for rational tail vectors and equality on
+  proportional vectors;
+\item the exact phase-blind supremum for all real sign assignments
+  in finite examples; and
+\item a soft/retained closure ledger that refuses incomplete masks
+  and unknown class bounds.
+\end{enumerate}
+The committed JSON is an algebra regression only.  It contains no
+computed prime-pair evidence and no asymptotic high-tail estimate.
+
+\section{Verdict and next gate}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}p{0.39\textwidth}X@{}}
+\toprule
+Status & Required literal certificate & Consequence\\
+\midrule
+Go for \(o(X)\) closure &
+Complete masks and complete outer soft/retained bounds satisfying
+\cref{thm:closure} &
+The complement is \(o(X)\) at the original normalization; pass the
+same atoms to the TPC-18 cover audit.\\
+Go for the H4 packet interface &
+The preceding certificate with retained exponent
+\(\sigma\ge\sigma_*=1/400\) &
+The raw H4 reserve is preserved; H9 reassembly costs remain
+separate.\\
+Stop phase-blind route &
+Only support/magnitude data are known and their total absolute mass
+is not \(o(X)\) &
+\Cref{thm:phaseblind} is sharp; retain signs or prove energy
+cancellation.\\
+Stop declaration &
+An atom is missing, duplicated, or returned at a changed
+normalization &
+The claimed complete complement is not the original coefficient.\\
+Current TPC state &
+Local high-tail reserves exist, but no archived complete outer
+certificate for every H4 class is supplied here &
+H4 remains open; no zero loss may be entered in the endpoint ledger.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Established.}
+The partition identity, optimal Hilbert bound, phase-blind supremum,
+conditional complement closure and H4 specialization are exact
+\(\Lzero\) statements.  Their
+attachment to the literal TPC labels and normalization is an
+\(\Lone\) interface.
+
+\paragraph{Not established.}
+We do not prove the complete outer energy or absolute mass of any
+growing TPC high/ultra-tail carrier.  We do not verify every H4 atom
+from a machine-readable coefficient archive.  No new \(\Ltwo\)
+fixed-\(h_0\) saving, parity breaking, Hardy--Littlewood asymptotic,
+prime-pair lower bound or twin-prime theorem is obtained.  The next
+gate is a literal TPC-18 block cover and physical residual audit.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

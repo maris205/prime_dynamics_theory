@@ -1,0 +1,555 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{microtype}
+\setlength{\emergencystretch}{3em}
+\def\Urlmuskip{0mu plus 1mu}
+
+\hypersetup{
+  pdftitle={Original Hard-Packet Reconnection: Native-Atom Conservation, Proof-Carrying Reassembly, and an H8 Audit Certificate},
+  pdfauthor={Liang Wang},
+  pdfsubject={A strict audit of the reconnection from the TPC packet architecture to the original TPC-15 fixed-shift scalar packet},
+  pdfkeywords={fixed shift, hard packet, provenance, reconnection, leaf archive, H8, proof audit}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\bfseries Original Hard-Packet Reconnection:\\
+Native-Atom Conservation, Proof-Carrying Reassembly,\\
+and an H8 Audit Certificate}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-MVP1 requires its packet architecture to return to the original
+TPC-15 scalar defect without changing the fixed shift, normalization,
+support, or provenance.  We make that requirement machine-checkable.
+For
+\[
+ Q=\lfloor X^{1/2-\delta}\rfloor,\qquad
+ U=V=\lfloor Q^{1/2}\rfloor,
+\]
+the original packet admits the exact opened form
+\[
+ B_{h_0,\delta}(X)
+ =
+ \sum_{\alpha=(\ell,k,d)\in\cA_X}c_X(\alpha),
+\]
+where
+\[
+ c_X(\ell,k,d)=
+ -\Lambda(\ell)\mu(d)r_Q(\ell k+h_0)W(\ell k/X)
+\]
+and \(\cA_X\) imposes
+\(\ell>U,\ k>V,\ d\mid k,\ d\le V\).
+
+We encode a complete packet analysis by a canonical leaf matrix
+\(M_X^{\rm can}\), whose columns are native atoms and whose rows are
+final leaves.  If \(M_X=M_X^{\rm can}\), if retained and soft leaves
+partition this matrix, and if
+\[
+ \one^TM_X=\one^T,
+\]
+then
+\[
+ B_{h_0,\delta}(X)
+ =
+ \one^TM_X^{\rm ret}c_X+
+ \one^TM_X^{\rm soft}c_X
+\]
+exactly.  A bound
+\(\one^TM_X^{\rm soft}c_X=o(X)\) then gives the required scalar
+reconnection.  The certificate also requires the same \(h_0\), one
+physical normalization, equality of the actual and canonical leaf
+sets, and recoverable native keys.  Merely observing the same scalar
+sum is weaker: it cannot detect null-pair inflation or equal-valued
+surrogate atoms.
+
+Applied to the repository series through TPC-118 as audited on
+26 July 2026, the result is a precise administrative gap statement.
+TPC-15 proves the scalar anchor; several later papers prove local
+identities, provenance interfaces, cover criteria and ledger rules.
+However, the audited snapshot supplies neither one complete canonical
+leaf archive from every opened TPC-15 atom through all retained and
+soft branches nor an alternative exact composite intertwining
+certificate.  In particular, TPC-18 explicitly treats global block
+cover as an additional hypothesis.  Hence the canonical-leaf H8 audit
+defined here is
+\[
+ \boxed{\text{not testable from the current artifacts}.}
+\]
+This is a time-stamped gap certificate, not an impossibility theorem,
+not a claim that this archive format is logically necessary, and not
+an \(\Ltwo\) arithmetic advance.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords:} fixed-shift hard packet; provenance;
+native atoms; exact reassembly; reconnection certificate.
+
+\section{Question, scope, and claim boundary}
+
+For fixed \(h_0\ne0\), real
+\(W\in C_c^\infty((0,\infty))\), and fixed
+\(0<\delta<1/2\), TPC-15 proves
+\begin{equation}
+ \Delta_{h_0,W}(X)
+ =
+ B_{h_0,\delta}(X)
+ +O_{A,h_0,W,\delta}\bigl(X(\log X)^{-A}\bigr)
+ \label{eq:anchor}
+\end{equation}
+for every fixed \(A>0\) \citep{WangTPC15}.  Thus
+\(B_{h_0,\delta}(X)=o(X)\) is equivalent, inside that reduction, to
+the weighted Hardy--Littlewood asymptotic for an admissible even
+\(h_0\).
+
+MVP1 Hypothesis H8 requires all later estimates and reassembly to
+intertwine with this same scalar packet.  It forbids a second global
+normalization, an omitted branch, a duplicated atom, or a surrogate
+Gram matrix \citep{WangMVP1}.  The present paper asks only whether that
+interface has a proof-carrying certificate.  It does not estimate the
+packet.
+
+\begin{definition}[Verdict vocabulary]
+We use four route verdicts.
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \textsc{go}: every required input is proved in one quantifier
+scope;
+\item \textsc{reroute}: a specified subroute has a proved obstruction,
+but another route remains;
+\item \textsc{infeasible}: a theorem contradicts the target under its
+declared assumptions; and
+\item \textsc{not testable}: a required typed input or certificate is
+absent, with no contradiction proved.
+\end{enumerate}
+\end{definition}
+
+The canonical-leaf H8 audit verdict below is \textsc{not testable}.  Calling it
+\textsc{infeasible} would overstate the evidence; calling it
+\textsc{go} would treat local identities as a global composite
+identity.
+
+\section{The TPC-15 native atom archive}
+
+Put
+\[
+ Q=\lfloor X^{1/2-\delta}\rfloor,\qquad
+ U=V=\lfloor Q^{1/2}\rfloor,
+\]
+and
+\[
+ r_Q(n)=\Lambda(n)-
+ \sum_{q\le Q}\frac{\mu(q)}{\varphi(q)}c_q(n).
+\]
+TPC-15 defines
+\begin{equation}
+ B_{h_0,\delta}(X)
+ =
+ -\sum_{\substack{\ell>U\\k>V}}
+ \Lambda(\ell)\beta_V(k)r_Q(\ell k+h_0)W(\ell k/X),
+ \qquad
+ \beta_V(k)=\sum_{\substack{d\mid k\\d\le V}}\mu(d).
+ \label{eq:tpc15-packet}
+\end{equation}
+
+\begin{definition}[Opened native atoms]
+Let \(\cA_X\) consist of triples
+\[
+ \alpha=(\ell,k,d)
+\]
+satisfying
+\[
+ \ell>U,\qquad k>V,\qquad d\mid k,\qquad d\le V,
+\]
+and for which \(W(\ell k/X)\ne0\).  Define
+\begin{equation}
+ c_X(\alpha)
+ =
+ -\Lambda(\ell)\mu(d)r_Q(\ell k+h_0)W(\ell k/X).
+ \label{eq:native-coefficient}
+\end{equation}
+The key retains \(h_0,Q,U,V,W\) as global packet metadata.
+\end{definition}
+
+\begin{proposition}[Exact native-atom anchor]
+\label{prop:native-anchor}
+One has the finite identity
+\begin{equation}
+ \boxed{
+ B_{h_0,\delta}(X)
+ =\sum_{\alpha\in\cA_X}c_X(\alpha).}
+ \label{eq:opened-anchor}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert the divisor expansion of \(\beta_V(k)\) in
+\eqref{eq:tpc15-packet} and interchange finite sums.
+\end{proof}
+
+\begin{remark}[Why the opened key is necessary]
+The compressed pair \((\ell,k)\) is sufficient to evaluate the scalar
+packet, but it is not sufficient to audit later divisor-prefix,
+content, lcm, and determinant branches.  Opening \(d\) makes the
+M\"obius sign and every later partition assignment traceable.  The
+opening is exact algebra, not an estimate.
+\end{remark}
+
+\section{A proof-carrying reconnection theorem}
+
+Let \(\cL_X\) be a finite set of final leaf records.  A leaf may be a
+retained packet term or a term assigned to an exactly defined soft
+remainder.  Linear analysis of the native coefficient vector
+\[
+ c_X=(c_X(\alpha))_{\alpha\in\cA_X}
+\]
+is described by a matrix
+\[
+ M_X\in\C^{\cL_X\times\cA_X}.
+\]
+Its synthesized scalar is \(\one^TM_Xc_X\).
+
+\begin{definition}[Canonical leaf archive]
+A canonical leaf archive consists of:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item an expected leaf set \(\cL_X^{\rm can}\) generated by the
+declared partitions, polarizations, frequency bands, content branches,
+and boundary rules;
+\item an expected matrix \(M_X^{\rm can}\);
+\item for every nonzero entry, a recoverable native atom, complete
+branch path, fixed-shift tag, and normalization tag; and
+\item a disjoint typed partition
+\[
+ M_X^{\rm can}=M_X^{\rm ret}+M_X^{\rm soft}.
+\]
+\end{enumerate}
+An implementation passes the canonical audit only when its leaf set,
+keys, and matrix equal the declared archive entrywise.
+\end{definition}
+
+\begin{theorem}[Sufficient proof-carrying H8 certificate]
+\label{thm:h8}
+Assume:
+\begin{align}
+ \cL_X&=\cL_X^{\rm can},
+ &
+ M_X&=M_X^{\rm can},
+ \label{eq:canonical-equality}\\
+ M_X&=M_X^{\rm ret}+M_X^{\rm soft},
+ &
+ \one^TM_X&=\one^T,
+ \label{eq:conservation}
+\end{align}
+and assume every active matrix entry retains the same prescribed
+\(h_0\), the TPC-15 normalization, and a recoverable
+\(\alpha\in\cA_X\).  Then
+\begin{equation}
+ \boxed{
+ B_{h_0,\delta}(X)
+ =
+ \one^TM_X^{\rm ret}c_X+
+ E_{\rm soft}(X),}
+ \qquad
+ E_{\rm soft}(X)=\one^TM_X^{\rm soft}c_X.
+ \label{eq:exact-reconnection}
+\end{equation}
+If, in addition, the complete outer soft sum satisfies
+\[
+ E_{\rm soft}(X)=o(X),
+\]
+then the retained synthesis reconnects to the original packet up to
+\(o(X)\).
+\end{theorem}
+
+\begin{proof}
+By \cref{prop:native-anchor} and \eqref{eq:conservation},
+\[
+ B_{h_0,\delta}(X)=\one^Tc_X=\one^TM_Xc_X.
+\]
+Insert the typed matrix partition in \eqref{eq:conservation}.  The
+metadata hypotheses ensure that this equality concerns the same
+physical coefficient rather than an averaged shift or rescaled
+surrogate.
+\end{proof}
+
+\begin{remark}[Sufficient archive, not a unique proof language]
+\label{rem:not-necessary}
+The entrywise equality \(M_X=M_X^{\rm can}\) is a strong,
+machine-checkable sufficient certificate.  MVP1 H8 could instead be
+established by another exact composite symbolic intertwining that
+proves the same no-omission, no-duplication, fixed-shift,
+normalization and provenance statements without materializing this
+particular matrix.  Absence of the archive therefore does not prove
+that H8 is false or that no other proof exists.
+\end{remark}
+
+\begin{corollary}[Coefficientwise audit]
+\label{cor:column}
+The conservation equation is equivalent to
+\[
+ \sum_{\lambda\in\cL_X}M_X(\lambda,\alpha)=1
+ \qquad(\alpha\in\cA_X).
+\]
+Thus deletion, uncompensated duplication, or global rescaling is
+detected column by column.
+\end{corollary}
+
+\begin{remark}[Exact identity before estimation]
+A soft remainder is not permission to discard a branch.  The branch
+first appears in the exact matrix partition; only then may its complete
+outer scalar be estimated by \(o(X)\).  Sectorwise or sampled smallness
+does not fill this slot.
+\end{remark}
+
+\section{Why scalar equality is not a provenance certificate}
+
+\begin{proposition}[Null-pair and surrogate nonidentifiability]
+\label{prop:null}
+Knowledge that
+\[
+ \one^TM_Xc_X=\one^Tc_X
+\]
+for one coefficient vector does not imply
+\eqref{eq:canonical-equality} or \eqref{eq:conservation}.  This remains
+true even when the two scalar sums agree exactly.
+\end{proposition}
+
+\begin{proof}
+Append to one atom two noncanonical leaves with multipliers \(t\) and
+\(-t\).  Their scalar contribution is zero, but the leaf archive has
+been inflated.  Alternatively, if two native atoms happen to have the
+same numerical coefficient, exchange one for the other.  The scalar
+does not change, while source provenance does.  Both operations violate
+the canonical archive.
+\end{proof}
+
+\begin{example}[Second normalization]
+Replacing every leaf multiplier by \(\gamma_XM_X\) gives a scalar
+\(\gamma_XB_{h_0,\delta}(X)\).  A later division by \(\gamma_X\) may
+restore the displayed number, but it introduces a second global
+normalization and changes every intermediate natural scale.  H8
+requires the normalization tag to remain the inherited physical one.
+\end{example}
+
+\begin{example}[Shift substitution]
+An average
+\[
+ \frac1{|\mathcal H_X|}\sum_{h\in\mathcal H_X}
+ B_{h,\delta}(X)
+\]
+cannot be tagged \(h_0\) merely because \(h_0\in\mathcal H_X\).  The
+leaf archive must return the same prescribed shift term by term, unless
+a separate localization theorem is included with its cost.
+\end{example}
+
+\begin{remark}[Quadratic surrogates]
+A \(TT^*\), Gram, determinant-energy, or Fourier-energy identity is a
+tool for bounding a linear packet.  It is not itself a reconnection
+map.  The final archive must return from the quadratic statistic to the
+linear leaf coefficients with the exact prefactor and all losses
+recorded once.
+\end{remark}
+
+\section{Time-stamped artifact manifest and chain audit}
+
+The following manifest records the repository series through TPC-118
+as inspected on 26 July 2026 and only the interfaces relevant to H8.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.15\textwidth}p{0.35\textwidth}X@{}}
+\toprule
+Source & Established interface & H8 consequence\\
+\midrule
+TPC-15
+& Exact scalar reduction and the opened identity
+\eqref{eq:opened-anchor}
+& Native entrance is proved.\\
+TPC-16
+& Exact square-root and dyadic normal forms on declared parameter
+ranges \citep{WangTPC16}
+& Local changes of variables are usable, but do not alone enumerate
+the later final leaves.\\
+TPC-17
+& Exact dyadic partition and prefix--tail coefficient split on each
+admissible block \citep{WangTPC17}
+& The local column split is proved where its hypotheses hold.\\
+TPC-18
+& Exact lcm, Gram, determinant, and content identities for symmetric
+tail blocks \citep{WangTPC18}
+& Its global closure corollary explicitly assumes a full block cover;
+that cover is not proved there.\\
+TPC-93
+& Lossless local content extraction and affine export
+\citep{WangTPC93}
+& Supports a local provenance edge; it is not a composite archive from
+\(\cA_X\).\\
+TPC-103
+& Six-ledger factor audit and one inherited normalization
+\citep{WangTPC103}
+& Confirms local atom metadata, not global completeness.\\
+TPC-105
+& Recoverable provenance bag and input profile under equal-map
+quotienting \citep{WangTPC105}
+& Prevents local quotient loss; no all-branch leaf list is produced.\\
+TPC-107
+& Exact finite reordering of the signed resonant sum
+\citep{WangTPC107}
+& A valid local linear identity, conditional on its imported atom
+family.\\
+TPC-108--112
+& Exact arithmetic gates, Gram diagnostics, and exponent ledgers
+\citep{WangTPC108,WangTPC112}
+& These are estimates or criteria; they do not supply the missing
+composite reconnection matrix.\\
+TPC-113--115
+& Quotient-frame conditioning, native residual grouping and the exact
+fixed-shift evaluation criterion
+\citep{WangTPC113,WangTPC114,WangTPC115}
+& Exact local operator criteria; the actual growing H9 composite,
+native census and physical shift profile remain uninstantiated.\\
+TPC-116
+& Conditional complete-mask tail closure at the original
+normalization \citep{WangTPC116}
+& Defines the required archive and bounds, but does not verify the
+actual growing mask family or complete outer estimates.\\
+TPC-117
+& Exact full-block range/residual criterion \citep{WangTPC117}
+& The actual growing \(B_X,w_X\) archive is absent, so the physical
+cover test is not executable in the snapshot.\\
+TPC-118
+& Nonduplicated endpoint registry and exact certificate logic
+\citep{WangTPC118}
+& The actual theorem-backed registry is incomplete and does not
+supply a composite leaf archive.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{theorem}[Snapshot verdict for the canonical-leaf audit]
+\label{thm:verdict}
+In the manifest above, the established artifacts do not contain the data required to evaluate
+\eqref{eq:canonical-equality}--\eqref{eq:conservation} for the complete
+TPC-15 native archive, nor do they contain another complete exact
+intertwining certificate.  Therefore
+\[
+ \boxed{
+ \operatorname{Audit}^{\rm can}_{\mathrm{H8}}
+ =
+ \textnormal{\textsc{not testable from current artifacts}}.}
+\]
+Here ``current'' means the enumerated repository snapshot audited on
+26 July 2026.  This verdict neither proves that H8 is false nor
+supplies an \(\Ltwo\) estimate.
+\end{theorem}
+
+\begin{proof}
+The cited papers prove multiple local identities.  However, no single
+artifact enumerates, for every \(\alpha=(\ell,k,d)\in\cA_X\), every
+final retained and soft descendant, its exact multiplier, branch path,
+shift tag, and normalization tag.  In particular, the TPC-18
+full-block return is stated under an additional global-cover
+hypothesis.  Hence the actual matrix and canonical matrix required by
+\eqref{eq:canonical-equality} cannot presently be compared; the
+manifest also contains no alternative complete symbolic
+intertwining.
+\end{proof}
+
+\begin{remark}[Why this is not a global stop]
+The missing object is finite and algebraic at each \(X\).  It may be
+constructible from the existing local identities plus a complete cover
+theorem.  No counterexample to that construction is proved here.
+\end{remark}
+
+\section{Minimal completion artifact and claim ledger}
+
+A future proof-carrying H8 artifact should contain:
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=2.7em]
+\item the exact TPC-15 metadata
+\((X,h_0,\delta,Q,U,V,W)\);
+\item every active opened atom \((\ell,k,d)\) and
+\eqref{eq:native-coefficient};
+\item the deterministic expected branch paths through every partition,
+polarization, content, frequency, boundary, and return rule;
+\item the actual final leaf set and exact multipliers;
+\item the retained/soft type of each leaf;
+\item column conservation, unique canonical leaf identifiers, and
+fixed-shift/normalization checks; and
+\item an analytic citation for the complete outer soft bound.
+\end{enumerate}
+
+The accompanying script verifies the finite logic on an exact rational
+model.  It rejects deletion, rescaling, a wrong shift, a second
+normalization, scalar-preserving null pairs, and equal-valued surrogate
+provenance.  It does not pretend to contain the missing physical
+archive.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.34\textwidth}X@{}}
+\toprule
+Statement & Status\\
+\midrule
+TPC-15 opened native-atom identity
+& Exact \(\Lzero/\Lone\) interface.\\
+Proof-carrying matrix criterion
+& Exact finite theorem (\(\Lzero\)).\\
+Existing local provenance transformations
+& Several proved \(\Lone\) edges.\\
+Complete physical leaf archive and column audit
+& Absent in the dated manifest; the canonical H8 audit is not
+testable.\\
+Complete outer soft remainder \(o(X)\)
+& Must be cited branch by branch; not proved here.\\
+Growing fixed-\(h_0\) arithmetic saving
+& Not proved; no \(\Ltwo\) event.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Explicit exclusions.}
+This paper proves no signed affine M\"obius cancellation, no
+determinant-energy lower bound, no zero-mode saving, no physical
+endpoint estimate, no parity breakthrough, no Hardy--Littlewood
+asymptotic, and no prime-pair or twin-prime theorem.  Nothing is
+specialized to \(h_0=2\).
+
+\begingroup
+\scriptsize
+\setlength{\bibsep}{1pt}
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

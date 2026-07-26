@@ -1,0 +1,548 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=0.88in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,longtable,array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,
+ citecolor=blue!60!black,urlcolor=blue!65!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{microtype}
+
+\setlength{\emergencystretch}{3em}
+\def\Urlmuskip{0mu plus 1mu}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\hypersetup{
+ pdftitle={TPC-MVP2: A Typed Global Route Decision after TPC-103--119},
+ pdfauthor={Liang Wang},
+ pdfsubject={Certified gates, stopped subroutes, open inputs, and the next minimal tests in the fixed-shift TPC program},
+ pdfkeywords={fixed shift, typed dependency graph, proof audit, stop-go decision, endpoint budget, parity frontier}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Lam}{\Lambda_{\mathrm{phys}}}
+\newcommand{\epsend}{\frac1{400}}
+\newcommand{\GO}{\textnormal{\textsc{go}}}
+\newcommand{\RE}{\textnormal{\textsc{reroute}}}
+\newcommand{\INF}{\textnormal{\textsc{infeasible}}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+
+\title{\bfseries TPC-MVP2: A Typed Global Route Decision\\
+after TPC-103--119\\[0.3em]
+\large Certified Gates, Stopped Subroutes, Open Inputs,\\
+and the Next Minimal Tests}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-MVP1 resolved a proposed fixed-shift route into nine explicit
+working hypotheses H1--H9.  TPC-103--119 then tested its positive
+resonance, generic signed, determinant--zero, physical reconstruction,
+endpoint, and reconnection interfaces.  We now place those results in
+one typed directed acyclic graph.  Each node records its literal
+object, fixed-shift quantifiers, normalization, evidence level, and
+status.  This prevents a finite identity, a growing-family estimate,
+and a fixed-\(h_0\) arithmetic saving from being interchanged.
+
+The audit contains genuine progress.  It proves, among other
+interfaces, an opened-atom cap, exact mass disintegration, a
+provenance-preserving affine quotient, signed-filter identities,
+post-bin determinant geometry, zero-mode duality, an exponent cone,
+and exact tests for physical frames, localization, cover, endpoint
+optimization, and native-atom reconnection.  It also stops several
+specific subroutes: coefficient-blind distinctness, free-phase
+prime-square arguments, and phase-blind complete-tail closure cannot
+by themselves deliver the required conclusion.
+
+The complete route nevertheless has neither a proved H1--H9
+conjunction nor a theorem contradicting every allowed realization.
+Actual growing inputs are missing at H2--H7, the executable physical
+archives selected for the H6/H8 audits are absent, no alternative
+complete H8 intertwining is present in the audited snapshot, and the
+endpoint ledger is incomplete.  Therefore the exact global verdict is
+\[
+ \boxed{\text{\normalfont\textsc{not-testable}}}.
+\]
+It is not \(\GO\), not a global \(\INF\) verdict, and not evidence for
+a prime-pair lower bound.  Local \(\RE\) labels remain attached only
+to the subroutes actually stopped.  We finish with four minimal next
+tests: two determinant--zero exponent certificates, a complete
+native-atom archive, and one literal H3 block test.  This is an
+\(\Lzero/\Lone\) route audit; no new \(\Ltwo\) cancellation theorem is
+claimed.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords:} fixed shift; typed proof graph; route
+audit; endpoint budget; determinant zero mode; physical
+reconnection.
+
+\section{Scope and decision vocabulary}
+
+Fix a prescribed nonzero shift \(h_0\), a smooth compactly supported
+weight \(W\), and the original scalar packet
+\(B_{h_0,\delta}(X)\) of TPC-15 \citep{WangTPC15}.  TPC-MVP1 is a
+conditional architecture: its hypotheses H1--H9 were designed so
+that their conjunction, in one literal normalization, implies
+\[
+ B_{h_0,\delta}(X)=o(X),
+\]
+which TPC-15 reconnects to the corresponding weighted fixed-shift
+prime-pair asymptotic \citep{WangMVP1}.  The converse is not claimed;
+the architecture may be stronger than its scalar target.
+
+The present paper asks a narrower administrative question:
+\begin{quote}
+After TPC-103--119, can every required edge of that particular
+architecture be called with theorem-backed data?
+\end{quote}
+It does not infer unproved arithmetic from the usefulness of the
+architecture.
+
+\begin{definition}[Evidence level]
+\label{def:levels}
+An \(\Lzero\) result is an abstract finite or functional-analytic
+identity.  An \(\Lone\) result identifies that identity with the
+literal TPC object and its normalization.  An \(\Ltwo\) result is a
+growing, fixed-\(h_0\), coefficient-specific arithmetic estimate
+with the power saving required by a hypothesis.  Passing from
+\(\Lzero\) to \(\Lone\), or from \(\Lone\) to \(\Ltwo\), requires an
+explicit theorem.
+\end{definition}
+
+\begin{definition}[Node record]
+\label{def:record}
+A node record is the six-tuple
+\[
+ {\mathfrak n}
+ =
+ (\text{object},\text{quantifiers},\text{normalization},
+  \text{provenance},\text{evidence},\text{status}).
+\]
+It is \emph{typed} only when none of these fields is inferred from an
+ambient, averaged-shift, surrogate, or differently normalized
+object.
+\end{definition}
+
+\begin{definition}[Statuses and route verdicts]
+\label{def:verdicts}
+For an individual target, \(\PROVED\) means that its statement is a
+theorem at the declared type; \(\OPEN\) means that the literal target
+is specified but its estimate is unproved; \(\NT\) means that a
+required archive, exponent, or compatibility input is absent, so the
+current artifacts cannot execute the test.  A conditional interface
+records an exact implication whose hypotheses are still open.
+
+For route decisions, \(\GO\) requires every necessary node and the
+strict endpoint.  \(\RE\) means that a named subroute is stopped while
+an alternative remains.  \(\INF\) requires a theorem excluding every
+allowed realization of the declared route.  A missing theorem is
+neither \(\INF\) nor evidence against the underlying number-theoretic
+statement.
+
+The auxiliary label \(\textsc{stop route}\) means that all other gates
+for one fully specified literal route are proved but its complete
+endpoint registry has certified value at least \(1/400\).  It stops
+that declared route only.  It becomes \(\RE\) when a typed alternative
+is available, and it is not global \(\INF\) unless every allowed route
+is excluded.
+\end{definition}
+
+\section{A typed decision calculus}
+
+Let \({\cal H}=\{H1,\ldots,H9\}\) be the MVP1 gates.  An evidence
+paper may supply an exact identity to a gate, isolate a missing
+growing input, or stop a particular sufficient subroute.  None of
+those actions changes the statement of another gate.
+
+\begin{theorem}[Global decision rule]
+\label{thm:decision}
+For the declared MVP1 architecture, use the following mutually
+exclusive rule.
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item Return \(\GO\) only if every gate in \({\cal H}\) has a proved
+  typed record in one compatible quantifier scope and the actual
+  physical ledger satisfies \(\Lam<1/400\).
+\item Return \(\INF\) only if theorem-backed lower bounds or logical
+  incompatibilities contradict every admissible realization of a
+  necessary gate.
+\item Return \(\RE\) for a selected subroute when that subroute is
+  stopped but a typed alternative remains.
+\item Otherwise, if a necessary estimate or typed input is open or
+  absent, return \(\NT\).
+\end{enumerate}
+In particular, a stopped subroute cannot be promoted to global
+\(\INF\), and an unknown endpoint token cannot be set to zero to
+produce \(\GO\).
+\end{theorem}
+
+\begin{proof}
+Item (i) is the invocation rule for the conditional synthesis theorem
+of MVP1.  If one premise lacks a typed theorem, modus ponens is not
+available.  Item (ii) requires universal coverage of the permitted
+realizations; a counterexample to one sufficient bound or one
+representation has weaker quantifiers.  Item (iii) preserves that
+distinction.  The remaining case is precisely the absence of enough
+information to execute either the upper or lower certificate, which
+is \(\NT\) by \cref{def:verdicts}.  Finally, inserting zero for an
+unknown nonnegative loss changes the physical optimization problem
+rather than solving it.
+\end{proof}
+
+\subsection{The dependency graph}
+
+The audit graph separates evidence bundles from gates and gates from
+the final conditional synthesis:
+\[
+\begin{array}{c@{\quad}c@{\quad}c}
+\boxed{\text{TPC-103--109}}&
+\boxed{\text{TPC-110--112}}&
+\boxed{\text{TPC-113--119}}\\
+\downarrow&&\downarrow\qquad\downarrow\\[-0.2em]
+\{H2,H3\}&\{H5\}&\{H1,H4,H6,H7,H8,H9\}\\
+\multicolumn{3}{c}{\searrow\qquad\downarrow\qquad\swarrow}\\[-0.2em]
+\multicolumn{3}{c}{
+\boxed{\text{typed H1--H9 conjunction at fixed }h_0}}\\
+\multicolumn{3}{c}{\downarrow}\\[-0.2em]
+\multicolumn{3}{c}{
+\boxed{B_{h_0,\delta}(X)=o(X)\ \text{within the MVP1 route}}.}
+\end{array}
+\]
+This display is an audit DAG, not a claim that one evidence paper
+proves the gate below it.  Every H-node is an ancestor of the final
+conditional target; its status is given in \cref{tab:gates}.
+
+\section{Paper-by-paper audit: TPC-103--119}
+
+\Cref{tab:papers-a,tab:papers-b} record the strongest exact result and
+the missing item that prevents overpromotion.  ``L1 interface'' can
+include an exact finite identity on the literal carrier; it does not
+mean that the required growing estimate follows.
+
+\begin{table}[htbp]
+\centering
+\caption{Positive, generic, and determinant--zero audits.}
+\label{tab:papers-a}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.055\textwidth}p{0.42\textwidth}
+ p{0.16\textwidth}Y@{}}
+\toprule
+TPC & Exact contribution & Status & Unresolved or stopped item\\
+\midrule
+103 & Opened-atom cap \(W_X=X^{o(1)}\) on the normalized literal
+carrier. & \(\PROVED\), L1 & The other H2 ledgers are not implied.\\
+104 & Exact principal-mass disintegration before width grouping. &
+L1 interface & Actual endpoint and inverse-length mass bounds are
+\(\OPEN\).\\
+105 & Provenance-preserving quotient by equal literal affine maps. &
+\(\PROVED\), L1 & Growing class census \(U_X\) and distinct-map target
+remain \(\OPEN\).\\
+106 & Exact distinct-map character/Gram identity. &
+L1; \(\RE\) & Geometry-only distinctness is stopped; actual profile
+coherence remains \(\OPEN\).\\
+107 & Exact signed-filter-before-majorant identity. &
+\(\PROVED\), L1 & A growing signed-energy bound is \(\OPEN\).\\
+108 & Exact literal-block \(TT^*\), aliasing, and obstruction
+identities. & L1 interface & The H3 power saving is \(\OPEN\); a broad
+Chowla-strength replacement is not available.\\
+109 & Exact coherent prime-square free-phase interval and sharp
+saturation. & L1; \(\RE\) & Coefficient-blind/free-phase route is
+stopped; literal coefficient-specific phases remain \(\OPEN\).\\
+110 & Post-bin SVD and
+\(D_X=E_X\alpha_X\overline m_X\). &
+\(\PROVED\), L1 identity & An actual lower bound for its three
+growing inputs is \(\OPEN\).\\
+111 & Exact zero-mode coarsening invariance and signed-prefix/BV
+duality. & \(\PROVED\), L1 identity & The growing zero-mode exponent
+\(\eta_Z\) is \(\OPEN\).\\
+112 & Exact compatibility cone
+\(\lambda_D\le2\eta_Z\) and separate-reserve rule. &
+Conditional L1 & Neither actual exponent is certified; H5 is not
+thereby proved.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Physical, endpoint, and reconnection audits.}
+\label{tab:papers-b}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.055\textwidth}p{0.42\textwidth}
+ p{0.16\textwidth}Y@{}}
+\toprule
+TPC & Exact contribution & Status & Unresolved or stopped item\\
+\midrule
+113 & Declared quotient condition number
+\(\kappa_{\rm q}=\sigma_{\max}/\sigma_{\min}^{+}\) and a sharp
+coherence obstruction. & Conditional L1 interface & The actual H9
+operator factorization, norm conversion, and growing exponent are
+\(\OPEN\).\\
+114 & Literal residual coarea, native maps, Gram dictionary, and
+collision-kernel obstruction. & L1 interface & Actual grouping
+census, protected complement, H9 norm conversion, and native lower
+transfer are \(\OPEN\).\\
+115 & Exact fixed-\(h_0\) evaluation/Christoffel cost
+\(K=b_0^*G^\dagger b_0\). & L1 interface & Actual profile subspace
+and growing localization cost are \(\OPEN\).\\
+116 & Exact conditional closure theorem and phase-blind obstruction. &
+L1; local \(\RE\) & Complete outer tail bound is \(\OPEN\);
+phase-blind closure is stopped.\\
+117 & Exact full-cover test
+\(P=BB^\dagger\), residual \((I-P)w\). &
+\(\NT\) for H6 & The actual growing \(B,w\) archive and residual
+estimate are absent.\\
+118 & Nonduplicated physical ledger and exact rational primal--dual
+endpoint logic. & \textsc{incomplete} & Several actual growing costs
+are unknown; no strict endpoint certificate exists.\\
+119 & Native-atom conservation and a sufficient canonical
+reconnection-matrix criterion. & \(\NT\) for its H8 audit & The dated
+snapshot has neither the selected complete leaf archive nor another
+complete exact intertwining joining every TPC-15 atom to the final
+synthesis.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The detailed statements appear in TPC-103--112
+\citep{WangTPC103,WangTPC104,WangTPC105,WangTPC106,WangTPC107,
+WangTPC108,WangTPC109,WangTPC110,WangTPC111,WangTPC112} and
+TPC-113--119
+\citep{WangTPC113,WangTPC114,WangTPC115,WangTPC116,WangTPC117,
+WangTPC118,WangTPC119}.  TPC-18 itself treats a complete global block
+cover as an additional hypothesis \citep{WangTPC18}; local block
+identities therefore cannot silently supply the executable
+certificates missing in TPC-117 or TPC-119.
+
+\section{Projection onto H1--H9}
+
+\begin{table}[htbp]
+\centering
+\caption{Current status of every required MVP1 gate.}
+\label{tab:gates}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.07\textwidth}p{0.27\textwidth}
+ p{0.16\textwidth}Y@{}}
+\toprule
+Gate & Literal role & Status & Reason\\
+\midrule
+H1 & Canonical physical synthesis & \(\NT\) & Exact frame and native
+Gram criteria exist, but no complete actual-carrier frame/archive or
+proved growing cost is supplied.\\
+H2 & Literal positive resonance & \(\OPEN\) & The atom cap is proved;
+principal/cross-map/coherence ledgers are not.  Some geometry-only
+subroutes are stopped.\\
+H3 & Restricted signed affine arithmetic & \(\OPEN\) & The literal
+\(TT^*\) object is isolated, but no fixed-\(h_0\)
+\(X^{-1/200+o(1)}\) correlation saving is proved.\\
+H4 & Complete high/ultra return & \(\OPEN\) & Conditional closure and
+an obstruction are known; the complete original-normalization outer
+bound is not.\\
+H5 & Determinant/zero compatibility & \(\NT\) & The cone is exact,
+but the actual \(\lambda_D,\eta_Z\) inputs are absent.\\
+H6 & Full-block physical return & \(\NT\) & The exact projector test
+cannot be run without the growing physical \(B,w\) archive.\\
+H7 & Prescribed-\(h_0\) localization & \(\OPEN\) & The exact
+Christoffel cost is known; the literal profile and subcritical
+growing bound are not.\\
+H8 & Original-packet reconnection & \(\NT\) & Native conservation is
+exact, but the sufficient proof-carrying leaf matrix selected in
+TPC-119 is absent and the audited snapshot contains no alternative
+complete exact intertwining.\\
+H9 & Strict endpoint & \(\NT\) & The LP logic is exact; the actual
+token registry is incomplete, so \(\Lam<1/400\) is uncertified.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{theorem}[MVP2 global verdict]
+\label{thm:verdict}
+For the artifacts TPC-103--119 and the H1--H9 architecture stated in
+TPC-MVP1,
+\[
+ \boxed{\operatorname{Verdict}_{103:119}=\NT.}
+\]
+There is no established \(\Ltwo\) gate in this audit.  The result is
+not a global \(\INF\) certificate.
+\end{theorem}
+
+\begin{proof}
+\Cref{tab:gates} contains four explicitly open gates and five gates
+whose actual test lacks a required typed input.  Hence the premise of
+\cref{thm:decision}(i) fails.  TPC-106, TPC-109, and TPC-116 stop
+only coefficient-blind, free-phase, or phase-blind sufficient
+subroutes; coefficient-specific signed routes remain logically
+available.  Thus the universal premise of
+\cref{thm:decision}(ii) is absent.  Applying item (iv) gives
+\(\NT\).  None of the papers listed in
+\cref{tab:papers-a,tab:papers-b} supplies the fixed-shift growing
+cancellation demanded in \cref{def:levels}, so no \(\Ltwo\) gate is
+established.
+\end{proof}
+
+\begin{remark}[What has moved forward]
+The verdict does not mean ``no progress.''  Before these audits, an
+apparent failure could be hidden among normalization, aliasing,
+coherence, zero mode, cover, or reconnection.  The current graph gives
+exact tests for those interfaces and identifies which data must be
+measured or proved.  That is structural \(\Lone\) progress.  It is
+not fixed-\(h_0\) parity cancellation.
+\end{remark}
+
+\section{The strict endpoint is an independent stop gate}
+
+TPC-118 represents every physical reconstruction event by one
+amplitude-loss token, merges exact duplicates, and replaces
+constituent tokens only when a joint theorem actually subsumes them
+\citep{WangTPC118}.  On a fixed affine route cell the decision is an
+exact rational linear program with optimum \(\Lambda_*\).  Its
+interpretation is
+\[
+\begin{array}{ccl}
+\Lambda_*<1/400
+ &\Longrightarrow& \GO\ \text{for a complete theorem-backed ledger},\\
+\Lambda_*=1/400
+ &\Longrightarrow& \text{equality stop},\\
+\Lambda_*>1/400
+ &\Longrightarrow& \text{stop that route},\\
+\text{required token unknown}
+ &\Longrightarrow& \NT.
+\end{array}
+\]
+
+\begin{proposition}[No zero-filling and no reserve reuse]
+\label{prop:endpoint}
+The current endpoint cannot be certified by either
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item assigning exponent \(0\) to an unknown frame, grouping,
+localization, tail, or cover cost; or
+\item spending slack from the determinant--zero condition
+\(\lambda_D\le2\eta_Z\) as physical endpoint slack.
+\end{enumerate}
+Moreover, equality \(\Lam=1/400\) does not pass H9.
+\end{proposition}
+
+\begin{proof}
+Operation (a) changes an incomplete physical ledger into a different
+optimization problem.  Operation (b) merges two ledgers that
+TPC-112 and MVP1 declare independent absent a new intertwining
+theorem \citep{WangTPC112,WangMVP1}.  Finally, the synthesis starts
+from a packet saving of \(1/400\); equality consumes the whole
+fixed-power reserve and leaves only an \(X^{1+o(1)}\) upper bound,
+which does not certify \(o(X)\).
+\end{proof}
+
+\section{The next four minimal tests}
+
+The decision graph recommends small falsifiable gates rather than a
+new global claim.
+
+\paragraph{TPC-121: actual post-bin fiber phase/participation.}
+TPC-110 gives
+\[
+ D_X=E_X\alpha_X\overline m_X.
+\]
+The next determinant test should preserve the actual post-bin fibers
+and certify the diagonal energy scale, the coefficient-specific
+phase/kernel angle, and effective fiber participation.  Success
+would supply a candidate \(\lambda_D\); failure could stop that
+coherence mechanism without stopping every H5 route.
+
+\paragraph{TPC-122: signed-prefix/BV/content transfer.}
+Use the exact Abel/BV duality of TPC-111 on the literal ordered
+fibers.  A theorem must retain the arithmetic sign and fixed \(h_0\),
+bound signed prefixes, charge the reconstruction BV envelope, and
+control the content remainder.  Its output is a candidate
+\(\eta_Z\), to be compared with \(\lambda_D/2\), not a generic
+nonzero-frequency spectral gap.
+
+\paragraph{TPC-123: complete native-atom archive.}
+Independently of H5, instantiate the TPC-119 canonical matrix:
+every opened atom \((\ell,k,d)\) must have one recoverable provenance
+key, every retained or soft leaf must appear, and column conservation
+must hold at the same \(h_0\) and normalization.  A failed audit
+locates the first missing, duplicated, rescaled, or surrogate branch.
+
+\paragraph{TPC-124: one literal H3 block.}
+Select one actual long generic affine block and preserve its M\"obius
+weights, \(r\)-dependent phase, affine character, reconstruction
+multiplier, all prefixes, and prescribed shift.  Compute the exact
+normalization and test a rigorous upper/lower interval for its signed
+\(TT^*\) correlation.  A finite experiment can choose the next
+analytic lemma, but only a growing uniform theorem would count as
+\(\Ltwo\).
+
+\begin{corollary}[Interpretation of the next queue]
+TPC-121 and TPC-122 attack the two missing exponent inputs of H5.
+TPC-123 attacks the H1/H6/H8 physical archive, while TPC-124 attacks
+H3 directly.  Progress on one branch may be published independently,
+but none substitutes for the others in the H1--H9 conjunction.
+\end{corollary}
+
+\section{Reproducible audit and claim boundary}
+
+The standard-library script
+\texttt{experiments/tpc120\_global\_route\_audit.py} encodes the
+paper-to-gate edges and verifies:
+\begin{enumerate}[leftmargin=2em]
+\item all nine H-nodes occur and have evidence ancestors;
+\item no TPC-103--119 record is labeled as a proved \(\Ltwo\) result;
+\item open or absent required inputs return \(\NT\);
+\item a local stopped subroute is not global \(\INF\);
+\item strict-below, equality, strict-above, and incomplete endpoint
+  examples have four different outcomes;
+\item unknown costs are not converted into a zero-cost certificate;
+  and
+\item the next queue is exactly TPC-121--124.
+\end{enumerate}
+The generated JSON is a regression artifact for the decision logic.
+It is not a computation of any prime or M\"obius correlation.
+
+\paragraph{Established.}
+The status calculus, typed dependency graph, exact endpoint decision
+rule, and paper-to-gate audit are \(\Lzero/\Lone\).  The cited papers
+contain the individual exact identities summarized above.
+
+\paragraph{Not established.}
+This paper proves no H1--H9 conjunction, no strict actual-carrier
+\(\Lam<1/400\) bound, no \(B_{h_0,\delta}(X)=o(X)\) estimate, and no
+new \(\Ltwo\) fixed-shift cancellation.  It does not break the parity
+barrier, prove a Hardy--Littlewood asymptotic, produce a prime-pair
+lower bound, or prove the twin-prime conjecture.  Its conclusion is a
+route decision: the path still has typed alternatives, but the
+current archive is insufficient to decide their success.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}
