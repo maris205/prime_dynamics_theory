@@ -1,0 +1,49 @@
+{
+  "external_inputs": {
+    "rh160_archive": {
+      "path": "papers/RH-160-conditional-all-level-reset-dichotomy/results/archive_verification.json",
+      "sha256": "0cf4a9c1f63f2301e356d1da7073fc5c09148793239655273114406d4fbef13b"
+    },
+    "rh45_archive": {
+      "path": "papers/RH-45-bulk-two-step-trace-norm-determinant/results/archive_verification.json",
+      "sha256": "b37a0da848b9c5ed149f005d5859adf81a897a8256fe06219eba8382687ee684"
+    },
+    "rh80_archive": {
+      "path": "papers/RH-80-moving-cloud-relative-determinant/results/archive_verification.json",
+      "sha256": "bd50e80d5804aa89abff0f56b611714c1d97831d9a934d472cf93782973ea2db"
+    },
+    "rh8_temporal_summary": {
+      "path": "papers/RH-8-time-ordered-cycle-curvature/results/temporal_orientation_summary.json",
+      "sha256": "2d34b9ee4e0a1cff69304b61a5dbe67d49b2a52a68d5c74f12bf618b25e45e5a"
+    },
+    "rh_mvp1_archive": {
+      "path": "papers/RH-MVP1-conditional-prime-dynamics-hilbert-polya-roadmap/results/archive_verification.json",
+      "sha256": "119bb5210bc6c2ca16c4089fce8d6fcc707e7867566791ad6ee770c1d1c10ef4"
+    }
+  },
+  "local_sources": {
+    "experiments/build_archive.py": "5e03a41c84769597f4dda321a5a0d4a382c7d0f8521cbf9786b81eb423b16c91",
+    "experiments/build_typed_assembly_audit.py": "899c1e7f87e475def374600c011417005c077b9af8e68145668ac35ac94b1ff9",
+    "experiments/make_figures.py": "fb42faa9c2f84397a44d69ccfa87d89f894c384af29e87d27666ca668940f1d0",
+    "experiments/verify_archive.py": "737a72bc0874050163c95028248aaef103271e2cc5553f8f6e48a53f82beb535",
+    "src/typed_assembly/__init__.py": "b35a53a372564461f90fe3bee82342350e15395f283e64445e20d7abaca104e1",
+    "src/typed_assembly/bounds.py": "55ca798f2e1e510b4c64e01a65167aa174f1ecc7f6f70999cd74d646babe53c2",
+    "tests/test_archived_results.py": "54ea3d37c44b4f7e10f9cad4ee8b673c4cdc048995b49ae2792d12737d572705",
+    "tests/test_theory.py": "3c21c2d28f53f1a11aea3fc4d7180f1343cde9af15cb200996c0bf74d0a35eec"
+  },
+  "publication_artifacts": {
+    ".gitignore": "7cc24e4c47874aa42dd2f0b8f0ecff91fa4ed5fba9caeb91b263d8615ec44a52",
+    "README.md": "686236c6ff12407b4f1d76e6e74684181043bc8e7bdcc9f80367d3f38a74843c",
+    "THEOREM_LEDGER.md": "8931ed4db136092b8c10c313c00d6b2753e935402ed6278caf26e13ed1691d37",
+    "UPDATED_ROADMAP.md": "cd4a1686a0ec170bfaf8b7f736f8a25cdb9063244360ab5f2b69f25798c25a11",
+    "figures/typed_moving_cloud_assembly.pdf": "8b07518786a5a45e113649fc40d4aa5d51d7c44fa716b962002ce3fa22604341",
+    "figures/typed_moving_cloud_assembly.png": "f62b669580f3ae7ae99241b5d755a83fd8944c28b1485eae6333c4fe49af852f",
+    "main.pdf": "8769943a24c1295778e2b67818312d1676d8e99f98164d26513c67ed30c17707",
+    "main.tex": "5cb89f50d0e73ac3537622d0736bc6bd0492da2503a47ea6487cf4b965c358d9",
+    "packet-riesz-relative-determinant-assembly.pdf": "8769943a24c1295778e2b67818312d1676d8e99f98164d26513c67ed30c17707",
+    "pyproject.toml": "331b934d9da3f949b598649346fd028024253b4898fa9f422e855aa24f36eaa5",
+    "references.bib": "b2f02cdca68504d99ab6bc02c5b7d7e33e41bcfdf4a2288c3caccee24e8118dc",
+    "requirements.txt": "44f068d0df72a1cfee6232f18a998bfa62b664807c6080247cc07d6453065dbe"
+  },
+  "status": "all_rh161_inputs_sources_and_publication_artifacts_hashed"
+}

@@ -1,0 +1,214 @@
+{
+  "audit_summary": {
+    "conditional_seed_count": 2,
+    "current_first_missing_interface": "S_native",
+    "minimal_completion_bundle_count": 2,
+    "omission_witness_count": 6,
+    "open_interface_count": 5,
+    "packet_bridge_certified_example_count": 3,
+    "packet_bridge_uncertified_example_count": 3,
+    "packet_riesz_example_count": 6,
+    "spectral_rank_certified_example_count": 6,
+    "typed_interface_count": 7
+  },
+  "current_statuses": {
+    "Q": "open",
+    "R": "open",
+    "S_lagged": "conditional",
+    "S_native": "conditional",
+    "T": "open",
+    "U": "open",
+    "Z": "open"
+  },
+  "determinant_examples": [
+    {
+      "determinant_error_upper": 0.4083084956283826,
+      "hilbert_schmidt_error_upper": 0.1,
+      "regularized_determinant_error_upper": 0.4535125783928206,
+      "trace_norm_error_upper": 0.1
+    },
+    {
+      "determinant_error_upper": 0.2041542478141913,
+      "hilbert_schmidt_error_upper": 0.05,
+      "regularized_determinant_error_upper": 0.2267562891964103,
+      "trace_norm_error_upper": 0.05
+    },
+    {
+      "determinant_error_upper": 0.08166169912567652,
+      "hilbert_schmidt_error_upper": 0.02,
+      "regularized_determinant_error_upper": 0.09070251567856412,
+      "trace_norm_error_upper": 0.02
+    },
+    {
+      "determinant_error_upper": 0.04083084956283826,
+      "hilbert_schmidt_error_upper": 0.01,
+      "regularized_determinant_error_upper": 0.04535125783928206,
+      "trace_norm_error_upper": 0.01
+    },
+    {
+      "determinant_error_upper": 0.02041542478141913,
+      "hilbert_schmidt_error_upper": 0.005,
+      "regularized_determinant_error_upper": 0.02267562891964103,
+      "trace_norm_error_upper": 0.005
+    }
+  ],
+  "interface_names": {
+    "Q": "cloud coefficient and deterministic pole ledger",
+    "R": "packet-to-Riesz spectral isolation",
+    "S_lagged": "eventual native plus bounded-lag directional seed",
+    "S_native": "eventual native O/E/S reset seed",
+    "T": "directed marked-trace convergence",
+    "U": "common-space complementary Schatten-norm limit for p=1 or p=2",
+    "Z": "target-independent normalization and schedule independence"
+  },
+  "marked_trace_examples": [
+    {
+      "marked_trace_error_upper": 0.022000000000000002,
+      "word_length": 2
+    },
+    {
+      "marked_trace_error_upper": 0.036300000000000006,
+      "word_length": 3
+    },
+    {
+      "marked_trace_error_upper": 0.09663060000000004,
+      "word_length": 6
+    }
+  ],
+  "minimal_completion_bundles": [
+    [
+      "Q",
+      "R",
+      "S_lagged",
+      "T",
+      "U",
+      "Z"
+    ],
+    [
+      "Q",
+      "R",
+      "S_native",
+      "T",
+      "U",
+      "Z"
+    ]
+  ],
+  "omission_witnesses": [
+    {
+      "missing": "S",
+      "surviving_failure": "no packet-selected cloud",
+      "witness": "take a fixed isolated operator but let the reset packet become orthogonal to its Riesz subspace"
+    },
+    {
+      "missing": "R",
+      "surviving_failure": "native support does not imply a reducing Riesz cloud",
+      "witness": "A=diag(-1,2) and the packet projection onto (1,1), whose native compression is positive but is not invariant"
+    },
+    {
+      "missing": "Q",
+      "surviving_failure": "the finite cloud quotient alone does not identify the deterministic pole divisor",
+      "witness": "attach either 1-z/a or 1-z/b as the deterministic pole ledger to the same finite relative determinants"
+    },
+    {
+      "missing": "U",
+      "surviving_failure": "Schatten norms diverge and residual det_p families need not be locally bounded",
+      "witness": "append rank-one complement blocks whose eigenvalues tend to infinity"
+    },
+    {
+      "missing": "Z",
+      "surviving_failure": "zero divisors agree but no canonical determinant exists",
+      "witness": "multiply every residual determinant by exp(c_n z) with schedule-dependent c_n"
+    },
+    {
+      "missing": "T",
+      "surviving_failure": "ordinary determinant data erase temporal orientation",
+      "witness": "for A=[[0,1],[0,0]], B=[[0,0],[1,0]], and J=diag(1,0), AB and BA have the same determinant while Tr(JAB)=1 and Tr(JBA)=0"
+    }
+  ],
+  "packet_riesz_examples": [
+    {
+      "coupling_upper": 0.02,
+      "equal_rank_by_closeness_certified": true,
+      "full_resolvent_upper": 2.0833333333333335,
+      "margin": 0.9166666666666666,
+      "neumann_product": 0.04,
+      "packet_bridge_certified": true,
+      "projector_error_upper": 0.08333333333333334,
+      "resolvent_certified": true,
+      "spectral_rank_certified": true
+    },
+    {
+      "coupling_upper": 0.05,
+      "equal_rank_by_closeness_certified": true,
+      "full_resolvent_upper": 2.2222222222222223,
+      "margin": 0.7777777777777777,
+      "neumann_product": 0.1,
+      "packet_bridge_certified": true,
+      "projector_error_upper": 0.22222222222222227,
+      "resolvent_certified": true,
+      "spectral_rank_certified": true
+    },
+    {
+      "coupling_upper": 0.1,
+      "equal_rank_by_closeness_certified": true,
+      "full_resolvent_upper": 2.5,
+      "margin": 0.5,
+      "neumann_product": 0.2,
+      "packet_bridge_certified": true,
+      "projector_error_upper": 0.5,
+      "resolvent_certified": true,
+      "spectral_rank_certified": true
+    },
+    {
+      "coupling_upper": 0.2,
+      "equal_rank_by_closeness_certified": false,
+      "full_resolvent_upper": 3.3333333333333335,
+      "margin": -0.3333333333333335,
+      "neumann_product": 0.4,
+      "packet_bridge_certified": false,
+      "projector_error_upper": 1.3333333333333335,
+      "resolvent_certified": true,
+      "spectral_rank_certified": true
+    },
+    {
+      "coupling_upper": 0.25,
+      "equal_rank_by_closeness_certified": false,
+      "full_resolvent_upper": 4.0,
+      "margin": -1.0,
+      "neumann_product": 0.5,
+      "packet_bridge_certified": false,
+      "projector_error_upper": 2.0,
+      "resolvent_certified": true,
+      "spectral_rank_certified": true
+    },
+    {
+      "coupling_upper": 0.3,
+      "equal_rank_by_closeness_certified": false,
+      "full_resolvent_upper": 5.0,
+      "margin": -2.0,
+      "neumann_product": 0.6,
+      "packet_bridge_certified": false,
+      "projector_error_upper": 3.0,
+      "resolvent_certified": true,
+      "spectral_rank_certified": true
+    }
+  ],
+  "route_consequence": "RH-161 turns Gate A's typed assembly from a phrase into six explicit obligations after one of two conditional reset seeds. A quantitative packet-to-Riesz theorem supplies equal cloud rank under a contour-resolvent/coupling threshold; exact moving-cloud factorization, complementary Schatten-norm convergence for p=1 or p=2, normalization canonicity, and directed marked traces then yield a canonical relative determinant of the selected type. None of those physical all-level interfaces is proved for prime dynamics, so Gate A remains open with a sharper completion frontier.",
+  "status": "rh161_packet_riesz_relative_determinant_assembly",
+  "theorem_boundary": {
+    "abstract_typed_assembly_theorem": true,
+    "canonical_intrinsic_determinant_constructed": false,
+    "cloud_coefficient_bridge_proved": false,
+    "eventual_reset_interfaces_proved": false,
+    "gate_A_closed": false,
+    "hilbert_polya_operator": false,
+    "hilbert_schmidt_regularized_branch": true,
+    "interface_omission_witnesses": true,
+    "one_step_two_step_limits_identified": false,
+    "packet_riesz_bound": true,
+    "physical_packet_to_riesz_bridge_proved": false,
+    "riemann_hypothesis": false,
+    "trace_class_fredholm_branch": true,
+    "uniform_complement_limit_proved": false
+  }
+}

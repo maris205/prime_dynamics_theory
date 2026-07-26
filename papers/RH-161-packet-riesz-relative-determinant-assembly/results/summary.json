@@ -1,0 +1,86 @@
+{
+  "audit": {
+    "conditional_seed_count": 2,
+    "current_first_missing_interface": "S_native",
+    "minimal_completion_bundle_count": 2,
+    "omission_witness_count": 6,
+    "open_interface_count": 5,
+    "packet_bridge_certified_example_count": 3,
+    "packet_bridge_uncertified_example_count": 3,
+    "packet_riesz_example_count": 6,
+    "spectral_rank_certified_example_count": 6,
+    "typed_interface_count": 7
+  },
+  "current_statuses": {
+    "Q": "open",
+    "R": "open",
+    "S_lagged": "conditional",
+    "S_native": "conditional",
+    "T": "open",
+    "U": "open",
+    "Z": "open"
+  },
+  "minimal_completion_bundles": [
+    [
+      "Q",
+      "R",
+      "S_lagged",
+      "T",
+      "U",
+      "Z"
+    ],
+    [
+      "Q",
+      "R",
+      "S_native",
+      "T",
+      "U",
+      "Z"
+    ]
+  ],
+  "program_boundary": {
+    "abstract_typed_assembly_theorem": true,
+    "canonical_intrinsic_determinant_constructed": false,
+    "cloud_coefficient_bridge_proved": false,
+    "eventual_reset_interfaces_proved": false,
+    "gate_A_closed": false,
+    "hilbert_polya_operator": false,
+    "hilbert_schmidt_regularized_branch": true,
+    "interface_omission_witnesses": true,
+    "one_step_two_step_limits_identified": false,
+    "packet_riesz_bound": true,
+    "physical_packet_to_riesz_bridge_proved": false,
+    "riemann_hypothesis": false,
+    "trace_class_fredholm_branch": true,
+    "uniform_complement_limit_proved": false
+  },
+  "publication_artifact_hashes": {
+    ".gitignore": "7cc24e4c47874aa42dd2f0b8f0ecff91fa4ed5fba9caeb91b263d8615ec44a52",
+    "README.md": "686236c6ff12407b4f1d76e6e74684181043bc8e7bdcc9f80367d3f38a74843c",
+    "THEOREM_LEDGER.md": "8931ed4db136092b8c10c313c00d6b2753e935402ed6278caf26e13ed1691d37",
+    "UPDATED_ROADMAP.md": "cd4a1686a0ec170bfaf8b7f736f8a25cdb9063244360ab5f2b69f25798c25a11",
+    "figures/typed_moving_cloud_assembly.pdf": "8b07518786a5a45e113649fc40d4aa5d51d7c44fa716b962002ce3fa22604341",
+    "figures/typed_moving_cloud_assembly.png": "f62b669580f3ae7ae99241b5d755a83fd8944c28b1485eae6333c4fe49af852f",
+    "main.pdf": "8769943a24c1295778e2b67818312d1676d8e99f98164d26513c67ed30c17707",
+    "main.tex": "5cb89f50d0e73ac3537622d0736bc6bd0492da2503a47ea6487cf4b965c358d9",
+    "packet-riesz-relative-determinant-assembly.pdf": "8769943a24c1295778e2b67818312d1676d8e99f98164d26513c67ed30c17707",
+    "pyproject.toml": "331b934d9da3f949b598649346fd028024253b4898fa9f422e855aa24f36eaa5",
+    "references.bib": "b2f02cdca68504d99ab6bc02c5b7d7e33e41bcfdf4a2288c3caccee24e8118dc",
+    "requirements.txt": "44f068d0df72a1cfee6232f18a998bfa62b664807c6080247cc07d6453065dbe"
+  },
+  "result_hashes": {
+    "results/dependency_manifest.json": "6b6d89a629cd560833bec0db752188ca41278a6291bad621f6f35e66e73b3613",
+    "results/typed_assembly_audit.json": "a132e1e8be07ec818a1a9087fb70a948db0f1877e86d1eebc726569623b72689"
+  },
+  "route_consequence": "RH-161 turns Gate A's typed assembly from a phrase into six explicit obligations after one of two conditional reset seeds. A quantitative packet-to-Riesz theorem supplies equal cloud rank under a contour-resolvent/coupling threshold; exact moving-cloud factorization, complementary Schatten-norm convergence for p=1 or p=2, normalization canonicity, and directed marked traces then yield a canonical relative determinant of the selected type. None of those physical all-level interfaces is proved for prime dynamics, so Gate A remains open with a sharper completion frontier.",
+  "status": "rh161_packet_riesz_relative_determinant_assembly_archived",
+  "theorem": {
+    "complement_determinant_transfer": true,
+    "conditional_typed_assembly": true,
+    "directed_marked_word_stability": true,
+    "minimal_frontier_with_witnesses": true,
+    "packet_to_riesz_homotopy": true,
+    "stable_packet_graph_bound": true,
+    "trace_class_and_regularized_branches": true
+  }
+}
