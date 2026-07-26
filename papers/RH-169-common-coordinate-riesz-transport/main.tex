@@ -1,0 +1,215 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,natbib,microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\title{Common-Coordinate Transport of Riesz Clouds\\\large Summable Resolvent Defects and Fixed-Rank Limits}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+RH-162--168 give fixed-scale packet-to-Riesz certificates.  An all-level
+interface also needs a coherent comparison of Riesz clouds living at
+different mesh and noise scales.  After embedding two consecutive operators
+in a common Hilbert space, we prove
+\[
+ \norm{\Pi_{j+1}-\Pi_j}
+ \le\frac{|\Gamma|}{2\pi}M_{j+1}M_j
+ \norm{A_{j+1}-A_j},
+\]
+where one contour $\Gamma$ lies in both resolvent sets and $M_j$ are its
+resolvent bounds.  A step bound below one yields an invertible range
+transport with explicit inverse norm.  If the step bounds are summable, the
+Riesz projections converge in operator norm to an idempotent of the same
+finite rank.  A 512-pair Hermitian audit has no inequality failure.  The
+theorem is restricted to fixed rank; a moving determinant cloud has growing
+rank and requires the shellwise correction developed next.
+\end{abstract}
+
+\section{The common-coordinate input}
+Operators at different Ulam dimensions cannot be subtracted until maps into
+one ambient space have been chosen.  Let $\mathcal H_j$ be the scale spaces,
+let $J_j:\mathcal H_j\to\mathcal K$ be isometries, and suppose extensions
+$\widetilde A_j\in\mathcal B(\mathcal K)$ have been specified.  Their action
+outside $J_j\mathcal H_j$ is part of the construction; arbitrary zero
+extension can introduce spurious spectrum on a contour.
+
+For the theorem, write $A_j$ for these common-space operators.  Let one
+rectifiable Jordan curve $\Gamma$ satisfy
+\[
+ \Gamma\subset\rho(A_j)\cap\rho(A_{j+1}),\qquad
+ \sup_\Gamma\norm{(z-A_j)^{-1}}\le M_j.
+\]
+Define
+\[
+ \Pi_j=\frac1{2\pi i}\int_\Gamma(z-A_j)^{-1}\,dz.
+\]
+
+\section{Consecutive transport theorem}
+\begin{theorem}[Common-contour Riesz transport]\label{thm:step}
+If $\norm{A_{j+1}-A_j}\le\eta_j$, then
+\[
+ \boxed{
+ \norm{\Pi_{j+1}-\Pi_j}
+ \le \beta_j:=\frac{|\Gamma|}{2\pi}M_{j+1}M_j\eta_j.
+ \ }
+\]
+\end{theorem}
+\begin{proof}
+The resolvent identity gives
+\[
+ (z-A_{j+1})^{-1}-(z-A_j)^{-1}
+ =(z-A_{j+1})^{-1}(A_{j+1}-A_j)(z-A_j)^{-1}.
+\]
+Integrate around $\Gamma$ and take norms \citep{Kato1995}.
+\end{proof}
+
+\begin{corollary}[Stable range map]\label{cor:range}
+Suppose $\Pi_j$ and $\Pi_{j+1}$ have equal finite rank and $\beta_j<1$.
+Then
+\[
+ \Pi_{j+1}|_{\operatorname{ran}\Pi_j}:
+ \operatorname{ran}\Pi_j\longrightarrow\operatorname{ran}\Pi_{j+1}
+\]
+is invertible, and its inverse norm is at most $(1-\beta_j)^{-1}$.
+\end{corollary}
+\begin{proof}
+For $x\in\operatorname{ran}\Pi_j$,
+\[
+ \norm{\Pi_{j+1}x}\ge
+ \norm x-\norm{(\Pi_{j+1}-\Pi_j)x}
+ \ge(1-\beta_j)\norm x.
+\]
+Thus the map is injective; equal finite dimensions give surjectivity and the
+inverse bound.
+\end{proof}
+
+\section{Summable fixed-rank limit}
+\begin{theorem}[Norm-convergent Riesz chain]\label{thm:sum}
+Assume the same finite rank $r$ is enclosed at every scale and
+\[
+ \sum_{j=1}^{\infty}\beta_j<\infty.
+\]
+Then $\Pi_j$ converges in operator norm to a bounded idempotent $\Pi_\infty$
+of rank $r$.  The tail obeys
+\[
+ \norm{\Pi_\infty-\Pi_n}\le\sum_{j=n}^{\infty}\beta_j.
+\]
+\end{theorem}
+\begin{proof}
+The telescoping inequality makes $(\Pi_j)$ norm-Cauchy.  Completeness of
+$\mathcal B(\mathcal K)$ gives a limit, and multiplication is norm
+continuous, so $\Pi_\infty^2=\Pi_\infty$.  For sufficiently large $j$,
+$\norm{\Pi_j-\Pi_\infty}<1$; the close-projection restriction argument gives
+equal rank.  The tail estimate follows from telescoping.
+\end{proof}
+
+Summability is stronger than $\eta_j\to0$.  Resolvent conditioning can grow
+fast enough that $M_jM_{j+1}\eta_j$ is not summable even when operators look
+close entrywise.  This is the all-level analogue of the fixed-scale
+pseudospectral wall.
+
+\section{Moving contours and homotopy compatibility}
+Consecutive physical shells may use different contours.  They can be
+compared by Theorem~\ref{thm:step} only after a common representative is
+chosen.
+
+\begin{proposition}[Contour deformation ledger]
+Let $\Gamma_0$ and $\Gamma_1$ be homologous closed contours in one connected
+open subset of $\rho(A)$, enclosing the same spectral component.  Then their
+Riesz integrals are equal.  Consequently, if both consecutive operators are
+resolvent-free throughout a common deformation corridor, either boundary may
+be used in the transport estimate.
+\end{proposition}
+\begin{proof}
+The operator-valued resolvent is holomorphic on the corridor.  Cauchy's
+theorem makes the two contour integrals equal \citep{Kato1995}.
+\end{proof}
+
+This adds a concrete schedule obligation.  Merely labeling two independently
+chosen clouds by the same shell index does not prove they enclose the same
+spectral component; a joint resolvent corridor or an equivalent coefficient
+identification is required before telescoping.
+
+\section{Vanishing steps are not enough}
+The summability hypothesis in Theorem~\ref{thm:sum} cannot be replaced by
+$\beta_j\to0$ in this proof architecture.
+
+\begin{proposition}[Slow rotating packet witness]
+There is a sequence of rank-one orthogonal projections on $\mathbb C^2$ such
+that
+\[
+ \norm{P_{j+1}-P_j}\longrightarrow0
+\]
+but $(P_j)$ does not converge.
+\end{proposition}
+\begin{proof}
+Let
+\[
+ \theta_j=\sum_{k=1}^{j}\frac1k,qquad
+ u_j=(\cos\theta_j,\sin\theta_j),\qquad P_j=u_ju_j^*.
+\]
+Then
+$\norm{P_{j+1}-P_j}=|\sin(1/(j+1))|\to0$.  The angle $\theta_j$ keeps
+traversing the projective circle because its increments tend to zero while
+their sum diverges.  Hence the ranges visit separated angular sectors
+infinitely often and do not converge.
+\end{proof}
+
+Taking $A_j=P_j$, a fixed circle around the eigenvalue one gives uniformly
+bounded resolvents and Riesz projection $P_j$.  Thus even an exact uniformly
+gapped spectral model can drift forever when the common-coordinate defects
+are nonsummable.
+
+\section{Conditioning of the composed range transport}
+Let
+\[
+ L_j=\Pi_{j+1}|_{\operatorname{ran}\Pi_j}
+\]
+be the step maps from Corollary~\ref{cor:range}.  Their composition transports
+one initial cloud frame through the chain without making a new gauge choice
+at every scale.
+
+\begin{proposition}[Finite cumulative inverse condition]
+If $\beta_j\le\beta_*<1$ and $\sum_j\beta_j<\infty$, then
+\[
+ \prod_j\norm{L_j^{-1}}
+ \le\prod_j(1-\beta_j)^{-1}<\infty.
+\]
+More explicitly,
+\[
+ \log\prod_{j=n}^{N}(1-\beta_j)^{-1}
+ \le\frac1{1-\beta_*}\sum_{j=n}^{N}\beta_j.
+\]
+\end{proposition}
+\begin{proof}
+Corollary~\ref{cor:range} gives the first finite-product inequality.  For
+$0\le x\le\beta_*$,
+$-\log(1-x)\le x/(1-\beta_*)$.  Sum this scalar inequality and exponentiate.
+\end{proof}
+
+Thus the same summability that yields a projector limit also prevents the
+canonical stepwise coordinates from acquiring infinite inverse condition.
+This is stronger information than pairwise rank agreement and is relevant
+when shell coefficients or marked vectors must be transported coherently.
+
+\section{Audit and boundary}
+The finite audit rotates a three-dimensional spectral packet inside eight-
+dimensional Hermitian matrices while keeping a unit-circle spectral gap.  It
+evaluates the exact normal resolvent bound, the operator defect, and the
+projector distance for 512 pairs.  No distance exceeds
+Theorem~\ref{thm:step}'s envelope.
+
+RH-169 proves the correct fixed-rank common-coordinate theorem.  It does not
+construct the physical embeddings or extensions, prove summability, or
+handle the increasing degree of the RH-80 cloud.  Therefore physical R,
+Gate A, and all later Hilbert--Polya interfaces remain open.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

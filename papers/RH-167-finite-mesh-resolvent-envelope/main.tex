@@ -1,0 +1,185 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,natbib,microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\title{Finite-Mesh Certification of Continuous Resolvent Contours\\\large A Banach-Lemma Envelope for Nonnormal Packet Blocks}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Physical interface R requires a supremum of a nonnormal resolvent on a
+continuous contour.  A finite eigenvalue plot or a list of sampled singular
+values does not certify that supremum.  We prove a finite covering theorem.
+If every $z$ on the contour lies within $h_k$ of some sample $z_k$, and
+\[
+ \norm{(z_k-T)^{-1}}\le m_k,\qquad h_km_k<1,
+\]
+then on the associated cell
+\[
+ \norm{(z-T)^{-1}}\le\frac{m_k}{1-h_km_k}.
+\]
+For $n$ equally spaced points on a circle of radius $s$, the exact covering
+radius is $2s\sin(\pi/(2n))$.  Applying the theorem to both diagonal blocks
+turns the Schur feedback gate into a finite-input certificate.  A dense-grid
+audit of 256 nonnormal matrices has no envelope failure.  Its floating-point
+sample inverses are diagnostics; validated physical inverse bounds remain an
+open input.
+\end{abstract}
+
+\section{A local resolvent covering lemma}
+Let $T$ be a bounded operator and suppose $z_k\in\rho(T)$.  For any $z$,
+\[
+ z-T=\bigl(I+(z-z_k)(z_k-T)^{-1}\bigr)(z_k-T).
+\]
+
+\begin{theorem}[Finite-mesh resolvent envelope]\label{thm:mesh}
+Let $\Gamma$ be covered by sets $U_k$ such that
+\[
+ \sup_{z\in U_k\cap\Gamma}|z-z_k|\le h_k,
+ \qquad\norm{(z_k-T)^{-1}}\le m_k.
+\]
+If $h_km_k<1$ for every cell, then $\Gamma\subset\rho(T)$ and
+\[
+ \sup_{z\in\Gamma}\norm{(z-T)^{-1}}
+ \le\max_k\frac{m_k}{1-h_km_k}.
+\]
+\end{theorem}
+\begin{proof}
+For $z\in U_k\cap\Gamma$, the perturbation
+$(z-z_k)(z_k-T)^{-1}$ has norm at most $h_km_k<1$.  The Neumann series
+inverts the first factor and bounds its inverse by $(1-h_km_k)^{-1}$.
+Multiplication by the sample resolvent proves the local bound.  Taking the
+maximum over the finite cover proves the theorem \citep{Kato1995}.
+\end{proof}
+
+The condition is local.  Adaptive refinement need only split cells where
+$h_km_k$ is large; one ill-conditioned sample need not force uniform
+oversampling elsewhere.
+
+\section{Exact covering radius for a circle}
+\begin{proposition}[Equal-angle circle mesh]\label{prop:circle}
+For $n\ge3$ equally spaced nodes on $|z-\mu|=s$, every contour point is
+within
+\[
+ h_n=2s\sin\frac{\pi}{2n}
+\]
+of its nearest node.  This radius is sharp.
+\end{proposition}
+\begin{proof}
+The farthest point in each arc is its midpoint.  Its angular distance from
+either endpoint is $\pi/n$, and the corresponding chord length is
+$2s\sin(\pi/(2n))$.
+\end{proof}
+
+Thus a uniform sample bound $m$ certifies the circle whenever
+$2sm\sin(\pi/(2n))<1$.  Solving this inequality supplies a deterministic
+minimum mesh density once $m$ is known.
+
+\begin{corollary}[Simple mesh-complexity budget]
+The sufficient integer condition
+\[
+ n>\pi sm
+\]
+guarantees $h_nm<1$.
+\end{corollary}
+\begin{proof}
+Use $\sin x\le x$ to obtain
+$h_nm\le2sm\,\pi/(2n)=\pi sm/n<1$.
+\end{proof}
+
+The estimate is conservative but useful before sampling begins.  It shows
+that mesh complexity grows linearly with the contour radius and the expected
+resolvent amplification.  Near a pseudospectral spike, adaptive local cells
+can be much cheaper than enforcing the worst $m$ around the entire curve.
+
+\section{Finite-input Schur certificate}
+Apply Theorem~\ref{thm:mesh} separately to the packet and complementary
+blocks.  Let sample inverse bounds be $m_{P,k},m_{Q,k}$ and covering radii
+$h_k$.  Define
+\[
+ a=\max_k\frac{m_{P,k}}{1-h_km_{P,k}},\qquad
+ d=\max_k\frac{m_{Q,k}}{1-h_km_{Q,k}}.
+\]
+
+\begin{corollary}[Sampled packet-to-Riesz rank gate]
+If all mesh products are below one and
+\[
+ adbc<1,
+\]
+then the full off-diagonal homotopy preserves the packet rank inside
+$\Gamma$.
+\end{corollary}
+\begin{proof}
+The mesh theorem supplies continuous diagonal resolvent bounds.  The
+two-sided Schur theorem then applies \citep{WangRH163}.
+\end{proof}
+
+The directional graph formulas of RH-166 can use the same $a,d$.  Therefore
+the entire finite rank-and-graph decision requires only certified sample
+inverses, covering radii, and two residual norms.
+
+\section{Resolvent disks and adaptive stopping}
+The local theorem gives an intrinsic certified neighborhood around each
+sample.
+
+\begin{proposition}[Certified resolvent-disk cover]
+Fix $0<\theta<1$.  A sample bound $m_k$ certifies every point in
+\[
+ \mathbb D_k=\{z:|z-z_k|\le\theta/m_k\}
+\]
+with the uniform local estimate
+\[
+ \norm{(z-T)^{-1}}\le\frac{m_k}{1-\theta}.
+\]
+If $\Gamma\subset\bigcup_k\mathbb D_k$, these disks form a complete
+continuous contour certificate.
+\end{proposition}
+\begin{proof}
+Insert $h_k=\theta/m_k$ into
+Theorem~\ref{thm:mesh}; then $h_km_k=\theta$.
+\end{proof}
+
+This yields a rigorous adaptive stopping rule: add samples only on uncovered
+arcs, recompute their validated inverse bounds, and stop exactly when the
+union of certified disks covers the curve.  Regions of large resolvent norm
+automatically receive small disks and finer sampling.  Failure to terminate
+at a fixed precision is a conditioning diagnostic, not evidence that the
+contour intersects the spectrum.
+
+\section{What a sample inverse certificate requires}
+A numerical inverse $R_k$ is not itself an upper bound.  A standard
+a-posteriori route is to compute the defect
+\[
+ E_k=I-R_k(z_k-T).
+\]
+If $\norm{E_k}<1$, then
+\[
+ \norm{(z_k-T)^{-1}}\le
+ \frac{\norm{R_k}}{1-\norm{E_k}}.
+\]
+For a physical proof, both norms must be outwardly enclosed and the operator
+$T$ must be related to its assembled matrix by a certified ball.  RH-167
+does not silently promote floating singular values to such bounds.
+
+\section{Dense-grid audit and route consequence}
+The companion audit draws 256 upper-triangular nonnormal matrices, samples a
+circle at 20--64 nodes, and evaluates the envelope.  For every accepted mesh
+it compares the result with 2048 dense contour evaluations.  No dense value
+exceeds the theorem bound.  This exercises strongly nonconstant resolvents
+but remains a floating-point regression test.
+
+RH-167 removes the uncountable contour quantifier from interface R.  The next
+wall is validation: transport nominal sample inverses and couplings through
+an operator ball without losing the mesh denominator.  No physical sample
+bound, uniform all-level margin, Gate A, or downstream Hilbert--Polya claim
+is made.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

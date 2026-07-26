@@ -1,0 +1,174 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,natbib,microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\title{The Midgap Circle for Normal Packet Blocks\\\large An Exact Gap--Feedback Criterion and Its Nonnormal Boundary}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+The Schur theorem of RH-163 reduces packet-to-Riesz rank preservation to
+$adbc<1$, but leaves the contour and two resolvent bounds unspecified.  We
+solve this geometric problem for a benchmark class.  Suppose the packet and
+complement blocks are normal, the packet spectrum lies in
+$|z-\mu|\le\rho$, and the complementary spectrum lies in
+$|z-\mu|\ge R>\rho$.  Among centered circles, the radius
+\[
+ s_*=(\rho+R)/2
+\]
+minimizes the Schur feedback.  The optimized rank condition is exactly
+\[
+ 2\sqrt{bc}<R-\rho.
+\]
+We also give the resulting projector envelope and prove sharpness of the
+midpoint for the available disk data.  A 512-system finite audit has zero
+rank-count and resolvent-bound failures.  The theorem deliberately stops at
+normal blocks: for a nonnormal operator, spectral distance alone cannot
+replace a resolvent estimate.  No physical normality or all-level
+pseudospectral theorem is claimed.
+\end{abstract}
+
+\section{Disk-separated normal blocks}
+Let
+\[
+ A=\begin{pmatrix}A_P&B\\C&A_Q\end{pmatrix}
+\]
+on an orthogonal packet decomposition.  Assume $A_P$ and $A_Q$ are normal
+and, for a center $\mu\in\mathbb C$,
+\[
+ \sigma(A_P)\subset\{|z-\mu|\le\rho\},\qquad
+ \sigma(A_Q)\subset\{|z-\mu|\ge R\},\quad R>\rho.
+\]
+Put $b=\norm B$ and $c=\norm C$.  For $\rho<s<R$, let
+$\Gamma_s=\{|z-\mu|=s\}$.
+
+Normality gives the exact spectral-distance resolvent formula.  Therefore
+\[
+ a(s):=\sup_{\Gamma_s}\norm{(z-A_P)^{-1}}\le\frac1{s-\rho},
+\quad
+ d(s):=\sup_{\Gamma_s}\norm{(z-A_Q)^{-1}}\le\frac1{R-s}.
+\]
+
+\section{Optimal midpoint theorem}
+\begin{theorem}[Midgap feedback optimum]\label{thm:midgap}
+Among centered circles $\Gamma_s$, the upper bound
+\[
+ \kappa(s)=\frac{bc}{(s-\rho)(R-s)}
+\]
+is minimized uniquely at
+\[
+ s_*=(\rho+R)/2,
+\]
+where
+\[
+ \kappa_* = \frac{4bc}{(R-\rho)^2}.
+\]
+Consequently $\Gamma_{s_*}$ certifies packet-rank preservation whenever
+\[
+ \boxed{\ 2\sqrt{bc}<R-\rho.\ }
+\]
+\end{theorem}
+\begin{proof}
+The denominator is
+\[
+ (s-\rho)(R-s)
+ =\frac{(R-\rho)^2}{4}
+  -\left(s-\frac{R+\rho}{2}\right)^2.
+\]
+It is uniquely maximized at the midpoint.  Substitution gives $\kappa_*$.
+If $\kappa_*<1$, the RH-163 Schur homotopy theorem preserves the enclosed
+rank \citep{WangRH163}.
+\end{proof}
+
+The constant is sharp for this disk information.  Scalar packet and
+complement blocks placed at the two nearest radial boundary points attain
+both resolvent denominators.  At $4bc=(R-\rho)^2$, a two-mode matrix can have
+an eigenvalue on the midpoint circle.
+
+\section{Projector envelope}
+Let $g=R-\rho$, $s_*=(R+\rho)/2$, and
+$\kappa=4bc/g^2<1$.  At the midpoint, $a=d=2/g$.  The scalar block estimate
+of RH-163 yields
+\[
+ \norm{\Pi-P}\le
+ \frac{s_*}{1-\kappa}
+ \left\|
+ \begin{pmatrix}
+ 2\kappa/g&4b/g^2\\
+ 4c/g^2&2\kappa/g
+ \end{pmatrix}\right\|_2.
+\]
+This graph bound depends on the absolute contour radius $s_*$ as well as the
+gap.  Moving both spectral sets far from the origin leaves the rank gate
+unchanged but lengthens the circle; a noncircular contour or a directional
+graph estimate may then be preferable.
+
+\section{Why the theorem stops at normality}
+For a normal operator,
+$\norm{(z-A)^{-1}}=\operatorname{dist}(z,\sigma(A))^{-1}$.
+For a nonnormal matrix, the resolvent can be arbitrarily larger while the
+spectrum and radial gap are fixed \citep{TrefethenEmbree2005}.  A Jordan
+block already exhibits polynomial resolvent amplification.  Therefore the
+condition $2\sqrt{bc}<g$ is not a physical prime-dynamics theorem unless
+normality, similarity conditioning, or an independent pseudospectral
+envelope is proved.
+
+One can retain the geometry without normality by replacing $\rho$ and $R$
+with certified pseudospectral barriers that directly imply the displayed
+resolvent bounds.  That replacement is an input, not a consequence of the
+eigenvalue plot.
+
+\section{Conditioned pseudospectral inflation}
+There is a useful intermediate statement between normality and a completely
+free resolvent.  Suppose that on every centered circle one has certified
+envelopes
+\[
+ \sup_{\Gamma_s}\norm{(z-A_P)^{-1}}
+ \le\frac{K_P}{s-\rho},\qquad
+ \sup_{\Gamma_s}\norm{(z-A_Q)^{-1}}
+ \le\frac{K_Q}{R-s},
+\]
+where $K_P,K_Q\ge1$ are fixed conditioning factors.
+
+\begin{corollary}[Inflated midgap gate]
+The midpoint circle remains optimal for these envelopes and certifies rank
+whenever
+\[
+ 2\sqrt{K_PK_Qbc}<R-\rho.
+\]
+\end{corollary}
+\begin{proof}
+The Schur product is bounded by
+$K_PK_Qbc/[(s-\rho)(R-s)]$.  The same quadratic denominator as in
+Theorem~\ref{thm:midgap} is maximized at the midpoint, where the product is
+$4K_PK_Qbc/(R-\rho)^2$.
+\end{proof}
+
+This corollary quantifies the price of nonnormality when a uniform similarity
+or pseudospectral constant is available.  If $K_PK_Q$ grows with scale, the
+geometric gap may widen while the usable margin still collapses; both factors
+must therefore be recorded in the physical ledger.
+
+\section{Audit and route consequence}
+The audit samples 512 diagonal normal block pairs with complex spectra in
+the two radial regions.  Directed couplings are scaled so the midpoint
+feedback is below $0.55$.  On 1024 contour nodes it verifies both resolvent
+bounds, and direct diagonalization confirms exactly the packet rank inside
+the circle.  No failure occurs.  Floating-point rank counts are illustrative
+regression checks, not interval proofs.
+
+RH-165 removes contour optimization from the normal benchmark and supplies a
+sharp geometric falsifier.  The physical family remains nonnormal, so the
+next steps must obtain directed Ritz residuals and then certify continuous
+resolvent envelopes.  The paper does not close physical R, Gate A, or any
+later Hilbert--Polya interface.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

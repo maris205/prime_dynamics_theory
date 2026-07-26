@@ -1,0 +1,183 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,natbib,microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\title{Operator-Ball Transfer of Finite-Mesh Schur Certificates\\\large One Denominator for Assembly Error and Contour Interpolation}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+RH-167 reduces continuous contour control to exact sample inverse bounds.
+Physical computations instead provide a nominal block, an approximate
+inverse, and an operator uncertainty ball.  We combine all three errors in a
+single Banach-lemma transfer.  If $\norm{T-\widehat T}\le\eta$, every point
+of a contour cell is within $h_k$ of $z_k$, and
+\[
+ \norm{(z_k-\widehat T)^{-1}}\le m_k,qquad
+ m_k(h_k+\eta)<1,
+\]
+then
+\[
+ \norm{(z-T)^{-1}}\le
+ \frac{m_k}{1-m_k(h_k+\eta)}.
+\]
+For a fixed packet projection, an operator ball also enlarges each directed
+coupling by at most its radius.  These facts yield a robust finite Schur gate
+for the unknown exact operator.  A dense 256-case audit has no transfer
+failure.  The formulas are rigorous; the audit is not formal interval
+arithmetic and does not supply physical prime-dynamics balls.
+\end{abstract}
+
+\section{Nominal inverse plus operator uncertainty}
+Let $T$ be the exact block and $\widehat T$ a nominal approximation with
+$\norm{T-\widehat T}\le\eta$.  At a mesh node $z_k$, suppose the nominal
+resolvent has certified norm at most $m_k$.  For $|z-z_k|\le h_k$,
+\[
+ z-T=(z_k-\widehat T)
+ \left[I+(z_k-\widehat T)^{-1}
+ \bigl((z-z_k)I-(T-\widehat T)\bigr)\right],
+\]
+up to the equivalent reversed factorization.  The perturbation norm is at
+most $m_k(h_k+\eta)$.
+
+\begin{theorem}[Joint mesh/operator-ball envelope]\label{thm:joint}
+If $m_k(h_k+\eta)<1$ on every contour cell, then $\Gamma\subset\rho(T)$ and
+\[
+ \sup_{z\in\Gamma}\norm{(z-T)^{-1}}
+ \le\max_k\frac{m_k}{1-m_k(h_k+\eta)}.
+\]
+\end{theorem}
+\begin{proof}
+The bracketed factor is invertible by a Neumann series, with inverse norm at
+most $[1-m_k(h_k+\eta)]^{-1}$.  Multiplication by the nominal sample inverse
+and maximization over cells prove the result \citep{Kato1995}.
+\end{proof}
+
+The mesh displacement and operator error add before multiplication by the
+sample condition.  Treating them in two successive Neumann transfers is
+valid but generally loses more margin.
+
+\section{Certifying the nominal sample inverse}
+Let $R_k$ approximate $(z_k-\widehat T)^{-1}$ and suppose
+\[
+ \norm{I-R_k(z_k-\widehat T)}\le e_k<1.
+\]
+
+\begin{proposition}[A-posteriori inverse bound]
+The nominal sample is invertible and
+\[
+ \norm{(z_k-\widehat T)^{-1}}
+ \le\frac{\norm{R_k}}{1-e_k}.
+\]
+\end{proposition}
+\begin{proof}
+Write $R_k(z_k-\widehat T)=I-E_k$.  The right-hand side is invertible by the
+Neumann series.  In finite dimensions a certified right inverse is the
+inverse, and the norm estimate follows.  The same conclusion holds for a
+two-sided Banach-space approximate inverse with the usual range hypotheses.
+\end{proof}
+
+Thus a validated implementation needs only outward bounds for
+$\norm{R_k}$, $\norm{E_k}$, the geometric $h_k$, and the operator radius.
+
+\section{Coupling inflation for a fixed packet}
+Let $P$ be fixed, $Q=I-P$, and assume
+$\norm{A-\widehat A}\le\eta$.  Then
+\begin{align*}
+ \norm{PAQ}&\le\norm{P\widehat A Q}+\eta,\\
+ \norm{QAP}&\le\norm{Q\widehat A P}+\eta,
+\end{align*}
+while the packet and complement compressions each lie within $\eta$ of their
+nominal blocks.
+
+\begin{corollary}[Robust finite Schur gate]
+Apply Theorem~\ref{thm:joint} to the two nominal diagonal blocks, obtaining
+exact contour bounds $a$ and $d$.  If nominal coupling bounds are
+$\widehat b,\widehat c$ and
+\[
+ ad(\widehat b+\eta)(\widehat c+\eta)<1,
+\]
+then the exact operator preserves the enclosed packet rank.
+\end{corollary}
+\begin{proof}
+The compression and coupling inequalities transfer all finite data to the
+exact blocks.  Apply the two-sided Schur theorem \citep{WangRH163}.
+\end{proof}
+
+If the packet projection is itself uncertain, it must first be transported
+to a fixed realized projection or enclosed with additional centered
+projector-action bounds.  The displayed $+\eta$ rule must not be reused for
+an untracked moving packet.
+
+\section{Structured error budgets}
+A single full-operator radius is convenient but can be unnecessarily
+pessimistic.  Suppose the validated assembly gives separate radii
+\[
+ \eta_P,\quad\eta_Q,\quad\eta_B,\quad\eta_C
+\]
+for the packet block, complement block, return coupling, and outward
+coupling.  Then Theorem~\ref{thm:joint} uses $\eta_P$ and $\eta_Q$ in the two
+resolvent denominators, while the exact feedback test becomes
+\[
+ a(\eta_P)d(\eta_Q)
+ (\widehat b+\eta_B)(\widehat c+\eta_C)<1.
+\]
+
+\begin{proposition}[Monotonicity of structured certification]
+If every structured radius is at most a common radius $\eta$, the structured
+feedback upper is no larger than the common-radius upper, whenever both
+denominators close.
+\end{proposition}
+\begin{proof}
+Each transferred resolvent envelope and each inflated coupling is monotone
+in its nonnegative radius.  Their product is therefore monotone in all four
+arguments.
+\end{proof}
+
+This identifies where validation effort is most valuable: reducing the
+radius attached to the larger sample resolvent can improve a denominator far
+more than uniformly adding precision to already benign blocks.
+
+\section{Four distinct certificate failures}
+The robust pipeline has four logically different red outcomes.
+\begin{enumerate}
+\item If a nominal inverse defect is at least one, the selected sample inverse
+is not certified; better linear algebra or precision may repair it.
+\item If $m_k(h_k+\eta_P)\ge1$ or its complementary analogue, the sample
+neighborhood is too large for the available conditioning; mesh refinement or
+a smaller operator ball may repair it.
+\item If both contour envelopes close but $adbc\ge1$, the current Schur
+feedback corridor is inconclusive; changing only the mesh cannot remove a
+genuine coupling product.
+\item If the rank gate passes but the directional packet-diagonal bound is at
+least one, spectral multiplicity is certified while the requested graph
+conditioning remains unproved.
+\end{enumerate}
+These outcomes should be stored separately.  Collapsing them into one Boolean
+``R failed'' would lose the information needed to decide whether to increase
+precision, change the contour, redesign the packet, or abandon the present
+graph architecture.
+
+\section{Audit and route consequence}
+The audit samples 256 upper-triangular nominal matrices, adds a perturbation
+with known numerical operator norm, and builds a 24--64 node circle mesh.  It
+compares the theorem envelope with 2048 dense resolvent evaluations of the
+perturbed matrix.  No accepted case fails.  Because ordinary floating norms
+are used, this is a diagnostic test of the formula rather than an
+outward-rounded publication certificate.
+
+RH-168 completes the fixed-scale finite certificate architecture in abstract
+form.  What remains is to build the physical ambient packet, generate
+validated operator and inverse balls, and control the family across scales.
+No such all-level result, Gate A determinant, self-adjoint operator, zeta
+identity, or RH conclusion is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

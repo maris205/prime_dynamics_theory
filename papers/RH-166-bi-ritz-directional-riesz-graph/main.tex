@@ -1,0 +1,200 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,natbib,microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\title{Bi-Ritz Residuals and Directional Riesz Graphs\\\large Separating Primal Cloud Stability from Dual Conditioning}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+The Schur packet theorem uses two directed couplings, but a physical audit
+starts from a candidate frame rather than exact block matrices.  Let $V$ be
+an orthonormal packet frame, $P=VV^*$, and $H=V^*AV$.  We prove the exact
+bi-Ritz identities
+\[
+ \norm{AV-VH}=\norm{(I-P)AP},\qquad
+ \norm{A^*V-VH^*}=\norm{PA(I-P)}.
+\]
+Under the feedback gate $\kappa=adbc<1$, contour integration then gives
+separate graph estimates.  The primal Riesz range is controlled directly by
+the right residual $c$, while the dual Riesz range is controlled by the left
+residual $b$.  The common packet-diagonal margin depends only on the product.
+This directional theorem can certify a well-conditioned primal cloud even
+when the dual graph is poor.  A 512-matrix audit verifies the residual
+identities.  The archived reset atlas does not yet provide such residuals in
+the transfer space, so physical interface R remains open.
+\end{abstract}
+
+\section{Frame residuals are the directed couplings}
+Let $V:\mathbb C^r\to\mathcal H$ be an isometry, $P=VV^*$, $Q=I-P$, and
+define the Rayleigh compression $H=V^*AV$.  Put
+\[
+ R_+=AV-VH,\qquad R_-=A^*V-VH^*.
+\]
+
+\begin{theorem}[Bi-Ritz identities]\label{thm:ritz}
+The residuals satisfy
+\[
+ R_+=QAV,\qquad R_-=QA^*V,
+\]
+and hence
+\[
+ \norm{R_+}=\norm{QAP},\qquad
+ \norm{R_-}=\norm{PAQ}.
+\]
+\end{theorem}
+\begin{proof}
+Since $VH=VV^*AV=PAV$, subtraction gives $R_+=QAV$.  The adjoint formula is
+identical.  Right multiplication by the coisometry $V^*$ does not change the
+norm of an operator whose domain is $\operatorname{ran}V$, and taking the
+adjoint converts $QA^*P$ to $PAQ$.
+\end{proof}
+
+Write $c=\norm{R_+}$ and $b=\norm{R_-}$.  Both are required for a general
+nonnormal feedback audit.  They coincide only under additional symmetry.
+
+\section{Directional block resolvent bounds}
+Let $\Gamma$ separate the compressed packet block $A_P=PAP|_{P\mathcal H}$
+from $A_Q=QAQ|_{Q\mathcal H}$, and suppose
+\[
+ \sup_\Gamma\norm{(z-A_P)^{-1}}\le a,qquad
+ \sup_\Gamma\norm{(z-A_Q)^{-1}}\le d.
+\]
+Assume $\kappa=adbc<1$ and let $L=|\Gamma|$.  Denote the Riesz projection of
+$A$ inside $\Gamma$ by $\Pi$.
+
+\begin{theorem}[Primal directional graph]\label{thm:primal}
+Define
+\[
+ \delta_P=\frac{L}{2\pi}\frac{a\kappa}{1-\kappa},
+ \qquad
+ \gamma_+=\frac{L}{2\pi}\frac{adc}{1-\kappa}.
+\]
+If $\delta_P<1$, then $\operatorname{ran}\Pi$ is a graph over
+$\operatorname{ran}P$ with slope at most
+\[
+ \norm X_+\le\frac{\gamma_+}{1-\delta_P}.
+\]
+\end{theorem}
+\begin{proof}
+The Schur inverse formula from RH-163 gives, pointwise on $\Gamma$,
+\[
+ \norm{R_{11}(z)-(z-A_P)^{-1}}\le\frac{a\kappa}{1-\kappa},
+ \qquad
+ \norm{R_{21}(z)}\le\frac{adc}{1-\kappa}.
+\]
+After contour integration,
+$\norm{P\Pi P-P}\le\delta_P$ and
+$\norm{Q\Pi P}\le\gamma_+$.  Thus $P\Pi P$ is invertible on
+$P\mathcal H$.  Rank preservation gives
+\[
+ \operatorname{ran}\Pi
+ =\{x+X_+x:x\in P\mathcal H\},\qquad
+ X_+=Q\Pi P(P\Pi P)^{-1},
+\]
+which proves the bound \citep{Kato1995,WangRH163}.
+\end{proof}
+
+\begin{theorem}[Dual directional graph]\label{thm:dual}
+Under the same diagonal margin, the left Riesz space
+$\operatorname{ran}\Pi^*$ is a graph over $P\mathcal H$ with slope
+\[
+ \norm X_-\le
+ \frac{1}{1-\delta_P}\frac{L}{2\pi}
+ \frac{adb}{1-\kappa}.
+\]
+\end{theorem}
+\begin{proof}
+Apply Theorem~\ref{thm:primal} to $A^*$ and the conjugate contour.  The block
+resolvent norms are unchanged, while the right residual of $A^*$ is the left
+residual of $A$.
+\end{proof}
+
+\section{Asymmetry is information, not a defect}
+If $c=0$, the packet is invariant: $AV=VH$.  Then $\kappa=0$ and
+$\gamma_+=0$, so the primal Riesz range is exactly $P\mathcal H$ even if
+$b$ is arbitrarily large.  The dual Riesz projection can nevertheless be
+highly oblique.  Interchanging $b$ and $c$ reverses the roles.
+
+This distinction matters for determinant assembly.  The cloud factor needs
+the invariant primal range; coefficient extraction and dual trace pairings
+may additionally require left conditioning.  A global
+$\norm{\Pi-P}$ bound merges these two questions and can reject a usable
+one-way bridge.
+
+\section{Residuals from an approximate compression}
+The exact Rayleigh matrix need not be formed before obtaining a safe residual
+bound.  Let $\widehat H$ be any proposed $r\times r$ compression and put
+\[
+ \widehat R_+=AV-V\widehat H.
+\]
+
+\begin{proposition}[Candidate-compression residual transfer]
+For $H=V^*AV$, one has
+\[
+ H-\widehat H=V^*\widehat R_+,
+ \qquad R_+=Q\widehat R_+.
+\]
+Consequently
+\[
+ \norm{H-\widehat H}\le\norm{\widehat R_+},
+ \qquad \norm{R_+}\le\norm{\widehat R_+}.
+\]
+The analogous statement holds for a candidate left compression.
+\end{proposition}
+\begin{proof}
+Left multiplication by $V^*$ gives the first identity, since $V^*V=I$.
+Left multiplication by $Q$ gives the second, since $QV=0$.  Orthogonal
+projections are contractions.
+\end{proof}
+
+Thus an outward ball for the assembled action $AV$ and any candidate
+compression already gives a safe directed coupling upper.  Replacing it by
+the smaller floating residual after an unvalidated Rayleigh recomputation is
+optional, not logically necessary.
+
+\section{A quantitative asymmetry witness}
+Take $a=d=1$, $L=2\pi$, $b=100$, and $c=10^{-4}$.  Then
+$\kappa=10^{-2}$ and
+\[
+ \delta_P=\frac{10^{-2}}{0.99}\approx1.0101\times10^{-2}.
+\]
+The primal and dual cross bounds are respectively
+\[
+ \gamma_+=\frac{10^{-4}}{0.99}\approx1.0101\times10^{-4},
+ \qquad
+ \gamma_-=\frac{100}{0.99}\approx101.01.
+\]
+Thus the same rank certificate gives a primal graph slope below
+$1.03\times10^{-4}$ while the displayed dual slope bound is above $102$.
+Replacing $(b,c)$ by $(c,b)$ reverses the outcome without changing the
+feedback product or the enclosed rank.
+
+This family is an omission witness for any audit that stores only $bc$: the
+product decides the rank homotopy, but it cannot recover which of the primal
+or dual Riesz ranges is well conditioned.  Both directed residuals must
+remain separately archived even after their product is formed.
+
+\section{Audit and physical data contract}
+The audit draws 512 random matrices and orthonormal packet frames.  It
+compares the two residual norms with the corresponding block couplings; the
+largest discrepancy is archived and no identity failure occurs.  Four
+imbalanced examples record the separation between primal and dual graph
+bounds.
+
+For the prime-dynamics family, a physical R audit now needs an ambient frame
+$V_j$, the compressed packet and complement resolvents, and both transfer-
+space residuals.  The RH-160 memory-Gram residuals are not automatically
+these quantities.  RH-166 proves the finite implication but no ambient map,
+continuous contour bound, uniform scale law, Gate A, or downstream spectral
+claim.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

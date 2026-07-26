@@ -1,0 +1,209 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,natbib,microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\title{The Ambient-Realization Gate Between Reset Packets and Riesz Clouds\\\large A Type-Correct Primal--Adjoint Coupling Theorem}
+\author{Prime Dynamics Theory Program}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-161 reduced the first determinant gate to a packet-to-Riesz estimate, but
+its abstract theorem places the reset projection and transfer operator on one
+Hilbert space.  In the archived physical construction the reset packet is a
+spectral subspace of a source-memory Gram matrix, while the moving cloud is a
+Riesz subspace of a noisy two-step transfer operator.  Equal rank does not
+identify these spaces.
+
+We make the missing ambient realization explicit.  Let
+$J:\cE\to\cH$ be an isometry, let $P$ reduce a source operator $M$, and put
+$\widehat P=JPJ^*$.  For a transfer operator $A$ define the primal and
+adjoint defects
+\[
+ D=AJ-JM,\qquad D^\sharp=A^*J-JM^*.
+\]
+We prove the directed bounds
+\[
+ \norm{(I-\widehat P)A\widehat P}\leq\norm{DP},\qquad
+ \norm{\widehat PA(I-\widehat P)}\leq\norm{D^\sharp P}.
+\]
+Thus a type-correct realization supplies exactly the two feedback couplings
+needed by a Schur resolvent argument.  A two-dimensional witness proves that
+without $J$ the source packet gives no coupling information.  We also record
+the polar repair and its commutator debt for a near-isometric map.  A 512-case
+finite audit has zero bound failures.  No canonical prime-dynamics $J$ or
+all-level defect estimate is constructed, so physical interface R and Gate A
+remain open.
+\end{abstract}
+
+\section{Why the ambient space is part of the theorem}
+The RH-160 reset construction diagonalizes positive memory Grams on a source
+or clock space \citep{WangRH160}.  RH-80 and RH-161 require a reducing Riesz
+cloud for a transfer operator.  Writing both outputs as a rank-$r$ projection
+suppresses the domain and is therefore not type-correct.  A rank, a list of
+eigenvalues, or a fitted frame does not define a functorial map between the
+two spaces.
+
+Let $\cE$ be the source-memory Hilbert space and $\cH$ the transfer space.
+Let $M\in\mathcal B(\cE)$, $A\in\mathcal B(\cH)$, and let $P$ be a finite-rank
+orthogonal projection satisfying $PM=MP$.  An \emph{ambient realization} is
+an isometry $J:\cE\to\cH$.  Its realized packet is
+\[
+ \widehat P=JPJ^*,\qquad \widehat Q=I-\widehat P.
+\]
+The complement includes both $J(\operatorname{ran}(I-P))$ and any directions
+outside $J\cE$; this is essential when the dimensions differ.
+
+\section{The primal--adjoint realization theorem}
+\begin{theorem}[Realization defects control both couplings]
+\label{thm:realization}
+With the notation above, define
+\[
+ D=AJ-JM,\qquad D^\sharp=A^*J-JM^*.
+\]
+Then
+\begin{align}
+ \norm{\widehat QA\widehat P}&\leq\norm{DP},\label{eq:out}\\
+ \norm{\widehat PA\widehat Q}&\leq\norm{D^\sharp P}.\label{eq:in}
+\end{align}
+Consequently the two-way feedback product obeys
+\[
+ \norm{\widehat PA\widehat Q}\,
+ \norm{\widehat QA\widehat P}
+ \leq \norm{D^\sharp P}\,\norm{DP}.
+\]
+\end{theorem}
+\begin{proof}
+For $x\in\operatorname{ran}P$, reduction gives $MPx\in\operatorname{ran}P$,
+and hence $JMPx\in\operatorname{ran}\widehat P$.  Therefore
+\[
+ \widehat QAJx=\widehat Q(JMx+Dx)=\widehat QDx.
+\]
+Since $J$ is isometric on $\operatorname{ran}P$, taking the supremum proves
+\eqref{eq:out}.  Applying the same argument to $A^*$ and $M^*$ gives
+$\norm{\widehat QA^*\widehat P}\leq\norm{D^\sharp P}$.  Taking adjoints
+proves \eqref{eq:in}.  Multiplication gives the final inequality.
+\end{proof}
+
+The adjoint defect is not a cosmetic duplication.  Nonnormal dynamics can
+have a small right residual and a large left residual.  Later Schur bounds
+use their product, while directional graph bounds distinguish them.
+
+\begin{corollary}[Exact intertwining]
+If $AJ=JM$ and $A^*J=JM^*$ on $\operatorname{ran}P$, then $\widehat P$
+reduces $A$.  Any contour separating the realized packet spectrum from its
+complement already has $\widehat P$ as its Riesz projection.
+\end{corollary}
+\begin{proof}
+Both off-diagonal blocks vanish by Theorem~\ref{thm:realization}.
+\end{proof}
+
+\section{No coupling bound without a realization}
+\begin{proposition}[Two-dimensional non-identifiability witness]
+Fix the one-dimensional source data $\cE=\mathbb C$, $M=0$, and $P=I$.
+Let $A=\operatorname{diag}(0,1)$ on $\mathbb C^2$.  There are isometries
+$J_0,J_1:\cE\to\mathbb C^2$ realizing the identical source packet for which
+\[
+ \norm{(I-J_0J_0^*)AJ_0J_0^*}=0,qquad
+ \norm{(I-J_1J_1^*)AJ_1J_1^*}=\frac12.
+\]
+\end{proposition}
+\begin{proof}
+Take $J_0(1)=e_1$ and $J_1(1)=2^{-1/2}(e_1+e_2)$.  The first range is an
+eigenspace.  In the orthonormal basis
+$2^{-1/2}(e_1+e_2),2^{-1/2}(e_1-e_2)$, the off-diagonal entry of $A$ has
+absolute value $1/2$.
+\end{proof}
+
+Thus packet positivity, overlap floors, and source-space rank do not bound a
+transfer-space coupling.  The map $J$ and its dynamical defects are genuine
+physical inputs, not coordinate notation.
+
+\section{Near-isometries and polar repair}
+Suppose a proposed map $J_0$ obeys
+\[
+ \norm{J_0^*J_0-I}\leq\eta<1.
+\]
+Then $G=J_0^*J_0$ is positive invertible and
+$J=J_0G^{-1/2}$ is an isometry.  Functional calculus gives
+\[
+ \norm{G^{-1/2}}\leq(1-\eta)^{-1/2},\qquad
+ \norm{G^{-1/2}-I}\leq(1-\eta)^{-1/2}-1.
+\]
+However,
+\begin{align*}
+ AJ-JM={}&(AJ_0-J_0M)G^{-1/2}\\
+ &+J_0\bigl(MG^{-1/2}-G^{-1/2}M\bigr).
+\end{align*}
+The second term vanishes only when the source dynamics commutes with the Gram
+correction.  A numerical orthogonalization that omits this commutator does
+not certify the physical intertwining defect \citep{StewartSun1990}.
+
+\section{Gauge covariance and a canonicity test}
+An ambient realization should depend on the source subspace, not on a chosen
+basis.  The following elementary identity is useful in implementation.
+
+\begin{proposition}[Source-gauge covariance]
+Let $U$ be unitary on $\cE$ and transform the source data by
+\[
+ M'=UMU^*,\qquad P'=UPU^*,\qquad J'=JU^*.
+\]
+Then the realized packet and directed defect norms are unchanged:
+\[
+ J'P'J'^*=JPJ^*,
+\]
+and
+\[
+ \norm{(AJ'-J'M')P'}=\norm{(AJ-JM)P},
+\]
+with the analogous identity for the adjoint defect.
+\end{proposition}
+\begin{proof}
+The first identity follows by cancellation of adjacent $U^*U$ factors.
+Also
+\[
+ (AJ'-J'M')P'=(AJ-JM)PU^*,
+\]
+and right multiplication by a unitary preserves the norm.  Apply the same
+calculation to $A^*$ and $M^*$.
+\end{proof}
+
+This gives a direct falsifier for a proposed physical construction: if a
+rotation of the reset frame changes the realized transfer packet, the map is
+frame-fitted rather than packet-canonical.  Three further tests remain
+independent: $J$ must not use target zero data; its normalization must remain
+controlled as the dimensions grow; and its common-coordinate transports
+must be compatible with refinement.  Gauge covariance is necessary but not
+sufficient for those stronger requirements.
+
+\section{Finite audit and physical frontier}
+The companion audit samples 512 random triples $(A,M,J)$ with dimensions
+$10$, $7$, and packet rank $3$.  It evaluates both sides of
+\eqref{eq:out}--\eqref{eq:in}; no failure occurs.  This checks the
+implementation, not the prime-dynamics hypotheses.
+
+For the archived route, the new subinterface X consists of:
+\begin{enumerate}
+\item a target-independent ambient map $J_j$ from each reset-memory space to
+the transfer/determinant space;
+\item a normalization and polar repair with controlled commutator;
+\item primal and adjoint packet-defect bounds;
+\item compatibility of these maps across the moving cloud schedule.
+\end{enumerate}
+Only after X is supplied can RH-161's contour estimate be applied to the
+physical reset packet.  RH-162 proves the type-correct implication and the
+impossibility of deleting X from this architecture.  It does not construct
+X, a Riesz cloud, a canonical determinant, a scattering completion, a
+self-adjoint operator, a zeta identity, or the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
