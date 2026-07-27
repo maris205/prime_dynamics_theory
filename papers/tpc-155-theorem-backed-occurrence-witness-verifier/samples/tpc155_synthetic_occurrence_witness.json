@@ -1,0 +1,837 @@
+{
+  "claim_boundary": {
+    "endpoint_1_over_400": false,
+    "external_provenance_truth_proved_by_verifier": false,
+    "new_positive_fixed_h0_L2": false,
+    "prime_pair_or_twin_prime_theorem": false,
+    "synthetic_fixture_is_production": false
+  },
+  "cuts": [
+    {
+      "cut_multiplier": {
+        "imag": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "real": {
+          "denominator": 1,
+          "numerator": 2
+        }
+      },
+      "cut_multiplier_source_ast": {
+        "op": "synthetic_exact_constant",
+        "value": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 2
+          }
+        }
+      },
+      "cut_source_id": "syn.cut",
+      "cut_terminal_type": "ELIGIBLE_TAIL_OPEN",
+      "native_identity": {
+        "h0": 2,
+        "native_id": "syn-native-eto",
+        "native_tuple": {
+          "ell": 11,
+          "k": 3,
+          "native_d": 5
+        },
+        "physical_normalization": "SYNTHETIC_NU_X",
+        "weight_source_id": "synthetic-bump-v1"
+      },
+      "source_cut_path_id": "synthetic-cut-eto",
+      "support": {
+        "coefficient_nonzero_status": "UNDECIDED",
+        "role": "FORMAL_SUPPORT_ENVELOPE",
+        "source_id": "syn.cut"
+      }
+    },
+    {
+      "cut_multiplier": {
+        "imag": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "real": {
+          "denominator": 2,
+          "numerator": -3
+        }
+      },
+      "cut_multiplier_source_ast": {
+        "op": "synthetic_exact_constant",
+        "value": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 2,
+            "numerator": -3
+          }
+        }
+      },
+      "cut_source_id": "syn.cut",
+      "cut_terminal_type": "FRONTIER_UNMAPPED",
+      "native_identity": {
+        "h0": 2,
+        "native_id": "syn-native-fum",
+        "native_tuple": {
+          "ell": 13,
+          "k": 4,
+          "native_d": 7
+        },
+        "physical_normalization": "SYNTHETIC_NU_X",
+        "weight_source_id": "synthetic-bump-v1"
+      },
+      "source_cut_path_id": "synthetic-cut-fum",
+      "support": {
+        "coefficient_nonzero_status": "UNDECIDED",
+        "role": "FORMAL_SUPPORT_ENVELOPE",
+        "source_id": "syn.cut"
+      }
+    }
+  ],
+  "fixture_scope": "SYNTHETIC_L0_ONLY",
+  "hash_mode": "CANONICAL_UTF8_LF_V2",
+  "occurrences": [
+    {
+      "G": {
+        "exact_reconstruction_multiplier": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 2,
+            "numerator": 1
+          }
+        },
+        "multiplicity_and_inverse_aggregation": "inverse:synthetic-parent-eto",
+        "physical_cover_class": "cover-class:synthetic-group-eto",
+        "physical_group_id": "synthetic-group-eto",
+        "physical_map_edge": "G-edge:synthetic-occ-eto-0",
+        "physical_occurrence_id": "physical:synthetic-occ-eto-0",
+        "reconnection_destination": "synthetic-return-eto",
+        "source_id": "syn.group"
+      },
+      "P_h0": {
+        "preserves_fixed_h0": true,
+        "source_id": "syn.shift",
+        "source_selector_domain": "H0_SLICE:h0=2",
+        "source_shift_tag": "h0:2",
+        "stage_matrix_edge": "stage-edge:synthetic-occ-eto-0",
+        "target_selector_domain": "H0_SLICE:h0=2",
+        "target_shift_tag": "h0:2"
+      },
+      "QD": {
+        "determinant_bin_id": "bin:det:+5",
+        "determinant_bin_map_edge": "QD-edge:synthetic-occ-eto-0",
+        "exact_determinant_label": "det:+5",
+        "source_id": "syn.qd"
+      },
+      "QZ": {
+        "arithmetic_sign": 1,
+        "content_remainder_destination": "remainder:synthetic-occ-eto-0",
+        "factor_allocation_id": "allocation:synthetic-occ-eto-0",
+        "ordered_coordinate": "n",
+        "outer_affine_key": "outer:synthetic-occ-eto-0",
+        "outer_weight": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        "rank": 0,
+        "source_id": "syn.qz",
+        "zero_mode_map_edge": "QZ-edge:synthetic-occ-eto-0"
+      },
+      "affine_coordinates": {
+        "D_intercept_d": 1,
+        "D_slope_s": 2,
+        "V_intercept_u": 3,
+        "V_slope_a": 1,
+        "crosswalk_source_id": "syn.affine",
+        "determinant_su_minus_ad": 5,
+        "native_d_relation": "DISTINCT_SYMBOL_WITH_EXPLICIT_CROSSWALK"
+      },
+      "canonical_parent": {
+        "canonical_parent_id": "synthetic-parent-eto",
+        "canonical_parent_key": {
+          "alpha": "alpha:synthetic-parent-eto",
+          "gamma": "gamma:synthetic-parent-eto",
+          "j": 0
+        },
+        "computational_multiplicity": 1,
+        "content_gcd": 1,
+        "determinant_bin_map_edge": "QD-edge:synthetic-occ-eto-0",
+        "exact_determinant_label": "det:+5",
+        "integer_slopes": [
+          2,
+          1
+        ],
+        "inverse_aggregation_relation": "inverse:synthetic-parent-eto",
+        "literal_parent_coefficient": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        "ordered_targets_x_y": {
+          "x": "x:synthetic-occ-eto-0",
+          "y": "y:synthetic-occ-eto-0"
+        },
+        "physical_multiplicity": 1,
+        "row_ids": [
+          "row:synthetic-parent-eto:0",
+          "row:synthetic-parent-eto:1"
+        ],
+        "signed_determinant_numerator": 5,
+        "source_id": "syn.parent"
+      },
+      "lift_edge_weight": {
+        "imag": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "real": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "multiplier_chain": {
+        "cut_multiplier": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 2
+          }
+        },
+        "downstream_factors": [
+          {
+            "factor_id": "stage:synthetic-occ-eto-0",
+            "scalar": {
+              "imag": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "real": {
+                "denominator": 1,
+                "numerator": 2
+              }
+            },
+            "source_id": "syn.stage"
+          },
+          {
+            "factor_id": "group:synthetic-group-eto",
+            "scalar": {
+              "imag": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "real": {
+                "denominator": 2,
+                "numerator": 1
+              }
+            },
+            "source_id": "syn.group"
+          }
+        ],
+        "lift_edge_weight": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        "recorded_total": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 2
+          }
+        }
+      },
+      "native_identity": {
+        "h0": 2,
+        "native_id": "syn-native-eto",
+        "native_tuple": {
+          "ell": 11,
+          "k": 3,
+          "native_d": 5
+        },
+        "physical_normalization": "SYNTHETIC_NU_X",
+        "weight_source_id": "synthetic-bump-v1"
+      },
+      "occurrence_id": "synthetic-occ-eto-0",
+      "occurrence_source_id": "syn.cut",
+      "source_cut_path_id": "synthetic-cut-eto",
+      "stage": {
+        "local_multiplier": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 2
+          }
+        },
+        "source_cut_path_id": "synthetic-cut-eto",
+        "source_id": "syn.stage",
+        "source_selector_domain": "H0_SLICE:h0=2",
+        "source_shift_tag": "h0:2",
+        "stage_id": "stage:synthetic-occ-eto-0",
+        "stage_matrix_edge": "stage-edge:synthetic-occ-eto-0",
+        "target_occurrence_id": "synthetic-occ-eto-0",
+        "target_selector_domain": "H0_SLICE:h0=2",
+        "target_shift_tag": "h0:2"
+      },
+      "support": {
+        "coefficient_nonzero_status": "UNDECIDED",
+        "role": "FORMAL_SUPPORT_ENVELOPE",
+        "source_id": "syn.support"
+      }
+    },
+    {
+      "G": {
+        "exact_reconstruction_multiplier": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 2,
+            "numerator": 1
+          }
+        },
+        "multiplicity_and_inverse_aggregation": "inverse:synthetic-parent-fum",
+        "physical_cover_class": "cover-class:synthetic-group-fum",
+        "physical_group_id": "synthetic-group-fum",
+        "physical_map_edge": "G-edge:synthetic-occ-fum-0",
+        "physical_occurrence_id": "physical:synthetic-occ-fum-0",
+        "reconnection_destination": "synthetic-return-fum",
+        "source_id": "syn.group"
+      },
+      "P_h0": {
+        "preserves_fixed_h0": true,
+        "source_id": "syn.shift",
+        "source_selector_domain": "H0_SLICE:h0=2",
+        "source_shift_tag": "h0:2",
+        "stage_matrix_edge": "stage-edge:synthetic-occ-fum-0",
+        "target_selector_domain": "H0_SLICE:h0=2",
+        "target_shift_tag": "h0:2"
+      },
+      "QD": {
+        "determinant_bin_id": "bin:det:+13",
+        "determinant_bin_map_edge": "QD-edge:synthetic-occ-fum-0",
+        "exact_determinant_label": "det:+13",
+        "source_id": "syn.qd"
+      },
+      "QZ": {
+        "arithmetic_sign": -1,
+        "content_remainder_destination": "remainder:synthetic-occ-fum-0",
+        "factor_allocation_id": "allocation:synthetic-occ-fum-0",
+        "ordered_coordinate": "n",
+        "outer_affine_key": "outer:synthetic-occ-fum-0",
+        "outer_weight": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        "rank": 1,
+        "source_id": "syn.qz",
+        "zero_mode_map_edge": "QZ-edge:synthetic-occ-fum-0"
+      },
+      "affine_coordinates": {
+        "D_intercept_d": 2,
+        "D_slope_s": 3,
+        "V_intercept_u": 5,
+        "V_slope_a": 1,
+        "crosswalk_source_id": "syn.affine",
+        "determinant_su_minus_ad": 13,
+        "native_d_relation": "DISTINCT_SYMBOL_WITH_EXPLICIT_CROSSWALK"
+      },
+      "canonical_parent": {
+        "canonical_parent_id": "synthetic-parent-fum",
+        "canonical_parent_key": {
+          "alpha": "alpha:synthetic-parent-fum",
+          "gamma": "gamma:synthetic-parent-fum",
+          "j": 1
+        },
+        "computational_multiplicity": 1,
+        "content_gcd": 1,
+        "determinant_bin_map_edge": "QD-edge:synthetic-occ-fum-0",
+        "exact_determinant_label": "det:+13",
+        "integer_slopes": [
+          3,
+          1
+        ],
+        "inverse_aggregation_relation": "inverse:synthetic-parent-fum",
+        "literal_parent_coefficient": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        "ordered_targets_x_y": {
+          "x": "x:synthetic-occ-fum-0",
+          "y": "y:synthetic-occ-fum-0"
+        },
+        "physical_multiplicity": 1,
+        "row_ids": [
+          "row:synthetic-parent-fum:0",
+          "row:synthetic-parent-fum:1"
+        ],
+        "signed_determinant_numerator": 13,
+        "source_id": "syn.parent"
+      },
+      "lift_edge_weight": {
+        "imag": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "real": {
+          "denominator": 3,
+          "numerator": 1
+        }
+      },
+      "multiplier_chain": {
+        "cut_multiplier": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 2,
+            "numerator": -3
+          }
+        },
+        "downstream_factors": [
+          {
+            "factor_id": "stage:synthetic-occ-fum-0",
+            "scalar": {
+              "imag": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "real": {
+                "denominator": 1,
+                "numerator": 2
+              }
+            },
+            "source_id": "syn.stage"
+          },
+          {
+            "factor_id": "group:synthetic-group-fum",
+            "scalar": {
+              "imag": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "real": {
+                "denominator": 2,
+                "numerator": 1
+              }
+            },
+            "source_id": "syn.group"
+          }
+        ],
+        "lift_edge_weight": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 3,
+            "numerator": 1
+          }
+        },
+        "recorded_total": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 2,
+            "numerator": -1
+          }
+        }
+      },
+      "native_identity": {
+        "h0": 2,
+        "native_id": "syn-native-fum",
+        "native_tuple": {
+          "ell": 13,
+          "k": 4,
+          "native_d": 7
+        },
+        "physical_normalization": "SYNTHETIC_NU_X",
+        "weight_source_id": "synthetic-bump-v1"
+      },
+      "occurrence_id": "synthetic-occ-fum-0",
+      "occurrence_source_id": "syn.cut",
+      "source_cut_path_id": "synthetic-cut-fum",
+      "stage": {
+        "local_multiplier": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 2
+          }
+        },
+        "source_cut_path_id": "synthetic-cut-fum",
+        "source_id": "syn.stage",
+        "source_selector_domain": "H0_SLICE:h0=2",
+        "source_shift_tag": "h0:2",
+        "stage_id": "stage:synthetic-occ-fum-0",
+        "stage_matrix_edge": "stage-edge:synthetic-occ-fum-0",
+        "target_occurrence_id": "synthetic-occ-fum-0",
+        "target_selector_domain": "H0_SLICE:h0=2",
+        "target_shift_tag": "h0:2"
+      },
+      "support": {
+        "coefficient_nonzero_status": "UNDECIDED",
+        "role": "CANONICAL_PARENT_CARRIER",
+        "source_id": "syn.support"
+      }
+    },
+    {
+      "G": {
+        "exact_reconstruction_multiplier": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 2,
+            "numerator": 1
+          }
+        },
+        "multiplicity_and_inverse_aggregation": "inverse:synthetic-parent-fum",
+        "physical_cover_class": "cover-class:synthetic-group-fum",
+        "physical_group_id": "synthetic-group-fum",
+        "physical_map_edge": "G-edge:synthetic-occ-fum-1",
+        "physical_occurrence_id": "physical:synthetic-occ-fum-1",
+        "reconnection_destination": "synthetic-return-fum",
+        "source_id": "syn.group"
+      },
+      "P_h0": {
+        "preserves_fixed_h0": true,
+        "source_id": "syn.shift",
+        "source_selector_domain": "H0_SLICE:h0=2",
+        "source_shift_tag": "h0:2",
+        "stage_matrix_edge": "stage-edge:synthetic-occ-fum-1",
+        "target_selector_domain": "H0_SLICE:h0=2",
+        "target_shift_tag": "h0:2"
+      },
+      "QD": {
+        "determinant_bin_id": "bin:det:+2",
+        "determinant_bin_map_edge": "QD-edge:synthetic-occ-fum-1",
+        "exact_determinant_label": "det:+2",
+        "source_id": "syn.qd"
+      },
+      "QZ": {
+        "arithmetic_sign": 1,
+        "content_remainder_destination": "remainder:synthetic-occ-fum-1",
+        "factor_allocation_id": "allocation:synthetic-occ-fum-1",
+        "ordered_coordinate": "n",
+        "outer_affine_key": "outer:synthetic-occ-fum-1",
+        "outer_weight": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        "rank": 2,
+        "source_id": "syn.qz",
+        "zero_mode_map_edge": "QZ-edge:synthetic-occ-fum-1"
+      },
+      "affine_coordinates": {
+        "D_intercept_d": 1,
+        "D_slope_s": 1,
+        "V_intercept_u": 4,
+        "V_slope_a": 2,
+        "crosswalk_source_id": "syn.affine",
+        "determinant_su_minus_ad": 2,
+        "native_d_relation": "DISTINCT_SYMBOL_WITH_EXPLICIT_CROSSWALK"
+      },
+      "canonical_parent": {
+        "canonical_parent_id": "synthetic-parent-fum",
+        "canonical_parent_key": {
+          "alpha": "alpha:synthetic-parent-fum",
+          "gamma": "gamma:synthetic-parent-fum",
+          "j": 2
+        },
+        "computational_multiplicity": 1,
+        "content_gcd": 1,
+        "determinant_bin_map_edge": "QD-edge:synthetic-occ-fum-1",
+        "exact_determinant_label": "det:+2",
+        "integer_slopes": [
+          1,
+          2
+        ],
+        "inverse_aggregation_relation": "inverse:synthetic-parent-fum",
+        "literal_parent_coefficient": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        "ordered_targets_x_y": {
+          "x": "x:synthetic-occ-fum-1",
+          "y": "y:synthetic-occ-fum-1"
+        },
+        "physical_multiplicity": 1,
+        "row_ids": [
+          "row:synthetic-parent-fum:0",
+          "row:synthetic-parent-fum:1"
+        ],
+        "signed_determinant_numerator": 2,
+        "source_id": "syn.parent"
+      },
+      "lift_edge_weight": {
+        "imag": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "real": {
+          "denominator": 3,
+          "numerator": 2
+        }
+      },
+      "multiplier_chain": {
+        "cut_multiplier": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 2,
+            "numerator": -3
+          }
+        },
+        "downstream_factors": [
+          {
+            "factor_id": "stage:synthetic-occ-fum-1",
+            "scalar": {
+              "imag": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "real": {
+                "denominator": 1,
+                "numerator": 2
+              }
+            },
+            "source_id": "syn.stage"
+          },
+          {
+            "factor_id": "group:synthetic-group-fum",
+            "scalar": {
+              "imag": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "real": {
+                "denominator": 2,
+                "numerator": 1
+              }
+            },
+            "source_id": "syn.group"
+          }
+        ],
+        "lift_edge_weight": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 3,
+            "numerator": 2
+          }
+        },
+        "recorded_total": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": -1
+          }
+        }
+      },
+      "native_identity": {
+        "h0": 2,
+        "native_id": "syn-native-fum",
+        "native_tuple": {
+          "ell": 13,
+          "k": 4,
+          "native_d": 7
+        },
+        "physical_normalization": "SYNTHETIC_NU_X",
+        "weight_source_id": "synthetic-bump-v1"
+      },
+      "occurrence_id": "synthetic-occ-fum-1",
+      "occurrence_source_id": "syn.cut",
+      "source_cut_path_id": "synthetic-cut-fum",
+      "stage": {
+        "local_multiplier": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 2
+          }
+        },
+        "source_cut_path_id": "synthetic-cut-fum",
+        "source_id": "syn.stage",
+        "source_selector_domain": "H0_SLICE:h0=2",
+        "source_shift_tag": "h0:2",
+        "stage_id": "stage:synthetic-occ-fum-1",
+        "stage_matrix_edge": "stage-edge:synthetic-occ-fum-1",
+        "target_occurrence_id": "synthetic-occ-fum-1",
+        "target_selector_domain": "H0_SLICE:h0=2",
+        "target_shift_tag": "h0:2"
+      },
+      "support": {
+        "coefficient_nonzero_status": "PROVED_NONZERO",
+        "role": "ACTUAL_ACTIVE_SUPPORT",
+        "source_id": "syn.support"
+      }
+    }
+  ],
+  "required_domain": "ALL_NONSOFT_ETO_PLUS_FUM",
+  "schema": "OccurrenceWitnessV1",
+  "trusted_source_registry": [
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.cut",
+      "theorem_id": "SYNTHETIC.CUT.FIXTURE"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.parent",
+      "theorem_id": "SYNTHETIC.PARENT.FIXTURE"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.stage",
+      "theorem_id": "SYNTHETIC.STAGE.FIXTURE"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.qd",
+      "theorem_id": "SYNTHETIC.QD.FIXTURE"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.qz",
+      "theorem_id": "SYNTHETIC.QZ.FIXTURE"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.group",
+      "theorem_id": "SYNTHETIC.GROUP.FIXTURE"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.shift",
+      "theorem_id": "SYNTHETIC.SHIFT.FIXTURE"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.support",
+      "theorem_id": "SYNTHETIC.SUPPORT.FIXTURE"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.cover",
+      "theorem_id": "SYNTHETIC.COVER.FIXTURE"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.reconnection",
+      "theorem_id": "SYNTHETIC.RECONNECTION.FIXTURE"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.registry",
+      "theorem_id": "SYNTHETIC.REGISTRY.FIXTURE"
+    },
+    {
+      "artifact_path": null,
+      "artifact_sha256": null,
+      "source_class": "SYNTHETIC_AXIOM_L0",
+      "source_id": "syn.affine",
+      "theorem_id": "SYNTHETIC.AFFINE.FIXTURE"
+    }
+  ],
+  "witness_id": "tpc155-synthetic-nonvacuity-v1"
+}

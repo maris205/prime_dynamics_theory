@@ -1,0 +1,98 @@
+{
+  "artifacts": {
+    "formal_completions_sha256": "e2135541e186b5f6bb1c5bfeba8c976422637699793abb7a0286ae2048f74f11"
+  },
+  "claim_boundary": {
+    "actual_active_support_proved": false,
+    "actual_branch_multiplicity_identified": false,
+    "actual_parent_stage_or_shift_identified": false,
+    "endpoint_1_over_400": false,
+    "formal_completion_is_actual_occurrence_lift": false,
+    "frontier_scalar_oX": false,
+    "positive_fixed_h0_L2": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "finite_certificate": {
+    "A_and_B_column_sums": {
+      "denominator": 1,
+      "numerator": 1,
+      "ring": "Q"
+    },
+    "A_and_B_have_different_row_separated_branch_count": true,
+    "all_edge_ids_unique": true,
+    "completion_A_edges": 2989,
+    "completion_B_edges": 5978,
+    "production_fiber_count": 2988,
+    "scope_counts": {
+      "PRODUCTION_CURRENT_ARCHIVE": 2988,
+      "SYNTHETIC_L0_ONLY": 1
+    },
+    "source_fiber_count": 2989,
+    "synthetic_ETO_fiber_count": 1,
+    "terminal_type_counts_including_synthetic": {
+      "ELIGIBLE_TAIL_OPEN": 1,
+      "FRONTIER_UNMAPPED": 2988
+    }
+  },
+  "first_missing": {
+    "node_id": "H1.theorem_backed_occurrence_provenance_crosswalk",
+    "required_artifact": "external theorem-backed row-level cut-to-stage-to-parent-to-physical-occurrence crosswalk, including exact edge multipliers and support status, on every ETO and FUM source"
+  },
+  "formal_completion_class": {
+    "completion_A": "one child of exact weight 1",
+    "completion_B": "two row-separated children of exact weight 1/2 each",
+    "constraints": [
+      "one or more row-separated formal children per partial occurrence",
+      "exact rational forgetting weights sum to one in every source column",
+      "native tuple, source h0, normalization, and formal support are echoed",
+      "all absent downstream groups are explicitly populated as FORMAL_ONLY",
+      "no actual-support or theorem-backed provenance condition is imposed"
+    ],
+    "inequivalent_branch_count": true,
+    "name": "MAXIMAL_CURRENT_SCHEMA_FREE_COMPLETION_CLASS",
+    "same_forgetting_pushforward": true
+  },
+  "mutation_regression": {
+    "active_support_promotion_rejected": true,
+    "actual_provenance_promotion_rejected": true,
+    "canonical_selection_promotion_rejected": true,
+    "cross_fiber_edge_rejected": true,
+    "deleted_production_fiber_rejected": true,
+    "duplicated_production_fiber_rejected": true,
+    "false_L2_claim_rejected": true,
+    "h0_lineage_drift_rejected": true,
+    "native_d_affine_d_conflation_rejected": true,
+    "native_lineage_drift_rejected": true,
+    "nonconservative_split_rejected": true,
+    "normalization_drift_rejected": true,
+    "parent_field_deletion_rejected": true,
+    "stage_field_deletion_rejected": true,
+    "synthetic_ETO_omission_rejected": true
+  },
+  "obstruction_scope": {
+    "actual_carrier_impossibility_proved": false,
+    "augmented_theorem_backed_route_remains_open": true,
+    "reason": "two inequivalent conservative formal completions have the same TPC-153 forgetting pushforward on every source column",
+    "stopped_route": "CURRENT_ARTIFACTS_ONLY_CANONICAL_ACTUAL_LIFT_DERIVATION",
+    "two_actual_carrier_completions_constructed": false
+  },
+  "schema": "tpc-154-completion-fiber-obstruction-certificate-v1",
+  "source": {
+    "hashes_are_integrity_only": true,
+    "lock_mode": "CANONICAL_UTF8_LF_V2",
+    "semantic_generation_chain": "PASS",
+    "tpc153_certificate_sha256": "b1a9d016d44174e45ea846e4b42ac3ad11098f2d6802159ee353a6778e7bfa19",
+    "tpc153_schema_sha256": "6934a6a8734a1d5415434b0beeaff45145c232def402c7e22da7204151085bf3",
+    "tpc153_shadow_sha256": "5824d1d23150192104d9efdc634fbcdfef9560684d9fa53fce69b2703a46287f",
+    "tpc153_synthetic_eto_sha256": "1f893a1181cf49929d93496fb279d0be236e3197ea727defada5cf5c8e07b494",
+    "tpc154_schema_contract_validation": "PASS",
+    "tpc154_schema_sha256": "ee9ab572cebfb76d855d9f3f94870995efa4df878bf74474b806777166a55012"
+  },
+  "status": "PASS",
+  "theorem_exports": {
+    "H1.augmented_actual_occurrence_lift": "NOT_TESTABLE",
+    "H1.current_artifacts_only_canonical_actual_lift": "STOP_DECLARED_ROUTE",
+    "H1.formal_completion_fiber_nonuniqueness": "PROVED_L0_SCHEMA",
+    "selected_augmented_route_stopped": false
+  }
+}

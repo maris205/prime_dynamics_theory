@@ -1,0 +1,605 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={MVP6 on the Actual-Carrier Endpoint Corridor},
+  pdfauthor={Liang Wang},
+  pdfsubject={A source-locked route decision after occurrence and almost-prefix return},
+  pdfkeywords={MVP6, fixed shift, occurrence provenance, almost endpoint, route audit}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\GO}{\textnormal{\textsc{go}}}
+\newcommand{\AINF}{\textnormal{\textsc{architecture-infeasible}}}
+\newcommand{\REROUTE}{\textnormal{\textsc{reroute}}}
+\newcommand{\STOPR}{\textnormal{\textsc{stop-route}}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\AF}{\textnormal{\textsc{arithmetic-frontier}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcommand{\INVALID}{\textnormal{\textsc{invalid}}}
+\newcommand{\Bhard}{B_{h_0,\delta}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{MVP6 on the Actual-Carrier Endpoint Corridor:}\\
+\textbf{A Source-Locked Route Decision after}\\
+\textbf{Occurrence and Almost-Prefix Return}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-153--161 sharpen both sides of the fixed-shift program.  On the
+structural side, a canonical cut shadow exists, but the frozen
+artifacts do not determine an actual conservative occurrence lift.
+This stops only the current-artifacts-only route.  The
+occurrence-augmented route remains unavailable at the first typed
+object
+\(\mathsf{H1.theorem\_backed\_occurrence\_provenance\_crosswalk}\);
+the scalar-plus-eligible-tail route also remains open under its own
+two-part contract.
+
+On the arithmetic side, a determinant-two two-M\"obius periodic core
+has been advanced from good dyadic blocks to cumulative prefixes
+outside a sparse dyadic shadow.  Exact Abel summation then gives a
+weighted almost-endpoint interface.  This is genuine
+\(\Lone_{\rm actual}\) progress.  It is not a deterministic
+all-prefix theorem, a literal physical-weight theorem, or a positive
+fixed-\(X\)-power \(\Ltwo\) result.
+
+We freeze these facts in MVP6.  Invalid data are rejected before seven
+ordered route verdicts.  The audit separately records the typed
+minimal \(\NT\) blocker antichain and the parent-ready \(\OPEN\)
+frontier, preserves complete-route-universe and fresh-registry
+requirements, and introduces an endpoint-V3 ledger that refuses to
+charge unknown physical data as zero.  The current source-locked
+decision is
+\[
+ \boxed{\operatorname{Verdict}_{153:161}=\textsc{not-testable}},
+ \qquad
+ \mathsf{FirstMissing}
+ =
+ \begin{gathered}
+ \mathsf{H1.theorem\_backed\_occurrence\_}\\[-2pt]
+ \mathsf{provenance\_crosswalk}
+ \end{gathered}
+ .
+\]
+No endpoint, prime-pair lower bound, or twin-prime theorem is claimed.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed shift; occurrence provenance;
+M\"obius correlation; almost endpoint; atomic prefix; route decision.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Claim boundary.}
+An \(\Lone\) theorem on an actual periodic core is not a theorem on
+the full literal physical carrier.  A logarithmic saving has
+fixed-\(X\)-power exponent zero.  A sparse exceptional set for
+continuous logarithmic measure does not control every prescribed
+atomic endpoint.  The scoped current-artifacts stop is not a global
+architectural impossibility.  We do not prove a production occurrence
+crosswalk, positive \(\Ltwo\), the strict \(1/400\) endpoint,
+\(\Bhard(X)=o(X)\), a prime-pair lower bound, or the twin-prime
+conjecture.
+\end{minipage}}
+
+\section{The two corridors entering MVP6}
+
+\subsection{The structural corridor}
+
+TPC-156 identifies the production H1 contract
+\citep{WangTPC156}.  Its occurrence-augmented map clause requires a
+theorem-backed provenance crosswalk before the conservative
+row-separated lift and the literal downstream maps can be evaluated.
+Its independent scalar clause requires both a complete original-scale
+frontier estimate and a theorem-backed disposition of every
+eligible-tail-open path.  In symbols,
+\[
+\begin{split}
+\mathsf{Map}_{H1}
+={}&
+\mathsf{Crosswalk}\wedge
+\bigwedge_{\star\in\mathcal D} (D_\star=0)
+\wedge\mathsf{RegistryComplete},\\
+\mathsf{Scalar}_{H1}
+={}&
+\mathsf{FUM}_{o(X)}
+\wedge\mathsf{ETO}_{\rm disposition},\\
+\mathsf{H1Complete}
+={}&
+\mathsf{Map}_{H1}\vee\mathsf{Scalar}_{H1},
+\end{split}
+\]
+where
+\[
+ \mathcal D=\{L,Q_D,Q_Z,G,P,DZ,GP,\mathrm{cover},\mathrm{rec}\}.
+\]
+The occurrence registry is an additional totality requirement, not a
+tenth algebraic defect silently merged into this vector.
+
+The finite archive has a canonical conservative cut shadow.  It also
+has a rigorous nonuniqueness result for completions using only current
+fields.  Consequently,
+\[
+ \mathsf{current\ artifacts\ only}
+ \quad\longmapsto\quad
+ \STOPR
+\]
+in that exact cell.  It does not imply that an enriched
+theorem-backed occurrence carrier cannot exist.  Therefore neither
+the occurrence-augmented map route nor the scalar-plus-ETO route is
+globally stopped.
+
+\subsection{The arithmetic corridor}
+
+TPC-159 imports the quantitative affine-correlation input of
+Tao--Ter\"av\"ainen and its M\"obius nonpretentiousness ancestry
+\citep{TaoTeravainen2026,MatomakiRadziwillTao2015,WangTPC159}.
+For the determinant-two periodic core, take
+\(a,s,R\in\mathbb N\), \((a,s)=1\), \(as\) odd, and
+\(d,u\in\mathbb Z\) satisfying \(su-ad=2\).  For \(z\in\mathbb Z\),
+write
+\[
+ q=as,\qquad t(z)=ad+qz,\qquad
+ c_z=\mu(d+sz)\mu(u+az),
+\]
+and let \(\rho\) be a bounded \(R\)-periodic function.  TPC-159 proves
+that outside a dyadic shadow \(\mathcal S_{X,J}\),
+\[
+ \frac qT
+ \left|
+   \sum_{0<t(z)\leq T} c_z\rho(z)
+ \right|
+ \ll
+ \|\rho\|_\infty
+ \left\{
+  (\log X)^{-\kappa_0}+2^{-J}+\frac qT
+ \right\},
+\tag{1}\label{eq:almost-prefix}
+\]
+provided \(2^J\sqrt X\leq T\leq X\), while
+\[
+ \frac1{\log X}\int_{\mathcal S_{X,J}}\frac{dT}{T}
+ \ll J(\log X)^{-\kappa_0}.
+\tag{2}\label{eq:shadow-measure}
+\]
+The geometric dyadic decomposition incurs no multiplicative \(J\)
+loss in \cref{eq:almost-prefix}.  The level is
+\[
+ \mathsf{PROVED\_L1\_ACTUAL\_PREFIX\_ALMOST\_ENDPOINT}.
+\]
+
+TPC-160 then applies exact Abel summation
+\citep{WangTPC160}.  If \(A_i=\sum_{j\leq i}\sigma_j\) and
+\(d_i=w_i-w_{i+1}\), with the terminal convention \(d_m=w_m\), then
+\[
+ \sum_{i=1}^{m}\sigma_iw_i=\sum_{i=1}^{m}A_id_i.
+\tag{3}\label{eq:abel}
+\]
+Splitting the variation into good and exceptional endpoint cells gives
+\[
+ \frac qT\left|\sum_i\sigma_iw_i\right|
+ \ll \|\rho\|_\infty
+ \left\{
+   \varepsilon_X V_{\rm good}(w)
+   +(1+q/T)V_{\rm bad}(w)
+ \right\},
+\tag{4}\label{eq:weighted-interface}
+\]
+where
+\(\varepsilon_X=(\log X)^{-\kappa_0}+2^{-J}+q/T\).
+This is an exact weighted interface, but the literal physical weight,
+actual endpoint registry and production bad-variation estimate remain
+unavailable.
+
+For a prefix cutoff, the Abel derivative is one unit atom at the
+chosen endpoint.  A set of zero logarithmic measure may contain that
+atom.  Thus \cref{eq:shadow-measure} alone cannot promote
+\cref{eq:almost-prefix} to every deterministic prefix.
+
+\section{A source-locked MVP6 snapshot}
+
+TPC-161 supplies the typed integration manifest used below
+\citep{WangTPC161}.
+
+\begin{definition}[Valid snapshot]
+An MVP6 snapshot is valid if:
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item the TPC-161 manifest, schema, audit and generating script match
+  their canonical UTF-8/LF hashes;
+\item direct TPC-156 and TPC-160 consistency anchors match the
+  structural and arithmetic exports used by the classifier;
+\item all hashes have integrity semantics only;
+\item node identifiers, dependency modes, roles, scopes, carriers,
+  normalizations and registries satisfy their schemas;
+\item the active typed DAG is acyclic;
+\item every stop, route-universe-completeness claim and reroute
+  crosswalk resolves through the route-evidence registry to a typed
+  source record with matching scope and route endpoints;
+\item the route table exactly covers its declared universe, and every
+  stopped cell carries source, scope, carrier, normalization,
+  registry and complete-cell coverage;
+\item every endpoint-V3 rational value has positive denominator and
+  every pass/stop direction is consistent; and
+\item all claim-boundary Booleans obey the achieved levels.
+\end{enumerate}
+\end{definition}
+
+Any failure returns the outer result \(\INVALID\).  Source drift makes
+the certificate stale; it does not make a mathematical theorem false.
+
+\section{Two frontiers that must not be merged}
+
+Let \(\mathcal A\) be the active ancestor closure of the selected
+root.  Define
+\[
+ \mathcal B_{\rm NT}
+ =
+ \min_{\preceq}\{v\in\mathcal A:
+       \operatorname{status}(v)=\NT
+       \text{ or }v\text{ is scope-incompatible}\}.
+\tag{5}\label{eq:nt-antichain}
+\]
+This is a typed blocker antichain: descendants are suppressed by
+their earliest missing ancestors.  The audit computes each recorded
+transitive ancestor set directly from the source DAG rather than
+trusting a submitted parent label.  A proved node with incompatible
+scope is therefore also a blocker, exactly as in
+\cref{eq:nt-antichain}.
+
+Separately define the parent-ready open frontier
+\[
+ \mathcal F_{\rm open}
+ =
+ \{v\in\mathcal A:
+   \operatorname{status}(v)=\OPEN,
+   v\text{ is scope-compatible},\
+   \text{every active parent of }v\text{ is proved}\}.
+\tag{6}\label{eq:open-frontier}
+\]
+A node in \(\mathcal F_{\rm open}\) is a live mathematical target.
+A node in \(\mathcal B_{\rm NT}\) needs a missing typed artifact before
+its predicate is testable.  The two sets are disjoint by their
+combined status-and-scope typing, and neither may be used as a
+substitute for the other.
+
+\begin{proposition}[Current typed frontiers]
+\label{prop:blocker}
+For the selected synthesis root,
+\[
+ \mathcal B_{\rm NT}
+ =
+ \left\{
+ \begin{gathered}
+ \mathsf{H1.theorem\_backed\_occurrence\_provenance\_crosswalk},\\
+ \mathsf{H9.endpoint\_registry},\
+ \mathsf{H9.literal\_weight\_registry},\\
+ \mathsf{H9.normalization\_registry},\
+ \mathsf{H9.phase\_cell\_registry}
+ \end{gathered}
+ \right\}.
+\tag{7}\label{eq:current-blockers}
+\]
+The canonical selected first missing representative is the H1
+crosswalk.  The separate parent-ready frontier is
+\[
+ \mathcal F_{\rm open}
+ =
+ \left\{
+ \begin{gathered}
+ \mathsf{O161.bad\_endpoint\_pointwise\_core},\\
+ \mathsf{O161.direct\_additive\_twist\_core}
+ \end{gathered}
+ \right\}.
+\tag{8}\label{eq:current-open}
+\]
+\end{proposition}
+
+\begin{proof}
+The canonical cut occurrence shadow, witness-verifier contract and
+typed H1 decision are proved.  Their next node requires a
+theorem-backed production crosswalk and is \(\NT\).  Independently,
+the literal-weight, phase-cell, endpoint and normalization registries
+are missing roots of the physical-return branch.  None of these five
+nodes descends from another, while the lift, literal downstream maps,
+physical cover, reconnection and complete physical registry descend
+from them.  This proves \cref{eq:current-blockers}; canonical node
+ordering selects the H1 entry first.  The two nodes in
+\cref{eq:current-open} are status-\(\OPEN\), have ready artifacts and
+proved parents, so they remain a distinct live frontier.
+\end{proof}
+
+\section{Route semantics and classifier}
+
+The source-locked route universe contains five declared cells:
+\[
+\begin{array}{lll}
+\mathsf{R}_{\rm archive}&:&
+\text{actual lift derivable from current fields only},\\
+\mathsf{R}_{\rm map+}&:&
+\text{occurrence-augmented theorem-backed map route},\\
+\mathsf{R}_{\rm scalar+ETO}&:&
+\text{complete FUM scalar theorem plus ETO disposition},\\
+\mathsf{R}_{\rm twist}&:&
+\text{direct additive-twist core route},\\
+\mathsf{R}_{\rm bad\ endpoint}&:&
+\text{pointwise control on exceptional prefix endpoints}.
+\end{array}
+\]
+Only \(\mathsf{R}_{\rm archive}\) is stopped.  Since no independent
+theorem proves these cells form a complete universe of possible
+arguments, this cannot imply \(\AINF\).
+
+A reroute is legal only when the selected route has an exact stop, the
+alternative is open, a theorem-backed typed crosswalk connects their
+objects and the alternative has a genuinely fresh registry.  Renaming
+a registry or reusing the stopped route's rows makes the snapshot
+\(\INVALID\), not \(\REROUTE\).
+
+The production classifier runs in \(\mathsf{SOURCE\_LOCKED}\) mode.
+Each route stop is resolved to its scoped source result, while any
+future completeness theorem or crosswalk must be resolved by
+canonical repository path and hash.  The reachability suite instead
+runs in the disjoint
+\(\mathsf{SYNTHETIC\_REACHABILITY}\) mode.  Its two file-backed
+predicate fixtures and inline stopped-cell assumptions explicitly
+carry
+\(\mathsf{NONE\_SYNTHETIC\_REACHABILITY\_ONLY}\) semantics; they are
+not theorem evidence and cannot be imported into the production mode.
+
+\begin{definition}[Ordered valid-snapshot verdicts]
+After validation, the first satisfied predicate in the following list
+is returned:
+\[
+\begin{gathered}
+\GO,\quad\AINF,\quad\REROUTE,\quad\STOPR,\\
+\NT,\quad\AF,\quad\OPEN.
+\end{gathered}
+\tag{9}\label{eq:precedence}
+\]
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(\GO\): every active requirement is proved in matching scope
+  and the full endpoint has strict positive slack.
+\item \(\AINF\): an independent theorem proves the route universe
+  complete and every route has an exact complete-cell stop.
+\item \(\REROUTE\): the selected route is stopped and a valid fresh
+  typed alternative is selected.
+\item \(\STOPR\): the selected route is stopped and no valid
+  alternative is selected.
+\item \(\NT\): the typed blocker antichain is nonempty.
+\item \(\AF\): every structural node and the physical endpoint are
+  proved, and all remaining unresolved nodes are scope-matched open
+  positive-\(\Ltwo\) arithmetic targets.
+\item \(\OPEN\): every other valid state.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Classifier totality]
+Validation followed by \cref{eq:precedence} returns exactly one of
+\[
+ \begin{gathered}
+ \INVALID,\quad\GO,\quad\AINF,\quad\REROUTE,\\
+ \STOPR,\quad\NT,\quad\AF,\quad\OPEN.
+ \end{gathered}
+\]
+Every result is reachable on a finite typed synthetic
+assumed-predicate regression fixture.
+\end{theorem}
+
+\begin{proof}
+Validation either fails, giving the separate outer result, or produces
+a finite valid state.  The ordered list has a final catch-all, hence
+the first true predicate is unique.  The regression suite constructs
+one logical witness for each verdict and one invalid route/registry
+witness for \(\INVALID\).  This establishes classifier totality only;
+it asserts none of the synthetic predicates as mathematics.
+\end{proof}
+
+\section{Endpoint V3}
+
+Endpoint V3 asks six literal questions before arithmetic and physical
+budgets may be combined:
+\begin{enumerate}[label=\textnormal{V3.\arabic*},leftmargin=2.8em]
+\item Are the coefficients the literal physical coefficients?
+\item Is the shift the fixed physical \(h_0=2\)?
+\item Is the atomic normalization the physical one?
+\item Is the representation canonical or proved minimal?
+\item Is the actual active support completely registered?
+\item Does the physical loss satisfy a strict upper bound below
+  \(1/400\)?
+\end{enumerate}
+An unknown answer is not zero cost.
+
+The arithmetic ledger records the strongest achieved theorem and the
+target separately:
+\[
+ \sigma_{\rm achieved}^{(X)}=0,
+ \qquad
+ \sigma_{\rm target}^{(X)}\geq\frac1{400}.
+\tag{10}\label{eq:arith-ledger}
+\]
+The zero in \cref{eq:arith-ledger} means that the proved saving is
+logarithmic, not that there is no arithmetic progress.
+The physical ledger requires
+\[
+ \Lambda_{\rm phys}<\frac1{400},
+\tag{11}\label{eq:physical-ledger}
+\]
+with a complete independent registry.  Full synthesis additionally
+requires compatible scopes and strict net slack.  Current artifacts
+certify neither \cref{eq:arith-ledger}'s fixed-power target nor
+\cref{eq:physical-ledger}.
+
+\begin{proposition}[No pseudo-endpoint]
+None of the following alone is an endpoint-V3 pass: an
+almost-endpoint log saving, continuous exceptional-set density, a
+conditional literal-weight interface, a finite empty ETO census, or
+an upper cost bound at or above \(1/400\).
+\end{proposition}
+
+\begin{proof}
+They respectively fail fixed-\(X\)-power, atomic endpoint, production
+weight, growing-scale coverage and strict inequality requirements.
+\end{proof}
+
+\section{The MVP6 decision}
+
+\begin{theorem}[Source-locked MVP6 verdict]
+\label{thm:mvp6}
+For the TPC-153--161 source-locked state,
+\[
+ \boxed{
+ \operatorname{Verdict}_{153:161}=\NT,
+ \qquad
+ \mathsf{FirstMissing}
+ =
+ \begin{gathered}
+ \mathsf{H1.theorem\_backed\_occurrence\_}\\[-2pt]
+ \mathsf{provenance\_crosswalk}
+ \end{gathered}
+ .
+ }
+\]
+The current-artifacts-only route is stopped in its exact declared
+cell; the selected augmented map route and scalar-plus-ETO route are
+not globally stopped.
+\end{theorem}
+
+\begin{proof}
+All source, type, DAG and endpoint validations pass, so the snapshot
+is not \(\INVALID\).  The selected augmented map route has no stop.
+The declared route universe has no completeness theorem, excluding
+\(\AINF\), and no alternative is activated with a fresh registry,
+excluding \(\REROUTE\).  By \cref{prop:blocker}, the selected active
+set has a five-node minimal \(\NT\) antichain whose canonical first
+entry is the H1 crosswalk.  The precedence therefore returns \(\NT\).
+
+Independently, TPC-159 supplies an actual periodic-core
+almost-endpoint \(\Lone\) theorem and TPC-160 a weighted interface,
+but the literal physical weight, phase-cell, normalization and endpoint
+registries, every atomic prefix and fixed positive \(X\)-power remain
+unavailable.  Thus \(\AF\) and \(\GO\) would also be false even if they
+were tested before the catch-all.
+\end{proof}
+
+\begin{corollary}[Precise progress label]
+The current state contains structural \(\Lone\), actual
+periodic-core almost-endpoint \(\Lone\), and an exact weighted-return
+interface.  The achieved fixed-\(X\)-power level remains below
+\(\Ltwo_{\rm actual\mbox{-}positive}\).
+\end{corollary}
+
+\section{Next forced objects}
+
+\paragraph{Structural object.}
+The selected route must next provide
+\[
+ \mathsf{H1.theorem\_backed\_occurrence\_provenance\_crosswalk}.
+\]
+It must cover every nonsoft ETO and FUM path, separate each target
+occurrence, conserve source columns and preserve theorem source,
+canonical parent, stage, multiplier, native value, fixed shift,
+physical normalization and support lineage.  Only then can the actual
+lift and nine defects be evaluated.
+
+\paragraph{Arithmetic/physical-return objects.}
+The parallel corridor must provide a source-locked literal physical
+weight, phase-cell registry, actual endpoint registry and literal
+normalization registry.  It must then prove either small bad variation
+in \cref{eq:weighted-interface} or a pointwise theorem on the
+exceptional atomic endpoints.  These are the next objects needed to
+turn TPC-159/160 into a literal physical-return statement.  A further
+theorem would still be required to replace the logarithmic saving by
+a positive fixed power of \(X\).
+
+\paragraph{Decision discipline.}
+If the crosswalk is constructed, the first missing pointer moves
+forward to the first nonzero or unevaluable literal map defect.  If a
+theorem proves that no crosswalk exists on the actual carrier, the
+augmented map cell may receive a typed stop.  If the scalar-plus-ETO
+clause is completed, it becomes a legitimate reroute only with its
+own fresh registry and crosswalk.  None of these future outcomes is
+prejudged here.
+
+\section{Reproducible audit}
+
+The standard-library generator dynamically reads the TPC-161
+manifest rather than embedding its hash.  It records canonical hashes
+for the TPC-161 manifest, schema, audit and script, and directly checks
+the TPC-156 scoped-stop and TPC-160 weighted-interface anchors.
+It also locks the two synthetic predicate fixtures used only by the
+reachability suite, then emits a strict snapshot and audit.
+
+Mutation regressions reject:
+\begin{enumerate}[leftmargin=2em]
+\item a malformed snapshot before mathematical classification;
+\item an unregistered or fabricated theorem label, or classifier
+  source-hash drift;
+\item route-universe completeness without a registered independent
+  theorem;
+\item architecture infeasibility from stops on only the declared
+  sample of routes;
+\item rerouting without a fresh registry or registered typed
+  crosswalk;
+\item promotion of the current-artifacts stop to actual-carrier
+  impossibility;
+\item collapsing the five-node selected-root blocker antichain to its
+  first reporting representative, or falsifying its transitive
+  ancestry;
+\item dropping a scope-incompatible blocker or merging an \(\NT\)
+  blocker with a parent-ready \(\OPEN\) node;
+\item assigning TPC-159 a deterministic all-prefix conclusion;
+\item promoting logarithmic decay to a positive \(X\)-power;
+\item treating exceptional logarithmic density as atomic avoidance;
+\item promoting the TPC-160 interface to a production physical-weight
+  theorem; and
+\item an endpoint-V3 pass with any unknown literal field or without a
+  strict \(1/400\) inequality.
+\end{enumerate}
+
+\section{Conclusion}
+
+MVP6 finds that both corridors remain live but not yet joined.  The
+selected structural first object is now one theorem-backed provenance
+crosswalk, not an unspecified missing matrix.  Four independent
+physical-return registries form the rest of the selected-root minimal
+blocker antichain.  The arithmetic theorem now reaches almost every
+cumulative endpoint of the actual periodic core, not merely one
+dyadic block.  The remaining gap is explicit: construct the actual
+carrier and return the arithmetic estimate through literal weights,
+phases, normalizations and atomic endpoints.  Until that happens,
+\(\NT\) is the only source-compatible verdict.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc158-phase-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "hash_mode",
+    "upstream",
+    "major_arc",
+    "minor_arc_projection",
+    "route_decision",
+    "claim_boundary",
+    "checks",
+    "mutation_regressions"
+  ],
+  "properties": {
+    "schema": {"const": "tpc-158-phase-gate-audit-v1"},
+    "status": {"const": "PASS"},
+    "hash_mode": {"const": "CANONICAL_UTF8_LF_V2"},
+    "upstream": {"type": "object"},
+    "major_arc": {"type": "object"},
+    "minor_arc_projection": {"type": "object"},
+    "route_decision": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "checks": {"type": "object"},
+    "mutation_regressions": {"type": "object"}
+  }
+}

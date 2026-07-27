@@ -1,0 +1,82 @@
+{
+  "checks": {
+    "asymptotic_endpoint_domain_nonempty": true,
+    "dyadic_dilation_measure_invariant": true,
+    "dyadic_telescoping_exact": true,
+    "geometric_mass_no_J_loss": true,
+    "log_shadow_union_bound": true,
+    "upstream_pass": true
+  },
+  "claim_boundary": {
+    "all_deterministic_prefixes": false,
+    "generic_phase": false,
+    "literal_nonperiodic_physical_weight": false,
+    "one_over_400": false,
+    "positive_fixed_X_power": false,
+    "prefix_outside_shadow": true,
+    "prime_pair_lower_bound": false,
+    "twin_prime_theorem": false
+  },
+  "finite_certificate": {
+    "J": 4,
+    "T": 192,
+    "block_sums": [
+      "-2197/420",
+      "101/210",
+      "1937/420",
+      "-79/42"
+    ],
+    "cumulative_sum": "-212/105",
+    "domain_fixture": {
+      "A": 2.0,
+      "J": 12,
+      "X": 1e+20,
+      "nonempty": true
+    },
+    "log_base_measure": "3/20",
+    "log_shadow_union_measure": "3/5",
+    "log_union_bound": "3/5",
+    "q": 3,
+    "tail_sum": "0/1",
+    "telescoping_exact": true
+  },
+  "hash_mode": "CANONICAL_UTF8_LF_V2",
+  "mutation_regressions": {
+    "reject_J_factor_in_correlation_as_required": true,
+    "reject_T_below_2J_sqrtX": true,
+    "reject_endpoint_inside_shadow": true,
+    "reject_log_saving_as_X_power": true,
+    "reject_shadow_density_as_all_prefix": true
+  },
+  "production_status": {
+    "actual_endpoint_registry_avoids_shadow": "NOT_TESTABLE",
+    "almost_endpoint_prefix": "PROVED_ON_PERIODIC_ACTUAL_CORE",
+    "deterministic_all_prefix": "OPEN"
+  },
+  "schema": "tpc-159-dyadic-shadow-audit-v1",
+  "shadow_measure": {
+    "asymptotic": "(log X)^(-kappa_0+o(1))",
+    "bound": "normalized_log_measure(S_X,J) << J*(log X)^(-kappa_0)",
+    "definition": "S_X,J = union_(1<=j<=J) 2^j E_X^star",
+    "dilation_preserves_dT_over_T": true
+  },
+  "status": "PASS",
+  "theorem": {
+    "J": "ceil(A*log_2(log X))",
+    "bound": "q/T*|sum_(0<t(z)<=T)c_z*rho(z)| << ||rho||_inf*((log X)^(-kappa_0)+2^(-J)+q/T)",
+    "carrier": "determinant_two_two_mobius_periodic_core",
+    "endpoint_domain": "2^J*sqrt(X) <= T <= X and T not in union_j 2^j E_X^star",
+    "export_id": "A159.dyadic_shadow_almost_endpoint_prefix",
+    "fixed_h0": 2,
+    "no_J_loss_in_correlation": true,
+    "reason": "dyadic block lengths sum geometrically",
+    "status": "PROVED_L1_ACTUAL_PREFIX_ALMOST_ENDPOINT"
+  },
+  "upstream": {
+    "audit_sha256": "fc1c4fa8357e4ee46c7bb48f8f20a4f7e2c4a81ededf35126e1842bd0515aa47",
+    "audit_status": "PASS",
+    "hash_semantics": "INTEGRITY_ONLY",
+    "main_tex_sha256": "8d4768d022ccf536ac14182b5a645797816df63a0814f698dd9a373c504bc167",
+    "paper": "TPC-149"
+  }
+}

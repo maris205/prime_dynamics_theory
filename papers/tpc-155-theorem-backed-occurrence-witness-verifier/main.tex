@@ -1,0 +1,674 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={A Theorem-Backed Occurrence Witness Contract},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact executable verification without provenance promotion},
+  pdfkeywords={occurrence lift, provenance, fixed shift, exact certificate, source lock}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\numberwithin{equation}{section}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PASS}{\textnormal{\textsc{pass}}}
+\newcommand{\ETO}{\mathcal C_X^{\mathrm{ETO}}}
+\newcommand{\FUM}{\mathcal C_X^{\mathrm{FUM}}}
+\newcommand{\Cns}{\mathcal C_X^{\mathrm{ns}}}
+\newcommand{\Oh}{\mathcal O_X}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Bhard}{B_{h_0,\delta}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{A Theorem-Backed Occurrence Witness Contract:}\\
+\textbf{Exact Verification without Provenance Promotion}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The first unresolved object in the source-locked frontier program is
+a conservative row-separated lift from every nonsoft cut path to
+fully typed downstream occurrences.  The existing archive does not
+contain that lift.  This paper answers the next narrower question:
+what finite evidence would be sufficient to verify a proposed lift
+without silently inventing its arithmetic provenance?
+
+We define \texttt{OccurrenceWitnessV1}.  Every occurrence row has one
+cut source and exact Gaussian-rational edge weight; every cut column
+must sum to one.  The witness separately records native tuple,
+prescribed shift, physical normalization, three support namespaces,
+canonical parent, stage, local multiplier chain, determinant quotient,
+zero-mode quotient, physical grouping and downstream shift selector.
+Physical cover, hard-packet reconnection and the occurrence registry
+are three independent exports.  A source identifier is required for
+every nontrivial field.
+
+We prove that the finite contract is equivalent to column conservation
+for the induced sparse matrix, that its copied metadata gives exact
+intertwining identities, and that its edgewise shift test excludes
+aggregate cancellation.  A deterministic standard-library verifier
+implements these statements with canonical UTF-8/LF source locks and
+mutation regressions.  A two-cut, three-occurrence fixture exercises
+both eligible-tail and frontier-unmapped types and a genuine
+one-to-many column.  It is explicitly synthetic \(\Lzero\) evidence.
+
+No production witness is supplied.  Consequently the actual
+occurrence lift, determinant and zero-mode maps, physical grouping,
+downstream selector, physical cover, reconnection and occurrence
+registry all remain \(\NT\).  The positive result is a sound
+verification interface; it is not existence of the object it would
+verify and is not positive fixed-\(X\)-power arithmetic progress.
+\end{abstract}
+
+\noindent\textbf{Keywords:} occurrence lift; exact conservation;
+provenance witness; fixed shift; source lock; executable certificate.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Claim boundary.}
+A verifier can prove that supplied records are internally complete,
+source-locked and algebraically consistent.  It cannot prove the truth
+of the external theorems named by those records.  The committed
+positive bundle is labelled
+\texttt{SYNTHETIC\_L0\_ONLY}; it is not a production occurrence
+archive.  No actual active-support carrier, four-map totalization,
+positive fixed-\(X\)-power \(\Ltwo\) estimate, \(1/400\) endpoint,
+\(\Bhard(X)=o(X)\), prime-pair lower bound or twin-prime theorem is
+claimed.
+\end{minipage}}
+
+\section{The exact verification problem}
+
+The nonsoft cut domain is
+\[
+ \Cns=\ETO\sqcup\FUM.
+\]
+Here ETO denotes \texttt{ELIGIBLE\_TAIL\_OPEN} and FUM denotes
+\texttt{FRONTIER\_UNMAPPED}.  The frozen finite archive used by
+TPC-143 has \(0\) ETO rows and \(2{,}988\) FUM rows
+\citep{WangTPC143}.  The zero is a property of that fixture, not a
+theorem that ETO is asymptotically empty.  Therefore every general
+contract in this paper retains both summands.
+
+The desired object is a finite sparse matrix
+\begin{equation}
+ L_X:\mathbb C^{\Cns}\longrightarrow\mathbb C^{\Oh},
+ \qquad \one^T L_X=\one^T.
+\end{equation}
+whose rows are downstream occurrences.  A single cut path may have
+several computational or physical occurrences.  An occurrence row
+must have one recorded cut source: conservation by cancellation
+between unrelated sources is forbidden.
+
+TPC-143--146 specify why downstream parent, determinant, zero-mode,
+group and selector labels do not descend from the cut archive alone
+\citep{WangTPC143,WangTPC144,WangTPC145,WangTPC146}.  TPC-151 and
+MVP5 retain the actual lift as the first missing structural object
+\citep{WangTPC151,WangTPC152}.  TPC-153 constructs the maximal
+source-backed partial cut-occurrence shadow, while TPC-154 proves that
+its conservative formal completion fiber is non-singleton
+\citep{WangTPC153,WangTPC154}.  Thus current-artifacts-only canonical
+recovery is stopped, but the theorem-augmented actual-lift route
+remains open.  We do not fill that gap by fabricated labels.  Instead
+we make the acceptance condition for a future candidate exact and
+executable.
+
+\section{Exact scalars and row separation}
+
+\begin{definition}[Exact scalar]
+An exact scalar is a pair
+\[
+ z=(a/b)+i(c/d),\qquad a,c\in\mathbb Z,\quad b,d\in\mathbb N,
+\]
+stored as two reduced fractions with positive denominators.  Floating
+point values are invalid.
+\end{definition}
+
+This representation allows signed and complex lift edges without
+changing the conservation rule.  Let \(s:\Oh\to\Cns\) assign to each
+occurrence its unique source cut, and let \(\lambda_o\) be its lift
+edge weight.  The matrix encoded by the rows is
+\begin{equation}
+ (L_X)_{o,c}=\lambda_o\,\mathbf 1_{\{s(o)=c\}}.
+ \label{eq:matrix}
+\end{equation}
+
+\begin{theorem}[Exact column criterion]
+\label{thm:column}
+For the row-separated matrix in \cref{eq:matrix},
+\begin{equation}
+ \one^T L_X=\one^T
+ \quad\Longleftrightarrow\quad
+ \sum_{o:s(o)=c}\lambda_o=1
+ \quad\text{for every }c\in\Cns.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The \(c\)-th coordinate of \(\one^T L_X\) is the sum of the entries
+in column \(c\).  By row separation, exactly the rows with \(s(o)=c\)
+contribute, giving the right side.  The equalities are coordinatewise,
+so no cancellation involving another cut column can certify
+conservation.
+\end{proof}
+
+\begin{remark}
+The theorem neither requires \(\lambda_o\ge0\) nor requires a
+one-to-one lift.  For example \(3/2\) and \(-1/2\) form a valid
+two-row column.  The verifier checks the sum in exact
+Gaussian-rational arithmetic.
+\end{remark}
+
+\section{\texttt{OccurrenceWitnessV1}}
+
+\subsection{Domain and source registry}
+
+\begin{definition}[Witness domain]
+A witness has scope either
+\nolinkurl{SYNTHETIC_L0_ONLY} or
+\nolinkurl{PRODUCTION_CANDIDATE}.  Its declared domain is exactly
+\texttt{ALL\_NONSOFT\_ETO\_PLUS\_FUM}.  Each cut record contains:
+\[
+ (\text{cut id},\text{terminal type},\text{native identity},
+   \text{source multiplier AST},m_c,
+   \text{support record},\text{source id}),
+\]
+where \(m_c\) is an exact sourced evaluation of the inherited cut
+multiplier.  In production mode the source AST must equal the literal
+TPC-143 dyadic multiplier AST; the evaluation source must then justify
+the exact scalar used by the multiplier chain.
+\end{definition}
+
+In production mode the cut ids and ETO/FUM types must equal the
+source-locked TPC-143 obligation domain.  In synthetic mode the
+regression bundle must contain at least one row of each type.  This
+second rule makes the empty-class policy executable rather than
+merely documentary.
+
+Every source record has a unique identifier, theorem identifier,
+source class, artifact path and canonical hash.  Production mode
+accepts only \texttt{SOURCE\_LOCKED\_THEOREM}; the path must stay
+inside the repository and its
+\texttt{CANONICAL\_UTF8\_LF\_V2} hash must match.  Synthetic mode uses
+\texttt{SYNTHETIC\_AXIOM\_L0}, for which artifact path and hash are
+null.  Resolving an identifier proves referential integrity, not the
+mathematical truth of the named theorem.
+
+\subsection{Native identity and support namespaces}
+
+The native identity is
+\[
+ (\text{native id},(\ell,k,d_{\rm native}),h_0,
+   \text{physical normalization},\text{weight source}).
+\]
+It is copied literally from cut to every occurrence.  The name
+\(d_{\rm native}\) is intentional: it is not automatically the affine
+intercept \(d\) used later.
+
+Support has three distinct roles:
+\[
+\begin{split}
+ &\texttt{FORMAL\_SUPPORT\_ENVELOPE},\\
+ &\texttt{CANONICAL\_PARENT\_CARRIER},\\
+ &\texttt{ACTUAL\_ACTIVE\_SUPPORT}.
+\end{split}
+\]
+The coefficient status is separately
+\texttt{UNDECIDED}, \texttt{PROVED\_NONZERO} or
+\texttt{PROVED\_ZERO}.  An active-support row is accepted only with a
+nonzero status and a resolved source.  All inherited cut records
+remain formal-envelope and undecided.  Thus the verifier cannot turn
+a symbolic native coefficient into a nonzero physical coefficient by
+changing a label.
+
+\subsection{Parent, stage and multiplier chain}
+
+For every occurrence \(o\), the canonical-parent record contains:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the key \((\alpha,\gamma,j)\), row ids, integer slopes and
+  ordered targets \((x,y)\);
+\item content gcd, signed determinant numerator and exact determinant
+  label;
+\item inverse-aggregation relation, computational and physical
+  multiplicities;
+\item literal parent coefficient and determinant-bin edge; and
+\item a trusted source id.
+\end{enumerate}
+
+The stage record identifies the source cut, target occurrence,
+source and target shift tags, selector domains, stage-matrix edge,
+local multiplier and source.  Its target must be the current
+occurrence, not merely a group containing that occurrence.
+
+The multiplier chain is
+\begin{equation}
+ M_o=m_{s(o)}\lambda_o\prod_{r=1}^{R(o)}\mu_{o,r}.
+\end{equation}
+with each factor separately named, exactly represented and sourced.
+The stage multiplier and physical reconstruction multiplier must both
+appear among the factors.  The recorded total is accepted only when
+it equals the right side exactly.
+
+\subsection{The four downstream interfaces}
+
+The witness does not infer the four maps; it demands their
+occurrence-resolved data:
+
+\begin{description}[leftmargin=3.2em,style=nextline]
+\item[\(Q_D\), determinant quotient]
+determinant-bin id, bin edge and exact label, agreeing with the
+canonical parent.
+\item[\(Q_Z\), outer zero-mode quotient]
+outer affine key, ordered coordinate and rank, arithmetic sign, outer
+weight, factor allocation, content-remainder destination and
+zero-mode edge.
+\item[\(G\), physical grouping]
+physical occurrence and group ids, exact reconstruction multiplier,
+inverse aggregation, cover class, reconnection destination and
+physical edge.
+\item[\(P_{h_0}\), downstream selector]
+stage edge, source and target shift tags, source and target selector
+domains, and a literal edgewise fixed-\(h_0\) preservation Boolean.
+\end{description}
+
+The affine record writes
+\[
+ D(n)=d+sn,\qquad V(n)=u+an,\qquad \Delta=su-ad.
+\]
+It must reproduce the parent's signed determinant and must state
+\nolinkurl{DISTINCT_SYMBOL_WITH_EXPLICIT_CROSSWALK} between
+\(d_{\rm native}\) and \(d\).  Equality caused only by using the same
+letter is rejected.
+
+\section{Three exports that cannot be merged}
+
+The occurrence witness is accompanied by three files with the same
+witness id and occurrence-id domain.
+
+\begin{definition}[Separate exports]
+\label{def:exports}
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item The \emph{physical-cover export} gives a cover atom, cover
+  class, row-disjointness key, exact cover multiplier and source for
+  each occurrence.
+\item The \emph{reconnection export} gives a destination, exact
+  reconnection multiplier, literal weight-sign-phase id and source
+  for each occurrence.
+\item The \emph{occurrence-registry export} gives cut, parent, stage,
+  physical occurrence, group, native, support and exact ancestor
+  closure for each occurrence.
+\end{enumerate}
+\end{definition}
+
+Every supplied occurrence must occur exactly once in each export.
+The cover multiplier must equal the \(G\)-record reconstruction
+multiplier; the reconnection destination must equal the \(G\)-record
+destination; and the registry must reproduce the full row lineage.
+In this V1 \emph{row-disjoint} cover contract, cover atoms and
+disjointness keys are unique.  A later contract may admit a shared
+physical atom only through an explicit theorem-backed joint token and
+a corresponding no-double-charge rule; no such token is inferred
+here.
+
+The committed export scope is
+\nolinkurl{WITNESS_OCCURRENCE_ROWS_ONLY}, with
+\nolinkurl{claim_full_production_carrier=false}.  This distinction is
+essential: a complete export on a synthetic or incomplete supplied
+witness is not a complete physical cover of the unknown actual
+carrier.
+
+\section{Soundness of the finite verifier}
+
+Let \(\mathcal W\) be a supplied witness and let
+\(\operatorname{Verify}(\mathcal W)\) denote acceptance by the
+executable checks above.
+
+\begin{theorem}[Internal soundness]
+\label{thm:soundness}
+If \(\operatorname{Verify}(\mathcal W)=\PASS\), then the induced map
+\begin{equation}
+ L_{\mathcal W}e_c
+   =\sum_{o:s(o)=c}\lambda_o e_o\qquad
+ \label{eq:induced-map}
+\end{equation}
+is row-separated and exactly conservative.  Every row has:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item identical native tuple, \(h_0\) and physical normalization to
+  its source cut;
+\item a resolved parent, stage and exact multiplier product;
+\item internally consistent \(Q_D,Q_Z,G,P_{h_0}\) records;
+\item an explicit support role and coefficient-status field; and
+\item exactly one compatible record in each export of
+  \cref{def:exports}.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The parser rejects missing or duplicate cut and occurrence ids.
+Each occurrence contains one source-cut id and is inserted in exactly
+one column.  Exact per-column summation and \cref{thm:column} give
+conservation.  The remaining statements are direct equality checks:
+native identity against its cut; parent determinant against \(Q_D\)
+and the affine calculation; stage tags and domains against
+\(P_{h_0}\); named multiplier factors against the recorded product;
+and exact occurrence-id covers plus field joins against the three
+exports.
+\end{proof}
+
+\begin{proposition}[Metadata intertwining]
+\label{prop:intertwining}
+Let \(a\) be any scalar-valued cut field copied exactly to all
+occurrences above its source, and let \(D_a^{\rm cut}\) and
+\(D_a^{\rm occ}\) be the corresponding diagonal multiplication
+operators.  Every accepted witness satisfies
+\begin{equation}
+ D_a^{\rm occ}L_{\mathcal W}
+   =L_{\mathcal W}D_a^{\rm cut}.
+\end{equation}
+In particular this holds for \(h_0\) and for any encoded scalar
+normalization label.
+\end{proposition}
+
+\begin{proof}
+For a basis vector \(e_c\), both sides equal
+\(a(c)\sum_{s(o)=c}\lambda_oe_o\), because the occurrence value is
+required to equal the cut value.
+\end{proof}
+
+\begin{proposition}[No hidden shift leakage]
+An accepted witness preserves the prescribed shift row by row.  It
+cannot pass merely because cross-shift entries cancel in an
+aggregated matrix.
+\end{proposition}
+
+\begin{proof}
+For each occurrence, source and target shift tags and selector domains
+must both equal the literal value constructed from that row's
+\(h_0\).  The test precedes all aggregation.  Therefore an edge that
+leaves the slice fails independently of every other edge, matching
+the row-separated criterion of TPC-145
+\citep{WangTPC145}.
+\end{proof}
+
+\begin{theorem}[Relative completeness]
+Within the declared finite schema, the verifier accepts exactly when
+all required records exist, all identifiers are total and unique, all
+trusted-source references resolve, all cross-record equalities hold,
+every cut column is conservative, and the three supplied exports are
+exact occurrence covers.
+\end{theorem}
+
+\begin{proof}
+Soundness is \cref{thm:soundness}.  Conversely, the implementation is
+a finite conjunction of precisely the listed syntactic, arithmetic,
+referential and equality predicates.  If they all hold, no rejection
+branch is reached.
+\end{proof}
+
+\section{The provenance firewall}
+
+Internal soundness must not be confused with external arithmetic
+truth.
+
+\begin{theorem}[No provenance promotion]
+\label{thm:firewall}
+Acceptance of a production candidate proves neither:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item that a theorem named in its source registry is mathematically
+  correct;
+\item that its occurrence set is the actual active-support carrier,
+  unless that assertion is itself supplied by a valid external
+  theorem; nor
+\item that the completed four maps yield an arithmetic saving.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The verifier reads finite files.  Its source operation checks path,
+hash and identifier equality; it does not contain a proof checker for
+the mathematical statements in those files.  Its support operation
+checks a typed source for a nonzero assertion but cannot derive that
+assertion from a symbolic coefficient.  Finally, the contract contains
+no analytic estimate.  Hence none of the three conclusions follows
+from acceptance alone.
+\end{proof}
+
+\begin{corollary}
+A positive production verification would establish a candidate
+\(\Lone_{\rm structural}\) carrier conditional on the imported
+provenance, not positive physical \(\Ltwo\).  Independent mathematical
+audits of the sources and all later arithmetic gates would still be
+required.
+\end{corollary}
+
+\section{A non-vacuous synthetic certificate}
+
+The committed fixture has two cut columns and three occurrence rows.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Synthetic \(\Lzero\) conservation fixture.}
+\label{tab:fixture}
+\begin{tabularx}{\textwidth}{@{}P{0.25\textwidth}
+P{0.23\textwidth}P{0.14\textwidth}Y@{}}
+\toprule
+Cut & Type & Occurrence weights & Exact column sum\\
+\midrule
+\texttt{synthetic-cut-eto} &
+ETO & \(1\) & \(1\)\\
+\texttt{synthetic-cut-fum} &
+FUM & \(1/3,\ 2/3\) & \(1\)\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The FUM column is genuinely one-to-many.  The three rows carry
+distinct affine determinant checks \(5,13,2\).  The fixture exercises
+formal-envelope, canonical-parent and active-support namespaces; the
+last is backed only by a source explicitly named
+\texttt{SYNTHETIC.SUPPORT.FIXTURE}.  Stage and reconstruction factors
+are \(2\) and \(1/2\), so their downstream product is one while each
+factor remains visible.
+
+\begin{proposition}[Synthetic certificate result]
+The generated fixture passes exact conservation, row separation,
+native/\(h_0\)/normalization intertwining, parent-stage-multiplier
+lineage, all four interface records and all three separate exports.
+\end{proposition}
+
+\begin{proof}
+The two column sums are displayed in \cref{tab:fixture}.  The
+deterministic artifact reports three unique occurrence ids, and the
+verifier checks every remaining predicate in
+\cref{thm:soundness}.  All trusted records have synthetic rather than
+production source class.
+\end{proof}
+
+This proposition establishes that the contract is satisfiable and
+that its one-to-many branch is executable.  It says nothing about
+whether the current production archive admits such a completion.
+
+\section{Current production verdict}
+
+The production-status artifact deliberately contains no witness path
+and no paths for the three exports.  Its exact state is:
+\[
+\begin{array}{ll}
+\texttt{partial\_shadow\_status}
+  &=\texttt{PROVED\_L1\_STRUCTURAL},\\
+\texttt{production\_witness\_present} & =\texttt{false},\\
+\texttt{current\_production\_actual\_witness\_status}
+  &=\NT,\\
+\texttt{occurrence\_lift\_candidate\_status}&=\NT,\\
+\texttt{QD\_status},\texttt{QZ\_status},
+\texttt{G\_status},\texttt{P\_h0\_status}&=\NT,\\
+\texttt{physical\_cover\_status}&=\NT,\\
+\texttt{reconnection\_status}&=\NT,\\
+\texttt{occurrence\_registry\_status}&=\NT.
+\end{array}
+\]
+
+\begin{theorem}[Source-locked TPC-155 verdict]
+\label{thm:verdict}
+For the canonical TPC-143--152 sources,
+\[
+ \boxed{
+ \operatorname{Status}_{\rm verifier}=\PASS_{\Lzero},
+ \qquad
+ \operatorname{Status}_{\rm production\ actual\ lift}=\NT.}
+\]
+The refined missing artifact is the theorem-backed row-level
+cut-to-stage-to-parent-to-physical-occurrence provenance crosswalk
+needed to populate a production \texttt{OccurrenceWitnessV1} on every
+ETO and FUM cut path, together with separate complete physical-cover,
+reconnection and occurrence-registry exports.
+\end{theorem}
+
+\begin{proof}
+The canonical source hashes and imported statuses pass.  The schema,
+fixture, three exports and mutation suite are deterministically
+generated and verified.  Conversely, the production declaration has
+no witness or export paths.  By \cref{thm:firewall}, the synthetic
+bundle cannot supply them.  Hence the interface is proved and the
+actual object remains unavailable.
+\end{proof}
+
+This is not a negative theorem saying that no actual occurrence lift
+exists.  It says only that TPC-155 has received no theorem-backed
+production witness satisfying the contract.
+
+\section{Mutation audit and kill criteria}
+
+The executable audit rejects the following classes of mutations:
+\begin{enumerate}[leftmargin=2em]
+\item cut deletion, duplication, ETO omission and terminal-domain
+  narrowing;
+\item occurrence deletion, duplication and an empty source column;
+\item failure of one cut column even when the sum over all columns is
+  unchanged;
+\item floating-point or nonreduced exact fractions;
+\item native tuple, \(h_0\), normalization, parent or stage drift;
+\item a multiplier total that does not equal the named factor product;
+\item \(Q_D\)/parent determinant mismatch, unresolved \(Q_Z\) source,
+  \(G\)-multiplier mismatch and downstream shift leakage;
+\item identification of \(d_{\rm native}\) with the affine intercept
+  by name alone;
+\item active-support promotion without a nonzero source;
+\item deletion, duplication or cross-field drift in any one of the
+  physical-cover, reconnection or registry exports;
+\item promotion of the synthetic scope, production witness, actual
+  map status, physical cover or positive-\(\Ltwo\) claim.
+\end{enumerate}
+
+These tests give operational kill criteria.
+
+\begin{description}[leftmargin=2.5em,style=nextline]
+\item[Schema route fails]
+if a proposed witness omits either nonsoft type from the declared
+domain, lacks a unique row source, or cannot represent its coefficients
+exactly.
+\item[Conservation route fails]
+if any individual cut column does not sum exactly to one.  Aggregate
+compensation by another cut is inadmissible.
+\item[Provenance route fails]
+if a parent, stage, multiplier, support or map field lacks a resolved
+theorem-backed production source.
+\item[Fixed-shift route fails]
+if even one occurrence edge changes its shift tag or leaves its
+literal \(h_0\) selector domain.
+\item[Physical-completion route fails]
+if any supplied occurrence is absent from one of the three independent
+exports or if their joins disagree.
+\end{description}
+
+Failure of one candidate does not prove architecture infeasibility.
+It rejects that witness and leaves the augmented occurrence route
+open.  A genuine impossibility verdict would require a separate
+theorem covering the full route universe.
+
+\section{What the verifier enables next}
+
+Once a source-locked production bundle exists, the following questions
+become finite and testable:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item whether the actual \(Q_D\) and \(Q_Z\) quotient matrices have
+  equal kernels on the completed occurrence space
+  \citep{WangTPC144};
+\item whether physical grouping commutes with the downstream
+  \(P_{h_0}\) selector row by row \citep{WangTPC145};
+\item whether all components of the four-map defect vector vanish
+  \citep{WangTPC146}; and
+\item whether the physical cover, final reconnection and independent
+  registry are complete in the actual active-support scope.
+\end{enumerate}
+
+The order matters.  Abstract quotient or commutation theorems cannot
+be evaluated on an occurrence space that has not been supplied.
+Likewise, an internally complete cover of a formal support envelope
+does not establish the minimal active carrier.  TPC-155 therefore
+turns a vague request for ``more provenance'' into an exact artifact
+boundary without moving an unknown Boolean to true.
+
+\paragraph{Established.}
+The exact witness schema, column-conservation theorem, metadata
+intertwining, edgewise fixed-shift test, multiplier accounting,
+three-export separation, internal verifier soundness and synthetic
+non-vacuity are \(\Lzero/\Lone_{\rm structural}\) interface results.
+
+\paragraph{Not established.}
+No production occurrence witness or actual active-support carrier is
+established.  The same is true of the actual \(Q_D,Q_Z,G,P_{h_0}\)
+maps, complete physical cover, reconnection, occurrence registry,
+positive fixed-\(X\)-power \(\Ltwo\) theorem and endpoint pass.
+
+\section{Conclusion}
+
+The missing frontier occurrence lift is now accompanied by a precise
+acceptance contract.  A future producer cannot obtain a pass by
+dropping ETO, aggregating away row leakage, renaming formal support as
+active, hiding a multiplier, merging cover with reconnection, or
+citing an unhashed source.  Conversely, a fully sourced candidate can
+be checked with exact finite arithmetic.
+
+This is a useful structural advance because it converts the next
+claim into a falsifiable certificate.  It is intentionally not the
+claim itself.  The source-locked production status remains
+\(\NT\), and the next mathematical task is to construct the missing
+parent-stage-occurrence crosswalk rather than to promote the synthetic
+regression.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

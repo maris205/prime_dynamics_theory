@@ -1,0 +1,93 @@
+{
+  "artifacts": {
+    "production_shadow_sha256": "5824d1d23150192104d9efdc634fbcdfef9560684d9fa53fce69b2703a46287f",
+    "synthetic_eto_regression_sha256": "1f893a1181cf49929d93496fb279d0be236e3197ea727defada5cf5c8e07b494"
+  },
+  "census": {
+    "finite_empty_ETO_is_asymptotic_absence": false,
+    "production_nonsoft_source_columns": 2988,
+    "production_shadow_rows": 2988,
+    "production_terminal_type_counts": {
+      "ELIGIBLE_TAIL_OPEN": 0,
+      "FRONTIER_UNMAPPED": 2988
+    },
+    "synthetic_ETO_in_production_census": false,
+    "synthetic_ETO_rows": 1
+  },
+  "claim_boundary": {
+    "actual_active_support_proved": false,
+    "actual_one_to_many_branching_proved": false,
+    "canonical_parent_or_stage_lineage_proved": false,
+    "endpoint_1_over_400": false,
+    "frontier_scalar_oX": false,
+    "positive_fixed_h0_L2": false,
+    "prime_pair_or_twin_prime_theorem": false,
+    "shadow_is_actual_occurrence_lift": false
+  },
+  "first_missing": {
+    "node_id": "H1.theorem_backed_occurrence_provenance_crosswalk",
+    "required_artifact": "row-separated one-to-many occurrence edges on every ETO and FUM cut path with source-backed parent, stage, multiplier, native, h0, normalization, and support-status lineage"
+  },
+  "matrix_certificate": {
+    "codomain": "PARTIAL_CUT_OCCURRENCE_NAMESPACE",
+    "column_conservative": true,
+    "domain": "ALL_NONSOFT_CUT_PATHS_ETO_PLUS_FUM",
+    "entry_formula": "S[cut-shadow(c),c]=1; all other entries=0",
+    "identity": "ONE_TRANSPOSE_S_X_EQUALS_ONE_TRANSPOSE",
+    "injective": true,
+    "map_id": "S_X_cut_occurrence_shadow",
+    "row_separated": true,
+    "validation": {
+      "every_column_sum": {
+        "denominator": 1,
+        "numerator": 1,
+        "ring": "Q"
+      },
+      "one_transpose_S_equals_one_transpose": true,
+      "shadow_row_count": 2988,
+      "source_column_count": 2988,
+      "terminal_type_counts": {
+        "ELIGIBLE_TAIL_OPEN": 0,
+        "FRONTIER_UNMAPPED": 2988
+      },
+      "unique_partial_occurrence_ids": 2988
+    }
+  },
+  "mutation_regression": {
+    "active_support_promotion_rejected": true,
+    "actual_completion_promotion_rejected": true,
+    "deleted_nonsoft_row_rejected": true,
+    "downstream_selector_promotion_rejected": true,
+    "duplicated_nonsoft_row_rejected": true,
+    "false_L2_claim_rejected": true,
+    "h0_drift_rejected": true,
+    "nonunit_shadow_weight_rejected": true,
+    "normalization_drift_rejected": true,
+    "synthetic_ETO_production_promotion_rejected": true,
+    "terminal_source_drift_rejected": true
+  },
+  "schema": "tpc-153-cut-occurrence-shadow-certificate-v1",
+  "source": {
+    "hashes_are_integrity_only": true,
+    "lock_mode": "CANONICAL_UTF8_LF_V2",
+    "semantic_generation_chain": "PASS",
+    "tpc143_certificate_sha256": "e398b38b39e8a094123d2830a42ea4806d820655f55a5425f10d985a0783a724",
+    "tpc143_obligations_sha256": "30d90f00413af7890689644fbc6bfc10bdf8df61afa0ba1cca8d3a5c1f252057",
+    "tpc143_schema_sha256": "d91a799e67ebcf4277a8c21ece56878618f026942895a3fab8607d3e756a752d",
+    "tpc153_schema_contract_validation": "PASS",
+    "tpc153_schema_sha256": "6934a6a8734a1d5415434b0beeaff45145c232def402c7e22da7204151085bf3"
+  },
+  "status": "PASS",
+  "theorem_exports": {
+    "H1.cut_occurrence_shadow": "PROVED_L1_STRUCTURAL",
+    "H1.frontier_occurrence_lift": "NOT_TESTABLE",
+    "current_schema_only_actual_lift_derivation": "STOP_DECLARED_ROUTE",
+    "selected_augmented_route_stopped": false
+  },
+  "universal_property": {
+    "actual_completion_constructed": false,
+    "actual_completion_existence_assumed": true,
+    "statement": "Every metadata-faithful actual completion with forgetting map q must satisfy q_pushforward(L_X)=S_X; this does not construct L_X.",
+    "status": "PROVED_L0_FORMAL"
+  }
+}

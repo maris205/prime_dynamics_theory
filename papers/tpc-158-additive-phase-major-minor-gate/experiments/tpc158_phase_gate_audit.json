@@ -1,0 +1,81 @@
+{
+  "checks": {
+    "major_arc_sup_bound": true,
+    "phase_alignment_periodic": true,
+    "projection_formula_matches_direct": true,
+    "projection_value_in_unit_interval": true,
+    "route_stop_scope_is_narrow": true,
+    "uniform_period_quantifier_explicit": true,
+    "upstream_pass": true
+  },
+  "claim_boundary": {
+    "all_prefix": false,
+    "generic_phase_cancellation": false,
+    "major_arc_actual_core": true,
+    "minor_arc_sum_is_large": false,
+    "one_over_400": false,
+    "positive_fixed_X_power": false,
+    "prime_pair_lower_bound": false,
+    "twin_prime_theorem": false
+  },
+  "hash_mode": "CANONICAL_UTF8_LF_V2",
+  "major_arc": {
+    "bound": "q/N*|sum c_z*e(-alpha*z)| << (log X)^(-kappa_0)+(log X)^(-A)",
+    "condition": "q*R <= (log X)^eta_0 and L*|alpha-k/R| <= (log X)^(-A)",
+    "export_id": "A158.additive_phase_major_arc",
+    "fixture": {
+      "analytic_upper_bound": 2.5132741228718346e-06,
+      "delta": 1e-09,
+      "k": 5,
+      "length": 400,
+      "period": 37,
+      "periodicity_error": 6.319500243438062e-15,
+      "start": 10003,
+      "sup_error": 2.506989630988996e-06
+    },
+    "phase_aligned_periodic_approximant": true,
+    "status": "PROVED_L1_ACTUAL_CORE_MAJOR_ARC"
+  },
+  "minor_arc_projection": {
+    "export_id": "N158.small_period_phase_projection_obstruction",
+    "fixture": {
+      "absolute_difference": 3.3306690738754696e-16,
+      "alpha": 1.4142135623730951,
+      "blocks": 113,
+      "direct": 0.9993408643532975,
+      "formula": 0.9993408643532978,
+      "period": 7
+    },
+    "normalized_L1_lower_bound": "one_half_times_normalized_L2_distance",
+    "normalized_L2_distance": "1-|sin(pi*K*R*alpha)/(K*sin(pi*R*alpha))|^2",
+    "rectangle_length": "K*R",
+    "status": "PROVED_SCOPED_ROUTE_STOP",
+    "uniform_route_stop_condition": "inf_R floor(L_n/R)->infinity and inf_R floor(L_n/R)*||R*alpha_n||->infinity"
+  },
+  "mutation_regressions": {
+    "reject_log_saving_as_X_power": true,
+    "reject_minor_arc_as_architecture_infeasible": true,
+    "reject_period_outside_envelope": true,
+    "reject_pointwise_fixed_R_condition_as_uniform_stop": true,
+    "reject_projection_obstruction_as_large_correlation": true,
+    "reject_unaligned_bound_using_absolute_z": true
+  },
+  "route_decision": {
+    "not_stopped": [
+      "direct additive-twist Mobius correlation theorem",
+      "a larger-period theorem outside the TPC-149 envelope",
+      "another physical representation with a proved crosswalk"
+    ],
+    "production_phase_cell": "NOT_TESTABLE",
+    "stopped_route": "small_period_L1_approximation_for_cells_with_projection_distance_bounded_below"
+  },
+  "schema": "tpc-158-phase-gate-audit-v1",
+  "status": "PASS",
+  "upstream": {
+    "audit_sha256": "1404df19d6d7131c65b485b399eed6828cb761801871e5cb1e45c11576bfff85",
+    "audit_status": "PASS",
+    "hash_semantics": "INTEGRITY_ONLY",
+    "main_tex_sha256": "29aab509cb95fa24b19f23f67552021b805afefc1d11db95eb4ef58a1ae982c9",
+    "paper": "TPC-157"
+  }
+}

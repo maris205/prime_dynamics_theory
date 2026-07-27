@@ -1,0 +1,82 @@
+{
+  "checks": {
+    "quadratic_mean_optimality_fixture": true,
+    "same_exceptional_set": true,
+    "target_and_achievement_separated": true,
+    "triangle_decomposition_fixture": true,
+    "unpenalized_residual_fiber_separation": true,
+    "upstream_pass": true
+  },
+  "claim_boundary": {
+    "actual_core_interface": true,
+    "actual_physical_weight_theorem": false,
+    "all_prefix": false,
+    "generic_phase": false,
+    "one_over_400": false,
+    "positive_fixed_X_power": false,
+    "prime_pair_lower_bound": false,
+    "twin_prime_theorem": false
+  },
+  "hash_mode": "CANONICAL_UTF8_LF_V2",
+  "mutation_regressions": {
+    "reject_hash_as_theorem_proof": true,
+    "reject_log_to_X_power_conversion": true,
+    "reject_missing_actual_weight_promotion": true,
+    "reject_periodic_interface_as_generic_phase": true,
+    "reject_qR_outside_envelope": true
+  },
+  "production_status": {
+    "conditional_promotion_rule": "requires an actual source-locked weight and a proved decaying approximation cost",
+    "decaying_periodic_approximation_cost": "NOT_TESTABLE",
+    "literal_physical_weight_registry": "NOT_TESTABLE"
+  },
+  "quadratic_certificate": {
+    "brute_grid_squared_error": "58/1",
+    "exact_squared_error": "58/1",
+    "fiber_means": [
+      "3/1",
+      "5/1",
+      "8/1"
+    ],
+    "fiber_separation_exact": true,
+    "period": 3,
+    "triangle_fixture_pass": true,
+    "values": [
+      "1/1",
+      "2/1",
+      "4/1",
+      "3/1",
+      "5/1",
+      "8/1",
+      "5/1",
+      "8/1",
+      "12/1"
+    ]
+  },
+  "schema": "tpc-157-periodic-approximation-audit-v1",
+  "status": "PASS",
+  "theorem": {
+    "bound": "q/N*|sum c_z*w(z)| << inf_rho[||rho||_inf*(log X)^(-kappa_0)+q/N*sum|w-rho|]",
+    "carrier": "determinant_two_two_mobius_core",
+    "export_id": "A157.literal_weight_periodic_approximation",
+    "fixed_h0": 2,
+    "normalization": "q_over_N",
+    "period_envelope": "q*R <= (log X)^eta_0",
+    "proof_steps": [
+      "write w=rho+(w-rho)",
+      "apply TPC-149 to the periodic term",
+      "use |c_z|<=1 on the residual",
+      "take the infimum over period-R rho"
+    ],
+    "same_exceptional_set_as_tpc149": true,
+    "status": "PROVED_L1_ACTUAL_CORE_WEIGHT_INTERFACE"
+  },
+  "upstream": {
+    "audit_sha256": "fc1c4fa8357e4ee46c7bb48f8f20a4f7e2c4a81ededf35126e1842bd0515aa47",
+    "audit_status": "PASS",
+    "hash_semantics": "INTEGRITY_ONLY",
+    "main_tex_sha256": "8d4768d022ccf536ac14182b5a645797816df63a0814f698dd9a373c504bc167",
+    "paper": "TPC-149",
+    "source_scope": "actual determinant-two Mobius periodic core at nonexceptional N"
+  }
+}

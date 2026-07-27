@@ -1,0 +1,242 @@
+{
+  "claim_boundary": {
+    "actual_QD_QZ_G_P_maps_proved": false,
+    "actual_active_support_completed": false,
+    "actual_occurrence_lift_proved": false,
+    "actual_occurrence_registry_proved": false,
+    "actual_physical_cover_proved": false,
+    "actual_reconnection_proved": false,
+    "endpoint_1_over_400": false,
+    "new_positive_fixed_h0_L2": false,
+    "prime_pair_or_twin_prime_theorem": false,
+    "synthetic_fixture_promoted": false
+  },
+  "generated_artifacts": {
+    "experiments/tpc155_occurrence_witness.schema.json": {
+      "bytes": 22778,
+      "canonical_sha256": "17da69d9922200e301bcc4f4dd0edc5c084d8bf048d0af8b890c3bb402041e32",
+      "path": "experiments/tpc155_occurrence_witness.schema.json"
+    },
+    "samples/tpc155_production_witness_status.json": {
+      "bytes": 1813,
+      "canonical_sha256": "7be9df2a66a16f56e817e4f01d62318acd11b264cef367ff1777534ed0d81559",
+      "path": "samples/tpc155_production_witness_status.json"
+    },
+    "samples/tpc155_synthetic_occurrence_registry.json": {
+      "bytes": 3172,
+      "canonical_sha256": "401a078ed687d6641e4adf2706c4a8f612fd77a779ace97369d5027179752659",
+      "path": "samples/tpc155_synthetic_occurrence_registry.json"
+    },
+    "samples/tpc155_synthetic_occurrence_witness.json": {
+      "bytes": 23674,
+      "canonical_sha256": "01e4f19ffc15ad96d5987f4546d74eaa454b83d2f9a52e5fd955f68b427c7193",
+      "path": "samples/tpc155_synthetic_occurrence_witness.json"
+    },
+    "samples/tpc155_synthetic_physical_cover.json": {
+      "bytes": 1681,
+      "canonical_sha256": "2a8797f1c81a61423055b4da5d01775d34c2a7683066e18c5a53965f59084007",
+      "path": "samples/tpc155_synthetic_physical_cover.json"
+    },
+    "samples/tpc155_synthetic_reconnection.json": {
+      "bytes": 1562,
+      "canonical_sha256": "579c8b2b32b7b618c3dec2b17428856d8581452795c78b042ea580089c0742ff",
+      "path": "samples/tpc155_synthetic_reconnection.json"
+    }
+  },
+  "hash_mode": "CANONICAL_UTF8_LF_V2",
+  "mutation_regression": {
+    "ETO_omission_rejected": true,
+    "QD_parent_mismatch_rejected": true,
+    "QZ_source_deletion_rejected": true,
+    "actual_lift_status_promotion_rejected": true,
+    "affine_native_d_conflation_rejected": true,
+    "cover_G_mismatch_rejected": true,
+    "cover_deletion_rejected": true,
+    "cover_status_promotion_rejected": true,
+    "cut_multiplier_source_AST_drift_rejected": true,
+    "deleted_cut_rejected": true,
+    "deleted_occurrence_rejected": true,
+    "downstream_h0_leakage_rejected": true,
+    "duplicate_cut_rejected": true,
+    "duplicate_occurrence_rejected": true,
+    "fake_active_support_rejected": true,
+    "false_L2_claim_rejected": true,
+    "floating_fraction_rejected": true,
+    "global_only_conservation_rejected": true,
+    "h0_drift_rejected": true,
+    "missing_parent_source_rejected": true,
+    "multiplier_product_drift_rejected": true,
+    "native_tuple_drift_rejected": true,
+    "normalization_drift_rejected": true,
+    "per_cut_conservation_mutation_rejected": true,
+    "production_witness_promotion_rejected": true,
+    "reconnection_G_mismatch_rejected": true,
+    "reconnection_deletion_rejected": true,
+    "registry_ancestor_drift_rejected": true,
+    "registry_deletion_rejected": true,
+    "stage_endpoint_drift_rejected": true,
+    "synthetic_fixture_production_claim_rejected": true,
+    "synthetic_scope_promotion_rejected": true
+  },
+  "production": {
+    "actual_exports": {
+      "G_status": "NOT_TESTABLE",
+      "P_h0_status": "NOT_TESTABLE",
+      "QD_status": "NOT_TESTABLE",
+      "QZ_status": "NOT_TESTABLE",
+      "occurrence_lift_candidate_status": "NOT_TESTABLE",
+      "occurrence_registry_status": "NOT_TESTABLE",
+      "physical_cover_status": "NOT_TESTABLE",
+      "reconnection_status": "NOT_TESTABLE"
+    },
+    "current_production_actual_witness_status": "NOT_TESTABLE",
+    "first_missing": {
+      "node_id": "H1.theorem_backed_occurrence_provenance_crosswalk",
+      "parent_node_id": "H1.cut_occurrence_shadow",
+      "refined_from_node_id": "H1.frontier_occurrence_lift",
+      "required_artifact": "a theorem-backed row-level cut-to-stage-to-parent-to-physical-occurrence crosswalk sufficient to populate a source-locked production OccurrenceWitnessV1 on every ETO and FUM cut path, with separate complete cover, reconnection and occurrence-registry exports"
+    },
+    "partial_shadow_status": "PROVED_L1_STRUCTURAL",
+    "production_witness_present": false
+  },
+  "schema": "tpc155-occurrence-witness-audit-v1",
+  "source_locks": {
+    "augmented_actual_occurrence_lift": "NOT_TESTABLE",
+    "current_artifacts_only_canonical_actual_lift": "STOP_DECLARED_ROUTE",
+    "hash_mode": "CANONICAL_UTF8_LF_V2",
+    "hashes_are_integrity_and_provenance_only": true,
+    "imported_actual_status": {
+      "H1.frontier_G_totality": "NOT_TESTABLE",
+      "H1.frontier_Ph0_downstream_totality": "NOT_TESTABLE",
+      "H1.frontier_QD_totality": "NOT_TESTABLE",
+      "H1.frontier_QZ_totality": "NOT_TESTABLE",
+      "H1.frontier_occurrence_lift": "NOT_TESTABLE"
+    },
+    "locks": {
+      "tpc143_certificate": {
+        "canonical_sha256": "e398b38b39e8a094123d2830a42ea4806d820655f55a5425f10d985a0783a724",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-143-frontier-occurrence-lift-contract/experiments/tpc143_frontier_lift_certificate.json",
+        "role": "STATUS_SOURCE"
+      },
+      "tpc143_obligations": {
+        "canonical_sha256": "30d90f00413af7890689644fbc6bfc10bdf8df61afa0ba1cca8d3a5c1f252057",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-143-frontier-occurrence-lift-contract/samples/tpc143_frontier_lift_obligations.jsonl",
+        "role": "PRODUCTION_DOMAIN"
+      },
+      "tpc144_certificate": {
+        "canonical_sha256": "0b6f8170dca792ece5546d8743266458f55358cebe146ba6270d31c6a6e7351a",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-144-determinant-zero-quotient-kernel-test/experiments/tpc144_quotient_kernel_certificate.json",
+        "role": "QD_QZ_INTERFACE"
+      },
+      "tpc145_certificate": {
+        "canonical_sha256": "d151b564203559780ecd472499aac040a4a3962911baaf7d2ec955414fdfb1c2",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-145-physical-grouping-shift-commutation/experiments/tpc145_group_shift_certificate.json",
+        "role": "G_P_INTERFACE"
+      },
+      "tpc146_certificate": {
+        "canonical_sha256": "e5feffe2f393e1b39245fa2e4535c247a78b9fee1beb5b082b5228a21b998de7",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-146-frontier-four-map-completion-certificate/experiments/tpc146_frontier_completion_certificate.json",
+        "role": "FOUR_MAP_INTERFACE"
+      },
+      "tpc151_audit": {
+        "canonical_sha256": "8c9c7bf25b85444624911277aa5c607a50306bed3d2c584ae123cb83fe0c17cf",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-151-source-locked-frontier-quotient-integration/experiments/tpc151_source_locked_integration_audit.json",
+        "role": "INTEGRATED_AUDIT"
+      },
+      "tpc151_manifest": {
+        "canonical_sha256": "8f9ebb92e73f4dd4e32b281d42acfb2ef9badc98f3728305cd50792849da6e9a",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-151-source-locked-frontier-quotient-integration/experiments/tpc151_integration_manifest.json",
+        "role": "INTEGRATED_STATUS"
+      },
+      "tpc152_audit": {
+        "canonical_sha256": "64d68ae2af6d4e4ce1e18ef4479e1940125f3b28c3c196dc7ea93d56c22a68c5",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-152-mvp5-frontier-occurrence-lift-route-decision/experiments/tpc152_mvp5_route_audit.json",
+        "role": "MVP5_AUDIT"
+      },
+      "tpc152_snapshot": {
+        "canonical_sha256": "5d07ed54e824cd7d0723424580089cf1b310caef371717c00e9467a9132b2fa7",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-152-mvp5-frontier-occurrence-lift-route-decision/experiments/tpc152_mvp5_snapshot.json",
+        "role": "MVP5_STATUS"
+      },
+      "tpc153_certificate": {
+        "canonical_sha256": "b1a9d016d44174e45ea846e4b42ac3ad11098f2d6802159ee353a6778e7bfa19",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-153-canonical-cut-occurrence-shadow/experiments/tpc153_cut_occurrence_shadow_certificate.json",
+        "role": "PARTIAL_SHADOW_STATUS"
+      },
+      "tpc153_schema": {
+        "canonical_sha256": "983d56d5e035e703d6cd000111a291f18de06bddd137d946b0f94503a30d170e",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-153-canonical-cut-occurrence-shadow/schemas/tpc153-cut-occurrence-shadow-v1.schema.json",
+        "role": "PARTIAL_SHADOW_SCHEMA"
+      },
+      "tpc153_shadow": {
+        "canonical_sha256": "5824d1d23150192104d9efdc634fbcdfef9560684d9fa53fce69b2703a46287f",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-153-canonical-cut-occurrence-shadow/samples/tpc153_cut_occurrence_shadow.jsonl",
+        "role": "CANONICAL_PARTIAL_SHADOW"
+      },
+      "tpc154_certificate": {
+        "canonical_sha256": "0d9265926f6cee51b433491c8f52192ba03ad10b31355bf67be991373966f8c1",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-154-conservative-completion-fiber-obstruction/experiments/tpc154_completion_fiber_obstruction_certificate.json",
+        "role": "NONIDENTIFIABILITY_STATUS"
+      },
+      "tpc154_formal_completions": {
+        "canonical_sha256": "e2135541e186b5f6bb1c5bfeba8c976422637699793abb7a0286ae2048f74f11",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-154-conservative-completion-fiber-obstruction/samples/tpc154_formal_completions.jsonl",
+        "role": "FORMAL_COMPLETION_FIBER"
+      },
+      "tpc154_schema": {
+        "canonical_sha256": "ad8caf1e3e1be407cbd1965e01006c445fad0c04db7b7920a3c213648ae80735",
+        "hash_mode": "CANONICAL_UTF8_LF_V2",
+        "path": "papers/tpc-154-conservative-completion-fiber-obstruction/schemas/tpc154-conservative-completion-v1.schema.json",
+        "role": "FORMAL_COMPLETION_SCHEMA"
+      }
+    },
+    "partial_shadow_status": "PROVED_L1_STRUCTURAL",
+    "semantic_status_import": "PASS"
+  },
+  "status": "PASS",
+  "synthetic_fixture": {
+    "QD_QZ_G_P_fields_present": true,
+    "branching_by_cut": {
+      "synthetic-cut-eto": 1,
+      "synthetic-cut-fum": 2
+    },
+    "cut_count": 2,
+    "external_provenance_truth_proved": false,
+    "fixture_scope": "SYNTHETIC_L0_ONLY",
+    "native_h0_normalization_intertwining": true,
+    "occurrence_count": 3,
+    "one_to_many_exercised": true,
+    "parent_stage_multiplier_lineage": true,
+    "per_cut_exact_conservation": true,
+    "row_separated": true,
+    "separate_cover_reconnection_registry_exports": true,
+    "status": "PASS_L0_SYNTHETIC_ONLY",
+    "terminal_type_counts": {
+      "ELIGIBLE_TAIL_OPEN": 1,
+      "FRONTIER_UNMAPPED": 1
+    },
+    "witness_id": "tpc155-synthetic-nonvacuity-v1"
+  },
+  "theorem_exports": {
+    "external_provenance_truth": "NOT_PROVED_BY_VERIFIER",
+    "multiplier_chain_identity": "PROVED_L0",
+    "row_separated_matrix_conservation": "PROVED_L0",
+    "separate_export_totality_on_supplied_witness": "PROVED_L0",
+    "typed_intertwining_contract": "PROVED_L0",
+    "verifier_internal_soundness": "PROVED_L0"
+  }
+}

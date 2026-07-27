@@ -1,0 +1,457 @@
+{
+  "claim_boundary": {
+    "architecture_infeasible_claimed": false,
+    "fixed_X_power_L2_claimed": false,
+    "one_over_400_endpoint_claimed": false,
+    "prime_pair_or_twin_prime_claimed": false,
+    "production_actual_lift_claimed": false
+  },
+  "current_verdict": "NOT_TESTABLE",
+  "defects": {
+    "D_DZ": "NOT_EVALUABLE",
+    "D_G": "NOT_EVALUABLE",
+    "D_GP": "NOT_EVALUABLE",
+    "D_L": "NOT_EVALUABLE",
+    "D_P": "NOT_EVALUABLE",
+    "D_QD": "NOT_EVALUABLE",
+    "D_QZ": "NOT_EVALUABLE",
+    "D_cover": "NOT_EVALUABLE",
+    "D_occ": "NOT_EVALUABLE",
+    "D_rec": "NOT_EVALUABLE"
+  },
+  "first_missing_selected_route": "H1.theorem_backed_occurrence_provenance_crosswalk",
+  "h1_contract": {
+    "cover_reconnection_registry_are_independent": true,
+    "frontier_totalization": {
+      "clauses": [
+        "H1.map_clause",
+        "H1.scalar_clause"
+      ],
+      "operator": "ANY_CLAUSE"
+    },
+    "map_clause": {
+      "components": [
+        "H1.theorem_backed_occurrence_provenance_crosswalk",
+        "H1.defect.D_L",
+        "H1.defect.D_QD",
+        "H1.defect.D_QZ",
+        "H1.defect.D_G",
+        "H1.defect.D_P",
+        "H1.defect.D_DZ",
+        "H1.defect.D_GP",
+        "H1.defect.D_cover",
+        "H1.defect.D_rec",
+        "H1.frontier_occurrence_registry_totality"
+      ],
+      "operator": "ALL"
+    },
+    "nonsoft_domain": {
+      "operator": "DISJOINT_UNION",
+      "terminal_types": [
+        "ELIGIBLE_TAIL_OPEN",
+        "FRONTIER_UNMAPPED"
+      ]
+    },
+    "required_artifact": "for every ELIGIBLE_TAIL_OPEN and FRONTIER_UNMAPPED cut path, a nonempty conservative row-separated one-to-many edge family with exact occurrence, canonical-parent, stage, multiplier, native, h0, physical-normalization, support-status, QD, QZ, G, P_h0, cover, reconnection, occurrence-registry, and trusted theorem-source lineage",
+    "scalar_clause": {
+      "components": [
+        "H1.complete_FUM_scalar_oX",
+        "H1.theorem_backed_ETO_disposition"
+      ],
+      "operator": "ALL"
+    }
+  },
+  "imported_evidence": {
+    "tpc152": {
+      "current_verdict": "NOT_TESTABLE",
+      "first_missing": "H1.frontier_occurrence_lift"
+    },
+    "tpc153": {
+      "production_terminal_type_counts": {
+        "ELIGIBLE_TAIL_OPEN": 0,
+        "FRONTIER_UNMAPPED": 2988
+      },
+      "status": "PASS",
+      "synthetic_ETO_is_L0_only": true,
+      "theorem_exports": {
+        "H1.cut_occurrence_shadow": "PROVED_L1_STRUCTURAL",
+        "H1.frontier_occurrence_lift": "NOT_TESTABLE",
+        "current_schema_only_actual_lift_derivation": "STOP_DECLARED_ROUTE",
+        "selected_augmented_route_stopped": false
+      }
+    },
+    "tpc154": {
+      "actual_carrier_impossibility_proved": false,
+      "obstruction_scope": "CURRENT_ARTIFACTS_ONLY",
+      "status": "PASS",
+      "theorem_exports": {
+        "H1.augmented_actual_occurrence_lift": "NOT_TESTABLE",
+        "H1.current_artifacts_only_canonical_actual_lift": "STOP_DECLARED_ROUTE",
+        "H1.formal_completion_fiber_nonuniqueness": "PROVED_L0_SCHEMA",
+        "selected_augmented_route_stopped": false
+      }
+    },
+    "tpc155": {
+      "G_status": "NOT_TESTABLE",
+      "P_h0_status": "NOT_TESTABLE",
+      "QD_status": "NOT_TESTABLE",
+      "QZ_status": "NOT_TESTABLE",
+      "audit_status": "PASS",
+      "cover_reconnection_registry_are_separate": true,
+      "current_production_actual_witness_status": "NOT_TESTABLE",
+      "first_missing": "H1.theorem_backed_occurrence_provenance_crosswalk",
+      "occurrence_lift_candidate_status": "NOT_TESTABLE",
+      "occurrence_registry_status": "NOT_TESTABLE",
+      "partial_shadow_status": "PROVED_L1_STRUCTURAL",
+      "physical_cover_status": "NOT_TESTABLE",
+      "production_witness_present": false,
+      "reconnection_status": "NOT_TESTABLE",
+      "synthetic_witness_is_production_evidence": false
+    }
+  },
+  "minimal_missing_antichains": {
+    "canonical_selected_representative": "H1.theorem_backed_occurrence_provenance_crosswalk",
+    "scalar_plus_ETO_route": [
+      "H1.complete_FUM_scalar_oX",
+      "H1.theorem_backed_ETO_disposition"
+    ],
+    "selected_occurrence_augmented_map_route": [
+      "H1.theorem_backed_occurrence_provenance_crosswalk"
+    ],
+    "selection_rule": "selected clause; then minimal missing ancestor; then canonical node identifier"
+  },
+  "nodes": {
+    "H1.complete_FUM_scalar_oX": {
+      "dependency_mode": "ALL",
+      "evidence": "no complete original-scale FUM o(X) theorem",
+      "parents": [],
+      "program_level": "L1_ANALYTIC_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.current_artifacts_only_canonical_actual_lift": {
+      "dependency_mode": "ALL",
+      "evidence": "TPC-154 conservative formal-completion nonuniqueness; current-artifacts-only scope",
+      "parents": [],
+      "program_level": "L0_SCHEMA",
+      "status": "STOPPED"
+    },
+    "H1.cut_occurrence_shadow": {
+      "dependency_mode": "ALL",
+      "evidence": "TPC-153 canonical conservative shadow",
+      "parents": [],
+      "program_level": "L1_STRUCTURAL",
+      "status": "PROVED"
+    },
+    "H1.defect.D_DZ": {
+      "dependency_mode": "ALL",
+      "evidence": "D_DZ is not evaluable on production data",
+      "parents": [
+        "H1.frontier_QD_totality",
+        "H1.frontier_QZ_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.defect.D_G": {
+      "dependency_mode": "ALL",
+      "evidence": "D_G is not evaluable on production data",
+      "parents": [
+        "H1.frontier_G_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.defect.D_GP": {
+      "dependency_mode": "ALL",
+      "evidence": "D_GP is not evaluable on production data",
+      "parents": [
+        "H1.frontier_G_totality",
+        "H1.frontier_P_h0_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.defect.D_L": {
+      "dependency_mode": "ALL",
+      "evidence": "D_L is not evaluable on production data",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.defect.D_P": {
+      "dependency_mode": "ALL",
+      "evidence": "D_P is not evaluable on production data",
+      "parents": [
+        "H1.frontier_P_h0_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.defect.D_QD": {
+      "dependency_mode": "ALL",
+      "evidence": "D_QD is not evaluable on production data",
+      "parents": [
+        "H1.frontier_QD_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.defect.D_QZ": {
+      "dependency_mode": "ALL",
+      "evidence": "D_QZ is not evaluable on production data",
+      "parents": [
+        "H1.frontier_QZ_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.defect.D_cover": {
+      "dependency_mode": "ALL",
+      "evidence": "D_cover is not evaluable on production data",
+      "parents": [
+        "H1.frontier_cover_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.defect.D_rec": {
+      "dependency_mode": "ALL",
+      "evidence": "D_rec is not evaluable on production data",
+      "parents": [
+        "H1.frontier_reconnection"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.frontier_G_totality": {
+      "dependency_mode": "ALL",
+      "evidence": "literal physical grouping map unavailable",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.frontier_P_h0_totality": {
+      "dependency_mode": "ALL",
+      "evidence": "downstream prescribed-shift selector unavailable",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.frontier_QD_totality": {
+      "dependency_mode": "ALL",
+      "evidence": "literal determinant-fiber map unavailable",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.frontier_QZ_totality": {
+      "dependency_mode": "ALL",
+      "evidence": "literal ordered zero-mode map unavailable",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.frontier_cover_totality": {
+      "dependency_mode": "ALL",
+      "evidence": "production physical cover unavailable",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.frontier_occurrence_lift": {
+      "dependency_mode": "ALL",
+      "evidence": "actual row-separated conservative matrix unavailable",
+      "parents": [
+        "H1.theorem_backed_occurrence_provenance_crosswalk"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.frontier_occurrence_registry_totality": {
+      "dependency_mode": "ALL",
+      "evidence": "production row-level occurrence registry unavailable",
+      "parents": [
+        "H1.frontier_occurrence_lift",
+        "H1.frontier_cover_totality",
+        "H1.frontier_reconnection"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.frontier_reconnection": {
+      "dependency_mode": "ALL",
+      "evidence": "production reconnection unavailable",
+      "parents": [
+        "H1.frontier_occurrence_lift",
+        "H1.frontier_cover_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.frontier_totalization": {
+      "dependency_mode": "ANY_CLAUSE",
+      "evidence": "neither declared sufficient clause is proved",
+      "parent_clauses": [
+        [
+          "H1.map_clause"
+        ],
+        [
+          "H1.scalar_clause"
+        ]
+      ],
+      "program_level": "L1_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.map_clause": {
+      "dependency_mode": "ALL",
+      "evidence": "trusted crosswalk and map-route completion unavailable",
+      "parents": [
+        "H1.theorem_backed_occurrence_provenance_crosswalk",
+        "H1.defect.D_L",
+        "H1.defect.D_QD",
+        "H1.defect.D_QZ",
+        "H1.defect.D_G",
+        "H1.defect.D_P",
+        "H1.defect.D_DZ",
+        "H1.defect.D_GP",
+        "H1.defect.D_cover",
+        "H1.defect.D_rec",
+        "H1.frontier_occurrence_registry_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.scalar_clause": {
+      "dependency_mode": "ALL",
+      "evidence": "both scalar-plus-ETO factors are unavailable",
+      "parents": [
+        "H1.complete_FUM_scalar_oX",
+        "H1.theorem_backed_ETO_disposition"
+      ],
+      "program_level": "L1_ANALYTIC_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.theorem_backed_ETO_disposition": {
+      "dependency_mode": "ALL",
+      "evidence": "finite empty ETO census is not a growing-scale disposition theorem",
+      "parents": [],
+      "program_level": "L1_STRUCTURAL_OR_ANALYTIC_TARGET",
+      "status": "NOT_TESTABLE"
+    },
+    "H1.theorem_backed_occurrence_provenance_crosswalk": {
+      "dependency_mode": "ALL",
+      "evidence": "TPC-155 reports no theorem-backed production witness",
+      "parents": [
+        "H1.cut_occurrence_shadow"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "status": "NOT_TESTABLE"
+    }
+  },
+  "production_census": {
+    "ELIGIBLE_TAIL_OPEN": 0,
+    "FRONTIER_UNMAPPED": 2988,
+    "nonsoft_total": 2988
+  },
+  "routes": {
+    "architecture_infeasible": false,
+    "current_archive_only_actual_lift": {
+      "scope": "CURRENT_ARTIFACTS_ONLY",
+      "source": "TPC-154",
+      "state": "STOP_DECLARED_ROUTE",
+      "stopped": true
+    },
+    "occurrence_augmented_map": {
+      "first_missing": "H1.theorem_backed_occurrence_provenance_crosswalk",
+      "state": "OPEN_NOT_TESTABLE",
+      "stopped": false
+    },
+    "route_universe_completeness": {
+      "source_theorem": null,
+      "status": "NOT_PROVED"
+    },
+    "scalar_plus_ETO": {
+      "missing": [
+        "H1.complete_FUM_scalar_oX",
+        "H1.theorem_backed_ETO_disposition"
+      ],
+      "state": "OPEN_NOT_TESTABLE",
+      "stopped": false
+    },
+    "selected_route": "occurrence_augmented_map"
+  },
+  "schema": "tpc-156-h1-occurrence-crosswalk-decision-v1",
+  "source_lock_policy": {
+    "hash_semantics": "INTEGRITY_ONLY",
+    "normalization": "CANONICAL_UTF8_LF_V2"
+  },
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "3454a6066ec264564f77f5ecb05c0384515e19519174b4528bd220553e807fbe",
+      "path": "papers/tpc-152-mvp5-frontier-occurrence-lift-route-decision/experiments/tpc152_mvp5_route_audit.py",
+      "source_id": "TPC152.audit_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "5d07ed54e824cd7d0723424580089cf1b310caef371717c00e9467a9132b2fa7",
+      "path": "papers/tpc-152-mvp5-frontier-occurrence-lift-route-decision/experiments/tpc152_mvp5_snapshot.json",
+      "source_id": "TPC152.snapshot"
+    },
+    {
+      "canonical_utf8_lf_sha256": "dcf82be82724e400c082336ce5558b9ae0002617dfb020c4c50dbab30634af3d",
+      "path": "papers/tpc-153-canonical-cut-occurrence-shadow/experiments/tpc153_cut_occurrence_shadow.py",
+      "source_id": "TPC153.audit_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "b1a9d016d44174e45ea846e4b42ac3ad11098f2d6802159ee353a6778e7bfa19",
+      "path": "papers/tpc-153-canonical-cut-occurrence-shadow/experiments/tpc153_cut_occurrence_shadow_certificate.json",
+      "source_id": "TPC153.shadow_certificate"
+    },
+    {
+      "canonical_utf8_lf_sha256": "5824d1d23150192104d9efdc634fbcdfef9560684d9fa53fce69b2703a46287f",
+      "path": "papers/tpc-153-canonical-cut-occurrence-shadow/samples/tpc153_cut_occurrence_shadow.jsonl",
+      "source_id": "TPC153.production_shadow"
+    },
+    {
+      "canonical_utf8_lf_sha256": "688260cefb2628f8e8a990ad312258895501c6c2bdda6e08ac5e2a9a424fbeca",
+      "path": "papers/tpc-154-conservative-completion-fiber-obstruction/experiments/tpc154_completion_fiber_obstruction.py",
+      "source_id": "TPC154.audit_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "0d9265926f6cee51b433491c8f52192ba03ad10b31355bf67be991373966f8c1",
+      "path": "papers/tpc-154-conservative-completion-fiber-obstruction/experiments/tpc154_completion_fiber_obstruction_certificate.json",
+      "source_id": "TPC154.obstruction_certificate"
+    },
+    {
+      "canonical_utf8_lf_sha256": "e2135541e186b5f6bb1c5bfeba8c976422637699793abb7a0286ae2048f74f11",
+      "path": "papers/tpc-154-conservative-completion-fiber-obstruction/samples/tpc154_formal_completions.jsonl",
+      "source_id": "TPC154.formal_completions"
+    },
+    {
+      "canonical_utf8_lf_sha256": "84fd8637a60771b74839e77becb11f3d50bbb99e587a27dbfff553c896c6dc5a",
+      "path": "papers/tpc-155-theorem-backed-occurrence-witness-verifier/experiments/tpc155_occurrence_witness_verifier.py",
+      "source_id": "TPC155.audit_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "b4d48047447b336042a79111f59a8ff7fa01c71f7717cab95f6e84601bcaf3a1",
+      "path": "papers/tpc-155-theorem-backed-occurrence-witness-verifier/experiments/tpc155_occurrence_witness_audit.json",
+      "source_id": "TPC155.witness_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "7be9df2a66a16f56e817e4f01d62318acd11b264cef367ff1777534ed0d81559",
+      "path": "papers/tpc-155-theorem-backed-occurrence-witness-verifier/samples/tpc155_production_witness_status.json",
+      "source_id": "TPC155.production_status"
+    }
+  ]
+}

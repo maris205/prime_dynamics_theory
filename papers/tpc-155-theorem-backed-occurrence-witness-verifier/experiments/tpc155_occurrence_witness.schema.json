@@ -1,0 +1,819 @@
+{
+  "$defs": {
+    "exactScalar": {
+      "additionalProperties": false,
+      "properties": {
+        "imag": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "numerator": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "denominator",
+            "numerator"
+          ],
+          "type": "object"
+        },
+        "real": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "numerator": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "denominator",
+            "numerator"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "imag",
+        "real"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://example.invalid/tpc155/OccurrenceWitnessV1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Syntactic schema. The Python verifier additionally checks exact conservation, products, source locks, and cross-export joins.",
+  "properties": {
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "endpoint_1_over_400": {
+          "const": false
+        },
+        "external_provenance_truth_proved_by_verifier": {
+          "const": false
+        },
+        "new_positive_fixed_h0_L2": {
+          "const": false
+        },
+        "prime_pair_or_twin_prime_theorem": {
+          "const": false
+        },
+        "synthetic_fixture_is_production": {
+          "const": false
+        }
+      },
+      "required": [
+        "endpoint_1_over_400",
+        "external_provenance_truth_proved_by_verifier",
+        "new_positive_fixed_h0_L2",
+        "prime_pair_or_twin_prime_theorem",
+        "synthetic_fixture_is_production"
+      ],
+      "type": "object"
+    },
+    "cuts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "cut_multiplier": {
+            "$ref": "#/$defs/exactScalar"
+          },
+          "cut_multiplier_source_ast": {
+            "type": "object"
+          },
+          "cut_source_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "cut_terminal_type": {
+            "enum": [
+              "ELIGIBLE_TAIL_OPEN",
+              "FRONTIER_UNMAPPED"
+            ]
+          },
+          "native_identity": {
+            "additionalProperties": false,
+            "properties": {
+              "h0": {
+                "type": "integer"
+              },
+              "native_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "native_tuple": {
+                "additionalProperties": false,
+                "properties": {
+                  "ell": {
+                    "type": "integer"
+                  },
+                  "k": {
+                    "type": "integer"
+                  },
+                  "native_d": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "ell",
+                  "k",
+                  "native_d"
+                ],
+                "type": "object"
+              },
+              "physical_normalization": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "weight_source_id": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "h0",
+              "native_id",
+              "native_tuple",
+              "physical_normalization",
+              "weight_source_id"
+            ],
+            "type": "object"
+          },
+          "source_cut_path_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "support": {
+            "additionalProperties": false,
+            "properties": {
+              "coefficient_nonzero_status": {
+                "enum": [
+                  "PROVED_NONZERO",
+                  "PROVED_ZERO",
+                  "UNDECIDED"
+                ]
+              },
+              "role": {
+                "enum": [
+                  "ACTUAL_ACTIVE_SUPPORT",
+                  "CANONICAL_PARENT_CARRIER",
+                  "FORMAL_SUPPORT_ENVELOPE"
+                ]
+              },
+              "source_id": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "coefficient_nonzero_status",
+              "role",
+              "source_id"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "cut_multiplier",
+          "cut_multiplier_source_ast",
+          "cut_source_id",
+          "cut_terminal_type",
+          "native_identity",
+          "source_cut_path_id",
+          "support"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "fixture_scope": {
+      "enum": [
+        "PRODUCTION_CANDIDATE",
+        "SYNTHETIC_L0_ONLY"
+      ]
+    },
+    "hash_mode": {
+      "const": "CANONICAL_UTF8_LF_V2"
+    },
+    "occurrences": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "G": {
+            "additionalProperties": false,
+            "properties": {
+              "exact_reconstruction_multiplier": {
+                "$ref": "#/$defs/exactScalar"
+              },
+              "multiplicity_and_inverse_aggregation": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "physical_cover_class": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "physical_group_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "physical_map_edge": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "physical_occurrence_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "reconnection_destination": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_id": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "exact_reconstruction_multiplier",
+              "multiplicity_and_inverse_aggregation",
+              "physical_cover_class",
+              "physical_group_id",
+              "physical_map_edge",
+              "physical_occurrence_id",
+              "reconnection_destination",
+              "source_id"
+            ],
+            "type": "object"
+          },
+          "P_h0": {
+            "additionalProperties": false,
+            "properties": {
+              "preserves_fixed_h0": {
+                "const": true
+              },
+              "source_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_selector_domain": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_shift_tag": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "stage_matrix_edge": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "target_selector_domain": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "target_shift_tag": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "preserves_fixed_h0",
+              "source_id",
+              "source_selector_domain",
+              "source_shift_tag",
+              "stage_matrix_edge",
+              "target_selector_domain",
+              "target_shift_tag"
+            ],
+            "type": "object"
+          },
+          "QD": {
+            "additionalProperties": false,
+            "properties": {
+              "determinant_bin_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "determinant_bin_map_edge": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "exact_determinant_label": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_id": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "determinant_bin_id",
+              "determinant_bin_map_edge",
+              "exact_determinant_label",
+              "source_id"
+            ],
+            "type": "object"
+          },
+          "QZ": {
+            "additionalProperties": false,
+            "properties": {
+              "arithmetic_sign": {
+                "enum": [
+                  -1,
+                  1
+                ]
+              },
+              "content_remainder_destination": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "factor_allocation_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "ordered_coordinate": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "outer_affine_key": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "outer_weight": {
+                "$ref": "#/$defs/exactScalar"
+              },
+              "rank": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "source_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "zero_mode_map_edge": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "arithmetic_sign",
+              "content_remainder_destination",
+              "factor_allocation_id",
+              "ordered_coordinate",
+              "outer_affine_key",
+              "outer_weight",
+              "rank",
+              "source_id",
+              "zero_mode_map_edge"
+            ],
+            "type": "object"
+          },
+          "affine_coordinates": {
+            "additionalProperties": false,
+            "properties": {
+              "D_intercept_d": {
+                "type": "integer"
+              },
+              "D_slope_s": {
+                "type": "integer"
+              },
+              "V_intercept_u": {
+                "type": "integer"
+              },
+              "V_slope_a": {
+                "type": "integer"
+              },
+              "crosswalk_source_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "determinant_su_minus_ad": {
+                "type": "integer"
+              },
+              "native_d_relation": {
+                "const": "DISTINCT_SYMBOL_WITH_EXPLICIT_CROSSWALK"
+              }
+            },
+            "required": [
+              "D_intercept_d",
+              "D_slope_s",
+              "V_intercept_u",
+              "V_slope_a",
+              "crosswalk_source_id",
+              "determinant_su_minus_ad",
+              "native_d_relation"
+            ],
+            "type": "object"
+          },
+          "canonical_parent": {
+            "additionalProperties": false,
+            "properties": {
+              "canonical_parent_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "canonical_parent_key": {
+                "additionalProperties": false,
+                "properties": {
+                  "alpha": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "gamma": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "j": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "alpha",
+                  "gamma",
+                  "j"
+                ],
+                "type": "object"
+              },
+              "computational_multiplicity": {
+                "minimum": 1,
+                "type": "integer"
+              },
+              "content_gcd": {
+                "minimum": 1,
+                "type": "integer"
+              },
+              "determinant_bin_map_edge": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "exact_determinant_label": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "integer_slopes": {
+                "items": {
+                  "type": "integer"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "inverse_aggregation_relation": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "literal_parent_coefficient": {
+                "$ref": "#/$defs/exactScalar"
+              },
+              "ordered_targets_x_y": {
+                "additionalProperties": false,
+                "properties": {
+                  "x": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "y": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "type": "object"
+              },
+              "physical_multiplicity": {
+                "minimum": 1,
+                "type": "integer"
+              },
+              "row_ids": {
+                "items": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "signed_determinant_numerator": {
+                "type": "integer"
+              },
+              "source_id": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "canonical_parent_id",
+              "canonical_parent_key",
+              "computational_multiplicity",
+              "content_gcd",
+              "determinant_bin_map_edge",
+              "exact_determinant_label",
+              "integer_slopes",
+              "inverse_aggregation_relation",
+              "literal_parent_coefficient",
+              "ordered_targets_x_y",
+              "physical_multiplicity",
+              "row_ids",
+              "signed_determinant_numerator",
+              "source_id"
+            ],
+            "type": "object"
+          },
+          "lift_edge_weight": {
+            "$ref": "#/$defs/exactScalar"
+          },
+          "multiplier_chain": {
+            "additionalProperties": false,
+            "properties": {
+              "cut_multiplier": {
+                "$ref": "#/$defs/exactScalar"
+              },
+              "downstream_factors": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "factor_id": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "scalar": {
+                      "$ref": "#/$defs/exactScalar"
+                    },
+                    "source_id": {
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "factor_id",
+                    "scalar",
+                    "source_id"
+                  ],
+                  "type": "object"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "lift_edge_weight": {
+                "$ref": "#/$defs/exactScalar"
+              },
+              "recorded_total": {
+                "$ref": "#/$defs/exactScalar"
+              }
+            },
+            "required": [
+              "cut_multiplier",
+              "downstream_factors",
+              "lift_edge_weight",
+              "recorded_total"
+            ],
+            "type": "object"
+          },
+          "native_identity": {
+            "additionalProperties": false,
+            "properties": {
+              "h0": {
+                "type": "integer"
+              },
+              "native_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "native_tuple": {
+                "additionalProperties": false,
+                "properties": {
+                  "ell": {
+                    "type": "integer"
+                  },
+                  "k": {
+                    "type": "integer"
+                  },
+                  "native_d": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "ell",
+                  "k",
+                  "native_d"
+                ],
+                "type": "object"
+              },
+              "physical_normalization": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "weight_source_id": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "h0",
+              "native_id",
+              "native_tuple",
+              "physical_normalization",
+              "weight_source_id"
+            ],
+            "type": "object"
+          },
+          "occurrence_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "occurrence_source_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "source_cut_path_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "stage": {
+            "additionalProperties": false,
+            "properties": {
+              "local_multiplier": {
+                "$ref": "#/$defs/exactScalar"
+              },
+              "source_cut_path_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_selector_domain": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "source_shift_tag": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "stage_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "stage_matrix_edge": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "target_occurrence_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "target_selector_domain": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "target_shift_tag": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "local_multiplier",
+              "source_cut_path_id",
+              "source_id",
+              "source_selector_domain",
+              "source_shift_tag",
+              "stage_id",
+              "stage_matrix_edge",
+              "target_occurrence_id",
+              "target_selector_domain",
+              "target_shift_tag"
+            ],
+            "type": "object"
+          },
+          "support": {
+            "additionalProperties": false,
+            "properties": {
+              "coefficient_nonzero_status": {
+                "enum": [
+                  "PROVED_NONZERO",
+                  "PROVED_ZERO",
+                  "UNDECIDED"
+                ]
+              },
+              "role": {
+                "enum": [
+                  "ACTUAL_ACTIVE_SUPPORT",
+                  "CANONICAL_PARENT_CARRIER",
+                  "FORMAL_SUPPORT_ENVELOPE"
+                ]
+              },
+              "source_id": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "coefficient_nonzero_status",
+              "role",
+              "source_id"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "G",
+          "P_h0",
+          "QD",
+          "QZ",
+          "affine_coordinates",
+          "canonical_parent",
+          "lift_edge_weight",
+          "multiplier_chain",
+          "native_identity",
+          "occurrence_id",
+          "occurrence_source_id",
+          "source_cut_path_id",
+          "stage",
+          "support"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "required_domain": {
+      "const": "ALL_NONSOFT_ETO_PLUS_FUM"
+    },
+    "schema": {
+      "const": "OccurrenceWitnessV1"
+    },
+    "trusted_source_registry": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "artifact_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_class": {
+            "enum": [
+              "SOURCE_LOCKED_THEOREM",
+              "SYNTHETIC_AXIOM_L0"
+            ]
+          },
+          "source_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "theorem_id": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "artifact_path",
+          "artifact_sha256",
+          "source_class",
+          "source_id",
+          "theorem_id"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "witness_id": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "claim_boundary",
+    "cuts",
+    "fixture_scope",
+    "hash_mode",
+    "occurrences",
+    "required_domain",
+    "schema",
+    "trusted_source_registry",
+    "witness_id"
+  ],
+  "title": "TPC-155 OccurrenceWitnessV1",
+  "type": "object"
+}

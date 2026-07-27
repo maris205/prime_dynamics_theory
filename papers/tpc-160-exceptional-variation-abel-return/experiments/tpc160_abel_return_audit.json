@@ -1,0 +1,120 @@
+{
+  "atomic_prefix": {
+    "abel_derivative": "one unit atom at endpoint t_k",
+    "all_prefix_requirement": "actual endpoint registry avoids B_X,J or a pointwise theorem covers bad endpoints",
+    "bad_variation": "1_(t_k in B_X,J)",
+    "cutoff": "w_i=1_(i<=k)",
+    "route_status": "OPEN"
+  },
+  "checks": {
+    "abel_identity_exact": true,
+    "log_and_X_power_ledgers_separated": true,
+    "prefix_abel_identity_exact": true,
+    "prefix_bad_variation_matches_indicator": true,
+    "prefix_has_one_derivative_atom": true,
+    "upstream_pass": true,
+    "variation_partition_exact": true
+  },
+  "claim_boundary": {
+    "deterministic_all_prefix": false,
+    "four_sign_H3": false,
+    "generic_phase": false,
+    "one_over_400": false,
+    "positive_fixed_X_power": false,
+    "prime_pair_lower_bound": false,
+    "twin_prime_theorem": false,
+    "unconditional_actual_physical_weight_saving": false,
+    "weighted_almost_endpoint_interface": true
+  },
+  "conditional_promotion": {
+    "currently_achieved": false,
+    "fixed_X_power_exponent": 0,
+    "requirements": [
+      "2^J*sqrt(X) <= T <= X",
+      "source-locked literal physical weights",
+      "V_good <= (log X)^(beta+o(1))",
+      "V_bad <= (log X)^(-gamma+o(1))",
+      "beta < min(kappa_0,A)"
+    ],
+    "returned_log_exponent": "min(min(kappa_0,A)-beta,gamma)"
+  },
+  "finite_certificate": {
+    "V_bad": "47/60",
+    "V_good": "43/60",
+    "abel_differences": [
+      "1/5",
+      "-1/20",
+      "1/4",
+      "1/4",
+      "5/12",
+      "1/3"
+    ],
+    "abel_sum": "5177/5005",
+    "direct_sum": "5177/5005",
+    "partial_sums": [
+      "1/2",
+      "-1/6",
+      "13/30",
+      "211/210",
+      "1271/2310",
+      "30383/30030"
+    ],
+    "prefix_abel_sum": "13/30",
+    "prefix_bad_variation": "0/1",
+    "prefix_direct_sum": "13/30",
+    "prefix_endpoint_is_bad": false,
+    "prefix_k": 3,
+    "prefix_nonzero_derivative_indices": [
+      3
+    ],
+    "sigma": [
+      "1/2",
+      "-2/3",
+      "3/5",
+      "4/7",
+      "-5/11",
+      "6/13"
+    ],
+    "weights": [
+      "7/5",
+      "6/5",
+      "5/4",
+      "1/1",
+      "3/4",
+      "1/3"
+    ]
+  },
+  "hash_mode": "CANONICAL_UTF8_LF_V2",
+  "mutation_regressions": {
+    "reject_conditional_promotion_as_achieved": true,
+    "reject_exceptional_density_as_atomic_avoidance": true,
+    "reject_interface_as_full_H3": true,
+    "reject_log_exponent_as_positive_X_power": true,
+    "reject_missing_terminal_difference": true,
+    "reject_promotion_without_terminal_scale_lower_bound": true
+  },
+  "production_status": {
+    "actual_bad_variation_bound": "NOT_TESTABLE",
+    "actual_endpoint_registry": "NOT_TESTABLE",
+    "actual_literal_weight": "NOT_TESTABLE",
+    "full_physical_H3_return": "NOT_PROVED"
+  },
+  "schema": "tpc-160-abel-return-audit-v1",
+  "status": "PASS",
+  "theorem": {
+    "bound": "q/T*|sum sigma_i*w_i| << ||rho||_inf*(epsilon_X*V_good+(1+q/T)*V_bad)",
+    "carrier": "determinant_two_two_mobius_periodic_core",
+    "epsilon_X": "(log X)^(-kappa_0)+2^(-J)+q/T",
+    "export_id": "A160.exceptional_variation_abel_return",
+    "identity": "sum sigma_i*w_i = sum A_i*d_i",
+    "normalization": "q_over_T",
+    "status": "PROVED_L1_ACTUAL_WEIGHTED_ALMOST_ENDPOINT_INTERFACE"
+  },
+  "upstream": {
+    "audit_sha256": "e1e3b3786634ef36399d2e04e467f63ae9b3a8bdf9ee4f828ca021cac66f254d",
+    "audit_status": "PASS",
+    "hash_semantics": "INTEGRITY_ONLY",
+    "main_tex_sha256": "a1b375fcbceb9d470f7817b99eac7b4688163fb783351f18831fa34169316968",
+    "paper": "TPC-159"
+  }
+}

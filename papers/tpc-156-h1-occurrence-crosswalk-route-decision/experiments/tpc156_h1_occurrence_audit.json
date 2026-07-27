@@ -1,0 +1,66 @@
+{
+  "checks": {
+    "ETO_and_FUM_both_in_contract": true,
+    "augmented_and_scalar_routes_remain_open": true,
+    "canonical_source_locks_valid": true,
+    "claim_boundary_intact": true,
+    "current_schema_stop_scoped": true,
+    "nine_defects_and_registry_separate": true,
+    "production_census_exact": true,
+    "scalar_antichain_exact": true,
+    "selected_minimal_missing_exact": true,
+    "source_checks_passed": true,
+    "source_semantics_validated": true,
+    "typed_DAG_acyclic": true
+  },
+  "claim_boundary": {
+    "architecture_infeasible_claimed": false,
+    "fixed_X_power_L2_claimed": false,
+    "one_over_400_endpoint_claimed": false,
+    "prime_pair_or_twin_prime_claimed": false,
+    "production_actual_lift_claimed": false
+  },
+  "current_verdict": "NOT_TESTABLE",
+  "decision_sha256": "aa6c2b8ed0d982a89b82392806d1fcf1f35eeed4c6ade3113ad3b80a2472f67c",
+  "first_missing_selected_route": "H1.theorem_backed_occurrence_provenance_crosswalk",
+  "hypothetical_outcomes": {
+    "baseline": {
+      "H1": "NOT_TESTABLE",
+      "map_clause": "NOT_TESTABLE",
+      "scalar_clause": "NOT_TESTABLE"
+    },
+    "complete_map": {
+      "H1": "PROVED",
+      "map_clause": "PROVED",
+      "scalar_clause": "NOT_TESTABLE"
+    },
+    "complete_scalar_plus_ETO": {
+      "H1": "PROVED",
+      "map_clause": "NOT_TESTABLE",
+      "scalar_clause": "PROVED"
+    }
+  },
+  "mutation_regression": {
+    "ETO_domain_omission_rejected": true,
+    "actual_lift_claim_rejected": true,
+    "architecture_infeasible_without_universe_rejected": true,
+    "compressed_four_map_claim_rejected": true,
+    "cover_registry_compression_rejected": true,
+    "finite_empty_ETO_disposition_rejected": true,
+    "identity_shadow_actual_lift_promotion_rejected": true,
+    "positive_L2_claim_rejected": true,
+    "scalar_only_pass_rejected": true
+  },
+  "scenario_checks": {
+    "ETO_without_FUM_scalar_rejected": true,
+    "FUM_scalar_without_ETO_rejected": true,
+    "baseline_not_testable": true,
+    "complete_map_clause_closes_H1": true,
+    "complete_scalar_plus_ETO_closes_H1": true,
+    "cover_is_independent_and_required": true,
+    "reconnection_is_independent_and_required": true,
+    "registry_is_independent_and_required": true
+  },
+  "schema": "tpc-156-h1-occurrence-crosswalk-audit-v1",
+  "status": "PASS"
+}

@@ -1,0 +1,187 @@
+{
+  "$id": "https://example.invalid/tpc161-occurrence-return-audit.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "checks": {
+      "additionalProperties": false,
+      "properties": {
+        "all_source_locks_valid": {
+          "const": true
+        },
+        "claim_boundary_intact": {
+          "const": true
+        },
+        "clause_wise_antichains_exact": {
+          "const": true
+        },
+        "current_schema_stop_scoped": {
+          "const": true
+        },
+        "endpoint_v3_nonduplicating": {
+          "const": true
+        },
+        "h1_map_scalar_separated": {
+          "const": true
+        },
+        "h9_transitive_firewall_pass": {
+          "const": true
+        },
+        "nine_defects_registry_independent": {
+          "const": true
+        },
+        "parent_ready_open_frontiers_exact": {
+          "const": true
+        },
+        "source_contracts_valid": {
+          "const": true
+        },
+        "strict_schemas": {
+          "const": true
+        },
+        "strongest_arithmetic_export_exact": {
+          "const": true
+        },
+        "typed_dag_acyclic": {
+          "const": true
+        }
+      },
+      "required": [
+        "all_source_locks_valid",
+        "claim_boundary_intact",
+        "clause_wise_antichains_exact",
+        "current_schema_stop_scoped",
+        "endpoint_v3_nonduplicating",
+        "h1_map_scalar_separated",
+        "h9_transitive_firewall_pass",
+        "nine_defects_registry_independent",
+        "parent_ready_open_frontiers_exact",
+        "source_contracts_valid",
+        "strict_schemas",
+        "strongest_arithmetic_export_exact",
+        "typed_dag_acyclic"
+      ],
+      "type": "object"
+    },
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "fixed_X_positive_L2": {
+          "const": false
+        },
+        "full_physical_H3": {
+          "const": false
+        },
+        "one_over_400": {
+          "const": false
+        },
+        "prime_pair_lower_bound": {
+          "const": false
+        },
+        "twin_prime_theorem": {
+          "const": false
+        }
+      },
+      "required": [
+        "fixed_X_positive_L2",
+        "full_physical_H3",
+        "one_over_400",
+        "prime_pair_lower_bound",
+        "twin_prime_theorem"
+      ],
+      "type": "object"
+    },
+    "current_verdict": {
+      "const": "NOT_TESTABLE"
+    },
+    "first_missing": {
+      "type": "string"
+    },
+    "manifest_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "mutation_regressions": {
+      "additionalProperties": false,
+      "properties": {
+        "reject_bad_endpoint_scope_mismatch": {
+          "const": true
+        },
+        "reject_crosswalk_promotion": {
+          "const": true
+        },
+        "reject_defect_omission": {
+          "const": true
+        },
+        "reject_duplicate_endpoint_charge": {
+          "const": true
+        },
+        "reject_endpoint_charge_omission": {
+          "const": true
+        },
+        "reject_evidence_status_mismatch": {
+          "const": true
+        },
+        "reject_h9_arithmetic_ancestor": {
+          "const": true
+        },
+        "reject_log_to_X_power_conversion": {
+          "const": true
+        },
+        "reject_minor_projection_scope_mismatch": {
+          "const": true
+        },
+        "reject_occurrence_registry_compression": {
+          "const": true
+        },
+        "reject_one_over_400_claim": {
+          "const": true
+        },
+        "reject_positive_L2_claim": {
+          "const": true
+        },
+        "reject_shadow_as_actual_lift": {
+          "const": true
+        },
+        "reject_source_hash_as_theorem": {
+          "const": true
+        }
+      },
+      "required": [
+        "reject_bad_endpoint_scope_mismatch",
+        "reject_crosswalk_promotion",
+        "reject_defect_omission",
+        "reject_duplicate_endpoint_charge",
+        "reject_evidence_status_mismatch",
+        "reject_endpoint_charge_omission",
+        "reject_h9_arithmetic_ancestor",
+        "reject_log_to_X_power_conversion",
+        "reject_minor_projection_scope_mismatch",
+        "reject_occurrence_registry_compression",
+        "reject_one_over_400_claim",
+        "reject_positive_L2_claim",
+        "reject_shadow_as_actual_lift",
+        "reject_source_hash_as_theorem"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "tpc-161-occurrence-return-integration-audit-v1"
+    },
+    "status": {
+      "const": "PASS"
+    }
+  },
+  "required": [
+    "checks",
+    "claim_boundary",
+    "current_verdict",
+    "first_missing",
+    "manifest_sha256",
+    "mutation_regressions",
+    "schema",
+    "status"
+  ],
+  "title": "TPC-161 occurrence-return integration audit",
+  "type": "object"
+}

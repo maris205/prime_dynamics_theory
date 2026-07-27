@@ -1,0 +1,359 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc154-conservative-completion-v1.schema.json",
+  "title": "TPC-154 conservative formal completion-fiber row",
+  "type": "object",
+  "required": [
+    "schema",
+    "source",
+    "completion_A",
+    "completion_B",
+    "fiber_comparison",
+    "claim_boundary",
+    "integrity_sha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc154-conservative-completion-fiber-v1"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "source_scope",
+        "partial_occurrence_id",
+        "source_cut_path_id",
+        "cut_terminal_type",
+        "native_tuple",
+        "source_h0",
+        "physical_normalization",
+        "support_role",
+        "source_integrity_sha256"
+      ],
+      "properties": {
+        "source_scope": {
+          "enum": [
+            "PRODUCTION_CURRENT_ARCHIVE",
+            "SYNTHETIC_L0_ONLY"
+          ]
+        },
+        "partial_occurrence_id": {"type": "string", "minLength": 1},
+        "source_cut_path_id": {"type": "string", "minLength": 1},
+        "cut_terminal_type": {
+          "enum": [
+            "ELIGIBLE_TAIL_OPEN",
+            "FRONTIER_UNMAPPED"
+          ]
+        },
+        "native_tuple": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "integer"}
+        },
+        "source_h0": {"type": "integer"},
+        "physical_normalization": {"type": "string", "minLength": 1},
+        "support_role": {"const": "FORMAL_SUPPORT_ENVELOPE"},
+        "source_integrity_sha256": {"$ref": "#/$defs/sha256"},
+        "synthetic_policy_inputs": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "completion_A": {
+      "allOf": [
+        {"$ref": "#/$defs/completion"},
+        {
+          "properties": {
+            "completion_id": {"const": "A_ONE_CHILD"},
+            "branch_count": {"const": 1},
+            "edges": {"minItems": 1, "maxItems": 1}
+          }
+        }
+      ]
+    },
+    "completion_B": {
+      "allOf": [
+        {"$ref": "#/$defs/completion"},
+        {
+          "properties": {
+            "completion_id": {"const": "B_TWO_CHILD_EQUAL_SPLIT"},
+            "branch_count": {"const": 2},
+            "edges": {"minItems": 2, "maxItems": 2}
+          }
+        }
+      ]
+    },
+    "fiber_comparison": {
+      "type": "object",
+      "required": [
+        "same_forgetting_target",
+        "same_pushforward_column",
+        "row_separated_branch_counts_differ",
+        "canonical_completion_selected_by_current_schema"
+      ],
+      "properties": {
+        "same_forgetting_target": {"const": true},
+        "same_pushforward_column": {"$ref": "#/$defs/unitRational"},
+        "row_separated_branch_counts_differ": {"const": true},
+        "canonical_completion_selected_by_current_schema": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "is_actual_downstream_completion",
+        "proves_two_actual_carrier_completions_exist",
+        "stops_augmented_occurrence_route",
+        "proves_positive_fixed_h0_L2",
+        "proves_twin_prime_theorem"
+      ],
+      "properties": {
+        "is_actual_downstream_completion": {"const": false},
+        "proves_two_actual_carrier_completions_exist": {"const": false},
+        "stops_augmented_occurrence_route": {"const": false},
+        "proves_positive_fixed_h0_L2": {"const": false},
+        "proves_twin_prime_theorem": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "integrity_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "rational": {
+      "type": "object",
+      "required": ["ring", "numerator", "denominator"],
+      "properties": {
+        "ring": {"const": "Q"},
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "unitRational": {
+      "type": "object",
+      "required": ["ring", "numerator", "denominator"],
+      "properties": {
+        "ring": {"const": "Q"},
+        "numerator": {"const": 1},
+        "denominator": {"const": 1}
+      },
+      "additionalProperties": false
+    },
+    "completion": {
+      "type": "object",
+      "required": [
+        "completion_id",
+        "matrix_scope",
+        "branch_count",
+        "edges",
+        "column_sum",
+        "forgets_to_unit_shadow_column"
+      ],
+      "properties": {
+        "completion_id": {"type": "string", "minLength": 1},
+        "matrix_scope": {"const": "FORMAL_CURRENT_SCHEMA_COMPLETION"},
+        "branch_count": {"type": "integer", "minimum": 1},
+        "edges": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/edge"}
+        },
+        "column_sum": {"$ref": "#/$defs/unitRational"},
+        "forgets_to_unit_shadow_column": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "edge": {
+      "type": "object",
+      "required": [
+        "formal_occurrence_id",
+        "row_separated_edge_id",
+        "source_partial_occurrence_id",
+        "branch_index",
+        "branch_count",
+        "forgetting_pushforward_weight",
+        "lineage_echo",
+        "canonical_parent_and_QD",
+        "outer_zero_mode_and_QZ",
+        "physical_grouping_G",
+        "downstream_shift_selector",
+        "affine_corridor_consumer",
+        "provenance_status",
+        "integrity_sha256"
+      ],
+      "properties": {
+        "formal_occurrence_id": {"type": "string", "minLength": 1},
+        "row_separated_edge_id": {"type": "string", "minLength": 1},
+        "source_partial_occurrence_id": {"type": "string", "minLength": 1},
+        "branch_index": {"type": "integer", "minimum": 0},
+        "branch_count": {"type": "integer", "minimum": 1},
+        "forgetting_pushforward_weight": {"$ref": "#/$defs/rational"},
+        "lineage_echo": {
+          "type": "object",
+          "required": [
+            "native_tuple",
+            "source_h0",
+            "physical_normalization",
+            "source_support_role",
+            "actual_active_support"
+          ],
+          "properties": {
+            "native_tuple": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {"type": "integer"}
+            },
+            "source_h0": {"type": "integer"},
+            "physical_normalization": {"type": "string", "minLength": 1},
+            "source_support_role": {"const": "FORMAL_SUPPORT_ENVELOPE"},
+            "actual_active_support": {"const": "UNDECIDED"}
+          },
+          "additionalProperties": false
+        },
+        "canonical_parent_and_QD": {
+          "type": "object",
+          "required": [
+            "canonical_parent_key_alpha_gamma_j",
+            "row_ids_and_integer_slopes",
+            "ordered_targets_x_y",
+            "content_gcd",
+            "signed_determinant_numerator",
+            "exact_determinant_label",
+            "inverse_aggregation_relation",
+            "physical_and_computational_multiplicity",
+            "literal_parent_coefficient",
+            "determinant_bin_map_edge"
+          ],
+          "properties": {
+            "canonical_parent_key_alpha_gamma_j": {"type": "string", "minLength": 1},
+            "row_ids_and_integer_slopes": {"type": "object"},
+            "ordered_targets_x_y": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {"type": "integer"}
+            },
+            "content_gcd": {"type": "integer", "minimum": 1},
+            "signed_determinant_numerator": {"type": "integer"},
+            "exact_determinant_label": {"type": "string", "minLength": 1},
+            "inverse_aggregation_relation": {"const": "FORMAL_FREE_COMPLETION_ONLY"},
+            "physical_and_computational_multiplicity": {"type": "object"},
+            "literal_parent_coefficient": {"$ref": "#/$defs/rational"},
+            "determinant_bin_map_edge": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "outer_zero_mode_and_QZ": {
+          "type": "object",
+          "required": [
+            "outer_affine_key",
+            "ordered_coordinate_and_rank",
+            "arithmetic_sign",
+            "outer_weight",
+            "factor_allocation_id",
+            "content_remainder_destination",
+            "zero_mode_map_edge"
+          ],
+          "properties": {
+            "outer_affine_key": {"type": "string", "minLength": 1},
+            "ordered_coordinate_and_rank": {"type": "object"},
+            "arithmetic_sign": {"enum": [-1, 1]},
+            "outer_weight": {"$ref": "#/$defs/rational"},
+            "factor_allocation_id": {"type": "string", "minLength": 1},
+            "content_remainder_destination": {"type": "string", "minLength": 1},
+            "zero_mode_map_edge": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "physical_grouping_G": {
+          "type": "object",
+          "required": [
+            "physical_occurrence_id",
+            "physical_group_id",
+            "exact_reconstruction_multiplier",
+            "multiplicity_and_inverse_aggregation",
+            "physical_cover_class",
+            "reconnection_destination",
+            "physical_map_edge"
+          ],
+          "properties": {
+            "physical_occurrence_id": {"type": "string", "minLength": 1},
+            "physical_group_id": {"type": "string", "minLength": 1},
+            "exact_reconstruction_multiplier": {"$ref": "#/$defs/rational"},
+            "multiplicity_and_inverse_aggregation": {"type": "object"},
+            "physical_cover_class": {"const": "FORMAL_SCHEMA_COMPLETION_ONLY"},
+            "reconnection_destination": {"type": "string", "minLength": 1},
+            "physical_map_edge": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "downstream_shift_selector": {
+          "type": "object",
+          "required": [
+            "stage_id",
+            "source_shift_tag",
+            "target_shift_tag",
+            "source_and_target_selector_domains",
+            "stage_matrix_edge",
+            "shift_preservation_source"
+          ],
+          "properties": {
+            "stage_id": {"type": "string", "minLength": 1},
+            "source_shift_tag": {"type": "integer"},
+            "target_shift_tag": {"type": "integer"},
+            "source_and_target_selector_domains": {"type": "object"},
+            "stage_matrix_edge": {"type": "string", "minLength": 1},
+            "shift_preservation_source": {"type": "null"}
+          },
+          "additionalProperties": false
+        },
+        "affine_corridor_consumer": {
+          "type": "object",
+          "required": [
+            "native_tuple_d",
+            "affine_D_intercept_d",
+            "affine_D_slope_s",
+            "affine_V_intercept_u",
+            "affine_V_slope_a",
+            "native_d_equals_affine_d_crosswalk_status",
+            "coefficient_l1_mass",
+            "endpoint_ledger_token"
+          ],
+          "properties": {
+            "native_tuple_d": {"type": "integer"},
+            "affine_D_intercept_d": {"type": "integer"},
+            "affine_D_slope_s": {"type": "integer"},
+            "affine_V_intercept_u": {"type": "integer"},
+            "affine_V_slope_a": {"type": "integer"},
+            "native_d_equals_affine_d_crosswalk_status": {"const": "NOT_SOURCED"},
+            "coefficient_l1_mass": {"$ref": "#/$defs/rational"},
+            "endpoint_ledger_token": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "provenance_status": {
+          "type": "object",
+          "required": [
+            "schema_fields_populated",
+            "theorem_backed_actual_provenance",
+            "formal_completion_only"
+          ],
+          "properties": {
+            "schema_fields_populated": {"const": true},
+            "theorem_backed_actual_provenance": {"const": false},
+            "formal_completion_only": {"const": true}
+          },
+          "additionalProperties": false
+        },
+        "integrity_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

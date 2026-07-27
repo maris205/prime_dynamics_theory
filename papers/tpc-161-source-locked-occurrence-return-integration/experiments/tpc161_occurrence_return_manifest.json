@@ -1,0 +1,1964 @@
+{
+  "claim_boundary": {
+    "all_deterministic_prefixes": false,
+    "architecture_infeasible": false,
+    "current_schema_stop_is_global": false,
+    "fixed_X_positive_L2": false,
+    "full_physical_H3": false,
+    "one_over_400": false,
+    "prime_pair_lower_bound": false,
+    "production_occurrence_crosswalk": false,
+    "production_phase_registry": false,
+    "production_weight_registry": false,
+    "source_hashes_are_theorem_evidence": false,
+    "twin_prime_theorem": false
+  },
+  "current_verdict": "NOT_TESTABLE",
+  "endpoint_ledger_v3": {
+    "charge_registry": [
+      {
+        "charge_id": "ARITH.correlation_log_saving",
+        "owner_ledger": "arithmetic",
+        "quantity_kind": "LOG_AMPLITUDE_SAVING",
+        "state": "PROVED",
+        "value": "(log X)^(-kappa_0+o(1))"
+      },
+      {
+        "charge_id": "ARITH.dyadic_shadow",
+        "owner_ledger": "arithmetic",
+        "quantity_kind": "LOG_EXCEPTIONAL_MEASURE",
+        "state": "PROVED",
+        "value": "(log X)^(-kappa_0+o(1))"
+      },
+      {
+        "charge_id": "PHYS.good_variation",
+        "owner_ledger": "physical",
+        "quantity_kind": "LOG_AMPLITUDE_COST",
+        "state": "NOT_TESTABLE",
+        "value": null
+      },
+      {
+        "charge_id": "PHYS.bad_variation",
+        "owner_ledger": "physical",
+        "quantity_kind": "ATOMIC_ENDPOINT_COST",
+        "state": "NOT_TESTABLE",
+        "value": null
+      },
+      {
+        "charge_id": "PHYS.phase_return",
+        "owner_ledger": "physical",
+        "quantity_kind": "PHASE_RETURN_COST",
+        "state": "NOT_TESTABLE",
+        "value": null
+      },
+      {
+        "charge_id": "PHYS.four_sign_reconnection",
+        "owner_ledger": "physical",
+        "quantity_kind": "RECONNECTION_COST",
+        "state": "NOT_TESTABLE",
+        "value": null
+      }
+    ],
+    "contract": "MVP1_FIXED_H0_NON_DUPLICATING_ENDPOINT_V3",
+    "invariants": {
+      "each_charge_has_exactly_one_owner": true,
+      "full_synthesis_references_not_recharges": true,
+      "log_power_not_converted_to_X_power": true,
+      "no_charge_id_repeated": true,
+      "physical_loss_registry_complete": false
+    },
+    "ledgers": {
+      "arithmetic": {
+        "charge_ids": [
+          "ARITH.correlation_log_saving",
+          "ARITH.dyadic_shadow"
+        ],
+        "fixed_X_sigma": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "state": "INCOMPLETE"
+      },
+      "full_synthesis": {
+        "charge_ids": [],
+        "input_ledgers": [
+          "arithmetic",
+          "physical"
+        ],
+        "net_fixed_X_slack": null,
+        "state": "INCOMPLETE"
+      },
+      "physical": {
+        "charge_ids": [
+          "PHYS.good_variation",
+          "PHYS.bad_variation",
+          "PHYS.phase_return",
+          "PHYS.four_sign_reconnection"
+        ],
+        "fixed_X_lambda_lower": null,
+        "fixed_X_lambda_upper": null,
+        "registry_complete": false,
+        "state": "NOT_TESTABLE",
+        "unknown_cost_policy": "UNKNOWN_IS_NOT_ZERO"
+      }
+    },
+    "scale": "AMPLITUDE",
+    "target": {
+      "fixed_X_sigma_required": {
+        "denominator": 400,
+        "numerator": 1
+      },
+      "one_over_400_paid": false
+    }
+  },
+  "first_missing": {
+    "minimal_not_testable_nodes": [
+      "H1.theorem_backed_occurrence_provenance_crosswalk"
+    ],
+    "node_id": "H1.theorem_backed_occurrence_provenance_crosswalk",
+    "required_artifact_id": "artifact.theorem_backed_crosswalk",
+    "route_id": "occurrence_augmented_map",
+    "selection_rule": "SELECTED_ROUTE_THEN_MINIMAL_MISSING_ANCESTOR_THEN_NODE_ID",
+    "status": "NOT_TESTABLE"
+  },
+  "h1_completion": {
+    "defect_vector": [
+      "D_L",
+      "D_QD",
+      "D_QZ",
+      "D_G",
+      "D_P",
+      "D_DZ",
+      "D_GP",
+      "D_cover",
+      "D_rec"
+    ],
+    "defects": [
+      {
+        "defect_id": "D_L",
+        "evaluable": false,
+        "node_id": "H1.defect.D_L",
+        "status": "NOT_TESTABLE",
+        "zero_proved": false
+      },
+      {
+        "defect_id": "D_QD",
+        "evaluable": false,
+        "node_id": "H1.defect.D_QD",
+        "status": "NOT_TESTABLE",
+        "zero_proved": false
+      },
+      {
+        "defect_id": "D_QZ",
+        "evaluable": false,
+        "node_id": "H1.defect.D_QZ",
+        "status": "NOT_TESTABLE",
+        "zero_proved": false
+      },
+      {
+        "defect_id": "D_G",
+        "evaluable": false,
+        "node_id": "H1.defect.D_G",
+        "status": "NOT_TESTABLE",
+        "zero_proved": false
+      },
+      {
+        "defect_id": "D_P",
+        "evaluable": false,
+        "node_id": "H1.defect.D_P",
+        "status": "NOT_TESTABLE",
+        "zero_proved": false
+      },
+      {
+        "defect_id": "D_DZ",
+        "evaluable": false,
+        "node_id": "H1.defect.D_DZ",
+        "status": "NOT_TESTABLE",
+        "zero_proved": false
+      },
+      {
+        "defect_id": "D_GP",
+        "evaluable": false,
+        "node_id": "H1.defect.D_GP",
+        "status": "NOT_TESTABLE",
+        "zero_proved": false
+      },
+      {
+        "defect_id": "D_cover",
+        "evaluable": false,
+        "node_id": "H1.defect.D_cover",
+        "status": "NOT_TESTABLE",
+        "zero_proved": false
+      },
+      {
+        "defect_id": "D_rec",
+        "evaluable": false,
+        "node_id": "H1.defect.D_rec",
+        "status": "NOT_TESTABLE",
+        "zero_proved": false
+      }
+    ],
+    "map_clause": {
+      "node_id": "H1.map_clause",
+      "operator": "ALL",
+      "status": "NOT_TESTABLE"
+    },
+    "occurrence_registry": {
+      "compressed_as_D_occ": false,
+      "independent_from_defect_vector": true,
+      "node_id": "H1.frontier_occurrence_registry_totality",
+      "status": "NOT_TESTABLE"
+    },
+    "scalar_clause": {
+      "node_id": "H1.scalar_clause",
+      "operator": "ALL",
+      "status": "NOT_TESTABLE"
+    },
+    "totalization": {
+      "clauses": [
+        "H1.map_clause",
+        "H1.scalar_clause"
+      ],
+      "node_id": "H1.frontier_totalization",
+      "operator": "ANY_CLAUSE",
+      "status": "NOT_TESTABLE"
+    }
+  },
+  "h9_arithmetic_firewall": {
+    "arithmetic_ancestor_ids": [],
+    "arithmetic_roles": [
+      "ARITHMETIC_CORE",
+      "ARITHMETIC_NEGATIVE",
+      "ARITHMETIC_TARGET"
+    ],
+    "firewall_pass": true,
+    "policy": "H9_MUST_HAVE_NO_DIRECT_OR_TRANSITIVE_ARITHMETIC_ANCESTOR",
+    "root_node": "H9.physical_registry",
+    "transitive_ancestor_ids": [
+      "C155.occurrence_witness_verifier",
+      "D156.h1_typed_contract",
+      "H1.frontier_cover_totality",
+      "H1.frontier_occurrence_lift",
+      "H1.frontier_occurrence_registry_totality",
+      "H1.frontier_reconnection",
+      "H1.theorem_backed_occurrence_provenance_crosswalk",
+      "H9.endpoint_registry",
+      "H9.literal_weight_registry",
+      "H9.normalization_registry",
+      "H9.phase_cell_registry",
+      "S153.cut_occurrence_shadow"
+    ]
+  },
+  "imports": [
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "evidence_level": "L1_ACTUAL_CORE",
+      "import_id": "I151.actual_periodic_core",
+      "normalization_id": "norm.q_over_N",
+      "paper": "TPC-151",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_CORE",
+      "scope_id": "scope.actual_periodic_core_almost_scale",
+      "source_export_id": "A149.actual_mobius_periodic_corridor",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "MISSING",
+      "carrier_id": "carrier.downstream_occurrences",
+      "evidence_level": "L1_INTEGRATION",
+      "import_id": "I152.mvp5_anchor",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-152",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "source_export_id": "MVP5.NOT_TESTABLE",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "evidence_level": "L1_STRUCTURAL",
+      "import_id": "I153.cut_shadow",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-153",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "source_export_id": "H1.cut_occurrence_shadow",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.formal_completion_fibers",
+      "evidence_level": "L0_SCHEMA_NEGATIVE",
+      "import_id": "I154.current_schema_stop",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-154",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL_NEGATIVE",
+      "scope_id": "scope.current_schema_formal_completion",
+      "source_export_id": "H1.current_artifacts_only_canonical_actual_lift",
+      "status": "STOPPED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.synthetic_witness_bundle",
+      "evidence_level": "L0_VERIFIER",
+      "import_id": "I155.witness_verifier",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-155",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.synthetic_witness_contract",
+      "source_export_id": "OccurrenceWitnessV1.verifier_internal_soundness",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "MISSING",
+      "carrier_id": "carrier.downstream_occurrences",
+      "evidence_level": "L1_STRUCTURAL_TARGET",
+      "import_id": "I156.h1_crosswalk_decision",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-156",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "source_export_id": "H1.theorem_backed_occurrence_provenance_crosswalk",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "evidence_level": "L1_STRUCTURAL",
+      "import_id": "I156.h1_typed_contract",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-156",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "source_export_id": "H1.typed_map_scalar_contract",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "evidence_level": "L1_ACTUAL_CORE_WEIGHT_INTERFACE",
+      "import_id": "I157.weight_interface",
+      "normalization_id": "norm.q_over_N",
+      "paper": "TPC-157",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_CORE",
+      "scope_id": "scope.actual_periodic_core_almost_scale",
+      "source_export_id": "A157.literal_weight_periodic_approximation",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "evidence_level": "L1_ACTUAL_CORE_MAJOR_ARC",
+      "import_id": "I158.major_arc",
+      "normalization_id": "norm.q_over_N",
+      "paper": "TPC-158",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_CORE",
+      "scope_id": "scope.actual_core_major_arc",
+      "source_export_id": "A158.additive_phase_major_arc",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "evidence_level": "L1_SCOPED_NEGATIVE",
+      "import_id": "I158.periodic_route_stop",
+      "normalization_id": "norm.q_over_N",
+      "paper": "TPC-158",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_NEGATIVE",
+      "scope_id": "scope.actual_core_minor_projection_obstruction",
+      "source_export_id": "N158.small_period_phase_projection_obstruction",
+      "status": "STOPPED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "evidence_level": "L1_ACTUAL_PREFIX_ALMOST_ENDPOINT",
+      "import_id": "I159.almost_endpoint_prefix",
+      "normalization_id": "norm.q_over_T",
+      "paper": "TPC-159",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_CORE",
+      "scope_id": "scope.actual_core_prefix_outside_shadow",
+      "source_export_id": "A159.dyadic_shadow_almost_endpoint_prefix",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "evidence_level": "L1_ACTUAL_WEIGHTED_ALMOST_ENDPOINT_INTERFACE",
+      "import_id": "I160.abel_interface",
+      "normalization_id": "norm.q_over_T",
+      "paper": "TPC-160",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_CORE",
+      "scope_id": "scope.actual_core_weighted_almost_endpoint",
+      "source_export_id": "A160.exceptional_variation_abel_return",
+      "status": "PROVED"
+    }
+  ],
+  "minimal_not_testable_antichains": [
+    {
+      "minimal_not_testable_nodes": [
+        "H1.theorem_backed_occurrence_provenance_crosswalk"
+      ],
+      "open_nodes": [],
+      "route_id": "H1.map_clause",
+      "selection_rule": "MINIMAL_MISSING_ARTIFACT_ANCESTORS_THEN_NODE_ID"
+    },
+    {
+      "minimal_not_testable_nodes": [
+        "H1.complete_FUM_scalar_oX",
+        "H1.theorem_backed_ETO_disposition"
+      ],
+      "open_nodes": [],
+      "route_id": "H1.scalar_clause",
+      "selection_rule": "MINIMAL_MISSING_ARTIFACT_ANCESTORS_THEN_NODE_ID"
+    },
+    {
+      "minimal_not_testable_nodes": [
+        "H9.literal_weight_registry"
+      ],
+      "open_nodes": [],
+      "route_id": "H2.literal_weight_return",
+      "selection_rule": "MINIMAL_MISSING_ARTIFACT_ANCESTORS_THEN_NODE_ID"
+    },
+    {
+      "minimal_not_testable_nodes": [
+        "H9.phase_cell_registry"
+      ],
+      "open_nodes": [],
+      "route_id": "H2.phase_major_clause",
+      "selection_rule": "MINIMAL_MISSING_ARTIFACT_ANCESTORS_THEN_NODE_ID"
+    },
+    {
+      "minimal_not_testable_nodes": [
+        "H9.phase_cell_registry"
+      ],
+      "open_nodes": [
+        "O161.direct_additive_twist_core"
+      ],
+      "route_id": "H2.phase_direct_clause",
+      "selection_rule": "MINIMAL_MISSING_ARTIFACT_ANCESTORS_THEN_NODE_ID"
+    },
+    {
+      "minimal_not_testable_nodes": [
+        "H9.endpoint_registry"
+      ],
+      "open_nodes": [],
+      "route_id": "H4.endpoint_avoidance_clause",
+      "selection_rule": "MINIMAL_MISSING_ARTIFACT_ANCESTORS_THEN_NODE_ID"
+    },
+    {
+      "minimal_not_testable_nodes": [
+        "H9.endpoint_registry"
+      ],
+      "open_nodes": [
+        "O161.bad_endpoint_pointwise_core"
+      ],
+      "route_id": "H4.endpoint_pointwise_clause",
+      "selection_rule": "MINIMAL_MISSING_ARTIFACT_ANCESTORS_THEN_NODE_ID"
+    },
+    {
+      "minimal_not_testable_nodes": [
+        "H1.theorem_backed_occurrence_provenance_crosswalk",
+        "H9.endpoint_registry",
+        "H9.literal_weight_registry",
+        "H9.normalization_registry",
+        "H9.phase_cell_registry"
+      ],
+      "open_nodes": [],
+      "route_id": "H9.physical_registry",
+      "selection_rule": "MINIMAL_MISSING_ARTIFACT_ANCESTORS_THEN_NODE_ID"
+    },
+    {
+      "minimal_not_testable_nodes": [
+        "H1.theorem_backed_occurrence_provenance_crosswalk",
+        "H9.endpoint_registry",
+        "H9.literal_weight_registry",
+        "H9.normalization_registry",
+        "H9.phase_cell_registry"
+      ],
+      "open_nodes": [
+        "O161.bad_endpoint_pointwise_core",
+        "O161.direct_additive_twist_core"
+      ],
+      "route_id": "ROOT.selected_map_synthesis",
+      "selection_rule": "MINIMAL_MISSING_ARTIFACT_ANCESTORS_THEN_NODE_ID"
+    }
+  ],
+  "nodes": [
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "clauses": [],
+      "evidence_id": "I153.cut_shadow",
+      "node_id": "S153.cut_occurrence_shadow",
+      "node_type": "EVIDENCE",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact_id": "artifact.cut_occurrence_shadow",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "NOT_APPLICABLE",
+      "carrier_id": "carrier.formal_completion_fibers",
+      "clauses": [],
+      "evidence_id": "I154.current_schema_stop",
+      "node_id": "N154.current_schema_only_lift",
+      "node_type": "SCOPED_STOP",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "S153.cut_occurrence_shadow"
+      ],
+      "program_level": "L0_SCHEMA_NEGATIVE",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "STRUCTURAL_NEGATIVE",
+      "scope_id": "scope.current_schema_formal_completion",
+      "status": "STOPPED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.synthetic_witness_bundle",
+      "clauses": [],
+      "evidence_id": "I155.witness_verifier",
+      "node_id": "C155.occurrence_witness_verifier",
+      "node_type": "EVIDENCE",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [],
+      "program_level": "L0_VERIFIER",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.synthetic_witness_contract",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "clauses": [],
+      "evidence_id": "I156.h1_typed_contract",
+      "node_id": "D156.h1_typed_contract",
+      "node_type": "EVIDENCE",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "clauses": [],
+      "evidence_id": "I151.actual_periodic_core",
+      "node_id": "A151.actual_periodic_core",
+      "node_type": "EVIDENCE",
+      "normalization_id": "norm.q_over_N",
+      "parents": [],
+      "program_level": "L1_ACTUAL_CORE",
+      "required_artifact_id": "artifact.periodic_actual_core",
+      "role": "ARITHMETIC_CORE",
+      "scope_id": "scope.actual_periodic_core_almost_scale",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "clauses": [],
+      "evidence_id": "I157.weight_interface",
+      "node_id": "A157.literal_weight_interface",
+      "node_type": "EVIDENCE",
+      "normalization_id": "norm.q_over_N",
+      "parents": [
+        "A151.actual_periodic_core"
+      ],
+      "program_level": "L1_ACTUAL_CORE_WEIGHT_INTERFACE",
+      "required_artifact_id": "artifact.periodic_actual_core",
+      "role": "ARITHMETIC_CORE",
+      "scope_id": "scope.actual_periodic_core_almost_scale",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "clauses": [],
+      "evidence_id": "I158.major_arc",
+      "node_id": "A158.major_arc_interface",
+      "node_type": "EVIDENCE",
+      "normalization_id": "norm.q_over_N",
+      "parents": [
+        "A157.literal_weight_interface"
+      ],
+      "program_level": "L1_ACTUAL_CORE_MAJOR_ARC",
+      "required_artifact_id": "artifact.periodic_actual_core",
+      "role": "ARITHMETIC_CORE",
+      "scope_id": "scope.actual_core_major_arc",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "NOT_APPLICABLE",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "clauses": [],
+      "evidence_id": "I158.periodic_route_stop",
+      "node_id": "N158.small_period_projection_route",
+      "node_type": "SCOPED_STOP",
+      "normalization_id": "norm.q_over_N",
+      "parents": [
+        "A157.literal_weight_interface"
+      ],
+      "program_level": "L1_SCOPED_NEGATIVE",
+      "required_artifact_id": "artifact.phase_projection_obstruction",
+      "role": "ARITHMETIC_NEGATIVE",
+      "scope_id": "scope.actual_core_minor_projection_obstruction",
+      "status": "STOPPED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "clauses": [],
+      "evidence_id": "I159.almost_endpoint_prefix",
+      "node_id": "A159.almost_endpoint_prefix",
+      "node_type": "EVIDENCE",
+      "normalization_id": "norm.q_over_T",
+      "parents": [
+        "A151.actual_periodic_core"
+      ],
+      "program_level": "L1_ACTUAL_PREFIX_ALMOST_ENDPOINT",
+      "required_artifact_id": "artifact.almost_endpoint_prefix",
+      "role": "ARITHMETIC_CORE",
+      "scope_id": "scope.actual_core_prefix_outside_shadow",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "clauses": [],
+      "evidence_id": "I160.abel_interface",
+      "node_id": "A160.weighted_abel_interface",
+      "node_type": "EVIDENCE",
+      "normalization_id": "norm.q_over_T",
+      "parents": [
+        "A159.almost_endpoint_prefix"
+      ],
+      "program_level": "L1_ACTUAL_WEIGHTED_ALMOST_ENDPOINT_INTERFACE",
+      "required_artifact_id": "artifact.weighted_abel_interface",
+      "role": "ARITHMETIC_CORE",
+      "scope_id": "scope.actual_core_weighted_almost_endpoint",
+      "status": "PROVED"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "O161.direct_additive_twist_core",
+      "node_type": "TARGET",
+      "normalization_id": "norm.q_over_N",
+      "parents": [
+        "A151.actual_periodic_core"
+      ],
+      "program_level": "L1_ACTUAL_CORE_TARGET",
+      "required_artifact_id": "artifact.periodic_actual_core",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_periodic_core_almost_scale",
+      "status": "OPEN"
+    },
+    {
+      "artifact_readiness": "READY",
+      "carrier_id": "carrier.determinant_two_two_mobius_core",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "O161.bad_endpoint_pointwise_core",
+      "node_type": "TARGET",
+      "normalization_id": "norm.q_over_T",
+      "parents": [
+        "A151.actual_periodic_core",
+        "A159.almost_endpoint_prefix"
+      ],
+      "program_level": "L1_ACTUAL_PREFIX_TARGET",
+      "required_artifact_id": "artifact.periodic_actual_core",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_core_bad_endpoint",
+      "status": "OPEN"
+    },
+    {
+      "artifact_readiness": "MISSING",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "I156.h1_crosswalk_decision",
+      "node_id": "H1.theorem_backed_occurrence_provenance_crosswalk",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "S153.cut_occurrence_shadow",
+        "C155.occurrence_witness_verifier",
+        "D156.h1_typed_contract"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.frontier_occurrence_lift",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.theorem_backed_occurrence_provenance_crosswalk"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.frontier_QD_totality",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.frontier_QZ_totality",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.frontier_G_totality",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.frontier_P_h0_totality",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.frontier_cover_totality",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.frontier_reconnection",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.defect.D_L",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_occurrence_lift"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.defect.D_QD",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_QD_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.defect.D_QZ",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_QZ_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.defect.D_G",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_G_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.defect.D_P",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_P_h0_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.defect.D_DZ",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_QD_totality",
+        "H1.frontier_QZ_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.defect.D_GP",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_G_totality",
+        "H1.frontier_P_h0_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.defect.D_cover",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_cover_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.defect.D_rec",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_reconnection"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.frontier_occurrence_registry_totality",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.frontier_occurrence_lift",
+        "H1.frontier_cover_totality",
+        "H1.frontier_reconnection"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "PHYSICAL_REGISTRY",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.downstream_occurrences",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.map_clause",
+      "node_type": "ALL",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.theorem_backed_occurrence_provenance_crosswalk",
+        "H1.defect.D_L",
+        "H1.defect.D_QD",
+        "H1.defect.D_QZ",
+        "H1.defect.D_G",
+        "H1.defect.D_P",
+        "H1.defect.D_DZ",
+        "H1.defect.D_GP",
+        "H1.defect.D_cover",
+        "H1.defect.D_rec",
+        "H1.frontier_occurrence_registry_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.h1_occurrence_augmented_route",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "MISSING",
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.complete_FUM_scalar_oX",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [],
+      "program_level": "L1_ANALYTIC_TARGET",
+      "required_artifact_id": "artifact.complete_FUM_scalar_oX",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "MISSING",
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.theorem_backed_ETO_disposition",
+      "node_type": "TARGET",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.ETO_disposition",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.scalar_clause",
+      "node_type": "ALL",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [
+        "H1.complete_FUM_scalar_oX",
+        "H1.theorem_backed_ETO_disposition"
+      ],
+      "program_level": "L1_TARGET",
+      "required_artifact_id": "artifact.complete_FUM_scalar_oX",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "clauses": [
+        [
+          "H1.map_clause"
+        ],
+        [
+          "H1.scalar_clause"
+        ]
+      ],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H1.frontier_totalization",
+      "node_type": "ANY_CLAUSE",
+      "normalization_id": "norm.physical_atomic",
+      "parents": [],
+      "program_level": "L1_TARGET",
+      "required_artifact_id": "artifact.theorem_backed_crosswalk",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "MISSING",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H9.literal_weight_registry",
+      "node_type": "TARGET",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [],
+      "program_level": "L1_PHYSICAL_TARGET",
+      "required_artifact_id": "artifact.literal_weight_registry",
+      "role": "PHYSICAL_REGISTRY",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "MISSING",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H9.phase_cell_registry",
+      "node_type": "TARGET",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [],
+      "program_level": "L1_PHYSICAL_TARGET",
+      "required_artifact_id": "artifact.phase_cell_registry",
+      "role": "PHYSICAL_REGISTRY",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "MISSING",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H9.endpoint_registry",
+      "node_type": "TARGET",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [],
+      "program_level": "L1_PHYSICAL_TARGET",
+      "required_artifact_id": "artifact.endpoint_registry",
+      "role": "PHYSICAL_REGISTRY",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "MISSING",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H9.normalization_registry",
+      "node_type": "TARGET",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [],
+      "program_level": "L1_PHYSICAL_TARGET",
+      "required_artifact_id": "artifact.normalization_registry",
+      "role": "PHYSICAL_REGISTRY",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H9.physical_registry",
+      "node_type": "ALL",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "H1.frontier_occurrence_registry_totality",
+        "H9.literal_weight_registry",
+        "H9.phase_cell_registry",
+        "H9.endpoint_registry",
+        "H9.normalization_registry"
+      ],
+      "program_level": "L1_PHYSICAL_TARGET",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "PHYSICAL_REGISTRY",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H2.literal_weight_return",
+      "node_type": "ALL",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "A157.literal_weight_interface",
+        "H9.literal_weight_registry"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H2.phase_major_clause",
+      "node_type": "ALL",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "A158.major_arc_interface",
+        "H9.phase_cell_registry"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H2.phase_direct_clause",
+      "node_type": "ALL",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "O161.direct_additive_twist_core",
+        "H9.phase_cell_registry"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [
+        [
+          "H2.phase_major_clause"
+        ],
+        [
+          "H2.phase_direct_clause"
+        ]
+      ],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H2.phase_return",
+      "node_type": "ANY_CLAUSE",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H4.endpoint_avoidance_clause",
+      "node_type": "ALL",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "A159.almost_endpoint_prefix",
+        "H9.endpoint_registry"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H4.endpoint_pointwise_clause",
+      "node_type": "ALL",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "O161.bad_endpoint_pointwise_core",
+        "H9.endpoint_registry"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [
+        [
+          "H4.endpoint_avoidance_clause"
+        ],
+        [
+          "H4.endpoint_pointwise_clause"
+        ]
+      ],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H4.endpoint_return",
+      "node_type": "ANY_CLAUSE",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H3.actual_packet_saving",
+      "node_type": "TARGET",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "A160.weighted_abel_interface",
+        "H2.literal_weight_return",
+        "H2.phase_return",
+        "H4.endpoint_return",
+        "H9.normalization_registry"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H5.complete_four_sign_return",
+      "node_type": "TARGET",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "H3.actual_packet_saving",
+        "H1.frontier_occurrence_registry_totality",
+        "H9.physical_registry"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H6.physical_cover",
+      "node_type": "ALL",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "H1.defect.D_cover"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H7.fixed_h0_totality",
+      "node_type": "ALL",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "H1.defect.D_P"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "H8.final_reconnection",
+      "node_type": "ALL",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "H1.defect.D_rec",
+        "H6.physical_cover",
+        "H7.fixed_h0_totality"
+      ],
+      "program_level": "L1_STRUCTURAL_TARGET",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "STRUCTURAL",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "artifact_readiness": "BLOCKED_BY_PARENT",
+      "carrier_id": "carrier.actual_h3_packet",
+      "clauses": [],
+      "evidence_id": "INTEGRATION_DERIVED",
+      "node_id": "ROOT.selected_map_synthesis",
+      "node_type": "ALL",
+      "normalization_id": "norm.endpoint_amplitude",
+      "parents": [
+        "H1.map_clause",
+        "H2.literal_weight_return",
+        "H2.phase_return",
+        "H3.actual_packet_saving",
+        "H4.endpoint_return",
+        "H5.complete_four_sign_return",
+        "H6.physical_cover",
+        "H7.fixed_h0_totality",
+        "H8.final_reconnection",
+        "H9.physical_registry"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact_id": "artifact.frozen_source_record",
+      "role": "ROOT",
+      "scope_id": "scope.actual_fixed_h0_endpoint",
+      "status": "NOT_TESTABLE"
+    }
+  ],
+  "parent_ready_open_frontiers": [
+    {
+      "artifact_readiness": "READY",
+      "node_id": "O161.bad_endpoint_pointwise_core",
+      "parents": [
+        "A151.actual_periodic_core",
+        "A159.almost_endpoint_prefix"
+      ],
+      "parents_all_proved": true,
+      "scope_id": "scope.actual_core_bad_endpoint",
+      "status": "OPEN"
+    },
+    {
+      "artifact_readiness": "READY",
+      "node_id": "O161.direct_additive_twist_core",
+      "parents": [
+        "A151.actual_periodic_core"
+      ],
+      "parents_all_proved": true,
+      "scope_id": "scope.actual_periodic_core_almost_scale",
+      "status": "OPEN"
+    }
+  ],
+  "progress_classification": {
+    "actual_fixed_power_achieved": false,
+    "actual_fixed_power_status": "NOT_PROVED",
+    "actual_fixed_power_target_level": "L2_ACTUAL_POSITIVE",
+    "current_schema_lift_route": "STOP_SCOPED",
+    "new_positive_L2": false,
+    "production_return_status": "NOT_TESTABLE",
+    "strongest_arithmetic_export": "A159.almost_endpoint_prefix",
+    "strongest_arithmetic_level": "L1_ACTUAL_PREFIX_ALMOST_ENDPOINT",
+    "structural_shadow_level": "L1_STRUCTURAL"
+  },
+  "registries": {
+    "artifacts": [
+      {
+        "description": "canonical source-locked frozen evidence record",
+        "key": "artifact.frozen_source_record",
+        "source_ref": "TPC151--TPC160",
+        "status": "READY"
+      },
+      {
+        "description": "canonical unit cut shadow on every archived nonsoft path",
+        "key": "artifact.cut_occurrence_shadow",
+        "source_ref": "TPC153.shadow_certificate",
+        "status": "READY"
+      },
+      {
+        "description": "actual row-level cut-to-occurrence provenance theorem",
+        "key": "artifact.theorem_backed_crosswalk",
+        "source_ref": "TPC156.decision",
+        "status": "MISSING"
+      },
+      {
+        "description": "complete original-scale FUM scalar o(X) theorem",
+        "key": "artifact.complete_FUM_scalar_oX",
+        "source_ref": "TPC156.decision",
+        "status": "MISSING"
+      },
+      {
+        "description": "growing-scale theorem-backed ETO totalization or softness",
+        "key": "artifact.ETO_disposition",
+        "source_ref": "TPC156.decision",
+        "status": "MISSING"
+      },
+      {
+        "description": "source-locked literal physical multiplier on actual occurrences",
+        "key": "artifact.literal_weight_registry",
+        "source_ref": "TPC157.weight_audit",
+        "status": "MISSING"
+      },
+      {
+        "description": "source-locked production phase cell and regime label",
+        "key": "artifact.phase_cell_registry",
+        "source_ref": "TPC158.phase_audit",
+        "status": "MISSING"
+      },
+      {
+        "description": "actual atomic endpoint registry with shadow membership",
+        "key": "artifact.endpoint_registry",
+        "source_ref": "TPC159.prefix_audit",
+        "status": "MISSING"
+      },
+      {
+        "description": "literal physical normalization and no-double-charge lineage",
+        "key": "artifact.normalization_registry",
+        "source_ref": "TPC160.abel_audit",
+        "status": "MISSING"
+      },
+      {
+        "description": "determinant-two two-Mobius core with periodic multiplier",
+        "key": "artifact.periodic_actual_core",
+        "source_ref": "TPC151.integration_manifest",
+        "status": "READY"
+      },
+      {
+        "description": "periodic-core prefix outside the dyadic shadow",
+        "key": "artifact.almost_endpoint_prefix",
+        "source_ref": "TPC159.prefix_audit",
+        "status": "READY"
+      },
+      {
+        "description": "exact small-period projection obstruction on separated phase cells",
+        "key": "artifact.phase_projection_obstruction",
+        "source_ref": "TPC158.phase_audit",
+        "status": "READY"
+      },
+      {
+        "description": "exact Abel interface with good and bad variation",
+        "key": "artifact.weighted_abel_interface",
+        "source_ref": "TPC160.abel_audit",
+        "status": "READY"
+      }
+    ],
+    "carriers": [
+      {
+        "description": "disjoint ETO union FUM source domain",
+        "key": "carrier.all_nonsoft_cut_paths",
+        "source_ref": "TPC153.shadow_certificate",
+        "status": "READY"
+      },
+      {
+        "description": "maximal current-schema formal completion class",
+        "key": "carrier.formal_completion_fibers",
+        "source_ref": "TPC154.obstruction_certificate",
+        "status": "READY"
+      },
+      {
+        "description": "L0 verifier fixture, not production evidence",
+        "key": "carrier.synthetic_witness_bundle",
+        "source_ref": "TPC155.witness_audit",
+        "status": "READY"
+      },
+      {
+        "description": "actual row-separated downstream occurrence carrier",
+        "key": "carrier.downstream_occurrences",
+        "source_ref": "TPC156.decision",
+        "status": "MISSING"
+      },
+      {
+        "description": "actual fixed-two quotient-Mobius periodic core",
+        "key": "carrier.determinant_two_two_mobius_core",
+        "source_ref": "TPC151.integration_manifest",
+        "status": "READY"
+      },
+      {
+        "description": "complete literal physical fixed-h0 packet",
+        "key": "carrier.actual_h3_packet",
+        "source_ref": "TPC160.abel_audit",
+        "status": "MISSING"
+      }
+    ],
+    "normalizations": [
+      {
+        "description": "literal physical atomic normalization",
+        "key": "norm.physical_atomic",
+        "source_ref": "TPC151.integration_manifest",
+        "status": "READY"
+      },
+      {
+        "description": "fiber-block normalization q/N",
+        "key": "norm.q_over_N",
+        "source_ref": "TPC157.weight_audit",
+        "status": "READY"
+      },
+      {
+        "description": "cumulative fiber normalization q/T",
+        "key": "norm.q_over_T",
+        "source_ref": "TPC159.prefix_audit",
+        "status": "READY"
+      },
+      {
+        "description": "full physical endpoint amplitude normalization",
+        "key": "norm.endpoint_amplitude",
+        "source_ref": "TPC160.abel_audit",
+        "status": "MISSING"
+      }
+    ],
+    "scopes": [
+      {
+        "description": "archived physical ETO and FUM cut paths",
+        "key": "scope.physical_nonsoft_cut",
+        "source_ref": "TPC153.shadow_certificate",
+        "status": "READY"
+      },
+      {
+        "description": "formal completions determined only by current fields",
+        "key": "scope.current_schema_formal_completion",
+        "source_ref": "TPC154.obstruction_certificate",
+        "status": "READY"
+      },
+      {
+        "description": "finite verifier soundness on a supplied bundle",
+        "key": "scope.synthetic_witness_contract",
+        "source_ref": "TPC155.witness_audit",
+        "status": "READY"
+      },
+      {
+        "description": "production theorem-backed occurrence crosswalk route",
+        "key": "scope.h1_occurrence_augmented_route",
+        "source_ref": "TPC156.decision",
+        "status": "MISSING"
+      },
+      {
+        "description": "actual fixed-two periodic core outside the source exceptional set",
+        "key": "scope.actual_periodic_core_almost_scale",
+        "source_ref": "TPC151.integration_manifest",
+        "status": "READY"
+      },
+      {
+        "description": "phase cells in the certified small-period major arcs",
+        "key": "scope.actual_core_major_arc",
+        "source_ref": "TPC158.phase_audit",
+        "status": "READY"
+      },
+      {
+        "description": "separated phase cells stopped only for the small-period approximation route",
+        "key": "scope.actual_core_minor_projection_obstruction",
+        "source_ref": "TPC158.phase_audit",
+        "status": "READY"
+      },
+      {
+        "description": "almost-endpoint prefixes outside the dyadic exceptional shadow",
+        "key": "scope.actual_core_prefix_outside_shadow",
+        "source_ref": "TPC159.prefix_audit",
+        "status": "READY"
+      },
+      {
+        "description": "actual periodic core at endpoints inside the dyadic bad set",
+        "key": "scope.actual_core_bad_endpoint",
+        "source_ref": "TPC159.prefix_audit",
+        "status": "READY"
+      },
+      {
+        "description": "Abel-weighted periodic core with split variation",
+        "key": "scope.actual_core_weighted_almost_endpoint",
+        "source_ref": "TPC160.abel_audit",
+        "status": "READY"
+      },
+      {
+        "description": "complete literal physical fixed-h0 endpoint synthesis",
+        "key": "scope.actual_fixed_h0_endpoint",
+        "source_ref": "INTEGRATION_DERIVED",
+        "status": "MISSING"
+      }
+    ]
+  },
+  "routes": [
+    {
+      "first_missing": null,
+      "route_id": "current_schema_only_canonical_lift",
+      "scope": "CURRENT_ARTIFACTS_ONLY",
+      "selected": false,
+      "state": "STOP_SCOPED",
+      "stopped": true
+    },
+    {
+      "first_missing": "H1.theorem_backed_occurrence_provenance_crosswalk",
+      "route_id": "occurrence_augmented_map",
+      "scope": "PRODUCTION_THEOREM_BACKED_CROSSWALK",
+      "selected": true,
+      "state": "OPEN_NOT_TESTABLE",
+      "stopped": false
+    },
+    {
+      "first_missing": "H1.complete_FUM_scalar_oX",
+      "route_id": "scalar_plus_ETO",
+      "scope": "COMPLETE_ORIGINAL_SCALE_FUM_AND_ETO",
+      "selected": false,
+      "state": "OPEN_NOT_TESTABLE",
+      "stopped": false
+    },
+    {
+      "first_missing": null,
+      "route_id": "direct_additive_twist_core",
+      "scope": "ACTUAL_PERIODIC_CORE_ONLY",
+      "selected": false,
+      "state": "OPEN_PARENT_READY",
+      "stopped": false
+    },
+    {
+      "first_missing": null,
+      "route_id": "bad_endpoint_pointwise_core",
+      "scope": "ACTUAL_PREFIX_CORE_ONLY",
+      "selected": false,
+      "state": "OPEN_PARENT_READY",
+      "stopped": false
+    }
+  ],
+  "schema": "tpc-161-occurrence-return-integration-manifest-v1",
+  "snapshot": {
+    "date": "2026-07-28",
+    "hash_mode": "CANONICAL_UTF8_LF_V2",
+    "selected_route": "occurrence_augmented_map",
+    "source_hash_semantics": "INTEGRITY_ONLY",
+    "source_range": "TPC-151--160"
+  },
+  "source_contract_summary": {
+    "tpc151_anchor": {
+      "first_missing": "H1.frontier_occurrence_lift",
+      "new_positive_L2": false,
+      "status": "PASS"
+    },
+    "tpc152_anchor": {
+      "current_verdict": "NOT_TESTABLE",
+      "first_missing": "H1.frontier_occurrence_lift",
+      "status": "PASS"
+    },
+    "tpc153_shadow": {
+      "production_census": {
+        "ELIGIBLE_TAIL_OPEN": 0,
+        "FRONTIER_UNMAPPED": 2988
+      },
+      "status": "PROVED_L1_STRUCTURAL"
+    },
+    "tpc154_current_schema_route": {
+      "selected_augmented_route_stopped": false,
+      "status": "STOP_DECLARED_ROUTE"
+    },
+    "tpc155_production_witness": {
+      "present": false,
+      "status": "NOT_TESTABLE"
+    },
+    "tpc156_h1_decision": {
+      "current_verdict": "NOT_TESTABLE",
+      "first_missing": "H1.theorem_backed_occurrence_provenance_crosswalk"
+    },
+    "tpc157_weight_interface": {
+      "production_weight_registry": "NOT_TESTABLE",
+      "status": "PROVED_L1_ACTUAL_CORE_WEIGHT_INTERFACE"
+    },
+    "tpc158_phase_interface": {
+      "production_phase_cell": "NOT_TESTABLE",
+      "status": "PROVED_L1_ACTUAL_CORE_MAJOR_ARC"
+    },
+    "tpc159_prefix": {
+      "all_prefix": false,
+      "status": "PROVED_L1_ACTUAL_PREFIX_ALMOST_ENDPOINT"
+    },
+    "tpc160_abel_interface": {
+      "fixed_X_power_exponent": 0,
+      "production_endpoint_registry": "NOT_TESTABLE",
+      "production_weight": "NOT_TESTABLE",
+      "status": "PROVED_L1_ACTUAL_WEIGHTED_ALMOST_ENDPOINT_INTERFACE"
+    }
+  },
+  "source_lock_policy": {
+    "hash_semantics": "INTEGRITY_ONLY",
+    "normalization": "CANONICAL_UTF8_LF_V2",
+    "source_hashes_prove_theorems": false
+  },
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "5068f2c2ef8104855eeaaf8f41fdea660119b7e850f54e835643e306ec1a3e3b",
+      "kind": "SCRIPT",
+      "paper": "TPC-151",
+      "path": "papers/tpc-151-source-locked-frontier-quotient-integration/experiments/tpc151_source_locked_integration.py",
+      "source_id": "TPC151.integration_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "8f9ebb92e73f4dd4e32b281d42acfb2ef9badc98f3728305cd50792849da6e9a",
+      "kind": "OUTPUT",
+      "paper": "TPC-151",
+      "path": "papers/tpc-151-source-locked-frontier-quotient-integration/experiments/tpc151_integration_manifest.json",
+      "source_id": "TPC151.integration_manifest"
+    },
+    {
+      "canonical_utf8_lf_sha256": "8c9c7bf25b85444624911277aa5c607a50306bed3d2c584ae123cb83fe0c17cf",
+      "kind": "OUTPUT",
+      "paper": "TPC-151",
+      "path": "papers/tpc-151-source-locked-frontier-quotient-integration/experiments/tpc151_source_locked_integration_audit.json",
+      "source_id": "TPC151.integration_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "3454a6066ec264564f77f5ecb05c0384515e19519174b4528bd220553e807fbe",
+      "kind": "SCRIPT",
+      "paper": "TPC-152",
+      "path": "papers/tpc-152-mvp5-frontier-occurrence-lift-route-decision/experiments/tpc152_mvp5_route_audit.py",
+      "source_id": "TPC152.route_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "5d07ed54e824cd7d0723424580089cf1b310caef371717c00e9467a9132b2fa7",
+      "kind": "OUTPUT",
+      "paper": "TPC-152",
+      "path": "papers/tpc-152-mvp5-frontier-occurrence-lift-route-decision/experiments/tpc152_mvp5_snapshot.json",
+      "source_id": "TPC152.snapshot"
+    },
+    {
+      "canonical_utf8_lf_sha256": "64d68ae2af6d4e4ce1e18ef4479e1940125f3b28c3c196dc7ea93d56c22a68c5",
+      "kind": "OUTPUT",
+      "paper": "TPC-152",
+      "path": "papers/tpc-152-mvp5-frontier-occurrence-lift-route-decision/experiments/tpc152_mvp5_route_audit.json",
+      "source_id": "TPC152.route_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "dcf82be82724e400c082336ce5558b9ae0002617dfb020c4c50dbab30634af3d",
+      "kind": "SCRIPT",
+      "paper": "TPC-153",
+      "path": "papers/tpc-153-canonical-cut-occurrence-shadow/experiments/tpc153_cut_occurrence_shadow.py",
+      "source_id": "TPC153.shadow_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "b1a9d016d44174e45ea846e4b42ac3ad11098f2d6802159ee353a6778e7bfa19",
+      "kind": "OUTPUT",
+      "paper": "TPC-153",
+      "path": "papers/tpc-153-canonical-cut-occurrence-shadow/experiments/tpc153_cut_occurrence_shadow_certificate.json",
+      "source_id": "TPC153.shadow_certificate"
+    },
+    {
+      "canonical_utf8_lf_sha256": "688260cefb2628f8e8a990ad312258895501c6c2bdda6e08ac5e2a9a424fbeca",
+      "kind": "SCRIPT",
+      "paper": "TPC-154",
+      "path": "papers/tpc-154-conservative-completion-fiber-obstruction/experiments/tpc154_completion_fiber_obstruction.py",
+      "source_id": "TPC154.obstruction_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "0d9265926f6cee51b433491c8f52192ba03ad10b31355bf67be991373966f8c1",
+      "kind": "OUTPUT",
+      "paper": "TPC-154",
+      "path": "papers/tpc-154-conservative-completion-fiber-obstruction/experiments/tpc154_completion_fiber_obstruction_certificate.json",
+      "source_id": "TPC154.obstruction_certificate"
+    },
+    {
+      "canonical_utf8_lf_sha256": "84fd8637a60771b74839e77becb11f3d50bbb99e587a27dbfff553c896c6dc5a",
+      "kind": "SCRIPT",
+      "paper": "TPC-155",
+      "path": "papers/tpc-155-theorem-backed-occurrence-witness-verifier/experiments/tpc155_occurrence_witness_verifier.py",
+      "source_id": "TPC155.witness_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "b4d48047447b336042a79111f59a8ff7fa01c71f7717cab95f6e84601bcaf3a1",
+      "kind": "OUTPUT",
+      "paper": "TPC-155",
+      "path": "papers/tpc-155-theorem-backed-occurrence-witness-verifier/experiments/tpc155_occurrence_witness_audit.json",
+      "source_id": "TPC155.witness_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "7be9df2a66a16f56e817e4f01d62318acd11b264cef367ff1777534ed0d81559",
+      "kind": "OUTPUT",
+      "paper": "TPC-155",
+      "path": "papers/tpc-155-theorem-backed-occurrence-witness-verifier/samples/tpc155_production_witness_status.json",
+      "source_id": "TPC155.production_status"
+    },
+    {
+      "canonical_utf8_lf_sha256": "ea18fbec3df95d2075d83f37a542a6e48d4ae2627e0b2969344d3ae5808a84a5",
+      "kind": "SCRIPT",
+      "paper": "TPC-156",
+      "path": "papers/tpc-156-h1-occurrence-crosswalk-route-decision/experiments/tpc156_h1_occurrence_decision.py",
+      "source_id": "TPC156.decision_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "aa6c2b8ed0d982a89b82392806d1fcf1f35eeed4c6ade3113ad3b80a2472f67c",
+      "kind": "OUTPUT",
+      "paper": "TPC-156",
+      "path": "papers/tpc-156-h1-occurrence-crosswalk-route-decision/experiments/tpc156_h1_occurrence_decision.json",
+      "source_id": "TPC156.decision"
+    },
+    {
+      "canonical_utf8_lf_sha256": "a6ac4fb6f506d67254db0675694cfc01724d5991ded109de8b0780fa8b57f171",
+      "kind": "OUTPUT",
+      "paper": "TPC-156",
+      "path": "papers/tpc-156-h1-occurrence-crosswalk-route-decision/experiments/tpc156_h1_occurrence_audit.json",
+      "source_id": "TPC156.decision_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "9fd6e8b082c58f6212642e34c5ecab8a9f2c2ccc4f372e5c3a80090cbe49ff61",
+      "kind": "SCRIPT",
+      "paper": "TPC-157",
+      "path": "papers/tpc-157-literal-weight-periodic-approximation/experiments/tpc157_periodic_approximation_audit.py",
+      "source_id": "TPC157.weight_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "7bf0d6d635a49964f49c0422254540931032888da2c133f602a184cc625185ec",
+      "kind": "OUTPUT",
+      "paper": "TPC-157",
+      "path": "papers/tpc-157-literal-weight-periodic-approximation/experiments/tpc157_periodic_approximation_audit.json",
+      "source_id": "TPC157.weight_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "b020427a1d38378c041d67c468b3f2caf115859b6a391a99cc864fc2193c5c8f",
+      "kind": "SCRIPT",
+      "paper": "TPC-158",
+      "path": "papers/tpc-158-additive-phase-major-minor-gate/experiments/tpc158_phase_gate_audit.py",
+      "source_id": "TPC158.phase_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "5e396c72f89364370c0c6e3ea8abb5fadfb3ec96f914b5147d20a9d4b6886fef",
+      "kind": "OUTPUT",
+      "paper": "TPC-158",
+      "path": "papers/tpc-158-additive-phase-major-minor-gate/experiments/tpc158_phase_gate_audit.json",
+      "source_id": "TPC158.phase_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "5e3bf24312b7d46a333f0e46772072fe628a658df4d6d3250a4286dbf078ee3d",
+      "kind": "SCRIPT",
+      "paper": "TPC-159",
+      "path": "papers/tpc-159-dyadic-shadow-prefix-lifting/experiments/tpc159_dyadic_shadow_audit.py",
+      "source_id": "TPC159.prefix_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "36e8ed9137980f82e958746c542668bd72e0cf668742b855c050806113b7471c",
+      "kind": "OUTPUT",
+      "paper": "TPC-159",
+      "path": "papers/tpc-159-dyadic-shadow-prefix-lifting/experiments/tpc159_dyadic_shadow_audit.json",
+      "source_id": "TPC159.prefix_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "01498c8eba2e7e86d93c49da5e020cf0141cf56d507256c2bd6a2264bc820dd2",
+      "kind": "SCRIPT",
+      "paper": "TPC-160",
+      "path": "papers/tpc-160-exceptional-variation-abel-return/experiments/tpc160_abel_return_audit.py",
+      "source_id": "TPC160.abel_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "df39071a8e34ed4f3c7c6504ccab225350b37a7f48297b6fdf8419e3128f1f67",
+      "kind": "OUTPUT",
+      "paper": "TPC-160",
+      "path": "papers/tpc-160-exceptional-variation-abel-return/experiments/tpc160_abel_return_audit.json",
+      "source_id": "TPC160.abel_audit"
+    }
+  ]
+}

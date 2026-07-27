@@ -1,0 +1,263 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathcal E}
+\newcommand{\Sshadow}{\mathcal S}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+
+\title{\textbf{Dyadic-Shadow Lifting from Good-Scale M\"obius\\
+Correlations to Almost-Endpoint Prefixes}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The TPC-149 determinant-two theorem controls periodic two-M\"obius
+correlations on every nonexceptional interval \((N,2N]\) inside an
+ambient shell.  We lift that estimate to cumulative prefixes by an
+exact dyadic telescoping.  An endpoint is admissible when its first
+\(J\) dyadic ancestors avoid the source exceptional set.  The
+correlation error has no factor \(J\), because the block lengths form
+a geometric series; the exceptional shadow has only a
+\(J=O(\log\log X)\) measure cost.  This proves a genuine
+almost-endpoint prefix theorem on the actual periodic M\"obius core.
+It does not control every predetermined atomic endpoint.
+\end{abstract}
+
+\noindent\textbf{Keywords.}
+M\"obius correlation; cumulative prefix; exceptional scale;
+dyadic shadow; determinant two.
+
+\medskip
+\noindent\fcolorbox{red!70!black}{red!3}{\parbox{0.94\linewidth}{
+\textbf{Claim boundary.}
+The result controls cumulative periodic-core prefixes outside an
+explicit sparse shadow.  Logarithmic density does not prove that a
+predetermined discrete endpoint avoids that shadow.  The multiplier
+remains bounded periodic.  The saving is a power of \(\log X\), not
+a fixed power of \(X\); no \(1/400\), prime-pair lower bound or
+twin-prime theorem is obtained.}}
+
+\section{Source theorem and notation}
+
+Let
+\[
+ q=as,\qquad t(z)=ad+qz,\qquad
+ c_z=\mu(d+sz)\mu(u+az),
+\]
+where
+\[
+ a,s,R\ge1,\quad d,u\in\mathbb Z,\quad
+ (a,s)=1,\quad as\ {\rm odd},\quad su-ad=2.
+\]
+TPC-149 proves that there are absolute
+\(\eta_0,\kappa_0>0\) and, for every sufficiently large \(X\), a set
+\(\E_X^\star\subset[\sqrt X,X]\) such that
+\begin{equation}
+ \frac1{\log X}\int_{\E_X^\star}\frac{dN}{N}
+ \ll(\log X)^{-\kappa_0},
+\label{eq:exception}
+\end{equation}
+and, if \(qR\le(\log X)^{\eta_0}\),
+\begin{equation}
+ \frac qN\left|
+ \sum_{\substack{z\in\mathbb Z\\N<t(z)\le2N}}
+ c_z\rho(z)\right|
+ \ll\norm{\rho}_\infty(\log X)^{-\kappa_0}
+\label{eq:source}
+\end{equation}
+for all \(N\in[\sqrt X,X]\setminus\E_X^\star\) and every
+period-\(R\) function \(\rho\) \citep{WangTPC149}.
+
+\section{The dyadic shadow}
+
+Fix \(A>0\) and set
+\begin{equation}
+ J=\left\lceil A\log_2\log X\right\rceil,\qquad
+ \Sshadow_{X,J}=\bigcup_{j=1}^J2^j\E_X^\star.
+\label{eq:shadow}
+\end{equation}
+Here \(2^jE=\{2^jt:t\in E\}\).
+
+\begin{proposition}[Shadow measure]\label{prop:measure}
+One has
+\begin{equation}
+ \frac1{\log X}
+ \int_{\Sshadow_{X,J}\cap[2^J\sqrt X,X]}\frac{dT}{T}
+ \ll J(\log X)^{-\kappa_0}
+ =(\log X)^{-\kappa_0+o(1)}.
+\label{eq:shadowmeasure}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For every \(j\), the substitution \(T=2^jN\) preserves logarithmic
+measure:
+\[
+ \int_{2^j\E_X^\star}\frac{dT}{T}
+ =\int_{\E_X^\star}\frac{dN}{N}.
+\]
+Use the union bound, \eqref{eq:exception}, and
+\(J=O(\log\log X)\).  Intersecting with the endpoint interval only
+decreases the measure.
+\end{proof}
+
+\section{Cumulative prefix lifting}
+
+For bounded period-\(R\) \(\rho\), define
+\[
+ A_\rho(T)=
+ \sum_{\substack{z\in\mathbb Z\\0<t(z)\le T}}c_z\rho(z).
+\]
+
+\begin{theorem}[Almost-endpoint cumulative prefix]\label{thm:main}
+Suppose
+\[
+ qR\le(\log X)^{\eta_0},\qquad
+ 2^J\sqrt X\le T\le X,\qquad
+ T\notin\Sshadow_{X,J}.
+\]
+Then
+\begin{equation}
+ \boxed{\;
+ \frac qT|A_\rho(T)|
+ \ll\norm{\rho}_\infty
+ \left\{(\log X)^{-\kappa_0}+2^{-J}+\frac qT\right\}.\;}
+\label{eq:main}
+\end{equation}
+Consequently,
+\[
+ \frac qT|A_\rho(T)|
+ \ll\norm{\rho}_\infty
+ (\log X)^{-\min\{\kappa_0,A\}+o(1)}
+\]
+in the asymptotic determinant-two envelope.
+\end{theorem}
+
+\begin{proof}
+Use the exact identity
+\begin{equation}
+ A_\rho(T)=
+ \sum_{j=1}^J
+ \sum_{\substack{z\\T/2^j<t(z)\le T/2^{j-1}}}
+ c_z\rho(z)
+ +A_\rho(T/2^J).
+\label{eq:telescoping}
+\end{equation}
+Since \(T\notin\Sshadow_{X,J}\), every
+\(N_j=T/2^j\) avoids \(\E_X^\star\).  The endpoint assumptions put
+all \(N_j\) in \([\sqrt X,X]\), so \eqref{eq:source} gives
+\[
+ \left|
+ \sum_{N_j<t(z)\le2N_j}c_z\rho(z)\right|
+ \ll\norm{\rho}_\infty\frac{N_j}{q}
+ (\log X)^{-\kappa_0}.
+\]
+After multiplying by \(q/T\), the sum of these errors is at most
+\[
+ \norm{\rho}_\infty(\log X)^{-\kappa_0}
+ \sum_{j=1}^J2^{-j}
+ \le\norm{\rho}_\infty(\log X)^{-\kappa_0}.
+\]
+Thus there is no \(J\) loss in the correlation term.
+
+The progression \(t(z)=ad+qz\) has at most
+\(T/(q2^J)+1\) positive points below \(T/2^J\).  Since
+\(|c_z|\le1\),
+\[
+ \frac qT|A_\rho(T/2^J)|
+ \le\norm{\rho}_\infty\left(2^{-J}+\frac qT\right).
+\]
+Combine the bounds.  Finally
+\(2^{-J}\le(\log X)^{-A}\).
+\end{proof}
+
+\begin{corollary}[Intervals between good endpoints]\label{cor:interval}
+If \(T_0<T_1\) both satisfy the hypotheses of \cref{thm:main}, then
+\[
+ \sum_{T_0<t(z)\le T_1}c_z\rho(z)
+ =A_\rho(T_1)-A_\rho(T_0)
+\]
+is bounded by the sum of the two corresponding right sides.
+\end{corollary}
+
+\section{Why this is not all-prefix control}
+
+\begin{proposition}[Atomic nonimplication]\label{prop:atomic}
+The measure estimate \eqref{eq:shadowmeasure}, by itself, does not
+imply that a prescribed finite or discrete endpoint set
+\(\mathcal T_X\) is disjoint from \(\Sshadow_{X,J}\).
+\end{proposition}
+
+\begin{proof}
+This remains true even if the dyadic form of the shadow is preserved.
+Indeed, for endpoints in
+\([2^J\sqrt X,X]\), enlarge the source set by
+\[
+ \left\{2^{-J}T:
+ T\in\mathcal T_X\cap[2^J\sqrt X,X]\right\}.
+\]
+This is a finite or countable subset of \([\sqrt X,X]\), so it has
+zero continuous logarithmic measure.  Removing these extra scales
+from the good set cannot invalidate the source estimate, while the
+new \(j=J\) shadow copy contains every displayed endpoint.  Thus the
+same measure bound is compatible with intersection; the measure
+bound alone supplies no avoidance statement.
+\end{proof}
+
+This is the TPC-150 selector firewall in a sharper form
+\citep{WangTPC150}: the relevant bad set is now the explicit dyadic
+shadow required by cumulative telescoping.  A pointwise theorem,
+proved exceptional avoidance, or a non-atomic selector crosswalk is
+still needed for deterministic all-prefix control.
+
+\section{Audit and level}
+
+The standard-library certificate checks \eqref{eq:telescoping}
+exactly on a rational progression, checks the geometric block mass,
+and checks a union bound on intervals in logarithmic coordinates.
+It source-locks the TPC-149 theorem using canonical UTF-8/LF hashes;
+those hashes certify integrity only.
+
+\[
+ \boxed{
+ \mathrm{TPC\mbox{-}159}
+ =
+ \mathrm{L1\_ACTUAL\_PREFIX\_ALMOST\_ENDPOINT}.}
+\]
+This is strictly beyond a single source-native dyadic interval, but
+below deterministic all-prefix control and below every positive
+fixed-\(X\)-power target.
+
+\section{Conclusion}
+
+The actual periodic M\"obius core now reaches cumulative prefixes on
+a density-one logarithmic family of endpoints.  The dyadic error
+does not accumulate a \(\log\log X\) factor; only the exceptional
+shadow does.  The remaining endpoint problem is no longer vague:
+one must control the intersection of that shadow with the literal
+endpoint registry.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

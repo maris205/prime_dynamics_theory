@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc162-mvp6-route-audit-v1.schema.json",
+  "title": "TPC-162 MVP6 route audit",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "snapshot_sha256",
+    "checks",
+    "scenario_verdicts",
+    "mutation_regressions",
+    "current_verdict",
+    "first_missing",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "tpc-162-mvp6-route-audit-v1"},
+    "status": {"const": "PASS"},
+    "snapshot_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "checks": {
+      "type": "object",
+      "required": [
+        "strict_snapshot_schema",
+        "dynamic_tpc161_source_locks",
+        "direct_tpc156_and_tpc160_anchors",
+        "hashes_integrity_only",
+        "file_hash_backed_classifier_sources",
+        "route_universe_requirement_preserved",
+        "fresh_registry_requirement_preserved",
+        "scoped_stop_not_globalized",
+        "typed_blocker_antichain",
+        "transitive_ancestry_verified",
+        "scope_mismatch_blocker_supported",
+        "parent_ready_open_frontier_separate",
+        "endpoint_v3_complete_fields",
+        "actual_periodic_core_L1_retained",
+        "almost_endpoint_not_all_prefix",
+        "log_saving_not_fixed_X_power",
+        "weighted_interface_not_production_weight",
+        "current_verdict_not_testable",
+        "claim_boundary"
+      ],
+      "additionalProperties": {"const": true},
+      "minProperties": 19,
+      "maxProperties": 19
+    },
+    "scenario_verdicts": {
+      "type": "object",
+      "required": [
+        "GO",
+        "ARCHITECTURE_INFEASIBLE",
+        "REROUTE",
+        "STOP_ROUTE",
+        "NOT_TESTABLE",
+        "ARITHMETIC_FRONTIER",
+        "OPEN",
+        "INVALID"
+      ],
+      "properties": {
+        "GO": {"const": "GO"},
+        "ARCHITECTURE_INFEASIBLE": {"const": "ARCHITECTURE_INFEASIBLE"},
+        "REROUTE": {"const": "REROUTE"},
+        "STOP_ROUTE": {"const": "STOP_ROUTE"},
+        "NOT_TESTABLE": {"const": "NOT_TESTABLE"},
+        "ARITHMETIC_FRONTIER": {"const": "ARITHMETIC_FRONTIER"},
+        "OPEN": {"const": "OPEN"},
+        "INVALID": {"const": "INVALID"}
+      },
+      "additionalProperties": false
+    },
+    "mutation_regressions": {
+      "type": "object",
+      "required": [
+        "reject_hash_proof_semantics",
+        "reject_current_artifacts_stop_as_actual_impossibility",
+        "reject_augmented_map_global_stop",
+        "reject_scalar_plus_ETO_global_stop",
+        "reject_unproved_route_universe_as_complete",
+        "reject_fabricated_classifier_source",
+        "reject_wrong_first_missing",
+        "reject_selected_root_antichain_collapse",
+        "reject_transitive_ancestry_drift",
+        "reject_frontier_type_merge",
+        "reject_almost_endpoint_as_all_prefix",
+        "reject_log_saving_as_positive_fixed_X_power",
+        "reject_weighted_interface_as_production_weight",
+        "reject_endpoint_pass_with_unknown_literal_fields",
+        "reject_positive_X_power_in_current_ledger"
+      ],
+      "additionalProperties": {"const": true},
+      "minProperties": 15,
+      "maxProperties": 15
+    },
+    "current_verdict": {"const": "NOT_TESTABLE"},
+    "first_missing": {
+      "const": "H1.theorem_backed_occurrence_provenance_crosswalk"
+    },
+    "claim_boundary": {
+      "type": "object",
+      "minProperties": 17,
+      "maxProperties": 17,
+      "additionalProperties": {"const": false}
+    }
+  },
+  "additionalProperties": false
+}

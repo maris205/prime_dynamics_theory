@@ -1,0 +1,412 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={Conservative Completion Fibers},
+  pdfauthor={Liang Wang},
+  pdfsubject={A current-schema obstruction to canonical occurrence recovery},
+  pdfkeywords={fixed shift, occurrence lift, formal completion, nonidentifiability}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Cns}{\mathcal C_X^{\rm ns}}
+\newcommand{\Ocut}{\mathcal O_X^{\rm cut}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\STOP}{\textnormal{\textsc{stop-declared-route}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{Conservative Completion Fibers:}\\
+\textbf{A Current-Schema Obstruction}\\
+\textbf{to Canonical Occurrence Recovery}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-153 constructs a canonical cut-occurrence shadow but leaves the
+actual one-to-many occurrence lift unresolved.  We determine whether
+the missing lift can nevertheless be recovered uniquely from the
+current schema.  Over each partial occurrence we define the maximal
+free formal completion class constrained only by row separation,
+exact rational column conservation and inheritance of the sourced
+native tuple, source shift, physical normalization and formal-support
+status.  This class contains two explicit global completions.  The
+first has one child of weight \(1\) over every source column; the
+second has two row-separated children of weights \(1/2,1/2\).  Both
+push forward to the same canonical shadow, while their per-column
+branch counts differ.  Therefore branch multiplicity, and likewise
+the populated formal parent, zero-mode, stage and physical labels,
+do not descend to the current cut schema.  This proves an
+\(\mathrm{L0}\) schema nonidentifiability theorem and stops only the
+route that derives a canonical actual lift from the present artifacts
+alone.  The constructed children are formal models, not occurrences
+on the unknown actual carrier; consequently the argument proves no
+actual-carrier impossibility and leaves an augmented theorem-backed
+route open.  A deterministic certificate verifies the obstruction on
+all \(2988\) production fibers and on one separately marked synthetic
+eligible-tail fiber.
+\end{abstract}
+
+\section{Question and scope}
+
+Let
+\[
+ S_X:\mathbb C^{\Cns}\longrightarrow\mathbb C^{\Ocut},
+ \qquad S_Xe_c=e_{\iota(c)}
+\]
+be the exact conservative cut-occurrence shadow of TPC-153
+\citep{WangTPC153}.  Its target row \(\iota(c)\) stores every
+cut-sourced field and none of the unarchived downstream fields.
+TPC-143 showed that those downstream labels do not descend from the
+current cut records \citep{WangTPC143}.  The present question is
+stronger and matrix-valued:
+
+\begin{quote}
+Does the current schema determine how many row-separated occurrence
+children lie above each \(\iota(c)\), their coefficients, and their
+downstream provenance?
+\end{quote}
+
+We answer ``no'' relative to a precisely declared formal completion
+class.  This is a statement about information contained in the
+present artifacts.  It is not a statement that the mathematical
+actual carrier has two completions, or that no future theorem can
+identify one.
+
+\section{The free conservative completion class}
+
+\begin{definition}[Formal completion over one shadow row]
+For \(u=\iota(c)\in\Ocut\), a finite formal completion is a nonempty
+row set \(E_u\) with exact coefficients
+\(\lambda_{e,u}\in\mathbb Q\) satisfying
+\begin{equation}
+ \sum_{e\in E_u}\lambda_{e,u}=1.
+ \label{eq:column}
+\end{equation}
+Every \(e\in E_u\) has its own row identifier and echoes the native
+tuple, source \(h_0\), physical normalization and formal-support role
+of \(u\).  Fields absent from the cut schema may be populated with
+typed \texttt{FORMAL\_ONLY} annotations.  Such annotations carry no
+actual-provenance semantics.
+\end{definition}
+
+\begin{definition}[Global free completion]
+A global formal completion is the disjoint union
+\[
+ E=\bigsqcup_{u\in\Ocut}E_u
+\]
+and the matrix
+\[
+ K:\mathbb C^{\Ocut}\longrightarrow\mathbb C^E,
+ \qquad
+ Ke_u=\sum_{e\in E_u}\lambda_{e,u}e_e.
+\]
+Let \(q:E\to\Ocut\) send every child in \(E_u\) back to \(u\), and
+extend it linearly by \(q_*e_e=e_{q(e)}\).  The class
+\(\mathfrak F_{\rm free}(S_X)\) consists of all such completions.
+\end{definition}
+
+\begin{proposition}[Exact forgetting identity]
+\label{prop:forget}
+Every \(K\in\mathfrak F_{\rm free}(S_X)\) satisfies
+\[
+ q_*K=I_{\Ocut},\qquad
+ q_*KS_X=S_X,\qquad
+ \one_E^TK=\one_{\Ocut}^T.
+\]
+\end{proposition}
+
+\begin{proof}
+For a basis vector \(e_u\),
+\[
+ q_*Ke_u
+ =\sum_{e\in E_u}\lambda_{e,u}e_u=e_u
+\]
+by \eqref{eq:column}.  This proves the first two identities.  Taking
+the sum of each matrix column proves the third.
+\end{proof}
+
+The class is ``maximal free'' only in the following controlled sense:
+it imposes the identities literally visible at the cut-shadow
+interface and does not add an unarchived actual-support, canonical
+parent, stage or physical reconstruction theorem.
+
+\section{Two inequivalent completions}
+
+\begin{definition}[Completion A]
+For every \(u\in\Ocut\), let
+\[
+ E_u^A=\{e_u^A\},\qquad \lambda_{e_u^A,u}=1.
+\]
+Denote the resulting global matrix by \(K_A\).
+\end{definition}
+
+\begin{definition}[Completion B]
+For every \(u\in\Ocut\), let
+\[
+ E_u^B=\{e_{u,0}^B,e_{u,1}^B\},\qquad
+ \lambda_{e_{u,0}^B,u}
+ =\lambda_{e_{u,1}^B,u}=\frac12.
+\]
+Denote the resulting global matrix by \(K_B\).
+\end{definition}
+
+Both completions populate typed formal values for the canonical
+parent and determinant edge, outer zero mode, physical group,
+reconstruction multiplier, transformation stage, source and target
+shift, affine consumer and endpoint token.  Their field values are
+deterministic test tokens.  They are not imported from TPC-136 and
+are never labeled theorem-backed.
+
+\begin{definition}[Row-separated equivalence]
+Two completions over the same \(\Ocut\) are equivalent if there is a
+bijection between their row sets that preserves the forgetting
+target and every nonzero matrix coefficient.  In particular, the
+number
+\[
+ b_K(u):=\#\{e:q(e)=u,\ K_{e,u}\ne0\}
+\]
+is an equivalence invariant.
+\end{definition}
+
+\begin{theorem}[Completion-fiber nonuniqueness]
+\label{thm:nonunique}
+The matrices \(K_A,K_B\) both lie in
+\(\mathfrak F_{\rm free}(S_X)\), and
+\[
+ q_{A*}K_AS_X=q_{B*}K_BS_X=S_X.
+\]
+They are not row-separated equivalent.
+\end{theorem}
+
+\begin{proof}
+Their column sums are respectively \(1\) and
+\(\frac12+\frac12=1\), so \cref{prop:forget} applies.  For every
+\(u\in\Ocut\),
+\[
+ b_{K_A}(u)=1,\qquad b_{K_B}(u)=2.
+\]
+Because \(b_K(u)\) is preserved by every permitted row bijection, no
+equivalence can exist.
+\end{proof}
+
+The use of positive rational weights makes the obstruction especially
+elementary.  It does not depend on cancellation between different
+source columns, floating-point tolerance or signed reconstruction.
+
+\section{What is and is not identifiable}
+
+Let \(\mathfrak C(u)\) be the fiber of all free formal completions over
+one shadow row.  A quantity \(a\) is \emph{identified by the shadow}
+only if it is constant on \(\mathfrak C(u)\) for every \(u\).
+
+\begin{corollary}[Branch count does not descend]
+\label{cor:branch}
+The row-separated branch count \(b_K(u)\) is not identified by the
+current shadow schema.
+\end{corollary}
+
+\begin{proof}
+\Cref{thm:nonunique} gives values \(1\) and \(2\) in the same
+forgetting fiber.
+\end{proof}
+
+\begin{proposition}[Downstream provenance does not descend]
+\label{prop:labels}
+Within the declared free class, none of the following is determined
+by the shadow alone:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item a canonical-parent key or determinant-bin edge;
+\item an ordered zero-mode key or \(Q_Z\) edge;
+\item a physical occurrence, physical group, cover or reconnection
+destination;
+\item a transformation-stage identifier, target shift or proof of
+shift preservation; and
+\item an affine-intercept crosswalk or endpoint-ledger token.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The construction assigns different typed formal annotations to the
+children of \(K_A\) and \(K_B\) while their pushforwards are equal.
+Each listed label therefore varies on a forgetting fiber.  The
+standard fiber-constancy criterion rules out descent.
+\end{proof}
+
+The native divisor coordinate \(d_{\rm nat}\) is stored separately
+from the formal affine intercept \(d_{\rm aff}\).  Every test record
+sets their crosswalk status to \texttt{NOT\_SOURCED}.  Equality of
+the two symbols is not inferred from notation.
+
+\subsection{The exact negative theorem}
+
+\begin{theorem}[Current-artifacts-only recovery obstruction]
+\label{thm:obstruction}
+No rule whose output is required to be an invariant determined by
+the current cut-shadow data can recover the row-separated branch
+multiplicity, or the labels in \cref{prop:labels}, of an unknown
+actual occurrence lift.  Accordingly,
+\[
+ \boxed{
+ \mathsf{current\ artifacts\ only\ canonical\ actual\ lift}
+ =\STOP.}
+\]
+\end{theorem}
+
+\begin{proof}
+Any invariant determined by the shadow must take the same value on
+all formal completions with that shadow.  This contradicts
+\cref{cor:branch,prop:labels}.  Thus the current data do not identify
+the requested output.
+\end{proof}
+
+\begin{remark}[Arbitrary choice is not recovery]
+One can define a set-theoretic rule that always chooses Completion A.
+Such a convention is not a theorem-backed recovery of the actual
+lift: the current data contain no proposition making that choice
+correct.
+\end{remark}
+
+\section{Why this does not prove impossibility}
+
+The formal class deliberately omits unknown actual-carrier
+constraints.  A future theorem may restrict it to a smaller class,
+possibly a singleton.  We have not proved that \(K_A\) or \(K_B\)
+lies on the actual arithmetic carrier, and we have not constructed
+two actual lifts.
+
+\begin{proposition}[Scoped character of the obstruction]
+\label{prop:scope}
+\Cref{thm:obstruction} does not imply:
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item nonexistence or nonuniqueness of the actual occurrence lift;
+\item failure of determinant--zero quotient compatibility;
+\item failure of physical grouping or fixed-shift commutation; or
+\item impossibility of an augmented theorem-backed construction.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Each assertion quantifies over the actual carrier or over extra
+downstream maps.  The proof of \cref{thm:obstruction} quantifies only
+over the maximal current-schema free class.  The quantifier domains
+are different.
+\end{proof}
+
+This distinction is consistent with the compatibility and
+commutation contracts in TPC-144--146
+\citep{WangTPC144,WangTPC145,WangTPC146}.  Those contracts become
+evaluable only after literal source edges are supplied; formal labels
+cannot make their defect vectors zero.
+
+\section{Executable certificate}
+
+The standard-library program
+\begin{center}
+\small
+\texttt{experiments/tpc154\_completion\_fiber\_obstruction.py}
+\end{center}
+reruns and source-locks TPC-153 under
+\texttt{CANONICAL\_UTF8\_LF\_V2}.  It emits one completion-fiber
+record for every partial production occurrence.  For the committed
+archive it verifies
+\[
+ \begin{array}{c|c|c}
+ \text{fiber scope}&\#\text{fibers}&
+       (\#K_A\text{ edges},\#K_B\text{ edges})\\ \hline
+ \text{production FUM}&2988&(2988,5976)\\
+ \text{synthetic L0 ETO}&1&(1,2).
+ \end{array}
+\]
+Every column of each completion sums exactly to \(1\) in
+\(\mathbb Q\), and every row-separated edge identifier is globally
+unique.  The synthetic ETO fiber remains outside the production
+census.
+
+Each edge contains the source native tuple, source \(h_0\), physical
+normalization and formal-support role, together with typed formal
+parent, zero-mode, physical, stage, multiplier and affine-consumer
+fields.  The validator rejects source deletion or duplication,
+synthetic-ETO omission, a cross-fiber edge, nonconservative weights,
+native/\(h_0\)/normalization drift, missing parent or stage data,
+active-support or actual-provenance promotion, an assumed
+\(d_{\rm nat}=d_{\rm aff}\) crosswalk, canonical-choice promotion and
+a false \(\Ltwo\) claim.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.38\textwidth}P{0.22\textwidth}Y@{}}
+\toprule
+Export & Status & Meaning\\
+\midrule
+Formal completion-fiber nonuniqueness
+& \(\PROVED_{\Lzero}\) schema & Two conservative formal completions share
+the same pushforward and differ in branch count.\\
+Current-artifacts-only canonical actual lift
+& \(\STOP\) & Current data cannot identify the actual completion.\\
+Augmented actual occurrence lift
+& \(\NT\) & Required sourced crosswalk has not been supplied.\\
+Selected augmented route & Open & Not stopped by the formal
+nonuniqueness theorem.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Kill criteria and next object}
+
+The obstruction certificate fails if either completion loses exact
+column conservation, if the two alternatives no longer share a
+forgetting target, if their branch-count invariant agrees, or if any
+production fiber is omitted.  Its scoped stop ceases to be the
+relevant route decision once a theorem-backed augmentation supplies
+and verifies the missing provenance; the formal free class must then
+be replaced by the smaller sourced class.
+
+The first missing object remains a row-level
+cut-to-stage-to-parent-to-physical-occurrence crosswalk over every
+eligible-tail-open and frontier-unmapped source.  It must include
+exact edge coefficients, all inherited fields, target shift and
+support status, plus cover and reconnection evidence.  A verifier can
+certify a supplied witness, but neither TPC-153 nor the present paper
+can invent it.
+
+This paper proves no actual active-support theorem, frontier \(o(X)\)
+estimate, positive fixed-\(h_0\) \(\Ltwo\) saving, endpoint below
+\(1/400\), prime-pair lower bound or twin-prime theorem.
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

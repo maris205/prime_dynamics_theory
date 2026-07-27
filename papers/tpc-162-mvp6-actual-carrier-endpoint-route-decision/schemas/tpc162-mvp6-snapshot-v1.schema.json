@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc162-mvp6-snapshot-v1.schema.json",
+  "title": "TPC-162 MVP6 actual-carrier endpoint route snapshot",
+  "type": "object",
+  "required": [
+    "schema",
+    "snapshot",
+    "source_locks",
+    "imported_state",
+    "route_universe",
+    "gate_projection",
+    "typed_frontiers",
+    "endpoint_ledger_v3",
+    "next_forced_objects",
+    "ordered_valid_verdicts",
+    "current_verdict",
+    "progress_classification",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-162-mvp6-actual-carrier-endpoint-route-snapshot-v1"
+    },
+    "snapshot": {
+      "type": "object",
+      "required": [
+        "date",
+        "source_manifest",
+        "source_manifest_sha256",
+        "snapshot_schema_sha256",
+        "hash_mode",
+        "hash_semantics",
+        "classifier_evidence_mode",
+        "selected_route"
+      ],
+      "properties": {
+        "date": {"const": "2026-07-28"},
+        "source_manifest": {"type": "string"},
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "snapshot_schema_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "hash_mode": {"const": "CANONICAL_UTF8_LF_V2"},
+        "hash_semantics": {"const": "INTEGRITY_ONLY"},
+        "classifier_evidence_mode": {"const": "SOURCE_LOCKED"},
+        "selected_route": {"const": "occurrence_augmented_map"}
+      },
+      "additionalProperties": false
+    },
+    "source_locks": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "path",
+          "canonical_utf8_lf_sha256",
+          "hash_semantics"
+        ],
+        "properties": {
+          "source_id": {"type": "string"},
+          "path": {"type": "string"},
+          "canonical_utf8_lf_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "hash_semantics": {"const": "INTEGRITY_ONLY"}
+        },
+        "additionalProperties": false
+      },
+      "maxItems": 9
+    },
+    "imported_state": {
+      "type": "object",
+      "required": [
+        "tpc161_schema",
+        "tpc161_status",
+        "tpc161_verdict",
+        "selected_route",
+        "first_missing",
+        "selected_root_minimal_not_testable_nodes",
+        "structural_shadow_level",
+        "current_artifacts_only_stop_scope",
+        "occurrence_augmented_map_globally_stopped",
+        "scalar_plus_ETO_globally_stopped",
+        "route_universe_complete",
+        "strongest_arithmetic_export",
+        "strongest_arithmetic_level",
+        "strongest_arithmetic_scope",
+        "fixed_h0",
+        "deterministic_all_prefix",
+        "positive_fixed_X_power",
+        "weighted_interface_export",
+        "weighted_interface_level",
+        "production_literal_weight"
+      ],
+      "properties": {
+        "tpc161_schema": {
+          "const": "tpc-161-occurrence-return-integration-manifest-v1"
+        },
+        "tpc161_status": {"const": "PASS"},
+        "tpc161_verdict": {"const": "NOT_TESTABLE"},
+        "selected_route": {"const": "occurrence_augmented_map"},
+        "first_missing": {
+          "const": "H1.theorem_backed_occurrence_provenance_crosswalk"
+        },
+        "selected_root_minimal_not_testable_nodes": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "structural_shadow_level": {"const": "PROVED_L1_STRUCTURAL"},
+        "current_artifacts_only_stop_scope": {
+          "const": "CURRENT_ARTIFACTS_ONLY"
+        },
+        "occurrence_augmented_map_globally_stopped": {"const": false},
+        "scalar_plus_ETO_globally_stopped": {"const": false},
+        "route_universe_complete": {"const": false},
+        "strongest_arithmetic_export": {
+          "const": "A159.almost_endpoint_prefix"
+        },
+        "strongest_arithmetic_level": {
+          "const": "PROVED_L1_ACTUAL_PREFIX_ALMOST_ENDPOINT"
+        },
+        "strongest_arithmetic_scope": {
+          "const": "determinant_two_two_mobius_periodic_core"
+        },
+        "fixed_h0": {"const": 2},
+        "deterministic_all_prefix": {"const": false},
+        "positive_fixed_X_power": {"const": false},
+        "weighted_interface_export": {
+          "const": "A160.exceptional_variation_abel_return"
+        },
+        "weighted_interface_level": {
+          "const": "PROVED_L1_ACTUAL_WEIGHTED_ALMOST_ENDPOINT_INTERFACE"
+        },
+        "production_literal_weight": {"const": "NOT_TESTABLE"}
+      },
+      "additionalProperties": false
+    },
+    "route_universe": {"type": "object"},
+    "gate_projection": {
+      "type": "object",
+      "minProperties": 9,
+      "maxProperties": 9
+    },
+    "typed_frontiers": {
+      "type": "object",
+      "required": [
+        "minimal_not_testable_antichain",
+        "parent_ready_open_frontier",
+        "selection_rule",
+        "frontiers_are_type_disjoint"
+      ],
+      "properties": {
+        "minimal_not_testable_antichain": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "object"}
+        },
+        "parent_ready_open_frontier": {
+          "type": "array",
+          "items": {"type": "object"}
+        },
+        "selection_rule": {"type": "string"},
+        "frontiers_are_type_disjoint": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "endpoint_ledger_v3": {
+      "type": "object",
+      "required": [
+        "contract",
+        "scale",
+        "source_nonduplicating_ledger",
+        "literal_audit",
+        "arithmetic",
+        "physical",
+        "full_synthesis"
+      ],
+      "properties": {
+        "contract": {"const": "MVP6-FIXED-H0-ENDPOINT-V3"},
+        "scale": {"const": "AMPLITUDE"},
+        "source_nonduplicating_ledger": {"type": "object"},
+        "literal_audit": {"type": "object"},
+        "arithmetic": {"type": "object"},
+        "physical": {"type": "object"},
+        "full_synthesis": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "next_forced_objects": {
+      "type": "object",
+      "required": ["structural", "arithmetic_physical_return"],
+      "properties": {
+        "structural": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "arithmetic_physical_return": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "ordered_valid_verdicts": {
+      "const": [
+        "GO",
+        "ARCHITECTURE_INFEASIBLE",
+        "REROUTE",
+        "STOP_ROUTE",
+        "NOT_TESTABLE",
+        "ARITHMETIC_FRONTIER",
+        "OPEN"
+      ]
+    },
+    "current_verdict": {"const": "NOT_TESTABLE"},
+    "progress_classification": {
+      "type": "object",
+      "required": [
+        "structural_achieved_level",
+        "actual_arithmetic_achieved_level",
+        "actual_weighted_interface_level",
+        "actual_fixed_power_target_level",
+        "actual_fixed_power_status",
+        "actual_fixed_power_achieved",
+        "new_positive_L2"
+      ],
+      "properties": {
+        "structural_achieved_level": {"const": "L1_STRUCTURAL"},
+        "actual_arithmetic_achieved_level": {
+          "const": "L1_ACTUAL_PREFIX_ALMOST_ENDPOINT"
+        },
+        "actual_weighted_interface_level": {
+          "const": "L1_ACTUAL_WEIGHTED_ALMOST_ENDPOINT_INTERFACE"
+        },
+        "actual_fixed_power_target_level": {"const": "L2_ACTUAL_POSITIVE"},
+        "actual_fixed_power_status": {"const": "NOT_PROVED"},
+        "actual_fixed_power_achieved": {"const": false},
+        "new_positive_L2": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "source_hashes_prove_theorems",
+        "current_artifacts_stop_is_actual_carrier_impossibility",
+        "augmented_map_route_globally_stopped",
+        "scalar_plus_ETO_route_globally_stopped",
+        "route_universe_complete",
+        "GO",
+        "ARCHITECTURE_INFEASIBLE",
+        "REROUTE",
+        "STOP_SELECTED_ROUTE",
+        "ARITHMETIC_FRONTIER",
+        "deterministic_all_prefix",
+        "production_literal_physical_weight",
+        "positive_fixed_X_power_L2",
+        "strict_one_over_400_endpoint",
+        "hard_packet_oX",
+        "prime_pair_lower_bound",
+        "twin_prime_theorem"
+      ],
+      "properties": {
+        "source_hashes_prove_theorems": {"const": false},
+        "current_artifacts_stop_is_actual_carrier_impossibility": {
+          "const": false
+        },
+        "augmented_map_route_globally_stopped": {"const": false},
+        "scalar_plus_ETO_route_globally_stopped": {"const": false},
+        "route_universe_complete": {"const": false},
+        "GO": {"const": false},
+        "ARCHITECTURE_INFEASIBLE": {"const": false},
+        "REROUTE": {"const": false},
+        "STOP_SELECTED_ROUTE": {"const": false},
+        "ARITHMETIC_FRONTIER": {"const": false},
+        "deterministic_all_prefix": {"const": false},
+        "production_literal_physical_weight": {"const": false},
+        "positive_fixed_X_power_L2": {"const": false},
+        "strict_one_over_400_endpoint": {"const": false},
+        "hard_packet_oX": {"const": false},
+        "prime_pair_lower_bound": {"const": false},
+        "twin_prime_theorem": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc159-dyadic-shadow-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "hash_mode",
+    "upstream",
+    "theorem",
+    "shadow_measure",
+    "finite_certificate",
+    "production_status",
+    "claim_boundary",
+    "checks",
+    "mutation_regressions"
+  ],
+  "properties": {
+    "schema": {"const": "tpc-159-dyadic-shadow-audit-v1"},
+    "status": {"const": "PASS"},
+    "hash_mode": {"const": "CANONICAL_UTF8_LF_V2"},
+    "upstream": {"type": "object"},
+    "theorem": {"type": "object"},
+    "shadow_measure": {"type": "object"},
+    "finite_certificate": {"type": "object"},
+    "production_status": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "checks": {"type": "object"},
+    "mutation_regressions": {"type": "object"}
+  }
+}

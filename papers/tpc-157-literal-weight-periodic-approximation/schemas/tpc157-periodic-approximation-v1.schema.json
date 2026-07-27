@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc157-periodic-approximation-v1.schema.json",
+  "title": "TPC-157 periodic approximation audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "hash_mode",
+    "upstream",
+    "theorem",
+    "quadratic_certificate",
+    "production_status",
+    "claim_boundary",
+    "checks",
+    "mutation_regressions"
+  ],
+  "properties": {
+    "schema": {"const": "tpc-157-periodic-approximation-audit-v1"},
+    "status": {"const": "PASS"},
+    "hash_mode": {"const": "CANONICAL_UTF8_LF_V2"},
+    "upstream": {"type": "object"},
+    "theorem": {"type": "object"},
+    "quadratic_certificate": {"type": "object"},
+    "production_status": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "checks": {"type": "object"},
+    "mutation_regressions": {"type": "object"}
+  }
+}

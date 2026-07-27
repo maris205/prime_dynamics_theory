@@ -1,0 +1,102 @@
+{
+  "claim_full_production_carrier": false,
+  "coverage_scope": "WITNESS_OCCURRENCE_ROWS_ONLY",
+  "entries": [
+    {
+      "ancestor_closure": [
+        "synthetic-cut-eto",
+        "synthetic-parent-eto",
+        "stage:synthetic-occ-eto-0",
+        "synthetic-occ-eto-0"
+      ],
+      "canonical_parent_id": "synthetic-parent-eto",
+      "native_identity": {
+        "h0": 2,
+        "native_id": "syn-native-eto",
+        "native_tuple": {
+          "ell": 11,
+          "k": 3,
+          "native_d": 5
+        },
+        "physical_normalization": "SYNTHETIC_NU_X",
+        "weight_source_id": "synthetic-bump-v1"
+      },
+      "occurrence_id": "synthetic-occ-eto-0",
+      "physical_group_id": "synthetic-group-eto",
+      "physical_occurrence_id": "physical:synthetic-occ-eto-0",
+      "source_cut_path_id": "synthetic-cut-eto",
+      "source_id": "syn.registry",
+      "stage_id": "stage:synthetic-occ-eto-0",
+      "support": {
+        "coefficient_nonzero_status": "UNDECIDED",
+        "role": "FORMAL_SUPPORT_ENVELOPE",
+        "source_id": "syn.support"
+      }
+    },
+    {
+      "ancestor_closure": [
+        "synthetic-cut-fum",
+        "synthetic-parent-fum",
+        "stage:synthetic-occ-fum-0",
+        "synthetic-occ-fum-0"
+      ],
+      "canonical_parent_id": "synthetic-parent-fum",
+      "native_identity": {
+        "h0": 2,
+        "native_id": "syn-native-fum",
+        "native_tuple": {
+          "ell": 13,
+          "k": 4,
+          "native_d": 7
+        },
+        "physical_normalization": "SYNTHETIC_NU_X",
+        "weight_source_id": "synthetic-bump-v1"
+      },
+      "occurrence_id": "synthetic-occ-fum-0",
+      "physical_group_id": "synthetic-group-fum",
+      "physical_occurrence_id": "physical:synthetic-occ-fum-0",
+      "source_cut_path_id": "synthetic-cut-fum",
+      "source_id": "syn.registry",
+      "stage_id": "stage:synthetic-occ-fum-0",
+      "support": {
+        "coefficient_nonzero_status": "UNDECIDED",
+        "role": "CANONICAL_PARENT_CARRIER",
+        "source_id": "syn.support"
+      }
+    },
+    {
+      "ancestor_closure": [
+        "synthetic-cut-fum",
+        "synthetic-parent-fum",
+        "stage:synthetic-occ-fum-1",
+        "synthetic-occ-fum-1"
+      ],
+      "canonical_parent_id": "synthetic-parent-fum",
+      "native_identity": {
+        "h0": 2,
+        "native_id": "syn-native-fum",
+        "native_tuple": {
+          "ell": 13,
+          "k": 4,
+          "native_d": 7
+        },
+        "physical_normalization": "SYNTHETIC_NU_X",
+        "weight_source_id": "synthetic-bump-v1"
+      },
+      "occurrence_id": "synthetic-occ-fum-1",
+      "physical_group_id": "synthetic-group-fum",
+      "physical_occurrence_id": "physical:synthetic-occ-fum-1",
+      "source_cut_path_id": "synthetic-cut-fum",
+      "source_id": "syn.registry",
+      "stage_id": "stage:synthetic-occ-fum-1",
+      "support": {
+        "coefficient_nonzero_status": "PROVED_NONZERO",
+        "role": "ACTUAL_ACTIVE_SUPPORT",
+        "source_id": "syn.support"
+      }
+    }
+  ],
+  "fixture_scope": "SYNTHETIC_L0_ONLY",
+  "schema": "tpc155-occurrence-registry-export-v1",
+  "witness_id": "tpc155-synthetic-nonvacuity-v1"
+}

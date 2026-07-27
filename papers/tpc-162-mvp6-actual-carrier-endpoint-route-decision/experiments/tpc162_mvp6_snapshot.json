@@ -1,0 +1,509 @@
+{
+  "claim_boundary": {
+    "ARCHITECTURE_INFEASIBLE": false,
+    "ARITHMETIC_FRONTIER": false,
+    "GO": false,
+    "REROUTE": false,
+    "STOP_SELECTED_ROUTE": false,
+    "augmented_map_route_globally_stopped": false,
+    "current_artifacts_stop_is_actual_carrier_impossibility": false,
+    "deterministic_all_prefix": false,
+    "hard_packet_oX": false,
+    "positive_fixed_X_power_L2": false,
+    "prime_pair_lower_bound": false,
+    "production_literal_physical_weight": false,
+    "route_universe_complete": false,
+    "scalar_plus_ETO_route_globally_stopped": false,
+    "source_hashes_prove_theorems": false,
+    "strict_one_over_400_endpoint": false,
+    "twin_prime_theorem": false
+  },
+  "current_verdict": "NOT_TESTABLE",
+  "endpoint_ledger_v3": {
+    "arithmetic": {
+      "achieved_level": "L1_ACTUAL_PREFIX_ALMOST_ENDPOINT",
+      "deterministic_all_prefix": false,
+      "fixed_h0": 2,
+      "log_saving": true,
+      "scope_id": "determinant_two_two_mobius_periodic_core",
+      "sigma_actual_fixed_X_lower": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "sigma_required": {
+        "denominator": 400,
+        "numerator": 1
+      },
+      "state": "LOG_ALMOST_ENDPOINT_ONLY",
+      "strongest_export": "A159.almost_endpoint_prefix"
+    },
+    "contract": "MVP6-FIXED-H0-ENDPOINT-V3",
+    "full_synthesis": {
+      "scope_compatible": false,
+      "state": "INCOMPLETE",
+      "strict_net_slack": null
+    },
+    "literal_audit": {
+      "actual_active_support": "NOT_TESTABLE",
+      "canonical_or_minimal_representation": "NOT_TESTABLE",
+      "fixed_physical_h0": "PROVED",
+      "literal_physical_coefficients": "NOT_TESTABLE",
+      "physical_atomic_normalization": "NOT_TESTABLE",
+      "strict_one_over_400_budget": "NOT_TESTABLE"
+    },
+    "physical": {
+      "lambda_phys_upper": null,
+      "lambda_required_strict_upper": {
+        "denominator": 400,
+        "numerator": 1
+      },
+      "registry_complete": false,
+      "state": "INCOMPLETE",
+      "unknown_cost_policy": "UNKNOWN_IS_NOT_ZERO"
+    },
+    "scale": "AMPLITUDE",
+    "source_nonduplicating_ledger": {
+      "charge_registry": [
+        {
+          "charge_id": "ARITH.correlation_log_saving",
+          "owner_ledger": "arithmetic",
+          "quantity_kind": "LOG_AMPLITUDE_SAVING",
+          "state": "PROVED",
+          "value": "(log X)^(-kappa_0+o(1))"
+        },
+        {
+          "charge_id": "ARITH.dyadic_shadow",
+          "owner_ledger": "arithmetic",
+          "quantity_kind": "LOG_EXCEPTIONAL_MEASURE",
+          "state": "PROVED",
+          "value": "(log X)^(-kappa_0+o(1))"
+        },
+        {
+          "charge_id": "PHYS.good_variation",
+          "owner_ledger": "physical",
+          "quantity_kind": "LOG_AMPLITUDE_COST",
+          "state": "NOT_TESTABLE",
+          "value": null
+        },
+        {
+          "charge_id": "PHYS.bad_variation",
+          "owner_ledger": "physical",
+          "quantity_kind": "ATOMIC_ENDPOINT_COST",
+          "state": "NOT_TESTABLE",
+          "value": null
+        },
+        {
+          "charge_id": "PHYS.phase_return",
+          "owner_ledger": "physical",
+          "quantity_kind": "PHASE_RETURN_COST",
+          "state": "NOT_TESTABLE",
+          "value": null
+        },
+        {
+          "charge_id": "PHYS.four_sign_reconnection",
+          "owner_ledger": "physical",
+          "quantity_kind": "RECONNECTION_COST",
+          "state": "NOT_TESTABLE",
+          "value": null
+        }
+      ],
+      "contract": "MVP1_FIXED_H0_NON_DUPLICATING_ENDPOINT_V3",
+      "invariants": {
+        "each_charge_has_exactly_one_owner": true,
+        "full_synthesis_references_not_recharges": true,
+        "log_power_not_converted_to_X_power": true,
+        "no_charge_id_repeated": true,
+        "physical_loss_registry_complete": false
+      },
+      "ledgers": {
+        "arithmetic": {
+          "charge_ids": [
+            "ARITH.correlation_log_saving",
+            "ARITH.dyadic_shadow"
+          ],
+          "fixed_X_sigma": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "state": "INCOMPLETE"
+        },
+        "full_synthesis": {
+          "charge_ids": [],
+          "input_ledgers": [
+            "arithmetic",
+            "physical"
+          ],
+          "net_fixed_X_slack": null,
+          "state": "INCOMPLETE"
+        },
+        "physical": {
+          "charge_ids": [
+            "PHYS.good_variation",
+            "PHYS.bad_variation",
+            "PHYS.phase_return",
+            "PHYS.four_sign_reconnection"
+          ],
+          "fixed_X_lambda_lower": null,
+          "fixed_X_lambda_upper": null,
+          "registry_complete": false,
+          "state": "NOT_TESTABLE",
+          "unknown_cost_policy": "UNKNOWN_IS_NOT_ZERO"
+        }
+      },
+      "scale": "AMPLITUDE",
+      "target": {
+        "fixed_X_sigma_required": {
+          "denominator": 400,
+          "numerator": 1
+        },
+        "one_over_400_paid": false
+      }
+    }
+  },
+  "gate_projection": {
+    "H1": {
+      "evidence": "L1_STRUCTURAL_TARGET",
+      "scope_match": true,
+      "source_node": "H1.theorem_backed_occurrence_provenance_crosswalk",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H2": {
+      "evidence": "L2_ACTUAL_POSITIVE_TARGET",
+      "scope_match": true,
+      "source_node": "H2.literal_weight_and_phase_return",
+      "status": "NOT_TESTABLE",
+      "structural": false
+    },
+    "H3": {
+      "evidence": "L2_ACTUAL_POSITIVE_TARGET",
+      "scope_match": true,
+      "source_node": "A160.production_literal_weight",
+      "status": "NOT_TESTABLE",
+      "structural": false
+    },
+    "H4": {
+      "evidence": "L2_ACTUAL_POSITIVE_TARGET",
+      "scope_match": true,
+      "source_node": "H4.endpoint_return",
+      "status": "NOT_TESTABLE",
+      "structural": false
+    },
+    "H5": {
+      "evidence": "L2_ACTUAL_POSITIVE_TARGET",
+      "scope_match": true,
+      "source_node": "H5.actual_determinant_zero_pair",
+      "status": "NOT_TESTABLE",
+      "structural": false
+    },
+    "H6": {
+      "evidence": "L1_STRUCTURAL_TARGET",
+      "scope_match": true,
+      "source_node": "H6.actual_physical_cover",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H7": {
+      "evidence": "L1_STRUCTURAL_TARGET",
+      "scope_match": true,
+      "source_node": "H7.downstream_fixed_h0_totality",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H8": {
+      "evidence": "L1_STRUCTURAL_TARGET",
+      "scope_match": true,
+      "source_node": "H8.hard_packet_reconnection",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H9": {
+      "evidence": "L1_STRUCTURAL_TARGET",
+      "scope_match": true,
+      "source_node": "H9.independent_physical_registry",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    }
+  },
+  "imported_state": {
+    "current_artifacts_only_stop_scope": "CURRENT_ARTIFACTS_ONLY",
+    "deterministic_all_prefix": false,
+    "first_missing": "H1.theorem_backed_occurrence_provenance_crosswalk",
+    "fixed_h0": 2,
+    "occurrence_augmented_map_globally_stopped": false,
+    "positive_fixed_X_power": false,
+    "production_literal_weight": "NOT_TESTABLE",
+    "route_universe_complete": false,
+    "scalar_plus_ETO_globally_stopped": false,
+    "selected_root_minimal_not_testable_nodes": [
+      "H1.theorem_backed_occurrence_provenance_crosswalk",
+      "H9.endpoint_registry",
+      "H9.literal_weight_registry",
+      "H9.normalization_registry",
+      "H9.phase_cell_registry"
+    ],
+    "selected_route": "occurrence_augmented_map",
+    "strongest_arithmetic_export": "A159.almost_endpoint_prefix",
+    "strongest_arithmetic_level": "PROVED_L1_ACTUAL_PREFIX_ALMOST_ENDPOINT",
+    "strongest_arithmetic_scope": "determinant_two_two_mobius_periodic_core",
+    "structural_shadow_level": "PROVED_L1_STRUCTURAL",
+    "tpc161_schema": "tpc-161-occurrence-return-integration-manifest-v1",
+    "tpc161_status": "PASS",
+    "tpc161_verdict": "NOT_TESTABLE",
+    "weighted_interface_export": "A160.exceptional_variation_abel_return",
+    "weighted_interface_level": "PROVED_L1_ACTUAL_WEIGHTED_ALMOST_ENDPOINT_INTERFACE"
+  },
+  "next_forced_objects": {
+    "arithmetic_physical_return": [
+      "H9.literal_weight_registry",
+      "H9.phase_cell_registry",
+      "H9.endpoint_registry",
+      "H9.normalization_registry",
+      "A160.small_bad_variation_or_pointwise_bad_endpoint_theorem",
+      "H3.positive_fixed_X_power_upgrade"
+    ],
+    "structural": [
+      "H1.theorem_backed_occurrence_provenance_crosswalk",
+      "H1.frontier_occurrence_lift",
+      "H1.nine_literal_defects_and_occurrence_registry"
+    ]
+  },
+  "ordered_valid_verdicts": [
+    "GO",
+    "ARCHITECTURE_INFEASIBLE",
+    "REROUTE",
+    "STOP_ROUTE",
+    "NOT_TESTABLE",
+    "ARITHMETIC_FRONTIER",
+    "OPEN"
+  ],
+  "progress_classification": {
+    "actual_arithmetic_achieved_level": "L1_ACTUAL_PREFIX_ALMOST_ENDPOINT",
+    "actual_fixed_power_achieved": false,
+    "actual_fixed_power_status": "NOT_PROVED",
+    "actual_fixed_power_target_level": "L2_ACTUAL_POSITIVE",
+    "actual_weighted_interface_level": "L1_ACTUAL_WEIGHTED_ALMOST_ENDPOINT_INTERFACE",
+    "new_positive_L2": false,
+    "structural_achieved_level": "L1_STRUCTURAL"
+  },
+  "route_universe": {
+    "records": {
+      "bad_endpoint_pointwise_core": {
+        "carrier_id": "determinant_two_two_mobius_periodic_core",
+        "coverage": "OPEN_ALTERNATIVE_ROUTE",
+        "normalization_id": "q_over_T",
+        "registry_id": "registry.bad_endpoint_pointwise_core",
+        "scope_id": "ACTUAL_PREFIX_CORE_ONLY",
+        "selected": false,
+        "source_export": null,
+        "state": "OPEN",
+        "stopped": false
+      },
+      "current_schema_only_canonical_lift": {
+        "carrier_id": "maximal_formal_schema_completion_class",
+        "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+        "normalization_id": "cut_shadow_column_conservation",
+        "registry_id": "registry.current_archive",
+        "scope_id": "CURRENT_ARTIFACTS_ONLY",
+        "selected": false,
+        "source_export": "TPC156.H1.current_artifacts_only_canonical_actual_lift",
+        "state": "STOP_SCOPED",
+        "stopped": true
+      },
+      "direct_additive_twist_core": {
+        "carrier_id": "determinant_two_two_mobius_periodic_core",
+        "coverage": "OPEN_ALTERNATIVE_ROUTE",
+        "normalization_id": "q_over_N",
+        "registry_id": "registry.direct_additive_twist_core",
+        "scope_id": "ACTUAL_PERIODIC_CORE_ONLY",
+        "selected": false,
+        "source_export": null,
+        "state": "OPEN",
+        "stopped": false
+      },
+      "occurrence_augmented_map": {
+        "carrier_id": "all_nonsoft_ETO_plus_FUM_occurrences",
+        "coverage": "OPEN_SELECTED_ROUTE",
+        "normalization_id": "physical_atomic_fixed_h0",
+        "registry_id": "registry.production_occurrence",
+        "scope_id": "ACTUAL_OCCURRENCE_AUGMENTED_CARRIER",
+        "selected": true,
+        "source_export": null,
+        "state": "OPEN_NOT_TESTABLE",
+        "stopped": false
+      },
+      "scalar_plus_ETO": {
+        "carrier_id": "all_nonsoft_ETO_plus_FUM_cut_paths",
+        "coverage": "OPEN_ALTERNATIVE_ROUTE",
+        "normalization_id": "original_scale_scalar",
+        "registry_id": "registry.scalar_plus_ETO",
+        "scope_id": "ORIGINAL_SCALE_FUM_PLUS_ETO",
+        "selected": false,
+        "source_export": null,
+        "state": "OPEN_NOT_TESTABLE",
+        "stopped": false
+      }
+    },
+    "route_evidence_registry": {
+      "TPC156.H1.current_artifacts_only_canonical_actual_lift": {
+        "canonical_utf8_lf_sha256": "aa6c2b8ed0d982a89b82392806d1fcf1f35eeed4c6ade3113ad3b80a2472f67c",
+        "claim_type": "ROUTE_CELL_STOP",
+        "evidence_kind": "SOURCE_LOCKED_ROUTE_RESULT",
+        "from_route": "current_schema_only_canonical_lift",
+        "path": "papers/tpc-156-h1-occurrence-crosswalk-route-decision/experiments/tpc156_h1_occurrence_decision.json",
+        "proof_semantics": "SCOPED_SOURCE_RESULT",
+        "schema": "tpc-162-source-locked-route-claim-v1",
+        "scope_id": "CURRENT_ARTIFACTS_ONLY",
+        "source_id": "TPC156.H1.current_artifacts_only_canonical_actual_lift",
+        "statement": "TPC-156 stops only the actual lift derived from current archive fields.",
+        "to_route": null
+      }
+    },
+    "routes": [
+      "current_schema_only_canonical_lift",
+      "occurrence_augmented_map",
+      "scalar_plus_ETO",
+      "direct_additive_twist_core",
+      "bad_endpoint_pointwise_core"
+    ],
+    "selected_root": "ROOT.selected_map_synthesis",
+    "selected_route": "occurrence_augmented_map",
+    "typed_alternative": null,
+    "typed_alternative_crosswalk": null,
+    "universe_completeness": {
+      "scope": "actual_fixed_h0_physical_carrier",
+      "source_export": null,
+      "status": "NOT_PROVED"
+    }
+  },
+  "schema": "tpc-162-mvp6-actual-carrier-endpoint-route-snapshot-v1",
+  "snapshot": {
+    "classifier_evidence_mode": "SOURCE_LOCKED",
+    "date": "2026-07-28",
+    "hash_mode": "CANONICAL_UTF8_LF_V2",
+    "hash_semantics": "INTEGRITY_ONLY",
+    "selected_route": "occurrence_augmented_map",
+    "snapshot_schema_sha256": "1cf23660e9d76c4503ab19b542053c127c3db9ff9f529632630772c935cea2c8",
+    "source_manifest": "papers/tpc-161-source-locked-occurrence-return-integration/experiments/tpc161_occurrence_return_manifest.json",
+    "source_manifest_sha256": "ba562b20e968efa6343e02489162820228cc1b695ef7c73b8bd38ab9314c672f"
+  },
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "f863a9f0b5749cc3f31c9716ab34e097bfdca70070e5fbd4016d01af72e61dd3",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-161-source-locked-occurrence-return-integration/experiments/tpc161_source_locked_integration.py",
+      "source_id": "TPC161.integration_script"
+    },
+    {
+      "canonical_utf8_lf_sha256": "8f4a787b9eff5ab8a0633a8886112c119850b0a49cb7d35e68e1abdff9dfc9f9",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-161-source-locked-occurrence-return-integration/experiments/tpc161_occurrence_return_manifest.schema.json",
+      "source_id": "TPC161.manifest_schema"
+    },
+    {
+      "canonical_utf8_lf_sha256": "ba562b20e968efa6343e02489162820228cc1b695ef7c73b8bd38ab9314c672f",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-161-source-locked-occurrence-return-integration/experiments/tpc161_occurrence_return_manifest.json",
+      "source_id": "TPC161.manifest"
+    },
+    {
+      "canonical_utf8_lf_sha256": "0b63f075a05d93b2c5c39aea67c6be88c0e2146bef9dd9e37fece20805eaba39",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-161-source-locked-occurrence-return-integration/experiments/tpc161_occurrence_return_audit.schema.json",
+      "source_id": "TPC161.audit_schema"
+    },
+    {
+      "canonical_utf8_lf_sha256": "dfbcf93f5725819ca9f7a77d529ab1f0700cc4153d31255e49ea0a14e5060d1a",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-161-source-locked-occurrence-return-integration/experiments/tpc161_occurrence_return_audit.json",
+      "source_id": "TPC161.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "aa6c2b8ed0d982a89b82392806d1fcf1f35eeed4c6ade3113ad3b80a2472f67c",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-156-h1-occurrence-crosswalk-route-decision/experiments/tpc156_h1_occurrence_decision.json",
+      "source_id": "TPC156.decision"
+    },
+    {
+      "canonical_utf8_lf_sha256": "df39071a8e34ed4f3c7c6504ccab225350b37a7f48297b6fdf8419e3128f1f67",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-160-exceptional-variation-abel-return/experiments/tpc160_abel_return_audit.json",
+      "source_id": "TPC160.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "81a5445e9ccb8f15cfbb2c6ffe6bf299fec9bea9a2f393e18cf30072c1614359",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-162-mvp6-actual-carrier-endpoint-route-decision/experiments/fixtures/tpc162_route_universe_complete_fixture.json",
+      "source_id": "TPC162.synthetic_route_universe_fixture"
+    },
+    {
+      "canonical_utf8_lf_sha256": "ee4c160223c66a084efda026fa5af13d94b8d9881a3653531edf25cbcfece9d0",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-162-mvp6-actual-carrier-endpoint-route-decision/experiments/fixtures/tpc162_r1_r2_crosswalk_fixture.json",
+      "source_id": "TPC162.synthetic_route_crosswalk_fixture"
+    }
+  ],
+  "typed_frontiers": {
+    "frontiers_are_type_disjoint": true,
+    "minimal_not_testable_antichain": [
+      {
+        "node_id": "H1.theorem_backed_occurrence_provenance_crosswalk",
+        "role": "STRUCTURAL",
+        "scope_match": true,
+        "status": "NOT_TESTABLE",
+        "transitive_ancestor_node_ids": [
+          "C155.occurrence_witness_verifier",
+          "D156.h1_typed_contract",
+          "S153.cut_occurrence_shadow"
+        ]
+      },
+      {
+        "node_id": "H9.endpoint_registry",
+        "role": "PHYSICAL_REGISTRY",
+        "scope_match": true,
+        "status": "NOT_TESTABLE",
+        "transitive_ancestor_node_ids": []
+      },
+      {
+        "node_id": "H9.literal_weight_registry",
+        "role": "PHYSICAL_REGISTRY",
+        "scope_match": true,
+        "status": "NOT_TESTABLE",
+        "transitive_ancestor_node_ids": []
+      },
+      {
+        "node_id": "H9.normalization_registry",
+        "role": "PHYSICAL_REGISTRY",
+        "scope_match": true,
+        "status": "NOT_TESTABLE",
+        "transitive_ancestor_node_ids": []
+      },
+      {
+        "node_id": "H9.phase_cell_registry",
+        "role": "PHYSICAL_REGISTRY",
+        "scope_match": true,
+        "status": "NOT_TESTABLE",
+        "transitive_ancestor_node_ids": []
+      }
+    ],
+    "parent_ready_open_frontier": [
+      {
+        "all_active_parents_proved": true,
+        "node_id": "O161.bad_endpoint_pointwise_core",
+        "role": "ARITHMETIC_TARGET",
+        "scope_match": true,
+        "status": "OPEN",
+        "target_level": "L1_ACTUAL_PREFIX_TARGET"
+      },
+      {
+        "all_active_parents_proved": true,
+        "node_id": "O161.direct_additive_twist_core",
+        "role": "ARITHMETIC_TARGET",
+        "scope_match": true,
+        "status": "OPEN",
+        "target_level": "L1_ACTUAL_CORE_TARGET"
+      }
+    ],
+    "selection_rule": "active selected-route ancestors; minimal NOT_TESTABLE antichain is separate from status-OPEN nodes whose active parents are all PROVED"
+  }
+}

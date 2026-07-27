@@ -1,0 +1,262 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathcal E}
+\newcommand{\A}{\mathfrak A}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+
+\title{\textbf{Periodic Approximation of Literal Multipliers on\\
+Determinant-Two M\"obius Fibers}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The determinant-two corridor of TPC-149 bounds every bounded periodic
+multiplier on a literal two-M\"obius core, uniformly outside one
+exceptional set.  We give the exact interface from that theorem to an
+arbitrary literal multiplier.  The resulting bound is the sum of the
+periodic-core saving and a normalized \(L^1\) approximation error.
+The unpenalized error term separates over residue fibers; its
+quadratic surrogate is solved by fiber means.  The supremum-norm
+penalty in the full cost still couples those fibers.  This is a positive
+actual-core weight-interface theorem.  It is not yet a theorem for
+the missing physical occurrence registry, a generic phase or all
+prefixes, and its fixed-\(X\)-power exponent is zero.
+\end{abstract}
+
+\noindent\textbf{Keywords.}
+M\"obius correlation; determinant two; periodic approximation;
+literal multiplier; exceptional scales.
+
+\medskip
+\noindent\fcolorbox{red!70!black}{red!3}{\parbox{0.94\linewidth}{
+\textbf{Claim boundary.}
+The theorem below acts on the literal determinant-two M\"obius core
+once a multiplier \(w\) is supplied.  It does not construct the
+frontier occurrence lift or certify that the unknown physical
+multiplier has small approximation cost.  A logarithmic saving is not
+a positive fixed-\(X\)-power saving and cannot pay the \(1/400\)
+endpoint.  No prime-pair lower bound or twin-prime theorem is proved.}}
+
+\section{The inherited periodic corridor}
+
+Fix integers
+\[
+ a,s,R\ge1,\qquad d,u\in\mathbb Z,\qquad
+ (a,s)=1,\qquad as\ {\rm odd},\qquad su-ad=2,
+\]
+and put
+\[
+ q=as,\qquad t(z)=ad+qz,\qquad
+ c_z=\mu(d+sz)\mu(u+az),
+\]
+\[
+ I_N=\{z\in\mathbb Z:N<t(z)\le2N\}.
+\]
+TPC-149 proves the following consequence of the quantitative affine
+correlation theorem of \citet{TaoTeravainen2026}.
+
+\begin{theorem}[TPC-149 periodic corridor]\label{thm:149}
+There are absolute \(\eta_0,\kappa_0>0\) such that for every
+sufficiently large \(X\) there is
+\(\E_X^\star\subset[\sqrt X,X]\) satisfying
+\[
+ \frac1{\log X}\int_{\E_X^\star}\frac{dt}{t}
+ \ll(\log X)^{-\kappa_0}.
+\]
+If \(qR\le(\log X)^{\eta_0}\) and
+\(N\in[\sqrt X,X]\setminus\E_X^\star\), then, simultaneously for
+every period-\(R\) function \(\rho\),
+\begin{equation}
+ \frac qN\left|\sum_{z\in I_N}c_z\rho(z)\right|
+ \ll\norm{\rho}_\infty(\log X)^{-\kappa_0}.
+\label{eq:periodic}
+\end{equation}
+\end{theorem}
+
+The word ``simultaneously'' is essential: choosing an approximant
+after seeing \(w\) does not require a union over its values.
+
+\section{The literal-weight interface}
+
+\begin{definition}[Periodic approximation cost]\label{def:cost}
+For \(w:I_N\to\mathbb C\), define
+\begin{equation}
+ \A_{R,N}(w)=
+ \inf_{\substack{\rho:\mathbb Z\to\mathbb C\\\rho(z+R)=\rho(z)}}
+ \left\{
+ \norm{\rho}_\infty(\log X)^{-\kappa_0}
+ +\frac qN\sum_{z\in I_N}|w(z)-\rho(z)|
+ \right\}.
+\label{eq:cost}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Literal-weight periodic approximation]\label{thm:main}
+Under the hypotheses of \cref{thm:149},
+\begin{equation}
+ \boxed{\;
+ \frac qN\left|\sum_{z\in I_N}c_zw(z)\right|
+ \ll \A_{R,N}(w).\;}
+\label{eq:main}
+\end{equation}
+The exceptional set is exactly the one in \cref{thm:149}.
+\end{theorem}
+
+\begin{proof}
+For any admissible \(\rho\),
+\[
+ \sum_{I_N}c_zw(z)
+ =
+ \sum_{I_N}c_z\rho(z)
+ +\sum_{I_N}c_z\{w(z)-\rho(z)\}.
+\]
+The first term is controlled by \eqref{eq:periodic}.  Since
+\(|c_z|\le1\), the normalized modulus of the second is at most
+\[
+ \frac qN\sum_{z\in I_N}|w(z)-\rho(z)|.
+\]
+Take the infimum.  No exceptional-set operation occurs.
+\end{proof}
+
+\begin{corollary}[A usable promotion rule]\label{cor:promotion}
+Suppose an independently source-locked physical registry supplies
+\(w=w_X\), a period \(R_X\) with
+\(qR_X\le(\log X)^{\eta_0}\), and an approximant satisfying
+\[
+ \norm{\rho_X}_\infty\ll1,\qquad
+ \frac qN\sum_{I_N}|w_X-\rho_X|
+ \ll(\log X)^{-\gamma}.
+\]
+Then the weighted actual core has a logarithmic saving with exponent
+\(\min\{\kappa_0,\gamma\}\).
+\end{corollary}
+
+\begin{remark}
+The corollary is an implication, not a claim that the current
+frontier archive supplies \(w_X\).  That occurrence-level input
+remains unavailable.
+\end{remark}
+
+\section{Residue-fiber error optimization}
+
+For \(r\in\mathbb Z/R\mathbb Z\), write
+\[
+ I_{N,r}=\{z\in I_N:z\equiv r\pmod R\}.
+\]
+
+\begin{proposition}[Exact separation]\label{prop:separate}
+For every \(w\),
+\[
+ \inf_{\rho\ {\rm period}\ R}\sum_{I_N}|w(z)-\rho(z)|
+ =
+ \sum_{r\bmod R}\inf_{\zeta\in\mathbb C}
+ \sum_{z\in I_{N,r}}|w(z)-\zeta|.
+\]
+For the squared error, the unique minimizing value on every nonempty
+fiber is
+\[
+ \bar w_r=\frac1{|I_{N,r}|}\sum_{z\in I_{N,r}}w(z).
+\]
+\end{proposition}
+
+\begin{proof}
+A period-\(R\) function has one independent value on each residue
+fiber, proving the first identity.  Expanding
+\[
+ \sum_{I_{N,r}}|w(z)-\zeta|^2
+ =
+ \sum_{I_{N,r}}|w(z)-\bar w_r|^2
+ +|I_{N,r}|\,|\zeta-\bar w_r|^2
+\]
+proves the second.
+\end{proof}
+
+By Cauchy--Schwarz, the fiber-mean quadratic certificate gives the
+explicit upper bound
+\[
+ \sum_{I_N}|w-\rho|
+ \le |I_N|^{1/2}
+ \left(\sum_{r\bmod R}\sum_{I_{N,r}}|w-\bar w_r|^2\right)^{1/2}.
+\]
+Thus the interface is finite and auditable whenever literal values of
+\(w\) are known.
+
+\section{Products, phases and precise limitations}
+
+\begin{proposition}[Exact-period products]\label{prop:product}
+If \(w=\prod_{j=1}^m w_j\) and every \(w_j\) is bounded periodic of
+period \(R_j\), then \(w\) is periodic of period
+\(\operatorname{lcm}(R_1,\ldots,R_m)\).  It may be inserted directly
+in \cref{thm:149} when
+\[
+ q\operatorname{lcm}(R_1,\ldots,R_m)
+ \le(\log X)^{\eta_0}.
+\]
+\end{proposition}
+
+Rational additive phases fall in this proposition.  A generic
+additive phase need not be well approximated by a small-period
+function.  TPC-158 tests that boundary exactly.  Likewise,
+\cref{thm:main} treats one interval \((N,2N]\); it does not convert
+exceptional-scale density into control of predetermined prefix
+endpoints, the obstruction isolated in TPC-150.
+
+\section{Audit and progress classification}
+
+The accompanying standard-library audit source-locks the TPC-149
+theorem and certificate using \texttt{CANONICAL\_UTF8\_LF\_V2},
+checks exact residue-fiber quadratic minimization on rational data,
+and checks the triangle decomposition on a signed fixture.  Hashes
+serve only as integrity checks.
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Statement & Status\\
+\hline
+Periodic-to-literal interface on the actual M\"obius core
+  & \(\mathrm{PROVED}_{L1}\)\\
+Production physical multiplier and approximation rate
+  & \(\mathrm{NOT\mbox{-}TESTABLE}\)\\
+Generic phase or all prefixes & not proved\\
+Positive fixed-\(X\)-power saving & not proved\\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Conclusion}
+
+The periodic theorem now has an exact literal-weight consumer:
+arithmetic cancellation is lost only through a normalized
+approximation cost whose unpenalized error term is
+residue-fiber-separable.  This closes a genuine
+actual-core interface while exposing the next factual question:
+whether the eventual occurrence registry produces small cost.  It
+does not answer that question by schema, numerics or notation.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

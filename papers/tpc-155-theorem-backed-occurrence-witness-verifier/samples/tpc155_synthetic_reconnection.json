@@ -1,0 +1,57 @@
+{
+  "claim_full_production_carrier": false,
+  "coverage_scope": "WITNESS_OCCURRENCE_ROWS_ONLY",
+  "entries": [
+    {
+      "exact_reconnection_multiplier": {
+        "imag": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "real": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "literal_weight_sign_phase_id": "literal:synthetic-occ-eto-0",
+      "occurrence_id": "synthetic-occ-eto-0",
+      "reconnection_destination": "synthetic-return-eto",
+      "source_id": "syn.reconnection"
+    },
+    {
+      "exact_reconnection_multiplier": {
+        "imag": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "real": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "literal_weight_sign_phase_id": "literal:synthetic-occ-fum-0",
+      "occurrence_id": "synthetic-occ-fum-0",
+      "reconnection_destination": "synthetic-return-fum",
+      "source_id": "syn.reconnection"
+    },
+    {
+      "exact_reconnection_multiplier": {
+        "imag": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "real": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "literal_weight_sign_phase_id": "literal:synthetic-occ-fum-1",
+      "occurrence_id": "synthetic-occ-fum-1",
+      "reconnection_destination": "synthetic-return-fum",
+      "source_id": "syn.reconnection"
+    }
+  ],
+  "fixture_scope": "SYNTHETIC_L0_ONLY",
+  "schema": "tpc155-reconnection-export-v1",
+  "witness_id": "tpc155-synthetic-nonvacuity-v1"
+}

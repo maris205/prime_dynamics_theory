@@ -1,0 +1,398 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={The Canonical Cut-Occurrence Shadow},
+  pdfauthor={Liang Wang},
+  pdfsubject={A maximal source-backed partial lift and its exact boundary},
+  pdfkeywords={fixed shift, occurrence lift, frontier, provenance, conservation}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\ETO}{\mathsf{ETO}}
+\newcommand{\FUM}{\mathsf{FUM}}
+\newcommand{\EPS}{\mathsf{EPS}}
+\newcommand{\Cns}{\mathcal C_X^{\rm ns}}
+\newcommand{\Ocut}{\mathcal O_X^{\rm cut}}
+\newcommand{\Oact}{\mathcal O_X^{\rm act}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\STOP}{\textnormal{\textsc{stop-declared-route}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{The Canonical Cut-Occurrence Shadow:}\\
+\textbf{A Maximal Source-Backed Partial Lift}\\
+\textbf{and Its Exact Boundary}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The first unsupported object in the source-locked TPC route is a
+conservative, row-separated lift from every nonsoft cut path to its
+downstream occurrences.  The existing archive does not contain those
+occurrences.  We construct instead the strongest object that is
+literally determined by the archive: the canonical cut-occurrence
+shadow
+\[
+ S_X:\mathbb C^{\mathcal C_X^{\rm ns}}
+ \longrightarrow\mathbb C^{\mathcal O_X^{\rm cut}},
+ \qquad S_Xe_c=e_{\iota(c)}.
+\]
+There is exactly one shadow row for every eligible-tail-open or
+frontier-unmapped cut path.  Thus \(S_X\) is injective, row separated
+and exactly conservative, \(\mathbf1^TS_X=\mathbf1^T\).  It preserves
+the native tuple, prescribed shift, physical normalization, symbolic
+coefficient and cut multiplier, while keeping canonical-parent,
+stage, physical-occurrence and active-support fields absent.  We
+prove a conditional pushforward property: every future actual
+occurrence lift that faithfully extends the cut data must forget to
+\(S_X\).  This universal property does not produce such a lift.
+The deterministic certificate reruns the TPC-143 source chain and
+contains \(2988\) production rows, all frontier-unmapped.  A separate
+eligible-tail fixture is marked synthetic \(\mathrm{L0}\) only and
+never enters the production census.  The result is structural
+\(\mathrm{L1}\) progress, not a fixed-shift arithmetic saving.
+\end{abstract}
+
+\section{The exact input}
+
+The native, dyadic and cut archives of TPC-133--136 enumerate a
+literal packet through the first unsupported carrier
+\citep{WangTPC133,WangTPC134,WangTPC135,WangTPC136}.  Their three
+terminal types are
+\[
+ \EPS,\qquad \ETO,\qquad \FUM.
+\]
+The already soft prefix rows \(\EPS\) need no occurrence repair at
+this gate.  The required nonsoft domain is
+\begin{equation}
+ \Cns=\mathcal C_X^{\ETO}\sqcup\mathcal C_X^{\FUM}.
+ \label{eq:nonsoft-domain}
+\end{equation}
+Neither summand may be omitted merely because it is empty in one
+finite fixture.  TPC-143 attaches an explicit lift obligation to
+every element of \(\Cns\), but correctly leaves every actual
+occurrence edge absent \citep{WangTPC143}.
+
+For \(c\in\Cns\), let \(F_{\rm cut}(c)\) denote precisely the sourced
+data available at the cut:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the cut, upstream-path and native identities;
+\item \(X,h_0,Q,U,V\), the weight-source identifier and physical
+normalization;
+\item the native tuple \((\ell,k,d_{\rm nat})\);
+\item the native symbolic coefficient, native constraint witnesses
+and dyadic multiplier expressions; and
+\item the terminal type, block, boundary rule and formal-support
+status.
+\end{enumerate}
+The subscript in \(d_{\rm nat}\) is deliberate.  No existing source
+identifies this divisor coordinate with a later affine intercept.
+
+\begin{definition}[Support namespaces]
+The \emph{formal support envelope} is the enumerated symbolic domain.
+A \emph{canonical-parent carrier} requires a sourced inverse
+aggregation.  The \emph{actual active support} requires an exact
+nonzero coefficient certificate.  We treat these as three different
+typed sets.
+\end{definition}
+
+Every current nonsoft row lies in the first namespace.  The other two
+are not inferred from a symbolic coefficient expression.
+
+\section{The cut-occurrence shadow}
+
+\begin{definition}[Partial occurrence namespace]
+For each \(c\in\Cns\), define
+\[
+ \iota(c):=(c,F_{\rm cut}(c))
+\]
+in a new typed namespace, and put
+\[
+ \Ocut:=\{\iota(c):c\in\Cns\}.
+\]
+The identifier of \(\iota(c)\) is derived deterministically from the
+literal cut-path identifier.  It is called a \emph{partial
+occurrence}; it is not an actual downstream occurrence.
+\end{definition}
+
+\begin{definition}[Canonical shadow matrix]
+The cut-occurrence shadow is the linear map
+\begin{equation}
+ S_X:\mathbb C^{\Cns}\longrightarrow\mathbb C^{\Ocut},
+ \qquad S_Xe_c=e_{\iota(c)}.
+ \label{eq:shadow}
+\end{equation}
+Its only nonzero coefficient in column \(c\) is the exact rational
+number \(1\).
+\end{definition}
+
+\begin{theorem}[Exact shadow identities]
+\label{thm:shadow}
+The matrix \(S_X\) is total on \(\Cns\), injective and row separated.
+Moreover,
+\begin{equation}
+ \one_{\Ocut}^{T}S_X=\one_{\Cns}^{T}.
+ \label{eq:shadow-conservation}
+\end{equation}
+On every nonzero edge it intertwines the native tuple, source
+\(h_0\), physical normalization, source path and formal-support
+status.
+\end{theorem}
+
+\begin{proof}
+The rule \(c\mapsto\iota(c)\) creates one distinct typed row for each
+literal source identifier, hence is injective and total.  Each column
+contains one coefficient equal to \(1\), proving
+\eqref{eq:shadow-conservation}.  The metadata statement follows
+because \(F_{\rm cut}(c)\) is copied without reinterpretation from
+the corresponding source obligation.
+\end{proof}
+
+\begin{remark}[Why the identity is useful but not the goal]
+An identity matrix can be trivial algebraically and still useful as a
+typed boundary object.  Here it gives a lossless handoff point: any
+later construction must explain how one partial row branches into
+actual rows without changing the sourced column total.  It does not
+explain that branching.
+\end{remark}
+
+\subsection{Exact reconnection with the soft rows}
+
+Let \(\mathcal N_X\) be the native-record set and write the
+conservative cut matrix as
+\[
+ M_X^{\rm cut}=
+ \begin{pmatrix}
+ M_X^{\EPS}\\ M_X^{\rm ns}
+ \end{pmatrix}.
+\]
+
+\begin{proposition}[Shadow-level reconnection]
+\label{prop:reconnection}
+The map \(I_{\EPS}\oplus S_X\) satisfies
+\begin{equation}
+ \one_{\EPS}^{T}M_X^{\EPS}
+ +\one_{\Ocut}^{T}S_XM_X^{\rm ns}
+ =\one_{\mathcal N_X}^{T}.
+ \label{eq:reconnection}
+\end{equation}
+This is an exact coefficient identity at the cut-shadow level.
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:shadow-conservation} into the cut-column identity
+\(\one_{\EPS}^{T}M_X^{\EPS}
++\one_{\Cns}^{T}M_X^{\rm ns}=\one_{\mathcal N_X}^{T}\).
+\end{proof}
+
+\Cref{prop:reconnection} neither supplies physical cover nor proves
+that a symbolic column is nonzero.  It only confirms that no
+cut-level coefficient was deleted by introducing the shadow.
+
+\section{Universal pushforward property}
+
+The word ``maximal'' below refers to sourced cut fields, not to an
+unknown actual carrier.
+
+\begin{definition}[Actual extension candidate]
+An actual extension candidate consists of a typed row set \(\Oact\),
+a row-separated matrix
+\[
+ L_X:\mathbb C^{\Cns}\longrightarrow\mathbb C^{\Oact},
+\]
+and a forgetting map \(q:\Oact\to\Ocut\).  The map \(q\) must erase
+only downstream fields and must retain all fields in
+\(F_{\rm cut}\).  Its linear pushforward is
+\[
+ q_*e_o=e_{q(o)}.
+\]
+The candidate lies over the cut shadow when, for all \(c,c'\in\Cns\),
+\begin{equation}
+ \sum_{\substack{o\in\Oact\\q(o)=\iota(c)}}(L_X)_{o,c'}
+ =\delta_{c,c'}.
+ \label{eq:fiber-conservation}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Conditional universal property]
+\label{thm:universal}
+Every actual extension candidate lying over the cut shadow satisfies
+\begin{equation}
+ q_*L_X=S_X.
+ \label{eq:universal}
+\end{equation}
+Conversely, \eqref{eq:universal} is equivalent to the fiber identities
+\eqref{eq:fiber-conservation}.
+\end{theorem}
+
+\begin{proof}
+The coefficient of \(e_{\iota(c)}\) in \(q_*L_Xe_{c'}\) is the
+left-hand side of \eqref{eq:fiber-conservation}.  It equals
+\(\delta_{c,c'}\), which is exactly the coefficient of
+\(e_{\iota(c)}\) in \(S_Xe_{c'}\).  Reading the same argument
+backwards proves the converse.
+\end{proof}
+
+\begin{corollary}[Conservation inherited from an actual lift]
+If \(q_*L_X=S_X\), then
+\[
+ \one_{\Ocut}^{T}q_*L_X=\one_{\Cns}^{T}.
+\]
+If, in addition, forgetting preserves the coefficient sum
+\(\one_{\Ocut}^{T}q_*=\one_{\Oact}^{T}\), then
+\(\one_{\Oact}^{T}L_X=\one_{\Cns}^{T}\).
+\end{corollary}
+
+The existence of \(q,L_X\), the number of rows in each fiber, and all
+actual edge coefficients remain hypotheses.  Therefore
+\cref{thm:universal} is a compatibility condition for future work,
+not a construction of the missing lift.
+
+\section{What remains deliberately absent}
+
+The partial row reserves, but does not populate, the following field
+groups:
+\begin{enumerate}[leftmargin=2.2em]
+\item canonical parent, determinant fiber and \(Q_D\) edge;
+\item ordered outer zero mode and \(Q_Z\) edge;
+\item physical occurrence, physical group, cover and reconnection;
+\item transformation-stage identifier, exact later multiplier,
+source and target shift tags, and downstream selector edge; and
+\item the affine-corridor consumer fields and endpoint-ledger token.
+\end{enumerate}
+The TPC-141 occurrence registry names administrative stages, but it
+does not give a row-level cut-to-stage-to-parent occurrence crosswalk
+\citep{WangTPC141}.  It is therefore not used to manufacture these
+fields.
+
+\begin{proposition}[No promotion by shadow construction]
+\label{prop:no-promotion}
+Constructing \(S_X\) proves none of the following:
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item existence or uniqueness of an actual occurrence lift;
+\item actual one-to-many branch multiplicities;
+\item determinant, zero-mode, physical-group or downstream-shift
+totality;
+\item membership in actual active support; or
+\item an arithmetic estimate for the nonsoft scalar.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+All five statements require fields erased by the map from a
+hypothetical actual extension to \(\Ocut\).  The definition of
+\(S_X\) uses only \(F_{\rm cut}\), so none is a consequence of
+\eqref{eq:shadow}.
+\end{proof}
+
+\section{Executable finite certificate}
+
+The standard-library program
+\begin{center}
+\small
+\texttt{experiments/tpc153\_cut\_occurrence\_shadow.py}
+\end{center}
+reruns the TPC-143 generator, compares its logical UTF-8/LF
+obligations and certificate, and emits one shadow record per source
+obligation.  The lock mode is
+\texttt{CANONICAL\_UTF8\_LF\_V2}; hashes have integrity semantics
+only.
+
+For the committed production fixture,
+\[
+ \#\Cns=2988,\qquad
+ \#\mathcal C_X^{\ETO}=0,\qquad
+ \#\mathcal C_X^{\FUM}=2988.
+\]
+All \(2988\) source columns have one shadow row and exact column sum
+\(1\).  The validator rejects deletion, duplication, terminal
+relabeling, nonunit weight, \(h_0\) or normalization drift, active
+support promotion, an invented downstream selector, an invented
+actual completion, and a false \(\Ltwo\) claim.
+
+The production sample cannot exercise the \(\ETO\) branch.  A
+separate regression uses the TPC-135 block policy at
+\[
+ X=2^{84},\quad R=2^{21},\quad V=2^{10},\quad
+ (j_L,j_K)=(38,46),\quad D_0=2,
+\]
+for which the policy classifies the block as eligible.  This record is
+marked \texttt{SYNTHETIC\_L0\_ONLY}.  It tests that the union
+\eqref{eq:nonsoft-domain} remains typed, but proves neither a current
+production \(\ETO\) row nor asymptotic \(\ETO\) existence.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.38\textwidth}P{0.23\textwidth}Y@{}}
+\toprule
+Export & Status & Exact meaning\\
+\midrule
+\(\mathsf{H1.cut\_occurrence\_shadow}\)
+& \(\PROVED_{\Lone}\) & Exact total conservative partial lift.\\
+\(\mathsf{H1.frontier\_occurrence\_lift}\)
+& \(\NT\) & Actual downstream rows and edge coefficients absent.\\
+Current-schema-only actual-lift derivation
+& \(\STOP\) & A shadow cannot supply erased provenance.\\
+Selected augmented occurrence route
+& Open & A theorem-backed external crosswalk may extend the shadow.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Kill criteria and next artifact}
+
+The shadow subroute fails immediately if any nonsoft source lacks one
+partial row, if two source rows share a partial identifier, if a
+column sum differs from \(1\), or if native, \(h_0\), normalization
+or support metadata drift.  Conversely, passing these checks must
+not be promoted to the actual lift.
+
+The next required artifact is a theorem-backed, row-level
+cut-to-stage-to-parent-to-physical-occurrence crosswalk on every
+\(\ETO\) and \(\FUM\) source.  It must include exact edge
+multipliers, native and \(h_0\) lineage, physical normalization,
+support status, cover and reconnection.  The source-locked route
+decision remains \(\NT\) until that object or the separately typed
+scalar-plus-\(\ETO\) alternative is supplied \citep{WangTPC152}.
+
+This paper proves no frontier \(o(X)\) estimate, positive
+fixed-\(h_0\) \(\Ltwo\) saving, endpoint below \(1/400\), prime-pair
+lower bound or twin-prime theorem.
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

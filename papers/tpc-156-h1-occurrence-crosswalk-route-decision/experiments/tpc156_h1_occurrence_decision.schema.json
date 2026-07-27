@@ -1,0 +1,150 @@
+{
+  "$id": "tpc156-h1-occurrence-crosswalk-decision-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "architecture_infeasible_claimed": {
+          "const": false
+        },
+        "fixed_X_power_L2_claimed": {
+          "const": false
+        },
+        "one_over_400_endpoint_claimed": {
+          "const": false
+        },
+        "prime_pair_or_twin_prime_claimed": {
+          "const": false
+        },
+        "production_actual_lift_claimed": {
+          "const": false
+        }
+      },
+      "required": [
+        "production_actual_lift_claimed",
+        "fixed_X_power_L2_claimed",
+        "one_over_400_endpoint_claimed",
+        "prime_pair_or_twin_prime_claimed",
+        "architecture_infeasible_claimed"
+      ],
+      "type": "object"
+    },
+    "current_verdict": {
+      "const": "NOT_TESTABLE"
+    },
+    "defects": {
+      "additionalProperties": {
+        "enum": [
+          "ZERO",
+          "NONZERO",
+          "NOT_EVALUABLE"
+        ]
+      },
+      "type": "object"
+    },
+    "first_missing_selected_route": {
+      "const": "H1.theorem_backed_occurrence_provenance_crosswalk"
+    },
+    "h1_contract": {
+      "type": "object"
+    },
+    "imported_evidence": {
+      "type": "object"
+    },
+    "minimal_missing_antichains": {
+      "type": "object"
+    },
+    "nodes": {
+      "type": "object"
+    },
+    "production_census": {
+      "additionalProperties": false,
+      "properties": {
+        "ELIGIBLE_TAIL_OPEN": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "FRONTIER_UNMAPPED": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "nonsoft_total": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "ELIGIBLE_TAIL_OPEN",
+        "FRONTIER_UNMAPPED",
+        "nonsoft_total"
+      ],
+      "type": "object"
+    },
+    "routes": {
+      "type": "object"
+    },
+    "schema": {
+      "const": "tpc-156-h1-occurrence-crosswalk-decision-v1"
+    },
+    "source_lock_policy": {
+      "additionalProperties": false,
+      "properties": {
+        "hash_semantics": {
+          "const": "INTEGRITY_ONLY"
+        },
+        "normalization": {
+          "const": "CANONICAL_UTF8_LF_V2"
+        }
+      },
+      "required": [
+        "normalization",
+        "hash_semantics"
+      ],
+      "type": "object"
+    },
+    "source_locks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "canonical_utf8_lf_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "path",
+          "canonical_utf8_lf_sha256"
+        ],
+        "type": "object"
+      },
+      "minItems": 4,
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema",
+    "source_lock_policy",
+    "source_locks",
+    "imported_evidence",
+    "production_census",
+    "nodes",
+    "defects",
+    "h1_contract",
+    "minimal_missing_antichains",
+    "routes",
+    "first_missing_selected_route",
+    "current_verdict",
+    "claim_boundary"
+  ],
+  "title": "TPC-156 H1 occurrence-crosswalk route decision",
+  "type": "object"
+}

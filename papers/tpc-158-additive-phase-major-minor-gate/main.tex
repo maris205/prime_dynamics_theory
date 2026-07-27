@@ -1,0 +1,280 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\e}{\mathrm e}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+
+\title{\textbf{An Exact Major-Arc Gate for Additive Phases:\\
+Periodic Projection and a Minor-Arc Route Obstruction}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-157 transfers a periodic two-M\"obius estimate to a literal
+multiplier at the cost of its normalized \(L^1\) distance from a
+small-period subspace.  We evaluate that gate for an additive phase.
+A phase within inverse-interval accuracy of an allowed rational has
+a phase-aligned periodic approximant and inherits logarithmic
+cancellation.  On a complete residue rectangle, the orthogonal
+projection error is an exact Dirichlet-kernel expression; away from
+all allowed rationals it is bounded below, stopping the periodic
+approximation route.  The obstruction concerns the approximation
+method, not the size of the original M\"obius correlation.
+\end{abstract}
+
+\noindent\textbf{Keywords.}
+additive phase; major arcs; Dirichlet kernel; periodic approximation;
+M\"obius correlation.
+
+\medskip
+\noindent\fcolorbox{red!70!black}{red!3}{\parbox{0.94\linewidth}{
+\textbf{Claim boundary.}
+The positive theorem covers an explicit major-arc cell of the
+actual-core sum.  The negative theorem says that a specified
+small-period approximation is expensive; it does not say that the
+minor-arc correlation is large or that every route fails.  The
+production phase is not yet supplied by an occurrence registry.
+There is no all-prefix, positive fixed-\(X\)-power, \(1/400\),
+prime-pair or twin-prime conclusion.}}
+
+\section{Setup}
+
+Write \(\e(x)=\exp(2\pi i x)\).  Retain the determinant-two notation
+\[
+ q=as,\qquad t(z)=ad+qz,\qquad
+ c_z=\mu(d+sz)\mu(u+az),\qquad
+ I_N=\{z:N<t(z)\le2N\}.
+\]
+TPC-149 gives constants \(\eta_0,\kappa_0>0\) and, for every
+sufficiently large \(X\), one set
+\(\mathcal E_X^\star\subset[\sqrt X,X]\) outside which the
+simultaneous estimate
+\begin{equation}
+ \frac qN\left|\sum_{z\in I_N}c_z\rho(z)\right|
+ \ll\norm{\rho}_\infty(\log X)^{-\kappa_0}
+\label{eq:periodic}
+\end{equation}
+holds for every period-\(R\) function with
+\(qR\le(\log X)^{\eta_0}\) \citep{WangTPC149}.
+TPC-157 adds the normalized \(L^1\) approximation error for a
+nonperiodic multiplier \citep{WangTPC157}.
+
+\section{The major-arc gate}
+
+Let \(I=\{z_0,z_0+1,\ldots,z_0+L-1\}\) contain \(I_N\); enlarging the
+error sum outside \(I_N\) is harmless.
+
+\begin{lemma}[Phase-aligned approximant]\label{lem:aligned}
+For \(\alpha\in\mathbb R\), \(k\in\mathbb Z\), and \(R\ge1\), put
+\[
+ \rho_{z_0}(z)=\e(-\alpha z_0)\,
+               \e\!\left(-\frac{k}{R}(z-z_0)\right).
+\]
+Then \(\rho_{z_0}\) is period \(R\), has modulus one, and
+\begin{equation}
+ \sup_{z\in I}|\e(-\alpha z)-\rho_{z_0}(z)|
+ \le 2\pi L\left|\alpha-\frac{k}{R}\right|.
+\label{eq:aligned}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Periodicity follows from \(\e(-k)=1\).  After removing the common
+factor \(\e(-\alpha z_0)\), use
+\(|\e(x)-\e(y)|\le2\pi|x-y|\) and
+\(|z-z_0|\le L\).
+\end{proof}
+
+\begin{theorem}[Actual-core major arc]\label{thm:major}
+Fix \(A>0\).  Suppose
+\[
+ qR\le(\log X)^{\eta_0},\qquad
+ L\left|\alpha-\frac{k}{R}\right|
+ \le(\log X)^{-A},
+\]
+and
+\[
+ N\in[\sqrt X,X]\setminus\mathcal E_X^\star.
+\]
+Then
+\begin{equation}
+ \boxed{\;
+ \frac qN\left|
+ \sum_{z\in I_N}c_z\e(-\alpha z)
+ \right|
+ \ll(\log X)^{-\kappa_0}+(\log X)^{-A}.\;}
+\label{eq:major}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Use \(\rho_{z_0}\) in the TPC-157 interface.  The periodic term gives
+the first summand.  Since \(|I_N|\ll N/q+1\), \eqref{eq:aligned}
+gives the second, after absorbing the harmless endpoint term in the
+asymptotic range.
+\end{proof}
+
+The alignment at \(z_0\) matters.  Comparing directly with
+\(\e(-kz/R)\) would incorrectly charge the absolute coordinate
+rather than the interval length.
+
+\section{Exact projection on a residue rectangle}
+
+Let
+\[
+ I_{K,R}=\{z_0,\ldots,z_0+KR-1\},\qquad
+ f_\alpha(z)=\e(\alpha z),
+\]
+and let \(\mathcal P_R\) be the space of period-\(R\) functions
+restricted to this interval.
+
+\begin{theorem}[Dirichlet projection identity]\label{thm:projection}
+For every \(K,R\ge1\),
+\begin{equation}
+ \frac1{KR}\inf_{\rho\in\mathcal P_R}
+ \sum_{z\in I_{K,R}}|f_\alpha(z)-\rho(z)|^2
+ =
+ 1-\left|
+ \frac1K\sum_{j=0}^{K-1}\e(\alpha Rj)
+ \right|^2.
+\label{eq:projection}
+\end{equation}
+Equivalently, with the continuous value \(1\) for the ratio when
+\(R\alpha\in\mathbb Z\), the squared mean on the right is
+\[
+ \left|
+ \frac{\sin(\pi KR\alpha)}
+ {K\sin(\pi R\alpha)}
+ \right|^2.
+\]
+Moreover,
+\begin{equation}
+ \frac1{KR}\inf_{\rho\in\mathcal P_R}
+ \sum_{z\in I_{K,R}}|f_\alpha(z)-\rho(z)|
+ \ge
+ \frac12\left[
+ 1-\left|
+ \frac1K\sum_{j=0}^{K-1}\e(\alpha Rj)
+ \right|^2\right].
+\label{eq:l1lower}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+On each residue fiber \(z=z_0+r+jR\), the orthogonal projection is
+the fiber mean
+\[
+ \e(\alpha(z_0+r))\frac1K
+ \sum_{j=0}^{K-1}\e(\alpha Rj).
+\]
+Pythagoras gives \eqref{eq:projection}, and summing the geometric
+progression gives the sine quotient.  An \(L^1\) minimizer may be
+projected into the closed unit disk without increasing distance from
+unit-modulus data.  There \(|f_\alpha-\rho|\le2\), hence
+\(|f_\alpha-\rho|^2\le2|f_\alpha-\rho|\).  Infimizing proves
+\eqref{eq:l1lower}.
+\end{proof}
+
+\begin{corollary}[Uniform minor-arc route stop]\label{cor:stop}
+Let \(I_n\) be cells of \(L_n\) consecutive integers, let
+\(\alpha_n\in\mathbb R\), and let \(\mathcal R_n\) be a nonempty set
+of allowed periods.  Put
+\[
+ K_{n,R}=\left\lfloor\frac{L_n}{R}\right\rfloor
+ \qquad(R\in\mathcal R_n).
+\]
+If
+\begin{equation}
+ \inf_{R\in\mathcal R_n}K_{n,R}\longrightarrow\infty,
+ \qquad
+ \inf_{R\in\mathcal R_n}
+ K_{n,R}\norm{R\alpha_n}_{\mathbb R/\mathbb Z}
+ \longrightarrow\infty,
+\label{eq:uniform-minor}
+\end{equation}
+then, uniformly over all allowed periods,
+\[
+ \inf_{R\in\mathcal R_n}\frac1{L_n}
+ \inf_{\rho\ {\rm period}\ R}
+ \sum_{z\in I_n}|f_{\alpha_n}(z)-\rho(z)|
+ \ge\frac12-o(1).
+\]
+Consequently, the TPC-157 small-period approximation route cannot
+yield a decaying bound on those cells.
+\end{corollary}
+
+\begin{proof}
+For each \(R\in\mathcal R_n\), retain a complete
+\(K_{n,R}R\)-subinterval of \(I_n\).  Restriction and
+\eqref{eq:l1lower} give the lower bound
+\[
+ \frac{K_{n,R}R}{L_n}\,
+ \frac12\left[
+ 1-
+ \min\left\{1,
+ \frac{1}{
+  2K_{n,R}\norm{R\alpha_n}_{\mathbb R/\mathbb Z}}
+ \right\}^{\!2}
+ \right].
+\]
+The first infimum in \eqref{eq:uniform-minor} makes
+\(K_{n,R}R/L_n=1+o(1)\) uniformly, and the second makes the squared
+term \(o(1)\) uniformly.
+\end{proof}
+
+The uniform infima in \eqref{eq:uniform-minor} are essential.  A
+pointwise assertion for every fixed \(R\) does not stop a sequence of
+periods \(R=R_n\) drifting with \(n\).
+
+\section{Route semantics}
+
+The positive result is labeled
+\(\mathrm{L1\_ACTUAL\_CORE\_MAJOR\_ARC}\).  The negative result is a
+scoped route stop:
+\[
+ \text{small-period approximation fails}
+ \;\not\Rightarrow\;
+ \text{the M\"obius correlation is large}.
+\]
+A direct additive-twist theorem, a larger admissible period range, or
+a different physical crosswalk remains logically open.  The
+accompanying audit checks the projection identity numerically against
+the direct orthogonal projection and checks a nonzero-start
+phase-aligned fixture.  These finite checks support implementation;
+the proofs above establish the identities.
+
+\section{Conclusion}
+
+The phase question now has a sharp gate.  Near an allowed rational,
+the existing actual-core theorem genuinely advances to an additive
+phase.  Away from all allowed rationals, the exact Dirichlet
+projection shows that periodic approximation cannot be the missing
+argument.  This narrows the next arithmetic input without pretending
+to resolve generic phases.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

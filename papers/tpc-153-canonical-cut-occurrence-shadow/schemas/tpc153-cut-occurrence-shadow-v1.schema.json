@@ -1,0 +1,266 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc153-cut-occurrence-shadow-v1.schema.json",
+  "title": "TPC-153 canonical cut-occurrence shadow row",
+  "type": "object",
+  "required": [
+    "schema",
+    "record_scope",
+    "partial_occurrence_id",
+    "source_cut_path_id",
+    "source_obligation_integrity_sha256",
+    "cut_terminal_type",
+    "required_domain",
+    "lineage",
+    "cut_classification",
+    "cut_coefficient_data",
+    "selectors",
+    "support_namespaces",
+    "actual_completion",
+    "claim_boundary",
+    "integrity_sha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc153-cut-occurrence-shadow-v1"
+    },
+    "record_scope": {
+      "const": "PRODUCTION_CURRENT_ARCHIVE"
+    },
+    "partial_occurrence_id": {
+      "type": "string",
+      "pattern": "^cut-shadow\\|[0-9a-f]{24}$"
+    },
+    "source_cut_path_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_obligation_integrity_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "cut_terminal_type": {
+      "enum": [
+        "ELIGIBLE_TAIL_OPEN",
+        "FRONTIER_UNMAPPED"
+      ]
+    },
+    "required_domain": {
+      "const": "ALL_NONSOFT_CUT_PATHS_ETO_PLUS_FUM"
+    },
+    "lineage": {
+      "type": "object",
+      "required": [
+        "packet_scope",
+        "native_tuple",
+        "upstream_path_id"
+      ],
+      "properties": {
+        "packet_scope": {
+          "type": "object",
+          "required": [
+            "X",
+            "h0",
+            "Q",
+            "U",
+            "V",
+            "weight_source_id",
+            "physical_normalization"
+          ],
+          "properties": {
+            "X": {"type": "integer", "minimum": 1},
+            "h0": {"type": "integer"},
+            "Q": {"type": "integer", "minimum": 1},
+            "U": {"type": "integer", "minimum": 0},
+            "V": {"type": "integer", "minimum": 0},
+            "weight_source_id": {"type": "string", "minLength": 1},
+            "physical_normalization": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "native_tuple": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "integer"}
+        },
+        "upstream_path_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "cut_classification": {
+      "type": "object",
+      "required": [
+        "source_cut_fields_status",
+        "block",
+        "D0",
+        "boundary_rule",
+        "frontier_reason"
+      ],
+      "properties": {
+        "source_cut_fields_status": {"const": "PRESENT_PROVED_L1"},
+        "block": {
+          "type": "object",
+          "required": ["j_K", "j_L"],
+          "properties": {
+            "j_K": {"type": "integer"},
+            "j_L": {"type": "integer"}
+          },
+          "additionalProperties": false
+        },
+        "D0": {"type": "integer"},
+        "boundary_rule": {"type": "string", "minLength": 1},
+        "frontier_reason": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "cut_coefficient_data": {
+      "type": "object",
+      "required": [
+        "native_coefficient_ast",
+        "native_constraint_witnesses",
+        "dyadic_edge_multiplier_ast",
+        "shadow_edge_weight",
+        "numeric_coefficient_nonzero_status"
+      ],
+      "properties": {
+        "native_coefficient_ast": {"type": "object"},
+        "native_constraint_witnesses": {"type": "object"},
+        "dyadic_edge_multiplier_ast": {"type": "object"},
+        "shadow_edge_weight": {
+          "$ref": "#/$defs/unitRational"
+        },
+        "numeric_coefficient_nonzero_status": {
+          "const": "UNDECIDED"
+        }
+      },
+      "additionalProperties": false
+    },
+    "selectors": {
+      "type": "object",
+      "required": [
+        "cut_selector",
+        "downstream_selector"
+      ],
+      "properties": {
+        "cut_selector": {
+          "type": "object",
+          "required": [
+            "map_id",
+            "h0",
+            "action",
+            "status"
+          ],
+          "properties": {
+            "map_id": {"const": "P_h0_cut"},
+            "h0": {"type": "integer"},
+            "action": {"const": "IDENTITY"},
+            "status": {"const": "PROVED_L1"}
+          },
+          "additionalProperties": false
+        },
+        "downstream_selector": {
+          "type": "object",
+          "required": [
+            "status",
+            "not_inferred_from_cut_selector"
+          ],
+          "properties": {
+            "status": {"const": "NOT_PRESENT"},
+            "not_inferred_from_cut_selector": {"const": true}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "support_namespaces": {
+      "type": "object",
+      "required": [
+        "formal_support_envelope",
+        "canonical_parent_carrier",
+        "actual_active_support"
+      ],
+      "properties": {
+        "formal_support_envelope": {"const": "PRESENT"},
+        "canonical_parent_carrier": {"const": "NOT_PRESENT"},
+        "actual_active_support": {"const": "UNDECIDED"}
+      },
+      "additionalProperties": false
+    },
+    "actual_completion": {
+      "type": "object",
+      "required": [
+        "actual_occurrence_id",
+        "actual_branch_count",
+        "status",
+        "forgotten_field_groups"
+      ],
+      "properties": {
+        "actual_occurrence_id": {"type": "null"},
+        "actual_branch_count": {"type": "null"},
+        "status": {"const": "NOT_PRESENT"},
+        "forgotten_field_groups": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "canonical_parent_and_QD",
+              "outer_zero_mode_and_QZ",
+              "physical_grouping_G",
+              "downstream_shift_selector",
+              "affine_corridor_consumer"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "is_actual_occurrence",
+        "proves_actual_one_to_many_branching",
+        "proves_active_nonzero_support",
+        "proves_positive_fixed_h0_L2",
+        "proves_twin_prime_theorem"
+      ],
+      "properties": {
+        "is_actual_occurrence": {"const": false},
+        "proves_actual_one_to_many_branching": {"const": false},
+        "proves_active_nonzero_support": {"const": false},
+        "proves_positive_fixed_h0_L2": {"const": false},
+        "proves_twin_prime_theorem": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "integrity_sha256": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "unitRational": {
+      "type": "object",
+      "required": [
+        "ring",
+        "numerator",
+        "denominator"
+      ],
+      "properties": {
+        "ring": {"const": "Q"},
+        "numerator": {"const": 1},
+        "denominator": {"const": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
