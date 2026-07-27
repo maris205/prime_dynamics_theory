@@ -1,0 +1,255 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Source-Channel Determinant and Trace Factorization\\
+\large Separating Spectral Newton Sums from Residue-Weighted Physical Moments}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The canonical source-channel packet carries two related but different data
+sets.  Its spectral determinant and Newton traces are
+\[
+ D_E(z)=\det(zI-K)=\prod_j(z-\lambda_j),
+ \qquad
+ \operatorname{tr}K^q=\sum_j\lambda_j^q.
+\]
+The physical source-observation moments retain the channel residues:
+\[
+ h_q=c^*K^qb=\sum_jr_j\lambda_j^q.
+\]
+Conflating these ledgers would erase the input-output weights needed by any
+later trace formula.
+
+This paper gives an exact determinant encoding of the weighted transfer:
+\[
+ \frac{\det(zI-(K+bc^*))}{\det(zI-K)}
+ =1-c^*(zI-K)^{-1}b.
+\]
+Thus one finite pair of characteristic determinants contains both the pole
+set and the residue-weighted response.  A 240-case complex nonnormal audit
+verifies the determinant lemma, modal weighted moments, and Newton traces
+with zero failures.
+
+For the physical length-four windows, the temporal determinant and traces
+converge to the exact quartet ledger despite canonical frame norm products
+as large as $950$.  At the latest starts the relative determinant error is
+below $10^{-4}$ and the maximum relative trace error through power eight is
+below $8\times10^{-4}$.
+
+These are finite physical channel identities.  They do not provide
+von Mangoldt weights, a prime-power orbit formula, a zeta determinant, or a
+Hilbert--P\'olya operator.
+\end{abstract}
+
+\section{Two ledgers that must not be conflated}
+
+Let $K\in\mathbb C^{r\times r}$ be the exact canonical packet of RH-196, and
+let $b,c\in\mathbb C^r$ be source and observation coordinates.  In a
+residue-labeled simple-mode basis one may take
+\begin{equation}\label{eq:modal-data}
+ K=\operatorname{diag}(\lambda_1,\ldots,\lambda_r),
+ \qquad b=(1,\ldots,1)^T,
+ \qquad \overline{c_j}=r_j.
+\end{equation}
+
+The spectral ledger ignores source and observation:
+\begin{equation}\label{eq:spectral-ledger}
+ D_E(z)=\det(zI-K),
+ \qquad s_q=\operatorname{tr}K^q.
+\end{equation}
+The physical transfer ledger is
+\begin{equation}\label{eq:transfer-ledger}
+ g_E(z)=c^*(zI-K)^{-1}b,
+ \qquad h_q=c^*K^qb.
+\end{equation}
+Both are similarity invariant if $b,c$ transform with the state coordinates,
+but they answer different questions.
+
+\section{Spectral determinant and Newton traces}
+
+\begin{proposition}[Finite channel determinant]\label{prop:determinant}
+For the selected simple modes,
+\begin{equation}\label{eq:determinant}
+ D_E(z)=\prod_{j=1}^r(z-\lambda_j).
+\end{equation}
+Its logarithmic derivative is
+\begin{equation}\label{eq:log-derivative}
+ \frac{D_E'(z)}{D_E(z)}
+ =\operatorname{tr}(zI-K)^{-1}
+ =\sum_{j=1}^r\frac{1}{z-\lambda_j}.
+\end{equation}
+\end{proposition}
+
+The logarithmic derivative assigns unit multiplicity to each channel pole.
+It does not recover the physical residues $r_j$ unless all happen to equal
+one.
+
+For $|z|>\rho(K)$,
+\begin{equation}\label{eq:trace-expansion}
+ \operatorname{tr}(zI-K)^{-1}
+ =\sum_{q\ge0}\frac{\operatorname{tr}K^q}{z^{q+1}}.
+\end{equation}
+Thus the Newton sums are the unweighted resolvent coefficients.
+
+\section{Residue-weighted moments}
+
+The source-observation transfer has expansion
+\begin{equation}\label{eq:weighted-expansion}
+ g_E(z)=\sum_{q\ge0}\frac{h_q}{z^{q+1}},
+ \qquad h_q=c^*K^qb.
+\end{equation}
+
+\begin{theorem}[Modal moment identity]\label{thm:moments}
+In the simple residue-labeled basis,
+\begin{equation}\label{eq:modal-moments}
+ \boxed{h_q=\sum_{j=1}^r r_j\lambda_j^q.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:modal-data} into $c^*K^qb$.
+\end{proof}
+
+The distinction $s_q$ versus $h_q$ is the finite prototype of a later trace
+problem.  A prime-power trace formula would require specific arithmetic
+weights analogous to von Mangoldt coefficients.  The physical residues in
+this paper are not identified with those weights.
+
+\section{A determinant ratio for the transfer}
+
+The matrix determinant lemma gives the exact bridge.
+
+\begin{theorem}[Rank-one feedback factorization]\label{thm:feedback}
+For $z\notin\sigma(K)$,
+\begin{equation}\label{eq:feedback}
+ \boxed{
+ \frac{\det(zI-(K+bc^*))}{\det(zI-K)}
+ =1-c^*(zI-K)^{-1}b.
+ }
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Factor
+\[
+ zI-(K+bc^*)=(zI-K)
+ \left[I-(zI-K)^{-1}bc^*\right]
+\]
+and use $\det(I-uv^*)=1-v^*u$.
+\end{proof}
+
+Consequently the scalar transfer is encoded by a pair of finite spectral
+determinants:
+\begin{equation}\label{eq:transfer-pair}
+ g_E(z)=1-\frac{D_{E,\rm fb}(z)}{D_E(z)}.
+\end{equation}
+Zeros of the numerator ratio reflect the feedback realization; poles are
+the uncanceled channel eigenvalues.  This is a standard system-theoretic
+identity, here attached to the physical source-observation packet
+\citep{Kailath1980}.
+
+\section{Gauge covariance}
+
+Under an invertible state gauge
+\begin{equation}\label{eq:gauge}
+ K'=G^{-1}KG,
+ \qquad b'=G^{-1}b,
+ \qquad c'=G^*c,
+\end{equation}
+one has
+\begin{equation}\label{eq:gauge-invariance}
+ D_E'=D_E,
+ \quad \operatorname{tr}(K')^q=\operatorname{tr}K^q,
+ \quad (c')^*(zI-K')^{-1}b'=c^*(zI-K)^{-1}b.
+\end{equation}
+The determinant ratio is therefore invariant.  This explains why large
+balanced frame norms need not spoil the finite determinant/trace ledger:
+coordinate amplification cancels in exact similarity invariants.
+
+\section{Complex identity audit}
+
+The implementation uses dimensions 2--9 and thirty complex random systems
+per dimension, for 240 cases.  It verifies:
+\begin{enumerate}[leftmargin=2em]
+\item the rank-one determinant ratio at an off-spectrum point;
+\item equality of direct moments $c^*K^qb$ and modal residue sums through
+ order seven;
+\item equality of power traces and modal Newton sums through power eight.
+\end{enumerate}
+All cases pass the $10^{-8}$ tolerance.  The modal audit uses independently
+computed left/right eigenvectors and therefore tests residue normalization as
+well as the determinant lemma.
+
+\section{Physical temporal transport}
+
+RH-194 stores the temporal compressed matrix and its matched physical quartet
+ledger for every accepted window \citep{WangRH194}.  Across all twelve
+windows, the maximum relative determinant error is
+$8.56\times10^{-4}$ and the maximum relative power-trace error through order
+eight is $4.12\times10^{-3}$.
+
+At the latest starts:
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+side & relative determinant error & maximum trace error\\
+\midrule
+left & $8.91\times10^{-5}$ & $7.66\times10^{-4}$\\
+right & $4.47\times10^{-5}$ & $3.97\times10^{-4}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The determinant error is not monotone at every start, but both late values
+are below $10^{-4}$.  The power-trace errors exhibit the same overall decay
+as the subspace gaps in RH-198.
+
+\section{What the finite determinant accomplishes}
+
+The result supplies a strict finite object:
+\begin{equation*}
+ (D_E,D_{E,\rm fb})
+ \quad\leftrightarrow\quad
+ (\lambda_j,r_j)_{j=1}^4.
+\end{equation*}
+It retains both spectral locations and source-observation weights, is
+independent of balanced gauge, and is approximated by the temporal packet at
+the audited anchor.
+
+This is precisely the kind of bookkeeping needed before any infinite
+spectral determinant can be proposed.  It also prevents a common
+overstatement: matching eigenvalues or unweighted traces is not enough to
+derive an arithmetic explicit formula.
+
+\section{Boundaries and next step}
+
+The determinant is a degree-four polynomial per side.  It is not an entire
+function with zeta growth, has no $T\log T$ zero count, and contains no
+demonstrated prime-power weights.  The residues are physical transfer
+weights, not von Mangoldt coefficients.
+
+The next problem is selection: why does the finest audited model produce a
+four-mode nonreal edge packet while the predeclared length-three attempts at
+coarser scales fail?  RH-200 studies the conjugate-pair parity and edge-gap
+geometry behind the quartet.  Cross-scale transport remains the central
+open leaf of Gate A.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,219 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Conjugate-Pair Parity and Edge-Quartet Selection\\
+\large A Finite Cross-Scale Canonicity Test for the Physical Packet}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding papers identify a genuine four-mode source--observation packet
+at $\sigma=0.01$, but its selection was initially phrased as a match to
+post hoc physical eigenvalues.  This paper asks whether a simpler dynamical
+rule selects the same object.
+
+Because the physical matrices are real, every nonreal simple eigenvalue is
+paired with its complex conjugate.  If the outer spectral edge consists of
+four nonreal modes separated from the fifth modulus, its real invariant
+packet must have even dimension and, in the present geometry, exactly four
+dimensions.  We therefore select the four largest-modulus source-observable
+modes.
+
+At scales $\sigma=0.04,0.02,0.01$ and on both physical channels, the four
+outer modes form two conjugate pairs, all have nonzero source--observation
+residue, and the radial gap after the quartet is positive.  The minimum gap
+over six cases is $0.05949$.  The length-three RH-185 candidates have zero
+two-sided passes at all audited scales, while the finest length-four branch
+has twelve.
+
+This supplies a finite selection principle and explains the parity mismatch
+of the odd clock branch.  It is not a uniform edge-gap theorem, not a proof
+that every scale has a quartet, and not an arithmetic prime-pair or zeta
+identification.
+\end{abstract}
+
+\section{Why selection matters}
+
+RH-194 matched the four temporal roots to four physical eigenvalues after the
+temporal windows had been selected.  This is strong evidence, but a
+post hoc match is not a canonical dynamical definition.  A route toward Gate
+A needs a rule stated before matching.
+
+Two physical symmetries are available:
+\begin{enumerate}[leftmargin=2em]
+\item the matrices at the audited levels are real, so complex modes occur in
+ conjugate pairs;
+\item the temporal packet is intended to describe the outer spectral edge,
+ not an arbitrary interior cloud.
+\end{enumerate}
+Together they suggest an outer-edge quartet rule.
+
+\section{Conjugation parity}
+
+Let $A\in\mathbb R^{n\times n}$.  If $Av=\lambda v$, then
+$A\overline v=\overline\lambda\,\overline v$.  Algebraic Riesz projectors
+obey
+\begin{equation}\label{eq:projector-conjugation}
+ P_{\overline\lambda}=\overline{P_\lambda}
+\end{equation}
+for simple conjugate modes \citep{Kato1995}.
+
+\begin{theorem}[Nonreal parity]\label{thm:parity}
+Let $\Lambda$ be a finite isolated spectral set of a real matrix, invariant
+under complex conjugation and containing no real eigenvalues.  Then the
+algebraic rank of its Riesz projector is even.  In the simple-spectrum case
+the modes can be partitioned into conjugate pairs.
+\end{theorem}
+
+\begin{proof}
+Conjugation is an antilinear bijection from the eigenspace at $\lambda$ to
+the eigenspace at $\overline\lambda$.  Since $\Lambda$ contains no real
+points, its elements split into disjoint two-element conjugate orbits, with
+equal algebraic multiplicities.
+\end{proof}
+
+A real packet of odd dimension may contain real modes.  It cannot, however,
+be a conjugation-closed packet consisting only of nonreal edge modes.  This
+is the relevant obstruction to a length-three approximation of two pairs.
+
+\section{Outer-edge rule}
+
+Order the eigenvalues by modulus:
+\begin{equation}\label{eq:modulus-order}
+ |\lambda_1|\ge|\lambda_2|\ge\cdots\ge|\lambda_n|.
+\end{equation}
+Suppose
+\begin{equation}\label{eq:edge-gap}
+ |\lambda_4|>|\lambda_5|,
+\end{equation}
+and the first four eigenvalues are nonreal and conjugation closed.
+
+\begin{proposition}[Edge quartet selection]\label{prop:edge}
+Under these hypotheses the outer four-mode Riesz set is uniquely defined by
+the modulus edge, is conjugation invariant, and has no three-dimensional
+conjugation-closed subpacket containing all outer modes.  If the four modes
+have nonzero source-observation residues, the associated canonical packet is
+four-dimensional and exactly source-observable.
+\end{proposition}
+
+The rule is basis-free and does not use the temporal roots.  It can fail if
+the edge gap closes, a real eigenvalue enters the edge, or a residue vanishes.
+
+\section{Three-scale physical audit}
+
+We recompute the base spectra at $\sigma=0.04,0.02,0.01$ for both physical
+channels.  The top four modes are always two conjugate pairs.  The radial
+gap after the quartet is:
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+scale & side & $|\lambda_4|-|\lambda_5|$ & minimum quartet residue\\
+\midrule
+$0.04$ & left & $0.06129$ & positive\\
+$0.04$ & right & $0.05949$ & positive\\
+$0.02$ & left & $0.32537$ & positive\\
+$0.02$ & right & $0.32745$ & positive\\
+$0.01$ & left & $0.11341$ & positive\\
+$0.01$ & right & $0.11766$ & positive\\
+\bottomrule
+\end{tabular}
+\end{center}
+The maximum conjugate-pair mismatch in all six cases is below
+$2\times10^{-15}$ in the floating computation, as expected from real input
+data.
+
+The selected moduli illustrate the branch:
+\begin{align}
+\sigma=0.04:&\quad 0.6735,0.6735,0.3595,0.3595,\ldots,\\
+\sigma=0.02:&\quad 0.7723,0.7723,0.7181,0.7181,\ldots,\\
+\sigma=0.01:&\quad 0.7937,0.7937,0.7328,0.7328,\ldots.
+\end{align}
+The gap is finite at every audited level, although it is not monotone in
+$\sigma$.
+
+\section{Parity versus the length-three clock}
+
+The RH-185 candidate lengths are predeclared by the finite clock-rank rule.
+The observed gate counts are:
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+scale & length & windows & two-sided passes\\
+\midrule
+$0.04$ & 3 & 18 & 0\\
+$0.02$ & 3 & 30 & 0\\
+$0.01$ & 3 & 40 & 0\\
+$0.01$ & 4 & 38 & 12\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This does not prove that every length-three construction must fail.  It does
+show that the audited failures are consistent with a structural mismatch:
+the outer physical object is two nonreal conjugate pairs, while a
+three-dimensional real conjugation-closed packet cannot contain it.
+
+The length-four success at the finest scale selects the same quartet as the
+outer-edge rule.  RH-194 then shows that its roots match the physical modes.
+
+\section{Canonicity and remaining dependence}
+
+The rule “four largest-modulus source-observable modes” is more intrinsic than
+“the four modes nearest the temporal roots.”  It uses only the physical
+operator, source/observation visibility, and an outer edge.
+
+It is not yet fully canonical in the infinite program.  One must prove:
+\begin{enumerate}[leftmargin=2em]
+\item a uniform edge gap or a controlled cluster contour;
+\item stability of source-observation residues;
+\item compatibility of the edge rule under refinement and renormalization;
+\item a relation between this finite edge packet and the later cloud ledger.
+\end{enumerate}
+The present three-scale audit supports, but does not establish, these claims.
+
+\section{What the parity result does not say}
+
+The conjugate-pair theorem is elementary and local.  It does not say that
+the edge quartet is a prime pair, that its phases encode prime gaps, or that
+its eigenvalues are zeta zeros.  Those interpretations would require new
+arithmetic trace identities and are not present here.
+
+Likewise, the failure of the length-three finite windows is not an all-level
+no-go theorem.  A different odd packet could include a real mode, use a
+non-real coordinate convention, or target a different spectral region.
+
+\section{Updated route}
+
+The ten-paper batch now has a coherent finite branch:
+\begin{equation*}
+ \begin{gathered}
+ \text{outer edge + conjugation parity}
+ \longrightarrow\text{source-observable quartet}\\
+ \longrightarrow\text{balanced exact packet}
+ \longrightarrow\text{temporal determinant/trace ledger}.
+ \end{gathered}
+\end{equation*}
+The next barrier is no longer identifying a local quartet.  It is proving
+that the edge rule and its channel weights survive refinement and can be
+assembled into an intrinsic object.  That is still Gate A; Gates B--E,
+Hilbert--P\'olya, and RH remain untouched.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

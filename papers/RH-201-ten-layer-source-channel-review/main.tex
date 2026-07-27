@@ -1,0 +1,374 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Ten Layers from Frobenius Multiplicity to a Canonical Source Channel\\
+\large RH-192--RH-200 Review and the Cross-Scale Transport Frontier}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper reviews RH-192--RH-200, a ten-layer correction and reconstruction
+of the physical temporal-packet route.  The batch begins with an exact
+negative result: on matrix states $X\in\mathbb C^{n\times m}$, the physical
+dynamics $X\mapsto AX$ is $I_m\otimes A$.  Every base Riesz multiplicity is
+therefore multiplied by $m$, so the earlier literal rank-one or rank-four
+full-Frobenius shell is impossible at widths $64,128,256$.
+
+The numerical signal survives in the correct state type.  The single-source
+cyclic space has dimension at most $n$ and preserves every
+source-observation moment.  At the surviving $\sigma=0.01,L=4$ anchor, all
+48 temporal roots lie in predeclared discs containing one base eigenvalue;
+the maximum matching error is $1.27\times10^{-3}$.  All windows on each side
+select one common physical quartet.
+
+Riesz projectors then produce exact source-observation channel states
+$P_\lambda S$ and $P_\lambda^*O^*$, whose pairing equals the transfer
+residue.  Balanced coordinates give a zero-residual exact spectral packet
+with determinant, Newton traces, and residue-weighted physical moments.
+The physical packet is transverse but poorly conditioned: the optimal norm
+products are $192.05$ and $950.26$.  Late temporal windows nevertheless
+align with it, with maximum subspace gap below $0.051$ and late determinant
+and trace errors below $10^{-4}$ and $8\times10^{-4}$.
+
+Finally, the four largest-modulus modes form two source-observable conjugate
+pairs at all six audited scale/channel cases, with minimum gap $0.05949$ to
+the fifth modulus.  This supplies a finite outer-edge selection rule and
+explains the mismatch of the length-three branch.
+
+The aggregate machine ledger contains 1,352 finite items and zero identity
+failures.  The next wall is validated cross-level Riesz-projector transport.
+Gate A remains open; Gates B--E, Hilbert--P\'olya, zeta-zero identification,
+and RH are untouched.
+\end{abstract}
+
+\section{Coordinate inherited from RH-191}
+
+RH-191 ended with a local balanced bi-Krylov candidate and an exact oblique
+Feshbach identity, but no validated complement inverse
+\citep{WangRH191}.  The proposed next calculation was an expensive contour
+inverse for a complement of the full matrix-state operator.
+
+Before that calculation, RH-192 checks the ambient type.  This changes the
+problem fundamentally: the full complement was not merely large; the desired
+low-rank full Riesz count was arithmetically incompatible with the operator.
+The present batch records both the correction and the surviving source-
+relative route.
+
+\section{Layer-by-layer ledger}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.09\textwidth}p{0.60\textwidth}p{0.20\textwidth}}
+\toprule
+paper & principal result & strict status\\
+\midrule
+RH-192 & $\mathcal L_A\simeq I_m\otimes A$ and $m$-fold Riesz rank
+& exact type obstruction\\
+RH-193 & source-cyclic invariant quotient; all moments preserved
+& exact theorem\\
+RH-194 & 48 roots match eight unique physical modes
+& finite floating positive\\
+RH-195 & Riesz source/observation channels; pairing equals residue
+& exact theorem\\
+RH-196 & optimally balanced zero-residual spectral packet
+& exact theorem\\
+RH-197 & residues and cross-angle geometry of the physical quartet
+& finite positive, ill-conditioned\\
+RH-198 & graph-angle mechanism and temporal alignment decay
+& conditional theorem + finite signal\\
+RH-199 & determinant, Newton traces, weighted moments, feedback ratio
+& exact finite theorem\\
+RH-200 & conjugate-pair parity and outer-edge quartet selection
+& exact parity + finite support\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The aggregate ledger counts 1,352 windows, roots, modes, random identity
+cases, or finite diagnostic sequences.  The identity audits have zero
+failures.  This count is a reproducibility ledger, not statistical evidence
+for an all-level theorem.
+
+\section{The exact negative result: the old shell type is wrong}
+
+For $X\in\mathbb C^{n\times m}$,
+\begin{equation}\label{eq:left-action}
+ \mathcal L_AX=AX,
+ \qquad
+ \operatorname{vec}(AX)=(I_m\otimes A)\operatorname{vec}(X).
+\end{equation}
+Hence
+\begin{equation}\label{eq:multiplicity}
+ \det(zI-\mathcal L_A)=\det(zI-A)^m,
+ \qquad
+ \operatorname{rank}P_\Gamma(\mathcal L_A)
+ =m\operatorname{rank}P_\Gamma(A)
+\end{equation}
+\citep{WangRH192}.
+
+Across the 126 RH-185 windows, $m\in\{64,128,256\}$ and packet length is
+three or four.  No packet count is divisible by $m$.  If one root contour
+contains one simple base eigenvalue, the full Frobenius count is $m$ and the
+RH-189 complement must carry $m-1$ copies.  The one-root burden is 63--255.
+
+This rejects only
+\begin{equation*}
+ \text{small temporal packet}
+ =\text{complete Riesz projection of }I_m\otimes A.
+\end{equation*}
+It does not reject the root location.
+
+\section{The correct source-relative state}
+
+The physical experiment starts from one matrix $S$, so its reachable state is
+\begin{equation}\label{eq:cyclic}
+ \mathcal K_S=\operatorname{span}\{S,AS,A^2S,\ldots\}.
+\end{equation}
+RH-193 proves
+\begin{equation}\label{eq:cyclic-dim}
+ \dim\mathcal K_S=\deg\mu_{A,S}\le n,
+\end{equation}
+and constructs an exact restriction $T$ with
+\begin{equation}\label{eq:moments}
+ \langle O^*,A^qS\rangle_F=c^*T^qb
+\end{equation}
+for every $q\ge0$ \citep{WangRH193}.
+
+Every right temporal packet lies in this cyclic state.  Restricting the left
+frame to it preserves biorthogonality.  Thus the packet can have one channel
+per simple source-excited eigenvalue without contradicting the ambient
+$m$-fold multiplicity.
+
+\section{The numerical roots are physical}
+
+RH-194 performs the direct spectral test \citep{WangRH194}.  The accepted
+starts are 14--18 on the left and 12--18 on the right at
+$\sigma=0.01,L=4$.  Each of the 48 compressed roots has one distinct nearest
+base eigenvalue inside the frozen root disc.  The maximum match error is
+\begin{equation}\label{eq:match}
+ 1.2693\times10^{-3},
+\end{equation}
+while the minimum computed radial clearance from any eigenvalue to a contour
+is approximately $0.194$.
+
+All windows on one side select the same four modes.  Their approximate
+geometry is
+\begin{equation}\label{eq:quartet}
+ -0.495\pm0.620i,
+ \qquad
+ 0.474\pm0.557i.
+\end{equation}
+The two channels have small discretization differences.  The result is
+floating, but the root signal is much smaller than the contour scale.
+
+\section{Source-observation channels}
+
+For an isolated simple mode with projector $P_i$, RH-195 defines
+\begin{equation}\label{eq:channel-states}
+ X_i=P_iS,
+ \qquad Y_i=P_i^*O^*,
+\end{equation}
+and proves
+\begin{equation}\label{eq:residue-pairing}
+ \langle Y_i,X_j\rangle_F
+ =\delta_{ij}r_i,
+ \qquad
+ r_i=\operatorname{tr}(OP_iS)
+\end{equation}
+\citep{WangRH195}.  The scalar $r_i$ is the transfer residue.
+
+Nonzero residues produce exact biorthogonal channel coordinates.  Unlike a
+generic Ritz packet, these states satisfy zero right and left residuals.
+Their rank is the number of selected source-observable modes, while the
+complete ambient projector retains rank $m$ per base mode.
+
+\section{Canonical packet and intrinsic conditioning}
+
+RH-196 balances the exact right and left channel spaces with the cross-Gram
+SVD \citep{WangRH196}.  If $\gamma$ is the minimum cross singular value,
+the optimal frame norm product is
+\begin{equation}\label{eq:optimal-condition}
+ \chi_{\rm can}=\gamma^{-1}.
+\end{equation}
+The compressed packet is similar to the selected spectral restriction, so
+its determinant and traces are exact.
+
+The RH-197 physical audit gives
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+side & $\gamma$ & $\chi_{\rm can}$ & minimum $|r_i|$\\
+\midrule
+left & $0.005207$ & $192.05$ & $0.02610$\\
+right & $0.001052$ & $950.26$ & $0.01107$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\citep{WangRH197}.  The packet is transverse, but especially on the right it
+is not benignly conditioned.
+
+At the latest temporal starts, the RH-185 conditions differ from these
+canonical optima by about one percent.  Large obliqueness is therefore part
+of the physical source-observation geometry, not merely an avoidable frame
+choice.
+
+\section{Temporal alignment with the exact endpoint}
+
+RH-198 proves the graph identity
+\begin{equation}\label{eq:graph-angle}
+ \tan\theta_{\max}=\norm G
+\end{equation}
+and a conditional Krylov convergence theorem under spectral-gap and
+selected-block inverse bounds \citep{WangRH198}.
+
+In the finite data, all four right/left gap sequences have negative fitted
+log slopes.  Their descriptive per-step ratios lie between $0.830$ and
+$0.850$; the minimum fit $R^2$ is $0.899$.  The latest maximum gap is
+$0.0505$.  Root errors decay faster, with fitted ratios $0.695$--$0.739$.
+
+These are finite diagnostics.  Eventually a normalized orbit can lose
+four-dimensional rank as the outermost conjugate pair dominates, so the
+short-start ratio must not be extrapolated blindly.
+
+\section{Determinant, traces, and physical moments}
+
+RH-199 separates the unweighted spectral ledger
+\begin{equation}\label{eq:unweighted}
+ D_E(z)=\det(zI-K),
+ \qquad s_q=\operatorname{tr}K^q=\sum_j\lambda_j^q
+\end{equation}
+from the residue-weighted physical moments
+\begin{equation}\label{eq:weighted}
+ h_q=c^*K^qb=\sum_jr_j\lambda_j^q
+\end{equation}
+\citep{WangRH199}.
+The exact feedback ratio is
+\begin{equation}\label{eq:feedback-ratio}
+ \frac{\det(zI-(K+bc^*))}{\det(zI-K)}
+ =1-c^*(zI-K)^{-1}b.
+\end{equation}
+
+At the latest physical windows the maximum determinant error is
+$8.91\times10^{-5}$ and the maximum trace error through power eight is
+$7.66\times10^{-4}$.  Similarity invariants converge even though coordinate
+norms are large.
+
+These traces are not von Mangoldt traces.  The residues are physical transfer
+weights with no established arithmetic identification.
+
+\section{An outer-edge selection principle}
+
+RH-200 replaces post hoc root matching by a candidate intrinsic rule:
+select the four largest-modulus source-observable modes
+\citep{WangRH200}.  Since the physical matrices are real, nonreal modes occur
+in conjugate pairs.  At all three audited scales and on both channels, the
+outer four modes are two nonreal pairs.
+
+The gap $|\lambda_4|-|\lambda_5|$ is positive in all six cases and has
+minimum $0.05949$.  All 24 selected mode records have nonzero residue.  Thus
+the edge quartet is defined without consulting temporal roots at these
+anchors.
+
+This also explains the finite length-three failure: an odd-dimensional real
+conjugation-closed packet cannot contain two complete nonreal pairs.  It is
+an explanation of the audited branch, not an all-level no-go theorem for all
+possible length-three constructions.
+
+\section{What the batch achieved}
+
+The strongest defensible statement is:
+\begin{quote}
+The earlier temporal-clock numerics identified a genuine physical outer-edge
+quartet, but the correct low-rank object is a source--observation Riesz
+channel packet, not the complete Riesz projection of the full Frobenius
+left-multiplication operator.
+\end{quote}
+
+This statement combines one exact correction, several exact finite algebra
+theorems, and one finite physical discovery.  It is substantially firmer than
+the RH-191 frontier because the complement-count paradox is resolved rather
+than hidden inside an inverse estimate.
+
+\section{What remains open inside Gate A}
+
+The next missing objects are:
+\begin{enumerate}[leftmargin=2em]
+\item interval or outward-validated contours and Riesz projectors for the
+ edge quartets;
+\item a common-coordinate map between quartets at adjacent refinement
+ levels;
+\item bounds on interlevel projector angles, residues, and determinant
+ coefficients;
+\item a growing cloud rule---a fixed quartet alone can never produce a
+ $T\log T$ spectral count;
+\item an all-level physical interface and intrinsic cloud ledger $Q$.
+\end{enumerate}
+
+The fixed quartet should be viewed as a local building block and a test case
+for transport, not as the eventual infinite spectrum.
+
+\section{Recommended RH-202 experiment}
+
+Use the existing coarse/fine embeddings to place the outer quartets at
+$\sigma=0.04,0.02,0.01$ in common coordinates.  For each adjacent pair,
+compute:
+\begin{equation}\label{eq:transport-data}
+ \begin{gathered}
+ \text{embedded projector principal angles},\quad
+ \text{intertwining defects},\\
+ \text{transported residues},\quad
+ \text{determinant-coefficient differences}.
+ \end{gathered}
+\end{equation}
+Where feasible, wrap the contour counts and projectors in validated error
+bounds.  A positive result would be the first concrete shell-transport map
+$H$.  A negative result would show that a fixed outer quartet is not stable
+and that the cloud must be selected by a larger cluster rule.
+
+\section{Position in the five macro gates}
+
+The entire batch remains within Gate A:
+\begin{itemize}[leftmargin=2em]
+\item Gate A, intrinsic dynamical spectral determinant/cloud: one finite
+ source-channel block exists; the all-level object is open.
+\item Gate B, time-oriented unitary or scattering completion: untouched.
+\item Gate C, self-adjoint generator and internal $T\log T$ count: untouched.
+\item Gate D, prime-power/von Mangoldt trace identity: untouched.
+\item Gate E, equality with the completed zeta divisor: untouched.
+\end{itemize}
+
+No Hilbert--P\'olya operator, zeta-zero correspondence, or
+Riemann-hypothesis implication is claimed.
+
+\section{Reproducibility}
+
+Each paper contains source, focused tests, frozen result JSON, theorem and
+roadmap ledgers, and an individual publication manifest.  RH-201 additionally
+builds a batch manifest for RH-192--RH-201.  Heavy physical eigendecomposition
+is performed once in RH-194 and reused by downstream audits; RH-200 performs
+an independent three-scale edge check.
+
+The review script reads the frozen outputs and verifies all key counts and
+claim boundaries.  The aggregate identity-failure count is zero.  Floating
+physical positives remain labeled as such and are not upgraded by the
+archive machinery.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,248 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Temporal--Spectral Packet Alignment\\
+\large A Graph Mechanism for the Physical Edge Quartet}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-194 observes that late length-four temporal windows are close to the
+canonical physical edge-quartet spaces.  This paper gives the exact graph
+coordinate behind that observation and audits its finite decay.
+
+For equal-dimensional subspaces $E$ and $T$ with orthonormal bases $Q_E,Q_T$
+and invertible overlap $Q_E^*Q_T$, the space $T$ is the graph over $E$ of
+\[
+ G=(I-Q_EQ_E^*)Q_T(Q_E^*Q_T)^{-1},
+\]
+and
+\[
+ \tan\theta_{\max}(E,T)=\norm G,
+ \qquad
+ \sin\theta_{\max}(E,T)=\frac{\norm G}{\sqrt{1+\norm G^2}}.
+\]
+For a Krylov synthesis split into selected and complementary spectral
+coordinates, this yields a conditional convergence theorem: decay of the
+complementary block relative to a uniformly invertible selected block forces
+the temporal range to the spectral range.
+
+In the physical data, all four right/left gap sequences have negative fitted
+log slopes and attain their minima at the latest accepted windows.  Their
+descriptive per-step ratios lie in $[0.830,0.850]$ with fit
+$R^2\ge0.899$.  Root errors decay faster, with ratios in
+$[0.695,0.739]$.  The latest maximum subspace gap is below $0.051$.
+
+These rates summarize five or seven finite starts; they are not asymptotic
+constants.  Uniform spectral-gap and selected-block inverse estimates remain
+the missing theoretical bridge to cross-scale transport.
+\end{abstract}
+
+\section{Two packets with different roles}
+
+The temporal packet is constructed without diagonalizing the physical
+operator.  It is therefore dynamically meaningful but only approximately
+invariant.  The canonical packet is built from Riesz projectors.  It is
+exactly invariant but presently selected after seeing the spectrum.
+
+The key local question is whether the first packet approaches the second in
+a controlled coordinate.  Principal angles provide a basis-free answer;
+graph coordinates expose the mechanism that can later support estimates
+\citep{StewartSun1990}.
+
+\section{Exact graph representation}
+
+Let $E,T\subset\mathbb C^N$ have the same finite dimension $r$, with
+orthonormal frames $Q_E,Q_T$.  Assume
+\begin{equation}\label{eq:transverse}
+ M=Q_E^*Q_T
+\end{equation}
+is invertible.  Set $\Pi_E=Q_EQ_E^*$ and
+\begin{equation}\label{eq:graph-map}
+ G=(I-\Pi_E)Q_TM^{-1}:\mathbb C^r\to E^\perp.
+\end{equation}
+
+\begin{theorem}[Graph--angle identity]\label{thm:graph-angle}
+The subspace $T$ is the graph
+\begin{equation}\label{eq:graph}
+ T=\{Q_Ex+Gx:x\in\mathbb C^r\},
+\end{equation}
+and
+\begin{equation}\label{eq:angle-identities}
+ \boxed{
+ \tan\theta_{\max}(E,T)=\norm G,
+ \qquad
+ \sin\theta_{\max}(E,T)=\frac{\norm G}{\sqrt{1+\norm G^2}}.
+ }
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For $y=Q_Ta$, put $x=Ma$.  Then
+$\Pi_Ey=Q_Ex$ and $(I-\Pi_E)y=Gx$, proving the graph formula.  The singular
+values of $M=Q_E^*Q_T$ are the principal cosines.  In principal-vector
+coordinates the singular values of $G$ are the corresponding tangents, so
+the largest gives \eqref{eq:angle-identities}.
+\end{proof}
+
+The formula is exact and remains valid for highly nonnormal dynamics because
+it concerns subspaces in the ambient Hilbert norm.
+
+\section{Krylov spectral splitting}
+
+Assume for exposition that $A$ is diagonalizable and split its right
+spectral basis into a selected block $R_E$ and a complementary block $R_F$:
+\begin{equation}\label{eq:diagonalization}
+ A=[R_E,R_F]
+ \begin{pmatrix}\Lambda_E&0\\0&\Lambda_F\end{pmatrix}
+ [R_E,R_F]^{-1}.
+\end{equation}
+For a matrix source $S$, a length-$r$ unnormalized window is
+\begin{equation}\label{eq:krylov-window}
+ J_t=[A^tS,A^{t+1}S,\ldots,A^{t+r-1}S],
+\end{equation}
+with each matrix vectorized as one column.
+
+In spectral coordinates write
+\begin{equation}\label{eq:blocks}
+ [R_E,R_F]^{-1}J_t=\begin{bmatrix}M_E(t)\\M_F(t)\end{bmatrix}.
+\end{equation}
+The selected block contains eigenvalue powers and source coefficients; in
+the simple scalar-source model it is a diagonally weighted Vandermonde
+matrix.
+
+\begin{theorem}[Conditional Krylov alignment]\label{thm:conditional}
+Suppose $M_E(t)$ is invertible.  Then the temporal range is a graph over the
+selected spectral range, and in compatible coordinates its graph map is
+bounded by
+\begin{equation}\label{eq:graph-bound}
+ \norm{G_t}
+ \le C_R\norm{M_F(t)}\norm{M_E(t)^{-1}},
+\end{equation}
+where $C_R$ depends only on the conditioning of the spectral coordinate
+map.  In particular, if
+\begin{equation}\label{eq:decay-hypothesis}
+ \norm{M_F(t)}\norm{M_E(t)^{-1}}\le Cq^t,
+ \qquad 0<q<1,
+\end{equation}
+then the maximum subspace angle decays at least geometrically.
+\end{theorem}
+
+\begin{proof}
+Eliminate selected coordinates with $M_E(t)^{-1}$.  The complementary graph
+coefficient is $M_F(t)M_E(t)^{-1}$ before mapping back through the spectral
+basis.  Norm equivalence contributes $C_R$.  Apply
+Theorem~\ref{thm:graph-angle}.
+\end{proof}
+
+For nonnormal matrices, $C_R$ and the selected-block inverse may be large.
+The theorem isolates exactly the two missing uniform estimates: spectral
+separation and a nondegenerate source/Vandermonde block.
+
+\section{Physical alignment sequences}
+
+The frozen RH-194 data give five accepted starts on the left and seven on
+the right \citep{WangRH194}.  For each start we use the maximum principal
+sine between the temporal and canonical right spaces and, separately, the
+left spaces.
+
+The log-linear descriptive fits are:
+\begin{center}
+\begin{tabular}{llrrr}
+\toprule
+side & space & per-step ratio & $R^2$ & initial $\to$ final\\
+\midrule
+left & right & $0.8503$ & $0.9543$ & $0.0977\to0.0505$\\
+left & left & $0.8317$ & $0.9519$ & $0.0878\to0.0428$\\
+right & right & $0.8396$ & $0.8993$ & $0.0901\to0.0349$\\
+right & left & $0.8300$ & $0.9783$ & $0.1133\to0.0385$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All four slopes are negative and every final value is the minimum of its
+sequence.  Two sequences have small local reversals, so monotonicity is not
+claimed at every step.
+
+\section{Root and invariant errors}
+
+For each window define
+\begin{equation}\label{eq:root-error}
+ e_\lambda(t)=\max_j|\kappa_j(t)-\lambda_j|.
+\end{equation}
+The fitted per-step ratios are $0.7385$ on the left and $0.6948$ on the
+right.  The errors fall from $9.14\times10^{-4}$ to
+$2.72\times10^{-4}$ on the left and from $1.27\times10^{-3}$ to
+$1.43\times10^{-4}$ on the right.
+
+Power-trace errors through order eight also decrease to below
+$7.7\times10^{-4}$ on the latest left window and
+$4.0\times10^{-4}$ on the latest right window.  RH-199 separates this
+similarity-invariant convergence from the coordinate conditioning.
+
+\section{Condition convergence as a second coordinate}
+
+RH-197 shows that the temporal condition numbers at the latest windows are
+within approximately one percent of the exact canonical optima
+\citep{WangRH197}.  This is not implied by small principal angle alone when
+the canonical pairing is poorly conditioned.  Its simultaneous occurrence
+is therefore an independent consistency check.
+
+The combined finite picture is:
+\begin{equation}\label{eq:combined-picture}
+ \begin{gathered}
+ \text{right and left subspace gaps decrease},\\
+ \text{root, determinant, and trace errors decrease},\\
+ \text{cross-angle condition approaches the canonical value}.
+ \end{gathered}
+\end{equation}
+No single diagnostic is carrying the conclusion.
+
+\section{Why the fitted ratio is not a theorem}
+
+There are only five or seven starts at one scale.  The normalized orbit
+eventually favors the outermost modulus pair and can lose four-dimensional
+conditioning; therefore a fitted ratio cannot be extrapolated indefinitely.
+Moreover the physical operator itself changes with $\sigma$.
+
+An all-level theorem needs:
+\begin{enumerate}[leftmargin=2em]
+\item a quartet separated from the complementary spectrum in a norm suitable
+ for the nonnormal operator;
+\item lower bounds for source activation and the selected Vandermonde block;
+\item a window-selection rule that stays before late-time rank collapse;
+\item compatibility between left and right physical channels.
+\end{enumerate}
+None follows from a short log-linear fit.
+
+\section{Updated frontier}
+
+The temporal construction now has a credible exact endpoint and a
+conditional convergence mechanism.  The next finite task is to transfer
+determinant and trace data, where large balanced frame norms cancel under
+similarity.  Beyond that lies the genuinely hard step: prove a cross-scale
+selection and transport theorem for the quartet.
+
+The work remains inside Gate A.  It does not identify zeta zeros or claim a
+Hilbert--P\'olya operator.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
