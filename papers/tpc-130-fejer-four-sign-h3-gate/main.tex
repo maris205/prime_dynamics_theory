@@ -1,0 +1,492 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\e}{\mathrm e}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\textbf{A Fej\'er Four-Sign Gate for H3}\\
+\large Sliding-Window \(TT^*\), Diagonal Feasibility, and a
+Non-Circular Sufficient Reduction on the Complete Actual Block}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-108 gives the exact full-range \(TT^*\) identity for one literal
+generic affine M\"obius block, but its off-diagonal contains four
+M\"obius values.  We turn that observation into a quantitative,
+truncated, all-prefix certificate.  For a block
+\[
+ S=\sum_{z=1}^N A_z\e^{-2\pi i\alpha z},
+\qquad
+ C(h)=\sum_zA_{z+h}\overline{A_z},
+\]
+sliding-window Cauchy--Schwarz gives, for \(1\le H\le N\),
+\[
+ |S|^2\le
+ \frac{N+H-1}{H}
+ \sum_{|h|<H}
+ \left(1-\frac{|h|}{H}\right)
+ \e^{-2\pi i\alpha h}C(h).
+\]
+The Fej\'er sum is real and nonnegative.  Writing
+\(V=\sum|A_z|\), \(E=\sum|A_z|^2\), and
+\(\mathfrak p=V^2/(NE)\), we obtain
+\[
+ \frac{|S|^2}{V^2}
+ \le
+ 2\left\{
+ \frac1{H\mathfrak p}
+ +
+ \frac{N}{HV^2}(\mathcal O_H)_+
+ \right\},
+\]
+where \(\mathcal O_H\) is the signed Fej\'er off-diagonal.  In the
+TPC-127 shift-two frame its arithmetic factor is exactly
+\[
+ \lambda(n+qh-2)\lambda(n+qh)
+ \lambda(n-2)\lambda(n),
+\]
+with every shifted squarefree, coprimality, periodic, physical, and
+prefix factor retained.  This yields a precise sufficient
+four-sign gate and an exponent ledger.  It also proves a sharp
+diagonal stop: sparse support with \(H\mathfrak p=O(1)\) can saturate
+the original sum even when every short off-diagonal vanishes.
+The finite inequality is \(\Lzero\), its complete literal crosswalk
+is \(\Lone\), and the required growing four-sign estimate remains
+unproved \(\Ltwo\) input.
+\end{abstract}
+
+\section{The finite sliding-window inequality}
+
+Let \(A_1,\ldots,A_N\in\mathbb C\), extend \(A_z=0\) outside
+\([1,N]\), and define
+\begin{align}
+ S(\alpha)&=\sum_{z=1}^NA_z\e^{-2\pi i\alpha z},
+\label{eq:S}\\
+ C(h)&=\sum_{z\in\mathbb Z}A_{z+h}\overline{A_z}.
+\label{eq:C}
+\end{align}
+Thus \(C(-h)=\overline{C(h)}\).
+
+\begin{theorem}[Sliding-window Fej\'er \(TT^*\)]
+\label{thm:fejer}
+For every integer \(H\ge1\),
+\begin{equation}
+\boxed{
+ |S(\alpha)|^2
+ \le
+ \frac{N+H-1}{H}\,
+ \mathcal K_H(\alpha),}
+\label{eq:fejer-bound}
+\end{equation}
+where
+\begin{equation}
+ \mathcal K_H(\alpha)
+ =
+ \sum_{|h|<H}
+ \left(1-\frac{|h|}{H}\right)
+ \e^{-2\pi i\alpha h}C(h)
+ \ge0.
+\label{eq:fejer-energy}
+\end{equation}
+The identity behind the inequality is
+\begin{equation}
+ H\mathcal K_H(\alpha)
+ =
+ \sum_{t=2-H}^{N}
+ \left|
+ \sum_{j=0}^{H-1}
+ A_{t+j}\e^{-2\pi i\alpha(t+j)}
+ \right|^2.
+\label{eq:window-identity}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Put \(b_z=A_z\e^{-2\pi i\alpha z}\), extended by zero, and
+\[
+ B_t=\sum_{j=0}^{H-1}b_{t+j}.
+\]
+Every \(b_z\) occurs in exactly \(H\) of the \(N+H-1\) windows, so
+\[
+ \sum_{t=2-H}^{N}B_t=HS(\alpha).
+\]
+Cauchy--Schwarz gives
+\[
+ H^2|S(\alpha)|^2
+ \le(N+H-1)\sum_t|B_t|^2.
+\]
+Expanding the last square and grouping by \(h=j-k\) yields
+\[
+ \sum_t|B_t|^2
+ =
+ \sum_{|h|<H}(H-|h|)
+ \e^{-2\pi i\alpha h}C(h),
+\]
+which is \eqref{eq:window-identity} and proves the theorem.
+\end{proof}
+
+\begin{remark}[Relation to TPC-108]
+Taking all differences gives the exact full \(TT^*\) identity of
+TPC-108 \citep{WangTPC108}.  \Cref{thm:fejer} instead inserts a
+predeclared short shift scale \(H\), positive Fej\'er weights, and
+the precise Cauchy cost needed for a sufficient estimate.  The
+finite Fej\'er/van der Corput device is classical
+\citep[Chapter~8]{IwaniecKowalski2004}; the new content here is its
+literal fixed-two four-sign crosswalk and audited all-prefix stop
+ledger.
+\end{remark}
+
+\section{Diagonal participation and the signed off-diagonal}
+
+Put
+\begin{equation}
+ V=\sum_{z=1}^N|A_z|,
+\qquad
+ E=\sum_{z=1}^N|A_z|^2.
+\label{eq:VE}
+\end{equation}
+If \(E>0\), define the participation ratio
+\begin{equation}
+ \mathfrak p=\frac{V^2}{NE}\in(0,1].
+\label{eq:participation}
+\end{equation}
+The upper bound is Cauchy--Schwarz.
+If \(V=0\), then every \(A_z=0\), so \(E=S=0\); such a prefix is
+discharged trivially and omitted from normalized maxima.  On every
+remaining prefix \(V>0\), hence \(E>0\) and
+\eqref{eq:participation} is defined.
+
+Write
+\begin{equation}
+ \mathcal K_H(\alpha)=E+\mathcal O_H(\alpha),
+\label{eq:offdiag-split}
+\end{equation}
+where
+\begin{equation}
+ \mathcal O_H(\alpha)
+ =
+ 2\operatorname{Re}
+ \sum_{h=1}^{H-1}
+ \left(1-\frac hH\right)
+ \e^{-2\pi i\alpha h}C(h).
+\label{eq:OH}
+\end{equation}
+
+\begin{corollary}[Normalized Fej\'er certificate]
+\label{cor:normalized}
+If \(1\le H\le N\) and \(V>0\), then
+\begin{equation}
+\boxed{
+ \frac{|S(\alpha)|^2}{V^2}
+ \le
+ 2\left\{
+ \frac1{H\mathfrak p}
+ +
+ \frac{N}{HV^2}
+ \bigl(\mathcal O_H(\alpha)\bigr)_+
+ \right\}.}
+\label{eq:normalized}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Since \(N+H-1\le2N\), \cref{thm:fejer} gives
+\[
+ \frac{|S|^2}{V^2}
+ \le\frac{2N}{HV^2}(E+\mathcal O_H).
+\]
+Use \(NE/V^2=1/\mathfrak p\) and replace the off-diagonal by its
+positive part.
+\end{proof}
+
+\begin{definition}[Typed four-sign certificate]
+\label{def:typed}
+For exponents \(\eta_{\rm diag},\eta_4\ge0\), a block-prefix and a
+shift scale \(H\le N\) pass the Fej\'er certificate if
+\begin{align}
+ \frac1{H\mathfrak p}
+ &\le X^{-2\eta_{\rm diag}+o(1)},
+\label{eq:diag-input}\\
+ \frac{N}{HV^2}
+ \bigl(\mathcal O_H(\alpha)\bigr)_+
+ &\le X^{-2\eta_4+o(1)}.
+\label{eq:four-input}
+\end{align}
+The same \(o(1)\) must be uniform over the predeclared actual
+block-prefix family.
+\end{definition}
+
+\begin{theorem}[Exact exponent transfer]
+\label{thm:transfer}
+If \eqref{eq:diag-input}--\eqref{eq:four-input} hold uniformly, then
+\begin{equation}
+ |S(\alpha)|
+ \le
+ V X^{-\eta_{\rm block}+o(1)},
+\qquad
+ \eta_{\rm block}
+ =
+ \min\{\eta_{\rm diag},\eta_4\}.
+\label{eq:block-saving}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Insert the two inputs in \eqref{eq:normalized}; fixed constants are
+absorbed by the uniform \(X^{o(1)}\), and take square roots.
+\end{proof}
+
+\section{The complete fixed-two arithmetic crosswalk}
+
+We now identify \(\mathcal O_H\) without suppressing its coefficient.
+For one actual TPC-108 block, TPC-127 gives
+\[
+ n(z)=n_0+qz,\qquad q=as,
+\]
+and
+\begin{equation}
+ A_z=
+ \lambda(q)\epsilon_z
+ \lambda(n(z)-2)\lambda(n(z))\Psi_z.
+\label{eq:actual-A}
+\end{equation}
+Here
+\begin{align}
+ \epsilon_z
+ &=
+ \mu^2(D(z))\mu^2(V(z)),\notag\\
+ \Psi_z
+ &=
+ \one_{(B,V(z))=1}
+ \chi(\tau+Bz)W_X(\tau+Bz).
+\label{eq:epsilon-Psi}
+\end{align}
+Both factors are literal; in particular, the physical weight has not
+been replaced by \(1\) \citep{WangTPC127}.
+
+\begin{proposition}[Actual four-sign kernel]
+\label{prop:four-sign}
+For \(h\ne0\),
+\begin{align}
+ C(h)
+ =\sum_{\substack{z\in I\\z+h\in I}}
+ &\epsilon_{z+h}\epsilon_z
+ \lambda(n(z)+qh-2)\lambda(n(z)+qh)
+\notag\\
+ &\times
+ \lambda(n(z)-2)\lambda(n(z))
+ \Psi_{z+h}\overline{\Psi_z}.
+\label{eq:four-sign-kernel}
+\end{align}
+Consequently \eqref{eq:four-input} is a signed Fej\'er average of
+the complete actual four-sign kernel, including the additive factor
+\(\e^{-2\pi i\alpha h}\).
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:actual-A} in
+\(C(h)=\sum A_{z+h}\overline{A_z}\).  Since
+\(\lambda(q)^2=1\) and \(n(z+h)=n(z)+qh\), the displayed formula
+follows.
+\end{proof}
+
+\begin{remark}[TPC-128 components]
+One may first use the finite CRT expansion of TPC-128 and
+reparametrize a retained component.  The same theorem then holds
+with the enlarged progression step \(ask^2\ell^2\), while its tail
+and census remain separate inputs \citep{WangTPC128}.  The complete
+formula \eqref{eq:four-sign-kernel} does not require that optional
+truncation.
+\end{remark}
+
+\section{All prefixes and complete-family return}
+
+H3 requires the declared prefix family, not just one terminal
+interval.  For every actual block \(\xi\) and required prefix \(T\),
+form
+\[
+ A_{\xi,T},\quad N_{\xi,T},\quad V_{\xi,T},\quad
+ E_{\xi,T},\quad\mathfrak p_{\xi,T},\quad
+ C_{\xi,T}(h)
+\]
+by restricting the literal coefficient before applying
+\cref{thm:fejer}.  Choose \(H_{\xi,T}\) by a rule fixed before
+estimating the correlations.  Prefixes with \(V_{\xi,T}=0\) are
+zero and pass trivially; the normalized certificate is imposed only
+on the remaining prefixes.
+
+\begin{corollary}[Termwise H3 ledger]
+\label{cor:h3-ledger}
+Suppose every retained actual block-prefix passes
+\cref{def:typed}, and suppose the verified complete-family outer
+mass has cost \(X^{\ell_{\rm out}+o(1)}\) in the normalization of
+TPC-108/TPC-126.  Then the termwise return exponent is
+\begin{equation}
+ \eta_{\rm net}
+ =
+ \min\{\eta_{\rm diag},\eta_4\}-\ell_{\rm out}.
+\label{eq:net}
+\end{equation}
+At the local amplitude level, the square-root counterpart of a
+quadratic \(X^{-1/200+o(1)}\) target is
+\begin{equation}
+ \min\{\eta_{\rm diag},\eta_4\}
+ -\ell_{\rm out}\ge\frac1{400}.
+\label{eq:h3-threshold}
+\end{equation}
+The legacy \(1/200\) termwise linear-window screen is a deliberately
+stronger sufficient condition.  It is not the exact
+quadratic-to-amplitude conversion and is not necessary for the local
+Fej\'er certificate.
+\end{corollary}
+
+\begin{proof}
+\Cref{thm:transfer} gives the uniform block-prefix saving.  Sum with
+the separately verified outer absolute-mass bound, exactly as in
+the TPC-108 termwise ledger.
+\end{proof}
+
+\Cref{cor:h3-ledger} does not identify the local mass \(V\) with the
+final physical quadratic normalization, nor does it supply the
+prefactor and synthesis crosswalk needed at the strict endpoint.
+Those remain separate certificates.  It also does not replace the
+determinant/zero-mode
+compatibility of TPC-121/TPC-122
+\citep{WangTPC121,WangTPC122}.
+
+\section{Sharp structural stops}
+
+\begin{proposition}[Short-off-diagonal vanishing can still saturate]
+\label{prop:sparse}
+Fix \(H\ge2\).  Let \(A_z=1\) on \(m\) positions separated by at
+least \(H\), and \(A_z=0\) elsewhere in an interval of length
+\(N\asymp mH\).  At \(\alpha=0\),
+\[
+ C(h)=0\quad(0<|h|<H),\qquad
+ |S|=V=m,
+\]
+while
+\[
+ H\mathfrak p
+ =H\frac{m^2}{Nm}\asymp1.
+\]
+Thus no saving follows from vanishing short off-diagonals when the
+diagonal feasibility condition fails.
+\end{proposition}
+
+\begin{proof}
+The support separation proves the correlation statement.  The
+remaining identities follow from \(V=E=m\) and \(N\asymp mH\).
+\end{proof}
+
+\begin{proposition}[Generic phase alone is insufficient]
+\label{prop:phase-match}
+For any \(\alpha\), the bounded coefficient
+\(A_z=\e^{2\pi i\alpha z}\) satisfies
+\[
+ S(\alpha)=N.
+\]
+Hence neither \(N\|\alpha\|>1\) nor the Fej\'er identity gives
+cancellation without information about the literal coefficient.
+\end{proposition}
+
+\begin{proof}
+Every summand in \eqref{eq:S} equals \(1\).
+\end{proof}
+
+\paragraph{DIAGONAL STOP.}
+If no predeclared \(H\le N\) makes
+\(H\mathfrak p\) grow at the required power on every retained
+prefix, this certificate cannot give that saving.  Increasing \(H\)
+beyond the prefix length is not permitted.
+
+\paragraph{CIRCULARITY STOP.}
+The four-sign input must be proved directly from
+\eqref{eq:four-sign-kernel}.  Deducing it from the desired bound for
+\(S\) and feeding it back into \cref{thm:transfer} is circular.
+For a visibly local reduction, one should predeclare
+\(H\le N^{1-\varepsilon}\) (or another audited sublength range);
+choosing \(H\) only after observing a favorable global sum is not
+allowed.
+
+\paragraph{ABSOLUTE-VALUE STOP.}
+The minimal gate is the signed positive part in
+\eqref{eq:four-input}.  Replacing it by
+\(\sum_{h<H}|C(h)|\) is a valid but stronger sufficient condition.
+Failure of that stronger condition does not close the signed
+Fej\'er route.
+
+\paragraph{ARITHMETIC STOP.}
+No theorem in this paper estimates the growing four-Liouville
+expression \eqref{eq:four-sign-kernel} with its actual progression,
+masks, phase, physical weights, origins, and all-prefix uniformity.
+That is the remaining \(\Ltwo\) gate.
+
+\section{Verdict}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.47\textwidth}X@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+Sliding-window identity and Fej\'er inequality
+& Exact finite theorem (\(\Lzero\)).\\
+Participation normalization and exponent transfer
+& Exact deterministic certificate (\(\Lzero\)).\\
+Four-sign formula for the complete fixed-\(2\) literal block
+& Proven crosswalk (\(\Lone\)).\\
+Uniform diagonal participation on the full actual family
+& Must be audited; not asserted globally.\\
+Signed four-sign estimate \eqref{eq:four-input}
+& Not proved; new arithmetic input (\(\Ltwo\) if proved).\\
+H3 threshold, physical \(1/400\), or twin-prime theorem
+& Not proved.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+TPC-130 advances H3 by replacing ``control the \(TT^*\)
+off-diagonal'' with one normalized, all-prefix, non-circular
+four-sign inequality and a separate diagonal feasibility test.  The
+road remains open only if both tests pass on the actual family.
+This is a rigorous reduction, not a parity breakthrough, prime-pair
+lower bound, Hardy--Littlewood asymptotic, or proof of the twin-prime
+conjecture.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

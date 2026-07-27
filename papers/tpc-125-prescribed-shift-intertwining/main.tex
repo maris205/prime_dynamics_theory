@@ -1,0 +1,461 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\Ran}{\operatorname{ran}}
+\newcommand{\Ker}{\operatorname{ker}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\GOI}{\textsc{go-interface}}
+\newcommand{\STOP}{\textsc{stop-declared-route}}
+\newcommand{\NT}{\textsc{not-testable}}
+
+\title{\textbf{Prescribed-\(h_0\) Intertwining through the Physical Archive}\\
+\large Exact Commutator Defects, Direct Slicing, and Sharp
+De-Aliasing Costs}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A fixed-shift hard packet cannot be recovered from a frozen or
+averaged family merely by retaining the same notation \(h_0\).  We
+give two exact and disjoint invocation routes.  For a shift-tagged
+archive with stages \(T_j\), prescribed-shift selectors \(P_j\), and
+declared sliced stages \(T_j^{(0)}\), define
+\[
+ D_j=P_jT_j-T_j^{(0)}P_{j-1}.
+\]
+The full slicing defect is
+\[
+ P_sT_s\cdots T_1-T_s^{(0)}\cdots T_1^{(0)}P_0
+ =
+ \sum_{j=1}^s
+ T_s^{(0)}\cdots T_{j+1}^{(0)}
+ D_jT_{j-1}\cdots T_1.
+\]
+Thus stagewise commutation is a proof-carrying sufficient condition
+for exact direct slicing, while a nonzero composite defect on the
+literal packet stops that declared route.  If only averaged
+observations are available, the sharp squared evaluation cost is
+\[
+ K_X(h_0)=b(h_0)^*(A^*\Omega A)^\dagger b(h_0),
+\]
+finite exactly when \(b(h_0)\in\Ran(A^*\Omega A)\).  An averaged
+amplitude saving \(\sigma\) and
+\(K_X(h_0)\le X^{2\lambda_{\rm loc}+o(1)}\) yield at most the
+fixed-shift saving \(\sigma-\lambda_{\rm loc}\).  Direct slicing and
+de-aliasing are not additive evidence for the same operation.  The
+identities are \(\Lzero\), and their attachment to the TPC-123/124
+archive is conditional \(\Lone\).  The actual growing shift archive
+and profile space are absent, so the interface remains \(\NT\).
+No \(\Ltwo\) arithmetic estimate or prime-pair theorem is proved.
+\end{abstract}
+
+\section{Two routes that must not be conflated}
+
+The original hard packet is defined at one prescribed nonzero shift
+\(h_0\).  TPC-119 therefore requires later operations to retain that
+shift, while TPC-115 shows that evaluation at one shift can have a
+nontrivial or infinite cost after averaging
+\citep{WangTPC115,WangTPC119}.  TPC-123 and TPC-124 provide the
+appropriate archive and physical-reassembly schemas
+\citep{WangTPC123,WangTPC124}.  They still leave two logically
+different possibilities:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \emph{direct slicing}: every stage preserves shift labels and
+the \(h_0\) subspace is selected exactly;
+\item \emph{de-aliasing}: only averaged observations are bounded, and
+fixed evaluation is reconstructed from the actual profile space.
+\end{enumerate}
+If the first route holds, there is no localization inversion.  If
+only the second route is available, its Christoffel cost must be
+charged.  Neither route proves an arithmetic bound.
+
+\begin{definition}[Claim levels]
+Finite operator and pseudoinverse identities are \(\Lzero\).  Their
+verified attachment to the literal fixed-\(h_0\) packet is \(\Lone\).
+A growing coefficient-specific fixed-shift power saving is \(\Ltwo\).
+\end{definition}
+
+\section{Shift selectors and local defects}
+
+For \(0\le j\le s\), let \(E_j\) be the full shift-tagged record space
+at archive stage \(j\), and let \(E_j^{(0)}\) be the declared
+prescribed-\(h_0\) record space.  Let
+\[
+ P_j:E_j\to E_j^{(0)}
+\]
+be coordinate selection and
+\[
+ T_j:E_{j-1}\to E_j,\qquad
+ T_j^{(0)}:E_{j-1}^{(0)}\to E_j^{(0)}
+\]
+be the full and declared sliced stages.
+
+\begin{definition}[Stage shift defect]
+The \(j\)-th intertwining defect is
+\begin{equation}
+ D_j=P_jT_j-T_j^{(0)}P_{j-1}.
+ \label{eq:Dj}
+\end{equation}
+\end{definition}
+
+The equality \(D_j=0\) says more than equality of two scalar outputs:
+it says that selection can be moved through the stage for every input
+column.  A path implementation may check this entrywise by verifying
+that every nonzero edge keeps its shift tag.
+
+\section{The exact composite-defect telescope}
+
+\begin{theorem}[Prescribed-shift intertwining telescope]
+\label{thm:telescope}
+For arbitrary compatible stage maps,
+\begin{equation}
+\boxed{
+ P_sT_s\cdots T_1
+ -
+ T_s^{(0)}\cdots T_1^{(0)}P_0
+ =
+ \sum_{j=1}^s
+ T_s^{(0)}\cdots T_{j+1}^{(0)}
+ D_j
+ T_{j-1}\cdots T_1.}
+\label{eq:telescope}
+\end{equation}
+Empty products are identities.
+\end{theorem}
+
+\begin{proof}
+Insert the intermediate composites
+\[
+ T_s^{(0)}\cdots T_{j+1}^{(0)}
+ P_jT_j\cdots T_1
+\]
+for \(j=s,s-1,\ldots,0\).  The difference between consecutive terms
+is exactly
+\[
+ T_s^{(0)}\cdots T_{j+1}^{(0)}
+ (P_jT_j-T_j^{(0)}P_{j-1})
+ T_{j-1}\cdots T_1.
+\]
+Summing telescopes to \eqref{eq:telescope}.
+\end{proof}
+
+\begin{corollary}[Stagewise sufficient certificate]
+\label{cor:stagewise}
+If \(D_j=0\) for all \(j\), then
+\[
+ P_sT_s\cdots T_1
+ =
+ T_s^{(0)}\cdots T_1^{(0)}P_0.
+\]
+The direct \(h_0\) slice then intertwines coefficientwise with the
+full archive.
+\end{corollary}
+
+\begin{corollary}[Actual-packet stop witness]
+\label{cor:packet}
+Let
+\[
+ \Delta_X=
+ P_sT_s\cdots T_1
+ -
+ T_s^{(0)}\cdots T_1^{(0)}P_0.
+\]
+If \(\Delta_Xc_X\ne0\), the declared sliced chain does not reproduce
+the direct fixed-\(h_0\) output on the literal packet \(c_X\).
+\end{corollary}
+
+\begin{remark}[Operator and one-vector quantifiers]
+\(\Delta_Xc_X=0\) verifies one literal vector.  The stronger archive
+identity \(\Delta_X=0\) verifies every native atom and is the
+appropriate coefficientwise H8 interface.  Conversely, nonzero local
+\(D_j\) may cancel in the sum \eqref{eq:telescope}; it stops a claimed
+stagewise intertwining proof but does not alone prove
+\(\Delta_Xc_X\ne0\).
+\end{remark}
+
+\section{A minimal cross-shift leakage example}
+
+\begin{proposition}[Frozen notation does not preserve a shift]
+\label{prop:leak}
+There is a two-shift stage whose selected output contains a
+coefficient from the other shift, even though the declared
+fixed-shift submatrix is unchanged.
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+ P=\begin{pmatrix}1&0\end{pmatrix},\qquad
+ T=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad
+ T^{(0)}=(1).
+\]
+Then
+\[
+ PT-T^{(0)}P=\begin{pmatrix}0&1\end{pmatrix}\ne0.
+\]
+The second source coordinate leaks into the selected output.  Renaming
+that output ``\(h_0\)'' does not remove the defect.
+\end{proof}
+
+\section{Sharp de-aliasing on an actual profile space}
+
+Suppose direct slicing is unavailable and an estimate controls only
+observations of a finite-dimensional profile \(f\in V_X\).  Let
+\[
+ A:V_X\to Y_X,\qquad \Omega=\Omega^*>0
+\]
+be the declared observation and weight, and put
+\[
+ G_{\rm prof}=A^*\Omega A.
+\]
+Let the fixed-shift functional be
+\[
+ \operatorname{ev}_{h_0}(f)=\langle b_0,f\rangle.
+\]
+
+\begin{theorem}[Sharp finite fixed-shift evaluation]
+\label{thm:localization}
+There is a finite \(K\) such that
+\[
+ |\langle b_0,f\rangle|^2
+ \le K\langle Af,\Omega Af\rangle
+ \qquad(f\in V_X)
+\]
+if and only if
+\[
+ b_0\in\Ran(G_{\rm prof}).
+\]
+When finite, the sharp constant is
+\[
+ \boxed{
+ K_X(h_0)=b_0^*G_{\rm prof}^\dagger b_0.}
+\]
+\end{theorem}
+
+\begin{proof}
+Diagonalize the positive semidefinite matrix
+\(G_{\rm prof}\).  If \(b_0\notin\Ran(G_{\rm prof})\), its projection
+onto \(\Ker(G_{\rm prof})=\Ker(A)\) is nonzero.  A corresponding
+kernel vector has zero observation and nonzero target evaluation, so
+no finite inequality exists.
+
+If \(b_0\in\Ran(G_{\rm prof})\), write
+\[
+ \langle b_0,f\rangle
+ =
+ \langle G_{\rm prof}^{\dagger/2}b_0,
+ G_{\rm prof}^{1/2}f\rangle.
+\]
+Cauchy--Schwarz gives the asserted constant.  Equality is attained
+along the nonzero vector \(f=G_{\rm prof}^\dagger b_0\) when
+\(b_0\ne0\).  When \(b_0=0\), the sharp constant is \(K=0\) and the
+target functional vanishes identically, so no nonzero extremizer is
+needed.  Thus the constant is sharp
+\citep{BenIsraelGreville,WangTPC115}.
+\end{proof}
+
+\begin{corollary}[Exact exponent transfer]
+\label{cor:exponent}
+Assume the actual averaged profile satisfies
+\[
+ \|Af_X\|_\Omega
+ \le X^{1-\sigma+o(1)}
+\]
+and
+\[
+ K_X(h_0)\le X^{2\lambda_{\rm loc}+o(1)}.
+\]
+Then
+\[
+ |f_X(h_0)|
+ \le
+ X^{1-(\sigma-\lambda_{\rm loc})+o(1)}.
+\]
+This certificate gives a positive fixed-shift power saving only when
+\(\sigma>\lambda_{\rm loc}\).
+\end{corollary}
+
+\begin{proof}
+Take square roots in \cref{thm:localization} and insert the two
+assumptions.
+\end{proof}
+
+\begin{remark}[Squared versus amplitude cost]
+\(K_X\) is a squared evaluation cost.  The amplitude ledger charges
+\(\sqrt{K_X}\), hence \(\lambda_{\rm loc}\), not
+\(2\lambda_{\rm loc}\).  The actual endpoint registry must record
+this convention exactly.
+\end{remark}
+
+\section{Direct slicing is not averaged recovery}
+
+\begin{proposition}[An average can erase fixed evaluation]
+\label{prop:average}
+Two profiles can have the same average and different values at
+\(h_0\).
+\end{proposition}
+
+\begin{proof}
+On two shifts, let \(A(x_1,x_2)=(x_1+x_2)/2\) and evaluate the first
+coordinate.  The profiles \((1,-1)\) and \((0,0)\) have the same
+average but different first coordinates.  Equivalently,
+\((1,-1)\in\Ker(A)\) is a witness that the evaluation vector is not
+in \(\Ran(A^*A)\).
+\end{proof}
+
+Thus a proof of \cref{cor:stagewise} uses no Christoffel inversion,
+whereas a proof based only on \(A f_X\) must invoke
+\cref{thm:localization}.  Charging both as independent losses for the
+same map double-counts; using the direct identity to erase a
+localization loss when only averaged evidence is available is equally
+invalid.
+
+\section{Relation to the determinant and zero-mode interfaces}
+
+TPC-121 and TPC-122 deliberately retain literal fixed-\(h_0\)
+coefficients \citep{WangTPC121,WangTPC122}.  Their conditional
+outputs are, schematically,
+\[
+ \lambda_D^{\rm cert}
+ \quad\text{and}\quad
+ \eta_Z^{\rm cert}.
+\]
+This input type does not prove that a preceding frozen family was
+de-aliased correctly.  To attach either formula after the physical
+archive, the following must be supplied:
+\begin{enumerate}[label=\textbf{I\arabic*.},leftmargin=2.7em]
+\item the shift-tagged TPC-123 path archive;
+\item the literal TPC-124 grouping and block reassembly;
+\item either the direct operator identity \(\Delta_X=0\), or the
+actual profile space and its finite \(K_X(h_0)\);
+\item one inherited normalization and no reuse of determinant reserve
+as localization or physical endpoint slack.
+\end{enumerate}
+Even after these items, the growing inputs in TPC-121 and TPC-122
+remain unproved.  In particular, this paper cannot fill H3, H5, H7 or
+H8 by itself.
+
+\section{Verdicts and quantifier ledger}
+
+\begin{definition}[Paper-specific verdicts]
+\(\GOI\) means that the relevant coefficientwise operator identity or
+sharp localization input is proved for the declared growing family.
+\(\STOP\) means an exact composite defect or kernel witness stops the
+specified direct or averaged route.  \(\NT\) means that the literal
+shift archive, profile space or growing cost is absent.
+\end{definition}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.23\textwidth}P{0.31\textwidth}Y@{}}
+\toprule
+Target & Required evidence & Verdict rule\\
+\midrule
+Direct archive slice
+& \(\Delta_X=0\) coefficientwise for the symbolic family
+& Nonzero \(\Delta_Xc_X\) is \(\STOP\); missing stages are \(\NT\).\\
+Stagewise proof archive
+& Every \(D_j=0\)
+& A nonzero \(D_j\) stops that local proof, not every composite proof.\\
+Finite de-aliasing
+& \(b_0\in\Ran(G_{\rm prof})\)
+& Kernel witness is \(\STOP\) for the selected profile model.\\
+Growing localization
+& Actual \(K_X(h_0)\) bound in one quantifier scope
+& A finite-\(X\) computation alone is \(\NT\) asymptotically.\\
+Fixed-shift saving
+& Averaged arithmetic theorem and \(\sigma>\lambda_{\rm loc}\)
+& The interface theorem alone is not \(\Ltwo\).\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The current TPC-123/124 outputs are exact schemas and finite
+regression models, not the complete growing shift-tagged archive.
+The actual profile space required by TPC-115 is likewise absent.
+Therefore
+\[
+ \boxed{
+ \operatorname{FixedShift}_{125}
+ =
+ \NT\ \text{from current artifacts}.}
+\]
+This does not show that localization is impossible or that the
+direct slice must fail.
+
+\section{Reproducible audit and claim boundary}
+
+The standard-library script
+\texttt{experiments/tpc125\_shift\_intertwining\_audit.py} uses exact
+rational matrices.  It checks two commuting stages,
+\cref{thm:telescope}, a cross-shift leakage defect, a finite
+localization case, an infinite-cost kernel witness, and the amplitude
+exponent convention.  It is a regression test for the finite
+theorems, not the missing TPC profile.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.42\textwidth}Y@{}}
+\toprule
+Statement & Status\\
+\midrule
+Intertwining telescope and leakage witness
+& Exact \(\Lzero\).\\
+Sharp localization and exponent transfer
+& Exact \(\Lzero\).\\
+Attachment to the TPC-123/124 archive
+& Conditional \(\Lone\).\\
+Complete growing shift-tagged archive/profile
+& Absent; \(\NT\).\\
+Growing averaged or fixed-\(h_0\) arithmetic saving
+& Not proved; no \(\Ltwo\) event.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Explicit exclusions.}
+This paper proves no low-dimensional model for the actual shift
+profile, no growing Christoffel bound, no signed affine M\"obius
+estimate of TPC-108, no determinant or zero-mode exponent, no
+physical endpoint below \(1/400\), no parity breakthrough, no
+Hardy--Littlewood asymptotic, and no prime-pair or twin-prime theorem
+\citep{WangTPC108,WangTPC120}.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

@@ -1,0 +1,512 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\e}{\mathrm e}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\textbf{Determinant-Two Liouville Pullback}\\
+\large An Exact Shift-Two Frame for Literal Affine M\"obius Pairs
+and the Growing-Progression Barrier}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Consider positive affine forms
+\[
+ D(z)=d+sz,\qquad V(z)=u+az,\qquad su-ad=2,
+\]
+on one literal TPC generic interval.  On the primitive branches
+exported in TPC-93, \(a,s\) are positive, coprime, and odd.  The
+integer
+\[
+ n=sV(z)=aD(z)+2=su+as z
+\]
+therefore gives an order-preserving bijection from the affine
+parameter to one residue class modulo \(as\).  Complete
+multiplicativity of the Liouville function gives the exact identity
+\[
+ \boxed{\;
+ \mu(D(z))\mu(V(z))
+ =
+ \mu^2(D(z))\mu^2(V(z))\lambda(as)
+ \lambda(n-2)\lambda(n).\;}
+\]
+We insert this identity into the full literal TPC-108 coefficient,
+retaining its coprimality mask, periodic factor, physical weight,
+additive phase, interval origin, and outer key.  Thus the
+determinant-two signed problem is exactly a shift-two Liouville
+correlation on a \emph{growing arithmetic progression}, with two
+quotient-squarefree masks.  The pullback itself has no exponent loss
+and preserves every prefix.  It does not turn the block into an
+unrestricted correlation, and known fixed-form logarithmic theorems
+do not supply the required growing-modulus, ordinary-weight,
+all-prefix estimate.  The algebra is \(\Lzero\); its
+provenance-preserving attachment is \(\Lone\); no \(\Ltwo\)
+cancellation is proved.
+\end{abstract}
+
+\section{Literal determinant-two input}
+
+Fix an interval \(I\subset\mathbb Z\).  Assume throughout that
+\begin{equation}
+ D(z)=d+sz>0,\qquad V(z)=u+az>0
+ \quad(z\in I),
+\label{eq:positive}
+\end{equation}
+where \(a,s\in\mathbb N\) and
+\begin{equation}
+ su-ad=2.
+\label{eq:det-two}
+\end{equation}
+The resolved nonempty branches of TPC-93 additionally satisfy
+\begin{equation}
+ (a,s)=1,\qquad (as,2)=1,\qquad (d,s)=(u,a)=1
+\label{eq:primitive}
+\end{equation}
+\citep{WangTPC93}.  In particular, \(a\) and \(s\) are odd.
+The positivity convention in \eqref{eq:positive} avoids extending
+\(\lambda\) to signed integers.  A branch on which a form changes
+sign must first be partitioned at its zero; this is an exact finite
+operation and is not an arithmetic estimate.
+
+For one TPC-108 key \(\xi\), the literal inner coefficient is
+\begin{align}
+ A_{\xi,X}(z)
+ ={}&
+ \mu(D(z))\mu(V(z))
+ \one_{(B,V(z))=1}
+\notag\\
+ &\times
+ \chi(\tau+Bz)W_X(\tau+Bz),
+\label{eq:literal-A}
+\end{align}
+and its generic transform is
+\begin{equation}
+ S_{\xi,X}(\alpha)
+ =
+ \sum_{z\in I}A_{\xi,X}(z)\e^{-2\pi i\alpha z}.
+\label{eq:literal-S}
+\end{equation}
+All symbols in \eqref{eq:literal-A} are literal: \(B,\tau\), the
+fixed-period factor \(\chi\), the physical multiplier \(W_X\), and
+the interval are not replaced by averaged surrogates
+\citep{WangTPC108}.
+
+\section{The exact shift-two frame}
+
+\begin{theorem}[Determinant-two pullback]
+\label{thm:pullback}
+Under \eqref{eq:positive}--\eqref{eq:primitive}, put
+\begin{equation}
+ q=as,\qquad n_0=su=ad+2,\qquad n(z)=n_0+qz.
+\label{eq:n-frame}
+\end{equation}
+Then:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item
+\[
+ n(z)=sV(z)=aD(z)+2;
+\]
+\item \(z\mapsto n(z)\) is an order-preserving bijection from \(I\)
+onto
+\begin{equation}
+ \mathcal N_I
+ =
+ \{n_0+qz:z\in I\}
+ =
+ \{n\in n(I):n\equiv0\pmod s,\ n\equiv2\pmod a\};
+\label{eq:progression}
+\end{equation}
+\item on this progression,
+\[
+ D(z)=\frac{n(z)-2}{a},
+ \qquad
+ V(z)=\frac{n(z)}s;
+\]
+\item for every \(z\in I\),
+\begin{equation}
+ \boxed{
+ \mu(D(z))\mu(V(z))
+ =
+ \lambda(q)\lambda(n(z)-2)\lambda(n(z))
+ \mu^2\!\left(\frac{n(z)-2}{a}\right)
+ \mu^2\!\left(\frac{n(z)}s\right).}
+\label{eq:mobius-pullback}
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The determinant equation gives
+\[
+ sV(z)-aD(z)
+ =s(u+az)-a(d+sz)=su-ad=2.
+\]
+This proves (i), and \eqref{eq:n-frame} follows by expansion.
+Because \(q>0\), the map is injective and order preserving.  Its
+image obeys the two displayed congruences.  Conversely, since
+\((a,s)=1\), those congruences select one residue modulo \(as\), and
+the interval restriction selects exactly \(n(I)\), proving (ii).
+Part (iii) is immediate.
+
+For every positive integer \(m\),
+\(\mu(m)=\mu^2(m)\lambda(m)\).  Complete multiplicativity and
+\(\lambda(t)^2=1\) give
+\begin{align*}
+ \lambda(D(z))\lambda(V(z))
+ &=
+ \lambda(a)\lambda(s)
+ \lambda(aD(z))\lambda(sV(z))\\
+ &=\lambda(as)\lambda(n(z)-2)\lambda(n(z)).
+\end{align*}
+Multiplying by the two squarefree indicators proves
+\eqref{eq:mobius-pullback}.
+\end{proof}
+
+\begin{remark}[Why \(h_0=2\) is used literally]
+For determinant \(h_0\), the same calculation yields
+\(sV=aD+h_0\) and a shift-\(h_0\) Liouville pair.  The present paper
+fixes \(h_0=2\), and \eqref{eq:primitive} then forces the physical
+progression modulus \(as\) to be odd.  No average over shifts and no
+replacement of \(2\) by a convenient displacement occurs.
+\end{remark}
+
+\section{Arithmetic geometry specific to determinant two}
+
+The pullback also gives two exact structural checks that are useful
+when later decompositions are proposed.
+
+\begin{proposition}[Common-divisor and parity classification]
+\label{prop:gcd-classification}
+For every \(z\in I\),
+\[
+ \gcd(D(z),V(z))\mid2.
+\]
+Under \((as,2)=1\), the two affine values have the same parity.
+Consequently:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item if they are odd, their gcd is \(1\);
+\item if they are even, their gcd is \(2\);
+\item on the simultaneous squarefree support, the even--even case is
+impossible; hence \(D(z),V(z)\) are odd and coprime, and
+\begin{equation}
+ \mu(D(z))\mu(V(z))
+ =\mu(D(z)V(z)).
+\label{eq:quadratic-compression}
+\end{equation}
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Every common divisor divides
+\(sV(z)-aD(z)=2\).  Since \(a\) and \(s\) are odd, reduction of the
+same identity modulo \(2\) gives \(V(z)\equiv D(z)\pmod2\), proving
+the first two cases.  If both values are squarefree and odd, they are
+coprime and multiplicativity of \(\mu\) gives
+\eqref{eq:quadratic-compression}.  If both were squarefree and even,
+write \(D=2D'\), \(V=2V'\), with \(D',V'\) odd.  Dividing the
+determinant identity by \(2\) would give
+\[
+ sV'-aD'=1.
+\]
+The left side is even because \(a,s,D',V'\) are odd, a
+contradiction.
+\end{proof}
+
+\begin{remark}[A single sign is not a linear sign]
+Equation \eqref{eq:quadratic-compression} compresses the active
+two-form sign to one M\"obius value of a reducible quadratic
+polynomial.  It does not turn it into \(\mu(cz+r)\).  Therefore a
+single-linear-form estimate cannot be inserted merely because only
+one \(\mu\) symbol remains.
+\end{remark}
+
+\begin{proposition}[Ordered sequence isometry]
+\label{prop:isometry}
+Let \(c_z\) be any complex sequence on \(I\), and put
+\(\widetilde c_{n(z)}=c_z\) on \(\mathcal N_I\).  Then, for every
+\(1\le p<\infty\),
+\[
+ \sum_{z\in I}|c_z|^p
+ =
+ \sum_{n\in\mathcal N_I}|\widetilde c_n|^p,
+\]
+and the terminal maximum and endpoint-anchored variation satisfy
+\begin{align*}
+ \max_{T\in I}\left|\sum_{\substack{z\in I\\z\le T}}c_z\right|
+ &=
+ \max_{M\in\mathcal N_I}
+ \left|\sum_{\substack{n\in\mathcal N_I\\n\le M}}
+ \widetilde c_n\right|,\\
+ |c_{\max I}|+\sum_{z,z+1\in I}|c_{z+1}-c_z|
+ &=
+ |\widetilde c_{\max\mathcal N_I}|
+ +\sum_{\substack{n,n+q\in\mathcal N_I}}
+ |\widetilde c_{n+q}-\widetilde c_n|.
+\end{align*}
+\end{proposition}
+
+\begin{proof}
+The map \(z\mapsto n_0+qz\) is an order-preserving bijection, so
+each identity is a relabeling of the same finite list.
+\end{proof}
+
+The last proposition shows that the sharp signed-prefix/BV norm of
+TPC-122 is transported exactly \citep{WangTPC122}.  Measuring
+variation between consecutive ambient integers instead of
+consecutive progression points would change the norm and is not
+authorized by the pullback.
+
+\section{Complete coefficient transport}
+
+Define, for \(n\in\mathcal N_I\),
+\begin{align}
+ z(n)&=\frac{n-n_0}{q},\notag\\
+ \mathcal Q_{a,s}(n)
+ &=
+ \mu^2\!\left(\frac{n-2}{a}\right)
+ \mu^2\!\left(\frac ns\right),\notag\\
+ \mathcal W_{\xi,X}(n)
+ &=
+ \one_{(B,n/s)=1}
+ \chi(\tau+Bz(n))W_X(\tau+Bz(n)).
+\label{eq:transported-data}
+\end{align}
+
+\begin{corollary}[Literal block in the shift-two frame]
+\label{cor:literal}
+The transform \eqref{eq:literal-S} has the exact representation
+\begin{equation}
+\boxed{
+ S_{\xi,X}(\alpha)
+ =
+ \lambda(q)
+ \sum_{n\in\mathcal N_I}
+ \mathcal Q_{a,s}(n)
+ \lambda(n-2)\lambda(n)
+ \mathcal W_{\xi,X}(n)
+ \e^{-2\pi i\alpha z(n)}.}
+\label{eq:literal-pullback}
+\end{equation}
+Every initial \(z\)-prefix corresponds to the same initial
+\(n\)-prefix, and
+\begin{equation}
+ \sum_{z\in I}|A_{\xi,X}(z)|
+ =
+ \sum_{n\in\mathcal N_I}
+ \mathcal Q_{a,s}(n)|\mathcal W_{\xi,X}(n)|.
+\label{eq:mass-preserved}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Insert \eqref{eq:mobius-pullback} in
+\eqref{eq:literal-A}--\eqref{eq:literal-S}.  The mask and all
+remaining factors become \eqref{eq:transported-data}.  The map in
+\cref{thm:pullback} is an order-preserving bijection, which proves
+both the prefix assertion and \eqref{eq:mass-preserved}.
+\end{proof}
+
+\begin{remark}[The phase is not silently simplified]
+One may write
+\[
+ \e^{-2\pi i\alpha z(n)}
+ =
+ \e^{-2\pi i\alpha(n-n_0)/q}
+\]
+on \(\mathcal N_I\).  The quotient is integral there.  We retain
+\(z(n)\) in \eqref{eq:literal-pullback} so that no choice of a
+representative for \(\alpha/q\) changes the stated physical phase.
+\end{remark}
+
+\section{What the pullback does and does not prove}
+
+\begin{proposition}[No algebraic exponent loss]
+\label{prop:no-loss}
+Let
+\[
+ V_{\xi,X}=\sum_{z\in I}|A_{\xi,X}(z)|.
+\]
+Any estimate proved for the right side of
+\eqref{eq:literal-pullback} in its displayed progression, masks,
+weight, phase, and all-prefix quantifiers,
+\[
+ |S_{\xi,X}(\alpha)|
+ \le X^{-\eta+o(1)}V_{\xi,X},
+\]
+returns the same exponent \(\eta\) to the original block.
+\end{proposition}
+
+\begin{proof}
+The two sums are equal and their absolute comparison masses agree
+by \eqref{eq:mass-preserved}.
+\end{proof}
+
+\begin{proposition}[Growing-progression firewall]
+\label{prop:firewall}
+The identity \eqref{eq:literal-pullback} does not by itself reduce
+the required estimate to an unrestricted sum
+\(\sum_{n\le y}\lambda(n-2)\lambda(n)\).  A valid returning theorem
+must retain at least:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item the actual, generally growing modulus \(q=as\) and residue
+\(n_0\bmod q\);
+\item both quotient-squarefree masks \(\mathcal Q_{a,s}\);
+\item the actual interval origin and every required prefix;
+\item the coprimality and periodic masks in \(\mathcal W_{\xi,X}\);
+\item the physical weight and additive phase; and
+\item uniformity over the predeclared literal outer family.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Each item occurs explicitly in \eqref{eq:literal-pullback}.  Dropping
+one changes either the support or the coefficient.  Equality to an
+unrestricted correlation would already fail for the constant
+coefficient when \(q>1\), since only one residue class is sampled.
+\end{proof}
+
+The logarithmically averaged two-point theorem applies to fixed
+affine forms with reciprocal weight and its own terminal-window
+quantifiers \citep{Tao2016LogChowla}.  It is not an
+ordinary-weight, power-rate theorem uniform in the growing data of
+\cref{prop:firewall}.  This observation is a type check, not a
+negative statement about that theorem.
+
+\section{A finite determinant-two example}
+
+Take
+\[
+ a=3,\qquad s=5,\qquad d=u=1.
+\]
+Then \(su-ad=2\), \(q=15\), and
+\[
+ D(z)=1+5z,\qquad V(z)=1+3z,\qquad n(z)=5+15z.
+\]
+The first few values illustrate both exact zeros and surviving
+signs:
+\begin{center}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+\(z\)&\(n\)&\(D\)&\(V\)&\(\mu(D)\mu(V)\)\\
+\midrule
+0&5 &1 &1 & \(1\)\\
+1&20&6 &4 & \(0\)\\
+2&35&11&7 & \(1\)\\
+3&50&16&10& \(0\)\\
+4&65&21&13& \(-1\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+For example, at \(z=4\),
+\[
+ \lambda(15)\lambda(63)\lambda(65)=-1
+ =\mu(21)\mu(13),
+\]
+and both quotient-squarefree masks equal \(1\).  At \(z=1\), the
+Liouville product is still a sign, but the quotient-squarefree mask
+vanishes because \(V=4\).  This is why that mask cannot be dropped
+after the shift-two sign has been exposed.
+
+\section{Stop/go certificate}
+
+For a pulled-back block let \(N=|I|\) and \(q=as\).
+
+\paragraph{GO.}
+Continue through this frame only if a later theorem is stated on the
+actual progression and controls all literal masks, weights, phases,
+origins, and prefixes.  Because \cref{prop:no-loss} is exact, a
+proved power saving then returns without an additional algebraic
+loss.
+
+\paragraph{SHORT STOP.}
+If \(N\) is below the predeclared long-block threshold, the
+arithmetic-progression reformulation creates no new averaging.  The
+block remains in the short-fiber ledger.
+
+\paragraph{UNIFORMITY STOP.}
+If the modulus, mask, or interval range lies outside a cited
+theorem's uniformity, that theorem is not callable.  One may not
+replace \(q\) by a fixed modulus or the progression by all integers.
+
+\paragraph{ARITHMETIC STOP.}
+The statement
+\[
+ \max_{T\in I}
+ \left|
+ \sum_{\substack{n\in\mathcal N_I\\z(n)\le T}}
+ \mathcal Q_{a,s}(n)\lambda(n-2)\lambda(n)
+ \mathcal W_{\xi,X}(n)\e^{-2\pi i\alpha z(n)}
+ \right|
+ \ll X^{-\eta}V_{\xi,X}
+\]
+with a fixed \(\eta>0\) is a new fixed-shift arithmetic input.  It is
+not proved here and must be labelled \(\Ltwo\) if established.
+
+\section{Claim boundary}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.46\textwidth}X@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+Determinant-two \(n\)-frame and identity
+\eqref{eq:mobius-pullback}
+& Exact finite algebra (\(\Lzero\)).\\
+Order, prefix, phase, mask, and mass preservation
+& Exact finite algebra (\(\Lzero\)).\\
+Attachment to every verified TPC-93/TPC-108 primitive branch
+& Literal fixed-\(2\) interface (\(\Lone\)).\\
+Uniform growing-progression cancellation
+& Not proved; new arithmetic input (\(\Ltwo\) if proved).\\
+H3, positive zero-mode exponent, or physical endpoint
+& Not proved.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+TPC-127 gives a canonical arithmetic coordinate for the signed
+determinant-two block.  It is a strict improvement in definition:
+the remaining sign is now the literal shift-two Liouville product,
+but on a sparse growing progression and behind quotient-squarefree
+masks.  The next finite task is to expand those masks with their
+actual congruence and tail costs.  No parity breakthrough,
+prime-pair lower bound, Hardy--Littlewood asymptotic, or twin-prime
+conclusion is claimed.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

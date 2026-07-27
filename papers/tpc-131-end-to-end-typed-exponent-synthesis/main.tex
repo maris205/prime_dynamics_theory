@@ -1,0 +1,619 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+  pdftitle={End-to-End Endpoint Synthesis on the Literal Fixed-Shift Carrier},
+  pdfauthor={Liang Wang},
+  pdfsubject={Acyclic proof certificates, typed exponent transport, and strict physical slack},
+  pdfkeywords={fixed shift, exponent ledger, proof DAG, physical synthesis, endpoint certificate}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Lam}{\Lambda_{\mathrm{phys}}}
+\newcommand{\epsend}{\sigma_{\mathrm{raw}}}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cR}{\mathcal R}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{End-to-End Endpoint Synthesis on the Literal}\\
+\textbf{Fixed-Shift Carrier: Acyclic Proof Certificates,}\\
+\textbf{Typed Exponent Transport, and Strict Physical Slack}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The fixed-shift TPC program now has exact local certificates for
+physical frames, native grouping, localization, cover, reconnection,
+determinant energy, and the distinguished zero mode.  A remaining
+risk is not a missing local identity but an invalid global
+composition: circular hypotheses, repeated physical losses,
+energy--amplitude confusion, or reuse of one saving in two ledgers.
+We give an end-to-end typed synthesis theorem that excludes those
+errors.  A proof-carrying route is represented by an acyclic
+dependency graph with a semantic target firewall and by an
+occurrence-level physical-event registry.  Squarefree truncation,
+zero-mode content, and physical high-frequency tails receive
+different namespaces.  If every nonsoft literal packet has uniform
+raw saving \(X^{-\sigma_{\rm raw}}\), the complete soft remainder is
+\(o(X)\), and the physical synthesis cost is
+\(X^{\Lambda_{\rm phys}+o(1)}\), then the original hard packet is
+\[
+ O\!\left(X^{1-\sigma_{\rm raw}+\Lambda_{\rm phys}+o(1)}\right)
+ +o(X).
+\]
+Thus only the strict inequality
+\(\sigma_{\rm raw}>\Lambda_{\rm phys}\) closes the route.  The
+MVP1 threshold \(1/400\) is a specialization.  The
+determinant--zero reserve is proved to be a separate admissibility
+quantity and cannot be spent at the physical endpoint.  The paper is
+an \(\Lzero/\Lone\) composition theorem and audit format.  It proves
+no growing coefficient-specific arithmetic estimate.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed shift; typed exponent ledger;
+proof DAG; physical synthesis; determinant zero mode; endpoint
+certificate.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Claim boundary.}
+No input below supplies a M\"obius, Liouville, or prime-pair
+cancellation theorem.  A finite exact regression checks the
+certificate language only.  Every growing arithmetic exponent used
+by an eventual application must be supplied by a separate theorem on
+the actual fixed-\(h_0\) carrier.
+\end{minipage}}
+
+\section{Why a final type check is necessary}
+
+TPC-113--119 isolate the physical frame, grouping, localization,
+complete tail, cover, endpoint, and reconnection interfaces
+\citep{WangTPC113,WangTPC114,WangTPC115,WangTPC116,WangTPC117,
+WangTPC118,WangTPC119}.  TPC-121 and TPC-122 isolate sufficient
+determinant and zero-mode exponent ledgers
+\citep{WangTPC121,WangTPC122}.  TPC-123--130 are designed to expose a
+literal native archive and one arithmetic reduction chain
+\citep{WangTPC123,WangTPC124,WangTPC125,WangTPC126,WangTPC127,
+WangTPC128,WangTPC129,WangTPC130}.  These pieces do not compose
+merely because their displayed powers look compatible.
+
+There are four independent failure modes.
+\begin{enumerate}[leftmargin=2em]
+\item A premise may be a renamed form of the desired conclusion.
+\item The same physical event may be charged twice, or two separate
+  occurrences of one formula may be merged and undercharged.
+\item An energy exponent may be entered as an amplitude exponent.
+\item An arithmetic saving, determinant reserve, or soft-remainder
+  estimate may be recycled as physical endpoint slack.
+\end{enumerate}
+We prevent these errors before stating the synthesis theorem.
+
+\section{Typed route records and three tail namespaces}
+
+\begin{definition}[Literal scope]
+\label{def:scope}
+A route scope is a record
+\[
+ \mathfrak s_X=(h_0,W,\Omega_X,\nu_X,\mathfrak a_X,\mathfrak q_X),
+\]
+where \(h_0\ne0\) is prescribed, \(W\) is the fixed physical test
+weight, \(\Omega_X\) is the actual active atom set, \(\nu_X\) is the
+single physical normalization, \(\mathfrak a_X\) is a content-addressed
+archive manifest, and \(\mathfrak q_X\) records the quantifier range.
+Two estimates may be composed only after an exact crosswalk identifies
+all six fields.
+\end{definition}
+
+The manifest is not cosmetic.  A final scalar equality cannot detect
+a deleted atom paired with an inserted null pair.  The path archive
+and physical reassembly proposed in TPC-123 and TPC-124 are therefore
+ancestors of every downstream use, not conclusions inferred from the
+value of the hard packet.
+
+\begin{definition}[Disjoint tail roles]
+\label{def:tails}
+The certificate language has three different namespaces:
+\[
+\begin{array}{ll}
+\mathsf{H3.sqtail}:&
+ \text{the squarefree-divisor truncation remainder in the
+ arithmetic packet},\\
+\mathsf{H5.content}:&
+ \text{the omitted content term in the distinguished zero mode},\\
+\mathsf{Phys.hitail}:&
+ \text{the physical high, ultra, boundary, and mask complement}.
+\end{array}
+\]
+Two records from these namespaces are never exact duplicates merely
+because both are called a tail.
+\end{definition}
+
+\begin{proposition}[No cross-namespace cancellation]
+\label{prop:tails}
+Without a literal joint theorem, a saving recorded in one namespace
+of \cref{def:tails} supplies no bound in either of the other two.
+\end{proposition}
+
+\begin{proof}
+The three objects have different domains and roles.  The first is an
+upstream arithmetic remainder inside a raw packet, the second is a
+zero-mode summand, and the third is a physical outer reconstruction.
+An inequality for one does not contain either of the other two as a
+term.  Identifying their exponents therefore changes the bounded
+object.  A joint theorem may of course replace the three records, but
+it must display the common literal expression and list all absorbed
+dependencies.
+\end{proof}
+
+Every complete certificate also carries the exact coverage map
+\[
+\begin{array}{ccl}
+\mathsf{H3.sqtail}&\longrightarrow&
+ \text{raw packet theorem or one separate arithmetic residual},\\
+\mathsf{H5.content}&\longrightarrow&
+ \text{the H5 zero-mode admission record},\\
+\mathsf{Phys.hitail}&\longrightarrow&
+ \text{the complete original-scale soft/physical return}.
+\end{array}
+\]
+Each literal tail occurrence must appear exactly once in this map.
+Different names are not by themselves a coverage proof, and one
+occurrence may not be reused in two destinations.
+
+\section{An acyclic proof DAG with a semantic firewall}
+
+\begin{definition}[Proof record]
+\label{def:proofrecord}
+A proof record is
+\[
+ v=(\mathrm{id},\mathrm{statement},\mathrm{scope},
+    \mathrm{source},\mathrm{parents},\mathrm{level}).
+\]
+The directed graph has an edge \(u\to v\) when the theorem recorded at
+\(v\) invokes the statement recorded at \(u\).  Every source theorem
+must precede its consumer in a displayed topological order.
+\end{definition}
+
+\begin{definition}[Semantic target firewall]
+\label{def:firewall}
+Primitive records may not assume any of the following, or an
+equivalent reformulation:
+\[
+ B_{h_0,\delta}(X)=o(X),\quad
+ \text{the target H3 packet saving},\quad
+ D_X\ge D_X^{\rm target},\quad
+ |Z_X|\le Z_X^{\rm target}.
+\]
+In addition:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item archive completeness may not be inferred from final scalar
+  agreement;
+\item a physical residual may not be called \(o(X)\) by invoking the
+  final hard-packet estimate;
+\item phase participation may not be defined from \(D_X/E_X\); and
+\item a bilinear reduction may not use H3 itself to bound its
+  residual terms.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Acyclic certificate composition]
+\label{thm:dag}
+Let \(G=(V,E)\) be a finite proof graph whose records have one literal
+scope.  Suppose:
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item \(G\) has a topological ordering;
+\item each nonprimitive record is obtained by a valid invocation of
+  its parent records;
+\item each primitive record has an independently proved source
+  theorem; and
+\item the semantic firewall of \cref{def:firewall} holds.
+\end{enumerate}
+Then the root statement is a noncircular consequence of the primitive
+records.  Conversely, a directed cycle or a target-equivalent
+primitive premise invalidates this certificate, even if every local
+algebraic identity is correct.
+\end{theorem}
+
+\begin{proof}
+Induct along the topological order.  Primitive nodes are justified by
+(c).  When all parents of a nonprimitive node have been justified,
+(b) justifies that node.  This reaches the root without using a later
+node.  Condition (d) prevents the conclusion from being inserted as
+an apparently primitive premise.  A directed cycle has no such
+induction order.  A target-equivalent primitive premise makes the
+implication formally true but circular, which is excluded by
+definition.
+\end{proof}
+
+\begin{remark}[The firewall is partly semantic]
+A script can reject forbidden identifiers and graph cycles, but it
+cannot decide mathematical equivalence of arbitrary theorem
+statements.  The proof-carrying manifest must therefore include a
+human-audited statement hash and a short independence note for every
+primitive record.
+\end{remark}
+
+\section{Occurrence-level physical tokens}
+
+TPC-118 introduced a nonduplicated physical registry
+\citep{WangTPC118}.  Here we refine its identifier so that a repeated
+application of one map is not silently merged.
+
+\begin{definition}[Occurrence token]
+\label{def:token}
+An occurrence token is
+\[
+ \tau=(\mathrm{occ},\mathrm{map},\mathrm{domain},\mathrm{codomain},
+ \mathrm{scope},\mathrm{scale},\lambda,\mathrm{source},\mathrm{deps}).
+\]
+Here \(\mathrm{occ}\) is a path-and-stage identifier and
+\(\mathrm{scale}\in\{\mathsf A,\mathsf E\}\) records amplitude or
+energy.  The exponent \(\lambda\) is unknown until a theorem supplies
+it.  A joint token replaces, rather than supplements, the occurrence
+identifiers in \(\mathrm{deps}\).  Occurrence identifiers are globally
+unique, independently of scale.  The dependency graph of joint tokens
+must be acyclic, and the maximal retained tokens must give a disjoint
+exact cover of the primitive physical occurrences.  Self-dependency,
+overlapping joint covers, and retaining both a joint token and one of
+its dependencies invalidate the registry.
+\end{definition}
+
+\begin{proposition}[Safe exponent transport]
+\label{prop:transport}
+For upper bounds on a fixed route:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item sequential amplitude losses add;
+\item an energy loss \(X^{e+o(1)}\) contributes amplitude loss
+  \(e/2\);
+\item an \(\ell^1\) summation over \(X^{\mu+o(1)}\) branches
+  contributes \(\mu\);
+\item the replacement \(\mu\mapsto\mu/2\) requires a proved
+  orthogonality or square-function inequality; and
+\item two occurrences of the same map remain distinct unless a
+  theorem bounds their literal composition.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Items (i) and (ii) follow from products of operator norms and taking a
+square root.  Item (iii) is the triangle inequality.  Cauchy--Schwarz
+gives item (iv) only after a square-sum bound is available; branch
+count alone is insufficient.  For (v), applying the same operator at
+two stages produces a product of two events.  Equality of formulas
+does not identify their occurrences.
+\end{proof}
+
+For a valid retained registry \(\mathcal R\), the canonical amplitude
+loss is therefore
+\begin{equation}
+ \boxed{
+ \Lambda_{\rm phys}
+ =
+ \sum_{\tau\in\mathcal R}
+ \begin{cases}
+  \lambda_\tau,&\mathrm{scale}(\tau)=\mathsf A,\\[0.2em]
+  \lambda_\tau/2,&\mathrm{scale}(\tau)=\mathsf E.
+ \end{cases}}
+\label{eq:canonical-loss}
+\end{equation}
+The conversion in \eqref{eq:canonical-loss} is part of registry
+aggregation, not a detached numerical example.
+
+\begin{remark}[Actual composite versus quotient envelope]
+The quotient condition number of TPC-113 is a sharp uniform envelope,
+not automatically the norm of the actual H9 composite.  Likewise the
+TPC-114 factor \(k_{\max}\) is a squared-energy factor and does not
+automatically equal a max-packet-to-scalar cost.  The registry records
+only the theorem-backed literal composite and its declared norm
+\citep{WangTPC113,WangTPC114}.
+\end{remark}
+
+\section{The determinant--zero ledger is separate}
+
+TPC-121 supplies the conditional determinant exponent
+\[
+ \lambda_D^{\rm cert}
+ =(\lambda_E+2\lambda_\phi-\gamma_R)_+,
+\]
+while TPC-122 supplies, when
+\(\delta_{\rm pre}\ge\ell_Z\),
+\[
+ \eta_Z^{\rm cert}
+ =\min\{\delta_{\rm pre}-\ell_Z,\eta_{\rm cont}\}.
+\]
+These are callable only when their literal growing premises have been
+proved on compatible archived fibers.
+
+\begin{proposition}[Typed H5 admission test]
+\label{prop:h5}
+The TPC-121/122 certificates pass the determinant--zero
+compatibility gate precisely when
+\[
+ \boxed{
+ (\lambda_E+2\lambda_\phi-\gamma_R)_+
+ \le
+ 2\min\{\delta_{\rm pre}-\ell_Z,\eta_{\rm cont}\}}
+\]
+and \(\delta_{\rm pre}\ge\ell_Z\).  The nonnegative number
+\[
+ \rho_{\rm det}
+ =
+ 2\min\{\delta_{\rm pre}-\ell_Z,\eta_{\rm cont}\}
+ -
+ (\lambda_E+2\lambda_\phi-\gamma_R)_+
+\]
+is determinant reserve, not a negative physical token.
+\end{proposition}
+
+\begin{proof}
+Substitute the two admissible exponents into the exact TPC-112 cone
+\(\lambda_D\le2\eta_Z\) \citep{WangTPC112}.  The cone is an
+admissibility condition between a lower determinant-energy bound and
+an upper zero-mode bound.  Neither quantity is an operator norm in
+the physical synthesis chain.  Hence their difference cannot be
+subtracted from that chain without a new literal intertwining
+theorem.
+\end{proof}
+
+\begin{remark}[Comparison-scale invariance]
+In TPC-122 a rescaling \(A_f\mapsto X^cA_f\) changes
+\((\delta_{\rm pre},\ell_Z)\) to
+\((\delta_{\rm pre}+c,\ell_Z+c)\).  Only
+\(\delta_{\rm pre}-\ell_Z\) is invariant.  Optimizing the two entries
+separately is exponent bookkeeping, not a stronger zero-mode theorem.
+\end{remark}
+
+\section{The end-to-end synthesis theorem}
+
+Let \(\cB_X^{\rm ns}\) be the retained nonsoft packet family.  Its
+cardinality is allowed to be \(X^{o(1)}\), with every error term below
+uniform in \(b\).  Let \(\mathscr S_X\) be the literal physical
+synthesis after all selected route maps.
+
+\begin{theorem}[Typed fixed-shift endpoint synthesis]
+\label{thm:synthesis}
+Fix one route scope \(\mathfrak s_X\).  Assume:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item a complete native archive and exact reconnection identity
+\[
+ B_{h_0,\delta}(X)
+ =
+ R_{\rm soft}(X)
+ +
+ \mathscr S_X\bigl(\{\mathcal P_b\}_{b\in\cB_X^{\rm ns}}\bigr);
+\]
+\item \(R_{\rm soft}(X)=o(X)\) after its complete original-scale
+outer summation;
+\item for one fixed \(\sigma_{\rm raw}\ge0\),
+\[
+ \max_{b\in\cB_X^{\rm ns}}|\mathcal P_b|
+ \le X^{1-\sigma_{\rm raw}+o(1)};
+\]
+\(\sigma_{\rm raw}\) is an \emph{amplitude} saving after every
+energy-to-amplitude square root and the packet normalization have
+been executed; a quadratic exponent may not be inserted unchanged;
+\item the H5 admission test of \cref{prop:h5}, whenever that transfer
+is used by the selected packet theorem;
+\item an acyclic proof certificate satisfying
+\cref{thm:dag}; and
+\item one complete theorem-backed occurrence registry whose
+canonical loss is \eqref{eq:canonical-loss}, and an actual
+\(\ell^\infty(\cB_X^{\rm ns})\to\mathbb C\) synthesis theorem with
+\[
+ \left|
+ \mathscr S_X\bigl(\{\mathcal P_b\}\bigr)
+ \right|
+ \le
+ X^{\Lambda_{\rm phys}+o(1)}
+ \max_b|\mathcal P_b|.
+ \]
+This norm includes the weighted packet census, packet multiplicity,
+outer coefficients, branch aggregation, and every selected physical
+occurrence exactly once.
+\end{enumerate}
+Then
+\[
+ \boxed{
+ |B_{h_0,\delta}(X)|
+ \le
+ o(X)+
+ X^{1-\sigma_{\rm raw}+\Lambda_{\rm phys}+o(1)}.}
+\]
+In particular,
+\[
+ \boxed{\sigma_{\rm raw}>\Lambda_{\rm phys}}
+\quad\Longrightarrow\quad
+B_{h_0,\delta}(X)=o(X).
+\]
+\end{theorem}
+
+\begin{proof}
+Apply the exact identity in (i), the triangle inequality, and (vi).
+Then insert (iii):
+\[
+ |B_{h_0,\delta}(X)|
+ \le |R_{\rm soft}(X)|
+ +X^{\Lambda_{\rm phys}+o(1)}
+  X^{1-\sigma_{\rm raw}+o(1)}.
+\]
+The complete synthesis norm in (vi), rather than the bare statement
+\(|\cB_X^{\rm ns}|=X^{o(1)}\), absorbs the weighted packet census and
+outer aggregation.  Assumptions (iv) and (v) certify
+that neither an incompatible H5 transfer nor a circular source was
+used to obtain the two displayed bounds.  If
+\(\sigma_{\rm raw}-\Lambda_{\rm phys}>0\), the power term and the soft
+term are both \(o(X)\).
+\end{proof}
+
+\begin{corollary}[MVP1 endpoint]
+\label{cor:mvp1}
+For the MVP1 raw packet target
+\(\sigma_{\rm raw}=1/400\), the strict physical condition is
+\[
+ \boxed{\Lambda_{\rm phys}<1/400.}
+\]
+Equality produces only \(X^{1+o(1)}\) from the power term and is not a
+pass.
+\end{corollary}
+
+\begin{proof}
+Substitute \(1/400\) in \cref{thm:synthesis}.  At equality the
+unspecified \(o(1)\) has no controlled favorable sign.
+\end{proof}
+
+\begin{remark}[A reduction is not item (iii)]
+The exact Liouville pullback, squarefree expansion, quantifier
+firewall, and Fej\'er four-sign reduction of TPC-127--130 may
+identify a sufficient arithmetic target.  They satisfy (iii) only
+after the resulting growing masked four-sign forms and every
+truncation residual have been proved with the required uniform
+power.
+\end{remark}
+
+\section{Route certificates and first-failure output}
+
+For each affine parameter cell \(r\), TPC-118 writes
+\[
+ \Lambda_r(x)=c_r^{\mathsf T}x+d_r,\qquad
+ A_rx\ge b_r,\quad x\ge0,
+\]
+after exact dependency replacement \citep{WangTPC118}.  The
+arithmetic saving \(\sigma_r\) belongs in the right side of the strict
+comparison, not as a negative physical token.
+
+\begin{proposition}[Three endpoint outcomes]
+\label{prop:outcomes}
+For one selected route:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item an exact theorem-backed primal point with
+  \(\Lambda_r(x)<\sigma_r\) is a strict endpoint pass;
+\item an exact dual lower certificate with optimum
+  \(\Lambda_r^*\ge\sigma_r\) stops that fully specified route; and
+\item an unknown token, unproved constraint, missing archive, or
+  unavailable upper/lower certificate is
+  \textnormal{\textsc{incomplete}}.
+\end{enumerate}
+These states are mutually exclusive.  A stop applies only to the
+selected literal route and allowed replacement menu.
+\end{proposition}
+
+\begin{proof}
+The first two conclusions are weak duality with threshold
+\(\sigma_r\).  They cannot both hold.  Every remaining state lacks a
+certificate for either strict upper compatibility or a route lower
+obstruction and is therefore incomplete.
+\end{proof}
+
+The manifest should emit the first node in topological order that is
+absent, conditional, or scope-incompatible.  This ``first missing''
+record is diagnostic; it cannot be replaced by a later consequence.
+
+\section{Deterministic regression and present status}
+
+The standard-library script
+\texttt{experiments/tpc131\_typed\_synthesis\_audit.py} verifies:
+\begin{enumerate}[leftmargin=2em]
+\item an acyclic example and rejection of a deliberate cycle;
+\item a primitive-source firewall and rejection of target-as-premise;
+\item occurrence-level tokens and exact joint dependency replacement;
+\item energy-to-amplitude conversion;
+\item nonmerging of the three tail namespaces;
+\item the TPC-121/122 compatibility formula;
+\item strict, equality, above-threshold, and incomplete endpoint
+states; and
+\item refusal to label a finite identity or reduction as \(\Ltwo\).
+\end{enumerate}
+The numeric values are certificate-format regressions, not estimates
+of any actual growing TPC coefficient.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Claim ledger for TPC-131.}
+\begin{tabularx}{\textwidth}{@{}P{0.41\textwidth}P{0.15\textwidth}Y@{}}
+\toprule
+Statement & Level & Status\\
+\midrule
+Acyclic composition and semantic firewall &
+\(\Lzero\) & Proved.\\
+Occurrence registry and exponent transport &
+\(\Lzero/\Lone\) & Proved as a typed certificate calculus.\\
+General \(\sigma_{\rm raw}-\Lambda_{\rm phys}\) synthesis &
+Conditional \(\Lone\) & Proved implication.\\
+Actual complete native archive and reconnection &
+\(\Lone\) target & Not supplied by the finite regression.\\
+Actual H3/H5 growing exponents &
+\(\Ltwo\) target & Open; no positive exponent is claimed.\\
+Actual strict endpoint and \(B_{h_0,\delta}=o(X)\) &
+Global target & Incomplete.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Thus TPC-131 does not return \textsc{go}.  It makes the future
+invocation falsifiable: either every primitive theorem, archive edge,
+and physical occurrence is present with positive final slack, or the
+certificate reports the first missing or stopped node.
+
+\section{Conclusion}
+
+The central formula is not a new arithmetic estimate:
+\[
+ \text{raw packet saving}
+ -
+ \text{physical occurrence loss}
+ =
+ \text{final fixed-power slack}.
+\]
+Its value is that both terms are now typed and proof-carrying.
+Determinant compatibility, squarefree truncation, zero-mode content,
+and physical tails remain in their correct namespaces.  Equality at
+the physical endpoint stops the selected route, while equality in
+the determinant cone is allowed with zero determinant reserve.
+
+No statement here proves H1--H9, a fixed-\(h_0\) M\"obius or
+Liouville cancellation estimate, a Hardy--Littlewood asymptotic, a
+prime-pair lower bound, or the twin-prime conjecture.  The result is a
+strict end-to-end interface for deciding when such inputs would
+actually compose.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

@@ -1,0 +1,239 @@
+{
+  "checks": {
+    "conditional_frontier_rejected": true,
+    "contradictory_manifest_rejected": true,
+    "dag_checked_first_missing": true,
+    "incomplete_route_cover_rejected": true,
+    "no_positive_L2_in_snapshot": true,
+    "refuted_frontier_rejected": true,
+    "seven_ordered_outcomes_reachable": true,
+    "snapshot_manifest_fields_present": true
+  },
+  "claim_boundary": {
+    "ARCHITECTURE_INFEASIBLE": false,
+    "ARITHMETIC_FRONTIER": false,
+    "GO": false,
+    "fixed_h0_L2_saving": false,
+    "prime_pair_theorem": false,
+    "twin_prime_theorem": false
+  },
+  "current_verdict": "NOT_TESTABLE",
+  "first_missing": {
+    "evidence": "L1_TARGET",
+    "gate": "H1",
+    "node_id": "H1.archive",
+    "required_artifact": "complete actual-carrier native path archive",
+    "status": "NOT_TESTABLE"
+  },
+  "gate_status": {
+    "H1": {
+      "carrier_hash": "fba686a7ec94e4fc7204672dcb2998250dd3d64843f107697a3632d75d67a03c",
+      "evidence": "L1_TARGET",
+      "gate": "H1",
+      "node_id": "H1.archive",
+      "required_artifact": "complete actual-carrier native path archive",
+      "scope": "fixed-h0=2|physical-normalization=nu_X",
+      "scope_match": true,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H2": {
+      "carrier_hash": "645cc33b8e44178012fade8d50360a7ec882c327e3ac1ca23ad3025de943a88f",
+      "evidence": "L2_TARGET_POSITIVE",
+      "gate": "H2",
+      "node_id": "H2.resonance",
+      "required_artifact": "literal growing resonance ledgers or signed replacement",
+      "scope": "fixed-h0=2|physical-normalization=nu_X",
+      "scope_match": true,
+      "status": "OPEN",
+      "structural": false
+    },
+    "H3": {
+      "carrier_hash": "ae5571cb982021d1ec5a0480c95dc62fe04a97dd544dfce5b4d2d4776bcfd722",
+      "evidence": "L2_TARGET_POSITIVE",
+      "gate": "H3",
+      "node_id": "H3.generic",
+      "required_artifact": "uniform actual Fejer four-Liouville estimate with participation, masks, phases, weights, origins, and prefixes",
+      "scope": "fixed-h0=2|physical-normalization=nu_X",
+      "scope_match": true,
+      "status": "OPEN",
+      "structural": false
+    },
+    "H4": {
+      "carrier_hash": "645cc33b8e44178012fade8d50360a7ec882c327e3ac1ca23ad3025de943a88f",
+      "evidence": "L2_TARGET_POSITIVE",
+      "gate": "H4",
+      "node_id": "H4.tail",
+      "required_artifact": "complete original-scale physical tail estimate",
+      "scope": "fixed-h0=2|physical-normalization=nu_X",
+      "scope_match": true,
+      "status": "OPEN",
+      "structural": false
+    },
+    "H5": {
+      "carrier_hash": "b5fa34a9edd53d5d458babfc347e0d249734c3651755726d60ce83636f895229",
+      "evidence": "L2_TARGET_POSITIVE",
+      "gate": "H5",
+      "node_id": "H5.det_zero",
+      "required_artifact": "actual compatible lambda_D and eta_Z certificates",
+      "scope": "fixed-h0=2|physical-normalization=nu_X",
+      "scope_match": true,
+      "status": "NOT_TESTABLE",
+      "structural": false
+    },
+    "H6": {
+      "carrier_hash": "ffcb6fd61523e947588b3eaa7028142ffaf2f5e5031153f8963cdaeb8fb64ff5",
+      "evidence": "L1_TARGET",
+      "gate": "H6",
+      "node_id": "H6.cover",
+      "required_artifact": "actual growing physical B,w cover or residual certificate",
+      "scope": "fixed-h0=2|physical-normalization=nu_X",
+      "scope_match": true,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H7": {
+      "carrier_hash": "e1699faec60cc4e247df387cc5296e9744f7b6669eeb7bef33a47fd615eb2cf7",
+      "evidence": "L1_TARGET",
+      "gate": "H7",
+      "node_id": "H7.fixed_h0",
+      "required_artifact": "complete shift-tagged archive or subcritical localization",
+      "scope": "fixed-h0=2|physical-normalization=nu_X",
+      "scope_match": true,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H8": {
+      "carrier_hash": "fba686a7ec94e4fc7204672dcb2998250dd3d64843f107697a3632d75d67a03c",
+      "evidence": "L1_TARGET",
+      "gate": "H8",
+      "node_id": "H8.reconnection",
+      "required_artifact": "complete exact hard-packet intertwining",
+      "scope": "fixed-h0=2|physical-normalization=nu_X",
+      "scope_match": true,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H9": {
+      "carrier_hash": "b53cda3053a22c7d51aeb1ac0e9ddcc6b8ed7ad4127c686589ba3b650680037b",
+      "evidence": "L1_TARGET",
+      "gate": "H9",
+      "node_id": "H9.endpoint",
+      "required_artifact": "complete occurrence registry and strict endpoint certificate",
+      "scope": "fixed-h0=2|physical-normalization=nu_X",
+      "scope_match": true,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    }
+  },
+  "route_stops": {
+    "coherent_prime_square": {
+      "carrier": "carrier-coherent_prime_square",
+      "scope": "scope",
+      "source": "theorem-coherent_prime_square",
+      "stopped": true
+    },
+    "positive_resonance": {
+      "carrier": "carrier-positive_resonance",
+      "scope": "scope",
+      "source": "theorem-positive_resonance",
+      "stopped": true
+    },
+    "signed_native": {
+      "carrier": "carrier-signed_native",
+      "scope": "scope",
+      "source": "",
+      "stopped": false
+    }
+  },
+  "scenario_regression": {
+    "ARCHITECTURE_INFEASIBLE": "ARCHITECTURE_INFEASIBLE",
+    "ARITHMETIC_FRONTIER": "ARITHMETIC_FRONTIER",
+    "GO": "GO",
+    "NOT_TESTABLE": "NOT_TESTABLE",
+    "OPEN": "OPEN",
+    "REROUTE": "REROUTE",
+    "STOP_ROUTE": "STOP_ROUTE"
+  },
+  "schema": "tpc-132-mvp3-route-decision-v2",
+  "snapshot_manifest": {
+    "content_hashes": {
+      "TPC-120": "645cc33b8e44178012fade8d50360a7ec882c327e3ac1ca23ad3025de943a88f",
+      "TPC-121-122": "b5fa34a9edd53d5d458babfc347e0d249734c3651755726d60ce83636f895229",
+      "TPC-123": "fba686a7ec94e4fc7204672dcb2998250dd3d64843f107697a3632d75d67a03c",
+      "TPC-124": "ffcb6fd61523e947588b3eaa7028142ffaf2f5e5031153f8963cdaeb8fb64ff5",
+      "TPC-125": "e1699faec60cc4e247df387cc5296e9744f7b6669eeb7bef33a47fd615eb2cf7",
+      "TPC-126": "4073533ee1765747c6135e2570237a1ccb46378a61138e9e46c028cfe0ca822f",
+      "TPC-127": "0a6fcc3fd8a74c32e7ea125fce362bde54fc8ad1ff831f20ac3ddb1d10d916d4",
+      "TPC-128": "a013a85ef09306b28f4480a9794ff5f45c7908040c78ad55217a80ceba4545eb",
+      "TPC-129": "be6d9b6ca198adddea619a3fc46194765d4016d361c2cf9cfb84f15259a31e99",
+      "TPC-130": "ae5571cb982021d1ec5a0480c95dc62fe04a97dd544dfce5b4d2d4776bcfd722",
+      "TPC-131": "b53cda3053a22c7d51aeb1ac0e9ddcc6b8ed7ad4127c686589ba3b650680037b",
+      "TPC-132": "736c1a93ee89ddf88772ca8dfc067e733952b877d1ad21019415c67b1a0d5013"
+    },
+    "dag_edges": {
+      "H1.archive": [],
+      "H2.resonance": [
+        "H1.archive"
+      ],
+      "H3.generic": [
+        "H1.archive"
+      ],
+      "H4.tail": [
+        "H1.archive"
+      ],
+      "H5.det_zero": [
+        "H1.archive"
+      ],
+      "H6.cover": [
+        "H1.archive"
+      ],
+      "H7.fixed_h0": [
+        "H1.archive"
+      ],
+      "H8.reconnection": [
+        "H1.archive",
+        "H6.cover",
+        "H7.fixed_h0"
+      ],
+      "H9.endpoint": [
+        "H2.resonance",
+        "H3.generic",
+        "H4.tail",
+        "H5.det_zero",
+        "H6.cover",
+        "H7.fixed_h0",
+        "H8.reconnection"
+      ]
+    },
+    "date": "2026-07-27",
+    "endpoint": {
+      "proved": false,
+      "route_cell": "signed_native",
+      "source": "",
+      "strict_slack": false
+    },
+    "occurrence_registry": {
+      "required_artifact": "complete theorem-backed occurrence registry",
+      "status": "INCOMPLETE"
+    },
+    "route_universe": [
+      "coherent_prime_square",
+      "positive_resonance",
+      "signed_native"
+    ],
+    "selected_route": "signed_native",
+    "topological_order": [
+      "H1.archive",
+      "H2.resonance",
+      "H3.generic",
+      "H4.tail",
+      "H5.det_zero",
+      "H6.cover",
+      "H7.fixed_h0",
+      "H8.reconnection",
+      "H9.endpoint"
+    ]
+  },
+  "status": "PASS"
+}

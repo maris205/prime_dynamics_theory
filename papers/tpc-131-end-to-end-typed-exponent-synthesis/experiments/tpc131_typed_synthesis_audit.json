@@ -1,0 +1,85 @@
+{
+  "checks": {
+    "acyclic_proof_dag": true,
+    "deliberate_cycle_rejected": true,
+    "determinant_reserve_nonnegative": true,
+    "duplicate_occurrence_rejected": true,
+    "energy_to_amplitude_conversion": true,
+    "general_sigma_minus_lambda_slack": true,
+    "h5_certificate_compatible": true,
+    "occurrence_level_registry": true,
+    "overlapping_joints_rejected": true,
+    "pseudo_L2_rejected": true,
+    "self_dependency_rejected": true,
+    "semantic_firewall": true,
+    "strict_endpoint_states": true,
+    "tail_occurrences_exactly_covered": true,
+    "target_as_primitive_rejected": true
+  },
+  "claim_boundary": {
+    "actual_complete_archive": false,
+    "actual_complete_physical_registry": false,
+    "actual_growing_H3_four_sign_saving": false,
+    "actual_growing_H5_inputs": false,
+    "endpoint_GO": false,
+    "fixed_h0_L2_saving": false
+  },
+  "sample": {
+    "endpoint_cases": {
+      "above": "STOP_ROUTE",
+      "equality": "EQUALITY_STOP",
+      "strict": "STRICT_PASS",
+      "unknown": "INCOMPLETE"
+    },
+    "eta_Z_cert": "2/5",
+    "general_final_slack": "1/400",
+    "lambda_D_cert": "4/5",
+    "lambda_phys": "31/30000",
+    "lambda_phys_scale": "amplitude",
+    "retained_occurrences": [
+      "frame@stage2",
+      "joint@stage1-3",
+      "packet-census@outer"
+    ],
+    "rho_det": "0",
+    "tail_coverage": [
+      {
+        "destination": "raw_packet_bound",
+        "occurrence": "h3.squarefree_truncation_tail"
+      },
+      {
+        "destination": "h5_certificate",
+        "occurrence": "h5.zero_mode_content_remainder"
+      },
+      {
+        "destination": "physical_H4_tail",
+        "occurrence": "physical.high_ultra_boundary_tail"
+      }
+    ],
+    "topological_order": [
+      "archive",
+      "complete_soft_remainder",
+      "h5_certificate",
+      "physical_H4_tail",
+      "reassembly",
+      "H6_cover",
+      "H8_reconnection",
+      "fixed_h0",
+      "H7_localization",
+      "literal_block",
+      "liouville_pullback",
+      "occurrence_registry",
+      "packet_census",
+      "squarefree_expansion",
+      "quantifier_firewall",
+      "fejer_four_sign_reduction",
+      "actual_H3_four_sign_bound",
+      "squarefree_truncation_tail",
+      "raw_packet_bound",
+      "strict_endpoint_certificate",
+      "endpoint_synthesis"
+    ]
+  },
+  "schema": "tpc-131-end-to-end-typed-synthesis-v1",
+  "status": "PASS"
+}

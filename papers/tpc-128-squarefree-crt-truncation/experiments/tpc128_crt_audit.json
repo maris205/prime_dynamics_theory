@@ -1,0 +1,37 @@
+{
+  "all_checks_passed": true,
+  "compatibility_iff": true,
+  "component_census": true,
+  "crt_expansion": true,
+  "effective_cutoff_capped_by_sqrt_y": true,
+  "exact_tail_at_or_above_sqrt_y": true,
+  "level": {
+    "actual_attachment": "L1",
+    "finite_and_tail_results": "L0",
+    "signed_correlation": "not proved"
+  },
+  "n_frame_congruences": true,
+  "positive_saving_guard": true,
+  "sample": {
+    "a": 3,
+    "actual_tail": 9,
+    "census": 229,
+    "census_upper_bound_integer_majorant": 409,
+    "cutoff": 7,
+    "determinant": 2,
+    "exact_cutoff_ceil_sqrt_y": 25,
+    "exact_regime_tail": 0,
+    "max_affine_value": 596,
+    "max_n_modulus": 36015,
+    "s": 5,
+    "saving_guard": {
+      "correlation_minus_census_loss": "1/20",
+      "exact_tail_regime": "zero",
+      "nonpositive_tail_candidate_rejected": "-1/2",
+      "positive_tail_candidate": "1/5",
+      "requires_eta_corr_gt_census_loss": true
+    },
+    "tail_upper_bound_integer_majorant": 1100
+  },
+  "tail_bound": true
+}

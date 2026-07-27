@@ -1,0 +1,35 @@
+{
+  "schema": "tpc124-provenance-physical-reassembly-audit-v1",
+  "scope": "finite coordinate-model regression only; not the growing physical archive",
+  "status": "PASS",
+  "finite_regression_pass": true,
+  "assertions_checked": 15,
+  "exact_model": {
+    "native_leaf_dimension": 3,
+    "block_dimension": 2,
+    "leaf_residual_nonzero": true,
+    "faithful_physical_residual_matches_leaf_residual": true,
+    "collapsed_physical_residual_zero": true,
+    "scalar_reassembly_identity": true,
+    "native_gram_crosswalk": true,
+    "quotient_observability_faithful_and_zero_regimes": true
+  },
+  "quotient_observability": {
+    "residual_domain_dimension": 1,
+    "residual_transfer_checked_in_both_models": true,
+    "faithful_gamma_squared": "1",
+    "collapsed_gamma_squared": "0"
+  },
+  "counterexamples": {
+    "physical_cover_does_not_imply_provenance_cover": true,
+    "one_vector_agreement_does_not_identify_fiber_maps": true
+  },
+  "route_verdict": {
+    "dual_residual_theorem": "PROVED_L0",
+    "literal_physical_crosswalk": "INTERFACE_L1",
+    "actual_growing_G_C_z_B_archive_present": false,
+    "H6_reassembly_audit": "NOT_TESTABLE_FROM_CURRENT_ARTIFACTS",
+    "H8_provenance_reconnection_proved": false,
+    "fixed_h0_L2_progress": false
+  }
+}

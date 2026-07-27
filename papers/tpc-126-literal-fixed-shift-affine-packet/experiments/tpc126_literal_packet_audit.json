@@ -1,0 +1,54 @@
+{
+  "abel": {
+    "bv_bound": 3.245021686468583,
+    "direct_absolute": 0.58309518948453,
+    "identity_defect": 0.0,
+    "pass": true
+  },
+  "determinant": {
+    "computed": 2,
+    "declared_h0": 2,
+    "pass": true
+  },
+  "family": {
+    "cauchy_pass": true,
+    "direct_ratio": 0.26013750865707536,
+    "triangle_pass": true,
+    "weighted_l1": 0.4981538678076168,
+    "weighted_l2": 0.502769891077775
+  },
+  "metadata": {
+    "complete_literal_metadata_checked": false,
+    "sample_presence_pass": true,
+    "sample_required": [
+      "content",
+      "h0",
+      "mask",
+      "native_key",
+      "normalization",
+      "polarization"
+    ],
+    "scope": "declared sample-key presence only; not complete archive metadata"
+  },
+  "paper": "TPC-126",
+  "phase_saturation": {
+    "absolute_mass": 4.75,
+    "observed": 4.75,
+    "pass": true
+  },
+  "scope": "finite literal-interface regression only",
+  "status": "PASS",
+  "ttstar": {
+    "direct_real": 40.17369814909115,
+    "hermitian_defect": 0.0,
+    "lag_imaginary_defect": 1.1102230246251565e-15,
+    "lag_real": 40.173698149091166,
+    "pass": true
+  },
+  "verdict": {
+    "FINITE_REGRESSION_PASS": true,
+    "GO_H3": false,
+    "GO_INTERFACE": false,
+    "reason": "The finite identities pass, but the complete actual archive extraction is not supplied here.  No theorem for the complete growing family or outer-loss exponent is supplied."
+  }
+}

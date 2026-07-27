@@ -1,0 +1,653 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+  pdftitle={TPC-MVP3: A Typed Route Decision after TPC-121--131},
+  pdfauthor={Liang Wang},
+  pdfsubject={Executable archives, the arithmetic frontier, and certified branching},
+  pdfkeywords={fixed shift, route decision, proof audit, arithmetic frontier, first missing certificate}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\GO}{\textnormal{\textsc{go}}}
+\newcommand{\AINF}{\textnormal{\textsc{architecture-infeasible}}}
+\newcommand{\REROUTE}{\textnormal{\textsc{reroute}}}
+\newcommand{\STOPR}{\textnormal{\textsc{stop-route}}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\AF}{\textnormal{\textsc{arithmetic-frontier}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\COND}{\textnormal{\textsc{conditional}}}
+\newcommand{\REFUTED}{\textnormal{\textsc{refuted}}}
+\newcommand{\Lam}{\Lambda_{\mathrm{phys}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{TPC-MVP3: A Typed Route Decision after}\\
+\textbf{TPC-121--131: Executable Archives, the Arithmetic}\\
+\textbf{Frontier, and Certified Branching}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-MVP2 separated exact interfaces from open arithmetic inputs but
+returned a broad \textsc{not-testable} verdict.  TPC-121--131 refine
+the determinant, zero-mode, archive, fixed-shift, arithmetic-reduction,
+and end-to-end synthesis branches.  We give a stricter MVP3 decision
+calculus with seven ordered, exhaustive route outcomes after manifest
+validation:
+\(\textsc{go}\), \(\textsc{architecture-infeasible}\),
+\(\textsc{reroute}\), \(\textsc{stop-route}\),
+\(\textsc{not-testable}\), \(\textsc{arithmetic-frontier}\), and
+\(\textsc{open}\).  Contradictory route, scope, or stop records are
+rejected before verdict selection.  The new arithmetic-frontier label is awarded only
+after every structural, provenance, fixed-shift, and endpoint
+interface is proved and every unresolved node is an explicitly typed
+status-\(\textsc{open}\), positive-L2 growing
+coefficient-specific arithmetic target.  Reductions,
+finite regressions, and conditional interfaces cannot trigger it.
+The audited snapshot has no complete actual-carrier native archive,
+no complete theorem-backed endpoint registry, and no proved positive
+L2 estimate.  Its first machine-readable missing record is H1's
+native path archive, so the verdict remains
+\(\textsc{not-testable}\).  This is not \(\textsc{go}\), not the
+arithmetic frontier, and not an impossibility theorem for the
+architecture or for twin primes.  We finish with certificate-specific
+branches for repair, arithmetic attack, rerouting, and publication of
+route obstructions.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed shift; typed proof graph; route
+decision; arithmetic frontier; first-missing certificate; parity
+barrier.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Snapshot status.}
+This audit is dated 27 July 2026 and applies to the declared
+TPC-MVP1 route and the TPC-121--131 certificate bundle.  It proves no
+growing fixed-\(h_0\) arithmetic saving and no prime-pair theorem.
+Failure of one sufficient route is never promoted to a negative
+result about the twin-prime conjecture.
+\end{minipage}}
+
+\section{From MVP2 to MVP3}
+
+TPC-MVP1 resolved a conditional fixed-shift proof program into gates
+H1--H9 \citep{WangMVP1}.  TPC-MVP2 gave each gate a typed status and
+returned \textsc{not-testable} for the TPC-103--119 snapshot
+\citep{WangTPC120}.  The next papers sharpen two kinds of input.
+
+First, TPC-121 and TPC-122 replace opaque determinant and zero-mode
+symbols by explicit conditional exponent formulas
+\citep{WangTPC121,WangTPC122}.  Second, TPC-123--130 specify a native
+path archive, physical reassembly, prescribed-shift intertwining, a
+literal affine block, and an exact route from determinant two to
+masked shift-two Liouville correlations and a Fej\'er
+four-Liouville target
+\citep{WangTPC123,WangTPC124,WangTPC125,
+WangTPC126,WangTPC127,WangTPC128,WangTPC129,WangTPC130}.  TPC-131
+then states the general endpoint formula
+\[
+ |B_{h_0,\delta}(X)|
+ \le o(X)+
+ X^{1-\sigma_{\rm raw}+\Lambda_{\rm phys}+o(1)}
+\]
+under a proof-carrying acyclic certificate
+\citep{WangTPC131}.
+
+These advances make the missing inputs more precise.  They do not
+prove those inputs.  MVP3 therefore needs a state between a generic
+open program and a genuinely isolated arithmetic frontier, while
+preserving route-specific stop certificates.
+
+\section{Node status and evidence level are different}
+
+\begin{definition}[Node status]
+\label{def:node}
+For one fully typed node:
+\begin{itemize}[leftmargin=2em]
+\item \(\PROVED\): a theorem proves the declared statement;
+\item \(\COND\): an exact implication is proved but a displayed
+  premise remains unproved;
+\item \(\OPEN\): the literal object and test are available but the
+  target theorem is absent;
+\item \(\NT\): an archive, type, exponent, or compatibility record
+  needed to execute the test is absent; and
+\item \(\REFUTED\): a theorem-backed witness contradicts that
+  particular declared statement.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Evidence level and direction]
+\label{def:level}
+An \(\Lzero\) record is an abstract finite identity or model
+obstruction.  An \(\Lone\) record is an exact identity or executable
+crosswalk on a literal physical carrier.  A conditional \(\Lone\)
+record remains \(\Lone\).  A positive \(\Ltwo\) record is a proved,
+uniform, growing, coefficient-specific power estimate at the
+prescribed \(h_0\).  A negative \(\Ltwo\) record is an actual growing
+counterfamily or lower obstruction in the same quantifier scope.
+\end{definition}
+
+Finite computation over many values of \(X\), a frozen-family
+estimate, a density-one result, an averaged-shift theorem, and a
+reduction to an unproved bilinear or four-sign form do not meet the
+positive \(\Ltwo\) definition.
+
+\begin{proposition}[No promotion by naming]
+\label{prop:nopromotion}
+A node labeled ``arithmetic,'' ``spectral,'' ``Liouville,''
+``bilinear,'' or ``four-sign'' is not thereby \(\Ltwo\).  In
+particular the exact
+pullback and decompositions of TPC-127--130 remain \(\Lzero/\Lone\)
+until their growing actual-family estimates are proved.
+\end{proposition}
+
+\begin{proof}
+The evidence level is determined by quantifiers, carrier, shift,
+normalization, and the proved inequality, not by the formula's
+vocabulary.  Exact transformations preserve a target but do not
+supply its missing bound.
+\end{proof}
+
+\section{Seven ordered exhaustive route outcomes}
+
+\begin{definition}[Verdict certificates]
+\label{def:verdicts}
+For a selected literal route and a declared route universe:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(\GO\): every required node is \(\PROVED\) in one compatible
+  scope and
+  \(\sigma_{\rm raw}-\Lambda_{\rm phys}>0\).
+\item \(\AINF\): a theorem-backed cover exhausts the declared route
+  universe and every covered route has an unavoidable stop
+  certificate.
+\item \(\REROUTE\): the selected route is stopped and a typed
+  alternative has been selected with a fresh registry.
+\item \(\STOPR\): the selected route has a complete literal stop
+  certificate, but no typed alternative has yet been selected.
+\item \(\NT\): a required artifact or type is absent.
+\item \(\AF\): every structural, provenance, fixed-shift, and endpoint
+  node is \(\PROVED\), strict endpoint slack is certified, and every
+  unresolved node has status \(\OPEN\) and is an explicitly typed
+  positive-\(\Ltwo\) target.  A \(\COND\), \(\REFUTED\), \(\NT\), or
+  scope-mismatched residual node blocks this outcome.
+\item \(\OPEN\): every remaining case.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Verdict precedence]
+\label{thm:precedence}
+Given a snapshot manifest passing the consistency checks of
+\cref{def:snapshot}, apply \cref{def:verdicts} in the displayed order.
+The first applicable test returns exactly one of the seven outcomes.
+An inconsistent manifest returns no route verdict and must first be
+repaired.
+\end{theorem}
+
+\begin{proof}
+Manifest validation first removes malformed node tables, scopes,
+route selections, stop covers, and reroute records.  On a valid
+manifest, the displayed list is an ordered classifier: \(\GO\) is
+tested first, the two global and selected-route stop branches are
+tested next, and the first absent artifact then gives \(\NT\).  With
+no earlier outcome, \(\AF\) requires strict structural closure and a
+residual set consisting only of \(\OPEN\), positive-\(\Ltwo\) targets;
+the final catch-all is \(\OPEN\).  Hence some test always applies and
+precedence selects a unique first applicable outcome.  This does not
+assert that the unprioritized raw predicates are intrinsically
+pairwise disjoint.
+\end{proof}
+
+\begin{remark}[Conditional synthesis is metadata]
+The statement ``conditional synthesis available'' records that a
+valid implication has been proved.  It is not a route verdict and is
+not a weakened form of \(\GO\).
+\end{remark}
+
+\begin{remark}[Architecture-infeasible is scoped]
+The route universe must itself have a proof-carrying cover.  Stopping
+all currently fashionable examples is insufficient.  Even a valid
+\(\AINF\) verdict excludes only the declared architecture; it does
+not contradict the twin-prime conjecture.
+\end{remark}
+
+\section{Necessary certificates}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\caption{Minimum proof-carrying evidence for each positive or
+negative route decision.}
+\begin{tabularx}{\textwidth}{@{}P{0.21\textwidth}Y Y@{}}
+\toprule
+Verdict & Required certificate & Forbidden shortcut\\
+\midrule
+\(\GO\) &
+Snapshot manifest; H1--H9 typed proof table; complete archive and
+reassembly; fixed-\(h_0\) crosswalk; actual growing packet and H5
+theorems; complete tail; exact H8; nonduplicated endpoint primal with
+strict slack. &
+Unknown exponent set to zero, equality at \(1/400\), or a conditional
+interface counted as a theorem.\\
+\(\AINF\) &
+Complete route-universe cover and an unavoidable actual-carrier
+stop certificate on every route cell. &
+Failure of one frame, one archive format, or one sufficient
+majorant.\\
+\(\REROUTE\) &
+Selected-route stop witness, a typed alternative edge, and a fresh
+event registry for the alternative. &
+Carrying obsolete endpoint slack or incompatible parameter choices
+into the new route.\\
+\(\STOPR\) &
+Actual kernel, counterfamily, incompatibility, or exact endpoint dual
+for the fully specified route. &
+Numerical failure or absence of a proof.\\
+\(\AF\) &
+All nonarithmetic nodes proved, strict physical endpoint certified,
+and a machine check that every unresolved node has status \(\OPEN\),
+positive \(\Ltwo\) evidence, and compatible scope. &
+Calling a reduction, finite audit, or averaged theorem the
+arithmetic frontier.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+For \(\NT\), the certificate is a first-missing record.  For
+\(\OPEN\), the literal object and test must be specified so that a
+future theorem or stop witness has fixed quantifiers.
+
+\section{Frozen snapshots and controlled changes}
+
+A route verdict is meaningful only relative to a frozen object.  The
+word ``current'' must therefore be backed by data rather than by the
+latest paper number.
+
+\begin{definition}[Snapshot manifest]
+\label{def:snapshot}
+An MVP3 snapshot manifest contains:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item the audit date and repository commit or content hashes;
+\item the declared route universe and the selected route;
+\item every node statement, scope, carrier hash, and evidence source;
+\item the proof-DAG edges and one topological order;
+\item the physical occurrence registry and every allowed joint-token
+  replacement; and
+\item the endpoint threshold, parameter cells, and exact certificate
+  status.
+\end{enumerate}
+Changing any field creates a new snapshot rather than silently
+updating the old verdict.
+\end{definition}
+
+Before verdict selection, the validator requires exact agreement
+between the node table, the DAG node set, and the supplied topological
+order; checks acyclicity and parent-before-child order; validates every
+status, evidence tag, and scope; and requires the selected route to
+belong to the declared universe.  Each stop record must carry a
+source, carrier, and scope.  An \(\AINF\) claim must cover the route
+universe exactly.  A reroute alternative must be distinct, declared,
+and not already stopped, while the selected route must be stopped.
+An endpoint certificate must name its source and route cell.
+Contradictions are rejected rather than mapped silently to a verdict.
+
+The dated v2 manifest used here records content hashes for TPC-120 and
+TPC-123--132, with a joint hash for TPC-121--122; the route universe
+\[
+\begin{split}
+\mathcal R=\{&
+\texttt{signed\_native},\ \texttt{positive\_resonance},\\
+&\texttt{coherent\_prime\_square}\};
+\end{split}
+\]
+the selected route \(\texttt{signed\_native}\); the explicit H1--H9
+DAG and its
+topological order; an \(\texttt{INCOMPLETE}\) occurrence registry; and
+an endpoint record with both \(\texttt{proved=false}\) and
+\(\texttt{strict\_slack=false}\).  A source change changes its content
+hash and therefore creates a new snapshot.
+
+\begin{proposition}[What is and is not monotone]
+\label{prop:monotone}
+Fix the node statements, route universe, carrier, and physical event
+registry.
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item Replacing a missing artifact by a valid typed artifact can move
+  the first-missing pointer downstream, but does not by itself prove
+  the target at that node.
+\item Adding a redundant proof to an already complete \(\GO\)
+  certificate preserves \(\GO\).
+\item A route-specific stop certificate remains valid when unrelated
+  alternatives are added.
+\item An \(\AINF\) certificate need not survive enlargement of the
+  declared route universe.
+\item Revealing the value of a formerly unknown nonnegative endpoint
+  token may lead either to a strict pass or to a stop; evidence
+  completion is not numerical improvement.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For (a), the topological scan proceeds to the next absent record, but
+the new artifact may have status \(\OPEN\) or \(\COND\).  Item (b)
+follows because neither a premise nor the strict inequality changes.
+A witness for one fixed route does not depend on the existence of a
+different route, proving (c).  By contrast, \(\AINF\) has a universal
+quantifier over the declared route universe; adding an uncovered
+route invalidates that quantifier and proves (d).  Finally, an
+unknown token is not zero.  Its theorem-backed value can lie on
+either side of the strict threshold, which proves (e).
+\end{proof}
+
+\begin{remark}[The first missing item is not the hardest theorem]
+The topological first-missing report identifies the earliest point at
+which the present certificate cannot be executed.  It does not claim
+that this item is analytically deepest.  H3 may remain the parity-facing
+gate even while H1 is the first absent artifact.
+\end{remark}
+
+\begin{remark}[Rerouting is a new certificate]
+Changing from an averaged frame to direct native-\(h_0\) dispersion,
+or from a positive majorant to a signed four-sign route, changes maps,
+scopes, and event occurrences.  The old endpoint optimizer is not a
+warm-start proof: the alternative requires a new manifest and a new
+canonical registry.
+\end{remark}
+
+\section{Paper-by-paper audit: TPC-121--131}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\caption{Strongest reusable output and the nonpromotion boundary.}
+\begin{tabularx}{\textwidth}{@{}P{0.055\textwidth}P{0.43\textwidth}
+P{0.15\textwidth}Y@{}}
+\toprule
+TPC & Exact output & Level & Missing item\\
+\midrule
+121 & Phase-sector determinant certificate
+\((\lambda_E+2\lambda_\phi-\gamma_R)_+\). &
+Proved \(\Lzero\) formula; conditional \(\Lone\) &
+Actual growing diagonal, participation, and phase inputs.\\
+122 & Sharp Abel/BV transfer
+\(\min\{\delta_{\rm pre}-\ell_Z,\eta_{\rm cont}\}\). &
+Proved \(\Lzero/\Lone\) transfer; growing premises open &
+Uniform actual prefixes, envelope, content, and verified TPC-111
+reassembly.\\
+123 & Stagewise native-path conservation and first-defect format. &
+Proved finite \(\Lzero\); growing \(\Lone\) schema &
+Complete actual-carrier growing archive.\\
+124 & Leaf and physical residual identities and dual tests. &
+Proved finite \(\Lzero\); typed \(\Lone\) interface &
+Actual matrices and original-scale residual bound.\\
+125 & Fixed-shift commutator telescope and localization cost. &
+Proved finite \(\Lzero\); conditional \(\Lone\) &
+Actual zero defect or subcritical growing Christoffel bound.\\
+126 & Literal block extraction, exact \(TT^*\), and prefix
+crosswalk. & Proved finite \(\Lzero\); growing \(\Lone\) attachment &
+Uniform growing block-family power saving.\\
+127 & Determinant-two pullback to a masked shift-two Liouville
+correlation. & Proved finite \(\Lzero\); literal \(\Lone\) target &
+Correlation estimate in the actual progression and weights.\\
+128 & Squarefree-mask divisor/CRT expansion with explicit remainder. &
+Proved finite \(\Lzero\); literal \(\Lone\) interface &
+Positive relative tail exponent at actual \(N,Y,R\), uniformity
+through modulus \(asR^4\), weighted census, and signed estimates on
+retained CRT fibers.\\
+129 & Quantifier firewall separating known averages from the actual
+target. & Proved \(\Lzero/\Lone\) firewall &
+A theorem with growing modulus, origin, masks, twist, prefixes, and
+ordinary weight.\\
+130 & Exact Fej\'er sliding-window reduction to a shift-two
+four-Liouville certificate. &
+Proved finite \(\Lzero\); literal \(\Lone\) target &
+Uniform actual Fej\'er four-Liouville estimate with participation,
+masks, phases, weights, origins, and prefixes over the complete
+family.\\
+131 & Acyclic typed synthesis and
+\(\sigma_{\rm raw}-\Lambda_{\rm phys}\) endpoint. &
+Proved \(\Lzero/\Lone\) synthesis; growing inputs open &
+Every actual primitive theorem and complete physical registry.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+No row is a proved positive \(\Ltwo\) theorem.  The table is a
+dependency audit, not a statement that each proposed certificate is
+already instantiated on a complete growing archive.
+
+\section{Projection onto H1--H9}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{MVP3 snapshot gate status on 27 July 2026.}
+\label{tab:gates}
+\begin{tabularx}{\textwidth}{@{}P{0.07\textwidth}P{0.17\textwidth}
+P{0.16\textwidth}Y@{}}
+\toprule
+Gate & Status & Evidence target & First unresolved record\\
+\midrule
+H1 & \(\NT\) & \(\Lone\) & Complete actual-carrier native path
+archive.\\
+H2 & \(\OPEN\) & positive \(\Ltwo\) & Literal growing resonance
+ledgers or a signed replacement.\\
+H3 & \(\OPEN\) & positive \(\Ltwo\) & Uniform actual Fej\'er
+four-Liouville estimate with participation, masks, phases, weights,
+origins, and prefixes.\\
+H4 & \(\OPEN\) & positive \(\Ltwo\) & Complete original-scale physical
+tail estimate.\\
+H5 & \(\NT\) & positive \(\Ltwo\) & Actual compatible
+\(\lambda_D,\eta_Z\) certificate pair.\\
+H6 & \(\NT\) & \(\Lone\) & Actual growing physical cover or residual
+certificate.\\
+H7 & \(\NT\) & \(\Lone\) & Complete shift-tagged growing archive or
+subcritical localization certificate.\\
+H8 & \(\NT\) & \(\Lone\) & Complete exact hard-packet
+intertwining.\\
+H9 & \(\NT\) & \(\Lone\) & Complete theorem-backed event registry and
+strict primal certificate.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{definition}[First-missing report]
+\label{def:first}
+The machine manifest stores an explicit gate-certificate DAG and a
+candidate topological order.  It first rejects cycles, missing or
+extra node IDs, and any order that fails exact node coverage or
+parent-before-child precedence.  It then scans the validated order.
+The first-missing report is
+\[
+ (\mathrm{node},\mathrm{gate},\mathrm{status},
+  \mathrm{evidence},\mathrm{required\ artifact})
+\]
+for the earliest required node having status \(\NT\).
+\end{definition}
+
+The v2 DAG makes H1 the root; H2--H7 depend on H1; H8 depends on H1,
+H6, and H7; and H9 depends on H2--H8.  Its validated machine scan
+therefore returns
+\[
+\boxed{
+\begin{aligned}
+\mathrm{node}&=\mathsf{H1.archive},\\
+\mathrm{artifact}&=\text{complete actual-carrier native path archive}.
+\end{aligned}}
+\]
+
+The report is stable under downstream speculation: a later
+conditional theorem cannot make this earlier archive executable.
+
+\section{MVP3 snapshot verdict}
+
+\begin{theorem}[MVP3 decision]
+\label{thm:decision}
+For the declared TPC-MVP1 architecture and the TPC-121--131
+certificate bundle audited on 27 July 2026,
+\[
+ \boxed{\operatorname{Verdict}_{121:131}=\NT.}
+\]
+The snapshot is neither \(\GO\), nor \(\AF\), nor \(\AINF\).
+\end{theorem}
+
+\begin{proof}
+H1's complete actual-carrier archive is absent, so
+\cref{thm:precedence} reaches \(\NT\) before either
+\(\AF\) or \(\OPEN\).  The \(\GO\) premise fails additionally at the
+open H2--H4 arithmetic and tail targets and the not-testable
+H5--H9 records.  The arithmetic-frontier premise fails because several
+structural nodes are not proved and no strict actual endpoint is
+certified.  Finally, the stop records cover only
+\(\texttt{positive\_resonance}\) and
+\(\texttt{coherent\_prime\_square}\); the selected
+\(\texttt{signed\_native}\) route has no stop certificate.  Hence no
+exact cover of the declared route universe exists and \(\AINF\) is
+unavailable.
+\end{proof}
+
+\begin{corollary}[No positive L2 progress claim]
+The TPC-121--131 bundle may sharpen arithmetic targets and exact
+crosswalks, but it contains no theorem that can be entered as a
+positive \(\Ltwo\) gate in \cref{tab:gates}.
+\end{corollary}
+
+\begin{proof}
+Each row of the paper audit either proves a finite identity,
+conditional implication, reduction, or quantifier obstruction, or
+states a growing estimate as the missing item.  None proves the
+required uniform coefficient-specific power estimate.
+\end{proof}
+
+\section{Certified next-stage branching}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\caption{Response determined by the first valid certificate.}
+\begin{tabularx}{\textwidth}{@{}P{0.25\textwidth}Y Y@{}}
+\toprule
+Observed certificate & Next branch & What may be published\\
+\midrule
+Missing archive or path metadata &
+Build only the first missing stage; preserve atom keys, \(h_0\),
+normalization, order, and all tail namespaces. &
+Executable archive schema and a dated not-testable audit.\\
+Leaf/physical residual witness &
+Repair the grouping or prove its literal physical pairing \(o(X)\);
+do not infer one residual from the other. &
+Route-specific reassembly obstruction.\\
+Fixed-\(h_0\) range or commutator failure &
+Abandon the averaged/frozen transfer and move to a direct native
+\(h_0\) theorem. &
+An averaged-only theorem with the correct qualifier.\\
+All structural nodes proved; only L2 targets remain &
+Freeze the interfaces and attack the actual H3 Fej\'er
+four-Liouville estimate, H5, H4, or a signed-H2 theorem. &
+An honest arithmetic-frontier statement.\\
+\(\lambda_D>2\eta_Z\) on actual inputs &
+Improve phase participation, signed prefixes/content, or replace H5
+by a direct determinant theorem. &
+Compatibility stop for the selected H5 mechanism.\\
+\(\Lambda_{\rm phys}\ge1/400\) by exact dual &
+Stop that registry; choose a new frame/composite or direct native
+route with a fresh ledger. &
+Strict endpoint obstruction.\\
+Fej\'er four-Liouville target proved equivalent to an unavailable
+stronger theorem &
+Publish the no-reduction boundary and change the arithmetic
+decomposition. &
+Hardness/equivalence result, not parity progress.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+On a reroute, determinant reserve, old parameter optima, and joint
+tokens do not carry over automatically.  The alternative begins with
+a new scope record and occurrence registry.
+
+\section{Machine regression and claim boundary}
+
+The standard-library script
+\texttt{experiments/tpc132\_mvp3\_route\_audit.py} encodes the gate
+records and verifies:
+\begin{enumerate}[leftmargin=2em]
+\item reachability and precedence of all seven ordered outcomes after
+manifest validation;
+\item rejection of arithmetic-frontier labels with a conditional or
+refuted residual node;
+\item refusal to return \(\AINF\) without a complete route-universe
+certificate and rejection of contradictory manifests;
+\item presence of the content-hash manifest, explicit DAG, and valid
+topological order;
+\item absence of a proved positive-\(\Ltwo\) record; and
+\item the DAG-checked machine-readable first-missing report for H1.
+\end{enumerate}
+The script is a decision-logic regression.  It does not inspect
+primes or establish any growing analytic estimate.
+
+\paragraph{Established.}
+The verdict precedence, certificate requirements, first-missing
+format, and snapshot classification are \(\Lzero/\Lone\) audit
+results.  They prevent circular implication, false route closure,
+and false promotion to the arithmetic frontier.
+
+\paragraph{Not established.}
+No complete actual archive, H1--H9 conjunction, positive fixed-shift
+\(\Ltwo\) theorem, strict physical endpoint, hard-packet
+\(o(X)\) estimate, Hardy--Littlewood asymptotic, prime-pair lower
+bound, or twin-prime theorem is proved.
+
+\section{Conclusion}
+
+MVP3 turns ``we are near the arithmetic core'' into a checkable
+statement rather than a rhetorical one.  The current program has a
+sharper map and several exact transformations, but its first missing
+object is still structural.  The correct verdict is therefore
+\(\NT\), not \(\AF\).  If the archive, reassembly, fixed-shift, and
+endpoint certificates are eventually closed, the same decision
+calculus will promote the route to the arithmetic frontier only when
+every remaining unresolved node is \(\OPEN\), positive \(\Ltwo\), and
+scope-compatible, without calling a conditional interface or
+reduction a theorem.  If a literal stop appears first, the
+calculus records the stopped route and the permitted alternative
+without implying anything negative about twin primes.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

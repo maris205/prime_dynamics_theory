@@ -1,0 +1,464 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\textbf{Squarefree Masks in the Shift-Two Frame}\\
+\large Exact CRT Fibers, Primitive Truncation Tails, and the
+Growing-Modulus Ledger}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-127 writes a primitive determinant-two M\"obius pair as a
+shift-two Liouville product on a growing progression, multiplied by
+the quotient-squarefree mask
+\[
+ \mu^2(D(z))\mu^2(V(z)).
+\]
+We resolve this mask without appealing to a density heuristic.  For
+\[
+ Q_R(m)=\sum_{\substack{k\le R\\k^2\mid m}}\mu(k)
+\]
+the truncated product has the exact CRT expansion
+\[
+ Q_R(D(z))Q_R(V(z))
+ =
+ \sum_{\substack{k,\ell\le R\\
+ (k,s)=(\ell,a)=(k,\ell)=1}}
+ \mu(k)\mu(\ell)
+ \one_{z\equiv r_{k,\ell}\ ({\rm mod}\ k^2\ell^2)}.
+\]
+In the TPC-127 variable \(n=sV=aD+2\), the same fiber is the unique
+solution of
+\[
+ n\equiv2\pmod{ak^2},\qquad n\equiv0\pmod{s\ell^2},
+\]
+and its modulus is \(ask^2\ell^2\le asR^4\).  If the affine values
+are at most \(Y\) on an interval of length \(N\), the total
+unweighted truncation error is
+\[
+ \ll \tau_*(Y)\left(\frac NR+\sqrt Y\right),
+\qquad
+ \tau_*(Y)=\max_{m\le Y}\tau(m).
+\]
+We also prove the component census
+\(\ll N+R^2\), which replaces a wasteful \(R^2N\) triangle bound.
+These are unconditional finite and elementary estimates.  They
+isolate, but do not prove, the required uniform cancellation on the
+resulting progression fibers.  Thus the paper is \(\Lzero/\Lone\),
+not an \(\Ltwo\) parity result.
+\end{abstract}
+
+\section{Primitive determinant-two setting}
+
+Let
+\begin{equation}
+ D(z)=d+sz,\qquad V(z)=u+az,\qquad su-ad=2
+\label{eq:forms}
+\end{equation}
+be positive on an integer interval \(I\) of length \(N\).  We use
+the primitive relations supplied by the literal TPC-93 export,
+\begin{equation}
+ (a,s)=1,\quad (as,2)=1,\quad (d,s)=1,\quad (u,a)=1.
+\label{eq:primitive}
+\end{equation}
+They imply \(a,s\) are odd.  Put
+\[
+ q=as,\qquad n(z)=sV(z)=aD(z)+2=su+qz.
+\]
+TPC-127 proves
+\[
+ \mu(D(z))\mu(V(z))
+ =
+ \lambda(q)\lambda(n(z)-2)\lambda(n(z))
+ \mu^2(D(z))\mu^2(V(z))
+\]
+and transports the literal phase and weight without changing the
+prefix order \citep{WangTPC127}.
+
+The purpose here is narrower: replace the two squarefree indicators
+by a finite family of exact congruence fibers and put every
+truncation cost in a visible ledger.
+
+\section{Exact square-divisor expansion}
+
+For \(R\ge1\), define
+\begin{equation}
+ Q_R(m)=\sum_{\substack{k\le R\\k^2\mid m}}\mu(k).
+\label{eq:QR}
+\end{equation}
+The full identity
+\begin{equation}
+ \mu^2(m)=\sum_{k^2\mid m}\mu(k)
+\label{eq:squarefree-identity}
+\end{equation}
+follows prime by prime.
+
+\begin{lemma}[Compatibility of two square divisors]
+\label{lem:compatibility}
+For positive integers \(k,\ell\), the simultaneous conditions
+\[
+ k^2\mid D(z),\qquad \ell^2\mid V(z)
+\]
+have an integer solution \(z\) if and only if
+\begin{equation}
+ (k,s)=1,\qquad(\ell,a)=1,\qquad(k,\ell)=1.
+\label{eq:compatibility}
+\end{equation}
+When soluble, they select one residue
+\[
+ z\equiv r_{k,\ell}\pmod{k^2\ell^2}.
+\]
+\end{lemma}
+
+\begin{proof}
+If a prime \(p\) divides both \(k\) and \(s\), then
+\(p\mid D(z)\) and \(p\mid s\), hence \(p\mid d\), contradicting
+\((d,s)=1\).  The argument for \((\ell,a)\) is identical.  If
+\(p\mid(k,\ell)\), then \(p^2\) divides both \(D(z)\) and \(V(z)\),
+and consequently divides
+\[
+ sV(z)-aD(z)=2,
+\]
+which is impossible.
+
+Conversely, if \eqref{eq:compatibility} holds, the first congruence
+selects one residue modulo \(k^2\), and the second selects one
+residue modulo \(\ell^2\).  Since \((k,\ell)=1\), the Chinese
+remainder theorem combines them uniquely modulo \(k^2\ell^2\).
+\end{proof}
+
+\begin{theorem}[Exact truncated CRT expansion]
+\label{thm:crt-expansion}
+For every \(z\in I\),
+\begin{equation}
+\boxed{
+ Q_R(D(z))Q_R(V(z))
+ =
+ \sum_{\substack{k,\ell\le R\\
+ (k,s)=(\ell,a)=(k,\ell)=1}}
+ \mu(k)\mu(\ell)
+ \one_{z\equiv r_{k,\ell}\ ({\rm mod}\ k^2\ell^2)}.}
+\label{eq:crt-z}
+\end{equation}
+Equivalently, in the \(n\)-frame each nonempty term is the unique
+residue class solving
+\begin{equation}
+ n\equiv2\pmod{ak^2},\qquad
+ n\equiv0\pmod{s\ell^2},
+\label{eq:crt-n}
+\end{equation}
+with modulus
+\begin{equation}
+ q_{k,\ell}=ask^2\ell^2\le asR^4.
+\label{eq:modulus-inflation}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expand the product in \eqref{eq:QR} and use
+\cref{lem:compatibility}, proving \eqref{eq:crt-z}.  Since
+\(aD=n-2\) and \(sV=n\), the two square divisibilities are exactly
+\eqref{eq:crt-n}.  The compatibility conditions and
+\((a,s)=1\) make the two displayed moduli coprime, so their product
+is \eqref{eq:modulus-inflation}.
+\end{proof}
+
+\begin{remark}[No density substitution]
+The coefficient \(\mu(k)\mu(\ell)\), the compatibility conditions,
+and the actual CRT residue all remain in
+\eqref{eq:crt-z}.  Replacing them by a squarefree density would not
+be an identity and would erase the sign needed for reassembly.
+\end{remark}
+
+\section{A primitive truncation tail}
+
+Let
+\[
+ Y\ge
+ \max_{z\in I}\{D(z),V(z),2\},\qquad
+ \tau_*(Y)=\max_{1\le m\le Y}\tau(m).
+\]
+
+\begin{lemma}[One-form square-divisor tail]
+\label{lem:one-tail}
+For a primitive positive affine form \(L(z)=b+cz\) on \(I\), with
+\((b,c)=1\) and \(L(z)\le Y\),
+\begin{equation}
+ \sum_{z\in I}
+ \left|\mu^2(L(z))-Q_R(L(z))\right|
+ \le
+ \frac NR+\sqrt Y+1.
+\label{eq:one-tail}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:squarefree-identity},
+\[
+ |\mu^2(L(z))-Q_R(L(z))|
+ \le
+ \sum_{\substack{k>R\\k^2\mid L(z)}}1.
+\]
+If \((k,c)>1\), the congruence is insoluble by primitivity.  Otherwise
+it selects at most \(N/k^2+1\) integers of \(I\).  Since
+\(k\le\sqrt Y\),
+\[
+ \sum_{R<k\le\sqrt Y}\left(\frac N{k^2}+1\right)
+ \le \frac NR+\sqrt Y+1.
+\]
+\end{proof}
+
+\begin{theorem}[Two-mask truncation bound]
+\label{thm:tail}
+For every complex sequence \(w_z\) with
+\(\|w\|_\infty=\max_{z\in I}|w_z|\),
+\begin{align}
+ &\left|
+ \sum_{z\in I}w_z
+ \left\{
+ \mu^2(D(z))\mu^2(V(z))
+ -
+ Q_R(D(z))Q_R(V(z))
+ \right\}
+ \right|
+\notag\\
+ &\qquad\le
+ \|w\|_\infty(1+\tau_*(Y))
+ \left(\frac NR+\sqrt Y+1\right).
+\label{eq:two-tail}
+\end{align}
+In particular the right side is
+\[
+ \|w\|_\infty
+ Y^{o(1)}\left(\frac NR+\sqrt Y\right).
+\]
+\end{theorem}
+
+\begin{proof}
+Write \(A=\mu^2(D)\), \(B=\mu^2(V)\),
+\(A_R=Q_R(D)\), and \(B_R=Q_R(V)\).  Then
+\[
+ AB-A_RB_R=(A-A_R)B+A_R(B-B_R).
+\]
+Here \(|B|\le1\), while
+\[
+ |A_R|\le\sum_{k^2\mid D}1\le\tau(D)\le\tau_*(Y).
+\]
+Apply \cref{lem:one-tail} to \(D\) and \(V\), multiply by
+\(\|w\|_\infty\), and use the triangle inequality.
+\end{proof}
+
+\begin{remark}[The \(\sqrt Y\) floor is real for this proof]
+The \(+1\) in the count of each square-divisor progression sums to
+\(O(\sqrt Y)\).  Removing that term uniformly in moving slopes and
+origins would require additional information.  This paper does not
+hide it in \(Y^{o(1)}N/R\).
+\end{remark}
+
+\section{Component census and exponent ledger}
+
+\begin{proposition}[Mass-aware CRT census]
+\label{prop:census}
+Let \(\mathcal C_R\) be the sum, over compatible \(k,\ell\le R\), of
+the number of \(z\in I\) in the corresponding CRT fiber.  Then
+\begin{equation}
+ \mathcal C_R
+ \le
+ N\left(\sum_{k\ge1}\frac1{k^2}\right)^2+R^2
+ \ll N+R^2.
+\label{eq:census}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+One residue modulo \(k^2\ell^2\) contributes at most
+\(N/(k^2\ell^2)+1\) points.  Sum this upper bound and discard the
+compatibility restrictions.
+\end{proof}
+
+The census matters because a uniform estimate relative to each
+component's \emph{own} absolute mass costs \(N+R^2\), not the
+wasteful \(R^2N\).  Physical weights still have to be included in
+the corresponding weighted census; \cref{prop:census} alone does
+not prove that outer bound.
+
+Suppose, for an exponent audit, that
+\[
+ N=X^{\nu+o(1)},\quad
+ Y\le X^{\upsilon+o(1)},\quad
+ as\le X^{\kappa+o(1)},\quad
+ R=X^{\rho+o(1)},
+\]
+and put
+\begin{equation}
+ R_{\rm eff}=\min\{R,\sqrt Y\},
+ \qquad
+ \rho_{\rm eff}=\min\{\rho,\upsilon/2\}.
+\label{eq:effective-cutoff}
+\end{equation}
+Only \(k,\ell\le R_{\rm eff}\) can occur on the interval.  Every retained
+correlation theorem must be uniform up to modulus exponent
+\begin{equation}
+ \kappa+4\rho_{\rm eff}.
+\label{eq:uniformity-cost}
+\end{equation}
+
+To state a relative tail exponent, the comparison mass must be
+declared.  Let \(\mathcal V_X\) be the actual absolute mass of the
+untruncated literal block and assume
+\[
+ \|w\|_\infty=X^{o(1)},
+ \qquad
+ \mathcal V_X=X^{\omega+o(1)}.
+\]
+If \(R<\sqrt Y\), \cref{thm:tail} gives
+\begin{equation}
+ \eta_{\rm tail}
+ =
+ \min\left\{\omega-\nu+\rho,\,
+             \omega-\frac{\upsilon}{2}\right\},
+\label{eq:tail-exponent}
+\end{equation}
+provided the displayed minimum is positive.  In the common
+mass-comparable case \(\omega=\nu\), this reduces to
+\(\min\{\rho,\nu-\upsilon/2\}\).  If \(R\ge\sqrt Y\), then
+\(Q_R(m)=\mu^2(m)\) for every \(m\le Y\), so the truncation tail is
+identically zero rather than being governed by
+\eqref{eq:tail-exponent}.
+
+For each retained CRT component \(c\), let \(\mathcal V_c\) be its
+actual absolute mass.  Define the \emph{weighted census cost} by the
+theorem-backed inequality
+\begin{equation}
+ \sum_c\mathcal V_c
+ \le X^{\ell_{\rm cen}+o(1)}\mathcal V_X.
+\label{eq:weighted-census}
+\end{equation}
+If the literal weights are uniformly bounded and
+\(\mathcal V_X=X^{\nu+o(1)}\), the point census gives the crude choice
+\begin{equation}
+ \ell_{\rm cen}=(2\rho_{\rm eff}-\nu)_+.
+\label{eq:census-cost}
+\end{equation}
+Without those mass hypotheses, \eqref{eq:census-cost} is unavailable
+and \(\ell_{\rm cen}\) must come from the actual weighted archive.
+
+If each CRT component saves \(X^{-\eta_{\rm corr}}\) relative to
+its own \(\mathcal V_c\), the certificate returns
+\begin{equation}
+ \boxed{
+ \eta_{\rm block}^{\rm cert}
+ =
+ \begin{cases}
+ \min\{\eta_{\rm tail},
+       \eta_{\rm corr}-\ell_{\rm cen}\},
+       &R<\sqrt Y,\\
+ \eta_{\rm corr}-\ell_{\rm cen},
+       &R\ge\sqrt Y.
+ \end{cases}}
+\label{eq:block-certificate}
+\end{equation}
+The formula is relative to the declared actual absolute mass.  It is
+a loss ledger, not an assertion of the correlation or weighted-census
+inputs.  It is a positive saving only when
+\(\eta_{\rm tail}>0\) and
+\(\eta_{\rm corr}>\ell_{\rm cen}\) in the first regime, or when
+\(\eta_{\rm corr}>\ell_{\rm cen}\) in the exact-cutoff regime.
+
+\section{Stop/go rules and claim boundary}
+
+\paragraph{TAIL STOP.}
+If \(\nu\le\upsilon/2\), the elementary uniform tail
+\eqref{eq:two-tail} gives no positive relative power in the
+mass-comparable regime while \(R<\sqrt Y\).  One must either prove a
+stronger weighted tail theorem, choose the exact cutoff
+\(R\ge\sqrt Y\), or use a different decomposition.  The exact cutoff
+removes the tail but caps the effective component range at
+\(R_{\rm eff}=\sqrt Y\), with modulus and census costs
+\(\kappa+2\upsilon\) and potentially
+\((\upsilon-\nu)_+\), respectively.
+
+\paragraph{MODULUS STOP.}
+Choosing \(R\) large enough to improve the tail inflates the actual
+modulus to \(asR^4\).  A theorem uniform only for fixed modulus is
+not callable on these fibers.
+
+\paragraph{CENSUS STOP.}
+The bound \eqref{eq:census} is unweighted.  If the literal physical
+weights, the active absolute mass, or outer keys do not satisfy the
+mass-comparable hypotheses, the actual bound
+\eqref{eq:weighted-census} must replace
+\eqref{eq:census-cost}.
+
+\paragraph{ARITHMETIC GO.}
+Proceed only with a proved estimate for the actual shift-two
+Liouville correlation on every retained CRT fiber, with the original
+phase, weight, origin, and prefix quantifiers.  Such a theorem would
+be genuine \(\Ltwo\) input.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.47\textwidth}X@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+Compatibility lemma and CRT expansion
+& Exact finite theorem (\(\Lzero\)).\\
+Primitive tail \eqref{eq:two-tail} and census
+\eqref{eq:census}
+& Unconditional elementary bounds (\(\Lzero\)).\\
+Attachment to the TPC-127 actual fixed-\(2\) frame
+& Literal interface (\(\Lone\)).\\
+Weighted outer census on the complete family
+& Not proved here.\\
+Uniform cancellation on retained CRT fibers
+& Not proved; arithmetic gate (\(\Ltwo\) if proved).\\
+H3, zero-mode saving, or endpoint theorem
+& Not proved.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+TPC-128 opens the squarefree masks exactly and quantifies the price:
+tail improvement, modulus growth, and component census compete.
+Squarefree density by itself supplies none of the required signed
+correlation.  No parity breach, prime-pair lower bound, or twin-prime
+conclusion is claimed.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

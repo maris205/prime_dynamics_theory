@@ -1,0 +1,469 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\e}{\mathrm e}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\GOI}{\textsc{go-interface}}
+\newcommand{\GOH}{\textsc{go-h3}}
+\newcommand{\STOP}{\textsc{stop-declared-route}}
+\newcommand{\NT}{\textsc{not-testable}}
+
+\title{\textbf{A Literal Fixed-Shift Generic-Affine Packet}\\
+\large Exact \(TT^*\), Signed-Prefix Crosswalks, and a
+Growability Audit}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-108 isolated the generic-affine arithmetic object, while
+TPC-123--125 specify the archive, physical reassembly, and
+prescribed-shift interfaces needed to call it without replacing the
+literal coefficient.  We give a self-contained invocation theorem for
+one complete fixed-\(h_0\) packet.  For every archived block
+\[
+ T_b=\sum_{z\in I_b}A_b(z)\e(-\alpha_bz),
+ \qquad s_bu_b-a_bd_b=h_0,
+\]
+we prove the exact lag identity
+\[
+ |T_b|^2
+ =\sum_r\e(-\alpha_br)
+   \sum_{\substack{z,z+r\in I_b}}
+   A_b(z+r)\overline{A_b(z)}
+\]
+and the exact canonical-order Abel identity.  For the complete block
+family \(S_X=\sum_b\gamma_bT_b\), the normalized literal ratios obey
+\[
+ \frac{|S_X|}{\sum_b|\gamma_b|M_b}
+ \le
+ \left(\sum_bq_b\frac{|T_b|^2}{M_b^2}\right)^{1/2},
+ \quad
+ q_b=\frac{|\gamma_b|M_b}{\sum_c|\gamma_c|M_c}.
+\]
+This identifies a precise growing theorem that would close the H3
+subgate after its separately audited outer loss.  The present paper
+proves the finite identities and their typed invocation only.  It
+does not prove the required uniform bound, a fixed-shift
+\(\Ltwo\) saving, a parity breakthrough, or a twin-prime result.
+\end{abstract}
+
+\section{Why another block statement is needed}
+
+The hard packet of TPC-15 is an exact scalar remainder whose
+\(o(X)\) estimate is equivalent, within that decomposition, to the
+corresponding weighted fixed-shift prime-pair asymptotic
+\citep{WangTPC15}.  TPC-93 exports its low window into affine
+coordinates while preserving content, projector, polarization, and
+the extracted M\"obius factors \citep{WangTPC93}.  TPC-107 insists
+that the signed filter be applied before positive majorization
+\citep{WangTPC107}; TPC-108 then writes the exact \(TT^*\) kernel and
+explains why an unrestricted replacement would reach a
+Chowla-strength problem \citep{WangTPC108,Tao2016LogChowla}.
+
+Those identities are not callable merely because a sequence with the
+same support has been constructed.  TPC-119 found that the audited
+snapshot lacked a complete native reconnection archive
+\citep{WangTPC119}.  TPC-123--125 therefore separate three interfaces:
+path conservation, leaf-to-physical cover, and direct
+prescribed-\(h_0\) intertwining
+\citep{WangTPC123,WangTPC124,WangTPC125}.  This paper starts
+\emph{after} those interfaces.  Its purpose is to state exactly what
+the extracted arithmetic block is, what finite equalities may be
+checked, and what genuinely growing assertion is still missing.
+
+\paragraph{Claim boundary.}
+An exact finite equality is \(\Lzero\).  Its verified attachment to
+the literal fixed-\(h_0\) packet is \(\Lone\).  Only a uniform
+coefficient-specific estimate on the complete growing family can be
+\(\Ltwo\).  A finite computation, a frozen form, an averaged shift,
+or a surrogate sign model does not change this typing.
+
+\section{The typed literal block}
+
+Fix one prescribed nonzero integer \(h_0\).  For each scale \(X\), let
+\(\mathcal B_X\) be the \emph{complete} set of long generic blocks
+selected by the verified archive and physical-cover maps.  A block
+record is
+\[
+ b=(I_b,d_b,s_b,u_b,a_b,\alpha_b,\gamma_b,\mathfrak m_b,
+    \mathfrak p_b,\mathfrak n_b),
+\]
+where:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(I_b\subset\mathbb Z\) is a finite ordered interval;
+\item
+  \(D_b(z)=d_b+s_bz\), \(V_b(z)=u_b+a_bz\), and
+  \[
+    s_bu_b-a_bd_b=h_0;
+    \label{eq:determinant}
+  \]
+\item \(\alpha_b\in\mathbb R/\mathbb Z\) is the literal frequency,
+  and \(\gamma_b\in\C\) is the literal outer multiplier;
+\item \(\mathfrak m_b,\mathfrak p_b,\mathfrak n_b\) contain,
+  respectively, all masks, the path/provenance key, and the unique
+  inherited physical normalization.
+\end{enumerate}
+The coefficient is not abbreviated to its two visible M\"obius
+factors.  We write
+\begin{equation}
+ A_b(z)
+ =
+ \mu(D_b(z))\mu(V_b(z))\,
+ \omega_b(z)\,
+ \mathbf 1_{\mathcal M_b}(z),
+ \label{eq:literal-coefficient}
+\end{equation}
+where \(\omega_b\) is the full complex reconstruction weight and
+\(\mathbf 1_{\mathcal M_b}\) is the product of the actual content,
+coprimality, prefix, interval, projector, and polarization masks.
+In particular, the extracted factor
+\(\mu(B)\mathbf 1_{(B,V_b(z))=1}\) from TPC-93 is part of
+\eqref{eq:literal-coefficient}; it may not be deleted.
+
+\begin{definition}[Archive extraction]
+Let \(c_X\) be the native coefficient vector, \(M_X\) the
+path-expanded archive matrix of TPC-123, and \(E_b\) the row selector
+and exact reconstruction map for block \(b\).  The block is
+\emph{literally extracted} if
+\begin{equation}
+ (A_b(z))_{z\in I_b}=E_bM_Xc_X
+ \label{eq:archive-extraction}
+\end{equation}
+with equality of values and of the metadata listed above.
+\end{definition}
+
+\begin{remark}
+Equation \eqref{eq:archive-extraction} is stronger than agreement of
+one scalar block sum.  Null pairs can preserve a scalar sum while
+changing the lag kernel, a prefix, or a determinant fiber.  It is
+also stronger than equality after absolute values, which erases the
+signed channel isolated in TPC-107.
+\end{remark}
+
+Define
+\[
+ \e(t)=e^{2\pi it},\qquad
+ T_b=\sum_{z\in I_b}A_b(z)\e(-\alpha_bz),\qquad
+ M_b=\sum_{z\in I_b}|A_b(z)|.
+\]
+Zero-mass blocks are retained in the archive but omitted from ratios.
+
+\section{Exact \texorpdfstring{\(TT^*\)}{TT-star} and prefix identities}
+
+\begin{theorem}[Literal lag expansion]
+\label{thm:ttstar}
+For every finite literal block,
+\begin{equation}
+ |T_b|^2
+ =
+ \sum_{r\in I_b-I_b}\e(-\alpha_br)C_b(r),
+ \qquad
+ C_b(r)=
+ \sum_{\substack{z\in I_b\\z+r\in I_b}}
+ A_b(z+r)\overline{A_b(z)}.
+ \label{eq:ttstar}
+\end{equation}
+Moreover \(C_b(-r)=\overline{C_b(r)}\), so the right side is real and
+nonnegative even though its individual lag terms need not be.
+\end{theorem}
+
+\begin{proof}
+Expanding the square gives
+\[
+ |T_b|^2
+ =
+ \sum_{x,z\in I_b}
+ A_b(x)\overline{A_b(z)}
+ \e(-\alpha_b(x-z)).
+\]
+Set \(r=x-z\), hence \(x=z+r\), and collect all admissible pairs.
+The symmetry follows by conjugating and replacing \(r\) by \(-r\).
+Nonnegativity follows from the left side, not from termwise
+positivity.
+\end{proof}
+
+\begin{remark}[The four-M\"obius interior]
+Substituting \eqref{eq:literal-coefficient} into \(C_b(r)\) exposes
+\[
+ \mu(D_b(z+r))\mu(V_b(z+r))
+ \mu(D_b(z))\mu(V_b(z))
+\]
+times the literal masks and weights.  Both shifted affine pairs still
+have determinant \(h_0\).  Replacing this expression by independent
+random signs, or dropping the mask intersection at \(z,z+r\), proves
+a statement about another kernel.
+\end{remark}
+
+The ordered form supplies a second exact diagnostic.  Write
+\(I_b=\{z_1<\cdots<z_m\}\), and suppose one declared factorization is
+\[
+ A_b(z_i)\e(-\alpha_bz_i)=\sigma_iw_i.
+\]
+The choice of \(\sigma_i\) and \(w_i\), and the order \(z_i\), are
+part of the archive.  Put \(P_k=\sum_{i\le k}\sigma_i\).
+
+\begin{theorem}[Canonical-order Abel crosswalk]
+\label{thm:abel}
+For every such factorization,
+\begin{equation}
+ T_b=P_mw_m+\sum_{k=1}^{m-1}P_k(w_k-w_{k+1}).
+ \label{eq:abel}
+\end{equation}
+Consequently
+\[
+ |T_b|
+ \le
+ \max_{1\le k\le m}|P_k|
+ \left(
+ |w_m|+\sum_{k<m}|w_k-w_{k+1}|
+ \right).
+\]
+\end{theorem}
+
+\begin{proof}
+Since \(\sigma_i=P_i-P_{i-1}\), with \(P_0=0\),
+\[
+ \sum_{i=1}^m(P_i-P_{i-1})w_i
+ =P_mw_m+\sum_{i=1}^{m-1}P_i(w_i-w_{i+1}).
+\]
+The inequality is the triangle inequality.
+\end{proof}
+
+\begin{remark}
+Theorems \ref{thm:ttstar} and \ref{thm:abel} are two exact views of
+the same literal block, not two interchangeable hypotheses.
+\(TT^*\) asks for a weighted aggregate of four-point lags.  Abel
+asks for every signed prefix under one canonical order.  A bound in
+one language must be transferred with all literal weights before it
+can be used in the other.
+\end{remark}
+
+\section{Complete-family normalization}
+
+The physical generic contribution has the exact form
+\begin{equation}
+ S_X=\sum_{b\in\mathcal B_X}\gamma_bT_b.
+ \label{eq:family}
+\end{equation}
+Set
+\[
+ \mathcal A_X=\sum_b|\gamma_b|M_b,\qquad
+ q_b=\frac{|\gamma_b|M_b}{\mathcal A_X}
+\]
+when \(\mathcal A_X>0\).  Then \((q_b)\) is a probability vector.
+
+\begin{theorem}[Literal family invocation]
+\label{thm:family}
+For the complete archived block family,
+\begin{equation}
+ \frac{|S_X|}{\mathcal A_X}
+ \le
+ \sum_{b:M_b>0}q_b\frac{|T_b|}{M_b}
+ \le
+ \left(
+ \sum_{b:M_b>0}
+ q_b\frac{|T_b|^2}{M_b^2}
+ \right)^{1/2}.
+ \label{eq:family-bound}
+\end{equation}
+Both inequalities have sharp finite examples.
+\end{theorem}
+
+\begin{proof}
+The first inequality follows from
+\[
+ |S_X|\le\sum_b|\gamma_b||T_b|
+ =\mathcal A_X\sum_bq_b|T_b|/M_b.
+\]
+The second is Cauchy--Schwarz in the probability measure \(q_b\).
+Equality in both occurs when all nonzero \(\gamma_bT_b\) have a
+common phase and all ratios \(|T_b|/M_b\) are equal.
+\end{proof}
+
+\begin{corollary}[Typed termwise sufficient condition]
+\label{cor:h3}
+Assume, on the complete actual growing family and in one physical
+normalization, that
+\begin{equation}
+ \sum_{b:M_b>0}
+ q_b\frac{|T_b|^2}{M_b^2}
+ \le X^{-2\eta+o(1)}.
+ \label{eq:growing-input}
+\end{equation}
+If the separately proved outer reconstruction and norm-conversion
+cost is \(X^{\lambda_{\rm out}+o(1)}\), then the net relative saving
+delivered by \eqref{eq:family-bound} is
+\[
+ X^{-(\eta-\lambda_{\rm out})+o(1)}.
+\]
+In the deliberately termwise TPC-108 ledger, this certificate reaches
+the stronger displayed \emph{linear generic-window} exponent when
+\begin{equation}
+ \eta-\lambda_{\rm out}\ge\frac1{200}.
+ \label{eq:h3-threshold}
+\end{equation}
+This is a conservative sufficient condition for that linear window,
+not the exact quadratic-to-amplitude threshold of MVP1.  Calling the
+MVP1 packet saving \(1/400\) still requires the separately verified
+physical \(TT^*\) crosswalk and prefactor.
+\end{corollary}
+
+\begin{proof}
+Take the square root in \eqref{eq:growing-input}, apply
+\eqref{eq:family-bound}, and multiply by the separately certified
+outer cost.  The last condition is the stronger termwise
+linear-window threshold used in TPC-108; it is not derived from a
+finite block and is not claimed necessary for every coherent H3
+proof.
+\end{proof}
+
+\paragraph{No hidden averaging.}
+The quantifier in \eqref{eq:growing-input} is over the actual
+\(X\)-indexed family.  It cannot be replaced by any of the following:
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item a fixed finite list of blocks;
+\item an average over shifts when \(h_0\) is prescribed;
+\item an average over unrelated phases or moduli;
+\item a density-one subfamily without charging its complement;
+\item a family selected after inspecting favorable phase
+  cancellation.
+\end{enumerate}
+The archive rule, the block family, and any good/bad selection must be
+predeclared.
+
+\section{What finite audits can and cannot decide}
+
+\begin{proposition}[Finite saturation]
+\label{prop:saturation}
+For every finite support \(I\), every nonnegative magnitudes
+\((m_z)_{z\in I}\), and every phase \(\alpha\), there are coefficients
+with \(|A(z)|=m_z\) such that
+\[
+ \left|\sum_{z\in I}A(z)\e(-\alpha z)\right|
+ =\sum_{z\in I}m_z.
+\]
+There are also coefficients with the same magnitudes whose sum is
+zero whenever the polygon inequality
+\(\max m_z\le\frac12\sum m_z\) holds.
+\end{proposition}
+
+\begin{proof}
+For saturation take \(A(z)=m_z\e(\alpha z+\theta)\).
+For cancellation, the polygon inequality is the classical necessary
+and sufficient condition that vectors of lengths \(m_z\) close to a
+polygon; rotate those vectors back by \(\e(\alpha z)\).
+\end{proof}
+
+Thus support, occupancy, and magnitudes alone do not determine the
+signed ratio.  Conversely, one unusually small finite ratio does not
+prove \eqref{eq:growing-input}.  A finite experiment is valuable for
+checking the literal extraction and choosing a candidate analytic
+lemma, but not for certifying an asymptotic exponent.
+
+\begin{definition}[Four verdicts for this interface]
+The block audit uses:
+\begin{description}[leftmargin=3.3cm,style=nextline,font=\normalfont]
+\item[\(\GOI\)]
+The complete finite archive-to-block extraction, metadata,
+normalization, \(TT^*\), and prefix identities pass.  This is at most
+\(\Lone\).
+\item[\(\GOH\)]
+In addition, a theorem proves \eqref{eq:growing-input} on the complete
+actual growing family and the separate cost satisfies
+\eqref{eq:h3-threshold}.  Only this can close the declared H3
+subgate.
+\item[\(\STOP\)]
+An exact growing counterfamily inside the quantifiers of a declared
+candidate lemma violates it.  This stops that lemma, not all signed
+routes.
+\item[\(\NT\)]
+The archive extraction, complete block census, metadata, physical
+normalization, or growing theorem is absent.
+\end{description}
+\end{definition}
+
+\section{Executable certificate and status}
+
+The standard-library script
+\texttt{experiments/tpc126\_literal\_packet\_audit.py} checks on exact
+integer metadata and ordinary double-precision finite data:
+\begin{enumerate}[leftmargin=2em]
+\item the determinant identity and the presence of a declared sample
+  metadata subset, not completeness of the literal archive metadata;
+\item the complex lag identity and its Hermitian symmetry;
+\item the canonical Abel identity and BV bound;
+\item both family inequalities and a saturation example;
+\item the logical separation between \(\GOI\) and \(\GOH\).
+\end{enumerate}
+It writes a deterministic JSON certificate.  It does not sample
+primes, estimate a growing exponent, or promote a finite regression
+to arithmetic evidence.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.43\textwidth}X@{}}
+\toprule
+Statement & Level and present status\\
+\midrule
+Lag expansion and Abel identity
+& Exact finite theorem, \(\Lzero\).\\
+Archive-to-literal block equality
+& Callable \(\Lone\) interface; requires the actual TPC-123--125
+artifacts.\\
+Complete growing bound \eqref{eq:growing-input}
+& Open coefficient-specific arithmetic input.\\
+Outer loss \(\lambda_{\rm out}\)
+& Separate physical theorem/ledger input; unknown costs are not zero.\\
+H3 fixed-\(h_0\) gate
+& \(\NT\) from the current artifacts; no \(\Ltwo\) theorem.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Conclusion.}
+The literal arithmetic target is now an executable object with an
+exact normalization and a sharp family-level invocation rule.  This
+is forward movement at the interface: a future theorem has one
+explicit left-hand side, one complete set of quantifiers, and one
+loss threshold.  The hard step remains the growing signed estimate
+itself.  Nothing here proves M\"obius cancellation for the actual
+family, breaches the parity barrier, gives a prime-pair lower bound,
+establishes a Hardy--Littlewood asymptotic, or proves the twin-prime
+conjecture.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

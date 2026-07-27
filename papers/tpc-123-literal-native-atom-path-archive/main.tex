@@ -1,0 +1,495 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\GOI}{\textsc{go-interface}}
+\newcommand{\STOP}{\textsc{stop-declared-route}}
+\newcommand{\NT}{\textsc{not-testable}}
+
+\title{\textbf{Literal Native-Atom Path Archives for the TPC-15 Hard Packet}\\
+\large Local-to-Global Conservation, Metadata Intertwining, and
+First-Failure Certificates}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-119 gave a sufficient canonical-matrix criterion for reconnecting
+the later TPC synthesis to the original fixed-shift hard packet, but
+the audited repository did not contain the complete matrix.  We make
+the missing object local.  Every declared partition, polarization,
+content split, frequency split, boundary rule and return rule is
+represented by an exact sparse stage matrix \(T_j\), and the
+path-expanded archive records every nonzero edge rather than only its
+final aggregate.  If
+\[
+ \one^TT_j=\one^T
+\]
+at every stage and every edge intertwines the native key, prescribed
+shift and physical normalization, then the composite
+\(M=T_s\cdots T_1\) is coefficientwise conservative and gives the
+exact TPC-119 reconnection identity.  We prove the defect formula
+\[
+ \one_s^TM-\one_0^T
+ =
+ \sum_{j=1}^s
+ \bigl(\one_j^TT_j-\one_{j-1}^T\bigr)
+ T_{j-1}\cdots T_1,
+\]
+which separates a global defect into typed local defects.  Sharp
+finite examples show why equality on one coefficient vector, a
+conservative final composite, or an untagged scalar archive does not
+verify the local path statement.  The theorem and exact rational
+audit are \(\Lzero\); identifying the required TPC fields is an
+\(\Lone\) interface.  The actual growing branch tables remain absent,
+so the literal archive is presently \(\NT\).  No \(\Ltwo\)
+fixed-shift cancellation, parity advance or prime-pair theorem is
+claimed.
+\end{abstract}
+
+\section{Scope and the native entrance}
+
+Fix a nonzero admissible shift \(h_0\), a smooth compactly supported
+weight \(W\), and \(0<\delta<1/2\).  The TPC-15 hard packet has the
+opened form
+\begin{equation}
+ B_{h_0,\delta}(X)
+ =
+ \sum_{\alpha=(\ell,k,d)\in\cA_X}c_X(\alpha),
+ \qquad
+ c_X(\alpha)=
+ -\Lambda(\ell)\mu(d)r_Q(\ell k+h_0)W(\ell k/X),
+ \label{eq:native}
+\end{equation}
+where \(\ell>U\), \(k>V\), \(d\mid k\), and \(d\le V\)
+\citep{WangTPC15,WangTPC119}.  The divisor \(d\) is part of the key:
+compressing \((\ell,k,d)\) to \((\ell,k)\) preserves the scalar in
+\eqref{eq:native} but loses the provenance needed by later content
+and prefix operations.
+
+TPC-119 encodes a complete later analysis by a matrix \(M_X\) whose
+columns are the atoms of \(\cA_X\) and whose rows are final leaves.
+Its sufficient conservation condition is
+\begin{equation}
+ \one^TM_X=\one^T.
+ \label{eq:global-conservation}
+\end{equation}
+The remaining difficulty is not linear algebra: it is the absence of
+one object proving that every intermediate branch has been included
+with the same \(h_0\), normalization and native source.  The present
+paper replaces a monolithic final archive by a composable path
+archive.  It does not estimate any coefficient in
+\eqref{eq:native}.
+
+\begin{definition}[Claim levels]
+An exact finite identity independent of the arithmetic meaning of
+the labels is \(\Lzero\).  A verified identification of those labels
+with the literal TPC packet is \(\Lone\).  A growing,
+coefficient-specific, fixed-\(h_0\) arithmetic power saving is
+\(\Ltwo\).
+\end{definition}
+
+\section{Typed stages and the path-expanded archive}
+
+Let
+\[
+ R_0=\cA_X,\quad R_1,\ldots,R_s=\cL_X
+\]
+be finite record sets.  A record may contain mathematical data in
+addition to its identifier.  For each \(j\), let
+\[
+ T_j:\C^{R_{j-1}}\longrightarrow\C^{R_j}
+\]
+be the exact sparse matrix of the \(j\)-th declared operation.  Rows
+are outgoing records and columns are incoming records.  Thus
+\[
+ M=T_sT_{s-1}\cdots T_1
+\]
+is the aggregate leaf matrix.
+
+\begin{definition}[Path-expanded archive]
+A path is a tuple
+\[
+ p=(r_0,r_1,\ldots,r_s),\qquad r_j\in R_j,
+\]
+such that \(T_j(r_j,r_{j-1})\ne0\) for every \(j\).  Its multiplier is
+\[
+ m(p)=\prod_{j=1}^sT_j(r_j,r_{j-1}).
+\]
+The path-expanded archive stores the tuple, its multiplier, its
+native source \(r_0\), and the typed metadata on every edge.  Paths
+remain distinct even when they end at the same leaf.
+\end{definition}
+
+\begin{proposition}[Path expansion]
+\label{prop:path}
+For every \(r_s\in R_s\) and \(r_0\in R_0\),
+\[
+ M(r_s,r_0)
+ =
+ \sum_{\substack{p:\,p_0=r_0\\p_s=r_s}}m(p).
+\]
+\end{proposition}
+
+\begin{proof}
+This is the entrywise definition of the product
+\(T_s\cdots T_1\), with all intermediate indices displayed.
+\end{proof}
+
+The path form is deliberately more redundant than \(M\).  It
+records whether an entry arose from the declared branches, whereas a
+final matrix entry records only their sum.  This distinction is
+essential when opposite errors cancel.
+
+\section{Local conservation implies exact global reconnection}
+
+Write \(\one_j\) for the all-ones column vector on \(R_j\).
+
+\begin{definition}[Stage conservation]
+Stage \(j\) is coefficientwise conservative when
+\begin{equation}
+ \one_j^TT_j=\one_{j-1}^T.
+ \label{eq:stage-conservation}
+\end{equation}
+Equivalently, the outgoing multipliers above every incoming record
+sum exactly to one.
+\end{definition}
+
+\begin{theorem}[Local-to-global path conservation]
+\label{thm:local-global}
+If \eqref{eq:stage-conservation} holds for every
+\(1\le j\le s\), then
+\[
+ \boxed{\one_s^TM=\one_0^T.}
+\]
+Consequently, for every coefficient vector \(c\in\C^{R_0}\),
+\[
+ \one_s^TMc=\one_0^Tc.
+\]
+In particular, taking \(c=c_X\) from \eqref{eq:native} gives exact
+scalar reconnection to \(B_{h_0,\delta}(X)\).
+\end{theorem}
+
+\begin{proof}
+Repeatedly use \eqref{eq:stage-conservation}:
+\[
+ \one_s^TT_s\cdots T_1
+ =
+ \one_{s-1}^TT_{s-1}\cdots T_1
+ =\cdots=\one_0^T.
+\]
+Multiplying by \(c\) proves the scalar identity.  No positivity,
+orthogonality or probabilistic interpretation is used.
+\end{proof}
+
+\begin{corollary}[Retained--soft identity]
+\label{cor:retsoft}
+Suppose \(R_s=R_s^{\rm ret}\sqcup R_s^{\rm soft}\) is a disjoint
+typed partition.  Let \(M^{\rm ret}\) and \(M^{\rm soft}\) be obtained
+from \(M\) by retaining the corresponding rows and setting the other
+rows to zero.  Under \cref{thm:local-global},
+\[
+ B_{h_0,\delta}(X)
+ =
+ \one^TM^{\rm ret}c_X+\one^TM^{\rm soft}c_X.
+\]
+\end{corollary}
+
+\begin{proof}
+The row partition gives \(M=M^{\rm ret}+M^{\rm soft}\); now apply
+\cref{thm:local-global}.
+\end{proof}
+
+\begin{remark}[What the theorem does not estimate]
+The corollary is exact even when both terms are large.  To obtain the
+analytic H8 conclusion, a separate complete theorem must prove
+\(\one^TM^{\rm soft}c_X=o(X)\) in the original normalization.
+Local conservation does not provide that bound.
+\end{remark}
+
+\section{The exact defect telescope}
+
+Define the stage defect
+\[
+ d_j^T=\one_j^TT_j-\one_{j-1}^T.
+\]
+Use the convention \(T_0\cdots T_1=I_{R_0}\).
+
+\begin{theorem}[Conservation-defect telescope]
+\label{thm:defect}
+For arbitrary compatible stage matrices,
+\begin{equation}
+ \boxed{
+ \one_s^TM-\one_0^T
+ =
+ \sum_{j=1}^s
+ d_j^TT_{j-1}\cdots T_1.}
+ \label{eq:defect}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Insert and subtract
+\(\one_{s-1}^TT_{s-1}\cdots T_1\):
+\[
+ \one_s^TT_s\cdots T_1-\one_0^T
+ =
+ d_s^TT_{s-1}\cdots T_1
+ +\one_{s-1}^TT_{s-1}\cdots T_1-\one_0^T.
+\]
+Iterating proves \eqref{eq:defect}.
+\end{proof}
+
+\begin{corollary}[First failing conservative stage]
+If stages \(1,\ldots,j-1\) satisfy
+\eqref{eq:stage-conservation} and \(d_j\ne0\), then the path archive
+contains an exact local failure certificate at stage \(j\).  This
+stops the declared locally conservative implementation, even if
+later matrices happen to cancel its contribution in
+\eqref{eq:defect}.
+\end{corollary}
+
+The last clause matters: global conservation is not the converse of
+stagewise conservation.  A path audit asks whether the declared proof
+operations themselves are exact partitions, not merely whether their
+aggregate happens to preserve one scalar.
+
+\section{Metadata intertwining}
+
+Coefficient conservation cannot see a wrong shift or a second
+normalization.  Let \(K\) be any discrete metadata set and let
+\[
+ \kappa_j:R_j\longrightarrow K
+\]
+record one field.  For \(q\in K\), let \(P_{j,q}\) be the coordinate
+projection onto records with \(\kappa_j=q\).
+
+\begin{definition}[Metadata intertwining]
+Stage \(T_j\) preserves the field \(\kappa\) when
+\begin{equation}
+ P_{j,q}T_j=T_jP_{j-1,q}
+ \qquad(q\in K),
+ \label{eq:metadata}
+\end{equation}
+where the second occurrence of \(T_j\) is understood with the
+compatible source and target projections.  Entrywise, every nonzero
+edge has \(\kappa_j(r_j)=\kappa_{j-1}(r_{j-1})\).
+\end{definition}
+
+\begin{theorem}[Composite metadata preservation]
+\label{thm:metadata}
+If \eqref{eq:metadata} holds at every stage, then
+\[
+ P_{s,q}M=MP_{0,q}
+ \qquad(q\in K).
+\]
+\end{theorem}
+
+\begin{proof}
+Move the projection successively through \(T_s,\ldots,T_1\).
+\end{proof}
+
+The fields required by the present route include:
+\begin{enumerate}[label=\textbf{F\arabic*.},leftmargin=2.7em]
+\item the native atom \((\ell,k,d)\);
+\item the prescribed shift \(h_0\) and the single inherited physical
+normalization;
+\item every partition, polarization, mask, content, boundary and
+collision tag;
+\item the retained or soft terminal type;
+\item for the TPC-121 interface, the raw atom \(t\), determinant bin
+\(\nu(t)\), complex coefficient \(u_t\), and the predeclared
+\(X\)-indexed bin/good-set rule \citep{WangTPC121};
+\item for the TPC-122 interface, the canonical fiber order, arithmetic
+sign \(\sigma\), outer weight \(w\), and the content remainder
+allocation \citep{WangTPC122}.
+\end{enumerate}
+The last two items are data fields, not exponent theorems.  Recording
+them does not prove either \(\lambda_D^{\rm cert}\) or
+\(\eta_Z^{\rm cert}\).
+
+\section{Sharp counterexamples}
+
+\begin{proposition}[Scalar coincidence is insufficient]
+\label{prop:scalar}
+There are \(M\) and \(c\) such that
+\(\one^TMc=\one^Tc\) but \(\one^TM\ne\one^T\).
+\end{proposition}
+
+\begin{proof}
+Take
+\[
+ M=\begin{pmatrix}2&0\\0&0\end{pmatrix},
+ \qquad c=\begin{pmatrix}1\\1\end{pmatrix}.
+\]
+Both scalar sums equal \(2\), whereas the column-sum row is
+\((2,0)\).
+\end{proof}
+
+\begin{proposition}[Local defects may cancel]
+\label{prop:cancel}
+There are nonconservative stages whose composite is the identity.
+\end{proposition}
+
+\begin{proof}
+Take
+\[
+ T_1=\begin{pmatrix}2&0\\0&1/2\end{pmatrix},
+ \qquad
+ T_2=\begin{pmatrix}1/2&0\\0&2\end{pmatrix}.
+\]
+Neither stage has column sums \((1,1)\), but \(T_2T_1=I\).
+\end{proof}
+
+\begin{proposition}[Conservation does not imply provenance]
+\label{prop:tags}
+A permutation matrix can satisfy coefficientwise conservation while
+exchanging two incompatible metadata tags.
+\end{proposition}
+
+\begin{proof}
+Every permutation matrix has unit column sums.  Permute a record
+tagged \(h_0\) with one tagged \(h_1\ne h_0\).  The coefficient sum is
+unchanged, but \eqref{eq:metadata} fails for the shift projection.
+\end{proof}
+
+These examples rule out three common shortcuts: testing only the
+actual coefficient vector, testing only the final composite, and
+testing only untagged weights.
+
+\section{Invocation, data requirements and route verdicts}
+
+\begin{definition}[Paper-specific verdicts]
+\(\GOI\) means that the complete symbolic family of actual stage
+tables, not merely finitely many numerical samples, passes
+\cref{thm:local-global,thm:metadata}.  \(\STOP\) means that an exact
+defect disproves the declared archive implementation.  It is not a
+global impossibility theorem.  \(\NT\) means that a stage table,
+boundary rule, metadata dictionary or typed comparison object is
+absent.
+\end{definition}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.25\textwidth}P{0.28\textwidth}Y@{}}
+\toprule
+Input & Required quantifier & Failure status\\
+\midrule
+Native entrance
+& Every active \((\ell,k,d)\in\cA_X\)
+& Missing divisor provenance is \(\NT\).\\
+Stage tables
+& Every declared branch for the symbolic \(X\)-family
+& A missing table is \(\NT\); an explicit wrong entry is \(\STOP\).\\
+Boundary/collision rules
+& All endpoint and overlap cases
+& Testing generic interior samples only is \(\NT\).\\
+Conservation
+& Entrywise exact arithmetic
+& A nonzero stage defect is \(\STOP\) for that implementation.\\
+Metadata
+& Every nonzero edge
+& Wrong \(h_0\), source or normalization is \(\STOP\).\\
+Soft estimate
+& Complete outer family as \(X\to\infty\)
+& Absent analytic estimate leaves H8 open.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The local dictionaries of TPC-105 and TPC-107 explain how provenance
+and signed filtering should be retained, while TPC-114 and TPC-117
+specify later physical grouping and cover objects
+\citep{WangTPC105,WangTPC107,WangTPC114,WangTPC117}.  They do not,
+by themselves, provide every \(T_j\).  Consequently the current
+repository still lacks the complete growing input needed to run the
+present audit:
+\[
+ \boxed{
+ \operatorname{Archive}_{123}
+ =
+ \NT\ \text{from current artifacts}.}
+\]
+This is a dated administrative statement, not a theorem that no
+alternative exact H8 proof can exist.
+
+\section{Reproducible finite audit and claim ledger}
+
+The standard-library script
+\texttt{experiments/tpc123\_path\_archive\_audit.py} uses exact
+rational arithmetic.  It checks two conservative stages, their
+composite, a retained--soft split, and \cref{thm:defect}.  It also
+constructs the three counterexamples above and rejects a wrong shift
+tag.  Its small model is a regression test for the finite theorem; it
+is not the missing TPC archive.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.39\textwidth}Y@{}}
+\toprule
+Statement & Status\\
+\midrule
+Path expansion and local-to-global conservation
+& Proved exactly, \(\Lzero\).\\
+Defect telescope and counterexamples
+& Proved exactly, \(\Lzero\).\\
+Required literal TPC metadata
+& Specified as an \(\Lone\) interface.\\
+Complete symbolic growing stage archive
+& Not present; \(\NT\).\\
+Complete soft \(o(X)\) estimate
+& Not proved.\\
+Fixed-\(h_0\) arithmetic power saving
+& Not proved; no \(\Ltwo\) event.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Explicit exclusions.}
+This paper proves no determinant-energy exponent, no zero-mode
+exponent, no complete physical frame, no fixed-shift localization
+bound, no signed affine M\"obius cancellation, no endpoint below
+\(1/400\), no parity breakthrough, no Hardy--Littlewood asymptotic,
+and no prime-pair or twin-prime theorem.  TPC-121 and TPC-122 remain
+conditional exponent interfaces \citep{WangTPC120,WangTPC121,WangTPC122}.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

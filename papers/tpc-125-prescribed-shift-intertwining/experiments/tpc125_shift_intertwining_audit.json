@@ -1,0 +1,30 @@
+{
+  "schema": "tpc125-prescribed-shift-intertwining-audit-v1",
+  "scope": "finite theorem regression only; not the growing fixed-shift archive",
+  "status": "PASS",
+  "finite_regression_pass": true,
+  "assertions_checked": 11,
+  "intertwining_model": {
+    "full_dimension": 4,
+    "fixed_shift_dimension": 2,
+    "stagewise_commutation": true,
+    "composite_telescope": true,
+    "cross_shift_leakage_detected": true
+  },
+  "localization_model": {
+    "finite_range_case": true,
+    "sharp_squared_cost": "1",
+    "infinite_cost_kernel_witness": true,
+    "example_average_saving": "1/100",
+    "example_localization_amplitude_cost": "1/500",
+    "example_fixed_shift_saving": "1/125"
+  },
+  "route_verdict": {
+    "commutator_telescope": "PROVED_L0",
+    "sharp_localization_identity": "PROVED_L0",
+    "literal_archive_crosswalk": "CONDITIONAL_L1",
+    "complete_shift_tagged_growing_archive_present": false,
+    "H7_fixed_shift_audit": "NOT_TESTABLE_FROM_CURRENT_ARTIFACTS",
+    "fixed_h0_L2_progress": false
+  }
+}

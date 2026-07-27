@@ -1,0 +1,544 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\Ran}{\operatorname{ran}}
+\newcommand{\Ker}{\operatorname{ker}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\GOI}{\textsc{go-interface}}
+\newcommand{\STOP}{\textsc{stop-declared-route}}
+\newcommand{\NT}{\textsc{not-testable}}
+
+\title{\textbf{Provenance-Faithful Physical Reassembly of the TPC Hard Packet}\\
+\large Native-Leaf and Physical Residuals, Exact Block Cover, and
+Dual Certificates}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-117 gives the exact range test for a physical TPC-18 block
+matrix, while TPC-119 requires every final scalar contribution to
+remain connected to its original TPC-15 atom.  These are not the same
+test.  Starting from a literal native-leaf vector \(z\), let
+\(G\) be the declared leaf-to-physical grouping, \(C\) the
+block-to-leaf synthesis and \(B=GC\) the physical block matrix.  We
+compare the canonical residuals
+\[
+ r_{\rm leaf}=(I-CC^\dagger)z,
+ \qquad
+ r_{\rm phys}=(I-BB^\dagger)Gz.
+\]
+They give the two exact decompositions
+\[
+ z=CC^\dagger z+r_{\rm leaf},
+ \qquad
+ Gz=BC^\dagger z+Gr_{\rm leaf}
+     =BB^\dagger Gz+r_{\rm phys}.
+\]
+Native-leaf cover implies physical cover, but the converse fails
+sharply when \(G\) hides a provenance direction.  Separate dual
+witnesses therefore stop the two cover claims, and the exact Gram
+crosswalk is \(B^*B=C^*G^*GC\).  We also give a coefficientwise test
+for identifying determinant fibers with zero-mode outer fibers;
+agreement on one physical vector is insufficient.  These are
+\(\Lzero\) identities and \(\Lone\) interfaces.  The actual growing
+\(G,C,z,B\) archive and its residual estimates remain absent, so the
+physical reassembly audit is \(\NT\).  No \(\Ltwo\) arithmetic
+saving, endpoint gain or prime-pair theorem is claimed.
+\end{abstract}
+
+\section{Why two cover spaces are necessary}
+
+TPC-123 replaces the missing global leaf archive by an exact
+path-expanded object whose columns are original TPC-15 atoms
+\citep{WangTPC15,WangTPC123}.  If that archive is complete, its
+retained terminal records form a vector
+\[
+ z_X=M_X^{\rm ret}c_X\in\C^{\cL_X}.
+\]
+TPC-114 then groups residual labels into native physical labels,
+whereas TPC-117 asks whether an actual physical vector lies in the
+range of the TPC-18 block synthesis
+\citep{WangTPC114,WangTPC117}.  Grouping is generally noninjective.
+It follows that two different statements must be audited:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item every native leaf is synthesized by the declared blocks; and
+\item the grouped physical vector is synthesized by the grouped
+blocks.
+\end{enumerate}
+The first is a provenance statement relevant to H8.  The second is a
+physical range statement relevant to H6.  Neither statement estimates
+the hard packet.
+
+\begin{definition}[Claim levels]
+Finite Hilbert-space identities are \(\Lzero\).  Identifying their
+spaces and maps with the literal TPC records is \(\Lone\).  A uniform
+growing fixed-\(h_0\) arithmetic power saving is \(\Ltwo\).
+\end{definition}
+
+\section{The literal reassembly diagram}
+
+Let \(\cL_X\), \(\cP_X\), and \(\cQ_X\) be finite-dimensional Hilbert
+spaces of native leaves, physical carriers, and block coefficients.
+The declared maps are
+\[
+ C_X:\cQ_X\to\cL_X,\qquad
+ G_X:\cL_X\to\cP_X,\qquad
+ B_X=G_XC_X:\cQ_X\to\cP_X.
+\]
+Put \(z=z_X\), \(G=G_X\), \(C=C_X\), \(B=B_X\), and
+\[
+ w=Gz.
+\]
+All adjoints and Moore--Penrose inverses refer to the declared
+physical Hilbert norms, not to a convenient surrogate norm
+\citep{BenIsraelGreville,WangTPC113}.
+
+\begin{definition}[Two canonical coefficients and residuals]
+Define
+\begin{align}
+ q_{\rm leaf}&=C^\dagger z,
+ &
+ r_{\rm leaf}&=(I-CC^\dagger)z,
+ \label{eq:leaf}\\
+ q_{\rm phys}&=B^\dagger w,
+ &
+ r_{\rm phys}&=(I-BB^\dagger)w.
+ \label{eq:phys}
+\end{align}
+\end{definition}
+
+The coefficient vectors need not agree.  The first is least squares
+before grouping; the second is least squares in the physical norm
+after grouping.  Substituting one for the other without proving an
+isometry is a normalization change.
+
+\section{The two-residual theorem}
+
+\begin{theorem}[Provenance--physical reassembly]
+\label{thm:reassembly}
+The following identities hold exactly:
+\begin{align}
+ z&=Cq_{\rm leaf}+r_{\rm leaf},
+ \label{eq:zdec}\\
+ w&=Bq_{\rm leaf}+Gr_{\rm leaf},
+ \label{eq:wleaf}\\
+ w&=Bq_{\rm phys}+r_{\rm phys}.
+ \label{eq:wphys}
+\end{align}
+Moreover,
+\[
+ r_{\rm leaf}\perp\Ran(C),
+ \qquad
+ r_{\rm phys}\perp\Ran(B).
+\]
+In particular,
+\[
+ r_{\rm leaf}=0\quad\Longrightarrow\quad r_{\rm phys}=0.
+\]
+\end{theorem}
+
+\begin{proof}
+The matrices \(CC^\dagger\) and \(BB^\dagger\) are the orthogonal
+projections onto \(\Ran(C)\) and \(\Ran(B)\), respectively.  This
+proves \eqref{eq:zdec} and \eqref{eq:wphys} together with the
+orthogonality statements.  Applying \(G\) to \eqref{eq:zdec} and
+using \(GC=B\) proves \eqref{eq:wleaf}.  If \(r_{\rm leaf}=0\), then
+\(w=BC^\dagger z\in\Ran(B)\), so its orthogonal physical residual
+vanishes.
+\end{proof}
+
+\begin{remark}[No reverse implication]
+The theorem does not assert
+\(r_{\rm phys}=0\Rightarrow r_{\rm leaf}=0\).  A component of
+\(r_{\rm leaf}\) can lie in \(\Ker(G)\), or its grouped image can fall
+back into \(\Ran(B)\).  Physical equality alone may therefore erase
+the missing native route.
+\end{remark}
+
+\begin{theorem}[Separate dual certificates]
+\label{thm:dual}
+The two exact cover conditions are
+\begin{align*}
+ r_{\rm leaf}=0
+ &\iff
+ \langle y,z\rangle=0
+ \quad\text{for every }y\in\Ker(C^*),\\
+ r_{\rm phys}=0
+ &\iff
+ \langle v,w\rangle=0
+ \quad\text{for every }v\in\Ker(B^*).
+\end{align*}
+Thus one \(y\in\Ker(C^*)\) with
+\(\langle y,z\rangle\ne0\) stops exact native-leaf cover, and one
+\(v\in\Ker(B^*)\) with \(\langle v,w\rangle\ne0\) stops exact physical
+cover.
+\end{theorem}
+
+\begin{proof}
+For any finite-dimensional operator \(A\),
+\(\Ran(A)=\Ker(A^*)^\perp\).  Apply this to \(C\) and \(B\), then use
+\cref{eq:leaf,eq:phys}.
+\end{proof}
+
+\section{Scalar evaluation and the native Gram}
+
+Let \(a\in\cP_X\) be the actual physical evaluator and let \(\nu_X\)
+be the one inherited normalization.
+
+\begin{corollary}[Exact scalar return]
+\label{cor:scalar}
+\[
+ \boxed{
+ \nu_X\langle a,w\rangle
+ =
+ \nu_X\langle B^*a,q_{\rm phys}\rangle
+ +
+ \nu_X\langle a,r_{\rm phys}\rangle.}
+\]
+There is also the provenance-resolving form
+\[
+ \nu_X\langle a,w\rangle
+ =
+ \nu_X\langle B^*a,q_{\rm leaf}\rangle
+ +
+ \nu_X\langle G^*a,r_{\rm leaf}\rangle.
+\]
+\end{corollary}
+
+\begin{proof}
+Pair \eqref{eq:wphys} and \eqref{eq:wleaf} with \(a\) and use the
+adjoint identity.
+\end{proof}
+
+\begin{proposition}[Exact native Gram crosswalk]
+\label{prop:gram}
+The physical block Gram is
+\[
+ \boxed{B^*B=C^*G^*GC.}
+\]
+Consequently any determinant, singular value or condition number
+used after grouping must be computed from the literal \(G\) and
+\(C\).  Replacing \(G^*G\) by the identity requires an additional
+isometry theorem.
+\end{proposition}
+
+\begin{proof}
+Use \(B=GC\) and take adjoints.
+\end{proof}
+
+This identity attaches the native Gram warning of TPC-114 to the
+physical range test of TPC-117.  It does not say that a large or small
+condition number is an unavoidable endpoint exponent.  TPC-113 and
+TPC-118 require the actual composite norm and a nonduplicated cost
+registry \citep{WangTPC113,WangTPC118}.
+
+\section{The quotient observability operator}
+
+The two residuals are not unrelated.  Let
+\[
+ P_B=BB^\dagger
+\]
+and restrict the operator
+\[
+ H=(I-P_B)G\big|_{\Ker(C^*)}:
+ \Ker(C^*)\longrightarrow\Ker(B^*).
+\]
+This is the part of the physical grouping that remains visible after
+quotienting out the declared block range.
+
+\begin{theorem}[Exact residual transfer]
+\label{thm:residual-transfer}
+For the residuals in \eqref{eq:leaf}--\eqref{eq:phys},
+\begin{equation}
+ \boxed{r_{\rm phys}=Hr_{\rm leaf}.}
+ \label{eq:residual-transfer}
+\end{equation}
+Consequently,
+\[
+ \|r_{\rm phys}\|
+ \le
+ \|H\|\,\|r_{\rm leaf}\|
+ \le
+ \|G\|\,\|r_{\rm leaf}\|.
+\]
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:wleaf},
+\[
+ w=Bq_{\rm leaf}+Gr_{\rm leaf}.
+\]
+Apply \(I-P_B\).  The first term vanishes because it lies in
+\(\Ran(B)\), while the left side becomes \(r_{\rm phys}\).
+Moreover \(r_{\rm leaf}\in\Ker(C^*)\), so the remaining term is
+exactly \(Hr_{\rm leaf}\).  The norm bounds follow from the
+definition and from \(\|I-P_B\|\le1\).
+\end{proof}
+
+Define the quotient observability constant
+\[
+ \gamma_X
+ =
+ \inf_{\substack{r\in\Ker(C^*)\\\|r\|=1}}\|Hr\|,
+\]
+when \(\Ker(C^*)\ne\{0\}\).  In finite dimension, \(\gamma_X\) is the
+minimum modulus of the restricted operator \(H\) on its full declared
+domain.  Equivalently, it is the smallest singular value when zeros
+coming from \(\Ker(H)\) are included.  Thus \(\gamma_X>0\) precisely
+when \(H\) is injective.  The least \emph{positive} singular value on
+\(\Ker(H)^\perp\) is a different quantity and does not give a reverse
+bound for all native residuals when \(\Ker(H)\ne\{0\}\).  If
+\(\Ker(C^*)=\{0\}\), then \(C\) is already onto the native-leaf space
+and \(r_{\rm leaf}=0\) for every \(z\), so no reverse-transfer
+constant is needed.
+
+\begin{corollary}[When physical cover detects provenance cover]
+\label{cor:observable}
+If \(\Ker(C^*)\ne\{0\}\) and \(\gamma_X>0\), then
+\[
+ \gamma_X\|r_{\rm leaf}\|
+ \le
+ \|r_{\rm phys}\|
+ \le
+ \|H\|\|r_{\rm leaf}\|,
+\]
+and hence
+\[
+ r_{\rm phys}=0\iff r_{\rm leaf}=0.
+\]
+The same equivalence holds trivially when \(\Ker(C^*)=\{0\}\).
+If \(\gamma_X=0\), there is a nonzero native residual direction that
+is physically invisible modulo \(\Ran(B)\).
+\end{corollary}
+
+\begin{proof}
+When the kernel is zero, \(r_{\rm leaf}=0\) and
+\cref{thm:reassembly} applies.  Otherwise, the lower bound is the
+definition of \(\gamma_X\), applied to
+\(r_{\rm leaf}\).  The upper bound is
+\cref{thm:residual-transfer}.  In finite dimension,
+\(\gamma_X=0\) means that \(H\) has a nonzero kernel vector.
+\end{proof}
+
+\begin{remark}[A criterion, not a free endpoint gain]
+A growing lower bound for \(\gamma_X\) could certify that physical
+residual control transfers back to native provenance control.  The
+present paper neither supplies the actual operator \(H_X\) nor proves
+such a lower bound.  Also, \(\gamma_X^{-1}\) would be a norm-conversion
+cost, not an arithmetic saving; it must be placed in the physical
+ledger only when the actual proof invokes this reverse transfer.
+\end{remark}
+
+\section{A sharp provenance-camouflage example}
+
+\begin{proposition}[Physical cover can hide a native residual]
+\label{prop:camouflage}
+There exist \(G,C,z\) with \(r_{\rm leaf}\ne0\) and
+\(r_{\rm phys}=0\).
+\end{proposition}
+
+\begin{proof}
+In standard Euclidean coordinates take
+\[
+ C=
+ \begin{pmatrix}
+ 1&0\\0&1\\0&0
+ \end{pmatrix},
+ \qquad
+ z=
+ \begin{pmatrix}0\\0\\1\end{pmatrix},
+ \qquad
+ G=
+ \begin{pmatrix}
+ 1&0&0\\0&1&0
+ \end{pmatrix}.
+\]
+Then \(r_{\rm leaf}=z\ne0\), while \(w=Gz=0\).  Hence the physical
+vector lies in \(\Ran(GC)\) and \(r_{\rm phys}=0\).
+\end{proof}
+
+Here \(H=0\) on \(\Ker(C^*)=\C e_3\), so \(\gamma_X=0\).
+The example is not a claim about the actual TPC archive.  It proves
+that an H6 range certificate cannot be promoted to H8 without either
+the native-leaf audit or a positive quotient-observability
+certificate.
+
+\section{Determinant fibers and zero-mode fibers}
+
+TPC-121 groups raw atoms into determinant bins, while TPC-122 orders
+literal outer fibers for signed-prefix control
+\citep{WangTPC121,WangTPC122}.  These are different declared
+dictionaries.  Denote their finite index sets by
+\(\mathcal D_X\) and \(\mathcal Z_X\), respectively, and let
+\[
+ Q_D:\cL_X\to\C^{\mathcal D_X},
+ \qquad
+ Q_Z:\cL_X\to\C^{\mathcal Z_X}
+\]
+be their exact leaf-level aggregation matrices.  A proposed
+identification
+\(J:\C^{\mathcal D_X}\to\C^{\mathcal Z_X}\) must be proved, not
+inferred from similar symbols.  The scalar determinant energy
+\(D_X\) and scalar distinguished zero mode \(Z_X\) retain their
+earlier meanings and are not index sets.
+
+\begin{theorem}[Coefficientwise fiber-intertwining test]
+\label{thm:fibers}
+Let \(M:\C^{\cA_X}\to\cL_X\) be the complete native-leaf matrix.  The
+two fiber descriptions agree on every original packet coefficient
+vector precisely when
+\[
+ \boxed{(JQ_D-Q_Z)M=0.}
+\]
+Agreement on one coefficient vector \(c_X\),
+\((JQ_D-Q_Z)Mc_X=0\), is not sufficient for this matrix identity.
+\end{theorem}
+
+\begin{proof}
+The two descriptions agree on every input if and only if the two
+linear maps \(JQ_DM\) and \(Q_ZM\) are equal, which is the displayed
+matrix condition.  Equality after applying them to one vector tests
+only one element of their difference kernel.
+\end{proof}
+
+\begin{remark}[No exponent transfer]
+Even if \cref{thm:fibers} passes, TPC-121 and TPC-122 provide only
+conditional formulas for \(\lambda_D^{\rm cert}\) and
+\(\eta_Z^{\rm cert}\).  They do not prove their growing inputs, and
+their determinant reserve cannot be charged against the physical
+endpoint ledger.
+\end{remark}
+
+\section{Typed invocation and route decisions}
+
+\begin{definition}[Paper-specific verdicts]
+\(\GOI\) means that the indicated exact map and all its quantifiers
+are present.  \(\STOP\) means that an exact dual witness,
+normalization mismatch or provenance defect stops the declared
+reassembly.  It does not stop every possible representation.
+\(\NT\) means that the actual growing matrix or typed vector required
+to execute a test is absent.
+\end{definition}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.22\textwidth}P{0.31\textwidth}Y@{}}
+\toprule
+Target & \(\GOI\) input & Stop or incomplete outcome\\
+\midrule
+Native-leaf cover
+& Complete \(z,C\) with \(r_{\rm leaf}=0\)
+& Leaf dual witness gives \(\STOP\); missing \(z,C\) gives \(\NT\).\\
+Physical exact cover
+& Complete \(w,B\) with \(r_{\rm phys}=0\)
+& Physical dual witness gives \(\STOP\); missing \(w,B\) gives \(\NT\).\\
+Physical residual route
+& Same normalization and a theorem
+\(\nu_X\langle a,r_{\rm phys}\rangle=o(X)\)
+& Nonzero residual alone stops exact cover, not the residual route.\\
+H8 reconnection
+& TPC-123 path conservation plus native-leaf cover and complete soft
+bound
+& Physical cover alone is insufficient.\\
+H9 endpoint
+& Actual growing norms and a complete TPC-118 registry
+& Unknown costs remain unknown, never zero.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+At present, TPC-123 supplies the schema rather than the actual
+growing leaf vector, and TPC-117 reports that the literal growing
+\(B,w\) archive is unavailable.  Hence
+\[
+ \boxed{
+ \operatorname{Reassembly}_{124}
+ =
+ \NT\ \text{from current artifacts}.}
+\]
+This is an executable-data verdict, not an impossibility theorem.
+
+\section{Reproducible audit and claim boundary}
+
+The standard-library script
+\texttt{experiments/tpc124\_reassembly\_audit.py} uses exact rational
+coordinate models.  It verifies both residual decompositions, a dual
+witness, the scalar return, \cref{prop:gram}, and both extremal
+quotient-observability regimes.  It also constructs
+\cref{prop:camouflage} and two distinct fiber dictionaries that agree
+on one vector but not coefficientwise.  The model is not the missing
+physical archive.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.40\textwidth}Y@{}}
+\toprule
+Statement & Status\\
+\midrule
+Two-residual and dual theorems
+& Exact \(\Lzero\).\\
+Native Gram and scalar crosswalk
+& Exact \(\Lzero\); literal attachment is \(\Lone\).\\
+Quotient observability criterion
+& Exact \(\Lzero\); no growing \(\gamma_X\) bound.\\
+Determinant/zero-fiber comparison rule
+& Exact \(\Lzero/\Lone\) interface.\\
+Actual growing \(G,C,z,B\)
+& Absent; \(\NT\).\\
+Complete physical residual \(o(X)\)
+& Not proved.\\
+Growing fixed-\(h_0\) arithmetic saving
+& Not proved; no \(\Ltwo\) event.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Explicit exclusions.}
+This paper proves no complete physical cover for the TPC packet, no
+H8 conjunction, no frame or localization exponent, no endpoint below
+\(1/400\), no determinant-energy or zero-mode exponent, no signed
+M\"obius cancellation, no parity breakthrough, no Hardy--Littlewood
+asymptotic, and no prime-pair or twin-prime theorem.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

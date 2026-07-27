@@ -1,0 +1,62 @@
+{
+  "all_checks_passed": true,
+  "endpoint_budget_distinction": true,
+  "exact_H_fold_participation": true,
+  "exact_integer_window_identity": true,
+  "fejer_inequality": true,
+  "fejer_kernel_real_nonnegative": true,
+  "level": {
+    "actual_four_sign_crosswalk": "L1",
+    "finite_certificate": "L0",
+    "growing_four_sign_bound": "not proved"
+  },
+  "normalized_certificate": true,
+  "sample": {
+    "endpoint_budget": {
+      "conservative_termwise_amplitude": "1/200",
+      "interpretation": "1/400 is the local square-root target; 1/200 is a stronger sufficient screen",
+      "local_square_root_amplitude": "1/400",
+      "quadratic_squared_saving": "1/200"
+    },
+    "exact_window_audit": {
+      "H": 4,
+      "N": 6,
+      "expected_window_count": 9,
+      "kernel": "89/2",
+      "participation_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "window_count": 9,
+      "window_energy": 178
+    },
+    "fejer_upper": 362.95898201941685,
+    "kernel": [
+      87.61078876330751,
+      -4.440892098500626e-16
+    ],
+    "participation": 0.7753750870616808,
+    "sparse_H_times_participation": 1.0,
+    "sum_square": 82.70966482372526,
+    "window_energy": 613.2755213431525,
+    "zero_mass_prefix": {
+      "energy": 0,
+      "mass": 0,
+      "participation": null,
+      "status": "trivial_zero_excluded_from_normalized_maximum",
+      "sum": [
+        0,
+        0
+      ]
+    }
+  },
+  "shift_two_four_sign_crosswalk": true,
+  "sliding_window_identity": true,
+  "sparse_diagonal_stop": true,
+  "sparse_short_correlations_zero": true,
+  "zero_mass_prefix_trivial": true
+}

@@ -1,0 +1,399 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\one}{\mathbf 1}
+\newcommand{\e}{\mathrm e}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\textbf{A Log-Chowla Quantifier Firewall}\\
+\large Frozen Squarefree Truncations, a Slow Diagonal, and Why They
+Do Not Prove the Actual Fixed-Two H3 Gate}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The determinant-two pullback of TPC-127 exposes the literal sign
+\(\lambda(n-2)\lambda(n)\), inviting comparison with the proved
+logarithmically averaged two-point Chowla theorem.  We make that
+comparison with exact quantifiers.  Tao's theorem fixes the two
+affine forms and, for any
+\(\omega(x)\to\infty\), \(1\le\omega(x)\le x\), controls the
+terminal reciprocal window
+\[
+ \sum_{x/\omega(x)<m\le x}
+ \frac{\lambda(a_1m+b_1)\lambda(a_2m+b_2)}m
+ =o(\log\omega(x)).
+\]
+Using the finite CRT expansion of TPC-128, we obtain an unconditional
+corollary for every \emph{fixed} determinant-two pair and every
+fixed squarefree cutoff \(R\).  A standard diagonal lemma lets a
+countable frozen family grow at some non-effective arbitrarily slow
+rate.  We then prove exact Tauberian and finite-window counterexamples
+showing why terminal reciprocal cancellation does not supply an
+ordinary-weight all-prefix bound.  It also gives no uniform rate in
+the actual growing moduli, origins, cutoffs, masks, phases, physical
+weights, and outer keys.  The fixed-form theorem is genuine but
+auxiliary; it is not an \(\Ltwo\) result for the physical family.
+The paper ends with the precise stronger statement that would be
+callable by H3.
+\end{abstract}
+
+\section{The proved theorem with its native quantifiers}
+
+We record only the specialization needed here.
+
+\begin{theorem}[Logarithmically averaged two-point Chowla,
+specialized]
+\label{thm:tao}
+Fix \(a_1,a_2\in\mathbb N\) and \(b_1,b_2\in\mathbb Z_{\ge0}\) with
+\[
+ a_1b_2-a_2b_1\ne0.
+\]
+Let \(\omega(x)\to\infty\) satisfy \(1\le\omega(x)\le x\).  Then
+\begin{equation}
+ \sum_{x/\omega(x)<m\le x}
+ \frac{\lambda(a_1m+b_1)\lambda(a_2m+b_2)}m
+ =
+ o(\log\omega(x)).
+\label{eq:tao}
+\end{equation}
+The forms and their coefficients are fixed before \(x\to\infty\).
+\end{theorem}
+
+\begin{proof}
+This is the Liouville specialization of the two-point logarithmically
+averaged Chowla--Elliott theorem
+\citep{Tao2016LogChowla}.
+\end{proof}
+
+\begin{remark}[No silent enlargement]
+\Cref{thm:tao} is a terminal logarithmic-window statement.  It is
+not stated here as a full interval \([1,x]\), an ordinary Ces\`aro
+average, a power-rate estimate, an all-prefix maximum, or a theorem
+uniform in growing coefficients.  Those changes require separate
+arguments.
+\end{remark}
+
+\section{A rigorous frozen CRT corollary}
+
+Fix once and for all positive affine forms
+\[
+ D(z)=d+sz,\qquad V(z)=u+az,\qquad su-ad=2,
+\]
+with the primitive relations
+\[
+ (a,s)=1,\quad(as,2)=1,\quad(d,s)=(u,a)=1.
+\]
+For fixed \(R\), put
+\[
+ Q_R(m)=\sum_{\substack{k\le R\\k^2\mid m}}\mu(k).
+\]
+
+\begin{theorem}[Fixed-form, finite-mask logarithmic cancellation]
+\label{thm:frozen}
+For every fixed choice of \(a,s,d,u,R\) above and every admissible
+\(\omega(x)\),
+\begin{align}
+ &\sum_{x/\omega(x)<z\le x}
+ \frac{
+ Q_R(D(z))Q_R(V(z))
+ \lambda(D(z))\lambda(V(z))}
+ {z}
+\notag\\
+ &\hspace{5cm}=o(\log\omega(x)).
+\label{eq:frozen}
+\end{align}
+Changing or growing \(a,s,d,u,R\) with \(x\) is not included in this
+statement.
+\end{theorem}
+
+\begin{proof}
+TPC-128 gives the finite identity
+\[
+ Q_R(D(z))Q_R(V(z))
+ =
+ \sum_{\substack{k,\ell\le R\\
+ (k,s)=(\ell,a)=(k,\ell)=1}}
+ \mu(k)\mu(\ell)
+ \one_{z\equiv r_{k,\ell}\ ({\rm mod}\ k^2\ell^2)}
+\]
+\citep{WangTPC128}.  Fix one nonempty residue and write
+\[
+ z=r+Mt,\qquad M=k^2\ell^2.
+\]
+The two forms become
+\[
+ D(r+Mt)=D(r)+sMt,\qquad
+ V(r+Mt)=V(r)+aMt,
+\]
+whose coefficient determinant is
+\[
+ (sM)V(r)-(aM)D(r)
+ =M\{sV(r)-aD(r)\}=2M\ne0.
+\]
+After shifting the nonnegative \(t\)-origin by a fixed amount if
+necessary, \cref{thm:tao} applies to these fixed forms.
+
+Moreover,
+\[
+ \frac1{r+Mt}=\frac1M\frac1t+O_M(t^{-2})
+\]
+away from finitely many initial terms.  The total contribution of
+the error over any terminal window is \(O_M(1)\), hence
+\(o(\log\omega(x))\).  Fixed affine changes of the two endpoints
+alter only \(O_M(1)\) boundary terms and replace \(\omega\) by an
+asymptotically comparable admissible terminal ratio.  Summing the
+finitely many \(k,\ell\) proves \eqref{eq:frozen}.
+\end{proof}
+
+\begin{remark}[What is unconditional here]
+\Cref{thm:frozen} is a valid analytic consequence of a proved
+theorem.  It controls a frozen, reciprocal-weight, finitely truncated
+auxiliary family.  It neither estimates the TPC physical multiplier
+nor lets the squarefree cutoff tend to infinity at a specified rate.
+\end{remark}
+
+\section{The only legitimate slow diagonal}
+
+\begin{lemma}[Countable slow diagonal]
+\label{lem:diagonal}
+Suppose \(E_j(x)\ge0\) and \(E_j(x)\to0\) as \(x\to\infty\) for each
+fixed \(j\in\mathbb N\).  Then there exists a nondecreasing integer
+function \(J(x)\to\infty\) such that
+\begin{equation}
+ \max_{1\le j\le J(x)}E_j(x)\longrightarrow0.
+\label{eq:slow-diagonal}
+\end{equation}
+No quantitative lower bound for the growth of \(J(x)\) follows.
+\end{lemma}
+
+\begin{proof}
+For each \(m\), choose \(X_m\) increasing so that
+\[
+ \max_{1\le j\le m}E_j(x)\le\frac1m
+ \quad(x\ge X_m).
+\]
+Set \(J(x)=m\) for \(X_m\le x<X_{m+1}\).
+\end{proof}
+
+Enumerate any countable collection of fixed primitive pairs and
+fixed cutoffs.  Apply \cref{lem:diagonal} to the errors in
+\eqref{eq:frozen}, normalized by \(\log\omega(x)\).  This produces
+some slowly expanding frozen family on which the logarithmic
+conclusion is uniform.  It does \emph{not} prove that the prescribed
+TPC family lies inside that diagonal.  In particular, it gives no
+allowable power law for \(as\), \(R\), the interval origin, or the
+number of outer keys.
+
+\section{Two exact Tauberian firewalls}
+
+\subsection{One terminal logarithmic value is insufficient}
+
+For a finite sequence \(b_1,\ldots,b_N\), define
+\[
+ A(N)=\sum_{m\le N}b_m,\qquad
+ L_r(N)=\sum_{m\le N}\frac{b_m}{r+m},
+\quad r\ge0.
+\]
+
+\begin{proposition}[Exact translated Tauberian identity]
+\label{prop:tauberian}
+For every \(N\ge1\),
+\begin{equation}
+ \boxed{
+ A(N)=(r+N)L_r(N)-\sum_{m=1}^{N-1}L_r(m).}
+\label{eq:tauberian}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+In the right side, the coefficient of \(b_k\), for \(k<N\), is
+\[
+ \frac{r+N}{r+k}-\frac{N-k}{r+k}=1,
+\]
+and the coefficient of \(b_N\) is also \(1\).
+\end{proof}
+
+Thus a terminal bound for \(L_r(N)\) does not control \(A(N)\)
+without the complete path \(L_r(m)\) and its signed average.  This
+is the exact anchored defect emphasized in TPC-96
+\citep{WangTPC96}.
+
+\subsection{A reciprocal window can cancel while its mass does not}
+
+\begin{proposition}[Finite-window separation]
+\label{prop:window-separation}
+Let \(\Omega\to\infty\), and on
+\((x/\Omega,x]\) define
+\[
+ b_m=
+ \begin{cases}
+ -1,&x/\Omega<m\le x/\sqrt\Omega,\\
+ +1,&x/\sqrt\Omega<m\le x.
+ \end{cases}
+\]
+Then, up to integer endpoint errors,
+\begin{align}
+ \sum_{x/\Omega<m\le x}\frac{b_m}{m}
+ &=O(\Omega/x),\label{eq:log-cancel}\\
+ \sum_{x/\Omega<m\le x}b_m
+ &=x\left(1-\frac2{\sqrt\Omega}+\frac1\Omega\right)+O(1).
+\label{eq:ordinary-large}
+\end{align}
+In particular, reciprocal cancellation has no formal implication
+of ordinary cancellation on one terminal window.
+\end{proposition}
+
+\begin{proof}
+The two reciprocal masses are
+\[
+ \log\frac{x/\sqrt\Omega}{x/\Omega}
+ =
+ \frac12\log\Omega,
+ \qquad
+ \log\frac{x}{x/\sqrt\Omega}
+ =
+ \frac12\log\Omega,
+\]
+with harmonic-sum endpoint error \(O(\Omega/x)\).  Counting the two
+interval lengths gives \eqref{eq:ordinary-large}.
+\end{proof}
+
+The sequence in \cref{prop:window-separation} is an analytic
+counterexample, not a claim about Liouville signs.  It proves that
+the desired Tauberian transfer cannot follow from the norm and
+window information alone.
+
+\section{Actual H3 quantifiers}
+
+After TPC-127 and one TPC-128 CRT component, a literal inner sum has
+the schematic but fully typed form
+\begin{equation}
+ \sum_{t\in I_f}
+ \lambda(q_ft+r_f-2)\lambda(q_ft+r_f)
+ \rho_f(t)W_f(t)\e^{-2\pi i\beta_ft},
+\label{eq:actual-component}
+\end{equation}
+where \(q_f,r_f,I_f,\rho_f,W_f,\beta_f\) all belong to the
+predeclared actual family at scale \(X\).  The mask \(\rho_f\)
+retains any remaining literal periodic and coprimality factors.
+
+\begin{definition}[Callable actual-family prefix theorem]
+\label{def:callable}
+A theorem is callable by the termwise H3/zero-mode route only if,
+for a fixed \(\delta>0\), it proves
+\[
+ A_f^{(0)}
+ :=
+ \sum_{t\in I_f}|\rho_f(t)|,
+\]
+and, for every component with \(A_f^{(0)}>0\),
+\begin{equation}
+ \max_{f\in\mathcal F_X}\;
+ \max_{T\in I_f}
+ \left|
+ \sum_{\substack{t\in I_f\\t\le T}}
+ \lambda(q_ft+r_f-2)\lambda(q_ft+r_f)
+ \rho_f(t)\e^{-2\pi i\beta_ft}
+ \right|
+ \le X^{-\delta+o(1)}A_f^{(0)},
+\label{eq:callable}
+\end{equation}
+with one uniform \(o(1)\), followed by a separately proved
+BV/outer-envelope estimate for \(W_f\).  Equivalently, a direct
+weighted theorem may retain \(W_f\) inside the sum, but then it must
+use the literal comparison mass
+\[
+ A_f^{(W)}
+ :=
+ \sum_{t\in I_f}|\rho_f(t)W_f(t)|
+\]
+and all required prefixes.  Zero-mass components have identically
+zero sums and are discharged before taking either normalized
+maximum.
+\end{definition}
+
+\Cref{thm:tao} does not prove \eqref{eq:callable}: its coefficients
+are fixed, its weight is reciprocal, its conclusion is
+\(o(\log\omega)\) rather than a fixed power, and it has no stated
+uniformity over the growing actual family.  The slow diagonal of
+\cref{lem:diagonal} supplies no prescribed growth rate and therefore
+does not repair this mismatch.
+
+\section{Claim boundary and STOP rule}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.47\textwidth}X@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+Tao fixed-form terminal logarithmic theorem
+& Proved external theorem with native quantifiers.\\
+Fixed finite-mask corollary \eqref{eq:frozen}
+& Unconditional frozen-family result; auxiliary \(\Lone\).\\
+Countable slow diagonal
+& Exact non-effective lemma (\(\Lzero\)).\\
+Tauberian identity and window separation
+& Exact/elementary firewall (\(\Lzero\)).\\
+Actual growing-family prefix theorem \eqref{eq:callable}
+& Not proved (\(\Ltwo\) only if established).\\
+Physical H3 or positive zero-mode exponent
+& Not proved.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{STOP.}
+If an argument cites only \eqref{eq:tao} or
+\eqref{eq:frozen} but needs any of growing modulus, prescribed
+cutoff growth, ordinary weight, actual phase, all prefixes, or
+uniform outer reassembly, it stops at the firewall.  Calling the
+slow diagonal ``the physical family'' without proving containment is
+also forbidden.
+
+\paragraph{GO.}
+A future proof may proceed if it establishes
+\eqref{eq:callable} on the exact actual family, or a direct weighted
+substitute with an explicit exponent and return ledger.  That would
+be new arithmetic information.
+
+TPC-129 therefore records a real unconditional shadow of the route
+while preventing it from being misreported as fixed-\(2\) physical
+progress.  It proves no parity breach, prime-pair lower bound,
+Hardy--Littlewood asymptotic, or twin-prime theorem.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

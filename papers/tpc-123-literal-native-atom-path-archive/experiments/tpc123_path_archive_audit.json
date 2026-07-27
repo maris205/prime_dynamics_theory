@@ -1,0 +1,38 @@
+{
+  "schema": "tpc123-literal-path-archive-audit-v1",
+  "scope": "finite theorem regression only; not the growing TPC archive",
+  "status": "PASS",
+  "finite_regression_pass": true,
+  "assertions_checked": 13,
+  "exact_model": {
+    "native_atoms": 2,
+    "intermediate_records": 3,
+    "final_leaves": 4,
+    "path_expansion_verified": true,
+    "stage_column_conservation": true,
+    "composite_column_conservation": true,
+    "retained_soft_scalar_reconnection": true,
+    "defect_telescope_verified": true
+  },
+  "counterexamples": {
+    "one_vector_scalar_coincidence_is_not_column_conservation": true,
+    "nonconservative_stage_defects_can_cancel": true,
+    "coefficient_conservation_does_not_verify_shift_metadata": true
+  },
+  "typed_fields_required": [
+    "native_key",
+    "fixed_h0",
+    "physical_normalization",
+    "branch_path",
+    "retained_or_soft",
+    "determinant_fiber_and_phase",
+    "zero_mode_order_sign_weight_and_content"
+  ],
+  "route_verdict": {
+    "finite_path_archive_theorem": "PROVED_L0",
+    "literal_tpc15_attachment": "INTERFACE_L1",
+    "complete_growing_stage_archive_present": false,
+    "H8_archive_audit": "NOT_TESTABLE_FROM_CURRENT_ARTIFACTS",
+    "fixed_h0_L2_progress": false
+  }
+}
