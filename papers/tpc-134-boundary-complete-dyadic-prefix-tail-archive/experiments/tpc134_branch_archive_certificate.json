@@ -1,0 +1,53 @@
+{
+  "archive": {
+    "block_count": 26,
+    "column_conservation": "PROVED_BY_EXACT_PARTITION_IDENTITY",
+    "jsonl_sha256": "efcacc90e7662fdb41c2e3f86fb37d3bd81b64a107c36dfbbb15bb48bde61712",
+    "path_count": 2988,
+    "terminal_type_counts": {
+      "TAIL": 2988
+    }
+  },
+  "checks": {
+    "all_mutations_rejected": true,
+    "column_conservation_is_symbolic_theorem_not_numeric_test": true,
+    "finite_nonzero_dyadic_index_set_checked_exactly": true,
+    "full_dyadic_cartesian_child_set": true,
+    "native_h0_and_normalization_intertwine": true,
+    "no_floating_weight_evaluation": true,
+    "prefix_tail_boundary_is_exhaustive_and_disjoint": true,
+    "symbolic_partition_identity_invoked_exactly": true
+  },
+  "claim_boundary": {
+    "complete_physical_archive": false,
+    "dyadic_and_prefix_tail_identities_L0": true,
+    "literal_native_block_attachment_L1": true,
+    "positive_fixed_h0_L2": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "mutation_regression": {
+    "deleted_overlap_child_rejected": true,
+    "duplicate_overlap_child_rejected": true,
+    "prefix_tail_boundary_mutation_rejected": true,
+    "second_normalization_rejected": true,
+    "wrong_h0_rejected": true,
+    "wrong_native_source_rejected": true,
+    "wrong_parent_integrity_rejected": true
+  },
+  "partition": {
+    "d0_policy": "canonical maximal published-core plus tail geometry",
+    "definition_id": "tpc134-exp-bump-orbit-normalization-v1",
+    "eta": "1/12",
+    "identity": "sum_j psi(x/2^j) = 1",
+    "support": "1/2 < x < 2",
+    "weight_representation": "symbolic AST"
+  },
+  "schema": "tpc134-dyadic-prefix-tail-certificate-v1",
+  "scope": "finite path regression for a uniform symbolic dyadic compiler; not an arithmetic estimate",
+  "status": "PASS",
+  "upstream": {
+    "native_record_count": 866,
+    "tpc133_atoms_sha256": "736c18134359a080e3a753f59ca1613f344ac742a3a69f57f009f93c55550b98"
+  },
+  "validation_errors": []
+}

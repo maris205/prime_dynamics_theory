@@ -1,0 +1,294 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\B}{\mathcal B}
+\newcommand{\Cpre}{\mathcal C}
+\newcommand{\Ttail}{\mathcal T}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textsc{not-testable}}
+\newcommand{\STOP}{\textsc{stop-declared-route}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{A Boundary-Complete Dyadic Prefix--Tail Path Archive}\\
+\large Exact Column Conservation and Fixed-Shift Provenance}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-133 supplies an executable native entrance but stops before the
+first block decomposition.  We construct a complete growing path
+archive through the dyadic and divisor-prefix operations used in
+TPC-16 and TPC-17.  An explicit normalized \(C^\infty\) bump gives
+\(\sum_j\psi(x/2^j)=1\) exactly.  For every dyadic block \(b\), a
+predeclared integer \(D_0(b)\in[0,V]\) sends each opened divisor
+record to exactly one of \(d\le D_0(b)\) and
+\(D_0(b)<d\le V\).  Thus every native column has outgoing weight one,
+the complete matrix satisfies
+\[
+ \one^TM_{134}=\one^T,
+\]
+and native provenance, the prescribed shift, and the single physical
+normalization intertwine on every path.  The resulting identity
+\[
+ B_{h_0,\delta}(X)=
+ \sum_b\bigl(\mathcal C_b(D_0(b))+
+                  \mathcal T_b(D_0(b),V)\bigr)
+\]
+is exact for every \(X\).  No prefix or tail estimate is inferred.
+The partition theorem is \(\Lzero\), its literal attachment is
+\(\Lone\), and no positive \(\Ltwo\) arithmetic saving is proved.
+\end{abstract}
+
+\section{Input archive and an explicit smooth partition}
+
+Import the support-envelope native records
+\[
+ \alpha=(\ell,k,d),\qquad
+ c_X(\alpha)=
+ -\Lambda(\ell)\mu(d)r_Q(\ell k+h_0)W(\ell k/X)
+\]
+from TPC-133 \citep{WangTPC133}.  They retain \(d\) rather than only
+the compressed pair \((\ell,k)\).
+
+Define
+\[
+ \chi(x)=
+ \begin{cases}
+ \exp\!\left(-\dfrac1{x-1/2}-\dfrac1{2-x}\right),
+   &1/2<x<2,\\
+ 0,&\text{otherwise},
+ \end{cases}
+\]
+and
+\[
+ Z(x)=\sum_{j\in\mathbb Z}\chi(x/2^j),
+ \qquad
+ \psi(x)=\frac{\chi(x)}{Z(x)}.
+\]
+For every \(x>0\), the sum defining \(Z(x)\) is finite and positive.
+Moreover \(Z(x/2^j)=Z(x)\), by reindexing.
+
+\begin{lemma}[Exact normalized dyadic partition]
+\label{lem:partition}
+The function \(\psi\) is smooth, compactly supported in
+\([1/2,2]\), and
+\[
+ \boxed{\sum_{j\in\mathbb Z}\psi(x/2^j)=1}
+ \qquad(x>0).
+\]
+Only finitely many summands are nonzero for each \(x\).
+\end{lemma}
+
+\begin{proof}
+Smoothness at the endpoints is the standard flat-bump property.  The
+support gives local finiteness.  Since all denominators equal \(Z(x)\),
+\[
+ \sum_j\psi(x/2^j)
+ =\frac{\sum_j\chi(x/2^j)}{Z(x)}=1.
+\]
+\end{proof}
+
+This explicit formula removes an ambiguity in a machine archive:
+the program stores a symbolic \(\psi\)-node and the finite dyadic
+orbit.  It does not approximate the column sum in binary floating
+point.
+
+\section{The prefix--tail compiler}
+
+Let \(\B_X\) be the finite set of dyadic pairs
+\[
+ b=(j_L,j_K),\qquad L=2^{j_L},\quad K=2^{j_K},
+\]
+which meet at least one native atom.  Fix before inspecting any
+coefficient a deterministic policy
+\[
+ D_0:\B_X\longrightarrow\{0,1,\ldots,V\}.
+\]
+The exact theorem below works for every such policy.  The bundled
+certificate uses the maximal integer satisfying a separately declared
+published-core screen, with value zero when the screen is empty.
+
+\begin{definition}[Path children]
+For \(\alpha=(\ell,k,d)\) and \(b=(j_L,j_K)\), create one child when
+\[
+ \psi(\ell/L)\psi(k/K)\ne0.
+\]
+Its edge multiplier is
+\[
+ m(\alpha,b)=\psi(\ell/L)\psi(k/K),
+\]
+and its terminal type is
+\[
+ \operatorname{type}(\alpha,b)=
+ \begin{cases}
+ \mathrm{PREFIX},&d\le D_0(b),\\
+ \mathrm{TAIL},&D_0(b)<d\le V.
+ \end{cases}
+\]
+\end{definition}
+
+\begin{theorem}[Boundary-complete path conservation]
+\label{thm:archive}
+For every native atom,
+\[
+ \sum_{b\in\B_X}m(\alpha,b)=1.
+\]
+The prefix and tail types are disjoint and exhaustive, including the
+boundary \(d=D_0(b)\).  Consequently the complete path matrix
+\(M_{134}\) satisfies
+\[
+ \boxed{\one^TM_{134}=\one^T.}
+\]
+\end{theorem}
+
+\begin{proof}
+By \cref{lem:partition},
+\[
+ \sum_{j_L,j_K}
+ \psi(\ell/2^{j_L})\psi(k/2^{j_K})
+ =
+ \left(\sum_{j_L}\psi(\ell/2^{j_L})\right)
+ \left(\sum_{j_K}\psi(k/2^{j_K})\right)=1.
+\]
+Compact support makes the sum finite.  For each block and each
+\(d\le V\), exactly one of \(d\le D_0(b)\) and \(d>D_0(b)\) holds.
+Thus no second multiplier is introduced by the type split.
+\end{proof}
+
+\begin{theorem}[Metadata intertwining]
+\label{thm:metadata}
+Suppose every child copies its native tuple, \(h_0\), and the inherited
+physical normalization.  Then each of these coordinate projections
+intertwines with \(M_{134}\).  In particular no averaged shift or
+second normalization is created by the block compiler.
+\end{theorem}
+
+\begin{proof}
+Every nonzero edge has equal source and target metadata.  The
+entrywise criterion of TPC-123 applies \citep{WangTPC123}.
+\end{proof}
+
+\section{Exact scalar block identity}
+
+For a block \(b\), define
+\begin{align*}
+ \Cpre_b(D_0(b))
+ &=
+ \sum_{\ell,k}
+ \sum_{\substack{d\mid k\\d\le D_0(b)}}
+ c_X(\ell,k,d)\psi(\ell/L)\psi(k/K),\\
+ \Ttail_b(D_0(b),V)
+ &=
+ \sum_{\ell,k}
+ \sum_{\substack{d\mid k\\D_0(b)<d\le V}}
+ c_X(\ell,k,d)\psi(\ell/L)\psi(k/K).
+\end{align*}
+
+\begin{corollary}[Growing prefix--tail archive identity]
+\label{cor:identity}
+For every \(X\),
+\[
+ \boxed{
+ B_{h_0,\delta}(X)=
+ \sum_{b\in\B_X}
+ \bigl(\Cpre_b(D_0(b))+\Ttail_b(D_0(b),V)\bigr).}
+\]
+\end{corollary}
+
+\begin{proof}
+Apply \cref{thm:archive} to the native coefficient vector and then
+partition the opened divisors at \(D_0(b)\).  This is the exact
+coefficient split used in TPC-17 \citep{WangTPC16,WangTPC17}.
+\end{proof}
+
+\begin{remark}[No parameter-transport shortcut]
+TPC-16 also proves that two complete Vaughan hard packets can differ
+by \(O_A(X(\log X)^{-A})\).  It explicitly warns that this total signed
+packet equivalence does not match individual factor pairs.  We do not
+insert it as a native-column bijection.  A proof-carrying transport
+would have to archive its soft row terms separately.
+\end{remark}
+
+\section{Executable certificate and limits}
+
+The standard-library program
+\texttt{experiments/tpc134\_branch\_archive.py} reads the committed
+TPC-133 JSONL records, computes every finite dyadic orbit, applies one
+canonical \(D_0\) policy, and writes a path JSONL plus a summary
+certificate.  It rejects a deleted or duplicated overlap child, a
+prefix/tail boundary mutation, a wrong source, a wrong shift, and a
+second normalization.  The certificate checks the exact finite index
+set and records column conservation as an invocation of
+\cref{lem:partition}; it does not replace that symbolic identity by a
+floating-point column-sum test.  Its \texttt{--check} mode is
+read-only.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.43\textwidth}Y@{}}
+\toprule
+Statement & Status\\
+\midrule
+Smooth dyadic identity and divisor split
+& Exact \(\Lzero\).\\
+Complete native-to-block path archive
+& Proved at this cut, \(\Lone\).\\
+Uniform smallness of prefix blocks
+& Not invoked in this paper.\\
+Uniform smallness of tail blocks
+& Not proved.\\
+Physical/determinant/zero-mode total maps
+& Not supplied.\\
+Positive fixed-\(h_0\) arithmetic power saving
+& Not proved; no positive \(\Ltwo\).\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Kill criteria.}
+A nonzero column defect, a gap or overlap at \(d=D_0\), a lost source,
+or a scope mutation is \(\STOP\) for the declared compiler.  A missing
+later carrier map is \(\NT\), not a contradiction.
+
+\paragraph{Explicit exclusions.}
+This paper proves no determinant-energy lower bound, zero-mode
+estimate, physical cover, signed affine cancellation, endpoint below
+\(1/400\), Hardy--Littlewood asymptotic, prime-pair lower bound, or
+twin-prime theorem.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc136-cut-archive-v1.schema.json",
+  "title": "TPC-136 native cut path",
+  "type": "object",
+  "required": [
+    "schema",
+    "cut_path_id",
+    "upstream_path_id",
+    "native_id",
+    "cut_terminal_type",
+    "edge_multiplier_ast",
+    "metadata",
+    "soft_theorem_source",
+    "integrity_sha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc136-cut-path-v1"
+    },
+    "cut_path_id": {
+      "type": "string"
+    },
+    "upstream_path_id": {
+      "type": "string"
+    },
+    "native_id": {
+      "type": "string"
+    },
+    "cut_terminal_type": {
+      "enum": [
+        "ELIGIBLE_PREFIX_SOFT",
+        "ELIGIBLE_TAIL_OPEN",
+        "FRONTIER_UNMAPPED"
+      ]
+    },
+    "edge_multiplier_ast": {
+      "type": "object"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "soft_theorem_source": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "integrity_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": false
+}

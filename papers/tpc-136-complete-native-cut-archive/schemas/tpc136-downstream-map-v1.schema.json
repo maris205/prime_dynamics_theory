@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc136-downstream-map-v1.schema.json",
+  "title": "TPC-136 downstream partial-map manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "maps"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc136-downstream-map-manifest-v1"
+    },
+    "maps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "map_id",
+          "status",
+          "source_status",
+          "source",
+          "required_domain",
+          "required_h0",
+          "totality_definition",
+          "domain_cut_path_ids"
+        ],
+        "properties": {
+          "map_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PROVED",
+              "NOT_TESTABLE"
+            ]
+          },
+          "source_status": {
+            "enum": [
+              "PROVED",
+              "NOT_TESTABLE"
+            ]
+          },
+          "source": {
+            "type": "string"
+          },
+          "required_domain": {
+            "const": "ALL_NONSOFT_CUT_PATHS"
+          },
+          "required_h0": {
+            "type": "integer"
+          },
+          "totality_definition": {
+            "const": "ROW_SEPARATED_MATRIX_EQUIVALENT_TO_PATH_TOTALITY"
+          },
+          "domain_cut_path_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,152 @@
+{
+  "checks": {
+    "atomic_selector_fails_null_set_domination": true,
+    "current_logarithmic_input_has_no_fixed_power": true,
+    "endpoint_margin_is_spent_once": true,
+    "finite_selector_domination_checked": true,
+    "full_log_window_preserves_source_exceptional_exponent": true,
+    "global_exceptional_density_not_promoted_to_arbitrary_window": true,
+    "hypothetical_strict_case_passes": true,
+    "logarithmic_corridor_can_pass_qualitatively": true,
+    "logarithmic_corridor_has_zero_X_power": true,
+    "no_positive_L2_in_current_snapshot": true,
+    "one_over_400_equality_stops": true,
+    "tao_teravainen_corridor_not_promoted_to_all_prefix": true,
+    "thin_log_window_gets_no_decay_from_global_density_alone": true,
+    "unproved_premises_never_emit_GO": true
+  },
+  "claim_boundary": {
+    "B_h0_delta_o_X": false,
+    "H3": false,
+    "fixed_h0_positive_L2": false,
+    "one_over_400": false,
+    "prime_pair_theorem": false,
+    "twin_prime_theorem": false
+  },
+  "current_manifest": {
+    "actual_archive_supplied_to_this_certificate": false,
+    "actual_selector_or_pointwise_prefix": "OPEN",
+    "current_verdict": "NOT_TESTABLE",
+    "first_missing": "H1.archive",
+    "growing_affine_power_theorem": "OPEN"
+  },
+  "exponent_formula": {
+    "cases": [
+      {
+        "ell_bv": "1/2000",
+        "ell_census": "1/1000",
+        "ell_selector": "1/1000",
+        "endpoint_margin": "11/2000",
+        "eta_tail": "1/80",
+        "lambda_phys": "1/500",
+        "name": "hypothetical_strict_pass",
+        "positive_raw_power": true,
+        "premises_proved": true,
+        "sigma_aff": "1/100",
+        "sigma_raw": "3/400",
+        "strict_endpoint_pass": true,
+        "transported_sigma": "3/400"
+      },
+      {
+        "ell_bv": "0/1",
+        "ell_census": "0/1",
+        "ell_selector": "0/1",
+        "endpoint_margin": "0/1",
+        "eta_tail": "1/300",
+        "lambda_phys": "1/400",
+        "name": "one_over_400_equality_stop",
+        "positive_raw_power": true,
+        "premises_proved": true,
+        "sigma_aff": "1/400",
+        "sigma_raw": "1/400",
+        "strict_endpoint_pass": false,
+        "transported_sigma": "1/400"
+      },
+      {
+        "ell_bv": "0/1",
+        "ell_census": "0/1",
+        "ell_selector": "0/1",
+        "endpoint_margin": "0/1",
+        "eta_tail": "0/1",
+        "lambda_phys": "0/1",
+        "name": "current_frozen_logarithmic_input",
+        "positive_raw_power": false,
+        "premises_proved": false,
+        "sigma_aff": "0/1",
+        "sigma_raw": "0/1",
+        "strict_endpoint_pass": false,
+        "transported_sigma": "0/1"
+      }
+    ],
+    "endpoint": "sigma_raw>lambda_phys",
+    "equality": "STOP",
+    "sigma_raw": "min(eta_tail,sigma_aff-ell_selector-ell_census-ell_bv)"
+  },
+  "logarithmic_exponent_formula": {
+    "actual_selector_and_reassembly": "OPEN",
+    "global_to_terminal_window": "m_window(E) << min(1,(log X)^(1-c)/log omega)",
+    "illustrative_ledger_only": {
+      "X_power_exponent": "0/1",
+      "kappa_aff": "1/20",
+      "kappa_bv": "1/200",
+      "kappa_census": "1/100",
+      "kappa_corr": "1/20",
+      "kappa_exceptional": "1/20",
+      "kappa_raw": "3/100",
+      "kappa_selector": "1/200",
+      "kappa_tail": "1/30",
+      "pays_positive_X_endpoint": false,
+      "qualitative_log_return": true
+    },
+    "kappa_aff": "min(kappa_corr,kappa_exceptional_after_pullback_union)",
+    "kappa_raw": "min(kappa_tail,kappa_aff-kappa_selector-kappa_census-kappa_bv)",
+    "source_corridor": "Tao--Teravainen 2026 small-polylog affine data outside a small log-density exceptional set",
+    "thin_window_source_only_example": {
+      "certified_exceptional_window_exponent": "0/1",
+      "log_window_exponent": "9/10",
+      "source_density_exponent": "1/20"
+    }
+  },
+  "paper": "TPC-140",
+  "return_interfaces": {
+    "pointwise": {
+      "requirement": "uniform actual-family all-prefix theorem",
+      "status": "OPEN"
+    },
+    "selector": {
+      "atomic_selector_status": "REJECTED_WITHOUT_SMOOTHING",
+      "finite_model": {
+        "K": "2/1",
+        "base": [
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4"
+        ],
+        "dominated": true,
+        "selector": [
+          "1/2",
+          "1/4",
+          "1/8",
+          "1/8"
+        ]
+      },
+      "null_set_regression": {
+        "atomic_selector": [
+          "0/1",
+          "0/1",
+          "1/1"
+        ],
+        "base": [
+          "1/2",
+          "1/2",
+          "0/1"
+        ],
+        "fails_every_tested_finite_K": true
+      },
+      "requirement": "nu_X(E)<=K_X*m_log(E) for every Borel E",
+      "status": "OPEN_ON_ACTUAL_FAMILY"
+    }
+  },
+  "schema_version": 1
+}

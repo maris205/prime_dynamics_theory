@@ -1,0 +1,100 @@
+{
+  "checks": {
+    "active_squarefree_carrier_is_odd": true,
+    "active_squarefree_rows_nonempty": true,
+    "content_product_divides_modulus": true,
+    "determinant_one_relabel_rejected": true,
+    "even_shadow_disjoint_from_active_carrier": true,
+    "even_shift_two_equals_shift_one": true,
+    "new_polylog_affine_source_scoped_to_almost_all_scales": true,
+    "no_positive_L2_claim": true,
+    "odd_residue_contents_are_coprime": true,
+    "odd_residue_contents_are_odd": true,
+    "reduced_determinant_is_multiple_of_four": true,
+    "reduced_forms_are_primitive": true,
+    "sample_determinant_two": true
+  },
+  "claim_boundary": {
+    "H3": false,
+    "one_over_400": false,
+    "positive_L2": false,
+    "prime_pair_theorem": false,
+    "twin_prime_theorem": false
+  },
+  "exact_exports": {
+    "active_carrier_overlap_with_even_shadow": 0,
+    "even_carrier_identity": "lambda(2m-2)lambda(2m)=lambda(m-1)lambda(m)",
+    "odd_reduced_determinant": "2M/(c_minus*c_plus) is divisible by 4"
+  },
+  "gate_status": {
+    "actual_CRT_family_inside_polylog_corridor": "NOT_PROVED",
+    "actual_growing_all_prefix_power": "OPEN",
+    "deterministic_all_prefix_selector": "OPEN",
+    "fixed_shift_two_qualitative_log": "PROVED_FROZEN_TPC137",
+    "small_polylog_affine_almost_scale": "PROVED_TAO_TERAVAINEN_2026_OUTSIDE_EXCEPTIONAL_SET"
+  },
+  "paper": "TPC-138",
+  "sample": {
+    "active_squarefree_rows": 108,
+    "determinant_transform_cases": 210,
+    "first_active_rows": [
+      {
+        "D": 1,
+        "V": 1,
+        "n": 3,
+        "z": 0
+      },
+      {
+        "D": 7,
+        "V": 3,
+        "n": 9,
+        "z": 2
+      },
+      {
+        "D": 13,
+        "V": 5,
+        "n": 15,
+        "z": 4
+      },
+      {
+        "D": 19,
+        "V": 7,
+        "n": 21,
+        "z": 6
+      },
+      {
+        "D": 31,
+        "V": 11,
+        "n": 33,
+        "z": 10
+      },
+      {
+        "D": 37,
+        "V": 13,
+        "n": 39,
+        "z": 12
+      },
+      {
+        "D": 43,
+        "V": 15,
+        "n": 45,
+        "z": 14
+      },
+      {
+        "D": 55,
+        "V": 19,
+        "n": 57,
+        "z": 18
+      }
+    ],
+    "sample_even_active_intersection_size": 0,
+    "smallest_reduced_determinant": 4
+  },
+  "schema_version": 1,
+  "source_scope": {
+    "Helfgott_Radziwill_2021": "stated shift-one quantitative log and almost-scale results only",
+    "Pilatte_2023": "stated shift-one logarithmic power-of-log result only",
+    "Tao_Teravainen_2026": "uniform positive affine data of sufficiently small polylog height outside a small log-density exceptional set",
+    "beyond_polylog_or_all_prefix_affine_result": "OPEN_NOT_ATTRIBUTED"
+  }
+}

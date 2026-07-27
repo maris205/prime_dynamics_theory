@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc135-domain-cover-v1.schema.json",
+  "title": "TPC-135 block-domain classification manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "scope",
+    "blocks",
+    "witness",
+    "frontier_scalar_bound_present"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc135-domain-cover-manifest-v1"
+    },
+    "scope": {
+      "type": "object"
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "j_L",
+          "j_K",
+          "D0",
+          "reason",
+          "path_count"
+        ]
+      }
+    },
+    "witness": {
+      "type": "object",
+      "required": [
+        "native_id",
+        "column_kind",
+        "native_coefficient_nonzero_status",
+        "path_count",
+        "child_blocks",
+        "all_child_reasons",
+        "eligible_symbolic_column_sum",
+        "full_symbolic_column_sum",
+        "interpretation"
+      ],
+      "properties": {
+        "column_kind": {
+          "const": "FORMAL_SUPPORT_ENVELOPE_COLUMN"
+        },
+        "native_coefficient_nonzero_status": {
+          "const": "UNDECIDED"
+        }
+      }
+    },
+    "frontier_scalar_bound_present": {
+      "const": false
+    }
+  },
+  "additionalProperties": false
+}

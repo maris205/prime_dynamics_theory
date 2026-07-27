@@ -1,0 +1,293 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\E}{\mathcal E}
+\newcommand{\F}{\mathcal F}
+\newcommand{\B}{\mathcal B}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\STOP}{\textsc{stop-declared-route}}
+\newcommand{\NT}{\textsc{not-testable}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{The Uncovered Block Frontier in the TPC-17/18 Route}\\
+\large Eligibility Partitions and a Coefficientwise All-Block
+Obstruction}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-134 gives a complete dyadic prefix--tail archive, whereas the
+analytic theorems of TPC-17 and TPC-18 apply only on a strict block
+domain.  We make this mismatch exact.  A canonical maximal-integer
+policy selects \(D_0(b)\) from the published Maynard inequalities,
+the finite-row leakage condition, and the TPC-18 tail geometry.  The
+actual blocks partition into eligible and frontier sets, giving
+\[
+ B_{h_0,\delta}(X)
+ =S_{\E}^{\rm prefix}+S_{\E}^{\rm tail}+S_{\F}
+\]
+coefficientwise.  The published TPC-17 theorem makes only the first
+term soft.  For every nonzero \(W\) and all sufficiently large \(X\),
+there is a native column with \(\ell\asymp U=\sqrt R\); every dyadic
+child of this column has \(L\le2R\) and therefore lies in the
+frontier.  Hence the eligible-only selector has a nonzero formal
+column defect in the path matrix.  This stops only the declared
+eligible-only compiler.  It proves neither that \(S_{\F}\) is large
+nor that a different route is impossible.  The partition is
+\(\Lzero\), the scoped obstruction is \(\Lone\), and there is no new
+positive \(\Ltwo\) estimate or prime-pair theorem.
+\end{abstract}
+
+\section{One canonical eligibility policy}
+
+Retain the notation
+\[
+ R=\lfloor X^{1/2-\delta}\rfloor,\qquad
+ V=\lfloor R^{1/2}\rfloor
+\]
+and the actual dyadic blocks
+\[
+ b=(L,K),\qquad L=2^{j_L},\quad K=2^{j_K}
+\]
+from TPC-134 \citep{WangTPC134}.  Fix once and for all a rational
+margin \(\eta>0\).  We use only the formally published Maynard layer
+\citep{Maynard2025I,WangTPC17}; the version-locked Li extension is a
+different route and is not silently mixed into this one.
+
+\begin{definition}[Admissible integer cutoff]
+\label{def:admissible}
+An integer \(D\ge1\) is admissible for \(b\) when
+\begin{align}
+ &L>2R,\qquad K>2V,\qquad D<R,\qquad 2D<V,
+ \label{eq:geometry}\\
+ &LDR\le X^{1-\eta},\qquad
+ DL^2\le X^{1-\eta},
+ \label{eq:leakage}\\
+ &D^{12}L^7\le X^{4-\eta},\qquad
+ D^{20}L^{19}\le X^{10-\eta}.
+ \label{eq:maynard}
+\end{align}
+Define \(D_0(b)\) to be the largest admissible integer, and set
+\(D_0(b)=0\) when none exists.
+\end{definition}
+
+The maximum exists because \(2D<V\) gives a finite candidate set.
+Every comparison is a rational-power inequality.  Clearing
+denominators gives an exact integer test; no floating tolerance is
+part of the policy.
+
+\begin{definition}[Eligible and frontier blocks]
+A block is \emph{eligible} if \(D_0(b)>0\), and otherwise belongs to
+the frontier.  Thus
+\[
+ \B_X=\E_X\sqcup\F_X.
+\]
+For auditing, frontier blocks receive the first applicable reason:
+\[
+ L\le2R,\quad K\le2V,\quad\text{no integer with }2D<V,
+ \quad\text{or published-profile failure}.
+\]
+\end{definition}
+
+\section{Exact route partition}
+
+Let \(S_b^{\rm prefix}\) and \(S_b^{\rm tail}\) be the TPC-134
+terminal sums at the canonical \(D_0(b)\).
+
+\begin{theorem}[Eligible/frontier decomposition]
+\label{thm:partition}
+For every \(X\),
+\[
+ \boxed{
+ B_{h_0,\delta}(X)
+ =
+ S_{\E}^{\rm prefix}
+ +S_{\E}^{\rm tail}
+ +S_{\F},}
+\]
+where
+\[
+ S_{\E}^{\rm prefix}=\sum_{b\in\E_X}S_b^{\rm prefix},
+ \quad
+ S_{\E}^{\rm tail}=\sum_{b\in\E_X}S_b^{\rm tail},
+ \quad
+ S_{\F}=\sum_{b\in\F_X}
+ (S_b^{\rm prefix}+S_b^{\rm tail}).
+\]
+This is a disjoint row partition of the complete TPC-134 path matrix.
+\end{theorem}
+
+\begin{proof}
+TPC-134 gives the exact sum over every block.  Partition its block
+indices by the deterministic predicate in \cref{def:admissible}.
+\end{proof}
+
+\begin{corollary}[What the published prefix theorem supplies]
+\label{cor:prefix}
+On the fixed published-core scope above, TPC-17 gives, for every
+\(A>0\),
+\[
+ S_{\E}^{\rm prefix}
+ =O_A(X(\log X)^{-A}).
+\]
+Consequently
+\[
+ B_{h_0,\delta}(X)
+ =
+ S_{\E}^{\rm tail}+S_{\F}
+ +O_A(X(\log X)^{-A}).
+\]
+\end{corollary}
+
+\begin{proof}
+Every eligible block satisfies the hypotheses of the cumulative
+prefix theorem by construction \citep{WangTPC17}.  The dyadic support
+gives \(O_W(\log X)\) relevant block pairs, so arbitrary logarithmic
+saving survives the sum.  No estimate is applied to \(\F_X\).
+\end{proof}
+
+\section{A low-source frontier column}
+
+The following result is coefficientwise.  It does not require the
+numeric coefficient of its witness to be nonzero.
+
+\begin{theorem}[Scoped all-block obstruction]
+\label{thm:obstruction}
+Assume \(W\not\equiv0\).  For all sufficiently large \(X\), the
+TPC-134 archive contains a support-envelope native column all of whose
+dyadic children lie in \(\F_X\).  The corresponding formal column of
+the path matrix is present regardless of whether its arithmetic
+coefficient later evaluates to zero.  Therefore, as operators on
+native columns,
+\[
+ \boxed{P_{\E}M_{134}\ne M_{134}.}
+\]
+In particular, the eligible TPC-17/18 block family cannot by itself
+be a coefficientwise all-block archive.
+\end{theorem}
+
+\begin{proof}
+There is a closed interval
+\([c_1,c_2]\Subset(0,\infty)\) on which \(W\) is nonzero.  By
+Bertrand's postulate, for large \(X\) choose a prime
+\[
+ U<\ell\le2U
+\]
+\citep{Apostol1976}.  The interval
+\[
+ [c_1X/\ell,c_2X/\ell]
+\]
+has length tending to infinity, so it contains an integer \(k>V\).
+Take the opened divisor \(d=1\).  Then \(W(\ell k/X)\ne0\), hence this
+is a weight-active TPC-15 support-envelope record.  We do not infer
+that its full coefficient is nonzero: the factor
+\(r_Q(\ell k+h_0)\) may still vanish.
+
+If a dyadic child has nonzero \(\ell\)-weight, the support of
+\(\psi\) gives
+\[
+ \ell/2<L<2\ell\le4U.
+\]
+Since \(U=\lfloor\sqrt R\rfloor\), one has \(4U\le2R\) for all
+sufficiently large \(R\).  Every child therefore fails \(L>2R\) and
+belongs to \(\F_X\).  The full column sum is one by TPC-134, while its
+eligible part is zero.
+\end{proof}
+
+\begin{remark}[Precisely what is stopped]
+\Cref{thm:obstruction} stops a claimed derivation of exact
+coefficientwise cover using only eligible blocks.  It does not rule
+out
+\[
+ S_{\F}=o(X),
+\]
+a separate exact frontier transform, the asymmetric Vaughan route,
+or a scalar identity with a theorem-backed soft term.  TPC-18 itself
+states its global all-block relation as an additional hypothesis
+\citep{WangTPC18}.  We do not turn that warning into a global
+impossibility result.
+\end{remark}
+
+\section{Machine certificate and decision rules}
+
+The standard-library program
+\texttt{experiments/tpc135\_domain\_cover\_audit.py} reads every
+committed TPC-134 sample path, recomputes the maximal integer cutoff,
+assigns one exhaustive reason to each block, and finds a native column
+whose children all have reason \texttt{L\_TOO\_LOW}.  A separate
+large-integer regression exercises a genuinely eligible parameter
+cell.  The sample witness is explicitly typed as a formal
+support-envelope column with undecided numerical coefficient.  The
+program rejects a wrong reason, a missing block, a false eligible
+witness sum, a false nonzero-coefficient promotion, and any manifest
+that asserts a frontier scalar bound.  Its \texttt{--check} mode never
+writes.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.43\textwidth}Y@{}}
+\toprule
+Statement & Status\\
+\midrule
+Eligible/frontier set partition
+& Exact \(\Lzero\).\\
+Low-source coefficientwise witness
+& Proved, scoped \(\Lone\) obstruction.\\
+Published eligible-prefix estimate
+& Imported restricted arithmetic theorem; not new here.\\
+Frontier scalar \(o(X)\) or lower bound
+& Neither is proved.\\
+New growing fixed-\(h_0\) power saving
+& None; no new positive \(\Ltwo\).\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Verdicts.}
+A claim that eligible blocks alone are the exact coefficientwise
+archive receives \(\STOP\).  The absence of a frontier theorem or
+map receives \(\NT\).  If a future theorem supplies either, this
+scoped stop is discharged without changing the theorem proved here.
+
+\paragraph{Explicit exclusions.}
+No statement proves that \(S_{\F}\) is large, that the hard packet is
+not \(o(X)\), that every architecture fails, or that parity cannot be
+breached.  There is no Hardy--Littlewood asymptotic, prime-pair lower
+bound, or twin-prime theorem.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

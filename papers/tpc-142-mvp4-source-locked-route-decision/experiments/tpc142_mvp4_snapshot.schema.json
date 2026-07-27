@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/tpc142-mvp4-snapshot-v1.json",
+  "title": "TPC-142 MVP4 source-locked snapshot",
+  "type": "object",
+  "required": [
+    "schema",
+    "snapshot",
+    "imported_manifest_summary",
+    "gate_projection",
+    "proof_dag",
+    "endpoint",
+    "route_universe",
+    "first_missing",
+    "ordered_verdicts",
+    "current_verdict",
+    "progress_tags",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "tpc-142-mvp4-source-locked-snapshot-v1"},
+    "snapshot": {
+      "type": "object",
+      "required": [
+        "date",
+        "source_manifest",
+        "source_manifest_sha256",
+        "selected_route"
+      ]
+    },
+    "imported_manifest_summary": {
+      "type": "object",
+      "required": [
+        "source_hash_semantics",
+        "restricted_positive_arithmetic_shadow",
+        "exceptional_window_state",
+        "frontier_explicit",
+        "full_carrier_totalized"
+      ],
+      "properties": {
+        "source_hash_semantics": {"const": "INTEGRITY_ONLY"},
+        "restricted_positive_arithmetic_shadow": {
+          "const": "SMALL_POLYLOG_AFFINE_ALMOST_SCALE"
+        },
+        "exceptional_window_state": {
+          "const": "GLOBAL_DENSITY_PROVED_LOCAL_ACTUAL_WINDOW_OPEN"
+        },
+        "frontier_explicit": {"const": true},
+        "full_carrier_totalized": {"const": false}
+      }
+    },
+    "gate_projection": {
+      "type": "object",
+      "minProperties": 9,
+      "maxProperties": 9
+    },
+    "proof_dag": {
+      "type": "object",
+      "required": ["parents", "topological_order", "root"]
+    },
+    "endpoint": {"type": "object"},
+    "route_universe": {"type": "object"},
+    "first_missing": {
+      "type": "object",
+      "required": [
+        "node_id",
+        "gate",
+        "status",
+        "program_level",
+        "required_artifact"
+      ]
+    },
+    "ordered_verdicts": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "current_verdict": {"const": "NOT_TESTABLE"},
+    "progress_tags": {"type": "array"},
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "source_hashes_prove_theorems",
+        "cut_complete_is_full_carrier",
+        "GO",
+        "ARITHMETIC_FRONTIER",
+        "ARCHITECTURE_INFEASIBLE",
+        "positive_L2",
+        "strict_endpoint",
+        "endpoint_pass",
+        "hard_packet_oX",
+        "prime_pair_theorem",
+        "twin_prime_theorem"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

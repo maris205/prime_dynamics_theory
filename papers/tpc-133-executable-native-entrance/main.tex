@@ -1,0 +1,261 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\A}{\mathcal A}
+\newcommand{\At}{\widetilde{\mathcal A}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textsc{not-testable}}
+\newcommand{\STOP}{\textsc{stop-declared-route}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{An Executable Native Entrance for the TPC-15 Hard Packet}\\
+\large Canonical Tuple Enumeration, Symbolic Coefficient DAGs, and
+Scale-Uniform Completeness}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-119 and TPC-123 identify the complete native path archive as the
+first missing structural object in the fixed-shift route, but their
+programs test only finite coordinate models.  We construct the first
+literal component of that object.  For fixed \(h_0\ne0\), rational
+\(0<\delta<1/2\), a fixed smooth weight with a certified compact
+support envelope, and every integer \(X\), a terminating generator
+enumerates exactly once every candidate tuple
+\[
+ (\ell,k,d),\qquad
+ \ell>U,\quad k>V,\quad d\mid k,\quad d\le V
+\]
+in that envelope.  The coefficient is retained as the symbolic
+expression
+\[
+ -\Lambda(\ell)\mu(d)r_Q(\ell k+h_0)W(\ell k/X);
+\]
+no programmatic decision about the exact zero set of \(W\), and no
+floating evaluation of this expression, is used.  The generated sum
+is exactly the opened TPC-15 hard packet.  Canonical tuple
+serialization, rather than a cryptographic hash, proves record
+uniqueness.  The uniform enumeration and divisor opening are
+\(\Lzero\), and their attachment to the literal packet is \(\Lone\).
+No downstream stage archive, positive \(\Ltwo\) estimate, parity
+advance, or prime-pair theorem is proved.
+\end{abstract}
+
+\section{The literal entrance and the decidability boundary}
+
+Fix \(h_0\in\mathbb Z\setminus\{0\}\), rational
+\(\delta\in(0,1/2)\), and
+\[
+ Q=\lfloor X^{1/2-\delta}\rfloor,\qquad
+ U=V=\lfloor\sqrt Q\rfloor.
+\]
+The TPC-15 packet is
+\begin{equation}
+ B_{h_0,\delta}(X)=
+ -\sum_{\substack{\ell>U\\k>V}}
+ \Lambda(\ell)\beta_V(k)r_Q(\ell k+h_0)W(\ell k/X),
+ \qquad
+ \beta_V(k)=\sum_{\substack{d\mid k\\d\le V}}\mu(d)
+ \label{eq:packet}
+\end{equation}
+\citep{WangTPC15,WangTPC119}.  Let
+\(\operatorname{supp}W\subset[a,b]\Subset(0,\infty)\), where
+\(a,b\in\mathbb Q\) are part of a proof-carrying packet manifest.
+
+For a general smooth function, deciding from finite source text
+whether \(W(x)\) is exactly zero at an arbitrary rational point is not
+an appropriate archive primitive.  We therefore enumerate an
+envelope rather than claim a minimal active set.
+
+\begin{definition}[Support-envelope native set]
+For every integer \(X\ge2\), let
+\[
+ \At_X=\left\{(\ell,k,d)\in\mathbb N^3:
+ \ell>U,\ k>V,\ d\mid k,\ d\le V,\
+ aX\le\ell k\le bX\right\}.
+\]
+The coefficient attached to \(\alpha=(\ell,k,d)\) is
+\begin{equation}
+ c_X(\alpha)=
+ -\Lambda(\ell)\mu(d)r_Q(\ell k+h_0)W(\ell k/X).
+ \label{eq:coefficient}
+\end{equation}
+\end{definition}
+
+The set may contain zero coefficients, including those caused by an
+interior zero of \(W\) or by \(\mu(d)=0\).  Retaining a zero column is
+harmless; deleting a column on the basis of an uncertified numerical
+zero would not be.
+
+\section{Uniform finite enumeration}
+
+\begin{theorem}[Executable native entrance]
+\label{thm:generator}
+There is one deterministic algorithm which, for every manifest in the
+scope above and every integer \(X\ge2\), terminates and outputs a
+finite list \(\mathsf{Gen}_{133}(X)\) whose tuple projection is a
+bijection onto \(\At_X\).  Its record count is
+\[
+ |\At_X|
+ =
+ \sum_{\substack{k>V\\ \exists\,\ell>U:\ aX\le\ell k\le bX}}
+ \tau_{\le V}(k)
+ \#\{\ell>U:aX\le\ell k\le bX\},
+\]
+where
+\(\tau_{\le V}(k)=\#\{d\mid k:d\le V\}\).
+\end{theorem}
+
+\begin{proof}
+The product restriction gives
+\[
+ \ell\le \frac{bX}{V+1},
+ \qquad
+ k\le \frac{bX}{U+1}.
+\]
+Thus both outer loops are finite.  For each admissible pair
+\((\ell,k)\), enumerate the positive divisors of \(k\) not exceeding
+\(V\), in increasing order.  Every output satisfies the defining
+conditions.  Conversely, each tuple in \(\At_X\) occurs when its
+unique \(\ell\), \(k\), and \(d\) loop values are reached.  No loop
+triple repeats, proving injectivity and the count.
+\end{proof}
+
+\begin{corollary}[Exact opened packet]
+\label{cor:packet}
+For every manifest in \cref{thm:generator},
+\[
+ \boxed{
+ B_{h_0,\delta}(X)
+ =\sum_{\alpha\in\mathsf{Gen}_{133}(X)}c_X(\alpha).}
+\]
+\end{corollary}
+
+\begin{proof}
+Open \(\beta_V(k)\) in \eqref{eq:packet} and interchange finite
+sums.  Terms with \(\ell k/X\notin[a,b]\) vanish because of the
+certified support envelope.  The remaining tuples are exactly
+\(\At_X\).
+\end{proof}
+
+\section{Exact records without false numerical claims}
+
+The machine record stores \eqref{eq:coefficient} as an abstract syntax
+tree with nodes for \(\Lambda\), \(r_Q\), and \(W\), together with an
+exact integer leaf equal to \(-\mu(d)\).  Thus the finite M\"obius
+value is evaluated exactly, while no floating evaluation of the other
+factors is used.
+Conservation in later papers acts on the branch multiplier and does
+not require deciding the transcendental values \(\log p\) or
+\(W(\ell k/X)\).
+
+\begin{definition}[Canonical identity]
+The mathematical identifier of a native record is the full serialized
+tuple
+\[
+ (X,h_0,\ell,k,d)
+\]
+together with the packet-scope fields \(Q,U,V,W\) and the unique
+physical normalization.  A SHA-256 digest is an integrity checksum,
+not a proof that two mathematical records are distinct.
+\end{definition}
+
+The short field \texttt{native\_id} used by the sample is only a
+scope-local convenience label.  Canonicality is checked from the full
+\((\text{packet scope},\text{native tuple})\) key before the digest is
+computed.  In particular, changing a packet-scope field while keeping
+the same short label creates a different mathematical record.
+
+\begin{proposition}[Mutation stop certificates]
+For a declared finite output, each of the following is an exact
+certificate that the implementation does not instantiate
+\cref{thm:generator}: a duplicated or missing tuple, an incorrect
+divisor constraint, a changed \(h_0\), a second normalization, or a
+coefficient syntax tree different from \eqref{eq:coefficient}.
+\end{proposition}
+
+\begin{proof}
+The first two violate the bijection.  The remaining mutations violate
+the record definition or the packet scope.  They stop that
+implementation, not every possible archive language.
+\end{proof}
+
+\section{Certificate and claim boundary}
+
+The standard-library program
+\texttt{experiments/tpc133\_native\_entrance.py} computes
+\(Q,U,V\) by integer inequalities, enumerates a deterministic sample,
+checks its count through the transposed \(k\)-first census, and rejects
+deletion, duplication, wrong-shift, second-normalization, and
+coefficient-tree or support-envelope mutations.  Default mode writes
+deterministic JSON and JSONL artifacts.  The \texttt{--check} mode is
+read-only.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.42\textwidth}Y@{}}
+\toprule
+Statement & Status\\
+\midrule
+Uniform support-envelope enumeration
+& Proved, \(\Lzero\).\\
+Exact divisor opening of the TPC-15 packet
+& Proved, literal \(\Lone\) entrance.\\
+Minimal exact nonzero support of arbitrary \(W\)
+& Not claimed and not required.\\
+Complete TPC-123 downstream stage archive
+& Not supplied.\\
+Fixed-\(h_0\) growing arithmetic saving
+& Not proved; no positive \(\Ltwo\).\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Stop versus not-testable.}
+An explicit malformed record is \(\STOP\) for that implementation.
+An absent support proof, weight definition, or packet manifest is
+\(\NT\).  Neither outcome is a statement about the twin-prime
+conjecture.
+
+\paragraph{Explicit exclusions.}
+This paper proves no physical cover, determinant-energy bound,
+zero-mode saving, signed M\"obius or Liouville estimate, endpoint
+below \(1/400\), Hardy--Littlewood asymptotic, prime-pair lower bound,
+or twin-prime theorem.  It is the entrance of an archive, not its
+arithmetic exit.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

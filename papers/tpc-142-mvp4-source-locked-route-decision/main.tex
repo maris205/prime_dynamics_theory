@@ -1,0 +1,528 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={TPC-MVP4: A Source-Locked Route Decision after TPC-133--141},
+  pdfauthor={Liang Wang},
+  pdfsubject={Frontier totalization, arithmetic shadows, and the strict endpoint},
+  pdfkeywords={fixed shift, route decision, source-locked snapshot, arithmetic frontier, endpoint}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\GO}{\textnormal{\textsc{go}}}
+\newcommand{\AINF}{\textnormal{\textsc{architecture-infeasible}}}
+\newcommand{\REROUTE}{\textnormal{\textsc{reroute}}}
+\newcommand{\STOPR}{\textnormal{\textsc{stop-route}}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\AF}{\textnormal{\textsc{arithmetic-frontier}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcommand{\INVALID}{\textnormal{\textsc{invalid-snapshot}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\COND}{\textnormal{\textsc{conditional}}}
+\newcommand{\REFUTED}{\textnormal{\textsc{refuted}}}
+\newcommand{\Lam}{\Lambda_{\mathrm{phys}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{TPC-MVP4: A Source-Locked Route Decision}\\
+\textbf{after TPC-133--141: Frontier Totalization,}\\
+\textbf{Arithmetic Shadows, and the Strict Endpoint}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-MVP3 reported the requirement for a complete native archive as
+the first missing object in a proposed fixed-shift prime-pair route.
+TPC-133--136 now make the native entrance executable and follow it
+through an exact declared dyadic cut.  They reconnect the
+eligible-prefix, eligible-tail and frontier terminal classes to the
+original packet, prove the eligible prefix soft, and give a formal
+support-envelope path-matrix witness that the eligible-only TPC-17/18
+compiler is coefficientwise incomplete.  The witness coefficient
+itself may vanish.
+This cut completeness is not full-carrier totalization.
+TPC-137--140 separately prove a fixed-data logarithmic arithmetic
+shadow, a small-polylog affine power-of-log estimate outside a small
+logarithmic-density exceptional set, and two scoped non-transfer
+firewalls, then formulate the remaining actual-family and selector
+estimates needed by the physical determinant-two packet.
+
+We read these results only through the source-locked TPC-141
+manifest.  Hash equality is only a drift/integrity check; it does not
+prove a source theorem or generator.  Invalid hashes, scopes,
+carriers, normalizations, terminal covers, occurrence registries or
+endpoint records return no mathematical verdict.  A valid snapshot is
+classified by seven
+ordered outcomes:
+\[
+\begin{gathered}
+\textsc{go},\quad \textsc{architecture-infeasible},\quad
+\textsc{reroute},\\
+\textsc{stop-route},\quad \textsc{not-testable},\quad
+\textsc{arithmetic-frontier},\quad \textsc{open}.
+\end{gathered}
+\]
+The arithmetic-frontier label requires all selected-route structural
+nodes and the strict physical \(1/400\) endpoint to be proved
+independently of the unresolved arithmetic targets.  Fixed,
+logarithmic, almost-scale, conditional and scope-mismatched results
+cannot trigger it.
+
+The small-polylog result is a restricted external positive arithmetic
+shadow, not positive \(\mathrm{L2}\): actual CRT-family containment,
+squarefree/periodic reassembly, local exceptional-set control on every
+terminal window and deterministic prefixes are not proved.  The
+frozen snapshot is valid, but its first missing node is now
+\(\mathsf{H1.frontier\_totalization}\).  The frontier has neither
+complete downstream physical maps nor a complete original-scale
+\(o(X)\) theorem; H6--H9 remain untestable; and no positive
+\(\mathrm{L2}\) estimate occurs.  Hence
+\[
+ \boxed{\operatorname{Verdict}_{133:141}
+ =\textsc{not-testable}.}
+\]
+This is genuine movement of the first-failure boundary, not
+\textsc{go}, not the arithmetic frontier, and not a negative theorem
+about the twin-prime conjecture.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed shift; source-locked snapshot;
+route decision; unsupported carrier; arithmetic frontier; parity
+barrier.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Snapshot boundary.}
+This decision is dated 27 July 2026 and applies only to the declared
+TPC-MVP1 architecture, the selected frontier-augmented signed route,
+and the exact TPC-141 source manifest.  A changed source hash, route,
+scope, carrier, normalization or occurrence registry creates a new
+snapshot; an unchanged hash supplies integrity, not mathematical
+validity.  No conclusion here asserts a prime-pair theorem or an
+impossibility result for twin primes.
+\end{minipage}}
+
+\section{What changed after MVP3}
+
+MVP1 resolved a conditional proof program into H1--H9
+\citep{WangMVP1}.  MVP2 separated proved interfaces from missing
+growing inputs \citep{WangTPC120}.  MVP3 added a strict
+arithmetic-frontier label and reported
+\(\mathsf{H1.archive}\) as the first missing record
+\citep{WangTPC132}.  TPC-131 supplied the general composition formula
+\[
+ |B_{h_0,\delta}(X)|
+ \le o(X)+X^{1-\sigma_{\rm raw}+\Lambda_{\rm phys}+o(1)}
+\label{eq:synthesis}
+\]
+under a complete proof-carrying archive and occurrence registry
+\citep{WangTPC131}.
+
+TPC-133--136 provide more than another abstract schema.  They
+enumerate the native entrance in an effective support envelope,
+create a coefficientwise conservative dyadic path archive, partition
+the TPC-17/18 eligible domain from its frontier, and reconnect the
+three declared cut-terminal classes exactly
+\citep{WangTPC133,WangTPC134,WangTPC135,WangTPC136}.  Thus the old
+generic archive absence has been replaced by a precise downstream
+totality defect.
+
+The arithmetic branch also becomes sharper but not stronger in the
+required sense.  TPC-137 proves a frozen fixed-affine logarithmic
+closure based on the formal two-point theorem of Tao
+\citep{Tao2016,WangTPC137}.  TPC-138 records the quantitative
+shift-one scope of Helfgott--Radziwi{\l}{\l} and proves that the
+direct reparameterization is blocked on the active odd
+determinant-two carrier \citep{HelfgottRadziwill2021,WangTPC138}.
+TPC-138/139 also record the Tao--Ter\"av\"ainen small-polylog affine
+almost-scale theorem as a restricted positive shadow.  TPC-139 and
+TPC-140 then expose, rather than assume, the remaining actual-family
+containment, squarefree/periodic reassembly, local exceptional-window
+and actual-prefix selector gates \citep{WangTPC139,WangTPC140}.  In
+particular, a cumulative logarithmic-density estimate is not promoted
+to the same normalized estimate on every terminal window.
+
+\section{A frozen source-locked snapshot}
+
+\begin{definition}[Snapshot validity]
+\label{def:valid}
+An MVP4 snapshot is valid only if:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the TPC-141 manifest hash and every TPC-133--140 source bundle
+  hash agree with the frozen files;
+\item node, export, import, scope, carrier and normalization tables
+  are internally consistent;
+\item the proof DAG is acyclic and its declared topological order
+  exactly covers the nodes;
+\item the three cut terminal roles and four residual namespaces are
+  exact covers;
+\item the occurrence registry has unique identifiers, acyclic
+  nonoverlapping joint replacements and no missing primitive leaf;
+\item the selected route and every stop record belong to the declared
+  route universe; and
+\item the endpoint uses exact rational direction: upper certificates
+  pass, lower certificates stop, and unknown values remain unknown.
+\end{enumerate}
+An invalid snapshot returns \(\INVALID\), which is a data-validation
+outcome rather than a route verdict.
+\end{definition}
+
+\begin{remark}[Hash scope]
+A content hash detects source drift.  It does not prove a theorem,
+the completeness of a generator, or the uniqueness of a tuple key.
+Those claims require the source proofs and raw tuple validation.
+\end{remark}
+
+\section{Statuses, evidence and active requirements}
+
+Node status and program evidence remain orthogonal:
+\[
+\PROVED,\quad \COND,\quad \OPEN,\quad \NT,\quad \REFUTED.
+\]
+An \(\Lzero\) record is a finite or abstract identity.  An
+\(\Lone\) record is attached to the literal fixed-\(h_0\) carrier and
+normalization.  A positive \(\Ltwo\) record must be a uniform growing
+power estimate on the complete actual coefficient family with all
+masks, weights, phases, origins, prefixes and residual sectors.
+
+Accordingly:
+\begin{itemize}[leftmargin=2em]
+\item fixed-data or fixed-periodic logarithmic cancellation is an
+  arithmetic shadow, not positive \(\Ltwo\);
+\item a small-polylog affine power-of-log estimate outside an
+  exceptional scale set is a restricted positive arithmetic shadow,
+  not actual-family containment, a local terminal-window estimate, or
+  deterministic-prefix control;
+\item a shift-one estimate is not an estimate on a scope-mismatched
+  determinant-two progression;
+\item a non-effective slow diagonal is not the prescribed physical
+  schedule;
+\item almost-all-scale cancellation is not all-prefix control; and
+\item a conditional power-ledger formula is not a certified positive
+  exponent.
+\end{itemize}
+
+Route requirements are an explicit selected AND/OR graph.  A stopped
+positive or eligible-only sufficient subroute need not be proved on a
+selected signed alternative.  Conversely, one arithmetic theorem
+cannot cover two packet classes unless a joint exact-cover theorem
+says so.
+
+\section{Eight total audit outcomes}
+
+The outer audit has one validation outcome and seven mathematical
+route verdicts.
+
+\begin{definition}[Ordered valid-snapshot verdicts]
+\label{def:verdicts}
+After \cref{def:valid} passes, test:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(\GO\): every active required gate is proved in one compatible
+  scope and the actual endpoint has strict positive slack.
+\item \(\AINF\): a theorem-backed exact cover of the declared route
+  universe stops every route.
+\item \(\REROUTE\): the selected route is stopped and a distinct
+  typed alternative with a fresh registry has been selected.
+\item \(\STOPR\): the selected route has a complete actual-carrier
+  stop certificate and no typed alternative is selected.
+\item \(\NT\): an active required artifact or type is absent.
+\item \(\AF\): every active structural node and the strict physical
+  endpoint are proved, while every unresolved active node is
+  status-\(\OPEN\), scope-compatible and explicitly a positive
+  \(\Ltwo\) target.
+\item \(\OPEN\): every remaining valid case.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Total deterministic classifier]
+\label{thm:classifier}
+Manifest validation followed by the displayed precedence returns
+exactly one of
+\[
+\begin{gathered}
+\INVALID,\quad \GO,\quad \AINF,\quad \REROUTE,\\
+\STOPR,\quad \NT,\quad \AF,\quad \OPEN.
+\end{gathered}
+\]
+\end{theorem}
+
+\begin{proof}
+Validation either fails, giving the first outcome, or supplies a
+well-typed route universe, selected route, gate table and endpoint.
+On a valid snapshot, \cref{def:verdicts} is an ordered list ending in
+a catch-all.  The first applicable predicate is unique by precedence.
+The order deliberately separates global stop cover, selected-route
+stop, missing data and the arithmetic frontier.
+\end{proof}
+
+\begin{remark}[Conditional synthesis is not a verdict]
+The existence of \eqref{eq:synthesis} is metadata: it tells us what
+would follow from a complete certificate.  It is neither a weakened
+\(\GO\) nor evidence that the remaining inputs are technical.
+\end{remark}
+
+\section{The strict endpoint and stop directions}
+
+For the MVP1 contract the physical target is
+\[
+ \Lambda_{\rm phys}<\frac1{400}
+\]
+on the amplitude scale.  The TPC-141 occurrence registry keeps
+energy-to-amplitude conversion, joint replacement and packet census
+inside this ledger.
+
+\begin{proposition}[Upper failure is not a lower obstruction]
+\label{prop:directions}
+For one fully specified route cell:
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item a complete theorem-backed upper certificate
+  \(U<1/400\) passes the physical endpoint;
+\item a complete theorem-backed lower or exact dual certificate
+  \(L\ge1/400\) stops the route cell; and
+\item a conservative upper certificate \(U\ge1/400\), without such a
+  lower certificate, merely fails to prove the endpoint and does not
+  establish \(\STOPR\).
+\end{enumerate}
+Unknown tokens give \(\NT\), not zero.  H5 determinant reserve cannot
+be subtracted from \(U\).
+\end{proposition}
+
+This distinction is necessary because a poor upper estimate may be
+improvable, while a lower certificate excludes every allowed
+realization of the selected cell.
+
+\section{H9 must be arithmetically independent}
+
+The physical occurrence registry is a structural certificate.  In
+the MVP4 proof DAG,
+\[
+\mathsf{H9.physical\_registry}
+\longleftarrow
+\{\mathsf{H1.actual\_carrier},\mathsf{H6.cover},
+\mathsf{H7.fixed\mbox{-}h_0},\mathsf{H8.reconnection}\},
+\]
+with no direct or indirect dependency path from H2, H3, H4 or H5.
+
+\begin{proposition}[Noncircular arithmetic-frontier test]
+\label{prop:h9}
+If H9 is proved using a target H2 or H3 saving, a complete H4
+arithmetic tail estimate, or H5 determinant reserve as a physical
+token, the snapshot cannot be labeled \(\AF\).
+\end{proposition}
+
+\begin{proof}
+The arithmetic-frontier predicate is intended to assert that all
+nonarithmetic interfaces are already closed before the remaining
+arithmetic targets are attacked.  Using one of those targets to prove
+the physical registry assumes a downstream premise and makes that
+predicate circular.  TPC-141 therefore rejects such an H9 parent
+edge.
+\end{proof}
+
+\section{Projection of TPC-133--141}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{MVP4 gate projection in the frozen snapshot.}
+\label{tab:gates}
+\begin{tabularx}{\textwidth}{@{}P{0.07\textwidth}P{0.18\textwidth}
+P{0.18\textwidth}Y@{}}
+\toprule
+Gate & Status & Evidence target & First unresolved content\\
+\midrule
+H1 & \(\NT\) & \(\Lone\) &
+Frontier totalization after the proved cut archive.\\
+H2 & \(\OPEN\) & positive \(\Ltwo\) &
+Signed replacement for the unresolved resonance sector.\\
+H3 & \(\OPEN\) & positive \(\Ltwo\) &
+Actual CRT containment, squarefree/periodic reassembly,
+local exceptional-window control, selector/all-prefix and positive
+fixed-\(X\)-power raw-saving theorem.\\
+H4 & \(\OPEN\) & positive \(\Ltwo\) &
+Complete original-scale physical high/ultra/boundary return.\\
+H5 & \(\NT\) & positive \(\Ltwo\) &
+Actual determinant/zero pair on totalized fibers.\\
+H6 & \(\NT\) & \(\Lone\) &
+Physical cover including every frontier leaf.\\
+H7 & \(\NT\) & \(\Lone\) &
+Total fixed-\(h_0\) map on every terminal leaf.\\
+H8 & \(\NT\) & \(\Lone\) &
+Final hard-packet intertwining beyond the cut.\\
+H9 & \(\NT\) & \(\Lone\) &
+Complete occurrence registry and strict physical primal.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The selected route is
+\nolinkurl{signed_native_frontier_augmented}.  TPC-135 stops the
+\nolinkurl{eligible_only_tpc17_18_compiler}, and TPC-138 stops
+the direct \nolinkurl{quantitative_shift1_reparameterization}.  Neither
+witness stops the selected frontier-augmented route, so the declared
+route universe has no complete stop cover.
+
+\section{First missing and current verdict}
+
+The TPC-141 topological scan returns
+\[
+\boxed{
+\begin{aligned}
+\mathrm{node}&=\mathsf{H1.frontier\_totalization},\\
+\mathrm{status}&=\NT,\\
+\mathrm{artifact}&=
+\text{total downstream frontier maps or a complete frontier theorem}.
+\end{aligned}}
+\]
+
+\begin{theorem}[MVP4 route decision]
+\label{thm:decision}
+For the source-locked TPC-133--141 snapshot dated 27 July 2026,
+\[
+ \boxed{\operatorname{Verdict}_{133:141}=\NT.}
+\]
+The result is neither \(\GO\), nor \(\AF\), nor \(\AINF\).
+\end{theorem}
+
+\begin{proof}
+The source manifest passes validation, so \(\INVALID\) does not
+apply.  The selected route is not stopped and the route universe is
+not completely covered by stop witnesses, so the three stop outcomes
+do not apply.  The required frontier-totalization node is absent;
+hence \(\NT\) occurs before \(\AF\) and \(\OPEN\).  Independently,
+H6--H9 and the strict endpoint are incomplete, and no positive
+\(\Ltwo\) theorem is present, ruling out both \(\GO\) and \(\AF\).
+\end{proof}
+
+\begin{corollary}[Precise progress statement]
+The first-failure pointer has moved from a generic missing native
+archive to the first unsupported carrier after an exact cut.  This is
+structural \(\Lone\) progress.  It is not a positive \(\Ltwo\)
+arithmetic event.
+\end{corollary}
+
+\section{Publishable outcomes and next branch}
+
+The batch has publishable content even though the route verdict is
+\(\NT\):
+\begin{itemize}[leftmargin=2em]
+\item executable native enumeration and exact cut conservation;
+\item a scoped formal coefficientwise obstruction to the eligible-only
+  compiler on the support-envelope archive;
+\item a fixed-data logarithmic arithmetic closure;
+\item a restricted small-polylog affine almost-scale power-of-log
+  arithmetic shadow;
+\item a scoped non-transfer from quantitative shift one;
+\item exceptional-scale and selector firewalls; and
+\item a source-locked integration theorem with a directional
+  endpoint calculus.
+\end{itemize}
+
+A bare missing file is not a negative theorem.  The publishable
+content is the exact theorem that reaches and classifies the missing
+frontier, together with the two scoped route obstructions.
+
+The next minimal branch is now forced:
+\begin{enumerate}[leftmargin=2em]
+\item enumerate every frontier terminal from TPC-136;
+\item attach \(Q_D,Q_Z,G\) and fixed-\(h_0\) maps, or prove the
+  complete frontier sum \(o(X)\);
+\item rebuild H6--H9 and the occurrence registry without inheriting
+  old slack;
+\item certify \(\Lambda_{\rm phys}<1/400\) independently of H3; and
+\item only then test whether all remaining unresolved nodes are
+  actual positive-\(\Ltwo\) targets.
+\end{enumerate}
+
+If the frontier totalizes and the physical endpoint passes, but H2--H5
+remain the only open compatible arithmetic targets, a new frozen
+snapshot may legitimately return \(\AF\).  If an actual kernel or
+endpoint dual stops the frontier-augmented route, the correct output
+is \(\STOPR\) or \(\REROUTE\), not a claim about twin primes.
+
+\section{Deterministic regression and claim boundary}
+
+The standard-library script
+\texttt{experiments/tpc142\_mvp4\_route\_audit.py} reads the frozen
+TPC-141 manifest and checks:
+\begin{enumerate}[leftmargin=2em]
+\item manifest hash, source-lock summary, DAG and first-missing
+  consistency;
+\item direct and indirect independence of H9 from H2--H5;
+\item reachability of all seven valid-snapshot verdicts;
+\item rejection of a malformed snapshot before verdict selection;
+\item rejection of conditional, frozen and refuted pseudo-frontiers;
+\item refusal to infer architecture infeasibility from an incomplete
+  route cover;
+\item refusal to turn an upper-bound failure into a stop; and
+\item absence of a proved positive-\(\Ltwo\) record.
+\end{enumerate}
+Default mode writes a frozen snapshot and audit JSON.
+\texttt{--check} performs no writes and compares both artifacts byte
+for byte.
+
+\paragraph{Established.}
+Snapshot validation, ordered verdict selection, the first-missing
+projection, H9 independence and endpoint direction rules are
+\(\Lzero/\Lone\) audit results.
+
+\paragraph{Not established.}
+No complete frontier theorem, H1--H9 conjunction, strict physical
+endpoint, positive fixed-\(h_0\) \(\Ltwo\) saving,
+\(B_{h_0,\delta}=o(X)\), Hardy--Littlewood asymptotic, prime-pair
+lower bound, or twin-prime theorem is proved.
+
+\section{Conclusion}
+
+MVP4 records real progress without changing the arithmetic claim
+boundary.  The native archive has become executable through a
+complete declared cut, not a totalized full carrier, and a false
+eligible-only compiler has been stopped.
+Known Chowla information has been placed in its exact frozen,
+shift-one, or restricted small-polylog almost-scale scope.  The
+remaining structural failure is now one named frontier-totalization
+node, not a vague missing dictionary.
+
+Because that node and the physical registry are incomplete, the
+route is not yet at the arithmetic frontier.  The correct verdict is
+\(\NT\).  This verdict is useful precisely because its source,
+scope, first missing artifact, scoped negative results and permitted
+next route are all frozen and machine-auditable.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

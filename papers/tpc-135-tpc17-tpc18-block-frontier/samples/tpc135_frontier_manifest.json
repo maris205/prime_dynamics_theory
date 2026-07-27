@@ -1,0 +1,227 @@
+{
+  "blocks": [
+    {
+      "D0": 0,
+      "j_K": 7,
+      "j_L": 1,
+      "path_count": 64,
+      "reason": "L_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 8,
+      "j_L": 1,
+      "path_count": 64,
+      "reason": "L_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 6,
+      "j_L": 2,
+      "path_count": 96,
+      "reason": "L_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 7,
+      "j_L": 2,
+      "path_count": 212,
+      "reason": "L_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 8,
+      "j_L": 2,
+      "path_count": 112,
+      "reason": "L_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 5,
+      "j_L": 3,
+      "path_count": 102,
+      "reason": "L_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 6,
+      "j_L": 3,
+      "path_count": 238,
+      "reason": "L_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 7,
+      "j_L": 3,
+      "path_count": 132,
+      "reason": "L_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 4,
+      "j_L": 4,
+      "path_count": 102,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 5,
+      "j_L": 4,
+      "path_count": 238,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 6,
+      "j_L": 4,
+      "path_count": 140,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 7,
+      "j_L": 4,
+      "path_count": 10,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 3,
+      "j_L": 5,
+      "path_count": 101,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 4,
+      "j_L": 5,
+      "path_count": 239,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 5,
+      "j_L": 5,
+      "path_count": 140,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 6,
+      "j_L": 5,
+      "path_count": 12,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 2,
+      "j_L": 6,
+      "path_count": 85,
+      "reason": "K_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 3,
+      "j_L": 6,
+      "path_count": 230,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 4,
+      "j_L": 6,
+      "path_count": 139,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 5,
+      "j_L": 6,
+      "path_count": 12,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 1,
+      "j_L": 7,
+      "path_count": 43,
+      "reason": "K_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 2,
+      "j_L": 7,
+      "path_count": 195,
+      "reason": "K_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 3,
+      "j_L": 7,
+      "path_count": 125,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 4,
+      "j_L": 7,
+      "path_count": 7,
+      "reason": "NO_TAIL_ROOM"
+    },
+    {
+      "D0": 0,
+      "j_K": 1,
+      "j_L": 8,
+      "path_count": 43,
+      "reason": "K_TOO_LOW"
+    },
+    {
+      "D0": 0,
+      "j_K": 2,
+      "j_L": 8,
+      "path_count": 107,
+      "reason": "K_TOO_LOW"
+    }
+  ],
+  "frontier_scalar_bound_present": false,
+  "schema": "tpc135-domain-cover-manifest-v1",
+  "scope": {
+    "R": 4,
+    "V": 2,
+    "X": 512,
+    "eta": "1/12",
+    "h0": 2,
+    "physical_normalization": "nu_X",
+    "route": "published-Maynard-core plus TPC-18 tail geometry"
+  },
+  "witness": {
+    "all_child_reasons": [
+      "L_TOO_LOW"
+    ],
+    "child_blocks": [
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ]
+    ],
+    "column_kind": "FORMAL_SUPPORT_ENVELOPE_COLUMN",
+    "eligible_symbolic_column_sum": "0",
+    "full_symbolic_column_sum": "1",
+    "interpretation": "formal coefficientwise coverage witness only; the arithmetic coefficient may vanish and no scalar lower bound is asserted",
+    "native_coefficient_nonzero_status": "UNDECIDED",
+    "native_id": "X=512|h0=2|ell=3|k=171|d=1",
+    "path_count": 4
+  }
+}

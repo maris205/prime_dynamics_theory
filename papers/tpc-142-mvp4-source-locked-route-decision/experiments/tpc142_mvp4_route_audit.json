@@ -1,0 +1,59 @@
+{
+  "checks": {
+    "H9_transitively_arithmetic_independent": true,
+    "claim_boundary_negative": true,
+    "current_endpoint_not_passed": true,
+    "current_verdict_not_testable": true,
+    "cut_complete_not_full_carrier": true,
+    "first_missing_frontier_totalization": true,
+    "gate_projection_exact": true,
+    "global_density_not_promoted_to_terminal_window": true,
+    "proof_DAG_and_order_valid": true,
+    "restricted_positive_arithmetic_shadow_scoped": true,
+    "seven_verdict_order_fixed": true,
+    "snapshot_schema_fields": true,
+    "source_hash_integrity_semantics": true,
+    "source_manifest_hash_locked": true
+  },
+  "claim_boundary": {
+    "ARCHITECTURE_INFEASIBLE": false,
+    "ARITHMETIC_FRONTIER": false,
+    "GO": false,
+    "cut_complete_is_full_carrier": false,
+    "endpoint_pass": false,
+    "hard_packet_oX": false,
+    "positive_L2": false,
+    "prime_pair_theorem": false,
+    "source_hashes_prove_theorems": false,
+    "strict_endpoint": false,
+    "twin_prime_theorem": false
+  },
+  "current_verdict": "NOT_TESTABLE",
+  "first_missing": {
+    "gate": "H1",
+    "node_id": "H1.frontier_totalization",
+    "program_level": "L1",
+    "required_artifact": "total Q_D, Q_Z, G and fixed-h0 maps for every frontier leaf, or one complete original-scale o(X) frontier theorem",
+    "status": "NOT_TESTABLE"
+  },
+  "scenario_checks": {
+    "conditional_frontier_rejected": true,
+    "frozen_frontier_rejected": true,
+    "incomplete_route_cover_rejected": true,
+    "invalid_snapshot_rejected": true,
+    "refuted_frontier_rejected": true,
+    "upper_failure_is_not_stop": true
+  },
+  "scenario_verdicts": {
+    "ARCHITECTURE_INFEASIBLE": "ARCHITECTURE_INFEASIBLE",
+    "ARITHMETIC_FRONTIER": "ARITHMETIC_FRONTIER",
+    "GO": "GO",
+    "NOT_TESTABLE": "NOT_TESTABLE",
+    "OPEN": "OPEN",
+    "REROUTE": "REROUTE",
+    "STOP_ROUTE": "STOP_ROUTE"
+  },
+  "schema": "tpc-142-mvp4-route-audit-v1",
+  "snapshot_sha256": "d3c89c0f70661248d43cc8e2526587031ff707f2460b0401904b09d451fb0dff",
+  "status": "PASS"
+}

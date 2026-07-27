@@ -1,0 +1,135 @@
+{
+  "checks": {
+    "aggregated_scalar_false_positive_regression_passes": true,
+    "all_downstream_totality_failures_reported": true,
+    "all_four_map_sources_remain_not_testable": true,
+    "all_mutations_rejected": true,
+    "downstream_map_manifest_consistent": true,
+    "exactly_one_cut_record_per_upstream_path": true,
+    "fixed_h0_selector_source_remains_not_testable": true,
+    "frontier_paths_are_retained_not_deleted": true,
+    "matrix_and_path_totality_agree": true,
+    "native_h0_and_normalization_preserved": true,
+    "soft_paths_have_typed_theorem_sources": true
+  },
+  "claim_boundary": {
+    "complete_H1_actual_carrier": false,
+    "cut_archive_L0_L1": true,
+    "frontier_scalar_bound": false,
+    "new_positive_fixed_h0_L2": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "cut_archive": {
+    "column_conservation": "INHERITED_EXACTLY_FROM_TPC134",
+    "cut_path_count": 2988,
+    "jsonl_sha256": "a4be1c1b41221b585e3abbf67294b0f784d556cd0209e6ce87ccb905af285f18",
+    "scalar_identity": "B = eligible_prefix_soft + eligible_tail_open + frontier_unmapped",
+    "terminal_type_counts": {
+      "FRONTIER_UNMAPPED": 2988
+    },
+    "upstream_path_count": 2988
+  },
+  "downstream_totality": {
+    "determinant_fiber_QD": {
+      "aggregated_scalar_totality": "NOT_EVALUATED_AND_NOT_A_PROVENANCE_CERTIFICATE",
+      "first_missing_cut_path_ids": [
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=6|jK=2|D0=0|type=TAIL",
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=6|jK=3|D0=0|type=TAIL",
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=7|jK=2|D0=0|type=TAIL"
+      ],
+      "matrix_operator_total": false,
+      "missing_nonsoft_path_count": 2988,
+      "path_total": false,
+      "required_domain": "ALL_NONSOFT_CUT_PATHS",
+      "required_h0": 2,
+      "source_status": "NOT_TESTABLE",
+      "status": "NOT_TESTABLE",
+      "totality_definition": "ROW_SEPARATED_MATRIX_EQUIVALENT_TO_PATH_TOTALITY"
+    },
+    "fixed_h0_downstream_selector": {
+      "aggregated_scalar_totality": "NOT_EVALUATED_AND_NOT_A_PROVENANCE_CERTIFICATE",
+      "first_missing_cut_path_ids": [
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=6|jK=2|D0=0|type=TAIL",
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=6|jK=3|D0=0|type=TAIL",
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=7|jK=2|D0=0|type=TAIL"
+      ],
+      "matrix_operator_total": false,
+      "missing_nonsoft_path_count": 2988,
+      "path_total": false,
+      "required_domain": "ALL_NONSOFT_CUT_PATHS",
+      "required_h0": 2,
+      "source_status": "NOT_TESTABLE",
+      "status": "NOT_TESTABLE",
+      "totality_definition": "ROW_SEPARATED_MATRIX_EQUIVALENT_TO_PATH_TOTALITY"
+    },
+    "physical_grouping_G": {
+      "aggregated_scalar_totality": "NOT_EVALUATED_AND_NOT_A_PROVENANCE_CERTIFICATE",
+      "first_missing_cut_path_ids": [
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=6|jK=2|D0=0|type=TAIL",
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=6|jK=3|D0=0|type=TAIL",
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=7|jK=2|D0=0|type=TAIL"
+      ],
+      "matrix_operator_total": false,
+      "missing_nonsoft_path_count": 2988,
+      "path_total": false,
+      "required_domain": "ALL_NONSOFT_CUT_PATHS",
+      "required_h0": 2,
+      "source_status": "NOT_TESTABLE",
+      "status": "NOT_TESTABLE",
+      "totality_definition": "ROW_SEPARATED_MATRIX_EQUIVALENT_TO_PATH_TOTALITY"
+    },
+    "zero_mode_order_QZ": {
+      "aggregated_scalar_totality": "NOT_EVALUATED_AND_NOT_A_PROVENANCE_CERTIFICATE",
+      "first_missing_cut_path_ids": [
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=6|jK=2|D0=0|type=TAIL",
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=6|jK=3|D0=0|type=TAIL",
+        "cut|X=512|h0=2|ell=100|k=6|d=1|jL=7|jK=2|D0=0|type=TAIL"
+      ],
+      "matrix_operator_total": false,
+      "missing_nonsoft_path_count": 2988,
+      "path_total": false,
+      "required_domain": "ALL_NONSOFT_CUT_PATHS",
+      "required_h0": 2,
+      "source_status": "NOT_TESTABLE",
+      "status": "NOT_TESTABLE",
+      "totality_definition": "ROW_SEPARATED_MATRIX_EQUIVALENT_TO_PATH_TOTALITY"
+    }
+  },
+  "mutation_regression": {
+    "aggregated_scalar_totality_promotion_rejected": true,
+    "deleted_cut_path_rejected": true,
+    "duplicate_cut_path_rejected": true,
+    "false_total_map_rejected": true,
+    "terminal_type_mutation_rejected": true,
+    "unsupported_fixed_h0_source_rejected": true,
+    "unsupported_soft_label_rejected": true,
+    "wrong_fixed_h0_contract_rejected": true,
+    "wrong_h0_rejected": true
+  },
+  "route_verdict": {
+    "H1_actual_carrier": "NOT_TESTABLE",
+    "H1_dyadic_prefix_archive": "PROVED_L1",
+    "H1_native_cut": "PROVED_L1",
+    "H1_native_entrance": "PROVED_L1",
+    "eligible_only_cover": "STOP_DECLARED_COMPILER",
+    "first_missing": "frontier totalization or a theorem-backed complete frontier soft estimate, followed by total QD/QZ/G/h0 maps"
+  },
+  "schema": "tpc136-cut-archive-certificate-v1",
+  "scope": "complete native archive to the first unsupported cut; not a complete downstream actual-carrier archive",
+  "status": "PASS",
+  "totality_semantics_regression": {
+    "aggregated_scalar_can_cancel": true,
+    "aggregated_zero_not_promoted_to_path_total": true,
+    "row_separated_matrix_is_nonzero": true
+  },
+  "upstream": {
+    "tpc134_paths_sha256": "e02afdbbc8f6f8d8f7783611719da0f7b64cfc6f54b3f60dadce65d55d0c01eb",
+    "tpc135_certificate_sha256": "fde7262011ea41bebd67e49f1c0f77807c8e732007d3e9d04308d9a1007f3540",
+    "tpc135_frontier_manifest_sha256": "33e93bbc3a279247c489854ce567043b81b372ae265940cff323f2c5d4df0503",
+    "tpc135_status": "PASS"
+  },
+  "validation_errors": {
+    "cut_paths": [],
+    "maps": []
+  }
+}

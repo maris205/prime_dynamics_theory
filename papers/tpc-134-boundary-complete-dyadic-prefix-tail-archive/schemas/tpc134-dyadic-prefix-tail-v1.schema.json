@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc134-dyadic-prefix-tail-v1.schema.json",
+  "title": "TPC-134 dyadic prefix-tail path record",
+  "type": "object",
+  "required": [
+    "schema",
+    "path_id",
+    "native_id",
+    "block",
+    "D0",
+    "terminal_type",
+    "edge_multiplier_ast",
+    "metadata",
+    "integrity_sha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc134-dyadic-prefix-tail-path-v1"
+    },
+    "path_id": {
+      "type": "string"
+    },
+    "native_id": {
+      "type": "string"
+    },
+    "block": {
+      "type": "object",
+      "required": [
+        "j_L",
+        "j_K"
+      ]
+    },
+    "D0": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "terminal_type": {
+      "enum": [
+        "PREFIX",
+        "TAIL"
+      ]
+    },
+    "edge_multiplier_ast": {
+      "type": "object"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "integrity_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": false
+}

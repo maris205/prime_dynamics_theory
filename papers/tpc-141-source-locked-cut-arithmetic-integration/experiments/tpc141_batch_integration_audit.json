@@ -1,0 +1,67 @@
+{
+  "checks": {
+    "H9_transitively_independent_of_arithmetic": true,
+    "acyclic_exact_node_DAG": true,
+    "cut_complete_not_full_carrier": true,
+    "eight_source_bundles_hashed": true,
+    "first_missing_frontier_totalization": true,
+    "frontier_remains_explicit": true,
+    "global_density_not_promoted_to_terminal_window": true,
+    "no_positive_L2": true,
+    "occurrence_registry_nonduplicated": true,
+    "restricted_small_polylog_affine_shadow_scoped": true,
+    "schema_fields": true,
+    "source_hashes_integrity_only": true,
+    "source_scope_carrier_normalization_locks": true,
+    "strict_one_over_400_contract": true,
+    "tail_namespaces_exactly_covered": true,
+    "terminal_roles_exactly_covered": true,
+    "unknown_costs_not_zero": true
+  },
+  "claim_boundary": {
+    "arithmetic_frontier": false,
+    "certificate_PASS_is_route_GO": false,
+    "cut_complete_is_full_carrier": false,
+    "endpoint_pass": false,
+    "hard_packet_oX": false,
+    "positive_L2": false,
+    "prime_pair_theorem": false,
+    "source_hashes_prove_theorems": false,
+    "strict_endpoint": false,
+    "twin_prime_theorem": false
+  },
+  "endpoint_state": "INCOMPLETE",
+  "first_missing": {
+    "gate": "H1",
+    "node_id": "H1.frontier_totalization",
+    "program_level": "L1",
+    "required_artifact": "total Q_D, Q_Z, G and fixed-h0 maps for every frontier leaf, or one complete original-scale o(X) frontier theorem",
+    "status": "NOT_TESTABLE"
+  },
+  "integration_state": "ASSEMBLED_WITH_GAPS",
+  "manifest_sha256": "fa967256e04d000ea7bb2a1bf16031b7eda5a4f999058fed81a1fe79fe742279",
+  "mutation_regressions": {
+    "H9_indirect_arithmetic_dependency_rejected": true,
+    "determinant_reserve_not_physical": true,
+    "duplicate_occurrence_rejected": true,
+    "duplicate_terminal_rejected": true,
+    "endpoint_equality_lower_stop": true,
+    "endpoint_strict_case": true,
+    "endpoint_unknown_not_zero": true,
+    "endpoint_upper_failure_not_stop": true,
+    "fixed_log_pseudo_L2_rejected": true,
+    "frontier_soft_promotion_rejected": true,
+    "normalization_mismatch_rejected": true,
+    "overlapping_joints_rejected": true,
+    "self_joint_rejected": true,
+    "tail_namespace_merge_rejected": true
+  },
+  "route_status": {
+    "eligible_only_compiler": "STOPPED_SCOPED",
+    "frontier_augmented_signed_route": "NOT_TESTABLE",
+    "selected_route": "signed_native_frontier_augmented",
+    "shift1_reparameterization": "STOPPED_SCOPED"
+  },
+  "schema": "tpc-141-batch-integration-audit-v1",
+  "status": "PASS"
+}

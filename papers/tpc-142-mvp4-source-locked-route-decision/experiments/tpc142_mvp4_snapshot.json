@@ -1,0 +1,317 @@
+{
+  "claim_boundary": {
+    "ARCHITECTURE_INFEASIBLE": false,
+    "ARITHMETIC_FRONTIER": false,
+    "GO": false,
+    "cut_complete_is_full_carrier": false,
+    "endpoint_pass": false,
+    "hard_packet_oX": false,
+    "positive_L2": false,
+    "prime_pair_theorem": false,
+    "source_hashes_prove_theorems": false,
+    "strict_endpoint": false,
+    "twin_prime_theorem": false
+  },
+  "current_verdict": "NOT_TESTABLE",
+  "endpoint": {
+    "comparison": "STRICT_LT",
+    "contract": "MVP1-physical-amplitude-v1",
+    "determinant_reserve_reusable": false,
+    "lambda_phys_lower": null,
+    "lambda_phys_upper": null,
+    "scale": "AMPLITUDE",
+    "sigma_actual_certified": null,
+    "sigma_shadow_power": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "sigma_target": {
+      "denominator": 400,
+      "numerator": 1
+    },
+    "state": "INCOMPLETE",
+    "strict_slack": null,
+    "unknown_cost_policy": "UNKNOWN_IS_NOT_ZERO",
+    "upper_at_or_above_is_stop_without_lower": false
+  },
+  "first_missing": {
+    "gate": "H1",
+    "node_id": "H1.frontier_totalization",
+    "program_level": "L1",
+    "required_artifact": "total Q_D, Q_Z, G and fixed-h0 maps for every frontier leaf, or one complete original-scale o(X) frontier theorem",
+    "status": "NOT_TESTABLE"
+  },
+  "gate_projection": {
+    "H1": {
+      "evidence": "L1_TARGET",
+      "scope_match": true,
+      "source_node": "H1.actual_carrier",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H2": {
+      "evidence": "L2_TARGET_POSITIVE",
+      "scope_match": true,
+      "source_node": "H2.signed_resonance",
+      "status": "OPEN",
+      "structural": false
+    },
+    "H3": {
+      "evidence": "L2_TARGET_POSITIVE",
+      "scope_match": true,
+      "source_node": "H3.actual_packet_saving",
+      "status": "OPEN",
+      "structural": false
+    },
+    "H4": {
+      "evidence": "L2_TARGET_POSITIVE",
+      "scope_match": true,
+      "source_node": "H4.complete_tail",
+      "status": "OPEN",
+      "structural": false
+    },
+    "H5": {
+      "evidence": "L2_TARGET_POSITIVE",
+      "scope_match": true,
+      "source_node": "H5.det_zero",
+      "status": "NOT_TESTABLE",
+      "structural": false
+    },
+    "H6": {
+      "evidence": "L1_TARGET",
+      "scope_match": true,
+      "source_node": "H6.physical_cover",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H7": {
+      "evidence": "L1_TARGET",
+      "scope_match": true,
+      "source_node": "H7.fixed_h0_totality",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H8": {
+      "evidence": "L1_TARGET",
+      "scope_match": true,
+      "source_node": "H8.final_reconnection",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H9": {
+      "evidence": "L1_TARGET",
+      "scope_match": true,
+      "source_node": "H9.physical_registry",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    }
+  },
+  "imported_manifest_summary": {
+    "exceptional_window_state": "GLOBAL_DENSITY_PROVED_LOCAL_ACTUAL_WINDOW_OPEN",
+    "frontier_explicit": true,
+    "full_carrier_totalized": false,
+    "integration_state": "ASSEMBLED_WITH_GAPS",
+    "restricted_positive_arithmetic_shadow": "SMALL_POLYLOG_AFFINE_ALMOST_SCALE",
+    "source_bundle_hashes": {
+      "TPC-133": "e72c1dd0e3d47b137af4d916ab5b37749e151064bdaea835423ac5b1e0059297",
+      "TPC-134": "4a345e7c2eb67136fd1cbc8502d97098a2b118429a37577c660afccb55cee156",
+      "TPC-135": "77a5fbb5474bddbf50d305a084d9728f48c3f0e9b9fde4f952468790bd553264",
+      "TPC-136": "fbe2a3d46a32e142d6658d6c80c9e60c039befa829d6b145d2385d53697c24fe",
+      "TPC-137": "da827a9fe5b9374eae3086eda6f775bfc60898fa64d1be80ab0f48381ba23773",
+      "TPC-138": "139527cb5624b7f99f755e48a858a9772aa5e777f17f28fc3f55680e1a610a1a",
+      "TPC-139": "d52d11d2243067256af61d4a759f3f1b3416d1afcb0a45a10ce5578fbe4687c1",
+      "TPC-140": "b7b1d0a97470bc70b04c7237f3786a8d52a2c0ef03ad855047c6a0b72d59f090"
+    },
+    "source_hash_semantics": "INTEGRITY_ONLY",
+    "source_range": "TPC-133--140",
+    "source_schema": "tpc-141-source-locked-batch-manifest-v1",
+    "source_validation": {
+      "H9_transitively_arithmetic_independent": true,
+      "cut_complete_not_full_carrier": true,
+      "frontier_explicit": true,
+      "global_density_not_promoted_to_terminal_window": true,
+      "no_positive_L2_source": true,
+      "one_over_400_contract": true,
+      "restricted_positive_arithmetic_shadow_scoped": true,
+      "source_DAG_and_order": true,
+      "source_bundles_hashed": true,
+      "source_first_missing": true,
+      "source_hashes_integrity_only": true,
+      "source_schema": true
+    }
+  },
+  "ordered_verdicts": [
+    "GO",
+    "ARCHITECTURE_INFEASIBLE",
+    "REROUTE",
+    "STOP_ROUTE",
+    "NOT_TESTABLE",
+    "ARITHMETIC_FRONTIER",
+    "OPEN"
+  ],
+  "progress_tags": [
+    "STRUCTURAL_L1_NATIVE_CUT",
+    "CUT_COMPLETE_ONLY_NOT_FULL_CARRIER",
+    "SCOPED_NEGATIVE_ELIGIBLE_ONLY",
+    "SCOPED_NEGATIVE_SHIFT1_REPARAMETERIZATION",
+    "FIXED_LOG_ARITHMETIC_SHADOW",
+    "RESTRICTED_SMALL_POLYLOG_ALMOST_SCALE_SHADOW",
+    "GLOBAL_TO_TERMINAL_WINDOW_DENSITY_FIREWALL",
+    "LOCAL_ACTUAL_EXCEPTIONAL_WINDOW_OPEN",
+    "CONDITIONAL_RAW_POWER_LEDGER"
+  ],
+  "proof_dag": {
+    "H9_arithmetic_independent": true,
+    "parents": {
+      "A137.fixed_log_shadow": [],
+      "A139.polylog_almost_scale_shadow": [],
+      "G138.quant_affine": [],
+      "G139.growing_uniformity": [
+        "A137.fixed_log_shadow",
+        "A139.polylog_almost_scale_shadow",
+        "N138.shift1_nontransfer"
+      ],
+      "G140.local_exceptional_window": [
+        "A139.polylog_almost_scale_shadow",
+        "N140.window_density_firewall"
+      ],
+      "G140.selector": [
+        "G139.growing_uniformity",
+        "G140.local_exceptional_window"
+      ],
+      "H1.actual_carrier": [
+        "S136.cut_reconnection",
+        "H1.frontier_totalization"
+      ],
+      "H1.frontier_totalization": [
+        "S136.cut_reconnection"
+      ],
+      "H140.raw_sigma_formula": [
+        "G139.growing_uniformity",
+        "G140.selector"
+      ],
+      "H2.signed_resonance": [
+        "H1.actual_carrier"
+      ],
+      "H3.actual_packet_saving": [
+        "H140.raw_sigma_formula"
+      ],
+      "H4.complete_tail": [
+        "H1.actual_carrier"
+      ],
+      "H5.det_zero": [
+        "H1.actual_carrier"
+      ],
+      "H6.physical_cover": [
+        "H1.actual_carrier"
+      ],
+      "H7.fixed_h0_totality": [
+        "H1.actual_carrier"
+      ],
+      "H8.final_reconnection": [
+        "H1.actual_carrier",
+        "H6.physical_cover",
+        "H7.fixed_h0_totality"
+      ],
+      "H9.physical_registry": [
+        "H1.actual_carrier",
+        "H6.physical_cover",
+        "H7.fixed_h0_totality",
+        "H8.final_reconnection"
+      ],
+      "N138.shift1_nontransfer": [],
+      "N140.window_density_firewall": [],
+      "ROOT.endpoint_synthesis": [
+        "H1.actual_carrier",
+        "H2.signed_resonance",
+        "H3.actual_packet_saving",
+        "H4.complete_tail",
+        "H5.det_zero",
+        "H6.physical_cover",
+        "H7.fixed_h0_totality",
+        "H8.final_reconnection",
+        "H9.physical_registry",
+        "S136.soft_prefix"
+      ],
+      "S133.native_entrance": [],
+      "S134.dyadic_cut": [
+        "S133.native_entrance"
+      ],
+      "S135.domain_partition": [
+        "S134.dyadic_cut"
+      ],
+      "S136.cut_reconnection": [
+        "S135.domain_partition"
+      ],
+      "S136.soft_prefix": [
+        "S136.cut_reconnection"
+      ]
+    },
+    "root": "ROOT.endpoint_synthesis",
+    "topological_order": [
+      "A137.fixed_log_shadow",
+      "A139.polylog_almost_scale_shadow",
+      "G138.quant_affine",
+      "N138.shift1_nontransfer",
+      "G139.growing_uniformity",
+      "N140.window_density_firewall",
+      "G140.local_exceptional_window",
+      "G140.selector",
+      "H140.raw_sigma_formula",
+      "H3.actual_packet_saving",
+      "S133.native_entrance",
+      "S134.dyadic_cut",
+      "S135.domain_partition",
+      "S136.cut_reconnection",
+      "H1.frontier_totalization",
+      "H1.actual_carrier",
+      "H2.signed_resonance",
+      "H4.complete_tail",
+      "H5.det_zero",
+      "H6.physical_cover",
+      "H7.fixed_h0_totality",
+      "H8.final_reconnection",
+      "H9.physical_registry",
+      "S136.soft_prefix",
+      "ROOT.endpoint_synthesis"
+    ]
+  },
+  "route_universe": {
+    "routes": [
+      "eligible_only_tpc17_18_compiler",
+      "quantitative_shift1_reparameterization",
+      "signed_native_frontier_augmented"
+    ],
+    "selected_route": "signed_native_frontier_augmented",
+    "stops": {
+      "eligible_only_tpc17_18_compiler": {
+        "carrier_id": "tpc15-native-cut-v1",
+        "scope_id": "scope.physical_cut",
+        "source_export": "N135.eligible_only_cover",
+        "stopped": true
+      },
+      "quantitative_shift1_reparameterization": {
+        "carrier_id": "tpc126-130-eligible-tail-v1",
+        "scope_id": "scope.actual_h3",
+        "source_export": "N138.shift1_reparam_block",
+        "stopped": true
+      },
+      "signed_native_frontier_augmented": {
+        "carrier_id": "tpc15-native-cut-v1",
+        "scope_id": "scope.physical_cut",
+        "source_export": null,
+        "stopped": false
+      }
+    },
+    "typed_alternative": null
+  },
+  "schema": "tpc-142-mvp4-source-locked-snapshot-v1",
+  "snapshot": {
+    "date": "2026-07-27",
+    "selected_route": "signed_native_frontier_augmented",
+    "snapshot_schema_sha256": "7947197e214c67362903914b838048add6cc8b59630a6e8ed1b7c311cdc17816",
+    "source_manifest": "tpc-141-source-locked-cut-arithmetic-integration/experiments/tpc141_batch_manifest.json",
+    "source_manifest_sha256": "fa967256e04d000ea7bb2a1bf16031b7eda5a4f999058fed81a1fe79fe742279",
+    "source_schema_sha256": "5b05bdc066f76b5a12bda6b5d22864f4cd9b78c27b979cba3bf015adb2eae3df"
+  }
+}

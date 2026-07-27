@@ -1,0 +1,405 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\textbf{Prime-Square Closure of the Frozen
+Determinant-Two Logarithmic Shadow}\\
+\large Full M\"obius Signs, Fixed Periodic Masks, and the
+Growing-Data Firewall}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let
+\[
+ D(z)=d+sz,\qquad V(z)=u+az,\qquad su-ad=2
+\]
+be fixed primitive positive affine forms, and let \(\rho\) be a
+fixed bounded periodic sequence.  We prove the unconditional
+fixed-data theorem
+\[
+ \sum_{x/\omega(x)<z\le x}
+ \frac{\mu(D(z))\mu(V(z))\rho(z)}{z}
+ =o(\log\omega(x))
+\]
+for every \(1\le\omega(x)\le x\) with \(\omega(x)\to\infty\).
+The analytic input is Tao's proved logarithmically averaged
+two-point theorem for fixed affine forms.  To close the two
+squarefree masks without changing its quantifiers, we use the
+Boolean prime-square cutoff
+\[
+ \mathsf S_P(m)=\prod_{p\le P}(1-\one_{p^2\mid m}).
+\]
+For fixed \(P\) it has a finite signed CRT expansion, whereas its
+full-squarefree error has logarithmic relative mass
+\(O(P^{-1})+o(1)\).  The order of limits is essential: \(P\) is
+fixed before \(x\to\infty\), and only then tends to infinity.
+The result is a genuine fixed-shift arithmetic shadow, but it is
+logarithmically weighted and frozen.  It proves no uniformity in
+growing coefficients, physical weights or phases, no ordinary
+all-prefix power saving, and no positive \(\Ltwo\) input.
+\end{abstract}
+
+\section{Fixed determinant-two data}
+
+Fix integers \(a,s\ge1\) and \(d,u\in\mathbb Z\) satisfying
+\begin{equation}
+ (d,s)=(u,a)=(a,s)=1,\qquad su-ad=2.
+\label{eq:primitive}
+\end{equation}
+After a fixed translation of \(z\), if necessary, assume
+\[
+ D(z)=d+sz>0,\qquad V(z)=u+az>0
+\]
+throughout the asymptotic range.  The determinant condition makes
+the coefficient pairs \((s,d)\) and \((a,u)\) nonparallel.
+TPC-127 identifies these forms with the literal fixed-two
+Liouville carrier, while TPC-128 opens their squarefree indicators
+by a magnitude cutoff \citep{WangTPC127,WangTPC128}.
+
+Let \(\rho:\mathbb Z\to\mathbb C\) be fixed, periodic of period
+\(M\), and satisfy \(|\rho|\le1\).  The words ``fixed'' and
+``periodic'' are theorem quantifiers: neither \(M\) nor the values
+of \(\rho\) may grow with \(x\) in the theorem below.
+
+\section{A Boolean prime-square cutoff}
+
+Let
+\[
+ P^\#=\prod_{p\le P}p
+\]
+and define
+\begin{equation}
+ \mathsf S_P(m)
+ =
+ \prod_{p\le P}(1-\one_{p^2\mid m}).
+\label{eq:SP-product}
+\end{equation}
+
+\begin{lemma}[Exact finite expansion]
+\label{lem:expansion}
+For every positive integer \(m\),
+\begin{equation}
+ \mathsf S_P(m)
+ =
+ \sum_{k\mid P^\#}\mu(k)\one_{k^2\mid m}
+ \in\{0,1\}.
+\label{eq:SP-expansion}
+\end{equation}
+Consequently
+\begin{align}
+ \mathsf S_P(D(z))\mathsf S_P(V(z))
+ =
+ \sum_{k,\ell\mid P^\#}
+ \mu(k)\mu(\ell)
+ \one_{k^2\mid D(z)}
+ \one_{\ell^2\mid V(z)}.
+\label{eq:two-expansion}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Expand the finite Euler product in \eqref{eq:SP-product}.  Its value
+is one exactly when no prime \(p\le P\) has \(p^2\mid m\), and is
+zero otherwise.  Multiplying the two one-variable expansions gives
+\eqref{eq:two-expansion}.
+\end{proof}
+
+For a compatible pair \((k,\ell)\), the two square divisibilities
+select one residue modulo \(\operatorname{lcm}(k,\ell)^2\).  In the
+determinant-two primitive setting, compatibility in fact forces the
+conditions recorded in TPC-128, including \((k,\ell)=1\), but the
+following upper bound does not require equality of moduli.
+
+\begin{proposition}[Correct combined modulus]
+\label{prop:modulus}
+After also resolving the period \(M\), every nonempty component of
+\eqref{eq:two-expansion} is a union of residue classes modulo
+\[
+ L_{M,k,\ell}
+ =
+ \operatorname{lcm}(M,k^2,\ell^2),
+\]
+and
+\begin{equation}
+ L_{M,k,\ell}
+ \le
+ M\operatorname{lcm}(k,\ell)^2
+ \le M(P^\#)^2.
+\label{eq:modulus}
+\end{equation}
+There are at most \(4^{\pi(P)}\) ordered component pairs.
+\end{proposition}
+
+\begin{proof}
+Intersect the three periodic conditions.  Since
+\(\operatorname{lcm}(k^2,\ell^2)=\operatorname{lcm}(k,\ell)^2\),
+the first inequality follows from
+\(\operatorname{lcm}(M,L)\le ML\).  Both \(k\) and \(\ell\) divide
+\(P^\#\), proving the second inequality.  There are
+\(2^{\pi(P)}\) divisors of \(P^\#\), independently in each
+coordinate.
+\end{proof}
+
+\begin{remark}[Why no fourth power appears]
+The two divisors \(k,\ell\) are drawn from the same prime set.  The
+universal bound is \(M(P^\#)^2\), not \(M(P^\#)^4\).  Writing a
+product \(k^2\ell^2\) is harmless only after compatibility has
+forced \((k,\ell)=1\); even then \(k\ell\mid P^\#\).
+\end{remark}
+
+\begin{lemma}[Residue and content preserve nonparallelity]
+\label{lem:reduced-determinant}
+Let \(L\ge1\) and \(0\le r<L\).  On the progression
+\(z=r+Lt\), put
+\[
+ c_D=(sL,d+sr),\qquad c_V=(aL,u+ar).
+\]
+After extracting these positive contents, the two primitive forms
+\[
+ \widetilde D(t)=\frac{sL}{c_D}t+\frac{d+sr}{c_D},
+ \qquad
+ \widetilde V(t)=\frac{aL}{c_V}t+\frac{u+ar}{c_V}
+\]
+have coefficient determinant
+\begin{equation}
+ \det(\widetilde D,\widetilde V)
+ =
+ \frac{L(su-ad)}{c_Dc_V}
+ =
+ \frac{2L}{c_Dc_V}\ne0.
+\label{eq:reduced-determinant}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The two displayed quotients are primitive by the definitions of
+\(c_D,c_V\).  Before content extraction their determinant is
+\[
+ (sL)(u+ar)-(aL)(d+sr)=L(su-ad)=2L.
+\]
+Dividing the two coefficient pairs by their contents proves
+\eqref{eq:reduced-determinant}.  In particular \(c_Dc_V\mid2L\),
+and no CRT residue can make the reduced forms parallel.
+\end{proof}
+
+\section{A tail suited to a two-limit theorem}
+
+\begin{lemma}[One-form large-prime-square tail]
+\label{lem:tail}
+Let \(L(z)=b+cz\) be fixed, primitive and positive on an integer
+interval \(I\) of length \(N\), and suppose \(L(z)\le Y\).  Then
+\begin{equation}
+ \sum_{z\in I}
+ |\mu^2(L(z))-\mathsf S_P(L(z))|
+ \le
+ \sum_{\substack{p>P\\p\le\sqrt Y}}
+ \left(\frac{N}{p^2}+1\right)
+ \ll_L \frac NP+\sqrt Y.
+\label{eq:tail}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If \(\mu^2(m)\ne\mathsf S_P(m)\), then \(p^2\mid m\) for some
+prime \(p>P\).  For \(p\nmid c\), the condition
+\(p^2\mid L(z)\) selects one residue modulo \(p^2\); for
+\(p\mid c\), primitivity makes it insoluble.  Summing
+\(N/p^2+1\) and using
+\(\sum_{n>P}n^{-2}\ll P^{-1}\) proves the claim.
+\end{proof}
+
+Unlike the magnitude-truncated divisor sum, \(\mathsf S_P\) is
+Boolean.  Therefore
+\begin{align}
+ &\left|
+ \mu^2(D)\mu^2(V)
+ -\mathsf S_P(D)\mathsf S_P(V)
+ \right|
+\notag\\
+ &\qquad\le
+ |\mu^2(D)-\mathsf S_P(D)|
+ +|\mu^2(V)-\mathsf S_P(V)|.
+\label{eq:product-tail}
+\end{align}
+No divisor-function maximum is introduced.
+
+\begin{proposition}[Terminal logarithmic tail]
+\label{prop:log-tail}
+For the fixed forms above,
+\begin{equation}
+ \sum_{x/\omega<z\le x}
+ \frac{
+ |\mu^2(D(z))\mu^2(V(z))
+ -\mathsf S_P(D(z))\mathsf S_P(V(z))|}
+ {z}
+ \ll_{D,V}
+ \frac{\log\omega}{P}+1
+\label{eq:log-tail}
+\end{equation}
+uniformly for \(1<\omega\le x\).
+\end{proposition}
+
+\begin{proof}
+Partition the terminal interval into dyadic pieces
+\((T,2T]\), with at most one truncated end piece.  On one such
+piece, \cref{lem:tail,eq:product-tail} and \(z^{-1}\le T^{-1}\)
+give
+\[
+ \sum_{T<z\le2T}\frac{\text{tail}(z)}z
+ \ll_{D,V}P^{-1}+T^{-1/2}.
+\]
+There are \(O(1+\log\omega)\) pieces, while their \(T^{-1/2}\)
+terms form a geometric sum when ordered from the smallest scale.
+The finitely many pieces below a fixed positivity threshold are
+absorbed in the constant.
+\end{proof}
+
+\section{Full-M\"obius logarithmic closure}
+
+We use the following source theorem only with its native fixed-data
+quantifiers.  For fixed positive affine forms
+\[
+ L_i(z)=a_i z+b_i,\qquad
+ a_1b_2-a_2b_1\ne0,
+\]
+Tao proved
+\begin{equation}
+ \sum_{x/\omega(x)<z\le x}
+ \frac{\lambda(L_1(z))\lambda(L_2(z))}{z}
+ =
+ o(\log\omega(x))
+\label{eq:tao}
+\end{equation}
+whenever \(1\le\omega(x)\le x\) and
+\(\omega(x)\to\infty\) \citep{Tao2016LogChowla}.
+
+\begin{theorem}[Fixed determinant-two full-squarefree closure]
+\label{thm:main}
+Under \eqref{eq:primitive}, for every fixed bounded periodic
+\(\rho\) and every admissible \(\omega\),
+\begin{equation}
+\boxed{
+ \sum_{x/\omega(x)<z\le x}
+ \frac{\mu(D(z))\mu(V(z))\rho(z)}{z}
+ =
+ o(\log\omega(x)).}
+\label{eq:main}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix \(P\).  Insert \eqref{eq:two-expansion} and split \(\rho\) into
+its finitely many residue classes.  On each nonempty combined
+residue write \(z=r+Lt\).  The two forms become fixed affine forms
+in \(t\).  Extract their fixed positive contents.
+\Cref{lem:reduced-determinant} gives their exact reduced
+determinant \(2L/(c_Dc_V)\), so Tao's nonparallelity hypothesis
+survives both the residue split and content extraction.  Complete
+multiplicativity extracts fixed Liouville signs.
+
+Discard the finitely many terms with \(t\le0\).  The transformed
+terminal interval is
+\[
+ \frac{x/\omega-r}{L}<t\le\frac{x-r}{L}.
+\]
+If its lower endpoint is at least one, take the ratio of the two
+endpoints; otherwise start at \(t=1\).  In either case this gives
+an admissible transformed terminal ratio \(\omega'(x)\to\infty\)
+with
+\[
+ \log\omega'(x)=\log\omega(x)+O_{r,L}(1).
+\]
+Equation \eqref{eq:tao}, together with
+\[
+ \frac1{r+Lt}=\frac1L\frac1t+O_{r,L}(t^{-2}),
+\]
+then gives \(o(\log\omega)\) for every component.  The number of
+components is fixed because \(P,M,D,V\) are fixed.
+
+Since \(\mu=\mu^2\lambda\), the difference between the full
+M\"obius correlation and this truncated correlation is bounded by
+\cref{prop:log-tail}.  After division by \(\log\omega\),
+\[
+ \limsup_{x\to\infty}
+ \frac{|\text{full sum}|}{\log\omega(x)}
+ \ll_{D,V}\frac1P.
+\]
+Now let \(P\to\infty\).
+\end{proof}
+
+\begin{remark}[Order of limits]
+The theorem does not choose a prescribed \(P=P(x)\).  For each
+accuracy request, one first fixes a sufficiently large \(P\), and
+then takes \(x\) sufficiently large depending on all fixed data.
+This is exactly why \cref{thm:main} is not a growing-family theorem.
+\end{remark}
+
+\section{Claim boundary and next gate}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.47\textwidth}X@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+Prime-square identity and component bound
+& Exact finite theorem (\(\Lzero\)).\\
+Large-prime-square and logarithmic tails
+& Unconditional elementary theorem (\(\Lzero\)).\\
+Full \(\mu(D)\mu(V)\), fixed periodic logarithmic cancellation
+& Unconditional frozen arithmetic shadow (\(\Lone\)).\\
+Prescribed growing \(P\), affine height, period, or CRT modulus
+& Not proved.\\
+Physical weight, arbitrary additive phase, ordinary all-prefix
+power estimate
+& Not proved; actual \(\Ltwo\) gate.\\
+H3, \(1/400\), or a prime-pair theorem
+& Not proved.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+TPC-137 closes a precise gap left by the finite-mask statement of
+TPC-129 \citep{WangTPC129}: the full squarefree masks can be returned
+for fixed data without claiming a quantitative cutoff rate.  The
+next question is whether stronger quantitative results known for
+the consecutive shift-one carrier touch the active odd shift-two
+carrier.  They do not do so by a parity-preserving relabeling.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

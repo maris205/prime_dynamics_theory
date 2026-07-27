@@ -1,0 +1,99 @@
+{
+  "census": {
+    "block_reason_counts": {
+      "K_TOO_LOW": 5,
+      "L_TOO_LOW": 8,
+      "NO_TAIL_ROOM": 13
+    },
+    "eligible_path_count": 0,
+    "frontier_path_count": 2988,
+    "manifest_sha256": "6655a4c40a57f0a45022ab527b32560a5b2ac3e932368709502cfded43a3fb47"
+  },
+  "checks": {
+    "all_mutations_rejected": true,
+    "block_partition_exhaustive_and_disjoint": true,
+    "canonical_maximal_integer_D0_policy": true,
+    "committed_support_envelope_sample_has_frontier_column": true,
+    "eligible_only_column_cover_refuted_on_witness": true,
+    "no_frontier_scalar_largeness_claim": true,
+    "synthetic_boundary_regressions_pass": true,
+    "witness_numeric_coefficient_remains_undecided": true
+  },
+  "claim_boundary": {
+    "new_positive_fixed_h0_L2": false,
+    "prime_pair_or_twin_prime_theorem": false,
+    "scalar_frontier_lower_bound": false,
+    "scoped_coverage_obstruction_L1": true,
+    "set_partition_L0": true,
+    "witness_numeric_coefficient_nonzero": false
+  },
+  "mutation_regression": {
+    "false_eligible_cover_witness_rejected": true,
+    "false_nonzero_coefficient_promotion_rejected": true,
+    "missing_block_rejected": true,
+    "unsupported_scalar_claim_rejected": true,
+    "wrong_reason_rejected": true
+  },
+  "policy": {
+    "eta": "1/12",
+    "name": "canonical maximal integer D0",
+    "reasons": [
+      "ELIGIBLE",
+      "L_TOO_LOW",
+      "K_TOO_LOW",
+      "NO_TAIL_ROOM",
+      "PUBLISHED_PROFILE_FAIL"
+    ],
+    "route": "published Maynard core only"
+  },
+  "route_verdict": {
+    "alternative_frontier_route": "OPEN",
+    "eligible_only_coefficientwise_compiler": "STOP_DECLARED_ROUTE",
+    "frontier_scalar_oX": "NOT_PROVED",
+    "full_H1_actual_carrier": "NOT_TESTABLE"
+  },
+  "schema": "tpc135-domain-cover-certificate-v1",
+  "scope": "coefficientwise eligible/frontier cover audit; not an estimate of the frontier scalar",
+  "status": "PASS",
+  "synthetic_regression": {
+    "large_scale_eligible_case_exists": true,
+    "low_K_case_rejected": true,
+    "low_L_case_rejected": true,
+    "maximal_policy_is_maximal": true
+  },
+  "upstream": {
+    "path_count": 2988,
+    "tpc134_paths_sha256": "e02afdbbc8f6f8d8f7783611719da0f7b64cfc6f54b3f60dadce65d55d0c01eb"
+  },
+  "validation_errors": [],
+  "witness": {
+    "all_child_reasons": [
+      "L_TOO_LOW"
+    ],
+    "child_blocks": [
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ]
+    ],
+    "column_kind": "FORMAL_SUPPORT_ENVELOPE_COLUMN",
+    "eligible_symbolic_column_sum": "0",
+    "full_symbolic_column_sum": "1",
+    "interpretation": "formal coefficientwise coverage witness only; the arithmetic coefficient may vanish and no scalar lower bound is asserted",
+    "native_coefficient_nonzero_status": "UNDECIDED",
+    "native_id": "X=512|h0=2|ell=3|k=171|d=1",
+    "path_count": 4
+  }
+}

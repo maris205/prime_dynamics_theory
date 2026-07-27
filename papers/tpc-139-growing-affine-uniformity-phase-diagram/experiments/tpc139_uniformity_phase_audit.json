@@ -1,0 +1,118 @@
+{
+  "checks": {
+    "component_pair_bound_is_four_to_pi_P": true,
+    "fixed_height_family_is_finite": true,
+    "fixed_source_not_called_on_growing_data": true,
+    "magnitude_cutoff_effective_sqrtY_cap": true,
+    "no_positive_L2_claim": true,
+    "power_tail_requires_growing_cutoff": true,
+    "prescribed_actual_containment_not_inferred": true,
+    "prime_cutoff_joint_modulus_uses_primorial_squared": true,
+    "slow_diagonal_depends_on_fixed_omega": true,
+    "slow_diagonal_emits_no_named_growth_rate": true,
+    "slow_diagonal_is_non_effective": true,
+    "small_polylog_affine_almost_scale_source_recorded": true,
+    "small_polylog_corridor_not_promoted_to_all_prefix": true
+  },
+  "claim_boundary": {
+    "H3": false,
+    "actual_all_prefix_power": false,
+    "beyond_corridor_growing_affine_quantitative_theorem": false,
+    "positive_L2": false,
+    "small_polylog_affine_almost_scale": true,
+    "twin_prime_theorem": false
+  },
+  "cutoff_phase_diagram": {
+    "magnitude": {
+      "combined_z_modulus": "period*R_eff^4",
+      "point_census": "O(N+R_eff^2)",
+      "records": [
+        {
+          "R": 5,
+          "R_effective": 5,
+          "ordered_component_pair_bound": 25,
+          "period": 6,
+          "z_modulus_upper": 3750
+        },
+        {
+          "R": 50,
+          "R_effective": 50,
+          "ordered_component_pair_bound": 2500,
+          "period": 6,
+          "z_modulus_upper": 37500000
+        },
+        {
+          "R": 2000,
+          "R_effective": 1000,
+          "ordered_component_pair_bound": 1000000,
+          "period": 6,
+          "z_modulus_upper": 6000000000000
+        }
+      ],
+      "tail": "Y^o(1)*(N/R+sqrt(Y))"
+    },
+    "prime_square": {
+      "combined_z_modulus": "period*lcm(k,l)^2 <= period*(P#)^2",
+      "ordered_component_pairs": "at most 4^pi(P)",
+      "records": [
+        {
+          "P": 5,
+          "ordered_component_pair_bound": 64,
+          "period": 6,
+          "pi_P": 3,
+          "primorial": 30,
+          "z_modulus_upper": 5400
+        },
+        {
+          "P": 11,
+          "ordered_component_pair_bound": 1024,
+          "period": 6,
+          "pi_P": 5,
+          "primorial": 2310,
+          "z_modulus_upper": 32016600
+        },
+        {
+          "P": 19,
+          "ordered_component_pair_bound": 65536,
+          "period": 6,
+          "pi_P": 8,
+          "primorial": 9699690,
+          "z_modulus_upper": 564503916576600
+        }
+      ],
+      "tail": "O(N/P+sqrt(Y))"
+    }
+  },
+  "endpoint_scale_demo": {
+    "X": "10^400",
+    "interpretation": "finite illustration only; asymptotically P grows",
+    "minimum_P_from_1/P_le_X^-1/400": 10,
+    "target_tail_exponent": "1/400"
+  },
+  "paper": "TPC-139",
+  "qualitative_diagonal": {
+    "actual_family_containment": false,
+    "construction": "choose X_j(omega) from fixed-height convergence and set Q=j on [X_j,X_{j+1})",
+    "depends_on_terminal_ratio_omega": true,
+    "prescribed_growth_class": null,
+    "thresholds_effective": false
+  },
+  "schema_version": 1,
+  "source_safe_corridor": {
+    "actual_CRT_eligibility": "NOT_PROVED",
+    "data_height": "positive affine coefficients/constants <= (log N)^c for sufficiently small c",
+    "positive_X_power": false,
+    "rate": "(log N)^-c",
+    "scale_quantifier": "outside an exceptional set of logarithmic density O((log X)^-c)",
+    "source": "Tao--Teravainen arXiv:2512.01739v2 Theorem 3.1 and Remarks 3.2"
+  },
+  "uniformity_envelope": {
+    "actual_TPC_containment": "NOT_PROVED",
+    "deterministic_all_prefix_selector": "OPEN",
+    "fixed_height_Q": "PROVED_BY_FINITE_MAX_OF_FIXED_TAO_THEOREMS",
+    "larger_prescribed_polylog_Q_x": "OPEN",
+    "prescribed_power_Q_x": "OPEN",
+    "small_polylog_reduced_affine_height": "PROVED_BY_TAO_TERAVAINEN_2026_OUTSIDE_SMALL_LOG_DENSITY_EXCEPTIONAL_SET",
+    "some_non_effective_Q_star_omega_x": "PROVED_BY_SLOW_DIAGONAL_FOR_EACH_FIXED_OMEGA"
+  }
+}

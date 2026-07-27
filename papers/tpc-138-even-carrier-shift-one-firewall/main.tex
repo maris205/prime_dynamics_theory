@@ -1,0 +1,330 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+
+\title{\textbf{Quantitative Shift-One Shadows of the
+Determinant-Two Frame}\\
+\large Exact Even-Carrier Transfer and the Active Odd-Carrier
+Firewall}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The unrestricted shift-two Liouville sign has an exact quantitative
+shadow on its even carrier:
+\[
+ \lambda(2m-2)\lambda(2m)=\lambda(m-1)\lambda(m).
+\]
+Consequently, proved quantitative logarithmic and almost-all-scale
+results for the consecutive shift-one correlation transfer to that
+even subcarrier.  This does not estimate the active
+determinant-two TPC packet.  On the simultaneous squarefree support
+of TPC-127, the affine values \(D,V\) are odd, and hence
+\(n=sV=aD+2\) is odd.  We prove a complementary determinant
+invariant: on any residue progression contained in the odd
+integers, extracting all fixed contents from \(n-2,n\) leaves an
+affine determinant divisible by four.  It cannot produce the
+determinant-one pair \(t,t+1\).  We cite
+Helfgott--Radziwi{\l}{\l} and Pilatte only for their stated
+shift-one conclusions.  Separately, Tao--Ter\"av\"ainen now provide
+a quantitative almost-all-scale theorem uniformly for positive
+affine data of sufficiently small polylogarithmic height.  That
+new corridor can cover eligible determinant-two affine components,
+but it does not supply the squarefree component reassembly,
+deterministic all-prefix selector, or physical return.  The transfer
+and firewall are exact \(\Lzero\) statements; the full actual packet
+remains open, and no positive \(\Ltwo\) result is claimed.
+\end{abstract}
+
+\section{Four theorem scopes that must not be merged}
+
+Let \(\lambda(n)=(-1)^{\Omega(n)}\).  There are three distinct
+claims in play.
+
+\paragraph{Fixed affine, qualitative logarithmic.}
+Tao proved logarithmically averaged two-point cancellation for
+arbitrary fixed nonparallel affine forms \citep{Tao2016LogChowla}.
+TPC-137 uses this theorem to close the full squarefree masks for
+fixed determinant-two data \citep{WangTPC137}.
+
+\paragraph{Consecutive shift one, quantitative.}
+Helfgott and Radziwi{\l}{\l} proved, among other statements, a
+quantitative logarithmic bound for
+\(\lambda(n)\lambda(n+1)\) and ordinary cancellation at almost all
+scales \citep{HelfgottRadziwill2021}.  Pilatte later proved
+\begin{equation}
+ \sum_{n\le x}\frac{\lambda(n)\lambda(n+1)}n
+ \ll(\log x)^{1-c}
+\label{eq:pilatte}
+\end{equation}
+for some absolute \(c>0\) \citep{Pilatte2023}.
+
+\paragraph{Small-polylog affine, quantitative almost all scales.}
+Tao and Ter\"av\"ainen prove the following uniform special case of
+their quantitative correlation theorem: for some sufficiently
+small absolute \(c_0>0\), outside a set of scales of logarithmic
+density \(O((\log X)^{-c_0})\),
+\begin{equation}
+ \frac1N\sum_{n\le N}
+ \lambda(a_1n+b_1)\lambda(a_2n+b_2)
+ \ll(\log N)^{-c_0}
+\label{eq:tt-affine}
+\end{equation}
+uniformly for positive integers
+\[
+ a_1,a_2,b_1,b_2\le(\log N)^{c_0},
+ \qquad a_1b_2\ne a_2b_1
+\]
+\citep[Theorem~3.1 and Remarks~3.2]{TaoTeravainen2026}.
+Shrinking \(c_0\) absorbs harmless differences between the height
+and saving exponents.  This is a genuine arbitrary-affine
+quantitative corridor, but only at nonexceptional scales and only
+inside its stated small-polylog range.
+
+\paragraph{Actual determinant two.}
+TPC-127 produces
+\[
+ n=sV(z)=aD(z)+2
+\]
+on one generally growing progression, behind quotient-squarefree
+masks, physical weights, phases and prefixes
+\citep{WangTPC127}.  Neither \eqref{eq:pilatte} nor the stated
+shift-one almost-scale result is, as cited here, a theorem on this
+actual family.  Equation \eqref{eq:tt-affine} can estimate an
+individual reduced component only after its literal coefficients,
+constants and CRT modulus have been proved to lie in the
+small-polylog corridor; it still leaves exceptional-scale
+selection and complete reassembly.
+
+\begin{definition}[Source-safe quantitative gate]
+\label{def:gate}
+A quantitative determinant-two affine theorem is a separately
+proved estimate whose statement itself includes the desired
+determinant-two affine forms and all required growth quantifiers.
+A shift-one theorem plus an unproved assertion that its method
+``should extend'' does not pass this gate.  The proved
+Tao--Ter\"av\"ainen corridor passes only for records satisfying its
+explicit height and nonexceptional-scale hypotheses.
+\end{definition}
+
+\section{The exact even-carrier transfer}
+
+\begin{proposition}[Shift two becomes shift one on even integers]
+\label{prop:even}
+For every \(m\ge2\),
+\begin{equation}
+\boxed{
+ \lambda(2m-2)\lambda(2m)
+ =
+ \lambda(m-1)\lambda(m).}
+\label{eq:even}
+\end{equation}
+Consequently, for any finite interval \(J\),
+\begin{equation}
+ \sum_{\substack{n\in2J\\n\ {\rm even}}}
+ \frac{\lambda(n-2)\lambda(n)}n
+ =
+ \frac12\sum_{m\in J}
+ \frac{\lambda(m-1)\lambda(m)}m.
+\label{eq:harmonic-transfer}
+\end{equation}
+The corresponding unweighted interval sums agree after the same
+change of variable, up to endpoint conventions.
+\end{proposition}
+
+\begin{proof}
+Complete multiplicativity gives
+\[
+ \lambda(2m-2)\lambda(2m)
+ =
+ \lambda(2)^2\lambda(m-1)\lambda(m),
+\]
+and \(\lambda(2)^2=1\).  Substitute \(n=2m\) to obtain the two sum
+identities.
+\end{proof}
+
+\begin{corollary}[What the quantitative source theorems control]
+\label{cor:shadow}
+Every stated shift-one logarithmic or almost-all-scale estimate
+transfers, with its native quantifiers and rate, to the even
+subcarrier of the unrestricted sequence
+\(\lambda(n-2)\lambda(n)\).
+\end{corollary}
+
+\begin{proof}
+Apply \cref{prop:even}; the fixed dilation by two changes only
+absolute constants and interval endpoints.
+\end{proof}
+
+This is genuine arithmetic information, but its carrier must be
+checked before it is inserted in H3.
+
+\section{The actual squarefree carrier is odd}
+
+TPC-127 proves the following arithmetic geometry.  If
+\[
+ D(z)=d+sz,\qquad V(z)=u+az,\qquad su-ad=2,
+\]
+with \(a,s\) odd, then \(D(z),V(z)\) have the same parity.  On their
+simultaneous squarefree support, the even--even case is impossible.
+
+\begin{proposition}[Empty overlap]
+\label{prop:empty}
+On the simultaneous squarefree determinant-two support,
+\[
+ D(z)\equiv V(z)\equiv n(z)\equiv1\pmod2,
+\qquad n(z)=sV(z)=aD(z)+2.
+\]
+Hence the carrier controlled by \cref{cor:shadow} has empty
+intersection with the active squarefree carrier.
+\end{proposition}
+
+\begin{proof}
+The oddness and coprimality of \(D,V\) are the parity classification
+of TPC-127.  Since \(s\) is odd, \(n=sV\) is odd.  The carrier in
+\cref{cor:shadow} consists of even \(n\).
+\end{proof}
+
+\begin{remark}[The positive result is not discarded]
+\Cref{prop:empty} does not weaken the shift-one theorems.  It says
+that their exact even-carrier consequence bounds a different
+subsequence.  Calling it an estimate of the odd squarefree carrier
+would be a support error.
+\end{remark}
+
+\section{An odd-carrier determinant invariant}
+
+The possibility remains that a residue change and extraction of
+fixed contents might convert the odd carrier to consecutive forms.
+The next theorem rules out that elementary move.
+
+\begin{theorem}[Even determinant survives odd-carrier reduction]
+\label{thm:invariant}
+Let \(M\) be even and \(r\) odd, so that
+\(n=r+Mt\) is odd for every integer \(t\).  Put
+\[
+ c_-=(M,r-2),\qquad c_+=(M,r),
+\]
+and define the primitive affine forms
+\[
+ L_-(t)=\frac{Mt+r-2}{c_-},
+ \qquad
+ L_+(t)=\frac{Mt+r}{c_+}.
+\]
+Then \(c_-,c_+\) are odd and coprime, and
+\begin{equation}
+\boxed{
+ \det(L_-,L_+)=\frac{2M}{c_-c_+}\in4\mathbb Z.}
+\label{eq:reduced-det}
+\end{equation}
+In particular, this pair cannot equal, up to order and fixed
+Liouville factors, the primitive consecutive pair \(t+b,t+b+1\),
+whose determinant has absolute value \(1\).
+\end{theorem}
+
+\begin{proof}
+Both \(r\) and \(r-2\) are odd, so both contents are odd.
+Furthermore
+\[
+ (c_-,c_+)\mid(r-2,r)\mid2,
+\]
+and hence the contents are coprime.  Since each divides \(M\), their
+product divides \(M\).  Each displayed affine form is primitive
+because its content has been divided out.  The determinant of the
+coefficient pairs is
+\[
+ \frac{M}{c_-}\frac{r}{c_+}
+ -
+ \frac{M}{c_+}\frac{r-2}{c_-}
+ =
+ \frac{2M}{c_-c_+}.
+\]
+Because \(M\) is even and \(c_-c_+\) is odd,
+\(M/(c_-c_+)\) is even; hence the determinant is divisible by four.
+The determinant of
+\((1,b),(1,b+1)\) is \(1\).
+\end{proof}
+
+\begin{remark}[Scope of the obstruction]
+\Cref{thm:invariant} forbids a residue/content relabeling, not a new
+analytic proof.  One may try to rebuild an expansion or entropy
+argument directly for determinant two.  That effort is precisely
+the open gate in \cref{def:gate}.
+\end{remark}
+
+\section{Finite diagnostic and claim boundary}
+
+The deterministic script verifies \eqref{eq:even} term by term,
+enumerates simultaneous squarefree determinant-two samples, and
+checks primitivity, content coprimality and
+\eqref{eq:reduced-det} over many odd residue classes.  These are
+exact regressions.  It may also report finite correlations, but no
+fitted decay is used as an asymptotic premise.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.48\textwidth}X@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+Even shift-two to shift-one transfer
+& Exact theorem (\(\Lzero\)).\\
+Quantitative consequence on the even carrier
+& Proved external input with unchanged shift-one scope.\\
+Active determinant-two carrier is odd and disjoint
+& Exact support theorem (\(\Lzero\)).\\
+Odd-carrier reduced determinant remains even
+& Exact firewall (\(\Lzero\)).\\
+Quantitative logarithmic or almost-scale theorem on active
+determinant two
+& Proved for eligible small-polylog affine data outside a
+small log-density exceptional scale set; actual-family return
+open.\\
+Growing physical all-prefix power estimate
+& Open \(\Ltwo\) target.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Thus TPC-138 identifies a real but ineligible quantitative shadow.
+The next task is not another parity relabeling: it is to compare the
+literal squarefree/periodic decomposition with the proved
+small-polylog affine corridor, account for all component losses,
+and prevent deterministic prefixes from concentrating on its
+exceptional scales.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

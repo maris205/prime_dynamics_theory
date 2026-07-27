@@ -1,0 +1,540 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,mathrsfs}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={Source-Locked Integration at the First Unsupported Carrier},
+  pdfauthor={Liang Wang},
+  pdfsubject={Cut archives, arithmetic shadows, and a nonduplicated endpoint ledger},
+  pdfkeywords={fixed shift, source-locked manifest, archive frontier, arithmetic shadow, endpoint ledger}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Lam}{\Lambda_{\mathrm{phys}}}
+\newcommand{\Bhard}{B_{h_0,\delta}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcommand{\COND}{\textnormal{\textsc{conditional}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{Source-Locked Integration at the First}\\
+\textbf{Unsupported Carrier: Cut Archives, Arithmetic}\\
+\textbf{Shadows, and a Nonduplicated \(1/400\) Ledger}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-133--140 pursue two branches left open by the MVP3 route audit.
+The first makes the native entrance executable and follows every
+atom through a boundary-complete dyadic split to the first carrier
+not supported by the TPC-17/18 block compiler.  The second imports
+proved fixed-data logarithmic Chowla information and a newly proved
+small-polylog affine estimate outside a small logarithmic-density
+exceptional set, isolates a quantitative shift-one non-transfer, and
+formulates the remaining actual-family and selector estimates needed
+by the literal determinant-two packet.  We integrate these branches
+without promoting a restricted arithmetic shadow to the physical
+carrier.
+
+The archive branch gives the exact cut decomposition
+\[
+ B_{h_0,\delta}(X)
+ =
+ S_{\rm soft}(X)+S_{\rm elig}(X)+S_{\rm front}(X).
+\]
+The first term is returned as \(o(X)\), the eligible tail is sent to
+the arithmetic corridor, and the frontier remains explicit.  Thus a
+future eligible-tail saving yields only
+\[
+ |B_{h_0,\delta}(X)|
+ \le o(X)+|S_{\rm front}(X)|
+ +X^{1-\sigma_{\rm elig}+\Lambda_{\rm elig}+o(1)}.
+\]
+It cannot close the original packet until the frontier is totalized
+or separately bounded.
+
+We give a content-addressed manifest, a typed import/export calculus,
+an exact terminal and tail cover, and an occurrence-level endpoint
+registry.  The MVP1 physical threshold remains the strict amplitude
+inequality \(\Lambda_{\rm phys}<1/400\).  Unknown costs are not set to
+zero, determinant reserve is not endpoint slack, and a conservative
+upper bound at or above the threshold is not a route obstruction
+without a lower certificate.  In the frozen snapshot the first
+missing record is \(\mathsf{H1.frontier\_totalization}\), the physical
+registry is incomplete, and no positive \(\Ltwo\) estimate is
+present.  This is an \(\Lzero/\Lone\) integration theorem, not a
+prime-pair theorem.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed shift; source-locked manifest;
+native archive; unsupported carrier; arithmetic shadow; endpoint
+certificate.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Claim boundary.}
+The machine audit checks hashes, types, exact finite covers, graph
+syntax, and rational bookkeeping.  It does not prove the mathematical
+correctness of a cited source theorem, the completeness of an
+arithmetic family, a M\"obius or Liouville power saving, or
+\(\Bhard(X)=o(X)\).  In particular, ``fixed form,''
+``logarithmic,'' and ``almost all scales'' are not synonyms for the
+actual growing, all-prefix physical H3 target.
+\end{minipage}}
+
+\section{The inherited target and the two new branches}
+
+Fix a prescribed nonzero even \(h_0\), a fixed rational
+\(0<\delta<1/2\), and a fixed compactly supported smooth weight
+\(W\).  The imported TPC-15 identity writes the weighted fixed-shift
+defect as
+\begin{equation}
+ \Delta_{h_0,W}(X)
+ =
+ \Bhard(X)+O_A\!\left(X(\log X)^{-A}\right)
+\label{eq:anchor}
+\end{equation}
+for every fixed \(A>0\) \citep{WangTPC15}.  The task is therefore to
+bound the literal \(\Bhard\), not a support-only or averaged-shift
+surrogate.
+
+TPC-MVP3 reported the requirement for a complete actual-carrier
+native archive as the first missing object \citep{WangTPC132}.
+TPC-133--136 now move that pointer forward, but do not yet satisfy the
+complete-carrier requirement.  TPC-133 gives a canonical tuple
+generator for the opened atoms; TPC-134 gives an exact dyadic
+prefix--tail path archive; TPC-135 partitions the archive into the
+domain eligible for the TPC-17/18 compiler and a geometric frontier;
+and TPC-136 reconnects the resulting three cut-terminal classes
+exactly
+\citep{WangTPC133,WangTPC134,WangTPC135,WangTPC136}.
+
+In parallel, TPC-137--140 test whether proved two-point Chowla
+information can feed the determinant-two arithmetic packet
+\citep{WangTPC137,WangTPC138,WangTPC139,WangTPC140}.  The formal
+fixed-affine logarithmic baseline is supplied by Tao's two-point
+theorem \citep{Tao2016}.  Quantitative shift-one results of
+Helfgott--Radziwi{\l}{\l} and Pilatte are stronger in their stated
+scope \citep{HelfgottRadziwill2021,Pilatte2025}, but a shift-one
+bound is not imported as an estimate for the active odd
+determinant-two progression.  TPC-138/139 additionally record the
+Tao--Ter\"av\"ainen small-polylog affine theorem at almost all scales.
+That theorem is a genuine positive arithmetic shadow, but its
+exceptional-scale and reduced-component scope is retained exactly.
+
+\section{Source-locked records}
+
+\begin{definition}[Literal scope]
+A scope record is
+\[
+ {\mathfrak s}
+ =
+ (h_0,\delta,W_{\rm env},{\mathfrak q},\Omega,\nu,{\mathfrak a}),
+\]
+where \(W_{\rm env}\) is the effective support envelope,
+\({\mathfrak q}\) records all growth, scale, prefix, modulus and
+weight quantifiers, \(\Omega\) is the carrier, \(\nu\) is the single
+normalization, and \({\mathfrak a}\) is the archive identity.  A
+minimal nonzero support is not inferred from an effective envelope.
+\end{definition}
+
+\begin{definition}[Export and import]
+An export record contains a statement hash, source bundle hash,
+status, evidence level, direction, coverage, scope, carrier and
+normalization.  A proof import is callable only when those object
+fields agree exactly or a separately sourced crosswalk theorem is
+listed.  A shadow-only import may deliberately have a different
+scope, but it has no proof edge to the actual target.
+\end{definition}
+
+Tuple hashes are integrity checks only.  The native tuple itself is
+the key, and injectivity is checked on the tuples rather than inferred
+from collision resistance.
+
+\begin{theorem}[Source-locked non-escalating merge]
+\label{thm:merge}
+Let a finite collection of paper exports and imports pass the
+following checks:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item every proof import has one exact export or a theorem-backed
+  crosswalk;
+\item the logical dependency graph is acyclic and every primitive
+  node has an independent source;
+\item no primitive source assumes the hard-packet target or an
+  equivalent target gate;
+\item terminal leaves, tail occurrences and physical occurrences
+  have exact nonoverlapping covers; and
+\item the declared status and evidence level of every merged node are
+  no stronger than those of its source.
+\end{enumerate}
+Then the merged root implication is a valid consequence of the
+source theorems in their recorded scopes.  The merge cannot turn a
+conditional interface, logarithmic shadow, finite regression or
+scope-mismatched theorem into a proved growing physical estimate.
+\end{theorem}
+
+\begin{proof}
+Exact import matching makes every logical edge a typed invocation.
+Induction along the topological order proves each nonprimitive node
+from its already justified parents.  The primitive-source firewall
+excludes target-as-premise circularity.  Exact covers prevent omitted
+or duplicated terms, while source-level monotonicity prevents an
+administrative merge from strengthening a theorem.  A shadow-only
+edge is excluded from the logical graph and hence cannot justify the
+actual target.
+\end{proof}
+
+\section{The complete cut and the frontier}
+
+Let \(\mathcal A_X\) be the support-envelope atom archive generated at
+the native entrance.  The TPC-134 dyadic partition and deterministic
+prefix cut assign every atom to exactly one terminal type:
+\[
+\mathsf{eligible\mbox{-}prefix},\qquad
+\mathsf{eligible\mbox{-}tail},\qquad
+\mathsf{frontier}.
+\]
+Column conservation through the cut gives the exact identity
+\begin{equation}
+ \Bhard(X)
+ =
+ S_{\rm soft}(X)+S_{\rm elig}(X)+S_{\rm front}(X).
+\label{eq:cut}
+\end{equation}
+The imported TPC-17 theorem, attached by TPC-136 to the complete
+eligible-prefix outer sum, gives
+\begin{equation}
+ S_{\rm soft}(X)=o(X).
+\label{eq:soft}
+\end{equation}
+
+\begin{proposition}[Eligible-only compiler obstruction]
+\label{prop:frontier}
+The TPC-135 low-\(L\) witness is a formal support-envelope native
+column in the frontier for all sufficiently large \(X\), and its
+dyadic path-matrix column has sum one.  Its full arithmetic
+coefficient may nevertheless vanish.  Consequently the eligible-only
+coefficientwise compiler is not a complete cover of \(\mathcal A_X\).
+\end{proposition}
+
+This is a scoped \(\Lone\) negative result.  It refutes neither the
+scalar estimate \(\Bhard=o(X)\) nor a frontier-augmented signed route.
+In particular, \(S_{\rm front}\) cannot be called soft merely because
+the eligible-prefix sum satisfies \eqref{eq:soft}.
+
+\begin{definition}[Frontier totalization]
+The node \(\mathsf{H1.frontier\_totalization}\) is satisfied if every
+frontier terminal has complete \(Q_D,Q_Z,G\), fixed-\(h_0\), cover,
+reconnection and physical-occurrence records, or if one separate
+theorem bounds the complete original-scale frontier sum by \(o(X)\).
+\end{definition}
+
+\section{What the arithmetic shadow proves}
+
+TPC-137 combines the formal fixed-affine logarithmic theorem with a
+fixed periodic/squarefree closure.  Its quantifier order freezes the
+affine forms, periodic modulus and auxiliary cutoff before the
+asymptotic limit.  This is an unconditional arithmetic theorem in a
+restricted scope, but it is not the growing physical H3 family.
+
+TPC-138 records quantitative shift-one information and proves a
+determinant/parity non-transfer for the active odd determinant-two
+carrier.  Thus no direct edge
+\[
+ \text{quantitative shift one}
+ \longrightarrow
+ \text{actual determinant-two H3}
+\]
+appears in the proof DAG.  TPC-139 then names the missing uniform
+envelope in coefficient height, CRT cutoff, modulus and period.  It
+also records a proved power-of-log estimate for positive nonparallel
+affine coefficients and constants of sufficiently small
+polylogarithmic height, outside a small logarithmic-density
+exceptional set.  This restricted result has no automatic edge to the
+actual carrier: containment of every reduced CRT component, complete
+squarefree/periodic reassembly, and exceptional-set control remain
+unproved.  TPC-140 separately proves that an almost-scale theorem does
+not control a prescribed sequence of actual prefixes, formulates the
+remaining pointwise-or-selector gate, and gives a conditional
+raw-saving ledger.  It also records the exact global-to-window
+firewall
+\[
+ m_{x,\omega}(\mathcal E)
+ \ll
+ \min\left\{1,\frac{(\log x)^{1-c_0}}{\log\omega}\right\}.
+\]
+Thus a cumulative exceptional-set estimate cannot simply be copied
+as the same saving on every actual terminal window.
+
+\begin{proposition}[No shadow teleportation]
+\label{prop:shadow}
+A fixed-data logarithmic estimate, a quantitative shift-one estimate,
+or a small-polylog affine estimate outside a small
+logarithmic-density exceptional set does not supply the actual H3
+packet estimate without, respectively, a growing-family uniformity
+theorem, a determinant-two transfer, and proved actual-component
+containment plus squarefree/periodic reassembly and an independent
+local exceptional-window estimate together with a selector or
+all-prefix theorem.
+\end{proposition}
+
+The power-ledger value of both the qualitative logarithmic shadow and
+the new power-of-log almost-scale shadow is zero on the fixed
+\(X\)-power scale.  This means only that neither supplies a fixed
+power of \(X\); it is not a lower bound showing that the actual family
+cannot have a positive power saving.
+
+\section{Cut-aware synthesis}
+
+\begin{theorem}[Cut-aware eligible-corridor bound]
+\label{thm:cut-aware}
+Assume that the eligible nonsoft packets admit an amplitude estimate
+\[
+ \max_{b\in\mathcal B_X^{\rm elig}}|\mathcal P_b|
+ \le X^{1-\sigma_{\rm elig}+o(1)}
+\]
+and that their theorem-backed physical synthesis satisfies
+\[
+ \left|\mathscr S_X^{\rm elig}(\{\mathcal P_b\})\right|
+ \le
+ X^{\Lambda_{\rm elig}+o(1)}
+ \max_b|\mathcal P_b|.
+\]
+Then
+\[
+ \boxed{
+ |\Bhard(X)|
+ \le
+ o(X)+|S_{\rm front}(X)|
+ +X^{1-\sigma_{\rm elig}+\Lambda_{\rm elig}+o(1)}.}
+\]
+In particular, \(\sigma_{\rm elig}>\Lambda_{\rm elig}\) closes the
+eligible corridor but does not imply \(\Bhard=o(X)\) unless
+\(S_{\rm front}=o(X)\) or the frontier is included in a complete
+joint packet theorem.
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:soft} into \eqref{eq:cut}; apply the triangle
+inequality and then the two assumed eligible-corridor bounds.  The
+frontier is an independent summand and remains in the conclusion.
+\end{proof}
+
+\begin{remark}[Relation to TPC-131]
+TPC-131 proves the complete-carrier formula
+\[
+ |B_{h_0,\delta}(X)|
+ \le o(X)+X^{1-\sigma_{\rm raw}+\Lambda_{\rm phys}+o(1)}
+\]
+under a complete archive and registry \citep{WangTPC131}.
+\Cref{thm:cut-aware} is its deliberately incomplete cut-level
+specialization: it displays the term that prevents invoking that
+complete theorem.
+\end{remark}
+
+\section{The nonduplicated \texorpdfstring{\(1/400\)}{1/400} ledger}
+
+The fixed MVP1 physical contract is
+\[
+ \sigma_{\rm target}=\frac1{400}
+ \quad\text{on the amplitude scale},\qquad
+ \Lambda_{\rm phys}<\frac1{400}.
+\]
+Every physical occurrence is identified by path and stage.  An
+energy exponent \(e\) enters the amplitude ledger as \(e/2\).
+A joint theorem replaces a disjoint exact cover of primitive
+occurrences; it is not retained together with its dependencies.
+
+Four residual namespaces remain distinct:
+\[
+\begin{array}{ll}
+\mathsf{H3.squarefree\_tail},&
+\mathsf{H5.content\_remainder},\\
+\mathsf{Phys.high\_ultra\_boundary},&
+\mathsf{Archive.frontier\_totalization}.
+\end{array}
+\]
+The selector cost, if any, must be assigned once to either the raw
+arithmetic crosswalk or the physical synthesis map according to its
+actual domain and codomain.
+
+\begin{proposition}[Endpoint certificate directions]
+\label{prop:endpoint}
+For a fully specified route cell:
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item a theorem-backed complete upper certificate
+  \(U<1/400\) is a strict physical pass;
+\item a theorem-backed lower or exact dual certificate
+  \(L\ge1/400\) stops that route cell, with equality included; and
+\item an unknown token, an incomplete cell cover, or merely an upper
+  bound \(U\ge1/400\) without a lower obstruction is not a stop
+  certificate.
+\end{enumerate}
+The determinant--zero reserve is not a negative physical token.
+\end{proposition}
+
+The current frontier, cover, localization, final reconnection and
+outer packet-census occurrences are unknown.  Consequently
+\[
+ \Lambda_{\rm phys}^{\rm upper}
+ =
+ \Lambda_{\rm phys}^{\rm lower}
+ =
+ \text{not certified},
+\]
+and the endpoint state is \textsc{incomplete}.  Assigning zero to
+those occurrences would change the route.
+
+\section{The source-locked manifest}
+
+The generated manifest contains:
+\begin{itemize}[leftmargin=2em]
+\item content hashes for every source bundle TPC-133--140;
+\item four explicit scope records, including fixed physical,
+  frozen logarithmic, quantitative shift-one and actual H3 target
+  scopes;
+\item typed exports, proof imports and shadow-only imports;
+\item an exact proof DAG and declared topological order;
+\item exactly three terminal roles and four tail occurrences;
+\item an occurrence registry with acyclic exact-cover replacements;
+\item the rational endpoint contract and unknown-token state;
+\item selected-route and scoped stop records; and
+\item a projection to H1--H9.
+\end{itemize}
+
+The manifest identity is its canonical content, not a self-referential
+repository commit.  Source hashes detect drift but do not prove a
+theorem or the uniqueness of an atom key.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Integrated status after TPC-133--140.}
+\begin{tabularx}{\textwidth}{@{}P{0.27\textwidth}P{0.18\textwidth}Y@{}}
+\toprule
+Record & Status & Meaning\\
+\midrule
+Native entrance through cut & \(\PROVED\), \(\Lone\) &
+Exact support-envelope enumeration, path conservation and cut
+reconnection.\\
+Eligible-only compiler & scoped negative &
+Refuted as a coefficientwise full cover by a formal support-envelope
+frontier column; its full arithmetic coefficient remains undecided.\\
+Frontier totalization & \(\NT\) &
+Downstream maps or a complete original-scale frontier theorem are
+absent.\\
+Fixed-data logarithmic closure & \(\PROVED\), shadow &
+Arithmetic theorem in frozen logarithmic scope; no growing physical
+promotion.\\
+Small-polylog affine almost-scale corridor & \(\PROVED\), shadow &
+Positive power-of-log cancellation on eligible reduced components;
+actual containment, reassembly and deterministic prefixes remain
+open.\\
+Growing affine uniformity & \(\OPEN\), L2 target &
+Actual coefficient height, masks, weights, phases and prefixes remain
+uniformly uncontrolled.\\
+Selector/all-prefix return & \(\OPEN\) &
+The pulled-back exceptional union is not controlled on every terminal
+window, and almost-scale information has not been returned to every
+actual prefix.\\
+Physical endpoint & incomplete &
+Required occurrence tokens are unknown; no strict \(1/400\)
+certificate.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Deterministic audit and claim boundary}
+
+The standard-library script
+\texttt{experiments/tpc141\_batch\_integration\_audit.py} writes the
+frozen manifest and an audit report by default.  Its
+\texttt{--check} mode performs no writes and compares both artifacts
+byte for byte.  Mutation regressions reject:
+\begin{enumerate}[leftmargin=2em]
+\item a proof import with a mismatched shift, carrier or
+  normalization;
+\item a duplicate or omitted terminal role;
+\item assigning the frontier to the proved-soft destination;
+\item merging two tail namespaces;
+\item duplicate, self-dependent or overlapping joint tokens;
+\item filling an unknown endpoint token with zero;
+\item subtracting determinant reserve from the physical loss;
+\item a positive-\(\Ltwo\) label on a fixed/logarithmic/almost-scale
+  export; and
+\item a direct or indirect H9 physical-registry dependency on an
+  arithmetic node.
+\end{enumerate}
+
+\paragraph{Established.}
+The source-locked merge theorem, exact cut-aware synthesis,
+certificate language, and endpoint decision directions are
+\(\Lzero/\Lone\) results.  The integrated source records also include
+the restricted small-polylog arithmetic shadow and the scoped
+eligible-only and shift-one non-transfer obstructions.
+
+\paragraph{Not established.}
+The paper proves no frontier bound, complete actual-carrier H1,
+growing H3/H5 input, physical H6--H9 conjunction, strict endpoint,
+\(\Bhard=o(X)\), Hardy--Littlewood asymptotic, prime-pair lower
+bound, or twin-prime theorem.  Its first missing node is
+\[
+ \boxed{\mathsf{H1.frontier\_totalization}}.
+\]
+
+\section{Conclusion}
+
+TPC-133--140 advance the route in two honest ways.  The native
+archive is no longer generically absent: it reaches an exact,
+reconnected cut and identifies the first unsupported carrier.
+Separately, known arithmetic cancellation now occupies a precisely
+typed fixed or small-polylog almost-scale shadow scope, with the
+actual-family containment, reassembly and selector gaps exposed.
+Neither result is promoted to the complete physical coefficient.
+
+The remaining frontier term and unknown occurrence tokens force an
+incomplete endpoint.  The correct next action is to totalize or bound
+the frontier before describing the program as being at a purely
+arithmetic frontier.  If that succeeds, the same manifest can be
+refrozen and passed to the MVP4 decision calculus without changing
+the evidence rules.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

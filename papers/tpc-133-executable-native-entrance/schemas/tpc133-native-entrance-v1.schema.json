@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc133-native-entrance-v1.schema.json",
+  "title": "TPC-133 support-envelope native entrance",
+  "type": "object",
+  "required": [
+    "schema",
+    "native_id",
+    "packet_scope",
+    "native_tuple",
+    "coefficient_ast",
+    "constraint_witnesses",
+    "integrity_sha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc133-native-atom-v1"
+    },
+    "native_id": {
+      "type": "string"
+    },
+    "packet_scope": {
+      "type": "object",
+      "required": [
+        "X",
+        "h0",
+        "Q",
+        "U",
+        "V",
+        "weight_source_id",
+        "physical_normalization"
+      ]
+    },
+    "native_tuple": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "integer",
+          "minimum": 1
+        }
+      ],
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "coefficient_ast": {
+      "type": "object"
+    },
+    "constraint_witnesses": {
+      "type": "object"
+    },
+    "integrity_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": false
+}

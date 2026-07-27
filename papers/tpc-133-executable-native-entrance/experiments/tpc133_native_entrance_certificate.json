@@ -1,0 +1,52 @@
+{
+  "archive": {
+    "first_native_id": "X=512|h0=2|ell=3|k=171|d=1",
+    "identity_basis": "canonical (packet_scope,native_tuple) record key; native_id is a scope-local label and SHA-256 is integrity only",
+    "independent_expected_count": 866,
+    "jsonl_sha256": "a1956cf182ad219da10d850de7c7e57de69b8c287fb698e44faa5c795c3840a8",
+    "last_native_id": "X=512|h0=2|ell=213|k=3|d=1",
+    "record_count": 866
+  },
+  "checks": {
+    "all_mutations_rejected": true,
+    "all_records_inside_declared_support_envelope": true,
+    "canonical_record_keys_unique": true,
+    "exact_weight_zero_set_not_decided": true,
+    "independent_truncated_divisor_census_matches": true,
+    "integrity_hashes_are_not_record_identity": true,
+    "native_ids_are_scope_local_convenience_labels": true,
+    "symbolic_coefficient_ast_only": true,
+    "tuple_projection_bijective_on_sample": true,
+    "uniform_generator_sample_completed": true
+  },
+  "claim_boundary": {
+    "complete_downstream_path_archive": false,
+    "literal_tpc15_attachment_L1_target": true,
+    "native_enumeration_L0": true,
+    "positive_fixed_h0_L2": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "mutation_regression": {
+    "coefficient_ast_mutation_rejected": true,
+    "deleted_tuple_rejected": true,
+    "duplicate_tuple_rejected": true,
+    "outside_support_envelope_rejected": true,
+    "second_normalization_rejected": true,
+    "wrong_h0_rejected": true
+  },
+  "packet": {
+    "Q": 4,
+    "U": 2,
+    "V": 2,
+    "X": 512,
+    "delta": "1/4",
+    "h0": 2,
+    "physical_normalization": "nu_X",
+    "support_proof_id": "sample-manifest-declaration-only",
+    "weight_source_id": "sample-symbolic-bump-v1"
+  },
+  "schema": "tpc133-native-entrance-certificate-v1",
+  "scope": "finite sample of a uniform support-envelope generator; not a numerical evaluation of W, Lambda, or r_Q",
+  "status": "PASS",
+  "validation_errors": []
+}

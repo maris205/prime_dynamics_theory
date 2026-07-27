@@ -1,0 +1,301 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Dom}{\operatorname{dom}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\STOP}{\textsc{stop-declared-route}}
+\newcommand{\NT}{\textsc{not-testable}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{A Complete Native Cut Archive at the First Unsupported Carrier}\\
+\large Exact Reconnection, Totality Defects, and an H1 Subgate
+Certificate}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-133--135 replace the abstract native-archive schema by an
+executable entrance, a complete dyadic prefix--tail compiler, and an
+exact eligible/frontier partition.  We compose them into one growing
+cut archive.  Every terminal path has exactly one type:
+\[
+ \mathrm{eligible\ prefix\ soft},\qquad
+ \mathrm{eligible\ tail\ open},\qquad
+ \mathrm{frontier\ unmapped}.
+\]
+No frontier occurrence is deleted or declared negligible.  The
+composite preserves every native source, the prescribed shift, and
+one physical normalization, and satisfies
+\[
+ \one^TM_X^{\rm cut}=\one^T.
+\]
+Hence the original hard packet is exactly the sum of the three typed
+terminal families; the published TPC-17 theorem makes only the first
+family soft.  We then distinguish path-totality from operator-totality
+for the determinant-fiber, zero-mode-order, physical-grouping, and
+downstream fixed-shift maps.  None is currently total on all nonsoft
+paths.  Thus the native cut subgate is proved at \(\Lone\), while the
+original actual-carrier H1 node remains \(\NT\).  This is not a
+positive \(\Ltwo\) result and proves no prime-pair theorem.
+\end{abstract}
+
+\section{Three exact terminal types}
+
+TPC-133 produces every native tuple in a certified support envelope;
+TPC-134 gives every dyadic prefix--tail path; and TPC-135 divides the
+blocks into the published-core eligible set and its exact frontier
+\citep{WangTPC133,WangTPC134,WangTPC135}.  We retain these source
+artifacts by content hash for reproducibility, while tuple and path
+identities themselves remain explicit mathematical records.
+
+\begin{definition}[Cut terminal type]
+Every TPC-134 path receives exactly one label:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(\mathsf{EPS}\): its block is eligible and its divisor type is
+prefix;
+\item \(\mathsf{ETO}\): its block is eligible and its divisor type is
+tail;
+\item \(\mathsf{FUM}\): its block is in the frontier.
+\end{enumerate}
+The labels mean eligible-prefix-soft, eligible-tail-open, and
+frontier-unmapped, respectively.
+\end{definition}
+
+An \(\mathsf{EPS}\) record includes a theorem source and the exact
+scope of the TPC-17 prefix estimate.  The other two labels contain no
+soft theorem source.  In particular, \(\mathsf{FUM}\) is a retained
+mathematical leaf, not an error code.
+
+\begin{theorem}[Complete native cut archive]
+\label{thm:cut}
+For every \(X\), the composition above gives a finite path matrix
+\(M_X^{\rm cut}\) with exactly one cut record for every TPC-134 path.
+It satisfies
+\[
+ \boxed{\one^TM_X^{\rm cut}=\one^T}
+\]
+and intertwines the native tuple, \(h_0\), and the inherited physical
+normalization.
+\end{theorem}
+
+\begin{proof}
+TPC-134 proves the column identity and metadata intertwining.  TPC-135
+partitions the block set, while the prefix/tail flag partitions every
+eligible block.  Relabeling rows by the resulting three disjoint cases
+does not change any multiplier.  It therefore preserves the column
+sums and all copied metadata.
+\end{proof}
+
+\begin{corollary}[Exact cut reconnection]
+\label{cor:reconnection}
+Writing \(S_{\mathsf{EPS}},S_{\mathsf{ETO}},S_{\mathsf{FUM}}\) for
+the three terminal scalar sums,
+\[
+ \boxed{
+ B_{h_0,\delta}(X)=
+ S_{\mathsf{EPS}}(X)+S_{\mathsf{ETO}}(X)+S_{\mathsf{FUM}}(X).}
+\]
+On the fixed published-core scope, for every \(A>0\),
+\[
+ S_{\mathsf{EPS}}(X)=O_A(X(\log X)^{-A}),
+\]
+and hence
+\[
+ B_{h_0,\delta}(X)=
+ S_{\mathsf{ETO}}(X)+S_{\mathsf{FUM}}(X)
+ +O_A(X(\log X)^{-A}).
+\]
+\end{corollary}
+
+\begin{proof}
+The exact equality follows from \cref{thm:cut}.  Each
+\(\mathsf{EPS}\) block lies in the scope of the cumulative divisor
+prefix theorem of TPC-17, and there are only \(O_W(\log X)\) relevant
+blocks \citep{WangTPC17}.  Nothing is estimated on the other types.
+\end{proof}
+
+\section{Partial downstream maps}
+
+The cut archive is not yet the physical archive of TPC-124 or the
+fixed-shift archive of TPC-125
+\citep{WangTPC124,WangTPC125}.  Four maps must be distinguished:
+\[
+ Q_D,\qquad Q_Z,\qquad G,\qquad P_{h_0},
+\]
+representing determinant fibers, canonical zero-mode order, physical
+grouping, and the downstream fixed-shift selector.  The first two
+must match the literal data used by TPC-121 and TPC-122
+\citep{WangTPC121,WangTPC122}.
+
+\begin{definition}[Path-totality and operator-totality]
+Let \(F\) be a partial map on terminal cut records and let
+\(M^{\rm ret}\) consist of the nonsoft rows.
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item \(F\) is \emph{path-total} when every retained path with
+nonzero edge multiplier has terminal record in \(\Dom(F)\).
+\item With \(P_{\Dom(F)}\) the coordinate selector, \(F\) is
+\emph{operator-total on the archive} when
+\[
+ (I-P_{\Dom(F)})M^{\rm ret}=0.
+\]
+\end{enumerate}
+\end{definition}
+
+Here ``nonzero'' refers to the explicit dyadic edge multiplier, not
+to the full arithmetic coefficient of its native source.  Possible
+zeros of \(W\), \(\mu\), or \(r_Q\) are not used to delete an
+unmapped path.
+
+\begin{theorem}[Row-separated totality equivalence]
+\label{thm:totality}
+For the row-separated path matrix \(M^{\rm ret}\), path-totality is
+equivalent to operator-totality as defined above.  By contrast, the
+aggregated scalar condition
+\[
+ \one^T(I-P_{\Dom(F)})M^{\rm ret}=0
+\]
+is strictly weaker and is not a provenance certificate.
+\end{theorem}
+
+\begin{proof}
+Under path-totality every retained row with nonzero edge multiplier is
+selected, so the
+displayed matrix defect vanishes.  Conversely, if a retained path
+with nonzero edge multiplier is omitted, its row remains a nonzero row
+of \((I-P_{\Dom(F)})M^{\rm ret}\); entries in a different row cannot
+cancel it.  Thus a zero matrix defect implies path-totality.
+
+For the last assertion, take a one-column omitted matrix with two rows
+\[
+ M^{\rm ret}=\begin{pmatrix}1\\-1\end{pmatrix},\qquad P_{\Dom(F)}=0.
+\]
+Then \(\one^TM^{\rm ret}=0\), although \(M^{\rm ret}\ne0\) and both
+paths are omitted.  This is the cancellation mechanism in aggregated
+local-defect checks of TPC-123 \citep{WangTPC123}; it does not occur
+inside the row-separated matrix equality.
+\end{proof}
+
+\begin{corollary}[Current totality verdict]
+\label{cor:verdict}
+In the committed TPC-136 map manifest, none of
+\(Q_D,Q_Z,G,P_{h_0}\) is path-total on the nonsoft cut archive.
+Consequently
+\[
+ \boxed{\mathsf{H1.native\_cut}=\mathrm{PROVED}_{\Lone},}
+\qquad
+ \boxed{\mathsf{H1.actual\_carrier}
+ =\text{\normalfont\textsc{not-testable}}.}
+\]
+\end{corollary}
+
+\begin{proof}
+The first statement is \cref{thm:cut}.  The map manifest lists no
+theorem-backed domain covering every \(\mathsf{ETO}\) and
+\(\mathsf{FUM}\) occurrence.  Thus the actual-carrier fields required
+by the original MVP3 node cannot yet be evaluated
+\citep{WangTPC132}.
+\end{proof}
+
+For each of the four maps, the manifest separately records the
+path-totality contract, the inherited fixed value of \(h_0\), and the
+status of its theorem source.  All four map statuses and source
+statuses are currently \(\NT\); in particular, merely copying
+\(h_0\) into cut metadata is not a theorem-backed construction of
+\(P_{h_0}\).
+
+\begin{remark}[No movement of the goalpost]
+If a future route definition chooses the present cut as the terminal
+scope of H1, then the cut subgate is closed and the four total maps
+belong to downstream nodes.  Under the existing MVP3 wording,
+``complete actual-carrier native archive,'' we do not silently make
+that change.  The first missing item is now more precise: totalize the
+frontier, or prove its complete scalar soft in the inherited
+normalization, and then supply total \(Q_D,Q_Z,G,P_{h_0}\) maps.
+\end{remark}
+
+\section{Executable certificate and kill rules}
+
+The standard-library program
+\texttt{experiments/tpc136\_cut\_archive.py} binds the TPC-134 paths
+to the passing TPC-135 certificate, creates one cut record per path,
+and writes a downstream-map manifest.  It reports missing nonsoft
+path counts separately for all four maps.  It rejects deletion,
+duplication, terminal-type mutation, an unsupported soft label, a
+wrong shift, a false claim that an empty-domain map is total, a
+promoted source without a theorem, and a wrong fixed-\(h_0\) source
+contract.
+Default mode writes deterministic artifacts; \texttt{--check} is
+strictly read-only.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.43\textwidth}Y@{}}
+\toprule
+Statement & Status\\
+\midrule
+Complete archive through the declared native cut
+& Proved, \(\Lzero/\Lone\).\\
+Eligible-prefix soft estimate
+& Imported in its exact published scope.\\
+Frontier disposition
+& Retained and open; no scalar estimate.\\
+Total determinant and zero-mode maps
+& Absent; \(\NT\).\\
+Total physical and downstream shift maps
+& Absent; \(\NT\).\\
+New positive fixed-\(h_0\) arithmetic saving
+& None; no positive \(\Ltwo\).\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Kill criteria.}
+A column defect, wrong native source, wrong \(h_0\), second
+normalization, or unsupported soft tag stops the declared archive
+implementation.  A map declared proved while omitting a retained path
+stops that map.  A genuinely absent map remains \(\NT\), not
+architecture-infeasible.
+
+\paragraph{Explicit exclusions.}
+This paper proves no frontier cancellation, determinant-energy
+exponent, zero-mode exponent, complete physical cover, fixed-shift
+localization bound, endpoint below \(1/400\), parity breakthrough,
+Hardy--Littlewood asymptotic, prime-pair lower bound, or twin-prime
+theorem.
+
+\begingroup
+\small
+\setlength{\bibsep}{2pt plus 0.3ex}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}
