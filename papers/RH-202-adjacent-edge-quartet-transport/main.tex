@@ -1,0 +1,239 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Adjacent-Scale Transport of the Physical Edge Quartet\\
+\large A Finite Obstruction to the Naive Haar Shell Map}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The outer four source-observable eigenmodes found in RH-200 form a canonical
+finite packet at each of three noise scales.  This paper performs the first
+direct adjacent-level transport test.  The packets at
+$\sigma=0.04,0.02,0.01$ are put in common coordinates by the dyadic Haar
+embedding.  We compare right and left invariant spaces, oblique Riesz
+projectors, source and observation channel states, residues, eigenvalues,
+and quartic characteristic coefficients.
+
+The result is negative for the literal shell map.  Across four adjacent
+scale/channel cases the largest right and left principal sines reach
+$0.82175$ and $0.82388$; the largest relative oblique-projector defect is
+$2.29068$.  The quartet-restricted intertwining defect reaches $0.65573$,
+and one relative residue displacement reaches $8.18374$.  Even the finer
+$0.02\to0.01$ step retains order-one projector defects.
+
+The spectral correspondence itself does not disappear: every packet remains
+conjugation closed and admits a unique minimum-cost matching.  Thus the
+finite quartet is a valid local edge diagnostic but is not transported by
+the unmodified coarse-cell embedding.  A renormalized map or a scalar
+divisor formulation is required.  All results are finite floating audits;
+no all-level shell, Fredholm determinant, Hilbert--P\'olya operator, or RH
+conclusion is asserted.
+\end{abstract}
+
+\section{Problem and inherited packet}
+
+RH-192--RH-201 corrected the state type of the temporal construction and
+isolated a genuine source--observation packet \citep{WangRH201}.  At each
+audited scale and on both physical channels, the four largest-modulus modes
+are two nonreal conjugate pairs, all with nonzero transfer residue.  The
+minimum radial gap after the fourth mode is $0.05949$ \citep{WangRH200}.
+
+Local selection is not yet Gate A.  A spectral block can contribute to an
+all-level determinant only if its identity is coherent under refinement.
+The first candidate map is the isometric Haar embedding
+\begin{equation}\label{eq:haar}
+ J_ne_j=2^{-1/2}(e_{2j}+e_{2j+1}),
+ \qquad J_n^*J_n=I.
+\end{equation}
+When matrix channel states double in both dimensions we also use a column
+embedding $K_m$ and transport $X$ as $J_nXK_m^*$.
+
+\section{Objects transported}
+
+Let $A_c$ and $A_f$ denote adjacent coarse and fine physical operators.
+Their outer quartets have right and left frames $V_c,W_c$ and $V_f,W_f$,
+normalized by
+\begin{equation}\label{eq:biorthogonal}
+ W_c^*V_c=W_f^*V_f=I_4.
+\end{equation}
+The oblique packet projectors are
+\begin{equation}\label{eq:projectors}
+ P_c=V_cW_c^*,\qquad P_f=V_fW_f^*.
+\end{equation}
+
+The right-space transport angle is determined by the singular values of
+$Q_f^*JQ_c$, where $Q_c,Q_f$ are orthonormal bases.  If $s_4$ is the smallest
+singular value, we record
+\begin{equation}\label{eq:angle}
+ \sin\theta_{\max}=\sqrt{1-s_4^2}.
+\end{equation}
+Left spaces are treated independently because the operators are nonnormal.
+
+For every simple mode $\lambda$, with projector $P_\lambda$, source $S$,
+and observation $O$, the physical channel states are
+\begin{equation}\label{eq:states}
+ X_\lambda=P_\lambda S,
+ \qquad Y_\lambda=P_\lambda^*O^*,
+ \qquad r_\lambda=\langle Y_\lambda,X_\lambda\rangle_F.
+\end{equation}
+The comparison therefore tests both the base eigenspace and the actual
+source--observation state.
+
+\section{Predeclared correspondence}
+
+At each endpoint we select the four largest-modulus eigenvalues before any
+cross-level matching.  The minimum-total-distance permutation then matches
+the two finite sets.  This permutation is used simultaneously for
+eigenvalues, right/left modes, channel states, and residues.  It is not used
+to alter the Haar map.
+
+For the monic quartet polynomial
+\begin{equation}\label{eq:quartic}
+ D_\sigma(z)=\prod_{j=1}^4(z-\lambda_{\sigma,j}),
+\end{equation}
+we compare the complete coefficient vector.  This scalar comparison is
+basis invariant and will become important after the state-space obstruction.
+
+\section{Four adjacent-level cases}
+
+The principal-angle and projector data are:
+\begin{center}
+\small
+\begin{tabular}{llrrrr}
+\toprule
+step & side & right sine & left sine & $\norm{P_f-JP_cJ^*}_F/\norm{P_f}_F$ & polynomial error\\
+\midrule
+$0.04\to0.02$ & left  & $0.5766$ & $0.7654$ & $2.2907$ & $0.2402$\\
+$0.04\to0.02$ & right & $0.7669$ & $0.6116$ & $2.2361$ & $0.2420$\\
+$0.02\to0.01$ & left  & $0.8217$ & $0.6206$ & $1.0154$ & $0.3167$\\
+$0.02\to0.01$ & right & $0.6267$ & $0.8239$ & $1.0077$ & $0.3096$\\
+\bottomrule
+\end{tabular}
+\end{center}
+None of these values is a small perturbative transport parameter.  In
+particular, refining the grid does not make the naive projector defect small
+on the two available transitions.
+
+The operator and channel defects tell the same story.  The quartet-restricted
+intertwining defects range from $0.23623$ to $0.65573$.  Source transport
+defects lie between $0.78134$ and $0.81991$.  Observation defects are near
+$2^{-1/2}$, reflecting both refinement and the changing physical
+observation map.
+
+\section{Mode and residue movement}
+
+The largest eigenvalue displacement is $0.38160$ on the first transition and
+$0.13643$ on the second.  Hence a recognizable spectral branch survives,
+but its endpoint is moving.
+
+Residues are less stable.  On the left $0.04\to0.02$ transition, one matched
+mode changes from approximately
+\begin{equation*}
+ -0.09768-0.11776i
+ \quad\text{to}\quad
+ -0.00593-0.01569i.
+\end{equation*}
+Its relative displacement, normalized by the fine residue, is $8.18374$.
+The minimum cosine between transported and fine source states over all
+sixteen mode records is $0.48096$; the corresponding observation minimum is
+$0.60264$.
+
+These are gauge-invariant channel quantities.  Rephasing an eigenvector
+cannot remove the residue discrepancy.
+
+\section{Finite obstruction statement}
+
+\begin{proposition}[Naive Haar shell obstruction]\label{prop:obstruction}
+For the six physical endpoint packets and four adjacent cases audited here,
+the rule
+\begin{equation*}
+ (P_c,X_c,Y_c)\longmapsto
+ (JP_cJ^*,JX_cK^*,JY_cK^*)
+\end{equation*}
+does not provide a small-defect transport of the outer quartet.  In
+particular, the maximum subspace sine exceeds $0.82$ and every relative
+oblique-projector defect exceeds $1$.
+\end{proposition}
+
+The proposition is a statement about these matrices and this predeclared
+map.  It is not an all-level theorem and does not rule out a scale-dependent
+renormalization, a different cluster, or a scalar spectral construction.
+
+\section{What survives the negative result}
+
+Three facts remain useful:
+\begin{enumerate}[leftmargin=2em]
+\item the edge quartet is isolated and source observable at every endpoint;
+\item the matched eigenvalues retain a common conjugate-branch geometry;
+\item the monic quartic is meaningful without choosing eigenvector gauges.
+\end{enumerate}
+Thus the failure is specifically one of raw state transport.  It does not
+invalidate the local Riesz packet or its spectral divisor.
+
+\section{Audit protocol and dimensional ledger}
+
+The left operator dimensions at $\sigma=0.04,0.02,0.01$ are respectively
+$128,256,512$; the right dimensions are $64,128,256$.  Source column counts
+are $64,128,256$ on both sides.  Thus every adjacent comparison doubles both
+the base-state resolution and the source-column resolution.  The row and
+column Haar maps are constructed independently with the normalization
+\eqref{eq:haar}.
+
+For reproducibility, the calculation uses the following fixed order:
+\begin{enumerate}[leftmargin=2em]
+\item construct each physical model directly from its declared $\sigma$;
+\item compute the complete finite eigendecomposition;
+\item select four indices by modulus before looking at another level;
+\item biorthogonalize the selected right/left frames as one block;
+\item solve one minimum-cost eigenvalue assignment;
+\item reuse that assignment for every state, residue, and polynomial metric.
+\end{enumerate}
+No Procrustes correction is applied in RH-202.  This is essential: allowing
+an endpoint-fitted unitary would answer a different question, developed only
+in RH-205.
+
+The order-one defects are far above eigensolver residual and conjugation
+errors, but this does not make them interval statements.  Their role is to
+reject the naive map as the next perturbative target, not to certify a sharp
+lower bound for an exact continuum operator.
+
+\section{Next mathematical wall}
+
+The resolvent identity should be used to separate the causes of transport
+failure.  If $E=A_fJ-JA_c$, then on a common resolvent set one expects
+\begin{equation*}
+ R_f(z)J-JR_c(z)=R_f(z)ER_c(z).
+\end{equation*}
+RH-203 develops this identity, integrates it over Riesz contours, and
+separates projector defects from source defects.  Later layers must decide
+whether to renormalize the state map or move first to the scalar divisor.
+
+\section{Claim boundary}
+
+The eigendecompositions and all norms in this paper are double-precision
+finite calculations.  No interval enclosure of the input matrices,
+resolvents, contours, or projectors is claimed.  The negative finite result
+is robust as a diagnostic because the measured defects are order one, but
+it is not promoted to an analytic zero-noise theorem.  Gate A remains open;
+Gates B--E are untouched.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

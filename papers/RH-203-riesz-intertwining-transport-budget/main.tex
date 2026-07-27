@@ -1,0 +1,269 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\C}{\mathbb C}
+
+\title{Riesz Intertwining and the Two-Term Channel Transport Budget\\
+\large Exact Identities Behind the RH-202 Obstruction}
+\author{Liang Wang}
+\date{July 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-202 showed that the physical edge quartet is not carried between adjacent
+levels by the unmodified Haar embedding.  This paper isolates the exact
+mechanism.  For operators $A_c,A_f$ and a rectangular embedding $J$, set
+$E=A_fJ-JA_c$.  On the common resolvent set we prove
+\[
+ (z-A_f)^{-1}J-J(z-A_c)^{-1}
+ =(z-A_f)^{-1}E(z-A_c)^{-1}.
+\]
+Integration gives the corresponding Riesz-projector identity and a contour
+bound.  For source states we further prove an exact two-term decomposition:
+channel transport equals a source defect passed through the fine projector
+plus the projector-transport defect acting on the coarse source.  A dual
+formula controls observations and residues.
+
+A 240-case complex audit has zero identity failures; maximum residuals are
+$2.42\times10^{-16}$ for the resolvent formula and
+$1.12\times10^{-14}$ for the channel decomposition.  Applied to RH-202, the
+identity explains why a contour estimate cannot close without a new map:
+the quartet-restricted intertwining defects are $0.236$--$0.656$, while the
+source defect is at least $0.781$.  The paper supplies an exact criterion,
+not a physical resolvent bound or an all-level transport theorem.
+\end{abstract}
+
+\section{Rectangular interlevel problem}
+
+Let $X_c=\C^{n_c}$ and $X_f=\C^{n_f}$ with $n_f\ge n_c$.  We do not assume
+that $A_c$ is a compression of $A_f$.  Let
+\begin{equation}\label{eq:data}
+ A_c:X_c\to X_c,\qquad A_f:X_f\to X_f,
+ \qquad J:X_c\to X_f.
+\end{equation}
+The basic defect is
+\begin{equation}\label{eq:E}
+ E=A_fJ-JA_c.
+\end{equation}
+When $J$ is the Haar embedding, $E$ measures both discretization change and
+the physical change in noise scale.  This distinction matters: refinement
+alone does not imply $E\to0$.
+
+The standard perturbation theory of spectral subspaces is usually stated
+for two operators on one space \citep{Kato1995,StewartSun1990}.  The
+rectangular identity below is the appropriate interlevel form.
+
+\section{Resolvent intertwining identity}
+
+Write $R_f(z)=(zI-A_f)^{-1}$ and $R_c(z)=(zI-A_c)^{-1}$.
+
+\begin{theorem}[Rectangular resolvent identity]\label{thm:resolvent}
+If $z\in\rho(A_f)\cap\rho(A_c)$, then
+\begin{equation}\label{eq:resolvent}
+ R_f(z)J-JR_c(z)=R_f(z)ER_c(z).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Using $R_fA_f=zR_f-I$ and $A_cR_c=zR_c-I$,
+\begin{align*}
+ R_fER_c
+ &=R_f(A_fJ-JA_c)R_c\\
+ &=(zR_f-I)JR_c-R_fJ(zR_c-I)\\
+ &=R_fJ-JR_c.
+\end{align*}
+No equality of dimensions or invertibility of $J$ is used.
+\end{proof}
+
+The formula separates geometry from spectral amplification.  A moderate
+$E$ can still produce a large projector defect when either resolvent is
+large, as is common for nonnormal operators \citep{TrefethenEmbree2005}.
+
+\section{Riesz projectors and a contour budget}
+
+Let $\Gamma$ be a positively oriented rectifiable contour contained in both
+resolvent sets.  Define
+\begin{equation}\label{eq:riesz}
+ P_f=\frac{1}{2\pi i}\int_\Gamma R_f(z)\,dz,
+ \qquad
+ P_c=\frac{1}{2\pi i}\int_\Gamma R_c(z)\,dz.
+\end{equation}
+
+\begin{corollary}[Riesz transport]\label{cor:riesz}
+The exact interlevel projector defect is
+\begin{equation}\label{eq:projector-identity}
+ P_fJ-JP_c
+ =\frac{1}{2\pi i}\int_\Gamma R_f(z)ER_c(z)\,dz.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:projector-bound}
+ \norm{P_fJ-JP_c}
+ \le \frac{|\Gamma|}{2\pi}
+ \sup_{z\in\Gamma}\norm{R_f(z)}
+ \sup_{z\in\Gamma}\norm{R_c(z)}\norm E.
+\end{equation}
+\end{corollary}
+
+The same contour must isolate the intended clusters at both levels.  A
+post hoc contour around two unrelated packets would make the formula true
+but would not establish branch continuity.
+
+\section{Source-channel decomposition}
+
+Matrix source states introduce a second embedding.  Let
+$S_c\in\C^{n_c\times m_c}$, $S_f\in\C^{n_f\times m_f}$ and
+$K:\C^{m_c}\to\C^{m_f}$.  Define
+\begin{equation}\label{eq:source-defect}
+ \Delta_S=S_f-JS_cK^*.
+\end{equation}
+
+\begin{theorem}[Two-term channel budget]\label{thm:channel}
+For arbitrary projectors $P_c,P_f$,
+\begin{equation}\label{eq:channel-identity}
+ P_fS_f-JP_cS_cK^*
+ =P_f\Delta_S+(P_fJ-JP_c)S_cK^*.
+\end{equation}
+If $K$ is an isometry, then
+\begin{equation}\label{eq:channel-bound}
+ \norm{P_fS_f-JP_cS_cK^*}_F
+ \le \norm{P_f}\norm{\Delta_S}_F
+ +\norm{P_fJ-JP_c}\norm{S_c}_F.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Add and subtract $P_fJS_cK^*$ and apply submultiplicativity.  No spectral
+assumption is needed for the algebraic identity.
+\end{proof}
+
+Thus a good projector map is insufficient when the physical source itself
+changes substantially.  Conversely, a perfectly embedded source cannot
+repair a bad spectral projector map.
+
+\section{Observation and residue budget}
+
+Let $O_c:\C^{n_c}\to\C^{m_c}$ and
+$O_f:\C^{n_f}\to\C^{m_f}$.  Define
+\begin{equation}\label{eq:obs-defect}
+ \Delta_O=O_f-KO_cJ^*.
+\end{equation}
+Applying Theorem~\ref{thm:channel} to adjoints gives a two-term formula for
+$P_f^*O_f^*-JP_c^*O_c^*K^*$.
+
+More explicitly, with $\Delta_{O^*}=O_f^*-JO_c^*K^*$,
+\begin{equation}\label{eq:dual-channel}
+ P_f^*O_f^*-JP_c^*O_c^*K^*
+ =P_f^*\Delta_{O^*}+(P_f^*J-JP_c^*)O_c^*K^*.
+\end{equation}
+
+The transfer residue of a cluster is
+\begin{equation}\label{eq:residue}
+ r=\operatorname{tr}(OP S).
+\end{equation}
+After inserting and subtracting transported source, observation, and
+projector factors, $r_f-r_c$ is bounded by three physical defects multiplied
+by the remaining factor norms.  This makes clear that residue transport is
+strictly more demanding than eigenvalue matching.
+
+There is also a direct channel-state bound.  Put
+$\widehat X_c=JX_cK^*$ and $\widehat Y_c=JY_cK^*$.  Isometry of $J,K$
+preserves the coarse Frobenius pairing, and therefore
+\begin{align}\label{eq:residue-bound}
+ |r_f-r_c|
+ &\le \norm{Y_f-\widehat Y_c}_F\norm{X_f}_F
+ +\norm{\widehat Y_c}_F\norm{X_f-\widehat X_c}_F.
+\end{align}
+Combining \eqref{eq:channel-bound}, \eqref{eq:dual-channel}, and
+\eqref{eq:residue-bound} gives a fully typed finite residue budget.  It
+requires no eigenvector gauge, only projector, source, and observation
+estimates.
+
+\section{Identity audit}
+
+We generated 120 random complex rectangular operator pairs with dimensions
+$2$--$7$, random isometric embeddings, and spectral parameters well outside
+both spectra.  The maximum residual in \eqref{eq:resolvent} is
+\begin{equation*}
+ 2.4157\times10^{-16}.
+\end{equation*}
+An independent 120-case audit used arbitrary projectors, sources, and row and
+column isometries in \eqref{eq:channel-identity}.  Its maximum Frobenius
+identity residual is $1.1178\times10^{-14}$.  All 240 cases pass the
+$10^{-10}$ gate.
+
+These checks validate implementation, not the physical assumptions of a
+common contour.
+
+\section{Application to the physical quartet}
+
+RH-202 gives the following inherited ranges:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+quantity & finite range or extremum\\
+\midrule
+quartet-restricted relative $E$ defect & $0.23623$--$0.65573$\\
+minimum relative source defect & $0.78134$\\
+maximum oblique-projector defect & $2.29068$\\
+maximum relative residue displacement & $8.18374$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The right side of \eqref{eq:projector-bound} cannot be small merely from
+these data.  Moreover, the source term in \eqref{eq:channel-bound} is already
+order one before resolvent amplification is considered.
+
+This is the exact explanation of the RH-202 obstruction: the naive map fails
+in at least two independent places.  Improving only the contour calculation
+would not make the source defect disappear.
+
+\section{Necessary conditions for a successful map}
+
+A future scale-dependent map $J_\sigma$ should provide all of:
+\begin{enumerate}[leftmargin=2em]
+\item a common contour with controlled $R_f$ and $R_c$;
+\item a small intertwining defect $A_fJ_\sigma-J_\sigma A_c$ on the packet;
+\item compatible row and column source embeddings;
+\item a dual observation estimate;
+\item nonvanishing residues after transport.
+\end{enumerate}
+These are sufficient ingredients for finite packet transport.  Uniform
+versions would still be needed for Gate A.
+
+\section{Norm choice and validation strategy}
+
+Equation \eqref{eq:projector-bound} is valid in every subordinate operator
+norm.  Spectral norms are natural for principal-angle control; Frobenius norms
+are natural for matrix channel states.  Mixing them is legitimate only with
+the explicit submultiplicative steps used in \eqref{eq:channel-bound}.
+
+For a validated implementation, one should bound the resolvents directly on
+$\Gamma$, not infer them from distance to the spectrum.  The latter is
+unsafe for nonnormal matrices.  A quadrature approximation also needs a
+separate integration remainder or an argument-principle count.  These
+requirements explain why the exact identity is a roadmap rather than a
+certificate by itself.
+
+\section{Claim boundary and next step}
+
+The resolvent, projector, and channel identities are exact finite theorems.
+The physical use is diagnostic only: no supremum resolvent bound or interval
+Riesz contour has been supplied.  RH-204 next asks a weaker question that
+does not require state transport: whether the two conjugate spectral
+branches themselves possess a unique correspondence across levels and
+channels.
+
+\bibliographystyle{plainnat}\bibliography{references}
+\end{document}

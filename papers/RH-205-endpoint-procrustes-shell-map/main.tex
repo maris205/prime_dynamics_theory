@@ -1,0 +1,220 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Endpoint-Determined Procrustes Maps for Spectral Shells\\
+\large Exact Existence, Optimal Cost, and the Predictivity Gap}
+\author{Liang Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+A poor Haar transport angle does not prevent an exact map between two
+equal-dimensional endpoint packets: one can always construct a partial
+isometry after seeing both spaces.  This paper makes that statement precise
+and quantifies its cost for the physical edge quartets.
+
+For orthonormal packet frames $Q_c,Q_f$ and an ambient embedding $J$, the
+unitary polar factor of $Q_f^*JQ_c$ solves the orthogonal Procrustes problem.
+The resulting rank-four operator $H=Q_fUQ_c^*$ maps the coarse packet exactly
+onto the fine packet, satisfies $H^*H=Q_cQ_c^*$ and $HH^*=Q_fQ_f^*$, and
+minimizes the discrepancy from the embedded coarse frame.  Its squared
+minimum cost is $2k-2\sum_j\cos\theta_j$.
+
+An 80-case identity audit has zero failures and maximum error
+$3.15\times10^{-15}$.  For the four physical transitions the rank-normalized
+optimal costs range from $0.44075$ to $0.70099$.  Moreover, exact range
+transport does not intertwine dynamics: the largest matched eigenvalue
+movement is $0.38160$.  The construction is therefore a canonical
+endpoint alignment but not a predictive renormalization map, because it
+uses the fine packet it is meant to predict.
+\end{abstract}
+
+\section{Existence is not yet transport theory}
+
+RH-204 provides a unique correspondence between the two conjugate branches
+at adjacent scales \citep{WangRH204}.  It is tempting to declare that this
+already gives a shell map.  Linear algebra shows that an exact map indeed
+exists, but also shows why that fact alone is weak: any two subspaces of the
+same finite dimension admit a partial isometry.
+
+The useful questions are instead:
+\begin{enumerate}[leftmargin=2em]
+\item which exact map is closest to the predeclared physical embedding;
+\item how large is that correction;
+\item does the map intertwine the compressed dynamics;
+\item can it be constructed from the coarse level alone?
+\end{enumerate}
+
+\section{Packet frames and principal cosines}
+
+Let $Q_c\in\mathbb C^{n_c\times k}$ and
+$Q_f\in\mathbb C^{n_f\times k}$ have orthonormal columns, and let
+$J:\mathbb C^{n_c}\to\mathbb C^{n_f}$ be an isometry.  Set
+\begin{equation}\label{eq:overlap}
+ M=Q_f^*JQ_c.
+\end{equation}
+The singular values $s_j$ of $M$ are the principal cosines between
+$\operatorname{Ran}(JQ_c)$ and $\operatorname{Ran}(Q_f)$
+\citep{StewartSun1990}.  Write
+\begin{equation}\label{eq:svd}
+ M=L\Sigma R^*,\qquad U=LR^*.
+\end{equation}
+
+\section{Optimal endpoint map}
+
+\begin{theorem}[Procrustes shell map]\label{thm:procrustes}
+The unitary $U$ in \eqref{eq:svd} minimizes
+\begin{equation}\label{eq:minimization}
+ \min_{Z^*Z=I_k}\norm{Q_fZ-JQ_c}_F.
+\end{equation}
+The minimum obeys
+\begin{equation}\label{eq:cost}
+ \min\norm{Q_fZ-JQ_c}_F^2
+ =2k-2\sum_{j=1}^k s_j.
+\end{equation}
+Moreover,
+\begin{equation}\label{eq:H}
+ H=Q_fUQ_c^*
+\end{equation}
+is a partial isometry with
+\begin{equation}\label{eq:projectors}
+ H^*H=Q_cQ_c^*,\qquad HH^*=Q_fQ_f^*.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expanding the squared norm gives
+\begin{equation*}
+ 2k-2\operatorname{Re}\operatorname{tr}(Z^*M).
+\end{equation*}
+Von Neumann's trace inequality bounds the last real part by
+$\sum_js_j$, with equality for $Z=LR^*$.  Substituting \eqref{eq:H} and
+using orthonormality gives \eqref{eq:projectors}.
+\end{proof}
+
+We normalize the reported cost by $\sqrt{k}$, so it measures the root mean
+square frame correction per mode.
+
+\section{Physical Procrustes costs}
+
+For the four adjacent physical cases, the optimal costs are:
+\begin{center}
+\begin{tabular}{llrrr}
+\toprule
+step & side & right cost & left cost & max $|\Delta\lambda|$\\
+\midrule
+$0.04\to0.02$ & left  & $0.48343$ & $0.45464$ & $0.38105$\\
+$0.04\to0.02$ & right & $0.45582$ & $0.51047$ & $0.38160$\\
+$0.02\to0.01$ & left  & $0.69446$ & $0.44075$ & $0.13643$\\
+$0.02\to0.01$ & right & $0.44486$ & $0.70099$ & $0.13458$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The endpoint correction is never small, and refinement does not improve
+both the right and left costs simultaneously.  The asymmetry exchanges
+between channels on the fine step, a signature of nonnormal dual geometry.
+
+\section{Exact range map versus dynamical intertwining}
+
+Suppose the branch correspondence orders eigenvector frames $V_c,V_f$ and
+diagonal eigenvalue matrices $\Lambda_c,\Lambda_f$.  Any map $T$ satisfying
+$TV_c=V_f$ obeys
+\begin{equation}\label{eq:dynamics}
+ (A_fT-TA_c)V_c=V_f(\Lambda_f-\Lambda_c).
+\end{equation}
+Thus exact range transport cannot make the dynamical defect vanish unless
+the matched eigenvalues agree.  In a conditioned norm, the right side gives
+an unavoidable spectral movement term.
+
+The largest movement is $0.38160$ on the first transition.  It falls to
+about $0.136$ on the second, but remains a visible floor.  The Procrustes map
+optimizes geometry, not dynamics.
+
+\section{Right and left maps are distinct}
+
+For a normal operator one might use one unitary map for both right and left
+spaces.  Here the packet projectors are oblique.  Applying
+Theorem~\ref{thm:procrustes} separately gives $H_R$ and $H_L$, with different
+costs.  Nothing in the theorem ensures
+\begin{equation*}
+ H_L^*H_R=I
+\end{equation*}
+on biorthogonal packet coordinates.  Enforcing that condition would be an
+oblique, not orthogonal, Procrustes problem and would inherit the large
+cross-Gram conditioning measured in RH-197.
+
+\section{An eigenvector-interpolating alternative}
+
+Once matched biorthogonal eigenvector frames $V_c,W_c$ and $V_f,W_f$ are
+known, one may define on the coarse packet
+\begin{equation}\label{eq:interpolating-map}
+ T_R=V_fW_c^*,\qquad T_L=W_fV_c^*.
+\end{equation}
+These maps carry individual labeled right and left vectors exactly when the
+frames are biorthonormal.  They make the spectral defect in
+\eqref{eq:dynamics} transparent, but their norms inherit oblique
+conditioning and they are even more endpoint dependent than the orthogonal
+Procrustes map.
+
+Thus there are at least three distinct optimization targets: smallest
+orthogonal frame correction, exact labeled-eigenvector interpolation, and
+smallest dynamical intertwining defect.  They coincide only in special
+normal, spectrally stationary settings.  The physical packets do not satisfy
+those hypotheses.
+
+\section{Identity audit}
+
+Eighty random complex tests use packet ranks two through five, rectangular
+ambient isometries, and independent endpoint frames.  We check both
+identities in \eqref{eq:projectors} and equality of the computed residual
+with \eqref{eq:cost}.  There are zero failures at tolerance $10^{-10}$; the
+maximum error over all recorded identities is $3.1415\times10^{-15}$.
+
+\section{The predictivity gap}
+
+The map $H$ is endpoint determined: computing $Q_f^*JQ_c$ requires knowing
+the fine spectral packet.  Therefore it cannot prove that the fine packet
+exists, predict where it lies, or define an inductive limit without prior
+spectral information.
+
+This distinguishes two notions:
+\begin{description}[leftmargin=2.5em,style=nextline]
+\item[Retrospective transport] align two already computed endpoint packets;
+\item[Predictive renormalization] construct the fine packet and its error
+from coarse data and uniform analytic bounds.
+\end{description}
+RH-205 proves the former and explicitly leaves the latter open.
+
+\section{Four levels of canonicity}
+
+It is useful to reserve separate language for:
+\begin{enumerate}[leftmargin=2em]
+\item existence of some finite packet isomorphism;
+\item the optimal endpoint map relative to a declared ambient embedding;
+\item a map determined from coarse data and the scale parameter;
+\item a uniform map producing a convergent inductive system.
+\end{enumerate}
+Theorem~\ref{thm:procrustes} reaches level two.  Gate A requires substantially
+more than level three because the packet rank must eventually grow.
+
+\section{Next invariant: physical residues}
+
+The branch labels permit one to compare residues without choosing an
+eigenvector phase.  RH-206 asks whether a single scale-dependent scalar can
+renormalize all four residues or whether a genuinely branch-dependent
+cocycle is forced.  This test is independent of the endpoint partial
+isometry.
+
+\section{Claim boundary}
+
+The Procrustes theorem and partial-isometry identities are exact.  The four
+physical costs are finite floating measurements.  No intrinsic coarse-only
+map, uniform scale estimate, inductive-limit Hilbert space, Gate-A
+determinant, or Hilbert--P\'olya consequence is obtained.
+
+\bibliographystyle{plainnat}\bibliography{references}\end{document}

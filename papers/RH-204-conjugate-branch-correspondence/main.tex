@@ -1,0 +1,235 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+
+\title{Conjugate-Branch Correspondence Across Small-Noise Levels\\
+\large A Spectral Positive Surviving the State-Transport Obstruction}
+\author{Liang Wang}\date{July 2026}
+\begin{document}\maketitle
+
+\begin{abstract}
+The naive Haar transport of outer-edge eigenspaces fails in RH-202, but this
+does not imply that the spectral branches themselves lose identity.  For a
+real operator, a nonreal quartet is determined by its two upper-half-plane
+representatives.  We order those representatives by real part and compare
+the direct and swapped assignments at adjacent noise scales.
+
+All four scale/channel cases have a unique direct correspondence.  The
+minimum pointwise assignment margin is $0.08884$ and the minimum total-cost
+margin is $0.28813$.  On the finer $0.02\to0.01$ step the pointwise margin
+increases beyond $0.714$.  The same negative-real and positive-real branch
+labels work on both physical channels.  At a fixed scale, the largest
+left/right mismatch of a branch representative is only $0.007578$.
+
+The maximum adjacent displacement decreases descriptively from about
+$0.382$ to $0.136$, a ratio at most $0.3581$.  With only two transitions this
+is not a convergence law.  The result establishes a finite spectral
+correspondence that is substantially more stable than raw eigenvector or
+Riesz-projector transport and provides the labels needed for later residue
+and divisor flows.
+\end{abstract}
+
+\section{Why a weaker invariant is useful}
+
+RH-202 compares full right and left packet spaces and obtains principal
+sines above $0.82$ \citep{WangRH202}.  RH-203 explains this through an exact
+intertwining identity: state transport depends on operator, resolvent,
+source, and observation defects simultaneously \citep{WangRH203}.
+
+Eigenvalues are less demanding objects.  They can possess a coherent branch
+label even when the associated nonnormal projectors move substantially.
+This paper asks only whether the two conjugate pairs can be followed without
+using temporal roots or an eigenvector gauge.
+
+\section{Conjugate reduction}
+
+Let $A$ be real and let $\Lambda$ be an isolated quartet of simple nonreal
+eigenvalues.  Then
+\begin{equation}\label{eq:quartet}
+ \Lambda=\{a_-,\overline{a_-},a_+,\overline{a_+}\},
+ \qquad \operatorname{Im}a_\pm>0.
+\end{equation}
+We label the representatives so that
+\begin{equation}\label{eq:order}
+ \operatorname{Re}a_-<\operatorname{Re}a_+.
+\end{equation}
+
+\begin{proposition}[Upper-half-plane reduction]\label{prop:reduction}
+For conjugation-closed simple nonreal quartets, a bijection between the two
+upper-half-plane representatives determines a unique conjugation-compatible
+bijection of the full quartets.
+\end{proposition}
+
+\begin{proof}
+Map the conjugate of each representative to the conjugate of its image.
+Since no representative is real, the two conjugate orbits are disjoint and
+the extension is unique.
+\end{proof}
+
+The reduction removes arbitrary ordering of the four eigensolver outputs and
+makes the matching problem two-dimensional.
+
+\section{Assignment criterion and margin}
+
+For coarse representatives $a_-,a_+$ and fine representatives $b_-,b_+$,
+define
+\begin{align}\label{eq:costs}
+ C_{\rm dir}&=|a_--b_-|+|a_+-b_+|,\\
+ C_{\rm swap}&=|a_--b_+|+|a_+-b_-|.
+\end{align}
+The direct assignment is the unique minimum-cost matching if
+\begin{equation}\label{eq:margin}
+ M=C_{\rm swap}-C_{\rm dir}>0.
+\end{equation}
+We also record the stronger pointwise margin
+\begin{equation}\label{eq:pointwise}
+ m=\min\bigl\{|a_--b_+|-|a_--b_-|,
+ |a_+-b_-|-|a_+-b_+|\bigr\}.
+\end{equation}
+
+\begin{proposition}[Robust branch label]\label{prop:robust}
+If $m>0$, each coarse branch has its direct fine branch as unique nearest
+neighbor.  Perturbing every one of the four representatives by less than
+$m/4$ preserves the signs of both pointwise comparisons.
+\end{proposition}
+
+\begin{proof}
+Each distance changes by at most the sum of its endpoint perturbations,
+hence by less than $m/2$.  The difference of a wrong and correct distance
+changes by less than $m$, so a strictly positive original margin remains
+positive.
+\end{proof}
+
+This is a finite stability statement.  It does not identify analytic
+eigenvalue branches in the sense of Kato \citep{Kato1995} because the
+operators live on changing dimensions.
+
+\section{Adjacent-scale result}
+
+The four audited cases are:
+\begin{center}
+\small
+\begin{tabular}{llrrrr}
+\toprule
+step & side & $|\Delta a_-|$ & $|\Delta a_+|$ & $M$ & $m$\\
+\midrule
+$0.04\to0.02$ & left  & $0.32821$ & $0.38105$ & $0.28813$ & $0.09014$\\
+$0.04\to0.02$ & right & $0.32726$ & $0.38160$ & $0.29001$ & $0.08884$\\
+$0.02\to0.01$ & left  & $0.11977$ & $0.13643$ & $1.46722$ & $0.71671$\\
+$0.02\to0.01$ & right & $0.11841$ & $0.13458$ & $1.46117$ & $0.71441$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Every direct assignment is unique under both criteria.  The dramatic growth
+of the margin on the finer transition results from increased separation
+between the two branches: their distance grows from about $0.74$ at
+$\sigma=0.02$ to about $0.97$ at $\sigma=0.01$.
+
+\section{Endpoint branch geometry}
+
+For reference, the upper-half-plane representatives are:
+\begin{center}
+\small
+\begin{tabular}{llrr}
+\toprule
+$\sigma$ & side & $a_-$ & $a_+$\\
+\midrule
+$0.04$ & left  & $-0.05937+0.67084i$ & $0.09424+0.34688i$\\
+$0.04$ & right & $-0.05817+0.67300i$ & $0.09711+0.33987i$\\
+$0.02$ & left  & $-0.38757+0.66804i$ & $0.35630+0.62352i$\\
+$0.02$ & right & $-0.38536+0.66674i$ & $0.35472+0.62140i$\\
+$0.01$ & left  & $-0.49683+0.61899i$ & $0.47564+0.55740i$\\
+$0.01$ & right & $-0.49427+0.62026i$ & $0.47280+0.55682i$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The negative-real branch changes mainly in real part, while its imaginary
+part varies more slowly.  The positive-real branch moves in both coordinates
+on the first transition and then settles closer to the negative branch's
+imaginary scale.  These observations motivate a two-dimensional complex
+normalization rather than a fit based only on modulus.
+
+\section{Dual-channel synchronization}
+
+The left physical operator acts on the fine bulk, while the right operator
+is built from the transposed coarse bulk.  Agreement between them is
+therefore a nontrivial finite consistency check.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+$\sigma$ & negative-real branch & positive-real branch & maximum\\
+\midrule
+$0.04$ & $0.002468$ & $0.007578$ & $0.007578$\\
+$0.02$ & $0.002561$ & $0.002642$ & $0.002642$\\
+$0.01$ & $0.002857$ & $0.002902$ & $0.002902$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The common real-order labels survive on both channels at all three scales.
+The discrepancy is one to two orders of magnitude below the interlevel
+branch movement.
+
+\section{Descriptive contraction and its limit}
+
+For each side, divide the maximum $0.02\to0.01$ displacement by the maximum
+$0.04\to0.02$ displacement.  The ratios are below $0.359$.  This is an
+encouraging finite trend, but two increments cannot establish geometric
+convergence, differentiability in $\sigma$, or even monotonicity at the next
+scale.
+
+A future theorem would need a family $A_\sigma$ in common renormalized
+coordinates and a uniform separated-cluster estimate.  Neither is supplied
+here.
+
+\section{Relation to the projector obstruction}
+
+There is no contradiction between unique eigenvalue matching and large
+projector angles.  For nonnormal matrices, eigenvectors and Riesz projectors
+can be much more sensitive than eigenvalues \citep{StewartSun1990}.  In the
+present data:
+\begin{equation*}
+ \text{branch mismatch across channels}<0.008,
+ \qquad
+ \text{Haar packet sine}>0.82.
+\end{equation*}
+The stable object may therefore be a scalar divisor or branch ledger rather
+than a directly embedded eigenspace.
+
+\section{What the branch labels enable}
+
+The correspondence fixes the ordering needed to study:
+\begin{enumerate}[leftmargin=2em]
+\item endpoint-determined optimal maps between packet spaces;
+\item branchwise residue multipliers and their conjugation symmetry;
+\item scale evolution of the real quartic characteristic polynomial;
+\item denser small-noise samples without post hoc root matching.
+\end{enumerate}
+RH-205 next constructs the best endpoint partial isometry and distinguishes
+existence of a shell map from predictivity of that map.
+
+\section{How to extend the correspondence audit}
+
+A denser experiment should freeze the labels by continuation from the
+nearest already accepted anchor, then check the assignment margin before
+recording any coefficient fit.  If the pointwise margin changes sign, the
+branch should be declared ambiguous rather than relabeled to preserve a
+desired trend.  Real modes entering the edge or closure of the fourth/fifth
+radial gap are separate failure events and must also be logged.
+
+\section{Claim boundary}
+
+The ordering and assignment propositions are exact.  Their physical input is
+a finite floating eigendecomposition at three scales.  No all-level edge
+gap, analytic branch continuation, eigenvalue limit, arithmetic meaning, or
+zeta-zero correspondence is asserted.  Gate A remains open.
+
+\bibliographystyle{plainnat}\bibliography{references}\end{document}

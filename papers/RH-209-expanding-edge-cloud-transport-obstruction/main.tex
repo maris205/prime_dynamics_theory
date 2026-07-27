@@ -1,0 +1,206 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Expanding the Modulus-Selected Edge Cloud Does Not Repair Transport\\
+\large A Rank-Two-to-Rank-Thirty-Two Principal-Angle Audit}
+\author{Liang Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The outer quartet may fail Haar transport because four modes are too few to
+absorb rotating spectral directions.  We test this natural repair by
+selecting the $k$ largest-modulus modes at both adjacent levels for
+$k=2,4,6,8,12,16,24,32$ and comparing the embedded right and left invariant
+spaces.
+
+The repair fails on the declared rank grid.  None of the 32
+rank/transition/channel cases has both right and left maximum principal
+sines below $0.5$.  The best joint sine is $0.69373$.  On the
+$0.04\to0.02$ cases rank four is optimal among the tested ranks; on the
+$0.02\to0.01$ cases rank two is optimal.  For ranks above four, the joint
+maximum sine often approaches one and reaches $0.999999993$.
+
+We also give an exact finite example showing that nested cloud dimensions do
+not force monotonic improvement of the largest principal angle: adding one
+orthogonal direction can change a zero angle to $\pi/2$.  The result rejects
+only equal-rank, top-modulus clouds under the naive Haar map.  It does not
+rule out adaptive clusters, unequal-rank transport, a renormalized embedding,
+or a scalar divisor limit.
+\end{abstract}
+
+\section{The cloud-enlargement hypothesis}
+
+The fixed quartet is necessarily only a local block: an infinite spectral
+count requires packet rank to grow.  After RH-202 and RH-208 reject its naive
+Haar transport, a natural hypothesis is that omitted neighboring modes carry
+the missing directions.  If so, enlarging the selected edge cloud should
+decrease the largest principal angles.
+
+We test this hypothesis without changing two ingredients:
+\begin{enumerate}[leftmargin=2em]
+\item modes are selected by decreasing eigenvalue modulus;
+\item the physical interlevel map is the dyadic Haar embedding.
+\end{enumerate}
+Only the cloud rank changes.
+
+\section{Selection and metric}
+
+Let $\lambda_1,\ldots,\lambda_n$ be ordered so that
+\begin{equation}\label{eq:order}
+ |\lambda_1|\ge\cdots\ge|\lambda_n|.
+\end{equation}
+Let $E_c(k)$ and $E_f(k)$ be the right invariant spaces spanned by the first
+$k$ modes at adjacent levels, and let $F_c(k),F_f(k)$ be the corresponding
+left spaces.
+
+For orthonormal bases $Q_c,Q_f$, the singular values of $Q_f^*JQ_c$ are the
+principal cosines \citep{StewartSun1990}.  Define
+\begin{equation}\label{eq:joint}
+ g_k=\max\{\sin\theta_{\max}(JE_c(k),E_f(k)),
+ \sin\theta_{\max}(JF_c(k),F_f(k))\}.
+\end{equation}
+The predeclared exploratory gate is
+\begin{equation}\label{eq:gate}
+ g_k<0.5.
+\end{equation}
+Passing would not prove transport, but would identify a cluster worth a more
+expensive oblique-projector and contour analysis.
+
+\section{Why monotonicity is not automatic}
+
+\begin{proposition}[Nesting does not improve the worst angle]\label{prop:nonmono}
+There exist nested pairs $E_c(1)\subset E_c(2)$ and
+$E_f(1)\subset E_f(2)$ such that the largest principal angle is zero at rank
+one and $\pi/2$ at rank two.
+\end{proposition}
+
+\begin{proof}
+In $\mathbb R^3$, take
+$E_c(1)=E_f(1)=\operatorname{span}\{e_1\}$,
+$E_c(2)=\operatorname{span}\{e_1,e_2\}$, and
+$E_f(2)=\operatorname{span}\{e_1,e_3\}$.  The rank-one spaces coincide, but
+the second principal cosine at rank two is zero.
+\end{proof}
+
+Thus an increasing mean overlap can coexist with a worsening maximum angle.
+The latter is the relevant quantity for invertible packet correspondence.
+
+\section{Thirty-two physical rank cases}
+
+The joint maximum sines are:
+\begin{center}
+\scriptsize
+\begin{tabular}{llrrrrrrrr}
+\toprule
+step/side & $k=2$ & $4$ & $6$ & $8$ & $12$ & $16$ & $24$ & $32$\\
+\midrule
+$0.04\to0.02$ left
+& $.8108$ & $.7654$ & $.9769$ & $.9998$ & $.9996$ & $.9996$ & $1.0000$ & $1.0000$\\
+$0.04\to0.02$ right
+& $.8133$ & $.7669$ & $.9769$ & $.9989$ & $.9994$ & $.9999$ & $1.0000$ & $1.0000$\\
+$0.02\to0.01$ left
+& $.6948$ & $.8217$ & $.9719$ & $.9854$ & $.9982$ & $.9996$ & $1.0000$ & $1.0000$\\
+$0.02\to0.01$ right
+& $.6937$ & $.8239$ & $.9755$ & $.9870$ & $.9992$ & $.9999$ & $1.0000$ & $1.0000$\\
+\bottomrule
+\end{tabular}
+\end{center}
+No value passes \eqref{eq:gate}.  More importantly, ranks six and above are
+uniformly worse than the best low-rank choice in every case.
+
+\section{Best-rank pattern}
+
+The rank distribution of the minimizers is
+\begin{equation*}
+ k=4\text{ in two cases},\qquad
+ k=2\text{ in two cases},
+\end{equation*}
+with no minimizer at a larger rank.  The quartet remains the best tested
+choice on the first transition, while one conjugate pair is best on the
+second.
+
+This pattern argues against a simple rule of the form ``take more outer
+modes until transport closes.''  The extra modes are not merely a buffer;
+some bring nearly orthogonal directions into the worst-angle metric.
+
+\section{Interpretation of near-unit angles}
+
+A maximum sine near one means that at least one direction in one selected
+cloud is almost orthogonal to the other after embedding.  It does not imply
+that all directions disagree: mean principal cosines can remain moderate.
+However, one lost direction is enough to make an equal-rank transport map
+ill conditioned or singular.
+
+For oblique nonnormal packets the situation is stricter still.  Good right
+angles would not guarantee good left angles, which is why the joint metric
+in \eqref{eq:joint} is used.
+
+\section{Worst-angle versus average-overlap diagnostics}
+
+The mean principal cosine answers how much of a cloud overlaps on average;
+the minimum cosine answers whether every direction is recoverable.  A
+determinant factor of equal degree needs the latter: losing one direction can
+change one root or make the transport singular even when most energy is
+captured.  This explains why low-rank postblock energy compression from
+earlier papers does not automatically imply spectral-cloud transport.
+
+For an unequal-rank future map, the appropriate diagnostics change.  One
+should record injection angles from the coarse packet into a larger fine
+packet, the dimension of the captured image, and the residual fine
+complement.  Such a test may succeed even when the equal-rank largest angle
+is near $\pi/2$; it is outside the claim of RH-209.
+
+\section{What has been ruled out}
+
+The finite result rejects the compound rule
+\begin{equation}\label{eq:rejected}
+ \text{same rank at both levels}
+ +\text{ largest-modulus selection}
+ +\text{ Haar embedding}
+\end{equation}
+on the specified rank grid and four physical cases.
+
+It does not reject:
+\begin{enumerate}[leftmargin=2em]
+\item a contour selected by branch continuation rather than modulus;
+\item different coarse and fine cloud ranks with an injective map;
+\item weighted subspace metrics adapted to source observability;
+\item a scale-dependent coordinate dilation or other renormalized embedding;
+\item convergence only of scalar characteristic data.
+\end{enumerate}
+
+\section{Predeclared alternatives for a later cloud audit}
+
+Three nonmodulus rules are sufficiently concrete to test without post hoc
+selection: continue contours from the RH-204 branch labels; select modes by
+a joint modulus/residue threshold; or select the smallest conjugation-closed
+cluster whose transfer moments meet a declared error gate.  Each rule must
+freeze its threshold before inspecting transport angles.  Otherwise cloud
+growth can be tuned to manufacture an apparent match.
+
+\section{Consequence for Gate A}
+
+The quartet should remain a local diagnostic and a branch-label seed, but it
+should not be promoted to a nested raw eigenspace shell.  Likewise, blindly
+growing a modulus cloud is not supported.  The strongest surviving signal is
+the dual-channel scalar divisor coherence found in RH-207.
+
+This motivates a route decision: determine whether convergence of spectral
+divisors can be pursued independently of raw state transport.  RH-210 proves
+that state convergence is sufficient but not necessary for divisor
+stability and records the resulting Gate-A pivot.
+
+\section{Claim boundary}
+
+The nonmonotonicity proposition is exact.  The rank-grid obstruction is
+finite and floating.  It is not an all-rank or all-level theorem and does
+not exclude adaptive nonmodulus clouds.  No infinite determinant, counting
+law, arithmetic trace, or Hilbert--P\'olya statement follows.
+
+\bibliographystyle{plainnat}\bibliography{references}\end{document}
