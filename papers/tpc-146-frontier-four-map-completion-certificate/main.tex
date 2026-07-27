@@ -1,0 +1,381 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={An Executable Four-Map Completion Certificate for Frontier Totalization},
+  pdfauthor={Liang Wang},
+  pdfsubject={A zero-defect contract with an independent scalar alternative},
+  pdfkeywords={frontier totalization, occurrence lift, fixed shift, physical cover, proof audit}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\STOP}{\textnormal{\textsc{stop-declared-route}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\one}{\mathbf 1}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{An Executable Four-Map Completion}\\
+\textbf{Certificate for Frontier Totalization}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We assemble an exact, executable completion criterion for the first
+unsupported carrier after the TPC cut archive.  The map route requires
+a conservative row-separated occurrence lift, total determinant and
+zero-mode quotients \(Q_D,Q_Z\), a total physical grouping \(G\), a
+total downstream prescribed-shift selector \(P_{h_0}\), two
+compatibility squares, physical cover, exact reconnection and a
+complete occurrence registry.  We encode these requirements by nine
+row-separated defects.  Once the literal source matrices exist, all
+map-route clauses hold exactly when the defect vector is zero.
+Unknown components are not assigned the value zero.  We retain the
+alternative allowed by the source-locked program: a theorem proving
+that the complete original-scale frontier sum is \(o(X)\), together
+with a theorem-backed disposition of every eligible-tail path.  The
+current artifacts satisfy neither disjunct.  In particular, the
+proved cut-stage identity \(P_{h_0}^{\rm cut}=I\) is not the missing
+downstream selector.  The resulting verdict remains
+\textsc{not-testable}, with the first internal missing node sharpened
+to \(\mathsf{H1.frontier\_occurrence\_lift}\).  The stopped result is
+only the current-schema-only implementation; both an augmented map
+route and a scalar-plus-eligible-tail route remain open.
+\end{abstract}
+
+\section{The disjunctive frontier contract}
+
+TPC-141 defines frontier totalization by two legitimate and
+independent routes \citep{WangTPC141}.  The first route completes
+every literal downstream occurrence.  The second proves a complete
+frontier estimate and separately disposes of the remaining eligible
+tail.  We keep this disjunction explicit:
+\begin{equation}
+\begin{split}
+\mathsf{H1Complete}(X)
+\quad\Longleftrightarrow\quad&
+\mathsf{MapTotal}_{\rm ns}(X)\\
+&{}\lor\bigl(
+\mathsf{ScalarSoft}_{\rm FUM}(X)
+\land\mathsf{ETOTotal}(X)\bigr).
+\end{split}
+\label{eq:disjunction}
+\end{equation}
+Here
+\[
+\mathsf{ScalarSoft}_{\rm FUM}(X)
+\]
+means a theorem, in the inherited physical normalization, proving
+\[
+ S_{\rm front}(X)=o(X)
+\]
+for the \emph{complete} original frontier sum.  A finite regression,
+fixed-data logarithmic shadow, or estimate on only one frontier class
+does not satisfy this clause.
+
+The factor \(\mathsf{ETOTotal}(X)\) requires total downstream maps on
+every eligible-tail-open path, or a separate theorem that makes their
+complete original-scale sum soft.  It cannot be removed because one
+finite fixture happens to contain no such row.
+
+The map domain is not merely the paths labeled frontier in one sample.
+Following TPC-136, it is the complete nonsoft set
+\begin{equation}
+ \mathcal C_X^{\rm ns}
+ =
+ \mathcal C_X^{\mathsf{ETO}}
+ \sqcup
+ \mathcal C_X^{\mathsf{FUM}}.
+ \label{eq:domain}
+\end{equation}
+The eligible prefix is already separated with a theorem source; the
+eligible tail and geometric frontier both remain in the downstream
+archive \citep{WangTPC136}.
+
+\section{The literal map route}
+
+TPC-143 identifies the common first input as a conservative
+row-separated occurrence lift
+\[
+ L_X:\mathbb C^{\mathcal C_X^{\rm ns}}
+ \longrightarrow\mathbb C^{\mathcal O_X}
+\]
+with
+\begin{equation}
+ \one^TL_X=\one^T
+ \label{eq:Lconservation}
+\end{equation}
+and exact native, shift and normalization lineage
+\citep{WangTPC143}.  One cut path may split, so \(L_X\) is not
+replaced by a single target label.
+
+On the completed occurrence space, TPC-144 requires literal
+determinant and zero-mode maps
+\[
+ Q_D,\qquad Q_Z
+\]
+and tests their quotient compatibility by a coefficientwise
+intertwining or, for surjective maps, equality of kernels
+\citep{WangTPC144}.  TPC-145 similarly requires a literal physical
+grouping and downstream selector
+\[
+ G,\qquad P_{h_0}^{\rm down}
+\]
+whose commuting square passes on the occurrence-resolved lift
+\citep{WangTPC145}.
+
+The remaining physical clauses are:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item an exact cover of all physical occurrences, with no deletion or
+duplication;
+\item exact reconnection to the inherited hard-packet coefficient;
+and
+\item a complete occurrence registry for every cost used by the
+physical endpoint.
+\end{enumerate}
+These are not consequences of the four map names.  TPC-124 already
+shows that physical aggregation can hide a native residual
+\citep{WangTPC124}.
+
+\section{The zero-defect vector}
+
+Let \(M_X^{\rm ns}\) be the row-separated TPC-136 nonsoft matrix.  On
+a candidate completed source bundle define:
+\begin{align*}
+D_L&:\ \text{conservation and metadata defect of }L_X,\\
+D_{QD}&:\ \text{path-domain defect of }Q_D,\\
+D_{QZ}&:\ \text{path-domain defect of }Q_Z,\\
+D_G&:\ \text{path-domain defect of }G,\\
+D_P&:\ \text{path-domain defect of }P_{h_0}^{\rm down},\\
+D_{DZ}&:\ \text{coefficientwise determinant/zero intertwining defect},\\
+D_{GP}&:\ \text{occurrence-level grouping/shift commutator},\\
+D_{\rm cover}&:\ \text{physical occurrence-cover defect},\\
+D_{\rm rec}&:\ \text{final reconnection defect}.
+\end{align*}
+For example, the domain component of a partial map \(F\) is the
+row-separated matrix
+\[
+ (I-P_{\operatorname{Dom}F})L_XM_X^{\rm ns}.
+\]
+The determinant/zero component includes
+\[
+ (JQ_D-Q_Z)L_XM_X^{\rm ns},
+\]
+and the grouping/shift component includes
+\[
+ (P_{\rm phys}G-GP_{\rm occ})L_XM_X^{\rm ns}.
+\]
+The cover and reconnection components use the literal occurrence
+registry, not only their final scalar sums.
+
+\begin{definition}[Certified zero]
+A defect component is a certified zero only when all of its exact
+source matrices, domains, multipliers, scopes and normalization fields
+are present and the displayed matrix is identically zero.  A missing
+source is \(\NT\), not zero.
+\end{definition}
+
+Put
+\begin{equation}
+ \mathfrak D_X=
+ (D_L,D_{QD},D_{QZ},D_G,D_P,D_{DZ},D_{GP},
+ D_{\rm cover},D_{\rm rec}).
+ \label{eq:defectvector}
+\end{equation}
+
+\begin{theorem}[Four-map completion criterion]
+\label{thm:criterion}
+Assume all literal source matrices and the complete occurrence
+registry exist.  Then the map-route clauses above hold if and only if
+\[
+ \boxed{\mathfrak D_X=0}
+ \label{eq:zero}
+\]
+componentwise.
+\end{theorem}
+
+\begin{proof}
+If the map route holds, occurrence-lift conservation gives \(D_L=0\);
+path-totality gives the four domain defects zero; the two declared
+commuting diagrams give \(D_{DZ}=D_{GP}=0\); and exact cover and
+reconnection give the final two zeros.
+
+Conversely, \(D_L=0\) supplies the conservative metadata-faithful
+lift.  Row separation makes each of the next four zero matrix
+defects equivalent to path-totality, as in TPC-136.  The next two
+zeros are precisely the coefficientwise compatibility requirements.
+The last two certify complete physical coverage and reconnection.
+The assumed complete registry then attaches every map edge to one
+literal occurrence.  These are all map-route clauses.
+\end{proof}
+
+\begin{remark}[The theorem is executable, not self-populating]
+\Cref{thm:criterion} turns a complete source bundle into a decidable
+certificate.  It does not create \(L_X,Q_D,Q_Z,G\), or
+\(P_{h_0}^{\rm down}\).  In particular, no defect can be evaluated
+from its name.
+\end{remark}
+
+\section{Two aggregation firewalls}
+
+\begin{proposition}[Scalar zeros do not certify \(\mathfrak D_X=0\)]
+\label{prop:scalar}
+Replacing any row-separated component of \(\mathfrak D_X\) by its
+all-ones row sum can produce a false zero.
+\end{proposition}
+
+\begin{proof}
+Two omitted or leaking occurrence rows with entries \(1\) and \(-1\)
+have aggregate scalar zero while the row-separated defect has two
+nonzero rows.  TPC-136 gives this example for domain totality, and
+TPC-145 gives the corresponding cross-shift example
+\citep{WangTPC136,WangTPC145}.  The same construction applies to
+cover and reconnection occurrences.
+\end{proof}
+
+\begin{proposition}[Cut selection does not erase \(D_P\)]
+\label{prop:cutP}
+The proved equality \(P_{h_0}^{\rm cut}=I\) does not certify
+\(D_P=0\).
+\end{proposition}
+
+\begin{proof}
+\(P_{h_0}^{\rm cut}\) acts before the missing occurrence lift and all
+later physical stages.  The defect \(D_P\) acts on their source and
+target records.  A later stage can send a selected cut record to an
+unselected downstream record without changing the earlier identity.
+Therefore the operators have different domains and proof
+obligations.
+\end{proof}
+
+This is the exact distinction required by the prescribed-shift
+telescope of TPC-125 \citep{WangTPC125}.
+
+\section{Source-locked current evaluation}
+
+The deterministic program
+\texttt{experiments/tpc146\_frontier\_completion\_audit.py} imports
+the TPC-136 cut paths and TPC-143--145 certificates by content hash.
+Hashes have the status \texttt{INTEGRITY\_ONLY}; exact record
+identities are not replaced by digests.  It creates the nine
+components in \eqref{eq:defectvector}.
+
+Every current component is \texttt{NOT\_EVALUABLE}: its literal
+source matrix is absent.  None is assigned a numerical zero.  The
+scalar branch also has no theorem source.  The audit rejects:
+\begin{itemize}[leftmargin=2em]
+\item a frontier-only domain;
+\item promotion of the empty finite eligible-tail sample;
+\item substitution of \(P_{h_0}^{\rm cut}\) for \(D_P\);
+\item a fabricated source or zero defect;
+\item a fabricated scalar-soft theorem; and
+\item a false totalization verdict.
+\end{itemize}
+
+The committed finite census is
+\[
+ \#\mathcal C_X^{\rm ns}=2988,\qquad
+ \#\mathcal C_X^{\mathsf{ETO}}=0,\qquad
+ \#\mathcal C_X^{\mathsf{FUM}}=2988.
+\]
+This is a regression fixture, not an asymptotic support theorem.
+
+\begin{center}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}P{0.34\textwidth}P{0.22\textwidth}Y@{}}
+\toprule
+Certificate cell & Status & First missing content\\
+\midrule
+Occurrence lift \(L_X\)
+& \(\NT\) & Complete row-separated cut-to-occurrence edges.\\
+\(Q_D,Q_Z\)
+& \(\NT\) & Canonical parent and ordered outer records.\\
+\(G,P_{h_0}^{\rm down}\)
+& \(\NT\) & Physical occurrences and later shift-tagged stages.\\
+Cover/reconnection/registry
+& \(\NT\) & Literal physical occurrence census.\\
+Frontier scalar \(S_{\rm front}=o(X)\)
+& \(\NT\) & Independent original-scale theorem.\\
+Remaining eligible-tail route
+& \(\NT\) & Total maps or a complete eligible-tail soft theorem.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Verdict and claim boundary}
+
+\begin{theorem}[Current frontier completion verdict]
+\label{thm:verdict}
+For the source-locked TPC-136 and TPC-143--145 artifacts,
+\[
+ \boxed{
+ \mathsf{H1.frontier\_totalization}=\NT,}
+\]
+with
+\[
+ \boxed{
+ \mathrm{first\ missing}
+ =
+ \mathsf{H1.frontier\_occurrence\_lift}.}
+\]
+The current-schema-only totalization is a scoped \(\STOP\) route.
+The occurrence-augmented map route and the frontier-scalar-plus-tail
+route remain \(\OPEN\).
+\end{theorem}
+
+\begin{proof}
+The source manifests pass validation, so the snapshot is not invalid.
+No literal occurrence lift exists, hence the map route in
+\eqref{eq:disjunction} is \(\NT\) before its four maps can be tested.
+No theorem source proves the complete original-scale frontier scalar
+is \(o(X)\), and no source totalizes every possible eligible-tail
+path, so the second route is also \(\NT\).  Thus neither disjunct
+passes.  TPC-143's descent obstruction stops only derivation from the
+current schema; it supplies no witness against an augmented lift or
+a scalar-plus-tail theorem.
+\end{proof}
+
+The result sharpens one structural pointer.  It does not advance the
+route to a purely arithmetic frontier.  No positive fixed-\(h_0\)
+\(\Ltwo\) estimate, frontier \(o(X)\) bound, physical cover,
+determinant/zero exponent pair, endpoint below \(1/400\), parity
+breakthrough, prime-pair lower bound or twin-prime theorem is proved.
+If a future bundle supplies \(L_X\), \cref{thm:criterion} specifies
+the next exact tests without moving any unknown cost to zero.
+
+\begingroup
+\scriptsize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

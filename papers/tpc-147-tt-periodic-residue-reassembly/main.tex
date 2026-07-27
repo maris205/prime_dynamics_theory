@@ -1,0 +1,306 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={Periodic Reassembly Inside a Quantitative Multiplicative Correlation Corridor},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact source quantifiers and density-normalized periodic reassembly},
+  pdfkeywords={multiplicative correlations, periodic weights, exceptional scales, residue classes}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\TT}{\mathrm{TT}}
+\newcommand{\e}{\mathrm e}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{Periodic Reassembly Inside a Quantitative}\\
+\textbf{Multiplicative Correlation Corridor: Exact Quantifiers,}\\
+\textbf{Zero Residue-Census Loss, and Non-Prefix Scope}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The quantitative two-point theorem of Tao and Ter\"av\"ainen is
+uniform in the congruence modulus, residue and two shifts after its
+multiplicative functions and ambient scale have been fixed.  We
+source-lock these quantifiers and derive a periodic reassembly
+principle that will be used on determinant-two M\"obius fibers.  If
+one progression of modulus \(Q\) carries a bounded multiplier of
+period \(R\), and \(QR\) lies in the theorem's small-polylogarithmic
+modulus envelope, then resolving the multiplier into \(R\) residue
+classes creates no factor \(R\).  Each refined class has natural mass
+\(N/(QR)\), so its \(R\)-fold census exactly returns the original
+mass \(N/Q\).
+
+This removes a spurious \(\ell^1\) loss from structured periodic
+reassembly.  It does not remove an outer coefficient-mass loss and
+does not cover a nonperiodic physical multiplier, a generic additive
+phase, an arbitrary interval origin, deterministic prefixes or a
+four-point kernel.  The conclusion is a good-scale \(\Lone\)
+arithmetic interface, not positive \(\Ltwo\), not an \(X\)-power
+saving and not a prime-pair statement.
+\end{abstract}
+
+\section{The exact source contract}
+
+We use the general multiplicative-function form of
+\citet[Theorem~3.1]{TaoTeravainen2026}, not only its affine Liouville
+corollary.  Let \(X\ge2\), let \(g_1,g_2:\mathbb N\to\mathbb C\) be
+one-bounded multiplicative functions, and let
+\[
+ 1\le\mathcal L\le\log X.
+\]
+In the nonpretentious branch, \(\delta_N=0\) and
+\begin{equation}
+ \exp M(g_1;X^2,\log^{1/125}X)\gg\mathcal L.
+\label{eq:nonpret}
+\end{equation}
+The equidistributed branch has a different hypothesis that will not
+be used in the quotient-M\"obius application.
+
+For a sufficiently small absolute \(c>0\), the source chooses a set
+\[
+ \mathcal E_X(g_1,g_2,\mathcal L)\subset[\sqrt X,X]
+\]
+satisfying
+\begin{equation}
+ \frac1{\log X}\int_{\mathcal E_X}\frac{dt}{t}
+ \ll \mathcal L^{-c}.
+\label{eq:exception}
+\end{equation}
+For every \(N\in[\sqrt X,X]\setminus\mathcal E_X\), every
+\[
+ 1\le W\le\mathcal L^c,
+ \qquad b,h_1,h_2=O(\mathcal L^c),
+ \qquad h_1\ne h_2,
+\]
+the conclusion is
+\begin{equation}
+ \frac WN\left|
+ \sum_{\substack{N<n\le2N\\n\equiv b\ ({\rm mod}\ W)}}
+ (g_1(n+h_1)-\delta_N)g_2(n+h_2)
+ \right|
+ \ll \mathcal L^{-c}.
+\label{eq:source}
+\end{equation}
+The exceptional set is selected before \(W,b,h_1,h_2\); hence it is
+uniform in these parameters.  The normalization \(W/N\) is part of
+the theorem.
+
+\begin{remark}[Local and global exceptional sets are different]
+\label{rem:local-global}
+\Citet[Remarks~3.2]{TaoTeravainen2026} also record a global Liouville
+affine special case, with one exceptional set for all sufficiently
+small polylogarithmic affine data.  Equation \eqref{eq:exception} is
+the local set from the general theorem and may depend on
+\(g_1,g_2,\mathcal L,X\).  We never replace it by the global
+Liouville set.
+\end{remark}
+
+\section{An exact periodic residue partition}
+
+Fix a base modulus \(Q\ge1\), a residue \(b_0\bmod Q\), and a
+period \(R\ge1\).  If \(n\equiv b_0\pmod Q\), write
+\[
+ z(n)=\frac{n-b_0}{Q}\in\mathbb Z.
+\]
+Let \(\rho:\mathbb Z/R\mathbb Z\to\mathbb C\).
+
+\begin{lemma}[Row-separated periodic partition]
+\label{lem:partition}
+For every finitely supported sequence \(F(n)\),
+\begin{equation}
+ \sum_{n\equiv b_0\ ({\rm mod}\ Q)}
+ F(n)\rho(z(n))
+ =
+ \sum_{r\bmod R}\rho(r)
+ \sum_{n\equiv b_0+Qr\ ({\rm mod}\ QR)}F(n).
+\label{eq:partition}
+\end{equation}
+The \(R\) refined classes are pairwise disjoint and their union is
+the base class \(b_0\bmod Q\).
+\end{lemma}
+
+\begin{proof}
+The condition \(z(n)\equiv r\pmod R\) is exactly
+\(n\equiv b_0+Qr\pmod{QR}\).  Distinct \(r\bmod R\) give distinct
+classes modulo \(QR\), and every integer in the base class has one
+such \(r\).
+\end{proof}
+
+This is a pathwise partition, not a scalar replacement by a periodic
+density.  It retains the value \(\rho(r)\) on every refined class.
+
+\section{Periodic reassembly without a census loss}
+
+\begin{theorem}[Source-native periodic reassembly]
+\label{thm:periodic}
+Assume the hypotheses of \eqref{eq:source} for fixed \(g_1,g_2\).
+Let \(Q,R\ge1\) satisfy
+\begin{equation}
+ QR\le\mathcal L^c,
+\label{eq:height}
+\end{equation}
+and suppose the residue representatives and shifts remain within the
+source's \(O(\mathcal L^c)\) envelope.  Then, for every
+\(N\in[\sqrt X,X]\setminus\mathcal E_X\),
+\begin{align}
+ \frac QN\bigg|
+ \sum_{\substack{N<n\le2N\\n\equiv b_0\ ({\rm mod}\ Q)}}
+ &(g_1(n+h_1)-\delta_N)g_2(n+h_2)
+\notag\\[-1mm]
+ &\times\rho\!\left(\frac{n-b_0}{Q}\right)
+ \bigg|
+ \ll \|\rho\|_\infty\mathcal L^{-c}.
+\label{eq:periodic}
+\end{align}
+The same exceptional set works for every allowed \(Q,R,b_0,\rho\).
+\end{theorem}
+
+\begin{proof}
+Apply \cref{lem:partition}.  Each inner sum is on one residue modulo
+\(QR\).  Choose its canonical representative in
+\(\{0,\ldots,QR-1\}\); this remains inside the source height
+envelope because \(QR\le\mathcal L^c\).  Equation
+\eqref{eq:source}, with \(W=QR\), bounds its
+absolute value by
+\[
+ \frac{N}{QR}\mathcal L^{-c}.
+\]
+There are \(R\) classes, and every coefficient has modulus at most
+\(\|\rho\|_\infty\).  Thus the unnormalized total is at most
+\[
+ R\|\rho\|_\infty\frac{N}{QR}\mathcal L^{-c}
+ =
+ \|\rho\|_\infty\frac NQ\mathcal L^{-c}.
+\]
+Multiplication by \(Q/N\) proves \eqref{eq:periodic}.  Uniformity of
+the source set in \(W,b,h_1,h_2\) shows that no union of \(R\)
+exceptional sets is required.
+\end{proof}
+
+\begin{corollary}[Products of periodic masks]
+\label{cor:masks}
+Any finite product of bounded periodic masks may be combined into
+one bounded periodic function whose period divides the least common
+multiple of their periods.  If the resulting \(QR\) satisfies
+\eqref{eq:height}, \cref{thm:periodic} charges its supremum norm but
+no separate residue-count exponent.
+\end{corollary}
+
+This applies, for example, to an exactly periodic coprimality mask or
+a fixed-period coefficient.  A rational additive phase is included
+only when its exact denominator is absorbed in \(R\).  No conclusion
+is made for a generic real phase.
+
+\section{What is and is not an \texorpdfstring{\(\ell^1\)}{l1} cost}
+
+The cancellation in \cref{thm:periodic} is a normalization fact:
+\begin{equation}
+ R\times\frac{N}{QR}=\frac NQ.
+\label{eq:density-cancel}
+\end{equation}
+It does not say that every finite decomposition has no cost.  If
+several distinct outer records carry coefficients \(\gamma_\xi\),
+then a triangle-inequality return still involves the actual ratio
+\[
+ \frac{
+ \sum_\xi|\gamma_\xi|(N_\xi/Q_\xi)
+ }{\text{declared physical comparison mass}}.
+\]
+That ratio must be measured on the literal archive.  Likewise,
+splitting a nonperiodic multiplier into unrelated pieces does not
+satisfy \eqref{eq:density-cancel}.
+
+\begin{proposition}[No prefix promotion]
+\label{prop:no-prefix}
+Equations \eqref{eq:exception}--\eqref{eq:periodic} do not imply a
+bound for a prescribed deterministic scale, an arbitrary interval
+\((A,B]\), or the maximum over all initial prefixes of such an
+interval.
+\end{proposition}
+
+\begin{proof}
+The source conclusion is asserted only for
+\(N\in[\sqrt X,X]\setminus\mathcal E_X\) and for the interval
+\((N,2N]\).  A prescribed scale may lie in \(\mathcal E_X\), while an
+arbitrary interval or prefix is not among the theorem's quantified
+objects.  None is created by the exact residue identity.
+\end{proof}
+
+\section{Certificate and claim boundary}
+
+The deterministic certificate checks the row-separated partition,
+the native \(W/N\) normalization and the exact mass identity
+\eqref{eq:density-cancel}.  It also rejects mutations that replace
+the local exceptional set by the global Liouville set, move \(QR\)
+outside the source envelope, or attach unsupported weights and
+prefixes.  These are finite consistency checks, not numerical
+evidence for \eqref{eq:source}.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.48\textwidth}Y@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+Periodic residue partition & Exact \(\Lzero\), \(\PROVED\).\\
+No \(R\)-census loss under \(QR\le\mathcal L^c\) &
+Sourced good-scale \(\Lone\), \(\PROVED\).\\
+One exceptional set for all residues and periods &
+\(\PROVED\) for fixed \(g_1,g_2,X,\mathcal L\).\\
+Nonperiodic physical multiplier or generic phase &
+\(\OPEN\); not in the theorem.\\
+Arbitrary origin or all-prefix maximum &
+\(\OPEN\); no implication.\\
+Positive \(\Ltwo\), fixed \(X\)-power or \(1/400\) &
+Not proved.\\
+Prime-pair or twin-prime theorem & Not proved.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+TPC-147 therefore removes one false reassembly loss while preserving
+all source quantifiers.  The next paper constructs multiplicative
+functions whose values on a determinant-two progression are the
+literal M\"obius quotients.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

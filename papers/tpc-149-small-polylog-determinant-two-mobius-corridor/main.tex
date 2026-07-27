@@ -1,0 +1,380 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={A Small-Polylogarithmic Determinant-Two Mobius Corridor},
+  pdfauthor={Liang Wang},
+  pdfsubject={Uniform actual-core cancellation with bounded periodic data},
+  pdfkeywords={Mobius correlation, determinant two, exceptional scales, periodic weights}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcommand{\e}{\mathrm e}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{A Small-Polylogarithmic Determinant-Two}\\
+\textbf{M\"obius Corridor: Uniform Actual-Core}\\
+\textbf{Cancellation with Bounded Periodic Data}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We combine the general quantitative correlation theorem of Tao and
+Ter\"av\"ainen with two exact interfaces.  TPC-148 constructs
+multiplicative quotient lifts \(G_c\) satisfying
+\(G_c(cm)=\mu(m)\), and TPC-147 reassembles a bounded periodic
+multiplier without paying its number of residue classes.  The result
+is a uniform theorem on the literal determinant-two M\"obius
+periodic core.
+
+There are absolute constants \(\eta_0,\kappa_0>0\) such that, for
+each sufficiently large ambient \(X\), outside a subset of
+\([\sqrt X,X]\) of normalized
+logarithmic measure \(O((\log X)^{-\kappa_0})\), one has
+\[
+ \frac{as}{N}
+ \left|
+ \sum_{N<ad+asz\le2N}
+ \mu(d+sz)\mu(u+az)\rho(z)
+ \right|
+ \ll\|\rho\|_\infty(\log X)^{-\kappa_0}
+\]
+uniformly for coprime odd \(a,s\), determinant \(su-ad=2\), and
+bounded periodic \(\rho\) of period \(R\), provided
+\(asR\le(\log X)^{\eta_0}\).  The exceptional union is taken only
+over the distinct pairs \((a,s)\); the source theorem is already
+uniform in residues and allowed moduli.
+
+This is a proved \(\Lone\) actual-core theorem.  The current frontier
+archive has not supplied its occurrence lift, and the theorem does
+not include a nonperiodic physical multiplier, a generic phase,
+arbitrary intervals, all prefixes or a four-point kernel.  Hence it
+is not positive \(\Ltwo\), has zero fixed-\(X\)-power exponent and
+does not approach a prime-pair conclusion by itself.
+\end{abstract}
+
+\section{Inputs and notation}
+
+Let
+\begin{equation}
+ D(z)=d+sz,\qquad V(z)=u+az,\qquad su-ad=2,
+\label{eq:fiber}
+\end{equation}
+where \(a,s\) are positive, coprime and odd.  These are the literal
+determinant-two forms from the fixed-shift carrier
+\citep{WangTPC127}.  Define
+\begin{equation}
+ Q_{\rm fib}=as,\qquad t(z)=aD(z)=ad+Q_{\rm fib}z.
+\label{eq:t}
+\end{equation}
+Then \(t(z)+2=sV(z)\).
+
+TPC-148 constructs one-bounded multiplicative functions \(G_c\)
+satisfying
+\begin{equation}
+ G_c(cm)=\mu(m)
+\label{eq:quotient}
+\end{equation}
+and proves, uniformly for small-polylogarithmic \(c\),
+\begin{equation}
+ \exp M(G_c;X^2,\log^{1/125}X)
+ \gg(\log X)^\alpha
+\label{eq:nonpret}
+\end{equation}
+for some absolute \(\alpha>0\)
+\citep{WangTPC148,MatomakiRadziwillTao2015}.  Consequently
+\begin{equation}
+ \mu(D(z))\mu(V(z))=G_a(t(z))G_s(t(z)+2).
+\label{eq:core}
+\end{equation}
+
+TPC-147 shows that a bounded period-\(R\) multiplier on the
+\(Q_{\rm fib}\)-progression may be resolved modulo
+\(Q_{\rm fib}R\) without an \(R\)-census loss, provided this total
+modulus lies in the quantitative source envelope
+\citep{WangTPC147}.
+
+\section{An individual-pair corridor}
+
+We first retain one fixed pair \((a,s)\) while allowing all
+intercepts, periods and periodic values.
+
+\begin{proposition}[One quotient-pair exceptional set]
+\label{prop:pair}
+There is an absolute \(\beta>0\) such that the following holds for
+all sufficiently large \(X\).  For every coprime odd pair \((a,s)\)
+with
+\[
+ as\le(\log X)^\beta,
+\]
+there is a set
+\(\mathcal E_{a,s;X}\subset[\sqrt X,X]\) satisfying
+\begin{equation}
+ \frac1{\log X}\int_{\mathcal E_{a,s;X}}\frac{dt}{t}
+ \ll(\log X)^{-\beta}.
+\label{eq:pair-exception}
+\end{equation}
+If
+\[
+ N\in[\sqrt X,X]\setminus\mathcal E_{a,s;X},
+ \qquad asR\le(\log X)^\beta,
+\]
+then, uniformly in all integral \(d,u\) obeying \eqref{eq:fiber}
+and all period-\(R\) functions \(\rho\),
+\begin{equation}
+ \frac{as}{N}
+ \left|
+ \sum_{\substack{z\in\mathbb Z\\N<ad+asz\le2N}}
+ \mu(D(z))\mu(V(z))\rho(z)
+ \right|
+ \ll\|\rho\|_\infty(\log X)^{-\beta}.
+\label{eq:pair-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Use \eqref{eq:nonpret} with
+\(\mathcal L=(\log X)^\alpha\), decreasing \(\alpha\) if needed.
+The nonpretentious branch of
+\citet[Theorem~3.1]{TaoTeravainen2026} then gives an absolute source
+exponent \(c>0\), an exceptional set of normalized measure
+\(\ll\mathcal L^{-c}\), and a correlation estimate with the same
+saving for all moduli \(W\le\mathcal L^c\).  Put
+\(\beta=\alpha c\), decreasing it harmlessly to absorb source
+constants.
+
+Invoke the source with
+\[
+ g_1=G_a,\quad g_2=G_s,\quad h_1=0,\quad h_2=2.
+\]
+On \(t\equiv ad\pmod{as}\), equation \eqref{eq:core} is exact.
+TPC-147 reassembles \(\rho\) by using the refined modulus
+\(W=asR\); the period count cancels against the density of each
+refined progression.  The source exceptional set is uniform in
+\(W\), its residue and the two shifts, so it is independent of
+\(d,u,R,\rho\).  This proves \eqref{eq:pair-bound}.
+\end{proof}
+
+\begin{remark}[Why the intercepts have no source-height cost]
+The source variable is \(t\), and \(ad\) enters only through its
+representative modulo \(asR\).  Theorem~3.1 is uniform in that
+residue.  This differs from calling the affine Liouville special
+case, where all four affine coefficients and constants must lie in
+the small-polylogarithmic envelope.
+\end{remark}
+
+\section{One set for all small pairs}
+
+The set in \cref{prop:pair} may depend on \((a,s)\).  We now pay this
+dependence exactly once.
+
+\begin{lemma}[Unique quotient-pair census]
+\label{lem:pairs}
+For \(Q\ge2\),
+\begin{equation}
+ \#\{(a,s)\in\mathbb N^2:as\le Q\}
+ =
+ \sum_{a\le Q}\left\lfloor\frac Qa\right\rfloor
+ \le Q(1+\log Q).
+\label{eq:pairs}
+\end{equation}
+The same bound holds after imposing coprimality and oddness.
+\end{lemma}
+
+\begin{proof}
+Drop the restrictions and use
+\(\sum_{a\le Q}a^{-1}\le1+\log Q\).
+\end{proof}
+
+\begin{theorem}[Uniform determinant-two M\"obius-periodic corridor]
+\label{thm:main}
+There are absolute constants \(\eta_0,\kappa_0>0\) such that for
+every sufficiently large \(X\) there is a set
+\(\mathcal E_X^\star\subset[\sqrt X,X]\) with
+\begin{equation}
+ \boxed{
+ \frac1{\log X}\int_{\mathcal E_X^\star}\frac{dt}{t}
+ \ll(\log X)^{-\kappa_0}}
+\label{eq:main-exception}
+\end{equation}
+for which the following is true.  Uniformly over all data satisfying
+\begin{align}
+ &a,s,R\in\mathbb N,\qquad d,u\in\mathbb Z,\qquad
+ (a,s)=1,\qquad as\ {\rm odd},\qquad su-ad=2,\notag\\
+ &asR\le(\log X)^{\eta_0},\qquad
+ N\in[\sqrt X,X]\setminus\mathcal E_X^\star,
+\label{eq:envelope}
+\end{align}
+and all \(\rho:\mathbb Z/R\mathbb Z\to\mathbb C\),
+\begin{equation}
+ \boxed{
+ \frac{as}{N}
+ \left|
+ \sum_{\substack{z\in\mathbb Z\\N<ad+asz\le2N}}
+ \mu(d+sz)\mu(u+az)\rho(z)
+ \right|
+ \ll
+ \|\rho\|_\infty(\log X)^{-\kappa_0}.}
+\label{eq:main}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let \(\beta\) be as in \cref{prop:pair}, and choose
+\[
+ 0<\eta_0<\beta/4.
+\]
+Take the union of \(\mathcal E_{a,s;X}\) over all ordered pairs with
+\(as\le(\log X)^{\eta_0}\).  By
+\cref{lem:pairs,eq:pair-exception}, its normalized logarithmic
+measure is
+\[
+ \ll
+ (\log X)^{\eta_0+o(1)}(\log X)^{-\beta}
+ =
+ (\log X)^{-(\beta-\eta_0)+o(1)}.
+\]
+Choose, for example, \(\kappa_0=\beta/2\), after increasing the
+lower threshold for \(X\).  Outside this union, the estimate
+\eqref{eq:pair-bound} holds for every pair.  Its
+\((\log X)^{-\beta}\) right side is stronger than
+\((\log X)^{-\kappa_0}\).
+
+No union over \(d,u,R\), residue classes or values of \(\rho\) is
+made: for fixed \(G_a,G_s\), the source exceptional set is already
+uniform in every allowed modulus and residue, and TPC-147 uses this
+same set for the full periodic reassembly.
+\end{proof}
+
+\section{Squarefree and periodic reassembly audit}
+
+\begin{proposition}[Where the previous CRT costs went]
+\label{prop:costs}
+Within \cref{thm:main}:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the two full M\"obius factors are represented exactly by
+  \(G_a,G_s\), so there is no squarefree cutoff and no squarefree
+  tail;
+\item the \(R\) periodic residue classes have total native mass
+  \(R\cdot N/(asR)=N/(as)\), so there is no \(R\)-census exponent;
+\item the exceptional-set union is charged only to distinct
+  multiplicative-function pairs \((G_a,G_s)\), equivalently to
+  distinct \((a,s)\) in the declared range.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Part (i) is \eqref{eq:core}, part (ii) is the TPC-147 periodic
+reassembly identity, and part (iii) is the construction of
+\(\mathcal E_X^\star\) in \cref{thm:main}.
+\end{proof}
+
+Products of literal bounded periodic factors may be absorbed in
+\(\rho\) if their exact combined period keeps \(asR\) inside
+\eqref{eq:envelope}.  This can include a proved periodic coprimality
+mask, a fixed-period factor, or a rational phase whose exact
+denominator is small enough.  It does not include a generic real
+phase or a nonperiodic physical multiplier.
+
+\section{Actual-core scope versus the actual archive}
+
+The adjective ``actual-core'' means that the two M\"obius forms and
+the determinant \(2\) are literal; it does not assert that every
+frontier path has been lifted to such a record.  The current
+TPC-143--146 interface leaves the occurrence-level fields
+\[
+ (a,s,d,u),\quad as,\quad\text{residue},\quad\text{ordered interval},
+ \quad R,\quad\text{masks and coefficient mass}
+\]
+as \texttt{REQUIRED\_MISSING}.  Therefore the present frontier
+consumption remains
+\[
+ \boxed{\mathsf{H1.frontier\_occurrence\_lift}=\NT.}
+\]
+The machine certificate accepts these missing obligations; it does
+not manufacture numerical affine data from the finite cut sample.
+
+Even after an occurrence lift is supplied, \cref{thm:main} has the
+source interval
+\[
+ N<ad+asz\le2N
+\]
+at a nonexceptional scale.  A different interval must come with an
+exact source-interval decomposition and an exceptional-set return.
+All initial prefixes are not automatic.
+
+\section{Claim boundary}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.50\textwidth}Y@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+Exact quotient-M\"obius determinant-two core &
+\(\Lzero\), \(\PROVED\).\\
+Uniform small-polylog periodic core theorem
+\eqref{eq:main} &
+Actual-core \(\Lone\), \(\PROVED\).\\
+Full squarefree return in this two-point core &
+Exact; no truncation tail.\\
+Bounded periodic return inside \(asR\) envelope &
+\(\Lone\), \(\PROVED\), no \(R\) loss.\\
+Complete current frontier occurrence lift &
+\(\NT\); required fields are absent.\\
+Nonperiodic physical weight or generic phase &
+\(\OPEN\).\\
+All prefixes or four-point Fej\'er input &
+\(\OPEN\).\\
+Positive \(\Ltwo\), fixed \(X\)-power, \(1/400\) &
+Not proved.\\
+Prime-pair or twin-prime theorem & Not proved.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The theorem is forward arithmetic progress: it replaces a
+squarefree-CRT shadow by a complete M\"obius core on the correct
+fixed-two geometry.  Its next legal consumer must solve the local
+exceptional-window and deterministic-prefix return without
+promoting logarithmic cancellation to an \(X\)-power.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

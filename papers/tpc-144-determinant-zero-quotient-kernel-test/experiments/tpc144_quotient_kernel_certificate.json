@@ -1,0 +1,74 @@
+{
+  "actual_manifest_sha256": "217d4f34a8f0a64996eeffdcc0d71a48a5f3d141362a6070379a23846471b635",
+  "actual_status": {
+    "H1.frontier_QD_QZ_intertwining": "NOT_TESTABLE",
+    "H1.frontier_QD_totality": "NOT_TESTABLE",
+    "H1.frontier_QZ_totality": "NOT_TESTABLE"
+  },
+  "claim_boundary": {
+    "endpoint_1_over_400": false,
+    "frontier_scalar_oX": false,
+    "new_positive_fixed_h0_L2": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "mutation_regression": {
+    "deleted_QD_field_rejected": true,
+    "fabricated_QD_rejected": true,
+    "fabricated_QZ_edge_rejected": true,
+    "frontier_only_domain_rejected": true,
+    "kernel_promotion_rejected": true,
+    "literal_relabeling_promotion_rejected": true,
+    "promoted_QZ_source_rejected": true,
+    "scalar_intertwining_promotion_rejected": true
+  },
+  "schema": "tpc144-quotient-kernel-certificate-v1",
+  "scoped_stop": {
+    "occurrence_augmented_route_stopped": false,
+    "route": "schema_or_scalar_only_QD_QZ_derivation",
+    "status": "STOP_DECLARED_ROUTE"
+  },
+  "source": {
+    "hash_is_integrity_only": true,
+    "tpc143_certificate_sha256": "e398b38b39e8a094123d2830a42ea4806d820655f55a5425f10d985a0783a724"
+  },
+  "status": "PASS",
+  "synthetic_regression": {
+    "different_kernel_case_rejected": true,
+    "equal_kernel_relabel_case": true,
+    "qd_rref": [
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "qz_bad_rref": [
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "same_kernel_does_not_imply_literal_row_relabeling": true,
+    "same_scalar_does_not_imply_same_kernel": true,
+    "same_scalar_value": 4,
+    "scope": "SYNTHETIC_L0_ONLY",
+    "surjectivity_precondition_checked": true
+  },
+  "theorem": {
+    "full_kernel_criterion_requires_surjective_quotients": true,
+    "literal_relabeling_iff_allowed_weighted_row_permutation": "PROVED_L0",
+    "restricted_range_required_when_occurrence_map_not_surjective": true,
+    "surjective_quotient_isomorphism_iff_equal_kernels": "PROVED_L0"
+  }
+}

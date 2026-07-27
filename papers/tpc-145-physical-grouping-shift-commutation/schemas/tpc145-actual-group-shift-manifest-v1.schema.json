@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc145-actual-group-shift-manifest-v1.schema.json",
+  "title": "TPC-145 actual physical grouping and shift manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "required_domain",
+    "cut_selector",
+    "physical_grouping_G",
+    "downstream_selector",
+    "commuting_square",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc145-actual-group-shift-manifest-v1"
+    },
+    "required_domain": {
+      "const": "ALL_NONSOFT_CUT_PATHS"
+    },
+    "cut_selector": {
+      "type": "object",
+      "required": [
+        "map_id",
+        "h0",
+        "status",
+        "operator",
+        "is_downstream_selector"
+      ],
+      "properties": {
+        "map_id": {
+          "const": "P_h0_cut"
+        },
+        "h0": {
+          "const": 2
+        },
+        "status": {
+          "const": "PROVED_L1"
+        },
+        "operator": {
+          "const": "IDENTITY"
+        },
+        "is_downstream_selector": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "physical_grouping_G": {
+      "type": "object",
+      "required": [
+        "status",
+        "source_status",
+        "actual_occurrence_edges",
+        "required_fields"
+      ],
+      "properties": {
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "source_status": {
+          "const": "NOT_TESTABLE"
+        },
+        "actual_occurrence_edges": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "required_fields": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "physical_occurrence_id",
+              "physical_group_id",
+              "exact_reconstruction_multiplier",
+              "physical_and_computational_multiplicity",
+              "inverse_aggregation",
+              "cover_class",
+              "reconnection_destination",
+              "source_and_target_shift_tags",
+              "physical_normalization"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "downstream_selector": {
+      "type": "object",
+      "required": [
+        "map_id",
+        "status",
+        "source_status",
+        "actual_stage_edges",
+        "required_fields"
+      ],
+      "properties": {
+        "map_id": {
+          "const": "P_h0_downstream"
+        },
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "source_status": {
+          "const": "NOT_TESTABLE"
+        },
+        "actual_stage_edges": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "required_fields": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "stage_id",
+              "source_shift_tag",
+              "target_shift_tag",
+              "source_selector_domain",
+              "target_selector_domain",
+              "stage_matrix_edge",
+              "shift_preservation_source"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "commuting_square": {
+      "type": "object",
+      "required": [
+        "aggregate_status",
+        "row_separated_status",
+        "required_identity",
+        "provenance_certificate"
+      ],
+      "properties": {
+        "aggregate_status": {
+          "const": "NOT_TESTABLE"
+        },
+        "row_separated_status": {
+          "const": "NOT_TESTABLE"
+        },
+        "required_identity": {
+          "const": "P_phys_G_EQUALS_G_P_source"
+        },
+        "provenance_certificate": {
+          "const": "ROW_SEPARATED_EDGEWISE_SHIFT_PRESERVATION"
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "cut_selector_is_downstream_selector",
+        "aggregate_cancellation_is_pathwise_provenance",
+        "new_positive_fixed_h0_L2",
+        "physical_cover",
+        "prime_pair_or_twin_prime_theorem"
+      ],
+      "properties": {
+        "cut_selector_is_downstream_selector": {
+          "const": false
+        },
+        "aggregate_cancellation_is_pathwise_provenance": {
+          "const": false
+        },
+        "new_positive_fixed_h0_L2": {
+          "const": false
+        },
+        "physical_cover": {
+          "const": false
+        },
+        "prime_pair_or_twin_prime_theorem": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

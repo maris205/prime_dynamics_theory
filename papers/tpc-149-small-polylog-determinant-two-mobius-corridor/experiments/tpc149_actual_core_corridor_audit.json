@@ -1,0 +1,153 @@
+{
+  "checks": {
+    "all_mutations_rejected": true,
+    "eligible_core_record_validated": true,
+    "frontier_missing_fields_not_invented": true,
+    "literal_mobius_core_exact": true,
+    "periodic_classes_exact": true,
+    "source_native_interval_preserved": true,
+    "unique_pair_union_only": true
+  },
+  "claim_boundary": {
+    "actual_mobius_periodic_core": true,
+    "all_prefix": false,
+    "arbitrary_interval_origin": false,
+    "arbitrary_physical_weight": false,
+    "complete_actual_frontier_archive": false,
+    "four_point": false,
+    "generic_additive_phase": false,
+    "one_over_400": false,
+    "positive_L2": false,
+    "positive_X_power": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "finite_regression": {
+    "literal_core_cases": 300,
+    "refined_residue_classes": 9
+  },
+  "frontier_interface": {
+    "current_frontier_consumption": "NOT_TESTABLE",
+    "first_missing": "H1.frontier_occurrence_lift",
+    "occurrence_lift_status": "REQUIRED_MISSING",
+    "required_fields": [
+      "affine_pair.D.intercept",
+      "affine_pair.D.slope",
+      "affine_pair.V.intercept",
+      "affine_pair.V.slope",
+      "affine_pair.determinant_h0",
+      "a_times_s",
+      "residue_class",
+      "ordered_interval",
+      "periodic_weight",
+      "coprimality_mask",
+      "squarefree_mask",
+      "content_mask",
+      "prefix_mask",
+      "coefficient_l1_mass",
+      "prefix_id",
+      "window_id",
+      "endpoint_ledger_token"
+    ],
+    "upstream_directory": "tpc-146-frontier-four-map-completion-certificate",
+    "upstream_directory_detected": true
+  },
+  "mutation_regression": {
+    "affine_intercepts_charged_as_source_height_rejected": true,
+    "all_prefix_promoted_rejected": true,
+    "arbitrary_interval_accepted_rejected": true,
+    "generic_phase_accepted_rejected": true,
+    "log_saving_promoted_to_X_power_rejected": true,
+    "missing_occurrence_fields_invented_rejected": true,
+    "nonperiodic_weight_accepted_rejected": true,
+    "nonpositive_slope_rejected": true,
+    "positive_L2_promoted_rejected": true,
+    "union_over_period_values_rejected": true,
+    "union_over_residues_rejected": true,
+    "wrong_determinant_rejected": true,
+    "wrong_residue_rejected": true
+  },
+  "pair_count_samples": {
+    "16": {
+      "analytic_upper": "Q*(1+log Q)",
+      "count_le_exact_Q_times_H_Q": true,
+      "exact_Q_times_H_Q_upper": {
+        "denominator": 45045,
+        "numerator": 2436559
+      },
+      "ordered_pair_count": 50
+    },
+    "32": {
+      "analytic_upper": "Q*(1+log Q)",
+      "count_le_exact_Q_times_H_Q": true,
+      "exact_Q_times_H_Q_upper": {
+        "denominator": 4512611027925,
+        "numerator": 586061125622639
+      },
+      "ordered_pair_count": 119
+    },
+    "64": {
+      "analytic_upper": "Q*(1+log Q)",
+      "count_le_exact_Q_times_H_Q": true,
+      "exact_Q_times_H_Q_upper": {
+        "denominator": 2052546673789621992207225,
+        "numerator": 623171679694215690971693339
+      },
+      "ordered_pair_count": 280
+    },
+    "8": {
+      "analytic_upper": "Q*(1+log Q)",
+      "count_le_exact_Q_times_H_Q": true,
+      "exact_Q_times_H_Q_upper": {
+        "denominator": 35,
+        "numerator": 761
+      },
+      "ordered_pair_count": 20
+    }
+  },
+  "schema": "tpc-149-actual-core-corridor-audit-v1",
+  "status": "PASS",
+  "theorem": {
+    "correlation_rate": "(log X)^(-kappa_0)",
+    "data_envelope": "a*s*R <= (log X)^eta_0",
+    "exception_rate": "(log X)^(-kappa_0)",
+    "exception_union_key": "unique ordered pair (a,s)",
+    "full_H3_scope_match": false,
+    "no_union_over": [
+      "d",
+      "u",
+      "residue",
+      "R",
+      "rho values"
+    ],
+    "node_id": "A149.actual_mobius_periodic_corridor",
+    "normalization": "a*s/N",
+    "pair_count_bound": "sum_{a<=Q} floor(Q/a) <= Q(1+log Q)",
+    "periodic_residue_census_loss": "ZERO",
+    "program_level": "L1_ACTUAL_CORE",
+    "promotion_eligible": false,
+    "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+    "source_interval": "N < a*d+a*s*z <= 2N",
+    "squarefree_tail": "NONE_QUOTIENT_LIFT_IS_EXACT",
+    "status": "PROVED"
+  },
+  "upstream_source_lock": {
+    "TPC-147": {
+      "directory": "tpc-147-tt-periodic-residue-reassembly",
+      "files": {
+        "experiments/tpc147_periodic_reassembly_audit.json": "a5bd1e2fba8ec41f8fc54bd81fec498cd856cb3893ef9335ce41c54374c48370",
+        "experiments/tpc147_periodic_reassembly_audit.py": "e56009cd1230607ca3186672bd8e761e615c5f57c53ef3ff5df5c31ea50c3507",
+        "main.tex": "30214b03d162e1398648cd129e14de016dbf78c52f33a486e1ff826415175d98"
+      },
+      "hash_semantics": "INTEGRITY_ONLY"
+    },
+    "TPC-148": {
+      "directory": "tpc-148-quotient-mobius-fiber-lift",
+      "files": {
+        "experiments/tpc148_quotient_lift_audit.json": "da4073fe9d6d10d4c58c9aed6140e65940632949fe2a419b9b0ca51a5a6554d3",
+        "experiments/tpc148_quotient_lift_audit.py": "b9c01a97f75b690a72ab473ad79331219b48690620d2d49bd0923d841e2a8d7d",
+        "main.tex": "b9d4902268dc8a9636669b28930e8cb6f9cb3c68cff3aaef764283a0852fb040"
+      },
+      "hash_semantics": "INTEGRITY_ONLY"
+    }
+  }
+}

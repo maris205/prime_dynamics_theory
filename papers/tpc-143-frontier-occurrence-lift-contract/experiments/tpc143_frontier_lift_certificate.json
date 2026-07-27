@@ -1,0 +1,104 @@
+{
+  "census": {
+    "cut_path_count": 2988,
+    "empty_ETO_is_asymptotic_totality": false,
+    "finite_sample_empty_ETO": true,
+    "nonsoft_path_count": 2988,
+    "obligation_count": 2988,
+    "obligations_sha256": "30d90f00413af7890689644fbc6bfc10bdf8df61afa0ba1cca8d3a5c1f252057",
+    "terminal_type_counts": {
+      "ELIGIBLE_TAIL_OPEN": 0,
+      "FRONTIER_UNMAPPED": 2988
+    }
+  },
+  "claim_boundary": {
+    "actual_arithmetic_coefficient_nonzero": false,
+    "endpoint_1_over_400": false,
+    "frontier_scalar_oX": false,
+    "new_positive_fixed_h0_L2": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "current_actual_status": {
+    "H1.frontier_G_totality": "NOT_TESTABLE",
+    "H1.frontier_Ph0_downstream_totality": "NOT_TESTABLE",
+    "H1.frontier_QD_totality": "NOT_TESTABLE",
+    "H1.frontier_QZ_totality": "NOT_TESTABLE",
+    "H1.frontier_occurrence_lift": "NOT_TESTABLE"
+  },
+  "first_missing": {
+    "artifact": "conservative row-separated one-to-many cut-to-occurrence matrix with complete lineage",
+    "node_id": "H1.frontier_occurrence_lift"
+  },
+  "mutation_regression": {
+    "cut_selector_promotion_rejected": true,
+    "deleted_path_rejected": true,
+    "downstream_group_promotion_rejected": true,
+    "duplicate_path_rejected": true,
+    "fabricated_occurrence_edge_rejected": true,
+    "false_L2_claim_rejected": true,
+    "false_nonzero_support_rejected": true,
+    "frontier_only_domain_rejected": true,
+    "source_terminal_relabel_rejected": true
+  },
+  "proved": {
+    "P_h0_cut_identity": "PROVED_L1",
+    "P_h0_cut_is_not_downstream_selector": true,
+    "exact_scope_native_tuple_join": true,
+    "field_descent_criterion": "PROVED_L0",
+    "one_obligation_per_nonsoft_path": true,
+    "required_domain_all_nonsoft_ETO_plus_FUM": true
+  },
+  "schema": "tpc143-frontier-lift-certificate-v1",
+  "scope": "all nonsoft cut paths; formal support envelope, not minimal nonzero support",
+  "scoped_stop": {
+    "route": "current_schema_only_downstream_label_derivation",
+    "selected_augmented_route_stopped": false,
+    "status": "STOP_DECLARED_ROUTE"
+  },
+  "source": {
+    "canonical_locks": {
+      "tpc133_atoms_sha256": "a1956cf182ad219da10d850de7c7e57de69b8c287fb698e44faa5c795c3840a8",
+      "tpc133_certificate_sha256": "e60042995fe25aeb3b6f98df78e89d08bfda4e48231d8f58b6c6aa66516887f3",
+      "tpc134_certificate_sha256": "204923a5ef6a0070ad4df99e7d60b1bacba4b4e1a2a9d219595577d198f8ac74",
+      "tpc134_paths_sha256": "efcacc90e7662fdb41c2e3f86fb37d3bd81b64a107c36dfbbb15bb48bde61712",
+      "tpc135_certificate_sha256": "c9e91c7cb69120e4f74554262356b8112061bd9cc9c13d5ce1c7232a54165e0a",
+      "tpc135_manifest_sha256": "6655a4c40a57f0a45022ab527b32560a5b2ac3e932368709502cfded43a3fb47",
+      "tpc136_certificate_sha256": "93459f8af37e6e379591ace899ecda9e627b3fe5596ddcb3cab4d7f9f5f5b8f0",
+      "tpc136_cut_paths_sha256": "a4be1c1b41221b585e3abbf67294b0f784d556cd0209e6ce87ccb905af285f18",
+      "tpc136_downstream_maps_sha256": "810c313b8d451d2be0a0dda6f04527716db3f8debb9401ae5e3e67e832093471"
+    },
+    "hashes_are_integrity_only": true,
+    "legacy_raw_hash_bindings": {
+      "tpc134_to_tpc133_atoms": {
+        "canonical_utf8_lf_sha256": "a1956cf182ad219da10d850de7c7e57de69b8c287fb698e44faa5c795c3840a8",
+        "recorded_sha256": "736c18134359a080e3a753f59ca1613f344ac742a3a69f57f009f93c55550b98",
+        "status": "LEGACY_RAW_HASH_STALE"
+      },
+      "tpc135_to_tpc134_paths": {
+        "canonical_utf8_lf_sha256": "efcacc90e7662fdb41c2e3f86fb37d3bd81b64a107c36dfbbb15bb48bde61712",
+        "recorded_sha256": "e02afdbbc8f6f8d8f7783611719da0f7b64cfc6f54b3f60dadce65d55d0c01eb",
+        "status": "LEGACY_RAW_HASH_STALE"
+      },
+      "tpc136_to_tpc134_paths": {
+        "canonical_utf8_lf_sha256": "efcacc90e7662fdb41c2e3f86fb37d3bd81b64a107c36dfbbb15bb48bde61712",
+        "recorded_sha256": "e02afdbbc8f6f8d8f7783611719da0f7b64cfc6f54b3f60dadce65d55d0c01eb",
+        "status": "LEGACY_RAW_HASH_STALE"
+      },
+      "tpc136_to_tpc135_certificate": {
+        "canonical_utf8_lf_sha256": "9e3b96c6e12d64b0a8ba8bb46f33ec756a1911e05172678045c871ec287d705f",
+        "recorded_sha256": "fde7262011ea41bebd67e49f1c0f77807c8e732007d3e9d04308d9a1007f3540",
+        "status": "LEGACY_RAW_HASH_STALE"
+      },
+      "tpc136_to_tpc135_manifest": {
+        "canonical_utf8_lf_sha256": "6655a4c40a57f0a45022ab527b32560a5b2ac3e932368709502cfded43a3fb47",
+        "recorded_sha256": "33e93bbc3a279247c489854ce567043b81b372ae265940cff323f2c5d4df0503",
+        "status": "LEGACY_RAW_HASH_STALE"
+      }
+    },
+    "legacy_raw_hash_status": "LEGACY_RAW_HASH_STALE",
+    "lock_mode": "CANONICAL_UTF8_LF_V2",
+    "semantic_generation_chain": "PASS",
+    "source_chain_validation": "PASS"
+  },
+  "status": "PASS"
+}

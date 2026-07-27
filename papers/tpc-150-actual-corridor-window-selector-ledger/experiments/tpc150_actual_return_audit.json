@@ -1,0 +1,81 @@
+{
+  "checks": {
+    "all_mutations_rejected": true,
+    "atomic_nonimplication_exact": true,
+    "frontier_occurrence_status_preserved": true,
+    "log_and_power_ledgers_split": true,
+    "terminal_window_loss_explicit": true,
+    "unknown_costs_not_zero": true
+  },
+  "claim_boundary": {
+    "actual_frontier_return": false,
+    "all_prefix": false,
+    "four_point": false,
+    "generic_phase": false,
+    "nonperiodic_physical_weight": false,
+    "one_over_400": false,
+    "positive_L2": false,
+    "positive_X_power": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "log_ledger": {
+    "actual_current": null,
+    "actual_status": "NOT_TESTABLE",
+    "equality_stop": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "formula": "min(kappa_tail, min(kappa_corr,kappa_exc)-kappa_cen-kappa_sel-kappa_BV)",
+    "hypothetical_positive": {
+      "denominator": 600,
+      "numerator": 11
+    },
+    "tail_absent_for_exact_quotient_mobius_core": true
+  },
+  "manifest_sha256": "68c6b593c5d8b6c5de06bcc10bcc3696b86f5c5eaf7969f5b96a9edaf4348c82",
+  "mutation_regression": {
+    "atomic_selector_domination_accepted_rejected": true,
+    "global_exception_exponent_copied_to_short_window_rejected": true,
+    "ledger_equality_promoted_to_strict_pass_rejected": true,
+    "log_saving_promoted_to_positive_X_power_rejected": true,
+    "missing_occurrence_fields_invented_rejected": true,
+    "omega_below_one_rejected": true,
+    "omega_equal_one_rejected": true,
+    "periodic_residue_loss_double_charged_rejected": true,
+    "positive_L2_or_twin_prime_promotion_rejected": true,
+    "two_point_core_promoted_to_four_point_rejected": true,
+    "unknown_selector_cost_set_to_zero_rejected": true,
+    "window_containment_omitted_rejected": true,
+    "window_outside_shell_rejected": true
+  },
+  "power_ledger": {
+    "one_over_400": {
+      "denominator": 400,
+      "numerator": 1
+    },
+    "reason": "power-of-log cancellation has zero fixed-X-power exponent",
+    "sigma_power": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "strict_endpoint_pass": false
+  },
+  "schema": "tpc-150-actual-return-audit-v1",
+  "selector": {
+    "atomic_prefix_selector": "NO_FINITE_DOMINATION_CONSTANT",
+    "legal_returns": [
+      "POINTWISE_ALL_PREFIX",
+      "PROVED_EXCEPTION_AVOIDANCE",
+      "QUANTITATIVE_SMOOTHING_PLUS_SELECTOR_DOMINATION"
+    ]
+  },
+  "status": "PASS",
+  "terminal_window": {
+    "log_omega": "(log X)^(theta+o(1))",
+    "omega_domain": "1<omega<=sqrt(X)",
+    "positive_condition": "kappa_src+theta>1",
+    "source_local_density": "(log X)^(-kappa_src+o(1))",
+    "window": "[X/omega,X] subset [sqrt(X),X]",
+    "window_exception_exponent": "kappa_src+theta-1"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "claim_boundary": {
+    "current_schema_only_totalization": false,
+    "endpoint_1_over_400": false,
+    "formal_support_is_actual_nonzero_support": false,
+    "frontier_scalar_oX": false,
+    "new_positive_fixed_h0_L2": false,
+    "physical_cover": false,
+    "prime_pair_or_twin_prime_theorem": false,
+    "unknown_defect_is_zero": false
+  },
+  "current_verdict": "NOT_TESTABLE",
+  "first_missing": "H1.frontier_occurrence_lift",
+  "manifest_sha256": "c37febd03034991a4d7226d4d3488e07765999821bdb7093f78fa8292447f679",
+  "mutation_regression": {
+    "census_conservation_mutation_rejected": true,
+    "cut_selector_substitution_rejected": true,
+    "deleted_defect_component_rejected": true,
+    "empty_ETO_promotion_rejected": true,
+    "extra_defect_component_rejected": true,
+    "fabricated_ETO_source_rejected": true,
+    "fabricated_scalar_source_rejected": true,
+    "false_L2_claim_rejected": true,
+    "false_totalization_rejected": true,
+    "first_missing_drift_rejected": true,
+    "frontier_only_domain_rejected": true,
+    "required_component_deletion_rejected": true,
+    "scalar_requirement_drift_rejected": true,
+    "unknown_defect_zero_rejected": true
+  },
+  "open_routes": {
+    "frontier_scalar_plus_ETO_route": true,
+    "occurrence_augmented_map_route": true
+  },
+  "schema": "tpc146-frontier-completion-certificate-v1",
+  "scoped_stop": {
+    "route": "current_schema_only_totalization",
+    "status": "STOP_DECLARED_ROUTE"
+  },
+  "source_locks": {
+    "tpc136_cut_paths": {
+      "role": "INTEGRITY_ONLY",
+      "sha256": "a4be1c1b41221b585e3abbf67294b0f784d556cd0209e6ce87ccb905af285f18"
+    },
+    "tpc143_certificate": {
+      "role": "INTEGRITY_ONLY",
+      "sha256": "e398b38b39e8a094123d2830a42ea4806d820655f55a5425f10d985a0783a724"
+    },
+    "tpc143_obligations": {
+      "role": "INTEGRITY_ONLY",
+      "sha256": "30d90f00413af7890689644fbc6bfc10bdf8df61afa0ba1cca8d3a5c1f252057"
+    },
+    "tpc144_certificate": {
+      "role": "INTEGRITY_ONLY",
+      "sha256": "0b6f8170dca792ece5546d8743266458f55358cebe146ba6270d31c6a6e7351a"
+    },
+    "tpc144_manifest": {
+      "role": "INTEGRITY_ONLY",
+      "sha256": "217d4f34a8f0a64996eeffdcc0d71a48a5f3d141362a6070379a23846471b635"
+    },
+    "tpc145_certificate": {
+      "role": "INTEGRITY_ONLY",
+      "sha256": "d151b564203559780ecd472499aac040a4a3962911baaf7d2ec955414fdfb1c2"
+    },
+    "tpc145_manifest": {
+      "role": "INTEGRITY_ONLY",
+      "sha256": "f8dfa1b282f1f00984ad4ff841730ce1721fe715deeb9c1e50121f7b563316c6"
+    }
+  },
+  "status": "PASS",
+  "theorem": {
+    "all_nonsoft_is_ETO_plus_FUM": true,
+    "all_nonsoft_map_or_frontier_scalar_and_ETO_disjunction": "PROVED_L1_INTERFACE",
+    "unknown_is_not_zero": true,
+    "zero_defect_map_route_contract": "PROVED_L0"
+  }
+}

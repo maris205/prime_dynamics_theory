@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc149-actual-core-record-v1.schema.json",
+  "title": "TPC-149 actual-core corridor record",
+  "type": "object",
+  "required": [
+    "record_id",
+    "affine_pair",
+    "a_times_s",
+    "residue_class",
+    "ordered_interval",
+    "periodic_weight",
+    "occurrence_lift_status",
+    "corridor_status"
+  ],
+  "properties": {
+    "record_id": {"type": "string"},
+    "affine_pair": {
+      "type": "object",
+      "required": ["D", "V", "determinant_h0"],
+      "properties": {
+        "D": {
+          "type": "object",
+          "required": ["intercept", "slope"],
+          "properties": {
+            "intercept": {"type": ["integer", "string"]},
+            "slope": {"type": ["integer", "string"]}
+          },
+          "additionalProperties": false
+        },
+        "V": {
+          "type": "object",
+          "required": ["intercept", "slope"],
+          "properties": {
+            "intercept": {"type": ["integer", "string"]},
+            "slope": {"type": ["integer", "string"]}
+          },
+          "additionalProperties": false
+        },
+        "determinant_h0": {"type": ["integer", "string"]}
+      },
+      "additionalProperties": false
+    },
+    "a_times_s": {"type": ["integer", "string"]},
+    "residue_class": {
+      "type": "object",
+      "required": ["modulus", "residue"],
+      "properties": {
+        "modulus": {"type": ["integer", "string"]},
+        "residue": {"type": ["integer", "string"]}
+      },
+      "additionalProperties": false
+    },
+    "ordered_interval": {
+      "type": "object",
+      "required": ["type", "endpoint_convention"],
+      "properties": {
+        "type": {
+          "enum": [
+            "SOURCE_DYADIC_N_2N",
+            "ARBITRARY_INTERVAL",
+            "ARBITRARY_PREFIX"
+          ]
+        },
+        "endpoint_convention": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "periodic_weight": {
+      "type": "object",
+      "required": ["type", "period"],
+      "properties": {
+        "type": {
+          "enum": [
+            "BOUNDED_PERIODIC",
+            "NONPERIODIC_PHYSICAL",
+            "GENERIC_ADDITIVE_PHASE"
+          ]
+        },
+        "period": {"type": ["integer", "string"]}
+      },
+      "additionalProperties": false
+    },
+    "occurrence_lift_status": {
+      "enum": ["PROVED", "REQUIRED_MISSING", "NOT_TESTABLE"]
+    },
+    "corridor_status": {
+      "enum": ["ELIGIBLE", "INELIGIBLE", "NOT_TESTABLE"]
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "occurrence_lift_status": {
+            "enum": ["REQUIRED_MISSING", "NOT_TESTABLE"]
+          }
+        },
+        "required": ["occurrence_lift_status"]
+      },
+      "then": {
+        "properties": {"corridor_status": {"const": "NOT_TESTABLE"}}
+      }
+    },
+    {
+      "if": {
+        "properties": {"corridor_status": {"const": "ELIGIBLE"}},
+        "required": ["corridor_status"]
+      },
+      "then": {
+        "properties": {
+          "occurrence_lift_status": {"const": "PROVED"},
+          "affine_pair": {
+            "properties": {
+              "D": {
+                "properties": {
+                  "intercept": {"type": "integer"},
+                  "slope": {"type": "integer", "minimum": 1}
+                }
+              },
+              "V": {
+                "properties": {
+                  "intercept": {"type": "integer"},
+                  "slope": {"type": "integer", "minimum": 1}
+                }
+              },
+              "determinant_h0": {"const": 2}
+            }
+          },
+          "a_times_s": {"type": "integer", "minimum": 1},
+          "residue_class": {
+            "properties": {
+              "modulus": {"type": "integer", "minimum": 1},
+              "residue": {"type": "integer", "minimum": 0}
+            }
+          },
+          "ordered_interval": {
+            "properties": {
+              "type": {"const": "SOURCE_DYADIC_N_2N"},
+              "endpoint_convention": {"const": "OPEN_CLOSED"}
+            }
+          },
+          "periodic_weight": {
+            "properties": {
+              "type": {"const": "BOUNDED_PERIODIC"},
+              "period": {"type": "integer", "minimum": 1}
+            }
+          }
+        }
+      }
+    }
+  ]
+}

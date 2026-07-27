@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc151-integration-manifest-v1.schema.json",
+  "title": "TPC-151 source-locked frontier/quotient integration manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "snapshot",
+    "anchor_chain",
+    "source_bundles",
+    "source_contracts",
+    "scope_registry",
+    "carrier_registry",
+    "normalization_registry",
+    "exports",
+    "imports",
+    "nodes",
+    "proof_dag",
+    "route_universe",
+    "frontier_contract",
+    "arithmetic_corridor",
+    "occurrence_registry",
+    "endpoint_ledgers",
+    "gate_projection",
+    "first_missing",
+    "progress_classification",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-151-source-locked-frontier-quotient-integration-v1"
+    },
+    "snapshot": {
+      "type": "object",
+      "required": [
+        "date",
+        "source_range",
+        "hash_mode",
+        "source_hash_semantics",
+        "identity_rule",
+        "selected_route"
+      ],
+      "properties": {
+        "hash_mode": {"const": "CANONICAL_UTF8_LF_V2"},
+        "source_hash_semantics": {"const": "INTEGRITY_ONLY"}
+      }
+    },
+    "anchor_chain": {"type": "object"},
+    "source_bundles": {
+      "type": "object",
+      "minProperties": 8,
+      "maxProperties": 8
+    },
+    "source_contracts": {
+      "type": "object",
+      "minProperties": 8,
+      "maxProperties": 8
+    },
+    "scope_registry": {"type": "object"},
+    "carrier_registry": {"type": "object"},
+    "normalization_registry": {"type": "object"},
+    "exports": {"type": "array"},
+    "imports": {"type": "array"},
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "node_id",
+          "gate",
+          "status",
+          "program_level",
+          "role",
+          "structural",
+          "scope_match",
+          "parents",
+          "source_export",
+          "required_artifact"
+        ],
+        "properties": {
+          "required_artifact": {"type": "string"}
+        }
+      }
+    },
+    "proof_dag": {"type": "object"},
+    "route_universe": {"type": "object"},
+    "frontier_contract": {
+      "type": "object",
+      "required": [
+        "domain",
+        "totalization_logic",
+        "sample_counts",
+        "empty_sample_class_implies_asymptotic_empty",
+        "occurrence_lift",
+        "cut_selector",
+        "map_route",
+        "scalar_route",
+        "full_carrier_totalized"
+      ],
+      "properties": {
+        "domain": {
+          "const": "ALL_NONSOFT_CUT_PATHS_ETO_PLUS_FUM"
+        },
+        "totalization_logic": {
+          "const": "ALL_NONSOFT_MAP_ROUTE_OR_FRONTIER_SCALAR_AND_ETO_ROUTE"
+        },
+        "scalar_route": {
+          "type": "object",
+          "required": [
+            "frontier_required",
+            "eligible_tail_required",
+            "frontier_scalar_proved",
+            "eligible_tail_disposed",
+            "pass"
+          ]
+        }
+      }
+    },
+    "arithmetic_corridor": {"type": "object"},
+    "occurrence_registry": {"type": "object"},
+    "endpoint_ledgers": {"type": "object"},
+    "gate_projection": {
+      "type": "object",
+      "minProperties": 9,
+      "maxProperties": 9
+    },
+    "first_missing": {
+      "type": "object",
+      "required": [
+        "node_id",
+        "gate",
+        "status",
+        "program_level",
+        "required_artifact",
+        "minimal_missing_set",
+        "active_node_count",
+        "selection_rule"
+      ]
+    },
+    "progress_classification": {
+      "type": "object",
+      "required": [
+        "structural_achieved_level",
+        "actual_core_arithmetic_achieved_level",
+        "actual_fixed_power_target_level",
+        "actual_fixed_power_status",
+        "actual_fixed_power_achieved",
+        "new_structural_L1",
+        "new_actual_core_L1",
+        "new_positive_L2"
+      ],
+      "properties": {
+        "structural_achieved_level": {
+          "const": "L1_STRUCTURAL"
+        },
+        "actual_core_arithmetic_achieved_level": {
+          "const": "L1_ACTUAL_CORE"
+        },
+        "actual_fixed_power_target_level": {
+          "const": "L2_ACTUAL_POSITIVE"
+        },
+        "actual_fixed_power_status": {
+          "const": "NOT_PROVED"
+        },
+        "actual_fixed_power_achieved": {
+          "const": false
+        },
+        "new_structural_L1": {
+          "const": true
+        },
+        "new_actual_core_L1": {
+          "const": true
+        },
+        "new_positive_L2": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {"type": "object"}
+  },
+  "additionalProperties": false
+}

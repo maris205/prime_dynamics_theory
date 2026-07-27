@@ -1,0 +1,379 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={Determinant and Zero-Mode Quotients on a Frontier Lift},
+  pdfauthor={Liang Wang},
+  pdfsubject={Kernel equivalence and the missing canonical-parent bridge},
+  pdfkeywords={determinant fiber, zero mode, quotient kernel, occurrence archive, fixed shift}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\STOP}{\textnormal{\textsc{stop-declared-route}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\one}{\mathbf 1}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{Determinant and Zero-Mode Quotients}\\
+\textbf{on a Frontier Lift: Kernel Equivalence}\\
+\textbf{and the Missing Canonical-Parent Bridge}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The determinant fibers used by the TPC energy gate and the ordered
+outer fibers used by the signed zero-mode gate are two different
+quotients of a literal occurrence archive.  We give an exact
+simultaneous-lift criterion.  For finite surjective maps \(Q_D,Q_Z\)
+with a common domain, an isomorphism \(J\) satisfying
+\(JQ_D=Q_Z\) exists precisely when
+\(\ker Q_D=\ker Q_Z\).  If \(J\) must be a literal relabeling, equality
+of kernels is supplemented by equality of occurrence partitions and
+exact map multipliers.  Equality on one coefficient vector, or of
+one final scalar sum, does not imply this criterion.  Applying the
+test to the source-locked cut archive exposes the exact missing
+fields.  The determinant quotient needs the canonical parent,
+targets, content, normalized determinant and inverse aggregation;
+the zero quotient needs the outer affine key, canonical order,
+arithmetic sign, reconstruction weight and content allocation.
+Neither field family is connected to the cut paths by the absent
+occurrence lift.  Thus the abstract quotient test is proved at
+\(\mathrm{L0}\), whereas both literal totality statements and their
+intertwining remain \textsc{not-testable}.  No determinant-energy,
+zero-mode or fixed-shift arithmetic exponent is claimed.
+\end{abstract}
+
+\section{Two quotients, one literal domain}
+
+Let \(\mathcal O_X\) be a fully typed row-separated occurrence space
+on all nonsoft cut paths.  This includes both eligible-tail-open and
+frontier-unmapped records.  TPC-143 identifies the still missing
+conservative lift from the cut archive to \(\mathcal O_X\)
+\citep{WangTPC136,WangTPC143}.
+
+The determinant construction of TPC-95 and TPC-110 first
+inverse-aggregates computational children to canonical mathematical
+parents \(t=(\alpha,\gamma,j)\).  A parent has ordered slopes
+\(m_\alpha,m_\gamma\), targets
+\[
+ x_t=m_\alpha j+h_0,\qquad y_t=m_\gamma j+h_0,
+\]
+content \(c_t=(x_t,y_t)\), and the literal determinant label
+\begin{equation}
+ \nu_D(t)=\frac{m_\alpha-m_\gamma}{c_t}\in\mathbb Z\setminus\{0\}.
+ \label{eq:detlabel}
+\end{equation}
+We write \(\nu_D\) rather than \(\nu\) to prevent collision with the
+physical normalization identifier \(\nu_{\rm phys}\).
+
+The zero-mode construction of TPC-111 and TPC-122 instead uses outer
+affine keys \(\theta\), canonically ordered coordinates
+\[
+ r_{\theta,1}<\cdots<r_{\theta,m_\theta},
+\]
+literal signs \(\sigma_{\theta,i}\), outer weights
+\(w_{\theta,i}\), and an exact retained/content allocation
+\citep{WangTPC111,WangTPC122}.  The order is part of the object:
+permuting a fiber can preserve its final scalar while changing every
+signed-prefix maximum.
+
+\begin{definition}[Literal quotient maps]
+Let \(H_X=\mathbb C^{\mathcal O_X}\).  A literal determinant quotient
+\[
+ Q_D:H_X\longrightarrow K_D
+\]
+is the exact inverse-aggregation and determinant-binning map on the
+canonical parents.  A literal zero-mode quotient
+\[
+ Q_Z:H_X\longrightarrow K_Z
+\]
+is the exact outer-record aggregation with its canonical order and
+factor allocation retained in the output records.
+\end{definition}
+
+The linear maps contain exact multipliers; a target label without its
+edge multiplier is not a quotient implementation.  A zero literal
+coefficient is not permission to omit its formal occurrence unless an
+exact aggregation theorem supplies that zero.
+
+\section{The quotient-kernel criterion}
+
+\begin{theorem}[Simultaneous quotient lift]
+\label{thm:kernel}
+Let \(H,K_D,K_Z\) be finite-dimensional vector spaces and let
+\[
+ Q_D:H\to K_D,\qquad Q_Z:H\to K_Z
+\]
+be surjective.  There exists a unique isomorphism
+\(J:K_D\to K_Z\) satisfying
+\begin{equation}
+ JQ_D=Q_Z
+ \label{eq:intertwine}
+\end{equation}
+if and only if
+\begin{equation}
+ \boxed{\ker Q_D=\ker Q_Z.}
+ \label{eq:kernels}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+If \eqref{eq:intertwine} holds with \(J\) injective, then
+\[
+ Q_Dv=0\iff JQ_Dv=0\iff Q_Zv=0.
+\]
+Conversely, under \eqref{eq:kernels} define
+\[
+ J(Q_Dv)=Q_Zv.
+\]
+If \(Q_Dv=Q_Dw\), then \(v-w\in\ker Q_D=\ker Q_Z\), so the definition
+is well posed.  It is linear and onto because \(Q_Z\) is onto.  Its
+kernel is zero by the same kernel equality, hence it is an
+isomorphism.  Surjectivity of \(Q_D\) makes \(J\) unique.
+\end{proof}
+
+\begin{corollary}[Row-space execution]
+\label{cor:rowspace}
+After bases are fixed, \eqref{eq:kernels} is equivalent to equality
+of the row spaces of \(Q_D\) and \(Q_Z\).  It is therefore decidable
+by exact row reduction.
+\end{corollary}
+
+\begin{proof}
+For a finite matrix \(A\), the row space is the annihilator of
+\(\ker A\).  Equal kernels have equal annihilators, and conversely.
+\end{proof}
+
+\begin{remark}[Literal relabeling is stronger]
+The isomorphism in \cref{thm:kernel} is an abstract linear map.  If
+the proposed \(J\) is a relabeling of literal fibers, the occurrence
+equivalence relations, canonical orders where applicable, and exact
+map multipliers must also match.  Equal kernels do not authorize an
+unrecorded change of physical meaning.
+\end{remark}
+
+\begin{proposition}[Literal relabeling test]
+\label{prop:literal-relabel}
+Fix occurrence-column orderings and typed bases of \(K_D,K_Z\).
+For an allowed metadata-preserving bijection \(\varphi\) between the
+two output-record sets, let \(\Pi_\varphi\) be its permutation matrix.
+Then \(\varphi\) intertwines the literal quotients if and only if
+\[
+ Q_Z=\Pi_\varphi Q_D.
+\]
+Equivalently, after the allowed relabeling, the complete weighted rows
+---not merely their supports or final scalar sums---agree exactly.
+Kernel equality alone does not imply this condition.
+\end{proposition}
+
+\begin{proof}
+The displayed equality is precisely the coefficientwise statement
+\(\Pi_\varphi Q_Dv=Q_Zv\) for every occurrence vector \(v\).
+For strictness, take
+\[
+ Q_D=I_2,\qquad
+ Q_Z=\begin{pmatrix}1&1\\0&1\end{pmatrix}.
+\]
+Both kernels are zero, but the rows of \(Q_Z\) are not a permutation
+of the rows of \(Q_D\).
+\end{proof}
+
+\section{Why scalar equality is insufficient}
+
+\begin{proposition}[A conservative scalar can hide distinct kernels]
+\label{prop:scalar}
+There are surjective incidence quotients \(Q_D,Q_Z\) such that
+\[
+ \one^TQ_Dc=\one^TQ_Zc
+\quad\hbox{for every }c,
+\]
+but \(\ker Q_D\ne\ker Q_Z\).
+\end{proposition}
+
+\begin{proof}
+Take
+\[
+ Q_D=\begin{pmatrix}1&1&0\\0&0&1\end{pmatrix},
+ \qquad
+ Q_Z=\begin{pmatrix}1&0&1\\0&1&0\end{pmatrix}.
+\]
+Both matrices have column sums one, so their final scalar sums agree
+on every vector.  But
+\[
+ (1,-1,0)\in\ker Q_D,\qquad
+ Q_Z(1,-1,0)^T=(1,-1)^T\ne0.
+\]
+\end{proof}
+
+TPC-124 already requires the coefficientwise matrix identity
+\((JQ_D-Q_Z)M=0\), not agreement on one literal coefficient vector
+\citep{WangTPC124}.  The kernel criterion explains the quotient
+geometry behind that firewall.  Even equality for every final scalar
+does not determine which occurrences were identified.  If \(M\) is
+not surjective onto \(H_X\), however, the TPC-124 identity constrains
+only \(\operatorname{Ran}M\).  Then the full-space kernel equality in
+\cref{thm:kernel} is sufficient but need not be necessary; the exact
+restricted criterion compares
+\[
+ \ker(Q_D|_{\operatorname{Ran}M})
+ \quad\hbox{and}\quad
+ \ker(Q_Z|_{\operatorname{Ran}M})
+\]
+with codomains replaced by their respective images.  A full-space
+necessity claim therefore requires a proved surjectivity statement
+for \(M\).  This restricted kernel test concerns existence of an
+abstract image isomorphism; a prescribed or literal \(J\) must still
+pass the coefficientwise identity on \(\operatorname{Ran}M\).
+
+\section{Exact field requirements}
+
+Before either quotient is compared, both matrices must provide the
+same ordered occurrence-column registry.  Each must also certify
+surjectivity onto its declared codomain or explicitly replace that
+codomain by the image used in the restricted criterion.
+
+For \(Q_D\), every completed occurrence lineage must provide:
+\begin{enumerate}[label=\textbf{D\arabic*.},leftmargin=2.8em]
+\item the canonical parent and exact child-to-parent aggregation;
+\item row identifiers, integer slopes, \(j\), targets and content;
+\item an exact verification of \eqref{eq:detlabel};
+\item physical and computational multiplicities in distinct fields;
+\item the literal parent coefficient \(u_t\); and
+\item the determinant-bin target and exact map multiplier.
+\end{enumerate}
+
+For \(Q_Z\), it must provide:
+\begin{enumerate}[label=\textbf{Z\arabic*.},leftmargin=2.8em]
+\item the outer affine key and ordered coordinate;
+\item the canonical rank within the outer interval;
+\item the literal arithmetic sign and outer reconstruction weight;
+\item the fixed factor-allocation identifier;
+\item retained/content status and content-remainder destination; and
+\item the zero-mode output record and exact map multiplier.
+\end{enumerate}
+
+These lists are data contracts, not determinant or prefix estimates.
+In particular, recording \(u_t\) does not prove phase coherence, and
+recording \(\sigma_{\theta,i}\) does not prove a signed-prefix saving
+\citep{WangTPC121,WangTPC122}.
+
+\begin{proposition}[The common parent bridge is absent]
+\label{prop:missing}
+The committed TPC-136 and TPC-143 artifacts contain no exact map from
+a nonsoft cut path to the canonical parent or outer occurrence
+records above.  Consequently neither literal quotient matrix can be
+formed from the current artifacts.
+\end{proposition}
+
+\begin{proof}
+TPC-143 performs an exact field census on every nonsoft cut record.
+The cut records contain the native tuple \((\ell,k,d)\), dyadic block,
+cut type, \(h_0\) and normalization.  They contain none of the
+canonical-parent, inverse-aggregation, outer-key, ordered-coordinate
+or quotient-edge fields listed above.  A statement defining those
+objects in an earlier paper is not a path-ID crosswalk.  Thus the
+matrix rows and columns required for \(Q_D,Q_Z\) have no current
+literal source.
+\end{proof}
+
+\section{Executable theorem and actual verdict}
+
+The companion program
+\texttt{experiments/tpc144\_quotient\_kernel\_audit.py} uses exact
+rational row reduction.  Synthetic matrices verify
+\cref{thm:kernel,prop:literal-relabel,prop:scalar}, including the
+surjectivity precondition; they are explicitly marked
+\texttt{SYNTHETIC\_L0\_ONLY}.  A separate actual manifest imports the
+TPC-143 occurrence-lift status and contains no fabricated map edge.
+Default mode writes deterministic JSON and \texttt{--check} compares
+it byte for byte without writing.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.36\textwidth}P{0.24\textwidth}Y@{}}
+\toprule
+Statement & Status & Scope\\
+\midrule
+Surjective quotient kernel criterion
+& \(\PROVED_{\Lzero}\) & Exact finite-dimensional theorem.\\
+Literal \(Q_D\) totality
+& \(\NT\) & Missing occurrence and canonical-parent lift.\\
+Literal \(Q_Z\) totality
+& \(\NT\) & Missing outer records, order and allocation.\\
+\(Q_D/Q_Z\) intertwining
+& \(\NT\) & Neither actual kernel is available.\\
+Schema/scalar-only derivation
+& \(\STOP\) & Scoped stop; augmented lift remains open.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The audit rejects a frontier-only domain, a fabricated quotient edge,
+a proved status without a source, deletion of a required D6/Z6 field,
+promotion of either actual kernel or literal relabeling, and a
+scalar-to-coefficientwise promotion.  Its required domain remains
+\[
+ \mathcal C_X^{\mathsf{ETO}}\sqcup
+ \mathcal C_X^{\mathsf{FUM}},
+\]
+even though the current finite sample has no eligible-tail row.
+
+\section{Claim boundary}
+
+\begin{theorem}[Current quotient verdict]
+For the current source-locked occurrence obligations,
+\[
+\boxed{
+\begin{aligned}
+\mathsf{H1.frontier\_QD\_totality}&=\NT,\\
+\mathsf{H1.frontier\_QZ\_totality}&=\NT,\\
+\mathsf{H1.frontier\_QD\_QZ\_intertwining}&=\NT.
+\end{aligned}}
+\]
+The direct schema-or-scalar derivation is stopped, while a
+theorem-backed occurrence-augmented route is not stopped.
+\end{theorem}
+
+No assertion here bounds the complete frontier scalar, proves that a
+formal coefficient is nonzero, lower-bounds determinant energy,
+controls the distinguished zero mode, gives a positive
+fixed-\(h_0\) \(\Ltwo\) saving, pays the \(1/400\) endpoint, or proves
+a prime-pair or twin-prime statement.  The next input remains the
+literal occurrence lift identified by TPC-143.
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,77 @@
+{
+  "checks": {
+    "all_mutations_rejected": true,
+    "finite_partition_exact": true,
+    "period_count_cancels_density": true,
+    "refined_classes_cover_base_progression": true,
+    "refined_classes_distinct": true,
+    "source_branch_distinction_preserved": true,
+    "source_native_invocation_validated": true
+  },
+  "claim_boundary": {
+    "all_prefix": false,
+    "arbitrary_interval_origin": false,
+    "arbitrary_physical_weight": false,
+    "bounded_periodic_weight_only": true,
+    "four_point": false,
+    "generic_additive_phase": false,
+    "one_over_400": false,
+    "positive_L2": false,
+    "positive_X_power": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "derived_theorem": {
+    "node_id": "A147.periodic_residue_reassembly",
+    "program_level": "L1",
+    "promotion_eligible": false,
+    "proof_identity": "R*(N/(Q*R))=N/Q",
+    "same_exception_set_for_all_refined_residues": true,
+    "scope": "source_native_good_scale_periodic_reassembly",
+    "statement": "A bounded R-periodic multiplier on one Q-progression has no R census loss when QR lies in the source modulus envelope",
+    "status": "PROVED"
+  },
+  "mutation_regression": {
+    "X_power_promotion_rejected": true,
+    "arbitrary_physical_weight_rejected": true,
+    "arbitrary_prefix_rejected": true,
+    "charge_period_as_uncancelled_l1_loss_rejected": true,
+    "generic_additive_phase_rejected": true,
+    "local_exception_promoted_to_global_rejected": true,
+    "positive_L2_promotion_rejected": true,
+    "total_modulus_above_source_envelope_rejected": true,
+    "wrong_normalization_N_over_W_rejected": true
+  },
+  "sample_partition": {
+    "base_modulus": 3,
+    "class_count": 5,
+    "normalized_mass_identity": "5*(N/(3*5))=N/3",
+    "period": 5,
+    "residues": [
+      2,
+      5,
+      8,
+      11,
+      14
+    ],
+    "total_modulus": 15
+  },
+  "schema": "tpc-147-periodic-reassembly-audit-v1",
+  "source_contract": {
+    "L_range": "1<=L<=log X",
+    "ambient": "X>=2",
+    "correlation_estimate": "(W/N)*abs(sum correlation on one W-residue) << L^(-c)",
+    "exception_measure": "(1/log X)*integral_E dt/t << L^(-c)",
+    "exception_set": "E_X(g1,g2,L) subset [sqrt(X),X]",
+    "interval": "(N,2N]",
+    "modulus": "1<=W<=L^c",
+    "nonpretentious_condition": "exp M(g1;X^2,log^(1/125)X) >> L",
+    "normalization": "W/N",
+    "not_the_same_as": "global Liouville affine exceptional set in Remarks 3.2",
+    "residue_and_shifts": "b,h1,h2=O(L^c), h1!=h2",
+    "scale_range": "sqrt(X)<=N<=X",
+    "source": "Tao--Teravainen arXiv:2512.01739v2",
+    "theorem": "Theorem 3.1",
+    "uniformity": "E is chosen before W,b,h1,h2"
+  },
+  "status": "PASS"
+}

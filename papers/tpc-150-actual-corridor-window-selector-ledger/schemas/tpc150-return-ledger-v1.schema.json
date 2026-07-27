@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc150-return-ledger-v1.schema.json",
+  "title": "TPC-150 split logarithmic and X-power return ledger",
+  "type": "object",
+  "required": [
+    "record_id",
+    "occurrence_lift_status",
+    "return_mode",
+    "terminal_window",
+    "log_ledger",
+    "power_ledger",
+    "status"
+  ],
+  "properties": {
+    "record_id": {"type": "string"},
+    "occurrence_lift_status": {
+      "enum": ["PROVED", "REQUIRED_MISSING", "NOT_TESTABLE"]
+    },
+    "return_mode": {
+      "enum": ["POINTWISE", "SELECTOR", "ATOMIC_PREFIX", "UNKNOWN"]
+    },
+    "terminal_window": {
+      "type": "object",
+      "required": ["omega", "sqrt_X", "contained_in_source_shell"],
+      "properties": {
+        "omega": {"type": "number", "exclusiveMinimum": 1},
+        "sqrt_X": {"type": "number", "exclusiveMinimum": 1},
+        "contained_in_source_shell": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "log_ledger": {"type": "object"},
+    "power_ledger": {
+      "type": "object",
+      "required": ["sigma_power"],
+      "properties": {
+        "sigma_power": {
+          "type": "object",
+          "required": ["numerator", "denominator"],
+          "properties": {
+            "numerator": {"const": 0},
+            "denominator": {"const": 1}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "status": {
+      "enum": ["PROVED", "CONDITIONAL", "OPEN", "NOT_TESTABLE", "STOP"]
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "occurrence_lift_status": {
+            "enum": ["REQUIRED_MISSING", "NOT_TESTABLE"]
+          }
+        },
+        "required": ["occurrence_lift_status"]
+      },
+      "then": {
+        "properties": {"status": {"const": "NOT_TESTABLE"}}
+      }
+    },
+    {
+      "if": {
+        "properties": {"return_mode": {"const": "ATOMIC_PREFIX"}},
+        "required": ["return_mode"]
+      },
+      "then": {
+        "properties": {"status": {"enum": ["STOP", "NOT_TESTABLE"]}}
+      }
+    }
+  ]
+}

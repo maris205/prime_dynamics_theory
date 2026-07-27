@@ -1,0 +1,325 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={Occurrence-Resolved Physical Grouping and Prescribed-Shift Commutation},
+  pdfauthor={Liang Wang},
+  pdfsubject={A pathwise commuting-square criterion at the frontier},
+  pdfkeywords={physical grouping, fixed shift, commuting square, occurrence provenance, frontier}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\STOP}{\textnormal{\textsc{stop-declared-route}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{Occurrence-Resolved Physical Grouping}\\
+\textbf{and Prescribed-Shift Commutation}\\
+\textbf{on the Frontier}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The fixed shift stored on a cut record and the fixed-shift selector
+after physical grouping are different mathematical objects.  We
+formalize their relation through a commuting square.  For an exact
+grouping matrix \(G\) with source and target shift selectors,
+\[
+ P_{\rm phys}G=GP_{\rm src}
+\]
+if and only if every aggregate cross-selector block vanishes.  This
+operator identity is still not a pathwise provenance certificate:
+opposite cross-shift occurrence edges can cancel in the same matrix
+entry.  On the row-separated occurrence lift, commutation is
+equivalent to every nonzero occurrence edge preserving membership in
+the prescribed-\(h_0\) slice.  We prove this exact criterion and a
+sharp cancellation counterexample.  Applying it to the current
+archive gives one positive structural result,
+\(P_{h_0}^{\rm cut}=I\), already supported by cut metadata
+intertwining.  The physical grouping \(G\), later stage matrices and
+downstream selector are absent, so their totality and commuting
+square remain \textsc{not-testable}.  Treating the cut selector as a
+downstream selector, or aggregate cancellation as shift provenance,
+stops only those declared implementations.  No physical cover or
+positive arithmetic saving is obtained.
+\end{abstract}
+
+\section{Cut selection versus downstream selection}
+
+Fix a prescribed nonzero shift \(h_0\).  TPC-136 proves that every
+nonzero edge through the complete cut archive retains the native
+shift tag \citep{WangTPC136}.  If \(E_{\rm cut}\) is its row space,
+define the cut coordinate selector by
+\[
+ P_{h_0}^{\rm cut}e_c
+ =
+ \begin{cases}
+ e_c,&h(c)=h_0,\\
+ 0,&h(c)\ne h_0.
+ \end{cases}
+\]
+Every row in the fixed-\(h_0\) archive has the first case, whence
+\begin{equation}
+ \boxed{P_{h_0}^{\rm cut}=I_{E_{\rm cut}}.}
+ \label{eq:cutidentity}
+\end{equation}
+This is a literal \(\Lone\) fact, not a localization estimate.
+
+TPC-125's downstream selector is defined on later shift-tagged record
+spaces and must intertwine every later stage \citep{WangTPC125}.
+Those stages can split, aggregate or leak between shift labels.
+Equation \eqref{eq:cutidentity} says nothing about an unarchived
+stage.
+
+\begin{definition}[Two selector namespaces]
+We write \(P_{h_0}^{\rm cut}\) only for the proved cut selector and
+\(P_{h_0}^{\rm down}\) only for a selector on a completed downstream
+archive.  Equality of their names or numerical \(h_0\)-values is not
+an intertwining theorem.
+\end{definition}
+
+\section{Physical occurrence grouping}
+
+Let \(\mathcal O\) be a fully typed source occurrence set and
+\(\mathcal P\) a physical occurrence set.  An exact physical
+grouping matrix
+\[
+ G:\mathbb C^{\mathcal O}\longrightarrow\mathbb C^{\mathcal P}
+\]
+must store, on every nonzero edge:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item source occurrence, physical occurrence and physical group IDs;
+\item exact reconstruction multiplier;
+\item physical and computational multiplicities and any
+inverse-aggregation relation;
+\item masks, cover class and reconnection destination;
+\item source and target shift tags; and
+\item the one inherited physical normalization.
+\end{enumerate}
+
+The physical group key is not determined by a determinant label or
+by equality of two numerical coefficients.  TPC-124 shows why a
+physical aggregate can hide a native residual, while TPC-117 reports
+that the actual growing physical map is unavailable
+\citep{WangTPC117,WangTPC124}.
+
+Let \(P_{\rm src}\) and \(P_{\rm phys}\) be the coordinate
+projections onto records tagged by \(h_0\) in the source and target,
+respectively.
+
+\begin{theorem}[Aggregate block criterion]
+\label{thm:aggregate}
+The operator square
+\begin{equation}
+ P_{\rm phys}G=GP_{\rm src}
+ \label{eq:square}
+\end{equation}
+commutes if and only if
+\[
+ G_{p,o}=0
+\]
+whenever exactly one of \(h(p),h(o)\) equals \(h_0\).
+\end{theorem}
+
+\begin{proof}
+On a matrix entry \((p,o)\), the left side of \eqref{eq:square} is
+\[
+ \mathbf1_{h(p)=h_0}G_{p,o},
+\]
+while the right side is
+\[
+ G_{p,o}\mathbf1_{h(o)=h_0}.
+\]
+They agree on same-selector blocks.  On a cross-selector block they
+agree precisely when the entry vanishes.
+\end{proof}
+
+\section{Why aggregate commutation is not lineage}
+
+A grouping matrix records the sum of all transformation paths between
+one source and one target.  Let
+\[
+ \widehat{\mathcal E}
+ =
+ \{e:o(e)\to p(e)\}
+\]
+be the row-separated set of individual occurrence edges, with exact
+nonzero multipliers \(g_e\).  The corresponding path lift
+\(\widehat G\) has one row for each \(e\), so two edges never cancel
+inside one row.
+
+\begin{definition}[Occurrence-level shift preservation]
+The grouping is pathwise shift preserving at \(h_0\) when every edge
+with \(g_e\ne0\) satisfies
+\[
+ \mathbf1_{h(o(e))=h_0}
+ =
+ \mathbf1_{h(p(e))=h_0}.
+\]
+\end{definition}
+
+\begin{theorem}[Row-separated commuting-square criterion]
+\label{thm:pathwise}
+For the row-separated occurrence lift, selector commutation is
+equivalent to occurrence-level shift preservation.
+\end{theorem}
+
+\begin{proof}
+The row associated with \(e\) contains one source entry \(g_e\).
+The corresponding selector defect is
+\[
+ \left(
+ \mathbf1_{h(p(e))=h_0}
+ -
+ \mathbf1_{h(o(e))=h_0}
+ \right)g_e.
+\]
+Because rows are separate, a defect in one occurrence cannot cancel
+a defect in another.  The full defect vanishes exactly when every
+displayed scalar vanishes.
+\end{proof}
+
+\begin{proposition}[Sharp hidden-leakage example]
+\label{prop:hidden}
+Aggregate commutation does not imply the pathwise condition.
+\end{proposition}
+
+\begin{proof}
+Take a source \(o\) tagged \(h_0\) and a target \(p\) tagged
+\(h_1\ne h_0\).  Add two occurrence edges \(o\to p\), with
+multipliers \(1\) and \(-1\).  Their aggregate matrix entry is zero,
+so the aggregate square commutes.  Each row-separated edge crosses
+the selector boundary, so both fail the pathwise condition.
+\end{proof}
+
+This is the grouping analogue of the distinction between a scalar
+zero defect and the row-separated matrix defect in TPC-123 and
+TPC-136 \citep{WangTPC123,WangTPC136}.  A route that claims literal
+shift provenance must use the pathwise statement.
+
+\section{The current field boundary}
+
+The TPC-143 occurrence obligations require a one-to-many
+row-separated lift from every nonsoft cut path
+\citep{WangTPC143}.  The required domain is
+\[
+ \mathcal C_X^{\mathsf{ETO}}\sqcup
+ \mathcal C_X^{\mathsf{FUM}}.
+\]
+No finite sample census can replace that typed domain.
+
+For \(G\), the current records lack physical occurrence IDs, group
+keys, reconstruction multipliers, multiplicity rules, cover classes
+and reconnection destinations.  For \(P_{h_0}^{\rm down}\), they lack
+every later source/target shift pair and stage matrix.  Consequently
+neither matrix in \eqref{eq:square} can be formed.
+
+\begin{corollary}[Current map statuses]
+\label{cor:status}
+The exact cut selector and the two downstream statuses are
+\[
+\boxed{
+\begin{aligned}
+\mathsf{H1.cut\_Ph0}&=\PROVED_{\Lone},\\
+\mathsf{H1.frontier\_G\_totality}&=\NT,\\
+\mathsf{H1.frontier\_Ph0\_downstream\_totality}&=\NT.
+\end{aligned}}
+\]
+The occurrence-level \(G/P_{h_0}\) commuting square is also
+\(\NT\).
+\end{corollary}
+
+\section{Executable regression}
+
+The standard-library script
+\texttt{experiments/tpc145\_group\_shift\_audit.py} imports the
+TPC-143 proof of \eqref{eq:cutidentity}.  Its actual manifest contains
+no physical or downstream stage edge.  Separate synthetic fixtures
+verify \cref{thm:aggregate,thm:pathwise,prop:hidden} exactly using
+rational multipliers.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.41\textwidth}P{0.20\textwidth}Y@{}}
+\toprule
+Statement & Status & Interpretation\\
+\midrule
+Cut selector \(P_{h_0}^{\rm cut}\)
+& \(\PROVED_{\Lone}\) & Identity on the current cut rows.\\
+Aggregate block criterion
+& \(\PROVED_{\Lzero}\) & Exact finite matrix theorem.\\
+Row-separated edge criterion
+& \(\PROVED_{\Lzero}\) & Exact path-provenance theorem.\\
+Actual \(G,P_{h_0}^{\rm down}\)
+& \(\NT\) & Occurrence and stage edges are absent.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The audit rejects a frontier-only domain, promotion of the cut
+selector, fabricated physical or stage edges, and promotion of
+aggregate cancellation to pathwise provenance.  The two stopped
+implementations are therefore precisely:
+\[
+\begin{split}
+&\text{cut metadata as a downstream selector},\\
+&\text{aggregate cancellation as shift provenance}.
+\end{split}
+\]
+Both are scoped \(\STOP\) outcomes.  They do not stop a future
+occurrence-augmented map.
+
+\section{Claim boundary}
+
+\begin{theorem}[Audited physical-shift conclusion]
+The cut-stage identity \eqref{eq:cutidentity} is proved, but the
+current source artifacts do not define a literal physical grouping
+or downstream fixed-shift map.  Thus the selected augmented route
+remains open at the occurrence-lift node and is not
+architecture-infeasible.
+\end{theorem}
+
+This paper proves no physical cover, quotient observability bound,
+frontier cancellation, localization cost, positive fixed-shift
+\(\Ltwo\) estimate, endpoint below \(1/400\), parity advance,
+prime-pair lower bound or twin-prime theorem.  Determinant reserve is
+not charged as a physical grouping gain.  The only positive
+application to the current archive is the exact and deliberately
+stage-limited identity \(P_{h_0}^{\rm cut}=I\).
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

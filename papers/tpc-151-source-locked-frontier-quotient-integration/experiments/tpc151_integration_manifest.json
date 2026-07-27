@@ -1,0 +1,1646 @@
+{
+  "anchor_chain": {
+    "hash_mode": "CANONICAL_UTF8_LF_V2",
+    "hash_semantics": "INTEGRITY_ONLY",
+    "prior_first_missing": "H1.frontier_totalization",
+    "prior_verdict": "NOT_TESTABLE",
+    "tpc141_manifest_sha256": "fa967256e04d000ea7bb2a1bf16031b7eda5a4f999058fed81a1fe79fe742279",
+    "tpc141_schema_sha256": "9402efa7874b9951d713c33af4d653f03f3425dbfff8fd605a866dd0c82e126b",
+    "tpc142_embedded_tpc141_hash_verified": true,
+    "tpc142_schema_sha256": "f0549f22d807a1b216ca8d5482ac19af3f14c8fc6fb633bac0600950173495af",
+    "tpc142_snapshot_sha256": "d3c89c0f70661248d43cc8e2526587031ff707f2460b0401904b09d451fb0dff"
+  },
+  "arithmetic_corridor": {
+    "missing_physical_return": [
+      "actual_physical_weight",
+      "generic_phase",
+      "all_prefix_selector",
+      "complete_four_sign_return"
+    ],
+    "positive_L2": false,
+    "promotion_eligible": false,
+    "quotient_identity": "t=aD(z), t+2=sV(z), mu(D(z))mu(V(z))=G_a(t)G_s(t+2)",
+    "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+    "status": "PROVED_L1_ACTUAL_CORE",
+    "x_power_sigma": {
+      "denominator": 1,
+      "numerator": 0
+    }
+  },
+  "carrier_registry": {
+    "carrier.actual_h3_packet": {
+      "physical_return_complete": false
+    },
+    "carrier.all_nonsoft_cut_paths": {
+      "classes": [
+        "ELIGIBLE_TAIL_OPEN",
+        "FRONTIER_UNMAPPED"
+      ],
+      "sample_eto_may_be_empty": true
+    },
+    "carrier.downstream_occurrences": {
+      "current_status": "MISSING",
+      "row_separated": true
+    },
+    "carrier.fixed_two_mobius_periodic_core": {
+      "physical_return_complete": false,
+      "shift": 2
+    },
+    "carrier.physical_hard_packet": {
+      "physical_return_complete": false
+    }
+  },
+  "claim_boundary": {
+    "P_h0_cut_is_downstream_P_h0": false,
+    "actual_core_is_full_H3": false,
+    "arithmetic_frontier": false,
+    "arithmetic_target_pass": false,
+    "empty_sample_ETO_is_asymptotic_empty": false,
+    "full_endpoint_pass": false,
+    "hard_packet_oX": false,
+    "log_saving_pays_one_over_400": false,
+    "physical_endpoint_pass": false,
+    "positive_L2": false,
+    "prime_pair_theorem": false,
+    "schema_nonidentifiability_is_actual_carrier_impossibility": false,
+    "source_hashes_prove_theorems": false,
+    "twin_prime_theorem": false
+  },
+  "endpoint_ledgers": {
+    "arithmetic": {
+      "best_shadow_x_power_sigma": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "log_saving_pays_fixed_power": false,
+      "sigma_actual_lower": null,
+      "sigma_required": {
+        "denominator": 400,
+        "numerator": 1
+      },
+      "state": "INCOMPLETE"
+    },
+    "contract": "MVP1-FIXED-H0-SPLIT-ENDPOINT-V2",
+    "full_synthesis": {
+      "state": "INCOMPLETE",
+      "strict_net_slack": null
+    },
+    "physical": {
+      "determinant_reserve_reusable": false,
+      "lambda_phys_lower": null,
+      "lambda_phys_upper": null,
+      "lambda_required_strict_upper": {
+        "denominator": 400,
+        "numerator": 1
+      },
+      "registry_complete": false,
+      "state": "INCOMPLETE",
+      "unknown_cost_policy": "UNKNOWN_IS_NOT_ZERO",
+      "upper_at_or_above_is_stop_without_lower": false
+    },
+    "scale": "AMPLITUDE"
+  },
+  "exports": [
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "export_id": "ANCHOR.N135.eligible_only_stop",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-142",
+      "program_level": "L1_NEGATIVE",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "export_id": "ANCHOR.N138.shift_one_stop",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-142",
+      "program_level": "L1_NEGATIVE",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_NEGATIVE",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "P_H0_CUT_IDENTITY_ONLY",
+      "direction": "POSITIVE",
+      "export_id": "S143.cut_shift_selector",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-143",
+      "program_level": "L1_STRUCTURAL",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "export_id": "N143.schema_nonidentifiability",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-143",
+      "program_level": "L1_NEGATIVE",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "ALL_NONSOFT_CUT_PATHS_ETO_PLUS_FUM",
+      "direction": "NEUTRAL",
+      "export_id": "G143.frontier_occurrence_lift",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-143",
+      "program_level": "L1_STRUCTURAL",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "NOT_TESTABLE",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.downstream_occurrences",
+      "coverage": "ABSTRACT_TYPED_INTERFACE",
+      "direction": "POSITIVE",
+      "export_id": "C144.QD_interface",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-144",
+      "program_level": "L0_MODEL",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.frontier_completion_model",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.downstream_occurrences",
+      "coverage": "ABSTRACT_TYPED_INTERFACE",
+      "direction": "POSITIVE",
+      "export_id": "C144.QZ_interface",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-144",
+      "program_level": "L0_MODEL",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.frontier_completion_model",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "export_id": "N144.schema_only_QD_QZ",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-144",
+      "program_level": "L1_NEGATIVE",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.downstream_occurrences",
+      "coverage": "ROW_SEPARATED_ABSTRACT_INTERFACE",
+      "direction": "POSITIVE",
+      "export_id": "C145.GP_commuting_square",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-145",
+      "program_level": "L0_MODEL",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.frontier_completion_model",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "P_H0_CUT_IDENTITY_ONLY",
+      "direction": "POSITIVE",
+      "export_id": "S145.cut_Ph0_identity",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-145",
+      "program_level": "L1_STRUCTURAL",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "export_id": "N145.aggregate_cancellation_stop",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-145",
+      "program_level": "L1_NEGATIVE",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "ALL_NONSOFT_MAP_OR_FRONTIER_SCALAR_AND_ETO_CONTRACT",
+      "direction": "POSITIVE",
+      "export_id": "C146.four_map_contract",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-146",
+      "program_level": "L1_STRUCTURAL",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "export_id": "N146.current_schema_totalization_stop",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-146",
+      "program_level": "L1_NEGATIVE",
+      "promotion_eligible": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.fixed_two_mobius_periodic_core",
+      "coverage": "FIXED_TWO_PERIODIC_CORE",
+      "direction": "POSITIVE",
+      "export_id": "A147.periodic_residue_reassembly",
+      "normalization_id": "norm.almost_scale_cesaro_core",
+      "paper": "TPC-147",
+      "program_level": "L1_STRUCTURAL",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_SHADOW",
+      "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.fixed_two_mobius_periodic_core",
+      "coverage": "EXACT_QUOTIENT_LIFT_IDENTITY",
+      "direction": "POSITIVE",
+      "export_id": "A148.quotient_mobius_lift",
+      "normalization_id": "norm.almost_scale_cesaro_core",
+      "paper": "TPC-148",
+      "program_level": "L0_MODEL",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_SHADOW",
+      "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.fixed_two_mobius_periodic_core",
+      "coverage": "NONPRETENTIOUSNESS_INPUT",
+      "direction": "POSITIVE",
+      "export_id": "A148.nonpretentious_stability",
+      "normalization_id": "norm.almost_scale_cesaro_core",
+      "paper": "TPC-148",
+      "program_level": "L1_ACTUAL_CORE",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_SHADOW",
+      "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+      "status": "PROVED",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.fixed_two_mobius_periodic_core",
+      "coverage": "ACTUAL_FIXED_TWO_MOBIUS_PERIODIC_CORE_ALMOST_SCALE",
+      "direction": "POSITIVE",
+      "export_id": "A149.actual_mobius_periodic_corridor",
+      "normalization_id": "norm.almost_scale_cesaro_core",
+      "paper": "TPC-149",
+      "program_level": "L1_ACTUAL_CORE",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_SHADOW",
+      "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+      "status": "PROVED",
+      "x_power_sigma": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "carrier_id": "carrier.actual_h3_packet",
+      "coverage": "FULL_ACTUAL_PHYSICAL_RETURN",
+      "direction": "NEUTRAL",
+      "export_id": "G150.actual_corridor_return",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-150",
+      "program_level": "L2_TARGET_POSITIVE",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_h3",
+      "status": "NOT_TESTABLE",
+      "x_power_sigma": null
+    },
+    {
+      "carrier_id": "carrier.actual_h3_packet",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "export_id": "N150.deterministic_prefix_nonimplication",
+      "normalization_id": "norm.physical_atomic",
+      "paper": "TPC-150",
+      "program_level": "L1_NEGATIVE",
+      "promotion_eligible": false,
+      "role": "ARITHMETIC_NEGATIVE",
+      "scope_id": "scope.actual_h3",
+      "status": "PROVED",
+      "x_power_sigma": null
+    }
+  ],
+  "first_missing": {
+    "active_node_count": 30,
+    "gate": "H1",
+    "minimal_missing_set": [
+      "H1.frontier_occurrence_lift"
+    ],
+    "node_id": "H1.frontier_occurrence_lift",
+    "program_level": "L1_STRUCTURAL",
+    "required_artifact": "a conservative row-separated one-to-many lift on every ELIGIBLE_TAIL_OPEN and FRONTIER_UNMAPPED path, with exact occurrence, stage, parent, multiplier, native, h0, normalization and support-status lineage",
+    "selection_rule": "MINIMAL_MISSING_ANCESTORS_THEN_CANONICAL_TOPOLOGY",
+    "status": "NOT_TESTABLE"
+  },
+  "frontier_contract": {
+    "cut_selector": {
+      "equals_identity": true,
+      "is_downstream_selector": false,
+      "map_id": "P_h0_cut",
+      "status": "PROVED_L1"
+    },
+    "domain": "ALL_NONSOFT_CUT_PATHS_ETO_PLUS_FUM",
+    "empty_sample_class_implies_asymptotic_empty": false,
+    "full_carrier_totalized": false,
+    "map_route": {
+      "defect_vector": [
+        "D_L",
+        "D_QD",
+        "D_QZ",
+        "D_G",
+        "D_P",
+        "D_DZ",
+        "D_GP",
+        "D_cover",
+        "D_reconnection"
+      ],
+      "zero_defect_proved": false
+    },
+    "occurrence_lift": {
+      "column_conservation": "1^T L_X = 1^T",
+      "map_id": "L_X",
+      "one_to_many": true,
+      "row_separated": true,
+      "status": "NOT_TESTABLE"
+    },
+    "sample_counts": {
+      "ELIGIBLE_TAIL_OPEN": 0,
+      "FRONTIER_UNMAPPED": 2988
+    },
+    "scalar_route": {
+      "eligible_tail_disposed": false,
+      "eligible_tail_required": "theorem-backed total maps or a complete ETO soft theorem",
+      "frontier_required": "S_frontier(X)=o(X) on the complete original scale",
+      "frontier_scalar_proved": false,
+      "pass": false
+    },
+    "totalization_logic": "ALL_NONSOFT_MAP_ROUTE_OR_FRONTIER_SCALAR_AND_ETO_ROUTE"
+  },
+  "gate_projection": {
+    "H1": {
+      "evidence": "L1_STRUCTURAL",
+      "scope_match": true,
+      "source_node": "H1.actual_carrier",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H2": {
+      "evidence": "L2_TARGET_POSITIVE",
+      "scope_match": true,
+      "source_node": "H2.signed_resonance",
+      "status": "OPEN",
+      "structural": false
+    },
+    "H3": {
+      "evidence": "L2_TARGET_POSITIVE",
+      "scope_match": true,
+      "source_node": "H3.actual_packet_saving",
+      "status": "OPEN",
+      "structural": false
+    },
+    "H4": {
+      "evidence": "L2_TARGET_POSITIVE",
+      "scope_match": true,
+      "source_node": "H4.complete_tail",
+      "status": "OPEN",
+      "structural": false
+    },
+    "H5": {
+      "evidence": "L2_TARGET_POSITIVE",
+      "scope_match": true,
+      "source_node": "H5.det_zero",
+      "status": "NOT_TESTABLE",
+      "structural": false
+    },
+    "H6": {
+      "evidence": "L1_STRUCTURAL",
+      "scope_match": true,
+      "source_node": "H6.physical_cover",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H7": {
+      "evidence": "L1_STRUCTURAL",
+      "scope_match": true,
+      "source_node": "H7.fixed_h0_totality",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H8": {
+      "evidence": "L1_STRUCTURAL",
+      "scope_match": true,
+      "source_node": "H8.final_reconnection",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    "H9": {
+      "evidence": "L1_STRUCTURAL",
+      "scope_match": true,
+      "source_node": "H9.physical_registry",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    }
+  },
+  "imports": [
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "import_id": "I151.ANCHOR.N135.eligible_only_stop",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L1_NEGATIVE",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "source_export": "ANCHOR.N135.eligible_only_stop",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "import_id": "I151.ANCHOR.N138.shift_one_stop",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L1_NEGATIVE",
+      "promotion_edge_to_actual_h3": false,
+      "role": "ARITHMETIC_NEGATIVE",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "source_export": "ANCHOR.N138.shift_one_stop",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "P_H0_CUT_IDENTITY_ONLY",
+      "direction": "POSITIVE",
+      "import_id": "I151.S143.cut_shift_selector",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L1_STRUCTURAL",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "source_export": "S143.cut_shift_selector",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "import_id": "I151.N143.schema_nonidentifiability",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L1_NEGATIVE",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "source_export": "N143.schema_nonidentifiability",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "ALL_NONSOFT_CUT_PATHS_ETO_PLUS_FUM",
+      "direction": "NEUTRAL",
+      "import_id": "I151.G143.frontier_occurrence_lift",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L1_STRUCTURAL",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "source_export": "G143.frontier_occurrence_lift",
+      "status": "NOT_TESTABLE",
+      "within_scope_proof_edge": false
+    },
+    {
+      "carrier_id": "carrier.downstream_occurrences",
+      "coverage": "ABSTRACT_TYPED_INTERFACE",
+      "direction": "POSITIVE",
+      "import_id": "I151.C144.QD_interface",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L0_MODEL",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.frontier_completion_model",
+      "source_export": "C144.QD_interface",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.downstream_occurrences",
+      "coverage": "ABSTRACT_TYPED_INTERFACE",
+      "direction": "POSITIVE",
+      "import_id": "I151.C144.QZ_interface",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L0_MODEL",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.frontier_completion_model",
+      "source_export": "C144.QZ_interface",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "import_id": "I151.N144.schema_only_QD_QZ",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L1_NEGATIVE",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "source_export": "N144.schema_only_QD_QZ",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.downstream_occurrences",
+      "coverage": "ROW_SEPARATED_ABSTRACT_INTERFACE",
+      "direction": "POSITIVE",
+      "import_id": "I151.C145.GP_commuting_square",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L0_MODEL",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.frontier_completion_model",
+      "source_export": "C145.GP_commuting_square",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "P_H0_CUT_IDENTITY_ONLY",
+      "direction": "POSITIVE",
+      "import_id": "I151.S145.cut_Ph0_identity",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L1_STRUCTURAL",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "source_export": "S145.cut_Ph0_identity",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "import_id": "I151.N145.aggregate_cancellation_stop",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L1_NEGATIVE",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "source_export": "N145.aggregate_cancellation_stop",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "ALL_NONSOFT_MAP_OR_FRONTIER_SCALAR_AND_ETO_CONTRACT",
+      "direction": "POSITIVE",
+      "import_id": "I151.C146.four_map_contract",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L1_STRUCTURAL",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "source_export": "C146.four_map_contract",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.all_nonsoft_cut_paths",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "import_id": "I151.N146.current_schema_totalization_stop",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L1_NEGATIVE",
+      "promotion_edge_to_actual_h3": false,
+      "role": "STRUCTURAL",
+      "scope_id": "scope.physical_nonsoft_cut",
+      "source_export": "N146.current_schema_totalization_stop",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.fixed_two_mobius_periodic_core",
+      "coverage": "FIXED_TWO_PERIODIC_CORE",
+      "direction": "POSITIVE",
+      "import_id": "I151.A147.periodic_residue_reassembly",
+      "normalization_id": "norm.almost_scale_cesaro_core",
+      "program_level": "L1_STRUCTURAL",
+      "promotion_edge_to_actual_h3": false,
+      "role": "ARITHMETIC_SHADOW",
+      "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+      "source_export": "A147.periodic_residue_reassembly",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.fixed_two_mobius_periodic_core",
+      "coverage": "EXACT_QUOTIENT_LIFT_IDENTITY",
+      "direction": "POSITIVE",
+      "import_id": "I151.A148.quotient_mobius_lift",
+      "normalization_id": "norm.almost_scale_cesaro_core",
+      "program_level": "L0_MODEL",
+      "promotion_edge_to_actual_h3": false,
+      "role": "ARITHMETIC_SHADOW",
+      "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+      "source_export": "A148.quotient_mobius_lift",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.fixed_two_mobius_periodic_core",
+      "coverage": "NONPRETENTIOUSNESS_INPUT",
+      "direction": "POSITIVE",
+      "import_id": "I151.A148.nonpretentious_stability",
+      "normalization_id": "norm.almost_scale_cesaro_core",
+      "program_level": "L1_ACTUAL_CORE",
+      "promotion_edge_to_actual_h3": false,
+      "role": "ARITHMETIC_SHADOW",
+      "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+      "source_export": "A148.nonpretentious_stability",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.fixed_two_mobius_periodic_core",
+      "coverage": "ACTUAL_FIXED_TWO_MOBIUS_PERIODIC_CORE_ALMOST_SCALE",
+      "direction": "POSITIVE",
+      "import_id": "I151.A149.actual_mobius_periodic_corridor",
+      "normalization_id": "norm.almost_scale_cesaro_core",
+      "program_level": "L1_ACTUAL_CORE",
+      "promotion_edge_to_actual_h3": false,
+      "role": "ARITHMETIC_SHADOW",
+      "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+      "source_export": "A149.actual_mobius_periodic_corridor",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    },
+    {
+      "carrier_id": "carrier.actual_h3_packet",
+      "coverage": "FULL_ACTUAL_PHYSICAL_RETURN",
+      "direction": "NEUTRAL",
+      "import_id": "I151.G150.actual_corridor_return",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L2_TARGET_POSITIVE",
+      "promotion_edge_to_actual_h3": false,
+      "role": "ARITHMETIC_TARGET",
+      "scope_id": "scope.actual_h3",
+      "source_export": "G150.actual_corridor_return",
+      "status": "NOT_TESTABLE",
+      "within_scope_proof_edge": false
+    },
+    {
+      "carrier_id": "carrier.actual_h3_packet",
+      "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+      "direction": "NEGATIVE",
+      "import_id": "I151.N150.deterministic_prefix_nonimplication",
+      "normalization_id": "norm.physical_atomic",
+      "program_level": "L1_NEGATIVE",
+      "promotion_edge_to_actual_h3": false,
+      "role": "ARITHMETIC_NEGATIVE",
+      "scope_id": "scope.actual_h3",
+      "source_export": "N150.deterministic_prefix_nonimplication",
+      "status": "PROVED",
+      "within_scope_proof_edge": true
+    }
+  ],
+  "nodes": [
+    {
+      "gate": "H1.cut",
+      "node_id": "S143.cut_shift_selector",
+      "parents": [],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": "S143.cut_shift_selector",
+      "status": "PROVED",
+      "structural": true
+    },
+    {
+      "gate": "H1.cut",
+      "node_id": "N143.schema_nonidentifiability",
+      "parents": [],
+      "program_level": "L1_NEGATIVE",
+      "required_artifact": "",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": "N143.schema_nonidentifiability",
+      "status": "PROVED",
+      "structural": true
+    },
+    {
+      "gate": "H1",
+      "node_id": "H1.frontier_occurrence_lift",
+      "parents": [
+        "S143.cut_shift_selector",
+        "N143.schema_nonidentifiability"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "a conservative row-separated one-to-many lift on every ELIGIBLE_TAIL_OPEN and FRONTIER_UNMAPPED path, with exact occurrence, stage, parent, multiplier, native, h0, normalization and support-status lineage",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": "G143.frontier_occurrence_lift",
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H1.interface",
+      "node_id": "C144.QD_interface",
+      "parents": [],
+      "program_level": "L0_MODEL",
+      "required_artifact": "",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": "C144.QD_interface",
+      "status": "PROVED",
+      "structural": true
+    },
+    {
+      "gate": "H1.interface",
+      "node_id": "C144.QZ_interface",
+      "parents": [],
+      "program_level": "L0_MODEL",
+      "required_artifact": "",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": "C144.QZ_interface",
+      "status": "PROVED",
+      "structural": true
+    },
+    {
+      "gate": "H1",
+      "node_id": "H1.frontier_QD_totality",
+      "parents": [
+        "H1.frontier_occurrence_lift",
+        "C144.QD_interface"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "actual path-total determinant quotient",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H1",
+      "node_id": "H1.frontier_QZ_totality",
+      "parents": [
+        "H1.frontier_occurrence_lift",
+        "C144.QZ_interface"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "actual path-total zero-mode quotient",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H1",
+      "node_id": "H1.frontier_QD_QZ_intertwining",
+      "parents": [
+        "H1.frontier_QD_totality",
+        "H1.frontier_QZ_totality"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "kernel/fiber equivalence with exact multipliers",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H1.interface",
+      "node_id": "C145.GP_commuting_square",
+      "parents": [],
+      "program_level": "L0_MODEL",
+      "required_artifact": "",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": "C145.GP_commuting_square",
+      "status": "PROVED",
+      "structural": true
+    },
+    {
+      "gate": "H1.cut",
+      "node_id": "S145.cut_Ph0_identity",
+      "parents": [],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": "S145.cut_Ph0_identity",
+      "status": "PROVED",
+      "structural": true
+    },
+    {
+      "gate": "H1",
+      "node_id": "H1.frontier_G_totality",
+      "parents": [
+        "H1.frontier_occurrence_lift",
+        "C145.GP_commuting_square"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "actual occurrence-resolved physical grouping",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H1",
+      "node_id": "H1.frontier_Ph0_totality",
+      "parents": [
+        "H1.frontier_occurrence_lift",
+        "C145.GP_commuting_square",
+        "S145.cut_Ph0_identity"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "actual downstream prescribed-shift selector",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H1",
+      "node_id": "H1.frontier_GP_commutation",
+      "parents": [
+        "H1.frontier_G_totality",
+        "H1.frontier_Ph0_totality"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "row-separated edgewise shift preservation",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H1.interface",
+      "node_id": "C146.four_map_contract",
+      "parents": [],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": "C146.four_map_contract",
+      "status": "PROVED",
+      "structural": true
+    },
+    {
+      "gate": "H1",
+      "node_id": "H1.frontier_totalization",
+      "parents": [
+        "C146.four_map_contract",
+        "H1.frontier_QD_QZ_intertwining",
+        "H1.frontier_GP_commutation"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "either (i) the selected all-nonsoft map route with a zero four-map defect vector and complete typed sources on every ETO and FUM path, or (ii) the scalar-plus-ETO route with both a complete original-frontier S_frontier(X)=o(X) theorem and a theorem-backed disposition of every ETO path via total maps or a complete original-scale soft theorem",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H1",
+      "node_id": "H1.actual_carrier",
+      "parents": [
+        "H1.frontier_totalization"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "a complete occurrence-resolved actual carrier on every ETO and FUM path in the inherited physical atomic normalization",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H3.core",
+      "node_id": "A147.periodic_residue_reassembly",
+      "parents": [],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "",
+      "role": "ARITHMETIC_SHADOW",
+      "scope_match": true,
+      "source_export": "A147.periodic_residue_reassembly",
+      "status": "PROVED",
+      "structural": false
+    },
+    {
+      "gate": "H3.core",
+      "node_id": "A148.quotient_mobius_lift",
+      "parents": [],
+      "program_level": "L0_MODEL",
+      "required_artifact": "",
+      "role": "ARITHMETIC_SHADOW",
+      "scope_match": true,
+      "source_export": "A148.quotient_mobius_lift",
+      "status": "PROVED",
+      "structural": false
+    },
+    {
+      "gate": "H3.core",
+      "node_id": "A148.nonpretentious_stability",
+      "parents": [],
+      "program_level": "L1_ACTUAL_CORE",
+      "required_artifact": "",
+      "role": "ARITHMETIC_SHADOW",
+      "scope_match": true,
+      "source_export": "A148.nonpretentious_stability",
+      "status": "PROVED",
+      "structural": false
+    },
+    {
+      "gate": "H3.core",
+      "node_id": "A149.actual_mobius_periodic_corridor",
+      "parents": [
+        "A147.periodic_residue_reassembly",
+        "A148.quotient_mobius_lift",
+        "A148.nonpretentious_stability"
+      ],
+      "program_level": "L1_ACTUAL_CORE",
+      "required_artifact": "",
+      "role": "ARITHMETIC_SHADOW",
+      "scope_match": true,
+      "source_export": "A149.actual_mobius_periodic_corridor",
+      "status": "PROVED",
+      "structural": false
+    },
+    {
+      "gate": "H3",
+      "node_id": "G150.actual_corridor_return",
+      "parents": [
+        "A149.actual_mobius_periodic_corridor",
+        "H1.actual_carrier"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact": "scope-matched literal physical weights and generic phases, a deterministic all-prefix theorem or valid non-atomic selector, and the complete four-sign return on the actual fixed-h0 carrier",
+      "role": "ARITHMETIC_TARGET",
+      "scope_match": true,
+      "source_export": "G150.actual_corridor_return",
+      "status": "NOT_TESTABLE",
+      "structural": false
+    },
+    {
+      "gate": "H2",
+      "node_id": "H2.signed_resonance",
+      "parents": [
+        "H1.actual_carrier"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact": "literal signed resonance replacement",
+      "role": "ARITHMETIC_TARGET",
+      "scope_match": true,
+      "source_export": null,
+      "status": "OPEN",
+      "structural": false
+    },
+    {
+      "gate": "H3",
+      "node_id": "H3.actual_packet_saving",
+      "parents": [
+        "G150.actual_corridor_return"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact": "a scope-matched actual fixed-h0 physical-packet theorem with positive fixed-X-power sigma_raw at least 1/400",
+      "role": "ARITHMETIC_TARGET",
+      "scope_match": true,
+      "source_export": null,
+      "status": "OPEN",
+      "structural": false
+    },
+    {
+      "gate": "H4",
+      "node_id": "H4.complete_tail",
+      "parents": [
+        "H1.actual_carrier"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact": "complete original-scale high/ultra/boundary return",
+      "role": "ARITHMETIC_TARGET",
+      "scope_match": true,
+      "source_export": null,
+      "status": "OPEN",
+      "structural": false
+    },
+    {
+      "gate": "H5",
+      "node_id": "H5.det_zero",
+      "parents": [
+        "H1.actual_carrier"
+      ],
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact": "an actual determinant and zero-mode exponent pair on completed occurrence fibers with source-matched normalization",
+      "role": "ARITHMETIC_TARGET",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": false
+    },
+    {
+      "gate": "H6",
+      "node_id": "H6.physical_cover",
+      "parents": [
+        "H1.actual_carrier"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "a complete theorem-backed physical cover of all actual active occurrences with exact disjoint-cover lineage",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H7",
+      "node_id": "H7.fixed_h0_totality",
+      "parents": [
+        "H1.actual_carrier"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "actual downstream fixed-h0 selector totality on every active occurrence, not the cut-stage identity",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H8",
+      "node_id": "H8.final_reconnection",
+      "parents": [
+        "H1.actual_carrier",
+        "H6.physical_cover",
+        "H7.fixed_h0_totality"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "exact physical hard-packet reconnection with literal weights, signs, phases and all-prefix lineage",
+      "role": "STRUCTURAL",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "H9",
+      "node_id": "H9.physical_registry",
+      "parents": [
+        "H1.actual_carrier",
+        "H6.physical_cover",
+        "H7.fixed_h0_totality",
+        "H8.final_reconnection"
+      ],
+      "program_level": "L1_STRUCTURAL",
+      "required_artifact": "a complete actual occurrence registry plus an H2--H5-independent theorem-backed physical-amplitude upper certificate Lambda_phys<1/400",
+      "role": "PHYSICAL_SYNTHESIS",
+      "scope_match": true,
+      "source_export": null,
+      "status": "NOT_TESTABLE",
+      "structural": true
+    },
+    {
+      "gate": "ROOT",
+      "node_id": "ROOT.endpoint_synthesis",
+      "parents": [
+        "H1.actual_carrier",
+        "H2.signed_resonance",
+        "H3.actual_packet_saving",
+        "H4.complete_tail",
+        "H5.det_zero",
+        "H6.physical_cover",
+        "H7.fixed_h0_totality",
+        "H8.final_reconnection",
+        "H9.physical_registry"
+      ],
+      "program_level": "L1_CONDITIONAL",
+      "required_artifact": "a scope-matched H1--H9 conjunction, sigma_raw>=1/400, Lambda_phys<1/400 and sigma_raw-Lambda_phys>0",
+      "role": "ROOT",
+      "scope_match": true,
+      "source_export": null,
+      "status": "CONDITIONAL",
+      "structural": false
+    }
+  ],
+  "normalization_registry": {
+    "norm.almost_scale_cesaro_core": {
+      "physical_atomic_crosswalk": "OPEN",
+      "scale": "CESARO_CORRELATION"
+    },
+    "norm.physical_atomic": {
+      "determinant_label_is_normalization": false,
+      "scale": "AMPLITUDE"
+    }
+  },
+  "occurrence_registry": {
+    "complete": false,
+    "determinant_reserve_is_physical_token": false,
+    "energy_to_amplitude_halving_count": 1,
+    "joint_replacements_require_exact_disjoint_cover": true,
+    "required_domain": "ALL_NONSOFT_CUT_PATHS_ETO_PLUS_FUM",
+    "status": "INCOMPLETE",
+    "unknown_tokens_are_zero": false
+  },
+  "progress_classification": {
+    "actual_core_arithmetic_achieved_level": "L1_ACTUAL_CORE",
+    "actual_fixed_power_achieved": false,
+    "actual_fixed_power_status": "NOT_PROVED",
+    "actual_fixed_power_target_level": "L2_ACTUAL_POSITIVE",
+    "new_actual_core_L1": true,
+    "new_positive_L2": false,
+    "new_structural_L1": true,
+    "structural_achieved_level": "L1_STRUCTURAL"
+  },
+  "proof_dag": {
+    "H9_role_and_gate_independent": true,
+    "active_nodes_derived_not_declared": true,
+    "parents": {
+      "A147.periodic_residue_reassembly": [],
+      "A148.nonpretentious_stability": [],
+      "A148.quotient_mobius_lift": [],
+      "A149.actual_mobius_periodic_corridor": [
+        "A147.periodic_residue_reassembly",
+        "A148.quotient_mobius_lift",
+        "A148.nonpretentious_stability"
+      ],
+      "C144.QD_interface": [],
+      "C144.QZ_interface": [],
+      "C145.GP_commuting_square": [],
+      "C146.four_map_contract": [],
+      "G150.actual_corridor_return": [
+        "A149.actual_mobius_periodic_corridor",
+        "H1.actual_carrier"
+      ],
+      "H1.actual_carrier": [
+        "H1.frontier_totalization"
+      ],
+      "H1.frontier_GP_commutation": [
+        "H1.frontier_G_totality",
+        "H1.frontier_Ph0_totality"
+      ],
+      "H1.frontier_G_totality": [
+        "H1.frontier_occurrence_lift",
+        "C145.GP_commuting_square"
+      ],
+      "H1.frontier_Ph0_totality": [
+        "H1.frontier_occurrence_lift",
+        "C145.GP_commuting_square",
+        "S145.cut_Ph0_identity"
+      ],
+      "H1.frontier_QD_QZ_intertwining": [
+        "H1.frontier_QD_totality",
+        "H1.frontier_QZ_totality"
+      ],
+      "H1.frontier_QD_totality": [
+        "H1.frontier_occurrence_lift",
+        "C144.QD_interface"
+      ],
+      "H1.frontier_QZ_totality": [
+        "H1.frontier_occurrence_lift",
+        "C144.QZ_interface"
+      ],
+      "H1.frontier_occurrence_lift": [
+        "S143.cut_shift_selector",
+        "N143.schema_nonidentifiability"
+      ],
+      "H1.frontier_totalization": [
+        "C146.four_map_contract",
+        "H1.frontier_QD_QZ_intertwining",
+        "H1.frontier_GP_commutation"
+      ],
+      "H2.signed_resonance": [
+        "H1.actual_carrier"
+      ],
+      "H3.actual_packet_saving": [
+        "G150.actual_corridor_return"
+      ],
+      "H4.complete_tail": [
+        "H1.actual_carrier"
+      ],
+      "H5.det_zero": [
+        "H1.actual_carrier"
+      ],
+      "H6.physical_cover": [
+        "H1.actual_carrier"
+      ],
+      "H7.fixed_h0_totality": [
+        "H1.actual_carrier"
+      ],
+      "H8.final_reconnection": [
+        "H1.actual_carrier",
+        "H6.physical_cover",
+        "H7.fixed_h0_totality"
+      ],
+      "H9.physical_registry": [
+        "H1.actual_carrier",
+        "H6.physical_cover",
+        "H7.fixed_h0_totality",
+        "H8.final_reconnection"
+      ],
+      "N143.schema_nonidentifiability": [],
+      "ROOT.endpoint_synthesis": [
+        "H1.actual_carrier",
+        "H2.signed_resonance",
+        "H3.actual_packet_saving",
+        "H4.complete_tail",
+        "H5.det_zero",
+        "H6.physical_cover",
+        "H7.fixed_h0_totality",
+        "H8.final_reconnection",
+        "H9.physical_registry"
+      ],
+      "S143.cut_shift_selector": [],
+      "S145.cut_Ph0_identity": []
+    },
+    "selected_root": "ROOT.endpoint_synthesis",
+    "topological_order": [
+      "A147.periodic_residue_reassembly",
+      "A148.nonpretentious_stability",
+      "A148.quotient_mobius_lift",
+      "A149.actual_mobius_periodic_corridor",
+      "C144.QD_interface",
+      "C144.QZ_interface",
+      "C145.GP_commuting_square",
+      "C146.four_map_contract",
+      "N143.schema_nonidentifiability",
+      "S143.cut_shift_selector",
+      "H1.frontier_occurrence_lift",
+      "H1.frontier_G_totality",
+      "H1.frontier_QD_totality",
+      "H1.frontier_QZ_totality",
+      "H1.frontier_QD_QZ_intertwining",
+      "S145.cut_Ph0_identity",
+      "H1.frontier_Ph0_totality",
+      "H1.frontier_GP_commutation",
+      "H1.frontier_totalization",
+      "H1.actual_carrier",
+      "G150.actual_corridor_return",
+      "H2.signed_resonance",
+      "H3.actual_packet_saving",
+      "H4.complete_tail",
+      "H5.det_zero",
+      "H6.physical_cover",
+      "H7.fixed_h0_totality",
+      "H8.final_reconnection",
+      "H9.physical_registry",
+      "ROOT.endpoint_synthesis"
+    ]
+  },
+  "route_universe": {
+    "routes": [
+      "eligible_only_tpc17_18_compiler",
+      "quantitative_shift1_reparameterization",
+      "current_schema_only_downstream_label_derivation",
+      "schema_only_QD_QZ_derivation",
+      "aggregate_cancellation_shift_provenance",
+      "atomic_deterministic_prefix_transfer",
+      "occurrence_lift_quotient_mobius_return"
+    ],
+    "selected_root": "ROOT.endpoint_synthesis",
+    "selected_route": "occurrence_lift_quotient_mobius_return",
+    "stops": {
+      "aggregate_cancellation_shift_provenance": {
+        "carrier_id": "carrier.all_nonsoft_cut_paths",
+        "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+        "normalization_id": "norm.physical_atomic",
+        "registry_id": "registry.aggregate-gp-v1",
+        "scope_id": "scope.physical_nonsoft_cut",
+        "source_export": "N145.aggregate_cancellation_stop",
+        "stopped": true
+      },
+      "atomic_deterministic_prefix_transfer": {
+        "carrier_id": "carrier.actual_h3_packet",
+        "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+        "normalization_id": "norm.physical_atomic",
+        "registry_id": "registry.atomic-prefix-v1",
+        "scope_id": "scope.actual_h3",
+        "source_export": "N150.deterministic_prefix_nonimplication",
+        "stopped": true
+      },
+      "current_schema_only_downstream_label_derivation": {
+        "carrier_id": "carrier.all_nonsoft_cut_paths",
+        "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+        "normalization_id": "norm.physical_atomic",
+        "registry_id": "registry.schema-only-v1",
+        "scope_id": "scope.physical_nonsoft_cut",
+        "source_export": "N143.schema_nonidentifiability",
+        "stopped": true
+      },
+      "eligible_only_tpc17_18_compiler": {
+        "carrier_id": "carrier.all_nonsoft_cut_paths",
+        "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+        "normalization_id": "norm.physical_atomic",
+        "registry_id": "registry.eligible-v1",
+        "scope_id": "scope.physical_nonsoft_cut",
+        "source_export": "ANCHOR.N135.eligible_only_stop",
+        "stopped": true
+      },
+      "occurrence_lift_quotient_mobius_return": {
+        "carrier_id": "carrier.actual_h3_packet",
+        "coverage": "OPEN_SELECTED_ROUTE",
+        "normalization_id": "norm.physical_atomic",
+        "registry_id": "registry.occurrence-quotient-v1",
+        "scope_id": "scope.actual_h3",
+        "source_export": null,
+        "stopped": false
+      },
+      "quantitative_shift1_reparameterization": {
+        "carrier_id": "carrier.all_nonsoft_cut_paths",
+        "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+        "normalization_id": "norm.physical_atomic",
+        "registry_id": "registry.shift1-v1",
+        "scope_id": "scope.physical_nonsoft_cut",
+        "source_export": "ANCHOR.N138.shift_one_stop",
+        "stopped": true
+      },
+      "schema_only_QD_QZ_derivation": {
+        "carrier_id": "carrier.all_nonsoft_cut_paths",
+        "coverage": "COMPLETE_DECLARED_ROUTE_CELL",
+        "normalization_id": "norm.physical_atomic",
+        "registry_id": "registry.qdqz-schema-v1",
+        "scope_id": "scope.physical_nonsoft_cut",
+        "source_export": "N144.schema_only_QD_QZ",
+        "stopped": true
+      }
+    },
+    "typed_alternative": null,
+    "typed_alternative_crosswalk": null,
+    "universe_completeness": {
+      "scope": "DECLARED_TESTED_ROUTE_CELLS_NOT_ALL_CONCEIVABLE_ROUTES",
+      "source_export": null,
+      "status": "OPEN"
+    }
+  },
+  "schema": "tpc-151-source-locked-frontier-quotient-integration-v1",
+  "scope_registry": {
+    "scope.actual_fixed_two_mobius_periodic_core_almost_scale": {
+      "coverage": "SMALL_POLYLOG_PERIODIC_CORE_ALMOST_SCALE",
+      "fixed_h0": true,
+      "support": "ACTUAL_MOBIUS_CORE_NOT_FULL_PHYSICAL_PACKET"
+    },
+    "scope.actual_h3": {
+      "coverage": "FULL_ACTUAL_PHYSICAL_H3_PACKET",
+      "fixed_h0": true,
+      "support": "ACTUAL_ACTIVE_SUPPORT"
+    },
+    "scope.frontier_completion_model": {
+      "coverage": "SYNTHETIC_OR_CONDITIONAL_COMPLETION",
+      "fixed_h0": true,
+      "support": "TYPED_COMPLETION"
+    },
+    "scope.physical_hard_packet": {
+      "coverage": "FULL_HARD_PACKET",
+      "fixed_h0": true,
+      "support": "ACTUAL_ACTIVE_SUPPORT"
+    },
+    "scope.physical_nonsoft_cut": {
+      "coverage": "ALL_NONSOFT_CUT_PATHS_ETO_PLUS_FUM",
+      "fixed_h0": true,
+      "support": "FORMAL_SUPPORT_ENVELOPE"
+    }
+  },
+  "snapshot": {
+    "date": "2026-07-27",
+    "hash_mode": "CANONICAL_UTF8_LF_V2",
+    "identity_rule": "EXACT_TYPED_KEYS_NOT_HASH_IDENTITIES",
+    "selected_route": "occurrence_lift_quotient_mobius_return",
+    "source_hash_semantics": "INTEGRITY_ONLY",
+    "source_range": "TPC-143--150"
+  },
+  "source_bundles": {
+    "TPC-143": {
+      "bundle_sha256": "23de2dcf6effc8e1e89b4644f73b2a049a19ad977ba900eb096b729e9dc5b971",
+      "directory": "tpc-143-frontier-occurrence-lift-contract",
+      "files": {
+        "README.md": "f61b5ec616cb0a196896283eafc16714e7b584781458a741a07c086e9beab8f1",
+        "experiments/tpc143_frontier_lift_audit.py": "b87d6c0d8922295fdb4ea39cfecd4832473d174cfb3c93f0d9ed0d687ba62e3e",
+        "experiments/tpc143_frontier_lift_certificate.json": "e398b38b39e8a094123d2830a42ea4806d820655f55a5425f10d985a0783a724",
+        "main.tex": "4965d5ad640999fda1be2a75b82dabdbb2cef6ad17df770fa2e53fc08b2e9627",
+        "references.bib": "62a6b6445db63e5dbe1e138dc371458c979b5f724ff96870a1c475e9d47decc9",
+        "samples/tpc143_frontier_lift_obligations.jsonl": "30d90f00413af7890689644fbc6bfc10bdf8df61afa0ba1cca8d3a5c1f252057",
+        "schemas/tpc143-frontier-lift-obligation-v1.schema.json": "d00502065318fe02fd9ad1f383d0e780204fee1da4028de10d3a7a368c3ebc3c"
+      },
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "paper": "TPC-143"
+    },
+    "TPC-144": {
+      "bundle_sha256": "29f7a5a04f3e55bbc8d675bca6b862c7ee6edc972abbca4d2da7f116c550b614",
+      "directory": "tpc-144-determinant-zero-quotient-kernel-test",
+      "files": {
+        "README.md": "3fdf22225f9e8e3a08fb77e65015e902b7228ce92b55d9e5857116a3ad192ce5",
+        "experiments/tpc144_quotient_kernel_audit.py": "74b65aaf8877ec9beee5b8a2b339b6021dfc32471b49b4d93c1b4e724a7b8fe7",
+        "experiments/tpc144_quotient_kernel_certificate.json": "0b6f8170dca792ece5546d8743266458f55358cebe146ba6270d31c6a6e7351a",
+        "main.tex": "4031a43e39039c61f51803d48a63ee94b7ac536cc1205c164d7dc1622efc52c9",
+        "references.bib": "c46c27698ccedf1ac7190e41824a45f09effee08090c9d0015b285ff11c20d05",
+        "samples/tpc144_actual_quotient_manifest.json": "217d4f34a8f0a64996eeffdcc0d71a48a5f3d141362a6070379a23846471b635",
+        "schemas/tpc144-actual-quotient-manifest-v1.schema.json": "2c61ff80615102f24424bf56a267cff6b6bb36d31140a3e71c63b45ddde4bdfa"
+      },
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "paper": "TPC-144"
+    },
+    "TPC-145": {
+      "bundle_sha256": "e7c4f0556a23d44a2a88020bbca39cf057e4d1e1dd22c8f1aa9b3d33719f2c0a",
+      "directory": "tpc-145-physical-grouping-shift-commutation",
+      "files": {
+        "README.md": "5aef78cffecaebbe5a0261ca7dfd7f3335ed74be62cd8fec7ddc3ab33fdf3fd9",
+        "experiments/tpc145_group_shift_audit.py": "0c15aca2d2d145dc867d8c55d28e3fd1db3bfc57dc18d765f6a6acfa70587455",
+        "experiments/tpc145_group_shift_certificate.json": "d151b564203559780ecd472499aac040a4a3962911baaf7d2ec955414fdfb1c2",
+        "main.tex": "40652c61a4f042ec7d47f48e0a1e452411ee6b33eeded302d8c7c8ef41b88ff6",
+        "references.bib": "a4aa3709994ff123fa8592ca949b8b577699a8b4b38382b552854dbdeadb33fb",
+        "samples/tpc145_actual_group_shift_manifest.json": "f8dfa1b282f1f00984ad4ff841730ce1721fe715deeb9c1e50121f7b563316c6",
+        "schemas/tpc145-actual-group-shift-manifest-v1.schema.json": "de3cc5afcb37682b2c6786d2da8d6bf9757d90ed9b0da0dd8e5968c7fe1f994e"
+      },
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "paper": "TPC-145"
+    },
+    "TPC-146": {
+      "bundle_sha256": "ac8779507d11a000c413710b7299d624b5985081b9bc57c6b67b06c4a129f30e",
+      "directory": "tpc-146-frontier-four-map-completion-certificate",
+      "files": {
+        "README.md": "282e67c23b4e785972d2e1e4637525a0ad05292af8fef3e7ce0d6133bdd07251",
+        "experiments/tpc146_frontier_completion_audit.py": "88bed19e9e576643839b14dcbf2081ee5cd1a5114a68709627551cdb76ab8ee2",
+        "experiments/tpc146_frontier_completion_certificate.json": "e5feffe2f393e1b39245fa2e4535c247a78b9fee1beb5b082b5228a21b998de7",
+        "main.tex": "1e003023c5720a3af1a26007f60b06a1cd54b40071982a4db9929722bbc3f0cc",
+        "references.bib": "70e4e986edb6a55a6ecea9176cb42833b3814122de75c6130f80cc2270aa1830",
+        "samples/tpc146_frontier_completion_manifest.json": "c37febd03034991a4d7226d4d3488e07765999821bdb7093f78fa8292447f679",
+        "schemas/tpc146-frontier-completion-manifest-v1.schema.json": "07d9963a74dc80541b121c1cbdf56f49d970f2186abdf8abf342945856fe804c"
+      },
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "paper": "TPC-146"
+    },
+    "TPC-147": {
+      "bundle_sha256": "0ded1940fadf0c1e876e0d6c56e37f84bed43c4d16dd3e7e21290ef9a9edf371",
+      "directory": "tpc-147-tt-periodic-residue-reassembly",
+      "files": {
+        "README.md": "8167a4149667e60fd269e81df5cd3ee3e2cf4ef4d7eb724da67dd64223625f1e",
+        "experiments/tpc147_periodic_reassembly_audit.json": "a5bd1e2fba8ec41f8fc54bd81fec498cd856cb3893ef9335ce41c54374c48370",
+        "experiments/tpc147_periodic_reassembly_audit.py": "e56009cd1230607ca3186672bd8e761e615c5f57c53ef3ff5df5c31ea50c3507",
+        "main.tex": "30214b03d162e1398648cd129e14de016dbf78c52f33a486e1ff826415175d98",
+        "references.bib": "995ffc8e28b39578828d8b4fddd285bb309b5130db9d7eab9672265da456e9ec",
+        "schemas/tpc147-invocation-v1.schema.json": "adf29563c876a2d0fd5941b8ad1627f26cad27eebae6f46145e11e987198f6e3"
+      },
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "paper": "TPC-147"
+    },
+    "TPC-148": {
+      "bundle_sha256": "e024f52e175aefc772f5034125b01f977b0216c03e4a78d6729989efacbc7ce2",
+      "directory": "tpc-148-quotient-mobius-fiber-lift",
+      "files": {
+        "README.md": "51f046628b4937c8aca16bf02f573f1dac6848b4da160d2ef10037152a8593df",
+        "experiments/tpc148_quotient_lift_audit.json": "da4073fe9d6d10d4c58c9aed6140e65940632949fe2a419b9b0ca51a5a6554d3",
+        "experiments/tpc148_quotient_lift_audit.py": "b9c01a97f75b690a72ab473ad79331219b48690620d2d49bd0923d841e2a8d7d",
+        "main.tex": "b9d4902268dc8a9636669b28930e8cb6f9cb3c68cff3aaef764283a0852fb040",
+        "references.bib": "e4ff550fa14966525c29cfe323dc9ee3469e2f1969809da917447a7f70358f13",
+        "schemas/tpc148-quotient-lift-v1.schema.json": "46e44e8ec10b8bf3b1a8f50aa8354e1d39f5756540ee5e099528a072e99854e7"
+      },
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "paper": "TPC-148"
+    },
+    "TPC-149": {
+      "bundle_sha256": "f8a4ce0df1a849de5ab4e4a4c1cd1d9af1d6a12b9e8339da2a7606521a5f6bfb",
+      "directory": "tpc-149-small-polylog-determinant-two-mobius-corridor",
+      "files": {
+        "README.md": "b3028248f7a9be9f8c8119b3c52b101e563f582b00f5abf07faec699c1cfcd23",
+        "experiments/tpc149_actual_core_corridor_audit.json": "1934c5be053c8cdd374879ba33d414bd9350984d11097535972edb2cbaaf4c5d",
+        "experiments/tpc149_actual_core_corridor_audit.py": "713ff3f9406d7f5307643418597479dccf1e3c1e3086204537ed68de1e8e912b",
+        "main.tex": "8d4768d022ccf536ac14182b5a645797816df63a0814f698dd9a373c504bc167",
+        "references.bib": "d4108550f0f110fdccc6a2ea4b74b7a3511ff6ce90e430c7f1c4708d4b3b5d02",
+        "schemas/tpc149-actual-core-record-v1.schema.json": "8d9703dccd40490720b75605fdab638955d6f7135bd5b44d54f2dc3e0e10fcbb"
+      },
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "paper": "TPC-149"
+    },
+    "TPC-150": {
+      "bundle_sha256": "3380bd9c27b85f951cc89f71f39dba195902646b563777d5259f32c0b00233c0",
+      "directory": "tpc-150-actual-corridor-window-selector-ledger",
+      "files": {
+        "README.md": "597bbbd5ef7f151eb15b5f47c891eb94fd413245bad7b8c9351d8ecdc46e0136",
+        "experiments/tpc150_actual_return_audit.json": "b099d2b2cdcaf2c092bec2eb7165374074ab9997eef6095c0a556f5cfdcd448a",
+        "experiments/tpc150_actual_return_audit.py": "8ded801f1a00f564e663f5fccd0d36f3422ecf23b63edafd031aae4f2863e0ad",
+        "experiments/tpc150_actual_return_manifest.json": "68c6b593c5d8b6c5de06bcc10bcc3696b86f5c5eaf7969f5b96a9edaf4348c82",
+        "main.tex": "be071ded9daff31d02ce74b6e07df49d7fb8f905be597d4740661e192fc7354e",
+        "references.bib": "e027872f465cb8e20b022e26ae468a0d1ac5662d68b1eff72fad6d216e7df64a",
+        "schemas/tpc150-return-ledger-v1.schema.json": "0499ef7947fe0bddc81624f35445ddb4f09fee6f610bab05f23808b6e24a1e3f"
+      },
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "paper": "TPC-150"
+    }
+  },
+  "source_contracts": {
+    "TPC-143": {
+      "P_h0_cut": "PROVED_L1",
+      "actual_carrier_impossibility": false,
+      "first_missing": "H1.frontier_occurrence_lift",
+      "occurrence_lift": "NOT_TESTABLE",
+      "schema_nonidentifiability_scope": "CURRENT_MAXIMAL_FORMAL_SCHEMA_COMPLETION_CLASS_ONLY",
+      "selected_augmented_route_stopped": false
+    },
+    "TPC-144": {
+      "QD_totality": "NOT_TESTABLE",
+      "QZ_totality": "NOT_TESTABLE",
+      "intertwining": "NOT_TESTABLE"
+    },
+    "TPC-145": {
+      "G_totality": "NOT_TESTABLE",
+      "P_h0_cut": "PROVED_L1",
+      "P_h0_downstream_totality": "NOT_TESTABLE"
+    },
+    "TPC-146": {
+      "first_missing": "H1.frontier_occurrence_lift",
+      "frontier_scalar_plus_ETO_route_open": true,
+      "frontier_totalization": "NOT_TESTABLE",
+      "interface_status": "PROVED_L1_INTERFACE",
+      "map_route_open": true,
+      "totalization_logic": "ALL_NONSOFT_MAP_ROUTE_OR_FRONTIER_SCALAR_AND_ETO_ROUTE"
+    },
+    "TPC-147": {
+      "node_id": "A147.periodic_residue_reassembly",
+      "promotion_eligible": false,
+      "status": "PROVED"
+    },
+    "TPC-148": {
+      "nonpretentious_stability": "PROVED",
+      "quotient_lift": "PROVED"
+    },
+    "TPC-149": {
+      "fixed_X_power_positive": false,
+      "full_H3_scope_match": false,
+      "node_id": "A149.actual_mobius_periodic_corridor",
+      "program_level": "L1_ACTUAL_CORE",
+      "promotion_eligible": false,
+      "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+      "status": "PROVED"
+    },
+    "TPC-150": {
+      "actual_corridor_return": "NOT_TESTABLE",
+      "first_missing": "H1.frontier_occurrence_lift",
+      "prefix_nonimplication": "PROVED"
+    }
+  }
+}

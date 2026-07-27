@@ -1,0 +1,84 @@
+{
+  "checks": {
+    "all_mutations_rejected": true,
+    "exact_quotient_identity": true,
+    "fiber_geometry": true,
+    "fiber_mobius_identity": true,
+    "multiplicativity": true,
+    "nonpretentious_loss_is_lower_order_for_small_polylog_c": true
+  },
+  "claim_boundary": {
+    "all_prefix": false,
+    "arbitrary_physical_weight": false,
+    "four_point": false,
+    "full_mobius_core_identity": true,
+    "generic_phase": false,
+    "one_over_400": false,
+    "positive_L2": false,
+    "positive_X_power": false,
+    "prime_pair_or_twin_prime_theorem": false,
+    "squarefree_cutoff_required": false,
+    "squarefree_tail_present": false
+  },
+  "definition": {
+    "completely_multiplicative": false,
+    "exact_identity": "G_c(c*m)=mu(m)",
+    "local_rule": {
+      "j<vp(c)": "G_c(p^j)=(-1)^j",
+      "j>=vp(c)": "G_c(p^j)=mu(p^(j-vp(c)))"
+    },
+    "multiplicative": true,
+    "prime_difference_from_lambda": "p exactly divides c"
+  },
+  "exports": [
+    {
+      "node_id": "A148.quotient_mobius_lift",
+      "program_level": "L0",
+      "scope": "determinant_two_exact_mobius_core",
+      "status": "PROVED"
+    },
+    {
+      "bound": "M(G_c;Y,Q)>=M(lambda;Y,Q)-2*sum_{p exactly divides c}1/p",
+      "node_id": "A148.nonpretentious_stability",
+      "program_level": "L1",
+      "scope": "small_polylog_quotient_lifts",
+      "status": "PROVED"
+    }
+  ],
+  "mutation_regression": {
+    "complete_multiplicativity_claim_rejected": true,
+    "delete_squarefree_information_rejected": true,
+    "drop_progression_divisibility_rejected": true,
+    "physical_weight_or_phase_added_rejected": true,
+    "positive_L2_promotion_rejected": true,
+    "pretentious_loss_set_to_zero_rejected": true,
+    "replace_G_c_by_lambda_rejected": true,
+    "two_point_promoted_to_four_point_rejected": true
+  },
+  "regression_counts": {
+    "coprime_multiplicativity_cases": 35880,
+    "determinant_two_fiber_cases": 240,
+    "quotient_identity_cases": 4800
+  },
+  "sample_modification_sets": {
+    "1": [],
+    "12": [
+      3
+    ],
+    "18": [
+      2
+    ],
+    "30": [
+      2,
+      3,
+      5
+    ],
+    "6": [
+      2,
+      3
+    ],
+    "72": []
+  },
+  "schema": "tpc-148-quotient-lift-audit-v1",
+  "status": "PASS"
+}

@@ -1,0 +1,385 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={Returning the Determinant-Two Mobius Corridor},
+  pdfauthor={Liang Wang},
+  pdfsubject={Terminal-window loss, atomic prefixes, and split log/power ledgers},
+  pdfkeywords={exceptional scales, selectors, prefixes, logarithmic saving, endpoint ledger}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{Returning the Determinant-Two M\"obius}\\
+\textbf{Corridor: Terminal-Window Loss, Atomic}\\
+\textbf{Prefixes, and Split Log/Power Ledgers}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-149 proves power-of-log cancellation for the actual
+determinant-two M\"obius periodic core at all scales outside a local
+exceptional set.  We determine exactly what is lost when this theorem
+is restricted to a terminal window and then sampled by a physical
+prefix rule.  If the source exceptional exponent is
+\(\kappa_{\rm src}\) and
+\(\log\omega=(\log X)^{\theta+o(1)}\), then its normalized
+terminal-window restriction directly certifies only
+\[
+ \kappa_{\rm exc}=\kappa_{\rm src}+\theta-1.
+\]
+A positive source density saving may therefore disappear on a short
+window.
+
+We also give a sharp deterministic-prefix firewall.  Adding any
+finite list of requested endpoints to an exceptional set does not
+change its logarithmic measure.  Hence exceptional density alone
+cannot certify a prescribed discrete prefix family.  A pointwise
+theorem, proved exceptional avoidance, or a quantitative smoothing
+and selector crosswalk is required.
+
+Finally, we separate the power-of-log return ledger from the
+fixed-\(X\)-power ledger.  Even a positive logarithmic exponent has
+\(\sigma_{\rm power}=0\), so it cannot pay a positive physical
+endpoint loss or \(1/400\).  Because the frontier occurrence lift is
+still missing, the current actual return is \(\NT\), not positive
+\(\Ltwo\) and not a prime-pair result.
+\end{abstract}
+
+\section{The sourced core and the missing occurrence lift}
+
+TPC-149 proves that there are constants
+\(\eta_0,\kappa_{\rm src}>0\) and, for every ambient \(X\), a set
+\[
+ \mathcal E_X^\star\subset[\sqrt X,X]
+\]
+such that
+\begin{equation}
+ \frac1{\log X}\int_{\mathcal E_X^\star}\frac{dt}{t}
+ \ll(\log X)^{-\kappa_{\rm src}},
+\label{eq:source-density}
+\end{equation}
+and the literal determinant-two M\"obius periodic core has
+power-of-log cancellation at each
+\(N\in[\sqrt X,X]\setminus\mathcal E_X^\star\)
+\citep{WangTPC149,TaoTeravainen2026}.
+
+This core theorem is uniform under a small-polylogarithmic bound on
+the product of the progression modulus and exact periodic period.
+It does not include a nonperiodic physical multiplier, a generic
+phase, an arbitrary interval or every prefix.  In particular, it is
+not the four-sign Fej\'er input required by TPC-130
+\citep{WangTPC130}.
+
+Moreover, the current TPC-143--146 frontier interface has not yet
+constructed the occurrence records carrying
+\[
+ (a,s,d,u),\quad as,\quad\text{residue},\quad\text{ordered interval},
+ \quad R,\quad\text{masks, prefixes and coefficient mass}.
+\]
+These fields are \texttt{REQUIRED\_MISSING}.  Thus
+\begin{equation}
+ \boxed{\mathsf{H1.frontier\_occurrence\_lift}=\NT.}
+\label{eq:first-missing}
+\end{equation}
+The results below give the legal return once those records exist;
+they do not manufacture them.
+
+\section{A local exceptional set on a terminal window}
+
+Let
+\[
+ J_X=[X/\omega,X],
+ \qquad
+ m_{J_X}(E)
+ =
+ \frac1{\log\omega}\int_{E\cap J_X}\frac{dt}{t}.
+\]
+We first use one ambient shell, so we explicitly require
+\begin{equation}
+ J_X\subset[\sqrt X,X],
+ \qquad\text{equivalently}\qquad 1<\omega\le\sqrt X.
+\label{eq:containment}
+\end{equation}
+A longer window needs a declared shell decomposition and the union
+of all shell-level exceptional sets.
+
+\begin{proposition}[Local shell to terminal window]
+\label{prop:window}
+Under \eqref{eq:source-density} and \eqref{eq:containment},
+\begin{equation}
+ \boxed{
+ m_{J_X}(\mathcal E_X^\star)
+ \ll
+ \min\left\{
+ 1,\frac{(\log X)^{1-\kappa_{\rm src}}}{\log\omega}
+ \right\}.}
+\label{eq:window}
+\end{equation}
+If
+\begin{equation}
+ \log\omega=(\log X)^{\theta+o(1)},
+\label{eq:theta}
+\end{equation}
+then the exponent supplied by this estimate is
+\begin{equation}
+ \boxed{\kappa_{\rm exc}
+ =\kappa_{\rm src}+\theta-1.}
+\label{eq:exception-exponent}
+\end{equation}
+It is positive only if \(\kappa_{\rm src}+\theta>1\).
+\end{proposition}
+
+\begin{proof}
+The numerator defining \(m_{J_X}\) is at most the integral over
+\(\mathcal E_X^\star\), which is
+\(O((\log X)^{1-\kappa_{\rm src}})\) by
+\eqref{eq:source-density}.  Divide by \(\log\omega\), and also use
+\(m_{J_X}\le1\).  Substitution of \eqref{eq:theta} gives
+\eqref{eq:exception-exponent}.
+\end{proof}
+
+\begin{remark}[No duplicated pair census]
+TPC-149 already forms one exceptional set by unioning over all
+allowed \((a,s)\) in its universal envelope.  Its pair census must
+not be charged again in \eqref{eq:window}.  A record-aware variant
+may instead union only the actually occurring pairs and endpoint
+dilates, but then those counts must be entered exactly once.
+\end{remark}
+
+\section{A sharp deterministic-prefix firewall}
+
+\begin{theorem}[Discrete endpoints are invisible to density]
+\label{thm:atomic-set}
+Let \(T_X\subset[\sqrt X,X]\) be any finite set of deterministic
+scales.  For every measurable \(E_X\subset[\sqrt X,X]\),
+\[
+ \int_{E_X\cup T_X}\frac{dt}{t}
+ =
+ \int_{E_X}\frac{dt}{t}.
+\]
+Consequently, an exceptional-set density theorem alone cannot imply
+that even one prescribed endpoint in \(T_X\) lies outside the
+exceptional set.
+\end{theorem}
+
+\begin{proof}
+Every finite set has Lebesgue, hence logarithmic, measure zero.
+Therefore adjoining \(T_X\) leaves the integral unchanged.  Both
+\(E_X\) and \(E_X\cup T_X\) obey exactly the same density bound, while
+the latter contains every requested endpoint.
+\end{proof}
+
+This is a logical nonimplication, not a claim that the arithmetic
+exceptional set actually contains the endpoints.  It shows that
+density information cannot decide the question.
+
+Let \(\nu_X\) be the probability measure with which a proposed
+physical synthesis samples \(J_X\).  TPC-140 uses the domination
+condition
+\begin{equation}
+ \nu_X(A)\le K_Xm_{J_X}(A)
+\label{eq:selector}
+\end{equation}
+for every Borel set \(A\) \citep{WangTPC140}.
+
+\begin{corollary}[Atomic selector stop]
+\label{cor:atomic}
+If \(\nu_X\) gives positive mass to any deterministic endpoint, no
+finite \(K_X\) satisfies \eqref{eq:selector}.
+\end{corollary}
+
+\begin{proof}
+Apply \eqref{eq:selector} to the singleton endpoint.  Its
+\(m_{J_X}\)-measure is zero, while its \(\nu_X\)-mass is positive.
+\end{proof}
+
+There are three legal exits:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item a pointwise theorem uniform in every actual prefix;
+\item an independent theorem proving that the requested endpoints
+  avoid the actual exceptional sets; or
+\item an exact smoothing identity, a quantitative stability bound
+  and selector domination for the smoothed measure.
+\end{enumerate}
+
+\section{The power-of-log return ledger}
+
+Suppose all occurrence records and normalizations have been supplied.
+Write
+\begin{align}
+ \varepsilon_{\rm corr}
+ &\ll(\log X)^{-\kappa_{\rm corr}+o(1)},\notag\\
+ m_{J_X}(\mathcal E_{\rm tot})
+ &\ll(\log X)^{-\kappa_{\rm exc}+o(1)}.
+\label{eq:two-errors}
+\end{align}
+Boundedness and the good/bad split give
+\begin{equation}
+ \kappa_{\rm aff}
+ =
+ \min\{\kappa_{\rm corr},\kappa_{\rm exc}\}.
+\label{eq:aff}
+\end{equation}
+
+Let the ratio of the literal outer absolute reassembly mass to the
+declared physical comparison mass cost
+\((\log X)^{\kappa_{\rm cen}+o(1)}\).  Let selector and nonperiodic
+weight/Abel return cost respectively
+\((\log X)^{\kappa_{\rm sel}+o(1)}\) and
+\((\log X)^{\kappa_{\rm BV}+o(1)}\).  Unknown costs are not zero.
+If a separate remaining tail saves
+\((\log X)^{-\kappa_{\rm tail}+o(1)}\), then:
+
+\begin{theorem}[Typed logarithmic return]
+\label{thm:log-ledger}
+Under the preceding proved inputs, the exponent certified by their
+triangle-inequality return is
+\begin{equation}
+ \boxed{
+ \kappa_{\rm returned}^{\rm cert}
+ =
+ \min\left\{
+ \kappa_{\rm tail},
+ \kappa_{\rm aff}
+ -\kappa_{\rm cen}
+ -\kappa_{\rm sel}
+ -\kappa_{\rm BV}
+ \right\}.}
+\label{eq:log-ledger}
+\end{equation}
+For the exact quotient-M\"obius core of TPC-149 there is no
+squarefree tail, so the first entry is omitted unless another literal
+remainder is present.
+\end{theorem}
+
+\begin{proof}
+On good scales, sum the component estimates against the actual outer
+absolute mass.  On bad scales, use boundedness and their normalized
+mass.  This gives \eqref{eq:aff}; the three multiplicative return
+costs subtract their exponents.  A separately bounded tail is added,
+so the weaker of the two savings survives.
+\end{proof}
+
+Periodic residue classes inside one TPC-149 record have already been
+reassembled with their native densities and do not contribute to
+\(\kappa_{\rm cen}\).  Distinct outer records and the mismatch
+between their arithmetic and physical comparison masses may do so.
+The displayed exponent is a guaranteed ledger output, not a claim
+that the true error has exactly this order; it gives decay only when
+it is strictly positive.
+
+\section{The separate fixed-\texorpdfstring{\(X\)}{X}-power ledger}
+
+\begin{proposition}[Logarithmic saving has zero \(X\)-power]
+\label{prop:zero-power}
+For every fixed \(\kappa>0\), the largest fixed
+\(\sigma\ge0\) certified by
+\[
+ (\log X)^{-\kappa+o(1)}
+ \le X^{-\sigma+o(1)}
+\]
+is \(\sigma=0\).
+\end{proposition}
+
+\begin{proof}
+For every fixed \(\sigma>0\),
+\[
+ X^\sigma(\log X)^{-\kappa}\longrightarrow\infty.
+\]
+Thus a power of logarithm decays more slowly than every positive
+power of \(X\).
+\end{proof}
+
+Consequently,
+\begin{equation}
+ \boxed{\sigma_{\rm power}=0}
+\label{eq:power}
+\end{equation}
+for the present corridor, even when
+\(\kappa_{\rm returned}^{\rm cert}>0\).  It cannot pay a positive physical
+occurrence loss, the local \(1/400\) target, or a strict endpoint.
+This is a scale comparison, not a theorem that a future stronger
+arithmetic estimate is impossible.
+
+\section{Actual status and machine contract}
+
+The deterministic audit imports TPC-147--149 by content hashes for
+integrity only, records every occurrence field required from
+TPC-143--146, and preserves \eqref{eq:first-missing}.  Its rational
+ledger contains a hypothetical positive log case and an equality
+case that must stop.  Neither is evidence about the actual packet.
+The actual record retains unknown values and is \(\NT\).
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.50\textwidth}Y@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+Terminal-window estimate \eqref{eq:window} &
+Exact measure theorem, \(\PROVED\).\\
+Deterministic-prefix nonimplication &
+Exact firewall, \(\PROVED\).\\
+Logarithmic ledger \eqref{eq:log-ledger} &
+Conditional typed \(\Lone\).\\
+TPC-149 actual M\"obius periodic core &
+\(\Lone\), \(\PROVED\).\\
+Frontier occurrence lift &
+\(\NT\), first structural missing item.\\
+Physical weight, generic phase, all-prefix return &
+\(\OPEN\) after occurrence lift.\\
+Four-point H3 or positive \(\Ltwo\) &
+Not proved.\\
+Positive \(X\)-power, \(1/400\), endpoint pass &
+Not proved.\\
+Prime-pair or twin-prime theorem & Not proved.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Thus the new corridor is mathematically real but remains upstream of
+the decisive physical and all-prefix gates.  Its correct output is a
+stronger \(\Lone\) arithmetic node plus an explicit return
+obstruction, not an H3 or endpoint certificate.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

@@ -1,0 +1,279 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc143-frontier-lift-obligation-v1.schema.json",
+  "title": "TPC-143 nonsoft cut-path lift obligation",
+  "type": "object",
+  "required": [
+    "schema",
+    "cut_path_id",
+    "required_domain",
+    "cut_terminal_type",
+    "exact_identity",
+    "cut_fields",
+    "cut_shift_selector",
+    "occurrence_lift",
+    "downstream_field_groups",
+    "claim_boundary",
+    "integrity_sha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc143-frontier-lift-obligation-v1"
+    },
+    "cut_path_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "required_domain": {
+      "const": "ALL_NONSOFT_CUT_PATHS"
+    },
+    "cut_terminal_type": {
+      "enum": [
+        "ELIGIBLE_TAIL_OPEN",
+        "FRONTIER_UNMAPPED"
+      ]
+    },
+    "exact_identity": {
+      "type": "object",
+      "required": [
+        "packet_scope",
+        "native_tuple",
+        "upstream_path_id"
+      ],
+      "properties": {
+        "packet_scope": {
+          "type": "object",
+          "required": [
+            "X",
+            "h0",
+            "Q",
+            "U",
+            "V",
+            "weight_source_id",
+            "physical_normalization"
+          ],
+          "properties": {
+            "X": {"type": "integer", "minimum": 1},
+            "h0": {"type": "integer"},
+            "Q": {"type": "integer", "minimum": 1},
+            "U": {"type": "integer", "minimum": 0},
+            "V": {"type": "integer", "minimum": 0},
+            "weight_source_id": {"type": "string", "minLength": 1},
+            "physical_normalization": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "native_tuple": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "integer"
+          }
+        },
+        "upstream_path_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "cut_fields": {
+      "type": "object",
+      "required": [
+        "status",
+        "native_coefficient_ast",
+        "native_constraint_witnesses",
+        "dyadic_edge_multiplier_ast",
+        "block",
+        "D0",
+        "boundary_rule",
+        "frontier_reason",
+        "support_role",
+        "numeric_coefficient_nonzero_status"
+      ],
+      "properties": {
+        "status": {
+          "const": "PRESENT_PROVED_L1"
+        },
+        "native_coefficient_ast": {
+          "type": "object"
+        },
+        "native_constraint_witnesses": {
+          "type": "object"
+        },
+        "dyadic_edge_multiplier_ast": {
+          "type": "object"
+        },
+        "block": {
+          "type": "object",
+          "required": ["j_K", "j_L"],
+          "properties": {
+            "j_K": {"type": "integer"},
+            "j_L": {"type": "integer"}
+          },
+          "additionalProperties": false
+        },
+        "D0": {
+          "type": "integer"
+        },
+        "boundary_rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "frontier_reason": {
+          "type": ["string", "null"]
+        },
+        "support_role": {
+          "const": "FORMAL_SUPPORT_ENVELOPE"
+        },
+        "numeric_coefficient_nonzero_status": {
+          "const": "UNDECIDED"
+        }
+      },
+      "additionalProperties": false
+    },
+    "cut_shift_selector": {
+      "type": "object",
+      "required": [
+        "map_id",
+        "h0",
+        "action_on_this_row",
+        "status",
+        "not_downstream_selector"
+      ],
+      "properties": {
+        "map_id": {
+          "const": "P_h0_cut"
+        },
+        "h0": {
+          "type": "integer"
+        },
+        "action_on_this_row": {
+          "const": "IDENTITY"
+        },
+        "status": {
+          "const": "PROVED_L1"
+        },
+        "not_downstream_selector": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "occurrence_lift": {
+      "type": "object",
+      "required": [
+        "map_id",
+        "matrix_type",
+        "required_conservation",
+        "required_metadata",
+        "status",
+        "actual_map_edges"
+      ],
+      "properties": {
+        "map_id": {
+          "const": "frontier_occurrence_lift_LX"
+        },
+        "matrix_type": {
+          "const": "ROW_SEPARATED_SPARSE_ONE_TO_MANY"
+        },
+        "required_conservation": {
+          "const": "ONE_TRANSPOSE_LX_EQUALS_ONE_TRANSPOSE"
+        },
+        "required_metadata": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "native_tuple",
+              "h0",
+              "physical_normalization"
+            ]
+          }
+        },
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "actual_map_edges": {
+          "type": "array",
+          "maxItems": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "downstream_field_groups": {
+      "type": "object",
+      "required": [
+        "canonical_parent_and_QD",
+        "outer_zero_mode_and_QZ",
+        "physical_grouping_G",
+        "downstream_shift_selector",
+        "affine_corridor_consumer"
+      ],
+      "properties": {
+        "canonical_parent_and_QD": {"$ref": "#/$defs/missingFieldGroup"},
+        "outer_zero_mode_and_QZ": {"$ref": "#/$defs/missingFieldGroup"},
+        "physical_grouping_G": {"$ref": "#/$defs/missingFieldGroup"},
+        "downstream_shift_selector": {"$ref": "#/$defs/missingFieldGroup"},
+        "affine_corridor_consumer": {"$ref": "#/$defs/missingFieldGroup"}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "formal_path_retained_without_nonzero_claim",
+        "hashes_integrity_only",
+        "new_positive_fixed_h0_L2",
+        "prime_pair_or_twin_prime_theorem"
+      ],
+      "properties": {
+        "formal_path_retained_without_nonzero_claim": {
+          "const": true
+        },
+        "hashes_integrity_only": {
+          "const": true
+        },
+        "new_positive_fixed_h0_L2": {
+          "const": false
+        },
+        "prime_pair_or_twin_prime_theorem": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "integrity_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "$defs": {
+    "missingFieldGroup": {
+      "type": "object",
+      "required": [
+        "status",
+        "required_fields"
+      ],
+      "properties": {
+        "status": {
+          "const": "REQUIRED_MISSING"
+        },
+        "required_fields": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

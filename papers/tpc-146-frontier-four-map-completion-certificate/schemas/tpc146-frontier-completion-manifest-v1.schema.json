@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc146-frontier-completion-manifest-v1.schema.json",
+  "title": "TPC-146 frontier four-map completion manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "required_domain",
+    "cut_census",
+    "map_route",
+    "scalar_route",
+    "totalization",
+    "first_missing",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc146-frontier-completion-manifest-v1"
+    },
+    "required_domain": {
+      "const": "ALL_NONSOFT_CUT_PATHS"
+    },
+    "cut_census": {
+      "type": "object",
+      "required": [
+        "nonsoft_path_count",
+        "ELIGIBLE_TAIL_OPEN",
+        "FRONTIER_UNMAPPED",
+        "finite_sample_empty_ETO",
+        "empty_ETO_is_asymptotic_totality"
+      ],
+      "properties": {
+        "nonsoft_path_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ELIGIBLE_TAIL_OPEN": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "FRONTIER_UNMAPPED": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "finite_sample_empty_ETO": {
+          "type": "boolean"
+        },
+        "empty_ETO_is_asymptotic_totality": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "map_route": {
+      "type": "object",
+      "required": [
+        "status",
+        "required_components",
+        "literal_source_semantics_requirement",
+        "zero_defect_vector",
+        "all_defects_certified_zero",
+        "cut_P_h0_identity_is_not_D_P"
+      ],
+      "properties": {
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "required_components": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "conservative_row_separated_occurrence_lift",
+              "total_Q_D",
+              "total_Q_Z",
+              "total_physical_grouping_G",
+              "total_downstream_P_h0",
+              "QD_QZ_intertwining",
+              "G_Ph0_occurrence_commutation",
+              "physical_cover",
+              "exact_reconnection",
+              "complete_occurrence_registry"
+            ]
+          }
+        },
+        "literal_source_semantics_requirement": {
+          "const": "THEOREM_BACKED_MATRICES_DOMAINS_MULTIPLIERS_LINEAGE_AND_NORMALIZATION"
+        },
+        "zero_defect_vector": {
+          "type": "object",
+          "required": [
+            "D_L",
+            "D_QD",
+            "D_QZ",
+            "D_G",
+            "D_P",
+            "D_DZ",
+            "D_GP",
+            "D_cover",
+            "D_rec"
+          ],
+          "properties": {
+            "D_L": {"$ref": "#/$defs/unknownDefect"},
+            "D_QD": {"$ref": "#/$defs/unknownDefect"},
+            "D_QZ": {"$ref": "#/$defs/unknownDefect"},
+            "D_G": {"$ref": "#/$defs/unknownDefect"},
+            "D_P": {"$ref": "#/$defs/unknownDefect"},
+            "D_DZ": {"$ref": "#/$defs/unknownDefect"},
+            "D_GP": {"$ref": "#/$defs/unknownDefect"},
+            "D_cover": {"$ref": "#/$defs/unknownDefect"},
+            "D_rec": {"$ref": "#/$defs/unknownDefect"}
+          },
+          "additionalProperties": false
+        },
+        "all_defects_certified_zero": {
+          "const": false
+        },
+        "cut_P_h0_identity_is_not_D_P": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "scalar_route": {
+      "type": "object",
+      "required": [
+        "status",
+        "required_statement",
+        "theorem_source",
+        "finite_regression_is_source",
+        "remaining_ETO_requirement",
+        "remaining_ETO_status",
+        "remaining_ETO_source"
+      ],
+      "properties": {
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "required_statement": {
+          "const": "COMPLETE_ORIGINAL_SCALE_S_frontier_EQUALS_oX"
+        },
+        "theorem_source": {
+          "type": "null"
+        },
+        "finite_regression_is_source": {
+          "const": false
+        },
+        "remaining_ETO_requirement": {
+          "const": "TOTAL_DOWNSTREAM_ETO_MAP_OR_COMPLETE_ETO_SOFT_THEOREM"
+        },
+        "remaining_ETO_status": {
+          "const": "NOT_TESTABLE"
+        },
+        "remaining_ETO_source": {
+          "type": "null"
+        }
+      },
+      "additionalProperties": false
+    },
+    "totalization": {
+      "type": "object",
+      "required": [
+        "logic",
+        "status",
+        "map_route_pass",
+        "scalar_route_pass"
+      ],
+      "properties": {
+        "logic": {
+          "const": "ALL_NONSOFT_MAP_ROUTE_OR_FRONTIER_SCALAR_AND_ETO_ROUTE"
+        },
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "map_route_pass": {
+          "const": false
+        },
+        "scalar_route_pass": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "first_missing": {
+      "type": "object",
+      "required": [
+        "node_id",
+        "status",
+        "artifact"
+      ],
+      "properties": {
+        "node_id": {
+          "const": "H1.frontier_occurrence_lift"
+        },
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "artifact": {
+          "const": "conservative row-separated one-to-many cut-to-occurrence matrix with full lineage"
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "current_schema_only_totalization",
+        "unknown_defect_is_zero",
+        "formal_support_is_actual_nonzero_support",
+        "new_positive_fixed_h0_L2",
+        "frontier_scalar_oX",
+        "physical_cover",
+        "endpoint_1_over_400",
+        "prime_pair_or_twin_prime_theorem"
+      ],
+      "properties": {
+        "current_schema_only_totalization": {"const": false},
+        "unknown_defect_is_zero": {"const": false},
+        "formal_support_is_actual_nonzero_support": {"const": false},
+        "new_positive_fixed_h0_L2": {"const": false},
+        "frontier_scalar_oX": {"const": false},
+        "physical_cover": {"const": false},
+        "endpoint_1_over_400": {"const": false},
+        "prime_pair_or_twin_prime_theorem": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "unknownDefect": {
+      "type": "object",
+      "required": [
+        "status",
+        "certified_zero",
+        "source_matrix_present"
+      ],
+      "properties": {
+        "status": {
+          "const": "NOT_EVALUABLE"
+        },
+        "certified_zero": {
+          "const": false
+        },
+        "source_matrix_present": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

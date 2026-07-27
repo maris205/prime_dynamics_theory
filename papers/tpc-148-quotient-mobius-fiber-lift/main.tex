@@ -1,0 +1,334 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={Multiplicative Quotient Lifts on Determinant-Two Fibers},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact Mobius recovery and stable nonpretentiousness},
+  pdfkeywords={Mobius function, multiplicative functions, determinant two, pretentious distance}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{Multiplicative Quotient Lifts on}\\
+\textbf{Determinant-Two Fibers: Exact M\"obius}\\
+\textbf{Recovery and Stable Nonpretentiousness}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The determinant-two pullback previously represented
+\(\mu(D)\mu(V)\) as a Liouville shift-two product multiplied by two
+quotient-squarefree masks.  We give a different exact
+representation.  For every positive integer \(c\), an explicit
+one-bounded multiplicative function \(G_c\) satisfies
+\[
+ G_c(cm)=\mu(m).
+\]
+If \(D(z)=d+sz\), \(V(z)=u+az\), and \(su-ad=2\), then with
+\(t=aD(z)=ad+asz\),
+\[
+ \mu(D(z))\mu(V(z))=G_a(t)G_s(t+2).
+\]
+Thus the full squarefree information is already inside two
+multiplicative functions; no prime-square cutoff or CRT squarefree
+tail is needed for this two-point core.
+
+At prime arguments, \(G_c\) differs from the Liouville function only
+at primes \(p\) with \(p\parallel c\).  Its pretentious distance is
+therefore bounded below by the Liouville distance minus
+\(2\sum_{p\parallel c}p^{-1}\).  For small-polylogarithmic \(c\) this
+loss is lower order than the known logarithmic lower bound.  The
+construction supplies an exact \(\Lzero\) lift and a uniform
+\(\Lone\) nonpretentious input.  It does not supply physical weights,
+generic phases, all prefixes, a four-point estimate, positive
+\(\Ltwo\), or a prime-pair theorem.
+\end{abstract}
+
+\section{The quotient lift}
+
+For a prime \(p\), write \(e_p=v_p(c)\).  We define the local values
+of \(G_c\) before taking their multiplicative product.
+
+\begin{definition}[Quotient-M\"obius lift]
+\label{def:Gc}
+For \(c\ge1\), let \(G_c:\N\to\{-1,0,1\}\) be the multiplicative
+function determined by
+\begin{equation}
+ G_c(p^j)=
+ \begin{cases}
+  (-1)^j,&0\le j<e_p,\\
+  \mu(p^{j-e_p}),&j\ge e_p.
+ \end{cases}
+\label{eq:local}
+\end{equation}
+\end{definition}
+
+The two cases agree with \(G_c(1)=1\).  This is a multiplicative
+definition through independent prime-power factors.  It is generally
+not completely multiplicative.
+
+\begin{theorem}[Exact quotient recovery]
+\label{thm:quotient}
+For every \(c,m\ge1\),
+\begin{equation}
+ \boxed{G_c(cm)=\mu(m).}
+\label{eq:quotient}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For each prime \(p\), the exponent of \(p\) in \(cm\) is
+\(e_p+v_p(m)\), which lies in the second case of
+\eqref{eq:local}.  Its local factor is
+\(\mu(p^{v_p(m)})\).  Multiplication over primes gives \(\mu(m)\).
+\end{proof}
+
+\begin{remark}[Why the first case is retained]
+Only values on multiples of \(c\) are needed for
+\eqref{eq:quotient}; the values below \(e_p\) may therefore be
+chosen.  The choice \((-1)^j\) makes the prime values agree with
+\(\lambda(p)=-1\) unless \(e_p=1\), which minimizes the
+pretentious-distance perturbation used below.
+\end{remark}
+
+\section{The determinant-two fiber}
+
+Let
+\begin{equation}
+ D(z)=d+sz,\qquad V(z)=u+az,\qquad su-ad=2,
+\label{eq:fiber}
+\end{equation}
+with positive integral values on the interval under consideration.
+In the TPC carrier, \(a,s\) are positive, odd and coprime
+\citep{WangTPC127}.  Put
+\begin{equation}
+ Q_{\rm fib}=as,\qquad t(z)=aD(z)=ad+Q_{\rm fib}z.
+\label{eq:t}
+\end{equation}
+
+\begin{theorem}[Exact determinant-two M\"obius lift]
+\label{thm:fiber}
+For every integer \(z\) on which the forms are positive,
+\begin{align}
+ t(z)+2&=sV(z),\label{eq:shift}\\
+ t(z)&\equiv ad\pmod{Q_{\rm fib}},\label{eq:progression}\\
+ \mu(D(z))\mu(V(z))
+ &=\boxed{G_a(t(z))G_s(t(z)+2)}
+\label{eq:fiber-lift}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+The determinant equation gives
+\[
+ sV(z)-aD(z)=su-ad=2,
+\]
+which proves \eqref{eq:shift}; \eqref{eq:progression} follows from
+\eqref{eq:t}.  Both \(a\mid t(z)\) and \(s\mid t(z)+2\).
+\Cref{thm:quotient} gives
+\[
+ G_a(t(z))=\mu(t(z)/a)=\mu(D(z)),
+ \quad
+ G_s(t(z)+2)=\mu((t(z)+2)/s)=\mu(V(z)).
+\]
+\end{proof}
+
+\begin{corollary}[No squarefree truncation in the two-point core]
+\label{cor:no-tail}
+The right side of \eqref{eq:fiber-lift} contains the full M\"obius
+values.  Applying a two-point theorem directly to \(G_a(t)G_s(t+2)\)
+requires neither quotient-squarefree masks nor a prime-square cutoff.
+Consequently it creates no squarefree truncation tail.
+\end{corollary}
+
+This is a new representation of the same literal core; it does not
+delete the remaining coprimality, periodic, physical or prefix
+factors of the full packet.
+
+\section{Pretentious distance under the lift}
+
+For one-bounded multiplicative functions, write
+\[
+ M(g;Y,Q)
+ =
+ \inf_{\substack{|v|\le Y\\q\le Q\\\chi\ ({\rm mod}\ q)}}
+ \sum_{p\le Y}
+ \frac{1-\operatorname{Re}(g(p)\overline{\chi(p)}p^{-iv})}{p}.
+\]
+The convention is the squared pretentious distance used in
+\citet{TaoTeravainen2026}.
+
+\begin{lemma}[Prime-level perturbation]
+\label{lem:prime}
+For every prime \(p\),
+\[
+ G_c(p)=
+ \begin{cases}
+  1,&p\parallel c,\\
+  -1,&p\nparallel c.
+ \end{cases}
+\]
+Thus \(G_c(p)\ne\lambda(p)\) precisely when \(p\parallel c\).
+\end{lemma}
+
+\begin{proof}
+If \(v_p(c)=0\), the second line of \eqref{eq:local} gives
+\(\mu(p)=-1\).  If \(v_p(c)=1\), it gives \(\mu(1)=1\).
+If \(v_p(c)\ge2\), the first line gives \((-1)^1=-1\).
+\end{proof}
+
+\begin{proposition}[Uniform nonpretentious stability]
+\label{prop:distance}
+For all \(Y,Q\ge2\),
+\begin{equation}
+ \boxed{
+ M(G_c;Y,Q)
+ \ge M(\lambda;Y,Q)
+ -2\sum_{\substack{p\le Y\\p\parallel c}}\frac1p.}
+\label{eq:distance}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Fix one \(\chi\) and \(v\) in the defining infimum.  By
+\cref{lem:prime}, the two prime sums agree outside \(p\parallel c\).
+At an exceptional prime, changing one unit-disc value to another
+changes the real part by at most two.  Hence the \(G_c\) sum is at
+least the \(\lambda\) sum minus the displayed error.  Taking the
+infimum proves \eqref{eq:distance}.
+\end{proof}
+
+\begin{lemma}[Small-polylogarithmic perturbations are lower order]
+\label{lem:reciprocal}
+For \(c\ge3\),
+\[
+ \sum_{p\mid c}\frac1p\ll1+\log_3^+ c,
+ \qquad
+ \log_3^+c:=\max\{0,\log\log\log c\}.
+\]
+In particular, if \(c\le(\log X)^A\) for fixed \(A\), then this sum
+is \(o(\log_2X)\).
+\end{lemma}
+
+\begin{proof}
+For fixed size of the product of the distinct prime divisors, the
+reciprocal sum is maximized by the smallest primes.  The standard
+primorial and Mertens estimates then give
+\(\sum_{p\mid c}p^{-1}\ll1+\log_3^+c\).  The stated consequence is
+immediate.
+\end{proof}
+
+\Citet[equation~(1.12)]{MatomakiRadziwillTao2015} prove, uniformly
+for characters of modulus at most a fixed small power of \(\log X\),
+\begin{equation}
+ M(\lambda;X^2,\log^{1/125}X)
+ \ge\left(\frac13-o(1)\right)\log_2X.
+\label{eq:lambda-distance}
+\end{equation}
+Combining the preceding results gives the needed source condition.
+
+\begin{corollary}[Callable nonpretentious branch]
+\label{cor:callable}
+There is an absolute \(\alpha>0\) such that, for every fixed
+\(A>0\) and all sufficiently large \(X\) depending on \(A\),
+uniformly for \(c\le(\log X)^A\),
+\[
+ \exp M(G_c;X^2,\log^{1/125}X)
+ \gg(\log X)^\alpha.
+\]
+After decreasing \(\alpha\), the nonpretentious hypothesis of
+\citet[Theorem~3.1]{TaoTeravainen2026} holds with
+\(\mathcal L=(\log X)^\alpha\).
+\end{corollary}
+
+\begin{proof}
+Equations \eqref{eq:distance}--\eqref{eq:lambda-distance} and
+\cref{lem:reciprocal} give
+\[
+ M(G_c;X^2,\log^{1/125}X)
+ \ge(1/3-o(1))\log_2X.
+\]
+Exponentiate and choose any fixed \(\alpha<1/3\), with room for the
+implicit source constant.
+\end{proof}
+
+\section{Scope and machine certificate}
+
+The deterministic script evaluates \eqref{eq:local} exactly,
+verifies \eqref{eq:quotient} for thousands of integer pairs, checks
+ordinary multiplicativity on coprime inputs, and verifies
+\eqref{eq:fiber-lift} on several determinant-two fibers.  It records
+the prime modification set \(\{p:p\parallel c\}\).  These finite
+checks are regressions for the algebra; they do not numerically prove
+\eqref{eq:lambda-distance}.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.48\textwidth}Y@{}}
+\toprule
+Statement & Level and status\\
+\midrule
+\(G_c(cm)=\mu(m)\) & Exact \(\Lzero\), \(\PROVED\).\\
+Determinant-two identity \eqref{eq:fiber-lift} &
+Exact \(\Lzero\), \(\PROVED\).\\
+Pretentious stability \eqref{eq:distance} &
+Unconditional comparison, \(\PROVED\).\\
+Small-polylog source condition &
+Sourced quantitative \(\Lone\), \(\PROVED\).\\
+Bounded periodic reassembly &
+Available through TPC-147 \citep{WangTPC147}.\\
+Physical multiplier, generic phase, all prefixes &
+\(\OPEN\); not supplied.\\
+Four-point input or positive \(\Ltwo\) &
+Not proved.\\
+Fixed \(X\)-power, \(1/400\), prime pairs &
+Not proved.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The lift therefore removes the squarefree-CRT gate for the two-point
+M\"obius core without claiming that a two-point good-scale theorem
+is the complete H3 input.
+
+\begingroup
+\footnotesize
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}

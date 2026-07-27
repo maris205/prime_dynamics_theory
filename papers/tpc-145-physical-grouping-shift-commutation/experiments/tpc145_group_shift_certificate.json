@@ -1,0 +1,58 @@
+{
+  "actual_manifest_sha256": "f8dfa1b282f1f00984ad4ff841730ce1721fe715deeb9c1e50121f7b563316c6",
+  "actual_status": {
+    "H1.cut_Ph0": "PROVED_L1",
+    "H1.frontier_G_Ph0_commutation": "NOT_TESTABLE",
+    "H1.frontier_G_totality": "NOT_TESTABLE",
+    "H1.frontier_Ph0_downstream_totality": "NOT_TESTABLE"
+  },
+  "claim_boundary": {
+    "endpoint_1_over_400": false,
+    "frontier_scalar_oX": false,
+    "new_positive_fixed_h0_L2": false,
+    "physical_cover": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "mutation_regression": {
+    "aggregate_provenance_promotion_rejected": true,
+    "aggregate_status_promotion_rejected": true,
+    "cut_to_downstream_promotion_rejected": true,
+    "deleted_grouping_field_rejected": true,
+    "fabricated_physical_edge_rejected": true,
+    "fabricated_stage_edge_rejected": true,
+    "false_L2_claim_rejected": true,
+    "false_physical_cover_rejected": true,
+    "frontier_only_domain_rejected": true,
+    "physical_source_promotion_rejected": true,
+    "row_separated_status_promotion_rejected": true
+  },
+  "schema": "tpc145-group-shift-certificate-v1",
+  "scoped_stops": [
+    {
+      "route": "cut_h0_metadata_as_downstream_selector",
+      "status": "STOP_DECLARED_ROUTE"
+    },
+    {
+      "route": "aggregate_cancellation_as_shift_provenance",
+      "status": "STOP_DECLARED_ROUTE"
+    }
+  ],
+  "selected_occurrence_augmented_route_stopped": false,
+  "source": {
+    "hash_is_integrity_only": true,
+    "tpc143_certificate_sha256": "e398b38b39e8a094123d2830a42ea4806d820655f55a5425f10d985a0783a724"
+  },
+  "status": "PASS",
+  "synthetic_regression": {
+    "good_aggregate_commutes": true,
+    "good_pathwise_preserves": true,
+    "opposite_cross_shift_edges_cancel_in_aggregate": true,
+    "row_separated_lift_detects_hidden_leakage": true,
+    "scope": "SYNTHETIC_L0_ONLY"
+  },
+  "theorem": {
+    "P_h0_cut_identity": "PROVED_L1",
+    "aggregate_commuting_square_block_criterion": "PROVED_L0",
+    "row_separated_commutation_iff_edgewise_shift_preservation": "PROVED_L0"
+  }
+}

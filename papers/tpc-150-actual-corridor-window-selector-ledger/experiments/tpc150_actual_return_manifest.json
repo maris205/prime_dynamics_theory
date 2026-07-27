@@ -1,0 +1,93 @@
+{
+  "frontier": {
+    "directory": "tpc-146-frontier-four-map-completion-certificate",
+    "first_missing": "H1.frontier_occurrence_lift",
+    "occurrence_lift_status": "REQUIRED_MISSING",
+    "required_fields": [
+      "affine_pair.D.intercept",
+      "affine_pair.D.slope",
+      "affine_pair.V.intercept",
+      "affine_pair.V.slope",
+      "affine_pair.determinant_h0",
+      "a_times_s",
+      "residue_class.modulus",
+      "residue_class.residue",
+      "ordered_interval.left",
+      "ordered_interval.right",
+      "ordered_interval.endpoint_convention",
+      "periodic_weight.period",
+      "coprimality_mask",
+      "squarefree_mask",
+      "content_mask",
+      "prefix_mask",
+      "coefficient_l1_mass",
+      "prefix_id",
+      "window_id",
+      "endpoint_ledger_token"
+    ],
+    "source_detected": true,
+    "source_json_sha256": {
+      "experiments/tpc146_frontier_completion_certificate.json": "e5feffe2f393e1b39245fa2e4535c247a78b9fee1beb5b082b5228a21b998de7",
+      "samples/tpc146_frontier_completion_manifest.json": "c37febd03034991a4d7226d4d3488e07765999821bdb7093f78fa8292447f679"
+    },
+    "structured_occurrence_statuses": [
+      "NOT_TESTABLE"
+    ]
+  },
+  "nodes": [
+    {
+      "full_H3_scope_match": false,
+      "node_id": "A149.actual_mobius_periodic_corridor",
+      "program_level": "L1_ACTUAL_CORE",
+      "scope_id": "scope.actual_fixed_two_mobius_periodic_core_almost_scale",
+      "status": "PROVED"
+    },
+    {
+      "node_id": "N150.deterministic_prefix_nonimplication",
+      "program_level": "L1_NEGATIVE",
+      "scope_id": "scope.actual_prefix_return_logic",
+      "status": "PROVED"
+    },
+    {
+      "node_id": "G150.actual_corridor_return",
+      "program_level": "L2_TARGET_POSITIVE",
+      "required_artifact": "complete occurrence lift, literal period/interval census, physical weight and phase return, and pointwise or selector all-prefix control",
+      "scope_id": "scope.actual_h3",
+      "status": "NOT_TESTABLE"
+    }
+  ],
+  "route_status": {
+    "endpoint_pass": false,
+    "first_missing": "H1.frontier_occurrence_lift",
+    "frontier_consumption": "NOT_TESTABLE",
+    "positive_L2": false,
+    "positive_X_power": false
+  },
+  "schema": "tpc-150-actual-return-manifest-v1",
+  "source_lock": {
+    "TPC-147": {
+      "directory": "tpc-147-tt-periodic-residue-reassembly",
+      "files": {
+        "experiments/tpc147_periodic_reassembly_audit.json": "a5bd1e2fba8ec41f8fc54bd81fec498cd856cb3893ef9335ce41c54374c48370",
+        "main.tex": "30214b03d162e1398648cd129e14de016dbf78c52f33a486e1ff826415175d98"
+      },
+      "hash_semantics": "INTEGRITY_ONLY"
+    },
+    "TPC-148": {
+      "directory": "tpc-148-quotient-mobius-fiber-lift",
+      "files": {
+        "experiments/tpc148_quotient_lift_audit.json": "da4073fe9d6d10d4c58c9aed6140e65940632949fe2a419b9b0ca51a5a6554d3",
+        "main.tex": "b9d4902268dc8a9636669b28930e8cb6f9cb3c68cff3aaef764283a0852fb040"
+      },
+      "hash_semantics": "INTEGRITY_ONLY"
+    },
+    "TPC-149": {
+      "directory": "tpc-149-small-polylog-determinant-two-mobius-corridor",
+      "files": {
+        "experiments/tpc149_actual_core_corridor_audit.json": "1934c5be053c8cdd374879ba33d414bd9350984d11097535972edb2cbaaf4c5d",
+        "main.tex": "8d4768d022ccf536ac14182b5a645797816df63a0814f698dd9a373c504bc167"
+      },
+      "hash_semantics": "INTEGRITY_ONLY"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "claim_boundary": {
+    "aggregate_cancellation_is_pathwise_provenance": false,
+    "cut_selector_is_downstream_selector": false,
+    "new_positive_fixed_h0_L2": false,
+    "physical_cover": false,
+    "prime_pair_or_twin_prime_theorem": false
+  },
+  "commuting_square": {
+    "aggregate_status": "NOT_TESTABLE",
+    "provenance_certificate": "ROW_SEPARATED_EDGEWISE_SHIFT_PRESERVATION",
+    "required_identity": "P_phys_G_EQUALS_G_P_source",
+    "row_separated_status": "NOT_TESTABLE"
+  },
+  "cut_selector": {
+    "h0": 2,
+    "is_downstream_selector": false,
+    "map_id": "P_h0_cut",
+    "operator": "IDENTITY",
+    "status": "PROVED_L1"
+  },
+  "downstream_selector": {
+    "actual_stage_edges": [],
+    "map_id": "P_h0_downstream",
+    "required_fields": [
+      "stage_id",
+      "source_shift_tag",
+      "target_shift_tag",
+      "source_selector_domain",
+      "target_selector_domain",
+      "stage_matrix_edge",
+      "shift_preservation_source"
+    ],
+    "source_status": "NOT_TESTABLE",
+    "status": "NOT_TESTABLE"
+  },
+  "physical_grouping_G": {
+    "actual_occurrence_edges": [],
+    "required_fields": [
+      "physical_occurrence_id",
+      "physical_group_id",
+      "exact_reconstruction_multiplier",
+      "physical_and_computational_multiplicity",
+      "inverse_aggregation",
+      "cover_class",
+      "reconnection_destination",
+      "source_and_target_shift_tags",
+      "physical_normalization"
+    ],
+    "source_status": "NOT_TESTABLE",
+    "status": "NOT_TESTABLE"
+  },
+  "required_domain": "ALL_NONSOFT_CUT_PATHS",
+  "schema": "tpc145-actual-group-shift-manifest-v1"
+}

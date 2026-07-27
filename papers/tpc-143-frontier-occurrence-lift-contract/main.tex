@@ -1,0 +1,398 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={The Frontier Occurrence-Lift Contract},
+  pdfauthor={Liang Wang},
+  pdfsubject={Field descent, lineage completeness, and schema nonidentifiability},
+  pdfkeywords={fixed shift, frontier, occurrence lift, typed archive, provenance}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\STOP}{\textnormal{\textsc{stop-declared-route}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Ccut}{\mathcal C_X^{\rm ns}}
+\newcommand{\Occ}{\mathcal O_X}
+\newcommand{\one}{\mathbf 1}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{The Frontier Occurrence-Lift Contract:}\\
+\textbf{Field Descent, Lineage Completeness,}\\
+\textbf{and Schema Nonidentifiability}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The complete TPC cut archive reaches every eligible-tail and frontier
+path but does not yet reach the canonical determinant, ordered
+zero-mode, or physical occurrence archives.  We identify the common
+missing object: a conservative row-separated occurrence lift
+\[
+ L_X:\mathbb C^{\mathcal C_X^{\rm ns}}\longrightarrow
+ \mathbb C^{\mathcal O_X}.
+\]
+One cut path may have several downstream occurrences, so this object
+is a sparse matrix rather than a single-valued label map.  We prove a
+field-descent criterion: a downstream label is determined by the
+current cut schema precisely when it is constant on every fiber of
+the forgetful completion map.  The inherited cut-stage selector is
+therefore exactly \(P_{h_0}^{\rm cut}=I\), but determinant bins,
+zero-mode order, physical groups, and the downstream shift selector
+do not descend from the current fields.  This is a scoped
+nonidentifiability theorem for the present archive, not an
+impossibility result for an augmented construction.  A deterministic
+audit binds every nonsoft cut path to an explicit lift obligation.
+The committed finite sample has \(2988\) frontier paths and no
+eligible-tail path; that finite emptiness is not promoted to
+asymptotic totality.  The new result is structural
+\(\mathrm{L0}/\mathrm{L1}\) progress and supplies no positive
+fixed-shift arithmetic saving.
+\end{abstract}
+
+\section{The exact point reached by the cut archive}
+
+Fix the literal hard-packet scope
+\[
+ \mathfrak s=(X,h_0,Q,U,V,W_{\rm id},\nu_{\rm phys})
+\]
+and a native tuple \((\ell,k,d)\).  TPC-133 enumerates every tuple in
+its certified support envelope; TPC-134 expands it into exact dyadic
+paths; and TPC-135--136 assign one of the terminal types
+\[
+ \mathsf{EPS},\qquad \mathsf{ETO},\qquad \mathsf{FUM}
+\]
+without deleting a path \citep{WangTPC133,WangTPC134,WangTPC135,WangTPC136}.
+They stand for eligible-prefix-soft, eligible-tail-open and
+frontier-unmapped.  Put
+\[
+ \Ccut=\mathcal C_X^{\mathsf{ETO}}\sqcup
+       \mathcal C_X^{\mathsf{FUM}}.
+\]
+This is the required domain for every downstream map in TPC-136.
+Calling only the \(\mathsf{FUM}\) rows ``the domain'' would silently
+delete the eligible tail.
+
+The cut record stores its exact path identifiers, packet scope,
+native tuple, dyadic block, cutoff \(D_0\), terminal reason,
+multiplier expression, \(h_0\), and physical normalization.
+Joining on the exact scope and tuple recovers the TPC-133 coefficient
+expression.  A SHA-256 value checks file integrity; it is not the
+mathematical identity.
+
+\begin{definition}[Three support roles]
+The \emph{formal support envelope} is the enumerated domain on which
+the symbolic packet is defined.  A \emph{canonical parent carrier}
+is obtained only after a theorem-backed inverse aggregation.  The
+\emph{actual active support} consists of the resulting records whose
+literal coefficients are certified nonzero.  These roles are
+different typed sets.
+\end{definition}
+
+The current cut archive is an envelope archive.  A symbolic factor
+such as \(r_Q(\ell k+h_0)\) may vanish.  Conversely, an unevaluated
+coefficient is not an exact-zero certificate.  We therefore retain
+every formal nonsoft path when testing map totality.
+
+\section{The missing occurrence lift}
+
+\begin{definition}[Fully typed downstream occurrence]
+A downstream occurrence \(o\in\Occ\) contains:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item an occurrence identifier, source and target record
+identifiers, stage identifier, and exact edge multiplier;
+\item the exact cut-path, native-tuple and packet-scope lineage;
+\item source and target shift tags and one inherited physical
+normalization;
+\item all content, mask, polarization, boundary and collision tags;
+\item canonical-parent, determinant-fiber and zero-mode fields when
+the corresponding maps are invoked; and
+\item physical group, cover, reconstruction and occurrence-registry
+fields when physical reassembly is invoked.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Occurrence lift]
+An occurrence lift is an exact sparse matrix
+\[
+ L_X:\mathbb C^{\Ccut}\longrightarrow\mathbb C^{\Occ}.
+\]
+It is \emph{row separated}: separate transformation paths remain
+separate rows even if they end at the same mathematical occurrence.
+It is \emph{conservative} when
+\begin{equation}
+ \one_{\Occ}^{T}L_X=\one_{\Ccut}^{T}.
+ \label{eq:conservation}
+\end{equation}
+It is metadata-faithful when it intertwines the native tuple,
+\(h_0\), and \(\nu_{\rm phys}\) on every nonzero edge.
+\end{definition}
+
+One cut path can split under polarization, content or physical
+reconstruction.  Hence \(L_X\) is not assumed to be a function.  Its
+column sum can be one even when its individual entries are signed or
+complex.  Equation \eqref{eq:conservation} is a coefficientwise
+identity, not a bound on the associated arithmetic scalar.
+
+\begin{proposition}[Exact extension of cut reconnection]
+\label{prop:reconnection}
+Let \(\mathcal N_X\) be the native-record set and let
+\(M_X^{\rm cut}\) be the conservative TPC-136 cut matrix.  After
+ordering its rows by terminal type, write
+\[
+ M_X^{\rm cut}
+ =
+ \begin{pmatrix}
+  M_X^{\mathsf{EPS}}\\
+  M_X^{\rm ns}
+ \end{pmatrix},
+ \qquad
+ M_X^{\rm ns}:\mathbb C^{\mathcal N_X}\longrightarrow
+ \mathbb C^{\Ccut}.
+\]
+If \eqref{eq:conservation} holds, then
+\begin{equation}
+ \one_{\mathsf{EPS}}^TM_X^{\mathsf{EPS}}
+ +\one_{\Occ}^TL_XM_X^{\rm ns}
+ =\one_{\mathcal N_X}^T.
+ \label{eq:extended-reconnection}
+\end{equation}
+Equivalently, adjoining the identity on the already soft rows gives
+\(\widehat L_X=I_{\mathsf{EPS}}\oplus L_X\) and
+\(\one^T\widehat L_XM_X^{\rm cut}=\one^T\).
+Thus the extended archive reconnects every native coefficient
+exactly.  This conclusion neither identifies a physical occurrence
+nor estimates any nonsoft sum.
+\end{proposition}
+
+\begin{proof}
+Multiply \(\one_{\Occ}^TL_X=\one_{\Ccut}^T\) by
+\(M_X^{\rm ns}\), add the unchanged \(\mathsf{EPS}\) contribution,
+and use the full TPC-136 column identity
+\(\one_{\mathsf{EPS}}^TM_X^{\mathsf{EPS}}
++\one_{\Ccut}^TM_X^{\rm ns}=\one_{\mathcal N_X}^T\).
+\end{proof}
+
+\section{Field descent and nonidentifiability}
+
+Let \(\widetilde{\Occ}_{\rm schema}\) be the maximal formal completion
+class constrained only by the fields and algebraic identities
+explicitly archived in the present contracts.  In particular, it does
+not silently impose an unarchived actual-support condition.  We
+include at least one formal completion above every cut row, and let
+\[
+ \pi:\widetilde{\Occ}_{\rm schema}\longrightarrow\Ccut
+\]
+be the resulting surjective map that forgets every field absent from
+the current schema.
+
+\begin{theorem}[Field-descent criterion]
+\label{thm:descent}
+For a set \(Y\) and a downstream label
+\(\lambda:\widetilde{\Occ}_{\rm schema}\to Y\), the following are
+equivalent:
+\begin{enumerate}[label=(\alph*),leftmargin=2em]
+\item there exists a label \(\bar\lambda:\Ccut\to Y\) satisfying
+\(\lambda=\bar\lambda\circ\pi\);
+\item \(\lambda\) is constant on every fiber
+\(\pi^{-1}(c)\).
+\end{enumerate}
+The descended label \(\bar\lambda\) is unique.
+\end{theorem}
+
+\begin{proof}
+If \(\lambda=\bar\lambda\circ\pi\), equal images under \(\pi\) have
+equal \(\lambda\)-values.  Conversely, define
+\(\bar\lambda(c)=\lambda(o)\) for any \(o\in\pi^{-1}(c)\).
+Fiber constancy makes the definition independent of the choice.
+Surjectivity gives both existence on all cut records and uniqueness.
+\end{proof}
+
+\begin{proposition}[Schema-completion labels do not descend]
+\label{prop:nondescend}
+On \(\widetilde{\Occ}_{\rm schema}\), none of the literal
+determinant-bin label, canonical zero-mode record, physical group, or
+downstream shift lineage descends through \(\pi\).
+\end{proposition}
+
+\begin{proof}
+The cut schema contains no crosswalk to the canonical parent
+\(t=(\alpha,\gamma,j)\) of TPC-95.  For example, with the same
+forgotten cut record and \(h_0=2,j=1\), two completion records may
+use slopes
+\[
+ (m_\alpha,m_\gamma)=(3,1)
+ \quad\hbox{or}\quad(5,1).
+\]
+Their target pairs are \((5,3)\) and \((7,3)\), and their normalized
+determinants are \(2\) and \(4\), respectively.  Both values satisfy
+the displayed canonical integer formula, while the current cut
+fields distinguish neither completion.
+
+Likewise the present schema does not constrain an outer affine key,
+its ordered coordinate, a physical group identifier, or a later
+stage target shift.  Two completion records can agree after
+forgetting those fields and disagree on any one of them.  Each label
+therefore fails the fiber-constancy condition of
+\cref{thm:descent}.  This proves nonidentifiability relative to the
+current schema-completion class.  It is not a mathematical
+impossibility statement on the unknown actual carrier: proving that
+stronger statement would require two completions satisfying every
+actual-support constraint.  A future theorem-backed \(L_X\) can
+restrict the completion class and resolve the present ambiguity.
+\end{proof}
+
+\begin{remark}[Why this is a scoped stop]
+\Cref{prop:nondescend} stops the implementation that derives the four
+downstream maps from the present JSON labels alone.  It does not stop
+a new analytic or algebraic construction of \(L_X\), and it does not
+show that the complete frontier scalar is large.
+\end{remark}
+
+\section{What the cut shift field does prove}
+
+Let \(P_{h_0}^{\rm cut}\) be the coordinate selector on cut rows whose
+stored shift is the prescribed \(h_0\).
+
+\begin{theorem}[Exact cut-stage selector]
+\label{thm:cutselector}
+On the complete TPC-136 cut archive,
+\[
+ \boxed{P_{h_0}^{\rm cut}=I.}
+\]
+This is a literal \(\Lone\) statement.  It is not the downstream
+selector of TPC-125.
+\end{theorem}
+
+\begin{proof}
+TPC-136 proves metadata intertwining for \(h_0\) from every native
+column to every nonzero cut edge.  The native packet is fixed at one
+prescribed \(h_0\), so every cut row is selected.
+\end{proof}
+
+A downstream selector requires shift tags on the source and target of
+every later stage and an exact proof that those stages intertwine the
+selectors \citep{WangTPC123,WangTPC125}.  Copying \(h_0\) into the
+cut metadata cannot certify a stage that has not been archived.
+
+\section{Executable field obligations}
+
+The standard-library program
+\texttt{experiments/tpc143\_frontier\_lift\_audit.py} joins every
+TPC-136 nonsoft path to TPC-133 by exact packet scope and native
+tuple.  It emits one obligation record per path.  Downstream fields
+are recorded as \texttt{REQUIRED\_MISSING}; no placeholder label is
+inserted.
+
+Before forming that join, the program independently reruns the
+TPC-133--136 deterministic generators and compares their logical UTF-8
+text under the canonical LF convention.  The older certificates bind
+some Windows CRLF byte serializations, so their raw hashes are
+reported explicitly as \texttt{LEGACY\_RAW\_HASH\_STALE}; they are not
+silently accepted as current hashes.  The new
+\texttt{CANONICAL\_UTF8\_LF\_V2} lock passes only after the generated
+atoms, paths, frontier manifest, cut paths, downstream-map manifest,
+and all certificate fields other than those diagnosed EOL-only locks
+agree.
+
+For future affine-correlation consumers, each occurrence contract
+also reserves typed fields for the two affine forms, determinant,
+coefficient height, residue class, ordered interval, periodic weight,
+coprimality/squarefree/content/prefix masks, coefficient
+\(\ell^1\)-mass, window identifier and endpoint-ledger token.  These
+are obligations, not values inferred from the cut tuple.
+
+The committed regression has
+\[
+ \#\Ccut=2988,\qquad
+ \#\mathcal C_X^{\mathsf{ETO}}=0,\qquad
+ \#\mathcal C_X^{\mathsf{FUM}}=2988.
+\]
+This census describes one finite sample at \(X=512\).  Since the
+theoretical domain is the union \(\mathsf{ETO}\sqcup\mathsf{FUM}\),
+the empty sample \(\mathsf{ETO}\) set is never accepted as proof that
+the eligible tail is absent at growing scales.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}P{0.38\textwidth}P{0.22\textwidth}Y@{}}
+\toprule
+Node & Status & Meaning\\
+\midrule
+\(\mathsf{H1.cut\_shift\_selector}\)
+& \(\PROVED_{\Lone}\) & \(P_{h_0}^{\rm cut}=I\).\\
+\(\mathsf{H1.frontier\_occurrence\_lift}\)
+& \(\NT\) & No conservative cut-to-occurrence matrix is archived.\\
+\(Q_D,Q_Z,G,P_{h_0}^{\rm down}\)
+& \(\NT\) & Their literal source fields and map edges are absent.\\
+Current-schema-only derivation
+& \(\STOP\) & Stopped only by the scoped descent obstruction.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The audit rejects a missing or duplicated path, a source-terminal
+relabeling, a frontier-only domain, a downstream-field promotion, a
+false arithmetic-nonzero or \(\Ltwo\) promotion, a fabricated
+occurrence edge, and promotion of \(P_{h_0}^{\rm cut}\) to a
+downstream map.
+Default mode writes deterministic artifacts; \texttt{--check} is
+read-only.
+
+\section{Claim boundary and next object}
+
+\begin{theorem}[Audited occurrence-lift verdict]
+\label{thm:verdict}
+For the current TPC-133--136 source artifacts,
+\[
+ \boxed{
+ \mathsf{H1.frontier\_occurrence\_lift}=\NT.}
+\]
+The current schema alone cannot certify the four downstream labels,
+while the selected occurrence-augmented route remains open.
+\end{theorem}
+
+This paper proves no frontier \(o(X)\) estimate, actual-carrier
+support theorem, determinant or zero-mode exponent, physical cover,
+downstream localization bound, endpoint below \(1/400\), parity
+advance, prime-pair lower bound, or twin-prime theorem.  Its positive
+content is an exact cut-stage selector and a necessary and sufficient
+field-descent test.  The first object to build is the row-separated
+matrix \(L_X\), not a collection of labels detached from their
+occurrence lineage.
+
+\begingroup
+\small
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

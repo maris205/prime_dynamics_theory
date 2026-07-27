@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc144-actual-quotient-manifest-v1.schema.json",
+  "title": "TPC-144 actual determinant/zero quotient manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "required_domain",
+    "occurrence_lift_status",
+    "quotients",
+    "intertwining",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc144-actual-quotient-manifest-v1"
+    },
+    "required_domain": {
+      "const": "ALL_NONSOFT_CUT_PATHS"
+    },
+    "occurrence_lift_status": {
+      "const": "NOT_TESTABLE"
+    },
+    "quotients": {
+      "type": "object",
+      "required": ["Q_D", "Q_Z"],
+      "properties": {
+        "Q_D": {
+          "$ref": "#/$defs/qd"
+        },
+        "Q_Z": {
+          "$ref": "#/$defs/qz"
+        }
+      },
+      "additionalProperties": false
+    },
+    "intertwining": {
+      "type": "object",
+      "required": [
+        "J_QD_equals_QZ",
+        "kernel_equality",
+        "literal_fiber_relabeling"
+      ],
+      "properties": {
+        "J_QD_equals_QZ": {
+          "const": "NOT_TESTABLE"
+        },
+        "kernel_equality": {
+          "const": "NOT_TESTABLE"
+        },
+        "literal_fiber_relabeling": {
+          "const": "NOT_TESTABLE"
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "current_cut_schema_derives_quotients",
+        "one_scalar_equality_is_coefficientwise_intertwining",
+        "formal_support_is_actual_nonzero_support",
+        "new_positive_fixed_h0_L2",
+        "prime_pair_or_twin_prime_theorem"
+      ],
+      "properties": {
+        "current_cut_schema_derives_quotients": {
+          "const": false
+        },
+        "one_scalar_equality_is_coefficientwise_intertwining": {
+          "const": false
+        },
+        "formal_support_is_actual_nonzero_support": {
+          "const": false
+        },
+        "new_positive_fixed_h0_L2": {
+          "const": false
+        },
+        "prime_pair_or_twin_prime_theorem": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "baseQuotient": {
+      "type": "object",
+      "required": [
+        "status",
+        "source_status",
+        "actual_map_edges",
+        "required_fields"
+      ],
+      "properties": {
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "source_status": {
+          "const": "NOT_TESTABLE"
+        },
+        "actual_map_edges": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "required_fields": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": false
+    },
+    "qd": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/baseQuotient"
+        },
+        {
+          "properties": {
+            "required_fields": {
+              "type": "array",
+              "minItems": 14,
+              "maxItems": 14,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "common_domain_column_ids_and_order",
+                  "canonical_parent_alpha_gamma_j",
+                  "row_ids_and_integer_slopes",
+                  "ordered_targets_x_y",
+                  "content",
+                  "signed_determinant_numerator",
+                  "exact_determinant_label",
+                  "inverse_aggregation_relation",
+                  "physical_multiplicity",
+                  "computational_multiplicity",
+                  "literal_parent_coefficient",
+                  "determinant_bin_target",
+                  "determinant_bin_exact_map_multiplier",
+                  "surjectivity_or_image_codomain_certificate"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "qz": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/baseQuotient"
+        },
+        {
+          "properties": {
+            "required_fields": {
+              "type": "array",
+              "minItems": 12,
+              "maxItems": 12,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "common_domain_column_ids_and_order",
+                  "outer_affine_key",
+                  "canonical_order_coordinate_and_rank",
+                  "arithmetic_sign",
+                  "outer_weight",
+                  "outer_reconstruction_multiplier",
+                  "factor_allocation_id",
+                  "retained_content_status",
+                  "content_remainder_destination",
+                  "zero_mode_output_record",
+                  "zero_mode_exact_map_multiplier",
+                  "surjectivity_or_image_codomain_certificate"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

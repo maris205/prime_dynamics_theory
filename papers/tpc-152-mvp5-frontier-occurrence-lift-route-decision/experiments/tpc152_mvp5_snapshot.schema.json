@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc152-mvp5-snapshot-v1.schema.json",
+  "title": "TPC-152 MVP5 frontier occurrence-lift route snapshot",
+  "type": "object",
+  "required": [
+    "schema",
+    "snapshot",
+    "imported_manifest_summary",
+    "gate_projection",
+    "proof_dag",
+    "route_universe",
+    "endpoint_ledgers",
+    "first_missing",
+    "ordered_verdicts",
+    "current_verdict",
+    "progress_tags",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-152-mvp5-frontier-occurrence-lift-snapshot-v1"
+    },
+    "snapshot": {
+      "type": "object",
+      "required": [
+        "date",
+        "source_manifest",
+        "source_manifest_sha256",
+        "source_schema_sha256",
+        "snapshot_schema_sha256",
+        "hash_mode",
+        "source_hash_semantics",
+        "selected_route"
+      ],
+      "properties": {
+        "hash_mode": {"const": "CANONICAL_UTF8_LF_V2"},
+        "source_hash_semantics": {"const": "INTEGRITY_ONLY"}
+      }
+    },
+    "imported_manifest_summary": {
+      "type": "object",
+      "required": [
+        "source_schema",
+        "source_range",
+        "anchor_chain_verified",
+        "source_bundle_hashes",
+        "occurrence_lift_status",
+        "all_nonsoft_domain",
+        "frontier_totalization_logic",
+        "frontier_totalization_required_artifact",
+        "frontier_scalar_proved",
+        "eligible_tail_disposed",
+        "schema_nonidentifiability_is_actual_carrier_impossibility",
+        "actual_core_scope",
+        "actual_core_status",
+        "actual_core_x_power_sigma",
+        "actual_core_promotion_eligible",
+        "positive_L2",
+        "actual_fixed_power_target_level",
+        "actual_fixed_power_status",
+        "actual_fixed_power_achieved"
+      ],
+      "properties": {
+        "frontier_totalization_logic": {
+          "const": "ALL_NONSOFT_MAP_ROUTE_OR_FRONTIER_SCALAR_AND_ETO_ROUTE"
+        },
+        "frontier_totalization_required_artifact": {
+          "type": "string"
+        },
+        "schema_nonidentifiability_is_actual_carrier_impossibility": {
+          "const": false
+        },
+        "actual_fixed_power_target_level": {
+          "const": "L2_ACTUAL_POSITIVE"
+        },
+        "actual_fixed_power_status": {
+          "const": "NOT_PROVED"
+        },
+        "actual_fixed_power_achieved": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "gate_projection": {
+      "type": "object",
+      "minProperties": 9,
+      "maxProperties": 9
+    },
+    "proof_dag": {"type": "object"},
+    "route_universe": {"type": "object"},
+    "endpoint_ledgers": {"type": "object"},
+    "first_missing": {
+      "type": "object",
+      "required": [
+        "node_id",
+        "gate",
+        "status",
+        "program_level",
+        "required_artifact",
+        "minimal_missing_set",
+        "active_node_count",
+        "selection_rule"
+      ]
+    },
+    "ordered_verdicts": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "current_verdict": {"const": "NOT_TESTABLE"},
+    "progress_tags": {"type": "array"},
+    "claim_boundary": {"type": "object"}
+  },
+  "additionalProperties": false
+}

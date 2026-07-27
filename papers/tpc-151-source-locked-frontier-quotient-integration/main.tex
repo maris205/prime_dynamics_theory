@@ -1,0 +1,476 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={Source-Locked Integration at the Frontier Occurrence Lift},
+  pdfauthor={Liang Wang},
+  pdfsubject={Four-map completion, an actual Mobius core, and split endpoint ledgers},
+  pdfkeywords={fixed shift, occurrence lift, Mobius correlation, source lock, endpoint ledger}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcommand{\Bhard}{B_{h_0,\delta}}
+\newcommand{\Cns}{\mathcal C_X^{\mathrm{ns}}}
+\newcommand{\Occ}{\mathcal O_X}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{Source-Locked Integration at the Frontier}\\
+\textbf{Occurrence Lift: Four-Map Completion, an Actual}\\
+\textbf{M\"obius Core, and Split Endpoint Ledgers}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-143--150 pursue the two openings left by the MVP4 audit.
+The structural branch asks what must be added after the complete cut
+archive in order to define determinant and zero-mode quotients,
+physical grouping, and the prescribed-shift selector.  The arithmetic
+branch replaces a Boolean squarefree expansion by an exact quotient
+lift and reaches a genuine fixed-two M\"obius periodic core in a
+small-polylogarithmic almost-scale corridor.
+
+We integrate both branches without escalating either result.  The
+common structural object is a conservative row-separated matrix
+\[
+ L_X:\mathbb C^{\mathcal C_X^{\rm ns}}
+ \longrightarrow \mathbb C^{\mathcal O_X},
+ \qquad {\bf 1}^{T}L_X={\bf 1}^{T},
+\]
+defined on every eligible-tail and frontier cut path.  This occurrence
+lift is absent.  The four downstream maps are consequently
+untestable on the actual carrier, although their abstract
+kernel/fiber and commuting-square criteria are proved.
+
+On the arithmetic side, the exact identities
+\[
+ t=aD(z),\qquad t+2=sV(z),\qquad
+ \mu(D(z))\mu(V(z))=G_a(t)G_s(t+2)
+\]
+place a bounded periodic core in the quantitative affine corridor.
+This is real arithmetic progress, classified as
+\(\Lone_{\rm actual\mbox{-}core}\).  It is not positive \(\Ltwo\):
+physical weights, generic phases, all-prefix selection and the
+complete four-sign return remain missing, and its fixed-\(X\)-power
+exponent is zero.
+
+A canonical cross-platform source manifest, a typed proof DAG, a
+minimal-missing-antichain algorithm, a role-based H9 firewall and
+separate arithmetic, physical and full-synthesis endpoint ledgers
+freeze the conclusion.  The first missing node is
+\(\mathsf{H1.frontier\_occurrence\_lift}\); no \(1/400\) endpoint,
+hard-packet estimate or prime-pair theorem is obtained.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed shift; occurrence lift; frontier
+totalization; M\"obius correlation; almost all scales; endpoint
+certificate.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Claim boundary.}
+The source hashes detect drift but do not prove the hashed theorems.
+The identity \(P_{h_0}^{\rm cut}=I\) is not a downstream
+prescribed-shift theorem.  An almost-scale logarithmic saving on an
+actual M\"obius core is not an all-prefix physical saving and has
+zero exponent on the fixed-\(X\)-power ledger.  Nothing below proves
+\(\Bhard=o(X)\), a prime-pair lower bound, or the twin-prime
+conjecture.
+\end{minipage}}
+
+\section{The two inherited openings}
+
+TPC-141 retained the exact cut identity
+\[
+ \Bhard(X)=S_{\rm soft}(X)+S_{\rm elig}(X)+S_{\rm front}(X),
+ \qquad S_{\rm soft}(X)=o(X),
+\]
+and TPC-142 returned \(\NT\) because the frontier was not totalized
+\citep{WangTPC141,WangTPC142}.  The next batch separates the missing
+frontier object from the known arithmetic limitations.
+
+Let \(\Cns\) contain \emph{all} nonsoft cut paths:
+\[
+ \Cns=
+ \mathcal C_X^{\rm ETO}\sqcup\mathcal C_X^{\rm FUM},
+\]
+where ETO denotes \texttt{ELIGIBLE\_TAIL\_OPEN} and FUM denotes
+\texttt{FRONTIER\_UNMAPPED}.  The frozen finite sample contains
+2,988 FUM paths and no ETO path.  This sample fact cannot remove ETO
+from the asymptotic domain.
+
+The arithmetic branch starts from the determinant-two affine pair
+\[
+ D(z)=d+sz,\qquad V(z)=u+az,\qquad su-ad=2.
+\]
+TPC-147--150 test whether the quantitative affine theorem of
+Tao--Ter\"av\"ainen can control a literal core of this pair
+\citep{TaoTeravainen2026,WangTPC147,WangTPC148,WangTPC149,WangTPC150}.
+
+\section{Canonical source locking}
+
+Raw byte hashes are unsuitable for a repository used on both Windows
+and Linux: generated JSON may have CRLF or LF line endings while
+representing the same canonical object.  We therefore use the rule
+\texttt{CANONICAL\_UTF8\_LF\_V2}.
+
+\begin{definition}[Canonical source bundle]
+Text is decoded strictly as UTF-8 and CRLF or CR is normalized to LF.
+JSON is parsed and rendered with sorted keys and one final LF.
+Relative paths use POSIX separators and are sorted.  The bundle hash
+is the SHA-256 digest of the canonical map of relative paths to
+canonical content digests.  The bundle does not contain its own hash.
+\end{definition}
+
+The manifest anchors the canonical TPC-141 manifest through the hash
+embedded in the TPC-142 snapshot, and then source-locks TPC-143--150.
+Tuple, path and occurrence identities remain exact typed objects.
+No collision-resistance assumption is used as a mathematical
+injectivity theorem.
+
+\begin{theorem}[Non-escalating typed merge]
+\label{thm:merge}
+Suppose every proof import matches one source export in status,
+evidence level, direction, role, scope, carrier, normalization and
+coverage; the proof DAG is acyclic; and every shadow-only export has
+no promotion edge.  Then the merged conclusion is a consequence of
+the imported conclusions in their recorded scopes.  Canonical source
+hashes contribute integrity only and cannot strengthen that
+conclusion.
+\end{theorem}
+
+\begin{proof}
+Induct along the canonical topological order.  Exact type matching
+justifies each invoked edge, while the absence of a promotion edge
+prevents a scope-mismatched result from entering the selected root.
+The hash is not a logical edge and therefore supplies no theorem
+premise.
+\end{proof}
+
+\section{The occurrence lift and four-map contract}
+
+TPC-143 distinguishes the cut selector from every downstream
+selector and proves
+\[
+ \mathsf{H1.cut\_shift\_selector}=\PROVED_{\Lone},
+ \qquad P_{h_0}^{\rm cut}=I
+\]
+\citep{WangTPC143}.  It also proves a field-descent criterion: a
+downstream label descends through the current forgetting projection
+if and only if it is constant on every projection fiber.  Legal
+completions with the same cut record and different determinant,
+zero-mode, grouping or shift-lineage labels show that the four
+labels do not descend within the maximal formal completion class
+constrained only by the currently archived fields and identities.
+This is a current-schema route obstruction, not a theorem that the
+unknown actual-support carrier admits two such completions or that an
+augmented construction is impossible.
+
+\begin{definition}[Occurrence lift]
+An occurrence lift is a sparse row-separated matrix
+\[
+ L_X:\mathbb C^{\Cns}\longrightarrow\mathbb C^{\Occ}.
+\]
+One cut column may have several occurrence rows.  Each nonzero edge
+records exact source, target, occurrence, parent, stage and local-edge
+identifiers, its multiplier AST, canonical-parent lineage, native
+lineage, source and target shift tags, normalization, support status,
+mask and boundary data.  It is conservative when
+\[
+ {\bf 1}^{T}L_X={\bf 1}^{T}.
+\]
+\end{definition}
+
+The one-to-many nature is essential: a single canonical parent may
+have several computational or physical occurrences.  Conversely,
+every target occurrence must have a unique recorded canonical-parent
+lineage.  Formal-envelope, canonical-parent and actual-active support
+statuses are different namespaces.
+
+TPC-144 gives abstract determinant and zero-mode quotient interfaces
+\citep{WangTPC144}.  For surjective completed maps \(Q_D,Q_Z\), a
+unique isomorphism \(J\) with \(JQ_D=Q_Z\) exists exactly when
+\[
+ \ker Q_D=\ker Q_Z.
+\]
+Literal fiber relabeling additionally requires equality of the
+occurrence equivalence relations and exact edge multipliers.
+Equality of one aggregated scalar is insufficient.
+
+TPC-145 gives the occurrence-resolved prescribed-shift square
+\citep{WangTPC145}.  On an aggregated matrix \(G\),
+\[
+ P_{\rm phys}G=GP_{\rm src}
+\]
+may vanish by cancellation between two leaking edges.  On the
+row-separated lift, commutation is equivalent to edgewise preservation
+of the predicate ``shift equals \(h_0\).''  Thus
+\(P_{h_0}^{\rm cut}=I\) cannot be substituted for a downstream
+selector.
+
+TPC-146 combines these tests into the defect vector
+\[
+ \mathfrak D_X=
+ (D_L,D_{Q_D},D_{Q_Z},D_G,D_P,D_{DZ},D_{GP},
+   D_{\rm cover},D_{\rm rec}).
+\]
+It preserves two distinct sufficient routes:
+\[
+\begin{split}
+ \mathsf{H1Complete}(X)
+ \quad\Longleftrightarrow\quad&
+ \mathsf{MapTotal}_{\rm ns}(X)\\
+ &{}\lor\bigl(
+ \mathsf{ScalarSoft}_{\rm FUM}(X)
+ \land\mathsf{ETOTotal}(X)\bigr).
+\end{split}
+\]
+The second disjunct requires both
+\(S_{\rm front}(X)=o(X)\) for the complete original frontier sum and
+a theorem-backed disposition of every eligible-tail-open path:
+total downstream maps or a complete ETO soft theorem.  The empty ETO
+class in one finite sample cannot discharge this second clause.
+Neither disjunct is presently proved \citep{WangTPC146}.
+
+\begin{proposition}[Current structural pointer]
+\label{prop:pointer}
+In the selected occurrence-augmented map route, the minimal missing
+antichain is the singleton
+\[
+ \boxed{\{\mathsf{H1.frontier\_occurrence\_lift}\}}.
+\]
+All actual \(Q_D,Q_Z,G,P_{h_0}^{\rm down}\) totality and intertwining
+nodes are its descendants.
+\end{proposition}
+
+\section{A real actual-core arithmetic corridor}
+
+Define the quotient lift \(G_c\) on multiples of \(c\) by
+\[
+ G_c(cm)=\mu(m).
+\]
+For \(t=aD(z)=ad+as z\), the determinant relation gives
+\[
+ t+2=sV(z),
+\]
+and hence the exact identity
+\begin{equation}
+ \mu(D(z))\mu(V(z))=G_a(t)G_s(t+2).
+\label{eq:quotient}
+\end{equation}
+TPC-147 supplies periodic residue reassembly; TPC-148 verifies the
+quotient lift and the relevant nonpretentiousness; and TPC-149 applies
+the quantitative affine theorem to the small-polylogarithmic periodic
+core \citep{WangTPC147,WangTPC148,WangTPC149,TaoTeravainen2026}.
+
+\begin{proposition}[Exact evidence classification]
+\label{prop:classification}
+The result imported from TPC-149 is
+\[
+ \mathsf{A149.actual\_mobius\_periodic\_corridor}
+ =\PROVED_{\Lone_{\rm actual\mbox{-}core}}.
+\]
+It is a theorem about actual M\"obius factors in its stated periodic
+core and almost-scale scope.  It is not a theorem on the full
+physical H3 carrier and its fixed-\(X\)-power exponent is \(0\).
+\end{proposition}
+
+The distinction avoids two opposite mistakes.  Calling
+\eqref{eq:quotient} a synthetic model would discard a real arithmetic
+advance.  Calling its logarithmic almost-scale saving positive
+\(\Ltwo\) would silently add physical weights, generic phases,
+deterministic prefixes and a four-sign return that have not been
+proved.  TPC-150 records precisely these return obligations and a
+scoped obstruction to atomic prefix selection \citep{WangTPC150}.
+
+\section{Route cells and the first missing antichain}
+
+Each tested negative result stops only its exact route cell.  The
+eligible-only compiler, direct shift-one reparameterization,
+current-schema-only downstream derivation, schema-only \(Q_D/Q_Z\)
+derivation, aggregate-cancellation shift route and atomic-prefix route
+are stopped in their declared scopes.  None stops the selected
+occurrence-lift/quotient-M\"obius route.
+
+The route list is a declared collection of tested cells, not a theorem
+that every conceivable architecture has been enumerated.  Therefore,
+even a future stop of every listed cell would not establish
+architecture infeasibility without an independent route-universe
+completeness theorem.
+
+\begin{definition}[Minimal missing antichain]
+Let \(\mathcal A\) be the ancestor closure of the selected root,
+including the root.  A node is missing if it is
+\(\NT\) or fails scope matching.  The minimal missing set contains
+the missing nodes having no missing ancestor in \(\mathcal A\).
+For deterministic reporting only, its first representative is chosen
+by canonical topological rank and then node identifier.
+\end{definition}
+
+This definition prevents a missing descendant from pre-empting its
+missing prerequisite and does not pretend that incomparable missing
+nodes have a mathematical linear order.  Applied to the frozen DAG it
+gives \cref{prop:pointer}.
+
+\section{H9 and the split endpoint}
+
+The physical occurrence registry is structural.  Its ancestor closure
+may contain H1, H6, H7, H8 and independent physical-synthesis cost
+theorems, but no node whose explicit role is arithmetic shadow,
+arithmetic target or arithmetic negative.  A second check excludes
+the H2--H5 gate prefixes.  Thus relabeling an arithmetic node cannot
+evade the H9 firewall.
+
+The old phrase ``the endpoint'' hides two different tasks.  We record
+\[
+\begin{array}{ll}
+\text{arithmetic target:}&
+ \sigma_{\rm raw}\ge 1/400,\\[2mm]
+\text{physical loss target:}&
+ \Lambda_{\rm phys}<1/400.
+\end{array}
+\]
+The first may remain open at the arithmetic frontier; the second must
+be certified from a complete H9 registry independently of H2--H5.
+Full synthesis additionally requires strictly positive net slack.
+
+\begin{proposition}[Directional endpoint calculus]
+For a complete physical route cell, a theorem-backed upper certificate
+\(U<1/400\) passes the physical-loss endpoint.  A theorem-backed lower
+or exact dual certificate \(L\ge1/400\) stops that cell.  An upper
+certificate \(U\ge1/400\) without such a lower certificate proves
+neither pass nor stop.  Unknown costs are not zero, energy exponents
+are halved exactly once, joint tokens replace exact disjoint covers,
+and determinant reserve is not a physical token.
+\end{proposition}
+
+The actual-core logarithmic saving is stored separately with
+fixed-\(X\)-power exponent \(0\).  It cannot be subtracted from
+\(\Lambda_{\rm phys}\) or used to pass either \(1/400\) contract.
+
+\section{Source-locked integration theorem}
+
+\begin{theorem}[TPC-151 integration status]
+\label{thm:status}
+For the canonical source-locked TPC-143--150 batch:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the structural branch establishes the exact occurrence-lift and
+  four-map completion contract, but the actual lift is \(\NT\);
+\item the arithmetic branch establishes a fixed-two M\"obius periodic
+  core in its small-polylogarithmic almost-scale scope, classified as
+  \(\Lone_{\rm actual\mbox{-}core}\);
+\item the physical and full-synthesis endpoint ledgers are incomplete;
+  and
+\item the first missing node is
+  \(\mathsf{H1.frontier\_occurrence\_lift}\).
+\end{enumerate}
+Consequently the integration is assembled with gaps and contains no
+positive \(\Ltwo\) theorem.
+\end{theorem}
+
+\begin{proof}
+The typed merge theorem preserves every source scope.  The map route
+cannot pass because \(L_X\) and its descendant defects are unknown;
+the scalar route cannot pass because neither a complete
+\(S_{\rm front}=o(X)\) theorem nor a theorem-backed ETO disposition is
+imported.  The TPC-149 export has
+scope
+\nolinkurl{scope.actual_fixed_two_mobius_periodic_core_almost_scale},
+has no promotion edge and records zero fixed-\(X\)-power exponent.
+The occurrence registry is incomplete, so the physical-loss endpoint
+is also incomplete.  The active-closure scan then gives the stated
+minimal missing singleton.
+\end{proof}
+
+\begin{corollary}[Precise progress]
+The batch contains both structural \(\Lone\) progress and genuine
+actual-core arithmetic \(\Lone\) progress.  Neither is fixed-\(h_0\)
+physical positive-\(\Ltwo\) progress.
+\end{corollary}
+
+\section{Deterministic audit}
+
+The standard-library audit checks canonical LF hashing, the
+TPC-141/TPC-142 anchor chain, exact imports, the proof DAG, the active
+ancestor closure, the minimal missing antichain, role- and gate-based
+H9 independence, scoped route stops and rational endpoint directions.
+Mutation tests reject:
+\begin{enumerate}[leftmargin=2em]
+\item line-ending-dependent hashes and typed import mismatches;
+\item current-schema formal nonidentifiability promoted to an
+  impossibility statement on the actual carrier;
+\item the \(\Ltwo_{\rm actual\mbox{-}positive}\) target label reported
+  as an achieved result;
+\item an actual-core pseudo-\(\Ltwo\) promotion;
+\item an arithmetic dependency hidden below H8;
+\item an empty ETO sample used as an asymptotic totality certificate;
+\item a frontier-totalization artifact compressed to a scalar theorem
+  without its complete ETO disposition;
+\item an endpoint artifact that drops its actual-carrier scope or
+  strict \(1/400\) direction;
+\item \(P_{h_0}^{\rm cut}\) used as the downstream selector;
+\item an unproved route-universe completeness flag; and
+\item upper-bound failure, endpoint equality and unknown-cost direction
+  errors.
+\end{enumerate}
+
+\paragraph{Established.}
+The source-lock, occurrence-lift contract, four-map audit, exact
+actual-core evidence classification, H9 firewall and split endpoint
+calculus are \(\Lzero/\Lone\) results.
+
+\paragraph{Not established.}
+No occurrence lift, complete four-map route, scalar frontier theorem
+or complete ETO disposition, all-prefix physical return, positive
+fixed-\(X\)-power saving,
+strict physical endpoint, \(\Bhard=o(X)\), prime-pair lower bound or
+twin-prime theorem is proved.
+
+\section{Conclusion}
+
+The first unsupported carrier is no longer represented by a generic
+``missing maps'' label.  It is the concrete conservative matrix
+\(L_X\), with a complete field and defect contract.  In parallel, the
+quotient lift reaches a genuine fixed-two M\"obius periodic core
+without pretending that an almost-scale logarithmic theorem is the
+full physical estimate.  These are two forward moves at different
+levels.  Their source-locked combination still stops before the
+physical carrier, so the next route decision must remain
+\(\NT\).
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,72 @@
+{
+  "checks": {
+    "H9_role_based_independence_imported": true,
+    "active_ancestor_first_missing": true,
+    "actual_core_L1_retained": true,
+    "actual_core_not_positive_L2": true,
+    "actual_fixed_power_target_not_achievement": true,
+    "all_nonsoft_domain": true,
+    "claim_boundary": true,
+    "current_verdict_not_testable": true,
+    "frontier_scalar_requires_ETO": true,
+    "frontier_totalization_artifact_exact": true,
+    "occurrence_lift_first_missing": true,
+    "ordered_verdicts": true,
+    "schema_fields": true,
+    "schema_nonidentifiability_scope_preserved": true,
+    "source_hashes_integrity_only": true,
+    "source_manifest_canonical_hash": true,
+    "split_endpoint_ledgers": true
+  },
+  "claim_boundary": {
+    "ARCHITECTURE_INFEASIBLE": false,
+    "ARITHMETIC_FRONTIER": false,
+    "GO": false,
+    "REROUTE": false,
+    "STOP_ROUTE": false,
+    "arithmetic_target_pass": false,
+    "full_endpoint_pass": false,
+    "hard_packet_oX": false,
+    "physical_endpoint_pass": false,
+    "positive_L2": false,
+    "prime_pair_theorem": false,
+    "schema_nonidentifiability_is_actual_carrier_impossibility": false,
+    "source_hashes_prove_theorems": false,
+    "twin_prime_theorem": false
+  },
+  "current_verdict": "NOT_TESTABLE",
+  "first_missing": {
+    "active_node_count": 30,
+    "gate": "H1",
+    "minimal_missing_set": [
+      "H1.frontier_occurrence_lift"
+    ],
+    "node_id": "H1.frontier_occurrence_lift",
+    "program_level": "L1_STRUCTURAL",
+    "required_artifact": "a conservative row-separated one-to-many lift on every ELIGIBLE_TAIL_OPEN and FRONTIER_UNMAPPED path, with exact occurrence, stage, parent, multiplier, native, h0, normalization and support-status lineage",
+    "selection_rule": "MINIMAL_MISSING_ANCESTORS_THEN_CANONICAL_TOPOLOGY",
+    "status": "NOT_TESTABLE"
+  },
+  "scenario_checks": {
+    "actual_core_pseudo_frontier_rejected": true,
+    "actual_fixed_power_target_promotion_rejected": true,
+    "compressed_frontier_totalization_artifact_rejected": true,
+    "conditional_pseudo_frontier_rejected": true,
+    "invalid_snapshot_rejected_before_verdict": true,
+    "reroute_requires_fresh_registry": true,
+    "schema_nonidentifiability_promotion_rejected": true,
+    "unproved_universe_not_architecture_infeasible": true
+  },
+  "scenario_verdicts": {
+    "ARCHITECTURE_INFEASIBLE": "ARCHITECTURE_INFEASIBLE",
+    "ARITHMETIC_FRONTIER": "ARITHMETIC_FRONTIER",
+    "GO": "GO",
+    "NOT_TESTABLE": "NOT_TESTABLE",
+    "OPEN": "OPEN",
+    "REROUTE": "REROUTE",
+    "STOP_ROUTE": "STOP_ROUTE"
+  },
+  "schema": "tpc-152-mvp5-route-audit-v1",
+  "snapshot_sha256": "5d07ed54e824cd7d0723424580089cf1b310caef371717c00e9467a9132b2fa7",
+  "status": "PASS"
+}

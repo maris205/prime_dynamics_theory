@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc147-invocation-v1.schema.json",
+  "title": "TPC-147 source-native periodic invocation",
+  "type": "object",
+  "required": [
+    "source_branch",
+    "ambient_X",
+    "scale_N",
+    "L_parameter",
+    "base_modulus_Q",
+    "period_R",
+    "shifts",
+    "exception_set_id",
+    "normalization",
+    "total_modulus_within_source_envelope",
+    "weight_type",
+    "interval_type",
+    "status"
+  ],
+  "properties": {
+    "source_branch": {
+      "enum": [
+        "LOCAL_THEOREM_3_1_NONPRETENTIOUS",
+        "LOCAL_THEOREM_3_1_EQUIDISTRIBUTED",
+        "GLOBAL_LIOUVILLE_AFFINE_REMARK"
+      ]
+    },
+    "ambient_X": {"type": "string"},
+    "scale_N": {"type": "string"},
+    "L_parameter": {"type": "string"},
+    "base_modulus_Q": {"type": "string"},
+    "period_R": {"type": "string"},
+    "shifts": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"type": "string"}
+    },
+    "exception_set_id": {"type": "string"},
+    "normalization": {"const": "W_OVER_N"},
+    "total_modulus_within_source_envelope": {"const": true},
+    "weight_type": {
+      "enum": [
+        "BOUNDED_PERIODIC",
+        "ARBITRARY_PHYSICAL",
+        "GENERIC_ADDITIVE_PHASE"
+      ]
+    },
+    "interval_type": {
+      "enum": ["SOURCE_DYADIC_N_2N", "ARBITRARY_PREFIX"]
+    },
+    "status": {
+      "enum": ["ELIGIBLE", "INELIGIBLE", "NOT_TESTABLE"]
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {"status": {"const": "ELIGIBLE"}},
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "source_branch": {
+            "enum": [
+              "LOCAL_THEOREM_3_1_NONPRETENTIOUS",
+              "LOCAL_THEOREM_3_1_EQUIDISTRIBUTED"
+            ]
+          },
+          "weight_type": {"const": "BOUNDED_PERIODIC"},
+          "interval_type": {"const": "SOURCE_DYADIC_N_2N"}
+        }
+      }
+    }
+  ]
+}
