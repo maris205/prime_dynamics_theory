@@ -1,0 +1,223 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ord}{\operatorname{ord}}
+
+\title{Why a Fixed Quartic Cannot Supply a Growing Spectral Count\\
+\large Bounded Degree, Repeated Support, and Local Finiteness}
+\author{Liang Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+RH-212--RH-218 extract substantial exact geometry from one physical edge
+quartet.  This paper determines what even perfect control of that quartet
+could contribute to an infinite spectral determinant.  The answer is sharply
+limited.
+
+First, a locally uniformly convergent family of monic polynomials of uniformly
+bounded degree has a polynomial limit of bounded degree; it cannot acquire an
+unbounded zero count.  Second, replacing a quartic $Q$ by powers $Q^N$ grows
+algebraic degree only through multiplicity.  Its distinct support remains at
+most four points, and as $N\to\infty$ the zero divisors cease to be locally
+finite on every neighborhood of those points.  They therefore cannot
+converge to the divisor of a nonzero holomorphic function on such a domain.
+
+For the finest normalized physical quartet, powers through $N=64$ raise the
+degree from four to 256 while the support remains exactly four.  The associated
+height-counting functions have only the same finite jump locations with
+growing jump sizes.  This behavior cannot produce a locally finite spectrum
+with an extended counting law.
+
+The conclusion is an exact route obstruction, not a negative result about
+the quartet's local usefulness.  It remains a branch seed and finite factor,
+but Gate A requires a rank-growing physical divisor that adds genuinely new
+roots and controls omitted factors.  No $T\log T$ theorem or zeta statement is
+claimed.
+\end{abstract}
+
+\section{The fixed-factor question}
+
+The centered quartet has an exact shape manifold, a finite monotone axial
+clock, and a classified degenerate boundary
+\citep{WangRH213,WangRH214,WangRH216}.  Simple autonomous recurrence is not
+identified, but suppose optimistically that a later argument controlled the
+quartet at every scale.  Could this alone be the determinant sought in Gate
+A?
+
+An infinite spectral determinant must have a locally finite zero divisor:
+every compact subset of its domain contains only finitely many zeros counted
+with finite multiplicity, unless the function is identically zero.  A
+four-root factor confronts this requirement in two possible ways:
+\begin{enumerate}[leftmargin=2em]
+\item keep degree four while taking a scale limit;
+\item repeat or power the factor so algebraic degree grows.
+\end{enumerate}
+Both are insufficient.
+
+\section{Bounded degree stays bounded}
+
+\begin{theorem}[Locally uniform bounded-degree limit]\label{thm:degree}
+Let $p_n$ be polynomials of degree at most $m$ that converge locally uniformly
+on $\mathbb C$ to an entire function $f$.  Then $f$ is a polynomial of degree
+at most $m$.  If every $p_n$ is monic of degree exactly $m$, then $f$ is monic
+of degree $m$.
+\end{theorem}
+\begin{proof}
+Local uniform convergence of holomorphic functions implies convergence of all
+derivatives on compact subsets by Cauchy's integral formula
+\citep{Conway1978}.  Since $p_n^{(m+1)}\equiv0$, one has
+$f^{(m+1)}\equiv0$, so $f$ has degree at most $m$.  In the monic degree-$m$
+case, $p_n^{(m)}\equiv m!$, hence $f^{(m)}\equiv m!$.
+\end{proof}
+
+\begin{corollary}\label{cor:four}
+A locally uniform nonzero limit of monic quartics has exactly four zeros on
+$\mathbb C$, counted with multiplicity.  It cannot yield an unbounded
+spectral count.
+\end{corollary}
+
+On a proper domain, Rouch\'e's theorem gives the corresponding local
+statement: if a compact contour avoids the zeros of the nonzero limit, the
+number of enclosed zeros eventually stabilizes and is bounded by four
+\citep{Conway1978}.
+
+Thus even a rigorously proved limit
+\begin{equation}
+ Q_{\sigma}\longrightarrow(z^2-1)^2
+\end{equation}
+would produce one finite degenerate factor, not an infinite spectral
+determinant.
+
+\section{Powering grows multiplicity, not support}
+
+Let
+\begin{equation}
+ Q(z)=\prod_{j=1}^{r}(z-\lambda_j)^{m_j},
+ \qquad \sum_{j=1}^{r}m_j=4,qquad r\le4.
+\end{equation}
+Then
+\begin{equation}\label{eq:powerdivisor}
+ Q(z)^N=\prod_{j=1}^{r}(z-\lambda_j)^{Nm_j}.
+\end{equation}
+
+\begin{proposition}[Repeated-support obstruction]\label{prop:support}
+For every $N\ge1$, the distinct zero support of $Q^N$ is the support of $Q$
+and has cardinality at most four.  If $N\to\infty$, the divisors of $Q^N$ are
+not locally finite on any domain containing a zero of $Q$.
+\end{proposition}
+\begin{proof}
+Equation \eqref{eq:powerdivisor} proves the support statement.  If a compact
+neighborhood contains $\lambda_j$, its divisor mass is at least $Nm_j$, which
+diverges.  Local finiteness requires finite mass on compact sets.
+\end{proof}
+
+\begin{corollary}\label{cor:holomorphic}
+No sequence $Q^{N_k}$ with $N_k\to\infty$ can have zero divisors converging
+locally to the divisor of a nonzero holomorphic function on a domain
+containing a zero of $Q$.
+\end{corollary}
+
+Multiplying by nonzero scalar normalizations does not change this divisor.
+If the functions themselves converge locally uniformly, the only possible
+way to accommodate unbounded compact zero order is an identically zero
+limit, which is not a spectral determinant.
+
+\section{Collapsing quartics do not repair local finiteness}
+
+Suppose $Q_n$ tends to $(z^2-1)^2$ and one also chooses powers $N_n\to\infty$.
+For any sufficiently small fixed neighborhoods of $+1$ and $-1$, all four
+roots of $Q_n$ eventually lie in their union.  The divisor mass there is
+$4N_n$ and diverges.  Root motion toward a compact degenerate pair therefore
+does not create an extended locally finite support.
+
+To obtain a genuine growing divisor, new roots must enter new locations in a
+controlled manner.  Their multiplicities on every fixed compact set must
+remain finite in the limiting object.
+
+\section{Height counting profile}
+
+For a finite root multiset $\Lambda$, define
+\begin{equation}\label{eq:count}
+ N_\Lambda(T)=\sum_{\lambda\in\Lambda}
+ \mathbf 1_{\{|\operatorname{Im}\lambda|\le T\}},
+\end{equation}
+with multiplicity.  For $Q^N$,
+\begin{equation}
+ N_{Q^N}(T)=N\,N_Q(T).
+\end{equation}
+It has at most four distinct jump heights, independent of $N$.  Increasing
+$N$ enlarges those jumps but does not distribute zeros over increasing
+height.
+
+This cannot approximate a locally finite extended counting law as a function
+of $T$.  In particular it does not address the $T\log T$ scale required much
+later in Gate C.  That macro-gate is not being proved or tested here; the
+counting observation only explains why Gate A must not stop at one factor.
+
+\section{Finite illustration}
+
+At $\sigma=0.00125$ on the left channel, the centered quartet has
+\begin{equation}
+ u=0.718352,\qquad \eta=-0.093030.
+\end{equation}
+Its four roots are distinct.  We form powers with
+\begin{equation}
+ N=1,2,4,8,16,32,64.
+\end{equation}
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$N$ & polynomial degree & distinct support & maximum root multiplicity\\
+\midrule
+$1$ & $4$ & $4$ & $1$\\
+$8$ & $32$ & $4$ & $8$\\
+$32$ & $128$ & $4$ & $32$\\
+$64$ & $256$ & $4$ & $64$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The archive also normalizes $Q(z)^N$ at a basepoint and samples five complex
+locations.  As expected, modulus ratios are exponentially magnified or
+suppressed with $N$; scalar normalization does not produce a stable divisor.
+This numerical display illustrates Propositions~\ref{prop:support}; it is not
+needed for their proof.
+
+\section{What a rank-growing construction must add}
+
+A viable next layer should contain divisors
+\begin{equation}\label{eq:growing}
+ D_{\sigma,k}(z)=\prod_{j=1}^{k}(z-\lambda_{\sigma,j}),
+ \qquad k=k(\sigma)\longrightarrow\infty,
+\end{equation}
+with genuinely expanding support.  At minimum it must audit:
+\begin{enumerate}[leftmargin=2em]
+\item conjugate closure and branch selection as $k$ grows;
+\item one global center and scale for the whole cloud;
+\item tightness of normalized empirical root measures;
+\item local uniform control of canonical products or logarithmic derivatives;
+\item omitted-factor bounds connecting successive ranks;
+\item dual-channel coherence.
+\end{enumerate}
+
+Adding roots is necessary, not sufficient.  Uncontrolled clouds can diverge
+or converge to the zero function just as repeated factors do.
+
+\section{Claim boundary}
+
+The exact conclusion is a no-go for a fixed bounded-degree factor and its
+pure repetitions as the final growing spectral divisor.  The quartet remains
+useful as a local branch seed, a calibration factor, and a test of channel
+universality.
+
+No physical rank-growing divisor is constructed here.  Gate A remains open,
+Gate C's counting law is untouched, and no arithmetic or zeta identification
+is asserted.
+
+\bibliographystyle{plainnat}\bibliography{references}\end{document}

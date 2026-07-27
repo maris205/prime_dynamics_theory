@@ -1,0 +1,233 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\TV}{\operatorname{TV}}
+
+\title{A Finite Monotone Axial Clock for the Quartet Shape Flow\\
+\large Sixteen Scales, Two Channels, and a Narrow Asymmetry Corridor}
+\author{Liang Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+RH-213 reduces each centered physical quartet to exact shape coordinates
+$(u,\eta)\in[0,1]\times[-1,1]$.  We now audit their scale ordering on sixteen
+small-noise levels from $0.04$ to $0.00125$.  On both physical channels, $u$
+increases strictly through all fifteen coarse-to-fine transitions.  The net
+change is $0.69809$ on the left and $0.69673$ on the right; the smallest
+observed increments are $0.01529$ and $0.01513$.
+
+After the initial transient, defined in advance here by $\sigma\le0.02$,
+$\eta$ remains in narrow corridors: $[-0.10444,-0.06886]$ on the left and
+$[-0.10748,-0.07031]$ on the right.  Their widths are $0.03557$ and
+$0.03717$.  Mature left/right discrepancies are at most $0.003006$ in $u$
+and $0.003043$ in $\eta$.
+
+Any strictly ordered finite data define an invertible piecewise-linear clock
+on their sampled log-scale interval; we state this elementary theorem to
+separate a legitimate finite clock from an unsupported all-level law.  The
+observed trajectory is therefore well described as one dominant axial motion
+plus a bounded transverse corridor, but no monotonicity theorem below the
+finest level, autonomous flow, or small-noise limit is claimed.
+\end{abstract}
+
+\section{Exact coordinates and finite question}
+
+For each physical channel $s\in\{L,R\}$ and scale $\sigma$, RH-213 writes
+the centered-RMS quartet as
+\begin{equation}\label{eq:roots}
+ \sqrt{u_{\sigma,s}}\pm i\sqrt{(1-u_{\sigma,s})(1+\eta_{\sigma,s})},
+ \quad
+ -\sqrt{u_{\sigma,s}}\pm i\sqrt{(1-u_{\sigma,s})(1-\eta_{\sigma,s})}
+\end{equation}
+\citep{WangRH213}.  The coefficient vector is an exact function of these two
+coordinates.  RH-212 supplies a frozen sixteen-level root atlas
+\citep{WangRH212}.
+
+We ask three finite questions:
+\begin{enumerate}[leftmargin=2em]
+\item Is $u$ ordered consistently as $\sigma$ decreases?
+\item Does $\eta$ enter a narrower post-transient corridor?
+\item Do both physical channels track the same coordinate path within small
+finite discrepancy?
+\end{enumerate}
+None of these questions presupposes a limiting value.
+
+\section{Scale order and clock convention}
+
+Write
+\begin{equation}\label{eq:time}
+ t=\log(1/\sigma).
+\end{equation}
+The sixteen anchors are ordered by increasing $t$, equivalently decreasing
+$\sigma$.  Let $t_0<\cdots<t_{15}$ and let $u_k=u_{\sigma_k,s}$ on one
+channel.
+
+\begin{theorem}[Finite monotone-clock interpolation]\label{thm:clock}
+If
+\begin{equation}\label{eq:strict}
+ u_0<u_1<\cdots<u_n,
+\end{equation}
+then there is a unique continuous function $U:[t_0,t_n]\to[u_0,u_n]$ that
+is affine on each interval $[t_k,t_{k+1}]$ and satisfies $U(t_k)=u_k$.
+It is strictly increasing and hence a homeomorphism onto its image.
+\end{theorem}
+\begin{proof}
+Linear interpolation is unique on every subinterval.  Its slope there is
+$(u_{k+1}-u_k)/(t_{k+1}-t_k)>0$, so the pieces join to a strictly increasing
+continuous bijection.  A continuous strictly monotone map on a compact
+interval has continuous inverse.
+\end{proof}
+
+The theorem is intentionally finite.  It neither extends $U$ beyond the
+sampled interval nor says that the piecewise-linear interpolation is the
+physical law.
+
+\section{Sixteen-level axial verdict}
+
+For each transition define
+\begin{equation}
+ \Delta u_{k,s}=u_{k+1,s}-u_{k,s}.
+\end{equation}
+All thirty channel-transition increments are positive.
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+axial diagnostic & left & right\\
+\midrule
+transition count & 15 & 15\\
+positive increments & 15 & 15\\
+minimum increment & $0.015295$ & $0.015130$\\
+maximum increment & $0.104022$ & $0.106002$\\
+net change & $0.698086$ & $0.696733$\\
+total variation & $0.698086$ & $0.696733$\\
+rank correlation with $\log(1/\sigma)$ & $1$ & $1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Equality of total variation and net change is simply another expression of
+finite monotonicity.  The factor-of-seven spread between minimum and maximum
+increments warns against treating the anchor index itself as constant-speed
+time.
+
+\section{Representative dyadic subsequence}
+
+The following equal-log-step subsequence displays the dominant motion:
+\begin{center}
+\small
+\begin{tabular}{rrrrr}
+\toprule
+$\sigma$ & $u_L$ & $u_R$ & $\eta_L$ & $\eta_R$\\
+\midrule
+$0.04$ & $0.02027$ & $0.02077$ & $-0.57806$ & $-0.59358$\\
+$0.02$ & $0.24887$ & $0.24794$ & $-0.06886$ & $-0.07031$\\
+$0.01$ & $0.40529$ & $0.40229$ & $-0.10443$ & $-0.10748$\\
+$0.005$ & $0.54098$ & $0.54034$ & $-0.08934$ & $-0.09080$\\
+$0.0025$ & $0.65874$ & $0.65801$ & $-0.09050$ & $-0.09181$\\
+$0.00125$ & $0.71835$ & $0.71750$ & $-0.09303$ & $-0.09444$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The first transition contains a large transverse relaxation.  Thereafter the
+axial coordinate advances while $\eta$ fluctuates around roughly $-0.09$.
+
+\section{The mature asymmetry corridor}
+
+For a finite ordered sequence $x_k$, define
+\begin{equation}
+ \operatorname{width}(x)=\max_kx_k-\min_kx_k,
+ \qquad
+ \TV(x)=\sum_k|x_{k+1}-x_k|.
+\end{equation}
+On the levels with $\sigma\le0.02$:
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+transverse diagnostic & left & right\\
+\midrule
+minimum $\eta$ & $-0.104434$ & $-0.107477$\\
+maximum $\eta$ & $-0.068864$ & $-0.070311$\\
+width & $0.035570$ & $0.037166$\\
+mean & $-0.089618$ & $-0.091187$\\
+RMS about mean & $0.009378$ & $0.009636$\\
+total variation & $0.070188$ & $0.074222$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The total variation is about twice the width, so $\eta$ is not monotone.  A
+``transverse fixed point'' would overstate the evidence.  The justified term
+is a finite corridor.
+
+\section{Dual-channel synchronization}
+
+At fixed $\sigma$, define
+\begin{equation}
+ \delta_u(\sigma)=|u_{\sigma,L}-u_{\sigma,R}|,
+ \qquad
+ \delta_\eta(\sigma)=|\eta_{\sigma,L}-\eta_{\sigma,R}|.
+\end{equation}
+Across all sixteen scales,
+\begin{equation}
+ \max\delta_u=0.004229,
+ \qquad \max\delta_\eta=0.015523,
+\end{equation}
+where the transverse maximum occurs in the initial transient.  On the mature
+subset,
+\begin{equation}\label{eq:maturesync}
+ \max\delta_u=0.003006,
+ \qquad \max\delta_\eta=0.003043.
+\end{equation}
+
+These discrepancies are small compared with the net axial displacement, but
+they are not interval-certified errors.  They quantify agreement of two
+finite discretizations/channels under the same root-selection rule.
+
+\section{A near-one-dimensional description}
+
+The phrase ``near one-dimensional'' has a precise finite meaning here:
+\begin{enumerate}[leftmargin=2em]
+\item one coordinate is strictly ordered through every observed transition;
+\item the other remains in a post-transient interval of width below $0.038$;
+\item both channels agree to roughly $3\times10^{-3}$ in each mature
+coordinate.
+\end{enumerate}
+It does not mean that $\eta$ is a function of $u$ at all levels, that the
+trajectory lies on an invariant curve, or that a one-dimensional generator
+has been found.
+
+\section{Why finite monotonicity matters}
+
+The raw quartic coefficient flow looked irregular because location, radius,
+axial separation, and transverse asymmetry were mixed.  The exact shape
+coordinates show that one component has a stable order.  This gives a useful
+clock for:
+\begin{enumerate}[leftmargin=2em]
+\item predeclared out-of-sample extrapolation;
+\item boundary-distance estimates;
+\item sensitivity decompositions;
+\item equal-log-step recurrence audits.
+\end{enumerate}
+These uses remain finite unless accompanied by uniform estimates.
+
+\section{Claim boundary and next test}
+
+The data do not prove:
+\begin{itemize}[leftmargin=2em]
+\item $u_\sigma$ is monotone for every sufficiently small $\sigma$;
+\item $u_\sigma$ has a limit, much less limit one;
+\item $\eta_\sigma$ converges;
+\item a scale-independent map advances the shape;
+\item a growing determinant exists.
+\end{itemize}
+
+RH-215 therefore freezes seven fine levels as training data and withholds two
+finer levels for prediction.  Gate A stays open, and no statement about
+Gates B--E or zeta zeros is made.
+
+\bibliographystyle{plainnat}\bibliography{references}\end{document}

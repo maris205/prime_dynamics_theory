@@ -1,0 +1,251 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Boundary Stratification of the Centered Quartet Manifold\\
+\large Discriminant Factorization and Uniform Collapse to a Double Pair}
+\author{Liang Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The finite shape clock of RH-214 moves monotonically in the axial coordinate
+$u$, and RH-215 finds a power-gap model to be the best of three finite
+extrapolants.  Neither result proves a limit.  This paper instead answers the
+conditional geometric question exactly: what happens to a centered
+conjugate quartet if $u$ approaches the boundary value one?
+
+For the canonical shape polynomial $Q_{u,\eta}$, we prove
+\[
+ \operatorname{Disc}Q_{u,\eta}
+ =256(1-u)^2(1-\eta^2)
+   \bigl[4u+(1-u)^2\eta^2\bigr]^2.
+\]
+Hence degeneracy occurs precisely on the axial edge $u=1$, on either edge
+$|\eta|=1$, or at the isolated point $(u,\eta)=(0,0)$.  The strata correspond
+respectively to two real double roots, one real double pair, and coincident
+imaginary conjugate pairs.
+
+Uniformly for $|\eta|\le1$, the root multiset approaches
+$\{1,1,-1,-1\}$ as $u\to1$, with an explicit matching bound
+\[
+ d_{\rm root}\le \sqrt{2(1-u)}+
+ \frac{1-u}{1+\sqrt u}.
+\]
+The coefficient distance to $(z^2-1)^2$ is exactly $4(1-u)$ in maximum norm.
+Thus axial convergence, coefficient convergence, and root-multiset
+convergence are equivalent.  Six hundred random checks verify the formulas
+to roundoff.  The physical data move toward this stratum but reach only
+$u\approx0.718$ at the finest anchor; no physical convergence claim is made.
+\end{abstract}
+
+\section{Conditional geometry without a convergence claim}
+
+RH-213 gives the exact canonical roots
+\begin{equation}\label{eq:roots}
+ a\pm ib,\qquad -a\pm id,
+\end{equation}
+where
+\begin{equation}\label{eq:abd}
+ a=\sqrt u,qquad
+ b^2=(1-u)(1+\eta),qquad
+ d^2=(1-u)(1-\eta)
+\end{equation}
+for $(u,\eta)\in[0,1]\times[-1,1]$
+\citep{WangRH213}.  The polynomial is
+\begin{equation}\label{eq:poly}
+ Q_{u,\eta}(z)=z^4+(2-4u)z^2
+ +4\sqrt u(1-u)\eta z+1-\eta^2(1-u)^2.
+\end{equation}
+
+RH-214 observes finite monotonicity of $u$ and RH-215 tests three candidate
+tails \citep{WangRH214,WangRH215}.  We do not assume any of those tails.  All
+results below hold for an arbitrary point of the compact shape rectangle.
+
+\section{Quadratic factorization}
+
+Write
+\begin{equation}\label{eq:factors}
+ Q_+(z)=(z-a)^2+b^2,qquad
+ Q_-(z)=(z+a)^2+d^2,qquad Q=Q_+Q_-.
+\end{equation}
+The discriminants of the two monic quadratics are $-4b^2$ and $-4d^2$.
+
+\begin{lemma}[Cross resultant]\label{lem:resultant}
+The resultant of the two factors is
+\begin{equation}\label{eq:resultant}
+ \operatorname{Res}(Q_+,Q_-)
+ =4\bigl[4u+(1-u)^2\eta^2\bigr].
+\end{equation}
+\end{lemma}
+\begin{proof}
+Evaluating $Q_-$ at the two roots $a\pm ib$ of $Q_+$ gives
+\begin{align}
+ \operatorname{Res}(Q_+,Q_-)
+ &=\bigl((2a+ib)^2+d^2\bigr)
+   \bigl((2a-ib)^2+d^2\bigr)\\
+ &=\bigl(4a^2-b^2+d^2\bigr)^2+16a^2b^2.
+\end{align}
+Using \eqref{eq:abd}, the terms linear in $\eta$ cancel and the expression
+reduces to \eqref{eq:resultant}.
+\end{proof}
+
+\section{Complete discriminant factorization}
+
+For monic polynomials,
+\begin{equation}
+ \operatorname{Disc}(Q_+Q_-)
+ =\operatorname{Disc}(Q_+)\operatorname{Disc}(Q_-)
+  \operatorname{Res}(Q_+,Q_-)^2.
+\end{equation}
+
+\begin{theorem}[Shape discriminant]\label{thm:disc}
+For the canonical quartet,
+\begin{equation}\label{eq:disc}
+ \boxed{
+ \operatorname{Disc}Q_{u,\eta}
+ =256(1-u)^2(1-\eta^2)
+ \bigl[4u+(1-u)^2\eta^2\bigr]^2.}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Since $b^2d^2=(1-u)^2(1-\eta^2)$, the product of the two quadratic
+discriminants is $16(1-u)^2(1-\eta^2)$.  Multiplying by the square of
+\eqref{eq:resultant} proves \eqref{eq:disc}.
+\end{proof}
+
+\section{Degeneracy strata}
+
+All factors in \eqref{eq:disc} are nonnegative on the shape rectangle.
+
+\begin{corollary}[Complete zero set]\label{cor:strata}
+The quartet has a repeated root if and only if at least one of the following
+holds:
+\begin{enumerate}[leftmargin=2em]
+\item $u=1$;
+\item $|\eta|=1$;
+\item $(u,\eta)=(0,0)$.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+The first two factors in \eqref{eq:disc} give the first two cases.  The final
+square bracket vanishes only when both nonnegative terms $4u$ and
+$(1-u)^2\eta^2$ vanish, which is exactly $u=0$, $\eta=0$.
+\end{proof}
+
+The geometry of each stratum is explicit:
+\begin{description}[leftmargin=3.2em,style=nextline]
+\item[$u=1$]
+$a=1$ and $b=d=0$, giving roots $1,1,-1,-1$.
+\item[$\eta=1$]
+$d=0$, so the negative-real pair coalesces at $-\sqrt u$; for $\eta=-1$,
+the positive-real pair coalesces at $+\sqrt u$.
+\item[$(u,\eta)=(0,0)$]
+$a=0$ and $b=d=1$, so both quadratic factors equal $z^2+1$ and the roots
+$\pm i$ each have multiplicity two.
+\end{description}
+
+Intersections carry the corresponding higher overlap, but introduce no new
+zero set.
+
+\section{Uniform collapse along the axial boundary}
+
+Let $\mathcal B=\{1,1,-1,-1\}$, with multiplicity, and let
+$d_{\rm match}$ be the minimum over root permutations of the maximum paired
+distance.
+
+\begin{theorem}[Uniform root-collapse estimate]\label{thm:collapse}
+For every $(u,\eta)$ in the shape rectangle,
+\begin{equation}\label{eq:rootbound}
+ d_{\rm match}(\operatorname{roots}Q_{u,\eta},\mathcal B)
+ \le \sqrt{2(1-u)}+\frac{1-u}{1+\sqrt u}.
+\end{equation}
+In particular the convergence to $\mathcal B$ is uniform in $\eta$ as
+$u\to1$.
+\end{theorem}
+\begin{proof}
+Match the two roots with real part $a=\sqrt u$ to $1$ and the two with real
+part $-a$ to $-1$.  For the positive pair,
+\begin{equation}
+ |a\pm ib-1|\le |1-a|+b
+ \le \frac{1-u}{1+\sqrt u}+\sqrt{2(1-u)},
+\end{equation}
+because $b^2\le2(1-u)$.  The same estimate holds for the negative pair using
+$d^2\le2(1-u)$.
+\end{proof}
+
+The square-root term is natural at root level: imaginary heights vanish like
+$\sqrt{1-u}$ in the worst transverse direction.
+
+\section{Coefficient collapse and equivalence}
+
+The boundary polynomial is
+\begin{equation}
+ Q_{1,\eta}(z)=(z^2-1)^2=z^4-2z^2+1,
+\end{equation}
+independent of $\eta$.
+
+\begin{proposition}[Exact coefficient distance]\label{prop:coeffdistance}
+Let $C(u,\eta)=(1,0,c_2,c_3,c_4)$ and
+$C_\star=(1,0,-2,0,1)$.  Then
+\begin{equation}\label{eq:coeffdistance}
+ \norm{C(u,\eta)-C_\star}_\infty=4(1-u).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The $c_2$ difference is exactly $4(1-u)$.  Moreover
+\begin{equation}
+ |c_3|\le4\sqrt u(1-u)\le4(1-u),qquad
+ |c_4-1|\le(1-u)^2\le4(1-u).
+\end{equation}
+Thus no other coefficient exceeds the $c_2$ difference.
+\end{proof}
+
+\begin{corollary}[Equivalent axial convergence]\label{cor:equiv}
+For any sequence $(u_n,\eta_n)$ in the shape rectangle, the following are
+equivalent:
+\begin{enumerate}[leftmargin=2em]
+\item $u_n\to1$;
+\item $Q_{u_n,\eta_n}\to(z^2-1)^2$ coefficientwise;
+\item the root multisets converge to $\mathcal B$ in matching distance.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+Proposition~\ref{prop:coeffdistance} proves equivalence of the first two.
+Theorem~\ref{thm:collapse} gives the first implies the third.  Conversely,
+root convergence forces the positive real branch coordinate
+$\sqrt{u_n}$ to approach one.
+\end{proof}
+
+\section{Machine audit and physical position}
+
+Six hundred uniformly sampled parameter pairs verify
+Theorem~\ref{thm:disc} by direct root-product discriminants.  The maximum
+relative error, normalized by $\max(1,|\operatorname{Disc}|)$, is below
+$10^{-14}$; no violation of \eqref{eq:rootbound} occurs.
+
+For the physical atlas, $u$ rises from about $0.02$ to about $0.718$.
+Consequently the maximum-norm coefficient distance in
+\eqref{eq:coeffdistance} falls monotonically, but at the finest level it is
+still approximately $1.13$.  The matching distance to the double pair is
+about $0.577$.  These are directional observations, not evidence that the
+asymptotic regime has been reached.
+
+\section{Route consequence and claim boundary}
+
+The axial boundary is now mathematically understood.  If a later analytic or
+validated argument proves $u_\sigma\to1$, no separate control of $\eta$ is
+needed for coefficient convergence: transverse dependence is uniformly
+suppressed.  RH-217 quantifies that suppression differentially.
+
+Even a proved fixed-quartet limit would still have only four roots, with two
+limiting locations.  It cannot by itself provide a growing spectral divisor.
+No physical limit, determinant construction, Gate-A closure, Hilbert--P\'olya
+operator, or zeta statement is asserted here.
+
+\bibliographystyle{plainnat}\bibliography{references}\end{document}

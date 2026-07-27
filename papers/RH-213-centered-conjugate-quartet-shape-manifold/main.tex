@@ -1,0 +1,258 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}\newcommand{\R}{\mathbb R}
+
+\title{The Centered Conjugate-Quartet Shape Manifold\\
+\large Exact Coordinates Behind the Physical Quartic Flow}
+\author{Liang Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+Centered-RMS normalization did not contract the physical quartic flow in
+RH-212, but it exposed a stronger exact structure.  We classify every
+branch-labeled quartet consisting of two conjugate pairs, with zero
+barycenter and unit mean square modulus.  In canonical coordinates its roots
+are
+\[
+ \sqrt u\pm i\sqrt{(1-u)(1+\eta)},\qquad
+ -\sqrt u\pm i\sqrt{(1-u)(1-\eta)},
+\]
+where $0\le u\le1$ and $-1\le\eta\le1$.  Its monic polynomial is
+\[
+ z^4+(2-4u)z^2+4\sqrt u(1-u)\eta z
+       +1-\eta^2(1-u)^2.
+\]
+Consequently the three nontrivial coefficients satisfy the exact algebraic
+identity
+\[
+ c_3^2=4(2-c_2)(1-c_4).
+\]
+
+The interior of the branch-labeled quotient is a smooth two-dimensional
+surface; explicit inverse formulas recover $(u,\eta)$.  Boundary fibers are
+identified: the entire $u=1$ edge collapses to the double pair $\{\pm1\}$,
+and branch labels lose orientation at $u=0$.  All 32 physical quartets in the
+sixteen-level RH-212 atlas satisfy the manifold identity with maximum
+floating residual $8.81\times10^{-15}$; 400 random formula checks have
+coefficient error at most $6.67\times10^{-16}$.
+
+This paper provides an exact finite-dimensional quotient, not a small-noise
+limit or dynamical law.  Gate A remains open.
+\end{abstract}
+
+\section{From a failed contraction to an exact quotient}
+
+RH-212 compared raw, determinant-radius, and centered-RMS coefficient flows
+\citep{WangRH212}.  The centered normalization did not reduce adjacent
+variation, so it cannot presently be called a renormalization fixed point.
+Nevertheless it imposes two exact constraints:
+\begin{equation}\label{eq:centerconstraints}
+ \sum_{j=1}^{4}q_j=0,
+ \qquad \frac14\sum_{j=1}^{4}|q_j|^2=1.
+\end{equation}
+The inherited real finite operators also force conjugate closure.  These
+three facts reduce the apparent three-coefficient family to two real shape
+coordinates.
+
+The objective here is purely algebraic: classify that quotient completely,
+including its boundary identifications.  No dependence on $\sigma$ is used
+in the proof.
+
+\section{Canonical form}
+
+Let a branch-labeled conjugate quartet be
+\begin{equation}\label{eq:generalpairs}
+ \alpha\pm i b,\qquad \gamma\pm i d,
+ \qquad \alpha,\gamma\in\R,\quad b,d\ge0.
+\end{equation}
+The label records which pair lies on the positive-real and negative-real
+branch whenever those branches are distinct.
+
+\begin{lemma}[Centered pair geometry]\label{lem:center}
+If the quartet in \eqref{eq:generalpairs} is centered, then
+$\gamma=-\alpha$.  After ordering the branches one may write
+\begin{equation}\label{eq:abd}
+ a\pm ib,\qquad -a\pm id,qquad a,b,d\ge0.
+\end{equation}
+If it also has unit mean square modulus, then
+\begin{equation}\label{eq:rmsrelation}
+ a^2+\frac{b^2+d^2}{2}=1.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The root sum is $2(\alpha+\gamma)$, proving the first statement.  Relabeling
+sets $a=|\alpha|$.  The sum of squared moduli is
+$2(a^2+b^2)+2(a^2+d^2)$; division by four gives
+\eqref{eq:rmsrelation}.
+\end{proof}
+
+\section{Shape coordinates}
+
+Set
+\begin{equation}\label{eq:coordinates}
+ u=a^2,
+ \qquad
+ \eta=\frac{b^2-d^2}{b^2+d^2}
+\end{equation}
+when $b^2+d^2>0$.  Equation \eqref{eq:rmsrelation} gives
+\begin{equation}\label{eq:bd}
+ b^2=(1-u)(1+\eta),\qquad
+ d^2=(1-u)(1-\eta).
+\end{equation}
+Nonnegativity is equivalent to
+\begin{equation}\label{eq:rectangle}
+ 0\le u\le1,qquad -1\le\eta\le1.
+\end{equation}
+
+\begin{theorem}[Canonical shape parameterization]\label{thm:param}
+For every $(u,\eta)$ in \eqref{eq:rectangle}, the multiset
+\begin{equation}\label{eq:roots}
+ \begin{aligned}
+ q_{1,2}&=\sqrt u\pm i\sqrt{(1-u)(1+\eta)},\\
+ q_{3,4}&=-\sqrt u\pm i\sqrt{(1-u)(1-\eta)}
+ \end{aligned}
+\end{equation}
+is conjugate closed, centered, and has unit mean square modulus.  Conversely,
+every quartet of the form \eqref{eq:abd} satisfying
+\eqref{eq:rmsrelation} is represented by \eqref{eq:roots}.
+\end{theorem}
+\begin{proof}
+The forward assertions follow by direct substitution.  Conversely set
+$u=a^2$ and use \eqref{eq:coordinates}; then
+\eqref{eq:rmsrelation} yields \eqref{eq:bd}.
+\end{proof}
+
+For $0<u<1$, branch ordering makes the representation unique.  At $u=1$,
+$b=d=0$ and every $\eta$ gives the same double pair.  At $u=0$, the two
+branches share real part zero and changing $\eta$ to $-\eta$ merely swaps the
+two conjugate pairs as an unlabeled multiset.  These are quotient fibers, not
+failures of the formula.
+
+\section{Coefficient map and algebraic image}
+
+Let
+\begin{equation}
+ Q_{u,\eta}(z)=\prod_{j=1}^{4}(z-q_j)
+ =z^4+c_2z^2+c_3z+c_4.
+\end{equation}
+
+\begin{theorem}[Exact coefficient formulas]\label{thm:coeff}
+The coefficient map $\Phi:(u,\eta)\mapsto(c_2,c_3,c_4)$ is
+\begin{equation}\label{eq:coefficients}
+ \boxed{
+ \begin{aligned}
+ c_2&=2-4u,\\
+ c_3&=4\sqrt u(1-u)\eta,\\
+ c_4&=1-\eta^2(1-u)^2.
+ \end{aligned}}
+\end{equation}
+In particular,
+\begin{equation}\label{eq:manifoldidentity}
+ \boxed{c_3^2=4(2-c_2)(1-c_4).}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Factor the two conjugate quadratics:
+\begin{equation}
+ ((z-a)^2+b^2)((z+a)^2+d^2).
+\end{equation}
+Expanding and substituting $a^2=u$ and \eqref{eq:bd} gives
+\eqref{eq:coefficients}.  Squaring the formula for $c_3$ and using
+$2-c_2=4u$ and $1-c_4=\eta^2(1-u)^2$ proves
+\eqref{eq:manifoldidentity}.
+\end{proof}
+
+The identity alone is not the full semialgebraic description.  Since
+$u=(2-c_2)/4$, the image also satisfies
+\begin{equation}\label{eq:inequalities}
+ -2\le c_2\le2,qquad
+ 1-\frac{(2+c_2)^2}{16}\le c_4\le1.
+\end{equation}
+Together with \eqref{eq:manifoldidentity}, these bounds describe the real
+coefficient image, with the boundary identifications above.
+
+\section{Inverse formulas and smooth interior}
+
+\begin{proposition}[Interior inverse]\label{prop:inverse}
+For $0<u<1$, the branch-labeled coordinates are recovered from the
+coefficients by
+\begin{equation}\label{eq:inverse}
+ u=\frac{2-c_2}{4},
+ \qquad
+ \eta=\frac{c_3}{4\sqrt u(1-u)}.
+\end{equation}
+Moreover, $\Phi$ has differential of rank two throughout
+$(0,1)\times(-1,1)$.
+\end{proposition}
+\begin{proof}
+The inverse is immediate from \eqref{eq:coefficients}.  The $u$ derivative
+has first component $-4$, while the $\eta$ derivative has first component
+zero and second component $4\sqrt u(1-u)>0$.  They are linearly independent.
+\end{proof}
+
+Thus the normalized physical quartic does not occupy a generic
+three-dimensional real coefficient body.  It lies on a smooth
+two-dimensional interior surface with explicit compactification.
+
+\section{Finite physical atlas}
+
+The RH-212 atlas contains sixteen scales from $0.04$ to $0.00125$ and two
+channels at each scale.  For every endpoint we recover $(u,\eta)$ from the
+normalized roots and independently reconstruct the coefficients using
+\eqref{eq:coefficients}.
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+diagnostic & maximum over 32 endpoints\\
+\midrule
+manifold identity residual & $8.81\times10^{-15}$\\
+coefficient reconstruction error & $8.81\times10^{-15}$\\
+coordinate reconstruction error & below $10^{-13}$\\
+root multiset reconstruction error & floating roundoff\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In a separate 400-case random audit over the interior rectangle, direct root
+expansion and formula coefficients disagree by at most
+$6.67\times10^{-16}$.  These computations verify the implementation; the
+theorems themselves are elementary exact algebra.
+
+\section{Interpretation for the divisor-first route}
+
+The result changes the status of centered-RMS normalization.  It is not a
+successful contraction in RH-212, but it is the canonical quotient by root
+translation and positive scale.  The remaining motion has two distinct
+components:
+\begin{description}[leftmargin=3.2em,style=nextline]
+\item[Axial coordinate $u$]
+the squared separation of the two real branch lines;
+\item[Asymmetry coordinate $\eta$]
+the imbalance between the squared imaginary heights of the positive and
+negative real branches.
+\end{description}
+
+This vocabulary is intrinsic to the branch-labeled conjugate quartet.  It
+does not identify the branches with arithmetic objects and does not produce
+an infinite spectrum.
+
+\section{Claim boundary}
+
+Nothing in the algebra proves that $(u_\sigma,\eta_\sigma)$ converges, that
+$u_\sigma$ is monotone at all levels, or that the finite points lie on an
+autonomous orbit.  It also discards the center and RMS radius, which must be
+restored before reconstructing the raw divisor.  Those questions are
+separated into later layers.
+
+The exact conclusion is the shape manifold and its coordinate dictionary.
+Gate A remains open; Gates B--E, Hilbert--P\'olya, zeta-zero identification,
+and RH are untouched.
+
+\bibliographystyle{plainnat}\bibliography{references}\end{document}

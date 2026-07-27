@@ -1,0 +1,243 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{An Intrinsic Normalization Audit for the Physical Quartic Divisor\\
+\large Eight Predeclared Levels and a Sixteen-Level Frozen Atlas}
+\author{Liang Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The divisor-first pivot of RH-210--RH-211 leaves a concrete question: can a
+simple intrinsic normalization turn the finite physical quartic into a
+contracting coefficient flow?  We compare three representations on eight
+predeclared small-noise levels and both physical channels: the raw monic
+quartic, determinant-radius normalization, and centered root-mean-square
+normalization.  No parameters are fitted level by level.
+
+The answer is negative for the two proposed normalizations.  With adjacent
+error measured relative to the fine coefficient vector, the raw flow has
+range $0.04419$--$0.18945$ and mean $0.10661$.  Determinant-radius
+normalization worsens these values to $0.06062$--$0.36787$ and $0.19322$;
+centered-RMS normalization gives $0.05941$--$0.23389$ and $0.16592$.
+Maximum left/right relative discrepancies are respectively $0.008112$,
+$0.019881$, and $0.009368$.  Thus the raw coefficients remain the most
+stable of the three tested representations.
+
+We also freeze a sixteen-level dual-channel root atlas down to
+$\sigma=0.00125$.  Sparse modulus-cloud extraction exactly reproduces the
+previous dense-spectrum anchors while avoiding repeated dense eigensolves.
+The negative contraction result is useful: centered-RMS normalization exposes
+an exact lower-dimensional shape structure, developed in RH-213, rather than
+another fitted scalar law.  No coefficient limit, growing determinant,
+Fredholm realization, or Gate-A closure is claimed.
+\end{abstract}
+
+\section{Question inherited from the transport frontier}
+
+RH-207 identified a coherent left/right quartic divisor, while RH-202--RH-210
+showed that naive state-space transport is not its stable realization
+\citep{WangRH207,WangRH210,WangRH211}.  Let
+\begin{equation}\label{eq:raw}
+ D_{\sigma,s}(z)=\prod_{j=1}^{4}(z-\lambda_{\sigma,s,j})
+ =z^4+c_{1,\sigma,s}z^3+c_{2,\sigma,s}z^2
+   +c_{3,\sigma,s}z+c_{4,\sigma,s},
+\end{equation}
+where $s\in\{L,R\}$ labels the two physical channels.  Three coarse anchors
+showed channel coherence but not stationarity in $\sigma$.
+
+The present audit asks a deliberately narrow question.  Is the scale motion
+mostly an affine gauge that can be removed by one natural formula at every
+level?  A positive answer would produce a candidate compact coefficient
+family.  A negative answer rules out only the tested formulas, not every
+renormalization.
+
+\section{Predeclared scale protocol}
+
+The normalization comparison uses
+\begin{equation}\label{eq:auditscales}
+ 0.04,\ 0.032,\ 0.025,\ 0.02,\ 0.016,\ 0.0125,\ 0.01,\ 0.008.
+\end{equation}
+The frozen atlas additionally contains
+\begin{equation}\label{eq:extrascales}
+ 0.00625,\ 0.005,\ 0.004,\ 0.0032,\ 0.0025,\ 0.002,\ 0.0016,\ 0.00125.
+\end{equation}
+The last eight points are not used to redefine the RH-212 winner.  They are
+published so that subsequent papers can state their own training and holdout
+rules without recomputing the matrix spectrum.
+
+At each scale we retain the same inherited physical rule: remove the Perron
+and negative parity modes and select the next four eigenvalues by modulus.
+The selected set is checked for conjugate closure.  All 32 endpoint packets
+are conjugate closed to the reported floating precision.
+
+\section{Three intrinsic representations}
+
+\subsection{Raw monic coefficients}
+
+The baseline is simply the coefficient vector
+\begin{equation}
+ C^{\rm raw}_{\sigma,s}=(1,c_1,c_2,c_3,c_4).
+\end{equation}
+It retains location, radius, and shape.  It is similarity invariant but not
+invariant under affine changes of the spectral variable.
+
+\subsection{Determinant-radius normalization}
+
+Set
+\begin{equation}\label{eq:detradius}
+ \rho=\left|\prod_{j=1}^{4}\lambda_j\right|^{1/4}
+      =|c_4|^{1/4},\qquad \widehat\lambda_j=\lambda_j/\rho.
+\end{equation}
+Then the constant coefficient of
+$\prod_j(z-\widehat\lambda_j)$ has modulus one.
+
+\begin{proposition}\label{prop:detintrinsic}
+For every quartet with nonzero product, $\rho$ is invariant under root
+permutation and operator similarity.  The normalized constant term has
+modulus one.
+\end{proposition}
+\begin{proof}
+Both statements follow from the elementary symmetric product and
+$\prod_j\widehat\lambda_j=\rho^{-4}\prod_j\lambda_j$.
+\end{proof}
+
+This normalization does not remove translation.  It can also amplify the
+remaining coefficients when $|c_4|$ is small.
+
+\subsection{Centered RMS normalization}
+
+Define
+\begin{equation}\label{eq:rms}
+ \mu=\frac14\sum_{j=1}^{4}\lambda_j,
+ \qquad
+ r=\left(\frac14\sum_{j=1}^{4}|\lambda_j-\mu|^2\right)^{1/2},
+ \qquad q_j=\frac{\lambda_j-\mu}{r}.
+\end{equation}
+
+\begin{proposition}\label{prop:rmsgauge}
+For every nonconstant quartet,
+\begin{equation}
+ \frac14\sum_j q_j=0,
+ \qquad \frac14\sum_j|q_j|^2=1.
+\end{equation}
+The multiset $\{q_j\}$ is invariant under translation
+$\lambda_j\mapsto\lambda_j+a$ and positive dilation
+$\lambda_j\mapsto b\lambda_j$ with $b>0$.
+\end{proposition}
+\begin{proof}
+Centering gives the first identity and the definition of $r$ gives the
+second.  Under translation, the barycenter translates by the same amount.
+Under positive dilation, both centered roots and $r$ are multiplied by $b$.
+\end{proof}
+
+For conjugate-closed quartets, $\mu$ is real and the normalized polynomial
+has real coefficients and zero cubic coefficient.  This exact structural
+gain will matter even though contraction fails.
+
+\section{Error functional}
+
+For adjacent coarse/fine scales $\sigma_c>\sigma_f$, write $C_c,C_f$ for
+one of the three monic coefficient vectors and define
+\begin{equation}\label{eq:error}
+ E_f(C_c,C_f)=\frac{\norm{C_f-C_c}_2}{\norm{C_f}_2}.
+\end{equation}
+The fine denominator is fixed in advance and treats the refined endpoint as
+the target.  Maximum absolute coefficient error and the reverse denominator
+are also archived, but no conclusion depends on changing the metric after
+inspection.
+
+At a fixed scale, channel discrepancy is
+\begin{equation}\label{eq:channelerror}
+ E_{LR}=\frac{\norm{C_L-C_R}_2}{\norm{C_L}_2}.
+\end{equation}
+
+\section{Finite normalization verdict}
+
+The 14 adjacent/channel cases for each representation give:
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+representation & min $E_f$ & max $E_f$ & mean $E_f$ & max $E_{LR}$\\
+\midrule
+raw & $0.04419$ & $0.18945$ & $0.10661$ & $0.008112$\\
+determinant radius & $0.06062$ & $0.36787$ & $0.19322$ & $0.019881$\\
+centered RMS & $0.05941$ & $0.23389$ & $0.16592$ & $0.009368$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{proposition}[Finite negative result]\label{prop:negative}
+On the eight predeclared levels and both channels, neither determinant-radius
+nor centered-RMS normalization improves the mean, maximum, or minimum
+adjacent fine-relative coefficient error simultaneously.  The raw vector has
+the smallest mean and maximum, and it also has the smallest worst channel
+discrepancy.
+\end{proposition}
+\begin{proof}
+This is the direct comparison in the displayed table, generated from the
+frozen endpoint roots by the exact formulas above.
+\end{proof}
+
+The word ``negative'' is important.  The data do not establish that every
+intrinsic normalization fails.  They reject two concrete formulas as a
+uniformly better cross-scale coordinate on this audit.
+
+\section{Why normalization can worsen the flow}
+
+The determinant radius forces one coefficient to a fixed modulus, but the
+other coefficients transform with different powers of $\rho^{-1}$.  Small
+relative motion in $c_4$ can therefore induce larger motion in lower-order
+terms.  The operation removes one scalar without separating translation from
+shape.
+
+Centered-RMS normalization removes two affine degrees of freedom.  If the
+remaining shape itself moves substantially, the normalized vector must show
+that motion more clearly.  Consequently a larger coefficient error is not a
+defect of the quotient.  It can be evidence that location and radius were
+masking a genuine shape trajectory.
+
+Indeed, every centered-RMS polynomial in the atlas has zero cubic term and
+lies, to roundoff, on one algebraic surface in the remaining three
+coefficients.  RH-213 proves that this surface is exactly two-dimensional.
+Thus RH-212 changes the next question from ``which scalar should be fitted?''
+to ``what exact geometry remains after the affine gauge is removed?''
+
+\section{Sparse extraction and reproducibility}
+
+The historical construction formed a dense deflated bulk operator.  Its
+outer nontrivial eigenvalues are unchanged if one instead computes a modulus
+cloud of the original sparse folded-Gaussian matrix, removes the Perron and
+negative real parity roots, and takes the next quartet.  At the old anchors
+$0.04,0.02,0.01$, the resulting roots and coefficients reproduce the frozen
+dense results to floating roundoff.
+
+This shortcut is not a new spectral theorem.  It is an algebraic consequence
+of replacing two selected eigenvalues by zero in the inherited finite model,
+combined with a cloud large enough to resolve the radial gap.  The archive
+retains dimensions, roots, coefficients, centers, radii, and conjugacy
+diagnostics for every endpoint.
+
+\section{Claim boundary and route consequence}
+
+The following remain open:
+\begin{enumerate}[leftmargin=2em]
+\item existence of either a raw or normalized coefficient limit;
+\item stability under all smaller noise levels;
+\item a rank-growing cloud with controlled omitted factors;
+\item local uniform convergence to a nonzero analytic determinant;
+\item a dynamical or Fredholm realization.
+\end{enumerate}
+
+Gate A is therefore open.  Gates B--E are untouched.  No self-adjoint
+operator, $T\log T$ law, arithmetic trace identity, zeta divisor, or RH
+statement is inferred.  The immediate route is the exact centered shape
+manifold, not another post-hoc normalization.
+
+\bibliographystyle{plainnat}\bibliography{references}\end{document}
