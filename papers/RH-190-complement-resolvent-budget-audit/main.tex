@@ -1,0 +1,278 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{A Complement-Resolvent Budget Audit\\
+\large The Norm-Only Oblique Route Fails, Leaving Validated Contour Inverses as the Next Wall}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-189 gives an exact oblique Feshbach determinant factorization, but the
+physical complement resolvent remains unknown.  This paper tests the
+strongest elementary norm-only substitute.
+
+For a biorthogonal packet with oblique projector $P=VW^*$ and condition
+$\chi=\norm P$, let $Q=I-P$.  In orthonormal complement coordinates, the
+Feshbach block obeys the sharp elementary bound
+\[
+ \norm D\le\norm Q\norm A=\chi\norm A.
+\]
+If a cycle root has radius $\rho$ and a contour has radius $\delta$, a
+Neumann resolvent estimate would require
+\[
+ \rho-\delta>\chi\norm A.
+\]
+This criterion is intentionally optimistic: it ignores all nonnormal
+cancellation and uses the best ideal packet contour factor.
+
+Applied to all 126 RH-185 windows with contour radius $0.4$ times the root
+half-spacing, the norm-only clearance is negative everywhere.  The complement
+operator bound ranges from $71.46$ to $6.40\times10^5$ while the
+minimum contour modulus is at most $0.719$.  No norm-only complement
+resolvent exists, no full norm-only certificate passes, and even an
+unrealistically unit complement-resolvent Schur test has zero successes.
+
+This is a useful negative result: it rules out a cheap norm closure, not the
+physical Feshbach route.  The next required object is a validated contour
+inverse exploiting the actual complement spectrum, as in the finite-mesh and
+operator-ball machinery of RH-167--168.  No physical Riesz shell, Gate A,
+Hilbert--Polya, or RH result is claimed.
+\end{abstract}
+
+\section{The complement problem after Feshbach factorization}
+
+RH-189 writes the physical operator in oblique packet/complement coordinates
+as
+\begin{equation}\label{eq:block}
+ S^{-1}AS=\begin{pmatrix}K&B\\C&D\end{pmatrix}
+\end{equation}
+and gives
+\begin{equation}\label{eq:feshbach}
+ \det(zI-A)=\det(zI-D)
+ \det\left(zI-K-B(zI-D)^{-1}C\right).
+\end{equation}
+The coupling product from RH-188 controls $B(zI-D)^{-1}C$ only after a bound
+on $(zI-D)^{-1}$ is available \citep{WangRH188,WangRH189}.
+
+One might first try the universal estimate
+\begin{equation}\label{eq:universal}
+ \norm{(zI-D)^{-1}}
+ \le\frac1{|z|-\norm D}.
+\end{equation}
+This paper shows exactly how far that shortcut is from the physical data.
+
+\section{Oblique complement norm bound}
+
+Let $P=VW^*$ with $W^*V=I$ and $Q=I-P$.  By RH-186,
+$\norm Q=\norm P=\chi$ for a nontrivial oblique decomposition.  The
+orthonormal complement construction of RH-189 chooses an isometry $Z$ onto
+$\operatorname{Ran}Q=\ker W^*$ and gives
+$D=Z^*QAZ$ \citep{WangRH189}.
+
+\begin{theorem}[Universal oblique complement bound]\label{thm:complement}
+For every bounded $A$,
+\begin{equation}\label{eq:D-bound}
+ \norm D\le\norm Q\norm A\le\chi\norm A.
+\end{equation}
+If $\rho>\delta>0$ and
+\begin{equation}\label{eq:clearance}
+ \rho-\delta>\chi\norm A,
+\end{equation}
+then every $z$ with $|z-\zeta|=\delta$ and $|\zeta|=\rho$ satisfies
+\begin{equation}\label{eq:resolvent}
+ \norm{(zI-D)^{-1}}
+ \le\frac1{\rho-\delta-\chi\norm A}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The representation $D=Z^*QAZ$ and the isometry of $Z$ give
+$\norm D\le\norm Q\norm A$.  On the contour,
+$|z|\ge|\zeta|-|z-\zeta|=\rho-\delta$.  If \eqref{eq:clearance} holds,
+\[
+ zI-D=z\left[I-z^{-1}D\right]
+\]
+has a convergent Neumann inverse, and summing its geometric series gives
+\eqref{eq:resolvent}.
+\end{proof}
+
+The theorem is a sufficient condition only.  It does not claim that the
+complement has spectrum reaching $\norm D$; it records what a norm-only
+proof would need to establish.
+
+\section{Contour choice}
+
+For a length-$L$ cycle of radius $\rho$, the root half-spacing is
+\begin{equation}\label{eq:spacing}
+ s_L=\rho\sin(\pi/L).
+\end{equation}
+We choose the deliberately conservative contour radius
+\begin{equation}\label{eq:contour}
+ \delta=0.4s_L<s_L.
+\end{equation}
+This leaves root shells geometrically disjoint and is more generous than a
+small perturbative contour.  The packet resolvent factor is given its best
+ideal estimate $a=1/\delta$ for the optimistic Schur comparison.
+
+For each RH-185 window, the stored source-cycle radius supplies $\rho$, the
+stored length supplies $L$, and the stored operator norm and oblique condition
+supply $\norm A$ and $\chi$.
+
+\section{Audit results}
+
+There are 126 windows.  The norm-only complement data are:
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+quantity & minimum & median & maximum\\
+\midrule
+$\chi\norm A$ & $71.46$ & $1.5547\times10^3$
+& $6.3996\times10^5$\\
+$\rho-\delta$ & $0.3913$ & $0.5260$ & $0.7188$\\
+clearance & $-6.3996\times10^5$ & $-1.5542\times10^3$
+& $-70.979$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus
+\begin{equation}\label{eq:no-clearance}
+ \#\{\text{norm-only complement resolvent successes}\}=0.
+\end{equation}
+The result holds in particular for all 38 local $\sigma=0.01,L=4$ windows.
+
+The optimistic comparison sets the complement resolvent factor to one,
+which is strictly better than the unavailable norm-only bound.  Even then,
+the product
+\begin{equation}\label{eq:optimistic}
+ a\,b\,c
+\end{equation}
+has minimum $1.1116$ and zero successes.  Inserting the actual norm-only
+resolvent would only worsen it.
+
+\section{Interpretation}
+
+The negative result has three layers:
+\begin{enumerate}[leftmargin=2em]
+\item the orthonormal-coordinate complement bound still carries one full
+ oblique factor $\chi$;
+\item the physical $\chi$ values are too large for radial norm separation;
+\item even an artificially favorable complement factor does not close the
+ smallest observed coupling product on the chosen contour.
+\end{enumerate}
+
+None of these layers proves that the actual complement spectrum is large.
+Nonnormal matrices can have resolvents much smaller than a norm-only
+Neumann bound at selected points, or much larger near pseudospectral regions.
+The correct next calculation must use actual sample inverses and outward
+operator balls.
+
+\section{Validated contour route}
+
+The RH-167--168 architecture provides the appropriate replacement:
+\begin{enumerate}[leftmargin=2em]
+\item choose a finite contour mesh around each candidate root;
+\item compute a nominal inverse at each mesh point;
+\item bound inverse defects and operator displacement;
+\item use the Banach denominator to cover the continuous contour;
+\item feed the resulting $d(z)$ into the directed product
+ $a(z)d(z)bc$.
+\end{enumerate}
+This route may exploit structure invisible to $\chi\norm A$.  It is more
+expensive and is now the precise physical $D$ leaf rather than a vague
+``resolvent estimate'' request.
+
+The finite validation step can be stated as a direct Banach-lemma theorem.
+
+\begin{proposition}[Mesh-and-operator-ball inverse certificate]\label{prop:validated-inverse}
+Let $D_0$ be a nominal complement block, let
+$\norm{D-D_0}\le\varepsilon$, and choose a mesh point $z_0$ with a computed
+matrix $M_0$.  Suppose
+\begin{equation}\label{eq:inverse-defect}
+ \norm{I-M_0(z_0I-D_0)}\le\eta.
+\end{equation}
+For every $z$ with $|z-z_0|\le h$, define
+\begin{equation}\label{eq:q-bound}
+ q=\eta+\norm{M_0}(h+\varepsilon).
+\end{equation}
+If $q<1$, then $zI-D$ is invertible and
+\begin{equation}\label{eq:validated-resolvent}
+ \norm{(zI-D)^{-1}}\le\frac{\norm{M_0}}{1-q}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Expanding around the nominal mesh equation gives
+\[
+ I-M_0(zI-D)
+ =I-M_0(z_0I-D_0)-M_0\bigl((z-z_0)I-(D-D_0)\bigr).
+\]
+Its norm is at most $q$.  If $q<1$, the Banach lemma makes
+$M_0(zI-D)$ invertible and bounds its inverse by $(1-q)^{-1}$.  Multiplying
+by $M_0$ yields \eqref{eq:validated-resolvent}.
+\end{proof}
+
+This proposition specifies the data missing from the present archive:
+nominal complement matrices, outward operator radii, contour mesh radii,
+inverse residuals, and inverse norms.  It also explains why the failure of a
+radial norm disk is not decisive.  A good local inverse $M_0$ may exist far
+inside the disk $|z|\le\norm D$.
+
+\section{Quantitative distance to the norm-only route}
+
+The best elementary clearance is still about $-70.98$, whereas the relevant
+contour moduli are below one.  Thus replacing the ambient $\chi^2$ estimate
+by the sharp orthonormal-coordinate factor $\chi$ improves the bound by
+orders of magnitude but leaves a large finite gap.  This corrected audit is
+important: the negative conclusion is not an artifact of paying an
+unnecessary second oblique factor.
+
+The optimistic unit-complement comparison is logically separate.  Its
+minimum $1.1116$ says that on the chosen contour even a complement inverse
+of norm one would not close the current product.  A successful exact audit
+must therefore gain jointly from the actual packet resolvent geometry,
+directional coupling coordinates, and complement inverse; improving only
+the radial complement norm estimate is insufficient.
+
+\section{Data contract for the next experiment}
+
+The next archive should store the nominal matrices $K,B,C,D$ for every
+surviving window, not merely their norms.  It should also store contour
+centers, mesh points, mesh covering radii, approximate inverses, inverse
+defects, and outward operator radii.  From these primitive quantities one
+can independently reconstruct \eqref{eq:q-bound}, the continuous
+complement bound, and the final Schur product.
+
+Predeclaring this data contract prevents a posteriori contour movement.  A
+contour that meets the complement spectrum is a finite rejection of that
+root shell; it should not be silently shrunk until a favorable inverse is
+found.  Conversely, a positive margin must survive the full mesh cells and
+operator ball, not just the sampled contour points.
+
+\section{Boundary}
+
+This paper proves the norm-only complement criterion and audits its complete
+failure on the current 126 finite windows.  It does not establish a
+complement spectral obstruction, exclude validated contour inverses, prove a
+Schur/Riesz certificate, or close any all-level interface.  The local
+biorthogonal candidate remains an exploratory seed only.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,380 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\F}{\mathrm F}
+
+\title{A Data-Derived Finite Temporal Clock\\
+\large Exact Weighted-Cycle Kinematics and a 126-Window Physical Closure Audit}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-181 left two candidate routes from reset memory to a physical finite
+spectral cloud.  The finite-cycle route had exact determinant algebra but no
+time-domain calibration.  This paper constructs the most direct clock from
+the normalized physical source orbit, without fitting transfer eigenvalues.
+
+For a nonzero matrix orbit $S_{j+1}=AS_j$, write
+$x_j=S_j/\norm{S_j}_{\F}$ and
+$a_j=\norm{S_{j+1}}_{\F}/\norm{S_j}_{\F}$.  A length-$L$ temporal synthesis
+$J=[x_t,\ldots,x_{t+L-1}]$ is paired with the weighted cyclic shift whose
+chain weights are the observed $a_j$ and whose final edge has a unimodular
+orientation mark.  The open chain intertwines exactly.  All failure is
+concentrated in one wrap column, while the cyclic spectrum is an exact
+rotated root grid of radius
+$(\norm{S_{t+L}}_{\F}/\norm{S_t}_{\F})^{1/L}$.  Polar orthogonalization
+preserves that spectrum by similarity and gives type-correct primal and
+adjoint residuals in the physical Frobenius space.
+
+The candidate lengths are fixed in advance by the RH-179 offsets
+$L=r-3$ and $L=r-4$.  The admissible anchors are
+$\sigma=0.04,0.02,0.01$, two physical channels, and 126 temporal windows.
+An optimal projective orientation mark is allowed.  The exact radius, phase,
+and polar identities have zero recorded failures.  Nevertheless the minimum
+projective wrap distance is $0.3720$, the minimum primal residual is
+$0.2711$, and the minimum adjoint residual is $0.7143$.  No window passes the
+common $0.25$ wrap/primal/adjoint gate.
+
+Thus the literal orthogonal temporal-clock realization is rejected on the
+available finite anchors, even after orientation marking.  This is not an
+all-level no-go theorem and does not exclude separate right and left packets.
+That biorthogonal alternative is the next target.  No physical Riesz shell,
+Gate A result, Hilbert--Polya operator, or Riemann-hypothesis conclusion is
+claimed.
+\end{abstract}
+
+\section{Position inside the physical interface}
+
+RH-171 decomposed the packet-to-Riesz interface into ambient realization,
+validated finite data, uniform margins, and shellwise transport
+\citep{WangRH171}.  RH-172--181 then proved the finite history realization,
+rejected the literal infinite-history determinant, and identified an exact
+finite cyclic determinant model \citep{WangRH181}.  The unresolved point was
+not cycle algebra.  It was whether a clock of the required length is present
+in the physical time-domain data.
+
+The protocol here is deliberately one-way:
+\begin{enumerate}[leftmargin=2em]
+\item choose $L$ from the reset rank before examining target eigenvalues;
+\item construct the clock from normalized source states and their norms;
+\item allow only a time-domain endpoint orientation mark;
+\item measure wrap, primal, adjoint, radial, and phase defects;
+\item reject the orthogonal branch if no candidate passes one declared gate.
+\end{enumerate}
+The construction cannot manufacture phase agreement by spectral regression:
+the root grid follows algebraically from the weighted cycle.
+
+\section{Normalized orbit and temporal synthesis}
+
+Let $\cH$ be the Frobenius Hilbert space of $n\times m$ matrices and let
+$\mathcal A X=AX$.  Suppose $S_0\ne0$ and $S_j=\mathcal A^jS_0\ne0$ over the
+finite horizon under consideration.  Define
+\begin{equation}\label{eq:normalized-orbit}
+ x_j=\frac{S_j}{\norm{S_j}_{\F}},
+ \qquad
+ a_j=\frac{\norm{S_{j+1}}_{\F}}{\norm{S_j}_{\F}}.
+\end{equation}
+Then $\norm{x_j}_{\F}=1$ and
+\begin{equation}\label{eq:normalized-step}
+ \mathcal A x_j=a_jx_{j+1}.
+\end{equation}
+
+For a start time $t$ and length $L\ge3$, define
+\begin{equation}\label{eq:synthesis}
+ J_{t,L}:\mathbb C^L\longrightarrow\cH,
+ \qquad
+ J_{t,L}e_j=x_{t+j},\quad 0\le j<L.
+\end{equation}
+Its Gram matrix is $G_{t,L}=J_{t,L}^*J_{t,L}$.  Whenever $G_{t,L}>0$, the
+canonical polar frame is
+\begin{equation}\label{eq:polar-frame}
+ V_{t,L}=J_{t,L}G_{t,L}^{-1/2},
+ \qquad V_{t,L}^*V_{t,L}=I_L.
+\end{equation}
+This is the orthogonal temporal packet tested below.
+
+\section{The weighted cycle and its exact spectrum}
+
+For $\omega\in\mathbb T$, define the weighted cyclic shift
+\begin{align}
+ C_{t,L}(\omega)e_j&=a_{t+j}e_{j+1},&&0\le j<L-1,
+ \label{eq:cycle-chain}\\
+ C_{t,L}(\omega)e_{L-1}&=\omega a_{t+L-1}e_0.
+ \label{eq:cycle-wrap}
+\end{align}
+
+\begin{theorem}[Exact chain and rank-one wrap defect]\label{thm:rank-one}
+The temporal synthesis satisfies
+\begin{equation}\label{eq:rank-one-defect}
+ \mathcal A J_{t,L}-J_{t,L}C_{t,L}(\omega)
+ =a_{t+L-1}(x_{t+L}-\omega x_t)e_{L-1}^*.
+\end{equation}
+In particular, every non-wrap column intertwines exactly and the defect has
+rank at most one.
+\end{theorem}
+
+\begin{proof}
+For $j<L-1$, equations \eqref{eq:normalized-step} and
+\eqref{eq:cycle-chain} give
+$\mathcal A J_{t,L}e_j=a_{t+j}x_{t+j+1}
+=J_{t,L}C_{t,L}(\omega)e_j$.
+For $e_{L-1}$ the two sides are
+$a_{t+L-1}x_{t+L}$ and
+$\omega a_{t+L-1}x_t$, respectively.  Collecting the sole nonzero column
+gives \eqref{eq:rank-one-defect}.
+\end{proof}
+
+\begin{theorem}[Root-grid law]\label{thm:root-grid}
+Let
+\begin{equation}\label{eq:radius}
+ \rho_{t,L}=
+ \left(\prod_{j=0}^{L-1}a_{t+j}\right)^{1/L}
+ =\left(\frac{\norm{S_{t+L}}_{\F}}{\norm{S_t}_{\F}}\right)^{1/L}.
+\end{equation}
+Then
+\begin{equation}\label{eq:cycle-power}
+ C_{t,L}(\omega)^L=\omega\rho_{t,L}^L I_L,
+\end{equation}
+and its eigenvalues are
+\begin{equation}\label{eq:cycle-roots}
+ \rho_{t,L}\exp\left(
+ i\frac{\arg\omega+2\pi k}{L}
+ \right),\qquad 0\le k<L.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Every basis vector traverses all $L$ directed edges in $L$ steps, acquiring
+the product of the $L$ positive weights and the single wrap phase.  This
+proves \eqref{eq:cycle-power}; its scalar $L$th roots give
+\eqref{eq:cycle-roots}.  The telescoping product gives \eqref{eq:radius}.
+\end{proof}
+
+The polar-reduced clock
+\begin{equation}\label{eq:polar-clock}
+ K_{t,L}(\omega)=G_{t,L}^{1/2}C_{t,L}(\omega)G_{t,L}^{-1/2}
+\end{equation}
+is similar to $C_{t,L}(\omega)$ and therefore has exactly the same spectrum.
+Moreover,
+\begin{equation}\label{eq:polar-intertwining}
+ \mathcal A V_{t,L}-V_{t,L}K_{t,L}(\omega)
+ =a_{t+L-1}(x_{t+L}-\omega x_t)e_{L-1}^*G_{t,L}^{-1/2}.
+\end{equation}
+Thus phase quantization in this model is an identity, not a fit.  Physical
+content resides in the wrap and two directed residuals.
+
+\section{Orientation mark and audit metrics}
+
+The time-domain optimal mark is
+\begin{equation}\label{eq:mark}
+ \omega_{t,L}=
+ \frac{\langle x_t,x_{t+L}\rangle}
+ {|\langle x_t,x_{t+L}\rangle|}
+\end{equation}
+when the inner product is nonzero, and $1$ otherwise.  It minimizes
+$\norm{x_{t+L}-\omega x_t}_{\F}$ over $\omega\in\mathbb T$.  This uses only
+the endpoint and seed states.  It does not inspect transfer eigenvalues.
+
+With $K=K_{t,L}(\omega_{t,L})$ and $V=V_{t,L}$, record
+\begin{align}
+ d_{\rm proj}&=
+ \sqrt{1-|\langle x_t,x_{t+L}\rangle|^2},
+ \label{eq:projective}\\
+ \epsilon_{\rm pr}&=
+ \frac{\norm{\mathcal AV-VK}}
+ {\norm{\mathcal AV}},
+ \label{eq:primal}\\
+ \epsilon_{\rm ad}&=
+ \frac{\norm{\mathcal A^*V-VK^*}}
+ {\norm{\mathcal A^*V}}.
+ \label{eq:adjoint}
+\end{align}
+The adjoint residual is independent information: a right-invariant temporal
+range need not be reducing for a nonnormal operator \citep{Kato1995}.
+
+The declared physical gate is
+\begin{equation}\label{eq:gate}
+ d_{\rm proj}\le0.25,
+ \qquad \epsilon_{\rm pr}\le0.25,
+ \qquad \epsilon_{\rm ad}\le0.25.
+\end{equation}
+
+\section{Predeclared lengths and physical data}
+
+RH-179 derived the rank-to-cycle offsets three and four.  Hence this paper
+uses
+\begin{equation}\label{eq:lengths}
+ L\in\{r-3,r-4\},\qquad L\ge3.
+\end{equation}
+For the available reset anchors this leaves
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+$\sigma$ & clock rank $r$ & admissible $L$ & channels\\
+\midrule
+$0.04$ & $6$ & $3$ & left, right\\
+$0.02$ & $6$ & $3$ & left, right\\
+$0.01$ & $7$ & $3,4$ & left, right\\
+\bottomrule
+\end{tabular}
+\end{center}
+The larger anchors have $L<3$ and are excluded before the audit.  Across all
+starts there are 126 windows in eight scale/side/length groups.
+
+The $\sigma=0.01,L=4$ branch is especially important: it is the only actual
+reset-atlas overlap with the RH-15 cloud degree $N=3$, for which
+$L=N+1=4$ \citep{WangRH15,WangRH181}.
+
+\section{Results}
+
+The groupwise minima are:
+\begin{center}
+\small
+\begin{tabular}{ccccccc}
+\toprule
+$\sigma$ & side & $L$ & $\min d_{\rm proj}$
+& $\min\epsilon_{\rm pr}$ & $\min\epsilon_{\rm ad}$
+& negative marks\\
+\midrule
+$0.04$ & left  & 3 & $0.9660$ & $1.2623$ & $1.1161$ & 0\\
+$0.04$ & right & 3 & $0.9420$ & $0.9444$ & $0.8924$ & 1\\
+$0.02$ & left  & 3 & $0.7720$ & $1.0868$ & $1.0457$ & 0\\
+$0.02$ & right & 3 & $0.8196$ & $0.6869$ & $0.8520$ & 2\\
+$0.01$ & left  & 3 & $0.6513$ & $0.9618$ & $0.8833$ & 2\\
+$0.01$ & right & 3 & $0.7087$ & $0.6138$ & $0.8557$ & 0\\
+$0.01$ & left  & 4 & $0.3926$ & $0.4441$ & $0.7540$ & 19\\
+$0.01$ & right & 4 & $0.3720$ & $0.2711$ & $0.7143$ & 19\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The orientation mark is active in 43 of 126 windows and greatly improves
+some endpoint chords.  It does not bring any projective distance below
+$0.25$.  The best primal residual, $0.2711$, also misses the gate, while the
+adjoint residual never falls below $0.7143$.  Therefore
+\begin{equation}\label{eq:zero-success}
+ \#\{\text{windows satisfying \eqref{eq:gate}}\}=0.
+\end{equation}
+
+The exact implementation checks are separate from this negative physical
+result.  The cycle-radius formula, root-grid phase formula, radial equality,
+and frame-isometry identity have zero failures at tolerance $10^{-10}$.
+Their success only confirms that the proposed clock was evaluated correctly.
+
+At $\sigma=0.01,L=4$, the median data-derived radius is approximately
+$0.7825$ in both channels, close to the RH-15 threshold radius
+$0.77184\ldots$.  This radial proximity is not enough: the physical range is
+not a two-sided orthogonal packet.
+
+\section{Why the adjoint gate is logically independent}
+
+The two residuals in \eqref{eq:primal}--\eqref{eq:adjoint} are not duplicate
+measurements.  Let $P=VV^*$ be the orthogonal projection onto the temporal
+range.
+
+\begin{proposition}[One-sided and two-sided clock identities]
+If $\mathcal AV=VK$, then $\operatorname{Ran}V$ is invariant under
+$\mathcal A$.  If, in addition, $\mathcal A^*V=VK^*$, then
+$\operatorname{Ran}V$ is reducing and
+\begin{equation}\label{eq:commuting-projection}
+ P\mathcal A=\mathcal AP.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The first identity maps every column combination $Vc$ to $VKc$, hence back
+into $\operatorname{Ran}V$.  The adjoint identity gives invariance of the
+same range under $\mathcal A^*$.  Orthogonal complements are then invariant
+under the opposite operators, which is equivalent to
+\eqref{eq:commuting-projection}.
+\end{proof}
+
+Thus a small primal residual alone would at most indicate an approximately
+invariant right packet.  A spectral block that can be isolated by an
+orthogonal Riesz projection needs the adjoint direction as well.  In the
+present data the separation is decisive: the primal minimum is only
+$0.0211$ above the declared threshold, whereas the adjoint minimum is
+$0.4643$ above it.  The branch rejection is therefore not driven by a
+rounding-level miss of a single scalar gate.
+
+\section{Finite decision margins and audit discipline}
+
+The three best observed margins relative to the common threshold are
+\begin{align}
+ \min d_{\rm proj}-0.25&=0.12202,\label{eq:wrap-margin}\\
+ \min\epsilon_{\rm pr}-0.25&=0.02106,\label{eq:primal-margin}\\
+ \min\epsilon_{\rm ad}-0.25&=0.46433.\label{eq:adjoint-margin}
+\end{align}
+These are finite floating margins, not interval certificates.  They do,
+however, distinguish the logical roles of the tests.  Endpoint projective
+return already fails before polar conditioning is considered; polar
+conditioning leaves the best primal case just outside the gate; and the
+adjoint dynamics remain far from the same orthogonal packet.
+
+The audit also keeps algebraic checks separate from physical gates.  The
+root-grid and radial equalities are consequences of how $C_{t,L}$ is built,
+so their zero error is a software and formula check.  They are not votes in
+favor of physical closure.  Conversely, a failed physical gate does not
+invalidate the exact weighted-cycle identity.  This separation prevents a
+tautological spectral grid from being counted as empirical spectral
+agreement.
+
+The complete decision rule was fixed before replay: lengths, anchors,
+orientation mark, norms, and threshold were not changed after inspecting
+the minima.  A future audit may declare a different threshold or a different
+temporal span, but it would be a new branch with a new ledger rather than a
+retroactive repair of this one.
+
+\section{Interpretation and branch decision}
+
+The audit rejects one precise statement:
+\begin{quote}
+The consecutive normalized source orbit, polar-orthogonalized over one of
+the predeclared lengths, is a physical reducing clock for the frozen
+transfer model at the tested anchors.
+\end{quote}
+The failure is robust to the natural orientation mark and appears most
+strongly in the adjoint direction.
+
+It does not reject the exact cycle determinant of RH-176--180.  It also does
+not reject a Petrov--Galerkin construction with distinct right and left
+temporal spaces.  The physical models already provide both a source and an
+observation.  Their forward and adjoint Krylov histories can define a
+biorthogonal packet without demanding that one orthogonal range reduce a
+nonnormal operator.  That is the next controlled branch.
+
+\section{Reproducibility and theorem boundary}
+
+The archive contains all 126 window records, including Gram conditioning,
+orientation mark, endpoint correlation, three closure metrics, cycle radius,
+and phase/radial formula errors.  The full calculation uses one BLAS thread
+to make the stored result deterministic at the reported precision.
+
+This paper proves the finite weighted-cycle identities
+\eqref{eq:rank-one-defect}--\eqref{eq:polar-intertwining} and reports the
+finite floating audit.  It does not prove an all-level rejection, a unique
+cycle calibration, a biorthogonal realization, a validated contour
+resolvent, a physical Riesz projection, physical interface R, Gate A, a
+self-adjoint operator, a prime-power trace formula, or the Riemann
+Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

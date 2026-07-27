@@ -1,0 +1,296 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Directional Coupling and Gauge Balance\\
+\large A Surviving Schur Product Behind the Failed Oblique Maximum-Norm Gate}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-186--187 show that maximum-residual oblique budgets and cross-Gram
+clipping fail on every physical bi-Krylov window.  Those tests combine the two
+directions too early.  A Schur complement instead depends on the product of
+left and right couplings.  This paper isolates its gauge structure.
+
+Under the scalar packet gauge $V\mapsto\alpha V$,
+$W\mapsto\alpha^{-1}W$, the right coupling scales by $\alpha$ and the left
+coupling by $\alpha^{-1}$.  Their product is invariant.  The maximum of the
+two is minimized uniquely at
+$\alpha=\sqrt{b/c}$, where both become $\sqrt{bc}$.  Thus scalar balancing
+cannot improve the directed Schur product $adbc$, but it gives the optimal
+symmetric representative for numerical work.
+
+Replaying the 126 RH-185 windows, the absolute coupling product ranges from
+$0.2486$ to $2.6847\times10^{10}$.  Eight windows have $bc<1$; all eight are
+in the local $\sigma=0.01,L=4$ branch.  Twelve local windows have relative
+coupling product below $0.01$.  Hence the failure of the coarse
+$\chi\max(\epsilon_R,\epsilon_L)$ gate does not by itself kill the sharp
+directional route.
+
+The result is intentionally incomplete.  A Riesz theorem also requires the
+packet and complement resolvent factors $a$ and $d$.  Neither is supplied
+here.  The next paper constructs the exact oblique Feshbach factorization
+that defines those quantities.
+\end{abstract}
+
+\section{Why products matter}
+
+For a right/left packet pair $V,W$ with $W^*V=I$, the directed residuals
+\begin{equation}\label{eq:residuals}
+ C=(I-P)AV,
+ \qquad
+ B^*=(I-P^*)A^*W,
+ \qquad P=VW^*,
+\end{equation}
+are the two off-diagonal couplings of the oblique block decomposition.  A
+Schur--Feshbach feedback term has the schematic form
+\begin{equation}\label{eq:feedback}
+ \Sigma(z)=B(z-D)^{-1}C.
+\end{equation}
+A sufficient rank-preservation condition is therefore controlled by
+\begin{equation}\label{eq:schur-product}
+ a(z)d(z)\norm B\norm C<1,
+\end{equation}
+where $a$ bounds the packet resolvent and $d$ the complement resolvent
+\citep{GohbergGoldbergKaashoek1990,WangRH171}.
+
+The maximum-norm gate of RH-186 is useful but stronger than
+\eqref{eq:schur-product}.  Before rejecting the route, the two coupling
+directions should be balanced and their invariant product recorded.
+
+\section{Scalar packet gauge}
+
+Let $b=\norm B$ and $c=\norm C$.  For $\alpha>0$, apply
+\begin{equation}\label{eq:scalar-gauge}
+ V_\alpha=\alpha V,
+ \qquad
+ W_\alpha=\alpha^{-1}W.
+\end{equation}
+Biorthogonality and the oblique projector remain unchanged.  The compressed
+operator is unchanged for a scalar gauge, while
+\begin{equation}\label{eq:coupling-scale}
+ b_\alpha=\alpha^{-1}b,
+ \qquad
+ c_\alpha=\alpha c.
+\end{equation}
+
+\begin{theorem}[Optimal scalar balance]\label{thm:balance}
+If $b,c>0$, then
+\begin{equation}\label{eq:product-invariant}
+ b_\alpha c_\alpha=bc
+\end{equation}
+for every $\alpha>0$, and
+\begin{equation}\label{eq:minimax}
+ \min_{\alpha>0}\max(b_\alpha,c_\alpha)=\sqrt{bc}.
+\end{equation}
+The unique minimizer is
+\begin{equation}\label{eq:optimal-alpha}
+ \alpha_*=\sqrt{b/c},
+\end{equation}
+at which $b_{\alpha_*}=c_{\alpha_*}=\sqrt{bc}$.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:product-invariant} follows immediately from
+\eqref{eq:coupling-scale}.  For any two nonnegative numbers with product
+$bc$, their maximum is at least their geometric mean $\sqrt{bc}$, with
+equality exactly when they are equal.  Solving
+$\alpha^{-1}b=\alpha c$ gives \eqref{eq:optimal-alpha}.
+\end{proof}
+
+If one coupling vanishes, the product is zero and the remaining coupling can
+be made arbitrarily small by a singular limit of the scalar gauge.  In
+finite numerical work one would retain a bounded gauge, but the Schur
+feedback is already zero.
+
+The minimax statement has a useful weighted form.  It applies when two
+directions are displayed in different coordinate norms.
+
+\begin{proposition}[Weighted scalar balance]\label{prop:weighted-balance}
+For $b,c,\mu,\nu>0$,
+\begin{equation}\label{eq:weighted-minimax}
+ \min_{\alpha>0}
+ \max\!\left(\mu\alpha^{-1}b,\nu\alpha c\right)
+ =\sqrt{\mu\nu bc}.
+\end{equation}
+The unique minimizer is
+\begin{equation}\label{eq:weighted-alpha}
+ \alpha_*=\sqrt{\frac{\mu b}{\nu c}}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The product of the two displayed terms is the invariant
+$\mu\nu bc$, so their maximum is at least its square root.  Equality holds
+exactly when the two terms agree, which gives
+\eqref{eq:weighted-alpha}.
+\end{proof}
+
+This weighted form can equalize outward left and right error bars, but it
+still cannot change their product.  It is therefore a preconditioner for
+validated arithmetic, not an additional source of Schur margin.
+
+\section{Gauge-invariant Schur condition}
+
+\begin{corollary}[Scalar-gauge invariance of feedback]\label{cor:feedback}
+For fixed packet and complement resolvent bounds $a,d$, the sufficient Schur
+product
+\begin{equation}\label{eq:invariant-feedback}
+ \kappa=adbc
+\end{equation}
+is invariant under \eqref{eq:scalar-gauge}.  Scalar balancing can improve the
+largest displayed coupling but cannot turn a failing $\kappa$ into a passing
+one.
+\end{corollary}
+
+This separates presentation from substance.  The balanced representative is
+best for symmetric floating-point ranges; the product is the proof datum.
+
+\section{Physical coupling definitions}
+
+For each RH-185 record, the absolute couplings are
+\begin{equation}\label{eq:physical-bc}
+ c=\norm{AV-VK},
+ \qquad
+ b=\norm{A^*W-WK^*}.
+\end{equation}
+Their relative counterparts are
+\begin{equation}\label{eq:relative-product}
+ \widehat c=\frac c{\norm{AV}},
+ \qquad
+ \widehat b=\frac b{\norm{A^*W}},
+ \qquad
+ \widehat b\widehat c.
+\end{equation}
+The relative product is a scale-normalized diagnostic; the absolute product
+is the quantity entering a fixed ambient Schur estimate.
+
+\section{Physical audit}
+
+Across all 126 windows:
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+quantity & minimum & median & maximum\\
+\midrule
+$bc$ & $0.24862$ & $727.445$ & $2.6847\times10^{10}$\\
+$\sqrt{bc}$ & $0.49862$ & $26.9711$ & $1.6385\times10^5$\\
+$\widehat b\widehat c$ & $5.826\times10^{-4}$ & $3.5002$ & $4.0232\times10^5$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+There are eight windows with
+\begin{equation}\label{eq:bc-below-one}
+ bc<1.
+\end{equation}
+All eight occur at $\sigma=0.01,L=4$.  There are twelve local length-four
+windows with
+\begin{equation}\label{eq:relative-small}
+ \widehat b\widehat c<0.01,
+\end{equation}
+matching the twelve two-sided residual-gate windows from RH-185.
+
+This is a genuine surviving signal.  The exact oblique condition number can
+be hundreds while the product of the two actual coupling residuals is less
+than one.  Therefore the negative maximum-residual result of RH-186 is not a
+logical no-go for the directed Schur route \citep{WangRH186}.
+
+The eight values below one should not be read as eight shell certificates.
+They omit both resolvent factors and use nominal floating couplings.  Their
+proper role is triage: they identify a small set of windows for which a
+validated complement calculation is not ruled out before it starts.  The
+remaining 118 windows already require a resolvent product below $1/(bc)$,
+which can be extremely small.
+
+\section{Why the Riesz certificate is still open}
+
+The coupling product alone is not enough.  On a contour $\Gamma$ around a
+candidate cycle root, one needs
+\begin{equation}\label{eq:full-gate}
+ \sup_{z\in\Gamma}
+ \norm{(z-K)^{-1}}
+ \norm{(z-D)^{-1}}
+ bc<1.
+\end{equation}
+Even the minimum $bc=0.2486$ can fail if the two resolvent factors have
+product larger than about four.  Near a packet root, the packet resolvent is
+necessarily large on a small contour.  The complement factor is completely
+unknown in the present physical realization.
+
+The next requirement is therefore structural: define the complement block
+$D$ in a type-correct oblique coordinate system and derive the exact
+determinant/Feshbach identity.  Only then can a contour audit distinguish a
+real complement obstruction from a crude norm artifact.
+
+\section{Matrix gauges beyond scalars}
+
+An invertible matrix gauge $G$ transforms
+$V\mapsto VG$, $W\mapsto WG^{-*}$ and $K\mapsto G^{-1}KG$.  Such a gauge
+can redistribute directions nonuniformly.  The exact optimization becomes a
+matrix balancing problem and may improve computable upper bounds.  It cannot
+change the underlying Schur self-energy as an ambient operator.  This paper
+uses the scalar theorem because it is exact, transparent, and sufficient to
+show that the directional branch has not been eliminated.
+
+More explicitly, in packet/complement coordinates
+\begin{equation}\label{eq:block-gauge}
+ \begin{pmatrix}K&B\\C&D\end{pmatrix}
+ \longmapsto
+ \begin{pmatrix}G^{-1}KG&G^{-1}B\\CG&D\end{pmatrix}.
+\end{equation}
+Hence
+\begin{equation}\label{eq:self-energy-gauge}
+ B(z-D)^{-1}C
+ \longmapsto
+ G^{-1}B(z-D)^{-1}CG.
+\end{equation}
+The self-energy spectrum and reduced determinant are gauge invariant even
+though a product of separate matrix norms need not be.  Scalar gauges are
+special because both norms are multiplied by reciprocal positive scalars,
+making $bc$ itself invariant.  A later matrix-balancing optimization must
+therefore report the exact self-energy or a rigorously transformed norm
+bound, not merely a smaller-looking pair of couplings.
+
+\section{Requirements for the next certificate}
+
+For each surviving window a complete finite certificate needs four outward
+quantities on the same contour:
+\begin{enumerate}[leftmargin=2em]
+\item a packet inverse bound for $zI-K$;
+\item a complement inverse bound for $zI-D$;
+\item an upper bound for the left coupling $B$;
+\item an upper bound for the right coupling $C$.
+\end{enumerate}
+The gauge used to compute them must be recorded, and the final product must
+be invariant under any later change of packet coordinates.  RH-189 supplies
+the exact block identity that makes these requirements type-correct.
+
+\section{Boundary}
+
+This paper proves scalar-gauge invariance and the optimal minimax balance,
+and reports the physical coupling products.  It does not provide packet or
+complement resolvent bounds, a continuous contour certificate, a physical
+Riesz rank, all-level scale transport, R, Gate A, or a downstream
+Hilbert--Polya/RH statement.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,276 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Regularized Cross-Gram Tradeoffs\\
+\large Singular-Value Clipping Cannot Beat a Residual Larger Than the Cross Angle}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The RH-185 bi-Krylov candidate has small directed residuals only in windows
+where the right and left temporal spaces are nearly transverse.  RH-186
+shows that the elementary oblique conditioning gate fails.  A natural repair
+is to clip the small singular values of the cross Gram and accept a controlled
+loss of biorthogonality.  This paper derives the exact tradeoff.
+
+Let $\gamma=\sigma_{\min}(Q_L^*Q_R)$, let $\epsilon$ be the larger directed
+residual, and clip at $\tau>0$.  The effective singular value is
+$d=\max(\gamma,\tau)$.  The regularized duality ratio is $\gamma/d$, the
+duality defect is $1-\gamma/d$, and the regularized coordinate norm is
+$1/d$.  Their sum obeys the exact identity
+\begin{equation*}
+ \left(1-\frac{\gamma}{d}\right)+\frac{\epsilon}{d}
+ =1+\frac{\epsilon-\gamma}{d}
+ \quad (\tau\ge\gamma).
+\end{equation*}
+Consequently a strict combined contraction exists in this clipping family if
+and only if $\epsilon<\gamma$.  If the residual is larger than the cross
+angle, clipping can trade conditioning for duality but cannot push the total
+budget below one.
+
+We sweep 13 clipping thresholds over all 126 RH-185 windows, producing 1,638
+records.  The smallest residual-to-cross-angle ratio is $10.253$; no window
+has a strict regularized contraction, and the best finite grid gate is
+$1.0090$.  This is a sharp branch-specific negative result, not a theorem
+excluding non-spectral regularization or contour cancellation.
+\end{abstract}
+
+\section{Motivation}
+
+For balanced frames $V,W$ with cross-angle cosine $\gamma$, the natural
+condition number is $\gamma^{-1}$ \citep{WangRH184,WangRH186}.  The twelve
+RH-185 windows passing the raw residual gate have residual levels much larger
+than their smallest cross singular values.  One might hope to replace the
+exact dual frame by a bounded approximate dual.
+
+Singular-value clipping is the cleanest target-independent test.  It acts on
+the cross Gram itself, not on fitted eigenvectors.  If even this family cannot
+meet a combined duality/conditioning gate, the next regularization must use
+additional structure rather than merely truncating small cross angles.
+
+\section{Clipped frames}
+
+Write
+\begin{equation}\label{eq:cross-svd}
+ H=Q_L^*Q_R=U\operatorname{diag}(\sigma_1,\ldots,\sigma_r)V^*,
+ \qquad \sigma_r=\gamma>0.
+\end{equation}
+For a clipping level $\tau>0$, set
+\begin{equation}\label{eq:effective}
+ d_j=\max(\sigma_j,\tau).
+\end{equation}
+Use the same singular vectors but replace $\sigma_j^{-1/2}$ by
+$d_j^{-1/2}$:
+\begin{equation}\label{eq:clipped-frames}
+ V_\tau=Q_RV\operatorname{diag}(d_j^{-1/2}),
+ \qquad
+ W_\tau=Q_LU\operatorname{diag}(d_j^{-1/2}).
+\end{equation}
+Then
+\begin{equation}\label{eq:approx-dual}
+ W_\tau^*V_\tau
+ =\operatorname{diag}\left(\frac{\sigma_j}{d_j}\right).
+\end{equation}
+
+The smallest singular direction controls the worst duality defect and the
+largest clipped inverse controls the coordinate norm.  The following theorem
+is the exact scalar statement needed for the audit.
+
+\section{The clipping tradeoff theorem}
+
+\begin{theorem}[Exact regularized budget]\label{thm:tradeoff}
+Let $\gamma=\sigma_r$ and let $\epsilon\ge0$ be a residual level.  For the
+clipped pair \eqref{eq:clipped-frames}, define
+\begin{align}
+ \delta_\tau&=1-\frac{\gamma}{\max(\gamma,\tau)},
+ \label{eq:duality-defect}\\
+ \chi_\tau&=\frac1{\max(\gamma,\tau)},
+ \label{eq:regularized-condition}\\
+ B_\tau&=\delta_\tau+\epsilon\chi_\tau.
+ \label{eq:combined}
+\end{align}
+If $\tau\ge\gamma$, then
+\begin{equation}\label{eq:identity}
+ B_\tau=1+\frac{\epsilon-\gamma}{\tau}.
+\end{equation}
+There exists $\tau>0$ with $B_\tau<1$ if and only if $\epsilon<\gamma$.
+\end{theorem}
+
+\begin{proof}
+For $\tau\le\gamma$, the pair is unaltered in the worst direction and
+$B_\tau=\epsilon/\gamma$.  For $\tau\ge\gamma$, substitute
+$\delta_\tau=1-\gamma/\tau$ and $\chi_\tau=1/\tau$ to obtain
+\eqref{eq:identity}.  If $\epsilon<\gamma$, the unaltered choice gives
+$B_\tau=\epsilon/\gamma<1$.  If $\epsilon=\gamma$, the value is one for
+$\tau\le\gamma$ and approaches one from above for $\tau>\gamma$.  If
+$\epsilon>\gamma$, the unaltered value exceeds one and
+\eqref{eq:identity} is strictly larger than one.  Thus the stated
+equivalence holds.
+\end{proof}
+
+\begin{corollary}[Cross-angle criterion]\label{cor:criterion}
+Within singular-value clipping, regularization closes the combined
+duality/conditioning gate exactly when
+\begin{equation}\label{eq:criterion}
+ \epsilon<\sigma_{\min}(Q_L^*Q_R).
+\end{equation}
+\end{corollary}
+
+The result is a Pareto identity, not a numerical heuristic.  It says that
+clipping cannot create transversality that the residual has already lost.
+
+The same conclusion persists when the residual information is resolved in
+the singular directions rather than replaced by one maximum.
+
+\begin{proposition}[Directionwise clipping criterion]\label{prop:directionwise}
+Let $\epsilon_j\ge0$ be a residual bound in the $j$th cross-Gram singular
+direction and set $d_j=\max(\sigma_j,\tau)$.  The directionwise additive
+budget
+\begin{equation}\label{eq:directionwise-budget}
+ B_j(\tau)=1-\frac{\sigma_j}{d_j}+\frac{\epsilon_j}{d_j}
+\end{equation}
+is strictly below one for every $j$ at some clipping level $\tau>0$ if and
+only if
+\begin{equation}\label{eq:directionwise-criterion}
+ \epsilon_j<\sigma_j\qquad\text{for every }j.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+If \eqref{eq:directionwise-criterion} holds, choose
+$\tau\le\sigma_r$.  Then no direction is clipped and
+$B_j=\epsilon_j/\sigma_j<1$.  Conversely, if
+$\epsilon_k\ge\sigma_k$ for some $k$, then for
+$\tau\le\sigma_k$ one has $B_k=\epsilon_k/\sigma_k\ge1$, while for
+$\tau>\sigma_k$ one has
+$B_k=1+(\epsilon_k-\sigma_k)/\tau\ge1$.
+\end{proof}
+
+Thus the worst-direction theorem is not an artifact of collapsing all
+singular vectors into one scalar.  Direction-dependent clipping can help
+only when every affected residual direction is already smaller than its
+available cross angle.
+
+\section{Physical sweep}
+
+For each RH-185 window we set
+\begin{equation}\label{eq:epsilon}
+ \epsilon=\max(\epsilon_R,\epsilon_L)
+\end{equation}
+and evaluate 13 thresholds
+$\tau/\gamma\in\{0.25,0.5,1,2,\ldots,1024\}$.  This gives 1,638
+threshold/window records.  The key values are:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+quantity & value\\
+\midrule
+windows & 126\\
+thresholds per window & 13\\
+minimum $\epsilon/\gamma$ & $10.2530$\\
+median $\epsilon/\gamma$ & $902.203$\\
+maximum $\epsilon/\gamma$ & $1.5855\times10^8$\\
+minimum finite-grid $B_\tau$ & $1.00904$\\
+strict regularized gates & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The twelve RH-185 raw gate-passing windows are not exceptions: their
+residual-to-cross-angle ratios are all larger than one.  In particular the
+best right-channel $L=4$ window has residual level about $0.0419$ and
+$\gamma\approx0.00104$, giving a ratio near $40$.  The best overall ratio,
+$10.253$, still misses the exact criterion by an order of magnitude.
+
+\section{What the negative result means}
+
+The theorem rules out one very specific repair:
+\begin{quote}\label{eq:branch-no-go}
+Clip the cross-Gram singular values and pay for the lost duality in a single
+additive budget.
+\end{quote}
+It does not rule out:
+\begin{itemize}[leftmargin=2em]
+\item a contour resolvent that exploits nonnormal cancellation;
+\item a directed Schur product using separate left and right couplings;
+\item a different physical dual seed or delayed start;
+\item a regularizer based on the dynamics rather than cross-Gram singular
+ values alone.
+\end{itemize}
+The next paper therefore studies the directed couplings before inserting a
+complement resolvent.
+
+\section{A useful diagnostic identity}
+
+For $\tau\ge\gamma$, equation \eqref{eq:identity} can be rearranged as
+\begin{equation}\label{eq:diagnostic}
+ B_\tau-1=\frac{\epsilon-\gamma}{\tau}.
+\end{equation}
+The sign of every regularized gate is already decided by the unregularized
+residual-to-angle comparison.  A sweep is still useful for quantifying the
+distance to one and for detecting coding errors, but it cannot change that
+sign.
+
+\section{Pareto geometry and limiting regimes}
+
+For $\tau\ge\gamma$, the two contributions move in opposite directions:
+\begin{equation}\label{eq:pareto-components}
+ \delta_\tau=1-\frac\gamma\tau\nearrow1,
+ \qquad
+ \epsilon\chi_\tau=\frac\epsilon\tau\searrow0.
+\end{equation}
+If $\epsilon>\gamma$, their sum decreases monotonically toward one from
+above.  This explains why a sufficiently large clipping threshold can make
+a finite sweep appear numerically close to success without ever producing a
+strict certificate.  If $\epsilon<\gamma$, the unregularized value is
+already below one and additional clipping increases the sum toward one.  At
+$\epsilon=\gamma$, the sum is exactly one for every threshold.
+
+Accordingly there is no hidden optimum to locate numerically.  The only
+substantive datum is the sign of $\epsilon-\gamma$; the threshold controls
+how the same failure or success is displayed.  In the physical sweep the
+best finite-grid value $1.00904$ is therefore consistent with, rather than
+contrary to, the exact no-contraction theorem.
+
+\section{Reproducibility and branch scope}
+
+The archive stores the original cross angle and residual level together
+with all thirteen thresholds, effective singular values, duality defects,
+regularized norm products, and combined gates.  Recomputing the sign from
+the original pair $(\gamma,\epsilon)$ independently of the sweep is an
+internal consistency check supplied by Theorem~\ref{thm:tradeoff}.
+
+The negative result is intentionally modular.  It can be reused whenever a
+future packet proposal suggests the same clipping repair: first compare its
+residual with its cross angle.  If the comparison fails, no threshold search
+in this additive model is needed.  If it passes, the unregularized balanced
+pair already supplies the smallest gate in the family.
+
+\section{Boundary}
+
+This paper proves the exact clipping tradeoff and verifies it over 1,638
+finite physical records.  It does not prove that all possible regularizers
+fail, nor does it prove an all-level cross-angle obstruction.  The directional
+Schur product, exact Feshbach factorization, and contour-specific complement
+resolvent remain open.  R, Gate A, Hilbert--Polya, and RH remain untouched.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

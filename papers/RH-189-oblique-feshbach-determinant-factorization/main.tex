@@ -1,0 +1,354 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.07}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Oblique Feshbach Determinant Factorization\\
+\large Exact Packet--Complement Coordinates for a Biorthogonal Temporal Clock}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-188 identifies a surviving directional coupling product but leaves the
+packet and complement resolvents undefined.  This paper supplies the exact
+finite block decomposition for a biorthogonal temporal packet.
+
+Let $V,W\in\mathbb C^{n\times r}$ satisfy $W^*V=I_r$.  Choose a frame $Z$
+for $\ker W^*$ and set $S=[V,Z]$.  Then $S$ is invertible and its inverse has
+the form $S^{-1}=[W^*;Y^*]$, with $Y^*V=0$ and $Y^*Z=I$.  In these coordinates
+\[
+ S^{-1}AS=
+ \begin{pmatrix}K&B\\C&D\end{pmatrix},
+ \quad
+ K=W^*AV.
+\]
+Whenever $zI-D$ is invertible,
+\[
+ \det(zI-A)
+ =\det(zI-D)
+ \det\!\left(zI-K-B(zI-D)^{-1}C\right).
+\]
+This is a type-correct oblique Feshbach factorization.  The self-energy is the
+exact object controlled by the directed Schur product.
+
+A 240-case complex random audit verifies coordinate inversion, block
+similarity, complement-gauge invariance, the one-factor norm bound, and the
+determinant identity with zero failures.  The maximum relative determinant
+error is $1.85\times10^{-11}$.  The theorem converts the
+local bi-Krylov candidate into a precise next question: validate the
+complement resolvent on root contours.  It does not itself supply those
+bounds or prove a physical Riesz shell.
+\end{abstract}
+
+\section{Why an exact coordinate theorem is needed}
+
+The RH-185 packet is not orthogonal.  Writing $Q=I-VW^*$ and informally
+calling $QAQ$ the complement block hides two issues: $Q$ is oblique, and an
+operator on $\operatorname{Ran}Q$ needs a chosen coordinate norm.  A
+determinant identity should be derived from an actual similarity, not from a
+symbolic orthogonal block matrix.
+
+Finite-dimensional Feshbach and Schur complement identities are classical
+\citep{GohbergGoldbergKaashoek1990}.  The contribution here is to state them
+in the exact packet type produced by RH-184--185 and to make the complement
+coordinates explicit.
+
+\section{Biorthogonal packet coordinates}
+
+Let $A\in\mathbb C^{n\times n}$ and let
+$V,W\in\mathbb C^{n\times r}$ satisfy
+\begin{equation}\label{eq:biorthogonal}
+ W^*V=I_r.
+\end{equation}
+The associated oblique projector is $P=VW^*$.
+
+Choose any full-rank
+\begin{equation}\label{eq:Z}
+ Z:\mathbb C^{n-r}\longrightarrow\ker W^*.
+\end{equation}
+
+\begin{proposition}[Invertible packet--complement coordinates]\label{prop:coordinates}
+The matrix
+\begin{equation}\label{eq:S}
+ S=[V,Z]
+\end{equation}
+is invertible.  Its inverse has a unique block-row representation
+\begin{equation}\label{eq:Sinv}
+ S^{-1}=\begin{bmatrix}W^*\\Y^*\end{bmatrix}
+\end{equation}
+with
+\begin{equation}\label{eq:dual-relations}
+ Y^*V=0,
+ \qquad Y^*Z=I_{n-r}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Suppose $Va+Zb=0$.  Applying $W^*$ and using
+$W^*V=I$, $W^*Z=0$ gives $a=0$.  Then $Zb=0$, hence $b=0$ because $Z$ has
+full rank.  Thus $S$ is invertible.  Multiplying $S^{-1}S=I$ shows that its
+top row must be $W^*$ and its bottom row satisfies
+\eqref{eq:dual-relations}.
+\end{proof}
+
+The choice of $Z$ is a complement-coordinate gauge.  Different choices are
+related by an invertible block-triangular similarity and do not change the
+full determinant.
+
+For norm estimates there is a canonical convenient choice.
+
+\begin{proposition}[Orthonormal complement coordinates]\label{prop:orthonormal-complement}
+Let $Z$ have orthonormal columns spanning $\ker W^*$ and put
+$Q=I-VW^*$.  Then the lower block row of $S^{-1}$ is
+\begin{equation}\label{eq:Y-orthonormal}
+ Y^*=Z^*Q.
+\end{equation}
+Consequently
+\begin{equation}\label{eq:D-orthonormal}
+ D=Z^*QAZ,
+ \qquad
+ \norm D\le\norm Q\norm A.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Because $QZ=Z$ and $QV=0$, the row $Z^*Q$ satisfies
+$(Z^*Q)V=0$ and $(Z^*Q)Z=I$.  Uniqueness in
+Proposition~\ref{prop:coordinates} gives \eqref{eq:Y-orthonormal}.  The block
+formula and its norm bound follow immediately.
+\end{proof}
+
+This removes one unnecessary oblique factor from the elementary complement
+bound.  The ambient operator $QAQ$ obeys the valid but looser estimate
+$\norm{QAQ}\le\norm Q^2\norm A$; the actual Feshbach coordinate block in an
+orthonormal complement needs only one factor $\norm Q$.
+
+\section{Exact block operator}
+
+Define
+\begin{equation}\label{eq:blocks}
+ S^{-1}AS=
+ \begin{pmatrix}
+ K&B\\C&D
+ \end{pmatrix},
+\end{equation}
+where
+\begin{align}
+ K&=W^*AV,
+ &B&=W^*AZ,
+ \label{eq:KB}\\
+ C&=Y^*AV,
+ &D&=Y^*AZ.
+ \label{eq:CD}
+\end{align}
+The packet block $K$ is exactly the RH-185 compression.  The off-diagonal
+blocks are coordinate forms of the RH-188 directed couplings.
+
+\begin{proposition}[Residual interpretation]\label{prop:residual}
+The ambient right residual satisfies
+\begin{equation}\label{eq:right-residual}
+ AV-VK=ZC,
+\end{equation}
+and the left residual satisfies
+\begin{equation}\label{eq:left-residual}
+ A^*W-WK^*=YB^*.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+From $AS=S\begin{psmallmatrix}K&B\\C&D\end{psmallmatrix}$, the first block
+column gives $AV=VK+ZC$.  Taking the adjoint of the top block row of
+$S^{-1}A=\begin{psmallmatrix}K&B\\C&D\end{psmallmatrix}S^{-1}$ gives the
+second identity.
+\end{proof}
+
+Thus the numerical residuals and the Feshbach couplings are the same data in
+different coordinate norms.
+
+If $Z$ is replaced by $Z'=ZG$ for an invertible complement gauge $G$, then
+$Y'^*=G^{-1}Y^*$ and
+\begin{equation}\label{eq:complement-gauge}
+ B'=BG,
+ \qquad C'=G^{-1}C,
+ \qquad D'=G^{-1}DG.
+\end{equation}
+It follows that
+\begin{equation}\label{eq:complement-self-energy-invariance}
+ B'(zI-D')^{-1}C'=B(zI-D)^{-1}C.
+\end{equation}
+Thus the self-energy is independent of the complement basis, even though
+the three separate block norms depend on that basis.
+
+\section{Feshbach determinant identity}
+
+For a spectral parameter $z$ with $zI-D$ invertible, define the self-energy
+\begin{equation}\label{eq:self-energy}
+ \Sigma(z)=B(zI-D)^{-1}C
+\end{equation}
+and the reduced Feshbach matrix
+\begin{equation}\label{eq:feshbach-matrix}
+ F(z)=zI-K-\Sigma(z).
+\end{equation}
+
+\begin{theorem}[Oblique determinant factorization]\label{thm:determinant}
+Whenever $zI-D$ is invertible,
+\begin{equation}\label{eq:determinant}
+ \boxed{
+ \det(zI-A)=\det(zI-D)\det F(z).
+ }
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Similarity by $S$ gives
+\[
+ \det(zI-A)
+ =\det\begin{pmatrix}zI-K&-B\\-C&zI-D\end{pmatrix}.
+\]
+Multiply on the left by the determinant-one block matrix
+\[
+ \begin{pmatrix}I&B(zI-D)^{-1}\\0&I\end{pmatrix}.
+\]
+The result is block lower triangular with diagonal blocks
+$F(z)$ and $zI-D$.  Taking determinants proves
+\eqref{eq:determinant}.
+\end{proof}
+
+\begin{corollary}[Schur sufficient condition]\label{cor:schur}
+If $zI-K$ and $zI-D$ are invertible and
+\begin{equation}\label{eq:schur-condition}
+ \norm{(zI-K)^{-1}}
+ \norm B
+ \norm{(zI-D)^{-1}}
+ \norm C<1,
+\end{equation}
+then $F(z)$ is invertible and $z\notin\sigma(A)$.
+\end{corollary}
+
+\begin{proof}
+Factor
+$F(z)=(zI-K)[I-(zI-K)^{-1}\Sigma(z)]$ and apply the Neumann lemma.
+\end{proof}
+
+This is the exact location of the four factors recorded architecturally in
+RH-163 and numerically separated in RH-188.
+
+\section{Riesz rank consequence}
+
+The determinant identity also gives the precise counting statement.  The
+complement count cannot be silently omitted.
+
+\begin{theorem}[Riesz count under a uniform Schur margin]\label{thm:riesz-count}
+Let $\Gamma$ be a positively oriented simple contour on which both
+$zI-K$ and $zI-D$ are invertible.  Suppose
+\begin{equation}\label{eq:uniform-schur}
+ \sup_{z\in\Gamma}
+ \norm{(zI-K)^{-1}}\norm B
+ \norm{(zI-D)^{-1}}\norm C<1.
+\end{equation}
+Then the algebraic eigenvalue count satisfies
+\begin{equation}\label{eq:count-sum}
+ N_A(\Gamma)=N_K(\Gamma)+N_D(\Gamma).
+\end{equation}
+Here $N_T(\Gamma)$ denotes the algebraic multiplicity of the spectrum of
+$T$ inside $\Gamma$.
+In particular, $N_A(\Gamma)=N_K(\Gamma)$ if the complement block has no
+eigenvalues inside $\Gamma$.
+\end{theorem}
+
+\begin{proof}
+For $0\le t\le1$, define
+\[
+ A_t=S\begin{pmatrix}K&tB\\tC&D\end{pmatrix}S^{-1}.
+\]
+Its reduced matrix is
+$F_t(z)=zI-K-t^2B(zI-D)^{-1}C$.  The bound
+\eqref{eq:uniform-schur} makes $F_t(z)$ invertible on $\Gamma$ for every
+$t$.  The full determinant therefore has no contour zero during the
+homotopy, so its winding number is constant.  At $t=0$ the operator is block
+diagonal and its count is $N_K+N_D$.
+\end{proof}
+
+The theorem is conditional on continuous packet and complement inverse
+bounds.  To isolate one packet root, one must either validate
+$N_D(\Gamma)=0$ or compute and retain the complement contribution.  Small
+residuals alone imply neither fact.
+
+\section{Finite identity audit}
+
+The audit uses dimensions $5,7,9,11$, packet ranks $1,2,3$, and twenty
+complex random trials per pair, for 240 cases.  The left frame is corrected
+to satisfy $W^*V=I$ exactly at floating precision.  A numerical nullspace of
+$W^*$ supplies $Z$, and $Y$ is read from $S^{-1}$.
+
+The maximum errors are:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+identity & maximum error\\
+\midrule
+$S^{-1}S=I$ & $3.22\times10^{-14}$\\
+block similarity & $1.01\times10^{-11}$\\
+relative determinant factorization & $1.85\times10^{-11}$\\
+orthonormal complement dual row & $2.38\times10^{-12}$\\
+one-factor norm-bound violation & $0$\\
+complement-gauge self-energy & $2.64\times10^{-12}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+All 240 cases pass the declared $10^{-8}$ tolerance.
+
+The identity audit includes nominal recomputation of the self-energy in a
+second complement gauge.  A later validated implementation must additionally
+enclose that equality.  This catches a numerically important failure mode:
+separate block norms can change greatly under a poor complement basis even
+though the exact reduced determinant is fixed.
+
+For outward work, the orthonormal choice in
+Proposition~\ref{prop:orthonormal-complement} is the baseline because it
+gives the one-factor bound $\norm D\le\norm Q\norm A$.  Another gauge is
+useful only if the transformation and its improved product bound are both
+validated.
+
+\section{Physical next step}
+
+For each surviving RH-185 window, the theorem defines a finite exact program:
+\begin{enumerate}[leftmargin=2em]
+\item build outward enclosures of $V,W,K,B,C,D$;
+\item choose root contours from the predeclared length-four geometry;
+\item validate $(zI-D)^{-1}$ on a finite contour mesh;
+\item combine mesh, operator-ball, and coupling errors using the RH-167--168
+ machinery summarized in RH-171 \citep{WangRH171};
+\item apply \eqref{eq:schur-condition}, compute $N_D$, and use
+ Theorem~\ref{thm:riesz-count} to count the full Riesz rank.
+\end{enumerate}
+The only genuinely new hard object is the physical complement resolvent.
+The packet and coupling types are now exact.
+
+\section{Boundary}
+
+This paper proves a finite determinant identity for every biorthogonal packet
+pair.  It does not validate any physical complement inverse, establish a
+continuous Schur margin, prove a physical Riesz shell, transport shells
+across scales, close R or Gate A, or approach a self-adjoint Hilbert--Polya
+operator or the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
