@@ -1,0 +1,2205 @@
+{
+  "$id": "tpc193-literal-fixed-atom-candidate-mechanism-gate-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "candidate_inventory": {
+      "items": false,
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "axis_map": {
+              "additionalProperties": false,
+              "properties": {
+                "carrier_axis": {
+                  "const": "FIXED_DETERMINANT_TWO_AFFINE_PAIR"
+                },
+                "decay_axis": {
+                  "const": "QUALITATIVE_LOG_AVERAGED_O1"
+                },
+                "endpoint_axis": {
+                  "const": "LOG_WEIGHTED_CUMULATIVE_PREFIX"
+                },
+                "phase_axis": {
+                  "const": "EVERY_FIXED_ADDITIVE_ATOM"
+                },
+                "scale_axis": {
+                  "const": "ASYMPTOTIC_FIXED_DATA"
+                },
+                "support_axis": {
+                  "const": "FORMAL_FIXED_AFFINE_SUPPORT"
+                }
+              },
+              "required": [
+                "carrier_axis",
+                "decay_axis",
+                "endpoint_axis",
+                "phase_axis",
+                "scale_axis",
+                "support_axis"
+              ],
+              "type": "object"
+            },
+            "candidate_id": {
+              "const": "TW25.LOG_TWISTED_AFFINE"
+            },
+            "constant_range_normalization_loss": {
+              "additionalProperties": false,
+              "properties": {
+                "constants": {
+                  "const": "qualitative o(1), depending on the fixed affine data and fixed atom; no effective rate is asserted"
+                },
+                "losses": {
+                  "items": false,
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "prefixItems": [
+                    {
+                      "const": "reciprocal weight 1/n"
+                    },
+                    {
+                      "const": "normalization 1/log X"
+                    },
+                    {
+                      "const": "fixed affine data"
+                    },
+                    {
+                      "const": "no uniform pointwise power"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "normalization": {
+                  "const": "(1/log X) sum_(n<=X) f1(a1*n+h1) f2(a2*n+h2) e(gamma*n)/n"
+                },
+                "range": {
+                  "const": "fixed positive nonparallel affine forms; every fixed gamma in R; X tends to infinity"
+                }
+              },
+              "required": [
+                "constants",
+                "losses",
+                "normalization",
+                "range"
+              ],
+              "type": "object"
+            },
+            "direct_specialization": {
+              "additionalProperties": false,
+              "properties": {
+                "affine_form_1": {
+                  "const": "(a1,h1)=(s,d+s*z0)"
+                },
+                "affine_form_2": {
+                  "const": "(a2,h2)=(a,u+a*z0)"
+                },
+                "determinant": {
+                  "const": "a1*h2-a2*h1=s*(u+a*z0)-a*(d+s*z0)=s*u-a*d=2"
+                },
+                "functions": {
+                  "const": "f1=f2=mu"
+                },
+                "phase": {
+                  "const": "gamma=-alpha_star"
+                },
+                "translation_effect": {
+                  "const": "choose fixed z0 so both intercepts are positive; determinant unchanged; phase gains one unit scalar"
+                }
+              },
+              "required": [
+                "affine_form_1",
+                "affine_form_2",
+                "determinant",
+                "functions",
+                "phase",
+                "translation_effect"
+              ],
+              "type": "object"
+            },
+            "eligibility_checks": {
+              "additionalProperties": false,
+              "properties": {
+                "all_constants_ranges_normalizations_losses_exposed": {
+                  "const": true
+                },
+                "carrier_axis_match": {
+                  "const": false
+                },
+                "decay_axis_match": {
+                  "const": false
+                },
+                "direct_literal_two_mobius": {
+                  "const": true
+                },
+                "endpoint_axis_match": {
+                  "const": false
+                },
+                "formula_complete_target_available": {
+                  "const": false
+                },
+                "normalization_q_over_endpoint_natural": {
+                  "const": false
+                },
+                "not_stopped_cell_repackage": {
+                  "const": true
+                },
+                "phase_axis_match": {
+                  "const": true
+                },
+                "prescribed_atom_source_locked_or_uniform": {
+                  "const": true
+                },
+                "scale_axis_match": {
+                  "const": false
+                },
+                "support_axis_match": {
+                  "const": false
+                },
+                "theorem_backed": {
+                  "const": true
+                }
+              },
+              "required": [
+                "all_constants_ranges_normalizations_losses_exposed",
+                "carrier_axis_match",
+                "decay_axis_match",
+                "direct_literal_two_mobius",
+                "endpoint_axis_match",
+                "formula_complete_target_available",
+                "normalization_q_over_endpoint_natural",
+                "not_stopped_cell_repackage",
+                "phase_axis_match",
+                "prescribed_atom_source_locked_or_uniform",
+                "scale_axis_match",
+                "support_axis_match",
+                "theorem_backed"
+              ],
+              "type": "object"
+            },
+            "eligible": {
+              "const": false
+            },
+            "first_failure": {
+              "const": "NORMALIZATION_NOT_NATURAL_Q_OVER_ENDPOINT"
+            },
+            "source_ids": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "TW25.LOG_TWISTED_AFFINE"
+                },
+                {
+                  "const": "TPC129.main"
+                }
+              ],
+              "type": "array"
+            },
+            "theorem_statement": {
+              "const": "For fixed nonparallel affine forms and f1 nonpretentious, the logarithmic average of f1(a1*n+h1)f2(a2*n+h2)e(gamma*n) tends to zero for every fixed gamma."
+            }
+          },
+          "required": [
+            "axis_map",
+            "candidate_id",
+            "constant_range_normalization_loss",
+            "direct_specialization",
+            "eligibility_checks",
+            "eligible",
+            "first_failure",
+            "source_ids",
+            "theorem_statement"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "axis_map": {
+              "additionalProperties": false,
+              "properties": {
+                "carrier_axis": {
+                  "const": "ACTUAL_DETERMINANT_TWO_PERIODIC_CORE"
+                },
+                "decay_axis": {
+                  "const": "LOG_POWER_ONLY"
+                },
+                "endpoint_axis": {
+                  "const": "TERMINAL_DYADIC_BLOCK"
+                },
+                "phase_axis": {
+                  "const": "RATIONAL_PERIODIC_ATOM_IF_SOURCE_BACKED"
+                },
+                "scale_axis": {
+                  "const": "ALL_BUT_LOG_DENSITY_EXCEPTIONAL_SET"
+                },
+                "support_axis": {
+                  "const": "ACTUAL_CORE_NOT_ACTUAL_ACTIVE_SUPPORT"
+                }
+              },
+              "required": [
+                "carrier_axis",
+                "decay_axis",
+                "endpoint_axis",
+                "phase_axis",
+                "scale_axis",
+                "support_axis"
+              ],
+              "type": "object"
+            },
+            "candidate_id": {
+              "const": "TT26.RATIONAL_PERIODIC_ATOM"
+            },
+            "constant_range_normalization_loss": {
+              "additionalProperties": false,
+              "properties": {
+                "constants": {
+                  "const": "absolute eta_0,kappa_0>0 and an absolute implicit constant inherited through TPC-149"
+                },
+                "losses": {
+                  "items": false,
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "prefixItems": [
+                    {
+                      "const": "q*R <= (log X)^eta_0"
+                    },
+                    {
+                      "const": "N outside E_X_star"
+                    },
+                    {
+                      "const": "single terminal block"
+                    },
+                    {
+                      "const": "saving (log X)^(-kappa_0)"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "normalization": {
+                  "const": "(q/N) sum_(N<t(z)<=2N) c_z rho(z)"
+                },
+                "range": {
+                  "const": "sqrt(X)<=N<=X outside E_X_star; rational atom alpha_star=r/R; bounded period-R rho"
+                }
+              },
+              "required": [
+                "constants",
+                "losses",
+                "normalization",
+                "range"
+              ],
+              "type": "object"
+            },
+            "direct_specialization": {
+              "additionalProperties": false,
+              "properties": {
+                "affine_form_1": {
+                  "const": "d+s*z"
+                },
+                "affine_form_2": {
+                  "const": "u+a*z"
+                },
+                "determinant": {
+                  "const": "s*u-a*d=2"
+                },
+                "functions": {
+                  "const": "literal product mu(d+s*z)*mu(u+a*z)"
+                },
+                "phase": {
+                  "const": "rho(z)=e(-r*z/R) when alpha_star=r/R"
+                },
+                "translation_effect": {
+                  "const": "not required"
+                }
+              },
+              "required": [
+                "affine_form_1",
+                "affine_form_2",
+                "determinant",
+                "functions",
+                "phase",
+                "translation_effect"
+              ],
+              "type": "object"
+            },
+            "eligibility_checks": {
+              "additionalProperties": false,
+              "properties": {
+                "all_constants_ranges_normalizations_losses_exposed": {
+                  "const": true
+                },
+                "carrier_axis_match": {
+                  "const": true
+                },
+                "decay_axis_match": {
+                  "const": false
+                },
+                "direct_literal_two_mobius": {
+                  "const": true
+                },
+                "endpoint_axis_match": {
+                  "const": false
+                },
+                "formula_complete_target_available": {
+                  "const": false
+                },
+                "normalization_q_over_endpoint_natural": {
+                  "const": true
+                },
+                "not_stopped_cell_repackage": {
+                  "const": true
+                },
+                "phase_axis_match": {
+                  "const": false
+                },
+                "prescribed_atom_source_locked_or_uniform": {
+                  "const": false
+                },
+                "scale_axis_match": {
+                  "const": false
+                },
+                "support_axis_match": {
+                  "const": false
+                },
+                "theorem_backed": {
+                  "const": true
+                }
+              },
+              "required": [
+                "all_constants_ranges_normalizations_losses_exposed",
+                "carrier_axis_match",
+                "decay_axis_match",
+                "direct_literal_two_mobius",
+                "endpoint_axis_match",
+                "formula_complete_target_available",
+                "normalization_q_over_endpoint_natural",
+                "not_stopped_cell_repackage",
+                "phase_axis_match",
+                "prescribed_atom_source_locked_or_uniform",
+                "scale_axis_match",
+                "support_axis_match",
+                "theorem_backed"
+              ],
+              "type": "object"
+            },
+            "eligible": {
+              "const": false
+            },
+            "first_failure": {
+              "const": "NAMED_ATOM_VALUE_AND_RATIONAL_DENOMINATOR_SOURCE_ABSENT"
+            },
+            "source_ids": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "const": "TT26.QUANTITATIVE_CORRELATION"
+                },
+                {
+                  "const": "TPC149.main"
+                },
+                {
+                  "const": "TPC158.main"
+                }
+              ],
+              "type": "array"
+            },
+            "theorem_statement": {
+              "const": "Outside one logarithmically sparse scale set, the q/N-normalized literal determinant-two core has a log-power bound against every bounded small-period multiplier."
+            }
+          },
+          "required": [
+            "axis_map",
+            "candidate_id",
+            "constant_range_normalization_loss",
+            "direct_specialization",
+            "eligibility_checks",
+            "eligible",
+            "first_failure",
+            "source_ids",
+            "theorem_statement"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "checks": {
+      "additionalProperties": false,
+      "properties": {
+        "all_primary_sources_reviewed": {
+          "const": true
+        },
+        "all_repository_sources_locked": {
+          "const": true
+        },
+        "candidate_eligibility_recomputed": {
+          "const": true
+        },
+        "candidate_statements_expose_native_losses": {
+          "const": true
+        },
+        "declared_corpus_exhaustion_not_global_nonexistence": {
+          "const": true
+        },
+        "direct_block_and_bad_prefix_not_identified": {
+          "const": true
+        },
+        "direct_to_bad_not_formula_promoted": {
+          "const": true
+        },
+        "eligible_count_zero": {
+          "const": true
+        },
+        "fixed_h0_data_not_decay": {
+          "const": true
+        },
+        "named_atom_absence_preserved": {
+          "const": true
+        },
+        "no_tpc194_selected": {
+          "const": true
+        },
+        "pointwise_parents_remain_open": {
+          "const": true
+        },
+        "schema_exact_and_closed": {
+          "const": true
+        },
+        "source_hashes_are_integrity_only": {
+          "const": true
+        },
+        "stopped_method_cells_not_repackaged": {
+          "const": true
+        },
+        "strict_budget_unpaid": {
+          "const": true
+        },
+        "target_contract_incompleteness_preserved": {
+          "const": true
+        },
+        "tt_exceptional_log_power_not_all_scale_power": {
+          "const": true
+        },
+        "tw_log_average_not_natural_prefix": {
+          "const": true
+        }
+      },
+      "required": [
+        "all_primary_sources_reviewed",
+        "all_repository_sources_locked",
+        "candidate_eligibility_recomputed",
+        "candidate_statements_expose_native_losses",
+        "declared_corpus_exhaustion_not_global_nonexistence",
+        "direct_block_and_bad_prefix_not_identified",
+        "direct_to_bad_not_formula_promoted",
+        "eligible_count_zero",
+        "fixed_h0_data_not_decay",
+        "named_atom_absence_preserved",
+        "no_tpc194_selected",
+        "pointwise_parents_remain_open",
+        "schema_exact_and_closed",
+        "source_hashes_are_integrity_only",
+        "stopped_method_cells_not_repackaged",
+        "strict_budget_unpaid",
+        "target_contract_incompleteness_preserved",
+        "tt_exceptional_log_power_not_all_scale_power",
+        "tw_log_average_not_natural_prefix"
+      ],
+      "type": "object"
+    },
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "architecture_stopped": {
+          "const": false
+        },
+        "block_equals_cumulative_prefix": {
+          "const": false
+        },
+        "declared_corpus_is_global_mathematical_nonexistence": {
+          "const": false
+        },
+        "direct_implies_bad_formula_certified": {
+          "const": false
+        },
+        "fixed_atom_decay_obtained": {
+          "const": false
+        },
+        "fixed_h0_data_is_decay": {
+          "const": false
+        },
+        "hash_integrity_is_theorem_evidence": {
+          "const": false
+        },
+        "named_physical_atom_identified": {
+          "const": false
+        },
+        "pointwise_parents_stopped": {
+          "const": false
+        },
+        "prime_pair_lower_bound": {
+          "const": false
+        },
+        "program_positive_L2": {
+          "const": false
+        },
+        "strict_one_over_400": {
+          "const": false
+        },
+        "tpc194_authorized": {
+          "const": false
+        },
+        "twin_prime_theorem": {
+          "const": false
+        }
+      },
+      "required": [
+        "architecture_stopped",
+        "block_equals_cumulative_prefix",
+        "declared_corpus_is_global_mathematical_nonexistence",
+        "direct_implies_bad_formula_certified",
+        "fixed_atom_decay_obtained",
+        "fixed_h0_data_is_decay",
+        "hash_integrity_is_theorem_evidence",
+        "named_physical_atom_identified",
+        "pointwise_parents_stopped",
+        "prime_pair_lower_bound",
+        "program_positive_L2",
+        "strict_one_over_400",
+        "tpc194_authorized",
+        "twin_prime_theorem"
+      ],
+      "type": "object"
+    },
+    "classification": {
+      "const": "SOURCE_LOCKED_CANDIDATE_GATE_L1"
+    },
+    "corpus_partition": {
+      "additionalProperties": false,
+      "properties": {
+        "direct_candidate_count": {
+          "const": 2
+        },
+        "eligible_candidate_count": {
+          "const": 0
+        },
+        "eligible_candidate_ids": {
+          "items": false,
+          "maxItems": 0,
+          "minItems": 0,
+          "prefixItems": [],
+          "type": "array"
+        },
+        "not_mapped_count": {
+          "const": 0
+        },
+        "not_reviewed_count": {
+          "const": 0
+        },
+        "primary_source_record_count": {
+          "const": 7
+        },
+        "reviewed_primary_source_count": {
+          "const": 7
+        },
+        "screened_non_direct_count": {
+          "const": 5
+        },
+        "selected_candidate_id": {
+          "const": null
+        },
+        "smallest_genuine_sublemma": {
+          "const": null
+        }
+      },
+      "required": [
+        "direct_candidate_count",
+        "eligible_candidate_count",
+        "eligible_candidate_ids",
+        "not_mapped_count",
+        "not_reviewed_count",
+        "primary_source_record_count",
+        "reviewed_primary_source_count",
+        "screened_non_direct_count",
+        "selected_candidate_id",
+        "smallest_genuine_sublemma"
+      ],
+      "type": "object"
+    },
+    "declared_mechanism_corpus": {
+      "additionalProperties": false,
+      "properties": {
+        "as_of_date": {
+          "const": "2026-07-28"
+        },
+        "closed_world_semantics": {
+          "const": "EXHAUSTIVE_ONLY_WITHIN_THE_EXPLICIT_SEVEN_PRIMARY_SOURCE_RECORDS_AND_LOCKED_REPOSITORY_INTERFACES"
+        },
+        "direct_candidate_ids": {
+          "items": false,
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "const": "TW25.LOG_TWISTED_AFFINE"
+            },
+            {
+              "const": "TT26.RATIONAL_PERIODIC_ATOM"
+            }
+          ],
+          "type": "array"
+        },
+        "primary_source_records": {
+          "items": false,
+          "maxItems": 7,
+          "minItems": 7,
+          "prefixItems": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "const": "HR21.SHIFT_ONE_PARITY"
+                },
+                "locator": {
+                  "const": "arXiv:2103.06853"
+                },
+                "review_status": {
+                  "const": "REVIEWED_SCREENED_NON_DIRECT"
+                },
+                "theorem_locator": {
+                  "const": "quantitative shift-one conclusions only"
+                },
+                "title": {
+                  "const": "Expansion, Divisibility and Parity"
+                },
+                "why_not_direct": {
+                  "const": "TPC-138 proves that the even/determinant-one transfer is disjoint from the active odd determinant-two carrier."
+                },
+                "year": {
+                  "const": 2021
+                }
+              },
+              "required": [
+                "id",
+                "locator",
+                "review_status",
+                "theorem_locator",
+                "title",
+                "why_not_direct",
+                "year"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "const": "MRT15.AVERAGED_CHOWLA"
+                },
+                "locator": {
+                  "const": "doi:10.2140/ant.2015.9.2167"
+                },
+                "review_status": {
+                  "const": "REVIEWED_SCREENED_NON_DIRECT"
+                },
+                "theorem_locator": {
+                  "const": "averaged Chowla theorem and short Fourier sum"
+                },
+                "title": {
+                  "const": "An Averaged Form of Chowla's Conjecture"
+                },
+                "why_not_direct": {
+                  "const": "The two-factor theorem averages shifts; the Fourier theorem has one multiplicative factor and averages interval origins."
+                },
+                "year": {
+                  "const": 2015
+                }
+              },
+              "required": [
+                "id",
+                "locator",
+                "review_status",
+                "theorem_locator",
+                "title",
+                "why_not_direct",
+                "year"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "const": "PILATTE23.ALMOST_SCALE_SHIFT_ONE"
+                },
+                "locator": {
+                  "const": "arXiv:2310.19357"
+                },
+                "review_status": {
+                  "const": "REVIEWED_SCREENED_NON_DIRECT"
+                },
+                "theorem_locator": {
+                  "const": "two-point logarithmic Chowla quantitative bound"
+                },
+                "title": {
+                  "const": "Improved Bounds for the Two-Point Logarithmic Chowla Conjecture"
+                },
+                "why_not_direct": {
+                  "const": "The shift-one input does not transfer to the active odd determinant-two carrier and has no prescribed additive atom."
+                },
+                "year": {
+                  "const": 2023
+                }
+              },
+              "required": [
+                "id",
+                "locator",
+                "review_status",
+                "theorem_locator",
+                "title",
+                "why_not_direct",
+                "year"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "const": "PILATTE26.FOURIER_UNIFORMITY"
+                },
+                "locator": {
+                  "const": "arXiv:2604.26564v1"
+                },
+                "review_status": {
+                  "const": "REVIEWED_SCREENED_NON_DIRECT"
+                },
+                "theorem_locator": {
+                  "const": "Theorem 1.2 / abstract Fourier-uniformity estimate"
+                },
+                "title": {
+                  "const": "Improved Bounds for the Fourier Uniformity Conjecture"
+                },
+                "why_not_direct": {
+                  "const": "It controls one Liouville factor uniformly in phase after averaging the interval origin; a second affine Möbius factor cannot be inserted by a theorem-backed operation."
+                },
+                "year": {
+                  "const": 2026
+                }
+              },
+              "required": [
+                "id",
+                "locator",
+                "review_status",
+                "theorem_locator",
+                "title",
+                "why_not_direct",
+                "year"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "const": "TAO16.LOG_TWO_POINT"
+                },
+                "locator": {
+                  "const": "doi:10.1017/fmp.2016.6"
+                },
+                "review_status": {
+                  "const": "REVIEWED_SCREENED_NON_DIRECT"
+                },
+                "theorem_locator": {
+                  "const": "Theorem 1.3"
+                },
+                "title": {
+                  "const": "The Logarithmically Averaged Chowla and Elliott Conjectures for Two-Point Correlations"
+                },
+                "why_not_direct": {
+                  "const": "Its fixed-affine logarithmic zero-phase theorem is subsumed for the fixed-atom screen by TW25."
+                },
+                "year": {
+                  "const": 2016
+                }
+              },
+              "required": [
+                "id",
+                "locator",
+                "review_status",
+                "theorem_locator",
+                "title",
+                "why_not_direct",
+                "year"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "const": "TT26.QUANTITATIVE_CORRELATION"
+                },
+                "locator": {
+                  "const": "arXiv:2512.01739v2"
+                },
+                "review_status": {
+                  "const": "REVIEWED_DIRECT_CANDIDATE"
+                },
+                "theorem_locator": {
+                  "const": "Theorem 3.1"
+                },
+                "title": {
+                  "const": "Quantitative Correlations and Some Problems on Prime Factors of Consecutive Integers"
+                },
+                "why_not_direct": {
+                  "const": ""
+                },
+                "year": {
+                  "const": 2026
+                }
+              },
+              "required": [
+                "id",
+                "locator",
+                "review_status",
+                "theorem_locator",
+                "title",
+                "why_not_direct",
+                "year"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "const": "TW25.LOG_TWISTED_AFFINE"
+                },
+                "locator": {
+                  "const": "doi:10.1007/s00209-025-03770-2"
+                },
+                "review_status": {
+                  "const": "REVIEWED_DIRECT_CANDIDATE"
+                },
+                "theorem_locator": {
+                  "const": "Lemma 4.2(1)"
+                },
+                "title": {
+                  "const": "On a Bohr Set Analogue of Chowla's Conjecture"
+                },
+                "why_not_direct": {
+                  "const": ""
+                },
+                "year": {
+                  "const": 2025
+                }
+              },
+              "required": [
+                "id",
+                "locator",
+                "review_status",
+                "theorem_locator",
+                "title",
+                "why_not_direct",
+                "year"
+              ],
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "scope_id": {
+          "const": "TPC193_DECLARED_PRIMARY_THEOREM_CORPUS_V1"
+        },
+        "screened_non_direct_source_ids": {
+          "items": false,
+          "maxItems": 5,
+          "minItems": 5,
+          "prefixItems": [
+            {
+              "const": "HR21.SHIFT_ONE_PARITY"
+            },
+            {
+              "const": "MRT15.AVERAGED_CHOWLA"
+            },
+            {
+              "const": "PILATTE23.ALMOST_SCALE_SHIFT_ONE"
+            },
+            {
+              "const": "PILATTE26.FOURIER_UNIFORMITY"
+            },
+            {
+              "const": "TAO16.LOG_TWO_POINT"
+            }
+          ],
+          "type": "array"
+        },
+        "search_surface": {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "const": "repository direct arithmetic lineage TPC-108,129,138-140,149,157-170,181,187,190"
+            },
+            {
+              "const": "fixed-atom affine multiplicative correlation theorems"
+            },
+            {
+              "const": "additive-twist and Fourier-uniformity theorems through 2026-07-28"
+            }
+          ],
+          "type": "array"
+        }
+      },
+      "required": [
+        "as_of_date",
+        "closed_world_semantics",
+        "direct_candidate_ids",
+        "primary_source_records",
+        "scope_id",
+        "screened_non_direct_source_ids",
+        "search_surface"
+      ],
+      "type": "object"
+    },
+    "endpoint_ledger": {
+      "additionalProperties": false,
+      "properties": {
+        "named_atom_sigma_credit": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "const": 1
+            },
+            "numerator": {
+              "const": 0
+            }
+          },
+          "required": [
+            "denominator",
+            "numerator"
+          ],
+          "type": "object"
+        },
+        "required_strict_budget": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "const": 400
+            },
+            "numerator": {
+              "const": 1
+            }
+          },
+          "required": [
+            "denominator",
+            "numerator"
+          ],
+          "type": "object"
+        },
+        "state": {
+          "const": "UNPAID"
+        }
+      },
+      "required": [
+        "named_atom_sigma_credit",
+        "required_strict_budget",
+        "state"
+      ],
+      "type": "object"
+    },
+    "level_ledger": {
+      "additionalProperties": false,
+      "properties": {
+        "L0": {
+          "const": "literal formula comparison, source census, candidate registry, strict schemas and executed mutation diagnostics"
+        },
+        "L1": {
+          "const": "scoped declared-corpus exhaustion and formula-interface fail-closed route decision"
+        },
+        "L2": {
+          "const": "NONE"
+        },
+        "fixed_h0_gate": {
+          "const": "SOURCE_BACKED_DATA_FACT_ONLY"
+        },
+        "new_program_positive_L2": {
+          "const": false
+        }
+      },
+      "required": [
+        "L0",
+        "L1",
+        "L2",
+        "fixed_h0_gate",
+        "new_program_positive_L2"
+      ],
+      "type": "object"
+    },
+    "mutation_regressions": {
+      "additionalProperties": false,
+      "properties": {
+        "reject_L2_promotion": {
+          "const": true
+        },
+        "reject_architecture_stop": {
+          "const": true
+        },
+        "reject_block_cumulative_identification": {
+          "const": true
+        },
+        "reject_candidate_eligibility_promotion": {
+          "const": true
+        },
+        "reject_candidate_selection_when_empty": {
+          "const": true
+        },
+        "reject_direct_to_bad_formula_promotion": {
+          "const": true
+        },
+        "reject_drop_candidate": {
+          "const": true
+        },
+        "reject_duplicate_candidate": {
+          "const": true
+        },
+        "reject_duplicate_json_key": {
+          "const": true
+        },
+        "reject_eligible_count_promotion": {
+          "const": true
+        },
+        "reject_endpoint_credit": {
+          "const": true
+        },
+        "reject_extra_top_level": {
+          "const": true
+        },
+        "reject_false_to_integer_zero": {
+          "const": true
+        },
+        "reject_fixed_h0_as_decay": {
+          "const": true
+        },
+        "reject_global_nonexistence": {
+          "const": true
+        },
+        "reject_hash_as_theorem_evidence": {
+          "const": true
+        },
+        "reject_named_atom_fabrication": {
+          "const": true
+        },
+        "reject_nonfinite_number": {
+          "const": true
+        },
+        "reject_phase_metric_as_named_atom": {
+          "const": true
+        },
+        "reject_pointwise_route_stop": {
+          "const": true
+        },
+        "reject_source_hash_drift": {
+          "const": true
+        },
+        "reject_source_path_traversal": {
+          "const": true
+        },
+        "reject_stopped_cell_reentry": {
+          "const": true
+        },
+        "reject_strict_budget_payment": {
+          "const": true
+        },
+        "reject_target_domain_fabrication": {
+          "const": true
+        },
+        "reject_tpc194_progression": {
+          "const": true
+        },
+        "reject_true_to_integer_one": {
+          "const": true
+        },
+        "reject_tt_exceptional_as_all_scale": {
+          "const": true
+        },
+        "reject_tw_log_as_natural": {
+          "const": true
+        },
+        "reject_twin_prime_claim": {
+          "const": true
+        },
+        "reject_unreviewed_primary_source": {
+          "const": true
+        }
+      },
+      "required": [
+        "reject_L2_promotion",
+        "reject_architecture_stop",
+        "reject_block_cumulative_identification",
+        "reject_candidate_eligibility_promotion",
+        "reject_candidate_selection_when_empty",
+        "reject_direct_to_bad_formula_promotion",
+        "reject_drop_candidate",
+        "reject_duplicate_candidate",
+        "reject_duplicate_json_key",
+        "reject_eligible_count_promotion",
+        "reject_endpoint_credit",
+        "reject_extra_top_level",
+        "reject_false_to_integer_zero",
+        "reject_fixed_h0_as_decay",
+        "reject_global_nonexistence",
+        "reject_hash_as_theorem_evidence",
+        "reject_named_atom_fabrication",
+        "reject_nonfinite_number",
+        "reject_phase_metric_as_named_atom",
+        "reject_pointwise_route_stop",
+        "reject_source_hash_drift",
+        "reject_source_path_traversal",
+        "reject_stopped_cell_reentry",
+        "reject_strict_budget_payment",
+        "reject_target_domain_fabrication",
+        "reject_tpc194_progression",
+        "reject_true_to_integer_one",
+        "reject_tt_exceptional_as_all_scale",
+        "reject_tw_log_as_natural",
+        "reject_twin_prime_claim",
+        "reject_unreviewed_primary_source"
+      ],
+      "type": "object"
+    },
+    "paper": {
+      "const": 193
+    },
+    "qualification_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "eligibility_is_conjunction_of": {
+          "items": false,
+          "maxItems": 13,
+          "minItems": 13,
+          "prefixItems": [
+            {
+              "const": "all_constants_ranges_normalizations_losses_exposed"
+            },
+            {
+              "const": "carrier_axis_match"
+            },
+            {
+              "const": "decay_axis_match"
+            },
+            {
+              "const": "direct_literal_two_mobius"
+            },
+            {
+              "const": "endpoint_axis_match"
+            },
+            {
+              "const": "formula_complete_target_available"
+            },
+            {
+              "const": "normalization_q_over_endpoint_natural"
+            },
+            {
+              "const": "not_stopped_cell_repackage"
+            },
+            {
+              "const": "phase_axis_match"
+            },
+            {
+              "const": "prescribed_atom_source_locked_or_uniform"
+            },
+            {
+              "const": "scale_axis_match"
+            },
+            {
+              "const": "support_axis_match"
+            },
+            {
+              "const": "theorem_backed"
+            }
+          ],
+          "type": "array"
+        },
+        "excluded_inputs": {
+          "items": false,
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "const": "PHASE_L2"
+            },
+            {
+              "const": "LEBESGUE_AE_PHASE"
+            },
+            {
+              "const": "SIZE_ONLY_BOUND"
+            },
+            {
+              "const": "REPACKAGED_STOPPED_METHOD_CELL"
+            }
+          ],
+          "type": "array"
+        },
+        "required_quantifier_signature": {
+          "additionalProperties": false,
+          "properties": {
+            "carrier_axis": {
+              "const": "ACTUAL_FIXED_H0_PACKET"
+            },
+            "decay_axis": {
+              "const": "FIXED_X_POWER_FIXED_ATOM"
+            },
+            "endpoint_axis": {
+              "const": "DETERMINISTIC_ALL_PREFIX"
+            },
+            "phase_axis": {
+              "const": "NAMED_FIXED_ATOM"
+            },
+            "scale_axis": {
+              "const": "DETERMINISTIC_ALL_SCALE"
+            },
+            "support_axis": {
+              "const": "ACTUAL_ACTIVE_SUPPORT"
+            }
+          },
+          "required": [
+            "carrier_axis",
+            "decay_axis",
+            "endpoint_axis",
+            "phase_axis",
+            "scale_axis",
+            "support_axis"
+          ],
+          "type": "object"
+        },
+        "statement_must_expose": {
+          "items": false,
+          "maxItems": 6,
+          "minItems": 6,
+          "prefixItems": [
+            {
+              "const": "theorem locator"
+            },
+            {
+              "const": "literal coefficient"
+            },
+            {
+              "const": "constant dependencies"
+            },
+            {
+              "const": "parameter ranges"
+            },
+            {
+              "const": "normalization"
+            },
+            {
+              "const": "all losses"
+            }
+          ],
+          "type": "array"
+        }
+      },
+      "required": [
+        "eligibility_is_conjunction_of",
+        "excluded_inputs",
+        "required_quantifier_signature",
+        "statement_must_expose"
+      ],
+      "type": "object"
+    },
+    "route_decision": {
+      "additionalProperties": false,
+      "properties": {
+        "architecture_stopped": {
+          "const": false
+        },
+        "arithmetic_first_missing": {
+          "const": "LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION"
+        },
+        "bad_endpoint_parent": {
+          "const": "OPEN_PARENT_READY"
+        },
+        "batch_stop": {
+          "const": "USER_CONFIRMATION_REQUIRED"
+        },
+        "direct_implies_bad_formula_status": {
+          "const": "NOT_FORMULA_CERTIFIED"
+        },
+        "direct_parent": {
+          "const": "OPEN_PARENT_READY"
+        },
+        "gate_first_missing": {
+          "const": "DIRECT_TARGET_SUMMATION_DOMAIN_AND_PREFIX_INDEX"
+        },
+        "global_mathematical_nonexistence": {
+          "const": false
+        },
+        "next_paper": {
+          "const": null
+        },
+        "pointwise_parents_stopped": {
+          "const": false
+        },
+        "reopen_triggers": {
+          "items": false,
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "const": "formula-complete direct target with source-backed atom, prefix domain, ranges, constant, exponent and loss ledger"
+            },
+            {
+              "const": "new theorem-backed natural q/N fixed-atom power estimate preserving all six axes"
+            }
+          ],
+          "type": "array"
+        },
+        "stop_scope": {
+          "const": "TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1"
+        },
+        "verdict": {
+          "const": "NO_ELIGIBLE_MECHANISM_IN_DECLARED_CORPUS"
+        }
+      },
+      "required": [
+        "architecture_stopped",
+        "arithmetic_first_missing",
+        "bad_endpoint_parent",
+        "batch_stop",
+        "direct_implies_bad_formula_status",
+        "direct_parent",
+        "gate_first_missing",
+        "global_mathematical_nonexistence",
+        "next_paper",
+        "pointwise_parents_stopped",
+        "reopen_triggers",
+        "stop_scope",
+        "verdict"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "tpc-193-literal-fixed-atom-candidate-mechanism-gate-v1"
+    },
+    "snapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "const": "2026-07-28"
+        },
+        "hash_mode": {
+          "const": "CANONICAL_UTF8_LF_V2"
+        },
+        "hash_semantics": {
+          "const": "INTEGRITY_ONLY"
+        },
+        "source_of_truth": {
+          "const": "REPOSITORY_ARTIFACTS_NOT_CHAT_MEMORY"
+        }
+      },
+      "required": [
+        "date",
+        "hash_mode",
+        "hash_semantics",
+        "source_of_truth"
+      ],
+      "type": "object"
+    },
+    "source_locks": {
+      "items": false,
+      "maxItems": 17,
+      "minItems": 17,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "be6d9b6ca198adddea619a3fc46194765d4016d361c2cf9cfb84f15259a31e99"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-129-log-chowla-quantifier-firewall/main.tex"
+            },
+            "source_id": {
+              "const": "TPC129.main"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "ec14f81e9f2cdbef47e56f7bba416bd3afe78f7503c71cd1367194a7b389ce2f"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-138-even-carrier-shift-one-firewall/main.tex"
+            },
+            "source_id": {
+              "const": "TPC138.main"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "8d4768d022ccf536ac14182b5a645797816df63a0814f698dd9a373c504bc167"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-149-small-polylog-determinant-two-mobius-corridor/main.tex"
+            },
+            "source_id": {
+              "const": "TPC149.main"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "dccc04bfe231aeb071de8d9d024fdbe9558543b5ad71e79a48dd8343e1d31dfa"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-158-additive-phase-major-minor-gate/main.tex"
+            },
+            "source_id": {
+              "const": "TPC158.main"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "27e256392200d69cdec9ce9eaa10b6767a9f4c34150135ce3ad14956fac429b2"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-159-dyadic-shadow-prefix-lifting/README.md"
+            },
+            "source_id": {
+              "const": "TPC159.readme"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "12b6e806493f254941b66987a0040d7f6673b2ed95528ebf5f6ad79b465a622e"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-167-direct-additive-twist-parseval/main.tex"
+            },
+            "source_id": {
+              "const": "TPC167.main"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "f903909575928d35fae5162e455516b5c6b9f1793a6ab7147ea9389549d31e7a"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-168-separated-phase-registry-sieve/README.md"
+            },
+            "source_id": {
+              "const": "TPC168.readme"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "1790ad09df28c3e5f3a3b3bc556f745204edcc7df15c3614a05bda19817f475c"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-169-maximal-prefix-phase-metric/main.tex"
+            },
+            "source_id": {
+              "const": "TPC169.main"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "11d90177cd0795ba09f4c3e456c5dd9d94b4b238333883d2d3d5ad58717d7540"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-170-metric-packet-corridor-return/experiments/tpc170_metric_corridor_audit.json"
+            },
+            "source_id": {
+              "const": "TPC170.audit"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "4976311ae7f9271f44c3de68278ad1781aba2a4077c6c71a09562df2459ac40d"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-180-production-phase-registry-census/experiments/tpc180_phase_registry_census.json"
+            },
+            "source_id": {
+              "const": "TPC180.census"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "e7f0ce222e3d74c354f3c4878d77e4f2ce048c8cf620c76da6b9908e9e346cd9"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-181-metric-fixed-atom-selector-gate/experiments/tpc181_selector_gate.json"
+            },
+            "source_id": {
+              "const": "TPC181.gate"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "26c918a68faff7b5b296d5ac9f8472003714a504a8dfa89785c1988836032914"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-183-pointwise-parent-interface-comparison/experiments/tpc183_pointwise_parent_interface_comparison.json"
+            },
+            "source_id": {
+              "const": "TPC183.payload"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "532396b6e8e75609eaaec50394bb5d5065aff681437977a77190131ec7fdcd60"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-184-bad-endpoint-literal-target-contract/experiments/tpc184_bad_endpoint_literal_target_contract.json"
+            },
+            "source_id": {
+              "const": "TPC184.payload"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "89f9701c2e39c3b98a9363a37ea9d5afd340c2c48ac51b4cde3243f13b2de16f"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-187-size-only-local-oscillation-barrier/experiments/tpc187_size_only_local_oscillation_barrier.json"
+            },
+            "source_id": {
+              "const": "TPC187.payload"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "d798d40d7bd99387fe3e492a74ec76e0847617f0d63cc7f781cbbf5ba89e05f5"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-189-direct-twist-literal-target-contract/experiments/tpc189_direct_twist_literal_target_contract.json"
+            },
+            "source_id": {
+              "const": "TPC189.payload"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "7c4432b64544271251040717ff0a2c57d64afb1146dd3b1226da99d9b64f12f5"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-190-parseval-to-atom-method-barrier/experiments/tpc190_parseval_to_atom_method_barrier.json"
+            },
+            "source_id": {
+              "const": "TPC190.payload"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "1755b0f39905aef368716abe3425086e683c3b191c558406e2db59605c0ddfcf"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY"
+            },
+            "path": {
+              "const": "papers/tpc-192-mvp9-pointwise-frontier-route-decision/experiments/tpc192_mvp9_pointwise_frontier_route_decision.json"
+            },
+            "source_id": {
+              "const": "TPC192.payload"
+            }
+          },
+          "required": [
+            "canonical_utf8_lf_sha256",
+            "hash_semantics",
+            "path",
+            "source_id"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "stopped_method_cells": {
+      "items": false,
+      "maxItems": 3,
+      "minItems": 3,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "cell": {
+              "const": "phase_metric_uncontrolled_atomic"
+            },
+            "reentry_allowed": {
+              "const": false
+            },
+            "source_paper": {
+              "const": 181
+            },
+            "stop_scope": {
+              "const": "UNCONTROLLED_ATOMIC_PROMOTION_ONLY"
+            }
+          },
+          "required": [
+            "cell",
+            "reentry_allowed",
+            "source_paper",
+            "stop_scope"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "cell": {
+              "const": "SIZE_ONLY_LOCAL_OSCILLATION_METHOD"
+            },
+            "reentry_allowed": {
+              "const": false
+            },
+            "source_paper": {
+              "const": 187
+            },
+            "stop_scope": {
+              "const": "SIZE_ONLY_LOCAL_OSCILLATION_METHOD"
+            }
+          },
+          "required": [
+            "cell",
+            "reentry_allowed",
+            "source_paper",
+            "stop_scope"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "cell": {
+              "const": "PARSEVAL_CHEBYSHEV_TO_PRESCRIBED_ATOM"
+            },
+            "reentry_allowed": {
+              "const": false
+            },
+            "source_paper": {
+              "const": 190
+            },
+            "stop_scope": {
+              "const": "PARSEVAL_CHEBYSHEV_TO_PRESCRIBED_ATOM"
+            }
+          },
+          "required": [
+            "cell",
+            "reentry_allowed",
+            "source_paper",
+            "stop_scope"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "target_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "direct_target": {
+          "additionalProperties": false,
+          "properties": {
+            "admissible_parameter_ranges": {
+              "const": null
+            },
+            "named_atom_id": {
+              "const": null
+            },
+            "packet_schedule_source_locator": {
+              "const": null
+            },
+            "phase_value_mod_1": {
+              "const": null
+            },
+            "phase_value_source_locator": {
+              "const": null
+            },
+            "positive_exponent_sigma": {
+              "const": null
+            },
+            "prefix_index_set": {
+              "const": null
+            },
+            "required_bound_skeleton": {
+              "const": "|F_N(alpha_star)| <= C * X^(-sigma)"
+            },
+            "summation_domain": {
+              "const": null
+            },
+            "total_physical_loss": {
+              "const": null
+            },
+            "uniform_constant_C": {
+              "const": null
+            }
+          },
+          "required": [
+            "admissible_parameter_ranges",
+            "named_atom_id",
+            "packet_schedule_source_locator",
+            "phase_value_mod_1",
+            "phase_value_source_locator",
+            "positive_exponent_sigma",
+            "prefix_index_set",
+            "required_bound_skeleton",
+            "summation_domain",
+            "total_physical_loss",
+            "uniform_constant_C"
+          ],
+          "type": "object"
+        },
+        "fixed_h0": {
+          "additionalProperties": false,
+          "properties": {
+            "semantics": {
+              "const": "SOURCE_BACKED_DATA_FACT_ONLY"
+            },
+            "value": {
+              "const": 2
+            }
+          },
+          "required": [
+            "semantics",
+            "value"
+          ],
+          "type": "object"
+        },
+        "formula_audit": {
+          "additionalProperties": false,
+          "properties": {
+            "block_and_cumulative_are_identical": {
+              "const": false
+            },
+            "direct_to_bad_claimed_by_tpc183": {
+              "const": true
+            },
+            "direct_to_bad_formula_certified": {
+              "const": false
+            },
+            "interpretation_if_block_retained": {
+              "const": "N=T leaves T<t(z)<=2T and does not yield 0<t(z)<=T"
+            },
+            "interpretation_if_cumulative_intended": {
+              "const": "the replacement direct formula and prefix range are not written in TPC-183 or TPC-189"
+            },
+            "status": {
+              "const": "NOT_TESTABLE"
+            }
+          },
+          "required": [
+            "block_and_cumulative_are_identical",
+            "direct_to_bad_claimed_by_tpc183",
+            "direct_to_bad_formula_certified",
+            "interpretation_if_block_retained",
+            "interpretation_if_cumulative_intended",
+            "status"
+          ],
+          "type": "object"
+        },
+        "literal_core": {
+          "additionalProperties": false,
+          "properties": {
+            "coefficient": {
+              "const": "c_z=mu(d+s*z)*mu(u+a*z)"
+            },
+            "coprimality": {
+              "const": "gcd(a,s)=1"
+            },
+            "determinant": {
+              "const": "s*u-a*d=2"
+            },
+            "fiber_coordinate": {
+              "const": "t(z)=a*d+q*z"
+            },
+            "fixed_shift_identity": {
+              "const": "t(z)=a*(d+s*z), t(z)+2=s*(u+a*z)"
+            },
+            "parity": {
+              "const": "a*s is odd"
+            },
+            "q": {
+              "const": "q=a*s"
+            },
+            "ranges": {
+              "const": "a,s>=1; d,u in Z; z in Z"
+            }
+          },
+          "required": [
+            "coefficient",
+            "coprimality",
+            "determinant",
+            "fiber_coordinate",
+            "fixed_shift_identity",
+            "parity",
+            "q",
+            "ranges"
+          ],
+          "type": "object"
+        },
+        "ordered_missing": {
+          "items": false,
+          "maxItems": 9,
+          "minItems": 9,
+          "prefixItems": [
+            {
+              "const": "direct_target_summation_domain"
+            },
+            {
+              "const": "direct_target_prefix_index_set"
+            },
+            {
+              "const": "named_physical_atom_id"
+            },
+            {
+              "const": "phase_value_mod_1"
+            },
+            {
+              "const": "phase_value_source_locator"
+            },
+            {
+              "const": "packet_schedule_source_locator_and_rows"
+            },
+            {
+              "const": "admissible_X_N_q_ranges"
+            },
+            {
+              "const": "uniform_constant_C_and_positive_sigma"
+            },
+            {
+              "const": "complete_physical_loss_ledger"
+            }
+          ],
+          "type": "array"
+        },
+        "source_formula_variants": {
+          "items": false,
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "domain": {
+                  "const": "N<t(z)<=2N"
+                },
+                "formula_id": {
+                  "const": "TPC167_BLOCK_DIRECT_TWIST"
+                },
+                "normalization": {
+                  "const": "q/N"
+                },
+                "role": {
+                  "const": "EXPLICIT_DIRECT_TRANSFORM"
+                },
+                "source_id": {
+                  "const": "TPC167.main"
+                }
+              },
+              "required": [
+                "domain",
+                "formula_id",
+                "normalization",
+                "role",
+                "source_id"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "contract_role_source_id": {
+                  "const": "TPC184.payload"
+                },
+                "domain": {
+                  "const": "0<t(z)<=T"
+                },
+                "domain_normalization_source_id": {
+                  "const": "TPC159.readme"
+                },
+                "formula_id": {
+                  "const": "AUDIT_COMBINED_CUMULATIVE_FIXED_ATOM_TARGET"
+                },
+                "normalization": {
+                  "const": "q/T"
+                },
+                "phase_convention_source_id": {
+                  "const": "TPC167.main"
+                },
+                "role": {
+                  "const": "AUDITED_BAD_ENDPOINT_TARGET"
+                }
+              },
+              "required": [
+                "contract_role_source_id",
+                "domain",
+                "domain_normalization_source_id",
+                "formula_id",
+                "normalization",
+                "phase_convention_source_id",
+                "role"
+              ],
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "status": {
+          "const": "NOT_TESTABLE_FORMULA_INCOMPLETE"
+        }
+      },
+      "required": [
+        "direct_target",
+        "fixed_h0",
+        "formula_audit",
+        "literal_core",
+        "ordered_missing",
+        "source_formula_variants",
+        "status"
+      ],
+      "type": "object"
+    },
+    "title": {
+      "const": "A Literal Fixed-Atom Candidate-Mechanism Gate"
+    }
+  },
+  "required": [
+    "candidate_inventory",
+    "checks",
+    "claim_boundary",
+    "classification",
+    "corpus_partition",
+    "declared_mechanism_corpus",
+    "endpoint_ledger",
+    "level_ledger",
+    "mutation_regressions",
+    "paper",
+    "qualification_contract",
+    "route_decision",
+    "schema",
+    "snapshot",
+    "source_locks",
+    "stopped_method_cells",
+    "target_contract",
+    "title"
+  ],
+  "title": "TPC-193 literal fixed-atom candidate-mechanism gate",
+  "type": "object"
+}

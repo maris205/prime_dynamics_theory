@@ -1,0 +1,341 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype}
+\usepackage{booktabs,tabularx,longtable,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,
+  citecolor=blue!60!black,urlcolor=blue!65!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{4em}
+\setlist{nosep,leftmargin=2.1em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\e}{\mathrm e}
+\newcommand{\T}{\mathbb T}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\STOP}{\textnormal{\textsc{stop-scoped}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{A Literal Fixed-Atom Candidate-Mechanism Gate:}\\
+\textbf{Formula Completeness and Scoped Theorem Exhaustion}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We audit a declared seven-source theorem corpus against the literal
+fixed-atom determinant-two two-M\"obius target selected by MVP9.  Two
+theorems act directly on the arithmetic coefficient: the
+Ter\"av\"ainen--Walker logarithmically averaged affine twist at every fixed
+atom, and the Tao--Ter\"av\"ainen almost-scale correlation theorem after
+periodic reassembly at a rational atom.  Neither preserves the full
+conjunction of natural normalization, deterministic all-prefix/all-scale
+quantifiers, fixed-\(X\) power, and the actual-support axis.  Thus the
+declared corpus has two direct candidates and zero eligible mechanisms.
+
+The audit also finds a prior formula-level gap.  The written direct
+transform uses the terminal block \(N<t(z)\le2N\), while the bad-endpoint
+contract uses the cumulative prefix \(0<t(z)\le T\).  The source-locked
+direct contract does not specify a cumulative replacement, so the claimed
+specialization \(N=T\) is not formula-certified.  The named atom, packet
+schedule, uniform constant, exponent, ranges and physical loss ledger are
+also absent.  The result is a fail-closed L1 scoped exhaustion, not an L2
+estimate or a global nonexistence theorem.  The batch therefore stops at
+TPC-193 for user confirmation.
+\end{abstract}
+
+\section{Gate scope and literal coefficient}
+
+Put \(\e(x)=\exp(2\pi i x)\).  TPC-167 writes the actual arithmetic core as
+\citep{WangTPC167}
+\begin{align}
+ &a,s\ge1,\quad d,u\in\mathbb Z,\quad (a,s)=1,\quad
+ as\ {\rm odd},\quad su-ad=2,                                      \label{eq:data}\\
+ &q=as,\qquad t(z)=ad+qz,\qquad
+ c_z=\mu(d+sz)\mu(u+az).                                           \label{eq:core}
+\end{align}
+The determinant identity also gives
+\[
+ t(z)=a(d+sz),\qquad t(z)+2=s(u+az),
+\]
+so \eqref{eq:core} is the literal fixed-\(h_0=2\) two-M\"obius
+coefficient, not a majorant or synthetic surrogate.
+
+The MVP9 eligibility signature is \citep{WangTPC192}
+\begin{equation}
+\begin{gathered}
+(\mathsf{ACTUAL\_FIXED\_H0\_PACKET},
+ \mathsf{NAMED\_FIXED\_ATOM},\\
+ \mathsf{DETERMINISTIC\_ALL\_PREFIX},
+ \mathsf{DETERMINISTIC\_ALL\_SCALE},\\
+ \mathsf{FIXED\_X\_POWER\_FIXED\_ATOM},
+ \mathsf{ACTUAL\_ACTIVE\_SUPPORT}).
+\end{gathered}
+\end{equation}
+An eligible mechanism must be theorem-backed, act directly on
+\eqref{eq:core}, preserve all six coordinates, and state its constants,
+ranges, normalization and losses.  Phase \(L^2\), almost-every phase,
+size-only control and renamed forms of the three stopped method cells are
+excluded before promotion.
+
+\section{The formula-completeness gate}
+
+\subsection{Two source-locked summation domains}
+
+The only explicit direct transform in the locked chain is
+\begin{equation}
+ I_N^{\rm blk}=\{z:N<t(z)\le2N\},\qquad
+ F_N^{\rm blk}(\alpha)
+ =\frac qN\sum_{z\in I_N^{\rm blk}}c_z\e(-\alpha z).
+\label{eq:block}
+\end{equation}
+The TPC-149 arithmetic theorem uses the same terminal block
+\citep{WangTPC149}.  In contrast, TPC-159 writes the exact cumulative
+domain and \(q/T\) normalization for \(c_z\rho(z)\), while TPC-184 freezes
+the cumulative actual-core object as the prescribed-atom bad-endpoint
+contract.  Combining that domain with the TPC-167 additive-character
+convention, the audited comparison target is
+\begin{equation}
+ B_T(\alpha)
+ =\frac qT\sum_{\substack{z\in\mathbb Z\\0<t(z)\le T}}
+ c_z\e(-\alpha z),
+\label{eq:cumulative}
+\end{equation}
+uniformly over prescribed prefix endpoints
+\citep{WangTPC159,WangTPC167,WangTPC184}.
+
+TPC-183 states that a direct estimate specializes to the bad-endpoint
+estimate by setting \(N=T\), while TPC-189 describes the direct target in
+words as ``all prefix'' \citep{WangTPC183,WangTPC189}.  Neither paper writes
+a direct summation domain or a prefix index set.  If ``direct'' retains
+\eqref{eq:block}, setting \(N=T\) leaves \(T<t(z)\le2T\) and does not
+produce \eqref{eq:cumulative}.  If it instead means a new cumulative
+direct prefix, that new formula and its admissible range are absent.
+
+\begin{proposition}[Formula-level fail-closed boundary]
+\label{prop:formula}
+The source-locked record does not uniquely instantiate the direct target's
+summation domain.  Consequently the TPC-183 implication
+\[
+ \text{direct fixed atom}\Longrightarrow\text{bad-endpoint fixed atom}
+\]
+is not formula-certified by the locked formulas.  This audit records the
+implication as unresolved, not false.
+\end{proposition}
+
+\begin{proof}
+Equations \eqref{eq:block} and \eqref{eq:cumulative} have different
+domains.  The substitution \(N=T\) does not identify them.  No locked
+direct-target formula supplies a third definition that resolves the
+difference.
+\end{proof}
+
+\subsection{Missing physical fields}
+
+TPC-180 finds zero value-bearing named-phase records and zero production
+packet-coordinate rows: the atom identifier, phase value modulo one,
+source locator and packet-schedule locator are null \citep{WangTPC180}.
+TPC-189 also does not freeze the admissible \(X,N,q\) ranges, a positive
+pointwise exponent \(\sigma\), the uniform constant \(C\), or a complete
+physical loss ledger.  Thus the desired skeleton
+\[
+ |F_N(\alpha_\star)|\le C X^{-\sigma}
+\]
+cannot yet be parsed into a unique literal theorem call.  Fixed \(h_0=2\)
+remains a data fact only.
+
+\section{Declared primary-source corpus}
+
+The corpus is finite and explicit.  It contains the five primary sources
+already cited by the direct arithmetic lineage and two additional sources
+found by an exact twisted-correlation/Fourier-uniformity scan:
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.22\textwidth}p{0.28\textwidth}Y@{}}
+\toprule
+Source & Native theorem cell & Gate disposition\\
+\midrule
+Matom\"aki--Radziwi{\l}{\l}--Tao (2015)
+& shift-averaged Chowla; single-factor short Fourier sums
+& averages the shift or interval origin; no fixed determinant-two
+  two-factor theorem \citep{MatomakiRadziwillTao2015}.\\
+Tao (2016)
+& logarithmic two-point Elliott/Chowla
+& fixed affine and reciprocal weight; subsumed for the twisted gate by
+  Ter\"av\"ainen--Walker \citep{Tao2016}.\\
+Helfgott--Radziwi{\l}{\l} (2021)
+& quantitative shift-one parity result
+& TPC-138 proves the even/determinant-one transfer misses the active odd
+  determinant-two carrier \citep{HelfgottRadziwill2021,WangTPC138}.\\
+Pilatte (2023)
+& improved two-point logarithmic Chowla bounds
+& almost-scale shift-one input; the same carrier firewall applies
+  \citep{Pilatte2023,WangTPC138}.\\
+Tao--Ter\"av\"ainen (2026)
+& quantitative natural correlations outside exceptional scales
+& yields the rational-periodic direct candidate below
+  \citep{TaoTeravainen2026}.\\
+Ter\"av\"ainen--Walker (2025)
+& logarithmic affine correlations twisted by every additive character
+& yields the strongest all-fixed-atom direct candidate below
+  \citep{TeravainenWalker2025}.\\
+Pilatte (2026)
+& single-factor Fourier uniformity averaged over interval origins
+& multiplication by a second affine M\"obius factor is not a
+  theorem-backed operation \citep{Pilatte2026}.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+All seven records are reviewed and mapped.  Exhaustion below is therefore
+closed only inside this declared corpus; it says nothing about all possible
+future literature or mechanisms.
+
+\section{The two direct theorem candidates}
+
+\subsection{Every fixed atom under logarithmic averaging}
+
+Ter\"av\"ainen--Walker Lemma 4.2(1) states that, for fixed nonparallel
+positive affine forms, real-valued bounded multiplicative functions with
+the first nonpretentious, and every \(\gamma\in\mathbb R\),
+\begin{equation}
+ \lim_{X\to\infty}\frac1{\log X}
+ \sum_{n\le X}
+ \frac{f_1(a_1n+h_1)f_2(a_2n+h_2)\e(\gamma n)}n=0.
+\label{eq:tw}
+\end{equation}
+Take \(f_1=f_2=\mu\).  Choose a fixed \(z_0\) for which both translated
+intercepts are positive, set \(z=n+z_0\), and use
+\[
+ (a_1,h_1)=(s,d+sz_0),\qquad
+ (a_2,h_2)=(a,u+az_0),\qquad
+ \gamma=-\alpha_\star.
+\]
+Then the nonparallel determinant is
+\[
+ s(u+az_0)-a(d+sz_0)=su-ad=2,
+\]
+so \eqref{eq:tw} acts directly on \eqref{eq:core} at every fixed prescribed
+atom.  The translation changes the phase only by the unit scalar
+\(\e(-\alpha_\star z_0)\).
+
+This is the strongest direct candidate in the corpus.  Its native
+normalization is nevertheless reciprocal/logarithmic, its data are fixed,
+and its conclusion is qualitative \(o(1)\).  TPC-129 proves that terminal
+reciprocal cancellation has no formal implication to an ordinary
+all-prefix sum without extra path information \citep{WangTPC129}.  Hence
+\eqref{eq:tw} supplies neither natural \(q/N\) control nor a uniform
+fixed-\(X\) power.
+
+\subsection{A rational atom outside exceptional scales}
+
+Tao--Ter\"av\"ainen Theorem 3.1, after the quotient lift and periodic
+reassembly of TPC-149, gives absolute \(\eta_0,\kappa_0>0\) and
+\(\mathcal E_X^\star\subset[\sqrt X,X]\) with
+\[
+ \frac1{\log X}\int_{\mathcal E_X^\star}\frac{dt}{t}
+ \ll(\log X)^{-\kappa_0}
+\]
+such that
+\begin{equation}
+ \frac qN\left|
+ \sum_{N<t(z)\le2N}c_z\rho(z)\right|
+ \ll\|\rho\|_\infty(\log X)^{-\kappa_0}
+\label{eq:tt}
+\end{equation}
+whenever \(qR\le(\log X)^{\eta_0}\),
+\(N\in[\sqrt X,X]\setminus\mathcal E_X^\star\), and \(\rho\) has
+period \(R\).  For a rational atom \(\alpha_\star=r/R\), put
+\(\rho(z)=\e(-rz/R)\).  This preserves the literal coefficient and the
+natural \(q/N\) normalization \citep{WangTPC149,WangTPC158}.
+
+The production record, however, contains no source-backed rational atom or
+denominator.  Even if it did, \eqref{eq:tt} controls one dyadic block only,
+deletes exceptional scales, and saves a power of \(\log X\), whose
+fixed-\(X\) exponent is zero.  TPC-159 and TPC-170 leave respectively a
+dyadic bad shadow or an almost-every-phase, prescribed-schedule
+quantifier; neither repairs all required axes
+\citep{WangTPC159,WangTPC170}.
+
+\section{Scoped exhaustion theorem}
+
+\begin{theorem}[TPC-193 candidate-mechanism gate]
+\label{thm:gate}
+In the declared seven-source corpus:
+\[
+ \#\{\text{primary records}\}=7,\qquad
+ \#\{\text{direct candidates}\}=2,\qquad
+ \#\{\text{eligible candidates}\}=0.
+\]
+The target contract is \(\NT\) at the formula level, with first missing
+field
+\[
+ \mathsf{DIRECT\_TARGET\_SUMMATION\_DOMAIN\_AND\_PREFIX\_INDEX}.
+\]
+Independently, each direct candidate fails required analytic axes even
+under either possible domain interpretation.  No theorem-backed genuine
+sublemma is available to determine TPC-194.
+\end{theorem}
+
+\begin{proof}
+Proposition \ref{prop:formula} proves target-formula incompleteness.  For
+\eqref{eq:tw}, the first native mismatch is reciprocal/logarithmic rather
+than natural endpoint normalization; fixed data, all-prefix uniformity,
+all-scale uniformity, a fixed-\(X\) rate and actual support also fail.  For
+\eqref{eq:tt}, the atom has no rational source record and the theorem has
+an exceptional-scale set, a terminal-block domain and only logarithmic
+saving.  Thus neither candidate satisfies the eligibility conjunction.
+The other five primary sources fail the direct two-factor prefilter.  The
+machine registry reviews all seven records and has no unmapped or
+unreviewed cell.
+\end{proof}
+
+\section{Scoped stop, endpoint ledger and claim firewall}
+
+The exact stopped cell is
+\[
+ \mathsf{TPC193\_DECLARED\_CANDIDATE\_MECHANISM\_CORPUS\_V1}.
+\]
+It is a workflow stop for this batch and a corpus-scoped exhaustion.  It
+does not stop either O161 pointwise theorem, the global architecture, or
+mathematical search outside the declared corpus.  The three older method
+cells remain separately scoped \citep{WangTPC181,WangTPC187,WangTPC190}:
+\[
+\begin{gathered}
+ \mathsf{phase\_metric\_uncontrolled\_atomic},\\
+ \mathsf{SIZE\_ONLY\_LOCAL\_OSCILLATION\_METHOD},\\
+ \mathsf{PARSEVAL\_CHEBYSHEV\_TO\_PRESCRIBED\_ATOM}.
+\end{gathered}
+\]
+
+The endpoint ledger remains
+\[
+ \sigma_{\rm named\ atom}=0,\qquad
+ \text{strict }1/400=\mathsf{UNPAID}.
+\]
+There is no program-positive L2, fixed-atom decay, prime-pair lower bound,
+or twin-prime theorem.  Hashes certify integrity only, not theorem truth.
+Following the dynamic route rule, the next action is
+\(\mathsf{USER\_CONFIRMATION\_REQUIRED}\); TPC-194 is not created.
+
+\section{Reproducible audit}
+
+The adjacent generator reconstructs the payload from source-locked
+repository artifacts, validates all source hashes, recomputes candidate
+eligibility, executes deep-copy mutation attacks against semantic and
+schema validators, and emits exact Draft 2020-12 schemas.  Every object is
+closed, every leaf is constant-locked, arrays have exact prefix schemas,
+duplicate JSON keys and nonfinite numbers are rejected, and
+\texttt{--check} performs canonical byte comparison of the payload, audit
+and both schemas.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

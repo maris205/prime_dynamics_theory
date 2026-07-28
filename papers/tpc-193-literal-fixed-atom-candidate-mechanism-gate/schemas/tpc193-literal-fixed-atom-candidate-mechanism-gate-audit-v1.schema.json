@@ -1,0 +1,315 @@
+{
+  "$id": "tpc193-literal-fixed-atom-candidate-mechanism-gate-audit-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "audit_execution": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_byte_comparison": {
+          "const": true
+        },
+        "duplicate_json_keys_rejected": {
+          "const": true
+        },
+        "mutation_mode": {
+          "const": "EXECUTED_DEEP_COPY_AGAINST_SEMANTIC_AND_EXACT_SCHEMA_VALIDATORS"
+        },
+        "nonfinite_json_numbers_rejected": {
+          "const": true
+        },
+        "source_hashes_recomputed": {
+          "const": true
+        }
+      },
+      "required": [
+        "canonical_byte_comparison",
+        "duplicate_json_keys_rejected",
+        "mutation_mode",
+        "nonfinite_json_numbers_rejected",
+        "source_hashes_recomputed"
+      ],
+      "type": "object"
+    },
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "architecture_stopped": {
+          "const": false
+        },
+        "block_equals_cumulative_prefix": {
+          "const": false
+        },
+        "declared_corpus_is_global_mathematical_nonexistence": {
+          "const": false
+        },
+        "direct_implies_bad_formula_certified": {
+          "const": false
+        },
+        "fixed_atom_decay_obtained": {
+          "const": false
+        },
+        "fixed_h0_data_is_decay": {
+          "const": false
+        },
+        "hash_integrity_is_theorem_evidence": {
+          "const": false
+        },
+        "named_physical_atom_identified": {
+          "const": false
+        },
+        "pointwise_parents_stopped": {
+          "const": false
+        },
+        "prime_pair_lower_bound": {
+          "const": false
+        },
+        "program_positive_L2": {
+          "const": false
+        },
+        "strict_one_over_400": {
+          "const": false
+        },
+        "tpc194_authorized": {
+          "const": false
+        },
+        "twin_prime_theorem": {
+          "const": false
+        }
+      },
+      "required": [
+        "architecture_stopped",
+        "block_equals_cumulative_prefix",
+        "declared_corpus_is_global_mathematical_nonexistence",
+        "direct_implies_bad_formula_certified",
+        "fixed_atom_decay_obtained",
+        "fixed_h0_data_is_decay",
+        "hash_integrity_is_theorem_evidence",
+        "named_physical_atom_identified",
+        "pointwise_parents_stopped",
+        "prime_pair_lower_bound",
+        "program_positive_L2",
+        "strict_one_over_400",
+        "tpc194_authorized",
+        "twin_prime_theorem"
+      ],
+      "type": "object"
+    },
+    "direct_candidate_count": {
+      "const": 2
+    },
+    "eligible_candidate_count": {
+      "const": 0
+    },
+    "gate_first_missing": {
+      "const": "DIRECT_TARGET_SUMMATION_DOMAIN_AND_PREFIX_INDEX"
+    },
+    "manifest_payload_sha256": {
+      "const": "6d57d443b0efee28ee8e6cdb09f4386347095ca248b9a0cd42533b326537c244"
+    },
+    "manifest_schema": {
+      "const": "tpc-193-literal-fixed-atom-candidate-mechanism-gate-v1"
+    },
+    "mutation_regressions": {
+      "additionalProperties": false,
+      "properties": {
+        "reject_L2_promotion": {
+          "const": true
+        },
+        "reject_architecture_stop": {
+          "const": true
+        },
+        "reject_block_cumulative_identification": {
+          "const": true
+        },
+        "reject_candidate_eligibility_promotion": {
+          "const": true
+        },
+        "reject_candidate_selection_when_empty": {
+          "const": true
+        },
+        "reject_direct_to_bad_formula_promotion": {
+          "const": true
+        },
+        "reject_drop_candidate": {
+          "const": true
+        },
+        "reject_duplicate_candidate": {
+          "const": true
+        },
+        "reject_duplicate_json_key": {
+          "const": true
+        },
+        "reject_eligible_count_promotion": {
+          "const": true
+        },
+        "reject_endpoint_credit": {
+          "const": true
+        },
+        "reject_extra_top_level": {
+          "const": true
+        },
+        "reject_false_to_integer_zero": {
+          "const": true
+        },
+        "reject_fixed_h0_as_decay": {
+          "const": true
+        },
+        "reject_global_nonexistence": {
+          "const": true
+        },
+        "reject_hash_as_theorem_evidence": {
+          "const": true
+        },
+        "reject_named_atom_fabrication": {
+          "const": true
+        },
+        "reject_nonfinite_number": {
+          "const": true
+        },
+        "reject_phase_metric_as_named_atom": {
+          "const": true
+        },
+        "reject_pointwise_route_stop": {
+          "const": true
+        },
+        "reject_source_hash_drift": {
+          "const": true
+        },
+        "reject_source_path_traversal": {
+          "const": true
+        },
+        "reject_stopped_cell_reentry": {
+          "const": true
+        },
+        "reject_strict_budget_payment": {
+          "const": true
+        },
+        "reject_target_domain_fabrication": {
+          "const": true
+        },
+        "reject_tpc194_progression": {
+          "const": true
+        },
+        "reject_true_to_integer_one": {
+          "const": true
+        },
+        "reject_tt_exceptional_as_all_scale": {
+          "const": true
+        },
+        "reject_tw_log_as_natural": {
+          "const": true
+        },
+        "reject_twin_prime_claim": {
+          "const": true
+        },
+        "reject_unreviewed_primary_source": {
+          "const": true
+        }
+      },
+      "required": [
+        "reject_L2_promotion",
+        "reject_architecture_stop",
+        "reject_block_cumulative_identification",
+        "reject_candidate_eligibility_promotion",
+        "reject_candidate_selection_when_empty",
+        "reject_direct_to_bad_formula_promotion",
+        "reject_drop_candidate",
+        "reject_duplicate_candidate",
+        "reject_duplicate_json_key",
+        "reject_eligible_count_promotion",
+        "reject_endpoint_credit",
+        "reject_extra_top_level",
+        "reject_false_to_integer_zero",
+        "reject_fixed_h0_as_decay",
+        "reject_global_nonexistence",
+        "reject_hash_as_theorem_evidence",
+        "reject_named_atom_fabrication",
+        "reject_nonfinite_number",
+        "reject_phase_metric_as_named_atom",
+        "reject_pointwise_route_stop",
+        "reject_source_hash_drift",
+        "reject_source_path_traversal",
+        "reject_stopped_cell_reentry",
+        "reject_strict_budget_payment",
+        "reject_target_domain_fabrication",
+        "reject_tpc194_progression",
+        "reject_true_to_integer_one",
+        "reject_tt_exceptional_as_all_scale",
+        "reject_tw_log_as_natural",
+        "reject_twin_prime_claim",
+        "reject_unreviewed_primary_source"
+      ],
+      "type": "object"
+    },
+    "paper": {
+      "const": 193
+    },
+    "primary_source_record_count": {
+      "const": 7
+    },
+    "repository_source_lock_count": {
+      "const": 17
+    },
+    "route_action": {
+      "const": "USER_CONFIRMATION_REQUIRED"
+    },
+    "schema": {
+      "const": "tpc-193-literal-fixed-atom-candidate-mechanism-gate-audit-v1"
+    },
+    "schema_hardening": {
+      "additionalProperties": false,
+      "properties": {
+        "array_layers": {
+          "const": 18
+        },
+        "closed_object_layers": {
+          "const": 58
+        },
+        "const_nodes": {
+          "const": 402
+        },
+        "prefix_item_layers": {
+          "const": 18
+        }
+      },
+      "required": [
+        "array_layers",
+        "closed_object_layers",
+        "const_nodes",
+        "prefix_item_layers"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "target_contract_status": {
+      "const": "NOT_TESTABLE_FORMULA_INCOMPLETE"
+    },
+    "verdict": {
+      "const": "NO_ELIGIBLE_MECHANISM_IN_DECLARED_CORPUS"
+    }
+  },
+  "required": [
+    "audit_execution",
+    "claim_boundary",
+    "direct_candidate_count",
+    "eligible_candidate_count",
+    "gate_first_missing",
+    "manifest_payload_sha256",
+    "manifest_schema",
+    "mutation_regressions",
+    "paper",
+    "primary_source_record_count",
+    "repository_source_lock_count",
+    "route_action",
+    "schema",
+    "schema_hardening",
+    "status",
+    "target_contract_status",
+    "verdict"
+  ],
+  "title": "TPC-193 literal fixed-atom candidate-mechanism gate audit",
+  "type": "object"
+}

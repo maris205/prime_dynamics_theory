@@ -1,0 +1,553 @@
+{
+  "candidate_inventory": [
+    {
+      "axis_map": {
+        "carrier_axis": "FIXED_DETERMINANT_TWO_AFFINE_PAIR",
+        "decay_axis": "QUALITATIVE_LOG_AVERAGED_O1",
+        "endpoint_axis": "LOG_WEIGHTED_CUMULATIVE_PREFIX",
+        "phase_axis": "EVERY_FIXED_ADDITIVE_ATOM",
+        "scale_axis": "ASYMPTOTIC_FIXED_DATA",
+        "support_axis": "FORMAL_FIXED_AFFINE_SUPPORT"
+      },
+      "candidate_id": "TW25.LOG_TWISTED_AFFINE",
+      "constant_range_normalization_loss": {
+        "constants": "qualitative o(1), depending on the fixed affine data and fixed atom; no effective rate is asserted",
+        "losses": [
+          "reciprocal weight 1/n",
+          "normalization 1/log X",
+          "fixed affine data",
+          "no uniform pointwise power"
+        ],
+        "normalization": "(1/log X) sum_(n<=X) f1(a1*n+h1) f2(a2*n+h2) e(gamma*n)/n",
+        "range": "fixed positive nonparallel affine forms; every fixed gamma in R; X tends to infinity"
+      },
+      "direct_specialization": {
+        "affine_form_1": "(a1,h1)=(s,d+s*z0)",
+        "affine_form_2": "(a2,h2)=(a,u+a*z0)",
+        "determinant": "a1*h2-a2*h1=s*(u+a*z0)-a*(d+s*z0)=s*u-a*d=2",
+        "functions": "f1=f2=mu",
+        "phase": "gamma=-alpha_star",
+        "translation_effect": "choose fixed z0 so both intercepts are positive; determinant unchanged; phase gains one unit scalar"
+      },
+      "eligibility_checks": {
+        "all_constants_ranges_normalizations_losses_exposed": true,
+        "carrier_axis_match": false,
+        "decay_axis_match": false,
+        "direct_literal_two_mobius": true,
+        "endpoint_axis_match": false,
+        "formula_complete_target_available": false,
+        "normalization_q_over_endpoint_natural": false,
+        "not_stopped_cell_repackage": true,
+        "phase_axis_match": true,
+        "prescribed_atom_source_locked_or_uniform": true,
+        "scale_axis_match": false,
+        "support_axis_match": false,
+        "theorem_backed": true
+      },
+      "eligible": false,
+      "first_failure": "NORMALIZATION_NOT_NATURAL_Q_OVER_ENDPOINT",
+      "source_ids": [
+        "TW25.LOG_TWISTED_AFFINE",
+        "TPC129.main"
+      ],
+      "theorem_statement": "For fixed nonparallel affine forms and f1 nonpretentious, the logarithmic average of f1(a1*n+h1)f2(a2*n+h2)e(gamma*n) tends to zero for every fixed gamma."
+    },
+    {
+      "axis_map": {
+        "carrier_axis": "ACTUAL_DETERMINANT_TWO_PERIODIC_CORE",
+        "decay_axis": "LOG_POWER_ONLY",
+        "endpoint_axis": "TERMINAL_DYADIC_BLOCK",
+        "phase_axis": "RATIONAL_PERIODIC_ATOM_IF_SOURCE_BACKED",
+        "scale_axis": "ALL_BUT_LOG_DENSITY_EXCEPTIONAL_SET",
+        "support_axis": "ACTUAL_CORE_NOT_ACTUAL_ACTIVE_SUPPORT"
+      },
+      "candidate_id": "TT26.RATIONAL_PERIODIC_ATOM",
+      "constant_range_normalization_loss": {
+        "constants": "absolute eta_0,kappa_0>0 and an absolute implicit constant inherited through TPC-149",
+        "losses": [
+          "q*R <= (log X)^eta_0",
+          "N outside E_X_star",
+          "single terminal block",
+          "saving (log X)^(-kappa_0)"
+        ],
+        "normalization": "(q/N) sum_(N<t(z)<=2N) c_z rho(z)",
+        "range": "sqrt(X)<=N<=X outside E_X_star; rational atom alpha_star=r/R; bounded period-R rho"
+      },
+      "direct_specialization": {
+        "affine_form_1": "d+s*z",
+        "affine_form_2": "u+a*z",
+        "determinant": "s*u-a*d=2",
+        "functions": "literal product mu(d+s*z)*mu(u+a*z)",
+        "phase": "rho(z)=e(-r*z/R) when alpha_star=r/R",
+        "translation_effect": "not required"
+      },
+      "eligibility_checks": {
+        "all_constants_ranges_normalizations_losses_exposed": true,
+        "carrier_axis_match": true,
+        "decay_axis_match": false,
+        "direct_literal_two_mobius": true,
+        "endpoint_axis_match": false,
+        "formula_complete_target_available": false,
+        "normalization_q_over_endpoint_natural": true,
+        "not_stopped_cell_repackage": true,
+        "phase_axis_match": false,
+        "prescribed_atom_source_locked_or_uniform": false,
+        "scale_axis_match": false,
+        "support_axis_match": false,
+        "theorem_backed": true
+      },
+      "eligible": false,
+      "first_failure": "NAMED_ATOM_VALUE_AND_RATIONAL_DENOMINATOR_SOURCE_ABSENT",
+      "source_ids": [
+        "TT26.QUANTITATIVE_CORRELATION",
+        "TPC149.main",
+        "TPC158.main"
+      ],
+      "theorem_statement": "Outside one logarithmically sparse scale set, the q/N-normalized literal determinant-two core has a log-power bound against every bounded small-period multiplier."
+    }
+  ],
+  "checks": {
+    "all_primary_sources_reviewed": true,
+    "all_repository_sources_locked": true,
+    "candidate_eligibility_recomputed": true,
+    "candidate_statements_expose_native_losses": true,
+    "declared_corpus_exhaustion_not_global_nonexistence": true,
+    "direct_block_and_bad_prefix_not_identified": true,
+    "direct_to_bad_not_formula_promoted": true,
+    "eligible_count_zero": true,
+    "fixed_h0_data_not_decay": true,
+    "named_atom_absence_preserved": true,
+    "no_tpc194_selected": true,
+    "pointwise_parents_remain_open": true,
+    "schema_exact_and_closed": true,
+    "source_hashes_are_integrity_only": true,
+    "stopped_method_cells_not_repackaged": true,
+    "strict_budget_unpaid": true,
+    "target_contract_incompleteness_preserved": true,
+    "tt_exceptional_log_power_not_all_scale_power": true,
+    "tw_log_average_not_natural_prefix": true
+  },
+  "claim_boundary": {
+    "architecture_stopped": false,
+    "block_equals_cumulative_prefix": false,
+    "declared_corpus_is_global_mathematical_nonexistence": false,
+    "direct_implies_bad_formula_certified": false,
+    "fixed_atom_decay_obtained": false,
+    "fixed_h0_data_is_decay": false,
+    "hash_integrity_is_theorem_evidence": false,
+    "named_physical_atom_identified": false,
+    "pointwise_parents_stopped": false,
+    "prime_pair_lower_bound": false,
+    "program_positive_L2": false,
+    "strict_one_over_400": false,
+    "tpc194_authorized": false,
+    "twin_prime_theorem": false
+  },
+  "classification": "SOURCE_LOCKED_CANDIDATE_GATE_L1",
+  "corpus_partition": {
+    "direct_candidate_count": 2,
+    "eligible_candidate_count": 0,
+    "eligible_candidate_ids": [],
+    "not_mapped_count": 0,
+    "not_reviewed_count": 0,
+    "primary_source_record_count": 7,
+    "reviewed_primary_source_count": 7,
+    "screened_non_direct_count": 5,
+    "selected_candidate_id": null,
+    "smallest_genuine_sublemma": null
+  },
+  "declared_mechanism_corpus": {
+    "as_of_date": "2026-07-28",
+    "closed_world_semantics": "EXHAUSTIVE_ONLY_WITHIN_THE_EXPLICIT_SEVEN_PRIMARY_SOURCE_RECORDS_AND_LOCKED_REPOSITORY_INTERFACES",
+    "direct_candidate_ids": [
+      "TW25.LOG_TWISTED_AFFINE",
+      "TT26.RATIONAL_PERIODIC_ATOM"
+    ],
+    "primary_source_records": [
+      {
+        "id": "HR21.SHIFT_ONE_PARITY",
+        "locator": "arXiv:2103.06853",
+        "review_status": "REVIEWED_SCREENED_NON_DIRECT",
+        "theorem_locator": "quantitative shift-one conclusions only",
+        "title": "Expansion, Divisibility and Parity",
+        "why_not_direct": "TPC-138 proves that the even/determinant-one transfer is disjoint from the active odd determinant-two carrier.",
+        "year": 2021
+      },
+      {
+        "id": "MRT15.AVERAGED_CHOWLA",
+        "locator": "doi:10.2140/ant.2015.9.2167",
+        "review_status": "REVIEWED_SCREENED_NON_DIRECT",
+        "theorem_locator": "averaged Chowla theorem and short Fourier sum",
+        "title": "An Averaged Form of Chowla's Conjecture",
+        "why_not_direct": "The two-factor theorem averages shifts; the Fourier theorem has one multiplicative factor and averages interval origins.",
+        "year": 2015
+      },
+      {
+        "id": "PILATTE23.ALMOST_SCALE_SHIFT_ONE",
+        "locator": "arXiv:2310.19357",
+        "review_status": "REVIEWED_SCREENED_NON_DIRECT",
+        "theorem_locator": "two-point logarithmic Chowla quantitative bound",
+        "title": "Improved Bounds for the Two-Point Logarithmic Chowla Conjecture",
+        "why_not_direct": "The shift-one input does not transfer to the active odd determinant-two carrier and has no prescribed additive atom.",
+        "year": 2023
+      },
+      {
+        "id": "PILATTE26.FOURIER_UNIFORMITY",
+        "locator": "arXiv:2604.26564v1",
+        "review_status": "REVIEWED_SCREENED_NON_DIRECT",
+        "theorem_locator": "Theorem 1.2 / abstract Fourier-uniformity estimate",
+        "title": "Improved Bounds for the Fourier Uniformity Conjecture",
+        "why_not_direct": "It controls one Liouville factor uniformly in phase after averaging the interval origin; a second affine Möbius factor cannot be inserted by a theorem-backed operation.",
+        "year": 2026
+      },
+      {
+        "id": "TAO16.LOG_TWO_POINT",
+        "locator": "doi:10.1017/fmp.2016.6",
+        "review_status": "REVIEWED_SCREENED_NON_DIRECT",
+        "theorem_locator": "Theorem 1.3",
+        "title": "The Logarithmically Averaged Chowla and Elliott Conjectures for Two-Point Correlations",
+        "why_not_direct": "Its fixed-affine logarithmic zero-phase theorem is subsumed for the fixed-atom screen by TW25.",
+        "year": 2016
+      },
+      {
+        "id": "TT26.QUANTITATIVE_CORRELATION",
+        "locator": "arXiv:2512.01739v2",
+        "review_status": "REVIEWED_DIRECT_CANDIDATE",
+        "theorem_locator": "Theorem 3.1",
+        "title": "Quantitative Correlations and Some Problems on Prime Factors of Consecutive Integers",
+        "why_not_direct": "",
+        "year": 2026
+      },
+      {
+        "id": "TW25.LOG_TWISTED_AFFINE",
+        "locator": "doi:10.1007/s00209-025-03770-2",
+        "review_status": "REVIEWED_DIRECT_CANDIDATE",
+        "theorem_locator": "Lemma 4.2(1)",
+        "title": "On a Bohr Set Analogue of Chowla's Conjecture",
+        "why_not_direct": "",
+        "year": 2025
+      }
+    ],
+    "scope_id": "TPC193_DECLARED_PRIMARY_THEOREM_CORPUS_V1",
+    "screened_non_direct_source_ids": [
+      "HR21.SHIFT_ONE_PARITY",
+      "MRT15.AVERAGED_CHOWLA",
+      "PILATTE23.ALMOST_SCALE_SHIFT_ONE",
+      "PILATTE26.FOURIER_UNIFORMITY",
+      "TAO16.LOG_TWO_POINT"
+    ],
+    "search_surface": [
+      "repository direct arithmetic lineage TPC-108,129,138-140,149,157-170,181,187,190",
+      "fixed-atom affine multiplicative correlation theorems",
+      "additive-twist and Fourier-uniformity theorems through 2026-07-28"
+    ]
+  },
+  "endpoint_ledger": {
+    "named_atom_sigma_credit": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "required_strict_budget": {
+      "denominator": 400,
+      "numerator": 1
+    },
+    "state": "UNPAID"
+  },
+  "level_ledger": {
+    "L0": "literal formula comparison, source census, candidate registry, strict schemas and executed mutation diagnostics",
+    "L1": "scoped declared-corpus exhaustion and formula-interface fail-closed route decision",
+    "L2": "NONE",
+    "fixed_h0_gate": "SOURCE_BACKED_DATA_FACT_ONLY",
+    "new_program_positive_L2": false
+  },
+  "mutation_regressions": {
+    "reject_L2_promotion": true,
+    "reject_architecture_stop": true,
+    "reject_block_cumulative_identification": true,
+    "reject_candidate_eligibility_promotion": true,
+    "reject_candidate_selection_when_empty": true,
+    "reject_direct_to_bad_formula_promotion": true,
+    "reject_drop_candidate": true,
+    "reject_duplicate_candidate": true,
+    "reject_duplicate_json_key": true,
+    "reject_eligible_count_promotion": true,
+    "reject_endpoint_credit": true,
+    "reject_extra_top_level": true,
+    "reject_false_to_integer_zero": true,
+    "reject_fixed_h0_as_decay": true,
+    "reject_global_nonexistence": true,
+    "reject_hash_as_theorem_evidence": true,
+    "reject_named_atom_fabrication": true,
+    "reject_nonfinite_number": true,
+    "reject_phase_metric_as_named_atom": true,
+    "reject_pointwise_route_stop": true,
+    "reject_source_hash_drift": true,
+    "reject_source_path_traversal": true,
+    "reject_stopped_cell_reentry": true,
+    "reject_strict_budget_payment": true,
+    "reject_target_domain_fabrication": true,
+    "reject_tpc194_progression": true,
+    "reject_true_to_integer_one": true,
+    "reject_tt_exceptional_as_all_scale": true,
+    "reject_tw_log_as_natural": true,
+    "reject_twin_prime_claim": true,
+    "reject_unreviewed_primary_source": true
+  },
+  "paper": 193,
+  "qualification_contract": {
+    "eligibility_is_conjunction_of": [
+      "all_constants_ranges_normalizations_losses_exposed",
+      "carrier_axis_match",
+      "decay_axis_match",
+      "direct_literal_two_mobius",
+      "endpoint_axis_match",
+      "formula_complete_target_available",
+      "normalization_q_over_endpoint_natural",
+      "not_stopped_cell_repackage",
+      "phase_axis_match",
+      "prescribed_atom_source_locked_or_uniform",
+      "scale_axis_match",
+      "support_axis_match",
+      "theorem_backed"
+    ],
+    "excluded_inputs": [
+      "PHASE_L2",
+      "LEBESGUE_AE_PHASE",
+      "SIZE_ONLY_BOUND",
+      "REPACKAGED_STOPPED_METHOD_CELL"
+    ],
+    "required_quantifier_signature": {
+      "carrier_axis": "ACTUAL_FIXED_H0_PACKET",
+      "decay_axis": "FIXED_X_POWER_FIXED_ATOM",
+      "endpoint_axis": "DETERMINISTIC_ALL_PREFIX",
+      "phase_axis": "NAMED_FIXED_ATOM",
+      "scale_axis": "DETERMINISTIC_ALL_SCALE",
+      "support_axis": "ACTUAL_ACTIVE_SUPPORT"
+    },
+    "statement_must_expose": [
+      "theorem locator",
+      "literal coefficient",
+      "constant dependencies",
+      "parameter ranges",
+      "normalization",
+      "all losses"
+    ]
+  },
+  "route_decision": {
+    "architecture_stopped": false,
+    "arithmetic_first_missing": "LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION",
+    "bad_endpoint_parent": "OPEN_PARENT_READY",
+    "batch_stop": "USER_CONFIRMATION_REQUIRED",
+    "direct_implies_bad_formula_status": "NOT_FORMULA_CERTIFIED",
+    "direct_parent": "OPEN_PARENT_READY",
+    "gate_first_missing": "DIRECT_TARGET_SUMMATION_DOMAIN_AND_PREFIX_INDEX",
+    "global_mathematical_nonexistence": false,
+    "next_paper": null,
+    "pointwise_parents_stopped": false,
+    "reopen_triggers": [
+      "formula-complete direct target with source-backed atom, prefix domain, ranges, constant, exponent and loss ledger",
+      "new theorem-backed natural q/N fixed-atom power estimate preserving all six axes"
+    ],
+    "stop_scope": "TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1",
+    "verdict": "NO_ELIGIBLE_MECHANISM_IN_DECLARED_CORPUS"
+  },
+  "schema": "tpc-193-literal-fixed-atom-candidate-mechanism-gate-v1",
+  "snapshot": {
+    "date": "2026-07-28",
+    "hash_mode": "CANONICAL_UTF8_LF_V2",
+    "hash_semantics": "INTEGRITY_ONLY",
+    "source_of_truth": "REPOSITORY_ARTIFACTS_NOT_CHAT_MEMORY"
+  },
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "be6d9b6ca198adddea619a3fc46194765d4016d361c2cf9cfb84f15259a31e99",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-129-log-chowla-quantifier-firewall/main.tex",
+      "source_id": "TPC129.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "ec14f81e9f2cdbef47e56f7bba416bd3afe78f7503c71cd1367194a7b389ce2f",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-138-even-carrier-shift-one-firewall/main.tex",
+      "source_id": "TPC138.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "8d4768d022ccf536ac14182b5a645797816df63a0814f698dd9a373c504bc167",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-149-small-polylog-determinant-two-mobius-corridor/main.tex",
+      "source_id": "TPC149.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "dccc04bfe231aeb071de8d9d024fdbe9558543b5ad71e79a48dd8343e1d31dfa",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-158-additive-phase-major-minor-gate/main.tex",
+      "source_id": "TPC158.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "27e256392200d69cdec9ce9eaa10b6767a9f4c34150135ce3ad14956fac429b2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-159-dyadic-shadow-prefix-lifting/README.md",
+      "source_id": "TPC159.readme"
+    },
+    {
+      "canonical_utf8_lf_sha256": "12b6e806493f254941b66987a0040d7f6673b2ed95528ebf5f6ad79b465a622e",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-167-direct-additive-twist-parseval/main.tex",
+      "source_id": "TPC167.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "f903909575928d35fae5162e455516b5c6b9f1793a6ab7147ea9389549d31e7a",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-168-separated-phase-registry-sieve/README.md",
+      "source_id": "TPC168.readme"
+    },
+    {
+      "canonical_utf8_lf_sha256": "1790ad09df28c3e5f3a3b3bc556f745204edcc7df15c3614a05bda19817f475c",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-169-maximal-prefix-phase-metric/main.tex",
+      "source_id": "TPC169.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "11d90177cd0795ba09f4c3e456c5dd9d94b4b238333883d2d3d5ad58717d7540",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-170-metric-packet-corridor-return/experiments/tpc170_metric_corridor_audit.json",
+      "source_id": "TPC170.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "4976311ae7f9271f44c3de68278ad1781aba2a4077c6c71a09562df2459ac40d",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-180-production-phase-registry-census/experiments/tpc180_phase_registry_census.json",
+      "source_id": "TPC180.census"
+    },
+    {
+      "canonical_utf8_lf_sha256": "e7f0ce222e3d74c354f3c4878d77e4f2ce048c8cf620c76da6b9908e9e346cd9",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-181-metric-fixed-atom-selector-gate/experiments/tpc181_selector_gate.json",
+      "source_id": "TPC181.gate"
+    },
+    {
+      "canonical_utf8_lf_sha256": "26c918a68faff7b5b296d5ac9f8472003714a504a8dfa89785c1988836032914",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-183-pointwise-parent-interface-comparison/experiments/tpc183_pointwise_parent_interface_comparison.json",
+      "source_id": "TPC183.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "532396b6e8e75609eaaec50394bb5d5065aff681437977a77190131ec7fdcd60",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-184-bad-endpoint-literal-target-contract/experiments/tpc184_bad_endpoint_literal_target_contract.json",
+      "source_id": "TPC184.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "89f9701c2e39c3b98a9363a37ea9d5afd340c2c48ac51b4cde3243f13b2de16f",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-187-size-only-local-oscillation-barrier/experiments/tpc187_size_only_local_oscillation_barrier.json",
+      "source_id": "TPC187.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "d798d40d7bd99387fe3e492a74ec76e0847617f0d63cc7f781cbbf5ba89e05f5",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-189-direct-twist-literal-target-contract/experiments/tpc189_direct_twist_literal_target_contract.json",
+      "source_id": "TPC189.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "7c4432b64544271251040717ff0a2c57d64afb1146dd3b1226da99d9b64f12f5",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-190-parseval-to-atom-method-barrier/experiments/tpc190_parseval_to_atom_method_barrier.json",
+      "source_id": "TPC190.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "1755b0f39905aef368716abe3425086e683c3b191c558406e2db59605c0ddfcf",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-192-mvp9-pointwise-frontier-route-decision/experiments/tpc192_mvp9_pointwise_frontier_route_decision.json",
+      "source_id": "TPC192.payload"
+    }
+  ],
+  "stopped_method_cells": [
+    {
+      "cell": "phase_metric_uncontrolled_atomic",
+      "reentry_allowed": false,
+      "source_paper": 181,
+      "stop_scope": "UNCONTROLLED_ATOMIC_PROMOTION_ONLY"
+    },
+    {
+      "cell": "SIZE_ONLY_LOCAL_OSCILLATION_METHOD",
+      "reentry_allowed": false,
+      "source_paper": 187,
+      "stop_scope": "SIZE_ONLY_LOCAL_OSCILLATION_METHOD"
+    },
+    {
+      "cell": "PARSEVAL_CHEBYSHEV_TO_PRESCRIBED_ATOM",
+      "reentry_allowed": false,
+      "source_paper": 190,
+      "stop_scope": "PARSEVAL_CHEBYSHEV_TO_PRESCRIBED_ATOM"
+    }
+  ],
+  "target_contract": {
+    "direct_target": {
+      "admissible_parameter_ranges": null,
+      "named_atom_id": null,
+      "packet_schedule_source_locator": null,
+      "phase_value_mod_1": null,
+      "phase_value_source_locator": null,
+      "positive_exponent_sigma": null,
+      "prefix_index_set": null,
+      "required_bound_skeleton": "|F_N(alpha_star)| <= C * X^(-sigma)",
+      "summation_domain": null,
+      "total_physical_loss": null,
+      "uniform_constant_C": null
+    },
+    "fixed_h0": {
+      "semantics": "SOURCE_BACKED_DATA_FACT_ONLY",
+      "value": 2
+    },
+    "formula_audit": {
+      "block_and_cumulative_are_identical": false,
+      "direct_to_bad_claimed_by_tpc183": true,
+      "direct_to_bad_formula_certified": false,
+      "interpretation_if_block_retained": "N=T leaves T<t(z)<=2T and does not yield 0<t(z)<=T",
+      "interpretation_if_cumulative_intended": "the replacement direct formula and prefix range are not written in TPC-183 or TPC-189",
+      "status": "NOT_TESTABLE"
+    },
+    "literal_core": {
+      "coefficient": "c_z=mu(d+s*z)*mu(u+a*z)",
+      "coprimality": "gcd(a,s)=1",
+      "determinant": "s*u-a*d=2",
+      "fiber_coordinate": "t(z)=a*d+q*z",
+      "fixed_shift_identity": "t(z)=a*(d+s*z), t(z)+2=s*(u+a*z)",
+      "parity": "a*s is odd",
+      "q": "q=a*s",
+      "ranges": "a,s>=1; d,u in Z; z in Z"
+    },
+    "ordered_missing": [
+      "direct_target_summation_domain",
+      "direct_target_prefix_index_set",
+      "named_physical_atom_id",
+      "phase_value_mod_1",
+      "phase_value_source_locator",
+      "packet_schedule_source_locator_and_rows",
+      "admissible_X_N_q_ranges",
+      "uniform_constant_C_and_positive_sigma",
+      "complete_physical_loss_ledger"
+    ],
+    "source_formula_variants": [
+      {
+        "domain": "N<t(z)<=2N",
+        "formula_id": "TPC167_BLOCK_DIRECT_TWIST",
+        "normalization": "q/N",
+        "role": "EXPLICIT_DIRECT_TRANSFORM",
+        "source_id": "TPC167.main"
+      },
+      {
+        "contract_role_source_id": "TPC184.payload",
+        "domain": "0<t(z)<=T",
+        "domain_normalization_source_id": "TPC159.readme",
+        "formula_id": "AUDIT_COMBINED_CUMULATIVE_FIXED_ATOM_TARGET",
+        "normalization": "q/T",
+        "phase_convention_source_id": "TPC167.main",
+        "role": "AUDITED_BAD_ENDPOINT_TARGET"
+      }
+    ],
+    "status": "NOT_TESTABLE_FORMULA_INCOMPLETE"
+  },
+  "title": "A Literal Fixed-Atom Candidate-Mechanism Gate"
+}
