@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/tpc165-local-global-gluing-v1.schema.json",
+  "title": "TPC-165 local-to-global formal crosswalk gluing certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "source_locks",
+    "formal_gluing_theorem",
+    "production_status",
+    "synthetic_nonvacuity",
+    "three_gate_separation",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-165-local-global-crosswalk-gluing-v1"
+    },
+    "source_locks": {
+      "type": "array",
+      "minItems": 4
+    },
+    "formal_gluing_theorem": {
+      "type": "object",
+      "required": [
+        "local_totality",
+        "overlap_bijections",
+        "cocycle",
+        "typed_payload_preservation",
+        "exact_column_conservation",
+        "conclusion"
+      ]
+    },
+    "production_status": {
+      "type": "object",
+      "required": [
+        "source_backed_local_edge_count",
+        "local_patch_family_status",
+        "formal_occurrence_totality"
+      ]
+    },
+    "synthetic_nonvacuity": {
+      "type": "object",
+      "required": [
+        "evidence_mode",
+        "validation",
+        "global_formal_row_count"
+      ]
+    },
+    "three_gate_separation": {
+      "type": "object",
+      "required": [
+        "formal_occurrence_totality",
+        "actual_active_support",
+        "canonical_minimal_representation"
+      ]
+    },
+    "claim_boundary": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc171-integration-manifest-v1.schema.json",
+  "title": "TPC-171 source-locked occurrence-phase-return integration manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "quantifierSignature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "carrier_axis",
+        "phase_axis",
+        "endpoint_axis",
+        "scale_axis",
+        "decay_axis",
+        "support_axis"
+      ],
+      "properties": {
+        "carrier_axis": {
+          "enum": [
+            "FROZEN_ARCHIVE",
+            "FORMAL_LOCAL_FAMILIES",
+            "ACTUAL_CORE_SINGLE_CELL",
+            "SEPARATED_PHASE_REGISTRY",
+            "EXPLICIT_PACKET_CORRIDOR",
+            "ALL_NONSOFT_CUT_PATHS",
+            "ACTUAL_OCCURRENCE_CARRIER",
+            "ACTUAL_FIXED_H0_PACKET",
+            "LITERAL_WEIGHT_REGISTRY",
+            "PHYSICAL_PHASE_REGISTRY",
+            "PHYSICAL_ENDPOINT_REGISTRY",
+            "PHYSICAL_NORMALIZATION_REGISTRY"
+          ]
+        },
+        "phase_axis": {
+          "enum": [
+            "NOT_APPLICABLE",
+            "LEBESGUE_L2",
+            "FINITE_REGISTRY_DENSITY",
+            "LEBESGUE_AE_FIXED_PHASE",
+            "NAMED_FIXED_ATOM",
+            "UNIFORM_ALL_PHASE"
+          ]
+        },
+        "endpoint_axis": {
+          "enum": [
+            "NOT_APPLICABLE",
+            "TERMINAL_INTERVAL",
+            "ALL_PREFIX_THETA_SHELL",
+            "DETERMINISTIC_ALL_PREFIX"
+          ]
+        },
+        "scale_axis": {
+          "enum": [
+            "FROZEN_FINITE_PACKET",
+            "EVERY_DECLARED_SCALE",
+            "EVENTUALLY_PRESCRIBED_SCHEDULE",
+            "DETERMINISTIC_ALL_SCALE"
+          ]
+        },
+        "decay_axis": {
+          "enum": [
+            "NONE",
+            "SCHEMA_ONLY",
+            "FIXED_X_POWER_PHASE_AVERAGED",
+            "FIXED_X_POWER_PHASE_METRIC",
+            "FIXED_X_POWER_FIXED_ATOM",
+            "LOG_SAVING"
+          ]
+        },
+        "support_axis": {
+          "enum": [
+            "FORMAL_ARCHIVE",
+            "FORMAL_LOCAL_FAMILY",
+            "SOURCE_BACKED_LOCAL_SUPPORT",
+            "FORMAL_OCCURRENCE",
+            "ACTUAL_CORE",
+            "ACTUAL_ACTIVE_SUPPORT"
+          ]
+        }
+      }
+    },
+    "quantifiedRecord": {
+      "type": "object",
+      "required": [
+        "quantifier_signature"
+      ],
+      "properties": {
+        "quantifier_signature": {
+          "$ref": "#/$defs/quantifierSignature"
+        }
+      }
+    }
+  },
+  "required": [
+    "schema",
+    "snapshot",
+    "source_locks",
+    "quantifier_contract",
+    "imports",
+    "structural_state",
+    "arithmetic_state",
+    "route_families",
+    "nodes",
+    "typed_frontiers",
+    "h9_arithmetic_firewall",
+    "endpoint_ledger_v4",
+    "first_missing",
+    "progress_classification",
+    "claim_boundary",
+    "current_verdict"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-171-source-locked-occurrence-phase-return-integration-v1"
+    },
+    "snapshot": {
+      "type": "object"
+    },
+    "source_locks": {
+      "type": "array"
+    },
+    "quantifier_contract": {
+      "type": "object"
+    },
+    "imports": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/quantifiedRecord"
+      }
+    },
+    "structural_state": {
+      "type": "object"
+    },
+    "arithmetic_state": {
+      "type": "object"
+    },
+    "route_families": {
+      "type": "object"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/quantifiedRecord"
+      }
+    },
+    "typed_frontiers": {
+      "type": "object"
+    },
+    "h9_arithmetic_firewall": {
+      "type": "object"
+    },
+    "endpoint_ledger_v4": {
+      "type": "object"
+    },
+    "first_missing": {
+      "type": "object"
+    },
+    "progress_classification": {
+      "type": "object"
+    },
+    "claim_boundary": {
+      "type": "object"
+    },
+    "current_verdict": {
+      "enum": [
+        "NOT_TESTABLE"
+      ]
+    }
+  }
+}

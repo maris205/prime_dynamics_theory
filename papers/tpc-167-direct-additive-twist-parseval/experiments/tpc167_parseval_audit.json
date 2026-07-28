@@ -1,0 +1,85 @@
+{
+  "checks": {
+    "exact_grid_parseval_numerical": true,
+    "grid_size_at_least_length": true,
+    "normalized_energy_below_counting_bound": true,
+    "phase_power_qualifier_explicit": true,
+    "pointwise_scope_not_promoted": true,
+    "second_complete_grid_parseval": true,
+    "upstream_pass": true
+  },
+  "claim_boundary": {
+    "actual_fixed_h0_core": true,
+    "analytic_norm": "L2_PHASE",
+    "fixed_atom": false,
+    "one_over_400": false,
+    "phase_averaged_L2": true,
+    "physical_H3": false,
+    "prime_pair_lower_bound": false,
+    "program_positive_L2": false,
+    "specified_phase": false,
+    "twin_prime_theorem": false,
+    "uniform_all_phase": false
+  },
+  "fourier_grid": {
+    "absolute_error": 9.414691248821327e-14,
+    "condition": "M >= interval_length",
+    "fixture_scope": "FINITE_COMPLETE_GRID_IMPLEMENTATION_CHECK",
+    "grid_size": 17,
+    "mean_square": 8.000000000000094,
+    "second_grid_absolute_error": 0.0,
+    "second_grid_mean_square": 8.0,
+    "second_grid_size": 8192,
+    "target_energy": 8
+  },
+  "hash_mode": "CANONICAL_UTF8_LF_V2",
+  "mutation_regressions": {
+    "reject_grid_identity_when_M_is_smaller_than_length": true,
+    "reject_one_over_400_or_twin_prime_promotion": true,
+    "reject_parseval_as_mobius_specific_cancellation": true,
+    "reject_phase_L2_as_fixed_phase": true,
+    "reject_phase_average_as_physical_phase_registry": true,
+    "reject_phase_power_as_endpoint_V3_pass": true
+  },
+  "power_envelope": {
+    "assumptions": "q <= (log X)^eta_0 and N >= sqrt(X)",
+    "phase_L2_bound": "sqrt(2)*X^(-1/4)*(log X)^(eta_0/2)",
+    "positive_fixed_X_power": true,
+    "qualifier": "PHASE_AVERAGED_ONLY"
+  },
+  "route_decision": {
+    "advance": "direct_twist_control_in_phase_L2_at_every_scale",
+    "next_object": "source_locked_phase_registry_or_pointwise_phase_input",
+    "original_pointwise_node_closed": false,
+    "parent_open_node": "O161.direct_additive_twist_core"
+  },
+  "schema": "tpc-167-parseval-audit-v1",
+  "status": "PASS",
+  "theorem": {
+    "analytic_norm": "L2_PHASE",
+    "bad_phase_measure": "at_most_q^2_E_N_over_N^2_lambda^2",
+    "export_id": "A167.direct_additive_twist_phase_L2",
+    "fixed_atom": false,
+    "fixture": {
+      "N": 1000,
+      "counting_upper": 0.015224999999999999,
+      "energy": 8,
+      "length": 11,
+      "normalized_exact": 0.0018,
+      "q": 15,
+      "start": 137
+    },
+    "identity": "integral_0^1 |(q/N) sum c_z e(-alpha z)|^2 d alpha = q^2 E_N/N^2",
+    "orthogonality_not_mobius_specific": true,
+    "program_positive_L2": false,
+    "scale_exceptional_set_required": false,
+    "status": "PROVED_L1_ACTUAL_CORE_PHASE_METRIC_SINGLE_CELL"
+  },
+  "upstream": {
+    "audit_sha256": "3455e21e63d2de62b84f1820cf229cb4b56338f659cd376f9f2681ba71911985",
+    "audit_status": "PASS",
+    "hash_semantics": "INTEGRITY_ONLY",
+    "main_tex_sha256": "dccc04bfe231aeb071de8d9d024fdbe9558543b5ad71e79a48dd8343e1d31dfa",
+    "paper": "TPC-158"
+  }
+}

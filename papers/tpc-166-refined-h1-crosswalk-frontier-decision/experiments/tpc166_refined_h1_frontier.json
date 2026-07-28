@@ -1,0 +1,227 @@
+{
+  "claim_boundary": {
+    "actual_active_support_proved": false,
+    "canonical_minimal_representation_proved": false,
+    "positive_fixed_X_L2": false,
+    "prime_pair_lower_bound": false,
+    "production_crosswalk_proved": false,
+    "production_local_occurrence_family_proved": false,
+    "selected_route_stopped": false,
+    "three_roots_are_full_H1_minimal_blocker_antichain": false,
+    "tpc162_historical_first_missing_rewritten": false,
+    "twin_prime_theorem": false
+  },
+  "current_decision": {
+    "actual_carrier_impossibility": false,
+    "next_forced_object": "H1.source_backed_local_occurrence_edge_family",
+    "parallel_independent_roots": [
+      "H1.actual_active_support_certificate",
+      "H1.canonical_minimal_representation_certificate"
+    ],
+    "selected_route_stopped": false,
+    "verdict": "NOT_TESTABLE"
+  },
+  "historical_pointer": {
+    "frozen_first_missing": "H1.theorem_backed_occurrence_provenance_crosswalk",
+    "interpretation": "TPC-162 remains historically correct at its declared monolithic interface.",
+    "retroactively_rewritten": false,
+    "source": "TPC162"
+  },
+  "minimal_not_testable_root_antichain": [
+    "H1.source_backed_local_occurrence_edge_family",
+    "H1.actual_active_support_certificate",
+    "H1.canonical_minimal_representation_certificate"
+  ],
+  "production_evidence": {
+    "production_actual_active_support": "NOT_TESTABLE",
+    "production_canonical_minimal_representation": "NOT_TESTABLE",
+    "production_formal_occurrence_totality": "NOT_TESTABLE",
+    "production_local_patch_family": "NOT_TESTABLE",
+    "production_overlap_cocycle": "NOT_TESTABLE",
+    "theorem_backed_local_occurrence_edge_count": 0
+  },
+  "refined_dag": {
+    "acyclic": true,
+    "dependency_direction": "PARENT_IS_PREREQUISITE",
+    "nodes": [
+      {
+        "node_id": "S164.minimal_archived_separation_key",
+        "parents": [],
+        "role": "ARCHIVE_ADDRESS",
+        "source": "TPC164",
+        "status": "PROVED"
+      },
+      {
+        "node_id": "S165.finite_typed_gluing_theorem",
+        "parents": [],
+        "role": "FORMAL_DESCENT_THEOREM",
+        "source": "TPC165",
+        "status": "PROVED"
+      },
+      {
+        "node_id": "H1.source_backed_local_occurrence_edge_family",
+        "parents": [],
+        "role": "SOURCE_BACKED_LOCAL_EDGE_ROOT",
+        "source": null,
+        "status": "NOT_TESTABLE"
+      },
+      {
+        "node_id": "H1.actual_active_support_certificate",
+        "parents": [],
+        "role": "ACTUAL_CARRIER_ROOT",
+        "source": null,
+        "status": "NOT_TESTABLE"
+      },
+      {
+        "node_id": "H1.canonical_minimal_representation_certificate",
+        "parents": [],
+        "role": "REPRESENTATION_ROOT",
+        "source": null,
+        "status": "NOT_TESTABLE"
+      },
+      {
+        "node_id": "H1.local_overlap_bijection_cocycle",
+        "parents": [
+          "H1.source_backed_local_occurrence_edge_family"
+        ],
+        "role": "LOCAL_COMPATIBILITY",
+        "source": null,
+        "status": "NOT_TESTABLE"
+      },
+      {
+        "node_id": "H1.glued_formal_occurrence_totality",
+        "parents": [
+          "S164.minimal_archived_separation_key",
+          "S165.finite_typed_gluing_theorem",
+          "H1.source_backed_local_occurrence_edge_family",
+          "H1.local_overlap_bijection_cocycle"
+        ],
+        "role": "FORMAL_GLOBAL_CARRIER",
+        "source": null,
+        "status": "NOT_TESTABLE"
+      },
+      {
+        "node_id": "H1.production_occurrence_witness",
+        "parents": [
+          "H1.glued_formal_occurrence_totality",
+          "H1.actual_active_support_certificate",
+          "H1.canonical_minimal_representation_certificate"
+        ],
+        "role": "PRODUCTION_TYPED_WITNESS",
+        "source": null,
+        "status": "NOT_TESTABLE"
+      },
+      {
+        "node_id": "H1.theorem_backed_occurrence_provenance_crosswalk",
+        "parents": [
+          "H1.production_occurrence_witness"
+        ],
+        "role": "HISTORICAL_MONOLITHIC_TARGET",
+        "source": "TPC162_HISTORICAL_POINTER",
+        "status": "NOT_TESTABLE"
+      }
+    ],
+    "target": "H1.theorem_backed_occurrence_provenance_crosswalk"
+  },
+  "refinement_scope": {
+    "deferred_full_H1_graph_integration": "TPC171",
+    "full_map_clause_additional_requirements": "NINE_ZERO_DEFECTS_PLUS_INDEPENDENT_OCCURRENCE_REGISTRY",
+    "independent_occurrence_registry_node": "H1.frontier_occurrence_registry_totality",
+    "is_full_H1_map_clause": false,
+    "is_full_H1_minimal_blocker_antichain": false,
+    "nine_zero_defect_nodes": [
+      "H1.defect.D_L",
+      "H1.defect.D_QD",
+      "H1.defect.D_QZ",
+      "H1.defect.D_G",
+      "H1.defect.D_P",
+      "H1.defect.D_DZ",
+      "H1.defect.D_GP",
+      "H1.defect.D_cover",
+      "H1.defect.D_rec"
+    ],
+    "scalar_plus_ETO_clause_status": "INDEPENDENT_NOT_TESTABLE",
+    "scalar_plus_ETO_nodes": [
+      "H1.complete_FUM_scalar_oX",
+      "H1.theorem_backed_ETO_disposition"
+    ],
+    "target_subdag": "HISTORICAL_MONOLITHIC_CROSSWALK_SUBDAG_ONLY"
+  },
+  "schema": "tpc-166-refined-h1-crosswalk-frontier-v1",
+  "selection": {
+    "canonical_selected_representative": "H1.source_backed_local_occurrence_edge_family",
+    "full_antichain_preserved": [
+      "H1.source_backed_local_occurrence_edge_family",
+      "H1.actual_active_support_certificate",
+      "H1.canonical_minimal_representation_certificate"
+    ],
+    "refined_first_child_pointer": "H1.source_backed_local_occurrence_edge_family",
+    "selection_erases_other_antichain_members": false,
+    "selection_reason": "It is the first constructible source-producing object in the local-to-global branch."
+  },
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "aa6c2b8ed0d982a89b82392806d1fcf1f35eeed4c6ade3113ad3b80a2472f67c",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-156-h1-occurrence-crosswalk-route-decision/experiments/tpc156_h1_occurrence_decision.json",
+      "source_id": "TPC156.decision"
+    },
+    {
+      "canonical_utf8_lf_sha256": "50da08bdc6cb1ff6e0f07e53544fc0206e82047537ee075606d239df4c8c8a68",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-162-mvp6-actual-carrier-endpoint-route-decision/experiments/tpc162_mvp6_snapshot.json",
+      "source_id": "TPC162.snapshot"
+    },
+    {
+      "canonical_utf8_lf_sha256": "9c0be6d63b4f015f74d889ce8b0d46c5c37803fea40f9d5f3a4461e281685ec4",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-162-mvp6-actual-carrier-endpoint-route-decision/experiments/tpc162_mvp6_route_audit.json",
+      "source_id": "TPC162.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "b694330939bab0ca36062ea71ff37e538d847f752e05fef14acea951a52d7b34",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-163-source-locator-census-native-key-collision/experiments/tpc163_source_census.json",
+      "source_id": "TPC163.census"
+    },
+    {
+      "canonical_utf8_lf_sha256": "58abf57fdf27338c0889709d439af17585226b62aefd44d690af83ef5ea72808",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-163-source-locator-census-native-key-collision/experiments/tpc163_source_census_audit.json",
+      "source_id": "TPC163.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "756ae04913b639c4f4643e23ecbf36faf11f6b10b56cdfb536526208598aa44c",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-164-minimal-archived-separation-key/experiments/tpc164_minimal_key_certificate.json",
+      "source_id": "TPC164.certificate"
+    },
+    {
+      "canonical_utf8_lf_sha256": "023d2dc9838f3448fa763ab85791de870a7a5bcaf1b0f5f9a0008d0db8cfc4ff",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-164-minimal-archived-separation-key/experiments/tpc164_minimal_key_audit.json",
+      "source_id": "TPC164.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "4fda5186f62bb50e79e6a5c7fa09265437f45843c9bc598f731eb556edffb149",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-165-source-backed-local-global-crosswalk-gluing/experiments/tpc165_gluing_certificate.json",
+      "source_id": "TPC165.certificate"
+    },
+    {
+      "canonical_utf8_lf_sha256": "7a1b1c5170dd43c529abff016dcf4808881da05b311c2b985b4f09cbd6d154a0",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-165-source-backed-local-global-crosswalk-gluing/experiments/tpc165_gluing_audit.json",
+      "source_id": "TPC165.audit"
+    }
+  ]
+}

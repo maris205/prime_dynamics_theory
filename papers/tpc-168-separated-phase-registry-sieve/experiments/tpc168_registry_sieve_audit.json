@@ -1,0 +1,91 @@
+{
+  "checks": {
+    "bad_count_bound_holds": true,
+    "registry_is_delta_separated": true,
+    "sampling_bound_holds": true,
+    "selector_bad_fraction_is_sparse": true,
+    "selector_distinguished_phase_is_bad": true,
+    "selector_scope_not_promoted": true,
+    "upstream_pass": true
+  },
+  "claim_boundary": {
+    "actual_fixed_h0_core": true,
+    "all_but_sparse_registry_phases": true,
+    "analytic_norm": "L2_PHASE_REGISTRY",
+    "distinguished_phase": false,
+    "finite_registry_L2": true,
+    "fixed_atom": false,
+    "one_over_400": false,
+    "physical_phase_registry_supplied": false,
+    "prime_pair_lower_bound": false,
+    "program_positive_L2": false,
+    "twin_prime_theorem": false
+  },
+  "hash_mode": "CANONICAL_UTF8_LF_V2",
+  "mutation_regressions": {
+    "reject_coefficient_counterexample_as_mobius_lower_bound": true,
+    "reject_density_one_as_all_phases": true,
+    "reject_fixed_X_phase_power_as_one_over_400": true,
+    "reject_named_phase_from_counting_only": true,
+    "reject_phase_registry_as_physical_occurrence_registry": true,
+    "reject_registry_without_separation_certificate": true
+  },
+  "registry_corollary": {
+    "analytic_norm": "L2_PHASE_REGISTRY",
+    "bad_fraction": "at_most_(c^(-1)+4*pi/theta)*(q/N+q^2/N^2)/lambda^2",
+    "density_one_threshold": "lambda=(q/N)^(1/4)",
+    "export_id": "A168.actual_core_registry_density",
+    "fixed_atom": false,
+    "general_bad_count": "lambda^(-2)*(q^2/N^2)*(delta^(-1)+4*pi*(L_N-1))*E_N",
+    "program_positive_L2": false,
+    "quasi_uniform_assumptions": "delta >= c/M and M >= theta*L_N",
+    "status": "PROVED_L1_ACTUAL_CORE_PHASE_METRIC_FINITE_REGISTRY"
+  },
+  "route_decision": {
+    "advance": "finite_separated_phase_registry_density",
+    "original_pointwise_direct_twist_closed": false,
+    "required_next": "selector_crosswalk_or_pointwise_phase_theorem"
+  },
+  "sampling_theorem": {
+    "analytic_norm": "L2_PHASE_REGISTRY",
+    "bound": "sum_j |P(alpha_j)|^2 <= (delta^(-1)+4*pi*(L-1))*sum_n|b_n|^2",
+    "delta_domain": "0 < delta <= 1",
+    "export_id": "A168.separated_phase_sampling",
+    "fixture": {
+      "analytic_upper": 2586.656201435222,
+      "bad_count": 6,
+      "bad_count_upper": 161.66601258970138,
+      "coefficient_energy": 24,
+      "delta": 0.13799999999999996,
+      "length": 9,
+      "registry_size": 7,
+      "sample_energy": 226.41506533465807,
+      "threshold": 4.0
+    },
+    "status": "PROVED_ANALYTIC_L2_PHASE_SAMPLING"
+  },
+  "schema": "tpc-168-registry-sieve-audit-v1",
+  "selector_firewall": {
+    "fixture": {
+      "bad_count": 1,
+      "bad_fraction": 0.0078125,
+      "coefficient": "constant_one",
+      "distinguished_normalized_value": 1.0,
+      "distinguished_phase": 0.0,
+      "registry_size": 128,
+      "threshold": 0.25
+    },
+    "literal_mobius_lower_bound_claimed": false,
+    "meaning": "density_one_registry_control_does_not_identify_a_named_phase",
+    "not_meaning": "literal_mobius_twist_is_large",
+    "status": "PROVED_SCOPED_SELECTOR_NONIMPLICATION"
+  },
+  "status": "PASS",
+  "upstream": {
+    "audit_sha256": "11986318a257d650adb324fee8b5a0683da7673570c2928fb74056f38bc69ae5",
+    "audit_status": "PASS",
+    "hash_semantics": "INTEGRITY_ONLY",
+    "main_tex_sha256": "12b6e806493f254941b66987a0040d7f6673b2ed95528ebf5f6ad79b465a622e",
+    "paper": "TPC-167"
+  }
+}

@@ -1,0 +1,382 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\e}{\mathrm e}
+\newcommand{\T}{\mathbb T}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+
+\title{\textbf{Metric All-Prefix Return on Prescribed
+Determinant-Two Packet Corridors:\\
+Borel--Cantelli, Representative Invariance, and the Fixed-Atom Stop}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We lift the single-cell maximal phase-\(L^2\) theorem of TPC-169 to
+a prescribed countable corridor of determinant-two packets.  The
+only uniformity cost is the explicit sum of packet energies.
+Borel--Cantelli then gives, for almost every fixed phase, simultaneous
+eventual control of every declared packet and every prefix.  Under a
+dyadic ambient schedule, polylogarithmically many packets, and
+terminal scales at least the square root of the ambient scale, every
+power strictly below \(1/4\) is admissible.  We prove that all
+B\'ezout representatives for fixed \((a,s)\) are translations of the
+same coefficient packet and should be canonicalized rather than
+union-counted.  Exact Abel summation returns the maximal estimate to
+literal weights.  A fixed-atom example shows that almost-everywhere
+phase control cannot be promoted to a named physical phase.
+\end{abstract}
+
+\noindent\textbf{Keywords.}
+Borel--Cantelli; maximal Fourier sum; packet corridor; Abel
+summation; determinant two.
+
+\medskip
+\noindent\fcolorbox{red!70!black}{red!3}{\parbox{0.94\linewidth}{
+\textbf{Claim boundary.}
+The quantifier proved here is \emph{Lebesgue-almost every fixed
+phase} on a prescribed packet schedule.  It is not a theorem at a
+named fixed atom, not a theorem for a phase selected separately at
+each scale, and not uniform over undeclared coefficient packets.
+The positive fixed-\(X\) power is phase-metric.  No production phase
+registry, physical H3 return, \(1/400\), prime-pair lower bound, or
+twin-prime theorem is proved.}}
+
+\section{Canonical determinant-two representatives}
+
+Fix coprime positive odd-product integers \(a,s\) and let
+\[
+ su-ad=2.
+\]
+The apparent infinity of integer solutions does not create
+independent coefficient packets.
+
+\begin{lemma}[B\'ezout representative invariance]\label{lem:translate}
+Every second solution \((d',u')\) is uniquely of the form
+\begin{equation}
+ d'=d+sk,\qquad u'=u+ak,\qquad k\in\mathbb Z.
+\label{eq:representative}
+\end{equation}
+Writing
+\[
+ q=as,\quad t_{d}(z)=ad+qz,\quad
+ c_{d,u}(z)=\mu(d+sz)\mu(u+az),
+\]
+one has
+\begin{equation}
+ t_{d'}(z)=t_d(z+k),\qquad
+ c_{d',u'}(z)=c_{d,u}(z+k).
+\label{eq:translation}
+\end{equation}
+If a multiplier is translated covariantly by
+\(\rho'(z)=\rho(z+k)\), then every corresponding additive-twist
+prefix differs by the single factor \(\e(\alpha k)\).
+\end{lemma}
+
+\begin{proof}
+Subtracting the two determinant equations gives
+\(s(u'-u)=a(d'-d)\).  Coprimality yields
+\(d'-d=sk\) and \(u'-u=ak\), proving
+\eqref{eq:representative}.  Direct substitution gives
+\eqref{eq:translation}.  With \(w=z+k\),
+\[
+ \rho'(z)\e(-\alpha z)
+ =\rho(w)\e\{-\alpha(w-k)\}
+ =\e(\alpha k)\rho(w)\e(-\alpha w).
+\]
+\end{proof}
+
+Thus a packet registry must select one canonical representative for
+each fixed \((a,s)\).  Counting all representatives as distinct
+would manufacture a false infinite union.  The covariance condition
+on \(\rho\) is essential; an unshifted coordinate multiplier need
+not describe the same physical packet.
+
+\section{Prescribed packet energies}
+
+Let \(X_n\to\infty\) be a prescribed ambient schedule.  At level
+\(n\), let \(\mathcal P_n\) be a finite, explicit packet list.  A
+packet \(p\) consists of a canonical determinant-two fiber, a
+terminal scale \(T_{n,p}\), and a bounded multiplier
+\(\rho_{n,p}\).  Let \(L_{n,p}\) be the number of positive fiber
+points up to \(T_{n,p}\), and put
+\[
+ D_{n,p}=1+\lceil\log_2L_{n,p}\rceil.
+\]
+For its ordered points \(z_{n,p,j}\), define
+\[
+ S_{n,p,k}(\alpha)=
+ \sum_{j\le k}
+ \mu(d+sz_{n,p,j})\mu(u+az_{n,p,j})
+ \rho_{n,p}(z_{n,p,j})\e(-\alpha z_{n,p,j}),
+\]
+\[
+ G_{n,p}(\alpha)=
+ \frac{q_{n,p}}{T_{n,p}}
+ \max_{k\le L_{n,p}}|S_{n,p,k}(\alpha)|.
+\]
+TPC-169 proves \citep{WangTPC169}
+\begin{equation}
+ \int_{\T}G_{n,p}^2
+ \le V_{n,p},
+\qquad
+ V_{n,p}:=
+ D_{n,p}^2\norm{\rho_{n,p}}_\infty^2
+ \left(
+ \frac{q_{n,p}}{T_{n,p}}
+ +\frac{q_{n,p}^2}{T_{n,p}^2}
+ \right).
+\label{eq:packetenergy}
+\end{equation}
+No two packets are assumed to share a coefficient sequence.
+Uniformity is paid by the literal sum of \eqref{eq:packetenergy}.
+
+\section{Metric packet-corridor theorem}
+
+\begin{theorem}[Prescribed-corridor Borel--Cantelli]\label{thm:bc}
+Let \(\lambda_n>0\).  If
+\begin{equation}
+ \sum_{n=1}^{\infty}
+ \lambda_n^{-2}
+ \sum_{p\in\mathcal P_n}V_{n,p}<\infty,
+\label{eq:summability}
+\end{equation}
+then for Lebesgue-almost every fixed \(\alpha\in\T\), there exists
+\(n_0(\alpha)\) such that for all \(n\ge n_0(\alpha)\), all
+\(p\in\mathcal P_n\), and all \(k\le L_{n,p}\),
+\begin{equation}
+ \frac{q_{n,p}}{T_{n,p}}
+ |S_{n,p,k}(\alpha)|
+ \le\lambda_n.
+\label{eq:eventual}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let
+\[
+ E_n=\{\alpha:\max_{p\in\mathcal P_n}G_{n,p}(\alpha)>\lambda_n\}.
+\]
+The union bound, Chebyshev, and \eqref{eq:packetenergy} give
+\[
+ \operatorname{meas}(E_n)
+ \le\lambda_n^{-2}\sum_{p\in\mathcal P_n}V_{n,p}.
+\]
+Thus \(\sum_n\operatorname{meas}(E_n)<\infty\).
+The first Borel--Cantelli lemma, which requires no independence,
+implies that almost every \(\alpha\) belongs to only finitely many
+\(E_n\) \citep{Durrett2019}.  This is exactly
+\eqref{eq:eventual}.
+\end{proof}
+
+The words ``prescribed'' and ``fixed'' are load-bearing.  The packet
+lists must be fixed before the exceptional phases are read, and the
+same \(\alpha\) is followed through the schedule.  The resulting
+null set depends on that entire prescribed schedule; changing or
+enlarging the schedule requires paying the new packet energies and
+constructing the corresponding null set again.
+
+\section{A positive-power dyadic corridor}
+
+\begin{corollary}[Every exponent below one quarter]\label{cor:power}
+Suppose
+\[
+ X_n=2^n,\qquad
+ \sqrt{X_n}\le T_{n,p}\le X_n,
+\]
+\[
+ q_{n,p}\ll(\log X_n)^\eta,\qquad
+ |\mathcal P_n|\ll(\log X_n)^C,\qquad
+ \norm{\rho_{n,p}}_\infty\ll1
+\]
+uniformly in declared packets.  Then for every fixed
+\(0<\delta<1/4\), \cref{thm:bc} applies with
+\[
+ \lambda_n=X_n^{-\delta}.
+\]
+\end{corollary}
+
+\begin{proof}
+Uniformly, \(D_{n,p}=O(\log X_n)\), so
+\[
+ \lambda_n^{-2}\sum_{p\in\mathcal P_n}V_{n,p}
+ \ll
+ (\log X_n)^{C+\eta+2}
+ X_n^{-1/2+2\delta}.
+\]
+With \(X_n=2^n\), this is a polynomial in \(n\) times a geometric
+sequence of ratio tending to
+\(2^{-(1/2-2\delta)}<1\).  Hence \eqref{eq:summability} holds.
+\end{proof}
+
+To obtain natural endpoint normalization, include dyadic terminal
+shells in the packet list.  An endpoint
+\(U\in[T_{n,p}/2,T_{n,p}]\) then satisfies
+\[
+ \frac{q_{n,p}}U|S_{n,p,k}(\alpha)|
+ \le2X_n^{-\delta}.
+\]
+Only \(O(\log X_n)\) shells are required, so this cost is absorbed by
+increasing \(C\) by one.  This produces simultaneous metric control
+throughout the \emph{declared} endpoint corridor, not over an
+unregistered physical family.
+
+\section{Exact Abel return}
+
+Let \(w_1,\ldots,w_L\in\mathbb C\), set
+\[
+ \Delta_iw=w_i-w_{i+1}\quad(i<L),\qquad
+ \Delta_Lw=w_L,
+\]
+and
+\[
+ \operatorname{Var}_*(w)=\sum_{i=1}^L|\Delta_iw|.
+\]
+
+\begin{proposition}[Metric weighted return]\label{prop:abel}
+Whenever \(G_{n,p}(\alpha)\le\lambda_n\),
+\begin{equation}
+ \frac{q_{n,p}}{T_{n,p}}
+ \left|\sum_{j=1}^{L}
+ b_j\e(-\alpha z_j)w_j\right|
+ \le\lambda_n\operatorname{Var}_*(w),
+\label{eq:abel}
+\end{equation}
+where \(b_j=c_{z_j}\rho(z_j)\).  A prefix cutoff has
+\(\operatorname{Var}_*(w)=1\).
+\end{proposition}
+
+\begin{proof}
+Exact Abel summation gives
+\[
+ \sum_{j=1}^Lb_j\e(-\alpha z_j)w_j
+ =
+ \sum_{i=1}^L
+ \left(\sum_{j\le i}b_j\e(-\alpha z_j)\right)\Delta_iw.
+\]
+Bound every partial sum by
+\((T_{n,p}/q_{n,p})\lambda_n\) and sum absolute values.
+The prefix assertion is the one-atom identity of TPC-160
+\citep{WangTPC160}.
+\end{proof}
+
+Thus any source-locked literal weight with
+\(\operatorname{Var}_*(w)\le X_n^\beta\), \(\beta<\delta\), receives
+the metric saving \(X_n^{-(\delta-\beta)}\).  This is an interface,
+not a claim that the missing physical weight registry supplies the
+variation certificate.
+
+\section{The fixed-atom stop}
+
+\begin{proposition}[Metric information does not select an atom]
+\label{prop:atom}
+The Lebesgue-almost-everywhere conclusion of \cref{thm:bc}, viewed
+only as a measure statement, contains no control at a named fixed
+phase or at phases \(\alpha_n\) selected separately at each scale.
+\end{proposition}
+
+\begin{proof}
+A Lebesgue null set may contain any prescribed atom, so the
+almost-everywhere quantifier alone has no value at that atom.  The
+coefficient-blind maximal framework makes this sharp: take
+\(b_{n,j}=1\) and
+\(\alpha_n=0\).  At the terminal prefix,
+\[
+ \frac1{L_n}\left|\sum_{j=1}^{L_n}b_{n,j}\e(-\alpha_nj)\right|=1
+\]
+for every \(n\).  The single phase zero has Lebesgue measure zero and
+is therefore fully compatible with an almost-everywhere theorem.
+Allowing \(\alpha_n\) to vary only makes the selector mismatch more
+pronounced.
+\end{proof}
+
+The example proves a quantifier nonimplication for the general
+bounded-coefficient maximal framework, not a counterexample inside
+the literal M\"obius packet class.  It is not evidence that the
+literal M\"obius coefficients have a large twist.  Likewise,
+TPC-168's finite-registry selector firewall forbids density-one
+promotion to a named registry phase \citep{WangTPC168}.
+
+More generally, an uncontrolled atomic phase registry may place every
+one of its atoms inside the schedule-dependent null set at zero
+Lebesgue cost.  Neither \cref{thm:bc} nor the packet-energy bound
+controls the mass of such a registry.  This is a scoped
+\emph{uncontrolled atomic registry obstruction}: it stops the
+metric-to-atomic transfer, not the direct additive-twist route and
+not any future source-locked registry with its own avoidance theorem.
+
+\section{Route decision}
+
+TPC-170 has the exact program status
+\[
+ \mathsf{PROVED\_L1\_ACTUAL\_CORE\_
+ PHASE\_METRIC\_PACKET\_CORRIDOR}.
+\]
+Its analytic and program axes are
+\[
+\begin{array}{c|c}
+\text{axis}&\text{value}\\ \hline
+\mathsf{analytic\_norm}&\mathsf{L2\_PHASE\_MAXIMAL\_BC}\\
+\mathsf{program\_positive\_L2}&\mathsf{false}\\
+\mathsf{fixed\_atom}&\mathsf{false}
+\end{array}
+\]
+It advances both parent-ready arithmetic doors along one new typed
+route:
+\begin{align*}
+ \text{direct additive twist}
+ &\longrightarrow
+ \text{phase-metric prescribed packet corridor},\\
+ \text{bad atomic endpoint}
+ &\longrightarrow
+ \text{phase-metric all-prefix corridor}.
+\end{align*}
+The original fixed-phase nodes remain open.  Closing either requires
+a source-locked production phase-metric crosswalk or a genuinely
+pointwise theorem.  Neither Lebesgue-a.e.\ nor a registry average is
+a fixed atom.
+
+\section{Reproducible audit and conclusion}
+
+The standard-library audit source-locks TPC-168/169, verifies
+\cref{lem:translate} with literal M\"obius values and a covariantly
+translated multiplier, checks exact Abel summation, records the
+ratio-test exponent in \cref{cor:power}, and realizes the fixed-atom
+stop.  Executable bad-snapshot mutations reject undeclared packet
+uniformity, missing packet-energy unions, duplicate B\'ezout
+representatives, untranslated multipliers, \(\delta\ge1/4\), and every
+\(\mathsf{LEBESGUE\_AE}\)-to-\(\mathsf{FIXED\_ATOM}\) promotion.
+
+The four-paper corridor has therefore moved forward without
+conflating norms.  Direct twists and every terminal-shell prefix now
+have a positive-power metric theorem on explicit packet schedules.
+The surviving gap is no longer cancellation in that metric; it is
+the theorem-backed selection of the production phase, or a new
+pointwise arithmetic estimate.  No physical endpoint is inferred
+from that unresolved selection.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

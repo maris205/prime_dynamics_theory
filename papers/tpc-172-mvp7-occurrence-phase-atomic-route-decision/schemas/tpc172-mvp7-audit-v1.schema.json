@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc172-mvp7-audit-v1.schema.json",
+  "title": "TPC-172 MVP7 route audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "snapshot_sha256",
+    "checks",
+    "mutation_regressions",
+    "scenario_verdicts",
+    "current_verdict",
+    "first_missing",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-172-mvp7-occurrence-phase-atomic-route-audit-v1"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "snapshot_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "checks": {
+      "type": "object"
+    },
+    "mutation_regressions": {
+      "type": "object"
+    },
+    "scenario_verdicts": {
+      "type": "object"
+    },
+    "current_verdict": {
+      "const": "NOT_TESTABLE"
+    },
+    "first_missing": {
+      "type": "string"
+    },
+    "claim_boundary": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc170-metric-corridor-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "hash_mode",
+    "upstream",
+    "representative_invariance",
+    "packet_borel_cantelli",
+    "power_corollary",
+    "abel_return",
+    "fixed_atom_stop",
+    "route_decision",
+    "claim_boundary",
+    "checks",
+    "mutation_regressions"
+  ],
+  "properties": {
+    "schema": {"const": "tpc-170-metric-corridor-audit-v1"},
+    "status": {"const": "PASS"},
+    "hash_mode": {"const": "CANONICAL_UTF8_LF_V2"},
+    "upstream": {"type": "object"},
+    "representative_invariance": {"type": "object"},
+    "packet_borel_cantelli": {"type": "object"},
+    "power_corollary": {"type": "object"},
+    "abel_return": {"type": "object"},
+    "fixed_atom_stop": {"type": "object"},
+    "route_decision": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "checks": {"type": "object"},
+    "mutation_regressions": {"type": "object"}
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "claim_boundary": {
+    "actual_active_support": false,
+    "canonical_minimal_representation": false,
+    "production_local_patch": false,
+    "synthetic_only": true
+  },
+  "cut_universe": [
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "evidence_mode": "SYNTHETIC_REACHABILITY",
+  "overlap_maps": [
+    {
+      "cut_key": "c2",
+      "from_patch": "U1",
+      "row_bijection": {
+        "u1-r2": "u2-r2"
+      },
+      "to_patch": "U2"
+    }
+  ],
+  "patches": [
+    {
+      "cut_keys": [
+        "c1",
+        "c2"
+      ],
+      "local_rows_by_cut": {
+        "c1": [
+          {
+            "local_row_id": "u1-r1",
+            "typed_payload": {
+              "actual_active_support": "UNDECIDED",
+              "actual_occurrence_semantics": false,
+              "archived_source_address": [
+                11,
+                21,
+                1,
+                2,
+                3
+              ],
+              "canonical_minimal_representation": "UNDECIDED",
+              "formal_occurrence_symbol": "omega-1",
+              "semantic_class": "FORMAL_OCCURRENCE_ROW"
+            },
+            "weight": {
+              "denominator": 1,
+              "numerator": 1,
+              "ring": "Q"
+            }
+          }
+        ],
+        "c2": [
+          {
+            "local_row_id": "u1-r2",
+            "typed_payload": {
+              "actual_active_support": "UNDECIDED",
+              "actual_occurrence_semantics": false,
+              "archived_source_address": [
+                12,
+                22,
+                1,
+                3,
+                4
+              ],
+              "canonical_minimal_representation": "UNDECIDED",
+              "formal_occurrence_symbol": "omega-2",
+              "semantic_class": "FORMAL_OCCURRENCE_ROW"
+            },
+            "weight": {
+              "denominator": 1,
+              "numerator": 1,
+              "ring": "Q"
+            }
+          }
+        ]
+      },
+      "patch_id": "U1"
+    },
+    {
+      "cut_keys": [
+        "c2",
+        "c3"
+      ],
+      "local_rows_by_cut": {
+        "c2": [
+          {
+            "local_row_id": "u2-r2",
+            "typed_payload": {
+              "actual_active_support": "UNDECIDED",
+              "actual_occurrence_semantics": false,
+              "archived_source_address": [
+                12,
+                22,
+                1,
+                3,
+                4
+              ],
+              "canonical_minimal_representation": "UNDECIDED",
+              "formal_occurrence_symbol": "omega-2",
+              "semantic_class": "FORMAL_OCCURRENCE_ROW"
+            },
+            "weight": {
+              "denominator": 1,
+              "numerator": 1,
+              "ring": "Q"
+            }
+          }
+        ],
+        "c3": [
+          {
+            "local_row_id": "u2-r3",
+            "typed_payload": {
+              "actual_active_support": "UNDECIDED",
+              "actual_occurrence_semantics": false,
+              "archived_source_address": [
+                13,
+                23,
+                1,
+                4,
+                5
+              ],
+              "canonical_minimal_representation": "UNDECIDED",
+              "formal_occurrence_symbol": "omega-3",
+              "semantic_class": "FORMAL_OCCURRENCE_ROW"
+            },
+            "weight": {
+              "denominator": 1,
+              "numerator": 1,
+              "ring": "Q"
+            }
+          }
+        ]
+      },
+      "patch_id": "U2"
+    }
+  ],
+  "schema": "tpc-165-synthetic-local-patches-v1",
+  "theorem_semantics": false
+}

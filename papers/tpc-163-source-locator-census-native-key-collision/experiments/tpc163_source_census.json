@@ -1,0 +1,261 @@
+{
+  "claim_boundary": {
+    "actual_active_support_proved": false,
+    "canonical_minimal_representation_proved": false,
+    "native_tuple_is_production_crosswalk_key": false,
+    "positive_fixed_X_L2": false,
+    "production_crosswalk_proved": false,
+    "shadow_is_actual_occurrence_lift": false,
+    "twin_prime_theorem": false,
+    "zero_edges_means_actual_edges_do_not_exist": false
+  },
+  "native_key_collision": {
+    "collision_tuple_count": 854,
+    "excess_rows_over_native_keys": 2122,
+    "maximum_multiplicity": 4,
+    "multiplicity_distribution": {
+      "1": 12,
+      "2": 220,
+      "4": 634
+    },
+    "native_tuple_count": 866,
+    "native_tuple_is_row_key": false,
+    "rows_in_collision_classes": 2976
+  },
+  "positive_formal_obstruction_claims": [
+    {
+      "canonical_utf8_lf_sha256": "28bf9b9b1d868e8fd8e8126e689fa05b332f701177b5eb80a9fc6ce597e28097",
+      "claim_id": "S154.formal_completion_fiber_nonuniqueness",
+      "claim_level": "FORMAL_ONLY/SCOPED_OBSTRUCTION",
+      "derivation_ast": {
+        "completion_A": {
+          "formal_child_count": 1,
+          "weight": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        "completion_B": {
+          "each_weight": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "formal_child_count": 2
+        },
+        "input": "S153.cut_to_shadow_basis_injection",
+        "op": "construct_two_formal_completions",
+        "same_forgetting_pushforward": true
+      },
+      "formula_locator": {
+        "kind": "LATEX_LABEL",
+        "value": "eq:column"
+      },
+      "production_actual_occurrence_semantics": false,
+      "source_path": "papers/tpc-154-conservative-completion-fiber-obstruction/main.tex",
+      "theorem_locator": {
+        "kind": "LATEX_LABEL",
+        "value": "thm:nonunique"
+      }
+    },
+    {
+      "canonical_utf8_lf_sha256": "28bf9b9b1d868e8fd8e8126e689fa05b332f701177b5eb80a9fc6ce597e28097",
+      "claim_id": "S154.current_artifacts_only_recovery_obstruction",
+      "claim_level": "FORMAL_ONLY/SCOPED_OBSTRUCTION",
+      "derivation_ast": {
+        "augmented_theorem_backed_route_remains_open": true,
+        "inputs": [
+          "S154.formal_completion_fiber_nonuniqueness",
+          "cor:branch",
+          "prop:labels"
+        ],
+        "op": "fiber_nonidentifiability",
+        "stopped_route": "CURRENT_ARTIFACTS_ONLY_CANONICAL_ACTUAL_LIFT_DERIVATION"
+      },
+      "formula_locator": {
+        "kind": "LATEX_LABEL",
+        "value": "eq:column"
+      },
+      "production_actual_occurrence_semantics": false,
+      "source_path": "papers/tpc-154-conservative-completion-fiber-obstruction/main.tex",
+      "theorem_locator": {
+        "kind": "LATEX_LABEL",
+        "value": "thm:obstruction"
+      }
+    }
+  ],
+  "positive_shadow_claims": [
+    {
+      "canonical_utf8_lf_sha256": "310086b540b3335bd9f71897ca9bb7e65637d53e8618c1873eb9e5d212474249",
+      "claim_id": "S153.cut_to_shadow_basis_injection",
+      "claim_level": "PROVED_L1_STRUCTURAL_SHADOW_ONLY",
+      "derivation_ast": {
+        "domain_key": "source_cut_path_id",
+        "edge_weight": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "op": "basis_injection",
+        "row_key": "partial_occurrence_id"
+      },
+      "formula_locator": {
+        "kind": "LATEX_LABEL",
+        "value": "eq:shadow"
+      },
+      "production_actual_occurrence_semantics": false,
+      "source_path": "papers/tpc-153-canonical-cut-occurrence-shadow/main.tex",
+      "theorem_locator": {
+        "kind": "LATEX_LABEL",
+        "value": "thm:shadow"
+      }
+    },
+    {
+      "canonical_utf8_lf_sha256": "310086b540b3335bd9f71897ca9bb7e65637d53e8618c1873eb9e5d212474249",
+      "claim_id": "S153.shadow_column_conservation",
+      "claim_level": "PROVED_L1_STRUCTURAL_SHADOW_ONLY",
+      "derivation_ast": {
+        "input": "S153.cut_to_shadow_basis_injection",
+        "op": "column_sum",
+        "value": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "formula_locator": {
+        "kind": "LATEX_LABEL",
+        "value": "eq:shadow-conservation"
+      },
+      "production_actual_occurrence_semantics": false,
+      "source_path": "papers/tpc-153-canonical-cut-occurrence-shadow/main.tex",
+      "theorem_locator": {
+        "kind": "LATEX_LABEL",
+        "value": "thm:shadow"
+      }
+    }
+  ],
+  "production_archive": {
+    "packet_scope_count": 1,
+    "row_count": 2988,
+    "source_path_count": 2988,
+    "terminal_type_counts": {
+      "ELIGIBLE_TAIL_OPEN": 0,
+      "FRONTIER_UNMAPPED": 2988
+    }
+  },
+  "production_crosswalk_edge_census": {
+    "coverage_by_edge_class": {
+      "G": 0,
+      "P_h0_downstream": 0,
+      "QD": 0,
+      "QZ": 0,
+      "actual_active_support": 0,
+      "actual_occurrence_edge": 0,
+      "affine_native_d_crosswalk": 0,
+      "canonical_parent_or_minimal_representation": 0,
+      "exact_downstream_multiplier": 0,
+      "occurrence_registry": 0,
+      "ordered_stage_chain": 0,
+      "physical_cover": 0,
+      "reconnection": 0
+    },
+    "detection_mode": "EXPLICIT_MAPPED_FROZEN_CORPUS_CENSUS",
+    "future_new_fields_automatically_scanned": false,
+    "required_edge_classes": [
+      "actual_occurrence_edge",
+      "actual_active_support",
+      "canonical_parent_or_minimal_representation",
+      "ordered_stage_chain",
+      "exact_downstream_multiplier",
+      "QD",
+      "QZ",
+      "G",
+      "P_h0_downstream",
+      "affine_native_d_crosswalk",
+      "physical_cover",
+      "reconnection",
+      "occurrence_registry"
+    ],
+    "status": "EMPTY_IN_FROZEN_DECLARED_CORPUS",
+    "theorem_backed_edge_count": 0
+  },
+  "schema": "tpc-163-source-locator-census-v1",
+  "scope": "FROZEN_DECLARED_SOURCE_CORPUS_TPC153_154_155_156_161_162",
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "310086b540b3335bd9f71897ca9bb7e65637d53e8618c1873eb9e5d212474249",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-153-canonical-cut-occurrence-shadow/main.tex",
+      "source_id": "TPC153.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "b1a9d016d44174e45ea846e4b42ac3ad11098f2d6802159ee353a6778e7bfa19",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-153-canonical-cut-occurrence-shadow/experiments/tpc153_cut_occurrence_shadow_certificate.json",
+      "source_id": "TPC153.certificate"
+    },
+    {
+      "canonical_utf8_lf_sha256": "5824d1d23150192104d9efdc634fbcdfef9560684d9fa53fce69b2703a46287f",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-153-canonical-cut-occurrence-shadow/samples/tpc153_cut_occurrence_shadow.jsonl",
+      "source_id": "TPC153.shadow"
+    },
+    {
+      "canonical_utf8_lf_sha256": "28bf9b9b1d868e8fd8e8126e689fa05b332f701177b5eb80a9fc6ce597e28097",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-154-conservative-completion-fiber-obstruction/main.tex",
+      "source_id": "TPC154.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "0d9265926f6cee51b433491c8f52192ba03ad10b31355bf67be991373966f8c1",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-154-conservative-completion-fiber-obstruction/experiments/tpc154_completion_fiber_obstruction_certificate.json",
+      "source_id": "TPC154.certificate"
+    },
+    {
+      "canonical_utf8_lf_sha256": "e2135541e186b5f6bb1c5bfeba8c976422637699793abb7a0286ae2048f74f11",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-154-conservative-completion-fiber-obstruction/samples/tpc154_formal_completions.jsonl",
+      "source_id": "TPC154.formal_completions"
+    },
+    {
+      "canonical_utf8_lf_sha256": "7be9df2a66a16f56e817e4f01d62318acd11b264cef367ff1777534ed0d81559",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-155-theorem-backed-occurrence-witness-verifier/samples/tpc155_production_witness_status.json",
+      "source_id": "TPC155.production_status"
+    },
+    {
+      "canonical_utf8_lf_sha256": "b4d48047447b336042a79111f59a8ff7fa01c71f7717cab95f6e84601bcaf3a1",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-155-theorem-backed-occurrence-witness-verifier/experiments/tpc155_occurrence_witness_audit.json",
+      "source_id": "TPC155.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "aa6c2b8ed0d982a89b82392806d1fcf1f35eeed4c6ade3113ad3b80a2472f67c",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-156-h1-occurrence-crosswalk-route-decision/experiments/tpc156_h1_occurrence_decision.json",
+      "source_id": "TPC156.decision"
+    },
+    {
+      "canonical_utf8_lf_sha256": "ba562b20e968efa6343e02489162820228cc1b695ef7c73b8bd38ab9314c672f",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-161-source-locked-occurrence-return-integration/experiments/tpc161_occurrence_return_manifest.json",
+      "source_id": "TPC161.manifest"
+    },
+    {
+      "canonical_utf8_lf_sha256": "50da08bdc6cb1ff6e0f07e53544fc0206e82047537ee075606d239df4c8c8a68",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-162-mvp6-actual-carrier-endpoint-route-decision/experiments/tpc162_mvp6_snapshot.json",
+      "source_id": "TPC162.snapshot"
+    }
+  ]
+}

@@ -1,0 +1,430 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={Source-Locator Census for the H1 Crosswalk},
+  pdfauthor={Liang Wang},
+  pdfsubject={Native-key collisions and production occurrence-edge census},
+  pdfkeywords={twin-prime program, occurrence provenance, source locator, collision census}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\FUM}{\textnormal{\textsc{frontier-unmapped}}}
+\newcommand{\ETO}{\textnormal{\textsc{eligible-tail-open}}}
+\newcommand{\Csrc}{\mathcal C_{\mathrm{src}}}
+\newcommand{\Nkey}{\kappa_{\mathrm{nat}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{Source-Locator Census for the H1 Crosswalk:}\\
+\textbf{Native-Key Collisions and the Absence of Production}\\
+\textbf{Occurrence Edges in the Frozen Corpus}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The H1 branch of the fixed-shift program currently stops at a
+theorem-backed cut-to-occurrence provenance crosswalk.  We turn that
+informal phrase into an auditable source-locator contract.  A positive
+production edge must name a canonical source path and hash, an exact
+theorem locator, an exact formula locator, and a nonempty derivation
+abstract-syntax tree, while preserving the distinction between a
+formal shadow and an actual occurrence.
+
+For the frozen declared TPC-153/154/155/156/161/162 corpus, the census
+contains \(2988\) distinct cut paths, two qualifying positive shadow
+claims, and two formal-only scoped-obstruction claims.  It contains
+no qualifying actual-occurrence edge in any of thirteen required
+semantic classes.  Independently, the
+archive has only \(866\) distinct native triples
+\((\ell,k,d_{\rm nat})\).  Of these, \(854\) collide; \(2976\) rows lie
+in collision classes, and the excess over native keys is \(2122\).
+The exact multiplicity distribution is
+\[
+ \{1:12,\;2:220,\;4:634\}.
+\]
+Consequently the native triple is not a row key for this archive.
+
+Both conclusions are deliberately scoped.  Zero qualifying edges in
+the frozen corpus is not a nonexistence theorem for actual
+occurrences, and failure of the native triple as an archive key is not
+a failure of every enriched occurrence representation.  The next
+forced structural task is to identify the smallest archived
+separating key before attempting source-backed local occurrence
+patches.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed shift; occurrence provenance;
+source locator; archive key; collision obstruction; proof audit.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Claim boundary.}
+This paper proves an exact theorem about a frozen declared source
+corpus and its archive keys.  It does not prove that actual
+occurrences are absent, construct a production occurrence crosswalk,
+certify actual active support, select a canonical or minimal parent,
+establish positive fixed-\(X\) \(\Ltwo\), give a prime-pair lower
+bound, or prove the twin-prime conjecture.
+\end{minipage}}
+
+\section{Why a source census is now necessary}
+
+TPC-153 constructs a conservative, row-separated map from every
+nonsoft cut path to a \emph{partial shadow row}
+\citep{WangTPC153}.  Its universal property says that any
+metadata-faithful actual completion must forget back to this shadow;
+it does not construct such a completion.  TPC-154 constructs two
+inequivalent \emph{formal} completions and thereby stops recovery from
+current artifacts alone; it explicitly leaves the augmented
+theorem-backed route open \citep{WangTPC154}.  TPC-155 supplies a typed
+verifier, but its production witness is absent
+\citep{WangTPC155}.  TPC-156 therefore identifies
+\[
+ \mathsf{H1.theorem\_backed\_occurrence\_provenance\_crosswalk}
+ \tag{1.1}\label{eq:first-missing}
+\]
+as the first missing map object \citep{WangTPC156}.  TPC-161 and
+TPC-162 preserve this blocker while integrating the arithmetic return
+side \citep{WangTPC161,WangTPC162}.
+
+The phrase ``theorem-backed'' has two possible failure modes.  First,
+a row may cite a file without identifying the mathematical statement
+or derivation that creates the edge.  Second, a valid shadow theorem
+may be silently promoted to actual-occurrence semantics.  The present
+paper closes both loopholes by defining the admissible evidence unit
+before counting it.
+
+\section{Frozen corpus and evidence contract}
+
+\begin{definition}[Frozen declared corpus]\label{def:corpus}
+The corpus \(\Csrc\) consists of the canonically normalized UTF-8/LF
+versions of the following eleven production artifacts:
+\begin{enumerate}[leftmargin=2.1em]
+ \item the TPC-153 paper, certificate, and \(2988\)-row shadow archive;
+ \item the TPC-154 paper, certificate, and formal-completion archive;
+ \item the TPC-155 production status and verifier audit;
+ \item the TPC-156 H1 route decision;
+ \item the TPC-161 occurrence--return manifest; and
+ \item the TPC-162 MVP6 snapshot.
+\end{enumerate}
+Every source is locked by its repository-relative path and SHA-256
+digest.  A digest is an integrity assertion only; it does not confer
+theorem semantics.
+\end{definition}
+
+\begin{definition}[Source-locator admissibility]\label{def:admissible}
+A positive production claim \(e\) is \emph{source-locator admissible}
+if its record contains:
+\begin{enumerate}[label=(\roman*),leftmargin=2.1em]
+ \item a canonical path \(p(e)\in\Csrc\) and its recomputed canonical
+       digest;
+ \item an exact theorem locator that resolves in \(p(e)\);
+ \item an exact formula locator that resolves in \(p(e)\);
+ \item a nonempty derivation tree \(A(e)\) specifying how the cited
+       formula produces the claimed typed object; and
+ \item a semantic class equal to the conclusion of that derivation.
+\end{enumerate}
+A shadow conclusion therefore cannot inhabit an actual-occurrence
+class merely by changing a status string.
+\end{definition}
+
+The derivation tree is intentionally modest.  It is not a proof
+assistant kernel.  It records the operation, inputs, key fields, and
+exact coefficient so that an audit can reject empty provenance and
+semantic promotion.  Full mathematical truth still resides in the
+cited source.
+
+\begin{definition}[Actual H1 edge classes]\label{def:classes}
+The production census checks the following thirteen classes:
+\[
+\begin{gathered}
+\mathsf{actual\ occurrence},\quad
+\mathsf{actual\ active\ support},\quad
+\mathsf{canonical/minimal\ parent},\\
+\mathsf{ordered\ stage},\quad
+\mathsf{exact\ multiplier},\quad
+Q_D,\ Q_Z,\ G,\ P_{h_0},\\
+\mathsf{native\ affine\ crosswalk},\quad
+\mathsf{physical\ cover},\quad
+\mathsf{reconnection},\quad
+\mathsf{occurrence\ registry}.
+\end{gathered}
+\]
+These are actual-carrier classes.  A partial shadow edge is not a
+member of any of them.
+\end{definition}
+
+\section{Exact source-locator census}
+
+\begin{theorem}[Frozen-corpus edge census]\label{thm:census}
+In \(\Csrc\):
+\begin{enumerate}[label=(\alph*),leftmargin=2.1em]
+ \item exactly two shadow claims satisfy
+       \cref{def:admissible}: the TPC-153 cut-to-shadow basis injection
+       and its column-conservation identity, both with semantic class
+       \[
+        \mathsf{PROVED\_L1\_STRUCTURAL\_SHADOW\_ONLY};
+       \]
+ \item exactly two TPC-154 claims satisfy the source-locator contract:
+       formal completion-fibre nonuniqueness and the
+       current-artifacts-only recovery obstruction, both with class
+       \[
+        \mathsf{FORMAL\_ONLY/SCOPED\_OBSTRUCTION};
+       \]
+ \item none of these four claims has actual-occurrence semantics, and
+       the number of source-locator-admissible production edges in
+       every class of \cref{def:classes} is zero.
+\end{enumerate}
+Thus the production actual-occurrence edge family is
+\[
+ \mathcal E_{\rm occ}(\Csrc)=\varnothing .
+ \tag{3.1}\label{eq:zero-edges}
+\]
+\end{theorem}
+
+\begin{proof}
+The audit first recomputes all eleven path--digest locks.  It then
+resolves both LaTeX labels for each positive TPC-153 claim and checks
+that its derivation tree is nonempty.  The first tree is the basis
+injection
+\[
+ e_c\longmapsto e_{\operatorname{shadow}(c)}
+ \quad\text{with coefficient }1,
+ \tag{3.2}\label{eq:shadow-map}
+\]
+and the second applies the column-sum operation to
+\cref{eq:shadow-map}.  Their result types remain shadow-only.
+
+The audit next resolves the TPC-154 completion-fibre and obstruction
+theorems.  Their derivations use two conservative formal completions
+with respectively one unit-weight child and two half-weight children.
+The source certificate explicitly records that neither completion is
+an actual-carrier lift and that only the current-artifacts-only
+recovery route is stopped.  Their semantic class therefore remains
+\(\mathsf{FORMAL\_ONLY/SCOPED\_OBSTRUCTION}\).
+
+Next the audit applies an explicit per-class mapping to the frozen
+production status, decision, manifest, and snapshot for the thirteen
+actual classes.  TPC-155 records no
+production witness, and TPC-156/161/162 all retain
+\cref{eq:first-missing} as unavailable.  No record supplies the
+required path, digest, two locators, derivation tree, and actual
+semantic class.  Hence every class count is zero.  Mutation tests
+verify that a fabricated edge, hash drift, a missing locator, an empty
+tree, and a shadow-to-occurrence promotion are each rejected.
+\end{proof}
+
+\begin{remark}[Mapped census, not a future-schema scanner]
+The thirteen-class table is exhaustive only for the explicitly mapped
+fields of \(\Csrc\).  The program does not generically discover
+arbitrary fields added by a future schema.  Any corpus or schema
+extension requires a new mapping and a regenerated certificate.
+\end{remark}
+
+\begin{remark}[Closed-world scope]\label{rem:closed}
+Equation \eqref{eq:zero-edges} is a closed-world statement about
+\(\Csrc\).  It says
+\[
+ \text{``no qualifying edge is declared in this frozen corpus,''}
+\]
+not
+\[
+ \text{``no actual occurrence edge exists in mathematics.''}
+\]
+The latter would require a completeness theorem for the source
+universe, which is neither assumed nor proved.
+\end{remark}
+
+\section{Native-key collision obstruction}
+
+Each shadow row has a unique source-cut path identifier and carries a
+native triple
+\[
+ \Nkey(c)=(\ell(c),k(c),d_{\rm nat}(c)).
+\]
+One might hope to use \(\Nkey\) as the future occurrence-row address.
+The archive itself rules this out.
+
+\begin{theorem}[Exact native collision census]\label{thm:collision}
+For the \(2988\) production cut paths in \(\Csrc\), the map
+\[
+ \Nkey:\mathcal C\longrightarrow\mathbb Z^3
+ \tag{4.1}\label{eq:native-key}
+\]
+has \(866\) distinct values.  Its fibre-size distribution is
+\[
+ \#\{v:|\Nkey^{-1}(v)|=m\}
+ =
+ \begin{cases}
+ 12,&m=1,\\
+ 220,&m=2,\\
+ 634,&m=4,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+ \tag{4.2}\label{eq:distribution}
+\]
+Consequently:
+\[
+\begin{aligned}
+ \#\{v:|\Nkey^{-1}(v)|>1\}&=854,\\
+ \#\{c:|\Nkey^{-1}(\Nkey(c))|>1\}&=2976,\\
+ \sum_v\bigl(|\Nkey^{-1}(v)|-1\bigr)&=2122.
+\end{aligned}
+\tag{4.3}\label{eq:collision-counts}
+\]
+In particular, \(\Nkey\) is not a row key for the frozen archive.
+\end{theorem}
+
+\begin{proof}
+Group the \(2988\) distinct source-cut path identifiers by the exact
+integer triple \eqref{eq:native-key}.  The resulting multiplicity
+counter is \eqref{eq:distribution}.  The internal checks
+\[
+ 12+220+634=866,\qquad
+ 12+2(220)+4(634)=2988
+\]
+verify the number of keys and rows.  Removing the \(12\) singleton
+rows gives \(2988-12=2976\) rows in collision classes.  The excess is
+\[
+ 220(2-1)+634(4-1)=220+1902=2122.
+\]
+Since a key must have singleton fibres, the final assertion follows.
+\end{proof}
+
+\begin{proposition}[Explicit fourfold collision]\label{prop:witness}
+The native triple \((3,171,1)\) has four distinct archived cut paths,
+distinguished by
+\[
+ (j_L,j_K)\in\{1,2\}\times\{7,8\}.
+\]
+Thus the collision in \cref{thm:collision} is not caused by duplicate
+row identifiers.
+\end{proposition}
+
+\begin{proof}
+The four source-cut path identifiers in the production excerpt encode
+the four displayed pairs and are pairwise distinct, while their
+native triples agree exactly.  The accompanying sample is copied from
+the production archive and is marked as an archive excerpt, not a
+synthetic or actual-occurrence witness.
+\end{proof}
+
+\section{What the two theorems jointly imply}
+
+The two obstructions are logically different:
+\[
+\begin{array}{c@{\qquad}c}
+ \mathcal E_{\rm occ}(\Csrc)=\varnothing
+ &
+ \Nkey\text{ is noninjective}
+ \\[2pt]
+ \text{evidence absence in a frozen corpus}
+ &
+ \text{exact combinatorial archive fact}.
+\end{array}
+\]
+The first blocks an evidence-complete production lift.  The formal
+TPC-154 obstruction additionally rules out canonical recovery from
+the present shadow fields alone while leaving source augmentation
+open.  The second
+blocks a tempting shortcut for addressing its rows.  Neither prevents
+an enriched construction from succeeding.
+
+\begin{corollary}[Required enrichment]\label{cor:enrich}
+Any production crosswalk that represents all \(2988\) archived cut
+paths by distinct rows must use an address strictly finer than
+\((\ell,k,d_{\rm nat})\), or supply an independently proved quotient
+theorem identifying every colliding path.  No such quotient theorem
+is present in \(\Csrc\).
+\end{corollary}
+
+\begin{proof}
+This is the dichotomy between retaining distinct elements of a
+noninjective fibre and identifying them by a proved equivalence
+relation.  The latter is absent by the source census.
+\end{proof}
+
+\section{Reproducible certificate}
+
+The generator reads the upstream JSON/JSONL artifacts, recomputes
+canonical hashes and all counts, and serializes:
+\begin{center}
+\begin{tabularx}{0.96\linewidth}{@{}P{0.38\linewidth}Y@{}}
+\toprule
+\textbf{Artifact} & \textbf{Role}\\
+\midrule
+\textbf{Source census}
+ & source locks, positive claims, thirteen-class census, and collision
+   counts\\
+\textbf{Audit}
+ & recomputation checks, semantic boundaries, and mutation regressions\\
+\textbf{Collision excerpt}
+ & explicit fourfold production archive collision\\
+\bottomrule
+\end{tabularx}
+\end{center}
+Default mode regenerates the artifacts.  The \texttt{--check} mode
+recomputes them in memory and demands byte-for-byte equality.  The
+audit performs real mutations: it changes the candidate object and
+then runs the same validators.  It does not merely store expected
+Boolean values.
+
+\section{Next forced object}
+
+Before constructing local occurrence patches, the archive needs a
+lossless addressing system.  TPC-163 therefore leaves one immediate
+finite question:
+\[
+ \text{which smallest subset of existing archived fields separates
+ all \(2988\) source-cut paths?}
+\]
+This is an exhaustive finite-key problem, not yet an actual
+occurrence, active-support, or canonical-minimality theorem.  Solving
+it removes ambiguity from the later local-to-global gluing interface
+without overclaiming arithmetic progress.
+
+\section{Conclusion}
+
+TPC-163 converts the H1 crosswalk blocker into two precise facts.
+The frozen declared corpus contains no theorem-backed actual
+occurrence edge under an explicit source-locator contract, and the
+native triple fails dramatically as an archive row key.  At the same
+time, the paper preserves the correct open-world boundary: new
+source-backed occurrence mathematics may still supply the missing
+edges.  The next step is therefore constructive---first refine the
+archive address, then formulate compatible local occurrence patches.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

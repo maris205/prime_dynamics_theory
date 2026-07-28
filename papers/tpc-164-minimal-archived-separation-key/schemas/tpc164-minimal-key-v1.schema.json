@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/tpc164-minimal-key-v1.schema.json",
+  "title": "TPC-164 minimal archived separation-key certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "scope",
+    "source_locks",
+    "field_dictionary",
+    "exhaustive_search",
+    "minimal_separating_keys",
+    "selected_archived_key",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-164-minimal-archived-separation-key-v1"
+    },
+    "scope": {
+      "const": "FROZEN_TPC153_PRODUCTION_CUT_ARCHIVE"
+    },
+    "source_locks": {
+      "type": "array",
+      "minItems": 4
+    },
+    "field_dictionary": {
+      "const": [
+        "ell",
+        "k",
+        "native_d",
+        "jL",
+        "jK",
+        "D0",
+        "reason",
+        "type"
+      ]
+    },
+    "exhaustive_search": {
+      "type": "object",
+      "required": [
+        "row_count",
+        "nonempty_subsets_tested",
+        "minimum_cardinality",
+        "minimum_key_count"
+      ]
+    },
+    "minimal_separating_keys": {
+      "type": "array",
+      "minItems": 1
+    },
+    "selected_archived_key": {
+      "const": [
+        "ell",
+        "k",
+        "native_d",
+        "jL",
+        "jK"
+      ]
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "actual_occurrence_id_proved",
+        "actual_active_support_proved",
+        "canonical_minimal_representation_proved"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

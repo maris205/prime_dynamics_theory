@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc168-registry-sieve-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "hash_mode",
+    "upstream",
+    "sampling_theorem",
+    "registry_corollary",
+    "selector_firewall",
+    "route_decision",
+    "claim_boundary",
+    "checks",
+    "mutation_regressions"
+  ],
+  "properties": {
+    "schema": {"const": "tpc-168-registry-sieve-audit-v1"},
+    "status": {"const": "PASS"},
+    "hash_mode": {"const": "CANONICAL_UTF8_LF_V2"},
+    "upstream": {"type": "object"},
+    "sampling_theorem": {"type": "object"},
+    "registry_corollary": {"type": "object"},
+    "selector_firewall": {"type": "object"},
+    "route_decision": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "checks": {"type": "object"},
+    "mutation_regressions": {"type": "object"}
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "checks": {
+    "all_nine_source_locks_recomputed": true,
+    "crosswalk_subdag_scope_preserved": true,
+    "current_verdict_remains_not_testable": true,
+    "dag_acyclicity_recomputed": true,
+    "full_map_and_scalar_clauses_remain_external": true,
+    "historical_pointer_preserved": true,
+    "minimal_not_testable_root_antichain_recomputed": true,
+    "production_local_edge_count_remains_zero": true
+  },
+  "claim_boundary": {
+    "actual_active_support_proved": false,
+    "canonical_minimal_representation_proved": false,
+    "positive_fixed_X_L2": false,
+    "prime_pair_lower_bound": false,
+    "production_crosswalk_proved": false,
+    "production_local_occurrence_family_proved": false,
+    "selected_route_stopped": false,
+    "three_roots_are_full_H1_minimal_blocker_antichain": false,
+    "tpc162_historical_first_missing_rewritten": false,
+    "twin_prime_theorem": false
+  },
+  "decision_sha256": "f800ed30020d7626df1e091aed36852be8064cef7d4854c658e565d3e534e9f5",
+  "mutation_regressions": {
+    "active_support_root_erasure_rejected": true,
+    "canonical_minimality_root_erasure_rejected": true,
+    "crosswalk_subdag_to_full_h1_promotion_rejected": true,
+    "dependency_cycle_rejected": true,
+    "fabricated_local_edge_rejected": true,
+    "historical_first_missing_rewrite_rejected": true,
+    "not_testable_to_go_promotion_rejected": true,
+    "representative_outside_antichain_rejected": true,
+    "selected_route_stop_promotion_rejected": true
+  },
+  "schema": "tpc-166-refined-h1-frontier-audit-v1",
+  "status": "PASS"
+}

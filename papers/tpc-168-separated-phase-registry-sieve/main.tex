@@ -1,0 +1,271 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\e}{\mathrm e}
+\newcommand{\T}{\mathbb T}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+
+\title{\textbf{Separated Phase Registries for Direct Core Twists:\\
+A Finite Large-Sieve Gate and a Selector Firewall}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-167 gives exact phase-\(L^2\) cancellation for direct additive
+twists on the literal determinant-two core.  We transfer that
+continuous statement to arbitrary finite separated phase registries.
+An elementary sampling inequality bounds the registry energy by the
+coefficient energy times
+\(\delta^{-1}+4\pi(L-1)\).  For a quasi-uniform registry of at least
+interval-scale size, all but a quantitatively sparse set of phases
+inherit a fixed-\(X\) power saving.  A sharp selector example shows
+why density-one registry control does not identify one distinguished
+production phase.  Thus the finite-registry route genuinely advances,
+but the original pointwise phase node remains open.
+\end{abstract}
+
+\noindent\textbf{Keywords.}
+large sieve; additive phase; finite registry; selector firewall;
+M\"obius correlation.
+
+\medskip
+\noindent\fcolorbox{red!70!black}{red!3}{\parbox{0.94\linewidth}{
+\textbf{Claim boundary.}
+The theorem controls the proportion of bad phases in a separated
+finite registry.  It does not prove that a named production phase is
+good.  The selector counterexample is for the coefficient-blind
+sampling implication and is not a lower bound for the literal
+M\"obius correlation.  There is no physical H3 return, \(1/400\),
+prime-pair lower bound, or twin-prime theorem.}}
+
+\section{A separated sampling inequality}
+
+Put \(\e(x)=\exp(2\pi i x)\) and let
+\[
+ P(\alpha)=\sum_{n=0}^{L-1}b_n\e(n\alpha),\qquad
+ E=\sum_{n=0}^{L-1}|b_n|^2.
+\]
+A finite set \(\{\alpha_1,\ldots,\alpha_M\}\subset\T\) is
+\(\delta\)-separated, for a declared \(0<\delta\le1\), if
+\[
+ \norm{\alpha_j-\alpha_k}_{\T}\ge\delta\qquad(j\ne k).
+\]
+
+\begin{theorem}[Elementary finite phase sieve]\label{thm:sampling}
+For every \(0<\delta\le1\) and every
+\(\delta\)-separated registry,
+\begin{equation}
+ \boxed{\quad
+ \sum_{j=1}^M|P(\alpha_j)|^2
+ \le
+ \{\delta^{-1}+4\pi(L-1)\}E.
+ \quad}
+\label{eq:sampling}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let \(I_j\) be the circular interval of length \(\delta\) centered at
+\(\alpha_j\).  These intervals have disjoint interiors.  With
+\(g=|P|^2\), for \(x\in I_j\),
+\[
+ g(\alpha_j)\le g(x)+\int_{I_j}|g'(y)|\,dy.
+\]
+Integrate in \(x\) over \(I_j\), sum in \(j\), and divide by
+\(\delta\):
+\[
+ \sum_jg(\alpha_j)
+ \le\delta^{-1}\int_{\T}|P|^2
+ +\int_{\T}|(|P|^2)'|.
+\]
+Parseval gives \(\int|P|^2=E\), while Cauchy--Schwarz gives
+\[
+ \int_{\T}|(|P|^2)'|
+ \le2\norm{P'}_2\norm P_2
+ \le4\pi(L-1)E.
+\]
+This proves \eqref{eq:sampling}.
+\end{proof}
+
+The constant is not optimized; the point is an explicit
+standard-library-auditable inequality.  Classical large-sieve
+inequalities can sharpen constants without changing the route
+semantics \citep{MontgomeryVaughan2007}.
+
+\section{The determinant-two registry theorem}
+
+Retain
+\[
+ q=as,\quad t(z)=ad+qz,\quad
+ c_z=\mu(d+sz)\mu(u+az),
+\]
+\[
+ I_N=\{z:N<t(z)\le2N\},\quad
+ L_N=|I_N|,\quad E_N=\sum_{I_N}|c_z|^2,
+\]
+and
+\[
+ F_N(\alpha)=\frac qN\sum_{z\in I_N}c_z\e(-\alpha z).
+\]
+Translation of the consecutive exponent interval changes only a
+unit-modulus factor, so \cref{thm:sampling} applies.
+
+\begin{corollary}[Bad-phase count]\label{cor:count}
+For every \(\lambda>0\), the number \(B_\lambda\) of registry phases
+with \(|F_N(\alpha_j)|>\lambda\) satisfies
+\begin{equation}
+ B_\lambda
+ \le
+ \frac{q^2E_N}{N^2\lambda^2}
+ \{\delta^{-1}+4\pi(L_N-1)\}.
+\label{eq:count}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Each bad phase contributes more than \(\lambda^2\) to the sampled
+normalized energy.  Apply \cref{thm:sampling}.
+\end{proof}
+
+\begin{corollary}[Quasi-uniform registry density]\label{cor:density}
+Suppose
+\[
+ \delta\ge\frac cM,\qquad M\ge\theta L_N
+\]
+for fixed \(c,\theta>0\).  Then
+\begin{equation}
+ \frac{B_\lambda}{M}
+ \le
+ \left(c^{-1}+\frac{4\pi}{\theta}\right)
+ \frac{q/N+q^2/N^2}{\lambda^2}.
+\label{eq:density}
+\end{equation}
+If \(q/N\to0\), the choice
+\(\lambda=(q/N)^{1/4}\) makes the bad proportion
+\(O_{c,\theta}((q/N)^{1/2})\).
+\end{corollary}
+
+\begin{proof}
+Divide \eqref{eq:count} by \(M\), use
+\(\delta^{-1}/M\le c^{-1}\),
+\(L_N/M\le\theta^{-1}\), and
+\[
+ E_N\le L_N\le N/q+1.
+\]
+\end{proof}
+
+In the small-polylogarithmic envelope with \(N\ge\sqrt X\), this
+threshold is at most
+\[
+ X^{-1/8}(\log X)^{\eta_0/4}.
+\]
+The theorem therefore has the typed program status
+\[
+ \mathsf{PROVED\_L1\_ACTUAL\_CORE\_
+ PHASE\_METRIC\_FINITE\_REGISTRY}.
+\]
+\[
+\begin{array}{c|c}
+\text{axis}&\text{value}\\ \hline
+\mathsf{analytic\_norm}&\mathsf{L2\_PHASE\_REGISTRY}\\
+\mathsf{program\_positive\_L2}&\mathsf{false}\\
+\mathsf{fixed\_atom}&\mathsf{false}
+\end{array}
+\]
+The power is a density statement on a certified registry, not a
+uniform pointwise estimate.
+
+\section{The selector firewall}
+
+\begin{proposition}[Density does not select]\label{prop:selector}
+There are quasi-uniform registries and coefficient sequences for
+which the bad proportion tends to zero while a distinguished
+registry phase has normalized value one at every length.
+\end{proposition}
+
+\begin{proof}
+Take \(b_n=1\) for \(0\le n<L\) and the complete grid
+\(\alpha_r=r/L\).  Finite Fourier orthogonality gives
+\[
+ \frac1L\left|\sum_{n=0}^{L-1}\e(n\alpha_r)\right|
+ =\mathbf1_{\{r=0\}}.
+\]
+Thus the bad proportion at any fixed threshold in \((0,1)\) is
+\(1/L\), but the named phase \(\alpha_0=0\) remains maximally bad.
+\end{proof}
+
+This is a scoped logical stop:
+\[
+ \text{density-one registry control}
+ \not\Rightarrow
+ \text{control of a named selector}.
+\]
+The coefficients in \cref{prop:selector} are not asserted to be the
+literal M\"obius coefficients.  The proposition stops only a
+coefficient-blind selection inference.  It does not say that any
+minor-arc M\"obius twist is large, just as the projection obstruction
+in TPC-158 stops only its declared approximation route
+\citep{WangTPC158}.
+
+\section{Route decision and next object}
+
+TPC-167 supplied continuous phase \(L^2\)
+\citep{WangTPC167}; TPC-168 now supplies finite separated-registry
+\(L^2\).  This is useful if the production observable averages over
+a certified phase population.  A distinguished phase requires one
+of the following additional objects:
+\begin{enumerate}[label=(\roman*)]
+ \item a source-locked selector crosswalk proving that the chosen
+ phase avoids the sparse bad subset;
+ \item a random or equidistributed selector theorem with the exact
+ quantifiers needed by the application;
+ \item a pointwise additive-twist theorem.
+\end{enumerate}
+None is currently present.  The original parent-ready pointwise node
+therefore remains open rather than stopped.
+
+\section{Reproducible audit}
+
+The accompanying script source-locks TPC-167, checks
+\eqref{eq:sampling} and \eqref{eq:count} on a nonuniform separated
+fixture, and realizes \cref{prop:selector} on a complete grid.
+Executable bad-snapshot mutations reject missing separation,
+promotion from density one to all phases, and interpretation of the
+selector fixture as a M\"obius lower bound.  Hashes have integrity
+semantics only.
+
+\section{Conclusion}
+
+Phase averaging now survives discretization: a sufficiently dense
+separated registry has only a quantitatively sparse set of large
+direct twists.  The result is a new actual-core phase-metric gate
+whose analytic norm is \(L^2\) in the registry variable; it is not
+the program's positive-\(L2\) parity gate.  The selector firewall
+identifies the exact remaining gap, rather than hiding it in an
+average.  TPC-169 turns to the other open door and asks whether one
+common phase-exceptional set can control every atomic prefix endpoint.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

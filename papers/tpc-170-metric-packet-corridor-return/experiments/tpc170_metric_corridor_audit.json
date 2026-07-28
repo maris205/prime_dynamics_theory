@@ -1,0 +1,263 @@
+{
+  "abel_return": {
+    "atomic_prefix_variation": 1,
+    "bound": "(q/T)|sum b_j e(-alpha z_j)w_j| <= G_T(alpha)*V(w)",
+    "fixture": {
+      "abel_imag": 1.3711153688632964,
+      "abel_real": 0.8120423654656777,
+      "direct_imag": 1.3711153688632962,
+      "direct_modulus": 1.5935401338040487,
+      "direct_real": 0.8120423654656775,
+      "identity_error": 2.482534153247273e-16,
+      "maximal_times_variation": 3.2775289101438307,
+      "variation": 2.0
+    },
+    "status": "PROVED_EXACT_METRIC_WEIGHTED_RETURN_INTERFACE"
+  },
+  "checks": {
+    "abel_identity_exact_numerically": true,
+    "abel_maximal_bound_holds": true,
+    "fixed_atom_fixture_stays_bad": true,
+    "packet_and_atom_quantifiers_explicit": true,
+    "power_exponent_strictly_below_quarter": true,
+    "power_ratio_limit_below_one": true,
+    "representative_translation_exact": true,
+    "upstreams_pass": true
+  },
+  "claim_boundary": {
+    "actual_fixed_h0_core": true,
+    "almost_every_fixed_phase": true,
+    "analytic_norm": "L2_PHASE_MAXIMAL_BC",
+    "explicit_packet_corridor": true,
+    "fixed_atom": false,
+    "named_fixed_phase": false,
+    "one_over_400": false,
+    "physical_H3": false,
+    "prime_pair_lower_bound": false,
+    "production_phase_registry": false,
+    "program_positive_L2": false,
+    "scale_dependent_phase_selector": false,
+    "twin_prime_theorem": false
+  },
+  "fixed_atom_stop": {
+    "constant_coefficient_fixture": {
+      "lengths": [
+        64,
+        128,
+        256,
+        512
+      ],
+      "normalized_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "phase": 0
+    },
+    "not_a_literal_mobius_lower_bound": true,
+    "quantifier_not_proved": "NAMED_FIXED_ATOM_OR_SCALE_DEPENDENT_SELECTOR",
+    "quantifier_proved": "LEBESGUE_AE_FIXED_PHASE",
+    "schedule_dependence": "the_null_set_depends_on_the_entire_prescribed_packet_schedule",
+    "status": "PROVED_SCOPED_METRIC_TO_ATOM_NONIMPLICATION",
+    "uncontrolled_atomic_registry_obstruction": "an_atomic_registry_may_concentrate_entirely_on_the_metric_null_set"
+  },
+  "hash_mode": "CANONICAL_UTF8_LF_V2",
+  "mutation_regressions": {
+    "reject_Lebesgue_AE_as_named_fixed_atom": true,
+    "reject_delta_equal_to_or_above_one_quarter": true,
+    "reject_duplicate_Bezout_representatives_as_independent_packets": true,
+    "reject_fixed_phase_as_scale_dependent_selector": true,
+    "reject_metric_power_as_physical_H3_or_one_over_400": true,
+    "reject_nontranslated_multiplier_under_representative_shift": true,
+    "reject_union_without_packet_energy_sum": true,
+    "reject_unlisted_packets_in_corridor_uniform_claim": true
+  },
+  "packet_borel_cantelli": {
+    "analytic_norm": "L2_PHASE_MAXIMAL_BC",
+    "conclusion": "for_Lebesgue_almost_every_fixed_alpha_eventually_all_declared_packets_and_all_prefixes_are_at_most_lambda_n",
+    "corridor_uniformity": "ONLY_OVER_EXPLICIT_PRESCRIBED_PACKET_LIST",
+    "export_id": "A170.metric_packet_corridor",
+    "fixed_atom": false,
+    "independence_required": false,
+    "packet_energy": "V_(n,p)=D_(n,p)^2 ||rho_(n,p)||_infinity^2 (q_(n,p)/T_(n,p)+q_(n,p)^2/T_(n,p)^2)",
+    "packet_energy_union_paid": true,
+    "program_positive_L2": false,
+    "status": "PROVED_L1_ACTUAL_CORE_PHASE_METRIC_PACKET_CORRIDOR",
+    "summability_condition": "sum_n lambda_n^(-2) sum_(p in P_n) V_(n,p) < infinity"
+  },
+  "power_corollary": {
+    "X_n": "2^n",
+    "admissible_delta": "every delta<1/4",
+    "fixture": {
+      "delta": 0.2,
+      "eta": 2,
+      "exponential_decay": 0.09999999999999998,
+      "packet_exponent_C": 3,
+      "polynomial_exponent": 7,
+      "ratio_limit": 0.9330329915368074,
+      "sample_terms_n40_to_n50": [
+        10240000000.000008,
+        11357010173.36052,
+        12543509151.309961,
+        13799082390.367786,
+        15122958294.589968,
+        16514012764.184774,
+        17970776448.469437,
+        19491444513.41848,
+        21073888719.958847,
+        22715671598.730564,
+        24414062500.000015
+      ]
+    },
+    "packet_count_bound": "(log X_n)^C",
+    "q_bound": "(log X_n)^eta",
+    "terminal_lower_bound": "T_(n,p) >= sqrt(X_n)",
+    "threshold": "lambda_n=X_n^(-delta)"
+  },
+  "representative_invariance": {
+    "equation": "(d,u)->(d+s*k,u+a*k)",
+    "fixture": {
+      "a": 3,
+      "d": 1,
+      "d_shifted": 21,
+      "determinant_original": 2,
+      "determinant_shifted": 2,
+      "rows": [
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 7.004310746343475e-15,
+          "t_match": true,
+          "z_new": 2,
+          "z_old": 6
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 0.0,
+          "t_match": true,
+          "z_new": 3,
+          "z_old": 7
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 0.0,
+          "t_match": true,
+          "z_new": 4,
+          "z_old": 8
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 0.0,
+          "t_match": true,
+          "z_new": 5,
+          "z_old": 9
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 7.205338876476098e-15,
+          "t_match": true,
+          "z_new": 6,
+          "z_old": 10
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 0.0,
+          "t_match": true,
+          "z_new": 7,
+          "z_old": 11
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 1.4177095929570765e-14,
+          "t_match": true,
+          "z_new": 8,
+          "z_old": 12
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 0.0,
+          "t_match": true,
+          "z_new": 9,
+          "z_old": 13
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 1.5700924586837752e-16,
+          "t_match": true,
+          "z_new": 10,
+          "z_old": 14
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 0.0,
+          "t_match": true,
+          "z_new": 11,
+          "z_old": 15
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 0.0,
+          "t_match": true,
+          "z_new": 12,
+          "z_old": 16
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 0.0,
+          "t_match": true,
+          "z_new": 13,
+          "z_old": 17
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 1.4167093989539214e-14,
+          "t_match": true,
+          "z_new": 14,
+          "z_old": 18
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 0.0,
+          "t_match": true,
+          "z_new": 15,
+          "z_old": 19
+        },
+        {
+          "coefficient_match": true,
+          "phase_covariance_error": 2.482534153247273e-16,
+          "t_match": true,
+          "z_new": 16,
+          "z_old": 20
+        }
+      ],
+      "s": 5,
+      "shift": 4,
+      "u": 1,
+      "u_shifted": 13
+    },
+    "representatives_canonicalized": true,
+    "requires_covariant_multiplier_translation": true,
+    "status": "PROVED_EXACT_CANONICALIZATION"
+  },
+  "route_decision": {
+    "bad_endpoint_child": "phase_metric_all_prefix_advanced",
+    "direct_twist_child": "phase_metric_packet_corridor_advanced",
+    "next_object": "source_locked_production_phase_metric_crosswalk_or_pointwise_theorem",
+    "original_fixed_phase_nodes_closed": false
+  },
+  "schema": "tpc-170-metric-corridor-audit-v1",
+  "status": "PASS",
+  "upstream": {
+    "TPC168": {
+      "audit_sha256": "aba5ae17135f602c8d2c9d08f66e3f563b9f58a9bb274ed83445159cfa66afbf",
+      "audit_status": "PASS",
+      "main_tex_sha256": "40291c3cf00d844d6a4cdd3dca0efa382b410b0de0a6b387912e81505610998f"
+    },
+    "TPC169": {
+      "audit_sha256": "a59175c44e28b54db73c029c6db46a5e0816ed616b5000ec24fd8edaa8e6e694",
+      "audit_status": "PASS",
+      "main_tex_sha256": "1790ad09df28c3e5f3a3b3bc556f745204edcc7df15c3614a05bda19817f475c"
+    },
+    "hash_semantics": "INTEGRITY_ONLY"
+  }
+}

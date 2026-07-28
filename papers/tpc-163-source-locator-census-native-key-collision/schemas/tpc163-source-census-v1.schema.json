@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc163-source-census-v1.schema.json",
+  "title": "TPC-163 source-locator census",
+  "type": "object",
+  "required": [
+    "schema",
+    "scope",
+    "source_locks",
+    "production_archive",
+    "positive_shadow_claims",
+    "positive_formal_obstruction_claims",
+    "production_crosswalk_edge_census",
+    "native_key_collision",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "tpc-163-source-locator-census-v1"},
+    "scope": {
+      "const": "FROZEN_DECLARED_SOURCE_CORPUS_TPC153_154_155_156_161_162"
+    },
+    "source_locks": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "uniqueItems": true
+    },
+    "production_archive": {
+      "type": "object",
+      "required": [
+        "row_count",
+        "terminal_type_counts",
+        "source_path_count",
+        "packet_scope_count"
+      ],
+      "properties": {
+        "row_count": {"const": 2988},
+        "terminal_type_counts": {
+          "type": "object",
+          "required": ["ELIGIBLE_TAIL_OPEN", "FRONTIER_UNMAPPED"],
+          "properties": {
+            "ELIGIBLE_TAIL_OPEN": {"const": 0},
+            "FRONTIER_UNMAPPED": {"const": 2988}
+          },
+          "additionalProperties": false
+        },
+        "source_path_count": {"const": 2988},
+        "packet_scope_count": {"const": 1}
+      },
+      "additionalProperties": false
+    },
+    "positive_shadow_claims": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "positive_formal_obstruction_claims": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "production_crosswalk_edge_census": {
+      "type": "object",
+      "required": [
+        "required_edge_classes",
+        "coverage_by_edge_class",
+        "theorem_backed_edge_count",
+        "status",
+        "detection_mode",
+        "future_new_fields_automatically_scanned"
+      ],
+      "properties": {
+        "required_edge_classes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "coverage_by_edge_class": {"type": "object"},
+        "theorem_backed_edge_count": {"const": 0},
+        "status": {"const": "EMPTY_IN_FROZEN_DECLARED_CORPUS"},
+        "detection_mode": {
+          "const": "EXPLICIT_MAPPED_FROZEN_CORPUS_CENSUS"
+        },
+        "future_new_fields_automatically_scanned": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "native_key_collision": {
+      "type": "object",
+      "required": [
+        "native_tuple_count",
+        "collision_tuple_count",
+        "rows_in_collision_classes",
+        "excess_rows_over_native_keys",
+        "multiplicity_distribution",
+        "maximum_multiplicity",
+        "native_tuple_is_row_key"
+      ],
+      "properties": {
+        "native_tuple_count": {"const": 866},
+        "collision_tuple_count": {"const": 854},
+        "rows_in_collision_classes": {"const": 2976},
+        "excess_rows_over_native_keys": {"const": 2122},
+        "multiplicity_distribution": {"type": "object"},
+        "maximum_multiplicity": {"const": 4},
+        "native_tuple_is_row_key": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": {"const": false},
+      "minProperties": 8,
+      "maxProperties": 8
+    }
+  },
+  "additionalProperties": false
+}

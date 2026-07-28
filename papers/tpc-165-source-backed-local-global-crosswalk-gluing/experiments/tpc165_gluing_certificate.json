@@ -1,0 +1,85 @@
+{
+  "claim_boundary": {
+    "formal_gluing_implies_actual_active_support": false,
+    "formal_gluing_implies_canonical_minimal_representation": false,
+    "occurrence_witness_verifier_pass_implies_active_support": false,
+    "occurrence_witness_verifier_pass_implies_canonical_minimality": false,
+    "positive_fixed_X_L2": false,
+    "production_crosswalk_proved": false,
+    "synthetic_fixture_is_production_evidence": false,
+    "twin_prime_theorem": false
+  },
+  "formal_gluing_theorem": {
+    "cocycle": "The overlap bijections satisfy identity, inverse, and triple-overlap composition.",
+    "conclusion": "The quotient gives a global formal row family, unique up to the unique typed isomorphism commuting with all local maps.",
+    "exact_column_conservation": "Local rational column sums equal to one descend to global rational column sums equal to one.",
+    "local_totality": "Every cut in every patch has a finite nonempty local row family.",
+    "overlap_bijections": "Local rows over each pairwise overlap are related by exact typed weight-preserving bijections.",
+    "theorem_level": "PROVED_L0_FORMAL",
+    "typed_payload_preservation": true
+  },
+  "production_status": {
+    "formal_occurrence_totality": "NOT_TESTABLE",
+    "local_patch_family_status": "NOT_TESTABLE",
+    "overlap_cocycle_status": "NOT_TESTABLE",
+    "reason": "TPC-163 finds no theorem-backed production actual-occurrence edge in the frozen declared corpus.",
+    "source_backed_local_edge_count": 0
+  },
+  "schema": "tpc-165-local-global-crosswalk-gluing-v1",
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "b694330939bab0ca36062ea71ff37e538d847f752e05fef14acea951a52d7b34",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-163-source-locator-census-native-key-collision/experiments/tpc163_source_census.json",
+      "source_id": "TPC163.census"
+    },
+    {
+      "canonical_utf8_lf_sha256": "58abf57fdf27338c0889709d439af17585226b62aefd44d690af83ef5ea72808",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-163-source-locator-census-native-key-collision/experiments/tpc163_source_census_audit.json",
+      "source_id": "TPC163.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "756ae04913b639c4f4643e23ecbf36faf11f6b10b56cdfb536526208598aa44c",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-164-minimal-archived-separation-key/experiments/tpc164_minimal_key_certificate.json",
+      "source_id": "TPC164.certificate"
+    },
+    {
+      "canonical_utf8_lf_sha256": "023d2dc9838f3448fa763ab85791de870a7a5bcaf1b0f5f9a0008d0db8cfc4ff",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-164-minimal-archived-separation-key/experiments/tpc164_minimal_key_audit.json",
+      "source_id": "TPC164.audit"
+    }
+  ],
+  "synthetic_nonvacuity": {
+    "cocycle_satisfied": true,
+    "cut_count": 3,
+    "evidence_mode": "SYNTHETIC_REACHABILITY",
+    "global_column_sums_are_one": true,
+    "global_formal_row_count": 3,
+    "local_row_copy_count": 4,
+    "overlap_bijections_complete": true,
+    "patch_count": 2,
+    "theorem_semantics": false,
+    "validation": "PASS"
+  },
+  "three_gate_separation": {
+    "actual_active_support": {
+      "meaning": "the glued row is present with nonzero physical coefficient",
+      "production_status": "NOT_TESTABLE"
+    },
+    "canonical_minimal_representation": {
+      "meaning": "the actual carrier has an independently proved canonical or minimal parent",
+      "production_status": "NOT_TESTABLE"
+    },
+    "formal_occurrence_totality": {
+      "meaning": "every archived cut has at least one glued formal row",
+      "production_status": "NOT_TESTABLE"
+    }
+  }
+}

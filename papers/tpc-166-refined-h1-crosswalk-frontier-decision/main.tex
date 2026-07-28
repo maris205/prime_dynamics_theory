@@ -1,0 +1,446 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+\setlist{itemsep=0pt,topsep=3pt,parsep=0pt,partopsep=0pt}
+
+\hypersetup{
+  pdftitle={Refining the H1 Crosswalk Frontier},
+  pdfauthor={Liang Wang},
+  pdfsubject={Three independent production roots after archive separation and formal gluing},
+  pdfkeywords={fixed shift, occurrence crosswalk, blocker antichain, route decision}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\PROVED}{\textnormal{\textsc{proved}}}
+\newcommand{\Hmono}{\mathsf H_{\rm mono}}
+\newcommand{\Hlocal}{\mathsf H_{\rm local}}
+\newcommand{\Hsupport}{\mathsf H_{\rm support}}
+\newcommand{\Hcanon}{\mathsf H_{\rm canon}}
+\newcommand{\Hoverlap}{\mathsf H_{\rm overlap}}
+\newcommand{\Htotal}{\mathsf H_{\rm total}}
+\newcommand{\Hwitness}{\mathsf H_{\rm witness}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{Refining the H1 Crosswalk Frontier:}\\
+\textbf{Three Independent Production Roots after}\\
+\textbf{Archive Separation and Formal Gluing}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-162 records the first missing structural object as the monolithic
+node \(\Hmono\).
+TPC-163--165 now reveal its internal dependency structure without
+constructing the production carrier.  We freeze the TPC-162 pointer
+as historical fact and refine it by a source-locked acyclic graph.
+
+Inside this monolithic-crosswalk sub-DAG, the graph has exactly three
+minimal \(\mathsf{NOT\_TESTABLE}\) roots:
+\[
+\begin{gathered}
+\mathsf{H1.source\_backed\_local\_occurrence\_edge\_family},\\
+\mathsf{H1.actual\_active\_support\_certificate},\\
+\mathsf{H1.canonical\_minimal\_representation\_certificate}.
+\end{gathered}
+\]
+The first root feeds overlap compatibility and formal
+local-to-global totality.  Formal totality then joins the other two
+roots at a production occurrence witness, which feeds the historical
+monolithic crosswalk.  The exact archived separation key of TPC-164
+and the finite gluing theorem of TPC-165 are proved supporting nodes,
+not unresolved roots.
+
+For work ordering, the local-edge family is selected as the refined
+first-child pointer.  The full three-element antichain is nevertheless
+preserved: selection is not implication.  TPC-163 still finds zero
+theorem-backed production local occurrence edges, so the verdict
+remains \(\mathsf{NOT\_TESTABLE}\).  No selected route is stopped, and
+no actual-carrier impossibility is inferred.  These three roots are
+not the complete H1 blocker set: the full map clause still has nine
+zero-defect requirements and an independent occurrence registry,
+while the scalar-plus-ETO clause remains independently
+\(\mathsf{NOT\_TESTABLE}\).
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed shift; occurrence provenance;
+dependency DAG; minimal blocker antichain; route decision.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Claim boundary.}
+This paper refines a frontier; it does not close it.  It does not
+rewrite TPC-162, prove a production local occurrence family, certify
+actual active support, prove a canonical/minimal actual
+representation, complete the production crosswalk, stop the selected
+route, establish positive fixed-\(X\) \(\Ltwo\), give a prime-pair
+lower bound, or prove the twin-prime conjecture.  The three-root
+antichain is scoped only to the monolithic-crosswalk sub-DAG, not to
+the complete H1 contract.
+\end{minipage}}
+
+\section{Historical pointer versus current refinement}
+
+TPC-162 freezes the current verdict
+\[
+ \mathsf{Verdict}_{162}=\NT
+\]
+and the first missing object
+\[
+ \Hmono:=
+ \mathsf{H1.theorem\_backed\_occurrence\_provenance\_crosswalk}.
+ \tag{1.1}\label{eq:historical}
+\]
+This statement is correct at the interface resolution used there
+\citep{WangTPC162}.  A later decomposition should not retroactively
+replace \eqref{eq:historical}: reproducible route histories require
+old pointers to remain interpretable against their own source locks.
+
+TPC-163--165 provide new resolution:
+\begin{enumerate}[leftmargin=2.1em]
+ \item the frozen source corpus has no theorem-backed production
+       actual-occurrence edge, and native triples collide
+       \citep{WangTPC163};
+ \item a unique five-field minimum key separates every archived cut
+       row \citep{WangTPC164}; and
+ \item compatible local formal patches would glue uniquely with exact
+       conservation, but no production patch is supplied
+       \citep{WangTPC165}.
+\end{enumerate}
+These facts justify a new child-level graph beneath \(\Hmono\).
+
+\subsection{The complete H1 envelope remains outside this refinement}
+
+TPC-156 defines two sufficient clauses \citep{WangTPC156}.  Write
+\[
+\mathcal D=
+\{D_L,D_{QD},D_{QZ},D_G,D_P,D_{DZ},D_{GP},
+  D_{\rm cover},D_{\rm rec}\}.
+\]
+Then
+\[
+\begin{aligned}
+\mathsf{Map}_{H1}
+ &=
+ \Hmono\wedge
+ \bigwedge_{D\in\mathcal D}(D=0)
+ \wedge\mathsf{OccurrenceRegistryTotal},\\
+\mathsf{Scalar}_{H1}
+ &=
+ \mathsf{CompleteFUM}_{o(X)}
+ \wedge\mathsf{TheoremBackedETO},\\
+\mathsf{H1Complete}
+ &=\mathsf{Map}_{H1}\vee\mathsf{Scalar}_{H1}.
+\end{aligned}
+\tag{1.2}\label{eq:full-h1}
+\]
+TPC-166 refines only the factor \(\Hmono\) in
+\(\mathsf{Map}_{H1}\).  The nine zero-defect conditions and the
+independent occurrence registry remain external requirements.  The
+scalar-plus-ETO clause is a separate \(\NT\) route and is not a child
+of \(\Hmono\).  Therefore the antichain computed below must never be
+reported as the complete H1 minimal blocker antichain.
+
+\begin{definition}[Non-retroactive refinement]\label{def:refine}
+A refinement of a historical frontier node \(H\) consists of:
+\begin{enumerate}[label=(\roman*),leftmargin=2.1em]
+ \item a source lock preserving \(H\)'s original identifier, status,
+       and scope;
+ \item a directed acyclic graph whose target is a new copy of \(H\);
+ \item typed child nodes whose conjunction supplies \(H\); and
+ \item an explicit statement that the historical record is not
+       rewritten.
+\end{enumerate}
+\end{definition}
+
+\section{The refined production DAG}
+
+We abbreviate:
+\[
+\begin{aligned}
+\Hlocal&=\mathsf{source\mbox{-}backed\ local\ occurrence\ edge\ family},\\
+\Hsupport&=\mathsf{actual\ active\ support\ certificate},\\
+\Hcanon&=\mathsf{canonical/minimal\ representation\ certificate},\\
+\Hoverlap&=\mathsf{local\ overlap\ bijection/cocycle},\\
+\Htotal&=\mathsf{glued\ formal\ occurrence\ totality},\\
+\Hwitness&=\mathsf{production\ occurrence\ witness}.
+\end{aligned}
+\]
+The dependency direction is ``parent is prerequisite.''  The full
+refined graph is:
+\[
+\begin{array}{ccl}
+\Hlocal&\longrightarrow&\Hoverlap\\
+\{\Hlocal,\Hoverlap,K_{164},G_{165}\}
+ &\longrightarrow&\Htotal\\
+\{\Htotal,\Hsupport,\Hcanon\}
+ &\longrightarrow&\Hwitness\\
+\Hwitness&\longrightarrow&\Hmono,
+\end{array}
+\tag{2.1}\label{eq:dag}
+\]
+where \(K_{164}\) is the proved archived separation key and
+\(G_{165}\) is the proved finite typed gluing theorem.  The three
+nodes \(\Hlocal,\Hsupport,\Hcanon\) have no parents.  The nodes
+\(K_{164},G_{165}\) are also parentless, but their status is
+\(\PROVED\), so they are not blockers.
+
+\begin{definition}[Minimal unresolved root antichain]\label{def:antichain}
+For a target \(H\) in a finite prerequisite DAG, take the ancestral
+subgraph of \(H\).  An unresolved root is a node of status \(\NT\)
+having no \(\NT\) parent in that subgraph.  The set of all such roots
+is the \emph{minimal unresolved root antichain}.
+\end{definition}
+
+This definition removes descendants that are unavailable only because
+an earlier unresolved prerequisite is missing.  It does not choose
+one root at the expense of independent roots.
+
+\section{Exact three-root frontier}
+
+\begin{theorem}[Refined crosswalk-sub-DAG blocker antichain]
+\label{thm:antichain}
+Within the source-locked DAG \eqref{eq:dag}, the minimal unresolved
+root antichain of \(\Hmono\) is exactly
+\[
+ \mathcal A_{166}
+ =
+ \{\Hlocal,\Hsupport,\Hcanon\}.
+ \tag{3.1}\label{eq:antichain}
+\]
+The nodes \(\Hoverlap,\Htotal,\Hwitness,\Hmono\) are unresolved
+descendants and hence do not belong to \(\mathcal A_{166}\).
+\end{theorem}
+
+\begin{proof}
+The imported TPC-164 and TPC-165 audits give
+\[
+ \operatorname{status}(K_{164})
+ =\operatorname{status}(G_{165})=\PROVED.
+\]
+TPC-163 gives zero qualifying production local edges, and TPC-165
+keeps formal totality, actual support, and canonical/minimality
+separate.  Therefore
+\[
+ \operatorname{status}(\Hlocal)
+ =\operatorname{status}(\Hsupport)
+ =\operatorname{status}(\Hcanon)=\NT.
+\]
+Each of these three has no unresolved parent, so all belong to the
+root antichain.
+
+The node \(\Hoverlap\) has unresolved parent \(\Hlocal\).
+The node \(\Htotal\) has unresolved parents \(\Hlocal,\Hoverlap\).
+The node \(\Hwitness\) has unresolved parents
+\(\Htotal,\Hsupport,\Hcanon\), and \(\Hmono\) has unresolved parent
+\(\Hwitness\).  Hence none of these descendants is minimal.  The DAG
+contains no other nodes, proving \eqref{eq:antichain}.
+\end{proof}
+
+\begin{remark}[Not the full H1 antichain]\label{rem:not-full}
+\Cref{thm:antichain} concerns only the ancestral sub-DAG of
+\(\Hmono\).  Replacing \(\Hmono\) by its three roots inside
+\eqref{eq:full-h1} still leaves the nine defect nodes,
+occurrence-registry totality, and the independent scalar-plus-ETO
+clause.  Their full-DAG minimality is not computed here.
+\end{remark}
+
+\begin{corollary}[No single-root reduction]\label{cor:no-single}
+Proving any one member of \(\mathcal A_{166}\) does not, by the
+current dependency contract, prove either of the other two.
+\end{corollary}
+
+\begin{proof}
+The three nodes are pairwise parent-independent in
+\eqref{eq:dag}.  No imported theorem supplies a directed path between
+them.
+\end{proof}
+
+\section{A selected pointer that preserves the antichain}
+
+For sequential work, a single display pointer is useful.  We select
+\[
+ \mathsf{FirstChild}_{166}=\Hlocal
+ \tag{4.1}\label{eq:selected}
+\]
+because it is the first source-producing object on the
+local-to-global branch.  If local edges are found, overlap maps become
+testable and the proved gluing theorem can be instantiated.
+
+\begin{proposition}[Selection is not erasure]\label{prop:selection}
+Equation \eqref{eq:selected} is an ordering convention for the next
+construction.  The production blocker set remains the full
+\(\mathcal A_{166}\) of \cref{eq:antichain}.
+\end{proposition}
+
+\begin{proof}
+The machine decision stores both fields independently:
+\[
+\begin{split}
+\mathsf{canonical\ selected\ representative}&=\Hlocal,\\
+\mathsf{full\ antichain\ preserved}
+ &= [\Hlocal,\Hsupport,\Hcanon].
+\end{split}
+\]
+Its validator recomputes the antichain from the DAG and rejects any
+candidate that deletes \(\Hsupport\) or \(\Hcanon\).  Thus selection
+cannot change the mathematical dependency set.
+\end{proof}
+
+Here ``canonical selected representative'' refers only to deterministic
+serialization and display order.  It is not the missing
+\(\Hcanon\) theorem.
+
+\section{Production evidence and verdict}
+
+The source-locator census remains decisive at the first child:
+\[
+ \#\mathcal E_{\rm local}^{\rm theorem\mbox{-}backed}=0
+ \quad\text{in the frozen declared corpus}.
+ \tag{5.1}\label{eq:zero-local}
+\]
+Consequently no production local patch family exists in the current
+evidence set.  The statuses are:
+\begin{center}
+\begin{tabularx}{0.96\linewidth}{@{}Y P{0.2\linewidth}@{}}
+\toprule
+\textbf{Object} & \textbf{Status}\\
+\midrule
+minimum archived separation key & \(\PROVED\)\\
+finite typed gluing theorem & \(\PROVED\)\\
+source-backed local occurrence edge family & \(\NT\)\\
+actual active-support certificate & \(\NT\)\\
+canonical/minimal representation certificate & \(\NT\)\\
+overlap cocycle and glued formal totality & \(\NT\)\\
+production occurrence witness and monolithic crosswalk & \(\NT\)\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{theorem}[Current refined decision]\label{thm:decision}
+Under the nine source locks of TPC-166, and only inside the historical
+monolithic-crosswalk sub-DAG,
+\[
+ \boxed{\mathsf{Verdict}_{166}=\NT},
+ \qquad
+ \mathsf{FirstChild}_{166}=\Hlocal,
+ \qquad
+ \mathcal A_{166}
+ =\{\Hlocal,\Hsupport,\Hcanon\}.
+ \tag{5.2}\label{eq:decision}
+\]
+The selected occurrence-augmented route is not stopped, and no
+actual-carrier impossibility is proved.
+\end{theorem}
+
+\begin{proof}
+The verdict cannot be \(\mathsf{GO}\) because each root in
+\(\mathcal A_{166}\) is unresolved.  It cannot be a route stop or
+impossibility verdict because the source census is closed-world and
+the formal gluing theorem leaves source augmentation open.  Thus the
+typed result is \(\NT\), with pointer and antichain given by
+\cref{eq:selected,eq:antichain}.
+\end{proof}
+
+\section{Why TPC-162 is not rewritten}
+
+There is no contradiction between
+\[
+ \mathsf{FirstMissing}_{162}=\Hmono
+ \quad\text{and}\quad
+ \mathsf{FirstChild}_{166}=\Hlocal.
+\]
+The first names the unresolved public interface at TPC-162
+resolution.  The second names one child after a later factorization.
+The certificate records
+\[
+ \mathsf{historical\ pointer\ retroactively\ rewritten}=\mathsf{false}
+\]
+and mutation-tests the opposite value.  This provenance discipline
+allows later papers to refine a route without silently changing what
+an earlier source actually asserted.
+
+\section{Reproducible DAG audit}
+
+The generator locks the TPC-162 snapshot/audit and both
+certificate/audit pairs from TPC-163--165, together with the TPC-156
+full H1 contract.  It validates:
+\begin{enumerate}[leftmargin=2.1em]
+ \item unique node identifiers and total parent references;
+ \item acyclicity by depth-first topological traversal;
+ \item exact node statuses and dependency lists;
+ \item recomputation of the minimal unresolved root antichain;
+ \item preservation of the crosswalk-sub-DAG scope and exclusion of
+       the nine defects, independent registry, and scalar clause;
+ \item preservation of the historical pointer;
+ \item zero production local edges and the \(\NT\) verdict.
+\end{enumerate}
+Real mutations delete either independent root, rewrite the historical
+pointer, fabricate a production edge, promote the verdict to
+\(\mathsf{GO}\), stop the route, introduce a dependency cycle, or
+select a representative outside the antichain.  The same validator
+rejects each mutation.
+
+\section{Next source-producing task}
+
+The refinement identifies what the next paper must actually deliver:
+not another global schema, but at least one theorem-backed local
+actual-occurrence edge family with:
+\begin{enumerate}[leftmargin=2.1em]
+ \item the five-field archived source address;
+ \item canonical path and hash, theorem and formula locators, and a
+       nonempty derivation tree;
+ \item exact typed row weights and parent/stage/downstream payloads;
+ \item an explicit statement of whether the result is merely formal
+       or lies on the actual carrier.
+\end{enumerate}
+A partial local theorem would be genuine forward progress even before
+total coverage.  It would not close \(\Hsupport\) or \(\Hcanon\);
+those remain parallel research programs.
+
+\section{Conclusion}
+
+TPC-166 turns one opaque H1 blocker into a precise three-root frontier
+inside that blocker.  Two supporting uncertainties are already closed:
+archived
+cuts have an exact lossless key, and compatible formal patches glue
+with exact conservation.  The unresolved mathematics is now
+localized to source-backed local occurrence edges, actual active
+support, and canonical/minimal representation.  The route remains
+open, the verdict remains \(\NT\), and the next constructive target
+is smaller without being overstated.  The complete H1 graph,
+including the external map-clause and scalar-clause requirements of
+\eqref{eq:full-h1}, remains for a later integration.
+
+\bibliographystyle{plainnat}
+{\small\bibliography{references}}
+
+\end{document}

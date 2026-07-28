@@ -1,0 +1,331 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={An Exact Minimal Addressing Key for the Frozen H1 Cut Archive},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exhaustive finite separation-key theorem},
+  pdfkeywords={fixed shift, archive key, exhaustive search, occurrence provenance}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\Kmin}{\kappa_{\min}}
+\newcommand{\Fdict}{\mathcal F}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{An Exact Minimal Addressing Key}\\
+\textbf{for the Frozen H1 Cut Archive}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-163 proves that the native triple
+\((\ell,k,d_{\rm nat})\) is not a row key for the \(2988\)-row frozen
+H1 cut archive: only \(866\) triples occur, with \(2122\) excess rows
+over native keys.  We now solve the finite addressing problem exactly.
+For the declared field dictionary
+\[
+ \mathcal F=
+ \{\ell,k,d_{\rm nat},j_L,j_K,D_0,\mathsf{reason},\mathsf{type}\},
+\]
+all \(2^8-1=255\) nonempty subsets are tested on every production row.
+There is a unique separating subset of minimum cardinality:
+\[
+ \Kmin=(\ell,k,d_{\rm nat},j_L,j_K).
+\]
+Its cardinality is five, and it produces \(2988\) distinct keys.
+There are respectively \(1,3,3,1\) injective subsets of cardinalities
+\(5,6,7,8\), and none of smaller cardinality.
+
+This is an exact minimality theorem relative to the frozen field
+dictionary and archive.  It is deliberately not called a canonical
+actual-occurrence representation: the archive contains shadows rather
+than a theorem-backed actual carrier, and the selected tuple says
+nothing about active support, parent minimality, or downstream
+multipliers.  Its role is narrower and useful: it gives a lossless
+address on which future source-backed local occurrence patches can be
+defined and glued.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed shift; finite archive; separation
+key; occurrence provenance; exhaustive certificate.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Claim boundary.}
+``Minimum'' means minimum cardinality among subsets of one declared
+eight-field dictionary on one frozen \(2988\)-row archive.  It does
+not mean a canonical or minimal actual parent representation.  This
+paper proves no production occurrence crosswalk, actual active
+support, positive fixed-\(X\) \(\Ltwo\), prime-pair lower bound, or
+twin-prime theorem.
+\end{minipage}}
+
+\section{The finite addressing question}
+
+TPC-153 gives each nonsoft cut path a unique shadow-row identifier
+\citep{WangTPC153}.  TPC-163 then proves two facts
+\citep{WangTPC163}: the frozen declared corpus contains no
+source-locator-admissible actual-occurrence edge, and the projection
+\[
+ c\longmapsto(\ell(c),k(c),d_{\rm nat}(c))
+ \tag{1.1}\label{eq:native-projection}
+\]
+is highly noninjective.  The present task is not to infer the missing
+actual edges.  It is to find the smallest already archived coordinate
+set that retains every distinct cut path.
+
+\begin{definition}[Frozen rows and field dictionary]\label{def:fields}
+Let \(\mathcal C\) be the \(2988\) distinct production cut paths in
+the canonical TPC-153 shadow archive.  For \(c\in\mathcal C\), define
+\[
+\begin{aligned}
+\ell(c),k(c),d_{\rm nat}(c)&:
+   &&\text{the exact native triple},\\
+j_L(c),j_K(c)&:
+   &&\text{the exact dyadic block indices},\\
+D_0(c)&:
+   &&\text{the archived prefix boundary},\\
+r(c)&:
+   &&\text{the archived frontier reason},\\
+\tau(c)&:
+   &&\text{\(\mathsf{PREFIX}\) or \(\mathsf{TAIL}\), recomputed from }
+       d_{\rm nat}(c)\le D_0(c).
+\end{aligned}
+\]
+The ordered field dictionary is
+\[
+ \Fdict=(\ell,k,d_{\rm nat},j_L,j_K,D_0,r,\tau).
+ \tag{1.2}\label{eq:dictionary}
+\]
+The derived value of \(\tau\) must agree with the source-cut path
+identifier; disagreement invalidates the input.
+\end{definition}
+
+\begin{definition}[Separating key]\label{def:key}
+For a nonempty subset \(S\subseteq\Fdict\), let
+\[
+ \kappa_S(c)=(f(c))_{f\in S},
+ \tag{1.3}\label{eq:projected-key}
+\]
+where fields retain the order in \eqref{eq:dictionary}.  We call \(S\)
+\emph{separating} if \(\kappa_S\) is injective on \(\mathcal C\).  A
+\emph{minimum archived separation key} is a separating subset of
+minimum cardinality.
+\end{definition}
+
+This definition is representation-theoretically neutral.  It asks
+only whether two archived cut paths receive the same tuple.
+
+\section{Exhaustive theorem}
+
+\begin{theorem}[Unique minimum archived key]\label{thm:minimal-key}
+Among the \(255\) nonempty subsets of \(\Fdict\), the unique
+minimum-cardinality separating subset is
+\[
+ S_{\min}=(\ell,k,d_{\rm nat},j_L,j_K).
+ \tag{2.1}\label{eq:min-key}
+\]
+Its cardinality is \(5\), and
+\[
+ \#\kappa_{S_{\min}}(\mathcal C)=|\mathcal C|=2988.
+ \tag{2.2}\label{eq:injective}
+\]
+No subset of at most four fields is separating.  The complete numbers
+of separating subsets by cardinality are
+\[
+\begin{array}{c|rrrrrrrr}
+ |S|&1&2&3&4&5&6&7&8\\
+\hline
+ \#\{S:\kappa_S\text{ injective}\}&0&0&0&0&1&3&3&1.
+\end{array}
+\tag{2.3}\label{eq:injective-counts}
+\]
+\end{theorem}
+
+\begin{proof}
+For each of the \(2^8-1=255\) nonempty subsets \(S\), the certificate
+constructs the exact tuple \(\kappa_S(c)\) for all \(c\in\mathcal C\)
+and stores
+\[
+ \left(
+   |\kappa_S(\mathcal C)|,\ 
+   \max_v|\kappa_S^{-1}(v)|,\ 
+   |\mathcal C|-|\kappa_S(\mathcal C)|
+ \right).
+ \tag{2.4}\label{eq:stats}
+\]
+It marks \(S\) separating exactly when the first coordinate equals
+\(2988\).  The exhaustive list has no separating entry of size at
+most four, exactly one of size five, and that entry is
+\eqref{eq:min-key}.  Direct grouping gives \eqref{eq:injective}.
+Counting the remaining marked entries yields
+\eqref{eq:injective-counts}.
+
+The computation is deterministic and integer/string exact.  Default
+mode regenerates the full \(255\)-entry list; \texttt{--check} mode
+recomputes it and demands byte-identical outputs.  The audit also
+recomputes all upstream canonical path--hash locks.  Hence neither
+floating-point comparison nor random search enters the result.
+\end{proof}
+
+\begin{corollary}[Necessity of both dyadic indices]\label{cor:both}
+Neither
+\[
+ (\ell,k,d_{\rm nat},j_L)
+ \quad\text{nor}\quad
+ (\ell,k,d_{\rm nat},j_K)
+\]
+separates the archive.
+\end{corollary}
+
+\begin{proof}
+These are four-field subsets and hence fail by
+\cref{thm:minimal-key}.  More precisely, their distinct-key counts are
+\(1626\) and \(1594\), respectively, and each has maximum
+multiplicity \(2\).
+\end{proof}
+
+\section{Quantifying the failed shortcuts}
+
+The exhaustive table also measures how much information each natural
+shortcut loses.
+\begin{center}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Fields} & \textbf{Keys} & \textbf{Excess} &
+ \textbf{Max.\ multiplicity}\\
+\midrule
+\((\ell,k,d_{\rm nat})\) & 866 & 2122 & 4\\
+\((\ell,k,d_{\rm nat},r)\) & 1068 & 1920 & 4\\
+\((\ell,k,d_{\rm nat},j_L)\) & 1626 & 1362 & 2\\
+\((\ell,k,d_{\rm nat},j_K)\) & 1594 & 1394 & 2\\
+\((\ell,k,d_{\rm nat},j_L,j_K)\) & 2988 & 0 & 1\\
+\bottomrule
+\end{tabular}
+\end{center}
+The frontier reason improves the native triple only slightly.  Either
+dyadic index halves the worst multiplicity, but both are necessary to
+separate all rows.
+
+\begin{proposition}[Resolution of the TPC-163 collision]\label{prop:four}
+For the four rows with native triple \((3,171,1)\), the key
+\eqref{eq:min-key} takes the four values
+\[
+\begin{split}
+(3,171,1,1,7),\quad &(3,171,1,1,8),\\
+(3,171,1,2,7),\quad &(3,171,1,2,8).
+\end{split}
+\]
+\end{proposition}
+
+\begin{proof}
+These values are read from the four production source-cut paths.  The
+pair \((j_L,j_K)\) runs over
+\(\{1,2\}\times\{7,8\}\), so the values are distinct.
+\end{proof}
+
+\section{What ``minimal'' does and does not mean}
+
+There are three notions that must remain separate:
+\begin{enumerate}[leftmargin=2.1em]
+ \item \textbf{archive separation:} distinct frozen cut paths have
+       distinct addresses;
+ \item \textbf{actual occurrence identity:} rows refer to genuine
+       downstream occurrences on an actual carrier;
+ \item \textbf{canonical/minimal representation:} an independently
+       proved equivalence or optimization principle selects one
+       actual parent representation.
+\end{enumerate}
+TPC-164 proves only the first.  In particular, \(\Kmin\) is not
+promoted to an occurrence identifier.  It may be used as a source
+address in a later local patch, but such a patch must separately cite
+the theorem that produces its actual edge.
+
+\begin{proposition}[Relative nature of minimality]\label{prop:relative}
+The conclusion of \cref{thm:minimal-key} is invariant under row
+ordering but depends on both \(\mathcal C\) and \(\Fdict\).  Adding a
+new primitive field or enlarging the production archive requires a
+new exhaustive certificate.
+\end{proposition}
+
+\begin{proof}
+Injectivity depends only on equality classes of projected tuples, so
+permuting rows changes nothing.  Adding a field creates new subsets
+not tested here; adding a row may create a collision in
+\eqref{eq:injective}.  Thus neither enlargement is covered by the
+frozen theorem.
+\end{proof}
+
+\section{Machine certificate and mutation audit}
+
+The certificate contains the entire \(255\)-subset table rather than
+only the winning tuple.  This makes the negative part---no key of
+size at most four---independently recomputable.  The audit performs
+the following adversarial modifications and runs the same validator:
+\begin{itemize}[leftmargin=2.1em]
+ \item drift an upstream source hash;
+ \item delete \(j_L\) or \(j_K\) from the selected key;
+ \item promote the archived key to an actual-occurrence identifier;
+ \item promote it to a canonical/minimal representation.
+\end{itemize}
+Every mutation is rejected.  The last two tests enforce the
+mathematical boundary rather than merely the byte format.
+
+\section{Interface to local-to-global construction}
+
+The new key supplies a clean domain for a local patch system.  If
+\(\{U_i\}\) covers \(\mathcal C\), a future source-backed construction
+may describe local edge families
+\[
+ \mathcal R_i(c),\qquad c\in U_i,
+\]
+addressed by \(\Kmin(c)\).  On overlaps, exact bijections can then be
+asked to preserve source records, types, and coefficients.  That
+local-to-global question is logically downstream of archive
+separation and upstream of actual active-support and
+canonical-minimality certificates.
+
+\section{Conclusion}
+
+The archive-address ambiguity exposed by TPC-163 has an exact repair:
+retain both dyadic block indices together with the native triple.
+The repair is optimal among the eight declared archived fields and
+lossless on all \(2988\) production cut paths.  Because it is kept
+strictly at the archive layer, it creates a reliable interface for
+the next construction without pretending that the missing actual
+occurrence carrier has already been supplied.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

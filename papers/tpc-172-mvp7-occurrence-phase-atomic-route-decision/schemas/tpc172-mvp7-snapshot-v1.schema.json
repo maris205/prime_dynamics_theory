@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc172-mvp7-snapshot-v1.schema.json",
+  "title": "TPC-172 MVP7 occurrence-phase-atomic route snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "snapshot",
+    "source_locks",
+    "imported_state",
+    "quantifier_projection",
+    "route_families",
+    "typed_frontiers",
+    "endpoint_ledger_v4",
+    "endpoint_classifier_state",
+    "classifier_evidence_registry",
+    "ordered_valid_verdicts",
+    "classifier_contract",
+    "next_forced_objects",
+    "current_verdict",
+    "progress_classification",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-172-mvp7-occurrence-phase-atomic-route-snapshot-v1"
+    },
+    "snapshot": {
+      "type": "object"
+    },
+    "source_locks": {
+      "type": "array"
+    },
+    "imported_state": {
+      "type": "object"
+    },
+    "quantifier_projection": {
+      "type": "object"
+    },
+    "route_families": {
+      "type": "object"
+    },
+    "typed_frontiers": {
+      "type": "object"
+    },
+    "endpoint_ledger_v4": {
+      "type": "object"
+    },
+    "endpoint_classifier_state": {
+      "type": "object"
+    },
+    "classifier_evidence_registry": {
+      "type": "object"
+    },
+    "ordered_valid_verdicts": {
+      "type": "array"
+    },
+    "classifier_contract": {
+      "type": "object"
+    },
+    "next_forced_objects": {
+      "type": "object"
+    },
+    "current_verdict": {
+      "const": "NOT_TESTABLE"
+    },
+    "progress_classification": {
+      "type": "object"
+    },
+    "claim_boundary": {
+      "type": "object"
+    }
+  }
+}

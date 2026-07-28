@@ -1,0 +1,371 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+\setlist{itemsep=0pt,topsep=3pt,parsep=0pt,partopsep=0pt}
+
+\hypersetup{
+  pdftitle={Source-Backed Local-to-Global Gluing for Formal H1 Occurrence Crosswalks},
+  pdfauthor={Liang Wang},
+  pdfsubject={A finite descent theorem with exact column conservation},
+  pdfkeywords={fixed shift, local-to-global, descent, occurrence provenance, exact conservation}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\Rows}{\mathcal R}
+\newcommand{\Cuts}{\mathcal C}
+\newcommand{\Q}{\mathbb Q}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{Source-Backed Local-to-Global Gluing}\\
+\textbf{for Formal H1 Occurrence Crosswalks}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The missing H1 occurrence crosswalk need not be discovered as one
+monolithic table.  This paper proves the finite descent theorem needed
+to construct it from local patches.  Let a finite family
+\(\{U_i\}\) cover the archived cuts.  Suppose each \(c\in U_i\) has a
+finite nonempty local formal row family, and suppose exact typed,
+weight-preserving bijections identify the row families on pairwise
+overlaps.  If the bijections satisfy the identity, inverse, and
+triple-overlap cocycle laws, the quotient of the disjoint union is a
+global formal row family.  All preserved payloads descend uniquely;
+the result is unique up to the unique typed isomorphism commuting with
+the local maps.  If each local column has exact rational weight one,
+then every global column also has exact weight one.
+
+This theorem is formal and conditional.  A synthetic two-patch fixture
+glues four local row copies to three global rows and verifies exact
+conservation, while a three-patch regression tests the cocycle
+nonvacuously.  Neither fixture has production semantics.  TPC-163
+finds zero theorem-backed production actual-occurrence edges in the
+frozen declared corpus, so no production local patch system is
+currently available.
+
+Most importantly, the paper separates three gates: formal occurrence
+totality, actual active support, and canonical/minimal representation.
+Local-to-global gluing can close only the first.  It cannot promote a
+formal row to nonzero physical support or choose a canonical actual
+parent.
+\end{abstract}
+
+\noindent\textbf{Keywords:} fixed shift; finite descent; gluing;
+occurrence provenance; exact column conservation; proof interface.
+
+\medskip
+\noindent\fcolorbox{red!55!black}{red!3}{%
+\begin{minipage}{0.96\linewidth}
+\textbf{Claim boundary.}
+The theorem says what follows \emph{if} source-backed compatible local
+patches are supplied.  The current production corpus supplies none.
+Synthetic fixtures have no theorem semantics.  We prove no actual
+active support, canonical/minimal actual representation, production
+H1 crosswalk, positive fixed-\(X\) \(\Ltwo\), prime-pair lower bound,
+or twin-prime theorem.
+\end{minipage}}
+
+\section{From a monolithic blocker to a descent problem}
+
+TPC-163 gives a source-locator contract and finds no qualifying
+production actual-occurrence edge in its frozen corpus
+\citep{WangTPC163}.  TPC-164 nevertheless solves the archive-address
+problem: the unique minimum separating key in its eight-field
+dictionary is
+\[
+ \kappa(c)=(\ell(c),k(c),d_{\rm nat}(c),j_L(c),j_K(c)).
+ \tag{1.1}\label{eq:address}
+\]
+This key does not create actual occurrences, but it lets independent
+local constructions refer to the same source cut unambiguously
+\citep{WangTPC164}.
+
+The next structural question is therefore:
+\[
+ \text{can compatible local row families be assembled without
+ losing types or exact coefficients?}
+\]
+The answer is yes, by an elementary finite quotient theorem.  This
+does not solve the source problem; it isolates exactly which local
+data would suffice.
+
+\section{Typed local patch system}
+
+\begin{definition}[Local formal row system]\label{def:local}
+Let \(\Cuts\) be a finite set of archived cut addresses, and let
+\(\{U_i\}_{i\in I}\) be a finite cover.  For every \(c\in U_i\), let
+\(\Rows_i(c)\) be a finite nonempty set of local formal rows.  A row
+\(r\in\Rows_i(c)\) carries:
+\begin{enumerate}[label=(\roman*),leftmargin=2.1em]
+ \item an archived source address \(\kappa(c)\);
+ \item a typed payload \(T_i(r)\);
+ \item an exact weight \(w_i(r)\in\Q\); and
+ \item, in production use, a source record satisfying the
+       path--hash--theorem--formula--derivation contract of TPC-163.
+\end{enumerate}
+Local column conservation means
+\[
+ \sum_{r\in\Rows_i(c)}w_i(r)=1
+ \qquad(c\in U_i).
+ \tag{2.1}\label{eq:local-conservation}
+\]
+\end{definition}
+
+The typed payload may contain a formal occurrence symbol, stage,
+parent, multiplier, and downstream target.  The theorem treats those
+as data to be preserved; it does not assert that they are true of an
+actual carrier.
+
+\begin{definition}[Descent datum]\label{def:descent}
+For every \(c\in U_i\cap U_j\), an overlap map is a bijection
+\[
+ \phi_{ji,c}:\Rows_i(c)\longrightarrow\Rows_j(c)
+ \tag{2.2}\label{eq:overlap}
+\]
+such that
+\[
+ T_j(\phi_{ji,c}r)=T_i(r),\qquad
+ w_j(\phi_{ji,c}r)=w_i(r).
+ \tag{2.3}\label{eq:preserve}
+\]
+The maps form a \emph{descent datum} if
+\[
+\phi_{ii,c}=\mathrm{id},\qquad
+\phi_{ij,c}=\phi_{ji,c}^{-1},\qquad
+\phi_{ki,c}=\phi_{kj,c}\circ\phi_{ji,c}
+\tag{2.4}\label{eq:cocycle}
+\]
+on every applicable pairwise or triple overlap.
+\end{definition}
+
+\section{Local-to-global gluing theorem}
+
+\begin{theorem}[Finite typed gluing]\label{thm:gluing}
+Let \((\Rows_i,T_i,w_i,\phi_{ji})\) be a local formal row system with
+descent datum.  Then:
+\begin{enumerate}[label=(\alph*),leftmargin=2.1em]
+ \item there is a global finite nonempty row family \(\Rows(c)\) for
+       every \(c\in\Cuts\);
+ \item each local family has a canonical bijection
+       \(\iota_{i,c}:\Rows_i(c)\to\Rows(c)\), and
+       \(\iota_{j,c}\phi_{ji,c}=\iota_{i,c}\);
+ \item the payload and weight descend uniquely to functions
+       \(T:\Rows(c)\to\mathcal T\) and
+       \(w:\Rows(c)\to\Q\);
+ \item the global object is unique up to the unique typed,
+       weight-preserving isomorphism commuting with all
+       \(\iota_{i,c}\); and
+ \item if \eqref{eq:local-conservation} holds, then
+       \[
+         \sum_{r\in\Rows(c)}w(r)=1
+         \qquad(c\in\Cuts).
+         \tag{3.1}\label{eq:global-conservation}
+       \]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Fix \(c\in\Cuts\).  Form the disjoint union
+\[
+ D(c)=\coprod_{i:c\in U_i}\Rows_i(c).
+\]
+Declare \((i,r)\sim(j,s)\) if \(s=\phi_{ji,c}(r)\).  Identity and
+inverse give reflexivity and symmetry, and the cocycle gives
+transitivity.  Thus \(\sim\) is an equivalence relation.  Put
+\[
+ \Rows(c)=D(c)/{\sim},\qquad
+ \iota_{i,c}(r)=[i,r].
+ \tag{3.2}\label{eq:quotient}
+\]
+
+For fixed \(i,j\) containing \(c\), the overlap bijection identifies
+each row of \(\Rows_i(c)\) with exactly one row of \(\Rows_j(c)\).
+Consequently every equivalence class has exactly one representative
+in each participating patch, and each \(\iota_{i,c}\) is bijective.
+Equation \eqref{eq:preserve} makes
+\[
+ T([i,r])=T_i(r),\qquad w([i,r])=w_i(r)
+\]
+well-defined.  Uniqueness of these descended functions is immediate
+because the local maps are jointly surjective.
+
+If another global family \(\Rows'(c)\) has compatible local
+bijections \(\iota'_{i,c}\), define
+\[
+ \Psi_c([i,r])=\iota'_{i,c}(r).
+\]
+Compatibility makes \(\Psi_c\) well-defined.  It is the only map
+commuting with the local maps, and the same construction in reverse
+gives its inverse.  This proves the stated unique isomorphism.
+
+Finally choose any \(i\) with \(c\in U_i\).  Since
+\(\iota_{i,c}\) is a weight-preserving bijection,
+\[
+ \sum_{r\in\Rows(c)}w(r)
+ =\sum_{r\in\Rows_i(c)}w_i(r)=1,
+\]
+which proves \eqref{eq:global-conservation}.
+\end{proof}
+
+\begin{corollary}[Matrix conservation]\label{cor:matrix}
+Let \(L_i\) send the basis vector \(e_c\) to the exact weighted sum of
+local rows in \(\Rows_i(c)\).  Under the hypotheses of
+\cref{thm:gluing}, the \(L_i\) descend to a global matrix \(L\), and
+\[
+ \mathbf 1^{T}L=\mathbf 1^{T}.
+ \tag{3.3}\label{eq:matrix-conservation}
+\]
+\end{corollary}
+
+\begin{proof}
+The overlap maps identify equal typed coefficients, so the columns
+descend.  Equation \eqref{eq:global-conservation} is exactly
+\eqref{eq:matrix-conservation} column by column.
+\end{proof}
+
+\section{Why the cocycle is indispensable}
+
+Pairwise compatibility alone does not force consistent identifications
+around a triple overlap.  If
+\(\phi_{31,c}\ne\phi_{32,c}\phi_{21,c}\), a row in patch \(1\) gets
+two competing representatives in patch \(3\).  The binary relation
+generated by pairwise maps still has a quotient, but a chosen local
+map need no longer be injective into it; the asserted common row
+family can collapse.  Thus the cocycle is exactly the condition used
+in the injectivity step of \cref{thm:gluing}.
+
+The audit tests this nonvacuously.  A three-patch, two-row fibre uses
+identity maps on all overlaps.  Swapping only the direct map from the
+first patch to the third preserves exact payloads, weights, and
+pairwise bijectivity, but violates the triangle equation.  The
+validator rejects it.
+
+\section{Synthetic nonvacuity certificate}
+
+The public sample uses
+\[
+ U_1=\{c_1,c_2\},\qquad U_2=\{c_2,c_3\}.
+\]
+Each local cut has one row of rational weight \(1\).  The two copies
+over \(c_2\) have the same typed payload and are identified by the
+overlap bijection.  Therefore:
+\[
+\begin{array}{c|c}
+\text{quantity}&\text{value}\\
+\hline
+\text{cut count}&3\\
+\text{patch count}&2\\
+\text{local row copies}&4\\
+\text{global formal rows}&3\\
+\text{every local/global column sum}&1.
+\end{array}
+\]
+This demonstrates that the serialization and quotient algorithm are
+reachable.  Every record is explicitly marked
+\(\mathsf{SYNTHETIC\_REACHABILITY}\) with theorem semantics false.
+
+\section{Three gates that gluing must not merge}
+
+\begin{definition}[Separated production gates]\label{def:gates}
+For a proposed production carrier, define:
+\begin{enumerate}[label=(G\arabic*),leftmargin=2.5em]
+ \item \(\mathsf{formal\ occurrence\ totality}\): every archived cut
+       address has at least one globally glued formal row;
+ \item \(\mathsf{actual\ active\ support}\): every required row is an
+       actual carrier occurrence with the required nonzero physical
+       coefficient; and
+ \item \(\mathsf{canonical/minimal\ representation}\): an independent
+       theorem selects or characterizes its canonical/minimal actual
+       parent representation.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[No gate promotion]\label{prop:no-promotion}
+\Cref{thm:gluing} can establish G1 from its local hypotheses.  It does
+not imply G2 or G3.
+\end{proposition}
+
+\begin{proof}
+The construction in \eqref{eq:quotient} uses only finite sets, typed
+payload equality, bijections, and exact formal weights.  It contains
+no predicate that embeds a row into the actual arithmetic carrier or
+proves its physical coefficient nonzero, so it cannot imply G2.  It
+also imposes no equivalence or optimization theorem on actual
+parents, so it cannot imply G3.  Synthetic systems satisfying all
+gluing hypotheses while declaring both actual predicates undecided
+give explicit models of the separation.
+\end{proof}
+
+TPC-155's witness verifier \citep{WangTPC155} checks a declared
+interface.  Even a successful format and conservation check would
+not, by itself, make an unsourced active-support or canonicality
+statement true.  Those fields require their own source-backed
+theorems.
+
+\section{Current production evaluation}
+
+The imported source locks give:
+\begin{center}
+\begin{tabularx}{0.9\linewidth}{@{}Y P{0.28\linewidth}@{}}
+\toprule
+\textbf{Production object} & \textbf{Status}\\
+\midrule
+source-backed local actual-occurrence edges & \(0\) in frozen corpus\\
+local patch family & \(\NT\)\\
+overlap bijections and cocycle & \(\NT\)\\
+formal occurrence totality & \(\NT\)\\
+actual active support & \(\NT\)\\
+canonical/minimal representation & \(\NT\)\\
+\bottomrule
+\end{tabularx}
+\end{center}
+The formal gluing theorem is proved, but its production hypotheses
+are not currently instantiated.  This is not a negative existence
+theorem.  New source-backed local occurrence results could populate
+the interface.
+
+\paragraph{Reproducible audit.}
+The generator source-locks TPC-163/164, recomputes the quotient and
+exact rational sums, and rejects real mutations of overlap, payload,
+weight, cocycle, evidence mode, production edges, and gate status.
+
+\section{Conclusion}
+
+Compatible source-backed local patches can build a global formal H1
+crosswalk with exact conservation.  Producing the local actual edges,
+proving actual active support, and proving canonical/minimal
+representation remain three distinct tasks that the next decision
+must preserve as parallel roots.
+
+\bibliographystyle{plainnat}
+{\small\bibliography{references}}
+
+\end{document}

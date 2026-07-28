@@ -1,0 +1,257 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\e}{\mathrm e}
+\newcommand{\T}{\mathbb T}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+
+\title{\textbf{A Parseval Corridor for Direct Additive Twists\\
+on the Determinant-Two M\"obius Core}}
+\author{Liang Wang\\
+\small School of Artificial Intelligence and Automation,\\[-2pt]
+\small Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\small \texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The periodic-approximation route to an additive phase has a sharp
+minor-arc obstruction.  We open a different, direct route by treating
+the phase as an \(L^2\) variable.  On the literal determinant-two
+two-M\"obius core, Parseval gives an exact mean-square identity for
+the normalized additive twist, at every scale and without a
+scale-exceptional set.  The same identity holds on every complete
+Fourier grid at least as long as the fiber interval.  In the
+small-polylogarithmic envelope this is a positive fixed-\(X\) power
+in phase \(L^2\).  It is not a pointwise theorem for a specified
+production phase, and therefore does not close the original
+pointwise additive-twist frontier.
+\end{abstract}
+
+\noindent\textbf{Keywords.}
+M\"obius correlation; additive twist; Parseval identity; phase
+average; determinant two.
+
+\medskip
+\noindent\fcolorbox{red!70!black}{red!3}{\parbox{0.94\linewidth}{
+\textbf{Claim boundary.}
+The power saving below is in Lebesgue \(L^2\) over the additive phase.
+It is not a bound at a distinguished phase and is not a production
+phase-cell registry.  Parseval uses orthogonality rather than a new
+pointwise M\"obius estimate.  No physical H3 return, deterministic
+all-prefix theorem, \(1/400\), prime-pair lower bound, or twin-prime
+theorem is proved.}}
+
+\section{The literal core and its phase transform}
+
+Put \(\e(x)=\exp(2\pi i x)\).  Retain the determinant-two data
+\[
+ a,s\ge1,\quad d,u\in\mathbb Z,\quad
+ (a,s)=1,\quad as\ {\rm odd},\quad su-ad=2,
+\]
+\[
+ q=as,\qquad t(z)=ad+qz,\qquad
+ c_z=\mu(d+sz)\mu(u+az).
+\]
+For \(N>0\), let
+\[
+ I_N=\{z\in\mathbb Z:N<t(z)\le2N\},\quad
+ L_N=|I_N|,\quad E_N=\sum_{z\in I_N}|c_z|^2.
+\]
+The interval \(I_N\) consists of consecutive integers, and
+\begin{equation}
+ E_N\le L_N\le\frac Nq+1.
+\label{eq:count}
+\end{equation}
+Define the normalized direct additive twist
+\begin{equation}
+ F_N(\alpha)=\frac qN\sum_{z\in I_N}c_z\e(-\alpha z),
+ \qquad \alpha\in\T=\mathbb R/\mathbb Z.
+\label{eq:transform}
+\end{equation}
+
+TPC-158 controls explicit major arcs through periodic approximation
+and proves that this approximation route is expensive on a uniform
+minor-arc family \citep{WangTPC158}.  The definition
+\eqref{eq:transform} does not approximate the phase.
+
+\section{Exact phase mean square}
+
+\begin{theorem}[Direct additive-twist Parseval identity]\label{thm:parseval}
+For every \(N>0\),
+\begin{equation}
+ \boxed{\quad
+ \int_{\T}|F_N(\alpha)|^2\,d\alpha
+ =\frac{q^2}{N^2}E_N.
+ \quad}
+\label{eq:parseval}
+\end{equation}
+In particular,
+\begin{equation}
+ \norm{F_N}_{L^2(\T)}^2
+ \le\frac qN+\frac{q^2}{N^2}.
+\label{eq:l2bound}
+\end{equation}
+No exceptional set of scales is required.
+\end{theorem}
+
+\begin{proof}
+Expanding the square and using character orthogonality gives
+\[
+ \int_{\T}\e\bigl(-\alpha(z-z')\bigr)\,d\alpha
+ =\mathbf1_{\{z=z'\}}.
+\]
+Thus every off-diagonal term vanishes and the diagonal equals
+\(q^2E_N/N^2\).  Apply \eqref{eq:count}.
+\end{proof}
+
+\begin{corollary}[Exceptional phases]\label{cor:measure}
+For every \(\lambda>0\),
+\begin{equation}
+ \operatorname{meas}\{\alpha\in\T:|F_N(\alpha)|>\lambda\}
+ \le
+ \frac{q^2E_N}{N^2\lambda^2}
+ \le
+ \frac{q/N+q^2/N^2}{\lambda^2}.
+\label{eq:chebyshev}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+This is Chebyshev's inequality applied to \eqref{eq:parseval}.
+\end{proof}
+
+The identity is stronger than a logarithmic estimate in its own
+declared norm, but weaker than a bound at any named \(\alpha\).
+It holds equally for arbitrary bounded coefficients; the
+M\"obius form identifies the actual core rather than supplying the
+orthogonality.
+
+\section{A finite exact Fourier registry}
+
+Write \(I_N=\{z_0,\ldots,z_0+L_N-1\}\).
+
+\begin{proposition}[Complete-grid identity]\label{prop:grid}
+If \(M\ge L_N\), then
+\begin{equation}
+ \frac1M\sum_{r=0}^{M-1}
+ \left|F_N\left(\frac rM\right)\right|^2
+ =\frac{q^2}{N^2}E_N.
+\label{eq:grid}
+\end{equation}
+Consequently the number of grid phases for which
+\(|F_N(r/M)|>\lambda\) is at most
+\[
+ \frac{Mq^2E_N}{N^2\lambda^2}.
+\]
+\end{proposition}
+
+\begin{proof}
+After expansion, the finite character average is one precisely when
+\(M\mid z-z'\).  Since \(|z-z'|\le L_N-1<M\), this occurs precisely
+on the diagonal.  The counting assertion follows by summing
+\(|F_N|^2>\lambda^2\) over bad grid points.
+\end{proof}
+
+The condition \(M\ge L_N\) is structural.  For a shorter grid,
+distinct exponents may collide modulo \(M\), so \eqref{eq:grid} need
+not hold.
+
+\section{Interpretation of the power envelope}
+
+Suppose the small-polylogarithmic envelope
+\[
+ q\le(\log X)^{\eta_0},\qquad N\ge\sqrt X
+\]
+holds.  For sufficiently large \(X\), \(q\le N\), and
+\eqref{eq:l2bound} gives
+\begin{equation}
+ \boxed{\quad
+ \norm{F_N}_{L^2(\T)}
+ \le\sqrt2\,X^{-1/4}(\log X)^{\eta_0/2}.
+ \quad}
+\label{eq:power}
+\end{equation}
+Thus TPC-167 has the precise program status
+\[
+ \mathsf{PROVED\_L1\_ACTUAL\_CORE\_
+ PHASE\_METRIC\_SINGLE\_CELL}.
+\]
+Its analytic norm is \(\mathsf{L2\_PHASE}\), while
+\(\mathsf{program\_positive\_L2=false}\) and
+\(\mathsf{fixed\_atom=false}\).  The positive exponent in
+\eqref{eq:power} belongs to a phase-averaged norm.  It cannot be
+entered as a production fixed-phase or endpoint-V3 payment.
+
+\section{Why pointwise selection remains open}
+
+The implication
+\[
+ \norm{F_N}_{L^2(\T)}\ll N^{-1/2}q^{1/2}
+ \quad\Longrightarrow\quad
+ |F_N(\alpha_\star)|=o(1)
+\]
+is false without information about the selected phase
+\(\alpha_\star\).  At the coefficient level, take \(c_z=1\) on an
+interval and \(\alpha_\star=0\).  Then
+\[
+ |F_N(0)|=\frac{qL_N}{N},
+\]
+which is of constant order when \(L_N\sim N/q\), while Parseval still
+has mean square of order \(q/N\).  This example is a logical
+nonimplication for coefficient-blind phase averaging; it is not a
+claim that the literal M\"obius coefficients realize the example.
+
+Accordingly, the parent-ready direct-twist node is advanced only to
+a typed child:
+\[
+ \mathsf{direct\ additive\ twist}
+ \longrightarrow
+ \mathsf{phase\mbox{-}L^2\ direct\ twist}.
+\]
+The original pointwise node still needs a source-locked phase
+registry plus an avoidance or selection theorem, or a genuinely
+pointwise arithmetic estimate.
+
+\section{Reproducible certificate}
+
+The standard-library audit source-locks TPC-158, checks Parseval on a
+shifted signed/zero fixture using two complete Fourier grids of
+different sizes, and verifies the normalization bound.  These are
+finite implementation checks; the proof above establishes the
+continuous identity.  Its executable mutation contract rejects
+promotion from phase \(L^2\) to a
+fixed phase, from a phase power to endpoint V3, or from
+orthogonality to M\"obius-specific cancellation.  Hashes certify
+artifact integrity only.
+
+\section{Conclusion}
+
+The minor-arc obstruction to small-period approximation does not stop
+every direct route.  Parseval gives an exact, exceptional-scale-free
+direct additive-twist theorem on the actual core, with a positive
+fixed-\(X\) power in phase \(L^2\).  The cost of this advance is
+equally exact: a distinguished physical phase remains outside the
+theorem.  TPC-168 asks how much of this phase-average information
+survives on a finite source-locked phase registry.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

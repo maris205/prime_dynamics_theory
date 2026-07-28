@@ -1,0 +1,21 @@
+{
+  "claim_boundary": {
+    "actual_occurrence_data": false,
+    "synthetic": false
+  },
+  "fixture_scope": "PRODUCTION_ARCHIVE_EXCERPT",
+  "multiplicity": 4,
+  "native_tuple": [
+    3,
+    171,
+    1
+  ],
+  "schema": "tpc-163-native-collision-witness-v1",
+  "source_cut_path_ids": [
+    "cut|X=512|h0=2|ell=3|k=171|d=1|jL=1|jK=7|D0=0|type=TAIL",
+    "cut|X=512|h0=2|ell=3|k=171|d=1|jL=1|jK=8|D0=0|type=TAIL",
+    "cut|X=512|h0=2|ell=3|k=171|d=1|jL=2|jK=7|D0=0|type=TAIL",
+    "cut|X=512|h0=2|ell=3|k=171|d=1|jL=2|jK=8|D0=0|type=TAIL"
+  ],
+  "statement": "Distinct production cut paths share one native tuple; this is a key-collision witness, not an occurrence lift."
+}
