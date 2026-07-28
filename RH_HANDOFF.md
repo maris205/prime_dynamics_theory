@@ -2,12 +2,12 @@
 
 Status date: 2026-07-28
 
-Current completed endpoint: RH-241
+Current completed endpoint: RH-251
 
-Completed research batch: RH-232 through RH-241
+Completed research batch: RH-242 through RH-251
 
 Research batch commit:
-`891565e599833f237576197f93eee88280a4f03e`
+`37ddb33c81e8875226ffb646aac0efc3bc45467e`
 
 This is the compact entry point for a fresh Codex chat. The repository,
 not an old chat transcript, is the source of truth.
@@ -30,14 +30,14 @@ git pull --rebase origin main
 Read only these compact entry points before opening older papers:
 
 - `RH_HANDOFF.md`
-- `papers/RH-241-ten-layer-trace-envelope-frontier-review/README.md`
-- `papers/RH-241-ten-layer-trace-envelope-frontier-review/UPDATED_ROADMAP.md`
-- `papers/RH-241-ten-layer-trace-envelope-frontier-review/results/trace_envelope_frontier_review.json`
-- `papers/RH-241-ten-layer-trace-envelope-frontier-review/main.pdf`
+- `papers/RH-251-ten-layer-superloop-anchor-frontier-review/README.md`
+- `papers/RH-251-ten-layer-superloop-anchor-frontier-review/UPDATED_ROADMAP.md`
+- `papers/RH-251-ten-layer-superloop-anchor-frontier-review/results/frontier_review.json`
+- `papers/RH-251-ten-layer-superloop-anchor-frontier-review/main.pdf`
 
-Start the next result-driven batch at RH-242. The provisional batch endpoint
-is RH-251, but each actual theorem, obstruction, or numerical finding decides
-the next paper. Stop after ten genuine papers, or earlier at a genuine route
+Start the next result-driven batch at RH-252.  The next route is conditional
+on a genuinely new reopening input; each actual theorem, obstruction, or
+numerical finding decides the next paper.  Stop earlier at a genuine route
 stop requiring user direction.
 
 ### Chat and delegation discipline
@@ -79,78 +79,70 @@ All five gates remain open. The active work is still inside Gate A. No paper
 in the completed batch constructs a Hilbert--Polya operator, identifies
 Riemann zeros as eigenvalues, proves a zeta-divisor equality, or implies RH.
 
-## 3. Exact decision after RH-241
+## 3. Exact decision after RH-251
 
 Current route coordinate:
 
 ```text
-projection_free_relative_det2_open_uniform_trace_envelope
+exact_superloop_quotient_frozen_anchor_class_obstructed_open_new_selector_uniform_tail
 ```
 
 Next target:
 
 ```text
-all_order_cloud_extracted_periodic_trace_envelope_with_coefficient_anchor
+new_anchored_selector_outside_frozen_resolved_window_with_uniform_quotient_block_certificate_and_target_tail
 ```
 
 The route decision is:
 
-1. The direct Euclidean biorthogonal Riesz projector exists at every archived
-   finite endpoint but is catastrophically ill-conditioned. It is not a
-   usable uniform small-noise route in the present norm.
-2. Positive radial shell gaps cannot repair this by themselves; a strict
-   2-by-2 theorem shows that fixed spectral gaps coexist with unbounded
-   nonnormal projector norms.
-3. The regularized determinant survives because a finite selected eigenvalue
-   multiset factors `det_2` exactly without using a projector.
-4. Divergent Hilbert--Schmidt/Frobenius mass is not a determinant obstruction.
-   Nilpotent and direct-sum theorems show that arbitrarily large nonnormal
-   singular-value mass can be invisible to every power trace and to `det_2`.
-5. The useful complement variables are therefore the cloud-extracted power
-   traces, not the whole-complement Hilbert--Schmidt norm.
-6. Orders 2 through 12 are small and dual-channel coherent, but fixed finite
-   jets cannot imply a normal entire family. This insufficiency has an exact
-   zero-free entire-function counterexample.
-7. RH-240 proves the correct sufficient theorem: a uniform all-order envelope
-   `|tau_n(sigma)| <= M q^n` gives a locally bounded, zero-free normal relative
-   `det_2` family on `|z| < 1/q`, with an explicit finite-head/uniform-tail
-   convergence bound.
-8. Two obligations remain inseparable: prove the all-order envelope and prove
-   a coefficient anchor showing that the moving cloud removes only the
-   singular factor rather than swallowing the intended deterministic
-   numerator.
+1. RH-242 gives an exact fixed-noise graded periodic-superloop identity for
+   the cloud-extracted traces.  It is projection-free, but the counterloops
+   are signed/complex and do not by themselves provide a positive majorant.
+2. RH-243 independently fixes the deterministic numerator coefficient target:
+   `a_n = r_H^(-n)[P_n - 1 - (-1)^n + 2 1_(2|n) lambda^(-n/2)]`.  This anchor
+   is not an identification of the current moving cloud.
+3. RH-245 gives the exact orthogonal quotient identity `tau_n=Tr(C^n)`;
+   it uses a norm-one orthogonal projection, not the ill-conditioned Riesz
+   projector.  RH-246 turns a uniform contractive block power into the needed
+   geometric envelope, but its 17-endpoint diagnostic is not uniform.
+4. RH-247 proves that cancellation-blind separate absolute majorants are
+   superunit (`1.253165...` to `3.556834...` root rates); grouped signed
+   quotient cancellations remain the only live majorant route.
+5. RH-244 excludes all 543 anchored shell prefixes at all 32 frozen endpoints.
+   RH-248 strengthens this to the full single-use shell zonotope: prefixes,
+   contiguous intervals, binary shell subsets, and the convex box relaxation
+   all have zero passes with dual certificates.
+6. RH-249 shows that unbounded nonnegative shell weights create 26 formal fits
+   and six failures, but require maximum weights from `40.5844` to
+   `5.8018e10`; these are moment-reweighting pathologies, not legal spectral
+   multiplicities.
+7. RH-250 states the exact finite-head/analytic-tail gluing interface, yet the
+   current complete certificate count is zero.  The all-order quotient tail,
+   deterministic target tail, and coefficient bridge therefore remain open.
 
-## 4. Compact conclusions from RH-232 through RH-241
+## 4. Compact conclusions from RH-242 through RH-251
 
-- **RH-232:** exact biorthogonal projector and principal-angle formula.
-  All 32 finite candidates exist, but projector norms range from about
-  `40.75` to `2.260997172167218e12`; 17 exceed `1e6`.
-- **RH-233:** exact fixed-gap nonnormal counterexample and contour-resolvent
-  bound. Radial gaps are not pseudospectral certificates. Minimum archived
-  gap/projector ratio: `6.3983e-16`.
-- **RH-234:** exact projection-free finite `det_2` factor, reciprocal-divisor
-  statement, and local root-stability estimate. All 6,144 product checks pass;
-  maximum discrepancy: `1.8311e-15`.
-- **RH-235:** exact nilpotent and nontrivial direct-sum separation of trace
-  spectrum from Hilbert--Schmidt mass. Maximum archived `|tau_2|` is
-  `0.1295196`, versus HS-squared upper `308.7520`; largest ratio is `2.36e6`.
-- **RH-236:** 384 endpoint/order trace cases through order 12, computed without
-  a complement eigendecomposition. Maximum unit-disk jet is `0.0759200`;
-  fine-scale maximum is `0.0106624`; global observed root rate is `0.3598883`.
-- **RH-237:** finite logarithmic-jet metric, radius-transfer theorem, and
-  dual-channel audit. All 16 unit-disk comparisons pass `0.02`; maximum
-  distance is `0.0141455`.
-- **RH-238:** exact first-admissible shell selector and parameter-monotonicity
-  theorem. The rule `epsilon_sigma = sigma` succeeds at 32/32 endpoints;
-  ranks range from 5 to 38; minimum slack is `4.728e-5`.
-- **RH-239:** exact finite-jet contraction and exact no-finite-jet normality
-  theorem. All 30 adjacent and 16 channel triangle bounds pass, while actual
-  adjacent errors are not monotonically contracting.
-- **RH-240:** exact geometric trace-envelope normality theorem and quantitative
-  coefficient-to-determinant convergence estimate. The first uncontrolled
-  order is 13; the all-order hypothesis is not yet proved.
-- **RH-241:** ten-layer review and revised Gate-A roadmap. Aggregate finite
-  ledger: 7,280 items; identity failures: 0.
+- **RH-242:** 14,584 exact finite-noise superloops and 352 archived residuals;
+  both residual signs occur at every order.
+- **RH-243:** exact deterministic coefficient dictionary; anchor norm
+  `0.49450543569144195`; even symmetric numerator subsequence only.
+- **RH-244:** 543 frozen shell prefixes, 0/32 anchored passes; best mismatch
+  range `0.39723767197524446`--`0.48457639371229216`.
+- **RH-245:** 17 quotient endpoints, zero rank mismatches; maximum partition
+  error `3.99e-15`, maximum archive discrepancy `6.31e-12`.
+- **RH-246:** exact block-power envelope criterion; finite `q_12`
+  `0.3932995547481413`, diagnostic tail at `R=1` `1.7991531976413385e-05`.
+- **RH-247:** 352 separate-absolute cases, all superunit root rates
+  `1.253165378203787`--`3.5568338003788416`.
+- **RH-248:** 5,012 intervals and 139,572,890 binary subsets scanned in
+  addition to prefixes; convex-box distance range
+  `0.14649763462315904`--`0.4240179027308174`, 0/32 passes.
+- **RH-249:** cone result 26 formal passes/6 failures; minimum required cap
+  `40.58443731031147`, maximum `58018432630.629776`.
+- **RH-250:** zero complete head/tail certificates; relaxed-head to finite-tail
+  ratio `8142.588125081018`.
+- **RH-251:** finite ledger 16,191 items, audit failures 0; all Gates A--E
+  remain false/open.
 
 ## 5. Route firewall and reopening triggers
 
@@ -169,67 +161,62 @@ Do not silently return to stopped or insufficient shortcuts:
 - **Adaptive residual near zero:** proves finite compressibility, not the
   correct deterministic normalization. A separate coefficient anchor is
   mandatory.
+- **Frozen anchored shell class:** RH-244 and RH-248 rule out the entire
+  single-use prefix/interval/binary/box class in the archived candidate
+  windows; RH-249's unbounded cone fits are not admissible multiplicities.
+- **Separate absolute loops:** RH-247's Perron contribution forces a
+  superunit rate. Any future majorant must preserve signed quotient
+  cancellation.
+- **Head/tail shortcut:** RH-250's interface is exact, but RH-246's finite
+  diagnostic cannot be promoted to a uniform all-order theorem.
 
 A negative result should be published as a scoped route obstruction. It must
 not be promoted to global nonexistence unless the theorem actually has that
 scope.
 
-## 6. Selected route for RH-242 through RH-251
+## 6. Selected route for RH-252 and later
 
-Begin RH-242 by deriving an exact finite-noise periodic-loop representation
-for the cloud-extracted traces `tau_n(sigma)`. The proof obligation is not
-merely a new numerical atlas: it must expose where the selected cloud is
-removed and which cancellations survive uniformly in both orbit length `n`
-and noise `sigma`.
+The next paper may open only with one genuinely new input:
 
-The provisional result-driven sequence is:
+1. an expanded resolved candidate window with an anchored reachability audit;
+2. a signed/complex selector derived from invariant quotient structure, rather
+   than arbitrary shell reweighting;
+3. a uniform small-noise theorem for a quotient block power; or
+4. an analytic all-order tail bound for the deterministic numerator target.
 
-1. exact periodic-loop formula for cloud-extracted traces;
-2. cloud subtraction at the loop or generating-function level;
-3. independent short-orbit coefficient anchor for the deterministic
-   numerator;
-4. cancellation-preserving grouping of periodic contributions;
-5. uniform long-orbit majorant in a justified noise--order regime;
-6. rigorous gluing of a certified finite head to the analytic tail;
-7. anchored adaptive selection rather than zero-target selection;
-8. outward validation of the finite head in both discretization channels;
-9. application of RH-240 to obtain a locally uniform relative determinant;
-10. a ten-layer review deciding whether local Gate-A progress is genuine.
-
-Let actual results reorder or split these papers. If an absolute loop bound
-recreates the RH-229 Hilbert--Schmidt wall, test grouped cancellation before
-stopping. If neither an all-order grouping nor an independent anchor is
-available, record the exact first missing theorem and stop for user direction
-instead of manufacturing additional finite-order variants.
+The preferred coordinate is
+`new_anchored_selector_outside_frozen_resolved_window_with_uniform_quotient_block_certificate_and_target_tail`.
+Do not rerun zero-target prefixes or reweight the frozen window and call that
+progress.  If no trigger supplies both a legal anchored head and a uniform
+quotient/target tail, publish the scoped route stop and request user direction.
 
 ## 7. Review and publication audit
 
-The RH-232--RH-241 batch is committed at:
+The RH-242--RH-251 research batch is committed at:
 
 ```text
-891565e599833f237576197f93eee88280a4f03e
+37ddb33c81e8875226ffb646aac0efc3bc45467e
 ```
 
 Final compact audit:
 
-- 194 committed files and 15,698 inserted lines;
-- 25/25 tests passed across all ten paper directories;
+- 194 committed files and 14,576 inserted lines;
+- 29/29 tests passed across all ten paper directories (run one directory at a
+  time to avoid same-basename pytest collection collisions);
 - 10/10 individual publication archives verified with zero failures;
-- batch archive verified 172 files for RH-232 through RH-241 with zero
-  failures;
+- individual archive manifests contain 17 files for RH-242--RH-250 and 19 for
+  RH-251; the batch archive verifies 172 files with zero failures;
 - all ten PDFs compile successfully, with page counts
-  `4,3,4,3,3,3,4,3,4,6` (37 pages total);
+  `4,4,3,3,2,2,2,2,2,3` (27 pages total);
 - final LaTeX logs contain no errors, undefined citations/references, empty
   bibliography warnings, or overfull boxes;
 - semantic PDFs and `main.pdf` are both committed for every paper;
-- aggregate scientific ledger contains 7,280 finite items and zero identity
+- aggregate scientific ledger contains 16,191 finite items and zero audit
   failures;
-- the research commit was rebased over concurrent TPC work and pushed with
-  `HEAD...origin/main = 0 0` at completion.
+- all five macro gates remain explicitly false/open.
 
-The PDFs were compile/log audited in the primary session. A future formal
-publication pass may still delegate full page-by-page visual inspection and
-independent claim review.
+The primary session performed the compile, hash, log, test, and archive audit;
+the delegated publication pass is an additional independent page/claim check.
 
 ## 8. Reproduction notes
 
@@ -247,9 +234,9 @@ reproduction.
 For the full current review, use:
 
 ```text
-papers/RH-241-ten-layer-trace-envelope-frontier-review/
+papers/RH-251-ten-layer-superloop-anchor-frontier-review/
 ```
 
-The immediate next action in a fresh session is RH-242: periodic-loop
-realization of the cloud-extracted trace sequence, with the all-order envelope
-and coefficient anchor kept as separate explicit theorem obligations.
+The immediate next action in a fresh session is RH-252 only after a reopening
+trigger is identified; keep the all-order envelope, legal anchored selector,
+and deterministic coefficient bridge as separate explicit obligations.
