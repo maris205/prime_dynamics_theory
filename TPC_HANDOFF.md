@@ -2,10 +2,10 @@
 
 Status date: 2026-07-28
 
-Current completed endpoint: TPC-182 / MVP8
+Current completed endpoint: TPC-192 / MVP9
 
 Completed research batch commit:
-`19d8c54575f25a15a1ad397c7bfe0332c2604347`
+`d1e55304be61a74b4445f5946a0e3b754420c3e3`
 
 This is the compact entry point for a fresh Codex chat. The repository,
 not an old chat transcript, is the source of truth.
@@ -28,11 +28,11 @@ git -c safe.directory='D:/26-aimath/理论研究3/prime_dynamics_theory' pull --
 Then read only the compact current entry points before opening older papers:
 
 - `TPC_HANDOFF.md`
-- `papers/tpc-182-mvp8-source-phase-route-decision/README.md`
-- `papers/tpc-182-mvp8-source-phase-route-decision/experiments/tpc182_mvp8_snapshot.json`
-- `papers/tpc-182-mvp8-source-phase-route-decision/experiments/tpc182_mvp8_route_audit.json`
+- `papers/tpc-192-mvp9-pointwise-frontier-route-decision/README.md`
+- `papers/tpc-192-mvp9-pointwise-frontier-route-decision/experiments/tpc192_mvp9_pointwise_frontier_route_decision.json`
+- `papers/tpc-192-mvp9-pointwise-frontier-route-decision/experiments/tpc192_mvp9_pointwise_frontier_route_decision_audit.json`
 
-Target the next ten-paper batch, TPC-183 through TPC-192, but let each actual
+Target the next ten-paper batch, TPC-193 through TPC-202, but let each actual
 result determine the next paper. Stop for user confirmation after the ten
 papers or immediately at a genuine route stop.
 
@@ -52,72 +52,75 @@ papers or immediately at a genuine route stop.
 - Do not reconstruct facts from old chat memory when the repository artifact
   is available.
 
-## 2. Exact MVP8 decision
+## 2. Exact MVP9 decision
 
-MVP8 returns:
+MVP9 returns:
 
 ```text
 Verdict = NOT_TESTABLE
-FirstMissing = H1.source_backed_local_occurrence_edge_family
+GlobalFirstMissing = H1.source_backed_local_occurrence_edge_family
+SelectedPointwiseFirstMissing = LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION
 ```
 
-The seven-node minimal blocker antichain is unchanged.
-
-Structural H1 roots:
+The seven-node structural/physical minimal blocker antichain from MVP8 is
+unchanged. Both pointwise parents remain open:
 
 ```text
-H1.source_backed_local_occurrence_edge_family
-H1.actual_active_support_certificate
-H1.canonical_minimal_representation_certificate
+O161.bad_endpoint_pointwise_fixed_atom       OPEN_PARENT_READY
+O161.direct_additive_twist_fixed_atom        OPEN_PARENT_READY
 ```
 
-Physical H9 registries:
+TPC-183 proves the source-locked one-way interface implication
 
 ```text
-H9.literal_weight_registry
-H9.phase_cell_registry
-H9.endpoint_registry
-H9.normalization_registry
+direct additive twist fixed atom  =>  bad endpoint fixed atom
 ```
 
-All seven roots are `NOT_TESTABLE`. The H9 nodes are data obligations with
-`decay_axis=NONE`; a registry never manufactures a cancellation exponent.
+by specializing the uniform direct prefix variable `N=T` at each bad
+endpoint. The reverse implication is not established. TPC-185--186 give
+exact factor-two deterministic reductions from prefix maxima to consecutive
+blocks and then to local oscillation inside the dyadic shadow.
 
-The exact structural result is:
+Three method cells, and only these method cells, are stopped:
 
 ```text
-qualifying local actual-occurrence edges       0
-covered production cuts                         0
-duplicate production cuts                       0
-unmatched production cuts                    2988
-declared-corpus extraction cell       STOP_SCOPED
-global occurrence architecture       NOT_TESTABLE
-actual active support                NOT_TESTABLE
-canonical/minimal representation     NOT_TESTABLE
+TPC-181  phase_metric_uncontrolled_atomic
+TPC-187  SIZE_ONLY_LOCAL_OSCILLATION_METHOD
+TPC-190  PARSEVAL_CHEBYSHEV_TO_PRESCRIBED_ATOM
 ```
 
-The exact phase result is:
+The first is the inherited singleton-versus-a.e. obstruction. The second is
+sharp by a constant-sign synthetic sequence. The third is sharp at the level
+of phase L2 by normalized Dirichlet kernels. None is a counterexample to the
+literal arithmetic theorem, and none stops either O161 parent or the global
+architecture.
+
+The exact endpoint result remains:
 
 ```text
-fixed h0                                      2
-named physical atom                           absent
-production packet-coordinate rows             0
-H9 phase registry                    NOT_TESTABLE
-uncontrolled metric-to-atom          STOP_SCOPED
-source-backed metric selector        NOT_TESTABLE
-O161 pointwise targets               OPEN_PARENT_READY
+fixed h0                                      2  (data fact only)
+named-fixed-atom power                        absent
+named-atom endpoint credit                    0
+strict endpoint 1/400                         UNPAID
+program-positive L2                           false
 ```
 
-The two scoped stops are narrow:
+## 3. Compact conclusions from TPC-183 through TPC-192
 
-1. extraction from the frozen continuous TPC-133--172 theorem corpus;
-2. uncontrolled promotion from a Lebesgue-a.e. phase theorem to a prescribed
-   singleton atom.
+- TPC-183 source-locks both O161 parents and proves the direct-to-bad
+  specialization at L1. The reverse implication is not established.
+- TPC-184 freezes the literal bad-endpoint contract. TPC-185 proves exact
+  prefix/block equivalence up to factor two. TPC-186 identifies fixed-atom
+  local maximal increments as the exact dyadic-shadow obligation.
+- TPC-187 sharply stops size-only local-oscillation control. TPC-188 switches
+  to the direct route without stopping the bad-endpoint theorem.
+- TPC-189 freezes the literal direct-twist contract. TPC-190 proves that
+  Parseval/Chebyshev cannot evaluate a prescribed atom; this method alone is
+  `STOP_SCOPED`.
+- TPC-191 integrates both open parents and the scoped method stops. TPC-192
+  imports TPC-183--191 fail-closed and returns MVP9 `NOT_TESTABLE`.
 
-Neither stop proves architecture infeasibility, stops the pointwise frontier,
-or supplies a counterexample to the desired arithmetic theorem.
-
-## 3. Compact conclusions from TPC-173 through TPC-182
+Historical TPC-173--182 facts still governing MVP9:
 
 - TPC-173 froze and reviewed all 40 TPC-133--172 `main.tex` files:
   30 mapped-disqualified, 10 reviewed-no-candidate, 0 not-mapped, and
@@ -165,44 +168,40 @@ canonical physical representative, named-fixed-atom theorem,
 program-positive L2, strict `1/400`, prime-pair lower bound, or twin-prime
 theorem.
 
-## 5. Selected route for TPC-183 through TPC-192
+## 5. Selected route for TPC-193 through TPC-202
 
-The default next route is the pointwise O161 frontier. Do not repeat the
-TPC-133--172 source scan without a genuinely new declared corpus.
-
-Start TPC-183 with a strict parent/interface comparison between:
+The remaining pointwise gap is not another interface ambiguity. It is the
+literal arithmetic input:
 
 ```text
-O161.bad_endpoint_pointwise_fixed_atom
-O161.direct_additive_twist_fixed_atom
+LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION
 ```
 
-The comparison must source-lock each parent, state its six-axis quantifier
-signature, determine any one-way implication, and identify the smallest
-literal missing theorem. It is an L0/L1 route decision unless it proves new
-fixed-atom arithmetic.
+Start TPC-193 with a strict candidate-mechanism gate for the direct additive
+twist target. A candidate is eligible only if it is theorem-backed and acts
+on the literal determinant-two two-Mobius coefficients at a prescribed atom.
+Its statement must preserve the six axes and expose every constant, range,
+normalization, and loss. Phase L2, Lebesgue-a.e. phase, size-only bounds, and
+repackaged versions of the three stopped cells are ineligible.
 
-Unless TPC-183 finds contrary evidence, attack the narrower
-`O161.bad_endpoint_pointwise_fixed_atom` target first. It directly addresses
-the fixed-phase bad-endpoint gap left by the TPC-159/TPC-169 corridor. Only
-after its actual result should the batch advance to the broader
-`O161.direct_additive_twist_fixed_atom` route.
+If at least one eligible mechanism exists, let its smallest genuine sublemma
+determine TPC-194 onward. If none exists, publish the exact scoped mechanism
+exhaustion and stop for user confirmation rather than manufacturing nine
+variants of the same obstruction.
 
-Use the remaining TPC-184--TPC-191 numbers dynamically for the actual
-pointwise sublemmas, source contracts, conditional theorems, obstructions, or
-route switches produced by this comparison. Reserve TPC-192 / MVP9 for an
-integrated decision only if the batch reaches ten papers.
+The bad-endpoint route may reopen only from a new fixed-atom local-increment
+cancellation theorem. Because direct implies bad, a successful literal direct
+theorem may discharge both pointwise parents; the converse is not assumed.
 
 Reopen other routes only on these exact triggers:
 
-- **Structural route:** a new explicit source corpus or a new theorem-backed
-  local occurrence edge. Declare the enlarged corpus before scanning it.
+- **Structural route:** a new explicitly declared source corpus or a new
+  theorem-backed local occurrence edge.
 - **Metric bridge:** a source-locked named physical atom, the exact production
-  packet schedule, and a theorem that the named atom avoids that
-  schedule-dependent exceptional set.
+  packet schedule, and a theorem that this atom avoids the schedule-dependent
+  exceptional limsup.
 
-If neither trigger exists, do not publish another scan of the same frozen
-corpus and do not promote the a.e. phase theorem to a singleton.
+TPC-202 is reserved for MVP10 only if ten genuine papers are reached.
 
 ## 6. Claim firewall and stop rules
 
@@ -239,31 +238,26 @@ route and publish the infeasibility result instead of hiding the loss.
 
 ## 7. Review and publication audit
 
-The completed TPC-173--182 batch is on `main` at:
+The completed TPC-183--192 research batch is committed at:
 
 ```text
-19d8c54575f25a15a1ad397c7bfe0332c2604347
+d1e55304be61a74b4445f5946a0e3b754420c3e3
 ```
 
 Final compact audit:
 
-- 102 committed files and 18,012 inserted lines;
-- all ten generation commands and all ten `--check` commands passed;
-- 32 JSON artifacts parsed successfully;
-- 12 mutation registries contained 140 true rejection assertions;
-- TPC-182 recomputed and matched all 8 upstream canonical source hashes;
-- TPC-180/181 strict schemas have no unclosed used object layers;
-- 10 stable PDFs, 35 pages total, all A4;
-- zero Type-3 fonts, zero unembedded fonts, and zero actionable
-  LaTeX/BibTeX/layout diagnostics;
-- all 35 final pages were rendered and visually inspected;
-- `git diff --check` passed, and local HEAD equaled remote `main` after push.
-
-Independent claim-firewall review closed the material verifier gaps before
-publication: exact AST/source-field checks in TPC-174, totality/boundary
-promotion rejection in TPC-175, real mutation execution in TPC-173, closed
-TPC-180/181 schemas, and fail-closed upstream/snapshot validation in TPC-182.
-No high or medium claim-boundary issue remained.
+- 111 committed files and 7,230 inserted lines;
+- all ten generators and all ten `--check` commands passed;
+- 20 experiment JSON and 20 schema JSON artifacts parsed successfully;
+- 80/80 mutation-registry rejection assertions are true;
+- 131/131 object-schema layers are recursively closed, with 21/21 array item
+  layers constrained;
+- TPC-192 verifies 13 canonical source locks and semantically imports all nine
+  TPC-183--191 payloads;
+- 10 stable PDFs, 20 pages total, all A4, with all fonts embedded;
+- all 20 final pages were rendered and visually inspected;
+- independent claim-firewall review returned publication PASS with no L2,
+  fixed-atom, scoped-stop, or endpoint-budget promotion.
 
 ## 8. Repository scope
 
