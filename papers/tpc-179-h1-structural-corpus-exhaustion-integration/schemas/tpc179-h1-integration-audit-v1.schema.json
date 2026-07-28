@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc179-h1-integration-audit-v1.schema.json",
+  "title": "TPC-179 H1 integration audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "integration_sha256",
+    "checks",
+    "mutation_regressions",
+    "current_verdict",
+    "first_missing",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-179-h1-structural-corpus-exhaustion-integration-audit-v1"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "integration_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "checks": {
+      "type": "object"
+    },
+    "mutation_regressions": {
+      "type": "object"
+    },
+    "current_verdict": {
+      "const": "NOT_TESTABLE"
+    },
+    "first_missing": {
+      "const": "H1.source_backed_local_occurrence_edge_family"
+    },
+    "claim_boundary": {
+      "type": "object"
+    }
+  }
+}

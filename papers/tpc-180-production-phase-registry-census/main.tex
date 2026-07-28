@@ -1,0 +1,358 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={A Source-Locked Census for the Production Phase Registry},
+  pdfauthor={Liang Wang},
+  pdfsubject={A missing-value census for the named physical phase and its determinant-two packet coordinates},
+  pdfkeywords={production phase registry, named atom, fixed h0, packet coordinates, source lock}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\T}{\mathbb T}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{A Source-Locked Census for the Production Phase Registry:}\\
+\textbf{Fixed-\(h_0=2\) Data, Missing Named-Atom Values,}\\
+\textbf{and Determinant-Two Packet Coordinates}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The TPC-170 metric corridor controls all prefixes of every packet in
+a prescribed determinant-two schedule for Lebesgue-almost every fixed
+phase.  To consume that theorem at the physical endpoint one first
+needs a value-bearing production phase registry: a source-located
+named atom, its exact phase modulo one, and its map into the precise
+packet coordinates on which the metric theorem acts.  We audit the
+frozen TPC-157--172 phase-interface artifacts under canonical source
+locks.  They prove that the relevant actual core has fixed
+\(h_0=2\), and they specify the type of the missing H9 phase record.
+They do not contain a value-bearing named atom, a phase-value locator,
+a production packet schedule, or any physical-atom-to-packet row.
+
+We give the minimal typed registry contract, including canonical
+B\'ezout representative and covariant-multiplier fields, and return
+\(\mathsf{NOT\_TESTABLE}\) with the first missing object equal to the
+named atom together with its phase-value source locator.  The result
+is a scoped \(\Lone\) source-interface obstruction.  It is not a
+global nonexistence theorem, does not synthesize phase zero or any
+other phase, and supplies no decay exponent.
+\end{abstract}
+
+\medskip
+\noindent\fcolorbox{red!70!black}{red!3}{\parbox{0.94\linewidth}{
+\textbf{Claim boundary.}
+The fixed-\(h_0=2\) fact and the phase registry are separate data
+objects.  An H9 registry has decay coordinate \(\mathsf{NONE}\).
+Neither an obligation label, a source hash, a phase-average theorem,
+nor a numerical fixture supplies a named physical phase.  No
+fixed-atom estimate, program-positive \(\Ltwo\), strict \(1/400\),
+prime-pair lower bound, or twin-prime theorem is proved.}}
+
+\section{The exact question}
+
+TPC-171 records the missing physical phase leaf as
+\[
+ \mathsf{H9.phase\_cell\_registry}.
+\tag{1}\label{eq:h9}
+\]
+Its six-axis signature is
+\[
+\begin{array}{c|c}
+\text{axis}&\text{required value}\\
+\hline
+\text{carrier}&\mathsf{PHYSICAL\_PHASE\_REGISTRY}\\
+\text{phase}&\mathsf{NAMED\_FIXED\_ATOM}\\
+\text{endpoint}&\mathsf{NOT\_APPLICABLE}\\
+\text{scale}&\mathsf{DETERMINISTIC\_ALL\_SCALE}\\
+\text{decay}&\mathsf{NONE}\\
+\text{support}&\mathsf{ACTUAL\_ACTIVE\_SUPPORT}.
+\end{array}
+\tag{2}\label{eq:signature}
+\]
+The node has no arithmetic parent.  This direction is deliberate:
+arithmetic theorems may consume a physical phase record, but cannot
+manufacture one \citep{WangTPC161,WangTPC171}.
+
+\begin{definition}[Value-bearing production phase record]
+\label{def:record}
+A production phase record contains at least:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item a stable named physical atom identifier;
+\item its exact value \(\alpha_\star\in\T\);
+\item a theorem-usable source path and locator for that value;
+\item a separate source lock for \(h_0=2\);
+\item the exact production packet schedule to which the phase is
+  mapped; and
+\item source-located rows realizing the map into the packet
+  coordinates of TPC-170.
+\end{enumerate}
+\end{definition}
+
+An object that contains only the words ``named phase'', only a target
+node such as \eqref{eq:h9}, or only a schema allowing these fields is
+not a record in the sense of \cref{def:record}.
+
+\section{\texorpdfstring{Fixed \(h_0=2\)}{Fixed h0=2} is present and is not a phase}
+
+TPC-157 and TPC-159 both export the determinant-two actual-core field
+\[
+ h_0=2
+\tag{3}\label{eq:h0}
+\]
+in their machine-readable theorem records
+\citep{WangTPC157,WangTPC159}.  Endpoint Ledger V4 in TPC-171 likewise
+marks the fixed physical \(h_0\) gate as proved on the relevant actual
+core \citep{WangTPC171}.  These three locators are retained
+independently in the census.
+
+\begin{proposition}[Data-axis separation]
+\label{prop:separation}
+The source-backed fact \eqref{eq:h0} does not instantiate any of the
+first three fields of \cref{def:record}.
+\end{proposition}
+
+\begin{proof}
+The integer \(h_0\) is the prescribed physical shift, while
+\(\alpha_\star\) is a character coordinate in
+\(\T=\mathbb R/\mathbb Z\).  Their types and source fields differ.
+The cited records contain the integer \(2\) in a
+\texttt{fixed\_h0} or fixed-physical-\(h_0\) field.  None gives a
+named-atom identifier, a phase value modulo one, or a locator for such
+a value.  Reusing the integer \(2\), reducing it modulo one, or
+silently declaring \(\alpha_\star=0\) would be a type-changing
+invention.
+\end{proof}
+
+This proposition does not weaken the fixed-\(h_0\) result.  It only
+prevents that genuine data fact from filling a different missing
+field.
+
+\section{Packet coordinates required by TPC-170}
+
+For a determinant-two packet, TPC-170 uses
+\[
+ su-ad=2,\qquad q=as,\qquad
+ t_d(z)=ad+qz,
+\tag{4}\label{eq:fiber}
+\]
+and the coefficient sequence
+\[
+ c_{d,u}(z)=\mu(d+sz)\mu(u+az).
+\tag{5}\label{eq:coeff}
+\]
+At ambient scale \(X_n\), a prescribed finite list
+\(\mathcal P_n\) contains a canonical fiber, a terminal scale
+\(T_{n,p}\), and a multiplier \(\rho_{n,p}\).  Its ordered
+coordinates \(z_{n,p,j}\) enter
+\[
+ S_{n,p,k}(\alpha)
+ =
+ \sum_{j\le k}
+ c_{d,u}(z_{n,p,j})\rho_{n,p}(z_{n,p,j})
+ e(-\alpha z_{n,p,j}).
+\tag{6}\label{eq:sum}
+\]
+Thus a production crosswalk must give actual values for
+\[
+\begin{split}
+(&X_n,p,a,s,d,u,q,T_{n,p},\rho_{n,p},z_{n,p,j}),\\
+&\text{the physical occurrence locator, and the common }
+\alpha_\star.
+\end{split}
+\tag{7}\label{eq:coordinates}
+\]
+The formula \eqref{eq:sum} defines a consumer interface; it is not a
+production row.
+
+There is also a representative condition.  For fixed \((a,s)\), all
+solutions of \eqref{eq:fiber} are
+\[
+ (d,u)\longmapsto(d+sr,u+ar),\qquad r\in\mathbb Z.
+\tag{8}\label{eq:representative}
+\]
+TPC-170 proves that this translates the coefficient packet.  The
+multiplier must be translated covariantly; then the twist changes by
+only a unit scalar.  A production registry must therefore select one
+canonical representative or record the translation index and the
+covariant multiplier map \citep{WangTPC170}.  The theorem
+\eqref{eq:representative} does not select the actual production
+representative by itself.
+
+\section{Frozen source census}
+
+The executable census locks the phase-interface outputs of
+TPC-157--161 and TPC-167--172.  Its relevant findings are summarized
+in \cref{tab:census}.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{P{0.29\textwidth}P{0.25\textwidth}Y}
+\toprule
+Object & Frozen value & Exact meaning\\
+\midrule
+fixed physical \(h_0\) & \(2\), source-backed &
+One literal data gate is present.\\
+TPC-158 production phase cell & \(\NT\) &
+The major/minor interface has no production phase value.\\
+TPC-161 phase artifact & \(\mathsf{MISSING}\) &
+The target description is present; the required artifact is not.\\
+TPC-171 H9 phase node & \(\NT\), evidence null &
+The six-axis obligation is typed but uninstantiated.\\
+TPC-170 phase mode & Lebesgue-a.e.\ fixed phase &
+A metric quantifier, not a named atom.\\
+named atom/value/locator rows & \(0/0/0\) &
+No value-bearing production phase record occurs in the seven
+explicitly mapped fields.\\
+production packet-coordinate rows & \(0\) &
+The mapped theorem/status fields supply no row of
+\eqref{eq:coordinates}.\\
+\bottomrule
+\end{tabularx}
+\caption{The fixed-\(h_0\) fact survives the census; the production
+phase values do not appear.}
+\label{tab:census}
+\end{table}
+
+TPC-167 proves a continuous phase-\(L^2\) identity, TPC-168 a
+separated-registry density theorem, TPC-169 a maximal prefix theorem,
+and TPC-170 an almost-every-fixed-phase corridor
+\citep{WangTPC167,WangTPC168,WangTPC169,WangTPC170}.  Their claim
+boundaries all reject a named production phase.  They are positive
+arithmetic inputs in their declared norms, not value-bearing entries
+for \eqref{eq:h9}.
+
+\begin{theorem}[Scoped registry census]
+\label{thm:census}
+In the frozen source-locked TPC-157--172 phase-interface corpus:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \(h_0=2\) is source-backed on the relevant actual core;
+\item the target type \eqref{eq:signature} is source-backed;
+\item the representative rule \eqref{eq:representative} is proved;
+\item none of the seven explicitly mapped fields is a value-bearing
+  named physical atom or phase-value locator; and
+\item those mapped fields contain no production row realizing
+  \eqref{eq:coordinates}.
+\end{enumerate}
+Consequently the production phase registry has status \(\NT\).
+\end{theorem}
+
+\begin{proof}
+The first three statements are exact field checks against the
+source-locked TPC-157, TPC-159, TPC-170 and TPC-171 outputs.  The last
+two statements are an explicit mapped-field census: three
+fixed-\(h_0\) records and four phase-obligation records.  It is not a
+generic scanner, and newly added source fields require an explicit
+mapping update.  The machine audit rejects any snapshot that fills a
+null phase value, locator, schedule, or packet row without a new
+source.  By \cref{def:record}, the mapped evidence does not construct
+a production registry.
+\end{proof}
+
+\begin{remark}[Scope]
+\label{rem:scope}
+\Cref{thm:census} is not a theorem that no physical phase description
+exists mathematically or in every possible archive.  It says that the
+explicitly mapped fields in the declared frozen corpus do not provide
+the values needed to instantiate \cref{def:record}.  A larger corpus
+or a new field must be named, mapped, locked, and audited before it can
+change the result.
+\end{remark}
+
+\section{Decision and typed progress}
+
+The exact machine result is
+\[
+\boxed{
+\begin{gathered}
+\mathsf{Verdict}=\mathsf{NOT\_TESTABLE},\\
+\mathsf{ProductionPhaseRegistryConstructed}=\mathsf{false},\\
+\mathsf{FirstMissing}=
+\mathsf{named\_physical\_atom\_id\_and\_}\\[-2pt]
+\mathsf{phase\_value\_source\_locator}.
+\end{gathered}}
+\tag{9}\label{eq:decision}
+\]
+Independent missing fields include the production schedule locator,
+the packet-coordinate rows, and the actual representative/covariant
+multiplier map.
+
+The progress levels are:
+\begin{itemize}[leftmargin=2em]
+\item \(\Lzero\): deterministic hashes, schemas, field census, and
+  mutation diagnostics;
+\item \(\Lone\): the scoped source-interface conclusion
+  \cref{thm:census}; and
+\item \(\Ltwo\): none.
+\end{itemize}
+The fixed-\(h_0=2\) field is a proved literal data fact, but it creates
+no cancellation exponent.  The H9 phase leaf retains decay axis
+\(\mathsf{NONE}\).
+
+\section{Reproducible artifacts and next gate}
+
+The generator writes
+\begin{verbatim}
+experiments/tpc180_phase_registry_census.json
+experiments/tpc180_phase_registry_census_audit.json
+\end{verbatim}
+and checks both strict schemas.  Source hashes have integrity
+semantics only.  Mutation regressions reject a target obligation used
+as a phase value, an unsourced locator, a synthetic packet row, H9
+decay promotion, a scoped census promoted to global nonexistence, and
+the fixed-\(h_0\) fact promoted to \(\Ltwo\).
+
+The next arithmetic object remains
+\[
+ \mathsf{H2.metric\_fixed\_atom\_crosswalk}.
+\tag{10}\label{eq:next}
+\]
+Even a future positive phase registry would supply data only.  TPC-181
+must separately ask whether a theorem places its named atom in the
+TPC-170 good set.  No such theorem is inferred here.
+
+\section{Conclusion}
+
+The phase question is now split at the correct seam.  Fixed
+\(h_0=2\) and the determinant-two Fourier interface are present; the
+value-bearing named phase and its production packet crosswalk are not.
+The only source-compatible TPC-180 output is therefore the contract
+and scoped missing-value census \eqref{eq:decision}.  This is useful
+\(\Lone\) localization, not fixed-atom arithmetic progress.
+
+\nocite{*}
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

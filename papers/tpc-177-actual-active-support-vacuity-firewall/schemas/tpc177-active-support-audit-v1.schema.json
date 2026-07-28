@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc177-active-support-audit-v1.schema.json",
+  "title": "TPC-177 actual active-support vacuity audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "source_locks",
+    "eligible_domain",
+    "coefficient_audit",
+    "vacuity_firewall",
+    "h1_active_support_root",
+    "h9_literal_weight_separation",
+    "checks",
+    "mutation_regressions",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-177-actual-active-support-vacuity-audit-v1"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "source_locks": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "path",
+          "canonical_utf8_lf_sha256",
+          "hash_mode",
+          "hash_semantics"
+        ]
+      }
+    },
+    "eligible_domain": {
+      "type": "object"
+    },
+    "coefficient_audit": {
+      "type": "object"
+    },
+    "vacuity_firewall": {
+      "type": "object"
+    },
+    "h1_active_support_root": {
+      "type": "object"
+    },
+    "h9_literal_weight_separation": {
+      "type": "object"
+    },
+    "checks": {
+      "type": "object"
+    },
+    "mutation_regressions": {
+      "type": "object"
+    },
+    "claim_boundary": {
+      "type": "object"
+    }
+  }
+}

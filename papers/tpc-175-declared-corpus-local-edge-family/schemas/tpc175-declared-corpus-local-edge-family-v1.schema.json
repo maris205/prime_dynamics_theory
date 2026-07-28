@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc175-declared-corpus-local-edge-family-v1.schema.json",
+  "title": "TPC-175 declared-corpus local edge family",
+  "type": "object",
+  "required": [
+    "schema",
+    "scope",
+    "status",
+    "source_locks",
+    "admissibility_definition",
+    "qualifying_claim_ids",
+    "qualifying_claim_count",
+    "eligible_carriers",
+    "eligible_carrier_count",
+    "local_edge_family",
+    "family_cardinality",
+    "coverage",
+    "maximality_certificate",
+    "h1_status",
+    "next_route",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-175-declared-corpus-local-edge-family-v1"
+    },
+    "scope": {
+      "const": "FROZEN_CONTIGUOUS_OCCURRENCE_SOURCE_CORRIDOR_TPC133_172"
+    },
+    "status": {
+      "const": "EMPTY_IN_FROZEN_DECLARED_CORPUS"
+    },
+    "source_locks": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "object"}
+    },
+    "admissibility_definition": {
+      "type": "object"
+    },
+    "qualifying_claim_ids": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "qualifying_claim_count": {"const": 0},
+    "eligible_carriers": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "eligible_carrier_count": {"const": 0},
+    "local_edge_family": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "family_cardinality": {"const": 0},
+    "coverage": {
+      "type": "object",
+      "required": [
+        "production_cut_count",
+        "covered_cut_count",
+        "duplicated_cut_count",
+        "unmatched_cut_count",
+        "coverage_fraction",
+        "production_local_patch_present",
+        "production_overlap_cocycle_testable",
+        "tpc165_gluing_instantiated",
+        "formal_global_totality_proved"
+      ],
+      "properties": {
+        "production_cut_count": {"const": 2988},
+        "covered_cut_count": {"const": 0},
+        "duplicated_cut_count": {"const": 0},
+        "unmatched_cut_count": {"const": 2988},
+        "coverage_fraction": {"const": "0/2988"},
+        "production_local_patch_present": {"const": false},
+        "production_overlap_cocycle_testable": {"const": false},
+        "tpc165_gluing_instantiated": {"const": false},
+        "formal_global_totality_proved": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "maximality_certificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "universe",
+        "qualifying_source_universe_cardinality",
+        "every_admissible_member_requires_qualifying_source_claim",
+        "largest_defensible_family_is_empty",
+        "maximal_within_frozen_declared_corpus",
+        "mathematical_nonexistence",
+        "enlarged_corpus_nonexistence"
+      ],
+      "properties": {
+        "universe": {
+          "const": "TPC174-verifiable production local edges whose source claim belongs to the TPC173 qualifying inventory"
+        },
+        "qualifying_source_universe_cardinality": {"const": 0},
+        "every_admissible_member_requires_qualifying_source_claim": {
+          "const": true
+        },
+        "largest_defensible_family_is_empty": {"const": true},
+        "maximal_within_frozen_declared_corpus": {"const": true},
+        "mathematical_nonexistence": {"const": false},
+        "enlarged_corpus_nonexistence": {"const": false}
+      }
+    },
+    "h1_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "H1.source_backed_local_occurrence_edge_family",
+        "H1.actual_active_support_certificate",
+        "H1.canonical_minimal_representation_certificate",
+        "selected_architecture_stopped",
+        "actual_carrier_impossibility"
+      ],
+      "properties": {
+        "H1.source_backed_local_occurrence_edge_family": {
+          "const": "EMPTY_IN_FROZEN_DECLARED_CORPUS"
+        },
+        "H1.actual_active_support_certificate": {
+          "const": "NOT_TESTABLE"
+        },
+        "H1.canonical_minimal_representation_certificate": {
+          "const": "NOT_TESTABLE"
+        },
+        "selected_architecture_stopped": {"const": false},
+        "actual_carrier_impossibility": {"const": false}
+      }
+    },
+    "next_route": {
+      "type": "object"
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "empty_family_is_mathematical_nonexistence",
+        "production_local_occurrence_family_nonempty",
+        "formal_global_totality_proved",
+        "actual_active_support_proved",
+        "canonical_minimal_representation_proved",
+        "fixed_h0_2_edge_theorem_proved",
+        "named_fixed_phase_theorem",
+        "positive_fixed_X_L2",
+        "strict_one_over_400",
+        "prime_pair_lower_bound",
+        "twin_prime_theorem"
+      ],
+      "properties": {
+        "empty_family_is_mathematical_nonexistence": {"const": false},
+        "production_local_occurrence_family_nonempty": {"const": false},
+        "formal_global_totality_proved": {"const": false},
+        "actual_active_support_proved": {"const": false},
+        "canonical_minimal_representation_proved": {"const": false},
+        "fixed_h0_2_edge_theorem_proved": {"const": false},
+        "named_fixed_phase_theorem": {"const": false},
+        "positive_fixed_X_L2": {"const": false},
+        "strict_one_over_400": {"const": false},
+        "prime_pair_lower_bound": {"const": false},
+        "twin_prime_theorem": {"const": false}
+      }
+    }
+  },
+  "additionalProperties": false
+}

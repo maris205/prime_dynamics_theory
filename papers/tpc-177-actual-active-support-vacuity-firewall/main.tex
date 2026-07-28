@@ -1,0 +1,218 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.84in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={Actual Active Support on an Empty Eligible Family},
+  pdfauthor={Liang Wang},
+  pdfsubject={A vacuity firewall for the H1 carrier root},
+  pdfkeywords={active support, physical coefficient, empty domain, vacuity, H1}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{Actual Active Support on an Empty Eligible Family:}\\
+\textbf{A Vacuity Firewall for the H1 Carrier Root}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The H1 occurrence architecture requires an actual active-support
+certificate independently of a source-backed local occurrence-edge
+family.  TPC-175 and TPC-176 leave no eligible production carrier in
+the frozen TPC-133--172 source scope.  We audit literal physical
+coefficients only on that eligible domain.  No carrier is tested, so
+the counts of nonzero, zero, and missing coefficients are all zero.
+
+The resulting universal support statement is vacuous and cannot
+supply an existential witness.  We formalize this as a firewall:
+the empty-domain audit passes, while
+\(\mathrm{H1.actual\_active\_support\_certificate}\) remains
+\(\NT\).  The independent H9 literal-weight registry is neither
+imported nor closed and retains decay axis \texttt{NONE}.  This is an
+\(\Lone\) interface obstruction, not physical arithmetic progress or
+program-positive \(\Ltwo\).
+\end{abstract}
+
+\section{Two independent prerequisites}
+
+TPC-166 splits the former occurrence crosswalk monolith into three
+independent roots \cite{WangTPC166}.  Write
+\[
+\begin{aligned}
+ E&=\text{a source-backed production local edge family},\\
+ A&=\text{actual active support of its physical carriers},\\
+ M&=\text{a canonical or minimal physical representation}.
+\end{aligned}                                                     \tag{1}
+\]
+Neither \(E\Rightarrow A\) nor \(A\Rightarrow E\) is available.
+TPC-177 studies \(A\) without collapsing this independence.
+
+For a candidate carrier \(c\), an active-support record must contain
+at least a literal target-expression locator, the literal physical
+coefficient \(w(c)\), its target normalization, and a proof that
+\[
+ w(c)\ne0.                                                        \tag{2}
+\]
+Formal appearance in a schema, archive, completion fiber, or
+synthetic fixture does not satisfy (2).
+
+\section{The eligible domain}
+
+TPC-175 certifies no qualifying production local edge in the frozen
+source inventory, and TPC-176 therefore exposes no eligible carrier:
+\[
+ \mathcal C_{\rm elig}=\varnothing.                               \tag{3}
+\]
+The support audit is deliberately restricted to (3).  Adding a
+formal archived cut or a synthetic carrier would fabricate the
+missing source-backed edge.
+
+Define
+\[
+\begin{aligned}
+ \mathcal C_{+}&=\{c\in\mathcal C_{\rm elig}:w(c)\ne0
+                     \text{ is source-proved}\},\\
+ \mathcal C_{0}&=\{c\in\mathcal C_{\rm elig}:w(c)=0
+                     \text{ is source-proved}\},\\
+ \mathcal C_{?}&=\{c\in\mathcal C_{\rm elig}:
+                     \text{no complete coefficient record exists}\}.
+\end{aligned}                                                     \tag{4}
+\]
+These three classes partition the eligible domain when every carrier
+is assigned exactly one audit outcome.
+
+\begin{proposition}[Exact coefficient ledger]
+For the TPC-176 domain,
+\[
+ (|\mathcal C_{\rm elig}|,|\mathcal C_{+}|,
+   |\mathcal C_{0}|,|\mathcal C_{?}|)=(0,0,0,0).                  \tag{5}
+\]
+\end{proposition}
+
+\begin{proof}
+Immediate from (3) and the definitions in (4).
+\end{proof}
+
+\section{The vacuity firewall}
+
+On the empty domain, the sentence
+\[
+  \forall c\in\mathcal C_{\rm elig},\quad w(c)\ne0                \tag{6}
+\]
+is true in classical logic.  But the H1 root requires production
+content:
+\[
+  \exists c\in\mathcal C_{\rm elig}
+  \quad\text{with a source-backed local edge and }w(c)\ne0.       \tag{7}
+\]
+
+\begin{theorem}[TPC-177 vacuity firewall]
+Equation (6) does not prove (7).  The executable audit status is
+\texttt{VACUOUS\_EMPTY\_ELIGIBLE\_DOMAIN}, and the H1
+actual-active-support root remains \(\NT\).
+\end{theorem}
+
+\begin{proof}
+An existential witness for (7) would be an element of the empty set
+in (3), which is impossible within the declared audit instance.
+This does not prove that an actual active carrier is mathematically
+impossible; it proves that the current source-locked input supplies
+none.  Hence neither \texttt{PROVED} nor a global
+\texttt{STOP\_ROUTE} classification is valid.
+\end{proof}
+
+The distinction may be summarized as follows.
+
+\begin{center}
+\begin{tabularx}{0.96\linewidth}{@{}l c Y@{}}
+\toprule
+Statement & Value & Evidential consequence\\
+\midrule
+empty-domain audit internally consistent & true &
+the ledger and partition checks pass\\
+all eligible carriers active & vacuously true &
+no existential content\\
+an active production carrier exists & unproved &
+H1 support root remains \(\NT\)\\
+active carriers do not exist mathematically & unproved &
+frozen-corpus scope cannot imply nonexistence\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Separation from the H9 literal-weight registry}
+
+The H1 support root and
+\(\mathrm{H9.literal\_weight\_registry}\) have different jobs.  H1
+asks whether a source-backed occurrence carrier is present with a
+nonzero physical coefficient.  H9 supplies literal weight data to a
+later arithmetic synthesis.  A registry has data semantics and
+decay axis \texttt{NONE}; it does not manufacture a cancellation
+exponent.
+
+TPC-177 neither scans nor imports the H9 registry.  Thus it records
+\[
+\begin{aligned}
+ \text{H1 active-support status}&=\mathsf{NOT\_TESTABLE},\\
+ \text{H9 literal-weight status}&=\mathsf{NOT\_IMPORTED},\\
+ \text{decay created by either registry}&=0.
+\end{aligned}                                                     \tag{8}
+\]
+Even if a future H9 registry names a literal coefficient, an
+independent source-backed H1 carrier would still be required.
+
+\section{Reproducibility and claim boundary}
+
+The standard-library audit source-locks the TPC-175 maximal family
+and TPC-176 coverage ledger, recomputes (3)--(5), and checks the
+existential firewall.  Mutations that fabricate an eligible carrier,
+promote vacuous truth to an H1 certificate, import H9 implicitly,
+assign H9 a decay exponent, or promote the result to \(\Ltwo\) are
+rejected.  Hashes have integrity semantics only.
+
+No fixed physical \(h_0=2\), named phase, deterministic endpoint,
+target normalization, or endpoint slack is consumed.  Accordingly
+there is no strict \(1/400\) gain, prime-pair lower bound, or
+twin-prime conclusion.
+
+\section{Conclusion}
+
+An empty eligible domain makes an audit easy but a theorem
+impossible: the universal support sentence is vacuous, and the
+required existential production witness is absent.  TPC-177 keeps
+the H1 support root open and keeps it disjoint from the H9
+literal-weight registry.  TPC-178 applies the same eligibility
+discipline to canonical and minimal physical representations.
+
+\nocite{*}
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,222 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.84in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={Eligibility Before Canonicality},
+  pdfauthor={Liang Wang},
+  pdfsubject={Why an archive key is not a physical representative},
+  pdfkeywords={canonical representation, minimality, archive key, eligibility, H1}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{Eligibility Before Canonicality:}\\
+\textbf{Why an Archive Key Is Not a Physical Representative}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-164 proves that the five-field key
+\((\ell,k,d_{\rm nat},j_L,j_K)\) is the unique smallest key
+separating 2,988 rows of one frozen cut archive.  Its semantics are
+row addressing.  A canonical or minimal physical representation
+requires an actual eligible carrier, a physical representation
+space, an equivalence relation, and a proved selector or cost
+theorem.
+
+TPC-175--177 expose no source-backed eligible carrier.  Consequently
+no physical equivalence class can be formed and no canonicality or
+minimality test can be run.  Zero counterexamples on this empty
+domain do not prove a positive certificate.  The audit is blocked by
+the empty carrier domain, while the H1 canonical/minimal
+representation root remains \(\NT\).  This is an \(\Lone\)
+interface obstruction, not physical arithmetic or program-positive
+\(\Ltwo\).
+\end{abstract}
+
+\section{Three notions that must not be merged}
+
+Let \(\mathcal A\) be the frozen archive of TPC-164 and
+\[
+ K_{\rm arc}(r)=(\ell,k,d_{\rm nat},j_L,j_K)                       \tag{1}
+\]
+its minimal separating key.  TPC-164 establishes
+\[
+ K_{\rm arc}(r)=K_{\rm arc}(r')\quad\Longrightarrow\quad r=r'
+ \qquad(r,r'\in\mathcal A).                                      \tag{2}
+\]
+This is an exact finite theorem \cite{WangTPC164}.
+
+An occurrence identifier would instead identify a production
+occurrence object across all valid descriptions.  A canonical
+physical representative would select one element from an equivalence
+class of physical representations.  Neither an occurrence space nor
+its equivalence relation appears in (1)--(2).
+
+\begin{proposition}[Archive-address firewall]
+The injectivity and minimal field cardinality of \(K_{\rm arc}\) do
+not imply that it is an occurrence identifier or a canonical/minimal
+physical representation.
+\end{proposition}
+
+\begin{proof}
+The domain of (2) is \(\mathcal A\), a finite set of archived rows.
+The desired domain is a physical representation space modulo a
+source-backed equivalence relation.  No map between these domains,
+let alone a selector theorem, is supplied by (2).  The implication is
+therefore absent rather than merely numerically untested.
+\end{proof}
+
+\section{A positive representation contract}
+
+For an eligible physical carrier \(c\), let \(\mathcal R(c)\) be its
+representation space.  A positive certificate must source-lock:
+
+\begin{enumerate}
+\item a proved eligible actual carrier \(c\);
+\item a nonempty physical representation set \(\mathcal R(c)\);
+\item an equivalence relation \(\sim_c\) preserving the literal
+      physical contribution;
+\item either a selector \(s(c)\in\mathcal R(c)\) with a uniqueness
+      theorem, or a cost \(J_c\) with an attained minimum;
+\item compatibility with literal coefficient, fixed-\(h_0\), and
+      normalization lineage.
+\end{enumerate}
+
+For canonicality, one needs
+\[
+ r\sim_c r'\quad\Longrightarrow\quad s([r])=s([r']).              \tag{3}
+\]
+For minimality, one needs both existence and the claimed strength of
+\[
+ J_c(r_\star)=\min_{r\in\mathcal R(c)}J_c(r).                     \tag{4}
+\]
+An archive key may help store \(r_\star\) after (3) or (4) is proved;
+it cannot prove them.
+
+\section{Eligibility audit}
+
+TPC-175 supplies an empty source-backed local edge family.  TPC-176
+therefore has no eligible carrier, and TPC-177 correctly refuses to
+manufacture one through vacuous active support.  Hence
+\[
+ \mathcal C_{\rm elig}=\varnothing.                               \tag{5}
+\]
+
+We classify representations only after carrier eligibility.  The
+ledger is therefore
+\[
+\begin{array}{c|c}
+\text{quantity}&\text{count}\\ \hline
+\text{eligible physical carriers}&0\\
+\text{physical representation classes formed}&0\\
+\text{canonical representatives proved}&0\\
+\text{minimal representatives proved}&0\\
+\text{noncanonical counterexamples proved}&0 .
+\end{array}                                                       \tag{6}
+\]
+
+\begin{theorem}[TPC-178 eligibility verdict]
+The current representation audit has status
+\[
+ \texttt{ELIGIBILITY\_BLOCKED\_EMPTY\_CARRIER\_DOMAIN}.           \tag{7}
+\]
+It proves neither canonicality nor noncanonicality of a production
+carrier.  The H1 representation root remains \(\NT\).
+\end{theorem}
+
+\begin{proof}
+By (5), there is no \(c\) for which \(\mathcal R(c)\), \(\sim_c\),
+(3), or (4) can be instantiated.  The zero counterexample count in
+(6) is vacuous, just as the zero positive count is.  The correct
+classification is ineligibility of the current audit input, not a
+positive or negative physical theorem.
+\end{proof}
+
+\section{What is preserved for a future nonempty family}
+
+The audit records the contract above rather than hard-coding the
+empty result as a permanent decision.  If a future source inventory
+provides a proved carrier, the next audit must reject at least the
+following shortcuts:
+
+\begin{center}
+\begin{tabularx}{0.96\linewidth}{@{}lY@{}}
+\toprule
+Shortcut & Missing theorem content\\
+\midrule
+use \(K_{\rm arc}\) as a physical selector &
+no physical representation domain or equivalence relation\\
+choose the lexicographically first row &
+no invariance under physical equivalence\\
+minimize a formal archive cost &
+no proof that the cost controls the literal physical contribution\\
+declare uniqueness from hash identity &
+a hash locks bytes, not mathematical representation semantics\\
+declare success because no counterexample was tested &
+empty-domain absence has no existential content\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+If canonicality eventually fails on an eligible carrier, the
+counterexample must be retained and the physical multiplicity or
+quotient cost quantified before the route is classified.
+
+\section{Reproducible audit and claim boundary}
+
+The standard-library audit source-locks TPC-164, TPC-175, and
+TPC-177.  It verifies the archive key exactly as an
+\texttt{ARCHIVE\_ADDRESS}, recomputes (5)--(7), and mutation-tests
+all role boundaries.  It rejects promotion of the archive key,
+promotion of zero counterexamples to canonicality, a fabricated
+eligible carrier, and any claim of program-positive \(\Ltwo\).
+Hashes carry integrity semantics only.
+
+The audit consumes no named fixed phase, fixed physical \(h_0=2\)
+arithmetic estimate, literal physical normalization, active support,
+deterministic endpoint, or endpoint slack.  It therefore supplies no
+strict \(1/400\), prime-pair, or twin-prime conclusion.
+
+\section{Conclusion}
+
+Canonicality begins after eligibility, not before it.  The only
+proved finite uniqueness here concerns addresses inside a frozen
+archive.  With no source-backed actual carrier, the physical
+representation root remains \(\NT\).  TPC-179 integrates this result
+with the empty local-edge family and active-support vacuity firewall,
+while keeping the scoped extraction stop distinct from the global
+architecture status.
+
+\nocite{*}
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

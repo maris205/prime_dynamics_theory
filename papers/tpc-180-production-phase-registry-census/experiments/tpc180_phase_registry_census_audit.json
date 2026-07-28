@@ -1,0 +1,42 @@
+{
+  "checks": {
+    "all_sources_locked": true,
+    "decay_axis_none": true,
+    "fixed_h0_2_source_backed": true,
+    "named_phase_value_and_locator_absent": true,
+    "no_phase_synthesized": true,
+    "packet_coordinate_rows_absent": true,
+    "phase_obligation_not_confused_with_phase_value": true,
+    "representative_covariance_requirement_preserved": true
+  },
+  "claim_boundary": {
+    "fixed_atom_decay": false,
+    "metric_to_fixed_selector": false,
+    "named_physical_phase_identified": false,
+    "phase_value_invented": false,
+    "prime_pair_lower_bound": false,
+    "production_packet_schedule_identified": false,
+    "production_phase_registry": false,
+    "program_positive_L2": false,
+    "scoped_census_is_global_nonexistence": false,
+    "strict_one_over_400": false,
+    "twin_prime_theorem": false
+  },
+  "first_missing": "named_physical_atom_id_and_phase_value_source_locator",
+  "manifest_payload_sha256": "4976311ae7f9271f44c3de68278ad1781aba2a4077c6c71a09562df2459ac40d",
+  "manifest_schema": "tpc-180-production-phase-registry-census-v1",
+  "mutation_regressions": {
+    "reject_census_as_global_nonexistence": true,
+    "reject_extra_positive_claim_field": true,
+    "reject_fixed_h0_fact_as_L2": true,
+    "reject_missing_locator_fabrication": true,
+    "reject_obligation_as_phase_value": true,
+    "reject_registry_decay_promotion": true,
+    "reject_synthetic_packet_row": true
+  },
+  "production_phase_registry_constructed": false,
+  "schema": "tpc-180-production-phase-registry-census-audit-v1",
+  "source_lock_count": 10,
+  "status": "PASS",
+  "verdict": "NOT_TESTABLE"
+}

@@ -1,0 +1,72 @@
+{
+  "O161_routes": [
+    {
+      "node_id": "O161.bad_endpoint_pointwise_fixed_atom",
+      "quantifier_signature": {
+        "carrier_axis": "ACTUAL_FIXED_H0_PACKET",
+        "decay_axis": "FIXED_X_POWER_FIXED_ATOM",
+        "endpoint_axis": "DETERMINISTIC_ALL_PREFIX",
+        "phase_axis": "NAMED_FIXED_ATOM",
+        "scale_axis": "DETERMINISTIC_ALL_SCALE",
+        "support_axis": "ACTUAL_ACTIVE_SUPPORT"
+      },
+      "role": "ARITHMETIC_TARGET",
+      "state": "OPEN_PARENT_READY",
+      "stopped_by_metric_nonimplication": false
+    },
+    {
+      "node_id": "O161.direct_additive_twist_fixed_atom",
+      "quantifier_signature": {
+        "carrier_axis": "ACTUAL_FIXED_H0_PACKET",
+        "decay_axis": "FIXED_X_POWER_FIXED_ATOM",
+        "endpoint_axis": "DETERMINISTIC_ALL_PREFIX",
+        "phase_axis": "NAMED_FIXED_ATOM",
+        "scale_axis": "DETERMINISTIC_ALL_SCALE",
+        "support_axis": "ACTUAL_ACTIVE_SUPPORT"
+      },
+      "role": "ARITHMETIC_TARGET",
+      "state": "OPEN_PARENT_READY",
+      "stopped_by_metric_nonimplication": false
+    }
+  ],
+  "checks": {
+    "L0_L1_L2_separated": true,
+    "additional_hypotheses_typed": true,
+    "metric_power_not_fixed_atom_power": true,
+    "schedule_dependence_explicit": true,
+    "singleton_nonimplication_exact": true,
+    "tpc170_quantifier_preserved": true,
+    "tpc180_missing_registry_preserved": true,
+    "two_O161_routes_open_parent_ready": true
+  },
+  "claim_boundary": {
+    "Lebesgue_ae_promoted_to_fixed_atom": false,
+    "architecture_stopped": false,
+    "metric_power_promoted_to_fixed_atom_power": false,
+    "named_fixed_atom_selected": false,
+    "pointwise_routes_stopped": false,
+    "prime_pair_lower_bound": false,
+    "production_phase_registry": false,
+    "program_positive_L2": false,
+    "scale_dependent_selector_covered": false,
+    "strict_one_over_400": false,
+    "twin_prime_theorem": false
+  },
+  "manifest_payload_sha256": "e7f0ce222e3d74c354f3c4878d77e4f2ce048c8cf620c76da6b9908e9e346cd9",
+  "manifest_schema": "tpc-181-metric-to-fixed-selector-gate-v1",
+  "metric_quantifier": "LEBESGUE_AE_FIXED_PHASE",
+  "mutation_regressions": {
+    "reject_ae_as_named_atom": true,
+    "reject_extra_positive_claim_field": true,
+    "reject_metric_power_as_fixed_atom_power": true,
+    "reject_missing_registry_as_present": true,
+    "reject_scale_dependent_selector": true,
+    "reject_scoped_stop_as_architecture_stop": true,
+    "reject_scoped_stop_as_pointwise_stop": true
+  },
+  "named_atom_status": "NOT_IDENTIFIED",
+  "schema": "tpc-181-metric-to-fixed-selector-gate-audit-v1",
+  "scoped_stop": "STOP_SCOPED",
+  "selector_verdict": "NOT_TESTABLE",
+  "status": "PASS"
+}

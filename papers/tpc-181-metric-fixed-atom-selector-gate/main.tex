@@ -1,0 +1,405 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs,array,tabularx,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\hypersetup{
+  pdftitle={The Metric-to-Fixed-Atom Selector Gate},
+  pdfauthor={Liang Wang},
+  pdfsubject={A singleton obstruction and exact bridge contract for the TPC-170 almost-every-phase theorem},
+  pdfkeywords={metric theorem, fixed atom, selector, null set, pointwise route}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\T}{\mathbb T}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcommand{\OPEN}{\textnormal{\textsc{open}}}
+\newcommand{\STOPR}{\textnormal{\textsc{stop-scoped}}}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{The Metric-to-Fixed-Atom Selector Gate:}\\
+\textbf{A Singleton Obstruction, Exact Bridge Hypotheses,}\\
+\textbf{and the Pointwise Return}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-170 proves a fixed-\(X\)-power, all-prefix packet theorem for
+Lebesgue-almost every fixed phase on a prescribed determinant-two
+schedule.  TPC-180 shows that the frozen source corpus does not yet
+contain the value-bearing production phase registry required to name
+the physical atom.  We isolate the remaining selector question even
+conditionally on a future positive registry.
+
+For the schedule-dependent bad sets \(E_n\), Borel--Cantelli proves
+\(\operatorname{meas}(\limsup E_n)=0\).  It does not prove that a
+prespecified singleton \(\alpha_\star\) lies outside that limsup: the
+null set may be exactly \(\{\alpha_\star\}\).  We formulate the
+minimal source-backed bridge contract, whose load-bearing theorem is
+the schedule-specific assertion
+\(\alpha_\star\notin\limsup E_n\).  No artifact currently supplies
+this assertion.  Therefore
+\(\mathsf{H2.metric\_fixed\_atom\_crosswalk}\) remains
+\(\mathsf{NOT\_TESTABLE}\), and only the uncontrolled atomic promotion
+method receives a scoped stop.  The pointwise bad-endpoint and direct
+additive-twist routes remain parent-ready and open.  This is a
+rigorous \(\Lone\) quantifier obstruction, not a program-positive
+\(\Ltwo\) estimate.
+\end{abstract}
+
+\medskip
+\noindent\fcolorbox{red!70!black}{red!3}{\parbox{0.94\linewidth}{
+\textbf{Claim boundary.}
+Lebesgue-almost-every fixed phase means that one phase is followed
+through the prescribed schedule; it does not identify a named atom.
+The scoped nonimplication below does not prove a large literal
+M\"obius twist, stop a pointwise theorem, or stop an architecture.
+The metric powers \(\delta<1/4\) are not fixed-atom powers.  No
+program-positive \(\Ltwo\), strict \(1/400\), prime-pair lower bound,
+or twin-prime theorem is proved.}}
+
+\section{The imported metric theorem}
+
+At scale \(n\), let \(\mathcal P_n\) be the packet list prescribed
+before its exceptional phases are read.  For \(p\in\mathcal P_n\),
+write
+\[
+ G_{n,p}(\alpha)
+ =
+ \frac{q_{n,p}}{T_{n,p}}
+ \max_{k\le L_{n,p}}|S_{n,p,k}(\alpha)|.
+\tag{1}\label{eq:G}
+\]
+TPC-169 proves
+\[
+ \int_{\T}G_{n,p}(\alpha)^2\,d\alpha\le V_{n,p},
+\tag{2}\label{eq:energy}
+\]
+where
+\[
+ V_{n,p}
+ =
+ D_{n,p}^2\|\rho_{n,p}\|_\infty^2
+ \left(\frac{q_{n,p}}{T_{n,p}}
+       +\frac{q_{n,p}^2}{T_{n,p}^2}\right)
+\tag{3}\label{eq:V}
+\]
+\citep{WangTPC169}.  For thresholds \(\lambda_n>0\), define
+\[
+ E_n
+ =
+ \left\{\alpha\in\T:
+ \max_{p\in\mathcal P_n}G_{n,p}(\alpha)>\lambda_n
+ \right\}.
+\tag{4}\label{eq:En}
+\]
+TPC-170 proves that
+\[
+ \sum_n\lambda_n^{-2}
+ \sum_{p\in\mathcal P_n}V_{n,p}<\infty
+\tag{5}\label{eq:summability}
+\]
+implies
+\[
+ \operatorname{meas}\!\left(\limsup_{n\to\infty}E_n\right)=0.
+\tag{6}\label{eq:limsup}
+\]
+Equivalently, for Lebesgue-almost every fixed \(\alpha\), every
+declared packet and every prefix is eventually at most
+\(\lambda_n\) \citep{WangTPC170}.
+
+Under the dyadic, polylogarithmic packet envelope, one may choose
+\[
+ \lambda_n=X_n^{-\delta},\qquad \delta<\frac14.
+\tag{7}\label{eq:power}
+\]
+The exact imported signature is
+\[
+\begin{array}{c|c}
+\text{axis}&\text{proved value}\\
+\hline
+\text{carrier}&\mathsf{EXPLICIT\_PACKET\_CORRIDOR}\\
+\text{phase}&\mathsf{LEBESGUE\_AE\_FIXED\_PHASE}\\
+\text{endpoint}&\mathsf{ALL\_PREFIX\_THETA\_SHELL}\\
+\text{scale}&\mathsf{EVENTUALLY\_PRESCRIBED\_SCHEDULE}\\
+\text{decay}&\mathsf{FIXED\_X\_POWER\_PHASE\_METRIC}\\
+\text{support}&\mathsf{ACTUAL\_CORE}.
+\end{array}
+\tag{8}\label{eq:metric-signature}
+\]
+The word ``fixed'' in the phase row means that the same \(\alpha\) is
+followed across \(n\).  It does not change the almost-everywhere
+quantifier to evaluation at a named atom.
+
+\section{The two independent missing inputs}
+
+TPC-180 audits the value-bearing phase sources and obtains
+\[
+\begin{gathered}
+\mathsf{H9.phase\_cell\_registry}=\NT,\\
+\mathsf{named\_physical\_atom\_id}=\mathsf{null},\qquad
+\mathsf{phase\_value\_mod\_1}=\mathsf{null}.
+\end{gathered}
+\tag{9}\label{eq:registry}
+\]
+The fixed-\(h_0=2\) data fact remains proved, but is not a phase value
+\citep{WangTPC180}.
+
+Even if a later source supplies \(\alpha_\star\), one more theorem is
+needed:
+\[
+ \boxed{\alpha_\star\notin\limsup_{n\to\infty}E_n}
+\tag{10}\label{eq:avoid}
+\]
+for the exact production schedule and bad sets \eqref{eq:En}.  The
+registry is a data input; \eqref{eq:avoid} is an arithmetic or
+selector theorem.  Their roles and evidence cannot be merged.
+
+\begin{definition}[Legal metric-to-fixed-atom bridge]
+\label{def:bridge}
+A legal bridge contains:
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item the exact source-located named atom and phase value;
+\item a hash and source locator for the exact production packet
+  schedule;
+\item the schedule's precise sets \(E_n\);
+\item a theorem proving \eqref{eq:avoid};
+\item the same fixed \(\alpha_\star\) at every scale; and
+\item coverage of every production packet to which the conclusion is
+  applied.
+\end{enumerate}
+\end{definition}
+
+A source hash certifies only identity.  It does not prove item (iv).
+Nor do a phase-\(L^2\) estimate, density-one control on a separated
+registry, a phase selected after the bad set, or phases
+\(\alpha_n\) that drift with \(n\)
+\citep{WangTPC167,WangTPC168,WangTPC171,WangTPC172}.
+
+\section{The singleton obstruction}
+
+\begin{proposition}[Full measure does not select a singleton]
+\label{prop:singleton}
+Let \(\alpha_\star\in\T\) be prescribed.  From
+\(\operatorname{meas}(G)=1\) alone one cannot infer
+\(\alpha_\star\in G\).
+\end{proposition}
+
+\begin{proof}
+Take
+\[
+ N=\{\alpha_\star\},\qquad G=\T\setminus N.
+\]
+Then \(\operatorname{meas}(N)=0\) and
+\(\operatorname{meas}(G)=1\), but
+\(\alpha_\star\notin G\).
+\end{proof}
+
+\begin{corollary}[Borel--Cantelli selector nonimplication]
+\label{cor:BC}
+Equation \eqref{eq:limsup}, without an independent theorem about
+\(\alpha_\star\), does not imply \eqref{eq:avoid}.
+\end{corollary}
+
+\begin{proof}
+Apply \cref{prop:singleton} with
+\[
+ N=\limsup E_n,\qquad G=\T\setminus\limsup E_n.
+\]
+The metric theorem controls the measure of \(N\), not membership of a
+prespecified singleton.
+\end{proof}
+
+TPC-170 also realizes the logical sharpness with constant
+coefficients at phase zero.  That example is not asserted to be the
+literal M\"obius packet.  The general obstruction in
+\cref{prop:singleton} is a quantifier nonimplication, not a
+coefficient lower bound.
+
+\begin{theorem}[Exact scoped stop]
+\label{thm:stop}
+The implication
+\[
+\mathsf{LEBESGUE\_AE\_FIXED\_PHASE}
+\Longrightarrow
+\mathsf{NAMED\_FIXED\_ATOM}
+\tag{11}\label{eq:bad-implication}
+\]
+is invalid without a bridge satisfying \cref{def:bridge}.  Therefore
+the arithmetic method
+\[
+ \mathsf{phase\_metric\_uncontrolled\_atomic}
+\tag{12}\label{eq:method}
+\]
+has status \(\STOPR\) in scope
+\(\mathsf{UNCONTROLLED\_ATOMIC\_PROMOTION\_ONLY}\).
+\end{theorem}
+
+\begin{proof}
+\Cref{cor:BC} disproves the inference at the only step where the
+almost-everywhere theorem is promoted to the named atom.  Adding a
+source-backed proof of \eqref{eq:avoid} changes the premise and lies
+outside the uncontrolled method.  A direct pointwise theorem also
+changes the phase quantifier rather than using
+\eqref{eq:bad-implication}.  Hence the stop has exactly the stated
+scope.
+\end{proof}
+
+\section{Selector verdict and sufficient bridge hypotheses}
+
+The present state fails both inputs to \cref{def:bridge}: the
+value-bearing registry in \eqref{eq:registry} is absent, and no
+schedule-specific avoidance theorem \eqref{eq:avoid} is source-locked.
+Thus
+\[
+\boxed{
+\begin{gathered}
+\mathsf{H2.metric\_fixed\_atom\_crosswalk}=\NT,\\
+\mathsf{SelectorConstructed}=\mathsf{false},\\
+\mathsf{FixedAtomDecayObtained}=\mathsf{false}.
+\end{gathered}}
+\tag{13}\label{eq:verdict}
+\]
+
+Three forms of genuinely new input could change a future snapshot:
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item a theorem proving \eqref{eq:avoid} for the exact named phase and
+  exact schedule;
+\item a source-compatible point-evaluation or continuity estimate
+  strong enough to dominate \(G_{n,p}(\alpha_\star)\) by controlled
+  values with a summable error; or
+\item an independent pointwise fixed-phase theorem, which exits the
+  metric bridge and enters a pointwise route.
+\end{enumerate}
+Merely declaring the named phase ``generic'' is not one of these
+hypotheses unless a theorem with the exact schedule-dependent
+quantifiers is supplied.
+
+\section{Return to the two pointwise routes}
+
+TPC-171 and TPC-172 keep two targets parent-ready and open:
+\[
+\begin{split}
+\mathcal F_{\rm point}
+=\{&
+\mathsf{O161.bad\_endpoint\_pointwise\_fixed\_atom},\\
+&
+\mathsf{O161.direct\_additive\_twist\_fixed\_atom}
+\}.
+\end{split}
+\tag{14}\label{eq:pointwise}
+\]
+Both require the physical signature
+\[
+\begin{array}{c|c}
+\text{phase}&\mathsf{NAMED\_FIXED\_ATOM}\\
+\text{endpoint}&\mathsf{DETERMINISTIC\_ALL\_PREFIX}\\
+\text{scale}&\mathsf{DETERMINISTIC\_ALL\_SCALE}\\
+\text{decay}&\mathsf{FIXED\_X\_POWER\_FIXED\_ATOM}\\
+\text{support}&\mathsf{ACTUAL\_ACTIVE\_SUPPORT}.
+\end{array}
+\tag{15}\label{eq:pointwise-signature}
+\]
+
+\begin{proposition}[Pointwise frontier preservation]
+\label{prop:frontier}
+The scoped stop in \cref{thm:stop} does not change either element of
+\(\mathcal F_{\rm point}\) from
+\(\mathsf{OPEN\_PARENT\_READY}\), and it does not stop or reroute an
+architecture.
+\end{proposition}
+
+\begin{proof}
+The stopped node has arithmetic-negative role and the exact
+uncontrolled-atomic-promotion scope.
+The nodes in \eqref{eq:pointwise} are independent arithmetic targets
+whose hypotheses assert pointwise fixed-atom estimates.  Neither
+depends on the invalid implication \eqref{eq:bad-implication}.
+Architecture nodes have a disjoint route kind.  Therefore the scoped
+stop has no typed edge that could close either pointwise target or an
+architecture.
+\end{proof}
+
+The correct route decision is consequently
+\[
+\begin{array}{c|c}
+\text{route cell}&\text{state}\\
+\hline
+\text{source-backed metric bridge}&\NT\\
+\text{uncontrolled atomic promotion}&\STOPR\\
+\text{bad-endpoint pointwise fixed atom}&
+  \mathsf{OPEN\_PARENT\_READY}\\
+\text{direct additive twist fixed atom}&
+  \mathsf{OPEN\_PARENT\_READY}\\
+\text{architecture reroute}&\mathsf{false}.
+\end{array}
+\tag{16}\label{eq:route-table}
+\]
+
+\section{Level ledger and reproducible audit}
+
+TPC-181 separates:
+\begin{itemize}[leftmargin=2em]
+\item \(\Lzero\): source hashes, strict schemas, output regeneration,
+  and finite mutation diagnostics;
+\item \(\Lone\): \cref{prop:singleton,thm:stop,prop:frontier}, which
+  are rigorous quantifier and typed-route statements; and
+\item \(\Ltwo\): none.
+\end{itemize}
+The metric exponent \(\delta<1/4\) in \eqref{eq:power} remains in the
+phase-metric ledger.  It is explicitly ineligible as fixed-atom power.
+
+The generator writes
+\begin{verbatim}
+experiments/tpc181_selector_gate.json
+experiments/tpc181_selector_gate_audit.json
+\end{verbatim}
+and records the selector verdict, scoped stop, named-atom status,
+metric quantifier, both O161 routes, and claim boundary.  Mutation
+regressions reject almost-everywhere promotion, fabrication of the
+missing registry, charging metric power as fixed-atom power, using the
+scoped stop against a pointwise target or architecture, and a
+scale-dependent selector.
+
+\section{Conclusion}
+
+The metric route ends at a precise theorem interface.  TPC-170 gives
+full-measure eventual control on its exact prescribed schedule;
+TPC-181 proves that this measure statement cannot select a
+prespecified singleton.  Since TPC-180 also lacks the named value and
+locator, the source-backed selector is not testable.  The failure is
+method-scoped, so the program returns to the two pointwise O161
+targets without relabeling them as stopped and without claiming any
+new \(\Ltwo\) progress.
+
+\nocite{*}
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

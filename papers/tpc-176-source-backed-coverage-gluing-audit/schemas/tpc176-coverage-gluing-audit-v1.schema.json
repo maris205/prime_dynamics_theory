@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc176-coverage-gluing-audit-v1.schema.json",
+  "title": "TPC-176 source-backed coverage and gluing audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "source_locks",
+    "input_family",
+    "tpc165_gluing_gate",
+    "coverage_ledger",
+    "route_decision",
+    "checks",
+    "mutation_regressions",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-176-source-backed-coverage-gluing-audit-v1"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "source_locks": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "path",
+          "canonical_utf8_lf_sha256",
+          "hash_mode",
+          "hash_semantics"
+        ]
+      }
+    },
+    "input_family": {
+      "type": "object"
+    },
+    "tpc165_gluing_gate": {
+      "type": "object"
+    },
+    "coverage_ledger": {
+      "type": "object"
+    },
+    "route_decision": {
+      "type": "object"
+    },
+    "checks": {
+      "type": "object"
+    },
+    "mutation_regressions": {
+      "type": "object"
+    },
+    "claim_boundary": {
+      "type": "object"
+    }
+  }
+}

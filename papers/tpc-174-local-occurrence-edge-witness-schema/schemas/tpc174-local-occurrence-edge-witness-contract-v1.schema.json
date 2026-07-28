@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc174-local-occurrence-edge-witness-contract-v1.schema.json",
+  "title": "TPC-174 local occurrence-edge witness",
+  "type": "object",
+  "required": [
+    "schema",
+    "witness_id",
+    "evidence_mode",
+    "source_inventory_scope",
+    "fixed_h0",
+    "physical_normalization",
+    "phase_semantics",
+    "covered_cut_addresses",
+    "edges",
+    "actual_active_support_claimed",
+    "canonical_minimal_representation_claimed",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-174-local-occurrence-edge-witness-contract-v1"
+    },
+    "witness_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_mode": {
+      "enum": ["SYNTHETIC_L0_ONLY", "PRODUCTION_CANDIDATE"]
+    },
+    "source_inventory_scope": {
+      "const": "FROZEN_CONTIGUOUS_OCCURRENCE_SOURCE_CORRIDOR_TPC133_172"
+    },
+    "fixed_h0": {"const": 2},
+    "physical_normalization": {
+      "type": "string",
+      "minLength": 1
+    },
+    "phase_semantics": {
+      "const": "NOT_APPLICABLE_STRUCTURAL_EDGE"
+    },
+    "covered_cut_addresses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/address"}
+    },
+    "edges": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/edge"}
+    },
+    "actual_active_support_claimed": {"const": false},
+    "canonical_minimal_representation_claimed": {"const": false},
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "production_semantics",
+        "theorem_semantics",
+        "actual_active_support_proved",
+        "canonical_minimal_representation_proved",
+        "named_fixed_phase_theorem",
+        "positive_fixed_X_L2",
+        "strict_one_over_400",
+        "prime_pair_lower_bound",
+        "twin_prime_theorem"
+      ],
+      "properties": {
+        "production_semantics": {"const": false},
+        "theorem_semantics": {"const": false},
+        "actual_active_support_proved": {"const": false},
+        "canonical_minimal_representation_proved": {"const": false},
+        "named_fixed_phase_theorem": {"const": false},
+        "positive_fixed_X_L2": {"const": false},
+        "strict_one_over_400": {"const": false},
+        "prime_pair_lower_bound": {"const": false},
+        "twin_prime_theorem": {"const": false}
+      }
+    }
+  },
+  "$defs": {
+    "address": {
+      "type": "object",
+      "required": ["ell", "k", "native_d", "jL", "jK"],
+      "properties": {
+        "ell": {"type": "integer"},
+        "k": {"type": "integer"},
+        "native_d": {"type": "integer"},
+        "jL": {"type": "integer"},
+        "jK": {"type": "integer"}
+      },
+      "additionalProperties": false
+    },
+    "exactWeight": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "sourceEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_claim_id",
+        "source_path",
+        "canonical_utf8_lf_sha256",
+        "theorem_locator",
+        "formula_locator",
+        "derivation_ast"
+      ],
+      "properties": {
+        "source_claim_id": {"type": "string", "minLength": 1},
+        "source_path": {
+          "type": ["string", "null"]
+        },
+        "canonical_utf8_lf_sha256": {
+          "oneOf": [
+            {"type": "null"},
+            {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          ]
+        },
+        "theorem_locator": {
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/locator"}
+          ]
+        },
+        "formula_locator": {
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/locator"}
+          ]
+        },
+        "derivation_ast": {"type": "object", "minProperties": 1}
+      }
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {"const": "LATEX_LABEL"},
+        "value": {"type": "string", "minLength": 1}
+      }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edge_id",
+        "source_cut_address",
+        "actual_occurrence_id",
+        "exact_edge_weight",
+        "h0",
+        "physical_normalization",
+        "carrier_semantics",
+        "support_semantics",
+        "actual_active_support_claimed",
+        "canonical_minimal_representation_claimed",
+        "source_evidence"
+      ],
+      "properties": {
+        "edge_id": {"type": "string", "minLength": 1},
+        "source_cut_address": {"$ref": "#/$defs/address"},
+        "actual_occurrence_id": {"type": "string", "minLength": 1},
+        "exact_edge_weight": {"$ref": "#/$defs/exactWeight"},
+        "h0": {"const": 2},
+        "physical_normalization": {"type": "string", "minLength": 1},
+        "carrier_semantics": {
+          "enum": [
+            "SYNTHETIC_TYPED_LOCAL_EDGE_ONLY",
+            "ACTUAL_LOCAL_OCCURRENCE_EDGE"
+          ]
+        },
+        "support_semantics": {
+          "enum": [
+            "SYNTHETIC_LOCAL_SUPPORT_ONLY",
+            "SOURCE_BACKED_LOCAL_SUPPORT_ONLY"
+          ]
+        },
+        "actual_active_support_claimed": {"const": false},
+        "canonical_minimal_representation_claimed": {"const": false},
+        "source_evidence": {"$ref": "#/$defs/sourceEvidence"}
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,102 @@
+{
+  "$id": "https://example.invalid/tpc182-mvp8-snapshot-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claim_boundary": {
+      "additionalProperties": {
+        "const": false
+      },
+      "type": "object"
+    },
+    "current_verdict": {
+      "const": "NOT_TESTABLE"
+    },
+    "endpoint_ledger_v5": {
+      "type": "object"
+    },
+    "first_missing": {
+      "const": "H1.source_backed_local_occurrence_edge_family"
+    },
+    "next_forced_objects": {
+      "type": "object"
+    },
+    "phase_result": {
+      "type": "object"
+    },
+    "progress_classification": {
+      "type": "object"
+    },
+    "quantifier_projection": {
+      "type": "object"
+    },
+    "route_cells": {
+      "type": "object"
+    },
+    "schema": {
+      "const": "tpc-182-mvp8-source-phase-route-decision-v1"
+    },
+    "snapshot": {
+      "type": "object"
+    },
+    "source_locks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "canonical_utf8_lf_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "hash_mode": {
+            "const": "CANONICAL_UTF8_LF_V2"
+          },
+          "hash_semantics": {
+            "const": "INTEGRITY_ONLY"
+          },
+          "path": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "source_id": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "path",
+          "canonical_utf8_lf_sha256",
+          "hash_mode",
+          "hash_semantics"
+        ],
+        "type": "object"
+      },
+      "minItems": 8,
+      "type": "array"
+    },
+    "structural_result": {
+      "type": "object"
+    },
+    "typed_frontiers": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "snapshot",
+    "source_locks",
+    "current_verdict",
+    "first_missing",
+    "structural_result",
+    "phase_result",
+    "typed_frontiers",
+    "route_cells",
+    "endpoint_ledger_v5",
+    "quantifier_projection",
+    "progress_classification",
+    "next_forced_objects",
+    "claim_boundary"
+  ],
+  "title": "TPC-182 MVP8 source-phase route snapshot",
+  "type": "object"
+}

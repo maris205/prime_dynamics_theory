@@ -1,0 +1,104 @@
+{
+  "admissibility_definition": {
+    "actual_core_arithmetic_without_cut_crosswalk_eligible": false,
+    "archive_addresses_alone_eligible": false,
+    "formal_gluing_hypotheses_alone_eligible": false,
+    "shadow_rows_eligible": false,
+    "source_claim_rule": "every family member must be backed by one TPC-173 claim with qualification_pass=true",
+    "synthetic_fixtures_eligible": false,
+    "witness_rule": "every family member must belong to a TPC-174 production candidate that passes the source-locked verifier"
+  },
+  "claim_boundary": {
+    "actual_active_support_proved": false,
+    "canonical_minimal_representation_proved": false,
+    "empty_family_is_mathematical_nonexistence": false,
+    "fixed_h0_2_edge_theorem_proved": false,
+    "formal_global_totality_proved": false,
+    "named_fixed_phase_theorem": false,
+    "positive_fixed_X_L2": false,
+    "prime_pair_lower_bound": false,
+    "production_local_occurrence_family_nonempty": false,
+    "strict_one_over_400": false,
+    "twin_prime_theorem": false
+  },
+  "coverage": {
+    "coverage_fraction": "0/2988",
+    "covered_cut_count": 0,
+    "duplicated_cut_count": 0,
+    "formal_global_totality_proved": false,
+    "production_cut_count": 2988,
+    "production_local_patch_present": false,
+    "production_overlap_cocycle_testable": false,
+    "tpc165_gluing_instantiated": false,
+    "unmatched_cut_count": 2988
+  },
+  "eligible_carrier_count": 0,
+  "eligible_carriers": [],
+  "family_cardinality": 0,
+  "h1_status": {
+    "H1.actual_active_support_certificate": "NOT_TESTABLE",
+    "H1.canonical_minimal_representation_certificate": "NOT_TESTABLE",
+    "H1.source_backed_local_occurrence_edge_family": "EMPTY_IN_FROZEN_DECLARED_CORPUS",
+    "actual_carrier_impossibility": false,
+    "selected_architecture_stopped": false
+  },
+  "local_edge_family": [],
+  "maximality_certificate": {
+    "enlarged_corpus_nonexistence": false,
+    "every_admissible_member_requires_qualifying_source_claim": true,
+    "largest_defensible_family_is_empty": true,
+    "mathematical_nonexistence": false,
+    "maximal_within_frozen_declared_corpus": true,
+    "qualifying_source_universe_cardinality": 0,
+    "universe": "TPC174-verifiable production local edges whose source claim belongs to the TPC173 qualifying inventory"
+  },
+  "next_route": {
+    "TPC176": "AUDIT_ZERO_COVERAGE_AND_NONINSTANTIATION_OF_GLUING",
+    "TPC177": "NOT_TESTABLE_WITHOUT_SOURCED_CARRIER",
+    "TPC178": "NOT_TESTABLE_WITHOUT_SOURCED_CARRIER",
+    "TPC179": "RECOMPUTE_THREE_ROOT_H1_FRONTIER_WITH_LOCAL_ROOT_SCOPED_EMPTY",
+    "corpus_enlargement_requires_explicit_new_declaration": true
+  },
+  "qualifying_claim_count": 0,
+  "qualifying_claim_ids": [],
+  "schema": "tpc-175-declared-corpus-local-edge-family-v1",
+  "scope": "FROZEN_CONTIGUOUS_OCCURRENCE_SOURCE_CORRIDOR_TPC133_172",
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "942a98e568dd9fbc3477231bac1312200a1a1220d5bf019cb31650db652741ce",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory.json",
+      "source_id": "TPC173.inventory"
+    },
+    {
+      "canonical_utf8_lf_sha256": "36fe92974982bcabbaad3b46fac03366614d3167af5ccd138275fedd5c3ca5fd",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory_audit.json",
+      "source_id": "TPC173.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "d89fd0185747dd1128ae1ea577f1c6e532e7b28fb9b71441f36956413e854c44",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-174-local-occurrence-edge-witness-schema/experiments/tpc174_witness_contract.json",
+      "source_id": "TPC174.contract"
+    },
+    {
+      "canonical_utf8_lf_sha256": "57328bf31f0c72d876d49660d3f2083a9bdab05533b9e666318be7a4660fb7e1",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-174-local-occurrence-edge-witness-schema/experiments/tpc174_witness_contract_audit.json",
+      "source_id": "TPC174.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "b694330939bab0ca36062ea71ff37e538d847f752e05fef14acea951a52d7b34",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_AND_FROZEN_CENSUS_ONLY",
+      "path": "papers/tpc-163-source-locator-census-native-key-collision/experiments/tpc163_source_census.json",
+      "source_id": "TPC163.production_cut_census"
+    }
+  ],
+  "status": "EMPTY_IN_FROZEN_DECLARED_CORPUS"
+}

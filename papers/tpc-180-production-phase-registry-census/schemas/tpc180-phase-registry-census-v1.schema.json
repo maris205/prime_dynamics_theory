@@ -1,0 +1,612 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc180-phase-registry-census-v1.schema.json",
+  "title": "TPC-180 production phase-registry census",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_registry",
+    "checks",
+    "claim_boundary",
+    "decision",
+    "level_ledger",
+    "mutation_regressions",
+    "packet_theorem_interface",
+    "registry_contract",
+    "schema",
+    "snapshot",
+    "source_census",
+    "source_locks",
+    "status"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-180-production-phase-registry-census-v1"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "date",
+        "hash_mode",
+        "hash_semantics",
+        "scope"
+      ],
+      "properties": {
+        "date": {
+          "const": "2026-07-28"
+        },
+        "hash_mode": {
+          "const": "CANONICAL_UTF8_LF_V2"
+        },
+        "hash_semantics": {
+          "const": "INTEGRITY_ONLY"
+        },
+        "scope": {
+          "const": "FROZEN_SOURCE_LOCKED_TPC157_172_PHASE_REGISTRY_CORPUS"
+        }
+      }
+    },
+    "source_locks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "canonical_utf8_lf_sha256",
+          "hash_semantics",
+          "path",
+          "source_id"
+        ],
+        "properties": {
+          "canonical_utf8_lf_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "hash_semantics": {
+            "const": "INTEGRITY_ONLY"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "source_census": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "census_semantics",
+        "detection_mode",
+        "fixed_h0_records",
+        "future_new_fields_automatically_scanned",
+        "mapped_field_count",
+        "phase_obligation_records",
+        "production_packet_coordinate_rows",
+        "value_bearing_named_phase_locators",
+        "value_bearing_named_phase_records"
+      ],
+      "properties": {
+        "detection_mode": {
+          "const": "EXPLICIT_MAPPED_FROZEN_CORPUS_CENSUS"
+        },
+        "future_new_fields_automatically_scanned": {
+          "const": false
+        },
+        "mapped_field_count": {
+          "const": 7
+        },
+        "fixed_h0_records": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "locator",
+              "source_id",
+              "status",
+              "value"
+            ],
+            "properties": {
+              "locator": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "value"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "JSON_POINTER",
+                      "QUERY_SELECTOR"
+                    ]
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "source_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "const": "PRESENT_SOURCE_BACKED"
+              },
+              "value": {}
+            }
+          }
+        },
+        "phase_obligation_records": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "locator",
+              "source_id",
+              "value"
+            ],
+            "properties": {
+              "locator": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "value"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "JSON_POINTER",
+                      "QUERY_SELECTOR"
+                    ]
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "source_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {}
+            }
+          }
+        },
+        "value_bearing_named_phase_records": {
+          "const": 0
+        },
+        "value_bearing_named_phase_locators": {
+          "const": 0
+        },
+        "production_packet_coordinate_rows": {
+          "const": 0
+        },
+        "census_semantics": {
+          "const": "NO_VALUE_RECORD_IN_EXPLICITLY_MAPPED_FROZEN_FIELDS_NOT_A_GENERIC_SCAN_OR_MATHEMATICAL_NONEXISTENCE"
+        }
+      }
+    },
+    "registry_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decay_axis",
+        "node_id",
+        "quantifier_signature",
+        "registry_creates_decay",
+        "required_identity_fields",
+        "required_packet_coordinate_fields",
+        "representative_rule",
+        "role",
+        "status"
+      ],
+      "properties": {
+        "node_id": {
+          "const": "H9.phase_cell_registry"
+        },
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "role": {
+          "const": "PHYSICAL_REGISTRY_DATA"
+        },
+        "decay_axis": {
+          "const": "NONE"
+        },
+        "registry_creates_decay": {
+          "const": false
+        },
+        "quantifier_signature": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "carrier_axis",
+            "decay_axis",
+            "endpoint_axis",
+            "phase_axis",
+            "scale_axis",
+            "support_axis"
+          ],
+          "properties": {
+            "carrier_axis": {
+              "const": "PHYSICAL_PHASE_REGISTRY"
+            },
+            "decay_axis": {
+              "const": "NONE"
+            },
+            "endpoint_axis": {
+              "const": "NOT_APPLICABLE"
+            },
+            "phase_axis": {
+              "const": "NAMED_FIXED_ATOM"
+            },
+            "scale_axis": {
+              "const": "DETERMINISTIC_ALL_SCALE"
+            },
+            "support_axis": {
+              "const": "ACTUAL_ACTIVE_SUPPORT"
+            }
+          }
+        },
+        "required_identity_fields": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_packet_coordinate_fields": {
+          "type": "array",
+          "minItems": 15,
+          "maxItems": 15,
+          "items": {
+            "type": "string"
+          }
+        },
+        "representative_rule": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "actual_representatives_must_be_canonicalized",
+            "covariant_multiplier_translation_required",
+            "equivalence",
+            "production_mapping_present",
+            "theorem_status"
+          ],
+          "properties": {
+            "actual_representatives_must_be_canonicalized": {
+              "const": true
+            },
+            "covariant_multiplier_translation_required": {
+              "const": true
+            },
+            "equivalence": {
+              "type": "string"
+            },
+            "production_mapping_present": {
+              "const": false
+            },
+            "theorem_status": {
+              "const": "PROVED_EXACT_CANONICALIZATION"
+            }
+          }
+        }
+      }
+    },
+    "candidate_registry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "first_missing",
+        "fixed_h0_source_locators",
+        "fixed_h0_value",
+        "named_physical_atom_id",
+        "packet_coordinate_rows",
+        "packet_schedule_source_locator",
+        "phase_value_mod_1",
+        "phase_value_source_locator",
+        "registry_id",
+        "status"
+      ],
+      "properties": {
+        "registry_id": {
+          "type": "null"
+        },
+        "named_physical_atom_id": {
+          "type": "null"
+        },
+        "phase_value_mod_1": {
+          "type": "null"
+        },
+        "phase_value_source_locator": {
+          "type": "null"
+        },
+        "fixed_h0_value": {
+          "const": 2
+        },
+        "fixed_h0_source_locators": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "packet_schedule_source_locator": {
+          "type": "null"
+        },
+        "packet_coordinate_rows": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "first_missing": {
+          "const": "named_physical_atom_id_and_phase_value_source_locator"
+        }
+      }
+    },
+    "packet_theorem_interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "corridor_uniformity",
+        "export_id",
+        "named_atom_quantifier",
+        "phase_quantifier",
+        "production_phase_registry",
+        "schedule_dependence",
+        "source_locked_physical_packet_map_present",
+        "status"
+      ],
+      "properties": {
+        "corridor_uniformity": {
+          "type": "string"
+        },
+        "export_id": {
+          "const": "A170.metric_packet_corridor"
+        },
+        "named_atom_quantifier": {
+          "const": "NAMED_FIXED_ATOM_OR_SCALE_DEPENDENT_SELECTOR"
+        },
+        "phase_quantifier": {
+          "const": "LEBESGUE_AE_FIXED_PHASE"
+        },
+        "production_phase_registry": {
+          "const": false
+        },
+        "schedule_dependence": {
+          "type": "string"
+        },
+        "source_locked_physical_packet_map_present": {
+          "const": false
+        },
+        "status": {
+          "const": "PROVED_L1_ACTUAL_CORE_PHASE_METRIC_PACKET_CORRIDOR"
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "constructible_output",
+        "first_missing",
+        "independent_missing",
+        "next_gate",
+        "pointwise_routes_preserved",
+        "production_phase_registry_constructed",
+        "verdict"
+      ],
+      "properties": {
+        "verdict": {
+          "const": "NOT_TESTABLE"
+        },
+        "production_phase_registry_constructed": {
+          "const": false
+        },
+        "next_gate": {
+          "const": "H2.metric_fixed_atom_crosswalk"
+        },
+        "constructible_output": {
+          "const": "SOURCE_LOCKED_MISSING_VALUE_CENSUS_AND_SCHEMA_ONLY"
+        },
+        "first_missing": {
+          "const": "named_physical_atom_id_and_phase_value_source_locator"
+        },
+        "independent_missing": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "pointwise_routes_preserved": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "level_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "L0",
+        "L1",
+        "L2",
+        "fixed_h0_gate",
+        "new_program_positive_L2"
+      ],
+      "properties": {
+        "L0": {
+          "type": "string"
+        },
+        "L1": {
+          "type": "string"
+        },
+        "L2": {
+          "const": "NONE"
+        },
+        "fixed_h0_gate": {
+          "const": "PROVED_DATA_FACT_ONLY_NOT_A_CANCELLATION_EXPONENT"
+        },
+        "new_program_positive_L2": {
+          "const": false
+        }
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixed_atom_decay",
+        "metric_to_fixed_selector",
+        "named_physical_phase_identified",
+        "phase_value_invented",
+        "prime_pair_lower_bound",
+        "production_packet_schedule_identified",
+        "production_phase_registry",
+        "program_positive_L2",
+        "scoped_census_is_global_nonexistence",
+        "strict_one_over_400",
+        "twin_prime_theorem"
+      ],
+      "properties": {
+        "fixed_atom_decay": {
+          "const": false
+        },
+        "metric_to_fixed_selector": {
+          "const": false
+        },
+        "named_physical_phase_identified": {
+          "const": false
+        },
+        "phase_value_invented": {
+          "const": false
+        },
+        "prime_pair_lower_bound": {
+          "const": false
+        },
+        "production_packet_schedule_identified": {
+          "const": false
+        },
+        "production_phase_registry": {
+          "const": false
+        },
+        "program_positive_L2": {
+          "const": false
+        },
+        "scoped_census_is_global_nonexistence": {
+          "const": false
+        },
+        "strict_one_over_400": {
+          "const": false
+        },
+        "twin_prime_theorem": {
+          "const": false
+        }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_sources_locked",
+        "decay_axis_none",
+        "fixed_h0_2_source_backed",
+        "named_phase_value_and_locator_absent",
+        "no_phase_synthesized",
+        "packet_coordinate_rows_absent",
+        "phase_obligation_not_confused_with_phase_value",
+        "representative_covariance_requirement_preserved"
+      ],
+      "properties": {
+        "all_sources_locked": {
+          "const": true
+        },
+        "decay_axis_none": {
+          "const": true
+        },
+        "fixed_h0_2_source_backed": {
+          "const": true
+        },
+        "named_phase_value_and_locator_absent": {
+          "const": true
+        },
+        "no_phase_synthesized": {
+          "const": true
+        },
+        "packet_coordinate_rows_absent": {
+          "const": true
+        },
+        "phase_obligation_not_confused_with_phase_value": {
+          "const": true
+        },
+        "representative_covariance_requirement_preserved": {
+          "const": true
+        }
+      }
+    },
+    "mutation_regressions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reject_census_as_global_nonexistence",
+        "reject_extra_positive_claim_field",
+        "reject_fixed_h0_fact_as_L2",
+        "reject_missing_locator_fabrication",
+        "reject_obligation_as_phase_value",
+        "reject_registry_decay_promotion",
+        "reject_synthetic_packet_row"
+      ],
+      "properties": {
+        "reject_census_as_global_nonexistence": {
+          "const": true
+        },
+        "reject_extra_positive_claim_field": {
+          "const": true
+        },
+        "reject_fixed_h0_fact_as_L2": {
+          "const": true
+        },
+        "reject_missing_locator_fabrication": {
+          "const": true
+        },
+        "reject_obligation_as_phase_value": {
+          "const": true
+        },
+        "reject_registry_decay_promotion": {
+          "const": true
+        },
+        "reject_synthetic_packet_row": {
+          "const": true
+        }
+      }
+    }
+  }
+}

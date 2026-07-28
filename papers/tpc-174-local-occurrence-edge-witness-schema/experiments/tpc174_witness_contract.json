@@ -1,0 +1,122 @@
+{
+  "claim_boundary": {
+    "actual_active_support_proved": false,
+    "canonical_minimal_representation_proved": false,
+    "named_fixed_phase_theorem": false,
+    "positive_fixed_X_L2": false,
+    "prime_pair_lower_bound": false,
+    "production_local_occurrence_family_proved": false,
+    "strict_one_over_400": false,
+    "synthetic_fixture_is_production_evidence": false,
+    "twin_prime_theorem": false,
+    "verifier_acceptance_proves_external_theorem": false
+  },
+  "completeness_checks": {
+    "complete_witness_claim_boundary_is_fixed_false": true,
+    "every_covered_cut_has_nonempty_edge_family": true,
+    "every_cut_column_exact_sum": "1",
+    "every_edge_source_is_in_declared_local_cover": true,
+    "fixed_h0_2_edgewise": true,
+    "physical_normalization_edgewise": true,
+    "production_derivation_ast_must_exactly_match_tpc173": true,
+    "production_source_claim_must_be_tpc173_qualifying": true,
+    "root_edge_source_fields_are_closed": true
+  },
+  "identity_rules": {
+    "actual_occurrence_ids_unique": true,
+    "archive_address_is_not_occurrence_id": true,
+    "covered_cut_addresses_unique": true,
+    "edge_id": "SHA256_24_OF_ADDRESS_PLUS_ACTUAL_OCCURRENCE_ID",
+    "edge_ids_unique": true
+  },
+  "minimal_required_fields": {
+    "edge": [
+      "actual_active_support_claimed",
+      "actual_occurrence_id",
+      "canonical_minimal_representation_claimed",
+      "carrier_semantics",
+      "edge_id",
+      "exact_edge_weight",
+      "h0",
+      "physical_normalization",
+      "source_cut_address",
+      "source_evidence",
+      "support_semantics"
+    ],
+    "source_evidence": [
+      "canonical_utf8_lf_sha256",
+      "derivation_ast",
+      "formula_locator",
+      "source_claim_id",
+      "source_path",
+      "theorem_locator"
+    ],
+    "witness": [
+      "actual_active_support_claimed",
+      "canonical_minimal_representation_claimed",
+      "claim_boundary",
+      "covered_cut_addresses",
+      "edges",
+      "evidence_mode",
+      "fixed_h0",
+      "phase_semantics",
+      "physical_normalization",
+      "schema",
+      "source_inventory_scope",
+      "witness_id"
+    ]
+  },
+  "production_status": {
+    "production_witness_present": false,
+    "qualifying_source_claim_count": 0,
+    "reason": "TPC-173 supplies no qualifying source claim from which a production local edge can be instantiated.",
+    "status": "NOT_TESTABLE"
+  },
+  "schema": "tpc-174-local-occurrence-edge-witness-contract-export-v1",
+  "schema_lock": {
+    "canonical_utf8_lf_sha256": "e555585122f42a4802c3a78e9acbfb95cbe744d56816cb6c08df91ddbfe3f662",
+    "hash_mode": "CANONICAL_UTF8_LF_V2",
+    "path": "papers/tpc-174-local-occurrence-edge-witness-schema/schemas/tpc174-local-occurrence-edge-witness-contract-v1.schema.json"
+  },
+  "separated_roots": {
+    "actual_active_support_claimed": false,
+    "canonical_minimal_representation_claimed": false,
+    "local_edge_support_semantics": "SOURCE_BACKED_LOCAL_SUPPORT_ONLY"
+  },
+  "source_inventory": {
+    "audit_path": "papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory_audit.json",
+    "audit_sha256": "36fe92974982bcabbaad3b46fac03366614d3167af5ccd138275fedd5c3ca5fd",
+    "canonical_utf8_lf_sha256": "942a98e568dd9fbc3477231bac1312200a1a1220d5bf019cb31650db652741ce",
+    "hash_semantics": "INTEGRITY_ONLY",
+    "path": "papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory.json",
+    "qualifying_count": 0,
+    "scope": "FROZEN_CONTIGUOUS_OCCURRENCE_SOURCE_CORRIDOR_TPC133_172"
+  },
+  "synthetic_nonvacuity": {
+    "path": "papers/tpc-174-local-occurrence-edge-witness-schema/samples/tpc174_synthetic_local_edge_witness.json",
+    "payload_sha256": "1043d7f369b398bbd9c0ea68e9e6f131f7efea83c62b9a7ce5e833532e465235",
+    "validation": {
+      "actual_active_support_proved": false,
+      "branching_counts": {
+        "3|171|1|1|7": 2
+      },
+      "canonical_minimal_representation_proved": false,
+      "covered_cut_count": 1,
+      "edge_count": 2,
+      "every_column_sum": "1",
+      "evidence_mode": "SYNTHETIC_L0_ONLY",
+      "external_theorem_truth_proved_by_verifier": false,
+      "fixed_h0": 2,
+      "physical_normalization": "nu_X",
+      "status": "PASS_SYNTHETIC_L0_ONLY",
+      "unique_occurrence_count": 2
+    }
+  },
+  "verifier_theorem": {
+    "external_theorem_truth_proved": false,
+    "production_edge_existence_proved": false,
+    "soundness": "acceptance implies exact typed local-cover consistency and per-cut conservation for the supplied records only",
+    "status": "PROVED_L0_FINITE_INTERFACE"
+  },
+  "witness_schema": "tpc-174-local-occurrence-edge-witness-contract-v1"
+}

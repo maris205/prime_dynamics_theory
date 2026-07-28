@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc179-h1-integration-v1.schema.json",
+  "title": "TPC-179 H1 structural corpus-exhaustion integration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "source_locks",
+    "scope",
+    "current_verdict",
+    "first_missing",
+    "minimal_root_antichain",
+    "root_ledger",
+    "scoped_route_cells",
+    "fixed_h0",
+    "next_actions",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-179-h1-structural-corpus-exhaustion-integration-v1"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "source_locks": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "path",
+          "canonical_utf8_lf_sha256",
+          "hash_mode",
+          "hash_semantics"
+        ]
+      }
+    },
+    "scope": {
+      "const": "FROZEN_CONTIGUOUS_OCCURRENCE_SOURCE_CORRIDOR_TPC133_172"
+    },
+    "current_verdict": {
+      "const": "NOT_TESTABLE"
+    },
+    "first_missing": {
+      "const": "H1.source_backed_local_occurrence_edge_family"
+    },
+    "minimal_root_antichain": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "uniqueItems": true
+    },
+    "root_ledger": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "scoped_route_cells": {
+      "type": "array",
+      "minItems": 2
+    },
+    "fixed_h0": {
+      "type": "object"
+    },
+    "next_actions": {
+      "type": "array",
+      "minItems": 2
+    },
+    "claim_boundary": {
+      "type": "object"
+    }
+  }
+}

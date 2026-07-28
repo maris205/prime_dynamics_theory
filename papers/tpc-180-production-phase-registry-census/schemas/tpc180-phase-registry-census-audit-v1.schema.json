@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc180-phase-registry-census-audit-v1.schema.json",
+  "title": "TPC-180 phase-registry census audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "checks",
+    "claim_boundary",
+    "first_missing",
+    "manifest_payload_sha256",
+    "manifest_schema",
+    "mutation_regressions",
+    "production_phase_registry_constructed",
+    "schema",
+    "source_lock_count",
+    "status",
+    "verdict"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-180-production-phase-registry-census-audit-v1"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "manifest_schema": {
+      "const": "tpc-180-production-phase-registry-census-v1"
+    },
+    "manifest_payload_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "verdict": {
+      "const": "NOT_TESTABLE"
+    },
+    "production_phase_registry_constructed": {
+      "const": false
+    },
+    "first_missing": {
+      "const": "named_physical_atom_id_and_phase_value_source_locator"
+    },
+    "source_lock_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_sources_locked",
+        "decay_axis_none",
+        "fixed_h0_2_source_backed",
+        "named_phase_value_and_locator_absent",
+        "no_phase_synthesized",
+        "packet_coordinate_rows_absent",
+        "phase_obligation_not_confused_with_phase_value",
+        "representative_covariance_requirement_preserved"
+      ],
+      "properties": {
+        "all_sources_locked": {
+          "const": true
+        },
+        "decay_axis_none": {
+          "const": true
+        },
+        "fixed_h0_2_source_backed": {
+          "const": true
+        },
+        "named_phase_value_and_locator_absent": {
+          "const": true
+        },
+        "no_phase_synthesized": {
+          "const": true
+        },
+        "packet_coordinate_rows_absent": {
+          "const": true
+        },
+        "phase_obligation_not_confused_with_phase_value": {
+          "const": true
+        },
+        "representative_covariance_requirement_preserved": {
+          "const": true
+        }
+      }
+    },
+    "mutation_regressions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reject_census_as_global_nonexistence",
+        "reject_extra_positive_claim_field",
+        "reject_fixed_h0_fact_as_L2",
+        "reject_missing_locator_fabrication",
+        "reject_obligation_as_phase_value",
+        "reject_registry_decay_promotion",
+        "reject_synthetic_packet_row"
+      ],
+      "properties": {
+        "reject_census_as_global_nonexistence": {
+          "const": true
+        },
+        "reject_extra_positive_claim_field": {
+          "const": true
+        },
+        "reject_fixed_h0_fact_as_L2": {
+          "const": true
+        },
+        "reject_missing_locator_fabrication": {
+          "const": true
+        },
+        "reject_obligation_as_phase_value": {
+          "const": true
+        },
+        "reject_registry_decay_promotion": {
+          "const": true
+        },
+        "reject_synthetic_packet_row": {
+          "const": true
+        }
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixed_atom_decay",
+        "metric_to_fixed_selector",
+        "named_physical_phase_identified",
+        "phase_value_invented",
+        "prime_pair_lower_bound",
+        "production_packet_schedule_identified",
+        "production_phase_registry",
+        "program_positive_L2",
+        "scoped_census_is_global_nonexistence",
+        "strict_one_over_400",
+        "twin_prime_theorem"
+      ],
+      "properties": {
+        "fixed_atom_decay": {
+          "const": false
+        },
+        "metric_to_fixed_selector": {
+          "const": false
+        },
+        "named_physical_phase_identified": {
+          "const": false
+        },
+        "phase_value_invented": {
+          "const": false
+        },
+        "prime_pair_lower_bound": {
+          "const": false
+        },
+        "production_packet_schedule_identified": {
+          "const": false
+        },
+        "production_phase_registry": {
+          "const": false
+        },
+        "program_positive_L2": {
+          "const": false
+        },
+        "scoped_census_is_global_nonexistence": {
+          "const": false
+        },
+        "strict_one_over_400": {
+          "const": false
+        },
+        "twin_prime_theorem": {
+          "const": false
+        }
+      }
+    }
+  }
+}

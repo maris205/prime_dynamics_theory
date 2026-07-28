@@ -1,0 +1,172 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,tabularx,array,microtype,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!65!black,
+  citecolor=blue!65!black,urlcolor=blue!70!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newcommand{\Lzero}{\mathrm{L0}}
+\newcommand{\Lone}{\mathrm{L1}}
+\newcommand{\Ltwo}{\mathrm{L2}}
+\newcommand{\NT}{\textnormal{\textsc{not-testable}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{\textbf{A Minimal Source-Locked}\\
+\textbf{Local Occurrence-Edge Witness Contract}}
+\author{Liang Wang\\
+School of Artificial Intelligence and Automation,\\
+Huazhong University of Science and Technology, Wuhan 430074, P.R. China\\
+\texttt{wangliang.f@gmail.com}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-173 finds no qualifying local actual-occurrence edge claim in the
+frozen TPC-133--172 theorem corpus.  This does not remove the need for an
+exact acceptance interface.  We define a minimal source-locked local-edge
+witness.  Every edge has the five-field archived cut address, a distinct
+actual-occurrence identifier, an exact nonzero rational weight, edgewise
+fixed \(h_0=2\), physical-normalization lineage, and source evidence resolving
+to a qualifying TPC-173 claim.  Every declared local cut fibre is nonempty
+and has exact column sum one.
+
+A deterministic verifier proves finite internal consistency for supplied
+records.  It keeps source-backed local support separate from actual active
+support and canonical/minimal representation.  The committed two-edge
+fixture has weights \(1/3,2/3\) and is explicitly synthetic \(\Lzero\)
+only.  Since TPC-173 has zero qualifying claims, no production witness can
+currently instantiate the contract.  The production status remains
+not-testable; no arithmetic \(\Ltwo\) conclusion is obtained.
+\end{abstract}
+
+\section{Source contract}
+
+Let
+\[
+ \kappa(c)=(\ell(c),k(c),d_{\rm nat}(c),j_L(c),j_K(c))
+\tag{1}\label{eq:key}
+\]
+be the exact archived address supplied by TPC-164.  It identifies a frozen
+cut row, not a downstream occurrence \citep{WangTPC165,WangTPC173}.
+
+\begin{definition}[Local edge record]\label{def:edge}
+A production local edge record contains
+\[
+ (\kappa(c),o,\lambda,h_0,\nu,\mathcal S),
+\tag{2}\label{eq:edge}
+\]
+where \(o\) is an actual-occurrence identifier,
+\(\lambda\in\mathbb Q\setminus\{0\}\), \(h_0=2\), \(\nu\) is the physical
+normalization, and \(\mathcal S\) is the source bundle.  The latter contains
+a TPC-173 qualifying claim ID, path, canonical hash, theorem locator,
+formula locator and an exactly matching nonempty derivation AST.
+\end{definition}
+
+The edge ID is a deterministic digest of the ordered pair
+\((\kappa(c),o)\).  Thus an archive address cannot silently become an
+occurrence identity.
+
+\section{Local completeness}
+
+\begin{definition}[Covered local fibre]\label{def:fibre}
+For a finite nonempty declared cut set \(U\), every \(c\in U\) has a finite
+nonempty edge family \(E(c)\) satisfying
+\[
+ \sum_{e\in E(c)}\lambda_e=1.
+\tag{3}\label{eq:conservation}
+\]
+Every edge source lies in \(U\), and edge and occurrence identifiers are
+globally unique inside the witness.
+\end{definition}
+
+This is the local hypothesis required by the TPC-165 gluing theorem.  It is
+not global coverage, actual active support, or a canonical-parent theorem.
+
+\section{Finite verifier theorem}
+
+\begin{theorem}[Internal verifier soundness]\label{thm:soundness}
+If the TPC-174 verifier accepts a supplied witness, then:
+\begin{enumerate}
+\item all edge and occurrence identifiers are unique;
+\item every edge belongs to exactly one declared five-field cut address;
+\item every cut fibre is nonempty and satisfies
+ \eqref{eq:conservation} in exact rational arithmetic;
+\item fixed \(h_0=2\) and physical normalization agree edgewise; and
+\item in production mode, every source record resolves exactly to a
+ qualifying TPC-173 claim, including equality of the derivation AST.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The verifier parses exact integers and reduced fractions, reconstructs the
+canonical edge ID, and rejects duplicate identities.  It groups edges by the
+ordered address \eqref{eq:key}, checks nonempty coverage and computes each
+sum in \(\mathbb Q\).  Equality checks enforce \(h_0\), normalization and
+the full source join.  Closed root, edge and source field sets reject
+undeclared fields, and the complete claim-boundary record is fixed false.
+These are precisely the asserted finite predicates.
+\end{proof}
+
+\begin{proposition}[No provenance or root promotion]\label{prop:firewall}
+Verifier acceptance does not prove the mathematical truth of a cited
+external theorem, actual active support, canonical/minimal actual
+representation, or an arithmetic saving.
+\end{proposition}
+
+\begin{proof}
+The verifier checks finite records and their source joins.  It contains no
+proof kernel for the cited theorem, no nonzero physical-coefficient test, no
+representation theorem and no analytic estimate.  These conclusions
+therefore do not follow.
+\end{proof}
+
+\section{Synthetic nonvacuity and production state}
+
+The committed fixture declares one address and two distinct typed edge rows:
+\[
+ \lambda_1=\frac13,\qquad \lambda_2=\frac23.
+\]
+It passes every identity, typing and conservation check.  Its evidence mode
+is \texttt{SYNTHETIC\_L0\_ONLY}; its source locators are deliberately null
+and its source ID is \texttt{SYNTHETIC\_AXIOM\_L0}.  It is not a production
+claim.
+
+\begin{theorem}[Current production verdict]\label{thm:verdict}
+For the source-locked TPC-173 inventory,
+\[
+ \boxed{
+ \#\mathcal Q_{173}=0,\qquad
+ \operatorname{Status}_{\rm production\ witness}=\NT.}
+\tag{4}\label{eq:verdict}
+\]
+\end{theorem}
+
+\begin{proof}
+Production mode requires each edge source to occur in the TPC-173
+qualifying-claim map.  That map is empty.  The synthetic fixture is rejected
+under production mode, so it cannot change the verdict.
+\end{proof}
+
+\section{Claim firewall}
+
+The schema and verifier are finite \(\Lzero\) interface results.  They do
+not supply a production local occurrence family or close either parallel H1
+root.  No named fixed phase, positive fixed-\(X\) \(\Ltwo\), strict
+\(1/400\), prime-pair lower bound, or twin-prime theorem is established.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

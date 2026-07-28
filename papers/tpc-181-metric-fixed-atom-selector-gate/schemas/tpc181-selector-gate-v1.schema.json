@@ -1,0 +1,595 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc181-selector-gate-v1.schema.json",
+  "title": "TPC-181 metric-to-fixed-atom selector gate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "checks",
+    "claim_boundary",
+    "level_ledger",
+    "metric_input",
+    "mutation_regressions",
+    "pointwise_routes",
+    "registry_input",
+    "route_decision",
+    "schema",
+    "scoped_obstruction",
+    "selector_gate",
+    "snapshot",
+    "source_backed_bridge_contract",
+    "source_locks",
+    "status"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-181-metric-to-fixed-selector-gate-v1"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "date",
+        "hash_mode",
+        "hash_semantics",
+        "scope"
+      ],
+      "properties": {
+        "date": {
+          "const": "2026-07-28"
+        },
+        "hash_mode": {
+          "const": "CANONICAL_UTF8_LF_V2"
+        },
+        "hash_semantics": {
+          "const": "INTEGRITY_ONLY"
+        },
+        "scope": {
+          "const": "TPC170_METRIC_THEOREM_TO_NAMED_FIXED_ATOM"
+        }
+      }
+    },
+    "source_locks": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "canonical_utf8_lf_sha256",
+          "hash_semantics",
+          "path",
+          "source_id"
+        ],
+        "properties": {
+          "canonical_utf8_lf_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "hash_semantics": {
+            "const": "INTEGRITY_ONLY"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "metric_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "corridor_uniformity",
+        "endpoint_quantifier",
+        "export_id",
+        "metric_power",
+        "phase_quantifier",
+        "scale_quantifier",
+        "schedule_dependence",
+        "status"
+      ],
+      "properties": {
+        "phase_quantifier": {
+          "const": "LEBESGUE_AE_FIXED_PHASE"
+        },
+        "scale_quantifier": {
+          "const": "EVENTUALLY_PRESCRIBED_SCHEDULE"
+        },
+        "endpoint_quantifier": {
+          "const": "ALL_PREFIX_THETA_SHELL"
+        },
+        "status": {
+          "const": "PROVED_L1_ACTUAL_CORE_PHASE_METRIC_PACKET_CORRIDOR"
+        },
+        "corridor_uniformity": {
+          "type": "string"
+        },
+        "export_id": {
+          "type": "string"
+        },
+        "metric_power": {
+          "type": "string"
+        },
+        "schedule_dependence": {
+          "type": "string"
+        }
+      }
+    },
+    "registry_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "named_physical_atom_id",
+        "node_id",
+        "phase_value_mod_1",
+        "phase_value_source_locator",
+        "production_packet_coordinate_rows",
+        "source",
+        "status"
+      ],
+      "properties": {
+        "node_id": {
+          "const": "H9.phase_cell_registry"
+        },
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "named_physical_atom_id": {
+          "type": "null"
+        },
+        "phase_value_mod_1": {
+          "type": "null"
+        },
+        "phase_value_source_locator": {
+          "type": "null"
+        },
+        "production_packet_coordinate_rows": {
+          "const": 0
+        },
+        "source": {
+          "const": "TPC180.census"
+        }
+      }
+    },
+    "selector_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixed_atom_decay_obtained",
+        "node_id",
+        "ordered_missing",
+        "required_inputs",
+        "route_kind",
+        "scope_id",
+        "selector_constructed",
+        "status"
+      ],
+      "properties": {
+        "node_id": {
+          "const": "H2.metric_fixed_atom_crosswalk"
+        },
+        "status": {
+          "const": "NOT_TESTABLE"
+        },
+        "scope_id": {
+          "const": "SOURCE_BACKED_METRIC_TO_FIXED_ATOM"
+        },
+        "route_kind": {
+          "const": "ARITHMETIC_SUBROUTE"
+        },
+        "selector_constructed": {
+          "const": false
+        },
+        "fixed_atom_decay_obtained": {
+          "const": false
+        },
+        "ordered_missing": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_inputs": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "scoped_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "does_not_claim_literal_mobius_lower_bound",
+        "does_not_stop_architecture",
+        "does_not_stop_pointwise_theorems",
+        "schedule_specific_form",
+        "scope",
+        "statement",
+        "status",
+        "stopped_method",
+        "witness"
+      ],
+      "properties": {
+        "status": {
+          "const": "PROVED_L1_SCOPED_LOGICAL_OBSTRUCTION"
+        },
+        "scope": {
+          "const": "UNCONTROLLED_ATOMIC_PROMOTION_ONLY"
+        },
+        "stopped_method": {
+          "const": "phase_metric_uncontrolled_atomic"
+        },
+        "does_not_stop_pointwise_theorems": {
+          "const": true
+        },
+        "does_not_stop_architecture": {
+          "const": true
+        },
+        "does_not_claim_literal_mobius_lower_bound": {
+          "const": true
+        },
+        "schedule_specific_form": {
+          "type": "string"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "witness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "full_measure_good_set",
+            "named_atom",
+            "named_atom_in_good_set",
+            "null_set",
+            "null_set_lebesgue_measure"
+          ],
+          "properties": {
+            "full_measure_good_set": {
+              "type": "string"
+            },
+            "named_atom": {
+              "const": "alpha_star"
+            },
+            "named_atom_in_good_set": {
+              "const": false
+            },
+            "null_set": {
+              "type": "string"
+            },
+            "null_set_lebesgue_measure": {
+              "const": 0
+            }
+          }
+        }
+      }
+    },
+    "source_backed_bridge_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "acceptable_sufficient_hypotheses",
+        "insufficient_inputs",
+        "minimum_fields",
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "const": "MISSING"
+        },
+        "minimum_fields": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "items": {
+            "type": "string"
+          }
+        },
+        "acceptable_sufficient_hypotheses": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "statement"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "statement": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "insufficient_inputs": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pointwise_routes": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "node_id",
+          "quantifier_signature",
+          "role",
+          "state",
+          "stopped_by_metric_nonimplication"
+        ],
+        "properties": {
+          "node_id": {
+            "enum": [
+              "O161.bad_endpoint_pointwise_fixed_atom",
+              "O161.direct_additive_twist_fixed_atom"
+            ]
+          },
+          "state": {
+            "const": "OPEN_PARENT_READY"
+          },
+          "role": {
+            "const": "ARITHMETIC_TARGET"
+          },
+          "stopped_by_metric_nonimplication": {
+            "const": false
+          },
+          "quantifier_signature": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "carrier_axis",
+              "decay_axis",
+              "endpoint_axis",
+              "phase_axis",
+              "scale_axis",
+              "support_axis"
+            ],
+            "properties": {
+              "carrier_axis": {
+                "const": "ACTUAL_FIXED_H0_PACKET"
+              },
+              "decay_axis": {
+                "const": "FIXED_X_POWER_FIXED_ATOM"
+              },
+              "endpoint_axis": {
+                "const": "DETERMINISTIC_ALL_PREFIX"
+              },
+              "phase_axis": {
+                "const": "NAMED_FIXED_ATOM"
+              },
+              "scale_axis": {
+                "const": "DETERMINISTIC_ALL_SCALE"
+              },
+              "support_axis": {
+                "const": "ACTUAL_ACTIVE_SUPPORT"
+              }
+            }
+          }
+        }
+      }
+    },
+    "route_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "architecture_reroute",
+        "metric_source_backed_bridge",
+        "metric_uncontrolled_atomic",
+        "pointwise_frontier",
+        "reason",
+        "return_to_pointwise_frontier"
+      ],
+      "properties": {
+        "metric_source_backed_bridge": {
+          "const": "NOT_TESTABLE"
+        },
+        "metric_uncontrolled_atomic": {
+          "const": "STOP_SCOPED"
+        },
+        "return_to_pointwise_frontier": {
+          "const": true
+        },
+        "architecture_reroute": {
+          "const": false
+        },
+        "pointwise_frontier": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "level_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "L0",
+        "L1",
+        "L2",
+        "metric_delta_below_one_quarter_is_fixed_atom_eligible",
+        "new_program_positive_L2"
+      ],
+      "properties": {
+        "L0": {
+          "type": "string"
+        },
+        "L1": {
+          "type": "string"
+        },
+        "L2": {
+          "const": "NONE"
+        },
+        "metric_delta_below_one_quarter_is_fixed_atom_eligible": {
+          "const": false
+        },
+        "new_program_positive_L2": {
+          "const": false
+        }
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Lebesgue_ae_promoted_to_fixed_atom",
+        "architecture_stopped",
+        "metric_power_promoted_to_fixed_atom_power",
+        "named_fixed_atom_selected",
+        "pointwise_routes_stopped",
+        "prime_pair_lower_bound",
+        "production_phase_registry",
+        "program_positive_L2",
+        "scale_dependent_selector_covered",
+        "strict_one_over_400",
+        "twin_prime_theorem"
+      ],
+      "properties": {
+        "Lebesgue_ae_promoted_to_fixed_atom": {
+          "const": false
+        },
+        "architecture_stopped": {
+          "const": false
+        },
+        "metric_power_promoted_to_fixed_atom_power": {
+          "const": false
+        },
+        "named_fixed_atom_selected": {
+          "const": false
+        },
+        "pointwise_routes_stopped": {
+          "const": false
+        },
+        "prime_pair_lower_bound": {
+          "const": false
+        },
+        "production_phase_registry": {
+          "const": false
+        },
+        "program_positive_L2": {
+          "const": false
+        },
+        "scale_dependent_selector_covered": {
+          "const": false
+        },
+        "strict_one_over_400": {
+          "const": false
+        },
+        "twin_prime_theorem": {
+          "const": false
+        }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "L0_L1_L2_separated",
+        "additional_hypotheses_typed",
+        "metric_power_not_fixed_atom_power",
+        "schedule_dependence_explicit",
+        "singleton_nonimplication_exact",
+        "tpc170_quantifier_preserved",
+        "tpc180_missing_registry_preserved",
+        "two_O161_routes_open_parent_ready"
+      ],
+      "properties": {
+        "L0_L1_L2_separated": {
+          "const": true
+        },
+        "additional_hypotheses_typed": {
+          "const": true
+        },
+        "metric_power_not_fixed_atom_power": {
+          "const": true
+        },
+        "schedule_dependence_explicit": {
+          "const": true
+        },
+        "singleton_nonimplication_exact": {
+          "const": true
+        },
+        "tpc170_quantifier_preserved": {
+          "const": true
+        },
+        "tpc180_missing_registry_preserved": {
+          "const": true
+        },
+        "two_O161_routes_open_parent_ready": {
+          "const": true
+        }
+      }
+    },
+    "mutation_regressions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reject_ae_as_named_atom",
+        "reject_extra_positive_claim_field",
+        "reject_metric_power_as_fixed_atom_power",
+        "reject_missing_registry_as_present",
+        "reject_scale_dependent_selector",
+        "reject_scoped_stop_as_architecture_stop",
+        "reject_scoped_stop_as_pointwise_stop"
+      ],
+      "properties": {
+        "reject_ae_as_named_atom": {
+          "const": true
+        },
+        "reject_extra_positive_claim_field": {
+          "const": true
+        },
+        "reject_metric_power_as_fixed_atom_power": {
+          "const": true
+        },
+        "reject_missing_registry_as_present": {
+          "const": true
+        },
+        "reject_scale_dependent_selector": {
+          "const": true
+        },
+        "reject_scoped_stop_as_architecture_stop": {
+          "const": true
+        },
+        "reject_scoped_stop_as_pointwise_stop": {
+          "const": true
+        }
+      }
+    }
+  }
+}

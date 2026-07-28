@@ -1,0 +1,165 @@
+{
+  "claim_boundary": {
+    "actual_active_support_proved": false,
+    "architecture_infeasible": false,
+    "canonical_minimal_representation_proved": false,
+    "fixed_h0_2_arithmetic_progress": false,
+    "fixed_h0_2_preserved_as_requirement": true,
+    "formal_global_totality_proved": false,
+    "l1_scoped_corpus_exhaustion": true,
+    "mathematical_nonexistence_proved": false,
+    "named_fixed_phase_theorem": false,
+    "occurrence_augmented_architecture_stopped": false,
+    "prime_pair_lower_bound": false,
+    "production_local_occurrence_family_proved_nonempty": false,
+    "program_positive_L2": false,
+    "scoped_extraction_cell_stopped": true,
+    "strict_one_over_400": false,
+    "three_root_h1_antichain_recomputed": true,
+    "twin_prime_theorem": false
+  },
+  "current_verdict": "NOT_TESTABLE",
+  "first_missing": "H1.source_backed_local_occurrence_edge_family",
+  "fixed_h0": {
+    "eligible_carrier_with_fixed_h0_lineage_count": 0,
+    "fixed_h0_arithmetic_progress": false,
+    "required_physical_value": 2,
+    "requirement_preserved": true,
+    "status": "REQUIREMENT_UNINSTANTIATED_ON_EMPTY_ELIGIBLE_DOMAIN",
+    "used_as_arithmetic_evidence": false
+  },
+  "minimal_root_antichain": [
+    "H1.source_backed_local_occurrence_edge_family",
+    "H1.actual_active_support_certificate",
+    "H1.canonical_minimal_representation_certificate"
+  ],
+  "next_actions": [
+    "EXPLICITLY_ENLARGE_SOURCE_CORPUS_AND_RERUN_TPC173_179",
+    "PROVE_NEW_SOURCE_BACKED_PRODUCTION_LOCAL_EDGE_UNDER_TPC174",
+    "REROUTE_ONLY_AFTER_A_COMPLETE_ARCHITECTURE_HAS_AN_EXACT_SOURCE_BACKED_STOP"
+  ],
+  "root_ledger": [
+    {
+      "closed": false,
+      "current_evidence_status": "EMPTY_IN_FROZEN_DECLARED_CORPUS",
+      "node_id": "H1.source_backed_local_occurrence_edge_family",
+      "reason": "ZERO_QUALIFYING_CLAIMS_IN_COMPLETE_FROZEN_CORPUS_DOES_NOT_PROVE_MATHEMATICAL_NONEXISTENCE",
+      "root_status": "NOT_TESTABLE",
+      "scoped_method_cell": "production_local_edge_extraction_from_tpc133_172",
+      "scoped_method_cell_status": "STOP_SCOPED"
+    },
+    {
+      "closed": false,
+      "current_evidence_status": "VACUOUS_EMPTY_ELIGIBLE_DOMAIN",
+      "node_id": "H1.actual_active_support_certificate",
+      "reason": "EMPTY_DOMAIN_UNIVERSAL_HAS_NO_EXISTENTIAL_ACTIVE_SUPPORT_WITNESS",
+      "root_status": "NOT_TESTABLE",
+      "scoped_method_cell": "actual_active_support_audit",
+      "scoped_method_cell_status": "INPUT_INELIGIBLE"
+    },
+    {
+      "closed": false,
+      "current_evidence_status": "ELIGIBILITY_BLOCKED_EMPTY_CARRIER_DOMAIN",
+      "node_id": "H1.canonical_minimal_representation_certificate",
+      "reason": "NO_ELIGIBLE_PHYSICAL_REPRESENTATION_CLASS; ARCHIVE_KEY_IS_ADDRESS_ONLY",
+      "root_status": "NOT_TESTABLE",
+      "scoped_method_cell": "canonical_minimal_representation_audit",
+      "scoped_method_cell_status": "INPUT_INELIGIBLE"
+    }
+  ],
+  "schema": "tpc-179-h1-structural-corpus-exhaustion-integration-v1",
+  "scope": "FROZEN_CONTIGUOUS_OCCURRENCE_SOURCE_CORRIDOR_TPC133_172",
+  "scoped_route_cells": [
+    {
+      "cell_id": "production_local_edge_extraction_from_tpc133_172",
+      "cell_type": "SOURCE_EXTRACTION_METHOD",
+      "complete_architecture": false,
+      "global_infeasibility_proved": false,
+      "reroute_eligible_by_itself": false,
+      "scope": "FROZEN_CONTIGUOUS_OCCURRENCE_SOURCE_CORRIDOR_TPC133_172",
+      "status": "STOP_SCOPED"
+    },
+    {
+      "cell_id": "occurrence_augmented_h1_architecture",
+      "cell_type": "ARCHITECTURE_ROUTE",
+      "complete_architecture": true,
+      "global_infeasibility_proved": false,
+      "reroute_eligible_by_itself": false,
+      "scope": "PHYSICAL_FIXED_H0_OCCURRENCE_RETURN",
+      "status": "NOT_TESTABLE"
+    }
+  ],
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "f800ed30020d7626df1e091aed36852be8064cef7d4854c658e565d3e534e9f5",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-166-refined-h1-crosswalk-frontier-decision/experiments/tpc166_refined_h1_frontier.json",
+      "source_id": "TPC166.refined_h1_frontier"
+    },
+    {
+      "canonical_utf8_lf_sha256": "942a98e568dd9fbc3477231bac1312200a1a1220d5bf019cb31650db652741ce",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory.json",
+      "source_id": "TPC173.source_claim_inventory"
+    },
+    {
+      "canonical_utf8_lf_sha256": "36fe92974982bcabbaad3b46fac03366614d3167af5ccd138275fedd5c3ca5fd",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory_audit.json",
+      "source_id": "TPC173.source_claim_inventory_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "d89fd0185747dd1128ae1ea577f1c6e532e7b28fb9b71441f36956413e854c44",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-174-local-occurrence-edge-witness-schema/experiments/tpc174_witness_contract.json",
+      "source_id": "TPC174.witness_contract"
+    },
+    {
+      "canonical_utf8_lf_sha256": "57328bf31f0c72d876d49660d3f2083a9bdab05533b9e666318be7a4660fb7e1",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-174-local-occurrence-edge-witness-schema/experiments/tpc174_witness_contract_audit.json",
+      "source_id": "TPC174.witness_contract_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "60f11c39f3db95ee857c6ed3cb0812172011957dbf5716cf4eb78ed04016d4c9",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-175-declared-corpus-local-edge-family/experiments/tpc175_local_edge_family.json",
+      "source_id": "TPC175.local_edge_family"
+    },
+    {
+      "canonical_utf8_lf_sha256": "f2f676108161d14324a041a91daf52d415a44e3e0acc3d5f982da2343a2a9903",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-175-declared-corpus-local-edge-family/experiments/tpc175_local_edge_family_audit.json",
+      "source_id": "TPC175.local_edge_family_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "c8f3cb6a30600ee496ed2117ad94743aa5afc66bd3fca0d9977031dac6cd0cc6",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-176-source-backed-coverage-gluing-audit/experiments/tpc176_coverage_gluing_audit.json",
+      "source_id": "TPC176.coverage_gluing_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "048998cd95c5fe89a6a7b103e982cb4cfec1e1aa7d8b8346623a8dd38168ad83",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-177-actual-active-support-vacuity-firewall/experiments/tpc177_active_support_audit.json",
+      "source_id": "TPC177.active_support_audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "0f4fe138a35b3f24355f2551e4b24bd5cb5c0fca630104c4fc4d0fbf5c0a53ec",
+      "hash_mode": "CANONICAL_UTF8_LF_V2",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-178-canonical-minimal-representation-eligibility/experiments/tpc178_representation_audit.json",
+      "source_id": "TPC178.representation_audit"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,207 @@
+{
+  "checks": {
+    "L0_L1_L2_separated": true,
+    "additional_hypotheses_typed": true,
+    "metric_power_not_fixed_atom_power": true,
+    "schedule_dependence_explicit": true,
+    "singleton_nonimplication_exact": true,
+    "tpc170_quantifier_preserved": true,
+    "tpc180_missing_registry_preserved": true,
+    "two_O161_routes_open_parent_ready": true
+  },
+  "claim_boundary": {
+    "Lebesgue_ae_promoted_to_fixed_atom": false,
+    "architecture_stopped": false,
+    "metric_power_promoted_to_fixed_atom_power": false,
+    "named_fixed_atom_selected": false,
+    "pointwise_routes_stopped": false,
+    "prime_pair_lower_bound": false,
+    "production_phase_registry": false,
+    "program_positive_L2": false,
+    "scale_dependent_selector_covered": false,
+    "strict_one_over_400": false,
+    "twin_prime_theorem": false
+  },
+  "level_ledger": {
+    "L0": "source locks, schema validation, and finite mutation diagnostics",
+    "L1": "rigorous singleton-versus-a.e. quantifier nonimplication and typed selector-gate obstruction",
+    "L2": "NONE",
+    "metric_delta_below_one_quarter_is_fixed_atom_eligible": false,
+    "new_program_positive_L2": false
+  },
+  "metric_input": {
+    "corridor_uniformity": "ONLY_OVER_EXPLICIT_PRESCRIBED_PACKET_LIST",
+    "endpoint_quantifier": "ALL_PREFIX_THETA_SHELL",
+    "export_id": "A170.metric_packet_corridor",
+    "metric_power": "every delta<1/4",
+    "phase_quantifier": "LEBESGUE_AE_FIXED_PHASE",
+    "scale_quantifier": "EVENTUALLY_PRESCRIBED_SCHEDULE",
+    "schedule_dependence": "the_null_set_depends_on_the_entire_prescribed_packet_schedule",
+    "status": "PROVED_L1_ACTUAL_CORE_PHASE_METRIC_PACKET_CORRIDOR"
+  },
+  "mutation_regressions": {
+    "reject_ae_as_named_atom": true,
+    "reject_extra_positive_claim_field": true,
+    "reject_metric_power_as_fixed_atom_power": true,
+    "reject_missing_registry_as_present": true,
+    "reject_scale_dependent_selector": true,
+    "reject_scoped_stop_as_architecture_stop": true,
+    "reject_scoped_stop_as_pointwise_stop": true
+  },
+  "pointwise_routes": [
+    {
+      "node_id": "O161.bad_endpoint_pointwise_fixed_atom",
+      "quantifier_signature": {
+        "carrier_axis": "ACTUAL_FIXED_H0_PACKET",
+        "decay_axis": "FIXED_X_POWER_FIXED_ATOM",
+        "endpoint_axis": "DETERMINISTIC_ALL_PREFIX",
+        "phase_axis": "NAMED_FIXED_ATOM",
+        "scale_axis": "DETERMINISTIC_ALL_SCALE",
+        "support_axis": "ACTUAL_ACTIVE_SUPPORT"
+      },
+      "role": "ARITHMETIC_TARGET",
+      "state": "OPEN_PARENT_READY",
+      "stopped_by_metric_nonimplication": false
+    },
+    {
+      "node_id": "O161.direct_additive_twist_fixed_atom",
+      "quantifier_signature": {
+        "carrier_axis": "ACTUAL_FIXED_H0_PACKET",
+        "decay_axis": "FIXED_X_POWER_FIXED_ATOM",
+        "endpoint_axis": "DETERMINISTIC_ALL_PREFIX",
+        "phase_axis": "NAMED_FIXED_ATOM",
+        "scale_axis": "DETERMINISTIC_ALL_SCALE",
+        "support_axis": "ACTUAL_ACTIVE_SUPPORT"
+      },
+      "role": "ARITHMETIC_TARGET",
+      "state": "OPEN_PARENT_READY",
+      "stopped_by_metric_nonimplication": false
+    }
+  ],
+  "registry_input": {
+    "named_physical_atom_id": null,
+    "node_id": "H9.phase_cell_registry",
+    "phase_value_mod_1": null,
+    "phase_value_source_locator": null,
+    "production_packet_coordinate_rows": 0,
+    "source": "TPC180.census",
+    "status": "NOT_TESTABLE"
+  },
+  "route_decision": {
+    "architecture_reroute": false,
+    "metric_source_backed_bridge": "NOT_TESTABLE",
+    "metric_uncontrolled_atomic": "STOP_SCOPED",
+    "pointwise_frontier": [
+      "O161.bad_endpoint_pointwise_fixed_atom",
+      "O161.direct_additive_twist_fixed_atom"
+    ],
+    "reason": "The selector method is blocked, while its scoped nonimplication does not bear on independent pointwise fixed-atom estimates.",
+    "return_to_pointwise_frontier": true
+  },
+  "schema": "tpc-181-metric-to-fixed-selector-gate-v1",
+  "scoped_obstruction": {
+    "does_not_claim_literal_mobius_lower_bound": true,
+    "does_not_stop_architecture": true,
+    "does_not_stop_pointwise_theorems": true,
+    "schedule_specific_form": "TPC170 proves measure(limsup E_n)=0; it does not prove alpha_star notin limsup E_n for a named alpha_star.",
+    "scope": "UNCONTROLLED_ATOMIC_PROMOTION_ONLY",
+    "statement": "Lebesgue-full eventual good-set membership does not imply membership of a prescribed singleton phase.",
+    "status": "PROVED_L1_SCOPED_LOGICAL_OBSTRUCTION",
+    "stopped_method": "phase_metric_uncontrolled_atomic",
+    "witness": {
+      "full_measure_good_set": "Torus_without_{alpha_star}",
+      "named_atom": "alpha_star",
+      "named_atom_in_good_set": false,
+      "null_set": "{alpha_star}",
+      "null_set_lebesgue_measure": 0
+    }
+  },
+  "selector_gate": {
+    "fixed_atom_decay_obtained": false,
+    "node_id": "H2.metric_fixed_atom_crosswalk",
+    "ordered_missing": [
+      "H9.phase_cell_registry.named_atom_value_and_locator",
+      "H2.metric_fixed_atom_crosswalk.schedule_specific_avoidance_theorem"
+    ],
+    "required_inputs": [
+      "source_locked_H9_phase_registry_with_exact_named_atom",
+      "exact_prescribed_production_packet_schedule",
+      "schedule_specific_named_atom_null_set_avoidance_theorem"
+    ],
+    "route_kind": "ARITHMETIC_SUBROUTE",
+    "scope_id": "SOURCE_BACKED_METRIC_TO_FIXED_ATOM",
+    "selector_constructed": false,
+    "status": "NOT_TESTABLE"
+  },
+  "snapshot": {
+    "date": "2026-07-28",
+    "hash_mode": "CANONICAL_UTF8_LF_V2",
+    "hash_semantics": "INTEGRITY_ONLY",
+    "scope": "TPC170_METRIC_THEOREM_TO_NAMED_FIXED_ATOM"
+  },
+  "source_backed_bridge_contract": {
+    "acceptable_sufficient_hypotheses": [
+      {
+        "id": "SCHEDULE_SPECIFIC_EXCEPTIONAL_SET_AVOIDANCE",
+        "statement": "For the exact source-locked alpha_star and exact production schedule, prove alpha_star is outside the TPC-170 limsup exceptional set."
+      },
+      {
+        "id": "DIRECT_POINT_EVALUATION_DOMINATION",
+        "statement": "Prove a source-compatible evaluation/continuity bound strong enough to dominate G_n,p(alpha_star) by controlled values with a summable error."
+      },
+      {
+        "id": "INDEPENDENT_POINTWISE_FIXED_PHASE_THEOREM",
+        "statement": "Replace the metric quantifier by a theorem directly at the named fixed atom; this exits the metric bridge and enters an O161 pointwise route."
+      }
+    ],
+    "insufficient_inputs": [
+      "Lebesgue_almost_every_phase",
+      "phase_L2_average",
+      "density_one_finite_registry",
+      "phase_chosen_after_reading_the_bad_set",
+      "scale_dependent_phase_selector",
+      "registry_identity_without_avoidance_theorem",
+      "source_hash_without_theorem_statement"
+    ],
+    "minimum_fields": [
+      "theorem_id",
+      "source_path",
+      "source_locator",
+      "named_atom_registry_id",
+      "exact_phase_value_mod_1",
+      "production_schedule_hash",
+      "good_set_definition_for_that_schedule",
+      "proof_alpha_star_notin_limsup_E_n",
+      "same_fixed_alpha_across_scales",
+      "coverage_of_all_declared_production_packets"
+    ],
+    "status": "MISSING"
+  },
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "11d90177cd0795ba09f4c3e456c5dd9d94b4b238333883d2d3d5ad58717d7540",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-170-metric-packet-corridor-return/experiments/tpc170_metric_corridor_audit.json",
+      "source_id": "TPC170.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "ab00019765f3ee26c442eaf677b99e8796013fc424b4e14c4edc6d1fd7b7bec7",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-171-source-locked-occurrence-phase-return-integration/experiments/tpc171_integration_manifest.json",
+      "source_id": "TPC171.manifest"
+    },
+    {
+      "canonical_utf8_lf_sha256": "1c69c253e671c5ac641ea000d30223bdda0ca3c27963544db2e5785c3418932c",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-172-mvp7-occurrence-phase-atomic-route-decision/experiments/tpc172_mvp7_snapshot.json",
+      "source_id": "TPC172.snapshot"
+    },
+    {
+      "canonical_utf8_lf_sha256": "4976311ae7f9271f44c3de68278ad1781aba2a4077c6c71a09562df2459ac40d",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-180-production-phase-registry-census/experiments/tpc180_phase_registry_census.json",
+      "source_id": "TPC180.census"
+    }
+  ],
+  "status": "PASS"
+}

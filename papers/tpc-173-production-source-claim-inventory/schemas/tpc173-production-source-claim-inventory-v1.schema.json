@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc173-production-source-claim-inventory-v1.schema.json",
+  "title": "TPC-173 production source-claim inventory",
+  "type": "object",
+  "required": [
+    "schema",
+    "scope",
+    "theorem_corpus",
+    "data_status_substrate",
+    "qualification_contract",
+    "corpus_partition",
+    "claim_inventory",
+    "qualifying_claim_ids",
+    "qualifying_count",
+    "max_defensible_family_status",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-173-production-source-claim-inventory-v1"
+    },
+    "scope": {
+      "const": "FROZEN_CONTIGUOUS_OCCURRENCE_SOURCE_CORRIDOR_TPC133_172"
+    },
+    "theorem_corpus": {
+      "type": "object",
+      "required": ["first_paper", "last_paper", "file_count", "files"],
+      "properties": {
+        "first_paper": {"const": 133},
+        "last_paper": {"const": 172},
+        "file_count": {"const": 40},
+        "files": {
+          "type": "array",
+          "minItems": 40,
+          "maxItems": 40,
+          "items": {
+            "type": "object",
+            "required": [
+              "paper",
+              "path",
+              "canonical_utf8_lf_sha256",
+              "disposition",
+              "review_note",
+              "mapped_claim_count"
+            ],
+            "properties": {
+              "disposition": {
+                "enum": [
+                  "MAPPED_DISQUALIFIED",
+                  "REVIEWED_NO_CANDIDATE",
+                  "NOT_MAPPED_YET",
+                  "QUALIFYING"
+                ]
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "claim_inventory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "source_path",
+          "carrier",
+          "conclusion_type",
+          "derivation_ast",
+          "qualification_checks",
+          "qualification_gaps",
+          "qualification_pass",
+          "disposition"
+        ],
+        "properties": {
+          "qualification_pass": {"type": "boolean"},
+          "disposition": {
+            "enum": ["MAPPED_DISQUALIFIED", "QUALIFYING"]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "qualifying_claim_ids": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "qualifying_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "claim_boundary": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

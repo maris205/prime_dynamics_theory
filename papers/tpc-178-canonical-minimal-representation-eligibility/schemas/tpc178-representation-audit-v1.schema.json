@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tpc178-representation-audit-v1.schema.json",
+  "title": "TPC-178 canonical/minimal representation eligibility audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "source_locks",
+    "eligible_domain",
+    "archive_key_import",
+    "representation_contract",
+    "representation_audit",
+    "h1_representation_root",
+    "checks",
+    "mutation_regressions",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "tpc-178-canonical-minimal-representation-audit-v1"
+    },
+    "status": {
+      "const": "PASS"
+    },
+    "source_locks": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "path",
+          "canonical_utf8_lf_sha256",
+          "hash_mode",
+          "hash_semantics"
+        ]
+      }
+    },
+    "eligible_domain": {
+      "type": "object"
+    },
+    "archive_key_import": {
+      "type": "object"
+    },
+    "representation_contract": {
+      "type": "object"
+    },
+    "representation_audit": {
+      "type": "object"
+    },
+    "h1_representation_root": {
+      "type": "object"
+    },
+    "checks": {
+      "type": "object"
+    },
+    "mutation_regressions": {
+      "type": "object"
+    },
+    "claim_boundary": {
+      "type": "object"
+    }
+  }
+}

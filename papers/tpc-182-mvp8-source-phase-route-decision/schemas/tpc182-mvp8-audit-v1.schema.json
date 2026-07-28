@@ -1,0 +1,54 @@
+{
+  "$id": "https://example.invalid/tpc182-mvp8-audit-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "checks": {
+      "additionalProperties": {
+        "const": true
+      },
+      "type": "object"
+    },
+    "claim_boundary": {
+      "additionalProperties": {
+        "const": false
+      },
+      "type": "object"
+    },
+    "current_verdict": {
+      "const": "NOT_TESTABLE"
+    },
+    "first_missing": {
+      "const": "H1.source_backed_local_occurrence_edge_family"
+    },
+    "mutation_regressions": {
+      "additionalProperties": {
+        "const": true
+      },
+      "minProperties": 10,
+      "type": "object"
+    },
+    "schema": {
+      "const": "tpc-182-mvp8-source-phase-route-audit-v1"
+    },
+    "snapshot_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "status": {
+      "const": "PASS"
+    }
+  },
+  "required": [
+    "schema",
+    "status",
+    "snapshot_sha256",
+    "current_verdict",
+    "first_missing",
+    "checks",
+    "mutation_regressions",
+    "claim_boundary"
+  ],
+  "title": "TPC-182 MVP8 route audit",
+  "type": "object"
+}
