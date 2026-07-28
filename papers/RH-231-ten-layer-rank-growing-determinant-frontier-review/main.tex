@@ -1,0 +1,366 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.06}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Dtwo}{\operatorname{det}_2}
+
+\title{Ten Layers at the Rank-Growing Determinant Frontier\\
+\large RH-222--RH-230 Review and the Uniform Complement-Ideal Wall}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-221 ends with a finite gauge-complete quartet and an exact requirement:
+the next determinant candidate must add genuinely new roots. This review
+collects nine subsequent layers.
+
+RH-222--RH-223 construct shell-complete conjugate resonance clouds whose ranks
+grow from four to $34$--$35$ across sixteen scales and two channels. Naive
+fixed-cardinality prefixes split a conjugate pair at 23 of 32 endpoints,
+whereas minimal shell completion is stable under four candidate margins.
+
+RH-224 proves that one global center and RMS radius make every empirical cloud
+measure uniformly tight. RH-225 then proves the complementary obstruction:
+a tight probability cloud with rank tending to infinity cannot itself be a
+locally finite unweighted zero divisor. The correct Fredholm zeros are
+reciprocal resonances. RH-226 restores that exact dictionary and reconnects
+the finite atlas to RH-7's rigorous fixed-positive-noise
+Hilbert--Schmidt determinant.
+
+The small-noise problem remains singular. Reciprocal zero counts fail the
+frozen local-count gate. Twelve to fourteen resolved omitted roots per
+endpoint have a successful unit-disk logarithmic tail bound, but the only
+whole-matrix Frobenius certificate grows from $5.15$ to $169.27$, approximately
+as $\sigma^{-1.03}$. All sixteen dual-channel determinant comparisons pass a
+$0.02$ gate, while adjacent-scale differences do not contract.
+
+The new coordinate is
+\[
+\texttt{rank\_growing\_reciprocal\_cloud\_open\_uniform\_complement\_ideal\_limit}.
+\]
+The aggregate ledger contains 9,870 finite cases and zero identity failures.
+Gate A remains open; Gates B--E, Hilbert--Polya, zeta-divisor equality, and RH
+are untouched.
+\end{abstract}
+
+\section{Coordinate inherited from RH-221}
+
+RH-212--RH-220 classify the fixed outer quartet exactly and then prove that a
+fixed quartic cannot supply a growing locally finite spectral count
+\citep{WangRH219,WangRH221}. RH-221 leaves the coordinate
+\begin{equation}\label{eq:old}
+ \texttt{finite\_gauge\_complete\_shape\_flow
+ \_open\_rank\_growing\_divisor}.
+\end{equation}
+
+The recommended next route has five logically distinct tasks:
+\begin{enumerate}[leftmargin=2em]
+\item build a rank-growing physical root atlas;
+\item apply one global gauge and prove empirical tightness;
+\item determine the correct divisor variable;
+\item control omitted regularized-product factors;
+\item obtain a locally uniform determinant family.
+\end{enumerate}
+
+RH-222--RH-230 complete the first three at the finite or exact level, partially
+complete the fourth, and expose the wall in the fifth.
+
+\section{Layer-by-layer ledger}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.08\textwidth}p{0.63\textwidth}p{0.18\textwidth}}
+\toprule
+paper & principal conclusion & status\\
+\midrule
+RH-222 & shell-complete clouds grow from rank $4$ to $34$--$35$ & finite construction\\
+RH-223 & naive cut splits pairs; completed cut is margin stable & exact + finite\\
+RH-224 & global normalized empirical measures are uniformly tight & exact theorem\\
+RH-225 & tight rank growth cannot be a direct locally finite divisor & exact obstruction\\
+RH-226 & determinant zeros are reciprocal resonances; fixed-noise $\det_2$ reconnected & exact + inherited\\
+RH-227 & reciprocal local counts do not pass frozen tail stability & finite negative\\
+RH-228 & resolved omitted shells have a quantitative unit-disk tail & exact + finite positive\\
+RH-229 & whole-matrix Frobenius tail certificate is unusably large & finite negative\\
+RH-230 & dual channels agree; adjacent scales do not contract & finite mixed\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The central conceptual correction is that empirical roots and Fredholm zeros
+are not the same objects. The former are useful for global geometry; the
+latter determine holomorphic local finiteness.
+
+\section{RH-222--RH-223: a symmetry-correct rank-growing atlas}
+
+At each frozen scale, RH-222 resolves the folded Gaussian fine operator and
+its Haar compression, removes Perron and negative parity resonances, and
+Hardy-scales the bulk by $0.85$ \citep{WangRH222}. The target ladder is
+\[
+ k_\ell=4+2\ell,\qquad 0\le\ell\le15.
+\]
+Real eigenvalues form singleton shells and nonreal eigenvalues form conjugate
+pair shells. Whole shells are included until the target is reached.
+
+Actual ranks increase strictly on both channels. They range from four to
+$35$ on the left and four to $34$ on the right. The selected conjugacy error
+is zero at archived precision, overshoot is at most one, and the smallest
+resolved post-cloud gap is $7.3991\times10^{-5}$.
+
+RH-223 proves minimality of this completion \citep{WangRH223}. A naive exact
+target prefix splits a pair in 23 of 32 cases. Exactly those 23 cases require
+one-root overshoot. Prefix margins $4,8,12,14$ all recover the reference
+multiset with zero matching error.
+
+The selection is canonical only relative to the resolved radial ordering. No
+all-level rank law or interval-certified Riesz separation is obtained.
+
+\section{RH-224: probability compactness}
+
+For a cloud $\Lambda$ of rank $n$, define
+\[
+ m_\Lambda=\frac1n\sum_{\lambda\in\Lambda}\lambda,\qquad
+ s_\Lambda^2=\frac1n\sum_{\lambda\in\Lambda}
+ |\lambda-m_\Lambda|^2
+\]
+and
+\[
+ \mu_\Lambda=\frac1n\sum_{\lambda\in\Lambda}
+ \delta_{(\lambda-m_\Lambda)/s_\Lambda}.
+\]
+Then
+\begin{equation}\label{eq:moments}
+ \int z\,d\mu_\Lambda=0,\qquad
+ \int|z|^2\,d\mu_\Lambda=1.
+\end{equation}
+Markov's inequality gives
+\begin{equation}\label{eq:tight}
+ \mu_\Lambda(|z|>R)\le R^{-2}.
+\end{equation}
+Therefore every globally normalized cloud family is uniformly tight and has
+weakly convergent subsequences by Prokhorov compactness
+\citep{WangRH224,Billingsley1999}.
+
+The numerical atlas has maximum normalized modulus $1.83188$ and
+second-moment error below $6.7\times10^{-16}$. Tightness is exact, while
+uniqueness of the weak limit remains open.
+
+\section{RH-225: why tight roots cannot be direct zeros}
+
+Let
+\[
+ \nu_n=\sum_{\lambda\in\Lambda_n}\delta_\lambda,\qquad
+ \mu_n=\frac1{d_n}\nu_n,\qquad d_n\to\infty.
+\]
+Uniform tightness puts at least half of each probability measure in one
+compact set $K$. Hence
+\[
+ \nu_n(K)\ge d_n/2\longrightarrow\infty.
+\]
+The integer divisors cannot converge vaguely to a locally finite divisor.
+They also cannot be complete zero divisors of a holomorphic family converging
+locally uniformly to a nonzero limit \citep{WangRH225,Conway1978}.
+
+This exact result rules out globally normalized resonances as determinant
+zeros. In the finite atlas the direct compact counts grow by 31 and 30 roots.
+All raw selected resonances also lie in the unit disk, so the same finite
+failure is visible before global normalization.
+
+The result does not apply after inversion. If compact-operator resonances
+$\lambda_j$ tend to zero, reciprocal points $1/\lambda_j$ escape to infinity.
+
+\section{RH-226: the Fredholm variable}
+
+For
+\[
+ p_\Lambda(w)=\prod_{\lambda\in\Lambda}(w-\lambda),
+\]
+RH-226 restores the identity
+\begin{equation}\label{eq:reciprocal}
+ \prod_{\lambda\in\Lambda}(1-z\lambda)
+ =z^{|\Lambda|}p_\Lambda(1/z).
+\end{equation}
+The second-regularized factor
+\begin{equation}\label{eq:det2}
+ P_{\Lambda,2}(z)=
+ \prod_{\lambda\in\Lambda}(1-z\lambda)e^{z\lambda}
+\end{equation}
+has the same zeros, namely $z=1/\lambda$
+\citep{WangRH226,Simon2005}.
+
+The physical reciprocal moduli range from $1.15129$ to $13.54281$.
+Equation \eqref{eq:reciprocal} has maximum grid error
+$9.16\times10^{-15}$.
+
+This does not construct a new fixed-noise determinant. RH-7 already proves
+that the centered Gaussian transfer operator is Hilbert--Schmidt and that its
+$\det_2$ is entire with reciprocal resonance zeros \citep{WangRH7}. The new
+question is uniformity as noise decreases.
+
+\section{RH-227: local zero counts do not stabilize yet}
+
+If $f_\sigma\to f\not\equiv0$ locally uniformly, Rouche's theorem forces
+eventual zero-count stability on every contour avoiding zeros of $f$.
+RH-227 tests the selected reciprocal clouds on
+\[
+ R=1.2,\;1.5,\;2,\;3,\;5
+\]
+\citep{WangRH227}.
+
+Only one of ten side-radius sequences is constant over the last four scales.
+The largest first-to-last count growth is 18, and the minimum finite contour
+clearance is $1.3338\times10^{-4}$. Radius-two counts grow from two to ten on
+both channels.
+
+Finite nonstability does not disprove eventual stabilization. It shows that a
+raw small-noise limit is not supported by the current range and that
+near-unit factors cannot be ignored.
+
+\section{RH-228: resolved shells are controllable}
+
+For $|w|<1$,
+\[
+ |\log(1-w)+w|
+ \le\frac{|w|^2}{2(1-|w|)}.
+\]
+If $T$ is an omitted resonance multiset and
+$q=R\max_{\lambda\in T}|\lambda|<1$, then
+\begin{equation}\label{eq:tail}
+ \sup_{|z|\le R}
+ \left|\log P_{T,2}(z)\right|
+ \le\frac{R^2}{2(1-q)}
+ \sum_{\lambda\in T}|\lambda|^2.
+\end{equation}
+
+Every endpoint has 12--14 complete resolved roots beyond its selected cloud.
+On $|z|\le1$, the worst $q$ is $0.29818$, the worst bound is $0.16804$, and
+the worst observed grid tail is $0.07532$ \citep{WangRH228}. This is a genuine
+positive omitted-factor result, but only inside the resolved candidate
+window.
+
+\section{RH-229: the full complement wall}
+
+Schur triangularization gives
+\[
+ \sum_j|\lambda_j(A)|^2\le\|A\|_{\mathrm F}^2.
+\]
+After subtracting selected Perron, parity, and cloud eigenvalue masses, the
+remainder bounds the squared mass of all omitted finite-matrix eigenvalues.
+Combining it with \eqref{eq:tail} produces a whole-matrix certificate.
+
+The certificate fails $0/32$ unit-disk gates. It ranges from
+\[
+ 5.15135\quad\text{to}\quad169.27116
+\]
+and grows descriptively as $\sigma^{-1.025}$ and $\sigma^{-1.033}$
+\citep{WangRH229}. It can exceed the resolved-shell bound by a factor
+$5563.49$.
+
+This is a certificate obstruction, not a determinant obstruction. The
+Frobenius norm sees nonnormal singular mass represented by off-diagonal Schur
+entries. A reducing complement or two-step trace-class estimate may be much
+smaller.
+
+\section{RH-230: coherent channels, noncontracting scales}
+
+Selected factor logarithms are compared on 256 points in $|z|\le1$:
+\[
+ L_\Lambda(z)=
+ \sum_{\lambda\in\Lambda}
+ [\log(1-z\lambda)+z\lambda].
+\]
+All sixteen same-scale channel differences are below $0.02$, with maximum
+$0.017855$. Thirty adjacent-scale differences range from $0.042131$ to
+$0.183660$, and neither channel decreases strictly over the final four
+transitions \citep{WangRH230}.
+
+The determinant representation therefore preserves finite dual-channel
+coherence but supplies no Cauchy evidence across scale. This mixed result
+supports one shared renormalization, not convergence of the selected factor
+alone.
+
+\section{Aggregate reproducibility ledger}
+
+The batch counts:
+\begin{enumerate}[leftmargin=2em]
+\item endpoint, channel, and candidate-margin cases;
+\item exact gauge and tail checks;
+\item 3,072 reciprocal-polynomial evaluations;
+\item 6,144 resolved-tail grid evaluations;
+\item local-count, Frobenius-budget, and determinant-comparison cases.
+\end{enumerate}
+The total is 9,870 finite ledger items. Six independent identity families
+have zero failures:
+\[
+ \begin{gathered}
+ \text{conjugacy},\quad
+ \text{margin matching},\quad
+ \text{RMS moments},\\
+ \text{probability tails},\quad
+ \text{reciprocal identity},\quad
+ \text{regularized tail bound}.
+ \end{gathered}
+\]
+
+Finite test success does not alter theorem status. In particular grid
+comparisons are not interval-validated suprema and Arnoldi roots are not
+certified Riesz data.
+
+\section{Revised Gate-A route}
+
+The coordinate after this batch is
+\begin{equation}\label{eq:coordinate}
+ \boxed{\begin{gathered}
+ \texttt{rank\_growing\_reciprocal\_cloud}\\
+ \texttt{\_open\_uniform\_complement\_ideal\_limit}
+ \end{gathered}}.
+\end{equation}
+
+The next target is not another empirical normalization. It is a physical
+moving-cloud relative determinant:
+\begin{enumerate}[leftmargin=2em]
+\item construct a Riesz or reducing projection for the near-unit cloud;
+\item factor its finite $\det_2$ contribution without losing conjugate and
+dual-channel coherence;
+\item bound the complementary block uniformly in Hilbert--Schmidt norm, or
+bound its square uniformly in trace norm, on a nonshrinking $z$-disk;
+\item prove local reciprocal-zero count stabilization for the complement;
+\item take a locally uniform relative-determinant subsequential limit and
+show it is nonzero.
+\end{enumerate}
+
+RH-80 supplies an abstract moving-cloud relative determinant template
+\citep{WangRH80}. The new work must connect that template to the
+operator-derived RH-222 shells and overcome the nonnormal Frobenius barrier.
+This is the recommended RH-232 target.
+
+\section{Macro-gate boundary}
+
+Gate A is not closed: there is no uniform small-noise relative determinant or
+dynamical limiting realization. Consequently:
+\begin{itemize}[leftmargin=2em]
+\item Gate B, a time-oriented unitary or scattering completion, is untouched;
+\item Gate C, a self-adjoint generator and internally derived $T\log T$
+count, is untouched;
+\item Gate D, a prime-power/von Mangoldt trace identity, is untouched;
+\item Gate E, equality with the completed zeta divisor, is untouched.
+\end{itemize}
+
+No Markov resonance or reciprocal zero is identified with a Riemann zero. No
+Hilbert--Polya operator or Riemann-hypothesis implication is asserted. The
+batch advances the internal determinant architecture and identifies its next
+precise wall.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

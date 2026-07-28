@@ -1,0 +1,224 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.06}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Det}{\operatorname{det}}
+
+\title{The Reciprocal Resonance--Fredholm Dictionary\\
+\large Reconnecting Rank-Growing Clouds to the Fixed-Noise Determinant}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The rank-growing atlas records operator resonances $\lambda$, while a
+Fredholm determinant in spectral variable $z$ vanishes at $z=1/\lambda$.
+This paper makes that change of variable explicit and prevents the direct
+resonance divisor rejected in RH-225 from being confused with the correct
+determinant divisor.
+
+For a finite resonance multiset $\Lambda$ of size $n$ and characteristic
+polynomial $p_\Lambda(w)=\prod_{\lambda\in\Lambda}(w-\lambda)$,
+\[
+ \prod_{\lambda\in\Lambda}(1-z\lambda)
+ =z^n p_\Lambda(1/z).
+\]
+Second regularization multiplies each factor by $e^{z\lambda}$ and therefore
+does not change the zeros. Conjugate resonance clouds produce conjugate
+reciprocal-zero clouds and real entire products.
+
+Across the 32 physical endpoints, the identity is evaluated on 3,072 complex
+grid points with maximum error $9.16\times10^{-15}$. Reciprocal moduli range
+from $1.15129$ to $13.54281$, and the maximum scale-free zero-factor residual
+is $2.29\times10^{-16}$. Direct evaluation of the full regularized product at
+the outer zeros is numerically unstable, reaching a raw residual of
+$6.51\times10^4$; this illustrates why factorwise or logarithmic diagnostics
+are required.
+
+The infinite fixed-positive-noise Hilbert--Schmidt determinant is already a
+rigorous result of RH-7. The contribution here is the exact dictionary from
+the new finite clouds to that determinant. No locally uniform small-noise
+limit or self-adjoint spectral interpretation is asserted.
+\end{abstract}
+
+\section{Correcting the spectral variable}
+
+RH-225 proves that a tight rank-growing cloud cannot itself be a locally
+finite zero divisor \citep{WangRH225}. That result concerns the points
+$\lambda_j$ in the operator spectrum. A Fredholm determinant is instead a
+function of a spectral parameter $z$:
+\begin{equation}\label{eq:fredholm}
+ D_A(z)=\Det(I-zA).
+\end{equation}
+If $A$ has nonzero eigenvalues $\lambda_j$, the zeros of \eqref{eq:fredholm}
+are their reciprocals. This distinction is standard but decisive for the
+current route.
+
+\section{Finite polynomial dictionary}
+
+Let
+\begin{equation}
+ p_\Lambda(w)=\prod_{j=1}^n(w-\lambda_j).
+\end{equation}
+
+\begin{proposition}[Reciprocal polynomial identity]\label{prop:identity}
+For every $z\in\mathbb C$,
+\begin{equation}\label{eq:identity}
+ F_\Lambda(z):=\prod_{j=1}^n(1-z\lambda_j)
+ =z^n p_\Lambda(1/z),
+\end{equation}
+where the expression at $z=0$ is interpreted by continuity.
+The finite zeros are exactly $\lambda_j^{-1}$ for nonzero $\lambda_j$, with
+the same algebraic multiplicities.
+\end{proposition}
+\begin{proof}
+For $z\ne0$,
+\[
+ z^n p_\Lambda(1/z)
+ =z^n\prod_j\frac{1-z\lambda_j}{z}
+ =\prod_j(1-z\lambda_j).
+\]
+Both sides equal one at $z=0$. The factorization gives the zero statement.
+\end{proof}
+
+If $\Lambda$ is the complete spectrum of a finite matrix $A$, then
+$F_\Lambda(z)=\Det(I-zA)$. If it is a selected spectral cloud, $F_\Lambda$
+is the selected finite factor, not the determinant of the unresolved
+complement.
+
+\section{Second regularization}
+
+For a finite multiset define
+\begin{equation}\label{eq:det2}
+ F_{\Lambda,2}(z)=
+ \prod_{j=1}^n(1-z\lambda_j)e^{z\lambda_j}.
+\end{equation}
+
+\begin{corollary}[Regularization preserves the divisor]\label{cor:zeros}
+The zeros of $F_{\Lambda,2}$ are exactly
+$\{\lambda_j^{-1}\}$ with algebraic multiplicity.
+\end{corollary}
+\begin{proof}
+The exponential factors are entire and nowhere zero.
+\end{proof}
+
+The logarithm normalized by $\log F_{\Lambda,2}(0)=0$ is
+\begin{equation}\label{eq:log}
+ \log F_{\Lambda,2}(z)
+ =\sum_j\bigl[\log(1-z\lambda_j)+z\lambda_j\bigr]
+ =-\sum_{m\ge2}\frac{z^m}{m}\sum_j\lambda_j^m
+\end{equation}
+whenever $|z|\max_j|\lambda_j|<1$. The missing linear term is the purpose of
+second regularization.
+
+\section{Conjugation symmetry}
+
+\begin{proposition}[Real regularized factor]\label{prop:real}
+If $\Lambda$ is conjugate closed, then
+\[
+ \overline{F_{\Lambda,2}(\overline z)}=F_{\Lambda,2}(z).
+\]
+In particular $F_{\Lambda,2}$ is real on the real axis and its reciprocal
+zero divisor is conjugate closed.
+\end{proposition}
+\begin{proof}
+Conjugation permutes the factors in \eqref{eq:det2}.
+\end{proof}
+
+Thus the shell-completion work of RH-222--RH-223 passes exactly to the
+Fredholm variable; no new pair matching is required
+\citep{WangRH222,WangRH223}.
+
+\section{Fixed-noise infinite completion is inherited}
+
+For every fixed $\sigma>0$, RH-7 proves that the centered folded Gaussian
+operator $\mathcal N_\sigma$ is Hilbert--Schmidt and constructs
+\begin{equation}\label{eq:infinite}
+ \mathcal D_\sigma(z)
+ =\det{}_2(I-z\mathcal N_\sigma)
+ =\prod_j(1-z\lambda_{\sigma,j})e^{z\lambda_{\sigma,j}}.
+\end{equation}
+Its zeros are the reciprocal non-Perron resonances
+\citep{WangRH7,Simon2005}. Removing the negative parity mode as an additional
+finite factor gives the bulk determinant used by the later small-noise route.
+
+Equation \eqref{eq:infinite} is not reproved or claimed as new here. The
+rank-growing atlas samples its bulk resonance factors after the inherited
+Hardy scaling and Haar channel construction. What remains open is uniform
+control as $\sigma\downarrow0$, not existence at fixed positive noise.
+
+\section{Numerical audit}
+
+For each endpoint, Proposition~\ref{prop:identity} is evaluated at 96 points:
+24 equally spaced angles at radii $0.25,0.5,0.75,1$. The archive also compares
+newly computed reciprocals with those stored by RH-222.
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+diagnostic & result\\
+\midrule
+endpoint count & 32\\
+polynomial identity evaluations & 3,072\\
+maximum identity error & $9.16\times10^{-15}$\\
+maximum archived reciprocal error & floating zero\\
+maximum reciprocal conjugacy error & binary64 scale\\
+minimum reciprocal modulus & $1.15129$\\
+maximum reciprocal modulus & $13.54281$\\
+maximum zero-factor residual & $2.29\times10^{-16}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All reciprocal zeros lie outside the unit disk because all selected
+Hardy-scaled resonances have modulus below one in the finite atlas.
+
+\subsection{Why the raw zero residual is misleading}
+
+At $z=1/\lambda_k$, the mathematically stable test is
+\[
+ \min_j|1-z\lambda_j|.
+\]
+Directly multiplying all factors in \eqref{eq:det2} can be unstable: other
+linear and exponential factors may become very large before multiplication by
+a factor of size $10^{-16}$. The largest raw product residual in the audit is
+$6.51\times10^4$ even though the scale-free factor residual is
+$2.29\times10^{-16}$.
+
+This is not evidence that the zero is absent. It is a conditioning warning,
+consistent with standard numerical practice for Fredholm determinants
+\citep{Bornemann2010}. Later comparisons use logarithms on a disk satisfying
+$|z\lambda|<1$.
+
+\section{What inversion repairs and what it does not}
+
+Inversion repairs the local-finiteness architecture at fixed noise:
+eigenvalues of a compact operator accumulate only at zero, so reciprocal
+zeros escape to infinity. It does not automatically repair a singular
+family in $\sigma$. As noise decreases, more resonances may remain away from
+zero, putting more reciprocal zeros in one fixed disk. A small-noise
+determinant family therefore needs:
+\begin{enumerate}[leftmargin=2em]
+\item local reciprocal-zero count stability;
+\item omitted-factor control uniform on compact $z$-sets;
+\item a moving-cloud or relative determinant if near-unit factors proliferate.
+\end{enumerate}
+
+The next paper tests the first item on five fixed radii. Gate A remains open;
+the present determinant is nonself-adjoint and carries no established
+arithmetic trace formula or zeta divisor.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

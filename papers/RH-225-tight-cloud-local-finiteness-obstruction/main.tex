@@ -1,0 +1,200 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.06}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+
+\title{Tight Clouds versus Locally Finite Divisors\\
+\large An Exact Obstruction to Direct Rank-Growing Root Limits}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Global centered-RMS normalization makes every empirical root measure have
+unit second moment, and RH-224 therefore proves uniform tightness. This paper
+shows why that positive probability result cannot be promoted directly to a
+holomorphic zero-divisor limit.
+
+Let $\Lambda_n$ be finite clouds with ranks $d_n\to\infty$, let
+$\nu_n=\sum_{\lambda\in\Lambda_n}\delta_\lambda$ be their integer root
+divisors, and let $\mu_n=d_n^{-1}\nu_n$ be their empirical probability
+measures. If $\{\mu_n\}$ is uniformly tight, one fixed compact set contains at
+least half of every cloud. Hence $\nu_n$ has mass at least $d_n/2$ on a fixed
+compact set, which diverges. The divisors cannot converge vaguely to a locally
+finite divisor, and they cannot be zero divisors of a locally uniformly
+convergent nonzero holomorphic family.
+
+In the RH-222 atlas all normalized roots lie in $|z|\le2$, while all raw
+Hardy-scaled resonances lie in $|z|<1$ with maximum modulus $0.86860$.
+Compact divisor counts grow from $4$ to $35$ on the left and from $4$ to $34$
+on the right.
+
+The obstruction rejects the resonances themselves, normalized or raw, as the
+zeros of the sought growing determinant. It does not reject the reciprocal
+Fredholm zeros $1/\lambda$, which can escape to infinity when resonances tend
+to zero. This distinction redirects the next layer to the correct spectral
+variable.
+\end{abstract}
+
+\section{Two measures carried by the same roots}
+
+For a finite multiset
+\[
+ \Lambda_n=\{\lambda_{n,1},\ldots,\lambda_{n,d_n}\}\subset\C,
+\]
+there are two natural measures:
+\begin{equation}\label{eq:measures}
+ \nu_n=\sum_{j=1}^{d_n}\delta_{\lambda_{n,j}},\qquad
+ \mu_n=\frac1{d_n}\nu_n.
+\end{equation}
+The first is the integer divisor measure. The second is the empirical
+probability measure.
+
+Weak compactness of $\mu_n$ is a macroscopic statement in which each root has
+mass $1/d_n$. Local finiteness of $\nu_n$ is a microscopic statement in which
+each simple root has mass one. RH-224 proves tightness only for the first
+normalization \citep{WangRH224}.
+
+\section{The tightness obstruction}
+
+\begin{theorem}[Tight rank growth is not a locally finite divisor]
+\label{thm:obstruction}
+Suppose $d_n\to\infty$ and the empirical measures $\{\mu_n\}$ in
+\eqref{eq:measures} are uniformly tight. Then there is a compact set
+$K\subset\C$ such that
+\begin{equation}\label{eq:massgrowth}
+ \nu_n(K)\ge\frac{d_n}{2}
+\end{equation}
+for every $n$. Consequently no subsequence of $\nu_n$ converges vaguely to a
+locally finite Radon measure.
+\end{theorem}
+\begin{proof}
+Uniform tightness with $\varepsilon=1/2$ supplies compact $K$ such that
+$\mu_n(K)\ge1/2$ for all $n$. Multiplying by $d_n$ proves
+\eqref{eq:massgrowth}.
+
+Choose a compactly supported continuous function $\phi\ge0$ that equals one
+on $K$. Then
+\[
+ \int\phi\,d\nu_n\ge\nu_n(K)\longrightarrow\infty.
+\]
+Vague convergence to a locally finite Radon measure $\nu$ would instead give
+the finite limit $\int\phi\,d\nu$. This is impossible.
+\end{proof}
+
+The fraction $1/2$ is arbitrary. For any fixed
+$0<\varepsilon<1$, one compact set carries at least
+$(1-\varepsilon)d_n$ divisor mass.
+
+\begin{corollary}[No direct nonzero holomorphic limit]\label{cor:holo}
+Under the assumptions of Theorem~\ref{thm:obstruction}, the $\Lambda_n$
+cannot be the complete zero divisors on $\C$ of holomorphic functions
+$f_n$ converging locally uniformly to a nonzero entire function $f$, with
+zeros counted by algebraic multiplicity.
+\end{corollary}
+\begin{proof}
+On a compact neighborhood whose boundary avoids the zeros of $f$, local
+uniform convergence and Rouche's theorem make the number of zeros eventually
+equal to that of $f$; see \citet{Conway1978}. Equivalently, zero divisors of a
+nonzero locally uniform limit are locally bounded. This contradicts
+Theorem~\ref{thm:obstruction}.
+\end{proof}
+
+The only holomorphic escape is degeneration to the identically zero function,
+which is not a spectral determinant.
+
+\section{Application to globally normalized clouds}
+
+RH-224 gives
+\[
+ \mu_n(|z|>R)\le R^{-2}.
+\]
+At $R=2$, every normalized cloud has at least $75\%$ of its roots in one
+fixed disk. Thus any all-level extension with ranks tending to infinity would
+satisfy
+\[
+ \nu_n(\overline{D(0,2)})\ge\frac34d_n\to\infty.
+\]
+The exact theorem already rejects the direct normalized-root divisor. No
+numerical convergence assumption is needed.
+
+This conclusion complements the fixed-quartic obstruction RH-219
+\citep{WangRH219}. RH-219 rules out degree four and repeated fixed support.
+Theorem~\ref{thm:obstruction} rules out a different failure mode: genuinely
+new roots are added, but a positive fraction remains in one compact region.
+
+\section{Finite physical audit}
+
+The sixteen-level clouds have strictly increasing ranks. The normalized and
+raw compact counts are:
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+channel & first rank & final rank & compact-count growth\\
+\midrule
+left, normalized $|z|\le2$ & 4 & 35 & 31\\
+right, normalized $|z|\le2$ & 4 & 34 & 30\\
+left, raw $|z|\le1$ & 4 & 35 & 31\\
+right, raw $|z|\le1$ & 4 & 34 & 30\\
+\bottomrule
+\end{tabular}
+\end{center}
+Every audited normalized root lies in $|z|\le2$. Every raw selected resonance
+lies in the unit disk, and the largest raw modulus is $0.868592$.
+
+The raw statement is finite. Although Markov resonances before Hardy scaling
+lie in the unit disk at fixed positive noise, the chosen $0.85$ scaling could
+in principle move some bulk roots beyond one at smaller unobserved scales.
+The theorem-level direct-normalization obstruction does not depend on that
+finite raw-radius observation.
+
+\section{Why reciprocal zeros are different}
+
+For a compact operator with nonzero eigenvalues $\lambda_j\to0$, the Fredholm
+determinant has zeros at
+\begin{equation}
+ z_j=\lambda_j^{-1}.
+\end{equation}
+The newly added reciprocal zeros can escape every compact set. Their integer
+divisor may therefore remain locally finite even though the resonance
+empirical measure is tight or even converges to a point at zero.
+
+Inversion is singular at the resonance accumulation point. It does not
+preserve probability tightness, and Theorem~\ref{thm:obstruction} cannot be
+applied to the reciprocal cloud without a separate hypothesis.
+
+This is precisely the fixed-noise architecture of the regularized determinant
+constructed in RH-7 \citep{WangRH7}. The next paper restores the finite
+identity between the characteristic polynomial in $\lambda$ and the
+Fredholm polynomial in $z$.
+
+\section{Route consequence}
+
+The following routes are now separated:
+\begin{enumerate}[leftmargin=2em]
+\item raw or centered resonances used directly as zeros: rejected;
+\item repeated fixed factors: rejected by RH-219;
+\item reciprocal resonance zeros at fixed noise: operator-theoretically valid;
+\item a reciprocal small-noise divisor: still open and must pass local-count
+and omitted-tail tests.
+\end{enumerate}
+
+No small-noise obstruction for reciprocal zeros is proved here. Gate A
+remains open, as do all self-adjoint, counting-law, arithmetic, and zeta
+identification stages.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

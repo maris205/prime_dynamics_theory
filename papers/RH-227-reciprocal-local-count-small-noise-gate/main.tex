@@ -1,0 +1,181 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.06}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+
+\title{A Reciprocal Local-Count Gate for the Small-Noise Limit\\
+\large Rouche Stability versus Proliferating Fredholm Zeros}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+At every fixed positive noise, the Hilbert--Schmidt determinant exists and its
+zeros are reciprocal resonances. A locally uniform small-noise limit requires
+more: zero counts on any contour avoiding the limiting divisor must eventually
+stabilize.
+
+We formulate this requirement as a Rouche local-count gate and audit the
+rank-growing reciprocal clouds on the predeclared radii
+$1.2,1.5,2,3,5$. All 160 endpoint-contour pairs have positive finite
+clearance; the minimum is $1.3338\times10^{-4}$. Nevertheless none of the
+five left-channel count sequences and only one right-channel sequence is
+constant over the last four scales. The largest first-to-last count growth is
+18. On radius two, both channels grow from two to ten selected reciprocal
+zeros.
+
+This is a finite gate failure, not an asymptotic no-go theorem. The selected
+cloud is not the complete determinant divisor, and additional smaller-noise
+levels could eventually stabilize. The result says that local uniformity is
+not yet supported and that moving-cloud or relative-determinant
+renormalization cannot be skipped.
+\end{abstract}
+
+\section{A necessary condition for local uniformity}
+
+Let $\Omega\subset\mathbb C$ be a domain and let $f_n,f$ be holomorphic on
+$\Omega$.
+
+\begin{theorem}[Contour-count stability]\label{thm:rouche}
+Suppose $f_n\to f$ locally uniformly and $f\not\equiv0$. Let
+$\Gamma\subset\Omega$ be a positively oriented simple closed contour on which
+$f$ has no zero. Then, for all sufficiently large $n$, $f_n$ and $f$ have the
+same number of zeros inside $\Gamma$, counted with multiplicity.
+\end{theorem}
+\begin{proof}
+Compactness of $\Gamma$ and nonvanishing of $f$ give
+$\min_\Gamma|f|>0$. Local uniform convergence eventually gives
+$\max_\Gamma|f_n-f|<\min_\Gamma|f|$. Rouche's theorem then proves the
+claim \citep{Conway1978}.
+\end{proof}
+
+Thus every nonzero locally uniform determinant limit has eventual local
+divisor stability away from its boundary zeros. This condition is necessary,
+not sufficient.
+
+\section{Finite reciprocal clouds}
+
+For each selected resonance cloud $\Lambda_{\sigma,s}$ from RH-222, define
+\[
+ Z_{\sigma,s}=
+ \{\lambda^{-1}:\lambda\in\Lambda_{\sigma,s}\}.
+\]
+RH-226 proves that these are exactly the zeros of the selected regularized
+Fredholm factor \citep{WangRH226}. For radius $R$, define
+\begin{equation}\label{eq:count}
+ N_{\sigma,s}(R)=
+ \#\{z\in Z_{\sigma,s}:|z|<R\}
+\end{equation}
+with multiplicity, and finite contour clearance
+\begin{equation}\label{eq:clearance}
+ c_{\sigma,s}(R)=
+ \min_{z\in Z_{\sigma,s}}\bigl||z|-R\bigr|.
+\end{equation}
+
+Positive $c_{\sigma,s}(R)$ makes each individual finite count unambiguous. It
+does not give a uniform lower bound or identify the zero count of the
+unresolved operator complement.
+
+\section{Predeclared gate}
+
+The radii
+\[
+ \mathcal R=\{1.2,1.5,2,3,5\}
+\]
+probe, respectively, the first near-unit reciprocal zeros and progressively
+larger parts of the selected divisor. The finite diagnostic asks whether
+each count is constant over the last four frozen noise levels
+\[
+ \sigma=0.0025,\;0.002,\;0.0016,\;0.00125.
+\]
+Four levels are a diagnostic window, not a definition of eventuality.
+
+The complete count sequences are:
+\begin{center}
+\small
+\begin{tabular}{ccll}
+\toprule
+side & $R$ & first eight levels & last eight levels\\
+\midrule
+left & 1.2 & $0,0,0,0,0,0,0,0$ & $2,2,2,2,2,2,4,4$\\
+left & 2.0 & $2,4,4,4,4,4,6,6$ & $6,6,8,8,8,8,8,10$\\
+left & 5.0 & $4,6,7,10,11,11,12,13$ & $14,17,16,20,20,19,23,22$\\
+right & 1.2 & $0,0,0,0,0,0,0,0$ & $2,2,2,2,2,2,2,4$\\
+right & 2.0 & $2,4,4,4,4,4,6,6$ & $6,6,8,8,8,8,8,10$\\
+right & 5.0 & $4,6,7,9,10,13,12,15$ & $14,17,16,18,20,19,23,22$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The nonmonotonicity at larger radii is allowed: changing $\sigma$ moves old
+zeros as well as adding selected shells. Rank growth alone does not make
+fixed-disk counts monotone.
+
+\section{Audit verdict}
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+diagnostic & result\\
+\midrule
+endpoint-contour cases & 160\\
+minimum finite contour clearance & $1.3338\times10^{-4}$\\
+largest first-to-last count growth & 18\\
+left radii constant on last four levels & $0/5$\\
+right radii constant on last four levels & $1/5$\\
+all-radius finite gate & failed\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The single stable right sequence is $R=1.5$, with final counts
+$8,8,8,8$. It does not compensate for the failures at the other radii.
+
+At $R=2$, both channels move from count two to count ten. If this growth
+continued without bound while the selected clouds captured all reciprocal
+zeros in the disk, it would obstruct a nonzero locally uniform limit by
+Theorem~\ref{thm:rouche}. The finite data do not establish either premise.
+
+\section{Why this is not a disproof}
+
+There are four logical gaps between the audit and an asymptotic no-go theorem:
+\begin{enumerate}[leftmargin=2em]
+\item only sixteen noise levels are observed;
+\item the rank schedule is a stress test, not a complete spectral cutoff;
+\item Arnoldi roots and contour clearances are not interval certified;
+\item a relative determinant may remove a growing near-unit factor before
+taking a limit.
+\end{enumerate}
+
+Therefore the exact conclusion is that the current finite family does not
+pass a necessary diagnostic. We do not claim that eventual stability is
+false.
+
+RH-80 gives an abstract moving-cloud relative determinant route
+\citep{WangRH80}. To use it here one must construct a reducing cloud and bound
+the complementary determinant uniformly. Before attempting that harder
+operator step, the next paper asks a narrower question: are the complete
+shells already resolved beyond the selected cloud controllable as an
+omitted regularized-product tail?
+
+\section{Claim boundary}
+
+Theorem~\ref{thm:rouche} is exact. The five-radius verdict is finite.
+No small-noise determinant limit is disproved, and no new determinant is
+constructed. Gates A--E remain open. In particular the reciprocal Markov
+zeros are not asserted to be self-adjoint energies or zeta zeros.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

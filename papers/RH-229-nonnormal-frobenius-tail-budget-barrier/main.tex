@@ -1,0 +1,212 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.06}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{The Nonnormal Frobenius Tail-Budget Barrier\\
+\large Why a Valid Whole-Matrix Bound Does Not Close the Determinant}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-228 controls every complete shell resolved beyond the selected cloud, but
+not the unresolved operator complement. This paper tests the first
+whole-matrix certificate available without constructing a reducing
+projection.
+
+For any finite matrix $A$, Schur triangularization gives
+\[
+ \sum_j|\lambda_j(A)|^2\le\norm{A}_{\mathrm F}^2.
+\]
+After factoring the Perron root, negative parity root, and selected bulk
+cloud, their squared eigenvalue masses may be subtracted from the Frobenius
+square. Combining the remainder with the regularized logarithmic tail
+inequality yields a valid finite-matrix upper bound.
+
+The bound fails quantitatively at every physical endpoint. On the closed unit
+disk it ranges from $5.15135$ to $169.27116$, so none of 32 cases passes the
+predeclared bound $<1$. Power fits grow as $\sigma^{-1.025}$ and
+$\sigma^{-1.033}$ on the two channels. The whole-matrix certificate is up to
+$5.56\times10^3$ times larger than the resolved-shell bound.
+
+This is a barrier for the raw Frobenius certificate, not for the determinant.
+Nonnormal singular mass can make $\norm A_{\mathrm F}$ large without producing
+comparably large eigenvalue products. A useful next step must isolate a
+reducing complement or control a two-step trace-class object rather than
+apply the full one-step Frobenius norm.
+\end{abstract}
+
+\section{From resolved roots to a whole operator}
+
+The finite bound of RH-228 depends on the actual omitted roots
+\citep{WangRH228}. For an unresolved finite matrix, one can seek an upper
+bound on their squared moduli. The Frobenius norm is natural because it is
+exactly computable from the sparse physical matrix.
+
+Let the eigenvalues of $A\in\mathbb C^{N\times N}$, with algebraic
+multiplicity, be partitioned into selected values $S$ and omitted values $T$.
+
+\section{Schur--Frobenius control}
+
+\begin{theorem}[Eigenvalue-square budget]\label{thm:schur}
+For every finite matrix $A$,
+\begin{equation}\label{eq:schur}
+ \sum_{j=1}^N|\lambda_j(A)|^2\le\norm A_{\mathrm F}^2.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:tailmass}
+ \sum_{\lambda\in T}|\lambda|^2
+ \le H_T(A):=
+ \norm A_{\mathrm F}^2-\sum_{\lambda\in S}|\lambda|^2.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Take a unitary Schur decomposition $A=URU^*$ with $R$ upper triangular and
+diagonal entries $\lambda_j(A)$. Unitary invariance gives
+\[
+ \norm A_{\mathrm F}^2=\norm R_{\mathrm F}^2
+ =\sum_j|\lambda_j(A)|^2+\sum_{i<j}|R_{ij}|^2,
+\]
+which proves \eqref{eq:schur}. Subtract the selected eigenvalue masses to get
+\eqref{eq:tailmass}.
+\end{proof}
+
+For a normal matrix, the off-diagonal Schur term vanishes and the bound is
+exact. For a strongly nonnormal matrix it can dominate.
+
+\begin{corollary}[Whole-matrix regularized tail]\label{cor:det}
+Suppose every omitted eigenvalue obeys $|\lambda|\le\rho_T$ and
+$R\rho_T<1$. Then
+\begin{equation}\label{eq:detbound}
+ \sup_{|z|\le R}
+ \left|\sum_{\lambda\in T}
+ [\log(1-z\lambda)+z\lambda]\right|
+ \le
+ \frac{R^2H_T(A)}{2(1-R\rho_T)}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Combine Theorem~\ref{thm:schur} with the logarithmic tail theorem of RH-228.
+\end{proof}
+
+The corollary is rigorous when the selected eigenvalues and the tail radius
+are exact. In the physical audit they come from a deterministic
+floating-point spectral ordering, so the resulting number is a numerical
+certificate candidate rather than an interval proof.
+
+\section{Physical budget}
+
+For each raw folded Markov matrix $M$, use the Hardy-scaled matrix
+$A=M/0.85$. The selected set contains:
+\begin{enumerate}[leftmargin=2em]
+\item the scaled Perron resonance;
+\item the scaled negative parity resonance;
+\item the RH-222 shell-complete bulk cloud.
+\end{enumerate}
+The next complete shell supplies the numerical tail-radius upper candidate
+\begin{equation}
+ \rho_T=
+ \min_{\lambda\in\Lambda_{\rm sel}}|\lambda|
+ -g_{\rm shell}.
+\end{equation}
+The sparse Frobenius square is computed directly from all matrix entries.
+
+The disk radius is frozen at $R=1$, and the gate is
+\begin{equation}
+ \frac{H_T(A)}{2(1-\rho_T)}<1.
+\end{equation}
+No endpoint passes.
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+diagnostic & left/right minimum & left/right maximum\\
+\midrule
+next-shell modulus & below $0.30$ & below $0.30$\\
+full logarithmic upper bound & $5.15$ & $169.27$\\
+resolved-shell upper bound & positive & $0.16804$\\
+full/resolved ratio & greater than one & $5563.49$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The condition $R\rho_T<1$ is comfortably satisfied. The failure is entirely
+in the squared-mass budget.
+
+\section{Small-noise scaling}
+
+For each channel, fit
+\begin{equation}
+ B_\sigma=C\sigma^{-\alpha}
+\end{equation}
+to the sixteen whole-matrix upper bounds in logarithmic least squares. The
+descriptive exponents are
+\[
+ \alpha_L=1.02472,\qquad \alpha_R=1.03258.
+\]
+The fit is not an asymptotic theorem, but it identifies the scale of the
+certificate failure: the bound worsens rather than stabilizes as noise
+decreases.
+
+The behavior is consistent with narrow stochastic rows. As $\sigma$ shrinks,
+the transition matrix approaches a sparse near-deterministic transport;
+many singular directions remain large even though most nonperipheral
+eigenvalues may be small. The Frobenius norm records those directions.
+
+\section{Why the negative result is limited}
+
+Theorem~\ref{thm:schur} cannot distinguish eigenvalue mass from the strictly
+upper triangular part of the Schur form. Therefore failure of
+\eqref{eq:detbound} does not imply divergence of
+\[
+ \sum_{\lambda\in T}|\lambda|^2.
+\]
+It only says that the raw Frobenius norm is too coarse to prove a useful
+bound.
+
+Several stronger routes remain:
+\begin{enumerate}[leftmargin=2em]
+\item construct a Riesz or reducing projection for the moving outer cloud and
+measure the actual complementary block;
+\item remove dominant singular directions before applying an ideal norm;
+\item square the complement, seeking a trace-class bound for a two-step
+Fredholm determinant;
+\item use power traces and phase cancellation instead of singular values.
+\end{enumerate}
+
+These possibilities are compatible with the abstract relative determinant
+route in RH-80 \citep{WangRH80} and with trace-ideal determinant theory
+\citep{Simon2005}. None is constructed here.
+
+\section{Route consequence}
+
+The resolved shell tail is small, while the whole-matrix Frobenius tail is
+large. This sharply locates the next wall:
+\[
+ \text{explicit outer roots}
+ \quad\longleftrightarrow\quad
+ \text{unresolved nonnormal complement}.
+\]
+Before attacking that complement, RH-230 tests whether the selected
+regularized factors at least agree between the two physical channels and
+whether their adjacent-scale differences contract.
+
+No determinant divergence, self-adjoint realization, or arithmetic
+identification is proved. Gate A remains open.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

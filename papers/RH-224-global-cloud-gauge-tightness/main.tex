@@ -1,0 +1,220 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\linespread{1.06}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Prob}{\mathcal P}
+
+\title{Global Cloud Gauge and Empirical-Root Tightness\\
+\large Exact Moment Compactness for Rank-Growing Conjugate Spectra}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A rank-growing spectral cloud requires one gauge for the whole cloud, not a
+separate normalization for each quartet or shell. For any nonconstant finite
+multiset $\Lambda$, we remove its barycenter $m_\Lambda$ and divide by its
+centered RMS radius $s_\Lambda$. The associated empirical probability
+measure then has exact complex mean zero and exact second absolute moment one.
+
+This elementary identity has a strong uniform consequence. For every family
+of globally normalized clouds,
+\[
+ \mu_\Lambda(\{|z|>R\})\le R^{-2}.
+\]
+Hence the empirical measures are uniformly tight on $\C$ and every sequence
+has a weakly convergent subsequence. The result is exact and independent of
+the ranks, shell geometry, or noise schedule.
+
+For the 32 RH-222 clouds, direct recomputation agrees with the archived gauge
+to machine precision. The maximum mean residual is
+$4.99\times10^{-17}$, the maximum second-moment error is
+$6.67\times10^{-16}$, the maximum fourth moment is $2.31691$, and the largest
+normalized modulus is $1.83188$. All tested tail inequalities have positive
+slack.
+
+Tightness provides macroscopic probability compactness. It neither selects a
+unique weak limit nor proves local finiteness of the unweighted root divisor.
+That distinction becomes the next exact obstruction.
+\end{abstract}
+
+\section{One gauge per growing cloud}
+
+RH-220 completed the center-radius-shape dictionary for one quartet, and
+RH-222 extends the root set to ranks $4$ through $35$
+\citep{WangRH222}. Applying a separate gauge to each shell would erase their
+relative positions. We instead normalize the entire selected multiset at
+once.
+
+Let
+\[
+ \Lambda=\{\lambda_1,\ldots,\lambda_n\}\subset\C,\qquad n\ge2,
+\]
+with not all roots equal. Define
+\begin{equation}\label{eq:gauge}
+ m_\Lambda=\frac1n\sum_{j=1}^n\lambda_j,\qquad
+ s_\Lambda=\left(\frac1n\sum_{j=1}^n
+ |\lambda_j-m_\Lambda|^2\right)^{1/2}>0,
+\end{equation}
+and normalized roots
+\begin{equation}
+ q_j=\frac{\lambda_j-m_\Lambda}{s_\Lambda}.
+\end{equation}
+The empirical measure is
+\begin{equation}\label{eq:empirical}
+ \mu_\Lambda=\frac1n\sum_{j=1}^n\delta_{q_j}.
+\end{equation}
+
+\section{Exact moment identities}
+
+\begin{proposition}[Global gauge identities]\label{prop:moments}
+Every globally normalized cloud satisfies
+\begin{equation}\label{eq:identities}
+ \int_\C z\,d\mu_\Lambda(z)=0,\qquad
+ \int_\C |z|^2\,d\mu_\Lambda(z)=1.
+\end{equation}
+If $\Lambda$ is conjugate closed, then $\mu_\Lambda$ is invariant under
+complex conjugation and $m_\Lambda\in\mathbb R$.
+\end{proposition}
+\begin{proof}
+The first identity is
+\[
+ \frac1{ns_\Lambda}\sum_j(\lambda_j-m_\Lambda)=0.
+\]
+The second is exactly the definition of $s_\Lambda$. Conjugation permutes
+the roots and therefore the atoms; it also fixes their mean.
+\end{proof}
+
+These identities do not depend on the root ordering. They remain valid when
+real singleton shells make the rank odd.
+
+\section{Uniform tightness}
+
+\begin{theorem}[Second-moment tightness]\label{thm:tight}
+Let $\{\Lambda_\alpha\}$ be any family of nonconstant finite clouds, each
+normalized by \eqref{eq:gauge}. Then
+\begin{equation}\label{eq:tail}
+ \sup_\alpha\mu_{\Lambda_\alpha}(\{|z|>R\})
+ \le \min(1,R^{-2}),\qquad R>0.
+\end{equation}
+Consequently the family
+$\{\mu_{\Lambda_\alpha}\}\subset\Prob(\C)$ is uniformly tight.
+\end{theorem}
+\begin{proof}
+On $\{|z|>R\}$, one has $1\le |z|^2/R^2$. Therefore
+\[
+ \mu_{\Lambda_\alpha}(|z|>R)
+ \le R^{-2}\int |z|^2\,d\mu_{\Lambda_\alpha}=R^{-2}
+\]
+by Proposition~\ref{prop:moments}. For every $\varepsilon>0$, choosing
+$R\ge\varepsilon^{-1/2}$ leaves mass at most $\varepsilon$ outside the compact
+closed disk.
+\end{proof}
+
+\begin{corollary}[Weak subsequential compactness]\label{cor:prok}
+Every sequence of globally normalized empirical cloud measures has a weakly
+convergent subsequence in $\Prob(\C)$.
+\end{corollary}
+\begin{proof}
+The complex plane is a Polish space. Apply Prokhorov's theorem to
+Theorem~\ref{thm:tight}; see \citet{Billingsley1999}.
+\end{proof}
+
+This closes the tightness item in the RH-221 roadmap at the level of empirical
+probability measures. No numerical asymptotic fit is needed.
+
+\section{What weak convergence preserves}
+
+If $\mu_{n_j}\Rightarrow\mu$, conjugation symmetry passes to the limit because
+bounded continuous test functions can be conjugated. The mean and second
+moment require care: $z$ and $|z|^2$ are unbounded. Portmanteau gives only
+\begin{equation}
+ \int |z|^2\,d\mu(z)\le1.
+\end{equation}
+Equality needs uniform integrability of $|z|^2$. A uniform $(2+\epsilon)$
+moment bound would suffice, but the finite maximum fourth moment reported
+below is not an all-level theorem.
+
+Thus one must not infer that every subsequential limit automatically retains
+the complete RMS gauge. Mass can vanish to infinity while carrying a
+nonzero fraction of the second moment, even though probability tightness
+holds.
+
+\section{Physical audit}
+
+For each of the 32 endpoints, the raw selected roots are normalized again,
+without reading the archived normalized array. The two representations are
+then compared. Tail masses are evaluated at
+\[
+ R=1,\;1.25,\;1.5,\;2,\;3
+\]
+against the exact bound \eqref{eq:tail}.
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+diagnostic & maximum or minimum\\
+\midrule
+absolute empirical mean & $4.99\times10^{-17}$\\
+second-moment error & $6.67\times10^{-16}$\\
+fourth absolute moment & $2.31691$\\
+normalized root modulus & $1.83188$\\
+minimum tail-bound slack & $0.11111$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In particular every audited normalized root lies inside $|z|<2$. This is
+stronger than the universal $75\%$ mass guarantee at $R=2$, but it is only a
+finite observation.
+
+For reference, the theorem supplies scale-independent certificate radii
+\[
+ R_{0.25}=2,\quad R_{0.10}=\sqrt{10},\quad
+ R_{0.05}=\sqrt{20},\quad R_{0.01}=10.
+\]
+These values are deliberately not tuned to the observed maximum.
+
+\section{Probability mass versus divisor mass}
+
+The empirical measure gives each root weight $1/n$. A holomorphic zero
+divisor gives each simple root integer weight one. Therefore tightness of
+$\mu_\Lambda$ says that a fixed compact set can contain a fixed
+\emph{fraction} of an expanding cloud. Multiplying that fraction by
+$n\to\infty$ may force the integer divisor mass on the same compact set to
+diverge.
+
+This is not a technicality. Probability-measure compactness and local
+finiteness of zero divisors are different topologies. The next paper proves
+their direct incompatibility for a tight rank-growing cloud. The likely
+escape is to use reciprocal resonances, as in the fixed-noise regularized
+Fredholm determinant of RH-7 \citep{WangRH7}, rather than the resonances
+themselves.
+
+\section{Claim boundary}
+
+The exact achievements are:
+\begin{enumerate}[leftmargin=2em]
+\item one affine gauge for each full cloud;
+\item zero mean and unit second moment;
+\item uniform tightness and weak subsequential compactness.
+\end{enumerate}
+No unique weak measure, all-level fourth-moment bound, unweighted divisor
+limit, or locally uniform determinant is proved. Gate A remains open, and no
+later Hilbert--Polya or arithmetic claim is made.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
