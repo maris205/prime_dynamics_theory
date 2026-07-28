@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Tr}{\operatorname{Tr}}
+
+\title{Block-Power Quotient Envelope Criterion}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The orthogonal quotient of RH-245 has no one-step contraction, so a direct
+geometric estimate is unavailable.  We prove the exact block-power substitute:
+a uniformly bounded trace norm and a uniformly contractive operator norm for
+one power $C^m$ imply a geometric envelope for all later quotient traces and
+an explicit logarithmic tail bound.  A finite $m=12$ diagnostic on 17
+tractable endpoints gives rate $0.393300$ and unit-disk tail bound
+$1.80\times10^{-5}$.  The constants are not promoted to a noise-uniform
+certificate.
+\end{abstract}
+
+\section{Block criterion}
+
+Let $C_\sigma\in\mathcal S_2(H)$ be the orthogonal quotient from RH-245 and
+$\tau_n(\sigma)=\Tr C_\sigma^n$ for $n\ge2$ \citep{WangRH245}.  Fix an integer
+$m\ge2$.  Suppose
+\[
+ K_m=\sup_\sigma\|C_\sigma^m\|_1<\infty,
+ \qquad
+ \eta_m=\sup_\sigma\|C_\sigma^m\|<1,
+\]
+and set $L_r=\sup_\sigma\|C_\sigma^r\|<\infty$ for
+$0\le r<m$ (with $L_0=1$).
+
+\begin{theorem}[block-power envelope]\label{thm:block}
+For $n=\ell m+r\ge m$, $\ell\ge1$, $0\le r<m$,
+\begin{equation}\label{eq:block-bound}
+ |\tau_n(\sigma)|
+ \le K_m L_r\eta_m^{\ell-1}.
+\end{equation}
+Writing $q=\eta_m^{1/m}$, the right side is at most $M_mq^n$, where
+\begin{equation}\label{eq:M}
+ M_m=K_m\max_{0\le r<m}L_rq^{-(m+r)}.
+\end{equation}
+If the finite head $2\le n<m$ has a uniform bound compatible with the same
+rate, then $|\tau_n(\sigma)|\le Mq^n$ for every $n\ge2$ and RH-240 applies.
+\end{theorem}
+
+\begin{proof}
+Factor $C_\sigma^n=(C_\sigma^m)^\ell C_\sigma^r$ and use
+$|\Tr T|\le\|T\|_1$, submultiplicativity, and the ideal inequality
+$\|UV\|_1\le\|U\|_1\|V\|$.  This gives \eqref{eq:block-bound}.  Since
+$\eta_m^{\ell-1}=q^{n-(m+r)}$, \eqref{eq:M} follows.  The finite head is
+handled by enlarging $M$ finitely; RH-240 then supplies local normality and
+zero-freeness of the relative determinant \citep{WangRH240}.
+\end{proof}
+
+The same factorization yields a useful tail estimate.  For $R\ge0$ with
+$\eta_mR^m<1$,
+\begin{equation}\label{eq:tail}
+ \sum_{n\ge m}\frac{|\tau_n(\sigma)|R^n}{n}
+ \le
+ \frac{K_mR^m}{m(1-\eta_mR^m)}
+ \sum_{r=0}^{m-1}L_rR^r.
+\end{equation}
+This is a certificate template, not a claim that its hypotheses hold
+uniformly for the moving cloud.
+
+\section{Finite 12-block diagnostic}
+
+We use the 17 ordered-Schur quotient rows of RH-245 (dimensions at most 512)
+and take maxima over this finite subbatch.  The first contractive depth is
+3--7, with no one-step contraction.  For $m=12$,
+\[
+ \eta_{12}\le1.3698766308677744\times10^{-5},\qquad
+ K_{12}\le1.5684781027206807\times10^{-5},
+\]
+so
+\[
+ q_{12}=0.3932995547481413,
+ \qquad
+ \sum_{n\ge12}\frac{|\tau_n|}{n}
+ \le1.7991531976413385\times10^{-5}
+\]
+under the finite-sample constants and $R=1$.  The corresponding finite
+remainder operator-norm maxima for orders $0$ through $11$ are retained in
+the JSON audit, and give $M_{12}=697.6520352674352$ through
+\eqref{eq:M}.  The large $M$ is a reminder that a fast asymptotic block rate
+does not by itself make the first uncontrolled orders small.
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+\toprule
+quantity & value\\
+\midrule
+finite endpoints & 17\\
+first contractive depth & 3--7\\
+one-step contractive endpoints & 0/17\\
+$q_{12}$ & 0.3932995547\\
+$M_{12}$ & 697.6520353\\
+unit-disk tail from order 12 & $1.7992\times10^{-5}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Boundary}
+
+The theorem is an exact conditional route to the all-order envelope.  The
+finite diagnostic does not establish uniform $K_m$, $\eta_m$, or $L_r$ over
+all 32 endpoints, interval perturbations, or a continuum of noise.  It also
+does not identify a cloud whose residual has the RH-243 deterministic anchor.
+The separate-absolute route is tested next; it is expected to fail because
+it discards the cancellation that makes the quotient small.
+
+Gate A remains open and Gates B--E are untouched.  No Hilbert--P\'olya
+operator, zeta-divisor equality, Riemann-zero identification, or RH
+implication is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

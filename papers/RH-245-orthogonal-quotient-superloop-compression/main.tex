@@ -1,0 +1,176 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Schatten}[1]{\mathcal S_{#1}}
+
+\title{Orthogonal-Quotient Superloop Compression}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Cloud-extracted traces were represented in RH-242 as a graded difference of
+physical loops and finite atomic counterloops.  We give an exact
+cancellation-preserving grouping.  The selected generalized root space is
+invariant, so its norm-one orthogonal quotient compression has power traces
+equal to the cloud-extracted traces.  This avoids estimating the badly
+conditioned Riesz projection.  A finite ordered-Schur audit verifies the
+identity on 17 tractable archived endpoints and shows that one-step quotient
+contraction still fails, motivating a block-power criterion.
+\end{abstract}
+
+\section{Invariant root space and orthogonal quotient}
+
+Let $A\in\Schatten{2}(H)$ and let $\mathcal S$ be a finite algebraic multiset
+of isolated nonzero eigenvalues of $A$.  Let $E$ be the sum of their full
+generalized root spaces.  Then $E$ is finite dimensional and $A$-invariant.
+Write $\Pi$ for the orthogonal projection onto $E$, $Q=I-\Pi$, and
+\begin{equation}\label{eq:C}
+ C=QAQ\big|_{E^\perp}:E^\perp\longrightarrow E^\perp.
+\end{equation}
+The complement $E^\perp$ need not be $A$-invariant: $C$ is the orthogonal
+realization of the quotient operator, not a reducing restriction.
+
+\begin{theorem}[orthogonal quotient trace identity]\label{thm:quotient}
+For every integer $n\ge2$,
+\begin{equation}\label{eq:identity}
+ \Tr A^n-\sum_{s\in\mathcal S}s^n=\Tr C^n.
+\end{equation}
+The projection used in \eqref{eq:C} satisfies $\|\Pi\|=1$ whenever
+$E\ne\{0\}$; no norm bound for the oblique Riesz projection is required.
+\end{theorem}
+
+\begin{proof}
+Relative to the orthogonal decomposition $H=E\oplus E^\perp$, invariance of
+$E$ gives
+\[
+ A=\begin{pmatrix}A_E&X\\0&C\end{pmatrix}.
+\]
+Every power has the same block upper-triangular form and diagonal blocks
+$A_E^n$ and $C^n$.  Because $A\in\Schatten{2}$, these powers are trace class
+for $n\ge2$.  Hence
+$\Tr A^n=\operatorname{tr}A_E^n+\Tr C^n$.  The finite-dimensional trace of
+$A_E^n$ is the algebraic power sum $\sum_{s\in\mathcal S}s^n$, including
+multiplicity, which proves \eqref{eq:identity}.  The orthogonal projection
+norm is elementary.
+\end{proof}
+
+This is precisely the RH-242 superloop cancellation \citep{WangRH242}
+performed before taking absolute values.  In an ordered Schur basis, closed
+block walks cannot contain the one-way coupling $X$: a walk that leaves the
+quotient block cannot return.  The selected-block loops cancel the atomic
+counterloops, leaving only quotient loops.
+
+\begin{proposition}[quotient-kernel loops]\label{prop:kernel}
+If $H=L^2(X,\mu)$ and $A$ has a Hilbert--Schmidt kernel, then $B=QAQ$ has a
+Hilbert--Schmidt kernel $b$.  For every $n\ge2$,
+\[
+ \Tr C^n=\Tr B^n
+ =\int_{X^n}b(x_0,x_1)b(x_1,x_2)\cdots
+ b(x_{n-1},x_0)\,d\mu^n.
+\]
+Thus the grouped representation remains a genuine signed or complex
+periodic-loop formula.
+\end{proposition}
+
+\begin{proof}
+The Hilbert--Schmidt ideal is stable under bounded left and right
+multiplication, so $B$ is Hilbert--Schmidt and vanishes on $E$ in the
+orthogonal block form.  The standard trace formula for products of
+Hilbert--Schmidt kernels gives the cyclic integral; its nonzero block is
+$C^n$.
+\end{proof}
+
+\section{Why this differs from a Riesz estimate}
+
+RH-232 found enormous Euclidean Riesz projection norms in the moving cloud
+\citep{WangRH232}.  Orthogonal quotient compression removes that norm from
+the fixed-operator trace identity, although it does not prove that the spaces
+$E_\sigma$ vary uniformly.
+
+\begin{example}[unbounded obliqueness, fixed quotient]\label{ex:model}
+For distinct $\lambda,\mu$ let
+\[
+ A_M=\begin{pmatrix}\lambda&M\\0&\mu\end{pmatrix},
+ \qquad E=\operatorname{span}\{e_1\}.
+\]
+The Riesz projection onto $E$ is
+\[
+ P_\lambda=\begin{pmatrix}1&M/(\lambda-\mu)\\0&0\end{pmatrix},
+ \qquad
+ \|P_\lambda\|=sqrt{1+|M/(\lambda-\mu)|^2},
+\]
+which diverges with $|M|$.  Yet $\Pi=\operatorname{diag}(1,0)$,
+$C=[\mu]$, and
+\[
+ \operatorname{tr}A_M^n-\lambda^n=\mu^n
+\]
+for every $n$, independently of $M$.  Orthogonal grouping deletes purely
+cross-block nonnormal mass, but says nothing about nonnormality internal to
+$C$.
+\end{example}
+
+\section{Finite ordered-Schur audit}
+
+We reconstruct every RH-222 endpoint of dimension at most 512
+\citep{WangRH222}, Hardy-scale the matrix, and order its complex Schur form at
+the archived radial gap.  The leading block contains Perron, parity, and the
+selected cloud; the trailing block is $C$.  We compare its power traces with
+the projection-free RH-236 archive \citep{WangRH236}.
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+\toprule
+quantity & value\\
+\midrule
+audited endpoints & 17\\
+selected block dimensions & 6--25\\
+rank mismatches & 0\\
+maximum Schur trace-partition error & $3.99\times10^{-15}$\\
+maximum RH-236 residual difference & $6.31\times10^{-12}$\\
+quotient Frobenius square & 5.07--60.09\\
+old-budget improvement factor & 1.20--1.62\\
+quotient one-step norm & 1.277--2.346\\
+first contractive power depth & 3--7\\
+maximum $\|C^{12}\|$ & $1.370\times10^{-5}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The exact theorem explains why cross-block mass is irrelevant, but the
+finite numbers also prevent an overclaim: every audited one-step quotient
+norm exceeds one, and the Frobenius budget improves only modestly.  Deep
+power contraction is striking finite evidence, not a uniform theorem.
+
+\section{Boundary and next condition}
+
+Theorem~\ref{thm:quotient} is exact at each fixed noise once the algebraic
+selected subspace exists.  It does not provide a noise-uniform method to
+identify that subspace, a uniform kernel bound, or a uniform contractive
+power.  Only 17 of 32 archived endpoints were densely decomposed, and no
+interval certification was attempted.  The next obligation is therefore an
+explicit $m$-block trace-envelope theorem and a uniform certificate for its
+hypotheses.  The anchored selector obstruction of RH-244 remains separate.
+
+Gate A remains open and Gates B--E are untouched.  No Hilbert--P\'olya
+operator, zeta-divisor equality, Riemann-zero identification, or RH
+implication is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

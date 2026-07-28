@@ -1,0 +1,163 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\C}{\mathbb C}
+\newcommand{\J}{\mathcal J}
+
+\title{Anchored Shell-Prefix Availability Obstruction}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The shell-prefix selector of RH-238 makes a finite cloud-extracted trace jet
+small relative to zero.  The deterministic numerator dictionary of RH-243
+instead prescribes a nonzero coefficient anchor.  We first prove that the two
+equal-tolerance jet balls are disjoint throughout the archived noise range.
+We then scan every shell-complete prefix in the frozen RH-222 candidate
+windows against the anchor: none of 543 prefixes passes at any of 32
+endpoints.  This is a finite obstruction for one candidate class and one
+tolerance rule, not a nonexistence theorem for alternative clouds.
+\end{abstract}
+
+\section{Two selection problems}
+
+For jets $x=(x_2,\ldots,x_N)$ and $y=(y_2,\ldots,y_N)$ define
+\[
+ d_N(x,y)=\sum_{n=2}^{N}\frac{|x_n-y_n|}{n},
+ \qquad \J_N(x)=d_N(x,0).
+\]
+This is the radius-one logarithmic jet metric used in RH-237 and RH-238
+\citep{WangRH238}.  Let $a=(a_2,\ldots,a_{12})$ be the Hardy-scaled
+deterministic numerator anchor of RH-243 \citep{WangRH243}.  Its norm is
+\begin{equation}\label{eq:anchor-norm}
+ \J_{12}(a)=0.49450543569144195.
+\end{equation}
+
+The RH-238 condition is $\J_{12}(\tau)\le\varepsilon_\sigma$.  The anchored
+condition required for coefficient identification is instead
+$d_{12}(\tau,a)\le\varepsilon_\sigma$.  The following elementary separation
+is decisive before any candidate scan.
+
+\begin{theorem}[disjoint target balls]\label{thm:balls}
+For every normed jet space and every nonzero anchor $a$, the closed balls
+$B(0,\varepsilon)$ and $B(a,\varepsilon)$ are disjoint if
+$\|a\|>2\varepsilon$.  More quantitatively, if $\|x\|\le\varepsilon$, then
+\[
+ \|x-a\|\ge \|a\|-\varepsilon.
+\]
+\end{theorem}
+
+\begin{proof}
+The reverse triangle inequality gives
+$\|x-a\|\ge|\|a\|-\|x\||\ge\|a\|-\varepsilon$.  If $x$ belonged to both
+equal-radius balls, the ordinary triangle inequality would give
+$\|a\|\le2\varepsilon$, a contradiction.
+\end{proof}
+
+\begin{corollary}[archived tolerance separation]\label{cor:archive}
+For $\varepsilon_\sigma=\sigma$ and every archived
+$0.00125\le\sigma\le0.04$, a jet satisfying the RH-238 zero-target condition
+cannot satisfy the RH-243 anchored condition at the same tolerance.  The
+smallest strict separation margin $\J_{12}(a)-2\sigma$ is
+$0.41450543569144194$.
+\end{corollary}
+
+Thus the earlier 32/32 zero-target success is not evidence for anchored
+availability.  This conclusion is exact for the displayed finite metric and
+does not depend on floating root locations.
+
+\section{Frozen prefix scan}
+
+We next ask the different question whether some other prefix in the same
+finite candidate class meets the anchor.  At each noise/side endpoint let
+$A_\sigma$ be the archived scaled matrix, $p_\sigma$ and $e_\sigma$ its Perron
+and parity roots, and
+\[
+ S_{\sigma,1},\ldots,S_{\sigma,m_\sigma}
+\]
+the conjugation-complete shells obtained from the ordered RH-222 candidate
+window \citep{WangRH222}.  For prefix $k$ put
+\[
+ \tau_n^{(k)}
+ =\operatorname{tr}A_\sigma^n-p_\sigma^n-e_\sigma^n
+  -\sum_{s\in S_{\sigma,1}\cup\cdots\cup S_{\sigma,k}}s^n,
+ \qquad 2\le n\le12.
+\]
+We retain RH-238's minimum rank four and scan every eligible prefix, but now
+test
+\begin{equation}\label{eq:test}
+ d_{12}(\tau^{(k)},a)\le\sigma.
+\end{equation}
+The full traces come from RH-236 \citep{WangRH236}; the anchor is read from
+the independent RH-243 archive.
+
+\begin{proposition}[finite anchored prefix obstruction]\label{prop:scan}
+Across the 32 frozen endpoints, all 543 eligible shell-complete prefixes fail
+\eqref{eq:test}.  Endpointwise best distances range from
+$0.39723767197524446$ to $0.48457639371229216$.  Their ranks range from 4 to
+18.  The minimum and maximum ratios of best distance to tolerance are
+$10.479757156015458$ and $343.82932788167034$.
+\end{proposition}
+
+\begin{proof}
+The accompanying deterministic audit reconstructs the conjugate shells,
+forms every eligible cumulative prefix, evaluates the exact finite spectral
+power sums, and applies the displayed weighted metric.  The archived JSON
+records every endpointwise optimum and count.  Unit tests independently
+check the trace subtraction, metric, target-ball theorem, and aggregate
+failure ledger.
+\end{proof}
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+\toprule
+quantity & archived value\\
+\midrule
+endpoints & 32\\
+eligible prefixes & 543\\
+anchored passes & 0\\
+best-distance range & $0.397238$--$0.484576$\\
+best-rank range & 4--18\\
+minimum best-distance/tolerance & $10.479757$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Scope and route consequence}
+
+Proposition~\ref{prop:scan} is exhaustive only inside the frozen RH-222
+candidate windows, their radial shell ordering, the shell-complete prefix
+class, orders 2--12, radius one, minimum rank four, and the rule
+$\varepsilon_\sigma=\sigma$.  The Arnoldi roots are floating approximations,
+not interval enclosures.  The result does not exclude non-prefix subsets,
+weighted cancellations, expanded candidate windows, different tolerances, or
+a continuum small-noise selector.  It therefore cannot be promoted to an
+asymptotic cloud nonexistence theorem.
+
+The useful route consequence is narrower: zero-target compression and
+deterministic numerator identification must remain separate obligations.  A
+new anchored selector is needed.  Independently, the all-order envelope
+should be pursued through cancellation-preserving loop grouping rather than
+absolute physical and atomic sectors.  Gate A remains open, and Gates B--E
+are untouched.  No Hilbert--P\'olya operator, zeta-divisor identification,
+Riemann-zero identification, or Riemann-hypothesis implication is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

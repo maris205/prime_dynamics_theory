@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Tr}{\operatorname{Tr}}
+
+\title{Separate-Absolute Majorant Barrier}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The cloud-extracted trace is a cancellation-sensitive residual.  We prove
+that a sectorwise absolute majorant, formed before physical/atomic
+cancellation, has root rate at least the Hardy-scaled Perron rate
+$r_H^{-1}>1$.  The obstruction is exact and independent of the cloud size.
+An audit of 352 archived order cases confirms root rates from 1.2532 to
+3.5568 and enormous majorant-to-residual gains.  This rules out one
+cancellation-blind estimate, not signed or grouped quotient loops.
+\end{abstract}
+
+\section{The cancellation-blind quantity}
+
+Write the scaled trace decomposition at a fixed noise value as
+\[
+ \tau_n=t_n-p^n-q^n-\sum_{s\in S}s^n,
+\]
+where $t_n=\Tr A^n$, $p$ is the Perron root, $q$ the parity root, and $S$ the
+selected cloud.  Define the separate-absolute trace majorant
+\begin{equation}\label{eq:majorant}
+ U_n^{\rm sep}=|t_n|+|p|^n+|q|^n+\sum_{s\in S}|s|^n.
+\end{equation}
+An absolute periodic-loop integral for the physical sector is no smaller
+than the first term in \eqref{eq:majorant}; hence \eqref{eq:majorant} is the
+most favorable sectorwise absolute test for the present purpose.
+
+\begin{theorem}[Perron lower barrier]\label{thm:barrier}
+Suppose the scaled Perron root obeys $|p_\sigma|\ge\rho>1$ on a noise set.
+Then for every selected cloud and every $n\ge1$,
+\[
+ U_n^{\rm sep}(\sigma)\ge\rho^n,
+ \qquad
+ \liminf_{n\to\infty}(U_n^{\rm sep}(\sigma))^{1/n}\ge\rho.
+\]
+Consequently no estimate of the form
+$U_n^{\rm sep}(\sigma)\le Mq^n$ with $q<1$ can hold for all sufficiently
+large $n$ on that set.
+\end{theorem}
+
+\begin{proof}
+The Perron summand in \eqref{eq:majorant} is nonnegative and equals
+$|p_\sigma|^n\ge\rho^n$.  Taking $n$th roots and then a liminf proves the
+claim.  A subunit geometric upper bound would force the limsup of the same
+roots to be at most $q<1$, a contradiction.
+\end{proof}
+
+For the current Hardy scaling $r_H=0.85$, the archived Perron value is exactly
+\[
+ |p_\sigma|=r_H^{-1}=1.1764705882352942.
+\]
+This is the same normalization that makes the deterministic numerator target
+in RH-243 nontrivial.  The obstruction is therefore structural, not a poor
+choice of numerical tolerance.
+
+\section{Finite audit}
+
+Using the RH-222 clouds and RH-236 full/residual trace powers, we evaluated
+\eqref{eq:majorant} for all 32 endpoints and orders 2--12
+\citep{WangRH236}.  There are 352 cases.  The resulting individual root rates
+\(U_n^{\rm sep})^{1/n}\) lie in
+\[
+ 1.253165378203787\le (U_n^{\rm sep})^{1/n}
+ \le3.5568338003788416,
+\]
+so all 352 exceed one.  The cancellation gain
+$U_n^{\rm sep}/|\tau_n|$ ranges from
+\(42.68449383956666\) to \(7.802289221403802\times10^{15}\); its maximum is
+at $(\sigma,\mathrm{side},n)=(0.005,\mathrm{right},10)$.
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+\toprule
+quantity & value\\
+\midrule
+endpoints/orders & 32 / 352\\
+root-rate range & 1.253165--3.556834\\
+cases with root rate $>1$ & 352/352\\
+majorant/residual range & $42.6845$--$7.8023\times10^{15}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Scope and route consequence}
+
+Theorem~\ref{thm:barrier} rules out only estimates that take absolute values
+of the physical, Perron, parity, and cloud sectors separately.  It does not
+rule out the exact graded cancellation of RH-242, the orthogonal quotient of
+RH-245, complex kernel cancellations, or a different normalization in a new
+route.  The finite audit uses floating archived roots and orders 2--12; it is
+not an all-order interval proof.
+
+The viable envelope route must group sectors before majorization.  The
+deterministic numerator anchor remains unresolved.  Gate A remains open and
+Gates B--E are untouched.  No Hilbert--Polya operator, zeta-divisor equality,
+Riemann-zero identification, or RH implication is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

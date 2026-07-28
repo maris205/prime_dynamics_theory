@@ -1,0 +1,124 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\title{Anchored Head--Analytic Tail Gluing Criterion}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We isolate the exact finite-head/analytic-tail gluing step needed to turn
+cloud-extracted trace control into a locally uniform relative determinant.
+The logarithmic error is the sum of a finite anchored head error, a quotient
+tail, and the deterministic target tail; exponentiation gives an explicit
+determinant bound.  Applying the ledger to the current relaxed shell class
+finds no complete certificate: the anchored head fails at all 32 endpoints,
+the quotient tail is certified only on 17 finite matrices, and the target tail
+is unbounded.  This is a scoped route stop, not a global impossibility claim.
+\end{abstract}
+
+\section{Exact gluing estimate}
+
+Let $\tau_n(\sigma)$ be a residual trace sequence and $a_n$ a deterministic
+target.  For $R$ inside both logarithmic convergence domains, define
+\[
+ L_\sigma(z)=-\sum_{n\ge2}\frac{\tau_n(\sigma)}{n}z^n,
+ \qquad
+ L_*(z)=-\sum_{n\ge2}\frac{a_n}{n}z^n.
+\]
+For a finite head through $N$ put
+\[
+ H_N(\sigma,R)=\sum_{n=2}^{N}\frac{|\tau_n(\sigma)-a_n|R^n}{n},
+\]
+and let $T_\sigma(N,R)$ and $T_*(N,R)$ be the analogous absolute tails
+from $n>N$.
+
+\begin{theorem}[head--tail gluing]\label{thm:glue}
+For every $|z|\le R$,
+\begin{equation}\label{eq:log-error}
+ |L_\sigma(z)-L_*(z)|
+ \le H_N(\sigma,R)+T_\sigma(N,R)+T_*(N,R).
+\end{equation}
+If additionally $|L_\sigma(z)|,|L_*(z)|\le B$ on the disk, then for
+$D_\sigma=e^{L_\sigma}$ and $D_*=e^{L_*}$,
+\begin{equation}\label{eq:det-error}
+ |D_\sigma(z)-D_*(z)|
+ \le e^B\bigl(H_N+T_\sigma+T_*\bigr).
+\end{equation}
+Uniform convergence follows if the three budgets tend uniformly to zero
+along a sequence of heads and radii.
+\end{theorem}
+
+\begin{proof}
+Subtract the two absolutely convergent series and apply the triangle
+inequality separately to the finite head and the two tails.  For the second
+claim, integrate the derivative of $e^u$ along the line segment between the
+two logarithms; its modulus is at most $e^B$.
+\end{proof}
+
+RH-246 supplies a conditional bound for $T_\sigma$ from a contractive block:
+\[
+ T_\sigma(N,R)\le
+ \frac{K_mR^m}{m(1-\eta_mR^m)}\sum_{r=0}^{m-1}L_rR^r
+\]
+whenever $N\ge m-1$; using a bound beginning at $m$ is conservative for a
+tail beginning at $m+1$ \citep{WangRH246}.  The target tail $T_*$ is a separate
+coefficient theorem, not supplied by the finite RH-243 dictionary.
+
+\section{Current certificate ledger}
+
+We use the RH-248 convex shell relaxation for the head, so any failure also
+rules out the legal single-use shell class \citep{WangRH243,WangRH248}.  The
+minimum and maximum anchored head distances are
+\[
+ 0.14649763462315904\quad\text{and}\quad0.4240179027308174,
+\]
+with zero passes at the 32 archived endpoints.  The RH-246 12-block tail
+diagnostic gives $1.7991531976413385\times10^{-5}$ on only 17 endpoints.
+The smallest head distance is therefore $8142.588125081018$ times this
+finite tail budget.  The target tail is not bounded, and the two endpoint
+sets do not yet form a uniform family.
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+\toprule
+certificate & status\\
+\midrule
+anchored head, 32 endpoints & 0/32 passes\\
+quotient tail, 17 finite endpoints & finite diagnostic only\\
+deterministic target tail & not bounded\\
+complete head/tail certificates & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Boundary and route stop}
+
+Theorem~\ref{thm:glue} is exact and remains the correct interface to RH-240
+\citep{WangRH240}.  The negative ledger is scoped to the frozen candidate
+class, order-12 head, unit disk, and finite subbatch used in RH-246.  It does
+not exclude a new anchored cloud, an expanded window, a different function
+space, or a future target-tail theorem.  It does establish that adding the
+current analytic-tail diagnostic cannot rescue the missing anchored head.
+
+Gate A remains open and Gates B--E are untouched.  No Hilbert--Polya
+operator, zeta-divisor equality, Riemann-zero identification, or RH
+implication is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

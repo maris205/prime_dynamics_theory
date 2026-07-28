@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\title{Anchored Shell-Zonotope Reachability Obstruction}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The anchored shell-prefix obstruction of RH-244 could have been caused by the
+prefix order.  We remove that possibility in the frozen candidate window.
+Every conjugate-complete shell may be selected independently, and we solve
+the full convex box relaxation.  An explicit LP dual certifies that the
+RH-243 deterministic anchor is unreachable at all 32 archived endpoints.
+The result is a finite zonotope obstruction, not a statement about expanded
+windows or signed spectral groupings.
+\end{abstract}
+
+\section{Shell power zonotope}
+
+Let $b_n=\operatorname{tr}A^n-p^n-q^n$ and let $a_n$ be the RH-243
+Hardy-scaled anchor \citep{WangRH243}.  For each conjugate-complete shell
+$S_j$ in the RH-222 candidate window define the real power vector
+\[
+ v_j=(\sum_{s\in S_j}s^n)_{n=2}^{12},
+ \qquad d=(b_n-a_n)_{n=2}^{12}.
+\]
+Conjugacy makes these vectors real; the archived imaginary leakage is zero to
+floating precision.  A shell subset uses $w_j\in\{0,1\}$, while its box
+relaxation allows $0\le w_j\le1$.  With weights $\omega_n=1/n$, set
+\begin{equation}\label{eq:box}
+ \delta_\Box=\min_{0\le w\le1}
+ \sum_{n=2}^{12}\omega_n\left|d_n-\sum_jw_jv_{j,n}\right|.
+\end{equation}
+
+\begin{theorem}[zonotope dual certificate]\label{thm:dual}
+For the finite real matrix $V=(v_{j,n})$,
+\begin{equation}\label{eq:dual}
+ \delta_\Box=
+ \max_{|y_n|\le\omega_n}
+ \left[y^Td-\sum_j\max(0,y^Tv_j)\right].
+\end{equation}
+Consequently, any feasible $y$ whose displayed value exceeds a tolerance
+already excludes every shell prefix, every contiguous shell interval, and
+every binary shell subset.
+\end{theorem}
+
+\begin{proof}
+Use $|x|=\max_{|y|\le1}yx$ coordinatewise, absorb the weights into the
+constraints $|y_n|\le\omega_n$, and interchange the finite minimization and
+maximization.  For fixed $y$, minimizing
+$-y^TVw$ over the box gives
+$-\sum_j\max(0,y^Tv_j)$.  Strong finite-dimensional LP duality proves
+\eqref{eq:dual}.
+\end{proof}
+
+\section{Audit}
+
+We reconstruct all 32 RH-222/RH-236 endpoints and solve both primal and dual
+LPs, in orders 2--12 and with tolerance $\varepsilon_\sigma=\sigma$
+\citep{WangRH222,WangRH236}.  The aggregate candidate counts are
+\[
+ 543\ \text{prefixes},\qquad 5012\ \text{contiguous intervals},\qquad
+ 139572890\ \text{binary subsets of rank at least four}.
+\]
+The exact dual lower bounds give zero passes for all three discrete classes
+and for the entire box relaxation.
+
+\begin{center}
+\small
+\begin{tabular}{lrrr}
+\toprule
+selection class & candidates & passes & best-distance range\\
+\midrule
+prefix & 543 & 0/32 & 0.397238--0.484576\\
+contiguous interval & 5012 & 0/32 & 0.397238--0.484576\\
+binary shell subset & 139572890 & 0/32 & 0.168577--0.424018\\
+box relaxation & -- & 0/32 & 0.146498--0.424018\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The minimum box failure margin is
+$0.14524763462315904$, the minimum distance/tolerance ratio is
+$10.17255613514909$, and the maximum is $118.76033343311221$.  The largest
+primal--dual gap is $7.72\times10^{-15}$.  Every best interval begins at the
+outer shell.  A single-coordinate certificate suffices at 24 endpoints (18
+at order 2 and 6 at order 6); the other eight require the multi-order dual.
+The effective box ranks range from 12 to 31.430747812062542.
+
+\section{Boundary}
+
+The theorem and audit concern only the frozen resolved candidate windows,
+complete conjugate shells used at most once, orders 2--12, real conjugate
+power vectors, and the RH-238 tolerance.  They do not exclude deeper or
+additional roots, expanded windows, signed/complex grouping, continuum
+mechanisms, or unbounded shell multiplicities.  In particular, a fractional
+box weight is a reachability certificate, not a legal spectral multiplicity.
+
+The deterministic anchor is therefore not available inside the current
+single-use shell class.  The next test may relax the upper bound on weights,
+while monitoring whether the required multiplicities cease to represent a
+finite algebraic cloud.  Gate A remains open and Gates B--E are untouched.
+No Hilbert--Polya operator, zeta-divisor equality, Riemann-zero
+identification, or RH implication is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

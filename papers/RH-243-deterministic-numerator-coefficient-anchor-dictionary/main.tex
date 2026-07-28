@@ -1,0 +1,239 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{A Deterministic Numerator Coefficient-Anchor Dictionary}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-242 separates the all-order trace envelope from the deterministic
+numerator anchor but leaves the anchor coefficients unspecified.  We now
+derive them from the exact deterministic factorization.  Let
+\[
+ \widehat D_{0,\mathrm{bulk},2}(z)
+ =\frac{G(z)}{1-z^2/\lambda},
+ \qquad
+ \log G(z)=-\sum_{n\ge2}\frac{g_n}{n}z^n,
+\]
+and let $P_n$ be the deterministic flat periodic trace.  Then
+\[
+ g_n=P_n-1-(-1)^n+2\mathbf{1}_{\{2\mid n\}}\lambda^{-n/2}.
+\]
+After the current Hardy scaling $r_H=0.85$, the required one-step target is
+$a_n=r_H^{-n}g_n$.
+
+For the symmetric two-step numerator
+$H(w)=G(\sqrt w)G(-\sqrt w)$, the trace-style coefficient is exactly
+$b_k=a_{2k}$.  Thus the two-step anchor sees every even one-step coefficient
+and loses every odd one exactly.  Orders $2$--$12$ give a target unit-disk
+logarithmic norm $0.494505$.  The smallest distance from the existing
+RH-222-selected residual jets to this target is $0.419190$, a finite
+diagnostic only.  The present paper defines the independent target; it does
+not prove the noisy cloud coefficient bridge or the all-order envelope.
+\end{abstract}
+
+\section{Which coefficient is being anchored?}
+
+Let
+\begin{equation}\label{eq:centered}
+ c_n=P_n-1-(-1)^n,
+ \qquad n\ge2,
+\end{equation}
+where
+\[
+ P_n=\sum_{f^n(x)=x}\frac{1}{|1-(f^n)'(x)|}
+\]
+is the deterministic flat periodic trace.  Its parity-centered exponential
+decay is unconditional after RH-11 \citep{WangRH10,WangRH11}.
+
+The deterministic one-step regularized bulk germ identified before the
+moving-cloud program is
+\begin{equation}\label{eq:factor}
+ \widehat D_{0,\mathrm{bulk},2}(z)
+ =\exp\left[-\sum_{n\ge2}\frac{c_n}{n}z^n\right]
+ =\frac{G(z)}{1-z^2/\lambda},
+ \qquad \lambda=1.678573510428318\ldots .
+\end{equation}
+The numerator $G$ is holomorphic and nonzero on the required disk
+\citep{WangRH46}.  An anchor for the current cloud-extracted traces must use
+the logarithmic trace-style coefficients of $G$, not its ordinary Taylor
+coefficients.  Those two coefficient systems are related nonlinearly by
+exponentiation.
+
+\section{Exact one-step dictionary}
+
+\begin{theorem}[Numerator trace coefficients]\label{thm:one-step}
+Write
+\[
+ \log G(z)=-\sum_{n\ge2}\frac{g_n}{n}z^n.
+\]
+Then
+\begin{equation}\label{eq:g}
+ \boxed{
+ g_n=c_n+2\mathbf{1}_{\{2\mid n\}}\lambda^{-n/2}.}
+\end{equation}
+For the Hardy-scaled operator $A_\sigma=B_\sigma/r_H$, define
+$G_H(z)=G(z/r_H)$.  Its trace-style coefficients are
+\begin{equation}\label{eq:a}
+ \boxed{
+ a_n=r_H^{-n}
+ \left[P_n-1-(-1)^n+2\mathbf{1}_{\{2\mid n\}}\lambda^{-n/2}\right].}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Taking logarithms in \eqref{eq:factor} gives
+\[
+ \log G(z)
+ =-\sum_{n\ge2}\frac{c_n}{n}z^n+\log(1-z^2/\lambda).
+\]
+Since
+\[
+ \log(1-z^2/\lambda)
+ =-\sum_{k\ge1}\frac{z^{2k}}{k\lambda^k}
+ =-\sum_{k\ge1}\frac{2\lambda^{-k}}{2k}z^{2k},
+\]
+comparison with the trace-style logarithm proves \eqref{eq:g}.  Substitution
+$z\mapsto z/r_H$ proves \eqref{eq:a}.
+\end{proof}
+
+Equation~\eqref{eq:a} is the independent coefficient target requested in
+RH-238 \citep{WangRH238}.  It does not yet say that any positive-noise selected cloud leaves
+these coefficients behind.
+
+\section{Two-step conversion and exact information loss}
+
+The earlier two-step numerator uses $w=z^2$:
+\begin{equation}\label{eq:H}
+ H(w)=G(\sqrt w)G(-\sqrt w).
+\end{equation}
+After Hardy scaling, put $H_H(w)=H(w/r_H^2)$.
+
+\begin{theorem}[Even-subsequence dictionary]\label{thm:two-step}
+If
+\[
+ \log H_H(w)=-\sum_{k\ge1}\frac{b_k}{k}w^k,
+\]
+then
+\begin{equation}\label{eq:b}
+ \boxed{b_k=a_{2k}.}
+\end{equation}
+No collection of coefficients of $H_H$ determines any odd coefficient
+$a_{2k+1}$ without an additional one-step input.
+\end{theorem}
+
+\begin{proof}
+Add $\log G_H(z)$ and $\log G_H(-z)$.  Odd powers cancel and the even part is
+\[
+ -2\sum_{k\ge1}\frac{a_{2k}}{2k}z^{2k}
+ =-\sum_{k\ge1}\frac{a_{2k}}{k}w^k,
+\]
+which proves \eqref{eq:b}.  For nonidentifiability, multiply any admissible
+$G_H(z)$ by $e^{\psi(z)}$, where $\psi$ is an odd holomorphic germ.  The
+product at $z$ and $-z$ is unchanged, while the odd logarithmic coefficients
+change arbitrarily.
+\end{proof}
+
+This corrects a possible ambiguity in the phrase ``coefficient anchor to
+$H$.'': $H$ is a complete two-step anchor, but only an even one-step anchor.
+The current order-$2$ through order-$12$ one-step trace jet also contains
+orders $3,5,7,9,11$, so it requires $G$ or equivalent odd data.
+
+\section{Trace coefficients versus ordinary numerator coefficients}
+
+If
+\[
+ G_H(z)=\sum_{m\ge0}h_mz^m,
+ \qquad h_0=1,
+\]
+then differentiating the exponential identity gives the exact recursion
+\begin{equation}\label{eq:recursion}
+ h_m=-\frac1m\sum_{k=1}^m a_k h_{m-k},
+ \qquad a_1=0.
+\end{equation}
+For example,
+\[
+ h_2=-\frac{a_2}{2},\qquad
+ h_3=-\frac{a_3}{3},\qquad
+ h_4=-\frac{a_4}{4}+\frac{a_2^2}{8}.
+\]
+Thus a power trace is a logarithmic coefficient, not an ordinary numerator
+Taylor coefficient.  The archive stores both systems separately.
+
+\section{Short-orbit target through order twelve}
+
+We evaluate \eqref{eq:a} from the exact finite periodic-point formulas in
+RH-11.  The displayed decimals are floating evaluations of those formulas.
+
+\begin{center}
+\small
+\begin{tabular}{rrrr}
+\toprule
+$n$ & $P_n$ & unscaled $g_n$ & Hardy-scaled $a_n$\\
+\midrule
+2  & 1.180143 & 0.371631 & 0.514368\\
+3  & 0.174533 & 0.174533 & 0.284198\\
+4  & 1.419878 & 0.129700 & 0.248465\\
+5  & 0.069803 & 0.069803 & 0.157318\\
+6  & 1.622141 & 0.045013 & 0.119351\\
+7  & 0.025942 & 0.025942 & 0.080923\\
+8  & 1.763873 & 0.015797 & 0.057971\\
+9  & 0.009364 & 0.009364 & 0.040428\\
+10 & 1.855508 & 0.005590 & 0.028391\\
+11 & 0.003344 & 0.003344 & 0.019980\\
+12 & 1.912575 & 0.001985 & 0.013954\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The finite target norm is
+\[
+ J_{12}(a)=\sum_{n=2}^{12}\frac{|a_n|}{n}=0.4945054357\ldots .
+\]
+By contrast, the RH-236 residual norms measured relative to zero are small
+\citep{WangRH236}.  Directly comparing all 32 stored residual jets with $a$
+gives anchored distances between $0.419190$ and $0.514505$.  This is already
+enough to show that ``small relative to zero'' and ``close to the deterministic
+numerator'' are different finite tests.  It is not an asymptotic rejection of
+the cloud route: the ranks, candidate windows, and noise levels are all
+finite, and the stored roots are not interval certified.
+
+The symmetric log-jet identity in Theorem~\ref{thm:two-step} is reproduced to
+$3.5\times10^{-18}$ in the numerical audit.  Ordinary numerator coefficients
+through degree twelve are generated by \eqref{eq:recursion}.
+
+\section{Boundary and next test}
+
+RH-243 closes the target-definition ambiguity.  The all-order uniform
+envelope remains a separate size theorem, and the actual coefficient bridge
+remains an identification theorem: one must prove that the selected noisy
+cloud removes the pole contribution and leaves the coefficients
+\eqref{eq:a}.  Neither follows from the exact superloop identity of RH-242
+\citep{WangRH242}.
+
+The next finite test is now forced rather than chosen: run the RH-238
+shell-prefix selector against $a_n$, not zero.  Failure would be a scoped
+obstruction for the frozen Arnoldi windows and prefix class; success would be
+only a finite anchored candidate.  Gates A--E remain open.  No
+Hilbert--P\'olya operator, zeta-divisor identification, or Riemann-hypothesis
+conclusion is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

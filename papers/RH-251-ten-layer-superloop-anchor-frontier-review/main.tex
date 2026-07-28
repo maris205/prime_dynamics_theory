@@ -1,0 +1,185 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.9in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array}
+\usepackage{xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\newcommand{\Tr}{\operatorname{Tr}}
+
+\title{Ten-Layer Superloop--Anchor Frontier Review}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-242--RH-251 connect cloud-extracted traces to noisy periodic loops, define
+the deterministic numerator anchor, and identify the exact frontier of the
+current cloud class.  Fixed-noise superloop and orthogonal quotient identities
+are exact, and a block-power theorem gives the correct conditional route to
+an all-order envelope.  Conversely, the frozen candidate window fails the
+anchor test even after convex relaxation, while unbounded weights produce
+non-spectral multiplicity explosion.  No complete finite-head/analytic-tail
+certificate exists.  We classify the ten layers, preserve the genuine local
+progress, and keep Gates A--E open.
+\end{abstract}
+
+\section{Batch decision}
+
+The route coordinate after RH-251 is
+\begin{center}
+\ttfamily
+exact\_superloop\_quotient\_frozen\_anchor\_class\_obstructed\\
+open\_new\_selector\_uniform\_tail.
+\end{center}
+This wording has two deliberate halves.  ``Exact superloop quotient'' records
+real structural progress.  ``Frozen anchor class obstructed'' prevents the
+finite negative result from being inflated into global cloud nonexistence.
+
+The batch contains 16,191 explicitly audited loop, trace, coefficient,
+prefix, endpoint, and order items, with zero review-audit failures.  A single
+LP dual additionally certifies a binary class containing 139,572,890 shell
+subsets.  These are finite facts; none is an all-order or continuum theorem.
+
+\section{The ten layers}
+
+\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.08\textwidth}
+>{\raggedright\arraybackslash}p{0.21\textwidth}
+>{\raggedright\arraybackslash}p{0.29\textwidth}
+>{\raggedright\arraybackslash}p{0.31\textwidth}}
+\toprule
+paper & layer & result & first missing theorem\\
+\midrule
+\endfirsthead
+\toprule
+paper & layer & result & first missing theorem\\
+\midrule
+\endhead
+RH-242 & periodic-loop realization & Exact graded physical-loop/atomic-counterloop identity; 14,584 enumerated loops and 352 signed residuals & uniform loop grouping and coefficient anchor\\
+RH-243 & deterministic numerator anchor & Exact one-step Hardy-scaled coefficient dictionary and even two-step projection & identification of those coefficients in a selected noisy cloud\\
+RH-244 & anchored prefixes & Equal-radius target balls are disjoint; 0/32 passes among 543 prefixes & a non-prefix anchored selector\\
+RH-245 & orthogonal quotient & Exact $\tau_n=\Tr C^n$ with a norm-one orthogonal projection & uniform stability of the moving algebraic root space\\
+RH-246 & block-power envelope & Exact $m$-block criterion; finite $q_{12}=0.393300$ on 17 endpoints & noise-uniform $K_m,\eta_m,L_r$ and finite head\\
+RH-247 & absolute majorant & Perron sector forces root rate at least $r_H^{-1}>1$ & cancellation-preserving signed quotient estimate\\
+RH-248 & shell zonotope & Full single-use shell box has 0/32 passes with dual gap $<8\times10^{-15}$ & expanded window or structurally signed selector\\
+RH-249 & nonnegative cone & 6/32 remain unreachable; 26 fits need maximum weights $40.58$--$5.80\times10^{10}$ & legal algebraic multiplicity and operator realization\\
+RH-250 & head/tail gluing & Exact determinant error interface; zero complete present certificates & anchored head, uniform quotient tail, and target tail\\
+RH-251 & frontier review & local fixed-noise progress retained; frozen reweighting route stopped & a genuinely new anchor/selector or uniform theorem\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\section{Exact progress that survives}
+
+\paragraph{Periodic superloops.}
+RH-242 proves for every fixed noisy operator and selected algebraic multiset
+that
+\[
+ \tau_n=\Tr A_\sigma^n-\sum_{s\in\mathcal S_\sigma}s^n
+ =\operatorname{Str}((A_\sigma\oplus S_\sigma)^n),\qquad n\ge2,
+\]
+and realizes the physical term as a cyclic Gaussian loop integral
+\citep{WangRH242}.  The identity is exact; the continuum selector is still an
+assumption.
+
+\paragraph{Independent coefficient anchor.}
+RH-243 separates the all-order size problem from the numerator identity.  If
+$P_n$ is the deterministic flat trace, then
+\[
+ a_n=r_H^{-n}\left[P_n-1-(-1)^n
+ +2\mathbf{1}_{\{2\mid n\}}\lambda^{-n/2}\right],
+\]
+and the symmetric two-step coefficient is $b_k=a_{2k}$
+\citep{WangRH243}.  This defines the target but does not put it in the cloud.
+
+\paragraph{Cancellation-preserving quotient.}
+RH-245 replaces the ill-conditioned Riesz estimate by an orthogonal quotient.
+For the invariant generalized root space $E$, $Q=I-\Pi_E$, and
+$C=QAQ|_{E^\perp}$,
+\[
+ \tau_n=\Tr C^n.
+\]
+The projection has norm one; $E^\perp$ need not reduce $A$
+\citep{WangRH245}.  RH-246 then proves that one uniformly contractive power
+$C^m$ gives the geometric trace envelope and an explicit logarithmic tail
+\citep{WangRH246}.  These theorems survive even though their uniform
+hypotheses are not yet certified.
+
+\paragraph{Determinant interface.}
+RH-250 proves that, on $|z|\le R$, the logarithmic determinant error is bounded
+by the anchored finite-head error plus the quotient tail plus the target tail
+\citep{WangRH250}.  This is the exact interface to a future RH-240 application;
+the present three certificates are incomplete.
+
+\section{Obstructions and their scope}
+
+The zero-target and anchored problems cannot be conflated.  The anchor norm
+through order 12 is $0.4945054357$, whereas all archived tolerances are at
+most $0.04$; the two equal-radius balls are disjoint.  Exhausting the frozen
+prefix class gives 0/32 passes \citep{WangRH244}.
+
+RH-248 removes the radial-order excuse.  It places every complete shell in a
+box $0\le w_j\le1$ and dualizes the anchored weighted $\ell^1$ distance.  The
+box itself has distance $0.146498$--$0.424018$, at least 10.17 times the local
+tolerance, so every prefix, interval, and binary subset fails
+\citep{WangRH248}.  This is a frozen-window statement.
+
+Allowing $w_j\ge0$ without an upper bound does not produce a credible rescue.
+Six endpoints remain outside the cone; the other 26 need minimum maximum
+weights between 40.584 and $5.8018\times10^{10}$ \citep{WangRH249}.  These are
+arbitrary real repetitions, not algebraic spectral multiplicities.
+
+The long-loop estimate also has a strict firewall.  Any majorant that takes
+absolute values of physical and atomic sectors before cancellation contains
+$|p_\sigma|^n=r_H^{-n}$, so its root rate is superunit.  All 352 archived
+order cases confirm rates 1.2532--3.5568 \citep{WangRH247}.  A viable proof
+must work after signed/complex grouping.
+
+\section{Gate audit}
+
+\begin{center}
+\begin{tabular}{cll}
+\toprule
+gate & requirement & status after RH-251\\
+\midrule
+A & canonical intrinsic dynamical determinant and identification & open\\
+B & time-oriented scattering or unitary completion & untouched/open\\
+C & self-adjoint generator and intrinsic $T\log T$ law & untouched/open\\
+D & von Mangoldt-weighted prime-power traces & untouched/open\\
+E & equality with the completed-zeta spectral divisor & untouched/open\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The exact identities are local Gate-A infrastructure, not Gate-A closure.
+There is no locally uniform anchored relative determinant family, no
+Hilbert--Polya operator, no Riemann-zero identification, no zeta-divisor
+equality, and no implication for RH.
+
+\section{Next-batch reopening triggers}
+
+The same frozen shell window should not be reweighted again.  A new batch is
+justified by at least one genuinely new input:
+\begin{enumerate}
+\item a larger resolved spectral window, followed immediately by an anchored
+zonotope/cone audit rather than a zero-target fit;
+\item a signed or complex selector derived from invariant quotient structure,
+not arbitrary real shell weights;
+\item a noise-uniform theorem for one quotient block power, including the
+finest discretizations and a continuum bridge; or
+\item an analytic all-order tail estimate for the deterministic numerator
+target.
+\end{enumerate}
+Until then, the honest endpoint is a scoped route stop with exact
+fixed-noise progress preserved.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

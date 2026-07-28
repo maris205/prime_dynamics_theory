@@ -1,0 +1,153 @@
+"""Periodic-loop and graded counterloop identities for cloud extraction."""
+
+from __future__ import annotations
+
+from itertools import product
+import math
+
+import numpy as np
+
+
+U_CRITICAL = 1.5436890126920763615708559718017479865
+HARDY_RADIUS = 0.85
+
+
+def folded_gaussian_matrix(
+    dimension: int,
+    sigma: float,
+    *,
+    u: float = U_CRITICAL,
+) -> np.ndarray:
+    """Return the dense folded midpoint Markov matrix on ``[0, 1]``."""
+
+    size = int(dimension)
+    width = float(sigma)
+    if size < 2:
+        raise ValueError("dimension must be at least two")
+    if width <= 0.0:
+        raise ValueError("sigma must be positive")
+    nodes = (np.arange(size, dtype=float) + 0.5) / size
+    means = 1.0 - float(u) * nodes * nodes
+    destinations = nodes[None, :]
+    positive = -0.5 * ((destinations - means[:, None]) / width) ** 2
+    negative = -0.5 * ((-destinations - means[:, None]) / width) ** 2
+    log_weights = np.logaddexp(positive, negative)
+    log_weights -= np.max(log_weights, axis=1, keepdims=True)
+    weights = np.exp(log_weights)
+    return weights / np.sum(weights, axis=1, keepdims=True)
+
+
+def folded_gaussian_kernel(
+    source: float,
+    destinations: np.ndarray,
+    sigma: float,
+    *,
+    u: float = U_CRITICAL,
+) -> np.ndarray:
+    """Evaluate the exactly normalized folded continuum kernel."""
+
+    x = float(source)
+    y = np.asarray(destinations, dtype=float)
+    width = float(sigma)
+    if not 0.0 <= x <= 1.0 or np.any((y < 0.0) | (y > 1.0)):
+        raise ValueError("folded coordinates must lie in [0, 1]")
+    if width <= 0.0:
+        raise ValueError("sigma must be positive")
+    mean = 1.0 - float(u) * x * x
+    root_two = math.sqrt(2.0)
+    upper = 0.5 * (1.0 + math.erf((1.0 - mean) / (root_two * width)))
+    lower = 0.5 * (1.0 + math.erf((-1.0 - mean) / (root_two * width)))
+    normalizer = upper - lower
+    gaussian_scale = 1.0 / (math.sqrt(2.0 * math.pi) * width)
+    positive = np.exp(-0.5 * ((y - mean) / width) ** 2)
+    negative = np.exp(-0.5 * ((-y - mean) / width) ** 2)
+    return gaussian_scale * (positive + negative) / normalizer
+
+
+def matrix_power_trace(matrix: np.ndarray, order: int) -> complex:
+    """Return ``tr(A^n)``."""
+
+    operator = np.asarray(matrix, dtype=complex)
+    n = int(order)
+    if operator.ndim != 2 or operator.shape[0] != operator.shape[1]:
+        raise ValueError("a square matrix is required")
+    if n < 1:
+        raise ValueError("order must be positive")
+    return complex(np.trace(np.linalg.matrix_power(operator, n)))
+
+
+def closed_loop_sum(matrix: np.ndarray, order: int) -> complex:
+    """Enumerate the closed-index-loop sum for a small finite matrix."""
+
+    operator = np.asarray(matrix, dtype=complex)
+    n = int(order)
+    if operator.ndim != 2 or operator.shape[0] != operator.shape[1]:
+        raise ValueError("a square matrix is required")
+    if n < 1:
+        raise ValueError("order must be positive")
+    size = operator.shape[0]
+    total = 0.0j
+    for loop in product(range(size), repeat=n):
+        weight = 1.0 + 0.0j
+        for index in range(n):
+            weight *= operator[loop[index], loop[(index + 1) % n]]
+        total += weight
+    return complex(total)
+
+
+def atomic_power_trace(values: np.ndarray, order: int) -> complex:
+    """Return the power trace of the finite diagonal counterloop sector."""
+
+    roots = np.asarray(values, dtype=complex).reshape(-1)
+    n = int(order)
+    if n < 1:
+        raise ValueError("order must be positive")
+    return complex(np.sum(roots**n))
+
+
+def cloud_extracted_trace(
+    physical_matrix: np.ndarray,
+    selected_values: np.ndarray,
+    order: int,
+) -> complex:
+    """Return the physical loop trace minus selected spectral counterloops."""
+
+    return matrix_power_trace(physical_matrix, order) - atomic_power_trace(
+        selected_values, order
+    )
+
+
+def graded_supertrace(
+    physical_matrix: np.ndarray,
+    selected_values: np.ndarray,
+    order: int,
+) -> complex:
+    """Return ``Str((A direct-sum diag(S))^n)`` with the atomic sector odd."""
+
+    physical = np.asarray(physical_matrix, dtype=complex)
+    selected = np.asarray(selected_values, dtype=complex).reshape(-1)
+    if physical.ndim != 2 or physical.shape[0] != physical.shape[1]:
+        raise ValueError("a square physical matrix is required")
+    block = np.zeros(
+        (physical.shape[0] + selected.size, physical.shape[1] + selected.size),
+        dtype=complex,
+    )
+    block[: physical.shape[0], : physical.shape[1]] = physical
+    block[physical.shape[0] :, physical.shape[1] :] = np.diag(selected)
+    power = np.linalg.matrix_power(block, int(order))
+    return complex(
+        np.trace(power[: physical.shape[0], : physical.shape[1]])
+        - np.trace(power[physical.shape[0] :, physical.shape[1] :])
+    )
+
+
+def relative_log_jet(
+    moments: dict[int, complex],
+    variable: complex,
+) -> complex:
+    """Return the finite regularized logarithmic jet generated by moments."""
+
+    z = complex(variable)
+    return complex(
+        -sum(complex(value) * z**int(order) / int(order) for order, value in moments.items())
+    )
