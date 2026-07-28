@@ -1,0 +1,208 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{A Cloud-Extracted Trace-Moment Atlas through Order Twelve}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We compute the first twelve power traces of the 32 fine and Haar-coarse
+operators underlying the RH-222 cloud atlas.  From each trace we subtract the
+Perron mode, parity mode, and shell-complete selected cloud.  This produces
+384 cloud-extracted trace moments without constructing the ill-conditioned
+Riesz projectors of RH-232.
+
+For the logarithmic unit-disk seminorm
+\[
+ J_{12}(\tau)=\sum_{n=2}^{12}\frac{|\tau_n|}{n},
+\]
+the batch maximum is $0.07593$.  On the fine range $\sigma\le0.005$ it is
+$0.01067$.  Across all endpoints and orders $2$--$12$, the largest observed
+root rate $|\tau_n|^{1/n}$ is $0.35989$.  At the finest left endpoint the
+orders two through six have moduli $2.07\times10^{-2}$,
+$9.67\times10^{-4}$, $1.30\times10^{-5}$, $8.97\times10^{-6}$, and
+$5.47\times10^{-8}$.
+
+The atlas supplies strong finite-order evidence for a trace-based relative
+determinant route.  It does not control order thirteen or the infinite tail,
+so Gate A remains open.
+\end{abstract}
+
+\section{Trace extraction without a complement matrix}
+
+For a finite matrix $A$ with listed peripheral values $p,q$ and selected
+cloud $C$, define
+\begin{equation}\label{eq:tau}
+ \tau_n(A;C)=\operatorname{tr}(A^n)-p^n-q^n
+ -\sum_{\lambda\in C}\lambda^n.
+\end{equation}
+This quantity depends only on the finite matrix trace and selected eigenvalue
+multiset.  It is therefore insensitive to the norm of the associated
+spectral projector.
+
+\begin{proposition}[Reality under conjugacy closure]\label{prop:reality}
+If $A$ is real, $p,q\in\mathbb R$, and $C$ is closed under complex
+conjugation with multiplicity, then $\tau_n(A;C)\in\mathbb R$ for every
+$n\ge1$.
+\end{proposition}
+
+\begin{proof}
+The trace of a real matrix power is real.  Every nonreal pair
+$\lambda,\overline\lambda$ contributes
+$\lambda^n+\overline\lambda^n=2\operatorname{Re}(\lambda^n)$, and real
+cloud values contribute real powers.
+\end{proof}
+
+The archived imaginary parts are consequently roundoff diagnostics rather
+than independent spectral data.  Their scale stays near ordinary floating
+arithmetic, providing a useful check that shell completion and multiplicity
+bookkeeping were preserved.
+
+\begin{proposition}[Finite determinant jet]\label{prop:jet}
+Let $R_C(z)$ be the projection-free complementary product from RH-234.  Near
+the origin,
+\[
+ \log R_C(z)=-\sum_{n=2}^{m}\frac{\tau_n(A;C)}{n}z^n+O(z^{m+1}).
+\]
+Consequently
+\[
+ \sup_{|z|\le R}
+ \left|\sum_{n=2}^{m}\frac{\tau_n(A;C)}{n}z^n\right|
+ \le \sum_{n=2}^{m}\frac{|\tau_n(A;C)|}{n}R^n.
+\]
+\end{proposition}
+
+\begin{proof}
+Expand each regularized eigenvalue factor using
+$\log((1-w)e^w)=-\sum_{n\ge2}w^n/n$, then subtract the selected cloud powers.
+The inequality is the triangle inequality.
+\end{proof}
+
+\section{Sparse computation}
+
+The fine matrices have dimensions from $128$ to $4096$; the coarse matrices
+have half those dimensions.  We form sparse powers recursively and take the
+diagonal sum.  No unresolved eigenvalue decomposition is used.  At the finest
+left endpoint, the twelfth power has approximately $1.49\times10^7$ stored
+entries, still below the dense $4096^2$ count.
+
+The numerical traces are exact for the frozen double-precision sparse
+matrices up to ordinary floating arithmetic.  They are not interval
+enclosures for a continuum operator.
+
+\section{Moment decay across orders}
+
+\begin{table}[ht]
+\centering
+\scriptsize
+\begin{tabular}{rrrrr}
+\toprule
+$n$ & max all $|\tau_n|$ & max fine $|\tau_n|$
+& all rate & fine rate\\
+\midrule
+2  & $1.2952\times10^{-1}$ & $2.0670\times10^{-2}$ & $0.3599$ & $0.1438$\\
+3  & $2.9813\times10^{-2}$ & $1.0758\times10^{-3}$ & $0.3101$ & $0.1025$\\
+4  & $3.6811\times10^{-3}$ & $1.6452\times10^{-4}$ & $0.2463$ & $0.1133$\\
+5  & $7.6942\times10^{-4}$ & $8.9640\times10^{-6}$ & $0.2384$ & $0.0978$\\
+6  & $6.1019\times10^{-4}$ & $2.9136\times10^{-6}$ & $0.2912$ & $0.1195$\\
+7  & $3.0091\times10^{-4}$ & $4.4089\times10^{-7}$ & $0.3140$ & $0.1236$\\
+8  & $1.1350\times10^{-4}$ & $2.2973\times10^{-8}$ & $0.3213$ & $0.1110$\\
+9  & $3.7095\times10^{-5}$ & $2.8206\times10^{-9}$ & $0.3219$ & $0.1122$\\
+10 & $1.0776\times10^{-5}$ & $1.9058\times10^{-10}$ & $0.3186$ & $0.1067$\\
+11 & $2.7665\times10^{-6}$ & $1.9500\times10^{-11}$ & $0.3124$ & $0.1063$\\
+12 & $5.9728\times10^{-7}$ & $1.9573\times10^{-12}$ & $0.3029$ & $0.1058$\\
+\bottomrule
+\end{tabular}
+\caption{Complete determinant-relevant order atlas.  ``Fine'' means
+$\sigma\le0.005$, and each rate is the corresponding maximum modulus raised
+to the power $1/n$.}
+\end{table}
+
+The sequence is not monotonically decreasing in every endpoint or every
+order.  Complex phase cancellation and rank changes produce local spikes.
+The relevant observation is that the entire finite envelope stays far below
+the failed Hilbert--Schmidt budget of RH-229 \citep{WangRH229,WangRH235}.
+
+Three summaries answer different questions.  The root rate
+$|\tau_n|^{1/n}$ tests compatibility with geometric decay; the jet norm
+$J_{12}$ bounds a truncated logarithm on the unit disk; and the raw modulus
+records the actual coefficient scale.  A small jet norm can be dominated by
+order two even if later root rates rise, which is why all three are archived
+rather than a single fitted exponent.
+
+\section{Scale behavior}
+
+The fine-scale jet norms are small but not monotone.  For example, the left
+channel rises again at $\sigma=0.00125$ because the fixed rank schedule changes
+by another shell.  This prevents a direct Cauchy conclusion from the current
+selection.  It motivates two separate tests:
+\begin{enumerate}[leftmargin=2em]
+\item compare the same finite jet between the fine and coarse discretizations;
+\item choose the shell prefix by a trace tolerance rather than a predetermined
+rank.
+\end{enumerate}
+RH-237 and RH-238 perform these tests.
+
+\section{Numerical protocol and reproducibility boundary}
+
+The 384 cases are $32$ endpoints times orders one through twelve.  Only the
+$352$ cases at orders two through twelve enter the regularized logarithm.
+The order-one values are retained as a bookkeeping check on peripheral
+subtraction.  For each endpoint the recursion starts with the frozen sparse
+matrix and repeatedly multiplies by that same matrix; the trace is read from
+the diagonal after every multiplication.  The cloud contribution is then
+subtracted from the stored shell-complete eigenvalue list.
+
+This procedure avoids the two unstable operations diagnosed earlier in the
+route: no left/right overlap is inverted, and no full unresolved spectrum is
+diagonalized.  Its cost is memory growth in the sparse powers.  At dimension
+$4096$, the order-twelve power contains about $1.49\times10^7$ stored
+entries, which explains why twelve is a computational horizon rather than a
+mathematically distinguished order.
+
+The archive verifies conjugacy closure, trace-array lengths, the unit-disk
+majorants, and consistency with the RH-235 second moments.  It does not bound
+sparse multiplication roundoff or discretization error relative to a
+continuum transfer operator.
+
+\section{The missing theorem}
+
+An order-$12$ jet can neither exclude large coefficients at later orders nor
+guarantee a zero-free disk for the full complementary determinant.  The
+necessary strengthening is a uniform estimate
+\[
+ |\tau_n(\sigma)|\le Mq^n,
+ \qquad n\ge2,
+\]
+with $q<1/R$ on a target disk $|z|\le R$.  RH-240 proves that this all-order
+condition is sufficient.  The present paper supplies only its first eleven
+nontrivial data points.
+
+At least three tails remain compatible with the table: continued geometric
+decay, a delayed high-order spike, or a small tail produced by extracting too
+many regular modes into the moving cloud.  The first would advance the
+determinant route, the second would block the proposed unit disk, and the
+third would give the wrong normalization despite excellent numerical bounds.
+This trichotomy is why an all-order envelope and a coefficient anchor are
+separate theorem obligations.
+
+Gates A--E remain open, and no arithmetic spectral identification is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

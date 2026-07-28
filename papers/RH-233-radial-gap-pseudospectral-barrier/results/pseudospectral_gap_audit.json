@@ -1,0 +1,63 @@
+{
+  "endpoint_count": 32,
+  "fixed_gap_model_growth_factor": 957826285.2211514,
+  "fixed_gap_model_rows": [
+    {
+      "coupling": 1.0,
+      "eigenvalue_gap": 0.3,
+      "first_eigenvalue": 0.8,
+      "projector_operator_norm": 3.48010216963685,
+      "second_eigenvalue": 0.5
+    },
+    {
+      "coupling": 1000.0,
+      "eigenvalue_gap": 0.3,
+      "first_eigenvalue": 0.8,
+      "projector_operator_norm": 3333.3334833333292,
+      "second_eigenvalue": 0.5
+    },
+    {
+      "coupling": 1000000.0,
+      "eigenvalue_gap": 0.3,
+      "first_eigenvalue": 0.8,
+      "projector_operator_norm": 3333333.3333334825,
+      "second_eigenvalue": 0.5
+    },
+    {
+      "coupling": 1000000000.0,
+      "eigenvalue_gap": 0.3,
+      "first_eigenvalue": 0.8,
+      "projector_operator_norm": 3333333333.333333,
+      "second_eigenvalue": 0.5
+    }
+  ],
+  "log_gap_log_projector_correlations": {
+    "left": -0.698677626802994,
+    "right": -0.4890923506467907
+  },
+  "maximum_projector_operator_norm": 2260997172167.218,
+  "minimum_gap_to_projector_norm_ratio": 6.398316622370865e-16,
+  "minimum_radial_gap": 7.399103186372935e-05,
+  "projector_growth_fits": {
+    "left": {
+      "growth_exponent": 7.407554972802887,
+      "log_intercept": -21.81923836724368,
+      "maximum_log_residual": 2.4018226904393707,
+      "sigma_power": -7.407554972802887
+    },
+    "right": {
+      "growth_exponent": 6.553065474396633,
+      "log_intercept": -17.886501552910552,
+      "maximum_log_residual": 2.25111479585086,
+      "sigma_power": -6.553065474396633
+    }
+  },
+  "status": "rh233_radial_gap_pseudospectral_barrier",
+  "theorem_boundary": {
+    "fixed_eigenvalue_gap_does_not_bound_projector_norm": true,
+    "gate_A": false,
+    "positive_radial_shell_gap_is_not_a_pseudospectral_certificate": true,
+    "rh222_radial_gaps_invalidated": false,
+    "uniform_riesz_contour_bound": false
+  }
+}

@@ -1,0 +1,211 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\title{Why Radial Shell Gaps Do Not Control Nonnormal Riesz Projections}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The shell-complete resonance atlas has positive radial gaps, yet its
+biorthogonal cloud projectors become extremely ill-conditioned.  We prove
+that there is no contradiction.  For
+\[
+ A_M=\begin{pmatrix}\lambda&M\\0&\mu\end{pmatrix},\qquad \lambda\ne\mu,
+\]
+the spectral projector onto $\lambda$ is
+\[
+ P_{\lambda,M}=\begin{pmatrix}1&M/(\lambda-\mu)\\0&0\end{pmatrix},
+\]
+so $\norm{P_{\lambda,M}}_2=\sqrt{1+|M/(\lambda-\mu)|^2}$.  The eigenvalue gap
+is fixed while the projector norm is unbounded.
+
+In the RH-232 audit the minimum radial shell gap remains
+$7.40\times10^{-5}$, whereas the maximum projector norm reaches
+$2.26\times10^{12}$ and the minimum gap-to-projector ratio is
+$6.40\times10^{-16}$.  Log--log fits against the noise give descriptive
+growth exponents $7.41$ and $6.55$ in the two channels.  Radial separation is
+therefore not a pseudospectral certificate.  The result marks a forbidden
+shortcut but leaves projection-free determinant factorization open.
+\end{abstract}
+
+\section{Spectral separation versus invariant-subspace separation}
+
+For normal operators a spectral gap controls the orthogonal spectral
+projection.  For nonnormal operators, eigenvalue location and invariant-space
+angle are different data \citep{Kato1995,TrefethenEmbree2005}.  RH-222
+recorded the first; RH-232 measured the second
+\citep{WangRH222,WangRH232}.
+
+The simplest triangular family already contains the entire obstruction.
+
+\section{Exact fixed-gap counterexample}
+
+\begin{theorem}[Fixed-gap projector blow-up]\label{thm:fixed-gap}
+Let $\lambda\ne\mu$ and
+\[
+ A_M=\begin{pmatrix}\lambda&M\\0&\mu\end{pmatrix}.
+\]
+The Riesz projector associated with $\lambda$ is
+\[
+ P_{\lambda,M}=\frac{A_M-\mu I}{\lambda-\mu}
+ =\begin{pmatrix}1&M/(\lambda-\mu)\\0&0\end{pmatrix}.
+\]
+Consequently
+\[
+ \norm{P_{\lambda,M}}_2
+ =\sqrt{1+\frac{|M|^2}{|\lambda-\mu|^2}}
+ \longrightarrow\infty
+\]
+as $|M|\to\infty$, while the eigenvalue gap $|\lambda-\mu|$ is unchanged.
+\end{theorem}
+
+\begin{proof}
+The polynomial formula follows because the minimal polynomial is
+$(z-\lambda)(z-\mu)$.  The displayed projector has only one nonzero row, so
+its operator norm is the Euclidean norm of that row.
+\end{proof}
+
+\begin{corollary}\label{cor:radial}
+No bound depending only on a positive eigenvalue gap, radial or otherwise,
+can control the norm of a nonnormal spectral projector.
+\end{corollary}
+
+This statement does not say that gaps are useless.  They identify a contour
+that avoids the spectrum.  What they do not control is the resolvent on that
+contour, and the Riesz formula integrates the resolvent rather than the set of
+eigenvalues alone.
+
+\section{The missing datum is a resolvent bound}
+
+\begin{theorem}[Contour-resolvent projector bound]\label{thm:contour}
+Let $\Gamma$ be a positively oriented rectifiable contour in the resolvent
+set of a bounded operator $A$, enclosing an isolated spectral component.
+Its Riesz projector satisfies
+\[
+ P_\Gamma=\frac{1}{2\pi i}\int_\Gamma(zI-A)^{-1}\,dz,
+ \qquad
+ \norm{P_\Gamma}
+ \le \frac{\operatorname{length}(\Gamma)}{2\pi}
+       \sup_{z\in\Gamma}\norm{(zI-A)^{-1}}.
+\]
+Consequently, a uniform contour length and a uniform resolvent bound do give
+a uniform projector bound; a spectral gap alone supplies neither.
+\end{theorem}
+
+\begin{proof}
+The first identity is the Riesz functional calculus.  Taking norms under the
+Bochner integral gives the second inequality.
+\end{proof}
+
+For the triangular family the resolvent can be written explicitly:
+\[
+ (zI-A_M)^{-1}
+ =\begin{pmatrix}
+ (z-\lambda)^{-1} & M((z-\lambda)(z-\mu))^{-1}\\
+ 0 & (z-\mu)^{-1}
+ \end{pmatrix}.
+\]
+On the circle $|z-\lambda|=r<|\lambda-\mu|$, its norm is at least the
+modulus of the upper-right entry, and hence at some---indeed every---point
+obeys
+\[
+ \norm{(zI-A_M)^{-1}}
+ \ge \frac{|M|}{r(|\lambda-\mu|+r)}.
+\]
+The contour remains a fixed positive distance from both eigenvalues while
+the resolvent diverges linearly in $|M|$.  The same off-diagonal coupling that
+creates the oblique projector therefore appears as pseudospectral inflation.
+
+\begin{remark}
+If $A=V\Lambda V^{-1}$ is diagonalizable, the elementary estimate
+\[
+ \norm{(zI-A)^{-1}}
+ \le \frac{\norm V\,\norm{V^{-1}}}
+          {\operatorname{dist}(z,\sigma(A))}
+\]
+shows exactly which datum supplements the spectral gap: a controlled
+eigenbasis condition number.  In infinite-dimensional transfer problems an
+adapted resolvent estimate is the more invariant formulation.
+\end{remark}
+
+\section{Archived dynamical audit}
+
+The finite model uses $\lambda=0.8$, $\mu=0.5$, and couplings from $1$ to
+$10^9$.  The gap stays $0.3$ while the projector norm grows by a factor
+$9.58\times10^8$.
+
+For the RH-232 endpoint family, the projector norms grow much faster than the
+radial gaps shrink.  Representative values are shown below.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{rrrr}
+\toprule
+$\sigma$ & left $\norm P_2$ & right $\norm P_2$ & conclusion\\
+\midrule
+$0.04$ & $4.16\times10^1$ & $4.07\times10^1$ & already oblique\\
+$0.008$ & $2.79\times10^5$ & $1.10\times10^6$ & unstable\\
+$0.0032$ & $4.34\times10^9$ & $3.62\times10^9$ & severe\\
+$0.00125$ & $2.26\times10^{12}$ & $5.44\times10^{10}$ & extreme\\
+\bottomrule
+\end{tabular}
+\caption{Projector norms inherited from RH-232.}
+\end{table}
+
+The fitted power exponents are diagnostics, not asymptotic theorems: the log
+residuals are large and the rank changes with the noise.  The robust
+conclusion is only that no bounded trend is visible and radial gaps alone
+cannot supply one.
+
+\section{Scope of the negative result}
+
+Corollary~\ref{cor:radial} is a no-go theorem for any argument whose only
+input is eigenvalue location.  It does not prohibit estimates that use
+positivity, reversibility, a symmetrizing density, analytic distortion, or a
+semiclassical anisotropic norm.  Nor does it prove that the archived
+projectors actually diverge in the continuum limit: the finite exponents are
+descriptive and the matrices change dimension with $\sigma$.
+
+The practical distinction is useful.  A future positive result must expose
+where its resolvent control enters; it cannot cite the shell gap as a proxy.
+Conversely, failure of the Euclidean projector does not contaminate spectral
+quantities, such as a canonical determinant product, that depend only on
+algebraic eigenvalues.
+
+\section{Route consequence}
+
+The RH-222 shell gaps remain valid finite spectral observations.  What fails
+is the implication
+\[
+ \text{positive radial gap}
+ \quad\Longrightarrow\quad
+ \text{uniformly bounded Riesz projector}.
+\]
+Any operator-level continuation must add a resolvent estimate, an adapted
+norm, or a different factorization principle.  RH-234 uses the canonical
+eigenvalue product for $\det_2$, which evaluates a finite cloud factor without
+ever multiplying by the ill-conditioned projector.
+
+This paper does not exclude a certified contour on a different Banach space
+and does not close Gate A or any later arithmetic gate.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

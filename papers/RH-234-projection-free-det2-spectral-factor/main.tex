@@ -1,0 +1,226 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Schatten}{\mathcal S}
+
+\title{Projection-Free Spectral Factorization of the Regularized Determinant}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The direct moving-cloud Riesz projectors of RH-232 are severely
+ill-conditioned, but the regularized determinant depends on eigenvalues, not
+eigenvectors.  Let $A\in\Schatten_2$ have nonzero eigenvalues
+$(\lambda_j)$ with algebraic multiplicity.  For any finite submultiset $C$,
+the canonical product splits exactly:
+\[
+ \det_2(I-zA)
+ =\prod_{\lambda\in C}(1-z\lambda)e^{z\lambda}
+  \prod_{\lambda_j\notin C}(1-z\lambda_j)e^{z\lambda_j}.
+\]
+Both factors are entire and no projector norm appears.
+
+We apply this identity to the selected and resolved omitted roots of every
+RH-222 endpoint.  On a 192-point unit-disk grid, all 6,144 factorization
+cases pass with maximum absolute discrepancy $1.83\times10^{-15}$, despite
+the inherited projector norm $2.26\times10^{12}$.  This establishes a
+projection-free finite cloud factor.  It does not prove that the selected
+multisets form the correct small-noise divisor or that the complementary
+products have a locally uniform limit.
+\end{abstract}
+
+\section{Why the determinant can bypass the projector}
+
+For $A\in\Schatten_2$, the two-regularized determinant is the genus-one
+canonical product associated with the compact spectrum
+\citep{GohbergKrein1969,Simon2005}.  Its value is similarity invariant and
+contains no eigenvector condition number.  This distinguishes factor
+evaluation from invariant-subspace perturbation.
+
+RH-80 formulated the moving factor using a reducing projection because that
+is the natural route to an operator complement \citep{WangRH80}.  RH-232 and
+RH-233 show why the projector norm is a difficult small-noise object
+\citep{WangRH232,WangRH233}.  The present paper separates the algebraic
+factor from that operator realization.
+
+\section{Canonical-product factorization}
+
+\begin{theorem}[Finite spectral submultiset factor]\label{thm:factor}
+Let $A\in\Schatten_2(H)$ and let $(\lambda_j)$ denote its nonzero eigenvalues,
+with algebraic multiplicity.  Let $C$ be any finite submultiset.  Then
+\[
+ D_A(z):=\det_2(I-zA)=C_A(z)R_A(z),
+\]
+where
+\[
+ C_A(z)=\prod_{\lambda\in C}(1-z\lambda)e^{z\lambda},
+\qquad
+ R_A(z)=\prod_{\lambda_j\notin C}(1-z\lambda_j)e^{z\lambda_j}.
+\]
+Both products define entire functions.  The factorization depends only on the
+chosen eigenvalue multiset and not on any spectral projector norm.
+\end{theorem}
+
+\begin{proof}
+The eigenvalue sequence belongs to $\ell^2$ by the Weyl inequality for
+Hilbert--Schmidt operators.  Hence the genus-one product converges locally
+uniformly.  Removing finitely many factors preserves convergence, and
+reordering a normally convergent canonical product does not change its value.
+Multiplying the finite and complementary products recovers the full product.
+\end{proof}
+
+\begin{proposition}[Trace germ]\label{prop:trace}
+On the disk of convergence of the logarithmic germ,
+\[
+ \log R_A(z)=-\sum_{n\ge2}\frac{z^n}{n}\tau_n,
+ \qquad
+ \tau_n=\sum_{\lambda_j\notin C}\lambda_j^n.
+\]
+If $A^n$ is trace class, $\tau_n$ equals the trace of $A^n$ after subtracting
+the selected eigenvalue powers.
+\end{proposition}
+
+\begin{proof}
+Use $\log((1-w)e^w)=-\sum_{n\ge2}w^n/n$ and interchange normally convergent
+sums near the origin.  Lidskii's theorem identifies trace-class power traces
+with algebraic eigenvalue sums \citep{Simon2005}.
+\end{proof}
+
+Proposition~\ref{prop:trace} identifies the replacement for a failed ideal
+norm estimate: directly control the complement power traces.
+
+\begin{proposition}[Selected divisor and logarithmic derivative]
+Assume the selected multiset contains no zero values.  The zeros of $C_A$
+are precisely the reciprocals $\lambda^{-1}$ for $\lambda\in C$, with their
+selected algebraic multiplicities, and
+\[
+ \frac{C_A'(z)}{C_A(z)}
+ =-\sum_{\lambda\in C}\frac{z\lambda^2}{1-z\lambda}
+\]
+away from those zeros.  Hence the projection-free quotient removes exactly
+the selected finite divisor and no additional finite zeros.
+\end{proposition}
+
+\begin{proof}
+The exponential multiplier in each genus-one factor is nonvanishing, so its
+only zero is $z=\lambda^{-1}$.  Differentiating
+$\log((1-z\lambda)e^{z\lambda})$ gives
+$-\lambda/(1-z\lambda)+\lambda=-z\lambda^2/(1-z\lambda)$.
+\end{proof}
+
+This divisor statement is stronger than a grid identity.  Once a finite
+cloud multiset has been chosen, its determinant factor and multiplicities are
+defined algebraically even when the corresponding invariant subspace is
+almost defective.
+
+\section{Finite-factor stability without eigenvectors}
+
+The absence of projector norms does not make root approximation irrelevant,
+but it gives the appropriate conditioning scale.  Let
+$f(w)=\log(1-w)+w$, normalized by $f(0)=0$.  If paired finite multisets
+$C=\{\lambda_j\}_{j=1}^k$ and
+$\widetilde C=\{\widetilde\lambda_j\}_{j=1}^k$ satisfy
+\[
+ |z\lambda_j|\le r,
+ \qquad |z\widetilde\lambda_j|\le r<1
+ \quad (|z|\le R),
+\]
+then the normalized logarithms obey
+\begin{equation}\label{eq:lipschitz}
+ \left|\log C_A(z)-\log \widetilde C_A(z)\right|
+ \le \frac{rR}{1-r}
+       \sum_{j=1}^k|\lambda_j-\widetilde\lambda_j|.
+\end{equation}
+Indeed $f'(w)=-w/(1-w)$ has modulus at most $r/(1-r)$ on the convex disk
+$|w|\le r$, and one applies the mean-value integral to every paired factor.
+
+Estimate~\eqref{eq:lipschitz} depends on root errors and distance from the
+reciprocal divisor, but not on left/right eigenvector angles.  It therefore
+explains why the $10^{12}$ projector norm and the $10^{-15}$ product identity
+can coexist without contradiction.
+
+\section{Finite resolved audit}
+
+For each endpoint, the candidate bulk multiset is split into the selected
+shell-complete cloud and the remaining resolved candidate roots.  We evaluate
+all factors at 48 angles on each of the radii $0.25$, $0.5$, $0.75$, and $1$.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+Quantity & value\\
+\midrule
+Endpoint multisets & 32\\
+Grid points per endpoint & 192\\
+Factorization cases & 6,144\\
+Maximum cloud matching error & $0$\\
+Maximum product discrepancy & $1.8311\times10^{-15}$\\
+Inherited maximum projector norm & $2.2610\times10^{12}$\\
+\bottomrule
+\end{tabular}
+\caption{Projection-free finite product audit.}
+\end{table}
+
+The computation is not a surprise algebraically; its role is architectural.
+It verifies that the numerical determinant factor does not inherit the Riesz
+conditioning catastrophe.
+
+The audit also separates three finite errors that are sometimes conflated:
+the cloud-matching error, evaluation roundoff in the selected product, and
+evaluation roundoff in the complementary product.  The first is exactly zero
+for the archived multisets because the same stored roots are partitioned.
+The quoted $1.83\times10^{-15}$ maximum is therefore an evaluation identity,
+not an eigenvalue-certification radius.
+
+\section{Factorization and the small-noise limit}
+
+At fixed noise and fixed finite dimension, Theorem~\ref{thm:factor} settles
+the algebra.  Passing to $\sigma\to0$ is a different operation because both
+the ambient matrix and the selected cloud rank change.  A valid limiting
+argument must establish all three of the following:
+\begin{enumerate}[leftmargin=2em]
+\item local uniform control of the complementary products;
+\item compact-set stability of the selected reciprocal divisor;
+\item compatibility of the chosen finite factor with the intended
+deterministic normalization.
+\end{enumerate}
+None follows from pointwise finite product multiplication.  The first is
+translated by Proposition~\ref{prop:trace} into an all-order trace problem;
+the third becomes the coefficient-anchor problem isolated later in the
+batch.
+
+\section{Boundary and next target}
+
+Selecting a finite multiset at each positive noise is easy once its roots are
+listed.  The hard questions are now:
+\begin{enumerate}[leftmargin=2em]
+\item whether the selected multisets obey a canonical small-noise rule;
+\item whether the complementary canonical products form a normal family;
+\item whether their coefficient germ is the intended deterministic
+numerator rather than an over-renormalized remainder.
+\end{enumerate}
+
+RH-235 shows that the divergent Hilbert--Schmidt budget does not decide the
+second question.  RH-236 therefore computes the trace germ through order
+twelve.  No Gate A closure or arithmetic zero identification is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,223 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\C}{\mathbb C}
+
+\title{Biorthogonal Riesz-Cloud Projection and Its Conditioning Wall}
+\author{Liang Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-231 reduced the next determinant step to a moving cloud factor and a
+uniformly controlled complement.  We test the most literal implementation:
+construct the finite spectral projector from matched right and left Arnoldi
+eigenspaces.  If $R,L\in\C^{d\times k}$ and $G=L^*R$ is invertible, then
+$P=RG^{-1}L^*$ is the unique projector with range $\operatorname{ran}R$ and
+kernel $\ker L^*$.  For exact paired invariant spaces it is reducing.
+
+All 32 shell-complete RH-222 endpoints admit floating projector candidates.
+The right and left eigenpair residuals are at most $1.60\times10^{-12}$ and
+$2.16\times10^{-12}$, respectively.  Nevertheless the smallest overlap
+singular value is $5.67\times10^{-13}$, the largest overlap condition number
+is $1.47\times10^{12}$, and the projector norm grows from about $40.75$ to
+$2.26\times10^{12}$.  Seventeen endpoints exceed $10^6$.
+
+Thus the finite Riesz formula is available, but its direct numerical
+realization does not supply a uniform small-noise projector bound.  This is a
+conditioning result, not an interval-certified nonexistence theorem.  Gate A
+and all later Hilbert--Polya gates remain open.
+\end{abstract}
+
+\section{The moving-cloud projector problem}
+
+The RH-222 atlas selects conjugacy-closed outer resonance clouds whose ranks
+grow from four to $34$--$35$ as the noise decreases
+\citep{WangRH222,WangRH231}.  RH-80 showed that a reducing cloud projection
+would give an exact determinant factorization and would isolate the only
+block for which a uniform ideal bound is needed \citep{WangRH80}.  The
+present question is narrower: can the archived finite eigendata be converted
+into a numerically stable reducing projector?
+
+For a nonnormal matrix, right eigenvectors alone do not determine a bounded
+projection.  The left/right angle is decisive; this is standard in
+nonnormal perturbation theory \citep{Kato1995,TrefethenEmbree2005}.
+
+\section{Biorthogonal projector formula}
+
+\begin{theorem}[Finite biorthogonal projector]\label{thm:projector}
+Let $A\in\C^{d\times d}$.  Suppose the columns of $R,L\in\C^{d\times k}$
+are linearly independent and $G=L^*R$ is invertible.  Then
+\[
+ P=RG^{-1}L^*
+\]
+satisfies $P^2=P$, $\operatorname{ran}P=\operatorname{ran}R$, and
+$\ker P=\ker L^*$.
+
+If there is a matrix $\Lambda\in\C^{k\times k}$ such that
+\[
+ AR=R\Lambda,
+ \qquad
+ A^*L=L\Lambda^*,
+\]
+then $AP=PA$.
+\end{theorem}
+
+\begin{proof}
+The identity $L^*R=G$ gives
+\[
+ P^2=RG^{-1}(L^*R)G^{-1}L^*=RG^{-1}L^*=P.
+\]
+Also $PR=R$, so the range is exactly $\operatorname{ran}R$, while
+$Px=0$ precisely when $L^*x=0$.  Invariance gives
+\[
+ AP=R\Lambda G^{-1}L^*,
+ \qquad
+ PA=RG^{-1}\Lambda L^*.
+\]
+Since $L^*AR=(A^*L)^*R=\Lambda L^*R$ and also
+$L^*AR=L^*R\Lambda$, one has $\Lambda G=G\Lambda$; hence the two expressions
+coincide.
+\end{proof}
+
+The formula is exact but potentially unstable.  The inverse overlap
+$G^{-1}$ can be large even when each eigenpair residual is tiny.  A reduced
+QR factorization evaluates the nonzero singular values of $P$ without ever
+forming a dense $d\times d$ matrix.
+
+\begin{proposition}[Principal-angle formula]\label{prop:angle}
+Let $R=Q_RX$ and $L=Q_LY$ be thin QR factorizations, where $Q_R,Q_L$ have
+orthonormal columns and $X,Y$ are invertible.  Set
+$H=Q_L^*Q_R$.  If $H$ is invertible, then
+\[
+ P=Q_RH^{-1}Q_L^*,
+ \qquad
+ \norm P_2=\norm{H^{-1}}_2=\frac{1}{s_{\min}(H)}.
+\]
+Equivalently, if $\theta_{\max}$ is the largest principal angle between
+$\operatorname{ran}R$ and $\operatorname{ran}L$, then
+$\norm P_2=\sec\theta_{\max}$.
+\end{proposition}
+
+\begin{proof}
+Substitution into $R(L^*R)^{-1}L^*$ cancels $X$ and $Y^*$ and gives the
+first formula.  Left multiplication by $Q_R$ is isometric, while every
+vector in $\mathbb C^k$ is $Q_L^*x$ for some unit-space vector $x$ of the
+same norm.  Hence $\norm{Q_RH^{-1}Q_L^*}_2=\norm{H^{-1}}_2$.  The singular
+values of $Q_L^*Q_R$ are the cosines of the principal angles.
+\end{proof}
+
+Proposition~\ref{prop:angle} removes a possible ambiguity in interpreting
+the audit.  The large norms are not caused by a poor normalization of the
+individual eigenvectors: QR normalization cancels that freedom.  They record
+an intrinsic near-orthogonality of the right cloud and the dual left cloud.
+Thus a uniform projector theorem would need a uniform lower bound for
+$s_{\min}(Q_L^*Q_R)$, or an equivalent contour-resolvent estimate.
+
+\section{Frozen finite audit}
+
+At each endpoint we reconstruct the same row-stochastic folded Gaussian
+matrix used in RH-222.  The right endpoint is the Haar-coarse compression of
+the corresponding fine matrix.  We scale by the same Hardy radius $0.85$,
+match the Perron root, parity root, and shell-complete cloud, and independently
+solve the transposed problem for the left space.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{rrrrr}
+\toprule
+$\sigma$ & side & rank incl. peripheral & $\norm P_2$ & overlap condition\\
+\midrule
+$0.04$ & left  & 6  & $4.159\times10^1$ & ---\\
+$0.04$ & right & 6  & $4.075\times10^1$ & ---\\
+$0.005$ & left  & 25 & $4.476\times10^6$ & ---\\
+$0.005$ & right & 25 & $4.972\times10^6$ & ---\\
+$0.00125$ & left  & 37 & $2.261\times10^{12}$ & $1.466\times10^{12}$\\
+$0.00125$ & right & 36 & $5.436\times10^{10}$ & ---\\
+\bottomrule
+\end{tabular}
+\caption{Representative floating biorthogonal projector candidates.  Dashes
+mean that only the batch extremum, not the displayed row value, is quoted.}
+\end{table}
+
+The smallest observed ratio between radial gap and projector norm is
+$6.40\times10^{-16}$.  Moreover the absolute floating commutator defect can
+become large because residuals of size $10^{-12}$ are amplified by a
+projector of size $10^{12}$.  This is precisely the regime where a posteriori
+residuals cease to imply a robust invariant subspace.
+
+\section{Conditioning versus residual accuracy}
+
+Small eigenpair residuals and a stable spectral subspace answer different
+questions.  A residual bound certifies that each computed vector is close to
+being invariant in an absolute sense.  Passing from those vectors to an
+oblique projector requires inversion of the overlap matrix.  First-order
+perturbations of $G^{-1}$ contain the factor
+\[
+ \delta(G^{-1})=-G^{-1}(\delta G)G^{-1}+O(\norm{\delta G}^2),
+\]
+so the overlap condition number enters twice in a naive perturbation bound.
+At the last endpoints, ordinary double-precision perturbations are therefore
+not small relative to the inverse-overlap scale, even though the Arnoldi
+residuals themselves remain near $10^{-12}$.
+
+This observation also explains why forming the full matrix $P$ is avoided in
+the archived calculation.  The norm is evaluated from the reduced overlap
+in Proposition~\ref{prop:angle}; idempotence and commutator diagnostics are
+reported only as floating consistency checks.  They are not used as
+certificates of a small-noise limiting projection.
+
+\section{What a certified continuation would require}
+
+There are at least three mathematically distinct ways to improve the finite
+construction.
+\begin{enumerate}[leftmargin=2em]
+\item \emph{Interval biorthogonality:} enclose both invariant spaces and
+prove a positive lower bound for the smallest overlap singular value.
+\item \emph{Contour control:} choose a shell-complete contour and bound the
+resolvent uniformly on it, thereby defining the Riesz projector without
+pairing individual roots.
+\item \emph{Adapted function spaces:} conjugate the transfer operator into a
+norm in which the left/right angle remains controlled as the noise and mesh
+vanish.
+\end{enumerate}
+The current data neither proves nor disproves any of these stronger
+possibilities.  It does show that the unweighted Euclidean realization cannot
+be promoted to a uniform theorem merely from residual accuracy.
+
+\section{What is and is not proved}
+
+Theorem~\ref{thm:projector} is unconditional finite-dimensional algebra.  The
+audit establishes that the archived eigenvalues can be paired with left and
+right Arnoldi vectors, but it does not provide interval enclosures for the
+eigenvalues, an interval lower bound for $s_{\min}(G)$, or a certified contour
+resolvent estimate.
+
+The negative conclusion is correspondingly precise: the direct floating
+biorthogonal construction does not support a uniform projector bound.  A
+different function space, an analytic contour argument, or a determinant
+factorization that avoids projector norms may still succeed.  RH-233 tests
+whether the positive radial shell gaps can rescue the construction; RH-234
+develops the projection-free alternative.
+
+No self-adjoint operator, $T\log T$ law, prime-power trace formula, zeta-zero
+identification, or Riemann-hypothesis implication is asserted.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
