@@ -1,0 +1,48 @@
+{
+  "all_checks_pass": true,
+  "checks": {
+    "L2_false": true,
+    "endpoint_credit_zero": true,
+    "fixed_atom_decay_false": true,
+    "quantifier_signature_exact": true,
+    "stop_scope_preserved": true,
+    "strict_budget_unpaid": true
+  },
+  "mutation_registry": [
+    {
+      "name": "reject_named_atom_promotion",
+      "rejected": true
+    },
+    {
+      "name": "reject_phase_average_promotion",
+      "rejected": true
+    },
+    {
+      "name": "reject_fixed_h0_as_decay",
+      "rejected": true
+    },
+    {
+      "name": "reject_scoped_stop_expansion",
+      "rejected": true
+    },
+    {
+      "name": "reject_L2_promotion",
+      "rejected": true
+    },
+    {
+      "name": "reject_endpoint_credit",
+      "rejected": true
+    },
+    {
+      "name": "reject_source_hash_as_theorem",
+      "rejected": true
+    },
+    {
+      "name": "reject_extra_field",
+      "rejected": true
+    }
+  ],
+  "paper": 191,
+  "payload_sha256": "ebd2a4f4b28cb3c2c46c511c8500bb4f893980f2f95743c733846b74287c6c8b",
+  "schema_id": "tpc-191-pointwise-frontier-integration-audit-v1"
+}

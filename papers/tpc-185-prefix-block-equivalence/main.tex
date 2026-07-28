@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype,booktabs,tabularx,xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black]{hyperref}
+\setlength{\emergencystretch}{4em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+\title{\textbf{Prefix Maxima and Consecutive Blocks: An Exact Deterministic Equivalence}}
+\author{Liang Wang\\Huazhong University of Science and Technology}
+\date{July 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every finite sequence, the largest consecutive-block sum is at most twice the largest prefix sum, while every prefix is itself a consecutive block.  Thus a uniform block theorem and the desired prefix theorem are equivalent up to the literal factor two, with no phase, scale, support, or power change.
+The classification is \texttt{REDUCTION\_\allowbreak{}L1}; no L2 arithmetic
+progress or endpoint credit is claimed.
+\end{abstract}
+
+\section{Frozen target}
+The selected route is \texttt{O161.bad\_\allowbreak{}endpoint\_\allowbreak{}pointwise\_\allowbreak{}fixed\_\allowbreak{}atom} \citep{TPC182}.  The required
+signature is actual fixed-$h_0$ packet, named fixed atom, deterministic every
+prefix, deterministic every scale, fixed-$X$ power at that atom, and actual
+active support.  Throughout $h_0=2$ is only a source-backed data fact.
+
+\section{Exact result}
+\begin{theorem}
+If P=max\_\allowbreak{}k |sum\_\allowbreak{}{j<=k} a\_\allowbreak{}j| and B=max\_\allowbreak{}{r<s}|sum\_\allowbreak{}{r<j<=s}a\_\allowbreak{}j|, then P<=B<=2P.  The factor two is sharp for general complex sequences.
+\end{theorem}
+\begin{proof}
+Write S\_\allowbreak{}k=sum\_\allowbreak{}{j<=k}a\_\allowbreak{}j and S\_\allowbreak{}0=0.  Every prefix is the block S\_\allowbreak{}k-S\_\allowbreak{}0, hence P<=B.  Every block is S\_\allowbreak{}s-S\_\allowbreak{}r, so |S\_\allowbreak{}s-S\_\allowbreak{}r|<=|S\_\allowbreak{}s|+|S\_\allowbreak{}r|<=2P.  Prefix values 1 and -1 show that the factor two is sharp for unrestricted complex sequences.
+\end{proof}
+
+The smallest missing literal theorem is
+\texttt{NAMED\_\allowbreak{}ATOM\_\allowbreak{}CONSECUTIVE\_\allowbreak{}BLOCK\_\allowbreak{}POWER\_\allowbreak{}SAVING}.
+
+\section{Scoped stop and claim firewall}
+No new scoped stop is declared in this paper.
+
+The result is L0/L1 only.  Phase averages and Lebesgue-almost-every phase are
+not named atoms.  Fixed $h_0=2$ is not decay.  Archive addressing is not
+canonical physical representation, and empty-domain truth is not actual
+active support.  The named-atom endpoint charge is zero, so the strict
+$1/400$ budget is unpaid.  We claim no program-positive L2, prime-pair lower
+bound, or twin-prime theorem.
+
+\section{Reproducibility}
+The adjacent JSON payload records the full six-axis signature, source lock,
+typed result, exact scoped-stop cell, endpoint ledger, and claim firewall.
+The audit artifact contains eight true mutation-rejection assertions.
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

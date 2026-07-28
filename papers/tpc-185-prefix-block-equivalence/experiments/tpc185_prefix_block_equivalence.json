@@ -1,0 +1,80 @@
+{
+  "claim_boundary": {
+    "archive_address_is_canonical_physical_representation": false,
+    "empty_domain_is_actual_active_support": false,
+    "fixed_h0_data_is_decay": false,
+    "lebesgue_ae_is_named_fixed_atom": false,
+    "phase_average_is_named_fixed_atom": false,
+    "prime_pair_lower_bound": false,
+    "program_positive_L2": false,
+    "scoped_method_stop_is_pointwise_route_stop": false,
+    "strict_one_over_400": false,
+    "twin_prime_theorem": false
+  },
+  "classification": "REDUCTION_L1",
+  "endpoint_ledger": {
+    "named_atom_sigma_credit": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "required_strict_budget": {
+      "denominator": 400,
+      "numerator": 1
+    },
+    "state": "UNPAID"
+  },
+  "fixed_atom_decay_obtained": false,
+  "fixed_h0": {
+    "semantics": "SOURCE_BACKED_DATA_FACT_ONLY",
+    "value": 2
+  },
+  "paper": 185,
+  "progress": {
+    "L0": true,
+    "L1": true,
+    "L2": false
+  },
+  "proof": "Write S_k=sum_{j<=k}a_j and S_0=0.  Every prefix is the block S_k-S_0, hence P<=B.  Every block is S_s-S_r, so |S_s-S_r|<=|S_s|+|S_r|<=2P.  Prefix values 1 and -1 show that the factor two is sharp for unrestricted complex sequences.",
+  "required_quantifier_signature": {
+    "carrier_axis": "ACTUAL_FIXED_H0_PACKET",
+    "decay_axis": "FIXED_X_POWER_FIXED_ATOM",
+    "endpoint_axis": "DETERMINISTIC_ALL_PREFIX",
+    "phase_axis": "NAMED_FIXED_ATOM",
+    "scale_axis": "DETERMINISTIC_ALL_SCALE",
+    "support_axis": "ACTUAL_ACTIVE_SUPPORT"
+  },
+  "result": "For every finite sequence, the largest consecutive-block sum is at most twice the largest prefix sum, while every prefix is itself a consecutive block.  Thus a uniform block theorem and the desired prefix theorem are equivalent up to the literal factor two, with no phase, scale, support, or power change.",
+  "schema_id": "tpc-185-prefix-block-equivalence-v1",
+  "selected_route": "O161.bad_endpoint_pointwise_fixed_atom",
+  "smallest_literal_missing_theorem": "NAMED_ATOM_CONSECUTIVE_BLOCK_POWER_SAVING",
+  "source_locks": [
+    {
+      "hash_is_theorem_evidence": false,
+      "path": "papers/tpc-182-mvp8-source-phase-route-decision/experiments/tpc182_mvp8_snapshot.json",
+      "sha256": "9a0fda83836fe0622783849caa87197d74b66facc36742e7caab46b7c702df0d",
+      "source_id": "TPC182.snapshot"
+    },
+    {
+      "hash_is_theorem_evidence": false,
+      "path": "papers/tpc-161-source-locked-occurrence-return-integration/experiments/tpc161_occurrence_return_manifest.json",
+      "sha256": "ba562b20e968efa6343e02489162820228cc1b695ef7c73b8bd38ab9314c672f",
+      "source_id": "TPC161.manifest"
+    },
+    {
+      "hash_is_theorem_evidence": false,
+      "path": "papers/tpc-171-source-locked-occurrence-phase-return-integration/experiments/tpc171_integration_manifest.json",
+      "sha256": "472d1593bf1557857a25f64b39062149e592f4e872cf2f7494edb9824bcc9693",
+      "source_id": "TPC171.manifest"
+    },
+    {
+      "hash_is_theorem_evidence": false,
+      "path": "papers/tpc-181-metric-fixed-atom-selector-gate/experiments/tpc181_selector_gate.json",
+      "sha256": "e7f0ce222e3d74c354f3c4878d77e4f2ce048c8cf620c76da6b9908e9e346cd9",
+      "source_id": "TPC181.selector_gate"
+    }
+  ],
+  "stop_scoped": null,
+  "theorem": "If P=max_k |sum_{j<=k} a_j| and B=max_{r<s}|sum_{r<j<=s}a_j|, then P<=B<=2P.  The factor two is sharp for general complex sequences.",
+  "title": "Prefix Maxima and Consecutive Blocks: An Exact Deterministic Equivalence",
+  "verdict": "EXACT_FACTOR_TWO_EQUIVALENCE"
+}

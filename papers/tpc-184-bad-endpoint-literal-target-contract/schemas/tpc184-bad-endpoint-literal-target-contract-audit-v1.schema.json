@@ -1,0 +1,79 @@
+{
+  "$id": "tpc-184-bad-endpoint-literal-target-contract-audit-v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "all_checks_pass": {
+      "type": "boolean"
+    },
+    "checks": {
+      "additionalProperties": false,
+      "properties": {
+        "L2_false": {
+          "type": "boolean"
+        },
+        "endpoint_credit_zero": {
+          "type": "boolean"
+        },
+        "fixed_atom_decay_false": {
+          "type": "boolean"
+        },
+        "quantifier_signature_exact": {
+          "type": "boolean"
+        },
+        "stop_scope_preserved": {
+          "type": "boolean"
+        },
+        "strict_budget_unpaid": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "quantifier_signature_exact",
+        "fixed_atom_decay_false",
+        "L2_false",
+        "endpoint_credit_zero",
+        "strict_budget_unpaid",
+        "stop_scope_preserved"
+      ],
+      "type": "object"
+    },
+    "mutation_registry": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "rejected": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "rejected"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "paper": {
+      "type": "integer"
+    },
+    "payload_sha256": {
+      "type": "string"
+    },
+    "schema_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_id",
+    "paper",
+    "payload_sha256",
+    "checks",
+    "mutation_registry",
+    "all_checks_pass"
+  ],
+  "type": "object"
+}

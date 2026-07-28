@@ -1,0 +1,277 @@
+{
+  "$id": "tpc-185-prefix-block-equivalence-v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "archive_address_is_canonical_physical_representation": {
+          "type": "boolean"
+        },
+        "empty_domain_is_actual_active_support": {
+          "type": "boolean"
+        },
+        "fixed_h0_data_is_decay": {
+          "type": "boolean"
+        },
+        "lebesgue_ae_is_named_fixed_atom": {
+          "type": "boolean"
+        },
+        "phase_average_is_named_fixed_atom": {
+          "type": "boolean"
+        },
+        "prime_pair_lower_bound": {
+          "type": "boolean"
+        },
+        "program_positive_L2": {
+          "type": "boolean"
+        },
+        "scoped_method_stop_is_pointwise_route_stop": {
+          "type": "boolean"
+        },
+        "strict_one_over_400": {
+          "type": "boolean"
+        },
+        "twin_prime_theorem": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "phase_average_is_named_fixed_atom",
+        "lebesgue_ae_is_named_fixed_atom",
+        "fixed_h0_data_is_decay",
+        "archive_address_is_canonical_physical_representation",
+        "empty_domain_is_actual_active_support",
+        "scoped_method_stop_is_pointwise_route_stop",
+        "program_positive_L2",
+        "strict_one_over_400",
+        "prime_pair_lower_bound",
+        "twin_prime_theorem"
+      ],
+      "type": "object"
+    },
+    "classification": {
+      "type": "string"
+    },
+    "endpoint_ledger": {
+      "additionalProperties": false,
+      "properties": {
+        "named_atom_sigma_credit": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "type": "integer"
+            },
+            "numerator": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "type": "object"
+        },
+        "required_strict_budget": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "type": "integer"
+            },
+            "numerator": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "type": "object"
+        },
+        "state": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "named_atom_sigma_credit",
+        "required_strict_budget",
+        "state"
+      ],
+      "type": "object"
+    },
+    "fixed_atom_decay_obtained": {
+      "type": "boolean"
+    },
+    "fixed_h0": {
+      "additionalProperties": false,
+      "properties": {
+        "semantics": {
+          "type": "string"
+        },
+        "value": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "value",
+        "semantics"
+      ],
+      "type": "object"
+    },
+    "paper": {
+      "type": "integer"
+    },
+    "progress": {
+      "additionalProperties": false,
+      "properties": {
+        "L0": {
+          "type": "boolean"
+        },
+        "L1": {
+          "type": "boolean"
+        },
+        "L2": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "L0",
+        "L1",
+        "L2"
+      ],
+      "type": "object"
+    },
+    "proof": {
+      "type": "string"
+    },
+    "required_quantifier_signature": {
+      "additionalProperties": false,
+      "properties": {
+        "carrier_axis": {
+          "type": "string"
+        },
+        "decay_axis": {
+          "type": "string"
+        },
+        "endpoint_axis": {
+          "type": "string"
+        },
+        "phase_axis": {
+          "type": "string"
+        },
+        "scale_axis": {
+          "type": "string"
+        },
+        "support_axis": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "carrier_axis",
+        "phase_axis",
+        "endpoint_axis",
+        "scale_axis",
+        "decay_axis",
+        "support_axis"
+      ],
+      "type": "object"
+    },
+    "result": {
+      "type": "string"
+    },
+    "schema_id": {
+      "type": "string"
+    },
+    "selected_route": {
+      "type": "string"
+    },
+    "smallest_literal_missing_theorem": {
+      "type": "string"
+    },
+    "source_locks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "hash_is_theorem_evidence": {
+            "type": "boolean"
+          },
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "path",
+          "sha256",
+          "hash_is_theorem_evidence"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "stop_scoped": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "architecture_stopped": {
+              "type": "boolean"
+            },
+            "cell": {
+              "type": "string"
+            },
+            "global_pointwise_route_stopped": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "cell",
+            "global_pointwise_route_stopped",
+            "architecture_stopped"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "theorem": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_id",
+    "paper",
+    "title",
+    "classification",
+    "verdict",
+    "result",
+    "theorem",
+    "proof",
+    "selected_route",
+    "smallest_literal_missing_theorem",
+    "required_quantifier_signature",
+    "fixed_h0",
+    "fixed_atom_decay_obtained",
+    "endpoint_ledger",
+    "stop_scoped",
+    "progress",
+    "claim_boundary",
+    "source_locks"
+  ],
+  "type": "object"
+}

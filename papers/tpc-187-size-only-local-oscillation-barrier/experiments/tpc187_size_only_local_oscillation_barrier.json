@@ -1,0 +1,84 @@
+{
+  "claim_boundary": {
+    "archive_address_is_canonical_physical_representation": false,
+    "empty_domain_is_actual_active_support": false,
+    "fixed_h0_data_is_decay": false,
+    "lebesgue_ae_is_named_fixed_atom": false,
+    "phase_average_is_named_fixed_atom": false,
+    "prime_pair_lower_bound": false,
+    "program_positive_L2": false,
+    "scoped_method_stop_is_pointwise_route_stop": false,
+    "strict_one_over_400": false,
+    "twin_prime_theorem": false
+  },
+  "classification": "OBSTRUCTION_L1",
+  "endpoint_ledger": {
+    "named_atom_sigma_credit": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "required_strict_budget": {
+      "denominator": 400,
+      "numerator": 1
+    },
+    "state": "UNPAID"
+  },
+  "fixed_atom_decay_obtained": false,
+  "fixed_h0": {
+    "semantics": "SOURCE_BACKED_DATA_FACT_ONLY",
+    "value": 2
+  },
+  "paper": 187,
+  "progress": {
+    "L0": true,
+    "L1": true,
+    "L2": false
+  },
+  "proof": "Triangle inequality gives max_{r<=L}|sum_{j<=r}a_j|<=L whenever |a_j|<=1.  The synthetic fixture a_j=1 attains L at r=L.  Therefore no argument using only these two premises can force a factor X^{-sigma}; arithmetic cancellation is an additional necessary input.",
+  "required_quantifier_signature": {
+    "carrier_axis": "ACTUAL_FIXED_H0_PACKET",
+    "decay_axis": "FIXED_X_POWER_FIXED_ATOM",
+    "endpoint_axis": "DETERMINISTIC_ALL_PREFIX",
+    "phase_axis": "NAMED_FIXED_ATOM",
+    "scale_axis": "DETERMINISTIC_ALL_SCALE",
+    "support_axis": "ACTUAL_ACTIVE_SUPPORT"
+  },
+  "result": "The triangle inequality gives only block length after q/T normalization.  A constant-sign synthetic sequence attains that bound, so boundedness and support size alone cannot yield any fixed-X power saving.  This stops only the size-only local oscillation method.",
+  "schema_id": "tpc-187-size-only-local-oscillation-barrier-v1",
+  "selected_route": "O161.bad_endpoint_pointwise_fixed_atom",
+  "smallest_literal_missing_theorem": "ARITHMETIC_CANCELLATION_INPUT_FOR_LOCAL_INCREMENTS",
+  "source_locks": [
+    {
+      "hash_is_theorem_evidence": false,
+      "path": "papers/tpc-182-mvp8-source-phase-route-decision/experiments/tpc182_mvp8_snapshot.json",
+      "sha256": "9a0fda83836fe0622783849caa87197d74b66facc36742e7caab46b7c702df0d",
+      "source_id": "TPC182.snapshot"
+    },
+    {
+      "hash_is_theorem_evidence": false,
+      "path": "papers/tpc-161-source-locked-occurrence-return-integration/experiments/tpc161_occurrence_return_manifest.json",
+      "sha256": "ba562b20e968efa6343e02489162820228cc1b695ef7c73b8bd38ab9314c672f",
+      "source_id": "TPC161.manifest"
+    },
+    {
+      "hash_is_theorem_evidence": false,
+      "path": "papers/tpc-171-source-locked-occurrence-phase-return-integration/experiments/tpc171_integration_manifest.json",
+      "sha256": "472d1593bf1557857a25f64b39062149e592f4e872cf2f7494edb9824bcc9693",
+      "source_id": "TPC171.manifest"
+    },
+    {
+      "hash_is_theorem_evidence": false,
+      "path": "papers/tpc-181-metric-fixed-atom-selector-gate/experiments/tpc181_selector_gate.json",
+      "sha256": "e7f0ce222e3d74c354f3c4878d77e4f2ce048c8cf620c76da6b9908e9e346cd9",
+      "source_id": "TPC181.selector_gate"
+    }
+  ],
+  "stop_scoped": {
+    "architecture_stopped": false,
+    "cell": "SIZE_ONLY_LOCAL_OSCILLATION_METHOD",
+    "global_pointwise_route_stopped": false
+  },
+  "theorem": "For |a_j|<=1 on a block of length L, max_r|sum_{j<=r}a_j|<=L, with equality for a_j=1.  Hence no uniform X^{-sigma} follows from coefficient size and cardinality alone.",
+  "title": "A Sharp Barrier for Size-Only Control of Local Oscillation",
+  "verdict": "STOP_SCOPED"
+}

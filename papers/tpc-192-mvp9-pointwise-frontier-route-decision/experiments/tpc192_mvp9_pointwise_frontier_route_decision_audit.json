@@ -1,0 +1,48 @@
+{
+  "all_checks_pass": true,
+  "checks": {
+    "L2_false": true,
+    "endpoint_credit_zero": true,
+    "fixed_atom_decay_false": true,
+    "quantifier_signature_exact": true,
+    "stop_scope_preserved": true,
+    "strict_budget_unpaid": true
+  },
+  "mutation_registry": [
+    {
+      "name": "reject_named_atom_promotion",
+      "rejected": true
+    },
+    {
+      "name": "reject_phase_average_promotion",
+      "rejected": true
+    },
+    {
+      "name": "reject_fixed_h0_as_decay",
+      "rejected": true
+    },
+    {
+      "name": "reject_scoped_stop_expansion",
+      "rejected": true
+    },
+    {
+      "name": "reject_L2_promotion",
+      "rejected": true
+    },
+    {
+      "name": "reject_endpoint_credit",
+      "rejected": true
+    },
+    {
+      "name": "reject_source_hash_as_theorem",
+      "rejected": true
+    },
+    {
+      "name": "reject_extra_field",
+      "rejected": true
+    }
+  ],
+  "paper": 192,
+  "payload_sha256": "1755b0f39905aef368716abe3425086e683c3b191c558406e2db59605c0ddfcf",
+  "schema_id": "tpc-192-mvp9-pointwise-frontier-route-decision-audit-v1"
+}
