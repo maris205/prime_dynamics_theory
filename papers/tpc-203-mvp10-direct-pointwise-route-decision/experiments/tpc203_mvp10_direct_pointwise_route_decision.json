@@ -96,6 +96,385 @@
     ],
     "selected_pointwise_first_missing": "LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION",
     "strict_one_over_400": "UNPAID",
+    "tpc194_import_contract": {
+      "completion_axes": {
+        "common_X_N_q_ranges": "MISSING",
+        "complete_physical_loss_ledger": "MISSING",
+        "decorated_physical_coefficient": "COMPLETE_PER_PACKET",
+        "named_production_atom": "MISSING",
+        "packet_schedule": "MISSING",
+        "positive_sigma": "MISSING",
+        "prefix_index": "COMPLETE_PER_PACKET",
+        "summation_domain": "COMPLETE_PER_PACKET",
+        "symbolic_packet_atom": "COMPLETE_PER_PACKET",
+        "target_normalization_selection": "MISSING",
+        "uniform_constant_C": "MISSING"
+      },
+      "first_missing_literal_theorem": "SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK",
+      "formula_source_ledger": [
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "key",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:sector-index}",
+                  "required_fragments": [
+                    "\\xi=(\\theta,c,\\kappa,r)"
+                  ]
+                }
+              ],
+              "source_id": "TPC93.sector_partition"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "content_alias",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:progression-B}",
+                  "required_fragments": [
+                    "b=c\\kappa",
+                    "B_{\\theta,b}=\\frac{b}{g_{\\theta,b}}"
+                  ]
+                }
+              ],
+              "source_id": "TPC93.content_progression"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:sector-index}",
+                  "required_fragments": [
+                    "b_\\xi=c\\kappa\\mid P_\\theta"
+                  ]
+                }
+              ],
+              "source_id": "TPC93.sector_partition"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "signed_lift",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:signed-frequency-lift}",
+                  "required_fragments": [
+                    "\\widetilde r\\equiv r\\pmod{q_X}"
+                  ]
+                }
+              ],
+              "source_id": "TPC94.phase_conductor"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "phase_slope",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:phase-Omega}",
+                  "required_fragments": [
+                    "\\ell_\\theta v_\\theta\\sigma_\\theta B_{\\theta,b}"
+                  ]
+                }
+              ],
+              "source_id": "TPC94.phase_conductor"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL_PLUS_H0_SPECIALIZATION",
+          "formula_field": "affine_forms",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:forms}",
+                  "required_fragments": [
+                    "D_\\xi(z)&=d_\\xi+s_\\xi z",
+                    "V_\\xi(z)&=u_\\xi+a_\\xi z"
+                  ]
+                },
+                {
+                  "anchor": "\\label{eq:det-phase}",
+                  "required_fragments": [
+                    "s_\\xi u_\\xi-a_\\xi d_\\xi&=h_0\\ne0"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:det-two}",
+                  "required_fragments": [
+                    "su-ad=2."
+                  ]
+                }
+              ],
+              "source_id": "TPC127.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "inner_coefficient",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:literal-coefficient}",
+                  "required_fragments": [
+                    "\\mu(D_\\xi(z))\\mu(V_\\xi(z))",
+                    "\\one_{(B_\\xi,V_\\xi(z))=1}"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:literal-A}",
+                  "required_fragments": [
+                    "\\mu(D(z))\\mu(V(z))",
+                    "\\one_{(B,V(z))=1}"
+                  ]
+                }
+              ],
+              "source_id": "TPC127.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "SIGNED_LIFT_LITERAL",
+          "formula_field": "packet_atom",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:phase-alpha}",
+                  "required_fragments": [
+                    "\\frac{\\varepsilon_\\theta\\widetilde r\\Omega_\\xi}{c q_X}"
+                  ]
+                },
+                {
+                  "anchor": "\\label{eq:phase-resolved}",
+                  "required_fragments": [
+                    "\\zeta_\\xi e(-\\alpha_\\xi z)"
+                  ]
+                }
+              ],
+              "source_id": "TPC94.phase_conductor"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_field": "outer_multiplier",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:sector-outer-coefficient}",
+                  "required_fragments": [
+                    "c_{\\theta,X}\\mu(\\kappa)\\mu(B_\\xi)",
+                    "\\mathfrak m_{K,X}(r)"
+                  ]
+                }
+              ],
+              "source_id": "TPC93.sector_partition"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:generic-low-window}",
+                  "required_fragments": [
+                    "c_{\\theta,X}\\mu(\\kappa)\\mu(B_\\xi)",
+                    "\\mathfrak m_{K,X}(r)\\zeta_{\\xi,X}"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "ORDER_PRESERVING_PREFIX_COMPOSITION",
+          "formula_field": "decorated_inner_prefix",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:block-transform}",
+                  "required_fragments": [
+                    "\\sum_{z\\in I_\\xi}",
+                    "A_{\\xi,X}(z)\\e(-\\alpha_\\xi z)"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{prop:isometry}",
+                  "required_fragments": [
+                    "\\max_{T\\in I}\\left|\\sum_{\\substack{z\\in I\\\\z\\le T}}c_z\\right|"
+                  ]
+                }
+              ],
+              "source_id": "TPC127.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "OUTER_TIMES_INNER_PER_KEY",
+          "formula_field": "complete_per_key_contribution",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:sector-master-formula}",
+                  "required_fragments": [
+                    "\\sum_{\\xi\\in\\Xi_X(K,R)}",
+                    "\\mathfrak c_{\\xi,X}",
+                    "\\sum_{z\\in I_\\xi}"
+                  ]
+                }
+              ],
+              "source_id": "TPC93.sector_partition"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:generic-low-window}",
+                  "required_fragments": [
+                    "\\sum_{\\xi\\in\\Xi_{\\mathrm{Gen}}}",
+                    "\\mathfrak c_{\\xi,X}S_{\\xi,X}"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            }
+          ]
+        }
+      ],
+      "formula_type_registry": [
+        {
+          "domain": "N<t(z)<=2N",
+          "id": "CORE_TERMINAL_BLOCK",
+          "normalization": "q/N"
+        },
+        {
+          "domain": "0<t(z)<=T",
+          "id": "CORE_CUMULATIVE_PREFIX",
+          "normalization": "q/T"
+        },
+        {
+          "domain": "z in I_xi_X and z<=T",
+          "id": "PHYSICAL_PACKET_PREFIX",
+          "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM"
+        }
+      ],
+      "formula_type_source_ledger": [
+        {
+          "derivation_kind": "LITERAL",
+          "formula_type_id": "CORE_TERMINAL_BLOCK",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:transform}",
+                  "required_fragments": [
+                    "I_N=\\{z\\in\\mathbb Z:N<t(z)\\le2N\\}",
+                    "F_N(\\alpha)=\\frac qN\\sum_{z\\in I_N}c_z\\e(-\\alpha z)"
+                  ]
+                }
+              ],
+              "source_id": "TPC167.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "LITERAL",
+          "formula_type_id": "CORE_CUMULATIVE_PREFIX",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:main}",
+                  "required_fragments": [
+                    "\\sum_{\\substack{z\\in\\mathbb Z\\\\0<t(z)\\le T}}c_z\\rho(z)",
+                    "\\frac qT|A_\\rho(T)|"
+                  ]
+                }
+              ],
+              "source_id": "TPC159.main"
+            }
+          ]
+        },
+        {
+          "derivation_kind": "ORDER_PRESERVING_UNNORMALIZED_PREFIX_COMPOSITION",
+          "formula_type_id": "PHYSICAL_PACKET_PREFIX",
+          "source_refs": [
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{eq:block-transform}",
+                  "required_fragments": [
+                    "S_{\\xi,X}",
+                    "\\sum_{z\\in I_\\xi}",
+                    "A_{\\xi,X}(z)\\e(-\\alpha_\\xi z)"
+                  ]
+                }
+              ],
+              "source_id": "TPC108.main"
+            },
+            {
+              "locators": [
+                {
+                  "anchor": "\\label{prop:isometry}",
+                  "required_fragments": [
+                    "\\max_{T\\in I}\\left|\\sum_{\\substack{z\\in I\\\\z\\le T}}c_z\\right|"
+                  ]
+                }
+              ],
+              "source_id": "TPC127.main"
+            }
+          ]
+        }
+      ],
+      "resolved_packet_formula": {
+        "affine_forms": [
+          "D_xi(z)=d_xi+s_xi*z",
+          "V_xi(z)=u_xi+a_xi*z",
+          "s_xi*u_xi-a_xi*d_xi=2"
+        ],
+        "complete_per_key_contribution": "P_xi_X_le_T=cfrak_xi_X*S_xi_X_le_T",
+        "content_alias": "b=c*kappa and B_xi=B_theta_b",
+        "decorated_inner_prefix": "S_xi_X_le_T=sum_(z in I_xi_X,z<=T) A_xi_X(z)*e(-alpha_xi_X*z)",
+        "inner_coefficient": "A_xi_X(z)=mu(D_xi(z))*mu(V_xi(z))*1_gcd(B_xi,V_xi(z))=1*chi_theta(tau_xi+B_xi*z)*W_theta_X(tau_xi+B_xi*z)",
+        "key": "xi=(theta,c,kappa,r)",
+        "outer_multiplier": "cfrak_xi_X=c_theta_X*mu(kappa)*mu(B_xi)*mfrak_K_X(r)*zeta_xi_X",
+        "packet_atom": "alpha_xi_X=epsilon_theta*r_tilde*Omega_xi/(c*q_X) mod 1",
+        "phase_slope": "Omega_xi=ell_theta*v_theta*sigma_theta*B_theta_b",
+        "signed_lift": "r_tilde=source_defined_signed_lift(r)"
+      },
+      "schema": "tpc-194-maximal-source-backed-direct-prefix-v2",
+      "verdict": "FORMULA_COMPLETE_PER_PACKET_L1"
+    },
     "two_O161_pointwise_parents_open": true,
     "upstream_range": "TPC-194--202"
   },
@@ -131,7 +510,7 @@
     "global_architecture": "OPEN",
     "tpc193_declared_candidate_mechanism_corpus_v1": "STOP_SCOPED"
   },
-  "schema": "tpc-203-mvp10-direct-pointwise-route-decision-v1",
+  "schema": "tpc-203-mvp10-direct-pointwise-route-decision-v2",
   "snapshot": {
     "date": "2026-07-29",
     "hash_mode": "CANONICAL_UTF8_LF",
@@ -151,7 +530,7 @@
       "source_id": "TPC193.gate"
     },
     {
-      "canonical_utf8_lf_sha256": "cc6b0150737349dd8e5bfdf2a4b7edfde7da96056d6c54b5155b202dc6bf02f2",
+      "canonical_utf8_lf_sha256": "a4b2f4d917b0a0f16d17f5e7252fae6dd4fd7c995f8809486b14e030e179cebc",
       "hash_semantics": "INTEGRITY_ONLY",
       "path": "papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_maximal_source_backed_direct_prefix.json",
       "source_id": "TPC194.payload"

@@ -1,0 +1,2325 @@
+{
+  "$id": "tpc-194-maximal-source-backed-direct-prefix-v2.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "block_equals_cumulative_prefix": {
+          "const": false,
+          "type": "boolean"
+        },
+        "declared_corpus_stop_is_global_nonexistence": {
+          "const": false,
+          "type": "boolean"
+        },
+        "factorwise_fourier_implies_product_fourier": {
+          "const": false,
+          "type": "boolean"
+        },
+        "fixed_atom_decay_obtained": {
+          "const": false,
+          "type": "boolean"
+        },
+        "fixed_h0_data_is_decay": {
+          "const": false,
+          "type": "boolean"
+        },
+        "hash_integrity_is_theorem_evidence": {
+          "const": false,
+          "type": "boolean"
+        },
+        "lebesgue_ae_phase_is_named_atom_control": {
+          "const": false,
+          "type": "boolean"
+        },
+        "mobius_product_is_one_multiplicative_function": {
+          "const": false,
+          "type": "boolean"
+        },
+        "packet_key_is_production_packet_schedule": {
+          "const": false,
+          "type": "boolean"
+        },
+        "phase_L2_is_named_atom_control": {
+          "const": false,
+          "type": "boolean"
+        },
+        "prime_pair_lower_bound": {
+          "const": false,
+          "type": "boolean"
+        },
+        "program_positive_L2": {
+          "const": false,
+          "type": "boolean"
+        },
+        "scoped_method_stop_is_parent_stop": {
+          "const": false,
+          "type": "boolean"
+        },
+        "strict_one_over_400": {
+          "const": false,
+          "type": "boolean"
+        },
+        "symbolic_packet_atom_is_named_production_atom": {
+          "const": false,
+          "type": "boolean"
+        },
+        "twin_prime_theorem": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "block_equals_cumulative_prefix",
+        "symbolic_packet_atom_is_named_production_atom",
+        "packet_key_is_production_packet_schedule",
+        "phase_L2_is_named_atom_control",
+        "lebesgue_ae_phase_is_named_atom_control",
+        "factorwise_fourier_implies_product_fourier",
+        "mobius_product_is_one_multiplicative_function",
+        "fixed_h0_data_is_decay",
+        "hash_integrity_is_theorem_evidence",
+        "scoped_method_stop_is_parent_stop",
+        "declared_corpus_stop_is_global_nonexistence",
+        "fixed_atom_decay_obtained",
+        "program_positive_L2",
+        "strict_one_over_400",
+        "prime_pair_lower_bound",
+        "twin_prime_theorem"
+      ],
+      "type": "object"
+    },
+    "classification": {
+      "const": "FORMULA_RECONSTRUCTION_L1",
+      "type": "string"
+    },
+    "endpoint_ledger": {
+      "additionalProperties": false,
+      "properties": {
+        "named_atom_sigma_credit": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "const": 1,
+              "type": "integer"
+            },
+            "numerator": {
+              "const": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "type": "object"
+        },
+        "required_strict_budget": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "const": 400,
+              "type": "integer"
+            },
+            "numerator": {
+              "const": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "type": "object"
+        },
+        "state": {
+          "const": "UNPAID",
+          "type": "string"
+        }
+      },
+      "required": [
+        "named_atom_sigma_credit",
+        "required_strict_budget",
+        "state"
+      ],
+      "type": "object"
+    },
+    "finite_certificate": {
+      "additionalProperties": false,
+      "properties": {
+        "affine_fixture": {
+          "additionalProperties": false,
+          "properties": {
+            "a": {
+              "const": 1,
+              "type": "integer"
+            },
+            "d": {
+              "const": 1,
+              "type": "integer"
+            },
+            "determinant": {
+              "const": 2,
+              "type": "integer"
+            },
+            "s": {
+              "const": 3,
+              "type": "integer"
+            },
+            "u": {
+              "const": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "a",
+            "s",
+            "d",
+            "u",
+            "determinant"
+          ],
+          "type": "object"
+        },
+        "completion_axes": {
+          "additionalProperties": false,
+          "properties": {
+            "common_X_N_q_ranges": {
+              "const": "MISSING",
+              "type": "string"
+            },
+            "complete_physical_loss_ledger": {
+              "const": "MISSING",
+              "type": "string"
+            },
+            "decorated_physical_coefficient": {
+              "const": "COMPLETE_PER_PACKET",
+              "type": "string"
+            },
+            "named_production_atom": {
+              "const": "MISSING",
+              "type": "string"
+            },
+            "packet_schedule": {
+              "const": "MISSING",
+              "type": "string"
+            },
+            "positive_sigma": {
+              "const": "MISSING",
+              "type": "string"
+            },
+            "prefix_index": {
+              "const": "COMPLETE_PER_PACKET",
+              "type": "string"
+            },
+            "summation_domain": {
+              "const": "COMPLETE_PER_PACKET",
+              "type": "string"
+            },
+            "symbolic_packet_atom": {
+              "const": "COMPLETE_PER_PACKET",
+              "type": "string"
+            },
+            "target_normalization_selection": {
+              "const": "MISSING",
+              "type": "string"
+            },
+            "uniform_constant_C": {
+              "const": "MISSING",
+              "type": "string"
+            }
+          },
+          "required": [
+            "summation_domain",
+            "prefix_index",
+            "decorated_physical_coefficient",
+            "symbolic_packet_atom",
+            "named_production_atom",
+            "packet_schedule",
+            "common_X_N_q_ranges",
+            "uniform_constant_C",
+            "positive_sigma",
+            "target_normalization_selection",
+            "complete_physical_loss_ledger"
+          ],
+          "type": "object"
+        },
+        "formula_source_ledger": {
+          "items": false,
+          "maxItems": 10,
+          "minItems": 10,
+          "prefixItems": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "LITERAL",
+                  "type": "string"
+                },
+                "formula_field": {
+                  "const": "key",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:sector-index}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 1,
+                                  "minItems": 1,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\xi=(\\theta,c,\\kappa,r)",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC93.sector_partition",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_field",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "LITERAL",
+                  "type": "string"
+                },
+                "formula_field": {
+                  "const": "content_alias",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:progression-B}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 2,
+                                  "minItems": 2,
+                                  "prefixItems": [
+                                    {
+                                      "const": "b=c\\kappa",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "B_{\\theta,b}=\\frac{b}{g_{\\theta,b}}",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC93.content_progression",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:sector-index}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 1,
+                                  "minItems": 1,
+                                  "prefixItems": [
+                                    {
+                                      "const": "b_\\xi=c\\kappa\\mid P_\\theta",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC93.sector_partition",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_field",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "LITERAL",
+                  "type": "string"
+                },
+                "formula_field": {
+                  "const": "signed_lift",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:signed-frequency-lift}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 1,
+                                  "minItems": 1,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\widetilde r\\equiv r\\pmod{q_X}",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC94.phase_conductor",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_field",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "LITERAL",
+                  "type": "string"
+                },
+                "formula_field": {
+                  "const": "phase_slope",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:phase-Omega}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 1,
+                                  "minItems": 1,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\ell_\\theta v_\\theta\\sigma_\\theta B_{\\theta,b}",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC94.phase_conductor",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_field",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "LITERAL_PLUS_H0_SPECIALIZATION",
+                  "type": "string"
+                },
+                "formula_field": {
+                  "const": "affine_forms",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:forms}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 2,
+                                  "minItems": 2,
+                                  "prefixItems": [
+                                    {
+                                      "const": "D_\\xi(z)&=d_\\xi+s_\\xi z",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "V_\\xi(z)&=u_\\xi+a_\\xi z",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:det-phase}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 1,
+                                  "minItems": 1,
+                                  "prefixItems": [
+                                    {
+                                      "const": "s_\\xi u_\\xi-a_\\xi d_\\xi&=h_0\\ne0",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC108.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:det-two}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 1,
+                                  "minItems": 1,
+                                  "prefixItems": [
+                                    {
+                                      "const": "su-ad=2.",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC127.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_field",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "LITERAL",
+                  "type": "string"
+                },
+                "formula_field": {
+                  "const": "inner_coefficient",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:literal-coefficient}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 2,
+                                  "minItems": 2,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\mu(D_\\xi(z))\\mu(V_\\xi(z))",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "\\one_{(B_\\xi,V_\\xi(z))=1}",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC108.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:literal-A}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 2,
+                                  "minItems": 2,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\mu(D(z))\\mu(V(z))",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "\\one_{(B,V(z))=1}",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC127.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_field",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "SIGNED_LIFT_LITERAL",
+                  "type": "string"
+                },
+                "formula_field": {
+                  "const": "packet_atom",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:phase-alpha}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 1,
+                                  "minItems": 1,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\frac{\\varepsilon_\\theta\\widetilde r\\Omega_\\xi}{c q_X}",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            },
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:phase-resolved}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 1,
+                                  "minItems": 1,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\zeta_\\xi e(-\\alpha_\\xi z)",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC94.phase_conductor",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_field",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "LITERAL",
+                  "type": "string"
+                },
+                "formula_field": {
+                  "const": "outer_multiplier",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:sector-outer-coefficient}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 2,
+                                  "minItems": 2,
+                                  "prefixItems": [
+                                    {
+                                      "const": "c_{\\theta,X}\\mu(\\kappa)\\mu(B_\\xi)",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "\\mathfrak m_{K,X}(r)",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC93.sector_partition",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:generic-low-window}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 2,
+                                  "minItems": 2,
+                                  "prefixItems": [
+                                    {
+                                      "const": "c_{\\theta,X}\\mu(\\kappa)\\mu(B_\\xi)",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "\\mathfrak m_{K,X}(r)\\zeta_{\\xi,X}",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC108.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_field",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "ORDER_PRESERVING_PREFIX_COMPOSITION",
+                  "type": "string"
+                },
+                "formula_field": {
+                  "const": "decorated_inner_prefix",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:block-transform}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 2,
+                                  "minItems": 2,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\sum_{z\\in I_\\xi}",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "A_{\\xi,X}(z)\\e(-\\alpha_\\xi z)",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC108.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{prop:isometry}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 1,
+                                  "minItems": 1,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\max_{T\\in I}\\left|\\sum_{\\substack{z\\in I\\\\z\\le T}}c_z\\right|",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC127.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_field",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "OUTER_TIMES_INNER_PER_KEY",
+                  "type": "string"
+                },
+                "formula_field": {
+                  "const": "complete_per_key_contribution",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:sector-master-formula}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 3,
+                                  "minItems": 3,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\sum_{\\xi\\in\\Xi_X(K,R)}",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "\\mathfrak c_{\\xi,X}",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "\\sum_{z\\in I_\\xi}",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC93.sector_partition",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:generic-low-window}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 2,
+                                  "minItems": 2,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\sum_{\\xi\\in\\Xi_{\\mathrm{Gen}}}",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "\\mathfrak c_{\\xi,X}S_{\\xi,X}",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC108.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_field",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "formula_type_registry": {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "domain": {
+                  "const": "N<t(z)<=2N",
+                  "type": "string"
+                },
+                "id": {
+                  "const": "CORE_TERMINAL_BLOCK",
+                  "type": "string"
+                },
+                "normalization": {
+                  "const": "q/N",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "domain",
+                "normalization"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "domain": {
+                  "const": "0<t(z)<=T",
+                  "type": "string"
+                },
+                "id": {
+                  "const": "CORE_CUMULATIVE_PREFIX",
+                  "type": "string"
+                },
+                "normalization": {
+                  "const": "q/T",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "domain",
+                "normalization"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "domain": {
+                  "const": "z in I_xi_X and z<=T",
+                  "type": "string"
+                },
+                "id": {
+                  "const": "PHYSICAL_PACKET_PREFIX",
+                  "type": "string"
+                },
+                "normalization": {
+                  "const": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "domain",
+                "normalization"
+              ],
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "formula_type_source_ledger": {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "LITERAL",
+                  "type": "string"
+                },
+                "formula_type_id": {
+                  "const": "CORE_TERMINAL_BLOCK",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:transform}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 2,
+                                  "minItems": 2,
+                                  "prefixItems": [
+                                    {
+                                      "const": "I_N=\\{z\\in\\mathbb Z:N<t(z)\\le2N\\}",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "F_N(\\alpha)=\\frac qN\\sum_{z\\in I_N}c_z\\e(-\\alpha z)",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC167.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_type_id",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "LITERAL",
+                  "type": "string"
+                },
+                "formula_type_id": {
+                  "const": "CORE_CUMULATIVE_PREFIX",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:main}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 2,
+                                  "minItems": 2,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\sum_{\\substack{z\\in\\mathbb Z\\\\0<t(z)\\le T}}c_z\\rho(z)",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "\\frac qT|A_\\rho(T)|",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC159.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_type_id",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "derivation_kind": {
+                  "const": "ORDER_PRESERVING_UNNORMALIZED_PREFIX_COMPOSITION",
+                  "type": "string"
+                },
+                "formula_type_id": {
+                  "const": "PHYSICAL_PACKET_PREFIX",
+                  "type": "string"
+                },
+                "source_refs": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{eq:block-transform}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 3,
+                                  "minItems": 3,
+                                  "prefixItems": [
+                                    {
+                                      "const": "S_{\\xi,X}",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "\\sum_{z\\in I_\\xi}",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "A_{\\xi,X}(z)\\e(-\\alpha_\\xi z)",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC108.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "locators": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "anchor": {
+                                  "const": "\\label{prop:isometry}",
+                                  "type": "string"
+                                },
+                                "required_fragments": {
+                                  "items": false,
+                                  "maxItems": 1,
+                                  "minItems": 1,
+                                  "prefixItems": [
+                                    {
+                                      "const": "\\max_{T\\in I}\\left|\\sum_{\\substack{z\\in I\\\\z\\le T}}c_z\\right|",
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "type": "array"
+                                }
+                              },
+                              "required": [
+                                "anchor",
+                                "required_fragments"
+                              ],
+                              "type": "object"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "source_id": {
+                          "const": "TPC127.main",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "source_id",
+                        "locators"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "formula_type_id",
+                "derivation_kind",
+                "source_refs"
+              ],
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "resolved_packet_formula": {
+          "additionalProperties": false,
+          "properties": {
+            "affine_forms": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "const": "D_xi(z)=d_xi+s_xi*z",
+                  "type": "string"
+                },
+                {
+                  "const": "V_xi(z)=u_xi+a_xi*z",
+                  "type": "string"
+                },
+                {
+                  "const": "s_xi*u_xi-a_xi*d_xi=2",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            "complete_per_key_contribution": {
+              "const": "P_xi_X_le_T=cfrak_xi_X*S_xi_X_le_T",
+              "type": "string"
+            },
+            "content_alias": {
+              "const": "b=c*kappa and B_xi=B_theta_b",
+              "type": "string"
+            },
+            "decorated_inner_prefix": {
+              "const": "S_xi_X_le_T=sum_(z in I_xi_X,z<=T) A_xi_X(z)*e(-alpha_xi_X*z)",
+              "type": "string"
+            },
+            "inner_coefficient": {
+              "const": "A_xi_X(z)=mu(D_xi(z))*mu(V_xi(z))*1_gcd(B_xi,V_xi(z))=1*chi_theta(tau_xi+B_xi*z)*W_theta_X(tau_xi+B_xi*z)",
+              "type": "string"
+            },
+            "key": {
+              "const": "xi=(theta,c,kappa,r)",
+              "type": "string"
+            },
+            "outer_multiplier": {
+              "const": "cfrak_xi_X=c_theta_X*mu(kappa)*mu(B_xi)*mfrak_K_X(r)*zeta_xi_X",
+              "type": "string"
+            },
+            "packet_atom": {
+              "const": "alpha_xi_X=epsilon_theta*r_tilde*Omega_xi/(c*q_X) mod 1",
+              "type": "string"
+            },
+            "phase_slope": {
+              "const": "Omega_xi=ell_theta*v_theta*sigma_theta*B_theta_b",
+              "type": "string"
+            },
+            "signed_lift": {
+              "const": "r_tilde=source_defined_signed_lift(r)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "key",
+            "content_alias",
+            "signed_lift",
+            "phase_slope",
+            "affine_forms",
+            "inner_coefficient",
+            "packet_atom",
+            "outer_multiplier",
+            "decorated_inner_prefix",
+            "complete_per_key_contribution"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "resolved_packet_formula",
+        "formula_type_registry",
+        "affine_fixture",
+        "completion_axes",
+        "formula_source_ledger",
+        "formula_type_source_ledger"
+      ],
+      "type": "object"
+    },
+    "first_missing_literal_theorem": {
+      "const": "SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK",
+      "type": "string"
+    },
+    "fixed_atom_decay_obtained": {
+      "const": false,
+      "type": "boolean"
+    },
+    "fixed_h0": {
+      "additionalProperties": false,
+      "properties": {
+        "semantics": {
+          "const": "SOURCE_BACKED_DATA_FACT_ONLY",
+          "type": "string"
+        },
+        "value": {
+          "const": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "value",
+        "semantics"
+      ],
+      "type": "object"
+    },
+    "next_route": {
+      "const": "DIRECT_FORMULA_TO_PRODUCTION_CROSSWALK",
+      "type": "string"
+    },
+    "paper": {
+      "const": 194,
+      "type": "integer"
+    },
+    "progress": {
+      "additionalProperties": false,
+      "properties": {
+        "L0": {
+          "const": "FORMULA_OR_FINITE_CERTIFICATE",
+          "type": "string"
+        },
+        "L1": {
+          "const": "FORMULA_RECONSTRUCTION_L1",
+          "type": "string"
+        },
+        "L2": {
+          "const": "NONE",
+          "type": "string"
+        }
+      },
+      "required": [
+        "L0",
+        "L1",
+        "L2"
+      ],
+      "type": "object"
+    },
+    "required_quantifier_signature": {
+      "additionalProperties": false,
+      "properties": {
+        "carrier_axis": {
+          "const": "ACTUAL_FIXED_H0_PACKET",
+          "type": "string"
+        },
+        "decay_axis": {
+          "const": "FIXED_X_POWER_FIXED_ATOM",
+          "type": "string"
+        },
+        "endpoint_axis": {
+          "const": "DETERMINISTIC_ALL_PREFIX",
+          "type": "string"
+        },
+        "phase_axis": {
+          "const": "SOURCE_LOCKED_NAMED_PHYSICAL_ATOM",
+          "type": "string"
+        },
+        "scale_axis": {
+          "const": "DETERMINISTIC_ALL_SCALE",
+          "type": "string"
+        },
+        "support_axis": {
+          "const": "ACTUAL_ACTIVE_SUPPORT",
+          "type": "string"
+        }
+      },
+      "required": [
+        "carrier_axis",
+        "phase_axis",
+        "endpoint_axis",
+        "scale_axis",
+        "decay_axis",
+        "support_axis"
+      ],
+      "type": "object"
+    },
+    "result_summary": {
+      "const": "The physical determinant-two summand and additive atom can be written without placeholders for each resolved packet key.  This does not freeze a production packet schedule, uniform constant, positive exponent, common parameter range, or complete loss ledger.",
+      "type": "string"
+    },
+    "route_state": {
+      "additionalProperties": false,
+      "properties": {
+        "bad_endpoint_O161_parent": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "direct_twist_O161_parent": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "global_architecture": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "tpc193_declared_candidate_mechanism_corpus_v1": {
+          "const": "STOP_SCOPED",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tpc193_declared_candidate_mechanism_corpus_v1",
+        "bad_endpoint_O161_parent",
+        "direct_twist_O161_parent",
+        "global_architecture"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "tpc-194-maximal-source-backed-direct-prefix-v2",
+      "type": "string"
+    },
+    "snapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "const": "2026-07-29",
+          "type": "string"
+        },
+        "hash_mode": {
+          "const": "CANONICAL_UTF8_LF",
+          "type": "string"
+        },
+        "source_of_truth": {
+          "const": "REPOSITORY_ARTIFACTS_NOT_CHAT_MEMORY",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "source_of_truth",
+        "hash_mode"
+      ],
+      "type": "object"
+    },
+    "source_locks": {
+      "items": false,
+      "maxItems": 10,
+      "minItems": 10,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "c0d45f64a100bb21ac67cce124c46bc2ebfd3740810af1355fb21420d4262f03",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-93-literal-low-window-affine-export/sections/decorated-affine-export.tex",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC93.affine_export",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "27156111612ad676f63dd5d486241250230d8cd2ff675f4c985b44fddf7a62c2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-93-literal-low-window-affine-export/sections/content-progression.tex",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC93.content_progression",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "16a58d471ce163e47e303c25710514908b01d0bd8610359ef61176ec215ce9b8",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-93-literal-low-window-affine-export/sections/sector-partition.tex",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC93.sector_partition",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "0e226f4d9ece6779b39a7c408bd2ef0052cd25f5e69202ff502de26d719fc7fe",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-94-exact-content-resonance-ledger/sections/phase-conductor.tex",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC94.phase_conductor",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "4f1eea286d85ab2d1e68849d3405d2374745eed82dc17bf009370d1c3b89329a",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-108-literal-generic-affine-mobius-dispersion/main.tex",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC108.main",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "0a6fcc3fd8a74c32e7ea125fce362bde54fc8ad1ff831f20ac3ddb1d10d916d4",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-127-determinant-two-liouville-pullback/main.tex",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC127.main",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "a1b375fcbceb9d470f7817b99eac7b4688163fb783351f18831fa34169316968",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-159-dyadic-shadow-prefix-lifting/main.tex",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC159.main",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "12b6e806493f254941b66987a0040d7f6673b2ed95528ebf5f6ad79b465a622e",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-167-direct-additive-twist-parseval/main.tex",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC167.main",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "4976311ae7f9271f44c3de68278ad1781aba2a4077c6c71a09562df2459ac40d",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-180-production-phase-registry-census/experiments/tpc180_phase_registry_census.json",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC180.registry",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "6d57d443b0efee28ee8e6cdb09f4386347095ca248b9a0cd42533b326537c244",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC193.gate",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "stop_scoped": {
+      "items": false,
+      "maxItems": 0,
+      "minItems": 0,
+      "prefixItems": [],
+      "type": "array"
+    },
+    "title": {
+      "const": "The Maximal Source-Backed Direct Prefix: Per-Packet Phase Completion and Formula-Type Separation",
+      "type": "string"
+    },
+    "verdict": {
+      "const": "FORMULA_COMPLETE_PER_PACKET_L1",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "paper",
+    "title",
+    "classification",
+    "verdict",
+    "result_summary",
+    "required_quantifier_signature",
+    "fixed_h0",
+    "first_missing_literal_theorem",
+    "next_route",
+    "route_state",
+    "stop_scoped",
+    "progress",
+    "fixed_atom_decay_obtained",
+    "endpoint_ledger",
+    "claim_boundary",
+    "finite_certificate",
+    "source_locks",
+    "snapshot"
+  ],
+  "type": "object"
+}

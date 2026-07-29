@@ -3,20 +3,36 @@
   "checks": {
     "L2_none": true,
     "all_mutations_executed_and_rejected": true,
+    "coordinated_regeneration_mutations_rejected": true,
     "endpoint_credit_zero": true,
     "finite_certificate_executed": true,
     "fixed_atom_decay_false": true,
+    "formula_source_ledger_closed": true,
+    "formula_source_locators_verified": true,
+    "formula_type_source_ledger_closed": true,
     "global_architecture_open": true,
     "repository_source_hashes_verified": true,
     "schema_exact_closed_recursive": true,
+    "seven_missing_axes_independently_verified": true,
     "strict_budget_unpaid": true,
+    "three_target_types_pairwise_distinct": true,
     "tpc193_stop_scope_preserved": true,
-    "two_pointwise_parents_open": true
+    "two_pointwise_parents_open": true,
+    "verdict_first_missing_flags_verified": true
   },
   "finite_check_result": {
+    "composed_fields_verified": 2,
     "determinant": 2,
     "distinct_formula_types": 3,
-    "literal_formula_fields_verified": 9
+    "formula_fields_verified": 10,
+    "formula_source_ledger_fields_verified": 10,
+    "formula_type_source_ledger_rows_verified": 3,
+    "literal_or_signed_lift_fields_verified": 7,
+    "production_missing_axes_verified": 7,
+    "semantic_contract_version": 2,
+    "source_formula_fragments_verified": 36,
+    "source_locator_anchors_verified": 22,
+    "specialized_fields_verified": 1
   },
   "mutation_registry": [
     {
@@ -61,6 +77,197 @@
     }
   ],
   "paper": 194,
-  "payload_canonical_sha256": "cc6b0150737349dd8e5bfdf2a4b7edfde7da96056d6c54b5155b202dc6bf02f2",
-  "schema": "tpc-194-maximal-source-backed-direct-prefix-audit-v1"
+  "payload_canonical_sha256": "a4b2f4d917b0a0f16d17f5e7252fae6dd4fd7c995f8809486b14e030e179cebc",
+  "schema": "tpc-194-maximal-source-backed-direct-prefix-audit-v2",
+  "semantic_contract_result": {
+    "composed_fields_verified": 2,
+    "determinant": 2,
+    "distinct_formula_types": 3,
+    "formula_fields_verified": 10,
+    "formula_source_ledger_fields_verified": 10,
+    "formula_type_source_ledger_rows_verified": 3,
+    "literal_or_signed_lift_fields_verified": 7,
+    "production_missing_axes_verified": 7,
+    "semantic_contract_version": 2,
+    "source_formula_fragments_verified": 36,
+    "source_locator_anchors_verified": 22,
+    "specialized_fields_verified": 1
+  },
+  "semantic_mutation_registry": [
+    {
+      "name": "fabricate_named_production_atom",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "fabricate_packet_schedule",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "fabricate_common_X_N_q_ranges",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "fabricate_uniform_constant_C",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "fabricate_positive_sigma",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "select_target_normalization_by_fiat",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "mark_physical_loss_ledger_complete",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "promote_verdict_to_production_complete",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "change_first_missing_crosswalk",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "identify_symbolic_atom_as_named_atom",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "identify_packet_key_as_schedule",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "flip_block_equals_cumulative",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "merge_block_into_cumulative",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "merge_block_into_physical",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "merge_cumulative_into_physical",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "corrupt_block_domain",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "corrupt_cumulative_normalization",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "corrupt_physical_normalization",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "drop_formula_type_source_ledger_row",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "corrupt_formula_type_source_fragment",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "drop_formula_source_ledger_row",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "duplicate_formula_source_field",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "misbind_formula_source_id",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "corrupt_formula_source_locator",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "corrupt_outer_multiplier_formula",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "bool_for_fixed_atom_false",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "bool_for_endpoint_zero",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "source_lock_path_hash_rebind",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "inject_semantic_extra_field",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "delete_missing_axis",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "promote_L2",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "grant_endpoint_credit",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "stop_direct_parent",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "stop_global_architecture",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "unstop_tpc193_v1",
+      "regenerated_schema_accepts": true,
+      "semantic_contract_rejected": true
+    }
+  ]
 }

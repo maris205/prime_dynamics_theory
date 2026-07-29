@@ -16,6 +16,7 @@ import copy
 import hashlib
 import json
 import math
+import runpy
 from fractions import Fraction
 from pathlib import Path
 
@@ -23,6 +24,10 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 PAPERS = HERE.parents[1]
 REPO = PAPERS.parent
+HARDENING_PATH = HERE / "tpc194_certificate_hardening.py"
+if not HARDENING_PATH.is_file():
+    raise FileNotFoundError(HARDENING_PATH)
+HARDENING = runpy.run_path(str(HARDENING_PATH))
 
 TARGET_AXES = {
     "carrier_axis": "ACTUAL_FIXED_H0_PACKET",
@@ -64,6 +69,14 @@ SOURCE_PATHS = {
     "TPC93.affine_export": (
         "papers/tpc-93-literal-low-window-affine-export/"
         "sections/decorated-affine-export.tex"
+    ),
+    "TPC93.content_progression": (
+        "papers/tpc-93-literal-low-window-affine-export/"
+        "sections/content-progression.tex"
+    ),
+    "TPC93.sector_partition": (
+        "papers/tpc-93-literal-low-window-affine-export/"
+        "sections/sector-partition.tex"
     ),
     "TPC94.phase_conductor": (
         "papers/tpc-94-exact-content-resonance-ledger/"
@@ -151,6 +164,8 @@ PAPERS_DATA = [
         "DIRECT_FORMULA_TO_PRODUCTION_CROSSWALK",
         [
             "TPC93.affine_export",
+            "TPC93.content_progression",
+            "TPC93.sector_partition",
             "TPC94.phase_conductor",
             "TPC108.main",
             "TPC127.main",
@@ -313,6 +328,12 @@ Explanatory renaming cannot create any absent field.
                 "target_normalization_selection": "MISSING",
                 "complete_physical_loss_ledger": "MISSING",
             },
+            "formula_source_ledger": copy.deepcopy(
+                HARDENING["TPC194_FORMULA_SOURCE_LEDGER"]
+            ),
+            "formula_type_source_ledger": copy.deepcopy(
+                HARDENING["TPC194_FORMULA_TYPE_SOURCE_LEDGER"]
+            ),
         },
     ),
     entry(
@@ -1089,6 +1110,7 @@ confirmation and a fresh audit of the exact triggers above.
             "global_architecture_open": True,
             "named_atom_endpoint_credit": 0,
             "strict_one_over_400": "UNPAID",
+            "tpc194_import_contract": HARDENING["tpc194_import_contract"](),
         },
     ),
 ]
@@ -1124,9 +1146,14 @@ def upstream_payload_rel(d: dict) -> str:
     )
 
 
+def schema_version(d: dict) -> str:
+    return "v2" if d["num"] in {194, 203} else "v1"
+
+
 def build_payload(d: dict) -> dict:
+    version = schema_version(d)
     obj = {
-        "schema": f"tpc-{d['num']}-{d['slug']}-v1",
+        "schema": f"tpc-{d['num']}-{d['slug']}-{version}",
         "paper": d["num"],
         "title": d["title"],
         "classification": d["classification"],
@@ -1377,28 +1404,7 @@ def finite_check(payload: dict) -> dict:
     n = payload["paper"]
     c = payload["finite_certificate"]
     if n == 194:
-        f = c["affine_fixture"]
-        assert f["s"] * f["u"] - f["a"] * f["d"] == f["determinant"] == 2
-        types = c["formula_type_registry"]
-        assert len({x["id"] for x in types}) == 3
-        assert len({x["domain"] for x in types}) == 3
-        assert c["completion_axes"]["packet_schedule"] == "MISSING"
-        assert c["completion_axes"]["positive_sigma"] == "MISSING"
-        formula = c["resolved_packet_formula"]
-        assert formula["phase_slope"] == (
-            "Omega_xi=ell_theta*v_theta*sigma_theta*B_theta_b"
-        )
-        assert "epsilon_theta*r_tilde*Omega_xi" in formula["packet_atom"]
-        assert "mfrak_K_X(r)" in formula["outer_multiplier"]
-        assert (
-            formula["complete_per_key_contribution"]
-            == "P_xi_X_le_T=cfrak_xi_X*S_xi_X_le_T"
-        )
-        return {
-            "determinant": 2,
-            "distinct_formula_types": 3,
-            "literal_formula_fields_verified": 9,
-        }
+        return HARDENING["validate_tpc194_payload"](payload, REPO, True)
     if n == 195:
         sigma = Fraction(
             c["sigma_fixture"]["numerator"], c["sigma_fixture"]["denominator"]
@@ -1536,51 +1542,7 @@ def finite_check(payload: dict) -> dict:
             "native_theorem_records_verified": 2,
         }
     if n == 203:
-        locks = {x["source_id"]: x for x in payload["source_locks"]}
-        expected = c["expected_verdicts"]
-        seen_stops = set()
-        for paper_s, verdict in expected.items():
-            lock = locks[f"TPC{paper_s}.payload"]
-            upstream = json.loads((REPO / lock["path"]).read_text(encoding="utf-8"))
-            assert upstream["verdict"] == verdict
-            assert upstream["fixed_atom_decay_obtained"] is False
-            assert upstream["progress"]["L2"] == "NONE"
-            assert upstream["endpoint_ledger"]["named_atom_sigma_credit"]["numerator"] == 0
-            assert upstream["route_state"]["bad_endpoint_O161_parent"] == "OPEN"
-            assert upstream["route_state"]["direct_twist_O161_parent"] == "OPEN"
-            for cell in upstream["stop_scoped"]:
-                assert cell["parent_route_stopped"] is False
-                assert cell["global_architecture_stopped"] is False
-                seen_stops.add(cell["cell"])
-        assert {
-            "FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT",
-            "ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ",
-        }.issubset(seen_stops)
-        assert payload["first_missing_nodes"] == {
-            "global": "H1.source_backed_local_occurrence_edge_family",
-            "selected_pointwise": "LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION",
-            "direct_production": "SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK",
-        }
-        assert payload["batch_stop"] == {
-            "state": "USER_CONFIRMATION_REQUIRED",
-            "next_paper": None,
-            "tpc204_authorized": False,
-        }
-        triggers = c["exact_reopen_triggers"]
-        assert [x["route"] for x in triggers] == [
-            "DIRECT",
-            "METRIC",
-            "BAD_ENDPOINT",
-            "STRUCTURAL",
-            "DECLARED_CORPUS",
-        ]
-        assert (
-            "schedule-specific exceptional-limsup avoidance theorem"
-            in triggers[1]["requires"]
-        )
-        assert c["two_O161_pointwise_parents_open"] is True
-        assert c["global_architecture_open"] is True
-        return {"upstreams_verified": len(expected), "new_scoped_cells": len(seen_stops)}
+        return HARDENING["validate_tpc203_payload"](payload, REPO, True)
     raise AssertionError(n)
 
 
@@ -1590,29 +1552,106 @@ def build_audit(d: dict, payload: dict, payload_schema: dict) -> dict:
         for name, altered in mutated_payloads(payload)
     ]
     finite = finite_check(payload)
-    return {
-        "schema": f"tpc-{d['num']}-{d['slug']}-audit-v1",
+    checks = {
+        "repository_source_hashes_verified": True,
+        "schema_exact_closed_recursive": True,
+        "finite_certificate_executed": True,
+        "all_mutations_executed_and_rejected": all(
+            row["rejected"] for row in mutations
+        ),
+        "tpc193_stop_scope_preserved": True,
+        "two_pointwise_parents_open": True,
+        "global_architecture_open": True,
+        "fixed_atom_decay_false": True,
+        "L2_none": True,
+        "endpoint_credit_zero": True,
+        "strict_budget_unpaid": True,
+    }
+    semantic_registry: list[dict] | None = None
+    if d["num"] == 194:
+        semantic_registry = HARDENING["tpc194_semantic_mutation_registry"](payload)
+        checks.update(
+            {
+                "seven_missing_axes_independently_verified": (
+                    finite["production_missing_axes_verified"] == 7
+                ),
+                "verdict_first_missing_flags_verified": True,
+                "three_target_types_pairwise_distinct": (
+                    finite["distinct_formula_types"] == 3
+                ),
+                "formula_source_ledger_closed": (
+                    finite["formula_source_ledger_fields_verified"] == 10
+                ),
+                "formula_type_source_ledger_closed": (
+                    finite["formula_type_source_ledger_rows_verified"] == 3
+                ),
+                "formula_source_locators_verified": (
+                    finite["source_locator_anchors_verified"] > 0
+                    and finite["source_formula_fragments_verified"] > 0
+                ),
+                "coordinated_regeneration_mutations_rejected": all(
+                    row["regenerated_schema_accepts"]
+                    and row["semantic_contract_rejected"]
+                    for row in semantic_registry
+                ),
+            }
+        )
+    elif d["num"] == 203:
+        tpc194 = build_payload(PAPERS_DATA[0])
+        semantic_registry = HARDENING["tpc203_semantic_mutation_registry"](
+            tpc194, payload
+        )
+        checks.update(
+            {
+                "tpc194_full_completion_ledger_imported": (
+                    finite["tpc194_certificate_hardening_verified"] is True
+                ),
+                "tpc194_seven_missing_axes_rechecked": (
+                    finite["tpc194_missing_axes_verified"] == 7
+                ),
+                "tpc194_formula_source_ledger_rechecked": (
+                    finite["tpc194_formula_fields_verified"] == 10
+                ),
+                "tpc194_formula_type_source_ledger_rechecked": (
+                    finite[
+                        "tpc194_formula_type_source_ledger_rows_verified"
+                    ]
+                    == 3
+                ),
+                "coordinated_regeneration_mutations_rejected": all(
+                    row["regenerated_schemas_accept"]
+                    and row["semantic_contract_rejected"]
+                    for row in semantic_registry
+                ),
+            }
+        )
+    result = {
+        "schema": (
+            f"tpc-{d['num']}-{d['slug']}-audit-{schema_version(d)}"
+        ),
         "paper": d["num"],
         "payload_canonical_sha256": hashlib.sha256(
             canonical(payload).encode("utf-8")
         ).hexdigest(),
-        "checks": {
-            "repository_source_hashes_verified": True,
-            "schema_exact_closed_recursive": True,
-            "finite_certificate_executed": True,
-            "all_mutations_executed_and_rejected": all(x["rejected"] for x in mutations),
-            "tpc193_stop_scope_preserved": True,
-            "two_pointwise_parents_open": True,
-            "global_architecture_open": True,
-            "fixed_atom_decay_false": True,
-            "L2_none": True,
-            "endpoint_credit_zero": True,
-            "strict_budget_unpaid": True,
-        },
+        "checks": checks,
         "finite_check_result": finite,
         "mutation_registry": mutations,
-        "all_checks_pass": True,
+        "all_checks_pass": (
+            all(checks.values())
+            and all(row["rejected"] for row in mutations)
+            and (
+                semantic_registry is None
+                or all(
+                    row["semantic_contract_rejected"]
+                    for row in semantic_registry
+                )
+            )
+        ),
     }
+    if semantic_registry is not None:
+        result["semantic_contract_result"] = finite
+        result["semantic_mutation_registry"] = semantic_registry
+    return result
 
 
 def tex_escape(text: str) -> str:
@@ -1737,21 +1776,35 @@ def references_bib() -> str:
 
 CHECKER_TEMPLATE = r'''#!/usr/bin/env python3
 from __future__ import annotations
-import argparse, cmath, copy, hashlib, json, math
+import argparse, cmath, copy, hashlib, json, math, runpy
 from fractions import Fraction
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 REPO=HERE.parents[2]
 PAYLOAD=HERE/"__STEM__.json"
 AUDIT=HERE/"__STEM___audit.json"
-SCHEMA=HERE.parent/"schemas"/"tpc__NUM__-__SLUG__-v1.schema.json"
-AUDIT_SCHEMA=HERE.parent/"schemas"/"tpc__NUM__-__SLUG__-audit-v1.schema.json"
+SCHEMA=HERE.parent/"schemas"/"tpc__NUM__-__SLUG__-__VERSION__.schema.json"
+AUDIT_SCHEMA=HERE.parent/"schemas"/"tpc__NUM__-__SLUG__-audit-__VERSION__.schema.json"
 EXPECTED_SHA="__EXPECTED_SHA__"
 EXPECTED_AUDIT_SHA="__EXPECTED_AUDIT_SHA__"
 EXPECTED_SCHEMA_SHA="__EXPECTED_SCHEMA_SHA__"
 EXPECTED_AUDIT_SCHEMA_SHA="__EXPECTED_AUDIT_SCHEMA_SHA__"
+EXPECTED_SCHEMA_ID="tpc-__NUM__-__SLUG__-__VERSION__.schema.json"
+EXPECTED_AUDIT_SCHEMA_ID="tpc-__NUM__-__SLUG__-audit-__VERSION__.schema.json"
 MUTATIONS=__MUTATIONS__
+HARDENING=runpy.run_path(str(REPO/"papers"/"tpc-194-maximal-source-backed-direct-prefix"/"experiments"/"tpc194_certificate_hardening.py"))
 def canonical(x): return json.dumps(x,indent=2,sort_keys=True,ensure_ascii=False)+"\n"
+def reject_pairs(pairs):
+    out={}
+    for k,v in pairs:
+        assert k not in out
+        out[k]=v
+    return out
+def load(path):
+    raw=path.read_bytes()
+    obj=json.loads(raw.decode("utf-8"),object_pairs_hook=reject_pairs)
+    assert type(obj) is dict and raw==canonical(obj).encode("utf-8")
+    return obj
 def text_hash(path):
     text=path.read_text(encoding="utf-8").replace("\r\n","\n").replace("\r","\n")
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
@@ -1796,13 +1849,7 @@ def rs(level):
 def finite(p):
     n=p["paper"];c=p["finite_certificate"]
     if n==194:
-        f=c["affine_fixture"]; assert f["s"]*f["u"]-f["a"]*f["d"]==2
-        assert len({x["id"] for x in c["formula_type_registry"]})==3
-        assert len({x["domain"] for x in c["formula_type_registry"]})==3
-        assert c["resolved_packet_formula"]["phase_slope"]=="Omega_xi=ell_theta*v_theta*sigma_theta*B_theta_b"
-        assert "mfrak_K_X(r)" in c["resolved_packet_formula"]["outer_multiplier"]
-        assert c["resolved_packet_formula"]["complete_per_key_contribution"]=="P_xi_X_le_T=cfrak_xi_X*S_xi_X_le_T"
-        return {"determinant":2,"distinct_formula_types":3,"literal_formula_fields_verified":9}
+        return HARDENING["validate_tpc194_payload"](p,REPO,True)
     elif n==195:
         t=c["dyadic_fixture_T"]; seen=[];hi=t
         while hi>1:lo=hi//2;seen.extend(range(lo+1,hi+1));hi=lo
@@ -1854,19 +1901,7 @@ def finite(p):
         assert rr[1]["range"]=="natural k>=2 and X>=H>=10" and "(1/H^(k-1))" in rr[1]["lhs"] and rr[1]["rhs"].startswith("k*(")
         return {"row_average":row_average,"column_average":column_average,"prescribed_cell":1,"native_theorem_records_verified":2}
     elif n==203:
-        locks={x["source_id"]:x for x in p["source_locks"]}
-        seen_stops=set()
-        for ns,v in c["expected_verdicts"].items():
-            u=json.loads((REPO/locks[f"TPC{ns}.payload"]["path"]).read_text(encoding="utf-8"))
-            assert u["verdict"]==v and u["progress"]["L2"]=="NONE"
-            assert u["route_state"]["bad_endpoint_O161_parent"]=="OPEN"
-            assert u["route_state"]["direct_twist_O161_parent"]=="OPEN"
-            for cell in u["stop_scoped"]: seen_stops.add(cell["cell"])
-        assert p["first_missing_nodes"]=={"global":"H1.source_backed_local_occurrence_edge_family","selected_pointwise":"LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION","direct_production":"SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK"}
-        assert p["batch_stop"]=={"state":"USER_CONFIRMATION_REQUIRED","next_paper":None,"tpc204_authorized":False}
-        assert [x["route"] for x in c["exact_reopen_triggers"]]==["DIRECT","METRIC","BAD_ENDPOINT","STRUCTURAL","DECLARED_CORPUS"]
-        assert "schedule-specific exceptional-limsup avoidance theorem" in c["exact_reopen_triggers"][1]["requires"]
-        return {"upstreams_verified":len(c["expected_verdicts"]),"new_scoped_cells":len(seen_stops)}
+        return HARDENING["validate_tpc203_payload"](p,REPO,True)
     else:raise AssertionError(n)
 def validate(p,a,s,a_s):
     assert hashlib.sha256(canonical(p).encode()).hexdigest()==EXPECTED_SHA==a["payload_canonical_sha256"]
@@ -1875,6 +1910,8 @@ def validate(p,a,s,a_s):
     assert hashlib.sha256(canonical(a_s).encode()).hexdigest()==EXPECTED_AUDIT_SCHEMA_SHA
     assert accepts(s,p)
     assert accepts(a_s,a)
+    assert HARDENING["normalize_schema_order"](s)==HARDENING["normalize_schema_order"](HARDENING["exact_schema"](p,EXPECTED_SCHEMA_ID))
+    assert HARDENING["normalize_schema_order"](a_s)==HARDENING["normalize_schema_order"](HARDENING["exact_schema"](a,EXPECTED_AUDIT_SCHEMA_ID))
     assert p["fixed_atom_decay_obtained"] is False and p["progress"]["L2"]=="NONE"
     assert p["endpoint_ledger"]["named_atom_sigma_credit"]["numerator"]==0
     assert p["endpoint_ledger"]["state"]=="UNPAID"
@@ -1888,17 +1925,17 @@ def validate(p,a,s,a_s):
     assert finite(p)==a["finite_check_result"]
     outcomes=[{"name":name,"rejected":not accepts(s,mutated(p,name))} for name in MUTATIONS]
     assert outcomes==a["mutation_registry"] and all(x["rejected"] for x in outcomes)
+    semantic=HARDENING["semantic_mutation_registry_for"](p,REPO)
+    if semantic:
+        assert finite(p)==a["semantic_contract_result"]
+        assert semantic==a["semantic_mutation_registry"]
+        assert all(x["semantic_contract_rejected"] for x in semantic)
     assert all(a["checks"].values()) and a["all_checks_pass"] is True
 def main():
     if not __debug__: raise RuntimeError("optimized Python disables assertions; validation fails closed")
     ap=argparse.ArgumentParser();ap.add_argument("--check",action="store_true");ns=ap.parse_args()
-    p=json.loads(PAYLOAD.read_text(encoding="utf-8"));a=json.loads(AUDIT.read_text(encoding="utf-8"));s=json.loads(SCHEMA.read_text(encoding="utf-8"));a_s=json.loads(AUDIT_SCHEMA.read_text(encoding="utf-8"))
+    p=load(PAYLOAD);a=load(AUDIT);s=load(SCHEMA);a_s=load(AUDIT_SCHEMA)
     validate(p,a,s,a_s)
-    if ns.check:
-        assert PAYLOAD.read_text(encoding="utf-8")==canonical(p)
-        assert AUDIT.read_text(encoding="utf-8")==canonical(a)
-        assert SCHEMA.read_text(encoding="utf-8")==canonical(s)
-        assert AUDIT_SCHEMA.read_text(encoding="utf-8")==canonical(a_s)
     print(json.dumps({"paper":p["paper"],"verdict":p["verdict"],"finite":True,"mutations":len(MUTATIONS),"check":ns.check},sort_keys=True))
 if __name__=="__main__":main()
 '''
@@ -1929,6 +1966,26 @@ def readme(d: dict) -> str:
         if d["num"] == 203
         else ""
     )
+    hardening_section = (
+        """
+## Certificate hardening
+
+The active certificate schema is v2.  The independent verifier pins the seven
+missing production axes, all ten formula fields, three noninterchangeable
+target tuples, the formula-to-source locator ledger, and TPC-203's full import
+of the TPC-194 completion contract.  Its manifest is a repository review pin,
+not an external signature.
+
+From the repository root:
+
+```powershell
+python papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py --check
+```
+"""
+        if d["num"] in {194, 203}
+        else ""
+    )
+    supplemental_sections = reopen_section + hardening_section
     return f"""# TPC-{d['num']}: {d['title']}
 
 ## Result
@@ -1951,7 +2008,7 @@ strict_1/400 = UNPAID
 
 This is an L0/L1 artifact. It claims no program-positive L2 result,
 prime-pair lower bound, or twin-prime theorem.
-{reopen_section}
+{supplemental_sections}
 
 ## Reproduce
 
@@ -1969,10 +2026,12 @@ pdflatex -interaction=nonstopmode -halt-on-error main.tex
 def expected_files(d: dict, payload: dict, audit: dict, p_schema: dict, a_schema: dict) -> dict[Path, str]:
     root = PAPERS / f"tpc-{d['num']}-{d['slug']}"
     stem = f"tpc{d['num']}_{d['slug'].replace('-', '_')}"
+    version = schema_version(d)
     checker = (
         CHECKER_TEMPLATE.replace("__STEM__", stem)
         .replace("__NUM__", str(d["num"]))
         .replace("__SLUG__", d["slug"])
+        .replace("__VERSION__", version)
         .replace(
             "__EXPECTED_SHA__",
             hashlib.sha256(canonical(payload).encode("utf-8")).hexdigest(),
@@ -2006,20 +2065,21 @@ def expected_files(d: dict, payload: dict, audit: dict, p_schema: dict, a_schema
         root / "experiments" / f"{stem}.json": canonical(payload),
         root / "experiments" / f"{stem}_audit.json": canonical(audit),
         root / "experiments" / f"{stem}.py": checker,
-        root / "schemas" / f"tpc{d['num']}-{d['slug']}-v1.schema.json": canonical(p_schema),
-        root / "schemas" / f"tpc{d['num']}-{d['slug']}-audit-v1.schema.json": canonical(a_schema),
+        root / "schemas" / f"tpc{d['num']}-{d['slug']}-{version}.schema.json": canonical(p_schema),
+        root / "schemas" / f"tpc{d['num']}-{d['slug']}-audit-{version}.schema.json": canonical(a_schema),
     }
 
 
 def materialize() -> None:
     for d in PAPERS_DATA:
         payload = build_payload(d)
+        version = schema_version(d)
         p_schema = exact_schema(
-            payload, f"tpc-{d['num']}-{d['slug']}-v1.schema.json"
+            payload, f"tpc-{d['num']}-{d['slug']}-{version}.schema.json"
         )
         audit = build_audit(d, payload, p_schema)
         a_schema = exact_schema(
-            audit, f"tpc-{d['num']}-{d['slug']}-audit-v1.schema.json"
+            audit, f"tpc-{d['num']}-{d['slug']}-audit-{version}.schema.json"
         )
         for path, text in expected_files(d, payload, audit, p_schema, a_schema).items():
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -2029,12 +2089,13 @@ def materialize() -> None:
 def check_all() -> None:
     for d in PAPERS_DATA:
         payload = build_payload(d)
+        version = schema_version(d)
         p_schema = exact_schema(
-            payload, f"tpc-{d['num']}-{d['slug']}-v1.schema.json"
+            payload, f"tpc-{d['num']}-{d['slug']}-{version}.schema.json"
         )
         audit = build_audit(d, payload, p_schema)
         a_schema = exact_schema(
-            audit, f"tpc-{d['num']}-{d['slug']}-audit-v1.schema.json"
+            audit, f"tpc-{d['num']}-{d['slug']}-audit-{version}.schema.json"
         )
         assert all(audit["checks"].values())
         assert all(x["rejected"] for x in audit["mutation_registry"])

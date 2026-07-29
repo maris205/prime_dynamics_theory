@@ -1,20 +1,34 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, cmath, copy, hashlib, json, math
+import argparse, cmath, copy, hashlib, json, math, runpy
 from fractions import Fraction
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 REPO=HERE.parents[2]
 PAYLOAD=HERE/"tpc194_maximal_source_backed_direct_prefix.json"
 AUDIT=HERE/"tpc194_maximal_source_backed_direct_prefix_audit.json"
-SCHEMA=HERE.parent/"schemas"/"tpc194-maximal-source-backed-direct-prefix-v1.schema.json"
-AUDIT_SCHEMA=HERE.parent/"schemas"/"tpc194-maximal-source-backed-direct-prefix-audit-v1.schema.json"
-EXPECTED_SHA="cc6b0150737349dd8e5bfdf2a4b7edfde7da96056d6c54b5155b202dc6bf02f2"
-EXPECTED_AUDIT_SHA="ae133c49d103ac0470dfcabbaccff76a66734809ddbc1d357c8a65c4a135d417"
-EXPECTED_SCHEMA_SHA="e2c6ad074e1952c38855119eaa459d1277fa47081ce85f32c811ea237b4b7b3c"
-EXPECTED_AUDIT_SCHEMA_SHA="e8ff48efce7413aca4cb032c5caefb2f1b8d3f3701d52631c1fa6f20c587ce16"
+SCHEMA=HERE.parent/"schemas"/"tpc194-maximal-source-backed-direct-prefix-v2.schema.json"
+AUDIT_SCHEMA=HERE.parent/"schemas"/"tpc194-maximal-source-backed-direct-prefix-audit-v2.schema.json"
+EXPECTED_SHA="a4b2f4d917b0a0f16d17f5e7252fae6dd4fd7c995f8809486b14e030e179cebc"
+EXPECTED_AUDIT_SHA="a57e2f69049dd640865b9b0aa8f632377e2ca5a4b580daa9c13b30184f057132"
+EXPECTED_SCHEMA_SHA="2143debb4f53ba835852eb886a7d329b182a1424330eece89ca576ffb348a4d4"
+EXPECTED_AUDIT_SCHEMA_SHA="8aff7593f676fda3946c4714c38e182a50aedd310278f3406a10bb5ef493e1f5"
+EXPECTED_SCHEMA_ID="tpc-194-maximal-source-backed-direct-prefix-v2.schema.json"
+EXPECTED_AUDIT_SCHEMA_ID="tpc-194-maximal-source-backed-direct-prefix-audit-v2.schema.json"
 MUTATIONS=['promote_L2', 'promote_fixed_atom_decay', 'grant_endpoint_credit', 'mark_strict_budget_paid', 'stop_bad_endpoint_parent', 'stop_global_architecture', 'promote_hash_to_theorem', 'change_verdict', 'delete_first_missing', 'inject_extra_field']
+HARDENING=runpy.run_path(str(REPO/"papers"/"tpc-194-maximal-source-backed-direct-prefix"/"experiments"/"tpc194_certificate_hardening.py"))
 def canonical(x): return json.dumps(x,indent=2,sort_keys=True,ensure_ascii=False)+"\n"
+def reject_pairs(pairs):
+    out={}
+    for k,v in pairs:
+        assert k not in out
+        out[k]=v
+    return out
+def load(path):
+    raw=path.read_bytes()
+    obj=json.loads(raw.decode("utf-8"),object_pairs_hook=reject_pairs)
+    assert type(obj) is dict and raw==canonical(obj).encode("utf-8")
+    return obj
 def text_hash(path):
     text=path.read_text(encoding="utf-8").replace("\r\n","\n").replace("\r","\n")
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
@@ -59,13 +73,7 @@ def rs(level):
 def finite(p):
     n=p["paper"];c=p["finite_certificate"]
     if n==194:
-        f=c["affine_fixture"]; assert f["s"]*f["u"]-f["a"]*f["d"]==2
-        assert len({x["id"] for x in c["formula_type_registry"]})==3
-        assert len({x["domain"] for x in c["formula_type_registry"]})==3
-        assert c["resolved_packet_formula"]["phase_slope"]=="Omega_xi=ell_theta*v_theta*sigma_theta*B_theta_b"
-        assert "mfrak_K_X(r)" in c["resolved_packet_formula"]["outer_multiplier"]
-        assert c["resolved_packet_formula"]["complete_per_key_contribution"]=="P_xi_X_le_T=cfrak_xi_X*S_xi_X_le_T"
-        return {"determinant":2,"distinct_formula_types":3,"literal_formula_fields_verified":9}
+        return HARDENING["validate_tpc194_payload"](p,REPO,True)
     elif n==195:
         t=c["dyadic_fixture_T"]; seen=[];hi=t
         while hi>1:lo=hi//2;seen.extend(range(lo+1,hi+1));hi=lo
@@ -117,19 +125,7 @@ def finite(p):
         assert rr[1]["range"]=="natural k>=2 and X>=H>=10" and "(1/H^(k-1))" in rr[1]["lhs"] and rr[1]["rhs"].startswith("k*(")
         return {"row_average":row_average,"column_average":column_average,"prescribed_cell":1,"native_theorem_records_verified":2}
     elif n==203:
-        locks={x["source_id"]:x for x in p["source_locks"]}
-        seen_stops=set()
-        for ns,v in c["expected_verdicts"].items():
-            u=json.loads((REPO/locks[f"TPC{ns}.payload"]["path"]).read_text(encoding="utf-8"))
-            assert u["verdict"]==v and u["progress"]["L2"]=="NONE"
-            assert u["route_state"]["bad_endpoint_O161_parent"]=="OPEN"
-            assert u["route_state"]["direct_twist_O161_parent"]=="OPEN"
-            for cell in u["stop_scoped"]: seen_stops.add(cell["cell"])
-        assert p["first_missing_nodes"]=={"global":"H1.source_backed_local_occurrence_edge_family","selected_pointwise":"LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION","direct_production":"SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK"}
-        assert p["batch_stop"]=={"state":"USER_CONFIRMATION_REQUIRED","next_paper":None,"tpc204_authorized":False}
-        assert [x["route"] for x in c["exact_reopen_triggers"]]==["DIRECT","METRIC","BAD_ENDPOINT","STRUCTURAL","DECLARED_CORPUS"]
-        assert "schedule-specific exceptional-limsup avoidance theorem" in c["exact_reopen_triggers"][1]["requires"]
-        return {"upstreams_verified":len(c["expected_verdicts"]),"new_scoped_cells":len(seen_stops)}
+        return HARDENING["validate_tpc203_payload"](p,REPO,True)
     else:raise AssertionError(n)
 def validate(p,a,s,a_s):
     assert hashlib.sha256(canonical(p).encode()).hexdigest()==EXPECTED_SHA==a["payload_canonical_sha256"]
@@ -138,6 +134,8 @@ def validate(p,a,s,a_s):
     assert hashlib.sha256(canonical(a_s).encode()).hexdigest()==EXPECTED_AUDIT_SCHEMA_SHA
     assert accepts(s,p)
     assert accepts(a_s,a)
+    assert HARDENING["normalize_schema_order"](s)==HARDENING["normalize_schema_order"](HARDENING["exact_schema"](p,EXPECTED_SCHEMA_ID))
+    assert HARDENING["normalize_schema_order"](a_s)==HARDENING["normalize_schema_order"](HARDENING["exact_schema"](a,EXPECTED_AUDIT_SCHEMA_ID))
     assert p["fixed_atom_decay_obtained"] is False and p["progress"]["L2"]=="NONE"
     assert p["endpoint_ledger"]["named_atom_sigma_credit"]["numerator"]==0
     assert p["endpoint_ledger"]["state"]=="UNPAID"
@@ -151,16 +149,16 @@ def validate(p,a,s,a_s):
     assert finite(p)==a["finite_check_result"]
     outcomes=[{"name":name,"rejected":not accepts(s,mutated(p,name))} for name in MUTATIONS]
     assert outcomes==a["mutation_registry"] and all(x["rejected"] for x in outcomes)
+    semantic=HARDENING["semantic_mutation_registry_for"](p,REPO)
+    if semantic:
+        assert finite(p)==a["semantic_contract_result"]
+        assert semantic==a["semantic_mutation_registry"]
+        assert all(x["semantic_contract_rejected"] for x in semantic)
     assert all(a["checks"].values()) and a["all_checks_pass"] is True
 def main():
     if not __debug__: raise RuntimeError("optimized Python disables assertions; validation fails closed")
     ap=argparse.ArgumentParser();ap.add_argument("--check",action="store_true");ns=ap.parse_args()
-    p=json.loads(PAYLOAD.read_text(encoding="utf-8"));a=json.loads(AUDIT.read_text(encoding="utf-8"));s=json.loads(SCHEMA.read_text(encoding="utf-8"));a_s=json.loads(AUDIT_SCHEMA.read_text(encoding="utf-8"))
+    p=load(PAYLOAD);a=load(AUDIT);s=load(SCHEMA);a_s=load(AUDIT_SCHEMA)
     validate(p,a,s,a_s)
-    if ns.check:
-        assert PAYLOAD.read_text(encoding="utf-8")==canonical(p)
-        assert AUDIT.read_text(encoding="utf-8")==canonical(a)
-        assert SCHEMA.read_text(encoding="utf-8")==canonical(s)
-        assert AUDIT_SCHEMA.read_text(encoding="utf-8")==canonical(a_s)
     print(json.dumps({"paper":p["paper"],"verdict":p["verdict"],"finite":True,"mutations":len(MUTATIONS),"check":ns.check},sort_keys=True))
 if __name__=="__main__":main()

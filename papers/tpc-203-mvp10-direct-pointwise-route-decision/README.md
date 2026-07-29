@@ -34,6 +34,20 @@ prime-pair lower bound, or twin-prime theorem.
 - `DECLARED_CORPUS`: genuinely new primary theorem corpus, while TPC-193 V1
   remains `STOP_SCOPED`.
 
+## Certificate hardening
+
+The active certificate schema is v2.  The independent verifier pins the seven
+missing production axes, all ten formula fields, three noninterchangeable
+target tuples, the formula-to-source locator ledger, and TPC-203's full import
+of the TPC-194 completion contract.  Its manifest is a repository review pin,
+not an external signature.
+
+From the repository root:
+
+```powershell
+python papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py --check
+```
+
 
 ## Reproduce
 

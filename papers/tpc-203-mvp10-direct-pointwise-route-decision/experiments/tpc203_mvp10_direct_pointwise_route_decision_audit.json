@@ -3,6 +3,7 @@
   "checks": {
     "L2_none": true,
     "all_mutations_executed_and_rejected": true,
+    "coordinated_regeneration_mutations_rejected": true,
     "endpoint_credit_zero": true,
     "finite_certificate_executed": true,
     "fixed_atom_decay_false": true,
@@ -11,10 +12,21 @@
     "schema_exact_closed_recursive": true,
     "strict_budget_unpaid": true,
     "tpc193_stop_scope_preserved": true,
+    "tpc194_formula_source_ledger_rechecked": true,
+    "tpc194_formula_type_source_ledger_rechecked": true,
+    "tpc194_full_completion_ledger_imported": true,
+    "tpc194_seven_missing_axes_rechecked": true,
     "two_pointwise_parents_open": true
   },
   "finite_check_result": {
     "new_scoped_cells": 2,
+    "tpc194_certificate_hardening_verified": true,
+    "tpc194_formula_fields_verified": 10,
+    "tpc194_formula_type_source_ledger_rows_verified": 3,
+    "tpc194_formula_types_verified": 3,
+    "tpc194_missing_axes_verified": 7,
+    "tpc194_source_formula_fragments_verified": 36,
+    "tpc194_source_locator_anchors_verified": 22,
     "upstreams_verified": 9
   },
   "mutation_registry": [
@@ -60,6 +72,84 @@
     }
   ],
   "paper": 203,
-  "payload_canonical_sha256": "fbcc07837942211faa8a9e1d441e493d3717e237499ce53b5daf280830369351",
-  "schema": "tpc-203-mvp10-direct-pointwise-route-decision-audit-v1"
+  "payload_canonical_sha256": "3c1be16117622d1529a565a9383e6f21becc312fef923788eca48cdb968516e1",
+  "schema": "tpc-203-mvp10-direct-pointwise-route-decision-audit-v2",
+  "semantic_contract_result": {
+    "new_scoped_cells": 2,
+    "tpc194_certificate_hardening_verified": true,
+    "tpc194_formula_fields_verified": 10,
+    "tpc194_formula_type_source_ledger_rows_verified": 3,
+    "tpc194_formula_types_verified": 3,
+    "tpc194_missing_axes_verified": 7,
+    "tpc194_source_formula_fragments_verified": 36,
+    "tpc194_source_locator_anchors_verified": 22,
+    "upstreams_verified": 9
+  },
+  "semantic_mutation_registry": [
+    {
+      "name": "coordinated_promote_named_atom",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "coordinated_promote_packet_schedule",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "coordinated_select_normalization",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "coordinated_merge_formula_types",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "coordinated_rebind_source_ledger",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "coordinated_promote_verdict",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "coordinated_change_first_missing",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "coordinated_promote_fixed_atom_decay",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "coordinated_grant_endpoint_credit",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "tpc203_upstream_path_hash_rebind",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "tpc203_upstream_paper_rebind",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "authorize_tpc204",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    },
+    {
+      "name": "close_global_architecture",
+      "regenerated_schemas_accept": true,
+      "semantic_contract_rejected": true
+    }
+  ]
 }
