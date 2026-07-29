@@ -1,33 +1,37 @@
 # TPC HANDOFF
 
 更新时间：2026-07-29
-当前仓库事实终点：TPC-203 / MVP10
-当前裁决：`NOT_TESTABLE`
+当前仓库事实终点：TPC-203 / MVP10，加不编号 `CERTIFICATE_HARDENING_V2`
+当前数学裁决：`NOT_TESTABLE`
 下一篇：`null`
 TPC-204 授权：`false`
 
-本文件和仓库内已提交的论文、payload、audit、schema 是下一会话的事实来源。旧聊天记录不是事实来源。
+本文件、仓库内已提交的论文和当前 active payload/audit/schema/verifier
+是下一会话的事实来源。旧聊天记录不是事实来源。
 
-## 1. 启动协议
+## 1. 启动与验证协议
 
 ```powershell
 Set-Location "D:\26-aimath\理论研究3\prime_dynamics_theory"
 git status --short --branch
 git pull --rebase origin main
-Get-Content -Raw TPC_HANDOFF.md
+Get-Content -Raw -Encoding UTF8 TPC_HANDOFF.md
+python papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py --check
 ```
 
 随后优先读取：
 
-1. `papers/tpc-203-mvp10-direct-pointwise-route-decision/README.md`
-2. `papers/tpc-203-mvp10-direct-pointwise-route-decision/experiments/tpc203_mvp10_direct_pointwise_route_decision.json`
-3. `papers/tpc-203-mvp10-direct-pointwise-route-decision/experiments/tpc203_mvp10_direct_pointwise_route_decision_audit.json`
-4. `papers/tpc-194-maximal-source-backed-direct-prefix/README.md`
-5. `papers/tpc-202-new-primary-double-selector-gate/README.md`
+1. `papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py`
+2. `papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening_manifest.json`
+3. `papers/tpc-203-mvp10-direct-pointwise-route-decision/experiments/tpc203_mvp10_direct_pointwise_route_decision.json`
+4. `papers/tpc-203-mvp10-direct-pointwise-route-decision/experiments/tpc203_mvp10_direct_pointwise_route_decision_audit.json`
+5. `papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_maximal_source_backed_direct_prefix.json`
+6. `papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json`
 
-不得因打开新会话而自动创建 TPC-204。先做不编号的 `REOPEN_TRIGGER_AUDIT`；触发器没有通过时，停下并请求用户选择。
+不得因打开新会话、用户说“继续”，或证书检查通过而自动创建 TPC-204。
+证书通过只说明当前负向边界被可靠冻结，不解除数学门槛。
 
-## 2. 本轮发布锚点
+## 2. 发布锚点
 
 TPC-194--203 论文提交：
 
@@ -35,22 +39,38 @@ TPC-194--203 论文提交：
 460950090855a49a86e93231902a9674879d6f34
 ```
 
-TPC-203 稳定 PDF：
+不编号证书加固提交：
+
+```text
+2e7a38652baff130cdfcbcf83ba05d3ee78a4dcc
+```
+
+TPC-203 稳定 PDF 未改变：
 
 ```text
 papers/tpc-203-mvp10-direct-pointwise-route-decision/tpc-203-mvp10-direct-pointwise-route-decision.pdf
 sha256 = 23bc8f5e4a1ee9c51628154c2986defb9109f7c95c63539441d6b31cd92e0992
 ```
 
-批量生成与复核入口：
+Active schema：
+
+```text
+TPC-194 payload/audit = v2
+TPC-203 payload/audit = v2
+TPC-195--202 payload/audit = v1
+TPC-194/TPC-203 superseded v1 schema files = removed
+```
+
+批量与独立复核入口：
 
 ```powershell
 python papers/tpc-194-maximal-source-backed-direct-prefix/experiments/build_tpc194_203.py --check
+python papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py --check
 ```
 
-## 3. 当前三层第一缺口
+## 3. 三层第一缺口与全局状态
 
-必须同时保留以下三个彼此不同的第一缺口，不得互相改写或吞并：
+三个第一缺口必须彼此区分：
 
 ```text
 GlobalFirstMissing
@@ -63,7 +83,7 @@ DirectProductionFirstMissing
   = SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK
 ```
 
-对应状态：
+状态保持：
 
 ```text
 bad_endpoint_O161_parent = OPEN
@@ -73,180 +93,172 @@ fixed_atom_decay_obtained = false
 named_atom_endpoint_credit = 0
 strict_1/400 = UNPAID
 L2_result = NONE
-```
-
-## 4. TPC-194--203 结论
-
-### TPC-194 — maximal source-backed direct prefix
-
-裁决：`FORMULA_COMPLETE_PER_PACKET_L1`。
-
-已从 TPC-159、167、183、184、189、193 的实际公式逐字锁定：
-
-```text
-xi = (theta,c,kappa,r)
-b = c*kappa
-B_xi = B_{theta,b}
-Omega_xi = ell_theta*v_theta*sigma_theta*B_{theta,b}
-alpha_xi,X = epsilon_theta*r_tilde*Omega_xi/(c*q_X)
-```
-
-并锁定 exact physical coefficient、带符号的 `r_tilde`、decorated inner prefix、complete contribution，以及外层乘子 `mathfrak m_{K,X}(r)`。
-
-这只完成每包公式，不完成 production target。仍缺：
-
-- source-locked named physical atom；
-- exact packet schedule；
-- common `X/N/q` ranges；
-- uniform constant `C`；
-- positive `sigma`；
-- normalization choice；
-- complete physical-loss ledger。
-
-不得通过解释性改写，或把 block/cumulative 对象强行等同，来补这些字段。
-
-### TPC-195 — block/prefix power-profile transfer
-
-裁决：`PROVED_BIDIRECTIONAL_POWER_PROFILE_TRANSFER`。
-
-对 `0 < sigma < 1`：
-
-```text
-block -> prefix constant = 1/(2^(1-sigma)-1)
-prefix -> block constant = 2^(1-sigma)+1
-```
-
-实数端点采用精确 telescoping。截断 raw tail 为严格 `< 2BM`；归一化安全项为 `2qBM/T`。
-
-### TPC-196 — residue split and determinant ledger
-
-裁决：`PROVED_RESIDUE_SPLIT_WITH_DETERMINANT_2R`。
-
-锁定：
-
-- slope gcd 正好是 `R`，不是 affine content；
-- residue split 后 determinant 为 `2R`；
-- 一个非零 DFT mode 不等于所有 residue sums 均非零；
-- 依赖 TPC-94 与 TPC-108。
-
-### TPC-197 — prime-conductor consistency
-
-固定非零有理 atom 不可能沿无界、互异 prime conductors 重复出现。
-
-conductor-one 路线仍开放，但它仍必须同时提供：
-
-- `q_prog` 的 polylog 范围；
-- exceptional set 外的 `N` 范围；
-- 全部 good-scale 条件；
-- named occurrence；
-- exact packet schedule。
-
-### TPC-198 — factorwise Fourier barrier
-
-裁决：`STOP_SCOPED`。
-
-禁止从两个 single-Mobius Fourier black boxes 推出 prescribed atom 上的 literal product bound。Rudin--Shapiro witness 固定了该逻辑缺口。
-
-新停止单元：
-
-```text
-FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT = STOP_SCOPED
-```
-
-### TPC-199 — pretentiousness firewall
-
-裁决：`STOP_SCOPED`。
-
-禁止把 one-function multiplicative pretentiousness theorem 直接应用到
-`mu(n)mu(n+2)`；该乘积不是一个 multiplicative function。
-
-新停止单元：
-
-```text
-ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ = STOP_SCOPED
-```
-
-### TPC-200 — four-form determinant refinement
-
-完成四个 affine forms 的 determinant table。
-
-在 positive-slope 约束下，唯一 positive-shift degeneration 是：
-
-```text
-q = 1
-h = 2
-```
-
-并显式继承 TPC-130。
-
-### TPC-201 — degenerate-shift Fejér absorption
-
-对 `V > 0`、`3 <= H <= N` 完成 positive-part split。
-
-degenerate diagonal 的精确系数为：
-
-```text
-2 + 4 = 6
-```
-
-该部分可吸收；剩余对象是 nondegenerate four-Mobius off-diagonal。来源锁定 TPC-130 与 TPC-200。
-
-### TPC-202 — new-primary double-selector gate
-
-裁决：`SCREENED_NON_DIRECT_ZERO_ELIGIBLE`。
-
-Menon 2026 的 Theorem 1.4/1.5 已按原生 ranges、normalizations、`k` factor 与 logarithmic losses 审核。它们不直接作用于 prescribed atom 上的 literal determinant-two two-Möbius coefficient
-
-```text
-mu(d+s*z) mu(u+a*z),  s*u-a*d=2
-```
-
-因此 eligible source 数为零。TPC-181 selector lemma 只作为继承的说明，不产生新 stop cell。
-
-外部来源完整性状态是 manual transcription；没有伪造 external hash。
-
-### TPC-203 — MVP10 route decision
-
-裁决：`NOT_TESTABLE`。
-
-```text
-next_route
-  = SEARCH_FOR_NAMED_PACKET_CROSSWALK_OR_GENUINE_FIXED_ATOM_THEOREM
-
+next_route = SEARCH_FOR_NAMED_PACKET_CROSSWALK_OR_GENUINE_FIXED_ATOM_THEOREM
 batch_stop = USER_CONFIRMATION_REQUIRED
 next_paper = null
 tpc204_authorized = false
 ```
 
-每包 direct formula 已完成；production crosswalk 与 named-atom positive-power theorem 仍不存在。两条 O161 pointwise parents 和全局架构均保持开放。
+## 4. 2026-07-29 不编号路线点审与 reopen audit
 
-## 5. 停止单元注册表
+先点审了 TPC-194 direct-production crosswalk 路线：
 
-继承的旧停止单元：
+```text
+PER_PACKET_FORMULA_COMPLETE
+DIRECT_PRODUCTION_CROSSWALK_NOT_TESTABLE
+```
+
+TPC-194 已完成 resolved packet 的实际公式，但没有冻结 production target。
+不得把以下三类对象强行等同：
+
+```text
+CORE_TERMINAL_BLOCK
+  domain = N<t(z)<=2N
+  normalization = q/N
+
+CORE_CUMULATIVE_PREFIX
+  domain = 0<t(z)<=T
+  normalization = q/T
+
+PHYSICAL_PACKET_PREFIX
+  domain = z in I_xi_X and z<=T
+  normalization = UNNORMALIZED_INSIDE_OUTER_PACKET_SUM
+```
+
+随后五类 trigger 的裁决为：
+
+```text
+audit_kind = UNNUMBERED_REOPEN_TRIGGER_AUDIT
+DIRECT = FAIL
+METRIC = FAIL
+BAD_ENDPOINT = FAIL
+STRUCTURAL = FAIL
+DECLARED_CORPUS = FAIL
+new_numbered_paper = false
+new_stop_cell = NONE
+batch_stop = USER_CONFIRMATION_REQUIRED
+next_paper = null
+tpc204_authorized = false
+```
+
+精确阻断项：
+
+- `DIRECT`：首先缺
+  `SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK`；同时没有
+  theorem-backed natural-`q/N` named fixed-atom positive-power theorem。
+- `METRIC`：没有 source-locked named atom、exact schedule，以及该
+  schedule 的 exceptional-limsup avoidance theorem。
+- `BAD_ENDPOINT`：没有 literal fixed-atom local-increment
+  cancellation/power-saving theorem。
+- `STRUCTURAL`：没有可填入
+  `H1.source_backed_local_occurrence_edge_family` 的 theorem-backed
+  local-occurrence edge。
+- `DECLARED_CORPUS`：在 TPC-193 七篇加既审 Menon 基线之外没有新增
+  eligible primary theorem source；不形成 V2。
+
+新增 primary-corpus 扫描覆盖 2026-01-01 至 2026-07-29 的 arXiv
+`math.NT` 元数据，再对筛出的 primary theorem candidates 逐项审核。
+Kim 2603.23250 是 shift-averaged ternary correlation；Verjovsky
+2607.25002 的 relevant proposition 是 generic inequality，缺少
+Möbius moment input；Cantarini 2607.09110 是条件化、平均化的
+single-Möbius convolution。它们均不直接控制 prescribed atom 上的
+
+```text
+mu(d+s*z) mu(u+a*z),  s*u-a*d=2.
+```
+
+本节的五个 `FAIL` 只表示“截至 2026-07-29，在当前仓库与明列扫描语料
+内没有满足 exact trigger contract 的正向证书”。它不是数学不可能性
+定理，不是全球 source 不存在声明，也不关闭 O161 parents 或全局架构。
+
+## 5. 不编号 `CERTIFICATE_HARDENING_V2`
+
+本轮没有改写数学论文、TeX 或稳定 PDF；只加固机器证书与交接。
+
+TPC-194 独立语义契约现在逐项冻结：
+
+1. 七个 production 字段继续精确为 `MISSING`：
+
+   ```text
+   named_production_atom
+   packet_schedule
+   common_X_N_q_ranges
+   uniform_constant_C
+   positive_sigma
+   target_normalization_selection
+   complete_physical_loss_ledger
+   ```
+
+2. `verdict`、`first_missing`、route/claim flags、O161/global state、
+   L2 和 endpoint ledger。
+3. 三个 `(id, domain, normalization)` target tuples，且成对不可混同。
+4. 十个 per-packet formula fields，按推导类型精确记为：
+
+   ```text
+   literal_or_signed_lift = 7
+   specialized = 1
+   composed = 2
+   ```
+
+   不得把 specialized/composed 字段改称 literal。
+5. 十行 formula-field source ledger 和三行 formula-type source ledger。
+6. 来源定位不仅检查 source hash 或 label 名，还检查：
+
+   ```text
+   unique source anchors = 22
+   bounded-neighborhood formula fragments = 36
+   ```
+
+7. TPC-203 从锁定路径重新加载 TPC-194，并完整复验七项缺失、十个
+   formula fields、三个 target tuples、两套 source ledgers 和全部状态。
+
+攻击矩阵：
+
+```text
+base exact-schema mutations = 100/100 rejected
+TPC-194 coordinated-regeneration semantic mutations = 35/35 rejected
+TPC-203 coordinated upstream/integration mutations = 13/13 rejected
+semantic total = 48/48 rejected
+python -O fail-closed CLIs = 12/12
+positive generator/verifier/standalone entries = 12/12
+```
+
+独立 manifest 固定 12 个 active artifacts 的 raw SHA。其信任模式是：
+
+```text
+REPOSITORY_PIN_REQUIRES_GIT_REVIEW_NOT_EXTERNAL_SIGNATURE
+```
+
+它能阻止不改 verifier/manifest 的 payload+schema+audit+checker
+协调重生成；它不是外部签名。若 generator、verifier 和 manifest
+本身一起改变，仍必须进行 git diff/commit review，或另加 signed
+commit/tag policy。不得把 manifest/hash 当作 theorem evidence。
+
+## 6. 停止单元注册表
+
+全部六个既有单元原样保持：
 
 ```text
 TPC181_PHASE_METRIC_UNCONTROLLED_ATOMIC = STOP_SCOPED
 TPC187_SIZE_ONLY_LOCAL_OSCILLATION_METHOD = STOP_SCOPED
 TPC190_PARSEVAL_CHEBYSHEV_TO_PRESCRIBED_ATOM = STOP_SCOPED
 TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1 = STOP_SCOPED
-```
-
-本轮新增且仅新增：
-
-```text
 FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT = STOP_SCOPED
 ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ = STOP_SCOPED
 ```
 
-不得把 TPC-202 的 Menon screening 或继承的 selector illustration 注册成新停止单元。不得重新包装上述停止单元来冒充新路线。
+本次 audit/hardening 不新增 stop cell。不得把 Menon、Kim、Verjovsky、
+Cantarini screening 注册为新停止单元，也不得重新包装旧 stopped
+method cells 冒充新路线。
 
-## 6. 五类精确 reopen triggers
+## 7. 精确 reopen triggers
 
-下一轮不编号审计必须逐项检查以下五类触发器。
+只有以下真正新增、source-backed 且 theorem-backed 的输入才允许提出
+reopen；用户授权本身不能代替数学 trigger。
 
 ### `DIRECT`
 
-同时出现：
+必须同时有：
 
 1. formula-complete production target；
 2. source-backed named physical atom；
@@ -258,25 +270,20 @@ ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ = STOP_SCOPED
 8. theorem-backed natural-`q/N` fixed-atom positive-power mechanism；
 9. 六轴全部保持。
 
-缺一项即不通过。不得用 block/cumulative 对象替代 literal prefix target。
-
 ### `METRIC`
 
-同时出现：
-
-1. source-locked named atom；
-2. exact packet schedule；
-3. schedule-specific exceptional-limsup avoidance theorem。
-
-phase `L2`、Lebesgue-a.e. phase 或未锁定 schedule 的 metric statement 均不通过。
+必须同时有 source-locked named atom、exact packet schedule 和
+schedule-specific exceptional-limsup avoidance theorem。phase `L2`、
+Lebesgue-a.e. phase 均不通过。
 
 ### `BAD_ENDPOINT`
 
-出现 theorem-backed literal fixed-atom local-increment cancellation theorem，并逐项通过常数、范围、归一化和损失审计。
+必须有 theorem-backed literal fixed-atom local-increment cancellation
+theorem，并通过常数、范围、归一化和损失审核。
 
 ### `STRUCTURAL`
 
-出现 theorem-backed local-occurrence edge，能够直接填补：
+必须有 theorem-backed local-occurrence edge，直接填补：
 
 ```text
 H1.source_backed_local_occurrence_edge_family
@@ -284,104 +291,43 @@ H1.source_backed_local_occurrence_edge_family
 
 ### `DECLARED_CORPUS`
 
-在 TPC-193 已审核的七篇 primary sources 之外，出现真正新增的 primary theorem source，且定理直接控制 prescribed atom 上的 literal coefficient
+必须有真正新增的 primary theorem source，直接控制 prescribed
+determinant-two two-Möbius atom；逐项通过六轴、常数、范围、归一化和
+全部损失。phase L2、a.e. phase、size-only、log-to-natural、相关平均、
+积分控制、factorwise Fourier norm 或旧 stop-cell 重包装均不得计入。
+
+`TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1` 必须继续
+`STOP_SCOPED`。
+
+## 8. 验证摘要与未跟踪文件
+
+当前 TPC-194--203 目录内的 Git-tracked active release 摘要（忽略未跟踪
+或 `.gitignore` 排除的临时构建产物）：
 
 ```text
-mu(d+s*z) mu(u+a*z),  s*u-a*d=2.
-```
-
-必须逐项审核六轴、常数、范围、归一化和全部损失。以下均不得计入：
-
-- phase `L2`；
-- Lebesgue-a.e. phase；
-- size-only；
-- log-to-natural 偷渡；
-- 三个旧 stopped method cells 的重新包装；
-- 只控制相关平均、积分、几乎处处集合或因子级 Fourier norm 的结果。
-
-`TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1` 必须继续保持 `STOP_SCOPED`。
-
-## 7. 审核摘要
-
-Release allowlist：
-
-```text
-papers = 10
-release files = 111
-unexpected release files = 0
-missing release files = 0
-```
-
-Schema 与 payload：
-
-```text
-JSON files = 40
+release files = 113
+JSON files = 41
 payloads = 10
 audits = 10
-exact recursive schemas = 20
-schema objects = 313
-schema arrays = 57
-const leaves = 1237
-source locks = 40
-built-in mutations rejected = 100/100
-```
-
-每个 standalone checker 在 `--check` 下：
-
-- 加载并执行 payload schema 与 audit schema；
-- 核对 payload、audit、两份 schema 的四重 SHA；
-- 要求 canonical byte equality；
-- 重新计算 `finite(payload)`；
-- 要求它与 `audit["finite_check_result"]` 精确相等。
-
-专项攻击复核：
-
-```text
-audit top-level extra rejected = 10/10
-deleted finite result rejected = 10/10
-forged finite result rejected = 10/10
-payload-schema extra rejected = 10/10
-deep rebind/schema rebuild attacks = rejected
-python -O fail-closed CLIs = 11/11
-```
-
-PDF：
-
-```text
+active exact schemas = 20
+source locks = 42
 stable PDFs = 10
-pages = 21
-page size = A4
-embedded-font rows = 140/140
-overfull warnings = 0
-undefined-reference warnings = 0
-all pages rendered and visually inspected = true
+stable PDF pages = 21
+TPC-203 stable PDF hash unchanged = true
+TeX/PDF files changed by hardening = 0
+hardening comparison boundary = ef4bb4b..2e7a386
 ```
 
-信任边界：
+最终正向复核：
 
-- batch generator 是共同 trust root；
-- generator 与生成物被协调修改并重建时，必须做 git diff/commit review；
-- canonical duplicate/format rejection 由 `--check` 路径强制；
-- 集成审核必须运行 batch `--check`，不能只运行 TPC-203 standalone checker。
+```text
+batch generator --check = PASS
+independent hardening verifier --check = PASS
+TPC-194--203 standalone --check = 10/10 PASS
+git diff --check = PASS
+```
 
-## 8. Claim firewall
-
-本批次只形成 L0/L1 结构与否定性门槛结果。它没有证明：
-
-- prescribed physical atom 的 positive-power decay；
-- source-backed fixed-atom local occurrence；
-- endpoint credit；
-- prime-pair lower bound；
-- twin-prime theorem；
-- 任意 program-positive L2 结论。
-
-`FORMULA_COMPLETE_PER_PACKET_L1` 不等于 production target complete。
-`SCREENED_NON_DIRECT_ZERO_ELIGIBLE` 不等于 exhaustive impossibility theorem。
-`STOP_SCOPED` 只停止被点名的方法单元，不关闭 O161 parents 或全局架构。
-
-## 9. 已保留的无关未跟踪文件
-
-本批次没有暂存、修改或删除：
+已保留且不得暂存、修改或删除的无关未跟踪文件：
 
 ```text
 papers/tpc-105-provenance-preserving-affine-map-quotient/experiments/__pycache__/
@@ -394,7 +340,15 @@ papers/tpc-63-canonical-cofactor-provenance/main.pdf
 tmp/
 ```
 
-它们不属于 TPC-194--203 release。
+## 9. 下一步选择
+
+没有新 source/corpus 或新 theorem 时，不应机械重跑同一 audit，也不得
+创建 TPC-204。下一会话应停下并请求用户从以下范围作新选择：
+
+1. 等待真正新的 theorem/source；
+2. 用户指定新增 primary source 或明确定义扩展 corpus，再做不编号审核；
+3. 用户另行明确限定一个有限的 TPC-204 目标并授权；但该授权不得被写成
+   direct/metric/bad-endpoint/structural 数学 trigger 已通过。
 
 ## 10. 下一会话可直接粘贴
 
@@ -402,19 +356,29 @@ tmp/
 进入仓库：
 D:\26-aimath\理论研究3\prime_dynamics_theory
 
-读取仓库根目录 TPC_HANDOFF.md，以仓库文件而不是旧聊天记录为事实来源。先执行：
+读取仓库根目录 TPC_HANDOFF.md，以仓库文件而不是旧聊天记录为事实来源。
+先执行：
 
 git status --short --branch
 git pull --rebase origin main
+python papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py --check
 
-从 TPC-203 的 USER_CONFIRMATION_REQUIRED 停止点开始，但这不解除任何数学门槛，也不自动授权创建 TPC-204。
+当前事实终点仍是 TPC-203 / MVP10；不编号 REOPEN_TRIGGER_AUDIT 已完成，
+DIRECT、METRIC、BAD_ENDPOINT、STRUCTURAL、DECLARED_CORPUS 五类 trigger
+均未触发。CERTIFICATE_HARDENING_V2 只冻结当前负向边界，不提供新的数学
+credit，也不授权 TPC-204。
 
-先执行一个不编号的 REOPEN_TRIGGER_AUDIT，逐项审核 TPC_HANDOFF.md 中的五类精确触发器：
-DIRECT、METRIC、BAD_ENDPOINT、STRUCTURAL、DECLARED_CORPUS。
+保持三个 first-missing 彼此区分；保持两个 O161 pointwise parents 和
+global architecture 为 OPEN；保持 fixed-atom credit=0、strict 1/400
+UNPAID、L2=NONE；保持六个 STOP_SCOPED 单元原样。
 
-保持 TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1 为 STOP_SCOPED；保持两个 O161 pointwise parents 和全局架构开放；不得把 phase L2、Lebesgue-a.e. phase、size-only、log-to-natural 或旧 stopped method cells 的重包装当作新路线。
+若没有真正新增的 source/corpus/theorem，停止并请求我选择：
+(1) 等待新 theorem/source；
+(2) 审核我指定的新 source/corpus；
+(3) 由我另行限定并授权一个有限的 TPC-204 目标。
+授权本身不得替代任何数学 trigger。
 
-只有某个触发器 source-backed、theorem-backed 且逐项通过六轴、常数、范围、归一化和完整损失审核时，才提出对应 reopen route。完成审计后停止，并向我请求下一步选择；没有我的新确认，不得创建 TPC-204。
-
-主会话只保留结论、路线选择、阻断项和最终审核摘要。长文献扫描、定理原文核查、schema exploit review、构建日志及逐页 PDF 检查交给分身，只返回紧凑摘要；所有正式写入由主会话协调。
+主会话只保留结论、路线选择、阻断项和最终审核摘要。长文献扫描、定理
+原文核查、schema exploit review、构建日志和逐页 PDF 检查交给分身；
+所有正式写入由主会话协调。
 ```
