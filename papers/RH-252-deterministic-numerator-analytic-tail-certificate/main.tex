@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Deterministic-Numerator Analytic-Tail Certificate}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-251 left the deterministic numerator tail as a separate obligation in the
+finite-head/analytic-tail interface.  RH-46 supplies a stronger analytic input
+than the finite coefficient dictionary alone: the deterministic one-step
+numerator $G$ is holomorphic and nonzero on $|z|<\lambda$, where
+$\lambda=1.6785735104283177\ldots$.  After Hardy scaling by $r_H=0.85$, the
+logarithm of $G(z/r_H)$ therefore has radius at least
+$\rho_*=r_H\lambda=1.42678748386407\ldots$.  We prove an all-order Cauchy
+tail bound for the target coefficients and its exponential determinant
+conversion.  The boundary supremum entering the bound is not numerically
+certified, so no cloud or quotient uniformity is claimed.
+\end{abstract}
+
+\section{Input and scope}
+
+Write the deterministic factor from RH-46 as
+\begin{equation}
+ \widehat D_{0,\mathrm{bulk},2}(z)=\frac{G(z)}{1-z^2/\lambda},
+ \qquad G(0)=1,
+ \label{eq:factor}
+\end{equation}
+where $G$ is holomorphic and nonzero on $|z|<\lambda$ \citep{WangRH46}.
+RH-243 identifies the one-step Hardy-scaled trace-style target by
+\begin{equation}
+ \log G_H(z)=-\sum_{n\ge2}\frac{a_n}{n}z^n,
+ \qquad G_H(z):=G(z/r_H),
+ \qquad r_H=0.85.
+ \label{eq:target}
+\end{equation}
+The coefficients $a_n$ are deterministic target coefficients, not yet the
+coefficients of a selected noisy cloud \citep{WangRH243}.  We set $a_1:=0$,
+so coefficient estimates below may be stated uniformly for $n\ge1$.
+
+\begin{proposition}[Scaled zero-free disk]
+\label{prop:radius}
+The function $G_H$ is holomorphic and nonzero on
+\begin{equation}
+ |z|<\rho_*:=r_H\lambda=1.42678748386407\ldots>1.
+ \label{eq:rho}
+\end{equation}
+Consequently there is a unique holomorphic logarithm $L_H$ on this disk with
+$L_H(0)=0$, and $L_H=\log G_H$ in \eqref{eq:target}.
+\end{proposition}
+
+\begin{proof}
+The substitution $z\mapsto z/r_H$ maps $|z|<r_H\lambda$ into
+$|z|<\lambda$.  Holomorphicity and nonvanishing are preserved.  The disk is
+simply connected and $G_H(0)=1$, so the normalized logarithm exists and is
+unique.
+\end{proof}
+
+\section{The all-order tail theorem}
+
+\begin{definition}[Boundary budget]
+For $0\le R<S<\rho_*$ define
+\begin{equation}
+ M_S:=\max_{|z|=S}|L_H(z)|,
+ \qquad
+ \Phi_N(R,S):=\frac{(R/S)^N}{1-R/S},
+ \quad N\ge1.
+ \label{eq:budget}
+\end{equation}
+The first omitted order is $N$; thus the tail starts at $n=N$.
+\end{definition}
+
+\begin{theorem}[Analytic deterministic-target tail]
+\label{thm:tail}
+For every $0\le R<S<\rho_*$ and every integer $N\ge1$,
+\begin{equation}
+ \frac{|a_n|}{n}\le M_S S^{-n}\quad(n\ge1),
+ \qquad
+ \sum_{n\ge N}\frac{|a_n|R^n}{n}
+ \le M_S\Phi_N(R,S).
+ \label{eq:tail}
+\end{equation}
+In particular, since $\rho_*>1$, the all-order deterministic target tail on
+the unit disk exists for every $1<S<\rho_*$.
+\end{theorem}
+
+\begin{proof}
+By Cauchy's coefficient estimate applied to the holomorphic function $L_H$ on
+$|z|<S$, the coefficient of $z^n$ in $L_H$ has modulus at most
+$M_SS^{-n}$.  Equation \eqref{eq:target} says that this coefficient is
+$-a_n/n$.  Multiplying by $R^n$ and summing the geometric series proves
+\eqref{eq:tail}.
+\end{proof}
+
+\begin{corollary}[Determinant conversion]
+\label{cor:exp}
+If $E_N(R,S):=M_S\Phi_N(R,S)$, then truncating the target logarithm after
+order $N-1$ incurs relative multiplicative error at most
+\begin{equation}
+ \left|\exp\!\left(-\sum_{n\ge N}a_nz^n/n\right)-1\right|
+ \le e^{E_N(R,S)}-1,
+ \qquad |z|\le R.
+ \label{eq:exp-error}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:tail} bounds the modulus of the omitted logarithm by
+$E_N(R,S)$.  The elementary inequality $|e^w-1|\le e^{|w|}-1$ gives the
+claim.
+\end{proof}
+
+\begin{remark}[What the theorem does not provide]
+The theorem is an exact analytic interface, but $M_S$ is an unknown boundary
+constant.  A finite evaluation of the order-$2$--$12$ polynomial cannot bound
+the full $L_H$ on the same circle.  Thus the result is not a numerical
+uniform tail certificate for the moving cloud and does not invoke RH-240.
+\end{remark}
+
+\section{Finite diagnostic}
+
+We read the archived RH-243 coefficients through order twelve and evaluate
+the truncated logarithm on $4096$ equally spaced points for
+$S\in\{1.05,1.15,1.25,1.35\}$.  These values are diagnostics only; the exact
+quantity $M_S$ remains unbounded by the experiment.  The geometric factor for
+the unit-disk tail beginning at order $13$ is shown below.
+
+\begin{center}
+\small
+\begin{tabular}{rrrr}
+\toprule
+$S$ & truncated $\max|L_H|$ & $\Phi_{13}(1,S)$ & status\\
+\midrule
+1.05 & 0.579287 & 11.136748 & diagnostic only\\
+1.15 & 0.797017 & 1.246048 & diagnostic only\\
+1.25 & 1.106719 & 0.274878 & diagnostic only\\
+1.35 & 1.559934 & 0.077970 & diagnostic only\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The last column is essential: multiplying the displayed truncated supremum by
+$\Phi_{13}$ is not a proof of the tail bound.  It only illustrates the radius
+budget once a rigorous $M_S$ is supplied.
+
+\section{Gate and route audit}
+
+The new exact statement closes the deterministic-target analytic-tail
+existence obligation on every strict subdisk of radius $\rho_*$.  It does not
+identify the current noisy cloud with $a_n$, does not supply a uniform quotient
+block estimate, and does not produce a finite numerical value for $M_S$.
+Therefore Gates A--E remain false/open.  No Hilbert--Polya operator, Riemann
+zero identification, zeta-divisor equality, or RH implication is claimed.
+
+The next result should either interval-certify $M_S$ on a useful circle or
+provide a genuinely expanded resolved candidate window.  Reweighting the
+frozen RH-248 shell class would not be a new input.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

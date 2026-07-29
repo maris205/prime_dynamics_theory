@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Monodromy Integrality Barrier for Signed Moment Fits}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+After idempotent polynomial selectors collapse to binary masks, one may try
+arbitrary signed shell weights.  On the expanded RH-254 windows, minimum-norm
+real weights fit the order-$2$--$12$ anchor tolerance at all 32 endpoints.
+Every fit is fractional, however, and maximum weights range from $39.64$ to
+$3.02\times10^{11}$.  We prove that the weighted moment germ equals
+$\prod_j(1-\lambda_jz)^{w_j}$ near zero and has monodromy
+$e^{2\pi i w_j}$ around $\lambda_j^{-1}$.  Integer combined exponents are
+therefore necessary for a single-valued meromorphic determinant quotient.
+The 32 continuous signed fits are finite compressions, not legal selectors.
+\end{abstract}
+
+\section{Weighted moment germs}
+
+Let $\lambda_1,\dots,\lambda_J$ be distinct nonzero complex numbers and let
+$w_j\in\mathbb C$.  Define the local logarithmic moment germ
+\begin{equation}
+ \mathcal F_w(z)=\exp\left[-\sum_{n\ge1}\frac{z^n}{n}
+ \sum_{j=1}^Jw_j\lambda_j^n\right]
+ \label{eq:germ}
+\end{equation}
+for $|z|<\min_j|\lambda_j|^{-1}$.
+
+\begin{theorem}[Monodromy integrality]
+\label{thm:monodromy}
+On the initial disk,
+\begin{equation}
+ \mathcal F_w(z)=\prod_{j=1}^J(1-\lambda_jz)^{w_j}.
+ \label{eq:product}
+\end{equation}
+Analytic continuation once around $z=\lambda_j^{-1}$ multiplies the germ by
+$e^{2\pi i w_j}$.  Hence $\mathcal F_w$ is single-valued meromorphic near all
+reciprocal roots if and only if every combined exponent at a repeated root is
+an integer.
+\end{theorem}
+
+\begin{proof}
+The power-series identity
+$-\sum_{n\ge1}(\lambda z)^n/n=\log(1-\lambda z)$ proves
+\eqref{eq:product} on the initial disk.  Continuing the logarithm once around
+its zero changes it by $2\pi i$; exponentiation therefore produces the stated
+factor.  Trivial monodromy is equivalent to $e^{2\pi iw_j}=1$, or
+$w_j\in\mathbb Z$.  Integer powers are rational meromorphic factors, proving
+the converse.
+\end{proof}
+
+\begin{remark}[Necessary, not sufficient]
+Integer weights are necessary for a determinant ratio, but an operator
+realization also requires the corresponding algebraic multiplicities and
+invariant spaces.  Negative integers describe denominator or superdeterminant
+contributions; they are not automatically present in the noisy operator.
+\end{remark}
+
+\section{Expanded-window signed fit}
+
+At each endpoint let $V$ be the real order-$2$--$12$ shell-power matrix and
+$d$ the difference between the Perron/parity-removed trace and deterministic
+anchor.  We solve the unconstrained minimum-norm problem
+\begin{equation}
+ \min\{\|w\|_2:Vw\ \text{is the least-squares approximation to }d\}.
+ \label{eq:lstsq}
+\end{equation}
+This is deliberately more permissive than the RH-255 box
+\citep{WangRH255}.
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+\toprule
+quantity & value\\
+\midrule
+endpoints within local tolerance & 32/32\\
+full row-rank systems & 28/32\\
+weighted residual range & $2.15\times10^{-15}$--0.003783\\
+fractional weights per endpoint & 20--34\\
+maximum absolute weight range & 39.64--$3.02\times10^{11}$\\
+integer-weight fits & 0/32\\
+maximum monodromy defect & 1.9999999996\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The four rank-deficient systems still meet their comparatively larger local
+tolerances.  The smallest singular value across the batch is
+$2.71\times10^{-19}$, which helps explain the coefficient explosion.  The
+fit is therefore both nonintegral and numerically ill-conditioned.
+
+\begin{corollary}[Scoped illegality of the continuous fits]
+None of the 32 least-norm signed fits defines a single-valued finite
+determinant quotient with the fitted shell exponents.
+\end{corollary}
+
+\begin{proof}
+Every fitted vector contains at least 20 weights farther than $10^{-8}$ from
+the integer lattice.  Apply Theorem~\ref{thm:monodromy}.
+\end{proof}
+
+\section{Boundary and next route}
+
+This result does not exclude a bounded integer signed selector or a
+non-product quotient-kernel cancellation.  It does exclude the inference
+``finite signed fit implies determinant selector.''  RH-258 should audit a
+small integer lattice and then separately ask for an operator realization.
+Gates A--E remain false/open.  No Hilbert--Polya operator, Riemann-zero
+identification, zeta-divisor equality, or RH implication is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

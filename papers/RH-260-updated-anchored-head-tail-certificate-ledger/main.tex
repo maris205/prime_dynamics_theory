@@ -1,0 +1,218 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Updated Anchored Head--Tail Certificate Ledger}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We update the exact finite-head/analytic-tail interface after four distinct
+inputs.  RH-252 gives an all-order analytic existence interface for the
+deterministic target, but its boundary constant $M_S$ is not numerically
+certified.  RH-255 and RH-258 find no anchored head in their two expanded
+admissibility classes at any of 32 endpoints.  RH-259 supplies a finite 23-endpoint
+quotient block diagnostic whose worst root rate is $0.505642$, not a uniform
+small-noise theorem.  We prove the updated gluing estimate and a scoped
+zero-certificate corollary: the current audited classes have exactly zero
+complete head--tail certificates.  This is a route ledger, not a global
+nonexistence theorem.
+\end{abstract}
+
+\section{The updated certificate interface}
+
+Let $\tau_{n,\theta}$ be the residual trace coefficients produced by a
+candidate cloud or quotient at parameter $\theta$, and let $a_n$ be the
+deterministic target coefficients of RH-243 \citep{WangRH243}.  Write
+\begin{equation}
+ L_\theta(z)=-\sum_{n\ge 2}\frac{\tau_{n,\theta}}{n}z^n,
+ \qquad
+ L_*(z)=-\sum_{n\ge 2}\frac{a_n}{n}z^n.
+ \label{eq:logs}
+\end{equation}
+For a first omitted order $N\ge 3$, define the three nonnegative budgets
+\begin{align}
+ H_{<N}(\theta,R)&=\sum_{n=2}^{N-1}
+     \frac{|\tau_{n,\theta}-a_n|R^n}{n},\\
+ Q_{\ge N}(\theta,R)&=\sum_{n\ge N}
+     \frac{|\tau_{n,\theta}|R^n}{n},\\
+ A_{\ge N}(R)&=\sum_{n\ge N}
+     \frac{|a_n|R^n}{n}.
+ \label{eq:budgets}
+\end{align}
+The convention matters: an order-$2$--$12$ head has $N=13$.
+This first-omitted-order formulation refines the bookkeeping interface of
+RH-250 \citep{WangRH250}.
+
+\begin{theorem}[Budgeted head--tail gluing]\label{thm:gluing}
+Assume the series in \eqref{eq:logs} are absolutely convergent on
+$|z|\le R$.  Then
+\begin{equation}
+ |L_\theta(z)-L_*(z)|
+ \le H_{<N}(\theta,R)+Q_{\ge N}(\theta,R)+A_{\ge N}(R).
+ \label{eq:logbound}
+\end{equation}
+If $H_{<N}\le h$, $Q_{\ge N}\le q$, and $A_{\ge N}\le t$ uniformly on a
+parameter set, and if $|L_*(z)|\le B_*$ there, then with
+$D_\theta=e^{L_\theta}$ and $D_*=e^{L_*}$,
+\begin{equation}
+ |D_\theta(z)-D_*(z)|
+ \le e^{B_*}\bigl(e^{h+q+t}-1\bigr).
+ \label{eq:detbound}
+\end{equation}
+Consequently a sequence of complete certificates yields locally uniform
+determinant convergence whenever the three budgets tend uniformly to zero.
+\end{theorem}
+
+\begin{proof}
+Subtract the two absolutely convergent series.  The terms with
+$2\le n<N$ give the finite head $H_{<N}$; the remaining terms are
+bounded separately by the absolute quotient and target tails.  This proves
+\eqref{eq:logbound}.  For the determinant, put
+$\Delta=L_\theta-L_*$.  Since $|L_*|\le B_*$,
+\[
+ |e^{L_\theta}-e^{L_*}|
+ =|e^{L_*}|\,|e^\Delta-1|
+ \le e^{B_*}(e^{|\Delta|}-1),
+\]
+and \eqref{eq:detbound} follows from \eqref{eq:logbound}.
+\end{proof}
+
+\begin{proposition}[Analytic target tail exists, but its constant is open]
+\label{prop:target}
+RH-252 \citep{WangRH252} gives a scaled zero-free radius
+\[
+ \rho_*=r_H\lambda=1.42678748386407\ldots>1,
+ \qquad r_H=0.85.
+\]
+For every $0\le R<S<\rho_*$, the normalized logarithm has a finite
+boundary supremum $M_S$ and
+\begin{equation}
+ A_{\ge N}(R)\le M_S\frac{(R/S)^N}{1-R/S}.
+ \label{eq:targettail}
+\end{equation}
+At $R=1$, $N=13$, and $S=1.35$, the geometric factor per $M_S$ is
+$0.07796985628233917$.  The existence of $M_S$ is exact; no certified
+numerical upper bound for it is available in the archived audit.
+\end{proposition}
+
+\begin{proof}
+This is the Cauchy estimate for the holomorphic logarithm on the disk supplied
+by RH-252.  The coefficient of $z^n$ is $-a_n/n$, so summing the resulting
+geometric series gives \eqref{eq:targettail}.  The final numerical factor is
+only the displayed geometric factor; multiplying it by a truncated boundary
+scan would not certify $M_S$.
+\end{proof}
+
+\section{Scoped zero-certificate result}
+
+The head classes are deliberately kept separate.  RH-255 uses a convex
+single-use shell box containing every prefix and binary shell subset.  Its
+archived primal--dual audit has 0 passes at all 32 endpoints.  RH-258 tests the
+unit-cap signed-integer lattice $\{-1,0,1\}^J$, with exact-integrality MILP
+solutions and zero reported MIP gap; it also has 0 passes at all 32 endpoints.
+Neither audit supplies an operator realization for an arbitrary mask
+\citep{WangRH255,WangRH258}.
+
+\begin{corollary}[Zero complete certificates in the audited classes]
+\label{cor:zero}
+Restrict the candidate head to the union of the RH-255 box class and the
+RH-258 unit-cap signed-integer class, with the archived 32-endpoint tolerance
+protocol.  There is no complete head--tail certificate in this restricted
+class.
+\end{corollary}
+
+\begin{proof}
+Every complete certificate has, as a necessary first component, a passing
+anchored finite head.  The RH-255 audit supplies 0/32 such passes and the
+RH-258 audit supplies 0/32.  Therefore their union supplies no passing head,
+so the set of complete certificates is empty, independently of the tail
+budgets.  This conclusion is scoped to the two archived classes and their
+finite tolerance protocol.
+\end{proof}
+
+The two classes cover 64 class--endpoint cases.  The RH-255 audit excludes
+\[
+ 62{,}030{,}604{,}700
+\]
+eligible binary subsets through the box obstruction.  RH-258's unit-cap
+lattice contains
+\[
+ 39{,}417{,}456{,}084{,}975{,}216
+\]
+signed points in aggregate.  These counts are finite audit descriptors, not
+claims about all possible selectors.
+
+\section{Quotient-tail ledger}
+
+RH-259 extends the ordered-Schur quotient calculation to dimension 1024
+\citep{WangRH246,WangRH259}.  All
+23 audited twelfth powers are contractive, but the worst root rate is
+\[
+ q_{12}=0.5056418005507071,
+\]
+at the right channel with $\sigma=0.0025$ and dimension 1024.  The finite
+unit-disk logarithmic tail diagnostic is
+$5.654507945432548\times10^{-4}$.  Nine archived endpoints remain outside
+the calculation, and the floating matrix norms are not interval enclosures.
+Thus this is a family of finite diagnostics, not a uniform small-noise
+quotient certificate.
+
+\begin{center}
+\small
+\begin{tabular}{p{0.46\linewidth}p{0.39\linewidth}}
+\toprule
+certificate component & archived status \\
+\midrule
+deterministic target analytic tail & exact existence; $M_S$ not certified \\
+RH-255 expanded single-use head & 0/32 passes \\
+RH-258 unit-cap signed-integer head & 0/32 passes \\
+RH-259 quotient block tail & 23 finite endpoints; uniformity open \\
+cloud coefficient bridge & open \\
+complete head--tail certificate & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Protocol, boundary, and next input}
+
+The experiment reads the four archived JSON ledgers, checks 44 source
+consistency predicates, and writes a new structured ledger.  It does not
+rerun the dimension-1024 Schur calculation or fit new moments.  The result
+therefore separates exact inherited interfaces from finite numerical audits:
+the target-tail existence flag is true, while a certified boundary constant,
+a legal head pass, a cloud coefficient bridge, and a uniform quotient tail
+are all false.
+
+The obstruction does not exclude larger integer caps, signed or complex
+selectors derived from an invariant quotient, larger resolved windows, a
+future interval bound for $M_S$, or another operator realization.  It also
+does not establish global nonexistence.  Gates A--E remain false/open.  No
+Hilbert--Polya operator is constructed; no Riemann zeros are identified; no
+equality with the completed zeta divisor and no implication of RH is claimed.
+
+The next reopening input must supply at least one genuinely new legal head,
+a certified $M_S$, a uniform quotient theorem, or an exact coefficient bridge;
+the useful route requires the relevant obligations together rather than a
+finite-order extrapolation.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

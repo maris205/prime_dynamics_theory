@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Extended Deterministic Numerator Anchor Atlas}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The analytic-tail theorem of RH-252 is exact but does not identify the
+finite target coefficients beyond the order-12 table of RH-243.  We evaluate
+the same deterministic periodic-point formula through order $28$.  This adds
+16 orders and enumerates $32767$ physical fixed points at the largest order.
+The new order block contributes $0.0021942543$ to the unit-disk logarithmic
+norm, and its descriptive log-linear root rate is $0.7009986$.  These are
+finite reproducible facts.  They do not prove a uniform trace envelope, a
+cloud coefficient bridge, or any statement about Riemann zeros.
+\end{abstract}
+
+\section{Exact target dictionary}
+
+Let $P_n$ denote the deterministic flat periodic trace from the quadratic
+band-merging map.  The RH-243 dictionary is
+\begin{equation}
+ a_n=r_H^{-n}\left[P_n-1-(-1)^n+2\mathbf 1_{2\mid n}\lambda^{-n/2}\right],
+ \qquad r_H=0.85,
+ \label{eq:anchor}
+\end{equation}
+with $\lambda=1.6785735104283177\ldots$ \citep{WangRH243}.  The periodic
+point and multiplier formulas used to evaluate $P_n$ are the exact finite
+formulas archived with the Collet--Eckmann completion \citep{WangRH11}.
+
+\begin{proposition}[Finite extension]
+\label{prop:finite}
+For every integer $2\le n\le28$, equation \eqref{eq:anchor} defines an exact
+finite deterministic target value.  The order-$28$ computation enumerates
+$32767$ distinct physical fixed points before summing their flat weights.
+\end{proposition}
+
+\begin{proof}
+The inverse-branch construction in RH-11 enumerates all cyclic Markov words,
+removes the duplicated shared endpoint, and verifies the physical fixed-point
+count.  Applying the displayed finite sum for each order and then the explicit
+algebraic correction in \eqref{eq:anchor} gives the claim.
+\end{proof}
+
+\section{The new order block}
+
+The following values are representative rows from the 16 new orders.  The
+last column is the Hardy-scaled target, not a noisy trace.
+
+\begin{center}
+\small
+\begin{tabular}{rrrr}
+\toprule
+$n$ & $P_n$ & unscaled $g_n$ & $a_n$\\
+\midrule
+13 & 0.00118921 & 0.00118921 & 0.00983586\\
+16 & 1.96851809 & 0.000250789 & 0.00337758\\
+20 & 1.98876937 & 0.0000316550 & 0.000816703\\
+24 & 1.99600689 & 0.00000399130 & 0.000197269\\
+28 & 1.99858189 & 0.000000502810 & 0.0000476073\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For the unit disk and the logarithmic norm
+\begin{equation}
+ J_{I}(1):=\sum_{n\in I}\frac{|a_n|}{n},
+ \label{eq:norm}
+\end{equation}
+the archived computation gives
+\begin{align}
+ J_{2:12}(1)&=0.49450543569144195,\\
+ J_{13:28}(1)&=0.0021942543215719553,\\
+ J_{2:28}(1)&=0.496699690013014.
+ \label{eq:values}
+\end{align}
+At radius $0.8$, the new block contributes only
+$8.7150803572\times10^{-5}$.
+
+\section{Finite slope diagnostic and its boundary}
+
+Fitting $\log|a_n|$ linearly against $n$ on the new block gives
+\begin{equation}
+ \widehat q_{13:28}=0.7009986349256669,
+ \quad
+ \widehat q_{\rm odd}=0.7009206511866494,
+ \quad
+ \widehat q_{\rm even}=0.7011096165507584.
+ \label{eq:fit}
+\end{equation}
+The agreement between parity subsequences is a useful finite consistency
+check with the RH-252 radius budget \citep{WangRH252}.  It is not a proof of
+$|a_n|\le Cq^n$ for all $n$: a finite fit has no control over orders $29$ and
+beyond, nor over the constant needed in the Cauchy tail theorem.
+
+\begin{remark}[Scope]
+The atlas is deterministic and finite.  It does not select a noisy spectral
+cloud, certify a quotient block, or identify the coefficients of a moving
+operator.  The target is an anchor, not an observed eigenvalue list.
+\end{remark}
+
+\section{Route decision}
+
+RH-252 provides an all-order analytic existence statement for the target tail,
+while this paper supplies a longer finite target table.  The next genuinely
+new input must come from the spectral side: an expanded resolved candidate
+window or an invariant quotient selector.  Reusing the frozen RH-248 shell
+window would not be progress.  Gates A--E remain false/open; no
+Hilbert--Polya operator, zeta-divisor equality, Riemann-zero identification,
+or RH implication is asserted.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

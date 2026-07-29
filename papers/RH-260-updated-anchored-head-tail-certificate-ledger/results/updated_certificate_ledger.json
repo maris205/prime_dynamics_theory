@@ -1,0 +1,102 @@
+{
+  "anchored_head": {
+    "any_legal_head_pass_count": 0,
+    "audited_class_endpoint_case_count": 64,
+    "audited_endpoint_count": 32,
+    "classes": {
+      "rh255_expanded_single_use_box": {
+        "eligible_binary_subset_count": 62030604700,
+        "maximum_distance": 0.42399800369340307,
+        "minimum_distance": 0.14358493511963313,
+        "operator_realization_claimed": false,
+        "pass_count": 0,
+        "prefix_pass_count": 0,
+        "primal_dual_gap_max": 5.828670879282072e-15
+      },
+      "rh258_unit_cap_signed_integer": {
+        "maximum_distance": 0.3534900682213731,
+        "maximum_mip_gap": 0.0,
+        "minimum_distance": 0.10607370900129424,
+        "operator_realization_claimed": false,
+        "pass_count": 0,
+        "total_signed_lattice_point_count": 39417456084975216
+      }
+    },
+    "head_obstruction_scope": "the two archived expanded head classes only",
+    "total_pass_count": 0
+  },
+  "complete_certificate_count": 0,
+  "component_status": {
+    "complete": false,
+    "components": {
+      "analytic_target_tail": true,
+      "certified_target_boundary_constant": false,
+      "coefficient_bridge": false,
+      "legal_anchored_head": false,
+      "uniform_quotient_tail": false
+    },
+    "required_component_count": 5,
+    "satisfied_component_count": 1
+  },
+  "gluing_interface": {
+    "determinant_bound": "exp(B_*) * (exp(H_N+Q_N+A_N)-1)",
+    "first_omitted_order_convention": "N",
+    "logarithmic_bound": "H_N + Q_N + A_N",
+    "target_tail_bound": "M_S * (R/S)^N / (1-R/S)",
+    "uniform_convergence_requires_all_three_budgets_to_vanish": true
+  },
+  "quotient_tail": {
+    "all_archived_endpoints_audited": false,
+    "finite_endpoint_count": 23,
+    "finite_unit_disk_logarithmic_tail_diagnostic": 0.0005654507945432548,
+    "floating_diagnostic_not_interval_enclosure": true,
+    "maximum_q12": 0.5056418005507071,
+    "maximum_q12_endpoint": {
+      "dimension": 1024,
+      "side": "right",
+      "sigma": 0.0025
+    },
+    "minimum_q12": 0.22185212659640824,
+    "power_12_contractive_count": 23,
+    "remaining_archived_endpoint_count": 9,
+    "uniform_small_noise_certificate": false
+  },
+  "route_coordinate": "legal_heads_obstructed_target_tail_exists_Ms_uncertified_quotient_finite_nonuniform_complete_certificate_zero",
+  "source_consistency_audit": {
+    "check_count": 44,
+    "failure_count": 0,
+    "failures": []
+  },
+  "status": "rh260_updated_anchored_head_tail_certificate_ledger",
+  "target_tail": {
+    "analytic_interface_exists": true,
+    "certified_boundary_supremum_available": false,
+    "finite_scan_is_proof": false,
+    "first_omitted_order_diagnostic": 13,
+    "hardy_radius": 0.85,
+    "numerical_tail_bound_available": false,
+    "scaled_zero_free_radius": 1.42678748386407,
+    "unit_disk_tail_factor_per_M": 0.07796985628233917
+  },
+  "theorem_boundary": {
+    "analytic_all_order_target_tail": true,
+    "certified_target_boundary_constant": false,
+    "complete_head_tail_certificate": false,
+    "current_cloud_coefficient_bridge": false,
+    "expanded_single_use_head_class_obstructed": true,
+    "finite_23_endpoint_quotient_diagnostic": true,
+    "gate_A": false,
+    "gate_B": false,
+    "gate_C": false,
+    "gate_D": false,
+    "gate_E": false,
+    "hilbert_polya_operator": false,
+    "locally_uniform_relative_determinant_family": false,
+    "riemann_hypothesis_implication": false,
+    "uniform_all_order_trace_envelope": false,
+    "uniform_quotient_tail": false,
+    "unit_cap_signed_integer_head_class_obstructed": true,
+    "updated_head_tail_gluing_theorem": true,
+    "zeta_divisor_identification": false
+  }
+}

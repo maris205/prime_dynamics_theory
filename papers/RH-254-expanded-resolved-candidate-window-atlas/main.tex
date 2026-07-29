@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Expanded Resolved Candidate-Window Atlas}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The frozen RH-244/RH-248 shell class was exhausted, so RH-251 required a
+genuinely expanded resolved window before another anchor test.  We double the
+RH-222 candidate margin from 16 to 32 at all 32 noise/channel endpoints
+\citep{WangRH222,WangRH248}.  The
+expanded eigensolver returns 16 additional bulk roots at every endpoint, and
+the archived roots match with maximum discrepancy $7.41\times10^{-9}$.  A
+fixed-count window is not always shell-complete: 11 endpoints terminate in a
+split conjugate pair.  After removing those boundary fragments, the complete
+expanded ranks lie between 33 and 64.  This paper supplies the finite spectral
+input for RH-255; it does not yet test the deterministic anchor.
+\end{abstract}
+
+\section{Expansion protocol}
+
+The RH-222 atlas uses noise scales \citep{WangRH222}
+\[
+\begin{gathered}
+ 0.04,0.032,0.025,0.02,0.016,0.0125,0.01,0.008,\\
+ 0.00625,0.005,0.004,0.0032,0.0025,0.002,0.0016,0.00125.
+\end{gathered}
+\]
+and two channels (fine and Haar-coarse).  At target rank $k$, the old
+resolution requested $k+16$ leading eigenvalues; the present audit requests
+$k+32$.  The same deterministic starting vector, tolerance, and Hardy scaling
+are used, so the comparison is a controlled enlargement rather than a change
+of operator.
+
+\begin{proposition}[Finite expanded-window stability]
+\label{prop:window}
+At each of the 32 endpoints the expanded computation resolves 16 more bulk
+roots than the archived window.  Matching every old root to a distinct new
+root gives maximum error
+\[
+ 7.4054691027\times10^{-9},
+\]
+while Perron and parity discrepancies are below $10^{-14}$.
+\end{proposition}
+
+\begin{proof}
+The experiment constructs the same sparse folded-Gaussian matrix and calls the
+same deterministic eigensolver with the larger candidate count.  A rectangular
+absolute-difference cost matrix is solved by a one-to-one assignment, and the
+reported maximum is the largest matched distance.  The two distinguished roots
+are compared directly with their archived values.
+\end{proof}
+
+\section{Conjugate-shell boundary}
+
+Because the matrices are real, a legitimate shell selector must use real roots
+or complete conjugate pairs.  The final root of a finite eigensolver window can
+be one member of a pair.  The audit therefore partitions the expanded roots by
+the RH-222 shell rule and reports both raw and shell-complete ranks.
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+\toprule
+quantity & value\\
+\midrule
+endpoints & 32\\
+raw expanded rank range & 34--64\\
+new raw roots per endpoint & 16\\
+shell-complete rank range & 33--64\\
+shell-complete endpoints & 21/32\\
+split-pair endpoints & 11/32\\
+maximum discarded boundary roots & 1\\
+maximum old/new matching error & $7.41\times10^{-9}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The split-pair count is a boundary artifact of fixed-count resolution, not a
+claim that the underlying operator lacks conjugate symmetry.  RH-255 uses only
+the complete shells and records the discarded fragments explicitly.
+
+\section{Scope and next result}
+
+This is a finite expanded candidate window, not an interval-certified spectral
+set and not a uniform small-noise theorem.  No anchor has yet been shown to be
+reachable, and the old frozen obstruction is not silently reused.  The next
+paper must perform an anchored zonotope/cone audit on the complete expanded
+shells.  Gates A--E remain false/open; no Hilbert--Polya operator, zeta-divisor
+identification, Riemann-zero identification, or RH implication is asserted.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

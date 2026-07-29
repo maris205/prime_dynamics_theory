@@ -1,0 +1,244 @@
+{
+  "audit_failure_count": 0,
+  "finite_review_records": 842,
+  "headline_metrics": {
+    "rh252_scaled_zero_free_radius": 1.42678748386407,
+    "rh252_target_tail_factor_per_M_order_13": 0.07796985628233917,
+    "rh253_finite_root_rate": 0.7009986349256669,
+    "rh253_maximum_order": 28,
+    "rh253_order_13_to_28_unit_disk_log_norm": 0.0021942543215719553,
+    "rh254_complete_incomplete": [
+      21,
+      11
+    ],
+    "rh254_endpoint_count": 32,
+    "rh254_maximum_matching_error": 7.405469102694929e-09,
+    "rh254_new_root_count": 512,
+    "rh255_binary_subset_count": 62030604700,
+    "rh255_box_distance_range": [
+      0.14358493511963313,
+      0.42399800369340307
+    ],
+    "rh255_box_passes": 0,
+    "rh256_maximum_interpolation_residual": 7.304420162473979e-14,
+    "rh256_real_conjugate_closed_idempotent_passes": 0,
+    "rh257_integer_fit_passes": 0,
+    "rh257_maximum_monodromy_defect": 1.9999999996463045,
+    "rh257_maximum_weight_range": [
+      39.6393938986368,
+      302234260803.11285
+    ],
+    "rh257_signed_fit_passes": 32,
+    "rh258_integer_distance_range": [
+      0.10607370900129424,
+      0.3534900682213731
+    ],
+    "rh258_signed_lattice_point_count": 39417456084975216,
+    "rh258_unit_cap_passes": 0,
+    "rh259_endpoint_count": 23,
+    "rh259_finite_tail_diagnostic": 0.0005654507945432548,
+    "rh259_q12_deterioration_factor": 1.2856404093172868,
+    "rh259_q12_range": [
+      0.22185212659640824,
+      0.5056418005507071
+    ],
+    "rh260_complete_certificates": 0,
+    "rh260_head_cases": 64,
+    "rh260_head_passes": 0,
+    "rh260_remaining_quotient_endpoints": 9,
+    "rh260_satisfied_components": 1
+  },
+  "macro_gates": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+  },
+  "next_target": "certified_target_Ms_legal_selector_outside_audited_classes_uniform_quotient_tail_coefficient_bridge",
+  "paper_numbers": [
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261
+  ],
+  "paper_rows": [
+    {
+      "blocker": "certified M_S and cloud coefficient bridge",
+      "claim_level": "exact analytic interface, numerical constant open",
+      "layer": "deterministic target tail",
+      "number": 252
+    },
+    {
+      "blocker": "finite fit is not an all-order cloud envelope",
+      "claim_level": "exact finite dictionary through order 28",
+      "layer": "extended deterministic anchor",
+      "number": 253
+    },
+    {
+      "blocker": "11 boundary-split windows and no legal anchor yet",
+      "claim_level": "finite spectral atlas",
+      "layer": "expanded resolved window",
+      "number": 254
+    },
+    {
+      "blocker": "signed/complex or larger legal selector",
+      "claim_level": "dual-certified scoped obstruction",
+      "layer": "expanded anchored box",
+      "number": 255
+    },
+    {
+      "blocker": "non-idempotent grouping, non-conjugate complex mask, or outside algebra",
+      "claim_level": "exact binary-collapse theorem",
+      "layer": "polynomial idempotent selector",
+      "number": 256
+    },
+    {
+      "blocker": "bounded integer selector with operator meaning",
+      "claim_level": "exact monodromy-integrality barrier",
+      "layer": "signed moment fits",
+      "number": 257
+    },
+    {
+      "blocker": "larger cap and invariant realization",
+      "claim_level": "zero-pass MILP obstruction",
+      "layer": "unit-cap signed lattice",
+      "number": 258
+    },
+    {
+      "blocker": "uniform small-noise theorem and continuum bridge",
+      "claim_level": "23-endpoint finite diagnostic",
+      "layer": "quotient block power",
+      "number": 259
+    },
+    {
+      "blocker": "four missing obligations, including certified M_S",
+      "claim_level": "exact gluing interface and zero current certificates",
+      "layer": "updated head/tail ledger",
+      "number": 260
+    },
+    {
+      "blocker": "a genuinely new legal head and uniform tails",
+      "claim_level": "ten-layer synthesis with scoped route stop",
+      "layer": "frontier review",
+      "number": 261
+    }
+  ],
+  "route_coordinate": "legal_heads_obstructed_target_tail_exists_Ms_uncertified_quotient_finite_nonuniform_complete_certificate_zero",
+  "source_consistency_checks": [
+    {
+      "name": "rh252_target_tail_exists",
+      "passed": true
+    },
+    {
+      "name": "rh252_boundary_constant_open",
+      "passed": true
+    },
+    {
+      "name": "rh253_order_28_atlas",
+      "passed": true
+    },
+    {
+      "name": "rh254_32_endpoints",
+      "passed": true
+    },
+    {
+      "name": "rh254_21_complete_11_incomplete",
+      "passed": true
+    },
+    {
+      "name": "rh255_box_zero_passes",
+      "passed": true
+    },
+    {
+      "name": "rh255_lp_gap_small",
+      "passed": true
+    },
+    {
+      "name": "rh256_scoped_idempotent_firewall",
+      "passed": true
+    },
+    {
+      "name": "rh257_fractional_fit_count",
+      "passed": true
+    },
+    {
+      "name": "rh257_integer_necessity",
+      "passed": true
+    },
+    {
+      "name": "rh258_unit_cap_zero_passes",
+      "passed": true
+    },
+    {
+      "name": "rh258_mip_gap_zero",
+      "passed": true
+    },
+    {
+      "name": "rh259_23_power12_blocks",
+      "passed": true
+    },
+    {
+      "name": "rh259_uniform_theorem_open",
+      "passed": true
+    },
+    {
+      "name": "rh260_source_consistency",
+      "passed": true
+    },
+    {
+      "name": "rh260_zero_complete_certificates",
+      "passed": true
+    },
+    {
+      "name": "rh260_one_satisfied_component",
+      "passed": true
+    }
+  ],
+  "status": "rh261_ten_layer_analytic_tail_selector_frontier_review",
+  "statuses": {
+    "analytic_target_tail_interface": true,
+    "certified_target_boundary_constant": false,
+    "coefficient_bridge": false,
+    "complete_certificate": false,
+    "expanded_box_anchor": false,
+    "expanded_window": true,
+    "extended_anchor_atlas": true,
+    "finite_quotient_diagnostic": true,
+    "fractional_signed_fit_legal": false,
+    "gate_A": false,
+    "gate_B": false,
+    "gate_C": false,
+    "gate_D": false,
+    "gate_E": false,
+    "real_conjugate_closed_idempotent_head": false,
+    "uniform_quotient_tail": false,
+    "unit_cap_signed_head": false
+  },
+  "theorem_boundary": {
+    "analytic_target_tail_interface": true,
+    "certified_target_boundary_constant": false,
+    "coefficient_bridge": false,
+    "complete_head_tail_certificate": false,
+    "expanded_head_classes_scoped_obstruction": true,
+    "finite_order_atlas_only": true,
+    "fractional_signed_fits_not_legal_determinant": true,
+    "gate_A": false,
+    "gate_B": false,
+    "gate_C": false,
+    "gate_D": false,
+    "gate_E": false,
+    "hilbert_polya_operator": false,
+    "locally_uniform_relative_determinant_family": false,
+    "riemann_hypothesis_implication": false,
+    "uniform_quotient_tail": false,
+    "unit_cap_signed_integer_class_obstructed": true,
+    "zeta_divisor_identification": false
+  }
+}

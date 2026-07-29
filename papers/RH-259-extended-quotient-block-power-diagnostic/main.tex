@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Extended Quotient Block-Power Diagnostic}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-245/RH-246 establish the exact orthogonal-quotient identity and a
+conditional block-power trace envelope, but the archived diagnostic stopped at
+dimension 512.  We extend dense ordered-Schur calculations to dimension 1024,
+covering 23 endpoints and six new cases.  Every quotient twelfth power is
+contractive.  However the worst finite block root rate deteriorates from
+$0.393300$ to $0.505642$, the first contractive depth grows from seven to
+nine, and the unit-disk logarithmic tail diagnostic worsens by more than an
+order of magnitude.  The mechanism survives finitely; uniform small-noise
+control remains open.
+\end{abstract}
+
+\section{Exact quotient interface}
+
+Let $E$ be the selected invariant generalized root space, let $\Pi_E$ be its
+orthogonal projection, and put $Q=I-\Pi_E$.  RH-245 proves that the compression
+$C=QAQ|_{E^\perp}$ realizes the quotient trace
+\begin{equation}
+ \tau_n=\operatorname{Tr}(C^n)
+ \label{eq:quotient}
+\end{equation}
+at every fixed finite operator \citep{WangRH245}.  The projection has norm one,
+although $E^\perp$ need not reduce $A$.
+
+RH-246 supplies the exact block theorem: if for one integer $m$
+\begin{equation}
+ \|C^m\|\le\eta<1,
+ \qquad \|C^m\|_1\le L_m,
+ \qquad \|C^r\|\le K_r\quad(0\le r<m),
+ \label{eq:block}
+\end{equation}
+then all later traces have a geometric envelope with
+$q=\eta^{1/m}$ and an explicit logarithmic tail \citep{WangRH246}.  The
+theorem is exact; only the uniform hypotheses are missing.
+
+\section{Dimension-1024 protocol}
+
+For every archived endpoint of dimension at most 1024 we reconstruct the
+Hardy-scaled folded-Gaussian matrix, order its complex Schur form at the
+RH-222 radial cutoff, and split selected and quotient blocks.  We then compute
+operator norms for powers one through twelve and the trace norm at power
+twelve.  The extension contains 23 endpoints, six beyond the old cutoff.
+
+The selected ranks match at all endpoints.  The largest Schur trace-partition
+error is $3.99\times10^{-15}$; the largest discrepancy with archived quotient
+traces is $4.76\times10^{-9}$ at the new fine scales.  These are floating
+diagnostics, not interval enclosures.
+
+\section{Finite deterioration result}
+
+\begin{center}
+\small
+\begin{tabular}{lrr}
+\toprule
+quantity & RH-246 cutoff & present cutoff\\
+\midrule
+maximum dimension & 512 & 1024\\
+endpoints & 17 & 23\\
+first contractive depth & 3--7 & 3--9\\
+contractive 12th powers & 17/17 & 23/23\\
+worst $q_{12}$ & 0.393300 & 0.505642\\
+maximum $\|C^{12}\|$ & $1.37\times10^{-5}$ & $2.79\times10^{-4}$\\
+unit-disk tail diagnostic & $1.80\times10^{-5}$ & $5.65\times10^{-4}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The worst new endpoint is the right channel at $\sigma=0.0025$, dimension
+1024.  The finite geometric constant is $M_{12}=551.5985$, while the rate
+worsens by a factor $1.28564$ relative to RH-246.
+
+\begin{proposition}[Finite block contraction]
+For each of the 23 audited quotient matrices, $\|C^{12}\|<1$.  Hence the
+RH-246 block theorem gives an all-order trace bound for each individual finite
+matrix using its audited constants.
+\end{proposition}
+
+\begin{proof}
+The maximum audited twelfth-power norm is
+$2.7932874477\times10^{-4}$.  Substitute the finite matrix constants into
+\eqref{eq:block}.
+\end{proof}
+
+\begin{remark}[No uniform inference]
+Nine archived endpoints are still excluded by the dimension cutoff, and the
+worst constant deteriorates as the cutoff increases.  The proposition is a
+family of 23 fixed-matrix statements, not a noise-uniform or continuum
+theorem.
+\end{remark}
+
+\section{Route decision}
+
+The signed cancellation retained by the quotient remains the correct
+mechanism, but finite extension gives no basis for extrapolating uniformity.
+RH-260 must combine this finite quotient tail with the exact analytic target
+tail and the still-obstructed anchored head.  Gates A--E remain false/open.
+No Hilbert--Polya operator, Riemann-zero identification, zeta-divisor equality,
+or RH implication is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

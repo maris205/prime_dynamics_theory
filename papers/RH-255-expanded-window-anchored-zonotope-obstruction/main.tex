@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Expanded-Window Anchored Zonotope Obstruction}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-254 doubles the resolved candidate margin and supplies 16 new roots at
+each archived endpoint.  We now perform the required anchored reachability
+audit rather than a zero-target fit.  After discarding incomplete boundary
+pairs, every conjugate shell receives a single-use weight $0\le w_j\le1$.
+The resulting convex zonotope has zero passes at all 32 endpoints.  Its
+weighted distance from the deterministic target ranges from $0.143585$ to
+$0.423998$, with primal--dual gaps below $5.83\times10^{-15}$.  Hence every
+prefix and each of the 62,030,604,700 eligible binary subsets also fails.
+This is a finite margin-32 obstruction, not a global nonexistence theorem.
+\end{abstract}
+
+\section{Anchored expanded class}
+
+For orders $n=2,\dots,12$, let $a=(a_n)$ be the deterministic target of
+RH-243 \citep{WangRH243}.  At a fixed noise/channel endpoint, remove the
+Perron and parity traces from the full matrix powers and write the remaining
+base vector as $b$.  If $S_j$ is a conjugate-complete shell from RH-254, put
+\begin{equation}
+ v_j=\left(\sum_{\mu\in S_j}\mu^n\right)_{n=2}^{12}.
+ \label{eq:shell}
+\end{equation}
+All $v_j$ are real up to the archived conjugacy tolerance.
+
+The expanded single-use class is the zonotope
+\begin{equation}
+ \mathcal Z=\left\{b-\sum_jw_jv_j:0\le w_j\le1\right\}.
+ \label{eq:box}
+\end{equation}
+Its anchored distance is measured by
+\begin{equation}
+ d(\mathcal Z,a)=\min_{0\le w\le1}
+ \sum_{n=2}^{12}\frac{|b_n-a_n-(Vw)_n|}{n}.
+ \label{eq:distance}
+\end{equation}
+
+\begin{proposition}[Box dominance]
+\label{prop:dominance}
+Every shell prefix, contiguous shell interval, and binary single-use subset is
+contained in the box class \eqref{eq:box}.  Therefore
+$d(\mathcal Z,a)>\varepsilon$ excludes all such selectors at tolerance
+$\varepsilon$.
+\end{proposition}
+
+\begin{proof}
+Each listed discrete selector has a weight vector with coordinates in
+$\{0,1\}$, hence lies in $[0,1]^J$.  Minimizing over the larger box can only
+decrease the distance.
+\end{proof}
+
+\section{Primal--dual audit}
+
+The weighted $\ell^1$ problem \eqref{eq:distance} is a linear program.  We
+solve both its box primal and explicit zonotope dual, then compare their
+objectives.  The shell-complete ranks range from 33 to 64; no incomplete
+conjugate fragment enters the optimization \citep{WangRH254}.
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+\toprule
+quantity & value\\
+\midrule
+endpoints & 32\\
+eligible prefixes & 836\\
+eligible binary subsets & 62,030,604,700\\
+prefix passes & 0\\
+box passes & 0\\
+box distance range & 0.143585--0.423998\\
+distance/tolerance range & 10.17--117.66\\
+minimum failure margin & 0.142335\\
+maximum primal--dual gap & $5.83\times10^{-15}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All 32 expanded distances improve relative to the frozen RH-248 box
+\citep{WangRH248}; the improvement ranges from
+$2.43\times10^{-7}$ to $0.00583514$.  Improvement is not reachability: the
+best expanded point remains more than ten local tolerances away.
+
+\begin{corollary}[Scoped expanded-window obstruction]
+At each archived endpoint, no prefix or binary subset of the margin-32
+conjugate-complete shells reaches the deterministic anchor within the local
+noise tolerance.
+\end{corollary}
+
+\begin{proof}
+The computed box distance is larger than tolerance at all endpoints, and
+Proposition~\ref{prop:dominance} applies.  The dual objectives agree with the
+primal values to the stated floating tolerance.
+\end{proof}
+
+\section{Boundary and next route}
+
+The conclusion is confined to the finite margin-32 single-use shell class.
+It does not exclude a still larger resolved window, unbounded weights, or a
+signed/complex selector forced by invariant quotient algebra.  It also does
+not provide interval enclosures for the eigensolver roots.
+
+The live next route is therefore structural rather than another box scan:
+derive signed or complex coefficients from a quotient identity and audit
+whether they form a legal selector.  Gates A--E remain false/open.  No
+Hilbert--Polya operator, Riemann-zero identification, zeta-divisor equality,
+or RH implication is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

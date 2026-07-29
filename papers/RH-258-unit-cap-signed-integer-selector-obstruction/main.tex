@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Unit-Cap Signed-Integer Selector Obstruction}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-257 proves that integer exponents are necessary for a single-valued finite
+determinant quotient.  We audit the first bounded signed lattice by assigning
+each complete RH-254 shell a weight in $\{-1,0,1\}$.  Mixed-integer linear
+optimization gives zero anchor passes at all 32 endpoints.  Optimal weighted
+distances range from $0.106074$ to $0.353490$, which is $7.98$--$93.48$ times
+the local tolerance.  The optimizations cover
+$39{,}417{,}456{,}084{,}975{,}216$ lattice points in aggregate with zero
+reported MIP gap.  This is a unit-cap obstruction only; larger caps and
+operator realization remain open.
+\end{abstract}
+
+\section{The necessary integer lattice}
+
+For one endpoint let $v_j\in\mathbb R^{11}$ be the order-$2$--$12$ power
+vector of the $j$th conjugate-complete shell, and let $d$ be the anchored
+target difference.  RH-257 shows why a continuous signed weight is not enough:
+noninteger exponents create monodromy \citep{WangRH257}.  We therefore define
+the first integer relaxation
+\begin{equation}
+ \mathcal L_1=\left\{\sum_{j=1}^Jw_jv_j:w_j\in\{-1,0,1\}\right\}.
+ \label{eq:lattice}
+\end{equation}
+
+Every vector in $\mathcal L_1$ has a single-valued rational product at the
+level of formal shell factors.  This remains only a necessary condition:
+negative or repeated shell multiplicities must still be realized by an actual
+quotient or superdeterminant.
+
+\begin{proposition}[MILP formulation]
+\label{prop:milp}
+The distance
+\begin{equation}
+ \min_{w\in\{-1,0,1\}^J}
+ \sum_{n=2}^{12}\frac{|d_n-(Vw)_n|}{n}
+ \label{eq:objective}
+\end{equation}
+is an exact-integrality mixed-integer linear program with $J$ integer variables
+and eleven nonnegative residual variables.
+\end{proposition}
+
+\begin{proof}
+Introduce $u_n\ge0$ and the two linear inequalities
+$d_n-(Vw)_n\le u_n$ and $(Vw)_n-d_n\le u_n$.  Minimize
+$\sum_nu_n/n$ under integer bounds $-1\le w_j\le1$.
+\end{proof}
+
+\section{Finite audit}
+
+The shell counts range from 20 to 34, so one endpoint contains $3^J$ lattice
+points.  The optimizer searches this class implicitly rather than enumerating
+every vector.  All 32 solves report zero MIP gap.
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+\toprule
+quantity & value\\
+\midrule
+endpoints & 32\\
+aggregate lattice points & 39,417,456,084,975,216\\
+anchor passes & 0\\
+distance range & 0.106074--0.353490\\
+distance/tolerance range & 7.98--93.48\\
+minimum failure margin & 0.103574\\
+integrality-gap range & 0.106074--0.353490\\
+nonzero weights in an optimum & 20--30\\
+maximum branch-and-bound nodes & 368\\
+maximum reported MIP gap & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{corollary}[Scoped unit-cap obstruction]
+No margin-32 complete-shell weight vector with entries in $\{-1,0,1\}$ reaches
+the deterministic anchor within the archived endpoint tolerance.
+\end{corollary}
+
+\begin{proof}
+At every endpoint the global MILP objective exceeds the local tolerance.  The
+reported exact-integrality gap is zero.
+\end{proof}
+
+\section{Boundary and route decision}
+
+The theorem does not exclude weights of magnitude two or larger.  Such a fit
+would still not prove that the noisy operator contains the required signed
+copies.  Rather than escalating an increasingly artificial multiplicity cap,
+the next paper returns to the exact orthogonal quotient and its block powers,
+where cancellation is operator-derived rather than fitted
+\citep{WangRH245,WangRH246}.
+
+Gates A--E remain false/open.  No Hilbert--Polya operator, Riemann-zero
+identification, zeta-divisor equality, or RH implication is claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
