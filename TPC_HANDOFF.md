@@ -1,363 +1,387 @@
-# TPC Research Handoff
+# TPC HANDOFF
 
-Status date: 2026-07-28
+更新时间：2026-07-29
+当前仓库事实终点：TPC-203 / MVP10
+当前裁决：`NOT_TESTABLE`
+下一篇：`null`
+TPC-204 授权：`false`
 
-Current completed endpoint: TPC-193 / scoped candidate-mechanism route stop
+本文件和仓库内已提交的论文、payload、audit、schema 是下一会话的事实来源。旧聊天记录不是事实来源。
 
-TPC-193 research paper commit:
-`14d7a1dfd82b0575b43a65c8254fce3cf53acda5`
-
-This is the compact entry point for a fresh Codex chat. The repository,
-not an old chat transcript, is the source of truth.
-
-## 1. Fresh-session protocol
-
-Work in:
-
-```text
-D:\26-aimath\理论研究3\prime_dynamics_theory
-```
-
-At the start of the next batch:
+## 1. 启动协议
 
 ```powershell
-git -c safe.directory='D:/26-aimath/理论研究3/prime_dynamics_theory' status --short --branch
-git -c safe.directory='D:/26-aimath/理论研究3/prime_dynamics_theory' pull --rebase origin main
+Set-Location "D:\26-aimath\理论研究3\prime_dynamics_theory"
+git status --short --branch
+git pull --rebase origin main
+Get-Content -Raw TPC_HANDOFF.md
 ```
 
-Then read only the compact current entry points before opening older papers:
+随后优先读取：
 
-- `TPC_HANDOFF.md`
-- `papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/README.md`
-- `papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json`
-- `papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate_audit.json`
+1. `papers/tpc-203-mvp10-direct-pointwise-route-decision/README.md`
+2. `papers/tpc-203-mvp10-direct-pointwise-route-decision/experiments/tpc203_mvp10_direct_pointwise_route_decision.json`
+3. `papers/tpc-203-mvp10-direct-pointwise-route-decision/experiments/tpc203_mvp10_direct_pointwise_route_decision_audit.json`
+4. `papers/tpc-194-maximal-source-backed-direct-prefix/README.md`
+5. `papers/tpc-202-new-primary-double-selector-gate/README.md`
 
-The dynamic TPC-193--202 batch hit a genuine route stop at TPC-193. Do not
-create TPC-194 merely to fill the batch. Resume only after user confirmation
-and one of the exact reopen triggers in Section 5.
+不得因打开新会话而自动创建 TPC-204。先做不编号的 `REOPEN_TRIGGER_AUDIT`；触发器没有通过时，停下并请求用户选择。
 
-### Chat and delegation discipline
+## 2. 本轮发布锚点
 
-- Use one fresh chat per dynamic batch. After ten genuine papers or an earlier
-  genuine route stop, update and push this handoff and report the compact
-  result.
-- The primary chat keeps only conclusions, route choices, blockers, and final
-  audit/publication summaries.
-- Delegate long source scans, schema exploit reviews, build logs, and
-  page-by-page PDF inspection to subagents.
-- Subagents return compact summaries with exact verdicts, counts, hashes when
-  useful, and actionable blockers. Do not paste raw long logs into the primary
-  chat.
-- Coordinate state-changing edits through the primary agent so concurrent
-  subagents do not overwrite one another.
-- Do not reconstruct facts from old chat memory when the repository artifact
-  is available.
-
-## 2. Exact MVP9 decision
-
-MVP9 returns:
+TPC-194--203 论文提交：
 
 ```text
-Verdict = NOT_TESTABLE
-GlobalFirstMissing = H1.source_backed_local_occurrence_edge_family
-SelectedPointwiseFirstMissing = LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION
+460950090855a49a86e93231902a9674879d6f34
 ```
 
-The seven-node structural/physical minimal blocker antichain from MVP8 is
-unchanged. Both pointwise parents remain open:
+TPC-203 稳定 PDF：
 
 ```text
-O161.bad_endpoint_pointwise_fixed_atom       OPEN_PARENT_READY
-O161.direct_additive_twist_fixed_atom        OPEN_PARENT_READY
+papers/tpc-203-mvp10-direct-pointwise-route-decision/tpc-203-mvp10-direct-pointwise-route-decision.pdf
+sha256 = 23bc8f5e4a1ee9c51628154c2986defb9109f7c95c63539441d6b31cd92e0992
 ```
 
-TPC-183 states the source-locked one-way interface implication
+批量生成与复核入口：
+
+```powershell
+python papers/tpc-194-maximal-source-backed-direct-prefix/experiments/build_tpc194_203.py --check
+```
+
+## 3. 当前三层第一缺口
+
+必须同时保留以下三个彼此不同的第一缺口，不得互相改写或吞并：
 
 ```text
-direct additive twist fixed atom  =>  bad endpoint fixed atom
+GlobalFirstMissing
+  = H1.source_backed_local_occurrence_edge_family
+
+SelectedPointwiseFirstMissing
+  = LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION
+
+DirectProductionFirstMissing
+  = SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK
 ```
 
-in words by specializing the uniform direct prefix variable `N=T`. TPC-193
-finds that this implication is not formula-certified by the locked formulas:
-TPC-167 writes the direct terminal block `N<t(z)<=2N`, whereas the audited
-bad-endpoint object uses the cumulative domain `0<t(z)<=T`. Setting `N=T`
-does not identify those domains, and TPC-183/TPC-189 write no replacement
-direct-prefix domain. Record the implication as unresolved, not false. The
-reverse implication is also not established. TPC-185--186 still give exact
-factor-two deterministic reductions from prefix maxima to consecutive blocks
-and then to local oscillation inside the dyadic shadow.
-
-TPC-193 refines the selected gate without changing the MVP9 arithmetic first
-missing:
+对应状态：
 
 ```text
-TargetContract       = NOT_TESTABLE_FORMULA_INCOMPLETE
-GateFirstMissing     = DIRECT_TARGET_SUMMATION_DOMAIN_AND_PREFIX_INDEX
-ArithmeticFirstMissing = LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION
-DeclaredCorpus       = 7 primary / 2 direct / 0 eligible
-RouteAction          = USER_CONFIRMATION_REQUIRED
+bad_endpoint_O161_parent = OPEN
+direct_twist_O161_parent = OPEN
+global_architecture = OPEN
+fixed_atom_decay_obtained = false
+named_atom_endpoint_credit = 0
+strict_1/400 = UNPAID
+L2_result = NONE
 ```
 
-Three method cells, and only these method cells, are stopped:
+## 4. TPC-194--203 结论
+
+### TPC-194 — maximal source-backed direct prefix
+
+裁决：`FORMULA_COMPLETE_PER_PACKET_L1`。
+
+已从 TPC-159、167、183、184、189、193 的实际公式逐字锁定：
 
 ```text
-TPC-181  phase_metric_uncontrolled_atomic
-TPC-187  SIZE_ONLY_LOCAL_OSCILLATION_METHOD
-TPC-190  PARSEVAL_CHEBYSHEV_TO_PRESCRIBED_ATOM
+xi = (theta,c,kappa,r)
+b = c*kappa
+B_xi = B_{theta,b}
+Omega_xi = ell_theta*v_theta*sigma_theta*B_{theta,b}
+alpha_xi,X = epsilon_theta*r_tilde*Omega_xi/(c*q_X)
 ```
 
-The first is the inherited singleton-versus-a.e. obstruction. The second is
-sharp by a constant-sign synthetic sequence. The third is sharp at the level
-of phase L2 by normalized Dirichlet kernels. None is a counterexample to the
-literal arithmetic theorem, and none stops either O161 parent or the global
-architecture.
+并锁定 exact physical coefficient、带符号的 `r_tilde`、decorated inner prefix、complete contribution，以及外层乘子 `mathfrak m_{K,X}(r)`。
 
-TPC-193 adds a separate declared-corpus/workflow stop, not a fourth method
-cell; its exact scope is recorded in Section 5.
+这只完成每包公式，不完成 production target。仍缺：
 
-The exact endpoint result remains:
+- source-locked named physical atom；
+- exact packet schedule；
+- common `X/N/q` ranges；
+- uniform constant `C`；
+- positive `sigma`；
+- normalization choice；
+- complete physical-loss ledger。
+
+不得通过解释性改写，或把 block/cumulative 对象强行等同，来补这些字段。
+
+### TPC-195 — block/prefix power-profile transfer
+
+裁决：`PROVED_BIDIRECTIONAL_POWER_PROFILE_TRANSFER`。
+
+对 `0 < sigma < 1`：
 
 ```text
-fixed h0                                      2  (data fact only)
-named-fixed-atom power                        absent
-named-atom endpoint credit                    0
-strict endpoint 1/400                         UNPAID
-program-positive L2                           false
+block -> prefix constant = 1/(2^(1-sigma)-1)
+prefix -> block constant = 2^(1-sigma)+1
 ```
 
-## 3. Compact conclusions from TPC-183 through TPC-193
+实数端点采用精确 telescoping。截断 raw tail 为严格 `< 2BM`；归一化安全项为 `2qBM/T`。
 
-- TPC-183 source-locks both O161 parents and states the direct-to-bad
-  specialization at L1. TPC-193 later shows that the locked block and
-  cumulative formulas do not certify that specialization. Neither direction
-  is imported as a formula-certified theorem.
-- TPC-184 freezes the literal bad-endpoint contract. TPC-185 proves exact
-  prefix/block equivalence up to factor two. TPC-186 identifies fixed-atom
-  local maximal increments as the exact dyadic-shadow obligation.
-- TPC-187 sharply stops size-only local-oscillation control. TPC-188 switches
-  to the direct route without stopping the bad-endpoint theorem.
-- TPC-189 freezes the literal direct-twist contract. TPC-190 proves that
-  Parseval/Chebyshev cannot evaluate a prescribed atom; this method alone is
-  `STOP_SCOPED`.
-- TPC-191 integrates both open parents and the scoped method stops. TPC-192
-  imports TPC-183--191 fail-closed and returns MVP9 `NOT_TESTABLE`.
-- TPC-193 audits a declared seven-source primary theorem corpus. Exactly two
-  theorems act directly on the literal determinant-two two-Möbius coefficient,
-  but neither satisfies the complete six-axis eligibility conjunction. The
-  eligible count is zero, so the batch stops at this scoped corpus gate; no
-  TPC-194 artifact exists.
+### TPC-196 — residue split and determinant ledger
 
-Historical TPC-173--182 facts still governing MVP9:
+裁决：`PROVED_RESIDUE_SPLIT_WITH_DETERMINANT_2R`。
 
-- TPC-173 froze and reviewed all 40 TPC-133--172 `main.tex` files:
-  30 mapped-disqualified, 10 reviewed-no-candidate, 0 not-mapped, and
-  0 qualifying source claims. This is scoped corpus exhaustion, not
-  mathematical nonexistence.
-- TPC-174 defined a strict source-locked local-edge witness contract. Its
-  two-edge witness is synthetic L0 only; production instantiation remains
-  `NOT_TESTABLE`.
-- TPC-175 proved that the largest admissible family in that frozen corpus is
-  empty. TPC-176 consequently recorded the exact `0/0/2988`
-  covered/duplicate/unmatched cut ledger and stopped only that extraction
-  method.
-- TPC-177 separated vacuous truth on an empty eligible domain from existential
-  actual active support. TPC-178 kept the five-field key classified as an
-  `ARCHIVE_ADDRESS`, not a canonical physical representative.
-- TPC-179 retained all three independent H1 roots and the same first missing
-  node. No fixed-`h0=2` arithmetic gain was claimed.
-- TPC-180 found `h0=2` as a source-backed data fact, but found no value-bearing
-  named phase record or packet-coordinate row in the seven explicitly mapped
-  frozen fields. This was not a generic scan.
-- TPC-181 proved the singleton-versus-a.e. nonimplication. It stopped only the
-  uncontrolled selector method and preserved both O161 pointwise targets.
-- TPC-182 dynamically rechecked the exact upstream scopes, quantifiers, source
-  locks, and Endpoint Ledger V5. The named-fixed-atom endpoint charge remains
-  zero and the strict `1/400` budget is unpaid.
+锁定：
 
-## 4. TPC-170 quantifier boundary
+- slope gcd 正好是 `R`，不是 affine content；
+- residue split 后 determinant 为 `2R`；
+- 一个非零 DFT mode 不等于所有 residue sums 均非零；
+- 依赖 TPC-94 与 TPC-108。
 
-The strongest imported arithmetic statement remains TPC-170:
+### TPC-197 — prime-conductor consistency
+
+固定非零有理 atom 不可能沿无界、互异 prime conductors 重复出现。
+
+conductor-one 路线仍开放，但它仍必须同时提供：
+
+- `q_prog` 的 polylog 范围；
+- exceptional set 外的 `N` 范围；
+- 全部 good-scale 条件；
+- named occurrence；
+- exact packet schedule。
+
+### TPC-198 — factorwise Fourier barrier
+
+裁决：`STOP_SCOPED`。
+
+禁止从两个 single-Mobius Fourier black boxes 推出 prescribed atom 上的 literal product bound。Rudin--Shapiro witness 固定了该逻辑缺口。
+
+新停止单元：
 
 ```text
-phase axis      = LEBESGUE_AE_FIXED_PHASE
-scale axis      = EVENTUALLY_PRESCRIBED_SCHEDULE
-endpoint axis   = ALL_PREFIX_THETA_SHELL
-phase-metric power = X^(-delta) for every delta < 1/4
+FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT = STOP_SCOPED
 ```
 
-Its exceptional null set depends on the whole prescribed packet schedule.
-This is not a theorem at a named physical atom, cannot be entered as
-named-atom sigma, and cannot pay any part of the strict endpoint `1/400`.
+### TPC-199 — pretentiousness firewall
 
-TPC-193 adds one L1 formula audit and scoped corpus exhaustion. It adds no
-production local-occurrence family, actual-support certificate, canonical
-physical representative, named-fixed-atom theorem, program-positive L2,
-strict `1/400`, prime-pair lower bound, or twin-prime theorem.
+裁决：`STOP_SCOPED`。
 
-## 5. TPC-193 stop and exact reopen rules
+禁止把 one-function multiplicative pretentiousness theorem 直接应用到
+`mu(n)mu(n+2)`；该乘积不是一个 multiplicative function。
 
-TPC-193 executed the requested strict direct-mechanism gate. The declared
-primary corpus is finite and explicit:
+新停止单元：
 
 ```text
-primary source records       7
-reviewed primary records     7
-direct theorem candidates    2
-eligible mechanisms          0
-unreviewed / unmapped        0 / 0
+ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ = STOP_SCOPED
 ```
 
-The two direct candidates are:
+### TPC-200 — four-form determinant refinement
 
-- **Teräväinen--Walker, Lemma 4.2(1):** after one fixed translation it
-  applies to the exact pair
-  `mu(d+s*z) mu(u+a*z)` with determinant `s*u-a*d=2` at every fixed additive
-  atom. Its native conclusion is a qualitative cumulative logarithmic
-  average for fixed affine data. It does not supply natural `q/N`
-  all-prefix control, deterministic all-scale uniformity, a fixed-`X` power,
-  or actual active support.
-- **Tao--Teräväinen, Theorem 3.1 through TPC-149/TPC-158:** at a rational
-  atom it preserves the literal coefficient and natural `q/N` normalization
-  on `N<t(z)<=2N`, subject to `qR <= (log X)^eta0` and deletion of a
-  logarithmic-density exceptional scale set. The production record has no
-  source-backed rational atom/denominator, and the result is a terminal block
-  with logarithmic rather than fixed-`X` power saving.
+完成四个 affine forms 的 determinant table。
 
-Neither candidate preserves the full six-axis conjunction. Phase L2,
-Lebesgue-a.e. phase, size-only bounds, and repackaged versions of the three
-older stopped cells remain ineligible.
-
-The exact new stopped cell is:
+在 positive-slope 约束下，唯一 positive-shift degeneration 是：
 
 ```text
-TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1  STOP_SCOPED
+q = 1
+h = 2
 ```
 
-This is a workflow and declared-corpus stop, not a global nonexistence
-theorem. Both O161 pointwise parents and the global architecture remain open.
-Named-atom endpoint credit remains zero, the strict `1/400` budget is unpaid,
-and no L2 arithmetic progress is recorded. The dynamic batch therefore stops
-at TPC-193 with `USER_CONFIRMATION_REQUIRED`; do not create TPC-194 by
-default.
+并显式继承 TPC-130。
 
-Resume only on user confirmation together with an exact trigger:
+### TPC-201 — degenerate-shift Fejér absorption
 
-- **Direct route:** a formula-complete direct target with source-backed named
-  atom, packet schedule, summation domain/prefix index, admissible ranges,
-  uniform constant, positive exponent, normalization, and full physical loss
-  ledger, plus a theorem-backed natural-`q/N` fixed-atom power mechanism
-  preserving all six axes.
-- **Declared-corpus route:** a genuinely new explicitly declared primary
-  source corpus to audit; do not relabel the exhausted V1 corpus.
-- **Bad-endpoint route:** a new fixed-atom local-increment cancellation
-  theorem on the literal coefficient and audited cumulative target.
-- **Structural route:** a new theorem-backed local occurrence edge.
-- **Metric bridge:** a source-locked named physical atom, the exact production
-  packet schedule, and a theorem that this atom avoids the schedule-dependent
-  exceptional limsup.
+对 `V > 0`、`3 <= H <= N` 完成 positive-part split。
 
-The earlier direct-to-bad implication cannot be used until its direct
-summation domain is formula-complete. TPC-202/MVP10 was not reached.
-
-## 6. Claim firewall and stop rules
-
-Keep these levels distinct:
-
-- **L0:** model theorem, synthetic fixture, numerical or formal diagnostic.
-- **L1:** rigorous architecture/interface theorem or scoped route
-  obstruction.
-- **L2:** arithmetic progress for literal physical coefficients, fixed
-  physical `h0=2`, and target normalization.
-
-Before any L2 or endpoint promotion, audit all six:
-
-1. literal physical coefficients;
-2. fixed physical `h0`;
-3. physical atomic normalization;
-4. canonical/minimal representation;
-5. actual active support;
-6. total loss strictly inside the endpoint `1/400` budget.
-
-Never make these promotions:
-
-- frozen-corpus emptiness to global mathematical nonexistence;
-- empty-domain universal truth to actual active support;
-- archive address to canonical physical representation;
-- fixed-`h0=2` data to decay or L2;
-- seven mapped fields to a generic named-phase search;
-- phase average or Lebesgue-a.e. phase to a named fixed atom;
-- any `STOP_SCOPED` cell to an architecture or pointwise-route stop;
-- hash integrity to theorem evidence.
-
-If a literal endpoint ledger forces total loss at least `1/400`, stop that
-route and publish the infeasibility result instead of hiding the loss.
-
-## 7. Review and publication audit
-
-The legacy TPC-183--192 research batch is committed at:
+degenerate diagonal 的精确系数为：
 
 ```text
-d1e55304be61a74b4445f5946a0e3b754420c3e3
+2 + 4 = 6
 ```
 
-Its compact historical record is:
+该部分可吸收；剩余对象是 nondegenerate four-Mobius off-diagonal。来源锁定 TPC-130 与 TPC-200。
 
-- 111 committed files and 7,230 inserted lines;
-- all ten generators and all ten `--check` commands passed;
-- 20 experiment JSON and 20 schema JSON artifacts parsed successfully;
-- 80/80 legacy mutation-registry booleans are true, but the schemas are
-  shape-oriented; do not treat that registry as equivalent to an executed
-  exact-schema exploit suite;
-- 131/131 object-schema layers are recursively closed, with 21/21 array item
-  layers constrained;
-- TPC-192 verifies 13 canonical source locks and semantically imports all nine
-  TPC-183--191 payloads;
-- 10 stable PDFs, 20 pages total, all A4, with all fonts embedded;
-- all 20 final pages were rendered and visually inspected;
-- independent claim-firewall review returned publication PASS with no L2,
-  fixed-atom, scoped-stop, or endpoint-budget promotion.
+### TPC-202 — new-primary double-selector gate
 
-TPC-193 is committed at:
+裁决：`SCREENED_NON_DIRECT_ZERO_ELIGIBLE`。
+
+Menon 2026 的 Theorem 1.4/1.5 已按原生 ranges、normalizations、`k` factor 与 logarithmic losses 审核。它们不直接作用于 prescribed atom 上的 literal determinant-two two-Möbius coefficient
 
 ```text
-14d7a1dfd82b0575b43a65c8254fce3cf53acda5
+mu(d+s*z) mu(u+a*z),  s*u-a*d=2
 ```
 
-TPC-193 compact audit:
+因此 eligible source 数为零。TPC-181 selector lemma 只作为继承的说明，不产生新 stop cell。
 
-- 11 committed files and 5,317 inserted lines;
-- all 17 repository source locks are unique and recompute exactly;
-- all 7 primary records are reviewed; candidate counts recompute as
-  `2 direct / 0 eligible`;
-- the generator, `--check`, and `python -O --check` all pass;
-- 29 executed deep-copy semantic/schema mutations plus strict duplicate-key
-  and nonfinite-number parser attacks pass, for 31/31 total;
-- exact schemas contain 58 closed object layers, 18 exact-prefix array layers,
-  and 402 constant leaves; boolean/integer type confusion is rejected;
-- independent exploit review found no end-to-end bypass after source-hash,
-  path-traversal, manifest-rehash, schema-rebuild, and canonical-byte attacks;
-- independent mathematical/source review returned PASS for both direct
-  theorem specializations, the `7/2/0` classification, provenance split, six
-  axes, and scoped stop;
-- the stable PDF has 6 A4 pages, all 18 fonts embedded/subset, no undefined
-  references or overfull boxes, and all pages passed rendered visual review;
-- stable PDF SHA-256 is
-  `5F6D7501271955FE8B497FB58B2CBB52A16EB2F8CC9FFB07A1D955E4C85726D2`;
-- no fixed-atom decay, positive L2, endpoint credit, prime-pair lower bound,
-  twin-prime theorem, or TPC-194 progression is claimed.
+外部来源完整性状态是 manual transcription；没有伪造 external hash。
 
-## 8. Repository scope
+### TPC-203 — MVP10 route decision
 
-- New papers use `papers/tpc-NUM-short-slug/`.
-- Touch only the current new TPC directories and an explicitly requested
-  handoff/roadmap file.
-- Each paper needs a self-contained `main.tex`, bibliography, `README.md`,
-  stable PDF, and reproducible experiment/schema artifacts when applicable.
-- Before every push, run `git pull --rebase origin main`.
-- Stage only the intended batch, push to `main`, and verify
-  `refs/heads/main` equals local HEAD.
+裁决：`NOT_TESTABLE`。
 
-Known unrelated untracked files must not be staged or deleted:
+```text
+next_route
+  = SEARCH_FOR_NAMED_PACKET_CROSSWALK_OR_GENUINE_FIXED_ATOM_THEOREM
+
+batch_stop = USER_CONFIRMATION_REQUIRED
+next_paper = null
+tpc204_authorized = false
+```
+
+每包 direct formula 已完成；production crosswalk 与 named-atom positive-power theorem 仍不存在。两条 O161 pointwise parents 和全局架构均保持开放。
+
+## 5. 停止单元注册表
+
+继承的旧停止单元：
+
+```text
+TPC181_PHASE_METRIC_UNCONTROLLED_ATOMIC = STOP_SCOPED
+TPC187_SIZE_ONLY_LOCAL_OSCILLATION_METHOD = STOP_SCOPED
+TPC190_PARSEVAL_CHEBYSHEV_TO_PRESCRIBED_ATOM = STOP_SCOPED
+TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1 = STOP_SCOPED
+```
+
+本轮新增且仅新增：
+
+```text
+FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT = STOP_SCOPED
+ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ = STOP_SCOPED
+```
+
+不得把 TPC-202 的 Menon screening 或继承的 selector illustration 注册成新停止单元。不得重新包装上述停止单元来冒充新路线。
+
+## 6. 五类精确 reopen triggers
+
+下一轮不编号审计必须逐项检查以下五类触发器。
+
+### `DIRECT`
+
+同时出现：
+
+1. formula-complete production target；
+2. source-backed named physical atom；
+3. exact packet schedule；
+4. common `X/N/q` ranges；
+5. uniform `C` 与 positive `sigma`；
+6. fixed normalization；
+7. complete physical-loss ledger；
+8. theorem-backed natural-`q/N` fixed-atom positive-power mechanism；
+9. 六轴全部保持。
+
+缺一项即不通过。不得用 block/cumulative 对象替代 literal prefix target。
+
+### `METRIC`
+
+同时出现：
+
+1. source-locked named atom；
+2. exact packet schedule；
+3. schedule-specific exceptional-limsup avoidance theorem。
+
+phase `L2`、Lebesgue-a.e. phase 或未锁定 schedule 的 metric statement 均不通过。
+
+### `BAD_ENDPOINT`
+
+出现 theorem-backed literal fixed-atom local-increment cancellation theorem，并逐项通过常数、范围、归一化和损失审计。
+
+### `STRUCTURAL`
+
+出现 theorem-backed local-occurrence edge，能够直接填补：
+
+```text
+H1.source_backed_local_occurrence_edge_family
+```
+
+### `DECLARED_CORPUS`
+
+在 TPC-193 已审核的七篇 primary sources 之外，出现真正新增的 primary theorem source，且定理直接控制 prescribed atom 上的 literal coefficient
+
+```text
+mu(d+s*z) mu(u+a*z),  s*u-a*d=2.
+```
+
+必须逐项审核六轴、常数、范围、归一化和全部损失。以下均不得计入：
+
+- phase `L2`；
+- Lebesgue-a.e. phase；
+- size-only；
+- log-to-natural 偷渡；
+- 三个旧 stopped method cells 的重新包装；
+- 只控制相关平均、积分、几乎处处集合或因子级 Fourier norm 的结果。
+
+`TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1` 必须继续保持 `STOP_SCOPED`。
+
+## 7. 审核摘要
+
+Release allowlist：
+
+```text
+papers = 10
+release files = 111
+unexpected release files = 0
+missing release files = 0
+```
+
+Schema 与 payload：
+
+```text
+JSON files = 40
+payloads = 10
+audits = 10
+exact recursive schemas = 20
+schema objects = 313
+schema arrays = 57
+const leaves = 1237
+source locks = 40
+built-in mutations rejected = 100/100
+```
+
+每个 standalone checker 在 `--check` 下：
+
+- 加载并执行 payload schema 与 audit schema；
+- 核对 payload、audit、两份 schema 的四重 SHA；
+- 要求 canonical byte equality；
+- 重新计算 `finite(payload)`；
+- 要求它与 `audit["finite_check_result"]` 精确相等。
+
+专项攻击复核：
+
+```text
+audit top-level extra rejected = 10/10
+deleted finite result rejected = 10/10
+forged finite result rejected = 10/10
+payload-schema extra rejected = 10/10
+deep rebind/schema rebuild attacks = rejected
+python -O fail-closed CLIs = 11/11
+```
+
+PDF：
+
+```text
+stable PDFs = 10
+pages = 21
+page size = A4
+embedded-font rows = 140/140
+overfull warnings = 0
+undefined-reference warnings = 0
+all pages rendered and visually inspected = true
+```
+
+信任边界：
+
+- batch generator 是共同 trust root；
+- generator 与生成物被协调修改并重建时，必须做 git diff/commit review；
+- canonical duplicate/format rejection 由 `--check` 路径强制；
+- 集成审核必须运行 batch `--check`，不能只运行 TPC-203 standalone checker。
+
+## 8. Claim firewall
+
+本批次只形成 L0/L1 结构与否定性门槛结果。它没有证明：
+
+- prescribed physical atom 的 positive-power decay；
+- source-backed fixed-atom local occurrence；
+- endpoint credit；
+- prime-pair lower bound；
+- twin-prime theorem；
+- 任意 program-positive L2 结论。
+
+`FORMULA_COMPLETE_PER_PACKET_L1` 不等于 production target complete。
+`SCREENED_NON_DIRECT_ZERO_ELIGIBLE` 不等于 exhaustive impossibility theorem。
+`STOP_SCOPED` 只停止被点名的方法单元，不关闭 O161 parents 或全局架构。
+
+## 9. 已保留的无关未跟踪文件
+
+本批次没有暂存、修改或删除：
 
 ```text
 papers/tpc-105-provenance-preserving-affine-map-quotient/experiments/__pycache__/
@@ -368,4 +392,29 @@ papers/tpc-63-canonical-cofactor-provenance/main.log
 papers/tpc-63-canonical-cofactor-provenance/main.out
 papers/tpc-63-canonical-cofactor-provenance/main.pdf
 tmp/
+```
+
+它们不属于 TPC-194--203 release。
+
+## 10. 下一会话可直接粘贴
+
+```text
+进入仓库：
+D:\26-aimath\理论研究3\prime_dynamics_theory
+
+读取仓库根目录 TPC_HANDOFF.md，以仓库文件而不是旧聊天记录为事实来源。先执行：
+
+git status --short --branch
+git pull --rebase origin main
+
+从 TPC-203 的 USER_CONFIRMATION_REQUIRED 停止点开始，但这不解除任何数学门槛，也不自动授权创建 TPC-204。
+
+先执行一个不编号的 REOPEN_TRIGGER_AUDIT，逐项审核 TPC_HANDOFF.md 中的五类精确触发器：
+DIRECT、METRIC、BAD_ENDPOINT、STRUCTURAL、DECLARED_CORPUS。
+
+保持 TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1 为 STOP_SCOPED；保持两个 O161 pointwise parents 和全局架构开放；不得把 phase L2、Lebesgue-a.e. phase、size-only、log-to-natural 或旧 stopped method cells 的重包装当作新路线。
+
+只有某个触发器 source-backed、theorem-backed 且逐项通过六轴、常数、范围、归一化和完整损失审核时，才提出对应 reopen route。完成审计后停止，并向我请求下一步选择；没有我的新确认，不得创建 TPC-204。
+
+主会话只保留结论、路线选择、阻断项和最终审核摘要。长文献扫描、定理原文核查、schema exploit review、构建日志及逐页 PDF 检查交给分身，只返回紧凑摘要；所有正式写入由主会话协调。
 ```
