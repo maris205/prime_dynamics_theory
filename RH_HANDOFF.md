@@ -1,6 +1,6 @@
 # RH Research Handoff
 
-Status date: 2026-07-28
+Status date: 2026-07-29
 
 Current completed endpoint: RH-251
 
@@ -240,3 +240,56 @@ papers/RH-251-ten-layer-superloop-anchor-frontier-review/
 The immediate next action in a fresh session is RH-252 only after a reopening
 trigger is identified; keep the all-order envelope, legal anchored selector,
 and deterministic coefficient bridge as separate explicit obligations.
+
+## 9. Copy-paste prompt after `/new`
+
+Use the following as the first user message in the next fresh chat:
+
+```text
+继续 RH 理论研究。
+
+先进入 `/root/math/prime_dynamics_theory`，执行：
+
+git status --short --branch
+git pull --rebase origin main
+
+仓库是唯一事实来源，不要依赖旧会话记忆。优先完整阅读：
+
+- RH_HANDOFF.md
+- papers/RH-251-ten-layer-superloop-anchor-frontier-review/README.md
+- papers/RH-251-ten-layer-superloop-anchor-frontier-review/UPDATED_ROADMAP.md
+- papers/RH-251-ten-layer-superloop-anchor-frontier-review/results/frontier_review.json
+- papers/RH-251-ten-layer-superloop-anchor-frontier-review/main.pdf
+
+本轮从 RH-252 开始，但只有在真正的新输入下才开篇。当前路线坐标是：
+
+exact_superloop_quotient_frozen_anchor_class_obstructed_open_new_selector_uniform_tail
+
+首要目标是：
+
+new_anchored_selector_outside_frozen_resolved_window_with_uniform_quotient_block_certificate_and_target_tail
+
+RH-252 只能由下列至少一个 genuinely new reopening trigger 驱动：
+
+1. 扩大的 resolved candidate window，并完成 anchored reachability audit；
+2. 从 invariant quotient structure 导出的 signed/complex selector，而非任意 shell reweighting；
+3. 某个 quotient block power 的 uniform small-noise theorem；
+4. deterministic numerator target 的 analytic all-order tail bound。
+
+若没有这些输入，不要重复 zero-target prefix、冻结窗口重加权或有限阶拟合；应记录 scoped route stop，并在确实需要路线选择时再询问用户。
+
+每篇论文都要有相对独立的严格定理、反例、数值发现或 scoped negative result。不得把有限阶数据宣传成全阶定理，不得暗示已经构造 Hilbert–Polya 算子、识别黎曼零点、证明 zeta-divisor equality 或 RH。Gate A–E 必须继续明确标为 false/open。
+
+工作纪律：
+
+- 主会话只保留结论、路线坐标、阻塞点和最终审核摘要；
+- 长数值实验、源码扫描、构建日志、归档检查和逐页 PDF 审核交给分身；
+- 状态修改、最终整合、暂存和提交由主会话统一完成；
+- 保留无关未跟踪缓存与 TPC 工作，只暂存本批 RH 文件；
+- 每篇尽量形成完整数学短文，明确 theorem boundary、实验协议和下一步；
+- 完成后运行逐篇测试、PDF 编译、LaTeX 日志扫描、单篇及批量归档验证；
+- commit/push 前均先 `git pull --rebase origin main`；
+- 完成十篇或遇到真正 route stop 后，更新并推送 RH_HANDOFF.md，然后停止并通知我运行 `/new`。
+
+除非出现真正需要用户选择的路线分叉，否则直接读取仓库并推进。
+```
