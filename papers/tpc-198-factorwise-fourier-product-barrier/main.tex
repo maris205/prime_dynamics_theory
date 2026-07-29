@@ -1,0 +1,100 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype,booktabs,tabularx,array,xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\setlength{\emergencystretch}{4em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newcommand{\e}{\mathrm{e}}
+\title{\textbf{A Sharp Black-Box Barrier from Factorwise Fourier Bounds to a Product Twist}}
+\author{Liang Wang\\Huazhong University of Science and Technology}
+\date{July 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Rudin--Shapiro coefficients give two factors with uniform square-root Fourier bounds whose modulated pointwise product has a full linear resonance at a prescribed atom.  This stops only the factorwise-single-Fourier black-box implication.
+The classification is \texttt{METHOD\_\allowbreak{}OBSTRUCTION\_\allowbreak{}L1} and the
+verdict is \texttt{STOP\_\allowbreak{}SCOPED}.  No program-positive L2
+claim or endpoint exponent credit is made.
+\end{abstract}
+
+\section{Target contract and source boundary}
+The target has six simultaneous axes: actual fixed-\(h_0\) packet,
+source-locked named physical atom, every deterministic prefix, every
+deterministic scale, a fixed-\(X\) power at that atom, and actual active
+support.  The value \(h_0=2\) is source-backed data only.  Repository hashes
+are integrity locks, not theorem evidence.  TPC-193's declared seven-source
+corpus remains \textsc{stop-scoped} \citep{WangTPC193}.
+
+
+\section{Rudin--Shapiro witness}
+Let \(P_0=Q_0=1\) and recursively set
+\[
+ P_{m+1}(z)=P_m(z)+z^{2^m}Q_m(z),\qquad
+ Q_{m+1}(z)=P_m(z)-z^{2^m}Q_m(z).
+\]
+The coefficients of \(P_m\) are signs \(\rho_n\), \(0\le n<L=2^m\),
+and for \(|z|=1\),
+\[
+ |P_m(z)|^2+|Q_m(z)|^2=2L.
+\]
+Consequently every additive Fourier sum of
+\(f(n)=\rho_n\) is at most \(\sqrt{2L}\).
+
+\begin{theorem}[Sharp black-box failure]
+Fix any \(\alpha_\star\).  Put
+\(g(n)=\rho_n \e(\alpha_\star n)\).  Both \(f\) and \(g\) have uniform
+\(O(\sqrt L)\) Fourier bounds, but
+\[
+ \sum_{n<L}f(n)g(n)\e(-\alpha_\star n)=L.
+\]
+Therefore factorwise uniform Fourier bounds, used as black-box premises,
+do not imply cancellation of the product at a prescribed atom.
+\end{theorem}
+\begin{proof}
+Modulation translates the Fourier variable, so \(g\) inherits the same
+supremum bound.  Since \(\rho_n^2=1\), every term in the displayed product
+sum equals one.
+\end{proof}
+
+\section{Scoped interpretation}
+The witness is synthetic and is not asserted to model the Möbius function.
+It rejects exactly the logical implication
+\[
+ \hbox{two independent one-factor Fourier bounds}
+ \Longrightarrow
+ \hbox{literal two-factor product bound}.
+\]
+Arithmetic identities that couple the two Möbius factors remain open.
+
+
+\section{Loss, level and scope ledger}
+The smallest missing literal theorem is
+\[
+\texttt{ARITHMETIC\_\allowbreak{}TWO\_\allowbreak{}FACTOR\_\allowbreak{}COUPLING\_\allowbreak{}THEOREM}.
+\]
+The next route is \texttt{TWO\_\allowbreak{}MOBIUS\_\allowbreak{}PRODUCT\_\allowbreak{}FOURIER\_\allowbreak{}ROUTE}.
+The cell \texttt{FACTORWISE\_\allowbreak{}SINGLE\_\allowbreak{}MOBIUS\_\allowbreak{}FOURIER\_\allowbreak{}TO\_\allowbreak{}LITERAL\_\allowbreak{}PRODUCT} is \textsc{stop-scoped}; neither O161 parent nor the global architecture is stopped.
+
+The named-atom exponent credit is \(0\), while the endpoint requires a
+strict budget greater than \(1/400\); the ledger is unpaid.  Block sums are
+not cumulative prefixes, symbolic packet atoms are not named production
+atoms, phase \(L^2\) and almost-everywhere statements are not pointwise
+evaluation, and scoped method failures are not theorem or architecture
+failures.
+
+\section{Machine certificate}
+The adjacent canonical payload freezes the formula or finite witness,
+exact repository-source hashes, any explicitly non-hashed external locator
+record, six target axes, scoped stop, route state and claim firewall.  Its
+recursive exact schema has closed objects, exact array positions and
+constant leaves.  The checker recomputes the finite certificate and executes
+ten adversarial mutations.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

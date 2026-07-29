@@ -1,0 +1,341 @@
+{
+  "$id": "tpc-195-block-prefix-power-profile-equivalence-audit-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "all_checks_pass": {
+      "const": true,
+      "type": "boolean"
+    },
+    "checks": {
+      "additionalProperties": false,
+      "properties": {
+        "L2_none": {
+          "const": true,
+          "type": "boolean"
+        },
+        "all_mutations_executed_and_rejected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "endpoint_credit_zero": {
+          "const": true,
+          "type": "boolean"
+        },
+        "finite_certificate_executed": {
+          "const": true,
+          "type": "boolean"
+        },
+        "fixed_atom_decay_false": {
+          "const": true,
+          "type": "boolean"
+        },
+        "global_architecture_open": {
+          "const": true,
+          "type": "boolean"
+        },
+        "repository_source_hashes_verified": {
+          "const": true,
+          "type": "boolean"
+        },
+        "schema_exact_closed_recursive": {
+          "const": true,
+          "type": "boolean"
+        },
+        "strict_budget_unpaid": {
+          "const": true,
+          "type": "boolean"
+        },
+        "tpc193_stop_scope_preserved": {
+          "const": true,
+          "type": "boolean"
+        },
+        "two_pointwise_parents_open": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "repository_source_hashes_verified",
+        "schema_exact_closed_recursive",
+        "finite_certificate_executed",
+        "all_mutations_executed_and_rejected",
+        "tpc193_stop_scope_preserved",
+        "two_pointwise_parents_open",
+        "global_architecture_open",
+        "fixed_atom_decay_false",
+        "L2_none",
+        "endpoint_credit_zero",
+        "strict_budget_unpaid"
+      ],
+      "type": "object"
+    },
+    "finite_check_result": {
+      "additionalProperties": false,
+      "properties": {
+        "dyadic_partition_exact": {
+          "const": true,
+          "type": "boolean"
+        },
+        "forward_constant": {
+          "const": 1.466721202181,
+          "type": "number"
+        },
+        "reverse_constant": {
+          "const": 2.681792830507,
+          "type": "number"
+        },
+        "truncated_tail_counterexample_to_M_plus_1": {
+          "additionalProperties": false,
+          "properties": {
+            "M": {
+              "const": 10,
+              "type": "integer"
+            },
+            "T": {
+              "const": 19,
+              "type": "integer"
+            },
+            "new_strict_bound_terms": {
+              "const": 20,
+              "type": "integer"
+            },
+            "old_bound_terms": {
+              "const": 11,
+              "type": "integer"
+            },
+            "possible_tail_terms": {
+              "const": 19,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "M",
+            "T",
+            "old_bound_terms",
+            "possible_tail_terms",
+            "new_strict_bound_terms"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "dyadic_partition_exact",
+        "forward_constant",
+        "reverse_constant",
+        "truncated_tail_counterexample_to_M_plus_1"
+      ],
+      "type": "object"
+    },
+    "mutation_registry": {
+      "items": false,
+      "maxItems": 10,
+      "minItems": 10,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "promote_L2",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "promote_fixed_atom_decay",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "grant_endpoint_credit",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "mark_strict_budget_paid",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "stop_bad_endpoint_parent",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "stop_global_architecture",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "promote_hash_to_theorem",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "change_verdict",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "delete_first_missing",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "inject_extra_field",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "paper": {
+      "const": 195,
+      "type": "integer"
+    },
+    "payload_canonical_sha256": {
+      "const": "d90642b85e34218fd0e208b0f5638b6b8f3a10797352bb8b78f276bd449f5615",
+      "type": "string"
+    },
+    "schema": {
+      "const": "tpc-195-block-prefix-power-profile-equivalence-audit-v1",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "paper",
+    "payload_canonical_sha256",
+    "checks",
+    "finite_check_result",
+    "mutation_registry",
+    "all_checks_pass"
+  ],
+  "type": "object"
+}

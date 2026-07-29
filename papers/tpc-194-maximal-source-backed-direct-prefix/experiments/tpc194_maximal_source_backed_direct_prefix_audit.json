@@ -1,0 +1,66 @@
+{
+  "all_checks_pass": true,
+  "checks": {
+    "L2_none": true,
+    "all_mutations_executed_and_rejected": true,
+    "endpoint_credit_zero": true,
+    "finite_certificate_executed": true,
+    "fixed_atom_decay_false": true,
+    "global_architecture_open": true,
+    "repository_source_hashes_verified": true,
+    "schema_exact_closed_recursive": true,
+    "strict_budget_unpaid": true,
+    "tpc193_stop_scope_preserved": true,
+    "two_pointwise_parents_open": true
+  },
+  "finite_check_result": {
+    "determinant": 2,
+    "distinct_formula_types": 3,
+    "literal_formula_fields_verified": 9
+  },
+  "mutation_registry": [
+    {
+      "name": "promote_L2",
+      "rejected": true
+    },
+    {
+      "name": "promote_fixed_atom_decay",
+      "rejected": true
+    },
+    {
+      "name": "grant_endpoint_credit",
+      "rejected": true
+    },
+    {
+      "name": "mark_strict_budget_paid",
+      "rejected": true
+    },
+    {
+      "name": "stop_bad_endpoint_parent",
+      "rejected": true
+    },
+    {
+      "name": "stop_global_architecture",
+      "rejected": true
+    },
+    {
+      "name": "promote_hash_to_theorem",
+      "rejected": true
+    },
+    {
+      "name": "change_verdict",
+      "rejected": true
+    },
+    {
+      "name": "delete_first_missing",
+      "rejected": true
+    },
+    {
+      "name": "inject_extra_field",
+      "rejected": true
+    }
+  ],
+  "paper": 194,
+  "payload_canonical_sha256": "cc6b0150737349dd8e5bfdf2a4b7edfde7da96056d6c54b5155b202dc6bf02f2",
+  "schema": "tpc-194-maximal-source-backed-direct-prefix-audit-v1"
+}

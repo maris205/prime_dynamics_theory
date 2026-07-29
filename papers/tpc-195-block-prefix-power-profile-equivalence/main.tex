@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype,booktabs,tabularx,array,xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\setlength{\emergencystretch}{4em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newcommand{\e}{\mathrm{e}}
+\title{\textbf{Block and Cumulative Prefix Power Profiles: Exact Constants and the Truncation Tail}}
+\author{Liang Wang\\Huazhong University of Science and Technology}
+\date{July 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+All-scale dyadic block bounds and cumulative prefix bounds transfer in both directions with explicit sigma-dependent constants.  If small blocks are unavailable, the leftover tail is a real loss and cannot be suppressed by notation.
+The classification is \texttt{DETERMINISTIC\_\allowbreak{}REDUCTION\_\allowbreak{}L1} and the
+verdict is \texttt{PROVED\_\allowbreak{}BIDIRECTIONAL\_\allowbreak{}POWER\_\allowbreak{}PROFILE\_\allowbreak{}TRANSFER}.  No program-positive L2
+claim or endpoint exponent credit is made.
+\end{abstract}
+
+\section{Target contract and source boundary}
+The target has six simultaneous axes: actual fixed-\(h_0\) packet,
+source-locked named physical atom, every deterministic prefix, every
+deterministic scale, a fixed-\(X\) power at that atom, and actual active
+support.  The value \(h_0=2\) is source-backed data only.  Repository hashes
+are integrity locks, not theorem evidence.  TPC-193's declared seven-source
+corpus remains \textsc{stop-scoped} \citep{WangTPC193}.
+
+
+\section{Abstract sequence theorem}
+Let \(0<\sigma<1\), \(q>0\), and
+\(A(T)=\sum_{1\le n\le T}a_n\).  Write
+\(\Delta(N)=A(2N)-A(N)\), with real endpoints interpreted by integer
+cutoffs.
+
+\begin{theorem}[Power-profile transfer]\label{thm:transfer}
+If, uniformly for all \(N>0\),
+\[
+ |\Delta(N)|\le {C\over q}N^{1-\sigma},
+\]
+then
+\[
+ |A(T)|\le {C\over q(2^{1-\sigma}-1)}T^{1-\sigma}.
+\]
+Conversely, if \(|A(T)|\le (C/q)T^{1-\sigma}\) for all \(T\), then
+\[
+ |\Delta(N)|\le {C\over q}(2^{1-\sigma}+1)N^{1-\sigma}.
+\]
+\end{theorem}
+\begin{proof}
+Decompose \((0,T]\) into
+\((T/2^j,T/2^{j-1}]\), \(j\ge1\), and sum the geometric series
+\(\sum_{j\ge1}2^{-j(1-\sigma)}
+=(2^{1-\sigma}-1)^{-1}\).
+The reverse direction is the triangle inequality applied to
+\(\Delta(N)=A(2N)-A(N)\).  Under the stated real-endpoint step-function
+convention the telescoping is exact.  An input stated only for integer
+\(N\) requires a separate rounding ledger; it is not silently charged as
+one endpoint coefficient.
+\end{proof}
+
+\section{Truncated range ledger}
+Suppose the block hypothesis starts only at \(N\ge M\), and
+\(|a_n|\le B\).  The dyadic decomposition stops when its lower endpoint
+would fall below \(M\).  If \(R\) is the remaining endpoint, then
+\(R<2M\), so the raw tail is strictly less than \(2BM\).  After the direct
+normalization \(q/T\), the safe additional charge is
+\[
+ {2qBM\over T}.
+\]
+It is small only after a separate range relation makes it small.  Thus the
+full theorem is not a license to identify a terminal block with a cumulative
+prefix, and the truncated theorem does not yield a fixed \(X\)-power for
+free.  This deterministic transfer is distinct from the exceptional-shadow
+statement of TPC-159 \citep{WangTPC159}.
+
+\section{Route consequence}
+TPC-194 provides the per-packet sequence but not the production schedule or
+an all-scale block estimate on it.  The theorem above is therefore a ready
+deterministic edge, not endpoint credit.
+
+
+\section{Loss, level and scope ledger}
+The smallest missing literal theorem is
+\[
+\texttt{ALL\_\allowbreak{}SCALE\_\allowbreak{}BLOCK\_\allowbreak{}POWER\_\allowbreak{}BOUND\_\allowbreak{}ON\_\allowbreak{}THE\_\allowbreak{}LITERAL\_\allowbreak{}PHYSICAL\_\allowbreak{}SEQUENCE}.
+\]
+The next route is \texttt{APPLY\_\allowbreak{}ONLY\_\allowbreak{}AFTER\_\allowbreak{}PRODUCTION\_\allowbreak{}CROSSWALK}.
+No new method cell is stopped in this paper.
+
+The named-atom exponent credit is \(0\), while the endpoint requires a
+strict budget greater than \(1/400\); the ledger is unpaid.  Block sums are
+not cumulative prefixes, symbolic packet atoms are not named production
+atoms, phase \(L^2\) and almost-everywhere statements are not pointwise
+evaluation, and scoped method failures are not theorem or architecture
+failures.
+
+\section{Machine certificate}
+The adjacent canonical payload freezes the formula or finite witness,
+exact repository-source hashes, any explicitly non-hashed external locator
+record, six target axes, scoped stop, route state and claim firewall.  Its
+recursive exact schema has closed objects, exact array positions and
+constant leaves.  The checker recomputes the finite certificate and executes
+ten adversarial mutations.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

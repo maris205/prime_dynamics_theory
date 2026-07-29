@@ -1,0 +1,106 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype,booktabs,tabularx,array,xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\setlength{\emergencystretch}{4em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newcommand{\e}{\mathrm{e}}
+\title{\textbf{Rational Atoms after Residue Splitting: Determinant Inflation and the DFT Ledger}}
+\author{Liang Wang\\Huazhong University of Science and Technology}
+\date{July 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+A rational twist of conductor R splits into R residue-class sums. On each class the two affine slopes have gcd exactly R and the determinant becomes 2R.  One Fourier mode is one DFT coordinate, not control of every residue sum.
+The classification is \texttt{ALGEBRAIC\_\allowbreak{}REDUCTION\_\allowbreak{}L1} and the
+verdict is \texttt{PROVED\_\allowbreak{}RESIDUE\_\allowbreak{}SPLIT\_\allowbreak{}WITH\_\allowbreak{}DETERMINANT\_\allowbreak{}2R}.  No program-positive L2
+claim or endpoint exponent credit is made.
+\end{abstract}
+
+\section{Target contract and source boundary}
+The target has six simultaneous axes: actual fixed-\(h_0\) packet,
+source-locked named physical atom, every deterministic prefix, every
+deterministic scale, a fixed-\(X\) power at that atom, and actual active
+support.  The value \(h_0=2\) is source-backed data only.  Repository hashes
+are integrity locks, not theorem evidence.  TPC-193's declared seven-source
+corpus remains \textsc{stop-scoped} \citep{WangTPC193}.
+
+
+\section{Exact residue decomposition}
+Let \(\alpha=r/R\) in lowest terms and let
+\[
+ C_r(Z)=\sum_{z\in Z}c(z)\e(-rz/R).
+\]
+Partitioning by \(z=b+Rm\) gives the identity
+\begin{equation}\label{eq:dft}
+ C_r(Z)=\sum_{b\bmod R}\e(-rb/R)
+ \sum_{\substack{m\\b+Rm\in Z}}c(b+Rm).
+\end{equation}
+For the determinant-two forms \(d+sz,u+az\), the two forms on the
+\(b\)-th class are
+\[
+ (d+sb)+sRm,\qquad (u+ab)+aRm.
+\]
+
+\begin{theorem}[Determinant and slope-gcd ledger]
+If \(su-ad=2\) and \(as\) is odd, then \((a,s)=1\).  After residue
+splitting the two slopes \(sR,aR\) have gcd exactly \(R\), while their
+determinant is
+\[
+ (sR)(u+ab)-(aR)(d+sb)=2R.
+\]
+Equation \eqref{eq:dft} is one DFT coordinate.  Recovering every residue sum
+requires all \(R\) Fourier coordinates and DFT inversion.
+\end{theorem}
+\begin{proof}
+Any common divisor of \(a,s\) divides \(2\); oddness forces it to be one.
+The displayed determinant follows by expansion.  The final assertion is
+the invertibility of the \(R\times R\) Fourier matrix; a single row has a
+kernel of dimension \(R-1\) when \(R>1\).
+\end{proof}
+
+\section{Imported identities and new crosswalk}
+The DFT identity and the raw progression determinant law are imported from
+the TPC-108 alias calculus and TPC-94 phase ledger
+\citep{WangTPC94,WangTPC108}.  The L1 contribution here is their joint typed
+crosswalk to the TPC-194 decorated direct-prefix object, including the
+warning that a single mode is not all residue classes.
+
+\section{Firewall}
+The slope-gcd-\(R\), determinant-\(2R\) residue problem is not the original
+primitive-slope determinant-two problem.  A theorem for one rational
+Fourier mode also cannot be relabelled as simultaneous residue-class
+cancellation.
+
+
+\section{Loss, level and scope ledger}
+The smallest missing literal theorem is
+\[
+\texttt{UNIFORM\_\allowbreak{}ALL\_\allowbreak{}RESIDUE\_\allowbreak{}CLASS\_\allowbreak{}CANCELLATION\_\allowbreak{}OR\_\allowbreak{}DIRECT\_\allowbreak{}MODE\_\allowbreak{}THEOREM}.
+\]
+The next route is \texttt{RATIONAL\_\allowbreak{}ATOM\_\allowbreak{}THEOREM\_\allowbreak{}SCREEN}.
+No new method cell is stopped in this paper.
+
+The named-atom exponent credit is \(0\), while the endpoint requires a
+strict budget greater than \(1/400\); the ledger is unpaid.  Block sums are
+not cumulative prefixes, symbolic packet atoms are not named production
+atoms, phase \(L^2\) and almost-everywhere statements are not pointwise
+evaluation, and scoped method failures are not theorem or architecture
+failures.
+
+\section{Machine certificate}
+The adjacent canonical payload freezes the formula or finite witness,
+exact repository-source hashes, any explicitly non-hashed external locator
+record, six target axes, scoped stop, route state and claim firewall.  Its
+recursive exact schema has closed objects, exact array positions and
+constant leaves.  The checker recomputes the finite certificate and executes
+ten adversarial mutations.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

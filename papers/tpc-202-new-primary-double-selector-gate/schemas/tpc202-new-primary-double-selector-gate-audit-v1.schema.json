@@ -1,0 +1,312 @@
+{
+  "$id": "tpc-202-new-primary-double-selector-gate-audit-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "all_checks_pass": {
+      "const": true,
+      "type": "boolean"
+    },
+    "checks": {
+      "additionalProperties": false,
+      "properties": {
+        "L2_none": {
+          "const": true,
+          "type": "boolean"
+        },
+        "all_mutations_executed_and_rejected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "endpoint_credit_zero": {
+          "const": true,
+          "type": "boolean"
+        },
+        "finite_certificate_executed": {
+          "const": true,
+          "type": "boolean"
+        },
+        "fixed_atom_decay_false": {
+          "const": true,
+          "type": "boolean"
+        },
+        "global_architecture_open": {
+          "const": true,
+          "type": "boolean"
+        },
+        "repository_source_hashes_verified": {
+          "const": true,
+          "type": "boolean"
+        },
+        "schema_exact_closed_recursive": {
+          "const": true,
+          "type": "boolean"
+        },
+        "strict_budget_unpaid": {
+          "const": true,
+          "type": "boolean"
+        },
+        "tpc193_stop_scope_preserved": {
+          "const": true,
+          "type": "boolean"
+        },
+        "two_pointwise_parents_open": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "repository_source_hashes_verified",
+        "schema_exact_closed_recursive",
+        "finite_certificate_executed",
+        "all_mutations_executed_and_rejected",
+        "tpc193_stop_scope_preserved",
+        "two_pointwise_parents_open",
+        "global_architecture_open",
+        "fixed_atom_decay_false",
+        "L2_none",
+        "endpoint_credit_zero",
+        "strict_budget_unpaid"
+      ],
+      "type": "object"
+    },
+    "finite_check_result": {
+      "additionalProperties": false,
+      "properties": {
+        "column_average": {
+          "const": 0.015625,
+          "type": "number"
+        },
+        "native_theorem_records_verified": {
+          "const": 2,
+          "type": "integer"
+        },
+        "prescribed_cell": {
+          "const": 1,
+          "type": "integer"
+        },
+        "row_average": {
+          "const": 0.015625,
+          "type": "number"
+        }
+      },
+      "required": [
+        "row_average",
+        "column_average",
+        "prescribed_cell",
+        "native_theorem_records_verified"
+      ],
+      "type": "object"
+    },
+    "mutation_registry": {
+      "items": false,
+      "maxItems": 10,
+      "minItems": 10,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "promote_L2",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "promote_fixed_atom_decay",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "grant_endpoint_credit",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "mark_strict_budget_paid",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "stop_bad_endpoint_parent",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "stop_global_architecture",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "promote_hash_to_theorem",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "change_verdict",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "delete_first_missing",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "inject_extra_field",
+              "type": "string"
+            },
+            "rejected": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "rejected"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "paper": {
+      "const": 202,
+      "type": "integer"
+    },
+    "payload_canonical_sha256": {
+      "const": "36088cf34eeb80b281c68a38da6262d4e09cf8b2cf9451ba12b291d0ad82ed02",
+      "type": "string"
+    },
+    "schema": {
+      "const": "tpc-202-new-primary-double-selector-gate-audit-v1",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "paper",
+    "payload_canonical_sha256",
+    "checks",
+    "finite_check_result",
+    "mutation_registry",
+    "all_checks_pass"
+  ],
+  "type": "object"
+}

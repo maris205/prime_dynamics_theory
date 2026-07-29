@@ -1,0 +1,730 @@
+{
+  "$id": "tpc-202-new-primary-double-selector-gate-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "block_equals_cumulative_prefix": {
+          "const": false,
+          "type": "boolean"
+        },
+        "declared_corpus_stop_is_global_nonexistence": {
+          "const": false,
+          "type": "boolean"
+        },
+        "factorwise_fourier_implies_product_fourier": {
+          "const": false,
+          "type": "boolean"
+        },
+        "fixed_atom_decay_obtained": {
+          "const": false,
+          "type": "boolean"
+        },
+        "fixed_h0_data_is_decay": {
+          "const": false,
+          "type": "boolean"
+        },
+        "hash_integrity_is_theorem_evidence": {
+          "const": false,
+          "type": "boolean"
+        },
+        "lebesgue_ae_phase_is_named_atom_control": {
+          "const": false,
+          "type": "boolean"
+        },
+        "mobius_product_is_one_multiplicative_function": {
+          "const": false,
+          "type": "boolean"
+        },
+        "packet_key_is_production_packet_schedule": {
+          "const": false,
+          "type": "boolean"
+        },
+        "phase_L2_is_named_atom_control": {
+          "const": false,
+          "type": "boolean"
+        },
+        "prime_pair_lower_bound": {
+          "const": false,
+          "type": "boolean"
+        },
+        "program_positive_L2": {
+          "const": false,
+          "type": "boolean"
+        },
+        "scoped_method_stop_is_parent_stop": {
+          "const": false,
+          "type": "boolean"
+        },
+        "strict_one_over_400": {
+          "const": false,
+          "type": "boolean"
+        },
+        "symbolic_packet_atom_is_named_production_atom": {
+          "const": false,
+          "type": "boolean"
+        },
+        "twin_prime_theorem": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "block_equals_cumulative_prefix",
+        "symbolic_packet_atom_is_named_production_atom",
+        "packet_key_is_production_packet_schedule",
+        "phase_L2_is_named_atom_control",
+        "lebesgue_ae_phase_is_named_atom_control",
+        "factorwise_fourier_implies_product_fourier",
+        "mobius_product_is_one_multiplicative_function",
+        "fixed_h0_data_is_decay",
+        "hash_integrity_is_theorem_evidence",
+        "scoped_method_stop_is_parent_stop",
+        "declared_corpus_stop_is_global_nonexistence",
+        "fixed_atom_decay_obtained",
+        "program_positive_L2",
+        "strict_one_over_400",
+        "prime_pair_lower_bound",
+        "twin_prime_theorem"
+      ],
+      "type": "object"
+    },
+    "classification": {
+      "const": "PRIMARY_SOURCE_AUDIT_L1",
+      "type": "string"
+    },
+    "endpoint_ledger": {
+      "additionalProperties": false,
+      "properties": {
+        "named_atom_sigma_credit": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "const": 1,
+              "type": "integer"
+            },
+            "numerator": {
+              "const": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "type": "object"
+        },
+        "required_strict_budget": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "const": 400,
+              "type": "integer"
+            },
+            "numerator": {
+              "const": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "type": "object"
+        },
+        "state": {
+          "const": "UNPAID",
+          "type": "string"
+        }
+      },
+      "required": [
+        "named_atom_sigma_credit",
+        "required_strict_budget",
+        "state"
+      ],
+      "type": "object"
+    },
+    "external_primary_source": {
+      "additionalProperties": false,
+      "properties": {
+        "direct_literal_two_mobius_theorem": {
+          "const": false,
+          "type": "boolean"
+        },
+        "integrity_mode": {
+          "const": "PRIMARY_LOCATOR_AND_MANUAL_TRANSCRIPTION_NO_EXTERNAL_HASH",
+          "type": "string"
+        },
+        "locator": {
+          "const": "https://arxiv.org/abs/2607.15574v1",
+          "type": "string"
+        },
+        "native_theorem_records": {
+          "items": false,
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "carrier": {
+                  "const": "SINGLE_LIOUVILLE",
+                  "type": "string"
+                },
+                "lhs": {
+                  "const": "sup_alpha (1/X) integral_0^X |(1/h) sum_(x<=n<=x+h) lambda(n)e(alpha*n)| dx",
+                  "type": "string"
+                },
+                "locator": {
+                  "const": "Theorem 1.4",
+                  "type": "string"
+                },
+                "native_selectors": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "const": "SUPREMUM_ALPHA",
+                      "type": "string"
+                    },
+                    {
+                      "const": "AVERAGE_ORIGIN_X",
+                      "type": "string"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "range": {
+                  "const": "X>=h>=10",
+                  "type": "string"
+                },
+                "rhs": {
+                  "const": "loglog(h)/log(h)+(loglog(X))^2/log(X)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "locator",
+                "range",
+                "lhs",
+                "rhs",
+                "native_selectors",
+                "carrier"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "carrier": {
+                  "const": "MULTI_LIOUVILLE_SHIFT_CORRELATION",
+                  "type": "string"
+                },
+                "lhs": {
+                  "const": "(1/H^(k-1)) sum_(1<=h_2,...,h_k<=H) |(1/X) sum_(1<=n<=X) lambda(n)lambda(n+h_2)...lambda(n+h_k)|",
+                  "type": "string"
+                },
+                "locator": {
+                  "const": "Theorem 1.5",
+                  "type": "string"
+                },
+                "native_selectors": {
+                  "items": false,
+                  "maxItems": 1,
+                  "minItems": 1,
+                  "prefixItems": [
+                    {
+                      "const": "AVERAGE_H_2_THROUGH_H_K",
+                      "type": "string"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "range": {
+                  "const": "natural k>=2 and X>=H>=10",
+                  "type": "string"
+                },
+                "rhs": {
+                  "const": "k*(loglog(H)/log(H)+(loglog(X))^2/log(X))",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "locator",
+                "range",
+                "lhs",
+                "rhs",
+                "native_selectors",
+                "carrier"
+              ],
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "repository_source_hash_scope_only": {
+          "const": true,
+          "type": "boolean"
+        },
+        "reviewed_from_primary_source": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "locator",
+        "integrity_mode",
+        "repository_source_hash_scope_only",
+        "reviewed_from_primary_source",
+        "native_theorem_records",
+        "direct_literal_two_mobius_theorem"
+      ],
+      "type": "object"
+    },
+    "finite_certificate": {
+      "additionalProperties": false,
+      "properties": {
+        "eligible_literal_direct_candidate_count": {
+          "const": 0,
+          "type": "integer"
+        },
+        "new_stop_scoped_cell_created": {
+          "const": false,
+          "type": "boolean"
+        },
+        "primary_source": {
+          "additionalProperties": false,
+          "properties": {
+            "author": {
+              "const": "Siddarth Menon",
+              "type": "string"
+            },
+            "date": {
+              "const": "2026-07-17",
+              "type": "string"
+            },
+            "locator": {
+              "const": "arXiv:2607.15574v1",
+              "type": "string"
+            },
+            "theorems": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "1.4",
+                  "type": "string"
+                },
+                {
+                  "const": "1.5",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            "title": {
+              "const": "Improved bounds for multiplicative functions in almost all short intervals",
+              "type": "string"
+            }
+          },
+          "required": [
+            "author",
+            "title",
+            "locator",
+            "date",
+            "theorems"
+          ],
+          "type": "object"
+        },
+        "selector_fixture": {
+          "additionalProperties": false,
+          "properties": {
+            "columns": {
+              "const": 64,
+              "type": "integer"
+            },
+            "prescribed_value": {
+              "const": 1,
+              "type": "integer"
+            },
+            "rows": {
+              "const": 64,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "rows",
+            "columns",
+            "prescribed_value"
+          ],
+          "type": "object"
+        },
+        "selector_logic_status": {
+          "const": "INHERITED_TPC181_FIREWALL_ILLUSTRATION_ONLY",
+          "type": "string"
+        },
+        "theorem_1_4_axes": {
+          "additionalProperties": false,
+          "properties": {
+            "bound": {
+              "const": "loglog(h)/log(h)+(loglog(X))^2/log(X)",
+              "type": "string"
+            },
+            "carrier": {
+              "const": "SINGLE_LIOUVILLE",
+              "type": "string"
+            },
+            "decay": {
+              "const": "LOGARITHMIC",
+              "type": "string"
+            },
+            "normalization": {
+              "const": "(1/X) integral_0^X |(1/h) short_sum| dx",
+              "type": "string"
+            },
+            "phase": {
+              "const": "SUPREMUM_ALPHA",
+              "type": "string"
+            },
+            "range": {
+              "const": "X>=h>=10",
+              "type": "string"
+            },
+            "selector_loss": {
+              "const": "AVERAGE_INTERVAL_ORIGIN_X",
+              "type": "string"
+            }
+          },
+          "required": [
+            "range",
+            "phase",
+            "carrier",
+            "selector_loss",
+            "normalization",
+            "bound",
+            "decay"
+          ],
+          "type": "object"
+        },
+        "theorem_1_5_axes": {
+          "additionalProperties": false,
+          "properties": {
+            "bound": {
+              "const": "k*(loglog(H)/log(H)+(loglog(X))^2/log(X))",
+              "type": "string"
+            },
+            "carrier": {
+              "const": "MULTI_LIOUVILLE_SHIFT_CORRELATION",
+              "type": "string"
+            },
+            "decay": {
+              "const": "LOGARITHMIC",
+              "type": "string"
+            },
+            "normalization": {
+              "const": "(1/H^(k-1)) shift_sum |(1/X) n_sum product|",
+              "type": "string"
+            },
+            "phase": {
+              "const": "NO_PRESCRIBED_ADDITIVE_ATOM",
+              "type": "string"
+            },
+            "range": {
+              "const": "natural k>=2 and X>=H>=10",
+              "type": "string"
+            },
+            "selector_loss": {
+              "const": "AVERAGE_SHIFTS",
+              "type": "string"
+            }
+          },
+          "required": [
+            "range",
+            "carrier",
+            "selector_loss",
+            "phase",
+            "normalization",
+            "bound",
+            "decay"
+          ],
+          "type": "object"
+        },
+        "tpc193_v1_stop_preserved": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "primary_source",
+        "theorem_1_4_axes",
+        "theorem_1_5_axes",
+        "selector_fixture",
+        "eligible_literal_direct_candidate_count",
+        "new_stop_scoped_cell_created",
+        "selector_logic_status",
+        "tpc193_v1_stop_preserved"
+      ],
+      "type": "object"
+    },
+    "first_missing_literal_theorem": {
+      "const": "THEOREM_SELECTING_PRESCRIBED_ORIGIN_SHIFT_RELATION_AND_PACKET",
+      "type": "string"
+    },
+    "fixed_atom_decay_obtained": {
+      "const": false,
+      "type": "boolean"
+    },
+    "fixed_h0": {
+      "additionalProperties": false,
+      "properties": {
+        "semantics": {
+          "const": "SOURCE_BACKED_DATA_FACT_ONLY",
+          "type": "string"
+        },
+        "value": {
+          "const": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "value",
+        "semantics"
+      ],
+      "type": "object"
+    },
+    "next_route": {
+      "const": "NEW_PRIMARY_FIXED_PACKET_SELECTOR_SEARCH",
+      "type": "string"
+    },
+    "paper": {
+      "const": 202,
+      "type": "integer"
+    },
+    "progress": {
+      "additionalProperties": false,
+      "properties": {
+        "L0": {
+          "const": "FORMULA_OR_FINITE_CERTIFICATE",
+          "type": "string"
+        },
+        "L1": {
+          "const": "PRIMARY_SOURCE_AUDIT_L1",
+          "type": "string"
+        },
+        "L2": {
+          "const": "NONE",
+          "type": "string"
+        }
+      },
+      "required": [
+        "L0",
+        "L1",
+        "L2"
+      ],
+      "type": "object"
+    },
+    "required_quantifier_signature": {
+      "additionalProperties": false,
+      "properties": {
+        "carrier_axis": {
+          "const": "ACTUAL_FIXED_H0_PACKET",
+          "type": "string"
+        },
+        "decay_axis": {
+          "const": "FIXED_X_POWER_FIXED_ATOM",
+          "type": "string"
+        },
+        "endpoint_axis": {
+          "const": "DETERMINISTIC_ALL_PREFIX",
+          "type": "string"
+        },
+        "phase_axis": {
+          "const": "SOURCE_LOCKED_NAMED_PHYSICAL_ATOM",
+          "type": "string"
+        },
+        "scale_axis": {
+          "const": "DETERMINISTIC_ALL_SCALE",
+          "type": "string"
+        },
+        "support_axis": {
+          "const": "ACTUAL_ACTIVE_SUPPORT",
+          "type": "string"
+        }
+      },
+      "required": [
+        "carrier_axis",
+        "phase_axis",
+        "endpoint_axis",
+        "scale_axis",
+        "decay_axis",
+        "support_axis"
+      ],
+      "type": "object"
+    },
+    "result_summary": {
+      "const": "Menon's 2026 Theorems 1.4 and 1.5 sharpen an origin-averaged single-Liouville Fourier bound and a shift-averaged Liouville correlation bound.  Their combination does not select the prescribed affine relation and deterministic packet simultaneously.",
+      "type": "string"
+    },
+    "route_state": {
+      "additionalProperties": false,
+      "properties": {
+        "bad_endpoint_O161_parent": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "direct_twist_O161_parent": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "global_architecture": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "tpc193_declared_candidate_mechanism_corpus_v1": {
+          "const": "STOP_SCOPED",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tpc193_declared_candidate_mechanism_corpus_v1",
+        "bad_endpoint_O161_parent",
+        "direct_twist_O161_parent",
+        "global_architecture"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "tpc-202-new-primary-double-selector-gate-v1",
+      "type": "string"
+    },
+    "snapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "const": "2026-07-29",
+          "type": "string"
+        },
+        "hash_mode": {
+          "const": "CANONICAL_UTF8_LF",
+          "type": "string"
+        },
+        "source_of_truth": {
+          "const": "REPOSITORY_ARTIFACTS_NOT_CHAT_MEMORY",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "source_of_truth",
+        "hash_mode"
+      ],
+      "type": "object"
+    },
+    "source_locks": {
+      "items": false,
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "e7f0ce222e3d74c354f3c4878d77e4f2ce048c8cf620c76da6b9908e9e346cd9",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-181-metric-fixed-atom-selector-gate/experiments/tpc181_selector_gate.json",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC181.selector",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "6d57d443b0efee28ee8e6cdb09f4386347095ca248b9a0cd42533b326537c244",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC193.gate",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "stop_scoped": {
+      "items": false,
+      "maxItems": 0,
+      "minItems": 0,
+      "prefixItems": [],
+      "type": "array"
+    },
+    "title": {
+      "const": "A New Primary-Source Audit: Two Averaged Selectors Still Do Not Select One Physical Packet",
+      "type": "string"
+    },
+    "verdict": {
+      "const": "SCREENED_NON_DIRECT_ZERO_ELIGIBLE",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "paper",
+    "title",
+    "classification",
+    "verdict",
+    "result_summary",
+    "required_quantifier_signature",
+    "fixed_h0",
+    "first_missing_literal_theorem",
+    "next_route",
+    "route_state",
+    "stop_scoped",
+    "progress",
+    "fixed_atom_decay_obtained",
+    "endpoint_ledger",
+    "claim_boundary",
+    "finite_certificate",
+    "source_locks",
+    "snapshot",
+    "external_primary_source"
+  ],
+  "type": "object"
+}

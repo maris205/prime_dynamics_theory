@@ -1,0 +1,495 @@
+{
+  "$id": "tpc-198-factorwise-fourier-product-barrier-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "block_equals_cumulative_prefix": {
+          "const": false,
+          "type": "boolean"
+        },
+        "declared_corpus_stop_is_global_nonexistence": {
+          "const": false,
+          "type": "boolean"
+        },
+        "factorwise_fourier_implies_product_fourier": {
+          "const": false,
+          "type": "boolean"
+        },
+        "fixed_atom_decay_obtained": {
+          "const": false,
+          "type": "boolean"
+        },
+        "fixed_h0_data_is_decay": {
+          "const": false,
+          "type": "boolean"
+        },
+        "hash_integrity_is_theorem_evidence": {
+          "const": false,
+          "type": "boolean"
+        },
+        "lebesgue_ae_phase_is_named_atom_control": {
+          "const": false,
+          "type": "boolean"
+        },
+        "mobius_product_is_one_multiplicative_function": {
+          "const": false,
+          "type": "boolean"
+        },
+        "packet_key_is_production_packet_schedule": {
+          "const": false,
+          "type": "boolean"
+        },
+        "phase_L2_is_named_atom_control": {
+          "const": false,
+          "type": "boolean"
+        },
+        "prime_pair_lower_bound": {
+          "const": false,
+          "type": "boolean"
+        },
+        "program_positive_L2": {
+          "const": false,
+          "type": "boolean"
+        },
+        "scoped_method_stop_is_parent_stop": {
+          "const": false,
+          "type": "boolean"
+        },
+        "strict_one_over_400": {
+          "const": false,
+          "type": "boolean"
+        },
+        "symbolic_packet_atom_is_named_production_atom": {
+          "const": false,
+          "type": "boolean"
+        },
+        "twin_prime_theorem": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "block_equals_cumulative_prefix",
+        "symbolic_packet_atom_is_named_production_atom",
+        "packet_key_is_production_packet_schedule",
+        "phase_L2_is_named_atom_control",
+        "lebesgue_ae_phase_is_named_atom_control",
+        "factorwise_fourier_implies_product_fourier",
+        "mobius_product_is_one_multiplicative_function",
+        "fixed_h0_data_is_decay",
+        "hash_integrity_is_theorem_evidence",
+        "scoped_method_stop_is_parent_stop",
+        "declared_corpus_stop_is_global_nonexistence",
+        "fixed_atom_decay_obtained",
+        "program_positive_L2",
+        "strict_one_over_400",
+        "prime_pair_lower_bound",
+        "twin_prime_theorem"
+      ],
+      "type": "object"
+    },
+    "classification": {
+      "const": "METHOD_OBSTRUCTION_L1",
+      "type": "string"
+    },
+    "endpoint_ledger": {
+      "additionalProperties": false,
+      "properties": {
+        "named_atom_sigma_credit": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "const": 1,
+              "type": "integer"
+            },
+            "numerator": {
+              "const": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "type": "object"
+        },
+        "required_strict_budget": {
+          "additionalProperties": false,
+          "properties": {
+            "denominator": {
+              "const": 400,
+              "type": "integer"
+            },
+            "numerator": {
+              "const": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "numerator",
+            "denominator"
+          ],
+          "type": "object"
+        },
+        "state": {
+          "const": "UNPAID",
+          "type": "string"
+        }
+      },
+      "required": [
+        "named_atom_sigma_credit",
+        "required_strict_budget",
+        "state"
+      ],
+      "type": "object"
+    },
+    "finite_certificate": {
+      "additionalProperties": false,
+      "properties": {
+        "energy_identity": {
+          "const": "|P|^2+|Q|^2=2L",
+          "type": "string"
+        },
+        "factor_fourier_scale": {
+          "const": "sqrt(2L)",
+          "type": "string"
+        },
+        "length": {
+          "const": 32,
+          "type": "integer"
+        },
+        "product_resonance": {
+          "const": "L",
+          "type": "string"
+        },
+        "rudin_shapiro_level": {
+          "const": 5,
+          "type": "integer"
+        },
+        "synthetic_not_mobius": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "rudin_shapiro_level",
+        "length",
+        "energy_identity",
+        "factor_fourier_scale",
+        "product_resonance",
+        "synthetic_not_mobius"
+      ],
+      "type": "object"
+    },
+    "first_missing_literal_theorem": {
+      "const": "ARITHMETIC_TWO_FACTOR_COUPLING_THEOREM",
+      "type": "string"
+    },
+    "fixed_atom_decay_obtained": {
+      "const": false,
+      "type": "boolean"
+    },
+    "fixed_h0": {
+      "additionalProperties": false,
+      "properties": {
+        "semantics": {
+          "const": "SOURCE_BACKED_DATA_FACT_ONLY",
+          "type": "string"
+        },
+        "value": {
+          "const": 2,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "value",
+        "semantics"
+      ],
+      "type": "object"
+    },
+    "next_route": {
+      "const": "TWO_MOBIUS_PRODUCT_FOURIER_ROUTE",
+      "type": "string"
+    },
+    "paper": {
+      "const": 198,
+      "type": "integer"
+    },
+    "progress": {
+      "additionalProperties": false,
+      "properties": {
+        "L0": {
+          "const": "FORMULA_OR_FINITE_CERTIFICATE",
+          "type": "string"
+        },
+        "L1": {
+          "const": "METHOD_OBSTRUCTION_L1",
+          "type": "string"
+        },
+        "L2": {
+          "const": "NONE",
+          "type": "string"
+        }
+      },
+      "required": [
+        "L0",
+        "L1",
+        "L2"
+      ],
+      "type": "object"
+    },
+    "required_quantifier_signature": {
+      "additionalProperties": false,
+      "properties": {
+        "carrier_axis": {
+          "const": "ACTUAL_FIXED_H0_PACKET",
+          "type": "string"
+        },
+        "decay_axis": {
+          "const": "FIXED_X_POWER_FIXED_ATOM",
+          "type": "string"
+        },
+        "endpoint_axis": {
+          "const": "DETERMINISTIC_ALL_PREFIX",
+          "type": "string"
+        },
+        "phase_axis": {
+          "const": "SOURCE_LOCKED_NAMED_PHYSICAL_ATOM",
+          "type": "string"
+        },
+        "scale_axis": {
+          "const": "DETERMINISTIC_ALL_SCALE",
+          "type": "string"
+        },
+        "support_axis": {
+          "const": "ACTUAL_ACTIVE_SUPPORT",
+          "type": "string"
+        }
+      },
+      "required": [
+        "carrier_axis",
+        "phase_axis",
+        "endpoint_axis",
+        "scale_axis",
+        "decay_axis",
+        "support_axis"
+      ],
+      "type": "object"
+    },
+    "result_summary": {
+      "const": "Rudin--Shapiro coefficients give two factors with uniform square-root Fourier bounds whose modulated pointwise product has a full linear resonance at a prescribed atom.  This stops only the factorwise-single-Fourier black-box implication.",
+      "type": "string"
+    },
+    "route_state": {
+      "additionalProperties": false,
+      "properties": {
+        "bad_endpoint_O161_parent": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "direct_twist_O161_parent": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "global_architecture": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "tpc193_declared_candidate_mechanism_corpus_v1": {
+          "const": "STOP_SCOPED",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tpc193_declared_candidate_mechanism_corpus_v1",
+        "bad_endpoint_O161_parent",
+        "direct_twist_O161_parent",
+        "global_architecture"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "tpc-198-factorwise-fourier-product-barrier-v1",
+      "type": "string"
+    },
+    "snapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "const": "2026-07-29",
+          "type": "string"
+        },
+        "hash_mode": {
+          "const": "CANONICAL_UTF8_LF",
+          "type": "string"
+        },
+        "source_of_truth": {
+          "const": "REPOSITORY_ARTIFACTS_NOT_CHAT_MEMORY",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "source_of_truth",
+        "hash_mode"
+      ],
+      "type": "object"
+    },
+    "source_locks": {
+      "items": false,
+      "maxItems": 3,
+      "minItems": 3,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "4f1eea286d85ab2d1e68849d3405d2374745eed82dc17bf009370d1c3b89329a",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-108-literal-generic-affine-mobius-dispersion/main.tex",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC108.main",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "12b6e806493f254941b66987a0040d7f6673b2ed95528ebf5f6ad79b465a622e",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-167-direct-additive-twist-parseval/main.tex",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC167.main",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_utf8_lf_sha256": {
+              "const": "6d57d443b0efee28ee8e6cdb09f4386347095ca248b9a0cd42533b326537c244",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json",
+              "type": "string"
+            },
+            "source_id": {
+              "const": "TPC193.gate",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_id",
+            "path",
+            "canonical_utf8_lf_sha256",
+            "hash_semantics"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "stop_scoped": {
+      "items": false,
+      "maxItems": 1,
+      "minItems": 1,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "cell": {
+              "const": "FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT",
+              "type": "string"
+            },
+            "global_architecture_stopped": {
+              "const": false,
+              "type": "boolean"
+            },
+            "parent_route_stopped": {
+              "const": false,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "cell",
+            "parent_route_stopped",
+            "global_architecture_stopped"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "title": {
+      "const": "A Sharp Black-Box Barrier from Factorwise Fourier Bounds to a Product Twist",
+      "type": "string"
+    },
+    "verdict": {
+      "const": "STOP_SCOPED",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "paper",
+    "title",
+    "classification",
+    "verdict",
+    "result_summary",
+    "required_quantifier_signature",
+    "fixed_h0",
+    "first_missing_literal_theorem",
+    "next_route",
+    "route_state",
+    "stop_scoped",
+    "progress",
+    "fixed_atom_decay_obtained",
+    "endpoint_ledger",
+    "claim_boundary",
+    "finite_certificate",
+    "source_locks",
+    "snapshot"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,152 @@
+{
+  "claim_boundary": {
+    "block_equals_cumulative_prefix": false,
+    "declared_corpus_stop_is_global_nonexistence": false,
+    "factorwise_fourier_implies_product_fourier": false,
+    "fixed_atom_decay_obtained": false,
+    "fixed_h0_data_is_decay": false,
+    "hash_integrity_is_theorem_evidence": false,
+    "lebesgue_ae_phase_is_named_atom_control": false,
+    "mobius_product_is_one_multiplicative_function": false,
+    "packet_key_is_production_packet_schedule": false,
+    "phase_L2_is_named_atom_control": false,
+    "prime_pair_lower_bound": false,
+    "program_positive_L2": false,
+    "scoped_method_stop_is_parent_stop": false,
+    "strict_one_over_400": false,
+    "symbolic_packet_atom_is_named_production_atom": false,
+    "twin_prime_theorem": false
+  },
+  "classification": "PRIMARY_SOURCE_AUDIT_L1",
+  "endpoint_ledger": {
+    "named_atom_sigma_credit": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "required_strict_budget": {
+      "denominator": 400,
+      "numerator": 1
+    },
+    "state": "UNPAID"
+  },
+  "external_primary_source": {
+    "direct_literal_two_mobius_theorem": false,
+    "integrity_mode": "PRIMARY_LOCATOR_AND_MANUAL_TRANSCRIPTION_NO_EXTERNAL_HASH",
+    "locator": "https://arxiv.org/abs/2607.15574v1",
+    "native_theorem_records": [
+      {
+        "carrier": "SINGLE_LIOUVILLE",
+        "lhs": "sup_alpha (1/X) integral_0^X |(1/h) sum_(x<=n<=x+h) lambda(n)e(alpha*n)| dx",
+        "locator": "Theorem 1.4",
+        "native_selectors": [
+          "SUPREMUM_ALPHA",
+          "AVERAGE_ORIGIN_X"
+        ],
+        "range": "X>=h>=10",
+        "rhs": "loglog(h)/log(h)+(loglog(X))^2/log(X)"
+      },
+      {
+        "carrier": "MULTI_LIOUVILLE_SHIFT_CORRELATION",
+        "lhs": "(1/H^(k-1)) sum_(1<=h_2,...,h_k<=H) |(1/X) sum_(1<=n<=X) lambda(n)lambda(n+h_2)...lambda(n+h_k)|",
+        "locator": "Theorem 1.5",
+        "native_selectors": [
+          "AVERAGE_H_2_THROUGH_H_K"
+        ],
+        "range": "natural k>=2 and X>=H>=10",
+        "rhs": "k*(loglog(H)/log(H)+(loglog(X))^2/log(X))"
+      }
+    ],
+    "repository_source_hash_scope_only": true,
+    "reviewed_from_primary_source": true
+  },
+  "finite_certificate": {
+    "eligible_literal_direct_candidate_count": 0,
+    "new_stop_scoped_cell_created": false,
+    "primary_source": {
+      "author": "Siddarth Menon",
+      "date": "2026-07-17",
+      "locator": "arXiv:2607.15574v1",
+      "theorems": [
+        "1.4",
+        "1.5"
+      ],
+      "title": "Improved bounds for multiplicative functions in almost all short intervals"
+    },
+    "selector_fixture": {
+      "columns": 64,
+      "prescribed_value": 1,
+      "rows": 64
+    },
+    "selector_logic_status": "INHERITED_TPC181_FIREWALL_ILLUSTRATION_ONLY",
+    "theorem_1_4_axes": {
+      "bound": "loglog(h)/log(h)+(loglog(X))^2/log(X)",
+      "carrier": "SINGLE_LIOUVILLE",
+      "decay": "LOGARITHMIC",
+      "normalization": "(1/X) integral_0^X |(1/h) short_sum| dx",
+      "phase": "SUPREMUM_ALPHA",
+      "range": "X>=h>=10",
+      "selector_loss": "AVERAGE_INTERVAL_ORIGIN_X"
+    },
+    "theorem_1_5_axes": {
+      "bound": "k*(loglog(H)/log(H)+(loglog(X))^2/log(X))",
+      "carrier": "MULTI_LIOUVILLE_SHIFT_CORRELATION",
+      "decay": "LOGARITHMIC",
+      "normalization": "(1/H^(k-1)) shift_sum |(1/X) n_sum product|",
+      "phase": "NO_PRESCRIBED_ADDITIVE_ATOM",
+      "range": "natural k>=2 and X>=H>=10",
+      "selector_loss": "AVERAGE_SHIFTS"
+    },
+    "tpc193_v1_stop_preserved": true
+  },
+  "first_missing_literal_theorem": "THEOREM_SELECTING_PRESCRIBED_ORIGIN_SHIFT_RELATION_AND_PACKET",
+  "fixed_atom_decay_obtained": false,
+  "fixed_h0": {
+    "semantics": "SOURCE_BACKED_DATA_FACT_ONLY",
+    "value": 2
+  },
+  "next_route": "NEW_PRIMARY_FIXED_PACKET_SELECTOR_SEARCH",
+  "paper": 202,
+  "progress": {
+    "L0": "FORMULA_OR_FINITE_CERTIFICATE",
+    "L1": "PRIMARY_SOURCE_AUDIT_L1",
+    "L2": "NONE"
+  },
+  "required_quantifier_signature": {
+    "carrier_axis": "ACTUAL_FIXED_H0_PACKET",
+    "decay_axis": "FIXED_X_POWER_FIXED_ATOM",
+    "endpoint_axis": "DETERMINISTIC_ALL_PREFIX",
+    "phase_axis": "SOURCE_LOCKED_NAMED_PHYSICAL_ATOM",
+    "scale_axis": "DETERMINISTIC_ALL_SCALE",
+    "support_axis": "ACTUAL_ACTIVE_SUPPORT"
+  },
+  "result_summary": "Menon's 2026 Theorems 1.4 and 1.5 sharpen an origin-averaged single-Liouville Fourier bound and a shift-averaged Liouville correlation bound.  Their combination does not select the prescribed affine relation and deterministic packet simultaneously.",
+  "route_state": {
+    "bad_endpoint_O161_parent": "OPEN",
+    "direct_twist_O161_parent": "OPEN",
+    "global_architecture": "OPEN",
+    "tpc193_declared_candidate_mechanism_corpus_v1": "STOP_SCOPED"
+  },
+  "schema": "tpc-202-new-primary-double-selector-gate-v1",
+  "snapshot": {
+    "date": "2026-07-29",
+    "hash_mode": "CANONICAL_UTF8_LF",
+    "source_of_truth": "REPOSITORY_ARTIFACTS_NOT_CHAT_MEMORY"
+  },
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "e7f0ce222e3d74c354f3c4878d77e4f2ce048c8cf620c76da6b9908e9e346cd9",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-181-metric-fixed-atom-selector-gate/experiments/tpc181_selector_gate.json",
+      "source_id": "TPC181.selector"
+    },
+    {
+      "canonical_utf8_lf_sha256": "6d57d443b0efee28ee8e6cdb09f4386347095ca248b9a0cd42533b326537c244",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json",
+      "source_id": "TPC193.gate"
+    }
+  ],
+  "stop_scoped": [],
+  "title": "A New Primary-Source Audit: Two Averaged Selectors Still Do Not Select One Physical Packet",
+  "verdict": "SCREENED_NON_DIRECT_ZERO_ELIGIBLE"
+}
