@@ -1,0 +1,1314 @@
+{
+  "authorization": {
+    "authorization_record": "USER_EXPLICIT_FINITE_TPC204_AUTHORIZATION_2026_07_30",
+    "authorized_scope": "FINITE_EXACT_MATCHING_OR_FIRST_MISMATCH_CROSSWALK_AUDIT",
+    "implies_any_reopen_trigger": false,
+    "implies_direct_trigger_pass": false,
+    "is_mathematical_evidence": false,
+    "tpc204_authorized": true
+  },
+  "candidate_audits": [
+    {
+      "all_mismatch_gate_ids": [
+        "NAMED_PRODUCTION_ATOM",
+        "EXACT_PACKET_SCHEDULE",
+        "COMMON_X_N_Q_RANGES",
+        "UNIFORM_CONSTANT_C",
+        "POSITIVE_SIGMA",
+        "TARGET_NORMALIZATION_SELECTION",
+        "COMPLETE_PHYSICAL_LOSS_LEDGER",
+        "CORE_TERMINAL_BLOCK_CROSSWALK",
+        "CORE_CUMULATIVE_PREFIX_CROSSWALK",
+        "PHYSICAL_PACKET_PREFIX_CROSSWALK"
+      ],
+      "axis_audit": [
+        {
+          "axis_id": "named_production_atom",
+          "failure_code": "NAMED_ATOM_ID_PHASE_VALUE_AND_LOCATOR_NULL",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC180.payload#/candidate_registry"
+        },
+        {
+          "axis_id": "packet_schedule",
+          "failure_code": "PACKET_SCHEDULE_LOCATOR_NULL",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC180.payload#/candidate_registry"
+        },
+        {
+          "axis_id": "common_X_N_q_ranges",
+          "failure_code": "NO_COMMON_RANGE_RECORD",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC180.payload#/candidate_registry"
+        },
+        {
+          "axis_id": "uniform_constant_C",
+          "failure_code": "NO_UNIFORM_CONSTANT_RECORD",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC180.payload#/candidate_registry"
+        },
+        {
+          "axis_id": "positive_sigma",
+          "failure_code": "DECAY_AXIS_NONE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC180.payload#/registry_contract/decay_axis"
+        },
+        {
+          "axis_id": "target_normalization_selection",
+          "failure_code": "NO_TARGET_NORMALIZATION_RECORD",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC180.payload#/candidate_registry"
+        },
+        {
+          "axis_id": "complete_physical_loss_ledger",
+          "failure_code": "NO_PHYSICAL_LOSS_LEDGER",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC180.payload#/candidate_registry"
+        }
+      ],
+      "candidate_id": "H9.phase_cell_registry",
+      "complete_crosswalk": false,
+      "first_mismatch_gate_id": "NAMED_PRODUCTION_ATOM",
+      "first_mismatch_gate_index": 1,
+      "formula_crosswalk_audit": [
+        {
+          "domain": "N<t(z)<=2N",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_TERMINAL_BLOCK",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/N",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC180.payload#/candidate_registry"
+        },
+        {
+          "domain": "0<t(z)<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_CUMULATIVE_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/T",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC180.payload#/candidate_registry"
+        },
+        {
+          "domain": "z in I_xi_X and z<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "PHYSICAL_PACKET_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC180.payload#/candidate_registry"
+        }
+      ],
+      "native_formula_type": null,
+      "object_type": "EMPTY_SOURCE_LOCKED_REGISTRY_SLOT",
+      "object_type_eligible_for_finite_audit": true,
+      "primary_source_locator": "TPC180.payload#/candidate_registry"
+    },
+    {
+      "all_mismatch_gate_ids": [
+        "NAMED_PRODUCTION_ATOM",
+        "EXACT_PACKET_SCHEDULE",
+        "COMMON_X_N_Q_RANGES",
+        "UNIFORM_CONSTANT_C",
+        "POSITIVE_SIGMA",
+        "TARGET_NORMALIZATION_SELECTION",
+        "COMPLETE_PHYSICAL_LOSS_LEDGER",
+        "CORE_TERMINAL_BLOCK_CROSSWALK",
+        "CORE_CUMULATIVE_PREFIX_CROSSWALK",
+        "PHYSICAL_PACKET_PREFIX_CROSSWALK"
+      ],
+      "axis_audit": [
+        {
+          "axis_id": "named_production_atom",
+          "failure_code": "RATIONAL_ATOM_VALUE_AND_DENOMINATOR_LOCATOR_ABSENT",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/1"
+        },
+        {
+          "axis_id": "packet_schedule",
+          "failure_code": "NO_PRODUCTION_PACKET_SCHEDULE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/1"
+        },
+        {
+          "axis_id": "common_X_N_q_ranges",
+          "failure_code": "RANGE_NATIVE_TO_TERMINAL_BLOCK_ONLY",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "sqrt(X)<=N<=X outside E_X_star; q*R<=(log X)^eta_0",
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/1/constant_range_normalization_loss/range"
+        },
+        {
+          "axis_id": "uniform_constant_C",
+          "failure_code": "CONSTANT_NOT_ATTACHED_TO_PRODUCTION_CROSSWALK",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "absolute implicit constant inherited through TPC-149",
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/1/constant_range_normalization_loss/constants"
+        },
+        {
+          "axis_id": "positive_sigma",
+          "failure_code": "LOG_SAVING_IS_NOT_POSITIVE_X_POWER",
+          "native_status": "MISMATCH",
+          "native_value": "LOG_POWER_ONLY",
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/1/axis_map/decay_axis"
+        },
+        {
+          "axis_id": "target_normalization_selection",
+          "failure_code": "TERMINAL_NORMALIZATION_NOT_PRODUCTION_SELECTION",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "q/N on N<t(z)<=2N",
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/1/constant_range_normalization_loss/normalization"
+        },
+        {
+          "axis_id": "complete_physical_loss_ledger",
+          "failure_code": "ANALYTIC_LOSSES_NOT_COMPLETE_PHYSICAL_LEDGER",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/1/constant_range_normalization_loss/losses"
+        }
+      ],
+      "candidate_id": "TT26.RATIONAL_PERIODIC_ATOM",
+      "complete_crosswalk": false,
+      "first_mismatch_gate_id": "NAMED_PRODUCTION_ATOM",
+      "first_mismatch_gate_index": 1,
+      "formula_crosswalk_audit": [
+        {
+          "domain": "N<t(z)<=2N",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_TERMINAL_BLOCK",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/N",
+          "relation": "NATIVE_OBJECT_ONLY_NO_PRODUCTION_BRIDGE",
+          "source_locator": "TPC193.payload#/candidate_inventory/1"
+        },
+        {
+          "domain": "0<t(z)<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_CUMULATIVE_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/T",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC193.payload#/candidate_inventory/1"
+        },
+        {
+          "domain": "z in I_xi_X and z<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "PHYSICAL_PACKET_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC193.payload#/candidate_inventory/1"
+        }
+      ],
+      "native_formula_type": "CORE_TERMINAL_BLOCK",
+      "object_type": "TERMINAL_BLOCK_LOG_POWER_THEOREM",
+      "object_type_eligible_for_finite_audit": true,
+      "primary_source_locator": "TPC193.payload#/candidate_inventory/1"
+    },
+    {
+      "all_mismatch_gate_ids": [
+        "NAMED_PRODUCTION_ATOM",
+        "EXACT_PACKET_SCHEDULE",
+        "COMMON_X_N_Q_RANGES",
+        "UNIFORM_CONSTANT_C",
+        "POSITIVE_SIGMA",
+        "TARGET_NORMALIZATION_SELECTION",
+        "COMPLETE_PHYSICAL_LOSS_LEDGER",
+        "CORE_TERMINAL_BLOCK_CROSSWALK",
+        "CORE_CUMULATIVE_PREFIX_CROSSWALK",
+        "PHYSICAL_PACKET_PREFIX_CROSSWALK"
+      ],
+      "axis_audit": [
+        {
+          "axis_id": "named_production_atom",
+          "failure_code": "RHO_IS_ARBITRARY_PERIODIC_WEIGHT_NOT_NAMED_PRODUCTION_ATOM",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC159.main#thm:main"
+        },
+        {
+          "axis_id": "packet_schedule",
+          "failure_code": "NO_EXACT_PRODUCTION_PACKET_SCHEDULE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC159.audit#/endpoint_shadow"
+        },
+        {
+          "axis_id": "common_X_N_q_ranges",
+          "failure_code": "RANGE_EXCLUDES_DYADIC_SHADOW",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "2^J*sqrt(X)<=T<=X and T outside S_X_J",
+          "production_match": false,
+          "source_locator": "TPC159.main#thm:main"
+        },
+        {
+          "axis_id": "uniform_constant_C",
+          "failure_code": "NO_EXPLICIT_PRODUCTION_UNIFORMITY_LEDGER",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "implicit Vinogradov constant",
+          "production_match": false,
+          "source_locator": "TPC159.main#eq:main"
+        },
+        {
+          "axis_id": "positive_sigma",
+          "failure_code": "NO_POSITIVE_FIXED_X_POWER",
+          "native_status": "MISMATCH",
+          "native_value": "LOG_POWER_AND_DYADIC_TAIL_ONLY",
+          "production_match": false,
+          "source_locator": "TPC159.audit#/theorem/positive_fixed_X_power"
+        },
+        {
+          "axis_id": "target_normalization_selection",
+          "failure_code": "CUMULATIVE_NORMALIZATION_NOT_PRODUCTION_SELECTION",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "q/T on 0<t(z)<=T",
+          "production_match": false,
+          "source_locator": "TPC159.main#eq:main"
+        },
+        {
+          "axis_id": "complete_physical_loss_ledger",
+          "failure_code": "PARTIAL_ANALYTIC_LEDGER_NOT_COMPLETE_PHYSICAL_LEDGER",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "(log X)^(-kappa_0)+2^(-J)+q/T plus shadow loss",
+          "production_match": false,
+          "source_locator": "TPC159.main#eq:main"
+        }
+      ],
+      "candidate_id": "A159.DYADIC_SHADOW_ALMOST_ENDPOINT_PREFIX",
+      "complete_crosswalk": false,
+      "first_mismatch_gate_id": "NAMED_PRODUCTION_ATOM",
+      "first_mismatch_gate_index": 1,
+      "formula_crosswalk_audit": [
+        {
+          "domain": "N<t(z)<=2N",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_TERMINAL_BLOCK",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/N",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC159.main#thm:main+eq:main"
+        },
+        {
+          "domain": "0<t(z)<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_CUMULATIVE_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/T",
+          "relation": "NATIVE_OBJECT_ONLY_NO_PRODUCTION_BRIDGE",
+          "source_locator": "TPC159.main#thm:main+eq:main"
+        },
+        {
+          "domain": "z in I_xi_X and z<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "PHYSICAL_PACKET_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC159.main#thm:main+eq:main"
+        }
+      ],
+      "native_formula_type": "CORE_CUMULATIVE_PREFIX",
+      "object_type": "CUMULATIVE_PREFIX_OUTSIDE_SHADOW_THEOREM",
+      "object_type_eligible_for_finite_audit": true,
+      "primary_source_locator": "TPC159.main#thm:main+eq:main"
+    },
+    {
+      "all_mismatch_gate_ids": [
+        "NAMED_PRODUCTION_ATOM",
+        "EXACT_PACKET_SCHEDULE",
+        "COMMON_X_N_Q_RANGES",
+        "UNIFORM_CONSTANT_C",
+        "POSITIVE_SIGMA",
+        "TARGET_NORMALIZATION_SELECTION",
+        "COMPLETE_PHYSICAL_LOSS_LEDGER",
+        "CORE_TERMINAL_BLOCK_CROSSWALK",
+        "CORE_CUMULATIVE_PREFIX_CROSSWALK",
+        "PHYSICAL_PACKET_PREFIX_CROSSWALK"
+      ],
+      "axis_audit": [
+        {
+          "axis_id": "named_production_atom",
+          "failure_code": "PHASE_L2_IS_NOT_NAMED_PRODUCTION_ATOM",
+          "native_status": "MISMATCH",
+          "native_value": "PHASE_L2",
+          "production_match": false,
+          "source_locator": "TPC167.audit#/theorem"
+        },
+        {
+          "axis_id": "packet_schedule",
+          "failure_code": "FOURIER_GRID_IS_NOT_PRODUCTION_PACKET_SCHEDULE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC167.main#prop:grid"
+        },
+        {
+          "axis_id": "common_X_N_q_ranges",
+          "failure_code": "RANGE_ATTACHED_TO_PHASE_L2_ONLY",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "q<=(log X)^eta_0 and N>=sqrt(X)",
+          "production_match": false,
+          "source_locator": "TPC167.audit#/power_envelope"
+        },
+        {
+          "axis_id": "uniform_constant_C",
+          "failure_code": "CONSTANT_HAS_WRONG_NORM_AXIS",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "sqrt(2) with polylog factor in phase L2",
+          "production_match": false,
+          "source_locator": "TPC167.main#eq:power"
+        },
+        {
+          "axis_id": "positive_sigma",
+          "failure_code": "PHASE_L2_POWER_IS_NOT_FIXED_ATOM_POWER",
+          "native_status": "MISMATCH",
+          "native_value": "FORMAL_1/4_ONLY_IN_PHASE_L2_WITH_POLYLOG",
+          "production_match": false,
+          "source_locator": "TPC167.audit#/power_envelope"
+        },
+        {
+          "axis_id": "target_normalization_selection",
+          "failure_code": "TERMINAL_NORMALIZATION_NOT_PRODUCTION_SELECTION",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "q/N on N<t(z)<=2N",
+          "production_match": false,
+          "source_locator": "TPC167.main#eq:transform"
+        },
+        {
+          "axis_id": "complete_physical_loss_ledger",
+          "failure_code": "NO_COMPLETE_PHYSICAL_LOSS_LEDGER",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC167.audit#/power_envelope"
+        }
+      ],
+      "candidate_id": "A167.DIRECT_ADDITIVE_TWIST_PHASE_L2",
+      "complete_crosswalk": false,
+      "first_mismatch_gate_id": "NAMED_PRODUCTION_ATOM",
+      "first_mismatch_gate_index": 1,
+      "formula_crosswalk_audit": [
+        {
+          "domain": "N<t(z)<=2N",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_TERMINAL_BLOCK",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/N",
+          "relation": "NATIVE_OBJECT_ONLY_NO_PRODUCTION_BRIDGE",
+          "source_locator": "TPC167.main#thm:parseval+eq:power"
+        },
+        {
+          "domain": "0<t(z)<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_CUMULATIVE_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/T",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC167.main#thm:parseval+eq:power"
+        },
+        {
+          "domain": "z in I_xi_X and z<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "PHYSICAL_PACKET_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC167.main#thm:parseval+eq:power"
+        }
+      ],
+      "native_formula_type": "CORE_TERMINAL_BLOCK",
+      "object_type": "TERMINAL_BLOCK_PHASE_L2_THEOREM",
+      "object_type_eligible_for_finite_audit": true,
+      "primary_source_locator": "TPC167.main#thm:parseval+eq:power"
+    },
+    {
+      "all_mismatch_gate_ids": [
+        "NAMED_PRODUCTION_ATOM",
+        "EXACT_PACKET_SCHEDULE",
+        "COMMON_X_N_Q_RANGES",
+        "UNIFORM_CONSTANT_C",
+        "POSITIVE_SIGMA",
+        "TARGET_NORMALIZATION_SELECTION",
+        "COMPLETE_PHYSICAL_LOSS_LEDGER",
+        "CORE_TERMINAL_BLOCK_CROSSWALK",
+        "CORE_CUMULATIVE_PREFIX_CROSSWALK",
+        "PHYSICAL_PACKET_PREFIX_CROSSWALK"
+      ],
+      "axis_audit": [
+        {
+          "axis_id": "named_production_atom",
+          "failure_code": "ATOM_OCCURS_ONLY_AS_UNINSTANTIATED_HYPOTHESIS",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC183.payload#/theorem"
+        },
+        {
+          "axis_id": "packet_schedule",
+          "failure_code": "NO_PACKET_SCHEDULE_VALUE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC183.payload#/proof"
+        },
+        {
+          "axis_id": "common_X_N_q_ranges",
+          "failure_code": "NO_COMMON_RANGE_VALUE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC183.payload#/proof"
+        },
+        {
+          "axis_id": "uniform_constant_C",
+          "failure_code": "CONSTANT_IS_UNINSTANTIATED_HYPOTHESIS",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC183.payload#/theorem"
+        },
+        {
+          "axis_id": "positive_sigma",
+          "failure_code": "SIGMA_IS_UNINSTANTIATED_HYPOTHESIS",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC183.payload#/theorem"
+        },
+        {
+          "axis_id": "target_normalization_selection",
+          "failure_code": "TERMINAL_AND_CUMULATIVE_DOMAINS_NOT_IDENTICAL",
+          "native_status": "MISMATCH",
+          "native_value": "N=T leaves T<t(z)<=2T and does not give 0<t(z)<=T",
+          "production_match": false,
+          "source_locator": "TPC193.main#prop:formula"
+        },
+        {
+          "axis_id": "complete_physical_loss_ledger",
+          "failure_code": "NO_PHYSICAL_LOSS_LEDGER",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC183.payload#/theorem"
+        }
+      ],
+      "candidate_id": "TPC183.N_EQUALS_T_SPECIALIZATION_PROPOSAL",
+      "complete_crosswalk": false,
+      "first_mismatch_gate_id": "NAMED_PRODUCTION_ATOM",
+      "first_mismatch_gate_index": 1,
+      "formula_crosswalk_audit": [
+        {
+          "domain": "N<t(z)<=2N",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_TERMINAL_BLOCK",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/N",
+          "relation": "INVALID_N_EQUALS_T_DOMAIN_CONFLATION",
+          "source_locator": "TPC183.payload#/theorem"
+        },
+        {
+          "domain": "0<t(z)<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_CUMULATIVE_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/T",
+          "relation": "INVALID_N_EQUALS_T_DOMAIN_CONFLATION",
+          "source_locator": "TPC183.payload#/theorem"
+        },
+        {
+          "domain": "z in I_xi_X and z<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "PHYSICAL_PACKET_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM",
+          "relation": "INVALID_N_EQUALS_T_DOMAIN_CONFLATION",
+          "source_locator": "TPC183.payload#/theorem"
+        }
+      ],
+      "native_formula_type": null,
+      "object_type": "INVALID_TERMINAL_TO_CUMULATIVE_SPECIALIZATION",
+      "object_type_eligible_for_finite_audit": true,
+      "primary_source_locator": "TPC183.payload#/theorem"
+    },
+    {
+      "all_mismatch_gate_ids": [
+        "NAMED_PRODUCTION_ATOM",
+        "EXACT_PACKET_SCHEDULE",
+        "COMMON_X_N_Q_RANGES",
+        "UNIFORM_CONSTANT_C",
+        "POSITIVE_SIGMA",
+        "TARGET_NORMALIZATION_SELECTION",
+        "COMPLETE_PHYSICAL_LOSS_LEDGER",
+        "CORE_TERMINAL_BLOCK_CROSSWALK",
+        "CORE_CUMULATIVE_PREFIX_CROSSWALK",
+        "PHYSICAL_PACKET_PREFIX_CROSSWALK"
+      ],
+      "axis_audit": [
+        {
+          "axis_id": "named_production_atom",
+          "failure_code": "PRESCRIBED_BAD_ENDPOINT_ATOM_HAS_NO_SOURCE_LOCKED_VALUE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC184.payload#/required_quantifier_signature/phase_axis"
+        },
+        {
+          "axis_id": "packet_schedule",
+          "failure_code": "ALL_PREFIX_QUANTIFIER_IS_NOT_EXACT_PRODUCTION_SCHEDULE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC184.payload#/required_quantifier_signature/endpoint_axis"
+        },
+        {
+          "axis_id": "common_X_N_q_ranges",
+          "failure_code": "NO_LITERAL_COMMON_X_N_Q_RANGE_VALUES",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC184.payload#/result"
+        },
+        {
+          "axis_id": "uniform_constant_C",
+          "failure_code": "NO_UNIFORM_CONSTANT_VALUE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC184.payload#/result"
+        },
+        {
+          "axis_id": "positive_sigma",
+          "failure_code": "FIXED_ATOM_POWER_SAVING_INSIDE_SHADOW_OPEN",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC184.payload#/smallest_literal_missing_theorem"
+        },
+        {
+          "axis_id": "target_normalization_selection",
+          "failure_code": "VERBAL_NORMALIZATION_NOT_ATTACHED_TO_NAMED_ATOM_RECORD",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "verbal q/T cumulative actual-core all-prefix target",
+          "production_match": false,
+          "source_locator": "TPC184.payload#/result"
+        },
+        {
+          "axis_id": "complete_physical_loss_ledger",
+          "failure_code": "NO_COMPLETE_PHYSICAL_LOSS_LEDGER",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC184.payload#/endpoint_ledger"
+        }
+      ],
+      "candidate_id": "O161.BAD_ENDPOINT_POINTWISE_FIXED_ATOM_CONTRACT",
+      "complete_crosswalk": false,
+      "first_mismatch_gate_id": "NAMED_PRODUCTION_ATOM",
+      "first_mismatch_gate_index": 1,
+      "formula_crosswalk_audit": [
+        {
+          "domain": "N<t(z)<=2N",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_TERMINAL_BLOCK",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/N",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC184.payload#/result"
+        },
+        {
+          "domain": "0<t(z)<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_CUMULATIVE_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/T",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC184.payload#/result"
+        },
+        {
+          "domain": "z in I_xi_X and z<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "PHYSICAL_PACKET_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC184.payload#/result"
+        }
+      ],
+      "native_formula_type": null,
+      "object_type": "VERBAL_CUMULATIVE_ALL_PREFIX_TARGET_WITHOUT_NAMED_ATOM_VALUE",
+      "object_type_eligible_for_finite_audit": true,
+      "primary_source_locator": "TPC184.payload#/result"
+    },
+    {
+      "all_mismatch_gate_ids": [
+        "NAMED_PRODUCTION_ATOM",
+        "EXACT_PACKET_SCHEDULE",
+        "COMMON_X_N_Q_RANGES",
+        "UNIFORM_CONSTANT_C",
+        "POSITIVE_SIGMA",
+        "TARGET_NORMALIZATION_SELECTION",
+        "COMPLETE_PHYSICAL_LOSS_LEDGER",
+        "CORE_TERMINAL_BLOCK_CROSSWALK",
+        "CORE_CUMULATIVE_PREFIX_CROSSWALK",
+        "PHYSICAL_PACKET_PREFIX_CROSSWALK"
+      ],
+      "axis_audit": [
+        {
+          "axis_id": "named_production_atom",
+          "failure_code": "PRESCRIBED_ATOM_HAS_NO_SOURCE_LOCKED_VALUE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC189.payload#/result"
+        },
+        {
+          "axis_id": "packet_schedule",
+          "failure_code": "NO_PACKET_SCHEDULE_VALUE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC189.payload#/result"
+        },
+        {
+          "axis_id": "common_X_N_q_ranges",
+          "failure_code": "NO_COMMON_RANGE_VALUE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC189.payload#/result"
+        },
+        {
+          "axis_id": "uniform_constant_C",
+          "failure_code": "NO_UNIFORM_CONSTANT_VALUE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC189.payload#/result"
+        },
+        {
+          "axis_id": "positive_sigma",
+          "failure_code": "FIXED_ATOM_POWER_SAVING_OPEN",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC189.payload#/smallest_literal_missing_theorem"
+        },
+        {
+          "axis_id": "target_normalization_selection",
+          "failure_code": "NORMALIZATION_NOT_ATTACHED_TO_UNIQUE_LITERAL_OBJECT",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "verbal q/N with no literal direct-prefix domain",
+          "production_match": false,
+          "source_locator": "TPC189.payload#/result"
+        },
+        {
+          "axis_id": "complete_physical_loss_ledger",
+          "failure_code": "NO_COMPLETE_PHYSICAL_LOSS_LEDGER",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC189.payload#/result"
+        }
+      ],
+      "candidate_id": "O161.DIRECT_ADDITIVE_TWIST_FIXED_ATOM_CONTRACT",
+      "complete_crosswalk": false,
+      "first_mismatch_gate_id": "NAMED_PRODUCTION_ATOM",
+      "first_mismatch_gate_index": 1,
+      "formula_crosswalk_audit": [
+        {
+          "domain": "N<t(z)<=2N",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_TERMINAL_BLOCK",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/N",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC189.payload#/result"
+        },
+        {
+          "domain": "0<t(z)<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_CUMULATIVE_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/T",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC189.payload#/result"
+        },
+        {
+          "domain": "z in I_xi_X and z<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "PHYSICAL_PACKET_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC189.payload#/result"
+        }
+      ],
+      "native_formula_type": null,
+      "object_type": "VERBAL_DIRECT_TARGET_WITHOUT_LITERAL_PREFIX_DOMAIN",
+      "object_type_eligible_for_finite_audit": true,
+      "primary_source_locator": "TPC189.payload#/result"
+    },
+    {
+      "all_mismatch_gate_ids": [
+        "NAMED_PRODUCTION_ATOM",
+        "EXACT_PACKET_SCHEDULE",
+        "COMMON_X_N_Q_RANGES",
+        "UNIFORM_CONSTANT_C",
+        "POSITIVE_SIGMA",
+        "TARGET_NORMALIZATION_SELECTION",
+        "COMPLETE_PHYSICAL_LOSS_LEDGER",
+        "CORE_TERMINAL_BLOCK_CROSSWALK",
+        "CORE_CUMULATIVE_PREFIX_CROSSWALK",
+        "PHYSICAL_PACKET_PREFIX_CROSSWALK"
+      ],
+      "axis_audit": [
+        {
+          "axis_id": "named_production_atom",
+          "failure_code": "FIXED_GAMMA_IS_NOT_SOURCE_LOCKED_PRODUCTION_ATOM",
+          "native_status": "MISMATCH",
+          "native_value": "every fixed gamma but no production atom locator",
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/0"
+        },
+        {
+          "axis_id": "packet_schedule",
+          "failure_code": "NO_PRODUCTION_PACKET_SCHEDULE",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/0"
+        },
+        {
+          "axis_id": "common_X_N_q_ranges",
+          "failure_code": "ASYMPTOTIC_FIXED_DATA_NOT_PRODUCTION_RANGE",
+          "native_status": "PRESENT_NATIVE_NOT_PRODUCTION_CREDIT",
+          "native_value": "fixed affine data and X tends to infinity",
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/0/constant_range_normalization_loss/range"
+        },
+        {
+          "axis_id": "uniform_constant_C",
+          "failure_code": "QUALITATIVE_O1_HAS_NO_EFFECTIVE_UNIFORM_C",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/0/constant_range_normalization_loss/constants"
+        },
+        {
+          "axis_id": "positive_sigma",
+          "failure_code": "NO_POSITIVE_FIXED_X_POWER",
+          "native_status": "MISMATCH",
+          "native_value": "QUALITATIVE_LOG_AVERAGED_O1",
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/0/axis_map/decay_axis"
+        },
+        {
+          "axis_id": "target_normalization_selection",
+          "failure_code": "LOG_WEIGHTED_NORMALIZATION_NOT_NATURAL_TARGET",
+          "native_status": "MISMATCH",
+          "native_value": "(1/log X) sum ... /n",
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/0/constant_range_normalization_loss/normalization"
+        },
+        {
+          "axis_id": "complete_physical_loss_ledger",
+          "failure_code": "NO_COMPLETE_PHYSICAL_LOSS_LEDGER",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC193.payload#/candidate_inventory/0/constant_range_normalization_loss/losses"
+        }
+      ],
+      "candidate_id": "TW25.LOG_TWISTED_AFFINE",
+      "complete_crosswalk": false,
+      "first_mismatch_gate_id": "NAMED_PRODUCTION_ATOM",
+      "first_mismatch_gate_index": 1,
+      "formula_crosswalk_audit": [
+        {
+          "domain": "N<t(z)<=2N",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_TERMINAL_BLOCK",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/N",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC193.payload#/candidate_inventory/0"
+        },
+        {
+          "domain": "0<t(z)<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_CUMULATIVE_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/T",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC193.payload#/candidate_inventory/0"
+        },
+        {
+          "domain": "z in I_xi_X and z<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "PHYSICAL_PACKET_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC193.payload#/candidate_inventory/0"
+        }
+      ],
+      "native_formula_type": null,
+      "object_type": "LOG_WEIGHTED_FIXED_ATOM_AFFINE_THEOREM",
+      "object_type_eligible_for_finite_audit": true,
+      "primary_source_locator": "TPC193.payload#/candidate_inventory/0"
+    },
+    {
+      "all_mismatch_gate_ids": [
+        "NAMED_PRODUCTION_ATOM",
+        "EXACT_PACKET_SCHEDULE",
+        "COMMON_X_N_Q_RANGES",
+        "UNIFORM_CONSTANT_C",
+        "POSITIVE_SIGMA",
+        "TARGET_NORMALIZATION_SELECTION",
+        "COMPLETE_PHYSICAL_LOSS_LEDGER",
+        "CORE_TERMINAL_BLOCK_CROSSWALK",
+        "CORE_CUMULATIVE_PREFIX_CROSSWALK",
+        "PHYSICAL_PACKET_PREFIX_CROSSWALK"
+      ],
+      "axis_audit": [
+        {
+          "axis_id": "named_production_atom",
+          "failure_code": "SYMBOLIC_PACKET_ATOM_IS_NOT_NAMED_PRODUCTION_ATOM",
+          "native_status": "MISMATCH",
+          "native_value": "symbolic alpha_xi_X",
+          "production_match": false,
+          "source_locator": "TPC194.payload#/finite_certificate/resolved_packet_formula/packet_atom"
+        },
+        {
+          "axis_id": "packet_schedule",
+          "failure_code": "RESOLVED_PACKET_KEY_IS_NOT_PRODUCTION_SCHEDULE",
+          "native_status": "MISMATCH",
+          "native_value": "xi=(theta,c,kappa,r)",
+          "production_match": false,
+          "source_locator": "TPC194.payload#/finite_certificate/resolved_packet_formula/key"
+        },
+        {
+          "axis_id": "common_X_N_q_ranges",
+          "failure_code": "COMMON_RANGE_MISSING",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC194.payload#/finite_certificate/completion_axes/common_X_N_q_ranges"
+        },
+        {
+          "axis_id": "uniform_constant_C",
+          "failure_code": "UNIFORM_CONSTANT_MISSING",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC194.payload#/finite_certificate/completion_axes/uniform_constant_C"
+        },
+        {
+          "axis_id": "positive_sigma",
+          "failure_code": "POSITIVE_SIGMA_MISSING",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC194.payload#/finite_certificate/completion_axes/positive_sigma"
+        },
+        {
+          "axis_id": "target_normalization_selection",
+          "failure_code": "TARGET_NORMALIZATION_SELECTION_MISSING",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC194.payload#/finite_certificate/completion_axes/target_normalization_selection"
+        },
+        {
+          "axis_id": "complete_physical_loss_ledger",
+          "failure_code": "COMPLETE_PHYSICAL_LOSS_LEDGER_MISSING",
+          "native_status": "MISSING",
+          "native_value": null,
+          "production_match": false,
+          "source_locator": "TPC194.payload#/finite_certificate/completion_axes/complete_physical_loss_ledger"
+        }
+      ],
+      "candidate_id": "PHYSICAL_PACKET_PREFIX",
+      "complete_crosswalk": false,
+      "first_mismatch_gate_id": "NAMED_PRODUCTION_ATOM",
+      "first_mismatch_gate_index": 1,
+      "formula_crosswalk_audit": [
+        {
+          "domain": "N<t(z)<=2N",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_TERMINAL_BLOCK",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/N",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC194.payload#/finite_certificate/resolved_packet_formula"
+        },
+        {
+          "domain": "0<t(z)<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "CORE_CUMULATIVE_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "q/T",
+          "relation": "NO_LITERAL_EXACT_CROSSWALK",
+          "source_locator": "TPC194.payload#/finite_certificate/resolved_packet_formula"
+        },
+        {
+          "domain": "z in I_xi_X and z<=T",
+          "exact_crosswalk": false,
+          "formula_type_id": "PHYSICAL_PACKET_PREFIX",
+          "mapping_direction": "SOURCE_OBJECT_TO_PRODUCTION_PACKET_PREFIX",
+          "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM",
+          "relation": "NATIVE_OBJECT_ONLY_NO_PRODUCTION_BRIDGE",
+          "source_locator": "TPC194.payload#/finite_certificate/resolved_packet_formula"
+        }
+      ],
+      "native_formula_type": "PHYSICAL_PACKET_PREFIX",
+      "object_type": "RESOLVED_PER_PACKET_UNNORMALIZED_PHYSICAL_PREFIX",
+      "object_type_eligible_for_finite_audit": true,
+      "primary_source_locator": "TPC194.payload#/finite_certificate/resolved_packet_formula"
+    }
+  ],
+  "candidate_universe_contract": {
+    "audited_candidate_count": 9,
+    "axis_cell_count": 63,
+    "candidate_count": 9,
+    "candidate_universe_digest": "ecbb4a7ab23399428e7f3c4f45212727f27c484d5bf3e66116ee7509daa31e47",
+    "crosswalk_cell_count": 27,
+    "duplicate_candidate_count": 0,
+    "excluded_record_count": 4,
+    "exclusion_predicate": "AUXILIARY_PHASE_MEASURE_GRID_INTERVAL_OR_DUPLICATE_IMPORT_WITHOUT_A_DISTINCT_PRODUCTION_CROSSWALK_OBJECT",
+    "included_candidate_ids": [
+      "H9.phase_cell_registry",
+      "TT26.RATIONAL_PERIODIC_ATOM",
+      "A159.DYADIC_SHADOW_ALMOST_ENDPOINT_PREFIX",
+      "A167.DIRECT_ADDITIVE_TWIST_PHASE_L2",
+      "TPC183.N_EQUALS_T_SPECIALIZATION_PROPOSAL",
+      "O161.BAD_ENDPOINT_POINTWISE_FIXED_ATOM_CONTRACT",
+      "O161.DIRECT_ADDITIVE_TWIST_FIXED_ATOM_CONTRACT",
+      "TW25.LOG_TWISTED_AFFINE",
+      "PHYSICAL_PACKET_PREFIX"
+    ],
+    "inclusion_predicate": "SOURCE_BACKED_DISTINCT_OBJECT_IN_DECLARED_LINEAGE_WITH_A_LITERAL_REGISTRY_FORMULA_THEOREM_OR_TARGET_ROLE_RELEVANT_TO_THE_PRODUCTION_CROSSWALK",
+    "omitted_candidate_count": 0
+  },
+  "claim_boundary": {
+    "authorization_implies_direct_trigger": false,
+    "authorization_implies_reopen": false,
+    "authorization_is_theorem_evidence": false,
+    "block_equals_cumulative_prefix": false,
+    "block_equals_physical_prefix": false,
+    "cumulative_equals_physical_prefix": false,
+    "finite_corpus_stop_is_global_nonexistence": false,
+    "first_mismatch_is_complete_crosswalk": false,
+    "fixed_atom_decay_obtained": false,
+    "hash_integrity_is_theorem_evidence": false,
+    "log_saving_is_positive_X_power": false,
+    "packet_key_is_production_packet_schedule": false,
+    "phase_L2_is_named_atom_control": false,
+    "prime_pair_lower_bound": false,
+    "program_positive_L2": false,
+    "strict_one_over_400": false,
+    "symbolic_packet_atom_is_named_production_atom": false,
+    "twin_prime_theorem": false,
+    "unique_crosswalk_would_imply_direct_trigger": false
+  },
+  "classification": "PRODUCTION_REGISTRY_CROSSWALK_CENSUS_L1",
+  "decision": {
+    "batch_stop": "USER_CONFIRMATION_REQUIRED",
+    "complete_crosswalk_candidate_ids": [],
+    "complete_crosswalk_count": 0,
+    "direct_trigger": "FAIL",
+    "first_common_missing_gate_id": "NAMED_PRODUCTION_ATOM",
+    "first_common_missing_production_axis": "named_production_atom",
+    "next_paper": null,
+    "next_route": "SEARCH_FOR_SOURCE_LOCKED_NAMED_PRODUCTION_ATOM_RECORD_OR_GENUINE_FIXED_ATOM_THEOREM",
+    "reopen_trigger_passed": false,
+    "theorem_backed_natural_q_over_N_fixed_atom_power": false,
+    "theorem_status": "PROVED_LOCKED_REGISTRY_FIRST_MISMATCH_NO_COMPLETE_CROSSWALK_L1",
+    "tpc205_authorized": false,
+    "unique_complete_crosswalk": false,
+    "unique_complete_crosswalk_candidate_id": null,
+    "verdict": "FIRST_MISMATCH_CERTIFIED_NOT_TESTABLE"
+  },
+  "endpoint_ledger": {
+    "named_atom_sigma_credit": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "required_strict_budget": {
+      "denominator": 400,
+      "numerator": 1
+    },
+    "state": "UNPAID"
+  },
+  "excluded_record_ledger": [
+    {
+      "reason": "AUXILIARY_COMPLETE_FOURIER_GRID_NOT_PRODUCTION_PACKET_SCHEDULE",
+      "record_id": "TPC167.prop:grid",
+      "source_locator": "TPC167.main#prop:grid+eq:grid"
+    },
+    {
+      "reason": "LEBESGUE_PHASE_MEASURE_NOT_NAMED_ATOM_CONTROL",
+      "record_id": "TPC167.cor:measure",
+      "source_locator": "TPC167.main#cor:measure+eq:chebyshev"
+    },
+    {
+      "reason": "INTERVAL_DIFFERENCE_HAS_NO_SINGLE_TARGET_NORMALIZATION",
+      "record_id": "TPC159.cor:interval",
+      "source_locator": "TPC159.main#cor:interval"
+    },
+    {
+      "reason": "DUPLICATE_UPSTREAM_REVALIDATION_NOT_NEW_CROSSWALK_OBJECT",
+      "record_id": "TPC203.tpc194_import_contract",
+      "source_locator": "TPC203.payload#/finite_certificate/tpc194_import_contract"
+    }
+  ],
+  "first_missing_nodes": {
+    "direct_crosswalk_subgate": "NAMED_PRODUCTION_ATOM",
+    "direct_production_parent": "SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK",
+    "global": "H1.source_backed_local_occurrence_edge_family",
+    "selected_pointwise": "LITERAL_FIXED_ATOM_ARITHMETIC_CANCELLATION"
+  },
+  "formula_type_distinctness": {
+    "block_equals_cumulative": false,
+    "block_equals_physical": false,
+    "cumulative_equals_physical": false,
+    "pairwise_distinct": true
+  },
+  "formula_type_registry": [
+    {
+      "domain": "N<t(z)<=2N",
+      "id": "CORE_TERMINAL_BLOCK",
+      "normalization": "q/N"
+    },
+    {
+      "domain": "0<t(z)<=T",
+      "id": "CORE_CUMULATIVE_PREFIX",
+      "normalization": "q/T"
+    },
+    {
+      "domain": "z in I_xi_X and z<=T",
+      "id": "PHYSICAL_PACKET_PREFIX",
+      "normalization": "UNNORMALIZED_INSIDE_OUTER_PACKET_SUM"
+    }
+  ],
+  "gate_order": [
+    {
+      "gate_id": "OBJECT_TYPE_ELIGIBILITY",
+      "index": 0
+    },
+    {
+      "gate_id": "NAMED_PRODUCTION_ATOM",
+      "index": 1
+    },
+    {
+      "gate_id": "EXACT_PACKET_SCHEDULE",
+      "index": 2
+    },
+    {
+      "gate_id": "COMMON_X_N_Q_RANGES",
+      "index": 3
+    },
+    {
+      "gate_id": "UNIFORM_CONSTANT_C",
+      "index": 4
+    },
+    {
+      "gate_id": "POSITIVE_SIGMA",
+      "index": 5
+    },
+    {
+      "gate_id": "TARGET_NORMALIZATION_SELECTION",
+      "index": 6
+    },
+    {
+      "gate_id": "COMPLETE_PHYSICAL_LOSS_LEDGER",
+      "index": 7
+    },
+    {
+      "gate_id": "CORE_TERMINAL_BLOCK_CROSSWALK",
+      "index": 8
+    },
+    {
+      "gate_id": "CORE_CUMULATIVE_PREFIX_CROSSWALK",
+      "index": 9
+    },
+    {
+      "gate_id": "PHYSICAL_PACKET_PREFIX_CROSSWALK",
+      "index": 10
+    }
+  ],
+  "level_ledger": {
+    "L0": "SOURCE_LOCKS_EXACT_SCHEMA_CANDIDATE_ENUMERATION_AND_MUTATION_CERTIFICATE",
+    "L1": "SCOPED_FIRST_MISMATCH_THEOREM_FOR_THE_DECLARED_PRODUCTION_CROSSWALK_CORPUS",
+    "L2": "NONE"
+  },
+  "paper": 204,
+  "production_axes": [
+    "named_production_atom",
+    "packet_schedule",
+    "common_X_N_q_ranges",
+    "uniform_constant_C",
+    "positive_sigma",
+    "target_normalization_selection",
+    "complete_physical_loss_ledger"
+  ],
+  "result_summary": "Nine distinct plausible crosswalk objects are source-locked and audited on all seven production axes and all three formula types.  No complete crosswalk exists in the declared corpus; the shared first production-axis mismatch is the absence of a source-locked named production atom.",
+  "route_state": {
+    "L2_result": "NONE",
+    "bad_endpoint_O161_parent": "OPEN",
+    "direct_twist_O161_parent": "OPEN",
+    "fixed_atom_decay_obtained": false,
+    "global_architecture": "OPEN",
+    "literal_fixed_atom_cancellation_obtained": false,
+    "program_positive_L2": false
+  },
+  "schema": "tpc-204-source-locked-production-registry-crosswalk-v1",
+  "snapshot": {
+    "canonical_candidate_order": "SOURCE_LINEAGE_THEN_LITERAL_OBJECT_ROLE",
+    "corpus_id": "TPC204_DECLARED_PLAUSIBLE_PRODUCTION_CROSSWALK_CORPUS_V1",
+    "corpus_scope": "EXACT_DECLARED_DIRECT_PRODUCTION_LINEAGE_OBJECTS_ONLY",
+    "date": "2026-07-30",
+    "discovery_rule": "EXPLICIT_SOURCE_BINDINGS_AND_CANONICAL_OBJECT_SELECTORS",
+    "future_sources_automatically_included": false,
+    "global_repository_exhaustion_claimed": false,
+    "hash_mode": "CANONICAL_UTF8_LF_V2"
+  },
+  "source_locks": [
+    {
+      "canonical_utf8_lf_sha256": "36e8ed9137980f82e958746c542668bd72e0cf668742b855c050806113b7471c",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-159-dyadic-shadow-prefix-lifting/experiments/tpc159_dyadic_shadow_audit.json",
+      "source_id": "TPC159.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "a1b375fcbceb9d470f7817b99eac7b4688163fb783351f18831fa34169316968",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-159-dyadic-shadow-prefix-lifting/main.tex",
+      "source_id": "TPC159.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "814bdf6f87dbc590f229b2fc180e601485e8a8d443d7db002afbb745cd9aded8",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-167-direct-additive-twist-parseval/experiments/tpc167_parseval_audit.json",
+      "source_id": "TPC167.audit"
+    },
+    {
+      "canonical_utf8_lf_sha256": "12b6e806493f254941b66987a0040d7f6673b2ed95528ebf5f6ad79b465a622e",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-167-direct-additive-twist-parseval/main.tex",
+      "source_id": "TPC167.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "4976311ae7f9271f44c3de68278ad1781aba2a4077c6c71a09562df2459ac40d",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-180-production-phase-registry-census/experiments/tpc180_phase_registry_census.json",
+      "source_id": "TPC180.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "26c918a68faff7b5b296d5ac9f8472003714a504a8dfa89785c1988836032914",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-183-pointwise-parent-interface-comparison/experiments/tpc183_pointwise_parent_interface_comparison.json",
+      "source_id": "TPC183.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "532396b6e8e75609eaaec50394bb5d5065aff681437977a77190131ec7fdcd60",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-184-bad-endpoint-literal-target-contract/experiments/tpc184_bad_endpoint_literal_target_contract.json",
+      "source_id": "TPC184.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "d798d40d7bd99387fe3e492a74ec76e0847617f0d63cc7f781cbbf5ba89e05f5",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-189-direct-twist-literal-target-contract/experiments/tpc189_direct_twist_literal_target_contract.json",
+      "source_id": "TPC189.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "bd8c9a9d8a0112c7fcca003bf69fe27e235f6b2c8439c7393c32c91274dbbcec",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/main.tex",
+      "source_id": "TPC193.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "6d57d443b0efee28ee8e6cdb09f4386347095ca248b9a0cd42533b326537c244",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json",
+      "source_id": "TPC193.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "3d5891a50ed4d3d9cb51c8e3592e8b7abb1ab673834e63e739c1f013d3ca2806",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py",
+      "source_id": "TPC194.hardener"
+    },
+    {
+      "canonical_utf8_lf_sha256": "297233ff3085439444209e1e05d5238ef93d4bb5227f681d1c0d7107120687c8",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-194-maximal-source-backed-direct-prefix/main.tex",
+      "source_id": "TPC194.main"
+    },
+    {
+      "canonical_utf8_lf_sha256": "d81d7d9aef0f022703dee042180e251aeff87d7bbc4295dc889458bdd82013d1",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening_manifest.json",
+      "source_id": "TPC194.manifest"
+    },
+    {
+      "canonical_utf8_lf_sha256": "a4b2f4d917b0a0f16d17f5e7252fae6dd4fd7c995f8809486b14e030e179cebc",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_maximal_source_backed_direct_prefix.json",
+      "source_id": "TPC194.payload"
+    },
+    {
+      "canonical_utf8_lf_sha256": "3c1be16117622d1529a565a9383e6f21becc312fef923788eca48cdb968516e1",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "path": "papers/tpc-203-mvp10-direct-pointwise-route-decision/experiments/tpc203_mvp10_direct_pointwise_route_decision.json",
+      "source_id": "TPC203.payload"
+    }
+  ],
+  "stop_scoped": [
+    "TPC181_PHASE_METRIC_UNCONTROLLED_ATOMIC=STOP_SCOPED",
+    "TPC187_SIZE_ONLY_LOCAL_OSCILLATION_METHOD=STOP_SCOPED",
+    "TPC190_PARSEVAL_CHEBYSHEV_TO_PRESCRIBED_ATOM=STOP_SCOPED",
+    "TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1=STOP_SCOPED",
+    "FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT=STOP_SCOPED",
+    "ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ=STOP_SCOPED",
+    "TPC204_DECLARED_PLAUSIBLE_PRODUCTION_CROSSWALK_CORPUS_V1=STOP_SCOPED"
+  ],
+  "title": "Source-Locked Production Registry Crosswalks: A Finite Exact-Matching and First-Mismatch Certificate",
+  "upstream_semantic_summary": {
+    "source_semantics_verified": true,
+    "tpc159_all_prefix_power": false,
+    "tpc167_fixed_atom": false,
+    "tpc180_value_bearing_registry_rows": 0,
+    "tpc193_direct_candidates": 2,
+    "tpc193_eligible_candidates": 0,
+    "tpc194_formula_types": 3,
+    "tpc194_hardening_artifacts": 2,
+    "tpc194_manifest_pins": 12,
+    "tpc194_missing_production_axes": 7,
+    "tpc203_direct_first_missing": "SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK"
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "all_checks_pass": true,
+  "base_mutation_registry": [
+    {
+      "name": "extra_top_level",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "drop_decision",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "bool_for_paper",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "integer_for_authorization_flag",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "drop_candidate",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "duplicate_candidate",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "change_axis_status",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "corrupt_formula_tuple",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "source_hash_drift",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "drop_stop_cell",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "promote_claim_flag",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "advance_first_mismatch",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    }
+  ],
+  "checks": {
+    "L2_none": true,
+    "TPC193_V1_stop_scoped": true,
+    "all_candidates_audited": true,
+    "all_source_locks_integrity_only": true,
+    "authorization_not_mathematical_evidence": true,
+    "authorization_scope_exact": true,
+    "axis_cells_63": true,
+    "candidate_count_9": true,
+    "complete_crosswalk_count_0": true,
+    "crosswalk_cells_27": true,
+    "declared_candidate_universe_closed": true,
+    "direct_trigger_fail": true,
+    "endpoint_credit_zero": true,
+    "formula_types_pairwise_distinct": true,
+    "new_TPC204_stop_scoped": true,
+    "parents_and_architecture_open": true,
+    "shared_first_mismatch_named_production_atom": true,
+    "strict_one_over_400_unpaid": true,
+    "upstream_TPC194_hardening_verified": true
+  },
+  "finite_check_result": {
+    "axis_cells_verified": 63,
+    "complete_crosswalks": 0,
+    "crosswalk_cells_verified": 27,
+    "declared_candidates_verified": 9,
+    "excluded_records_verified": 4,
+    "formula_types_verified": 3,
+    "mathematical_reopen": false,
+    "new_stop_cell": "TPC204_DECLARED_PLAUSIBLE_PRODUCTION_CROSSWALK_CORPUS_V1=STOP_SCOPED",
+    "production_axes_per_candidate": 7,
+    "semantic_contract_version": 1,
+    "shared_first_mismatch_gate": "NAMED_PRODUCTION_ATOM"
+  },
+  "paper": 204,
+  "payload_schema_sha256": "0d7b8512176166bc085a6f7cbaca29a4355b3825917b5924db469be6d3609585",
+  "payload_sha256": "3d6e7aab3d9e165cc1d6f822f7146feb0d0fddbc1e976ed4312739b0418f4ff2",
+  "schema": "tpc-204-source-locked-production-registry-crosswalk-audit-v1",
+  "semantic_contract_result": {
+    "axis_cells_verified": 63,
+    "complete_crosswalks": 0,
+    "crosswalk_cells_verified": 27,
+    "declared_candidates_verified": 9,
+    "excluded_records_verified": 4,
+    "formula_types_verified": 3,
+    "mathematical_reopen": false,
+    "new_stop_cell": "TPC204_DECLARED_PLAUSIBLE_PRODUCTION_CROSSWALK_CORPUS_V1=STOP_SCOPED",
+    "production_axes_per_candidate": 7,
+    "semantic_contract_version": 1,
+    "shared_first_mismatch_gate": "NAMED_PRODUCTION_ATOM"
+  },
+  "semantic_mutation_registry": [
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "authorization_implies_direct_trigger",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "authorization_implies_reopen",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "promote_verdict_to_unique",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "forge_complete_count",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "forge_unique_candidate_id",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "drop_candidate",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "add_synthetic_candidate",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "duplicate_candidate_id",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "reorder_candidates",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "change_inclusion_predicate",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "drop_excluded_record",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "forge_universe_digest",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "forge_source_lock_hash",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "promote_hash_to_theorem_evidence",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "fabricate_named_atom",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "fabricate_packet_schedule",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "fabricate_common_ranges",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "fabricate_uniform_C",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "treat_log_saving_as_positive_sigma",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "select_normalization_by_fiat",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "mark_loss_ledger_complete",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "drop_axis_row",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "duplicate_axis_row",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "advance_first_mismatch",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "clear_first_mismatch",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "merge_terminal_and_cumulative",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "merge_terminal_and_physical",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "merge_cumulative_and_physical",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "corrupt_terminal_tuple",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "corrupt_cumulative_tuple",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "corrupt_physical_tuple",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "drop_crosswalk_row",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "set_crosswalk_exact",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "direct_trigger_passed",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "fixed_atom_decay_obtained",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "grant_endpoint_credit",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "pay_strict_one_over_400",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "promote_L2",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "stop_bad_endpoint_parent",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "stop_direct_parent",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "stop_global_architecture",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "unstop_TPC193_V1",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "global_nonexistence_claim",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "bool_for_candidate_count",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    },
+    {
+      "independent_semantic_checker_rejected": true,
+      "name": "integer_for_boolean_claim",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true
+    }
+  ]
+}

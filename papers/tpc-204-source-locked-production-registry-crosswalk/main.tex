@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype,booktabs,tabularx,array,xcolor}
+\usepackage[numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\setlength{\emergencystretch}{4em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\NA}{\textsc{missing}}
+\title{\textbf{Source-Locked Production Registry Crosswalks: A Finite Exact-Matching and First-Mismatch Certificate}}
+\author{Liang Wang\\Huazhong University of Science and Technology}
+\date{July 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We audit a fixed source-locked corpus of nine distinct objects that could
+plausibly enter the production packet-prefix crosswalk left open by TPC-194.
+Every object is checked against seven production axes and three
+noninterchangeable formula types.  There are no complete crosswalks.  The
+first production-axis mismatch for every object is the absence of a
+source-locked named production atom.  The exact verdict is
+\texttt{FIRST\_\allowbreak{}MISMATCH\_\allowbreak{}CERTIFIED\_\allowbreak{}NOT\_\allowbreak{}TESTABLE}.
+This is an L0/L1 finite-corpus result, not a fixed-atom cancellation theorem,
+a direct-route reopen, or an L2 gain.
+\end{abstract}
+
+\section{Authorization and mathematical boundary}
+
+TPC-203 stopped with
+\[
+\texttt{SOURCE\_LOCKED\_PRODUCTION\_PACKET\_PREFIX\_CROSSWALK}
+\]
+as the direct-production first missing node \citep{WangTPC203}.  The user
+subsequently authorized one finite TPC-204 whose outcome had to be either an
+exact unique crosswalk or a certified first mismatch.  That authorization is
+workflow input only.  It neither supplies source data nor makes any reopen
+trigger true.
+
+The target still requires a source-locked named physical atom, an exact packet
+schedule, one common \(X/N/q\) range, a uniform constant \(C\), a positive
+fixed-\(X\) exponent \(\sigma\), one literal target normalization, and a
+complete physical-loss ledger.  All seven fields must belong to the same
+production record.  Explanatory prose may not fill a null field.
+
+\section{Declared candidate universe}
+
+The corpus is closed by explicit source bindings and canonical object
+selectors, not by a keyword scan.  It contains the direct-production lineage
+objects isolated in TPC-159, TPC-167, TPC-180, TPC-183, TPC-184, TPC-189,
+TPC-193, TPC-194, and the TPC-203 import boundary
+\citep{WangTPC159,WangTPC167,WangTPC180,WangTPC183,WangTPC184,WangTPC189,WangTPC193,WangTPC194,WangTPC203}.
+Duplicate imports and auxiliary phase-measure, grid, and interval statements
+are recorded separately rather than silently discarded.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}p{0.30\textwidth}X p{0.23\textwidth}@{}}
+\toprule
+Canonical object & Native source object & First production mismatch\\
+\midrule
+\texttt{H9.phase\_cell\_registry}
+ & Empty source-locked registry slot & Named atom ID and phase locator are null\\
+\texttt{TT26.RATIONAL\_PERIODIC\_ATOM}
+ & \(q/N\) terminal block with log saving & Rational production atom value is absent\\
+\texttt{A159.DYADIC\_SHADOW\_PREFIX}
+ & \(q/T\) cumulative prefix off the shadow & Periodic \(\rho\) is not a named atom\\
+\texttt{A167.DIRECT\_TWIST\_PHASE\_L2}
+ & Terminal-block Parseval theorem & Phase \(L^2\) is not a named atom\\
+\texttt{TPC183.N\_EQUALS\_T}
+ & Proposed terminal-to-cumulative specialization & Atom occurs only as a hypothesis\\
+\texttt{O161.BAD\_ENDPOINT\_CONTRACT}
+ & Verbal \(q/T\) cumulative all-prefix target & Prescribed atom has no locked value\\
+\texttt{O161.DIRECT\_TARGET\_CONTRACT}
+ & Verbal \(q/N\) target with no literal prefix & Prescribed atom has no locked value\\
+\texttt{TW25.LOG\_TWISTED\_AFFINE}
+ & Every fixed \(\gamma\), logarithmically weighted & Fixed \(\gamma\) is not a production record\\
+\texttt{PHYSICAL\_PACKET\_PREFIX}
+ & Resolved unnormalized per-packet prefix & Symbolic \(\alpha_{\xi,X}\) is not named production data\\
+\bottomrule
+\end{tabularx}
+\caption{The nine distinct plausible crosswalk objects.  Native data are
+retained, but no row receives production credit by reinterpretation.}
+\label{tab:candidates}
+\end{table}
+
+\section{Three formula types}
+
+TPC-194 freezes the following three literal objects \citep{WangTPC194}:
+\begin{align*}
+\mathcal F_N^{\mathrm{blk}}(\alpha)
+ &=\frac qN\sum_{N<t(z)\le 2N}c_z\e(-\alpha z),
+ &&\texttt{CORE\_TERMINAL\_BLOCK},\\
+\mathcal A_T(\rho)
+ &=\frac qT\sum_{0<t(z)\le T}c_z\rho(z),
+ &&\texttt{CORE\_CUMULATIVE\_PREFIX},\\
+S_{\xi,X}^{\le T}
+ &=\sum_{\substack{z\in I_{\xi,X}\\z\le T}}
+ A_{\xi,X}(z)\e(-\alpha_{\xi,X}z),
+ &&\texttt{PHYSICAL\_PACKET\_PREFIX}.
+\end{align*}
+The third object is unnormalized inside an outer physical packet sum.  Setting
+\(N=T\) in the first object gives \(T<t(z)\le2T\), not
+\(0<t(z)\le T\).  No two rows can therefore be identified by renaming a
+parameter.  A complete production crosswalk must give a literal directed
+bridge to each required object while retaining its domain, prefix index, and
+normalization.
+
+\section{The finite first-mismatch theorem}
+
+\begin{theorem}[Locked registry first mismatch]
+\label{thm:first-mismatch}
+In the declared TPC-204 corpus there are nine audited plausible crosswalk
+objects, \(63\) production-axis cells, and \(27\) formula-crosswalk cells.
+The number of complete production crosswalks is zero.  For every candidate,
+the first failed production gate is
+\[
+\texttt{NAMED\_PRODUCTION\_ATOM}.
+\]
+Consequently the finite verdict is
+\[
+\texttt{FIRST\_MISMATCH\_CERTIFIED\_NOT\_TESTABLE}.
+\]
+\end{theorem}
+
+\begin{proof}
+TPC-180 has zero value-bearing named-phase records and zero packet-coordinate
+rows, so its registry slot is empty \citep{WangTPC180}.  The rational
+terminal-block theorem has a rational atom only conditionally on a supplied
+value and denominator; neither is a production registry value.  TPC-159 uses
+an arbitrary periodic multiplier and excludes its dyadic shadow
+\citep{WangTPC159}.  TPC-167 controls phase \(L^2\), and its complete Fourier
+grid is an auxiliary averaging device rather than a packet schedule
+\citep{WangTPC167}.
+
+The TPC-183 specialization uses the atom, ranges, constant, and exponent only
+as hypotheses, and its \(N=T\) substitution does not convert the terminal
+domain into the cumulative domain.  TPC-184 freezes a verbal \(q/T\)
+cumulative all-prefix bad-endpoint target, but no source value for its
+prescribed atom or exact production schedule; it is not the shadow-excluding
+TPC-159 theorem.  TPC-189 separately freezes a verbal direct \(q/N\) target
+but no source value for its prescribed atom
+\citep{WangTPC183,WangTPC184,WangTPC189}.  The
+Ter\"av\"ainen--Walker theorem controls every fixed \(\gamma\), but its
+logarithmic affine average supplies neither a production atom record nor the
+natural target normalization \citep{TeravainenWalker2025,WangTPC193}.  Finally,
+TPC-194's \(\alpha_{\xi,X}\) is a symbolic per-key atom and
+\(\xi=(\theta,c,\kappa,r)\) is a resolved key, not a production schedule.
+
+Thus the first production-axis cell is false in every row.  The remaining
+six axes and all three formula links are nevertheless audited: native ranges,
+constants, and normalizations are preserved with their original object and
+norm types, while logarithmic savings, phase averages, incomplete ledgers,
+and unattached normalizations receive no production credit.  Hence no
+candidate satisfies the conjunction, and the asserted first mismatch follows.
+\end{proof}
+
+\section{Scope, stop cell, and open parents}
+
+The exact new cell is
+\[
+\texttt{TPC204\_DECLARED\_PLAUSIBLE\_PRODUCTION\_CROSSWALK\_CORPUS\_V1}
+=\texttt{STOP\_SCOPED}.
+\]
+It stops only extraction of a complete crosswalk from this explicit finite
+corpus.  It is not a theorem that no production registry exists in a larger
+source universe.  TPC-193's V1 corpus remains \texttt{STOP\_SCOPED}.  Both
+\texttt{O161} pointwise parents and the global architecture remain open.
+
+Even a future unique formula crosswalk would not itself prove a
+theorem-backed natural-\(q/N\), named fixed-atom positive-\(X\)-power
+estimate.  Here fixed-atom decay is false, named-atom endpoint credit is
+zero, the strict \(1/400\) budget is unpaid, and \(L2=\texttt{NONE}\).
+
+\section{Machine certificate and trust boundary}
+
+The canonical payload records all nine candidates in a fixed order, all
+seven axis rows per candidate, all three formula links per candidate, four
+explicit exclusions, the source hashes, and the complete claim firewall.
+A separate read-only checker imports neither the builder nor the
+materialization contract.  It independently freezes the nine candidate rows
+and revalidates TPC-194/203 hardening, exact TeX anchors and JSON fields,
+strict JSON types, the verdict truth table, twelve active-schema mutations,
+forty-five coordinated semantic mutations under regenerated schemas, and
+five additional nested Boolean/integer type-confusion attacks.
+
+The manifest pins the machine artifacts, manuscript, bibliography, and
+stable PDF.  It is a repository review pin, not an external signature or
+theorem source.  Coordinated changes to code and manifest still require
+ordinary commit review.
+
+\begingroup
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,0 +1,1821 @@
+{
+  "$id": "tpc204-source-locked-production-registry-crosswalk-audit-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "all_checks_pass": {
+      "const": true,
+      "type": "boolean"
+    },
+    "base_mutation_registry": {
+      "items": false,
+      "maxItems": 12,
+      "minItems": 12,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "extra_top_level",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "drop_decision",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "bool_for_paper",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "integer_for_authorization_flag",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "drop_candidate",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "duplicate_candidate",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "change_axis_status",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "corrupt_formula_tuple",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "source_hash_drift",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "drop_stop_cell",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "promote_claim_flag",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "const": "advance_first_mismatch",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rejected_by_active_schema": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "rejected_by_active_schema"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "checks": {
+      "additionalProperties": false,
+      "properties": {
+        "L2_none": {
+          "const": true,
+          "type": "boolean"
+        },
+        "TPC193_V1_stop_scoped": {
+          "const": true,
+          "type": "boolean"
+        },
+        "all_candidates_audited": {
+          "const": true,
+          "type": "boolean"
+        },
+        "all_source_locks_integrity_only": {
+          "const": true,
+          "type": "boolean"
+        },
+        "authorization_not_mathematical_evidence": {
+          "const": true,
+          "type": "boolean"
+        },
+        "authorization_scope_exact": {
+          "const": true,
+          "type": "boolean"
+        },
+        "axis_cells_63": {
+          "const": true,
+          "type": "boolean"
+        },
+        "candidate_count_9": {
+          "const": true,
+          "type": "boolean"
+        },
+        "complete_crosswalk_count_0": {
+          "const": true,
+          "type": "boolean"
+        },
+        "crosswalk_cells_27": {
+          "const": true,
+          "type": "boolean"
+        },
+        "declared_candidate_universe_closed": {
+          "const": true,
+          "type": "boolean"
+        },
+        "direct_trigger_fail": {
+          "const": true,
+          "type": "boolean"
+        },
+        "endpoint_credit_zero": {
+          "const": true,
+          "type": "boolean"
+        },
+        "formula_types_pairwise_distinct": {
+          "const": true,
+          "type": "boolean"
+        },
+        "new_TPC204_stop_scoped": {
+          "const": true,
+          "type": "boolean"
+        },
+        "parents_and_architecture_open": {
+          "const": true,
+          "type": "boolean"
+        },
+        "shared_first_mismatch_named_production_atom": {
+          "const": true,
+          "type": "boolean"
+        },
+        "strict_one_over_400_unpaid": {
+          "const": true,
+          "type": "boolean"
+        },
+        "upstream_TPC194_hardening_verified": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "authorization_scope_exact",
+        "authorization_not_mathematical_evidence",
+        "declared_candidate_universe_closed",
+        "candidate_count_9",
+        "all_candidates_audited",
+        "axis_cells_63",
+        "crosswalk_cells_27",
+        "formula_types_pairwise_distinct",
+        "complete_crosswalk_count_0",
+        "shared_first_mismatch_named_production_atom",
+        "direct_trigger_fail",
+        "parents_and_architecture_open",
+        "endpoint_credit_zero",
+        "strict_one_over_400_unpaid",
+        "L2_none",
+        "TPC193_V1_stop_scoped",
+        "new_TPC204_stop_scoped",
+        "all_source_locks_integrity_only",
+        "upstream_TPC194_hardening_verified"
+      ],
+      "type": "object"
+    },
+    "finite_check_result": {
+      "additionalProperties": false,
+      "properties": {
+        "axis_cells_verified": {
+          "const": 63,
+          "type": "integer"
+        },
+        "complete_crosswalks": {
+          "const": 0,
+          "type": "integer"
+        },
+        "crosswalk_cells_verified": {
+          "const": 27,
+          "type": "integer"
+        },
+        "declared_candidates_verified": {
+          "const": 9,
+          "type": "integer"
+        },
+        "excluded_records_verified": {
+          "const": 4,
+          "type": "integer"
+        },
+        "formula_types_verified": {
+          "const": 3,
+          "type": "integer"
+        },
+        "mathematical_reopen": {
+          "const": false,
+          "type": "boolean"
+        },
+        "new_stop_cell": {
+          "const": "TPC204_DECLARED_PLAUSIBLE_PRODUCTION_CROSSWALK_CORPUS_V1=STOP_SCOPED",
+          "type": "string"
+        },
+        "production_axes_per_candidate": {
+          "const": 7,
+          "type": "integer"
+        },
+        "semantic_contract_version": {
+          "const": 1,
+          "type": "integer"
+        },
+        "shared_first_mismatch_gate": {
+          "const": "NAMED_PRODUCTION_ATOM",
+          "type": "string"
+        }
+      },
+      "required": [
+        "semantic_contract_version",
+        "declared_candidates_verified",
+        "excluded_records_verified",
+        "production_axes_per_candidate",
+        "axis_cells_verified",
+        "formula_types_verified",
+        "crosswalk_cells_verified",
+        "complete_crosswalks",
+        "shared_first_mismatch_gate",
+        "new_stop_cell",
+        "mathematical_reopen"
+      ],
+      "type": "object"
+    },
+    "paper": {
+      "const": 204,
+      "type": "integer"
+    },
+    "payload_schema_sha256": {
+      "const": "0d7b8512176166bc085a6f7cbaca29a4355b3825917b5924db469be6d3609585",
+      "type": "string"
+    },
+    "payload_sha256": {
+      "const": "3d6e7aab3d9e165cc1d6f822f7146feb0d0fddbc1e976ed4312739b0418f4ff2",
+      "type": "string"
+    },
+    "schema": {
+      "const": "tpc-204-source-locked-production-registry-crosswalk-audit-v1",
+      "type": "string"
+    },
+    "semantic_contract_result": {
+      "additionalProperties": false,
+      "properties": {
+        "axis_cells_verified": {
+          "const": 63,
+          "type": "integer"
+        },
+        "complete_crosswalks": {
+          "const": 0,
+          "type": "integer"
+        },
+        "crosswalk_cells_verified": {
+          "const": 27,
+          "type": "integer"
+        },
+        "declared_candidates_verified": {
+          "const": 9,
+          "type": "integer"
+        },
+        "excluded_records_verified": {
+          "const": 4,
+          "type": "integer"
+        },
+        "formula_types_verified": {
+          "const": 3,
+          "type": "integer"
+        },
+        "mathematical_reopen": {
+          "const": false,
+          "type": "boolean"
+        },
+        "new_stop_cell": {
+          "const": "TPC204_DECLARED_PLAUSIBLE_PRODUCTION_CROSSWALK_CORPUS_V1=STOP_SCOPED",
+          "type": "string"
+        },
+        "production_axes_per_candidate": {
+          "const": 7,
+          "type": "integer"
+        },
+        "semantic_contract_version": {
+          "const": 1,
+          "type": "integer"
+        },
+        "shared_first_mismatch_gate": {
+          "const": "NAMED_PRODUCTION_ATOM",
+          "type": "string"
+        }
+      },
+      "required": [
+        "semantic_contract_version",
+        "declared_candidates_verified",
+        "excluded_records_verified",
+        "production_axes_per_candidate",
+        "axis_cells_verified",
+        "formula_types_verified",
+        "crosswalk_cells_verified",
+        "complete_crosswalks",
+        "shared_first_mismatch_gate",
+        "new_stop_cell",
+        "mathematical_reopen"
+      ],
+      "type": "object"
+    },
+    "semantic_mutation_registry": {
+      "items": false,
+      "maxItems": 45,
+      "minItems": 45,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "authorization_implies_direct_trigger",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "authorization_implies_reopen",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "promote_verdict_to_unique",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "forge_complete_count",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "forge_unique_candidate_id",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "drop_candidate",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "add_synthetic_candidate",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "duplicate_candidate_id",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "reorder_candidates",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "change_inclusion_predicate",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "drop_excluded_record",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "forge_universe_digest",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "forge_source_lock_hash",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "promote_hash_to_theorem_evidence",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "fabricate_named_atom",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "fabricate_packet_schedule",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "fabricate_common_ranges",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "fabricate_uniform_C",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "treat_log_saving_as_positive_sigma",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "select_normalization_by_fiat",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "mark_loss_ledger_complete",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "drop_axis_row",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "duplicate_axis_row",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "advance_first_mismatch",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "clear_first_mismatch",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "merge_terminal_and_cumulative",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "merge_terminal_and_physical",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "merge_cumulative_and_physical",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "corrupt_terminal_tuple",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "corrupt_cumulative_tuple",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "corrupt_physical_tuple",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "drop_crosswalk_row",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "set_crosswalk_exact",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "direct_trigger_passed",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "fixed_atom_decay_obtained",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "grant_endpoint_credit",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "pay_strict_one_over_400",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "promote_L2",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "stop_bad_endpoint_parent",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "stop_direct_parent",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "stop_global_architecture",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "unstop_TPC193_V1",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "global_nonexistence_claim",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "bool_for_candidate_count",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "independent_semantic_checker_rejected": {
+              "const": true,
+              "type": "boolean"
+            },
+            "name": {
+              "const": "integer_for_boolean_claim",
+              "type": "string"
+            },
+            "payload_changed": {
+              "const": true,
+              "type": "boolean"
+            },
+            "regenerated_schema_accepts": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "payload_changed",
+            "regenerated_schema_accepts",
+            "independent_semantic_checker_rejected"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema",
+    "paper",
+    "payload_sha256",
+    "payload_schema_sha256",
+    "checks",
+    "finite_check_result",
+    "semantic_contract_result",
+    "base_mutation_registry",
+    "semantic_mutation_registry",
+    "all_checks_pass"
+  ],
+  "type": "object"
+}
