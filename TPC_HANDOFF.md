@@ -3,7 +3,7 @@
 更新时间：2026-07-30
 当前仓库事实终点：TPC-204
 当前编号论文裁决：`FIRST_MISMATCH_CERTIFIED_NOT_TESTABLE`
-最新不编号审计裁决：`SINGLE_CUT_ACTUAL_PACKET_CROSSWALK_FAIL_CLOSED`
+最新不编号审计裁决：`PAIR_NATIVE_FORMULA_GATE_PASS_PRODUCTION_REOPEN_FAIL`
 下一篇：`null`
 TPC-204 授权并完成：`true`
 TPC-205 授权：`false`
@@ -262,6 +262,21 @@ TPC-93 的既成 source-child inverse、TPC-194 的既成 resolved-key
 公式组合，就得到原 cut coefficient 的 production local-occurrence
 edge。它不停止新的 cut-to-parent theorem、pair-native repair、H1
 architecture、两个 O161 parents 或任何真正新增的算术 theorem。
+
+2026-07-30 的不编号 pair-native 审计新增且仅新增：
+
+```text
+TPC18_TPC93_POST_TTSTAR_PAIR_DIRECT_COMPOSITION_V1 = STOP_SCOPED
+```
+
+它只停止以下直接提升：把当前 TPC-18/TPC-25/TPC-32 的公式级
+post-TT-star ordered row-pair 直接改名为现成的 TPC-93 retained
+`omega`、生产 pair occurrence，或 H1 local-occurrence edge。它不停止
+新的 pair registry、pair-to-`omega` theorem crosswalk、cut inverse
+aggregation、独立 architecture reroute、两个 O161 parents，或真正新增的
+算术 theorem。给定 retained `omega` 后的 source-child inverse，以及
+另行给定 downstream fields 后的 content/resolved template 相容性也未被
+否定。
 
 `TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1` 必须继续
 `STOP_SCOPED`；不得把 phase `L2`、Lebesgue-a.e.、size-only、
@@ -655,29 +670,341 @@ post-TT-star pair-native atoms 属于 architecture reroute；它必须新增
 distinct registry 与 theorem-backed crosswalk，不能自动记作 reopen。
 H1 architecture 与两个 O161 parents 保持 `OPEN`。
 
-## 12. 下一步选择
+## 12. 不编号 pair-native post-TT-star 审计
+
+2026-07-30 用户授权路线 1。本轮授权仅为：
+
+```text
+UNNUMBERED_PAIR_NATIVE_POST_TTSTAR_REPAIR_AUDIT
+```
+
+它没有自动授权 TPC-205，也没有解除任何数学门槛。
+
+### 12.1 公式级 ordered pair 与 exact coefficient
+
+TPC-18 的实际 post-Cauchy/TT-star 公式为
+
+```text
+|T_D|^2 \ll_W J (E_D + C_D^off).
+```
+
+`C_D^off` 的 ordered summation domain 是同一 opened-`D` packet 内的
+`(alpha,gamma,j)`，其中 `alpha != gamma`。`gamma` 是平方展开产生的第二
+dummy row，不是 singleton cut 选择或生成的字段。TPC-18 显示的 pair
+coefficient carrier 仍含 `B` aliases，其形式为
+
+```text
+mu(d_alpha) mu(d_gamma)
+(log ell_alpha)(log ell_gamma)
+r_R(N_alpha(j)) r_R(N_gamma(j))
+B_alpha(j) B_gamma(j).
+```
+
+TPC-18 的相关权重为实数；TPC-32 又显式规定 “No complex conjugation is
+implicit”。因此若后续采用 Hermitian 记法，第二侧共轭必须显式记录，不能
+通过解释性改写暗中补入。diagonal energy `E_D` 与 off-diagonal pair
+分离；generic mask 删除 diagonal，但公式 support 仍不等于实际非零
+occurrence。
+
+TPC-32/TPC-93 的 matched symbolic parent 为
+
+```text
+w_{alpha,gamma,j}
+  = gamma_alpha^(1) gamma_gamma^(2)
+    A_{alpha,gamma}(j) K^sh_{alpha,gamma}(j),
+
+K^sh_{alpha,gamma}(j)
+  = C_{m_alpha}(j) H_{m_gamma}(j)
+    + H_{m_alpha}(j) C_{m_gamma}(j).
+```
+
+`u` 不是 parent `(alpha,gamma,j)` 字段。它只在打开 ultra increment 后由
+两个极化分别产生：
+
+```text
+L: T < u <= U0 and u | N_alpha(j)
+R: T < u <= U0 and u | N_gamma(j).
+```
+
+因此 TT-star 第二行 `gamma` 的来源、以及 supplied parent 上打开
+polarization 后的 `u` 枚举，各自在公式层成立；两者之间不存在已经审核
+通过的 production `pair -> omega` bridge，也不能回填到原 singleton cut。
+
+### 12.2 TPC-93 source-child reindexing
+
+给定 retained source atom
+
+```text
+omega = (L/R,alpha,gamma,j,u),
+```
+
+TPC-93 对每个 `v | gcd(d,e)` 给出唯一 child `(theta,t)` 及显式
+child-to-source inverse。其 algebraic multiplicity 是 `tau(gcd(d,e))`，
+而 projector identity
+
+```text
+sum_{v | d,e} lambda_{G_X^row}(v)
+  = 1_{gcd(d,e) <= G_X^row}
+```
+
+单个 `v`-child 不恢复 source atom；各 child 保留逐项符号与 coefficient，
+对 `v` 加权求和后才恢复带 actual row-gcd mask 的 source coefficient。
+`gcd(d,e)>G_X^row` 时该 contribution 为零。这里的 `G_X^row` 是 row-gcd
+cutoff，不得与后续 target-content 参数混同。两个 polarizations 各出现
+一次，符号与 coefficient 精确重组，不增加新的 fiber normalization。若
+content、frequency 与 resolved fields 也分别 supplied，则
+TPC-93/94/108/127 后续的 content、phase 与 determinant-two pullback
+templates 在公式层相容。
+
+因此只有以下分离结论通过：
+
+```text
+supplied retained omega -> theta source-child inverse = PASS
+separately supplied downstream fields -> xi template
+  = CONDITIONAL_FORMULA_COMPATIBLE
+pair -> omega production crosswalk = FAIL
+```
+
+具体 admissible `xi` 与 concrete production row-pair/`omega`/`xi`
+archive join 均未形成。
+
+### 12.3 两个有限见证的严格标签
+
+当前最强 dual archived-row candidate 为
+
+```text
+t0 = ((103,1),(107,1),5), h0 = 2
+N_alpha = 517 = 11*47
+N_gamma = 537 = 3*179
+gcd(N_alpha,N_gamma) = 1
+Delta# = -4
+ordered row determinant = 2*(103-107) = -8
+```
+
+TPC-133 sample lines 724 与 736 的 native row integrity 分别为
+
+```text
+e550d2d7be48d85076919a8adf86ba446f88f75b404df48c0483d3cf27b59369
+633e20ac5a83d425471be3ba095df10a1635c3f45ce5cac6def9d5ba936152d9
+```
+
+TPC-136 sample lines 2554 与 2602 的 cut integrity 分别为
+
+```text
+2eef9d8670c23ffc10b2a9cab0d488b0908293cfdb482667da824e702a1347cc
+cdc0f7363ab88106ce65bb46da800c05c3fba2b391d9490d7b2ca8bab8c816db
+```
+
+两条 cut 都是 `FRONTIER_UNMAPPED / NO_TAIL_ROOM`。这个对象只能标记为
+
+```text
+DUAL_SOURCE_LOCKED_ROW_PAIR_CANDIDATE
+```
+
+不能标记为 production pair occurrence，因为归档中没有共同 pair ID、
+实际 joint-mask value、source-locked `delta` 与 row schedule、
+`T/U0`、prefix/divisor/polarization children、inverse-aggregated
+coefficient、pair nonzero status，或 `nu_X` global-normalization return。
+两条 individual row AST 的乘积也不得自动等同于 TPC-18 显示的
+`B_alpha B_gamma` pair-coefficient carrier。
+
+TPC-32 certificate 直接归档并检查的 finite primitive witness 只包括
+`h=2,j=1,d=1,L=100,R=12,T=50,U0=200,C=30`、rows、targets 与 content
+matrix。把其中前两行代入 TPC-93 source-child formulas，可手工推导出
+以下严格有限 `L0` affine-child witness：
+
+```text
+L=100, R=12, T=50, U0=200, h=2, j=1, d=1
+alpha=(59,1), gamma=(71,1), u=61
+sigma=1, v=1, d0=0, t=1, u0=2
+D(t)=1, U(t)=61, determinant=2, projector weight=1.
+```
+
+这些 child fields 不是 TPC-32 certificate 直接检查或输出的字段。组合
+对象只能标记为
+
+```text
+TPC32_PRIMITIVE_FIXTURE_PLUS_TPC93_FORMULAS_DERIVED_L0_ONLY
+```
+
+它只证明 algebraic schema 非空。TPC-32 自身禁止把该 fixture 提升为
+production/asymptotic evidence；TPC-93 verifier 的 synthetic `h0=1`
+fixture 也不能冒充 production `h0=2`。
+
+### 12.4 归档与 schema fail-closed 审核
+
+在快照
+`ad1366d8d4870dc6170a451345df58aec54e8675` 上，历史扫描覆盖 34 refs、
+321 reachable commits、11,752 reachable object entries、7,190 text
+blobs 与 1,855 record-like data blobs。TPC-18/25/32/93/94/108/127/194
+走廊包含 119 reachable entries、112 unique paths、95 text files 与
+14 个可解析 JSON。具体 record keys
+
+```text
+row_pair
+row_pair_id
+source_atom
+resolved_key
+omega
+theta
+xi
+polarization
+actual_occurrence_id
+physical_occurrence_id
+```
+
+均没有形成 concrete source-locked join。TPC-145 的 actual edges 为空；
+TPC-153 是 shadow；TPC-154 是 formal；TPC-155/174 是 synthetic，均不能
+补 production occurrence。
+
+现有 H1 schema 也不能通过填字符串修补：
+
+- TPC-143 V1 固定 `actual_map_edges=[]` 与 `NOT_TESTABLE`；
+- TPC-163/173 硬锁旧 corpus/count，扩展须新建 V2；
+- TPC-174 的 occurrence ID 只验证非空字符串，cut address 不验证 archive
+  membership 或完整 `X` packet scope，normalization 只做字符串相等，
+  edge weight 未与实际公式绑定，AST 只复制不执行；若
+  `actual_occurrence_id` 被解释为 target carrier，其 global uniqueness
+  会排除 many-to-one，因此新 schema 不能直接复用该约束；
+- TPC-178 的 tuple/hash/lex order 不是 canonical/minimal theorem；
+- TPC-179 V1 必须保持原样，新路线须用独立 integration/root。
+
+pair registry 必须保持 ordered pair，不得按交换对称 quotient；还必须分离
+`edge_instance_id` 与 `target_occurrence_id`，并把 formal support 与
+numeric nonzero status 分开。
+
+### 12.5 normalization 与完整 loss ledger
+
+当前 source-backed 公式只能冻结 TPC-18 的 unnormalized `T_D`
+inequality。TPC-133/136 中的 `physical_normalization="nu_X"` 只是 scope
+字符串；归档没有给出其数值 scalar 定义，也没有 theorem 证明它乘在
+`T_D` 上。若未来 theorem supplies multiplicative scalar `c_X`，才可作
+条件式推导
+
+```text
+|c_X T_D|^2
+  <= C_W |c_X|^2 J (E_D + C_D^off).
+```
+
+后续 registry 必须分别记录 source/linear/quadratic/target normalization，
+不能只复制一个 `nu_X` 字符串。完整 physical-loss ledger 必须区分以下
+已量化 terms 与未供应 slots：
+
+```text
+prime-power error: X L^(-1/2) X^eps
+dyadic-D partition:
+  fixed bounded overlap
+  O(log X) nonempty D-slices
+  reassembly/pigeonhole cost <= one O(log X) factor
+Cauchy factor J
+diagonal: E_D << X^(1+eps)
+same/near/gcd removals:
+  same: XQ L^(-1) X^eps
+  near: XQ (X^(-kappa)+L^(-1)) X^eps
+  gcd:  XQ X^(-kappa+eps)
+generic remainder = UNCONTROLLED_HARD_REMAINDER
+TPC-25:
+  zero: XQ{(log X)^(-A)+X^(-s+kappa+o(1))}
+  principal: Q^2 X^eps
+  drift: JQ^2 L^(-1) X^eps
+  polylog: (log X)^(O(1))
+TPC-32 drift: X^eps XQ/L
+large content: X^eps XQ(1/J+1/C)
+TPC-93 Fourier tail: X^(o(1)) N0 Rwin^(1/2-K)
+square-root return = MISSING/UNSUPPLIED
+full-block and endpoint reassembly = MISSING/UNSUPPLIED
+```
+
+本轮没有为 complete active pair、uncontrolled hard remainder 或目标
+theorem 产生 uniform positive-power estimate，故 target
+`positive_sigma`、strict-loss、endpoint `1/400` 与 `L2` credit 均不得
+记账。已量化的 degenerate/drift savings 不能被提升为 hard-remainder 或
+目标 theorem credit。
+
+### 12.6 精确 first missing 与最终裁决
+
+第一项 production 缺口冻结为
+
+```text
+SOURCE_LOCKED_POST_TTSTAR_ORDERED_PAIR_REGISTRY_WITH_COMPLETE_PAIR_COEFFICIENT_AND_GLOBAL_NORMALIZATION
+```
+
+其内部两个不可省略的 subgates 是：
+
+```text
+PAIR_NATIVE_POST_TTSTAR_ACTUAL_REGISTRY_WITH_FULL_LITERAL_SCOPE_AND_COEFFICIENT
+TPC18_PAIR_TO_TPC93_RETAINED_SOURCE_ATOM_THEOREM_CROSSWALK
+```
+
+H1-E/TPC-143 的 conceptual object 是从 production cut columns 出发的
+linear cut-to-occurrence map `L_X`，其 entries 概念上允许 signed/complex。
+当前 TPC-174 finite contract 才进一步要求 2,988 个 production cut
+columns 上的 nonzero exact-rational weights 与逐 cut column sum 1。
+TPC-18 的 ordered pair 则是二次不等式生成的
+`TTSTAR_BILINEAR_PAIR_TERM`。两者类型不同；当前没有从 pair registry
+线性逆聚合回每条 cut coefficient 的 theorem。
+
+最终 gates：
+
+```text
+ORDERED_POST_TTSTAR_PAIR_DOMAIN = PASS_FORMULA
+TPC18_DISPLAYED_PAIR_COEFFICIENT_WITH_B_ALIASES = PASS_FORMULA
+SECOND_ROW_GAMMA_FROM_TTSTAR_EXPANSION = PASS_FORMULA
+U_FROM_SUPPLIED_TPC32_93_PARENT_POLARIZATION = PASS_FORMULA
+TPC93_SOURCE_CHILD_REINDEXING = PASS_L1_ON_SUPPLIED_RETAINED_OMEGA
+CONCRETE_DUAL_ARCHIVED_ROW_CANDIDATE = PASS_ROW_ONLY
+TPC32_TPC93_DERIVED_AFFINE_CHILD = PASS_DERIVED_L0_ONLY
+
+ACTIVE_PRODUCTION_PAIR_OCCURRENCE = NOT_TESTABLE
+FULL_LITERAL_PAIR_COEFFICIENT_MATERIALIZATION = NOT_TESTABLE
+PAIR_COEFFICIENT_MATERIALIZATION_AND_NONZERO = NOT_TESTABLE
+SOURCE_LOCKED_PAIR_TO_OMEGA_CROSSWALK = FAIL
+NU_X_NORMALIZED_RETURN_TO_H1 = FAIL
+H1_E_REPAIR = FAIL
+
+PAIR_NATIVE_FORMULA_GATE = PASS
+PAIR_NATIVE_ARCHITECTURE_REROUTE_CANDIDATE = OPEN
+PAIR_NATIVE_PRODUCTION_REOPEN_TRIGGER = FAIL
+PAIR_NATIVE_STRUCTURAL_REOPEN_TRIGGER = FAIL
+pair_native_mathematical_reopen = false
+tpc205_authorized = false
+```
+
+结论是：pair-native 路线没有被数学上关闭，但它不是现有 H1-E 的 repair；
+它只作为需要新 registry、DAG/root 与 theorem-backed crosswalk 的
+architecture reroute 存活。active support `A` 与 canonical/minimal
+representation `M` 仍是独立 `NOT_TESTABLE` roots，即使未来补齐上述
+crosswalk 也不会自动消失。H1 architecture、两个 O161 pointwise parents
+与 global architecture 保持 `OPEN`。
+
+## 13. 下一步选择
 
 本轮必须停在 `USER_CONFIRMATION_REQUIRED`。TPC-205 未授权。
 
 下一会话只允许用户选择：
 
-1. 推荐：先做不编号
-   `PAIR_NATIVE_POST_TTSTAR_REPAIR_AUDIT`，把 source domain 移到
-   TPC-18 二次化后的 actual row-pair atoms，检查能否严格接入 TPC-93，
-   同时明确它是 H1 repair 还是 architecture reroute；
-2. 授权一个有限负向 TPC-205 候选，只证明 singleton cut coefficient
-   不能通过 coefficient-independent linear conservative lift 实现
-   Cauchy/TT-star pair coefficients；它只排除该 linear-lift cell，并
-   把 pair-native 列为 surviving option，不证明其全局必要性；
-3. 提供真正新增的 cut-to-canonical-parent/inverse-aggregation theorem
-   或 production local-occurrence edge，直接审核 structural reopen；
+1. 推荐：授权有限 TPC-205 候选
+   `Pair-Native Post-TT-star Registry and Architecture-Reroute Interface`。
+   它只冻结 exact ordered-pair domain、显示式 pair-coefficient carrier
+   及其 full-literal expansion contract、typed pair/`omega`/child
+   interfaces、有限 `L0` fixture、与 H1 linear cut-edge 的类型分离，以及
+   上述 first missing；它不声称 production occurrence、H1 repair、
+   structural reopen、positive `sigma` 或 `L2`；
+2. 不编号继续做
+   `PAIR_NATIVE_ACTUAL_REGISTRY_CONSTRUCTION_FEASIBILITY_AUDIT`，只检查能否
+   从现有 production archives 实际物化首个 full-field pair record；在
+   source-locked schedule/mask 缺失时必须 fail closed；
+3. 提供真正新增的 pair-to-`omega` theorem、cut inverse-aggregation
+   theorem 或 production local-occurrence edge，重新审核 structural
+   trigger；
 4. 切回真正新增的 primary arithmetic theorem/source/corpus，审核
    fixed-atom 路线。
 
-不得把本节的 algebraically compatible supplied `omega` 当作第 3 项，
-也不得把 obstruction paper 自动提升为 structural reopen。
+第 1 项是目前最可能形成一篇诚实且有用的新论文的路线，但仍须用户显式
+授权 TPC-205。它是 architecture interface/obstruction 边界论文，不得被
+包装成算术突破。
 
-## 13. 下一会话可直接粘贴
+## 14. 下一会话可直接粘贴
 
 ```text
 进入仓库：
@@ -699,27 +1026,38 @@ cells 和 27 个 formula-crosswalk cells 中不存在完整 crosswalk；共同�
 是 NAMED_PRODUCTION_ATOM，精确 verdict 为
 FIRST_MISMATCH_CERTIFIED_NOT_TESTABLE。
 
-2026-07-30 的不编号 structural single-cut audit 选取 production cut
-archive row (103,5,1,6,3)；其 support 仅为 FORMAL_SUPPORT_ENVELOPE，
-数值非零性仍 UNDECIDED。它可重标为 alpha=(103,1), j=5；手选
-gamma=(107,1) 与 u=11 只能产生 determinant-two conditional affine
-pair/content-resolved template，并非 admissible xi。TPC-18 的
-Cauchy/TT-star 是二次不等式，不是原 cut coefficient 的线性守恒分解；
-cut 不产生 gamma/u，TPC-93 只重构已经 supplied 的 omega，TPC-194
-只完成已经 supplied 的 resolved key。精确第一缺口为
-CUT_TO_CANONICAL_PARENT_AND_INVERSE_AGGREGATED_COEFFICIENT_CROSSWALK。
-single-cut STRUCTURAL reopen trigger 仍 FAIL，TPC-205 未授权。
+2026-07-30 的不编号 pair-native post-TT-star audit 已完成。TPC-18 的
+ordered (alpha,gamma,j) domain、含 B aliases 的 displayed pair
+coefficient carrier、TT-star 第二行 gamma generation，以及给定 retained
+omega 后的 TPC-93 omega->theta inverse 均通过公式级审核；另行 supplied
+downstream fields 后的 xi template 只条件相容，pair->omega crosswalk
+仍 FAIL。最强 dual archived-row candidate 是 ((103,1),(107,1),5)，但两行都为
+FRONTIER_UNMAPPED / NO_TAIL_ROOM；没有共同 pair occurrence ID、实际
+joint mask、source-locked T/U0 schedule、完整 pair coefficient/nonzero
+状态或 nu_X return。TPC-32 primitive fixture 与 TPC-93 formulas 导出的
+(59,71,j=1,u=61) child 只允许标记为 derived finite L0 regression
+fixture。
+
+精确 first missing 为
+SOURCE_LOCKED_POST_TTSTAR_ORDERED_PAIR_REGISTRY_WITH_COMPLETE_PAIR_COEFFICIENT_AND_GLOBAL_NORMALIZATION。
+TPC-18 pair 是 TTSTAR_BILINEAR_PAIR_TERM，而 H1-E 要求
+LINEAR_CUT_TO_OCCURRENCE_EDGE；当前没有逆聚合 theorem，所以
+H1_E_REPAIR=FAIL。pair-native 仅作为需要新 registry/DAG/root 与
+theorem-backed crosswalk 的 architecture reroute 保持 OPEN。
+PAIR_NATIVE_PRODUCTION_REOPEN_TRIGGER 与 pair-native STRUCTURAL trigger
+均 FAIL；TPC-205 未授权。
 
 保持 CORE_TERMINAL_BLOCK、CORE_CUMULATIVE_PREFIX 与
 PHYSICAL_PACKET_PREFIX 不可混同；保持 TPC193 V1 与 TPC204 V1 两个
-corpus cells 为 STOP_SCOPED；保持两个 O161 parents 和 global
-architecture OPEN；保持 fixed-atom credit=0、strict 1/400 UNPAID、
-L2=NONE。
+corpus cells 为 STOP_SCOPED；新增且仅新增
+TPC18_TPC93_POST_TTSTAR_PAIR_DIRECT_COMPOSITION_V1=STOP_SCOPED；保持两个
+O161 parents、H1 与 global architecture OPEN；保持 fixed-atom credit=0、
+strict 1/400 UNPAID、L2=NONE。
 
 TPC-205 未授权。停止并请求我从以下范围选择：
-(1) PAIR_NATIVE_POST_TTSTAR_REPAIR_AUDIT；
-(2) 有限 singleton-cut/TT-star homogeneity obstruction TPC-205 候选；
-(3) 新 cut-to-parent theorem/local-occurrence edge；
+(1) 推荐的有限 Pair-Native Registry/Architecture-Reroute TPC-205 候选；
+(2) 不编号 PAIR_NATIVE_ACTUAL_REGISTRY_CONSTRUCTION_FEASIBILITY_AUDIT；
+(3) 新 pair-to-omega/cut inverse-aggregation theorem 或 local-occurrence edge；
 (4) 新 primary arithmetic theorem/source/corpus。
 
 授权本身不得替代数学 trigger。主会话只保留结论、路线选择、阻断项和
