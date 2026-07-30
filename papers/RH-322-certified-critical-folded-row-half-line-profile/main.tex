@@ -1,0 +1,267 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\usepackage{cleveref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\TV}{\mathrm{TV}}
+\title{Certified Half-Line Limits for a Critical Folded Gaussian Row}
+\author{Bin Wang}
+\date{July 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+At the first-alias clock, a distinguished deterministic row can have endpoint
+clearance of the same order as the Gaussian width.  We compute the exact
+boundary rescaling of one physical folded row and prove that it converges in
+total variation to a clearance-parameterized half-line Gaussian.  Both the
+direct lobe and the complete folded row have the same exact error
+\[
+ 2\,\overline\Phi(\sigma^{-1}-a)/\Phi(a)
+\]
+in $L^1$, while changing the clearance ratio from $a$ to $d$ costs at most
+$|a-d|$.  We also give the limiting moment recurrence and prove that distinct
+clearance phases produce distinct profiles.  This is a one-row probability
+kernel theorem.  It does not combine the parity layer, neighboring shell, or
+moving-order trace remainder, and is not a joint first-alias trace law.
+\end{abstract}
+
+\section{The exact physical row}
+
+Let
+\[
+ \phi(t)=\frac{e^{-t^2/2}}{\sqrt{2\pi}},\qquad
+ \Phi(t)=\int_{-\infty}^t\phi(s)\,ds,\qquad
+ \overline\Phi=1-\Phi.
+\]
+Write $L=\sigma^{-1}$ and suppose that the Gaussian mean is
+\[
+ p_{\sigma,a}=1-\sigma a,\qquad 0\le a\le L.
+\]
+Thus $a$ is the clearance-to-noise ratio.  The physical folded transition
+row on $[0,1]$ is
+\begin{equation}\label{eq:physical-row}
+ P_{\sigma,a}(y)=
+ \frac{\phi_\sigma(y-p_{\sigma,a})+\phi_\sigma(y+p_{\sigma,a})}
+ {Z_{\sigma,a}}\mathbf1_{[0,1]}(y),
+ \qquad
+ \phi_\sigma(t)=\sigma^{-1}\phi(t/\sigma).
+\end{equation}
+Direct integration gives
+\begin{equation}\label{eq:folded-normalizer}
+ Z_{\sigma,a}=\Phi(a)-\overline\Phi(2L-a).
+\end{equation}
+After the boundary change of variables $v=(1-y)/\sigma$, the pushed-forward
+density is
+\begin{equation}\label{eq:folded-density}
+ \widetilde h_{\sigma,a}(v)=
+ \frac{\phi(v-a)+\phi(2L-v-a)}
+ {\Phi(a)-\overline\Phi(2L-a)}\mathbf1_{[0,L]}(v).
+\end{equation}
+The second term is the reflected lobe required by the exact folded kernel.
+For comparison, retaining only the direct lobe gives
+\begin{equation}\label{eq:direct-density}
+ h^+_{\sigma,a}(v)=
+ \frac{\phi(v-a)}{\Phi(a)-\overline\Phi(L-a)}
+ \mathbf1_{[0,L]}(v).
+\end{equation}
+The half-line profile at fixed clearance ratio is
+\begin{equation}\label{eq:limit-density}
+ g_a(v)=\frac{\phi(v-a)}{\Phi(a)}\mathbf1_{[0,\infty)}(v).
+\end{equation}
+This is the upper-conditioned Gaussian row already implicit in the endpoint
+geometry of RH-16.  The new point here is the exact finite-interval and full
+folding transfer at critical clearance.
+
+\section{Exact total variation and parameter stability}
+
+We use $d_{\TV}(f,g)=\tfrac12\|f-g\|_{L^1}$.
+
+\begin{theorem}[Critical folded-row half-line theorem]\label{thm:main}
+For every $\sigma>0$ and $0\le a\le\sigma^{-1}$,
+\begin{equation}\label{eq:exact-tail}
+ \|h^+_{\sigma,a}-g_a\|_1
+ =\|\widetilde h_{\sigma,a}-g_a\|_1
+ =\frac{2\overline\Phi(L-a)}{\Phi(a)}.
+\end{equation}
+For every $a,d\ge0$,
+\begin{equation}\label{eq:parameter-lipschitz}
+ \|g_a-g_d\|_1\le |a-d|.
+\end{equation}
+Consequently
+\begin{equation}\label{eq:combined-bound}
+ \boxed{
+ \|\widetilde h_{\sigma,a}-g_d\|_1
+ \le |a-d|+
+ \frac{2\overline\Phi(\sigma^{-1}-a)}{\Phi(a)}.}
+\end{equation}
+The same bound holds with $h^+_{\sigma,a}$ in place of the folded row.
+\end{theorem}
+
+\begin{proof}
+The direct row is $g_a$ conditioned on $v\le L$.  Its density exceeds $g_a$
+on $[0,L]$ and vanishes beyond $L$, so its positive and negative $L^1$
+parts both equal the discarded mass
+\[
+ \int_L^\infty g_a(v)\,dv
+ =\frac{\overline\Phi(L-a)}{\Phi(a)}.
+\]
+For the folded row, the denominator in \eqref{eq:folded-density} is smaller
+than $\Phi(a)$ and the numerator contains the direct nonnegative term.
+Hence $\widetilde h_{\sigma,a}\ge g_a$ throughout $[0,L]$, while the folded
+row again vanishes beyond $L$.  The same mass argument proves the second
+identity in \eqref{eq:exact-tail}.
+
+For parameter stability put $r(a)=\phi(a)/\Phi(a)$.  Differentiating
+\eqref{eq:limit-density} gives
+\[
+ \partial_a g_a(v)=g_a(v)\{v-a-r(a)\}.
+\]
+Under $g_a$, the random variable $V-a$ has mean $r(a)$ and variance
+\[
+ 1-a r(a)-r(a)^2\le1.
+\]
+Cauchy--Schwarz therefore gives
+$\|\partial_a g_a\|_1\le1$.  Integrating along the segment from $d$ to $a$
+proves \eqref{eq:parameter-lipschitz}; the triangle inequality proves
+\eqref{eq:combined-bound}.
+\end{proof}
+
+The exact tail also records its true exponential scale.  If
+$a,d\in K=[m,A]\subset[0,\infty)$ and $L>A$, Mills' inequality gives
+\begin{equation}\label{eq:compact-mills}
+ \|\widetilde h_{\sigma,a}-g_d\|_1
+ \le |a-d|+
+ \frac{2\phi(L-A)}{\Phi(m)(L-A)}.
+\end{equation}
+Uniformly for $a$ in a fixed compact set,
+\begin{equation}\label{eq:tail-asymptotic}
+ \frac{2\overline\Phi(L-a)}{\Phi(a)}
+ =\frac{2\phi(L-a)}{\Phi(a)(L-a)}
+ \bigl(1+O(\sigma^2)\bigr).
+\end{equation}
+Thus a bound $C_K e^{-c/\sigma^2}$ is valid after choosing any sufficiently
+small fixed $c>0$.  One must not replace the exact exponent
+$-(\sigma^{-1}-a)^2/2$ by $-1/(2\sigma^2)$ with a uniform fixed prefactor.
+
+\begin{corollary}[Observable convergence]\label{cor:observables}
+If $a_\sigma\to d\ge0$, then both finite rows converge to $g_d$ in total
+variation.  Every bounded measurable observable $F$ satisfies
+\[
+ \left|\int F\widetilde h_{\sigma,a_\sigma}
+       -\int Fg_d\right|
+ \le \|F\|_\infty
+ \left(|a_\sigma-d|+
+ \frac{2\overline\Phi(\sigma^{-1}-a_\sigma)}{\Phi(a_\sigma)}\right).
+\]
+The direct row also converges in Wasserstein distance.  More precisely,
+\begin{equation}\label{eq:wasserstein}
+ W_1(h^+_{\sigma,a},g_a)=
+ \frac{\phi(L-a)-r(a)\overline\Phi(L-a)}
+ {\Phi(a)-\overline\Phi(L-a)},
+ \qquad
+ W_1(g_a,g_d)\le |a-d|.
+\end{equation}
+In particular,
+\[
+ W_1(h^+_{\sigma,a},g_d)\le |a-d|+
+ \frac{\phi(L-a)-r(a)\overline\Phi(L-a)}
+ {\Phi(a)-\overline\Phi(L-a)}.
+\]
+Hence all Lipschitz observables, including unbounded ones of at most linear
+growth, obey the same quantitative convergence law.
+\end{corollary}
+
+\begin{proof}
+The total-variation statement is \cref{thm:main}.  The direct finite row is
+stochastically smaller than $g_a$, so its $W_1$ distance equals the difference
+of their means; direct integration gives the first formula in
+\eqref{eq:wasserstein}.  The family $g_a$ has monotone likelihood ratio in
+$a$, hence is stochastically increasing.  Its mean is $a+r(a)$ and its
+derivative is $1-a r(a)-r(a)^2\le1$, proving the second formula.
+\end{proof}
+
+\section{Moments and the clearance-phase obstruction}
+
+Let $M_j(d)=\int_0^\infty v^j g_d(v)\,dv$.  Integration by parts gives
+\begin{equation}\label{eq:moment-recurrence}
+ M_0(d)=1,\qquad M_1(d)=d+r(d),\qquad
+ M_{j+1}(d)=dM_j(d)+jM_{j-1}(d)\quad(j\ge1).
+\end{equation}
+In particular,
+\begin{align}
+ \mathbb E_d V&=d+r(d),\label{eq:mean}\\
+ \mathbb E_d V^2&=d^2+1+d r(d),\label{eq:second}\\
+ \operatorname{Var}_d(V)&=1-d r(d)-r(d)^2.\label{eq:variance}
+\end{align}
+The explicit Gaussian tails in \eqref{eq:folded-density} imply convergence of
+every polynomial moment.  More quantitatively, for each $j$ and compact
+$K\subset[0,\infty)$ there are $C_{j,K},c_K>0$ such that, whenever
+$a,d\in K$ and $\sigma$ is sufficiently small with $\sigma^{-1}>\sup K$,
+\begin{equation}\label{eq:moment-bound}
+ \left|\int v^j\widetilde h_{\sigma,a}(v)\,dv-M_j(d)\right|
+ \le C_{j,K}|a-d|+C_{j,K}e^{-c_K/\sigma^2}.
+\end{equation}
+
+The parameter $d$ cannot be suppressed.  Differentiating the limiting mean
+in \eqref{eq:mean} gives
+\begin{equation}\label{eq:mean-derivative}
+ \frac{d}{dd}\{d+r(d)\}
+ =1-d r(d)-r(d)^2
+ =\operatorname{Var}_d(V)>0.
+\end{equation}
+Thus $d\mapsto g_d$ is injective.  If $a_\sigma$ has two subsequential limits
+$d_1\ne d_2$, the corresponding folded rows have two distinct total-variation
+limits.  There is no phase-independent universal row profile without control
+of the clearance ratio.
+
+For the boundary cycles archived in RH-17 and RH-19, with
+$\lambda=1.678573510428322\ldots$,
+\[
+ \delta_k=C_{\mathrm b}\lambda^{-2k}(1+o(1)).
+\]
+At the natural first-alias clock
+$k_\sigma=\log(1/\sigma)/(2\log\lambda)+O(1)$, the ratio
+$a_\sigma=\delta_{k_\sigma}/\sigma$ remains of order one, but the bounded
+integer phase need not converge.  The theorem therefore supplies a complete
+subsequential one-row dictionary, not a unique phase-free replacement.
+
+\section{Protocol, scope, and next interface}
+
+The reproduction code evaluates only the exact normalizers, Gaussian tails,
+Wasserstein correction, moments, and pairwise profile separations.  No fitted
+exponent or transfer-matrix diagonalization enters the proof.  The physical
+folded formula is checked independently against the sum of its direct and
+reflected masses.
+
+At a critical source $x=\sqrt\sigma q$, RH-14 has
+$u_c=1.543689012692076\ldots$, $a=u_cq^2$, and row normalizer
+$\Phi(u_cq^2)+O(e^{-c/\sigma^2})$.
+Equation \eqref{eq:folded-normalizer} recovers that local factor exactly and
+shows why it cannot be replaced by one.  It does not replace the RH-14 signed
+endpoint density, which integrates over all $q$, nor does it couple the
+endpoint row to the repelling-boundary profile.
+
+\begin{remark}[Route firewall]
+RH-17 shows that the endpoint and first internal contact are simultaneously
+critical, and RH-19 shows that the neighboring critical sibling has order-one
+relative mass.  Neither contribution appears in a one-row theorem.  No
+moving-order Duhamel remainder, parity cancellation, neighboring-shell
+matching, full-trace replacement, or joint error $o(kR^{-2k})$ with
+$R=1.4$ is proved
+here.  Gates A--E remain false/open; the paper constructs no Hilbert--Polya
+operator, identifies no Riemann zero, proves no von Mangoldt trace formula or
+zeta-divisor equality, and does not imply RH.
+\end{remark}
+
+The next interface is a paired affine Gaussian chain retaining both critical
+contacts with their common clearance phase.  Only after that pairing is
+combined with curvature, normalization, parity, shell coupling, and a
+moving-order remainder can it enter the first-alias trace equation.
+
+\end{document}
