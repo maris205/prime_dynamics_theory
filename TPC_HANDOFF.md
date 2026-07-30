@@ -1,15 +1,18 @@
 # TPC HANDOFF
 
 更新时间：2026-07-30
-当前仓库事实终点：TPC-204
-当前编号论文裁决：`FIRST_MISMATCH_CERTIFIED_NOT_TESTABLE`
+当前仓库事实终点：TPC-205
+当前编号论文裁决：`PAIR_NATIVE_ARCHITECTURE_REROUTE_INTERFACE_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：`PAIR_NATIVE_FORMULA_GATE_PASS_PRODUCTION_REOPEN_FAIL`
 下一篇：`null`
 TPC-204 授权并完成：`true`
-TPC-205 授权：`false`
+TPC-205 授权并完成：`true`
+TPC-206 授权：`false`
 
 本文件、仓库内已提交的论文，以及 active payload/audit/schema/checker
 是下一会话的事实来源。旧聊天记录不是事实来源。
+下文历史审计块中的所有 `tpc205_authorized=false` 都是编号前快照，统一由
+本页页首的当前状态和第 13 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。
 
 ## 1. 启动与验证协议
 
@@ -19,24 +22,25 @@ git status --short --branch
 git pull --rebase origin main
 Get-Content -Raw -Encoding UTF8 TPC_HANDOFF.md
 
-$d = "papers/tpc-204-source-locked-production-registry-crosswalk/experiments"
-python "$d/build_tpc204.py" --check
-python "$d/tpc204_source_locked_production_registry_crosswalk.py" --check
-python "$d/tpc204_independent_checker.py" --check
+$d = "papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments"
+python "$d/build_tpc205.py" --check
+python "$d/tpc205_pair_native_registry_interface.py" --check
+python "$d/tpc205_independent_checker.py" --check
 python papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py --check
 ```
 
 随后优先读取：
 
-1. `papers/tpc-204-source-locked-production-registry-crosswalk/README.md`
-2. `papers/tpc-204-source-locked-production-registry-crosswalk/experiments/tpc204_source_locked_production_registry_crosswalk.json`
-3. `papers/tpc-204-source-locked-production-registry-crosswalk/experiments/tpc204_source_locked_production_registry_crosswalk_audit.json`
-4. `papers/tpc-204-source-locked-production-registry-crosswalk/experiments/tpc204_independent_checker.py`
-5. `papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_maximal_source_backed_direct_prefix.json`
-6. `papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json`
+1. `papers/tpc-205-pair-native-post-ttstar-registry-interface/README.md`
+2. `papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments/tpc205_pair_native_registry_interface.json`
+3. `papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments/tpc205_pair_native_registry_interface_audit.json`
+4. `papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments/tpc205_independent_checker.py`
+5. `papers/tpc-204-source-locked-production-registry-crosswalk/experiments/tpc204_source_locked_production_registry_crosswalk.json`
+6. `papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_maximal_source_backed_direct_prefix.json`
+7. `papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json`
 
-不得因打开新会话、用户说“继续”、TPC-204 checker 通过，或 TPC-204
-已经编号而自动创建 TPC-205。证书通过只说明当前有限负向边界被可靠冻结，
+不得因打开新会话、用户说“继续”、TPC-205 checker 通过，或 TPC-205
+已经编号而自动创建 TPC-206。证书通过只说明当前有限接口边界被可靠冻结，
 不解除数学门槛。
 
 ## 2. 发布锚点
@@ -75,6 +79,30 @@ release files = 14
 manifest-pinned artifacts = 11
 payload/audit exact schemas = 2
 source locks = 15
+```
+
+TPC-205 论文提交：
+
+```text
+98b3e6c462008b07538b496ed130b1004a84747f
+```
+
+TPC-205 稳定 PDF：
+
+```text
+papers/tpc-205-pair-native-post-ttstar-registry-interface/tpc-205-pair-native-post-ttstar-registry-interface.pdf
+sha256 = b3596e207943132ad48e6a17cfd107421f02b521bc02f617615c860816a1dc1e
+pages = 4
+page size = A4
+```
+
+TPC-205 active release：
+
+```text
+release files = 16
+manifest-pinned artifacts = 13
+payload/audit/L0 exact schemas = 3
+source locks = 17
 ```
 
 ## 3. TPC-204 的精确有限结论
@@ -680,6 +708,11 @@ UNNUMBERED_PAIR_NATIVE_POST_TTSTAR_REPAIR_AUDIT
 
 它没有自动授权 TPC-205，也没有解除任何数学门槛。
 
+本节是 TPC-205 编号前的历史审计记录。下文出现的
+`tpc205_authorized=false` 仅记录当时的 workflow 状态；该状态现已由用户
+后续有限授权和第 13 节的已完成论文取代。公式门槛、失败 gate 与
+`STOP_SCOPED` 结论没有被授权动作改写。
+
 ### 12.1 公式级 ordered pair 与 exact coefficient
 
 TPC-18 的实际 post-Cauchy/TT-star 公式为
@@ -977,34 +1010,173 @@ representation `M` 仍是独立 `NOT_TESTABLE` roots，即使未来补齐上述
 crosswalk 也不会自动消失。H1 architecture、两个 O161 pointwise parents
 与 global architecture 保持 `OPEN`。
 
-## 13. 下一步选择
+## 13. TPC-205 的精确有限结论
 
-本轮必须停在 `USER_CONFIRMATION_REQUIRED`。TPC-205 未授权。
+用户后续显式授权的范围仅为：
+
+```text
+FINITE_PAIR_NATIVE_POST_TTSTAR_REGISTRY_AND_ARCHITECTURE_REROUTE_INTERFACE
+```
+
+授权是 workflow input，不是 theorem evidence；它没有让 production、
+structural、arithmetic 或 `L2` reopen trigger 自动通过。TPC-205 的精确
+分类、定理状态和裁决是：
+
+```text
+classification
+  = PAIR_NATIVE_POST_TTSTAR_REGISTRY_INTERFACE_L1
+theorem_status
+  = PROVED_TYPED_INTERFACE_AND_FIRST_MISSING_L1
+verdict
+  = PAIR_NATIVE_ARCHITECTURE_REROUTE_INTERFACE_CERTIFIED_NOT_REOPENED
+```
+
+### 13.1 typed interface 与 declared-corpus 边界
+
+TPC-205 区分四类不可互换的 relation：
+
+```text
+TTSTAR_BILINEAR_PAIR_TERM
+LINEAR_CUT_TO_OCCURRENCE_EDGE
+TPC93_RETAINED_SOURCE_ATOM
+TPC93_SOURCE_CHILD
+```
+
+它冻结 42 个 required registry fields，并保持 `(alpha,gamma,j)` 为
+ordered pair；不得作交换 quotient。`pair_record_id`、
+`edge_instance_id` 与 `target_occurrence_id` 分离；formula support、
+evaluated mask、coefficient evaluability 与 nonzero status 分离；
+source、linear、quadratic TT-star 与 target-return normalization 分离。
+
+17 个 source locks 支持该有限接口。当前 production count 为：
+
+```text
+production_pair_records = 0
+scope = DECLARED_TPC205_REGISTRY_SOURCE_LOCK_CORPUS_ONLY
+```
+
+该零值不是全仓库、全历史或数学上的 nonexistence theorem。两个有限对象
+分别严格标为：
+
+```text
+DUAL_SOURCE_LOCKED_ROW_PAIR_CANDIDATE = ROW_ONLY
+TPC32_PRIMITIVE_FIXTURE_PLUS_TPC93_FORMULAS_DERIVED_L0_ONLY
+  = DERIVED_L0_ONLY
+```
+
+它们只用于 `L0` regression，均不构成 production pair occurrence。
+TPC-18 显示式 pair carrier 中的 `B` aliases 没有被解释性展开；完整
+literal coefficient 仍是缺失字段。TPC-18 pair 也没有被强行等同为
+TPC-32/TPC-93 parent，故 `pair -> omega` 仍为 `FAIL`。
+
+### 13.2 normalization 与 loss 防火墙
+
+归档字符串 `"nu_X"` 只保留为 scope label，不是已供应的数值 scalar。
+若未来 theorem 供应乘法 scalar `c_X`，当前只许可条件式
+
+```text
+|c_X T_D|^2 <= C_W |c_X|^2 J(E_D+C_D^off).
+```
+
+17 行 loss ledger 中，每条 TPC-18/25/32/93 bound 都保留各自 theorem
+hypotheses；它们没有被组合到一个 production TPC-18 pair 上。TPC-93 的
+weighted sign/coefficient reassembly 只在 physical squarefree 与
+target-primitive support 上有效。generic hard remainder、
+square-root return、full-block 和 endpoint reassembly 仍分别为
+uncontrolled 或 unsupplied。
+
+精确 first missing 是：
+
+```text
+SOURCE_LOCKED_POST_TTSTAR_ORDERED_PAIR_REGISTRY_WITH_COMPLETE_PAIR_COEFFICIENT_AND_GLOBAL_NORMALIZATION
+```
+
+其两个不可省略的 subgates 仍为：
+
+```text
+PAIR_NATIVE_POST_TTSTAR_ACTUAL_REGISTRY_WITH_FULL_LITERAL_SCOPE_AND_COEFFICIENT
+TPC18_PAIR_TO_TPC93_RETAINED_SOURCE_ATOM_THEOREM_CROSSWALK
+```
+
+### 13.3 machine certificate、exploit review 与 PDF QA
+
+active release 含 16 个文件、3 个 exact schemas、13 个 manifest pins、
+17 个 source locks、2 个 `L0` fixtures、17 行 loss ledger 与 23 个
+gates。独立 checker 不导入 builder 或 materializer，并执行：
+
+```text
+active-schema mutations = 12
+regenerated-schema semantic mutations = 37
+strict bool/int mutations = 6
+```
+
+额外 coordinated exploit review 对 regenerated-schema payload
+39/39、source rebind 4/4、audit 11/11、L0 7/7、manifest 7/7 全部
+fail closed；没有残留的 schema-only 绕过。builder、materializer 与
+independent checker 均通过；三者的 `python -O` 路径均按设计 fail
+closed。TPC-18/25/32/93/143/174/179/194/204 的相关回归均通过，且没有
+改写其 active artifacts。
+
+稳定 PDF 为 4 页 A4；逐页视觉核查、字体嵌入、页旋转、加密、表单与
+构建 warning 检查均通过。其 SHA-256 为：
+
+```text
+b3596e207943132ad48e6a17cfd107421f02b521bc02f617615c860816a1dc1e
+```
+
+### 13.4 当前 gates、开放父节点与停止边界
+
+```text
+PAIR_NATIVE_FORMULA_GATE = PASS
+ACTIVE_PRODUCTION_PAIR_OCCURRENCE = NOT_TESTABLE
+FULL_LITERAL_PAIR_COEFFICIENT_MATERIALIZATION = NOT_TESTABLE
+SOURCE_LOCKED_PAIR_TO_OMEGA_CROSSWALK = FAIL
+NU_X_NORMALIZED_RETURN_TO_H1 = FAIL
+H1_E_REPAIR = FAIL
+
+PAIR_NATIVE_ARCHITECTURE_REROUTE_CANDIDATE = OPEN
+PAIR_NATIVE_PRODUCTION_REOPEN_TRIGGER = FAIL
+PAIR_NATIVE_STRUCTURAL_REOPEN_TRIGGER = FAIL
+pair_native_mathematical_reopen = false
+```
+
+继续保持以下 cells 为 `STOP_SCOPED`：
+
+```text
+TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1
+TPC204_DECLARED_PLAUSIBLE_PRODUCTION_CROSSWALK_CORPUS_V1
+TPC18_25_32_93_194_SINGLE_CUT_OCCURRENCE_COMPOSITE_V1
+TPC18_TPC93_POST_TTSTAR_PAIR_DIRECT_COMPOSITION_V1
+```
+
+这不是对 pair-native architecture 的全局关闭。active support `A` 与
+canonical/minimal representation `M` 仍是独立 `NOT_TESTABLE` roots；
+两个 O161 pointwise parents、H1 architecture 与 global architecture
+保持 `OPEN`。fixed-atom credit 为 0，strict endpoint `1/400` 为
+`UNPAID`，`L2=NONE`。TPC-206 未授权。
+
+## 14. 下一步选择
+
+本轮必须停在 `USER_CONFIRMATION_REQUIRED`；不得自动创建 TPC-206。
+
+目前最可能继续有效推进的是不编号
+`PAIR_NATIVE_ACTUAL_REGISTRY_CONSTRUCTION_FEASIBILITY_AUDIT`：严格按
+TPC-205 的 42-field contract，检查现有 archives 是否能物化首个
+source-locked full-field pair record。任何 joint mask、packet schedule、
+literal coefficient、nonzero status、pair-to-`omega` lineage 或 global
+normalization 缺失都必须 fail closed；该审计本身不授权编号论文。
 
 下一会话只允许用户选择：
 
-1. 推荐：授权有限 TPC-205 候选
-   `Pair-Native Post-TT-star Registry and Architecture-Reroute Interface`。
-   它只冻结 exact ordered-pair domain、显示式 pair-coefficient carrier
-   及其 full-literal expansion contract、typed pair/`omega`/child
-   interfaces、有限 `L0` fixture、与 H1 linear cut-edge 的类型分离，以及
-   上述 first missing；它不声称 production occurrence、H1 repair、
-   structural reopen、positive `sigma` 或 `L2`；
-2. 不编号继续做
-   `PAIR_NATIVE_ACTUAL_REGISTRY_CONSTRUCTION_FEASIBILITY_AUDIT`，只检查能否
-   从现有 production archives 实际物化首个 full-field pair record；在
-   source-locked schedule/mask 缺失时必须 fail closed；
-3. 提供真正新增的 pair-to-`omega` theorem、cut inverse-aggregation
-   theorem 或 production local-occurrence edge，重新审核 structural
-   trigger；
-4. 切回真正新增的 primary arithmetic theorem/source/corpus，审核
-   fixed-atom 路线。
+1. 授权上述不编号 feasibility audit；
+2. 提供真正新增的 pair-to-`omega` theorem、cut inverse-aggregation
+   theorem、fixed-atom local-increment theorem 或 production
+   local-occurrence edge，重新审核对应 trigger；
+3. 切回真正新增的 primary arithmetic theorem/source/corpus，重新审核
+   literal determinant-two two-Möbius fixed-atom 路线；
+4. 暂停该路线。
 
-第 1 项是目前最可能形成一篇诚实且有用的新论文的路线，但仍须用户显式
-授权 TPC-205。它是 architecture interface/obstruction 边界论文，不得被
-包装成算术突破。
-
-## 14. 下一会话可直接粘贴
+## 15. 下一会话可直接粘贴
 
 ```text
 进入仓库：
@@ -1016,49 +1188,39 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 git status --short --branch
 git pull --rebase origin main
 
-$d = "papers/tpc-204-source-locked-production-registry-crosswalk/experiments"
-python "$d/build_tpc204.py" --check
-python "$d/tpc204_source_locked_production_registry_crosswalk.py" --check
-python "$d/tpc204_independent_checker.py" --check
+$d = "papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments"
+python "$d/build_tpc205.py" --check
+python "$d/tpc205_pair_native_registry_interface.py" --check
+python "$d/tpc205_independent_checker.py" --check
 
-当前事实终点是 TPC-204。它只证明明列九对象、63 个 production-axis
-cells 和 27 个 formula-crosswalk cells 中不存在完整 crosswalk；共同首缺
-是 NAMED_PRODUCTION_ATOM，精确 verdict 为
-FIRST_MISMATCH_CERTIFIED_NOT_TESTABLE。
+当前事实终点是 TPC-205。其 classification 为
+PAIR_NATIVE_POST_TTSTAR_REGISTRY_INTERFACE_L1，theorem status 为
+PROVED_TYPED_INTERFACE_AND_FIRST_MISSING_L1，精确 verdict 为
+PAIR_NATIVE_ARCHITECTURE_REROUTE_INTERFACE_CERTIFIED_NOT_REOPENED。
 
-2026-07-30 的不编号 pair-native post-TT-star audit 已完成。TPC-18 的
-ordered (alpha,gamma,j) domain、含 B aliases 的 displayed pair
-coefficient carrier、TT-star 第二行 gamma generation，以及给定 retained
-omega 后的 TPC-93 omega->theta inverse 均通过公式级审核；另行 supplied
-downstream fields 后的 xi template 只条件相容，pair->omega crosswalk
-仍 FAIL。最强 dual archived-row candidate 是 ((103,1),(107,1),5)，但两行都为
-FRONTIER_UNMAPPED / NO_TAIL_ROOM；没有共同 pair occurrence ID、实际
-joint mask、source-locked T/U0 schedule、完整 pair coefficient/nonzero
-状态或 nu_X return。TPC-32 primitive fixture 与 TPC-93 formulas 导出的
-(59,71,j=1,u=61) child 只允许标记为 derived finite L0 regression
-fixture。
-
-精确 first missing 为
+TPC-205 冻结四类不可互换 relation、42 个 required registry fields、
+17 个 source locks、2 个严格 L0 fixtures、17 行 loss ledger 与 23 个
+gates。declared TPC205 registry/source-lock corpus 中 production pair
+record 数为 0，但这不是全仓库 nonexistence claim。精确 first missing 为
 SOURCE_LOCKED_POST_TTSTAR_ORDERED_PAIR_REGISTRY_WITH_COMPLETE_PAIR_COEFFICIENT_AND_GLOBAL_NORMALIZATION。
-TPC-18 pair 是 TTSTAR_BILINEAR_PAIR_TERM，而 H1-E 要求
-LINEAR_CUT_TO_OCCURRENCE_EDGE；当前没有逆聚合 theorem，所以
-H1_E_REPAIR=FAIL。pair-native 仅作为需要新 registry/DAG/root 与
-theorem-backed crosswalk 的 architecture reroute 保持 OPEN。
-PAIR_NATIVE_PRODUCTION_REOPEN_TRIGGER 与 pair-native STRUCTURAL trigger
-均 FAIL；TPC-205 未授权。
 
-保持 CORE_TERMINAL_BLOCK、CORE_CUMULATIVE_PREFIX 与
-PHYSICAL_PACKET_PREFIX 不可混同；保持 TPC193 V1 与 TPC204 V1 两个
-corpus cells 为 STOP_SCOPED；新增且仅新增
-TPC18_TPC93_POST_TTSTAR_PAIR_DIRECT_COMPOSITION_V1=STOP_SCOPED；保持两个
-O161 parents、H1 与 global architecture OPEN；保持 fixed-atom credit=0、
-strict 1/400 UNPAID、L2=NONE。
+PAIR_NATIVE_FORMULA_GATE=PASS；ACTIVE_PRODUCTION_PAIR_OCCURRENCE 与
+FULL_LITERAL_PAIR_COEFFICIENT_MATERIALIZATION 均 NOT_TESTABLE；
+SOURCE_LOCKED_PAIR_TO_OMEGA_CROSSWALK、NU_X_NORMALIZED_RETURN_TO_H1 和
+H1_E_REPAIR 均 FAIL。PAIR_NATIVE_ARCHITECTURE_REROUTE_CANDIDATE 保持
+OPEN，但 production 与 structural reopen triggers 均 FAIL。
 
-TPC-205 未授权。停止并请求我从以下范围选择：
-(1) 推荐的有限 Pair-Native Registry/Architecture-Reroute TPC-205 候选；
-(2) 不编号 PAIR_NATIVE_ACTUAL_REGISTRY_CONSTRUCTION_FEASIBILITY_AUDIT；
-(3) 新 pair-to-omega/cut inverse-aggregation theorem 或 local-occurrence edge；
-(4) 新 primary arithmetic theorem/source/corpus。
+保持 TPC193 V1、TPC204 V1、singleton-cut composite 与
+TPC18_TPC93_POST_TTSTAR_PAIR_DIRECT_COMPOSITION_V1 为 STOP_SCOPED；保持
+两个 O161 pointwise parents、H1 与 global architecture OPEN；保持
+fixed-atom credit=0、strict 1/400 UNPAID、L2=NONE。
+
+TPC-206 未授权。停止并请求我从以下范围选择：
+(1) 推荐的不编号 PAIR_NATIVE_ACTUAL_REGISTRY_CONSTRUCTION_FEASIBILITY_AUDIT；
+(2) 新 pair-to-omega/cut inverse-aggregation theorem、fixed-atom
+local-increment theorem 或 production local-occurrence edge；
+(3) 新 primary arithmetic theorem/source/corpus；
+(4) 暂停。
 
 授权本身不得替代数学 trigger。主会话只保留结论、路线选择、阻断项和
 最终审核摘要；长扫描、定理核查、schema exploit review、构建日志和逐页
