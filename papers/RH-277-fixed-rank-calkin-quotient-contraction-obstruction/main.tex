@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\newtheorem{theorem}{Theorem}[section]\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{A Fixed-Rank Calkin Obstruction to Zero-Noise Quotient Contraction}\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+RH-269 asks for a contractive power of a limiting orthogonal quotient.  We
+show that this cannot occur at the deterministic zero-noise endpoint under
+any fixed-rank removal in the natural stationary $L^2$ geometry.  The
+deterministic Koopman limit is an isometry on an infinite-dimensional
+Perron/parity complement, and finite-rank compression leaves its Calkin class
+unchanged.  After Hardy scaling every quotient power has norm at least
+$r_H^{-m}>1$.  Rank-growing selectors and growing block depths are not
+excluded.
+\end{abstract}
+\section{Calkin theorem}
+Let $U_0$ be the deterministic Koopman isometry on the invariant complement
+of the constant and component-sign functions.  Let $P$ be any finite-rank
+orthogonal projection and $Q=I-P$.
+\begin{theorem}[fixed-rank quotient no-go]
+For every $m\ge1$,
+\[
+ \|(QU_0Q)^m\|\ge1,
+ \qquad
+ \|\{r_H^{-1}QU_0Q\}^m\|\ge r_H^{-m}>1.
+\]
+Thus no fixed-rank limiting quotient in this geometry has a contractive
+power after Hardy scaling.
+\end{theorem}
+\begin{proof}
+In the Calkin algebra finite-rank operators vanish, so
+$[QU_0Q]=[U_0]$.  Since $U_0^*U_0=I$, the class $[U_0]$ is an isometry and
+$\|[U_0]^m\|=1$.  The quotient norm is bounded above by the operator norm,
+which gives the first inequality.  Scalar Hardy scaling gives the second.
+\end{proof}
+\section{Rank firewall}
+A common isolating contour in the RH-269 setting gives norm-continuous Riesz
+projections and hence a locally constant finite rank.  The RH-222 frozen
+cloud ranks, including Perron and parity, run from $6$ to $37$.  Therefore a
+single fixed-rank contour cannot encode that rank-growing atlas.  This is a
+logical rank mismatch, not a continuum theorem about the stored roots.
+\begin{remark}
+The theorem does not exclude $P=P_\sigma$ with rank tending to infinity,
+$m=m(\sigma)\to\infty$, or an anisotropic space whose zero-noise limit is not
+the stationary Koopman isometry.
+\end{remark}
+\section{Boundary}
+Together with RH-276, the result closes the raw fixed-rank zero-noise
+$\mathcal S_2$/contraction branch.  It does not close the rank-growing trace
+route, Gate A, or any later Gate.
+\end{document}

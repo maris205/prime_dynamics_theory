@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\newtheorem{proposition}{Proposition}[section]\theoremstyle{remark}\newtheorem{remark}[proposition]{Remark}
+\title{An Aggregate Fourier-Defect Audit of the Archived Noisy Clouds}\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+We re-audit the seven RH-15 clouds against the exact Hardy-scaled monodromy
+shell.  Unlike the previous RMS phase diagnostic, we record total root,
+phase, radial, and low-moment defects.  The scaled aggregate root error does
+not become small on the frozen rows, and pre-alias moment defects remain
+order one.  These are floating finite diagnostics, not an asymptotic
+nonconvergence theorem or an interval certificate for continuum roots.
+\end{abstract}
+\section{Protocol}
+For each archived positive-half cloud of degree $N$, the $j$-th stored root
+is paired with
+$\beta e^{ij\pi/(N+1)}$, $\beta=(0.85\sqrt\lambda)^{-1}$.  We add the
+conjugate partners, compute the total $\ell^1$ root error $E_N$, and evaluate
+moments through $\min(12,2N+1)$ against the RH-272 target.
+\section{Finding}
+\begin{center}\small
+\begin{tabular}{lrr}
+\toprule quantity & minimum & maximum\\\midrule
+total root error & $0.6424$ & $1.2481$\\
+$N$ times mean root error & $0.3212$ & $0.6241$\\
+largest pre-alias moment defect & $0.5096$ & $1.4573$\\\bottomrule
+\end{tabular}
+\end{center}
+\begin{proposition}[scoped non-activation]
+No archived row supplies the asymptotic aggregate-root hypothesis of RH-274.
+\end{proposition}
+\begin{proof}
+Every finite row has positive aggregate error; more importantly the archive
+contains only seven ranks, no outward root enclosures, and no theorem that
+the displayed quantities tend to zero.  Therefore the required asymptotic
+hypothesis is absent from the archive.
+\end{proof}
+\begin{remark}
+The proposition does not assert that the true family fails the criterion.
+Nonmonotone finite values and floating Arnoldi roots cannot establish such a
+claim.
+\end{remark}
+\section{Boundary}
+The spectral-cloud coefficient bridge remains false/open.  The exact
+counterloop bridge of RH-272 is a separate graded branch.  Gates A--E remain
+false/open.
+\end{document}

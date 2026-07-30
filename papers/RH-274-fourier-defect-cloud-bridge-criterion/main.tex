@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Aggregate Fourier Defects in Rank-Growing Cloud Bridges}\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The canonical pole counterloop is a rank-growing root-of-unity shell.  We
+show that pointwise radial and phase convergence of its roots is not enough
+to transport trace moments.  Fixed moments are controlled by aggregate
+low-frequency Fourier defects.  A common phase shift tending to zero as
+$(N+1)^{-1/2}$ makes the third moment grow like $\sqrt N$, giving an exact
+counterexample to any maximum-phase-only bridge.  The example is logical and
+is not asserted to describe the noisy cloud.
+\end{abstract}
+\section{Aggregate criterion}
+Let $\theta_{N,j}=j\pi/(N+1)$ and consider conjugate pairs
+$r_{N,j}e^{\pm i(\theta_{N,j}+\varepsilon_{N,j})}$.  Put
+$r_{N,j}=\beta+\delta_{N,j}$, and let $S^*_{N,n}$ denote the moment with
+$r_{N,j}=\beta$ and $\varepsilon_{N,j}=0$.
+\begin{theorem}[fixed-moment stability]
+For each fixed $n$, if $0\le r_{N,j},\beta\le B$ uniformly, then
+\[
+|S_{N,n}-S^*_{N,n}|
+ \le 2nB^n\sum_{j=1}^N|\varepsilon_{N,j}|
+ +2nB^{n-1}\sum_{j=1}^N|\delta_{N,j}|.
+\]
+Consequently aggregate $\ell^1$ phase and radial defects tending to zero
+imply the RH-272 moment bridge at every fixed order.
+\end{theorem}
+\begin{proof}
+Use $|e^{in\varepsilon}-1|\le n|\varepsilon|$ and the mean-value bound
+$|r^n-\beta^n|\le nB^{n-1}|r-\beta|$, then sum both conjugate members.
+\end{proof}
+\section{Maximum-phase counterexample}
+Take the exact radii $r_{N,j}=\beta$ and the common shift
+$\varepsilon_{N,j}=\Delta_N=(N+1)^{-1/2}$.  The maximum phase error tends to
+zero.  Since the unshifted third moment vanishes,
+\[
+ S_{N,3}=2\beta^3\sum_{j=1}^N
+ \cos\!\left(\frac{3j\pi}{N+1}+3\Delta_N\right).
+\]
+The exact sine sum is
+$\sum_{j=1}^N\sin(3j\pi/(N+1))=\cot(3\pi/(2(N+1)))$.  Hence
+\begin{theorem}[common-shift divergence]
+\[
+ S_{N,3}=-\frac{4\beta^3}{\pi}\sqrt{N+1}+o(\sqrt N).
+\]
+Thus $\max_j|\varepsilon_{N,j}|\to0$ does not imply even a bounded third
+moment.
+\end{theorem}
+\section{Boundary}
+The theorem invalidates a logical extrapolation from finite phase fits.  It
+does not prove that the archived family has a coherent shift or fails the
+aggregate criterion.  No Gate status changes.
+\end{document}

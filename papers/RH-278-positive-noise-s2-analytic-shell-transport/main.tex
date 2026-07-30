@@ -1,0 +1,66 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Positive-Noise Hilbert--Schmidt Analyticity and Local Shell Transport}\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+Although the natural Hilbert--Schmidt family diverges at zero noise, it is
+analytic on every compact positive-noise interval.  We use this to prove a
+local shell theorem: an exact isolated spectral cluster persists under one
+common contour with a uniform resolvent bound, and an exterior selector below
+the unit radius has a locally contractive quotient power.  Thus the RH-269
+package is automatic locally at positive noise.  The theorem does not give a
+single rank-growing zero-noise selector.
+\end{abstract}
+\section{Analytic family}
+For $0<\sigma_-<\sigma_+<\infty$, the folded Gaussian kernel and every
+$\sigma$ derivative are continuous and uniformly bounded on
+$[0,1]^2\times[\sigma_-,\sigma_+]$.  Its row normalizer is uniformly positive.
+\begin{theorem}[positive-noise $\mathcal S_2$ analyticity]
+The map $\sigma\mapsto A_\sigma$ is real analytic from $(0,\infty)$ into
+$\mathcal S_2(L^2(0,1))$.  In particular, on every compact positive-noise
+interval, $\|A_\sigma-A_\tau\|_2\le L|\sigma-\tau|$ for some finite $L$.
+\end{theorem}
+\begin{proof}
+Fix $\sigma_0>0$ and complexify the noise parameter in a disk avoiding zero.
+The unnormalized folded kernel and its row normalizer are holomorphic there.
+At $\sigma_0$ the normalizer has a positive minimum over $x\in[0,1]$;
+shrinking the disk keeps its complex modulus uniformly away from zero.
+The normalized kernel is therefore a bounded $L^2([0,1]^2)$-valued
+holomorphic map, by dominated difference quotients.  Restriction to the real
+axis is real analytic.  A finite cover of a compact positive-noise interval
+bounds the first derivative and gives the mean-value estimate.
+\end{proof}
+\section{Local shell activation}
+Fix $\sigma_0>0$ and a circle $\Gamma=\{|z|=r\}$, $0<r<1$, disjoint from
+$\operatorname{spec}(A_{\sigma_0})$.  Let $E_{\sigma_0}$ be the range of the
+Riesz projection for the finite exterior spectrum $|z|>r$.  Nearby, write
+$E_\sigma$ for the transported Riesz range, $Q_\sigma$ for the orthogonal
+projection onto $E_\sigma^\perp$, and
+$C_\sigma=Q_\sigma A_\sigma Q_\sigma|_{E_\sigma^\perp}$.
+\begin{theorem}[local exterior quotient]
+For $\sigma$ near $\sigma_0$, the same circle is in the resolvent set, the
+exterior Riesz rank is constant, and
+\[
+ \sup_{\sigma,z\in\Gamma}\|(z-A_\sigma)^{-1}\|<\infty.
+\]
+The orthogonal quotient compressions $C_\sigma$ vary in $\mathcal S_2$, have
+spectral radius below $r$, and possess a uniform contractive power on a
+smaller neighborhood.  Hence the RH-269 tail theorem applies locally.
+\end{theorem}
+\begin{proof}
+Let $M_0=\sup_{z\in\Gamma}\|(z-A_{\sigma_0})^{-1}\|$.  If
+$M_0\|A_\sigma-A_{\sigma_0}\|<1$, the Neumann identity gives the common
+resolvent and bound $M_0/(1-M_0\|A_\sigma-A_{\sigma_0}\|)$.  Riesz ranks and
+orthogonal projections then vary continuously.  Relative to
+$E_\sigma\oplus E_\sigma^\perp$, invariance of the Riesz range makes
+$A_\sigma$ block upper triangular with $C_\sigma$ as the interior diagonal
+block.  Hence its spectrum is the interior spectral component and its radius
+is below $r<1$.  Gelfand's formula supplies a contractive power at
+$\sigma_0$, stable on a smaller neighborhood by continuity.
+\end{proof}
+\section{Boundary}
+This is a local fixed-rank chart.  It neither glues the rank-growing noisy
+cloud to zero nor proves the coefficient bridge.  Gates A--E remain open.
+\end{document}
