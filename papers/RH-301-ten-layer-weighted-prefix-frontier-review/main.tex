@@ -1,0 +1,149 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\newtheorem{proposition}{Proposition}[section]
+\theoremstyle{remark}\newtheorem{remark}[proposition]{Remark}
+\title{Ten Layers from Tail Absorption to the Annular Weighted-Prefix Frontier}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+RH-292--RH-301 audit the last analytic determinant leaf after the
+projection-free spectral tail.  Tail absorption shortens the missing bridge
+from slope four to the sharp mass-and-cap slope
+$1/\log(10/7)$.  We derive the exact uniform coefficient-rate threshold,
+upgrade coefficientwise convergence to a weighted bridge on an unspecified
+slow clock, and prove that unweighted agreement even on the exact clock is
+insufficient.  The existing Gaussian orbit-tube clock is strictly too short.
+At the natural endpoint-resolution clock, the shortened bridge crosses one
+counterloop alias and the slope-four cut crosses two.  The square-root parity
+term blocks separate absolute majorants.  Zero-padded root transport gives a
+sharp conditional head rate, while annular $H^\infty$ or $H^2$ convergence
+would directly close the coefficient norm without resolving roots.  None of
+these actual quantitative inputs is presently verified.  Both typed ledgers
+remain four-of-five and Gates A--E remain open.
+\end{abstract}
+
+\section{The shortened bridge}
+Let $R=7/5$, $q=1/2$, and
+\[
+ m_\sigma=\lceil4L_\sigma\rceil,\qquad
+ h_\sigma=\lceil a_*L_\sigma\rceil,\qquad
+ a_*=\frac1{\log(10/7)},\qquad L_\sigma=\log(1/\sigma).
+\]
+RH-292 proves
+\[
+ P_\sigma(m_\sigma)\le
+ P_\sigma(h_\sigma)+S_\sigma(h_\sigma)+T_\sigma(h_\sigma),
+\]
+where the last two terms tend to zero and
+$S_\sigma(h_\sigma)=O(L_\sigma^{-1})$.  Thus the shortest bridge clock
+certified by the current sharp mass-and-cap envelope has slope
+$a_*=2.803673252\ldots$, not four.  RH-293 shows that a uniform coefficient
+error $O(\sigma^\beta)$ has the sharp information-class threshold
+\[
+ \beta_*=a_*\log R=0.9433582098747317\ldots,
+\]
+with logarithmic decay at equality.
+
+RH-294 strengthens the fixed-order noisy/counterloop limits to a weighted
+full-trace constituent on some selected $h_\sigma\to\infty$.  It gives no
+lower bound on that clock.  RH-295 proves why a rate is indispensable: one
+escaping coefficient spike can have a vanishing maximum on the prescribed
+window and a divergent weighted budget.
+
+\section{Physical clock firewalls}
+The existing interior orbit-tube proof, when required uniformly over every
+order in the prefix, has ceiling
+\[
+ a_{\rm loc}=\frac1{\log\lambda}
+=1.930709419\ldots<a_*.
+\]
+RH-296 therefore proves an empty overlap between the current localization
+architecture and every mass-and-cap tail-admissible bridge clock.  This is a
+proof-method stop, not actual trace nonconvergence.
+
+If the counterloop period is tied to the intrinsic endpoint rank
+$k_\sigma=L_\sigma/(2\log\lambda)+O(1)$, RH-297 gives
+\[
+ 2k_\sigma<h_\sigma<4k_\sigma<m_\sigma<6k_\sigma.
+\]
+The minimal bridge contains one exact alias and the slope-four bridge
+contains two.  Since
+$\beta R=1.271273304\ldots>1$, their isolated shell weights grow; a positive
+theorem must retain their cancellation or renormalize them.
+
+RH-298 combines raw fixed-order localization with
+$1+\lambda_-(\sigma)=C_*\sqrt\sigma+o(\sqrt\sigma)$.  It obtains
+\[
+ \frac{c^H_{\sigma,n}-c^H_n}{\sqrt\sigma}
+ \to(-1)^n nC_*r_H^{-n}.
+\]
+The separate absolute parity budget grows on the minimal clock with exponent
+$a_*\log(R/r_H)-1/2=0.899008185\ldots$.  The combined extracted trace may
+still cancel; only the separate-majorant architecture is excluded.
+
+\section{Two admissible quantitative interfaces}
+For finite multisets padded by zeros, RH-299 proves
+\[
+ |\sum x_j^n-\sum y_j^n|\le nB^{n-1}d_1^0(X,Y).
+\]
+At $B=\beta$ and the minimal clock, the disk-bounded Lipschitz route is
+guaranteed by a root cost decaying faster than
+$\sigma^{0.6729348509\ldots}$.  The radial family makes this
+information-class threshold sharp.  No such noisy modulus-head matching is
+known, and this route would supply only the head constituent.
+
+RH-300 gives the direct aggregate alternative.  If
+\[
+ g_\sigma(z)=\sum_{n\ge2}\frac{(\tau_{\sigma,n}-a_n)z^n}{n}
+\]
+is holomorphic on a neighborhood of $|z|\le\rho$ for $\rho>R$ and has a
+controlled annular norm, then
+\[
+ P_\sigma^\infty(R)\le
+ \|g_\sigma\|_{H^\infty(\rho)}
+ \frac{(R/\rho)^2}{1-R/\rho},
+\]
+or
+\[
+ P_\sigma^\infty(R)\le
+ \|g_\sigma\|_{H^2(\rho)}
+ \frac{(R/\rho)^2}{\sqrt{1-(R/\rho)^2}}.
+\]
+The certified target radius leaves the strict annulus
+$1.4<\rho<1.426787483864073\ldots$.  An endpoint counterexample shows why
+the $H^2$ radius gap matters.
+
+\section{Typed frontier}
+\begin{center}\small
+\begin{tabular}{lccccc|c}\toprule
+branch & head & bridge & tail & target & boundary & score\\\midrule
+noisy modulus spectrum &1&0&1&1&1&4\\
+graded monodromy counterloop &1&1&0&1&1&4\\\bottomrule
+\end{tabular}
+\end{center}
+The rate-free weighted full-trace bridge does not change the bridge bit
+because it is not synchronized to $h_\sigma$.  The actual head transport and
+direct annular aggregate are also absent.  Hence the weighted cross-branch
+glue bit is false and the complete count is zero.
+
+\begin{proposition}[next executable leaf]
+The preferred reopening input is vanishing annular $H^\infty$ or $H^2$ norm
+for the actual complement-to-anchor logarithmic mismatch.  The typed
+alternative requires both a parity-renormalized, alias-inclusive full-trace
+estimate and an actual modulus-head transport estimate on the minimal clock.
+\end{proposition}
+\begin{proof}
+RH-300 turns either annular norm directly into the absolute weighted prefix,
+and RH-292 absorbs the remaining slab and tails.  Otherwise RH-288 gives
+$P\le E+D$; RH-296--RH-299 identify the precise clock, parity, alias, and root
+rate obligations of those two terms.
+\end{proof}
+
+\begin{remark}
+No Gate-A determinant identification has been completed.  Gates B--E remain
+false/open.  Nothing in this batch constructs a Hilbert--Polya operator,
+identifies Riemann zeros, proves a von Mangoldt trace formula, proves a
+completed-zeta divisor identity, or implies RH.
+\end{remark}
+\end{document}

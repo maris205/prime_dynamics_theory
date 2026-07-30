@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Square-Root Parity Leakage and a Separate-Majorant Barrier}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+We combine two archived small-noise theorems.  Fixed-length Gaussian
+localization makes the raw trace error $O_n(\sigma^2)$, while the negative
+parity eigenvalue satisfies
+$1+\lambda_-(\sigma)=C_*\sqrt\sigma+o(\sqrt\sigma)$.  After Hardy scaling
+and peripheral extraction, every fixed bulk coefficient therefore has an
+explicit square-root leading term.  More strongly, the scalar parity factor
+can be expanded uniformly through logarithmic order.  Its separate absolute
+weighted budget grows on the minimal bridge clock because $R/r_H>1$.  Thus a
+triangle-inequality proof that majorizes raw trace and parity errors
+separately cannot supply the missing full-trace bridge.  This does not prove
+that their combined, parity-extracted error diverges; moving-order
+cancellation remains an admissible route.
+\end{abstract}
+
+\section{Bulk coefficient law}
+Let $P_n$ be the deterministic flat trace and let
+\[
+ c^H_{\sigma,n}=r_H^{-n}
+ \{\operatorname{Tr}K_\sigma^n-1-\lambda_-(\sigma)^n\},
+\quad
+ c^H_n=r_H^{-n}\{P_n-1-(-1)^n\},
+\quad r_H=0.85.
+\]
+The fixed-length localization theorem gives
+$\operatorname{Tr}K_\sigma^n=P_n+O_n(\sigma^2)$, while the boundary-layer
+theorem gives
+\[
+ 1+\lambda_-(\sigma)=C_*\sqrt\sigma+o(\sqrt\sigma),
+\qquad C_*>0.
+\]
+
+\begin{theorem}\label{thm:leakage}
+For every fixed $n\ge2$,
+\[
+ \frac{c^H_{\sigma,n}-c^H_n}{\sqrt\sigma}
+ \longrightarrow (-1)^n nC_*r_H^{-n}.
+\]
+\end{theorem}
+\begin{proof}
+Write $\lambda_-=-(1-\delta_\sigma)$ with
+$\delta_\sigma=C_*\sqrt\sigma+o(\sqrt\sigma)$.  For fixed $n$,
+\[
+ \lambda_-^n=(-1)^n\{1-n\delta_\sigma+o(\sqrt\sigma)\}.
+\]
+Insert this and the $O_n(\sigma^2)$ raw-trace error into the definition of
+$c^H_{\sigma,n}$.
+\end{proof}
+
+\section{Logarithmic separate-majorant barrier}
+Fix $R=7/5$ and $h_\sigma=\lceil b\log(1/\sigma)\rceil$.  At odd pre-alias
+orders the deterministic pole and finite counterloop moments vanish.  Define
+the separate parity budget
+\[
+ B_\sigma^{\rm par}(R)=
+ \sum_{\substack{3\le n<h_\sigma\\n\ {\rm odd}}}
+ \frac{|\lambda_-(\sigma)^n-(-1)^n|}{n}
+ \left(\frac R{r_H}\right)^n.
+\]
+\begin{theorem}\label{thm:majorant}
+If $b\log(R/r_H)>1/2$, then
+$B_\sigma^{\rm par}(R)\to\infty$.  Its logarithmic growth exponent is
+\[
+ b\log(R/r_H)-\frac12.
+\]
+At $b=1/\log(10/7)$ this exponent equals
+$0.8990081854606016\ldots$.
+\end{theorem}
+\begin{proof}
+Uniformly for $n\le h_\sigma$, one has
+$n\delta_\sigma\to0$ and hence
+\[
+ |(1-\delta_\sigma)^n-1|
+ =n\delta_\sigma\{1+o(1)\}.
+\]
+After division by $n$, the odd geometric sum is dominated above and below
+by constant multiples of
+$\sqrt\sigma(R/r_H)^{h_\sigma}$.  Taking logarithms gives the exponent.
+\end{proof}
+
+\section{Protocol and boundary}
+The computation uses the archived value
+$C_*=0.105258535936908\ldots$ to evaluate the exact scalar parity budget for
+the leading model over five noise scales.  The exponent theorem uses only
+$C_*>0$.
+
+\begin{remark}
+A divergent term in a separated triangle inequality is not a lower bound on
+the combined error $c^H_{\sigma,n}-s_{k,n}-a_n$.  Raw trace and parity
+corrections can cancel at moving order.  RH-298 therefore rules out one
+proof architecture, not the physical bridge or the operator route globally.
+Gates A--E remain false/open.
+\end{remark}
+\end{document}

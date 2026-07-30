@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{A Rate-Free Weighted Diagonal Bridge for Full Noisy Traces}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The archived noisy-trace/counterloop bridge was growing-prefix but
+unweighted.  We show that the same fixed-order inputs already imply a
+weighted theorem after a sharper diagonal choice.  At level $j$, choose the
+coefficient tolerance inversely proportional to
+$j\sum_{n=2}^jR^n/n$.  Fixed-order noisy trace convergence and fixed-order
+finite-radius counterloop convergence then provide clocks
+$h_\sigma,k_\sigma\to\infty$, with $h_\sigma<2k_\sigma$, on which the full
+weighted constituent error tends to zero.  The construction remains
+nonquantitative: $h_\sigma$ need not dominate any prescribed function of
+$\log(1/\sigma)$.  It therefore does not reach the minimal RH-292 bridge
+clock and does not close the determinant interface.
+\end{abstract}
+
+\section{Fixed-order inputs}
+Let
+\[
+ e_{\sigma,k,n}=c_{\sigma,n}-s_{k,n}-a_n.
+\]
+For each fixed $n\ge2$, the archived limits give
+\[
+ c_{\sigma,n}\to c_n,\qquad s_{k,n}\to p_n,\qquad a_n=c_n-p_n.
+\]
+Fix $R>1$ and define
+\[
+ A_j(R)=\sum_{n=2}^j\frac{R^n}{n},\qquad
+ \eta_j=\frac1{2jA_j(R)}.
+\]
+
+\section{Weighted diagonal theorem}
+\begin{theorem}\label{thm:weighted}
+There are integer-valued clocks $h_\sigma,k_\sigma$ such that
+\[
+ h_\sigma\to\infty,\qquad k_\sigma\to\infty,\qquad
+ h_\sigma<2k_\sigma,
+\]
+and
+\[
+ E_\sigma^{(h)}(R):=
+ \sum_{n=2}^{h_\sigma}
+ \frac{|e_{\sigma,k_\sigma,n}|R^n}{n}\longrightarrow0.
+\]
+\end{theorem}
+\begin{proof}
+For each $j\ge2$, fixed-order noisy convergence supplies $\delta_j>0$ such
+that
+\[
+ \max_{2\le n\le j}|c_{\sigma,n}-c_n|\le\eta_j
+ \quad(0<\sigma\le\delta_j).
+\]
+Choose the $\delta_j$ strictly decreasing with $\delta_j\le j^{-1}$.
+Fixed-order shell convergence
+supplies $K_j^0$ such that
+\[
+ \max_{2\le n\le j}|s_{k,n}-p_n|\le\eta_j
+ \quad(k\ge K_j^0).
+\]
+Set $K_1=0$, and recursively choose
+$K_j>\max\{K_{j-1},j/2,K_j^0\}$.  On the slab
+$\delta_{j+1}<\sigma\le\delta_j$, set
+$h_\sigma=j$ and $k_\sigma=K_j$.  Then
+$|e_{\sigma,k_\sigma,n}|\le2\eta_j$ for $2\le n\le j$, and hence
+\[
+ E_\sigma^{(h)}(R)\le2\eta_jA_j(R)=j^{-1}.
+\]
+For $\sigma>\delta_2$, define both clocks arbitrarily.
+Both clocks diverge and the recursive inequality gives the pre-alias
+condition.
+\end{proof}
+
+\section{Protocol and exact boundary}
+The computation lists $A_j(7/5)$, the chosen tolerance $\eta_j$, and the
+resulting certified budget $1/j$.  It evaluates the proof schedule only; it
+does not infer the unknown slab thresholds $\delta_j$ from finite data.
+
+\begin{remark}
+The theorem proves a weighted full-trace constituent on an unspecified slow
+clock.  It gives no lower bound comparable with
+$\log(1/\sigma)/\log(10/7)$ and says nothing about the noisy modulus head.
+Thus the required logarithmic $E_\sigma$ and $D_\sigma$ budgets remain open.
+Gates A--E remain false/open, with no Hilbert--Polya or RH conclusion.
+\end{remark}
+\end{document}

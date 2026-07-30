@@ -1,0 +1,114 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Annular \(H^\infty\) and Hardy Criteria for the Direct Weighted Prefix}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The remaining determinant bridge is an absolute weighted coefficient norm,
+but it need not be proved coefficient by coefficient or root by root.  We
+give two direct analytic criteria.  If the logarithmic mismatch is small in
+$H^\infty$ on any circle strictly outside the target disk, Cauchy's estimate
+controls the full weighted coefficient norm.  A vanishing $H^2$ boundary
+norm on the same annulus also suffices by Cauchy--Schwarz.  Both bounds are
+explicit.  At radius $1.41$, which lies between the target radius $1.4$ and
+the certified deterministic radius $1.426787\ldots$, their constants are
+$139.007\ldots$ and $8.292\ldots$.  An endpoint polynomial family shows that
+vanishing $H^2$ norm on the target circle alone is insufficient.  No actual
+noisy annular convergence is asserted.
+\end{abstract}
+
+\section{Logarithmic mismatch}
+Let
+\[
+ g_\sigma(z)=\sum_{n\ge2}
+ \frac{\tau_{\sigma,n}-a_n}{n}z^n
+\]
+be holomorphic on a neighborhood of the closed disk $|z|\le\rho$, where
+$\rho>R>0$.  Define the full absolute coefficient norm
+\[
+ P_\sigma^\infty(R)=\sum_{n\ge2}
+ \frac{|\tau_{\sigma,n}-a_n|R^n}{n}.
+\]
+
+\section{Two annular criteria}
+\begin{theorem}\label{thm:analytic}
+Put $x=R/\rho<1$.
+\begin{enumerate}
+\item If $\sup_{|z|\le\rho}|g_\sigma(z)|\le M_\sigma$, then
+\[
+ P_\sigma^\infty(R)\le M_\sigma\frac{x^2}{1-x}.
+\]
+\item If
+\[
+ \|g_\sigma\|_{H^2(\rho)}^2:=
+ \sum_{n\ge2}
+ \frac{|\tau_{\sigma,n}-a_n|^2\rho^{2n}}{n^2}
+ \le H_\sigma^2,
+\]
+then
+\[
+ P_\sigma^\infty(R)\le
+ H_\sigma\frac{x^2}{\sqrt{1-x^2}}.
+\]
+\end{enumerate}
+In particular, $M_\sigma\to0$ or $H_\sigma\to0$ makes the full norm vanish.
+Every moving prefix is bounded by $P_\sigma^\infty(R)$, so the RH-292
+shortened prefix follows.
+\end{theorem}
+\begin{proof}
+Cauchy's coefficient estimate gives
+\[
+ \frac{|\tau_{\sigma,n}-a_n|}{n}\le M_\sigma\rho^{-n},
+\]
+and summing the geometric series proves the first bound.  For the second,
+apply Cauchy--Schwarz to
+\[
+ \sum_{n\ge2}
+ \left(
+ \frac{|\tau_{\sigma,n}-a_n|\rho^n}{n}
+ \right)x^n.
+\]
+The square sum of $x^n$ from $n=2$ onward is $x^4/(1-x^2)$.
+\end{proof}
+
+\section{Endpoint obstruction}
+\begin{theorem}\label{thm:endpoint}
+The strict radius gap in the $H^2$ criterion cannot be removed uniformly.
+For every $N\ge1$, let
+\[
+ g_N(z)=\frac1N\sum_{n=2}^{N+1}(z/R)^n.
+\]
+Then
+\[
+ \|g_N\|_{H^2(R)}=N^{-1/2}\longrightarrow0,
+\qquad
+ \sum_{n=2}^{N+1}|[z^n]g_N|R^n=1.
+\]
+\end{theorem}
+\begin{proof}
+There are $N$ coefficients, each with boundary-scaled modulus $1/N$.
+Their square sum is $1/N$, while their absolute sum is one.
+\end{proof}
+
+\section{Certified annulus and protocol}
+The deterministic coefficient radius is
+$\rho_*=0.85\lambda=1.426787483864073\ldots$.  Taking $\rho=1.41$ and
+$R=1.4$ gives
+\[
+ \frac{x^2}{1-x}=139.0070921986\ldots,\qquad
+ \frac{x^2}{\sqrt{1-x^2}}=8.2924678943\ldots.
+\]
+The computation records these constants and the endpoint family.  It does
+not estimate $g_\sigma$ for the noisy operator.
+
+\begin{remark}
+The theorem is a reopening criterion, not a verified annular bridge.  If
+activated it supplies the direct $P_\sigma^\infty$ bound, but no such
+$H^\infty$ or $H^2$ convergence is currently proved.  Gates A--E remain
+false/open and no
+Hilbert--Polya, zeta-divisor, or RH statement follows.
+\end{remark}
+\end{document}

@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{A Strict Separation Between Spectral-Tail and Orbit-Localization Clocks}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The missing weighted bridge might appear approachable by extending the
+fixed-length Gaussian localization theorem to a logarithmic moving order.
+We show that the current architecture cannot overlap the projection-free
+tail clock.  The Hilbert--Schmidt mass-and-cap tail at $q=1/2$ and $R=7/5$
+requires slope at least $1/\log(10/7)=2.803673\ldots$.  Boundary crowding
+forces the existing interior orbit-tube proof to have slope at most
+$1/\log\lambda=1.930709\ldots$.  The two closed slope ranges are strictly
+disjoint.  This is a rigorous proof-method obstruction.  It does not rule out
+actual trace convergence obtained by a new moving boundary-layer or aggregate
+determinant argument.
+\end{abstract}
+
+\section{The two clocks}
+Write $L_\sigma=\log(1/\sigma)$ and
+$m_\sigma=\lceil aL_\sigma\rceil$.  The RH-283 mass-and-cap theorem gives
+the critical tail slope
+\[
+ a_{\rm tail}=\frac1{\log(1/(qR))}
+ =\frac1{\log(10/7)}
+ =2.803673252057129\ldots.
+\]
+At equality its certified mass-and-cap upper bound is
+$O(L_\sigma^{-1})$.
+
+For a proposed prefix cut $m_\sigma$, let
+\[
+ \ell_\sigma=2\left\lfloor\frac{m_\sigma-1}{2}\right\rfloor
+\]
+be the largest even order below it.  The boundary-cycle theorem gives cycles
+at this even order with clearance
+\[
+ \Delta_{\ell_\sigma}\le C\lambda^{-\ell_\sigma},\qquad
+ \lambda=1.678573510428322\ldots.
+\]
+A proof uniform over every order below $m_\sigma$ must handle this even
+order.  The existing Gaussian orbit-tube argument requires at least
+$\Delta_{\ell_\sigma}\gtrsim\sigma$, and its asymptotic form requires
+$\Delta_{\ell_\sigma}/\sigma\to\infty$.  Thus its limiting prefix-slope
+ceiling is
+\[
+ a_{\rm loc}=\frac1{\log\lambda}
+ =1.930709419186936\ldots.
+\]
+
+\section{Separation theorem}
+\begin{theorem}\label{thm:gap}
+There is no logarithmic slope $a$ that is both tail-admissible for the
+uniform RH-282 mass-and-cap estimate and admissible for the archived
+interior orbit-tube localization proof.  Quantitatively,
+\[
+ a_{\rm tail}-a_{\rm loc}
+ =0.872963832870193\ldots>0,
+\qquad
+ \frac{a_{\rm tail}}{a_{\rm loc}}
+ =1.452146669092140\ldots.
+\]
+At the maximal localization slope the tail power exponent is
+\[
+ a_{\rm loc}\log(10/7)-1=-0.3113643261\ldots,
+\]
+so the mass-and-cap upper bound does not vanish.  At every
+$a\ge a_{\rm tail}$,
+\[
+ \frac{\Delta_{\ell_\sigma}}{\sigma}
+ \le C'\sigma^{a\log\lambda-1}\longrightarrow0.
+\]
+\end{theorem}
+\begin{proof}
+The first two displays are direct substitutions.  Since
+$a_{\rm tail}>a_{\rm loc}$, the slope intervals do not meet.  Also
+$a_{\rm tail}\log\lambda=1.452146\ldots>1$, so the clearance ratio tends to
+zero at the minimal tail slope and therefore at every larger slope; here
+$\ell_\sigma=aL_\sigma+O(1)$ absorbs parity and rounding into $C'$.
+\end{proof}
+
+\section{Protocol and scope}
+The computation records the two exact slopes, their gap and ratio, the tail
+exponent at $a_{\rm loc}$, and the clearance exponents at
+$a_{\rm tail}$ and $a=4$.  No endpoint traces are fitted.
+
+\begin{remark}
+The theorem blocks only the present isolated-interior-cycle proof.  It does
+not prove that the physical noisy trace fails at logarithmic order, and it
+does not exclude cancellations, boundary-layer localization, or a direct
+contour aggregate.  Gates A--E remain false/open.
+\end{remark}
+\end{document}
