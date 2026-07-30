@@ -1,0 +1,3365 @@
+{
+  "$id": "tpc205-pair-native-registry-interface-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "authorization": {
+      "additionalProperties": false,
+      "properties": {
+        "authorization_is_theorem_evidence": {
+          "const": false,
+          "type": "boolean"
+        },
+        "scope": {
+          "const": "FINITE_PAIR_NATIVE_POST_TTSTAR_REGISTRY_AND_ARCHITECTURE_REROUTE_INTERFACE",
+          "type": "string"
+        },
+        "user_authorized": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "authorization_is_theorem_evidence",
+        "scope",
+        "user_authorized"
+      ],
+      "type": "object"
+    },
+    "claim_firewall": {
+      "additionalProperties": false,
+      "properties": {
+        "L2_result": {
+          "const": "NONE",
+          "type": "string"
+        },
+        "fixed_atom_credit": {
+          "const": 0,
+          "type": "integer"
+        },
+        "fixed_atom_decay_obtained": {
+          "const": false,
+          "type": "boolean"
+        },
+        "h1_repair_proved": {
+          "const": false,
+          "type": "boolean"
+        },
+        "mathematical_reopen": {
+          "const": false,
+          "type": "boolean"
+        },
+        "pair_to_omega_crosswalk_proved": {
+          "const": false,
+          "type": "boolean"
+        },
+        "positive_sigma_obtained": {
+          "const": false,
+          "type": "boolean"
+        },
+        "production_pair_occurrence_proved": {
+          "const": false,
+          "type": "boolean"
+        },
+        "program_positive_L2": {
+          "const": false,
+          "type": "boolean"
+        },
+        "strict_one_over_400_paid": {
+          "const": false,
+          "type": "boolean"
+        },
+        "structural_reopen": {
+          "const": false,
+          "type": "boolean"
+        },
+        "twin_prime_theorem": {
+          "const": false,
+          "type": "boolean"
+        },
+        "user_authorization_is_theorem_evidence": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "L2_result",
+        "fixed_atom_credit",
+        "fixed_atom_decay_obtained",
+        "h1_repair_proved",
+        "mathematical_reopen",
+        "pair_to_omega_crosswalk_proved",
+        "positive_sigma_obtained",
+        "production_pair_occurrence_proved",
+        "program_positive_L2",
+        "strict_one_over_400_paid",
+        "structural_reopen",
+        "twin_prime_theorem",
+        "user_authorization_is_theorem_evidence"
+      ],
+      "type": "object"
+    },
+    "classification": {
+      "const": "PAIR_NATIVE_POST_TTSTAR_REGISTRY_INTERFACE_L1",
+      "type": "string"
+    },
+    "decision": {
+      "additionalProperties": false,
+      "properties": {
+        "batch_stop": {
+          "const": "USER_CONFIRMATION_REQUIRED",
+          "type": "string"
+        },
+        "next_paper": {
+          "const": null,
+          "type": "null"
+        },
+        "tpc206_authorized": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "batch_stop",
+        "next_paper",
+        "tpc206_authorized"
+      ],
+      "type": "object"
+    },
+    "first_missing": {
+      "const": "SOURCE_LOCKED_POST_TTSTAR_ORDERED_PAIR_REGISTRY_WITH_COMPLETE_PAIR_COEFFICIENT_AND_GLOBAL_NORMALIZATION",
+      "type": "string"
+    },
+    "first_missing_subgates": {
+      "items": false,
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "const": "PAIR_NATIVE_POST_TTSTAR_ACTUAL_REGISTRY_WITH_FULL_LITERAL_SCOPE_AND_COEFFICIENT",
+          "type": "string"
+        },
+        {
+          "const": "TPC18_PAIR_TO_TPC93_RETAINED_SOURCE_ATOM_THEOREM_CROSSWALK",
+          "type": "string"
+        }
+      ],
+      "type": "array"
+    },
+    "fixtures": {
+      "items": false,
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "cut_locators": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "cut_path_id": {
+                      "const": "cut|X=512|h0=2|ell=103|k=5|d=1|jL=6|jK=3|D0=0|type=TAIL",
+                      "type": "string"
+                    },
+                    "integrity_sha256": {
+                      "const": "2eef9d8670c23ffc10b2a9cab0d488b0908293cfdb482667da824e702a1347cc",
+                      "type": "string"
+                    },
+                    "line": {
+                      "const": 2554,
+                      "type": "integer"
+                    },
+                    "path": {
+                      "const": "papers/tpc-136-complete-native-cut-archive/samples/tpc136_cut_paths.jsonl",
+                      "type": "string"
+                    },
+                    "reason": {
+                      "const": "NO_TAIL_ROOM",
+                      "type": "string"
+                    },
+                    "terminal": {
+                      "const": "FRONTIER_UNMAPPED",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "cut_path_id",
+                    "integrity_sha256",
+                    "line",
+                    "path",
+                    "reason",
+                    "terminal"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "cut_path_id": {
+                      "const": "cut|X=512|h0=2|ell=107|k=5|d=1|jL=6|jK=3|D0=0|type=TAIL",
+                      "type": "string"
+                    },
+                    "integrity_sha256": {
+                      "const": "cdc0f7363ab88106ce65bb46da800c05c3fba2b391d9490d7b2ca8bab8c816db",
+                      "type": "string"
+                    },
+                    "line": {
+                      "const": 2602,
+                      "type": "integer"
+                    },
+                    "path": {
+                      "const": "papers/tpc-136-complete-native-cut-archive/samples/tpc136_cut_paths.jsonl",
+                      "type": "string"
+                    },
+                    "reason": {
+                      "const": "NO_TAIL_ROOM",
+                      "type": "string"
+                    },
+                    "terminal": {
+                      "const": "FRONTIER_UNMAPPED",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "cut_path_id",
+                    "integrity_sha256",
+                    "line",
+                    "path",
+                    "reason",
+                    "terminal"
+                  ],
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            },
+            "evidence_level": {
+              "const": "ROW_ONLY",
+              "type": "string"
+            },
+            "h0": {
+              "const": 2,
+              "type": "integer"
+            },
+            "id": {
+              "const": "DUAL_SOURCE_LOCKED_ROW_PAIR_CANDIDATE",
+              "type": "string"
+            },
+            "joint_mask_value": {
+              "const": null,
+              "type": "null"
+            },
+            "numeric_nonzero_status": {
+              "const": "UNDECIDED",
+              "type": "string"
+            },
+            "ordered_pair": {
+              "additionalProperties": false,
+              "properties": {
+                "Delta_sharp": {
+                  "const": -4,
+                  "type": "integer"
+                },
+                "N_alpha": {
+                  "const": 517,
+                  "type": "integer"
+                },
+                "N_gamma": {
+                  "const": 537,
+                  "type": "integer"
+                },
+                "alpha": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "const": 103,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 1,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "gamma": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "const": 107,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 1,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "gcd_targets": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "j": {
+                  "const": 5,
+                  "type": "integer"
+                },
+                "ordered_row_determinant": {
+                  "const": -8,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "Delta_sharp",
+                "N_alpha",
+                "N_gamma",
+                "alpha",
+                "gamma",
+                "gcd_targets",
+                "j",
+                "ordered_row_determinant"
+              ],
+              "type": "object"
+            },
+            "pair_occurrence_id": {
+              "const": null,
+              "type": "null"
+            },
+            "production_occurrence": {
+              "const": false,
+              "type": "boolean"
+            },
+            "row_locators": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "integrity_sha256": {
+                      "const": "e550d2d7be48d85076919a8adf86ba446f88f75b404df48c0483d3cf27b59369",
+                      "type": "string"
+                    },
+                    "line": {
+                      "const": 724,
+                      "type": "integer"
+                    },
+                    "native_id": {
+                      "const": "X=512|h0=2|ell=103|k=5|d=1",
+                      "type": "string"
+                    },
+                    "path": {
+                      "const": "papers/tpc-133-executable-native-entrance/samples/tpc133_native_atoms.jsonl",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "integrity_sha256",
+                    "line",
+                    "native_id",
+                    "path"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "integrity_sha256": {
+                      "const": "633e20ac5a83d425471be3ba095df10a1635c3f45ce5cac6def9d5ba936152d9",
+                      "type": "string"
+                    },
+                    "line": {
+                      "const": 736,
+                      "type": "integer"
+                    },
+                    "native_id": {
+                      "const": "X=512|h0=2|ell=107|k=5|d=1",
+                      "type": "string"
+                    },
+                    "path": {
+                      "const": "papers/tpc-133-executable-native-entrance/samples/tpc133_native_atoms.jsonl",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "integrity_sha256",
+                    "line",
+                    "native_id",
+                    "path"
+                  ],
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "cut_locators",
+            "evidence_level",
+            "h0",
+            "id",
+            "joint_mask_value",
+            "numeric_nonzero_status",
+            "ordered_pair",
+            "pair_occurrence_id",
+            "production_occurrence",
+            "row_locators"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "asymptotic_evidence": {
+              "const": false,
+              "type": "boolean"
+            },
+            "child_fields_directly_certified_by_tpc32": {
+              "const": false,
+              "type": "boolean"
+            },
+            "derived_tpc93_fields": {
+              "additionalProperties": false,
+              "properties": {
+                "D_t": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "U_t": {
+                  "const": 61,
+                  "type": "integer"
+                },
+                "alpha": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "const": 59,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 1,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "d0": {
+                  "const": 0,
+                  "type": "integer"
+                },
+                "determinant": {
+                  "const": 2,
+                  "type": "integer"
+                },
+                "gamma": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "const": 71,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 1,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "j": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "polarization": {
+                  "const": "L",
+                  "type": "string"
+                },
+                "projector_weight": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "sigma": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "t": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "u": {
+                  "const": 61,
+                  "type": "integer"
+                },
+                "u0": {
+                  "const": 2,
+                  "type": "integer"
+                },
+                "v": {
+                  "const": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "D_t",
+                "U_t",
+                "alpha",
+                "d0",
+                "determinant",
+                "gamma",
+                "j",
+                "polarization",
+                "projector_weight",
+                "sigma",
+                "t",
+                "u",
+                "u0",
+                "v"
+              ],
+              "type": "object"
+            },
+            "direct_tpc32_fields": {
+              "additionalProperties": false,
+              "properties": {
+                "C": {
+                  "const": 30,
+                  "type": "integer"
+                },
+                "L": {
+                  "const": 100,
+                  "type": "integer"
+                },
+                "R": {
+                  "const": 12,
+                  "type": "integer"
+                },
+                "T": {
+                  "const": 50,
+                  "type": "integer"
+                },
+                "U0": {
+                  "const": 200,
+                  "type": "integer"
+                },
+                "d": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "h": {
+                  "const": 2,
+                  "type": "integer"
+                },
+                "j": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "rows": {
+                  "items": false,
+                  "maxItems": 9,
+                  "minItems": 9,
+                  "prefixItems": [
+                    {
+                      "const": 59,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 71,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 101,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 107,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 137,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 149,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 179,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 191,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 197,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "targets": {
+                  "items": false,
+                  "maxItems": 9,
+                  "minItems": 9,
+                  "prefixItems": [
+                    {
+                      "const": 61,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 73,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 103,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 109,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 139,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 151,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 181,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 193,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 199,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "C",
+                "L",
+                "R",
+                "T",
+                "U0",
+                "d",
+                "h",
+                "j",
+                "rows",
+                "targets"
+              ],
+              "type": "object"
+            },
+            "evidence_level": {
+              "const": "DERIVED_L0_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC32_PRIMITIVE_FIXTURE_PLUS_TPC93_FORMULAS_DERIVED_L0_ONLY",
+              "type": "string"
+            },
+            "production_occurrence": {
+              "const": false,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "asymptotic_evidence",
+            "child_fields_directly_certified_by_tpc32",
+            "derived_tpc93_fields",
+            "direct_tpc32_fields",
+            "evidence_level",
+            "id",
+            "production_occurrence"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "formula_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "coefficient_status": {
+          "const": "DISPLAYED_WITH_B_ALIASES_NOT_FULLY_MATERIALIZED",
+          "type": "string"
+        },
+        "conjugation_rule": {
+          "const": "NO_IMPLICIT_CONJUGATION",
+          "type": "string"
+        },
+        "diagonal_rule": {
+          "const": "SEPARATE_E_D_NOT_AN_OFF_DIAGONAL_PARENT",
+          "type": "string"
+        },
+        "displayed_coefficient_factors": {
+          "items": false,
+          "maxItems": 8,
+          "minItems": 8,
+          "prefixItems": [
+            {
+              "const": "mu(d_alpha)",
+              "type": "string"
+            },
+            {
+              "const": "mu(d_gamma)",
+              "type": "string"
+            },
+            {
+              "const": "log(ell_alpha)",
+              "type": "string"
+            },
+            {
+              "const": "log(ell_gamma)",
+              "type": "string"
+            },
+            {
+              "const": "r_R(N_alpha(j))",
+              "type": "string"
+            },
+            {
+              "const": "r_R(N_gamma(j))",
+              "type": "string"
+            },
+            {
+              "const": "B_alpha(j)",
+              "type": "string"
+            },
+            {
+              "const": "B_gamma(j)",
+              "type": "string"
+            }
+          ],
+          "type": "array"
+        },
+        "left_u_rule": {
+          "const": "T<u<=U0 and u|N_alpha(j)",
+          "type": "string"
+        },
+        "matched_shell": {
+          "const": "K_sh(alpha,gamma,j)=C_m(j)H_n(j)+H_m(j)C_n(j)",
+          "type": "string"
+        },
+        "ordered_domain": {
+          "const": "same opened-D packet: sum_j sum_{alpha!=gamma}; alpha=(ell_alpha,d_alpha), gamma=(ell_gamma,d_gamma)",
+          "type": "string"
+        },
+        "pair_to_omega_bridge": {
+          "const": "MISSING",
+          "type": "string"
+        },
+        "right_u_rule": {
+          "const": "T<u<=U0 and u|N_gamma(j)",
+          "type": "string"
+        },
+        "second_row_gamma_rule": {
+          "const": "GENERATED_BY_TTSTAR_SQUARE_EXPANSION",
+          "type": "string"
+        },
+        "support_nonzero_rule": {
+          "const": "FORMULA_SUPPORT_DOES_NOT_IMPLY_ACTIVE_NONZERO",
+          "type": "string"
+        },
+        "support_restrictions_status": {
+          "const": "UNDERSTOOD_BY_TPC18_NOT_LITERALIZED",
+          "type": "string"
+        }
+      },
+      "required": [
+        "coefficient_status",
+        "conjugation_rule",
+        "diagonal_rule",
+        "displayed_coefficient_factors",
+        "left_u_rule",
+        "matched_shell",
+        "ordered_domain",
+        "pair_to_omega_bridge",
+        "right_u_rule",
+        "second_row_gamma_rule",
+        "support_nonzero_rule",
+        "support_restrictions_status"
+      ],
+      "type": "object"
+    },
+    "gates": {
+      "items": false,
+      "maxItems": 23,
+      "minItems": 23,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "ORDERED_POST_TTSTAR_PAIR_DOMAIN",
+              "type": "string"
+            },
+            "status": {
+              "const": "PASS_FORMULA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "TPC18_DISPLAYED_PAIR_COEFFICIENT_WITH_B_ALIASES",
+              "type": "string"
+            },
+            "status": {
+              "const": "PASS_FORMULA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "SECOND_ROW_GAMMA_FROM_TTSTAR_EXPANSION",
+              "type": "string"
+            },
+            "status": {
+              "const": "PASS_FORMULA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "U_FROM_SUPPLIED_TPC32_93_PARENT_POLARIZATION",
+              "type": "string"
+            },
+            "status": {
+              "const": "PASS_FORMULA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "TPC93_SOURCE_CHILD_REINDEXING",
+              "type": "string"
+            },
+            "status": {
+              "const": "PASS_L1_ON_SUPPLIED_RETAINED_OMEGA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "CONCRETE_DUAL_ARCHIVED_ROW_CANDIDATE",
+              "type": "string"
+            },
+            "status": {
+              "const": "PASS_ROW_ONLY",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "TPC32_TPC93_DERIVED_AFFINE_CHILD",
+              "type": "string"
+            },
+            "status": {
+              "const": "PASS_DERIVED_L0_ONLY",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "ACTIVE_PRODUCTION_PAIR_OCCURRENCE",
+              "type": "string"
+            },
+            "status": {
+              "const": "NOT_TESTABLE",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "FULL_LITERAL_PAIR_COEFFICIENT_MATERIALIZATION",
+              "type": "string"
+            },
+            "status": {
+              "const": "NOT_TESTABLE",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "PAIR_COEFFICIENT_MATERIALIZATION_AND_NONZERO",
+              "type": "string"
+            },
+            "status": {
+              "const": "NOT_TESTABLE",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "SOURCE_LOCKED_PAIR_TO_OMEGA_CROSSWALK",
+              "type": "string"
+            },
+            "status": {
+              "const": "FAIL",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "NU_X_NORMALIZED_RETURN_TO_H1",
+              "type": "string"
+            },
+            "status": {
+              "const": "FAIL",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "H1_E_REPAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "FAIL",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "PAIR_NATIVE_FORMULA_GATE",
+              "type": "string"
+            },
+            "status": {
+              "const": "PASS",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "PAIR_NATIVE_ARCHITECTURE_REROUTE_CANDIDATE",
+              "type": "string"
+            },
+            "status": {
+              "const": "OPEN",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "PAIR_NATIVE_PRODUCTION_REOPEN_TRIGGER",
+              "type": "string"
+            },
+            "status": {
+              "const": "FAIL",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "PAIR_NATIVE_STRUCTURAL_REOPEN_TRIGGER",
+              "type": "string"
+            },
+            "status": {
+              "const": "FAIL",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "TPC32_MATCHED_SHELL_AND_POLARIZATION",
+              "type": "string"
+            },
+            "status": {
+              "const": "PASS_L1_FORMULA",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "TPC18_PAIR_TO_TPC32_LITERAL_PARENT_CROSSWALK",
+              "type": "string"
+            },
+            "status": {
+              "const": "NOT_TESTABLE",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "TPC93_PROJECTOR_WEIGHTED_REASSEMBLY",
+              "type": "string"
+            },
+            "status": {
+              "const": "PASS_L1_ON_SUPPLIED_RETAINED_OMEGA_AND_TPC93_PHYSICAL_SUPPORT",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "TTSTAR_PAIR_VS_H1_LINEAR_EDGE_TYPE_SEPARATION",
+              "type": "string"
+            },
+            "status": {
+              "const": "PASS_L1_STRUCTURAL",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "PAIR_NATIVE_ACTIVE_SUPPORT_CERTIFICATE",
+              "type": "string"
+            },
+            "status": {
+              "const": "NOT_TESTABLE",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "PAIR_NATIVE_CANONICAL_MINIMAL_REPRESENTATION",
+              "type": "string"
+            },
+            "status": {
+              "const": "NOT_TESTABLE",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "status"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "h1_type_separation": {
+      "additionalProperties": false,
+      "properties": {
+        "active_support_root_A": {
+          "const": "NOT_TESTABLE",
+          "type": "string"
+        },
+        "canonical_minimal_root_M": {
+          "const": "NOT_TESTABLE",
+          "type": "string"
+        },
+        "cut_inverse_aggregation_theorem": {
+          "const": "MISSING",
+          "type": "string"
+        },
+        "h1_E_repair": {
+          "const": false,
+          "type": "boolean"
+        },
+        "h1_relation": {
+          "const": "LINEAR_CUT_TO_OCCURRENCE_EDGE",
+          "type": "string"
+        },
+        "pair_relation": {
+          "const": "TTSTAR_BILINEAR_PAIR_TERM",
+          "type": "string"
+        },
+        "tpc143_conceptual_entries": {
+          "const": "SIGNED_OR_COMPLEX_ALLOWED",
+          "type": "string"
+        },
+        "tpc174_finite_contract": {
+          "const": "NONZERO_EXACT_RATIONAL_WEIGHTS_AND_PER_CUT_COLUMN_SUM_ONE",
+          "type": "string"
+        }
+      },
+      "required": [
+        "active_support_root_A",
+        "canonical_minimal_root_M",
+        "cut_inverse_aggregation_theorem",
+        "h1_E_repair",
+        "h1_relation",
+        "pair_relation",
+        "tpc143_conceptual_entries",
+        "tpc174_finite_contract"
+      ],
+      "type": "object"
+    },
+    "loss_ledger": {
+      "items": false,
+      "maxItems": 17,
+      "minItems": 17,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "prime_power_error",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC18_HYPOTHESES_ONLY_NOT_ATTACHED_TO_PRODUCTION_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_BOUND",
+              "type": "string"
+            },
+            "value": {
+              "const": "X L^(-1/2) X^eps",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "dyadic_D_partition",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC18_HYPOTHESES_ONLY_NOT_ATTACHED_TO_PRODUCTION_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_ACCOUNTING",
+              "type": "string"
+            },
+            "value": {
+              "const": "fixed bounded overlap; O(log X) nonempty slices; at most one O(log X) reassembly/pigeonhole factor",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "cauchy_factor",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC18_HYPOTHESES_ONLY_NOT_ATTACHED_TO_PRODUCTION_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_ACCOUNTING",
+              "type": "string"
+            },
+            "value": {
+              "const": "J",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "diagonal",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC18_HYPOTHESES_ONLY_NOT_ATTACHED_TO_PRODUCTION_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_BOUND",
+              "type": "string"
+            },
+            "value": {
+              "const": "E_D << X^(1+eps)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "same_rows",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC18_HYPOTHESES_ONLY_NOT_ATTACHED_TO_PRODUCTION_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_BOUND",
+              "type": "string"
+            },
+            "value": {
+              "const": "XQ L^(-1) X^eps",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "near_rows",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC18_HYPOTHESES_ONLY_NOT_ATTACHED_TO_PRODUCTION_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_BOUND",
+              "type": "string"
+            },
+            "value": {
+              "const": "XQ (X^(-kappa)+L^(-1)) X^eps",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "large_row_gcd",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC18_HYPOTHESES_ONLY_NOT_ATTACHED_TO_PRODUCTION_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_BOUND",
+              "type": "string"
+            },
+            "value": {
+              "const": "XQ X^(-kappa+eps)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "generic_remainder",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC18_HYPOTHESES_ONLY_NOT_ATTACHED_TO_PRODUCTION_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "UNCONTROLLED_HARD_REMAINDER",
+              "type": "string"
+            },
+            "value": {
+              "const": "MISSING",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "tpc25_zero",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC25_THEOREM_HYPOTHESES_ONLY_NOT_COMPOSED_WITH_TPC18_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_BOUND",
+              "type": "string"
+            },
+            "value": {
+              "const": "XQ{(log X)^(-A)+X^(-s+kappa+o(1))}",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "tpc25_principal",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC25_THEOREM_HYPOTHESES_ONLY_NOT_COMPOSED_WITH_TPC18_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_BOUND",
+              "type": "string"
+            },
+            "value": {
+              "const": "Q^2 X^eps",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "tpc25_drift",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC25_THEOREM_HYPOTHESES_ONLY_NOT_COMPOSED_WITH_TPC18_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_BOUND",
+              "type": "string"
+            },
+            "value": {
+              "const": "JQ^2 L^(-1) X^eps",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "tpc25_polylog",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC25_THEOREM_HYPOTHESES_ONLY_NOT_COMPOSED_WITH_TPC18_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_ACCOUNTING",
+              "type": "string"
+            },
+            "value": {
+              "const": "(log X)^(O(1))",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "tpc32_drift",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC32_THEOREM_HYPOTHESES_ONLY_NOT_COMPOSED_WITH_TPC18_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_BOUND",
+              "type": "string"
+            },
+            "value": {
+              "const": "X^eps XQ/L",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "large_content",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC32_THEOREM_HYPOTHESES_ONLY_NOT_COMPOSED_WITH_TPC18_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_BOUND",
+              "type": "string"
+            },
+            "value": {
+              "const": "X^eps XQ(1/J+1/C)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "tpc93_fourier_tail",
+              "type": "string"
+            },
+            "scope": {
+              "const": "TPC93_THEOREM_HYPOTHESES_ONLY_NOT_COMPOSED_WITH_TPC18_PAIR",
+              "type": "string"
+            },
+            "status": {
+              "const": "SOURCE_BACKED_BOUND",
+              "type": "string"
+            },
+            "value": {
+              "const": "X^(o(1)) N0 Rwin^(1/2-K)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "square_root_return",
+              "type": "string"
+            },
+            "scope": {
+              "const": "GLOBAL_RETURN_SLOT_UNSUPPLIED",
+              "type": "string"
+            },
+            "status": {
+              "const": "MISSING_UNSUPPLIED",
+              "type": "string"
+            },
+            "value": {
+              "const": "MISSING",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "full_block_endpoint_reassembly",
+              "type": "string"
+            },
+            "scope": {
+              "const": "GLOBAL_RETURN_SLOT_UNSUPPLIED",
+              "type": "string"
+            },
+            "status": {
+              "const": "MISSING_UNSUPPLIED",
+              "type": "string"
+            },
+            "value": {
+              "const": "MISSING",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "scope",
+            "status",
+            "value"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "normalization_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "archived_nu_X_status": {
+          "const": "SCOPE_STRING_NOT_NUMERIC_SCALAR",
+          "type": "string"
+        },
+        "conditional_scalar_identity": {
+          "const": "|c_X T_D|^2 <= C_W |c_X|^2 J(E_D+C_D^off)",
+          "type": "string"
+        },
+        "global_normalization_return": {
+          "const": "MISSING_UNSUPPLIED",
+          "type": "string"
+        },
+        "tpc18_object": {
+          "const": "UNNORMALIZED_T_D",
+          "type": "string"
+        }
+      },
+      "required": [
+        "archived_nu_X_status",
+        "conditional_scalar_identity",
+        "global_normalization_return",
+        "tpc18_object"
+      ],
+      "type": "object"
+    },
+    "paper": {
+      "const": 205,
+      "type": "integer"
+    },
+    "registry_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "id_semantics": {
+          "additionalProperties": false,
+          "properties": {
+            "edge_instance_id": {
+              "const": "UNIQUE_PER_TRANSFORMATION_ROW",
+              "type": "string"
+            },
+            "ids_must_be_distinct_fields": {
+              "const": true,
+              "type": "boolean"
+            },
+            "target_occurrence_id": {
+              "const": "MAY_BE_SHARED_BY_MANY_TO_ONE_THEOREM",
+              "type": "string"
+            }
+          },
+          "required": [
+            "edge_instance_id",
+            "ids_must_be_distinct_fields",
+            "target_occurrence_id"
+          ],
+          "type": "object"
+        },
+        "identity_scope_fields": {
+          "items": false,
+          "maxItems": 16,
+          "minItems": 16,
+          "prefixItems": [
+            {
+              "const": "X",
+              "type": "string"
+            },
+            {
+              "const": "h0",
+              "type": "string"
+            },
+            {
+              "const": "delta",
+              "type": "string"
+            },
+            {
+              "const": "R",
+              "type": "string"
+            },
+            {
+              "const": "V",
+              "type": "string"
+            },
+            {
+              "const": "D0",
+              "type": "string"
+            },
+            {
+              "const": "L",
+              "type": "string"
+            },
+            {
+              "const": "K",
+              "type": "string"
+            },
+            {
+              "const": "D",
+              "type": "string"
+            },
+            {
+              "const": "J",
+              "type": "string"
+            },
+            {
+              "const": "Q",
+              "type": "string"
+            },
+            {
+              "const": "T",
+              "type": "string"
+            },
+            {
+              "const": "U0",
+              "type": "string"
+            },
+            {
+              "const": "G_X_row",
+              "type": "string"
+            },
+            {
+              "const": "packet_id",
+              "type": "string"
+            },
+            {
+              "const": "source_locator",
+              "type": "string"
+            }
+          ],
+          "type": "array"
+        },
+        "normalization_fields": {
+          "items": false,
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "const": "source_normalization",
+              "type": "string"
+            },
+            {
+              "const": "linear_normalization",
+              "type": "string"
+            },
+            {
+              "const": "quadratic_normalization",
+              "type": "string"
+            },
+            {
+              "const": "target_normalization",
+              "type": "string"
+            }
+          ],
+          "type": "array"
+        },
+        "ordered_pair_fields": {
+          "items": false,
+          "maxItems": 10,
+          "minItems": 10,
+          "prefixItems": [
+            {
+              "const": "alpha=(ell_alpha,d_alpha)",
+              "type": "string"
+            },
+            {
+              "const": "gamma=(ell_gamma,d_gamma)",
+              "type": "string"
+            },
+            {
+              "const": "j",
+              "type": "string"
+            },
+            {
+              "const": "N_alpha(j)",
+              "type": "string"
+            },
+            {
+              "const": "N_gamma(j)",
+              "type": "string"
+            },
+            {
+              "const": "joint_mask_value",
+              "type": "string"
+            },
+            {
+              "const": "literal_pair_coefficient_ast",
+              "type": "string"
+            },
+            {
+              "const": "relation_type=TTSTAR_BILINEAR_PAIR_TERM",
+              "type": "string"
+            },
+            {
+              "const": "formal_support_status",
+              "type": "string"
+            },
+            {
+              "const": "numeric_nonzero_status",
+              "type": "string"
+            }
+          ],
+          "type": "array"
+        },
+        "ordered_pair_quotient": {
+          "const": "FORBIDDEN",
+          "type": "string"
+        },
+        "production_row_count": {
+          "const": 0,
+          "type": "integer"
+        },
+        "production_row_count_scope": {
+          "const": "DECLARED_TPC205_REGISTRY_SOURCE_LOCK_CORPUS_ONLY",
+          "type": "string"
+        },
+        "registry_mode": {
+          "const": "TYPED_INTERFACE_ONLY",
+          "type": "string"
+        },
+        "source_child_fields": {
+          "items": false,
+          "maxItems": 12,
+          "minItems": 12,
+          "prefixItems": [
+            {
+              "const": "polarization",
+              "type": "string"
+            },
+            {
+              "const": "u",
+              "type": "string"
+            },
+            {
+              "const": "sigma",
+              "type": "string"
+            },
+            {
+              "const": "v",
+              "type": "string"
+            },
+            {
+              "const": "iota",
+              "type": "string"
+            },
+            {
+              "const": "theta",
+              "type": "string"
+            },
+            {
+              "const": "t",
+              "type": "string"
+            },
+            {
+              "const": "projector_weight",
+              "type": "string"
+            },
+            {
+              "const": "child_to_source_inverse",
+              "type": "string"
+            },
+            {
+              "const": "content_child",
+              "type": "string"
+            },
+            {
+              "const": "frequency_child",
+              "type": "string"
+            },
+            {
+              "const": "resolved_xi",
+              "type": "string"
+            }
+          ],
+          "type": "array"
+        }
+      },
+      "required": [
+        "id_semantics",
+        "identity_scope_fields",
+        "normalization_fields",
+        "ordered_pair_fields",
+        "ordered_pair_quotient",
+        "production_row_count",
+        "production_row_count_scope",
+        "registry_mode",
+        "source_child_fields"
+      ],
+      "type": "object"
+    },
+    "relation_types": {
+      "items": false,
+      "maxItems": 4,
+      "minItems": 4,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "arity": {
+              "const": 2,
+              "type": "integer"
+            },
+            "id": {
+              "const": "TTSTAR_BILINEAR_PAIR_TERM",
+              "type": "string"
+            },
+            "linear_cut_edge": {
+              "const": false,
+              "type": "boolean"
+            },
+            "ordered": {
+              "const": true,
+              "type": "boolean"
+            },
+            "origin": {
+              "const": "TPC18.eq:d-off",
+              "type": "string"
+            },
+            "source_object": {
+              "const": "post-Cauchy row-pair",
+              "type": "string"
+            }
+          },
+          "required": [
+            "arity",
+            "id",
+            "linear_cut_edge",
+            "ordered",
+            "origin",
+            "source_object"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "arity": {
+              "const": 1,
+              "type": "integer"
+            },
+            "id": {
+              "const": "LINEAR_CUT_TO_OCCURRENCE_EDGE",
+              "type": "string"
+            },
+            "linear_cut_edge": {
+              "const": true,
+              "type": "boolean"
+            },
+            "ordered": {
+              "const": false,
+              "type": "boolean"
+            },
+            "origin": {
+              "const": "TPC143.occurrence_lift",
+              "type": "string"
+            },
+            "source_object": {
+              "const": "production cut column",
+              "type": "string"
+            }
+          },
+          "required": [
+            "arity",
+            "id",
+            "linear_cut_edge",
+            "ordered",
+            "origin",
+            "source_object"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "arity": {
+              "const": 5,
+              "type": "integer"
+            },
+            "id": {
+              "const": "TPC93_RETAINED_SOURCE_ATOM",
+              "type": "string"
+            },
+            "linear_cut_edge": {
+              "const": false,
+              "type": "boolean"
+            },
+            "ordered": {
+              "const": true,
+              "type": "boolean"
+            },
+            "origin": {
+              "const": "TPC93.eq:source-left-atom",
+              "type": "string"
+            },
+            "source_object": {
+              "const": "supplied omega=(L/R,alpha,gamma,j,u)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "arity",
+            "id",
+            "linear_cut_edge",
+            "ordered",
+            "origin",
+            "source_object"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "arity": {
+              "const": 2,
+              "type": "integer"
+            },
+            "id": {
+              "const": "TPC93_SOURCE_CHILD",
+              "type": "string"
+            },
+            "linear_cut_edge": {
+              "const": false,
+              "type": "boolean"
+            },
+            "ordered": {
+              "const": true,
+              "type": "boolean"
+            },
+            "origin": {
+              "const": "TPC93.thm:source-child-reconstruction",
+              "type": "string"
+            },
+            "source_object": {
+              "const": "child=(theta,t) indexed by supplied omega and v",
+              "type": "string"
+            }
+          },
+          "required": [
+            "arity",
+            "id",
+            "linear_cut_edge",
+            "ordered",
+            "origin",
+            "source_object"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "route_state": {
+      "additionalProperties": false,
+      "properties": {
+        "H1_architecture": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "bad_endpoint_O161_parent": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "direct_twist_O161_parent": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "global_architecture": {
+          "const": "OPEN",
+          "type": "string"
+        },
+        "pair_native_architecture_reroute": {
+          "const": "OPEN",
+          "type": "string"
+        }
+      },
+      "required": [
+        "H1_architecture",
+        "bad_endpoint_O161_parent",
+        "direct_twist_O161_parent",
+        "global_architecture",
+        "pair_native_architecture_reroute"
+      ],
+      "type": "object"
+    },
+    "schema": {
+      "const": "tpc-205-pair-native-registry-interface-v1",
+      "type": "string"
+    },
+    "source_child_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "downstream_xi_template": {
+          "const": "CONDITIONAL_ON_SEPARATELY_SUPPLIED_FIELDS",
+          "type": "string"
+        },
+        "fiber_normalization": {
+          "const": "NO_NEW_FIBER_NORMALIZATION",
+          "type": "string"
+        },
+        "polarizations": {
+          "items": false,
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "const": "L",
+              "type": "string"
+            },
+            {
+              "const": "R",
+              "type": "string"
+            }
+          ],
+          "type": "array"
+        },
+        "production_pair_to_omega_crosswalk": {
+          "const": "FAIL",
+          "type": "string"
+        },
+        "projector_identity": {
+          "const": "sum_{v|d,e} lambda_{G_X^row}(v)=1_{gcd(d,e)<=G_X^row}",
+          "type": "string"
+        },
+        "single_child_restores_source": {
+          "const": false,
+          "type": "boolean"
+        },
+        "source_child_inverse": {
+          "const": "PASS_ON_SUPPLIED_RETAINED_OMEGA",
+          "type": "string"
+        },
+        "source_sign_coprimality": {
+          "const": "(d,u)=1_FROM_TARGET_PRIMITIVITY",
+          "type": "string"
+        },
+        "supplied_source_atom": {
+          "const": "omega=(L/R,alpha,gamma,j,u)",
+          "type": "string"
+        },
+        "weighted_child_sum_restores": {
+          "const": "actual-row-gcd-masked source coefficient",
+          "type": "string"
+        },
+        "weighted_reassembly_support": {
+          "const": "ON_TPC93_PHYSICAL_SQUAREFREE_AND_TARGET_PRIMITIVE_SUPPORT",
+          "type": "string"
+        }
+      },
+      "required": [
+        "downstream_xi_template",
+        "fiber_normalization",
+        "polarizations",
+        "production_pair_to_omega_crosswalk",
+        "projector_identity",
+        "single_child_restores_source",
+        "source_child_inverse",
+        "source_sign_coprimality",
+        "supplied_source_atom",
+        "weighted_child_sum_restores",
+        "weighted_reassembly_support"
+      ],
+      "type": "object"
+    },
+    "source_locks": {
+      "items": false,
+      "maxItems": 17,
+      "minItems": 17,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "36249c8baa2495034acabeb0ba7d5a5f665f2d536b605e9691e2e420e399f1f8",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC18.opened_d",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-18-mobius-tail-determinant-dispersion/sections/opened-d-dispersion.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "const": "\\cC_D^{\\mathrm{off}}",
+                  "type": "string"
+                },
+                {
+                  "const": "\\sum_{\\substack{\\alpha_1\\ne\\alpha_2}}",
+                  "type": "string"
+                },
+                {
+                  "const": "B_{\\alpha_1}(j)B_{\\alpha_2}(j).",
+                  "type": "string"
+                },
+                {
+                  "const": "Here and below the prime and support restrictions",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "5ff68d4207ada5fe2bea819716aaf095e2742fc63eef4a7d9f7573735df65ee4",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC18.stopping",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-18-mobius-tail-determinant-dispersion/sections/stopping-closure.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "const": "There are $O(\\log X)$ slices",
+                  "type": "string"
+                },
+                {
+                  "const": "Sum the $O(\\log X)$ divisor slices",
+                  "type": "string"
+                },
+                {
+                  "const": "|\\cC_D^{\\mathrm{gen}}|",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "21382acf28d8fc3d3cff499cd767075206ba9e2d24913e95414138b4317f0f00",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC25.provenance",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-25-zero-before-separation/sections/provenance.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "const": "\\gamma_\\alpha",
+                  "type": "string"
+                },
+                {
+                  "const": "\\mathfrak m(\\alpha_1,\\alpha_2)=0",
+                  "type": "string"
+                },
+                {
+                  "const": "The two sides of a bilinear packet",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "4fd2e42a8b95e61c52c77cb8bd0bfa101eacaf588d9b8610cacc3ac2dfaaf25b",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC25.zero_first",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-25-zero-before-separation/sections/zero-first.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "const": "\\mathcal Z^0_{S,T}",
+                  "type": "string"
+                },
+                {
+                  "const": "X^{-s+\\kappa+o(1)}",
+                  "type": "string"
+                },
+                {
+                  "const": "For a Hermitian convention the second factor is conjugated",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "b2c3b2b0312db64af5b3151402be929c1671429c1376fe24454a78b4c60d90bd",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC32.physical_shell",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-32-matched-cutoff-frequency-gate/sections/physical-matched-shell.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "const": "\\mathfrak A_{\\alpha,\\gamma}(j)",
+                  "type": "string"
+                },
+                {
+                  "const": "\\cK^{\\mathrm{sh}}_{\\alpha,\\gamma}(j)",
+                  "type": "string"
+                },
+                {
+                  "const": "=C_m(j)\\mathsf H_{n;T,U_0}(j)",
+                  "type": "string"
+                },
+                {
+                  "const": "No separability of the generic",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "c3c826a59e9032d0836dd962cd2654962b61134b9ed8718b7529d2c5fd1a4772",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC32.content",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-32-matched-cutoff-frequency-gate/sections/canonical-content-factorization.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "No complex conjugation is implicit.",
+                  "type": "string"
+                },
+                {
+                  "const": "\\gamma_\\alpha^{(1)}\\gamma_\\gamma^{(2)}",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "77ac56e2f4f3543224876e8a0374564c81c1b4a9f17800f18ca5249e12954d36",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC32.certificate",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-32-matched-cutoff-frequency-gate/experiments/tpc32_certificate.json",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "const": "\"primitive_witness\"",
+                  "type": "string"
+                },
+                {
+                  "const": "\"rows\"",
+                  "type": "string"
+                },
+                {
+                  "const": "\"targets\"",
+                  "type": "string"
+                },
+                {
+                  "const": "\"primitive_finite_witness_is_twin_prime_asymptotic_evidence\": false",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "c0d45f64a100bb21ac67cce124c46bc2ebfd3740810af1355fb21420d4262f03",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC93.decorated_export",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-93-literal-low-window-affine-export/sections/decorated-affine-export.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "const": "\\omega=(L,\\alpha,\\gamma,j,u)",
+                  "type": "string"
+                },
+                {
+                  "const": "\\sum_{v\\mid d,e}\\lambda_{G_X^{\\rm row}}(v)",
+                  "type": "string"
+                },
+                {
+                  "const": "no new fiber normalization is introduced",
+                  "type": "string"
+                },
+                {
+                  "const": "The labels \\(L\\) and \\(R\\) form a disjoint union",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "4965d5ad640999fda1be2a75b82dabdbb2cef6ad17df770fa2e53fc08b2e9627",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC143.main",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-143-frontier-occurrence-lift-contract/main.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "const": "L_X:\\mathbb C^{\\Ccut}\\longrightarrow\\mathbb C^{\\Occ}",
+                  "type": "string"
+                },
+                {
+                  "const": "signed or",
+                  "type": "string"
+                },
+                {
+                  "const": "complex.",
+                  "type": "string"
+                },
+                {
+                  "const": "\\one_{\\Occ}^{T}L_X=\\one_{\\Ccut}^{T}",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "912398392187568bc2f77f6c0f960f481286beb55f6c4a43ec0a0a4300ebd448",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC174.main",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-174-local-occurrence-edge-witness-schema/main.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "const": "exact nonzero rational weight",
+                  "type": "string"
+                },
+                {
+                  "const": "exact column sum one",
+                  "type": "string"
+                },
+                {
+                  "const": "SYNTHETIC\\_L0\\_ONLY",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "ef3611d57741448950da204746c8e6bc3125a97a82d6eb1709dd25cb25a258be",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC179.main",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-179-h1-structural-corpus-exhaustion-integration/main.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "const": "\\mathcal B_{H1}=\\{E,A,M\\}",
+                  "type": "string"
+                },
+                {
+                  "const": "\\texttt{current\\_verdict}&=\\mathsf{NOT\\_TESTABLE}",
+                  "type": "string"
+                },
+                {
+                  "const": "none suppresses another",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "a1956cf182ad219da10d850de7c7e57de69b8c287fb698e44faa5c795c3840a8",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC133.rows",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-133-executable-native-entrance/samples/tpc133_native_atoms.jsonl",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "e550d2d7be48d85076919a8adf86ba446f88f75b404df48c0483d3cf27b59369",
+                  "type": "string"
+                },
+                {
+                  "const": "633e20ac5a83d425471be3ba095df10a1635c3f45ce5cac6def9d5ba936152d9",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "a4be1c1b41221b585e3abbf67294b0f784d556cd0209e6ce87ccb905af285f18",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC136.cuts",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-136-complete-native-cut-archive/samples/tpc136_cut_paths.jsonl",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "2eef9d8670c23ffc10b2a9cab0d488b0908293cfdb482667da824e702a1347cc",
+                  "type": "string"
+                },
+                {
+                  "const": "cdc0f7363ab88106ce65bb46da800c05c3fba2b391d9490d7b2ca8bab8c816db",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "3d6e7aab3d9e165cc1d6f822f7146feb0d0fddbc1e976ed4312739b0418f4ff2",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC204.payload",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-204-source-locked-production-registry-crosswalk/experiments/tpc204_source_locked_production_registry_crosswalk.json",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "const": "\"complete_crosswalk_count\": 0",
+                  "type": "string"
+                },
+                {
+                  "const": "\"first_common_missing_gate_id\": \"NAMED_PRODUCTION_ATOM\"",
+                  "type": "string"
+                },
+                {
+                  "const": "\"reopen_trigger_passed\": false",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "5f50b44fde7e672b28aeb45b1b53e95f90c26bb8d35052081fa3a7e419712389",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC18.tail_interface",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-18-mobius-tail-determinant-dispersion/sections/tail-interface.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "const": "\\label{eq:source-power-error}",
+                  "type": "string"
+                },
+                {
+                  "const": "XL^{-1/2}X^\\eps.",
+                  "type": "string"
+                },
+                {
+                  "const": "In particular this has arbitrary logarithmic saving",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "aeaf0268d73ce0fbb95777238d2b4b2ccd417d53d19707c96332e5bc3a795c9e",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC25.one_sided_closure",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-25-zero-before-separation/sections/one-sided-closure.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 5,
+              "minItems": 5,
+              "prefixItems": [
+                {
+                  "const": "\\label{eq:tpc25-zero-in-closure}",
+                  "type": "string"
+                },
+                {
+                  "const": "after all dyadic and divisor multiplicities.  The global principal",
+                  "type": "string"
+                },
+                {
+                  "const": "conductor cell is \\(O(Q^2X^\\eps)\\)",
+                  "type": "string"
+                },
+                {
+                  "const": "\\(O(JQ^2L^{-1}X^\\eps)\\)",
+                  "type": "string"
+                },
+                {
+                  "const": "Fixed bounded-overlap",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "canonical_sha256": {
+              "const": "aaaa038907b505bd85d7cbf318bd3047bc3c37b2316243872a5a48824df06ea6",
+              "type": "string"
+            },
+            "hash_mode": {
+              "const": "CANONICAL_UTF8_LF_V2",
+              "type": "string"
+            },
+            "hash_semantics": {
+              "const": "INTEGRITY_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC93.row_window",
+              "type": "string"
+            },
+            "path": {
+              "const": "papers/tpc-93-literal-low-window-affine-export/sections/row-window.tex",
+              "type": "string"
+            },
+            "required_anchors": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "const": "\\label{eq:row-tail-return}",
+                  "type": "string"
+                },
+                {
+                  "const": "X^{o(1)}N_{0,X}R^{1/2-K}.",
+                  "type": "string"
+                },
+                {
+                  "const": "not a maximum over \\(r\\)",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "canonical_sha256",
+            "hash_mode",
+            "hash_semantics",
+            "id",
+            "path",
+            "required_anchors"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "source_snapshot_commit": {
+      "const": "88ead9383270ab40a6350616554d519ede6f0782",
+      "type": "string"
+    },
+    "stop_scoped": {
+      "items": false,
+      "maxItems": 4,
+      "minItems": 4,
+      "prefixItems": [
+        {
+          "const": "TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1=STOP_SCOPED",
+          "type": "string"
+        },
+        {
+          "const": "TPC204_DECLARED_PLAUSIBLE_PRODUCTION_CROSSWALK_CORPUS_V1=STOP_SCOPED",
+          "type": "string"
+        },
+        {
+          "const": "TPC18_25_32_93_194_SINGLE_CUT_OCCURRENCE_COMPOSITE_V1=STOP_SCOPED",
+          "type": "string"
+        },
+        {
+          "const": "TPC18_TPC93_POST_TTSTAR_PAIR_DIRECT_COMPOSITION_V1=STOP_SCOPED",
+          "type": "string"
+        }
+      ],
+      "type": "array"
+    },
+    "summary_counts": {
+      "additionalProperties": false,
+      "properties": {
+        "fixtures": {
+          "const": 2,
+          "type": "integer"
+        },
+        "gates": {
+          "const": 23,
+          "type": "integer"
+        },
+        "loss_ledger_rows": {
+          "const": 17,
+          "type": "integer"
+        },
+        "production_pair_records": {
+          "const": 0,
+          "type": "integer"
+        },
+        "relation_types": {
+          "const": 4,
+          "type": "integer"
+        },
+        "required_registry_fields": {
+          "const": 42,
+          "type": "integer"
+        },
+        "source_locks": {
+          "const": 17,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fixtures",
+        "gates",
+        "loss_ledger_rows",
+        "production_pair_records",
+        "relation_types",
+        "required_registry_fields",
+        "source_locks"
+      ],
+      "type": "object"
+    },
+    "theorem_status": {
+      "const": "PROVED_TYPED_INTERFACE_AND_FIRST_MISSING_L1",
+      "type": "string"
+    },
+    "verdict": {
+      "const": "PAIR_NATIVE_ARCHITECTURE_REROUTE_INTERFACE_CERTIFIED_NOT_REOPENED",
+      "type": "string"
+    }
+  },
+  "required": [
+    "authorization",
+    "claim_firewall",
+    "classification",
+    "decision",
+    "first_missing",
+    "first_missing_subgates",
+    "fixtures",
+    "formula_contract",
+    "gates",
+    "h1_type_separation",
+    "loss_ledger",
+    "normalization_contract",
+    "paper",
+    "registry_contract",
+    "relation_types",
+    "route_state",
+    "schema",
+    "source_child_contract",
+    "source_locks",
+    "source_snapshot_commit",
+    "stop_scoped",
+    "summary_counts",
+    "theorem_status",
+    "verdict"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,335 @@
+{
+  "all_checks_pass": true,
+  "base_mutation_registry": [
+    {
+      "name": "top_extra",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "top_missing_schema",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "paper_bool",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "authorization_extra",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "relation_delete",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "coefficient_truncate",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "fixture_extra_field",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "loss_extra_row",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "gate_removed",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "source_anchor_count_bool",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "first_missing_list",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    },
+    {
+      "name": "firewall_L2_bool",
+      "payload_changed": true,
+      "rejected_by_active_schema": true
+    }
+  ],
+  "checks": {
+    "A_and_M_roots_not_testable": true,
+    "H1_E_repair_false": true,
+    "L0_interface_rejects_production_mode": true,
+    "L2_none": true,
+    "architecture_reroute_open": true,
+    "authorization_not_theorem_evidence": true,
+    "authorization_scope_exact": true,
+    "declared_registry_corpus_production_pair_row_count_zero": true,
+    "derived_L0_child_not_promoted": true,
+    "displayed_B_alias_boundary_frozen": true,
+    "endpoint_credit_zero": true,
+    "hard_remainder_uncontrolled": true,
+    "loss_rows_retain_source_hypotheses_only": true,
+    "no_implicit_conjugation": true,
+    "normalization_string_not_scalar": true,
+    "ordered_pair_domain_frozen": true,
+    "pair_and_H1_relation_types_distinct": true,
+    "pair_native_triggers_fail": true,
+    "pair_stop_scoped": true,
+    "pair_to_omega_crosswalk_fail": true,
+    "return_slots_missing": true,
+    "row_only_candidate_not_promoted": true,
+    "strict_one_over_400_unpaid": true,
+    "supplied_omega_inverse_only": true,
+    "tpc93_physical_support_premise_frozen": true
+  },
+  "finite_check_result": {
+    "architecture_reroute": "OPEN",
+    "first_missing": "SOURCE_LOCKED_POST_TTSTAR_ORDERED_PAIR_REGISTRY_WITH_COMPLETE_PAIR_COEFFICIENT_AND_GLOBAL_NORMALIZATION",
+    "fixtures_verified": 2,
+    "gates_verified": 23,
+    "h1_repair": false,
+    "loss_ledger_rows_verified": 17,
+    "mathematical_reopen": false,
+    "production_pair_records": 0,
+    "relation_types_verified": 4,
+    "required_registry_fields": 42,
+    "source_locks_verified": 17
+  },
+  "l0_fixture_sha256": "57d04e78005a7503b84b4172c7d43d8eea2eeb5bbd930dea7048863297a468de",
+  "l0_schema_sha256": "4f591b96cdc5d4c3aeb8faabcbafb540f9fddb1126019c3bb9f4f0fc9e41f3f4",
+  "paper": 205,
+  "payload_schema_sha256": "6976342d326a4379d623eb6efd365f45ce23aaa11becb15abdb5663eae61d55b",
+  "payload_sha256": "07b118b69a16587fe1b9239b585ffa65b6772f005d9c719eb5eba3cc488d586d",
+  "schema": "tpc-205-pair-native-registry-interface-audit-v1",
+  "semantic_mutation_registry": [
+    {
+      "name": "authorization_false",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "authorization_becomes_evidence",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "classification_drift",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "verdict_reopened",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "pair_arity_one",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "pair_unordered",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "pair_mislabeled_linear",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "coefficient_promoted_complete",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "implicit_conjugation_added",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "pair_to_omega_bridge_pass",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "single_child_restores",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "production_crosswalk_pass",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "registry_production_row",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "pair_quotient_allowed",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "row_candidate_promoted",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "row_candidate_nonzero",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "derived_child_directly_certified",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "derived_child_asymptotic",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "nu_X_promoted_scalar",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "global_normalization_supplied",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "hard_remainder_controlled",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "square_root_return_supplied",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "first_missing_changed",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "cut_inverse_theorem_invented",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "h1_repair_true",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "active_support_closed",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "representation_closed",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "architecture_closed",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "structural_reopen_pass",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "mathematical_reopen_true",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "positive_sigma_true",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "L2_promoted",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "source_hash_rebound",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "bad_endpoint_parent_stopped",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "global_architecture_stopped",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "tpc206_auto_authorized",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    },
+    {
+      "name": "batch_stop_removed",
+      "payload_changed": true,
+      "regenerated_schema_accepts": true,
+      "semantic_checker_rejected": true
+    }
+  ]
+}

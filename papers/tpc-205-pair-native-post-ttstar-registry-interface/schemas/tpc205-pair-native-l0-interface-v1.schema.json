@@ -1,0 +1,616 @@
+{
+  "$id": "tpc205-pair-native-l0-interface-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "allowed_evidence_modes": {
+      "items": false,
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "const": "ROW_ONLY",
+          "type": "string"
+        },
+        {
+          "const": "DERIVED_L0_ONLY",
+          "type": "string"
+        }
+      ],
+      "type": "array"
+    },
+    "claim_firewall": {
+      "additionalProperties": false,
+      "properties": {
+        "asymptotic_evidence": {
+          "const": false,
+          "type": "boolean"
+        },
+        "production_occurrence": {
+          "const": false,
+          "type": "boolean"
+        },
+        "schema_acceptance_is_theorem_evidence": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "asymptotic_evidence",
+        "production_occurrence",
+        "schema_acceptance_is_theorem_evidence"
+      ],
+      "type": "object"
+    },
+    "fixtures": {
+      "items": false,
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "cut_locators": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "cut_path_id": {
+                      "const": "cut|X=512|h0=2|ell=103|k=5|d=1|jL=6|jK=3|D0=0|type=TAIL",
+                      "type": "string"
+                    },
+                    "integrity_sha256": {
+                      "const": "2eef9d8670c23ffc10b2a9cab0d488b0908293cfdb482667da824e702a1347cc",
+                      "type": "string"
+                    },
+                    "line": {
+                      "const": 2554,
+                      "type": "integer"
+                    },
+                    "path": {
+                      "const": "papers/tpc-136-complete-native-cut-archive/samples/tpc136_cut_paths.jsonl",
+                      "type": "string"
+                    },
+                    "reason": {
+                      "const": "NO_TAIL_ROOM",
+                      "type": "string"
+                    },
+                    "terminal": {
+                      "const": "FRONTIER_UNMAPPED",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "cut_path_id",
+                    "integrity_sha256",
+                    "line",
+                    "path",
+                    "reason",
+                    "terminal"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "cut_path_id": {
+                      "const": "cut|X=512|h0=2|ell=107|k=5|d=1|jL=6|jK=3|D0=0|type=TAIL",
+                      "type": "string"
+                    },
+                    "integrity_sha256": {
+                      "const": "cdc0f7363ab88106ce65bb46da800c05c3fba2b391d9490d7b2ca8bab8c816db",
+                      "type": "string"
+                    },
+                    "line": {
+                      "const": 2602,
+                      "type": "integer"
+                    },
+                    "path": {
+                      "const": "papers/tpc-136-complete-native-cut-archive/samples/tpc136_cut_paths.jsonl",
+                      "type": "string"
+                    },
+                    "reason": {
+                      "const": "NO_TAIL_ROOM",
+                      "type": "string"
+                    },
+                    "terminal": {
+                      "const": "FRONTIER_UNMAPPED",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "cut_path_id",
+                    "integrity_sha256",
+                    "line",
+                    "path",
+                    "reason",
+                    "terminal"
+                  ],
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            },
+            "evidence_level": {
+              "const": "ROW_ONLY",
+              "type": "string"
+            },
+            "h0": {
+              "const": 2,
+              "type": "integer"
+            },
+            "id": {
+              "const": "DUAL_SOURCE_LOCKED_ROW_PAIR_CANDIDATE",
+              "type": "string"
+            },
+            "joint_mask_value": {
+              "const": null,
+              "type": "null"
+            },
+            "numeric_nonzero_status": {
+              "const": "UNDECIDED",
+              "type": "string"
+            },
+            "ordered_pair": {
+              "additionalProperties": false,
+              "properties": {
+                "Delta_sharp": {
+                  "const": -4,
+                  "type": "integer"
+                },
+                "N_alpha": {
+                  "const": 517,
+                  "type": "integer"
+                },
+                "N_gamma": {
+                  "const": 537,
+                  "type": "integer"
+                },
+                "alpha": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "const": 103,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 1,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "gamma": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "const": 107,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 1,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "gcd_targets": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "j": {
+                  "const": 5,
+                  "type": "integer"
+                },
+                "ordered_row_determinant": {
+                  "const": -8,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "Delta_sharp",
+                "N_alpha",
+                "N_gamma",
+                "alpha",
+                "gamma",
+                "gcd_targets",
+                "j",
+                "ordered_row_determinant"
+              ],
+              "type": "object"
+            },
+            "pair_occurrence_id": {
+              "const": null,
+              "type": "null"
+            },
+            "production_occurrence": {
+              "const": false,
+              "type": "boolean"
+            },
+            "row_locators": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "integrity_sha256": {
+                      "const": "e550d2d7be48d85076919a8adf86ba446f88f75b404df48c0483d3cf27b59369",
+                      "type": "string"
+                    },
+                    "line": {
+                      "const": 724,
+                      "type": "integer"
+                    },
+                    "native_id": {
+                      "const": "X=512|h0=2|ell=103|k=5|d=1",
+                      "type": "string"
+                    },
+                    "path": {
+                      "const": "papers/tpc-133-executable-native-entrance/samples/tpc133_native_atoms.jsonl",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "integrity_sha256",
+                    "line",
+                    "native_id",
+                    "path"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "integrity_sha256": {
+                      "const": "633e20ac5a83d425471be3ba095df10a1635c3f45ce5cac6def9d5ba936152d9",
+                      "type": "string"
+                    },
+                    "line": {
+                      "const": 736,
+                      "type": "integer"
+                    },
+                    "native_id": {
+                      "const": "X=512|h0=2|ell=107|k=5|d=1",
+                      "type": "string"
+                    },
+                    "path": {
+                      "const": "papers/tpc-133-executable-native-entrance/samples/tpc133_native_atoms.jsonl",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "integrity_sha256",
+                    "line",
+                    "native_id",
+                    "path"
+                  ],
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "cut_locators",
+            "evidence_level",
+            "h0",
+            "id",
+            "joint_mask_value",
+            "numeric_nonzero_status",
+            "ordered_pair",
+            "pair_occurrence_id",
+            "production_occurrence",
+            "row_locators"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "asymptotic_evidence": {
+              "const": false,
+              "type": "boolean"
+            },
+            "child_fields_directly_certified_by_tpc32": {
+              "const": false,
+              "type": "boolean"
+            },
+            "derived_tpc93_fields": {
+              "additionalProperties": false,
+              "properties": {
+                "D_t": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "U_t": {
+                  "const": 61,
+                  "type": "integer"
+                },
+                "alpha": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "const": 59,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 1,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "d0": {
+                  "const": 0,
+                  "type": "integer"
+                },
+                "determinant": {
+                  "const": 2,
+                  "type": "integer"
+                },
+                "gamma": {
+                  "items": false,
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "const": 71,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 1,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "j": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "polarization": {
+                  "const": "L",
+                  "type": "string"
+                },
+                "projector_weight": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "sigma": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "t": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "u": {
+                  "const": 61,
+                  "type": "integer"
+                },
+                "u0": {
+                  "const": 2,
+                  "type": "integer"
+                },
+                "v": {
+                  "const": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "D_t",
+                "U_t",
+                "alpha",
+                "d0",
+                "determinant",
+                "gamma",
+                "j",
+                "polarization",
+                "projector_weight",
+                "sigma",
+                "t",
+                "u",
+                "u0",
+                "v"
+              ],
+              "type": "object"
+            },
+            "direct_tpc32_fields": {
+              "additionalProperties": false,
+              "properties": {
+                "C": {
+                  "const": 30,
+                  "type": "integer"
+                },
+                "L": {
+                  "const": 100,
+                  "type": "integer"
+                },
+                "R": {
+                  "const": 12,
+                  "type": "integer"
+                },
+                "T": {
+                  "const": 50,
+                  "type": "integer"
+                },
+                "U0": {
+                  "const": 200,
+                  "type": "integer"
+                },
+                "d": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "h": {
+                  "const": 2,
+                  "type": "integer"
+                },
+                "j": {
+                  "const": 1,
+                  "type": "integer"
+                },
+                "rows": {
+                  "items": false,
+                  "maxItems": 9,
+                  "minItems": 9,
+                  "prefixItems": [
+                    {
+                      "const": 59,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 71,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 101,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 107,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 137,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 149,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 179,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 191,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 197,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "targets": {
+                  "items": false,
+                  "maxItems": 9,
+                  "minItems": 9,
+                  "prefixItems": [
+                    {
+                      "const": 61,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 73,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 103,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 109,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 139,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 151,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 181,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 193,
+                      "type": "integer"
+                    },
+                    {
+                      "const": 199,
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "C",
+                "L",
+                "R",
+                "T",
+                "U0",
+                "d",
+                "h",
+                "j",
+                "rows",
+                "targets"
+              ],
+              "type": "object"
+            },
+            "evidence_level": {
+              "const": "DERIVED_L0_ONLY",
+              "type": "string"
+            },
+            "id": {
+              "const": "TPC32_PRIMITIVE_FIXTURE_PLUS_TPC93_FORMULAS_DERIVED_L0_ONLY",
+              "type": "string"
+            },
+            "production_occurrence": {
+              "const": false,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "asymptotic_evidence",
+            "child_fields_directly_certified_by_tpc32",
+            "derived_tpc93_fields",
+            "direct_tpc32_fields",
+            "evidence_level",
+            "id",
+            "production_occurrence"
+          ],
+          "type": "object"
+        }
+      ],
+      "type": "array"
+    },
+    "paper": {
+      "const": 205,
+      "type": "integer"
+    },
+    "production_mode_allowed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "schema": {
+      "const": "tpc-205-pair-native-l0-interface-v1",
+      "type": "string"
+    }
+  },
+  "required": [
+    "allowed_evidence_modes",
+    "claim_firewall",
+    "fixtures",
+    "paper",
+    "production_mode_allowed",
+    "schema"
+  ],
+  "type": "object"
+}

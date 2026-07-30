@@ -1,0 +1,134 @@
+{
+  "allowed_evidence_modes": [
+    "ROW_ONLY",
+    "DERIVED_L0_ONLY"
+  ],
+  "claim_firewall": {
+    "asymptotic_evidence": false,
+    "production_occurrence": false,
+    "schema_acceptance_is_theorem_evidence": false
+  },
+  "fixtures": [
+    {
+      "cut_locators": [
+        {
+          "cut_path_id": "cut|X=512|h0=2|ell=103|k=5|d=1|jL=6|jK=3|D0=0|type=TAIL",
+          "integrity_sha256": "2eef9d8670c23ffc10b2a9cab0d488b0908293cfdb482667da824e702a1347cc",
+          "line": 2554,
+          "path": "papers/tpc-136-complete-native-cut-archive/samples/tpc136_cut_paths.jsonl",
+          "reason": "NO_TAIL_ROOM",
+          "terminal": "FRONTIER_UNMAPPED"
+        },
+        {
+          "cut_path_id": "cut|X=512|h0=2|ell=107|k=5|d=1|jL=6|jK=3|D0=0|type=TAIL",
+          "integrity_sha256": "cdc0f7363ab88106ce65bb46da800c05c3fba2b391d9490d7b2ca8bab8c816db",
+          "line": 2602,
+          "path": "papers/tpc-136-complete-native-cut-archive/samples/tpc136_cut_paths.jsonl",
+          "reason": "NO_TAIL_ROOM",
+          "terminal": "FRONTIER_UNMAPPED"
+        }
+      ],
+      "evidence_level": "ROW_ONLY",
+      "h0": 2,
+      "id": "DUAL_SOURCE_LOCKED_ROW_PAIR_CANDIDATE",
+      "joint_mask_value": null,
+      "numeric_nonzero_status": "UNDECIDED",
+      "ordered_pair": {
+        "Delta_sharp": -4,
+        "N_alpha": 517,
+        "N_gamma": 537,
+        "alpha": [
+          103,
+          1
+        ],
+        "gamma": [
+          107,
+          1
+        ],
+        "gcd_targets": 1,
+        "j": 5,
+        "ordered_row_determinant": -8
+      },
+      "pair_occurrence_id": null,
+      "production_occurrence": false,
+      "row_locators": [
+        {
+          "integrity_sha256": "e550d2d7be48d85076919a8adf86ba446f88f75b404df48c0483d3cf27b59369",
+          "line": 724,
+          "native_id": "X=512|h0=2|ell=103|k=5|d=1",
+          "path": "papers/tpc-133-executable-native-entrance/samples/tpc133_native_atoms.jsonl"
+        },
+        {
+          "integrity_sha256": "633e20ac5a83d425471be3ba095df10a1635c3f45ce5cac6def9d5ba936152d9",
+          "line": 736,
+          "native_id": "X=512|h0=2|ell=107|k=5|d=1",
+          "path": "papers/tpc-133-executable-native-entrance/samples/tpc133_native_atoms.jsonl"
+        }
+      ]
+    },
+    {
+      "asymptotic_evidence": false,
+      "child_fields_directly_certified_by_tpc32": false,
+      "derived_tpc93_fields": {
+        "D_t": 1,
+        "U_t": 61,
+        "alpha": [
+          59,
+          1
+        ],
+        "d0": 0,
+        "determinant": 2,
+        "gamma": [
+          71,
+          1
+        ],
+        "j": 1,
+        "polarization": "L",
+        "projector_weight": 1,
+        "sigma": 1,
+        "t": 1,
+        "u": 61,
+        "u0": 2,
+        "v": 1
+      },
+      "direct_tpc32_fields": {
+        "C": 30,
+        "L": 100,
+        "R": 12,
+        "T": 50,
+        "U0": 200,
+        "d": 1,
+        "h": 2,
+        "j": 1,
+        "rows": [
+          59,
+          71,
+          101,
+          107,
+          137,
+          149,
+          179,
+          191,
+          197
+        ],
+        "targets": [
+          61,
+          73,
+          103,
+          109,
+          139,
+          151,
+          181,
+          193,
+          199
+        ]
+      },
+      "evidence_level": "DERIVED_L0_ONLY",
+      "id": "TPC32_PRIMITIVE_FIXTURE_PLUS_TPC93_FORMULAS_DERIVED_L0_ONLY",
+      "production_occurrence": false
+    }
+  ],
+  "paper": 205,
+  "production_mode_allowed": false,
+  "schema": "tpc-205-pair-native-l0-interface-v1"
+}
