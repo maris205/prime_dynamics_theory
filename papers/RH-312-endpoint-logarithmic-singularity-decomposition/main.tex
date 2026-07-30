@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{The Universal Logarithmic Singularity of the Endpoint Numerator}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The sharp deterministic coefficient law identifies the endpoint radius but
+does not by itself identify the boundary singularity.  Using the exact odd
+anchor and the exponentially decaying even trace remainder, we prove that
+the endpoint-scaled logarithm is exactly $\log(1-w)+w$ plus a function
+analytic on a strictly larger disk.  A repository-certified block constant
+gives an explicit lower radius $1.0376199\ldots$ for that remainder.  This is
+an all-order deterministic theorem, not convergence of a noisy spectrum.
+\end{abstract}
+
+\section{Normalized anchors}
+Put $q_*=(r_H\lambda)^{-1}$, $\rho_*=q_*^{-1}$, and
+$b_n=a_n\rho_*^n$.  The odd formula of RH-263 gives
+\[
+ b_n=(1+\lambda^{-n})^{-1}\qquad(n\ge3\text{ odd}).
+\]
+For $n=2m$, RH-268 writes
+\[
+ b_{2m}=2\lambda^{2m}\operatorname{tr}(T^m)
+       +\frac{1-2\lambda^{-m}}{1-\lambda^{-2m}}.
+\]
+If $m=3k+j$, the certified trace estimate is
+\[
+ |\lambda^{2m}\operatorname{tr}(T^m)|
+ \le C_j\delta^k,\qquad \delta<0.801254.
+\]
+
+\section{Singularity theorem}
+\begin{theorem}
+There is a function $H_{\rm reg}$ analytic for
+\[
+ |w|<r_{\rm reg},\qquad
+ r_{\rm reg}\ge0.801254^{-1/6}=1.0376199142\ldots,
+\]
+such that
+\[
+ -\sum_{n\ge2}\frac{a_n\rho_*^n}{n}w^n
+ =\log(1-w)+w+H_{\rm reg}(w).
+\]
+\end{theorem}
+\begin{proof}
+Write $b_n=1+r_n$.  At odd orders, $r_n=O(\lambda^{-n})$.
+The explicit even endpoint fraction differs from one by
+$O(\lambda^{-m})=O(\lambda^{-n/2})$.  The trace term is
+$O(\delta^{n/6})$ after separating the three residue classes of $m$.
+Consequently $\sum r_nw^n/n$ converges normally on every compact subdisk of
+radius $\min\{\lambda,\sqrt\lambda,\delta^{-1/6}\}>1$.  Finally,
+\[
+ -\sum_{n\ge2}\frac{w^n}{n}=\log(1-w)+w,
+\]
+which proves the claim.
+\end{proof}
+
+\begin{corollary}
+The logarithmic branch point at $w=1$ is the complete nonanalytic endpoint
+part of the deterministic numerator logarithm.  In particular, subtracting
+$\log(1-w)+w$ strictly enlarges the analytic disk.
+\end{corollary}
+
+\section{Scope}
+The result uses exact all-order coefficient identities and a certified
+geometric trace remainder; no finite-order fit is promoted.  It neither
+constructs a positive or integer spectral cloud nor proves endpoint $H^2$
+convergence of the actual mismatch.  Gates A--E remain false/open.
+\end{document}

@@ -1,0 +1,66 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Root-of-Unity Packets that Isolate a Single Power Moment}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+We construct a genuine finite normal spectrum that changes one prescribed
+power moment without changing any lower moment.  The packet consists of a
+complete root set of a real monomial equation, repeated with integer
+multiplicity.  Its entire moment sequence, radius, rank, and squared mass are
+explicit.  This supplies the triangular atom needed for exact finite-prefix
+spectral realization, while making no identification with the actual noisy
+operator.
+\end{abstract}
+
+\section{Packet definition}
+Fix $d,L\ge1$ and $w\in\mathbb R\setminus\{0\}$.  Let
+\[
+ \mathcal P_d(w,L)=
+ \{\mu:\mu^d=w/(dL)\},
+\]
+with every root repeated $L$ times.  Since the defining polynomial has real
+coefficients, the multiset is closed under complex conjugation.
+
+\begin{theorem}[moment isolation]
+The packet has rank $dL$, radius
+\[
+ r_d=(|w|/(dL))^{1/d},
+\]
+and power sums
+\[
+ p_n(\mathcal P_d)=0\quad(d\nmid n),
+ \qquad
+ p_{md}(\mathcal P_d)=\frac{w^m}{(dL)^{m-1}}.
+\]
+In particular, $p_n=0$ for $n<d$ and $p_d=w$.  Its squared spectral mass is
+\[
+ M_2=dLr_d^2.
+\]
+\end{theorem}
+\begin{proof}
+Write the roots as $r_de^{i(\theta+2\pi j)/d}$.  The roots-of-unity sum
+vanishes unless $d$ divides $n$.  At $n=md$, summing and multiplying by $L$
+gives $Ld(w/(dL))^m$, which is the stated formula.  The geometric quantities
+are immediate.
+\end{proof}
+
+\begin{corollary}[modulus cap]
+For $q>0$, if
+\[
+ L\ge\frac{|w|}{dq^d},
+\]
+then every packet root satisfies $|\mu|\le q$.
+\end{corollary}
+
+\begin{remark}
+The packet is an unweighted finite spectrum with integer multiplicities, not
+merely a positive moment measure.  It is nevertheless synthetic: no theorem
+identifies it with eigenvalues of the noisy transfer operator.  Gates A--E
+remain false/open.
+\end{remark}
+\end{document}

@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Parity-Orthogonal Hardy Channels at the Endpoint Logarithm}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The endpoint singularity found in RH-312 admits an exact even--odd
+decomposition.  We identify the two closed forms and prove that the Hardy
+norm is their orthogonal sum.  Endpoint convergence is therefore equivalent
+to convergence in both parity channels separately.  This criterion does not
+assert that either actual noisy channel converges.
+\end{abstract}
+
+\section{The two singular channels}
+Let $L(w)=\log(1-w)+w=-\sum_{n\ge2}w^n/n$.  Its parity projections are
+\[
+ L_{\rm ev}(w)=\frac{L(w)+L(-w)}2=\frac12\log(1-w^2),
+\]
+and
+\[
+ L_{\rm odd}(w)=\frac{L(w)-L(-w)}2
+ =w+\frac12\log\frac{1-w}{1+w}.
+\]
+Both belong to $H^2$ on the unit disk, and their Taylor supports are disjoint.
+
+\begin{theorem}[orthogonal endpoint split]
+For every $f\in H^2$, define
+$f_{\rm ev}(w)=\{f(w)+f(-w)\}/2$ and
+$f_{\rm odd}(w)=\{f(w)-f(-w)\}/2$.  Then
+\[
+ f=f_{\rm ev}+f_{\rm odd},\qquad
+ \|f\|_{H^2}^2=\|f_{\rm ev}\|_{H^2}^2+
+ \|f_{\rm odd}\|_{H^2}^2.
+\]
+Consequently $f_\sigma\to0$ in $H^2$ if and only if both parity projections
+tend to zero.
+\end{theorem}
+\begin{proof}
+The even and odd Taylor coefficients occupy disjoint subsets of the
+orthonormal monomial basis.  Parseval gives the identity and the equivalence.
+\end{proof}
+
+\section{Application to the deterministic endpoint}
+RH-312 writes the endpoint target as
+$L+H_{\rm reg}$ with $H_{\rm reg}$ analytic past the unit circle.  Projecting
+gives
+\[
+ (L_{\rm ev}+H_{{\rm reg},{\rm ev}})
+ +(L_{\rm odd}+H_{{\rm reg},{\rm odd}}),
+\]
+and both regular pieces retain the larger analytic radius.  Thus the two
+displayed logarithms contain the entire parity-resolved endpoint
+singularity.
+
+\begin{remark}
+The theorem is an exact criterion, not a proof that the noisy modulus
+complement approximates either channel.  No spectral cloud, Gate A--E, or RH
+conclusion is obtained.
+\end{remark}
+\end{document}

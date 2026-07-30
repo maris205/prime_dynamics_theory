@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Sharp Annular Rates Realized by Genuine Finite Spectra}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+RH-306 proved that the annular mass-rate barrier is sharp for an abstract
+coefficient envelope but deliberately supplied no spectral realization.  We
+close that scoped gap.  The exact integer spectra of RH-316 attain the same
+power and logarithmic rate in both $H^\infty$ and $H^2$ on every strict
+certified annulus.  This upgrades information-class sharpness to the genuine
+finite normal spectral class, without claiming that the actual noisy spectrum
+has the sharp rate.
+\end{abstract}
+
+\section{Rate and spectral approximants}
+Put $R=7/5$.  For a finite conjugate multiset $\mathcal S\subset
+\{|\mu|\le q\}$, write
+\[
+ \tau_n(\mathcal S)=\sum_{\mu\in\mathcal S}\mu^n,
+ \qquad
+ g_{\mathcal S}(z)=\sum_{n\ge2}
+ \frac{\tau_n(\mathcal S)-a_n}{n}z^n,
+ \qquad
+ M_2(\mathcal S)=\sum_{\mu\in\mathcal S}|\mu|^2.
+\]
+Let
+\[
+ \kappa(\rho)=
+ \frac{\log(1/(q_*\rho))}{\log(q_*/q)},
+ \qquad R<\rho<\rho_*.
+\]
+For $X=H^\infty(\rho)$ or $H^2(\rho)$, define the finite-spectral extremal
+error
+\[
+ E_X(M;\rho)=\inf_{M_2(\mathcal S)\le M}\|g_{\mathcal S}\|_X.
+\]
+
+\begin{theorem}[genuine spectral saturation]
+For every fixed $R<\rho<\rho_*$ and either choice of $X$,
+\[
+ E_X(M;\rho)=\Theta_\rho\left(
+ \frac{M^{-\kappa(\rho)}}{\log M}
+ \right)\qquad(M\to\infty).
+\]
+The upper bound is attained, up to constants, by the exact-prefix spectra of
+RH-316.
+\end{theorem}
+\begin{proof}
+RH-305 applies to every modulus-capped spectrum.  If its actual mass is at
+most $M$, monotonicity of
+$M^{-\kappa(\rho)}/\log M$ gives the displayed lower bound for the infimum.
+
+For the upper bound, take the RH-316 spectrum matching through order $N$.
+RH-317 gives $M_N\le Cs^N$, where $s=q_*/q$.  The target tail after the
+matched prefix is
+$O((q_*\rho)^N/N)$.  For the spectral tail, the mass envelope gives
+\[
+ \sum_{n>N}\frac{|\tau_n|\rho^n}{n}
+ \le M_Nq^{-2}\sum_{n>N}\frac{(q\rho)^n}{n}
+ =O_\rho((q_*\rho)^N/N).
+\]
+The same coefficient estimate gives the $H^2$ upper bound.  Since
+$N$ may be chosen as the largest integer with $Cs^N\le M$, one has
+$N=(\log M)/\log s+O(1)$, and this is the displayed mass rate.
+\end{proof}
+
+At $\rho=1.41$, $\kappa(\rho)=0.035045705260961\ldots$.
+
+\begin{remark}
+The theorem constructs genuine power sums but not the actual noisy
+eigenvalues.  It proves spectral-class sharpness only; actual convergence and
+its rate remain open.  Gates A--E remain false/open.
+\end{remark}
+\end{document}
