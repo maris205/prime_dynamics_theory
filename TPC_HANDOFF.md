@@ -372,23 +372,107 @@ papers/tpc-63-canonical-cofactor-provenance/main.pdf
 tmp/
 ```
 
-## 10. 下一步选择
+## 10. 不编号 single-record extraction audit
+
+2026-07-30 用户选择了 route (1)。本轮只审核当前仓库、全部可达 Git
+历史与远端 refs 中能否抽取一个
+`SOURCE_LOCKED_NAMED_PRODUCTION_ATOM_RECORD`；没有把授权本身当作
+record 或 theorem evidence。
+
+唯一最接近的来源链为：
+
+```text
+TPC-18 actual tail/opened-d partition
+  -> TPC-25 opened-row provenance
+  -> TPC-32 physical matched shell
+  -> TPC-93 resolved fixed-h0 packet family
+  -> TPC-94 signed phase/conductor
+  -> TPC-108 literal generic block
+  -> TPC-127 determinant-two specialization/prefix isometry
+  -> TPC-194 PHYSICAL_PACKET_PREFIX
+```
+
+这条链 source-backed 地给出每个 resolved key 的 literal carrier、
+decorated coefficient、symbolic phase、per-key prefix 与 outer
+multiplier。但是：
+
+- `Xi_X(K,R)` 只是在 fixed `X,K,R` 下实际 export 中出现的
+  `xi=(theta,c,kappa,r)` 的有限集合；它没有跨尺度
+  `ambient_scale_id/packet_id/terminal_T/physical_occurrence` rows，
+  因而不是 exact all-scale production schedule；
+- `alpha_xi_X` 随 `X,theta,c,kappa,r,q_X` 变化。仓库没有
+  source-located selector 证明同一个 `alpha_star` 在每个 required
+  scale 实际出现；
+- TPC-197 排除非零 fixed rational atom 通过无限多个不同 prime
+  conductors `q_X` 重复出现；conductor-one 分支仍没有
+  occurrence/schedule/range-admissibility theorem；
+- 当前 tree、untracked text scope、全部可达 commits、remote heads 与
+  tags 中没有非空 `named_physical_atom_id`、
+  `phase_value_mod_1` 或 `packet_schedule_source_locator`。TPC-204 后
+  没有 TPC 路径变化；RH 中的 `det_2` 命中属于谱 determinant，不是
+  `su-ad=2` two-Mobius carrier。
+
+逐字段结果：
+
+```text
+literal determinant-two carrier       = COMPLETE_PER_PACKET
+physical prefix domain/index          = COMPLETE_PER_PACKET
+decorated coefficient                 = COMPLETE_PER_PACKET
+outer multiplier                      = COMPLETE_PER_PACKET
+symbolic alpha_xi_X                    = COMPLETE_PER_PACKET
+named_production_atom                 = MISSING   [first mismatch]
+exact_cross_scale_packet_schedule     = MISSING
+common_X_N_q_ranges                   = MISSING
+uniform_constant_C                    = MISSING
+positive_sigma                        = MISSING
+target_normalization_selection        = MISSING
+complete_physical_loss_ledger         = MISSING
+```
+
+禁止把 archive/resolved key 当作 production schedule，禁止令
+`q_X=a*s`，也禁止选择一个随尺度变化的 `alpha_xi_X` 后称其为 fixed
+named atom。
+
+反事实 theorem crosswalk 也为负：即使七字段全部 supplied，TW25 的
+native normalization 仍是 reciprocal/logarithmic 且只有 qualitative
+`o(1)`；TT26 仍只给 terminal block、删除 exceptional scales且只有
+log saving。因此在本轮已审核的 TPC-193 七源及所列 external
+near-neighbor theorem scope 内，不存在可与该 record literal
+crosswalk 的 fixed-data uniform positive-`X`-power
+all-prefix/all-scale theorem。
+
+最终不编号 verdict：
+
+```text
+SOURCE_LOCKED_SINGLE_RECORD_EXTRACTION = FAIL
+first_record_mismatch = NAMED_PRODUCTION_ATOM
+counterfactual_complete_record_theorem_trigger = FAIL
+mathematical_reopen = false
+tpc205_authorized = false
+```
+
+这只关闭当前 source/history/ref scope，不声称所有未来 production
+records 或定理不存在。
+
+## 11. 下一步选择
 
 本轮必须停在 `USER_CONFIRMATION_REQUIRED`。TPC-205 未授权。
 
 下一会话只允许用户选择：
 
-1. 提供 source-locked named production atom record 与 exact packet
-   schedule，审核 direct-production crosswalk；
+1. 提供一个真正新增、value-bearing 的 source-locked production
+   record 及 locator；该 record 必须包含同一 fixed named atom 与 exact
+   cross-scale packet schedule，不能只重复 `Xi_X(K,R)` 或
+   `alpha_xi_X`；
 2. 指定真正新增的 primary theorem source/corpus，先做不编号审核；
 3. 提供 theorem-backed fixed-atom local-increment theorem 或
    local-occurrence edge，审核对应 reopen；
-4. 等待新的 theorem/source。
+4. 等待新的 record/theorem/source。
 
-没有新 source/corpus/theorem 时，不应机械重复 TPC-204 census，也不得
-创建 TPC-205。
+没有新 record/source/corpus/theorem 时，不应机械重复 TPC-204 census
+或本节 single-record trace，也不得创建 TPC-205。
 
-## 11. 下一会话可直接粘贴
+## 12. 下一会话可直接粘贴
 
 ```text
 进入仓库：
@@ -410,6 +494,15 @@ cells 和 27 个 formula-crosswalk cells 中不存在完整 crosswalk；共同�
 是 NAMED_PRODUCTION_ATOM，精确 verdict 为
 FIRST_MISMATCH_CERTIFIED_NOT_TESTABLE。
 
+2026-07-30 的不编号 single-record extraction audit 已沿
+TPC-18 -> TPC-25 -> TPC-32 -> TPC-93 -> TPC-94 -> TPC-108 ->
+TPC-127 -> TPC-194 追踪实际来源链，并检查全部可达 Git history 与
+remote refs。Xi_X(K,R) 只是 fixed-X resolved-key family，不是 exact
+cross-scale production schedule；alpha_xi_X 是随 key/scale/q_X 变化的
+symbolic atom，不是 source-locked fixed named atom。首缺仍是
+NAMED_PRODUCTION_ATOM；即使反事实补齐 record，TW25 与 TT26 仍分别
+失败于 natural normalization 以及 all-prefix/positive-power/all-scale。
+
 保持 CORE_TERMINAL_BLOCK、CORE_CUMULATIVE_PREFIX 与
 PHYSICAL_PACKET_PREFIX 不可混同；保持 TPC193 V1 与 TPC204 V1 两个
 corpus cells 为 STOP_SCOPED；保持两个 O161 parents 和 global
@@ -417,10 +510,11 @@ architecture OPEN；保持 fixed-atom credit=0、strict 1/400 UNPAID、
 L2=NONE。
 
 TPC-205 未授权。停止并请求我从以下范围选择：
-(1) source-locked named atom + exact packet schedule；
+(1) 真正新增且 value-bearing 的 source-locked named atom + exact
+    cross-scale packet schedule record/locator；
 (2) 新 primary theorem source/corpus；
 (3) theorem-backed fixed-atom local increment 或 local-occurrence edge；
-(4) 等待新 theorem/source。
+(4) 等待新 record/theorem/source。
 
 授权本身不得替代数学 trigger。主会话只保留结论、路线选择、阻断项和
 最终审核摘要；长扫描、定理核查、schema exploit review、构建日志和逐页
