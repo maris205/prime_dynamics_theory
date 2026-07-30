@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\title{A Weighted Prefix--Tail Gluing Criterion for Regularized Determinants}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The new spectral-tail certificate and the deterministic numerator envelope
+live on opposite sides of a missing prefix interface.  We formulate the
+exact gluing theorem.  Split the logarithmic coefficient difference at a
+moving order $m_\sigma$.  If the weighted prefix mismatch, the noisy
+high-order tail, and the target high-order tail all vanish on a closed disk,
+then the normalized determinant quotient converges uniformly there, with an
+explicit exponential error bound.  RH-285 supplies the noisy spectral-tail
+leaf when the noisy coefficient sequence is the modulus-complement trace,
+and the deterministic envelope papers supply the target leaf.  The remaining
+prefix has a typed two-error decomposition: total noisy trace versus
+counterloop plus anchor, and noisy head versus counterloop.  RH-287 controls
+only the first error unweighted and without a rate.  The criterion prevents
+finite-order agreement from being promoted to a determinant theorem.
+\end{abstract}
+
+\section{Three budgets}
+Let
+\[
+ F_\sigma(z)=\exp\left(-\sum_{n\ge2}\frac{b_{\sigma,n}}n z^n\right),
+ \qquad
+ F(z)=\exp\left(-\sum_{n\ge2}\frac{a_n}n z^n\right)
+\]
+be normalized logarithmic germs whose displayed logarithmic series converge
+absolutely and uniformly on the closed disk $|z|\le R$.
+For an integer $m_\sigma\ge3$, put
+\begin{align*}
+ P_\sigma(R)&=\sum_{2\le n<m_\sigma}
+ \frac{|b_{\sigma,n}-a_n|R^n}{n},\\
+ S_\sigma(R)&=\sum_{n\ge m_\sigma}
+ \frac{|b_{\sigma,n}|R^n}{n},\\
+ T_\sigma(R)&=\sum_{n\ge m_\sigma}
+ \frac{|a_n|R^n}{n}.
+\end{align*}
+
+\section{Gluing theorem}
+\begin{theorem}\label{thm:gluing}
+If $P_\sigma(R)+S_\sigma(R)+T_\sigma(R)\to0$, then
+\[
+ \sup_{|z|\le R}\left|\frac{F_\sigma(z)}{F(z)}-1\right|
+ \le
+ \exp\{P_\sigma(R)+S_\sigma(R)+T_\sigma(R)\}-1
+ \longrightarrow0.
+\]
+\end{theorem}
+\begin{proof}
+On $|z|\le R$, split the normalized logarithm
+\[
+ \log\frac{F_\sigma(z)}{F(z)}
+ =-\sum_{2\le n<m_\sigma}\frac{(b_{\sigma,n}-a_n)z^n}{n}
+  -\sum_{n\ge m_\sigma}\frac{b_{\sigma,n}z^n}{n}
+  +\sum_{n\ge m_\sigma}\frac{a_nz^n}{n}.
+\]
+Its modulus is at most $P_\sigma+S_\sigma+T_\sigma$.  The inequality
+$|e^w-1|\le e^{|w|}-1$ gives the result.
+\end{proof}
+
+\section{Typed spectral application}
+Let $c_{\sigma,n}$ be the total noisy bulk trace, let
+\[
+ h_{\sigma,n}=\sum_{\mu\in H_\sigma}\mu^n,
+ \qquad
+ \tau_{\sigma,n}=c_{\sigma,n}-h_{\sigma,n}
+                  =\Tr C_\sigma^n,
+\]
+and let $s_{k_\sigma,n}$ be the finite-radius counterloop moment.  The target
+anchor is $a_n$.  Define the two typed errors
+\[
+ e_{\sigma,n}=c_{\sigma,n}-s_{k_\sigma,n}-a_n,
+ \qquad
+ d_{\sigma,n}=h_{\sigma,n}-s_{k_\sigma,n}.
+\]
+Then the coefficient needed for the spectral complement satisfies the exact
+identity
+\begin{equation}\label{eq:typed}
+ \tau_{\sigma,n}-a_n=e_{\sigma,n}-d_{\sigma,n}.
+\end{equation}
+Consequently its prefix budget obeys
+\[
+ P_\sigma(R)\le E_\sigma(R)+D_\sigma(R),
+\]
+where
+\[
+ E_\sigma(R)=\sum_{2\le n<m_\sigma}
+ \frac{|e_{\sigma,n}|R^n}{n},\qquad
+ D_\sigma(R)=\sum_{2\le n<m_\sigma}
+ \frac{|d_{\sigma,n}|R^n}{n}.
+\]
+Thus one may prove the missing prefix either directly for
+$\tau_{\sigma,n}-a_n$, or by
+proving both typed weighted estimates.  Head-to-counterloop transport alone
+does not imply the complement-to-anchor estimate.
+
+\section{Current leaf audit}
+In the gluing theorem set $b_{\sigma,n}=\tau_{\sigma,n}$.  The target trace
+envelope and coefficient-radius law give $T_\sigma(R)\to0$ on the certified
+strict target disk.  RH-282 and RH-285 give $S_\sigma(R)\to0$ for this
+projection-free modulus complement after the logarithmic block clock.  The
+unresolved term is the direct complement-to-anchor prefix $P_\sigma(R)$.
+
+RH-287 proves an unweighted maximum for $e_{\sigma,n}$ on some growing
+prefix, but its only automatic weighted consequence is
+\[
+ E_\sigma^{(h)}(R):=
+ \sum_{2\le n\le h_\sigma}\frac{|e_{\sigma,n}|R^n}{n}
+ \le\varepsilon_\sigma
+ \sum_{2\le n\le h_\sigma}\frac{R^n}{n}.
+\]
+The clock $h_\sigma$ need not reach the spectral tail clock $m_\sigma$, and
+for $R>1$ even the displayed partial bound need not vanish.  No current
+theorem supplies the weighted
+$D_\sigma(R)$ term either.  A direct $P_\sigma\to0$ theorem, or both typed
+weighted estimates in \eqref{eq:typed}, is still required.
+
+\begin{remark}
+The theorem is an assembly criterion, not a claim that its three leaves are
+all present.  Gate A and Gates B--E remain false/open.  It does not construct
+a Hilbert--Polya operator or identify any arithmetic divisor.
+\end{remark}
+\end{document}

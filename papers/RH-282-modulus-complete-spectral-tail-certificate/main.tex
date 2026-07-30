@@ -1,0 +1,107 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Schatten}{\mathcal S}
+\title{A Modulus-Complete Spectral-Tail Certificate for the Noisy Hardy Determinant}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The fixed-rank natural-$L^2$ quotient fails at zero noise, while the
+variable-rank criterion of RH-279 was previously uninstantiated.  We activate
+its tail branch without constructing a Riesz projector.  After removing the
+two peripheral eigenvalues of the Hardy-scaled folded Gaussian operator, take
+every algebraic eigenvalue of modulus greater than $q=1/2$ as the spectral
+head and put the remaining eigenvalues on a normal diagonal operator
+$C_\sigma$.  The sharp Hilbert--Schmidt mass law bounds their squared sum by
+$\sigma^{-1}$ for small noise.  With $R=7/5$ and
+$m_\sigma=\lceil4\log(1/\sigma)\rceil$, the trace norm, operator norm,
+prefix, and root-rate hypotheses of RH-279 hold, and the full logarithmic
+tail beyond $m_\sigma$ vanishes uniformly on $|z|\le R$.  This proves a
+projection-free spectral-tail theorem.  It does not identify the noisy head
+with the monodromy counterloop.
+\end{abstract}
+
+\section{Spectral realization}
+Let $A_\sigma=K_\sigma/r_H$, $r_H=0.85$, and remove the Perron and
+negative-parity eigenvalues from its algebraic spectrum.  Denote the
+remaining sequence, counted with algebraic multiplicity, by
+$(\mu_j(\sigma))_{j\ge1}$.  RH-276 and the Hilbert--Schmidt eigenvalue
+inequality give, for sufficiently small $\sigma$,
+\begin{equation}\label{eq:mass}
+ M_\sigma:=\sum_j|\mu_j(\sigma)|^2
+ \le \|A_\sigma\|_{\Schatten_2}^2\le\sigma^{-1}.
+\end{equation}
+Fix $q=1/2$.  The head
+$H_\sigma=\{\mu_j:|\mu_j|>q\}$ is finite.  On the Hilbert space
+$\ell^2(\{j:|\mu_j|\le q\})$, define
+\[
+ C_\sigma=\operatorname{diag}(\mu_j:|\mu_j|\le q).
+\]
+The canonical-product factorization from RH-234 shows that $C_\sigma$
+realizes exactly the complementary projection-free $\det_2$ factor.
+
+\section{Variable-block theorem}
+\begin{theorem}[instantiated RH-279 certificate]\label{thm:certificate}
+For every integer $m\ge2$,
+\begin{align}
+ \|C_\sigma^m\|_1&\le M_\sigma q^{m-2},&
+ \|C_\sigma^m\|&\le q^m,\\
+ \|C_\sigma^r\|&\le q^r\quad(0\le r<m),&
+ |\Tr C_\sigma^n|&\le M_\sigma q^{n-2}\quad(n\ge2).
+\end{align}
+Let $R=7/5$ and $m_\sigma=\lceil4\log(1/\sigma)\rceil$.  Then
+\[
+ \limsup_{\sigma\downarrow0}
+ \|C_\sigma^{m_\sigma}\|_1^{1/m_\sigma}R
+ \max\{1,qR\}
+ \le \frac7{10}e^{1/4}<1.
+\]
+Consequently
+\begin{equation}\label{eq:tail}
+ \sum_{n\ge m_\sigma}
+ \frac{|\Tr C_\sigma^n|R^n}{n}\longrightarrow0.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The operator is normal and diagonal.  Since $|\mu_j|\le q$ on the tail,
+\[
+ \sum_j|\mu_j|^m\le q^{m-2}\sum_j|\mu_j|^2,
+\]
+which gives every displayed norm and trace estimate.  By
+\eqref{eq:mass},
+\[
+ \limsup (M_\sigma q^{-2})^{1/m_\sigma}\le e^{1/4}.
+\]
+Because $qR=7/10$, the root-rate estimate follows.  Finally,
+\[
+ \sum_{n\ge m}\frac{|\Tr C_\sigma^n|R^n}{n}
+ \le \frac{M_\sigma q^{-2}(qR)^m}{m(1-qR)}.
+\]
+For the chosen clock the right side is
+$O(\sigma^{4\log(10/7)-1}/\log(1/\sigma))$, whose exponent is
+$0.426699\ldots>0$.
+\end{proof}
+
+\section{Head rank and exact scope}
+\begin{proposition}
+The modulus-complete head obeys
+$\#H_\sigma\le M_\sigma/q^2\le4\sigma^{-1}$.
+\end{proposition}
+\begin{proof}
+Every head eigenvalue contributes more than $q^2$ to the squared spectral
+mass in \eqref{eq:mass}.
+\end{proof}
+
+\begin{remark}
+$C_\sigma$ is a normal spectral realization of the canonical-product tail.
+It need not be similar to a bounded physical compression, and no estimate on
+the ill-conditioned Riesz projectors of RH-232 follows.  The theorem supplies
+the variable-rank tail obligation, not the head-to-monodromy coefficient
+bridge.  Gates A--E remain false/open; no Hilbert--Polya operator, Riemann-zero
+identification, zeta-divisor equality, or RH conclusion is asserted.
+\end{remark}
+\end{document}

@@ -1,0 +1,41 @@
+"""Verify the RH-282--RH-291 batch publication manifest."""
+
+from __future__ import annotations
+
+import json
+
+from build_archive import NUMBERS, PAPERS, ROOT, digest, paper_directories, publication_files
+
+
+def main() -> None:
+    manifest = json.loads((ROOT / "results/batch_dependency_manifest.json").read_text())
+    paths = []
+    for directory in paper_directories():
+        paths.extend(publication_files(directory))
+    current = {str(path.relative_to(PAPERS)): path for path in sorted(paths)}
+    expected = manifest["files"]
+    failures = []
+    for relative in sorted(set(expected) - set(current)):
+        failures.append({"file": relative, "reason": "missing"})
+    for relative in sorted(set(current) - set(expected)):
+        failures.append({"file": relative, "reason": "unexpected"})
+    for relative in sorted(set(expected) & set(current)):
+        if digest(current[relative]) != expected[relative]:
+            failures.append({"file": relative, "reason": "sha256_mismatch"})
+    payload = {
+        "status": "rh282_291_batch_archive_verified",
+        "paper_numbers": list(NUMBERS),
+        "file_count": manifest["file_count"],
+        "failure_count": len(failures),
+        "failures": failures,
+    }
+    (ROOT / "results/batch_archive_verification.json").write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    print(json.dumps(payload, sort_keys=True))
+    if failures:
+        raise SystemExit(1)
+
+
+if __name__ == "__main__":
+    main()

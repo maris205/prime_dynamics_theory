@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Canonical Modulus-Complete Heads for Projection-Free Spectral Factors}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The rank-growing tail theorem of RH-282 requires an actual noisy spectral
+head, not a fitted root list.  For any Hilbert--Schmidt operator and threshold
+$q>0$, we define the head to contain every algebraic eigenvalue of modulus
+strictly larger than $q$.  The head is finite, conjugation complete for real
+operators, and has cardinality at most the squared spectral mass divided by
+$q^2$.  It is the unique smallest spectral submultiset whose complement has
+spectral radius at most $q$.  The strict threshold convention also resolves
+ties.  Its genus-one product is an exact finite factor of $\det_2$, independent
+of eigenvector conditioning.  Canonicality is relative to $q$ and does not
+identify the selected roots with the deterministic monodromy shell.
+\end{abstract}
+
+\section{Definition}
+Let $A\in\mathcal S_2(H)$ and let $(\mu_j)$ be its nonzero eigenvalues with
+algebraic multiplicity.  For $q>0$ set
+\[
+ H_q(A)=\{\mu_j:|\mu_j|>q\},\qquad
+ T_q(A)=\{\mu_j:|\mu_j|\le q\}.
+\]
+The equality case belongs to the tail.  This strict convention is part of the
+definition.
+
+\section{Minimal head theorem}
+\begin{theorem}\label{thm:head}
+Write $M=\sum_j|\mu_j|^2$.  Then $H_q(A)$ is finite and
+\[
+ \#H_q(A)\le M/q^2\le\|A\|_2^2/q^2.
+\]
+If a finite spectral submultiset $F$ has the property that every eigenvalue
+outside $F$ has modulus at most $q$, then $H_q(A)\subseteq F$.  Thus
+$H_q(A)$ is the unique smallest admissible head.
+\end{theorem}
+\begin{proof}
+Every member of $H_q$ contributes more than $q^2$ to the convergent squared
+sum, proving finiteness and the count.  If $F$ omitted an eigenvalue with
+modulus greater than $q$, its complement would violate the radius condition.
+Hence every admissible $F$ contains $H_q$.
+\end{proof}
+
+\begin{corollary}[real symmetry]
+If $A$ commutes with a real conjugation, then $H_q(A)$ is closed under complex
+conjugation, with equal algebraic multiplicities.  Its finite canonical
+product has real Taylor coefficients.
+\end{corollary}
+\begin{proof}
+The algebraic spectrum of a real operator is conjugation invariant, and
+modulus is unchanged by conjugation.
+\end{proof}
+
+\section{Exact determinant split}
+The genus-one products
+\[
+ D_{H,q}(z)=\prod_{\mu\in H_q}(1-z\mu)e^{z\mu},\qquad
+ D_{T,q}(z)=\prod_{\mu\in T_q}(1-z\mu)e^{z\mu}
+\]
+are well defined, the first finite and the second locally normally
+convergent.  RH-234 gives the exact identity
+\[
+ \det_2(I-zA)=D_{H,q}(z)D_{T,q}(z).
+\]
+No invariant-subspace basis is needed.
+
+\begin{remark}
+The threshold $q$ is an explicit design parameter.  The theorem is canonical
+after $q$ is fixed, not a claim that the dynamics chooses $q=1/2$.  It also
+does not prove that $H_q$ equals the RH-272 counterloop atoms.  Gates A--E
+remain false/open.
+\end{remark}
+\end{document}

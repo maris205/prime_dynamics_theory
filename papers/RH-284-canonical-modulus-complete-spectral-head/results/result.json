@@ -1,0 +1,31 @@
+{
+  "canonical_relative_to_cutoff": true,
+  "counterloop_spectral_identification": false,
+  "cutoff": 0.5,
+  "cutoff_intrinsic_to_dynamics": false,
+  "gate_A": false,
+  "gates_B_to_E": false,
+  "rows": [
+    {
+      "head_rank_upper_q_half": 400.0,
+      "sigma": 0.01
+    },
+    {
+      "head_rank_upper_q_half": 4000.0,
+      "sigma": 0.001
+    },
+    {
+      "head_rank_upper_q_half": 40000.0,
+      "sigma": 0.0001
+    },
+    {
+      "head_rank_upper_q_half": 4000000.0,
+      "sigma": 1e-06
+    }
+  ],
+  "status": "rh284_canonical_modulus_complete_spectral_head",
+  "synthetic_head_count": 4,
+  "synthetic_tail_count": 3,
+  "synthetic_tail_radius": 0.5,
+  "threshold_tie_left_in_tail": true
+}

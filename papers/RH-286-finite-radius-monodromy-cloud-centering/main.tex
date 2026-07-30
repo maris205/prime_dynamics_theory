@@ -1,0 +1,86 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Finite-Radius Centering for Monodromy Cloud Audits}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The archived noisy-cloud audit used the limiting monodromy radius, although
+the exact edge-deflated shell has a finite-period radius.  From the RH-17
+multiplier law $|M_k|=C_M\lambda^k(1+o(1))$, we prove that comparing the
+$2(k-1)$ shell roots with the limiting radius creates an accumulated
+root-$\ell^1$ bias tending to $\beta|\log C_M|$.  In contrast, the radial
+bias of every fixed pre-alias moment is $O(k^{-1})$.  Re-centering the seven
+RH-15 clouds at archived multiprecision approximations to the finite-cycle
+radii reduces both total root errors and maximum moment defects.  These are
+floating diagnostics, not interval or asymptotic noisy-cloud transport.  The
+distinction explains why root-$\ell^1$ convergence to the limiting shell is
+stronger than the control needed for each fixed coefficientwise bridge;
+uniform determinant gluing still requires a growing weighted-prefix estimate.
+\end{abstract}
+
+\section{Finite shell radius}
+Let
+\[
+ \beta=\frac1{r_H\sqrt\lambda},\qquad
+ \beta_k=\frac{|M_k|^{-1/(2k)}}{r_H},\qquad r_H=0.85.
+\]
+RH-17 proves $|M_k|=C_M\lambda^k(1+o(1))$ for a constant $C_M>0$.
+Hence
+\begin{equation}\label{eq:beta-law}
+ \beta_k=\beta\exp\left[-\frac{\log C_M}{2k}+o(k^{-1})\right].
+\end{equation}
+
+\begin{theorem}[two centering scales]\label{thm:centering}
+The radial matching cost between the finite and limiting edge-deflated
+shells satisfies
+\[
+ 2(k-1)|\beta_k-\beta|\longrightarrow
+ \beta|\log C_M|.
+\]
+For every fixed even $n$,
+\[
+ 2|\beta_k^n-\beta^n|
+ =\frac{n\beta^n|\log C_M|}{k}+o(k^{-1}).
+\]
+Odd shell moments vanish at both radii before the first alias.
+\end{theorem}
+\begin{proof}
+Expand the exponential in \eqref{eq:beta-law}.  There are $2(k-1)$ roots,
+all receiving the same radial displacement.  For the moment statement,
+raise \eqref{eq:beta-law} to the fixed power $n$ and use the exact pre-alias
+ledger $-2\beta_k^n$ at even orders and zero at odd orders.
+\end{proof}
+
+If $C_M\ne1$, the first limit is positive.  The archived multiprecision
+diagnostic gives $C_M=1.9463429052\ldots$, but it is not a directed-rounding
+certificate; positivity of the numerical constant is therefore not promoted
+to a new computer-assisted theorem here.
+
+\section{Seven-row re-audit}
+For an RH-15 cloud of effective degree $N$, we set $k=N+1$ and use the
+archived multiprecision approximation to the exact RH-17 radius $\beta_k$.
+The phase grid remains
+$j\pi/(N+1)$, $1\le j\le N$.  The same root and moment diagnostics as RH-275
+then give:
+\begin{center}\small
+\begin{tabular}{lcc}\toprule
+quantity & limiting-radius audit & finite-radius audit\\\midrule
+total root error range & $0.6424$--$1.2481$ & $0.2841$--$0.8992$\\
+maximum pre-alias moment range & $0.5096$--$1.4573$ & $0.3640$--$1.0450$\\\bottomrule
+\end{tabular}
+\end{center}
+All seven finite-radius root errors are smaller than their limiting-radius
+counterparts.  This comparison reuses frozen binary64 roots and
+multiprecision radii; it is not interval validation.
+
+\begin{remark}
+The theorem corrects the target of future aggregate audits.  It does not
+select a canonical noisy pole cloud, certify its roots, or prove convergence
+as $\sigma\downarrow0$.  Triggers 1 and 2 and Gates A--E remain open.  No
+Hilbert--Polya or Riemann-hypothesis conclusion is involved.
+\end{remark}
+\end{document}

@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Finite-Moment Nonidentifiability by Hidden Root-of-Unity Shells}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+Growing coefficient prefixes do not by themselves identify a spectral cloud.
+For every prescribed prefix length $N$, we construct a conjugation-symmetric
+shell whose power sums vanish through order $N$ but whose next selected
+moment is nonzero.  Appending the shell to any spectral multiset preserves
+the entire observed prefix while multiplying the regularized determinant by
+$1-(\gamma z)^L$ for some $L>N$.  Thus arbitrarily long finite agreement is
+compatible with a new divisor immediately beyond the checked window.  The
+result is scoped: weighted tail bounds, root transport, or contour control can
+exclude the construction.  It shows exactly why the rate-free prefix theorem
+of RH-287 cannot replace the weighted gluing leaf of RH-288.
+\end{abstract}
+
+\section{Hidden shell}
+Fix $L\ge2$ and $\gamma>0$.  Let
+\[
+ \mathcal S_{L,\gamma}
+ =\{\gamma e^{2\pi i j/L}:0\le j<L\}.
+\]
+This multiset is closed under conjugation.
+
+\begin{theorem}[prefix invisibility]\label{thm:shell}
+For every integer $n\ge1$,
+\[
+ \sum_{\zeta\in\mathcal S_{L,\gamma}}\zeta^n
+ =L\gamma^n\mathbf1_{L\mid n}.
+\]
+Consequently, if $L>N$, every power sum through order $N$ vanishes, while
+the order-$L$ sum equals $L\gamma^L$.
+\end{theorem}
+\begin{proof}
+Factor out $\gamma^n$ and sum the finite geometric progression
+$\sum_{j=0}^{L-1}e^{2\pi i jn/L}$.
+\end{proof}
+
+\begin{corollary}[exact hidden divisor]
+The genus-one shell factor is
+\[
+ \prod_{\zeta\in\mathcal S_{L,\gamma}}
+ (1-z\zeta)e^{z\zeta}=1-(\gamma z)^L.
+\]
+\end{corollary}
+\begin{proof}
+The linear exponential terms cancel because the first shell moment is zero.
+The remaining polynomial identity is the factorization of
+$1-(\gamma z)^L$ over the $L$th roots of unity.
+\end{proof}
+
+\section{Nonidentifiability consequence}
+Let $C$ be any finite spectral multiset and set
+$\widetilde C=C\sqcup\mathcal S_{L,\gamma}$.  If $L>N$, then
+\[
+ \sum_{\lambda\in C}\lambda^n
+ =\sum_{\lambda\in\widetilde C}\lambda^n,
+ \qquad1\le n\le N,
+\]
+but the associated canonical products differ by $1-(\gamma z)^L$.
+No rule reading only the first $N$ moments can distinguish them.
+
+The same construction can be applied at a moving $N=N_\sigma$.  Without a
+weighted estimate that suppresses $\gamma_\sigma^{L_\sigma}R^{L_\sigma}$,
+even a diverging prefix does not determine the analytic factor on $|z|\le R$.
+
+\begin{remark}
+This counterexample does not show that the physical folded Gaussian spectrum
+contains hidden shells.  It only proves insufficiency of prefix data.  A
+root-$\ell^1$, weighted-Fourier, or contour theorem would add information that
+the construction ignores.  Gates A--E remain false/open.
+\end{remark}
+\end{document}

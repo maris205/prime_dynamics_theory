@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Uniform Derivative Envelopes for Projection-Free $\det_2$ Tails}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The modulus-complete complement of RH-282 has an all-order geometric trace
+envelope.  We show that the same estimate controls every fixed derivative of
+the omitted logarithmic determinant tail.  If
+$|\tau_{\sigma,n}|\le M_\sigma q^{n-2}$,
+$M_\sigma\le C\sigma^{-\alpha}$, and $qR<1$, then the $s$th derivative of
+$\sum_{n\ge m}\tau_{\sigma,n}z^n/n$ on $|z|\le R$ is bounded by a constant
+times $M_\sigma m^{s-1}(qR)^m$.  A logarithmic clock strictly above the sharp
+RH-283 threshold therefore gives convergence in every fixed $C^s$ norm.  In
+the Hardy-disk instance the gain is a positive power of noise.  This theorem
+controls only the complementary spectral factor; the finite head-to-
+monodromy bridge remains open.
+\end{abstract}
+
+\section{Derivative estimate}
+Assume
+\[
+ |\tau_{\sigma,n}|\le M_\sigma q^{n-2},\qquad n\ge2,
+\]
+and define
+\[
+ E_{\sigma,m}(z)=\sum_{n\ge m}\frac{\tau_{\sigma,n}}n z^n.
+\]
+
+\begin{theorem}\label{thm:derivative}
+Let $x=qR<1$ and fix an integer $s\ge0$.  There is a finite constant
+\[
+ B_{s,x}=\sum_{k\ge0}(1+k)^{\max(s-1,0)}x^k
+\]
+such that, for $m\ge\max(2,s)$,
+\begin{equation}\label{eq:bound}
+ \sup_{|z|\le R}|E_{\sigma,m}^{(s)}(z)|
+ \le M_\sigma q^{-2}R^{-s}B_{s,x}
+ m^{\max(s-1,0)}x^m.
+\end{equation}
+\end{theorem}
+\begin{proof}
+For $s=0$, use $1/n\le1/m$.  For $s\ge1$, differentiating $z^n/n$ gives a
+coefficient no larger than $n^{s-1}R^{n-s}$.  Write $n=m+k$ and use
+$(m+k)^{s-1}\le m^{s-1}(1+k)^{s-1}$.  The remaining series is exactly
+$B_{s,x}$.
+\end{proof}
+
+\begin{corollary}[smooth tail convergence]
+If $M_\sigma\le C\sigma^{-\alpha}$ and
+$m_\sigma=\lceil a\log(1/\sigma)\rceil$ with
+$a\log(1/(qR))>\alpha$, then
+\[
+ E_{\sigma,m_\sigma}\longrightarrow0
+ \quad\text{in }C^s(|z|\le R)
+\]
+for every fixed $s$.  The canonical-product tail
+$\exp(-E_{\sigma,m_\sigma})$ converges to $1$ in the same topology.
+\end{corollary}
+\begin{proof}
+The right side of \eqref{eq:bound} is a fixed power of
+$\log(1/\sigma)$ times
+$\sigma^{a\log(1/(qR))-\alpha}$.  It tends to zero.  The exponential claim
+follows from the chain rule on a bounded neighborhood of zero.
+\end{proof}
+
+\section{Certified instance}
+For $\alpha=1$, $q=1/2$, $R=7/5$, and $a=4$, the exponent is
+\[
+ 4\log(10/7)-1=0.426699775\ldots>0.
+\]
+Thus the high-order noisy spectral factor from RH-282 tends to one together
+with every fixed derivative on the full target disk.
+
+\begin{remark}
+Derivative control of the tail cannot identify the finite head.  In
+particular it does not show that the modulus-selected noisy roots lie on the
+finite monodromy shell.  Gates A--E remain false/open, and no arithmetic or
+Hilbert--Polya conclusion is drawn.
+\end{remark}
+\end{document}

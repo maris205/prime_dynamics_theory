@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\newtheorem{proposition}{Proposition}[section]
+\theoremstyle{remark}\newtheorem{remark}[proposition]{Remark}
+\title{A Typed Ledger for Noisy Spectral Tails, Graded Counterloops, and Their Missing Glue}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The variable-rank spectral tail of RH-282 fills one entry of the noisy branch,
+but it cannot be transferred silently to the monodromy counterloop branch.
+We update the two five-obligation ledgers and add an explicit cross-branch
+glue bit.  The noisy modulus-spectral vector is $(1,0,1,1,1)$; the graded
+monodromy vector is $(1,1,0,1,1)$; the weighted glue bit is zero.  Each branch
+therefore has score four, with complete count zero.  Their coordinatewise
+maximum is the all-ones vector, but that merge is ill typed: the spectral
+head and graded head are not identified.  RH-288 states the exact weighted
+complement-to-anchor interface needed to legalize the merge.  A sufficient
+decomposition requires both a weighted total-trace bridge and weighted
+head-to-counterloop transport.  Gates A--E remain open.
+\end{abstract}
+
+\section{Typed obligations}
+The five entries are:
+\begin{enumerate}
+ \item a legal head;
+ \item a coefficient bridge to the deterministic numerator;
+ \item a uniform high-order tail;
+ \item an analytic target tail;
+ \item a certified target boundary constant.
+\end{enumerate}
+The same labels are used for both branches, but the underlying heads are
+different objects.  The noisy branch uses the actual modulus-complete
+algebraic eigenvalue multiset.  The graded branch uses the deterministic
+finite-radius monodromy counterloop.
+
+\begin{center}\small
+\begin{tabular}{lccccc|c}\toprule
+branch & head & bridge & tail & target & boundary & score\\\midrule
+noisy modulus spectrum & 1&0&1&1&1&4\\
+graded monodromy counterloop & 1&1&0&1&1&4\\\bottomrule
+\end{tabular}
+\end{center}
+
+\section{No coordinatewise merge}
+\begin{proposition}[typed-union obstruction]
+The coordinatewise maximum of the two vectors is $(1,1,1,1,1)$, but it is
+not a complete certificate unless the noisy modulus complement satisfies the
+weighted prefix bridge to the deterministic anchor.  By RH-288, it is
+sufficient to prove on the same clock both the weighted total-noisy-trace
+bridge to counterloop plus anchor and the weighted noisy-head bridge to the
+counterloop.
+\end{proposition}
+\begin{proof}
+The spectral tail estimate controls the complement of the modulus-selected
+noisy eigenvalues.  The graded coefficient bridge subtracts moments of a
+different finite multiset.  Without an equality or asymptotically vanishing
+weighted complement-to-anchor prefix, the tail of one factor and the prefix
+of the other do not occur in a common determinant decomposition.  Writing
+total trace as head plus complement, RH-288 decomposes that missing prefix
+into a total-trace/counterloop/anchor error minus a head/counterloop error.
+Controlling only the latter leaves the former open.  The compound interface
+is currently false/open, so coordinatewise union changes the object
+mid-proof.
+\end{proof}
+
+\section{Status}
+The cross-branch weighted-glue bit is zero.  Both branch-complete counts are
+therefore zero even though both raw scores equal four.  RH-286 improves the
+finite-radius diagnostic target and RH-287 gives a rate-free growing prefix;
+neither supplies the two synchronized weighted estimates or the direct
+complement-to-anchor prefix.
+
+\begin{remark}
+No Gate-A determinant identification has been completed.  Gates B--E also
+remain false/open.  Nothing here constructs a Hilbert--Polya operator,
+identifies Riemann zeros, proves a von Mangoldt trace identity, or proves RH.
+\end{remark}
+\end{document}
