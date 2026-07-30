@@ -1,0 +1,2797 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "checks": {
+      "items": false,
+      "maxItems": 18,
+      "minItems": 18,
+      "prefixItems": [
+        {
+          "const": "SOURCE_LOCKS_29_REVERIFIED",
+          "type": "string"
+        },
+        {
+          "const": "EXPLICIT_28_TIP_GIT_CLOSURE_REBUILT",
+          "type": "string"
+        },
+        {
+          "const": "STRUCTURED_JSON_KEY_AUDIT_REBUILT",
+          "type": "string"
+        },
+        {
+          "const": "SEMANTIC_SELECTORS_UNIQUE",
+          "type": "string"
+        },
+        {
+          "const": "SIX_RECORD_INTEGRITY_CHAIN_REBUILT",
+          "type": "string"
+        },
+        {
+          "const": "TPC133_MANIFEST_CERTIFICATE_ARCHIVE_CHAIN_REBUILT",
+          "type": "string"
+        },
+        {
+          "const": "TPC133_Q_TO_TPC18_R_TYPED_ALIAS_REBUILT",
+          "type": "string"
+        },
+        {
+          "const": "TPC134_DYADIC_VALUES_REBUILT",
+          "type": "string"
+        },
+        {
+          "const": "SELECTED_GRAPH_10_NODES_12_EDGES_REBUILT",
+          "type": "string"
+        },
+        {
+          "const": "FIELD_LEDGER_42_ROWS",
+          "type": "string"
+        },
+        {
+          "const": "MATERIALIZED_13_MISSING_29",
+          "type": "string"
+        },
+        {
+          "const": "FIRST_MISSING_D_INDEX_9",
+          "type": "string"
+        },
+        {
+          "const": "SELECTED_NON_SPLICING_29_ROWS",
+          "type": "string"
+        },
+        {
+          "const": "TPC32_TPC93_L0_SPLICE_REJECTED",
+          "type": "string"
+        },
+        {
+          "const": "SELECTED_LINEAGE_FULL_COMPLETION_ZERO",
+          "type": "string"
+        },
+        {
+          "const": "CORPUS_WIDE_MAXIMALITY_NOT_TESTABLE",
+          "type": "string"
+        },
+        {
+          "const": "CLAIM_FIREWALL_LOCKED",
+          "type": "string"
+        },
+        {
+          "const": "STOP_SCOPED_PRESERVED",
+          "type": "string"
+        }
+      ],
+      "type": "array"
+    },
+    "manifest_trust": {
+      "additionalProperties": false,
+      "properties": {
+        "external_signature": {
+          "const": false,
+          "type": "boolean"
+        },
+        "mode": {
+          "const": "REPOSITORY_PIN_REQUIRES_GIT_REVIEW_NOT_EXTERNAL_SIGNATURE",
+          "type": "string"
+        },
+        "theorem_evidence": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "external_signature",
+        "mode",
+        "theorem_evidence"
+      ],
+      "type": "object"
+    },
+    "mutation_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "active_schema_rejections": {
+          "const": 76,
+          "type": "integer"
+        },
+        "all_rejected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "base_exact_schema_mutations": {
+          "items": false,
+          "maxItems": 12,
+          "minItems": 12,
+          "prefixItems": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "wrong_schema",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "wrong_paper_number",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "wrong_parent_paper",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "wrong_classification",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "wrong_theorem_status",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "wrong_verdict",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "wrong_source_snapshot",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "wrong_required_field_count",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "wrong_materialized_count",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "wrong_missing_count",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "wrong_first_missing_index",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "extra_top_level_key",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "coordinated_semantic_mutations": {
+          "items": false,
+          "maxItems": 52,
+          "minItems": 52,
+          "prefixItems": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "promote_13_to_14",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "omit_blocked_field",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "replace_first_missing_D_with_d",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "reuse_tpc133_Q_as_tpc205_Q",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "detach_delta_from_manifest_lineage",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "replace_R_typed_alias_with_name_equality",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "use_jL_as_L_without_pow2",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "use_jK_as_K_without_pow2",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "promote_finite_delta_to_cross_scale_schedule",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "promote_projection_id_to_production_id",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "collapse_pair_edge_target_ids",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "swap_alpha_gamma_quotient",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "splice_tpc32_child_fields",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "splice_tpc32_T_U0",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "manual_u_selection",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "manual_polarization_selection",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "promote_row_only_to_production",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "promote_l0_to_production",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "promote_shadow_to_actual",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "promote_formal_to_actual",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "promote_synthetic_to_actual",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "support_to_nonzero",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "null_joint_mask_to_one",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "B_alias_to_full_literal",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "implicit_conjugation",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "nu_X_label_to_scalar",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "copy_one_normalization_to_four_stages",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "drop_quadratic_scalar_square",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "pair_to_omega_pass",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "remove_supplied_omega_premise",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "single_child_restores_source",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "drop_projector_support",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "pay_hard_remainder",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "pay_square_root_return",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "pay_endpoint_return",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "production_count_zero_to_one",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "full_join_zero_to_one",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "mathematical_reopen_true",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "H1_E_repair_true",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "fixed_atom_credit_positive",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "positive_sigma_true",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "strict_one_over_400_paid",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "L2_promoted",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "stop_scoped_removed",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "stop_scoped_globalized",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "O161_parent_closed",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "H1_architecture_closed",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "authorization_becomes_evidence",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "source_lock_rebound_with_content",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "archive_census_omission",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "structured_key_count_rewrite",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "selected_scope_globalized",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "expected_reconstruction_semantic_rejections": {
+          "const": 52,
+          "type": "integer"
+        },
+        "regenerated_exact_schema_acceptances": {
+          "const": 76,
+          "type": "integer"
+        },
+        "strict_bool_int_mutations": {
+          "items": false,
+          "maxItems": 12,
+          "minItems": 12,
+          "prefixItems": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "paper_true",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "parent_paper_false",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "X_true",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "h0_false",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "D0_false",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "field_index_true",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "materialized_count_true",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "missing_count_false",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "delta_numerator_true",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "delta_denominator_true",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "authorization_zero",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "active_exact_schema_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "expected_payload_reconstruction_rejected": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "name": {
+                  "const": "mathematical_reopen_zero",
+                  "type": "string"
+                },
+                "payload_changed": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "regenerated_exact_schema_accepts": {
+                  "const": true,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "active_exact_schema_rejected",
+                "expected_payload_reconstruction_rejected",
+                "name",
+                "payload_changed",
+                "regenerated_exact_schema_accepts"
+              ],
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        }
+      },
+      "required": [
+        "active_schema_rejections",
+        "all_rejected",
+        "base_exact_schema_mutations",
+        "coordinated_semantic_mutations",
+        "expected_reconstruction_semantic_rejections",
+        "regenerated_exact_schema_acceptances",
+        "strict_bool_int_mutations"
+      ],
+      "type": "object"
+    },
+    "paper": {
+      "const": 206,
+      "type": "integer"
+    },
+    "parser_firewall": {
+      "additionalProperties": false,
+      "properties": {
+        "NaN_and_Infinity_rejected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "canonical_payload_bytes_required": {
+          "const": true,
+          "type": "boolean"
+        },
+        "duplicate_json_keys_rejected": {
+          "const": true,
+          "type": "boolean"
+        },
+        "python_optimized_mode_fails_closed": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "NaN_and_Infinity_rejected",
+        "canonical_payload_bytes_required",
+        "duplicate_json_keys_rejected",
+        "python_optimized_mode_fails_closed"
+      ],
+      "type": "object"
+    },
+    "payload_schema_sha256": {
+      "const": "e8b7624e293fb96a99c9d0da3d5c71e41ed5cd4cd85b1deb10288eb47fbefd19",
+      "type": "string"
+    },
+    "payload_sha256": {
+      "const": "b0e8ca954ed25679ae19178fd4c31c0e8c891d0de78e87ac5f74632232e9370c",
+      "type": "string"
+    },
+    "schema": {
+      "const": "tpc-206-selected-lineage-pair-registry-audit-v1",
+      "type": "string"
+    },
+    "summary": {
+      "additionalProperties": false,
+      "properties": {
+        "archive_objects_verified": {
+          "const": 12203,
+          "type": "integer"
+        },
+        "corpus_wide_maximality": {
+          "const": "NOT_TESTABLE",
+          "type": "string"
+        },
+        "fields_verified": {
+          "const": 42,
+          "type": "integer"
+        },
+        "materialized_fields_verified": {
+          "const": 13,
+          "type": "integer"
+        },
+        "mathematical_reopen": {
+          "const": false,
+          "type": "boolean"
+        },
+        "missing_fields_verified": {
+          "const": 29,
+          "type": "integer"
+        },
+        "selected_graph_edges_verified": {
+          "const": 12,
+          "type": "integer"
+        },
+        "selected_graph_nodes_verified": {
+          "const": 10,
+          "type": "integer"
+        },
+        "selected_lineage_full_completions": {
+          "const": 0,
+          "type": "integer"
+        },
+        "selected_non_splicing_rows_verified": {
+          "const": 29,
+          "type": "integer"
+        },
+        "source_locks_verified": {
+          "const": 29,
+          "type": "integer"
+        },
+        "verdict": {
+          "const": "SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED",
+          "type": "string"
+        }
+      },
+      "required": [
+        "archive_objects_verified",
+        "corpus_wide_maximality",
+        "fields_verified",
+        "materialized_fields_verified",
+        "mathematical_reopen",
+        "missing_fields_verified",
+        "selected_graph_edges_verified",
+        "selected_graph_nodes_verified",
+        "selected_lineage_full_completions",
+        "selected_non_splicing_rows_verified",
+        "source_locks_verified",
+        "verdict"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "checks",
+    "manifest_trust",
+    "mutation_contract",
+    "paper",
+    "parser_firewall",
+    "payload_schema_sha256",
+    "payload_sha256",
+    "schema",
+    "summary"
+  ],
+  "title": "TPC-206 selected-lineage pair-registry projection audit",
+  "type": "object"
+}

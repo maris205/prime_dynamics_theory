@@ -1,0 +1,2296 @@
+{
+  "archive_census": {
+    "counts": {
+      "blob_bytes": 549022045,
+      "blob_object_count": 8559,
+      "commit_count": 328,
+      "commit_object_count": 328,
+      "json_parse_failures": 17,
+      "parseable_json_blob_count": 1707,
+      "reachable_object_count": 12203,
+      "record_like_blob_bytes": 146302386,
+      "record_like_blob_count": 3551,
+      "ref_count": 34,
+      "text_blob_bytes": 165158579,
+      "text_blob_count": 7479,
+      "tree_object_count": 3316,
+      "unique_tip_count": 28
+    },
+    "definition": {
+      "jsonl_scope": "TEXT_AND_RECORD_INVENTORY_PLUS_SELECTED_ROW_CHECKS",
+      "path_choice": "LEXICOGRAPHICALLY_MINIMUM_REACHABLE_PATH_PER_BLOB",
+      "record_path_tokens": [
+        "archive",
+        "audit",
+        "certificate",
+        "fixture",
+        "ledger",
+        "manifest",
+        "record",
+        "registry",
+        "result",
+        "sample",
+        "schema"
+      ],
+      "scope": "EXPLICIT_28_TIP_REACHABLE_GIT_OBJECT_CLOSURE",
+      "structured_json_parser": "RFC8259_STRICT_NONFINITE_CONSTANTS_AND_DUPLICATE_KEYS_REJECTED",
+      "structured_json_scope": "PARSEABLE_DOT_JSON_BLOBS_ONLY",
+      "text_suffixes": [
+        ".bib",
+        ".cfg",
+        ".csv",
+        ".ini",
+        ".json",
+        ".jsonl",
+        ".md",
+        ".py",
+        ".rst",
+        ".tex",
+        ".toml",
+        ".tsv",
+        ".txt",
+        ".yaml",
+        ".yml"
+      ],
+      "untracked_included": false,
+      "working_tree_included": false
+    },
+    "digests": {
+      "commits_lf": "bbfef7198e46ce6165c00832b53a9b09b94642701f4e4fa76ab5db5ea875bcee",
+      "json_tsv": "c8f46549dcaa69288d5635b9bc416603131ab174f5b824d3045d6eca5cbb8b65",
+      "objects_tsv": "3d88cccca291330ad99393f62d9dd4d024f29affbb53ff4201c28d769528ffaf",
+      "record_like_tsv": "3d11a15ab0524213ce9a99bf7246f0b8f206b3352e4db8b22c40c3fffef89eee",
+      "refs_tsv": "6ab93d0eea746d3f1395ededcc982d221894de47939841964776e3bf0b7ef823",
+      "structured_keys": "40a5b076fe134099caf98267fff372de0306b770289750f4557f577bde5c2f90",
+      "text_tsv": "51dc91013d8230ac7decce1a63dcfe25cc8e6fa2d65aa4700f74a746fd3e461f",
+      "tips_lf": "2e72549ba295cbc6c0fc2efb39bee4b0c11ac1a3a0734afa64da547e43726607"
+    },
+    "inventory_bytes": {
+      "commits_lf": 13448,
+      "json_tsv": 228019,
+      "objects_tsv": 619120,
+      "record_like_tsv": 457603,
+      "refs_tsv": 2744,
+      "structured_keys": 5659,
+      "text_tsv": 914441,
+      "tips_lf": 1148
+    },
+    "scan_anchor": {
+      "head": "42507087b774d9057ba3794468a4790bf93162d5",
+      "local_main": "a5f6c645504261d36081898a6e7b11e4992fac8d",
+      "origin_main": "42507087b774d9057ba3794468a4790bf93162d5",
+      "ref_pairs": [
+        [
+          "refs/heads/main",
+          "a5f6c645504261d36081898a6e7b11e4992fac8d"
+        ],
+        [
+          "refs/heads/rough-pair-parity",
+          "a5b348d9084833a51e33defae44d04c7cf7dc6d8"
+        ],
+        [
+          "refs/heads/short-box-sieve-kernels",
+          "a4c8a4a018bf26802033990e13b6f06a8d0190ce"
+        ],
+        [
+          "refs/heads/structured-sieve-low-conductor",
+          "cc8b3fac16294cff4e26d77f903f77aa73a40400"
+        ],
+        [
+          "refs/heads/tpc-10-nonzero-mellin-localization",
+          "0709ffab634d9f628ca3f7b7f3910c5d3dd2367f"
+        ],
+        [
+          "refs/heads/tpc-11-factor-ray-dephasing",
+          "0e4e762ab29ea66cc95e38e310a86b7aad22f29c"
+        ],
+        [
+          "refs/heads/tpc-12-intra-ray-cancellation",
+          "311ce8b040f65bb2d8f2d6638b990b7b9d018bee"
+        ],
+        [
+          "refs/heads/tpc-13-radial-mellin-completion",
+          "c8c32ebc3e42ee3c6a4200a86399e4f73386c5ee"
+        ],
+        [
+          "refs/heads/tpc-14-label-preserving-dispersion",
+          "ceef5b91f79055f2785bdf6e4c301c64753256a6"
+        ],
+        [
+          "refs/heads/tpc-15-fixed-shift-typeii-interface",
+          "f497caad1dcf6bff7b52361dee191f3dac308bfd"
+        ],
+        [
+          "refs/heads/tpc-16-dyadic-balanced-corridor",
+          "eaa2b3546eb1cb5e8b3ef5d847aca24fae6faf66"
+        ],
+        [
+          "refs/heads/tpc-17-maze-next-gate",
+          "5438204e32f990b66c422daa14af7c7436afd4ab"
+        ],
+        [
+          "refs/heads/tpc-18-determinant-tail-ttstar",
+          "f418ea1a892120fb50b56d16debeece26afc557e"
+        ],
+        [
+          "refs/heads/tpc-19-primitive-determinant-dispersion",
+          "a6b64bf4fb508b1d0f80530639cbc496a91e318c"
+        ],
+        [
+          "refs/heads/tpc-20-matched-spectral-reduction",
+          "a7c3a7ed6ac9937fee76c2a4ad9eef6d5355805e"
+        ],
+        [
+          "refs/heads/tpc-21-fiber-discrepancy-gate",
+          "dc916dc42a2dc4fb4d8e3cca69c2633af60f4894"
+        ],
+        [
+          "refs/heads/tpc-22-shared-factor-moment",
+          "69291771027bab27ca5e00eaf37fe085c0d5f637"
+        ],
+        [
+          "refs/heads/tpc-23-one-sided-large-divisor",
+          "9cb078f0aceb105fd807e44e63a63f8082361783"
+        ],
+        [
+          "refs/heads/tpc-24-asymmetric-zero-mode",
+          "ea932b272601d480160861631d07cdbddf4c9b89"
+        ],
+        [
+          "refs/heads/tpc-25-row-averaged-zero-mode",
+          "1cf8d0da027cb2212251719a5396e6fcd43f0224"
+        ],
+        [
+          "refs/heads/tpc-26-both-new-square",
+          "a49b0f2be4ca59d0c3d551f95b49e3508070bb90"
+        ],
+        [
+          "refs/heads/tpc-27-calibrated-base-closure",
+          "42507087b774d9057ba3794468a4790bf93162d5"
+        ],
+        [
+          "refs/heads/tpc-5-prime-weighted-transfer",
+          "be8cd9dd528d4f58599772146516a2c27e6e2317"
+        ],
+        [
+          "refs/heads/tpc-6-prime-target-defect",
+          "12fce45af98061ac95d7dcb6a8b3a9a540e33394"
+        ],
+        [
+          "refs/heads/tpc-7-almost-all-shift-defect",
+          "0c2346b0a799d17bc062f2c2e553f182d386b448"
+        ],
+        [
+          "refs/heads/tpc-8-low-conductor-second-coefficient",
+          "18655dd8ed978d2247e85858d33e71dcb9863b9a"
+        ],
+        [
+          "refs/heads/tpc-9-prime-residual-covariance",
+          "ad77517ad8b06bf89f45cc682739b052c5560411"
+        ],
+        [
+          "refs/heads/twin-prime-correlations",
+          "3317f65f60fa430dc1bab22af3e857eadc312046"
+        ],
+        [
+          "refs/remotes/origin/HEAD",
+          "42507087b774d9057ba3794468a4790bf93162d5"
+        ],
+        [
+          "refs/remotes/origin/main",
+          "42507087b774d9057ba3794468a4790bf93162d5"
+        ],
+        [
+          "refs/remotes/origin/rough-pair-parity",
+          "a5b348d9084833a51e33defae44d04c7cf7dc6d8"
+        ],
+        [
+          "refs/remotes/origin/short-box-sieve-kernels",
+          "a4c8a4a018bf26802033990e13b6f06a8d0190ce"
+        ],
+        [
+          "refs/remotes/origin/structured-sieve-low-conductor",
+          "cc8b3fac16294cff4e26d77f903f77aa73a40400"
+        ],
+        [
+          "refs/remotes/origin/twin-prime-correlations",
+          "3317f65f60fa430dc1bab22af3e857eadc312046"
+        ]
+      ],
+      "unique_tips": [
+        "0709ffab634d9f628ca3f7b7f3910c5d3dd2367f",
+        "0c2346b0a799d17bc062f2c2e553f182d386b448",
+        "0e4e762ab29ea66cc95e38e310a86b7aad22f29c",
+        "12fce45af98061ac95d7dcb6a8b3a9a540e33394",
+        "18655dd8ed978d2247e85858d33e71dcb9863b9a",
+        "1cf8d0da027cb2212251719a5396e6fcd43f0224",
+        "311ce8b040f65bb2d8f2d6638b990b7b9d018bee",
+        "3317f65f60fa430dc1bab22af3e857eadc312046",
+        "42507087b774d9057ba3794468a4790bf93162d5",
+        "5438204e32f990b66c422daa14af7c7436afd4ab",
+        "69291771027bab27ca5e00eaf37fe085c0d5f637",
+        "9cb078f0aceb105fd807e44e63a63f8082361783",
+        "a49b0f2be4ca59d0c3d551f95b49e3508070bb90",
+        "a4c8a4a018bf26802033990e13b6f06a8d0190ce",
+        "a5b348d9084833a51e33defae44d04c7cf7dc6d8",
+        "a5f6c645504261d36081898a6e7b11e4992fac8d",
+        "a6b64bf4fb508b1d0f80530639cbc496a91e318c",
+        "a7c3a7ed6ac9937fee76c2a4ad9eef6d5355805e",
+        "ad77517ad8b06bf89f45cc682739b052c5560411",
+        "be8cd9dd528d4f58599772146516a2c27e6e2317",
+        "c8c32ebc3e42ee3c6a4200a86399e4f73386c5ee",
+        "cc8b3fac16294cff4e26d77f903f77aa73a40400",
+        "ceef5b91f79055f2785bdf6e4c301c64753256a6",
+        "dc916dc42a2dc4fb4d8e3cca69c2633af60f4894",
+        "ea932b272601d480160861631d07cdbddf4c9b89",
+        "eaa2b3546eb1cb5e8b3ef5d847aca24fae6faf66",
+        "f418ea1a892120fb50b56d16debeece26afc557e",
+        "f497caad1dcf6bff7b52361dee191f3dac308bfd"
+      ]
+    },
+    "structured_key_counts": {
+      "coefficient_ast": [
+        1,
+        1
+      ],
+      "coefficient_nonzero": [
+        0,
+        0
+      ],
+      "global_normalization": [
+        0,
+        0
+      ],
+      "global_normalization_return": [
+        2,
+        2
+      ],
+      "joint_mask": [
+        0,
+        0
+      ],
+      "literal_coefficient": [
+        0,
+        0
+      ],
+      "nonzero_status": [
+        0,
+        0
+      ],
+      "omega": [
+        1,
+        1
+      ],
+      "ordered_pair": [
+        4,
+        4
+      ],
+      "packet_schedule": [
+        6,
+        6
+      ],
+      "pair_nonzero": [
+        0,
+        0
+      ],
+      "pair_record": [
+        0,
+        0
+      ],
+      "pair_record_id": [
+        0,
+        0
+      ],
+      "pair_records": [
+        0,
+        0
+      ],
+      "pair_to_omega": [
+        0,
+        0
+      ],
+      "pair_to_omega_bridge": [
+        2,
+        2
+      ],
+      "pair_to_omega_crosswalk_proved": [
+        2,
+        2
+      ],
+      "row_pair": [
+        0,
+        0
+      ],
+      "row_pair_id": [
+        0,
+        0
+      ],
+      "source_atom": [
+        0,
+        0
+      ]
+    }
+  },
+  "authorization": {
+    "authorization_is_theorem_evidence": false,
+    "continuing_numbering_authorization": true,
+    "scope": "FINITE_SELECTED_LINEAGE_13_OF_42_PROJECTION_AND_FIRST_MISSING_D_THEOREM",
+    "user_authorized": true
+  },
+  "claim_firewall": {
+    "H1_E_repair_proved": false,
+    "L2_result": "NONE",
+    "fixed_atom_credit": 0,
+    "fixed_atom_decay_obtained": false,
+    "mathematical_reopen": false,
+    "pair_to_omega_crosswalk_proved": false,
+    "positive_sigma_obtained": false,
+    "production_pair_occurrence_proved": false,
+    "program_positive_L2": false,
+    "strict_one_over_400_paid": false,
+    "structural_reopen": false,
+    "twin_prime_theorem": false
+  },
+  "classification": "PAIR_NATIVE_SELECTED_LINEAGE_PROJECTION_L1",
+  "comparison_fixture": {
+    "corpus_wide_maximality_consequence": "NOT_EVALUATED",
+    "derived_child_fields": {
+      "polarization": "L",
+      "projector_weight": 1,
+      "sigma": 1,
+      "t": 1,
+      "u": 61,
+      "v": 1
+    },
+    "direct_fields": {
+      "L": 100,
+      "R": 12,
+      "T": 50,
+      "U0": 200,
+      "alpha": [
+        59,
+        1
+      ],
+      "gamma": [
+        71,
+        1
+      ],
+      "h0": 2,
+      "j": 1
+    },
+    "evidence_mode": "DERIVED_L0_ONLY",
+    "id": "TPC32_TPC93_DERIVED_L0_ONLY",
+    "legal_join_with_selected_projection": false,
+    "partial_field_count_in_its_own_fixture": 14,
+    "production_occurrence": false,
+    "reason": "DISALLOWED_CROSS_LINEAGE_SPLICE_INTO_SELECTED_GRAPH",
+    "same_packet_or_source_key_as_selected_projection": false
+  },
+  "contract_import": {
+    "ordered_pair_quotient": "FORBIDDEN",
+    "parent_required_fields": {
+      "identity_scope": [
+        "X",
+        "h0",
+        "delta",
+        "R",
+        "V",
+        "D0",
+        "L",
+        "K",
+        "D",
+        "J",
+        "Q",
+        "T",
+        "U0",
+        "G_X_row",
+        "packet_id",
+        "source_locator"
+      ],
+      "normalization": [
+        "source_normalization",
+        "linear_normalization",
+        "quadratic_normalization",
+        "target_normalization"
+      ],
+      "ordered_pair": [
+        "alpha=(ell_alpha,d_alpha)",
+        "gamma=(ell_gamma,d_gamma)",
+        "j",
+        "N_alpha(j)",
+        "N_gamma(j)",
+        "joint_mask_value",
+        "literal_pair_coefficient_ast",
+        "relation_type=TTSTAR_BILINEAR_PAIR_TERM",
+        "formal_support_status",
+        "numeric_nonzero_status"
+      ],
+      "source_child": [
+        "polarization",
+        "u",
+        "sigma",
+        "v",
+        "iota",
+        "theta",
+        "t",
+        "projector_weight",
+        "child_to_source_inverse",
+        "content_child",
+        "frequency_child",
+        "resolved_xi"
+      ]
+    },
+    "required_field_count": 42,
+    "three_id_envelope_is_outside_42": true
+  },
+  "decision": {
+    "mathematical_gate_required_for_any_next_paper": true,
+    "next_paper": null,
+    "workflow_authorization_mode": "CONTINUING_NO_SEPARATE_NUMBERING_GATE"
+  },
+  "declared_corpus": {
+    "archive_census_role": "CONTEXT_AND_REOPEN_TRIGGER_AUDIT_NOT_MAXIMALITY_EVIDENCE",
+    "corpus_wide_candidate_graph_enumerated": false,
+    "future_sources_excluded": true,
+    "id": "DECLARED_TPC206_SELECTED_103_107_LINEAGE_GRAPH_V1",
+    "jsonl_semantic_census_complete": false,
+    "nonexistence_scope": "SELECTED_LINEAGE_GRAPH_ONLY",
+    "scope": "EXPLICIT_SELECTED_SIX_RECORD_PLUS_FOUR_TYPED_DERIVATION_GRAPH",
+    "unknown_encodings_excluded": true
+  },
+  "downstream_gates": [
+    {
+      "id": "SOURCE_LOCKED_SELECTED_LINEAGE_13_OF_42_PARTIAL_PROJECTION",
+      "status": "PASS_L1_SELECTED_GRAPH"
+    },
+    {
+      "id": "SELECTED_LINEAGE_CLOSURE_UNDER_DECLARED_DERIVATIONS",
+      "status": "PASS_L1_SELECTED_GRAPH"
+    },
+    {
+      "id": "SELECTED_LINEAGE_FULL_COMPLETION",
+      "status": "FAIL"
+    },
+    {
+      "id": "CORPUS_WIDE_MAXIMALITY",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "id": "ACTIVE_PRODUCTION_PAIR_OCCURRENCE",
+      "status": "NOT_TESTABLE"
+    },
+    {
+      "id": "SOURCE_LOCKED_PAIR_TO_OMEGA_CROSSWALK",
+      "status": "FAIL"
+    },
+    {
+      "id": "GLOBAL_NORMALIZATION_RETURN",
+      "status": "FAIL"
+    },
+    {
+      "id": "H1_E_REPAIR",
+      "status": "FAIL"
+    },
+    {
+      "id": "PAIR_NATIVE_PRODUCTION_REOPEN_TRIGGER",
+      "status": "FAIL"
+    },
+    {
+      "id": "PAIR_NATIVE_STRUCTURAL_REOPEN_TRIGGER",
+      "status": "FAIL"
+    },
+    {
+      "id": "PAIR_NATIVE_ARCHITECTURE_REROUTE_CANDIDATE",
+      "status": "OPEN"
+    }
+  ],
+  "field_ledger": [
+    {
+      "block": "identity_scope",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "TPC133_SELECTED_ROWS_LITERAL_PACKET_SCOPE",
+      "evidence_mode": "ROW_ONLY",
+      "field_id": "X",
+      "one_based_index": 1,
+      "provider_node_ids": [
+        "record:alpha_row",
+        "record:gamma_row"
+      ],
+      "value": 512,
+      "value_state": "LITERAL"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "TPC133_SELECTED_ROWS_LITERAL_PACKET_SCOPE",
+      "evidence_mode": "ROW_ONLY",
+      "field_id": "h0",
+      "one_based_index": 2,
+      "provider_node_ids": [
+        "record:alpha_row",
+        "record:gamma_row"
+      ],
+      "value": 2,
+      "value_state": "LITERAL"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "TPC133_CHOSEN_MANIFEST_CERTIFICATE_ARCHIVE_PROVENANCE",
+      "evidence_mode": "THEOREM_CROSSWALK",
+      "field_id": "delta",
+      "one_based_index": 3,
+      "provider_node_ids": [
+        "derive:chosen_manifest_delta"
+      ],
+      "value": {
+        "denominator": 4,
+        "numerator": 1
+      },
+      "value_state": "DERIVED_EXACT"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "TPC133_TRUNCATION_Q_TO_TPC18_R_TYPED_ALIAS",
+      "evidence_mode": "THEOREM_CROSSWALK",
+      "field_id": "R",
+      "one_based_index": 4,
+      "provider_node_ids": [
+        "derive:truncation_R"
+      ],
+      "value": 4,
+      "value_state": "DERIVED_EXACT"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "TPC133_SELECTED_ROWS_LITERAL_PACKET_SCOPE",
+      "evidence_mode": "ROW_ONLY",
+      "field_id": "V",
+      "one_based_index": 5,
+      "provider_node_ids": [
+        "record:alpha_row",
+        "record:gamma_row"
+      ],
+      "value": 2,
+      "value_state": "LITERAL"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "TPC134_TPC136_SELECTED_PATH_LITERAL",
+      "evidence_mode": "ROW_ONLY",
+      "field_id": "D0",
+      "one_based_index": 6,
+      "provider_node_ids": [
+        "record:alpha_path",
+        "record:gamma_path"
+      ],
+      "value": 0,
+      "value_state": "LITERAL"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "TPC134_L_EQUALS_TWO_TO_JL",
+      "evidence_mode": "THEOREM_CROSSWALK",
+      "field_id": "L",
+      "one_based_index": 7,
+      "provider_node_ids": [
+        "derive:dyadic_L_K"
+      ],
+      "value": 64,
+      "value_state": "DERIVED_EXACT"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "TPC134_K_EQUALS_TWO_TO_JK",
+      "evidence_mode": "THEOREM_CROSSWALK",
+      "field_id": "K",
+      "one_based_index": 8,
+      "provider_node_ids": [
+        "derive:dyadic_L_K"
+      ],
+      "value": 8,
+      "value_state": "DERIVED_EXACT"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": "NO_SELECTED_PAIR_OPENED_D_SLICE_LOCATOR_D_IS_NOT_ROW_DIVISOR_d",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "D",
+      "one_based_index": 9,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": "CONDITIONAL_K_OVER_D_ONLY_D_UNSUPPLIED",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "J",
+      "one_based_index": 10,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": "TPC18_ROW_SCALE_L_TIMES_D_UNSUPPLIED_DO_NOT_REUSE_TPC133_Q",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "Q",
+      "one_based_index": 11,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": "NO_SOURCE_LOCKED_ULTRA_SCHEDULE_FOR_SELECTED_PAIR",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "T",
+      "one_based_index": 12,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": "NO_SOURCE_LOCKED_ULTRA_SCHEDULE_FOR_SELECTED_PAIR",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "U0",
+      "one_based_index": 13,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": "NO_SELECTED_PAIR_ROW_GCD_CUTOFF_ATTACHMENT",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "G_X_row",
+      "one_based_index": 14,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": "NO_JOINT_PRODUCTION_PACKET_ID",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "packet_id",
+      "one_based_index": 15,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "identity_scope",
+      "blocker": "TWO_ROW_AND_PATH_LOCATORS_ARE_NOT_ONE_JOINT_PAIR_LOCATOR",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "source_locator",
+      "one_based_index": 16,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "ordered_pair",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "TPC133_ALPHA_ROW_PROJECTION",
+      "evidence_mode": "THEOREM_CROSSWALK",
+      "field_id": "alpha=(ell_alpha,d_alpha)",
+      "one_based_index": 17,
+      "provider_node_ids": [
+        "record:alpha_row"
+      ],
+      "value": [
+        103,
+        1
+      ],
+      "value_state": "DERIVED_EXACT"
+    },
+    {
+      "block": "ordered_pair",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "TPC133_GAMMA_ROW_PROJECTION",
+      "evidence_mode": "THEOREM_CROSSWALK",
+      "field_id": "gamma=(ell_gamma,d_gamma)",
+      "one_based_index": 18,
+      "provider_node_ids": [
+        "record:gamma_row"
+      ],
+      "value": [
+        107,
+        1
+      ],
+      "value_state": "DERIVED_EXACT"
+    },
+    {
+      "block": "ordered_pair",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "TPC18_NATIVE_k_EQUALS_d_TIMES_j_ON_SELECTED_ROWS",
+      "evidence_mode": "THEOREM_CROSSWALK",
+      "field_id": "j",
+      "one_based_index": 19,
+      "provider_node_ids": [
+        "derive:native_j_targets"
+      ],
+      "value": 5,
+      "value_state": "DERIVED_EXACT"
+    },
+    {
+      "block": "ordered_pair",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "ELL_D_J_PLUS_H0",
+      "evidence_mode": "THEOREM_CROSSWALK",
+      "field_id": "N_alpha(j)",
+      "one_based_index": 20,
+      "provider_node_ids": [
+        "derive:native_j_targets"
+      ],
+      "value": 517,
+      "value_state": "DERIVED_EXACT"
+    },
+    {
+      "block": "ordered_pair",
+      "blocker": null,
+      "counts_as_legal_partial_projection": true,
+      "counts_as_production_record": false,
+      "derivation_rule_id": "ELL_D_J_PLUS_H0",
+      "evidence_mode": "THEOREM_CROSSWALK",
+      "field_id": "N_gamma(j)",
+      "one_based_index": 21,
+      "provider_node_ids": [
+        "derive:native_j_targets"
+      ],
+      "value": 537,
+      "value_state": "DERIVED_EXACT"
+    },
+    {
+      "block": "ordered_pair",
+      "blocker": "NO_EVALUATED_ACTIVE_JOINT_MASK",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "joint_mask_value",
+      "one_based_index": 22,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "ordered_pair",
+      "blocker": "TPC18_B_ALIASES_NOT_FULLY_MATERIALIZED",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "literal_pair_coefficient_ast",
+      "one_based_index": 23,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "ordered_pair",
+      "blocker": "FORMULA_TYPE_NOT_ATTACHED_TO_AN_ACTUAL_PAIR_RECORD",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "relation_type=TTSTAR_BILINEAR_PAIR_TERM",
+      "one_based_index": 24,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "ordered_pair",
+      "blocker": "TPC18_SUPPORT_RESTRICTIONS_NOT_LITERALIZED_ON_CANDIDATE",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "formal_support_status",
+      "one_based_index": 25,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "ordered_pair",
+      "blocker": "INDIVIDUAL_SYMBOLIC_ROWS_REMAIN_UNDECIDED",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "numeric_nonzero_status",
+      "one_based_index": 26,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "polarization",
+      "one_based_index": 27,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "u",
+      "one_based_index": 28,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "sigma",
+      "one_based_index": 29,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "v",
+      "one_based_index": 30,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "iota",
+      "one_based_index": 31,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "theta",
+      "one_based_index": 32,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "t",
+      "one_based_index": 33,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "projector_weight",
+      "one_based_index": 34,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "TPC93_PREMISE_NOT_INSTANTIATED",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "child_to_source_inverse",
+      "one_based_index": 35,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "DOWNSTREAM_TEMPLATE_ONLY",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "content_child",
+      "one_based_index": 36,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "DOWNSTREAM_TEMPLATE_ONLY",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "frequency_child",
+      "one_based_index": 37,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "source_child",
+      "blocker": "DOWNSTREAM_TEMPLATE_ONLY",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "resolved_xi",
+      "one_based_index": 38,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "normalization",
+      "blocker": "NU_X_IS_A_SCOPE_LABEL_NOT_A_SCALAR",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "source_normalization",
+      "one_based_index": 39,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "normalization",
+      "blocker": "NO_NUMERIC_LINEAR_NORMALIZATION_ATTACHMENT",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "linear_normalization",
+      "one_based_index": 40,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "normalization",
+      "blocker": "NO_SQUARED_NORMALIZATION_ATTACHMENT",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "quadratic_normalization",
+      "one_based_index": 41,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    },
+    {
+      "block": "normalization",
+      "blocker": "GLOBAL_NORMALIZATION_RETURN_MISSING",
+      "counts_as_legal_partial_projection": false,
+      "counts_as_production_record": false,
+      "derivation_rule_id": null,
+      "evidence_mode": "NONE",
+      "field_id": "target_normalization",
+      "one_based_index": 42,
+      "provider_node_ids": [],
+      "value": null,
+      "value_state": "MISSING"
+    }
+  ],
+  "legal_join_rules": {
+    "cross_candidate_patchwork": "FORBIDDEN",
+    "derived_L0_fields_may_form_production_record": false,
+    "external_L0_fixture_may_extend_selected_projection": false,
+    "formula_type_without_record_attachment_counts": false,
+    "label_only_normalization_counts": false,
+    "row_only_fields_may_form_production_record": false,
+    "same_connected_lineage_required": true,
+    "selected_row_only_fields_may_form_selected_projection": true,
+    "semantic_id_and_integrity_chain_required": true,
+    "shared_numeric_values_are_not_join_keys": true,
+    "undecided_nonzero_counts": false
+  },
+  "paper": 206,
+  "parent_paper": 205,
+  "route_state": {
+    "H1_architecture": "OPEN",
+    "bad_endpoint_O161_parent": "OPEN",
+    "direct_twist_O161_parent": "OPEN",
+    "global_architecture": "OPEN",
+    "pair_native_architecture_reroute": "OPEN"
+  },
+  "schema": "tpc-206-selected-lineage-pair-registry-v1",
+  "selected_lineage_graph": {
+    "closed_under_declared_nodes": true,
+    "corpus_wide_candidate_graph_enumerated": false,
+    "corpus_wide_maximality_inferred": false,
+    "dependency_edges": [
+      [
+        "record:alpha_row",
+        "record:alpha_path",
+        "PARENT_INTEGRITY"
+      ],
+      [
+        "record:gamma_row",
+        "record:gamma_path",
+        "PARENT_INTEGRITY"
+      ],
+      [
+        "record:alpha_path",
+        "record:alpha_cut",
+        "UPSTREAM_INTEGRITY"
+      ],
+      [
+        "record:gamma_path",
+        "record:gamma_cut",
+        "UPSTREAM_INTEGRITY"
+      ],
+      [
+        "derive:chosen_manifest_delta",
+        "record:alpha_row",
+        "CERTIFICATE_ARCHIVE_HASH"
+      ],
+      [
+        "derive:chosen_manifest_delta",
+        "record:gamma_row",
+        "CERTIFICATE_ARCHIVE_HASH"
+      ],
+      [
+        "record:alpha_path",
+        "derive:truncation_R",
+        "TYPED_Q_TO_R"
+      ],
+      [
+        "record:gamma_path",
+        "derive:truncation_R",
+        "TYPED_Q_TO_R"
+      ],
+      [
+        "record:alpha_path",
+        "derive:dyadic_L_K",
+        "BLOCK_EXPONENTS"
+      ],
+      [
+        "record:gamma_path",
+        "derive:dyadic_L_K",
+        "BLOCK_EXPONENTS"
+      ],
+      [
+        "record:alpha_row",
+        "derive:native_j_targets",
+        "NATIVE_TUPLE"
+      ],
+      [
+        "record:gamma_row",
+        "derive:native_j_targets",
+        "NATIVE_TUPLE"
+      ]
+    ],
+    "external_nodes_are_not_implicitly_joinable": true,
+    "field_closure": [
+      {
+        "field_id": "X",
+        "providers": [
+          "record:alpha_row",
+          "record:gamma_row"
+        ],
+        "value": 512
+      },
+      {
+        "field_id": "h0",
+        "providers": [
+          "record:alpha_row",
+          "record:gamma_row"
+        ],
+        "value": 2
+      },
+      {
+        "field_id": "delta",
+        "providers": [
+          "derive:chosen_manifest_delta"
+        ],
+        "value": {
+          "denominator": 4,
+          "numerator": 1
+        }
+      },
+      {
+        "field_id": "R",
+        "providers": [
+          "derive:truncation_R"
+        ],
+        "value": 4
+      },
+      {
+        "field_id": "V",
+        "providers": [
+          "record:alpha_row",
+          "record:gamma_row"
+        ],
+        "value": 2
+      },
+      {
+        "field_id": "D0",
+        "providers": [
+          "record:alpha_path",
+          "record:gamma_path"
+        ],
+        "value": 0
+      },
+      {
+        "field_id": "L",
+        "providers": [
+          "derive:dyadic_L_K"
+        ],
+        "value": 64
+      },
+      {
+        "field_id": "K",
+        "providers": [
+          "derive:dyadic_L_K"
+        ],
+        "value": 8
+      },
+      {
+        "field_id": "alpha=(ell_alpha,d_alpha)",
+        "providers": [
+          "record:alpha_row"
+        ],
+        "value": [
+          103,
+          1
+        ]
+      },
+      {
+        "field_id": "gamma=(ell_gamma,d_gamma)",
+        "providers": [
+          "record:gamma_row"
+        ],
+        "value": [
+          107,
+          1
+        ]
+      },
+      {
+        "field_id": "j",
+        "providers": [
+          "derive:native_j_targets"
+        ],
+        "value": 5
+      },
+      {
+        "field_id": "N_alpha(j)",
+        "providers": [
+          "derive:native_j_targets"
+        ],
+        "value": 517
+      },
+      {
+        "field_id": "N_gamma(j)",
+        "providers": [
+          "derive:native_j_targets"
+        ],
+        "value": 537
+      }
+    ],
+    "field_closure_count": 13,
+    "graph_id": "DECLARED_TPC206_SELECTED_103_107_LINEAGE_GRAPH_V1",
+    "nodes": [
+      {
+        "integrity_sha256": "e550d2d7be48d85076919a8adf86ba446f88f75b404df48c0483d3cf27b59369",
+        "kind": "SOURCE_RECORD",
+        "node_id": "record:alpha_row",
+        "provides": {
+          "V": 2,
+          "X": 512,
+          "alpha=(ell_alpha,d_alpha)": [
+            103,
+            1
+          ],
+          "h0": 2
+        },
+        "source_roles": [
+          "alpha_row"
+        ]
+      },
+      {
+        "integrity_sha256": "633e20ac5a83d425471be3ba095df10a1635c3f45ce5cac6def9d5ba936152d9",
+        "kind": "SOURCE_RECORD",
+        "node_id": "record:gamma_row",
+        "provides": {
+          "V": 2,
+          "X": 512,
+          "gamma=(ell_gamma,d_gamma)": [
+            107,
+            1
+          ],
+          "h0": 2
+        },
+        "source_roles": [
+          "gamma_row"
+        ]
+      },
+      {
+        "integrity_sha256": "fb013b12446318c3f902909a479ddefb8329e771e936e58a2dfcc47a9e450b4f",
+        "kind": "SOURCE_RECORD",
+        "node_id": "record:alpha_path",
+        "provides": {
+          "D0": 0
+        },
+        "source_roles": [
+          "alpha_path"
+        ]
+      },
+      {
+        "integrity_sha256": "4e3b8147b8729a169cfcbcd32ef1ee9517f06ce7f4f3edcc7250b1a2f6e8c273",
+        "kind": "SOURCE_RECORD",
+        "node_id": "record:gamma_path",
+        "provides": {
+          "D0": 0
+        },
+        "source_roles": [
+          "gamma_path"
+        ]
+      },
+      {
+        "integrity_sha256": "2eef9d8670c23ffc10b2a9cab0d488b0908293cfdb482667da824e702a1347cc",
+        "kind": "SOURCE_RECORD",
+        "node_id": "record:alpha_cut",
+        "provides": {},
+        "source_roles": [
+          "alpha_cut"
+        ]
+      },
+      {
+        "integrity_sha256": "cdc0f7363ab88106ce65bb46da800c05c3fba2b391d9490d7b2ca8bab8c816db",
+        "kind": "SOURCE_RECORD",
+        "node_id": "record:gamma_cut",
+        "provides": {},
+        "source_roles": [
+          "gamma_cut"
+        ]
+      },
+      {
+        "kind": "LOCKED_TYPED_DERIVATION",
+        "node_id": "derive:chosen_manifest_delta",
+        "provides": {
+          "delta": {
+            "denominator": 4,
+            "numerator": 1
+          }
+        },
+        "rule_id": "TPC133_CHOSEN_MANIFEST_CERTIFICATE_ARCHIVE_PROVENANCE",
+        "source_roles": [
+          "alpha_row",
+          "gamma_row"
+        ]
+      },
+      {
+        "firewall": "TPC18_ROW_SCALE_Q_REMAINS_MISSING",
+        "kind": "LOCKED_TYPED_DERIVATION",
+        "node_id": "derive:truncation_R",
+        "provides": {
+          "R": 4
+        },
+        "rule_id": "TPC133_TRUNCATION_Q_TO_TPC18_R_TYPED_ALIAS",
+        "source_roles": [
+          "alpha_path",
+          "gamma_path"
+        ]
+      },
+      {
+        "kind": "LOCKED_TYPED_DERIVATION",
+        "node_id": "derive:dyadic_L_K",
+        "provides": {
+          "K": 8,
+          "L": 64
+        },
+        "rule_id": "TPC134_L_K_EQUAL_POW2_OF_jL_jK",
+        "source_roles": [
+          "alpha_path",
+          "gamma_path"
+        ]
+      },
+      {
+        "firewall": "LOWERCASE_NATIVE_k_5_IS_NOT_DYADIC_K_8",
+        "kind": "LOCKED_TYPED_DERIVATION",
+        "node_id": "derive:native_j_targets",
+        "provides": {
+          "N_alpha(j)": 517,
+          "N_gamma(j)": 537,
+          "j": 5
+        },
+        "rule_id": "TPC18_NATIVE_k_EQUALS_d_TIMES_j_AND_N_EQUALS_ell_d_j_PLUS_h0",
+        "source_roles": [
+          "alpha_row",
+          "gamma_row"
+        ]
+      }
+    ],
+    "scope": "EXPLICIT_SIX_RECORD_PLUS_FOUR_TYPED_DERIVATION_NODES"
+  },
+  "selected_lineage_theorem": {
+    "corpus_wide_full_join_count": null,
+    "corpus_wide_maximality_status": "NOT_TESTABLE",
+    "corpus_wide_maximum_materialized_fields": null,
+    "first_failed_subgate": "PAIR_NATIVE_POST_TTSTAR_ACTUAL_REGISTRY_WITH_FULL_LITERAL_SCOPE_AND_COEFFICIENT",
+    "first_missing": "SOURCE_LOCKED_TPC18_OPENED_D_PACKET_LINEAGE_FOR_SELECTED_ORDERED_PAIR",
+    "first_missing_field_id": "D",
+    "first_missing_field_index": 9,
+    "full_completions_inside_explicit_selected_graph": 0,
+    "missing_fields": 29,
+    "parent_first_missing": "SOURCE_LOCKED_POST_TTSTAR_ORDERED_PAIR_REGISTRY_WITH_COMPLETE_PAIR_COEFFICIENT_AND_GLOBAL_NORMALIZATION",
+    "production_occurrences_inside_explicit_selected_graph": 0,
+    "required_fields": 42,
+    "selected_graph_closed_under_declared_nodes": true,
+    "selected_graph_materialized_fields": 13,
+    "theorem_scope": "EXPLICIT_SELECTED_LINEAGE_GRAPH_ONLY"
+  },
+  "selected_non_splicing_ledger": [
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SELECTED_PAIR_OPENED_D_SLICE_LOCATOR_D_IS_NOT_ROW_DIVISOR_d",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "D",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "CONDITIONAL_K_OVER_D_ONLY_D_UNSUPPLIED",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "J",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "TPC18_ROW_SCALE_L_TIMES_D_UNSUPPLIED_DO_NOT_REUSE_TPC133_Q",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "Q",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SOURCE_LOCKED_ULTRA_SCHEDULE_FOR_SELECTED_PAIR",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "T",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SOURCE_LOCKED_ULTRA_SCHEDULE_FOR_SELECTED_PAIR",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "U0",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SELECTED_PAIR_ROW_GCD_CUTOFF_ATTACHMENT",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "G_X_row",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_JOINT_PRODUCTION_PACKET_ID",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "packet_id",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "TWO_ROW_AND_PATH_LOCATORS_ARE_NOT_ONE_JOINT_PAIR_LOCATOR",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "source_locator",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_EVALUATED_ACTIVE_JOINT_MASK",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "joint_mask_value",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "TPC18_B_ALIASES_NOT_FULLY_MATERIALIZED",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "literal_pair_coefficient_ast",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "FORMULA_TYPE_NOT_ATTACHED_TO_AN_ACTUAL_PAIR_RECORD",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "relation_type=TTSTAR_BILINEAR_PAIR_TERM",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "TPC18_SUPPORT_RESTRICTIONS_NOT_LITERALIZED_ON_CANDIDATE",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "formal_support_status",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "INDIVIDUAL_SYMBOLIC_ROWS_REMAIN_UNDECIDED",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "numeric_nonzero_status",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "polarization",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "u",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "sigma",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "v",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "iota",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "theta",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "t",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SUPPLIED_RETAINED_OMEGA",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "projector_weight",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "TPC93_PREMISE_NOT_INSTANTIATED",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "child_to_source_inverse",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "DOWNSTREAM_TEMPLATE_ONLY",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "content_child",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "DOWNSTREAM_TEMPLATE_ONLY",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "frequency_child",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "DOWNSTREAM_TEMPLATE_ONLY",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "resolved_xi",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NU_X_IS_A_SCOPE_LABEL_NOT_A_SCALAR",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "source_normalization",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_NUMERIC_LINEAR_NORMALIZATION_ATTACHMENT",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "linear_normalization",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "NO_SQUARED_NORMALIZATION_ATTACHMENT",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "quadratic_normalization",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    },
+    {
+      "absence_claim_scope": "EXPLICIT_SELECTED_GRAPH_ONLY",
+      "blocker": "GLOBAL_NORMALIZATION_RETURN_MISSING",
+      "external_donor_policy": "DISALLOWED_CROSS_LINEAGE_SPLICE",
+      "field_id": "target_normalization",
+      "global_absence_claim": false,
+      "selected_graph_provider_count": 0,
+      "selected_graph_status": "MISSING"
+    }
+  ],
+  "selected_projection": {
+    "candidate_id": "TPC206_SELECTED_DUAL_ROW_13_FIELD_PROJECTION",
+    "evidence_level": "ROW_AND_CUT_SCOPE_WITH_EXACT_TYPED_DERIVATIONS",
+    "exact_derivations": [
+      {
+        "archive_sha256": "a1956cf182ad219da10d850de7c7e57de69b8c287fb698e44faa5c795c3840a8",
+        "field_id": "delta",
+        "manifest_canonical_sha256": "bda1a64348bc0d97fca4239b1c2a099a58aea5fbc4908580fc740f114a57fd39",
+        "manifest_path": "papers/tpc-133-executable-native-entrance/samples/tpc133_packet_manifest.json",
+        "result": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "rule_id": "TPC133_CHOSEN_MANIFEST_CERTIFICATE_ARCHIVE_PROVENANCE",
+        "scope": "FINITE_X_512_MANIFEST_ONLY_NOT_CROSS_SCALE_SCHEDULE"
+      },
+      {
+        "field_id": "R",
+        "firewall": "DO_NOT_FILL_TPC18_ROW_SCALE_Q",
+        "result": 4,
+        "rule_id": "TPC133_TRUNCATION_Q_TO_TPC18_R_TYPED_ALIAS"
+      },
+      {
+        "field_id": "L",
+        "inputs": {
+          "j_L": 6
+        },
+        "result": 64,
+        "rule_id": "TPC134_L_EQUALS_TWO_TO_JL"
+      },
+      {
+        "field_id": "K",
+        "inputs": {
+          "j_K": 3
+        },
+        "result": 8,
+        "rule_id": "TPC134_K_EQUALS_TWO_TO_JK"
+      },
+      {
+        "field_id": "j_and_targets",
+        "firewall": "LOWERCASE_NATIVE_k_5_IS_NOT_DYADIC_K_8",
+        "inputs": {
+          "alpha_native_tuple": [
+            103,
+            5,
+            1
+          ],
+          "gamma_native_tuple": [
+            107,
+            5,
+            1
+          ],
+          "h0": 2
+        },
+        "result": {
+          "N_alpha": 517,
+          "N_gamma": 537,
+          "j": 5
+        },
+        "rule_id": "TPC18_NATIVE_k_EQUALS_d_TIMES_j_AND_N_EQUALS_ell_d_j_PLUS_h0"
+      }
+    ],
+    "id_envelope": {
+      "edge_instance_id": null,
+      "id_fields_counted_inside_42": false,
+      "pair_record_id": null,
+      "projection_id": "projection|X=512|h0=2|delta=1/4|manifest=bda1a64348bc0d97fca4239b1c2a099a58aea5fbc4908580fc740f114a57fd39|alpha=103,1|gamma=107,1|j=5",
+      "projection_id_semantics": "SELECTED_PROVENANCE_PROJECTION_ID_NOT_PRODUCTION_ID",
+      "projection_provenance_locator_is_not_joint_production_source_locator": true,
+      "target_occurrence_id": null
+    },
+    "orientation": "ORDERED_ALPHA_103_GAMMA_107_NO_SWAP_QUOTIENT",
+    "production_occurrence": false,
+    "selected_records": [
+      {
+        "diagnostic_line": 724,
+        "integrity_sha256": "e550d2d7be48d85076919a8adf86ba446f88f75b404df48c0483d3cf27b59369",
+        "path": "papers/tpc-133-executable-native-entrance/samples/tpc133_native_atoms.jsonl",
+        "role": "alpha_row",
+        "semantic_id": "X=512|h0=2|ell=103|k=5|d=1"
+      },
+      {
+        "diagnostic_line": 736,
+        "integrity_sha256": "633e20ac5a83d425471be3ba095df10a1635c3f45ce5cac6def9d5ba936152d9",
+        "path": "papers/tpc-133-executable-native-entrance/samples/tpc133_native_atoms.jsonl",
+        "role": "gamma_row",
+        "semantic_id": "X=512|h0=2|ell=107|k=5|d=1"
+      },
+      {
+        "diagnostic_line": 2554,
+        "integrity_sha256": "fb013b12446318c3f902909a479ddefb8329e771e936e58a2dfcc47a9e450b4f",
+        "parent_integrity_sha256": "e550d2d7be48d85076919a8adf86ba446f88f75b404df48c0483d3cf27b59369",
+        "path": "papers/tpc-134-boundary-complete-dyadic-prefix-tail-archive/samples/tpc134_paths.jsonl",
+        "role": "alpha_path",
+        "semantic_id": "X=512|h0=2|ell=103|k=5|d=1|jL=6|jK=3|D0=0|type=TAIL"
+      },
+      {
+        "diagnostic_line": 2602,
+        "integrity_sha256": "4e3b8147b8729a169cfcbcd32ef1ee9517f06ce7f4f3edcc7250b1a2f6e8c273",
+        "parent_integrity_sha256": "633e20ac5a83d425471be3ba095df10a1635c3f45ce5cac6def9d5ba936152d9",
+        "path": "papers/tpc-134-boundary-complete-dyadic-prefix-tail-archive/samples/tpc134_paths.jsonl",
+        "role": "gamma_path",
+        "semantic_id": "X=512|h0=2|ell=107|k=5|d=1|jL=6|jK=3|D0=0|type=TAIL"
+      },
+      {
+        "diagnostic_line": 2554,
+        "integrity_sha256": "2eef9d8670c23ffc10b2a9cab0d488b0908293cfdb482667da824e702a1347cc",
+        "path": "papers/tpc-136-complete-native-cut-archive/samples/tpc136_cut_paths.jsonl",
+        "role": "alpha_cut",
+        "semantic_id": "cut|X=512|h0=2|ell=103|k=5|d=1|jL=6|jK=3|D0=0|type=TAIL",
+        "upstream_integrity_sha256": "fb013b12446318c3f902909a479ddefb8329e771e936e58a2dfcc47a9e450b4f"
+      },
+      {
+        "diagnostic_line": 2602,
+        "integrity_sha256": "cdc0f7363ab88106ce65bb46da800c05c3fba2b391d9490d7b2ca8bab8c816db",
+        "path": "papers/tpc-136-complete-native-cut-archive/samples/tpc136_cut_paths.jsonl",
+        "role": "gamma_cut",
+        "semantic_id": "cut|X=512|h0=2|ell=107|k=5|d=1|jL=6|jK=3|D0=0|type=TAIL",
+        "upstream_integrity_sha256": "4e3b8147b8729a169cfcbcd32ef1ee9517f06ce7f4f3edcc7250b1a2f6e8c273"
+      }
+    ]
+  },
+  "source_locks": [
+    {
+      "canonical_sha256": "36249c8baa2495034acabeb0ba7d5a5f665f2d536b605e9691e2e420e399f1f8",
+      "frozen_expected_sha256": "36249c8baa2495034acabeb0ba7d5a5f665f2d536b605e9691e2e420e399f1f8",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC18.opened_d",
+      "path": "papers/tpc-18-mobius-tail-determinant-dispersion/sections/opened-d-dispersion.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "\\cC_D^{\\mathrm{off}}",
+        "\\sum_{\\substack{\\alpha_1\\ne\\alpha_2}}",
+        "B_{\\alpha_1}(j)B_{\\alpha_2}(j).",
+        "Here and below the prime and support restrictions"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "5ff68d4207ada5fe2bea819716aaf095e2742fc63eef4a7d9f7573735df65ee4",
+      "frozen_expected_sha256": "5ff68d4207ada5fe2bea819716aaf095e2742fc63eef4a7d9f7573735df65ee4",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC18.stopping",
+      "path": "papers/tpc-18-mobius-tail-determinant-dispersion/sections/stopping-closure.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "There are $O(\\log X)$ slices",
+        "Sum the $O(\\log X)$ divisor slices",
+        "|\\cC_D^{\\mathrm{gen}}|"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "21382acf28d8fc3d3cff499cd767075206ba9e2d24913e95414138b4317f0f00",
+      "frozen_expected_sha256": "21382acf28d8fc3d3cff499cd767075206ba9e2d24913e95414138b4317f0f00",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC25.provenance",
+      "path": "papers/tpc-25-zero-before-separation/sections/provenance.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "\\gamma_\\alpha",
+        "\\mathfrak m(\\alpha_1,\\alpha_2)=0",
+        "The two sides of a bilinear packet"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "4fd2e42a8b95e61c52c77cb8bd0bfa101eacaf588d9b8610cacc3ac2dfaaf25b",
+      "frozen_expected_sha256": "4fd2e42a8b95e61c52c77cb8bd0bfa101eacaf588d9b8610cacc3ac2dfaaf25b",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC25.zero_first",
+      "path": "papers/tpc-25-zero-before-separation/sections/zero-first.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "\\mathcal Z^0_{S,T}",
+        "X^{-s+\\kappa+o(1)}",
+        "For a Hermitian convention the second factor is conjugated"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "b2c3b2b0312db64af5b3151402be929c1671429c1376fe24454a78b4c60d90bd",
+      "frozen_expected_sha256": "b2c3b2b0312db64af5b3151402be929c1671429c1376fe24454a78b4c60d90bd",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC32.physical_shell",
+      "path": "papers/tpc-32-matched-cutoff-frequency-gate/sections/physical-matched-shell.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "\\mathfrak A_{\\alpha,\\gamma}(j)",
+        "\\cK^{\\mathrm{sh}}_{\\alpha,\\gamma}(j)",
+        "=C_m(j)\\mathsf H_{n;T,U_0}(j)",
+        "No separability of the generic"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "c3c826a59e9032d0836dd962cd2654962b61134b9ed8718b7529d2c5fd1a4772",
+      "frozen_expected_sha256": "c3c826a59e9032d0836dd962cd2654962b61134b9ed8718b7529d2c5fd1a4772",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC32.content",
+      "path": "papers/tpc-32-matched-cutoff-frequency-gate/sections/canonical-content-factorization.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "No complex conjugation is implicit.",
+        "\\gamma_\\alpha^{(1)}\\gamma_\\gamma^{(2)}"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "77ac56e2f4f3543224876e8a0374564c81c1b4a9f17800f18ca5249e12954d36",
+      "frozen_expected_sha256": "77ac56e2f4f3543224876e8a0374564c81c1b4a9f17800f18ca5249e12954d36",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC32.certificate",
+      "path": "papers/tpc-32-matched-cutoff-frequency-gate/experiments/tpc32_certificate.json",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "\"primitive_witness\"",
+        "\"rows\"",
+        "\"targets\"",
+        "\"primitive_finite_witness_is_twin_prime_asymptotic_evidence\": false"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "c0d45f64a100bb21ac67cce124c46bc2ebfd3740810af1355fb21420d4262f03",
+      "frozen_expected_sha256": "c0d45f64a100bb21ac67cce124c46bc2ebfd3740810af1355fb21420d4262f03",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC93.decorated_export",
+      "path": "papers/tpc-93-literal-low-window-affine-export/sections/decorated-affine-export.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "\\omega=(L,\\alpha,\\gamma,j,u)",
+        "\\sum_{v\\mid d,e}\\lambda_{G_X^{\\rm row}}(v)",
+        "no new fiber normalization is introduced",
+        "The labels \\(L\\) and \\(R\\) form a disjoint union"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "4965d5ad640999fda1be2a75b82dabdbb2cef6ad17df770fa2e53fc08b2e9627",
+      "frozen_expected_sha256": "4965d5ad640999fda1be2a75b82dabdbb2cef6ad17df770fa2e53fc08b2e9627",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC143.main",
+      "path": "papers/tpc-143-frontier-occurrence-lift-contract/main.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "L_X:\\mathbb C^{\\Ccut}\\longrightarrow\\mathbb C^{\\Occ}",
+        "signed or",
+        "complex.",
+        "\\one_{\\Occ}^{T}L_X=\\one_{\\Ccut}^{T}"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "912398392187568bc2f77f6c0f960f481286beb55f6c4a43ec0a0a4300ebd448",
+      "frozen_expected_sha256": "912398392187568bc2f77f6c0f960f481286beb55f6c4a43ec0a0a4300ebd448",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC174.main",
+      "path": "papers/tpc-174-local-occurrence-edge-witness-schema/main.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "exact nonzero rational weight",
+        "exact column sum one",
+        "SYNTHETIC\\_L0\\_ONLY"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "ef3611d57741448950da204746c8e6bc3125a97a82d6eb1709dd25cb25a258be",
+      "frozen_expected_sha256": "ef3611d57741448950da204746c8e6bc3125a97a82d6eb1709dd25cb25a258be",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC179.main",
+      "path": "papers/tpc-179-h1-structural-corpus-exhaustion-integration/main.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "\\mathcal B_{H1}=\\{E,A,M\\}",
+        "\\texttt{current\\_verdict}&=\\mathsf{NOT\\_TESTABLE}",
+        "none suppresses another"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "a1956cf182ad219da10d850de7c7e57de69b8c287fb698e44faa5c795c3840a8",
+      "frozen_expected_sha256": "a1956cf182ad219da10d850de7c7e57de69b8c287fb698e44faa5c795c3840a8",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC133.rows",
+      "path": "papers/tpc-133-executable-native-entrance/samples/tpc133_native_atoms.jsonl",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "e550d2d7be48d85076919a8adf86ba446f88f75b404df48c0483d3cf27b59369",
+        "633e20ac5a83d425471be3ba095df10a1635c3f45ce5cac6def9d5ba936152d9"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "a4be1c1b41221b585e3abbf67294b0f784d556cd0209e6ce87ccb905af285f18",
+      "frozen_expected_sha256": "a4be1c1b41221b585e3abbf67294b0f784d556cd0209e6ce87ccb905af285f18",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC136.cuts",
+      "path": "papers/tpc-136-complete-native-cut-archive/samples/tpc136_cut_paths.jsonl",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "2eef9d8670c23ffc10b2a9cab0d488b0908293cfdb482667da824e702a1347cc",
+        "cdc0f7363ab88106ce65bb46da800c05c3fba2b391d9490d7b2ca8bab8c816db"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "3d6e7aab3d9e165cc1d6f822f7146feb0d0fddbc1e976ed4312739b0418f4ff2",
+      "frozen_expected_sha256": "3d6e7aab3d9e165cc1d6f822f7146feb0d0fddbc1e976ed4312739b0418f4ff2",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC204.payload",
+      "path": "papers/tpc-204-source-locked-production-registry-crosswalk/experiments/tpc204_source_locked_production_registry_crosswalk.json",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "\"complete_crosswalk_count\": 0",
+        "\"first_common_missing_gate_id\": \"NAMED_PRODUCTION_ATOM\"",
+        "\"reopen_trigger_passed\": false"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "5f50b44fde7e672b28aeb45b1b53e95f90c26bb8d35052081fa3a7e419712389",
+      "frozen_expected_sha256": "5f50b44fde7e672b28aeb45b1b53e95f90c26bb8d35052081fa3a7e419712389",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC18.tail_interface",
+      "path": "papers/tpc-18-mobius-tail-determinant-dispersion/sections/tail-interface.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "\\label{eq:source-power-error}",
+        "XL^{-1/2}X^\\eps.",
+        "In particular this has arbitrary logarithmic saving"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "aeaf0268d73ce0fbb95777238d2b4b2ccd417d53d19707c96332e5bc3a795c9e",
+      "frozen_expected_sha256": "aeaf0268d73ce0fbb95777238d2b4b2ccd417d53d19707c96332e5bc3a795c9e",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC25.one_sided_closure",
+      "path": "papers/tpc-25-zero-before-separation/sections/one-sided-closure.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "\\label{eq:tpc25-zero-in-closure}",
+        "after all dyadic and divisor multiplicities.  The global principal",
+        "conductor cell is \\(O(Q^2X^\\eps)\\)",
+        "\\(O(JQ^2L^{-1}X^\\eps)\\)",
+        "Fixed bounded-overlap"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "aaaa038907b505bd85d7cbf318bd3047bc3c37b2316243872a5a48824df06ea6",
+      "frozen_expected_sha256": "aaaa038907b505bd85d7cbf318bd3047bc3c37b2316243872a5a48824df06ea6",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC93.row_window",
+      "path": "papers/tpc-93-literal-low-window-affine-export/sections/row-window.tex",
+      "provenance": "TPC205_LOCK_REVERIFIED",
+      "required_anchors": [
+        "\\label{eq:row-tail-return}",
+        "X^{o(1)}N_{0,X}R^{1/2-K}.",
+        "not a maximum over \\(r\\)"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "5f902b7fc219a50cf31b40c32bb863f180bc7af1a0942dd0d5e5a01d8fe41c16",
+      "frozen_expected_sha256": "5f902b7fc219a50cf31b40c32bb863f180bc7af1a0942dd0d5e5a01d8fe41c16",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC133.main",
+      "path": "papers/tpc-133-executable-native-entrance/main.tex",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "Q=\\lfloor X^{1/2-\\delta}\\rfloor",
+        "(X,h_0,\\ell,k,d)",
+        "together with the packet-scope fields \\(Q,U,V,W\\)"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "bda1a64348bc0d97fca4239b1c2a099a58aea5fbc4908580fc740f114a57fd39",
+      "frozen_expected_sha256": "bda1a64348bc0d97fca4239b1c2a099a58aea5fbc4908580fc740f114a57fd39",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC133.manifest",
+      "path": "papers/tpc-133-executable-native-entrance/samples/tpc133_packet_manifest.json",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "\"numerator\": 1",
+        "\"denominator\": 4",
+        "\"X\": 512"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "e60042995fe25aeb3b6f98df78e89d08bfda4e48231d8f58b6c6aa66516887f3",
+      "frozen_expected_sha256": "e60042995fe25aeb3b6f98df78e89d08bfda4e48231d8f58b6c6aa66516887f3",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC133.certificate",
+      "path": "papers/tpc-133-executable-native-entrance/experiments/tpc133_native_entrance_certificate.json",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "\"delta\": \"1/4\"",
+        "\"Q\": 4",
+        "\"V\": 2"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "85a7263059b6690de3d70c79a3f2e31fbaecded72223c0a19d25c652e18dae9e",
+      "frozen_expected_sha256": "85a7263059b6690de3d70c79a3f2e31fbaecded72223c0a19d25c652e18dae9e",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC133.generator",
+      "path": "papers/tpc-133-executable-native-entrance/experiments/tpc133_native_entrance.py",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "q_value = floor_rational_power(manifest[\"X\"], exponent)",
+        "\"Q\": q_value",
+        "\"V\": u_value"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "3fe4a6fdbdb4e6b1d28305987e13bd82069c1ff00fd327be7c7a42c7d0d83d55",
+      "frozen_expected_sha256": "3fe4a6fdbdb4e6b1d28305987e13bd82069c1ff00fd327be7c7a42c7d0d83d55",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC134.main",
+      "path": "papers/tpc-134-boundary-complete-dyadic-prefix-tail-archive/main.tex",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "L=2^{j_L},\\quad K=2^{j_K}",
+        "\\psi(\\ell/L)\\psi(k/K)\\ne0"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "efcacc90e7662fdb41c2e3f86fb37d3bd81b64a107c36dfbbb15bb48bde61712",
+      "frozen_expected_sha256": "efcacc90e7662fdb41c2e3f86fb37d3bd81b64a107c36dfbbb15bb48bde61712",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC134.paths",
+      "path": "papers/tpc-134-boundary-complete-dyadic-prefix-tail-archive/samples/tpc134_paths.jsonl",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "fb013b12446318c3f902909a479ddefb8329e771e936e58a2dfcc47a9e450b4f",
+        "4e3b8147b8729a169cfcbcd32ef1ee9517f06ce7f4f3edcc7250b1a2f6e8c273"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "f776fe1b48d1dd833c45ed1511895ab604b727b603596c2c82f821d335afba18",
+      "frozen_expected_sha256": "f776fe1b48d1dd833c45ed1511895ab604b727b603596c2c82f821d335afba18",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC135.main",
+      "path": "papers/tpc-135-tpc17-tpc18-block-frontier/main.tex",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "R=\\lfloor X^{1/2-\\delta}\\rfloor",
+        "L=2^{j_L}",
+        "K=2^{j_K}"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "604240f83d83dde71dfcece06cad7a4eb52dbc35dbddec16d7372ed41edfb71c",
+      "frozen_expected_sha256": "604240f83d83dde71dfcece06cad7a4eb52dbc35dbddec16d7372ed41edfb71c",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC135.checker",
+      "path": "papers/tpc-135-tpc17-tpc18-block-frontier/experiments/tpc135_domain_cover_audit.py",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "r_value = metadata[\"Q\"]",
+        "v_value = metadata[\"V\"]"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "6655a4c40a57f0a45022ab527b32560a5b2ac3e932368709502cfded43a3fb47",
+      "frozen_expected_sha256": "6655a4c40a57f0a45022ab527b32560a5b2ac3e932368709502cfded43a3fb47",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC135.frontier",
+      "path": "papers/tpc-135-tpc17-tpc18-block-frontier/samples/tpc135_frontier_manifest.json",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "\"R\": 4",
+        "\"V\": 2",
+        "\"j_L\": 6",
+        "\"j_K\": 3"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "9e55e455077d2bd6c0a177a0627cc11659d9ae2f8396c6a365a5ce5df176ad89",
+      "frozen_expected_sha256": "9e55e455077d2bd6c0a177a0627cc11659d9ae2f8396c6a365a5ce5df176ad89",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC136.main",
+      "path": "papers/tpc-136-complete-native-cut-archive/main.tex",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "\\mathrm{frontier\\ unmapped}",
+        "\\one^TM_X^{\\rm cut}=\\one^T",
+        "The cut archive is not yet the physical archive"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "07b118b69a16587fe1b9239b585ffa65b6772f005d9c719eb5eba3cc488d586d",
+      "frozen_expected_sha256": "07b118b69a16587fe1b9239b585ffa65b6772f005d9c719eb5eba3cc488d586d",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC205.payload",
+      "path": "papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments/tpc205_pair_native_registry_interface.json",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "\"required_registry_fields\": 42",
+        "\"production_pair_records\": 0",
+        "\"pair_to_omega_bridge\": \"MISSING\""
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    },
+    {
+      "canonical_sha256": "f5586627671e99323e924875a1c066c49ca1a1bb8c210e65b2b3f185887b19d7",
+      "frozen_expected_sha256": "f5586627671e99323e924875a1c066c49ca1a1bb8c210e65b2b3f185887b19d7",
+      "hash_mode": "CANONICAL_UTF8_LF_SHA256",
+      "hash_semantics": "INTEGRITY_ONLY",
+      "id": "TPC205.main",
+      "path": "papers/tpc-205-pair-native-post-ttstar-registry-interface/main.tex",
+      "provenance": "TPC206_NEW_DERIVATION_LOCK",
+      "required_anchors": [
+        "The machine contract requires 42 fields",
+        "DUAL_SOURCE_LOCKED_ROW_PAIR_CANDIDATE"
+      ],
+      "snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5"
+    }
+  ],
+  "source_snapshot_commit": "42507087b774d9057ba3794468a4790bf93162d5",
+  "stop_scoped": [
+    "TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1=STOP_SCOPED",
+    "TPC204_DECLARED_PLAUSIBLE_PRODUCTION_CROSSWALK_CORPUS_V1=STOP_SCOPED",
+    "TPC18_25_32_93_194_SINGLE_CUT_OCCURRENCE_COMPOSITE_V1=STOP_SCOPED",
+    "TPC18_TPC93_POST_TTSTAR_PAIR_DIRECT_COMPOSITION_V1=STOP_SCOPED",
+    "DECLARED_TPC206_SELECTED_103_107_LINEAGE_GRAPH_V1=STOP_SCOPED"
+  ],
+  "summary_counts": {
+    "base_mutations": 12,
+    "comparison_fixture_partial_fields": 14,
+    "corpus_wide_maximum": null,
+    "materialized_fields": 13,
+    "missing_fields": 29,
+    "required_fields": 42,
+    "selected_cut_records": 2,
+    "selected_graph_edges": 12,
+    "selected_graph_nodes": 10,
+    "selected_lineage_full_completions": 0,
+    "selected_lineage_production_occurrences": 0,
+    "selected_non_splicing_rows": 29,
+    "selected_ordered_projections": 1,
+    "selected_path_records": 2,
+    "selected_row_records": 2,
+    "semantic_mutations": 52,
+    "source_locks": 29,
+    "strict_type_mutations": 12
+  },
+  "theorem_status": "PROVED_SELECTED_SOURCE_LOCKED_13_OF_42_PROJECTION_AND_FIRST_MISSING_D_L1",
+  "verdict": "SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED"
+}

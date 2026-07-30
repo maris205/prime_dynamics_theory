@@ -1,0 +1,595 @@
+{
+  "checks": [
+    "SOURCE_LOCKS_29_REVERIFIED",
+    "EXPLICIT_28_TIP_GIT_CLOSURE_REBUILT",
+    "STRUCTURED_JSON_KEY_AUDIT_REBUILT",
+    "SEMANTIC_SELECTORS_UNIQUE",
+    "SIX_RECORD_INTEGRITY_CHAIN_REBUILT",
+    "TPC133_MANIFEST_CERTIFICATE_ARCHIVE_CHAIN_REBUILT",
+    "TPC133_Q_TO_TPC18_R_TYPED_ALIAS_REBUILT",
+    "TPC134_DYADIC_VALUES_REBUILT",
+    "SELECTED_GRAPH_10_NODES_12_EDGES_REBUILT",
+    "FIELD_LEDGER_42_ROWS",
+    "MATERIALIZED_13_MISSING_29",
+    "FIRST_MISSING_D_INDEX_9",
+    "SELECTED_NON_SPLICING_29_ROWS",
+    "TPC32_TPC93_L0_SPLICE_REJECTED",
+    "SELECTED_LINEAGE_FULL_COMPLETION_ZERO",
+    "CORPUS_WIDE_MAXIMALITY_NOT_TESTABLE",
+    "CLAIM_FIREWALL_LOCKED",
+    "STOP_SCOPED_PRESERVED"
+  ],
+  "manifest_trust": {
+    "external_signature": false,
+    "mode": "REPOSITORY_PIN_REQUIRES_GIT_REVIEW_NOT_EXTERNAL_SIGNATURE",
+    "theorem_evidence": false
+  },
+  "mutation_contract": {
+    "active_schema_rejections": 76,
+    "all_rejected": true,
+    "base_exact_schema_mutations": [
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "wrong_schema",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "wrong_paper_number",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "wrong_parent_paper",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "wrong_classification",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "wrong_theorem_status",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "wrong_verdict",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "wrong_source_snapshot",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "wrong_required_field_count",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "wrong_materialized_count",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "wrong_missing_count",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "wrong_first_missing_index",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "extra_top_level_key",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      }
+    ],
+    "coordinated_semantic_mutations": [
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "promote_13_to_14",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "omit_blocked_field",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "replace_first_missing_D_with_d",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "reuse_tpc133_Q_as_tpc205_Q",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "detach_delta_from_manifest_lineage",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "replace_R_typed_alias_with_name_equality",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "use_jL_as_L_without_pow2",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "use_jK_as_K_without_pow2",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "promote_finite_delta_to_cross_scale_schedule",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "promote_projection_id_to_production_id",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "collapse_pair_edge_target_ids",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "swap_alpha_gamma_quotient",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "splice_tpc32_child_fields",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "splice_tpc32_T_U0",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "manual_u_selection",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "manual_polarization_selection",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "promote_row_only_to_production",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "promote_l0_to_production",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "promote_shadow_to_actual",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "promote_formal_to_actual",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "promote_synthetic_to_actual",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "support_to_nonzero",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "null_joint_mask_to_one",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "B_alias_to_full_literal",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "implicit_conjugation",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "nu_X_label_to_scalar",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "copy_one_normalization_to_four_stages",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "drop_quadratic_scalar_square",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "pair_to_omega_pass",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "remove_supplied_omega_premise",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "single_child_restores_source",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "drop_projector_support",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "pay_hard_remainder",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "pay_square_root_return",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "pay_endpoint_return",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "production_count_zero_to_one",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "full_join_zero_to_one",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "mathematical_reopen_true",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "H1_E_repair_true",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "fixed_atom_credit_positive",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "positive_sigma_true",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "strict_one_over_400_paid",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "L2_promoted",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "stop_scoped_removed",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "stop_scoped_globalized",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "O161_parent_closed",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "H1_architecture_closed",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "authorization_becomes_evidence",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "source_lock_rebound_with_content",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "archive_census_omission",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "structured_key_count_rewrite",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "selected_scope_globalized",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      }
+    ],
+    "expected_reconstruction_semantic_rejections": 52,
+    "regenerated_exact_schema_acceptances": 76,
+    "strict_bool_int_mutations": [
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "paper_true",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "parent_paper_false",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "X_true",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "h0_false",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "D0_false",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "field_index_true",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "materialized_count_true",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "missing_count_false",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "delta_numerator_true",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "delta_denominator_true",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "authorization_zero",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      },
+      {
+        "active_exact_schema_rejected": true,
+        "expected_payload_reconstruction_rejected": true,
+        "name": "mathematical_reopen_zero",
+        "payload_changed": true,
+        "regenerated_exact_schema_accepts": true
+      }
+    ]
+  },
+  "paper": 206,
+  "parser_firewall": {
+    "NaN_and_Infinity_rejected": true,
+    "canonical_payload_bytes_required": true,
+    "duplicate_json_keys_rejected": true,
+    "python_optimized_mode_fails_closed": true
+  },
+  "payload_schema_sha256": "e8b7624e293fb96a99c9d0da3d5c71e41ed5cd4cd85b1deb10288eb47fbefd19",
+  "payload_sha256": "b0e8ca954ed25679ae19178fd4c31c0e8c891d0de78e87ac5f74632232e9370c",
+  "schema": "tpc-206-selected-lineage-pair-registry-audit-v1",
+  "summary": {
+    "archive_objects_verified": 12203,
+    "corpus_wide_maximality": "NOT_TESTABLE",
+    "fields_verified": 42,
+    "materialized_fields_verified": 13,
+    "mathematical_reopen": false,
+    "missing_fields_verified": 29,
+    "selected_graph_edges_verified": 12,
+    "selected_graph_nodes_verified": 10,
+    "selected_lineage_full_completions": 0,
+    "selected_non_splicing_rows_verified": 29,
+    "source_locks_verified": 29,
+    "verdict": "SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED"
+  }
+}
