@@ -1,0 +1,57 @@
+"""Build the RH-271 publication manifest."""
+
+import hashlib
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+EXCLUDED_DIRECTORIES = {".pytest_cache", "__pycache__", ".ipynb_checkpoints"}
+EXCLUDED_NAMES = {
+    "main.aux",
+    "main.bbl",
+    "main.blg",
+    "main.fdb_latexmk",
+    "main.fls",
+    "main.log",
+    "main.out",
+    "dependency_manifest.json",
+    "archive_verification.json",
+    "batch_dependency_manifest.json",
+    "batch_archive_verification.json",
+}
+
+
+def digest(path: Path) -> str:
+    value = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1 << 20), b""):
+            value.update(chunk)
+    return value.hexdigest()
+
+
+def main() -> None:
+    files = sorted(
+        path
+        for path in ROOT.rglob("*")
+        if path.is_file()
+        and not any(
+            part in EXCLUDED_DIRECTORIES for part in path.relative_to(ROOT).parts
+        )
+        and path.name not in EXCLUDED_NAMES
+        and path.suffix != ".pyc"
+    )
+    payload = {
+        "status": f"{ROOT.name}_publication_manifest",
+        "file_count": len(files),
+        "files": {str(path.relative_to(ROOT)): digest(path) for path in files},
+    }
+    output = ROOT / "results/dependency_manifest.json"
+    output.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    print(json.dumps({"file_count": len(files)}))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,266 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{An Updated Deterministic-Envelope/Quotient Certificate Ledger}
+\author{Bin Wang}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We consolidate RH-262--RH-269 into a logically explicit certificate ledger.
+The deterministic target now has a certified boundary constant, an exact
+all-order parity dictionary, a direct order-29 logarithmic tail below
+$2.6624745\times10^{-5}$, a unified envelope
+$|a_n|<48q_*^n$, and the sharp law $a_n/q_*^n\to1$.  In contrast, the
+archive supplies no legal anchored head, cloud coefficient bridge, or uniform
+quotient tail; the sufficient continuum quotient criterion has none of its
+four hypotheses verified.  Thus the five-component vector is
+$(0,0,0,1,1)$, with exactly two satisfied obligations and zero complete
+certificates in the audited route.  The zero count is scoped bookkeeping, not
+a global nonexistence theorem.
+\end{abstract}
+
+\section{Objects and certificate semantics}
+
+Let the Hardy-scaled deterministic target be normalized by
+\begin{equation}
+ \log G_H(z)=-\sum_{n\ge2}\frac{a_n}{n}z^n,
+ \qquad r_H=\frac{17}{20}.
+ \label{eq:target}
+\end{equation}
+For a selected moving-cloud or quotient family, write its candidate
+coefficients as $\tau_{n,s}$.  A complete head--tail certificate requires
+more than a target estimate: it must identify a legal finite head, prove that
+its coefficients match the deterministic target in the stated protocol, and
+control both quotient and target tails uniformly.
+
+\begin{definition}[Five-obligation ledger]\label{def:ledger}
+Use the fixed order $(H,B,Q,A,M)$, where
+\begin{equation}
+\begin{aligned}
+ H&=\text{legal anchored head},&
+ B&=\text{coefficient bridge},\\
+ Q&=\text{uniform quotient tail},&
+ A&=\text{analytic target tail},\\
+ M&=\text{certified target boundary constant}.&&
+\end{aligned}
+\label{eq:vector}
+\end{equation}
+the complete-certificate predicate is the conjunction
+$H\wedge B\wedge Q\wedge A\wedge M$.
+\end{definition}
+
+The five entries are deliberately independent.  In particular, a theorem
+about the deterministic sequence $a_n$ cannot by itself establish that a
+noise-dependent spectral selection produces those coefficients.  This is the
+same firewall that separated the deterministic target from the moving-cloud
+trace-envelope question in RH-241 \citep{WangRH241}.
+
+\section{The deterministic target stack}
+
+The target side now consists of exact analytic identities and certified
+interval bounds rather than a finite root-rate extrapolation.  RH-262 proves,
+using the RH-15 factorization and the RH-13 Arb certificate
+\citep{WangRH13,WangRH15,WangRH262},
+\begin{equation}
+ M_{7/5}:=\sup_{|z|=7/5}|\log G_H(z)|<107.906078<108.
+ \label{eq:boundary}
+\end{equation}
+RH-263 then gives the all-order parity dictionary \citep{WangRH263}:
+for odd $n\ge3$,
+\begin{equation}
+ a_n=\frac{(r_H\lambda)^{-n}}{1+\lambda^{-n}},
+ \label{eq:odd}
+\end{equation}
+while for $k\ge1$,
+\begin{equation}
+ a_{2k}=r_H^{-2k}\left[
+ 2\operatorname{tr}(T^k)+\frac{2\lambda^{-2k}}{1+\lambda^{-k}}
+ -\frac{\lambda^{-2k}}{1-\lambda^{-2k}}
+ \right].
+ \label{eq:even}
+\end{equation}
+The comparison against the 27 archived RH-253 rows through order 28 has
+maximum floating residual $6.442918843840156\times10^{-14}$; the proof of
+\eqref{eq:odd}--\eqref{eq:even} is factorwise and does not depend on that
+finite check \citep{WangRH253}.
+
+Put
+\begin{equation}
+ q_*=(r_H\lambda)^{-1}=0.7008752258547757\ldots,
+ \qquad \rho_*=q_*^{-1}=1.4267874838640739\ldots .
+ \label{eq:qstar}
+\end{equation}
+RH-267 proves the unified all-order envelope
+\begin{equation}
+ |a_n|<48q_*^n\qquad(n\ge2),
+ \label{eq:envelope}
+\end{equation}
+and RH-268 proves its base is sharp in the deterministic sense
+\citep{WangRH267,WangRH268}:
+\begin{equation}
+ \frac{a_n}{q_*^n}\longrightarrow1.
+ \label{eq:sharp}
+\end{equation}
+Thus no bound $|a_n|\le Cq^n$ can hold for every $n$ with $q<q_*$, although
+the prefactor $48$ is not claimed to be optimal.
+
+\begin{proposition}[Envelope-only logarithmic tail]\label{prop:envtail}
+If $0\le R<\rho_*$ and $N\ge2$, then \eqref{eq:envelope} implies
+\begin{equation}
+ \sum_{n\ge N}\frac{|a_n|R^n}{n}
+ <\frac{48(q_*R)^N}{N(1-q_*R)}.
+ \label{eq:envtail}
+\end{equation}
+At $R=1$ and $N=29$, the certified comparison $q_*<0.700876$ gives the
+clean bound
+\begin{equation}
+ \sum_{n\ge29}\frac{|a_n|}{n}<0.000184751.
+ \label{eq:coarsetail}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $n\ge N$, replace $1/n$ by $1/N$ in the positive majorant and sum the
+geometric series with ratio $q_*R<1$.  Substituting the outward safe value
+$0.700876$ gives \eqref{eq:coarsetail}.
+\end{proof}
+
+The direct factorwise certificate of RH-264 is stronger at the operational
+order \citep{WangRH264}:
+\begin{equation}
+ \sum_{n\ge29}\frac{|a_n|}{n}<0.000026624745,
+ \qquad e^{\sum_{n\ge29}|a_n|/n}-1<0.000026625100.
+ \label{eq:directtail}
+\end{equation}
+Its reported logarithmic endpoint is more than $6.93$ times smaller than the
+coarse envelope-only endpoint in \eqref{eq:coarsetail}.  RH-265 extends this
+factorwise construction to a certified tail ladder; only the $N=29$ row is
+aligned with the currently archived order-28 head, and every row $N\ge37$
+remains a conditional interface rather than a constructed head
+\citep{WangRH265}.
+
+\begin{theorem}[Deterministic target package]\label{thm:target}
+The archived target has a certified analytic tail and certified boundary
+constant.  Its coefficient base is exactly $q_*$, its logarithmic radius is
+exactly $\rho_*$, and its current order-29 tail obeys \eqref{eq:directtail}.
+These conclusions concern the deterministic sequence $a_n$ only and do not
+imply a moving-cloud coefficient bridge.
+\end{theorem}
+
+\begin{proof}
+The boundary and direct tail are \eqref{eq:boundary} and
+\eqref{eq:directtail}.  Equations \eqref{eq:envelope}--\eqref{eq:sharp} give
+the exact root rate and, by Cauchy--Hadamard, the radius $\rho_*$.  None of
+these statements contains an identification $\tau_{n,s}=a_n$ or a limiting
+version of that identity, so the bridge does not follow.
+\end{proof}
+
+\section{The quotient side remains conditional}
+
+RH-259 has 23 finite quotient blocks: every twelfth power is contractive,
+none of the one-step blocks is contractive, and nine archived endpoints are
+missing \citep{WangRH259}.  RH-266 proves the exact logical limitation of
+this evidence: finitely many pointwise contractions do not imply a continuum
+uniform bound without a modulus or an interval-family enclosure
+\citep{WangRH266}.  This does not prove that the actual quotient family is
+nonuniform.
+
+RH-269 supplies a sufficient continuum theorem \citep{WangRH246,WangRH269}.
+It requires
+\begin{enumerate}[label=(\roman*)]
+ \item Hilbert--Schmidt convergence of the noisy operators;
+ \item a common finite-rank contour isolating the spectral cluster;
+ \item a uniform resolvent bound on that contour;
+ \item a contractive power of the limiting orthogonal quotient.
+\end{enumerate}
+Together these hypotheses stabilize the Riesz and orthogonal projections and
+produce uniform RH-246 constants $K_m$, $\eta_m<1$, and $L_r$.  The current
+archive verifies none of the four hypotheses as a continuum theorem.  Hence
+the criterion is exact but inactive, and the uniform quotient tail remains
+open.
+
+\section{Exact updated ledger}
+
+\begin{center}
+\small
+\begin{tabular}{p{0.46\linewidth}p{0.39\linewidth}}
+\toprule
+component & archived status after RH-269 \\
+\midrule
+certified target boundary constant & true; \eqref{eq:boundary} \\
+exact deterministic parity anchor & true; \eqref{eq:odd}--\eqref{eq:even} \\
+direct order-29 deterministic tail & true; \eqref{eq:directtail} \\
+deterministic all-order envelope & true; \eqref{eq:envelope} \\
+sharp deterministic base and radius & true; \eqref{eq:sharp} \\
+legal anchored head & not supplied in audited classes \\
+cloud coefficient bridge & open \\
+uniform quotient tail & open \\
+RH-269 criterion hypotheses & $0/4$ verified \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{theorem}[Updated complete-certificate ledger]\label{thm:ledger}
+For Definition~\ref{def:ledger}, the archived truth vector is
+\begin{equation}
+ \boxed{(H,B,Q,A,M)=(0,0,0,1,1).}
+ \label{eq:status}
+\end{equation}
+Exactly two of five obligations are satisfied.  The complete certificate
+count in the audited route is therefore zero.
+\end{theorem}
+
+\begin{proof}
+RH-262 certifies $A=M=1$.  RH-263--RH-268 strengthen the target side but do
+not change the three cloud/quotient entries.  The archived head ledger still
+contains no passing legal anchored head, so $H=0$; no cloud-to-target
+coefficient theorem gives $B=1$; and RH-266--RH-269 leave $Q=0$, with the
+sufficient criterion at $0/4$ hypotheses.  The complete predicate is the
+conjunction of all five entries, so \eqref{eq:status} is incomplete and its
+audited complete-certificate count is zero.
+\end{proof}
+
+\begin{remark}[Scope of the zero count]
+The theorem does not exclude a future selector outside the audited head
+classes, an operator-derived non-idempotent quotient, a cloud bridge, or a
+continuum proof of the RH-269 hypotheses.  It says exactly that no complete
+certificate is assembled from the presently archived components.
+\end{remark}
+
+\section{Protocol and claim boundary}
+
+The companion audit reads the eight structured result files RH-262--RH-269,
+checks their status fields, theorem boundaries, numerical endpoints, and all
+forty inherited Gate A--E flags, and writes a deterministic ledger.  It does
+not rerun long operator calculations, refit finite coefficients, or infer
+uniformity between samples.
+
+The deterministic all-order envelope and sharp base are not moving-cloud
+theorems.  The 27-row parity cross-check is not used as proof of an all-order
+cloud identity, and the 23 finite contractions are not a uniform quotient
+certificate.  Gates A--E remain false/open.  No Hilbert--Polya operator is
+constructed, no Riemann zeros are identified, no equality with the completed
+zeta divisor is asserted, and no implication of the Riemann Hypothesis is
+claimed.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

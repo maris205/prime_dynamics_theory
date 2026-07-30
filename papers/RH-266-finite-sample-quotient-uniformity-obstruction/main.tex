@@ -1,0 +1,68 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm}\usepackage{booktabs,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{A Finite-Sample Obstruction to Quotient Uniformity}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+RH-259 finds contractive twelfth powers at 23 finite quotient endpoints.  We
+prove that such finite pointwise data, without a parameter modulus or interval
+family enclosure, cannot imply a uniform small-noise theorem.  Nine archived
+endpoints also remain uncomputed.  This is a logical insufficiency result for
+the present evidence, not a proof that the underlying quotient family is
+nonuniform.
+\end{abstract}
+
+\section{The finite-sample theorem}
+\begin{theorem}[No uniform supremum from finite samples]
+Let $F$ be a finite subset of an interval $I$.  For any prescribed values
+$v_x<1$ at $x\in F$, there is a continuous function $f:I\to\mathbb R$ with
+$f(x)=v_x$ on $F$ and $\sup_I f>1$.
+\end{theorem}
+\begin{proof}
+Interpolate the finite prescribed values by a continuous function $g$.  Choose
+$x_0\in I\setminus F$ and a triangular bump $b$ supported in a neighborhood
+of $x_0$ disjoint from $F$.  Then $g+Cb$ retains every sampled value, while a
+sufficiently large $C$ makes its value at $x_0$ exceed one.
+\end{proof}
+
+The theorem remains true if all sampled values lie below a common
+$q<1$.  A uniform conclusion becomes possible only after additional structure
+controls the values between samples, for example a certified Lipschitz modulus
+or a single interval-operator enclosure.
+
+\section{Application to the quotient ledger}
+The archived RH-259 data \citep{WangRH259} contain 23 endpoints at 13 distinct
+noise values: 10 left and 13 right.  All 23 twelfth powers are contractive,
+while no one-step block is contractive.  The first contractive depth ranges
+from 3 to 9, and
+\[
+ 0.22185212659640824\le q_{12}\le0.5056418005507071.
+\]
+The finite unit-disk tail diagnostic is
+$5.654507945432548\times10^{-4}$.  These are finite matrix findings, not
+interval enclosures.
+
+\begin{corollary}[Scoped route stop]
+The 23 RH-259 contractions alone do not establish a uniform quotient-tail
+bound on the small-noise continuum.
+\end{corollary}
+\begin{proof}
+Apply the theorem to the unsampled parameter values.  Independently, 9 of the
+32 archived endpoints are not present in RH-259, so even finite archived
+coverage is incomplete.
+\end{proof}
+
+This does not contradict the conditional block-power theorem of RH-246
+\citep{WangRH246}; it identifies missing hypotheses needed to apply it
+uniformly.  It does not prove nonuniformity of the actual family.  The cloud
+bridge and Gates A--E remain false/open; no Hilbert--Polya, zeta-divisor, or RH
+claim is made.
+
+\bibliographystyle{plainnat}\bibliography{references}
+\end{document}

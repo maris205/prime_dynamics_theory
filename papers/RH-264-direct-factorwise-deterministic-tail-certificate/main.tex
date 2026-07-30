@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{A Direct Factorwise Deterministic-Numerator Tail Certificate}
+\author{Bin Wang}\date{July 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We derive a direct all-order target-tail bound from the parity-resolved
+factorization of RH-263.  At the unit disk and first omitted order $29$, the
+Fredholm trace ideal, the two even endpoint factors, and the exact odd factor
+give a certified logarithmic budget below $2.6624745\times10^{-5}$.  The
+relative exponential error is below $2.6625100\times10^{-5}$.  The argument
+uses no angular sampling and does not assert a cloud coefficient bridge or a
+uniform quotient theorem.
+\end{abstract}
+
+\section{Tail decomposition}
+Let $u=z/r_H$, $r_H=17/20$, $W=|u|^2$, and $t=|u|/\lambda$.
+The RH-15 factorization is
+\[
+ \log G(u)=P_1u+\log\det(I-u^2T)+\log A_*(u^2)+\log B(u^2)+\log C(u).
+\]
+At $|z|=1$, put $W=(20/17)^2$ and $t=20/(17\lambda)$.  The RH-13
+certificate supplies a nuclear bound $\nu_1$ and bounds $p_1\ge\|T\|$,
+$p_2\ge\|T^2\|$, $q\ge\|T^3\|$ as in RH-262 \citep{WangRH13}.
+
+For $n=3k+j$, $j\in\{1,2,3\}$, the trace ideal gives
+\[
+ \nu(T^n)\le q^k\nu_j,
+ \qquad \nu_2=p_1\nu_1,\quad \nu_3=p_2\nu_1.
+\]
+If $n\ge n_0$, then
+\begin{equation}
+ \sum_{n\ge n_0}\frac{|\operatorname{tr}T^n|W^n}{n}
+ \le \sum_{j=1}^3
+ \frac{\nu_jW^j(qW^3)^{k_j}}
+ {(3k_j+j)(1-qW^3)},
+ \label{eq:fredtail}
+\end{equation}
+where $k_j$ is the first integer with $3k_j+j\ge n_0$.
+
+\begin{proposition}[Endpoint tails]
+For $n_0\ge1$ and $y=t^2<1$,
+\[
+ \sum_{n\ge n_0}\frac{|[u^{2n}]\log A_*|W^n}{1}
+ \le\frac{y^{n_0}}{n_0(1-y)},
+\]
+and the corresponding $B$ bound is this quantity divided by
+$2(1-\lambda^{-2})$.  For odd order $m\ge3$ the exact coefficient is
+$t^m/(1+\lambda^{-m})$ before the $1/m$ logarithmic normalization.
+\end{proposition}
+
+\begin{proof}
+Use $|\lambda^{-2n}/(1+\lambda^{-n})|\le\lambda^{-2n}$ for $A_*$,
+$d_n\le\lambda^{-2n}/(1-\lambda^{-2})$ for $B$, and sum a geometric
+series after replacing each denominator by its first denominator.  The odd
+statement is the exact RH-263 identity.
+\end{proof}
+
+\section{Certified order-29 budget}
+The first omitted even trace power is $n_0=15$ and the first omitted odd order
+is $29$.  The 100-, 150-, and 200-decimal Arb replays all satisfy the strict
+outward comparisons
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+component & certified upper bound\\
+\midrule
+Fredholm even tail & $0.000019045786$\\
+$A_*$ tail & $0.000003066234$\\
+$B$ tail & $0.000002376597$\\
+even total & $0.000024488616$\\
+odd endpoint tail & $0.000002136130$\\
+total logarithmic tail & $0.000026624745$\\
+relative exponential error & $0.000026625100$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{theorem}[Direct factorwise target tail]\label{thm:tail}
+For the deterministic Hardy-scaled numerator at $|z|\le1$,
+\[
+ \sum_{n\ge29}\frac{|a_n|}{n}<0.000026624745,
+ \qquad
+ \exp\!\left(\sum_{n\ge29}\frac{|a_n|}{n}\right)-1
+ <0.000026625100.
+\]
+\end{theorem}
+
+\begin{proof}
+Orders $n\ge29$ split into even $n=2m$ with $m\ge15$ and odd orders.
+Apply \eqref{eq:fredtail} to the Fredholm logarithm, the proposition to
+$A_*$ and $B$, and the exact odd series to $C$ after the $P_1=b_1$
+cancellation.  The displayed outward endpoints sum to the stated bounds.
+\end{proof}
+
+The result is deterministic and all-order in the sense of the analytic
+factorization; it is not an all-order theorem about noisy selected clouds.
+The five-component ledger remains $(0,0,0,1,1)$: no legal anchored head,
+cloud coefficient bridge, or uniform quotient tail has been supplied.  Gates
+A--E remain false/open, and no Hilbert--Polya or zeta conclusion is made.
+
+\bibliographystyle{plainnat}\bibliography{references}
+\end{document}

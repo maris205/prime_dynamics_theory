@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\title{A Certified First-Omitted-Order Ladder for the Deterministic Tail}
+\author{Bin Wang}\date{July 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We organize the direct factorwise target-tail estimate into a certified ladder
+of first omitted orders.  Arb replay gives explicit logarithmic and
+multiplicative budgets for $N=13,21,29,37,45,53,61$.  Only $N=29$ matches the
+currently archived order-28 deterministic head; higher rows are conditional
+interfaces, not newly constructed heads.  The ladder is a target-side result
+and leaves the cloud bridge and uniform quotient theorem open.
+\end{abstract}
+
+\section{Definition of the ladder}
+Let $E_N$ denote the direct factorwise upper bound for
+$\sum_{n\ge N}|a_n|/n$ from RH-264 \citep{WangRH264}.  We restrict to odd
+$N$ so that the even trace threshold is $(N+1)/2$ and the odd endpoint series
+starts at $N$.
+
+\begin{proposition}[Monotone ladder]
+For the fixed unit disk and the RH-13 certificate, the direct majorants satisfy
+$E_{N'}<E_N$ whenever $N'>N$ are successive listed orders.  The same holds
+for $\exp(E_N)-1$.
+\end{proposition}
+
+\begin{proof}
+Each component is a positive tail of an absolutely convergent majorant.  The
+first omitted order increases, so every component decreases; the exponential
+map is increasing on the nonnegative reals.
+\end{proof}
+
+\section{Certified values}
+The 100- and 200-decimal Arb replays evaluate the same outward interval
+expressions independently.  The resulting safe endpoints are
+\begin{center}
+\small
+\begin{tabular}{rcc}
+\toprule
+$N$ & $E_N$ & $\exp(E_N)-1$\\
+\midrule
+13 & $<2.3243607\times10^{-2}$ & $<2.3515845\times10^{-2}$\\
+21 & $<8.73261\times10^{-4}$ & $<8.73642\times10^{-4}$\\
+29 & $<2.6624745\times10^{-5}$ & $<2.6625100\times10^{-5}$\\
+37 & $<9.32147\times10^{-7}$ & $<9.32147\times10^{-7}$\\
+45 & $<4.432615\times10^{-8}$ & $<4.432615\times10^{-8}$\\
+53 & $<1.705725\times10^{-9}$ & $<1.705725\times10^{-9}$\\
+61 & $<7.175542\times10^{-11}$ & $<7.175542\times10^{-11}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{theorem}[Current operational row]
+The RH-253 head through order 28 and the $N=29$ row form a certified
+deterministic target-side interface with logarithmic tail below
+$2.6624745\times10^{-5}$.  No head through order 36 is present in the
+archive, so the rows $N\ge37$ are conditional interfaces only.
+\end{theorem}
+
+\begin{proof}
+The order-28 extent is the finite dictionary of RH-253 \citep{WangRH253};
+the $N=29$ bound is RH-264.  The remaining rows are evaluated by the same
+analytic majorant but require coefficients not claimed here.
+\end{proof}
+
+This ladder is not a cloud envelope, a selector, or a uniform quotient
+theorem.  The five obligation vector remains $(0,0,0,1,1)$; all Gates A--E,
+Hilbert--Polya claims, zeta-divisor equality, and RH implications remain
+false/open.
+
+\bibliographystyle{plainnat}\bibliography{references}
+\end{document}

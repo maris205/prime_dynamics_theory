@@ -1,0 +1,139 @@
+{
+  "certificate_status": {
+    "complete": false,
+    "components": {
+      "analytic_target_tail": true,
+      "certified_target_boundary_constant": true,
+      "coefficient_bridge": false,
+      "legal_anchored_head": false,
+      "uniform_quotient_tail": false
+    },
+    "obligation_vector": [
+      false,
+      false,
+      false,
+      true,
+      true
+    ],
+    "order": [
+      "legal_anchored_head",
+      "coefficient_bridge",
+      "uniform_quotient_tail",
+      "analytic_target_tail",
+      "certified_target_boundary_constant"
+    ],
+    "required_component_count": 5,
+    "satisfied_component_count": 2
+  },
+  "complete_certificate_count": 0,
+  "deterministic_target": {
+    "boundary_budget": {
+      "certified_supremum_lt": "107.906078",
+      "circle": "7/5",
+      "clean_supremum_lt": "108"
+    },
+    "cross_source_comparison": {
+      "direct_factorwise_clean_lt": "0.000026624745",
+      "envelope_only_clean_lt": "0.000184751",
+      "envelope_only_order_29_log_tail_bound": 0.00018475085356742355,
+      "improvement_factor_gt": "6.93",
+      "upper_endpoint_improvement_factor": 6.9390656536775674
+    },
+    "direct_order_29_tail": {
+      "all_order_factorwise_certificate": true,
+      "logarithmic_lt": "0.000026624745",
+      "multiplicative_lt": "0.000026625100"
+    },
+    "parity_anchor": {
+      "all_order_exact": true,
+      "finite_cross_check_is_cloud_bridge": false,
+      "finite_cross_check_orders": 27,
+      "maximum_cross_check_residual": 6.442918843840156e-14
+    },
+    "sharp_law": {
+      "critical_absolute_log_series_diverges": true,
+      "rho_star": 1.426787483864074,
+      "smaller_geometric_base_possible": false,
+      "statement": "a_n/q_star^n tends to 1"
+    },
+    "tail_ladder": {
+      "higher_orders_conditional_interfaces": true,
+      "order_29_current_head_aligned": true,
+      "orders": [
+        13,
+        21,
+        29,
+        37,
+        45,
+        53,
+        61
+      ]
+    },
+    "unified_envelope": {
+      "constant": 48,
+      "moving_cloud_envelope": false,
+      "q_star": 0.7008752258547757,
+      "q_star_safe_upper": 0.700876,
+      "statement": "For every n>=2, |a_n| < 48 q_star^n."
+    }
+  },
+  "quotient_and_cloud": {
+    "cloud_coefficient_bridge": false,
+    "criterion": {
+      "common_finite_rank_isolating_contour": false,
+      "criterion_complete": false,
+      "hilbert_schmidt_convergence": false,
+      "limit_block_contraction": false,
+      "required_hypothesis_count": 4,
+      "satisfied_hypothesis_count": 0,
+      "uniform_resolvent_bound": false
+    },
+    "finite_power_12_contractions": 23,
+    "finite_sample_count": 23,
+    "finite_samples_imply_uniformity": false,
+    "legal_anchored_head": false,
+    "missing_archived_endpoint_count": 9,
+    "missing_criterion_hypotheses": [
+      "hilbert_schmidt_convergence",
+      "common_finite_rank_isolating_contour",
+      "uniform_resolvent_bound",
+      "limit_block_contraction"
+    ],
+    "underlying_family_proved_nonuniform": false,
+    "uniform_quotient_tail": false
+  },
+  "route_coordinate": "deterministic_target_envelope_sharp_legal_head_bridge_uniform_quotient_open_complete_zero",
+  "source_consistency_audit": {
+    "check_count": 111,
+    "failure_count": 0,
+    "failures": []
+  },
+  "source_range": [
+    262,
+    269
+  ],
+  "status": "rh270_updated_deterministic_envelope_quotient_certificate_ledger",
+  "theorem_boundary": {
+    "all_order_deterministic_parity_anchor": true,
+    "cloud_coefficient_bridge": false,
+    "complete_certificate": false,
+    "criterion_hypotheses_verified": false,
+    "deterministic_all_order_envelope": true,
+    "deterministic_boundary_constant": true,
+    "deterministic_sharp_base": true,
+    "direct_all_order_deterministic_tail": true,
+    "gate_A": false,
+    "gate_B": false,
+    "gate_C": false,
+    "gate_D": false,
+    "gate_E": false,
+    "global_selector_nonexistence": false,
+    "hilbert_polya_operator": false,
+    "legal_anchored_head": false,
+    "riemann_hypothesis_implication": false,
+    "riemann_zero_identification": false,
+    "underlying_quotient_family_nonuniform": false,
+    "uniform_quotient_tail": false,
+    "zeta_divisor_equality": false
+  }
+}

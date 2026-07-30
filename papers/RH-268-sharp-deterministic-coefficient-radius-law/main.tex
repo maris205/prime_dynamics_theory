@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}\usepackage[T1]{fontenc}\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm}\usepackage{xcolor}\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{corollary}[theorem]{Corollary}\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{The Sharp Coefficient Radius of the Deterministic Numerator}\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+Let $q_*=(r_H\lambda)^{-1}$.  We prove the sharp all-order law
+$a_n/q_*^n\to1$ for the Hardy-scaled deterministic numerator.  Hence the
+logarithmic coefficient root rate is exactly $q_*$, the convergence radius is
+exactly $q_*^{-1}$, no smaller geometric base is possible, and the absolute
+logarithmic series diverges at the critical radius.  These are deterministic
+target statements, not moving-cloud asymptotics.
+\end{abstract}
+
+\section{Odd and even limits}
+For odd $n\ge3$, the exact factor formula is \citep{WangRH15,WangRH267}
+\[
+ \frac{a_n}{q_*^n}=\frac1{1+\lambda^{-n}}\longrightarrow1.
+\]
+For even $n=2m$, RH-263 gives
+\[
+ \frac{a_{2m}}{q_*^{2m}}
+ =2\lambda^{2m}\operatorname{tr}(T^m)
+ +\frac{1-2\lambda^{-m}}{1-\lambda^{-2m}}.
+\]
+If $m=3k+j$, the RH-13 trace-ideal estimate \citep{WangRH13} gives
+\[
+ |\lambda^{2m}\operatorname{tr}(T^m)|
+ \le \nu_j\lambda^{2j}(q_3\lambda^6)^k,
+ \qquad q_3\lambda^6<0.801254.
+\]
+Thus the trace term tends to zero, while the endpoint fraction tends to one.
+
+\begin{theorem}[Sharp coefficient law]
+For the complete sequence $n\ge2$,
+\[
+ \boxed{\displaystyle\lim_{n\to\infty}\frac{a_n}{q_*^n}=1.}
+\]
+\end{theorem}
+
+\section{Radius and negative consequences}
+\begin{corollary}[Exact radius]
+The power series $-\sum_{n\ge2}a_nz^n/n$ has exact radius
+\[
+ \rho_*=q_*^{-1}=r_H\lambda=1.4267874838640739\ldots .
+\]
+\end{corollary}
+\begin{proof}
+Since $n^{1/n}\to1$, the coefficient root rate of $a_n/n$ is $q_*$.
+The Cauchy--Hadamard formula gives the radius.
+\end{proof}
+
+\begin{corollary}[Sharp scoped negative result]
+There are no constants $C<\infty$ and $q<q_*$ such that
+$|a_n|\le Cq^n$ for all $n$.  Moreover
+\[
+ \sum_{n\ge2}\frac{|a_n|\rho_*^n}{n}=\infty.
+\]
+\end{corollary}
+\begin{proof}
+The first claim contradicts the exact root rate.  For the second,
+$|a_n|\rho_*^n\to1$, so the terms are asymptotic to the harmonic series.
+\end{proof}
+
+The order-2--28 ratios approach one numerically, but no finite fit is used in
+the proof.  The sharp rate belongs only to the deterministic target.  It does
+not provide a cloud coefficient bridge, legal selector, or uniform quotient
+tail.  Gates A--E and all Hilbert--Polya/zeta/RH claims remain false/open.
+
+\bibliographystyle{plainnat}\bibliography{references}\end{document}
