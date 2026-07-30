@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{A Mass-Limited Rate Barrier for Interior Annular Norms}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+We turn the odd-anchor mass demand into an unconditional norm lower bound for
+every modulus-capped complement.  Given squared spectral mass $M$, choose
+the first odd order at which the cap $Mq^{n-2}$ falls below half of the exact
+deterministic anchor.  That coefficient alone forces both the
+$H^\infty(\rho)$ and $H^2(\rho)$ mismatch norms to be at least
+$C_\rho M^{-\kappa(\rho)}/\log M$, where
+$\kappa(\rho)=\log(1/(q_*\rho))/\log(q_*/q)$.  Under
+$M_\sigma\le\sigma^{-1}$, no interior annular norm can decay with a power of
+$\sigma$ strictly larger than $\kappa(\rho)$.  The lower bound tends to zero
+and therefore does not exclude actual annular convergence.
+\end{abstract}
+
+\section{Mass-dependent odd witness}
+Fix $R<\rho<\rho_*=q_*^{-1}$ and let
+\[
+ g(z)=\sum_{n\ge2}\frac{\tau_n-a_n}{n}z^n,
+ \qquad
+ \tau_n=\sum_j\mu_j^n,\quad |\mu_j|\le q,\quad
+ M=\sum_j|\mu_j|^2.
+\]
+For odd $n$, $a_n=q_*^n/(1+\lambda^{-n})$.  Let $N(M)$ be the least odd
+$n\ge3$ such that
+\[
+ Mq^{n-2}\le\frac12a_n.
+\]
+The logarithmic implementation uses this exact inequality and does not
+replace it by an asymptotic proxy.
+
+\section{Strict and asymptotic lower bounds}
+\begin{theorem}\label{thm:lower}
+For $X=H^\infty(\rho)$ or $H^2(\rho)$,
+\[
+ \|g\|_X\ge
+ \frac{(q_*\rho)^{N(M)}}
+ {2N(M)(1+\lambda^{-N(M)})}.
+\]
+Moreover, there are constants $C_\rho>0$ and $M_{0,\rho}$ such that for
+$M\ge M_{0,\rho}$,
+\[
+ \boxed{
+ \|g\|_X\ge
+ C_\rho\frac{M^{-\kappa(\rho)}}{\log(e+M)},
+ \qquad
+ \kappa(\rho)=
+ \frac{\log(1/(q_*\rho))}{\log(q_*/q)}.}
+\]
+\end{theorem}
+\begin{proof}
+At $N=N(M)$, the spectral cap gives
+$|\tau_N|\le Mq^{N-2}\le a_N/2$, hence
+$|\tau_N-a_N|\ge a_N/2$.  A single coefficient of either annular norm gives
+the first display.
+
+Put $r=q_*/q>1$ and $y=q_*\rho<1$.  The defining inequality for $N$ and
+its failure two orders earlier imply
+\[
+ N(M)=\frac{\log M}{\log r}+O(1).
+\]
+Therefore
+$y^{N(M)}=\Theta_\rho(M^{\log y/\log r})
+=\Theta_\rho(M^{-\kappa(\rho)})$, while
+$N(M)=\Theta(\log M)$.  Absorb the bounded factors into $C_\rho$.
+\end{proof}
+
+\begin{corollary}[small-noise power ceiling]\label{cor:noise}
+For the actual modulus complement, $M_\sigma\le\sigma^{-1}$.  Hence, after
+adjusting a constant for bounded masses,
+\[
+ \|g_\sigma\|_X\ge
+ C_\rho\frac{\sigma^{\kappa(\rho)}}
+ {\log(e+1/\sigma)}.
+\]
+In particular $\|g_\sigma\|_X=O(\sigma^\beta)$ is impossible for every
+$\beta>\kappa(\rho)$.
+\end{corollary}
+\begin{proof}
+The function $M^{-\kappa}/\log(e+M)$ is eventually decreasing.  Apply
+Theorem~\ref{thm:lower} with $M_\sigma\le\sigma^{-1}$.  If $M_\sigma$ stays
+bounded along a subsequence, the exact witness bound is bounded below by a
+positive constant and the conclusion is stronger.
+\end{proof}
+
+\section{Numerical protocol and boundary}
+At $\rho=1.41$,
+\[
+ \kappa(1.41)=0.035045705260961\ldots.
+\]
+The computation uses the exact least odd witness at $M=10^{12}$ for
+$\rho=1.405,1.41,1.42$ and records the certified coefficient lower bounds.
+It does not treat the asymptotic expression as a unit-constant global bound.
+
+\begin{remark}
+The theorem rules out overly fast convergence, not convergence itself.  It
+uses only the actual modulus cap, squared spectral mass, and exact odd
+anchors; it does not identify the head or close any determinant gate.
+Gates A--E remain false/open.
+\end{remark}
+\end{document}

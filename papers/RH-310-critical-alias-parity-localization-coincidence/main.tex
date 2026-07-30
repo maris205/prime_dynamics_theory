@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Critical Coincidence of Alias, Parity, and Gaussian Localization Scales}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+When the counterloop period is tied to the intrinsic endpoint-resolution
+rank, its first exact alias occurs at the same logarithmic slope as the
+archived Gaussian localization ceiling.  The associated deterministic cycle
+has clearance $\Theta(\sigma)$, so the old interior Gaussian replacement is
+already critical.  At this order, the isolated alias bias and the scalar
+square-root parity correction have the same weighted growth exponent
+$0.4634069445\ldots$.  We also derive the exact first-alias matching law
+necessary for a minimal-clock weighted full-trace bridge.  Separate absolute
+majorants remain valid inequalities but do not decay.  No divergence of the
+combined trace error is proved.
+\end{abstract}
+
+\section{Natural clock and exact alias}
+Assume the typed counterloop route chooses
+\[
+ k_\sigma=\frac{L_\sigma}{2\log\lambda}+O(1),\qquad
+ L_\sigma=\log(1/\sigma).
+\]
+Its exact moments are
+\[
+ s_{k,n}=\beta_k^n
+ \bigl(2k\mathbf1_{2k\mid n}-1-(-1)^n\bigr),
+ \qquad
+ \beta_k\to\beta=(0.85\sqrt\lambda)^{-1}.
+\]
+The limiting pole moment is
+$p_n=-2\mathbf1_{2\mid n}\beta^n$, and the deterministic numerator anchor
+is $a_n=c_n-p_n$.
+
+\section{Triple critical coincidence}
+\begin{theorem}\label{thm:coincidence}
+The first alias order satisfies
+\[
+ 2k_\sigma=\frac{L_\sigma}{\log\lambda}+O(1).
+\]
+Its slope equals the archived interior-localization ceiling
+\[
+ a_{\rm alias}=a_{\rm loc}=\frac1{\log\lambda}
+ =1.9307094191869356\ldots.
+\]
+The boundary cycle of physical period $2k_\sigma$ has clearance
+$\Theta(\lambda^{-2k_\sigma})=\Theta(\sigma)$.  Hence its
+clearance-to-noise ratio has power exponent zero, rather than tending to
+infinity as required by the existing interior Gaussian proof.
+
+At the same order, both the exact alias bias and the isolated scalar parity
+correction have weighted growth exponent
+\[
+ \chi_1=\frac{\log(\beta R)}{\log\lambda}
+ =\frac{\log(R/0.85)}{\log\lambda}-\frac12
+ =0.463406944517003\ldots.
+\]
+\end{theorem}
+\begin{proof}
+The first display follows directly from the natural clock.  RH-10 and RH-17
+give a boundary cycle with clearance asymptotic to a positive constant times
+$\lambda^{-2k}$, proving the localization statement.
+
+At $n=2k$,
+\[
+ s_{k,2k}-p_{2k}=(2k-2)\beta_k^{2k}+2\beta^{2k}.
+\]
+The finite-radius law
+\[
+ \beta_k=\beta\exp\left[-\frac{\log C_M}{2k}+o(k^{-1})\right]
+\]
+shows that its weighted size divided by $2k$ is
+$\Theta((\beta R)^{2k})$, with exponent $\chi_1$.
+
+For the parity eigenvalue, write
+$\lambda_-(\sigma)=-(1-\delta_\sigma)$ with
+$\delta_\sigma=C_*\sqrt\sigma+o(\sqrt\sigma)$.  Since
+$k_\sigma\delta_\sigma\to0$,
+\[
+ \frac{|\lambda_-^{2k}-1|}{2k}
+ \left(\frac R{0.85}\right)^{2k}
+ =C_*\sqrt\sigma
+ \left(\frac R{0.85}\right)^{2k}(1+o(1)).
+\]
+Its exponent is
+$\log(R/0.85)/\log\lambda-1/2=\chi_1$.
+\end{proof}
+
+\section{Necessary first-alias matching law}
+Let
+\[
+ e_{\sigma,k,n}=c_{\sigma,n}-s_{k,n}-a_n
+ =(c_{\sigma,n}-c_n)-(s_{k,n}-p_n).
+\]
+The minimal bridge clock lies beyond $2k_\sigma$, so a weighted full-trace
+estimate includes the first alias.
+
+\begin{corollary}\label{cor:matching}
+If the minimal-clock weighted error tends to zero, then
+\[
+ c_{\sigma,2k}-c_{2k}
+ =(2k-2)\beta_k^{2k}+2\beta^{2k}
+ +o(kR^{-2k}).
+\]
+The required absolute matching exponent is
+\[
+ \frac{\log R}{\log\lambda}
+ =0.6496301165394711\ldots.
+\]
+\end{corollary}
+\begin{proof}
+The single alias term of the nonnegative weighted sum must tend to zero, so
+$e_{\sigma,k,2k}=o(kR^{-2k})$.  Substitute the exact alias formula.  Since
+$2k=L_\sigma/\log\lambda+O(1)$, the power of $R^{-2k}$ is the displayed
+exponent.
+\end{proof}
+
+\section{Protocol and scope}
+The computation independently evaluates the alias, parity, matching, and
+minimal-clock clearance exponents.  The first-alias clearance exponent is
+exactly zero; at the longer minimal bridge clock the clearance ratio decays
+with exponent $0.4521466691\ldots$.
+
+\begin{remark}
+Triangle inequalities that majorize alias and parity pieces separately are
+mathematically valid, but their bounds grow and therefore cannot close the
+bridge.  A joint moving-order boundary-layer trace law could still cancel
+them.  No actual full-trace divergence, spectral-submultiset identification,
+or Gate A--E conclusion is proved.
+\end{remark}
+\end{document}

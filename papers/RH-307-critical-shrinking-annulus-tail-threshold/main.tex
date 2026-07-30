@@ -1,0 +1,100 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{The Critical Shrinking-Annulus Threshold at the Minimal Tail Clock}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The minimal tail-absorbed clock is shorter than the slope-four clock, but its
+noisy tail is only logarithmically small on the target circle.  We determine
+how rapidly an auxiliary radius may separate from that circle.  If
+$\rho_\sigma=Re^{\eta_\sigma}$ and
+$h_\sigma=\lceil a_*\log(1/\sigma)\rceil$, the mass-and-cap noisy-tail scale
+is $e^{a_*L_\sigma\eta_\sigma}/L_\sigma$.  For
+$\eta_\sigma=c\log L_\sigma/L_\sigma$, the sharp information-class threshold
+is $c_*=1/a_*=\log(10/7)$.  A diagonal multiset consisting of repeated
+$q$-atoms saturates all three regimes.  The result controls the tail only;
+the moving head remains open.
+\end{abstract}
+
+\section{Minimal clock and moving radius}
+Put
+\[
+ q=\frac12,\quad R=\frac75,\quad
+ a_*=\frac1{\log(1/(qR))}=\frac1{\log(10/7)},\quad
+ L_\sigma=\log(1/\sigma),\quad
+ h_\sigma=\lceil a_*L_\sigma\rceil.
+\]
+Let $\rho_\sigma=Re^{\eta_\sigma}$, where $\eta_\sigma\downarrow0$, and
+assume $\rho_\sigma<\rho_*$.  For complement traces satisfying
+$|\tau_{\sigma,n}|\le4\sigma^{-1}q^n$, define their tail logarithm beyond
+$h_\sigma$.
+
+\section{Threshold theorem}
+\begin{theorem}\label{thm:threshold}
+For $X=H^\infty(\rho_\sigma)$ or $H^2(\rho_\sigma)$, the noisy tail obeys
+\[
+ \|S_\sigma^{\ge h_\sigma}\|_X
+ \le C\frac{\exp(a_*L_\sigma\eta_\sigma)}{L_\sigma}
+\]
+for all sufficiently small $\sigma$, with $C$ independent of $\sigma$.
+The deterministic target tail is smaller:
+\[
+ \|T^{\ge h_\sigma}\|_X
+ \le C'
+ \frac{\sigma^{1-a_*\log(q_*/q)}
+ \exp(a_*L_\sigma\eta_\sigma)}{L_\sigma}.
+\]
+If
+\[
+ \eta_\sigma=c\frac{\log L_\sigma}{L_\sigma},
+\]
+then the noisy scale is $L_\sigma^{a_*c-1}$.  Thus it vanishes for
+$c<c_*=1/a_*$, is of constant order for $c=c_*$, and grows for $c>c_*$.
+Here
+\[
+ c_*=\log(10/7)=0.3566749439387324\ldots.
+\]
+These three orders are sharp in the mass-and-cap information class.
+\end{theorem}
+\begin{proof}
+Put $x_\sigma=q\rho_\sigma=qR e^{\eta_\sigma}$.  The geometric bounds are
+\[
+ \|S_\sigma^{\ge h}\|_{H^\infty}
+ \le\frac{4\sigma^{-1}x_\sigma^h}{h(1-x_\sigma)},\qquad
+ \|S_\sigma^{\ge h}\|_{H^2}
+ \le\frac{4\sigma^{-1}x_\sigma^h}
+ {h\sqrt{1-x_\sigma^2}}.
+\]
+Since $(qR)^{a_*L_\sigma}=\sigma$, the first estimate follows; the ceiling
+changes only a bounded factor.  The target proof is identical with
+$48(q_*\rho_\sigma)^h$ and
+\[
+ (q_*R)^{a_*L_\sigma}
+ =\sigma^{1-a_*\log(q_*/q)}.
+\]
+The remaining exponent is $0.0531384836\ldots>0$.
+
+For sharpness, take $N_\sigma=\lfloor\sigma^{-1}/q^2\rfloor$ copies of the
+atom $q$ on a diagonal operator.  Its squared mass is at most
+$\sigma^{-1}$ and its trace powers are $N_\sigma q^n$, asymptotic to the
+upper envelope.  The first tail coefficient gives the same lower order in
+both norms, while the geometric estimates give the matching upper order.
+\end{proof}
+
+\section{Protocol and boundary}
+The computation evaluates $c=c_*/2,c_*,3c_*/2$ at $\sigma=10^{-80}$,
+records $\eta_\sigma$, $\rho_\sigma$, and the normalized tail scale, and
+verifies that every reported radius remains below $\rho_*$.  At the critical
+row the normalized model scale equals one by definition; this means
+$\Theta(1)$, not convergence of the actual tail to one.
+
+\begin{remark}
+The repeated-$q$ diagonal is a saturation model for the available
+mass-and-cap information, not the measured noisy spectrum.  The theorem
+does not control the moving head and does not prove actual annular
+nonconvergence.  Gates A--E remain false/open.
+\end{remark}
+\end{document}

@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Hardy-Dominant Annular Coefficient Conversion and Its Sharp Gap Order}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The direct $H^\infty$ coefficient estimate of RH-300 used Cauchy's bound and
+has gap constant of order $\eta^{-1}$ when $\rho=Re^\eta$.  Since normalized
+$H^\infty$ embeds contractively into $H^2$, the Hardy estimate improves this
+to order $\eta^{-1/2}$.  We prove the Hardy constant exactly and show that
+its square-root order is optimal: equality is attained in $H^2$, while
+dyadic Rudin--Shapiro blocks give the same order on the $H^\infty$ unit ball.
+At $R=1.4$, $\rho=1.41$, the constants are $139.007\ldots$ and
+$8.292\ldots$.  No norm decay for the actual mismatch is asserted.
+\end{abstract}
+
+\section{Coefficient functional}
+Let $f(z)=\sum_{n\ge2}b_nz^n$ be analytic on $|z|<\rho$, put
+$x=R/\rho<1$, and define
+\[
+ P_R(f)=\sum_{n\ge2}|b_n|R^n.
+\]
+Boundary $H^2$ norms use normalized angular measure.
+
+\section{Hardy-dominant theorem}
+\begin{theorem}\label{thm:hardy}
+For every $f\in H^2(\rho)$,
+\[
+ P_R(f)\le
+ \|f\|_{H^2(\rho)}\frac{x^2}{\sqrt{1-x^2}}.
+\]
+In particular, for $f\in H^\infty(\rho)$,
+\[
+ P_R(f)\le
+ \|f\|_{H^\infty(\rho)}\frac{x^2}{\sqrt{1-x^2}}.
+\]
+The $H^2$ constant is exact.  If $\rho=Re^\eta$, then the best uniform
+order on the $H^\infty$ unit ball is also $\Theta(\eta^{-1/2})$ as
+$\eta\downarrow0$.
+\end{theorem}
+\begin{proof}
+Write $u_n=|b_n|\rho^n$.  Cauchy--Schwarz gives
+\[
+ P_R(f)=\sum_{n\ge2}u_nx^n
+ \le\left(\sum_{n\ge2}u_n^2\right)^{1/2}
+ \left(\sum_{n\ge2}x^{2n}\right)^{1/2},
+\]
+which is the first estimate.  The second uses
+$\|f\|_{H^2}\le\|f\|_{H^\infty}$.  Equality in the Hilbert-space estimate
+is obtained by taking the boundary-scaled coefficient vector proportional
+to $(x^n)_{n\ge2}$.
+
+For the $H^\infty$ lower order, let $N=2^m$ and choose Rudin--Shapiro signs
+$\varepsilon_0,\ldots,\varepsilon_{N-1}$ with
+\[
+ \sup_{|w|=1}\left|\sum_{j=0}^{N-1}\varepsilon_jw^j\right|
+ \le\sqrt{2N}.
+\]
+Then
+\[
+ f_N(z)=\frac1{\sqrt{2N}}
+ \sum_{j=0}^{N-1}\varepsilon_j(z/\rho)^{j+2}
+\]
+has $H^\infty(\rho)$ norm at most one and
+\[
+ P_R(f_N)=
+ \frac{x^2(1-x^N)}{\sqrt{2N}(1-x)}.
+\]
+Choose a dyadic $N$ with $(2\eta)^{-1}\le N\le\eta^{-1}$.  Since
+$x=e^{-\eta}$, the last expression is bounded below by
+$c\eta^{-1/2}$.  The Hardy upper bound is asymptotic to
+$(2\eta)^{-1/2}$, proving the order.
+\end{proof}
+
+\section{Constants and protocol}
+At $R=1.4$, $\rho=1.41$,
+\[
+ \frac{x^2}{1-x}=139.0070921986\ldots,\qquad
+ \frac{x^2}{\sqrt{1-x^2}}=8.2924678943\ldots.
+\]
+The computation evaluates the Hardy scale and admissible dyadic
+Rudin--Shapiro lower examples at $\eta=10^{-1},10^{-2},10^{-3}$, using
+lengths $8,64,512$.  Non-dyadic lengths are rejected by the implementation
+because the displayed normalization is then not certified by the standard
+identity.
+
+\begin{remark}
+This theorem optimizes the conversion of a known norm into an absolute
+coefficient budget.  It does not prove that the actual $g_\sigma$ norm
+decays.  Gates A--E remain false/open and no Hilbert--Polya or RH statement
+follows.
+\end{remark}
+\end{document}

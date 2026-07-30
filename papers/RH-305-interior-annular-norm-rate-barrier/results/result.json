@@ -1,0 +1,36 @@
+{
+  "actual_annular_convergence_excluded": false,
+  "gates": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+  },
+  "h2_mass_power_rate_above_ceiling_excluded": true,
+  "hinfinity_mass_power_rate_above_ceiling_excluded": true,
+  "lower_bound_scope": "modulus-cap trace powers versus the exact odd anchor",
+  "mass_to_norm_lower_bound_proved": true,
+  "rate_variable": "complement_hilbert_schmidt_mass",
+  "rows": [
+    {
+      "certified_norm_lower_at_mass_1e12": 0.0014282227978865457,
+      "forced_odd_order_at_mass_1e12": 89,
+      "power_rate_ceiling": 0.045564427573099704,
+      "rho": 1.405
+    },
+    {
+      "certified_norm_lower_at_mass_1e12": 0.0019593143986948594,
+      "forced_odd_order_at_mass_1e12": 89,
+      "power_rate_ceiling": 0.03504570526096135,
+      "rho": 1.41
+    },
+    {
+      "certified_norm_lower_at_mass_1e12": 0.0036750711694731085,
+      "forced_odd_order_at_mass_1e12": 89,
+      "power_rate_ceiling": 0.014119701438149928,
+      "rho": 1.42
+    }
+  ],
+  "status": "rh305_interior_annular_norm_rate_barrier"
+}

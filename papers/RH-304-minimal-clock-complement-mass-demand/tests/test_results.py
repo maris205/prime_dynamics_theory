@@ -1,0 +1,9 @@
+import json
+from pathlib import Path
+
+
+def test_result_firewall():
+    data = json.loads((Path(__file__).parents[1] / "results/result.json").read_text())
+    assert data["single_order_mass_lower_bound_proved"] is True
+    assert data["minimal_clock_relative_matching_proved"] is False
+    assert not any(data["gates"].values())

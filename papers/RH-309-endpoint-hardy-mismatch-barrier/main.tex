@@ -1,0 +1,135 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{Endpoint Hardy Membership and a Logarithmic Mismatch Barrier}
+\author{Bin Wang}\date{July 2026}
+\begin{document}\maketitle
+\begin{abstract}
+At the deterministic coefficient radius
+$\rho_*=1.4267874838\ldots$, the actual complement-to-anchor mismatch has a
+sharp qualitative split: it belongs to $H^2(\rho_*)$ for every fixed noise,
+but it never belongs to $H^\infty(\rho_*)$.  Endpoint $H^2$ convergence would
+still close the weighted prefix at $R=1.4$, with conversion constant
+$4.992111\ldots$.  However the exact odd anchors and the complement mass cap
+force an endpoint norm lower bound of order $1/\sqrt{\log M_\sigma}$, hence
+at least order $1/\sqrt{\log(1/\sigma)}$.  This barrier tends to zero, so it
+does not prove endpoint convergence or nonconvergence.
+\end{abstract}
+
+\section{Endpoint functions}
+Let
+\[
+ \rho_*=q_*^{-1}=0.85\lambda,\qquad q=\frac12,\qquad
+ g_\sigma(z)=\sum_{n\ge2}
+ \frac{\tau_{\sigma,n}-a_n}{n}z^n.
+\]
+For the modulus complement,
+$|\tau_{\sigma,n}|\le M_\sigma q^{n-2}$ with finite
+$M_\sigma\le\sigma^{-1}$.  The deterministic anchors satisfy
+$|a_n|<48q_*^n$ and, for odd $n$,
+\[
+ a_n=\frac{q_*^n}{1+\lambda^{-n}}.
+\]
+
+\section{Membership theorem}
+\begin{theorem}\label{thm:membership}
+For every fixed $\sigma>0$,
+\[
+ g_\sigma\in H^2(\rho_*),\qquad
+ g_\sigma\notin H^\infty(\rho_*).
+\]
+\end{theorem}
+\begin{proof}
+The noisy logarithm is bounded at $\rho_*$ because
+$q\rho_*=q/q_*<1$ and its coefficients have the geometric mass envelope.
+The target logarithm belongs to $H^2(\rho_*)$ because
+\[
+ \sum_{n\ge2}\frac{|a_n|^2\rho_*^{2n}}{n^2}
+ \le48^2\sum_{n\ge2}\frac1{n^2}<\infty.
+\]
+Thus their difference belongs to $H^2$.
+
+The odd part of the target logarithm has positive radial values
+\[
+ \sum_{\substack{n\ge3\\n\ {\rm odd}}}
+ \frac{r^n}{n(1+\lambda^{-n})},\qquad 0<r<1,
+\]
+which diverge as $r\uparrow1$.  Hence the target is not bounded on the
+endpoint disk.  Subtracting the bounded noisy logarithm cannot make it
+bounded, proving the $H^\infty$ exclusion.
+\end{proof}
+
+\section{Endpoint conversion and lower barrier}
+Put $R=1.4$ and $x=R/\rho_*$.  Every endpoint $H^2$ mismatch satisfies
+\[
+ \sum_{n\ge2}\frac{|\tau_{\sigma,n}-a_n|R^n}{n}
+ \le\|g_\sigma\|_{H^2(\rho_*)}
+ \frac{x^2}{\sqrt{1-x^2}},
+\]
+where
+\[
+ \frac{x^2}{\sqrt{1-x^2}}
+ =4.992111068649647\ldots.
+\]
+
+\begin{theorem}\label{thm:barrier}
+Let $M>0$ and let $N(M)$ be the least odd $N\ge3$ satisfying
+\[
+ Mq^{N-2}\le\frac14q_*^N.
+\]
+Then every modulus-capped complement of squared mass $M$ obeys
+\[
+ \boxed{
+ \|g\|_{H^2(\rho_*)}
+ \ge\frac1{\sqrt{32N(M)}}.}
+\]
+Consequently, for constants $C,M_0>0$,
+\[
+ \|g\|_{H^2(\rho_*)}
+ \ge\frac{C}{\sqrt{\log(e+M)}}
+ \qquad(M\ge M_0).
+\]
+For the actual complement mass $M_\sigma\le\sigma^{-1}$,
+\[
+ \|g_\sigma\|_{H^2(\rho_*)}
+ \ge\frac{C'}{\sqrt{\log(e+1/\sigma)}}.
+\]
+\end{theorem}
+\begin{proof}
+For every odd $n\ge N(M)$, the cap remains below $q_*^n/4$.  Since
+$a_n\ge q_*^n/2$,
+\[
+ |\tau_n-a_n|\ge\frac14q_*^n.
+\]
+After scaling by $\rho_*^n/n$, every such odd coefficient contributes at
+least $1/(4n)$ in modulus.  Therefore
+\[
+ \|g\|_{H^2(\rho_*)}^2
+ \ge\frac1{16}
+ \sum_{j\ge0}\frac1{(N+2j)^2}
+ \ge\frac1{32N}.
+\]
+The defining inequality gives
+$N(M)=\log M/\log(q_*/q)+O(1)$.  Since
+$M\mapsto1/\sqrt{\log(e+M)}$ is decreasing, the archived upper cap
+$M_\sigma\le\sigma^{-1}$ gives the final statement; bounded masses only
+strengthen it.
+\end{proof}
+
+\section{Protocol and exact boundary}
+The computation reports the exact forced odd cutoff and certified lower
+bound for $M=10^4,10^8,10^{16}$, together with a separately named normalized
+logarithmic scale.  Infinite model $\sum_{n>N}n^{-2}$ tails are represented
+by rigorous integral bounds rather than a finite truncation.
+
+\begin{remark}
+The lower bound tends to zero.  It rules out endpoint $H^2$ decay faster
+than the displayed logarithmic scale but proves neither endpoint convergence
+nor divergence.
+The endpoint $H^\infty$ route is unavailable because the actual mismatch is
+not in that space.  Gates A--E remain false/open.
+\end{remark}
+\end{document}
