@@ -3,9 +3,10 @@
 更新时间：2026-07-31
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
-最新不编号审计裁决：`O161_BAD_ENDPOINT_TRIGGER_FAIL_CLOSED_PARENT_OPEN_NOT_REOPENED`
+最新不编号审计裁决：
+`DECLARED_TPC1_206_REACHABLE_LOCAL_EDGE_CORPUS_V2_FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED`
 下一篇：`null`；下一项不编号审计：
-`CORPUS_WIDE_SOURCE_BACKED_LOCAL_OCCURRENCE_EDGE_FAMILY_AUDIT`
+`ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_CONSTRUCTION_GATE`
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
@@ -17,7 +18,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 是下一会话的事实来源。旧聊天记录不是事实来源。
 下文历史审计块中的所有 `tpc205_authorized=false`、`TPC-206 未授权` 与
 `USER_CONFIRMATION_REQUIRED` 都是当时的编号前快照，统一由本页页首及
-第 14--16 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
+第 14--17 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
 后续按同一有限、fail-closed 工作流继续，不再设置单独的人为编号授权门；
 这不替代 theorem evidence，也不许可跨过任何数学门槛。
 
@@ -38,6 +39,19 @@ python "$p/build_tpc205.py" --check
 python "$p/tpc205_pair_native_registry_interface.py" --check
 python "$p/tpc205_independent_checker.py" --check
 python papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py --check
+
+foreach ($s in @(
+  "papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory.py",
+  "papers/tpc-174-local-occurrence-edge-witness-schema/experiments/tpc174_witness_contract.py",
+  "papers/tpc-175-declared-corpus-local-edge-family/experiments/tpc175_local_edge_family.py",
+  "papers/tpc-176-source-backed-coverage-gluing-audit/experiments/tpc176_coverage_gluing_audit.py",
+  "papers/tpc-177-actual-active-support-vacuity-firewall/experiments/tpc177_active_support_audit.py",
+  "papers/tpc-178-canonical-minimal-representation-eligibility/experiments/tpc178_representation_audit.py",
+  "papers/tpc-179-h1-structural-corpus-exhaustion-integration/experiments/tpc179_h1_integration.py"
+)) {
+  python -O -B $s --check
+  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+}
 ```
 
 随后优先读取：
@@ -368,6 +382,19 @@ parents、pair-native/H1/global architecture。
 `TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1` 必须继续
 `STOP_SCOPED`；不得把 phase `L2`、Lebesgue-a.e.、size-only、
 log-to-natural，或旧 method cells 的重包装记作新 theorem。
+
+2026-07-31 的全仓 H1 local-edge audit 新增且仅新增：
+
+```text
+DECLARED_TPC1_206_REACHABLE_LOCAL_OCCURRENCE_EDGE_SOURCE_CORPUS_V2
+  = STOP_SCOPED
+```
+
+它只停止从 commit `023ccb5959e35b96673117b76add3dcbc3987aca`
+的 TPC-1--206 paper corpus，以及当时所有 refs 按第 16 节选择器可达的
+历史 blobs，重新包装出 production actual local-occurrence edge。它不
+覆盖未来 refs、未 fetch source、真正新增的 source theorem 或独立
+architecture reroute。
 
 ## 7. Reopen triggers
 
@@ -1544,7 +1571,239 @@ TPC-143/153 的零边或形式链、synthetic witness、旧 singleton-cut
 连同 exact occurrence、schedule、ranges、normalization 与 loss ledger
 真实形成时，才可讨论 TPC-207。
 
-## 16. 下一会话可直接粘贴
+## 16. 全仓 source-backed local-occurrence-edge family 审计
+
+### 16.1 精确审计范围与同记录合同
+
+本轮执行的不编号 gate 为：
+
+```text
+CORPUS_WIDE_SOURCE_BACKED_LOCAL_OCCURRENCE_EDGE_FAMILY_AUDIT
+```
+
+冻结 paper corpus 的快照为：
+
+```text
+023ccb5959e35b96673117b76add3dcbc3987aca
+```
+
+该快照的 `papers/` 恰有 TPC-1--206 各一目录、各一 `main.tex` 与
+`README.md`，无缺号或重号。审计同时覆盖所有 refs 可达的、路径以
+`papers/tpc-` 开头且扩展名属于
+`.py/.json/.jsonl/.md/.tex/.csv` 的 distinct blobs：
+
+```text
+reachable blobs = 1940
+reachable bytes = 72619961
+blob OIDs present at current HEAD = 1917
+historical-only blob OIDs = 23
+```
+
+这是一项 finite lexical + typed-contract + semantic-candidate audit，
+不是所有数学表述、所有外部文献或所有未来 source universe 的
+nonexistence theorem。历史草稿也不因仍可达而自动取得 active production
+theorem 身份；扫描历史只用于排除“已有但被当前树漏掉”的正向 candidate。
+
+TPC-173 的最小 H1 edge 合同仍要求同一 source-locked record 同时给出：
+
+```text
+source path + canonical hash
+resolving theorem locator
+resolving formula locator
+nonempty derivation AST
+literal actual-local-occurrence-edge conclusion
+five-field production cut address (ell,k,native_d,jL,jK)
+exact nonzero rational edge weight
+fixed h0=2 lineage
+physical-normalization lineage
+```
+
+本轮 reopen gate 还逐项要求 exact actual occurrence identity、
+packet/scale schedule、共同 ranges、具有公式语义的 normalization，以及
+完整且不重复的 physical-loss ledger。archive key 只能作地址；
+formal/shadow row、relation-type 名称、synthetic witness、空 family 与
+跨 lineage 数值相等都不能补字段。
+
+### 16.2 精确 census 与 near-candidate 排除
+
+TPC-173 已冻结的 TPC-133--172 四十篇保持：
+
+```text
+MAPPED_DISQUALIFIED files = 30
+REVIEWED_NO_CANDIDATE files = 10
+NOT_MAPPED_YET files = 0
+QUALIFYING files = 0
+mapped claim records = 32
+qualifying claim records = 0
+```
+
+其余 166 篇按互斥 source 层分为：
+
+```text
+TPC-1--132 pre-cut legacy = 132
+TPC-173--179 H1 inventory/schema/extraction layer = 7
+TPC-180--193 phase/fixed-atom/direct layer = 14
+TPC-194--204 direct/reduction/barrier/audit layer = 11
+TPC-205 pair-native interface = 1
+TPC-206 selected projection = 1
+```
+
+pre-cut legacy 没有在同一 record 中形成具有 TPC-164/TPC-174 语义的
+五字段 production source-cut address；phase/direct 对象不是 linear
+cut-to-occurrence relation；TPC-205 的
+`LINEAR_CUT_TO_OCCURRENCE_EDGE` 只是 relation type，production rows
+为 0；TPC-206 的 selected graph 按本 gate 排除，其 nonselected
+comparison fixture 仍是 `DERIVED_L0_ONLY` 且
+`production_occurrence=false`。
+
+对当前 HEAD 中 TPC-1--206 的 tracked、非-schema `.json/.jsonl`
+再作结构化 census：
+
+```text
+files = 228
+parse errors = 0
+audited raw key instances = 26947 in 22 files
+nonempty signal instances = 9001 in 7 files
+generic occurrence_id instances = 26
+physical_occurrence_id instances = 8973
+actual_occurrence_id instances = 2
+other positive/true/nonempty edge signals = 0
+```
+
+全部非空 signal 都被其自身 provenance 排除：
+
+- TPC-141 的 14 个 generic `occurrence_id` 是 integration/ledger stage
+  tokens，不是 physical actual edges；
+- TPC-143 的 2,988 条 obligations 全部满足
+  `actual_map_edges=[]`；TPC-145 的 `actual_occurrence_edges` 与
+  `actual_stage_edges` 也都为空；TPC-163 的 13 类 production
+  crosswalk coverage 全为 0，`theorem_backed_edge_count=0`；
+- TPC-153 的 2,988 条 shadow rows 的 `actual_occurrence_id` 全为
+  `null`；其两条最接近 claim 虽有 weight \(1\)、`h0=2` 与 `nu_X`
+  lineage，但 theorem conclusion 仍只是 shadow；
+- TPC-154 有 2,989 条 completion records、8,967 条 formal edge rows
+  与 8,967 个唯一 `FORMAL_ONLY` physical IDs；其中 8,964 条来自当前
+  production archive 的自由形式补全、3 条来自 synthetic policy
+  regression，且 8,967 条全部显式满足
+  `theorem_backed_actual_provenance=false`；
+- TPC-155 只有 3 条 `SYNTHETIC_L0_ONLY` occurrence rows；
+- TPC-174 只有 2 条 synthetic edges 与两个
+  `synthetic-occurrence-{a,b}` IDs，source path/hash、theorem locator
+  与 formula locator 均为空；
+- TPC-205 的 ID 字符串是接口语义占位，production pair records 为 0；
+  TPC-206 的 pair/edge/target occurrence IDs 为 `null`。
+
+reachable-history 中没有 historical-only occurrence-ID-field blob，也
+没有 historical-only positive candidate。严格 same-record screen 在
+current 与 historical-only 两侧均为 0。
+
+独立 exploit review 对 TPC-143/153/154/155/173/174/175 的七个
+`python -O -B --check` 入口全部复核通过，未发现 `assert` 型优化绕过；
+TPC-155/174 的关键 integer/fraction 路径也严格排除 bool-as-int。
+同时保留以下信任边界：TPC-173 的 qualification flags 未被 schema
+强制为 strict bool，TPC-174 不执行外部 theorem truth 或完整
+source-label resolution，TPC-175 的 standalone zero-count validator
+存在 `False == 0` 型混淆。deterministic rebuild 可阻止 artifact-only
+篡改，不能把 coordinated producer/schema/source rewrite 变成外部定理
+证明。因此本轮裁决建立在独立 raw census 与逐 source claim 审核上，
+不把这些 checker 单独当作 theorem evidence。
+
+因此同记录 gate ledger 为：
+
+```text
+source theorem with literal actual-edge conclusion = 0
+production actual-occurrence identities = 0
+exact nonzero edge/conservation on an actual carrier = 0
+same-record packet schedule = 0
+same-record ranges = 0
+same-record physical normalization = 0
+same-record complete physical-loss ledger = 0
+complete qualifying H1 local-edge records = 0
+```
+
+### 16.3 裁决、停止边界与开放父节点
+
+首致命阻断为：
+
+```text
+SOURCE_LOCKED_THEOREM_WITH_ACTUAL_LOCAL_OCCURRENCE_EDGE_CONCLUSION
+  = ABSENT
+```
+
+它早于 occurrence ID、edge weight、schedule、ranges、normalization 与
+loss ledger。故：
+
+```text
+classification =
+  CORPUS_WIDE_SOURCE_BACKED_LOCAL_OCCURRENCE_EDGE_FAMILY_AUDIT_L1
+
+theorem_status =
+  PROVED_DECLARED_TPC1_206_AND_REACHABLE_HISTORY_ZERO_QUALIFYING
+  H1_SOURCE_BACKED_LOCAL_OCCURRENCE_EDGE_RECORDS_L1_SCOPED
+
+verdict =
+  DECLARED_TPC1_206_REACHABLE_LOCAL_EDGE_CORPUS_V2
+  FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED
+
+H1.source_backed_local_occurrence_edge_family = NOT_TESTABLE
+TPC207_TRIGGER = NO
+TPC207_CREATED = false
+```
+
+新增且仅新增：
+
+```text
+DECLARED_TPC1_206_REACHABLE_LOCAL_OCCURRENCE_EDGE_SOURCE_CORPUS_V2
+  = STOP_SCOPED
+```
+
+该 cell 只停止从上述 snapshot 与可达历史重新包装出 production H1 edge；
+它不是数学不存在性定理，不关闭新增 source theorem、外部新增 primary
+source 或独立 architecture reroute。第 6 节全部旧 cells（尤其
+`TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1`）继续精确
+`STOP_SCOPED`。
+
+两个 O161 parents、pair-native reroute、H1 architecture 与 global
+architecture 继续 `OPEN`。active support 与 canonical/minimal
+representation 是 actual carrier 之后的独立 roots；在 carrier 为空时
+优先审它们只会继续得到 vacuous `NOT_TESTABLE`。fixed-atom credit 为 0，
+strict `1/400` 为 `UNPAID`，`L2=NONE`。
+
+### 16.4 下一有限路线
+
+最直接触碰首缺、且不再重复空 corpus scan 的下一关选为：
+
+```text
+ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_CONSTRUCTION_GATE
+```
+
+它必须选一个 source-locked named upstream physical occurrence，沿正向
+map 推到一个具体 TPC-136 cut；禁止从已经丢字段的 cut archive 逆猜
+occurrence。一次通过必须在同一 source lock 下同时形成：
+
+```text
+named actual physical occurrence ID
+literal five-field production cut address
+exact nonzero edge weight and per-cut conservation
+fixed h0=2
+exact packet schedule and parameter ranges
+physical normalization with formula semantics
+complete nonduplicated loss ledger
+```
+
+若该 gate 通过，它会直接产生第一条 production TPC-174 witness，届时
+才允许讨论 TPC-207。若首步即证明当前语料没有可选的 named upstream
+physical occurrence，则 fail closed 并转入仍开放的备选有限路线：
+
+```text
+UNNUMBERED_CORPUS_WIDE_NONSELECTED_PAIR_NATIVE_CONNECTED_LINEAGE_JOIN_CENSUS
+```
+
+备选路线只审 103/107 之外、同一 connected lineage 的 ordered row
+pairs，禁止 external L0 donor 与 cross-lineage splice，并始终保持
+pair reroute 与 H1 linear edge 类型分离。
+
+## 17. 下一会话可直接粘贴
 
 ```text
 进入仓库：
@@ -1566,26 +1825,50 @@ python -O -B papers/tpc-184-bad-endpoint-literal-target-contract/experiments/tpc
 python papers/tpc-189-direct-twist-literal-target-contract/experiments/tpc189_direct_twist_literal_target_contract.py --check
 python -O -B papers/tpc-189-direct-twist-literal-target-contract/experiments/tpc189_direct_twist_literal_target_contract.py --check
 
-当前编号事实终点仍是 TPC-206，selected 103/107 closure 为 13/42，首缺
-D、one-based index 9。三个新不编号审计分别证明：现有八条 selected
-paths 没有合法 opened-D attachment；现有 TPC18/25/133/134 链不能把
-B_alpha/B_gamma materialize 到同一 typed T_D；现有及补充 primary screen
-没有 prescribed named-atom、scheduled bad-shadow、positive-X-power
-local-increment theorem。
+foreach ($s in @(
+  "papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory.py",
+  "papers/tpc-174-local-occurrence-edge-witness-schema/experiments/tpc174_witness_contract.py",
+  "papers/tpc-175-declared-corpus-local-edge-family/experiments/tpc175_local_edge_family.py",
+  "papers/tpc-176-source-backed-coverage-gluing-audit/experiments/tpc176_coverage_gluing_audit.py",
+  "papers/tpc-177-actual-active-support-vacuity-firewall/experiments/tpc177_active_support_audit.py",
+  "papers/tpc-178-canonical-minimal-representation-eligibility/experiments/tpc178_representation_audit.py",
+  "papers/tpc-179-h1-structural-corpus-exhaustion-integration/experiments/tpc179_h1_integration.py"
+)) {
+  python -O -B $s --check
+  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+}
 
-最新 verdict 为
-O161_BAD_ENDPOINT_TRIGGER_FAIL_CLOSED_PARENT_OPEN_NOT_REOPENED。
-TPC-207 trigger=false，TPC-207 未创建。保持第 6 节全部精确 cells 为
-STOP_SCOPED；保持两个 O161 parents、pair-native reroute、H1 与 global
-architecture OPEN；fixed-atom credit=0、strict 1/400 UNPAID、L2=NONE。
+当前编号事实终点仍是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
+最新不编号 audit 对快照 023ccb5959e35b96673117b76add3dcbc3987aca
+中的 TPC-1--206、当前 228 个 tracked 非-schema JSON/JSONL，以及所有
+refs 可达的 1,940 个已声明 TPC blobs 作了 source-backed
+local-occurrence-edge census。合格 production actual edge=0；23 个
+historical-only blobs 也没有 occurrence-ID edge candidate。
 
-无需再请求单独工作流授权。直接执行不编号
-CORPUS_WIDE_SOURCE_BACKED_LOCAL_OCCURRENCE_EDGE_FAMILY_AUDIT。
-只接受 TPC-206 selected graph 之外真正 theorem-backed 的 actual
-local-occurrence edge family；拒绝 archive key、formal/shadow row、
-zero-edge/formal chain、synthetic witness 和旧 stopped-cell 包装。只有
-同一 source-locked edge family 连同 exact occurrence/schedule/ranges/
-normalization/loss ledger 真正形成时，才讨论 TPC-207。
+首阻断为
+SOURCE_LOCKED_THEOREM_WITH_ACTUAL_LOCAL_OCCURRENCE_EDGE_CONCLUSION=ABSENT。
+TPC-153 是 shadow；TPC-154 的 8,967 条 edge 全是
+theorem_backed_actual_provenance=false 的 formal completions；
+TPC-155/174 只有 synthetic witnesses；TPC-205 是空 production
+pair interface；TPC-206 occurrence IDs 为 null。最新 verdict 为
+DECLARED_TPC1_206_REACHABLE_LOCAL_EDGE_CORPUS_V2_FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED。
+
+新增且仅新增
+DECLARED_TPC1_206_REACHABLE_LOCAL_OCCURRENCE_EDGE_SOURCE_CORPUS_V2=STOP_SCOPED。
+保持第 6 节全部旧 cells（尤其 TPC193 V1）为 STOP_SCOPED；保持两个
+O161 parents、pair-native reroute、H1 与 global architecture OPEN；
+fixed-atom credit=0、strict 1/400 UNPAID、L2=NONE。
+
+无需再请求单独工作流授权。直接执行有限 gate
+ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_CONSTRUCTION_GATE。
+从一个 source-locked named upstream physical occurrence 正向推到一个
+具体 TPC-136 cut；不得从 lossy cut archive 逆猜。只有同一 source lock
+同时给出 actual occurrence ID、五字段 cut、exact nonzero edge 与
+per-cut conservation、h0=2、packet schedule/ranges、具有公式语义的
+physical normalization 和完整 loss ledger，才允许讨论 TPC-207。
+若 Gate 0 证明当前语料没有可选 named upstream occurrence，则 fail
+closed，并把下一备选冻结为
+UNNUMBERED_CORPUS_WIDE_NONSELECTED_PAIR_NATIVE_CONNECTED_LINEAGE_JOIN_CENSUS。
 
 主会话只保留结论、路线选择、阻断项和最终审核摘要；长扫描、定理原文
 核查、schema exploit review、构建日志和逐页 PDF 检查交给分身；所有
