@@ -1,0 +1,336 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\usepackage{cleveref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\TV}{\mathrm{TV}}
+\title{A Sharp Physical-to-Affine Remainder for One Critical Endpoint Leg}
+\author{Bin Wang}
+\date{July 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-323 propagated the critical endpoint profile through an exact affine
+probability chain but left the physical curvature and row normalization
+uncontrolled.  We now replace its first tangent leg by the exact
+finite-noise folded kernel.  The physical row has an exact $L^1$ distance to
+the full Gaussian centered at the curved quadratic image; this distance is
+only a pair of state-boundary Gaussian tails and already includes the wrong
+fold and exact row normalizer.  Removing the quadratic displacement then
+costs order $\sigma$.  After averaging against the RH-322 entrance row we
+obtain a fully explicit physical-to-affine joint bound and prove the sharp
+phase-matched limit
+\[
+ \sigma^{-1}\|P_{\sigma,d}-A_d\|_1
+ \longrightarrow
+ \sqrt{2/\pi}\,u_c\{d^2+1+d\phi(d)/\Phi(d)\}>0.
+\]
+Thus the full affine remainder is not exponentially small.  Its local
+$O(\sigma)$ scale is nevertheless smaller than the first-alias target scale.
+No moving-order composition, second-leg remainder, parity cancellation, or
+full trace replacement is asserted.
+\end{abstract}
+
+\section{The exact physical endpoint leg}
+
+Let
+\[
+ f(x)=1-u_cx^2,
+ \qquad r=u_c-1,
+ \qquad \lambda=2u_cr,
+ \qquad \alpha=2u_c,
+\]
+where
+\[
+ u_c=1.543689012692076\ldots,
+ \quad r=0.543689012692076\ldots,
+ \quad \lambda=1.678573510428322\ldots.
+\]
+The critical partition is $b=u_c^{-1/2}=0.8048595351\ldots$.
+For $x,y\in[0,1]$, the archived folded row is
+\begin{equation}\label{eq:physical-kernel}
+ P_\sigma(x,y)=
+ \frac{\phi_\sigma(y-f(x))+\phi_\sigma(y+f(x))}{Z_\sigma(x)},
+ \qquad
+ \phi_\sigma(t)=\sigma^{-1}\phi(t/\sigma),
+\end{equation}
+with $Z_\sigma(x)$ chosen so the row integrates to one.
+
+Use the endpoint and repelling coordinates
+\begin{equation}\label{eq:coordinates}
+ x=1-\sigma v,
+ \qquad y=r+\sigma u,
+ \qquad
+ I_\sigma=\left[-\frac r\sigma,\frac{1-r}{\sigma}\right].
+\end{equation}
+Direct substitution gives
+\begin{equation}\label{eq:image-expansion}
+ f(1-\sigma v)
+ =-r+\sigma c_{\sigma,v},
+ \qquad
+ c_{\sigma,v}=\alpha v-u_c\sigma v^2.
+\end{equation}
+The exact rescaled physical row is therefore
+\begin{equation}\label{eq:rescaled-row}
+ K_\sigma(v,u)=
+ \frac{
+\phi(u+2r/\sigma-c_{\sigma,v})+\phi(u+c_{\sigma,v})
+ }{Z_\sigma(1-\sigma v)}\mathbf1_{I_\sigma}(u),
+\end{equation}
+where, for every physical $0\le v\le\sigma^{-1}$,
+\begin{equation}\label{eq:normalizer}
+ Z_\sigma(1-\sigma v)
+ =1-\overline\Phi\!\left(\frac{1-f(1-\sigma v)}\sigma\right)
+   -\overline\Phi\!\left(\frac{1+f(1-\sigma v)}\sigma\right).
+\end{equation}
+Here $\phi$ and $\Phi$ are the standard normal density and distribution
+function and $\overline\Phi=1-\Phi$.
+
+On the endpoint branch $1-\sigma v\ge b$, the second lobe in
+\eqref{eq:rescaled-row} is the physical folded image.  Define its full-line
+curved Gaussian and the RH-323 tangent row by
+\begin{equation}\label{eq:curved-tangent}
+ C_{\sigma,v}(u)=\phi(u+c_{\sigma,v}),
+ \qquad
+ A_v(u)=\phi(u+\alpha v).
+\end{equation}
+
+\section{Exact row identities}
+
+\begin{theorem}[Fold and normalization collapse to a boundary tail]
+\label{thm:row-identities}
+If $0\le v\le\sigma^{-1}$ and $1-\sigma v\ge b$, then
+\begin{equation}\label{eq:exact-boundary}
+ \boxed{
+ \|K_\sigma(v,\cdot)-C_{\sigma,v}\|_1
+ =2\left\{
+ \overline\Phi\!\left(\frac r\sigma-c_{\sigma,v}\right)
+ +\overline\Phi\!\left(\frac{1-r}\sigma+c_{\sigma,v}\right)
+ \right\}.}
+\end{equation}
+Moreover,
+\begin{equation}\label{eq:exact-shift}
+ \|C_{\sigma,v}-A_v\|_1
+ =4\Phi\!\left(\frac{u_c\sigma v^2}{2}\right)-2.
+\end{equation}
+Consequently the physical-to-tangent row distance is at most the sum of
+\eqref{eq:exact-boundary} and \eqref{eq:exact-shift}.
+\end{theorem}
+
+\begin{proof}
+The two unnormalized lobes in \eqref{eq:physical-kernel} have total mass one
+on the positive half-line, so $0<Z_\sigma\le1$.  On $I_\sigma$, the numerator
+of \eqref{eq:rescaled-row} contains $C_{\sigma,v}$ and division by
+$Z_\sigma\le1$ only increases it.  Thus
+$K_\sigma(v,u)\ge C_{\sigma,v}(u)$ on $I_\sigma$, while the physical row
+vanishes outside.  The positive and negative $L^1$ parts are equal, and each
+is the mass of $C_{\sigma,v}$ outside $I_\sigma$.  Its lower and upper tails
+are precisely the two terms in \eqref{eq:exact-boundary}.
+
+The centers of $C_{\sigma,v}$ and $A_v$ differ by $u_c\sigma v^2$.
+Two unit Gaussians with center separation $t$ cross at their midpoint and
+have $L^1$ distance $4\Phi(|t|/2)-2$, proving
+\eqref{eq:exact-shift}.  The last assertion is the triangle inequality.
+\end{proof}
+
+This identity is stronger than separately bounding the reflected lobe and
+$Z_\sigma-1$: their combined effect is exactly the discarded main-lobe
+boundary mass.  The inequality
+\begin{equation}\label{eq:linear-shift-bound}
+ 4\Phi(t/2)-2\le\sqrt{\frac2\pi}\,t,
+ \qquad t\ge0,
+\end{equation}
+will isolate the curvature contribution.
+
+\section{The finite-seed physical joint theorem}
+
+Let the RH-322 entrance laws be
+\begin{align}
+ g_a(v)&=\frac{\phi(v-a)}{\Phi(a)}\mathbf1_{[0,\infty)}(v),
+ \label{eq:limit-seed}\\
+ \widetilde h_{\sigma,a}(v)
+ &=\frac{\phi(v-a)+\phi(2L-v-a)}
+ {\Phi(a)-\overline\Phi(2L-a)}\mathbf1_{[0,L]}(v),
+ \qquad L=\sigma^{-1}.
+ \label{eq:finite-seed}
+\end{align}
+Define the exact physical one-leg joint law and its affine target by
+\begin{equation}\label{eq:joint-laws}
+ P_{\sigma,a}(v,u)=\widetilde h_{\sigma,a}(v)K_\sigma(v,u),
+ \qquad
+ A_d(v,u)=g_d(v)A_v(u).
+\end{equation}
+
+Fix any
+\begin{equation}\label{eq:eta-margin}
+ 0<\eta<1-b,
+ \qquad
+ m_\eta=u_c(1-\eta)^2-1>0.
+\end{equation}
+For reproduction we use the canonical midpoint
+$\eta=(1-b)/2=0.0975702324\ldots$, for which
+$m_\eta=0.2571486637\ldots$.
+
+Put
+\begin{equation}\label{eq:second-moment}
+ M_2(a)=\int_0^\infty v^2g_a(v)\,dv
+ =a^2+1+a\frac{\phi(a)}{\Phi(a)},
+ \qquad
+ c_0=\sqrt{\frac2\pi}\,u_c.
+\end{equation}
+
+\begin{theorem}[Explicit physical-to-affine joint remainder]
+\label{thm:joint-bound}
+For $\sigma>0$, $0\le a\le\sigma^{-1}$, and $d\ge0$,
+\begin{align}
+ \|P_{\sigma,a}-A_d\|_1
+ \le{}& |a-d|
+ +\frac{2\overline\Phi(\sigma^{-1}-a)}{\Phi(a)}
+ +c_0\sigma M_2(a)
+ \nonumber\\
+ &+2\left\{
+ \overline\Phi(m_\eta/\sigma)
+ +\overline\Phi((1-r)/\sigma)
+ \right\}
+ +\frac{2\overline\Phi(\eta/\sigma-a)}{\Phi(a)}.
+ \label{eq:explicit-joint-bound}
+\end{align}
+The same right side bounds the physical $U$-marginal error.  Uniformly for
+$a,d$ in a fixed compact subset of $[0,\infty)$,
+\begin{equation}\label{eq:compact-bound}
+ \|P_{\sigma,a}-A_d\|_1
+ \le |a-d|+C\sigma+Ce^{-c/\sigma^2}
+\end{equation}
+for sufficiently small $\sigma$, with $C,c>0$ depending only on the compact
+set and $\eta$.
+\end{theorem}
+
+\begin{proof}
+Extend $K_\sigma(v,\cdot)$ to all $v\ge0$ by setting it equal to $A_v$ for
+$v>L$.  Markov lifting preserves the entrance $L^1$ distance, so RH-322 gives
+\[
+ \|\widetilde h_{\sigma,a}\widehat K_\sigma
+      -g_a\widehat K_\sigma\|_1
+ =\frac{2\overline\Phi(L-a)}{\Phi(a)}.
+\]
+The affine lift similarly gives
+$\|g_aA-g_dA\|_1=\|g_a-g_d\|_1\le|a-d|$.
+
+It remains to average the row error against $g_a$.  On
+$0\le v\le\eta/\sigma$, the source stays in the negative endpoint branch.
+The folded image has distance at least $m_\eta$ from zero, while its distance
+from the upper state boundary is at least $1-r$.  Hence
+\cref{thm:row-identities} and \eqref{eq:linear-shift-bound} give the first
+three remainder terms in \eqref{eq:explicit-joint-bound} after using
+$\int v^2g_a=M_2(a)$.  On the complement, two probability rows have distance
+at most two, and
+\[
+ \Pr_{g_a}\{V>\eta/\sigma\}
+ =\frac{\overline\Phi(\eta/\sigma-a)}{\Phi(a)}.
+\]
+This proves the explicit estimate.  Marginalization is an $L^1$ contraction.
+Mills' inequality gives \eqref{eq:compact-bound}.
+\end{proof}
+
+\section{The curvature coefficient is sharp}
+
+\begin{theorem}[Positive first-order obstruction]
+\label{thm:sharp-coefficient}
+For every fixed $d\ge0$,
+\begin{equation}\label{eq:sharp-limit}
+ \boxed{
+ \lim_{\sigma\downarrow0}
+ \frac{\|P_{\sigma,d}-A_d\|_1}{\sigma}
+ =c_0M_2(d)
+ =\sqrt{\frac2\pi}\,u_c
+ \left\{d^2+1+d\frac{\phi(d)}{\Phi(d)}\right\}>0.}
+\end{equation}
+Thus the full physical-to-affine joint remainder is not exponentially small
+and is not $o(\sigma)$.
+\end{theorem}
+
+\begin{proof}
+Use the Markov extension from the preceding proof.  Replacing the exact
+finite seed by $g_d$ changes the joint distance by at most
+$2\overline\Phi(\sigma^{-1}-d)/\Phi(d)=o(\sigma)$.  Let
+\[
+ S_{\sigma,d}=\int_0^\infty g_d(v)
+ \left\{4\Phi\!\left(\frac{u_c\sigma v^2}{2}\right)-2\right\}\,dv.
+\]
+On $v\le\eta/\sigma$, the reverse triangle inequality and
+\eqref{eq:exact-boundary} show that the averaged physical row distance
+differs from $S_{\sigma,d}$ by exponentially small boundary tails.  The
+remaining entrance region also has exponentially small $g_d$ mass.
+
+Pointwise,
+\[
+ \frac{4\Phi(u_c\sigma v^2/2)-2}{\sigma}
+ \longrightarrow c_0v^2,
+\]
+and \eqref{eq:linear-shift-bound} dominates the quotient by $c_0v^2$.
+Dominated convergence and \eqref{eq:second-moment} prove
+\eqref{eq:sharp-limit}.
+\end{proof}
+
+The reproduction values for the dominant shift integral are
+\[
+\begin{array}{c|ccc|c}
+d & \sigma=0.05 & 0.025 & 0.0125 & c_0M_2(d)\\ \hline
+0   &1.227163&1.230543&1.231399&1.231686\\
+0.5 &1.842222&1.850393&1.852473&1.853170
+\end{array}
+\]
+where the three middle columns are $S_{\sigma,d}/\sigma$.  They reproduce
+the analytic coefficient; they are not a fitted proof.
+
+\section{First-alias scale and route firewall}
+
+At the natural clock
+\[
+ k_\sigma=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),
+\]
+the target radius $R=1.4$ gives
+\begin{equation}\label{eq:alias-scale}
+ R^{-2k_\sigma}=\Theta(\sigma^\theta),
+ \qquad
+ \theta=\frac{\log R}{\log\lambda}
+ =0.6496301165\ldots<1.
+\end{equation}
+Consequently the phase-matched local remainder satisfies
+\[
+ \sigma=o(R^{-2k_\sigma}),
+ \qquad
+ k_\sigma\sigma=o(k_\sigma R^{-2k_\sigma}).
+\]
+This is a scalar scale comparison only.  It does not prove that a
+moving-order product has bounded intermediate norms, that all legs satisfy
+the same estimate, or that weighted trace contributions can be replaced by
+separate absolute errors.
+
+The implementation evaluates exact normalizers, row tails, Gaussian shift
+distances, the explicit joint bound, and the sharp coefficient with
+standard-library quadrature.  No exponent is fitted.  The result concerns a
+forward probability density, not the peak-normalized backward Gaussian
+observable and amplitude coefficient of RH-18.
+
+\begin{remark}[Claim boundary]
+The second physical leg, moving-order Duhamel composition, parity layer,
+neighboring sibling/shell cancellation, branch-return matrix, and joint
+first-alias trace law remain open.  No full-trace replacement or
+$o(kR^{-2k})$ joint error is proved.  Gates A--E remain false/open.  This
+paper constructs no Hilbert--Polya operator, identifies no Riemann zero,
+proves no von Mangoldt trace formula or zeta-divisor equality, and does not
+imply RH.
+\end{remark}
+
+RH-325 should state a moving-order Duhamel criterion that records retained
+coordinates, phase transport, per-leg Markov contractions, and the precise
+sum of local errors before any full-cycle application is attempted.
+
+\end{document}

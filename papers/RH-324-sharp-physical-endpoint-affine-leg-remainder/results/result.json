@@ -1,0 +1,164 @@
+{
+  "actual_two_leg_curvature_remainder_proved": false,
+  "constants": {
+    "alias_scale_exponent": 0.6496301165394707,
+    "alpha": 3.0873780253841527,
+    "canonical_eta": 0.09757023244389512,
+    "canonical_margin": 0.2571486637296043,
+    "critical_partition": 0.8048595351122098,
+    "lambda": 1.6785735104283224,
+    "r": 0.5436890126920764,
+    "trace_radius": 1.4,
+    "u_c": 1.5436890126920764
+  },
+  "curvature_proxy_rows": [
+    {
+      "clearance_ratio": 0.0,
+      "curvature_proxy": 0.061358126971837616,
+      "proxy_over_sigma": 1.2271625394367522,
+      "sharp_linear_coefficient": 1.2316856299080263,
+      "sigma": 0.05
+    },
+    {
+      "clearance_ratio": 0.0,
+      "curvature_proxy": 0.030763578106340075,
+      "proxy_over_sigma": 1.230543124253603,
+      "sharp_linear_coefficient": 1.2316856299080263,
+      "sigma": 0.025
+    },
+    {
+      "clearance_ratio": 0.0,
+      "curvature_proxy": 0.015392490662861578,
+      "proxy_over_sigma": 1.2313992530289262,
+      "sharp_linear_coefficient": 1.2316856299080263,
+      "sigma": 0.0125
+    },
+    {
+      "clearance_ratio": 0.5,
+      "curvature_proxy": 0.09211108443845557,
+      "proxy_over_sigma": 1.8422216887691114,
+      "sharp_linear_coefficient": 1.8531698322224381,
+      "sigma": 0.05
+    },
+    {
+      "clearance_ratio": 0.5,
+      "curvature_proxy": 0.046259821803613245,
+      "proxy_over_sigma": 1.8503928721445297,
+      "sharp_linear_coefficient": 1.8531698322224381,
+      "sigma": 0.025
+    },
+    {
+      "clearance_ratio": 0.5,
+      "curvature_proxy": 0.023155912745898167,
+      "proxy_over_sigma": 1.8524730196718533,
+      "sharp_linear_coefficient": 1.8531698322224381,
+      "sigma": 0.0125
+    }
+  ],
+  "exact_curved_gaussian_boundary_l1_identity_proved": true,
+  "exact_physical_first_leg_kernel_formula_proved": true,
+  "exponentially_small_affine_remainder_proved": false,
+  "finite_cases": [
+    {
+      "clearance_ratio": 0.0,
+      "components": {
+        "bad_branch": 0.0001901652339560543,
+        "curvature": 0.03079214074770066,
+        "finite_seed": 0.0,
+        "physical_boundary": 8.153693821268147e-25
+      },
+      "joint_l1_bound": 0.030982305981656716,
+      "limiting_ratio": 0.0,
+      "sigma": 0.025
+    },
+    {
+      "clearance_ratio": 0.5,
+      "components": {
+        "bad_branch": 0.0009645760922294272,
+        "curvature": 0.046329245805560956,
+        "finite_seed": 0.0,
+        "physical_boundary": 8.153693821268147e-25
+      },
+      "joint_l1_bound": 0.047293821897790383,
+      "limiting_ratio": 0.5,
+      "sigma": 0.025
+    },
+    {
+      "clearance_ratio": 0.5,
+      "components": {
+        "bad_branch": 0.0009645760922294272,
+        "curvature": 0.046329245805560956,
+        "finite_seed": 0.0,
+        "physical_boundary": 8.153693821268147e-25
+      },
+      "joint_l1_bound": 0.09729382189779037,
+      "limiting_ratio": 0.45,
+      "sigma": 0.025
+    }
+  ],
+  "finite_seed_physical_to_affine_joint_bound_proved": true,
+  "first_alias_scale_compatibility_proved": true,
+  "full_trace_replacement_proved": false,
+  "gates": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+  },
+  "hilbert_polya_constructed": false,
+  "joint_first_alias_trace_law_proved": false,
+  "moving_order_duhamel_composition_proved": false,
+  "neighboring_shell_combined": false,
+  "parity_weighting_combined": false,
+  "phase_coefficients": [
+    {
+      "clearance_ratio": 0.0,
+      "entrance_second_moment": 1.0,
+      "sharp_linear_coefficient": 1.2316856299080263
+    },
+    {
+      "clearance_ratio": 0.5,
+      "entrance_second_moment": 1.5045802169185167,
+      "sharp_linear_coefficient": 1.8531698322224381
+    },
+    {
+      "clearance_ratio": 1.0,
+      "entrance_second_moment": 2.2875999709391786,
+      "sharp_linear_coefficient": 2.8176040111838048
+    },
+    {
+      "clearance_ratio": 2.0,
+      "entrance_second_moment": 5.11049572535798,
+      "sharp_linear_coefficient": 6.294524146629819
+    }
+  ],
+  "riemann_hypothesis_proved": false,
+  "riemann_zeros_identified": false,
+  "row_cases": [
+    {
+      "entrance": 0.2,
+      "exact_curvature_shift_l1": 0.004926734692771273,
+      "exact_curved_boundary_l1": 1.6245305586438282e-06,
+      "sigma": 0.1
+    },
+    {
+      "entrance": 1.0,
+      "exact_curvature_shift_l1": 0.06156899805051541,
+      "exact_curved_boundary_l1": 3.732878324461404e-15,
+      "sigma": 0.05
+    },
+    {
+      "entrance": 2.0,
+      "exact_curvature_shift_l1": 0.098472271210579,
+      "exact_curved_boundary_l1": 3.940106851729265e-99,
+      "sigma": 0.02
+    }
+  ],
+  "second_leg_physical_remainder_proved": false,
+  "sharp_linear_curvature_coefficient_proved": true,
+  "status": "rh324_sharp_physical_endpoint_affine_leg_remainder",
+  "uniform_fold_normalization_tail_proved": true,
+  "von_mangoldt_trace_proved": false,
+  "zeta_divisor_equality": false
+}
