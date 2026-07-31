@@ -313,6 +313,10 @@ def physical_joint_density(
 ) -> float:
     """Return the exact finite physical first-leg joint density."""
 
+    sigma = _positive_sigma(sigma)
+    entrance = float(entrance)
+    if entrance < 0.0 or entrance > 1.0 / sigma:
+        return 0.0
     return folded_seed_density(entrance, sigma, clearance_ratio) * physical_row_density(
         output, sigma, entrance
     )

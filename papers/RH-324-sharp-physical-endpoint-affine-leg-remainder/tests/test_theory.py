@@ -23,6 +23,7 @@ from physical_affine import (
     output_coordinate_interval,
     physical_row_density,
     physical_row_normalizer,
+    physical_joint_density,
     remainder_components,
     row_tangent_l1_bound,
     sharp_linear_coefficient,
@@ -152,6 +153,14 @@ def test_finite_seed_tail_and_explicit_joint_bound_components():
     assert math.isclose(
         entrance_second_moment(0.0), 1.0, rel_tol=1e-15
     )
+
+
+def test_physical_joint_density_respects_finite_seed_support():
+    sigma = 0.05
+    ratio = 0.5
+    assert physical_joint_density(-0.1, 0.0, sigma, ratio) == 0.0
+    assert physical_joint_density(1.0 / sigma + 0.1, 0.0, sigma, ratio) == 0.0
+    assert physical_joint_density(0.5, 0.0, sigma, ratio) > 0.0
 
 
 def test_first_alias_scale_exponent_is_strictly_sublinear():
