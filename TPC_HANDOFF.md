@@ -4,9 +4,9 @@
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC18_H0_2_EXACT_DYADIC_PROFILE_AND_BETA_NONZERO_FROZEN_TAIL_FAILURE_A_EXCLUSION_AND_ACTUAL_ATTACHMENT_ABSENT_STOP_SCOPED_NOT_REOPENED`
+`TPC18_H0_2_FULL_R_R_PRIMITIVE_A_TRUNCATED_ENTRY_AND_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_ABSENT_STOP_SCOPED_NOT_REOPENED`
 下一篇：`null`；下一项不编号审计：
-`TPC18_H0_2_FULL_R_R_PRIMITIVE_A_ULTRA_LONG_COMPLEMENT_GATE`
+`TPC32_H0_2_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_SIGNED_PREFIX_TRANSFER_GATE`
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
@@ -490,6 +490,33 @@ Laporta 与 Coppola--Murty--Saha primary theorem 候选中，把 AP / factorable
 它不停止真正新增的 full-residual determinant theorem、theorem-backed
 fixed-block tail-failure、direct `s=2` finite-model theorem、两个 O161 parents、
 H1 或 global architecture。
+
+2026-07-31 的 full-`r_Rr_R` primitive-A / ultra-complement 审计新增且仅新增：
+
+```text
+DECLARED_TPC18_H0_2_FULL_R_R_PRIMITIVE_ULTRA_COMPLEMENT_CORPUS_V1
+  = STOP_SCOPED
+```
+
+它只停止在审计基线 `HEAD=origin/main=687bc2d44a25efd2a376fd3b363bfac4549b4cb9`
+时可达的 346-commit all-ref snapshot、TPC-18--124 ultra-residual
+lineage、TPC-125--206 relevant claim/status，以及截至 2026-07-31 审核的
+Menon、Ramaré--Zuniga Alterman 与既有 fixed/log/shift/phase-average primary
+theorem candidates中，把以下对象改名为 full primitive-A closure：
+
+```text
+one selected TPC-28 truncated square
+TPC-29/30 content-rich or large-content sectors
+TPC-27 additive Poisson zero
+TPC-31/32 almost-all nonzero determinant frequencies
+TPC-116 conditional complete-tail schema
+size-only, logarithmic, exceptional-scale, phase/origin/shift-average results.
+```
+
+它不停止新的 `DD_2(theta)` all-slice theorem、同一 TPC-32 packet 上的
+small-content matched auxiliary-zero theorem、TPC-111/122 signed-prefix exact
+transfer、真正新增的 growing prefix theorem、两个 O161 parents、H1、
+pair-native reroute 或 global architecture。
 
 ## 7. Reopen triggers
 
@@ -3452,7 +3479,391 @@ TPC-105 `__pycache__`、TPC-63 构建文件与 `tmp/` 均未触碰。本轮没�
 仍按第 20 节隔离：它不改变 2,988 obligations 或零 occurrence 裁决，但在
 下一篇编号 release 前仍必须完成完整 provenance cascade。
 
-## 22. 上一轮会话粘贴块（历史，仅供审计；不得作为当前入口）
+## 22. 不编号 full-`r_Rr_R` primitive-A / ultra-long complement 审计
+
+### 22.1 冻结对象与最终裁决
+
+本轮只执行页首原定 gate：
+
+```text
+TPC18_H0_2_FULL_R_R_PRIMITIVE_A_ULTRA_LONG_COMPLEMENT_GATE
+```
+
+逐公式审核覆盖 TPC-18、TPC-19、TPC-25--32、TPC-33--124 的实际
+ultra-residual lineage，并复核 TPC-125--206 的相关 claim/status。结果不是
+“TPC-27/28 之后没有路线”，而是精确定位出了两个互相独立、均未通过的门槛：
+
+```text
+CURRENT_EXACT_H0_2_FAMILY_HAS_LEGAL_TPC27_28_TRUNCATED_ENTRY = NO
+
+SELECTED_TPC28_PACKET_FULL_MATCHED_ULTRA_SHELL
+  = REDUCED_TO_SMALL_CONTENT_AUXILIARY_ZERO
+
+SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_THEOREM = ABSENT
+ALL_RELEVANT_D_SLICES_UNIFORM_ATTACHMENT = ABSENT
+ORIGINAL_PHYSICAL_NORMALIZATION_AND_EXACTLY_ONCE_REASSEMBLY = ABSENT
+
+FULL_R_R_PRIMITIVE_GENERIC_DETERMINANT_CORRELATION_BOUND = ABSENT
+TPC207_TRIGGER = NO
+TPC207_CREATED = false
+```
+
+因此精确裁决为：
+
+```text
+TPC18_H0_2_FULL_R_R_PRIMITIVE_A_TRUNCATED_ENTRY_AND_
+SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_ABSENT_
+STOP_SCOPED_NOT_REOPENED
+```
+
+### 22.2 TPC-18 literal 对象与完整 complement ledger
+
+TPC-18 一个 dyadic `D`-slice 的 primitive generic 对象是
+
+```text
+m_i = ell_i d_i
+J = K/D
+Q = LD
+QJ ~ X
+
+C_D,prim^gen
+  = sum_j sum_(alpha_1 != alpha_2)^generic
+      mu(d_1)mu(d_2)(log ell_1)(log ell_2)
+      r_R(m_1 j + 2) r_R(m_2 j + 2)
+      B_alpha_1(j) B_alpha_2(j).
+```
+
+`generic` 必须同时保留
+
+```text
+ell_1 != ell_2
+|m_1-m_2| > Q X^(-kappa)
+(d_1,d_2) <= X^kappa
+(d_1 j,2)=(d_2 j,2)=1.
+```
+
+其 literal determinant、row gcd、natural normalization 与 stopping witness
+分别是
+
+```text
+det = 2(m_1-m_2)
+(m_1,m_2) = (d_1,d_2)
+N0 = JQ^2 ~ XQ
+C_D,prim^gen >> XQ/(log X)^(2a+2).
+```
+
+对 target `N_m=mj+2`，TPC-19、TPC-27--29 的 exact dictionary 是
+
+```text
+a(u)   = -mu(u) log u
+b_R(u) = a(u)-lambda'_R(u)
+
+A_m,T(j) = sum_(u<=T, u|N_m) b_R(u)
+P_m,T(j) = A_m,T(j)-delta_H(m)
+C_m(j)   = sum_(T<u<=U0, u|N_m) a(u)
+
+r_R(N_m) = A_m,U0(j) = A_m,T(j)+C_m(j),
+```
+
+其中 `U0~X` 大于 physical support 上全部 targets，且 `T>=R` 才保证新 shell
+上 `b_R=a`。因此 full raw complement 的 domain 不是只写 `u,v>T`，而是
+
+```text
+u,v <= U0 and max(u,v)>T.
+```
+
+它恰有三条、不多不少：
+
+```text
+A_m,T C_n : u<=T<T<v<=U0, coefficient b_R(u)a(v)
+C_m A_n,T : v<=T<T<u<=U0, coefficient a(u)b_R(v)
+C_m C_n   : T<u,v<=U0,     coefficient a(u)a(v).
+```
+
+TPC-29 的 calibrated cutoff difference 是
+
+```text
+P_m,U0 P_n,U0 - P_m,T P_n,T
+  = A_m,T C_n + C_m A_n,T + C_m C_n
+    -delta_H(m)C_n-delta_H(n)C_m.
+```
+
+即 `three raw + two drift`；没有 two-drift term，因为它在两个 cutoffs 间
+精确相消。两条 drift 已有
+
+```text
+O_epsilon(X^epsilon XQ/L)
+```
+
+的 fixed-power saving。直接相对 literal full residual，则
+
+```text
+r_R(N_m)r_R(N_n)-P_m,T P_n,T
+  = A_m,T C_n + C_m A_n,T + C_m C_n
+    +delta_H(m)A_n,T+delta_H(n)A_m,T-delta_H(m)delta_H(n).
+```
+
+最后一行由旧 base drift bridge 控制；未关闭的 hard arithmetic object 正是
+三条 raw channels 的 matched sum。只审 `C_mC_n` 会漏掉两个 mixed
+rectangles，不能叫 complete complement。
+
+### 22.3 TPC-29--32 实际关闭到哪里
+
+TPC-28 source-compatible high-`beta` sample 对每个固定 `h!=0` 成立，故可取
+`h0=2`：
+
+```text
+sigma = 1/10000
+lambda = 99979/210000
+delta = 7/60
+
+Q = X^(267/400+o(1))
+D = X^(10049/52500+o(1))
+J = X^(133/400+o(1))
+R=S = X^(23/60+o(1))
+V = X^(23/120+o(1))
+T = X^(193/500+o(1)).
+```
+
+它 theorem-backed 地关闭一个 selected calibrated truncated square
+`Q_T^phys`，但 TPC-18 Alternative A 是“某个 `D<=V` 存在 witness”。一个
+fixed high-`beta` `D`-packet 不能排除其余 slices，更不能与上一轮另一组
+`sigma,delta,D0,L,K` source lock 拼接。
+
+后续实际推进为：
+
+1. TPC-29 对三 raw channels 的 content-rich sparse wedge 与 large selected-
+   divisor-content sectors给 fixed-power saving；primitive/small-content core 留下。
+2. TPC-30 用 full target content
+   `c=(N_m,N_n)=(N_m,m-n)|m-n` 关闭 `c>C`：
+
+   ```text
+   S_sh(c>C)
+     << X^epsilon (Q^2+XQ/C)
+      = X^epsilon N0(1/J+1/C).
+   ```
+
+3. TPC-31 的 canonical determinant 是
+   `Delta#=(m-n)/c`，满足 `mV-nU=2 Delta#`。它只有在 `c=1` 时才等于
+   TPC-18 literal determinant divided by the fixed `h0`;不得删去 content。
+4. TPC-32 exact matched shell 是
+
+   ```text
+   K^sh
+     = A_m,U0 A_n,U0 - A_m,T A_n,T
+     = A_m,T C_n + C_m A_n,T + C_m C_n,
+
+   S_full^sh
+     = A_hat_C,q(0) + S_sh(c>C).
+   ```
+
+   因 large-content 项已经关闭，selected packet 的唯一 hard cell 是
+
+   ```text
+   A_hat_C,q(0)
+     = Phi_D[(A_m,T C_n+C_m A_n,T+C_m C_n)
+             1_((N_m,N_n)<=C)].
+   ```
+
+这里 `r=0` 是 normalized-determinant auxiliary DFT zero，既不是 orbit-variable
+Poisson zero，也不是 TPC-20 centered-divisor zero。TPC-27 已对每个 polynomial
+`S>=R` 关闭 additive Poisson zero，因此把该旧结论再对两个 endpoints 作差不是
+新 theorem，也不触及 `A_hat_C,q(0)`。
+
+TPC-32 对 `beta=267/400, C~J` 的完整 matched-shell 结论严格条件于
+
+```text
+F0(A_C) = |A_hat_C,q(0)|^2 / ||A_C||_2^2
+         <= X^(chi+o(1)),
+chi <= 1/400.
+```
+
+Almost-all nonzero frequencies、Parseval 或 additive large sieve 不证明这个
+distinguished coefficient 的 premise。TPC-33--108 将同一门槛依次转写成
+physical column energy、four-Mobius same-time Gram、coherent spectrum、literal
+low-window affine atom 与 restricted growing fixed-`h0` estimate；TPC-108 的 H3
+仍明确是未证 L2。TPC-109--124 的 frame、tail-cover 与 reassembly statements
+均是 L0/L1 或条件接口，没有新增该 signed estimate。
+
+TPC-116 的数字也不得偷换：TPC-32 的 `chi<=1/400` 是 squared-flatness loss；
+TPC-116 的 `sigma>=1/400` 是完整 outer costs 后的 aggregate physical saving。
+前者不能靠字段同名或数值相近填入后者。TPC-116 没有 supplied growing mask
+archive，也没有把 packet natural scale `N0=JQ^2\asymp XQ` source-lock 到 original
+global physical normalization。
+
+### 22.4 上一轮 exact family 的截断入口实际上为空
+
+上一轮冻结的 published Maynard `h0=2` family 是
+
+```text
+lambda = 9979/21000
+r0     = 9/20
+v      = 9/40
+d0     = 979/21000
+
+D = X^d, d in [979/21000,9/40]
+beta = lambda+d in [5479/10500,1838/2625].
+```
+
+TPC-26/28 的 `M_beta(t)>0` 对应 upper-cutoff supremum 为
+
+```text
+t_c(beta) = (1+beta)/4, beta<=3/5
+t_c(beta) = (3-beta)/6, beta>=3/5.
+```
+
+整个 slice family 上 `t_c` 的最大值仅为 `2/5`，而 `R=X^(9/20)`；且
+`t=t_c` 只是 `M=0` 边界，不满足 fixed positive margin。故不存在合法
+
+```text
+R <= S < T and M_beta(t)>0.
+```
+
+在最有利的 `S=R`，
+
+```text
+M_beta(R) = (beta-4/5)/2, beta<=19/30
+M_beta(R) = (3/10-beta)/4, beta>=19/30.
+```
+
+全部为负；最佳也只有 `-1/12`。低/高 `D` endpoints 分别是
+`-2921/21000` 与 `-2101/21000`。强取 `T<R` 不只是 schema 违规：shell 内
+`lambda'_R` 不再消失，`b_R=a` 和 calibrated annular identity 都失效。把 shells
+切薄或迭代不改善 upper-exponent minimax。
+
+这只证明现有 TPC-26--28 Cauchy/conductor 方法不适用于该 exact family；
+`M_beta<=0` 不是 arithmetic impossibility theorem。换 `delta` 是换 block，不能
+改写为当前 source lock 已通过；即使换到 TPC-28 selected packet，small-content
+matched auxiliary-zero 与 all-`D` uniformity 仍独立开放。
+
+### 22.5 现有 bounds 与新增 primary-source 扫描
+
+TPC-18 diagonal energy、row Cauchy 与 soft divisor bounds 合起来至多给
+
+```text
+|C_D^gen| <<_epsilon XQ X^epsilon,
+```
+
+即 natural scale，不能反驳 `XQ/log^(2a+2)` 的 positive stopping witness。
+TPC-16 residual energy在当前 `delta=1/20` family 上还有主量
+
+```text
+sum_n r_R(n)^2 F(n/X)
+  = (11/20+o(1)) X log X I0(F),
+```
+
+所以不能把 residual energy 当成小系数。reflected unit fiber `r=s=1` 对任何
+`T<X` 仍含 ordinary smooth two-point Mobius correlation；固定-divisor large
+sieve 在该 fiber 上没有可平均 conductor。它的原 row determinant 是
+`2(m-n)`，未经 content extraction、actual packet 与 normalization crosswalk
+不得改名为 literal determinant-two atom。
+
+本轮扫描全部 Git refs/history（346 commits）与 TPC-18--206 relevant lineage；
+`HEAD=origin/main=687bc2d44a25efd2a376fd3b363bfac4549b4cb9` 时没有新增 repo primary TPC
+theorem source。外部截至 2026-07-31 的新增/最近 primary candidates 中：
+
+1. Siddarth Menon, *Improved bounds for multiplicative functions in almost all
+   short intervals*, arXiv:2607.15574v1。Theorem 1.1 是对 interval origin 的
+   short Liouville/Mobius sum mean square；Theorem 1.4 仍对 origin 作平均；
+   Theorem 1.5 对 shifts 作平均。它们没有 prescribed rows、actual masks、
+   full `r_Rr_R`、variable determinant 或 all-slice/all-prefix uniformity。
+2. Ramaré--Zuniga Alterman, *On a Mobius double sum*, arXiv:2603.25961v3，
+   控制静态 `sum mu(d)mu(e)/[d,e]^(1+epsilon)`；这是 size/LCM diagonal
+   object，没有 orbit `j`、affine targets 或 matched ultra shell。
+3. Tao、MRT、Tao--Teräväinen、Pilatte、Lichtman--Teräväinen 的相关 rigorous
+   results 分别在 logarithmic average、shift average、exceptional scale 或
+   fixed-form/non-growing quantifier处先行失败；Siegel-zero routes还带额外条件。
+
+未发现 theorem-backed
+
+```text
+DD_2(theta) for every actual primitive D-slice
+```
+
+或等价的 complete `P_T C+C P_T+CC` theorem。对当前 exact family，直接
+`DD_2(theta)` 还须以固定余量覆盖
+
+```text
+theta_tail = lambda+v = 1838/2625.
+```
+
+若坚持 reflected route，则 theorem 必须包括 `r=s=1`、ordinary weights、
+growing slopes、actual masks/outer coefficients 与全部 dyadic cells，并在完整
+outer loss 后仍有净正 saving。TPC-108/H3 数字若被调用，还另须
+`eta-ell_out>=1/200` 与 physical `TT*` crosswalk；本轮均不存在。
+
+### 22.6 STOP scope 与下一关
+
+本轮新增且仅新增第 6 节的
+
+```text
+DECLARED_TPC18_H0_2_FULL_R_R_PRIMITIVE_ULTRA_COMPLEMENT_CORPUS_V1
+  = STOP_SCOPED
+```
+
+所有旧 cells，尤其 `TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1`、
+TPC18 common-`k` V1 与 tail-failure/A/B V1，继续 `STOP_SCOPED`。不得把
+Menon 的 averages、TPC-27 additive zero、TPC-32 nonzero-frequency density-one
+结果或 TPC-116 conditional schema 重新包装成新 method cell。
+
+两个 O161 pointwise parents、pair-native reroute、H1 与 global architecture
+继续 `OPEN`；fixed-atom credit 为 0，strict `1/400` 为 `UNPAID`，`L2=NONE`。
+TPC-207 trigger 仍为 false，没有创建论文或 PDF。
+
+下一项最窄、最接近 hard coefficient、且不重复旧 stopped cells 的不编号 gate
+冻结为：
+
+```text
+TPC32_H0_2_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_SIGNED_PREFIX_TRANSFER_GATE
+```
+
+固定顺序是：
+
+1. source-lock TPC-28/32 的 theorem-valid selected `h0=2` packet、三 raw
+   channels、content cutoff `C`、canonical `Delta#`、actual mask/weights 与
+   packet natural scale `N0=JQ^2\asymp XQ`；不得拼接上一轮 `delta=1/20` schedule；
+2. 逐公式测试 TPC-111/122 的 ordered signed-prefix / bounded-variation 对象能否
+   无损映射到同一个 `A_hat_C,q(0)`；determinant、content、outer labels 或
+   prefix order 任一不一致即 fail closed；
+3. 只有 source-backed growing signed-prefix theorem 真正推出 `chi<=1/400`，
+   或直接给 small-content matched-shell saving，才可记 arithmetic advance；
+4. 即使 selected packet 通过，仍须另审 all-`D` uniformity、exactly-once
+   physical cover、original normalization、loss ledger、tail-failure、B selection
+   与 actual packet attachment；任何一项都不自动触发 TPC-207。
+
+下一篇编号 release 前仍必须完成 TPC-143--206 的完整 provenance cascade、
+受影响 releases 重建和全链 `--check`；certificate-only drift 不得冒充数学
+trigger。
+
+### 22.7 启动、回归与发布边界
+
+本轮启动时执行 `git status --short --branch` 与
+`git pull --rebase origin main`；远端 already up to date，审计基线为
+`687bc2d44a25efd2a376fd3b363bfac4549b4cb9`。只读启动回归结果：
+
+```text
+TPC-206 = 3/3 PASS
+TPC-205 = 3/3 PASS
+TPC-194 hardening = 1/1 PASS
+TPC-133--136 = 4/4 PASS
+TPC-184 normal/optimized = 2/2 PASS
+TPC-189 normal/optimized = 2/2 PASS
+TPC-173--179 optimized = 7/7 PASS
+total = 22/22 PASS
+```
+
+TPC-27--32 的六个 legacy certificate 脚本均没有 `--check` 入口，且无条件
+重写 committed JSON；为保持本轮只读验证边界，逐一审核入口后记为
+`6 SKIP / 0 FAIL`，没有运行会写文件的 normal/optimized 模式。它们的 committed
+papers/certificates 本轮未修改，SKIP 不得改写成新的 asymptotic evidence。
+
+所有已执行 Python checks 均设置 `PYTHONDONTWRITEBYTECODE=1`，适用处使用
+`-B`。`git diff --check` 通过，Markdown fences 为偶数且闭合。没有创建论文、
+PDF 或构建日志，因此没有伪造 PDF QA。既有 TPC-105 `__pycache__`、TPC-63
+构建文件与 `tmp/` 均未触碰，也没有新增 untracked artifact。TPC-143 的
+certificate-only provenance cascade drift 继续按第 20 节隔离。
+
+## 23. 上一轮会话粘贴块（历史，仅供审计；不得作为当前入口）
 
 ```text
 进入仓库：
@@ -3565,7 +3976,7 @@ physical-loss ledger。禁止formal->actual、endpoint localization->smallness�
 正式写入由主会话协调。
 ```
 
-## 23. 下一会话可直接粘贴
+## 24. 下一会话可直接粘贴
 
 ```text
 进入仓库：
@@ -3594,55 +4005,55 @@ python -B papers/tpc-136-complete-native-cut-archive/experiments/tpc136_cut_arch
 
 当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 上一轮不编号裁决是：
-TPC18_H0_2_EXACT_DYADIC_PROFILE_AND_BETA_NONZERO_FROZEN_TAIL_FAILURE_A_EXCLUSION_AND_ACTUAL_ATTACHMENT_ABSENT_STOP_SCOPED_NOT_REOPENED。
+TPC18_H0_2_FULL_R_R_PRIMITIVE_A_TRUNCATED_ENTRY_AND_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_ABSENT_STOP_SCOPED_NOT_REOPENED。
 
-上一轮已真实冻结一条 published Maynard h0=2 exact dyadic family。对 m>=1：
-sigma=1/1000，delta=1/20，eta=1/1000，
-X=2^(21000m)，R=2^(9450m)，V=2^(4725m)，L=2^(9979m)，
-D0=2^(979m)，K=2^(11021m)。其 LK=X、L>2R、D0<V/2、
-K/V^2=2^(1571m)，三个 published monomial 与 LD0R 都有固定 power margin。
-它对充分大 m 给 theorem-valid prefix cancellation / tail normal form，但不给
-tail-failure、finite theorem threshold、actual block 或 occurrence。
+上一轮已纠正“ultra complement 只等于 u,v>T”的不完整说法。若
+A_m,T=sum_(u<=T,u|mj+2)b_R(u)，C_m=sum_(T<u<=U0,u|mj+2)a(u)，则
+full raw complement 的精确 domain 是 u,v<=U0 且 max(u,v)>T，并含三条：
+A_m,T C_n、C_m A_n,T、C_m C_n。TPC-29 calibrated difference 另有两条
+power-small drift legs；没有遗漏或重复的 two-drift 项。
 
-even-k beta 非零也已在 coefficient level 做实：在 psi 正值开区间内可取
-p in (V/2,V]、q>V prime、k=2pq，使 gcd(k,2)=2、psi(k/K)>0、
-Omega_2(p)=1、beta_I(k)=-1。不得把这个 existence lemma 改名为 source pair、
-packet/cut 或 actual attachment。
+TPC-29 关闭 content-rich selected-divisor sectors，TPC-30 关闭 large full-
+target-content，TPC-31/32 把 selected packet 的唯一 hard cell 精确压缩为
+A_hat_C,q(0)=small-content matched-shell auxiliary determinant zero。它不是
+orbit Poisson zero；TPC-27 已关闭的 additive zero 不供应它。TPC-32 只有在
+F0(A_C)<=X^(chi+o(1)), chi<=1/400 的额外 premise 下才关闭 complete matched
+shell；该 premise 未证。TPC-116 的 aggregate physical saving 1/400 也不是
+这个 squared-flatness loss，严禁字段等同。
 
-旧 diagnostic (D0,V,k,e)=(6,18,22,11) 虽 beta=-1，却因 K>36 与
-psi(22/K)!=0 强制 K<=44，而该区间没有 dyadic K，故 dyadic attachment
-不可能。替代 finite L0 diagnostic k=66 只保证 K=64 或128至少一个 cutoff
-非零，仍不是 physical record。
+上一轮 sigma=1/1000、delta=1/20 exact family 还有更早的入口 fatal：
+lambda=9979/21000，R exponent=9/20，beta in
+[5479/10500,1838/2625]。TPC-26/28 的 positive-minimax upper cutoff 在全部
+slices 上最多只有 exponent 2/5<R；不存在 R<=S<T 且 M_beta(t)>0。
+S=R 时最佳 M 仍是 -1/12。强取 T<R 会使 lambda'_R 留在 shell 中并破坏
+b_R=a，不是合法修补。TPC-28 的 high-beta theorem-valid selected sample 是
+另一 source lock，也只关闭一个 D-packet；不得拼接，更不排除 all-D witness。
 
-current production D0=0,V=2 packet 的所有 even k 仍 beta=0；TPC-136/143/
-153 actual attachment 全空。唯一正D0 schedule 是 TPC-153/154 的
-SYNTHETIC_L0_ONLY eligible regression；theorem_backed_actual_provenance=false，
-不得拼到 selected X=512 lineage。TPC-206 仍13/42，首缺D。
+TPC-18 row-Cauchy/energy 仍只给 XQ X^epsilon natural scale；reflected unit
+fiber r=s=1 留下 ordinary two-point Mobius correlation。TPC-108 H3 仍是未证
+L2。新增 Menon arXiv:2607.15574 仍是 origin-averaged、phase-uniform short
+sums / shift-averaged correlations；Ramaré--
+Zuniga Alterman arXiv:2603.25961 是 static LCM double sum。它们与所有复核的
+logarithmic、almost-all、exceptional-scale、size-only candidates 均不提供
+all-slice full r_R r_R theorem。本轮无 reopen trigger，无 TPC-207。
 
-34 refs 与 primary theorem 候选审核均未找到：
-1) actual h0=2 symmetric-tail failure lower bound；
-2) 完整 r_R(n1)r_R(n2) primitive generic determinant correlation bound；
-3) direct C_{I,2}^{MM,off} lower bound / occurrence。
-TPC-27/28 只控制 truncated square，明确缺 u,v>T ultra-long complement；
-TPC-108 对应 fixed-h0 generic affine estimate 仍是未证 L2。Maynard/Li/
-Pascadi AP-factorable averages、Lichtman/MRT shift/log averages、Goldston-
-Yildirim 的不同 Lambda_R、scalar LCM diagonal 与带未验证强假设候选都不得
-对象偷换。
+本轮新增的 DECLARED_TPC18_H0_2_FULL_R_R_PRIMITIVE_ULTRA_COMPLEMENT_CORPUS_V1
+为 STOP_SCOPED；第6节所有旧 cells 继续 STOP_SCOPED。两个 O161 parents、
+pair-native reroute、H1 与 global architecture OPEN；fixed-atom credit=0、
+strict 1/400 UNPAID、L2=NONE。
 
 本轮执行下一项有限不编号 gate：
-TPC18_H0_2_FULL_R_R_PRIMITIVE_A_ULTRA_LONG_COMPLEMENT_GATE。
+TPC32_H0_2_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_SIGNED_PREFIX_TRANSFER_GATE。
 
-先逐公式对齐 TPC-18 primitive A 与 TPC-27/28 selected truncated square；
-明确 u,v>T complement 的 summation domain、ranges、coefficients、normalization
-和 loss；再扫描是否有 theorem-backed full-residual determinant estimate。
-不得把 truncated、phase-L2、averaged-shift、size-only 或 formal determinant
-cell 改名为完整 r_R r_R theorem。即使 A 真被排除，也不得自动假设 tail
-failure、选择 B、生成 actual packet 或创建 TPC-207。
-
-保持第6节全部旧 cells（尤其 TPC193 V1、TPC18 common-k V1 与本轮
-tail-failure/A/B V1）为 STOP_SCOPED；保持两个 O161 parents、pair-native
-reroute、H1 与 global architecture OPEN；fixed-atom credit=0、strict 1/400
-UNPAID、L2=NONE。
+先 source-lock TPC-28/32 的同一个 theorem-valid selected h0=2 packet、三 raw
+channels、content C、canonical Delta#、actual masks/weights 与 packet natural
+scale N0=JQ^2\asymp XQ；再逐式
+测试 TPC-111/122 ordered signed-prefix/BV 对象能否无损映射到同一个
+A_hat_C,q(0)。determinant、content、outer labels、prefix order 或 normalization
+任一不一致即 fail closed。只有 source-backed growing prefix theorem 真正推出
+chi<=1/400，或直接给 small-content matched-shell saving，才算 arithmetic
+advance。即使 selected packet 通过，all-D uniformity、physical cover、global
+normalization、tail-failure、B selection 与 actual attachment 仍须分别审核。
 
 下一篇编号论文发布前仍必须完成 TPC-143--206 的完整 provenance cascade、
 受影响 releases 重建和全链 --check；certificate-only drift 不得冒充数学触发。
