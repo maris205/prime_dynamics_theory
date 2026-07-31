@@ -3,14 +3,15 @@
 更新时间：2026-07-31
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
-最新不编号审计裁决：`PAIR_NATIVE_FORMULA_GATE_PASS_PRODUCTION_REOPEN_FAIL`
-下一篇：`null`；先执行不编号
-`PAIR_NATIVE_SELECTED_LINEAGE_OPENED_D_ATTACHMENT_FEASIBILITY_AUDIT`
+最新不编号审计裁决：`O161_BAD_ENDPOINT_TRIGGER_FAIL_CLOSED_PARENT_OPEN_NOT_REOPENED`
+下一篇：`null`；下一项不编号审计：
+`CORPUS_WIDE_SOURCE_BACKED_LOCAL_OCCURRENCE_EDGE_FAMILY_AUDIT`
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
 后续同类有限审计与编号工作流授权：`true`
 自动通过数学门槛或自动编号：`false`
+TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 本文件、仓库内已提交的论文，以及 active payload/audit/schema/checker
 是下一会话的事实来源。旧聊天记录不是事实来源。
@@ -346,6 +347,23 @@ aggregation、独立 architecture reroute、两个 O161 parents，或真正新�
 算术 theorem。给定 retained `omega` 后的 source-child inverse，以及
 另行给定 downstream fields 后的 content/resolved template 相容性也未被
 否定。
+
+2026-07-31 的三项不编号审计新增且仅新增：
+
+```text
+DECLARED_SELECTED_103_107_OPENED_D_ATTACHMENT_CORPUS_V1 = STOP_SCOPED
+DECLARED_TPC18_25_133_134_LITERAL_PAIR_COEFFICIENT_CROSSWALK_V1 = STOP_SCOPED
+DECLARED_TPC149_159_180_184_193_202_BAD_ENDPOINT_TRIGGER_V1 = STOP_SCOPED
+```
+
+第一项只停止从 selected 103/107 的现有八条 archived child paths
+解释出一个共同 opened-`D` attachment；第二项只停止把现有 TPC-133
+single-row AST 与 TPC-134 edge multiplier 重命名为同一 typed `T_D`
+上的 literal `B_alpha B_gamma`；第三项只停止把列出的 good-scale、
+shadow、空 phase census、target contract 与 averaged-selector records
+组合成 scheduled bad-shadow local-increment theorem。三项都不是数学
+nonexistence theorem，不停止新 source record、新 theorem、两个 O161
+parents、pair-native/H1/global architecture。
 
 `TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1` 必须继续
 `STOP_SCOPED`；不得把 phase `L2`、Lebesgue-a.e.、size-only、
@@ -1348,28 +1366,183 @@ SHA-256 为：
 e6a3ee6df0492daa2aae86de47040e8b0d5f8c75a7abc91208601f945d3bb082
 ```
 
-## 15. 下一关：不编号 opened-D attachment audit
+## 15. 2026-07-31 的三项不编号 reopen-trigger 审计
 
-下一轮无需再请求单独工作流授权，直接执行：
+### 15.1 selected 103/107 opened-`D` attachment
+
+执行：
 
 ```text
 PAIR_NATIVE_SELECTED_LINEAGE_OPENED_D_ATTACHMENT_FEASIBILITY_AUDIT
 ```
 
-它只检查能否为 selected 103/107 graph 的首缺字段 `D` 找到真正
-source-locked、theorem-backed 的 attachment，并沿同一谱系给出 exact
-packet schedule。必须逐项冻结 `D,J,Q,T,U0,G_X_row,packet_id,
-source_locator`，保持 `d != D`、`k != K`、`Q_133 -> R_18 != Q_18`
-三个防火墙，并审核 joint mask、literal pair coefficient、nonzero
-status、pair-to-`omega` lineage、global normalization 与完整 loss
-ledger。
+八条 selected child paths 恰落在四个共同 blocks
+`(jL,jK)=(6,2),(6,3),(7,2),(7,3)` 的两侧。四条为 `K_TOO_LOW`，
+四条为 `NO_TAIL_ROOM`；八条 TPC-136 cut 全是
+`FRONTIER_UNMAPPED`。TPC-143 的 actual map edges 为 0，
+TPC-153 的 actual completion 全为 `NOT_PRESENT`，TPC-154 的
+theorem-backed actual provenance 为 0。reachable-history 没有隐藏的
+selected opened-`D` record 或 joint packet locator。
 
-不得把 block/cumulative object 解释性等同，不得把 TPC-32/TPC-93
-fixture 拼接进 selected graph，不得把 manifest `delta` 偷渡成 packet
-schedule。只有 actual theorem-backed edge 使定理状态真实前进时，才可
-创建 TPC-207；否则记录不编号 fail-closed 审计并继续保留上述
-`STOP_SCOPED`、开放 parents 和全局架构状态。用户的持续授权移除了重复
-确认步骤，但永远不替代该数学 trigger。
+因此八个 attachment 字段仍全部缺失：
+
+```text
+D, J, Q, T, U0, G_X_row, packet_id, source_locator
+```
+
+closure 保持 `13/42`，首缺仍是 `D`、one-based index 9。若反事实地先
+给出合法 attachment，TPC-18 support 只说明唯一相容 `D_open=1`，进而
+`J=K/D=8`、`Q_18=LD=64`；这不是字段填充。尤其禁止
+`d=1 -> D=1`、`D0=0 -> D=0`、`Q_133=4 -> Q_18=4`。
+
+```text
+classification =
+  PAIR_NATIVE_SELECTED_LINEAGE_OPENED_D_ATTACHMENT_AUDIT_L1
+theorem_status =
+  PROVED_DECLARED_SELECTED_103_107_ALL_CHILD_NO_LEGAL_TPC18_OPENED_D_ATTACHMENT_L1
+verdict =
+  DECLARED_SELECTED_103_107_OPENED_D_ATTACHMENT_FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED
+```
+
+### 15.2 literal `B_alpha B_gamma` coefficient expansion
+
+执行：
+
+```text
+PAIR_NATIVE_LITERAL_TTSTAR_COEFFICIENT_EXPANSION_AUDIT
+```
+
+TPC-18 只允许抽象模板
+
+```text
+B_i(j)=omega_D(d_i) psi(ell_i/L) W(ell_i d_i j/X)
+       psi(d_i j/K) xi(d_i,j)
+```
+
+以及外部的两个 `mu`、两个 `log ell`、两个 `r_R(N)` 因子。它没有冻结
+selected/common-`T_D` packet、`omega_D` partition member、cutoff function
+instances 或 joint mask。TPC-25 也只给函数类型族。TPC-133 的两条
+single-row AST 属于另一 TPC-15 packet；TPC-134 的
+`tpc134-exp-bump-orbit-normalization-v1` 只是 block-compiler edge
+multiplier。把两条 AST 相乘、按函数名合并或把 edge multiplier 重命名
+为 TPC-18 `B_i` 都不是 theorem-backed lineage edge。
+
+第一项 literal 缺失为：
+
+```text
+OPENED_D_PARTITION_MEMBER_SOURCE_ID + D + omega_D(d_alpha)
+```
+
+其后还缺 gamma 侧、source cutoff、`W` crosswalk、`k` cutoff、`xi`、
+joint mask/locator 与 nonzero status。故：
+
+```text
+theorem_status =
+  ABSTRACT_TPC18_ORDERED_PAIR_B_ALIAS_EXPANSION_TEMPLATE_ONLY_L1
+verdict =
+  SELECTED_103_107_LITERAL_PAIR_COEFFICIENT_CROSSWALK_FAIL_CLOSED_NOT_REOPENED
+FULL_LITERAL_PAIR_COEFFICIENT_MATERIALIZATION = NOT_TESTABLE
+```
+
+closure 仍为 `13/42`，首缺仍为 `D`。
+
+### 15.3 O161 bad-endpoint named-atom shadow increment
+
+执行：
+
+```text
+O161_BAD_ENDPOINT_NAMED_ATOM_SHADOW_INCREMENT_THEOREM_AUDIT
+```
+
+合法的 local-increment reduction 已冻结。令
+`J=ceil(A log_2 log X)`；对同一 actual packet 的每个 prescribed `T`
+与每个 `N_j=T/2^j in E_X^star`，所需新 theorem 必须直接给出
+
+```text
+q=as,  t(z)=ad+qz,
+c_z=mu(d+s z)mu(u+a z),  su-ad=2,
+
+(q/N_j) |sum_{N_j<t(z)<=2N_j} c_z rho_star(z)|
+  <= C X^(-sigma)
+```
+
+其中 named `rho_star`、actual active support、exact `(T,j)` schedule、
+共同 `X/N/q` ranges、uniform `C`、positive `sigma`、normalization
+attachment 和完整 physical-loss ledger 必须属于同一 source-locked
+record。local `q/N_j` block 与 O161 cumulative `q/T` object 不同；唯一
+合法桥是 TPC-159 exact telescoping，并在求和前乘
+`N_j/T=2^(-j)`。
+
+权威 gate-order 的首阻断是：
+
+```text
+PRESCRIBED_BAD_ENDPOINT_ATOM_HAS_NO_SOURCE_LOCKED_VALUE
+```
+
+TPC-180 仍有 0 条 value-bearing named-phase record 和 0 条 production
+packet-coordinate row。即使反事实补齐 atom/schedule，第一项算术阻断
+仍是：
+
+```text
+POINTWISE_NAMED_ATOM_Q_OVER_N_POSITIVE_X_POWER_LOCAL_INCREMENT
+ON_SCHEDULED_E_X_STAR_ANCESTORS
+```
+
+TPC-149/TT26 恰只控制 `E_X^star` 外的 terminal block，并且只有
+log-power saving；TPC-159 只在 dyadic shadow 外累积；TPC-167/169 是
+phase `L2`；TPC-186 是代数 reduction；TPC-187 是 size-only
+`STOP_SCOPED`。TPC-202 审核的 Menon 2026 source 仍分别平均 interval
+origin 或 shifts。补充 primary screen 的 arXiv:2204.03754 只含单个
+Möbius/nilsequence，arXiv:2506.08787 是不同的多变量几何；均未提供
+prescribed determinant-two two-Möbius increment。它们不被加入
+TPC-193 V1 source universe。
+
+六轴中只有 abstract actual-core carrier 通过；named atom、bad-shadow
+endpoint、deterministic all-scale、positive fixed-`X` power 和 actual
+active support 全部失败或 `NOT_TESTABLE`。good blocks 仍只有 log
+saving，TPC-159 tail 为 `2^(-J)+q/T`；physical good/bad variation、
+phase return 与 four-sign reconnection 均未知。
+
+```text
+formula_gate = PASS_L1_REDUCTION
+theorem_production_gate = FAIL_CLOSED
+verdict = O161_BAD_ENDPOINT_TRIGGER_FAIL_CLOSED_PARENT_OPEN_NOT_REOPENED
+TPC207_TRIGGER = NO
+```
+
+### 15.4 archive 与 checker exploit review
+
+O161 reachable-history 扫描覆盖 1,940 个 TPC text blobs、
+72,608,764 bytes；57 个相关命中中没有正向 theorem-backed fixed-atom
+increment 或 local-occurrence edge。四个 historical-only 命中都是旧
+TPC-194/203 的 `NOT_TESTABLE/STOP_SCOPED` 版本。
+
+审计发现 TPC-184/189 checker 原先以 Python `assert` 承担关键验证，
+`python -O --check` 会错误放行，且只读取预填 mutation verdict。现已
+改为显式 `ValueError` gate、实际加载 closed payload/audit schemas，
+并现场执行各 8 个 mutation；正常与 `python -O -B` 四个入口均通过。
+这只加固验证器，不改变两篇论文的 `TARGET_WELL_TYPED_OPEN` 数学裁决。
+
+### 15.5 边界与下一路线
+
+本轮没有 theorem-state reopen，因此没有创建 TPC-207。
+`TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1` 与第 6 节全部精确
+cells 继续 `STOP_SCOPED`。两个 O161 parents、pair-native reroute、
+H1 architecture 与 global architecture 继续 `OPEN`；fixed-atom
+credit 为 0，strict `1/400` 为 `UNPAID`，`L2=NONE`。
+
+无需单独授权的下一项有限审计是：
+
+```text
+CORPUS_WIDE_SOURCE_BACKED_LOCAL_OCCURRENCE_EDGE_FAMILY_AUDIT
+```
+
+它只在 TPC-206 selected graph 之外寻找真正 theorem-backed 的 actual
+local-occurrence edge family。archive key、formal/shadow row、
+TPC-143/153 的零边或形式链、synthetic witness、旧 singleton-cut
+`STOP_SCOPED` cell 的包装都不合格。只有同一 source-locked edge family
+连同 exact occurrence、schedule、ranges、normalization 与 loss ledger
+真实形成时，才可讨论 TPC-207。
 
 ## 16. 下一会话可直接粘贴
 
@@ -1388,31 +1561,31 @@ python "$d/build_tpc206.py" --check
 python "$d/tpc206_selected_lineage_pair_registry.py" --check
 python "$d/tpc206_independent_checker.py" --check
 
-当前事实终点是 TPC-206。其 classification 为
-PAIR_NATIVE_SELECTED_LINEAGE_PROJECTION_L1，theorem status 为
-PROVED_SELECTED_SOURCE_LOCKED_13_OF_42_PROJECTION_AND_FIRST_MISSING_D_L1，
-精确 verdict 为
-SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED。
+python papers/tpc-184-bad-endpoint-literal-target-contract/experiments/tpc184_bad_endpoint_literal_target_contract.py --check
+python -O -B papers/tpc-184-bad-endpoint-literal-target-contract/experiments/tpc184_bad_endpoint_literal_target_contract.py --check
+python papers/tpc-189-direct-twist-literal-target-contract/experiments/tpc189_direct_twist_literal_target_contract.py --check
+python -O -B papers/tpc-189-direct-twist-literal-target-contract/experiments/tpc189_direct_twist_literal_target_contract.py --check
 
-TPC-206 只证明显式 selected 103/107 graph 的 13/42 projection；首缺
-D、one-based index 9，该图内 full completion=0。corpus-wide maximum
-与 full-join count 均为 null/NOT_TESTABLE。TPC32/TPC93 的 14-slot L0
-fixture 不得拼接，也禁止把 13 解读成全语料最大值。
+当前编号事实终点仍是 TPC-206，selected 103/107 closure 为 13/42，首缺
+D、one-based index 9。三个新不编号审计分别证明：现有八条 selected
+paths 没有合法 opened-D attachment；现有 TPC18/25/133/134 链不能把
+B_alpha/B_gamma materialize 到同一 typed T_D；现有及补充 primary screen
+没有 prescribed named-atom、scheduled bad-shadow、positive-X-power
+local-increment theorem。
 
-保持 Q_133->R_18 != Q_18、d != D、k != K 三个符号防火墙；delta=1/4
-只作为 chosen-manifest provenance lift，不是 packet schedule。
-production occurrence NOT_TESTABLE；pair-to-omega、global normalization
-和 H1-E 均 FAIL；fixed-atom credit=0、strict 1/400 UNPAID、L2=NONE。
-
-保持五个 cells（含 DECLARED_TPC206_SELECTED_103_107_LINEAGE_GRAPH_V1）
-为 STOP_SCOPED；保持 pair-native reroute、两个 O161 pointwise parents、
-H1 与 global architecture OPEN。
+最新 verdict 为
+O161_BAD_ENDPOINT_TRIGGER_FAIL_CLOSED_PARENT_OPEN_NOT_REOPENED。
+TPC-207 trigger=false，TPC-207 未创建。保持第 6 节全部精确 cells 为
+STOP_SCOPED；保持两个 O161 parents、pair-native reroute、H1 与 global
+architecture OPEN；fixed-atom credit=0、strict 1/400 UNPAID、L2=NONE。
 
 无需再请求单独工作流授权。直接执行不编号
-PAIR_NATIVE_SELECTED_LINEAGE_OPENED_D_ATTACHMENT_FEASIBILITY_AUDIT。
-只有 source-locked theorem-backed opened-D attachment 和 exact packet
-schedule 真正形成，并通过完整 coefficient/normalization/loss 审核时，
-才创建 TPC-207；否则 fail closed，不以解释性改写补字段。
+CORPUS_WIDE_SOURCE_BACKED_LOCAL_OCCURRENCE_EDGE_FAMILY_AUDIT。
+只接受 TPC-206 selected graph 之外真正 theorem-backed 的 actual
+local-occurrence edge family；拒绝 archive key、formal/shadow row、
+zero-edge/formal chain、synthetic witness 和旧 stopped-cell 包装。只有
+同一 source-locked edge family 连同 exact occurrence/schedule/ranges/
+normalization/loss ledger 真正形成时，才讨论 TPC-207。
 
 主会话只保留结论、路线选择、阻断项和最终审核摘要；长扫描、定理原文
 核查、schema exploit review、构建日志和逐页 PDF 检查交给分身；所有
