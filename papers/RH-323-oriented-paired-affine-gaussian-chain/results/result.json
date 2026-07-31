@@ -1,0 +1,197 @@
+{
+  "actual_two_leg_curvature_remainder_proved": false,
+  "conditioning_bias_moments_proved": true,
+  "constants": {
+    "alpha": 3.0873780253841527,
+    "beta": 1.9538702694681807,
+    "kappa_aff": 5.182390970088339,
+    "lambda": 1.6785735104283224,
+    "s1": 3.2452893663932265,
+    "s2": 5.538482210566792,
+    "u_c": 1.5436890126920764
+  },
+  "exact_joint_tv_transfer_proved": true,
+  "final_extended_skew_normal_proved": true,
+  "finite_cases": [
+    {
+      "clearance_ratio": 0.8,
+      "joint_l1_bound": 3.38662448284714e-05,
+      "limiting_ratio": 0.8,
+      "sigma": 0.2
+    },
+    {
+      "clearance_ratio": 0.8,
+      "joint_l1_bound": 0.10003386624482856,
+      "limiting_ratio": 0.7,
+      "sigma": 0.2
+    },
+    {
+      "clearance_ratio": 1.0,
+      "joint_l1_bound": 3.0423023376949236e-12,
+      "limiting_ratio": 1.0,
+      "sigma": 0.125
+    }
+  ],
+  "full_trace_replacement_proved": false,
+  "gates": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+  },
+  "hilbert_polya_constructed": false,
+  "intermediate_extended_skew_normal_proved": true,
+  "joint_first_alias_trace_law_proved": false,
+  "marginal_l1_contraction_proved": true,
+  "marginal_l1_isometry_proved": false,
+  "moving_order_remainder_proved": false,
+  "neighboring_shell_combined": false,
+  "non_gaussian_output_proved": true,
+  "orientation_leakage_at_zero": {
+    "probability_u_positive": 0.09970616466997309,
+    "probability_w_negative": 0.11476387127583675
+  },
+  "oriented_two_leg_affine_chain_proved": true,
+  "parity_weighting_combined": false,
+  "phase_profiles": [
+    {
+      "clearance_ratio": 0.0,
+      "conditioning_bias": [
+        0.7978845608028654,
+        -2.4633712598160526,
+        4.13494974307767
+      ],
+      "covariance_matrix": [
+        [
+          0.3633802276324186,
+          -1.1218921296514206,
+          1.8831784103908915
+        ],
+        [
+          -1.1218921296514206,
+          4.4637051079372245,
+          -7.492657152547021
+        ],
+        [
+          1.8831784103908915,
+          -7.492657152547021,
+          13.576975818986728
+        ]
+      ],
+      "entrance_mean": 0.7978845608028654,
+      "entrance_variance": 0.3633802276324186,
+      "mean_vector": [
+        0.7978845608028654,
+        -2.4633712598160526,
+        4.13494974307767
+      ],
+      "output_right_tail_ratio_limit": 2.0
+    },
+    {
+      "clearance_ratio": 0.5,
+      "conditioning_bias": [
+        0.5091604338370336,
+        -1.5719707348235192,
+        2.638668434643304
+      ],
+      "covariance_matrix": [
+        [
+          0.486175435696367,
+          -1.5010073566505298,
+          2.5195511878316164
+        ],
+        [
+          -1.5010073566505298,
+          5.634177128862799,
+          -9.457380481570194
+        ],
+        [
+          2.5195511878316164,
+          -9.457380481570194,
+          16.87490835440558
+        ]
+      ],
+      "entrance_mean": 1.0091604338370335,
+      "entrance_variance": 0.486175435696367,
+      "mean_vector": [
+        1.0091604338370335,
+        -3.115659747515595,
+        5.229863919687473
+      ],
+      "output_right_tail_ratio_limit": 1.446210106847318
+    },
+    {
+      "clearance_ratio": 1.0,
+      "conditioning_bias": [
+        0.2875999709391784,
+        -0.8879298303787403,
+        1.4904554923928668
+      ],
+      "covariance_matrix": [
+        [
+          0.6296862857766055,
+          -1.9440796015924575,
+          3.2632805213971454
+        ],
+        [
+          -1.9440796015924575,
+          7.002108641554131,
+          -11.75355408285401
+        ],
+        [
+          3.2632805213971454,
+          -11.75355408285401,
+          20.729204536865396
+        ]
+      ],
+      "entrance_mean": 1.2875999709391783,
+      "entrance_variance": 0.6296862857766055,
+      "mean_vector": [
+        1.2875999709391783,
+        -3.975307855762893,
+        6.672846462481206
+      ],
+      "output_right_tail_ratio_limit": 1.1885734173450602
+    },
+    {
+      "clearance_ratio": 2.0,
+      "conditioning_bias": [
+        0.05524786267898997,
+        -0.17057103718455488,
+        0.2863160246642782
+      ],
+      "covariance_matrix": [
+        [
+          0.8864519483114236,
+          -2.736812265775658,
+          4.593940572346337
+        ],
+        [
+          -2.736812265775658,
+          9.44957404895758,
+          -15.8618046834111
+        ],
+        [
+          4.593940572346337,
+          -15.8618046834111,
+          27.625205169161774
+        ]
+      ],
+      "entrance_mean": 2.05524786267899,
+      "entrance_variance": 0.8864519483114236,
+      "mean_vector": [
+        2.05524786267899,
+        -6.34532708795286,
+        10.651097964840957
+      ],
+      "output_right_tail_ratio_limit": 1.0232797493168582
+    }
+  ],
+  "riemann_hypothesis_proved": false,
+  "riemann_zeros_identified": false,
+  "source_coordinate_retained_in_isometry": true,
+  "status": "rh323_oriented_paired_affine_gaussian_chain",
+  "von_mangoldt_trace_proved": false,
+  "zeta_divisor_equality": false
+}
