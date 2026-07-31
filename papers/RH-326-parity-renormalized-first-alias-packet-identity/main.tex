@@ -1,0 +1,431 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage{cleveref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\1}{\mathbf 1}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\title{Parity-Renormalized First-Alias Packets:\\Exact Signs, Clock Phase, and the Neighboring-Shell Interface}
+\author{Bin Wang}
+\date{July 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The first counterloop alias and the square-root parity leakage occur at the
+same weighted order, so their signs and normalization cannot be suppressed.
+We restore the Hardy scaling hidden in the earlier first-alias ledger and
+split the coefficient defect exactly into a raw-trace packet, a signed parity
+packet, a finite-radius radial correction, and the roots-of-unity alias
+impulse.  At the even first alias the parity correction is positive, whereas
+the counterloop defect is subtracted from the total residual.  The parity
+packet has a uniform moving-order expansion with an explicit quadratic
+remainder.  On a fixed clock phase $\eta$, its leading ratio to the alias
+defect is $C_*C_M\lambda^\eta$.  Scalar balance is possible only at
+$\eta_*=3.0609149137\ldots$; throughout the usual floor/ceil/nearest window
+$|\eta|\le1$, parity supplies at most $0.3438880199\ldots$ of the alias.
+Thus scalar parity subtraction alone cannot close the first-alias equation.
+This is a scoped negative result: the raw physical boundary packet and the
+neighboring shell may still provide the missing signed contribution.  We
+finish with a phase- and coordinate-preserving interface for that calculation.
+No joint full-trace replacement is proved.
+\end{abstract}
+
+\section{Normalization and four packet types}
+
+Put
+\begin{equation}
+ \lambda=1.678573510428322\ldots,
+ \qquad r_H=0.85,
+ \qquad R=1.4,
+ \qquad \beta=(r_H\sqrt\lambda)^{-1}.
+ \label{eq:constants}
+\end{equation}
+The number $r_H$ is the chosen Hardy scaling radius, not a dynamical
+invariant.  Let $P_n$ be the deterministic physical flat trace and let
+$K_\sigma$ be the row-normalized noisy Markov operator.  The peripheral
+parity eigenvalue is written
+\begin{equation}
+ \lambda_-(\sigma)=-(1-\delta_\sigma),
+ \qquad
+ \delta_\sigma=C_*\sqrt\sigma+o(\sqrt\sigma),
+ \qquad
+ C_*=0.105258535936908\ldots .
+ \label{eq:parity-gap}
+\end{equation}
+The decimal evaluates an archived positive integral; positivity and the
+square-root law, rather than the rounded decimal, are the analytic inputs.
+
+We use explicit Hardy superscripts to avoid mixing two archived conventions:
+\begin{align}
+ c^H_{\sigma,n}
+ &=r_H^{-n}\{\Tr K_\sigma^n-1-\lambda_-(\sigma)^n\},
+ \label{eq:noisy-hardy}\\
+ c^H_n
+ &=r_H^{-n}\{P_n-1-(-1)^n\}.
+ \label{eq:det-hardy}
+\end{align}
+Define the raw-trace and parity packets
+\begin{align}
+ \cT_{\sigma,n}
+ &=r_H^{-n}\{\Tr K_\sigma^n-P_n\},
+ \label{eq:raw-packet}\\
+ \cP_{\sigma,n}
+ &=r_H^{-n}\{(-1)^n-\lambda_-(\sigma)^n\}
+ =(-1)^nr_H^{-n}\{1-(1-\delta_\sigma)^n\}.
+ \label{eq:parity-packet}
+\end{align}
+Then, identically,
+\begin{equation}
+ c^H_{\sigma,n}-c^H_n=\cT_{\sigma,n}+\cP_{\sigma,n}.
+ \label{eq:bulk-split}
+\end{equation}
+
+For the finite counterloop let
+\begin{equation}
+ s_{k,n}=\beta_k^n
+ \bigl(2k\1_{2k\mid n}-1-(-1)^n\bigr),
+ \qquad \beta_k\longrightarrow\beta.
+ \label{eq:counterloop}
+\end{equation}
+Rename the limiting pole moment and numerator anchor to avoid collisions with
+older uses of $p_n$ and $a_n$:
+\begin{equation}
+ p_n^{\rm pole}=-2\1_{2\mid n}\beta^n,
+ \qquad
+ a_n^{\rm num}=c^H_n-p_n^{\rm pole}.
+ \label{eq:pole-anchor}
+\end{equation}
+
+\section{Exact alias and parity algebra}
+
+\begin{theorem}[Radial-plus-alias decomposition]
+\label{thm:counterloop-split}
+For every $k,n\ge1$, the counterloop defect is exactly
+\begin{equation}
+ \boxed{
+ \cA_{k,n}:=s_{k,n}-p_n^{\rm pole}
+ =2\1_{2\mid n}(\beta^n-\beta_k^n)
+ +2k\beta_k^n\1_{2k\mid n}.}
+ \label{eq:counterloop-split}
+\end{equation}
+The first term is finite-radius radial drift and the second is the exact
+roots-of-unity alias impulse.  In particular, $\cA_{k,n}=0$ for every odd
+$n$, while
+\begin{equation}
+ \cA_{k,2k}=(2k-2)\beta_k^{2k}+2\beta^{2k}>0.
+ \label{eq:first-alias-defect}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Substitute \eqref{eq:counterloop} and \eqref{eq:pole-anchor}.  If $n$ is
+odd, both $1+(-1)^n$ and the two divisibility indicators vanish.  If $n$ is
+even, the non-alias part is $-2\beta_k^n+2\beta^n$, and an order divisible by
+$2k$ receives the additional impulse $2k\beta_k^n$.  Setting $n=2k$ gives
+\eqref{eq:first-alias-defect}.
+\end{proof}
+
+The sign ledger is now unambiguous:
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+order & parity packet $\cP_{\sigma,n}$
+& counterloop defect $\cA_{k,n}$ & signs in the residual\\
+\midrule
+odd & negative & $0$ & $+\cP$\\
+even, $2k\nmid n$ & positive
+& $2(\beta^n-\beta_k^n)$ & $+\cP-\cA$\\
+first alias $n=2k$ & positive
+& $(2k-2)\beta_k^{2k}+2\beta^{2k}$ & $+\cP-\cA$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Only the parity sign is asserted in the middle row; the radial difference
+need not be assigned a sign without a finite-$k$ radius inequality.
+
+\begin{theorem}[Parity-renormalized first-alias packet identity]
+\label{thm:main-identity}
+Let
+\begin{equation}
+ e_{\sigma,k,n}=c^H_{\sigma,n}-s_{k,n}-a_n^{\rm num}.
+ \label{eq:error}
+\end{equation}
+Then at the first alias,
+\begin{align}
+ e_{\sigma,k,2k}
+ &=\cT_{\sigma,2k}+\cP_{\sigma,2k}-\cA_{k,2k}
+ \label{eq:packet-form}\\
+ &=r_H^{-2k}\{\Tr K_\sigma^{2k}-P_{2k}
+     +1-\lambda_-(\sigma)^{2k}\}
+ \notag\\[-0.2em]
+ &\hspace{5em}
+ -\{(2k-2)\beta_k^{2k}+2\beta^{2k}\}.
+ \label{eq:expanded-form}
+\end{align}
+In particular, the scalar parity contribution in \eqref{eq:expanded-form}
+is
+\begin{equation}
+ r_H^{-2k}\{1-\lambda_-(\sigma)^{2k}\}
+ =r_H^{-2k}\{1-(1-\delta_\sigma)^{2k}\}>0.
+ \label{eq:positive-even-parity}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Using $a_n^{\rm num}=c^H_n-p_n^{\rm pole}$ in \eqref{eq:error} gives
+\[
+ e_{\sigma,k,n}=(c^H_{\sigma,n}-c^H_n)
+ -(s_{k,n}-p_n^{\rm pole}).
+\]
+Apply \eqref{eq:bulk-split}, \cref{thm:counterloop-split}, and set $n=2k$.
+Equation \eqref{eq:positive-even-parity} follows because
+$0<1-\delta_\sigma<1$ for sufficiently small noise.
+\end{proof}
+
+This theorem is an exact coefficient identity.  It does not approximate
+$\cT_{\sigma,2k}$ by a local Gaussian law and therefore does not assume the
+missing trace-observation theorem.
+
+\section{Uniform parity packet on the first-alias clock}
+
+\begin{theorem}[Uniform scalar parity expansion]
+\label{thm:parity-expansion}
+For $0\le\delta<1$ and every $n\ge1$,
+\begin{equation}
+ \left|
+ \cP_{\sigma,n}-(-1)^n n\delta r_H^{-n}
+ \right|
+ \le \frac{n(n-1)}2\delta^2r_H^{-n},
+ \label{eq:uniform-remainder}
+\end{equation}
+where the left side uses \eqref{eq:parity-packet} with
+$\delta_\sigma=\delta$.  Consequently, if
+\begin{equation}
+ k_\sigma=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),
+ \label{eq:natural-clock}
+\end{equation}
+then
+\begin{equation}
+ \cP_{\sigma,2k_\sigma}
+ =2k_\sigma C_*\sqrt\sigma\,r_H^{-2k_\sigma}
+ \{1+o(1)\}.
+ \label{eq:moving-parity}
+\end{equation}
+Its weighted size and the weighted first-alias defect share the growth
+exponent
+\begin{equation}
+ \chi=\frac{\log(\beta R)}{\log\lambda}
+ =0.463406944517002\ldots .
+ \label{eq:common-exponent}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Taylor's theorem for $f(\delta)=1-(1-\delta)^n$ gives
+\[
+ f(\delta)=n\delta-\frac{n(n-1)}2(1-\xi)^{n-2}\delta^2
+\]
+for some $0\le\xi\le\delta$, proving \eqref{eq:uniform-remainder}.
+On \eqref{eq:natural-clock}, $k_\sigma\delta_\sigma\to0$, so the remainder
+is $o(k_\sigma\delta_\sigma r_H^{-2k_\sigma})$ and
+\eqref{eq:moving-parity} follows.
+
+The archived multiplier law is
+\begin{equation}
+ \beta_k=\beta\exp\left[-\frac{\log C_M}{2k}+o(k^{-1})\right],
+ \qquad C_M=1.946342905200968\ldots .
+ \label{eq:beta-k}
+\end{equation}
+Hence
+\begin{equation}
+ \frac{\cA_{k,2k}}{2k}
+ =\frac{\beta^{2k}}{C_M}\{1+o(1)\}.
+ \label{eq:alias-asymptotic}
+\end{equation}
+After multiplication by $R^{2k}$, this is a constant multiple of
+$(\beta R)^{2k}$.  The weighted parity packet divided by $2k$ is
+$C_*\sqrt\sigma(R/r_H)^{2k}\{1+o(1)\}$.  Using
+$2k=\log(1/\sigma)/\log\lambda+O(1)$ gives the same exponent
+\eqref{eq:common-exponent}.
+\end{proof}
+
+\section{Clock phase and a scalar-only obstruction}
+
+The bounded integer phase must be retained:
+\begin{equation}
+ \eta_\sigma
+ =k_\sigma-\frac{\log(1/\sigma)}{2\log\lambda}.
+ \label{eq:phase}
+\end{equation}
+
+\begin{theorem}[Phase law and unique scalar balance]
+\label{thm:phase-law}
+Along any subsequence on which $\eta_\sigma\to\eta$,
+\begin{equation}
+ \boxed{
+ \frac{\cP_{\sigma,2k_\sigma}}{\cA_{k_\sigma,2k_\sigma}}
+ \longrightarrow C_*C_M\lambda^\eta.}
+ \label{eq:ratio-law}
+\end{equation}
+The leading scalar packets balance only at
+\begin{equation}
+ \eta_*=-\frac{\log(C_*C_M)}{\log\lambda}
+ =3.060914913721564\ldots .
+ \label{eq:balance-phase}
+\end{equation}
+For every phase with $|\eta|\le1$,
+\begin{equation}
+ C_*C_M\lambda^\eta
+ \le C_*C_M\lambda
+ =0.343888019998872\ldots<1.
+ \label{eq:canonical-gap}
+\end{equation}
+Therefore, on such a subsequence, if
+$\cT_{\sigma,2k}=o(\cA_{k,2k})$, then
+\begin{equation}
+ |e_{\sigma,k,2k}|
+ \ge\{0.656111980001127\ldots+o(1)\}\cA_{k,2k},
+ \label{eq:scalar-obstruction}
+\end{equation}
+and this is not $o(kR^{-2k})$.
+\end{theorem}
+
+\begin{proof}
+Divide \eqref{eq:moving-parity} by \eqref{eq:alias-asymptotic} and use
+$\beta^{2k}=r_H^{-2k}\lambda^{-k}$:
+\[
+ \frac{\cP_{\sigma,2k}}{\cA_{k,2k}}
+ =C_*C_M\sqrt\sigma\,\lambda^k\{1+o(1)\}.
+\]
+Equation \eqref{eq:phase} makes
+$\sqrt\sigma\lambda^k=\lambda^{\eta_\sigma}$, proving
+\eqref{eq:ratio-law}.  Monotonicity in $\eta$ gives the unique balance phase
+and \eqref{eq:canonical-gap}.  Substitute the ratio into
+\eqref{eq:packet-form}.  Finally,
+\[
+ \frac{\cA_{k,2k}}{kR^{-2k}}
+ =\frac{2}{C_M}(\beta R)^{2k}\{1+o(1)\}\longrightarrow\infty
+\]
+because $\beta R>1$.
+\end{proof}
+
+This is deliberately a scalar-only negative result.  It proves that omitting
+an alias-scale raw boundary/shell packet cannot work on common
+floor/ceil/nearest clocks.  It does not bound the actual raw trace packet and
+does not prove divergence of the combined physical residual.
+
+The same phase controls the local clearance.  If the archived boundary-cycle
+clearance is
+\begin{equation}
+ \Delta_k^{\rm clr}=C_{\rm b}\lambda^{-2k}\{1+o(1)\},
+ \qquad C_{\rm b}=0.4608051492\ldots,
+ \label{eq:clearance}
+\end{equation}
+then
+\begin{equation}
+ d_{\sigma,k}:=\frac{\Delta_k^{\rm clr}}\sigma
+ =C_{\rm b}\lambda^{-2\eta_\sigma}\{1+o(1)\}.
+ \label{eq:clearance-phase}
+\end{equation}
+At scalar balance,
+$d_*=C_{\rm b}(C_*C_M)^2=0.019340633095025\ldots$, whereas
+$|\eta|\le1$ corresponds to
+$0.163544744607256\ldots\le d\le1.298368749415710\ldots$.
+Thus suppressing the clock phase would discard both the scalar balance ratio
+and the RH-322 entrance profile.
+
+\section{Typed interface for the neighboring shell}
+
+RH-322--RH-324 retain the entrance clearance and the oriented affine frame
+\begin{equation}
+ V\sim g_d,
+ \qquad U=-\alpha V-Z_1,
+ \qquad W=-\lambda U+Z_2,
+ \qquad (V,U,W)\text{ has orientation }(+,-,+),
+ \label{eq:local-frame}
+\end{equation}
+where $\alpha=2u_c$ and the output is compared after the center shift
+$\kappa_{\rm aff}d=2u_c\lambda d$.  Their objects are forward probability
+laws of mass one.  They do not yet define a signed trace observation, and
+RH-19 shows that the neighboring critical sibling cannot be hidden in a far
+Gaussian tail.
+
+The exact handoff is therefore conditional but typed.  A later theorem must
+construct, on the same clock, phase, coordinate frame, and Hardy
+normalization, a decomposition
+\begin{equation}
+ \cT_{\sigma,2k}
+ =\cB_{\sigma,k}(d,\eta;V,U,W,\mathfrak t)
+ +\cS_{\sigma,k}(d,\eta;\mathfrak t)
+ +\cR_{\sigma,k}.
+ \label{eq:future-decomposition}
+\end{equation}
+Here $\mathfrak t$ is the still-missing trace observation, $\cB$ is the
+physical boundary packet, $\cS$ is the neighboring-shell packet, and $\cR$
+contains the second-leg, all-leg transport, and observation remainders.
+Combining \eqref{eq:future-decomposition} with
+\cref{thm:main-identity} gives the exact join
+\begin{equation}
+ e_{\sigma,k,2k}
+ =\cB_{\sigma,k}+\cS_{\sigma,k}+\cR_{\sigma,k}
+ +\cP_{\sigma,2k}-\cA_{k,2k}.
+ \label{eq:typed-join}
+\end{equation}
+Consequently, if $\cR_{\sigma,k}=o(kR^{-2k})$, the desired matching is
+equivalent to the signed condition
+\begin{equation}
+ \boxed{
+ \cB_{\sigma,k}+\cS_{\sigma,k}
+ =\cA_{k,2k}-\cP_{\sigma,2k}+o(kR^{-2k}).}
+ \label{eq:shell-target}
+\end{equation}
+Equation \eqref{eq:shell-target} is an interface, not a theorem that the
+packets on its left have been constructed.
+
+\section{Reproduction and claim boundary}
+
+The reproduction code checks the exact moment split, the parity signs, the
+uniform Taylor bound, the clock/clearance dictionary, and the scalar balance
+law.  It evaluates the following constant ledger:
+\begin{center}\small
+\begin{tabular}{rrr}
+\toprule
+$\eta$ & $C_*C_M\lambda^\eta$ & $C_{\rm b}\lambda^{-2\eta}$\\
+\midrule
+$-1$ & $0.122049588$ & $1.298368749$\\
+$0$ & $0.204869205$ & $0.460805149$\\
+$1$ & $0.343888020$ & $0.163544745$\\
+$3.060914914$ & $1.000000000$ & $0.019340633$\\
+\bottomrule
+\end{tabular}
+\end{center}
+These are evaluations of proved symbolic formulas, not fitted noisy traces.
+
+\begin{remark}[Claim boundary]
+The exact identity combines only known algebraic packets.  It does not
+identify the RH-322--RH-324 probability law with $\cT_{\sigma,2k}$, control
+the second physical critical leg, prove all-leg phase transport, bound the
+weighted trace observation, include the neighboring shell, or establish
+\eqref{eq:future-decomposition}.  Hence no joint first-alias trace law,
+full-trace replacement, or actual divergence theorem is obtained.  Gates
+A--E remain false/open.  This paper constructs no Hilbert--Polya operator,
+identifies no Riemann zero, proves no von Mangoldt trace formula or
+zeta-divisor equality, and does not imply RH.
+\end{remark}
+
+RH-327 should now compute the neighboring-shell coupling in the typed frame
+of \eqref{eq:future-decomposition}; RH-328 may formulate the joint matching
+equation only after that shell and the trace observation are defined.
+
+\end{document}
