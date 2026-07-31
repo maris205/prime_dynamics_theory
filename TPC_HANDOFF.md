@@ -4,21 +4,22 @@
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`POSDET2_SEED_23_11_NONZERO_ACTUAL_PHYSICAL_JOINT_MASK_ATTACHMENT_FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED`
+`TPC18_S2_CURRENT_PACKET_ZERO_BETA_AND_GENERAL_BLOCK_SELECTION_ATTACHMENT_ABSENT_STOP_SCOPED_NOT_REOPENED`
 下一篇：`null`；下一项不编号审计：
-`TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE`
+`TPC18_H0_2_NONPRIMITIVE_ALTERNATIVE_SELECTION_AND_ACTUAL_PACKET_ATTACHMENT_GATE`
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
 后续同类有限审计与编号工作流授权：`true`
 自动通过数学门槛或自动编号：`false`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
+下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
 本文件、仓库内已提交的论文，以及 active payload/audit/schema/checker
 是下一会话的事实来源。旧聊天记录不是事实来源。
 下文历史审计块中的所有 `tpc205_authorized=false`、`TPC-206 未授权` 与
 `USER_CONFIRMATION_REQUIRED` 都是当时的编号前快照，统一由本页页首及
-第 14--20 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
+第 14--21 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
 后续按同一有限、fail-closed 工作流继续，不再设置单独的人为编号授权门；
 这不替代 theorem evidence，也不许可跨过任何数学门槛。
 
@@ -456,6 +457,21 @@ theorem；`s=2` endpoint 是同一 `k` 的另一对象。它不停止新的
 formal-to-physical theorem、新的 named dyadic member、具有非零 common-`k`
 endpoint coefficient 的 source record、两个 O161 parents、H1 或 global
 architecture。
+
+2026-07-31 的 TPC-18 `s=2` source-forward 审计新增且仅新增：
+
+```text
+DECLARED_TPC18_H0_2_COMMON_K_ENDPOINT_SOURCE_FORWARD_RECORD_CORPUS_V1
+  = STOP_SCOPED
+```
+
+它只停止在 commit `f2f98b0bdc4b56c36292e9211b19c1d2e45ffae0` 可达的
+TPC-17/18、TPC-133/134/136/143/153/154 与 TPC-205/206 记录中，把
+`D0=0,V=2` 的同偶数 `k` 形式配对，或 TPC-18 的
+`D0=6,V=18,h=6` finite identity fixture，改名为 `h0=2,s=2` 的
+nonzero actual endpoint/source-forward record。它不停止 TPC-18 的通用
+endpoint identity、真正新增的 `h0=2` branch-selection theorem、具名 actual
+common-`k` packet、两个 O161 parents、H1 或 global architecture。
 
 ## 7. Reopen triggers
 
@@ -2854,7 +2870,272 @@ TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE
 source-forward、normalization、loss ledger 后续门槛真实通过，才允许
 讨论 TPC-207。
 
-## 20. 下一会话可直接粘贴
+## 20. 不编号 TPC-18 `s=2` source-forward 审计
+
+### 20.1 冻结对象与 gate 顺序
+
+本轮只审核：
+
+```text
+TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE
+```
+
+Gate 0 继续严格要求同一 source lock 上同时存在：
+
+```text
+one common k
+s=gcd(k,h0)=2
+beta_I(k) != 0
+named endpoint coefficient/object
+actual source-forward record
+```
+
+不同 `k` 的 opened rows 不得拼成 common-`k`；formal coefficient 不得改名为
+actual packet；endpoint support 不得改名为 nonzero 或小量。上一轮
+`D0=0,V=2` packet 与 `23/11` mixed-`k` seed 均不自动复用。
+
+### 20.2 TPC-18 精确公式与 `h0=2` 特化
+
+TPC-18 定义
+
+```text
+I = (D0,V] intersect N
+beta_I(k) = sum_{d|k, d in I} mu(d).
+```
+
+若 `s=gcd(k,h0)>1`、`H=rad(s)`，其 endpoint theorem 精确给出
+
+```text
+beta_I(k)
+  = sum_{e|k,(e,H)=1} mu(e) Omega_H(e),
+
+Omega_H(e)
+  = sum_{f|H} mu(f) 1_{D0<ef<=V},
+
+supp Omega_H
+  subset (D0/H,D0] union (V/H,V].
+```
+
+对 `h0=s=2`，`H=2`、`k` 必须为偶数，并且
+
+```text
+Omega_2(e)
+  = 1_{D0<e<=V} - 1_{D0<2e<=V}.
+```
+
+在 stopping theorem 的 `D0<V/2` 范围内，对每个正整数 `e` 都有
+
+```text
+Omega_2(e) = -1  for D0/2 < e <= D0,
+Omega_2(e) = +1  for V/2  < e <= V,
+Omega_2(e) =  0  otherwise.
+```
+
+在 `beta_I(k)` 的 endpoint sum 内还要求 `(e,2)=1`，且 `mu(e)=0` 的项
+没有贡献；所以实际贡献者只能是奇数、平方自由的 endpoint divisors。
+所以 `beta_I(k)!=0` 当且仅当 `k` 的奇部在两个 endpoint bands 上的带
+Möbius 符号 divisor sums 不相等。这是 pointwise exact identity，不是
+average cancellation theorem。TPC-18 的 nonprimitive correlation 严格使用
+同一个 `k` 上的 `beta_I(k)^2`；TPC-205/206 的
+`k_alpha=24,k_gamma=48` 不能改写成该对象。
+
+### 20.3 当前 source-locked packet census
+
+TPC-133 的 866 个 raw `(ell,k,d)` rows 商掉 `d` 后给 585 个 distinct
+`(ell,k)`。其中 `h0=2`、`gcd(k,h0)=2` 的偶数 `k` rows 有 281 个；
+再要求 `ell` 为 prime 有 91 个。存在 10 个同偶数 `k` 的 prime-source
+formal fibers：
+
+```text
+k = {4,6,8,10,12,14,18,20,32,48}
+ordered formal source pairs = 80
+unordered formal source pairs = 40
+```
+
+但该 source lock 固定 `D0=0,V=2`，故
+
+```text
+I = {1,2}
+beta_I(k) = mu(1)+mu(2) = 0  for every even k.
+source-locked h0=2 formal beta_I(k)!=0 records = 0
+materialized source-locked h0=2 nonzero per-k endpoint records = 0
+```
+
+这 40 个 unordered pairs 只证明 same-`k` row combinatorics，不是 nonzero
+endpoint coefficient，更不是 actual pair occurrence。其当前 Gate 0
+首致命为：
+
+```text
+SOURCE_LOCKED_H0_2_COMMON_K_BETA_I_K_NE_0 = ABSENT
+```
+
+下游 actual census 同样为零：
+
+```text
+TPC-136 downstream maps:
+  4/4 domain_cut_path_ids = []
+  status = NOT_TESTABLE
+
+TPC-143:
+  obligations = 2,988
+  actual_map_edges = [] on every obligation
+
+TPC-153:
+  shadows = 2,988
+  nonnull actual_occurrence_id = 0
+  is_actual_occurrence = false on every shadow
+
+TPC-154:
+  formal fibers = 2,989
+  formal occurrence edges = 8,967
+  theorem_backed_actual_provenance = true count = 0
+  actual completions = 0
+```
+
+因此 42-field registry 新增字段为 0，actual occurrence IDs 为 0；
+projection 仍为 `13/42`，field-order first missing 仍是 `D`。
+
+### 20.4 通用公式非零，但不是 actual record
+
+不得把上一小节的 finite-corpus 零结论提升为 TPC-18 通用
+nonexistence。精确公式立即给出纯代数候选，例如
+
+```text
+h0=2, s=2, D0=6, V=18, k=22, e=11
+Omega_2(11)=+1
+beta_I(22)=mu(11)=-1
+FORMAL_ALGEBRAIC_NONZERO = YES
+```
+
+这只说明 `beta_I(k)!=0` 在公式上可实现。它没有 theorem-valid physical
+block schedule、具名 source pair、nonzero smooth cutoff value、packet/cut
+locator 或 source-forward occurrence，不得获得 actual credit。
+
+TPC-18 自带 certificate 也固定
+`h=6,D0=6,V=18,H in {2,3,6}`；`H=2` sector 只做 120 个 `k` 的 exact
+finite identity/support regression。certificate 明确记录
+`prime_asymptotic_evidence=false`，没有 per-`k` physical source/packet
+record，不能改名为 `h0=2` actual witness。
+
+### 20.5 branch-selection 缺口
+
+TPC-18 stopping theorem 对任一满足其 block geometry 的抽象 symmetric
+tail block，在额外假设 tail-failure lower bound 后，只推出以下至少一个：
+
+```text
+A = primitive generic determinant witness
+B = nonprimitive endpoint finite-model witness for some s>1
+```
+
+固定 `h0=2` 后，若 B 发生则其 sector 必为 `s=2`；但 theorem 没有排除
+A，也没有无条件证明 B、给出具名 source-locked block，或证明本仓库
+packet 的 tail failure。具名/source-locked block 是本审计的额外 actual
+要求，不是 TPC-18 定理的输出。此前 primitive
+seed/mask 的 finite failures 不等于 aggregate alternative A 被 theorem
+排除，故不得反推 B。TPC-18 还明确声明 endpoint localization 不推出
+endpoint correlation 小量；剩余 finite-model lattice sum 仍需新估计。
+
+因此，放宽到通用 TPC-18 参数后，route-level 缺口依次为：
+
+```text
+SOURCE_LOCKED_THEOREM_VALID_H0_2_BLOCK_AND_THEOREM_BACKED_TAIL_FAILURE
+  = ABSENT
+NONPRIMITIVE_ALTERNATIVE_B_SELECTION_THEOREM = ABSENT
+NAMED_ACTUAL_COMMON_K_ENDPOINT_PACKET_ATTACHMENT = ABSENT
+```
+
+Gate 0 已 fail closed，normalization 与 complete physical-loss ledger
+未进入审核，不能用“尚未审核”改写成“已通过”。
+
+### 20.6 新 source、回归与最终裁决
+
+本轮启动 `git pull --rebase origin main` 为 already up to date；HEAD
+`f2f98b0bdc4b56c36292e9211b19c1d2e45ffae0` 之后没有新增 primary
+TPC theorem source。RH-327/328 已在上一轮按对象错型排除；本轮没有新的
+reopen trigger。
+
+TPC-206 三项、TPC-205 三项、TPC-194 hardening、TPC-133--136、
+TPC-184/189 normal/optimized 与 TPC-173--179 optimized 全部通过。
+
+扩展回归发现上一轮刷新 TPC-134--136 upstream SHA pins 后，
+TPC-143 committed certificate 尚未级联刷新：
+
+```text
+TPC-143 obligations = BYTE_IDENTICAL (2,988 rows)
+TPC-143 --check = DRIFT_AT_CERTIFICATE_ONLY
+current certificate sha256
+  = e398b38b39e8a094123d2830a42ea4806d820655f55a5425f10d985a0783a724
+in-memory regenerated certificate sha256
+  = de1d191500da4c8de025029c08970709968407f51804b3a2a148e41620764642
+semantic/census/claim fields changed = 0
+provenance leaf changes = 12
+```
+
+12 个 leaves 仅把五条 legacy raw-hash bindings 的 recorded SHA/status 与总
+status 从 stale 刷到 canonical UTF-8/LF match；obligations、census、
+proved、actual status、first missing 与 claim boundary 全部不变。
+隔离副本证明刷新会沿 TPC-143--179，并继续经 source inventories/releases
+级联到 TPC-204--206。为避免在本次数学 gate 中静默重写已发布论文与稳定
+PDF/source-lock release，本轮不执行该全链 mechanical refresh。它不是
+theorem trigger，也不改变上述零 occurrence 裁决；但在下一篇编号论文发布
+前必须单独完成完整 provenance cascade、重建受影响 releases 并全链
+`--check`：
+
+```text
+PROVENANCE_CASCADE_REFRESH_REQUIRED_BEFORE_NEXT_NUMBERED_RELEASE = YES
+```
+
+最终裁决：
+
+```text
+current D0=0,V=2 source-locked packet
+  = FAIL_CLOSED_AT_BETA_I_K_NE_0
+
+general-parameter h0=2 route
+  = FAIL_CLOSED_AT_SOURCE_LOCKED_THEOREM_VALID_BLOCK_AND_TAIL_FAILURE
+    THEN_B_SELECTION_AND_ACTUAL_PACKET_ATTACHMENT
+
+TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE
+  = STOP_SCOPED_NOT_REOPENED
+
+general TPC-18 formal beta nonzero = YES_L0_ONLY
+current source-locked h0=2 beta-nonzero records = 0
+actual named common-k endpoint records = 0
+actual source-forward records = 0
+production occurrences = 0
+formal archive projection = 13/42
+formal first missing = D at field 9
+TPC207_TRIGGER = NO
+TPC207_CREATED = false
+```
+
+本轮新增且仅新增第 6 节的一个 finite-corpus cell。全部旧 cells，尤其
+`TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1`，继续 `STOP_SCOPED`。
+两个 O161 parents、pair-native reroute、H1 与 global architecture
+继续 `OPEN`；fixed-atom credit 为 0，strict `1/400` 为 `UNPAID`，
+`L2=NONE`。
+
+下一项不编号 architecture gate 冻结为：
+
+```text
+TPC18_H0_2_NONPRIMITIVE_ALTERNATIVE_SELECTION_AND_ACTUAL_PACKET_ATTACHMENT_GATE
+```
+
+固定顺序是：
+
+1. source-lock 一个 theorem-valid `h0=2` symmetric tail block、exact
+   `X,L,K,R,V,D0` schedule 与 actual tail-failure input；
+2. 新 theorem 排除 primitive alternative A，或直接给出 `s=2`
+   finite-model correlation B 的所需下界；
+3. 在同一 source lock 上冻结 named common `k`、`beta_I(k)!=0`、endpoint
+   coefficient、source pair 与 actual packet/cut locator；
+4. 只有前三关通过，才审 TPC-205/206 source-forward fields、
+   normalization 与 complete physical-loss ledger。
+
+`(D0,V,k,e)=(6,18,22,11)` 只可作为 algebraic diagnostic candidate，
+不得预记为 physical record。只有上述四关真实通过，才允许讨论 TPC-207。
+
+## 21. 下一会话可直接粘贴
 
 ```text
 进入仓库：
@@ -2901,54 +3182,66 @@ foreach ($s in @(
 
 当前编号事实终点仍是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 本轮完成
-ONE_POSITIVE_DETERMINANT_TWO_PRIME_PRIME_MIXED_D_MASK_AND_OPENED_PACKET_ATTACHMENT_GATE。
-冻结 seed X=512,h0=2,alpha=(23,1,k=24),gamma=(11,2,k=48),
-j=24,block=(4,5,0),L=16,K=32,det=+2。两侧ell均为prime，archive
-joins通过，但nonzero actual physical mask attachment在uppercase D之前失败。
+TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE。
 
-H=rad(h0)=2。TPC-18 primitive mask在两侧分别给gcd(24,2)=2和
-gcd(48,2)=2，joint value=0；TPC-25 actual row family排除d_gamma=2，
-且j=24也不在primitive orbit support；TPC-32同样排除m_gamma=22和
-j=24。TPC-93不会新造carrier。
+TPC-18 的精确公式是
+beta_I(k)=sum_{d|k,D0<d<=V}mu(d)。对h0=s=2，
+Omega_2(e)=1_{D0<e<=V}-1_{D0<2e<=V}，只允许同一common k上的
+beta_I(k)^2；different-k opened rows不得合并。
 
-首致命为：
-SOURCE_LOCKED_NONZERO_ACTUAL_JOINT_PHYSICAL_MASK_FOR_TPC23_11_SEED=ABSENT。
-TPC-18 formal xi=1虽形式覆盖两行，但没有formal-to-physical attachment
-theorem，不能冒充TPC-25/32 actual packet。
+通用公式并不恒零：纯代数候选(D0,V,k,e)=(6,18,22,11)给
+Omega_2(11)=1、beta_I(22)=-1。但它没有theorem-valid physical schedule、
+具名source pair、cutoff nonzero、packet/cut locator或source-forward
+occurrence，只能记为L0 formal candidate。
 
-因此D=1 gate未被解锁；D/J/Q18均未materialize，projection仍13/42，
-field-order first missing仍是D。独立all-ref census也没有找到任何
-source theorem给出同名omega_1(1),omega_1(2)都非零或joint locator。
-support [D,2D]只条件强制D=1，不能证明endpoint nonzero。
+当前source-locked TPC-133 packet固定D0=0,V=2。虽然有10个同偶数k的
+prime-source formal fibers、80 ordered/40 unordered formal pairs，但
+I={1,2}，故每个偶数k都有beta_I(k)=mu(1)+mu(2)=0。source-locked
+h0=2 beta-nonzero records=0，materialized source-locked h0=2 nonzero
+per-k endpoint records=0。
+
+TPC-136四张downstream maps仍空；TPC-143的2,988个actual_map_edges全空；
+TPC-153的2,988个actual occurrence IDs全缺；TPC-154的8,967条edges全为
+formal，theorem-backed actual provenance=0。TPC-205/206的k=24与48
+不得拼接。registry新增字段=0、actual occurrence IDs=0、projection仍
+13/42、field-order first missing仍是D。
+
+TPC-18 finite certificate固定h=6,D0=6,V=18，只是exact algebraic regression，
+明确prime_asymptotic_evidence=false；它不是h0=2 actual source-forward
+record。stopping theorem也只对满足geometry的抽象block，在额外
+tail-failure lower bound假设后给primitive A / nonprimitive B至少一个成立；
+它不供应具名source-locked block或tail failure。当前没有theorem排除A或
+直接选择s=2的B。
+endpoint localization本身不推出剩余correlation小量。
 
 新增且仅新增：
-DECLARED_X512_H2_ALPHA23_D1_GAMMA11_D2_POSDET2_ACTUAL_PHYSICAL_JOINT_MASK_ATTACHMENT_V1
+DECLARED_TPC18_H0_2_COMMON_K_ENDPOINT_SOURCE_FORWARD_RECORD_CORPUS_V1
 =STOP_SCOPED。
 
 保持第 6 节全部旧 cells（尤其 TPC193 V1）为 STOP_SCOPED；保持两个
 O161 parents、pair-native reroute、H1 与 global architecture OPEN；
 fixed-atom credit=0、strict 1/400 UNPAID、L2=NONE。
 
-TPC-18 s=2 endpoint是同一common k的beta_I(k)^2对象；当前seed的
-k_alpha=24,k_gamma=48不同，且D0=0,V=2时beta_I(k)=0对所有even k。
-不得把该seed偷渡为nonprimitive witness。
+本轮pull为already up to date，没有新增primary TPC theorem source。
+TPC-206/205/194、TPC-133--136、TPC-184/189 normal/optimized与
+TPC-173--179 optimized全部通过。
 
-新pull的RH-327/328是noisy Markov cyclic-trace/synthetic shell对象；
-RH-328的joint equation仍以unproved physical shell representation/scale/
-contrasts为条件。其d/J/L/D均与TPC符号错型，没有Möbius pair、common-k
-endpoint或opened packet；其Hardy normalization与trace ledger不能提供
-TPC formula-semantic normalization或complete physical-loss ledger。
-没有其他新增primary TPC theorem source。
-
-TPC-134--136旧upstream SHA pins已刷新到当前已提交payload；生成内容未变，
-TPC-133--136 normal/optimized以及既有主链回归均通过。
+扩展回归发现TPC-143 --check在certificate-only provenance上DRIFT：
+2,988 obligations字节完全相同，12个漂移leaves只把TPC-134--136旧
+raw-hash bindings从stale更新为canonical match；semantic/census/claim
+字段变化为0。刷新会纯hash级联经过TPC-143--206并触及已发布release
+manifests，故本次数学gate没有静默重写它。该漂移不改变零occurrence裁决，
+但下一篇编号论文发布前必须完成全链provenance cascade、受影响release
+重建和全部--check。
+PROVENANCE_CASCADE_REFRESH_REQUIRED_BEFORE_NEXT_NUMBERED_RELEASE=YES。
 
 无需再请求单独工作流授权。下一项有限不编号architecture gate为：
-TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE。只有actual
-source先提供同一common k、s=2、beta_I(k)!=0、named endpoint coefficient
-与source-forward record，才继续后续字段。当前D0=0,V=2 packet和23/11
-seed都不可复用。禁止different-k->common-k、formal->actual、support->nonzero、
-endpoint localization->smallness。
+TPC18_H0_2_NONPRIMITIVE_ALTERNATIVE_SELECTION_AND_ACTUAL_PACKET_ATTACHMENT_GATE。
+先source-lock theorem-valid h0=2 block与actual tail-failure input；再由
+新theorem排除primitive A或直接下界s=2的B；然后才冻结同一common k、
+beta_I(k)!=0、named endpoint coefficient、source pair与actual packet/cut
+locator。前三关通过后才审source-forward registry、normalization和完整
+physical-loss ledger。禁止formal->actual、endpoint localization->smallness。
 
 主会话只保留结论、路线选择、阻断项和最终审核摘要；长扫描、定理原文
 核查、schema exploit review、构建日志和逐页 PDF 检查交给分身；所有
