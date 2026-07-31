@@ -1,0 +1,561 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage{cleveref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\title{Joint Alias--Parity--Shell Matching:\\
+Fixed-Reference Certificates and Exponential Contrast Precision}
+\author{Bin Wang}
+\date{July 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The first-alias ledger now has actual localized boundary, neighboring-shell,
+and far-remainder slots, but the shell is not identified with the earlier
+forward Gaussian laws.  We formulate the exact fixed-reference matching
+equation without making that identification.  If a typed shell representation
+has scale $L$, physical contrast $c_{\rm phys}$, fixed deterministic contrast
+$c_0$, and observation error $\cE_{\rm obs}$, then the full signed packet is
+exactly
+\[
+ e=L(c_{\rm phys}^{2k}-y)+\cE_{\rm obs}+\cR,
+ \qquad
+ y=c_0^{2k}+\frac{\cA-\cP-\cB}{L}.
+\]
+In alias-normalized variables this gives
+$y=z_0+(1-q-b)/\ell$.  On a fixed phase, the parity ratio and endpoint
+clearance remain synchronized.  If $L$ is comparable to the alias scale,
+$y$ stays away from zero, and the observation error plus far remainder is
+$o(kR^{-2k})$, target closure forces contrast-radius precision
+$o((\beta R)^{-2k}/k)$.  We also prove a sharp interval certificate retaining
+every trace-observation Duhamel weight, and an explicit scoped counterexample:
+the best-case reachability distance may vanish while the physical mismatch is
+order $L$ and diverges relative to $kR^{-2k}$.  The shell representation,
+contrast, observation bound, and far remainder remain unproved for the actual
+operator; no full-trace replacement or Riemann-hypothesis conclusion follows.
+\end{abstract}
+
+\section{The actual packet and retained interface}
+
+Let $u_c\in(1,2)$ solve
+$u^3-2u^2+2u-2=0$, put
+\begin{equation}
+ f(x)=1-u_cx^2,
+ \qquad
+ \lambda=2u_c(u_c-1),
+ \qquad
+ r_H=0.85,
+ \qquad
+ R=1.4,
+ \label{eq:route-constants}
+\end{equation}
+and let $K_\sigma$ be the row-normalized folded noisy Markov operator on
+$[0,1]$.  For a measurable $J\subset[0,1]$, let $M_J$ be multiplication by
+its indicator and define the localized noisy and deterministic cyclic
+observations
+\begin{align}
+ L_{\sigma,n}(J)&=\Tr(M_JK_\sigma^n),
+ \label{eq:localized-noisy}\\
+ P_n(J)&=\sum_{\substack{f^n(x)=x\\x\in J}}
+ \frac{1}{|1-(f^n)'(x)|}.
+ \label{eq:localized-flat}
+\end{align}
+
+We retain the RH-327 physical basepoint partition.  If $p_{2k}$ is the
+distinguished boundary periodic point, write
+\begin{align}
+ \Delta_k^{\rm clr}
+ &=1-p_{2k}=C_{\rm b}\lambda^{-2k}\{1+o(1)\},
+ & C_{\rm b}&>0,
+ \label{eq:clearance}\\
+ h(x)&=\sqrt{\frac{1-\sqrt{(1-x)/u_c}}{u_c}},
+ &s_{\sigma,k}&=h(p_{2k}),
+ \label{eq:source}
+\end{align}
+and set
+\begin{equation}
+ b_*=u_c^{-1/2},
+ \qquad
+ q_{{\rm b},\sigma,k}=\frac{b_*-s_{\sigma,k}}{\sqrt\sigma},
+ \qquad
+ q_{\sigma,k}(x)=\frac{x-s_{\sigma,k}}{\sqrt\sigma}.
+ \label{eq:partition-coordinate}
+\end{equation}
+For a fixed radius $A>0$, the two half-open windows are
+\begin{align}
+ J^-_{\sigma,k,A}
+ &=\{x\in[0,1]:q_{{\rm b},\sigma,k}-A
+       \le q_{\sigma,k}(x)<q_{{\rm b},\sigma,k}\},
+ \label{eq:left-window}\\
+ J^+_{\sigma,k,A}
+ &=\{x\in[0,1]:q_{{\rm b},\sigma,k}
+       \le q_{\sigma,k}(x)\le q_{{\rm b},\sigma,k}+A\},
+ \label{eq:right-window}
+\end{align}
+and $F_{\sigma,k,A}$ is their complement.  The actual Hardy-scaled slots at
+order $2k$ are
+\begin{align}
+ \cB_{\sigma,k}
+ &=r_H^{-2k}\{L_{\sigma,2k}(J^-_{\sigma,k,A})
+                  -P_{2k}(J^-_{\sigma,k,A})\},
+ \label{eq:boundary-slot}\\
+ \cS_{\sigma,k}
+ &=r_H^{-2k}\{L_{\sigma,2k}(J^+_{\sigma,k,A})
+                  -P_{2k}(J^+_{\sigma,k,A})\},
+ \label{eq:shell-slot}\\
+ \cR_{\sigma,k}
+ &=r_H^{-2k}\{L_{\sigma,2k}(F_{\sigma,k,A})
+                  -P_{2k}(F_{\sigma,k,A})\}.
+ \label{eq:far-slot}
+\end{align}
+With
+\begin{equation}
+ \cT_{\sigma,2k}
+ :=r_H^{-2k}\{\Tr K_\sigma^{2k}-P_{2k}([0,1])\},
+ \label{eq:raw-packet}
+\end{equation}
+they satisfy the exact actual partition
+$\cT_{\sigma,2k}=\cB_{\sigma,k}+\cS_{\sigma,k}+\cR_{\sigma,k}$.
+
+The parity and first-counterloop packets are typed by
+\begin{align}
+ \lambda_-(\sigma)&=-(1-\delta_\sigma),
+ &\delta_\sigma&=C_*\sqrt\sigma+o(\sqrt\sigma),
+ \label{eq:parity-type}\\
+ \beta&=(r_H\sqrt\lambda)^{-1},
+ &\beta_k&=\beta\exp\left[-\frac{\log C_M}{2k}+o(k^{-1})\right],
+ \label{eq:alias-type}
+\end{align}
+where $C_*,C_M>0$, and
+\begin{align}
+ \cP_{\sigma,2k}
+ &=r_H^{-2k}\{1-\lambda_-(\sigma)^{2k}\}>0,
+ \label{eq:parity-packet}\\
+ \cA_{k,2k}
+ &=(2k-2)\beta_k^{2k}+2\beta^{2k}>0.
+ \label{eq:alias-packet}
+\end{align}
+The exact signed coefficient ledger inherited from RH-326 and RH-327 is
+\begin{equation}
+ \boxed{
+ e_{\sigma,k}
+ =\cB_{\sigma,k}+\cS_{\sigma,k}+\cR_{\sigma,k}
+  +\cP_{\sigma,2k}-\cA_{k,2k}.}
+ \label{eq:exact-ledger}
+\end{equation}
+The target is
+\begin{equation}
+ H_k=kR^{-2k}.
+ \label{eq:target}
+\end{equation}
+
+All moving-order limits use
+\begin{equation}
+ k=k_\sigma
+ =\frac{\log(1/\sigma)}{2\log\lambda}+O(1),
+ \qquad
+ \eta_\sigma=k_\sigma-
+ \frac{\log(1/\sigma)}{2\log\lambda},
+ \qquad
+ \eta_\sigma\longrightarrow\eta
+ \label{eq:clock}
+\end{equation}
+along a fixed-phase subsequence.  Thus
+\begin{equation}
+ d_{\sigma,k}:=\frac{\Delta_k^{\rm clr}}{\sigma}
+ \longrightarrow C_{\rm b}\lambda^{-2\eta}.
+ \label{eq:clearance-phase}
+\end{equation}
+For $d\ge0$, let
+\begin{equation}
+ \phi(t)=(2\pi)^{-1/2}e^{-t^2/2},
+ \qquad
+ \Phi(d)=\int_{-\infty}^d\phi(t)\,dt,
+ \qquad
+ g_d(v)=\frac{\phi(v-d)}{\Phi(d)}\mathbf1_{v\ge0}.
+ \label{eq:entrance-density}
+\end{equation}
+With standard normals $Z_1,Z_2$ independent of $V$ and of each other, the
+retained local frame is
+\begin{equation}
+ V\sim g_d,
+ \qquad U=-2u_cV-Z_1,
+ \qquad W=-\lambda U+Z_2,
+ \qquad (V,U,W)\text{ has orientation }(+,-,+),
+ \label{eq:frame}
+\end{equation}
+with output shift $\kappa_{\rm aff}d=2u_c\lambda d$.  These coordinates
+remain interface data; they do not identify the cyclic observation in
+\eqref{eq:shell-slot}.
+
+\section{The exact fixed-reference matching equation}
+
+Fix $L=L_{\sigma,k}>0$ and a deterministic reference contrast
+$c_0=c_{0,k}\in[-1,1]$.  For a proposed physical contrast
+$c_{\rm phys}=c_{\sigma,k}^{\rm phys}\in[-1,1]$, put
+\begin{equation}
+ X_{k,L}(c_{\rm phys};c_0)
+ =L\{c_{\rm phys}^{2k}-c_0^{2k}\}.
+ \label{eq:exchange-shell}
+\end{equation}
+The actual shell slot has a representation error
+\begin{equation}
+ \cE_{\sigma,k}^{\rm obs}
+ :=\cS_{\sigma,k}-X_{k,L}(c_{\rm phys};c_0).
+ \label{eq:observation-error}
+\end{equation}
+This is a definition once $L,c_0,c_{\rm phys}$ are supplied.  No smallness
+or physical identification is assumed.
+
+Define the signed demand and required even power by
+\begin{align}
+ D_{\sigma,k}
+ &=\cA_{k,2k}-\cP_{\sigma,2k}-\cB_{\sigma,k},
+ \label{eq:demand}\\
+ y_{\sigma,k}
+ &=c_0^{2k}+\frac{D_{\sigma,k}}{L}.
+ \label{eq:required-power}
+\end{align}
+
+\begin{theorem}[Exact fixed-reference joint equation]
+\label{thm:joint-equation}
+For every typed choice above,
+\begin{equation}
+ \boxed{
+ e_{\sigma,k}
+ =L\{c_{\rm phys}^{2k}-y_{\sigma,k}\}
+  +\cE_{\sigma,k}^{\rm obs}+\cR_{\sigma,k}.}
+ \label{eq:joint-equation}
+\end{equation}
+Moreover, the image of \eqref{eq:exchange-shell} over
+$|c_{\rm phys}|\le1$ is
+\begin{equation}
+ I_{k,L,c_0}
+ =[-L|c_0|^{2k},\,L(1-|c_0|^{2k})],
+ \label{eq:interval}
+\end{equation}
+and the RH-327 best-case screen has the exact normalized form
+\begin{equation}
+ \dist(D_{\sigma,k},I_{k,L,c_0})
+ =L\,\dist(y_{\sigma,k},[0,1]).
+ \label{eq:distance-identity}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Substitute
+$\cS=X_{k,L}+\cE^{\rm obs}$ into \eqref{eq:exact-ledger} and use
+$D=\cA-\cP-\cB$:
+\[
+ e=X_{k,L}-D+\cE^{\rm obs}+\cR
+  =L(c_{\rm phys}^{2k}-y)+\cE^{\rm obs}+\cR.
+\]
+Since $c_{\rm phys}^{2k}$ ranges exactly over $[0,1]$, translation by
+$-Lc_0^{2k}$ proves \eqref{eq:interval}.  The affine change
+$D=L(y-c_0^{2k})$ then gives \eqref{eq:distance-identity}.
+\end{proof}
+
+\begin{corollary}[Conditional physical closure criterion]
+\label{cor:closure}
+For an identified physical representation, target closure is equivalent to
+the signed condition
+\begin{equation}
+ L(c_{\rm phys}^{2k}-y_{\sigma,k})
+ +\cE_{\sigma,k}^{\rm obs}+\cR_{\sigma,k}=o(H_k).
+ \label{eq:signed-closure}
+\end{equation}
+If additionally
+$\cE_{\sigma,k}^{\rm obs}+\cR_{\sigma,k}=o(H_k)$, then it is equivalent to
+\begin{equation}
+ c_{\rm phys}^{2k}-y_{\sigma,k}=o(H_k/L).
+ \label{eq:power-precision}
+\end{equation}
+\end{corollary}
+
+This corollary is conditional on the physical fields.  The repository does
+not identify $L,c_0,c_{\rm phys}$, prove \eqref{eq:observation-error} small,
+or control $\cR$.
+
+\section{Phase law and contrast conditioning}
+
+Normalize by the positive alias packet:
+\begin{equation}
+ q_{\sigma,k}=\frac{\cP_{\sigma,2k}}{\cA_{k,2k}},
+ \qquad
+ b_{\sigma,k}=\frac{\cB_{\sigma,k}}{\cA_{k,2k}},
+ \qquad
+ \ell_{\sigma,k}=\frac{L}{\cA_{k,2k}},
+ \qquad
+ z_{0,k}=c_0^{2k}.
+ \label{eq:normalized-data}
+\end{equation}
+
+\begin{proposition}[Phase-normalized required power]
+\label{prop:phase-power}
+The required power is exactly
+\begin{equation}
+ \boxed{
+ y_{\sigma,k}
+ =z_{0,k}+\frac{1-q_{\sigma,k}-b_{\sigma,k}}
+                    {\ell_{\sigma,k}}.}
+ \label{eq:normalized-power}
+\end{equation}
+On a fixed phase, RH-326 gives
+\begin{equation}
+ q_{\sigma,k}=C_*C_M\lambda^\eta+o(1).
+ \label{eq:phase-ratio}
+\end{equation}
+If also
+$b_{\sigma,k}\to b_\eta$,
+$\ell_{\sigma,k}\to\ell_\eta\in(0,\infty)$, and
+$z_{0,k}\to z_{0,\eta}$, then
+\begin{equation}
+ y_{\sigma,k}\longrightarrow
+ y_\eta:=z_{0,\eta}
+ +\frac{1-C_*C_M\lambda^\eta-b_\eta}{\ell_\eta}.
+ \label{eq:phase-limit}
+\end{equation}
+When $y_\eta\in(0,1)$, the unique required contrast magnitude satisfies
+\begin{equation}
+ r_k:=y_{\sigma,k}^{1/(2k)}
+ =1+\frac{\log y_\eta}{2k}+o(k^{-1}).
+ \label{eq:unit-edge-law}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Divide \eqref{eq:required-power} by the definitions in
+\eqref{eq:normalized-data} to obtain \eqref{eq:normalized-power}.  The fixed
+phase law yields \eqref{eq:phase-limit}.  Finally,
+$r_k=\exp\{(\log y_{\sigma,k})/(2k)\}$ and
+$\log y_{\sigma,k}\to\log y_\eta$.
+\end{proof}
+
+The limits of $b_{\sigma,k}$ and $\ell_{\sigma,k}$ are assumptions, not
+archived physical theorems.  The same phase simultaneously fixes the
+clearance in \eqref{eq:clearance-phase}; it cannot be optimized independently
+after inspecting \eqref{eq:normalized-power}.
+
+\begin{theorem}[Exponential contrast-radius precision]
+\label{thm:radius-precision}
+Let $y_k\in[a,1]$ for some fixed $a>0$, let
+$\rho_k=|c_{\rm phys}|\in[0,1]$, put $r_k=y_k^{1/(2k)}$, and suppose
+$\varepsilon_k:=H_k/L\to0$.  Then
+\begin{equation}
+ \rho_k^{2k}-y_k=o(\varepsilon_k)
+ \quad\Longleftrightarrow\quad
+ \rho_k-r_k=o(\varepsilon_k/k).
+ \label{eq:precision-equivalence}
+\end{equation}
+If in addition
+\begin{equation}
+ \cA_{k,2k}=\frac{2k}{C_M}\beta^{2k}\{1+o(1)\},
+ \qquad
+ \frac{L}{\cA_{k,2k}}\longrightarrow\ell\in(0,\infty),
+ \label{eq:same-order-scale}
+\end{equation}
+then
+\begin{align}
+ \frac{H_k}{L}
+ &=\frac{C_M}{2\ell}(\beta R)^{-2k}\{1+o(1)\},
+ \label{eq:power-scale}\\
+ |\rho_k-r_k|
+ &=o\left(\frac{(\beta R)^{-2k}}{k}\right)
+ \label{eq:radius-scale}
+\end{align}
+is the contrast-radius demand corresponding to \eqref{eq:power-precision}.
+\end{theorem}
+
+\begin{proof}
+Assume first that the power mismatch is $o(\varepsilon_k)$.  For large $k$
+it is at most $a/2$, so both $y_k$ and $\rho_k^{2k}$ are at least $a/2$.
+The mean-value theorem gives
+\begin{equation}
+ 2k\min(\rho_k,r_k)^{2k-1}|\rho_k-r_k|
+ \le |\rho_k^{2k}-r_k^{2k}|
+ \le 2k|\rho_k-r_k|.
+ \label{eq:mvt-bounds}
+\end{equation}
+Because $0\le\min(\rho_k,r_k)\le1$ and its $2k$th power is at least $a/2$,
+the left coefficient is at least $ka$.  This proves the forward implication.
+The upper bound in \eqref{eq:mvt-bounds} proves the converse.  Finally,
+divide $H_k=kR^{-2k}$ by \eqref{eq:same-order-scale} to obtain
+\eqref{eq:power-scale}; substitute into \eqref{eq:precision-equivalence}.
+\end{proof}
+
+At even order the signs $c_{\rm phys}$ and $-c_{\rm phys}$ are identical in
+every formula above.  Thus even perfect matching identifies at most a
+contrast magnitude.
+
+\section{Sharp uncertainty certificate and a false-positive theorem}
+
+Retain the RH-325 trace-observation Duhamel ledger.  Let
+$A_j,G_j:B_{j-1}\to B_j$, $B_m=B_0$, and suppose
+$|\mathfrak t(H)|\le T\lVert H\rVert$.  Then
+\begin{equation}
+ |\mathfrak t(A_m\cdots A_1-G_m\cdots G_1)|
+ \le \cU_{\sigma,k}:=\sum_{j=1}^mW_j\delta_j,
+ \label{eq:duhamel-bound}
+\end{equation}
+where
+\begin{equation}
+ \delta_j=\lVert A_j-G_j\rVert,
+ \qquad
+ W_j=T\prod_{\ell=j+1}^m\lVert A_\ell\rVert
+       \prod_{\ell=1}^{j-1}\lVert G_\ell\rVert.
+ \label{eq:duhamel-weights}
+\end{equation}
+No Markov $L^1$ contraction may replace the observation norm or these
+prefix/suffix factors.  Applying \eqref{eq:duhamel-bound} to
+$\cE^{\rm obs}$ additionally requires an identified operator-product
+realization of the shell observation; no such realization is proved here.
+
+\begin{theorem}[Sharp symmetric uncertainty interval]
+\label{thm:uncertainty}
+Put
+\begin{equation}
+ m_{\sigma,k}=L(c_{\rm phys}^{2k}-y_{\sigma,k}).
+ \label{eq:model-mismatch}
+\end{equation}
+If
+$|\cE_{\sigma,k}^{\rm obs}|\le\cU_{\sigma,k}$ and
+$|\cR_{\sigma,k}|\le V_{\sigma,k}$, then the set of residuals compatible
+with only these symmetric bounds is exactly
+\begin{equation}
+ [m_{\sigma,k}-\cU_{\sigma,k}-V_{\sigma,k},\,
+  m_{\sigma,k}+\cU_{\sigma,k}+V_{\sigma,k}].
+ \label{eq:uncertainty-interval}
+\end{equation}
+Its best possible and worst possible absolute residuals are
+\begin{align}
+ E_{\rm best}
+ &=\max\{|m_{\sigma,k}|-\cU_{\sigma,k}-V_{\sigma,k},0\},
+ \label{eq:best-residual}\\
+ E_{\rm worst}
+ &=|m_{\sigma,k}|+\cU_{\sigma,k}+V_{\sigma,k}.
+ \label{eq:worst-residual}
+\end{align}
+Consequently every error pair allowed by the bounds gives $o(H_k)$ if and
+only if $E_{\rm worst}=o(H_k)$.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:joint-equation} is $e=m+\cE^{\rm obs}+\cR$.  The Minkowski
+sum of the two symmetric error intervals is
+$[-\cU-V,\cU+V]$, proving \eqref{eq:uncertainty-interval}.  Distance from
+zero to this interval gives \eqref{eq:best-residual}; its farthest endpoint
+gives \eqref{eq:worst-residual}.
+\end{proof}
+
+The best case is an existential statement over an uncertainty class.  It
+does not show that the actual observation error and remainder choose the
+cancelling values.
+
+\begin{proposition}[Exact reachability can be a target-scale false positive]
+\label{prop:false-positive}
+Fix $0<\theta<1$, take $c_0=0$, and set $D_{\sigma,k}=\theta L$.  Then
+\begin{equation}
+ \dist(D_{\sigma,k},I_{k,L,0})=0,
+ \qquad
+ y_{\sigma,k}=\theta.
+ \label{eq:screen-passes}
+\end{equation}
+Nevertheless the admissible designated contrast $c_{\rm phys}=0$ with
+$\cE^{\rm obs}=\cR=0$ gives
+\begin{equation}
+ e_{\sigma,k}=-\theta L.
+ \label{eq:false-positive-residual}
+\end{equation}
+Hence if $L/H_k\to\infty$, the best-case screen vanishes identically while
+$|e_{\sigma,k}|/H_k\to\infty$.
+\end{proposition}
+
+\begin{proof}
+For $c_0=0$, \eqref{eq:interval} is $[0,L]$, which contains $\theta L$.
+Equation \eqref{eq:required-power} gives $y=\theta$.  Substitution of
+$c_{\rm phys}=0$ into \eqref{eq:joint-equation} proves the residual formula.
+\end{proof}
+
+This is a scalar information-class counterexample.  It is not evidence that
+the actual noisy operator selects $c_{\rm phys}=0$ or that its full trace
+diverges.
+
+\section{Reproducible formula diagnostics}
+
+The code evaluates only proved formulas.  For a visible phase diagnostic,
+take $k=16$, $b_{\sigma,k}=0.2$, $\ell_{\sigma,k}=1$, and $c_0=0.8$.
+Using the archived ordinary floating-point constants gives
+\begin{center}\small
+\begin{tabular}{rrrrr}
+\toprule
+$\eta$ & $C_*C_M\lambda^\eta$ & $C_{\rm b}\lambda^{-2\eta}$
+& $y$ & $y^{1/(2k)}$\\
+\midrule
+$-1$   & $0.122050$ & $1.298369$ & $0.678743$ & $0.987963$\\
+$-0.5$ & $0.158127$ & $0.773495$ & $0.642665$ & $0.986278$\\
+$0$    & $0.204869$ & $0.460805$ & $0.595923$ & $0.983954$\\
+$0.5$  & $0.265428$ & $0.274522$ & $0.535364$ & $0.980664$\\
+$1$    & $0.343888$ & $0.163545$ & $0.456904$ & $0.975820$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The boundary and shell ratios in this table are synthetic.  They are not
+fitted or measured physical trace ratios.
+
+With the leading alias scale $L=(2k/C_M)\beta^{2k}$ at phase zero, the
+matching and false-positive scales are
+\begin{center}\small
+\begin{tabular}{rrrr}
+\toprule
+$k$ & $H_k/L$ & $H_k/(kL)$ &
+false-positive $|e|/H_k$ at $\theta=1/4$\\
+\midrule
+$8$  & $2.0911\times10^{-2}$  & $2.6138\times10^{-3}$  & $1.1956\times10^{1}$\\
+$16$ & $4.4931\times10^{-4}$  & $2.8082\times10^{-5}$  & $5.5641\times10^{2}$\\
+$32$ & $2.0744\times10^{-7}$  & $6.4826\times10^{-9}$  & $1.2052\times10^{6}$\\
+$64$ & $4.4219\times10^{-14}$ & $6.9092\times10^{-16}$ & $5.6537\times10^{12}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+These are formula evaluations, not interval-certified constants or physical
+shell data.  Finite rows are reproduction checks only and are not promoted
+to all-order noisy asymptotics.
+
+\section{Claim boundary and RH-329 handoff}
+
+The paper proves the exact conditional matching equation, its normalized
+phase law, the contrast-conditioning theorem, the sharp uncertainty
+interval, and a scoped reachability false positive.  It does not prove that
+the actual shell has the exchange representation, identify its scale or
+contrast, control the RH-325 observation norm and every Duhamel weight, bound
+the second physical critical leg, prove
+$\cE^{\rm obs}=o(H_k)$ or $\cR=o(H_k)$, or establish actual joint matching.
+
+RH-329 should audit one fully fixed isolated model.  It must freeze the
+reference before seeing the demand, measure rather than optimize the physical
+contrast, retain every observation weight, and report both
+\eqref{eq:best-residual} and \eqref{eq:worst-residual} in units of $H_k$.
+A failure should be published as a scoped isolated-model negative result.  A
+finite pass would still not identify the actual noisy operator or prove the
+RH-330 full-trace transfer criterion.
+
+Gates A--E remain false/open.  This work constructs no Hilbert--Polya
+operator, identifies no Riemann zero, proves no von Mangoldt trace formula or
+completed-zeta divisor equality, and does not imply the Riemann Hypothesis.
+
+\end{document}
