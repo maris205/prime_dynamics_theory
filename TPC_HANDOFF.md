@@ -4,9 +4,11 @@
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`DECLARED_TPC1_206_REACHABLE_LOCAL_EDGE_CORPUS_V2_FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED`
+`ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_GATE0_FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED`
+以及
+`NONSELECTED_TPC18_GEOMETRY_ORDERED_PAIR_LINEAGE_JOIN_13_OF_42_STOP_SCOPED_NOT_REOPENED`
 下一篇：`null`；下一项不编号审计：
-`ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_CONSTRUCTION_GATE`
+`ONE_POSITIVE_DETERMINANT_TWO_NONSELECTED_PAIR_OPENED_D_PACKET_ATTACHMENT_GATE`
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
@@ -18,7 +20,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 是下一会话的事实来源。旧聊天记录不是事实来源。
 下文历史审计块中的所有 `tpc205_authorized=false`、`TPC-206 未授权` 与
 `USER_CONFIRMATION_REQUIRED` 都是当时的编号前快照，统一由本页页首及
-第 14--17 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
+第 14--18 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
 后续按同一有限、fail-closed 工作流继续，不再设置单独的人为编号授权门；
 这不替代 theorem evidence，也不许可跨过任何数学门槛。
 
@@ -395,6 +397,25 @@ DECLARED_TPC1_206_REACHABLE_LOCAL_OCCURRENCE_EDGE_SOURCE_CORPUS_V2
 历史 blobs，重新包装出 production actual local-occurrence edge。它不
 覆盖未来 refs、未 fetch source、真正新增的 source theorem 或独立
 architecture reroute。
+
+2026-07-31 的 one-packet source-forward 与自动 fallback census 新增且仅
+新增：
+
+```text
+DECLARED_SELECTED_ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_V1
+  = STOP_SCOPED
+DECLARED_TPC133_134_136_NONSELECTED_TPC18_GEOMETRY_ORDERED_PAIR_LINEAGE_JOIN_CORPUS_V1
+  = STOP_SCOPED
+```
+
+第一项只停止第 17 节列举的当前 source universe 中，把现有
+native/archive/path/cut 身份改名为 actual physical occurrence 后再声称
+source-forward edge；第二项只停止当前 committed TPC-133/134/136
+archive 中、排除 exact selected `103 -> 107` orientation 后、满足严格
+TPC-18 `NO_TAIL_ROOM` geometry 的 ordered pair join corpus。它们都不是
+数学不存在性定理，不停止新 primary theorem、source-locked opened-`D`
+attachment、pair-native reroute、两个 O161 parents、H1 或 global
+architecture。
 
 ## 7. Reopen triggers
 
@@ -1803,7 +1824,412 @@ UNNUMBERED_CORPUS_WIDE_NONSELECTED_PAIR_NATIVE_CONNECTED_LINEAGE_JOIN_CENSUS
 pairs，禁止 external L0 donor 与 cross-lineage splice，并始终保持
 pair reroute 与 H1 linear edge 类型分离。
 
-## 17. 下一会话可直接粘贴
+## 17. one-packet source-forward 与 nonselected pair fallback 审计
+
+### 17.1 冻结语料与 Gate 0 合同
+
+本轮在 source snapshot
+
+```text
+3dd4fe67977380289f68dd644cf4d2dba60456b5
+```
+
+上先执行：
+
+```text
+ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_CONSTRUCTION_GATE
+```
+
+候选主语料、只按实际 theorem/interface 调用追踪的直接依赖，以及用于
+冻结 actual-occurrence 类型边界的 contracts 分别为：
+
+```text
+U_main =
+{TPC-18, 32, 93, 117, 119, 123, 124, 131, 133, 134, 135, 136}
+
+U_dep =
+{TPC-15, 16, 17, 25, 29, 30, 31, 33, 86, 92,
+ 105, 107, 114, 116, 118, 121, 122, 125, 132}
+
+U_contract =
+{TPC-143--146, 153--155, 163--165, 173--175}
+```
+
+这是当前仓库的有限 source audit，不是数学上的全局不存在性声明。
+`U_main` 的 12 个目录共有 112 个被审 source blobs；所有 refs 可达历史
+没有补出该语料的 historical-only positive version。17 个非-schema
+JSON/JSONL 均可解析。
+
+Gate 0 要求先选出一个 source-locked、named actual physical
+occurrence，再沿已证正向 map 推到具体 TPC-136 cut。它禁止：
+
+```text
+native/archive/path ID -> occurrence ID 的解释性改名
+block/cumulative conservation -> per-cut occurrence-fibre conservation
+symbolic psi path multiplier -> rational local-occurrence edge weight
+从 lossy cut archive 逆猜 source occurrence
+```
+
+逐 source 类的精确近邻为：
+
+- TPC-18 有真实 symmetric tail block 与 opened-`d` 线性公式，但
+  block/row summand 没有独立 actual physical occurrence ID，也没有到
+  TPC-136 cut 的 theorem-backed edge；
+- TPC-32 有 actual row coefficient、row-pair carrier 与 ranges，但对象是
+  二次 pair/orbit，不是一个线性 cut occurrence；
+- TPC-93 对另行 supplied 的
+  `omega=(L/R,alpha,gamma,j,u)` 有 exact source-child inverse，却没有
+  production instance ID、packet ID、到 TPC-136 cut 的 crosswalk，且
+  未 source-lock 到 `h0=2`；
+- TPC-117 只给 range/residual certificate format，growing `B,w` 与
+  stable physical row IDs 未提供；
+- TPC-119/123/124 分别缺 complete canonical leaf archive、actual growing
+  stage tables 与 actual growing `G,C,z,B`；
+- TPC-131 给 occurrence-token/no-double-charge contract，但 sample tokens
+  只是 finite regression，`actual_complete_physical_registry=false`；
+- TPC-133--136 给完整 native/archive 正向结构链，却没有 actual physical
+  occurrence 类型或 ID。
+
+因此两类近邻的关键交集严格为空：
+
+```text
+{source-backed actual physical semantics + independent occurrence ID}
+intersection
+{TPC-119 -> 133 -> 134 -> 135 -> 136 forward lineage}
+= empty
+```
+
+### 17.2 最近 concrete cut 与八轴结果
+
+当前 committed archive 的结构闭合精确为：
+
+```text
+TPC-133 native rows = 866
+TPC-133 -> TPC-134 parent-hash joins = 2988 / 2988
+TPC-134 paths = 2988
+TPC-134 -> TPC-135 block-key coverage = 2988 / 2988 over 26 keys
+TPC-134 -> TPC-136 path-ID + upstream-hash joins = 2988 / 2988
+TPC-136 unique five-field cuts = 2988
+TPC-136 -> actual occurrence bridges = 0
+```
+
+TPC-136 的 2,988 个 cuts 全部为 `FRONTIER_UNMAPPED`：
+
+```text
+NO_TAIL_ROOM = 1495
+L_TOO_LOW = 1020
+K_TOO_LOW = 473
+```
+
+四张 downstream maps 的 domain 都为空、各缺 2,988 rows，source status
+全部 `NOT_TESTABLE`。最近的一条可执行正向链冻结为：
+
+```text
+X=512, h0=2, delta=1/4, Q=4, U=V=2
+native tuple = (ell,k,d) = (3,171,1)
+native_id = X=512|h0=2|ell=3|k=171|d=1
+physical_normalization tag = nu_X
+
+TPC-134 child = (jL,jK,D0,type) = (1,7,0,TAIL)
+TPC-136 cut kappa = (ell,k,native_d,jL,jK) = (3,171,1,1,7)
+TPC-135 reason = L_TOO_LOW
+TPC-136 terminal = FRONTIER_UNMAPPED
+soft_theorem_source = null
+native coefficient nonzero status = UNDECIDED
+```
+
+其 native coefficient 与 exact symbolic path term 为：
+
+```text
+c_X(3,171,1)
+  = -Lambda(3) r_4(515) W(513/512)
+
+path term
+  = -Lambda(3) r_4(515) W(513/512)
+      psi(3/2) psi(171/128)
+```
+
+`psi(3/2)psi(171/128)` 是 exact positive symbolic path multiplier，
+并参与
+`sum_(children of one native column) m = 1`。它不是 TPC-174 所需的
+exact rational occurrence-edge `lambda`，而 native-column conservation
+也不是 `sum_(actual occurrences over one cut) lambda = 1`。
+
+八轴 ledger 为：
+
+```text
+named actual physical occurrence ID = FAIL
+distinct local edge ID = FAIL
+literal five-field cut = PASS
+exact nonzero occurrence-edge / per-cut conservation = FAIL
+h0=2 lineage = PARTIAL: native/cut only
+packet schedule and ranges = PARTIAL: no same-lock physical occurrence
+formula-semantic physical normalization = FAIL: nu_X is only a copied tag
+complete nonduplicated physical-loss ledger = FAIL
+```
+
+首致命缺口因此是：
+
+```text
+SOURCE_LOCKED_NAMED_ACTUAL_PHYSICAL_OCCURRENCE_RECORD
+  IN_THE_TPC119_TO_TPC136_FORWARD_LINEAGE
+  = ABSENT
+```
+
+故：
+
+```text
+ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_GATE0
+  = FAIL_CLOSED
+TPC207_TRIGGER = NO
+TPC207_CREATED = false
+```
+
+### 17.3 自动 fallback：nonselected ordered-pair census
+
+按第 16.4 节的预定 fallback，本轮随即执行：
+
+```text
+UNNUMBERED_CORPUS_WIDE_NONSELECTED_PAIR_NATIVE_CONNECTED_LINEAGE_JOIN_CENSUS
+```
+
+pair identity 定义为同一完整 packet scope 下的 ordered
+`(alpha,gamma,j)`，其中 `j=k_alpha/d_alpha=k_gamma/d_gamma`；pair-block
+instance 再附共同 `(jL,jK,D0=0)`。两条 row 都必须经 parent hash 与
+upstream hash 正向 join 到同一 TAIL/FUM block。TPC-205 已冻结
+`ordered_pair_quotient=FORBIDDEN`，故只排 exact selected orientation
+
+```text
+alpha=(103,1), gamma=(107,1), j=5
+```
+
+的全部 4 个共同 block instances；反向 `107 -> 103` 是独立
+nonselected pair，必须保留。精确 census 为：
+
+```text
+native rows = 866
+distinct j groups = 202
+groups with at least two rows = 101
+all ordered same-j row pairs before common-block screen = 15030
+
+raw same-lineage pair identities after selected-orientation exclusion = 13227
+raw common pair-block instances = 31868
+raw instance reasons:
+  NO_TAIL_ROOM = 14406
+  K_TOO_LOW = 16666
+  L_TOO_LOW = 796
+```
+
+严格 TPC-18 geometry pool 只取 `NO_TAIL_ROOM`：这里 `L>2R` 与
+`K>2V` 已通过，当前唯一几何首缺是不存在 source-backed uppercase `D`
+使 `2D<V`。该 pool 为：
+
+```text
+strict ordered pair identities = 7157
+strict pair-block instances = 14406
+identity block multiplicity:
+  1 block = 2780
+  2 blocks = 2941
+  4 blocks = 1436
+```
+
+全部 14,406 个 instances 并列满足 TPC-205 的 13/42 maximal closure：
+
+```text
+X, h0, delta, R, V, D0, L, K,
+alpha, gamma, j, N_alpha, N_gamma
+```
+
+`R` 只按 TPC-206 已冻结的 typed `Q_133 -> R_18` alias 填入；不得把
+`Q_133` 再偷渡为 `Q_18`。精确 first missing 是 field #9：
+
+```text
+D
+blocker =
+NO_SOURCE_LOCKED_TPC18_OPENED_D_SLICE_LOCATOR
+native d is not opened uppercase D
+```
+
+因此：
+
+```text
+13/42 maximizer instances = 14406
+13/42 maximizer identities = 7157
+full 42-field completions = 0
+pair/edge/target occurrence IDs = 0
+production occurrences = 0
+```
+
+其中至少一侧 `Lambda(ell)` 已确定为零的 instances 有 13,142；余下
+1,264 instances / 669 identities 也只表示两侧 Lambda leaves
+potentially nonzero，仍缺 `W/r_R` 取值、joint mask、完整 coefficient
+nonzero、pair occurrence 与 normalization return，不能提升为 active
+candidate。determinant-two 子池有 2,054 instances / 968 identities；
+再限两侧 Lambda leaves potentially nonzero 后只有 124 instances /
+106 identities。
+
+审计 ID 的 canonical digests 为：
+
+```text
+strict instances:
+  count = 14406
+  bytes = 759518
+  sha256 = ceb4c93791ce1f8a88d2d6ba4adb05dcdc19df045272e3c7a423184f32bcd116
+
+strict identities:
+  count = 7157
+  bytes = 269967
+  sha256 = 167dcd24b0fa7380651719e1792eb1461c51be4ecec474778e162b334106b166
+```
+
+ID 使用 UTF-8 字典序、LF join 并带末尾 LF；instance ID 为完整 pair
+identity 再附 `jL,jK,D0`。此 digest 冻结 census，不把 formal row
+投影变成 production theorem。
+
+### 17.4 schema、checker 与最终裁决
+
+目标 current/history 中这些非空 ID key 的计数全部为零：
+
+```text
+actual_occurrence_id
+physical_occurrence_id
+occurrence_id
+packet_id
+parent_id / canonical_parent_id
+stage_id
+group_id / physical_group_id
+edge_id / edge_instance_id
+```
+
+TPC-131 仅有 6 个 generic finite-regression labels，且
+`actual_complete_physical_registry=false`。TPC-133/134/136 schemas 是
+archive-shape schemas；`additionalProperties=false` 能拒绝偷偷塞入
+occurrence 字段，却不能证明 occurrence。TPC-134 的 symbolic
+`edge_multiplier_ast` 也不是 TPC-174 rational occurrence-edge。
+TPC-136 对未来 `PROVED` map 的 validator 不解析外部 theorem truth，
+因此 source-label self-attestation 仍是独立 trust boundary；当前四图
+仍为 empty/`NOT_TESTABLE`。
+
+平台复核为：
+
+```text
+TPC-133 normal and python -O --check = PASS
+TPC-133 -> 134 semantic joins = 2988 / 2988
+TPC-134 -> 136 semantic joins = 2988 / 2988
+TPC-134/135 raw-byte archived SHA checks on LF checkout = FAIL_EOL_PIN
+TPC-136 archived hash-chain check = FAIL_FROM_UPSTREAM_EOL_PIN
+git diff on old artifacts = EMPTY
+```
+
+旧 pins 恰好是把当前 LF 文本转为 CRLF 后的 SHA-256；这是
+EOL-sensitive raw-byte portability pin，不是公式或逐记录语义 join
+漂移。本轮没有修改旧证书，也不把 semantic match 说成当前机器
+hash-chain fully reproducible。TPC-173--179、TPC-184、TPC-189、
+TPC-205 与 TPC-206 的 required checks 均通过。snapshot 新增的
+RH-323/324 分别是 affine Gaussian probability model 与 folded physical
+kernel/affine-leg remainder；两者没有 TPC cut、occurrence、Mobius 或
+determinant-two source theorem，类型上不能 reopen 本 gate。发布前
+rebase 新增的 `a39c434` 只修改 RH-324 的 joint-density support 实现与
+测试，也没有改动 TPC corpus 或上述 theorem-state。
+
+本轮最终 verdicts 为：
+
+```text
+ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_GATE0
+  = FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED
+
+NONSELECTED_TPC18_GEOMETRY_ORDERED_PAIR_LINEAGE_JOIN
+  = PROVED_FINITE_CORPUS_MAXIMUM_13_OF_42
+    FIRST_MISSING_D
+    ZERO_FULL_COMPLETIONS
+    ZERO_PRODUCTION_OCCURRENCES
+    STOP_SCOPED_NOT_REOPENED
+
+TPC207_TRIGGER = NO
+TPC207_CREATED = false
+```
+
+新增且仅新增第 6 节的两个 cells。第 6 节全部旧 cells，尤其
+`TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1`，继续原样
+`STOP_SCOPED`。两个 O161 parents、pair-native reroute、H1 与 global
+architecture 继续 `OPEN`；fixed-atom credit 为 0，strict `1/400` 为
+`UNPAID`，`L2=NONE`。
+
+### 17.5 下一有限路线
+
+pair census 已把当前唯一最接近 source-side 首缺的有限池从 14,406
+instances 收紧到 124 个 determinant-two、two-Lambda-potential
+instances。下一关冻结为：
+
+```text
+ONE_POSITIVE_DETERMINANT_TWO_NONSELECTED_PAIR_OPENED_D_PACKET_ATTACHMENT_GATE
+```
+
+按“先取 positive determinant two、再最大化同 identity 的 strict common
+block 数、再最小化尺度与 block”的稳定规则，唯一首选 diagnostic seed
+冻结为：
+
+```text
+X=512, h0=2, delta=1/4, R=4, V=2
+alpha=(17,1), gamma=(16,1), j=33
+jL=4, jK=5, D0=0
+L=16, K=32
+N_alpha=563, N_gamma=530
+
+h0(m_alpha-m_gamma) = 2(17-16) = +2
+```
+
+该 ordered identity 另有共同 strict block `(4,6,0)`；冻结 `(4,5,0)`
+是上述稳定规则的结果。两侧 `Lambda(17)` 与 `Lambda(16)` 均确切非零，
+但 `r_R/W/B`、joint mask 与完整 pair coefficient nonzero 仍未证明。
+source locators 为：
+
+```text
+alpha row:
+  TPC-133 JSONL line 372
+  integrity db32fb3628ac124285e65c7f144d1c6000f73777df832b2fdf7bea24e002ab56
+gamma row:
+  TPC-133 JSONL line 357
+  integrity 91cc9c344379273f3463fb25717fe159a2b26e7ed8b07ee6be684c4650ee48ad
+
+alpha path/cut:
+  TPC-134 line 1283
+  integrity 33d4e8370fcc718efe6b97011e90c7306c4f3edd2d5201a915ddd4b02fbe3cce
+  TPC-136 line 1283
+  integrity 5a8fd7a715dd473f6f2deb15989425bc7773b7b8b069e24ef9d462ccdcfeb404
+gamma path/cut:
+  TPC-134 line 1251
+  integrity e5d704f9971160e7ae4533caa7829102940524e51aec0cd2dcfae740106296e9
+  TPC-136 line 1251
+  integrity c3e613844749c161f79fc8673eb8bd67c5339f5d03f161c64be6247af5270769
+```
+
+两条链都是 `TAIL/FRONTIER_UNMAPPED/NO_TAIL_ROOM`，
+`soft_theorem_source=null`。它们是两个独立 row/path/cut locators，不是
+一条 source-locked post-TT-star joint pair locator。
+
+下一 gate 必须在这条具体 nonselected ordered pair 上找到实际 source
+theorem，把同一 source lock 的 uppercase opened `D` slice 附到两条
+row；只有如此才能合法导出 `J=K/D` 与 `Q_18=LD`。禁止：
+
+```text
+native d -> opened D
+Q_133 -> Q_18
+selected 103/107 stopped-cell repackaging
+external L0 donor
+cross-lineage splice
+potentially nonzero Lambda -> nonzero full coefficient
+pair-native object -> H1 linear occurrence edge
+```
+
+若首个候选仍没有 theorem-backed `D` attachment，则 fail closed 并冻结
+对应 declared candidate cell；不得为了编号而补 schema。只有 source
+theorem 同时提供 uppercase `D`、joint packet/source locator、literal
+determinant-two coefficient、actual pair occurrence、formula-semantic
+normalization 与完整 loss ledger，才可能改变 theorem state并讨论
+TPC-207。
+
+## 18. 下一会话可直接粘贴
 
 ```text
 进入仓库：
@@ -1839,36 +2265,52 @@ foreach ($s in @(
 }
 
 当前编号事实终点仍是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
-最新不编号 audit 对快照 023ccb5959e35b96673117b76add3dcbc3987aca
-中的 TPC-1--206、当前 228 个 tracked 非-schema JSON/JSONL，以及所有
-refs 可达的 1,940 个已声明 TPC blobs 作了 source-backed
-local-occurrence-edge census。合格 production actual edge=0；23 个
-historical-only blobs 也没有 occurrence-ID edge candidate。
+本轮先完成
+ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_CONSTRUCTION_GATE。
+在列举的 source universe 中，TPC-18/32/93 有物理公式但没有到
+TPC-136 的 theorem-backed occurrence crosswalk；TPC-119/133--136 有
+完整 native/archive 正向结构链，却没有独立 actual physical occurrence
+类型或 ID。首阻断为
+SOURCE_LOCKED_NAMED_ACTUAL_PHYSICAL_OCCURRENCE_RECORD=ABSENT，故 Gate 0
+FAIL_CLOSED。
 
-首阻断为
-SOURCE_LOCKED_THEOREM_WITH_ACTUAL_LOCAL_OCCURRENCE_EDGE_CONCLUSION=ABSENT。
-TPC-153 是 shadow；TPC-154 的 8,967 条 edge 全是
-theorem_backed_actual_provenance=false 的 formal completions；
-TPC-155/174 只有 synthetic witnesses；TPC-205 是空 production
-pair interface；TPC-206 occurrence IDs 为 null。最新 verdict 为
-DECLARED_TPC1_206_REACHABLE_LOCAL_EDGE_CORPUS_V2_FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED。
+自动 fallback 随后完成当前 TPC-133/134/136 archive 的 nonselected
+connected-lineage ordered-pair census。排除 exact selected
+103->107 orientation 后，raw same-lineage pool 有 13,227 pair
+identities / 31,868 pair-block instances；严格 TPC-18 NO_TAIL_ROOM
+geometry pool 有 7,157 identities / 14,406 instances。全部并列
+13/42，first missing 为 uppercase D；full completion=0，
+production occurrence=0。determinant-two 且两侧 Lambda leaves
+potentially nonzero 的池已收紧为 124 instances / 106 identities。
 
-新增且仅新增
-DECLARED_TPC1_206_REACHABLE_LOCAL_OCCURRENCE_EDGE_SOURCE_CORPUS_V2=STOP_SCOPED。
+新增且仅新增：
+DECLARED_SELECTED_ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_V1
+=STOP_SCOPED；
+DECLARED_TPC133_134_136_NONSELECTED_TPC18_GEOMETRY_ORDERED_PAIR_LINEAGE_JOIN_CORPUS_V1
+=STOP_SCOPED。
 保持第 6 节全部旧 cells（尤其 TPC193 V1）为 STOP_SCOPED；保持两个
 O161 parents、pair-native reroute、H1 与 global architecture OPEN；
 fixed-atom credit=0、strict 1/400 UNPAID、L2=NONE。
 
-无需再请求单独工作流授权。直接执行有限 gate
-ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_CONSTRUCTION_GATE。
-从一个 source-locked named upstream physical occurrence 正向推到一个
-具体 TPC-136 cut；不得从 lossy cut archive 逆猜。只有同一 source lock
-同时给出 actual occurrence ID、五字段 cut、exact nonzero edge 与
-per-cut conservation、h0=2、packet schedule/ranges、具有公式语义的
-physical normalization 和完整 loss ledger，才允许讨论 TPC-207。
-若 Gate 0 证明当前语料没有可选 named upstream occurrence，则 fail
-closed，并把下一备选冻结为
-UNNUMBERED_CORPUS_WIDE_NONSELECTED_PAIR_NATIVE_CONNECTED_LINEAGE_JOIN_CENSUS。
+TPC-133 checks 通过；TPC-134/135/136 的旧 raw-byte chain 在 LF checkout
+上因 CRLF SHA pins 失败，但逐记录 semantic joins 全部匹配。本轮没有
+修改旧证书；不得把 semantic match 说成当前 hash-chain fully
+reproducible，也不得把 EOL pin 当成数学 trigger。
+
+无需再请求单独工作流授权。直接执行有限 gate：
+ONE_POSITIVE_DETERMINANT_TWO_NONSELECTED_PAIR_OPENED_D_PACKET_ATTACHMENT_GATE。
+首选 seed 已冻结为 X=512,h0=2,alpha=(17,1),gamma=(16,1),j=33,
+(jL,jK,D0)=(4,5,0)，其 determinant 为 +2，且两侧 Lambda leaves
+确切非零。逐 source 核查是否存在 theorem-backed uppercase opened-D
+slice 与 joint packet/source locator。禁止 d->D、Q133->Q18、selected
+stopped-cell repackaging、external L0 donor、cross-lineage splice，以及
+把 Lambda 非零提升为完整 coefficient nonzero。
+
+只有同一 source lock 同时给出 uppercase D、J=K/D、Q18=LD、literal
+determinant-two coefficient、actual pair occurrence、packet schedule/
+ranges、formula-semantic normalization 与完整 loss ledger，才可能改变
+theorem state并讨论 TPC-207；否则 fail closed，冻结对应有限 candidate
+cell，不得为了编号而补 schema。
 
 主会话只保留结论、路线选择、阻断项和最终审核摘要；长扫描、定理原文
 核查、schema exploit review、构建日志和逐页 PDF 检查交给分身；所有
