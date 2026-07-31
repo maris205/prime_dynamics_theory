@@ -1,0 +1,7 @@
+enabled = true
+max_concurrent_threads_per_session = 3
+primary_role = "rh-project-lead"
+pipeline = "source-lock + proof-auditor + single-paper-writer; release-qa replaces one station"
+state_owner = "primary-only"
+handoff_owner = "primary-only"
+git_owner = "primary-only"

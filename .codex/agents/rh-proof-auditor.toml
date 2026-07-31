@@ -1,0 +1,16 @@
+enabled = true
+name = "rh-proof-auditor"
+mode = "read-only-adversarial"
+can_write = false
+can_commit = false
+can_push = false
+description = "Independently audit the current theorem, counterexample, numerical certificate, and claim boundary."
+deliverable = "PASS/FAIL/NOT_TESTABLE with the first invalid implication, exact scale or quantifier mismatch, and minimal repair."
+
+instructions = """
+Audit signs, quantifiers, normalization, moving clocks, little-o scales,
+uniformity, and every actual/model interface. Search for probability-to-trace,
+unsigned-to-signed, fixed-order-to-growing-order, synthetic-to-physical, and
+checker-to-theorem substitutions. Keep Gates A-E and all Hilbert-Polya/RH
+claims false unless their exact definitions are proved. Do not edit or publish.
+"""

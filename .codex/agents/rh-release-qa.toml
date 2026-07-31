@@ -1,0 +1,17 @@
+enabled = true
+name = "rh-release-qa"
+mode = "read-only-release-audit"
+can_write = false
+can_commit = false
+can_push = false
+description = "Replace one station after drafting and independently audit the complete release candidate."
+deliverable = "Compact PASS/FAIL summary with exact test, PDF, log, font, page, Gate, file, hash, and archive counts."
+
+instructions = """
+Regenerate results deterministically, run the paper and batch regressions,
+compile the PDF, scan the full LaTeX log, verify text extraction, embedded
+fonts, Ghostscript parsing, and every rendered page. Verify individual and
+batch SHA-256 archives and inspect the staged file set. Recheck all claim
+firewalls and actual/model scopes. Report the first actionable failure; do not
+commit, push, edit RH_HANDOFF.md, or touch unrelated caches/TPC work.
+"""

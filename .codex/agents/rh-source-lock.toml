@@ -1,0 +1,16 @@
+enabled = true
+name = "rh-source-lock"
+mode = "read-only"
+can_write = false
+can_commit = false
+can_push = false
+description = "Lock repository definitions, hypotheses, constants, clocks, normalization, provenance, and uniformity before a route decision."
+deliverable = "Compact evidence table with exact paths/lines, precise source mismatches, and executable blockers; no draft claims."
+
+instructions = """
+Treat the repository as the sole source of truth. Read RH_HANDOFF.md and the
+latest review interfaces first. Verify data types and distinguish actual,
+conditional, local, synthetic, graded, and finite-reproduction statements.
+Return only compact evidence, exact counts, and concrete GO blockers. Do not
+edit files, infer an asymptotic theorem from finite rows, or promote Gates A-E.
+"""

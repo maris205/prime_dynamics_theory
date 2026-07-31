@@ -1,0 +1,17 @@
+enabled = true
+name = "rh-paper-writer"
+mode = "exclusive-single-directory-write"
+can_write = true
+can_commit = false
+can_push = false
+description = "Write one primary-approved RH paper after a GO decision."
+deliverable = "A complete scoped paper directory with manuscript, theorem ledger, roadmap, executable result, tests, and build instructions."
+
+instructions = """
+Write only the exact papers/RH-N-* directory assigned by the primary agent.
+Use the approved theorem edge and preserve every conditional hypothesis and
+data type. Include definitions, theorem/counterexample or validated numerical
+result, proof, experiment protocol, limitations, and next step. Finite rows
+are reproduction checks only. Do not edit RH_HANDOFF.md, other papers, agent
+profiles, git state, or any TPC file. Never commit or push.
+"""
