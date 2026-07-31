@@ -4,11 +4,9 @@
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`POSDET2_SEED_17_16_PRIME_SOURCE_CARRIER_FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED`
-以及
-`CURRENT_BOTH_PRIME_POSDET2_PRIMITIVE_MASK_CORPUS_14_OF_14_INELIGIBLE_STOP_SCOPED`
+`POSDET2_SEED_23_11_NONZERO_ACTUAL_PHYSICAL_JOINT_MASK_ATTACHMENT_FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED`
 下一篇：`null`；下一项不编号审计：
-`ONE_POSITIVE_DETERMINANT_TWO_PRIME_PRIME_MIXED_D_MASK_AND_OPENED_PACKET_ATTACHMENT_GATE`
+`TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE`
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
@@ -20,7 +18,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 是下一会话的事实来源。旧聊天记录不是事实来源。
 下文历史审计块中的所有 `tpc205_authorized=false`、`TPC-206 未授权` 与
 `USER_CONFIRMATION_REQUIRED` 都是当时的编号前快照，统一由本页页首及
-第 14--19 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
+第 14--20 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
 后续按同一有限、fail-closed 工作流继续，不再设置单独的人为编号授权门；
 这不替代 theorem evidence，也不许可跨过任何数学门槛。
 
@@ -41,6 +39,10 @@ python "$p/build_tpc205.py" --check
 python "$p/tpc205_pair_native_registry_interface.py" --check
 python "$p/tpc205_independent_checker.py" --check
 python papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py --check
+python -B papers/tpc-133-executable-native-entrance/experiments/tpc133_native_entrance.py --check
+python -B papers/tpc-134-boundary-complete-dyadic-prefix-tail-archive/experiments/tpc134_branch_archive.py --check
+python -B papers/tpc-135-tpc17-tpc18-block-frontier/experiments/tpc135_domain_cover_audit.py --check
+python -B papers/tpc-136-complete-native-cut-archive/experiments/tpc136_cut_archive.py --check
 
 foreach ($s in @(
   "papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory.py",
@@ -436,6 +438,24 @@ both-prime pair-block instances 走 TPC-18/TPC-25 的 primitive mask：
 mask 为零。它不停止 TPC-18 的 formal constant-mask formula、真正新增的
 source-locked physical mask theorem、nonprimitive endpoint reroute、两个
 O161 parents、H1 或 global architecture。
+
+2026-07-31 的 `23/11` mixed-`d` actual-mask 审计新增且仅新增：
+
+```text
+DECLARED_X512_H2_ALPHA23_D1_GAMMA11_D2_POSDET2_ACTUAL_PHYSICAL_JOINT_MASK_ATTACHMENT_V1
+  = STOP_SCOPED
+```
+
+它只停止把 exact seed
+`alpha=(23,1,k=24), gamma=(11,2,k=48), j=24, block=(4,5,0)`
+在当前 TPC-18/21/25/32/93 与 TPC-133/134/136 source locks 下提升为
+非零 actual physical joint packet。TPC-18 primitive mask 在两侧都为零；
+TPC-25/32 primitive carrier 还排除 `d_gamma=2` 与 `j=24`；TPC-18
+`xi=1` 只是 formal admissible mask，没有 formal-to-physical attachment
+theorem；`s=2` endpoint 是同一 `k` 的另一对象。它不停止新的
+formal-to-physical theorem、新的 named dyadic member、具有非零 common-`k`
+endpoint coefficient 的 source record、两个 O161 parents、H1 或 global
+architecture。
 
 ## 7. Reopen triggers
 
@@ -2629,7 +2649,212 @@ TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE
 只有同一 source lock 上的 actual mask、named `D=1` slice、joint packet
 与后续全部 production fields 真实形成，才可讨论 TPC-207。
 
-## 19. 下一会话可直接粘贴
+## 19. 不编号 `23/11` mixed-`d` actual-mask 审计
+
+### 19.1 冻结对象
+
+本轮只审核：
+
+```text
+ONE_POSITIVE_DETERMINANT_TWO_PRIME_PRIME_MIXED_D_MASK_AND_OPENED_PACKET_ATTACHMENT_GATE
+```
+
+诊断 seed 继续原样：
+
+```text
+X=512, h0=2, R=4, V=2
+alpha=(ell=23,d=1,k=24)
+gamma=(ell=11,d=2,k=48)
+j=24
+(jL,jK,D0)=(4,5,0)
+L=16, K=32
+m_alpha=23, m_gamma=22
+N_alpha=554, N_gamma=530
+h0(m_alpha-m_gamma)=+2
+```
+
+两条 source primes 与 TPC-133/134/136 parent/upstream joins 仍通过；这只
+证明 archive identity，不自动产生 actual physical pair。
+
+### 19.2 actual joint mask 点审
+
+令 `H=rad(h0)=2`。逐对象裁决为：
+
+```text
+TPC-18 primitive witness:
+  gcd(d_alpha*j,h0)=gcd(24,2)=2
+  gcd(d_gamma*j,h0)=gcd(48,2)=2
+  joint mask = 0
+
+TPC-25 actual primitive carrier:
+  gcd(d_gamma,H)=gcd(2,2)=2
+  gcd(j,H)=gcd(24,2)=2
+  gamma row absent; orbit support also kills both sides
+
+TPC-32 actual physical carrier:
+  gcd(m_gamma,H)=gcd(22,2)=2
+  gcd(j,H)=gcd(24,2)=2
+  actual physical pair absent
+
+TPC-93:
+  exports only an already retained TPC-32 coefficient
+  no carrier creation
+
+TPC-18 formal constant mask:
+  xi(1,24)=xi(2,24)=1
+  FORMAL_COVER = YES
+  FORMAL_TO_PHYSICAL_ATTACHMENT_THEOREM = ABSENT
+```
+
+所以 gate-level 首致命为：
+
+```text
+SOURCE_LOCKED_NONZERO_ACTUAL_JOINT_PHYSICAL_MASK_FOR_TPC23_11_SEED
+  = ABSENT
+```
+
+在 actual primitive branch 内更具体的首阻断是
+`GAMMA_PRIMITIVE_ROW_CARRIER_MEMBERSHIP`。formal `xi=1` 不得改名为
+TPC-25/32 actual physical packet。
+
+### 19.3 `D=1` 没有被解锁
+
+按 gate 顺序，nonzero actual mask attachment 失败后不得进入 `D=1`
+attachment。独立的
+fail-closed source census 仍检查了是否存在会推翻该停止的 exact member：
+
+```text
+all-ref declared text-extension blobs = 7,596
+extensions = .py,.json,.tex,.md,.bib,.toml,.csv,.txt,.jsonl
+TPC text blobs = 2,132
+TPC blobs containing dyadic omega_D-style symbols = 33
+source theorem/artifact evaluations omega_1(1) = 0
+source theorem/artifact evaluations omega_1(2) = 0
+same named member with both endpoint values nonzero = 0
+```
+
+TPC-18 只给 `supp omega_D subset [D,2D]`、bounded-overlap partition 与
+`sum_D omega_D(d)=1`；TPC-55 只继承 support/derivative bounds；TPC-19
+和 TPC-54 的 nonzero/bounded-away statements 都是额外 hypothesis。
+若同一 member 包含 `d=1,2`，support geometry 的确条件强制 `D=1`，
+但 containment 与 partition identity 都不证明
+`omega_1(1),omega_1(2)` 同时非零，也不产生 packet locator。
+
+因此：
+
+```text
+D1_ATTACHMENT_GATE_REACHED = NO
+D = NOT_MATERIALIZED
+J = NOT_MATERIALIZED
+Q_18 = NOT_MATERIALIZED
+formal archive projection = 13/42
+formal first missing = D at field 9
+actual joint pair records = 0
+production occurrences = 0
+```
+
+反事实地，若未来 source-locked theorem 把同一 named `D=1` member
+theorem-backed attach 到这两条 exact rows，并证明
+`omega_1(1),omega_1(2)` 非零，才可真实新增
+`D=1,J=32,Q_18=16`，投影变为 `16/42`，contract-order 首缺变为 `T`；
+这不自动补 `source_locator`、`packet_id`、pair/edge/target IDs、
+coefficient nonzero、normalization 或 loss ledger。
+
+### 19.4 nonprimitive 对象边界
+
+TPC-18 `s=2` endpoint theorem 是两侧共用同一 `k` 的
+`beta_I(k)^2` correlation，不是本 seed 的 mixed opened rows
+`k_alpha=24,k_gamma=48`。而当前
+
+```text
+D0=0, V=2, I={1,2}
+beta_I(k)=mu(1)+mu(2)=0  for every even k
+beta_I(24)=beta_I(48)=0
+```
+
+所以本 seed 也不能偷渡为 nonprimitive endpoint witness。后续
+nonprimitive route 的 Gate 0 必须先 source-lock：
+
+```text
+one common k
+s=gcd(k,h0)=2
+beta_I(k) != 0
+named endpoint coefficient/object
+actual source-forward record
+```
+
+### 19.5 新 source 与回归
+
+新 pull 的 RH-327 证明的是 noisy Markov cyclic trace
+`T=B+S+R` 与 synthetic exchange cancellation interval。其 `d` 是
+clearance ratio、`J` 是 state-space window、`L/D` 是 shell scale/demand，
+没有 TPC `omega_D`、Möbius row pair、determinant-two coefficient或
+packet occurrence；其 Hardy normalization 与 `B/S/R` trace ledger 属于
+RH noisy cyclic-trace 对象，不能提供本 seed 所需的 TPC
+formula-semantic normalization 或 complete physical-loss ledger。它不
+触发任何 TPC reopen。
+
+随后远端新增的 RH-328 只把 RH-326/327 的 trace slots 写成 conditional
+fixed-reference equation
+`e=L(c_phys^(2k)-y)+E_obs+R`。其 theorem 明确以 physical shell
+representation、scale 与 contrasts 已给定为前提；ledger 继续把 actual
+exchange representation、physical fields、remainder little-`o` 与 actual
+joint matching 保持 `OPEN`。其中 `d/L/D` 分别是 clearance、shell scale
+与 scalar demand，不是 TPC divisor/dyadic scale。它没有
+`omega_D`、Möbius row、`23/11` source lock、common-`k` endpoint 或 TPC
+packet record，也不触发 reopen。
+
+`d3e21af..24a962f` 的新增内容只有 RH-327/328，没有 primary TPC theorem
+source。
+
+TPC-206 三项、TPC-205 三项、TPC-194 hardening、TPC-173--179 optimized、
+TPC-184/189 normal/optimized 与 TPC-133 normal/optimized 全部通过。
+扩展 source-chain 回归发现 TPC-134--136 的三层 upstream raw-file SHA pins
+仍是旧值；生成的 866 atoms、2,988 paths、frontier manifest、cut archive
+及全部语义字段均未变化。只刷新下列 provenance pins 后，
+TPC-134/135/136 normal/optimized 全部通过：
+
+```text
+TPC-134 <- TPC-133 atoms:
+  a1956cf182ad219da10d850de7c7e57de69b8c287fb698e44faa5c795c3840a8
+TPC-135 <- TPC-134 paths:
+  efcacc90e7662fdb41c2e3f86fb37d3bd81b64a107c36dfbbb15bb48bde61712
+TPC-136 <- TPC-135 certificate:
+  c9e91c7cb69120e4f74554262356b8112061bd9cc9c13d5ce1c7232a54165e0a
+TPC-136 <- TPC-135 frontier manifest:
+  6655a4c40a57f0a45022ab527b32560a5b2ac3e932368709502cfded43a3fb47
+```
+
+### 19.6 最终裁决与下一有限路线
+
+```text
+ONE_POSITIVE_DETERMINANT_TWO_PRIME_PRIME_MIXED_D_MASK_AND_OPENED_PACKET_ATTACHMENT_GATE
+  = FAIL_CLOSED_AT_NONZERO_ACTUAL_PHYSICAL_JOINT_MASK_ATTACHMENT
+    STOP_SCOPED_NOT_REOPENED
+
+TPC207_TRIGGER = NO
+TPC207_CREATED = false
+```
+
+本轮新增且仅新增第 6 节的一个 seed-scoped cell。全部旧 cells，尤其
+`TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1`，继续 `STOP_SCOPED`。
+两个 O161 parents、pair-native reroute、H1 与 global architecture
+继续 `OPEN`；fixed-atom credit 为 0，strict `1/400` 为 `UNPAID`，
+`L2=NONE`。
+
+下一项不编号 architecture gate 冻结为：
+
+```text
+TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE
+```
+
+其 Gate 0 是
+`NONZERO_COMMON_K_AND_BETA_I_K_NE_0_NAMED_ENDPOINT_RECORD`。当前
+`D0=0,V=2` packet 与 `23/11` seed 均不可复用。只有该 Gate 0 及 actual
+source-forward、normalization、loss ledger 后续门槛真实通过，才允许
+讨论 TPC-207。
+
+## 20. 下一会话可直接粘贴
 
 ```text
 进入仓库：
@@ -2645,6 +2870,16 @@ $d = "papers/tpc-206-selected-lineage-pair-registry-projection/experiments"
 python "$d/build_tpc206.py" --check
 python "$d/tpc206_selected_lineage_pair_registry.py" --check
 python "$d/tpc206_independent_checker.py" --check
+
+$p = "papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments"
+python "$p/build_tpc205.py" --check
+python "$p/tpc205_pair_native_registry_interface.py" --check
+python "$p/tpc205_independent_checker.py" --check
+
+python -B papers/tpc-133-executable-native-entrance/experiments/tpc133_native_entrance.py --check
+python -B papers/tpc-134-boundary-complete-dyadic-prefix-tail-archive/experiments/tpc134_branch_archive.py --check
+python -B papers/tpc-135-tpc17-tpc18-block-frontier/experiments/tpc135_domain_cover_audit.py --check
+python -B papers/tpc-136-complete-native-cut-archive/experiments/tpc136_cut_archive.py --check
 
 python papers/tpc-184-bad-endpoint-literal-target-contract/experiments/tpc184_bad_endpoint_literal_target_contract.py --check
 python -O -B papers/tpc-184-bad-endpoint-literal-target-contract/experiments/tpc184_bad_endpoint_literal_target_contract.py --check
@@ -2666,55 +2901,54 @@ foreach ($s in @(
 
 当前编号事实终点仍是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 本轮完成
-ONE_POSITIVE_DETERMINANT_TWO_NONSELECTED_PAIR_OPENED_D_PACKET_ATTACHMENT_GATE。
-冻结 seed alpha=(17,1),gamma=(16,1),j=33,block=(4,5,0) 的 archive
-projection 仍为13/42，field-order first missing仍是uppercase D；但
-gate prerequisite在D之前失败。TPC-18在任何quadraticization之前执行
-prime-source reduction，
-lambda_ell=(log ell)1_(ell prime)psi(ell/L)。所以Lambda(16)=log2
-虽非零，lambda_16却恰为0；gamma不属于TPC-18 pair carrier。
+ONE_POSITIVE_DETERMINANT_TWO_PRIME_PRIME_MIXED_D_MASK_AND_OPENED_PACKET_ATTACHMENT_GATE。
+冻结 seed X=512,h0=2,alpha=(23,1,k=24),gamma=(11,2,k=48),
+j=24,block=(4,5,0),L=16,K=32,det=+2。两侧ell均为prime，archive
+joins通过，但nonzero actual physical mask attachment在uppercase D之前失败。
 
-首致命为
-TPC18_PRIME_SOURCE_CARRIER_MEMBERSHIP(gamma ell=16)=FAIL。
-determinant +2只是archive整数恒等式，不能生成非零physical pair。
-joint record=0，production occurrence=0，TPC-207不触发。
+H=rad(h0)=2。TPC-18 primitive mask在两侧分别给gcd(24,2)=2和
+gcd(48,2)=2，joint value=0；TPC-25 actual row family排除d_gamma=2，
+且j=24也不在primitive orbit support；TPC-32同样排除m_gamma=22和
+j=24。TPC-93不会新造carrier。
 
-NO_TAIL_ROOM也已纠偏：它表示V=2时无正prefix cutoff D0满足2D0<V，
-不是TPC-18 uppercase opened D不存在。D0、D严禁混同。
+首致命为：
+SOURCE_LOCKED_NONZERO_ACTUAL_JOINT_PHYSICAL_MASK_FOR_TPC23_11_SEED=ABSENT。
+TPC-18 formal xi=1虽形式覆盖两行，但没有formal-to-physical attachment
+theorem，不能冒充TPC-25/32 actual packet。
+
+因此D=1 gate未被解锁；D/J/Q18均未materialize，projection仍13/42，
+field-order first missing仍是D。独立all-ref census也没有找到任何
+source theorem给出同名omega_1(1),omega_1(2)都非零或joint locator。
+support [D,2D]只条件强制D=1，不能证明endpoint nonzero。
 
 新增且仅新增：
-DECLARED_X512_H2_ALPHA17_D1_GAMMA16_D1_POSDET2_OPENED_D_PACKET_ATTACHMENT_V1
-=STOP_SCOPED；
-DECLARED_TPC133_134_136_POSDET2_BOTH_PRIME_PRIMITIVE_MASK_CORPUS_V1
+DECLARED_X512_H2_ALPHA23_D1_GAMMA11_D2_POSDET2_ACTUAL_PHYSICAL_JOINT_MASK_ATTACHMENT_V1
 =STOP_SCOPED。
-第二项只冻结当前14个both-prime positive-det2 instances的primitive
-mask route：h0=2时每个instance恰有一个d=2 row，因此14/14 joint
-primitive masks为0；不停止formal constant mask或nonprimitive endpoint
-reroute。
 
 保持第 6 节全部旧 cells（尤其 TPC193 V1）为 STOP_SCOPED；保持两个
 O161 parents、pair-native reroute、H1 与 global architecture OPEN；
 fixed-atom credit=0、strict 1/400 UNPAID、L2=NONE。
 
-新pull的RH-325/326均为Markov/Hardy trace first-alias对象；没有TPC
-uppercase D、J/Q、Möbius pair、occurrence、normalization或loss ledger。
-1580823..0a0dd19没有新增TPC theorem source。
+TPC-18 s=2 endpoint是同一common k的beta_I(k)^2对象；当前seed的
+k_alpha=24,k_gamma=48不同，且D0=0,V=2时beta_I(k)=0对所有even k。
+不得把该seed偷渡为nonprimitive witness。
 
-无需再请求单独工作流授权。直接执行有限 gate：
-ONE_POSITIVE_DETERMINANT_TWO_PRIME_PRIME_MIXED_D_MASK_AND_OPENED_PACKET_ATTACHMENT_GATE。
-新seed冻结为X=512,h0=2,alpha=(23,1,k=24),gamma=(11,2,k=48),
-j=24,block=(4,5,0),L=16,K=32,det=+2。两侧ell均为prime。
+新pull的RH-327/328是noisy Markov cyclic-trace/synthetic shell对象；
+RH-328的joint equation仍以unproved physical shell representation/scale/
+contrasts为条件。其d/J/L/D均与TPC符号错型，没有Möbius pair、common-k
+endpoint或opened packet；其Hardy normalization与trace ledger不能提供
+TPC formula-semantic normalization或complete physical-loss ledger。
+没有其他新增primary TPC theorem source。
 
-先审同一physical source lock的joint mask：primitive mask会因d=2而
-归零，formal constant mask不能自动代表physical packet。只有mask/object
-通过，才审同名D=1 slice的exact omega_1(1),omega_1(2)及joint locator，
-再条件冻结J=32,Q18=16。禁止support containment补nonzero、d->D、
-Q133->Q18、constant->physical、formal/shadow->actual。
+TPC-134--136旧upstream SHA pins已刷新到当前已提交payload；生成内容未变，
+TPC-133--136 normal/optimized以及既有主链回归均通过。
 
-若mask attachment失败，下一architecture reroute冻结为
+无需再请求单独工作流授权。下一项有限不编号architecture gate为：
 TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE。只有actual
-mask、named D=1、joint packet/occurrence、formula-semantic normalization
-与完整loss ledger真实形成，才允许讨论TPC-207。
+source先提供同一common k、s=2、beta_I(k)!=0、named endpoint coefficient
+与source-forward record，才继续后续字段。当前D0=0,V=2 packet和23/11
+seed都不可复用。禁止different-k->common-k、formal->actual、support->nonzero、
+endpoint localization->smallness。
 
 主会话只保留结论、路线选择、阻断项和最终审核摘要；长扫描、定理原文
 核查、schema exploit review、构建日志和逐页 PDF 检查交给分身；所有
