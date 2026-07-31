@@ -4,11 +4,11 @@
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_GATE0_FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED`
+`POSDET2_SEED_17_16_PRIME_SOURCE_CARRIER_FAIL_CLOSED_STOP_SCOPED_NOT_REOPENED`
 以及
-`NONSELECTED_TPC18_GEOMETRY_ORDERED_PAIR_LINEAGE_JOIN_13_OF_42_STOP_SCOPED_NOT_REOPENED`
+`CURRENT_BOTH_PRIME_POSDET2_PRIMITIVE_MASK_CORPUS_14_OF_14_INELIGIBLE_STOP_SCOPED`
 下一篇：`null`；下一项不编号审计：
-`ONE_POSITIVE_DETERMINANT_TWO_NONSELECTED_PAIR_OPENED_D_PACKET_ATTACHMENT_GATE`
+`ONE_POSITIVE_DETERMINANT_TWO_PRIME_PRIME_MIXED_D_MASK_AND_OPENED_PACKET_ATTACHMENT_GATE`
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
@@ -20,7 +20,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 是下一会话的事实来源。旧聊天记录不是事实来源。
 下文历史审计块中的所有 `tpc205_authorized=false`、`TPC-206 未授权` 与
 `USER_CONFIRMATION_REQUIRED` 都是当时的编号前快照，统一由本页页首及
-第 14--18 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
+第 14--19 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
 后续按同一有限、fail-closed 工作流继续，不再设置单独的人为编号授权门；
 这不替代 theorem evidence，也不许可跨过任何数学门槛。
 
@@ -416,6 +416,26 @@ TPC-18 `NO_TAIL_ROOM` geometry 的 ordered pair join corpus。它们都不是
 数学不存在性定理，不停止新 primary theorem、source-locked opened-`D`
 attachment、pair-native reroute、两个 O161 parents、H1 或 global
 architecture。
+
+2026-07-31 的 positive determinant-two seed carrier audit 新增且仅新增：
+
+```text
+DECLARED_X512_H2_ALPHA17_D1_GAMMA16_D1_POSDET2_OPENED_D_PACKET_ATTACHMENT_V1
+  = STOP_SCOPED
+DECLARED_TPC133_134_136_POSDET2_BOTH_PRIME_PRIMITIVE_MASK_CORPUS_V1
+  = STOP_SCOPED
+```
+
+第一项只停止把 exact seed
+`alpha=(17,1), gamma=(16,1), j=33, block=(4,5,0)` 提升为 TPC-18
+prime-source opened-`D` pair；其 `gamma` source `ell=16` 是 prime
+power 而不是 prime，故 prime-reduced carrier weight 恰为零。第二项只
+停止当前 committed strict archive 中 14 个 positive determinant-two、
+both-prime pair-block instances 走 TPC-18/TPC-25 的 primitive mask：
+每个实例都恰有一个 even divisor row，故在 `h0=2` 下 joint primitive
+mask 为零。它不停止 TPC-18 的 formal constant-mask formula、真正新增的
+source-locked physical mask theorem、nonprimitive endpoint reroute、两个
+O161 parents、H1 或 global architecture。
 
 ## 7. Reopen triggers
 
@@ -2021,8 +2041,11 @@ raw instance reasons:
 ```
 
 严格 TPC-18 geometry pool 只取 `NO_TAIL_ROOM`：这里 `L>2R` 与
-`K>2V` 已通过，当前唯一几何首缺是不存在 source-backed uppercase `D`
-使 `2D<V`。该 pool 为：
+`K>2V` 已通过。`NO_TAIL_ROOM` 是 TPC-135 对 prefix cutoff `D0` 的
+分类：当 `V=2` 时不存在正整数 `D0` 满足 `2D0<V`，故 archive 取
+`D0=0`。它不是 TPC-18 uppercase opened dyadic `D`，也不证明
+uppercase `D` 不存在。TPC-205 contract-order 的独立首缺仍是没有
+source-locked locator 的 uppercase `D`。该 pool 为：
 
 ```text
 strict ordered pair identities = 7157
@@ -2229,7 +2252,384 @@ determinant-two coefficient、actual pair occurrence、formula-semantic
 normalization 与完整 loss ledger，才可能改变 theorem state并讨论
 TPC-207。
 
-## 18. 下一会话可直接粘贴
+## 18. positive determinant-two seed carrier 与 mask 审计
+
+### 18.1 冻结 gate、snapshot 与 formal archive projection
+
+本轮在 source snapshot
+
+```text
+0a0dd19d04fb168132f1227758f906aed62c32e5
+```
+
+上执行：
+
+```text
+ONE_POSITIVE_DETERMINANT_TWO_NONSELECTED_PAIR_OPENED_D_PACKET_ATTACHMENT_GATE
+```
+
+冻结 seed 为：
+
+```text
+X=512, h0=2, delta=1/4, R=4, V=2
+alpha=(ell_alpha,d_alpha)=(17,1), k_alpha=33
+gamma=(ell_gamma,d_gamma)=(16,1), k_gamma=33
+j=33
+(jL,jK,D0)=(4,5,0)
+L=16, K=32
+N_alpha=563, N_gamma=530
+h0(m_alpha-m_gamma)=2(17-16)=+2
+```
+
+两条 TPC-133 -> 134 -> 136 archive chains 的 parent/upstream joins 全部
+精确通过：
+
+```text
+alpha:
+  TPC-133 line 372
+  db32fb3628ac124285e65c7f144d1c6000f73777df832b2fdf7bea24e002ab56
+  TPC-134 line 1283
+  33d4e8370fcc718efe6b97011e90c7306c4f3edd2d5201a915ddd4b02fbe3cce
+  TPC-136 line 1283
+  5a8fd7a715dd473f6f2deb15989425bc7773b7b8b069e24ef9d462ccdcfeb404
+
+gamma:
+  TPC-133 line 357
+  91cc9c344379273f3463fb25717fe159a2b26e7ed8b07ee6be684c4650ee48ad
+  TPC-134 line 1251
+  e5d704f9971160e7ae4533caa7829102940524e51aec0cd2dcfae740106296e9
+  TPC-136 line 1251
+  c3e613844749c161f79fc8673eb8bd67c5339f5d03f161c64be6247af5270769
+```
+
+因此 TPC-205 的 field-order archive projection 仍形式 materialize
+恰好 13/42：
+
+```text
+X, h0, delta, R, V, D0, L, K,
+alpha, gamma, j, N_alpha, N_gamma
+```
+
+其 contract-order first missing 仍是 field #9 uppercase `D`。这个
+`13/42` 只是 source-locked row/path/cut partial projection，不先验保证
+该 pair 属于 TPC-18 的求和 carrier。
+
+### 18.2 Gate prerequisite 首先失败：`ell=16` 不是 prime source
+
+TPC-133 的 generator 有意枚举 support-envelope native tuples；其
+coefficient AST 使用 `Lambda(ell)`，不要求 `ell` 本身为 prime。因此
+`ell=16=2^4` 是合法 TPC-133 native record，并且
+
+```text
+Lambda(16)=log 2 != 0.
+```
+
+但 TPC-18 在任何 quadraticization 之前先执行 prime-source reduction。
+精确 source locators 为：
+
+```text
+TPC-18 tail-interface.tex:61--94
+  source prime powers are removed before either quadraticization
+  lambda_ell = (log ell) 1_(ell prime) psi(ell/L)
+  sha256 = 5f50b44fde7e672b28aeb45b1b53e95f90c26bb8d35052081fa3a7e419712389
+
+TPC-18 opened-d-dispersion.tex:17--56
+  T_D, J=K/D, Q=LD
+  prime and support restrictions remain understood
+  sha256 = 36249c8baa2495034acabeb0ba7d5a5f665f2d536b605e9691e2e420e399f1f8
+
+TPC-25 provenance.tex:22--55
+  actual row family requires ell in [L/2,2L] prime
+  sha256 = 21382acf28d8fc3d3cff499cd767075206ba9e2d24913e95414138b4317f0f00
+
+TPC-32 physical-matched-shell.tex:42--48
+  physical opened rows again require ell_alpha prime
+  sha256 = b2c3b2b0312db64af5b3151402be929c1671429c1376fe24454a78b4c60d90bd
+```
+
+TPC-17 也在 assembled-prefix proof 中整体移除
+`ell=p^a, a>=2` 后才 restriction to primes。TPC-93 只 export 另行
+supplied、retained 的同一 TPC-32 source atom；其 source-child bijection
+不会恢复被 prime-source reduction 移除的 row。
+
+所以本 seed 上：
+
+```text
+lambda_17 = log 17 * psi(17/L)
+lambda_16 = 0
+```
+
+archive determinant `+2` 是正确整数恒等式，却不能产生一个非零 TPC-18
+pair term。Gate prerequisite ledger 为：
+
+```text
+alpha TPC-133 native membership = PASS
+gamma TPC-133 native membership = PASS
+alpha TPC-18 prime-source membership = PASS
+gamma TPC-18 prime-source membership = FAIL
+archive determinant = PASS:+2
+joint TPC-18 ordered-pair carrier = FAIL
+TPC-18 pair coefficient = ZERO_FROM_LAMBDA_16
+```
+
+首致命缺口因此早于 uppercase `D`：
+
+```text
+TPC18_PRIME_SOURCE_CARRIER_MEMBERSHIP
+  (gamma=(ell=16,d=1))
+  = FAIL
+```
+
+`Lambda(ell)!=0` 只说明 `ell` 是 prime power，不能解释为
+`ell is prime`。这正是原 124-instance candidate filter 必须补上的
+类型防火墙。
+
+### 18.3 `D0`/`D`、42-field ledger 与 schema 防偷渡
+
+TPC-135 的 `NO_TAIL_ROOM` 是 prefix-cutoff 判据：
+
+```text
+V=2
+no positive integer D0 satisfies 2D0<V
+therefore canonical D0=0
+```
+
+它与 TPC-18 uppercase opened dyadic `D` 不同。对原 seed 的
+`d_alpha=d_gamma=1`，公式 support 与 `D=1` 相容，但没有 source-backed
+named slice locator；且 carrier 已在 prime-source prerequisite 失败。
+故不得把 `NO_TAIL_ROOM` 说成 uppercase `D` 不存在，也不得用 `D0=0`
+填写 `D`。
+
+两种 first-missing 必须分开：
+
+```text
+formal 42-field contract-order first missing = D at index 9
+gate prerequisite first fatal = gamma prime-source membership
+```
+
+在当前 exact seed/block selector 下，TPC-133/134/136/143/153/154
+各只有两条 single-side records，共 12 条；同时含两个 native IDs 的
+joint record 为 0。以下 production fields 的 source-backed count 也
+全部为 0：
+
+```text
+uppercase D
+J
+Q_18
+packet_id
+joint source_locator
+pair_record_id
+edge_instance_id
+target_occurrence_id
+```
+
+TPC-143 的 `actual_map_edges=[]`、status 为 `NOT_TESTABLE`；TPC-153 的
+`actual_occurrence_id=null` 且 `is_actual_occurrence=false`；TPC-154
+匹配到的 physical IDs、formal edge IDs 与 ledger tokens 全部
+`FORMAL_ONLY`，并满足
+`theorem_backed_actual_provenance=false`。它们不能补 actual pair 或
+loss ledger。`Q=4` 仍只是 TPC-133 `r_Q` 的 finite-model scope，并非
+`Q_18=LD`；`nu_X` 仍只是 lineage label，不是 scalar normalization。
+
+TPC-205/206 的 strict wrappers 按 exact type identity 检查，并已有
+bool/int 与 semantic mutations，能拒绝：
+
+```text
+native d -> uppercase D
+Q_133 -> Q_18
+native/path/cut ID -> pair or occurrence ID
+formal/shadow -> actual
+nu_X label -> scalar normalization
+one normalization -> four normalization fields
+```
+
+TPC-133/134/136 的遗留内层 validator 仍有 `isinstance`/equality
+bool-int trust boundary；TPC-136 future map validator 也不验证外部
+theorem truth，只检查 `PROVED` label、非空 source 与 total domain。
+当前固定 artifacts 由 integrity/source pins 与 TPC-205/206 strict
+wrappers 保护，且四张 downstream maps 仍为空、`NOT_TESTABLE`。因此
+不能用 schema self-attestation 把本 seed 从 13/42 提升到 14/42。
+
+### 18.4 新增 RH sources 与历史 screen
+
+发布基线之后新增：
+
+```text
+01e56b9  RH-325 moving-order Duhamel criterion
+437d318  RH-326 parity-renormalized alias identity
+0a0dd19  RH-326 certification-boundary tightening
+```
+
+RH-325 的对象是 nonautonomous Markov path law 与 abstract trace
+Duhamel；其 `mu(dx0)` 是 probability entrance measure，不是 Möbius
+function。RH-326 的对象是 Hardy-scaled noisy Markov
+trace/counterloop first-alias packet；其中 lowercase
+`d_(sigma,k)` 是 clearance ratio，不是 TPC divisor scale。
+
+两篇对本 gate 的逐轴结果全部为 `ABSENT/TYPE_MISMATCH`：
+
+```text
+uppercase opened D
+J=K/D and Q_18=LD
+joint post-TT-star pair locator
+literal determinant-two Möbius coefficient
+actual pair occurrence
+TPC packet schedule/ranges
+TPC formula-semantic normalization
+complete TPC physical-loss ledger
+```
+
+RH-326 还显式保持 local probability-to-raw-trace、neighboring shell、
+joint trace law、full-trace replacement 与 second physical leg 为
+false/open；`0a0dd19` 把 decimal no-go 收紧为 conditional，普通浮点值
+不是 interval certificate。`1580823..0a0dd19` 没有 `tpc-*` 或
+`TPC_HANDOFF.md` source 改动，也没有新的 TPC theorem source。
+
+### 18.5 both-prime 修正池与 primitive-mask obstruction
+
+把先前 124 instances / 106 identities 的
+both-`Lambda`-prime-power-potential pool 改为真正的 source-prime
+筛选后：
+
+```text
+both ell prime, |det|=2:
+  28 instances / 28 identities
+
+both ell prime, det=+2:
+  14 instances / 14 identities
+```
+
+对 `h0=2` 与 `ell_alpha,ell_gamma>2` prime，两个 source primes 都是
+奇数。`det=+2` 等价于
+
+```text
+ell_alpha d_alpha - ell_gamma d_gamma = 1.
+```
+
+故 `d_alpha,d_gamma` 奇偶性相反。当前 `V=2` 且 `d<=V`，所以每个
+positive instance 恰有一个 divisor row 等于 2。于是对 TPC-18/TPC-25
+的 primitive mask：
+
+```text
+gcd(d*j,h0)=1
+```
+
+至少一侧恒失败。14/14 positive instances 的 joint primitive-mask
+value 都为 0。canonical ID digest 为：
+
+```text
+count = 14
+bytes = 963
+sha256 = b366115151f5609275ab2483100e968ed4e8b78a67f16f1da0393a3f2fe0d8b5
+primitive true = 0
+primitive false = 14
+```
+
+该结论只停止当前 finite corpus 的 primitive-mask route。TPC-18
+opened-`D` 公式也允许 formal constant mask，但 constant mask 不能仅因
+“admissible”就改名为 actual physical packet；nonprimitive
+`s=(k,h0)=2` endpoint route也是另一 theorem object。
+
+按“positive determinant two、both prime、最小 scale/block/j”的稳定规则，
+下一 diagnostic seed 为：
+
+```text
+X=512, h0=2, R=4, V=2
+alpha=(ell=23,d=1,k=24)
+gamma=(ell=11,d=2,k=48)
+j=24
+(jL,jK,D0)=(4,5,0)
+L=16, K=32
+m_alpha=23, m_gamma=22
+N_alpha=554, N_gamma=530
+h0(m_alpha-m_gamma)=2(23-22)=+2
+```
+
+其 exact locators 为：
+
+```text
+alpha:
+  TPC-133 line 429
+  b328ec79cf5c1ae88a675053fb9c76d46600d72a2aa36b5ae65a211ee42f599f
+  TPC-134 line 1500
+  d43e5c3f72be0c6eff2d48a7021892e3f079216395b0cfe981d6f1499c48203f
+  TPC-136 line 1500
+  7b7bdcdadf50b56bdb08d86ed465a410b24afaaef98f638b7d3ef373e86d62a0
+
+gamma:
+  TPC-133 line 283
+  cef1da75b09f74ee50cca1f0470a3c2f05fdf99f9b7ccadd018edc4b727bf5a1
+  TPC-134 line 963
+  c527e8336cba6e0852513001aaba4cf2dba3b57949e298ec9287b2cef6631870
+  TPC-136 line 963
+  5d76d51cbde9c470e087311c93545285c5201ba721f6a1c21f66f480a77ee146
+```
+
+两条 source primes 与全部 parent/upstream joins 都通过。若一个同名
+opened slice 同时包含 boundary rows `d=1,2`，support geometry 唯一强制
+`D=1`，从而条件给出：
+
+```text
+J=K/D=32
+Q_18=LD=16
+```
+
+但 support containment 不能证明 actual
+`omega_1(1),omega_1(2)` 都非零，也不能产生 joint packet locator。更早
+还必须决定同一 physical source lock 采用 primitive、constant，还是
+nonprimitive endpoint mask/object；三者不得混同。
+
+### 18.6 最终裁决与下一有限路线
+
+本轮 gate verdict 为：
+
+```text
+ONE_POSITIVE_DETERMINANT_TWO_NONSELECTED_PAIR_OPENED_D_PACKET_ATTACHMENT_GATE
+  = FAIL_CLOSED_AT_PRIME_SOURCE_CARRIER_MEMBERSHIP
+    STOP_SCOPED_NOT_REOPENED
+
+formal archive projection = 13/42
+formal first missing = D at field 9
+gate first fatal = GAMMA_ELL_16_NOT_PRIME
+actual joint pair records = 0
+production occurrences = 0
+TPC207_TRIGGER = NO
+TPC207_CREATED = false
+```
+
+新增且仅新增第 6 节的两个 cells。第 6 节全部旧 cells，尤其
+`TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1`，继续原样
+`STOP_SCOPED`。两个 O161 parents、pair-native reroute、H1 与 global
+architecture 继续 `OPEN`；fixed-atom credit 为 0，strict `1/400` 为
+`UNPAID`，`L2=NONE`。
+
+下一关冻结为：
+
+```text
+ONE_POSITIVE_DETERMINANT_TWO_PRIME_PRIME_MIXED_D_MASK_AND_OPENED_PACKET_ATTACHMENT_GATE
+```
+
+其固定顺序是：
+
+1. 对 `23/11` seed source-lock actual joint mask；TPC-25/TPC-32
+   primitive mask 会因 `d_gamma=2,h0=2` 把 pair 杀为零，TPC-18 formal
+   constant mask不能自动代表 physical packet；
+2. 只有 source theorem 选择了同一个 nonzero physical mask/object，才
+   审同名 `D=1` slice 的 exact `omega_1(1),omega_1(2)`；
+3. 只有前两关通过，才冻结 `J=32,Q_18=16`、joint pair/packet ID、
+   coefficient AST、active nonzero、normalization 与完整 loss ledger。
+
+若 primitive/constant physical-mask attachment 不存在，则 fail closed，
+下一 architecture reroute 冻结为：
+
+```text
+TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE
+```
+
+只有同一 source lock 上的 actual mask、named `D=1` slice、joint packet
+与后续全部 production fields 真实形成，才可讨论 TPC-207。
+
+## 19. 下一会话可直接粘贴
 
 ```text
 进入仓库：
@@ -2265,52 +2665,56 @@ foreach ($s in @(
 }
 
 当前编号事实终点仍是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
-本轮先完成
-ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_CONSTRUCTION_GATE。
-在列举的 source universe 中，TPC-18/32/93 有物理公式但没有到
-TPC-136 的 theorem-backed occurrence crosswalk；TPC-119/133--136 有
-完整 native/archive 正向结构链，却没有独立 actual physical occurrence
-类型或 ID。首阻断为
-SOURCE_LOCKED_NAMED_ACTUAL_PHYSICAL_OCCURRENCE_RECORD=ABSENT，故 Gate 0
-FAIL_CLOSED。
+本轮完成
+ONE_POSITIVE_DETERMINANT_TWO_NONSELECTED_PAIR_OPENED_D_PACKET_ATTACHMENT_GATE。
+冻结 seed alpha=(17,1),gamma=(16,1),j=33,block=(4,5,0) 的 archive
+projection 仍为13/42，field-order first missing仍是uppercase D；但
+gate prerequisite在D之前失败。TPC-18在任何quadraticization之前执行
+prime-source reduction，
+lambda_ell=(log ell)1_(ell prime)psi(ell/L)。所以Lambda(16)=log2
+虽非零，lambda_16却恰为0；gamma不属于TPC-18 pair carrier。
 
-自动 fallback 随后完成当前 TPC-133/134/136 archive 的 nonselected
-connected-lineage ordered-pair census。排除 exact selected
-103->107 orientation 后，raw same-lineage pool 有 13,227 pair
-identities / 31,868 pair-block instances；严格 TPC-18 NO_TAIL_ROOM
-geometry pool 有 7,157 identities / 14,406 instances。全部并列
-13/42，first missing 为 uppercase D；full completion=0，
-production occurrence=0。determinant-two 且两侧 Lambda leaves
-potentially nonzero 的池已收紧为 124 instances / 106 identities。
+首致命为
+TPC18_PRIME_SOURCE_CARRIER_MEMBERSHIP(gamma ell=16)=FAIL。
+determinant +2只是archive整数恒等式，不能生成非零physical pair。
+joint record=0，production occurrence=0，TPC-207不触发。
+
+NO_TAIL_ROOM也已纠偏：它表示V=2时无正prefix cutoff D0满足2D0<V，
+不是TPC-18 uppercase opened D不存在。D0、D严禁混同。
 
 新增且仅新增：
-DECLARED_SELECTED_ONE_PACKET_SOURCE_FORWARD_PRECUT_TO_ACTUAL_OCCURRENCE_LINEAGE_V1
+DECLARED_X512_H2_ALPHA17_D1_GAMMA16_D1_POSDET2_OPENED_D_PACKET_ATTACHMENT_V1
 =STOP_SCOPED；
-DECLARED_TPC133_134_136_NONSELECTED_TPC18_GEOMETRY_ORDERED_PAIR_LINEAGE_JOIN_CORPUS_V1
+DECLARED_TPC133_134_136_POSDET2_BOTH_PRIME_PRIMITIVE_MASK_CORPUS_V1
 =STOP_SCOPED。
+第二项只冻结当前14个both-prime positive-det2 instances的primitive
+mask route：h0=2时每个instance恰有一个d=2 row，因此14/14 joint
+primitive masks为0；不停止formal constant mask或nonprimitive endpoint
+reroute。
+
 保持第 6 节全部旧 cells（尤其 TPC193 V1）为 STOP_SCOPED；保持两个
 O161 parents、pair-native reroute、H1 与 global architecture OPEN；
 fixed-atom credit=0、strict 1/400 UNPAID、L2=NONE。
 
-TPC-133 checks 通过；TPC-134/135/136 的旧 raw-byte chain 在 LF checkout
-上因 CRLF SHA pins 失败，但逐记录 semantic joins 全部匹配。本轮没有
-修改旧证书；不得把 semantic match 说成当前 hash-chain fully
-reproducible，也不得把 EOL pin 当成数学 trigger。
+新pull的RH-325/326均为Markov/Hardy trace first-alias对象；没有TPC
+uppercase D、J/Q、Möbius pair、occurrence、normalization或loss ledger。
+1580823..0a0dd19没有新增TPC theorem source。
 
 无需再请求单独工作流授权。直接执行有限 gate：
-ONE_POSITIVE_DETERMINANT_TWO_NONSELECTED_PAIR_OPENED_D_PACKET_ATTACHMENT_GATE。
-首选 seed 已冻结为 X=512,h0=2,alpha=(17,1),gamma=(16,1),j=33,
-(jL,jK,D0)=(4,5,0)，其 determinant 为 +2，且两侧 Lambda leaves
-确切非零。逐 source 核查是否存在 theorem-backed uppercase opened-D
-slice 与 joint packet/source locator。禁止 d->D、Q133->Q18、selected
-stopped-cell repackaging、external L0 donor、cross-lineage splice，以及
-把 Lambda 非零提升为完整 coefficient nonzero。
+ONE_POSITIVE_DETERMINANT_TWO_PRIME_PRIME_MIXED_D_MASK_AND_OPENED_PACKET_ATTACHMENT_GATE。
+新seed冻结为X=512,h0=2,alpha=(23,1,k=24),gamma=(11,2,k=48),
+j=24,block=(4,5,0),L=16,K=32,det=+2。两侧ell均为prime。
 
-只有同一 source lock 同时给出 uppercase D、J=K/D、Q18=LD、literal
-determinant-two coefficient、actual pair occurrence、packet schedule/
-ranges、formula-semantic normalization 与完整 loss ledger，才可能改变
-theorem state并讨论 TPC-207；否则 fail closed，冻结对应有限 candidate
-cell，不得为了编号而补 schema。
+先审同一physical source lock的joint mask：primitive mask会因d=2而
+归零，formal constant mask不能自动代表physical packet。只有mask/object
+通过，才审同名D=1 slice的exact omega_1(1),omega_1(2)及joint locator，
+再条件冻结J=32,Q18=16。禁止support containment补nonzero、d->D、
+Q133->Q18、constant->physical、formal/shadow->actual。
+
+若mask attachment失败，下一architecture reroute冻结为
+TPC18_S_EQUALS_2_NONPRIMITIVE_ENDPOINT_SOURCE_FORWARD_GATE。只有actual
+mask、named D=1、joint packet/occurrence、formula-semantic normalization
+与完整loss ledger真实形成，才允许讨论TPC-207。
 
 主会话只保留结论、路线选择、阻断项和最终审核摘要；长扫描、定理原文
 核查、schema exploit review、构建日志和逐页 PDF 检查交给分身；所有
