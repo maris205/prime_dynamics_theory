@@ -1,0 +1,491 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage{cleveref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\wh}[1]{\widehat{#1}}
+\title{Joint-Cancellation Full-Trace Transfer:\\
+An Exact First-Alias Criterion and Sharp Replacement Obstructions}
+\author{Bin Wang}
+\date{July 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The first-alias route has an exact local packet and a validated isolated
+model, but no theorem identifies that model with the actual noisy trace.  We
+formulate the missing transfer criterion without making the identification.
+On a fixed-phase clock, a weighted full-trace prefix containing the first
+alias but no second alias splits exactly into an off-alias background and
+$|e_{2k}|/(2H_k)$, where $H_k=kR^{-2k}$.  For the observable five-slot
+packet $e=\cB+\cS+\cR+\cP-\cA$, actual minus model replacement gives the
+exact identity
+\[
+ e_k^{\rm a}=\widehat e_k+
+ \{\Delta\cB_k+\Delta\cS_k+\Delta\cR_k+
+   \Delta\cP_k-\Delta\cA_k\}.
+\]
+Thus a closing model transfers exactly when the signed joint defect is
+$o(H_k)$.  We retain all $4k$ two-channel Duhamel terms and prove a sharp
+grouped signed interval certificate.  Separate absolute majorants are
+sufficient but not necessary: equal defects of size $\cA_k$ may cancel or
+reinforce.  Applied to the failed RH-329 model, actual closure requires an
+$\cA_k$-sized correction tuned to $H_k$ precision; an explicit synthetic
+repair shows why isolated failure does not imply actual full-trace
+divergence.  The physical identification, signed Duhamel enclosures, far
+remainder, and off-alias background remain open, so the criterion is not
+activated and no Riemann-hypothesis conclusion follows.
+\end{abstract}
+
+\section{One-alias full-trace extraction}
+
+Work along a fixed-phase moving-order subsequence
+\begin{equation}
+ k=k_\sigma
+ =\frac{\log(1/\sigma)}{2\log\lambda}+O(1),
+ \qquad \eta_\sigma\longrightarrow\eta,
+ \qquad H_k=kR^{-2k}.
+ \label{eq:clock}
+\end{equation}
+Let $q_{\sigma,k,n}$ denote the typed coefficient error at order $n$ for
+the actual full-trace comparison, and suppose its critical coefficient at
+$n=2k$ is the signed packet $e_k^{\rm a}$ defined below.  Choose an integer
+cut $h_\sigma$ with
+\begin{equation}
+ 2k<h_\sigma\le4k.
+ \label{eq:one-alias-window}
+\end{equation}
+The weighted prefix and its off-alias part are
+\begin{align}
+ \cE_\sigma^{(h)}(R)
+ &=\sum_{2\le n<h_\sigma}
+   \frac{|q_{\sigma,k,n}|R^n}{n},
+ \label{eq:weighted-prefix}\\
+ \cE_{\sigma,\mathrm{off}}^{(h)}(R)
+ &=\sum_{\substack{2\le n<h_\sigma\\n\ne2k}}
+   \frac{|q_{\sigma,k,n}|R^n}{n}.
+ \label{eq:off-alias}
+\end{align}
+These quantities are nonnegative.
+
+\begin{theorem}[Exact critical extraction]
+\label{thm:critical-extraction}
+On the window \eqref{eq:one-alias-window},
+\begin{equation}
+ \boxed{
+ \cE_\sigma^{(h)}(R)
+ =\cE_{\sigma,\mathrm{off}}^{(h)}(R)
+  +\frac{|e_k^{\rm a}|}{2H_k}.}
+ \label{eq:critical-extraction}
+\end{equation}
+Consequently,
+\begin{equation}
+ \cE_\sigma^{(h)}(R)\longrightarrow0
+ \quad\Longleftrightarrow\quad
+ \cE_{\sigma,\mathrm{off}}^{(h)}(R)\longrightarrow0
+ \quad\text{and}\quad
+ e_k^{\rm a}=o(H_k).
+ \label{eq:prefix-equivalence}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Separate the $n=2k$ summand in \eqref{eq:weighted-prefix}.  Since
+$H_k=kR^{-2k}$,
+\[
+ \frac{|e_k^{\rm a}|R^{2k}}{2k}
+ =\frac{|e_k^{\rm a}|}{2H_k}.
+\]
+The equivalence follows because both terms on the right of
+\eqref{eq:critical-extraction} are nonnegative.
+\end{proof}
+
+This theorem isolates the full-trace constituent controlled by RH-330.  It
+does not prove that the off-alias term vanishes.  Nor does it close the
+separate head/counterloop budget required by determinant gluing.
+
+\section{Observable signed transfer}
+
+At the critical order, retain the actual localized slots from RH-327 and the
+parity/alias signs from RH-326:
+\begin{equation}
+ e_k^{\rm a}
+ =\cB_k^{\rm a}+\cS_k^{\rm a}+\cR_k^{\rm a}
+  +\cP_k^{\rm a}-\cA_k^{\rm a}.
+ \label{eq:actual-ledger}
+\end{equation}
+Let a frozen comparison model have the same data types,
+\begin{equation}
+ \wh e_k
+ =\wh\cB_k+\wh\cS_k+\wh\cR_k+\wh\cP_k-\wh\cA_k.
+ \label{eq:model-ledger}
+\end{equation}
+Define actual-minus-model defects
+\begin{equation}
+ \Delta\cY_k=\cY_k^{\rm a}-\wh\cY_k,
+ \qquad
+ \cY\in\{\cB,\cS,\cR,\cP,\cA\},
+ \label{eq:slot-defects}
+\end{equation}
+and their signed joint aggregate
+\begin{equation}
+ \Theta_k
+ =\Delta\cB_k+\Delta\cS_k+\Delta\cR_k
+  +\Delta\cP_k-\Delta\cA_k.
+ \label{eq:joint-defect}
+\end{equation}
+
+\begin{theorem}[Sharp signed transfer criterion]
+\label{thm:transfer}
+For every typed actual/model pair on the same clock,
+\begin{equation}
+ \boxed{e_k^{\rm a}=\wh e_k+\Theta_k.}
+ \label{eq:transfer-identity}
+\end{equation}
+In particular:
+\begin{align}
+ e_k^{\rm a}=o(H_k)
+ &\quad\Longleftrightarrow\quad
+ \Theta_k=-\wh e_k+o(H_k);
+ \label{eq:minimal-transfer}\\
+ \wh e_k=o(H_k)
+ \quad&\Longrightarrow\quad
+ \{e_k^{\rm a}=o(H_k)\Longleftrightarrow\Theta_k=o(H_k)\}.
+ \label{eq:closing-transfer}
+\end{align}
+If $\Theta_k/H_k\to0$, then $\wh e_k/H_k$ and $e_k^{\rm a}/H_k$
+have the same finite or extended-real limit.  Combined with
+\cref{thm:critical-extraction}, actual weighted-prefix closure follows from
+\begin{equation}
+ \cE_{\sigma,\mathrm{off}}^{(h)}(R)\to0,
+ \qquad
+ \wh e_k=o(H_k),
+ \qquad
+ \Theta_k=o(H_k).
+ \label{eq:full-constituent-sufficient}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Subtract \eqref{eq:model-ledger} from \eqref{eq:actual-ledger} to obtain
+\eqref{eq:transfer-identity}.  Dividing by $H_k$ proves
+\eqref{eq:minimal-transfer}, \eqref{eq:closing-transfer}, and the limit
+statement.  The last assertion is \eqref{eq:prefix-equivalence}.
+\end{proof}
+
+The minimal condition \eqref{eq:minimal-transfer} permits cancellation
+between every slot.  A stronger modular condition, useful for an auditable
+physical theorem, is
+\begin{align}
+ \Theta_k^{\rm crit}
+ &:=\Delta\cB_k+\Delta\cS_k+\Delta\cP_k-\Delta\cA_k
+ =o(H_k),
+ \label{eq:critical-modular}\\
+ \Delta\cR_k&=o(H_k).
+ \label{eq:far-modular}
+\end{align}
+It implies $\Theta_k=o(H_k)$ but is not logically necessary.  The point of
+\eqref{eq:far-modular} is to control the already aggregated signed far trace
+rather than let an unknown far term repair a critical mismatch accidentally.
+It does not require separate absolute estimates for every microscopic far
+piece.
+
+\section{Exchange gauge and the observable shell}
+
+RH-328 writes a proposed shell representation as
+\begin{equation}
+ \wh\cS_k=\wh\cX_k+\wh\cO_k,
+ \qquad
+ \wh\cX_k
+ =L_k(\wh c_k^{\,2k}-c_{0,k}^{2k}),
+ \label{eq:shell-split}
+\end{equation}
+where $\wh\cO_k$ is the observation error.  This split has a basic gauge
+freedom.
+
+\begin{proposition}[Exchange--observation gauge]
+\label{prop:gauge}
+For every real $t_k$, the transformation
+\begin{equation}
+ \wh\cX_k\longmapsto\wh\cX_k+t_k,
+ \qquad
+ \wh\cO_k\longmapsto\wh\cO_k-t_k
+ \label{eq:gauge-shift}
+\end{equation}
+leaves $\wh\cS_k$, $\wh e_k$, $\Theta_k$, and
+\eqref{eq:transfer-identity} unchanged.  Therefore, unless a physical
+identification map freezes \eqref{eq:shell-split} before evaluation, the
+intrinsic shell replacement is
+\begin{equation}
+ \Delta\cS_k
+ =\cS_k^{\rm a}-(\wh\cX_k+\wh\cO_k),
+ \label{eq:observable-shell-defect}
+\end{equation}
+not separate claims about $\Delta\cX_k$ and $\Delta\cO_k$.
+\end{proposition}
+
+\begin{proof}
+The two changes in \eqref{eq:gauge-shift} sum to zero.  Every listed
+quantity depends on them only through $\wh\cS_k=\wh\cX_k+\wh\cO_k$.
+\end{proof}
+
+This prevents an after-the-fact redistribution between \emph{exchange} and
+\emph{observation error} from manufacturing a small component certificate.
+
+\section{All-term Duhamel transfer and grouped enclosures}
+
+Let $\chi\in\{-,+\}$ denote the two critical channels.  In channel $\chi$,
+let $A_{\chi,j}$ be an actual leg, $G_{\chi,j}$ its frozen comparison leg,
+and let the product length be $m_{\chi,k}=2k$.  For a bounded cyclic trace
+observation $\mathfrak t_\chi$, the exact hybrid terms are
+\begin{equation}
+ d_{\chi,j}
+ =\mathfrak t_\chi\!\left(
+ A_{\chi,2k}\cdots A_{\chi,j+1}
+ (A_{\chi,j}-G_{\chi,j})
+ G_{\chi,j-1}\cdots G_{\chi,1}\right),
+ \qquad 1\le j\le2k.
+ \label{eq:hybrid-terms}
+\end{equation}
+The product difference is $\sum_{j=1}^{2k}d_{\chi,j}$.  If
+$|\mathfrak t_\chi(T)|\le T_\chi\lVert T\rVert$ and
+$\delta_{\chi,j}=\lVert A_{\chi,j}-G_{\chi,j}\rVert$, then
+\begin{align}
+ |d_{\chi,j}|&\le W_{\chi,j}\delta_{\chi,j},
+ \label{eq:term-bound}\\
+ W_{\chi,j}
+ &=T_\chi
+ \prod_{\ell=j+1}^{2k}\lVert A_{\chi,\ell}\rVert
+ \prod_{\ell=1}^{j-1}\lVert G_{\chi,\ell}\rVert.
+ \label{eq:duhamel-weight}
+\end{align}
+Thus all $4k$ weights are retained.  Fixed orientation signs and structural
+replacement terms are absorbed into a finite signed list
+$\{\xi_{i,k}\}_{i\in I_k}$ whose sum is $\Theta_k$.
+
+Absolute summation of \eqref{eq:term-bound} is a safe fallback, but it erases
+the cancellation sought by the first-alias route.  The following certificate
+keeps it.
+
+\begin{theorem}[Sharp grouped signed enclosure]
+\label{thm:grouped}
+Partition $I_k$ into groups $G$ and suppose certified centers and radii obey
+\begin{equation}
+ \left|\sum_{i\in G}\xi_{i,k}-c_{G,k}\right|\le r_{G,k},
+ \qquad r_{G,k}\ge0.
+ \label{eq:group-enclosure}
+\end{equation}
+Put $C_k=\sum_Gc_{G,k}$ and $\rho_k=\sum_Gr_{G,k}$.  Then
+\begin{equation}
+ \Theta_k\in[C_k-\rho_k,C_k+\rho_k]
+ \label{eq:theta-interval}
+\end{equation}
+and
+\begin{equation}
+ e_k^{\rm a}\in
+ [\wh e_k+C_k-\rho_k,\wh e_k+C_k+\rho_k].
+ \label{eq:residual-interval}
+\end{equation}
+The best and worst absolute residuals allowed by these data are exactly
+\begin{align}
+ \operatorname{best}_k
+ &=\max\{|\wh e_k+C_k|-\rho_k,0\},
+ \label{eq:best}\\
+ \operatorname{worst}_k
+ &=|\wh e_k+C_k|+\rho_k.
+ \label{eq:worst}
+\end{align}
+Hence $|C_k|+\rho_k=o(H_k)$ robustly certifies $\Theta_k=o(H_k)$, while
+$|\wh e_k+C_k|+\rho_k=o(H_k)$ directly certifies actual closure.
+\end{theorem}
+
+\begin{proof}
+Sum \eqref{eq:group-enclosure} and apply the triangle inequality to obtain
+\eqref{eq:theta-interval}; then use \eqref{eq:transfer-identity}.  The
+distance from zero to a centered real interval gives \eqref{eq:best}, and
+its farthest endpoint gives \eqref{eq:worst}.  Without further cross-group
+information both endpoints can be attained, so the interval is sharp from
+the stated data.
+\end{proof}
+
+Taking singleton groups, zero centers, and radii
+$W_{\chi,j}\delta_{\chi,j}$ recovers the usual separate absolute Duhamel
+majorant.  The theorem does not assert that the actual signed group
+enclosures exist; deriving them is an open physical problem.
+
+\section{Sharp scale obstructions}
+
+The $o(H_k)$ scale in \cref{thm:transfer} cannot be weakened by a generic
+boundedness statement.
+
+\begin{proposition}[Four transfer obstructions]
+\label{prop:obstructions}
+Let $H_k>0$.
+\begin{enumerate}
+\item If $\wh e_k=0$ and $\Theta_k=H_k$, then
+$e_k^{\rm a}/H_k=1$.  Thus $\Theta_k=O(H_k)$ is insufficient for
+little-$o$ closure.
+\item Suppose $\cA_k/H_k\to\infty$ at the RH-329 exponential rate.  Taking
+$\Delta\cB_k=\cA_k/k$ and all other defects zero gives
+$\Theta_k/\cA_k=1/k\to0$ but
+$\Theta_k/H_k\to\infty$.  Hence $o(\cA_k)$ fidelity is insufficient to
+transfer a closing model.
+\item The two defect vectors
+\[
+ (\Delta\cB_k,\Delta\cS_k)=(\cA_k,-\cA_k)
+ \quad\text{and}\quad
+ (\cA_k,\cA_k)
+\]
+have identical componentwise absolute bounds.  Their joint defects are,
+respectively, $0$ and $2\cA_k$.  Separate unsigned envelopes alone decide
+neither cancellation nor failure.
+\item If a certificate omits the far slot, setting only
+$\Delta\cR_k=H_k$ changes a closing model into a nonclosing actual packet.
+Every signed slot must be retained.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The first, third, and fourth statements follow by substitution into
+\eqref{eq:joint-defect}.  For the second, RH-329 gives
+$\cA_k/H_k=(a_k/k)g^k$ with $g=(\beta R)^2>1$ and $a_k/k$ tending to a
+positive constant.  Therefore
+$\cA_k/(kH_k)\to\infty$.
+\end{proof}
+
+The first defect vector in item 3 has separate absolute budget
+$2\cA_k\gg H_k$ but transfers perfectly.  This proves that separate
+absolute-majorant smallness is sufficient, not necessary.
+
+\section{The RH-329 repair and no-go transfer laws}
+
+For the exact model-defining data of RH-329, write
+\begin{equation}
+ \varrho=1-C_*C_M\in(0,1).
+ \label{eq:rho}
+\end{equation}
+Its proved asymptotics are
+\begin{equation}
+ \frac{\wh e_k}{\cA_k}\longrightarrow-\varrho,
+ \qquad
+ \frac{\cA_k}{H_k}\longrightarrow\infty.
+ \label{eq:rh329-limits}
+\end{equation}
+
+\begin{corollary}[Exact repair law and conditional no-go transfer]
+\label{cor:rh329-transfer}
+An actual packet compared with RH-329 closes at the target scale if and only
+if
+\begin{equation}
+ \Theta_k=-\wh e_k+o(H_k).
+ \label{eq:repair-law}
+\end{equation}
+In particular,
+\begin{equation}
+ \frac{\Theta_k}{\cA_k}\longrightarrow\varrho,
+ \qquad
+ \frac{\Theta_k+\wh e_k}{\cA_k}
+ =o\!\left(\frac{H_k}{\cA_k}\right)
+ \label{eq:repair-precision}
+\end{equation}
+are necessary.  Conversely, if $\Theta_k=o(\cA_k)$, then
+\begin{equation}
+ \frac{e_k^{\rm a}}{\cA_k}\longrightarrow-\varrho,
+ \qquad
+ \frac{e_k^{\rm a}}{H_k}\longrightarrow-\infty.
+ \label{eq:no-go-transfer}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Equation \eqref{eq:repair-law} is \eqref{eq:minimal-transfer}.
+Divide it first by $\cA_k$ and then use \eqref{eq:rh329-limits} to obtain
+\eqref{eq:repair-precision}.  If $\Theta_k=o(\cA_k)$, divide
+\eqref{eq:transfer-identity} by $\cA_k$; the negative nonzero limit then
+multiplies the divergent ratio $\cA_k/H_k$.
+\end{proof}
+
+There is an exact synthetic repair:
+\begin{equation}
+ \Delta\cB_k=-\wh e_k+\frac{H_k}{k},
+ \qquad
+ \Delta\cS_k=\Delta\cR_k=\Delta\cP_k=\Delta\cA_k=0.
+ \label{eq:synthetic-repair}
+\end{equation}
+It gives $e_k^{\rm a}=H_k/k=o(H_k)$.  This is a scalar transfer ledger, not
+an operator construction.  Its role is logical: the RH-329 isolated no-go
+does not imply actual failure unless one proves a replacement condition such
+as \eqref{eq:no-go-transfer}.  Likewise, constructing the scalar repair does
+not show that the actual operator closes.
+
+\section{Exact reproduction ledger}
+
+The executable audit imports the exact RH-329 packet values and performs all
+sign, interval, repair, and counterexample decisions with rational
+arithmetic.  Directed decimals are presentation only.  For each reported
+order it records all $4k$ synthetic signed Duhamel terms before cancellation;
+the six rows contain 344 terms total.
+
+\begin{center}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$k$ & $\wh e_k/H_k$ & $\Theta_k^{\rm repair}/\cA_k$
+& $H_k/\cA_k$ & $2\cA_k/H_k$\\
+\midrule
+2  & $-2.32697$ & 0.714993 & 0.252918 & 7.90769\\
+8  & $-42.3139$ & 0.793551 & 0.0186987 & 106.959\\
+16 & $-1899.64$ & 0.805885 & 0.000424217 & 4714.57\\
+32 & $-3.97557{\times}10^6$ & 0.801015
+   & $2.01484{\times}10^{-7}$ & $9.92634{\times}10^6$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Every repair row satisfies $e_k^{\rm a}/H_k=1/k$ exactly.  Every balanced
+row has signed defect zero, while its unsigned budget is $2\cA_k/H_k$.
+These are formula checks and sharp synthetic examples, not finite-order
+evidence for physical asymptotics.
+
+\section{Inactive hypotheses and RH-331 handoff}
+
+The repository does not provide a map identifying actual blocks with
+RH-329 blocks.  It also lacks a physical exchange--observation split, signed
+two-channel Duhamel group enclosures, target-scale parity and alias
+replacement, a signed far-remainder theorem, and convergence of the
+off-alias weighted background.  RH-329 is a graded family, not one operator
+realizing every order.  Therefore neither
+\eqref{eq:full-constituent-sufficient} nor \eqref{eq:no-go-transfer} is
+activated for the actual noisy trace.
+
+RH-331 should review RH-322--RH-330 as a ten-layer chain, preserve the
+observable-shell gauge firewall, verify the individual and batch archives,
+and record the route coordinate
+\[
+ \texttt{first\_alias\_transfer\_criterion\_exact\_actual\_replacement\_open}.
+\]
+The all-order deterministic envelope and coefficient anchors remain
+inherited inputs; they are not re-proved here.  The open off-alias and
+head/counterloop budgets mean determinant gluing is not activated.
+
+All five program gates remain false/open.  No canonical intrinsic dynamical
+determinant, oriented unitary completion, self-adjoint generator with an
+intrinsic $T\log T$ law, von Mangoldt prime-power trace, or completed-zeta
+divisor equality is proved.  No Hilbert--Polya operator is constructed, no
+Riemann zero is identified, and the Riemann Hypothesis is not proved.
+
+\end{document}
