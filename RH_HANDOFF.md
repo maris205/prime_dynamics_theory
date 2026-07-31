@@ -1,52 +1,74 @@
 # RH Research Handoff
 
-Status date: 2026-07-30
+Status date: 2026-07-31
 
-Current completed endpoint: RH-321
+Current completed endpoint: RH-331
 
-Completed research batch: RH-312 through RH-321
+Completed research batch: RH-322 through RH-331
 
-Research batch commit:
-ca56920373223d396b23ce18c793c27572a4fa5a
+Research batch publication commit:
+`6b994f35865a8215eb01a021ee08bf74e4eba083`
 
 The repository, not an old chat transcript, is the source of truth.
 
 ## 1. Continuation protocol
 
-Work in /root/math/prime_dynamics_theory.
+Work in `/root/math/prime_dynamics_theory`.
 
-Before the next state-changing batch:
+Before the next state-changing paper:
 
-    git status --short --branch
-    git pull --rebase origin main
+```bash
+git status --short --branch
+git pull --rebase origin main
+```
 
-Read these compact entry points before older papers:
+Read these entry points completely before older papers:
 
-- RH_HANDOFF.md
-- papers/RH-321-ten-layer-endpoint-spectral-frontier-review/README.md
-- papers/RH-321-ten-layer-endpoint-spectral-frontier-review/UPDATED_ROADMAP.md
-- papers/RH-321-ten-layer-endpoint-spectral-frontier-review/results/result.json
-- papers/RH-321-ten-layer-endpoint-spectral-frontier-review/main.pdf
+- `AGENTS.md`
+- `RH_HANDOFF.md`
+- `papers/RH-331-ten-layer-first-alias-frontier-review/README.md`
+- `papers/RH-331-ten-layer-first-alias-frontier-review/UPDATED_ROADMAP.md`
+- `papers/RH-331-ten-layer-first-alias-frontier-review/results/result.json`
+- `papers/RH-331-ten-layer-first-alias-frontier-review/main.pdf`
 
-The default RH-322 route is the joint first-alias boundary layer.  The other
-legitimate route is an actual noisy-complement theorem proving fixed-order
-coefficient transport together with endpoint energy tightness.  Synthetic
-finite spectra, more tail bounds, and finite-prefix fits are not reopening
-inputs.
+The default RH-332 route is the second physical critical leg: a sharp
+repelling-return affine-leg remainder in both sibling/fold directions.  The
+paper must prove a phase-matched physical row theorem or a genuine local
+scale obstruction.  It may not copy the first-leg RH-324 result by symmetry
+without proving that symmetry for the physical kernel.
 
-### Chat and delegation discipline
+The alternative legitimate route remains actual fixed-order noisy-complement
+transport plus endpoint coefficient-energy tightness.  Synthetic spectra,
+finite-prefix fits, scalar repairs, more isolated exchange models, and
+separate absolute majorants are not reopening inputs.
 
-- Keep the primary chat to conclusions, route choices, theorem boundaries,
-  blockers, and final audit summaries.
-- Delegate long numerical experiments, source scans, build logs, archive
-  checks, and page-by-page PDF review; return compact verdicts and exact
-  counts.
-- Keep state changes, final integration, staging, and commits coordinated by
-  the primary session.
-- Preserve unrelated untracked caches, checkpoints, LaTeX intermediates, and
-  TPC work.  Stage only the current RH batch and this handoff file.
-- Pull with git pull --rebase origin main before every commit and again
-  immediately before pushing.
+### Codex agent pipeline
+
+The durable orchestration rules are in `AGENTS.md` and the descriptive role
+profiles are in `.codex/agents/`.
+
+- The primary agent is the RH project lead and the only route, handoff, git,
+  integration, and publication owner.
+- At most three subagents run concurrently:
+  `rh-source-lock`, `rh-proof-auditor`, and one exclusive
+  `rh-paper-writer` after a primary `GO`.
+- Once a draft exists, `rh-release-qa` replaces one read-only station; it is
+  not a fourth concurrent subagent.
+- Read-only scouting for RH-(N+1) may overlap the RH-N writer, but RH-(N+1)
+  is not activated until RH-N creates the required theorem edge.
+- Subagents return compact evidence, exact counts, and executable blockers.
+  They never commit, push, modify `RH_HANDOFF.md`, or edit overlapping paper
+  directories.
+- As long as a repository-backed route exists, continue without requesting
+  per-paper approval.  Stop with `STOP_SCOPED` or `NOT_TESTABLE` when the
+  exact route conditions fail; do not manufacture the next number.
+
+Preserve unrelated untracked caches, checkpoints, LaTeX intermediates, and
+all TPC work.  Stage only the active RH paper/batch, its archive metadata,
+approved agent configuration, and this handoff when a batch closes.
+
+Pull with `git pull --rebase origin main` before every commit and again
+immediately before every push.
 
 ## 2. Program objective and claim boundary
 
@@ -55,262 +77,346 @@ Hilbert--Polya program.  It is not a proof of the Riemann Hypothesis.
 
 - Gate A: canonical intrinsic dynamical spectral determinant.
 - Gate B: time-oriented scattering or unitary completion.
-- Gate C: genuine self-adjoint generator and intrinsic T log T law.
+- Gate C: genuine self-adjoint generator and intrinsic `T log T` law.
 - Gate D: von Mangoldt-weighted prime-power traces.
 - Gate E: equality with the completed-zeta divisor.
 
-All five gates are false/open.  No paper in RH-312--RH-321 constructs a
+All five gates are false/open.  No paper in RH-322--RH-331 constructs a
 Hilbert--Polya operator, identifies Riemann zeros, proves a von Mangoldt trace
 formula, proves completed-zeta divisor equality, or implies RH.
 
-## 3. Decision after RH-321
+The inherited typed branch ledgers, in coordinate order
 
-Current route coordinate:
+```text
+(head, bridge, tail, target, boundary)
+```
 
-    endpoint_spectral_realizability_closed_actual_transport_open_first_alias_open
+remain
 
-The two typed branches remain
+```text
+noisy modulus spectrum       = (true, false, true,  true, true)
+graded monodromy counterloop = (true, true,  false, true, true)
+weighted cross-branch glue   = false
+complete count               = 0
+```
 
-    noisy modulus spectrum       = (true, false, true,  true, true)
-    graded monodromy counterloop = (true, true,  false, true, true)
-    weighted cross-branch glue   = false
-    complete count               = 0
-
-Their coordinatewise maximum is not a legal certificate.  The noisy spectral
-complement and graded counterloop still belong to different determinant
-decompositions.
+Their coordinatewise maximum is not a legal certificate.  The noisy
+spectral complement and graded counterloop still belong to different
+determinant decompositions.
 
 The deterministic target inputs remain the all-order unified trace envelope
 of RH-267 and the coefficient-anchor identities of RH-263/RH-268.  Finite
-tables are reproduction checks only and are not promoted to all-order
-theorems.
+tables reproduce formulas only; they are never promoted to physical or
+all-order asymptotics.
 
-Use the constants
+## 3. Decision after RH-331
 
-    q       = 0.5
-    q_star  = 0.7008752258547759...
-    rho_*   = 1.4267874838640735...
-    R       = 1.4
-    s       = q_star/q = 1.4017504517095518...
-    d       = log(s) = 0.3377217782684642...
-    sqrt(d) = 0.5811383469264992...
+Current route coordinate:
 
-For the actual complement mismatch write
+```text
+first_alias_transfer_criterion_exact_actual_replacement_open
+```
 
-    g_sigma(z)
-      = sum_(n>=2) (tau_(sigma,n)-a_n) z^n/n.
+Use the moving first-alias clock
 
-RH-312--RH-321 solve a synthetic finite-normal spectral extremal class.  They
-do not prove that the actual noisy complement has the constructed spectrum,
-matches even one fixed deterministic moment, or satisfies endpoint energy
-tightness.  The batch is therefore a scoped spectral-realizability route
-stop, not a reopening theorem.
+```text
+k = log(1/sigma)/(2 log(lambda)) + O(1)
+eta_sigma = k - log(1/sigma)/(2 log(lambda)) -> eta
+H_k = k R^(-2k),                    R = 1.4
+```
 
-The direct route now has an exact functional-analytic target.  Put
+The exact observable five-slot convention is
 
-    e_(sigma,n)
-      = (tau_(sigma,n)-a_n) rho_*^n/n.
+```text
+e_k = B_k + S_k + R_k + P_k - A_k.
+```
 
-Then actual endpoint H2 convergence is equivalent to both
+For actual and frozen-model packets,
 
-    e_(sigma,n) -> 0 for every fixed n
+```text
+Theta_k = Delta_B + Delta_S + Delta_R + Delta_P - Delta_A,
+e_actual,k = e_model,k + Theta_k.
+```
 
-and
+The exchange/observation split is gauge-dependent:
 
-    lim_(N->infinity) limsup_(sigma->0)
-      sum_(n>N) |e_(sigma,n)|^2 = 0.
+```text
+X -> X+t,       E_obs -> E_obs-t,       S=X+E_obs unchanged.
+```
 
-Neither statement is known.  In particular, the repository still contains
-no theorem proving tau_(sigma,n) -> a_n for the actual complement at any
-fixed order.
+Therefore actual replacement must compare the observable shell `S` unless a
+physical identification map freezes the split before evaluation.
 
-The default next route is therefore the first natural alias.  Its archived
-critical slope is 1/log(lambda), and the alias, parity, and localization
-contributions live at the same weighted order.  A successful theorem must
-keep their joint cancellation and achieve error o(k R^(-2k)); separate
-absolute majorants are insufficient.
+If the actual critical coefficient is identified with the packet and
+`2k < h_sigma <= 4k`, RH-330/RH-331 give
 
-## 4. Compact conclusions from RH-312 through RH-321
+```text
+E_prefix = E_off + |e_actual,k|/(2 H_k).
+```
 
-- RH-312: The endpoint-scaled deterministic numerator logarithm is exactly
+Hence
 
-      log(1-w) + w + H_reg(w),
+```text
+E_prefix -> 0
+iff
+E_off -> 0 and Theta_k = -e_model,k + o(H_k).
+```
 
-  where H_reg is analytic for at least
-  |w| < 1.0376199142321623.  This is an all-order deterministic theorem.
+For a model already satisfying `e_model,k=o(H_k)`, the signed replacement
+condition reduces exactly to `Theta_k=o(H_k)`.
 
-- RH-313: The universal logarithm splits into orthogonal even and odd Hardy
-  channels.  Endpoint H2 convergence is equivalent to convergence of both
-  parity projections, with an exact Pythagorean identity.
+For the failed RH-329 frozen model,
 
-- RH-314: The degree-N Taylor projection is the unique best H2 polynomial
-  approximation to the endpoint logarithm, with
+```text
+e_model,k/A_k -> -(1-C_* C_M),       A_k/H_k -> infinity.
+```
 
-      E_N^2 = sum_(n>N) n^(-2),    E_N ~ N^(-1/2).
+Actual closure would therefore need the tuned repair
 
-  The analytic remainder is exponentially smaller.
+```text
+Theta_k = -e_model,k + o(H_k).
+```
 
-- RH-315: A complete root packet for
+Conversely, `Theta_k=o(A_k)` would conditionally transfer its negative
+divergence.  Neither actual estimate is known.
 
-      z^d = w/(dL),
+RH-331 proves only an abstract typed-ledger underdetermination result: two
+signed ledger completions can have identical unsigned bounds and opposite
+critical verdicts.  It does not construct two physical noisy operators and
+does not assert that both abstract completions are physically realizable.
 
-  repeated L times, has zero moments below d, moment w at order d, and
+## 4. Compact conclusions from RH-322 through RH-331
 
-      p_(md) = w^m/(dL)^(m-1).
+- **RH-322:** For one physical folded row, the half-line pushforward has an
+  exact `L1` Gaussian-tail error, the limiting profile is Lipschitz in the
+  clearance parameter, all polynomial moments converge, and distinct phases
+  give distinct profiles.  This is one row, not a trace law.
 
-  It is a genuine finite conjugate spectrum with integer multiplicities.
+- **RH-323:** The oriented affine `(V,U,W)` Gaussian chain has an exact joint
+  density, retained-coordinate `L1` isometry, marginal contraction, and
+  extended-skew-normal output.  It is an affine probability model, not the
+  physical two-leg kernel; leakage probabilities are not parity weights.
 
-- RH-316: Triangular iteration of the packets realizes every finite real
-  moment prefix exactly inside |mu| <= q.  Applied to the all-order
-  deterministic anchors, it gives a synthetic finite normal realization for
-  every prefix.  The numerical reproduction uses archived RH-263 anchors,
-  not a q_star^n proxy.
+- **RH-324:** The first physical critical leg has exact fold/state-boundary
+  tails, an explicit curved-to-tangent error, and a sharp strictly positive
+  `O(sigma)` remainder.  Exponential affine accuracy is false.  The comparison
+  `sigma=o(R^(-2k))` is only a local scale comparison.
 
-- RH-317: Among finite spectra in |mu| <= q matching through order N, the
-  least rank and least squared mass are both
+- **RH-325:** Retaining transported incoming laws gives an exact path-Duhamel
+  criterion.  If all `O(k)` rows were phase-matched `O(sigma)`, the path error
+  would be `O(k sigma)=o(H_k)`.  A separate trace criterion needs a physical
+  stability exponent
+  `gamma < 0.3503698834605293...`.  Same-seed composability and a
+  dimension-free Markov-to-trace bound are both disproved by explicit
+  counterexamples.
 
-      Theta((q_star/q)^N).
+- **RH-326:** Hardy normalization fixes the parity/counterloop/alias signs and
+  yields the exact even-order convention `+P-A`.  The scalar phase ratio
+  tends to `C_* C_M lambda^eta`.  Ordinary decimals are not interval
+  certificates, and local probability data remain unidentified with the raw
+  trace packet.
 
-  The upper proof uses divisor sparsity: an e-packet affects order d only if
-  e divides d, so every proper feedback order is at most d/2.
+- **RH-327:** The actual basepoint-localized trace partitions exactly as
+  `T=B+S+R`.  A synthetic two-state exchange/reset construction proves that
+  branch-blind power data do not identify the signed shell.  The physical
+  shell scale, contrast, sign, probability-to-trace observation, and signed
+  far remainder remain open.  The current manuscript explicitly defines
+  `f`, `Delta_k^clr`, and the fixed phase `eta`; its clearance asymptotic is an
+  imported archived interface, not a new theorem of RH-327.
 
-- RH-318: For the finite-spectral endpoint extremal problem,
+- **RH-328:** With physical exchange fields supplied in advance, the exact
+  matching equation is
 
-      E_spec(M)^2 ~ d/log M,
-      d = log(q_star/q).
+  ```text
+  e = L(c_phys^(2k)-y) + E_obs + R,
+  y = c0^(2k) + (A-P-B)/L.
+  ```
 
-  The actual mass cap gives only the universal class-sharp lower-rate bound
+  It gives sharp power/radius precision laws and uncertainty intervals.  A
+  counterexample shows that a zero best-case reachability distance need not
+  imply physical matching.
 
-      liminf log(1/sigma) ||g_sigma||_H2(rho_*)^2 >= d.
+- **RH-329:** A frozen exact-rational graded exchange model with
+  `L=A`, `c_iso=4/5`, `c0=3/5`, and zero boundary/observation/far slots has
+  `e/A -> -(1-C_*C_M)` and `e/H -> -infinity`, even though the reachability
+  screen eventually passes.  This is a strict isolated-model negative result,
+  not an actual full-trace divergence theorem and not one all-order operator.
 
-  The lower scale tends to zero and proves neither convergence nor
-  nonconvergence.
+- **RH-330:** The exact actual/model identity, observable-shell gauge
+  firewall, all-`4k` two-channel Duhamel expansion, sharp grouped signed
+  enclosure, and RH-329 repair/no-go transfer laws are proved.  Separate
+  absolute majorants are sufficient but not necessary.  Every physical
+  replacement hypothesis remains inactive.
 
-- RH-319: On every fixed 1.4 < rho < rho_*, the finite-spectral extremal
-  H-infinity and H2 errors have optimal order
+- **RH-331:** The ten-layer review normalizes the typed chain, proves the
+  conditional prefix equivalence, and proves a scoped abstract typed-ledger
+  underdetermination proposition.  It records zero discharged actual bridge
+  obligations, weighted cross-branch glue false, complete count zero, and all
+  Gates A--E false.
 
-      Theta_rho(M^(-kappa(rho))/log M),
-
-  with
-
-      kappa(rho)
-        = log(1/(q_star rho))/log(q_star/q).
-
-  This upgrades RH-306 from abstract coefficient arrays to genuine finite
-  normal power sums only.
-
-- RH-320: Exact-prefix spectra plus one escaping packet give a synthetic
-  sequence with eventual equality of every fixed moment, convergence on
-  every strict radius, squared mass compatible with sigma^(-1), and endpoint
-  H2 norm at least one.  Thus fixed moments and strict-annulus convergence do
-  not imply endpoint convergence without energy tightness.
-
-- RH-321: The ten-layer review records the batch as a scoped route stop.
-  Both typed ledgers remain score four of five, cross-branch glue is false,
-  complete count is zero, and Gates A--E remain open.
-
-## 5. Route firewall and RH-322 reopening triggers
+## 5. Route firewall and actual reopening triggers
 
 Do not promote the batch beyond its hypotheses:
 
-- The endpoint logarithmic decomposition concerns the deterministic target,
-  not the actual noisy complement.
-- Polynomial approximation and finite-prefix realization are extremal
-  information-class theorems, not noisy spectral transport.
-- Integer-multiplicity normal matrices are synthetic.  They are not
-  eigenvalue models identified with the transfer operator.
-- The Theta rank and mass laws concern optimal finite realizations.  They are
-  not actual noisy rank or complement-mass asymptotics.
-- The constant d/log M is sharp for the finite spectral class.  The actual
-  consequence is a lower-rate restriction only.
-- Strict-annulus saturation does not prove actual annular convergence.
-- The escaping packet disproves logical sufficiency of coarse axioms only.
-  It does not prove actual endpoint nonconvergence.
-- No Gate A--E status change follows from the synthetic class.
+- One physical leg does not imply a two-leg or all-cycle theorem.
+- Retained-path probability control does not imply cyclic trace control.
+- A lower conditioning bound cannot be used as the upper bound required by
+  the RH-325 trace criterion.
+- The scalar parity/alias phase law is not a target-scale replacement theorem.
+- The RH-327 exchange completion and RH-329 audit are synthetic/graded models,
+  not identifications of the noisy operator.
+- Best-case shell reachability is not physical matching.
+- A scalar signed repair is not an operator construction.
+- Closing the `n=2k` packet does not close `E_off`.
+- Closing the one-alias weighted prefix does not close the independent noisy
+  head/counterloop determinant budget.
+- No Gate A--E status change follows from an inactive transfer criterion.
 
-Admissible RH-322 inputs are:
+Admissible reopening inputs are:
 
-1. An actual theorem proving tau_(sigma,n) -> a_n for every fixed n together
-   with endpoint coefficient-energy tightness, or a direct proof that
-   ||g_sigma||_H2(rho_*) tends to zero.
-2. A joint moving-order first-alias boundary-layer trace law including
-   parity, the neighboring shell, and the remainder, with total error
-   o(k R^(-2k)).
-3. A growing-clock actual head-transport theorem synchronized with an
-   alias-inclusive full-trace law on the same clock.
+1. A second-physical-leg and all-cycle phase-transport theorem at
+   `O(k sigma)=o(H_k)`, or a rigorous physical obstruction.
+2. A gauge-fixed observation map proving
+   `q_(sigma,k,2k)=B+S+R+P-A` in one common trace data type.
+3. Physical two-channel prefix/suffix stability and signed Duhamel group
+   enclosures at scale `o(H_k)`.
+4. Target-scale parity/alias replacement and an aggregated signed far
+   remainder theorem.
+5. A punctured one-alias theorem proving `E_off->0`, including neighboring
+   sidebands `n=2k+j`.
+6. Synchronized actual noisy-head/counterloop transport closing the separate
+   determinant-gluing budget.
 
-If none is available, publish a scoped local theorem or explicit model
-failure.  Do not advertise a local half-line Gaussian profile, an isolated
-cycle calculation, or a finite numerical fit as the joint first-alias law.
+If a positive route fails, publish only a theorem-backed local obstruction,
+an explicit physical counterexample, or a precise `NOT_TESTABLE` stop.  Do
+not fill the next paper with another finite fit or a restatement of the
+conditional criterion.
 
-### Default RH-322--RH-331 route
+## 6. Default RH-332--RH-341 actual-replacement route
 
-The preferred next batch is a joint first-alias program:
+1. **RH-332: Sharp physical repelling-return affine-leg remainder.**
+   Treat the second critical physical leg in both sibling/fold directions;
+   prove the sharp phase-matched row error or a local scale obstruction.
+2. **RH-333: Full boundary-cycle clearance-phase transport.**
+   Propagate the common phase and incoming moments through all `2k` legs;
+   target `O(k sigma)=o(H_k)` or prove a phase/stability stop.
+3. **RH-334: Gauge-fixed physical first-alias observation map.**
+   Freeze windows, pullback, sectors, and observation before evaluation and
+   prove the actual five-slot coefficient identity, or an exact
+   sector/nonuniqueness obstruction.
+4. **RH-335: Adapted-norm two-sibling trace-observation stability.**
+   Seek a physical upper exponent
+   `gamma < 0.3503698834605293...`; do not substitute an inherited lower
+   bound.
+5. **RH-336: Physical signed two-channel Duhamel cancellation.**
+   Retain all `4k` hybrid terms and prove a signed enclosure for
+   `Delta_B+Delta_S`, or a nonzero normalized physical obstruction.
+6. **RH-337: Target-scale parity--alias replacement.**
+   Upgrade leading scalar laws to rigorous interval/remainder estimates
+   sufficient for `Delta_P-Delta_A=o(H_k)`, or isolate a target-scale
+   obstruction.
+7. **RH-338: Signed far-complement trace remainder.**
+   Prove aggregated `Delta_R=o(H_k)` without separate absolute summation, or
+   isolate a real nonvanishing periodic-orbit family.
+8. **RH-339: Punctured one-alias weighted-background theorem.**
+   Prove `E_off->0` on `2k<h<=4k`, including neighboring sidebands, or prove
+   a positive sideband lower obstruction.
+9. **RH-340: Synchronized noisy-head/counterloop determinant gluing.**
+   Close the head budget on the identical clock and activate RH-288 only if
+   the critical, off-alias, and head budgets all close.
+10. **RH-341: Ten-layer actual first-alias replacement frontier review.**
+    Audit the unique positive, negative, or still-open coordinate, validate
+    individual/batch archives, and update this handoff.
 
-1. RH-322: certified half-line Gaussian profile for one critical folded row;
-2. RH-323: paired affine Gaussian chain for the two critical contacts;
-3. RH-324: curvature and normalization remainder for a single critical leg;
-4. RH-325: moving-order Duhamel composition criterion on k asymptotic to
-   log(1/sigma);
-5. RH-326: parity-renormalized first-alias packet identity;
-6. RH-327: neighboring-shell coupling and same-order cancellation budget;
-7. RH-328: joint alias/parity/shell matching equation;
-8. RH-329: validated isolated-model audit, with a scoped negative result if
-   the matching equation fails;
-9. RH-330: full-trace transfer criterion retaining joint cancellation;
-10. RH-331: ten-layer first-alias frontier review.
+Dependency spine:
 
-Each paper must retain its own theorem, counterexample, validated numerical
-finding, or scoped negative result.  Local model theorems remain local until
-the full joint trace replacement is proved.
+```text
+RH-332 -> RH-333 -> RH-334 -> RH-335 -> RH-336
+RH-337 ----------------------------------|
+RH-334 -> RH-338 ------------------------|
+RH-336 + RH-337 + RH-338 -> RH-339 -> RH-340 -> RH-341
+```
 
-## 6. Reproduction and publication audit
+RH-332/333, RH-337, and read-only preparation for RH-338 may be researched
+in parallel.  RH-334 must freeze the observation type before RH-338 becomes
+a formal replacement theorem.
+
+Checkpoint stops:
+
+- After RH-333: no all-leg phase theorem means no actual trace-Duhamel claim.
+- After RH-335: no physical upper exponent below the threshold means RH-336
+  can only seek a signed obstruction.
+- After RH-338: the critical packet gets no actual verdict until the boundary,
+  parity/alias, and far signed pieces share one clock and data type.
+- After RH-339: a closed critical packet without `E_off->0` is not a closed
+  weighted prefix.
+- At RH-340: determinant gluing activates only when the critical, off-alias,
+  and head/counterloop budgets all close.
+
+## 7. Reproduction and publication audit
 
 Use the shared environment and avoid new cache noise:
 
-    PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python -m pytest -q -p no:cacheprovider
+```bash
+PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python -m pytest -q -p no:cacheprovider
+```
 
-Final RH-312--RH-321 audit:
+Final RH-322--RH-331 audit:
 
-- Tests: 46/46 passed across ten directories, with per-paper counts
-  4,4,4,5,5,5,5,4,6,4.
-- Individual archives: 10/10 verified with zero failures.  RH-312--RH-320
-  manifests contain 15 publication files each; RH-321 contains 19.
+- Tests: 132/132 passed across ten independent directories, with per-paper
+  counts `6,6,8,8,10,12,14,38,26,4`.
+- RH-331 result regeneration is deterministic and its tests compare generated
+  layer data directly with `batch_status()` to prevent stale JSON.
+- Individual archives: 10/10 verified with zero failures.  RH-322--RH-330
+  contain 15 publication files each; RH-331 contains 19.
 - Batch archive: 154 publication files, zero failures.
-- PDFs: per-paper page counts are 2,1,1,1,1,2,2,1,2,2, for 15 pages total.
-  Every semantic PDF is byte identical to main.pdf and every PDF has
-  extractable text.
-- All ten LaTeX logs have zero errors, undefined citations/references, rerun
-  warnings, and overfull/underfull boxes.
-- Ghostscript parsed 10/10 PDFs; all fonts are embedded.
-- Page-by-page visual review found no clipping, overlap, anomalous blank page,
-  formula or table overflow, footer conflict, or rendering anomaly.
-- All 10 result JSON files parse, contain complete Gate A--E ledgers, and keep
-  all 50 gate values false.
-- RH-321 records reopening_trigger_supplied=false,
-  scoped_spectral_route_stop=true, weighted cross-branch glue false,
-  complete count zero, and all Hilbert--Polya, Riemann-zero, von-Mangoldt,
-  zeta-divisor, and RH flags false.
-- The paper batch commit contains 176 files after adding per-paper and batch
-  archive metadata.
-- Unrelated untracked caches, checkpoints, LaTeX intermediates, and TPC work
-  remain unstaged.
+- The ten paper trees contain 176 RH files after per-paper archive metadata;
+  the publication commit added 48 paths, including seven durable agent-policy
+  files.
+- PDFs: page counts are `4,4,4,4,5,6,6,5,6,4`, for 48 pages total.
+  All 10 semantic PDFs are byte-identical to `main.pdf`; all have extractable
+  text.
+- Ghostscript parsed 10/10 PDFs.  All 176 reported font rows are embedded.
+- All ten LaTeX logs have zero warnings, undefined citations/references,
+  rerun notices, and overfull/underfull boxes.
+- Page-level review of RH-331 found no clipping, overlap, blank-page anomaly,
+  formula/table overflow, footer conflict, or rendering defect.  Earlier
+  paper QA and the final batch structural checks remain archived in their
+  paper state.
+- All nine upstream result files contain five false Gate values; RH-331
+  normalizes those 45 values and keeps its own five false, for 50/50 false.
+- `AGENTS.md` and five TOML profiles parse cleanly under the installed shared
+  Python/TOML environment.  The configured subagent ceiling is three.
+- Unrelated caches, checkpoints, LaTeX intermediates, and TPC work remain
+  untracked and unstaged.
+
+RH-331 result SHA-256:
+`a80341159525b4b6186e7506b1585f50956fded54bfb57fc50d8da1176b72f4c`
+
+RH-331 PDF SHA-256:
+`dc3f074b9ef6a3809f9156b2819d42945f998d0710e0485f8a83bfd7abe4dfdd`
+
+RH-322--RH-331 batch manifest SHA-256:
+`60fee25984ef45e85c620935342c1f0dee218ffbd30d493047e2d444fc414774`
 
 The compact review is
-papers/RH-321-ten-layer-endpoint-spectral-frontier-review/.
+`papers/RH-331-ten-layer-first-alias-frontier-review/`.
 
-## 7. Continuation prompt
+## 8. Continuation prompt
 
-    Continue RH research in /root/math/prime_dynamics_theory.  Run
-    git status --short --branch and git pull --rebase origin main.  Treat the
-    repository as the sole source of truth.  Read RH_HANDOFF.md and the
-    RH-321 README, UPDATED_ROADMAP.md, result.json, and main.pdf.  Start
-    RH-322 on the joint first-alias route: first certify the local critical
-    half-line Gaussian row profile, but keep it explicitly model/local until
-    parity, neighboring-shell cancellation, and the moving-order remainder
-    are combined with error o(k R^(-2k)).  The alternative legitimate route
-    is actual complement coefficient transport plus endpoint energy
-    tightness.  Synthetic spectra, finite prefixes, and extra tail bounds are
-    not reopening inputs.  Keep Gates A--E false/open and do not imply a
-    Hilbert--Polya operator, Riemann-zero identification, zeta-divisor
-    equality, or RH.
+```text
+Continue RH research in /root/math/prime_dynamics_theory.  Treat the
+repository as the sole source of truth.  Read AGENTS.md, RH_HANDOFF.md, and
+the RH-331 README, UPDATED_ROADMAP.md, result.json, and main.pdf completely.
+Run git status --short --branch and git pull --rebase origin main.  Start
+RH-332 on the second physical repelling-return critical leg.  Use the primary
+agent plus at most three subagents according to .codex/agents/: source lock,
+adversarial proof audit, and one exclusive paper writer after GO; replace one
+station with release QA after the draft.  Prove the phase-matched physical
+row remainder in both sibling/fold directions, including its sharp leading
+coefficient, or publish a rigorous local scale obstruction.  Do not infer
+the second leg from RH-324, do not identify forward probability with cyclic
+trace, and do not activate RH-325/RH-330 without all their actual hypotheses.
+Keep finite rows as reproduction checks, preserve unrelated TPC/cache work,
+and keep Gates A--E and all Hilbert--Polya/RH claims false/open.
+```
