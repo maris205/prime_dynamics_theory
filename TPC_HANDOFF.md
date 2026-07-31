@@ -4,9 +4,9 @@
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC18_S2_CURRENT_PACKET_ZERO_BETA_AND_GENERAL_BLOCK_SELECTION_ATTACHMENT_ABSENT_STOP_SCOPED_NOT_REOPENED`
+`TPC18_H0_2_EXACT_DYADIC_PROFILE_AND_BETA_NONZERO_FROZEN_TAIL_FAILURE_A_EXCLUSION_AND_ACTUAL_ATTACHMENT_ABSENT_STOP_SCOPED_NOT_REOPENED`
 下一篇：`null`；下一项不编号审计：
-`TPC18_H0_2_NONPRIMITIVE_ALTERNATIVE_SELECTION_AND_ACTUAL_PACKET_ATTACHMENT_GATE`
+`TPC18_H0_2_FULL_R_R_PRIMITIVE_A_ULTRA_LONG_COMPLEMENT_GATE`
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
@@ -19,7 +19,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 是下一会话的事实来源。旧聊天记录不是事实来源。
 下文历史审计块中的所有 `tpc205_authorized=false`、`TPC-206 未授权` 与
 `USER_CONFIRMATION_REQUIRED` 都是当时的编号前快照，统一由本页页首及
-第 14--21 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
+第 14--23 节覆盖；其数学 gate 与 `STOP_SCOPED` 内容仍保留。用户已允许
 后续按同一有限、fail-closed 工作流继续，不再设置单独的人为编号授权门；
 这不替代 theorem evidence，也不许可跨过任何数学门槛。
 
@@ -472,6 +472,24 @@ TPC-17/18、TPC-133/134/136/143/153/154 与 TPC-205/206 记录中，把
 nonzero actual endpoint/source-forward record。它不停止 TPC-18 的通用
 endpoint identity、真正新增的 `h0=2` branch-selection theorem、具名 actual
 common-`k` packet、两个 O161 parents、H1 或 global architecture。
+
+2026-07-31 的下一轮 `h0=2` exact-profile / branch-selection 审计新增且仅新增：
+
+```text
+DECLARED_TPC18_H0_2_TAIL_FAILURE_A_EXCLUSION_AND_DIRECT_B_CORPUS_V1
+  = STOP_SCOPED
+```
+
+它只停止在本轮审核的 34 个 git refs、仓库现有 TPC-17/18/19/27/28/108
+对象，以及截至 2026-07-31 逐对象核查的 Maynard、Li、Lichtman、Pascadi、
+Matomäki--Radziwiłł--Tao、Goldston--Yıldırım、Ramaré--Zúñiga Alterman、
+Laporta 与 Coppola--Murty--Saha primary theorem 候选中，把 AP / factorable
+平均分布、shift-average、log-average、截断平方、size-only LCM 对角或带
+未验证强假设的对象改名为：具名 actual `h0=2` symmetric-tail failure、完整
+`r_R r_R` primitive-A 排除，或 `C_{I,2}^{MM,off}` 的 direct lower bound。
+它不停止真正新增的 full-residual determinant theorem、theorem-backed
+fixed-block tail-failure、direct `s=2` finite-model theorem、两个 O161 parents、
+H1 或 global architecture。
 
 ## 7. Reopen triggers
 
@@ -3135,7 +3153,306 @@ TPC18_H0_2_NONPRIMITIVE_ALTERNATIVE_SELECTION_AND_ACTUAL_PACKET_ATTACHMENT_GATE
 `(D0,V,k,e)=(6,18,22,11)` 只可作为 algebraic diagnostic candidate，
 不得预记为 physical record。只有上述四关真实通过，才允许讨论 TPC-207。
 
-## 21. 下一会话可直接粘贴
+## 21. 不编号 `h0=2` exact-profile / branch-selection / attachment 审计
+
+### 21.1 冻结对象与裁决
+
+本轮只审核：
+
+```text
+TPC18_H0_2_NONPRIMITIVE_ALTERNATIVE_SELECTION_AND_ACTUAL_PACKET_ATTACHMENT_GATE
+```
+
+顺序仍是 theorem-valid block、actual tail-failure、排除 primitive A 或直接
+选择 `s=2` 的 B、同一 source lock 上的 actual packet attachment。结果是
+前置几何与系数层得到真实推进，但任何 actual / L2 trigger 均未成立：
+
+```text
+SOURCE_BACKED_EXACT_DYADIC_H0_2_PROFILE
+  = YES_THEOREM_SPECIALIZATION
+
+EVEN_K_BETA_I_K_NE_0_ON_SMOOTH_K_SUPPORT
+  = YES_EXISTENTIAL_COEFFICIENT_LEVEL_ONLY
+
+SOURCE_BACKED_ACTUAL_H0_2_SYMMETRIC_TAIL_FAILURE_LOWER_BOUND
+  = ABSENT
+
+FULL_R_R_PRIMITIVE_GENERIC_DETERMINANT_CORRELATION_BOUND
+  = ABSENT
+
+DIRECT_C_I_2_MM_OFF_LOWER_BOUND_OR_OCCURRENCE
+  = ABSENT
+
+NAMED_SOURCE_LOCKED_ACTUAL_PACKET_CUT_ATTACHMENT
+  = ABSENT
+```
+
+因此本轮不能创建 TPC-207。
+
+### 21.2 一条精确 dyadic published-profile family
+
+TPC-17 的 published Maynard theorem 对每个固定 `h!=0` 成立，故可严格
+取 `h0=2`。令 `m>=1`，并冻结
+
+```text
+sigma = 1/1000
+delta = 1/20
+eta   = 1/1000
+
+X_m  = 2^(21000 m)
+R_m  = 2^(9450 m)
+V_m  = 2^(4725 m)
+L_m  = 2^(9979 m)
+D0_m = 2^(979 m)
+K_m  = 2^(11021 m)
+I_m  = (D0_m,V_m] intersect N.
+```
+
+这不是近似 exponent ledger：所有量都是整数，`L_m,K_m` 是 dyadic，且
+
+```text
+R_m = floor(X_m^(1/2-delta))
+V_m = floor(sqrt(R_m))
+L_m K_m = X_m
+L_m/R_m = 2^(529m)
+V_m/D0_m = 2^(3746m)
+K_m/V_m^2 = 2^(1571m).
+```
+
+published-profile 三个 monomial 与 leakage 的精确 bit margins 为
+
+```text
+X_m/(D0_m L_m^2)          = 2^(63m)
+X_m^4/(D0_m^12 L_m^7)    = 2^(2399m)
+X_m^10/(D0_m^20 L_m^19)  = 2^(819m)
+X_m/(L_m D0_m R_m)        = 2^(592m).
+```
+
+所以 `eta=1/1000` 小于全部固定 power margins；同时
+`1/42+3 sigma<delta<1/4`。对充分大 `m`，TPC-17 的 published theorem
+确实给该 family 的 prefix cancellation 与 exact symmetric-tail normal form。
+这清除了“`h0=2` 几何是否存在”的问题，但不提供 tail 的正性、失败下界、
+具名有限 `m` 的 theorem threshold、具体非零 cutoff 值或 actual occurrence。
+
+### 21.3 smooth `k`-support 上的 even-sector 非零系数
+
+固定 TPC-17 的非负 dyadic partition weight `psi`。其正值集包含某个开区间
+`J=(a,b)`。由上一小节的 `K_m/V_m^2 -> infinity`，对充分大 `m` 可取奇素数
+
+```text
+p_m in (V_m/2,V_m]
+q_m in (a K_m/(2p_m), b K_m/(2p_m)),  q_m>V_m,
+k_m = 2 p_m q_m.
+```
+
+第二个素数由固定比例区间上的 PNT 保证。于是
+
+```text
+gcd(k_m,2)=2
+k_m/K_m in J
+psi(k_m/K_m)>0.
+```
+
+`k_m` 在 `I_m` 中唯一的 divisor 是 `p_m`，故 TPC-18 的 literal coefficient
+给出
+
+```text
+Omega_2(p_m)=1
+beta_I_m(k_m)=mu(p_m)=-1.
+```
+
+所以一般 `h0=2` route 的障碍不是 even-sector `beta` 恒零。这个结论是由
+已冻结公式与 PNT 推出的 coefficient-level existence lemma；它没有给
+`ell_1,ell_2`、residual target values、source pair、packet/cut locator、
+tail-failure 或 source-forward ID，严禁记为 actual attachment。
+
+### 21.4 旧 finite diagnostic 的修正
+
+上一轮的
+
+```text
+(D0,V,h0,k,e)=(6,18,2,22,11)
+```
+
+虽有 `Omega_2(11)=1` 与 `beta_I(22)=-1`，却不能进入允许的 dyadic
+`k`-cutoff。几何要求 `K>2V=36`；`supp psi subset [1/2,2]` 与
+`psi(22/K)!=0` 又要求 `K<=44`，而 `(36,44]` 没有 dyadic `K`。故其精确
+状态是
+
+```text
+ALGEBRAIC_NONZERO = YES
+DYADIC_SMOOTH_SUPPORT_ATTACHMENT = IMPOSSIBLE.
+```
+
+较好的有限 L0 diagnostic 是
+
+```text
+(D0,V,h0,k,e)=(6,18,2,66,11)
+beta_I(66)=-1.
+```
+
+dyadic partition 精确给 `psi(66/64)+psi(66/128)=1`，所以 `K=64` 或
+`K=128` 至少一个 cutoff 非零，且两者均满足 `K>36`。但它没有唯一 `K`、
+`X,L,R`、published-profile source lock、source pair 或 tail failure，仍只准
+作 finite L0 diagnostic。
+
+### 21.5 actual attachment census 与 synthetic firewall
+
+当前生产链仍是：
+
+```text
+TPC-133 native rows = 866
+TPC-134/136/143/153 records = 2,988 each
+production h0=2,D0=0 records = 2,988
+
+TPC-136 FRONTIER_UNMAPPED = 2,988/2,988
+TPC-143 occurrence lift NOT_TESTABLE = 2,988/2,988
+TPC-153 actual occurrence IDs = 0
+```
+
+TPC-154 的 2,989 个 fibers 中，唯一正 `D0` 的记录冻结
+
+```text
+X=2^84, R=2^21, V=2^10, D0=2, L=2^38, K=2^46, h0=2.
+```
+
+TPC-135 deterministic policy 把它分类为 `ELIGIBLE`；但记录本身严格是
+`SYNTHETIC_L0_ONLY`，并有
+
+```text
+native_tuple = (0,0,0)
+actual_active_support = UNDECIDED
+theorem_backed_actual_provenance = false.
+```
+
+在该 synthetic schedule 上可构造纯 formal 算术候选
+
+```text
+k = 521 * 2^37
+k/K = 521/512
+gcd(k,2)=2
+Omega_2(521)=1
+beta_(2,1024](k)=-1
+source-prime diagnostics = 274877906951, 274877906957.
+```
+
+三个数均经独立 deterministic primality check 通过。但 exact `W,psi` 非零、
+native row、cut/packet ID、joint source locator 与 actual occurrence 全缺，故
+它不能填 42-field registry 的任何 selected-lineage 缺口。
+
+当前 `D0=0,V=2` 档案虽有 10 个 even-`k` prime-source groups 与 40 个
+unordered same-`k` source pairs，但全部 `beta_I(k)=mu(1)+mu(2)=0`；同批
+pair 的 TPC-18 row determinant `h0(m1-m2)=±2` 命中数也为 0。TPC-206
+因此仍为 `13/42`，field-order first missing 仍是 `D`。禁止把 synthetic
+`D0=2`、formal prime diagnostics 与 selected `X=512` lineage 拼接。
+
+还须保持三条 schema firewall：TPC-154 line 2,989 虽有 `FORMAL_ONLY det=2`
+标签，但 actual affine data 给 `su-ad=1` 且 provenance 为 false；TPC-205 的
+determinant-two fixture 是 `DERIVED_L0_ONLY`、`production_occurrence=false`；
+TPC-18 的 `s=2` 是 `gcd(k,h0)` content sector，不是 literal `su-ad=2`
+two-Möbius atom。三者均不得跨对象拼接。
+
+### 21.6 theorem source audit 与三重 fatal
+
+本轮 all-ref 扫描覆盖 34 refs / 28 unique tips；TPC-18 的三个关键 source
+files 各只有 commit `f418ea1` 加入的一个历史 blob，没有更强旧版本。仓库与
+primary candidates 的逐对象裁决为：
+
+1. `tail-failure`：TPC-17 只证 prefix cancellation / tail normal form；
+   TPC-18 把 `|T_{L,K}(I)|>=eta X/(log X)^a` 明列为额外假设。Lichtman 与
+   Matomäki--Radziwiłł--Tao 是 shift-average / log-average 对象；Maynard、
+   Li、Pascadi 是 AP 或 factorable-weight 平均分布与上界，均不给同一 actual
+   `h0=2` block 的 lower bound。
+2. primitive A：TPC-27/28 只控制 selected calibrated truncated square；
+   `u,v>T` ultra-long complement 未恢复。TPC-108 的 fixed-`h0` generic
+   affine estimate 仍标为未证 L2。现有 AP / spectral large-sieve 定理不等于
+   TPC-18 的完整 `r_R(n_1)r_R(n_2)` variable-determinant correlation。
+3. direct B：TPC-18 Gram floor 只给 aggregate `sum_k beta_I(k)^2` mass，
+   不给 prime source、`Lambda_R` pair、off-diagonal signed correlation 或
+   `s=2` selection。Goldston--Yıldırım 使用不同的 truncated-divisor model；
+   Ramaré--Zúñiga Alterman 是 scalar LCM diagonal；Laporta 的假设已含
+   Hardy--Littlewood 强度；Coppola--Murty--Saha 需要当前未验证的 coefficient
+   decay。都不能改名为 `C_{I,2}^{MM,off}` lower bound / occurrence。
+
+因此最早 fatal 是
+
+```text
+SOURCE_BACKED_ACTUAL_H0_2_SYMMETRIC_TAIL_FAILURE_LOWER_BOUND = ABSENT.
+```
+
+即使暂借该假设，后面仍独立卡在
+
+```text
+FULL_R_R_PRIMITIVE_GENERIC_DETERMINANT_CORRELATION_BOUND = ABSENT
+DIRECT_C_I_2_MM_OFF_LOWER_BOUND_OR_OCCURRENCE = ABSENT.
+```
+
+### 21.7 STOP scope、路线选择与下一关
+
+最终裁决：
+
+```text
+TPC18_H0_2_NONPRIMITIVE_ALTERNATIVE_SELECTION_AND_ACTUAL_PACKET_ATTACHMENT_GATE
+  = STOP_SCOPED_NOT_REOPENED
+
+exact theorem-valid h0=2 dyadic family = YES
+even-k beta nonzero on smooth k-support = YES_L0_COEFFICIENT_ONLY
+actual named tail-failure blocks = 0
+full primitive-A exclusion theorems = 0
+direct s=2 B theorems = 0
+actual packet/cut attachments = 0
+production occurrences = 0
+formal archive projection = 13/42
+formal first missing = D at field 9
+TPC207_TRIGGER = NO
+TPC207_CREATED = false.
+```
+
+新增且仅新增第 6 节的
+`DECLARED_TPC18_H0_2_TAIL_FAILURE_A_EXCLUSION_AND_DIRECT_B_CORPUS_V1`
+cell；所有旧 cells，尤其 `TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1`
+与上一轮 `DECLARED_TPC18_H0_2_COMMON_K_ENDPOINT_SOURCE_FORWARD_RECORD_CORPUS_V1`，
+继续 `STOP_SCOPED`。两个 O161 parents、pair-native reroute、H1 与 global
+architecture 继续 `OPEN`；fixed-atom credit 为 0，strict `1/400` 为
+`UNPAID`，`L2=NONE`。
+
+下一条最可能取得真实推进的路线不是把 tail-failure 或 direct B 当作已知，
+而是先补 primitive A 的 upper-bound 技术缺口：从 TPC-27/28 的 truncated
+square 明确恢复 `u,v>T` ultra-long complement，并核查能否形成完整
+`r_R r_R` determinant dispersion theorem。故下一项不编号 gate 冻结为：
+
+```text
+TPC18_H0_2_FULL_R_R_PRIMITIVE_A_ULTRA_LONG_COMPLEMENT_GATE
+```
+
+这一路线即使跑通，也只会排除 stopping dichotomy 的 A；它仍不自动供应
+actual tail-failure、B lower bound、actual packet attachment 或 TPC-207 trigger。
+
+### 21.8 启动、回归与发布边界
+
+本轮启动时执行 `git status --short --branch` 与
+`git pull --rebase origin main`；远端已同步，审计基线为
+`ea865160f05193047513a8a66665dc989934ae28`。只读回归结果：
+
+```text
+TPC-206: 3/3 PASS, projection 13/42, mathematical_reopen=false
+TPC-205: 3/3 PASS, production pair records=0
+TPC-194 certificate hardening: PASS
+TPC-133--136: 4/4 PASS
+TPC-184 normal/optimized: 2/2 PASS, TARGET_WELL_TYPED_OPEN
+TPC-189 normal/optimized: 2/2 PASS, TARGET_WELL_TYPED_OPEN
+TPC-173--179 optimized: 7/7 PASS
+git diff --check: PASS
+handoff Markdown fences: balanced
+```
+
+所有 checker 均设置 `PYTHONDONTWRITEBYTECODE=1`；没有生成新测试产物，既有
+TPC-105 `__pycache__`、TPC-63 构建文件与 `tmp/` 均未触碰。本轮没有创建
+论文或 PDF，故没有伪造 PDF QA。TPC-143 的 certificate-only 12-leaf drift
+仍按第 20 节隔离：它不改变 2,988 obligations 或零 occurrence 裁决，但在
+下一篇编号 release 前仍必须完成完整 provenance cascade。
+
+## 22. 上一轮会话粘贴块（历史，仅供审计；不得作为当前入口）
 
 ```text
 进入仓库：
@@ -3246,4 +3563,92 @@ physical-loss ledger。禁止formal->actual、endpoint localization->smallness�
 主会话只保留结论、路线选择、阻断项和最终审核摘要；长扫描、定理原文
 核查、schema exploit review、构建日志和逐页 PDF 检查交给分身；所有
 正式写入由主会话协调。
+```
+
+## 23. 下一会话可直接粘贴
+
+```text
+进入仓库：
+D:\26-aimath\理论研究3\prime_dynamics_theory
+
+读取仓库根目录 TPC_HANDOFF.md，以仓库文件而不是旧聊天记录为事实来源。
+先执行：
+
+git status --short --branch
+git pull --rebase origin main
+
+$d = "papers/tpc-206-selected-lineage-pair-registry-projection/experiments"
+python "$d/build_tpc206.py" --check
+python "$d/tpc206_selected_lineage_pair_registry.py" --check
+python "$d/tpc206_independent_checker.py" --check
+
+$p = "papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments"
+python "$p/build_tpc205.py" --check
+python "$p/tpc205_pair_native_registry_interface.py" --check
+python "$p/tpc205_independent_checker.py" --check
+
+python -B papers/tpc-133-executable-native-entrance/experiments/tpc133_native_entrance.py --check
+python -B papers/tpc-134-boundary-complete-dyadic-prefix-tail-archive/experiments/tpc134_branch_archive.py --check
+python -B papers/tpc-135-tpc17-tpc18-block-frontier/experiments/tpc135_domain_cover_audit.py --check
+python -B papers/tpc-136-complete-native-cut-archive/experiments/tpc136_cut_archive.py --check
+
+当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
+上一轮不编号裁决是：
+TPC18_H0_2_EXACT_DYADIC_PROFILE_AND_BETA_NONZERO_FROZEN_TAIL_FAILURE_A_EXCLUSION_AND_ACTUAL_ATTACHMENT_ABSENT_STOP_SCOPED_NOT_REOPENED。
+
+上一轮已真实冻结一条 published Maynard h0=2 exact dyadic family。对 m>=1：
+sigma=1/1000，delta=1/20，eta=1/1000，
+X=2^(21000m)，R=2^(9450m)，V=2^(4725m)，L=2^(9979m)，
+D0=2^(979m)，K=2^(11021m)。其 LK=X、L>2R、D0<V/2、
+K/V^2=2^(1571m)，三个 published monomial 与 LD0R 都有固定 power margin。
+它对充分大 m 给 theorem-valid prefix cancellation / tail normal form，但不给
+tail-failure、finite theorem threshold、actual block 或 occurrence。
+
+even-k beta 非零也已在 coefficient level 做实：在 psi 正值开区间内可取
+p in (V/2,V]、q>V prime、k=2pq，使 gcd(k,2)=2、psi(k/K)>0、
+Omega_2(p)=1、beta_I(k)=-1。不得把这个 existence lemma 改名为 source pair、
+packet/cut 或 actual attachment。
+
+旧 diagnostic (D0,V,k,e)=(6,18,22,11) 虽 beta=-1，却因 K>36 与
+psi(22/K)!=0 强制 K<=44，而该区间没有 dyadic K，故 dyadic attachment
+不可能。替代 finite L0 diagnostic k=66 只保证 K=64 或128至少一个 cutoff
+非零，仍不是 physical record。
+
+current production D0=0,V=2 packet 的所有 even k 仍 beta=0；TPC-136/143/
+153 actual attachment 全空。唯一正D0 schedule 是 TPC-153/154 的
+SYNTHETIC_L0_ONLY eligible regression；theorem_backed_actual_provenance=false，
+不得拼到 selected X=512 lineage。TPC-206 仍13/42，首缺D。
+
+34 refs 与 primary theorem 候选审核均未找到：
+1) actual h0=2 symmetric-tail failure lower bound；
+2) 完整 r_R(n1)r_R(n2) primitive generic determinant correlation bound；
+3) direct C_{I,2}^{MM,off} lower bound / occurrence。
+TPC-27/28 只控制 truncated square，明确缺 u,v>T ultra-long complement；
+TPC-108 对应 fixed-h0 generic affine estimate 仍是未证 L2。Maynard/Li/
+Pascadi AP-factorable averages、Lichtman/MRT shift/log averages、Goldston-
+Yildirim 的不同 Lambda_R、scalar LCM diagonal 与带未验证强假设候选都不得
+对象偷换。
+
+本轮执行下一项有限不编号 gate：
+TPC18_H0_2_FULL_R_R_PRIMITIVE_A_ULTRA_LONG_COMPLEMENT_GATE。
+
+先逐公式对齐 TPC-18 primitive A 与 TPC-27/28 selected truncated square；
+明确 u,v>T complement 的 summation domain、ranges、coefficients、normalization
+和 loss；再扫描是否有 theorem-backed full-residual determinant estimate。
+不得把 truncated、phase-L2、averaged-shift、size-only 或 formal determinant
+cell 改名为完整 r_R r_R theorem。即使 A 真被排除，也不得自动假设 tail
+failure、选择 B、生成 actual packet 或创建 TPC-207。
+
+保持第6节全部旧 cells（尤其 TPC193 V1、TPC18 common-k V1 与本轮
+tail-failure/A/B V1）为 STOP_SCOPED；保持两个 O161 parents、pair-native
+reroute、H1 与 global architecture OPEN；fixed-atom credit=0、strict 1/400
+UNPAID、L2=NONE。
+
+下一篇编号论文发布前仍必须完成 TPC-143--206 的完整 provenance cascade、
+受影响 releases 重建和全链 --check；certificate-only drift 不得冒充数学触发。
+
+主会话只保留结论、路线选择、阻断项和最终审核摘要；长扫描、定理原文
+核查、schema exploit review、构建日志和逐页 PDF 检查交给分身；所有正式
+写入由主会话协调。若没有真实 theorem trigger，更新本交接并 STOP_SCOPED，
+不要创建下一篇。
 ```
