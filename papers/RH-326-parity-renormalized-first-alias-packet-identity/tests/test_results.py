@@ -13,7 +13,7 @@ def test_result_identity_ledger_and_firewall():
         "parity_renormalized_first_alias_packet_identity_proved",
         "alias_parity_common_weighted_exponent_proved",
         "scalar_balance_phase_law_proved",
-        "canonical_integer_phase_scalar_only_obstruction_proved",
+        "conditional_canonical_integer_phase_obstruction_proved",
         "clearance_phase_retained_in_packet",
         "retained_coordinate_frame_recorded",
         "rh327_shell_interface_typed",
@@ -21,6 +21,9 @@ def test_result_identity_ledger_and_firewall():
         assert data[key] is True
     for key in (
         "separate_alias_parity_majorant_closes_bridge",
+        "canonical_integer_phase_scalar_only_obstruction_proved",
+        "scalar_balance_phase_outside_canonical_window_certified",
+        "archived_decimal_constants_interval_certified",
         "scalar_parity_alone_closes_first_alias_matching",
         "local_boundary_probability_packet_identified_with_trace",
         "second_physical_critical_leg_controlled",

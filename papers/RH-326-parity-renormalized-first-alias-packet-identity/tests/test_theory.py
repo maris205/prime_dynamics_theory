@@ -1,5 +1,7 @@
 import math
 
+import pytest
+
 from parity_alias_packet import (
     CLEARANCE_CONSTANT,
     COUNTERLOOP_BETA_LIMIT,
@@ -110,7 +112,7 @@ def test_clock_phase_and_clearance_dictionary_is_exact():
     assert row["orientation"] == ["positive", "negative", "positive"]
 
 
-def test_unique_scalar_balance_phase_and_canonical_phase_obstruction():
+def test_unique_scalar_balance_phase_and_unvalidated_decimal_diagnostics():
     assert math.isclose(scalar_balance_ratio(SCALAR_BALANCE_PHASE), 1.0)
     assert math.isclose(
         SCALAR_BALANCE_CLEARANCE,
@@ -121,6 +123,13 @@ def test_unique_scalar_balance_phase_and_canonical_phase_obstruction():
     assert scalar_balance_ratio(1.0) < 0.344
     assert scalar_balance_ratio(-1.0) > 0.122
     assert clearance_ratio_from_phase(1.0) > SCALAR_BALANCE_CLEARANCE
+
+
+def test_edge_deflated_counterloop_rejects_k_one():
+    with pytest.raises(ValueError, match="k >= 2"):
+        counterloop_moment(1, 2, 0.9)
+    with pytest.raises(ValueError, match="k >= 2"):
+        sign_rows(1, 0.02, 0.9)
 
 
 def test_packet_rows_converge_to_the_phase_ratio_but_not_to_target_scale():

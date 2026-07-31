@@ -36,6 +36,13 @@ def _positive_integer(value: int, *, name: str) -> int:
     return value
 
 
+def _counterloop_k(value: int) -> int:
+    value = int(value)
+    if value < 2:
+        raise ValueError("the edge-deflated counterloop requires k >= 2")
+    return value
+
+
 def _positive(value: float, *, name: str) -> float:
     value = float(value)
     if value <= 0.0:
@@ -104,7 +111,7 @@ def parity_remainder_bound(
 def counterloop_moment(k: int, order: int, beta_k: float) -> float:
     """Return the exact finite-radius counterloop moment ``s_(k,n)``."""
 
-    k = _positive_integer(k, name="k")
+    k = _counterloop_k(k)
     order = _positive_integer(order, name="order")
     beta_k = _positive(beta_k, name="beta_k")
     alias_indicator = int(order % (2 * k) == 0)
@@ -132,7 +139,7 @@ def radial_counterloop_correction(
 ) -> float:
     """Return the non-alias radial correction in ``s_(k,n)-p_n``."""
 
-    _positive_integer(k, name="k")
+    _counterloop_k(k)
     order = _positive_integer(order, name="order")
     beta_k = _positive(beta_k, name="beta_k")
     beta = _positive(beta, name="beta")
@@ -142,7 +149,7 @@ def radial_counterloop_correction(
 def alias_impulse(k: int, order: int, beta_k: float) -> float:
     """Return the exact roots-of-unity alias impulse."""
 
-    k = _positive_integer(k, name="k")
+    k = _counterloop_k(k)
     order = _positive_integer(order, name="order")
     beta_k = _positive(beta_k, name="beta_k")
     return 2.0 * k * beta_k**order * int(order % (2 * k) == 0)
@@ -189,7 +196,7 @@ def first_alias_identity(
 ) -> dict[str, float | int]:
     """Return every signed component of the exact first-alias residual."""
 
-    k = _positive_integer(k, name="k")
+    k = _counterloop_k(k)
     order = 2 * k
     raw_hardy = float(raw_trace_defect) * hardy_radius ** (-order)
     parity = parity_packet(order, delta, hardy_radius=hardy_radius)
@@ -216,7 +223,7 @@ def asymptotic_beta_k(
 ) -> float:
     """Return the leading archived finite-radius model for ``beta_k``."""
 
-    k = _positive_integer(k, name="k")
+    k = _counterloop_k(k)
     beta = _positive(beta, name="beta")
     multiplier_constant = _positive(
         multiplier_constant, name="multiplier_constant"
@@ -230,14 +237,14 @@ def natural_phase(sigma: float, k: int) -> float:
     sigma = float(sigma)
     if sigma <= 0.0 or sigma >= 1.0:
         raise ValueError("sigma must lie in (0, 1)")
-    k = _positive_integer(k, name="k")
+    k = _counterloop_k(k)
     return k - math.log(1.0 / sigma) / (2.0 * math.log(LAMBDA))
 
 
 def sigma_from_phase(k: int, phase: float) -> float:
     """Invert the natural-clock phase relation."""
 
-    k = _positive_integer(k, name="k")
+    k = _counterloop_k(k)
     phase = float(phase)
     if k - phase <= 0.0:
         raise ValueError("k-phase must be positive")
@@ -264,7 +271,7 @@ def scalar_balance_ratio(phase: float) -> float:
 def packet_row(k: int, phase: float) -> dict[str, float | int]:
     """Evaluate the leading archived packet model at a fixed clock phase."""
 
-    k = _positive_integer(k, name="k")
+    k = _counterloop_k(k)
     phase = float(phase)
     sigma = sigma_from_phase(k, phase)
     delta = C_STAR * math.sqrt(sigma)
@@ -307,7 +314,7 @@ def phase_row(phase: float) -> dict[str, float | list[str]]:
 def sign_rows(k: int, delta: float, beta_k: float) -> list[dict[str, float | int | str]]:
     """Return an exact odd/even/alias sign table."""
 
-    k = _positive_integer(k, name="k")
+    k = _counterloop_k(k)
     rows = []
     for label, order in (
         ("odd_pre_alias", 2 * k - 1),

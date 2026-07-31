@@ -22,6 +22,7 @@ Thus it is positive at the even first alias and negative at odd orders.  The
 counterloop defect splits exactly as
 
 ```text
+s_(k,n) uses beta_k = |M_k|^(-1/(2k))/r_H,  k >= 2,
 s_(k,n)-p_n^pole
   = 2*1_(2|n)*(beta^n-beta_k^n)
     + 2*k*beta_k^n*1_(2k|n).
@@ -50,13 +51,14 @@ the scalar parity-to-alias ratio tends to
 C_* C_M lambda^eta.
 ```
 
-There is a unique scalar balance phase
-`eta_* = 3.0609149137...`.  For the common floor/ceil/nearest phase window
-`|eta| <= 1`, the ratio is at most `0.3438880199...`; scalar parity alone
-therefore cannot match the alias packet at the required scale.  This is a
-scoped negative result, not a failure of the actual trace route: a physical
-boundary packet and the neighboring shell may supply the missing signed
-contribution.
+There is a unique symbolic scalar balance phase
+`eta_* = -log(C_* C_M)/log(lambda)`.  Ordinary substitution of the archived
+decimals gives `3.0609149137...` and
+`C_* C_M lambda = 0.3438880199...`, but those decimals are not interval
+certificates.  The rigorous canonical-window no-go is therefore conditional:
+if `C_* C_M lambda < 1`, then scalar parity alone cannot match the alias
+packet on `|eta| <= 1`.  This does not rule out a physical boundary packet
+and neighboring shell supplying the missing signed contribution.
 
 The RH-327 interface retains the clearance phase, the `(V,U,W)` coordinate
 frame with orientation `(+,-,+)`, the trace normalization, a local boundary

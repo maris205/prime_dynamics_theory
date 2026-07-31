@@ -31,14 +31,14 @@ impulse.  At the even first alias the parity correction is positive, whereas
 the counterloop defect is subtracted from the total residual.  The parity
 packet has a uniform moving-order expansion with an explicit quadratic
 remainder.  On a fixed clock phase $\eta$, its leading ratio to the alias
-defect is $C_*C_M\lambda^\eta$.  Scalar balance is possible only at
-$\eta_*=3.0609149137\ldots$; throughout the usual floor/ceil/nearest window
-$|\eta|\le1$, parity supplies at most $0.3438880199\ldots$ of the alias.
-Thus scalar parity subtraction alone cannot close the first-alias equation.
-This is a scoped negative result: the raw physical boundary packet and the
-neighboring shell may still provide the missing signed contribution.  We
-finish with a phase- and coordinate-preserving interface for that calculation.
-No joint full-trace replacement is proved.
+defect is $C_*C_M\lambda^\eta$, so the unique symbolic balance phase is
+$-\log(C_*C_M)/\log\lambda$.  If $C_*C_M\lambda<1$, this gives a strict
+scalar-only obstruction throughout the usual floor/ceil/nearest phase window
+$|\eta|\le1$.  The archived decimal evaluation supports that hypothesis but
+is not an interval certificate.  This conditional negative result does not
+exclude cancellation by the raw physical boundary packet and neighboring
+shell.  We finish with a phase- and coordinate-preserving interface for that
+calculation.  No joint full-trace replacement is proved.
 \end{abstract}
 
 \section{Normalization and four packet types}
@@ -91,7 +91,15 @@ Then, identically,
  \label{eq:bulk-split}
 \end{equation}
 
-For the finite counterloop let
+For $k\ge2$, let $M_k$ be the archived boundary-cycle multiplier and put
+\begin{equation}
+ \rho_k=|M_k|^{-1/k},
+ \qquad
+ \beta_k=\frac{\sqrt{\rho_k}}{r_H}
+ =\frac{|M_k|^{-1/(2k)}}{r_H}.
+ \label{eq:beta-type}
+\end{equation}
+The Hardy-scaled finite counterloop is
 \begin{equation}
  s_{k,n}=\beta_k^n
  \bigl(2k\1_{2k\mid n}-1-(-1)^n\bigr),
@@ -111,7 +119,7 @@ older uses of $p_n$ and $a_n$:
 
 \begin{theorem}[Radial-plus-alias decomposition]
 \label{thm:counterloop-split}
-For every $k,n\ge1$, the counterloop defect is exactly
+For every $k\ge2$ and $n\ge1$, the counterloop defect is exactly
 \begin{equation}
  \boxed{
  \cA_{k,n}:=s_{k,n}-p_n^{\rm pole}
@@ -269,36 +277,22 @@ The bounded integer phase must be retained:
  \label{eq:phase}
 \end{equation}
 
-\begin{theorem}[Phase law and unique scalar balance]
+\begin{theorem}[Phase law and unique symbolic scalar balance]
 \label{thm:phase-law}
-Along any subsequence on which $\eta_\sigma\to\eta$,
+Along every natural-clock sequence with bounded $\eta_\sigma$,
 \begin{equation}
  \boxed{
  \frac{\cP_{\sigma,2k_\sigma}}{\cA_{k_\sigma,2k_\sigma}}
- \longrightarrow C_*C_M\lambda^\eta.}
+ =C_*C_M\lambda^{\eta_\sigma}\{1+o(1)\}.}
  \label{eq:ratio-law}
 \end{equation}
-The leading scalar packets balance only at
+Consequently, along a subsequence with $\eta_\sigma\to\eta$, the ratio tends
+to $C_*C_M\lambda^\eta$.  The leading scalar packets balance at the unique
+symbolic phase
 \begin{equation}
- \eta_*=-\frac{\log(C_*C_M)}{\log\lambda}
- =3.060914913721564\ldots .
+ \eta_*=-\frac{\log(C_*C_M)}{\log\lambda}.
  \label{eq:balance-phase}
 \end{equation}
-For every phase with $|\eta|\le1$,
-\begin{equation}
- C_*C_M\lambda^\eta
- \le C_*C_M\lambda
- =0.343888019998872\ldots<1.
- \label{eq:canonical-gap}
-\end{equation}
-Therefore, on such a subsequence, if
-$\cT_{\sigma,2k}=o(\cA_{k,2k})$, then
-\begin{equation}
- |e_{\sigma,k,2k}|
- \ge\{0.656111980001127\ldots+o(1)\}\cA_{k,2k},
- \label{eq:scalar-obstruction}
-\end{equation}
-and this is not $o(kR^{-2k})$.
 \end{theorem}
 
 \begin{proof}
@@ -310,8 +304,31 @@ $\beta^{2k}=r_H^{-2k}\lambda^{-k}$:
 \]
 Equation \eqref{eq:phase} makes
 $\sqrt\sigma\lambda^k=\lambda^{\eta_\sigma}$, proving
-\eqref{eq:ratio-law}.  Monotonicity in $\eta$ gives the unique balance phase
-and \eqref{eq:canonical-gap}.  Substitute the ratio into
+\eqref{eq:ratio-law}.  Positivity of $C_*,C_M$, and $\lambda>1$ makes the
+right side strictly increasing in $\eta$, so its value one has the unique
+solution \eqref{eq:balance-phase}.
+\end{proof}
+
+\begin{corollary}[Conditional canonical-phase scalar obstruction]
+\label{cor:conditional-obstruction}
+Put
+\begin{equation}
+ q_+=C_*C_M\lambda.
+ \label{eq:q-plus}
+\end{equation}
+Assume $q_+<1$, let $|\eta_\sigma|\le1$, and suppose
+$\cT_{\sigma,2k}=o(\cA_{k,2k})$.  Then
+\begin{equation}
+ |e_{\sigma,k,2k}|
+ \ge\{1-q_++o(1)\}\cA_{k,2k},
+ \label{eq:scalar-obstruction}
+\end{equation}
+and this is not $o(kR^{-2k})$.
+\end{corollary}
+
+\begin{proof}
+Equation \eqref{eq:ratio-law} and $|\eta_\sigma|\le1$ give
+$\cP_{\sigma,2k}/\cA_{k,2k}\le q_++o(1)$.  Substitute into
 \eqref{eq:packet-form}.  Finally,
 \[
  \frac{\cA_{k,2k}}{kR^{-2k}}
@@ -320,16 +337,18 @@ and \eqref{eq:canonical-gap}.  Substitute the ratio into
 because $\beta R>1$.
 \end{proof}
 
-This is deliberately a scalar-only negative result.  It proves that omitting
-an alias-scale raw boundary/shell packet cannot work on common
-floor/ceil/nearest clocks.  It does not bound the actual raw trace packet and
-does not prove divergence of the combined physical residual.
+This is deliberately a conditional scalar-only negative result.  The
+repository proves the symbolic corollary but does not contain a directed
+interval enclosure certifying $q_+<1$.  The archived decimal values make the
+hypothesis numerically plausible; they are not used as a rigorous inequality.
+Even under that hypothesis, the result does not bound the actual raw trace
+packet and does not prove divergence of the combined physical residual.
 
 The same phase controls the local clearance.  If the archived boundary-cycle
 clearance is
 \begin{equation}
  \Delta_k^{\rm clr}=C_{\rm b}\lambda^{-2k}\{1+o(1)\},
- \qquad C_{\rm b}=0.4608051492\ldots,
+ \qquad C_{\rm b}>0,
  \label{eq:clearance}
 \end{equation}
 then
@@ -339,11 +358,13 @@ then
  \label{eq:clearance-phase}
 \end{equation}
 At scalar balance,
-$d_*=C_{\rm b}(C_*C_M)^2=0.019340633095025\ldots$, whereas
-$|\eta|\le1$ corresponds to
-$0.163544744607256\ldots\le d\le1.298368749415710\ldots$.
-Thus suppressing the clock phase would discard both the scalar balance ratio
-and the RH-322 entrance profile.
+\begin{equation}
+ d_*=C_{\rm b}(C_*C_M)^2.
+ \label{eq:balance-clearance}
+\end{equation}
+Thus suppressing the clock phase would discard both the symbolic scalar
+balance ratio and the RH-322 entrance profile.  The decimal evaluations of
+$C_{\rm b}$ and $d_*$ are numerical diagnostics only.
 
 \section{Typed interface for the neighboring shell}
 
@@ -397,7 +418,8 @@ packets on its left have been constructed.
 
 The reproduction code checks the exact moment split, the parity signs, the
 uniform Taylor bound, the clock/clearance dictionary, and the scalar balance
-law.  It evaluates the following constant ledger:
+law.  Ordinary floating-point substitution of the archived decimal constants
+gives the following diagnostic ledger:
 \begin{center}\small
 \begin{tabular}{rrr}
 \toprule
@@ -410,10 +432,15 @@ $3.060914914$ & $1.000000000$ & $0.019340633$\\
 \bottomrule
 \end{tabular}
 \end{center}
-These are evaluations of proved symbolic formulas, not fitted noisy traces.
+These are evaluations of proved symbolic formulas, not fitted noisy traces or
+directed-rounding enclosures.  In particular, the table does not certify
+$q_+<1$, $\eta_*>1$, or the displayed clearance interval.
 
 \begin{remark}[Claim boundary]
-The exact identity combines only known algebraic packets.  It does not
+The exact identity combines only known algebraic packets.  The phase law is
+symbolic, while the canonical-window obstruction is conditional on
+$q_+<1$ because the archived decimals are not interval certified.  The paper
+does not
 identify the RH-322--RH-324 probability law with $\cT_{\sigma,2k}$, control
 the second physical critical leg, prove all-leg phase transport, bound the
 weighted trace observation, include the neighboring shell, or establish

@@ -51,7 +51,10 @@ def main() -> None:
             "matching_exponent": MATCHING_EXPONENT,
             "scalar_balance_phase": SCALAR_BALANCE_PHASE,
             "scalar_balance_clearance": SCALAR_BALANCE_CLEARANCE,
-            "canonical_phase_ratio_upper_bound": scalar_balance_ratio(1.0),
+            "canonical_phase_ratio_diagnostic": scalar_balance_ratio(1.0),
+            "decimal_evaluation_status": (
+                "ordinary_floating_point_not_interval_certified"
+            ),
             "alpha": ALPHA,
             "kappa_aff": KAPPA_AFF,
             "affine_noise_beta": AFFINE_NOISE_BETA,
@@ -67,7 +70,10 @@ def main() -> None:
         "parity_renormalized_first_alias_packet_identity_proved": True,
         "alias_parity_common_weighted_exponent_proved": True,
         "scalar_balance_phase_law_proved": True,
-        "canonical_integer_phase_scalar_only_obstruction_proved": True,
+        "conditional_canonical_integer_phase_obstruction_proved": True,
+        "canonical_integer_phase_scalar_only_obstruction_proved": False,
+        "scalar_balance_phase_outside_canonical_window_certified": False,
+        "archived_decimal_constants_interval_certified": False,
         "clearance_phase_retained_in_packet": True,
         "retained_coordinate_frame_recorded": True,
         "rh327_shell_interface_typed": True,

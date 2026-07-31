@@ -8,11 +8,13 @@ raw trace packet + positive even parity packet - counterloop alias defect.
 ```
 
 The parity packet and alias defect have the same weighted exponent, but their
-leading ratio depends on the bounded integer clock phase.  Scalar equality
-occurs only at `eta_* = 3.0609149137...`; it fails throughout the common
-`|eta| <= 1` integerization window.  Therefore neither separate absolute
-majorants nor scalar parity subtraction can replace the physical boundary
-and neighboring-shell calculation.
+leading ratio depends on the bounded integer clock phase.  Symbolic scalar
+equality occurs only at `eta_* = -log(C_* C_M)/log(lambda)`.  If
+`C_* C_M lambda < 1`, scalar-only matching fails throughout the common
+`|eta| <= 1` integerization window.  Archived ordinary floating-point values
+support, but do not certify, that inequality.  Thus the unconditional next
+step remains the physical boundary and neighboring-shell calculation rather
+than a scalar decimal comparison.
 
 RH-327 should now construct the neighboring-shell coupling in the same data
 type:
