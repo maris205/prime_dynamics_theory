@@ -1,6 +1,9 @@
 # TPC HANDOFF
 
 更新时间：2026-07-31
+交接状态：`SEALED_FOR_NEW_SESSION`
+交接前同步基线：`7d203ac3781d695470a9ded0b969c4d1810f4adc`；该提交仅新增
+`RH-329-validated-isolated-exchange-model-audit`，不改变下述 TPC 路线。
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
@@ -14,6 +17,12 @@ TPC-206 授权并完成：`true`
 自动通过数学门槛或自动编号：`false`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
+
+上下文节省入口：新会话优先读取本页页首及第 1、6、22、24 节；其余历史块
+只在这些入口明确引用时展开。上述 verdict 中的 `TRUNCATED_ENTRY_ABSENT`
+仅指第 22.4 节的 `delta=1/20` exact family；TPC-28 的另一条 high-beta
+theorem-valid selected packet 有合法入口，但仍缺 matched auxiliary-zero theorem，
+两者不得拼接。
 
 本文件、仓库内已提交的论文，以及 active payload/audit/schema/checker
 是下一会话的事实来源。旧聊天记录不是事实来源。
@@ -30,20 +39,25 @@ Set-Location "D:\26-aimath\理论研究3\prime_dynamics_theory"
 git status --short --branch
 git pull --rebase origin main
 Get-Content -Raw -Encoding UTF8 TPC_HANDOFF.md
+$env:PYTHONDONTWRITEBYTECODE = "1"
 
 $d = "papers/tpc-206-selected-lineage-pair-registry-projection/experiments"
-python "$d/build_tpc206.py" --check
-python "$d/tpc206_selected_lineage_pair_registry.py" --check
-python "$d/tpc206_independent_checker.py" --check
+python -B "$d/build_tpc206.py" --check
+python -B "$d/tpc206_selected_lineage_pair_registry.py" --check
+python -B "$d/tpc206_independent_checker.py" --check
 $p = "papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments"
-python "$p/build_tpc205.py" --check
-python "$p/tpc205_pair_native_registry_interface.py" --check
-python "$p/tpc205_independent_checker.py" --check
-python papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py --check
+python -B "$p/build_tpc205.py" --check
+python -B "$p/tpc205_pair_native_registry_interface.py" --check
+python -B "$p/tpc205_independent_checker.py" --check
+python -B papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_certificate_hardening.py --check
 python -B papers/tpc-133-executable-native-entrance/experiments/tpc133_native_entrance.py --check
 python -B papers/tpc-134-boundary-complete-dyadic-prefix-tail-archive/experiments/tpc134_branch_archive.py --check
 python -B papers/tpc-135-tpc17-tpc18-block-frontier/experiments/tpc135_domain_cover_audit.py --check
 python -B papers/tpc-136-complete-native-cut-archive/experiments/tpc136_cut_archive.py --check
+python -B papers/tpc-184-bad-endpoint-literal-target-contract/experiments/tpc184_bad_endpoint_literal_target_contract.py --check
+python -O -B papers/tpc-184-bad-endpoint-literal-target-contract/experiments/tpc184_bad_endpoint_literal_target_contract.py --check
+python -B papers/tpc-189-direct-twist-literal-target-contract/experiments/tpc189_direct_twist_literal_target_contract.py --check
+python -O -B papers/tpc-189-direct-twist-literal-target-contract/experiments/tpc189_direct_twist_literal_target_contract.py --check
 
 foreach ($s in @(
   "papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory.py",
@@ -58,6 +72,13 @@ foreach ($s in @(
   if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 }
 ```
+
+以上是当前完整的 22 项只读启动回归；任一命令非零即 fail closed，不继续
+数学升级或正式写入。`git status` 中既有 tracked/untracked 工作属于用户；不得
+`reset`、`checkout`、`clean`、自动 `stash`、删除或纳入本轮提交。当前已知须保留
+TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
+certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
+不得为了启动回归而执行。
 
 随后优先读取：
 
@@ -3575,8 +3596,8 @@ u,v <= U0 and max(u,v)>T.
 它恰有三条、不多不少：
 
 ```text
-A_m,T C_n : u<=T<T<v<=U0, coefficient b_R(u)a(v)
-C_m A_n,T : v<=T<T<u<=U0, coefficient a(u)b_R(v)
+A_m,T C_n : u<=T<v<=U0, coefficient b_R(u)a(v)
+C_m A_n,T : v<=T<u<=U0, coefficient a(u)b_R(v)
 C_m C_n   : T<u,v<=U0,     coefficient a(u)a(v).
 ```
 
@@ -3987,21 +4008,16 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 git status --short --branch
 git pull --rebase origin main
+Get-Content -Raw -Encoding UTF8 TPC_HANDOFF.md
 
-$d = "papers/tpc-206-selected-lineage-pair-registry-projection/experiments"
-python "$d/build_tpc206.py" --check
-python "$d/tpc206_selected_lineage_pair_registry.py" --check
-python "$d/tpc206_independent_checker.py" --check
+保留 git status 中全部既有 tracked/untracked 工作；不得 reset、checkout、clean、
+自动 stash、删除或纳入本轮提交。当前已知 TPC-105 __pycache__、TPC-63 构建
+产物和 tmp/ 必须原样保留。若这些工作使 rebase 不安全，停止并报告。
 
-$p = "papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments"
-python "$p/build_tpc205.py" --check
-python "$p/tpc205_pair_native_registry_interface.py" --check
-python "$p/tpc205_independent_checker.py" --check
-
-python -B papers/tpc-133-executable-native-entrance/experiments/tpc133_native_entrance.py --check
-python -B papers/tpc-134-boundary-complete-dyadic-prefix-tail-archive/experiments/tpc134_branch_archive.py --check
-python -B papers/tpc-135-tpc17-tpc18-block-frontier/experiments/tpc135_domain_cover_audit.py --check
-python -B papers/tpc-136-complete-native-cut-archive/experiments/tpc136_cut_archive.py --check
+$env:PYTHONDONTWRITEBYTECODE = "1"
+完整执行 TPC_HANDOFF.md 第 1 节当前列出的完整只读启动回归（现为 22 项）；
+任一 checker 非零即 fail closed。TPC-27--32 legacy certificates
+会无条件重写 JSON，在出现真正的只读 --check 入口前不要执行。
 
 当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 上一轮不编号裁决是：
@@ -4055,11 +4071,30 @@ chi<=1/400，或直接给 small-content matched-shell saving，才算 arithmetic
 advance。即使 selected packet 通过，all-D uniformity、physical cover、global
 normalization、tail-failure、B selection 与 actual attachment 仍须分别审核。
 
+对任何候选 theorem 逐项核查 literal physical coefficient、固定 physical h0、
+summation domain、prefix index、X/N/q 与全部参数范围、uniform constants、
+normalization 和完整 physical-loss ledger。禁止 block/cumulative 强行等同、
+logarithmic-to-natural 偷渡、complete-frequency mean 升级为 prescribed phase，
+或把第 6 节旧 STOP_SCOPED cell 重新包装成新方法。
+
+本 gate 即使得到 selected-packet 正面结果，也不自动创建 TPC-207。只有 all-D
+uniformity、exactly-once physical cover、original/global normalization、
+tail-failure、A/B selection、actual attachment 与完整 provenance gates 均通过，
+并使页首 `TPC-207 数学 trigger` 发生真实 theorem-backed 状态变化后，才可进入
+编号 release。
+
 下一篇编号论文发布前仍必须完成 TPC-143--206 的完整 provenance cascade、
 受影响 releases 重建和全链 --check；certificate-only drift 不得冒充数学触发。
 
 主会话只保留结论、路线选择、阻断项和最终审核摘要；长扫描、定理原文
 核查、schema exploit review、构建日志和逐页 PDF 检查交给分身；所有正式
 写入由主会话协调。若没有真实 theorem trigger，更新本交接并 STOP_SCOPED，
-不要创建下一篇。
+不要创建论文、PDF 或下一编号。
+
+若形成正式编号 release：再次 git pull --rebase origin main，完成 provenance
+cascade、受影响 releases 重建、全链 --check、PDF 构建及逐页 render/visual QA；
+只提交本轮预期文件，执行 git push origin HEAD:main，并用 git rev-parse HEAD、
+git rev-parse origin/main、git ls-remote origin refs/heads/main 核对三个 hash
+完全一致。若只形成 STOP_SCOPED 审计结果，也按同样
+的提交、推送和三引用核对纪律发布交接记录。
 ```
