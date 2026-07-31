@@ -2,14 +2,16 @@
 
 更新时间：2026-07-31
 交接状态：`SEALED_FOR_NEW_SESSION`
-交接前同步基线：`7d203ac3781d695470a9ded0b969c4d1810f4adc`；该提交仅新增
-`RH-329-validated-isolated-exchange-model-audit`，不改变下述 TPC 路线。
+交接前上游同步基线：`cdce55713a81cec09971d217faad154894088e3c`；该提交只新增
+RH-330 full-trace transfer artifacts，不改 TPC-28/32/111/122 source files。
+第 23 节 TPC source-lock 快照锚定其前一同步基线
+`28cafdd5fa96ff948f1520e778c7a2ba65208730`，晚到 RH-330 已在第 23.3 节
+另行做 physical-object type check，未改变本轮裁决。
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC18_H0_2_FULL_R_R_PRIMITIVE_A_TRUNCATED_ENTRY_AND_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_ABSENT_STOP_SCOPED_NOT_REOPENED`
-下一篇：`null`；下一项不编号审计：
-`TPC32_H0_2_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_SIGNED_PREFIX_TRANSFER_GATE`
+`TPC32_H0_2_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_TO_SIGNED_PREFIX_EXACT_FIBER_INTERTWINER_AND_GROWING_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED`
+下一篇：`null`；下一项不编号审计：`null`（仅按第 23.5 节 reopen triggers 重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
@@ -18,11 +20,10 @@ TPC-206 授权并完成：`true`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
-上下文节省入口：新会话优先读取本页页首及第 1、6、22、24 节；其余历史块
-只在这些入口明确引用时展开。上述 verdict 中的 `TRUNCATED_ENTRY_ABSENT`
-仅指第 22.4 节的 `delta=1/20` exact family；TPC-28 的另一条 high-beta
-theorem-valid selected packet 有合法入口，但仍缺 matched auxiliary-zero theorem，
-两者不得拼接。
+上下文节省入口：新会话优先读取本页页首及第 1、6、22、23、24 节；其余
+历史块只在这些入口明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
+仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
+high-beta selected packet。两条 source lock 不得拼接。
 
 本文件、仓库内已提交的论文，以及 active payload/audit/schema/checker
 是下一会话的事实来源。旧聊天记录不是事实来源。
@@ -538,6 +539,23 @@ size-only, logarithmic, exceptional-scale, phase/origin/shift-average results.
 small-content matched auxiliary-zero theorem、TPC-111/122 signed-prefix exact
 transfer、真正新增的 growing prefix theorem、两个 O161 parents、H1、
 pair-native reroute 或 global architecture。
+
+2026-07-31 的 TPC-32 selected-packet signed-prefix transfer 审计新增且仅新增：
+
+```text
+DECLARED_TPC32_111_122_SELECTED_PACKET_AUXILIARY_ZERO_SIGNED_PREFIX_TRANSFER_V1
+  = STOP_SCOPED
+```
+
+它只停止从当前 committed TPC-28--32 selected high-beta packet、TPC-111/122
+Abel--BV formulas、TPC-124 determinant/zero-fiber comparison，以及 TPC-126/127
+exact prefix transports中，直接重命名出同一个
+`A_hat_C,q(0)` 的 source-backed growing signed-prefix theorem。当前缺少实际
+coefficientwise fiber intertwiner、共同 factor allocation、`N0=JQ^2` normalization
+crosswalk，以及 TPC-122 要求的 growing prefix、outer BV envelope 与 content
+remainder estimates。它不停止新的 actual intertwiner、直接控制同一 `A_C` 的
+theorem、保留全部 literal data 的新 growing-prefix theorem、两个 O161 parents、
+pair-native reroute、H1 或 global architecture。
 
 ## 7. Reopen triggers
 
@@ -3884,7 +3902,336 @@ PDF 或构建日志，因此没有伪造 PDF QA。既有 TPC-105 `__pycache__`�
 构建文件与 `tmp/` 均未触碰，也没有新增 untracked artifact。TPC-143 的
 certificate-only provenance cascade drift 继续按第 20 节隔离。
 
-## 23. 上一轮会话粘贴块（历史，仅供审计；不得作为当前入口）
+## 23. 不编号 TPC-32 small-content auxiliary-zero / signed-prefix transfer 审计
+
+### 23.1 同一个 theorem-valid selected packet
+
+本轮只执行：
+
+```text
+TPC32_H0_2_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_SIGNED_PREFIX_TRANSFER_GATE
+```
+
+审计基线固定为
+`28cafdd5fa96ff948f1520e778c7a2ba65208730`。TPC-28--32 明确沿用同一个
+selected high-beta packet，而不是靠相同指数猜测拼接：
+
+```text
+sigma  = 1/10000
+lambda = 99979/210000
+delta  = 7/60
+beta   = 267/400
+
+Q = X^(267/400+o(1))
+D = X^(10049/52500+o(1))
+J = X^(133/400+o(1))
+R = S = X^(23/60+o(1))
+V = X^(23/120+o(1))
+T = X^(193/500+o(1))
+C = floor(J) = X^(133/400+o(1))
+N0 = JQ^2 asymp XQ.
+```
+
+TPC-28 与 TPC-32 的 theorem interface 对每个固定 `h!=0` 陈述，故
+`h0=2` 是合法 theorem-level specialization；TPC-28 JSON 没有把 `h=2`
+单独序列化，TPC-32 JSON 中的 finite `h=2` coherent witness 也不得冒充
+asymptotic packet attachment。
+
+在这个 packet 上，TPC-32 保留 literal row coefficients
+
+```text
+gamma_alpha^(i)
+  = mu(d_alpha) (log ell_alpha) omega_D^(i)(d_alpha)
+    psi_L^(i)(ell_alpha/L) zeta_alpha^(i),
+
+A_frak_(alpha,gamma)(j)
+  = m_frak(alpha,gamma) Xi_(alpha,gamma)(j) W_(alpha,gamma)(j/J),
+```
+
+以及三条不能拆开的 raw channels
+
+```text
+A_m,T C_n,
+C_m A_n,T,
+C_m C_n.
+```
+
+其完整 matched shell 是
+
+```text
+K_sh(alpha,gamma,j)
+  = A_m,U0 A_n,U0 - A_m,T A_n,T,
+
+u,v <= U0 and max(u,v)>T.
+```
+
+full-target content 与 canonical determinant 为
+
+```text
+G_(m,n)(j) = gcd(mj+2,nj+2),
+Delta#_(m,n)(j) = (m-n)/G_(m,n)(j),
+
+A_C(n)
+  = S_sh(G_(m,n)(j)<=C, Delta#_(m,n)(j)=n),
+
+A_hat_C,q(0)
+  = sum_n A_C(n)
+  = S_sh(G_(m,n)(j)<=C).
+```
+
+因此 packet、三 raw channels、`C`、`Delta#`、literal masks/weights 与 `N0`
+在 typed formula level source-lock 通过。generic pair mask 仍只知 bounded、
+off-diagonal、divisor-independent；TPC-32 没有证明其 controlled projective
+或 Schur decomposition。TPC-28 也仍只关闭一个 selected `D`-packet。
+
+### 23.2 TPC-111/122 crosswalk 的第一个 fatal mismatch
+
+TPC-111 正确地把 `r=0` 称为 TPC-32 normalized-determinant DFT 的
+distinguished zero，并证明 finite coarsening invariance 与 sharp Abel duality。
+但其 actual outer formula从以下条件开始：
+
+```text
+Assume content, masks, both polarizations, all native outer keys,
+and literal outer reassembly have been verified.
+```
+
+随后才写成
+
+```text
+Z_X
+  = sum_theta c_theta,X sum_r W_theta,X(r) sigma_theta,X(r)
+    + E_content,X.
+```
+
+TPC-122 再次条件化该 reassembly，并允许把未保留的 outer keys 放入新的
+`E_cont,X`。逐字段核对结果是：
+
+| Gate field | TPC-32 selected packet | TPC-111/122 object | Verdict |
+|---|---|---|---|
+| literal coefficient | complete `a_sh_(alpha,gamma,j)`，含三 raw channels、两 row coefficients 与 actual joint multiplier | `c_theta W_theta sigma_theta`，factor allocation 仅条件给定 | no source-backed equality |
+| determinant/content | variable `Delta#=(m-n)/G`，main term保留 `G<=C` | fixed affine determinant `h0`，content另列为 error | role crosswalk absent |
+| outer labels | `(alpha,gamma,j)` 与 determinant bin `n` | ordered `(theta,r_i)` fibers | actual bijection/intertwiner absent |
+| prefix order | physical orbit triples先按 `Delta#` 聚合；未给 `theta,r_i` order | literal translated-integer order不可重排 | order preservation unproved |
+| normalization | `N0=JQ^2 asymp XQ` | `Q_X^2` zero-mode scale | no theorem identifies or pays the factor |
+
+这不是说两套抽象字典数学上必不相容。精确 first missing 是 TPC-124 已经
+写出的 coefficientwise fiber-intertwining test：determinant bins 与 ordered
+zero-mode fibers 是不同 declared dictionaries；候选 `J` 必须满足
+
+```text
+(J Q_D - Q_Z) M = 0
+```
+
+而不能从一个 scalar total 或相似符号推出。TPC-124 的 committed audit 明确
+`actual_growing_G_C_z_B_archive_present=false`，当前 artifacts 因而不能在同一
+selected packet 上执行该 test。故 lossless `A_hat_C,q(0)` 到 TPC-111/122
+prefix fibers 的调用在 outer-label/prefix-index 层 fail closed。
+
+### 23.3 即使假设 crosswalk，growing arithmetic input 仍独立缺失
+
+TPC-122 的 exact transfer 是条件式：若
+
+```text
+Delta_f <= X^(-delta_prefix+o(1)) A_f,
+sum_f A_f ||w_f||_BV* <= X^(ell_Z+o(1)) Q_X^2,
+|E_cont,X| <= X^(-eta_cont+o(1)) Q_X^2,
+```
+
+且全部对象、factor allocation 与 quantifier range相同，则
+
+```text
+eta_Z_cert = min(delta_prefix-ell_Z, eta_cont).
+```
+
+当前 committed claim flags 为：
+
+```text
+TPC-111 literal_growing_prefix_bound = false
+TPC-111 positive_eta_Z = false
+TPC-111 fixed_h0_L2_progress = false
+
+TPC-122 actual_growing_prefix_saving = false
+TPC-122 actual_outer_bv_envelope = false
+TPC-122 actual_content_remainder_bound = false
+TPC-122 uniform_subpower_class_hypothesis = false
+TPC-122 fixed_h0_L2_saving = false
+```
+
+即使未来只补出一个 `eta_Z>0`，也不能靠字段改名直接得到 TPC-32 的
+relative flatness `chi`：`F0(A_C)` 以同一个 actual `A_C` 的
+`||A_C||_2^2` 为分母，而 TPC-32 当前只给该能量的 upper bound，没有可供
+相除的 source-backed lower bound。若改走 direct zero bound，则仍必须先把
+TPC-122 的 `Q_X^2`、全部 outer/content losses 与同一 packet 的 `N0` scale
+无损 crosswalk；当前同样缺失。
+
+TPC-126/127 的 canonical-order Abel 与 determinant-two pullback 只无损搬运
+finite order、mask、weight、phase 和 prefix；它们明确不证明 complete growing
+family cancellation。RH-287/RH-294 中名称相近的 rate-free growing-prefix
+theorems控制 noisy trace/counterloop coefficients，不含本 gate 的 literal
+Möbius coefficient、fixed physical `h0`、content、outer mask、`X/N/q` ranges
+或 `N0` normalization，在第一项 physical-coefficient type check 即被排除。
+
+发布前 rebase 另带入上游提交
+`cdce55713a81cec09971d217faad154894088e3c` 的 RH-330。其对象是
+`H_k=k R^(-2k)` 尺度上的 RH first-alias/full-trace coefficient，以及
+`e=B+S+R+P-A` 的 conditional actual/model defect，不是 TPC-32 的
+`A_hat_C,q(0)`。其 committed ledger 又明确给出
+`actual_critical_packet_identified_with_weighted_prefix_coefficient=false`、
+`actual_weighted_full_trace_prefix_vanishing_proved=false`、
+`determinant_gluing_activated=false`。因此 RH-330 的 finite signed-prefix
+恒等式没有 literal physical coefficient、fixed `h0=2`、content/determinant
+fiber map 或 `N0=JQ^2` normalization，不能作为本 gate 的 growing theorem；
+late-rebase type check 为 `WRONG_PHYSICAL_OBJECT_CONDITIONAL_INACTIVE`。
+
+TPC-32 的 nonzero-frequency density-one、Parseval、large sieve 与 finite
+coherent examples继续不能选择 `r=0`；`A_hat_C,q(0)` 仍可能位于 exceptional
+set。没有 source-backed theorem 推出
+
+```text
+F0(A_C) <= X^(chi+o(1)), chi<=1/400,
+```
+
+也没有直接 small-content matched-shell saving。因此 arithmetic advance 为
+`NO`。
+
+### 23.4 精确裁决与 scope
+
+本轮状态是：
+
+```text
+SAME_SELECTED_HIGH_BETA_PACKET_SOURCE_LOCK = PASS
+H0_2_SPECIALIZATION = PASS_THEOREM_LEVEL_NOT_JSON_SERIALIZED
+THREE_RAW_CHANNELS_CONTENT_DETERMINANT_N0_LOCK = PASS
+ACTUAL_GENERIC_PAIR_MASK_DECOMPOSITION = ABSENT
+
+LOSSLESS_A_C_ZERO_TO_ORDERED_PREFIX_INTERTWINER = ABSENT
+COMMON_FACTOR_ALLOCATION_AND_PREFIX_ORDER = ABSENT
+N0_TO_Q_X_SQUARED_NORMALIZATION_CROSSWALK = ABSENT
+GROWING_SIGNED_PREFIX_THEOREM = ABSENT
+OUTER_BV_ENVELOPE = ABSENT
+CONTENT_REMAINDER_AT_REQUIRED_EXPONENT = ABSENT
+
+CHI_LE_1_OVER_400 = UNPAID
+ARITHMETIC_ADVANCE = NO
+TPC207_TRIGGER = NO
+TPC207_CREATED = false
+```
+
+精确裁决为：
+
+```text
+TPC32_H0_2_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_TO_SIGNED_PREFIX_
+EXACT_FIBER_INTERTWINER_AND_GROWING_INPUT_ABSENT_
+STOP_SCOPED_NOT_REOPENED
+```
+
+本轮新增且仅新增第 6 节的
+
+```text
+DECLARED_TPC32_111_122_SELECTED_PACKET_AUXILIARY_ZERO_SIGNED_PREFIX_TRANSFER_V1
+  = STOP_SCOPED
+```
+
+它不是 growing-prefix nonexistence theorem，也不否定新的 direct
+`A_hat_C,q(0)` theorem。两个 O161 pointwise parents、pair-native reroute、H1
+与 global architecture 继续 `OPEN`；fixed-atom credit 为 0，strict `1/400`
+为 `UNPAID`，`L2=NONE`。all-`D` uniformity、exactly-once physical cover、
+original/global normalization、tail-failure、A/B selection、actual packet
+attachment 与完整 provenance gates 均未进入，更没有自动通过。
+
+### 23.5 Reopen triggers 与验证边界
+
+本 cell 只在出现下列至少一项新的 source-backed 输入时重开：
+
+1. 同一 TPC-28/32 selected packet 上的 actual coefficientwise intertwiner，逐项
+   保留三 raw channels、`G<=C`、`Delta#`、outer keys、literal factor allocation、
+   canonical prefix order、mask/weights 与 `N0` normalization；
+2. 直接对同一 actual `A_C` 证明 `chi<=1/400`，或直接证明 small-content
+   matched-shell saving；
+3. 对同一 actual ordered fibers 的 growing signed-prefix theorem，并同时给出
+   uniform outer BV、content remainder、共同 constants/ranges 与完整 physical-loss
+   ledger，足以在 `N0` scale 支付目标。
+
+没有预设下一项不编号 audit；旧 cells 不得换名重开。持续工作流授权仍有效，
+但在上述 trigger 出现前不创建 TPC-207。
+
+本轮启动回归为 `22/22 PASS`。追加的只读核对为：
+
+```text
+TPC-111 --check = PASS
+TPC-124 --check = PASS
+TPC-126 --check = PASS
+TPC-127 --check = PASS
+```
+
+这些 PASS 只认证各自的 finite identities、counterexamples 与 claim boundaries；
+它们不产生 L2。TPC-122 当前脚本没有只读 `--check` 且会写 committed JSON，
+本轮只审核其 committed source/JSON，没有执行。TPC-27--32 legacy scripts 同样
+未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
+构建产物与 `tmp/` 均保持原样。
+
+## 24. 下一会话可直接粘贴
+
+```text
+进入仓库：
+D:\26-aimath\理论研究3\prime_dynamics_theory
+
+读取仓库根目录 TPC_HANDOFF.md，以仓库文件和已提交 artifacts 为事实来源，
+不要依赖旧聊天记录。优先读取页首及第 1、6、22、23、24 节。
+
+先执行：
+
+git status --short --branch
+git pull --rebase origin main
+Get-Content -Raw -Encoding UTF8 TPC_HANDOFF.md
+
+保留 git status 中全部既有 tracked/untracked 工作；不得 reset、checkout、
+clean、自动 stash、删除或纳入本轮提交。TPC-105 __pycache__、TPC-63 构建
+产物与 tmp/ 必须原样保留。若现有工作使 rebase 不安全，停止并报告。
+
+$env:PYTHONDONTWRITEBYTECODE = "1"
+完整执行第 1 节 22 项只读启动回归；任一 checker 非零即 fail closed。
+TPC-27--32 legacy certificates 会无条件重写 JSON，不得执行。
+
+当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
+最新不编号裁决是：
+TPC32_H0_2_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_TO_SIGNED_PREFIX_EXACT_FIBER_INTERTWINER_AND_GROWING_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED。
+
+同一 theorem-valid high-beta selected packet 的 formula-level source lock 已通过：
+sigma=1/10000，lambda=99979/210000，delta=7/60，beta=267/400，
+D=10049/52500，J=133/400，R=S=23/60，V=23/120，T=193/500，
+C=floor(J)，N0=JQ^2~XQ；h0=2 是 general fixed-h theorem 的合法特化。
+它与 delta=1/20 exact family 是两条 source lock，绝不可拼接。
+
+当前 first fatal 不是 packet entry，而是 actual coefficientwise fiber map：TPC-32
+的 (alpha,gamma,j), G<=C, Delta# determinant bins 与 TPC-111/122 的 ordered
+(theta,r_i) prefix fibers之间没有 source-backed intertwiner，也没有共同 factor
+allocation、prefix order 与 N0 normalization crosswalk。TPC-124 明确要求
+(J Q_D-Q_Z)M=0；当前 growing archive absent。
+
+即使未来补齐 crosswalk，TPC-122 的 actual growing prefix、outer BV envelope、
+content remainder、uniform class hypothesis 与 fixed-h0 L2 saving 仍全部未证。
+TPC-126/127 只给 exact finite transports；RH-287/294 是不同 noisy-trace对象。
+nonzero-frequency density-one、Parseval、complete-frequency mean 或 orbit Poisson
+zero 都不得升级为 A_hat_C,q(0)。strict 1/400 仍 UNPAID，L2=NONE。
+
+本轮没有预设下一项不编号 gate。仅在第 23.5 节三类 reopen trigger之一出现时，
+按同一有限、fail-closed 工作流继续，无需重复请求人为授权；这不自动授权
+TPC-207。不得把第 6 节任何 STOP_SCOPED cell 重包装为新方法。
+
+两个 O161 parents、pair-native reroute、H1 与 global architecture 继续 OPEN；
+all-D uniformity、exactly-once physical cover、original/global normalization、
+tail-failure、A/B selection、actual attachment 与完整 provenance gates 均独立
+开放。下一篇编号 release 前仍须完成 TPC-143--206 provenance cascade、受影响
+releases 重建、全链 --check、PDF build/render/visual QA。
+
+若没有真实 theorem trigger，只更新 handoff 并发布精确 STOP_SCOPED；不要创建
+论文、PDF 或下一编号。主会话只保留结论、路线选择、阻断项和最终审核摘要；
+长公式、定理原文、文献扫描、schema exploit review、构建日志和 PDF QA 交给
+分身；所有正式写入由主会话协调。
+```
+
+## 25. 上一轮会话粘贴块（历史，仅供审计；不得作为当前入口）
 
 ```text
 进入仓库：
@@ -3997,7 +4344,7 @@ physical-loss ledger。禁止formal->actual、endpoint localization->smallness�
 正式写入由主会话协调。
 ```
 
-## 24. 下一会话可直接粘贴
+## 26. 上一轮下一会话粘贴块（历史，仅供审计；不得作为当前入口）
 
 ```text
 进入仓库：
