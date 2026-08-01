@@ -1,0 +1,655 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cO}{\mathcal O}
+
+\title{Gauge-Fixed Physical First-Alias Observation Map}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The folded noisy operator lives on $[0,1]$, whereas its deterministic
+physical flat trace sums signed periodic points on $[-1,1]$.  Localizing the
+latter by $x\in J\subset[0,1]$ therefore fails to partition the physical
+trace.  We repair the observation map by localizing with $|x|\in J$.  For
+every $n\ge1$, absolute value is a multiplier-preserving bijection between
+the fixed points of the signed map $f^n$ and those of the folded map
+$T^n=|f|^n$.  For every measurable $J$ and $n\ge2$, the corresponding
+localized signed and folded noisy operator traces are exactly equal.  At
+$n=2$ the old convention misses an explicit negative periodic point and the
+exact weight $(4u_c-3)^{-1}$.  Freezing the earlier boundary, sibling, and
+far partition with explicit endpoint ownership then restores the exact physical raw-trace
+partition.  In the Hardy full-trace constituent, the corrected first-alias
+coefficient satisfies $q_{\rm FT}=\cB+\cS+\cR+\cP-\cA$.  It is not the
+modulus complement: the latter differs by the noisy-head/counterloop defect.
+Finally, moving a positive-measure fixed-point-free set between unfrozen
+windows produces a nonzero zero-sum slot change.  This window-partition
+dependence is distinct from the exchange--observation gauge inside a fixed
+model shell.  All results are exact finite observation identities or scoped
+negative statements; no slot asymptotic, trace replacement, determinant
+closure, or Riemann-hypothesis conclusion is obtained.
+\end{abstract}
+
+\section{The data-type defect and the corrected object}
+
+Let $u_c\in(1,2)$ be the root of
+\begin{equation}\label{eq:cubic}
+ u^3-2u^2+2u-2=0,
+\end{equation}
+and put
+\begin{equation}\label{eq:map-data}
+ I=[-1,1],\qquad I_+=[0,1],\qquad
+ f(x)=1-u_cx^2,\qquad T(y)=|f(y)|.
+\end{equation}
+Write
+\begin{equation}\label{eq:r-lambda-b}
+ r=u_c-1,\qquad \lambda=2u_cr,\qquad b=u_c^{-1/2}.
+\end{equation}
+The signed critical orbit and its folded version are
+\begin{equation}\label{eq:critical-orbits}
+ 0\mapsto1\mapsto-r\mapsto r\mapsto r,
+ \qquad
+ 0\mapsto1\mapsto r\mapsto r.
+\end{equation}
+The point $b$ is the unique cusp of $T$ and
+$b\mapsto0\mapsto1\mapsto r$ under $T$, so it is not periodic.  The signed
+map, its complete physical flat trace, and the exact deterministic/noisy
+folding are the objects fixed in RH-10, RH-14, and RH-15
+\citep{WangLongCycle2026,WangParityBoundary2026,WangBulkScattering2026}.
+
+The localized definition in RH-327 \citep{WangShell2026} instead combined a
+folded noisy operator on $I_+$ with
+\begin{equation}\label{eq:old-localization}
+ P_n^{\rm old}(J)
+ =\sum_{\substack{f^n(x)=x\\x\in J}}
+  \frac1{|1-(f^n)'(x)|},\qquad J\subset I_+.
+\end{equation}
+Since the sets $J\subset I_+$ cannot contain negative signed periodic
+points, their union does not in general recover the physical flat trace.
+The corrected deterministic observation is
+\begin{equation}\label{eq:Pabs}
+ P_n^{\rm abs}(J)
+ =\sum_{\substack{f^n(x)=x\\|x|\in J}}
+  \frac1{|1-(f^n)'(x)|}.
+\end{equation}
+The superscript denotes localization by absolute coordinate; the denominator
+already retains the usual absolute fixed-point weight.
+
+\section{Exact localized noisy folding}
+
+For $\sigma>0$, let
+\begin{equation}\label{eq:normal-density}
+ \phi_\sigma(t)=\frac1{\sqrt{2\pi}\sigma}
+ e^{-t^2/(2\sigma^2)}
+\end{equation}
+and define the signed conditioned kernel on $I$ by
+\begin{align}
+ Z_\sigma(x)&=\int_{-1}^1\phi_\sigma(z-f(x))\,dz,\label{eq:signed-normalizer}\\
+ q_\sigma(x,z)&=\frac{\phi_\sigma(z-f(x))}{Z_\sigma(x)}.\label{eq:signed-kernel}
+\end{align}
+The folded kernel on $I_+$ is
+\begin{equation}\label{eq:folded-kernel}
+ p_\sigma(y,t)=q_\sigma(y,t)+q_\sigma(y,-t).
+\end{equation}
+These are exactly the signed and folded row-normalized Gaussian kernels used
+in the source chain \citep{WangLongCycle2026,WangGaussianReturn2026,
+WangComplement2026}.  Let $\cK_\sigma^{\rm s}$ and
+$\cK_\sigma^{\rm f}$ act on backward observables in $L^2(I)$ and
+$L^2(I_+)$, respectively.  Thus the first kernel variable is the source.
+
+Both kernels are bounded and continuous on compact rectangles, so both
+operators are Hilbert--Schmidt.  Their powers of order at least two are trace
+class \citep{Simon2005}.  If $J\subset I_+$ is measurable, write
+$M_J^{\rm f}$ for multiplication by $\one_J$ and $M_J^{\rm s}$ for
+multiplication by $\one_{\{|x|\in J\}}$.
+
+\begin{theorem}[Localized signed--folded noisy trace identity]
+\label{thm:noisy-folding}
+For every measurable $J\subset I_+$, every $\sigma>0$, and every integer
+$n\ge2$,
+\begin{equation}\label{eq:noisy-folding}
+ \boxed{
+ \Tr_{L^2(I)}\!\left(M_J^{\rm s}(\cK_\sigma^{\rm s})^n\right)
+ =
+ \Tr_{L^2(I_+)}\!\left(M_J^{\rm f}(\cK_\sigma^{\rm f})^n\right).}
+\end{equation}
+In particular, the multiplication operator marks the same cyclic source or
+basepoint in the two data types.
+\end{theorem}
+
+\begin{proof}
+Let $E:L^2(I_+)\to L^2(I)$ be $(Eh)(x)=h(|x|)$ and let
+$A:L^2(I)\to L^2(I_+)$ be
+\[
+ (Ag)(y)=\int_Iq_\sigma(y,z)g(z)\,dz.
+\]
+Evenness of $f$ and $Z_\sigma$ gives
+\begin{equation}\label{eq:EA-AE}
+ \cK_\sigma^{\rm s}=EA,
+ \qquad
+ \cK_\sigma^{\rm f}=AE,
+ \qquad
+ M_J^{\rm s}E=EM_J^{\rm f}.
+\end{equation}
+The operator $A$ is Hilbert--Schmidt and $E$ is bounded.  For $n\ge2$,
+$EM_J^{\rm f}(\cK_\sigma^{\rm f})^{n-1}$ and $A$ are
+Hilbert--Schmidt.  Cyclicity for products of two Hilbert--Schmidt operators
+therefore yields
+\begin{align*}
+ \Tr_I\!\left(M_J^{\rm s}(\cK_\sigma^{\rm s})^n\right)
+ &=\Tr_I\!\left(EM_J^{\rm f}(\cK_\sigma^{\rm f})^{n-1}A\right)\\
+ &=\Tr_{I_+}\!\left(\cK_\sigma^{\rm f}M_J^{\rm f}
+      (\cK_\sigma^{\rm f})^{n-1}\right)\\
+ &=\Tr_{I_+}\!\left(M_J^{\rm f}(\cK_\sigma^{\rm f})^n\right).
+\end{align*}
+\end{proof}
+
+There is also a direct sign-path reading.  In the signed closed-loop integral,
+write $x_j=\varepsilon_jy_j$, where $y_j\ge0$.  Since the source sign drops
+out of $q_\sigma$, summing independently over every destination sign gives
+\[
+ \sum_{\varepsilon_{j+1}=\pm1}
+ q_\sigma(y_j,\varepsilon_{j+1}y_{j+1})
+ =p_\sigma(y_j,y_{j+1}).
+\]
+The product over a cyclic sign path therefore folds lobe by lobe with no
+factor two left over.  This loop argument is compatible with
+\cref{eq:EA-AE}; the operator factorization supplies the required trace
+typing even though $M_J$ may be discontinuous.
+
+\begin{remark}[Why $n\ge2$ is retained]
+Lidskii's theorem may express either unlocalized trace as a spectral sum once
+the relevant power is trace class.  It does not prove the localized identity
+after $M_J$ is inserted.  The repository guarantees Hilbert--Schmidt
+operators and trace-class powers for $n\ge2$, which is sufficient above.
+We make no $n=1$ operator-trace claim.  A separately defined diagonal
+integral at $n=1$ would be a different statement.
+\end{remark}
+
+\section{The multiplier-preserving fixed-point bijection}
+
+\begin{theorem}[Unique signed lift of every folded periodic basepoint]
+\label{thm:fixed-bijection}
+For every integer $n\ge1$, absolute value is a bijection
+\begin{equation}\label{eq:fix-bijection}
+ |\cdot|:\Fix(f^n)\longrightarrow\Fix(T^n).
+\end{equation}
+Every folded periodic point avoids the cusp $b$, and if $y=|x|$ under
+\eqref{eq:fix-bijection}, then
+\begin{equation}\label{eq:multiplier-equality}
+ (T^n)'(y)=(f^n)'(x).
+\end{equation}
+Consequently fixed-point simplicity, marked-point multiplicity, minimal
+period, and the physical flat-trace weight are preserved.
+\end{theorem}
+
+\begin{proof}
+If $f^n(x)=x$, the semiconjugacy $|f(x)|=T(|x|)$ gives
+$T^n(|x|)=|x|$.  Injectivity follows from evenness: if $x,x'\in\Fix(f^n)$
+and $|x|=|x'|$, then $f(x)=f(x')$ and applying $f^{n-1}$ gives $x=x'$.
+
+Conversely, let $y_0\in\Fix(T^n)$ and set $y_j=T^jy_0$, with indices
+modulo $n$.  Define
+\begin{equation}\label{eq:unique-lift}
+ x_j=f(y_{j-1}).
+\end{equation}
+Then $|x_j|=y_j$, and evenness gives
+$f(x_j)=f(y_j)=x_{j+1}$.  Thus $x_0\in\Fix(f^n)$ and
+$|x_0|=y_0$, proving surjectivity and uniqueness.
+
+No periodic orbit can meet $b$: after $b$ the folded orbit is
+$0,1,r,r,\ldots$.  It also cannot meet $0$ or $1$.  Hence all derivatives
+below exist.  Since $x_j=\operatorname{sgn}(x_j)y_j$ and $f'$ is odd,
+\[
+ f'(x_j)=\operatorname{sgn}(x_j)f'(y_j),
+ \qquad
+ T'(y_j)=\operatorname{sgn}(x_{j+1})f'(y_j).
+\]
+The two sign products agree after cyclic index shift, proving
+\eqref{eq:multiplier-equality}.  The signed periodic points are repelling and
+simple by the exact Markov result of RH-10; the same now holds for their
+folded images.  If folding reduced a minimal period, the unique lift of the
+shorter folded cycle would reduce the signed period as well, which is
+impossible.
+\end{proof}
+
+\begin{corollary}[Correct localized deterministic trace]
+\label{cor:Pabs-folded}
+For every measurable $J\subset I_+$ and every $n\ge1$,
+\begin{equation}\label{eq:Pabs-folded}
+ \boxed{
+ P_n^{\rm abs}(J)
+ =\sum_{\substack{T^n(y)=y\\y\in J}}
+  \frac1{|1-(T^n)'(y)|}.}
+\end{equation}
+In particular, $P_n^{\rm abs}(I_+)=P_n$, the complete signed physical flat
+trace.
+\end{corollary}
+
+\subsection{An explicit order-two counterexample to the old binning}
+
+For $p(u)=u^3-2u^2+2u-2$, one has
+$p'(u)=3u^2-4u+2>0$,
+$p(3/2)=-1/8$, and $p(25/16)=233/4096$.  Hence
+\begin{equation}\label{eq:u-rational-bracket}
+ \frac32<u_c<\frac{25}{16}.
+\end{equation}
+
+Polynomial division gives
+\begin{equation}\label{eq:factor-f2}
+ f^2(x)-x=(f(x)-x)
+ \{u_c^2x^2-u_cx+1-u_c\}.
+\end{equation}
+The two in-domain roots of the second factor are
+\begin{equation}\label{eq:xpm}
+ x_\pm=\frac{1\pm\sqrt{4u_c-3}}{2u_c},
+ \qquad x_-<0<x_+,
+\end{equation}
+and $f(x_-)=x_+$, $f(x_+)=x_-$.  The first factor in
+\eqref{eq:factor-f2} has roots $r$ and $-1/(u_cr)$.  By
+\eqref{eq:u-rational-bracket}, $u_cr<225/256<1$, so the latter root is below
+$-1$.  Thus $r,x_-,x_+$ are exactly the three physical points in
+$\Fix(f^2)$.  The two-cycle multiplier and its weight are
+\begin{equation}\label{eq:cycle-weight}
+ (f^2)'(x_\pm)=4u_c^2x_-x_+=-4r,
+ \qquad
+ w_c=\frac1{1+4r}=\frac1{4u_c-3}.
+\end{equation}
+At $r$, $(f^2)'(r)=\lambda^2$ and
+\begin{equation}\label{eq:fixed-weight}
+ w_r=\frac1{\lambda^2-1}.
+\end{equation}
+Thus a partition of $I_+$ using \eqref{eq:old-localization} sums only
+$w_r+w_c$, while the physical trace is
+\begin{equation}\label{eq:missing-weight}
+ P_2=w_r+2w_c.
+\end{equation}
+The exact missing amount is $w_c$.
+
+\begin{lemma}[Exact rational separation for the frozen fixture]
+\label{lem:fixture-separation}
+The three points in $\Fix(T^2)$ satisfy
+\begin{equation}\label{eq:fixture-separation}
+ 0<\max\{|x_-|,r\}<b-\frac18<b<x_+<b+\frac18<1.
+\end{equation}
+Moreover, none belongs to
+$[b-1/10,b-2/25)$.
+\end{lemma}
+
+\begin{proof}
+The bracket \eqref{eq:u-rational-bracket} gives
+$4/5<b<\sqrt{2/3}<7/8$ and $r<9/16$; in particular the two fixture
+windows lie inside $I_+$.
+Also $|x_-|<1/2$, because
+$\sqrt{4u_c-3}<1+u_c$.  Thus both low points are below
+$b-1/8>27/40$.
+
+Since $u_c>1$,
+$\sqrt{4u_c-3}>2\sqrt{u_c}-1$, and therefore $x_+>b$.
+The bracket above gives
+$\sqrt{u_c}>61/50$ and
+$\sqrt{4u_c-3}<181/100$.  Consequently
+\[
+ 0<x_+-b
+ =\frac{1+\sqrt{4u_c-3}-2\sqrt{u_c}}{2u_c}
+ <\frac{37}{300}<\frac18.
+\]
+Finally, the left endpoint of the remaining test interval obeys
+$b-1/10>7/10$, whereas $|x_-|<1/2$ and $r<9/16$; its right endpoint is
+below $b<x_+$.  This proves the last assertion.
+\end{proof}
+
+At 110-decimal working precision the reproduction values are
+\begin{center}\small
+\begin{tabular}{lr}
+\toprule
+quantity & ordinary decimal reproduction\\
+\midrule
+$r$ & $0.5436890126920763615708559718$\\
+$x_+$ & $0.9010184338065749680123723533$\\
+$x_-$ & $-0.2532195625455325825218740568$\\
+$w_r$ & $0.5501733230542994206834636063$\\
+$w_c$ & $0.3149848315929645801889119110$\\
+\bottomrule
+\end{tabular}
+\end{center}
+These decimals reproduce exact algebraic formulas; they are not interval
+certificates.
+
+\section{The frozen physical basepoint observation map}
+
+The RH-327 coordinates use the fold cusp $b$, a source center
+$s_{\sigma,k}$, and
+\[
+ q_{\rm b}=\frac{b-s_{\sigma,k}}{\sqrt\sigma},
+ \qquad q(x)=\frac{x-s_{\sigma,k}}{\sqrt\sigma}.
+\]
+For fixed $\sigma>0$, integer $k$, and $A>0$, their boundary-owned windows
+simplify
+exactly to
+\begin{align}
+ J^-_{\sigma,k,A}
+ &=I_+\cap[b-A\sqrt\sigma,b),\label{eq:Jminus}\\
+ J^+_{\sigma,k,A}
+ &=I_+\cap[b,b+A\sqrt\sigma],\label{eq:Jplus}\\
+ F_{\sigma,k,A}&=I_+\setminus(J^-_{\sigma,k,A}\cup J^+_{\sigma,k,A}).
+ \label{eq:F}
+\end{align}
+The source center cancels from the endpoints, but the physical derivation and
+the labels remain those of RH-327.  We require $(\sigma,k,A)$ and every
+endpoint convention to be frozen before evaluating a trace or inspecting a
+periodic point \citep{WangShell2026}.
+
+For measurable $J\subset I_+$ and $n\ge2$, define
+\begin{equation}\label{eq:L-local}
+ L_{\sigma,n}(J)=\Tr\!\left(M_J^{\rm f}
+ (\cK_\sigma^{\rm f})^n\right).
+\end{equation}
+By \cref{thm:noisy-folding}, this is also the signed cyclic observation with
+$|x_0|\in J$.  Fix $r_H=0.85$ and put
+\begin{align}
+ \cB_{\sigma,k,n}
+ &=r_H^{-n}\{L_{\sigma,n}(J^-)-P_n^{\rm abs}(J^-)\},\label{eq:B}\\
+ \cS_{\sigma,k,n}
+ &=r_H^{-n}\{L_{\sigma,n}(J^+)-P_n^{\rm abs}(J^+)\},\label{eq:S}\\
+ \cR_{\sigma,k,n}
+ &=r_H^{-n}\{L_{\sigma,n}(F)-P_n^{\rm abs}(F)\}.
+ \label{eq:R}
+\end{align}
+
+\begin{theorem}[Gauge-fixed physical raw-trace partition]
+\label{thm:raw-partition}
+For every frozen partition \eqref{eq:Jminus}--\eqref{eq:F} and every
+$n\ge2$,
+\begin{equation}\label{eq:raw-partition}
+ \boxed{
+ r_H^{-n}\{\Tr(\cK_\sigma^{\rm f})^n-P_n\}
+ =\cB_{\sigma,k,n}+\cS_{\sigma,k,n}+\cR_{\sigma,k,n}.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The three indicators sum to one, so trace linearity partitions the noisy
+trace.  By \cref{cor:Pabs-folded}, the same disjoint sets partition every
+physical fixed point exactly once and their deterministic sums add to $P_n$.
+Subtract and apply the common Hardy scale.
+\end{proof}
+
+For the archived reproduction choice $k=2$, $\sigma=1/4$, and $A=1/4$,
+\begin{equation}\label{eq:frozen-fixture}
+ J^-=[b-1/8,b),\qquad J^+=[b,b+1/8].
+\end{equation}
+By \cref{lem:fixture-separation}, the folded order-two points
+$|x_-|,r,x_+$ lie respectively in $F,F,J^+$.
+Hence
+\begin{equation}\label{eq:fixture-slots}
+ (P_2^{\rm abs}(J^-),P_2^{\rm abs}(J^+),P_2^{\rm abs}(F))
+ =(0,w_c,w_r+w_c),
+\end{equation}
+whereas the old positive-$x$ convention gives $(0,w_c,w_r)$.
+
+\section{Strict partition dependence and the separate model gauge}
+
+The explicit endpoint convention makes the frozen slots well defined.  It does not
+make them invariant under changing the observation windows.
+
+\begin{proposition}[Positive nontrivial window shift]
+\label{prop:partition-dependence}
+Fix $\sigma>0$ and $n\ge2$.  Let $J_1,J_2,J_3$ be a measurable partition of
+$I_+$ and let $E\subset J_1$ have positive Lebesgue measure and contain no
+point of $\Fix(T^n)$.  Reassign $E$ from $J_1$ to $J_2$.  If
+\[
+ D_j=r_H^{-n}\{L_{\sigma,n}(J_j)-P_n^{\rm abs}(J_j)\},
+\]
+then the slot vector changes by
+\begin{equation}\label{eq:partition-shift}
+ (D_1,D_2,D_3)\longmapsto
+ (D_1-\delta_E,D_2+\delta_E,D_3),
+ \qquad
+ \delta_E=r_H^{-n}L_{\sigma,n}(E)>0.
+\end{equation}
+Its total is unchanged.
+\end{proposition}
+
+\begin{proof}
+The deterministic term on $E$ is zero.  The folded Gaussian kernel is
+strictly positive, so the diagonal kernel of its $n$th power is strictly
+positive and
+\[
+ L_{\sigma,n}(E)=\int_Ep_\sigma^{(n)}(y,y)\,dy>0.
+\]
+Additivity gives \eqref{eq:partition-shift}.
+\end{proof}
+
+For \eqref{eq:frozen-fixture}, the set
+\begin{equation}\label{eq:E-fixture}
+ E=[b-1/10,b-2/25)\subset J^-
+\end{equation}
+has length $1/50$ and, by \cref{lem:fixture-separation}, contains no folded
+period-two point.  Moving it from
+$J^-$ to $F$ changes $(\cB,\cS,\cR)$ by
+$(-\delta_E,0,+\delta_E)$.
+
+This is \emph{window-partition dependence}: it changes which basepoints the
+observable marks.  It is not the exchange--observation gauge of RH-330
+\citep{WangFullTraceTransfer2026}, which keeps one frozen model shell
+$\widehat{\mathcal S}=\widehat{\mathcal X}+\widehat{\mathcal O}$ fixed while
+sending $\widehat{\mathcal X}\mapsto\widehat{\mathcal X}+t$ and
+$\widehat{\mathcal O}\mapsto\widehat{\mathcal O}-t$.  The former is eliminated by
+freezing $J^-,J^+,F$ before evaluation.  The latter requires a physical
+identification of the internal shell split; without it only the aggregate
+$\widehat{\mathcal S}$ is intrinsic.
+
+\section{The correctly typed first-alias coefficient}
+
+We now connect the repaired observation map to the exact RH-326 algebra
+\citep{WangFirstAlias2026}.  Let $\lambda_-(\sigma)$ be the global noisy
+parity eigenvalue and define
+\begin{align}
+ c^H_{\sigma,n}
+ &=r_H^{-n}\{\Tr(\cK_\sigma^{\rm f})^n-1-\lambda_-(\sigma)^n\},
+ \label{eq:cHs}\\
+ c^H_n&=r_H^{-n}\{P_n-1-(-1)^n\}.
+ \label{eq:cH0}
+\end{align}
+For $k\ge2$, let $M_k$ be the archived boundary-cycle multiplier and put
+\begin{equation}\label{eq:beta-data}
+ \beta_k=\frac{|M_k|^{-1/(2k)}}{r_H},
+ \qquad
+ \beta=\frac1{r_H\sqrt\lambda}.
+\end{equation}
+Retain the finite counterloop $s_{k,n}$, limiting pole moment, and
+deterministic numerator anchor
+\begin{align}
+ s_{k,n}
+ &=\beta_k^n\{2k\one_{2k\mid n}-1-(-1)^n\},\label{eq:counterloop}\\
+ p_n^{\rm pole}&=-2\one_{2\mid n}\beta^n,
+ &a_n^{\rm num}&=c^H_n-p_n^{\rm pole}.\label{eq:num-anchor}
+\end{align}
+Define the global parity and alias packets
+\begin{equation}\label{eq:PA}
+ \cP_{\sigma,n}=r_H^{-n}\{(-1)^n-\lambda_-(\sigma)^n\},
+ \qquad
+ \cA_{k,n}=s_{k,n}-p_n^{\rm pole}.
+\end{equation}
+Neither global scalar is localized: no Perron/parity projector and no
+time-Floquet sector is inserted into \eqref{eq:B}--\eqref{eq:R}.
+The RH-326 full-trace residual is
+\begin{equation}\label{eq:e-residual}
+ e_{\sigma,k,n}
+ :=c^H_{\sigma,n}-s_{k,n}-a_n^{\rm num}.
+\end{equation}
+
+\begin{theorem}[Gauge-fixed first-alias observation ledger]
+\label{thm:first-alias-ledger}
+At $n=2k$, define
+\begin{align}
+ q_{{\rm FT},\sigma,k,n}
+ &:=e_{\sigma,k,n}
+ =c^H_{\sigma,n}-s_{k,n}-a_n^{\rm num},
+ \label{eq:qFT}\\
+ \mathtt{coefficient\_type}
+ &=\mathtt{hardy\_full\_trace\_constituent}.
+ \label{eq:qFT-type}
+\end{align}
+Then
+\begin{equation}\label{eq:five-slot}
+ \boxed{
+ q_{{\rm FT},\sigma,k,2k}
+ =e_{\sigma,k,2k}
+ =\cB_{\sigma,k,2k}+\cS_{\sigma,k,2k}
+  +\cR_{\sigma,k,2k}+\cP_{\sigma,2k}-\cA_{k,2k}.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{eq:cHs}--\eqref{eq:PA} give the exact identity
+\[
+ c^H_{\sigma,n}-c^H_n
+ =r_H^{-n}\{\Tr(\cK_\sigma^{\rm f})^n-P_n\}
+  +\cP_{\sigma,n}.
+\]
+Using $a_n^{\rm num}=c^H_n-p_n^{\rm pole}$ in \eqref{eq:qFT} gives
+\[
+ q_{\rm FT}=(c^H_{\sigma,n}-c^H_n)
+ -(s_{k,n}-p_n^{\rm pole}).
+\]
+Apply \cref{thm:raw-partition} and \eqref{eq:PA}.
+\end{proof}
+
+\subsection{It is not the modulus complement}
+
+Let $h_{\sigma,n}$ be a noisy-head moment in the same Hardy normalization,
+put
+\begin{equation}\label{eq:tau-d}
+ \tau_{\sigma,n}=c^H_{\sigma,n}-h_{\sigma,n},
+ \qquad
+ d_{\sigma,k,n}=h_{\sigma,n}-s_{k,n}.
+\end{equation}
+Then exact rearrangement gives
+\begin{equation}\label{eq:modulus-relation}
+ \boxed{
+ \tau_{\sigma,n}-a_n^{\rm num}
+ =q_{{\rm FT},\sigma,k,n}-d_{\sigma,k,n}.}
+\end{equation}
+Thus $q_{\rm FT}=e$ is the Hardy full-trace constituent.  Exact equality with
+the modulus-complement coefficient requires $d=0$.  Substitution at a target
+asymptotic scale instead requires a separate theorem making $d$ negligible at
+that scale.  This is the fixed-order head-transport distinction retained in
+the earlier annular route; RH-334 supplies no such head theorem.
+
+\subsection{Exact rational fixture}
+
+The artifact freezes $k=2$, $n=4$, $r_H=17/20$ and the exact data
+\[
+ (L^-,L^+,L^F)=(3/2,3/4,1/4),\qquad
+ (P^-,P^+,P^F)=(11/10,2/5,1/5),
+\]
+with $\lambda_-=-3/4$, $s=3/2$, and $p^{\rm pole}=-2$.  Exact rational
+arithmetic gives
+\begin{center}\small
+\begin{tabular}{lc@{\qquad}lc}
+\toprule
+quantity & exact value & quantity & exact value\\
+\midrule
+$c^H_{\sigma,4}$ & $189375/83521$ & $c^H_4$ & $-48000/83521$\\
+$a_4^{\rm num}$ & $119042/83521$ & $\cA$ & $7/2$\\
+$\cB$ & $64000/83521$ & $\cS$ & $56000/83521$\\
+$\cR$ & $8000/83521$ & $\cP$ & $109375/83521$\\
+$q_{\rm FT}$ & $-109897/167042$ & five-slot error & $0$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Taking $d=5/12$ yields
+$\tau-a^{\rm num}=-1076987/1002252=q_{\rm FT}-d$, again with exact zero
+error.  This fixture checks algebra and types; it is not physical trace data.
+
+\section{Reproduction protocol}
+
+The executable artifact has four independent layers.
+
+\begin{enumerate}[leftmargin=2.2em]
+\item It solves \eqref{eq:cubic} at 110 decimal working digits and evaluates
+the exact order-two roots, orbits, multipliers, and weights.  The old
+positive-$x$ mutation is rejected because its slots fail to add to $P_2$.
+\item A rational four-state signed matrix with identical rows on each sign
+pair is folded to a two-state matrix.  Its two localized trace-square values
+agree exactly: $43/100$ and $229/400$.
+\item On 32 Gauss--Legendre nodes in $I_+$ and the corresponding 64 symmetric
+signed nodes, it builds the signed and folded Gaussian Nystr\"om matrices at
+$\sigma=1/4$.  Destination quadrature weights are included in the matrices.
+The localized order-two rows are
+\begin{center}\small
+\begin{tabular}{lrrr}
+\toprule
+slot & signed trace & folded trace & absolute error\\
+\midrule
+$J^-$ & $0.2339453602109879$ & $0.2339453602109879$ & $0$\\
+$J^+$ & $0.2619881093922252$ & $0.2619881093922252$ & $0$\\
+$F$   & $1.042468475597926$ & $1.042468475597926$ & $0$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The zero is a finite symmetric-matrix distributivity identity, not a
+continuum certificate.
+\item A separate positive quadrature over the set \eqref{eq:E-fixture}
+returns $L_{\sigma,2}(E)=0.033293751080257\ldots$ and
+$\delta_E=0.046081316374058\ldots>0$.  Exact fractions verify both paths to
+\eqref{eq:five-slot} and \eqref{eq:modulus-relation}.  A wrong
+\texttt{coefficient\_type} mutation is rejected.
+\end{enumerate}
+
+All decimal rows are deterministic reproduction checks.  They neither prove
+the continuum operator theorem---which was proved analytically above---nor
+provide interval enclosures or moving-order evidence.
+
+\section{Claim boundary and next admissible step}
+
+RH-334 proves an exact physical observation map and an exact correction to
+the RH-327 localized deterministic slots.  It also proves two scoped negative
+statements: positive-$x$ binning fails already at order two, and individual
+localized slots are not invariant under unfrozen window changes.
+
+It does \emph{not} estimate the sign or magnitude of $\cB,\cS,\cR$, prove
+that $\cR=o(H_k)$, or establish a moving-order localization theorem.  It does
+not identify any RH-322--RH-324 or RH-333 forward probability law with the
+cyclic trace, identify a physical exchange parameter, replace an actual
+operator by a model, close the all-leg Duhamel sum, control the off-alias
+background or noisy head, or glue a determinant.  The raw full-line affine
+obstruction of RH-333 remains a probability-path result, not a trace theorem.
+
+A continuation must keep the windows and coefficient type frozen, estimate
+the three observable slots on one common first-alias clock, and prove every
+actual/model and head/off-alias bridge before invoking a full-trace criterion.
+No result here constructs a Hilbert--Polya operator, identifies a Riemann
+zero, proves a von Mangoldt trace formula or completed-zeta divisor equality,
+or proves the Riemann hypothesis.  Gates A--E remain false/open.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
