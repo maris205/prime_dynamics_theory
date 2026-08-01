@@ -10,7 +10,7 @@ RH-330 full-trace transfer artifacts，不改 TPC-28/32/111/122 source files。
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC32_H0_2_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_TO_SIGNED_PREFIX_EXACT_FIBER_INTERTWINER_AND_GROWING_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED`
+`TPC32_23_5_LOCAL_MOMENT_AND_AP_SIGN_EXISTENCE_TO_ACTUAL_ZERO_OR_GROWING_PREFIX_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED`
 下一篇：`null`；下一项不编号审计：`null`（仅按第 23.5 节 reopen triggers 重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -20,7 +20,7 @@ TPC-206 授权并完成：`true`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
-上下文节省入口：新会话优先读取本页页首及第 1、6、22、23、24 节；其余
+上下文节省入口：新会话优先读取本页页首及第 1、6、22、23、24、27 节；其余
 历史块只在这些入口明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
@@ -556,6 +556,22 @@ crosswalk，以及 TPC-122 要求的 growing prefix、outer BV envelope 与 cont
 remainder estimates。它不停止新的 actual intertwiner、直接控制同一 `A_C` 的
 theorem、保留全部 literal data 的新 growing-prefix theorem、两个 O161 parents、
 pair-native reroute、H1 或 global architecture。
+
+2026-07-31 的第 23.5 节 named-primary reopen-candidate 审计新增且仅新增：
+
+```text
+DECLARED_TPC32_23_5_NAMED_PRIMARY_REOPEN_CANDIDATES_20260731_V1
+  = STOP_SCOPED
+```
+
+它只停止把 Banks--Shparlinski `arXiv:2506.08787v1`、Verjovsky
+`arXiv:2607.25002v1`、Ford--Radziwiłł `arXiv:2605.03349v1`，或
+Matomäki--Teräväinen `arXiv:2605.27833v1` 的已审核 theorem statements
+改名为同一 actual `A_C` 的 coefficientwise fiber map、直接 distinguished-zero
+saving，或带 outer BV/content remainder 的 growing all-prefix theorem。它不扩张
+任何旧 `STOP_SCOPED` cell，也不停止这些来源的新版本、真正新增的 actual
+corollary/crosswalk、两个 O161 parents、pair-native reroute、H1 或 global
+architecture；精确字段审计见第 27 节。
 
 ## 7. Reopen triggers
 
@@ -4177,7 +4193,7 @@ TPC-127 --check = PASS
 D:\26-aimath\理论研究3\prime_dynamics_theory
 
 读取仓库根目录 TPC_HANDOFF.md，以仓库文件和已提交 artifacts 为事实来源，
-不要依赖旧聊天记录。优先读取页首及第 1、6、22、23、24 节。
+不要依赖旧聊天记录。优先读取页首及第 1、6、22、23、24、27 节。
 
 先执行：
 
@@ -4195,7 +4211,7 @@ TPC-27--32 legacy certificates 会无条件重写 JSON，不得执行。
 
 当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 最新不编号裁决是：
-TPC32_H0_2_SMALL_CONTENT_MATCHED_AUXILIARY_ZERO_TO_SIGNED_PREFIX_EXACT_FIBER_INTERTWINER_AND_GROWING_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED。
+TPC32_23_5_LOCAL_MOMENT_AND_AP_SIGN_EXISTENCE_TO_ACTUAL_ZERO_OR_GROWING_PREFIX_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED。
 
 同一 theorem-valid high-beta selected packet 的 formula-level source lock 已通过：
 sigma=1/10000，lambda=99979/210000，delta=7/60，beta=267/400，
@@ -4214,6 +4230,15 @@ content remainder、uniform class hypothesis 与 fixed-h0 L2 saving 仍全部未
 TPC-126/127 只给 exact finite transports；RH-287/294 是不同 noisy-trace对象。
 nonzero-frequency density-one、Parseval、complete-frequency mean 或 orbit Poisson
 zero 都不得升级为 A_hat_C,q(0)。strict 1/400 仍 UNPAID，L2=NONE。
+
+第 27 节已对第 23.5 节三个 reopen triggers 做 post-seal source audit。Banks--
+Shparlinski 的 literal Möbius factor 是 mu(n1 n2 n3)，含不能由 separable
+u/v weights 消去的 n3-dependence，且只有 log saving；
+Verjovsky 的一般 moment-to-point inequality 不提供 actual A_C 所需的 local high
+moment input，其 Möbius 特化是 RH-equivalent 的单 mu(n) 对象；Ford--Radziwiłł
+与 Matomäki--Teräväinen 只证明每个 reduced AP 内出现两种符号，不给 signed-sum
+或 all-prefix cancellation。上述已审核版本不得在没有新 actual corollary/crosswalk
+时原样重开。
 
 本轮没有预设下一项不编号 gate。仅在第 23.5 节三类 reopen trigger之一出现时，
 按同一有限、fail-closed 工作流继续，无需重复请求人为授权；这不自动授权
@@ -4445,3 +4470,199 @@ git rev-parse origin/main、git ls-remote origin refs/heads/main 核对三个 ha
 完全一致。若只形成 STOP_SCOPED 审计结果，也按同样
 的提交、推送和三引用核对纪律发布交接记录。
 ```
+
+## 27. 第 23.5 节 post-seal primary-source reopen-trigger 审计
+
+### 27.1 冻结基线、对象与有限来源集
+
+本轮从下列一致基线启动：
+
+```text
+HEAD = origin/main = 3c798823c313bdae1678bb46a9655bac1770f4ff
+TPC_HANDOFF_SHA256_BEFORE_EDIT
+  = 08ff16ad29f769163951471e19bf6c26ce9d1db24accdaa0ee172265b8167a9f
+STARTUP_REGRESSION = 22/22 PASS
+TPC111_124_126_127_READ_ONLY_GATE_CHECKS = 4/4 PASS
+```
+
+三个只读审核分别覆盖第 23.5 节的 actual intertwiner、direct actual-`A_C`
+theorem，以及 growing signed-prefix + outer BV + content remainder 路线；三个审核
+的 `files_changed=[]`。同一 selected packet、固定 `h0=2`、三 raw channels、
+`C=floor(J)`、`G<=C`、`Delta#`、actual masks/weights、outer labels 与
+`N0=JQ^2 asymp XQ` 均继续按第 23.1 节冻结。`delta=1/20` exact family 没有
+参与，且不得与此 high-beta packet 拼接。
+
+本轮逐 theorem 核查的有限 primary-source 集为：
+
+1. Banks--Shparlinski, *Multiple sums with the Möbius function*,
+   `arXiv:2506.08787v1`, Theorems 2.1/2.4 与第 7.6 节；该来源此前已在第
+   15.3 节及 TPC-43 标记为不同对象，本轮只对第 23.5 节三个 trigger 做精确
+   re-type-check；
+2. Verjovsky, *Local Moments of Möbius Fourier Polynomials and the Riemann
+   Hypothesis*, `arXiv:2607.25002v1`, Theorem 1.3 与 Proposition 3.2；
+3. Ford--Radziwiłł, *Sign changes of the Liouville function in arithmetic
+   progressions*, `arXiv:2605.03349v1`, Theorem 1；
+4. Matomäki--Teräväinen, *Linnik's problem for multiplicative functions*,
+   `arXiv:2605.27833v1`, Theorems 1.1/1.2 与 Corollary 1.3。
+
+已声明 git refs 的 source-forward 核查仍没有找到 actual `Q_D/Q_Z` map。Tao--
+Teräväinen natural-block/log-density、Menon origin/shift-average、Pilatte single-factor
+origin-average、fixed/logarithmic Chowla、nilsequence、metric/random-family、
+conditional Landau--Siegel-zero 与 static LCM 候选仍落在第 6 节既有
+`STOP_SCOPED` cells；本轮没有给这些旧方法换名或扩张 scope。
+
+### 27.2 literal-object 与 theorem-output 字段矩阵
+
+actual target 仍是
+
+```text
+A_C(n) = S_sh(G<=C, Delta#=n),
+A_hat_C,q(0) = sum_n A_C(n) = S_sh(G<=C),
+F0(A_C) <= X^(chi+o(1)), chi<=1/400,
+```
+
+或同一 small-content matched shell 在 `N0` scale 上的直接 fixed-power saving。
+四个候选逐项结果如下：
+
+| 必核字段 | Banks--Shparlinski | Verjovsky | 两个 AP sign-existence sources |
+|---|---|---|---|
+| literal physical coefficient | `u_n1 v_n2 mu(n1 n2 n3)`；第三变量位于不可预先因子化的单一 Möbius factor 中，且两权重可分离 | 一般命题为 `sum a_n e(nt)`, `abs(a_n)<=1`；Möbius 特化只有单个 `mu(n)` | 单个 `lambda(n)` 或 squarefree `mu(n)` 的符号 |
+| fixed physical `h0=2` | 没有同一 divisibility pair；冻结第三变量会落到来源明确未解决的 `H=1` binary/Chowla 型情形 | 没有 shift 参数 | 只固定 AP residue class，不固定 actual 两条 affine forms |
+| domain 与 prefix index | 三区间变量上的一个 additive level set；给 complete/terminal scalar sum，不给每个 canonical prefix | contiguous Fourier index；local moment 到一个 terminal point，不给 actual ordered fibers 的 all-prefix | 只断言某阈值前存在两种符号；没有 signed sum、prefix 或 correlation quantity |
+| determinant/content/outer labels | 没有 `G<=C`、`Delta#`、三 raw channels或 `(alpha,gamma,j)` keys | 全部没有 | 全部没有 |
+| masks/weights 与 factor allocation | 只有两组 separable bounded weights；不能承载 actual joint pair mask 与三-channel tensor | 只有抽象 bounded coefficients；无 physical lineage | 无 actual weights、masks、factor allocation |
+| `X/N/q` ranges | 文献自己的 `A,B,N,H`；short form 要求 growing `H`，不是 singleton physical shift | degree `N`、arc radius `r`、moment order `q`；该 `q` 不是 auxiliary modulus | AP modulus `q`；不得与 TPC no-wrap Fourier modulus同名偷换 |
+| uniform constants | 对文献 data 的 uniformity不等于全部 actual outer fibers 的共同常数 | `C_q` 依赖 moment order；没有 actual-family local-moment input | threshold/constants只服务 sign existence，不服务 weighted sums |
+| normalization | `(A+B)N(log N)^(-C)` 或相应 short sum；无 `N0` crosswalk | classical `P_N=N^(-1/2) sum mu(n)e(nt)`；无 `N0` crosswalk | 最小 sign witness scale `q^(5/2+eps)` 或 `R(mu;q)<<q^(2+eps)`；不是 shell normalization |
+| physical-loss ledger | 只有 fixed-`C` log saving，无 `1/400` credit | deterministic wrapper不提供 local high-moment bound；RH-equivalent specialization不是 unconditional input | 两种符号存在允许其余项几乎全同号，故没有任何 cancellation exponent |
+
+Banks--Shparlinski 的 arbitrary weights 不能修复首项：literal factor 是
+`mu(n1 n2 n3)`，`u`、`v` 只依赖前两个变量，故其中的 `n3`-dependence 不能
+由这两组 weights 消去；把第三变量冻结到 singleton 正是其第
+7.6 节明确仍 out of reach 的 `H=1` 情形。即使反事实存在 literal crosswalk，
+固定 `C` 的 log saving 仍是 `X^(-o(1))`，不能选择 `C=C(X)` 偷渡成 fixed
+power。
+
+Verjovsky Proposition 3.2 是确定性的 one-way implication。对任意 bounded
+trigonometric polynomial，它把已知 local `B_q` 控制转成一个点值控制；它本身
+不证明任何 `B_q` upper bound。把 actual `A_C` 平移、zero-pad 并归一化只能得到
+一个以 same-actual-`A_C` local high moment 为前提的条件式，而该前提正是未证
+算术输入。Theorem 1.3 则是 classical single-Möbius polynomial 的 RH 等价表述，
+不是 actual coefficient theorem。Parseval 或 global `L2` 不能制造 distinguished
+zero，也不能同时统一控制全部 canonical prefixes。
+
+Ford--Radziwiłł Theorem 1 对 prime AP modulus 给出 `q^(5/2+eps)` 前各一个
+Liouville 正、负值。Matomäki--Teräväinen Corollary 1.3 对 Möbius 给出
+
+```text
+R(mu;q) << q^2 (L(q)^100 + B(q)) <<_eps q^(2+eps),
+```
+
+即每个 reduced residue class 内各有一个 squarefree 正、负值；其一般 theorem
+另带 real-character pretentious alternative。两者的 output 都是 existence，严格
+弱于 signed-sum balance：一个长度 `L` 的序列即使 `L-1` 项同号、仅一项异号也
+满足它们的结论。因此它们对 `F0(A_C)`、matched shell 或 growing maximal prefix
+没有定量蕴含。Ford--Radziwiłł Lemma 7 中每个长度 `q` 区间正负各半的结论以
+“指定 AP 截至 `N` 全部同号”的反证假设为前提，该假设随后被推翻，不能抽成
+unconditional block theorem；即使保留该条件计数，它也不控制区间内部的
+canonical order。Matomäki--Teräväinen 证明中的 sign-filtered convolution 是对
+正、负目标分别构造的非负 representation count，两套计数没有相减，故也不产生
+signed-prefix cancellation。
+
+### 27.3 三个 reopen triggers 与完整 loss 状态
+
+Trigger 1 首先在仓库 actual map input 处失败：
+
+```text
+TPC144 Q_D.actual_map_edges = []
+TPC144 Q_Z.actual_map_edges = []
+TPC144 J_QD_equals_QZ = NOT_TESTABLE
+TPC144 literal_fiber_relabeling = NOT_TESTABLE
+TPC155 production_witness_present = false
+TPC175 qualifying_claim_count = 0
+TPC175 eligible_carrier_count = 0
+```
+
+所以 `(J Q_D-Q_Z)M=0` 目前连共同 native-leaf matrix 与两组 actual maps 都无法
+形成。scalar equality、一般 kernel criterion、local moment inequality或 sign
+existence theorem 都不构造 metadata-preserving `J`。精确 first fatal 为：
+
+```text
+COMMON_ACTUAL_LEAF_DOMAIN_AND_LITERAL_Q_D_Q_Z_MAPS_ABSENT
+```
+
+Trigger 2 也失败。四个来源均不直接控制同一 actual `A_C`；没有同一对象的
+denominator lower input，也没有
+
+```text
+F0(A_C) <= X^(chi+o(1)), chi<=1/400,
+```
+
+或 `N0` scale 上的 direct small-content matched-shell fixed-power saving。
+
+Trigger 3 独立失败。没有候选同时给出：
+
+```text
+all actual retained ordered fibers and every canonical prefix,
+uniform outer BV envelope,
+content remainder with a fixed exponent,
+common growing X/N/q ranges and uniform constants,
+N0-to-global normalization crosswalk,
+complete physical-loss ledger.
+```
+
+本轮最终 gate matrix 为：
+
+```text
+TRIGGER_1_ACTUAL_COEFFICIENTWISE_INTERTWINER = FAIL_CLOSED_ABSENT
+TRIGGER_2_DIRECT_ACTUAL_A_C_OR_MATCHED_SHELL_THEOREM = FAIL_CLOSED_ABSENT
+TRIGGER_3_GROWING_PREFIX_BV_CONTENT_LEDGER = FAIL_CLOSED_ABSENT
+
+SAME_SELECTED_HIGH_BETA_PACKET_SOURCE_LOCK = PASS
+H0_2_SPECIALIZATION = PASS_THEOREM_LEVEL_NOT_JSON_SERIALIZED
+ACTUAL_GENERIC_PAIR_MASK_DECOMPOSITION = ABSENT
+N0_TO_Q_X_SQUARED_NORMALIZATION_CROSSWALK = ABSENT
+CHI_LE_1_OVER_400 = UNPAID
+FIXED_ATOM_CREDIT = 0
+ARITHMETIC_ADVANCE = NO
+L2 = NONE
+TPC207_TRIGGER = false
+TPC207_CREATED = false
+```
+
+### 27.4 精确 STOP scope、开放父节点与发布验证
+
+精确裁决为：
+
+```text
+TPC32_23_5_LOCAL_MOMENT_AND_AP_SIGN_EXISTENCE_TO_ACTUAL_ZERO_OR_
+GROWING_PREFIX_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED
+```
+
+本轮新增且仅新增第 6 节的：
+
+```text
+DECLARED_TPC32_23_5_NAMED_PRIMARY_REOPEN_CANDIDATES_20260731_V1
+  = STOP_SCOPED
+```
+
+这不是 actual intertwiner、direct `A_C` theorem 或 growing-prefix theorem 的
+nonexistence claim；它只冻结第 27.1 节四个来源的已审核版本与上述 exact
+crosswalk attempts。来源的新版本、真正逐 coefficient 保留全部 physical data 的
+corollary，或第 23.5 节任一原始 trigger 仍可重开。两个 O161 pointwise parents、
+pair-native reroute、H1 与 global architecture 继续 `OPEN`。第 6 节全部旧 cells
+继续原样 `STOP_SCOPED`，尤其 TPC193 V1、common-`k` V1、tail-failure/A/B V1
+与 full-`r_Rr_R` ultra-complement V1。
+
+all-`D` uniformity、exactly-once physical cover、original/global normalization、
+tail-failure、A/B selection、actual packet attachment 与完整 provenance gates
+没有进入，更没有通过。即使第 23.5 节未来出现正面结果，也必须分别支付这些
+下游 gates，才可能改变页首 TPC-207 trigger。
+
+发布前已再次执行 22 项只读启动回归，结果为 `22/22 PASS`；TPC-111/124/
+126/127 四项 gate checks 为 `4/4 PASS`。TPC-122 与 TPC-27--32 writers 均未
+执行。没有创建论文、paper directory、PDF、构建日志或下一编号。根
+`AGENTS.md` 已按用户明确授权合并为 RH/TPC scoped 政策，并作为只含该文件的
+独立协调提交纳入；本 TPC STOP handoff 提交只含 `TPC_HANDOFF.md`。既有本地
+`.codex/config.toml`、`.codex/agents/tpc-*.toml`、TPC-105 `__pycache__`、TPC-63
+构建产物与 `tmp/` 仍保持 untracked，未纳入上述任一本地提交。
