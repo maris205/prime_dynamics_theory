@@ -10,7 +10,7 @@ H_k = k R^(-2k),
 eta_sigma = k-log(1/sigma)/(2 log(lambda)).
 ```
 
-On every bounded-phase first-alias sequence,
+On every bounded-phase first-alias sequence with `k=k_sigma in N`, `k>=2`,
 
 ```text
 G_sigma,k(J)/H_k
@@ -29,7 +29,17 @@ kappa_proj
 ```
 
 It is distinct from the RH-325 Duhamel stability threshold
-`gamma_*=0.3503698834605293...`.  Exact phase conversion gives
+`gamma_*=0.3503698834605293...`.  The separation is exact: RH-334 gives
+`lambda^3+4 lambda^2-16=0`, whose positive root satisfies
+`lambda<17/10`, while
+
+```text
+(196/85)^2-(17/10)^3 = 116783/289000 > 0.
+```
+
+Therefore `196/85>lambda^(3/2)` and
+`kappa_proj-gamma_*>0`.  The displayed decimals remain diagnostics only.
+Exact phase conversion gives
 
 ```text
 (beta R)^(-2k)
@@ -106,8 +116,9 @@ The drift is `(5760t/4913)(-1,1,0)`.  At `t=1/100` it is exactly
 `(-288/24565,288/24565,0)`.
 
 This family is nonphysical finite algebra, and `n=2` is not a `k=1`
-first-alias counterloop.  RH-210 already proved general projector motion
-under similarity.  RH-336 adds only the narrow combination of strict
+first-alias counterloop.  RH-210 already supplied an explicit fixed-divisor
+similarity example with moving projectors.  RH-336 adds only the narrow
+combination of strict
 positivity, row-stochasticity, all power traces, and corrected singleton-cell
 motion.
 

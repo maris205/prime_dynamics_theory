@@ -17,6 +17,11 @@ kappa_proj = 0.463406944517002...   projector-cell mass scale
 gamma_*    = 0.3503698834605293...  sufficient Duhamel weight ceiling
 ```
 
+Their order is certified exactly, not by those decimals:
+`kappa_proj>gamma_*` follows from the RH-334 polynomial for `lambda`, the
+bound `lambda<17/10`, and the positive rational gap
+`(196/85)^2-(17/10)^3=116783/289000`.
+
 For every fixed finite partition, some parity cell is super-target in
 normalized magnitude.  The maximizing cell may change with noise, and only a
 subsequence identifies a recurring fixed cell.  More importantly, this

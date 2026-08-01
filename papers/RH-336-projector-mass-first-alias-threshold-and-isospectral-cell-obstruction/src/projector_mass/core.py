@@ -31,6 +31,41 @@ E_MINUS_BASE: Matrix = (
 
 SUFFICIENT_LOWER = -F(5, 174)
 SUFFICIENT_UPPER = F(1, 2)
+LAMBDA_CERTIFICATE_UPPER = F(17, 10)
+R_SQUARED_OVER_R_H = F(196, 85)
+
+
+def lambda_polynomial(value: Fraction) -> Fraction:
+    """Evaluate the RH-334 polynomial ``x^3+4x^2-16`` exactly."""
+
+    return value**3 + 4 * value**2 - 16
+
+
+def exponent_separation_certificate() -> dict[str, object]:
+    """Return an exact rational certificate that ``kappa_proj>gamma_*``.
+
+    RH-334 supplies ``lambda^3+4 lambda^2-16=0`` and ``lambda>0``.
+    The polynomial is strictly increasing on the positive half-line.  Its
+    positive value at ``17/10`` therefore bounds ``lambda`` from above.  The
+    remaining comparison is a rational square identity.
+    """
+
+    polynomial_at_upper = lambda_polynomial(LAMBDA_CERTIFICATE_UPPER)
+    squared_comparison_gap = (
+        R_SQUARED_OVER_R_H**2 - LAMBDA_CERTIFICATE_UPPER**3
+    )
+    return {
+        "lambda_polynomial": "lambda^3+4*lambda^2-16=0",
+        "positive_axis_derivative": "3*lambda^2+8*lambda>0",
+        "lambda_upper_bound": LAMBDA_CERTIFICATE_UPPER,
+        "polynomial_at_upper": polynomial_at_upper,
+        "R_squared_over_r_H": R_SQUARED_OVER_R_H,
+        "squared_comparison_gap": squared_comparison_gap,
+        "kappa_minus_gamma_formula": (
+            "log((R^2/r_H)/lambda^(3/2))/log(lambda)"
+        ),
+        "conclusion": "kappa_proj>gamma_star_RH325",
+    }
 
 
 def identity(size: int) -> Matrix:

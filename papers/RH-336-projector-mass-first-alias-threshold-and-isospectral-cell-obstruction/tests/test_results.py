@@ -25,6 +25,19 @@ def test_moving_threshold_symbolic_types_and_exponent_distinction_are_locked():
         "log(beta*R)/log(lambda)=log(28/17)/log(lambda)-1/2"
     )
     assert theorem["kappa_proj_equals_gamma_star_RH325"] is False
+    assert theorem["exact_exponent_order"] == "kappa_proj>gamma_star_RH325"
+    assert theorem["exponent_separation_certificate"] == {
+        "R_squared_over_r_H": "196/85",
+        "conclusion": "kappa_proj>gamma_star_RH325",
+        "kappa_minus_gamma_formula": (
+            "log((R^2/r_H)/lambda^(3/2))/log(lambda)"
+        ),
+        "lambda_polynomial": "lambda^3+4*lambda^2-16=0",
+        "lambda_upper_bound": "17/10",
+        "polynomial_at_upper": "473/1000",
+        "positive_axis_derivative": "3*lambda^2+8*lambda>0",
+        "squared_comparison_gap": "116783/289000",
+    }
     assert theorem["beta_R_greater_than_one"] is True
     assert theorem["negligibility_equivalence"] == (
         "G=o(H)_iff_pi=o((beta*R)^(-2k))"
@@ -85,7 +98,7 @@ def test_phase_conversion_rows_are_numeric_reproduction_only_and_close():
         "ordinary_floating_point_reproduction_only"
     )
     assert 0.4634 < diagnostics["kappa_proj"] < 0.4635
-    assert diagnostics["exponents_are_distinct"] is True
+    assert 0.1130 < diagnostics["diagnostic_decimal_gap"] < 0.1131
     assert len(diagnostics["phase_conversion_rows"]) == 3
     for row in diagnostics["phase_conversion_rows"]:
         assert row["absolute_error"] < 1e-15
@@ -98,7 +111,7 @@ def test_physical_route_novelty_and_claim_firewall_are_explicit():
         "absent"
     )
     assert data["novelty_boundary"] == {
-        "RH210_general_similarity_projector_motion_preexists": True,
+        "RH210_fixed_divisor_projector_motion_example_preexists": True,
         "RH336_adds_all_power_trace_lock": True,
         "RH336_adds_corrected_singleton_cell_drift": True,
         "RH336_adds_strict_positive_row_stochastic_family": True,

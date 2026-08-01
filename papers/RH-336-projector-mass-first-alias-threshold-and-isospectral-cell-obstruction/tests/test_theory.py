@@ -12,9 +12,11 @@ from projector_mass import (
     corrected_cell_drift,
     corrected_cell_formula,
     corrected_cells,
+    exponent_separation_certificate,
     family_audit,
     identity,
     in_sufficient_positivity_interval,
+    lambda_polynomial,
     matrix_multiply,
     matrix_power,
     matrix_scale,
@@ -34,6 +36,17 @@ from projector_mass import (
 
 
 F = Fraction
+
+
+def test_exact_exponent_separation_certificate_uses_only_rational_signs():
+    certificate = exponent_separation_certificate()
+    assert lambda_polynomial(F(17, 10)) == F(473, 1000)
+    assert certificate["lambda_upper_bound"] == F(17, 10)
+    assert certificate["polynomial_at_upper"] == F(473, 1000)
+    assert certificate["R_squared_over_r_H"] == F(196, 85)
+    assert certificate["squared_comparison_gap"] == F(116783, 289000)
+    assert certificate["squared_comparison_gap"] > 0
+    assert certificate["conclusion"] == "kappa_proj>gamma_star_RH325"
 
 
 def test_shear_inverse_and_constant_vector_are_exact():

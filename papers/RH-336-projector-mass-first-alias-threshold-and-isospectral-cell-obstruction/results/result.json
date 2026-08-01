@@ -348,7 +348,7 @@
       "limit": 0.10269413158134522,
       "p": 0.42857142857142855
     },
-    "exponents_are_distinct": true,
+    "diagnostic_decimal_gap": 0.11303706105647277,
     "gamma_star_RH325": 0.3503698834605293,
     "kappa_proj": 0.46340694451700204,
     "lambda": 1.6785735104283224,
@@ -386,7 +386,18 @@
     "beta": "1/(r_H*sqrt(lambda))",
     "beta_R_greater_than_one": true,
     "critical_limit": "if_(beta*R)^(2k)*pi->p_and_eta_sigma->eta_then_G/H->2*C_star*lambda^eta*p",
+    "exact_exponent_order": "kappa_proj>gamma_star_RH325",
     "exact_phase_conversion": "(beta*R)^(-2k)=sigma^kappa_proj*(beta*R)^(-2eta_sigma)",
+    "exponent_separation_certificate": {
+      "R_squared_over_r_H": "196/85",
+      "conclusion": "kappa_proj>gamma_star_RH325",
+      "kappa_minus_gamma_formula": "log((R^2/r_H)/lambda^(3/2))/log(lambda)",
+      "lambda_polynomial": "lambda^3+4*lambda^2-16=0",
+      "lambda_upper_bound": "17/10",
+      "polynomial_at_upper": "473/1000",
+      "positive_axis_derivative": "3*lambda^2+8*lambda>0",
+      "squared_comparison_gap": "116783/289000"
+    },
     "gamma_star_RH325_diagnostic": 0.3503698834605293,
     "kappa_proj_diagnostic": 0.46340694451700204,
     "kappa_proj_equals_gamma_star_RH325": false,
@@ -396,7 +407,7 @@
     "ratio_asymptotic": "G/H=2*C_star*lambda^eta_sigma*(beta*R)^(2k)*pi_sigma(J)*(1+o(1))"
   },
   "novelty_boundary": {
-    "RH210_general_similarity_projector_motion_preexists": true,
+    "RH210_fixed_divisor_projector_motion_example_preexists": true,
     "RH336_adds_all_power_trace_lock": true,
     "RH336_adds_corrected_singleton_cell_drift": true,
     "RH336_adds_strict_positive_row_stochastic_family": true
@@ -426,7 +437,7 @@
   },
   "scope": "moving_projector_mass_scale_and_nonphysical_positive_markov_isospectral_cell_obstruction",
   "source_anchors": [
-    "RH-210_general_projector_motion_under_similarity",
+    "RH-210_explicit_fixed_divisor_projector_motion_example",
     "RH-326_uniform_parity_packet_and_common_weighted_exponent",
     "RH-334_rational_bracket_and_physical_basepoint_observation",
     "RH-335_signed_projector_measure_and_corrected_cell_ledger"

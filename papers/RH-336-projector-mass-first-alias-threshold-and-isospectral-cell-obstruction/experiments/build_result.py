@@ -19,6 +19,7 @@ from projector_mass import (  # noqa: E402
     SUFFICIENT_UPPER,
     corrected_cell_drift,
     corrected_cell_formula,
+    exponent_separation_certificate,
     family_audit,
     fraction_text,
     positivity_factor_ledger,
@@ -75,7 +76,7 @@ def moving_scale_diagnostics() -> dict[str, object]:
         "beta_R": beta_r,
         "kappa_proj": kappa,
         "gamma_star_RH325": GAMMA_STAR_DIAGNOSTIC,
-        "exponents_are_distinct": abs(kappa - GAMMA_STAR_DIAGNOSTIC) > 0.1,
+        "diagnostic_decimal_gap": kappa - GAMMA_STAR_DIAGNOSTIC,
         "phase_conversion_rows": rows,
         "critical_limit_fixture": {
             "p": p,
@@ -90,6 +91,7 @@ def result_payload() -> dict[str, object]:
     audit = family_audit(Fraction(1, 100), max_power=12)
     factors_at_lower_test = positivity_factor_ledger(Fraction(-1, 100))
     diagnostics = moving_scale_diagnostics()
+    separation = exponent_separation_certificate()
 
     false_claims = {
         "actual_model_replacement_proved": False,
@@ -126,6 +128,8 @@ def result_payload() -> dict[str, object]:
             "kappa_proj_diagnostic": diagnostics["kappa_proj"],
             "gamma_star_RH325_diagnostic": diagnostics["gamma_star_RH325"],
             "kappa_proj_equals_gamma_star_RH325": False,
+            "exact_exponent_order": "kappa_proj>gamma_star_RH325",
+            "exponent_separation_certificate": _exact(separation),
             "negligibility_equivalence": "G=o(H)_iff_pi=o((beta*R)^(-2k))",
             "exact_phase_conversion": "(beta*R)^(-2k)=sigma^kappa_proj*(beta*R)^(-2eta_sigma)",
             "critical_limit": "if_(beta*R)^(2k)*pi->p_and_eta_sigma->eta_then_G/H->2*C_star*lambda^eta*p",
@@ -180,7 +184,7 @@ def result_payload() -> dict[str, object]:
         },
         "moving_scale_diagnostics": diagnostics,
         "novelty_boundary": {
-            "RH210_general_similarity_projector_motion_preexists": True,
+            "RH210_fixed_divisor_projector_motion_example_preexists": True,
             "RH336_adds_strict_positive_row_stochastic_family": True,
             "RH336_adds_all_power_trace_lock": True,
             "RH336_adds_corrected_singleton_cell_drift": True,
@@ -194,7 +198,7 @@ def result_payload() -> dict[str, object]:
         "false_claims": false_claims,
         "gates": {key: False for key in "ABCDE"},
         "source_anchors": [
-            "RH-210_general_projector_motion_under_similarity",
+            "RH-210_explicit_fixed_divisor_projector_motion_example",
             "RH-326_uniform_parity_packet_and_common_weighted_exponent",
             "RH-334_rational_bracket_and_physical_basepoint_observation",
             "RH-335_signed_projector_measure_and_corrected_cell_ledger",

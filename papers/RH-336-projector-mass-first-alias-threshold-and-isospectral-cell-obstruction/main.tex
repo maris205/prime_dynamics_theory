@@ -78,8 +78,8 @@ and
  \eta_\sigma
  =k-\frac{\log(1/\sigma)}{2\log\lambda}.
 \end{equation}
-Throughout the moving statements, $\eta_\sigma$ remains bounded and
-$k\to\infty$ as $\sigma\to0$.
+Throughout the moving statements, $k=k_\sigma\in\mathbb N$, $k\ge2$,
+$\eta_\sigma$ remains bounded, and $k\to\infty$ as $\sigma\to0$.
 
 For a measurable cell $J$, possibly depending on $\sigma$, define
 \begin{equation}\label{eq:G-H}
@@ -141,8 +141,23 @@ $\lambda$ gives
 \end{equation}
 This decimal is diagnostic, not an interval certificate.  It is not the
 RH-325 sufficient Duhamel weight ceiling
-$\gamma_*=0.3503698834605293\ldots$; the two exponents govern different
-objects.
+$\gamma_*=0.3503698834605293\ldots$; in fact their separation is exact.
+The RH-334 algebraic identities imply
+$\lambda^3+4\lambda^2-16=0$ \citep{WangObservation2026}.  This polynomial is
+strictly increasing on the positive half-line, and its value at $17/10$ is
+$473/1000>0$, so $\lambda<17/10$.  Moreover,
+\[
+ \left(\frac{196}{85}\right)^2-\left(\frac{17}{10}\right)^3
+ =\frac{116783}{289000}>0.
+\]
+Since $\lambda>1$ and
+\[
+ \kappa_{\rm proj}-\gamma_*
+ =\frac{\log\!\left((R^2/r_H)/\lambda^{3/2}\right)}{\log\lambda},
+ \qquad \frac{R^2}{r_H}=\frac{196}{85},
+\]
+it follows that $\kappa_{\rm proj}>\gamma_*$ exactly.  The two exponents
+also govern different objects.
 
 \begin{corollary}[Negligibility, exact phase conversion, and critical limit]
 \label{cor:threshold}
@@ -382,7 +397,8 @@ definition requires $k\ge2$.
 \section{Reproduction and claim boundary}
 
 The artifact evaluates every matrix identity with exact rational arithmetic.
-It checks the displayed formulas, strict positivity at rational sample
+It checks the displayed formulas, the exact rational exponent-separation
+certificate, strict positivity at rational sample
 points inside the proved interval, the endpoint factorization, two-sided
 projector intertwining, twelve power traces, projector masses, corrected
 cells, invariant sums, and the exact one-percent drift.  Floating-point rows
