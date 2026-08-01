@@ -3,13 +3,10 @@
 更新时间：2026-08-01
 交接状态：`SEALED_FOR_NEW_SESSION`
 本轮启动及正式写入前上游同步基线：
-`63cd8a91a97af3a0735bc1a10edc8f67f818df12`。发布前远端新增
-`eb1cf19a28b1d1d38eaece2a6bb0b578f20df969`（RH-340 only）与
-`6e1478a1a02ff4c3308e829727f8fea1cfbce52c`（RH-341 only），随后
-`fd0c65e882341e61d39d84f5e0ac7d32c2d323de` 只闭合 `RH_HANDOFF.md` 至
-RH-341。三个 commits均未修改 TPC artifacts或本 handoff；cross-program
-wrong-object与 RH handoff-closure审计见第 32.7--32.8 节，最终发布同步与三方
-hash核验见第 32.9 节。
+`3d191298f45ee9a00768c4fdcb571550102703ac`。该基线已包含第 32 节
+RH-340/341 cross-program audit及其 handoff closure；本轮写前 fetch/pull没有
+取得新的 remote delta。O161 pointwise current-primary theorem refresh见第 33 节，
+最终发布同步与三方 hash核验见第 33.6 节。
 第 23 节 TPC source-lock 快照锚定更早基线
 `28cafdd5fa96ff948f1520e778c7a2ba65208730`；晚到 RH-330/332 的既有
 physical-object type checks、RH-333/334/335 的第 29.6 节 type checks，以及
@@ -18,11 +15,10 @@ RH-336/337 的第 30.5 节 type checks、RH-338/339 的第 31.5 节 type checks�
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC32_H0_2_SELECTED_HIGH_BETA_REMOTE_RH341_ACTUAL_FIRST_ALIAS_ABSOLUTE_PREFIX_AND_ABSTRACT_SIGNED_COMPLETION_CROSS_PROGRAM_WRONG_OBJECT_NO_THEOREM_TRIGGER_STOP_SCOPED_NOT_REOPENED`
-下一篇：`null`；下一项不编号审计：`null`（仅在第 32.6 节列出的 direct
-literal / determinant-zero pointwise / named-schedule avoidance / same-packet actual
-census plus coefficientwise low-cost regrouping / full self-kernel or cross-`D0`
-frame trigger，或其他既有独立 reopen trigger 出现时重开）
+`TPC_O161_DIRECT_BAD_ENDPOINT_CURRENT_PRIMARY_ONE_SIGN_OR_AVERAGED_WRONG_OBJECT_NO_FIXED_POWER_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
+下一篇：`null`；下一项不编号审计：`null`（仅在第 32.6 节或
+第 33.5 节列出的 source-backed reopen trigger，或其他既有独立 trigger
+真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
@@ -31,8 +27,8 @@ TPC-206 授权并完成：`true`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
-上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29、30、31、32 节；
-第 23、27、28 节只在第 29--32 节明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
+上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29、30、31、32、33 节；
+第 23、27、28 节只在第 29--33 节明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
 
@@ -777,6 +773,34 @@ prefix order、actual masks/weights/outer labels、`N0` normalization、uniform
 ranges/constants与完整 physical-loss ledger的新 theorem，也不停止两个 O161
 parents、pair-native reroute、H1/global architecture；精确 audit见第 32.8 节。
 
+2026-08-01 的 O161 pointwise current-primary version-delta refresh新增且仅新增：
+
+```text
+DECLARED_O161_DIRECT_BAD_ENDPOINT_CURRENT_PRIMARY_
+VERSION_DELTA_CANDIDATES_20260801_V1 = STOP_SCOPED
+```
+
+它只停止把第 33 节逐 theorem-body 审核的 el Abdalaoui--Nerurkar
+`arXiv:2006.07646v2`、Grimmelt--Teräväinen `2607.28091v1`、
+Matthiesen `1606.04482v4`、Browning--Sofos--Teräväinen
+`2212.10373v2`、Burstein--Iosevich--Sant `2604.14482v1`、
+Pandey--Radziwiłł `2510.20194v1`、Cantarini--Gambini--Zaccagnini
+`2603.10241v1`、el Abdalaoui--Lin `2607.15960v1`、
+Pilatte `2604.26564v1` 与 Murty--Vatwani
+*A remark on a conjecture of Chowla* 的已审核 statements，单独或跨来源
+拼接后升级为 O161 的 literal two-Möbius named-atom fixed-power theorem。
+
+Teräväinen--Walker `2303.12574`、Tao--Teräväinen
+`2512.01739v2`、Pilatte `2310.19357v2`、
+Klurman--Mangerel--Teräväinen `2304.05344v2` 与
+Ramaré--Zúñiga Alterman `2603.25961v3` 只作为既有
+`STOP_SCOPED` cells的一致性 countercheck；本 cell不重新包装或扩张
+它们的旧 scope。它也不是全局文献 nonexistence claim，不停止未来直接接受
+literal coefficient、actual named atom、growing parameters、正确 prefix/
+normalization及完整 loss ledger的新 theorem。两个 O161 parents、pair-native
+reroute、H1/global architecture继续 `OPEN`；精确公式、第一 fatal与
+reopen interface见第 33 节。
+
 ## 7. Reopen triggers
 
 TPC-204 没有让既有五类 trigger 通过：
@@ -820,6 +844,21 @@ DECLARED_CORPUS = FAIL
 `STRUCTURAL` 仍没有同 packet production carrier，TPC-175 coverage保持 `0/2988`；
 `BAD_ENDPOINT` 没有新的 literal fixed-atom local-increment theorem。该刷新不把
 failure写成全局不存在定理，也不改变上述未来 trigger定义。
+
+第 33 节又分别按 `q/N` terminal/block DIRECT与 `q/T`
+cumulative BAD_ENDPOINT合同审核 current-primary version delta。两路都先缺
+source-locked named production atom/actual record；反事实补齐 data后，审核的
+single-source theorems仍没有 literal two-sign coefficient、prescribed tuple、
+正确 bad-scale local block、uniform fixed power或完整 ledger。因此：
+
+```text
+DIRECT = FAIL_CLOSED_PARENT_OPEN
+BAD_ENDPOINT = FAIL_CLOSED_PARENT_OPEN
+CURRENT_PRIMARY_SINGLE_SOURCE_SURVIVORS = 0
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+TPC207_TRIGGER = false
+```
 
 用户授权本身不能替代任一数学 trigger。
 
@@ -4413,8 +4452,8 @@ TPC-127 --check = PASS
 D:\26-aimath\理论研究3\prime_dynamics_theory
 
 读取仓库根目录 TPC_HANDOFF.md，以仓库文件和已提交 artifacts 为事实来源，
-不要依赖旧聊天记录。为节省上下文，优先读取页首及第 1、6、22、24、29、30、31、32 节；
-第 23、27、28 节只在第 29--32 节明确引用时展开。
+不要依赖旧聊天记录。为节省上下文，优先读取页首及第 1、6、22、24、29、30、31、32、33 节；
+第 23、27、28 节只在第 29--33 节明确引用时展开。
 
 先执行：
 
@@ -4436,9 +4475,8 @@ TPC-27--32 legacy certificates 会无条件重写 committed JSON，在出现真�
 当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 最新不编号裁决是：
 
-TPC32_H0_2_SELECTED_HIGH_BETA_REMOTE_RH341_ACTUAL_FIRST_ALIAS_ABSOLUTE_PREFIX_AND_
-ABSTRACT_SIGNED_COMPLETION_CROSS_PROGRAM_WRONG_OBJECT_NO_THEOREM_TRIGGER_
-STOP_SCOPED_NOT_REOPENED
+TPC_O161_DIRECT_BAD_ENDPOINT_CURRENT_PRIMARY_ONE_SIGN_OR_AVERAGED_WRONG_OBJECT_
+NO_FIXED_POWER_TRIGGER_STOP_SCOPED_PARENTS_OPEN
 
 同一 theorem-valid high-beta selected packet 仍固定为：
 sigma=1/10000，lambda=99979/210000，delta=7/60，beta=267/400，
@@ -4638,6 +4676,29 @@ loss ledger，只新增一个有限 wrong-object/underdetermination firewall，c
 RH-341 与 `synchronized_actual_first_alias_signed_completion_open`。这是对既有
 RH-341 release的 workflow/provenance closure，不新增 TPC literal object、packet、
 theorem或 saving，也不改变上述 cross-program裁决。
+
+第 33 节随后独立审核两个仍开放的 O161 pointwise parents。两者只共享
+`c_z=mu(d+s*z)mu(u+a*z), su-ad=2` 的 abstract core；当前
+production registry仍为 null/empty，没有 named atom、actual all-scale packet
+record、weights/masks/outer labels与 normalization attachment。DIRECT 是
+`q/N` terminal/block twist；BAD_ENDPOINT 是经 TPC-159 exact telescoping
+形成的 `q/T` cumulative prefix，二者绝不可把 `N=T` 后等同。
+
+current-primary theorem-body screen没有 survivor。el Abdalaoui--Nerurkar
+`2006.07646v2` 虽给每个 fixed phase的 ordinary-prefix qualitative
+convergence，但 coefficient只有一个 Möbius sign加 `mu^2` masks；
+Murty--Vatwani的 rate仍作用于同一 one-sign object、fixed shifts且无 phase。
+Grimmelt--Teräväinen `2607.28091v1` 的 growing-coefficient结论依赖
+整盒平均；把 coefficient weight取为单 actual tuple的 delta时，
+`B^k` threshold与 `delta^(-C)<=B` range使 specialization空洞。
+不得跨来源拼接 phase、rate与 coefficient averaging。既有
+Teräväinen--Walker/Tao--Teräväinen/Pilatte/KMT routes也仍分别卡在
+logarithmic prefix、bad-scale exclusion、averaged/one-factor或 named-atom
+缺口；没有 fixed `X` power与完整 ledger。
+
+因此新 cell只冻结第 33 节逐 ID/version列出的 current-primary delta，不扩张
+任何旧 STOP cell；两个 O161 parents继续 OPEN。fixed-atom credit仍为零，
+strict `1/400`仍 UNPAID，`L2=NONE`。
 
 因此没有创建 TPC-207。合法的新入口仅为：直接接受 actual literal coefficient的
 positive-power theorem；直接控制 determinant DFT zero的 pointwise theorem；真正的
@@ -7163,4 +7224,306 @@ POST_SYNC_RH341_READ_ONLY_VALIDATION = PASS_WITH_PYTEST_DEPENDENCY_ABSENT_RECORD
 与 TPC-27--32 legacy writers均不执行；RH-340/341 writers同样不执行。只提交
 `TPC_HANDOFF.md`，随后
 pull/rebase、push并验证 local `HEAD`、`origin/main` 与 remote
+`refs/heads/main` 三个 hash完全一致。
+
+## 33. O161 pointwise current-primary theorem refresh
+
+### 33.1 协议、基线与有限检索范围
+
+本节从仍为 `OPEN` 的两个 O161 pointwise parents出发，不把第 32 节
+selected-packet STOP cell换名为新方法。启动、分身交付及正式写前复核均得到：
+
+```text
+INITIAL_HEAD = 3d191298f45ee9a00768c4fdcb571550102703ac
+INITIAL_ORIGIN_MAIN = 3d191298f45ee9a00768c4fdcb571550102703ac
+INITIAL_HANDOFF_SHA256
+  = 5a308c1eefdacbf07c791b1cf6a84bb0038116a5035d7847e4076eac45651946
+INITIAL_TRACKED_DIFF = EMPTY
+INITIAL_CACHED_DIFF = EMPTY
+STARTUP_REGRESSION = 22/22 PASS
+TPC184_TPC189_DECLARED_SOURCE_LOCKS = 8/8 PASS
+PROTECTED_UNTRACKED_COUNT = 127
+PROTECTED_UNTRACKED_MANIFEST_SHA256
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+```
+
+检索日为 2026-08-01。主检索使用 official arXiv API/search与
+`math.NT/recent`；API在完成 exact/broad queries后返回 HTTP 429，随后只
+降级到 official arXiv HTML search/recent page，没有绕过限流。raw hit counts、
+abstract snippets与 title screens只用于发现，不作为 theorem evidence；正式
+裁决全部回到 exact ID/version 的 theorem body、作者 PDF或期刊 primary
+metadata。有限 screen不声称全球文献不存在性。
+
+source-lock、DIRECT scan、BAD_ENDPOINT scan与独立 devil's-advocate transfer
+audit全部只读；各分身的 before/after `HEAD`、handoff hash、tracked diff与
+cached diff均未变化，`files_changed=[]`。
+
+### 33.2 两个合同的 exact type separation
+
+两路当前唯一可共享的 source-backed core为：
+
+\[
+ q=as,\qquad t(z)=ad+qz,\qquad
+ c_z=\mu(d+sz)\mu(u+az),
+\]
+\[
+ (a,s)=1,\qquad as\ {\rm odd},\qquad su-ad=2.
+\]
+
+determinant identity source-backs fixed physical `h0=2`，但不
+source-back cancellation、decay或 production attachment。DIRECT 的 exact core是
+
+\[
+ F_N(\alpha)=\frac qN
+ \sum_{\substack{z\\N<t(z)\le 2N}}
+ c_z\rho_{\rm phys}(z)e(-\alpha z),
+\]
+
+并需要同一 actual record上的 named `alpha_star`、deterministic
+all-prefix/all-scale及 fixed positive power。BAD_ENDPOINT 的 cumulative object是
+
+\[
+ A_\rho(T)=\sum_{\substack{z\\0<t(z)\le T}}c_z\rho(z),
+\]
+
+而缺失的 local theorem必须对同一 packet的 prescribed bad ancestors
+`N_j=T/2^j in E_X_star` 给出
+
+\[
+ \frac q{N_j}
+ \left|
+ \sum_{\substack{z\\N_j<t(z)\le2N_j}}
+ c_z\rho_\star(z)
+ \right|
+ \le C X^{-\sigma}.
+\]
+
+从 local block回到 `q/T` cumulative prefix的唯一合法桥仍是
+TPC-159 exact telescoping；每个 block必须乘
+`N_j/T=2^{-j}`，tail为 `2^{-J}+q/T`。令 `N=T`
+只把 DIRECT domain变为 `T<t(z)<=2T`，绝不会产生
+`0<t(z)<=T`。
+
+TPC-180/current production census仍精确为：
+
+```text
+registry_id = null
+named_physical_atom_id = null
+phase_value_mod_1 = null
+phase_value_source_locator = null
+packet_schedule_locator = null
+packet_coordinate_rows = []
+fixed_h0 = 2
+```
+
+因此两个合同当前共同的 production-data首缺是 named production atom/actual
+record，但其后的 arithmetic first missing仍须分开：
+
+```text
+DIRECT_FIRST_DATA_FATAL
+  = SOURCE_LOCKED_PRODUCTION_PACKET_PREFIX_CROSSWALK
+DIRECT_CROSSWALK_SUBGATE
+  = NAMED_PRODUCTION_ATOM
+DIRECT_FIRST_COUNTERFACTUAL_ARITHMETIC_FATAL
+  = DIRECT_ADDITIVE_TWIST_NAMED_ATOM_POWER_SAVING
+
+BAD_ENDPOINT_FIRST_DATA_FATAL
+  = PRESCRIBED_BAD_ENDPOINT_ATOM_HAS_NO_SOURCE_LOCKED_VALUE
+BAD_ENDPOINT_FIRST_COUNTERFACTUAL_ARITHMETIC_FATAL
+  = POINTWISE_NAMED_ATOM_Q_OVER_N_POSITIVE_X_POWER_LOCAL_INCREMENT_
+    ON_SCHEDULED_E_X_STAR_ANCESTORS
+```
+
+TPC-167 的 `X^(-1/4+o(1))` envelope只属于 Lebesgue phase
+`L2`；TPC-159只在 shadow之外给 logarithmic almost-endpoint。
+Parseval、phase-a.e.、exceptional-scale density与 good-scale log saving均不能
+支付 source-locked named atom。
+
+### 33.3 current-primary theorem-body matrix
+
+最接近 prescribed phase的新增来源是 el Abdalaoui--Nerurkar
+`arXiv:2006.07646v2`。Theorem 3.2与 Corollary 3.3对每个 fixed
+`theta` 给
+
+\[
+ \frac1N\sum_{n\le N}\mu(n)
+ f(S^n\mu^2)e(n\theta)\longrightarrow0,
+\]
+
+并可令 `f` 为有限 squarefree cylinder。其第一 fatal不是 phase，而是
+literal coefficient：`f(S^n mu^2)`只看 squarefree support，完全丢失
+第二条 Möbius sign；它不能无损表示
+`mu(d+s z)mu(u+a z)`。Remark 3.4又明确该 corollary
+non-quantitative。后续仍无 growing affine parameters、uniform threshold/constant、
+`q/N_j` block、actual support或 loss ledger。Corollary 4.4的
+Liouville结果分别是有限移位窗的 almost-all count与 fixed shift的非极端
+`1-epsilon(h)` bound，也不是趋零的 prescribed physical theorem。
+
+Murty--Vatwani *A remark on a conjecture of Chowla* Theorem 1无条件控制
+fixed shifts上的
+
+\[
+ \mu^2(n+h_1)\cdots\mu^2(n+h_{k-1})\mu(n+h_k)
+\]
+
+到任意 fixed log-power；constant显式依赖 `k,A,h_1,...,h_k`。
+Theorem 2在 Dirichlet-GRH下有 power bound，但仍是 one-sign coefficient、
+fixed shifts且无 additive phase。因此它不能提供缺失的第二条 sign，也不能把
+conditional wrong-object power计入 TPC arithmetic credit。
+
+Grimmelt--Teräväinen `arXiv:2607.28091v1` Theorems 1.1--1.2
+给 dense sets/primes中 almost-all coefficient-vector configurations；
+Theorems 1.3与 6.7是 growing box上的 averaged counting-operator inverse theorem：
+
+\[
+ R_H(\lambda;f_1,\ldots,f_k)
+ =\sum_{\boldsymbol b}\lambda(\boldsymbol b)
+   \sum_x\sum_{m\in[H]}\prod_i f_i(x+b_i m).
+\]
+
+这里 `lambda(b)` 是 generic bounded coefficient weight，不是 Liouville；
+结论也不是 signed-correlation upper bound。没有 literal two-Möbius pair、
+prescribed atom、determinant-two tuple或 `q/N` normalization。
+
+其余新增/未冻结 version-delta candidates均在更早字段失败：
+
+1. Matthiesen `1606.04482v4` 要求超过二维的 convex-body average及
+   nonconstant parts两两独立；一维 `s z,a z` 必然共线，不能从多维
+   average切到 prescribed physical slice。
+2. Browning--Sofos--Teräväinen `2212.10373v2` 对 random
+   polynomial coefficient families给 almost-all theorem；actual tuple membership
+   未证，`lambda(f(n))` 又缺 Möbius zero masks、atom与 fixed power。
+3. Burstein--Iosevich--Sant `2604.14482v1` 的 proved theorem是
+   single-Möbius phase-`L1` lower bound；需要的 pointwise square-root
+   upper bound只是 source中明示未知的 assumption。
+4. Pandey--Radziwiłł `2510.20194v1` 是 single multiplicative
+   coefficient的 inverse/pretentious structure theorem，不是 named-atom upper bound。
+5. Cantarini--Gambini--Zaccagnini `2603.10241v1` 控制
+   `m_1+m_2=n` additive convolution shells（部分结果还需 RH+SZ），不是
+   同一 `z` 上的 affine pair prefix。
+6. el Abdalaoui--Lin `2607.15960v1` 是 single-Möbius operator
+   averages；定量项只来自 Davenport log powers。
+7. Pilatte `2604.26564v1` 是 one-factor、origin-averaged short-interval
+   Fourier theorem，不是 prescribed two-affine local block。
+
+Ramaré--Zúñiga Alterman `2603.25961v3` 的 LCM-denominator double
+sum已由旧 cell冻结，本节只复核其仍为 wrong literal object，不把它列入新增
+version-delta cell。只有 publisher metadata、没有取得 primary theorem body的
+Baker--Harman record也未提升为 verified candidate。
+
+### 33.4 既有 close routes与独立 adversarial transfer
+
+既有来源只作为 consistency controls，不重新包装：
+
+* Teräväinen--Walker `2303.12574` Lemma 4.2(1)可对 fixed nonparallel
+  affine data与每个 fixed atom控制 logarithmically weighted two-Möbius
+  correlation，但只是 qualitative/log prefix，非 natural scheduled
+  `q/N_j` local block，且无 growing-uniform constant或 fixed power。
+* Tao--Teräväinen `2512.01739v2` 经 TPC-147/148/149确实给 natural
+  `q/N` terminal-block log saving，但只在
+  `N notin E_X_star`；BAD_ENDPOINT本 gate指定的 ancestors恰在
+  `E_X_star` 内。
+* Pilatte `2310.19357v2`、KMT `2304.05344v2` 分别仍是
+  Liouville/logarithmic或 complete-prefix/pretentious-distance interface；都没有
+  同一 `rho_star`、scheduled bad block与 fixed power。
+
+独立 devil's-advocate审计钢人化了三种潜在 transfer。对
+`2607.28091v1`，把 coefficient weight取成 actual tuple的 delta selector
+仍不产生 pointwise theorem：单 tuple natural scale为 `O(N^2/B)`，
+而 theorem threshold为 `delta B^k N^2/B`，故需
+`delta about B^(-k)`；定理同时要求 `delta^(-C)<=B`，
+即 `B^(kC)<=B`，对 `k>=3,C>=1` 不可能。
+
+把两个 Möbius factors在 coprime support上写为一个 Möbius of a quadratic
+product会改成稀疏非线性 reindexing，破坏 physical prefix与 normalization。
+TPC-127 determinant-two pullback又精确保留
+`lambda(n-2)lambda(n)` 两条 sign及 quotient-squarefree masks；TPC-128
+展开后 modulus增长到 `as k^2 ell^2`。它们不能把 second sign消掉。
+
+因此以下拼接全部非法：
+
+```text
+PHASE_FROM_2006_07646V2
++ RATE_FROM_MURTY_VATWANI
++ GROWING_COEFFICIENT_AVERAGE_FROM_2607_28091V1
+!= SAME_RECORD_LITERAL_TWO_MOBIUS_POINTWISE_THEOREM
+```
+
+三项没有共同 coefficient、prefix、exceptional set、constant、normalization、
+actual support或 loss ledger。`sum a_n=o(N)` 与
+`sum b_n<<N/log^A N` 也不推出逐项乘积序列的相同 bound。
+
+### 33.5 裁决、STOP scope与合法 reopen interface
+
+本有限 gate的精确裁决是：
+
+```text
+TPC_O161_DIRECT_BAD_ENDPOINT_CURRENT_PRIMARY_ONE_SIGN_OR_AVERAGED_
+WRONG_OBJECT_NO_FIXED_POWER_TRIGGER_STOP_SCOPED_PARENTS_OPEN
+
+COMMON_PRODUCTION_RECORD = ABSENT_NOT_TESTABLE
+DIRECT = FAIL_CLOSED_AT_NAMED_PRODUCTION_ATOM_PARENT_OPEN
+BAD_ENDPOINT = FAIL_CLOSED_AT_SOURCE_LOCKED_NAMED_ATOM_PARENT_OPEN
+CURRENT_PRIMARY_SINGLE_SOURCE_SURVIVORS = 0
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC207_TRIGGER = false
+TPC207_CREATED = false
+```
+
+第 6 节新 cell只冻结第 33.3 节明确列出的 current-primary
+version-delta candidates及本节精确 cross-source splice；有限 no-survivor不提升为
+global nonexistence。TPC193 V1、common-`k` V1、
+tail-failure/A/B V1、full-`r_R r_R` ultra-complement V1以及第 32 节
+全部 method cells继续原 scope `STOP_SCOPED`。两个 O161 pointwise
+parents、pair-native reroute、H1与 global architecture继续 `OPEN`。
+
+最窄 data-first reopen input仍是一个 source-locked named production atom record，
+同一 record须同时物化：atom ID/value/source locator、actual packet/all-scale
+schedule、`a,s,d,u,q` 与 determinant witness、canonical translation、
+actual support、literal coefficient及全部 masks/weights/outer labels、prefix
+order/endpoints、共同 ranges、uniform `C`、positive `sigma`、
+正确 target normalization与 no-double-charge physical-loss ledger。
+
+其后 arithmetic theorem仍分别需要：
+
+1. DIRECT：natural `q/N` named-fixed-atom、all physical prefixes/scales
+   的 uniform positive-`X`-power bound；
+2. BAD_ENDPOINT：对 scheduled `E_X_star` ancestors的同一
+   `rho_star` local `q/N_j` fixed-power theorem，再经 TPC-159
+   exact telescoping进入 `q/T` cumulative object。
+
+即使任一 O161 local theorem转正，也不自动创建 TPC-207；all-`D`
+uniformity、exactly-once physical cover、original/global normalization、
+tail-failure、A/B selection、actual packet attachment与完整 provenance gates
+仍须分别通过。
+
+### 33.6 发布边界
+
+本轮没有创建 TPC-207、论文、paper directory、PDF或构建日志。正式写入仅为
+`TPC_HANDOFF.md`；全部 protected untracked必须原样保留且不纳入提交。
+
+```text
+POST_WRITE_RELEASE_REGRESSION = 22/22 PASS
+TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_WRITE_GIT_DIFF_CHECK = PASS
+POST_WRITE_MARKDOWN_FENCES = 852 MARKERS BALANCED
+PROTECTED_UNTRACKED_RECHECK = 127 FILES
+PROTECTED_UNTRACKED_MANIFEST_SHA256
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+FINAL_SYNC_ORIGIN_MAIN_BEFORE_HANDOFF_COMMIT
+  = 3d191298f45ee9a00768c4fdcb571550102703ac
+FINAL_SYNC_DELTA_FROM_INITIAL = NONE
+FINAL_SYNC_TPC_SOURCE_LOCK_CHANGE = NONE
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+```
+
+正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
+supplemental checks与 protected manifest；只提交 handoff，随后 pull/rebase、
+push并验证 local `HEAD`、`origin/main`、remote
 `refs/heads/main` 三个 hash完全一致。
