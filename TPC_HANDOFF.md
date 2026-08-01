@@ -1,16 +1,16 @@
 # TPC HANDOFF
 
-更新时间：2026-07-31
+更新时间：2026-08-01
 交接状态：`SEALED_FOR_NEW_SESSION`
-交接前上游同步基线：`cdce55713a81cec09971d217faad154894088e3c`；该提交只新增
-RH-330 full-trace transfer artifacts，不改 TPC-28/32/111/122 source files。
-第 23 节 TPC source-lock 快照锚定其前一同步基线
-`28cafdd5fa96ff948f1520e778c7a2ba65208730`，晚到 RH-330 已在第 23.3 节
-另行做 physical-object type check，未改变本轮裁决。
+交接前上游同步基线：`d49ed98bdf294355eeded2a07eeb4f2a5f7a2dc0`；该提交只新增
+RH-332 sharp physical repelling-return affine-leg remainder artifacts，不改
+TPC-28/32/111/122 source files。第 23 节 TPC source-lock 快照锚定更早基线
+`28cafdd5fa96ff948f1520e778c7a2ba65208730`；晚到 RH-330 已在第 23.3 节、
+RH-332 已在第 28.5 节分别做 physical-object type check，均未改变本轮裁决。
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC32_23_5_LOCAL_MOMENT_AND_AP_SIGN_EXISTENCE_TO_ACTUAL_ZERO_OR_GROWING_PREFIX_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED`
+`TPC32_23_5_NAMED_PRIMARY_REOPEN_CANDIDATES_20260801_TO_ACTUAL_ZERO_OR_GROWING_PREFIX_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED`
 下一篇：`null`；下一项不编号审计：`null`（仅按第 23.5 节 reopen triggers 重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -20,7 +20,7 @@ TPC-206 授权并完成：`true`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
-上下文节省入口：新会话优先读取本页页首及第 1、6、22、23、24、27 节；其余
+上下文节省入口：新会话优先读取本页页首及第 1、6、22、23、24、27、28 节；其余
 历史块只在这些入口明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
@@ -572,6 +572,25 @@ saving，或带 outer BV/content remainder 的 growing all-prefix theorem。它�
 任何旧 `STOP_SCOPED` cell，也不停止这些来源的新版本、真正新增的 actual
 corollary/crosswalk、两个 O161 parents、pair-native reroute、H1 或 global
 architecture；精确字段审计见第 27 节。
+
+2026-08-01 的第 23.5 节 current-primary theorem-route 审计新增且仅新增：
+
+```text
+DECLARED_TPC32_23_5_NAMED_PRIMARY_REOPEN_CANDIDATES_20260801_V1
+  = STOP_SCOPED
+```
+
+它只停止把 Tao--Teräväinen `arXiv:2512.01739v2`、Cantarini
+`arXiv:2607.09110v1`、Kim `arXiv:2603.23250v2`、Grimmelt--Merikoski
+`arXiv:2404.08502v2`、Fragkos--Krause--Miheisi--Sun
+`arXiv:2607.05560v1`、Lau `arXiv:2509.07556v2`、Koukoulopoulos
+`arXiv:2605.01412v1`、Pozdnyakov `arXiv:2604.23427v1` 或 Chavez
+`arXiv:2409.02106v10` 的已审核 theorem statements，单独或跨来源拼接后改名为
+同一 actual `A_C` 的 coefficientwise fiber map、direct matched-shell saving，或带
+outer BV/content remainder 的 growing all-prefix theorem。它不扩张 Higher
+Uniformity、Pilatte、single-factor、almost-all/origin-average、logarithmic/cumulative
+等旧 `STOP_SCOPED` cells，也不是未审核文献或未来定理的 nonexistence claim；
+精确 scope、字段审计与 reopen interface 见第 28 节。
 
 ## 7. Reopen triggers
 
@@ -4193,7 +4212,7 @@ TPC-127 --check = PASS
 D:\26-aimath\理论研究3\prime_dynamics_theory
 
 读取仓库根目录 TPC_HANDOFF.md，以仓库文件和已提交 artifacts 为事实来源，
-不要依赖旧聊天记录。优先读取页首及第 1、6、22、23、24、27 节。
+不要依赖旧聊天记录。优先读取页首及第 1、6、22、23、24、27、28 节。
 
 先执行：
 
@@ -4211,7 +4230,7 @@ TPC-27--32 legacy certificates 会无条件重写 JSON，不得执行。
 
 当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 最新不编号裁决是：
-TPC32_23_5_LOCAL_MOMENT_AND_AP_SIGN_EXISTENCE_TO_ACTUAL_ZERO_OR_GROWING_PREFIX_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED。
+TPC32_23_5_NAMED_PRIMARY_REOPEN_CANDIDATES_20260801_TO_ACTUAL_ZERO_OR_GROWING_PREFIX_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED。
 
 同一 theorem-valid high-beta selected packet 的 formula-level source lock 已通过：
 sigma=1/10000，lambda=99979/210000，delta=7/60，beta=267/400，
@@ -4239,6 +4258,21 @@ moment input，其 Möbius 特化是 RH-equivalent 的单 mu(n) 对象；Ford--R
 与 Matomäki--Teräväinen 只证明每个 reduced AP 内出现两种符号，不给 signed-sum
 或 all-prefix cancellation。上述已审核版本不得在没有新 actual corollary/crosswalk
 时原样重开。
+
+第 28 节继续做了 current-primary theorem-route 审计。系统检索的 394 条重叠
+retrieval rows 经去重和 theorem screening 后没有 survivor；另一路公式定向审核
+也没有 survivor。最接近的四条仍分别缺关键接口：Tao--Teräväinen v2 是裸二点
+相关、polylog 参数、例外尺度外的 terminal sum；Higher Uniformity II v2 是单个
+`mu` 对 nilsequence 的 almost-all-origin maximal statement；Grimmelt--Merikoski v2
+没有 actual coefficientwise automorphic intertwiner，且 orbit autocorrelation `K`
+未支付；Kim v2 只在 shift-average 后给 saving。不同 source lock 不得拼接。
+
+仓库侧 first fatal 仍是
+`COMMON_ACTUAL_LEAF_DOMAIN_AND_LITERAL_Q_D_Q_Z_MAPS_ABSENT`。当前唯一可走的
+reopen interface 是：新增保留全部 physical metadata 的 actual `Q_D/Q_Z` map；
+或直接控制同一 `A_C`/matched shell 的 theorem；或在同一 packet 上同时给出
+growing signed-prefix、outer BV、content remainder、共同 ranges/constants、`N0`
+normalization 与完整 loss ledger。strict `1/400` 仍 `UNPAID`，`L2=NONE`。
 
 本轮没有预设下一项不编号 gate。仅在第 23.5 节三类 reopen trigger之一出现时，
 按同一有限、fail-closed 工作流继续，无需重复请求人为授权；这不自动授权
@@ -4666,3 +4700,343 @@ tail-failure、A/B selection、actual packet attachment 与完整 provenance gat
 独立协调提交纳入；本 TPC STOP handoff 提交只含 `TPC_HANDOFF.md`。既有本地
 `.codex/config.toml`、`.codex/agents/tpc-*.toml`、TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 仍保持 untracked，未纳入上述任一本地提交。
+
+## 28. 2026-08-01 current-primary theorem-route 与 exact attachment 审计
+
+### 28.1 冻结基线、目标与审计协议
+
+本轮从下列一致基线启动：
+
+```text
+HEAD = origin/main = 5e97b52b54d33f2ec34c68efdb9737f8959a3345
+TPC_HANDOFF_COMMITTED_BLOB_BEFORE_EDIT
+  = 8a5b2ebf37390bcd9b92000938ab1f57c29ff8be
+TPC_HANDOFF_SHA256_BEFORE_EDIT
+  = b9047e39fdb11f295c8f0510bf6c3b12b24c07c079ecb1bdc4c111b96bf3ff31
+STARTUP_REGRESSION = 22/22 PASS
+TPC111_124_126_127_READ_ONLY_GATE_CHECKS = 4/4 PASS
+PROTECTED_UNTRACKED_COUNT = 127
+PROTECTED_UNTRACKED_MANIFEST_SHA256
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+```
+
+protected manifest 是按 `git ls-files --others --exclude-standard` 排序后，对每个
+文件记录 `path<TAB>byte_length<TAB>sha256<LF>`，再对含末尾换行的全部 rows 做
+SHA256。三份独立只读审计分别承担 actual source lock/formula crosswalk、
+from-actual formula-directed theorem attachment，以及 systematic current-primary
+source discovery/adversarial theorem screen；三份结果均为 `files_changed=[]`，
+且共同结论为 `NO_NEW_TRIGGER_CANDIDATE`。
+
+同一 theorem-valid selected packet 精确冻结为：
+
+```text
+sigma = 1/10000
+lambda = 99979/210000
+delta = 7/60
+beta = 267/400
+Q = X^(267/400+o(1))
+J = X^(133/400+o(1))
+D = X^(10049/52500+o(1))
+L = X^(99979/210000+o(1))
+R = S = X^(23/60+o(1))
+V = X^(23/120+o(1))
+T = X^(193/500+o(1))
+C = floor(J)
+h0 = 2
+N0 = J Q^2 asymp X Q
+```
+
+literal row coefficient、joint multiplier 与三 raw channels 仍分别是：
+
+```text
+gamma_alpha^(i)
+  = mu(d_alpha) (log ell_alpha) omega_D^(i)(d_alpha)
+    psi_L^(i)(ell_alpha/L) zeta_alpha^(i),
+
+A_frak_(alpha,gamma)(j)
+  = m_frak(alpha,gamma) Xi_(alpha,gamma)(j)
+    W_(alpha,gamma)(j/J),
+
+A_{m,T} C_n,
+C_m A_{n,T},
+C_m C_n,
+```
+
+并且必须保留 matched difference
+`A_{m,U0}A_{n,U0}-A_{m,T}A_{n,T}`、actual masks/weights 与 outer labels。
+令 `q_DFT` 表示 TPC-32 的 no-wrap auxiliary determinant-DFT modulus
+（`q_DFT asymp Q`；下述 distinguished zero 的值不依赖这个 auxiliary
+modulus），并令
+
+```text
+G = gcd(m_alpha j+2, m_gamma j+2),
+Delta# = (m_alpha-m_gamma)/G,
+A_C(n) = physical matched shell restricted by G<=C and Delta#=n,
+A_hat_C,q_DFT(0) = sum_n A_C(n)
+                 = small-content matched-shell auxiliary zero.
+```
+
+本轮所需 output 仍只能是
+
+```text
+F0(A_C) = |A_hat_C,q_DFT(0)|^2 / ||A_C||_2^2
+        <= X^(chi+o(1)), chi<=1/400,
+```
+
+或同一对象的 robust direct form
+
+```text
+|sum_n A_C(n)|^2
+  << X^(1/400-eta) sum_n |A_C(n)|^2
+```
+
+with some fixed `eta>0` and a complete physical-loss ledger。为避免与 TPC-32 的
+auxiliary DFT modulus 混淆，以下把 TPC-127 的 progression modulus 记为
+`q_prog=as`。TPC-127 的 complete literal pullback 是
+
+```text
+S_{xi,X}(alpha)
+  = lambda(q_prog) sum_{n in N_I}
+      Qcal_{a,s}(n) lambda(n-2) lambda(n)
+      Wcal_{xi,X}(n) exp(-2 pi i alpha z(n)).
+```
+
+它无损保留同一 progression finite list 上的 canonical prefix 与 comparison mass；
+该恒等式本身不是新的 cancellation theorem。
+`delta=1/20` truncated-entry-absent family 未参与，且不得与本 packet 拼接。
+
+### 28.2 系统检索、版本审计与有限性边界
+
+截至 2026-08-01，一个只读 discovery station 的未归档运行日志报告：对 arXiv
+`math.NT` 的 Möbius/Moebius、Liouville、Chowla、multiplicative functions、
+partial sums、variation norm、shifted convolution 与 divisor correlation 查询
+得到 394 条重叠 retrieval rows；按 base arXiv ID、normalized title 与 DOI 合并
+后，22 条进入 title/abstract relevant set，12 条进入 theorem/main-result screen，
+0 条通过 exact attachment 初筛。该站没有提交 raw retrieval roster、22/12-item
+source-ID sets 或 query manifest，所以这些数字只作为一次性 process log，不是
+可复算的 corpus-completeness certificate。general web 只用于 discovery；正式
+判断使用 arXiv abstract/HTML/PDF 与 journal/DOI primary metadata。
+
+另一条从 actual formula 倒推的定向审核还逐式检查了 Tao--Teräväinen
+`arXiv:2512.01739v2` Theorem 3.1、Koukoulopoulos `arXiv:2605.01412v1`
+Theorems 1.1/1.2 与 Pozdnyakov `arXiv:2604.23427v1` Theorem 1.8。它们未计入
+前述 retrieval-pipeline counters；在没有两轨 source-ID roster 时，本节不宣称
+两轨互斥，也不把 `12` 与 `3` 相加，只报告两轨合并裁决仍为 0 survivor。本节
+只陈述这个明确、有日期和版本号的有限审核集，不声称不存在未发现文献、未来
+版本或未来定理。
+
+第 27 节四个 frozen sources 的官方版本历史未改变：Banks--Shparlinski
+`2506.08787v1`、Verjovsky `2607.25002v1`、Ford--Radziwiłł
+`2605.03349v1` 与 Matomäki--Teräväinen `2605.27833v1` 均仍为 v1；Banks--
+Shparlinski 的 QJM publication 与 arXiv work 按 title/DOI 去重，官方摘要仍保留
+binary obstruction。第 27 节 dated cell 因而不重开。
+
+### 28.3 最接近来源的 formula-level 排除
+
+1. Tao--Teräväinen `arXiv:2512.01739v2`, Theorem 3.1，确实给两点
+   1-bounded multiplicative-function correlation 的小对数幂节省；Liouville
+   corollary 允许 distinct affine forms，但 coefficients/moduli 只到
+   `log^c N`，且只在一个小 exceptional scale set 外控制 complete terminal sum。
+   它的 literal object 是 naked
+   `lambda(a1 n+b1)lambda(a2 n+b2)`，没有 `Q_{a,s}`、三 channels、joint
+   masks、`G<=C`、`Delta#`、outer labels、prescribed packet scale 或 all-prefix。
+
+2. Matomäki--Radziwiłł--Shao--Tao--Teräväinen Higher Uniformity II
+   `arXiv:2411.05770v2`, Theorem 1.1，具有最接近 maximal/all-subprogression 的
+   syntax，但其 arithmetic coefficient 是单个 `mu(n)`，或单个近似残差
+   `(Lambda-Lambda#)(n)`、`(d_k-d_k#)(n)`，对 bounded-complexity
+   nilsequence，并允许 exceptional interval origins。没有 theorem 证明 actual
+   complete coefficient
+   `Qcal_{a,s}(n)lambda(n-2)lambda(n)Wcal_{xi,X}(n)
+   exp(-2 pi i alpha z(n))` 是其同一 admissible coefficient，也没有 fixed-power
+   actual-packet saving。
+
+   在没有新增 same-object theorem/crosswalk 时，不得把第 1 项的 naked pair
+   theorem 与本项的 single-factor maximal theorem 拼接：两者不是同一个 theorem
+   statement，没有共同 literal coefficient、domain、exceptional set、constant、
+   normalization 或 loss ledger。
+
+3. Grimmelt--Merikoski `arXiv:2404.08502v2`, Theorem 1.1，最接近 determinant
+   geometry：它计数 determinant-one matrices，允许 left-`Gamma`-automorphic
+   orbit weight 与 smooth dyadically supported test weight。其 error 为
+   `delta^(-O(1)) Z^epsilon sqrt(A D K R)`；当前没有 coefficientwise map 把
+   actual three-channel packet、content、outer labels 与 prefix order 送入该
+   automorphic object，也没有证明所得 weight 的 `Gamma` invariance。actual
+   encoding 的 `K` bound、`R`/range/smoothness crosswalk 与完整 loss ledger
+   均未给出，会重新引入未支付的 correlation problem。
+
+4. Kim `arXiv:2603.23250v2`, Theorem 1.6，在 `f1 in F'_k(alpha)`、`f2,f3`
+   为 `k`-divisor-bounded，且
+   `X^((1+alpha)^2/((1+alpha)^2+1)+100 epsilon) << H << X^(1-epsilon)`
+   时，给 Fejer-weighted ternary correlation 的 shift-average power saving；它
+   不控制 prescribed physical `h0=2`，也没有 actual masks/channel attachment。
+
+5. Cantarini `arXiv:2607.09110v1`, Theorems 22/24，虽有 fixed-power headline，
+   literal coefficient 是带 modulus/character average 的 `Lambda`--`mu` additive
+   convolution，且依赖 GRH 与额外 zero conjecture；它不是 actual two-affine
+   Möbius joint coefficient。
+
+6. Fragkos--Krause--Miheisi--Sun `arXiv:2607.05560v1` 是 prime Carleson
+   operator 的 variation norm；Lau `arXiv:2509.07556v2` 是 generalized-divisor
+   shifted convolution；Koukoulopoulos `arXiv:2605.01412v1` 是从 partial-sum
+   smallness 假设推出 structure 的 inverse input；Pozdnyakov
+   `arXiv:2604.23427v1` 是单 `mu` 对 digital character 的 terminal estimate；
+   Chavez `arXiv:2409.02106v10` 是 RH/simple-zero 条件下的 logarithmic
+   multiplicative-function-times-cumulative-sum object。它们分别首先失败于 operator/
+   kernel、literal coefficient、implication direction、domain/prefix 或 cumulative
+   normalization，不能产生 distinguished auxiliary zero。
+
+7. Pilatte `arXiv:2604.26564v1` 的 single-Liouville Fourier theorem 仍平均 interval
+   origins；Higher Uniformity I、Menon、Banks--Shparlinski、Verjovsky 与两个 AP
+   sign-existence sources 仍由第 6、27 节原有精确 cells 管辖。本轮只做 version/
+   trigger type-check，不把这些旧 `STOP_SCOPED` 方法重新包装成新方法。
+
+所有候选均逐项核查 literal physical coefficient、固定 physical `h0`、summation
+domain 与 prefix index、`X/N`、auxiliary `q_DFT` 与 progression `q_prog` 的各自
+参数范围、uniform constants、normalization 与
+完整 physical-loss ledger。任何一项不一致即 fail closed；没有使用 block/cumulative
+强行等同、logarithmic-to-natural 转换、averaged-to-prescribed 升级或
+complete-frequency-to-distinguished-zero 升级。
+
+### 28.4 仓库 first fatal、trigger matrix 与可重开接口
+
+仓库内部在调用任何候选 theorem 前已经出现 first fatal：
+
+```text
+TPC144 Q_D.actual_map_edges = []
+TPC144 Q_Z.actual_map_edges = []
+TPC144 J_QD_equals_QZ = NOT_TESTABLE
+TPC144 literal_fiber_relabeling = NOT_TESTABLE
+TPC155 production_witness_present = false
+TPC175 qualifying_claim_count = 0
+TPC175 eligible_carrier_count = 0
+
+COMMON_ACTUAL_LEAF_DOMAIN_AND_LITERAL_Q_D_Q_Z_MAPS_ABSENT
+```
+
+TPC-124 所需的 coefficientwise `(J Q_D-Q_Z)M=0` 因而没有共同 actual leaf
+domain、两组 literal maps 或 production witness。即使反事实补齐这一层，content
+map、outer labels、factor allocation、prefix order、`N0` normalization、共同
+ranges/constants 和完整 loss ledger 仍需逐项证明。
+
+本轮最终 gate matrix 为：
+
+```text
+SAME_SELECTED_HIGH_BETA_PACKET_SOURCE_LOCK = PASS
+H0_2_SPECIALIZATION = PASS_THEOREM_LEVEL_NOT_JSON_SERIALIZED
+
+TRIGGER_1_ACTUAL_COEFFICIENTWISE_INTERTWINER = FAIL_CLOSED_ABSENT
+TRIGGER_2_DIRECT_ACTUAL_A_C_OR_MATCHED_SHELL_THEOREM = FAIL_CLOSED_ABSENT
+TRIGGER_3_GROWING_PREFIX_BV_CONTENT_LEDGER = FAIL_CLOSED_ABSENT
+
+ACTUAL_GENERIC_PAIR_MASK_DECOMPOSITION = ABSENT
+N0_TO_Q_X_SQUARED_NORMALIZATION_CROSSWALK = ABSENT
+CHI_LE_1_OVER_400 = UNPAID
+FIXED_ATOM_CREDIT = 0
+ARITHMETIC_ADVANCE = NO
+L2 = NONE
+TPC207_TRIGGER = false
+TPC207_CREATED = false
+```
+
+精确裁决为：
+
+```text
+TPC32_23_5_NAMED_PRIMARY_REOPEN_CANDIDATES_20260801_TO_ACTUAL_ZERO_OR_
+GROWING_PREFIX_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED
+```
+
+本轮新增且仅新增第 6 节的：
+
+```text
+DECLARED_TPC32_23_5_NAMED_PRIMARY_REOPEN_CANDIDATES_20260801_V1
+  = STOP_SCOPED
+```
+
+这个 dated cell 只冻结第 6 节列出的九个 exact source versions 单独使用，或仅在
+这九个 versions 之间形成的本节已审核 splices。涉及 Higher Uniformity、Pilatte
+及其他旧方法的结论仍分别由第 6 节原有 cells 管辖。它不是 theorem
+nonexistence claim，不阻止：
+
+1. 保留全部 physical metadata、共同 leaf domain、order 与 mass 的 actual
+   coefficientwise `Q_D/Q_Z` intertwiner；
+2. 直接控制同一 `A_C` 或 small-content matched shell、并支付 strict `1/400` 的
+   source-backed theorem；
+3. 对同一 complete literal coefficient（包括 `Qcal_{a,s}`、
+   `Wcal_{xi,X}` 与 additive phase）、同一 prescribed outer fibers 和
+   generally growing progression modulus `q_prog=as` 同时给出 every canonical
+   prefix、outer BV、content remainder、uniform constants/ranges、`N0`
+   normalization 与完整 loss ledger 的 theorem；
+4. Grimmelt--Merikoski 型 determinant route 的 exact actual automorphic encoding，
+   前提是另有 source-backed `Gamma` invariance、orbit `K` bound、range/
+   normalization crosswalk 与完整 loss payment。
+
+两个 O161 pointwise parents、pair-native reroute、H1 与 global architecture 继续
+`OPEN`。第 6 节全部旧 method cells 保持原样 `STOP_SCOPED`，尤其 TPC193 V1、
+common-`k` V1、tail-failure/A/B V1 与 full-`r_Rr_R` ultra-complement V1。
+all-`D` uniformity、exactly-once physical cover、original/global normalization、
+tail-failure、A/B selection、actual packet attachment 与完整 provenance gates
+均未进入。没有创建 TPC-207、论文、paper directory、PDF 或构建日志。
+
+### 28.5 晚到 RH-332 source-type check 与发布边界
+
+最终 QA 期间，`origin/main` 从
+`5e97b52b54d33f2ec34c68efdb9737f8959a3345` 前进到
+`d49ed98bdf294355eeded2a07eeb4f2a5f7a2dc0`。新提交只增加
+`papers/RH-332-sharp-physical-repelling-return-affine-leg-remainder/` 下 17 个
+files；它没有修改 `TPC_HANDOFF.md`、任何 TPC packet/provenance artifact、
+`AGENTS.md` 或本轮 127 个 protected untracked paths，所以同步没有文件级重叠。
+但因题名包含 physical/affine/remainder，本轮仍由两份独立只读审计使用
+`git show origin/main:path` 做 theorem-output 与 exact source-lock type check。
+
+RH-332 的 actual theorem object 是连续概率核
+`mu_{sigma,a}(du)[L_sigma(u,w)-A_u(w)]dw` 的 repelling-return second-hybrid
+Duhamel row remainder。它证明 sectorwise remainder 有严格正的 order-`sigma`
+主项，并否定 exponential 或 `o(sigma)` hybrid accuracy。这里的 `mu_{sigma,a}`
+是 probability marginal，不是 Möbius；“actual physical first-leg prefix”是
+path-law prefix，不是 TPC-111/122 canonical signed prefix；`U<0/U>0` 是 repelling
+orientations，不是 arithmetic siblings、三 raw channels 或 fixed `h0=2`。
+
+逐字段 type check 为：
+
+```text
+literal TPC coefficient/native domain = ABSENT_WRONG_CONTINUOUS_OBJECT
+fixed arithmetic h0=2 = ABSENT
+three raw channels and joint masks = ABSENT
+G<=C, Delta#, A_C and outer labels = ABSENT
+ordered arithmetic all-prefix/BV/content ledger = ABSENT
+N0=JQ^2 asymp XQ normalization = NO_CROSSWALK
+chi<=1/400 cancellation credit = NONE
+```
+
+同名符号也不得拼接：RH-332 的 `sigma->0` 是 noise scale，不是 TPC packet 的
+固定 `sigma=1/10000`；RH-332 的 dynamical multiplier
+`lambda=2u_c r=1.6785...` 不是 TPC 的 `lambda=99979/210000`。RH-332 自身的
+README/ledger/result firewall 又明确给出 parity/shell cancellation、full-trace
+replacement、determinant gluing 与 all-cycle transport 未证，Gates A--E 全 false。
+candidate-specific first fatal 是：
+
+```text
+RH332_CONTINUOUS_GAUSSIAN_HYBRID_ROW_COEFFICIENT_AND_NATIVE_DOMAIN_
+NOT_EQUAL_TO_TPC28_32_DISCRETE_MOBIUS_DETERMINANT_PACKET
+```
+
+所以精确 late-source verdict 为：
+
+```text
+RH332_SHARP_PHYSICAL_REPELLING_RETURN_AFFINE_LEG_REMAINDER_IS_WRONG_
+PHYSICAL_OBJECT_FOR_TPC28_32_SELECTED_PACKET_NO_23_5_TRIGGER
+```
+
+原仓库 first fatal 仍是
+`COMMON_ACTUAL_LEAF_DOMAIN_AND_LITERAL_Q_D_Q_Z_MAPS_ABSENT`。三个第 23.5 节
+triggers 继续 `FAIL_CLOSED_ABSENT`；`ARITHMETIC_ADVANCE=NO`、strict `1/400`
+仍 `UNPAID`、`L2=NONE`、`TPC207_TRIGGER=false`、`TPC207_CREATED=false`。
+该 type check 不新增或扩张任何 `STOP_SCOPED` cell；RH-332 是不同 theory object，
+不是一个被停止的 TPC arithmetic method。
+
+最终正式写入前，22 项只读启动回归再次为 `22/22 PASS`，TPC-111/124/126/127
+追加 gate checks 为 `4/4 PASS`；TPC-122 与 TPC-27--32 writers 均未执行。
+三份 theorem audit 和三份修订后复核均为 read-only/PASS。唯一预期 tracked diff
+仍为 `TPC_HANDOFF.md`；protected untracked count 仍为 127，manifest SHA256 仍为
+`35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f`。
