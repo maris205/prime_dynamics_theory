@@ -1,0 +1,435 @@
+{
+  "corrected_cell_family": {
+    "C_t": [
+      "(6800-5760t)/4913",
+      "(400+5760t)/4913",
+      "6672/4913"
+    ],
+    "deterministic_singleton_slots": [
+      "0/1",
+      "0/1",
+      "0/1"
+    ],
+    "drift": [
+      "-5760t/4913",
+      "5760t/4913",
+      "0"
+    ],
+    "family_is_nonphysical_finite_algebra": true,
+    "first_alias_k1_interpretation": false,
+    "n": 2,
+    "r_H": "17/20",
+    "sum_C_t": "48/17",
+    "t_1_over_100_cells": [
+      "33712/24565",
+      "2288/24565",
+      "6672/4913"
+    ],
+    "t_1_over_100_drift": [
+      "-288/24565",
+      "288/24565",
+      "0/1"
+    ]
+  },
+  "exact_family": {
+    "E_minus": [
+      [
+        "10/17",
+        "-5/51",
+        "-25/51"
+      ],
+      [
+        "8/17",
+        "-4/51",
+        "-20/51"
+      ],
+      [
+        "-10/17",
+        "5/51",
+        "25/51"
+      ]
+    ],
+    "K": [
+      [
+        "3/17",
+        "7/51",
+        "35/51"
+      ],
+      [
+        "4/85",
+        "83/255",
+        "32/51"
+      ],
+      [
+        "58/85",
+        "1/51",
+        "76/255"
+      ]
+    ],
+    "S_t": "[[1-t,t,0],[0,1,0],[0,0,1]]",
+    "all_power_trace_formula": "Tr(K_t^m)=1+(-2/5)^m+(1/5)^m_for_m>=1",
+    "definition": "K_t=S_t^(-1)*K*S_t",
+    "maximal_connected_positivity_interval_containing_zero": "(-5/174,(-19+sqrt(781))/12)",
+    "positivity_factor_reproduction_at_t_minus_1_over_100": {
+      "one_minus_t": "101/100",
+      "row1_col1_numerator": "376/25",
+      "row1_col2_numerator": "88447/2500",
+      "row1_col3_numerator": "883/25",
+      "row2_col2_numerator": "2072/25",
+      "row3_col2_numerator": "163/50"
+    },
+    "spectrum": [
+      "1/1",
+      "-2/5",
+      "1/5"
+    ],
+    "sufficient_interval_is_maximal": false,
+    "sufficient_positivity_interval": "(-5/174,1/2)",
+    "t_fixture": {
+      "E_minus_formula": [
+        [
+          "248/425",
+          "-11656/126225",
+          "-2480/5049"
+        ],
+        [
+          "198/425",
+          "-94/1275",
+          "-20/51"
+        ],
+        [
+          "-99/170",
+          "47/510",
+          "25/51"
+        ]
+      ],
+      "E_minus_t": [
+        [
+          "248/425",
+          "-11656/126225",
+          "-2480/5049"
+        ],
+        [
+          "198/425",
+          "-94/1275",
+          "-20/51"
+        ],
+        [
+          "-99/170",
+          "47/510",
+          "25/51"
+        ]
+      ],
+      "K_formula": [
+        [
+          "22/125",
+          "1697/12375",
+          "68/99"
+        ],
+        [
+          "99/2125",
+          "2078/6375",
+          "32/51"
+        ],
+        [
+          "2871/4250",
+          "337/12750",
+          "76/255"
+        ]
+      ],
+      "K_t": [
+        [
+          "22/125",
+          "1697/12375",
+          "68/99"
+        ],
+        [
+          "99/2125",
+          "2078/6375",
+          "32/51"
+        ],
+        [
+          "2871/4250",
+          "337/12750",
+          "76/255"
+        ]
+      ],
+      "S_t": [
+        [
+          "99/100",
+          "1/100",
+          "0/1"
+        ],
+        [
+          "0/1",
+          "1/1",
+          "0/1"
+        ],
+        [
+          "0/1",
+          "0/1",
+          "1/1"
+        ]
+      ],
+      "S_t_inverse": [
+        [
+          "100/99",
+          "-1/99",
+          "0/1"
+        ],
+        [
+          "0/1",
+          "1/1",
+          "0/1"
+        ],
+        [
+          "0/1",
+          "0/1",
+          "1/1"
+        ]
+      ],
+      "corrected_cell_formula": [
+        "33712/24565",
+        "2288/24565",
+        "6672/4913"
+      ],
+      "corrected_cells": [
+        "33712/24565",
+        "2288/24565",
+        "6672/4913"
+      ],
+      "corrected_drift": [
+        "-288/24565",
+        "288/24565",
+        "0/1"
+      ],
+      "corrected_drift_formula": [
+        "-288/24565",
+        "288/24565",
+        "0/1"
+      ],
+      "corrected_total": "48/17",
+      "in_sufficient_interval": true,
+      "power_rows": [
+        {
+          "direct_trace": "4/5",
+          "m": 1,
+          "spectral_trace": "4/5"
+        },
+        {
+          "direct_trace": "6/5",
+          "m": 2,
+          "spectral_trace": "6/5"
+        },
+        {
+          "direct_trace": "118/125",
+          "m": 3,
+          "spectral_trace": "118/125"
+        },
+        {
+          "direct_trace": "642/625",
+          "m": 4,
+          "spectral_trace": "642/625"
+        },
+        {
+          "direct_trace": "3094/3125",
+          "m": 5,
+          "spectral_trace": "3094/3125"
+        },
+        {
+          "direct_trace": "3138/3125",
+          "m": 6,
+          "spectral_trace": "3138/3125"
+        },
+        {
+          "direct_trace": "77998/78125",
+          "m": 7,
+          "spectral_trace": "77998/78125"
+        },
+        {
+          "direct_trace": "390882/390625",
+          "m": 8,
+          "spectral_trace": "390882/390625"
+        },
+        {
+          "direct_trace": "1952614/1953125",
+          "m": 9,
+          "spectral_trace": "1952614/1953125"
+        },
+        {
+          "direct_trace": "390666/390625",
+          "m": 10,
+          "spectral_trace": "390666/390625"
+        },
+        {
+          "direct_trace": "48826078/48828125",
+          "m": 11,
+          "spectral_trace": "48826078/48828125"
+        },
+        {
+          "direct_trace": "244144722/244140625",
+          "m": 12,
+          "spectral_trace": "244144722/244140625"
+        }
+      ],
+      "projector_idempotent": true,
+      "projector_intertwining_left": true,
+      "projector_intertwining_right": true,
+      "projector_mass_drift": [
+        "-2/425",
+        "2/425",
+        "0/1"
+      ],
+      "projector_mass_formula": [
+        "248/425",
+        "-94/1275",
+        "25/51"
+      ],
+      "projector_masses": [
+        "248/425",
+        "-94/1275",
+        "25/51"
+      ],
+      "projector_trace": "1/1",
+      "row_sums": [
+        "1/1",
+        "1/1",
+        "1/1"
+      ],
+      "strictly_positive": true,
+      "t": "1/100"
+    }
+  },
+  "false_claims": {
+    "actual_model_replacement_proved": false,
+    "determinant_gluing_activated": false,
+    "duhamel_full_cycle_closure_proved": false,
+    "far_remainder_o_H_k_proved": false,
+    "fixed_maximizing_physical_cell_for_all_sigma_identified": false,
+    "full_trace_replacement_proved": false,
+    "head_counterloop_transport_proved": false,
+    "hilbert_polya_constructed": false,
+    "isospectral_family_is_physical_noisy_operator": false,
+    "local_parity_cell_equals_physical_B_plus_S": false,
+    "moving_projector_mass_cancellation_excluded": false,
+    "off_alias_background_closed": false,
+    "physical_Delta_B_plus_Delta_S_cancellation_proved": false,
+    "physical_nonzero_normalized_duhamel_obstruction_proved": false,
+    "riemann_hypothesis_proved": false,
+    "riemann_zeros_identified": false,
+    "signed_raw_local_alias_cancellation_excluded": false,
+    "von_mangoldt_trace_proved": false,
+    "zeta_divisor_equality": false
+  },
+  "finite_calculations_are_reproduction_checks_only": true,
+  "fixed_partition_consequence": {
+    "identified_with_physical_B_plus_S": false,
+    "max_pi_i_lower_bound": "1/N",
+    "maximizing_cell_may_depend_on_sigma": true,
+    "maximum_normalized_parity_cell_diverges": true,
+    "partition_size": "fixed_N",
+    "pigeonhole_fixed_cell_only_on_subsequence": true,
+    "raw_local_alias_signed_cancellation_may_remove_contribution": true,
+    "sum_pi_i": "1"
+  },
+  "gates": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+  },
+  "moving_scale_diagnostics": {
+    "R": 1.4,
+    "beta_R": 1.2712733045699451,
+    "certification_status": "ordinary_floating_point_reproduction_only",
+    "critical_limit_fixture": {
+      "eta": 0.25,
+      "limit": 0.10269413158134522,
+      "p": 0.42857142857142855
+    },
+    "exponents_are_distinct": true,
+    "gamma_star_RH325": 0.3503698834605293,
+    "kappa_proj": 0.46340694451700204,
+    "lambda": 1.6785735104283224,
+    "phase_conversion_rows": [
+      {
+        "absolute_error": 1.3877787807814457e-17,
+        "converted_scale": 0.02148706820622343,
+        "direct_scale": 0.021487068206223415,
+        "eta": -1.0,
+        "k": 8,
+        "sigma": 8.934565270576265e-05
+      },
+      {
+        "absolute_error": 5.963111948670274e-19,
+        "converted_scale": 0.0004616941000988977,
+        "direct_scale": 0.0004616941000988971,
+        "eta": 0.0,
+        "k": 16,
+        "sigma": 6.337359041491158e-08
+      },
+      {
+        "absolute_error": 1.6940658945086007e-20,
+        "converted_scale": 9.920452619235962e-06,
+        "direct_scale": 9.920452619235945e-06,
+        "eta": 0.5,
+        "k": 24,
+        "sigma": 2.6779522826708566e-11
+      }
+    ],
+    "r_H": 0.85
+  },
+  "moving_theorem": {
+    "G_definition": "G_sigma_k(J)=r_H^(-2k)*(1-lambda_minus(sigma)^(2k))*pi_sigma(J)",
+    "H_definition": "H_k=k*R^(-2k)",
+    "beta": "1/(r_H*sqrt(lambda))",
+    "beta_R_greater_than_one": true,
+    "critical_limit": "if_(beta*R)^(2k)*pi->p_and_eta_sigma->eta_then_G/H->2*C_star*lambda^eta*p",
+    "exact_phase_conversion": "(beta*R)^(-2k)=sigma^kappa_proj*(beta*R)^(-2eta_sigma)",
+    "gamma_star_RH325_diagnostic": 0.3503698834605293,
+    "kappa_proj_diagnostic": 0.46340694451700204,
+    "kappa_proj_equals_gamma_star_RH325": false,
+    "kappa_proj_symbolic": "log(beta*R)/log(lambda)=log(28/17)/log(lambda)-1/2",
+    "negligibility_equivalence": "G=o(H)_iff_pi=o((beta*R)^(-2k))",
+    "phase": "eta_sigma=k-log(1/sigma)/(2log(lambda))_bounded",
+    "ratio_asymptotic": "G/H=2*C_star*lambda^eta_sigma*(beta*R)^(2k)*pi_sigma(J)*(1+o(1))"
+  },
+  "novelty_boundary": {
+    "RH210_general_similarity_projector_motion_preexists": true,
+    "RH336_adds_all_power_trace_lock": true,
+    "RH336_adds_corrected_singleton_cell_drift": true,
+    "RH336_adds_strict_positive_row_stochastic_family": true
+  },
+  "physical_duhamel_route": {
+    "physical_Delta_B_plus_Delta_S_signed_cancellation": "not_proved",
+    "physical_nonzero_normalized_obstruction": "absent",
+    "verdict": "NOT_TESTABLE"
+  },
+  "projector_mass_family": {
+    "drift": [
+      "-8t/17",
+      "8t/17",
+      "0"
+    ],
+    "drift_formula_at_t_1_over_100": [
+      "-2/425",
+      "2/425",
+      "0/1"
+    ],
+    "pi_t": [
+      "(10-8t)/17",
+      "(-4+24t)/51",
+      "25/51"
+    ],
+    "sum_pi_t": "1"
+  },
+  "scope": "moving_projector_mass_scale_and_nonphysical_positive_markov_isospectral_cell_obstruction",
+  "source_anchors": [
+    "RH-210_general_projector_motion_under_similarity",
+    "RH-326_uniform_parity_packet_and_common_weighted_exponent",
+    "RH-334_rational_bracket_and_physical_basepoint_observation",
+    "RH-335_signed_projector_measure_and_corrected_cell_ledger"
+  ],
+  "status": "rh336_projector_mass_first_alias_threshold_and_isospectral_cell_obstruction"
+}

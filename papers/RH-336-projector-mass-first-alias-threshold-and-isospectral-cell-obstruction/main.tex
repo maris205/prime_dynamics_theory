@@ -1,0 +1,404 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\one}{\mathbf 1}
+
+\title{Projector-Mass First-Alias Threshold\\
+and an Isospectral Cell Obstruction}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The projector-density gauge of RH-335 turns the global noisy parity scalar
+into signed localized cells.  We determine the exact first-alias scale of one
+such cell.  On every bounded-phase natural clock, its parity contribution
+divided by $H_k=kR^{-2k}$ equals
+$2C_*\lambda^{\eta_\sigma}(\beta R)^{2k}\pi_\sigma(J)(1+o(1))$.
+Thus the critical projector-mass exponent is
+$\kappa_{\rm proj}=\log(\beta R)/\log\lambda$, distinct from the earlier
+Duhamel stability exponent.  A fixed finite partition necessarily has a maximum
+normalized parity cell diverging to $+\infty$, but the maximizing cell may
+move with noise and is not identified with a physical boundary/sibling
+aggregate; raw and alias terms may still cancel it.  We complement the scale
+theorem with an exact three-state family.  A nontrivial interval of smooth
+similarities preserves strict positivity, row-stochasticity, the spectrum,
+and every power trace, while the parity projector masses and corrected
+singleton cells drift by explicit nonzero zero-sum vectors.  This is a
+nonphysical finite algebraic obstruction to recovering cells from global
+spectral data.  It does not prove physical signed Duhamel cancellation or a
+physical normalized obstruction, and it yields no determinant or
+Riemann-hypothesis conclusion.
+\end{abstract}
+
+\section{Inherited projector gauge and first-alias clock}
+
+Let $K_\sigma$ be the noisy folded operator and let
+$\lambda_-(\sigma)=-(1-\delta_\sigma)$ be its real simple parity
+eigenvalue, where the archived law is
+\begin{equation}\label{eq:delta-law}
+ \delta_\sigma=C_*\sqrt\sigma+o(\sqrt\sigma),
+ \qquad C_*>0.
+\end{equation}
+Write $E_{-,\sigma}$ for the rank-one Riesz projector itself.  RH-335 proves
+that
+\begin{equation}\label{eq:pi}
+ \pi_\sigma(J)=\Tr(M_JE_{-,\sigma})
+\end{equation}
+is a real finite signed measure with total mass one
+\citep{WangProjectorLedger2026}.  Allocating the deterministic parity scalar
+with this noisy density is a frozen gauge, not canonical physical
+localization or deterministic/noisy projector transport.
+
+Retain the constants and clock from RH-326
+\citep{WangFirstAlias2026}:
+\begin{equation}\label{eq:constants}
+ r_H=\frac{17}{20},\qquad R=\frac75,\qquad
+ \beta=\frac1{r_H\sqrt\lambda},
+\end{equation}
+and
+\begin{equation}\label{eq:phase}
+ \eta_\sigma
+ =k-\frac{\log(1/\sigma)}{2\log\lambda}.
+\end{equation}
+Throughout the moving statements, $\eta_\sigma$ remains bounded and
+$k\to\infty$ as $\sigma\to0$.
+
+For a measurable cell $J$, possibly depending on $\sigma$, define
+\begin{equation}\label{eq:G-H}
+ \cG_{\sigma,k}(J)
+ =r_H^{-2k}\{1-\lambda_-(\sigma)^{2k}\}\pi_\sigma(J),
+ \qquad H_k=kR^{-2k}.
+\end{equation}
+This is only the localized parity-gauge constituent of the RH-335 corrected
+cell.  It omits the localized raw defect and the globally subtracted alias
+packet.
+
+\section{Moving projector-mass threshold}
+
+\begin{theorem}[Exact first-alias projector-mass scale]
+\label{thm:moving-scale}
+On every bounded-phase sequence,
+\begin{equation}\label{eq:G-over-H}
+ \boxed{
+ \frac{\cG_{\sigma,k}(J)}{H_k}
+ =2C_*\lambda^{\eta_\sigma}(\beta R)^{2k}
+ \pi_\sigma(J)\{1+o(1)\}.}
+\end{equation}
+The scalar $o(1)$ is independent of the chosen cell.
+\end{theorem}
+
+\begin{proof}
+Because $k\delta_\sigma\to0$, the uniform parity expansion of RH-326 gives
+\begin{equation}\label{eq:parity-expansion}
+ 1-(1-\delta_\sigma)^{2k}
+ =2kC_*\sqrt\sigma\{1+o(1)\}.
+\end{equation}
+Even order removes the sign of $\lambda_-$, so substitution in
+\eqref{eq:G-H} and division by $H_k$ yield
+\[
+ 2C_*\sqrt\sigma\left(\frac{R}{r_H}\right)^{2k}
+ \pi_\sigma(J)\{1+o(1)\}.
+\]
+Equation \eqref{eq:phase} gives
+$\sqrt\sigma\lambda^k=\lambda^{\eta_\sigma}$, while
+$(\beta R)^{2k}=(R/r_H)^{2k}\lambda^{-k}$.  Their product is the required
+scalar in \eqref{eq:G-over-H}.
+\end{proof}
+
+Define
+\begin{equation}\label{eq:kappa}
+ \boxed{
+ \kappa_{\rm proj}
+ =\frac{\log(\beta R)}{\log\lambda}
+ =\frac{\log(28/17)}{\log\lambda}-\frac12.}
+\end{equation}
+The rational bracket $3/2<u_c<25/16$ from the physical observation source
+implies
+$\lambda=2u_c(u_c-1)<225/128<(28/17)^2$
+\citep{WangObservation2026}.  Hence $\beta R>1$ and
+$\kappa_{\rm proj}>0$.  Ordinary substitution of the archived decimal for
+$\lambda$ gives
+\begin{equation}\label{eq:kappa-decimal}
+ \kappa_{\rm proj}=0.463406944517002\ldots .
+\end{equation}
+This decimal is diagnostic, not an interval certificate.  It is not the
+RH-325 sufficient Duhamel weight ceiling
+$\gamma_*=0.3503698834605293\ldots$; the two exponents govern different
+objects.
+
+\begin{corollary}[Negligibility, exact phase conversion, and critical limit]
+\label{cor:threshold}
+On every bounded-phase sequence,
+\begin{equation}\label{eq:iff}
+ \cG_{\sigma,k}(J)=o(H_k)
+ \quad\Longleftrightarrow\quad
+ \pi_\sigma(J)=o((\beta R)^{-2k}).
+\end{equation}
+Moreover,
+\begin{equation}\label{eq:phase-conversion}
+ \boxed{
+ (\beta R)^{-2k}
+ =\sigma^{\kappa_{\rm proj}}
+  (\beta R)^{-2\eta_\sigma}.}
+\end{equation}
+If
+\begin{equation}\label{eq:critical-assumption}
+ (\beta R)^{2k}\pi_\sigma(J)\longrightarrow p,
+ \qquad \eta_\sigma\longrightarrow\eta,
+\end{equation}
+then
+\begin{equation}\label{eq:critical-limit}
+ \frac{\cG_{\sigma,k}(J)}{H_k}
+ \longrightarrow 2C_*\lambda^\eta p.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Bounded phase makes $2C_*\lambda^{\eta_\sigma}\{1+o(1)\}$ bounded above
+and away from zero.  This proves \eqref{eq:iff} from
+\cref{thm:moving-scale}.  From \eqref{eq:phase},
+$k=\log(1/\sigma)/(2\log\lambda)+\eta_\sigma$; inserting this into the
+left side of \eqref{eq:phase-conversion} proves the exact identity.
+Finally apply \eqref{eq:critical-assumption} to \eqref{eq:G-over-H}.
+\end{proof}
+
+\section{A forced large parity cell, but not a physical obstruction}
+
+\begin{theorem}[Fixed-partition maximum]
+\label{thm:partition-max}
+Let $\cP=\{J_1,\ldots,J_N\}$ be one fixed finite measurable partition.
+Then
+\begin{equation}\label{eq:max-pi}
+ \max_{1\le i\le N}\pi_\sigma(J_i)\ge\frac1N.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:max-G}
+ \max_{1\le i\le N}
+ \frac{\cG_{\sigma,k}(J_i)}{H_k}\longrightarrow+\infty.
+\end{equation}
+The maximizing index may depend on $\sigma$.  Along every sequence
+$\sigma_\ell\to0$, some fixed index recurs as a maximizer on a subsequence,
+and its normalized parity cell diverges on that subsequence.
+\end{theorem}
+
+\begin{proof}
+RH-335 gives
+$\sum_{i=1}^N\pi_\sigma(J_i)=1$, so the maximum is at least the arithmetic
+mean $1/N$, even though individual masses may be negative.  The scalar in
+\eqref{eq:G-over-H} is positive for small noise.  Since bounded phase makes
+$\lambda^{\eta_\sigma}$ uniformly bounded below and $\beta R>1$,
+\eqref{eq:max-pi} proves \eqref{eq:max-G}.  The subsequence statement is the
+pigeonhole principle on the finite index set.
+\end{proof}
+
+\begin{remark}[Cancellation firewall]
+The theorem concerns only the parity-gauge constituent.  It does not
+identify a maximizing cell with the physical $\cB+\cS$ aggregate, and it
+does not prove a physical nonzero normalized obstruction.  The localized
+raw defect can cancel the parity term inside a corrected cell, other cells
+can cancel in the partition sum, and the first-alias coefficient further
+subtracts $\mathcal A_{k,2k}$.  The maximizing index may also move with
+noise.  Thus physical signed $\Delta_B+\Delta_S$ cancellation remains
+\texttt{NOT\_TESTABLE}.
+\end{remark}
+
+\section{A strictly positive isospectral Markov family}
+
+We now give a separate finite algebraic witness.  Reuse the exact RH-335
+matrix and parity projector
+\begin{align}
+ K&=\begin{pmatrix}
+ 3/17&7/51&35/51\\
+ 4/85&83/255&32/51\\
+ 58/85&1/51&76/255
+ \end{pmatrix},\label{eq:K}\\
+ E_-&=\begin{pmatrix}
+ 10/17&-5/51&-25/51\\
+ 8/17&-4/51&-20/51\\
+ -10/17&5/51&25/51
+ \end{pmatrix}.\label{eq:E}
+\end{align}
+For $t\ne1$, put
+\begin{equation}\label{eq:S-family}
+ S_t=\begin{pmatrix}1-t&t&0\\0&1&0\\0&0&1\end{pmatrix},
+ \qquad K_t=S_t^{-1}KS_t.
+\end{equation}
+Define $q(t)=35-38t-12t^2$.  Exact multiplication gives the audited formula
+\begin{equation}\label{eq:Kt-formula}
+ K_t=\begin{pmatrix}
+ \dfrac{15-4t}{85}&\dfrac{q(t)}{255(1-t)}
+   &\dfrac{35-32t}{51(1-t)}\\[0.8em]
+ \dfrac{4(1-t)}{85}&\dfrac{83+12t}{255}&\dfrac{32}{51}\\[0.8em]
+ \dfrac{58(1-t)}{85}&\dfrac{5+174t}{255}&\dfrac{76}{255}
+ \end{pmatrix}.
+\end{equation}
+
+\begin{theorem}[Positive row-stochastic isospectral interval]
+\label{thm:positive-family}
+For every
+\begin{equation}\label{eq:sufficient-interval}
+ \boxed{-\frac5{174}<t<\frac12,}
+\end{equation}
+the matrix $K_t$ is strictly positive and row-stochastic.  For every such
+$t$,
+\begin{equation}\label{eq:spectrum}
+ \operatorname{spec}(K_t)=\{1,-2/5,1/5\},
+\end{equation}
+and for every integer $m\ge1$,
+\begin{equation}\label{eq:all-traces}
+ \boxed{
+ \Tr K_t^m=1+(-2/5)^m+(1/5)^m.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+On \eqref{eq:sufficient-interval}, every denominator in
+\eqref{eq:Kt-formula} is positive.  The nonconstant numerators
+\[
+ 15-4t,\quad q(t),\quad35-32t,\quad83+12t,\quad5+174t
+\]
+are also positive; for $q$, it suffices that $t<1/2$ because its positive
+root exceeds $1/2$.  More directly, $q'(t)=-38-24t<0$ on the stated
+interval and $q(1/2)=13$, so $q(t)>13$.  Thus every entry is positive.  Since
+$S_t\one=\one$, also $S_t^{-1}\one=\one$, and
+$K_t\one=S_t^{-1}K\one=\one$.
+
+Similarity preserves the spectrum and gives
+$K_t^m=S_t^{-1}K^mS_t$.  RH-335 supplies the three distinct eigenvalues of
+$K$, so trace invariance proves \eqref{eq:all-traces}.
+\end{proof}
+
+\begin{remark}[Sufficient versus maximal]
+The interval \eqref{eq:sufficient-interval} is convenient, not maximal.
+Intersecting all strict entry inequalities in the connected component
+containing zero gives
+\begin{equation}\label{eq:maximal-interval}
+ \left(-\frac5{174},\frac{-19+\sqrt{781}}{12}\right).
+\end{equation}
+The upper endpoint is the positive root of $q(t)$.  No maximality claim is
+made beyond this explicit finite family.
+\end{remark}
+
+\section{Moving projector masses and corrected singleton cells}
+
+Let
+\begin{equation}\label{eq:Et}
+ E_-(t)=S_t^{-1}E_-S_t.
+\end{equation}
+It is the Riesz projector of $K_t$ at $-2/5$ by similarity.
+
+\begin{proposition}[Exact projector-mass drift]
+\label{prop:pi-drift}
+For the three singleton windows,
+\begin{equation}\label{eq:pi-t}
+ \boxed{
+ \pi(t)=\operatorname{diag}E_-(t)
+ =\left(\frac{10-8t}{17},\frac{-4+24t}{51},\frac{25}{51}\right).}
+\end{equation}
+Therefore
+\begin{equation}\label{eq:pi-drift}
+ \pi(t)-\pi(0)=\frac{8t}{17}(-1,1,0),
+ \qquad \sum_i\pi_i(t)=1.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:E} and \eqref{eq:S-family} into \eqref{eq:Et} and read the
+diagonal.  Subtraction gives \eqref{eq:pi-drift}; its entries sum to zero.
+\end{proof}
+
+Use now the RH-335 fixed-order fixture $n=2$, $r_H=17/20$, parity
+eigenvalue $-2/5$, and zero deterministic singleton slots.  Define
+\begin{equation}\label{eq:Ct-def}
+ \cC_i(t)=\left(\frac{20}{17}\right)^2
+ \left\{(K_t^2)_{ii}+\frac{21}{25}\pi_i(t)\right\}.
+\end{equation}
+
+\begin{theorem}[Isospectral corrected-cell obstruction]
+\label{thm:C-drift}
+The corrected singleton cells are
+\begin{equation}\label{eq:C-t}
+ \boxed{
+ \cC(t)=\left(
+ \frac{6800-5760t}{4913},
+ \frac{400+5760t}{4913},
+ \frac{6672}{4913}\right).}
+\end{equation}
+For every admissible $t$,
+\begin{align}
+ \sum_i\cC_i(t)&=\frac{48}{17},\label{eq:C-total}\\
+ \cC(t)-\cC(0)&=\frac{5760t}{4913}(-1,1,0).
+ \label{eq:C-drift}
+\end{align}
+At $t=1/100$, the drift is exactly
+\begin{equation}\label{eq:one-percent-drift}
+ \left(-\frac{288}{24565},\frac{288}{24565},0\right).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Similarity applied to $K^2$ gives
+\[
+ \operatorname{diag}K_t^2
+ =\left(\frac{215-192t}{425},
+ \frac{53+192t}{425},\frac{242}{425}\right).
+\]
+Combine this with \eqref{eq:pi-t} in \eqref{eq:Ct-def} and simplify to
+\eqref{eq:C-t}.  Summation and subtraction prove
+\eqref{eq:C-total}--\eqref{eq:C-drift}; setting $t=1/100$ gives
+\eqref{eq:one-percent-drift}.
+\end{proof}
+
+The full spectrum and all power traces are constant, yet the corrected
+singleton cells move.  This proves nonidentification of those cells from
+global spectral data in a strictly positive row-stochastic family.
+RH-210 already proved the general logical phenomenon that projectors may
+move under a fixed divisor \citep{WangDivisorPivot2026}.  The narrow addition
+here is the simultaneous positivity, Markov normalization, all-power trace
+lock, and explicit corrected-cell ledger.
+
+The family remains nonphysical finite algebra.  In particular, fixed
+$n=2$ is not a $k=1$ first-alias counterloop: the archived counterloop
+definition requires $k\ge2$.
+
+\section{Reproduction and claim boundary}
+
+The artifact evaluates every matrix identity with exact rational arithmetic.
+It checks the displayed formulas, strict positivity at rational sample
+points inside the proved interval, the endpoint factorization, two-sided
+projector intertwining, twelve power traces, projector masses, corrected
+cells, invariant sums, and the exact one-percent drift.  Floating-point rows
+only reproduce the symbolic phase conversion and the diagnostic exponent;
+they are not interval certificates.
+
+RH-336 proves the moving projector-mass threshold and a nonphysical
+isospectral corrected-cell obstruction.  It does not identify a physical
+$\Delta_B+\Delta_S$ cancellation, prove a physical nonzero normalized
+obstruction, exclude raw/local/alias signed cancellation, close the far or
+off-alias terms, transport the noisy head, or glue a determinant.  No result
+constructs a Hilbert--Polya operator, identifies Riemann zeros, proves a von
+Mangoldt trace formula or completed-zeta divisor equality, or proves the
+Riemann hypothesis.  Gates A--E remain false/open.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
