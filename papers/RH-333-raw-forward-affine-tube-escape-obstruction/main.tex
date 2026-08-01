@@ -1,0 +1,511 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage{cleveref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\Pb}{\mathsf P}
+\newcommand{\Qa}{\mathsf Q}
+\newcommand{\Phibar}{\overline\Phi}
+\title{Raw Forward Affine-Tube Escape Obstruction}
+\author{Bin Wang}
+\date{August 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The RH-332 roadmap asks whether the raw mass-one forward affine tube can be
+transported through the full boundary cycle with retained-path error
+$O(k\sigma)$.  We give a scoped negative answer before the final critical
+closing component row.  Along the RH-17 component cycle, keep the signed
+forward slopes $a_{k,j}=S'(x_{k,j})$ and let
+$Q_{j+1}=a_{k,j}Q_j+\beta_{k,j}Z_j$ for $0\le j\le k-2$.
+The first innovation reaches the preclosing coordinate with standard
+deviation
+\[
+ s_k=\beta_{k,0}\prod_{j=1}^{k-2}|a_{k,j}|
+ =\frac{\beta_{k,0}|M_k|}{m_{k,0}m_{k,k-1}}
+ =C_s\lambda^{2k}\{1+o(1)\},
+\]
+where
+$C_s=C_M\sqrt{1+\lambda^2}/(8u_c^2\lambda\sqrt{C_{\rm b}})>0$.
+Every physical folded and normalized preclosing marginal is supported in an
+interval of length $1/\sigma$.  A uniform Gaussian maximum-interval-mass
+lemma therefore gives the finite, unhalved bound
+\[
+ \|\mu_{\rm phys}-\mu_{\rm aff}\|_1
+ \ge4\Phibar\!\left(\frac1{2\sigma s_k}\right).
+\]
+At fixed first-alias phase $\eta$ this has the strictly positive limit lower
+bound $4\Phibar(1/(2C_s\lambda^{2\eta}))$.  Marginal contraction lifts the
+bound to every retained path and every extension retaining the preclosing
+coordinate.  Thus, on fixed or compact first-alias phase families,
+$O(k\sigma)$ and $o(kR^{-2k})$ are false for this raw full-line affine
+reference.  The result does not give a final endpoint
+marginal lower bound after the omitted closing row and does not test cyclic,
+conditioned, truncated, folded, adapted, or nonlinear closing references.
+It is a probability-path obstruction, not a cyclic-trace theorem.
+\end{abstract}
+
+\section{Boundary cycle and data type}
+
+Let $u_c\in(1,2)$ be the root of
+\begin{equation}\label{eq:cubic}
+ u^3-2u^2+2u-2=0,
+\end{equation}
+and define
+\begin{equation}\label{eq:map-constants}
+ f(x)=1-u_cx^2,
+ \qquad S=f^2,
+ \qquad r=u_c-1,
+ \qquad \lambda=2u_cr.
+\end{equation}
+For this preclosing-prefix problem, fix $k\ge2$ and $\sigma>0$.  The RH-17 same-cycle
+component order is
+\begin{equation}\label{eq:cycle-order}
+ x_{k,0}=p_k,
+ \qquad x_{k,j}=h^{k-j}(p_k)\quad(1\le j\le k-1),
+ \qquad S(x_{k,j})=x_{k,j+1\bmod k}.
+\end{equation}
+Thus $k$ is the component period for $S=f^2$, while the physical one-step
+period for $f$ is $2k$.  This clock distinction will be retained throughout.
+
+Put
+\begin{equation}\label{eq:slopes-noise}
+ a_{k,j}:=S'(x_{k,j}),
+ \qquad m_{k,j}:=|a_{k,j}|,
+ \qquad
+ \beta_{k,j}^2:=1+f'(f(x_{k,j}))^2,
+ \qquad
+ M_k:=\prod_{j=0}^{k-1}a_{k,j}.
+\end{equation}
+The sign of $a_{k,j}$ is part of the forward mean.  Indeed,
+\begin{equation}\label{eq:signed-slope-formula}
+ S'(x)=4u_c^2x f(x),
+\end{equation}
+so $a_{k,0}<0$ for all large $k$, whereas the following slopes in the
+positive component chain are positive.  Replacing $a_{k,j}$ by $m_{k,j}$ is
+legitimate for a centered even backward observable, but not for a signed
+forward conditional mean.
+
+\begin{definition}[Raw forward affine prefix]\label{def:raw-prefix}
+Fix $k\ge2$.
+The variable $Q_j$ is the $\sigma$-scaled tangent coordinate about
+$x_{k,j}$.  To see the canonical component coarsening, take two independent
+one-step standard-normal innovations $\xi_1,\xi_2$.  Linearizing two noisy
+applications of $f$ gives the signed mean slope
+$f'(f(x_{k,j}))f'(x_{k,j})=S'(x_{k,j})$ and combined innovation
+$f'(f(x_{k,j}))\xi_1+\xi_2$, whose variance is
+$1+f'(f(x_{k,j}))^2=\beta_{k,j}^2$.
+For $0\le j\le k-2$, let
+\begin{equation}\label{eq:raw-kernel}
+ \Qa_{k,j}(q,dq')
+ =\cN(a_{k,j}q,\beta_{k,j}^2)(dq')
+\end{equation}
+be a mass-one kernel on the full line.  Equivalently, for independent
+standard normals $Z_0,\ldots,Z_{k-2}$ and an arbitrary entrance variable
+$Q_0$ independent of those innovations,
+\begin{equation}\label{eq:forward-recurrence}
+ Q_{j+1}=a_{k,j}Q_j+\beta_{k,j}Z_j,
+ \qquad 0\le j\le k-2.
+\end{equation}
+The law at $Q_{k-1}$ is the raw affine preclosing marginal.  No cyclic
+conditioning or final closing row is included in this definition.
+\end{definition}
+
+The physical comparison uses the same coordinate location but a different
+state space.  A row-normalized folded physical chain always lies in
+$[0,1]$.  Hence its coordinate about the preclosing cycle point,
+\begin{equation}\label{eq:physical-coordinate}
+ q=\frac{x-x_{k,k-1}}\sigma,
+\end{equation}
+is supported in the exact interval
+\begin{equation}\label{eq:physical-interval}
+ I_{\sigma,k}
+ =\left[-\frac{x_{k,k-1}}\sigma,
+         \frac{1-x_{k,k-1}}\sigma\right],
+ \qquad |I_{\sigma,k}|=\frac1\sigma.
+\end{equation}
+The physical law below may have any entrance and any exact folded/normalized
+prefix consistent with that support.  The affine entrance may also be
+arbitrary; only its independence from the innovations is used.
+Write $\Pb^{\rm phys}_{\sigma,k}$ for the retained physical prefix path law
+and $\Qa^{\rm raw}_{\sigma,k}$ for the retained raw affine prefix path law.
+
+All distances are unhalved.  For probability measures $\mu,\nu$ on a common
+measurable space $(E,\mathcal E)$, define
+\begin{equation}\label{eq:unhalved}
+ \|\mu-\nu\|_1:=|\mu-\nu|(E)
+ =2\sup_{A\in\mathcal E}|\mu(A)-\nu(A)|.
+\end{equation}
+For densities this is the usual $L^1$ distance.  The scalar marginals use
+$E=\R$; retained paths use their corresponding product space.
+
+\section{Exact forward expansion and the escaping innovation}
+
+\begin{proposition}[Exact preclosing expansion]\label{prop:expansion}
+The raw forward prefix satisfies
+\begin{align}
+ Q_{k-1}
+ ={}&\left(\prod_{j=0}^{k-2}a_{k,j}\right)Q_0 \nonumber\\
+ &+\sum_{\ell=0}^{k-2}
+ \beta_{k,\ell}
+ \left(\prod_{j=\ell+1}^{k-2}a_{k,j}\right)Z_{\ell},
+ \label{eq:exact-expansion}
+\end{align}
+where an empty product equals one.  In particular, the first innovation has
+propagated standard deviation
+\begin{equation}\label{eq:sk-product}
+ \boxed{
+ s_k=\beta_{k,0}\prod_{j=1}^{k-2}m_{k,j}
+ =\frac{\beta_{k,0}|M_k|}{m_{k,0}m_{k,k-1}}.}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Iterate \eqref{eq:forward-recurrence}; each later row multiplies every
+already-present term by its signed slope and adds one new innovation.  This
+gives \eqref{eq:exact-expansion}.  Taking the absolute value of the
+$Z_0$ coefficient gives the first expression in \eqref{eq:sk-product}.
+Since $|M_k|=\prod_{j=0}^{k-1}m_{k,j}$, cancellation of the first and last
+factors gives the second expression exactly.
+\end{proof}
+
+The expansion also fixes the direction of variance propagation.
+
+\begin{lemma}[Forward variance recurrence]\label{lem:forward-variance}
+If $Q_j$ has finite variance and is independent of $Z_j$, then
+\begin{equation}\label{eq:forward-variance}
+ \boxed{
+ \operatorname{Var}(Q_{j+1})
+ =a_{k,j}^2\operatorname{Var}(Q_j)+\beta_{k,j}^2.}
+\end{equation}
+Consequently the variance obtained by iterating \eqref{eq:forward-variance}
+equals the sum of the squared coefficients in \eqref{eq:exact-expansion},
+including the squared entrance coefficient.
+\end{lemma}
+
+\begin{proof}
+Independence kills the covariance in \eqref{eq:forward-recurrence}; the
+innovation variance is one.  Iteration gives the coefficient-square formula.
+\end{proof}
+
+\begin{remark}[Why the RH-18 widths are not forward moments]
+RH-18 applies a backward affine operator to peak-normalized even Gaussian
+observables.  Its periodic packet parameters satisfy
+\begin{equation}\label{eq:backward-width}
+ m_{k,j}^2v_{k,j}=v_{k,j+1}+\beta_{k,j}^2
+\end{equation}
+so that Gaussian integration preserves the packet shape up to a peak
+amplitude.  Equation \eqref{eq:backward-width} is neither
+\eqref{eq:forward-variance} nor an upper bound for it.  The sign disappears
+there only because the observable is centered and even.  Here the kernel is
+a mass-one forward probability kernel, the mean slope is signed, and every
+new noise variance enters with the plus sign in
+\eqref{eq:forward-variance}.
+\end{remark}
+
+The analytic inputs are now symbolic.  The archived boundary-cycle theorems
+give
+\begin{align}
+ |M_k|&=C_M\lambda^k\{1+o(1)\},
+ &m_{k,0}&\longrightarrow2u_c\lambda,
+ \label{eq:input-one}\\
+ \beta_{k,0}&\longrightarrow\sqrt{1+\lambda^2},
+ &m_{k,k-1}
+ &=4u_c\sqrt{C_{\rm b}}\,\lambda^{-k}\{1+o(1)\},
+ \label{eq:input-two}
+\end{align}
+with analytic constants $C_{\rm b},C_M>0$.  The last law is the tiny
+critical closing slope.  It is excluded from the raw prefix rows, but it
+appears in the exact multiplier quotient \eqref{eq:sk-product}.
+
+\begin{theorem}[Sharp propagated scale]\label{thm:propagated-scale}
+The standard deviation in \eqref{eq:sk-product} obeys
+\begin{equation}\label{eq:sk-asymptotic}
+ \boxed{
+ s_k=C_s\lambda^{2k}\{1+o(1)\},
+ \qquad
+ C_s=
+ \frac{C_M\sqrt{1+\lambda^2}}
+ {8u_c^2\lambda\sqrt{C_{\rm b}}}>0.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Substitute \eqref{eq:input-one}--\eqref{eq:input-two} into the quotient in
+\eqref{eq:sk-product}.  Its denominator is
+\[
+ (2u_c\lambda)\,
+ (4u_c\sqrt{C_{\rm b}}\lambda^{-k})\{1+o(1)\},
+\]
+while the numerator is
+$C_M\sqrt{1+\lambda^2}\lambda^k\{1+o(1)\}$.
+Their quotient is \eqref{eq:sk-asymptotic}.
+\end{proof}
+
+No decimal evaluation of $C_{\rm b}$ or $C_M$ is used in this theorem.
+
+\section{Maximum interval mass and the finite escape gap}
+
+Write $\Phi$ and $\Phibar=1-\Phi$ for the standard normal distribution and
+survival functions.
+
+\begin{lemma}[Gaussian maximum-interval mass]\label{lem:max-interval}
+For every $L>0$, $s>0$, mean $y\in\R$, and interval $J\subset\R$ of
+length $L$,
+\begin{equation}\label{eq:max-interval}
+ \Pr\{\cN(y,s^2)\in J\}
+ \le2\Phi\!\left(\frac{L}{2s}\right)-1.
+\end{equation}
+The bound is uniform in the mean and interval location and is attained when
+$J$ is centered at $y$.  The same upper bound holds for a mixture whose
+conditional law, given an arbitrary random mean, is $\cN(y,s^2)$.
+\end{lemma}
+
+\begin{proof}
+By translation and scaling, an interval starting at $t$ has mass
+$F(t)=\Phi(t+L/s)-\Phi(t)$ for a standard normal.  Its derivative is
+$F'(t)=\phi(t+L/s)-\phi(t)$, which is positive before
+$t=-L/(2s)$ and negative after it.  The unique maximum is the centered
+interval, with value \eqref{eq:max-interval}.  Conditioning on the random
+mean and averaging preserves the same uniform bound.
+\end{proof}
+
+\begin{theorem}[Exact finite preclosing escape obstruction]
+\label{thm:finite-obstruction}
+\leavevmode\par\noindent
+Fix $k\ge2$ and $\sigma>0$.  Let $\mu^{\rm phys}_{\sigma,k}$ be any physical folded/normalized
+preclosing marginal in the coordinate \eqref{eq:physical-coordinate}.  Let
+$\mu^{\rm aff}_{\sigma,k}$ be the $Q_{k-1}$ marginal of
+\cref{def:raw-prefix}, with an arbitrary entrance law independent of the
+innovations.  Then
+\begin{equation}\label{eq:finite-lower}
+ \boxed{
+ \|\mu^{\rm phys}_{\sigma,k}
+     -\mu^{\rm aff}_{\sigma,k}\|_1
+ \ge4\Phibar\!\left(\frac1{2\sigma s_k}\right).}
+\end{equation}
+The same lower bound holds for the two retained component-prefix path laws.
+It also holds for any full retained extensions of those laws that still
+include the preclosing coordinate $Q_{k-1}$.
+\end{theorem}
+
+\begin{proof}
+In \eqref{eq:exact-expansion}, isolate the first innovation and write
+\begin{equation}\label{eq:Y-plus-noise}
+ Q_{k-1}=Y+\varepsilon_kZ_0,
+ \qquad |\varepsilon_k|=s_k.
+\end{equation}
+Here $Y$ consists of the entrance term and innovations $Z_1,\ldots,Z_{k-2}$,
+so it is independent of $Z_0$.  Conditional on $Y$, the affine preclosing
+law is Gaussian with standard deviation $s_k$.  Since
+$|I_{\sigma,k}|=1/\sigma$, \cref{lem:max-interval} gives
+\begin{equation}\label{eq:affine-escape}
+ \mu^{\rm aff}_{\sigma,k}(I_{\sigma,k}^{\mathsf c})
+ \ge2\Phibar\!\left(\frac1{2\sigma s_k}\right).
+\end{equation}
+The physical law gives the complement zero mass.  By the unhalved convention
+\eqref{eq:unhalved}, its distance from the affine law is at least twice the
+right side of \eqref{eq:affine-escape}, proving the factor four in
+\eqref{eq:finite-lower}.
+
+Projection from a retained joint path to its preclosing coordinate is an
+$L^1$ contraction.  Hence the joint distance is at least the marginal
+distance.  The same projection argument applies after adding any further
+coordinates, provided the preclosing coordinate remains retained.
+\end{proof}
+
+The bound needs no moment assumption on either entrance law.  It uses only
+mass-one forward normalization, independence of the raw innovations, and
+the physical support interval.
+
+\section{First-alias phase and the failed target scales}
+
+Let $\sigma\downarrow0$, let $k=k_\sigma\to\infty$, and define
+\begin{equation}\label{eq:phase-clock}
+ \eta_\sigma
+ :=k-\frac{\log(1/\sigma)}{2\log\lambda}.
+\end{equation}
+Then the identity
+\begin{equation}\label{eq:clock-identity}
+ \sigma\lambda^{2k}=\lambda^{2\eta_\sigma}
+\end{equation}
+is exact.
+
+\begin{theorem}[Fixed and compact phase obstruction]
+\label{thm:phase-obstruction}
+If $\eta_\sigma\to\eta\in\R$, then every family in
+\cref{thm:finite-obstruction} satisfies
+\begin{equation}\label{eq:fixed-phase-lower}
+ \boxed{
+ \liminf_{\sigma\downarrow0}
+ \|\mu^{\rm phys}_{\sigma,k}
+     -\mu^{\rm aff}_{\sigma,k}\|_1
+ \ge
+ 4\Phibar\!\left(\frac1{2c_\eta}\right)>0,
+ \qquad c_\eta=C_s\lambda^{2\eta}.}
+\end{equation}
+The identical lower bound holds for the retained paths and full retained
+extensions described there.
+
+More generally, if
+$\eta_\sigma\in[\eta_-,\eta_+]$ for all sufficiently small $\sigma$, then
+\begin{equation}\label{eq:compact-phase-lower}
+ \liminf_{\sigma\downarrow0}
+ \|\mu^{\rm phys}_{\sigma,k}
+     -\mu^{\rm aff}_{\sigma,k}\|_1
+ \ge
+ 4\Phibar\!\left(
+   \frac1{2C_s\lambda^{2\eta_-}}
+ \right)>0.
+\end{equation}
+Thus the obstruction is uniform on every compact phase interval.
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{eq:sk-asymptotic} and \eqref{eq:clock-identity} give
+\begin{equation}\label{eq:sigma-sk}
+ \sigma s_k=C_s\lambda^{2\eta_\sigma}\{1+o(1)\}.
+\end{equation}
+The function $c\mapsto4\Phibar(1/(2c))$ is continuous and strictly
+increasing for $c>0$.  Taking the limit in \eqref{eq:finite-lower} proves
+\eqref{eq:fixed-phase-lower}.  When the phase remains in a compact interval,
+the $o(1)$ in \eqref{eq:sigma-sk} is independent of the phase because it is
+the one-variable sequence $s_k/(C_s\lambda^{2k})-1$.  The smallest limiting
+scale on the interval is $C_s\lambda^{2\eta_-}$, proving
+\eqref{eq:compact-phase-lower}.
+\end{proof}
+
+The RH-332 clearance phase is
+\begin{equation}\label{eq:clearance-relation}
+ d=C_{\rm b}\lambda^{-2\eta}>0.
+\end{equation}
+It is related to the present scale only by
+\begin{equation}\label{eq:c-d-relation}
+ c_\eta=C_s\lambda^{2\eta}
+ =\frac{C_sC_{\rm b}}d.
+\end{equation}
+This relation matches clocks; it does not identify the raw affine tube with a
+physical closing profile.
+
+\begin{corollary}[Failure of the raw forward path targets]
+\label{cor:rate-failure}
+On every sequence for which $\eta_\sigma$ stays in one fixed compact
+interval (in particular, on every fixed-phase sequence), neither
+\begin{equation}\label{eq:false-rates}
+ \|\Pb^{\rm phys}_{\sigma,k}-\Qa^{\rm raw}_{\sigma,k}\|_1
+ =O(k\sigma)
+ \qquad\text{nor}\qquad
+ \|\Pb^{\rm phys}_{\sigma,k}-\Qa^{\rm raw}_{\sigma,k}\|_1
+ =o(H_k),
+ \quad H_k=kR^{-2k},\ R=1.4,
+\end{equation}
+can hold for the retained paths in
+\cref{thm:finite-obstruction}.
+\end{corollary}
+
+\begin{proof}
+The left sides have a uniformly positive liminf by the compact-phase part of
+\cref{thm:phase-obstruction}.  Meanwhile boundedness of $\eta_\sigma$ and
+$\sigma=\lambda^{-2(k-\eta_\sigma)}$ give $k\sigma\to0$, and
+$H_k=kR^{-2k}\to0$.  Both proposed upper scales therefore contradict the
+positive lower bound.
+\end{proof}
+
+\section{Deterministic reproduction}
+
+The implementation reconstructs the RH-17 orbit by inverse contraction at
+110 decimal working digits and evaluates both sides of
+\eqref{eq:sk-product} before converting the result rows to binary64 JSON.
+Selected rows are
+\begin{center}\small
+\begin{tabular}{rrrrr}
+\toprule
+$k$ & $2k$ & $a_{k,0}$ & $|M_k|/\lambda^k$
+& $s_k/\lambda^{2k}$\\
+\midrule
+4  & 8  & $-4.95945990$ & $1.84255673$ & $0.18488292$\\
+8  & 16 & $-5.17844066$ & $1.93725622$ & $0.17646891$\\
+12 & 24 & $-5.18232740$ & $1.94527476$ & $0.17524766$\\
+16 & 32 & $-5.18238996$ & $1.94620960$ & $0.17509057$\\
+20 & 40 & $-5.18239095$ & $1.94632613$ & $0.17507073$\\
+24 & 48 & $-5.18239097$ & $1.94634079$ & $0.17506823$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The product and quotient evaluations of $s_k$ agree to the 110-digit working
+precision before conversion to the displayed decimals.
+
+For orientation only, the phase table inserts the repository evaluations
+\[
+ C_{\rm b}=0.4608051492217\ldots,
+ \qquad C_M=1.946342905200967\ldots
+\]
+into \eqref{eq:sk-asymptotic} and evaluates the normal survival function
+with binary64 arithmetic.  This gives
+$C_s=0.175067867214394\ldots$ and the following phase rows.
+\begin{center}\small
+\begin{tabular}{rrrr}
+\toprule
+$\eta$ & $d=C_{\rm b}\lambda^{-2\eta}$
+& $c_\eta=C_s\lambda^{2\eta}$
+& $4\Phibar(1/(2c_\eta))$\\
+\midrule
+$-1/2$ & $0.77349532$ & $0.10429562$ & $0.00000327$\\
+$0$    & $0.46080515$ & $0.17506787$ & $0.00857935$\\
+$1/2$  & $0.27452188$ & $0.29386428$ & $0.17771115$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Both protocols produce ordinary numerical reproduction values, not
+directed-rounding interval certificates: the orbit identities use the
+stated high working precision, while the phase and $C_s$ table uses
+binary64 arithmetic.  The finite rows verify identities and illustrate
+convergence; they do not prove \eqref{eq:sk-asymptotic} or
+\eqref{eq:fixed-phase-lower}.
+
+\section{Claim boundary and next interface}
+
+The proved negative statement has four simultaneous qualifiers:
+\begin{enumerate}
+\item the comparison object is the canonical raw, mass-one, full-line
+      forward affine reference \eqref{eq:raw-kernel};
+\item the theorem concerns the prefix of $k-1$ component rows before the
+      tiny closing component row, equivalently a retained preclosing
+      coordinate inside the full $2k$ one-step path;
+\item the lower bound survives in a full retained path only because that
+      preclosing coordinate remains present; and
+\item the statement belongs to probability path laws, not cyclic trace
+      observations.
+\end{enumerate}
+
+The tiny closing row may strongly contract its input.  After marginalizing
+away the preclosing coordinate, \cref{thm:finite-obstruction} supplies no
+lower bound for the final endpoint marginal.  It therefore does not prove
+endpoint failure after closure.
+
+Nor does the theorem refute a cyclic bridge, a Doob transform, a physical
+truncated or folded affine kernel, an adapted reference, or a
+branch-complete nonlinear closing profile.  None of those alternatives is
+currently defined with the required common entrance, normalization, path
+coordinates, and physical comparison map, so their status here is
+\texttt{NOT\_TESTABLE}.  A future positive transport route must first define
+one such reference and then handle the closing row in that exact data type.
+
+No probability-to-trace observation is proved.  There is no cyclic trace
+control, signed shell or parity cancellation, full-trace replacement, or
+determinant gluing.  Gates A--E remain false/open.  This paper constructs no
+Hilbert--Polya operator, identifies no Riemann zero, proves no von
+Mangoldt-weighted prime-power trace or completed-zeta divisor equality, and
+does not imply the Riemann Hypothesis.
+
+\end{document}
