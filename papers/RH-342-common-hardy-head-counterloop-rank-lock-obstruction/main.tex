@@ -1,0 +1,497 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\rank}{\operatorname{rank}}
+
+\title{A Common-Hardy Head/Counterloop Rank Lock and a\\
+Hidden-Shell Obstruction}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We lock the actual modulus-complete noisy head and the finite graded
+counterloop in the same Hardy normalization and on the physical first-alias
+clock.  The actual head consists of the algebraic nonperipheral eigenvalues
+of $K_\sigma/r_H$ with modulus greater than $q=1/2$; the counterloop is the
+$2k$th-root shell with the two real roots removed, hence has rank $2k-2$.
+Their finite genus-one quotient has local logarithmic coefficients
+$-d_{\sigma,k,n}/n$ for $n\ge2$.  This is an analytic comparison, not a
+physical determinant decomposition.
+
+We prove two exact finite-spectral theorems.  First, zero-padded root
+$\ell^1$ matching has a cardinality floor: its cost is at least
+$q(r_\sigma-2k+2)_++\beta_k(2k-2-r_\sigma)_+$.  Thus any actual matching
+cost tending to zero would force the eventual exact rank law
+$r_\sigma=2k-2$.  No such law is presently sourced.  Second, two nonzero
+finite multisets of ranks at most $N$ are identical if their power sums
+agree for orders $2$ through $2N+1$.  The missing first moment causes no
+ambiguity once the rank cap is known.
+
+The cap is indispensable.  Adding a complete $4k$th-root shell of radius
+$3/4$ preserves every strict-prefix moment $2\le n<4k$, while the padded
+root cost is at least $2k$ and the added genus-one factor is
+$1-(3z/4)^{4k}$.  This is a conjugation-closed finite normal information-class
+counterexample, not an actual noisy operator.  Finally, the RH-299 transport
+criterion at the cut $4k$ requires the source-safe global rate
+$\gamma>1.926813889034\ldots$; the smaller
+$0.926813889034\ldots$ threshold assumes an unproved local actual-head cap.
+Root transport without a rank law, cap, and actual matching rate is therefore
+\texttt{STOP\_SCOPED}.  Aggregate and annular routes remain
+\texttt{NOT\_TESTABLE}/open, and no Gate or Riemann-hypothesis claim follows.
+\end{abstract}
+
+\section{One physical data type and one clock}
+
+Set
+\begin{equation}\label{eq:hardy-constants}
+ r_H=\frac{17}{20},\qquad q=\frac12,\qquad R=\frac75,
+ \qquad A_\sigma=K_\sigma/r_H.
+\end{equation}
+After removing the Perron and negative-parity eigenvalues, let
+\begin{equation}\label{eq:actual-head}
+ \cH_\sigma
+ =\{\mu:\ \mu\text{ is an algebraic eigenvalue of }A_\sigma,
+                    \ |\mu|>q\},
+ \qquad r_\sigma=\#\cH_\sigma,
+\end{equation}
+where algebraic multiplicity is retained, and put
+\begin{equation}\label{eq:head-moment}
+ h_{\sigma,n}=\sum_{\mu\in\cH_\sigma}\mu^n.
+\end{equation}
+This is exactly the modulus-complete head of RH-282
+\citep{WangSpectralTail2026}.  Its available rank information is only
+\begin{equation}\label{eq:source-rank-bound}
+ r_\sigma\le 4\sigma^{-1}.
+\end{equation}
+In particular, the half-logarithmic endpoint singular-value rank of RH-16
+\citep{WangEndpointRank2026} is not identified with $r_\sigma$.  The former
+is a singular-resolution count; the latter is an algebraic spectral count.
+
+Let $k=k_\sigma\ge2$ be the physical first-alias clock reviewed in RH-341
+\citep{WangActualFrontier2026}:
+\begin{equation}\label{eq:clock}
+ k=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),
+ \qquad u=4k.
+\end{equation}
+For the boundary multiplier radius $\beta_k$, define the counterloop multiset
+\begin{equation}\label{eq:Y-definition}
+ \cY_k=
+ \{\beta_k e^{ij\pi/k},\beta_k e^{-ij\pi/k}:1\le j\le k-1\}.
+\end{equation}
+It has rank
+\begin{equation}\label{eq:model-rank}
+ m_k=\#\cY_k=2k-2,
+\end{equation}
+and $\beta_k\to\beta=(r_H\sqrt\lambda)^{-1}>q$
+\citep{WangCounterloop2026}.  Since $K_\sigma$ is a strongly positive Markov
+operator, its nonperipheral eigenvalues have modulus below one.  Therefore
+every member of $\cH_\sigma$ has modulus at most $1/r_H$.  Also
+$\beta<1/r_H$, so $\beta_k<1/r_H$ eventually.  Thus
+\begin{equation}\label{eq:global-common-cap}
+ B=1/r_H
+\end{equation}
+is a source-safe eventual common cap for the actual head and counterloop.
+
+\begin{proposition}[Exact counterloop ledger]
+\label{prop:counterloop}
+For every integer $n\ge1$,
+\begin{equation}\label{eq:counterloop-moment}
+ s_{k,n}:=\sum_{\nu\in\cY_k}\nu^n
+ =\beta_k^n\bigl(2k\one_{2k\mid n}-1-(-1)^n\bigr).
+\end{equation}
+The strict prefix $2\le n<4k$ contains the first alias $n=2k$ and excludes
+the second alias $n=4k$.
+\end{proposition}
+
+\begin{proof}
+The complete set of scaled $2k$th roots has power sum
+$2k\beta_k^n\one_{2k\mid n}$.  Removing the roots $\beta_k$ and
+$-\beta_k$ subtracts $\beta_k^n(1+(-1)^n)$, which proves
+\eqref{eq:counterloop-moment}.  The two alias assertions are the strict
+inequalities $2\le2k<4k$ and $4k\not<4k$.
+\end{proof}
+
+This is the counterloop used in the typed RH-290 and RH-297 ledgers
+\citep{WangTypedLedger2026,WangAliasLedger2026}.  Define the common-Hardy
+head defect
+\begin{equation}\label{eq:defect}
+ d_{\sigma,k,n}=h_{\sigma,n}-s_{k,n}.
+\end{equation}
+The point of the source lock is that neither the RH-16 singular rank nor a
+model cloud may be substituted for the actual multiset \eqref{eq:actual-head}.
+
+\section{The exact analytic factor interface}
+
+For a finite multiset $X$ of nonzero complex numbers, write
+\begin{equation}\label{eq:genus-one}
+ E_1(w)=(1-w)e^w,
+ \qquad \Phi_X(z)=\prod_{x\in X}E_1(xz).
+\end{equation}
+The product is entire.  Its logarithm has a canonical germ at the origin,
+since $\Phi_X(0)=1$.
+
+\begin{theorem}[Common-Hardy genus-one comparison]
+\label{thm:factor-interface}
+For the actual head $\cH_\sigma$ and counterloop $\cY_k$,
+\begin{equation}\label{eq:factor-log}
+ \log\frac{\Phi_{\cH_\sigma}(z)}{\Phi_{\cY_k}(z)}
+ =-\sum_{n\ge2}\frac{d_{\sigma,k,n}}{n}z^n
+\end{equation}
+as a convergent power series in a sufficiently small neighborhood of
+$z=0$.
+\end{theorem}
+
+\begin{proof}
+For $|w|<1$,
+\begin{equation}\label{eq:E1-log}
+ \log E_1(w)=\log(1-w)+w=-\sum_{n\ge2}\frac{w^n}{n}.
+\end{equation}
+Both multisets are finite, so one may choose a common neighborhood of zero
+on which \eqref{eq:E1-log} holds for every root.  Sum first over
+$\cH_\sigma$, then subtract the sum over $\cY_k$, and use
+\eqref{eq:defect}.
+\end{proof}
+
+\begin{remark}[Claim boundary]
+Theorem~\ref{thm:factor-interface} compares two finite analytic factors.  It
+does not assert that the quotient is a factor in one physical determinant,
+that $\cY_k$ is a spectral submultiset of $A_\sigma$, or that the remaining
+physical determinant pieces glue.  Those distinctions are the missing glue
+in RH-288 and RH-290 \citep{WangGluing2026,WangTypedLedger2026}.
+\end{remark}
+
+\section{Zero padding forces a rank law}
+
+If $X=\{x_1,\ldots,x_r\}$ and $Y=\{y_1,\ldots,y_m\}$ are finite multisets,
+pad the smaller one with zeros to the common size $N=\max(r,m)$ and define
+\begin{equation}\label{eq:padded-distance}
+ d_1^0(X,Y)=\min_{\pi\in S_N}
+       \sum_{j=1}^N|\widetilde x_j-\widetilde y_{\pi(j)}|.
+\end{equation}
+This is the root interface introduced in RH-299
+\citep{WangRootTransport2026}.
+
+\begin{theorem}[Zero-padding rank lock]
+\label{thm:rank-lock}
+Let $X$ be a finite multiset with $|x|>q$ for every $x\in X$, and let $Y$
+be a finite multiset whose every member has modulus $\beta_0>0$.  If
+$r=\#X$ and $m=\#Y$, then
+\begin{equation}\label{eq:rank-lock-general}
+ d_1^0(X,Y)\ge
+ q(r-m)_++\beta_0(m-r)_+.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:rank-lock-physical}
+ d_1^0(\cH_\sigma,\cY_k)\ge
+ q(r_\sigma-m_k)_++\beta_k(m_k-r_\sigma)_+.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Suppose first that $r>m$.  The padded copy of $Y$ contains exactly $r-m$
+zeros.  Every matching pairs those zeros with $r-m$ members of $X$, and
+each such pair costs $|x|>q$.  Hence the total cost is at least $q(r-m)$.
+If $m>r$, the padded copy of $X$ contains $m-r$ zeros.  Exactly $m-r$
+members of $Y$ meet those zeros, each at cost $\beta_0$, giving
+$\beta_0(m-r)$.  The equal-rank case has the asserted zero lower bound.
+Apply the result with $X=\cH_\sigma$, $Y=\cY_k$, and
+$\beta_0=\beta_k$.
+\end{proof}
+
+\begin{corollary}[Any decaying actual matching locks the rank]
+\label{cor:rank-law}
+If
+\begin{equation}\label{eq:o1-matching}
+ d_1^0(\cH_\sigma,\cY_{k_\sigma})=o(1),
+\end{equation}
+then, for all sufficiently small $\sigma$,
+\begin{equation}\label{eq:eventual-rank}
+ r_\sigma=2k_\sigma-2.
+\end{equation}
+The conclusion also follows from any estimate
+$d_1^0=O(\sigma^\gamma)$ with $\gamma>0$.
+\end{corollary}
+
+\begin{proof}
+Since $\beta_k\to\beta>q$, both possible nonzero rank-mismatch floors in
+\eqref{eq:rank-lock-physical} are bounded below by a fixed positive constant
+for large $k$.  An integer rank mismatch is therefore incompatible with
+\eqref{eq:o1-matching}.  A positive power of $\sigma$ tends to zero.
+\end{proof}
+
+The corollary is a necessary consequence of a future matching theorem; it is
+not such a theorem.  Bound \eqref{eq:source-rank-bound} is far too broad to
+give \eqref{eq:eventual-rank}, and the repository explicitly supplies no
+identification between the RH-16 endpoint singular rank and $r_\sigma$.
+
+\section{Shifted moments identify roots under a rank cap}
+
+For a finite multiset $X$, let $p_n(X)=\sum_{x\in X}x^n$.
+
+\begin{theorem}[Shifted-moment uniqueness]
+\label{thm:shifted-uniqueness}
+Let $X$ and $Y$ be finite nonempty multisets of nonzero complex numbers with
+\begin{equation}\label{eq:rank-cap}
+ \#X\le N,\qquad \#Y\le N.
+\end{equation}
+If
+\begin{equation}\label{eq:shifted-moments}
+ p_n(X)=p_n(Y)\qquad(2\le n\le2N+1),
+\end{equation}
+then $X=Y$ as multisets.
+\end{theorem}
+
+\begin{proof}
+Define the rational function
+\begin{equation}\label{eq:rational-observable}
+ F_X(z)=\sum_{x\in X}\frac{x^2}{1-xz}
+       =\sum_{j\ge0}p_{j+2}(X)z^j
+\end{equation}
+near the origin, and define $F_Y$ analogously.  If $r=\#X$ and $s=\#Y$,
+then
+\begin{equation}\label{eq:rational-degree}
+ F_X=\frac{A_X}{Q_X},\qquad
+ Q_X(z)=\prod_{x\in X}(1-xz),\qquad
+ \deg A_X\le r-1,
+\end{equation}
+with the analogous bounds for $Y$.  Consequently the numerator of
+$F_X-F_Y$ over $Q_XQ_Y$ has degree at most
+\begin{equation}\label{eq:numerator-degree}
+ \max\{(r-1)+s,(s-1)+r\}=r+s-1\le2N-1.
+\end{equation}
+
+Condition \eqref{eq:shifted-moments} says that the first $2N$ Taylor
+coefficients in \eqref{eq:rational-observable} agree.  Thus $F_X-F_Y$ has a
+zero of order at least $2N$ at the origin.  Since $Q_X(0)Q_Y(0)=1$, its
+polynomial numerator is divisible by $z^{2N}$.  The degree bound
+\eqref{eq:numerator-degree} forces that numerator to vanish identically, so
+$F_X=F_Y$.
+
+For every distinct nonzero value $a$ occurring in $X$, the partial fraction
+of $F_X$ contains
+\begin{equation}\label{eq:multiplicity-term}
+ \frac{m_X(a)a^2}{1-az}.
+\end{equation}
+Equality of the rational functions gives the same poles and the same
+coefficients, hence $m_X(a)=m_Y(a)$ for every $a$.  Therefore the multisets
+are identical.
+\end{proof}
+
+\begin{corollary}[Strict-prefix identification with a cap]
+\label{cor:strict-prefix}
+Let $N=2k-2$.  If $X$ is a finite multiset of nonzero complex numbers, has
+rank at most $N$, and
+\begin{equation}\label{eq:strict-prefix-equality}
+ p_n(X)=s_{k,n}\qquad(2\le n<4k),
+\end{equation}
+then $X=\cY_k$.
+\end{corollary}
+
+\begin{proof}
+The model has rank $N$.  The required terminal order in
+Theorem~\ref{thm:shifted-uniqueness} is
+$2N+1=4k-3<4k$, so \eqref{eq:strict-prefix-equality} contains every required
+moment.
+\end{proof}
+
+This corollary shows precisely what the absence of the first moment does
+\emph{not} obstruct.  Its active hypothesis is the rank cap.  No such actual
+cap at $2k-2$ is presently proved.
+
+\section{A hidden-shell counterexample without the cap}
+
+Let
+\begin{equation}\label{eq:hidden-shell}
+ \cZ_k=\left\{\frac34e^{2\pi ij/(4k)}:0\le j<4k\right\},
+ \qquad \cX_k=\cY_k\sqcup\cZ_k.
+\end{equation}
+Both multisets are closed under complex conjugation.  They are spectra of
+finite normal diagonal matrices.
+
+\begin{theorem}[Hidden-shell obstruction]
+\label{thm:hidden-shell}
+For every $k\ge2$ and every order $2\le n<4k$,
+\begin{equation}\label{eq:hidden-moment-equality}
+ p_n(\cX_k)=p_n(\cY_k).
+\end{equation}
+Thus the strict-prefix head budget formed from these two multisets is exactly
+zero:
+\begin{equation}\label{eq:hidden-D-zero}
+ \sum_{2\le n<4k}
+ \frac{|p_n(\cX_k)-p_n(\cY_k)|R^n}{n}=0.
+\end{equation}
+For all sufficiently large $k$,
+\begin{equation}\label{eq:hidden-root-distance}
+ d_1^0(\cX_k,\cY_k)\ge4kq=2k.
+\end{equation}
+Moreover,
+\begin{equation}\label{eq:hidden-factor}
+ \frac{\Phi_{\cX_k}(z)}{\Phi_{\cY_k}(z)}
+ =1-\left(\frac{3z}{4}\right)^{4k}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The complete root shell satisfies
+\begin{equation}\label{eq:shell-power}
+ \sum_{\zeta\in\cZ_k}\zeta^n
+ =4k\left(\frac34\right)^n\one_{4k\mid n}.
+\end{equation}
+It vanishes throughout $2\le n<4k$, which proves
+\eqref{eq:hidden-moment-equality} and \eqref{eq:hidden-D-zero}.
+
+The rank difference is $\#\cX_k-\#\cY_k=4k$.  For large $k$, every member
+of $\cY_k$ has modulus $\beta_k>q$, and every member of $\cZ_k$ has modulus
+$3/4>q$.  Apply the first branch of Theorem~\ref{thm:rank-lock} to obtain
+\eqref{eq:hidden-root-distance}.
+
+Finally, the genus-one exponential terms cancel because
+$\sum_{\zeta\in\cZ_k}\zeta=0$.  The elementary full-root product gives
+\begin{equation}\label{eq:full-root-product}
+ \prod_{\zeta\in\cZ_k}(1-\zeta z)
+ =1-(3z/4)^{4k},
+\end{equation}
+which is \eqref{eq:hidden-factor}.
+\end{proof}
+
+\begin{remark}[Exact scope of the counterexample]
+Theorem~\ref{thm:hidden-shell} is a finite normal spectral
+information-class example.  It proves that strict-prefix moments do not
+control padded root distance without a rank cap, and that an entire shell may
+first appear at the excluded endpoint.  It does not realize $K_\sigma$, prove
+a physical head-rank mismatch, show that the actual $D_{4k}$ diverges, or
+refute a future signed aggregate theorem.
+\end{remark}
+
+\section{The RH-299 threshold on the physical cut}
+
+RH-299 proves that if both root multisets lie in $|z|\le B$, then for every
+integer $m\ge3$ \citep{WangRootTransport2026}
+\begin{equation}\label{eq:rh299-bound}
+ D_m(R):=\sum_{n=2}^{m-1}
+ \frac{|p_n(X)-p_n(Y)|R^n}{n}
+ \le d_1^0(X,Y)R\sum_{j=1}^{m-2}(BR)^j.
+\end{equation}
+
+\begin{proposition}[Physical-clock rate thresholds]
+\label{prop:thresholds}
+Put $m=4k$ with the clock \eqref{eq:clock}, and suppose $BR>1$ and
+\begin{equation}\label{eq:matching-rate}
+ d_1^0(\cH_\sigma,\cY_k)=O(\sigma^\gamma).
+\end{equation}
+Then the right side of \eqref{eq:rh299-bound} tends to zero if
+\begin{equation}\label{eq:general-threshold}
+ \gamma>\frac{2\log(BR)}{\log\lambda}.
+\end{equation}
+For the source-safe common cap $B=1/r_H$, this becomes
+\begin{equation}\label{eq:global-threshold}
+ \gamma>\frac{2\log(R/r_H)}{\log\lambda}
+ =1.926813889034004\ldots.
+\end{equation}
+If one had the additional local actual-head cap
+\begin{equation}\label{eq:local-cap}
+ |\mu|\le\beta+o(1)\qquad(\mu\in\cH_\sigma),
+\end{equation}
+then the limiting threshold would instead be
+\begin{equation}\label{eq:local-threshold}
+ \gamma>\frac{2\log(\beta R)}{\log\lambda}
+ =0.926813889034004\ldots.
+\end{equation}
+The local cap is not supplied by the repository.
+\end{proposition}
+
+\begin{proof}
+Since $BR>1$, the geometric sum in \eqref{eq:rh299-bound} is
+$O((BR)^m)$.  Equations \eqref{eq:clock} and $m=4k$ give
+\begin{equation}\label{eq:clock-growth}
+ m=\frac{2\log(1/\sigma)}{\log\lambda}+O(1),
+ \qquad
+ (BR)^m=O\!\left(
+ \sigma^{-2\log(BR)/\log\lambda}
+ \right).
+\end{equation}
+Multiplication by \eqref{eq:matching-rate} proves
+\eqref{eq:general-threshold}.  Substituting $B=1/r_H$ gives
+\eqref{eq:global-threshold}.  Substituting
+$\beta=(r_H\sqrt\lambda)^{-1}$ gives the limiting value in
+\eqref{eq:local-threshold}.  More precisely, for every $\gamma$ strictly
+above that value, choose $\varepsilon>0$ so small that
+$\gamma>2\log((\beta+\varepsilon)R)/\log\lambda$.  Equation
+\eqref{eq:local-cap} and $\beta_k\to\beta$ then give the common eventual cap
+$B=\beta+\varepsilon$.  The two displayed limiting thresholds differ by
+exactly one, because
+\begin{equation}\label{eq:threshold-gap}
+ \frac{2}{\log\lambda}
+ \log\frac{R/r_H}{\beta R}
+ =\frac{2}{\log\lambda}\log\sqrt\lambda=1.
+\end{equation}
+\end{proof}
+
+The specialization is only a sufficient interface.  Even
+\eqref{eq:global-threshold} requires an actual matching theorem, and
+Corollary~\ref{cor:rank-law} shows that such a rate also contains the
+eventual exact rank law.  The smaller number in \eqref{eq:local-threshold}
+cannot be quoted for the actual head before proving the local cap.
+
+\section{Protocol, verdict, and next admissible input}
+
+The executable artifact uses exact rational constants for $q$, $r_H$, $R$,
+and the hidden radius.  It evaluates the counterloop and full-shell power
+formulas, the rank-mismatch floor, the rational-function degree ledger, and
+the two RH-299 thresholds.  Finite rows at $k=3,5,9,17$ are reproduction
+checks only; they are not noisy spectral observations and have no
+asymptotic evidentiary role.
+
+The results separate three conclusions:
+\begin{enumerate}
+\item The rank-lock and shifted-moment theorems are exact finite-spectral
+statements in the declared common-Hardy data type.
+\item The hidden shell proves a strict cap-free information-class
+obstruction, not a physical nonidentification theorem.
+\item No source supplies an actual rank law, local shell cap, root list, or
+matching rate.  Therefore RH-299 activation without these hypotheses is
+\texttt{STOP\_SCOPED}.
+\end{enumerate}
+
+Aggregate moment, Fourier, and Hardy routes remain
+\texttt{NOT\_TESTABLE}/open: the counterexample prevents a cap-free logical
+upgrade to root matching but does not decide the actual aggregate defect.
+The direct annular route of RH-300 \citep{WangAnnularCriteria2026} also
+remains \texttt{NOT\_TESTABLE}/open because no theorem controls
+\begin{equation}\label{eq:annular-g}
+ g_\sigma(z)=\sum_{n\ge2}
+ (\tau_{\sigma,n}-a_n)\frac{z^n}{n}
+\end{equation}
+on any annulus $1.4<\rho<r_H\lambda$.  The narrow reopen inputs are an actual
+head-rank theorem, an actual root matching with a proved common cap and
+sufficient rate, or direct annular convergence for \eqref{eq:annular-g}.
+
+No determinant gluing is activated, and Gates A--E remain false/open.  This
+paper proves neither physical head nonidentification nor physical defect
+divergence.  It constructs no Hilbert--Polya operator, identifies no Riemann
+zero, proves no von Mangoldt trace or completed-zeta divisor equality, and
+does not prove the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

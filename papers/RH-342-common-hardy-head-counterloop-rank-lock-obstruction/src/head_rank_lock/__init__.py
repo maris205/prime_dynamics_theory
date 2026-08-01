@@ -1,0 +1,41 @@
+"""RH-342 common-Hardy head/counterloop rank-lock diagnostics."""
+
+from .core import (
+    HIDDEN_RADIUS,
+    Q_HEAD,
+    R_H,
+    R_TRACE,
+    common_clock_thresholds,
+    counterloop_power_sum,
+    counterloop_rank,
+    decimal_text,
+    finite_diagnostic,
+    genus_one_log_coefficient,
+    hidden_shell_power_sum,
+    hidden_shell_rank,
+    physical_constants,
+    rank_lock_lower_bound,
+    root_l1_budget_bound,
+    shifted_uniqueness_certificate,
+    strict_prefix_aliases,
+)
+
+__all__ = [
+    "HIDDEN_RADIUS",
+    "Q_HEAD",
+    "R_H",
+    "R_TRACE",
+    "common_clock_thresholds",
+    "counterloop_power_sum",
+    "counterloop_rank",
+    "decimal_text",
+    "finite_diagnostic",
+    "genus_one_log_coefficient",
+    "hidden_shell_power_sum",
+    "hidden_shell_rank",
+    "physical_constants",
+    "rank_lock_lower_bound",
+    "root_l1_budget_bound",
+    "shifted_uniqueness_certificate",
+    "strict_prefix_aliases",
+]
