@@ -1,0 +1,400 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\one}{\mathbf 1}
+
+\title{A Complete Critical Boundary-Orbit Atom and the\
+Double-Alias Compensation Demand}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+At the physical first alias, RH-338 extracted $2k-1$ marked points of the
+primitive boundary orbit from the frozen far cell.  We complete that
+extraction across the full RH-334 raw partition.  Let
+\[
+ \Gamma_k=\{|f^j(p_k)|:0\le j<2k\},\qquad
+ G_k=\frac{r_H^{-2k}}{1+|M_k|}.
+\]
+The folded orbit has exactly $2k$ distinct points, every point has multiplier
+$M_k$, and finite-set localization has zero noisy trace.  Thus the complete
+signed raw atom is $-F_k^{\rm orb}$, where $F_k^{\rm orb}=2kG_k$.
+
+The sole point not certified far by RH-338 is $\xi_k=h(p_k)<b$.  With
+$\epsilon_k=\one_{\{\xi_k\in J^-\}}$, the eventual orbit counts in
+$(J^-,J^+,F)$ are exactly $(\epsilon_k,0,2k-\epsilon_k)$.  Removing the full
+orbit before evaluating the deterministic rest gives
+\[
+ q_{\sigma,k,2k}=\cT_k^{\rm rest}+\cP_{\sigma,2k}
+ -\cA_{k,2k}-F_k^{\rm orb}.
+\]
+Since the direct coefficient is $p=q-d$, critical direct closure requires
+\[
+ \cT_k^{\rm rest}+\cP_{\sigma,2k}-d_{\sigma,k,2k}
+ =\cA_{k,2k}+F_k^{\rm orb}+o(H_k).
+\]
+The missing point is not target-negligible.  If
+$D_k^{\rm orb}=(2k-1)G_k$ is the RH-338 atom, then
+$F_k^{\rm orb}-D_k^{\rm orb}=G_k$ and
+\[
+ \frac{G_k}{H_k}=\frac{(\beta R)^{2k}}{C_Mk}\{1+o(1)\}\longrightarrow\infty.
+\]
+Moreover $F_k^{\rm orb}/\cA_{k,2k}\to1$, so the required positive side is
+asymptotically twice the alias packet.  This is an exact physical raw-trace
+decomposition and a necessary compensation law, not a compensation theorem.
+The orbit-free rest, critical verdict, strict prefix, determinant gluing, and
+Gates A--E remain open.  No Riemann-hypothesis conclusion follows.
+\end{abstract}
+
+\section{Source-locked orbit and observation type}
+
+Let $u_c\in(1,2)$ be the real root of
+\begin{equation}\label{eq:uc}
+ u_c^3-2u_c^2+2u_c-2=0,
+\end{equation}
+and put
+\begin{equation}\label{eq:physical}
+ f(x)=1-u_cx^2,\qquad r=u_c-1,\qquad
+ \lambda=2u_cr>1,\qquad b=u_c^{-1/2}.
+\end{equation}
+The two-step component map is $S=f^2$.  Its inverse branch used by the
+boundary word is
+\begin{equation}\label{eq:h}
+ h(x)=\sqrt{\frac{1-\sqrt{(1-x)/u_c}}{u_c}},
+ \qquad h(1)=b.
+\end{equation}
+Let $p_k=p_{2k}$ be the primitive point coded by $CA(CB)^{k-1}$.  RH-17
+proves that the $S$-orbit is the ordered chain
+\begin{equation}\label{eq:S-chain}
+ p_k,h^{k-1}(p_k),h^{k-2}(p_k),\ldots,h(p_k),
+\end{equation}
+and that its physical multiplier obeys
+\begin{equation}\label{eq:M}
+ M_k=(f^{2k})'(p_k)=(S^k)'(p_k)
+ =-C_M\lambda^k\{1+o(1)\},\qquad C_M>0.
+\end{equation}
+Primitivity gives $2k$ distinct signed marked points
+\citep{WangLongCycle2026,WangBoundaryMonodromy2026}.
+
+Work on the exact physical clock and Hardy normalization
+\begin{equation}\label{eq:clock}
+ k=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),\qquad
+ r_H=\frac{17}{20},\qquad R=\frac75,\qquad
+ H_k=kR^{-2k}.
+\end{equation}
+For fixed $A>0$, freeze the corrected RH-334 partition
+\begin{align}
+ J^-&=[0,1]\cap[b-A\sqrt\sigma,b),\label{eq:Jminus}\\
+ J^+&=[0,1]\cap[b,b+A\sqrt\sigma],\label{eq:Jplus}\\
+ F&=[0,1]\setminus(J^-\cup J^+).\label{eq:F}
+\end{align}
+For measurable $J\subset[0,1]$ let
+\begin{equation}\label{eq:localized}
+ L_{\sigma,n}(J)=\operatorname{Tr}(M_JK_\sigma^n),\qquad
+ P_n^{\rm abs}(J)=
+ \sum_{\substack{f^n(x)=x\\ |x|\in J}}
+ \frac1{|1-(f^n)'(x)|}.
+\end{equation}
+RH-334 proves that absolute value is a multiplier-preserving bijection from
+the signed fixed points to the folded fixed points, preserving minimal period
+and marked-point multiplicity.  It also proves the exact raw partition
+\begin{equation}\label{eq:raw}
+ \cT_{\sigma,n}:=r_H^{-n}
+ \{\operatorname{Tr}K_\sigma^n-P_n\}
+ =\cB_{\sigma,k,n}+\cS_{\sigma,k,n}+\cR_{\sigma,k,n},
+\end{equation}
+where each slot is the localized noisy trace minus the localized
+deterministic flat trace on the corresponding frozen cell
+\citep{WangObservation2026}.  These are cyclic trace observations, not
+forward probabilities.
+
+\section{Complete cellwise orbit extraction}
+
+Define the complete folded marked orbit and its critical member by
+\begin{equation}\label{eq:Gamma}
+ \Gamma_k=\{|f^j(p_k)|:0\le j<2k\},\qquad
+ \xi_k=|f^{2k-2}(p_k)|=h(p_k)<b.
+\end{equation}
+RH-338 proves that the other $2k-1$ marked points form a set
+$\Omega_k\subset F$ eventually.  The location of $\xi_k$ is left open there
+because its distance from $b$ is on the window scale
+\citep{WangFarAtom2026}.
+
+Put
+\begin{equation}\label{eq:G}
+ G_k=\frac{r_H^{-2k}}{1+|M_k|},\qquad
+ \epsilon_k=\one_{\{\xi_k\in J^-\}}.
+\end{equation}
+
+\begin{theorem}[Complete cellwise boundary-orbit atom]
+\label{thm:cellwise}
+For all sufficiently large $k$, $\Gamma_k$ consists of $2k$ distinct folded
+marked points with common flat-trace weight $(1+|M_k|)^{-1}$.  Its counts in
+$(J^-,J^+,F)$ are
+\begin{equation}\label{eq:counts}
+ (\epsilon_k,0,2k-\epsilon_k).
+\end{equation}
+Define orbit-free rest slots by applying the same localized raw ledger to
+$J^-\setminus\Gamma_k$, $J^+\setminus\Gamma_k$, and
+$F\setminus\Gamma_k$.  Then exactly
+\begin{align}
+ \cB_{\sigma,k,2k}&=\cB_k^{\rm rest}-\epsilon_kG_k,
+ \label{eq:Brest}\\
+ \cS_{\sigma,k,2k}&=\cS_k^{\rm rest},
+ \label{eq:Srest}\\
+ \cR_{\sigma,k,2k}&=\cR_k^{\rm rest}-(2k-\epsilon_k)G_k.
+ \label{eq:Rrest}
+\end{align}
+Consequently, with
+\begin{equation}\label{eq:Trest}
+ \cT_k^{\rm rest}=\cB_k^{\rm rest}+\cS_k^{\rm rest}
+ +\cR_k^{\rm rest},\qquad F_k^{\rm orb}=2kG_k,
+\end{equation}
+the full raw trace has the partition-independent decomposition
+\begin{equation}\label{eq:raw-complete}
+ \boxed{\cT_{\sigma,2k}=\cT_k^{\rm rest}-F_k^{\rm orb}.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The folding bijection and primitivity give the cardinality and common
+multiplier.  Equation~\eqref{eq:M} is negative eventually, so each physical
+weight is $(1+|M_k|)^{-1}$.  The $2k-1$ points of $\Omega_k$ lie in $F$, while
+$\xi_k<b$ lies in either $J^-$ or $F$ and never in $J^+$.  This proves
+\eqref{eq:counts}.
+
+A finite set has zero multiplication operator on $L^2[0,1]$.  Therefore its
+localized noisy trace vanishes exactly.  Removing a marked point changes a
+raw cell ledger only by deleting its positive deterministic weight, which
+proves \eqref{eq:Brest}--\eqref{eq:Rrest}.  Summation cancels the allocation
+$\epsilon_k$ and gives \eqref{eq:raw-complete}.
+\end{proof}
+
+\begin{remark}[Orbit-free does not mean empty or diffuse]
+The rest still contains the noisy trace over a full-measure set and every
+other deterministic periodic point.  No sign, localization estimate, or
+smallness claim is attached to it.  The analytic subpartition exposes an
+exact constituent of the already-frozen physical observation; it does not
+replace that observation by a fitted window.
+\end{remark}
+
+\section{The typed critical coefficient}
+
+Retain the RH-334 parity and alias packets
+\begin{align}
+ \cP_{\sigma,n}&=r_H^{-n}\{(-1)^n-\lambda_-(\sigma)^n\},
+ \label{eq:parity}\\
+ \cA_{k,n}&=s_{k,n}-p_n^{\rm pole}.
+ \label{eq:alias-general}
+\end{align}
+At $n=2k$,
+\begin{equation}\label{eq:alias}
+ \cA_{k,2k}=(2k-2)\beta_k^{2k}+2\beta^{2k},\qquad
+ \beta_k^{2k}=\frac{r_H^{-2k}}{|M_k|},\qquad
+ \beta=\frac1{r_H\sqrt\lambda}.
+\end{equation}
+The Hardy full-trace constituent and direct modulus-complement coefficient
+obey
+\begin{equation}\label{eq:pq}
+ q_{\sigma,k,n}=\cT_{\sigma,n}+\cP_{\sigma,n}-\cA_{k,n},
+ \qquad
+ p_{\sigma,k,n}=q_{\sigma,k,n}-d_{\sigma,k,n},
+\end{equation}
+where $d_{\sigma,k,n}=h_{\sigma,n}-s_{k,n}$ is the separate
+noisy-head/counterloop defect \citep{WangObservation2026}.
+
+\begin{theorem}[Complete critical coefficient and compensation demand]
+\label{thm:critical}
+At the physical critical order,
+\begin{align}
+ q_{\sigma,k,2k}
+ &=\cT_k^{\rm rest}+\cP_{\sigma,2k}
+   -\cA_{k,2k}-F_k^{\rm orb},\label{eq:q-complete}\\
+ p_{\sigma,k,2k}
+ &=\cT_k^{\rm rest}+\cP_{\sigma,2k}-d_{\sigma,k,2k}
+   -\cA_{k,2k}-F_k^{\rm orb}.
+ \label{eq:p-complete}
+\end{align}
+Consequently
+\begin{equation}\label{eq:compensation}
+ p_{\sigma,k,2k}=o(H_k)
+ \quad\Longleftrightarrow\quad
+ \cT_k^{\rm rest}+\cP_{\sigma,2k}-d_{\sigma,k,2k}
+ =\cA_{k,2k}+F_k^{\rm orb}+o(H_k).
+\end{equation}
+In particular, vanishing of the direct weighted prefix at the strict cut
+$2\le n<4k$ implies \eqref{eq:compensation}.
+\end{theorem}
+
+\begin{proof}
+Substitute \eqref{eq:raw-complete} into \eqref{eq:pq}; this gives
+\eqref{eq:q-complete} and \eqref{eq:p-complete}.  Rearrangement proves the
+equivalence.  The critical summand in the nonnegative direct prefix is
+\[
+ \frac{|p_{\sigma,k,2k}|R^{2k}}{2k}
+ =\frac{|p_{\sigma,k,2k}|}{2H_k}.
+\]
+Thus prefix vanishing forces $p_{\sigma,k,2k}=o(H_k)$.
+\end{proof}
+
+This theorem expands the quantity used by RH-340.  If
+$D_k^{\rm orb}=(2k-1)G_k$ and
+$C_k^0=q_{\sigma,k,2k}+D_k^{\rm orb}$, then exactly
+\begin{equation}\label{eq:C0}
+ \boxed{C_k^0=\cT_k^{\rm rest}+\cP_{\sigma,2k}
+ -\cA_{k,2k}-G_k.}
+\end{equation}
+Hence the RH-340 law $C_k^0-d=D_k^{\rm orb}+o(H_k)$ is algebraically
+equivalent to \eqref{eq:compensation}; the advance is the physical
+decomposition of its previously unexpanded combined complement
+\citep{WangSynchronizedPrefix2026}.
+
+\section{The omitted marked point is super-target}
+
+\begin{theorem}[Complete-orbit and missing-point scales]
+\label{thm:scales}
+As $k\to\infty$,
+\begin{align}
+ F_k^{\rm orb}
+ &=\frac{2k}{C_M}\beta^{2k}\{1+o(1)\},
+ \label{eq:F-asymptotic}\\
+ \frac{F_k^{\rm orb}}{\cA_{k,2k}}&\longrightarrow1,
+ \label{eq:F-over-A}\\
+ \frac{F_k^{\rm orb}}{H_k}
+ &=\frac2{C_M}(\beta R)^{2k}\{1+o(1)\}\longrightarrow\infty.
+ \label{eq:F-over-H}
+\end{align}
+Moreover
+\begin{equation}\label{eq:F-D}
+ \frac{F_k^{\rm orb}}{D_k^{\rm orb}}=\frac{2k}{2k-1},
+ \qquad F_k^{\rm orb}-D_k^{\rm orb}=G_k,
+\end{equation}
+but
+\begin{equation}\label{eq:G-over-H}
+ \frac{G_k}{H_k}
+ =\frac1{C_Mk}(\beta R)^{2k}\{1+o(1)\}
+ \longrightarrow\infty.
+\end{equation}
+Finally,
+\begin{align}
+ \cA_{k,2k}+F_k^{\rm orb}
+ &=\frac{4k}{C_M}\beta^{2k}\{1+o(1)\},
+ \label{eq:double}\\
+ \frac{\cA_{k,2k}+F_k^{\rm orb}}{\cA_{k,2k}}
+ &\longrightarrow2.
+ \label{eq:double-ratio}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Equation~\eqref{eq:M} gives
+\[
+ G_k=\frac1{C_M}\beta^{2k}\{1+o(1)\}.
+\]
+Multiplication by $2k$ proves \eqref{eq:F-asymptotic}.  RH-338 gives the
+same leading asymptotic for \eqref{eq:alias}, proving
+\eqref{eq:F-over-A}.  Division by $H_k$ gives
+\eqref{eq:F-over-H}.  The exact RH-336 certificate $\beta R>1$ makes the
+limit infinite \citep{WangProjectorMass2026,WangFarAtom2026}.
+
+Equations \eqref{eq:F-D} are immediate from the exact marked-point counts.
+Dividing the asymptotic for $G_k$ by $H_k$ proves \eqref{eq:G-over-H}; an
+exponential with base $\beta R>1$ dominates $k$.  Adding the two equal
+leading asymptotics proves \eqref{eq:double}--\eqref{eq:double-ratio}.
+\end{proof}
+
+Thus the relative statement
+$F_k^{\rm orb}=D_k^{\rm orb}\{1+o(1)\}$ is true, but the target-scale
+replacement
+$F_k^{\rm orb}=D_k^{\rm orb}+o(H_k)$ is false.  The exact finite-$k$
+normalization also gives
+\begin{equation}\label{eq:finite-relation}
+ \cA_{k,2k}-F_k^{\rm orb}
+ =2(\beta^{2k}-\beta_k^{2k})
+ +\frac{2k\beta_k^{2k}}{1+|M_k|}.
+\end{equation}
+The repository does not lock the sign of this expression, and none is used.
+
+Relative to the positive demand in \eqref{eq:compensation}, target closure
+requires precision
+\begin{equation}\label{eq:precision}
+ o\!\left(\frac{H_k}{\cA_{k,2k}+F_k^{\rm orb}}\right)
+ =o\!\left((\beta R)^{-2k}\right).
+\end{equation}
+This remains a signed aggregate requirement.  Taking separate absolute
+values of the alias, orbit, parity, rest, and head terms cannot demonstrate
+the cancellation.
+
+\section{Phase-resolved cell allocation}
+
+The aggregate atom is independent of the unresolved cell allocation, but
+the latter can be stated sharply.  Define
+\begin{equation}\label{eq:qb}
+ q_{{\rm b},\sigma,k}=\frac{b-h(p_k)}{\sqrt\sigma},\qquad
+ \eta_\sigma=k-\frac{\log(1/\sigma)}{2\log\lambda}.
+\end{equation}
+The half-open endpoint convention gives the exact finite relation
+\begin{equation}\label{eq:epsilon}
+ \epsilon_k=\one_{\{q_{{\rm b},\sigma,k}\le A\}}.
+\end{equation}
+RH-327 proves, along $\eta_\sigma\to\eta$,
+\begin{equation}\label{eq:qb-limit}
+ q_{{\rm b},\sigma,k}\longrightarrow
+ Q(\eta):=\frac{\sqrt{C_{\rm b}}\lambda^{-\eta}}{2u_c}.
+\end{equation}
+Therefore $\epsilon_k$ is eventually one if $Q(\eta)<A$ and eventually zero
+if $Q(\eta)>A$.  At $Q(\eta)=A$, the available $o(1)$ expansion does not
+decide stabilization.  Exact finite equality belongs to $J^-$ because its
+left endpoint is included.  This phase sensitivity is why
+$F_k^{\rm orb}$ is a complete raw-partition atom, not always a far atom
+\citep{WangNeighboringBudget2026}.
+
+\section{Executable audit and claim boundary}
+
+The artifact reconstructs the boundary orbit at $k=2,4,8,16,32$, checks all
+$2k$ folded points and their cell counts, evaluates the exact missing-point
+and complete-orbit identities, and reproduces the approach to the scale
+ratios.  A rational fixture independently verifies the typed equations
+\eqref{eq:q-complete}--\eqref{eq:p-complete}.  These finite rows are formula
+checks only, never all-order or physical-convergence evidence.
+
+The exact new edge is limited to the complete physical orbit subledger, its
+cellwise raw decomposition, the target-supercritical missing point, and the
+necessary compensation law.  No theorem estimates
+$\cT_k^{\rm rest}-d_{\sigma,k,2k}$ at moving order.  Hence critical signed
+compensation and critical nonclosure both remain \texttt{NOT\_TESTABLE}/open.
+No conclusion follows for the actual $D_{4k}$ head budget, the lower
+sideband, the remaining off-alias background, or the direct strict prefix.
+
+RH-343's finite normal models are not substituted for this physical raw
+trace \citep{WangEqualInvariant2026}.  RH-288 remains inactive, and the
+ten-layer frontier of RH-341 is not promoted \citep{WangActualFrontier2026}.
+Gates A--E remain false/open.  This paper constructs no Hilbert--Polya
+operator, identifies no Riemann zero, proves no von Mangoldt prime-power
+trace, proves no completed-zeta divisor equality, and does not prove the
+Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
