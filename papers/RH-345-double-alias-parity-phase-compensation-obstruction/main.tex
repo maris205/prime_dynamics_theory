@@ -1,0 +1,304 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cA}{\mathcal A}
+
+\title{A Double-Alias Parity-Phase Obstruction at the\
+Critical Order}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+RH-344 completes the physical boundary-orbit extraction at the first alias
+and gives
+\[
+ p_{\sigma,k,2k}=Y_k+\cP_{\sigma,2k}-S_k,
+ \qquad
+ Y_k=\mathcal T_k^{\rm rest}-d_{\sigma,k,2k},
+ \qquad
+ S_k=\cA_{k,2k}+F_k^{\rm orb}.
+\]
+Here $S_k/\cA_{k,2k}\to2$ and $\cA_{k,2k}/H_k\to\infty$.  Combining this
+with the actual RH-326 phase law
+\[
+ \frac{\cP_{\sigma,2k}}{\cA_{k,2k}}
+ =C_*C_M\lambda^{\eta_\sigma}\{1+o(1)\}
+\]
+shifts the scalar balance from one alias packet to two.  The unique symbolic
+phase is
+\[
+ \eta_2=\frac{\log(2/(C_*C_M))}{\log\lambda}.
+\]
+If the actual orbit-free remainder satisfies $Y_k=o(H_k)$, then every fixed
+phase other than $\eta_2$ has a divergent critical weighted contribution.
+This is a conditional physical obstruction, not aggregate nonclosure.
+
+At $\eta_2$, the proved relative $o(1)$ phase law remains exponentially too
+weak for the necessary relative precision $o((\beta R)^{-2k})$.  We prove an
+exact scalar information-class theorem.  Two parity eigenvalue sequences of
+the form $\lambda_{-,k}=-(1-\delta_k)$ both satisfy
+$\delta_k=C_*\sqrt{\sigma_k}\{1+o(1)\}$ and the exact even parity-packet
+formula.  One makes the critical scalar residual zero; the other leaves
+$\cA_{k,2k}/k$, whose weighted contribution diverges.  These scalar sequences
+are not two noisy operators.  Actual signed compensation, the strict prefix,
+determinant gluing, and Gates A--E remain open.  No Riemann-hypothesis
+conclusion follows.
+\end{abstract}
+
+\section{The complete critical scalar ledger}
+
+Use the physical natural clock and target
+\begin{equation}\label{eq:clock}
+ k=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),\qquad
+ \eta_\sigma=k-\frac{\log(1/\sigma)}{2\log\lambda},\qquad
+ H_k=kR^{-2k},\quad R=\frac75.
+\end{equation}
+RH-344 gives the exact direct critical coefficient
+\begin{equation}\label{eq:critical}
+ p_{\sigma,k,2k}=Y_k+\cP_{\sigma,2k}-S_k,
+ \qquad
+ Y_k=\mathcal T_k^{\rm rest}-d_{\sigma,k,2k},
+ \qquad
+ S_k=\cA_{k,2k}+F_k^{\rm orb}.
+\end{equation}
+The two positive deterministic packets obey
+\begin{align}
+ \cA_{k,2k}
+ &=\frac{2k}{C_M}\beta^{2k}\{1+o(1)\},
+ \label{eq:A-scale}\\
+ F_k^{\rm orb}
+ &=\frac{2k}{C_M}\beta^{2k}\{1+o(1)\},
+ \label{eq:F-scale}
+\end{align}
+where $\beta=(r_H\sqrt\lambda)^{-1}$ and $\beta R>1$.  Therefore
+\begin{align}
+ \frac{S_k}{\cA_{k,2k}}&\longrightarrow2,
+ \label{eq:S-over-A}\\
+ S_k&=\frac{4k}{C_M}\beta^{2k}\{1+o(1)\},
+ \qquad
+ \frac{S_k}{H_k}=\frac4{C_M}(\beta R)^{2k}\{1+o(1)\}
+ \longrightarrow\infty.
+ \label{eq:S-scale}
+\end{align}
+These are exact physical deterministic constituents.  No assumption has yet
+been made about the signed orbit-free remainder $Y_k$
+\citep{WangCompleteOrbit2026}.
+
+The actual parity eigenvalue satisfies the square-root boundary-layer law
+\begin{equation}\label{eq:delta}
+ \lambda_-(\sigma)=-(1-\delta_\sigma),\qquad
+ \delta_\sigma=C_*\sqrt\sigma+o(\sqrt\sigma),\qquad C_*>0,
+\end{equation}
+and its even packet is
+\begin{equation}\label{eq:P}
+ \cP_{\sigma,2k}=r_H^{-2k}\{1-(1-\delta_\sigma)^{2k}\}.
+\end{equation}
+RH-326 proves, for bounded physical phase,
+\begin{equation}\label{eq:phase-law}
+ \frac{\cP_{\sigma,2k}}{\cA_{k,2k}}
+ =C_*C_M\lambda^{\eta_\sigma}\{1+o(1)\}
+\end{equation}
+\citep{WangParityBoundary2026,WangFirstAlias2026}.
+
+\section{Off-balance scalar obstruction}
+
+Put
+\begin{equation}\label{eq:gamma}
+ \gamma(\eta)=C_*C_M\lambda^\eta.
+\end{equation}
+Since $\lambda>1$, $\gamma$ is strictly increasing.  The complete scalar
+demand has the unique leading balance phase
+\begin{equation}\label{eq:eta-two}
+ \boxed{\eta_2=\frac{\log(2/(C_*C_M))}{\log\lambda}},
+ \qquad \gamma(\eta_2)=2.
+\end{equation}
+This differs from the single-alias equation $\gamma=1$ because the complete
+raw orbit contributes the second alias-sized packet.
+
+\begin{theorem}[Conditional physical off-balance obstruction]
+\label{thm:off-balance}
+Consider an actual physical sequence with bounded phase
+$\eta_\sigma\to\eta$.  If
+\begin{equation}\label{eq:Y-small}
+ Y_k=o(H_k)
+\end{equation}
+and $\eta\ne\eta_2$, then
+\begin{equation}\label{eq:divergence}
+ \frac{|p_{\sigma,k,2k}|}{2H_k}\longrightarrow\infty.
+\end{equation}
+More precisely,
+\begin{equation}\label{eq:divergence-rate}
+ \frac{|p_{\sigma,k,2k}|}{2H_k}
+ =\frac{|\gamma(\eta)-2|}{C_M}
+ (\beta R)^{2k}\{1+o(1)\}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:A-scale}, $H_k/\cA_{k,2k}\to0$, so
+\eqref{eq:Y-small} gives $Y_k/\cA_{k,2k}\to0$.  Divide
+\eqref{eq:critical} by $\cA_{k,2k}$ and use
+\eqref{eq:S-over-A} and \eqref{eq:phase-law}:
+\[
+ \frac{p_{\sigma,k,2k}}{\cA_{k,2k}}
+ \longrightarrow\gamma(\eta)-2\ne0.
+\]
+Finally \eqref{eq:A-scale} divided by $2H_k$ gives
+$\cA_{k,2k}/(2H_k)=C_M^{-1}(\beta R)^{2k}\{1+o(1)\}$.
+This proves both claims.
+\end{proof}
+
+\begin{remark}[Why this is not aggregate nonclosure]
+The hypothesis \eqref{eq:Y-small} is a statement about the actual signed
+orbit-free raw remainder and head defect.  No repository theorem proves it.
+The theorem stops parity as a scalar-only compensation mechanism off balance;
+it does not stop cancellation by $Y_k$.
+\end{remark}
+
+\section{The balance phase still misses target precision}
+
+At $\eta=\eta_2$, the leading ratio in \eqref{eq:phase-law} equals two, but
+critical closure requires much more.
+
+\begin{proposition}[Necessary balance-phase precision]
+\label{prop:precision}
+Under $Y_k=o(H_k)$, critical closure is equivalent to
+\begin{equation}\label{eq:scalar-match}
+ \cP_{\sigma,2k}=S_k+o(H_k).
+\end{equation}
+Relative to $S_k$, the required precision is
+\begin{equation}\label{eq:relative-precision}
+ o\!\left(\frac{H_k}{S_k}\right)
+ =o\!\left((\beta R)^{-2k}\right).
+\end{equation}
+The source law \eqref{eq:phase-law} supplies only relative $o(1)$ and hence
+does not decide \eqref{eq:scalar-match}, even at $\eta_2$.
+\end{proposition}
+
+\begin{proof}
+Rearrange \eqref{eq:critical} and use $Y_k=o(H_k)$.  Equation
+\eqref{eq:S-scale} gives \eqref{eq:relative-precision}.  The final statement
+is the strict distinction between an unspecified vanishing relative error
+and the exponentially smaller target-relative error.
+\end{proof}
+
+This proposition is not merely a warning about rates.  The next theorem gives
+two exact scalar sequences with the same source asymptotic and opposite
+target behavior.
+
+\section{Exact scalar underdetermination at balance}
+
+Freeze the balance-phase clock
+\begin{equation}\label{eq:sigma-balance}
+ \sigma_k=\lambda^{-2(k-\eta_2)},
+ \qquad
+ C_*\sqrt{\sigma_k}=\frac2{C_M}\lambda^{-k}.
+\end{equation}
+For any desired scalar packet $0<X_k<r_H^{-2k}$, define
+\begin{equation}\label{eq:inverse-parity}
+ \delta_k(X)=1-\{1-r_H^{2k}X_k\}^{1/(2k)},
+ \qquad
+ \lambda_{-,k}(X)=-(1-\delta_k(X)).
+\end{equation}
+Then $\lambda_{-,k}(X)\in(-1,0)$ and its exact even parity packet is $X_k$.
+
+\begin{theorem}[Opposite exact scalar completions]
+\label{thm:scalar-completions}
+For all sufficiently large $k$, let
+\begin{equation}\label{eq:two-packets}
+ X_k^{\rm close}=S_k,
+ \qquad
+ X_k^{\rm far}=S_k+\frac{\cA_{k,2k}}k.
+\end{equation}
+The two sequences \eqref{eq:inverse-parity} satisfy the same square-root law
+\begin{equation}\label{eq:common-delta}
+ \delta_k(X^{\rm close})
+ =C_*\sqrt{\sigma_k}\{1+o(1)\},
+ \qquad
+ \delta_k(X^{\rm far})
+ =C_*\sqrt{\sigma_k}\{1+o(1)\}.
+\end{equation}
+In the scalar information class with $Y_k=0$, the close sequence has
+$p_{\sigma,k,2k}=0$, while the far sequence has
+\begin{equation}\label{eq:far-residual}
+ p_{\sigma,k,2k}=\frac{\cA_{k,2k}}k,
+ \qquad
+ \frac{|p_{\sigma,k,2k}|}{2H_k}
+ =\frac1{C_Mk}(\beta R)^{2k}\{1+o(1)\}
+ \longrightarrow\infty.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:S-scale},
+$r_H^{2k}X_k^{\rm close}=O(k\lambda^{-k})\to0$; the far correction is
+smaller by a factor $O(k^{-1})$.  Hence both desired packets lie in the domain
+of \eqref{eq:inverse-parity} eventually.  For $x_k=r_H^{2k}X_k\to0$,
+\begin{equation}\label{eq:root-expansion}
+ 1-(1-x_k)^{1/(2k)}=\frac{x_k}{2k}\{1+o(1)\}.
+\end{equation}
+Equations \eqref{eq:A-scale}--\eqref{eq:S-scale} give, for both choices,
+\[
+ \frac{r_H^{2k}X_k}{2k}
+ =\frac2{C_M}\lambda^{-k}\{1+o(1)\}
+ =C_*\sqrt{\sigma_k}\{1+o(1)\},
+\]
+which proves \eqref{eq:common-delta}.  Substituting the two exact packets into
+\eqref{eq:critical} with $Y_k=0$ gives zero and
+$\cA_{k,2k}/k$.  Divide the latter by $2H_k$ and use
+\eqref{eq:A-scale}.
+\end{proof}
+
+\begin{remark}[Strict information-class interpretation]
+Equation \eqref{eq:inverse-parity} constructs scalar eigenvalue sequences,
+not noisy transfer operators.  It proves that the exact parity-packet form
+and the leading physical square-root law do not determine target closure at
+the balance phase.  It does not replace the actual $\lambda_-(\sigma)$ or
+construct two physical orbit-free remainders.
+\end{remark}
+
+\section{Protocol, verdict, and next physical route}
+
+The executable artifact evaluates the exact inverse parity map at
+$k=8,16,24,32$, verifies both packet recoveries, checks the common leading
+square-root ratio, and records the growing far weighted residual.  Archived
+decimals for $C_*$ and $C_M$ are reproduction inputs only, not interval
+certificates or theorem evidence.
+
+The scalar-only critical route is therefore \texttt{STOP\_SCOPED}: off the
+unique double-alias phase it fails under a target-negligible actual remainder,
+and at the balance phase the source scalar information admits opposite exact
+target behaviors.  Actual signed critical compensation remains
+\texttt{NOT\_TESTABLE}/open because $Y_k$ is not estimated.
+
+The next physical layer is the order-$2k-2$ lower-sideband decomposition.  It
+must retain the same noise clock, freeze the actual cells before evaluation,
+and extract the complete period-$2(k-1)$ boundary orbit before testing any
+scalar mechanism.  Closing one selected order would still not close the
+remaining off-alias prefix \citep{WangSynchronizedPrefix2026}.
+
+RH-288 remains inactive and the RH-341 frontier is not promoted
+\citep{WangActualFrontier2026}.  Gates A--E remain false/open.  This paper
+constructs no Hilbert--Polya operator, identifies no Riemann zero, proves no
+von Mangoldt prime-power trace, proves no completed-zeta divisor equality,
+and does not prove the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
