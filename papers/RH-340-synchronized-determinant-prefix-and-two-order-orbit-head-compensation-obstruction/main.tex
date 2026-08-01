@@ -1,0 +1,346 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cT}{\mathcal T}
+
+\title{Synchronized Determinant Prefixes and a\\
+Two-Order Orbit--Head Compensation Obstruction}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We put the weighted prefix--tail determinant criterion of RH-288
+\citep{WangGluing2026} on the physical first-alias clock.  If
+$L=\log(1/\sigma)$ and
+$k=L/(2\log\lambda)+O(1)$, the integer cut $u=4k$ is still inside the
+one-alias window.  Reapplying the RH-282 mass-and-cap estimate at this cut,
+rather than identifying it with RH-282's displayed $\lceil4L\rceil$ cut,
+proves that both the noisy modulus-complement tail and the deterministic
+target tail vanish on the disk $|z|\le R$, $R=7/5$.
+
+On one common Hardy normalization define the direct complement prefix $P_u$,
+the full-trace prefix $E_u$, and the head/counterloop prefix $D_u$.  The exact
+identity $p_n=q_n-d_n$ gives the sharp finite-sum inequality
+$|P_u-E_u|\le D_u$.  Thus, if the head budget vanishes on the same clock,
+direct complement closure is equivalent to full-trace closure; the RH-330
+critical extraction then reduces the remaining condition to the same-clock
+triple $(D_u,E_{\rm off},q_{2k}/H_k)$.
+
+The critical orbit atom of RH-338 and the mandatory lower sideband atom of
+RH-339 force two signed compensation equations at orders $2k$ and $2k-2$.
+Any proof that takes separate absolute values of the orbit, diffuse, and head
+pieces has a divergent two-atom majorant.  This is a strict synchronization
+theorem and a scoped obstruction to a cancellation-blind route.  It is not a
+lower bound for the fully signed prefix: the aggregate signed complements,
+the head budget, and $E_{\rm off}$ remain \texttt{NOT\_TESTABLE}.  RH-288 is not
+activated, Gates A--E remain false/open, and no Hilbert--Polya or
+Riemann-hypothesis conclusion follows.
+\end{abstract}
+
+\section{The physical cut and its two tails}
+
+Let the physical first-alias clock be the RH-337 clock
+\citep{WangClock2026}:
+\begin{equation}\label{eq:clock}
+ L=\log(1/\sigma),\qquad
+ k=k_\sigma\in\mathbb N,\quad k\ge2,\qquad
+ k=\frac{L}{2\log\lambda}+O(1),
+ \qquad R=\frac75.
+\end{equation}
+The common determinant cut is
+\begin{equation}\label{eq:cut}
+ u=4k,
+ \qquad 2k<u\le4k.
+\end{equation}
+The physical constants use $r_H=17/20$, $q=1/2$, and
+\begin{equation}\label{eq:constants}
+ q_*=(r_H\lambda)^{-1},\qquad
+ qR=\frac7{10},\qquad
+ q_*R=\frac{28}{17\lambda}<1.
+\end{equation}
+The last strict inequality is the exact RH-262 boundary certificate
+\citep{WangBoundaryBudget2026}; RH-336 supplies the certified bound
+$\lambda<17/10$\citep{WangProjectorMass2026}.
+
+Write $\tau_{\sigma,n}$ for the modulus-complement trace in the RH-288
+normalization and $a_n=a_n^{\rm num}$ for the deterministic numerator anchor.
+The direct complement tail and target tail at the cut are
+\begin{align}
+ S_{\sigma,u}(R)&=\sum_{n\ge u}\frac{|\tau_{\sigma,n}|R^n}{n},
+ &T_u(R)&=\sum_{n\ge u}\frac{|a_n|R^n}{n}.
+ \label{eq:tails}
+\end{align}
+
+\begin{theorem}[Short-clock tail synchronization]
+\label{thm:tails}
+Under the RH-282 mass-and-cap estimate \citep{WangSpectralTail2026} and the
+RH-267/RH-268 deterministic all-order envelope
+\citep{WangUnifiedEnvelope2026,WangSharpRadius2026},
+\begin{equation}
+ S_{\sigma,4k}(R)\longrightarrow0,
+ \qquad T_{4k}(R)\longrightarrow0
+ \quad (\sigma\downarrow0).
+ \label{eq:tail-vanish}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+RH-282 gives, for the modulus-complement sequence and every integer $n\ge2$,
+\begin{equation}
+ |\tau_{\sigma,n}|\le C\,\sigma^{-1}q^{n-2}
+ \label{eq:mass-cap}
+\end{equation}
+with a fixed harmless constant $C$.  Hence
+\begin{equation}
+ S_{\sigma,4k}(R)
+ \le \frac{Cq^{-2}}{1-qR}
+ \frac{\sigma^{-1}(qR)^{4k}}{4k}.
+ \label{eq:noisy-bound}
+\end{equation}
+Since $k=L/(2\log\lambda)+O(1)$,
+\begin{equation}
+ \sigma^{-1}(qR)^{4k}
+ =O\!\left(\sigma^{\delta_N}\right),
+ \qquad
+ \delta_N=\frac{2\log(10/7)}{\log\lambda}-1>0.
+ \label{eq:noisy-exponent}
+\end{equation}
+The strict sign follows from $\lambda<17/10<(10/7)^2$.  This proves the
+first limit.
+
+RH-267 gives $|a_n|<48q_*^n$ for every $n\ge2$.  Therefore
+\begin{equation}
+ T_{4k}(R)
+ \le \frac{48(q_*R)^{4k}}{4k(1-q_*R)},
+ \label{eq:target-bound}
+\end{equation}
+which tends to zero by \eqref{eq:constants}.  The argument is a direct
+reapplication of the exact RH-282 mass bound at $4k$; it does not claim that
+the displayed RH-282 choice $\lceil4L\rceil$ is equal to $4k$.
+\end{proof}
+
+\begin{remark}
+The tail theorem closes only the two analytic tail leaves.  It does not
+identify a physical head, a counterloop, or a signed prefix, and therefore it
+does not activate RH-288.
+\end{remark}
+
+\section{A sharp same-clock prefix identity}
+
+Let $q_{\sigma,k,n}$ be the Hardy full-trace constituent of RH-334
+\citep{WangObservation2026} and let
+$d_{\sigma,k,n}=h_{\sigma,n}-s_{k,n}$ be its noisy-head/counterloop defect.
+RH-334 gives the exact identity, for every finite order in the common data
+type,
+\begin{equation}\label{eq:typed-identity}
+ p_{\sigma,k,n}:=\tau_{\sigma,n}-a_n
+ =q_{\sigma,k,n}-d_{\sigma,k,n}.
+\end{equation}
+Define the three nonnegative finite budgets
+\begin{align}
+ P_u(R)&=\sum_{2\le n<u}\frac{|p_{\sigma,k,n}|R^n}{n},
+ &E_u(R)&=\sum_{2\le n<u}\frac{|q_{\sigma,k,n}|R^n}{n},
+ &D_u(R)&=\sum_{2\le n<u}\frac{|d_{\sigma,k,n}|R^n}{n}.
+ \label{eq:budgets}
+\end{align}
+
+\begin{theorem}[Sharp prefix synchronization]
+\label{thm:synchronization}
+For every finite common cut $u$ and radius $R$,
+\begin{equation}\label{eq:sharp-triangle}
+ \bigl|P_u(R)-E_u(R)\bigr|\le D_u(R).
+\end{equation}
+Consequently, on any common moving clock,
+\begin{equation}\label{eq:equiv}
+ D_u(R)\to0
+ \quad\Longrightarrow\quad
+ \left(P_u(R)\to0\ \Longleftrightarrow\ E_u(R)\to0\right).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For each order, \eqref{eq:typed-identity} and the reverse triangle inequality
+give
+\[
+ \bigl||p_{\sigma,k,n}|-|q_{\sigma,k,n}|\bigr|
+ \le |d_{\sigma,k,n}|.
+\]
+Multiply by $R^n/n$ and sum over the finite set $2\le n<u$.  This is
+\eqref{eq:sharp-triangle}.  If $D_u\to0$, the difference of the two
+nonnegative budgets tends to zero, proving \eqref{eq:equiv}.
+\end{proof}
+
+For the one-alias cut \eqref{eq:cut}, RH-330 isolates the critical order
+\citep{WangTransfer2026}:
+\begin{equation}\label{eq:eoff}
+ E_u(R)=E_{{\rm off},u}(R)
+ +\frac{|q_{\sigma,k,2k}|}{2H_k},
+ \qquad H_k=kR^{-2k},
+ \quad u=4k.
+\end{equation}
+Combining \eqref{eq:equiv} and \eqref{eq:eoff} gives the exact conditional
+three-budget criterion
+\begin{equation}\label{eq:three-budget}
+ D_u\to0\ \text{and}\ P_u\to0
+ \quad\Longleftrightarrow\quad
+ D_u\to0,\quad E_{{\rm off},u}\to0,\quad
+ q_{\sigma,k,2k}=o(H_k).
+\end{equation}
+This is a same-clock statement; it permits no splice of a head estimate,
+critical estimate, and off-alias estimate taken on different clocks.
+
+\begin{corollary}[Conditional determinant reduction]
+\label{cor:det-reduction}
+At $u=4k$, the two tails in Theorem~\ref{thm:tails} vanish.  Hence the
+RH-288 determinant quotient would converge uniformly on $|z|\le R$ if the
+left-hand side of \eqref{eq:three-budget} were proved.  The repository does
+not prove those prefix budgets, so RH-288 remains inactive.
+\end{corollary}
+
+\section{Two mandatory orbit atoms}
+
+The critical boundary orbit of RH-338 gives a signed far subledger
+\citep{WangFarAtom2026}
+\begin{equation}\label{eq:critical-scale}
+ \cR_{k,\rm orb}=-D_k^{\rm orb},
+ \qquad
+ \frac{D_k^{\rm orb}}{H_k}\to+\infty,
+ \qquad
+ D_k^{\rm orb}/H_k
+ =\frac2{C_M}(\beta R)^{2k}(1+o(1)),
+\end{equation}
+where $\beta R>1$ is the exact RH-336 certificate
+\citep{WangFarAtom2026,WangProjectorMass2026}.  Put
+\begin{equation}
+ C_k^0:=q_{\sigma,k,2k}+D_k^{\rm orb}.
+ \label{eq:C0}
+\end{equation}
+
+The mandatory lower sideband of RH-339 has $m=k-1$
+\citep{WangSidebandAtom2026} and
+\begin{equation}\label{eq:lower-atom}
+ \cR_{k,-,\rm orb}=-D_m^{\rm orb},
+ \qquad
+ \frac{D_m^{\rm orb}}{H_m}
+ =\frac2{C_M}(\beta R)^{2m}(1+o(1))\to+\infty,
+ \qquad H_m=mR^{-2m}.
+\end{equation}
+Put
+\begin{equation}
+ C_k^-:=q_{\sigma,k,2m}+D_m^{\rm orb}.
+ \label{eq:Cminus}
+\end{equation}
+Both $2k$ and $2m=2k-2$ occur in the prefix $2\le n<u$.
+
+\begin{theorem}[Adjacent-order orbit--head compensation]
+\label{thm:two-order}
+If the direct complement prefix satisfies $P_{4k}(R)\to0$, then
+\begin{align}
+ C_k^0-d_{\sigma,k,2k}
+ &=D_k^{\rm orb}+o(H_k),
+ \label{eq:critical-compensation}\\
+ C_k^- -d_{\sigma,k,2m}
+ &=D_m^{\rm orb}+o(H_m).
+ \label{eq:lower-compensation}
+\end{align}
+The required relative precisions are respectively
+\begin{equation}\label{eq:relative-precision}
+ o\!\left((\beta R)^{-2k}\right),
+ \qquad
+ o\!\left((\beta R)^{-2(k-1)}\right).
+\end{equation}
+If in addition $D_{4k}(R)\to0$, the head terms in
+\eqref{eq:critical-compensation}--\eqref{eq:lower-compensation} are
+themselves $o(H_k)$ and $o(H_m)$, so both diffuse complements must pay their
+orbit atoms internally.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:typed-identity}, \eqref{eq:C0}, and \eqref{eq:Cminus},
+\begin{align*}
+ p_{\sigma,k,2k}&=-D_k^{\rm orb}+C_k^0-d_{\sigma,k,2k},\\
+ p_{\sigma,k,2m}&=-D_m^{\rm orb}+C_k^- -d_{\sigma,k,2m}.
+\end{align*}
+Since both orders occur in the nonnegative prefix,
+\begin{equation}\label{eq:two-term-lower}
+ P_{4k}(R)\ge
+ \frac{|p_{\sigma,k,2k}|}{2H_k}
+ +\frac{|p_{\sigma,k,2m}|}{2H_m}.
+\end{equation}
+If the left side tends to zero, each numerator is respectively $o(H_k)$ and
+$o(H_m)$, which gives \eqref{eq:critical-compensation} and
+\eqref{eq:lower-compensation}.  Division by the asymptotics in
+\eqref{eq:critical-scale} and \eqref{eq:lower-atom} gives
+\eqref{eq:relative-precision}.  Finally, $D_{4k}\to0$ implies each displayed
+head summand is $o(H_k)$ or $o(H_m)$ by nonnegativity of $D_{4k}$.
+\end{proof}
+
+\begin{proposition}[Scoped failure of separate absolute majorants]
+\label{prop:absolute}
+Any proof that takes separate absolute values of the two orbit atoms before
+their signed diffuse/head complements contains the atom submajorant
+\begin{equation}\label{eq:majorant}
+ \frac{D_k^{\rm orb}}{2H_k}+\frac{D_m^{\rm orb}}{2H_m}
+ =\frac1{C_M}\left((\beta R)^{2k}+(\beta R)^{2k-2}\right)(1+o(1))
+ \longrightarrow+\infty.
+ \end{equation}
+This proposition does not lower-bound $P_{4k}$ or $E_{{\rm off},4k}$: a
+fully signed complement may still cancel both atoms.
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:critical-scale} and \eqref{eq:lower-atom} into the two
+weighted atom terms.  Since $\beta R>1$, the sum diverges.  The final scope
+statement follows because the complements in \eqref{eq:C0} and
+\eqref{eq:Cminus} retain their signs.
+\end{proof}
+
+\section{Executable audit and claim boundary}
+
+The artifact evaluates the exact cut indices and the two positive tail
+exponents at $k=3,5,9,17,33$.  It also reports the diagnostic two-atom
+majorant using the printed $C_M$ value; that decimal is not an interval
+certificate and is not used for a theorem sign.  The tests lock the one-alias
+window, the $2k$ and $2k-2$ orders, the deterministic result, and the claim
+firewall.
+
+The maximum justified conclusion is therefore:
+\begin{itemize}
+\item the analytic tails can be synchronized at $u=4k$ by direct corollaries
+of existing bounds;
+\item same-clock head closure makes direct and full-trace prefix closure
+equivalent, with the exact critical/off-alias extraction;
+\item the two physical orbit atoms impose the necessary signed laws above,
+and cancellation-blind absolute splitting is impossible;
+\item no moving-order signed complement or head estimate is available, so
+aggregate prefix closure and nonclosure are both \texttt{NOT\_TESTABLE}.
+\end{itemize}
+
+No physical determinant gluing is activated.  Gates A--E remain false/open.
+This paper constructs no Hilbert--Polya operator, identifies no Riemann zero,
+proves no von Mangoldt trace or completed-zeta divisor equality, and does not
+prove the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
