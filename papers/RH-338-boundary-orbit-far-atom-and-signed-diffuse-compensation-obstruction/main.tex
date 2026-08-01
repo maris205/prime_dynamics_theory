@@ -1,0 +1,330 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\Hk}{H_k}
+
+\title{A Boundary-Orbit Far Atom and a Signed\\
+Diffuse-Compensation Obstruction}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The corrected RH-334 observation map defines an actual physical signed far
+slot at the first alias.  We isolate within that slot a real deterministic
+boundary-orbit atom.  For the primitive period-$2k$ boundary cycle, all but
+one of its folded marked points lie in the frozen far set for every fixed
+window parameter and all sufficiently small noise.  The resulting set has
+$2k-1$ points.  Its noisy localized trace is exactly zero because a finite
+set has zero multiplication operator on $L^2$, whereas its corrected
+deterministic mass is
+\[
+ D_k^{\rm orb}=r_H^{-2k}\frac{2k-1}{1+|M_k|}.
+\]
+Thus its signed far subledger is $-D_k^{\rm orb}$.  The physical multiplier
+law gives $D_k^{\rm orb}/\mathcal A_{k,2k}\to1$ and
+$D_k^{\rm orb}/H_k\to+\infty$.  This is an alias-sized physical obstruction
+to proving the far estimate by taking separate absolute values after the
+orbit/rest split.  It is not an aggregate far nonvanishing theorem.  If the
+full far slot is $o(H_k)$, the complementary diffuse ledger must compensate
+the orbit atom as $D_k^{\rm orb}+o(H_k)$, requiring relative precision
+$o((\beta R)^{-2k})$.  No moving-order estimate for that diffuse term is
+available, so aggregate far closure and aggregate nonvanishing both remain
+not testable.  No determinant or Riemann-hypothesis conclusion follows.
+\end{abstract}
+
+\section{Frozen far observation and boundary orbit}
+
+Let $u_c\in(1,2)$ solve
+\begin{equation}\label{eq:u-cubic}
+ u_c^3-2u_c^2+2u_c-2=0
+\end{equation}
+and put
+\begin{equation}\label{eq:physical-constants}
+ f(x)=1-u_cx^2,
+ \qquad r=u_c-1,
+ \qquad \lambda=2u_cr>1,
+ \qquad b=u_c^{-1/2}.
+\end{equation}
+Then $f(r)=r$, $f(1)=-r$, and the two-step component map is $S=f^2$.
+The inverse branch used by the primitive boundary word is
+\begin{equation}\label{eq:h}
+ h(x)=\sqrt{\frac{1-\sqrt{(1-x)/u_c}}{u_c}},
+ \qquad h(1)=b,
+\end{equation}
+with $h$ increasing and $h(x)<x$ on $(r,1)$
+\citep{WangBoundaryMonodromy2026}.
+
+Fix $A>0$.  RH-334 freezes the boundary-owned windows before evaluating any
+trace:
+\begin{align}
+ J^-_{\sigma,k,A}&=[0,1]\cap[b-A\sqrt\sigma,b),\label{eq:Jminus}\\
+ J^+_{\sigma,k,A}&=[0,1]\cap[b,b+A\sqrt\sigma],\label{eq:Jplus}\\
+ F_{\sigma,k,A}&=[0,1]\setminus(J^-_{\sigma,k,A}\cup J^+_{\sigma,k,A}).
+ \label{eq:F}
+\end{align}
+For measurable $J\subset[0,1]$ and $n\ge2$, let
+\begin{align}
+ L_{\sigma,n}(J)&=\Tr(M_JK_\sigma^n),\label{eq:L}\\
+ P_n^{\rm abs}(J)&=
+ \sum_{\substack{f^n(x)=x\\ |x|\in J}}
+ \frac1{|1-(f^n)'(x)|}.
+ \label{eq:Pabs}
+\end{align}
+Here $K_\sigma$ is the RH-334 folded backward-observable noisy operator; the
+multiplication operator marks the cyclic basepoint rather than a forward
+probability event.
+The corrected actual far slot is
+\begin{equation}\label{eq:R-full}
+ \cR_k:=r_H^{-2k}
+ \{L_{\sigma,2k}(F_{\sigma,k,A})
+       -P_{2k}^{\rm abs}(F_{\sigma,k,A})\},
+ \qquad r_H=\frac{17}{20}.
+\end{equation}
+Absolute-value folding is a multiplier-preserving bijection between the
+signed and folded fixed points, including marked-point multiplicity and
+minimal period \citep{WangObservation2026}.
+
+Let $p_k=p_{2k}$ be the primitive boundary point coded by
+$CA(CB)^{k-1}$.  RH-17 proves that its $S$-orbit is the exact ordered chain
+\begin{equation}\label{eq:S-chain}
+ p_k, h^{k-1}(p_k), h^{k-2}(p_k),\ldots,h(p_k),
+\end{equation}
+and that
+\begin{equation}\label{eq:multiplier-law}
+ M_k:=(f^{2k})'(p_k)=(S^k)'(p_k)
+ =-C_M\lambda^k\{1+o(1)\},
+ \qquad C_M>0.
+\end{equation}
+The word is primitive, so all $2k$ signed and folded marked points are
+distinct \citep{WangLongCycle2026,WangBoundaryMonodromy2026}.
+
+We work on the exact physical natural clock
+\begin{equation}\label{eq:natural-clock}
+ k=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),
+ \qquad \sigma\to0,
+\end{equation}
+though the containment argument below needs only $k\to\infty$ and
+$\sigma\to0$.
+
+\section{The physical far-orbit atom}
+
+For the signed orbit $x_j=f^j(p_k)$, define the folded marked set with one
+point deleted:
+\begin{equation}\label{eq:Omega}
+ \Omega_k=
+ \{|x_j|:0\le j<2k,\ j\ne2k-2\}.
+\end{equation}
+The deleted point is the final even component point
+$|x_{2k-2}|=h(p_k)$.  Its distance from $b$ is itself on the critical
+$\lambda^{-k}$ scale, so no fixed-$A$ membership is asserted for it.
+
+\begin{theorem}[Eventual far containment of $2k-1$ marked points]
+\label{thm:containment}
+For every fixed $A>0$, along \eqref{eq:natural-clock} and all sufficiently
+large $k$,
+\begin{equation}\label{eq:Omega-in-F}
+ \Omega_k\subset F_{\sigma,k,A},
+ \qquad |\Omega_k|=2k-1.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+RH-17 proves that $p_k$ increases with $k$ and
+\begin{equation}\label{eq:right-gap}
+ p_k\ge p_1>b.
+\end{equation}
+Thus the endpoint $p_k$ lies to the right of the shrinking windows by the
+fixed gap $p_1-b>0$.
+
+The even marked points are the $S$-chain \eqref{eq:S-chain}.  Except for
+$h(p_k)$, every internal even point has the form $h^m(p_k)$ with $m\ge2$.
+Monotonicity and $p_k<1$ give
+\begin{equation}\label{eq:even-left-gap}
+ h^m(p_k)\le h^2(1)=h(b)<b.
+\end{equation}
+Hence these points lie to the left by the fixed gap $b-h(b)>0$.
+
+Every point in the positive $S$-chain lies in $[r,1]$.  Since $f$ decreases
+from $f(r)=r$ to $f(1)=-r$ on this interval, every odd folded point satisfies
+\begin{equation}\label{eq:odd-left-gap}
+ |f(S^j(p_k))|\le r<b,
+\end{equation}
+with fixed gap $b-r>0$.  Choose $k$ large enough that
+\begin{equation*}
+ A\sqrt\sigma<min\{p_1-b,\ b-h(b),\ b-r\}.
+\end{equation*}
+Equations \eqref{eq:right-gap}--\eqref{eq:odd-left-gap} then place every
+marked point except $h(p_k)$ in $F_{\sigma,k,A}$.  Primitivity and the
+folding bijection give distinctness, so deleting one of $2k$ points leaves
+cardinality $2k-1$.
+\end{proof}
+
+\begin{theorem}[Exact signed far-orbit subledger]
+\label{thm:far-atom}
+For all $k$ in the range of \cref{thm:containment}, define
+\begin{equation}\label{eq:D-orb}
+ D_k^{\rm orb}
+ =r_H^{-2k}\frac{2k-1}{1+|M_k|}>0.
+\end{equation}
+Then
+\begin{equation}\label{eq:R-orb}
+ \boxed{
+ \cR_k^{\rm orb}:=r_H^{-2k}
+ \{L_{\sigma,2k}(\Omega_k)-P_{2k}^{\rm abs}(\Omega_k)\}
+ =-D_k^{\rm orb}.}
+\end{equation}
+Moreover the full actual far slot has the exact decomposition
+\begin{equation}\label{eq:atom-rest}
+ \cR_k=\cR_k^{\rm orb}+\cR_k^{\rm rest},
+\end{equation}
+where $\cR_k^{\rm rest}$ is the same localized ledger on
+$F_{\sigma,k,A}\setminus\Omega_k$.
+\end{theorem}
+
+\begin{proof}
+A finite set has indicator zero almost everywhere, so $M_{\Omega_k}=0$ as
+an operator on $L^2[0,1]$.  Therefore
+$L_{\sigma,2k}(\Omega_k)=0$ exactly.  The derivative of $f^{2k}$ is the same
+cyclic product at every marked point of one orbit.  By
+\eqref{eq:multiplier-law} it is negative for large $k$, and the RH-334
+folding theorem preserves it.  Each of the $2k-1$ folded marked points
+therefore has deterministic weight
+\begin{equation*}
+ \frac1{|1-M_k|}=\frac1{1+|M_k|}.
+\end{equation*}
+This proves \eqref{eq:R-orb}.  Additivity of the localized noisy trace and of
+the deterministic fixed-point sum across the disjoint partition
+$F=\Omega_k\sqcup(F\setminus\Omega_k)$ proves \eqref{eq:atom-rest}.
+\end{proof}
+
+\begin{remark}[The windows remain the frozen observation]
+$\Omega_k$ is an analytic subpartition of the already-frozen far set; it is
+not promoted to a new canonical physical window or a fitted observation
+coefficient.  Its dependence on the known deterministic orbit is used only
+to expose one exact signed constituent of $\cR_k$.  The aggregate far slot
+and all claims about it retain the original RH-334 windows.
+\end{remark}
+
+\section{Alias scale and signed compensation}
+
+Retain
+\begin{equation}\label{eq:beta-H}
+ \beta=\frac1{r_H\sqrt\lambda},
+ \qquad H_k=kR^{-2k},
+ \qquad R=\frac75.
+\end{equation}
+The physical first-alias packet of RH-326 \citep{WangFirstAlias2026} is
+\begin{equation}\label{eq:alias}
+ \cA_{k,2k}=(2k-2)\beta_k^{2k}+2\beta^{2k},
+ \qquad
+ \beta_k^{2k}=\frac{r_H^{-2k}}{|M_k|}.
+\end{equation}
+
+\begin{theorem}[The far atom is alias-sized and super-target]
+\label{thm:scales}
+As $k\to\infty$,
+\begin{align}
+ D_k^{\rm orb}
+ &=\frac{2k}{C_M}\beta^{2k}\{1+o(1)\},
+ \label{eq:D-asymptotic}\\
+ \frac{D_k^{\rm orb}}{\cA_{k,2k}}
+ &\longrightarrow1,
+ \label{eq:D-over-A}\\
+ \frac{D_k^{\rm orb}}{H_k}
+ &=\frac{2}{C_M}(\beta R)^{2k}\{1+o(1)\}
+ \longrightarrow+\infty.
+ \label{eq:D-over-H}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Insert \eqref{eq:multiplier-law} into \eqref{eq:D-orb} and use
+$\beta^{2k}=r_H^{-2k}\lambda^{-k}$ to obtain
+\eqref{eq:D-asymptotic}.  The same multiplier law in \eqref{eq:alias}
+gives
+\begin{equation*}
+ \cA_{k,2k}=\frac{2k}{C_M}\beta^{2k}\{1+o(1)\},
+\end{equation*}
+which proves \eqref{eq:D-over-A}.  Division by $H_k$ gives the first
+identity in \eqref{eq:D-over-H}.  RH-336 certifies $\beta R>1$ exactly,
+without relying on a rounded decimal \citep{WangProjectorMass2026}; hence the
+limit is infinite.
+\end{proof}
+
+\begin{corollary}[Necessary diffuse compensation]
+\label{cor:compensation}
+The aggregate far estimate $\cR_k=o(H_k)$ holds if and only if
+\begin{equation}\label{eq:compensation}
+ \cR_k^{\rm rest}=D_k^{\rm orb}+o(H_k).
+\end{equation}
+Relative to the orbit mass, the required precision is
+\begin{equation}\label{eq:relative-precision}
+ o\!\left(\frac{H_k}{D_k^{\rm orb}}\right)
+ =o\!\left((\beta R)^{-2k}\right).
+\end{equation}
+In particular, taking separate absolute values after the atom/rest split
+cannot prove $\cR_k=o(H_k)$, because
+\begin{equation}\label{eq:absolute-obstruction}
+ \frac{|\cR_k^{\rm orb}|+|\cR_k^{\rm rest}|}{H_k}
+ \ge\frac{D_k^{\rm orb}}{H_k}\longrightarrow+\infty.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Substitute $\cR_k^{\rm orb}=-D_k^{\rm orb}$ into
+\eqref{eq:atom-rest}.  This proves the equivalence.  The reciprocal of
+\eqref{eq:D-over-H} gives \eqref{eq:relative-precision}, up to a harmless
+positive constant.  Inequality \eqref{eq:absolute-obstruction} is immediate.
+\end{proof}
+
+This corollary does not say that signed compensation is absent.  It says
+precisely what an aggregate positive theorem must prove.  RH-19's local tail
+analysis explicitly leaves genuine bulk excursions to a missing resolvent
+or moving-order theorem \citep{WangBoundaryTail2026}; the repository contains
+no estimate of $\cR_k^{\rm rest}$ at the scale in
+\eqref{eq:relative-precision}.  Accordingly both
+$\cR_k=o(H_k)$ and aggregate nonvanishing remain
+\texttt{NOT\_TESTABLE}.  After the clock obstruction of RH-337 there is also
+no valid hatted actual/model pair typing a physical $\Delta\cR_k$
+\citep{WangClockDrift2026}.  The result here concerns the actual physical far
+slot itself, not RH-330 transfer \citep{WangTransfer2026}.
+
+\section{Reproduction and claim boundary}
+
+The artifact solves the physical algebraic constants and boundary inverse
+word at high Decimal precision.  For $k=2,4,8,16,32$ and the diagnostic
+choice $A=1/4$, it checks the counts $3,7,15,31,63$, orbit closure, multiplier
+sign, approach of $D_k^{\rm orb}/\cA_{k,2k}$ to one, and growth of
+$D_k^{\rm orb}/H_k$.  These rows reproduce the analytic formulas; they are
+not interval certificates and do not prove the moving theorem.
+
+The maximum rigorous conclusion is the exact physical orbit subledger,
+its alias-scale asymptotic, and the necessary signed compensation law.  The
+paper does not bound the diffuse rest, prove aggregate far vanishing or
+nonvanishing, close the parity--alias or off-alias packets, transport the
+noisy head, glue a determinant, or prove full-trace divergence.  No
+Hilbert--Polya operator, Riemann-zero identification, von Mangoldt trace,
+completed-zeta divisor equality, or Riemann-hypothesis proof is obtained.
+Gates A--E remain false/open.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
