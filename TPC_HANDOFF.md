@@ -2,16 +2,19 @@
 
 更新时间：2026-08-01
 交接状态：`SEALED_FOR_NEW_SESSION`
-交接前上游同步基线：`d49ed98bdf294355eeded2a07eeb4f2a5f7a2dc0`；该提交只新增
-RH-332 sharp physical repelling-return affine-leg remainder artifacts，不改
-TPC-28/32/111/122 source files。第 23 节 TPC source-lock 快照锚定更早基线
-`28cafdd5fa96ff948f1520e778c7a2ba65208730`；晚到 RH-330 已在第 23.3 节、
-RH-332 已在第 28.5 节分别做 physical-object type check，均未改变本轮裁决。
+交接前上游同步基线：`11581a2f6a583abb5780e266d56b0aed41d7884b`；相对
+`e298266ab79cbe9a5ffcd21ed0002ba7c5c28585` 只新增 RH-334/335 artifacts，
+不改 TPC-28/32/111/122 source files、`TPC_HANDOFF.md` 或根 `AGENTS.md`。
+第 23 节 TPC source-lock 快照锚定更早基线
+`28cafdd5fa96ff948f1520e778c7a2ba65208730`；晚到 RH-330/332 的既有
+physical-object type checks，以及 RH-333/334/335 的第 29.6 节 type checks，
+均未改变本轮算术裁决。
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC32_23_5_NAMED_PRIMARY_REOPEN_CANDIDATES_20260801_TO_ACTUAL_ZERO_OR_GROWING_PREFIX_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED`
-下一篇：`null`；下一项不编号审计：`null`（仅按第 23.5 节 reopen triggers 重开）
+`TPC32_H0_2_GM2505_INVERSE_ATOM_EXACT_KERNEL_TO_LITERAL_EQUAL_DIFFERENCE_FOUR_POINT_ENERGY_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED`
+下一篇：`null`；下一项不编号审计：`null`（仅在第 29.7 节的 source-backed
+one-parameter four-point energy trigger 或其他既有独立 reopen trigger 出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
@@ -20,8 +23,8 @@ TPC-206 授权并完成：`true`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
-上下文节省入口：新会话优先读取本页页首及第 1、6、22、23、24、27、28 节；其余
-历史块只在这些入口明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
+上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29 节；
+第 23、27、28 节只在第 29 节明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
 
@@ -591,6 +594,33 @@ outer BV/content remainder 的 growing all-prefix theorem。它不扩张 Higher
 Uniformity、Pilatte、single-factor、almost-all/origin-average、logarithmic/cumulative
 等旧 `STOP_SCOPED` cells，也不是未审核文献或未来定理的 nonexistence claim；
 精确 scope、字段审计与 reopen interface 见第 28 节。
+
+2026-08-01 的 selected-packet common-occurrence compiler 与
+Grimmelt--Merikoski Part-I inverse-atom 审计新增且仅新增：
+
+```text
+DECLARED_TPC32_SELECTED_PACKET_COMMON_OCCURRENCE_QD_QZ_METADATA_PRESERVING_INTERTWINER_V1
+  = STOP_SCOPED
+DECLARED_TPC32_GM2505_V2_INVERSE_ATOM_ACTUAL_CROSS_ROW_COMPACT_SELF_KERNEL_V1
+  = STOP_SCOPED
+```
+
+第一项只停止把当前 TPC-32/TPC-93 的参数化、lossless formula compiler
+直接升级为 TPC-144 所需的 metadata-preserving output-record bijection：
+both-ultra raw leaf 在 determinant parent 侧聚为一个 record，而 ordered-zero
+侧必须保留两个各带 `1/2` 的 `L/R` records；实际 selected schedule 是否含
+nonzero both-ultra occurrence仍 `NOT_TESTABLE`。它不停止未来的 actual occurrence
+registry、允许正确 typed linear relation 的新架构、或真正新增的 growing-prefix
+theorem。
+
+第二项只停止从 Grimmelt--Merikoski `arXiv:2505.00489v2` Part I、本轮
+exact inverse-atom attachment 与当前 committed TPC source corpus，直接推出
+actual cross-row self-kernel 的 tiny-power bound或 strict `1/400` saving。
+inverse placement、atomwise determinant normalization、zero-Haar test 与 fixed-row
+`j`-arc escape 本身是 `L1 GO`，没有被此 cell 否定。该 cell 不停止未来的
+actual equal-difference four-point autocorrelation theorem、不同 functional
+factorization、Part II、新版本 source、两个 O161 parents、pair-native/H1/global
+architecture 或任何真正新增的算术输入；精确公式与 scope 见第 29 节。
 
 ## 7. Reopen triggers
 
@@ -4212,7 +4242,8 @@ TPC-127 --check = PASS
 D:\26-aimath\理论研究3\prime_dynamics_theory
 
 读取仓库根目录 TPC_HANDOFF.md，以仓库文件和已提交 artifacts 为事实来源，
-不要依赖旧聊天记录。优先读取页首及第 1、6、22、23、24、27、28 节。
+不要依赖旧聊天记录。为节省上下文，优先读取页首及第 1、6、22、24、29 节；
+第 23、27、28 节只在第 29 节明确引用时展开。
 
 先执行：
 
@@ -4221,73 +4252,111 @@ git pull --rebase origin main
 Get-Content -Raw -Encoding UTF8 TPC_HANDOFF.md
 
 保留 git status 中全部既有 tracked/untracked 工作；不得 reset、checkout、
-clean、自动 stash、删除或纳入本轮提交。TPC-105 __pycache__、TPC-63 构建
-产物与 tmp/ 必须原样保留。若现有工作使 rebase 不安全，停止并报告。
+clean、自动 stash、删除或纳入本轮提交。当前已知 TPC-105 __pycache__、
+TPC-63 构建产物、tmp/ 与本地 .codex 配置必须原样保留。若现有工作使
+rebase 不安全，停止并报告。
 
 $env:PYTHONDONTWRITEBYTECODE = "1"
+
 完整执行第 1 节 22 项只读启动回归；任一 checker 非零即 fail closed。
-TPC-27--32 legacy certificates 会无条件重写 JSON，不得执行。
+TPC-27--32 legacy certificates 会无条件重写 committed JSON，在出现真正
+只读 --check 入口前不得执行。TPC-122 也没有安全只读 checker，不得执行。
 
 当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 最新不编号裁决是：
-TPC32_23_5_NAMED_PRIMARY_REOPEN_CANDIDATES_20260801_TO_ACTUAL_ZERO_OR_GROWING_PREFIX_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED。
 
-同一 theorem-valid high-beta selected packet 的 formula-level source lock 已通过：
+TPC32_H0_2_GM2505_INVERSE_ATOM_EXACT_KERNEL_TO_LITERAL_EQUAL_DIFFERENCE_
+FOUR_POINT_ENERGY_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED
+
+同一 theorem-valid high-beta selected packet 仍固定为：
 sigma=1/10000，lambda=99979/210000，delta=7/60，beta=267/400，
-D=10049/52500，J=133/400，R=S=23/60，V=23/120，T=193/500，
-C=floor(J)，N0=JQ^2~XQ；h0=2 是 general fixed-h theorem 的合法特化。
-它与 delta=1/20 exact family 是两条 source lock，绝不可拼接。
+Q=X^(267/400+o(1))，J=X^(133/400+o(1))，C=floor(J)，h0=2，
+N0=JQ^2~XQ。delta=1/20 truncated-entry family 是另一条 source lock，
+绝不可拼接。
 
-当前 first fatal 不是 packet entry，而是 actual coefficientwise fiber map：TPC-32
-的 (alpha,gamma,j), G<=C, Delta# determinant bins 与 TPC-111/122 的 ordered
-(theta,r_i) prefix fibers之间没有 source-backed intertwiner，也没有共同 factor
-allocation、prefix order 与 N0 normalization crosswalk。TPC-124 明确要求
-(J Q_D-Q_Z)M=0；当前 growing archive absent。
+对 actual packet 必须恢复 TPC-18/21/22 的 structured residual mask：
 
-即使未来补齐 crosswalk，TPC-122 的 actual growing prefix、outer BV envelope、
-content remainder、uniform class hypothesis 与 fixed-h0 L2 saving 仍全部未证。
-TPC-126/127 只给 exact finite transports；RH-287/294 是不同 noisy-trace对象。
-nonzero-frequency density-one、Parseval、complete-frequency mean 或 orbit Poisson
-zero 都不得升级为 A_hat_C,q(0)。strict 1/400 仍 UNPAID，L2=NONE。
+1_{ell_alpha != ell_gamma}
+1_{|m_alpha-m_gamma| > Q X^{-kappa_row}}
+1_{gcd(d_alpha,d_gamma) <= X^{kappa_row}}.
 
-第 27 节已对第 23.5 节三个 reopen triggers 做 post-seal source audit。Banks--
-Shparlinski 的 literal Möbius factor 是 mu(n1 n2 n3)，含不能由 separable
-u/v weights 消去的 n3-dependence，且只有 log saving；
-Verjovsky 的一般 moment-to-point inequality 不提供 actual A_C 所需的 local high
-moment input，其 Möbius 特化是 RH-equivalent 的单 mu(n) 对象；Ford--Radziwiłł
-与 Matomäki--Teräväinen 只证明每个 reduced AP 内出现两种符号，不给 signed-sum
-或 all-prefix cancellation。上述已审核版本不得在没有新 actual corollary/crosswalk
-时原样重开。
+kappa_row 可取任意 fixed positive value；当前 GM 条件路线要求
+0<kappa_row<1/400。它不是 TPC-32 content exponent
+kappa_C=133/400，也不提供 small-content saving。
 
-第 28 节继续做了 current-primary theorem-route 审计。系统检索的 394 条重叠
-retrieval rows 经去重和 theorem screening 后没有 survivor；另一路公式定向审核
-也没有 survivor。最接近的四条仍分别缺关键接口：Tao--Teräväinen v2 是裸二点
-相关、polylog 参数、例外尺度外的 terminal sum；Higher Uniformity II v2 是单个
-`mu` 对 nilsequence 的 almost-all-origin maximal statement；Grimmelt--Merikoski v2
-没有 actual coefficientwise automorphic intertwiner，且 orbit autocorrelation `K`
-未支付；Kim v2 只在 shift-average 后给 saving。不同 source lock 不得拼接。
+TPC-32/TPC-93 已给 formula-level lossless common-occurrence compiler：
+三 raw channels、both-ultra 的两个 1/2 polarizations、content、Delta#、
+mask、weights、outer metadata 与 inverse 都可保留。QD 与 formal ordered QZ
+可参数化 totalize；但 TPC-144 要求的 metadata-preserving J 仍 STOP：
+both-ultra 在 determinant parent 侧聚为一个 record，在 zero side 必须保留
+两个 L/R records。actual selected schedule 是否有 nonzero both-ultra
+occurrence仍 NOT_TESTABLE；不得把 formal compiler 写成 production intertwiner。
 
-仓库侧 first fatal 仍是
-`COMMON_ACTUAL_LEAF_DOMAIN_AND_LITERAL_Q_D_Q_Z_MAPS_ABSENT`。当前唯一可走的
-reopen interface 是：新增保留全部 physical metadata 的 actual `Q_D/Q_Z` map；
-或直接控制同一 `A_C`/matched shell 的 theorem；或在同一 packet 上同时给出
-growing signed-prefix、outer BV、content remainder、共同 ranges/constants、`N0`
-normalization 与完整 loss ledger。strict `1/400` 仍 `UNPAID`，`L2=NONE`。
+Grimmelt--Merikoski arXiv:2505.00489v2 Part I 的 exact inverse-atom
+attachment 是本轮真实 L1 正结果。对
 
-本轮没有预设下一项不编号 gate。仅在第 23.5 节三类 reopen trigger之一出现时，
-按同一有限、fail-closed 工作流继续，无需重复请求人为授权；这不自动授权
-TPC-207。不得把第 6 节任何 STOP_SCOPED cell 重包装为新方法。
+B_t=[[m,(mj+2)/G],[n,(nj+2)/G]],
+H_t=2|m-n|/G，g_t=H_t^(-1/2) B_t^+ in SL2(R),
 
-两个 O161 parents、pair-native reroute、H1 与 global architecture 继续 OPEN；
-all-D uniformity、exactly-once physical cover、original/global normalization、
-tail-failure、A/B selection、actual attachment 与完整 provenance gates 均独立
-开放。下一篇编号 release 前仍须完成 TPC-143--206 provenance cascade、受影响
-releases 重建、全链 --check、PDF build/render/visual QA。
+取 alpha1=sum_t conjugate(a_t) delta_(g_t^(-1))、alpha2=delta_I，
+用 fixed-margin zero-Haar sign test和足够大的 auxiliary principal level，
+可精确返回该 cell 的 literal physical sum。同一 row pair 的 j-arc 在
+R1~1 第一槽 self-kernel 中真实逃逸；不得继续引用旧的 J/G arc 作为
+这项 inverse placement 的 fatal。
 
-若没有真实 theorem trigger，只更新 handoff 并发布精确 STOP_SCOPED；不要创建
-论文、PDF 或下一编号。主会话只保留结论、路线选择、阻断项和最终审核摘要；
-长公式、定理原文、文献扫描、schema exploit review、构建日志和 PDF QA 交给
-分身；所有正式写入由主会话协调。
+但完整第一槽 self-kernel仍含 gamma=I 的 cross-row compact collisions。
+所需 actual coefficient为
+
+w_m=gamma_m^(1) gamma_(m-D0)^(2)
+    A_(m,m-D0)(j) K_sh_(m,m-D0)(j),
+
+当前必要的 fixed-`D0` reopen subtheorem 是统一控制
+
+E_Psi=sum_(m,m') conjugate(w_m) w_m'
+      Psi((m-m')/D0)
+
+于 fixed physical h0=2、D0、G、j、actual mask、matched shell、outer labels
+和 one global normalization。若 E1<=P_X sum|a_t|^2，则最坏
+M>=QX^(-kappa_row) 只容许
+
+P_X <= X^(1/400-kappa_row-epsilon+o(1)).
+
+当前 committed corpus 与有限 official-primary screen 均没有这样的 theorem。
+fixed-difference common row translations给出精确 compact collision family；
+另一 `G=1` family 在 sufficiently comparable determinants 间也落入定理允许的
+unit outer ball，不能由 support upper bound排除。它们证明 geometry/mask不会
+自动给所需 packing，但不是 actual coefficients 大能量的算术反例。
+
+这条 energy gate无损平方展开后落回 TPC-34/84/95/108 的 actual
+four-Mobius / affine-Chowla boundary。不得用 row degree one、Parseval、
+large sieve、shift/origin average、裸二点相关或 logarithmic theorem升级。
+当前 first fatal 是：
+
+LITERAL_EQUAL_DIFFERENCE_EDGE_WEIGHT_NOT_IN_ANY_SOURCE_THEOREM_DOMAIN.
+
+仅当新 source theorem 直接接受同一 w_m，或给出 X^o projective mass 的
+lossless decomposition，并支付上述 tiny-power threshold、全部 ranges/constants
+及 physical-loss ledger时，才重开
+TPC32_H0_2_LITERAL_EQUAL_DIFFERENCE_EDGE_WEIGHT_ONE_PARAMETER_FOUR_POINT_
+AUTOCORRELATION_THEOREM_GATE。该 fixed-`D0` subgate即使通过，也只允许继续
+审核；仍须另行控制 cross-`D0` 与其余完整 self-kernel，并通过全部 downstream
+physical/provenance gates，才可能改变 TPC-207 trigger。
+
+RH-333/334/335 分别是连续 Gaussian probability、folded noisy/flat trace
+observation map 与 fixed-order Riesz-projector cell ledger；均为 wrong object，
+不得按同名 physical/alias/projector 符号拼接，也不新增 TPC STOP cell。
+
+strict 1/400 仍 UNPAID，fixed-atom credit=0，L2=NONE。第 6 节全部旧
+method cells保持 STOP_SCOPED；两个 O161 parents、pair-native reroute、H1 与
+global architecture继续 OPEN。all-D uniformity、exactly-once physical cover、
+original/global normalization、tail-failure、A/B selection、actual packet
+attachment 与完整 provenance gates仍独立未过。
+
+持续有限工作流授权仍有效，但没有当前 source-backed theorem trigger时只更新
+handoff 并发布精确 STOP_SCOPED；不要创建论文、PDF、paper directory或 TPC-207。
+若未来 trigger 真实发生，仍须先完成 TPC-143--206 provenance cascade、受影响
+releases 重建、全链 --check、PDF build/render/visual QA，并使页首数学 trigger
+发生真实 theorem-backed 状态变化。
 ```
 
 ## 25. 上一轮会话粘贴块（历史，仅供审计；不得作为当前入口）
@@ -5040,3 +5109,422 @@ triggers 继续 `FAIL_CLOSED_ABSENT`；`ARITHMETIC_ADVANCE=NO`、strict `1/400`
 三份 theorem audit 和三份修订后复核均为 read-only/PASS。唯一预期 tracked diff
 仍为 `TPC_HANDOFF.md`；protected untracked count 仍为 127，manifest SHA256 仍为
 `35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f`。
+
+## 29. 2026-08-01 GM inverse-atom exact attachment 与 actual cross-row energy 审计
+
+### 29.1 冻结基线、同步与 fail-closed 协议
+
+三份第一轮只读审计锚定：
+
+```text
+FROZEN_HEAD
+  = e298266ab79cbe9a5ffcd21ed0002ba7c5c28585
+FROZEN_HANDOFF_SHA256
+  = c857a18f999622b2ff821e71024ad25d03a11dacb58363e5ab51b3f42add7019
+```
+
+它们分别核查 direct weighted-pair/current-primary source、TPC-32/TPC-93
+common-occurrence compiler，以及 Grimmelt--Merikoski kernel geometry；
+后续 exact-kernel、self-energy、compiler devil's-advocate 与 source-theorem
+复核均保持 `files_changed=[]`。正式写入前同步到：
+
+```text
+HEAD = origin/main
+  = 11581a2f6a583abb5780e266d56b0aed41d7884b
+TPC_HANDOFF_COMMITTED_BLOB_BEFORE_EDIT
+  = a1d26efe486edcabed13ce6294abfd042dc7d9ea
+TPC_HANDOFF_SHA256_BEFORE_EDIT
+  = c857a18f999622b2ff821e71024ad25d03a11dacb58363e5ab51b3f42add7019
+STARTUP_REGRESSION_AFTER_SYNC = 22/22 PASS
+TPC111_124_126_127_READ_ONLY_GATE_CHECKS = 4/4 PASS
+PROTECTED_UNTRACKED_COUNT = 127
+PROTECTED_UNTRACKED_MANIFEST_SHA256
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+```
+
+`e298266..11581a2` 只新增 RH-334/335 各 17 个 committed files；没有修改
+TPC source、handoff 或根政策。TPC-122 与 TPC-27--32 legacy writers 均未执行。
+protected manifest 仍按第 28.1 节的 path/byte-length/file-SHA256 rows 定义；
+本轮没有向仓库写入 discovery log、外部 PDF/source、paper directory 或 build
+output；GM official PDF/source 只在 repository 外的临时目录用于只读核对。
+
+### 29.2 actual mask 修正与 common-occurrence compiler 裁决
+
+第 28.4 节的 `ACTUAL_GENERIC_PAIR_MASK_DECOMPOSITION=ABSENT` 只描述
+TPC-32 abstract interface，不是 actual source lineage 的最终事实。TPC-18/21/22
+对本 selected residual packet 实际保留：
+
+```text
+m_kappa(alpha,gamma)
+  = 1_{ell_alpha != ell_gamma}
+    1_{|m_alpha-m_gamma| > Q X^{-kappa_row}}
+    1_{gcd(d_alpha,d_gamma) <= X^{kappa_row}}.
+```
+
+stopping theorem 允许任意 fixed `kappa_row>0`。当前条件 GM exponent ledger
+必须预先取 `0<kappa_row<1/400`。这个参数只管 same-prime/near-row/large-row-gcd
+removal；它不是 TPC-32 的 content exponent
+`kappa_C=133/400`，也不能冒充 small-content matched-shell saving。
+第 23.1、28.4 节关于 generic bounded mask 的历史句子不得再作为 actual packet
+的 stronger source lock。
+
+TPC-32 的 pointwise identity与 TPC-93 的 source-child reconstruction 确实给出
+一个参数化 `L1` common-occurrence compiler：
+
+1. 三 raw channels 精确重写为两个 polarizations；both-ultra raw leaf 产生
+   `L/R` 两个 computational children，系数各 `1/2`，physical multiplicity
+   总和为一；
+2. 展开 opposite leg并把具体 decoration 加入 source metadata 后，每个 child
+   有唯一 source inverse；
+3. literal coefficients、fixed `h0=2`、`j`、actual mask/weight、content
+   `G`、canonical `Delta#`、polarization、projector、interval component与
+   outer provenance均可保留；
+4. 在这个 constructed formal ledger 上，`Q_D` 可逐 leaf 聚回 canonical
+   determinant parent，formal ordered `Q_Z` 也可按原 `(theta,t)` 顺序
+   totalize。
+
+但 TPC-144 要求的 `J` 是 output-record sets 间的 metadata-preserving
+bijection，不是任意 linear split。对一个 formal both-ultra raw column，
+`Q_D M` 先把两个 halves 聚成一个 determinant record，而 `Q_Z M` 必须保留
+两个不同 `L/R` zero records。一个 supported output record不能由 permutation
+变成两个 halves；相应 child difference 可落入 `ker Q_D` 而不落入
+`ker Q_Z`。所以：
+
+```text
+PARAMETRIC_LOSSLESS_COMMON_OCCURRENCE_COMPILER = L1 GO
+PARAMETRIC_QD_TOTALITY = L1 GO
+FORMAL_ORDERED_QZ_TOTALITY = L1 GO
+TPC144_METADATA_PRESERVING_J = STOP_SCOPED
+ACTUAL_SELECTED_NONZERO_BOTH_ULTRA_OCCURRENCE = NOT_TESTABLE
+PRODUCTION_INTERTWINER = NOT_TESTABLE
+```
+
+这没有给 growing signed-prefix theorem、small-content saving 或 `L2`。
+
+### 29.3 GM2505v2 inverse-atom exact kernel：真实 L1 正接口
+
+正式 source lock 是 Grimmelt--Merikoski,
+`arXiv:2505.00489v2`, Theorem 1.1，而不是第 28 节审核的旧
+`2404.08502v2` determinant-counting theorem。对一个 physical atom
+`t=(alpha,gamma,j)`，令 `m=m_alpha`、`n=m_gamma`、
+
+```text
+G = gcd(mj+2,nj+2),
+U = (mj+2)/G,
+V = (nj+2)/G,
+B_t = [[m,U],[n,V]],
+det(B_t) = 2(m-n)/G.
+```
+
+按 determinant sign 分 cell并定向后，置
+`H_t=2|m-n|/G`、`g_t=H_t^{-1/2}B_t^+ in SL_2(R)`。
+若 `M=|m-n|`，相应 dyadic coordinate ranges 是
+
+```text
+A_GM asymp C_GM asymp Q sqrt(G/M),
+D_GM asymp X/sqrt(GM),
+A_GM D_GM asymp XQ/M = N0/M,
+R1=A_GM/C_GM asymp 1,
+R2=D_GM/C_GM asymp J/G.
+```
+
+令 `a_t` 是保留两条 opened-row signs、actual mask、fixed `h0=2`、
+`j,G,Delta#`、三 raw channels的 matched tensor、smooth/periodic factors与
+outer labels的 literal coefficient。GM pairing 的精确 convention 是
+
+```text
+K_F(tau1,tau2)
+  = sum_{gamma in Gamma} conjugate(chi(gamma))
+    F(tau1^{-1} gamma tau2),
+
+alpha1 = sum_t conjugate(a_t) delta_{g_t^{-1}},
+alpha2 = delta_I.
+```
+
+因此 identity translate恰给 `a_t F(g_t)`，无需把 `F` 换成 `F^vee`。
+在每个 fixed-margin sign/coordinate cell取
+`f(a,c,d)=phi(a,c,d)-phi(-a,c,d)`；Haar matrix-coordinate density
+不依赖 `a`，故 `int F=0`，同时 physical sign cell上 `F(g_t)=1`。
+一个 bump不能在整个闭 dyadic box恒等于一；必须先做 `O(1)` fixed-margin
+partition，这只产生 soft 常数。
+
+为避免 GM proof 中 `-I in Gamma` convention 的歧义，可使用
+
+```text
+Gamma_pm(q)
+  = {gamma in SL_2(Z): gamma == plus-or-minus I (mod q)}
+```
+
+配 principal character `chi=1`，并取 `q` 大于固定常数乘
+`max(D_GM^2,A_GM D_GM,A_GM C_GM)`；sign support排除 unwanted `-I`。
+等价地，正式使用 literal principal `Gamma(q)` 前必须补写 theorem 对该 subgroup
+的 convention extension。actual far-row bound使所需 `q` 至多 polynomial：
+`q <= X^{533/400+kappa_row+o(1)}/G`。该 level选择删除所有
+`gamma != plus-or-minus I` target/self-kernel translates；它不删除
+`gamma=I` 的 physical cross-atom terms。
+
+于是存在 source-backed exact identity：
+
+```text
+<alpha1 | Delta F | delta_I>
+  = sum_{t in one physical cell} a_t.
+```
+
+同一 fixed `(m,n,G)` 的不同 `j,j'` 在第一槽满足
+`g_j g_{j'}^{-1}=g_j n(-(j'-j)/G)g_j^{-1}`；其 normalized off-diagonal
+entries规模至少 `Q^2|j-j'|/M`，故逃出 `R1 asymp 1` 的 unit support。
+所以第 28 节“原始第二槽有完整 `J/G` unipotent arc”的 obstruction 对这项
+inverse placement 已被真实修复；不得继续把它列为 first fatal。
+
+若完整第一槽 self-energy满足
+
+```text
+E1 <= P_X sum_t |a_t|^2,
+```
+
+并授予其余 exact cell return，则 GM with
+`X0=1,X1=1,X2=A_GM D_GM` 条件性给
+
+```text
+|cell target|
+  << N0 sqrt(P_X/M) X^{o(1)}.
+```
+
+在 `M>QX^{-kappa_row}` 与 `beta=267/400` 下，为严格越过
+`1-beta=133/400`，必须有某个 fixed `epsilon>0` 使
+
+```text
+P_X <= X^{1/400-kappa_row-epsilon+o(1)}.
+```
+
+当 `P_X=X^{o(1)}` 时条件 margin 是
+`1/800-kappa_row/2`。这是条件路线，不是 arithmetic credit。
+
+### 29.4 精确 cross-row compact collisions
+
+inverse placement 只移除了 fixed-row `j`-arc，没有自动对角化完整
+`alpha1` self-kernel。存在两个 source-checked exact geometry families。
+
+第一族固定 `D0=m-n=G Delta#`、`G` 与 `j`。对整数 `k` 令
+
+```text
+m_k=m+kG,   n_k=n+kG,
+U_k=U+kj,   V_k=V+kj,
+tau=k/Delta#,
+P_tau=[[1+tau,-tau],[tau,1-tau]].
+```
+
+当 shifted rows仍在 actual row set且
+`gcd(U+kj,Delta# j)=1` 时 exact content仍为 `G`，并有
+
+```text
+B_k=P_tau B_0,
+g_k g_0^{-1}=P_tau,
+u_1(P_tau)=tau^2.
+```
+
+所以 `|k|<=|Delta#|/2` 的整个 algebraically admissible family位于
+fixed unit ball内。actual mask给
+`|Delta#|>QX^{-kappa_row}/G`，并不限制不同 determinant edges间的
+共同 row translation。
+
+第二族固定奇数 `n,j`，取偶数 `M` 且 `gcd(M,nj+2)=1`，令
+`m=n+M`。此时 `G=1`、`H=2M`，且
+
+```text
+g_M g_{M'}^{-1}
+ = [[sqrt(M/M'), (M'-M)/sqrt(MM')],
+    [0,          sqrt(M'/M)]].
+```
+
+当 `M' asymp M` 时相对矩阵位于 fixed compact set；足够接近时落入 theorem
+允许的 `u_1<1` 外包球，不能由其 support upper bound排除。这些都是
+`gamma=I` terms，auxiliary level不能删除；这里没有断言 kernel必非零。
+
+两族均没有证明 actual prime--squarefree opened rows与 literal matched
+coefficients在 polynomially many points上同时 nonzero/coherent；所以本轮不声称
+actual large-energy counterexample。它们精确证明的只是：atom injectivity、
+near-row removal、TPC-31 row degree one、content cutoff和 GM support geometry
+本身不推出所需 tiny-power packing。
+
+### 29.5 actual equal-difference four-point theorem screen
+
+对 fixed `D0,G,j`，定义 actual determinant-edge set
+
+```text
+E_{D0,G,j}
+ = {m:
+      m and m-D0 are actual opened rows,
+      actual mask survives,
+      gcd(mj+2,(m-D0)j+2)=G}.
+
+w_m
+ = gamma_m^(1) gamma_{m-D0}^(2)
+   A_{m,m-D0}(j) K_sh_{m,m-D0}(j).
+```
+
+GM 所需的必要 subtheorem是对相应 fixed smooth kernels统一控制
+
+```text
+E_Psi
+ = sum_{m,m' in E_{D0,G,j}}
+   conjugate(w_m) w_m' Psi((m-m')/D0)
+
+|E_Psi|
+ <= X^{1/400-kappa_row-epsilon+o(1)}
+    sum_m |w_m|^2,
+```
+
+或给出不更弱、并保留所有 literal metadata的完整 automorphic self-kernel
+inequality。
+
+这个 displayed fixed-`D0` bound只控制第一族共同 row-translation，是必要的
+reopen subgate，不是完整 `E1` 的充分估计。第 29.4 节第二族让
+`D0=M` 与 `D0'=M'` 一起变化，故通过本 subgate 后仍须独立控制 cross-`D0`
+及其余完整 self-kernel；它不能单独触发 TPC-207。
+
+仓库内精确 lineage audit得到：
+
+1. TPC-34/38 定位 same-time/identity-bucket four-Mobius autocorrelation，
+   但明确未证明相应 operator estimate；
+2. TPC-42/48 的 Hilbert large-sieve/tiling bookkeeping不消除 coherent
+   actual fiber；
+3. TPC-84 把 determinant fiber打开为 literal weighted four-Mobius
+   expansion，unpaired remainder仍需 cancellation；
+4. TPC-95 是 shared-target/collision census与 conditional diagnostics；
+5. TPC-108 的 generic affine `TT^*`/H3 是最近 analytic boundary，但 H3
+   本身为未证 `L2`，且 GM collision到同一 actual signed-prefix sum的
+   lossless crosswalk与 physical normalization也未提交。
+
+有限 official-primary screen 另逐项排除了：Menon 的 naked `k`-point
+shift-average、Kim 的 ternary shift-average、Tao--Teräväinen
+`2512.01739v2` 的裸二点/polylog-affine/exceptional-scale terminal sum、
+Higher Uniformity II 的 single-factor almost-all-origin nilsequence theorem，
+以及 ordinary additive/Dirichlet large sieve、Schur/Young bounds。它们分别缺
+literal `w_m`、prescribed parallelogram、matched shell/mask、fixed
+`D0,G,j`、natural normalization、power threshold或 uniform loss ledger。
+Grimmelt--Merikoski `2505.00489v2` 接收本轮 exact functional，但把同一个
+`E_Psi` 留在 RHS self-kernel中，并不估计它。
+
+没有 committed lossless decomposition
+`w_m=sum_nu c_nu a_nu(m)`、`sum|c_nu|=X^{o(1)}`，把该对象送入任一
+source theorem domain；actual generic mask也不得从 boundedness推出这种
+projective decomposition。有限裁决因此是：
+
+```text
+FIRST_FATAL
+  = LITERAL_EQUAL_DIFFERENCE_EDGE_WEIGHT_NOT_IN_ANY_SOURCE_THEOREM_DOMAIN
+
+SOURCE_THEOREM_SURVIVOR = NONE_IN_FINITE_SCREEN
+GLOBAL_OR_FUTURE_THEOREM_NONEXISTENCE_CLAIM = false
+```
+
+下一 exact source trigger 命名为：
+
+```text
+TPC32_H0_2_LITERAL_EQUAL_DIFFERENCE_EDGE_WEIGHT_ONE_PARAMETER_
+FOUR_POINT_AUTOCORRELATION_THEOREM_GATE
+```
+
+它必须直接接受同一 `w_m`，或给出 `X^{o(1)}` projective mass的 lossless
+source-backed decomposition，并逐项支付 fixed physical `h0`、summation/
+lag order、`X/N/Q/D0/G/j` ranges、uniform constants、normalization、
+actual mask、three-channel matched shell、outer labels与完整 physical-loss
+ledger。shift/origin average、logarithmic theorem、裸 coefficient、
+complete-frequency mean或 source splice均不合格。
+
+### 29.6 RH-333/334/335 late-source type firewalls
+
+RH-333 的 raw affine escape对象是连续 Gaussian probability event；没有
+TPC determinant gluing、matched shell或 arithmetic normalization。它不触发
+本 gate。
+
+RH-334 的 exact object是 `f:[-1,1]` 到 `T=|f|:[0,1]` 的 fixed-point
+folding、Gaussian backward-observable localized trace与
+`hardy_full_trace_constituent`
+
+```text
+q_FT = B+S+R+P-A.
+```
+
+这里的 `B/S/R` 是 frozen observation windows的 localized defects，不是
+TPC 三 raw channels；fixture `k=2,n=4` 不是 physical `h0=2`。
+RH-334 自身锁定 determinant gluing、projectors/Floquet localization与 moving
+asymptotics未证。它没有 `m,m',D0,G,j`、`w_m`、`E_Psi` 或 `N0` crosswalk。
+
+RH-335 的 exact object是 rank-one noisy Riesz projector signed measure
+`pi_sigma(J)=Tr(M_J E^-_sigma)` 与 fixed-order frozen-cell ledger
+`C_{sigma,n}(J)`。它的 `J` 是 measurable cell，`n=2` 是 operator power，
+均不是 TPC orbit `j` 或 shift `h0`；其 `3x3` fixture明确非 physical，
+determinant closure、moving-order与 physical upper-exponent inputs均 open。
+
+所以：
+
+```text
+RH333_334_335_TO_TPC32_EQUAL_DIFFERENCE_ENERGY_CROSSWALK
+  = ABSENT_WRONG_OBJECT
+STOP_CELL_CHANGE_FROM_RH333_334_335 = NONE
+TPC207_TRIGGER_FROM_RH333_334_335 = false
+```
+
+这些 type checks只建立对象防火墙；不把 RH methods列为被停止的 TPC arithmetic
+methods，也不得按同名 `sigma/lambda/physical/alias/projector` 符号拼接。
+
+### 29.7 最终裁决、reopen interface 与发布边界
+
+本轮精确裁决为：
+
+```text
+TPC32_H0_2_GM2505_INVERSE_ATOM_EXACT_KERNEL_TO_LITERAL_EQUAL_DIFFERENCE_
+FOUR_POINT_ENERGY_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED
+```
+
+状态矩阵是：
+
+```text
+SAME_SELECTED_HIGH_BETA_PACKET_SOURCE_LOCK = PASS
+ACTUAL_STRUCTURED_RESIDUAL_MASK_SOURCE_LOCK = PASS
+PARAMETRIC_COMMON_OCCURRENCE_COMPILER = L1 GO
+TPC144_METADATA_PRESERVING_J = STOP_SCOPED
+
+GM2505V2_INVERSE_PAIRING = L1 GO
+ATOMWISE_DETERMINANT_NORMALIZATION = L1 GO
+ZERO_HAAR_FIXED_MARGIN_TEST = L1 GO
+AUXILIARY_LEVEL_TRANSLATE_ISOLATION = L1 GO_WITH_SUBGROUP_CONVENTION
+FIXED_ROW_J_ARC_ESCAPE = L1 GO
+
+ACTUAL_CROSS_ROW_COMPACT_SELF_KERNEL_BOUND = ABSENT
+LITERAL_EQUAL_DIFFERENCE_FOUR_POINT_SOURCE_THEOREM = NONE_IN_FINITE_SCREEN
+P_X_LE_X_TO_1_OVER_400_MINUS_KAPPA_MINUS_EPSILON = UNPAID
+
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC207_TRIGGER = false
+TPC207_CREATED = false
+```
+
+第 6 节新增的两个 cells 只冻结本轮 exact compiler upgrade和
+GM2505v2 Part-I-to-current-energy inference；`L1 GO` interfaces、未来
+source theorem与独立 architectures均保持可重开。第 6 节所有旧 cells继续
+原 scope `STOP_SCOPED`，尤其 TPC193 V1、common-`k` V1、tail-failure/A/B V1
+与 full-`r_Rr_R` ultra-complement V1。不得把本轮 GM geometry重新包装为
+TPC-34/84/95/108 arithmetic theorem。
+
+两个 O161 pointwise parents、pair-native reroute、H1 与 global architecture
+继续 `OPEN`。all-`D` uniformity、exactly-once physical cover、original/global
+normalization、tail-failure、A/B selection、actual packet attachment与完整
+provenance gates均未进入。
+
+没有创建 TPC-207、论文、paper directory、PDF或构建日志。正式写入只修改
+`TPC_HANDOFF.md`；既有 `.codex/config.toml`、四个
+`.codex/agents/tpc-*.toml`、TPC-105 `__pycache__`、TPC-63 build artifacts与
+`tmp/` 仍为 protected untracked。发布前 22 项只读启动回归为
+`22/22 PASS`，TPC-111/124/126/127为 `4/4 PASS`；TPC-122 与 legacy writers
+未执行。上述 one-parameter four-point source theorem即使通过，也只重开
+下一轮 exact audit；还须控制 cross-`D0`/其余完整 self-kernel，并分别通过
+all-`D` uniformity、physical cover/normalization、tail-failure、A/B、actual
+attachment与完整 provenance gates。只有所有门槛共同产生真实 theorem-backed
+状态变化，或其他独立 architecture 支付同等完整账本后，才允许进入 TPC-207
+provenance cascade。
