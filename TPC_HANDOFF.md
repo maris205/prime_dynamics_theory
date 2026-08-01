@@ -2,19 +2,22 @@
 
 更新时间：2026-08-01
 交接状态：`SEALED_FOR_NEW_SESSION`
-交接前上游同步基线：`11581a2f6a583abb5780e266d56b0aed41d7884b`；相对
-`e298266ab79cbe9a5ffcd21ed0002ba7c5c28585` 只新增 RH-334/335 artifacts，
-不改 TPC-28/32/111/122 source files、`TPC_HANDOFF.md` 或根 `AGENTS.md`。
+交接前最终上游同步基线：`a7e7c6be880542cdd07614eb11a6af7abf5fa846`；相对
+上一份 handoff commit `d3702b2e92cf85c48c5024758c5293357b2b347f` 只新增
+RH-336 初始 artifacts、其 exact exponent-separation strengthening 与 RH-337
+artifacts，不改 TPC-28/32/93/108/111/122 source files、`TPC_HANDOFF.md` 或根
+`AGENTS.md`。
 第 23 节 TPC source-lock 快照锚定更早基线
 `28cafdd5fa96ff948f1520e778c7a2ba65208730`；晚到 RH-330/332 的既有
-physical-object type checks，以及 RH-333/334/335 的第 29.6 节 type checks，
-均未改变本轮算术裁决。
+physical-object type checks、RH-333/334/335 的第 29.6 节 type checks，以及
+RH-336/337 的第 30.5 节 type checks，均未改变本轮算术裁决。
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC32_H0_2_GM2505_INVERSE_ATOM_EXACT_KERNEL_TO_LITERAL_EQUAL_DIFFERENCE_FOUR_POINT_ENERGY_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED`
-下一篇：`null`；下一项不编号审计：`null`（仅在第 29.7 节的 source-backed
-one-parameter four-point energy trigger 或其他既有独立 reopen trigger 出现时重开）
+`TPC32_H0_2_LITERAL_EQUAL_DIFFERENCE_FIXED_D0_TPC93_AFFINE_CHILD_TRANSVERSAL_SINGLETON_COHERENT_OUTER_FOUR_POINT_THEOREM_ABSENT_STOP_SCOPED_NOT_REOPENED`
+下一篇：`null`；下一项不编号审计：`null`（仅在第 30.6 节的 direct literal
+energy / lossless outer regrouping / full self-kernel trigger 或其他既有独立
+reopen trigger 出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
@@ -23,8 +26,8 @@ TPC-206 授权并完成：`true`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
-上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29 节；
-第 23、27、28 节只在第 29 节明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
+上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29、30 节；
+第 23、27、28 节只在第 29--30 节明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
 
@@ -621,6 +624,29 @@ inverse placement、atomwise determinant normalization、zero-Haar test 与 fixe
 actual equal-difference four-point autocorrelation theorem、不同 functional
 factorization、Part II、新版本 source、两个 O161 parents、pair-native/H1/global
 architecture 或任何真正新增的算术输入；精确公式与 scope 见第 29 节。
+
+2026-08-01 的 literal fixed-`D0` TPC-93 transversal、current-primary
+four-point transfer 与 cross-`D0` standard-orthogonality 审计新增且仅新增：
+
+```text
+DECLARED_TPC32_LITERAL_FIXED_D0_FOURPOINT_STANDARD_TRANSFER_
+AND_CROSS_D0_ORTHOGONALITY_CORPUS_V1 = STOP_SCOPED
+```
+
+它只停止把第 30 节逐项审核的当前 committed TPC-32/34/38/42/48/84/93/95/108
+interfaces、Grimmelt--Merikoski `arXiv:2505.00493v2` application、Tao--Teräväinen
+`arXiv:2512.01739v2` 与 `2107.02158v4`、Menon `2607.15574v1`、
+Jaskari--Sachpazis `2409.10663v3`、Leng `2212.09635v3`、
+Klurman--Mangerel `1708.03176v1`、Lichtman--Teräväinen `2111.08912v3`、
+Higher Uniformity II `2411.05770v2`、Kim `2603.23250v2`，以及 ordinary
+Schur/Young、additive/Dirichlet large sieve、Fourier/Mellin complete-frequency
+identities，直接或跨来源拼接成 literal fixed-`D0` `E_Psi` bound，或再提升成
+full `E1`。它不停止直接接受 actual `w_m` 的新 theorem、保留全部 metadata 且
+global projective total variation 为 `X^o(1)` 的 source-backed regrouping、完整
+two-parameter automorphic self-kernel theorem、actual cross-`D0` block-Bessel
+theorem、未来 GM Part II/新版本、两个 O161 parents、pair-native/H1/global
+architecture或真正新增的独立算术输入；精确 source locks、第一 fatal 与
+reopen interface见第 30 节。
 
 ## 7. Reopen triggers
 
@@ -4242,8 +4268,8 @@ TPC-127 --check = PASS
 D:\26-aimath\理论研究3\prime_dynamics_theory
 
 读取仓库根目录 TPC_HANDOFF.md，以仓库文件和已提交 artifacts 为事实来源，
-不要依赖旧聊天记录。为节省上下文，优先读取页首及第 1、6、22、24、29 节；
-第 23、27、28 节只在第 29 节明确引用时展开。
+不要依赖旧聊天记录。为节省上下文，优先读取页首及第 1、6、22、24、29、30 节；
+第 23、27、28 节只在第 29--30 节明确引用时展开。
 
 先执行：
 
@@ -4265,8 +4291,8 @@ TPC-27--32 legacy certificates 会无条件重写 committed JSON，在出现真�
 当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 最新不编号裁决是：
 
-TPC32_H0_2_GM2505_INVERSE_ATOM_EXACT_KERNEL_TO_LITERAL_EQUAL_DIFFERENCE_
-FOUR_POINT_ENERGY_INPUT_ABSENT_STOP_SCOPED_NOT_REOPENED
+TPC32_H0_2_LITERAL_EQUAL_DIFFERENCE_FIXED_D0_TPC93_AFFINE_CHILD_TRANSVERSAL_
+SINGLETON_COHERENT_OUTER_FOUR_POINT_THEOREM_ABSENT_STOP_SCOPED_NOT_REOPENED
 
 同一 theorem-valid high-beta selected packet 仍固定为：
 sigma=1/10000，lambda=99979/210000，delta=7/60，beta=267/400，
@@ -4327,24 +4353,44 @@ fixed-difference common row translations给出精确 compact collision family；
 unit outer ball，不能由 support upper bound排除。它们证明 geometry/mask不会
 自动给所需 packing，但不是 actual coefficients 大能量的算术反例。
 
-这条 energy gate无损平方展开后落回 TPC-34/84/95/108 的 actual
-four-Mobius / affine-Chowla boundary。不得用 row degree one、Parseval、
-large sieve、shift/origin average、裸二点相关或 logarithmic theorem升级。
-当前 first fatal 是：
+这条 energy gate无损平方展开后是 prescribed-lag、equal-difference 的 literal
+weighted four-Mobius autocorrelation。TPC-93 可无损携带 fixed `D0,G,j` 与 Fourier
+phase；但每个 affine key固定 opposite row，方程
+`M_theta(t)-n_theta=+/-D0` 至多有一个整数 `t`。所以 fixed-`D0` 的增长方向是
+outer `theta` keys，而不是 TPC-108 的 one-column prefix。TPC-93 的 local
+row-gcd/smooth projective mass为 `X^o(1)`，global fixed-`D0` transversal mass仍
+`UNKNOWN`；TPC-108 H3 与 outer normalization仍未证。
 
-LITERAL_EQUAL_DIFFERENCE_EDGE_WEIGHT_NOT_IN_ANY_SOURCE_THEOREM_DOMAIN.
+不得用 row degree one、Parseval、large sieve、shift/origin average、裸二点相关、
+logarithmic theorem或平均所有 shifts的 Chowla theorem升级。当前 first fatal 是：
 
-仅当新 source theorem 直接接受同一 w_m，或给出 X^o projective mass 的
-lossless decomposition，并支付上述 tiny-power threshold、全部 ranges/constants
-及 physical-loss ledger时，才重开
+LITERAL_EQUAL_DIFFERENCE_EDGE_WEIGHT_NOT_IN_ANY_SCREENED_SOURCE_THEOREM_DOMAIN.
+
+2026-08-01 的 reproducible current-primary screen仍无 survivor。最接近的
+Tao--Teräväinen 2512 theorem是 exceptional-scale two-point、只另带 small-modulus
+residue-class indicator；Menon 2607
+是 average-all-shifts naked k-point；Jaskari--Sachpazis fixed-k-point theorem依赖
+Landau--Siegel zero；Gowers/linear-forms theorems既不接受 actual `w_m`，也不把
+repeated equal-difference directions与 prescribed `D0`变成合格 finite-complexity
+system。Grimmelt--Merikoski 2505.00493v2 只为 Heegner/lower-triangular application
+借助 level averaging估计专用 self-kernels，不是 arbitrary literal edge theorem。
+
+仅当新 source theorem 直接接受同一 `w_m`，或把 singleton affine children无损
+regroup成 genuinely growing blocks且 global projective total variation为 `X^o(1)`，
+并支付上述 tiny-power threshold、全部 ranges/constants及 physical-loss ledger时，
+才重开
 TPC32_H0_2_LITERAL_EQUAL_DIFFERENCE_EDGE_WEIGHT_ONE_PARAMETER_FOUR_POINT_
 AUTOCORRELATION_THEOREM_GATE。该 fixed-`D0` subgate即使通过，也只允许继续
-审核；仍须另行控制 cross-`D0` 与其余完整 self-kernel，并通过全部 downstream
-physical/provenance gates，才可能改变 TPC-207 trigger。
+审核。comparable `D0,D0'` 的 exact `G=1` matrices仍可落在同一 GM compact
+self-kernel support；没有 cross-`D0` block-Bessel/orthogonality theorem。故仍须
+另行控制 cross-`D0` 与其余完整 self-kernel，并通过全部 downstream physical/
+provenance gates，才可能改变 TPC-207 trigger。
 
 RH-333/334/335 分别是连续 Gaussian probability、folded noisy/flat trace
-observation map 与 fixed-order Riesz-projector cell ledger；均为 wrong object，
-不得按同名 physical/alias/projector 符号拼接，也不新增 TPC STOP cell。
+observation map 与 fixed-order Riesz-projector cell ledger；RH-336 是 projector
+mass first-alias scale及 nonphysical 3x3 row-stochastic similarity family，其中
+`n=2` 是 operator power，不是 physical `h0=2`。它们均为 wrong object，不得按
+同名 physical/alias/projector 符号拼接；RH-336 不单独新增 TPC STOP cell。
 
 strict 1/400 仍 UNPAID，fixed-atom credit=0，L2=NONE。第 6 节全部旧
 method cells保持 STOP_SCOPED；两个 O161 parents、pair-native reroute、H1 与
@@ -5528,3 +5574,384 @@ all-`D` uniformity、physical cover/normalization、tail-failure、A/B、actual
 attachment与完整 provenance gates。只有所有门槛共同产生真实 theorem-backed
 状态变化，或其他独立 architecture 支付同等完整账本后，才允许进入 TPC-207
 provenance cascade。
+
+## 30. 2026-08-01 literal fixed-`D0` four-point transfer 与 full-self-kernel 审计
+
+### 30.1 冻结基线、对象与必要子门
+
+本轮启动先执行根 `AGENTS.md` 与第 1 节协议。初始只读快照为：
+
+```text
+HEAD = origin/main
+     = 33e3073fef6bfb021e3479d2acf8cf6ad75daee6
+
+TPC_HANDOFF_SHA256
+     = 51562f27288cc114dbe8da7a9baab36659a4e929010c9f2849d40638097fcfca
+
+PROTECTED_UNTRACKED_COUNT = 127
+PROTECTED_UNTRACKED_MANIFEST_SHA256
+     = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+
+TRACKED_WORKTREE_DIFF = empty
+CACHED_DIFF = empty
+STARTUP_REGRESSION = 22/22 PASS
+```
+
+相对上一份 handoff commit `d3702b2e92cf85c48c5024758c5293357b2b347f`，
+本轮 `git pull --rebase origin main` 只 fast-forward 到 RH-336 commit
+`33e3073fef6bfb021e3479d2acf8cf6ad75daee6`。它没有修改本轮 TPC source locks。
+
+同一 theorem-valid selected packet继续严格固定为：
+
+```text
+sigma=1/10000
+lambda=99979/210000
+delta=7/60
+beta=267/400
+Q=X^(267/400+o(1))
+J=X^(133/400+o(1))
+C=floor(J)
+h0=2
+N0=JQ^2 asymp XQ
+0<kappa_row<1/400
+```
+
+对 fixed physical `D0 != 0`、`G <= C`、`j asymp J` 与全部 actual outer
+labels，literal edge coefficient仍是
+
+```text
+w_m
+ = gamma_m^(1) gamma_(m-D0)^(2)
+   A_(m,m-D0)(j) K_sh_(m,m-D0)(j),
+```
+
+其中 actual mask逐字保留
+
+```text
+1_{ell_m != ell_(m-D0)}
+1_{|D0| > Q X^(-kappa_row)}
+1_{gcd(d_m,d_(m-D0)) <= X^(kappa_row)},
+```
+
+并保留 three raw channels、两条 `1/2` polarizations、matched cutoff、content
+`G`、canonical `Delta#=D0/G`、residue/smooth factors、row orientations与 parent
+provenance。GM inverse route当前必要但不充分的 fixed-`D0` 子门仍为
+
+```text
+E_Psi
+ = sum_(m,m') conjugate(w_m) w_m' Psi((m-m')/D0),
+
+|E_Psi|
+ <= X^(1/400-kappa_row-epsilon+o(1)) sum_m |w_m|^2.
+```
+
+### 30.2 exact autocorrelation 与 TPC-93 singleton-transversal 裁决
+
+令 `k=m-m'`。无损重排给出
+
+```text
+E_Psi = sum_k Psi(k/D0) C_(D0,G,j)(k),
+
+C_(D0,G,j)(k)
+ = sum_{m,m-k in E_(D0,G,j)} conjugate(w_m) w_(m-k).
+```
+
+打开两个 matched shells 后有四个 cutoff cells `(Y,Y') in {U0,T}^2`，总
+cutoff variation为 `4`。用 TPC-32 的 primitive sign fusion逐腿合并，exact
+arithmetic sign为
+
+```text
+mu(d_m u)
+mu(d_(m-D0) v)
+mu(d_(m-k) u')
+mu(d_(m-k-D0) v').
+```
+
+四个 `w_R` divisor weights、prime logarithms、两条 edge masks、两个 exact
+content条件、target divisibility、conjugation order、physical phases与全部 outer
+metadata仍在。因此它的最早诚实算术描述是 prescribed-lag equal-difference
+opened-row parallelogram上的 literal weighted four-Mobius autocorrelation；不是
+naked Chowla sum。
+
+TPC-93 的 decorated source-child map可把 fixed `D0,G,j` indicator、Fourier
+phase与全部 provenance无损带入 affine ledger，故 representation level仍是
+`L1 GO`。但每个 TPC-93 affine key `theta` 固定 opposite row `n_theta`，moving row为
+
+```text
+M_theta(t)
+ = ell_theta v_theta (d_theta + sigma_theta t).
+```
+
+fixed ordered difference要求
+
+```text
+M_theta(t)-n_theta = D0
+```
+
+或在相反 orientation取 `-D0`。由于 slope
+`ell_theta v_theta sigma_theta != 0`，每个 affine column至多有一个整数 `t`：
+
+```text
+FIXED_D0_SLICE_PER_TPC93_AFFINE_COLUMN = CARDINALITY_AT_MOST_ONE
+FIXED_D0_GROWING_DIRECTION = OUTER_THETA_KEYS
+```
+
+所以 fixed-`D0` energy是 singleton affine children 的 outer transversal；它不是
+TPC-108 one-resolved-block 内的 growing prefix。TPC-108 exact `TT*` 只给四符号
+identity；H3、outer mass、physical `TT*` return与 endpoint normalization均仍是
+未证 premise。
+
+当前精确 projective ledger是：
+
+```text
+Psi Fourier kernel mass                    = O_Psi(1)
+matched-shell cutoff variation after square = 4
+row-gcd projector mass per affine column    = X^o(1)
+smooth/fixed-period local separation        = X^o(1)
+source-child inverse                        = exact
+
+GLOBAL_FIXED_D0_OUTER_TRANSVERSAL_PROJECTIVE_MASS = UNKNOWN
+```
+
+因此不得把 columnwise `X^o(1)` 绝对求和成 global projective decomposition。
+
+### 30.3 current-primary theorem screen
+
+按 ARS bibliography/source-verification protocol只用 official primary theorem
+bodies进行可复现有限检索，并对 literal coefficient、fixed physical `h0`、
+summation/prefix order、`X/N/q` ranges、uniform constants、normalization与完整
+physical-loss ledger逐项审核。最接近来源均在 exponent accounting前失败：
+
+1. Tao--Teräväinen `arXiv:2512.01739v2`, Theorem 3.1给 natural-average
+   two-point multiplicative correlation，并只另允许一个 small-modulus residue-class
+   indicator，但排除小 logarithmic-density scale set；它不是四点
+   `conjugate(w_m)w_m'`，也不接受 arbitrary actual mask/shell；
+2. Menon `arXiv:2607.15574v1`, Theorem 1.5给 naked Liouville `k`-point bound，
+   但平均全部 `h_2,...,h_k`，不能限制到 prescribed equal-difference slice；
+3. Jaskari--Sachpazis `arXiv:2409.10663v3`, Theorem 1.1最接近 fixed
+   `k`-point quantifier，但依赖 Landau--Siegel zero，且仍是 naked Liouville、
+   fixed-shift constants与错误 `q/x` range；
+4. Tao--Teräväinen `2107.02158v4`、Leng `2212.09635v3` 与
+   Klurman--Mangerel `1708.03176v1` 控制 single-factor Gowers norms或
+   nondegenerate affine systems；forms
+   `(m,m-D0,m-k,m-k-D0)` 含两对 repeated linear directions，global Gowers
+   average不控制 prescribed `D0` slice，且 actual `w_m` 不在 theorem domain；
+5. Lichtman--Teräväinen `2111.08912v3` 只平均一个 independent shift；本对象
+   同时移动 linked pair `(k,k+D0)`，不能由 all-but-exceptional-shifts结论升级；
+6. Higher Uniformity II `2411.05770v2` 的 main theorem是 single arithmetic
+   factor against nilsequences、almost-all origins；其 derived Gowers estimates仍
+   average全部 increments且仍为 almost-all-origin。Kim `2603.23250v2` 是
+   ternary/shift-average；两者均不接受 literal edge sequence或 prescribed
+   physical phase；
+7. ordinary Schur/Young、additive/Dirichlet large sieve与 Fourier/Mellin identity
+   只给 coefficient-blind density、frequency average或 exact square representation，
+   不给 distinguished physical kernel cancellation。
+
+有限检索没有找到 source-backed decomposition
+
+```text
+w_m = sum_nu c_nu a_nu(m),
+sum_nu |c_nu| = X^o(1),
+```
+
+使每个 `a_nu` 真正进入同一个适用 theorem domain，并精确重建 determinant、
+content、mask、shell、outer labels与 global normalization。故第一 fatal保持：
+
+```text
+FIRST_FATAL
+ = LITERAL_EQUAL_DIFFERENCE_EDGE_WEIGHT_NOT_IN_ANY_SCREENED_SOURCE_
+   THEOREM_DOMAIN
+
+SOURCE_THEOREM_SURVIVOR = NONE_IN_REPRODUCIBLE_FINITE_SCREEN
+GLOBAL_OR_FUTURE_THEOREM_NONEXISTENCE_CLAIM = false
+```
+
+### 30.4 GM application 与 coefficient-blind loss ledger
+
+Grimmelt--Merikoski `arXiv:2505.00493v2` 是 Part I 的正式 application，但其
+Type I/II theorems估计的是 roots of `a ell^2+h mod k` 的 distribution。其
+self-kernel inputs是 exact Heegner-point functional与 exact lower-triangular
+functional；application用 level `d/q` averaging、sparse diagonal和 off-diagonal
+divisor absorption。论文还明确在新 short kernel ranges无法证明 cancellation，
+而由 positivity丢弃 subtracted integral。
+
+这不是接受 arbitrary actual `w_m` 的 self-kernel theorem，也不把 TPC compact
+cross-row collisions变成 application的 sparse diagonal。不得把 Type I/II 中
+bounded `alpha_m,beta_n` 的外层 sieve coefficients改名为本轮 automorphic
+functional coefficients。
+
+独立的 coefficient-blind检查也无法靠近 endpoint。fixed `(D0,G,j)` block内，
+`G | mj+2` 且 primitive support使 `j` 在 `G` 上可逆，所以所有 `m` 落在一个
+mod-`G` residue class。Schur/Young至多给
+
+```text
+|E_Psi| << (1+|D0|/G) sum_m |w_m|^2
+        = (1+|Delta#|) sum_m |w_m|^2.
+```
+
+而 actual row-gap 与 `G<=J` 给
+
+```text
+|Delta#|
+ > Q X^(-kappa_row)/J
+ = X^(134/400-kappa_row+o(1)).
+```
+
+目标 factor是 `X^(1/400-kappa_row-epsilon+o(1))`，故即使最大 content也差
+`X^(133/400+epsilon)`；`G=1` 时差 `X^(266/400+epsilon)`。在这一
+coefficient-blind route 后乘任何 published logarithmic/doubly-logarithmic
+naked decay仍不能支付 polynomial ledger。这里不是声明所有未来 arithmetic
+theorems不可能达到目标；只冻结本轮 direct standard transfer。
+
+### 30.5 full self-kernel、RH-336 与独立第二 fatal
+
+fixed-`D0` 子门即使未来通过，也不控制完整 GM first self-energy。对 exact
+`G=1` family、fixed odd `n,j` 与 `m=n+M`，第 29.4 节的相对矩阵精确为
+
+```text
+g_M g_(M')^(-1)
+ = [[sqrt(M/M'), (M'-M)/sqrt(MM')],
+    [0,           sqrt(M'/M)]],
+
+u_1(g_M g_(M')^(-1))
+ = (M'-M)^2/(2MM').
+```
+
+若 `M'/M in [1/2,2]`，则 `u_1<=1/4`，所以 comparable cross-`D0` blocks可同时
+落在 GM unit compact self-kernel support。它不证明 actual literal coefficients
+在这些点 coherent/nonzero，因而不是 large-energy arithmetic counterexample；
+它严格排除仅靠 dyadic `D0` geometry声称 block orthogonality。
+
+因此第二独立 fatal是：
+
+```text
+SECOND_FATAL
+ = FIXED_D0_BLOCK_CONTROL_DOES_NOT_CONTROL_CROSS_D0_GM_SELF_KERNEL
+
+CROSS_D0_BLOCK_BESSEL_OR_ALMOST_ORTHOGONALITY_THEOREM = ABSENT
+```
+
+应用 fixed-`D0` theorem后按 differences triangle/Cauchy重组，最多引入
+`Q^(1/2)=X^(267/800+o(1))` 未支付 linear loss；dyadic grouping不消除同一
+dyadic block内的 dense compact interactions。
+
+本轮 pull新增的 RH-336 只处理 projector mass `pi_sigma(J)`、moving operator
+order、nonphysical `3x3` positive row-stochastic similarity family与 fixed fixture
+`n=2`。其中 `n=2` 是 operator power，不是 TPC physical `h0=2`；该 artifact没有
+`m,m',D0,G,j,w_m,E_Psi,N0`、matched shell或 TPC normalization crosswalk：
+
+```text
+RH336_TO_TPC32_FIXED_D0_OR_FULL_E1 = ABSENT_WRONG_OBJECT
+TPC207_TRIGGER_FROM_RH336 = false
+STOP_CELL_CHANGE_FROM_RH336 = NONE
+```
+
+最终发布前 rebase 到 `90a25186d5cfd5e541a739e599edfdd797ea48ba` 时，上游只在
+RH-336 的 13 个文件中把 `kappa_proj>gamma_star_RH325` 从 decimal diagnostic
+强化为 exact rational certificate。这里的两个指数属于 RH projector-gauge 与
+Duhamel stability clock；它们不支付 TPC 的 `kappa_row<1/400`、literal
+fixed-`D0` energy 或 full self-kernel。三份独立只读 type review 均确认本节
+wrong-object 裁决与 TPC-207 trigger 不变。
+
+随后上游 `a7e7c6be880542cdd07614eb11a6af7abf5fa846` 只新增 RH-337 的 17 个
+files。该 paper 研究 RH-329 的 `Lambda_hat/lambda` algebraic clock drift、moving
+order `k`、parity/alias scalars 与 comparator defect `D_k`；它明示 `D_k` 不是
+actual five-slot coefficient 或 full-trace residual，correct-clock remainder仍为
+`NOT_TESTABLE`。RH 的 fixed phase、shell、`D_k` 与 `H_k` 分别不是 TPC 的 fixed
+physical `h0=2`、matched divisor shell、row difference `D0` 与 natural scale
+`N0`，也没有 literal coefficient、normalization 或 loss-ledger crosswalk：
+
+```text
+RH337_TO_TPC32_FIXED_D0_OR_FULL_E1 = ABSENT_WRONG_OBJECT
+TPC207_TRIGGER_FROM_RH337 = false
+STOP_CELL_CHANGE_FROM_RH337 = NONE
+```
+
+### 30.6 最终裁决、STOP scope 与合法 reopen interface
+
+本轮精确裁决为：
+
+```text
+TPC32_H0_2_LITERAL_EQUAL_DIFFERENCE_FIXED_D0_TPC93_AFFINE_CHILD_
+TRANSVERSAL_SINGLETON_COHERENT_OUTER_FOUR_POINT_THEOREM_ABSENT_
+STOP_SCOPED_NOT_REOPENED
+```
+
+状态矩阵是：
+
+```text
+SAME_SELECTED_HIGH_BETA_PACKET_SOURCE_LOCK = PASS
+ACTUAL_W_M_AND_E_PSI_SOURCE_LOCK = PASS
+TPC93_DECORATED_REINDEXING = L1 GO
+FIXED_D0_SLICE_PER_AFFINE_COLUMN = CARDINALITY_AT_MOST_ONE
+FIXED_D0_GROWING_DIRECTION = OUTER_THETA_KEYS
+GLOBAL_FIXED_D0_TRANSVERSAL_PROJECTIVE_MASS = UNKNOWN
+TPC108_H3_AND_OUTER_NORMALIZATION = UNPROVED
+
+CURRENT_PRIMARY_LITERAL_WEIGHT_THEOREM = NONE_IN_FINITE_SCREEN
+GM2505_APPLICATION_TO_LITERAL_W_M = DOMAIN_MISMATCH
+P_X_LE_X_TO_1_OVER_400_MINUS_KAPPA_MINUS_EPSILON = UNPAID
+CROSS_D0_BLOCK_BESSEL = ABSENT
+FULL_E1 = UNCONTROLLED
+
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC207_TRIGGER = false
+TPC207_CREATED = false
+```
+
+第 6 节新增
+
+```text
+DECLARED_TPC32_LITERAL_FIXED_D0_FOURPOINT_STANDARD_TRANSFER_
+AND_CROSS_D0_ORTHOGONALITY_CORPUS_V1 = STOP_SCOPED
+```
+
+只冻结第 30.3--30.5 节列明的有限 primary/current TPC/standard-transfer corpus。
+它不停止以下合法 trigger：
+
+1. 一个 source theorem直接接受同一 literal `w_m`，统一控制 fixed
+   `(D0,G,j,h0=2)` `E_Psi`，保留 actual mask/content/shell/outer labels，并支付
+   strict endpoint与全部 ranges/constants/normalization；
+2. 一个 source-backed exact regrouping，把 singleton TPC-93 children组成
+   genuinely growing theorem blocks，global projective total variation为 `X^o(1)`，
+   再由适用 theorem支付同一完整 ledger；
+3. 一个直接控制全部 `(D0,G,j,outer labels)` 的 literal full automorphic
+   self-kernel theorem；或在 1/2 之后另有 cross-`D0` block-Bessel theorem，使
+   combined total exponent仍严格通过 `1/400`。
+
+仅通过 fixed-`D0` 子门只允许重开 cross-`D0`/full-`E1` 审核，不改变
+TPC-207 trigger。此后仍须分别通过 all-`D` uniformity、exactly-once physical
+cover、original/global normalization、tail-failure、A/B selection、actual packet
+attachment与完整 provenance cascade。
+
+第 6 节全部旧 cells保持原 scope `STOP_SCOPED`，尤其 TPC193 V1、common-`k`
+V1、tail-failure/A/B V1 与 full-`r_Rr_R` ultra-complement V1。两个 O161
+pointwise parents、pair-native reroute、H1 与 global architecture继续 `OPEN`。
+
+### 30.7 发布边界
+
+没有创建 TPC-207、论文、paper directory、PDF或构建日志。正式写入只允许
+`TPC_HANDOFF.md`；既有 `.codex/config.toml`、四个
+`.codex/agents/tpc-*.toml`、TPC-105 `__pycache__`、TPC-63 build artifacts与
+`tmp/` 均继续作为 protected untracked，不得纳入本轮提交。
+
+本轮只读启动回归与正式写入后的发布前复跑均为 `22/22 PASS`；
+TPC-111/124/126/127 supplemental checks为 `4/4 PASS`。TPC-122 与 legacy
+TPC-27--32 writers均未执行。发布前 protected untracked仍为 `127` 个，按
+`path<TAB>byte_length<TAB>sha256<LF>` rows 计算的 manifest SHA256仍为
+`35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f`。
+
+```text
+FINAL_SYNC_ORIGIN_MAIN
+  = a7e7c6be880542cdd07614eb11a6af7abf5fa846
+FINAL_SYNC_DELTA_FROM_INITIAL_33E3073
+  = RH336_STRENGTHENING_13_FILES_PLUS_RH337_NEW_17_FILES
+FINAL_SYNC_TPC_SOURCE_LOCK_CHANGE = NONE
+FINAL_SYNC_TPC_VERDICT_CHANGE = NONE
+```
+
+只提交 `TPC_HANDOFF.md`，再 rebase/push并验证 local `HEAD`、`origin/main` 与
+remote `refs/heads/main` 三个 hash一致。
