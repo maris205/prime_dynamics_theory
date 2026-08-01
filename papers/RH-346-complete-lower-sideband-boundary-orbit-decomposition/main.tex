@@ -1,0 +1,377 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\one}{\mathbf 1}
+
+\title{A Complete Lower-Sideband Boundary-Orbit\
+Decomposition}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We complete the physical boundary-orbit extraction at the mandatory lower
+sideband $n_-=2k-2=2m$, where $m=k-1$ is an orbit-period parameter on the
+same $(\sigma,k)$ noise clock.  Let
+\[
+ \Gamma_m=\{|f^j(p_{2m})|:0\le j<2m\},\qquad
+ G_m=\frac{r_H^{-2m}}{1+|M_m|}.
+\]
+The folded orbit has exactly $2m$ distinct marked points and contributes the
+complete signed raw atom $-F_m^{\rm orb}$, $F_m^{\rm orb}=2mG_m$.  Its last
+critical point $\xi_m=h(p_{2m})$ lies in $J^-$ or $F$ according to
+$\epsilon_m=\one_{\{\xi_m\in J^-\}}$.  The eventual cell counts are
+$(\epsilon_m,0,2m-\epsilon_m)$, and on a fixed physical phase
+\[
+ \frac{b-\xi_m}{\sqrt\sigma}
+ \longrightarrow\frac{\sqrt{C_{\rm b}}}{2u_c}\lambda^{1-\eta}.
+\]
+The factor $\lambda$ records that $m=k-1$ while the noise clock remains $k$.
+
+Removing the complete orbit gives the exact direct coefficient
+\[
+ p_{\sigma,k,2m}=\cT_{k,m}^{\rm rest}+\cP_{\sigma,2m}
+ -d_{\sigma,k,2m}-\cA_{k,2m}-F_m^{\rm orb}.
+\]
+The point omitted by RH-339 is again super-target:
+$G_m/H_m=(C_Mm)^{-1}(\beta R)^{2m}\{1+o(1)\}\to\infty$.
+The current period-$2k$ counterloop radial sideband has unknown sign but the
+sharp relative law
+\[
+ \frac{\cA_{k,2m}}{F_m^{\rm orb}}
+ =\frac{C_M-1}{m}+o(m^{-1})\longrightarrow0.
+\]
+Thus the combined deterministic demand is eventually positive and
+asymptotic to the complete orbit atom, while neither its radial correction
+nor the orbit-free rest is proved target-negligible.  We also obtain the
+shifted scalar interface
+$\cP_{\sigma,2m}/F_m^{\rm orb}\to C_*C_M\lambda^{\eta-1}$.
+No lower compensation, off-alias closure, determinant gluing, Gate progress,
+or Riemann-hypothesis conclusion follows.
+\end{abstract}
+
+\section{One noise clock and the mandatory sideband}
+
+Work on the physical clock
+\begin{equation}\label{eq:clock}
+ k=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),\qquad
+ \eta_\sigma=k-\frac{\log(1/\sigma)}{2\log\lambda},\qquad
+ R=\frac75.
+\end{equation}
+Set
+\begin{equation}\label{eq:m}
+ m=k-1,\qquad n_-=2m=2k-2,\qquad H_m=mR^{-2m}.
+\end{equation}
+The symbol $m$ indexes a deterministic boundary orbit.  It does not define a
+new noise sequence.  Every one-alias cut $2k<h_\sigma\le4k$ contains $n_-$
+in its strict off-alias prefix \citep{WangLowerAtom2026}.
+
+Retain the same corrected folded noisy operator and the same frozen RH-334
+cells
+\begin{align}
+ J^-&=[0,1]\cap[b-A\sqrt\sigma,b),\label{eq:Jminus}\\
+ J^+&=[0,1]\cap[b,b+A\sqrt\sigma],\label{eq:Jplus}\\
+ F&=[0,1]\setminus(J^-\cup J^+).\label{eq:F}
+\end{align}
+For every order $n\ge2$, the all-order physical identity is
+\begin{equation}\label{eq:five-slot}
+ q_{\sigma,k,n}=\cB_{\sigma,k,n}+\cS_{\sigma,k,n}
+ +\cR_{\sigma,k,n}+\cP_{\sigma,n}-\cA_{k,n},
+\end{equation}
+and the direct coefficient is
+\begin{equation}\label{eq:direct}
+ p_{\sigma,k,n}=q_{\sigma,k,n}-d_{\sigma,k,n}.
+\end{equation}
+Here $d$ is the separate noisy-head/counterloop defect.  No full-trace/direct
+identification is assumed \citep{WangObservation2026,WangSynchronizedPrefix2026}.
+
+At $n=2m$, the current period-$2k$ counterloop contributes the exact radial
+sideband
+\begin{equation}\label{eq:radial}
+ \cA_{k,2m}=2(\beta^{2m}-\beta_k^{2m}),
+ \qquad
+ \beta_k=\frac{|M_k|^{-1/(2k)}}{r_H},
+ \qquad
+ \beta=\frac1{r_H\sqrt\lambda}.
+\end{equation}
+It is not an alias impulse of the period-$2k$ counterloop, and its sign is not
+fixed below \citep{WangFirstAlias2026}.
+
+\section{Complete period-$2m$ orbit extraction}
+
+Let $p_{2m}$ be the primitive boundary point and put
+\begin{equation}\label{eq:Gamma}
+ \Gamma_m=\{|f^j(p_{2m})|:0\le j<2m\},
+ \qquad \xi_m=h(p_{2m})<b.
+\end{equation}
+RH-17 gives the ordered orbit and multiplier
+\begin{equation}\label{eq:Mm}
+ M_m=(f^{2m})'(p_{2m})=-C_M\lambda^m\{1+o(1)\},
+ \qquad C_M>0,
+\end{equation}
+and RH-339 proves that the other $2m-1$ folded points lie in $F$ eventually
+\citep{WangBoundaryMonodromy2026,WangLowerAtom2026}.
+
+Define
+\begin{equation}\label{eq:Gm}
+ G_m=\frac{r_H^{-2m}}{1+|M_m|},
+ \qquad
+ \epsilon_m=\one_{\{\xi_m\in J^-\}}.
+\end{equation}
+
+\begin{theorem}[Complete lower-sideband orbit atom]
+\label{thm:complete}
+For all sufficiently large $k$, $\Gamma_m$ has exactly $2m$ distinct folded
+marked points with counts
+\begin{equation}\label{eq:counts}
+ (\epsilon_m,0,2m-\epsilon_m)
+\end{equation}
+in $(J^-,J^+,F)$.  Define orbit-free raw rest slots by deleting $\Gamma_m$
+from each frozen cell.  Then
+\begin{align}
+ \cB_{\sigma,k,2m}&=\cB_{k,m}^{\rm rest}-\epsilon_mG_m,
+ \label{eq:Brest}\\
+ \cS_{\sigma,k,2m}&=\cS_{k,m}^{\rm rest},
+ \label{eq:Srest}\\
+ \cR_{\sigma,k,2m}&=\cR_{k,m}^{\rm rest}-(2m-\epsilon_m)G_m.
+ \label{eq:Rrest}
+\end{align}
+Thus, with
+\begin{equation}\label{eq:Trest}
+ \cT_{k,m}^{\rm rest}=\cB_{k,m}^{\rm rest}
+ +\cS_{k,m}^{\rm rest}+\cR_{k,m}^{\rm rest},
+ \qquad F_m^{\rm orb}=2mG_m,
+\end{equation}
+the exact aggregate raw identity is
+\begin{equation}\label{eq:raw-complete}
+ \boxed{\cT_{\sigma,2m}=\cT_{k,m}^{\rm rest}-F_m^{\rm orb}.}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Primitivity and the RH-334 multiplier-preserving folding bijection give the
+cardinality and common weight.  The retained $2m-1$ points lie in $F$, while
+$\xi_m<b$ lies in $J^-$ or $F$ and never in $J^+$.  A finite set has zero
+multiplication operator on $L^2$, so its localized noisy trace vanishes.
+Deleting its deterministic marked-point weights gives
+\eqref{eq:Brest}--\eqref{eq:Rrest}; summation proves
+\eqref{eq:raw-complete}.
+\end{proof}
+
+The exact allocation is phase sensitive.  Put
+\begin{equation}\label{eq:qbm}
+ q_{{\rm b},m}=\frac{b-\xi_m}{\sqrt\sigma}.
+\end{equation}
+The RH-327 inverse-branch expansion, applied to the period parameter $m$ but
+the same $\sigma$, gives
+\begin{equation}\label{eq:qbm-limit}
+ q_{{\rm b},m}\longrightarrow
+ \frac{\sqrt{C_{\rm b}}}{2u_c}\lambda^{1-\eta}
+\end{equation}
+along $\eta_\sigma\to\eta$.  Indeed
+$C_{\rm b}\lambda^{-2m}/\sigma
+\to C_{\rm b}\lambda^{2-2\eta}$.
+Therefore $\epsilon_m=\one_{\{q_{{\rm b},m}\le A\}}$ stabilizes away from
+equality of the limit with $A$; at equality the source $o(1)$ term does not
+decide stabilization \citep{WangNeighboringBudget2026}.
+
+\section{Exact typed lower coefficient}
+
+\begin{theorem}[Complete lower-sideband coefficient]
+\label{thm:coefficient}
+At $n_-=2m$,
+\begin{align}
+ q_{\sigma,k,2m}
+ &=\cT_{k,m}^{\rm rest}+\cP_{\sigma,2m}
+ -\cA_{k,2m}-F_m^{\rm orb},
+ \label{eq:q-lower}\\
+ p_{\sigma,k,2m}
+ &=\cT_{k,m}^{\rm rest}+\cP_{\sigma,2m}-d_{\sigma,k,2m}
+ -\cA_{k,2m}-F_m^{\rm orb}.
+ \label{eq:p-lower}
+\end{align}
+Consequently
+\begin{equation}\label{eq:direct-compensation}
+ p_{\sigma,k,2m}=o(H_m)
+ \quad\Longleftrightarrow\quad
+ \cT_{k,m}^{\rm rest}+\cP_{\sigma,2m}-d_{\sigma,k,2m}
+ =\cA_{k,2m}+F_m^{\rm orb}+o(H_m).
+\end{equation}
+The analogous full-trace statement omits $d_{\sigma,k,2m}$.
+\end{theorem}
+
+\begin{proof}
+Substitute \eqref{eq:raw-complete} into \eqref{eq:five-slot}, then use
+\eqref{eq:direct}.  Rearrangement proves the equivalence.
+\end{proof}
+
+Every direct prefix containing $2m$ has the nonnegative summand
+\begin{equation}\label{eq:weighted}
+ \frac{|p_{\sigma,k,2m}|R^{2m}}{2m}
+ =\frac{|p_{\sigma,k,2m}|}{2H_m}.
+\end{equation}
+Thus direct prefix closure implies \eqref{eq:direct-compensation}.  Likewise
+RH-339's off-alias full-trace prefix forces the $q$ version.  Neither converse
+controls the remaining orders.
+
+If $D_m^{\rm orb}=(2m-1)G_m$ is the RH-339 partial atom and
+$C_k^-=q_{\sigma,k,2m}+D_m^{\rm orb}$, then exactly
+\begin{equation}\label{eq:Cminus}
+ C_k^-=\cT_{k,m}^{\rm rest}+\cP_{\sigma,2m}
+ -\cA_{k,2m}-G_m.
+\end{equation}
+This physically expands the combined complement used in the earlier
+necessary compensation law.
+
+\section{Missing point and radial sideband scales}
+
+\begin{theorem}[Complete atom and radial relative law]
+\label{thm:scales}
+As $m=k-1\to\infty$,
+\begin{align}
+ F_m^{\rm orb}
+ &=\frac{2m}{C_M}\beta^{2m}\{1+o(1)\},
+ \label{eq:F-scale}\\
+ \frac{F_m^{\rm orb}}{H_m}
+ &=\frac2{C_M}(\beta R)^{2m}\{1+o(1)\}
+ \longrightarrow\infty.
+ \label{eq:F-over-H}
+\end{align}
+Moreover
+\begin{equation}\label{eq:partial-full}
+ \frac{F_m^{\rm orb}}{D_m^{\rm orb}}=\frac{2m}{2m-1},
+ \qquad
+ F_m^{\rm orb}-D_m^{\rm orb}=G_m,
+\end{equation}
+and
+\begin{equation}\label{eq:G-over-H}
+ \frac{G_m}{H_m}
+ =\frac1{C_Mm}(\beta R)^{2m}\{1+o(1)\}
+ \longrightarrow\infty.
+\end{equation}
+The radial counterloop term satisfies the sharp relative law
+\begin{equation}\label{eq:radial-relative}
+ \boxed{
+ \frac{\cA_{k,2m}}{F_m^{\rm orb}}
+ =\frac{C_M-1}{m}+o(m^{-1})\longrightarrow0.}
+\end{equation}
+Consequently
+\begin{equation}\label{eq:combined-positive}
+ S_m^-:=F_m^{\rm orb}+\cA_{k,2m}>0
+ \quad\hbox{eventually},
+ \qquad
+ \frac{S_m^-}{F_m^{\rm orb}}\longrightarrow1.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The multiplier law \eqref{eq:Mm} gives
+$G_m=C_M^{-1}\beta^{2m}\{1+o(1)\}$, proving
+\eqref{eq:F-scale}--\eqref{eq:G-over-H}; RH-336 supplies the exact
+$\beta R>1$ certificate \citep{WangProjectorMass2026}.
+
+For the current period-$2k$ counterloop,
+\begin{equation}\label{eq:beta-k-asymptotic}
+ \beta_k=\beta\exp\left[-\frac{\log C_M}{2k}+o(k^{-1})\right].
+\end{equation}
+Since $m/k\to1$,
+\[
+ \frac{\beta_k^{2m}}{\beta^{2m}}
+ =\exp\{-\tfrac{m}{k}\log C_M+o(1)\}
+ \longrightarrow C_M^{-1}.
+\]
+Insert this into \eqref{eq:radial}:
+\[
+ \cA_{k,2m}
+ =2\beta^{2m}\{1-C_M^{-1}+o(1)\}.
+\]
+Division by \eqref{eq:F-scale} proves
+\eqref{eq:radial-relative}.  Equation \eqref{eq:combined-positive} follows
+without any sign assumption on the radial term.
+\end{proof}
+
+The radial sideband is small only relative to the full orbit atom.  Because
+$F_m^{\rm orb}/H_m\to\infty$, \eqref{eq:radial-relative} does not prove
+$\cA_{k,2m}=o(H_m)$.  Its sign and target scale remain source-unresolved.
+The missing point $G_m$, by contrast, is definitely super-target.
+
+\section{Shifted lower parity interface}
+
+The actual square-root parity law gives, since $m\sqrt\sigma\to0$,
+\begin{equation}\label{eq:P-lower-asymptotic}
+ \cP_{\sigma,2m}
+ =2mC_*\sqrt\sigma\,r_H^{-2m}\{1+o(1)\}.
+\end{equation}
+
+\begin{corollary}[Lower-sideband phase ratio]
+\label{cor:phase}
+Along $\eta_\sigma\to\eta$,
+\begin{equation}\label{eq:lower-phase}
+ \frac{\cP_{\sigma,2m}}{F_m^{\rm orb}}
+ \longrightarrow C_*C_M\lambda^{\eta-1},
+ \qquad
+ \frac{\cP_{\sigma,2m}}{S_m^-}
+ \longrightarrow C_*C_M\lambda^{\eta-1}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Divide \eqref{eq:P-lower-asymptotic} by \eqref{eq:F-scale}.  The remaining
+clock factor is
+$\sqrt\sigma\lambda^m=\lambda^{\eta_\sigma-k+m}
+=\lambda^{\eta_\sigma-1}$.  The second limit uses
+\eqref{eq:combined-positive}.
+\end{proof}
+
+Thus the unique symbolic scalar balance for RH-347 is
+\begin{equation}\label{eq:eta-minus}
+ \eta_-=1-\frac{\log(C_*C_M)}{\log\lambda}.
+\end{equation}
+This is an interface, not a compensation result: the signed orbit-free
+remainder in \eqref{eq:p-lower} is still unestimated.
+
+\section{Executable audit and claim boundary}
+
+The artifact reconstructs the lower boundary orbit at
+$k=3,5,9,17,33$, checks the complete counts and closure, evaluates the
+missing point, radial sideband, and shifted parity ratios, and verifies an
+independent rational typed ledger.  Finite decimals, including the observed
+radial sign, are reproduction checks only and are not interval certificates
+or asymptotic evidence.
+
+RH-346 proves the complete physical lower orbit subledger, exact coefficient
+decomposition, super-target missing point, sharp radial/full relative law,
+and shifted parity interface.  It proves neither lower compensation nor
+lower noncompensation.  One sideband does not close the punctured off-alias
+aggregate, and no head transport or direct prefix theorem follows.
+
+RH-347 may audit the scalar mechanism only with the exact combined demand
+$S_m^-$; RH-345 is not copied with a changed label
+\citep{WangCriticalPhase2026}.  RH-288 remains inactive.  Gates A--E remain
+false/open.  This paper constructs no Hilbert--Polya operator, identifies no
+Riemann zero, proves no von Mangoldt prime-power trace, proves no
+completed-zeta divisor equality, and does not prove the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
