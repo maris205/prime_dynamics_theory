@@ -1,0 +1,302 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+
+\title{A First-Lower-Sideband Orbit Atom and a\\
+Mandatory Compensation Obstruction}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The one-alias off-background of RH-330 contains every coefficient below the
+critical order $2k$ except the critical coefficient itself.  We prove that
+the first lower even sideband $n_-=2k-2$ already contains an alias-scale
+physical boundary-orbit atom.  The primitive period-$2(k-1)$ boundary orbit
+has a folded subset of $2k-3$ marked points in the frozen RH-334 far set.
+Its noisy localized trace is exactly zero, while its deterministic mass
+$D_{k-1}^{\rm orb}$ satisfies
+\[
+ D_{k-1}^{\rm orb}/H_{k-1}\longrightarrow+\infty,
+ \qquad H_{k-1}=(k-1)R^{-2(k-1)}.
+\]
+Writing the actual typed sideband coefficient as
+$q_-= -D_{k-1}^{\rm orb}+C_-$, vanishing of the off-alias weighted prefix
+necessarily forces
+$C_-=D_{k-1}^{\rm orb}+o(H_{k-1})$, at relative precision
+$o((\beta R)^{-2(k-1)})$.  Thus any proof that takes separate absolute
+values after the orbit/complement split fails at this mandatory sideband.
+This is not a positive lower bound for the fully signed coefficient: the
+complement may cancel the atom.  The repository provides no moving-order
+estimate for that complement, so both off-alias vanishing and off-alias
+nonvanishing remain not testable.  The physical counterloop radial sideband
+is retained without a sign claim because the printed value $C_M>1$ lacks an
+interval certificate.  No determinant or Riemann-hypothesis conclusion is
+obtained.
+\end{abstract}
+
+\section{Typed off-alias coefficient}
+
+Work on the physical natural clock
+\begin{equation}\label{eq:clock}
+ k=k_\sigma\in\mathbb N,\qquad k\ge2,\qquad
+ k=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),
+ \qquad \sigma\to0,
+ \qquad H_k=kR^{-2k},
+ \qquad R=\frac75.
+\end{equation}
+Choose any integer cut
+\begin{equation}\label{eq:cut}
+ 2k<h_\sigma\le4k.
+\end{equation}
+For the actual Hardy full-trace constituent $q_{\sigma,k,n}$, RH-330 defines
+the nonnegative off-alias prefix
+\begin{equation}\label{eq:E-off}
+ \cE_{\sigma,\rm off}^{(h)}(R)
+ =\sum_{\substack{2\le n<h_\sigma\\ n\ne2k}}
+ \frac{|q_{\sigma,k,n}|R^n}{n}
+\end{equation}
+\citep{WangTransfer2026}.
+
+We retain the corrected RH-334 folded backward-observable operator
+$K_\sigma$, the frozen basepoint partition
+$[0,1]=J^-\sqcup J^+\sqcup F$, and the localized raw slots
+$\cB_{\sigma,k,n},\cS_{\sigma,k,n},\cR_{\sigma,k,n}$
+\citep{WangObservation2026}.  For every $n\ge2$, define
+\begin{align}
+ q_{\sigma,k,n}
+ &=c^H_{\sigma,n}-s_{k,n}-a_n^{\rm num},
+ \label{eq:q-definition}\\
+ \cP_{\sigma,n}
+ &=r_H^{-n}\{(-1)^n-\lambda_-(\sigma)^n\},
+ \qquad r_H=\frac{17}{20},
+ \label{eq:parity}\\
+ \cA_{k,n}&=s_{k,n}-p_n^{\rm pole}.
+ \label{eq:counterloop-defect}
+\end{align}
+
+\begin{proposition}[All-order typed five-slot identity]
+\label{prop:five-slot}
+For every $n\ge2$,
+\begin{equation}\label{eq:five-slot}
+ \boxed{
+ q_{\sigma,k,n}
+ =\cB_{\sigma,k,n}+\cS_{\sigma,k,n}+\cR_{\sigma,k,n}
+  +\cP_{\sigma,n}-\cA_{k,n}.}
+\end{equation}
+The coefficient type is the Hardy full-trace constituent, not automatically
+the modulus-complement coefficient.
+\end{proposition}
+
+\begin{proof}
+The deterministic numerator anchor is
+$a_n^{\rm num}=c^H_n-p_n^{\rm pole}$.  Hence
+\begin{equation*}
+ q_{\sigma,k,n}
+ =(c^H_{\sigma,n}-c^H_n)-(s_{k,n}-p_n^{\rm pole}).
+\end{equation*}
+The exact bulk split gives
+\begin{equation*}
+ c^H_{\sigma,n}-c^H_n
+ =r_H^{-n}\{\Tr K_\sigma^n-P_n\}+\cP_{\sigma,n}.
+\end{equation*}
+RH-334 partitions the raw trace into $\cB+\cS+\cR$ for every $n\ge2$.
+Substitution proves \eqref{eq:five-slot}.  Identifying this constituent with
+the modulus complement would additionally require the noisy-head defect to
+vanish, which is not assumed here.
+\end{proof}
+
+Set
+\begin{equation}\label{eq:n-minus}
+ n_-=2k-2=2m,
+ \qquad m=k-1,
+ \qquad H_m=mR^{-2m}.
+\end{equation}
+For every admissible cut \eqref{eq:cut}, $2\le n_-<h_\sigma$ and
+$n_-\ne2k$.  Therefore the corresponding summand is always present in
+\eqref{eq:E-off}.
+
+At this sideband the exact RH-326 counterloop identity is
+\begin{equation}\label{eq:radial-sideband}
+ \cA_{k,n_-}=2(\beta^{n_-}-\beta_k^{n_-}),
+ \qquad
+ \beta_k=\frac{|M_k|^{-1/(2k)}}{r_H},
+ \qquad
+ \beta=\frac1{r_H\sqrt\lambda}
+\end{equation}
+\citep{WangFirstAlias2026}.  RH-17 proves only $C_M>0$ analytically in
+$|M_k|=C_M\lambda^k(1+o(1))$.  Its printed value
+$1.9463429052\ldots$ is not an interval certificate, so no eventual sign of
+\eqref{eq:radial-sideband} is used.  Here ``alias-scale'' refers only to the
+size of the orbit atom.  The lower sideband is not an alias impulse of the
+current period-$2k$ counterloop; \eqref{eq:radial-sideband} is its radial
+counterloop contribution.
+
+\section{A physical orbit atom at $n_-=2k-2$}
+
+Let $p_{2m}$ be the primitive boundary point of physical period $2m$ and
+write $x_j=f^j(p_{2m})$.  RH-17 supplies the ordered component chain, fixed
+gaps from the fold cusp $b$, and the multiplier law
+\begin{equation}\label{eq:M-m}
+ M_m=(f^{2m})'(p_{2m})=-C_M\lambda^m\{1+o(1)\}
+\end{equation}
+\citep{WangBoundaryMonodromy2026}.  Define
+\begin{equation}\label{eq:Omega-m}
+ \Omega_m=\{|x_j|:0\le j<2m,\ j\ne2m-2\}.
+\end{equation}
+
+\begin{theorem}[Mandatory lower-sideband far atom]
+\label{thm:sideband-atom}
+For every fixed RH-334 window parameter $A>0$ and all sufficiently large
+$k$,
+\begin{equation}\label{eq:Omega-sideband-F}
+ \Omega_m\subset F_{\sigma,k,A},
+ \qquad |\Omega_m|=2m-1=2k-3.
+\end{equation}
+Define
+\begin{equation}\label{eq:D-m}
+ D_m^{\rm orb}
+ =r_H^{-2m}\frac{2m-1}{1+|M_m|}>0.
+\end{equation}
+Then the localized sideband far subledger is exactly
+\begin{equation}\label{eq:R-orb-minus}
+ \cR_{k,-}^{\rm orb}
+ :=r_H^{-2m}\{L_{\sigma,2m}(\Omega_m)
+              -P_{2m}^{\rm abs}(\Omega_m)\}
+ =-D_m^{\rm orb},
+\end{equation}
+and
+\begin{equation}\label{eq:D-Hm}
+ \frac{D_m^{\rm orb}}{H_m}
+ =\frac{2}{C_M}(\beta R)^{2m}\{1+o(1)\}
+ \longrightarrow+\infty.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The fixed-gap proof of RH-338 applies to the period-$2m$ orbit even though
+the windows are evaluated on the narrower $k$-clock
+\citep{WangFarAtom2026}.  The endpoint lies to the right of $b$ by a fixed
+gap; all retained internal even points are at most $h(b)<b$; and all odd
+folded points are at most $r<b$.  Since $A\sqrt\sigma\to0$, deleting only
+$h(p_{2m})$ leaves $2m-1$ distinct points in $F_{\sigma,k,A}$.
+
+The finite set $\Omega_m$ has zero multiplication operator on $L^2$, so its
+noisy localized trace is zero.  Folding preserves the multiplier and marked
+multiplicity.  Since $M_m<0$ for large $m$, each deterministic weight is
+$1/(1+|M_m|)$, proving \eqref{eq:R-orb-minus}.  Finally
+\eqref{eq:M-m} and $\beta^{2m}=r_H^{-2m}\lambda^{-m}$ give
+\begin{equation*}
+ D_m^{\rm orb}=\frac{2m}{C_M}\beta^{2m}\{1+o(1)\}.
+\end{equation*}
+Division by $H_m$ gives \eqref{eq:D-Hm}; RH-336 proves $\beta R>1$ exactly
+\citep{WangProjectorMass2026}.
+\end{proof}
+
+As in RH-338, $\Omega_m$ is only an analytic subpartition of the already
+frozen far set.  It is not a new canonical physical observation window.
+
+\section{Off-alias compensation obstruction}
+
+Collect every other signed contribution at $n_-$ into the exact complement
+\begin{equation}\label{eq:C-minus}
+ C_k^-:=q_{\sigma,k,n_-}+D_m^{\rm orb}.
+\end{equation}
+Thus
+\begin{equation}\label{eq:q-minus-split}
+ q_{\sigma,k,n_-}=-D_m^{\rm orb}+C_k^-.
+\end{equation}
+$C_k^-$ includes the rest of the raw far slot, the boundary and sibling
+slots, the parity packet, and the radial counterloop term
+\eqref{eq:radial-sideband}, with their actual signs retained.
+
+\begin{theorem}[Necessary compensation for off-alias vanishing]
+\label{thm:necessary-compensation}
+For every admissible cut \eqref{eq:cut},
+\begin{equation}\label{eq:E-lower-coeff}
+ \cE_{\sigma,\rm off}^{(h)}(R)
+ \ge\frac{|q_{\sigma,k,n_-}|R^{2m}}{2m}
+ =\frac{|q_{\sigma,k,n_-}|}{2H_m}.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:E-implies-compensation}
+ \cE_{\sigma,\rm off}^{(h)}(R)\longrightarrow0
+ \quad\Longrightarrow\quad
+ C_k^-=D_m^{\rm orb}+o(H_m).
+\end{equation}
+The required relative precision is
+\begin{equation}\label{eq:relative-sideband}
+ o\!\left(\frac{H_m}{D_m^{\rm orb}}\right)
+ =o\!\left((\beta R)^{-2m}\right).
+\end{equation}
+Moreover, an atom/complement proof that takes separate absolute values
+before their signed sum cannot close, because the orbit atom alone contributes
+\begin{equation}\label{eq:absolute-sideband}
+ \frac{D_m^{\rm orb}R^{2m}}{2m}
+ =\frac{D_m^{\rm orb}}{2H_m}
+ \longrightarrow+\infty.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The $n_-$ summand is present in \eqref{eq:E-off}, proving
+\eqref{eq:E-lower-coeff}.  If the nonnegative prefix tends to zero, that
+summand tends to zero and hence
+$q_{\sigma,k,n_-}=o(H_m)$.  Substitute \eqref{eq:q-minus-split} to obtain
+\eqref{eq:E-implies-compensation}.  The reciprocal of \eqref{eq:D-Hm}
+gives \eqref{eq:relative-sideband}; \eqref{eq:absolute-sideband} is the same
+identity without the signed complement.
+\end{proof}
+
+This theorem is one-way.  It does not lower-bound the fully signed
+$|q_{\sigma,k,n_-}|$, because $C_k^-$ may compensate the orbit atom.  RH-19
+leaves the requisite bulk moving-order control open
+\citep{WangComplement2026}.  Therefore neither
+$\cE_{\sigma,\rm off}^{(h)}(R)\to0$ nor its failure follows from the current
+repository.  The exact verdict is a scoped obstruction to the
+separate-absolute sideband route and
+\texttt{NOT\_TESTABLE} for the aggregate off-alias background.
+
+\section{Reproduction and claim boundary}
+
+The artifact evaluates the physical algebraic constants and period-$2m$
+boundary orbits at high Decimal precision for
+$k=3,5,9,17,33$ and $A=1/4$.  It reproduces the mandatory sideband orders,
+far counts $3,7,15,31,63$, orbit closure, the identity
+$R^{2m}/(2m)=1/(2H_m)$, and the super-target orbit mass.  These finite rows
+are diagnostic formula checks, not interval certificates or moving-order
+evidence.
+
+The paper proves only the actual typed lower-sideband atom and the necessary
+signed compensation condition.  It proves neither off-alias vanishing nor a
+positive lower bound for the fully signed sideband coefficient.  It does not
+close the critical packet, noisy head, counterloop synchronization,
+determinant gluing, full-trace replacement, or full-trace divergence.  No
+Hilbert--Polya operator, Riemann-zero identification, von Mangoldt trace,
+completed-zeta divisor equality, or Riemann-hypothesis proof is obtained.
+Gates A--E remain false/open.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
