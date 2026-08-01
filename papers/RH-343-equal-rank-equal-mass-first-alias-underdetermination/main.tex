@@ -1,0 +1,428 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\inv}{\mathrm{inv}}
+\newcommand{\vis}{\mathrm{vis}}
+
+\title{Equal Rank and Equal Spectral Mass Do Not Determine the\\
+First-Alias Weighted Prefix}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct two finite normal spectral models on the physical first-alias
+clock that agree in a stringent package of coarse invariants compatible with
+the noisy Hardy-head ceilings but have opposite strict-prefix behavior.  Let
+$\mathcal U_L(r)$ be the complete $L$th-root shell of radius $r$, let
+$\mathcal Y_k$ be the RH-342 counterloop, and set
+\[
+ a=\frac34,\qquad b=\frac45,\qquad
+ c=\sqrt{\frac{481}{800}}.
+\]
+The multisets
+\[
+ \mathcal X_k^{\inv}=\mathcal Y_k\sqcup\mathcal U_{4k}(c),
+ \qquad
+ \mathcal X_k^{\vis}=\mathcal Y_k\sqcup
+ \mathcal U_{2k}(a)\sqcup\mathcal U_{2k}(b)
+\]
+both have rank $6k-2$ and squared spectral mass
+$(2k-2)\beta_k^2+481k/200$.  They are conjugation closed, eventually
+simple, normally realizable, contained in the same Hardy annulus, and have
+the same maximum modulus $\beta_k$.  Both agree with $\mathcal Y_k$ at every
+order $2\le n<2k$, hence at every fixed order eventually, but they split at
+the first alias $n=2k$.
+
+For the RH-299 budget
+\[
+ D_m(X,Y)=\sum_{2\le n<m}\frac{|p_n(X)-p_n(Y)|R^n}{n},
+ \qquad R=\frac75,
+\]
+the strict endpoint is decisive:
+\[
+ D_{4k}(\mathcal X_k^{\inv},\mathcal Y_k)=0,
+ \qquad
+ D_{4k}(\mathcal X_k^{\vis},\mathcal Y_k)
+ =\left(\frac{21}{20}\right)^{2k}
+  +\left(\frac{28}{25}\right)^{2k}\longrightarrow\infty.
+\]
+The genus-one quotient factors are respectively $1-(cz)^{4k}$ and
+$[1-(az)^{2k}][1-(bz)^{2k}]$.  Thus equal rank, squared mass, cap, maximum
+modulus, normal simplicity, and all pre-alias or eventual fixed-order data do
+not determine the moving strict-prefix budget.  This is an exact finite
+spectral information-class theorem, not an actual noisy-operator theorem.
+No physical head transport, determinant gluing, Gate progress, or
+Riemann-hypothesis claim follows.
+\end{abstract}
+
+\section{Source-locked counterloop and complete shells}
+
+Fix the common Hardy constants and physical clock
+\begin{equation}\label{eq:constants-clock}
+ q=\frac12,\qquad r_H=\frac{17}{20},\qquad R=\frac75,
+ \qquad
+ k=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),
+ \qquad u=4k.
+\end{equation}
+RH-342 locks the graded counterloop in this normalization as
+\begin{equation}\label{eq:Y}
+ \cY_k=\{\beta_k e^{ij\pi/k},\beta_k e^{-ij\pi/k}:
+                    1\le j\le k-1\},
+ \qquad \#\cY_k=2k-2,
+\end{equation}
+with exact moments
+\begin{equation}\label{eq:Y-moments}
+ p_n(\cY_k)=\beta_k^n
+ \bigl(2k\one_{2k\mid n}-1-(-1)^n\bigr).
+\end{equation}
+Here and below $p_n(X)=\sum_{x\in X}x^n$.  The radius obeys
+\begin{equation}\label{eq:beta-limit}
+ \beta_k\longrightarrow
+ \beta=(r_H\sqrt\lambda)^{-1}=0.9080523604\ldots
+\end{equation}
+by RH-272, and $\beta_k<1/r_H$ eventually
+\citep{WangCounterloop2026,WangRankLock2026}.  The strict prefix
+$2\le n<4k$ contains $2k$ and excludes $4k$.
+
+For $L\ge2$ and $r>0$, define the complete root shell
+\begin{equation}\label{eq:full-shell}
+ \cU_L(r)=\{re^{2\pi ij/L}:0\le j<L\}.
+\end{equation}
+
+\begin{proposition}[Complete-shell power ledger]
+\label{prop:shell-ledger}
+For every integer $n\ge1$,
+\begin{equation}\label{eq:shell-ledger}
+ p_n(\cU_L(r))=Lr^n\one_{L\mid n}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+After factoring out $r^n$, the remaining sum is the finite geometric
+progression
+\[
+ \sum_{j=0}^{L-1}e^{2\pi ijn/L},
+\]
+which equals $L$ when $L\mid n$ and zero otherwise.  This is the complete
+shell identity used in RH-289 \citep{WangShellNonidentifiability2026}.
+\end{proof}
+
+Put
+\begin{equation}\label{eq:radii}
+ a=\frac34,\qquad b=\frac45,\qquad
+ c=\sqrt{\frac{481}{800}},
+ \qquad c^2=\frac{a^2+b^2}{2},
+\end{equation}
+and define two model spectra
+\begin{equation}\label{eq:candidates}
+ \cX_k^{\inv}=\cY_k\sqcup\cU_{4k}(c),
+ \qquad
+ \cX_k^{\vis}=\cY_k\sqcup\cU_{2k}(a)
+                         \sqcup\cU_{2k}(b).
+\end{equation}
+The superscripts describe visibility before the strict endpoint.  Neither
+multiset is named or interpreted as the actual spectral head of
+$K_\sigma/r_H$.
+
+\section{Equal rank, mass, cap, and normal realizability}
+
+We use \emph{squared spectral mass} for the multiset quantity
+\begin{equation}\label{eq:squared-mass}
+ M_2(X)=\sum_{x\in X}|x|^2.
+\end{equation}
+For a normal diagonal realization this also equals its squared
+Hilbert--Schmidt norm; no such operator-language identification is used for
+an actual noisy operator.
+
+\begin{theorem}[Exact equal-invariant package]
+\label{thm:equal-invariants}
+For every $k\ge2$,
+\begin{align}
+ \#\cX_k^{\inv}=\#\cX_k^{\vis}&=6k-2,
+ \label{eq:equal-rank}\\
+ M_2(\cX_k^{\inv})=M_2(\cX_k^{\vis})
+ &=(2k-2)\beta_k^2+\frac{481k}{200}.
+ \label{eq:equal-mass}
+\end{align}
+Both multisets are closed under complex conjugation and are spectra of finite
+normal diagonal matrices.  For all sufficiently large $k$, they are simple,
+every root lies in
+\begin{equation}\label{eq:common-annulus}
+ q<|z|<1/r_H,
+\end{equation}
+and both have maximum root modulus exactly $\beta_k$.
+\end{theorem}
+
+\begin{proof}
+The added ranks are $4k$ on both sides, so \eqref{eq:equal-rank} follows
+from $\#\cY_k=2k-2$.  The invisible shell adds squared mass
+\[
+ 4kc^2=4k\frac{481}{800}=\frac{481k}{200}.
+\]
+The visible shells add
+\[
+ 2ka^2+2kb^2
+ =2k\left(\frac9{16}+\frac{16}{25}\right)
+ =2k\frac{481}{400}=\frac{481k}{200},
+\]
+which proves \eqref{eq:equal-mass}.
+
+Every complete shell and $\cY_k$ is conjugation closed, hence so are their
+disjoint unions.  Listing the roots on the diagonal gives finite normal
+realizations.  The exact squared comparisons
+\begin{equation}\label{eq:radius-squares}
+ a^2=\frac{450}{800}<c^2=\frac{481}{800}
+ <b^2=\frac{512}{800}
+\end{equation}
+give $a<c<b$.  Since $q<a$ and the limit in \eqref{eq:beta-limit} is larger
+than $b=0.8$, eventually
+\begin{equation}\label{eq:radius-order}
+ q<a<c<b<\beta_k<1/r_H.
+\end{equation}
+Each individual root shell is simple.  Their radii are then pairwise
+distinct, while the roots in $\cY_k$ are the distinct nonreal $2k$th roots
+on radius $\beta_k$.  Thus both unions are simple.  Equation
+\eqref{eq:radius-order} also proves \eqref{eq:common-annulus} and shows that
+the common maximum modulus is $\beta_k$.
+\end{proof}
+
+\begin{corollary}[Compatibility with only the coarse physical ceilings]
+\label{cor:coarse-compatible}
+On the clock \eqref{eq:constants-clock}, the rank and squared spectral mass
+of both candidates satisfy
+\begin{equation}\label{eq:coarse-scale}
+ O(k)=O(\log(1/\sigma))=o(1/\sigma).
+\end{equation}
+Consequently they do not violate the RH-282 ceilings
+\begin{equation}\label{eq:rh282-ceilings}
+ r_\sigma\le4/\sigma,
+ \qquad M_\sigma\le1/\sigma,
+\end{equation}
+but those inequalities do not physically realize either candidate.
+\end{corollary}
+
+\begin{proof}
+The rank formula is linear in $k$.  Since $\beta_k$ converges, the mass in
+\eqref{eq:equal-mass} is also $O(k)$.  Equation
+\eqref{eq:constants-clock} and the elementary relation
+$\log(1/\sigma)=o(1/\sigma)$ give \eqref{eq:coarse-scale}.  RH-282 proves
+\eqref{eq:rh282-ceilings} for the actual noisy spectral data
+\citep{WangSpectralTail2026}; satisfying upper ceilings is only a consistency
+check, not an identification theorem.
+\end{proof}
+
+\section{Pre-alias agreement and the first split}
+
+\begin{theorem}[Exact moving-order moment dichotomy]
+\label{thm:moment-dichotomy}
+For every $n\ge1$,
+\begin{align}
+ p_n(\cX_k^{\inv})-p_n(\cY_k)
+ &=4kc^n\one_{4k\mid n},
+ \label{eq:inv-difference}\\
+ p_n(\cX_k^{\vis})-p_n(\cY_k)
+ &=2k(a^n+b^n)\one_{2k\mid n}.
+ \label{eq:vis-difference}
+\end{align}
+Hence both candidates agree exactly with $\cY_k$ for every
+\begin{equation}\label{eq:pre-alias}
+ 2\le n<2k.
+\end{equation}
+For every fixed $n\ge2$, this agreement therefore holds for all sufficiently
+large $k$.  The candidates do \emph{not} both agree with $\cY_k$ throughout
+$2\le n<4k$: at $n=2k$,
+\begin{equation}\label{eq:first-split}
+ p_{2k}(\cX_k^{\inv})-p_{2k}(\cY_k)=0,
+ \qquad
+ p_{2k}(\cX_k^{\vis})-p_{2k}(\cY_k)
+ =2k(a^{2k}+b^{2k})>0.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Apply Proposition~\ref{prop:shell-ledger} to each shell in
+\eqref{eq:candidates}.  No positive integer $n<2k$ is divisible by either
+$2k$ or $4k$, proving \eqref{eq:pre-alias}.  For fixed $n$, eventually
+$n<2k$.  Finally, $2k$ is not divisible by $4k$ but is divisible by $2k$,
+which gives \eqref{eq:first-split}.
+\end{proof}
+
+The distinction in Theorem~\ref{thm:moment-dichotomy} is essential.  The
+invisible candidate agrees with $\cY_k$ at every order below $4k$, while the
+visible candidate first differs at $2k$.  Thus the theorem does not claim
+that the two candidates carry identical data on the whole strict prefix.
+
+\section{Exact strict-prefix budgets}
+
+Following RH-299, define for finite multisets $X,Y$ and $m\ge3$
+\begin{equation}\label{eq:D-definition}
+ D_m(X,Y)=\sum_{n=2}^{m-1}
+ \frac{|p_n(X)-p_n(Y)|R^n}{n},
+ \qquad R=\frac75.
+\end{equation}
+The denominator $n$ is part of the determinant-logarithm normalization and
+must not be dropped \citep{WangRootTransport2026}.
+
+\begin{theorem}[Zero versus divergent first-alias budget]
+\label{thm:budget-dichotomy}
+For every $k\ge2$,
+\begin{align}
+ D_{4k}(\cX_k^{\inv},\cY_k)&=0,
+ \label{eq:inv-budget}\\
+ D_{4k}(\cX_k^{\vis},\cY_k)
+ &=\left(\frac{21}{20}\right)^{2k}
+  +\left(\frac{28}{25}\right)^{2k}.
+ \label{eq:vis-budget}
+\end{align}
+In particular, the second budget tends to infinity as $k\to\infty$.
+\end{theorem}
+
+\begin{proof}
+There is no multiple of $4k$ in $2\le n<4k$, so
+\eqref{eq:inv-difference} makes every summand in \eqref{eq:D-definition}
+zero, proving \eqref{eq:inv-budget}.  The only multiple of $2k$ in the same
+strict prefix is $n=2k$.  Therefore \eqref{eq:vis-difference} gives exactly
+\begin{align*}
+ D_{4k}(\cX_k^{\vis},\cY_k)
+ &=\frac{2k(a^{2k}+b^{2k})R^{2k}}{2k}\\
+ &=(aR)^{2k}+(bR)^{2k}\\
+ &=\left(\frac{21}{20}\right)^{2k}
+  +\left(\frac{28}{25}\right)^{2k}.
+\end{align*}
+This retains the exact cancellation between the shell multiplicity $2k$ and
+the logarithmic denominator $n=2k$.  Both bases are larger than one, proving
+divergence.
+\end{proof}
+
+\begin{remark}[Why the endpoint must remain strict]
+The first nonzero moment of $\cU_{4k}(c)$ occurs at $n=4k$.  Thus replacing
+$n<4k$ by $n\le4k$ destroys \eqref{eq:inv-budget}.  The paper proves a
+strict-prefix theorem only.
+\end{remark}
+
+\section{Exact genus-one quotient factors}
+
+For a finite multiset $X$, put
+\begin{equation}\label{eq:genus-one}
+ E_1(w)=(1-w)e^w,
+ \qquad \Phi_X(z)=\prod_{x\in X}E_1(xz).
+\end{equation}
+
+\begin{proposition}[Candidate quotient factors]
+\label{prop:quotient-factors}
+The shell quotients are the exact entire factors
+\begin{align}
+ \frac{\Phi_{\cX_k^{\inv}}(z)}{\Phi_{\cY_k}(z)}
+ &=1-(cz)^{4k},
+ \label{eq:inv-factor}\\
+ \frac{\Phi_{\cX_k^{\vis}}(z)}{\Phi_{\cY_k}(z)}
+ &=[1-(az)^{2k}][1-(bz)^{2k}].
+ \label{eq:vis-factor}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+For every complete shell with $L\ge2$, its first power sum is zero, so all
+linear exponential terms in \eqref{eq:genus-one} cancel.  The elementary
+root factorization then gives
+\begin{equation}\label{eq:shell-factor}
+ \prod_{u\in\cU_L(r)}E_1(uz)=1-(rz)^L.
+\end{equation}
+Since each candidate is the disjoint union of $\cY_k$ and its displayed
+shells, equations \eqref{eq:inv-factor} and \eqref{eq:vis-factor} follow.
+\end{proof}
+
+These are finite analytic factor identities.  They do not identify either
+quotient with a factor in one physical noisy determinant.
+
+\section{Sharp information-class underdetermination}
+
+\begin{corollary}[Equal coarse data do not determine the moving budget]
+\label{cor:underdetermination}
+Within the class of finite complex spectral multisets, the following data,
+even when imposed simultaneously, do not determine the moving strict-prefix
+quantity $D_{4k}(X,\cY_k)$:
+\begin{enumerate}
+\item rank $6k-2$ and squared spectral mass
+$(2k-2)\beta_k^2+481k/200$;
+\item the common cap $1/r_H$ and common maximum modulus $\beta_k$;
+\item simple, conjugation-closed finite normal realizability;
+\item equality with $\cY_k$ at every pre-alias order $2\le n<2k$; and
+\item equality with $\cY_k$ at every fixed order eventually.
+\end{enumerate}
+Indeed, the same data allow the exact value zero and a value tending to
+infinity.  A future actual rank cap $r_\sigma\le2k-2$ would exclude both
+examples.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:equal-invariants} supplies items 1--3 for both candidates,
+and Theorem~\ref{thm:moment-dichotomy} supplies items 4--5.  The two values
+of the moving budget are given by Theorem~\ref{thm:budget-dichotomy}.  Both
+candidates have rank $6k-2>2k-2$, proving the final exclusion statement.
+\end{proof}
+
+Corollary~\ref{cor:underdetermination} is sharp in its declared information
+class: it preserves not only rank and mass but also the maximum radius and
+all pre-alias data.  It does not refute a future transport theorem that uses
+actual operator structure, a sharper rank cap, root matching, moving-order
+moments, contour information, or an annular norm.
+
+RH-303 proves that actual annular convergence would force fixed-order head
+transport \citep{WangFixedOrderNecessity2026}.  Our examples show only that,
+in a finite normal information class, eventual fixed-order transport is not
+by itself sufficient for the moving $4k$ budget.  No model-to-actual
+substitution is made.
+
+\section{Protocol, verdict, and claim firewall}
+
+The executable artifact evaluates the exact shell indicators, common ranks,
+the rational squared-mass identity, the first split, both strict-prefix
+budgets, and the radius ordering.  Its finite rows at $k=3,5,9,17$ reproduce
+closed identities only.  They are not numerical fits, noisy eigenvalue
+observations, or asymptotic evidence.
+
+On the physical clock, the examples are compatible with only the coarse
+RH-282 rank and mass ceilings.  Such compatibility cannot identify them with
+the actual noisy head.  Accordingly the exact route verdict is:
+\begin{enumerate}
+\item equal rank, equal squared mass, common cap, and fixed-order data are
+\texttt{STOP\_SCOPED} as an inference to the moving prefix without a sharper
+actual rank law or moving-order physical input;
+\item actual alias-inclusive head transport remains
+\texttt{NOT\_TESTABLE}/open; and
+\item the RH-288 determinant-gluing leaf remains inactive.
+\end{enumerate}
+
+In particular, this paper proves neither divergence nor vanishing of the
+actual $D_{4k}$, no physical rank mismatch, no equivalence of the physical
+$p$ and $q$ prefixes, and no failure of all future transport mechanisms.  It
+does not activate RH-288, identify the model spectra with $K_\sigma$, or
+prove determinant gluing.  Gates A--E remain false/open as reviewed in
+RH-341 \citep{WangActualFrontier2026}.  No Hilbert--Polya operator is
+constructed, no Riemann zero is identified, no von Mangoldt trace formula or
+completed-zeta divisor equality is proved, and the Riemann Hypothesis is not
+proved.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

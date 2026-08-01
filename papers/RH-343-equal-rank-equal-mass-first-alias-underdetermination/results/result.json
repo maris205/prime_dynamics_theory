@@ -1,0 +1,197 @@
+{
+  "clock_and_coarse_compatibility": {
+    "RH282_coarse_rank_ceiling": "4/sigma",
+    "RH282_coarse_squared_mass_ceiling": "1/sigma",
+    "clock": "k=log(1/sigma)/(2log(lambda))+O(1)",
+    "compatible_only_not_realized": true,
+    "rank_scale": "O(k)=O(log(1/sigma))=o(1/sigma)",
+    "squared_mass_scale": "O(k)=O(log(1/sigma))=o(1/sigma)"
+  },
+  "constants": {
+    "R": "7/5",
+    "a": "3/4",
+    "b": "4/5",
+    "beta_limit_source_decimal": "0.9080523604",
+    "c_squared": "481/800",
+    "q": "1/2",
+    "r_H": "17/20",
+    "radius_order_certificate": {
+      "a_lt_c_lt_b_exact_by_squares": true,
+      "a_squared": "9/16",
+      "b_lt_beta_limit": true,
+      "b_squared": "16/25",
+      "beta_limit_lt_global_cap": true,
+      "c_decimal": "0.77540312096354113139987654943962943650860136999414877544105997427104562652186150",
+      "c_squared": "481/800",
+      "global_cap": "1.1764705882352941176470588235294117647058823529411764705882352941176470588235294",
+      "q_lt_a": true
+    }
+  },
+  "construction": {
+    "base": "Y_k_RH342_counterloop_rank_2k_minus_2",
+    "full_shell": "U_L(r)={r exp(2pi i j/L):0<=j<L}",
+    "invisible": "X_k^inv=Y_k_disjoint_union_U_(4k)(c)",
+    "model_spectra_only": true,
+    "shell_moment": "p_n(U_L(r))=L r^n 1_(L|n)",
+    "visible": "X_k^vis=Y_k_disjoint_union_U_(2k)(a)_disjoint_union_U_(2k)(b)"
+  },
+  "false_claims": {
+    "actual_D_4k_divergence_proved": false,
+    "actual_D_4k_vanishing_proved": false,
+    "actual_head_rank_mismatch_proved": false,
+    "actual_head_transport_proved": false,
+    "actual_noisy_operator_realized": false,
+    "determinant_gluing_activated": false,
+    "direct_annular_route_closed": false,
+    "future_transport_theorems_refuted": false,
+    "hilbert_polya_constructed": false,
+    "model_spectra_identified_with_K_sigma": false,
+    "p_prefix_equivalent_to_q_prefix": false,
+    "physical_rank_cap_6k_minus_2_proved": false,
+    "physical_rank_mismatch_proved": false,
+    "physical_rank_or_mass_saturated": false,
+    "rh288_activated": false,
+    "riemann_hypothesis_proved": false,
+    "riemann_zeros_identified": false,
+    "von_mangoldt_trace_proved": false,
+    "zeta_divisor_equality": false
+  },
+  "finite_rows": [
+    {
+      "D_4k_invisible": "0/1",
+      "D_4k_visible": "3313918325809/1000000000000",
+      "both_pre_alias_equal_Y": true,
+      "common_extra_squared_mass": "1443/200",
+      "common_rank": 16,
+      "cut": 12,
+      "finite_row_is_exact_reproduction_only": true,
+      "first_split_order": 6,
+      "formula_matches_direct_sum": true,
+      "invisible_difference_at_split": "0/1",
+      "k": 3,
+      "mass_equal": true,
+      "rank_equal": true,
+      "visible_budget_formula": "3313918325809/1000000000000",
+      "visible_difference_at_split": "84503523/32000000"
+    },
+    {
+      "D_4k_invisible": "0/1",
+      "D_4k_visible": "473474283512165056849/100000000000000000000",
+      "both_pre_alias_equal_Y": true,
+      "common_extra_squared_mass": "481/40",
+      "common_rank": 28,
+      "cut": 20,
+      "finite_row_is_exact_reproduction_only": true,
+      "first_split_order": 10,
+      "formula_matches_direct_sum": true,
+      "invisible_difference_at_split": "0/1",
+      "k": 5,
+      "mass_equal": true,
+      "rank_equal": true,
+      "visible_budget_formula": "473474283512165056849/100000000000000000000",
+      "visible_difference_at_split": "1676162018401/1024000000000"
+    },
+    {
+      "D_4k_invisible": "0/1",
+      "D_4k_visible": "10096585028712555708229934218045450129/1000000000000000000000000000000000000",
+      "both_pre_alias_equal_Y": true,
+      "common_extra_squared_mass": "4329/200",
+      "common_rank": 52,
+      "cut": 36,
+      "finite_row_is_exact_reproduction_only": true,
+      "first_split_order": 18,
+      "formula_matches_direct_sum": true,
+      "invisible_difference_at_split": "0/1",
+      "k": 9,
+      "mass_equal": true,
+      "rank_equal": true,
+      "visible_budget_formula": "10096585028712555708229934218045450129/1000000000000000000000000000000000000",
+      "visible_difference_at_split": "55802325266145410438889/131072000000000000000000"
+    },
+    {
+      "D_4k_invisible": "0/1",
+      "D_4k_visible": "5239586545048130910121825780618253667381145554137709617881039199593489/100000000000000000000000000000000000000000000000000000000000000000000",
+      "both_pre_alias_equal_Y": true,
+      "common_extra_squared_mass": "8177/200",
+      "common_rank": 100,
+      "cut": 68,
+      "finite_row_is_exact_reproduction_only": true,
+      "first_split_order": 34,
+      "formula_matches_direct_sum": true,
+      "invisible_difference_at_split": "0/1",
+      "k": 17,
+      "mass_equal": true,
+      "rank_equal": true,
+      "visible_budget_formula": "5239586545048130910121825780618253667381145554137709617881039199593489/100000000000000000000000000000000000000000000000000000000000000000000",
+      "visible_difference_at_split": "1645934616192225060081676671277094562897137/85899345920000000000000000000000000000000000"
+    }
+  ],
+  "finite_rows_are_exact_reproduction_checks_only": true,
+  "gates": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+  },
+  "genus_one_quotients": {
+    "invisible": "1-(c*z)^(4k)",
+    "visible": "[1-(a*z)^(2k)][1-(b*z)^(2k)]"
+  },
+  "moment_ledger": {
+    "all_fixed_orders_eventually_equal_Y": true,
+    "both_equal_Y": "2<=n<2k",
+    "first_split_order": "n=2k",
+    "invisible_difference_at_2k": "0",
+    "not_equal_on_entire_strict_prefix": true,
+    "strict_endpoint": "2<=n<4k",
+    "visible_difference_at_2k": "2k(a^(2k)+b^(2k))"
+  },
+  "rank_and_mass": {
+    "common_maximum_modulus": "beta_k",
+    "common_rank": "6k-2",
+    "common_squared_spectral_mass": "(2k-2)beta_k^2+481k/200",
+    "conjugation_closed": true,
+    "diagonal_Hilbert_Schmidt_mass_equals_squared_spectral_mass": true,
+    "eventual_radius_order": "q<a<c<b<beta_k<1/r_H",
+    "eventually_simple": true,
+    "finite_normal_diagonal_realization": true,
+    "shell_mass_identity": "4k c^2=2k(a^2+b^2)=481k/200"
+  },
+  "route_boundary": {
+    "actual_alias_inclusive_head_transport": "NOT_TESTABLE_open",
+    "determinant_gluing": "OPEN_not_activated",
+    "equal_rank_mass_fixed_order_inference": "STOP_SCOPED_without_sharper_actual_rank_or_moving_order_physical_input"
+  },
+  "scope": "exact_equal_invariant_first_alias_underdetermination_not_actual_noisy_operator_transport",
+  "source_anchors": [
+    "RH_HANDOFF_sections_3_5_6",
+    "RH-272_counterloop_radius_limit",
+    "RH-282_coarse_rank_and_squared_mass_ceilings",
+    "RH-289_complete_shell_moment_and_genus_one_identity",
+    "RH-299_weighted_D_m_normalization",
+    "RH-303_fixed_order_head_transport_necessity",
+    "RH-342_common_Hardy_counterloop_and_rank_lock"
+  ],
+  "status": "rh343_equal_rank_equal_mass_first_alias_underdetermination",
+  "underdetermination_corollary": {
+    "data_do_not_determine": "moving_strict_prefix_D_4k",
+    "equal_data": [
+      "rank",
+      "squared_spectral_mass",
+      "common_cap_and_maximum_modulus",
+      "simple_conjugation_closed_normal_realizability",
+      "all_pre_alias_moments",
+      "every_fixed_order_eventually"
+    ],
+    "future_actual_rank_cap_2k_minus_2_excludes_both_examples": true
+  },
+  "verdict": "GO_SCOPED_finite_normal_spectral_information_class",
+  "weighted_budget": {
+    "definition": "D_m(X,Y)=sum_(2<=n<m)|p_n(X)-p_n(Y)|R^n/n",
+    "invisible_D_4k": "0_exactly",
+    "one_over_n_cancellation_retained": true,
+    "visible_D_4k": "(21/20)^(2k)+(28/25)^(2k)",
+    "visible_D_4k_diverges": true
+  }
+}
