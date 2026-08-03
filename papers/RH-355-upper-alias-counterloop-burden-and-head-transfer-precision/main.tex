@@ -1,0 +1,406 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=0.94in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\one}{\mathbf 1}
+
+\title{Upper-Alias Counterloop Burden and\\Head-Transfer Precision}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We determine the complete strict upper-alias burden of the source-locked
+finite-radius graded counterloop on the physical clock.  Let
+$x=(\beta R)^2>1$, $y_k=(\beta_kR)^2$, and
+\[
+ \mathcal C_k^{\rm up}
+ =\sum_{2k<n<4k}\frac{|s_{k,n}|R^n}{n}.
+\]
+The exact counterloop ledger reduces this to
+$\sum_{m=k+1}^{2k-1}y_k^m/m$.  The source-backed multiplier law
+$|M_k|=C_M\lambda^k\{1+o(1)\}$ then gives
+\[
+ \mathcal C_k^{\rm up}
+ \sim\frac{x^{2k}}{2C_M^2k(x-1)},\qquad
+ x^{-k}\mathcal C_k^{\rm up}
+ \sim\frac{x^k}{2C_M^2k(x-1)}.
+\]
+Thus the normalized burden has $k$th root $x>1$.  Its terminal coordinate
+$n=4k-2$ contributes an asymptotic fraction $(x-1)/x$.
+
+We next state the exact price of actual-head transport.  Conditional on the
+original, unnormalized same-clock hypothesis $D_{4k}(R)\to0$, the actual
+upper-head budget has the same asymptotic, its odd upper budget tends to
+zero, every even upper coordinate has relative error
+$o(kx^{-k})$ uniformly, and the terminal coordinate has the stronger error
+$o(kx^{-2k})$.  No theorem proving $D_{4k}(R)\to0$ is supplied.  A weaker
+normalized upper defect still transfers the aggregate normalized budget but
+does not force bandwise relative matching.  A complete
+$(2k+2)$th-root shell gives a conjugation-closed finite normal
+information-class counterexample: its normalized defect is
+$\sim x/(C_Mk)\to0$, while the relative error at $n=2k+2$ equals one and
+the unnormalized defect diverges.  This is not an actual noisy operator.
+No root or rank identification, direct/full-trace transfer, RH-288
+activation, Gate A--E, Hilbert--Polya, zero-identification, or RH conclusion
+follows.
+\end{abstract}
+
+\section{One physical clock and the exact upper band}
+
+Fix
+\begin{equation}\label{eq:constants}
+ r_H=\frac{17}{20},\qquad R=\frac75,
+ \qquad \frac{28}{17}<\lambda<\frac{17}{10}.
+\end{equation}
+Let $k=k_\sigma\to\infty$ be the physical first-alias clock used in
+RH-342.  RH-17 proves the boundary multiplier law
+\begin{equation}\label{eq:multiplier}
+ |M_k|=C_M\lambda^k\{1+o(1)\},\qquad C_M>0,
+\end{equation}
+and the finite counterloop radius is
+\begin{equation}\label{eq:beta-k}
+ \beta_k=\frac{|M_k|^{-1/(2k)}}{r_H},\qquad
+ \beta=\frac1{r_H\sqrt\lambda}.
+\end{equation}
+Consequently
+\begin{equation}\label{eq:beta-asymptotic}
+ \beta_k
+ =\beta\exp\left[-\frac{\log C_M}{2k}+o(k^{-1})\right].
+\end{equation}
+Put
+\begin{equation}\label{eq:x-y}
+ x=(\beta R)^2=\frac{(R/r_H)^2}{\lambda},\qquad
+ y_k=(\beta_kR)^2
+ =x\exp\left[-\frac{\log C_M}{k}+o(k^{-1})\right].
+\end{equation}
+The certified upper bound for $\lambda$ makes $x>1$
+\citep{WangProjectorMass2026,WangTimeOrdered2026}.
+
+The counterloop is the finite multiset
+\begin{equation}\label{eq:Y}
+ \cY_k=\{\beta_ke^{ij\pi/k},\beta_ke^{-ij\pi/k}:1\le j\le k-1\}.
+\end{equation}
+RH-342 locks it in the same Hardy normalization as the actual
+modulus-complete head and proves the exact moment ledger
+\citep{WangHeadCounterloop2026}
+\begin{equation}\label{eq:s-ledger}
+ s_{k,n}=\sum_{\nu\in\cY_k}\nu^n
+ =\beta_k^n\bigl(2k\one_{2k\mid n}-1-(-1)^n\bigr).
+\end{equation}
+For $2k<n<4k$ there is no multiple of $2k$.  Hence odd moments vanish and,
+for $k+1\le m\le2k-1$,
+\begin{equation}\label{eq:upper-even}
+ s_{k,2m}=-2\beta_k^{2m},\qquad
+ \frac{|s_{k,2m}|R^{2m}}{2m}=\frac{y_k^m}{m}.
+\end{equation}
+Define the strict upper-alias counterloop budget and its normalized version by
+\begin{equation}\label{eq:C-up}
+ \mathcal C_k^{\rm up}
+ =\sum_{2k<n<4k}\frac{|s_{k,n}|R^n}{n}
+ =\sum_{m=k+1}^{2k-1}\frac{y_k^m}{m},
+ \qquad
+ \widehat{\mathcal C}_k^{\rm up}=x^{-k}\mathcal C_k^{\rm up}.
+\end{equation}
+RH-297 computed the isolated alias impulses at multiples of $2k$.
+Equation \eqref{eq:C-up} instead sums every nonalias even coordinate in the
+strict upper band, so the result below is not a relabeling of that ledger
+\citep{WangAliasLedger2026}.
+
+\section{The exponential counterloop burden}
+
+\begin{theorem}[Strict upper-alias burden]\label{thm:burden}
+As $k\to\infty$,
+\begin{align}
+ \mathcal C_k^{\rm up}
+ &\sim\frac{x^{2k}}{2C_M^2k(x-1)},
+ \label{eq:C-asymptotic}\\
+ \widehat{\mathcal C}_k^{\rm up}
+ &\sim\frac{x^k}{2C_M^2k(x-1)},
+ \qquad
+ \lim_{k\to\infty}
+ (\widehat{\mathcal C}_k^{\rm up})^{1/k}=x>1.
+ \label{eq:Chat-asymptotic}
+\end{align}
+For the terminal coordinate, put
+\begin{equation}\label{eq:terminal-definition}
+ \mathcal T_k
+ =\frac{|s_{k,4k-2}|R^{4k-2}}{4k-2}
+ =\frac{y_k^{2k-1}}{2k-1}.
+\end{equation}
+Then
+\begin{equation}\label{eq:terminal-asymptotic}
+ x^{-k}\mathcal T_k
+ \sim\frac{x^{k-1}}{2C_M^2k},
+ \qquad
+ \frac{\mathcal T_k}{\mathcal C_k^{\rm up}}
+ \longrightarrow\frac{x-1}{x}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Set $m=2k-1-r$ in \eqref{eq:C-up}.  Then
+\begin{equation}\label{eq:terminal-geometric}
+ \mathcal C_k^{\rm up}
+ =y_k^{2k-1}\sum_{r=0}^{k-2}
+ \frac{y_k^{-r}}{2k-1-r}.
+\end{equation}
+We first prove
+\begin{equation}\label{eq:sum-limit}
+ k\sum_{r=0}^{k-2}\frac{y_k^{-r}}{2k-1-r}
+ \longrightarrow\frac{x}{2(x-1)}.
+\end{equation}
+For each fixed $r$, the summand after multiplication by $k$ tends to
+$x^{-r}/2$.  Choose $1<\xi<x$.  By $y_k\to x$, eventually $y_k\ge\xi$;
+also $k/(2k-1-r)\le1$ for $0\le r\le k-2$.  After extending the finite
+sum by zero, its terms are dominated by the summable sequence $\xi^{-r}$.
+Dominated convergence on the counting measure gives
+\[
+ \frac12\sum_{r\ge0}x^{-r}=\frac{x}{2(x-1)},
+\]
+which is \eqref{eq:sum-limit}.
+
+Equation \eqref{eq:x-y} also gives
+\begin{equation}\label{eq:terminal-power}
+ y_k^{2k-1}
+ =x^{2k-1}C_M^{-2}\{1+o(1)\}.
+\end{equation}
+Substitute \eqref{eq:sum-limit} and \eqref{eq:terminal-power} into
+\eqref{eq:terminal-geometric} to obtain \eqref{eq:C-asymptotic}.  Division
+by $x^k$ proves the first part of \eqref{eq:Chat-asymptotic}; taking $k$th
+roots proves the second.  Finally, divide \eqref{eq:terminal-power} by
+$2k-1$, normalize by $x^k$, and compare with
+\eqref{eq:C-asymptotic}.  This gives both assertions in
+\eqref{eq:terminal-asymptotic}.
+\end{proof}
+
+The theorem is unconditional for the deterministic graded counterloop.  It
+does not yet say that an actual noisy-head budget is large or small: an
+actual head may match the shell by equally large complex moments.
+
+\section{What the original head-transport leaf would force}
+
+Let $\cH_\sigma$ be the actual modulus-complete Hardy head of RH-342 and
+\begin{equation}\label{eq:h-d}
+ h_{\sigma,n}=\sum_{\mu\in\cH_\sigma}\mu^n,
+ \qquad d_{\sigma,k,n}=h_{\sigma,n}-s_{k,n}.
+\end{equation}
+Suppress $\sigma=\sigma_k$ in the budgets and define
+\begin{align}
+ D_{4k}(R)
+ &=\sum_{2\le n<4k}\frac{|d_{\sigma,k,n}|R^n}{n},
+ \label{eq:D4k}\\
+ \mathcal H_k^{\rm up}
+ &=\sum_{2k<n<4k}\frac{|h_{\sigma,n}|R^n}{n},
+ \label{eq:Hup}\\
+ \mathcal H_{k,\rm odd}^{\rm up}
+ &=\sum_{\substack{2k<n<4k\\ n\ \mathrm{odd}}}
+ \frac{|h_{\sigma,n}|R^n}{n}.
+ \label{eq:Hodd}
+\end{align}
+The quantity \eqref{eq:D4k} is the original unnormalized, same-clock
+head/counterloop leaf in RH-288 and RH-340
+\citep{WangGluing2026,WangSynchronization2026}.
+
+\begin{theorem}[Conditional actual-head transfer precision]
+\label{thm:conditional}
+Assume, on one physical clock, that
+\begin{equation}\label{eq:D-assumption}
+ D_{4k}(R)\longrightarrow0.
+\end{equation}
+Then
+\begin{align}
+ \mathcal H_k^{\rm up}
+ &\sim\mathcal C_k^{\rm up}
+ \sim\frac{x^{2k}}{2C_M^2k(x-1)},
+ \label{eq:H-asymptotic}\\
+ \mathcal H_{k,\rm odd}^{\rm up}&\longrightarrow0.
+ \label{eq:Hodd-zero}
+\end{align}
+Moreover, uniformly over $k+1\le m\le2k-1$,
+\begin{equation}\label{eq:uniform-relative}
+ \max_{k+1\le m\le2k-1}
+ \frac{|h_{\sigma,2m}-s_{k,2m}|}{|s_{k,2m}|}
+ =o(kx^{-k}),
+\end{equation}
+and at the terminal coordinate
+\begin{equation}\label{eq:terminal-relative}
+ \frac{|h_{\sigma,4k-2}-s_{k,4k-2}|}
+ {|s_{k,4k-2}|}
+ =o(kx^{-2k}).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The reverse triangle inequality gives
+\begin{equation}\label{eq:budget-difference}
+ |\mathcal H_k^{\rm up}-\mathcal C_k^{\rm up}|
+ \le D_{4k}(R)\longrightarrow0.
+\end{equation}
+Since \cref{thm:burden} gives $\mathcal C_k^{\rm up}\to\infty$,
+\eqref{eq:H-asymptotic} follows.  Odd counterloop moments vanish in the
+strict upper band, so \eqref{eq:Hodd} is bounded by $D_{4k}(R)$, proving
+\eqref{eq:Hodd-zero}.
+
+For an even upper order $n=2m$, its weighted counterloop modulus is
+$y_k^m/m$.  Since $y_k\to x>1$, this sequence is increasing in
+$m\in[k+1,2k-1]$ for all sufficiently large $k$.  Thus
+\begin{align}
+ \max_{k+1\le m\le2k-1}
+ \frac{|d_{\sigma,k,2m}|}{|s_{k,2m}|}
+ &\le D_{4k}(R)\frac{k+1}{y_k^{k+1}},
+ \label{eq:uniform-bound}\\
+ \frac{|d_{\sigma,k,4k-2}|}{|s_{k,4k-2}|}
+ &\le D_{4k}(R)\frac{2k-1}{y_k^{2k-1}}.
+ \label{eq:terminal-bound}
+\end{align}
+From \eqref{eq:x-y},
+\[
+ \frac{y_k^{k+1}}{x^{k+1}}\to C_M^{-1},
+ \qquad
+ \frac{y_k^{2k-1}}{x^{2k-1}}\to C_M^{-2}.
+\]
+Now \eqref{eq:D-assumption} means $D_{4k}(R)=o(1)$; inserting these two
+limits into \eqref{eq:uniform-bound} and \eqref{eq:terminal-bound} proves
+\eqref{eq:uniform-relative} and \eqref{eq:terminal-relative}.  Fixed powers
+of $x$ are absorbed into the little-$o$ notation.
+\end{proof}
+
+Hypothesis \eqref{eq:D-assumption} is not proved in this paper or inherited
+from RH-342.  The theorem records a necessary precision obligation for any
+future proof of that original leaf; it is not actual head matching.
+
+\section{A normalized defect is strictly weaker}
+
+Define only the normalized strict-upper defect
+\begin{equation}\label{eq:Delta}
+ \Delta_k^{\rm up}
+ =x^{-k}\sum_{2k<n<4k}
+ \frac{|d_{\sigma,k,n}|R^n}{n}.
+\end{equation}
+If $\Delta_k^{\rm up}\to0$, then the same reverse triangle inequality and
+\cref{thm:burden} give
+\begin{equation}\label{eq:weak-aggregate}
+ \frac{x^{-k}\mathcal H_k^{\rm up}}
+ {\widehat{\mathcal C}_k^{\rm up}}\longrightarrow1.
+\end{equation}
+At the terminal coordinate, \eqref{eq:terminal-asymptotic} also forces
+\begin{equation}\label{eq:weak-terminal}
+ \frac{|h_{\sigma,4k-2}-s_{k,4k-2}|}
+ {|s_{k,4k-2}|}=o(kx^{-k}).
+\end{equation}
+This weaker hypothesis does not, however, control the bottom of the upper
+band, where a single normalized counterloop coordinate is only of order
+$k^{-1}$.
+
+\begin{proposition}[Complete-shell obstruction to bandwise matching]
+\label{prop:shell}
+Let
+\begin{equation}\label{eq:N-a}
+ N_k=2k+2,\qquad
+ a_k=\beta_k\left(\frac2{N_k}\right)^{1/N_k},
+\end{equation}
+and let $\cZ_k$ be the complete $N_k$th-root shell of radius $a_k$.
+Write $z_{k,n}=\sum_{\zeta\in\cZ_k}\zeta^n$ and form the finite multiset
+$\cH_k^\sharp=\cY_k\cup\cZ_k$, with moments
+$h_{k,n}^\sharp=s_{k,n}+z_{k,n}$.  Then $\cH_k^\sharp$ is finite and
+conjugation closed, and throughout $2k<n<4k$ its defect is supported only at
+$n=N_k$.  At that order,
+\begin{equation}\label{eq:relative-one}
+ |z_{k,N_k}|=|s_{k,N_k}|=2\beta_k^{N_k},
+ \qquad
+ \frac{|h_{k,N_k}^\sharp-s_{k,N_k}|}{|s_{k,N_k}|}=1.
+\end{equation}
+Nevertheless,
+\begin{align}
+ x^{-k}\sum_{2k<n<4k}
+ \frac{|h_{k,n}^\sharp-s_{k,n}|R^n}{n}
+ &=\frac{x^{-k}y_k^{k+1}}{k+1}
+ \sim\frac{x}{C_Mk}\longrightarrow0,
+ \label{eq:shell-normalized}\\
+ \sum_{2\le n<4k}
+ \frac{|h_{k,n}^\sharp-s_{k,n}|R^n}{n}
+ &=\frac{y_k^{k+1}}{k+1}
+ \sim\frac{x^{k+1}}{C_Mk}\longrightarrow\infty.
+ \label{eq:shell-raw}
+\end{align}
+Thus normalized upper-defect convergence does not imply uniform bandwise
+relative matching or the original unnormalized $D_{4k}(R)\to0$ leaf.
+\end{proposition}
+
+\begin{proof}
+A complete $N_k$th-root shell has moment
+\[
+ z_{k,n}=N_ka_k^n\one_{N_k\mid n}.
+\]
+Since $N_k\in(2k,4k)$ and $2N_k=4k+4$, it is the only multiple of $N_k$
+in the strict upper band.  Equation \eqref{eq:N-a} gives
+$z_{k,N_k}=2\beta_k^{N_k}$.  Because $N_k$ is even and is not divisible by
+$2k$ for $k\ge2$, \eqref{eq:s-ledger} gives
+$s_{k,N_k}=-2\beta_k^{N_k}$, proving \eqref{eq:relative-one}.
+The weighted defect is
+\[
+ \frac{|z_{k,N_k}|R^{N_k}}{N_k}
+ =a_k^{N_k}R^{N_k}=\frac{y_k^{k+1}}{k+1}.
+\]
+Equations \eqref{eq:shell-normalized} and \eqref{eq:shell-raw} now follow
+from $y_k^{k+1}=x^{k+1}C_M^{-1}\{1+o(1)\}$.
+\end{proof}
+
+Because $a_k\to\beta$ and $q<\beta<1/r_H$, the added shell eventually lies
+inside the broad modulus window used for the Hardy head.  This makes
+\cref{prop:shell} a legitimate finite normal information-class
+counterexample.  It is not the spectrum of the actual noisy operator, does
+not satisfy an asserted actual rank law, and proves no actual nonmatching.
+
+\section{Claim boundary and reproducibility}
+
+RH-354 controls the actual direct coefficient
+\begin{equation}\label{eq:p-distinction}
+ p_{\sigma,k,n}=\tau_{\sigma,n}-a_n
+ =q_{\sigma,k,n}-d_{\sigma,k,n}.
+\end{equation}
+Its normalized direct tail is not a theorem for $q$, $d$, or the full-trace
+$E_{\rm off}$ budget.  Conversely, the counterloop asymptotic here does not
+close the direct coefficient.  Transfer still requires the same-clock typed
+hypotheses of RH-340 and the remaining gluing leaves of RH-288
+\citep{WangDirectTail2026,WangSynchronization2026,WangGluing2026}.
+
+The executable artifact verifies the exact upper-band ledger at the rational
+fixture $\lambda=5/3$, $C_M=1$, and evaluates the synthetic exact multiplier
+law $|M_k|=C_M\lambda^k$ at archived high-precision diagnostics.  It checks
+the two asymptotic ratios, the terminal share, and the complete-shell
+counterexample.  These finite rows reproduce formulas only.  The displayed
+decimal for $C_M$ is not an interval certificate, and no row is an
+observation of the actual noisy head.
+
+The unconditional theorem is solely about the source-locked graded
+counterloop.  The actual-head conclusions are conditional on
+$D_{4k}(R)\to0$, which remains open.  No root matching, rank identification,
+physical determinant factorization, low-prefix closure, RH-241 envelope,
+RH-288 activation, or Gate A--E is proved.  This work constructs no
+Hilbert--Polya operator, identifies no Riemann zero, proves no von
+Mangoldt-weighted trace or completed-zeta divisor equality, and does not
+prove the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
