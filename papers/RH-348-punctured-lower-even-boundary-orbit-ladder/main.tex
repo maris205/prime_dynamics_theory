@@ -1,0 +1,376 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cC}{\mathcal C}
+
+\title{A Punctured Lower-Even Boundary-Orbit Ladder}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+After removing the selected orders $2k$ and $2k-2$, the one-alias prefix
+still contains a complete ladder of physical boundary orbits at
+$n=2m$, $m_\star\le m\le k-2$.  We extract all of them simultaneously.
+Writing
+\[
+ G_m=\frac{r_H^{-2m}}{1+|M_m|},\qquad
+ F_m^{\rm orb}=2mG_m,
+\]
+the exact direct coefficient is
+\[
+ p_{\sigma,k,2m}=Y_{k,m}+\cP_{\sigma,2m}-S_{k,m},
+ \qquad
+ S_{k,m}=F_m^{\rm orb}+\cA_{k,2m}.
+\]
+Let $x=(\beta R)^2>1$.  The weighted complete-orbit ladder obeys
+\[
+ \cL_k^{\rm orb}
+ :=\sum_{m=m_\star}^{k-2}G_mR^{2m}
+ =\frac{x^{k-1}}{C_M(x-1)}\{1+o(1)\}.
+\]
+The absolute radial correction over the whole ladder is only
+$O(k^{-1})\cL_k^{\rm orb}$, without any sign assumption.  Consequently the
+absolute combined deterministic demand has mass
+$\cL_k^{\rm orb}\{1+o(1)\}\to\infty$.
+
+An exact reverse-triangle argument then shows that vanishing of the direct
+punctured lower-even subprefix would force the actual signed
+remainder-plus-parity supply to carry asymptotically at least this full
+divergent mass.  The repository has no moving-order estimate for that supply,
+so neither closure nor nonclosure follows.  Odd orders, upper off-alias
+orders, determinant gluing, and Gates A--E remain open.  No
+Riemann-hypothesis conclusion is made.
+\end{abstract}
+
+\section{The punctured lower-even coefficient family}
+
+Work on the same physical clock
+\begin{equation}\label{eq:clock}
+ k=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),
+ \qquad R=\frac75,
+\end{equation}
+and choose once and for all an integer $m_\star$ beyond the eventual
+multiplier-sign threshold in RH-17.  For sufficiently large $k$, put
+\begin{equation}\label{eq:index}
+ I_k=\{m_\star,m_\star+1,\ldots,k-2\}.
+\end{equation}
+Every $m\in I_k$ gives an even order $n=2m<2k-2$.  Thus these orders exclude
+the critical order $2k$ and the first lower sideband $2k-2$, and they belong
+to every strict one-alias prefix $2k<h_\sigma\le4k$
+\citep{WangSynchronizedPrefix2026,WangLowerBalance2026}.
+
+For each $m\in I_k$, let $p_{2m}$ be the primitive period-$2m$ boundary
+point, and define
+\begin{equation}\label{eq:orbit}
+ \Gamma_m=\{|f^j(p_{2m})|:0\le j<2m\},
+ \qquad
+ M_m=(f^{2m})'(p_{2m}).
+\end{equation}
+RH-17 gives $2m$ distinct folded marked points and
+\begin{equation}\label{eq:multiplier}
+ M_m=-C_M\lambda^m\{1+o(1)\},
+ \qquad C_M>0
+\end{equation}
+\citep{WangBoundaryMonodromy2026}.  Hence, after increasing $m_\star$ if
+needed,
+\begin{equation}\label{eq:FG}
+ G_m=\frac{r_H^{-2m}}{1+|M_m|}>0,
+ \qquad F_m^{\rm orb}=2mG_m.
+\end{equation}
+
+The all-order physical observation identity and deterministic numerator
+anchor are already fixed in RH-326 and RH-334
+\citep{WangFirstAlias2026,WangObservation2026}.  At every non-alias even
+order $2m<2k$, the radial counterloop term is exactly
+\begin{equation}\label{eq:radial}
+ \cA_{k,2m}=2(\beta^{2m}-\beta_k^{2m}),
+ \qquad
+ \beta_k=\frac{|M_k|^{-1/(2k)}}{r_H},
+ \qquad
+ \beta=\frac1{r_H\sqrt\lambda}.
+\end{equation}
+No sign for \eqref{eq:radial} is assumed.
+
+Remove the finite set $\Gamma_m$ from the raw trace partition at order
+$2m$, and call the resulting quantity $\cT_{k,m}^{\rm rest}$.  A finite set
+has zero localized noisy trace, while each deterministic marked point has
+weight $(1+|M_m|)^{-1}$.
+
+\begin{theorem}[Simultaneous complete-orbit ladder]\label{thm:ladder}
+For every sufficiently large $k$ and every $m\in I_k$,
+\begin{align}
+ \cT_{\sigma,2m}
+ &=\cT_{k,m}^{\rm rest}-F_m^{\rm orb},
+ \label{eq:raw}\\
+ q_{\sigma,k,2m}
+ &=\cT_{k,m}^{\rm rest}+\cP_{\sigma,2m}
+   -\cA_{k,2m}-F_m^{\rm orb},
+ \label{eq:q}\\
+ p_{\sigma,k,2m}
+ &=Y_{k,m}+\cP_{\sigma,2m}-S_{k,m},
+ \label{eq:p}
+\end{align}
+where
+\begin{equation}\label{eq:YS}
+ Y_{k,m}=\cT_{k,m}^{\rm rest}-d_{\sigma,k,2m},
+ \qquad
+ S_{k,m}=F_m^{\rm orb}+\cA_{k,2m}.
+\end{equation}
+The coefficient $q$ is the Hardy full-trace constituent, whereas $p=q-d$
+is the direct coefficient.
+\end{theorem}
+
+\begin{proof}
+The proof of the complete extraction in RH-346 depends only on the
+period-$2m$ orbit, the folding bijection, and the zero noisy trace of a finite
+set, not on the special relation $m=k-1$
+\citep{WangCompleteLower2026}.  It therefore gives \eqref{eq:raw} for every
+$m\in I_k$.  Substitute \eqref{eq:raw} into the all-order five-slot identity
+to obtain \eqref{eq:q}; then use $p=q-d$ and \eqref{eq:YS}.
+\end{proof}
+
+This is a simultaneous coefficient family, not a sum of orbit weights taken
+from different data types.  The same physical $k$ and the same deterministic
+numerator anchor are retained at every order.
+
+\section{Exact weighted orbit ladder}
+
+Give each coefficient its prefix weight
+\begin{equation}\label{eq:weight}
+ w_m=\frac{R^{2m}}{2m}.
+\end{equation}
+By \eqref{eq:FG}, the complete atom has the exact weighted identity
+\begin{equation}\label{eq:weighted-identity}
+ F_m^{\rm orb}w_m=G_mR^{2m}.
+\end{equation}
+Define
+\begin{equation}\label{eq:L-orb}
+ \cL_k^{\rm orb}
+ =\sum_{m\in I_k}F_m^{\rm orb}w_m
+ =\sum_{m=m_\star}^{k-2}G_mR^{2m},
+ \qquad x=(\beta R)^2.
+\end{equation}
+The strict inequality $x>1$ is source-certified by RH-336
+\citep{WangProjectorMass2026}.
+
+\begin{theorem}[Sharp punctured orbit-ladder mass]\label{thm:orbit-mass}
+As $k\to\infty$,
+\begin{equation}\label{eq:orbit-asymptotic}
+ \boxed{
+ \cL_k^{\rm orb}
+ =\frac{x^{k-1}}{C_M(x-1)}\{1+o(1)\}.}
+\end{equation}
+In particular, $\cL_k^{\rm orb}\to\infty$ exponentially.
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{eq:multiplier} and \eqref{eq:FG} give
+\[
+ G_mR^{2m}
+ =\frac1{C_M}(\beta R)^{2m}\{1+o(1)\}
+ =\frac1{C_M}x^m\{1+o(1)\}.
+\]
+For a sequence asymptotic to $C_M^{-1}x^m$ with $x>1$, summing from a fixed
+lower endpoint through $k-2$ preserves the geometric-tail asymptotic.  More
+explicitly, split the sum at a fixed large $M$, bound the relative error by
+an arbitrary $\varepsilon$ on $m\ge M$, and note that the finite initial sum
+is $o(x^{k-1})$.  Since
+\[
+ \sum_{m=M}^{k-2}x^m
+ =\frac{x^{k-1}-x^M}{x-1},
+\]
+letting $\varepsilon\downarrow0$ proves \eqref{eq:orbit-asymptotic}.
+\end{proof}
+
+Thus the two previously selected orders do not exhaust the deterministic
+boundary-orbit demand.  Even after deleting them, the remaining lower-even
+orbit ladder has an explicit divergent weighted mass.
+
+\section{The radial ladder is aggregate lower order}
+
+The finite counterloop radius satisfies
+\begin{equation}\label{eq:beta-expansion}
+ \beta_k
+ =\beta\exp\left[-\frac{\log C_M}{2k}+o(k^{-1})\right].
+\end{equation}
+Set $\varepsilon_k=\log(\beta_k/\beta)$.  Then
+$|\varepsilon_k|\le C/k$ for all large $k$.  Uniformly for $m\le k$,
+\begin{equation}\label{eq:exp-bound}
+ |e^{2m\varepsilon_k}-1|
+ \le 2m|\varepsilon_k|e^{2m|\varepsilon_k|}
+ \le C_1\frac{m}{k}.
+\end{equation}
+Using \eqref{eq:radial}, define the absolute radial mass
+\begin{equation}\label{eq:Lrad}
+ \cL_k^{\rm rad,abs}
+ =\sum_{m\in I_k}|\cA_{k,2m}|w_m.
+\end{equation}
+
+\begin{theorem}[Aggregate radial suppression]\label{thm:radial}
+There is a constant $C_2$ such that
+\begin{equation}\label{eq:radial-bound}
+ \cL_k^{\rm rad,abs}
+ \le \frac{C_2}{k}\sum_{m=m_\star}^{k-2}x^m
+ =O(k^{-1})\cL_k^{\rm orb}.
+\end{equation}
+Consequently, with
+\begin{equation}\label{eq:demand-masses}
+ \cL_k^{S}=\sum_{m\in I_k}S_{k,m}w_m,
+ \qquad
+ \cL_k^{S,\rm abs}=\sum_{m\in I_k}|S_{k,m}|w_m,
+\end{equation}
+one has
+\begin{equation}\label{eq:demand-asymptotic}
+ \cL_k^{S}=\cL_k^{\rm orb}\{1+O(k^{-1})\},
+ \qquad
+ \boxed{\cL_k^{S,\rm abs}=\cL_k^{\rm orb}\{1+O(k^{-1})\}.}
+\end{equation}
+In particular, both are eventually positive and diverge with the asymptotic
+in \eqref{eq:orbit-asymptotic}.
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{eq:radial} and \eqref{eq:exp-bound} imply
+\[
+ |\cA_{k,2m}|
+ =2\beta^{2m}|1-e^{2m\varepsilon_k}|
+ \le C_3\frac{m}{k}\beta^{2m}.
+\]
+After multiplication by $w_m$, this is at most $C_4x^m/k$.  Summation and
+\cref{thm:orbit-mass} give \eqref{eq:radial-bound}.  Finally,
+\[
+ |\cL_k^S-\cL_k^{\rm orb}|
+ \le\cL_k^{\rm rad,abs},
+ \qquad
+ \bigl|\cL_k^{S,\rm abs}-\cL_k^{\rm orb}\bigr|
+ \le\cL_k^{\rm rad,abs},
+\]
+which proves \eqref{eq:demand-asymptotic}.
+\end{proof}
+
+The theorem uses an absolute estimate only to compare two deterministic
+demand ledgers.  It does not use separate absolute bounds to decide the
+signed physical residual.
+
+\section{Necessary aggregate compensation}
+
+For the direct coefficient, collect the actual signed supply as
+\begin{equation}\label{eq:Z}
+ Z_{k,m}=Y_{k,m}+\cP_{\sigma,2m}.
+\end{equation}
+Then \eqref{eq:p} reads $p_{\sigma,k,2m}=Z_{k,m}-S_{k,m}$.  Define the
+punctured lower-even residual and supply masses
+\begin{align}
+ \cE_k^{\rm low}
+ &=\sum_{m\in I_k}|p_{\sigma,k,2m}|w_m,
+ \label{eq:E-low}\\
+ \cC_k^{\rm low}
+ &=\sum_{m\in I_k}|Z_{k,m}|w_m.
+ \label{eq:C-low}
+\end{align}
+Both are formed in the direct coefficient data type on the common physical
+clock.
+
+\begin{theorem}[Punctured ladder compensation demand]\label{thm:compensation}
+For every sufficiently large $k$,
+\begin{equation}\label{eq:reverse-triangle}
+ \boxed{
+ \cC_k^{\rm low}+\cE_k^{\rm low}
+ \ge \cL_k^{S,\rm abs}.}
+\end{equation}
+Consequently, if
+\begin{equation}\label{eq:subprefix-close}
+ \cE_k^{\rm low}\longrightarrow0,
+\end{equation}
+then
+\begin{equation}\label{eq:supply-liminf}
+ \liminf_{k\to\infty}
+ \frac{\cC_k^{\rm low}}{\cL_k^{\rm orb}}\ge1,
+ \qquad
+ \cC_k^{\rm low}\longrightarrow\infty.
+\end{equation}
+Thus vanishing of the punctured lower-even direct subprefix requires actual
+signed supply with the full leading orbit-ladder mass.
+\end{theorem}
+
+\begin{proof}
+For each $m\in I_k$, the reverse triangle inequality gives
+\[
+ |Z_{k,m}|+|Z_{k,m}-S_{k,m}|\ge|S_{k,m}|.
+\]
+Multiply by $w_m$ and sum to obtain \eqref{eq:reverse-triangle}.  If
+\eqref{eq:subprefix-close} holds, then
+$\cE_k^{\rm low}/\cL_k^{\rm orb}\to0$ because
+$\cL_k^{\rm orb}\to\infty$.  Divide \eqref{eq:reverse-triangle} by
+$\cL_k^{\rm orb}$ and use \eqref{eq:demand-asymptotic}.
+\end{proof}
+
+The full-trace analogue omits $d_{\sigma,k,2m}$ from $Y_{k,m}$ and is proved
+identically.  Neither version supplies an upper bound for the actual signed
+supply.  A divergent deterministic demand may, in principle, be cancelled
+coefficient by coefficient.
+
+\begin{remark}[Why this does not close $E_{\rm off}$]
+The lower-even ladder is only one subfamily of the punctured prefix.  Odd
+orders and orders above the first alias are absent.  More importantly,
+\cref{thm:compensation} is a necessary mass law, not a proof that the actual
+$Z_{k,m}$ fails to meet it.  The repository contains no moving-order signed
+theorem for $\cT_{k,m}^{\rm rest}$, $d_{\sigma,k,2m}$, and
+$\cP_{\sigma,2m}$ jointly.  Hence both lower-even closure and lower-even
+nonclosure remain open, as does the full $E_{\rm off}$ aggregate.
+\end{remark}
+
+\section{Executable protocol and next route}
+
+The artifact reconstructs the complete boundary multipliers and exact
+finite ladder at $k=8,12,16,20$.  It checks the exact identity
+$F_m^{\rm orb}w_m=G_mR^{2m}$, the geometric orbit reference, the absolute
+radial and combined-demand ratios, and a rational reverse-triangle fixture.
+All finite rows are formula-reproduction checks only.  They are not interval
+certificates, asymptotic evidence, or observations of an actual noisy
+operator.
+
+RH-348 proves an exact punctured lower-even physical coefficient ladder, its
+sharp aggregate deterministic demand, and a necessary aggregate
+compensation mass law.  It proves no signed supply estimate and no prefix
+closure or nonclosure.
+
+RH-349 may now compare the first two still-punctured sidebands
+$m=k-2$ and $m=k-3$.  Their scalar parity/demand ratios differ by the fixed
+factor $\lambda$, so the minimax identity
+\[
+ \inf_{a>0}\max\{|a-1|,|a/\lambda-1|\}
+ =\frac{\lambda-1}{\lambda+1}>0
+\]
+can yield a conditional two-order obstruction under explicit
+target-negligibility hypotheses for both actual signed remainders.  The
+missing hypotheses may not be inferred from the present demand theorem.
+
+RH-288 remains inactive.  Gates A--E remain false/open.  This paper
+constructs no Hilbert--Polya operator, identifies no Riemann zero, proves no
+von Mangoldt prime-power trace, proves no completed-zeta divisor equality,
+and does not prove the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
