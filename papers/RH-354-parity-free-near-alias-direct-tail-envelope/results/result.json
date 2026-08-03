@@ -1,0 +1,137 @@
+{
+  "band_corollary": {
+    "full_log_tail": "x^(-k)*sum_(n>=N_k)|p_n|*R^n/n",
+    "near_alias_band": "x^(-k)*sum_(N_k<=n<4k)|p_n|*R^n/n",
+    "sublinear_root_ceiling": "rho_N<1"
+  },
+  "clock": "one_bounded_phase_physical_clock",
+  "constants": {
+    "lambda": "5/3",
+    "rates_subunit": true,
+    "rho_noisy": "1445/1728",
+    "rho_noisy_dominates": true,
+    "rho_noisy_identity": true,
+    "rho_noisy_upper": "1419857/1600000",
+    "rho_target": "3/5",
+    "rho_target_identity": true,
+    "rho_target_upper": "17/28",
+    "s": "7/10",
+    "t": "84/85",
+    "u_squared": "289/960",
+    "v_squared": "3/5",
+    "x": "2352/1445"
+  },
+  "false_claims": {
+    "all_order_Y_P_S_decomposition_proved": false,
+    "full_E_off_decided": false,
+    "head_defect_closed": false,
+    "hilbert_polya_constructed": false,
+    "low_order_direct_prefix_closed": false,
+    "rh241_coefficient_bridge_closed": false,
+    "rh241_moving_noisy_envelope_closed": false,
+    "rh288_activated": false,
+    "riemann_hypothesis_proved": false,
+    "riemann_zeros_identified": false,
+    "unnormalized_direct_band_closed": false,
+    "von_mangoldt_trace_proved": false,
+    "zeta_divisor_equality": false
+  },
+  "finite_rows": [
+    {
+      "N": 44,
+      "N_parity": "even",
+      "depth": 4,
+      "eta": 0,
+      "finite_formula_only": true,
+      "k": 24,
+      "noisy_majorant": "21462403322990131922627436597443543343739801183282897868871875107288360595703125/1243958342607439209739801241013391854735195972070052415269954628039013878636478464",
+      "target_majorant": "14852205717751971/32239990234375000000",
+      "total_majorant": "420293153626885386313040610290947283417677303232990031173241807607818483817999887889853098561/23726622440480026430889153309123837561324996415520714097403614578991200993280000000000000000000"
+    },
+    {
+      "N": 43,
+      "N_parity": "odd",
+      "depth": 5,
+      "eta": 0,
+      "finite_formula_only": true,
+      "k": 24,
+      "noisy_majorant": "107312016614950659613137182987217716718699005916414489344359375536441802978515625/4254902967327718206041820153920806230401068040830520193139276625451627016699772928",
+      "target_majorant": "84162499067261169/176440673828125000000",
+      "total_majorant": "417105150254389563140223420867982777964756365466587286607813316311095569518942410053723662913/16231166714964745353858261695559716149906418002435761234814745427900798861312000000000000000000"
+    },
+    {
+      "N": 90,
+      "N_parity": "even",
+      "depth": 6,
+      "eta": 0,
+      "finite_formula_only": true,
+      "k": 48,
+      "noisy_majorant": "737015610237916571225304072990142826926364323260939390819138208283053334319301940121088844844473223608894610912873162134051341354279429651796817779541015625/3131925838710029567474601180415794040862520931871985457267018454240551543856558655842365095168710476518531737266987871200096072566433296713492301622570320396288",
+      "target_majorant": "14966280933742067986973463219/13696146197617053985595703125000000000",
+      "total_majorant": "167578726315712208427999709628602449672825314146849778843287602801753165891074260732328319901083885910044837018663169532700959908242001408717632461526152876558184449104939957071583011969/712117489163126621741548929188819338574494607171797146581188475065698990842192564705866310571016237308534013497362109592380891755609194823021494272000000000000000000000000000000000000000000"
+    },
+    {
+      "N": 89,
+      "N_parity": "odd",
+      "depth": 7,
+      "eta": 0,
+      "finite_formula_only": true,
+      "k": 48,
+      "noisy_majorant": "18425390255947914280632601824753570673159108081523484770478455207076333357982548503027221121111830590222365272821829053351283533856985741294920444488525390625/54199716597676345014907681538862213540481959459895748329926458249773989217295445627494262619169628524195702008814817882157218144691331773680713997523925266857984",
+      "target_majorant": "763280327620845467335646624169/682615926489233970642089843750000000000",
+      "total_majorant": "167578499353288715701354090918378395619768651543122627708289684663109440831913827422665463350813150376100579581271571932601736842014661970740499879985182817799861860604194138338047976577/492943550831808761494427758760704942146566822520032913688978244406589412549651075346394123873047906492462989343173993640059217293049475971935989923840000000000000000000000000000000000000000"
+    }
+  ],
+  "finite_rows_are_formula_reproduction_only": true,
+  "gates": {
+    "A_canonical_intrinsic_determinant": false,
+    "B_time_oriented_unitary_completion": false,
+    "C_self_adjoint_generator_T_log_T": false,
+    "D_von_mangoldt_prime_power_trace": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "linear_frontiers": {
+    "alpha_alias_diagnostic": "0.441576363644781",
+    "alpha_alias_exact": "log(1/rho_N)/log(1/s)",
+    "alpha_natural_diagnostic": "0.263953114135549",
+    "alpha_natural_exact": "log(1/rho_N)/log(1/u)",
+    "diagnostics_are_not_interval_certificates": true
+  },
+  "raw_method_boundary": {
+    "fixture_is_superunit": true,
+    "global_lower_is_superunit": true,
+    "lambda": "5/3",
+    "method_boundary_only": true,
+    "raw_noisy_root": "49/36",
+    "strict_global_lower": "9604/7225"
+  },
+  "scope": [
+    "actual_direct_coefficient_only",
+    "odd_even_critical_lower_upper_and_later_orders_above_cut_at_direct_type",
+    "normalized_tail_not_unnormalized_prefix",
+    "no_transfer_to_full_trace_without_head_defect",
+    "no_RH_conclusion"
+  ],
+  "source_anchors": {
+    "RH-262": "strict_28/17<lambda",
+    "RH-267": "all_order_|a_n|<48*q_*^n",
+    "RH-282": "all_order_|tau_(sigma,n)|<=sigma^-1*q^(n-2)",
+    "RH-288": "typed_tau_minus_a_identity",
+    "RH-340": "direct_p_equals_tau_minus_a_equals_q_minus_d",
+    "RH-352": "natural_scale_rate_certificates",
+    "RH-353": "next_parity_free_near_alias_route"
+  },
+  "source_types": {
+    "direct": "p_(sigma,k,n)=tau_(sigma,n)-a_n=q_(sigma,k,n)-d_(sigma,k,n)",
+    "noisy": "tau_(sigma,n)=Tr(C_sigma^n)",
+    "target": "a_n=deterministic_numerator_anchor"
+  },
+  "status": "RH-354_parity_free_near_alias_direct_tail_envelope",
+  "tail_theorem": {
+    "N_k": "2*k-L_k",
+    "all_orders_included": true,
+    "bottom_normalized_tail": "x^(-N_k/2)*sum_(n>=N_k)|p_(sigma,k,n)|*R^n",
+    "sublinear_root_ceiling": "rho_N=r_H^2*lambda^3/4<1419857/1600000<1"
+  },
+  "verdict": "GO_SCOPED"
+}
