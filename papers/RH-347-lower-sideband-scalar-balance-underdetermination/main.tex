@@ -1,0 +1,356 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cT}{\mathcal T}
+
+\title{Lower-Sideband Scalar Balance and\\
+Target-Scale Underdetermination}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+At the mandatory lower sideband $2m=2k-2$, RH-346 gives the exact physical
+coefficient
+\[
+ p_{\sigma,k,2m}=Y_m^-+\cP_{\sigma,2m}-S_m^-,
+ \qquad
+ Y_m^-=\cT_{k,m}^{\rm rest}-d_{\sigma,k,2m},
+ \qquad
+ S_m^-=F_m^{\rm orb}+\cA_{k,2m}.
+\]
+Here $m=k-1$ is an orbit-period parameter on the same $(\sigma,k)$ noise
+clock, $F_m^{\rm orb}=2mG_m$, and
+\[
+ \frac{S_m^-}{F_m^{\rm orb}}\longrightarrow1,\qquad
+ \frac{G_m}{H_m}
+ =\frac{(\beta R)^{2m}}{C_Mm}\{1+o(1)\}\longrightarrow\infty.
+\]
+The inherited parity interface is
+$\cP_{\sigma,2m}/S_m^-\to C_*C_M\lambda^{\eta-1}$.  Thus, if the actual
+signed remainder satisfies $Y_m^-=o(H_m)$, every fixed phase other than
+\[
+ \eta_-=1-\frac{\log(C_*C_M)}{\log\lambda}
+\]
+has a divergent weighted lower contribution, with exact leading coefficient
+$|C_*C_M\lambda^{\eta-1}-1|/C_M$.
+
+At the balance phase we construct two exact scalar parity envelopes using
+the order-$2m$ inverse parity map.  The choices
+$\cP_m^{\rm close}=S_m^-$ and
+$\cP_m^{\rm far}=S_m^-+F_m^{\rm orb}/m$ both lie in the legal domain
+eventually and satisfy the same square-root law on the same clock with
+$k=m+1$.  In the scalar information class with $Y_m^-=0$, they give zero
+residual versus $F_m^{\rm orb}/m=2G_m$, whose weighted value is exactly
+$G_m/H_m\to\infty$.  These scalar sequences are not noisy operators.
+Actual lower compensation, the remaining off-alias aggregate, determinant
+gluing, and Gates A--E remain open.  No Riemann-hypothesis conclusion follows.
+\end{abstract}
+
+\section{Exact lower-sideband scalar ledger}
+
+Use the physical clock and target
+\begin{equation}\label{eq:clock}
+ k=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),\qquad
+ \eta_\sigma=k-\frac{\log(1/\sigma)}{2\log\lambda},\qquad
+ m=k-1,\qquad H_m=mR^{-2m},
+\end{equation}
+where $R=7/5$.  The replacement $m=k-1$ does not define a second noise
+sequence.  It only identifies the period parameter of the lower boundary
+orbit.
+
+RH-346 completes that orbit extraction and proves the exact direct identity
+\begin{equation}\label{eq:lower}
+ \boxed{
+ p_{\sigma,k,2m}=Y_m^-+\cP_{\sigma,2m}-S_m^-,
+ \quad
+ Y_m^-=\cT_{k,m}^{\rm rest}-d_{\sigma,k,2m},
+ \quad
+ S_m^-=F_m^{\rm orb}+\cA_{k,2m}.}
+\end{equation}
+The two deterministic constituents are
+\begin{align}
+ F_m^{\rm orb}&=2mG_m,\qquad
+ G_m=\frac{r_H^{-2m}}{1+|M_m|},\label{eq:full-atom}\\
+ \cA_{k,2m}&=2(\beta^{2m}-\beta_k^{2m}),\qquad
+ \beta_k=\frac{|M_k|^{-1/(2k)}}{r_H},\qquad
+ \beta=\frac1{r_H\sqrt\lambda}.\label{eq:radial}
+\end{align}
+The radial sideband need not have a source-locked sign.  What is proved is
+the relative law
+\begin{equation}\label{eq:relative}
+ \frac{\cA_{k,2m}}{F_m^{\rm orb}}
+ =\frac{C_M-1}{m}+o(m^{-1})\longrightarrow0.
+\end{equation}
+Consequently $S_m^->0$ eventually and
+\begin{align}
+ S_m^-&=\frac{2m}{C_M}\beta^{2m}\{1+o(1)\},
+ \label{eq:S-scale}\\
+ \frac{S_m^-}{H_m}
+ &=\frac2{C_M}(\beta R)^{2m}\{1+o(1)\}
+ \longrightarrow\infty,\label{eq:S-over-H}\\
+ \frac{G_m}{H_m}
+ &=\frac1{C_Mm}(\beta R)^{2m}\{1+o(1)\}
+ \longrightarrow\infty.\label{eq:G-over-H}
+\end{align}
+The strict inequality $\beta R>1$ is already certified in the source chain
+\citep{WangProjectorMass2026,WangCompleteLower2026}.
+
+The actual even parity packet is
+\begin{equation}\label{eq:parity}
+ \cP_{\sigma,2m}
+ =r_H^{-2m}\{1-(1-\delta_\sigma)^{2m}\},
+ \qquad
+ \delta_\sigma=C_*\sqrt\sigma+o(\sqrt\sigma),\quad C_*>0.
+\end{equation}
+On bounded physical phase, RH-346 proves
+\begin{equation}\label{eq:phase-law}
+ \frac{\cP_{\sigma,2m}}{S_m^-}
+ =C_*C_M\lambda^{\eta_\sigma-1}\{1+o(1)\}.
+\end{equation}
+The factor $\lambda^{-1}$ is forced by keeping $k=m+1$ in
+\eqref{eq:clock}; it is not a change of normalization
+\citep{WangParityBoundary2026,WangFirstAlias2026}.
+
+\section{Conditional obstruction away from scalar balance}
+
+Put
+\begin{equation}\label{eq:gamma}
+ \gamma_-(\eta)=C_*C_M\lambda^{\eta-1}.
+\end{equation}
+Since $C_*,C_M>0$ and $\lambda>1$, this function is strictly increasing.
+Its unique leading balance phase is
+\begin{equation}\label{eq:eta-minus}
+ \boxed{\eta_-=1-\frac{\log(C_*C_M)}{\log\lambda}},
+ \qquad \gamma_-(\eta_-)=1.
+\end{equation}
+This symbolic interface is inherited from RH-346; it is not the new theorem
+of the present paper.
+
+\begin{theorem}[Conditional physical off-balance obstruction]
+\label{thm:off-balance}
+Consider an actual physical sequence on \eqref{eq:clock} with
+$\eta_\sigma\to\eta$.  If
+\begin{equation}\label{eq:Y-small}
+ Y_m^-=o(H_m)
+\end{equation}
+and $\eta\ne\eta_-$, then
+\begin{equation}\label{eq:exact-rate}
+ \boxed{
+ \frac{|p_{\sigma,k,2m}|}{2H_m}
+ =\frac{|C_*C_M\lambda^{\eta-1}-1|}{C_M}
+  (\beta R)^{2m}\{1+o(1)\}
+ \longrightarrow\infty.}
+\end{equation}
+Equivalently, the single weighted prefix contribution
+$|p_{\sigma,k,2m}|R^{2m}/(2m)$ diverges.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:S-over-H}, hypothesis \eqref{eq:Y-small} gives
+$Y_m^-/S_m^-\to0$.  Divide \eqref{eq:lower} by $S_m^-$ and use
+\eqref{eq:phase-law}:
+\[
+ \frac{p_{\sigma,k,2m}}{S_m^-}
+ \longrightarrow \gamma_-(\eta)-1\ne0.
+\]
+Moreover \eqref{eq:S-scale} gives
+\[
+ \frac{S_m^-}{2H_m}
+ =\frac1{C_M}(\beta R)^{2m}\{1+o(1)\}.
+\]
+Multiplication proves \eqref{eq:exact-rate}.  The weighted identity follows
+from $H_m=mR^{-2m}$.
+\end{proof}
+
+\begin{remark}[Scope of the hypothesis]
+The remainder $Y_m^-$ contains the actual signed orbit-free raw contribution
+and the actual head defect.  No repository theorem proves
+\eqref{eq:Y-small}.  Therefore \cref{thm:off-balance} excludes parity as an
+isolated scalar compensation mechanism under a named physical hypothesis;
+it does not prove actual lower-sideband or aggregate prefix nonclosure.
+\end{remark}
+
+\section{Balance requires exponentially sharper information}
+
+At $\eta=\eta_-$, the source law \eqref{eq:phase-law} has leading ratio one,
+but target closure requires more than a relative $o(1)$ estimate.
+
+\begin{proposition}[Necessary balance-phase precision]
+\label{prop:precision}
+Under \eqref{eq:Y-small}, lower-sideband closure is equivalent to
+\begin{equation}\label{eq:target-match}
+ \cP_{\sigma,2m}=S_m^-+o(H_m).
+\end{equation}
+Relative to the positive demand, the required precision is
+\begin{equation}\label{eq:relative-precision}
+ o\!\left(\frac{H_m}{S_m^-}\right)
+ =o\!\left((\beta R)^{-2m}\right).
+\end{equation}
+The inherited relative $o(1)$ in \eqref{eq:phase-law} does not decide
+\eqref{eq:target-match}.
+\end{proposition}
+
+\begin{proof}
+Rearrange \eqref{eq:lower} and use \eqref{eq:Y-small}.  Formula
+\eqref{eq:S-over-H} gives \eqref{eq:relative-precision}.  An unspecified
+vanishing relative error need not be exponentially small.
+\end{proof}
+
+Ordinary substitution of archived decimal constants gives
+$\eta_-=4.0609149137\ldots$.  Those decimals are reproduction inputs, not
+directed interval enclosures.  In particular, this numerical value cannot be
+used as a rigorous theorem excluding the balance phase from the usual
+canonical clock window.  The analytic argument below therefore treats the
+symbolic balance phase directly.
+
+\section{Exact scalar underdetermination at balance}
+
+Freeze the same physical clock at the symbolic balance:
+\begin{equation}\label{eq:balance-clock}
+ k=m+1,\qquad
+ \sigma_m=\lambda^{-2(k-\eta_-)}.
+\end{equation}
+Using \eqref{eq:eta-minus},
+\begin{equation}\label{eq:expected-delta}
+ C_*\sqrt{\sigma_m}
+ =\frac1{C_M}\lambda^{-m}.
+\end{equation}
+For a desired scalar packet $0<X_m<r_H^{-2m}$, define the exact inverse
+parity map
+\begin{equation}\label{eq:inverse}
+ \delta_m(X)
+ =1-\{1-r_H^{2m}X_m\}^{1/(2m)},\qquad
+ \lambda_{-,m}(X)=-(1-\delta_m(X)).
+\end{equation}
+Then $\lambda_{-,m}(X)\in(-1,0)$ and substitution in \eqref{eq:parity}
+recovers $X_m$ exactly.
+
+\begin{theorem}[Opposite exact lower scalar completions]
+\label{thm:completions}
+For all sufficiently large $m$, let
+\begin{equation}\label{eq:two-packets}
+ X_m^{\rm close}=S_m^-,
+ \qquad
+ X_m^{\rm far}=S_m^-+\frac{F_m^{\rm orb}}m.
+\end{equation}
+Both packets satisfy the legal domain
+\begin{equation}\label{eq:domain}
+ 0<r_H^{2m}X_m^{\rm close}<1,\qquad
+ 0<r_H^{2m}X_m^{\rm far}<1,
+\end{equation}
+and their inverse images obey the same leading physical law
+\begin{equation}\label{eq:common-law}
+ \delta_m(X^{\rm close})
+ =C_*\sqrt{\sigma_m}\{1+o(1)\},\qquad
+ \delta_m(X^{\rm far})
+ =C_*\sqrt{\sigma_m}\{1+o(1)\}.
+\end{equation}
+In the scalar information class with $Y_m^-=0$, the close sequence has
+$p_{\sigma,k,2m}=0$, whereas the far sequence has
+\begin{equation}\label{eq:far-residual}
+ p_{\sigma,k,2m}=\frac{F_m^{\rm orb}}m=2G_m
+\end{equation}
+and the exact weighted identity
+\begin{equation}\label{eq:far-weighted}
+ \frac{|p_{\sigma,k,2m}|}{2H_m}
+ =\frac{G_m}{H_m}
+ =\frac1{C_Mm}(\beta R)^{2m}\{1+o(1)\}
+ \longrightarrow\infty.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{eq:S-scale} and $\beta r_H=\lambda^{-1/2}$ give
+\begin{equation}\label{eq:scaled-close}
+ r_H^{2m}S_m^-=\frac{2m}{C_M}\lambda^{-m}\{1+o(1)\}
+ \longrightarrow0.
+\end{equation}
+Likewise
+\[
+ r_H^{2m}\frac{F_m^{\rm orb}}m
+ =\frac2{C_M}\lambda^{-m}\{1+o(1)\}\longrightarrow0.
+\]
+Eventual positivity of $S_m^-$ proves \eqref{eq:domain}.  For $x_m\to0$,
+\begin{equation}\label{eq:root-expansion}
+ 1-(1-x_m)^{1/(2m)}
+ =\frac{x_m}{2m}\{1+o(1)\}.
+\end{equation}
+Apply this with $x_m=r_H^{2m}X_m$.  The far correction is smaller than
+$S_m^-$ by a factor $m^{-1}\{1+o(1)\}$, so both choices give
+\[
+ \delta_m(X)
+ =\frac1{C_M}\lambda^{-m}\{1+o(1)\}
+ =C_*\sqrt{\sigma_m}\{1+o(1)\},
+\]
+proving \eqref{eq:common-law}.  Exact recovery by \eqref{eq:inverse} and
+substitution in \eqref{eq:lower} with $Y_m^-=0$ give zero and
+$F_m^{\rm orb}/m=2G_m$.  Dividing the latter by $2H_m$ proves the exact
+first equality in \eqref{eq:far-weighted}; \eqref{eq:G-over-H} completes the
+proof.
+\end{proof}
+
+\begin{remark}[Information class, not physical realization]
+The map \eqref{eq:inverse} constructs scalar eigenvalue sequences satisfying
+the exact packet formula and the leading square-root law.  It does not
+construct noisy transfer operators, replace the actual
+$\lambda_-(\sigma)$, or prescribe the actual orbit-free remainder.  The
+opposite target behaviors prove insufficiency of the scalar information
+class only.
+\end{remark}
+
+\section{Executable protocol, verdict, and next route}
+
+The executable artifact evaluates the exact period-$2m$ boundary multiplier,
+the period-$2k$ radial sideband, and the two inverse parity envelopes at
+$m=8,16,24,40$ with $k=m+1$.  It checks:
+\begin{enumerate}
+ \item the same-clock relation and the exact phase equation;
+ \item positivity and the legal inverse-map domain for both packets;
+ \item exact recovery at exponent $1/(2m)$;
+ \item convergence of both gap ratios to the common square-root law;
+ \item zero versus $F_m^{\rm orb}/m=2G_m$ scalar residuals; and
+ \item equality of the far weighted term with $G_m/H_m$.
+\end{enumerate}
+The finite rows are formula-reproduction checks only.  They are not interval
+certificates, asymptotic evidence, or observations of an actual noisy
+operator.
+
+The lower scalar route is therefore \texttt{STOP\_SCOPED}: off balance it
+fails under a target-negligible actual remainder, and at balance the proved
+scalar information admits opposite exact target behavior.  Actual lower
+compensation and noncompensation remain \texttt{NOT\_TESTABLE}/open.
+
+RH-348 must return to the punctured strict-prefix aggregate
+\[
+ 2\le n<4k,\qquad n\notin\{2k,2k-2\},
+\]
+and either control it as one signed physical object or isolate another
+physical sideband atom.  Two selected-order analyses do not close
+$E_{\rm off,(4k)}$ \citep{WangSynchronizedPrefix2026,WangActualFrontier2026,
+WangCriticalPhase2026}.
+
+RH-288 remains inactive.  Gates A--E remain false/open.  This paper
+constructs no Hilbert--Polya operator, identifies no Riemann zero, proves no
+von Mangoldt prime-power trace, proves no completed-zeta divisor equality,
+and does not prove the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
