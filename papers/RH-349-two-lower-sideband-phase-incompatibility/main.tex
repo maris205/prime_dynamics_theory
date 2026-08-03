@@ -1,0 +1,361 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cE}{\mathcal E}
+
+\title{Two Lower-Sideband Phase Incompatibility}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We isolate the first two orders of the punctured lower-even ladder,
+$m_j=k-j$ for $j=2,3$.  At each order the exact direct coefficient is
+\[
+ p_j=Y_j+\cP_j-S_j,
+ \qquad
+ Y_j=\cT_{k,m_j}^{\rm rest}-d_{\sigma,k,2m_j}.
+\]
+For fixed $j$,
+\[
+ S_j=\frac{2m_j}{C_M}\beta^{2m_j}\{1+o(1)\},\qquad
+ \frac{\cP_j}{S_j}\longrightarrow
+ \gamma_j(\eta)=C_*C_M\lambda^{\eta-j}.
+\]
+Thus $\gamma_3=\gamma_2/\lambda$.  Under the two explicit, presently
+unproved actual hypotheses $Y_j=o(H_{m_j})$, where
+$H_m=mR^{-2m}$, put $W_j=|p_j|/(2H_{m_j})$ and
+$x=(\beta R)^2>1$.  If $a=\gamma_2(\eta)>0$, then
+\[
+ \frac{W_2+W_3}{x^{k-3}}
+ \longrightarrow
+ \frac{x|a-1|+|a/\lambda-1|}{C_M}.
+\]
+The limit is uniformly positive.  In fact,
+\[
+ \inf_{a>0}\max\{|a-1|,|a/\lambda-1|\}
+ =\frac{\lambda-1}{\lambda+1},
+\]
+whereas the sharper physical weighting gives
+\[
+ \inf_{a>0}\{x|a-1|+|a/\lambda-1|\}=1-\lambda^{-1}.
+\]
+The second minimum occurs at $a=1$.  Hence the two-order direct subprefix
+diverges exponentially conditional on both named remainder hypotheses.
+Neither hypothesis, unconditional full-prefix nonclosure, growing-depth
+uniformity, nor
+any Gate A--E condition is proved.  No Riemann-hypothesis conclusion is
+made.
+\end{abstract}
+
+\section{The fixed two-sideband ledger}
+
+Retain the physical noise clock and phase
+\begin{equation}\label{eq:clock}
+ k=\frac{\log(1/\sigma)}{2\log\lambda}+O(1),\qquad
+ \eta_\sigma=k-\frac{\log(1/\sigma)}{2\log\lambda}
+ \longrightarrow\eta.
+\end{equation}
+For the two fixed labels $j\in\{2,3\}$, set
+\begin{equation}\label{eq:indices}
+ m_j=k-j,\qquad n_j=2m_j,\qquad
+ H_m=mR^{-2m},\qquad x=(\beta R)^2>1.
+\end{equation}
+The orders $2k-4$ and $2k-6$ lie below the two selected orders $2k$ and
+$2k-2$, so both belong to the punctured lower-even family of RH-348
+\citep{WangLowerLadder2026}.
+Abbreviate
+\begin{equation}\label{eq:shorthand}
+ p_j:=p_{\sigma,k,2m_j},\qquad
+ \cP_j:=\cP_{\sigma,2m_j}.
+\end{equation}
+
+The simultaneous complete-orbit extraction and the deterministic numerator
+anchor give the exact identities
+\begin{equation}\label{eq:coefficient}
+ \boxed{
+ p_j=Y_j+\cP_j-S_j,
+ \quad
+ Y_j=\cT_{k,m_j}^{\rm rest}-d_{\sigma,k,2m_j},
+ \quad
+ S_j=F_{m_j}^{\rm orb}+\cA_{k,2m_j}.}
+\end{equation}
+Here
+\begin{align}
+ F_m^{\rm orb}&=2mG_m,\qquad
+ G_m=\frac{r_H^{-2m}}{1+|M_m|},\label{eq:orbit}\\
+ \cA_{k,2m}&=2(\beta^{2m}-\beta_k^{2m}),\qquad
+ \beta_k=\frac{|M_k|^{-1/(2k)}}{r_H},
+ \qquad \beta=\frac1{r_H\sqrt\lambda}.
+ \label{eq:radial}
+\end{align}
+The $p_j$ are direct coefficients.  In particular, the noisy-head/counterloop
+defect remains inside the actual signed quantity $Y_j$; it is not silently
+discarded or reclassified as a full-trace term
+\citep{WangFirstAlias2026,WangObservation2026}.
+
+\begin{proposition}[Fixed-sideband demand and parity laws]
+\label{prop:fixed-laws}
+For each fixed $j\in\{2,3\}$,
+\begin{align}
+ S_j&=\frac{2m_j}{C_M}\beta^{2m_j}\{1+o(1)\},
+ \label{eq:S-scale}\\
+ \frac{S_j}{2H_{m_j}}
+ &=\frac{x^{m_j}}{C_M}\{1+o(1)\},
+ \label{eq:S-target}\\
+ \frac{\cP_j}{S_j}
+ &\longrightarrow\gamma_j(\eta)
+ :=C_*C_M\lambda^{\eta-j}.
+ \label{eq:gamma}
+\end{align}
+Consequently,
+\begin{equation}\label{eq:ratio}
+ \boxed{\gamma_3(\eta)=\lambda^{-1}\gamma_2(\eta).}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The boundary multiplier law is
+$M_m=-C_M\lambda^m\{1+o(1)\}$, so
+\[
+ G_m=C_M^{-1}\beta^{2m}\{1+o(1)\},\qquad
+ F_m^{\rm orb}=\frac{2m}{C_M}\beta^{2m}\{1+o(1)\}.
+\]
+Also
+\[
+ \beta_k=\beta\exp\left[-\frac{\log C_M}{2k}+o(k^{-1})\right].
+\]
+Since $m_j/k\to1$ for fixed $j$, equation \eqref{eq:radial} gives
+$\cA_{k,2m_j}=O(\beta^{2m_j})$.  This is $O(m_j^{-1})$ relative to
+$F_{m_j}^{\rm orb}$, proving \eqref{eq:S-scale}.  Division by
+$2H_{m_j}=2m_jR^{-2m_j}$ proves \eqref{eq:S-target}
+\citep{WangBoundaryMonodromy2026,WangProjectorMass2026,
+WangCompleteLower2026}.
+
+For even order $2m$, the exact parity packet is
+\begin{equation}\label{eq:parity-exact}
+ \cP_{\sigma,2m}
+ =r_H^{-2m}\{1-(1-\delta_\sigma)^{2m}\},
+ \qquad
+ \delta_\sigma=C_*\sqrt\sigma+o(\sqrt\sigma).
+\end{equation}
+The uniform quadratic remainder in RH-326 and
+$m_j\sqrt\sigma\to0$ yield
+\[
+ \cP_j=2m_jC_*\sqrt\sigma\,r_H^{-2m_j}\{1+o(1)\}.
+\]
+After division by \eqref{eq:S-scale}, the remaining clock factor is
+\[
+ \sqrt\sigma\lambda^{m_j}
+ =\lambda^{\eta_\sigma-k+m_j}
+ =\lambda^{\eta_\sigma-j}.
+\]
+This proves \eqref{eq:gamma}; \eqref{eq:ratio} is immediate
+\citep{WangParityBoundary2026,WangFirstAlias2026}.
+\end{proof}
+
+Every limit in \cref{prop:fixed-laws} is pointwise in the fixed label $j$.
+No uniformity for a depth $j=j_k\to\infty$ is asserted.
+
+\section{Two exact phase minimax laws}
+
+Write
+\begin{equation}\label{eq:a}
+ a=\gamma_2(\eta)=C_*C_M\lambda^{\eta-2}>0.
+\end{equation}
+Then $\gamma_3=a/\lambda$.  The first minimax law measures the larger
+relative mismatch at the two coordinates.
+
+\begin{proposition}[Relative two-sideband minimax]
+\label{prop:relative-minimax}
+For every $\lambda>1$,
+\begin{equation}\label{eq:relative-minimax}
+ \boxed{
+ \inf_{a>0}\max\{|a-1|,|a/\lambda-1|\}
+ =\frac{\lambda-1}{\lambda+1}.}
+\end{equation}
+The unique minimizer is
+$a_{\rm rel}=2\lambda/(\lambda+1)$.
+\end{proposition}
+
+\begin{proof}
+For $0<a\le1$, the larger term is $1-a/\lambda$, which decreases to
+$1-1/\lambda$.  For $1\le a\le\lambda$, the terms are respectively
+$a-1$ and $1-a/\lambda$.  Their maximum is minimized at their unique
+intersection,
+\[
+ a-1=1-a/\lambda,\qquad
+ a=\frac{2\lambda}{\lambda+1},
+\]
+where both equal $(\lambda-1)/(\lambda+1)$.  For $a\ge\lambda$, the
+maximum is $a-1$ and increases.  The intersection value is strictly smaller
+than the boundary values, proving the claim.
+\end{proof}
+
+The prefix normalization does not weight these coordinates equally:
+$x^{m_2}/x^{k-3}=x$, whereas $x^{m_3}/x^{k-3}=1$.
+
+\begin{proposition}[Physical prefix-weighted minimax]
+\label{prop:weighted-minimax}
+If $\lambda>1$ and $x>1$, then
+\begin{equation}\label{eq:weighted-minimax}
+ \boxed{
+ \inf_{a>0}\{x|a-1|+|a/\lambda-1|\}
+ =1-\lambda^{-1}.}
+\end{equation}
+The unique minimizer is $a_{\rm wt}=1$.
+\end{proposition}
+
+\begin{proof}
+For $0<a\le1$, the objective is
+\[
+ x+1-a(x+\lambda^{-1}),
+\]
+which is strictly decreasing.  For $1\le a\le\lambda$, it is
+\[
+ x(a-1)+1-a/\lambda,
+\]
+whose slope $x-\lambda^{-1}$ is positive.  For $a\ge\lambda$, it is
+$x(a-1)+a/\lambda-1$, again strictly increasing.  Hence the unique global
+minimum occurs at $a=1$ and equals $1-\lambda^{-1}$.
+\end{proof}
+
+The two optimizers differ.  Equalizing the relative mismatches is not the
+same operation as minimizing the actual prefix-weighted sum.
+
+\section{Conditional physical two-order obstruction}
+
+Define the two actual weighted direct contributions
+\begin{equation}\label{eq:W}
+ W_j=\frac{|p_j|}{2H_{m_j}}
+ =\frac{|p_j|R^{2m_j}}{2m_j},\qquad j=2,3.
+\end{equation}
+
+\begin{theorem}[Conditional two-lower-sideband divergence]
+\label{thm:conditional}
+Suppose an actual physical sequence satisfies \eqref{eq:clock} and,
+simultaneously,
+\begin{equation}\label{eq:Y-hypotheses}
+ \boxed{
+ Y_2=o(H_{m_2}),\qquad Y_3=o(H_{m_3}).}
+\end{equation}
+Then for each $j=2,3$,
+\begin{equation}\label{eq:coordinate-limit}
+ \frac{W_j}{x^{m_j}}
+ \longrightarrow\frac{|\gamma_j(\eta)-1|}{C_M}.
+\end{equation}
+Consequently, with $a$ as in \eqref{eq:a},
+\begin{equation}\label{eq:sum-limit}
+ \boxed{
+ \frac{W_2+W_3}{x^{k-3}}
+ \longrightarrow
+ \frac{x|a-1|+|a/\lambda-1|}{C_M}
+ \ge\frac{1-\lambda^{-1}}{C_M}>0.}
+\end{equation}
+In particular, $W_2+W_3$ diverges exponentially.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:S-target} and $x>1$ imply
+$H_{m_j}/S_j\to0$.  Therefore each hypothesis in
+\eqref{eq:Y-hypotheses} gives $Y_j/S_j\to0$.  Divide
+\eqref{eq:coefficient} by $S_j$ and apply \eqref{eq:gamma}:
+\[
+ \frac{p_j}{S_j}\longrightarrow\gamma_j(\eta)-1.
+\]
+Multiplication by \eqref{eq:S-target} proves
+\eqref{eq:coordinate-limit}, including the case in which the limiting
+mismatch is zero.  Since $m_2=k-2$, $m_3=k-3$, and
+$\gamma_3=a/\lambda$,
+\[
+ \frac{W_2+W_3}{x^{k-3}}
+ =x\frac{W_2}{x^{m_2}}+\frac{W_3}{x^{m_3}}.
+\]
+Taking limits and applying \cref{prop:weighted-minimax} proves
+\eqref{eq:sum-limit}.
+\end{proof}
+
+\begin{corollary}[Bounded-phase uniform lower law]
+\label{cor:bounded-phase}
+Suppose only that $\eta_\sigma$ remains in a fixed bounded interval, and
+assume the same two simultaneous actual remainder hypotheses
+\eqref{eq:Y-hypotheses}.  Then
+\begin{equation}\label{eq:liminf}
+ \boxed{
+ \liminf_{\sigma\to0}
+ \frac{W_2+W_3}{x^{k-3}}
+ \ge \frac{1-\lambda^{-1}}{C_M}>0.}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+On a bounded phase interval, the quadratic parity remainder used in
+\cref{prop:fixed-laws} is uniform for each of the two fixed labels.  Put
+$a_\sigma=C_*C_M\lambda^{\eta_\sigma-2}$.  The proof of
+\cref{thm:conditional}, without taking a phase limit, gives
+\[
+ \frac{W_2+W_3}{x^{k-3}}
+ =\frac{x|a_\sigma-1|+|a_\sigma/\lambda-1|}{C_M}+o(1).
+\]
+Apply \cref{prop:weighted-minimax} pointwise in $a_\sigma$ and take the
+lower limit.
+\end{proof}
+
+\begin{remark}[The hypotheses are not conclusions]
+The quantities $Y_j$ contain the actual signed orbit-free trace remainder
+and noisy-head/counterloop defect at their respective moving orders.  The
+repository proves neither estimate in \eqref{eq:Y-hypotheses}.  Thus
+\cref{thm:conditional} is a conditional theorem about two actual direct
+coefficients, not an unconditional physical nonclosure result.  It does not
+provide an unconditional verdict for the full $\cE_{\rm off}$ aggregate.
+\end{remark}
+
+\section{Executable audit and route boundary}
+
+The artifact reconstructs the two boundary multipliers, complete orbit
+atoms, radial terms, demands, and exact parity-formula evaluations under the
+leading-law scalar fixture at $k=10,18,30,46$.  It chooses the physically
+weighted optimizer $a=1$, uses $Y_2=Y_3=0$, and verifies the approach of
+\[
+ C_M\frac{W_2+W_3}{x^{k-3}}
+ \quad\hbox{to}\quad 1-\lambda^{-1}.
+\]
+It also checks both exact minimax formulas and their distinct optimizers.
+These decimal rows reproduce formulas only.  They are not interval
+certificates, asymptotic evidence, measurements of a noisy operator, or
+evidence for \eqref{eq:Y-hypotheses}.
+
+RH-350 may audit a fixed-depth extension $j=2,\ldots,J$ and, separately,
+ask whether any slowly growing $J=J_k$ is supported.  The latter requires
+new uniform control of the parity Taylor remainder, multiplier law, radial
+term, ratio $m_j/k$, and simultaneous actual remainder hypotheses.  None is
+inferred from this fixed two-order theorem.
+
+Odd orders, upper off-alias orders, actual signed remainder control, and
+unconditional full-direct-prefix behavior remain open, as do determinant
+gluing and RH-288.  Gates
+A--E remain false/open.  This paper constructs no Hilbert--Polya operator,
+identifies no Riemann zero, proves no von Mangoldt prime-power trace, proves
+no completed-zeta divisor equality, and does not prove the Riemann
+Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
