@@ -1,0 +1,463 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=0.92in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cL}{\mathcal L}
+
+\title{Modulus-Cap-Forced Growing-Ladder Signed Cancellation}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove an actual moving-order theorem on the triangular lower-even window
+of RH-350.  Let $m_{k,j}=k-j$, $2\le j\le J_k$, where
+$J_k\to\infty$ and $J_k=o(k)$.  The direct physical coefficient has the two
+source-locked representations
+\[
+ p_{k,j}=\tau_{\sigma,2m_{k,j}}-a_{2m_{k,j}}
+ =Y_{k,j}+\cP_{k,j}-S_{k,j}.
+\]
+The modulus-complete spectral tail gives
+$|\tau_{\sigma,n}|\le\sigma^{-1}2^{2-n}$, while the deterministic target
+envelope gives $|a_n|<48q_*^n$ with
+$q_*=(r_H\lambda)^{-1}$.  For
+$H_m=mR^{-2m}$, $R=7/5$, and
+$x=(R/(r_H\sqrt\lambda))^2$, these separate bounds become jointly
+subunit on the local natural scale:
+\[
+ \limsup_{k\to\infty}
+ \left(
+  \sup_{2\le j\le J_k}
+  \frac{|p_{k,j}|}{2H_{m_{k,j}}x^{m_{k,j}}}
+ \right)^{1/k}
+ \le
+ \max\left\{\frac{r_H^2\lambda^3}{4},\frac1\lambda\right\}<1.
+\]
+The noisy rate is strictly below $1419857/1600000$.  Hence the actual
+normalized selected direct budget decays exponentially.  Combining this
+with RH-350 forces the actual signed remainder to track
+$S-\cP$ uniformly at the natural scale and gives
+\[
+ \cY_k^{\rm act}
+ =\frac{F_{J_k-2}(a_k)}{C_M}+o(1),
+ \qquad
+ \liminf\cY_k^{\rm act}\ge
+ \frac1{C_M}\left(\frac1{x-1}-\frac1{x\lambda-1}\right)>0.
+\]
+Thus RH-350's aggregate small-$Y$ hypothesis is false for the actual
+coefficients.  This is normalized selected-ladder cancellation only.  The
+unnormalized noisy modulus majorant has root
+$\lambda^2(qR)^2>9604/7225>1$, so it yields no unnormalized prefix
+closure.  The full off-alias aggregate, RH-288, Gates A--E, and every
+Riemann-hypothesis claim remain open.
+\end{abstract}
+
+\section{Source-locked actual coefficient}
+
+Fix the physical constants
+\begin{equation}\label{eq:constants}
+ r_H=\frac{17}{20},\qquad q=\frac12,\qquad R=\frac75,
+ \qquad \frac{28}{17}<\lambda<\frac{17}{10}.
+\end{equation}
+The lower inequality is the strict deterministic boundary certificate of
+RH-262, and the upper inequality follows from the algebraic multiplier
+certificate in RH-336
+\citep{WangBoundaryBudget2026,WangProjectorMass2026}.  Put
+\begin{equation}\label{eq:scales}
+ \beta=\frac1{r_H\sqrt\lambda},\qquad
+ q_*=\frac1{r_H\lambda},\qquad
+ H_m=mR^{-2m},\qquad
+ x=(\beta R)^2.
+\end{equation}
+Then
+\begin{equation}\label{eq:x-identities}
+ x\lambda=\left(\frac{R}{r_H}\right)^2
+ =\left(\frac{28}{17}\right)^2>2,
+ \qquad x>1,
+ \qquad q_*R=\frac{28}{17\lambda}<1.
+\end{equation}
+
+Let $\sigma=\sigma_k\downarrow0$ follow the physical natural clock and
+define its bounded phase by
+\begin{equation}\label{eq:clock}
+ \eta_k=k-\frac{\log(1/\sigma_k)}{2\log\lambda},
+ \qquad \sup_k|\eta_k|<\infty.
+\end{equation}
+Thus, exactly,
+\begin{equation}\label{eq:sigma-clock}
+ \sigma_k^{-1}=\lambda^{2(k-\eta_k)}.
+\end{equation}
+Take any integer-valued depth satisfying
+\begin{equation}\label{eq:window}
+ J_k\longrightarrow\infty,\qquad J_k=o(k),\qquad J_k\ge3,
+\end{equation}
+and set
+\begin{equation}\label{eq:indices}
+ m_{k,j}=k-j,\qquad n_{k,j}=2m_{k,j},\qquad 2\le j\le J_k.
+\end{equation}
+Since $k-J_k\to\infty$, the whole window eventually lies in the physical
+RH-348 ladder.
+
+RH-282 constructs the modulus-complete normal spectral complement
+$C_\sigma$ and proves
+\begin{equation}\label{eq:tau-bound}
+ \tau_{\sigma,n}=\Tr C_\sigma^n,\qquad
+ |\tau_{\sigma,n}|\le\sigma^{-1}q^{n-2}\quad(n\ge2).
+\end{equation}
+RH-267 proves the all-order deterministic numerator bound
+\begin{equation}\label{eq:a-bound}
+ |a_n|<48q_*^n\quad(n\ge2).
+\end{equation}
+These are different source estimates, but RH-288 and RH-340 identify their
+difference as one actual direct coefficient:
+\begin{equation}\label{eq:p-tau-a}
+ p_{\sigma,k,n}=\tau_{\sigma,n}-a_n.
+\end{equation}
+Equations \eqref{eq:tau-bound}--\eqref{eq:p-tau-a} are respectively the
+modulus-complement, deterministic-target, and direct-coefficient data types;
+no head/counterloop substitution is made
+\citep{WangSpectralTail2026,WangUnifiedEnvelope2026,
+WangGluing2026,WangSynchronization2026}.
+
+On the lower-even ladder, RH-348 supplies the second exact representation
+\begin{equation}\label{eq:p-YPS}
+ \boxed{
+ p_{k,j}:=p_{\sigma,k,2m_{k,j}}
+ =Y_{k,j}+\cP_{k,j}-S_{k,j},}
+\end{equation}
+where
+\begin{equation}\label{eq:Y-actual}
+ Y_{k,j}=\cT_{k,m_{k,j}}^{\rm rest}
+          -d_{\sigma,k,2m_{k,j}}.
+\end{equation}
+This $Y$ is an actual signed physical remainder, not a free completion
+variable \citep{WangLowerLadder2026,WangSignedCompletion2026}.
+
+Finally, RH-350 proves, uniformly on \eqref{eq:window},
+\begin{align}
+ \epsilon_k^S&:=
+ \sup_j\left|
+ \frac{C_MS_{k,j}}{2H_{m_{k,j}}x^{m_{k,j}}}-1
+ \right|\longrightarrow0,
+ \label{eq:S-uniform}\\
+ \epsilon_k^P&:=
+ \sup_j\left|
+ \frac{C_M\cP_{k,j}}{2H_{m_{k,j}}x^{m_{k,j}}}
+ -a_k\lambda^{2-j}
+ \right|\longrightarrow0,
+ \label{eq:P-uniform}
+\end{align}
+where $C_M>0$ is fixed and
+$a_k=C_*C_M\lambda^{\eta_k-2}>0$
+\citep{WangGrowingSidebands2026}.  The new input below is not another
+estimate of $S$ or $\cP$; it is the direct bound on the actual $p$ supplied
+by \eqref{eq:tau-bound} and \eqref{eq:a-bound}.
+
+\section{Exponential local natural-scale theorem}
+
+Define
+\begin{equation}\label{eq:U}
+ U_k=\sup_{2\le j\le J_k}
+ \frac{|p_{k,j}|}{2H_{m_{k,j}}x^{m_{k,j}}},
+\end{equation}
+and the two fixed root rates
+\begin{equation}\label{eq:rates}
+ \rho_N=\frac{r_H^2\lambda^3}{4},
+ \qquad \rho_T=\frac1\lambda.
+\end{equation}
+
+\begin{theorem}[actual uniform natural-scale cancellation]
+\label{thm:uniform-cap}
+For every clock and growing window satisfying
+\eqref{eq:clock}--\eqref{eq:window},
+\begin{equation}\label{eq:U-rate}
+ \boxed{
+ \limsup_{k\to\infty}U_k^{1/k}
+ \le\max\{\rho_N,\rho_T\}<1.}
+\end{equation}
+More precisely,
+\begin{equation}\label{eq:rate-certificates}
+ \rho_N<\frac{1419857}{1600000}<1,
+ \qquad
+ \rho_T<\frac{17}{28}<1.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Write $m=m_{k,j}$.  Since
+$2H_mx^m=2m\beta^{2m}$, \eqref{eq:tau-bound} gives
+\begin{align}
+ \frac{|\tau_{\sigma,2m}|}{2H_mx^m}
+ &\le \frac{\sigma^{-1}q^{2m-2}}{2m\beta^{2m}}\notag\\
+ &=\frac{2}{m}\sigma^{-1}
+       (q^2r_H^2\lambda)^m.\label{eq:noisy-coordinate}
+\end{align}
+Put
+\begin{equation}\label{eq:bN}
+ b_N=q^2r_H^2\lambda.
+\end{equation}
+The upper bound on $\lambda$ gives
+$b_N<4913/16000<1$.  Using
+\eqref{eq:sigma-clock} and $m=k-j$, the right side of
+\eqref{eq:noisy-coordinate} becomes
+\begin{equation}\label{eq:noisy-factorization}
+ \frac{2\lambda^{-2\eta_k}}{m}
+ \rho_N^k b_N^{-j}.
+\end{equation}
+Here $m\ge k-J_k$, the phase factor is bounded, and
+$b_N^{-J_k}=\exp(o(k))$.  Therefore
+\begin{equation}\label{eq:noisy-root}
+ \limsup_{k\to\infty}
+ \left(
+ \sup_j\frac{|\tau_{\sigma,2m_{k,j}}|}
+ {2H_{m_{k,j}}x^{m_{k,j}}}
+ \right)^{1/k}
+ \le\rho_N.
+\end{equation}
+
+For the target, \eqref{eq:a-bound} and
+$q_*^2/\beta^2=1/\lambda$ give
+\begin{equation}\label{eq:target-coordinate}
+ \frac{|a_{2m}|}{2H_mx^m}
+ <\frac{24}{m}\left(\frac1\lambda\right)^m
+ =\frac{24}{m}\lambda^{-k}\lambda^j.
+\end{equation}
+Since $j\le J_k=o(k)$,
+\begin{equation}\label{eq:target-root}
+ \limsup_{k\to\infty}
+ \left(
+ \sup_j\frac{|a_{2m_{k,j}}|}
+ {2H_{m_{k,j}}x^{m_{k,j}}}
+ \right)^{1/k}
+ \le\rho_T.
+\end{equation}
+The triangle inequality in \eqref{eq:p-tau-a} and the standard root bound
+for a sum of nonnegative sequences prove \eqref{eq:U-rate}.
+
+Finally, $r_H=17/20$ and $\lambda<17/10$ imply
+\[
+ \rho_N<\frac{(17/20)^2(17/10)^3}{4}
+ =\frac{1419857}{1600000}<1.
+\]
+The lower bound $\lambda>28/17$ gives
+$\rho_T<17/28<1$.
+\end{proof}
+
+The theorem is genuinely uniform on a moving window.  The factors generated
+by $J_k$ are subexponential because $J_k=o(k)$; no finite collection of
+fixed-$j$ limits is promoted to a growing-order claim.
+
+Define the actual normalized selected direct budget
+\begin{equation}\label{eq:L-act}
+ \cL_k^{\rm act}
+ =\frac1{x^{k-2}}
+ \sum_{j=2}^{J_k}\frac{|p_{k,j}|}{2H_{m_{k,j}}}.
+\end{equation}
+
+\begin{corollary}[actual normalized selected-budget closure]
+\label{cor:L}
+One has
+\begin{equation}\label{eq:L-root}
+ \boxed{
+ \limsup_{k\to\infty}(\cL_k^{\rm act})^{1/k}
+ \le\max\{\rho_N,\rho_T\}<1,}
+\end{equation}
+and hence $\cL_k^{\rm act}\to0$ exponentially.
+\end{corollary}
+
+\begin{proof}
+Since $m_{k,j}=k-j$,
+\begin{align*}
+ \cL_k^{\rm act}
+ &=\sum_{j=2}^{J_k}x^{2-j}
+ \frac{|p_{k,j}|}{2H_{m_{k,j}}x^{m_{k,j}}}\\
+ &\le U_k\sum_{j=2}^{\infty}x^{2-j}
+ =\frac{U_k}{1-x^{-1}}.
+\end{align*}
+The fixed geometric factor has $k$th root tending to one, so
+\cref{thm:uniform-cap} proves the result.
+\end{proof}
+
+\section{Forced actual signed completion}
+
+The exact identity \eqref{eq:p-YPS} can now be solved for the actual
+remainder without changing data type:
+\begin{equation}\label{eq:Y-solve}
+ Y_{k,j}=S_{k,j}-\cP_{k,j}+p_{k,j}.
+\end{equation}
+
+\begin{theorem}[uniform actual close-completion law]
+\label{thm:Y-tracking}
+On every window \eqref{eq:window},
+\begin{equation}\label{eq:Y-tracking}
+ \boxed{
+ \sup_{2\le j\le J_k}
+ \left|
+ \frac{C_MY_{k,j}}{2H_{m_{k,j}}x^{m_{k,j}}}
+ -\bigl(1-a_k\lambda^{2-j}\bigr)
+ \right|\longrightarrow0.}
+\end{equation}
+Thus the actual $Y$ array asymptotically tracks the RH-351 close completion
+$S-\cP$ at the local natural scale.
+\end{theorem}
+
+\begin{proof}
+Substitute \eqref{eq:Y-solve} and apply the triangle inequality.  The
+left side of \eqref{eq:Y-tracking} is at most
+\[
+ \epsilon_k^S+\epsilon_k^P+C_MU_k.
+\]
+The first two terms vanish by \eqref{eq:S-uniform}--\eqref{eq:P-uniform};
+the last vanishes exponentially by \cref{thm:uniform-cap}.
+\end{proof}
+
+For $N\ge0$ recall the RH-350 weighted functional
+\begin{equation}\label{eq:F}
+ F_N(a)=\sum_{r=0}^{N}x^{-r}|a\lambda^{-r}-1|.
+\end{equation}
+Its exact minimum is
+\begin{align}
+ A_N:=\inf_{a>0}F_N(a)
+ &=\frac{1-x^{-N}}{x-1}
+ -\frac{1-(x\lambda)^{-N}}{x\lambda-1},\label{eq:AN}\\
+ A_N&\nearrow A_\infty
+ =\frac1{x-1}-\frac1{x\lambda-1}>0.
+ \label{eq:Ainf}
+\end{align}
+Define the actual normalized selected signed-remainder budget
+\begin{equation}\label{eq:Yagg}
+ \cY_k^{\rm act}
+ =\frac1{x^{k-2}}
+ \sum_{j=2}^{J_k}\frac{|Y_{k,j}|}{2H_{m_{k,j}}}.
+\end{equation}
+
+\begin{corollary}[actual aggregate law and failure of small $Y$]
+\label{cor:Yagg}
+With $N_k=J_k-2$,
+\begin{equation}\label{eq:Yagg-law}
+ \boxed{
+ \cY_k^{\rm act}
+ =\frac{F_{N_k}(a_k)}{C_M}+o(1),}
+\end{equation}
+and
+\begin{equation}\label{eq:Yagg-liminf}
+ \boxed{
+ \liminf_{k\to\infty}\cY_k^{\rm act}
+ \ge\frac{A_\infty}{C_M}
+ =\frac1{C_M}
+ \left(\frac1{x-1}-\frac1{x\lambda-1}\right)>0.}
+\end{equation}
+Consequently the actual aggregate small-$Y$ hypothesis used conditionally in
+RH-350 is false.
+\end{corollary}
+
+\begin{proof}
+Let
+\[
+ z_{k,j}=\frac{C_MY_{k,j}}
+ {2H_{m_{k,j}}x^{m_{k,j}}}.
+\]
+By \cref{thm:Y-tracking}, uniformly in $j$,
+$z_{k,j}=1-a_k\lambda^{2-j}+o(1)$.  Since
+$||z|-|w||\le|z-w|$ and
+$\sum_{j=2}^{\infty}x^{2-j}<\infty$,
+\begin{align*}
+ \cY_k^{\rm act}
+ &=\frac1{C_M}
+ \sum_{j=2}^{J_k}x^{2-j}|z_{k,j}|\\
+ &=\frac1{C_M}
+ \sum_{j=2}^{J_k}x^{2-j}
+ |1-a_k\lambda^{2-j}|+o(1)\\
+ &=\frac{F_{J_k-2}(a_k)}{C_M}+o(1).
+\end{align*}
+Because $a_k>0$, \eqref{eq:AN} gives
+$F_{N_k}(a_k)\ge A_{N_k}$.  Now $N_k\to\infty$, so
+\eqref{eq:Ainf} proves \eqref{eq:Yagg-liminf}.
+\end{proof}
+
+This conclusion is about the actual $Y$ in \eqref{eq:Y-actual}, not a
+formal coefficient ledger.  It nevertheless remains local to the selected
+lower-even window and to the normalization in \eqref{eq:Yagg}.
+
+\section{Why the unnormalized prefix remains open}
+
+Remove the factor $x^{m}$ from the denominator in
+\eqref{eq:noisy-coordinate}.  The RH-282 modulus estimate then gives the
+explicit separate majorant
+\begin{equation}\label{eq:raw-noisy-majorant}
+ \frac{|\tau_{\sigma,2m}|}{2H_m}
+ \le\widehat N_{k,j}
+ :=\frac{2}{m}\sigma^{-1}(qR)^{2m}.
+\end{equation}
+On the same window, bounded phase and $J_k=o(k)$ give
+\begin{equation}\label{eq:raw-root}
+ \lim_{k\to\infty}
+ \left(\sup_{2\le j\le J_k}\widehat N_{k,j}\right)^{1/k}
+ =\lambda^2(qR)^2.
+\end{equation}
+This rate is strictly superunit:
+\begin{equation}\label{eq:raw-superunit}
+ \lambda^2(qR)^2
+ >\left(\frac{28}{17}\right)^2
+   \left(\frac7{10}\right)^2
+ =\frac{9604}{7225}>1.
+\end{equation}
+By contrast, the separate target majorant has unnormalized root
+$(q_*R)^2<1$.  Equivalently,
+\begin{equation}\label{eq:scale-conversion}
+ x\rho_N=\lambda^2(qR)^2>1.
+\end{equation}
+
+Equations \eqref{eq:raw-root}--\eqref{eq:scale-conversion} are a method
+boundary, not a lower bound for the actual coefficient.  The actual
+difference $p=\tau-a$ may contain additional signed or complex cancellation,
+but the two separate absolute source bounds do not reveal it.  Therefore
+\cref{thm:uniform-cap} and \cref{cor:L} cannot be multiplied by the removed
+$x^k$ scale to conclude that the unnormalized selected prefix tends to zero.
+Such a conclusion requires a stronger theorem directly on $\tau-a$.
+
+\section{Executable protocol and claim boundary}
+
+The executable artifact performs exact rational checks of
+\eqref{eq:x-identities}, \eqref{eq:rate-certificates}, and
+\eqref{eq:raw-superunit}.  At the in-range fixture $\lambda=5/3$ and
+$\eta_k=0$, it reproduces the finite coordinate majorants
+\eqref{eq:noisy-coordinate} and \eqref{eq:target-coordinate} on windows
+$J=\lfloor\sqrt{k}\rfloor$.  It also checks the finite algebra
+$Y=S-\cP+p$.  These rows are formula-reproduction checks only: they are not
+observations of $\tau$, $a$, $p$, or $Y$, are not interval certificates for
+the physical multiplier, and are not asymptotic evidence.
+
+RH-352 proves actual normalized/local natural-scale signed cancellation on
+one growing lower-even ladder.  It does not prove that the unnormalized
+selected prefix vanishes; control the critical, first-lower, odd, or
+upper-alias orders; decide the full $E_{\rm off}$ aggregate; or prove the
+RH-241 moving noisy all-order envelope and coefficient bridge.  It does not
+activate the RH-288 determinant-gluing criterion.  Gates A--E remain
+false/open.  This paper constructs no Hilbert--Polya operator, identifies no
+Riemann zero, proves no von Mangoldt prime-power trace, proves no
+completed-zeta divisor equality, and does not prove the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
