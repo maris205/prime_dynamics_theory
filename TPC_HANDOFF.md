@@ -3,12 +3,14 @@
 更新时间：2026-08-03
 交接状态：`SEALED_FOR_NEW_SESSION`
 本轮启动及正式写入前上游同步基线：
-`af5864a17063adc3084c9ce025878dadb39da05c`。本轮两次安全 pull/rebase
-先后取得 RH-342--346 与 RH-347；正式写入后的只读 fetch又取得 RH-348，
-共 119 个 RH-only committed files；它们没有
-覆盖 TPC files或 `TPC_HANDOFF.md`。第 34 节完成其 cross-program source-lock、
-artifact/type audit与 2026-08-03 current-primary delta screen。O161 pointwise
-既有 refresh见第 33 节，最终发布同步与三方 hash核验边界见第 34.7 节。
+`86e4412feb82f72d0f9964ac337e1676fd325d1b`；启动
+`git pull --rebase origin main` 返回 already up to date。第 35 节完成
+TPC32/O161 扩展 current-primary source lock、未冻结 signed-prefix/large-sieve
+候选审核与 Carella `arXiv:2208.12219v8` proof-chain integrity hardening。
+上一轮第 34 节取得的 RH-342--348 共 119 个 RH-only committed files没有覆盖
+TPC files或 `TPC_HANDOFF.md`；其 cross-program source-lock、artifact/type audit与
+2026-08-03 math.NT delta screen仍见第 34 节。O161 既有 pointwise refresh见
+第 33 节，本轮新增 math.DS candidate见第 35.3 节。
 第 23 节 TPC source-lock 快照锚定更早基线
 `28cafdd5fa96ff948f1520e778c7a2ba65208730`；晚到 RH-330/332 的既有
 physical-object type checks、RH-333/334/335 的第 29.6 节 type checks，以及
@@ -18,9 +20,9 @@ type checks，均未改变本轮算术裁决。
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_REMOTE_RH342_348_SPECTRAL_TRACE_LADDER_OBJECTS_AND_ARXIV_2607_29429_RANDOM_MODEL_HAVE_NO_LITERAL_TPC_CROSSWALK_OR_THEOREM_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
+`TPC32_O161_20260803_EXTENDED_PRIMARY_SCREEN_UNFROZEN_CANDIDATES_HAVE_LITERAL_OBJECT_MISMATCH_AND_CARELLA_2208_12219V8_PROOF_CHAIN_IS_INVALID_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
 下一篇：`null`；下一项不编号审计：`null`（仅在第 32.6 节或
-第 33.5、34.6 节列出的 source-backed reopen trigger，或其他既有独立
+第 33.5、34.6、35.6 节列出的 source-backed reopen trigger，或其他既有独立
 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -30,8 +32,8 @@ TPC-206 授权并完成：`true`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
-上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29、30、31、32、33、34 节；
-第 23、27、28 节只在第 29--34 节明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
+上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29、30、31、32、33、34、35 节；
+第 23、27、28 节只在第 29--35 节明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
 
@@ -840,6 +842,41 @@ production atom、TPC32 matched-shell determinant zero或 pair/H1 theorem。该 
 signs替代 arithmetic prime values；因此不得用“squarefree support与 signs相同”
 跨过 literal coefficient gate。本 cell严格限于 2026-08-03 第 34.5 节审核的
 version/source，不扩张第 33 节旧 candidates，也不停止未来 deterministic theorem。
+
+2026-08-03 的扩展 current-primary/unfrozen candidate audit新增且仅新增：
+
+```text
+DECLARED_TPC32_20260803_UNFROZEN_SIGNED_PREFIX_AND_AUTOMORPHIC_
+LARGE_SIEVE_SOURCE_CANDIDATES_V1 = STOP_SCOPED
+
+DECLARED_O161_CURRENT_PRIMARY_ARXIV_2607_29275V1_
+SPECTRAL_PROCESS_TRANSFER_V1 = STOP_SCOPED
+```
+
+第一个 cell严格限于第 35.2 节逐 theorem-body审核的 Pascadi--Thorner
+`2508.14888v2`、Conrey--Kwan--Lin--Turnage-Butterbaugh `2607.00282v1`、
+Schmidt `2604.23517v1`、Harper--Soundararajan--Xu `2606.29040v1` 与
+Klurman--Munsch--Sun `2605.04694v1`。它只停止把 automorphic/character-family
+large-sieve mean、conditional independence model、Steinhaus random function或
+自由构造的 completely multiplicative signs/logarithmic subsequence，改名为同一
+high-beta packet的 actual `A_C` distinguished zero、literal weighted four-Mobius
+prescribed-lag coefficient或 actual evaluation-cloud full/cross-`D0` frame theorem。
+这些 candidates都在 exponent ledger之前先因 coefficient/index/operator、average、
+random/conditional model或 normalization mismatch失败；本 cell不是未来来源的
+nonexistence claim。
+
+第二个 cell严格限于 el Abdalaoui `arXiv:2607.29275v1` 的 spectral-process
+transfer。该 source-stated qualitative average使用一个 Mobius--Sarnak process
+weight与 singular-spectrum test sequence；它没有 literal
+`mu(d+s*z)mu(u+a*z)`、fixed `su-ad=2`、named production atom、growing affine
+parameters、uniform fixed-power error、DIRECT `q/N` terminal block、BAD
+`q/T` cumulative prefix或完整 loss ledger。它不关闭两个 O161 pointwise
+parents；精确 source lock见第 35.3 节。
+
+Carella `arXiv:2208.12219v8` 不新增 method cell。它已属于第 31.3 节及
+`DECLARED_TPC32_FIXED_D0_OUTER_REGROUP_AND_POST30_DIRECT_FRAME_SOURCE_CANDIDATES_V1`
+的既有 scope；第 35.4 节只补充三项独立 proof-chain fatal与 exact equation
+locators，不把旧 STOP 重新包装成新方法。
 
 ## 7. Reopen triggers
 
@@ -4492,8 +4529,8 @@ TPC-127 --check = PASS
 D:\26-aimath\理论研究3\prime_dynamics_theory
 
 读取仓库根目录 TPC_HANDOFF.md，以仓库文件和已提交 artifacts 为事实来源，
-不要依赖旧聊天记录。为节省上下文，优先读取页首及第 1、6、22、24、29、30、31、32、33、34 节；
-第 23、27、28 节只在第 29--34 节明确引用时展开。
+不要依赖旧聊天记录。为节省上下文，优先读取页首及第 1、6、22、24、29、30、31、32、33、34、35 节；
+第 23、27、28 节只在第 29--35 节明确引用时展开。
 
 先执行：
 
@@ -4515,9 +4552,9 @@ TPC-27--32 legacy certificates 会无条件重写 committed JSON，在出现真�
 当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 最新不编号裁决是：
 
-TPC_REMOTE_RH342_348_SPECTRAL_TRACE_LADDER_OBJECTS_AND_ARXIV_2607_29429_
-RANDOM_MODEL_HAVE_NO_LITERAL_TPC_CROSSWALK_OR_THEOREM_TRIGGER_
-STOP_SCOPED_PARENTS_OPEN
+TPC32_O161_20260803_EXTENDED_PRIMARY_SCREEN_UNFROZEN_CANDIDATES_HAVE_
+LITERAL_OBJECT_MISMATCH_AND_CARELLA_2208_12219V8_PROOF_CHAIN_IS_INVALID_
+NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN
 
 同一 theorem-valid high-beta selected packet 仍固定为：
 sigma=1/10000，lambda=99979/210000，delta=7/60，beta=267/400，
@@ -4762,6 +4799,28 @@ arithmetic prime values；因此它既不是 deterministic Mobius theorem，也�
 literal two-Mobius pair、fixed atom、packet、determinant/content、`X/N/q` ranges、
 normalization或 loss ledger。有限 current-primary screen无 survivor，但这不声称
 全局文献不存在。
+
+第 35 节把有限 source screen扩到此前未冻结的 signed-prefix/automorphic
+large-sieve候选与 math.DS recent。Pascadi--Thorner `2508.14888v2`、
+Conrey--Kwan--Lin--Turnage-Butterbaugh `2607.00282v1`、Schmidt
+`2604.23517v1`、Harper--Soundararajan--Xu `2606.29040v1` 与
+Klurman--Munsch--Sun `2605.04694v1` 分别在 automorphic/character-family mean、
+conditional model、random function或 freely constructed signs处先失配；没有一个
+接受 actual `A_C`、literal `w_m`或 actual evaluation-cloud Gram operator。
+
+math.DS新增 el Abdalaoui `2607.29275v1`。其最接近结论是单一
+Mobius--Sarnak process weight对 singular-spectrum test的定性
+`N^{-1} sum_(n<=N) omega_n a_n -> 0`；它没有
+`mu(d+s*z)mu(u+a*z)`、fixed `su-ad=2`、named production atom、fixed positive
+power、DIRECT `q/N`或 BAD `q/T` normalization，不能触发两个 O161 parents。
+
+第 31.3 节已提及的 Carella `2208.12219v8` 本轮又做 proof-chain adversarial
+复核：Theorem 6.2 的 `(6.7)->(6.8)` 非法在逐频率 modulus bound后保留未知
+Fourier coefficients的 root-of-unity cancellation；Lemma 3.1 的 uniform
+exponentially-small residue-count error被 `q=x-1,a=1` 直接反例否定；Lemma 6.2
+的 `(6.24)` 又把 coprime-restricted double sum非法因子化为 unrestricted square。
+故该 preprint不能作为 theorem input；这只是旧 STOP scope的证明完整性加固，
+不是新 method cell。
 
 因此没有创建 TPC-207。合法的新入口仅为：直接接受 actual literal coefficient的
 positive-power theorem；直接控制 determinant DFT zero的 pointwise theorem；真正的
@@ -7870,3 +7929,278 @@ RH_BUILDERS_EXECUTED = NO
 supplemental checks与 protected manifest；停掉所有分身后再 pull/rebase。只 stage
 本 handoff，commit/push后必须验证 local `HEAD`、`origin/main`、remote
 `refs/heads/main` 三个 hash完全一致。
+
+## 35. 2026-08-03 TPC32/O161 扩展 primary-source 与 proof-integrity 审计
+
+### 35.1 基线、有限范围与 fail-closed 协议
+
+本轮启动时 HEAD 为
+`86e4412feb82f72d0f9964ac337e1676fd325d1b`，`TPC_HANDOFF.md` 的启动
+SHA-256 为
+`5a2080964700b89e3a23d1187307614ebb1260e1e30d6594b5409cb8d9de648a`。
+working tree没有 tracked/cached diff；只有第 1 节列出的五个本地 `.codex`
+配置、TPC-105 `__pycache__`、TPC-63 构建产物与 `tmp/`。启动
+`git pull --rebase origin main` 返回 already up to date；第 1 节 22 项只读启动
+回归为 `22/22 PASS`。没有执行 TPC-27--32 legacy writers或 TPC-122 writer。
+
+本轮由主控统一 source contract，并把长 theorem-body scan、proof adversarial
+audit与候选排除交给三个 read-only agents；三者均回报同一 HEAD/handoff hash、
+`files_changed=[]`、tracked/cached diff为空。正式写入仍只由主控完成。
+
+有限检索以官方 arXiv source为准，覆盖：
+
+1. 2026-08-03 `math.NT/new` 及 Mobius/Liouville/correlation/signed-prefix关键词；
+2. 此前未冻结的 automorphic large-sieve、character-family mean、random或
+   constructed multiplicative-function候选；
+3. `math.DS/recent` 与第 33 节 O161 candidate IDs的官方 version delta；
+4. Grimmelt--Merikoski新版本/Part II与 actual evaluation-cloud frame theorem；
+5. Carella `arXiv:2208.12219v8` 的 primary PDF proof chain。
+
+这是截至本日、对这些明示来源与版本的有限审计；不是全局文献
+nonexistence claim。任何 checker、source type或公式合同非零/不一致均 fail closed。
+
+### 35.2 TPC32 三个开放接口的未冻结候选 source lock
+
+同一 theorem-valid selected packet仍固定为
+
+```text
+sigma=1/10000, lambda=99979/210000, delta=7/60, beta=267/400,
+Q=X^(267/400+o(1)), J=X^(133/400+o(1)), C=floor(J),
+h0=2, N0=JQ^2 asymp XQ.
+```
+
+三个互不替代的目标仍是：
+
+1. actual three-channel `A_C` 的 distinguished determinant DFT zero；
+2. fixed-`D0` literal weighted equal-difference four-Mobius energy `E_Psi`；
+3. actual GM evaluation Dirac cloud的 full self-kernel/cross-`D0` block-Bessel。
+
+逐 theorem-body结果如下：
+
+| source/version | source-stated strongest nearby object | first fatal for TPC |
+|---|---|---|
+| Pascadi--Thorner `2508.14888v2` | automorphic representation families的 GL_n large sieve与 Dirichlet coefficients | `a(n),lambda_pi(n)`不是 actual `g_t` evaluation cloud或其 Gram kernel；无 coefficientwise index/operator intertwiner |
+| Conrey--Kwan--Lin--Turnage-Butterbaugh `2607.00282v1` | 对 moduli、primitive even characters与 spectral parameter作 harmonic-family mean | family average不是 actual cloud的 pointwise full/cross-`D0` operator bound |
+| Schmidt `2604.23517v1` | 在文中 independence assumptions下研究 Mertens/auxiliary partial sums | conditional single-sum model不是 literal two-affine packet，输出方向也不是所需统一 upper cancellation |
+| Harper--Soundararajan--Xu `2606.29040v1` | Steinhaus random multiplicative function的 short-interval distribution theorem | independent random prime values不是 deterministic Mobius或 prescribed packet/phase |
+| Klurman--Munsch--Sun `2605.04694v1` | 构造 completely multiplicative `f:{N}->{+/-1}` 或自由 signs，使 logarithmic sums沿子列很小 | constructed coefficients、`1/n` normalization与 subsequence existence都不是 actual `A_C,w_m` natural growing prefix |
+
+因此五项都在 exponent audit之前失败。没有一项同时接受 literal physical
+coefficient、fixed `h0=2`、actual prefix order、全部 `X/N/q/J/Q/C` ranges、
+uniform constants、actual masks/weights/content/`Delta#`/outer labels、`N0`
+normalization与完整 physical-loss ledger。
+
+特别地：
+
+* TPC-111/122只给 ordered prefix/BV transfer的 exact conditional calculus；当前
+  仍没有把 TPC-32 physical triples coefficientwise映到同一 ordered fibers、同时
+  保留三 raw channels、content、`Delta#`、masks/weights、outer labels与 `N0` 的
+  production intertwiner；
+* TPC-124 的 abstract `(J Q_D-Q_Z)M=0` 没有 actual common-leaf basis/matrices；
+  finite one-vector equality不能补写为 production map；
+* 通用 large sieve或 Hilbert-space Cauchy不能把裸
+  `Q^(1/2)=X^(267/800+o(1))` 损失降为 strict `1/400` 可支付的 actual frame常数；
+* random、conditional、freely constructed或 logarithmically normalized sources
+  不得跨 coefficient/normalization gate。
+
+所以本轮新增的 TPC32 source-version scope为：
+
+```text
+DECLARED_TPC32_20260803_UNFROZEN_SIGNED_PREFIX_AND_AUTOMORPHIC_
+LARGE_SIEVE_SOURCE_CANDIDATES_V1 = STOP_SCOPED
+```
+
+它不关闭 TPC32 direct theorem interface、fixed-`D0` literal theorem route或
+full/cross-`D0` frame parent。
+
+### 35.3 O161 `arXiv:2607.29275v1` spectral-process transfer
+
+官方 `math.DS/recent` 新增 el Abdalaoui
+`arXiv:2607.29275v1`，提交于 2026-07-31；第 34 节只筛
+`math.NT/new`，故该 source此前未冻结。对第 33 节全部既有 candidate IDs的官方
+version复核没有发现 2026-08-01 后新版本；本项是唯一新的 O161 delta。
+
+其最接近 statements为 Theorem 3.1/Proposition 3.3的 countable-Lebesgue/
+absolute-continuity spectral assertions，以及 Corollary 4.4中 source-stated
+
+```text
+(1/N) sum_(n<=N) omega_n a_n(phi,T,v,(n_r)) -> 0
+```
+
+for a singular-spectrum operator and one Mobius--Sarnak process coordinate weight
+`omega_n=f1(T^n x)`。正文没有给用于 TPC 的定量 error；Question 6.4 的 moving
+short interval仍只是 question。
+
+O161 actual core却是
+
+```text
+q=as,
+t(z)=ad+qz,
+c_z=mu(d+s*z) mu(u+a*z),
+su-ad=2.
+```
+
+第一 fatal是 literal coefficient：单 process weight没有被 source-backed theorem
+识别为该 two-affine product。其后还依次缺 fixed physical `h0`、growing
+`a,s,d,u` ranges、named production atom、actual masks/weights/outer labels、
+uniform fixed positive-power error与 loss ledger。完整 `1/N` process prefix既不是
+DIRECT 的 `q/N` terminal block，也不是经 TPC-159 exact telescoping后的 BAD
+`q/T` cumulative prefix。
+
+把 `omega_z` 直接设为 `c_z`没有 theorem依据；把第二个 Mobius factor塞入
+singular-spectrum test也没有 affine-subsequence或 spectral-class证明。即使反事实
+先接受该 mapping，由定性 `o(1)`作 block difference仍不能生成 uniform
+`X^{-sigma}`、正确 `q/N`/`q/T` normalization或完整 telescoping ledger。
+
+因此新增且仅新增：
+
+```text
+DECLARED_O161_CURRENT_PRIMARY_ARXIV_2607_29275V1_
+SPECTRAL_PROCESS_TRANSFER_V1 = STOP_SCOPED
+```
+
+两个 O161 pointwise parents继续 `OPEN`。
+
+### 35.4 Carella v8 proof-chain integrity hardening
+
+Carella `arXiv:2208.12219v8` 已在第 31.3 节作为 periodic extension进入既有
+source-candidate scope。本轮直接复核 official v8 PDF后，确认至少三项彼此独立的
+critical proof failure。
+
+第一，Theorem 6.2 的 `(6.6)` 只给每个频率
+
+```text
+|R_hat(s)| <= C x^2/(log x)^(2c).
+```
+
+inverse DFT `(6.7)` 为
+
+```text
+R(t)=(1/x) sum_(s<=x) R_hat(s) e(-st/x).
+```
+
+从逐频率 modulus bound合法得到的 triangle bound至多仍是
+`C x^2/(log x)^(2c)`。论文在 `(6.8)` 中把随 `s` 变化、相位未知的
+`R_hat(s)`替换成共同正上界后，却继续利用 root-of-unity cancellation得到
+`x/(log x)^c`；该不等式无效。取
+`R_hat(s)=M e(st/x)`即可显式看到共同 modulus bound不能保留该 cancellation。
+
+第二，Lemma 3.1 `(3.1)--(3.2)` 声称对全部 `1<=a<q<=x`，residue count相对
+`x/q` 的 error为 `O((x/q) exp(-c sqrt(log x)))`。取任意大整数 `x`、
+`q=x-1,a=1`，`n<=x` 且 `n=1 mod q` 的解为 `1,x`；左侧 error趋于 `1`，
+右侧趋于 `0`。故该 lemma为假，且不能由 large-sieve aggregate upper bound推出
+逐 residue exponentially-small error。
+
+第三，Lemma 6.2 `(6.24)` 先使用 compatibility
+`d1|n,d2|n+1` 推得 `gcd(d1,d2)=1`，随后却把相应 coupled/coprime-restricted
+double sum因子化为 unrestricted square
+
+```text
+x (sum_(d<=x) mu(d)/d)^2.
+```
+
+若 double sum保留 compatibility/coprimality，该因子化非法；若按 displayed
+unrestricted ranges理解，则前述 compatibility premise已被丢弃。两种读法都不能
+推出 `(6.24)`。
+
+故 `2208.12219v8` 不能注册为 theorem input。即使反事实接受其结论，对象仍是
+人工 prime-periodic finite Mobius vector上的 bare complete-period shifts，缺 actual
+affine slopes/intercepts、progression、masks/weights、phase、canonical all-prefix、
+packet labels与 normalization；固定 `c` 的 `(log X)^(-c)=X^(-o(1))` 也不是
+支付 strict `1/400` 的 fixed positive-power saving。
+
+这一结果只加固第 31.3 节既有
+`DECLARED_TPC32_FIXED_D0_OUTER_REGROUP_AND_POST30_DIRECT_FRAME_SOURCE_CANDIDATES_V1`
+scope；不新增 Carella method cell，不重开第 6 节旧 STOP，也不把 proof error
+包装成新的 arithmetic method。
+
+### 35.5 committed edge、pair/H1 与状态防火墙
+
+对 TPC-32/111/122/124/126/127、TPC-18/205/206与 O161 相关 committed
+artifacts做 adversarial crosscheck后，没有发现漏掉的 theorem edge：
+
+```text
+LOSSLESS_A_C_ZERO_TO_ORDERED_PREFIX_COEFFICIENTWISE_INTERTWINER = ABSENT
+ACTUAL_GROWING_PREFIX_SAVING = ABSENT
+ACTUAL_OUTER_BV_AND_CONTENT_REMAINDER_THEOREM = ABSENT
+PAIR_NATIVE_42_FIELD_PRODUCTION_RECORD = ABSENT
+PAIR_TO_OMEGA_THEOREM = ABSENT
+H1_LINEAR_OCCURRENCE_EDGE = ABSENT
+O161_NAMED_ATOM_FIXED_POWER_THEOREM = ABSENT
+```
+
+TPC-206仍只是 selected `13/42` finite projection，first missing field为 `D`，且
+`production_occurrence=false`；`d=1` row divisor不能被改名为 source-locked
+opened dyadic scale `D=1`。即使擅自补 `D,J,Q`，其余 packet/source、mask、
+coefficient AST、support/nonzero、source-child与四阶段 normalization fields仍缺。
+
+TPC-205 pair carrier是 TT-star/Cauchy后的 bilinear object；H1要求 linear、
+coefficientwise-conservative occurrence lift。没有 inverse aggregation theorem时，
+pair-native carrier不得改写为 H1 edge。pair-native reroute与 H1 parent继续 `OPEN`。
+
+### 35.6 精确裁决与合法 reopen interface
+
+本轮精确有限裁决为：
+
+```text
+TPC32_O161_20260803_EXTENDED_PRIMARY_SCREEN_UNFROZEN_CANDIDATES_HAVE_
+LITERAL_OBJECT_MISMATCH_AND_CARELLA_2208_12219V8_PROOF_CHAIN_IS_INVALID_
+NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN
+
+THEOREM_TRIGGER = false
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC207_CREATED = false
+```
+
+第 6 节新增两个 source/version-scoped cells；Carella只加固旧 cell。所有旧
+method cells保持 `STOP_SCOPED`，尤其 TPC193 V1、common-`k` V1、
+tail-failure/A/B V1与 full-`r_Rr_R` ultra-complement V1。两个 O161 pointwise
+parents、TPC32 direct/fixed-`D0`/frame parents、pair-native reroute、H1与 global
+architecture继续 `OPEN`。
+
+只在出现下列任一 source-backed输入时重开对应 local parent：
+
+1. 直接接受同一 high-beta packet的 literal `A_C`，并给 growing signed-prefix、
+   BV/content envelope或 matched-shell distinguished-zero fixed-power saving；
+2. 直接接受 literal `w_m/E_Psi` 的 deterministic prescribed-lag four-Mobius
+   theorem，并支付 fixed-`D0` tiny-power threshold；
+3. 直接控制 actual GM evaluation-cloud Gram operator的 full/cross-`D0` frame
+   theorem，常数足以支付 strict `1/400`；
+4. 在 named production atom上直接控制 O161 literal `c_z` 的 DIRECT `q/N`
+   terminal blocks，或以 uniform fixed-power local theorem接入 TPC-159 BAD
+   `q/T` telescoping；
+5. materialize source-backed complete 42-field production pair及 pair-to-`omega`/
+   normalization theorem，或给出真正 linear H1 occurrence edge。
+
+任一 local gate转正也不自动创建 TPC-207；all-`D` uniformity、exactly-once
+physical cover、original/global normalization、tail-failure、A/B selection、actual
+packet attachment与完整 provenance gates仍须分别通过，并使页首数学 trigger
+发生真实 theorem-backed状态变化。
+
+### 35.7 发布边界
+
+本轮没有创建 TPC-207、论文、paper directory、PDF或构建日志。正式写入只允许
+`TPC_HANDOFF.md`；全部 protected untracked必须原样保留且不纳入提交。
+
+```text
+POST_WRITE_RELEASE_REGRESSION = 22/22 PASS
+TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_WRITE_GIT_DIFF_CHECK = PASS
+POST_WRITE_MARKDOWN_FENCES = 896 MARKERS BALANCED
+PROTECTED_UNTRACKED_RECHECK = 127 FILES
+PROTECTED_UNTRACKED_MANIFEST_SHA256
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+FINAL_SYNC_ORIGIN_MAIN_BEFORE_HANDOFF_COMMIT
+  = 86e4412feb82f72d0f9964ac337e1676fd325d1b
+FINAL_SYNC_TPC_SOURCE_LOCK_CHANGE = NONE
+SUBAGENT_FILES_CHANGED = 0
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+```
+
+正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
+supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
+验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
