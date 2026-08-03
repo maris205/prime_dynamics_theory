@@ -1,0 +1,127 @@
+{
+  "actual_completion_laws": {
+    "critical": "C_M*Y_k^0/(2H_k*x^k)=2-gamma_k+o(1)",
+    "first_lower": "C_M*Y_k^-/(2H_m*x^m)=1-gamma_k/lambda+o(1)",
+    "gamma_k": "C_*C_M*lambda^(eta_k)"
+  },
+  "clock": "one_bounded_phase_physical_clock_with_m=k-1",
+  "constants": {
+    "R": "7/5",
+    "fixture_lambda": "5/3",
+    "fixture_x": "2352/1445",
+    "global_gap_certificate": "3/10",
+    "global_minimax_certificate": "1/9",
+    "lambda_lower": "28/17",
+    "lambda_upper": "17/10",
+    "q": "1/2",
+    "r_H": "17/20"
+  },
+  "false_claims": {
+    "critical_direct_o_H_proved": false,
+    "first_lower_direct_o_H_proved": false,
+    "full_E_off_decided": false,
+    "head_counterloop_transport_closed": false,
+    "hilbert_polya_constructed": false,
+    "odd_orders_controlled": false,
+    "rh241_coefficient_bridge_closed": false,
+    "rh241_moving_noisy_all_order_envelope_closed": false,
+    "rh288_activated": false,
+    "riemann_hypothesis_proved": false,
+    "riemann_zeros_identified": false,
+    "upper_alias_orders_controlled": false,
+    "von_mangoldt_trace_proved": false,
+    "zeta_divisor_equality": false
+  },
+  "finite_minimax_witness": {
+    "critical_at_optimizer": "1/8",
+    "first_lower_at_optimizer": "-1/8",
+    "gap_lower_certificate": "3/10",
+    "global_lower_certificate": "1/9",
+    "lambda": "5/3",
+    "minimax_value": "1/8",
+    "opposite_equal_errors": true,
+    "optimizer_gamma": "15/8",
+    "strict_gap_certificate": true,
+    "strictly_above_global_certificate": true
+  },
+  "finite_rows": [
+    {
+      "critical_Z": "1/1",
+      "finite_formula_only": true,
+      "first_lower_Z": "2/5",
+      "gamma": "1/1",
+      "gap_identity_exact": true,
+      "lambda": "5/3",
+      "max_abs_Z": "1/1",
+      "phase_free_gap": "1/3"
+    },
+    {
+      "critical_Z": "1/3",
+      "finite_formula_only": true,
+      "first_lower_Z": "0/1",
+      "gamma": "5/3",
+      "gap_identity_exact": true,
+      "lambda": "5/3",
+      "max_abs_Z": "1/3",
+      "phase_free_gap": "1/3"
+    },
+    {
+      "critical_Z": "1/8",
+      "finite_formula_only": true,
+      "first_lower_Z": "-1/8",
+      "gamma": "15/8",
+      "gap_identity_exact": true,
+      "lambda": "5/3",
+      "max_abs_Z": "1/8",
+      "phase_free_gap": "1/3"
+    },
+    {
+      "critical_Z": "0/1",
+      "finite_formula_only": true,
+      "first_lower_Z": "-1/5",
+      "gamma": "2/1",
+      "gap_identity_exact": true,
+      "lambda": "5/3",
+      "max_abs_Z": "1/5",
+      "phase_free_gap": "1/3"
+    }
+  ],
+  "finite_rows_are_formula_reproduction_only": true,
+  "gates": {
+    "A_canonical_intrinsic_determinant": false,
+    "B_time_oriented_unitary_completion": false,
+    "C_self_adjoint_generator_T_log_T": false,
+    "D_von_mangoldt_prime_power_trace": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "phase_free_theorem": {
+    "actual_Y_supply": "two_coordinate_max_unnormalized_Y_weight_diverges_on_x^(k-1)_scale",
+    "affine_gap": "Z_k^0-lambda*Z_k^-=2-lambda+o(1)",
+    "gap_lower": "2-lambda>3/10",
+    "minimax_liminf": "liminf_max(|Z_k^0|,|Z_k^-|)>1/9"
+  },
+  "rate_theorem": {
+    "rho_noisy_upper": "1419857/1600000",
+    "rho_target_upper": "17/28",
+    "root_ceiling": "max(r_H^2*lambda^3/4,1/lambda)<1",
+    "two_order_cap": "max(|p_k^0|/(2H_k*x^k),|p_k^-|/(2H_m*x^m))"
+  },
+  "scope": "actual_critical_and_first_lower_Y_at_leading_natural_scale_only",
+  "source_anchors": {
+    "RH-262": "28/17<lambda",
+    "RH-267": "all_order_deterministic_target_cap",
+    "RH-282": "actual_modulus_complement_trace_cap",
+    "RH-344": "complete_critical_direct_decomposition_and_demand_scale",
+    "RH-345": "critical_parity_phase_law",
+    "RH-346": "complete_first_lower_direct_decomposition_and_demand_scale",
+    "RH-347": "first_lower_parity_phase_law",
+    "RH-352": "natural_scale_actual_direct_cap_method"
+  },
+  "source_types": {
+    "critical": "p_k^0=Y_k^0+P_k^0-S_k^0",
+    "direct": "p=tau-a=q-d_at_orders_2k_and_2k-2",
+    "first_lower": "p_k^-=Y_k^-+P_k^--S_k^-"
+  },
+  "status": "actual_critical_first_lower_phase_free_completion_gap_proved",
+  "verdict": "GO_STRICT_SCOPED_THEOREM"
+}
