@@ -1,0 +1,361 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=0.91in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cH}{\mathcal H}
+
+\title{Logarithmic Terminal-Window Accuracy Thresholds\\
+for the Complete Upper Counterloop Band}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We invert the deterministic terminal-tail law of RH-358 at polynomial target
+accuracy.  Let $E_k(q)=P_k(q)/C_k$ be the relative strict-upper-band mass left
+after retaining the top $q$ terminal coordinates, and let $x>1$ be the
+source-locked radial constant.  For $a>0$, $c\in\mathbb R$, put
+\[
+ t_k=\frac{a\log k}{\log x}+c,\qquad q_k=\lfloor t_k\rfloor,
+ \qquad\theta_k=\{t_k\}.
+\]
+We prove
+\[
+ k^aE_k(q_k)=x^{\theta_k-c}\{1+o(1)\}.
+\]
+The complete limit set of $\theta_k$ is $[0,1]$, so the normalized error has
+the complete cluster interval $[x^{-c},x^{1-c}]$ rather than a unique
+constant.  If
+\[
+ Q_k(a,c)=\min\{q:E_k(q)\le x^{-c}k^{-a}\},
+\]
+then $Q_k=t_k+O(1)$ and the complete limit set of $Q_k-t_k$ is exactly
+$[0,1]$.  We also classify arbitrary sublinear windows by their polynomial
+accuracy exponent and translate logarithmic width to the physical double-log
+clock.  Actual-head inheritance is only conditional on the original
+unnormalized same-clock leaf $D_{4k}(R)\to0$.  No root or rank identification,
+determinant closure, Gate A--E promotion, Hilbert--Polya construction, zero
+identification, or proof of RH is claimed.
+\end{abstract}
+
+\section{Source-locked tail ledger}
+
+Let $k\to\infty$ be the RH-342 first-alias clock and let
+\begin{equation}\label{eq:x-y}
+ x=(\beta R)^2>1,
+ \qquad
+ y_k=(\beta_kR)^2
+ =x\exp\left[-\frac{\log C_M}{k}+o(k^{-1})\right],
+ \qquad C_M>0.
+\end{equation}
+The deterministic strict upper-counterloop budgets of RH-357--RH-358 are
+\begin{align}
+ B_k(L)&=\sum_{j=1}^{L}\frac{y_k^{k+j}}{k+j},
+ &&1\le L\le k-1,\label{eq:B}\\
+ C_k&=B_k(k-1),
+ &P_k(q)&=B_k(k-1-q),
+ &&0\le q\le k-2.\label{eq:C-P}
+\end{align}
+Define the relative truncation error
+\begin{equation}\label{eq:E}
+ E_k(q):=\frac{P_k(q)}{C_k}.
+\end{equation}
+Equivalently, $1-E_k(q)$ is the normalized mass in the top $q$ terminal
+coordinates.  Since every terminal-lag weight is positive, $E_k(q)$ is
+strictly decreasing in $q$.
+
+RH-358 proves the uniform source-locked formula
+\begin{equation}\label{eq:full-profile}
+ E_k(q)=x^{-q}C_M^{q/k}\frac{2k-1}{2k-1-q}
+ \frac{1-x^{-(k-1-q)}}{1-x^{-(k-1)}}\{1+o(1)\},
+\end{equation}
+where the relative $o(1)$ is uniform over $0\le q\le k-2$
+\citep{WangTerminalLag2026}.  The finite-tail factor in
+\eqref{eq:full-profile} is essential near $q=k-2$.  The present paper uses
+only the logarithmic subrange, where every displayed correction can be
+quantified without deleting it outside its valid domain.
+
+The symbol $q$ here is an integer window width.  It is not the open
+direct/full-trace quantity denoted by the same letter elsewhere in the
+project.
+
+\section{Uniform logarithmic reduction and phase density}
+
+\begin{lemma}[Uniform logarithmic window]\label{lem:log-window}
+For every fixed $A>0$,
+\begin{equation}\label{eq:log-uniform}
+ \sup_{0\le q\le A\log k}
+ \left|x^qE_k(q)-1\right|\longrightarrow0,
+\end{equation}
+where the supremum is over admissible integers.
+\end{lemma}
+
+\begin{proof}
+In the stated range, $q/k=O(\log k/k)$.  Hence
+$C_M^{q/k}\to1$ and $(2k-1)/(2k-1-q)\to1$ uniformly.  Also
+$k-1-q\to\infty$ uniformly, so both finite-tail factors in
+\eqref{eq:full-profile} tend uniformly to one.  The source remainder in
+\eqref{eq:full-profile} is already uniform on the full admissible range.
+Multiplication by $x^q$ proves \eqref{eq:log-uniform}.
+\end{proof}
+
+The logarithmic phase mechanism was used for a different post-alias ratio in
+RH-356 \citep{WangMesoscopic2026}.  We record the exact generality needed for
+the accuracy problem.
+
+\begin{lemma}[Complete phase set]\label{lem:phase}
+Fix $a>0$ and $c\in\mathbb R$.  Then
+\begin{equation}\label{eq:theta}
+ \theta_k(a,c):=
+ \left\{\frac{a\log k}{\log x}+c\right\}
+\end{equation}
+has complete limit set $[0,1]$.
+\end{lemma}
+
+\begin{proof}
+For $t\in(0,1)$, take
+\[
+ k_m=\left\lfloor x^{(m+t-c)/a}\right\rfloor.
+\]
+Then $a\log_x k_m+c=m+t+o(1)$, so a subsequence of phases tends to $t$.
+For the endpoints, use
+\[
+ k_m^{(0)}=\left\lceil x^{(m-c)/a}\right\rceil,
+ \qquad
+ k_m^{(1)}=\left\lceil x^{(m+1-c)/a}\right\rceil-1.
+\]
+The first phase tends to zero and the second to one.  Subtracting one in the
+second construction handles exact integer powers.  No phase outside $[0,1]$
+is possible.
+\end{proof}
+
+\section{Polynomial accuracy and its integer phase}
+
+Fix $a>0$ and $c\in\mathbb R$, and define
+\begin{equation}\label{eq:t-q}
+ t_k(a,c):=\frac{a\log k}{\log x}+c,
+ \qquad q_k(a,c):=\lfloor t_k(a,c)\rfloor,
+ \qquad \theta_k(a,c):=\{t_k(a,c)\}.
+\end{equation}
+These integers are admissible for all sufficiently large $k$.
+
+\begin{theorem}[Polynomial phase law]\label{thm:phase-law}
+With \eqref{eq:t-q},
+\begin{equation}\label{eq:phase-law}
+ \boxed{
+ k^aE_k(q_k(a,c))
+ =x^{\theta_k(a,c)-c}\{1+o(1)\}.}
+\end{equation}
+The complete limit set of the left-hand side is
+\begin{equation}\label{eq:error-cluster}
+ \boxed{[x^{-c},x^{1-c}].}
+\end{equation}
+In particular,
+\begin{equation}\label{eq:liminf-limsup}
+ \liminf k^aE_k(q_k)=x^{-c},
+ \qquad
+ \limsup k^aE_k(q_k)=x^{1-c},
+\end{equation}
+and the sequence has no single limit.
+\end{theorem}
+
+\begin{proof}
+Since $q_k=O(\log k)$, \cref{lem:log-window} gives
+$E_k(q_k)=x^{-q_k}\{1+o(1)\}$.  The identity
+\[
+ q_k=\frac{a\log k}{\log x}+c-\theta_k
+\]
+then yields \eqref{eq:phase-law}.  Apply \cref{lem:phase} and the continuous
+increasing map $t\mapsto x^{t-c}$ to obtain the complete cluster interval.
+Its endpoints differ because $x>1$.
+\end{proof}
+
+\begin{corollary}[Accuracy-exponent classification]\label{cor:exponent}
+Let $q_k=o(k)$ be admissible.  Then
+\begin{equation}\label{eq:log-error}
+ \log E_k(q_k)=-q_k\log x+o(1).
+\end{equation}
+Consequently, if
+\begin{equation}\label{eq:exponent-assumption}
+ \frac{q_k\log x}{\log k}\longrightarrow a\in[0,\infty],
+\end{equation}
+then
+\begin{equation}\label{eq:exponent-law}
+ \frac{\log E_k(q_k)}{\log k}\longrightarrow-a.
+\end{equation}
+For $a=\infty$, this means $E_k(q_k)=o(k^{-A})$ for every fixed $A>0$.
+\end{corollary}
+
+\begin{proof}
+The sublinear specialization of \eqref{eq:full-profile} is
+$E_k(q_k)=x^{-q_k}\{1+o(1)\}$.  Taking logarithms proves
+\eqref{eq:log-error}; division by $\log k$ gives the finite cases.  If the
+ratio in \eqref{eq:exponent-assumption} diverges, then for every fixed $A$
+it eventually exceeds $A+1$, and \eqref{eq:log-error} gives the asserted
+superpolynomial bound.
+\end{proof}
+
+\section{The exact minimal integer window}
+
+For $a>0$ and $c\in\mathbb R$, let the target error be
+\begin{equation}\label{eq:target}
+ \varepsilon_k(a,c):=x^{-c}k^{-a}=x^{-t_k(a,c)}.
+\end{equation}
+Because $E_k(0)=1$, $E_k$ is strictly decreasing, and the final admissible
+tail is exponentially small, the following minimum exists for all large
+$k$:
+\begin{equation}\label{eq:Q}
+ Q_k(a,c):=min\{0\le q\le k-2:E_k(q)\le\varepsilon_k(a,c)\}.
+\end{equation}
+
+\begin{theorem}[Sharp inverse accuracy theorem]\label{thm:inverse}
+For every $a>0$ and $c\in\mathbb R$,
+\begin{equation}\label{eq:Q-first}
+ Q_k(a,c)=t_k(a,c)+O(1).
+\end{equation}
+More precisely, the complete limit set of
+\begin{equation}\label{eq:Q-correction}
+ Q_k(a,c)-t_k(a,c)
+\end{equation}
+is exactly
+\begin{equation}\label{eq:Q-cluster}
+ \boxed{[0,1].}
+\end{equation}
+If $\theta_k(a,c)$ remains in a fixed compact subinterval of $(0,1)$ along a
+subsequence, then on that subsequence
+\begin{equation}\label{eq:generic-ceiling}
+ Q_k(a,c)=\lceil t_k(a,c)\rceil
+\end{equation}
+eventually.
+\end{theorem}
+
+\begin{proof}
+Write $n_k=\lfloor t_k\rfloor$ and $\theta_k=\{t_k\}$.  For each fixed
+$j\in\{-1,0,1,2\}$, \cref{lem:log-window} gives
+\begin{equation}\label{eq:four-ratios}
+ \frac{E_k(n_k+j)}{\varepsilon_k(a,c)}
+ =x^{\theta_k-j}\{1+o(1)\},
+\end{equation}
+whenever the index is admissible, which it is eventually.  The case $j=-1$
+is eventually greater than one, while $j=2$ is eventually less than one.
+Thus
+\begin{equation}\label{eq:Q-bracket}
+ n_k\le Q_k\le n_k+2,
+\end{equation}
+proving \eqref{eq:Q-first}.
+
+Consider any convergent subsequence of \eqref{eq:Q-correction}.  Passing to a
+further subsequence, $Q_k-n_k$ is one fixed value $j\in\{0,1,2\}$ and
+$\theta_k\to\theta\in[0,1]$.  If $j=0$, minimality and
+\eqref{eq:four-ratios} force $x^\theta\le1$, hence $\theta=0$ and the
+correction tends to zero.  If $j=2$, then $E_k(n_k+1)>\varepsilon_k$;
+\eqref{eq:four-ratios} forces $x^{\theta-1}\ge1$, hence $\theta=1$ and the
+correction tends to one.  If $j=1$, the correction tends to $1-\theta\in[0,1]$.
+Therefore every cluster point lies in $[0,1]$.
+
+Conversely, fix $s\in(0,1)$.  By \cref{lem:phase}, choose a subsequence with
+$\theta_k\to1-s$.  Along it, the $j=0$ ratio in
+\eqref{eq:four-ratios} tends to $x^{1-s}>1$, while the $j=1$ ratio tends to
+$x^{-s}<1$.  Hence $Q_k=n_k+1$ eventually and
+$Q_k-t_k\to s$.  The limit set of a bounded sequence is closed, so it also
+contains the endpoints.  This proves \eqref{eq:Q-cluster}.  The same strict
+two-ratio comparison proves \eqref{eq:generic-ceiling} whenever the phase is
+bounded away from zero and one.
+\end{proof}
+
+\begin{remark}[Why no stronger universal integer formula is claimed]
+At a phase endpoint, one of the ratios in \eqref{eq:four-ratios} tends to one.
+The source lock \eqref{eq:x-y} allows an unspecified $o(k^{-1})$ term, so its
+sign may decide between adjacent integers.  The interval
+\eqref{eq:Q-cluster} is the sharp source-backed conclusion.
+\end{remark}
+
+\section{Physical clock and conditional actual-head inheritance}
+
+On the RH-355 physical clock,
+\begin{equation}\label{eq:physical-clock}
+ k=\frac{\log(1/\sigma)}{2\log\lambda}+O(1).
+\end{equation}
+Therefore
+\begin{equation}\label{eq:physical-width}
+ \frac{a\log k}{\log x}+c
+ =\frac{a}{\log x}\log\log(1/\sigma)
+ +c-\frac{a}{\log x}\log(2\log\lambda)+o(1).
+\end{equation}
+Polynomial-in-$k$ truncation accuracy thus requires a double-logarithmic
+number of terminal coordinates.  Equation \eqref{eq:Q-cluster} prevents
+promotion of \eqref{eq:physical-width} to a unique integer constant without
+a phase subsequence.
+
+Let $E_k^{\cH}(q)$ be the corresponding actual even-weight relative tail from
+RH-358.  Under the original same-clock unnormalized hypothesis
+\begin{equation}\label{eq:D}
+ D_{4k}(R):=\sum_{2\le n<4k}
+ \frac{|h_{\sigma,n}-s_{k,n}|R^n}{n}\longrightarrow0,
+\end{equation}
+RH-358 proves
+\begin{equation}\label{eq:actual-uniform}
+ \sup_{0\le q\le k-2}
+ \left|\frac{E_k^{\cH}(q)}{E_k(q)}-1\right|\longrightarrow0.
+\end{equation}
+
+\begin{theorem}[Conditional actual accuracy inheritance]
+Assume \eqref{eq:D} on one physical clock, and define
+\[
+ Q_k^{\cH}(a,c):=
+ \min\{0\le q\le k-2:E_k^{\cH}(q)\le x^{-c}k^{-a}\}.
+\]
+Then the phase law \eqref{eq:phase-law} and exponent law
+\eqref{eq:exponent-law} hold with $E_k^{\cH}$ in place of $E_k$, and the
+complete limit set of $Q_k^{\cH}(a,c)-t_k(a,c)$ is $[0,1]$.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:actual-uniform} multiplies every tail ratio used above by
+$1+o(1)$ uniformly in $q$.  The proofs of \cref{thm:phase-law,thm:inverse}
+and \cref{cor:exponent} use only such ratios, monotonicity of nonnegative
+tails, and phase subsequences.  Repeating them gives the conditional claims.
+\end{proof}
+
+This theorem is inactive until \eqref{eq:D} is proved.  It transfers weighted
+budget accuracy only, not roots, ranks, eigenvalues, or determinants.
+
+\section{Finite protocol, boundary, and next route}
+
+The artifact uses the exact rational fixture $x=2352/1445$ to evaluate exact
+terminal tails and exact minimal widths for rational polynomial targets.
+High-precision rows reproduce the phase formula and finite cluster coverage.
+They are finite checks, not evidence for phase density or an actual noisy
+operator.
+
+The next read-only candidate is RH-360: the exponential generating function
+$G_k(z)=\sum_r z^r\pi_k(r)$ across the critical value $z=x$.  The anticipated
+scales are a finite transform below $x$, a $k$-scaled Riemann-integral law in
+the critical window $z_k=x\exp(\tau/k)$, and exponential endpoint dominance
+above $x$.  No such candidate is pre-authorized as an actual spectral law.
+
+RH-359 does not prove \eqref{eq:D}; identify actual roots, ranks, or spectra;
+close a determinant, $p$, the unrelated open $q$, or $E_{\rm off}$; close the
+moving noisy envelope of RH-241 \citep{WangEnvelopeReview2026}; or activate
+the gluing criterion of RH-288 \citep{WangGluing2026}.  Gates A--E remain
+false/open.  There is no Hilbert--Polya operator, Riemann-zero identification,
+von Mangoldt trace theorem, completed-zeta divisor equality, or proof of RH.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
