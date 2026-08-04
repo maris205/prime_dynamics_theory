@@ -207,6 +207,18 @@ uniformity, signs, data type, and loss ledger. If no actual theorem, rigorous
 physical obstruction, or independent theorem edge exists, return
 `NOT_TESTABLE` and do not create RH-362.
 
+The 2026-08-04 RH-362 source lock returned `NOT_TESTABLE` at repository
+`HEAD=9902699`: RH-342 fixes the actual-head and deterministic-shell types,
+RH-355 fixes the exact unnormalized `D_(4k)(R)` leaf, and RH-303 supplies only
+a fixed-order consequence of an already-open annular hypothesis. RH-287 and
+RH-294 use slower or unspecified diagonal clocks without head transport.
+RH-352--RH-354 remain selected/normalized actual results, while RH-340,
+RH-342, RH-343, and RH-355 provide only information-class or absolute-
+majorant negatives, explicitly not physical `D` behavior. No source pays the
+common-clock all-order defect budget, and no physical obstruction or
+independent admissible theorem edge was found. Retain the route coordinate
+`actual_same_clock_unnormalized_head_transport_open` and do not create RH-362.
+
 ## 7. Reproduction and publication audit
 
 Final RH-352--RH-361 audit:
