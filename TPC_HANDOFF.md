@@ -3,48 +3,75 @@
 更新时间：2026-08-04
 交接状态：`SEALED_FOR_NEW_SESSION`
 本轮启动基线为
-`ace004df0b39f62b4de747656932fd316acdfbe9`，与 `origin/main` 一致；启动
+`ca9fe7ab11c82a8dfb272c63b2f7940717282704`，与 `origin/main` 一致；启动
 `git pull --rebase origin main` 返回 already up to date。启动时
 `TPC_HANDOFF.md` SHA-256 为
-`e62e397dda09ae6b6f608972ce0d5eb4968dae5c35f4d406a7c77a464c059d99`，
+`9567009e27e779198875496a56bd8057d233568f5d06f908d7583d2313bb9b0b`，
 tracked/cached diff 均为空；127 个既有 protected untracked files 的 manifest
 仍为
 `35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f`。
 第 1 节 22 项只读启动回归为 `22/22 PASS`；TPC-27--32 legacy writers 与
 TPC-122 writer 均未执行。
 
-第 48 节完成当前 selected-packet scalar zero-mode transfer 的反向审核。
-TPC-93 的 arbitrary-decoration lemma、显式 source--child inverse 与原系数
-重组已经给出以同一 native source atoms 为公共细化、逐
-source--projector-layer 重组同一 `A_hat_C,q_DFT(0)` scalar 的 ordered-fiber
-common-native refinement，故第 23.2--23.4 节把完整 post-bin dictionary
-intertwiner 当作 scalar transfer 必要条件的表述过强；完整
-`(J Q_D-Q_Z)M=0` 仍缺，但 scalar refinement 为 `PRESENT_L1`。新的第一
-arithmetic fatal 是同一 actual fibers 上的 growing deterministic signed-prefix
-theorem 与完整 outer BV envelope 均缺失。Angelo--Xu
-`arXiv:2411.14447v3` 的 2026-08-02 proof revision 为真实 current source，
-但仍是 random single-factor theorem；其 deterministic Liouville remark 也只是
-`n^(-1/2)` weighted single sequence，不能映射到 fixed `h0=2` 的 actual
-two-affine Möbius coefficient。
+第 49 节完成第 48 节 scalar transfer 的 content/BV allocation 反方审核。
+将 `chi_theta(t)` 中的 fixed-period/local-coprimality factors 与
+`1_(G_theta(t)<=C)` 留在 exact signed sequence，并只把
+`c_theta,X W_theta,X(t)` 放入 BV weight，是 TPC-122允许但必须显式登记的新
+factor allocation；其余 actual row-pair mask components继续保留在
+`theta,I_theta,c_theta,X` 中。TPC-32/33 已提交的 row `ell^1`、
+`j`-support、projector/local-mask mass 与 smooth-weight BV 界共同给出安全的
+
+```text
+sum_theta |I_theta| ||c_theta,X W_theta,X||_BV*
+  << X^(o(1)) J Q^2,
+ell_Z = 133/400.
+```
+
+因此 allocation-independent 的 `ACTUAL_OUTER_BV_ENVELOPE=ABSENT` 表述过强；
+content cutoff 的 jumps 可以无损移入 prefix object，safe natural-scale envelope
+为 `PRESENT_DERIVED_L1`。但 resolved fiber 最长只有
+`D=X^(10049/52500+o(1))`。逐 fiber prefix 后外层绝对重组的指定模板，即使每条
+active nonzero unit-scale fiber取得理想 `O(1)` discrepancy，也仍有
+
+```text
+133/400 - 10049/52500 = 29629/210000
+```
+
+的 endpoint deficit；active singleton class 更无 uniform positive power。
+这是该模板的 strategy ceiling，不是 actual scalar 的下界。真正第一缺口已经收缩为
+metadata-preserving collective outer-return theorem；最窄既有 OPEN target 是
+TPC-33 的 `E_L+E_R << X^epsilon Q^3`，等价可接受的另一入口是直接证明同一
+`Z_C=A_hat_C,q_DFT(0)` 为 `X^(o(1))Q^2` 或更小。
+
+2026-08-04 official current-primary theorem-body refresh 没有 survivor：Tao
+`1509.05422v4` 只给 fixed-coefficient logarithmic terminal correlation；
+Grimmelt--Teräväinen `2607.28091v1` 的 growing coefficient-box inverse operator
+不是 actual determinant-two family；Frantzikinakis `1606.08420v2`、Lichtman
+`2009.08969v2` 与 Chinis `2105.14653v1` 分别先失败于 fixed/subsequence/metric、
+equal-slope natural shift-average/log-saving与 Siegel-zero conditional fixed-shift
+gates。没有
+growing exact masked all-prefix theorem、collective actual-family theorem或 direct
+small-content zero theorem。
 
 TPC-206 仍为 `13/42`，首缺大写 opened `D`；pair-to-`omega`、linear H1、
-两个 O161 pointwise parents 与 actual-cloud frame edge 均未改变。没有 growing
-prefix/BV theorem、`chi<=1/400`、direct small-content saving 或 TPC-207 trigger。
-除第 48.5 节 current scalar supersession ledger明确覆盖的旧 scalar first-fatal、
-factor-allocation与 normalization状态外，第 33--47 节 source-specific
+两个 O161 pointwise parents 与 actual-cloud frame edge 均未改变。没有
+`chi<=1/400`、direct small-content saving 或 TPC-207 trigger。除第 49 节明确覆盖的
+content/BV allocation 与 current first-fatal 外，第 33--48 节 source-specific
 wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态继续有效。
-发布前只读 fetch随后把 `origin/main` 推进到
-`1b3513ffde611b26f050fac02006b82c3799021a`；三个 late commits仅修改
-`RH_HANDOFF.md`。其中 RH-362 source lock与独立 adversarial audit均为
-`NOT_TESTABLE`，RH endpoint仍为361且 RH-362未创建；没有新增 theorem body、
-external source、TPC artifact或 TPC trigger。精确 late-delta type audit见第48.4节。
+发布前只读 fetch先将 `origin/main` 从启动基线推进至
+`33c9ec6fd7baf7c983de2b0fecc8b959ba0237c1`；正式 handoff commit后的正常
+`git pull --rebase origin main` 又取得
+`c46d4acd9a3b74bb87a3dedab3a93b7c99067188`。两个 commits都只给
+`RH_HANDOFF.md` 增加 alternate/global-route `NOT_TESTABLE` 摘要，没有改动 TPC
+source、artifact、policy或本 handoff，也没有 TPC theorem edge。该 disjoint
+RH-only delta不改变本节裁决。
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC32_H0_2_20260804_TPC93_SCALAR_ZERO_MODE_COMMON_NATIVE_REFINEMENT_PRESENT_L1_GROWING_TWO_AFFINE_MOBIUS_PREFIX_AND_ACTUAL_BV_ENVELOPE_ABSENT_ANGELO_XU_2411_14447V3_WRONG_OBJECT_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
+`TPC32_H0_2_20260804_CONTENT_MASK_IN_SIGN_SAFE_BV_ENVELOPE_ELL_Z_133_400_PRESENT_L1_FIBERWISE_PREFIX_ABSOLUTE_OUTER_DEFICIT_29629_210000_COLLECTIVE_Q3_OR_DIRECT_ZERO_REQUIRED_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
 下一篇：`null`；下一项不编号审计：`null`（仅在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -55,8 +82,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
 上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29、30、31、32、
-33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48 节；第 23、
-27、28 节只在第 29--48 节明确引用时展开。第 22 节的
+33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48、49 节；第 23、
+27、28 节只在第 29--49 节明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
@@ -588,14 +615,28 @@ Abel--BV formulas、TPC-124 determinant/zero-fiber comparison，以及 TPC-126/1
 exact prefix transports中，直接重命名出同一个
 `A_hat_C,q(0)` 的 source-backed growing signed-prefix theorem。第 48 节 current
 correction确认：full post-bin dictionary intertwiner仍缺，但 scalar
-common-native refinement、all-`theta` factor allocation、original global
-normalization与 `N0=JQ^2` / `Q^2=N0/J` identity 已为 `PRESENT_L1`。本 cell
-仍为 `STOP_SCOPED`，因为同一 actual fibers上的 growing deterministic prefix
-theorem、content-aware outer BV envelope与 direct small-content zero bound仍
-全部缺失；把 content mask留在 weight时 `E_cont=0`，但其全部 BV jumps必须
-真实支付。它不停止新的 full actual intertwiner、直接控制同一 `A_C` 的 theorem、
-保留全部 literal data 的新 growing-prefix/BV theorem、两个 O161 parents、
-pair-native reroute、H1 或 global architecture。
+common-native refinement、original global normalization与 `N0=JQ^2` /
+`Q^2=N0/J` identity 已为 `PRESENT_L1`。第 49 节进一步确认，若把
+`chi_theta` 中的 fixed-period/local-coprimality factors与 `1_(G_theta<=C)`
+固定留在 signed sequence，并只把 `c_theta,X W_theta,X` 放入 BV weight；其余
+actual row-pair masks继续留在 `theta,I_theta,c_theta,X`，则 committed
+row-`ell^1`、orbit-support、
+projector-mass与 smooth-BV 界给出
+
+```text
+SAFE_CONTENT_AWARE_OUTER_BV_ENVELOPE = PRESENT_DERIVED_L1
+ell_Z = 133/400.
+```
+
+本 cell 仍为 `STOP_SCOPED`：该 allocation 所需的是 exact masked all-prefix theorem，
+而逐 fiber + absolute outer reassembly 的最长可见 exponent 只有
+`10049/52500`，比 `ell_Z` 少 `29629/210000`；singleton return 与 collective
+outer cancellation也均未证。把 content mask留在旧 weight时 `E_cont=0`，但全部
+BV jumps仍须支付；改变 factor allocation不得调用旧的 unmasked prefix theorem。
+该 cell不停止新的 full actual intertwiner、直接控制同一 `A_C` 的 theorem、
+TPC-33 `Q^3` collective energy theorem、保留全部 literal data 的新
+masked-prefix/collective theorem、两个 O161 parents、pair-native reroute、H1 或
+global architecture。
 
 2026-07-31 的第 23.5 节 named-primary reopen-candidate 审计新增且仅新增：
 
@@ -1240,6 +1281,27 @@ pair-native、H1 或 global architecture。精确审核见第 48 节。
 第 48 节对 TPC-93 scalar common-native refinement 的 `PRESENT_L1` 修正不
 新增 method cell：它是既有 exact reindexing theorem 的窄标量实例化，不是新
 growing arithmetic method，更不支付 `1/400`。
+
+第 49 节的 current-primary natural/collective source refresh新增且仅新增：
+
+```text
+DECLARED_TPC32_20260804_TAO1509_FRANTZIKINAKIS1606_LICHTMAN2009_
+CHINIS2105_NATURAL_COLLECTIVE_PREFIX_TRANSFER_V1 = STOP_SCOPED
+```
+
+它严格锁定 Tao `1509.05422v4` Corollary 1.5、Frantzikinakis
+`1606.08420v2` Theorem 2.1、Lichtman `2009.08969v2` Theorems 1.1/1.3 与
+Chinis `2105.14653v1` Theorem 1.2 向第 49 节 exact masked-prefix/collective
+outer-return gate 的非法 transfer。Tao source可接受 fixed determinant-two affine
+syntax，但只有 `1/n` logarithmic terminal average；其余 sources分别只有
+fixed-slope subsequence/metric outer average、equal-slope shift average或依赖
+Siegel-zero subsequence；Lichtman 的 source average本身是 natural/unweighted，
+logarithm只出现在 saving rate，不是 logarithmic normalization。
+Grimmelt--Teräväinen `2607.28091v1` 与
+Klurman--Mangerel `1708.03176v1` 只作为第 33 节及 fixed-`D0` 既有 cells的
+一致性 countercheck，不重复扩张。本 cell不停止 future natural growing exact
+masked all-prefix theorem、直接 `Z_C` theorem、TPC-33 collective `Q^3` energy
+theorem或其他真正 literal source input；精确 theorem-body audit见第 49.5 节。
 
 本轮 2026-08-04 current-primary O161 source lock新增且仅新增：
 
@@ -4975,8 +5037,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 读取仓库根目录 TPC_HANDOFF.md，以仓库文件和已提交 artifacts 为事实来源，
 不要依赖旧聊天记录。为节省上下文，优先读取页首及第 1、6、22、24、29、30、
-31、32、33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48 节；
-第 23、27、28 节只在第 29--48 节明确引用时展开。
+31、32、33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48、49 节；
+第 23、27、28 节只在第 29--49 节明确引用时展开。
 
 先执行：
 
@@ -4998,13 +5060,13 @@ TPC-27--32 legacy certificates 会无条件重写 committed JSON，在出现真�
 当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 最新不编号裁决是：
 
-TPC32_H0_2_20260804_TPC93_SCALAR_ZERO_MODE_COMMON_NATIVE_REFINEMENT_
-PRESENT_L1_GROWING_TWO_AFFINE_MOBIUS_PREFIX_AND_ACTUAL_BV_ENVELOPE_
-ABSENT_ANGELO_XU_2411_14447V3_WRONG_OBJECT_NO_TRIGGER_STOP_SCOPED_
-PARENTS_OPEN
+TPC32_H0_2_20260804_CONTENT_MASK_IN_SIGN_SAFE_BV_ENVELOPE_ELL_Z_133_400_
+PRESENT_L1_FIBERWISE_PREFIX_ABSOLUTE_OUTER_DEFICIT_29629_210000_
+COLLECTIVE_Q3_OR_DIRECT_ZERO_REQUIRED_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN
 
-第 37--48 节当前登记的 source-specific cells与相邻 source/type verdict如下；
-第 46 节新增第 13--15 项，第 47 节新增第 16 项，第 48 节新增第 17 项：
+第 37--49 节当前登记的 source-specific cells与相邻 source/type verdict如下；
+第 46 节新增第 13--15 项，第 47 节新增第 16 项，第 48 节新增第 17 项，
+第 49 节新增第 18 项：
 
 1. Frantzikinakis--Host 1804.08556v3 与 He--Liu--Ma 2604.16840v1
    没有 O161 literal growing two-Mobius natural fixed-power theorem；
@@ -5091,6 +5153,16 @@ PARENTS_OPEN
     random single factor或 weighted single Liouville sequence都不是 fixed `h0=2`
     的 actual two-affine Möbius coefficient、canonical fiber prefix或 matched-shell
     zero，故无 TPC trigger。
+18. 第 49 节把 rough content与 `chi_theta` local masks固定移入 signed sequence、
+    并把其余 actual row-pair masks留在 outer key/interval/coefficient后，仓库界真实
+    给出 `ell_Z=133/400` 的 safe BV envelope；但最长 fiber exponent只有
+    `10049/52500`，逐 fiber prefix + absolute outer template仍缺
+    `29629/210000`。Tao `1509.05422v4`、Frantzikinakis `1606.08420v2`、
+    Lichtman `2009.08969v2`、Chinis `2105.14653v1` 与既有
+    Grimmelt--Teräväinen `2607.28091v1` 均在 fixed/subsequence/metric/
+    prescribed-family/conditional/operator-object gate失败；Lichtman 的 natural
+    shift average只有 logarithmic/`psi` saving。下一条非重复数学入口是
+    TPC-33 `E_L+E_R<<X^epsilon Q^3` collective theorem或同一 `Z_C` direct bound。
 
 发布前 `ace004d..1b3513f` 的 late remote delta只修改 `RH_HANDOFF.md`：
 RH completed endpoint仍为 RH-361，RH-362 source lock与独立 adversarial audit
@@ -5102,7 +5174,10 @@ source或 TPC32 prefix/BV、O161、frame、pair、H1 edge。该 handoff-only del
 
 同一 packet 的 row-reversal 不是新 method：它在 r=0 是 sign-preserving plus
 pair，并跨 distinct outer/prefix fibers。保持第 23 节既有 STOP，不得另起名字；
-但 scalar first-fatal 已由第 48 节校正为 growing prefix/BV theorem缺失。
+scalar attachment first-fatal 已由第 48 节校正；第 49 节又把 allocation-independent
+BV absence校正为 `ell_Z=133/400` safe envelope present，并把真正 first fatal收缩为
+逐-fiber natural-scale exact masked prefix alone无法克服 absolute outer geometry、
+collective outer-return缺失。
 
 同一 theorem-valid high-beta selected packet 仍固定为：
 sigma=1/10000，lambda=99979/210000，delta=7/60，beta=267/400，
@@ -5132,9 +5207,13 @@ production full-dictionary intertwiner。对 scalar `A_hat_C,q_DFT(0)` 则不需
 反演完整 determinant bins：
 TPC-93 arbitrary-decoration theorem取 `F=1_(G<=C)`，配合显式 source-child
 inverse，已无损给出 ordered two-affine Möbius fibers与原 global normalization，
-故 scalar common-native refinement为 `PRESENT_L1`。首个 arithmetic fatal现为
-同一 actual fibers上的 growing deterministic signed-prefix theorem与完整
-content-aware outer BV envelope均缺；不得把这项 L1重排升级为 L2。
+故 scalar common-native refinement为 `PRESENT_L1`。第 49 节固定新的合法 allocation：
+`mu(D)mu(U)chi 1_(G<=C)` 是 exact masked signed sequence，
+`c_theta,X W_theta,X` 是 BV weight。由已提交 bounds派生的 safe envelope为
+`X^(o(1))JQ^2`，即 `ell_Z=133/400`；但 exact masked prefix theorem、singleton
+return、collective outer cancellation与 direct `Z_C` bound均缺。不得把这项 L1
+allocation/envelope升级为 L2，也不得再把 rough cutoff jumps记入另一个 allocation后
+跨 gate拼接。
 
 Grimmelt--Merikoski arXiv:2505.00489v2 Part I 的 exact inverse-atom
 attachment 是本轮真实 L1 正结果。对
@@ -5416,8 +5495,9 @@ universe mismatch；只新增一个严格锁定 commits `c548ba9`/`ecad6e7` 的
 cross-program transfer cell，不把它记为 TPC method credit，也不扩张第 34 节
 严格限于 RH-342--348 的旧 cell。
 
-因此没有创建 TPC-207。合法的新入口仅为：直接接受 actual literal coefficient的
-positive-power theorem；直接控制 determinant DFT zero的 pointwise theorem；真正的
+因此没有创建 TPC-207。合法的新入口仅为：TPC-33 actual collective
+`E_L+E_R<<X^epsilon Q^3` theorem或等价 literal outer-return；直接接受 actual
+literal coefficient的 positive-power theorem；直接控制 determinant DFT zero的 pointwise theorem；真正的
 named additive atom + actual schedule + same-event avoidance theorem；同 high-beta
 packet actual parent registry后再通过 full matrix intertwiner与 source-backed
 `X^o(1)` projective theorem；或第 31.6 节既有 full self-kernel/cross-`D0` frame
@@ -8798,6 +8878,402 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 49. 2026-08-04 content-mask signed allocation、safe BV envelope 与 collective-return gate
+
+### 49.1 冻结基线、执行边界与 selected packet
+
+本轮启动时
+
+```text
+HEAD = origin/main
+  = ca9fe7ab11c82a8dfb272c63b2f7940717282704
+TPC_HANDOFF_SHA256
+  = 9567009e27e779198875496a56bd8057d233568f5d06f908d7583d2313bb9b0b
+tracked diff = 0
+cached diff = 0
+protected untracked files = 127
+protected manifest
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+```
+
+`git pull --rebase origin main` 返回 already up to date；第 1 节 22 项只读启动
+回归为 `22/22 PASS`。三个 read-only agents 分别完成 content/BV proof audit、
+current-primary theorem-body source lock 与全部 OPEN parents route ranking，均回报
+`files_changed=[]`。TPC-27--32 legacy writers、TPC-122 writer、builder与任何
+artifact materializer均未执行。
+
+本节继续锁定第 48 节同一个 theorem-valid selected packet：
+
+```text
+sigma  = 1/10000
+lambda = 99979/210000
+delta  = 7/60
+beta   = 267/400
+
+Q  = X^(267/400+o(1))
+J  = X^(133/400+o(1))
+C  = floor(J)
+h0 = 2
+N0 = J Q^2 asymp X Q.
+```
+
+第 22 节 `delta=1/20` 的 `TRUNCATED_ENTRY_ABSENT` family没有重开，且绝不与
+本 packet拼接。三条 raw channels、canonical `Delta#`、actual row-pair mask、
+outer labels、weights与原 global normalization均沿第 48 节 source lock保留。
+
+### 49.2 content不是 affine-pair gcd；exact progression不删除 masks
+
+TPC-93 actual affine child满足
+
+```text
+D_theta(t) = d_theta + sigma_theta t,
+U_theta(t) = u_theta + a_theta t,
+sigma_theta u_theta-a_theta d_theta = h0 = 2,
+
+P_theta = n_theta j_theta+h0,
+G_theta(t) = gcd(sigma_theta U_theta(t),P_theta).
+```
+
+因此 `gcd(D_theta(t),U_theta(t))|2` 不使 `G_theta(t)<=C` 自动成立；两个 gcd
+是不同对象。把 primitive affine-pair gcd改名为 target content会改变 literal
+coefficient，故 fail closed。
+
+TPC-93 的 exact content inversion为
+
+```text
+1_(G_theta(t)<=C)
+ = sum_(1<=c<=C) sum_(kappa>=1)
+     mu(kappa)
+     1_(c kappa | P_theta)
+     1_(c kappa | sigma_theta U_theta(t)).
+```
+
+这里 `c` 是 candidate exact content，`kappa` 是 signed inversion key，二者不得
+合并。令
+
+```text
+b = c kappa,
+g = gcd(b,sigma_theta),
+B = b/g.
+```
+
+则 `b|sigma_theta U_theta(t)` 等价于 `B|U_theta(t)`；soluble branch恰是一条
+positive-step progression
+
+```text
+t = tau_(theta,b)+Bz.
+```
+
+写
+
+```text
+U_theta(tau+Bz) = B V_(theta,b)(z),
+D*_(theta,b)(z) = D_theta(tau+Bz),
+```
+
+则非 squarefree `B` branch为零，其余 branch精确给出
+
+```text
+mu(U_theta(tau+Bz))
+  = mu(B) mu(V_(theta,b)(z)) 1_(gcd(B,V_(theta,b)(z))=1),
+
+det(D*_(theta,b),V_(theta,b)) = h0 = 2.
+```
+
+所以 exact content-resolved scalar可写为
+
+```text
+Z_C = sum_f C_f sum_(z in I_f) s_f(z) W_f(z),
+
+f = (theta,c,kappa,tau),
+1 <= c <= C,
+b = c kappa | P_theta,
+gcd(a_theta,B) = 1,
+I_f nonempty,
+tau = tau_(theta,b) mod B,
+C_f = c_theta,X mu(kappa)mu(B) 1_(c kappa|P_theta),
+s_f(z)
+  = mu(D*_f(z))mu(V_f(z))
+    1_(gcd(B,V_f(z))=1) chi_theta(tau+Bz),
+W_f(z) = W_theta,X(tau+Bz).
+```
+
+positive `B`保持 within-progression order，但它把 original prefix family改为
+progression-prefix family，并且只会缩短 fiber。`mu(B)`、新 coprimality mask、
+`chi_theta`、content keys、polarization与 source--child provenance任何一项都不得
+删除。将任意 periodic/local mask再强行分成 residue progressions通常把 unreduced
+determinant改为 modulus乘 `h0`；没有 forced factor时不得静默仍标 `h0=2`。
+
+对 fixed `P_theta asymp X`，content branch的 absolute multiplicity满足
+
+```text
+sum_(c,kappa: c kappa|P_theta) |mu(kappa)|
+  <= sum_(b|P_theta) tau(b)
+  = tau_3(P_theta)
+  = X^(o(1)).
+```
+
+这证明 exact progression不会单独引入 fixed-power branch loss；它没有证明新的
+Möbius cancellation。
+
+### 49.3 mask-in-sign factor allocation 与 source-backed safe envelope
+
+对原始 ordered `t` fibers，最强 metadata-safe factor allocation是
+
+```text
+a_theta(t)
+  = mu(D_theta(t))mu(U_theta(t))
+    chi_theta(t) 1_(G_theta(t)<=C),
+
+w_theta(t)
+  = c_theta,X W_theta,X(t),
+
+Z_C = sum_theta sum_(t in I_theta) a_theta(t)w_theta(t),
+E_cont,X = 0.
+```
+
+`a_theta`保留 `chi_theta` 中的 fixed-period/local-coprimality factors与 content
+cutoff；其余 actual row-pair mask components继续按既有 decomposition保留在
+`theta`、`I_theta` 与 `c_theta,X` 中。它是 bounded complex signed sequence。
+TPC-111/122 的 finite Abel identity对 complex
+sequences成立。TPC-122也明确规定：rough factor在 sign与weight之间移动会改变
+theorem gate，必须预先登记。故本 allocation可以无损调用 finite duality，但未来
+定理必须估计上式 exact masked prefixes
+
+```text
+Delta_theta
+  = max_(k<=|I_theta|)
+      |sum_(i<=k) a_theta(t_i)|,
+```
+
+不能调用只估计 unmasked `mu(D)mu(U)` 的 theorem。
+
+这个 allocation把所有 content jumps移出 BV weight。TPC-32/33 已提交的界为：
+
+1. 两侧 physical row coefficient各有 `ell^1` mass `O(Q)`；
+2. joint orbit/target support为 `O(J)`；
+3. raw divisor prefixes、row-gcd projector与 local-mask divisor mass均为
+   `X^(o(1))`；
+4. `W_theta,X` 的 logarithmic/smooth/Mellin-BV seminorm为 `X^(o(1))`；
+5. 每个 affine key至多两个 interval components。
+
+取 literal comparison scale
+
+```text
+A_theta = |I_theta|,
+```
+
+逐 source atom用 TPC-93 projector-weighted child reassembly，并对 above finite
+expansions取 absolute mass，得到 source-backed derived envelope
+
+```text
+sum_theta A_theta ||c_theta,X W_theta,X||_BV*
+  << X^(o(1)) J Q^2
+  = X^(133/400+o(1)) Q^2.
+```
+
+因此本 allocation的精确字段是
+
+```text
+CONTENT_AND_CHI_MASKS_IN_SIGN = PRESENT_L1
+REMAINING_ACTUAL_MASKS_IN_THETA_I_C = PRESENT_L1
+SMOOTH_WEIGHT_ONLY_BV = PRESENT_L1
+SAFE_CONTENT_AWARE_OUTER_BV_ENVELOPE = PRESENT_DERIVED_L1
+ell_Z = 133/400
+E_cont,X = 0
+SCALAR_GLOBAL_NORMALIZATION = PRESERVED
+```
+
+该 inequality由 committed bounds逐项派生，虽不是既有论文中单独命名的 theorem，
+但不需要新的 arithmetic input。故第 48.5 节 allocation-independent 的
+`ACTUAL_OUTER_BV_ENVELOPE=ABSENT` 由本节 supersede。若仍把 cutoff留在旧 weight，
+则每个 entering/leaving transition都在 endpoint-anchored variation中收费；粗界只有
+`||v 1_(G<=C)||_BV*<=2 sum|v|`，不得把本 allocation的 envelope跨 gate搬回旧
+unmasked prefix对象。
+
+### 49.4 fiberwise absolute-reassembly 的精确 strategy ceiling
+
+TPC-33 selected scale给
+
+```text
+|I_theta| <= 1 + D/(sigma_theta v_theta),
+D = X^(d_*+o(1)),
+d_* = 10049/52500 = 40196/210000.
+```
+
+exact content progression进一步除以 `B`，不会产生更长 fiber。natural envelope
+exponent为
+
+```text
+ell_Z = 133/400 = 69825/210000.
+```
+
+在指定策略“每条 fiber用 signed-prefix/BV，再对全部 outer keys取绝对值”内，
+即使每条 active nonzero unit-scale signed sequence有理想 `O(1)` prefix
+discrepancy，可见的
+最大 relative fiber saving也只有 `D^(-1)`。因此
+
+```text
+delta_pre-ell_Z
+  <= 10049/52500 - 133/400
+  = -29629/210000
+  < 0.
+```
+
+active singleton fiber更只能给 classwise `delta=0`；除非另有 exact enumeration、
+physical counting或 collective return，不能称其 negligible。把 comparison scale
+统一乘 `X^a` 只会同时作
+
+```text
+delta_pre -> delta_pre+a,
+ell_Z     -> ell_Z+a,
+```
+
+所以净差不变。square-root prefix更只给 `d_*/2`，留下第 33 节已记录的
+`49727/210000` gap。
+
+这只是上述 fiberwise/absolute-reassembly certificate的 rigorous ceiling，不是
+`Z_C` actual value的下界，也不是所有未来方法的 nonexistence theorem。TPC-111
+明确允许 future proof使用 outer cancellation。当前最窄且不重复的 collective
+OPEN target仍是 TPC-33 已命名的
+
+```text
+E_L+E_R <<_(epsilon,h,mathscr D) X^epsilon Q^3.
+```
+
+其 committed transfer在同一 selected packet上给
+
+```text
+|S_sh^all| <= X^epsilon Q^2,
+|Z_C|      <= X^epsilon Q^2
+```
+
+（第二式再用既有 large-content splice），并保留两 polarizations、actual mask、
+fixed `h0=2`、`+1` sparse occupancy与原 normalization。该 `Q^3` estimate本身仍
+`ABSENT_L2`。直接证明同一 literal `Z_C` bound也是合法并列入口。
+
+### 49.5 current-primary theorem-body source lock
+
+2026-08-04 official arXiv `math.NT` new/cross-list/replacement listing及组合检索没有
+新增 literal survivor。逐 theorem body的最接近结果为：
+
+| source/version | strongest legitimate nearby statement | first fatal |
+|---|---|---|
+| Tao `1509.05422v4`, Corollary 1.5 | fixed `d,u,s,a` 可逐字取 `mu(d+st)mu(u+at)` 且 `su-ad=2` | `1/n` logarithmic terminal average，不是 natural every-prefix；无 growing coefficients/fixed power/outer ledger |
+| Grimmelt--Teräväinen `2607.28091v1`, Theorem 1.3 | growing coefficient-box collective inverse theorem | source operator为 shared-origin `x+b_i m` counting/inverse object；不含 actual independent origins、determinant-two constraint、outer keys、masks/weights或 signed `Z_C` upper bound |
+| Frantzikinakis `1606.08420v2`, Theorem 2.1 | fixed multiplicative functions/polynomials 的 natural inner correlations，沿 selected subsequence在 outer shift上 uniform-density趋零 | fixed slopes、subsequence与 metric outer average；无 finite-`X` uniform power或 prescribed actual family |
+| Lichtman `2009.08969v2`, Theorems 1.1/1.3 | growing equal-slope shift boxes的 natural shift-averaged correlations，带 logarithmic/`psi` savings | averaged/almost-all shifts与 equal slopes，不能提升为 prescribed growing determinant-two family；saving rate也不支付 required fixed power |
+| Chinis `2105.14653v1`, Theorem 1.2 | Siegel-zero sequence假设下，对 fixed distinct unit-slope shifts在一段 growing `x` window逐 `x` uniform 的 natural Liouville correlation | unavailable conditional sequence与 fixed unit-slope family；无 actual growing slopes/origins、masked outer family、BV/content或 physical-loss ledger |
+| Klurman--Mangerel `1708.03176v1`, Proposition 1.6 | fixed-height primitive multidimensional affine system的 natural box average | constant依赖 fixed height；让 slopes增长后 actual forms对 `(s,t)` 为 bilinear，非 source affine system |
+
+Tao source的 correct literal affine syntax不得与其他 source的 natural/collective
+normalization拼接；metric、averaged shift、subsequence、conditional与 inverse theorem
+均不得升级为 prescribed actual family。有限 scan的精确字段为
+
+```text
+POINTWISE_EXACT_MASKED_ALL_PREFIX_CANDIDATE = NONE_VERIFIED
+COLLECTIVE_ACTUAL_OUTER_FAMILY_CANDIDATE = NONE_VERIFIED
+DIRECT_SMALL_CONTENT_ZERO_CANDIDATE = NONE_VERIFIED
+PASS_CANDIDATE = 0
+```
+
+这不是全局文献不存在性命题。第 6 节新 source-specific cell只冻结上述 versions
+向本 gate的非法 transfer，不关闭 future literal theorem。
+
+### 49.6 精确裁决、STOP scope 与合法 reopen
+
+本轮状态为：
+
+```text
+SAME_SELECTED_HIGH_BETA_PACKET_SOURCE_LOCK = PASS
+THREE_RAW_CHANNELS_CONTENT_DELTA_SHARP_N0_LOCK = PASS
+LOSSLESS_SCALAR_COMMON_NATIVE_REFINEMENT = PRESENT_L1
+
+CONTENT_IS_GCD_D_U_OR_AUTOMATIC_FROM_H0_2 = FALSE
+EXACT_CONTENT_PROGRESSION_AND_DETERMINANT_RESTORATION = PRESENT_L1
+CONTENT_AND_CHI_MASKS_IN_EXACT_SIGNED_SEQUENCE = PRESENT_L1
+REMAINING_ACTUAL_MASKS_IN_THETA_I_C = PRESENT_L1
+SAFE_CONTENT_AWARE_OUTER_BV_ENVELOPE = PRESENT_DERIVED_L1
+ell_Z = 133/400
+
+EXACT_MASKED_GROWING_ALL_PREFIX_THEOREM = ABSENT
+FIBERWISE_PREFIX_PLUS_ABSOLUTE_OUTER_ENDPOINT = FAIL_SCOPED
+FIBERWISE_ENDPOINT_DEFICIT = 29629/210000
+SINGLETON_RETURN_THEOREM = ABSENT
+TPC33_COLLECTIVE_Q3_ENERGY_THEOREM = ABSENT
+DIRECT_SMALL_CONTENT_ZERO_BOUND = ABSENT
+
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+CHI_LE_1_OVER_400 = UNPAID
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC207_TRIGGER = false
+TPC207_CREATED = false
+```
+
+精确裁决为：
+
+```text
+TPC32_H0_2_20260804_CONTENT_MASK_IN_SIGN_SAFE_BV_ENVELOPE_ELL_Z_133_400_
+PRESENT_L1_FIBERWISE_PREFIX_ABSOLUTE_OUTER_DEFICIT_29629_210000_
+COLLECTIVE_Q3_OR_DIRECT_ZERO_REQUIRED_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN
+```
+
+本节不新造 arithmetic method cell；它修正既有 selected-packet cell的 factor
+allocation/envelope字段，并新增一个严格 source/version-specific wrong-transfer
+cell。第 6 节全部旧 method cells继续 `STOP_SCOPED`，尤其 TPC193 V1、common-`k`
+V1、tail-failure/A/B V1 与 full-`r_Rr_R` ultra-complement V1。两个 O161
+pointwise parents、TPC32 direct/fixed-`D0`/frame、TPC-33 collective Q3、
+pair-native reroute、独立 pre-TT-star H1 与 global architecture全部保持 `OPEN`。
+
+只在以下任一 source-backed状态真实变化时重开本 route：
+
+1. 直接对同一 selected packet、three raw channels、`G<=C`、actual masks/weights/
+   outer labels与原 global normalization证明 `|Z_C|<=X^(o(1))Q^2` 或更强；
+2. 证明 TPC-33 actual `E_L+E_R<<X^epsilon Q^3` collective energy gate，或一个
+   coefficientwise等价、保留全部 metadata的 collective outer-return theorem；
+3. 对第 49.3 节 exact masked sequences给 growing all-prefix theorem，并另给
+   singleton/classwise return与 outer cancellation，使 actual classwise
+   `delta-ell>=0`；只有加强单 fiber theorem而不返回 outer deficit不够；
+4. 若目标改为完整 dictionary，再 materialize actual archive并证明
+   `(J Q_D-Q_Z)M=0`；这仍不是 scalar route的前置门。
+
+任一 local positive result仍不自动创建 TPC-207。all-`D` uniformity、
+exactly-once physical cover、original/global normalization、tail-failure、A/B
+selection、actual packet attachment、production occurrence、完整 provenance与
+strict physical-loss ledger必须分别通过，并使页首 trigger发生真实
+theorem-backed状态变化。
+
+### 49.7 publication boundary
+
+本轮没有创建 TPC-207、论文、paper directory、PDF或构建日志；正式写入只允许
+`TPC_HANDOFF.md`。全部 protected untracked files必须原样保留且不得纳入提交。
+
+```text
+POST_WRITE_BOOTSTRAP_REGRESSION = 22/22 PASS
+POST_WRITE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_WRITE_GIT_DIFF_CHECK = PASS; TPC_HANDOFF.md ONLY
+POST_WRITE_EOL = i/lf w/lf
+POST_WRITE_MARKDOWN_FENCES = 1410 MARKERS BALANCED
+POST_WRITE_NUMBERED_SECTIONS = 49 UNIQUE; DUPLICATES=0
+POST_WRITE_PROTECTED_UNTRACKED = 127 FILES
+POST_WRITE_PROTECTED_MANIFEST
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+PRE_COMMIT_FINAL_FETCH_ORIGIN_MAIN
+  = 33c9ec6fd7baf7c983de2b0fecc8b959ba0237c1
+PRE_COMMIT_FINAL_FETCH_DELTA = RH_HANDOFF.md ONLY
+PRE_COMMIT_FINAL_FETCH_TPC_EDGE = NONE
+POST_COMMIT_REBASE_ORIGIN_MAIN
+  = c46d4acd9a3b74bb87a3dedab3a93b7c99067188
+POST_COMMIT_REBASE_ADDITIONAL_DELTA = RH_HANDOFF.md ONLY
+POST_COMMIT_REBASE_TPC_EDGE = NONE
+SUBAGENT_FILES_CHANGED = 0
+LEGACY_TPC27_TO_32_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+EXPECTED_TRACKED_RELEASE_FILE = TPC_HANDOFF.md_ONLY
+```
 
 ## 48. 2026-08-04 TPC-93 scalar zero-mode common refinement 与 current-version signed-prefix source 审计
 
