@@ -1,95 +1,53 @@
 # RH Research Handoff
 
-Status date: 2026-08-03
+Status date: 2026-08-04
 
-Current completed endpoint: RH-351
+Current completed endpoint: RH-361
 
-Completed research batch: RH-342 through RH-351
+Completed research batch: RH-352 through RH-361
 
 Research batch publication commit:
-`99d9fad06d44843ac24b9ccdb15bda09179cccf6`
+`91167fe163831d3360b4c4007ed600865610e9ec`
 
 The repository, not an old chat transcript, is the source of truth.
 
 ## 1. Continuation protocol
 
-Work in `/root/math/prime_dynamics_theory`.
-
-Before the next state-changing paper:
+Work in `/root/math/prime_dynamics_theory`. Before any state-changing RH
+paper, run:
 
 ```bash
 git status --short --branch
 git pull --rebase origin main
 ```
 
-Read these entry points completely before older papers:
+Read completely:
 
 - `AGENTS.md`
 - `RH_HANDOFF.md`
-- `papers/RH-351-ten-layer-signed-completion-frontier-review/README.md`
-- `papers/RH-351-ten-layer-signed-completion-frontier-review/UPDATED_ROADMAP.md`
-- `papers/RH-351-ten-layer-signed-completion-frontier-review/results/result.json`
-- `papers/RH-351-ten-layer-signed-completion-frontier-review/main.pdf`
+- `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/README.md`
+- `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/UPDATED_ROADMAP.md`
+- `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/THEOREM_LEDGER.md`
+- `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/results/result.json`
+- `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/main.pdf`
 
-The default next investigation is the actual moving-order signed remainder
-on the RH-350 triangular lower-even window.  It must work with
+RH-361 does not automatically activate RH-362. Start with a read-only source
+lock. Create a new number only for an actual bridge, a typed `q/E_off`
+theorem, a rigorous physical obstruction, or another independent theorem
+edge. An abstract fiber, finite fit, deterministic reparameterization, or
+inactive criterion is not a reopening input.
 
-```text
-m_(k,j)=k-j,                    2<=j<=J_k,
-J_k->infinity,                  J_k=o(k),
-Y_(k,j)=T_(k,m_(k,j))^rest-d_(sigma,k,2m_(k,j)),
-p_(k,j)=Y_(k,j)+P_(k,j)-S_(k,j).
-```
-
-The next numbered paper is not activated by RH-351 alone.  It requires a
-new theorem for the **actual** signed `Y` family, an actual critical or
-first-lower combined complement, actual head transport, a full signed
-off-alias aggregate, or a direct physical annular theorem.  Another abstract
-completion, finite fit, scalar fixture, or inactive criterion is not a
-reopening input.
-
-The alternative direct route remains an aggregate theorem for
-
-```text
-g_sigma(z) = sum_(n>=2) (tau_(sigma,n)-a_n) z^n/n
-```
-
-on one certified annulus `1.4 < rho < r_H*lambda`.  RH-300 proves that a
-vanishing `H-infinity` or `H2` norm there would close the direct weighted
-prefix.  No such actual noisy annular theorem is currently proved.
-
-### Codex agent pipeline
-
-The durable orchestration rules are in `AGENTS.md` and the descriptive role
-profiles are in `.codex/agents/`.
-
-- The primary agent is the RH project lead and the only route, handoff, git,
-  integration, and publication owner.
-- At most three subagents run concurrently: `rh-source-lock`,
-  `rh-proof-auditor`, and one exclusive `rh-paper-writer` after a primary
-  `GO`.
-- Once a draft exists, `rh-release-qa` replaces one read-only station; it is
-  not a fourth concurrent subagent.
-- Read-only scouting for RH-(N+1) may overlap the RH-N writer, but RH-(N+1)
-  is not activated until RH-N creates the required theorem edge.
-- Subagents return compact evidence, exact counts, and executable blockers.
-  They never commit, push, modify `RH_HANDOFF.md`, or edit overlapping paper
-  directories.
-- As long as a repository-backed route exists, continue without requesting
-  per-paper approval.  Stop with `STOP_SCOPED` or `NOT_TESTABLE` when the
-  exact route conditions fail; do not manufacture the next number.
-
-Preserve unrelated untracked caches, checkpoints, LaTeX intermediates, and
-all TPC work.  Stage only the active RH paper/batch, its archive metadata,
-approved agent configuration, and this handoff when a batch closes.
-
-Pull with `git pull --rebase origin main` before every commit and again
-immediately before every push.
+Follow the multi-agent workflow in `AGENTS.md`: the primary alone chooses the
+route, edits this handoff, integrates, stages, commits, rebases, and pushes.
+Use subagents for source lock, adversarial proof audit, one exclusive writer,
+and release QA. Preserve all unrelated caches, checkpoints, LaTeX
+intermediates, and TPC work. Stage only the active RH files. Pull with rebase
+before every commit and again before every push.
 
 ## 2. Program objective and claim boundary
 
 The project develops a conditional prime-dynamics route inspired by the
-Hilbert--Polya program.  It is not a proof of the Riemann Hypothesis.
+Hilbert--Polya program. It is not a proof of the Riemann Hypothesis.
 
 - Gate A: canonical intrinsic dynamical spectral determinant.
 - Gate B: time-oriented scattering or unitary completion.
@@ -97,367 +55,214 @@ Hilbert--Polya program.  It is not a proof of the Riemann Hypothesis.
 - Gate D: von Mangoldt-weighted prime-power traces.
 - Gate E: equality with the completed-zeta divisor.
 
-All five gates are false/open.  No paper in RH-342--RH-351 constructs a
-Hilbert--Polya operator, identifies Riemann zeros, proves a von Mangoldt trace
-formula, proves completed-zeta divisor equality, or implies RH.
+All five Gates are false/open. No batch paper constructs a Hilbert--Polya
+operator, identifies Riemann zeros, proves a von Mangoldt trace, proves
+completed-zeta divisor equality, or implies RH.
 
-The inherited typed branch ledgers, in coordinate order
-
-```text
-(head, bridge, tail, target, boundary)
-```
-
-remain
+The batch has two typed branches and no cross-branch bridge:
 
 ```text
-noisy modulus spectrum       = (true, false, true,  true, true)
-graded monodromy counterloop = (true, true,  false, true, true)
-weighted cross-branch glue   = false
-complete count               = 0
+actual direct branch      = RH-352--RH-354, actual p/Y,
+                             but selected or normalized
+deterministic counterloop = RH-355--RH-360, unconditional only for s
+cross-branch bridge       = absent
 ```
 
-Their coordinatewise maximum is not a legal certificate.  The noisy
-spectral complement and graded counterloop still belong to different
-determinant decompositions.
+On one common Hardy clock:
 
-The deterministic target inputs remain exact and all-order:
+```text
+p = tau-a = q-d
+d = h-s
+q = p+d
+h = s+d
+```
 
-- RH-263 proves the deterministic numerator coefficient anchor at every
-  order;
-- RH-267 proves `|a_n| < 48 q_*^n` for every `n>=2`;
-- RH-268 proves `a_n/q_*^n -> 1` and the sharp target radius.
+`p` is the actual direct coefficient, `q` the full-trace coefficient, `h`
+the actual modulus-complete Hardy head, and `s` the deterministic graded
+counterloop. RH-354's normalized actual `p` tail is neither an unnormalized
+complete prefix nor a `q/E_off` theorem. Deterministic `s` is not an actual
+head, root set, rank law, or spectral submultiset.
 
-This closes only the deterministic target side.  It does **not** close the
-RH-241 moving cloud-extracted uniform envelope, the no-over-extraction
-coefficient bridge, a moving noisy coefficient theorem, or Gate A.  RH-350's
-growing lower-even deterministic/scalar uniformity is not a substitute for
-the RH-241 moving noisy all-order envelope.  Finite tables reproduce formulas
-only; they are never promoted to physical or all-order asymptotics.
+The deterministic target side remains exact and all-order: RH-263 gives the
+deterministic numerator coefficient anchor, and RH-267--RH-268 give the
+deterministic all-order envelope and sharp target radius. These results do
+not close the RH-241 moving noisy all-order envelope or coefficient bridge.
+RH-288 remains inactive because the complete same-type physical prefix leaf
+is absent.
 
-## 3. Decision after RH-351
+## 3. Decision after RH-361
 
 Current route coordinate:
 
 ```text
-actual_growing_lower_even_signed_remainder_open
+actual_same_clock_unnormalized_head_transport_open
 ```
 
-Use the physical natural clock and Hardy normalization
+The first physical blocker is
 
 ```text
-k = log(1/sigma)/(2 log(lambda)) + O(1)
-eta_k = k-log(1/sigma)/(2 log(lambda))
-H_m = m R^(-2m),                   R=7/5
-x = (beta R)^2 > 1
-x lambda = (R/r_H)^2 = (28/17)^2 > 2.
+D_(4k)(R)
+ = sum_(2<=n<4k) |h_(sigma,n)-s_(k,n)| R^n/n
+ -> 0.
 ```
 
-On every triangular window
+All RH-355--RH-360 actual-head inheritance statements assume this
+unnormalized, same-clock leaf; none proves it. Normalized upper-band matching
+or coordinatewise relative matching does not imply it.
+
+RH-361 proves a finite coefficient-information-class theorem. On a fixed
+nonempty finite order set `I`, for positive weights and fixed signed arrays
+`p,s`, every signed array `e` gives
 
 ```text
-m_(k,j)=k-j,                       2<=j<=J_k,
-J_k->infinity,                     J_k=o(k),
+d[e] = e
+q[e] = p+e
+h[e] = s+e.
 ```
 
-RH-348 gives the exact direct coefficient
+The identities hold exactly. Along `e=t v`, `v!=0`, the weighted norms of
+`q[e]` and `h[e]` have no finite uniform upper bound determined by `p,s`.
+The choices `e=-p` and `e=-s` give `q=0` and `h=0`, respectively, so each
+norm has infimum zero. This does not say the same fiber makes both zero, that
+arbitrary defects are physically realizable, or that two noisy operators
+have been constructed. `E_off`, roots, ranks, multisets, and determinants
+still require separate realization/identification theorems.
+
+The deterministic terminal-lag route is closed only at its declared budget
+type: geometric localization (RH-358), logarithmic inverse accuracy
+(RH-359), and the exponential-transform phase diagram (RH-360). Actual
+transfer remains conditional on `D_(4k)(R)->0`.
+
+## 4. Compact conclusions from RH-352 through RH-361
+
+- **RH-352:** Actual growing lower-even normalized `p` is exponentially
+  small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
+  selected `Y` aggregate has the proved positive lower-scale obstruction,
+  but no unnormalized prefix theorem follows.
+- **RH-353:** Actual critical/first-lower normalized `Y` has the phase-free
+  two-coordinate gap (with the recorded `>1/9` lower bound); it is not a
+  direct-`p` lower bound.
+- **RH-354:** Actual parity-free direct `p` has a normalized tail theorem
+  above a moving cut; low orders, the unnormalized prefix, and `q/E_off`
+  remain open.
+- **RH-355:** Complete deterministic strict-upper burden and terminal share;
+  actual transfer is conditional on `D_(4k)(R)->0`.
+- **RH-356:** Deterministic mesoscopic crossover and integer phase; actual
+  transfer remains conditional.
+- **RH-357:** Complete deterministic linear-depth endpoint profile and floor
+  phases; actual transfer remains conditional.
+- **RH-358:** Deterministic terminal-lag geometric TV localization and first
+  two moments; not an eigenvalue or root-counting law.
+- **RH-359:** Deterministic logarithmic accuracy, inverse-window law, and
+  correction limit set `[0,1]`; actual transfer remains conditional.
+- **RH-360:** Deterministic subcritical, critical-window, and supercritical
+  exponential-tilt phase diagram at the declared budget type.
+- **RH-361:** Exact typed separation and finite-fiber nonpromotion theorem;
+  no physical counterexample or spectral conclusion is constructed.
+
+## 5. Route firewall and reopening triggers
+
+Do not:
+
+- call the RH-361 coefficient fiber a physical counterexample;
+- promote normalized actual `p` to unnormalized `q/E_off`;
+- promote deterministic `s` to an actual spectrum, root set, or rank law;
+- state a conditional `D_(4k)(R)` transfer as proved;
+- identify a selected window with the full prefix or `E_off`;
+- use finite rows as physical or asymptotic evidence; or
+- extend the deterministic terminal-lag sequence by reparameterization alone.
+
+Admissible RH-362 triggers are:
+
+1. An actual same-clock `D_(4k)(R)->0` theorem, or a genuine physical
+   obstruction to it.
+2. A typed actual full-trace `q` or complete `E_off` theorem.
+3. An unnormalized complete direct-prefix theorem, including orders below
+   the RH-354 moving cut.
+4. The RH-241 moving noisy all-order envelope plus its no-over-extraction
+   coefficient bridge.
+5. Another independent source-backed theorem edge.
+
+Even `D_(4k)(R)->0` would transfer only named moment/budget laws. Root, rank,
+spectral-submultiset, and canonical determinant identification remain
+separate. RH-288 activates only after the complete direct prefix and both
+analytic tails close in one physical determinant data type.
+
+## 6. Default RH-362 investigation
+
+RH-362 is read-only until a theorem edge is found. Freeze:
 
 ```text
-p_(k,j)=Y_(k,j)+P_(k,j)-S_(k,j),
-Y_(k,j)=T_(k,m_(k,j))^rest-d_(sigma,k,2m_(k,j)).
+h_(sigma,n)       = actual modulus-complete Hardy-head moment
+s_(k,n)           = deterministic graded counterloop moment
+d_(sigma,k,n)     = h_(sigma,n)-s_(k,n)
+2 <= n < 4k
 ```
 
-RH-350 proves the unconditional deterministic/scalar uniform laws
-
-```text
-sup_j |C_M S_(k,j)/(2 H_m x^m)-1| -> 0,
-sup_j |C_M P_(k,j)/(2 H_m x^m)-a_k lambda^(2-j)| -> 0,
-a_k=C_* C_M lambda^(eta_k-2).
-```
-
-For
-
-```text
-F_N(a)=sum_(r=0)^N x^(-r)|a lambda^(-r)-1|,
-```
-
-the exact weighted minimax is attained uniquely at `a=1` and equals
-
-```text
-A_N=(1-x^(-N))/(x-1)-(1-(x lambda)^(-N))/(x lambda-1),
-A_N -> A_infinity=1/(x-1)-1/(x lambda-1)>0.
-```
-
-Define the normalized selected budgets
-
-```text
-L_k(Y)=x^(-(k-2)) sum_(j=2)^(J_k)
-       |Y_(k,j)+P_(k,j)-S_(k,j)|/(2H_(m_(k,j))),
-
-Yagg_k(Y)=x^(-(k-2)) sum_(j=2)^(J_k)
-          |Y_(k,j)|/(2H_(m_(k,j))).
-```
-
-RH-351 proves a growing-depth coefficient-ledger information-class theorem.
-For any formal residual array `r`, the affine completion
-
-```text
-Y=S-P+r
-```
-
-gives `p=r` exactly.  In particular, the same proved `P/S` arrays admit
-
-```text
-close ledger: Y=S-P,  p=0,
-far ledger:   Y=0,    p=P-S.
-```
-
-They obey the exact budget exchange
-
-```text
-Yagg_k(close)=L_k(far),
-Yagg_k(far)=L_k(close)=0.
-```
-
-The RH-350 uniform laws give algebraically
-
-```text
-L_k(far)=F_(J_k-2)(a_k)/C_M+o(1),
-liminf L_k(far)>=A_infinity/C_M>0.
-```
-
-Thus the far ledger has an unnormalized selected subprefix diverging at
-least on the `x^(k-2)` scale, while the close ledger vanishes identically on
-the selected window.  The close ledger correspondingly has a non-small `Y`
-budget, so there is no contradiction with RH-350's conditional theorem.
-
-These are abstract signed coefficient arrays, not two physical noisy
-operators, Markov kernels, raw trace partitions, or determinant
-realizations.  No physical realizability or impossibility theorem is
-asserted.  The actual `Y` family remains unestimated.  Therefore current
-proved information determines neither physical selected-window closure nor
-nonclosure.
-
-The earlier same-clock physical obligations also remain open:
-
-```text
-D_(4k) -> 0,
-critical signed completion at n=2k,
-first-lower signed completion at n=2k-2,
-odd-order control,
-upper-alias control on 2k<n<4k,
-full signed E_off,(4k).
-```
-
-RH-340 still closes both analytic tails at `u=4k`, but tail closure alone
-does not activate RH-288.
-
-## 4. Compact conclusions from RH-342 through RH-351
-
-- **RH-342:** Locks the actual noisy head and graded counterloop in one Hardy
-  normalization, proves an exact zero-padding rank lower bound and shifted
-  moment recovery under a rank cap, and gives a hidden `4k`-shell
-  information-class counterexample.  Actual head-rank identification and
-  root transport remain open.
-
-- **RH-343:** Equal rank, squared spectral mass, cap, maximum modulus, normal
-  realizability, and eventual fixed-order data do not determine the moving
-  strict-prefix budget.  The two finite normal spectra are not physical noisy
-  operators.
-
-- **RH-344:** Completes the physical critical boundary-orbit extraction at
-  `n=2k`.  The full atom differs from the earlier partial atom by a
-  super-target point and creates an exact double-alias-sized compensation
-  demand.  The orbit-free rest and head defect remain unestimated.
-
-- **RH-345:** Off the unique critical scalar balance phase, actual critical
-  divergence follows conditionally from `Y_k=o(H_k)`.  At balance, the scalar
-  parity information class is underdetermined at target scale.  No actual
-  critical verdict follows.
-
-- **RH-346:** Completes the physical boundary-orbit extraction at the first
-  lower sideband `2k-2`, including the exact radial sideband and its lower
-  relative scale.  The actual combined signed remainder remains open.
-
-- **RH-347:** Off the first-lower scalar balance phase, physical divergence
-  follows conditionally from the named actual remainder hypothesis.  At
-  balance, scalar parity data remain underdetermined.  The scalar completions
-  are not noisy operators.
-
-- **RH-348:** Extracts the complete punctured lower-even boundary-orbit ladder,
-  proves its geometric aggregate asymptotic, bounds the radial ladder as
-  lower order, and derives a necessary divergent signed-supply law.  No
-  source estimates the actual supply.
-
-- **RH-349:** A single bounded phase cannot balance the fixed `j=2,3`
-  sidebands.  The exact relative and physical weighted minimax values are
-  proved, but exponential direct-subprefix divergence remains conditional on
-  two unproved actual remainder estimates.
-
-- **RH-350:** Extends the demand and parity laws uniformly to
-  `J_k->infinity`, `J_k=o(k)`, proves exact finite-depth and physically
-  weighted minimax families, and derives a conditional growing selected
-  subprefix obstruction.  The actual aggregate `Y` hypothesis is unproved.
-
-- **RH-351:** Proves affine completion surjectivity and opposite close/far
-  growing-depth coefficient ledgers with exact budget exchange and a positive
-  far normalized lower bound.  This is an information-class insufficiency
-  theorem, not a physical realization theorem.
-
-## 5. Route firewall and actual reopening triggers
-
-Do not promote the batch beyond its hypotheses:
-
-- RH-342's hidden shell and RH-343's equal-invariant spectra are finite
-  normal information-class objects, not noisy quadratic operators.
-- A physical boundary-orbit atom is not a lower bound for its fully signed
-  coefficient.
-- The RH-345, RH-347, RH-349, and RH-350 physical divergence statements are
-  conditional on named actual remainder hypotheses.
-- `Y=0` and `Y=S-P` in RH-351 are formal coefficient ledgers, not physical
-  noisy remainder theorems.
-- The close ledger does not satisfy the RH-350 small-`Y` hypothesis; its `Y`
-  budget equals the positive far residual budget.
-- A selected lower-even subprefix is not the full strict prefix or full
-  `E_off` aggregate.
-- Growing deterministic/scalar uniformity on `J_k=o(k)` is not the RH-241
-  moving noisy all-order envelope or coefficient bridge.
-- Tail closure and an inactive criterion do not activate RH-288 or Gate A.
-- Finite rows are reproduction checks, never asymptotic or physical evidence.
-
-Admissible reopening inputs are:
-
-1. An actual moving-order theorem for `Y_(k,j)` on one
-   `J_k->infinity`, `J_k=o(k)` window.  In particular, proving
-
-   ```text
-   Yagg_k(Y_actual) -> 0
-   ```
-
-   would activate RH-350 and prove genuine physical divergence of the
-   selected lower-even subprefix.  Conversely, proving
-
-   ```text
-   sum_(j=2)^(J_k) |Y_actual-(S-P)|/(2H_m) -> 0
-   ```
-
-   would close only that selected subprefix and not the remaining prefix.
-
-2. A physical moving-order theorem for the critical combined complement at
-   `n=2k`, proving compensation or a nonzero target-normalized failure.
-
-3. A physical moving-order theorem for the first-lower combined complement
-   at `n=2k-2`, proving compensation or a nonzero target-normalized failure.
-
-4. Actual noisy-head/counterloop transport proving `D_(4k)->0` in the same
-   Hardy normalization, or a genuine physical obstruction.
-
-5. An alias-inclusive signed theorem for odd orders, upper-alias orders, and
-   the remaining `E_off,(4k)` background.
-
-6. A direct aggregate annular theorem for `g_sigma` on one certified
-   `1.4<rho<r_H*lambda` annulus.
-
-7. Only after the direct prefix and both analytic tails close in one physical
-   determinant data type may RH-288 be activated; Gate A still separately
-   requires a canonical intrinsic physical determinant.
-
-If a positive route fails, publish only a theorem-backed local obstruction,
-an explicit physical counterexample, or a precise `NOT_TESTABLE` stop.  Do
-not fill the next paper with another abstract completion, finite fit,
-wrong-clock comparator, nonphysical similarity family, separate absolute
-majorant, or restatement of an inactive criterion.
-
-## 6. Default RH-352 investigation
-
-RH-352 is a read-only investigation until a theorem edge is found.  Its
-source-lock order is:
-
-1. Freeze the exact actual types of
-   `T_(k,m)^rest`, `d_(sigma,k,2m)`, `P_(k,j)`, and `S_(k,j)` on the same
-   `(sigma,k)` clock and RH-334 direct coefficient data type.
-2. Search the repository for cross-order identities, sign constraints,
-   trace-partition conservation laws, contour/Fourier formulas, or operator
-   estimates that genuinely restrict the actual `Y_(k,j)` array.
-3. Test separately the aggregate small-`Y` route, the exact cancellation
-   route, and any intermediate theorem with a new rigorous scale.
-4. Audit whether a candidate controls a growing `J_k=o(k)` window rather than
-   finitely many fixed sidebands.
-5. Keep the critical, first-lower, head, odd, upper-alias, and full `E_off`
-   obligations separate.
-6. Issue `GO` only for an actual theorem, a genuine physical obstruction, or
-   another strict scoped result.  If the source contains no such estimate,
-   return `NOT_TESTABLE` and do not create RH-352.
-
-The direct annular route may supersede this coefficientwise investigation if
-a genuine actual theorem is found.
+Search for a cross-order identity, conservation law, contour/Fourier
+formula, operator estimate, or other source-backed restriction on the actual
+defect. Keep the unnormalized `D_(4k)`, RH-355 normalized `Delta_k^up`, and
+coordinatewise relative matching distinct. Audit clock, order range,
+uniformity, signs, data type, and loss ledger. If no actual theorem, rigorous
+physical obstruction, or independent theorem edge exists, return
+`NOT_TESTABLE` and do not create RH-362.
 
 ## 7. Reproduction and publication audit
 
-Use the shared environment and avoid new cache noise:
+Final RH-352--RH-361 audit:
 
-```bash
-PYTHONDONTWRITEBYTECODE=1 /root/math/.venv/bin/python -m pytest -q -p no:cacheprovider
+- Tests: `324/324`; per paper `28,30,35,44,30,31,35,37,34,20`.
+- Publication files: `17,17,17,17,17,17,18,18,18,20`; all ten individual
+  archives verified, zero failures.
+- Batch archive: `176` files, zero failures; controlled tree: `198` files.
+- PDF pages: `6,5,5,6,6,6,6,5,5,7`, total `57`.
+- Font rows: `18,18,20,18,20,19,21,19,19,20`, total `192`, all embedded.
+- Strict JSON: `32/32`; Ghostscript: `10/10`; RH-361 visual review: `7/7`.
+- All LaTeX/BibTeX logs are clean; semantic PDFs are byte-identical to
+  `main.pdf`; the cold rebuild is byte-identical.
+- Upstream/all-batch Gates: `45/45 false`, `50/50 false`.
+- Upstream/all-batch forbidden claims: `129/129 false`, `149/149 false`;
+  per-paper counts `15,14,13,14,14,14,14,15,16,20`.
+
+Final hashes:
+
+```text
+RH-361 main.tex
+f8ef8517834a8f2d861c9fa2432396d37de34d8d9b2ae17fa710ed095d2893bc
+
+RH-361 PDF
+8c81805456299b3ebae9ed4ec4b87270bc8783ef8eb4b15699f0d893fe3782af
+
+RH-361 result
+97e8b712b58efc4cda9f5cb5ddc54b6e5b3a041ae227e8839a425212baa38a0b
+
+RH-361 manifest
+c5ca0b2eceb7f13c1c24e274d264569f3718cfc76766021e66dae65b1cc0b4f2
+
+RH-361 verification
+64dfe296467d2ba97e0f1871f6da96e3e1157920c86a373225dce7b81244ec62
+
+RH-352--RH-361 batch manifest
+3533dd009cd4f90a683d937f5d80a5e73e20166a3cea5f76fdbc422b260533f2
+
+RH-352--RH-361 batch verification
+46ebbd8a76edbf4a7e76efada06ee51971d932bd7fec732f47b4d80bcc3109d8
 ```
-
-Final RH-342--RH-351 audit:
-
-- Tests: 187/187 passed across ten independent directories, with per-paper
-  counts `19,22,18,16,20,19,17,18,22,16`.
-- RH-351 result regeneration is deterministic.  Its tests check affine
-  completion surjectivity, exact budget exchange, strict input types, the
-  RH-241/deterministic separation, all upstream Gate ledgers, and the claim
-  firewall.
-- Individual archives: 10/10 verified with zero failures.  RH-342--RH-350
-  contain 15 publication files each; RH-351 contains 19.
-- Batch archive: 154 publication files, zero failures.
-- The ten controlled paper trees contain 176 files after individual and batch
-  archive metadata.
-- PDFs: page counts are `7,6,6,4,5,5,5,5,6,5`, for 54 pages total.  All ten
-  semantic PDFs are byte-identical to `main.pdf` and have extractable text.
-- Ghostscript parsed 10/10 PDFs.  All 181 reported font rows are embedded.
-- All ten LaTeX logs have zero warnings, undefined citations/references,
-  rerun notices, and overfull/underfull boxes.
-- Page-level review of all five RH-351 pages found no clipping, overlap,
-  blank-page anomaly, formula/table overflow, footer conflict, or rendering
-  defect.
-- Strict JSON parsing passed for 32/32 result/archive files with no duplicate
-  keys or nonfinite values.
-- The nine upstream result files contain 45 false Gate values; RH-351 adds
-  five more, for 50/50 false.
-- Unrelated caches, checkpoints, LaTeX intermediates, and TPC work remain
-  untracked and unstaged.
-
-RH-351 result SHA-256:
-`a9b37a1e235fe66842812f7e515d22f8833276aea0444d62596ca1f042a641d7`
-
-RH-351 PDF SHA-256:
-`56e8e6fa5d16de8995ef88302045673ba2adf67bfd71bdf62ff573b5bd58ab75`
-
-RH-342--RH-351 batch manifest SHA-256:
-`4797b64fba4e6b3a99ab5acca8197b5ef8817f67f4d9cf8f962ddc89ec8ea3b9`
-
-RH-342--RH-351 batch verification SHA-256:
-`e62e61cfd028ee07d0a50b8bdd61147362da20acb9b49ff802d9236a68001516`
-
-The compact review is
-`papers/RH-351-ten-layer-signed-completion-frontier-review/`.
 
 ## 8. Continuation prompt
 
 ```text
-Continue RH research in /root/math/prime_dynamics_theory.  Treat the
-repository as the sole source of truth.  Read AGENTS.md, RH_HANDOFF.md, and
-the RH-351 README, UPDATED_ROADMAP.md, result.json, and main.pdf completely.
-Run git status --short --branch and git pull --rebase origin main.  Begin with
-a read-only RH-352 source lock on the actual growing lower-even signed
-remainder Y_(k,j)=T_(k,m)^rest-d_(sigma,k,2m) for
-m=k-j, 2<=j<=J_k, J_k->infinity, J_k=o(k).  Use the primary agent plus at
-most three subagents: source lock, adversarial proof audit, and one exclusive
-paper writer only after GO; replace one station with release QA after a
-draft.  Create RH-352 only if the repository supports an actual moving-order
-theorem, a genuine physical obstruction, or another strict scoped result.
-Do not turn the RH-351 abstract completions into physical operators, do not
-promote RH-350's conditional theorem without the actual Y hypothesis, do not
-identify the selected lower-even window with full E_off, and do not activate
-RH-288 or Gates A--E without every exact hypothesis.
+Continue RH research in /root/math/prime_dynamics_theory. Treat the
+repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
+the RH-361 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+completely. Run git status --short --branch and git pull --rebase origin main
+before any state change. Begin with a read-only source lock on the actual
+same-clock defect d=h-s and the unnormalized D_(4k)(R) obligation.
+
+RH-362 is not activated by RH-361 alone. Create it only for an actual bridge,
+a typed q/E_off theorem, a rigorous physical obstruction, or another
+independent theorem edge. Do not treat the RH-361 coefficient fiber as a
+physical counterexample. Do not identify deterministic counterloop moments
+with actual spectral data. Keep Gates A--E false/open until their exact
+definitions are proved.
 ```
