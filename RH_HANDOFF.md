@@ -223,6 +223,15 @@ verdict: normalized-to-unnormalized promotion, selected-window-to-full-prefix
 promotion, and absolute-majorant-to-signed-obstruction promotion all fail
 without a new actual theorem.
 
+The parallel alternative-route scan also found no reopening edge. RH-241's
+`all_order_trace_envelope` and `coefficient_anchor` flags remain false; RH-300
+has only an inactive annular `H^\infty/H^2` criterion. RH-287 and RH-294 use
+rate-free or arbitrarily slow diagonal clocks and do not prove physical-head
+transport. RH-334/RH-339/RH-344/RH-346/RH-348 supply exact typed `q` identities
+only; they do not bound the aggregate `E_off` or the defect `d`. Thus the
+typed `q/E_off` route is also `NOT_TESTABLE`, and the route coordinate remains
+`actual_same_clock_unnormalized_head_transport_open`.
+
 ## 7. Reproduction and publication audit
 
 Final RH-352--RH-361 audit:
