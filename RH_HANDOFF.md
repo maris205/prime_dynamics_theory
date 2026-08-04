@@ -232,6 +232,17 @@ only; they do not bound the aggregate `E_off` or the defect `d`. Thus the
 typed `q/E_off` route is also `NOT_TESTABLE`, and the route coordinate remains
 `actual_same_clock_unnormalized_head_transport_open`.
 
+A repository-wide sweep of every ten-layer review from RH-241 through RH-361
+found no overlooked active branch. The fixed-noise quotient/anchor reviews
+RH-241--RH-271 lack a uniform noisy envelope/anchor realization; RH-281 and
+RH-291 lack aggregate noisy-cloud/head transport; RH-301 and RH-311 retain
+zero cross-branch completions; RH-321 is sharp only for synthetic spectral
+realizability; RH-331 and RH-341 leave actual signed replacement open; and
+RH-351/RH-361 end at the current signed-completion/head defect. The earlier
+RH-82/RH-83 effective-rank object is not identified with the RH-284
+modulus-complete spectral head. This exhausts the repository-backed candidate
+branches without producing an RH-362 `GO`.
+
 ## 7. Reproduction and publication audit
 
 Final RH-352--RH-361 audit:
