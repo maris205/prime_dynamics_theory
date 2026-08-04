@@ -1,28 +1,23 @@
 # TPC HANDOFF
 
-更新时间：2026-08-03
+更新时间：2026-08-04
 交接状态：`SEALED_FOR_NEW_SESSION`
 本轮启动前本地基线：
-`8ac9eb659a669f387327d5427727e51e9980d966`；启动
+`599c5eac8ebc50700ce6395c252feaca6490c335`；启动
 `git pull --rebase origin main` 安全 fast-forward 至
-`50fccb3c281eb1f1376e47003f74a05ee8fef534`。delta 只是 commit
-`50fccb3c281eb1f1376e47003f74a05ee8fef534` 的 RH-354 release，共 19 个
-RH-only committed files，没有修改 TPC source、`TPC_HANDOFF.md`、
-`AGENTS.md`或根 scoped policy。第 40 节完成 RH-354 theorem-body、
-literal TPC transfer、artifact/schema/nonvacuity audit，并核对 Watt
-`1302.3112v1`/`1302.3127v3`、Palm `1212.4282v1` 与 2026-08-03
-math.NT/math.DS current-primary delta。RH-354 的渐近 normalized direct-tail
-root theorem是真实 scoped result，但 finite-`k` boxed bound需从上游补回
-``for all sufficiently large k''量词；TPC literal object、fixed physical
-`h0=2`、ordered prefix、`N0`归一化与 strict `1/400` 均未获得。
-第 33--39 节的 O161、TPC32、RH-342--353 有限 source/type audits
-继续有效；本轮没有重开其任一数学门槛。发布前只读
-`git fetch origin main` 又将 remote tip 推进到
-`4706eba4b51b3cade9f907b3dd4c93a94683ddc8`，新增且只新增 19 个
-RH-355 files。第 41 节确认其 deterministic upper-alias counterloop
-burden是真实 `GO_SCOPED`；actual-head transfer仍全部条件于未证
-`D_(4k)(R)->0`，finite complete-shell 只是 normal information-class
-obstruction。RH-355 也没有触发 TPC-207。
+`45ba399d7b7abef39e4fcf17f916d3c6a159936c`。delta 由 commit
+`9cd3ad606826ad980600ec4eb0963296ea813308` 的 RH-356 release 与 commit
+`45ba399d7b7abef39e4fcf17f916d3c6a159936c` 的 RH-357 release组成，
+各 19 个、共 38 个 RH-only committed files；没有修改 TPC source、
+`TPC_HANDOFF.md`、`AGENTS.md`或根 scoped policy。第 42 节完成两篇的
+theorem-body、量词、literal TPC transfer与 committed-tree artifact/schema
+审计。RH-356 的 mesoscopic crossover与 RH-357 的 complete-band/linear-depth
+profile均是 deterministic counterloop内真实 `GO_SCOPED`；actual-head
+inheritance仍全部条件于未证的 same-clock `D_(4k)(R)->0`。它们既没有
+TPC32 three raw channels、fixed physical `h0=2`、canonical signed-prefix/
+content determinant，也没有 `N0` normalization或 strict `1/400` saving，
+故没有触发 TPC-207。第 33--41 节既有 O161、TPC32 与 RH-342--355
+source/type audits继续有效；本轮没有重开其任一数学门槛。
 第 23 节 TPC source-lock 快照锚定更早基线
 `28cafdd5fa96ff948f1520e778c7a2ba65208730`；晚到 RH-330/332 的既有
 physical-object type checks、RH-333/334/335 的第 29.6 节 type checks，以及
@@ -32,9 +27,9 @@ type checks，均未改变本轮算术裁决。
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC32_O161_RH355_20260803_COUNTERLOOP_BURDEN_CONDITIONAL_ACTUAL_HEAD_TRANSFER_FAILS_LITERAL_OBJECT_FIXED_H0_PREFIX_DIRECTION_OR_NORMALIZATION_GATES_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
+`TPC32_O161_H1_RH356_357_20260804_COUNTERLOOP_DEPTH_PROFILES_FAIL_LITERAL_OBJECT_FIXED_H0_SIGNED_PREFIX_ACTUALITY_DIRECTION_OR_NORMALIZATION_GATES_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
 下一篇：`null`；下一项不编号审计：`null`（仅在第 32.6 节或
-第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6 节列出的 source-backed reopen trigger，
+第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -44,8 +39,8 @@ TPC-206 授权并完成：`true`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
-上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29、30、31、32、33、34、35、36、37、38、39、40、41 节；
-第 23、27、28 节只在第 29--41 节明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
+上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29、30、31、32、33、34、35、36、37、38、39、40、41、42 节；
+第 23、27、28 节只在第 29--42 节明确引用时展开。第 22 节的 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
 
@@ -1090,6 +1085,29 @@ head precision或 finite shell obstruction改名为 TPC32 three-channel distingu
 zero/small-content saving、O161 literal two-Mobius signed prefix或 H1 edge。它不关闭
 RH actual-head/direct-to-full routes，也不关闭 TPC32、O161、pair-native、H1
 或 global parents。精确审核见第 41 节。
+
+本轮 remote RH-356/RH-357 delta audit新增且仅新增：
+
+```text
+DECLARED_REMOTE_RH356_357_POST_ALIAS_COUNTERLOOP_DEPTH_PROFILES_
+TO_TPC_LITERAL_OBJECT_TRANSFER_V1
+  = STOP_SCOPED
+```
+
+它严格锁定 commits `9cd3ad606826ad980600ec4eb0963296ea813308` 与
+`45ba399d7b7abef39e4fcf17f916d3c6a159936c` 的 exact `A_k,B_k(L)` ledger、
+RH-356 `thm:uniform`/`thm:crossover`/`thm:integer-phase` 与 RH-357
+`thm:uniform`/`cor:linear`/`thm:phase`。必须承认前者真正证明所有
+`L<=ell_k=o(k)` 的 mesoscopic crossover，后者真正证明全部
+`1<=L<=k-1` 的 uniform endpoint profile及每个固定
+`L/k->alpha in (0,1]` 的 linear-depth rate。两篇的 actual-head结论都严格
+条件于尚未证明的 same-clock `D_(4k)(R)->0`。本 cell只停止把 RH
+trace-order absolute counterloop band改名为 TPC32 three-channel
+small-content matched-shell distinguished zero、TPC-111/122 canonical ordered
+signed fiber prefix、O161 literal two-Mobius coefficient或 H1 actual cloud edge；
+尤其 `B_k(L)/A_k` 的相对 crossover不是 `N0`-normalized saving，linear-depth
+root `x^alpha>1`方向相反。它不关闭 RH actual-head/direct-to-full routes，
+也不关闭 TPC32、O161、pair-native、H1或 global parents。精确审核见第 42 节。
 
 同一 selected packet 的 row-reversal/LR-polarization 审计没有新增 method cell。
 该 map交换两个 mixed raw channels、固定 both-ultra、保持 content并令
@@ -4754,8 +4772,8 @@ TPC-127 --check = PASS
 D:\26-aimath\理论研究3\prime_dynamics_theory
 
 读取仓库根目录 TPC_HANDOFF.md，以仓库文件和已提交 artifacts 为事实来源，
-不要依赖旧聊天记录。为节省上下文，优先读取页首及第 1、6、22、24、29、30、31、32、33、34、35、36、37、38、39、40、41 节；
-第 23、27、28 节只在第 29--41 节明确引用时展开。
+不要依赖旧聊天记录。为节省上下文，优先读取页首及第 1、6、22、24、29、30、31、32、33、34、35、36、37、38、39、40、41、42 节；
+第 23、27、28 节只在第 29--42 节明确引用时展开。
 
 先执行：
 
@@ -4777,11 +4795,11 @@ TPC-27--32 legacy certificates 会无条件重写 committed JSON，在出现真�
 当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 最新不编号裁决是：
 
-TPC32_O161_RH355_20260803_COUNTERLOOP_BURDEN_CONDITIONAL_ACTUAL_HEAD_TRANSFER_
-FAILS_LITERAL_OBJECT_FIXED_H0_PREFIX_DIRECTION_OR_NORMALIZATION_GATES_NO_TRIGGER_
+TPC32_O161_H1_RH356_357_20260804_COUNTERLOOP_DEPTH_PROFILES_FAIL_LITERAL_OBJECT_
+FIXED_H0_SIGNED_PREFIX_ACTUALITY_DIRECTION_OR_NORMALIZATION_GATES_NO_TRIGGER_
 STOP_SCOPED_PARENTS_OPEN
 
-第 37--41 节新增且仅新增八个 source-specific cells：
+第 37--42 节新增且仅新增九个 source-specific cells：
 
 1. Frantzikinakis--Host 1804.08556v3 与 He--Liu--Ma 2604.16840v1
    没有 O161 literal growing two-Mobius natural fixed-power theorem；
@@ -4813,6 +4831,13 @@ STOP_SCOPED_PARENTS_OPEN
    未证的 same-clock `D_(4k)(R)->0`，finite complete-shell 也只属于 normal
    information class。其 trace-order coefficient、absolute band、方向和
    normalization均不能映射为 TPC distinguished zero或 small-content saving。
+9. RH-356 无条件证明 post-first-alias mesoscopic crossover；RH-357 无条件证明
+   complete strict-upper band的 uniform endpoint formula与 fixed
+   `L/k->alpha in (0,1]` linear-depth profile。两者仍是同一 deterministic
+   trace-order absolute counterloop；actual-head inheritance条件于未证
+   `D_(4k)(R)->0`。它们不含 fixed physical `h0=2`、TPC three raw channels、
+   canonical content/`Delta#` signed prefix、actual masks/outer labels或 `N0`，
+   且 linear-depth root `x^alpha>1`是 burden而非 saving，因此无 TPC trigger。
 
 同一 packet 的 row-reversal 不是新 method：它在 r=0 是 sign-preserving plus
 pair，并跨 distinct outer/prefix fibers。保持第 23 节既有 STOP，不得另起名字。
@@ -8503,6 +8528,307 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 42. 2026-08-04 RH-356/357 post-alias depth profiles 与 TPC literal-transfer 审计
+
+### 42.1 remote delta、启动 envelope 与 source lock
+
+本轮按第 1 节从已发布的 TPC handoff commit
+`599c5eac8ebc50700ce6395c252feaca6490c335`启动。tracked/cached diff均为空；
+127 个既有 protected untracked files的 manifest保持：
+
+```text
+35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+```
+
+`git pull --rebase origin main` 安全 fast-forward至：
+
+```text
+9cd3ad606826ad980600ec4eb0963296ea813308
+  Add RH-356 post-first-alias mesoscopic crossover
+45ba399d7b7abef39e4fcf17f916d3c6a159936c
+  Add RH-357 uniform linear-depth counterloop profile
+```
+
+delta严格为 RH-356与 RH-357各 19 个、共 38 个 committed files；没有修改
+TPC source、旧 handoff、`AGENTS.md`或 scoped policy。rebase后第 1 节完整
+22/22只读启动回归通过，且未执行 TPC-27--32 legacy writers或 TPC-122
+writer。三个 read-only分工分别锁定 RH-356 source、RH-357 source及两篇
+proof/artifact/schema；它们均报告 `files_changed=[]`。本节所有数学判断重新来自
+上述 commits的 source与 Git objects，不来自旧聊天记录。
+
+两篇锁定同一个 deterministic graded counterloop：
+
+```text
+r_H = 17/20,  R = 7/5,  28/17 < lambda < 17/10,
+sigma -> 0,  k = log(1/sigma)/(2 log lambda) + O(1),
+|M_k| = C_M lambda^k(1+o(1)),
+beta_k = |M_k|^(-1/(2k))/r_H,
+beta = (r_H sqrt(lambda))^(-1),
+x = (beta R)^2 > 1,
+y_k = (beta_k R)^2
+    = x exp[-log(C_M)/k + o(1/k)].
+```
+
+其 literal trace-order ledger为
+
+```text
+s_(k,n) = beta_k^n (2k 1_(2k|n) - 1 - (-1)^n),
+A_k = |s_(k,2k)| R^(2k)/(2k) = (1-1/k)y_k^k,
+B_k(L) = sum_(j=1)^L y_k^(k+j)/(k+j),  1 <= L <= k-1,
+B_k(L)/A_k = [k/(k-1)] sum_(j=1)^L y_k^j/(k+j).
+```
+
+这是后续所有正结果和跨程序否定的共同 source lock；不得用 RH-354 的
+actual coefficient `p=tau-a`、RH-355 shell或 TPC symbols替换它。
+
+### 42.2 RH-356 的 sharp mesoscopic theorem
+
+RH-356 `thm:uniform` 无条件证明：对每一个整数 envelope
+`ell_k=o(k)`，下式对全部 `1<=L<=ell_k` 一致：
+
+```text
+B_k(L)/A_k
+  = x(x^L-1)/(k(x-1)) (1+o(1)).
+```
+
+证明中的 `y_k^j/x^j` 与 `k/(k+j)`误差均在该量词下统一。固定
+`L>=1`时必须保留 subtraction：
+
+```text
+k B_k(L)/A_k -> x(x^L-1)/(x-1).
+```
+
+只有同时 `L->infinity`且 `L=o(k)`时，才允许删去 finite-radius factor并写成
+
+```text
+B_k(L)/A_k
+  = [x/(x-1)] x^(L-log_x k) (1+o(1)).
+```
+
+令 `delta_k=L-log_x k`，RH-356 `thm:crossover`给出 ratio在
+`delta_k->-infinity,c,+infinity`时分别趋于 `0`、
+`x^(c+1)/(x-1)`、`infinity`；连续 balance offset为
+`log_x((x-1)/x)`。对整数
+
+```text
+L_k(c)=floor(log_x k+c),
+theta_k(c)={log_x k+c},
+```
+
+`thm:integer-phase`保留
+
+```text
+B_k(L_k(c))/A_k
+  = x^(c+1-theta_k(c))/(x-1) (1+o(1)),
+phase limit set = [0,1],
+liminf = x^c/(x-1),  limsup = x^(c+1)/(x-1).
+```
+
+因此不存在单一 full-sequence floor constant。physical noise clock上该
+crossover只在 first alias以上
+`n-2k=(2/log x)log log(1/sigma)+O(1)`个 trace orders处发生。逐式审计未发现
+内部 theorem fatal；honest ceiling是 deterministic counterloop
+`GO_SCOPED`。
+
+### 42.3 RH-357 的 complete-band 与 linear-depth theorem
+
+RH-357 `thm:uniform`从同一 exact ledger独立证明下式相对误差对全部整数
+`1<=L<=k-1`一致：
+
+```text
+B_k(L)
+  = y_k^(k+L+1)(1-y_k^(-L))
+    /[(k+L)(y_k-1)] (1+O(1/k))
+  = x^(k+L+1)(1-x^(-L))
+    /[C_M^(1+L/k)(k+L)(x-1)] (1+o(1)),
+
+B_k(L)/A_k
+  = x^(L+1)(1-x^(-L))
+    /[C_M^(L/k)(k+L)(x-1)] (1+o(1)).
+```
+
+terminal reverse sum的余项由可和的 `sum r x^(-r)`一致控制，且
+`rho_k=k log(y_k/x)+log C_M ->0`允许对全部 `L/k`一致替换 source；误差不会在
+`L=k-1`恶化。对任何给定序列 `L_k/k->alpha in (0,1]`，
+`cor:linear`进一步给出
+
+```text
+B_k(L_k)
+  ~ x^(k+L_k+1)/[C_M^(1+alpha) k(1+alpha)(x-1)],
+B_k(L_k)/A_k
+  ~ x^(L_k+1)/[C_M^alpha k(1+alpha)(x-1)],
+kth-root rates = x^(1+alpha), x^alpha.
+```
+
+对应的 physical log-rates分别为
+`(1+alpha)log x/(2log lambda)`与 `alpha log x/(2log lambda)`。
+`L=floor(alpha k+c)`时必须保留 phase `theta_k={alpha k+c}`及
+`C_M`/`1+alpha` factors；rational `alpha`给 finite periodic orbit，irrational
+`alpha`给闭 phase interval。`alpha=1,c in [-1,0)`恢复 RH-355 complete upper
+band；`alpha=0`是 RH-356 的独立 boundary，绝不能把 fixed positive
+`alpha`结论假称为对 `alpha->0`一致。逐式审计也未发现内部 theorem fatal；
+honest ceiling仍是 deterministic counterloop `GO_SCOPED`。
+
+### 42.4 conditional actuality 与量词 firewall
+
+两篇唯一的 actual Hardy-head transfer均显式假设同一 physical clock上的
+
+```text
+D_(4k)(R)
+  = sum_(2<=n<4k) |h_(sigma,n)-s_(k,n)| R^n/n -> 0.
+```
+
+该 leaf尚未证明。只在此假设下，reverse triangle inequality才给
+`A_k^H/A_k->1`、even `B_k^H(L)/B_k(L)->1`对完整允许带一致，且 odd actual
+budget趋零。它没有转移 roots/rank，也没有证明 RH-241/RH-288、
+direct-to-full closure或 Gates A--E。
+
+以下 boundary均 fail closed：fixed `L`不得删 `x^L-1`；growing
+mesoscopic law必须同时满足 `L->infinity,L=o(k)`；linear simplification只对固定
+limit `alpha in (0,1]`；floor phase不得折叠；conditional actual statement不得升级为
+unconditional actual theorem。RH-357 line 237将 physical clock简称为 RH-355
+record，但 literal source chain直接由 RH-17/RH-342支撑，属于 locator精度问题，
+不构成 theorem fatal。
+
+### 42.5 TPC-111/122 与 selected-packet literal crosswalk
+
+TPC source lock仍是同一个 theorem-valid selected packet：
+
+```text
+sigma=1/10000, lambda=99979/210000, delta=7/60, beta=267/400,
+Q=X^(267/400+o(1)), J=X^(133/400+o(1)), C=floor(J),
+h0=2, N0=JQ^2 asymp XQ.
+```
+
+`delta=1/20` truncated-entry family是另一条 source lock，绝不拼接。对
+RH-356/357逐项执行七字段 audit如下：
+
+| gate | RH-356/357 literal object | TPC32/O161/H1 required object | verdict |
+|---|---|---|---|
+| physical coefficient | `s_(k,n)`的 trace-order absolute budgets；`h_(sigma,n)`仅条件出现 | 同一 packet三条 signed raw channels；O161 literal two-Mobius atom；H1 actual cloud coefficient | `MISMATCH` |
+| fixed physical atom | 没有 physical `h0`；`2k+2j`是 trace order | fixed physical `h0=2` | `ABSENT` |
+| summation/prefix | `1<=j<=L`的 even upper trace orders，先取 absolute value | actual fibers上的 canonical ordered signed prefix | `MISMATCH` |
+| determinant/content | 无 `G<=C`、canonical `Delta#`、DFT zero或 three-channel determinant | same small-content matched-shell `Ahat_(C,q)(0)` | `ABSENT` |
+| support/metadata | 无 actual masks、weights、outer labels | 全部实际 support与 labels逐项保留 | `ABSENT` |
+| parameter range | `k,sigma,lambda,R,L` | `X,Q,J,C,q,N0`及同一 packet ranges | `NO_CROSSWALK` |
+| normalization/loss | `R^n/n`、`B/A`；linear root `x^alpha>1` | `N0=JQ^2 asymp XQ`与 `chi<=1/400`或 direct saving | `MISMATCH / WRONG_DIRECTION / UNPAID` |
+
+第一处 fatal因此精确为：
+
+```text
+LITERAL_PHYSICAL_COEFFICIENT_AND_INDEX_UNIVERSE_MISMATCH
+```
+
+TPC-111/122只给 ordered signed-prefix的 finite duality/conditional transfer，
+没有证明同一 actual fiber上的 growing signed-prefix saving。RH trace-order prefix
+不能因其长度增长而改名成该对象；`B/A->0`只表示相对于指数大的 first alias的
+relative crossover，不是 `N0`-normalized small-content saving。orbit Poisson zero、
+nonzero-frequency density-one、Parseval与 complete-frequency mean仍均不能升级为
+distinguished zero。
+
+### 42.6 committed artifacts、checkout portability 与 schema ceiling
+
+对 raw committed Git blobs的独立重建得到：
+
+| release | tree/publication files | missing/extra/hash mismatch | publication bytes | sorted path-size-hash aggregate |
+|---|---:|---:|---:|---|
+| RH-356 | `19/17` | `0/0/0` | `629878` | `7755009f53aae9ee2e4f1d8e64eca6e669626bb4f395754ba2d3bd953b349da4` |
+| RH-357 | `19/17` | `0/0/0` | `636717` | `96645e9d8f4c5eab1e290bc8f4c474112ee320392d5dfa17711fda71d7af8b5c` |
+
+每篇两份 PDF分别 byte-identical；RH-356为 6页/285793 bytes、SHA-256
+`c4ee68cab09965fea03157186b7d15819bcc513511df7186db7ae36c21b58eed`，
+RH-357为 6页/280765 bytes、SHA-256
+`7654b51731c2dbb6141e09e492b94d33a86c282ad216d949aa5fc4d2e702ebca`。
+独立 exact-row/nonvacuity重建覆盖 RH-356全部 4 exact与 4 phase rows，及
+RH-357全部 4 exact、4 error-envelope、4 linear diagnostics、3 rational phase
+orbits；RH-357 envelope实际覆盖 116 个 depths并含 `L=1,k-1`。没有把 finite
+diagnostic row升级为渐近 theorem。
+
+当前 Windows checkout有 `core.autocrlf=true`，且这些 papers没有适用的 EOL
+attribute。committed manifest锁的是 Git blob bytes；worktree中每篇 17 个
+publication files里 15 个文本因 CRLF转换而 hash mismatch，只有两份 PDF保持。
+RH-356 worktree为 631440 bytes、aggregate
+`b49ec932f2f210608e60cc22accb11b4d4314bb397c7ae41672413296b9c75ac`；
+RH-357为 638517 bytes、aggregate
+`dd1afbf42182afafa8e93bb7548d4c2a5a84c0a2247490d390bc7680ef776226`。
+所以 archive从 committed tree可复核，但现有 checkout-byte verifier在此 Windows
+配置下不可移植；这是 provenance portability ceiling，不是数学 fatal。
+
+当前 committed JSON由独立 strict parser确认无 duplicate keys/nonfinite values，
+但 production producers未设 `allow_nan=False`，archive verifier使用普通
+`json.loads`并与 builder共享 root/enumeration/digest，tests还复用 producer的
+`result_status`；没有 whole-payload exact-key/type schema。因此 schema assurance仅为
+`PARTIAL_ONLY`。production code无 `assert`；tests分别有 48与 59 个 assertions。
+主控尝试只读 targeted pytest时在 collection前因环境无 `pytest`
+（`No module named pytest`, exit 1）终止；没有安装依赖、没有运行 tests，且未生成
+文件。builders/archive verifiers也未执行。
+
+### 42.7 exact stop、开放 parents 与 reopen trigger
+
+本轮新增且仅新增一个跨程序 cell：
+
+```text
+DECLARED_REMOTE_RH356_357_POST_ALIAS_COUNTERLOOP_DEPTH_PROFILES_
+TO_TPC_LITERAL_OBJECT_TRANSFER_V1
+  = STOP_SCOPED
+
+RH356_MESOSCOPIC_COUNTERLOOP_THEOREM = PROVED
+RH357_COMPLETE_BAND_COUNTERLOOP_THEOREM = PROVED
+RH356_357_ACTUAL_HEAD_INHERITANCE = CONDITIONAL_ON_UNPROVED_D_(4k)(R)_TO_0
+TPC32_O161_H1_RH356_357_20260804_COUNTERLOOP_DEPTH_PROFILES_FAIL_LITERAL_OBJECT_
+FIXED_H0_SIGNED_PREFIX_ACTUALITY_DIRECTION_OR_NORMALIZATION_GATES_NO_TRIGGER_
+STOP_SCOPED_PARENTS_OPEN
+TPC_ARITHMETIC_ADVANCE = NONE
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC207_TRIGGER = false
+TPC207_CREATED = false
+```
+
+第 6 节全部旧 method cells保持 `STOP_SCOPED`，尤其 TPC193 V1、common-`k`
+V1、tail-failure/A/B V1与 full-`r_Rr_R` ultra-complement V1不重开。两个 O161
+pointwise parents、TPC32 direct/fixed-`D0`/frame parents、pair-native reroute、
+H1、RH actual-head/direct-to-full与 global architecture均保持 `OPEN`；fixed-atom
+credit仍为 0。
+
+本 cell的合法 reopen必须给出同一 actual selected packet的 coefficientwise
+theorem：同时保留三 raw channels、fixed physical `h0=2`、canonical
+`Delta#`/content与 prefix order、actual masks/weights/outer labels、同一
+`N0` normalization及完整 physical-loss ledger，并 source-backed推出
+`chi<=1/400`或 direct small-content matched-shell saving。即使局部 gate转正，
+仍须分别通过 all-`D` uniformity、exactly-once physical cover、original/global
+normalization、tail-failure、A/B selection、actual packet attachment与完整
+provenance cascade，才可改变 TPC-207 trigger。
+
+### 42.8 publication boundary
+
+RH-356/357是 RH program内真实 model-side advances，却没有形成 TPC theorem
+trigger。本轮因此只允许发布更新后的 `TPC_HANDOFF.md`；不得创建 TPC-207、论文
+目录、PDF或下一编号，也不得运行 TPC-27--32/TPC-122 writers。正式写入后必须
+重跑第 1 节全部 22项只读回归、TPC-111/124/126/127四项 supplemental checks、
+`git diff --check`、Markdown fence与 protected manifest；只 stage本 handoff。
+最终 pull/rebase、push后必须验证 local `HEAD`、`origin/main`、remote
+`refs/heads/main`三个 hash完全一致。
+
+RH-358 late fetch出现前的只读 closure为：
+
+```text
+PRE_RH358_FETCH_BOOTSTRAP_REGRESSION = 22/22 PASS
+PRE_RH358_FETCH_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+PRE_RH358_FETCH_GIT_DIFF_CHECK = PASS
+PRE_RH358_FETCH_MARKDOWN_FENCES = 1138 MARKERS BALANCED
+PRE_RH358_FETCH_PROTECTED_UNTRACKED = 127 FILES
+PRE_RH358_FETCH_PROTECTED_MANIFEST
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+LATE_REMOTE_TIP
+  = a4fd6286c68fb3230e55d8465f89775f0f58fe15
+LATE_REMOTE_DELTA = RH358_ONLY_20_NEW_FILES
+```
+
+该 late delta不修改 handoff/TPC source/policy。为避免把旧 tip误报为最终 remote，
+RH-356/357审计先固定为仅含本 handoff的本地协调提交，再安全 rebase取得 RH-358；
+RH-358必须在后续最新节完成同等级审计后方可最终发布。
 
 ## 41. 2026-08-03 RH-355 upper-alias counterloop burden 与 conditional actual-head transfer 审计
 
