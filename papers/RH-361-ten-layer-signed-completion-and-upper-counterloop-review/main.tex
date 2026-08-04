@@ -1,0 +1,455 @@
+\documentclass[11pt]{article}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\wone}{\lVert\cdot\rVert_{1,w}}
+
+\title{Ten Layers of Signed Completion and Upper Counterloops:\\
+A Typed Separation Review from Actual Direct Tails to Deterministic Transform Phases}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We audit RH-352--RH-360 and prove a typed separation theorem for the batch.
+RH-352--RH-354 are actual results for the direct coefficient
+$p=\tau-a$ and actual signed completion remainders, but their closure
+statements remain selected and normalized.  RH-355--RH-360 are unconditional
+results for the deterministic graded counterloop and its normalized budgets;
+every actual-head inheritance statement in those papers assumes the same
+unproved, unnormalized, same-clock hypothesis
+\[
+ D_{4k}(R)=\sum_{2\le n<4k}
+ \frac{|h_{\sigma,n}-s_{k,n}|R^n}{n}\longrightarrow0.
+\]
+The exact source identities are
+\[
+ p_n=q_n-d_n,\qquad d_n=h_n-s_n.
+\]
+We isolate their coefficient fiber: for fixed $p$ and $s$, every signed
+array $e$ gives $d=e$, $q=p+e$, and $h=s+e$.  Thus $p$ and $s$ alone do not
+determine $q$, $h$, or their weighted budgets.  This is an algebraic
+information-class theorem, not a construction of noisy operators.  It
+forbids promotion of RH-354's normalized $p$ tail to the full-trace
+$q/E_{\rm off}$ ledger without defect transport, and forbids interpreting
+the exponentially large deterministic $s$ budgets as actual spectral
+submultisets.  The deterministic terminal-lag route is closed at its
+declared budget type through the transform phase diagram:
+RH-358 gives geometric localization, RH-359 gives logarithmic inverse
+accuracy, and RH-360 gives the three-regime exponential-transform phase
+diagram.  The nine upstream result files contain $45/45$ false Gate values
+and $129/129$ false forbidden-claim values.  RH-241 and RH-288 remain
+open/inactive, Gates A--E remain false, and no Hilbert--Polya, zero, divisor,
+or RH conclusion follows.
+\end{abstract}
+
+\section{The two exact coefficient types}
+
+The batch uses one bounded-phase physical clock and the Hardy normalization
+fixed upstream.  The actual modulus-complement trace and deterministic
+numerator anchor define
+\begin{equation}\label{eq:p-tau-a}
+ p_{\sigma,k,n}=\tau_{\sigma,n}-a_n.
+\end{equation}
+RH-340 identifies the same coefficient with the difference between a Hardy
+full-trace coefficient and the head/counterloop defect
+\begin{equation}\label{eq:p-q-d}
+ \boxed{p_{\sigma,k,n}=q_{\sigma,k,n}-d_{\sigma,k,n}},
+ \qquad
+ \boxed{d_{\sigma,k,n}=h_{\sigma,n}-s_{k,n}}.
+\end{equation}
+Here $h_{\sigma,n}$ is the moment of the actual modulus-complete Hardy head,
+while $s_{k,n}$ is the moment of the deterministic graded counterloop
+\citep{WangSynchronization2026,WangUpperBurden2026}.  Thus, suppressing the
+common clock,
+\begin{equation}\label{eq:fiber-identities}
+ q=p+d,\qquad h=s+d.
+\end{equation}
+Equations \eqref{eq:p-q-d}--\eqref{eq:fiber-identities} are identities of
+coefficient arrays.  They do not assert a spectral inclusion between the
+counterloop and the actual head.
+
+The deterministic counterloop itself is the finite multiset
+\begin{equation}\label{eq:counterloop}
+ \cY_k=\{\beta_ke^{ij\pi/k},\beta_ke^{-ij\pi/k}:1\le j\le k-1\},
+\end{equation}
+whose exact moments are
+\begin{equation}\label{eq:s-ledger}
+ s_{k,n}=\beta_k^n\bigl(2k\one_{2k\mid n}-1-(-1)^n\bigr).
+\end{equation}
+It is a source-locked auxiliary graded shell.  The actual head
+$\cH_\sigma$ is a different object.  Even the conditional moment transport
+derived later in the batch is not a theorem that \eqref{eq:counterloop} is a
+submultiset of $\cH_\sigma$.
+
+\section{Ten source-locked layers}
+
+The following table retains the object type of every result.  ``Actual''
+means an identified coefficient or signed remainder of the noisy physical
+construction.  ``Deterministic'' means the finite graded counterloop or a
+normalized budget built solely from its exact moments.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.07\textwidth}
+>{\raggedright\arraybackslash}p{0.39\textwidth}
+>{\raggedright\arraybackslash}p{0.48\textwidth}@{}}
+\toprule
+paper & strict result & retained boundary\\
+\midrule
+\endfirsthead
+\toprule
+paper & strict result & retained boundary\\
+\midrule
+\endhead
+RH-352 & Actual normalized direct cancellation on every lower-even window
+$J_k\to\infty$, $J_k=o(k)$, and uniform actual $Y$ tracking of $S-\cP$. &
+The unnormalized separate noisy majorant is superunit; critical, first-lower,
+odd, upper, and full-prefix channels are not closed.\\
+RH-353 & Actual critical/first-lower normalized completion laws and the
+phase-free gap $Z_k^0-\lambda Z_k^-\to2-\lambda$. & The selected $Y$ supply
+is not a lower bound for the direct coefficients $p_k^0,p_k^-$ and is not a
+full-prefix theorem.\\
+RH-354 & Actual parity-free normalized direct tail for
+$p=\tau-a$ above $N_k=2k-L_k$, including both parities and the strict upper
+band. & The result is not a theorem for $q$, $d$, or $E_{\rm off}$; low
+orders and the unnormalized prefix remain open.\\
+RH-355 & Exact deterministic strict-upper burden, terminal share, and the
+precision that $D_{4k}(R)\to0$ would force. & Actual-head conclusions are
+conditional; a normalized-shell counterexample is information-class only.\\
+RH-356 & Deterministic mesoscopic post-alias crossover, fixed-depth factor,
+and complete logarithmic floor phase. & Actual inheritance assumes
+$D_{4k}(R)\to0$; no linear-depth theorem is claimed here.\\
+RH-357 & Deterministic uniform endpoint profile over $1\le L\le k-1$,
+including $C_M$ drift, denominator correction, and rational/irrational
+phases. & Actual budget inheritance remains conditional and gives no root or
+rank identification.\\
+RH-358 & Deterministic terminal-lag tail profile, geometric total-variation
+localization, first two moments, and the exact diverging-window criterion. &
+Actual weighted lags inherit only under $D_{4k}(R)\to0$; the lag integer is
+not the full-trace coefficient $q$.\\
+RH-359 & Deterministic logarithmic accuracy law, full cluster interval, and
+minimal integer-window correction set $[0,1]$. & Actual accuracy inherits
+only under the same open transport leaf.\\
+RH-360 & Deterministic generating-function transition below, at, and above
+$z=x$, together with three tilted budget laws. & The probabilities are not
+eigenvalue or root-counting measures; actual transfer is conditional.\\
+RH-361 & Exact typed batch separation and coefficient-fiber nonpromotion
+theorem. & Information-class logic only; no physical counterexample, root,
+rank, determinant, or Gate theorem is constructed.\\
+\bottomrule
+\end{longtable}
+
+The source results are
+\citep{WangModulusCancellation2026,WangBoundaryGap2026,WangDirectTail2026,
+WangUpperBurden2026,WangMesoscopic2026,WangLinearDepth2026,
+WangTerminalLag2026,WangLogWindow2026,WangTiltTransition2026}.
+
+\section{The actual selected and normalized branch}
+
+Fix
+\begin{equation}\label{eq:physical-scales}
+ H_m=mR^{-2m},\qquad x=(\beta R)^2>1,
+ \qquad m_{k,j}=k-j,\quad 2\le j\le J_k,
+\end{equation}
+where $J_k\to\infty$ and $J_k=o(k)$.  RH-352 uses the exact actual
+coefficient identity
+\begin{equation}\label{eq:p-YPS}
+ p_{k,j}=Y_{k,j}+\cP_{k,j}-S_{k,j}
+\end{equation}
+and the all-order source caps for $\tau$ and $a$ to prove
+\begin{equation}\label{eq:RH352-cap}
+ \limsup_{k\to\infty}
+ \left(\sup_{2\le j\le J_k}
+ \frac{|p_{k,j}|}{2H_{m_{k,j}}x^{m_{k,j}}}\right)^{1/k}
+ \le\max\left\{\frac{r_H^2\lambda^3}{4},\frac1\lambda\right\}<1.
+\end{equation}
+Solving \eqref{eq:p-YPS} then makes the actual $Y$ array track
+$S-\cP$ uniformly at the same local natural scale.  This is a genuine
+moving-order actual theorem.  Removing the factor $x^{m}$ is not allowed:
+the separate noisy bound then has certified root
+\begin{equation}\label{eq:raw-barrier}
+ \lambda^2(q_0R)^2>\frac{9604}{7225}>1,
+ \qquad q_0=\frac12.
+\end{equation}
+The inequality is a failure of that absolute-majorant method, not a lower
+bound for the signed difference $p$.
+
+RH-353 treats the two boundary coordinates excluded from the RH-352 ladder.
+For the actual normalized signed remainders
+\begin{equation}\label{eq:Z}
+ Z_k^0=\frac{C_MY_k^0}{2H_kx^k},\qquad
+ Z_k^-=\frac{C_MY_k^-}{2H_{k-1}x^{k-1}},
+\end{equation}
+it proves
+\begin{equation}\label{eq:boundary-gap}
+ Z_k^0-\lambda Z_k^-\longrightarrow2-\lambda,
+ \qquad
+ \liminf\max\{|Z_k^0|,|Z_k^-|\}
+ \ge\frac{2-\lambda}{1+\lambda}>\frac19.
+\end{equation}
+The resulting selected unnormalized $Y$ supply cancels the leading packets;
+it does not imply divergence of either direct coefficient.
+
+Finally RH-354 removes parity and order restrictions above a moving cut.  If
+$N_k=2k-L_k$ and $L_k=o(k)$, its actual bottom-normalized direct tail
+\begin{equation}\label{eq:W}
+ \mathfrak W_k=x^{-N_k/2}\sum_{n\ge N_k}|p_{\sigma,k,n}|R^n
+\end{equation}
+has a subunit root ceiling.  The corresponding alias-normalized logarithmic
+tail
+\begin{equation}\label{eq:direct-log-tail}
+ x^{-k}\sum_{n\ge N_k}\frac{|p_{\sigma,k,n}|R^n}{n}
+\end{equation}
+also decays.  Equations \eqref{eq:W}--\eqref{eq:direct-log-tail} are the
+broadest actual direct theorem in the batch, but their object is still $p$,
+not the full-trace coefficient $q$ in \eqref{eq:p-q-d}.
+
+\section{The deterministic upper-counterloop branch}
+
+Put
+\begin{equation}\label{eq:x-y}
+ y_k=(\beta_kR)^2
+ =x\exp\left[-\frac{\log C_M}{k}+o(k^{-1})\right].
+\end{equation}
+For $1\le L\le k-1$, the exact first-alias and post-alias budgets are
+\begin{equation}\label{eq:A-B}
+ A_k=(1-k^{-1})y_k^k,\qquad
+ B_k(L)=\sum_{j=1}^{L}\frac{y_k^{k+j}}{k+j}.
+\end{equation}
+RH-355--RH-357 determine \eqref{eq:A-B} on every depth scale.  In particular,
+\begin{equation}\label{eq:complete-band}
+ B_k(L)=
+ \frac{x^{k+L+1}(1-x^{-L})}
+ {C_M^{1+L/k}(k+L)(x-1)}(1+o(1))
+\end{equation}
+uniformly over the complete strict upper band.  At $L=k-1$, this gives the
+RH-355 burden
+\begin{equation}\label{eq:upper-burden}
+ B_k(k-1)\sim\frac{x^{2k}}{2C_M^2k(x-1)}.
+\end{equation}
+These are exact asymptotics for the deterministic moments
+\eqref{eq:s-ledger}.  Their exponential size does not identify an actual
+head moment or actual spectral atom.
+
+RH-358 reverses the upper band.  With $C_k=B_k(k-1)$ and terminal-lag
+probability
+\begin{equation}\label{eq:pi}
+ \pi_k(r)=\frac{y_k^{2k-1-r}/(2k-1-r)}{C_k},
+ \qquad0\le r\le k-2,
+\end{equation}
+it proves
+\begin{equation}\label{eq:geometric}
+ \left\|\pi_k-(1-x^{-1})x^{-r}\right\|_{\ell^1}\longrightarrow0.
+\end{equation}
+RH-359 inverts the terminal tail $E_k(q)$: for
+$q_k=\lfloor a\log_xk+c\rfloor$,
+\begin{equation}\label{eq:log-phase}
+ k^aE_k(q_k)=x^{\{a\log_xk+c\}-c}(1+o(1)),
+\end{equation}
+and the minimal admissible window differs from $a\log_xk+c$ by a sequence
+with complete limit set $[0,1]$.
+
+RH-360 completes the deterministic route with
+\begin{equation}\label{eq:G}
+ G_k(z)=\sum_{r=0}^{k-2}z^r\pi_k(r).
+\end{equation}
+For fixed $z<x$, the transform tends to
+$(1-x^{-1})/(1-z/x)$.  In the critical window
+$z_k=x\exp(\tau/k)$,
+\begin{equation}\label{eq:critical-transform}
+ \frac{G_k(z_k)}{k}\longrightarrow
+ 2(1-x^{-1})\int_0^1
+ \frac{e^{(\tau+\log C_M)s}}{2-s}\,ds,
+\end{equation}
+while for fixed $z>x$,
+\begin{equation}\label{eq:super-transform}
+ G_k(z)\sim
+ \frac{2C_M(1-x^{-1})}{1-x/z}\left(\frac zx\right)^{k-2}.
+\end{equation}
+Thus the deterministic terminal-lag sequence closes through its entire
+transform phase diagram.  The tilted laws remain normalized budget laws,
+not eigenvalue distributions or noisy stochastic laws.
+
+\section{The typed coefficient-fiber theorem}
+
+The exact reason that the two branches do not glue is algebraic before it is
+analytic.
+
+\begin{definition}[finite typed coefficient information class]
+Let $I$ be a nonempty finite order set and let $w_n>0$.  Fix two signed
+arrays $(p_n)_{n\in I}$ and $(s_n)_{n\in I}$.  A typed coefficient fiber is
+an array $(e_n)_{n\in I}$ together with
+\begin{equation}\label{eq:fiber}
+ d_n^{[e]}=e_n,\qquad
+ q_n^{[e]}=p_n+e_n,\qquad
+ h_n^{[e]}=s_n+e_n.
+\end{equation}
+No operator, determinant, rank, root set, or cross-order realizability
+condition is included in this information class.
+\end{definition}
+
+For an array $u$, write
+\begin{equation}\label{eq:weighted-norm}
+ \|u\|_{1,w}=\sum_{n\in I}w_n|u_n|.
+\end{equation}
+
+\begin{theorem}[exact typed fiber and nonpromotion]\label{thm:fiber}
+Every array $e$ in \eqref{eq:fiber} satisfies
+\begin{equation}\label{eq:fiber-exact}
+ d^{[e]}=h^{[e]}-s,\qquad
+ p=q^{[e]}-d^{[e]}
+\end{equation}
+coordinatewise.  If $v$ is any nonzero signed array, then along
+$e^{(t)}=tv$,
+\begin{equation}\label{eq:unbounded-fibers}
+ \|q^{[e^{(t)}]}\|_{1,w}\longrightarrow\infty,\qquad
+ \|h^{[e^{(t)}]}\|_{1,w}\longrightarrow\infty
+ \quad (|t|\to\infty),
+\end{equation}
+while $p$ and $s$ remain fixed.  Moreover, the choices $e=-p$ and $e=-s$
+give $q^{[-p]}=0$ and $h^{[-s]}=0$, respectively.  Consequently, as $e$
+ranges over this coefficient information class, neither
+$\|q^{[e]}\|_{1,w}$ nor $\|h^{[e]}\|_{1,w}$ has a finite uniform upper
+bound determined by $p,s$, while the infimum of each norm is zero.
+\end{theorem}
+
+\begin{proof}
+Substitution of \eqref{eq:fiber} gives
+$h^{[e]}-s=e=d^{[e]}$ and
+$q^{[e]}-d^{[e]}=(p+e)-e=p$.  Since $v\ne0$ and all weights are positive,
+$\|tv\|_{1,w}=|t|\|v\|_{1,w}\to\infty$.  The reverse triangle inequality
+gives
+\[
+ \|p+tv\|_{1,w}\ge |t|\|v\|_{1,w}-\|p\|_{1,w},
+ \qquad
+ \|s+tv\|_{1,w}\ge |t|\|v\|_{1,w}-\|s\|_{1,w},
+\]
+which proves \eqref{eq:unbounded-fibers}.  Finally,
+$q^{[-p]}=p-p=0$ and $h^{[-s]}=s-s=0$.
+\end{proof}
+
+\begin{remark}[logical scope]
+The theorem does not say that every fiber is realized by a noisy quadratic
+operator.  It says that the coefficient identities and the fixed arrays
+$p,s$ do not by themselves imply the missing conclusion.  A physical
+promotion requires an additional theorem restricting the actual defect
+$d=h-s$.
+\end{remark}
+
+\begin{corollary}[two forbidden promotions]\label{cor:forbidden}
+The following deductions are unavailable from the batch premises alone.
+\begin{enumerate}
+\item A small selected or normalized actual direct budget for $p$ cannot be
+promoted to the full-trace $q/E_{\rm off}$ budget without a same-clock bound
+for $d$.
+\item A large deterministic counterloop budget for $s$ cannot be promoted to
+an actual-head budget, root set, rank law, or spectral-submultiset statement.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+The two budget nonpromotions follow from \cref{thm:fiber}: the first uses
+$q=p+d$, and the second uses $h=s+d$.  The further $E_{\rm off}$, root,
+rank, and multiset deductions are not encoded by the fiber premises and are
+absent from the source-locked table.  They require a separate realization
+or identification theorem that is unavailable in the batch.
+\end{proof}
+
+\section{The batch separation theorem}
+
+\begin{theorem}[RH-352--RH-361 typed batch separation]
+\label{thm:batch}
+The ten layers satisfy all of the following.
+\begin{enumerate}
+\item RH-352--RH-354 give unconditional actual conclusions only for selected
+natural/alias normalizations of $p$ and $Y$.  RH-353 also converts its
+normalized gap into a selected signed-$Y$ supply, not a direct or full-prefix
+lower bound.
+\item RH-355--RH-360 give unconditional conclusions only for the
+deterministic counterloop $s$ and normalized budgets derived from it.
+\item Every actual-head transfer in RH-355--RH-360 assumes the same original
+unnormalized, same-clock leaf $D_{4k}(R)\to0$.  No paper in the batch proves
+that leaf.
+\item The deterministic terminal-lag route is complete through
+\eqref{eq:critical-transform}--\eqref{eq:super-transform}, but no actual
+root, rank, spectrum, determinant, $q$, or $E_{\rm off}$ conclusion follows.
+\item RH-241's moving noisy all-order envelope and coefficient bridge remain
+open, and RH-288 remains inactive.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Items 1--3 follow from the exact object and hypothesis columns in the
+source-locked table and from the defining statements of the nine upstream
+papers.  The distinction is also enforced by
+\eqref{eq:p-q-d}: RH-354 controls $p$, whereas the full-trace ledger uses
+$q=p+d$.  By \cref{thm:fiber,cor:forbidden}, neither $q$ nor the actual head
+is determined without a theorem for $d$.
+
+Item 4 is the chain RH-358--RH-360 summarized in
+\eqref{eq:geometric}--\eqref{eq:super-transform}.  The sources explicitly
+define these probabilities from normalized deterministic absolute budget
+weights, so no spectral interpretation is licensed.  Item 5 is the retained
+frontier of RH-241 and the typed prefix requirement of RH-288
+\citep{WangTraceFrontier2026,WangGluing2026,WangSignedReview2026}.
+\end{proof}
+
+\section{Executable audit and claim boundary}
+
+The executable artifact reads the nine upstream result ledgers and checks
+the exact forbidden-claim vector
+\begin{equation}\label{eq:false-counts}
+ (15,14,13,14,14,14,14,15,16),
+ \qquad \sum=129.
+\end{equation}
+All $129$ values are false.  Each upstream file also contains five false
+Gate values, for $45/45$ false values.  RH-361 adds five false Gate values
+and twenty false forbidden claims, so the ten-paper totals are $50/50$ and
+$149/149$, respectively.
+
+The finite rows instantiate \cref{thm:fiber} with rational arrays and
+positive rational weights.  They check both identities and exhibit different
+$q/h$ budgets at fixed $p/s$.  They are formula-reproduction checks only:
+they do not construct physical heads or noisy operators and are not
+asymptotic evidence.
+
+The individual archive contains twenty RH-361 publication files.  The nine
+upstream manifests contain $156$, giving $176$ files in the batch manifest.
+All manifests are SHA-256 rehashed by independent verification scripts.
+
+The narrowest positive continuation is an actual theorem proving the
+unnormalized same-clock $D_{4k}(R)\to0$ leaf, or a typed direct theorem for
+$q/E_{\rm off}$ that bypasses it.  An unnormalized complete direct-prefix
+theorem and the low orders below the RH-354 cut remain separate.  The
+RH-241 moving noisy all-order envelope and no-over-extraction bridge remain
+open.  RH-288 may be activated only after the complete direct prefix and
+both analytic tails close in one physical determinant data type.
+
+Gates A--E remain false/open.  This paper constructs no Hilbert--Polya
+operator, identifies no Riemann zero, proves no von Mangoldt-weighted
+prime-power trace, proves no completed-zeta divisor equality, and does not
+prove the Riemann Hypothesis.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
