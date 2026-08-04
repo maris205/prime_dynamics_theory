@@ -3,75 +3,73 @@
 更新时间：2026-08-04
 交接状态：`SEALED_FOR_NEW_SESSION`
 本轮启动基线为
-`ca9fe7ab11c82a8dfb272c63b2f7940717282704`，与 `origin/main` 一致；启动
+`fe55988891837a2b2e48f1b6bec4ac98c6ff6c60`，与 `origin/main` 一致；启动
 `git pull --rebase origin main` 返回 already up to date。启动时
 `TPC_HANDOFF.md` SHA-256 为
-`9567009e27e779198875496a56bd8057d233568f5d06f908d7583d2313bb9b0b`，
+`fdb24343ac2909a69e613708e77f6b2e2ee7f3f8fe70f750391adc80b4050b40`，
 tracked/cached diff 均为空；127 个既有 protected untracked files 的 manifest
 仍为
 `35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f`。
 第 1 节 22 项只读启动回归为 `22/22 PASS`；TPC-27--32 legacy writers 与
 TPC-122 writer 均未执行。
 
-第 49 节完成第 48 节 scalar transfer 的 content/BV allocation 反方审核。
-将 `chi_theta(t)` 中的 fixed-period/local-coprimality factors 与
-`1_(G_theta(t)<=C)` 留在 exact signed sequence，并只把
-`c_theta,X W_theta,X(t)` 放入 BV weight，是 TPC-122允许但必须显式登记的新
-factor allocation；其余 actual row-pair mask components继续保留在
-`theta,I_theta,c_theta,X` 中。TPC-32/33 已提交的 row `ell^1`、
-`j`-support、projector/local-mask mass 与 smooth-weight BV 界共同给出安全的
+第 50 节沿第 49 节同一 theorem-valid selected packet，把 content cutoff精确放回
+TPC-34 orbit-sliced energy。对
+`c_(alpha,gamma)(j)=gcd(N_alpha(j),N_gamma(j))`，TPC-30 的 fixed-row
+large-content orbit occupancy与 physical row residue degree共同推出新的派生
+`L1` 尾项：
 
 ```text
-sum_theta |I_theta| ||c_theta,X W_theta,X||_BV*
-  << X^(o(1)) J Q^2,
-ell_Z = 133/400.
+V_(L,>Z)+V_(R,>Z)
+  << X^epsilon Q^2(1+Q/Z)(1+J/Z).
 ```
 
-因此 allocation-independent 的 `ACTUAL_OUTER_BV_ENVELOPE=ABSENT` 表述过强；
-content cutoff 的 jumps 可以无损移入 prefix object，safe natural-scale envelope
-为 `PRESENT_DERIVED_L1`。但 resolved fiber 最长只有
-`D=X^(10049/52500+o(1))`。逐 fiber prefix 后外层绝对重组的指定模板，即使每条
-active nonzero unit-scale fiber取得理想 `O(1)` discrepancy，也仍有
+取 `Z=C=floor(J)` 得 `V_>C<<X^epsilon Q^3/J`，再经 TPC-34 exact
+orbit-to-column transfer得 `E_>C<<X^epsilon Q^3`。因此在同一 literal
+coefficient、actual masks、fixed `h0=2` 与 normalization下，full 与
+small-content 的 `V` gate（以及 `E` gate）彼此等价，差别只是一项已经闭合的
+large-content tail；这不是 arithmetic cancellation。
+
+第 50 节又把 small-content off-`V` 的 input-copy difference分层。除
+`alpha_1=alpha_2` 的已闭合 diagonal外，termwise Schur/row-`ell^2` 给
 
 ```text
-133/400 - 10049/52500 = 29629/210000
+|V_(L,C,near)(H)|+|V_(R,C,near)(H)|
+  << X^epsilon Q^2 J(1+H).
 ```
 
-的 endpoint deficit；active singleton class 更无 uniform positive power。
-这是该模板的 strategy ceiling，不是 actual scalar 的下界。真正第一缺口已经收缩为
-metadata-preserving collective outer-return theorem；最窄既有 OPEN target 是
-TPC-33 的 `E_L+E_R << X^epsilon Q^3`，等价可接受的另一入口是直接证明同一
-`Z_C=A_hat_C,q_DFT(0)` 为 `X^(o(1))Q^2` 或更小。
+故 `H<=Q/J^2=X^(1/400+o(1))` 的 growing near-copy band也闭合于
+`Q^3/J` gate。固定 exact double-content `(c1,c2)` 还有合法的 gcd/lcm CRT
+incidence bound，但对全部 `(c1,c2)` 作 triangle reassembly会由 `(1,1)` 等
+low-content layers使该 upper bound退化到 unsigned ceiling；这不是 actual饱和或
+下界，不得升级为 aggregate saving。当前真正首缺已
+收缩为 `c_i<=C` 且
+`|m_(alpha_1)-m_(alpha_2)|>Q/J^2` 的 far-copy off-diagonal theorem。再移除
+已空的 target-collision layer与 TPC-37 已闭合的 auxiliary `q`-singular faces后，
+fully-coprime、`q`-regular、distinct-terminal four-Mobius formal eligible cross
+layer未被现有 identities排除；其 literal active nonzero/coherent mass未证，但所需
+`|V_(L,C,ne)|+|V_(R,C,ne)|<<X^epsilon Q^3/J` 尚未证明。
 
-2026-08-04 official current-primary theorem-body refresh 没有 survivor：Tao
-`1509.05422v4` 只给 fixed-coefficient logarithmic terminal correlation；
-Grimmelt--Teräväinen `2607.28091v1` 的 growing coefficient-box inverse operator
-不是 actual determinant-two family；Frantzikinakis `1606.08420v2`、Lichtman
-`2009.08969v2` 与 Chinis `2105.14653v1` 分别先失败于 fixed/subsequence/metric、
-equal-slope natural shift-average/log-saving与 Siegel-zero conditional fixed-shift
-gates。没有
-growing exact masked all-prefix theorem、collective actual-family theorem或 direct
-small-content zero theorem。
+逐 theorem-body复核仍无 literal survivor。现有 Chowla/correlation、Gowers、
+shift-average、inverse、nilsequence与 static sieve sources均先失败于 growing
+coefficient、完整 four-Mobius ultra increment、linked actual masks/content、
+prescribed family或 natural fixed-power normalization；其 logarithmic/metric输出
+也不能支付所需 `J^2` collective saving。没有新增 source/version cell，既有
+wrong-object cells继续 `STOP_SCOPED`。
 
 TPC-206 仍为 `13/42`，首缺大写 opened `D`；pair-to-`omega`、linear H1、
 两个 O161 pointwise parents 与 actual-cloud frame edge 均未改变。没有
 `chi<=1/400`、direct small-content saving 或 TPC-207 trigger。除第 49 节明确覆盖的
 content/BV allocation 与 current first-fatal 外，第 33--48 节 source-specific
-wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态继续有效。
-发布前只读 fetch先将 `origin/main` 从启动基线推进至
-`33c9ec6fd7baf7c983de2b0fecc8b959ba0237c1`；正式 handoff commit后的正常
-`git pull --rebase origin main` 又取得
-`c46d4acd9a3b74bb87a3dedab3a93b7c99067188`。两个 commits都只给
-`RH_HANDOFF.md` 增加 alternate/global-route `NOT_TESTABLE` 摘要，没有改动 TPC
-source、artifact、policy或本 handoff，也没有 TPC theorem edge。该 disjoint
-RH-only delta不改变本节裁决。
+wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态继续有效；第 50 节只
+新增上述两个 derived `L1` closure与一个 fixed-layer incidence，不改写任何旧 cell。
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC32_H0_2_20260804_CONTENT_MASK_IN_SIGN_SAFE_BV_ENVELOPE_ELL_Z_133_400_PRESENT_L1_FIBERWISE_PREFIX_ABSOLUTE_OUTER_DEFICIT_29629_210000_COLLECTIVE_Q3_OR_DIRECT_ZERO_REQUIRED_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
+`TPC32_34_H0_2_20260804_LARGE_CONTENT_ORBIT_ENERGY_AND_INPUT_COPY_Q_OVER_J2_NEAR_BAND_CLOSED_DERIVED_L1_SMALL_FULL_V_E_EQUIVALENT_FULLY_COPRIME_FAR_COPY_REGULAR_DISTINCT_TERMINAL_FOUR_MOBIUS_Q3_OVER_J_THEOREM_ABSENT_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
 下一篇：`null`；下一项不编号审计：`null`（仅在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -82,8 +80,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
 上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29、30、31、32、
-33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48、49 节；第 23、
-27、28 节只在第 29--49 节明确引用时展开。第 22 节的
+33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48、49、50 节；第 23、
+27、28 节只在第 29--50 节明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
@@ -637,6 +635,32 @@ BV jumps仍须支付；改变 factor allocation不得调用旧的 unmasked prefi
 TPC-33 `Q^3` collective energy theorem、保留全部 literal data 的新
 masked-prefix/collective theorem、两个 O161 parents、pair-native reroute、H1 或
 global architecture。
+
+第 50 节没有新造同义 method/source cell，而是在本 cell 内登记两个严格派生的
+`L1` 子门槛。对 TPC-34 orbit slice按 exact target content切分，TPC-30
+fixed-row occupancy与 row-residue degree给出
+
+```text
+V_(L,>C)+V_(R,>C) << X^epsilon Q^3/J,
+E_(L,>C)+E_(R,>C) << X^epsilon Q^3,
+C=floor(J).
+```
+
+所以 full/small-content `V` 与 `E` gates在目标尺度上等价。small-content
+off-`V` 中另有
+
+```text
+0<|m_(alpha_1)-m_(alpha_2)|<=Q/J^2
+```
+
+的 input-copy near band，由 row-`ell^2`/Schur bound闭合；这里的 two-copy
+difference不得与 actual mask中的 input--opposite-row separation混同。fixed exact
+`(c1,c2)` gcd/lcm incidence只对单层成立，不能经 absolute reassembly升级为
+aggregate saving。故本 cell仍为 `STOP_SCOPED`，首缺进一步限定为 small-content
+far-copy off-diagonal `Q^3/J` theorem；target collision与继承的 TPC-37
+`q`-singular faces移除后，fully-coprime `q`-regular distinct-terminal four-Mobius
+formal eligible cross layer未被现有 identities排除；不主张其 actual active
+nonzero/coherent mass。`L2=NONE`，strict `1/400`仍未支付。
 
 2026-07-31 的第 23.5 节 named-primary reopen-candidate 审计新增且仅新增：
 
@@ -5037,8 +5061,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 读取仓库根目录 TPC_HANDOFF.md，以仓库文件和已提交 artifacts 为事实来源，
 不要依赖旧聊天记录。为节省上下文，优先读取页首及第 1、6、22、24、29、30、
-31、32、33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48、49 节；
-第 23、27、28 节只在第 29--49 节明确引用时展开。
+31、32、33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48、49、50 节；
+第 23、27、28 节只在第 29--50 节明确引用时展开。
 
 先执行：
 
@@ -5060,13 +5084,14 @@ TPC-27--32 legacy certificates 会无条件重写 committed JSON，在出现真�
 当前编号事实终点是 TPC-206；TPC-207 trigger=false，TPC-207 未创建。
 最新不编号裁决是：
 
-TPC32_H0_2_20260804_CONTENT_MASK_IN_SIGN_SAFE_BV_ENVELOPE_ELL_Z_133_400_
-PRESENT_L1_FIBERWISE_PREFIX_ABSOLUTE_OUTER_DEFICIT_29629_210000_
-COLLECTIVE_Q3_OR_DIRECT_ZERO_REQUIRED_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN
+TPC32_34_H0_2_20260804_LARGE_CONTENT_ORBIT_ENERGY_AND_INPUT_COPY_Q_OVER_J2_
+NEAR_BAND_CLOSED_DERIVED_L1_SMALL_FULL_V_E_EQUIVALENT_FULLY_COPRIME_FAR_COPY_
+REGULAR_DISTINCT_TERMINAL_FOUR_MOBIUS_Q3_OVER_J_THEOREM_ABSENT_NO_TRIGGER_
+STOP_SCOPED_PARENTS_OPEN
 
-第 37--49 节当前登记的 source-specific cells与相邻 source/type verdict如下；
+第 37--50 节当前登记的 source-specific cells与相邻 source/type verdict如下；
 第 46 节新增第 13--15 项，第 47 节新增第 16 项，第 48 节新增第 17 项，
-第 49 节新增第 18 项：
+第 49 节新增第 18 项，第 50 节新增第 19 项：
 
 1. Frantzikinakis--Host 1804.08556v3 与 He--Liu--Ma 2604.16840v1
    没有 O161 literal growing two-Mobius natural fixed-power theorem；
@@ -5163,6 +5188,22 @@ COLLECTIVE_Q3_OR_DIRECT_ZERO_REQUIRED_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN
     prescribed-family/conditional/operator-object gate失败；Lichtman 的 natural
     shift average只有 logarithmic/`psi` saving。下一条非重复数学入口是
     TPC-33 `E_L+E_R<<X^epsilon Q^3` collective theorem或同一 `Z_C` direct bound。
+19. 第 50 节把同一 literal packet的 orbit slices按
+    `c_(alpha,gamma)(j)=gcd(N_alpha(j),N_gamma(j))` 切分。TPC-30 fixed-row
+    occupancy与 row residue degree无条件给
+    `V_>C<<X^epsilon Q^3/J`、`E_>C<<X^epsilon Q^3`，故 full/small
+    `V,E` gate等价；input-copy near band
+    `0<|m_(alpha_1)-m_(alpha_2)|<=Q/J^2=X^(1/400+o(1))` 也由
+    Schur/row-`ell^2`闭合。fixed exact `(c1,c2)` 的 gcd/lcm CRT bound只是
+    单层 incidence；对全部 contents作 absolute reassembly时，该 bound在 `(1,1)`
+    退化到 `Q^3J` ceiling，但不证明 actual饱和或下界。官方 theorem-body refresh
+    没有接受 complete four-Mobius
+    ultra increments、two-copy content masks、linked actual family与 natural
+    fixed-power normalization的 source。target collision off-diagonal严格为空，
+    重跑 TPC-37 absolute degree/Cauchy proof后 `q`-singular faces继承闭合；剩余
+    非重复入口是未被 identities排除的 formal eligible fully-coprime、far-copy、
+    `q`-regular、distinct-terminal four-Mobius off-`V` 的 `Q^3/J` theorem；
+    没有新 source cell或 TPC-207 trigger。
 
 发布前 `ace004d..1b3513f` 的 late remote delta只修改 `RH_HANDOFF.md`：
 RH completed endpoint仍为 RH-361，RH-362 source lock与独立 adversarial audit
@@ -5177,7 +5218,9 @@ pair，并跨 distinct outer/prefix fibers。保持第 23 节既有 STOP，不�
 scalar attachment first-fatal 已由第 48 节校正；第 49 节又把 allocation-independent
 BV absence校正为 `ell_Z=133/400` safe envelope present，并把真正 first fatal收缩为
 逐-fiber natural-scale exact masked prefix alone无法克服 absolute outer geometry、
-collective outer-return缺失。
+collective outer-return缺失。第 50 节进一步在 TPC-34 energy interface闭合
+large-content tail及 `Q/J^2` input-copy near band；因此当前最窄未闭合对象是
+small-content far-copy off-`V`，不是完整 `V` 的 sign-blind envelope。
 
 同一 theorem-valid high-beta selected packet 仍固定为：
 sigma=1/10000，lambda=99979/210000，delta=7/60，beta=267/400，
@@ -5213,7 +5256,10 @@ inverse，已无损给出 ordered two-affine Möbius fibers与原 global normali
 `X^(o(1))JQ^2`，即 `ell_Z=133/400`；但 exact masked prefix theorem、singleton
 return、collective outer cancellation与 direct `Z_C` bound均缺。不得把这项 L1
 allocation/envelope升级为 L2，也不得再把 rough cutoff jumps记入另一个 allocation后
-跨 gate拼接。
+跨 gate拼接。第 50 节的 energy split另给
+`V_>C<<X^epsilon Q^3/J` 与 `E_>C<<X^epsilon Q^3`，所以 future collective
+theorem可等价瞄准 `c<=C`；它仍须对 far-copy off-diagonal创造真实 signed
+cancellation。
 
 Grimmelt--Merikoski arXiv:2505.00489v2 Part I 的 exact inverse-atom
 attachment 是本轮真实 L1 正结果。对
@@ -5495,7 +5541,9 @@ universe mismatch；只新增一个严格锁定 commits `c548ba9`/`ecad6e7` 的
 cross-program transfer cell，不把它记为 TPC method credit，也不扩张第 34 节
 严格限于 RH-342--348 的旧 cell。
 
-因此没有创建 TPC-207。合法的新入口仅为：TPC-33 actual collective
+因此没有创建 TPC-207。合法的新入口仅为：直接证明第 50 节 literal
+small-content far-copy off-`V` 的
+`|V_(L,C,ne)|+|V_(R,C,ne)|<<X^epsilon Q^3/J`；TPC-33 actual collective
 `E_L+E_R<<X^epsilon Q^3` theorem或等价 literal outer-return；直接接受 actual
 literal coefficient的 positive-power theorem；直接控制 determinant DFT zero的 pointwise theorem；真正的
 named additive atom + actual schedule + same-event avoidance theorem；同 high-beta
@@ -8878,6 +8926,380 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 50. 2026-08-04 orbit-energy content split、input-copy near band 与 far-copy off-diagonal gate
+
+### 50.1 冻结基线、执行边界与 literal packet
+
+本轮启动时
+
+```text
+HEAD = origin/main
+  = fe55988891837a2b2e48f1b6bec4ac98c6ff6c60
+TPC_HANDOFF_SHA256
+  = fdb24343ac2909a69e613708e77f6b2e2ee7f3f8fe70f750391adc80b4050b40
+tracked diff = 0
+cached diff = 0
+protected untracked files = 127
+protected manifest
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+```
+
+`git pull --rebase origin main` 返回 already up to date；第 1 节 22 项只读启动
+回归为 `22/22 PASS`。三个 read-only agents分别完成 content/orbit-energy公式审计、
+literal theorem-body source lock与 adversarial route audit，均回报
+`files_changed=[]`。TPC-27--32 legacy writers、TPC-122 writer、builder与任何
+artifact materializer均未执行。
+
+本节只使用第 49 节已经 source-lock 的同一 theorem-valid selected packet：
+
+```text
+sigma  = 1/10000
+lambda = 99979/210000
+delta  = 7/60
+beta   = 267/400
+
+Q  = X^(267/400+o(1))
+J  = X^(133/400+o(1))
+C  = floor(J)
+h0 = 2
+N0 = J Q^2 asymp X Q.
+```
+
+三条 raw channels、canonical `Delta#`、actual row-pair masks、outer labels、
+weights、两 polarizations与原 global normalization全部保留。第 22 节
+`delta=1/20` 的 `TRUNCATED_ENTRY_ABSENT` family仍是另一条 source lock，不得
+拼接。
+
+### 50.2 exact small/large-content orbit slices
+
+沿 TPC-30/34 记
+
+```text
+N_alpha(j) = m_alpha j+h0,
+c_(alpha,gamma)(j) = gcd(N_alpha(j),N_gamma(j)).
+```
+
+对 left polarization定义完全保留 actual multiplier与 ultra increment的两部分
+
+```text
+Y^L_(gamma,j,<=C)
+  = sum_alpha gamma_alpha^(1) A^act_(alpha,gamma)(j) C_(m_alpha)(j)
+      1_(c_(alpha,gamma)(j)<=C),
+
+Y^L_(gamma,j,>C)
+  = sum_alpha gamma_alpha^(1) A^act_(alpha,gamma)(j) C_(m_alpha)(j)
+      1_(c_(alpha,gamma)(j)>C),
+
+V_(L,<=C) = sum_(gamma,j) |Y^L_(gamma,j,<=C)|^2,
+V_(L,>C)  = sum_(gamma,j) |Y^L_(gamma,j,>C)|^2.
+```
+
+right polarization交换 `alpha,gamma` 与两 coefficient systems。再令
+
+```text
+B^L_(gamma,<=C) = sum_j H_(m_gamma)(j)Y^L_(gamma,j,<=C),
+E_(L,<=C)       = sum_gamma |B^L_(gamma,<=C)|^2,
+```
+
+并对 `>C` 与 right side同样定义。于是两 content layers分别保留 TPC-34
+orbit-to-column transfer；small-content layer另保留 determinant-zero scalar transfer：
+
+```text
+E_(L,*)+E_(R,*)
+  << X^epsilon J (V_(L,*)+V_(R,*)),
+
+|Z_C| = |A_hat_(C,q)^DFT(0)|
+  << sqrt(Q log(2L)) (sqrt(E_(L,<=C))+sqrt(E_(R,<=C)))
+  << X^epsilon sqrt(JQ log(2L))
+       (sqrt(V_(L,<=C))+sqrt(V_(R,<=C))).
+```
+
+第一式的 `*` 可取 `<=C` 或 `>C`，后两式只指 literal small-content `Z_C`。因此
+
+```text
+V_(L,<=C)+V_(R,<=C) << X^epsilon Q^3/J
+```
+
+仍是同一个 small-content matched-shell auxiliary determinant zero的充分 gate；
+没有把 orbit Poisson zero、nonzero-frequency density-one、Parseval或
+complete-frequency mean改写为 distinguished zero。
+
+### 50.3 large-content orbit energy无条件闭合
+
+令一般 cutoff `Z>=1`。固定 `(gamma,j)` 后，若
+`c_(alpha,gamma)(j)>Z`，则某个 `c|N_gamma(j)`、`c>Z` 满足
+`m_alpha=m_gamma (mod c)`。physical row integers互异且位于长度 `O(Q)` 的区间，
+故 divisor bound给
+
+```text
+# {alpha: c_(alpha,gamma)(j)>Z}
+  <= sum_(c|N_gamma(j), c>Z) O(1+Q/c)
+  << X^epsilon (1+Q/Z).
+```
+
+反向固定不同 rows `(alpha,gamma)`，TPC-30 fixed-row large-content occupancy给
+
+```text
+# {j: c_(alpha,gamma)(j)>Z}
+  << X^epsilon (1+J/Z).
+```
+
+对 inner row sum作 degree Cauchy，使用
+`sum_alpha |gamma_alpha^(i)|^2<<Q log(2L)`、`O(Q)` opposite rows以及
+TPC-34 pointwise prefix/multiplier envelope，得到新的派生 `L1` theorem
+
+```text
+V_(L,>Z)+V_(R,>Z)
+  << X^epsilon Q^2(1+Q/Z)(1+J/Z).
+```
+
+取 `Z=C=floor(J)`，因 `J<<Q`，即
+
+```text
+V_(L,>C)+V_(R,>C) << X^epsilon Q^3/J,
+E_(L,>C)+E_(R,>C) << X^epsilon Q^3.
+```
+
+第一式组合了 TPC-30 已提交的 occupancy与 TPC-34 orbit slicing；它未在此前
+TPC-31--49 正文中单独命名，但不需要新的 arithmetic theorem。第二式只调用
+exact Cauchy transfer，仍是 `PRESENT_DERIVED_L1`，不是 `L2`。
+
+### 50.4 full/small gate等价与 growing input-copy near band
+
+逐点有 `Y_all=Y_<=C+Y_>C`。triangle-square inequality双向给
+
+```text
+V_all <= 2V_<=C+2V_>C,
+V_<=C <= 2V_all+2V_>C,
+```
+
+而 `B_all=B_<=C+B_>C` 对 `E` 给同样结论。结合第 50.3 节，目标尺度上
+
+```text
+FULL_V_Q3_OVER_J_GATE <=> SMALL_CONTENT_V_Q3_OVER_J_GATE,
+FULL_E_Q3_GATE        <=> SMALL_CONTENT_E_Q3_GATE,
+```
+
+其中只断言 up to constants/soft losses的 theorem-gate equivalence，不断言两
+energies相等。
+
+展开 `V_(L,<=C)` 的两个 input copies `alpha_1,alpha_2`。TPC-34 已证明
+
+```text
+V_(L,<=C,Delta)+V_(R,<=C,Delta)
+  << X^epsilon Q^2J,
+
+(Q^3/J)/(Q^2J)=Q/J^2=X^(1/400+o(1)).
+```
+
+对 off-diagonal再限制
+
+```text
+0<|m_(alpha_1)-m_(alpha_2)|<=H_cp.
+```
+
+固定一份 input row时另一份 row的 degree为 `O(1+H_cp)`。Schur与 physical
+row `ell^2` bound给 weighted input-pair mass
+`O(X^epsilon Q(1+H_cp))`；再乘 `O(Q)` opposite rows与 `O(J)` orbit support，
+actual masks/content indicators只删项，故
+
+```text
+|V_(L,<=C,near)(H_cp)|+|V_(R,<=C,near)(H_cp)|
+  << X^epsilon Q^2J(1+H_cp).
+```
+
+因此取
+
+```text
+H_cp <= floor(Q/J^2)=X^(1/400+o(1))
+```
+
+便闭合于 `X^epsilon Q^3/J`。这里比较的是两份 Gram input copies；actual mask
+原有的 `|m_alpha-m_gamma|>QX^(-kappa_0)` 比较 input row与 opposite row，两个
+difference绝不可混同。该 near-band lemma虽与 TPC-35/36 的 CRT allowance出现
+同一数值 `Q/J^2`，但索引与结论不同，是新的窄 `L1` closure，不是新 method paper。
+
+剩余最窄 gate可严格限制为
+
+```text
+c_(alpha_i,gamma)(j)<=C,  i=1,2,
+|m_(alpha_1)-m_(alpha_2)|>Q/J^2,
+
+|V_(L,<=C,ne,far)|+|V_(R,<=C,ne,far)|
+  << X^epsilon Q^3/J.
+```
+
+公共物理 `j>0` 时
+
+```text
+N_(alpha_1)(j)=N_(alpha_2)(j)
+  => (m_(alpha_1)-m_(alpha_2))j=0
+  => alpha_1=alpha_2,
+```
+
+所以 target-collision 的 literal off-diagonal严格为空。TPC-37 已有 auxiliary
+`q`-singular-face bound在 `q asymp J` 达到 `Q^3/J`。不能用 energy monotonicity
+直接删除 indicator；但重跑 TPC-37 同一个 absolute degree/Cauchy proof时，额外
+small-content indicators只在 proof summands中删项，故同界继续成立，不计为本节
+新结果。移除这些 layers后，`c_1=c_2=1`、`q_i` regular、distinct terminal的
+far-copy formal eligible cross layer未被现有 identities排除；其 current unsigned
+envelope/ceiling为 `X^epsilon Q^3J`，但 literal active nonzero support与 coherent
+mass均未证明。
+
+### 50.5 fixed double-content CRT incidence及 aggregate边界
+
+固定两个 exact contents
+
+```text
+c_i = gcd(N_(alpha_i)(j),N_gamma(j)),
+g   = gcd(c_1,c_2),
+ell = lcm(c_1,c_2).
+```
+
+exact conditions蕴含
+
+```text
+g | m_(alpha_1)-m_(alpha_2),
+m_gamma lies in one compatible residue class (mod ell),
+j lies in one compatible residue class (mod ell).
+```
+
+故该 fixed layer的 termwise absolute incidence mass满足
+
+```text
+M_H(c_1,c_2)
+  << X^epsilon Q(1+H_cp/g)(1+Q/ell)(1+J/ell),
+
+M(c_1,c_2)
+  << X^epsilon Q(1+Q/g)(1+Q/ell)(1+J/ell).
+```
+
+这里只用了 exact gcd条件的 necessary congruences；额外 exactness只会删项，且
+`g ell=c_1c_2`。每个 physical tuple属于唯一 exact pair，所以没有 hidden
+multiplicity；但 fixed-pair saving不等于 aggregate saving。尤其
+该 upper bound在 `(c_1,c_2)=(1,1)` 退化为 near-band Schur bound，无 band时
+退化为 `Q^3J` unsigned ceiling；这不是 actual饱和或下界。对全部 pairs作
+triangle reassembly不能保留单层的 gcd/lcm gain。
+
+还必须区分：exact physical content `c_i=1` 是 coprime event；content-projector
+inversion的 principal key `t_i=1` 是 unrestricted full-shell summand。后者的
+nonprincipal terms重组为 large-content subtraction，二者不能互换。因此本节只登记
+
+```text
+FIXED_DOUBLE_EXACT_CONTENT_CRT_INCIDENCE = PRESENT_DERIVED_L1
+AGGREGATE_SMALL_CONTENT_FAR_COPY_SAVING = ABSENT
+```
+
+### 50.6 literal theorem target、source refresh与裁决
+
+left side未闭合 coefficient逐字为
+
+```text
+V_(L,C,ne,far)
+ = sum_(gamma,j) sum_(alpha_1!=alpha_2; far)
+     gamma_(alpha_1)^(1) conjugate(gamma_(alpha_2)^(1))
+     A^act_(alpha_1,gamma)(j) conjugate(A^act_(alpha_2,gamma)(j))
+     C_(m_(alpha_1))(j) conjugate(C_(m_(alpha_2))(j))
+     product_(i=1)^2 1_(gcd(N_(alpha_i)(j),N_gamma(j))<=C),
+```
+
+right side对称。所需 bound为 `X^epsilon Q^3/J`；absolute orbit-sliced scale
+`Q^3J`，故必须支付完整 `J^2` collective saving。terminal--terminal展开含四个
+Möbius factors；完整 `C_m` 还含 terminal/proper与 proper/proper layers，naked
+terminal theorem不能控制原 operator。
+
+2026-08-04 current-primary theorem-body refresh审查了 Tao
+`1509.05422v4`、Matomäki--Radziwiłł--Tao `1503.05121v3`、Menon
+`2607.15574v1`、Tao--Teräväinen `2512.01739v2` 与 `2107.02158v4`、
+Jaskari--Sachpazis `2409.10663v3`、Leng `2212.09635v3`、
+Klurman--Mangerel `1708.03176v1`、Lichtman--Teräväinen `2111.08912v3`、
+Higher Uniformity II `2411.05770v2`、Kim `2603.23250v2`、
+Klurman--Mangerel--Teräväinen `2304.05344v2`、Grimmelt--Teräväinen
+`2607.28091v1` 与 Ramaré--Zúñiga Alterman `2603.25961v3`。
+
+全部 first fatal发生在 literal theorem domain/range：fixed或 polylog coefficients、
+average independent shifts、logarithmic average、metric/subsequence、global
+additive cube/nilsequence、conditional hypothesis、错误 arity/operator，或不接受
+two-copy content masks与 full ultra increments。即使反事实移除 object fatal，现有
+logarithmic savings也不能支付 `J^2`。这是有限 source lock，不是文献全局
+nonexistence claim；sharper cutoff只收紧 TPC-34/第 6 节既有 source cells，没有
+产生新 source/version cell。
+
+本轮精确状态为
+
+```text
+SAME_SELECTED_HIGH_BETA_PACKET_SOURCE_LOCK = PASS
+LARGE_CONTENT_ORBIT_V_Q3_OVER_J = PRESENT_DERIVED_L1
+LARGE_CONTENT_COLUMN_E_Q3 = PRESENT_DERIVED_L1
+FULL_SMALL_V_E_GATE_EQUIVALENCE = PRESENT_DERIVED_L1
+INPUT_COPY_NEAR_BAND_H_LE_Q_OVER_J2 = PRESENT_DERIVED_L1_CLOSED
+FIXED_DOUBLE_EXACT_CONTENT_CRT_INCIDENCE = PRESENT_DERIVED_L1
+
+SMALL_CONTENT_FAR_COPY_OFF_V_Q3_OVER_J_THEOREM = ABSENT
+TARGET_COLLISION_OFF_DIAGONAL = EMPTY
+Q_SINGULAR_FACE = PRESENT_L1_INHERITED_TPC37
+FULLY_COPRIME_FAR_COPY_Q_REGULAR_DISTINCT_TERMINAL_LAYER = OPEN
+DIRECT_SMALL_CONTENT_ZERO_BOUND = ABSENT
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+CHI_LE_1_OVER_400 = UNPAID
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC207_TRIGGER = false
+TPC207_CREATED = false
+```
+
+精确裁决为
+
+```text
+TPC32_34_H0_2_20260804_LARGE_CONTENT_ORBIT_ENERGY_AND_INPUT_COPY_Q_OVER_J2_
+NEAR_BAND_CLOSED_DERIVED_L1_SMALL_FULL_V_E_EQUIVALENT_FULLY_COPRIME_FAR_COPY_
+REGULAR_DISTINCT_TERMINAL_FOUR_MOBIUS_Q3_OVER_J_THEOREM_ABSENT_NO_TRIGGER_
+STOP_SCOPED_PARENTS_OPEN
+```
+
+本节不新造 arithmetic method cell或 source cell；它只把两个派生 closures与一个
+fixed-layer incidence登记进既有 selected-packet/TPC-34 cell。第 6 节全部旧
+method cells保持 `STOP_SCOPED`，尤其 TPC193 V1、common-`k` V1、
+tail-failure/A/B V1与 full-`r_Rr_R` ultra-complement V1。两个 O161 pointwise
+parents、TPC32 direct/fixed-`D0`/frame、TPC33 collective、pair-native reroute、
+独立 pre-TT-star H1与 global architecture全部保持 `OPEN`。
+
+合法 reopen条件为：直接对上式 literal small-content far-copy coefficient证明
+`Q^3/J`；或直接证明同一 `Z_C<<X^(o(1))Q^2`；或给出保留 full ultra layers、
+actual masks/content与全部 ranges/normalization的 coefficientwise等价 collective
+theorem。任何 local positive result仍不自动创建 TPC-207；all-`D` uniformity、
+exactly-once physical cover、original/global normalization、tail-failure、A/B
+selection、actual packet attachment、production occurrence、完整 provenance与
+strict physical-loss ledger仍须分别通过。
+
+### 50.7 publication boundary
+
+本轮没有创建 TPC-207、论文、paper directory、PDF或构建日志；正式写入只允许
+`TPC_HANDOFF.md`。全部 protected untracked files必须原样保留且不得纳入提交。
+
+正式写入后的只读状态为
+
+```text
+POST_WRITE_BOOTSTRAP_REGRESSION = 22/22 PASS
+POST_WRITE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_WRITE_GIT_DIFF_CHECK = PASS; TPC_HANDOFF.md ONLY
+POST_WRITE_EOL = i/lf w/lf
+POST_WRITE_MARKDOWN_FENCES = 1468 MARKERS BALANCED
+POST_WRITE_NUMBERED_SECTIONS = 50 UNIQUE; DUPLICATES=0
+POST_WRITE_PROTECTED_UNTRACKED = 127 FILES
+POST_WRITE_PROTECTED_MANIFEST
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+PRE_COMMIT_FINAL_FETCH_ORIGIN_MAIN
+  = fe55988891837a2b2e48f1b6bec4ac98c6ff6c60
+PRE_COMMIT_FINAL_FETCH_DELTA = 0
+PRE_COMMIT_FINAL_FETCH_TPC_EDGE = NONE
+SUBAGENT_FILES_CHANGED = 0
+LEGACY_TPC27_TO_32_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+EXPECTED_TRACKED_RELEASE_FILE = TPC_HANDOFF.md_ONLY
+```
 
 ## 49. 2026-08-04 content-mask signed allocation、safe BV envelope 与 collective-return gate
 
