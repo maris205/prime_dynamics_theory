@@ -1,0 +1,41 @@
+"""RH-358 terminal-lag geometric-localization diagnostics."""
+
+from .core import (
+    C_M_DIAGNOSTIC,
+    FIXTURE_LAMBDA,
+    LAMBDA_LOWER,
+    LAMBDA_UPPER,
+    PHYSICAL_LAMBDA_DIAGNOSTIC,
+    R,
+    R_H,
+    distribution_metrics,
+    exact_constants,
+    exact_full_budget,
+    exact_partial_budget,
+    exact_profile_certificate,
+    exact_profile_proxy,
+    exact_terminal_distribution,
+    result_status,
+    synthetic_profile_diagnostic,
+    uniform_profile_error_envelope,
+)
+
+__all__ = [
+    "C_M_DIAGNOSTIC",
+    "FIXTURE_LAMBDA",
+    "LAMBDA_LOWER",
+    "LAMBDA_UPPER",
+    "PHYSICAL_LAMBDA_DIAGNOSTIC",
+    "R",
+    "R_H",
+    "distribution_metrics",
+    "exact_constants",
+    "exact_full_budget",
+    "exact_partial_budget",
+    "exact_profile_certificate",
+    "exact_profile_proxy",
+    "exact_terminal_distribution",
+    "result_status",
+    "synthetic_profile_diagnostic",
+    "uniform_profile_error_envelope",
+]
