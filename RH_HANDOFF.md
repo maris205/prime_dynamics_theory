@@ -218,6 +218,10 @@ majorant negatives, explicitly not physical `D` behavior. No source pays the
 common-clock all-order defect budget, and no physical obstruction or
 independent admissible theorem edge was found. Retain the route coordinate
 `actual_same_clock_unnormalized_head_transport_open` and do not create RH-362.
+An independent adversarial proof audit reached the same `NOT_TESTABLE`
+verdict: normalized-to-unnormalized promotion, selected-window-to-full-prefix
+promotion, and absolute-majorant-to-signed-obstruction promotion all fail
+without a new actual theorem.
 
 ## 7. Reproduction and publication audit
 
