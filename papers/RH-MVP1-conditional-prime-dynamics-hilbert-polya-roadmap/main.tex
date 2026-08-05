@@ -4,7 +4,7 @@
 \usepackage{lmodern}
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
-\usepackage{booktabs,array,enumitem,graphicx,xcolor}
+\usepackage{booktabs,array,enumitem,graphicx,longtable,xcolor}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
 
@@ -22,8 +22,9 @@
 \newcommand{\spec}{\operatorname{spec}}
 \newcommand{\Tr}{\operatorname{Tr}}
 
-\title{\textbf{A Minimum Viable Hilbert--Polya Roadmap for Prime Dynamics}\\
-\large A 160-Layer Audit, Five Bold Interfaces, and a Conditional Spectral-Divisor Closure Theorem}
+\title{\textbf{Prime Dynamics Program, Volume I}\\
+\Large Foundations and a Conditional Hilbert--Polya Architecture\\
+\large RH-1--RH-160, Five Bold Interfaces, and a Conditional Spectral-Divisor Closure Theorem}
 \author{Liang Wang}
 \date{July 2026}
 
@@ -31,7 +32,8 @@
 \maketitle
 
 \begin{abstract}
-One hundred and sixty RH-numbered papers have developed the prime-dynamics
+This first volume of a four-volume synthesis compresses one hundred and sixty
+RH-numbered papers that developed the prime-dynamics
 program from its original symbolic analogy into a collection of exact
 theorems, validated finite models, conditional all-level compositions, and
 sharp negative results.  The volume of local work now obscures the global
@@ -73,6 +75,35 @@ or proof of the Riemann Hypothesis.
 \noindent\textbf{Keywords:} Hilbert--Polya program; transfer operator;
 regularized determinant; scattering; explicit formula; research roadmap;
 validated numerics.
+
+\section{The four-volume series and the boundary of Volume I}
+
+The numbered corpus remains the atomic source of mathematical claims.  The
+four synthesis volumes reorganize those sources by function; they do not
+concatenate proofs, change theorem status, or create a new numbered result.
+The partition is
+\begin{center}
+\begin{tabular}{clp{8.3cm}}
+\toprule
+volume & source range & role\\
+\midrule
+I & RH-1--RH-160 & symbolic and fixed-noise foundations, finite certification,
+reset architecture, and the conditional interfaces A--E\\
+II & RH-161--RH-241 & packet-to-Riesz assembly, temporal clouds, relative
+determinants, and the moving trace-envelope frontier\\
+III & RH-242--RH-281 & deterministic numerator anchors, selectors, analytic
+tails, and counterloops\\
+IV & RH-282--RH-361 & noisy heads, annular endpoints, first alias, and signed
+completion\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Volume I stops at RH-160.  RH-161 is an independent typed assembly theorem
+and is the first source of Volume II.  Later volumes may sharpen the location
+of the active frontier, but they do not retroactively prove any of the five
+interfaces formulated here.  In particular, the series organization carries
+no Gate A--E promotion.
 
 \section{Purpose: replace 160 local layers by one research contract}
 
@@ -484,7 +515,7 @@ falsification experiments.  They do not promote those gates to theorems.
 
 Each macro gate has a clean negative outcome.
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \small
 \renewcommand{\arraystretch}{1.12}
@@ -553,6 +584,15 @@ needs 160 simultaneous labels.  It has five doors:
 Later papers may carefully prove them, replace one with a genuinely stronger
 construction, or close the route by a no-go.  Until then, the diagram is a
 research contract, not a theorem about zeta zeros.
+
+\appendix
+\section{Atomic source index}
+
+The following machine-generated index lists every canonical numbered source
+in Volume I.  It is a provenance locator, not a claim that all entries have
+the same theorem status.
+
+\input{results/atomic_index.tex}
 
 \bibliographystyle{plainnat}
 \bibliography{references}

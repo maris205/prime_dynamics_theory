@@ -18,6 +18,16 @@ def test_complete_numbered_inventory() -> None:
     assert summary["pdf_directory_count"] == 160
     assert summary["summary_archive_count"] == 131
     assert summary["verification_archive_count"] == 131
+    assert summary["atomic_index_count"] == 160
+
+
+def test_four_volume_series_boundary() -> None:
+    series = data()["series"]
+    assert series["volume"] == 1
+    assert series["source_range"] == [1, 160]
+    assert series["next_volume_starts_at"] == 161
+    assert not series["numbered_endpoint_changed"]
+    assert series["atomic_sources_preserved"]
 
 
 def test_declared_archives_and_milestones() -> None:

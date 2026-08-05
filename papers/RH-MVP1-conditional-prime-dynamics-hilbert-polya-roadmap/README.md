@@ -1,6 +1,9 @@
-# RH-MVP1: Conditional Prime-Dynamics Hilbert--Polya Roadmap
+# Prime Dynamics Program, Volume I (RH-MVP1)
 
-RH-MVP1 compresses RH-1--RH-160 into a deliberately bold but claim-safe
+## Foundations and a conditional Hilbert--Polya architecture
+
+RH-MVP1 is Volume I of the four-volume provenance-preserving synthesis. It
+compresses exactly RH-1--RH-160 into a deliberately bold but claim-safe
 research architecture. It separates the rigorous dynamical foundation from
 five missing macro interfaces:
 
@@ -16,6 +19,22 @@ F (proved foundation)
 The current completion debt is `{A,B,C,D,E}`. Gate `A` is the first missing
 gate and is itself open: RH-160 supplies a conditional reset-support spine,
 but not the typed all-level determinant assembly required by `A`.
+
+## Position in the four-volume series
+
+```text
+Volume I    RH-1--RH-160    foundations and conditional A--E architecture
+Volume II   RH-161--RH-241  Riesz packets, clouds, relative determinants,
+                            and the trace-envelope frontier
+Volume III  RH-242--RH-281  deterministic numerator anchors, analytic tails,
+                            and counterloops
+Volume IV   RH-282--RH-361  noisy heads, annuli, first alias, and signed completion
+```
+
+RH-161 is deliberately not absorbed into this volume. It is the independent
+packet-to-Riesz relative-determinant assembly that opens Volume II. The four
+volumes are surveys and theorem ledgers; the numbered papers remain the
+atomic mathematical sources.
 
 ## Main result and boundary
 

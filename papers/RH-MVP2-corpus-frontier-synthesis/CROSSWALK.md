@@ -13,6 +13,15 @@ retain their own theorem status.
 | Noisy heads, annuli and endpoints | RH-282--RH-321 | RH-291, 301, 311, 321 | Finite actual heads, slow diagonals, analytic criteria and synthetic endpoint laws; physical common-clock aggregate open. |
 | First alias and signed completion | RH-322--RH-361 | RH-331, 341, 351, 361 | Exact typed formulas and scoped information-class negatives; actual same-clock `D_(4k)(R)`, `q/E_off` bridge absent. |
 
+## Four-volume map
+
+| Volume | Source range | Synthesis directory |
+|---|---:|---|
+| I | RH-1--RH-160 | `RH-MVP1-conditional-prime-dynamics-hilbert-polya-roadmap` |
+| II | RH-161--RH-241 | `RH-VOL2-physical-riesz-cloud-trace-envelope-synthesis` |
+| III | RH-242--RH-281 | `RH-VOL3-deterministic-numerator-anchor-counterloop-synthesis` |
+| IV | RH-282--RH-361 | `RH-VOL4-noisy-head-annulus-signed-completion-synthesis` |
+
 ## Review topology
 
 The 29 review anchors are:

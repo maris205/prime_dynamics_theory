@@ -34,6 +34,10 @@ def main() -> None:
         raise RuntimeError("numbered corpus is not consecutive 1..361")
     if set(inventory["legacy_alias_groups"]) != {"302", "303", "304", "306"}:
         raise RuntimeError("legacy alias inventory changed")
+    if [row["source_range"] for row in inventory["series_volumes"]] != [
+        [1, 160], [161, 241], [242, 281], [282, 361]
+    ]:
+        raise RuntimeError("four-volume partition changed")
     if inventory["route_coordinate"] != "actual_same_clock_unnormalized_head_transport_open":
         raise RuntimeError("route coordinate was promoted")
     if any(inventory["gates"].values()) or any(inventory["forbidden_claims"].values()):
@@ -56,13 +60,13 @@ def main() -> None:
         "gates a--e remain false/open",
         "does not construct a hilbert--polya operator",
         "rh-362 is not activated",
+        "one umbrella and four long-form volumes",
     )
     for phrase in required_phrases:
         if phrase not in manuscript:
             raise RuntimeError(f"missing manuscript boundary phrase: {phrase}")
 
-    archived = {}
-    for relative in (
+    required_archive = (
         ".gitignore",
         "Makefile",
         "README.md",
@@ -73,7 +77,10 @@ def main() -> None:
         "experiments/build_inventory.py",
         "experiments/build_archive.py",
         "experiments/verify_archive.py",
+        "experiments/build_four_volume_archive.py",
+        "experiments/verify_four_volume_archive.py",
         "tests/test_synthesis.py",
+        "tests/test_four_volume_archive.py",
         "pyproject.toml",
         "requirements.txt",
         "main.pdf",
@@ -81,10 +88,13 @@ def main() -> None:
         "results/corpus_inventory.json",
         "results/dependency_manifest.json",
         "results/summary.json",
-    ):
-        path = ROOT / relative
-        if path.exists():
-            archived[relative] = sha(path)
+        "results/four_volume_archive_manifest.json",
+        "results/four_volume_archive_verification.json",
+    )
+    missing = [relative for relative in required_archive if not (ROOT / relative).is_file()]
+    if missing:
+        raise RuntimeError(f"missing required archive files: {missing}")
+    archived = {relative: sha(ROOT / relative) for relative in required_archive}
     output = ROOT / "results/archive_verification.json"
     output.write_text(json.dumps({
         "status": "rh_mvp2_corpus_frontier_hashes_and_claim_boundary_verified",

@@ -13,6 +13,8 @@ complete required implication is not yet available.
 | Full MVP completion debt | Audited | Unique architecture-relative bundle `{A,B,C,D,E}` |
 | Hilbert--Polya candidate debt | Audited | `{A,B,C}` before arithmetic identification |
 | RH-1--RH-160 inventory | Verified | Every number appears exactly once with README, `main.tex`, and at least one PDF |
+| Four-volume series position | Verified | This paper is Volume I and stops at RH-160; RH-161 begins Volume II |
+| Provenance preservation | Verified | The synthesis indexes and hashes atomic numbered sources; it does not replace their theorem statements or proofs |
 | Archived publication hashes | Verified | 1,717/1,717 hashes match across 131 upstream verification archives |
 | Rejected shortcuts | Audited | Nine no-go or claim-boundary results retained |
 | Foundation `F` | Proved in stated scopes | Corrected symbolic coordinate, parity geometry, deterministic pole data, fixed-noise intrinsic determinants, continuum bridges, finite certification |

@@ -24,9 +24,7 @@ def main() -> None:
     inventory = json.loads(inventory_path.read_text())
     external = dict(inventory["source_file_hashes"])
 
-    local_paths = [
-        ROOT / relative
-        for relative in (
+    relatives = (
             ".gitignore",
             "Makefile",
             "README.md",
@@ -37,15 +35,22 @@ def main() -> None:
             "experiments/build_inventory.py",
             "experiments/build_archive.py",
             "experiments/verify_archive.py",
+            "experiments/build_four_volume_archive.py",
+            "experiments/verify_four_volume_archive.py",
             "tests/test_synthesis.py",
+            "tests/test_four_volume_archive.py",
             "pyproject.toml",
             "requirements.txt",
             "main.pdf",
             "corpus-frontier-synthesis.pdf",
             "results/corpus_inventory.json",
-        )
-        if (ROOT / relative).exists()
-    ]
+            "results/four_volume_archive_manifest.json",
+            "results/four_volume_archive_verification.json",
+    )
+    local_paths = [ROOT / relative for relative in relatives]
+    missing = [str(path.relative_to(ROOT)) for path in local_paths if not path.is_file()]
+    if missing:
+        raise RuntimeError(f"missing required publication files: {missing}")
     dependency = {
         "status": "rh_mvp2_corpus_sources_and_publication_artifacts_hashed",
         "external_inputs": external,
@@ -58,7 +63,12 @@ def main() -> None:
         "publication_artifacts": {
             str(path.relative_to(ROOT)): sha(path)
             for path in local_paths
-            if path.suffix == ".pdf" or path.name == "corpus_inventory.json"
+            if path.suffix == ".pdf"
+            or path.name in {
+                "corpus_inventory.json",
+                "four_volume_archive_manifest.json",
+                "four_volume_archive_verification.json",
+            }
         },
     }
     dependency_path = ROOT / "results/dependency_manifest.json"

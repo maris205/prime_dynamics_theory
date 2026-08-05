@@ -17,6 +17,12 @@ REVIEW_ANCHORS = (
     221, 231, 241, 251, 261, 271, 281, 291, 301, 311, 321, 331, 341, 351,
     361,
 )
+SERIES_VOLUMES = (
+    (1, 1, 160, "RH-MVP1-conditional-prime-dynamics-hilbert-polya-roadmap"),
+    (2, 161, 241, "RH-VOL2-physical-riesz-cloud-trace-envelope-synthesis"),
+    (3, 242, 281, "RH-VOL3-deterministic-numerator-anchor-counterloop-synthesis"),
+    (4, 282, 361, "RH-VOL4-noisy-head-annulus-signed-completion-synthesis"),
+)
 
 
 def sha(path: Path) -> str:
@@ -62,7 +68,13 @@ def main() -> None:
     aliases: dict[str, list[str]] = {}
     for number in expected:
         candidates = records[number]
-        chosen = max(candidates, key=lambda item: (int(item["nonempty_score"]), int(item["file_count"]), str(item["directory"])))
+        complete = [item for item in candidates if all(item["required"].values())]
+        if len(complete) != 1:
+            names = sorted(str(item["directory"]) for item in complete)
+            raise RuntimeError(
+                f"RH-{number} must have exactly one complete source: {names}"
+            )
+        chosen = complete[0]
         canonical[number] = chosen
         if len(candidates) > 1:
             aliases[str(number)] = [str(item["directory"]) for item in candidates]
@@ -80,7 +92,7 @@ def main() -> None:
         raise RuntimeError("review anchor is missing from the numbered corpus")
 
     def phase(number: int) -> str:
-        if number <= 171:
+        if number <= 160:
             return "foundation_and_stage_A"
         if number <= 241:
             return "physical_clouds_and_trace_envelope"
@@ -90,6 +102,21 @@ def main() -> None:
 
     for number in expected:
         canonical[number]["phase"] = phase(number)
+
+    volume_rows = []
+    covered = []
+    for volume, start, end, directory_name in SERIES_VOLUMES:
+        directory = PAPERS / directory_name
+        if not directory.is_dir():
+            raise RuntimeError(f"series volume directory missing: {directory_name}")
+        volume_rows.append({
+            "volume": volume,
+            "source_range": [start, end],
+            "directory": directory_name,
+        })
+        covered.extend(range(start, end + 1))
+    if covered != expected:
+        raise RuntimeError("four-volume ranges do not cover RH-1--RH-361 exactly")
 
     payload = {
         "status": "rh_mvp2_corpus_frontier_inventory",
@@ -101,6 +128,7 @@ def main() -> None:
         "review_anchor_numbers": review_numbers,
         "review_anchor_count": len(review_numbers),
         "review_anchor_coverage_union_count": 349,
+        "series_volumes": volume_rows,
         "source_file_hash_count": len(source_files),
         "source_file_hashes": source_files,
         "route_coordinate": "actual_same_clock_unnormalized_head_transport_open",

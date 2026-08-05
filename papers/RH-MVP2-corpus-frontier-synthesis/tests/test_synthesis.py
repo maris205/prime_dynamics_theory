@@ -18,6 +18,11 @@ def test_inventory_is_consecutive_and_claim_safe() -> None:
     assert payload["first_missing_leaf"] == "D_(4k)(R)->0"
     assert all(value is False for value in payload["gates"].values())
     assert all(value is False for value in payload["forbidden_claims"].values())
+    assert [row["source_range"] for row in payload["series_volumes"]] == [
+        [1, 160], [161, 241], [242, 281], [282, 361]
+    ]
+    assert payload["canonical"]["160"]["phase"] == "foundation_and_stage_A"
+    assert payload["canonical"]["161"]["phase"] == "physical_clouds_and_trace_envelope"
 
 
 def test_canonical_sources_have_publication_anchors() -> None:

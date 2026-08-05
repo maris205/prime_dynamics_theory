@@ -4,9 +4,11 @@
 |---|---|---|
 | Numbered corpus inventory | VERIFIED | Unique numbers `1..361`; four legacy duplicate directory groups are recorded and not silently merged. |
 | Provenance compression | VERIFIED | The synthesis points to source papers and hashes selected source files; it does not replace them. |
+| Four-volume partition | VERIFIED | Disjoint ranges `1--160`, `161--241`, `242--281`, and `282--361` cover the corpus exactly. |
+| Four-volume outer archive | VERIFIED | The batch manifest seals all four individual verification records and replays fixed membership, dependency hashes, result hashes, semantic PDFs, and claim firewalls. |
 | RH-1--RH-160 architecture | SUMMARISED | The RH-MVP1 roadmap and its five-interface contract are retained as historical architecture, not promoted to proof. |
 | RH-161--RH-241 analytic/trace frontier | SUMMARISED | Physical and determinant advances are separated from the still-open moving noisy all-order envelope. |
-| RH-242--RH-341 deterministic/alias frontier | SUMMARISED | Deterministic numerator anchors and exact typed identities are retained; physical identification and aggregate closure remain open. |
+| RH-242--RH-341 deterministic/noisy-tail/alias frontier | SUMMARISED | Deterministic numerator anchors, actual noisy-head and annular results, and exact typed identities are retained without identifying their data types; aggregate physical closure remains open. |
 | RH-342--RH-361 signed-completion frontier | SOURCE LOCKED | Actual selected/normalised results and deterministic counterloop results have no proved cross-branch bridge. |
 | Exact typed identities | PROVED UPSTREAM | `p=tau-a=q-d`, `d=h-s`, `q=p+d`, `h=s+d` on the common Hardy clock. |
 | Coefficient-fiber nonpromotion | PROVED UPSTREAM | Fixed coefficient arrays do not determine `q` or `h` budgets in the abstract information class; no physical realization is claimed. |

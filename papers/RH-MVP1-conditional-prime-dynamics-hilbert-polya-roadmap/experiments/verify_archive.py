@@ -58,6 +58,16 @@ def main() -> None:
     if counts["current_unconditional_claim_level"] != "foundation":
         raise RuntimeError("unconditional claim level was promoted")
 
+    series = audit["series"]
+    if series != {
+        "volume": 1,
+        "source_range": [1, 160],
+        "next_volume_starts_at": 161,
+        "numbered_endpoint_changed": False,
+        "atomic_sources_preserved": True,
+    }:
+        raise RuntimeError("four-volume series boundary changed")
+
     boundary = audit["theorem_boundary"]
     forbidden = (
         "all_macro_assumptions_proved",
@@ -76,6 +86,7 @@ def main() -> None:
         "five bold interfaces",
         "target-independent prime-power trace formula",
         "stopping rules",
+        "the four-volume series and the boundary of volume i",
         "it does \\emph{not} prove",
     ):
         if phrase not in manuscript:
@@ -90,6 +101,7 @@ def main() -> None:
         "references.bib",
         "pyproject.toml",
         "requirements.txt",
+        "results/atomic_index.tex",
         "main.pdf",
         "conditional-prime-dynamics-hilbert-polya-roadmap.pdf",
         "figures/conditional_mvp_roadmap.pdf",

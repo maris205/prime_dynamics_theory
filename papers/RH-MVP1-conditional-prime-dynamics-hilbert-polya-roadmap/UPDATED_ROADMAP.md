@@ -1,5 +1,14 @@
 # Roadmap after RH-MVP1
 
+## Series handoff
+
+RH-MVP1 is Volume I of the four-volume synthesis and covers exactly
+RH-1--RH-160. Volume II starts with RH-161's typed packet-to-Riesz
+relative-determinant assembly and continues through the RH-241 trace-envelope
+frontier. Volumes III and IV cover RH-242--RH-281 and RH-282--RH-361,
+respectively. This editorial partition does not close a gate, change a theorem
+status, or make a later result a premise of Volume I.
+
 ## Global proof graph
 
 ```text

@@ -1,6 +1,12 @@
 # Roadmap after the corpus synthesis
 
 The corpus is now easier to read without changing its mathematical status.
+The four long-form volumes now provide the publication layer underneath this
+short umbrella. They are expository/provenance releases and do not activate a
+new numbered result. Their individual archives are sealed by one outer
+four-volume manifest whose verifier replays the complete fixed publication
+membership and upstream dependency hashes.
+
 The next work item is not another reparameterisation of the closed
 deterministic terminal-lag sequence.  The synthesis leaves one narrow active
 frontier:

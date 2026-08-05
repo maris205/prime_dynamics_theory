@@ -227,9 +227,35 @@ def main() -> None:
         "current_unconditional_claim_level": classify_claim(active_proved, stage_requirements),
         "mvp_assumption_claim_level": classify_claim(active_mvp_assumed, stage_requirements),
         "current_first_missing_gate": first_missing_gate(active_proved, ["F", "A", "B", "C", "D", "E"]),
+        "atomic_index_count": len(inventory),
     }
+    index_lines = [
+        r"\begin{longtable}{r >{\raggedright\arraybackslash}p{0.78\textwidth}}",
+        r"\toprule",
+        r"source & canonical directory\\",
+        r"\midrule",
+        r"\endfirsthead",
+        r"\toprule",
+        r"source & canonical directory\\",
+        r"\midrule",
+        r"\endhead",
+    ]
+    for record in inventory:
+        directory = record["directory"].replace("-", r"-\allowbreak{}")
+        index_lines.append(
+            f"RH-{record['paper']} & \\texttt{{{directory}}}\\\\"
+        )
+    index_lines.extend((r"\bottomrule", r"\end{longtable}"))
+    (ROOT / "results/atomic_index.tex").write_text("\n".join(index_lines) + "\n")
     payload = {
         "status": "rh_mvp1_conditional_prime_dynamics_hilbert_polya_roadmap",
+        "series": {
+            "volume": 1,
+            "source_range": [1, 160],
+            "next_volume_starts_at": 161,
+            "numbered_endpoint_changed": False,
+            "atomic_sources_preserved": True,
+        },
         "inventory": inventory,
         "milestone_records": milestone_records,
         "gates": gates,

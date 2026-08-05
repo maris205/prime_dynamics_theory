@@ -35,12 +35,32 @@ The coefficient identities are exact, but the synthesis makes no physical
 operator, root, rank, spectral-submultiset, determinant, von Mangoldt trace,
 completed-zeta divisor, or RH claim.  Gates A--E remain false/open.
 
+## Four-volume publication series
+
+The umbrella is accompanied by four provenance-preserving long-form volumes:
+
+```text
+Volume I    RH-1--RH-160    RH-MVP1-conditional-prime-dynamics-hilbert-polya-roadmap
+Volume II   RH-161--RH-241  RH-VOL2-physical-riesz-cloud-trace-envelope-synthesis
+Volume III  RH-242--RH-281  RH-VOL3-deterministic-numerator-anchor-counterloop-synthesis
+Volume IV   RH-282--RH-361  RH-VOL4-noisy-head-annulus-signed-completion-synthesis
+```
+
+The volumes are thematic syntheses, not four new numbered theorem steps. They
+retain the same claim firewall and do not alter the endpoint RH-361.
+After the four individual archives verify, an outer series manifest hashes
+all four verification records and independently replays their fixed members,
+dependency hashes, result hashes, source ranges, semantic PDFs, and Gate
+firewalls.
+
 ## Reproduction
 
 From this directory:
 
 ```bash
 PYTHONDONTWRITEBYTECODE=1 python experiments/build_inventory.py
+PYTHONDONTWRITEBYTECODE=1 python experiments/build_four_volume_archive.py
+PYTHONDONTWRITEBYTECODE=1 python experiments/verify_four_volume_archive.py
 PYTHONDONTWRITEBYTECODE=1 python experiments/build_archive.py
 PYTHONDONTWRITEBYTECODE=1 python experiments/verify_archive.py
 PYTHONDONTWRITEBYTECODE=1 python -m pytest -q -p no:cacheprovider
@@ -51,5 +71,7 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 `CROSSWALK.md` is its human-readable phase map;
 `results/dependency_manifest.json`, `results/summary.json`, and
 `results/archive_verification.json` are the local and corpus provenance
-records.  The original RH papers and all unrelated TPC files/caches are left
-untouched.
+records. `results/four_volume_archive_manifest.json` and
+`results/four_volume_archive_verification.json` are the outer four-volume
+seal and replay record. The original RH papers and all unrelated TPC
+files/caches are left untouched.
