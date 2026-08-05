@@ -1,17 +1,54 @@
 # TPC HANDOFF
 
-更新时间：2026-08-04
+更新时间：2026-08-05
 交接状态：`SEALED_FOR_NEW_SESSION`
 本轮启动基线为
-`fe55988891837a2b2e48f1b6bec4ac98c6ff6c60`，与 `origin/main` 一致；启动
+`c0743f42bf7e6fd6eed7b7b50ab70b7a7abdda32`，与 `origin/main` 一致；启动
 `git pull --rebase origin main` 返回 already up to date。启动时
 `TPC_HANDOFF.md` SHA-256 为
-`fdb24343ac2909a69e613708e77f6b2e2ee7f3f8fe70f750391adc80b4050b40`，
+`ddeba2f0b502c9fef8291e34c05b54402bb3714e9e8145f5791674cd9de7a849`，
 tracked/cached diff 均为空；127 个既有 protected untracked files 的 manifest
 仍为
 `35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f`。
 第 1 节 22 项只读启动回归为 `22/22 PASS`；TPC-27--32 legacy writers 与
 TPC-122 writer 均未执行。
+
+第 51 节继续锁定第 50 节的同一 small-content far-copy 物理对象，并分别审核
+source-averaged Mellin、exceptional-character、many-auxiliary-modulus 与 shifted
+determinant-fiber 四条真实路线。对一个在选择辅助素数 `q` 前已经固定、且与 `q`
+无关的 actual source sequence，primitive multiplicative large sieve 确实给出新的
+派生 `L1`：
+
+```text
+Avg_(q asymp J) 1/(q-1) sum_(chi!=1) |a_q(chi)|^2
+  << X^o (Q/J^2) ||A||_2^2.
+```
+
+但 TPC-37 只给 target spectrum 的 unweighted character mean；与 source mean
+不能相乘。使用合法的 target maximum 会精确多损一个 `q asymp J`，使理想的
+`Q^3/J` 退回 `Q^3`。非主 Jacobi matrix 在 rank-one complement 上是 scaled
+unitary；在 coefficient-blind Jacobi operator-norm 意义下，删除有限个 output
+characters或有限个 input exceptional coordinates都不产生 bulk contraction；这不
+排除 actual coefficient在被删坐标上集中。
+
+对全部 auxiliary triples `M=q_1q_2q_3` 作平均也不修复这一缺口。虽然
+`#M=X^(399/400+o(1))` 且非零 determinant只落入至多一个 triple，total alias
+`ell^1` mass仍为 `X/J^3=Q/J^2`；更关键的是每个 literal equality atom满足
+`F=0`，故在对应的 `M`-regular support `(N,M)=1` 上，ratio phase
+`chi(N+F)conjugate(chi(N))=1` 对全部 characters相同；`M`-singular faces由
+TPC-37 inherited bound另行闭合。full primitive regular face仍以 `1-O(1/J)`
+保留 identity bucket。many-modulus family
+dimension因此不能换成 `J` 或 `J^2` saving；其 formal scalar `ell^2` alias gain要
+传入 physical row sum，本身正是一个尚未证明的 target-coupled Bessel theorem。
+
+BDH/prime-AP variance首先失败于 literal coefficient：unrestricted
+`sum_(u|N)-mu(u)log u=Lambda(N)` 不等于 `T<u<=U0` 的 full ultra increment；
+即使反事实修复该对象，scalar residue variance也不控制同一 `(q,chi)` 上的
+common-`j`、two-copy、content-weighted source--target covariance。现有
+Kloosterman-fraction、dispersion、shifted-convolution、delta-symbol 与 trace-function
+theorem也均不提供 raw `F=0` column / identity-bucket recovery或 full physical
+Hilbert Gram bound。joint-Mellin 与 shifted-fiber仍是两个独立 `OPEN` parents；
+本轮没有 arithmetic advance、`chi<=1/400`、`L2` 或 TPC-207 trigger。
 
 第 50 节沿第 49 节同一 theorem-valid selected packet，把 content cutoff精确放回
 TPC-34 orbit-sliced energy。对
@@ -59,17 +96,19 @@ wrong-object cells继续 `STOP_SCOPED`。
 
 TPC-206 仍为 `13/42`，首缺大写 opened `D`；pair-to-`omega`、linear H1、
 两个 O161 pointwise parents 与 actual-cloud frame edge 均未改变。没有
-`chi<=1/400`、direct small-content saving 或 TPC-207 trigger。除第 49 节明确覆盖的
-content/BV allocation 与 current first-fatal 外，第 33--48 节 source-specific
-wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态继续有效；第 50 节只
-新增上述两个 derived `L1` closure与一个 fixed-layer incidence，不改写任何旧 cell。
+`chi<=1/400`、direct small-content saving 或 TPC-207 trigger。除第 49--51 节明确
+覆盖的 content/BV allocation 与 current first-fatal 外，第 33--48 节
+source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态继续
+有效；第 50 节只新增上述两个 derived `L1` closure与一个 fixed-layer incidence，
+第 51 节只新增 source-averaged marginal `L1` 与 exact identity-bucket obstruction，
+不改写任何旧 cell。
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC32_34_H0_2_20260804_LARGE_CONTENT_ORBIT_ENERGY_AND_INPUT_COPY_Q_OVER_J2_NEAR_BAND_CLOSED_DERIVED_L1_SMALL_FULL_V_E_EQUIVALENT_FULLY_COPRIME_FAR_COPY_REGULAR_DISTINCT_TERMINAL_FOUR_MOBIUS_Q3_OVER_J_THEOREM_ABSENT_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
+`TPC32_34_37_38_H0_2_20260805_SOURCE_AVERAGED_MELLIN_L1_PRESENT_TARGET_WEIGHTED_OVERLAP_EXTRA_J_UNPAID_EXCEPTIONAL_DELETION_NO_BULK_GAIN_MULTI_AUXILIARY_MODULUS_IDENTITY_RATIO_BUCKET_UNSUPPRESSED_RAW_ZERO_COLUMN_BESSEL_THEOREM_ABSENT_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
 下一篇：`null`；下一项不编号审计：`null`（仅在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -80,8 +119,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
 上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29、30、31、32、
-33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48、49、50 节；第 23、
-27、28 节只在第 29--50 节明确引用时展开。第 22 节的
+33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48、49、50、51 节；第 23、
+27、28 节只在第 29--51 节明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
@@ -8926,6 +8965,347 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 51. 2026-08-05 source-averaged Mellin、exceptional characters 与 identity-bucket gate
+
+### 51.1 baseline、同一 packet 与 literal target
+
+本节启动时 `HEAD=origin/main=c0743f42bf7e6fd6eed7b7b50ab70b7a7abdda32`，
+`TPC_HANDOFF.md` SHA-256 为
+`ddeba2f0b502c9fef8291e34c05b54402bb3714e9e8145f5791674cd9de7a849`；
+tracked/cached diff均为空。第 1 节 22 项只读启动回归全部通过。127 个 protected
+untracked files及其 manifest
+`35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f`
+原样保留；TPC-27--32 legacy writers与 TPC-122 writer均未执行。
+
+冻结的 theorem-valid selected packet仍为
+
+```text
+sigma  = 1/10000
+lambda = 99979/210000
+delta  = 7/60
+beta   = 267/400
+h0     = 2
+
+Q  = X^(267/400+o(1))
+J  = C = X^(133/400+o(1))
+T  = X^(193/500+o(1))
+N0 = JQ^2 asymp XQ
+H_cp = Q/J^2 = X^(1/400+o(1)).
+```
+
+本节不更换第 50.6 节的 coefficient。left side仍为
+
+```text
+V_(L,C,ne,far)
+ = sum_(gamma,j) sum_(alpha_1!=alpha_2; far)
+     gamma_(alpha_1)^(1) conjugate(gamma_(alpha_2)^(1))
+     A^act_(alpha_1,gamma)(j) conjugate(A^act_(alpha_2,gamma)(j))
+     C_(m_(alpha_1))(j) conjugate(C_(m_(alpha_2))(j))
+     product_(i=1)^2 1_(gcd(N_(alpha_i)(j),N_gamma(j))<=C),
+```
+
+其中 `far` 明文为
+`|m_(alpha_1)-m_(alpha_2)|>Q/J^2`，right side对称，且
+
+```text
+C_m(j)=sum_(T<u<=U0; u|mj+2) -mu(u)log u.
+```
+
+三条 raw channels、canonical `Delta#`、actual masks/content、outer labels、common
+physical `j`、两份 Gram copies及 terminal/proper interference全部保留。目标仍为
+
+```text
+|V_(L,C,ne,far)|+|V_(R,C,ne,far)| << X^epsilon Q^3/J.
+```
+
+sign-erased scale为 `Q^3J`，所以需要完整 `J^2` collective saving。
+
+### 51.2 source-averaged Mellin：一个真实 marginal L1 与一个未付的 J
+
+取固定 dilate中的 auxiliary prime family `P_X={q:q asymp J}`，并先固定一个在
+选择 `q` 前已经完成的、与 `q` 无关的 actual outer source sequence
+
+```text
+a_(q,Omega)(chi)=sum_(m asymp Q) A_Omega(m) chi(m).
+```
+
+`A_Omega` 保留 literal `mu(d)log ell`、fixed `h0=2`、content source
+congruence、actual static/moving masks及 residue/Mellin phases。TPC-22 primitive
+multiplicative large sieve合法给出
+
+```text
+sum_(q in P_X) sum_(chi!=1) |a_(q,Omega)(chi)|^2
+  << X^o (Q+J^2)||A_Omega||_2^2,
+
+Avg_(q in P_X) 1/(q-1) sum_(chi!=1)|a_(q,Omega)(chi)|^2
+  << X^o (Q/J^2)||A_Omega||_2^2.
+```
+
+这是新的 `PRESENT_DERIVED_L1_SOURCE_AVERAGED_ONLY`。它只控制未加 target
+spectral weight的 common source sequence；不能逐 outer cell选择不同的好 `q`，
+也不控制 full physical energy。
+
+对一个已经合法 product-ready且 punctured的 target cell，TPC-37的 exact block为
+
+```text
+q^2/(q-1)|r_0|^2
+ + 1/(q-1) sum_(chi!=1)|a_q(chi)|^2|C_q(chi)|^2.
+```
+
+TPC-37只给 target unweighted mean；用 `B` 表示 complementary-weight Mellin
+bound，其合法尺度为
+
+```text
+1/(q-1) sum_(chi!=1)|C_q(chi)|^2 <= B^2||g||_2^2,
+max_(chi!=1)|C_q(chi)|^2 <= (q-1)B^2||g||_2^2.
+```
+
+两个同一 `chi` 上的 marginal means不能相乘。source average与 target maximum的
+合法组合相对理想 weighted overlap精确多出 `q-1 asymp J`。在 physical ledger中
+
+```text
+ideal:     (Q/J^2) * J   * Q^2 = Q^3/J,
+available: (Q/J^2) * J^2 * Q^2 = Q^3.
+```
+
+故本路线的 first fatal为
+
+```text
+ACTUAL_TARGET_WEIGHTED_OUTER_SPECTRAL_OVERLAP
+  = NOT_IN_COMMON_SEQUENCE_MULTIPLICATIVE_LARGE_SIEVE_DOMAIN
+MISSING_FACTOR = J
+```
+
+### 51.3 exceptional-character deletion不收缩 Jacobi bulk
+
+TPC-37 nonprincipal Jacobi matrix `K_(chi,psi)=J(psi,conjugate(chi))`满足
+
+```text
+K^*K=KK^*=(q-1)^2 I-q 1 1^*,
+```
+
+在 `1^perp` 上 `K/(q-1)` 是酉算子。因而删去 rank-one direction后留下的是
+无收缩 bulk。更强地，对任意删除集合 `E`，只要 complement至少二维，就可在
+`E^c` 中取 `y perpendicular 1` 并令 `z=(q-1)^(-1)K^*y`；此时 normalized output
+恰为 `y`。所以删除固定个数的 output characters后 coefficient-blind operator norm
+仍为一。
+
+普通 Landau--Siegel/pretentious exception位于 input twist `psi`。单个 input spike
+经 generic Jacobi entries扩散到几乎全部 output `chi`，不是一个可删除的 output
+character。prime modulus上也没有 imprimitive conductor bulk可剥离。以上是严格的
+method obstruction，不是 actual Möbius coefficient的反例；真正缺失的仍是 actual
+source spectrum与 shifted target spectrum在同一 `(q,chi)` 上的 nonconcentration
+theorem。
+
+### 51.4 BDH、many auxiliary triples 与 exact ratio bucket
+
+unrestricted identity
+
+```text
+sum_(u|N)-mu(u)log u=Lambda(N)
+```
+
+不等于 literal `T<u<=U0` coefficient。写成 `Lambda(N)-P_T(N)` 也没有帮助：
+低截断 remainder仍处于原 physical scale，且 terminal/proper cross-cancellation不能
+由 triangle reassembly倒推。即使反事实把 full ultra修复成 `Lambda`，普通 BDH
+仍只控制一个一元 sequence的 centered progression variance，不控制
+
+```text
+Avg_q 1/(q-1) sum_chi |a_q(chi)|^2|C_q(chi)|^2
+```
+
+中的 common-`j` two-copy covariance、content/moving masks或 outer labels。Harper
+`2412.19644v1` 的 general-sequence BDH也明文要求一元 sequence的 progression、
+multiples与 interval结构；它不是该 moving ratio operator。
+
+再令 `P={q:KJ<q<2KJ}`，`M` 遍历其中 unordered triples。则
+
+```text
+#P = J^(1+o(1)),       #M = J^(3+o(1)),
+M = q_1q_2q_3 = J^(3+o(1)) = X^(399/400+o(1)).
+```
+
+对 `A(F)=#M^(-1)sum_M 1_(M|F)`，`J^4>X`给出
+
+```text
+A(0)=1,
+A(F)<=J^(-3+o(1))  (0<|F|<<X),
+sum_(0<|F|<<X) A(F)=X^o X/J^3=X^(1/400+o(1)).
+```
+
+所以 many-triple average不改善 fixed-triple coherent `ell^1` alias count。非零
+triple-alias supports的 disjointness确实给很小的 formal scalar `ell^2` mass；但把
+该 scalar gain传入 physical row sum，正是一个新的 target-coupled Hilbert/Bessel
+theorem，不能由 character orthogonality自动完成。
+
+根本 fatal发生在 exact equality。TPC-38的正确 phase是 ratio
+
+```text
+e_(M,chi)(N,F)=chi(N+F)conjugate(chi(N)).
+```
+
+每个 literal ultra atom都有 `su=N`，即 `F=0`。在对应的 `M`-regular support
+`(N,M)=1` 上，
+
+```text
+e_(M,chi)(N,0)=1
+```
+
+对全部 characters成立。对 common-`j` 的两份 Gram copies，即使 `m_1!=m_2`且
+属于 far band，在 common regular subfamily上两个 phase仍都为一。all-character
+normalized regular family在 identity bucket上恰为一，full primitive regular face为
+`1-O(1/J)`；`#M*phi(M)` family dimension与 normalization精确抵消。固定两个
+equality atoms后，至多 `X^o` 个 `q asymp J` 除其 targets，故在全部 triples平均后
+normalized Gram entry仍为 `1-O(J^(-1+o(1)))`。common regular subframe的 Gram是
+all-ones matrix，加入 singular triples后仍是 unsuppressed near-all-ones matrix，
+不是近似 identity；singular complement沿用 TPC-37 face closure。small-content
+masks只删项，不改变 regular phase。
+
+因此 ordinary large sieve、BDH与 many-modulus averaging都不能在 equality bucket
+提供 `J^(-2)`。这只排除 coefficient-blind proof mechanism，不声称 actual coefficient
+存在下界。
+
+### 51.5 shifted determinant-fiber primary-source lock
+
+TPC-37的 conditional raw-fiber输入为
+
+```text
+||sum_F Z_F[kappa]||_(H_phys)^2
+  << X^o Q^2J sup_N sum_F |kappa_N(F)|^2,
+```
+
+其 formal ledger `Q^2J*(Q/J^2)=Q^3/J` 正确；但 TPC-38证明 completion只控制
+`sum_k Z_(kM)`，不恢复 distinguished raw zero column `Z_0`。all aliases `F=kM`
+仍在 ratio `r=1`，所以 nonprincipal Mellin theorem也不推出 raw alias Gram bound。
+
+current-primary有效 theorem screen包括 DFI bilinear Kloosterman fractions、
+Bettin--Chandee `1502.00769v1`、Drappeau `1504.05549v4`、Blomer--Harcos
+`math/0703246v2`、Heath--Brown delta method与
+Fouvry--Kowalski--Michel--Sawin `2511.09459v3`。这些 sources覆盖 scalar
+separated Kloosterman-fraction forms、fixed nonzero determinant、smooth quintilinear
+dispersion、fixed Hecke shifted convolution、exact delta representation及 nontrivial
+gallant trace kernels；均不同时接受：
+
+```text
+literal Lambda(ell)mu(d) and two -mu(u)log u copies;
+fixed physical h0=2 and common j;
+two small-content projectors and far-copy condition;
+actual outer masks/labels and full terminal/proper C_m;
+F=kM aliases plus raw F=0 recovery;
+Hilbert base Q^2J and final normalization Q^3/J.
+```
+
+Bettin--Chandee的 determinant application要求 separated/fixed nonzero determinant；
+消去 TPC common `j` 后的 shift `2(m_2-m_1)`与 row variables耦合。Drappeau的
+hard variables需 smooth product-scale weight。FKMS theorem要求 oscillatory、
+geometrically nontrivial bounded-complexity trace kernel；TPC identity bucket的 kernel
+为常数一。Heath--Brown delta symbol可以精确检测 `F=0`，但只是 identity，不提供
+缺失的 `J^2` cancellation。任何跨 source拼接 coefficient domain与 saving exponent的
+做法均不合法。
+
+Dong--Robles--Zeindler `2601.00292v1` 的 claimed improvement不能作为 theorem
+input：current `v2` 已撤回，并明文说明遗漏一个 `L^2` factor，原 improved bound不再
+成立。本节将其排除，不把 `v1` 的 saving写入任何 physical ledger。
+
+joint-Mellin 与 shifted-fiber在 first fatal处相互独立。前者缺 actual same-character
+weighted overlap；后者缺 `r=1` 内 ordinary Hilbert Gram / zero-column recovery。
+任一局部 positive theorem都不能自动替另一 parent结算 principal、corrections、
+aliases、full reassembly或 global normalization。
+
+### 51.6 verdict 与唯一合法 reopen theorem interfaces
+
+本轮精确状态为
+
+```text
+SAME_SELECTED_HIGH_BETA_PACKET_SOURCE_LOCK = PASS
+SOURCE_Q_AVERAGED_MARGINAL_LARGE_SIEVE = PRESENT_DERIVED_L1_ONLY
+ACTUAL_SOURCE_TARGET_WEIGHTED_MELLIN_OVERLAP = ABSENT
+WEIGHTED_MELLIN_CURRENT_EXTRA_LOSS = J
+FINITE_EXCEPTIONAL_OUTPUT_DELETION_BULK_GAIN = NONE
+BDH_LITERAL_ULTRA_ATTACHMENT = FAIL
+MANY_AUXILIARY_TRIPLES_IDENTITY_BUCKET_GAIN = NONE
+RAW_F0_ZERO_COLUMN_BESSEL_THEOREM = ABSENT
+EXISTING_SHIFTED_FIBER_SPECTRAL_THEOREM = ABSENT_IN_SCREENED_FAMILIES
+
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+CHI_LE_1_OVER_400 = UNPAID
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC207_TRIGGER = false
+TPC207_CREATED = false
+```
+
+精确裁决为
+
+```text
+TPC32_34_37_38_H0_2_20260805_SOURCE_AVERAGED_MELLIN_L1_PRESENT_TARGET_WEIGHTED_
+OVERLAP_EXTRA_J_UNPAID_EXCEPTIONAL_DELETION_NO_BULK_GAIN_MULTI_AUXILIARY_MODULUS_
+IDENTITY_RATIO_BUCKET_UNSUPPRESSED_RAW_ZERO_COLUMN_BESSEL_THEOREM_ABSENT_NO_TRIGGER_
+STOP_SCOPED_PARENTS_OPEN
+```
+
+合法 reopen必须直接满足下列二者之一。
+
+1. actual-coefficient joint Mellin theorem：在同一 `(q,chi)` 上控制
+
+   ```text
+   Avg_(q asymp J) 1/(q-1) sum_(chi!=1)
+     |a_q^act(chi)|^2 |C_(q,full)^act(chi)|^2
+     << X^o Q^3/J,
+   ```
+
+   并在同一 theorem中保留 full ultra、content、actual masks/outer labels、common
+   `j`、two-copy order、both polarizations与 uniform packet constants；principal
+   `r_0`、punctured corrections和 singular faces仍须分别闭合。
+
+2. raw alias/zero-column theorem：直接证明 literal small-content far-copy
+   `||Z_0^act||^2<<X^oQ^3/J`，或更强地对任意 alias vector证明
+
+   ```text
+   ||sum_(|k|<=Q/J^2) a_k Z_k^act||_(H_phys)^2
+     << X^o Q^2J sum_k |a_k|^2,
+   ```
+
+   其中每个 `Z_k` 保留 actual coefficient、masks、common `j`、content cutoff、
+   full terminal/proper layers及 equation `su=N_alpha(j)+kM`。
+
+除此之外，最直接的 reopen仍是第 50.6 节 literal far-copy `Q^3/J` theorem。
+ordinary BDH、大筛、finite exceptional deletion、nonidentity trace cancellation、
+terminal-only theorem或 scalar alias `ell^2` identity均不是 reopen trigger。
+
+第 6 节全部 method cells继续 `STOP_SCOPED`，尤其 TPC193 V1、common-`k` V1、
+tail-failure/A/B V1与 full-`r_Rr_R` ultra-complement V1。两个 O161 pointwise
+parents、TPC32 direct/fixed-`D0`/frame、TPC33 collective、pair-native reroute、
+独立 pre-TT-star H1与 global architecture全部保持 `OPEN`。
+
+### 51.7 publication boundary
+
+本轮没有创建 TPC-207、论文、paper directory、PDF或构建日志；正式写入只允许
+`TPC_HANDOFF.md`。全部 protected untracked files必须原样保留且不得纳入提交。
+
+正式写入后的只读状态为
+
+```text
+POST_WRITE_BOOTSTRAP_REGRESSION = 22/22 PASS
+POST_WRITE_GIT_DIFF_CHECK = PASS; TPC_HANDOFF.md ONLY
+POST_WRITE_EOL = i/lf w/lf
+POST_WRITE_MARKDOWN_FENCES = 1514 MARKERS BALANCED
+POST_WRITE_NUMBERED_SECTIONS = 51 UNIQUE; DUPLICATES=0
+POST_WRITE_PROTECTED_UNTRACKED = 127 FILES
+POST_WRITE_PROTECTED_MANIFEST
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+PRE_COMMIT_FINAL_FETCH_ORIGIN_MAIN
+  = b7e70dbff6bc4aad8c25a4fbfff849a416e8c806
+PRE_COMMIT_FINAL_FETCH_DELTA = 2 REMOTE NON_TPC COMMITS
+PRE_COMMIT_FINAL_FETCH_TPC_HANDOFF_OVERLAP = NONE
+SUBAGENT_FILES_CHANGED = 0
+RH_SCOPE_USED = NO
+LEGACY_TPC27_TO_32_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+EXPECTED_TRACKED_RELEASE_FILE = TPC_HANDOFF.md_ONLY
+```
 
 ## 50. 2026-08-04 orbit-energy content split、input-copy near band 与 far-copy off-diagonal gate
 
