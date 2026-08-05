@@ -299,6 +299,69 @@ RH-82/RH-83 effective-rank object is not identified with the RH-284
 modulus-complete spectral head. This exhausts the repository-backed candidate
 branches without producing an RH-362 `GO`.
 
+### 6.1 Post-synthesis consolidation and external-route audit
+
+For route selection, retain RH-MVP2 as the single corpus umbrella. It is the
+short provenance and frontier map; it must not replace or silently concatenate
+the 361 atomic sources. If a publication-scale expansion becomes useful, use
+RH-MVP1 as Volume I and the three thematic ranges in section 1.1 as Volumes
+II--IV. Such volumes are deferred while the purpose is to find a new theorem
+edge: writing them now would improve exposition but would not change the
+mathematical frontier or activate RH-362.
+
+A parallel post-synthesis theorem scan at
+`HEAD=273c07b0ca58be600f18d41c7198570665b97549` returned `GO=0`:
+
+- The operator route found no source-locked injection
+  `J_sigma: W_k -> A_sigma`, no bound for
+  `E_sigma=A_sigma J_sigma-J_sigma W_k`, and no common moving contour with
+  controlled resolvents. Kato/Keller--Liverani stability concerns fixed
+  isolated spectral clusters; trace-ideal continuity first requires a
+  same-space Schatten defect; and Grushin/Feshbach theory first requires the
+  enlarged problem to be constructed. None supplies the rank-growing physical
+  bridge. The narrow executable diagnostic is to define `J_sigma` on one
+  frozen first-alias clock and outward-certify `E_sigma` and both contour
+  resolvent suprema. A finite pass would be feasibility evidence only.
+- The complex-analytic route found that strict outer-circle Hardy control,
+  Bergman compactness, Montel/Vitali, regularized Fredholm determinants, and
+  Tauberian remainder theorems all require a uniform actual norm, fixed-order
+  actual complement transport, positivity/monotonicity, or an explicit
+  same-clock remainder that the corpus does not provide. RH-300 already gives
+  the sharp inactive outer-circle criterion and an endpoint counterexample;
+  RH-276 prevents raw Hilbert--Schmidt compactness; RH-294--RH-295 prevent a
+  rate-free diagonal from being accelerated to the physical logarithmic
+  clock. These tools restate the missing leaf rather than pay it.
+- A cyclic affine-Gaussian candidate survives only as a research direction.
+  For full-line affine Gaussian rows
+  `Y_j=a_j X_(j-1)+b_j+beta_j Z_j`, their composition has total slope `A`,
+  shift `B`, and variance `V`, and for `A!=1` its diagonal integral is exactly
+  `int_R phi_(sqrt(V))((1-A)x-B) dx=1/abs(1-A)`; for `A=1` it
+  diverges. The associated cyclic width is `sqrt(V)/abs(1-A)`, so raw
+  forward variance growth alone does not obstruct a cyclic diagonal
+  functional. However the full-line kernel has infinite Hilbert--Schmidt norm
+  and this diagonal integral is not by itself an `L^2(R)` operator trace. It
+  is the affine residual-determinant mechanism already underlying RH-9, not
+  an identification with the physical compact trace. After compact
+  truncation and row normalization, the path indicator decreases the
+  full-line integral while the product of inverse row normalizers increases
+  it; the full-line identity supplies no one-sided correction bound. The
+  actual folded kernel on `[0,1]` still requires simultaneous control of all
+  intermediate boundaries, nonlinear curvature, folding, parity/shell terms,
+  and the physical frozen observation map. RH-333 does not refute such a
+  cyclic bridge, while RH-334 explicitly leaves its probability-to-trace
+  identification open.
+
+The three scans therefore return `NOT_TESTABLE` or `STOP_SCOPED`, not a
+physical obstruction and not RH-362. A valid cyclic reopening must first
+define a compact/folded/normalized cyclic reference in the RH-334 trace data
+type and prove an all-leg observation/prefix/suffix upper bound on the physical
+first-alias clock. Its first decisive correction-factor test is
+`C_(sigma,k)=1+o((beta R)^(-2k))` on the complete `2k` signed path sum and
+frozen basepoint window. A nonunit fixed-phase limit would support a rigorous
+scoped negative; a positive result would only open the subsequent all-leg
+curvature/Duhamel and stability-weight obligations. Until then keep
+`actual_same_clock_unnormalized_head_transport_open`.
+
 ## 7. Reproduction and publication audit
 
 Final RH-352--RH-361 audit:
