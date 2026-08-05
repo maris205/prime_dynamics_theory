@@ -1,12 +1,13 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-05
-状态：`BOLD_CHANNEL_V1`
-claim level：`ROUTE_CONSTRUCTION_NOT_TWIN_PRIME_THEOREM`
+状态：`BOLD_CHANNEL_V2 / PARITY_BREAKING_AFFINE_TRANSFERENCE`
+claim level：`METRIC_HAAR_THEOREM_PLUS_ROUTE_CONSTRUCTION_NOT_TWIN_PRIME_THEOREM`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。正式 theorem
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V2 的完整
+公式、proof与独立 checker位于 `research/tpc-big-road/`。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
 
@@ -16,7 +17,7 @@ claim level：`ROUTE_CONSTRUCTION_NOT_TWIN_PRIME_THEOREM`
 200+ local research nodes
   -> 13 major obstruction classes
   -> 2 visible bottlenecks
-  -> 1 primorial-diagonal / pointed-recurrence bold channel.
+  -> 1 parity-breaking affine-pattern transference highway.
 ```
 
 不再因为一个新 schema、一个新 source mismatch或一个有限 certificate自动生成下一篇
@@ -60,18 +61,23 @@ Bessel/Gram/raw-zero-column theorem。source-averaged Mellin已有一个合法�
 
 ### B. 动力学表示
 
-精确 finite-sieve moving targets已有正 mass、总 mass发散及 twin-event identity；
-所缺是指定 arithmetic point的
+精确 finite-sieve moving targets已有正 mass、总 mass发散及 twin-event identity。
+V2 又证明 Haar moving sum的 `O(N)` variance与 a.e. recurrence；但所缺仍是指定
+arithmetic point的
 
 ```text
 CRITICAL_SCALE_POINTED_ODOMETER_SHRINKING_TARGET_RECURRENCE.
 ```
 
-ordinary a.e. dynamical Borel--Cantelli不能代替这个 pointed theorem。
+ordinary a.e. dynamical Borel--Cantelli不能代替这个 pointed theorem。更准确地，
+该 pointed conclusion由 exact event identity与 TPC等价；它是 endpoint，不是一个
+逻辑上更弱的新 bridge。
 
-本文件的工作假说是：A 与 B 可能是同一个“distinguished physical functional看见
-centered complement cancellation”的两种坐标。大胆通道的目标是验证这一统一，而
-不是继续平行制造局部论文。
+V1 把 A 与 B 暂视为同一个 centered-complement问题。V2 的 adversarial audit证明
+这个说法必须分型：primorial incidence与 TPC-32/O161 packet目前是两个 exact
+connected components，中间没有 coefficientwise linear map；Haar centering也不是
+critical physical endpoint的正确 main term。大胆通道现在只允许用一个显式
+Type-I/Type-II/reassembly theorem连接它们，不再靠 diagram命名制造统一。
 
 ## 4. 精确 arithmetic base：已经完成的地基
 
@@ -172,82 +178,110 @@ K_q(d)
 
 当某个 local joint factor为零时，第二式按第一式直接解释。特别地，`p=2` 在
 `d` odd时给 joint zero，在 `d` even时给 ratio `2`；奇素数的 resonances只由
-`p|d(d-2)(d+2)` 产生。这是 `DERIVED_EXACT_COVARIANCE_IDENTITY`，把 H3 从模糊
-“需要 decorrelation”推进为一个明确的 shifted local-product summation problem；
-它没有给 covariance总和或 pointed discrepancy bound。
-
-## 5. 一个大胆主通道：Primorial Diagonal Renormalization Channel
-
-把
+`p|d(d-2)(d+2)` 产生。V2 已进一步把该 product展开成 compatible CRT residue
+classes，证明任意 integer interval `I` 上
 
 ```text
-B_k = Pi_k B_k + W_k = a_k * 1 + W_k,
-Pi_k f = mean_(G_k)(f) * 1,
-W_k=(I-Pi_k)B_k,
-mean_(G_k)(W_k)=0
+|sum_(d in I)(K_q(d)-1)|
+  <= 6 product_(5<=p<=q)(1-2/p)^(-2).
 ```
 
-作为 exact Haar mean/complement decomposition。physical count满足
+Abel summation与 exact identity
+`alpha(q)^2*6*product_(5<=p<=q)(1-2/p)^(-2)=1/6`
+随即给 dyadic Haar moving sum `Var<=X/2+O(1)`。因此
+`H3_METRIC=PROVED_HAAR_MOVING_VARIANCE_O_N`；pointed discrepancy仍完全没有得到。
+
+## 5. 大胆主通道 V2：deletion-bias renormalization 到 PBAPT
+
+Haar decomposition
 
 ```text
-ell_X(B_(k_X))
-  = a_(k_X) * X + ell_X(W_(k_X)) + O(1).
+B_k=a_k*1+W_k,
+mean(W_k)=0
 ```
 
-因为 `a_(k_X) asymp 1/(log X)^2`，下面的一侧 pointed discrepancy theorem足以
-给大量 twin hits：存在 fixed `eta>0`，对所有充分大 `X`，
+仍是 exact，但它不是一个封闭的 contracting complement。若 `p=p_(k+1)>2`，则
 
 ```text
-ell_X(W_(k_X)) >= -(1-eta) a_(k_X) X.
+W_(k+1)
+  = R_p W_k+a_k(R_p1-(1-2/p)1),
 ```
 
-更强而更自然的 working target是
+即 constant mode每 stage都向 complement注入 forcing。对 physical interval令
 
 ```text
-ell_X(W_(k_X)) = o(a_(k_X) X).
+C_k=sum_(X<n<=2X)B_k(n),
+D_(k,p)=sum_(X<n<=2X)B_k(n)1_(p|n(n+2)),
+epsilon_(k,p)=D_(k,p)-(2/p)C_k.
 ```
 
-它可命名为
+则有 exact deletion-bias cocycle
 
 ```text
-POINTED_PRIMORIAL_DIAGONAL_COMPLEMENT_DISCREPANCY.
+C_(k+1)=C_k-D_(k,p),
+E_(k+1)=(1-2/p)E_k-epsilon_(k,p),
+
+C_(k+1)/(a_(k+1)X)
+  = C_k/(a_kX)-epsilon_(k,p)/(a_(k+1)X).                  (5.1)
 ```
 
-这是 `CRITICAL GAP`，不能被写成已证；它本身承载 prime-sensitive endpoint难点。
-但它给出了一个可攻击的 operator object：新素数逐 stage 的 replication--deletion
-cocycle、一个已知 mean mode、一个 centered complement，以及一个明确的 physical
-diagonal functional。解析 far-copy theorem、sequential transfer operators、large
-sieve/dispersion与 symbolic dynamics现在都可以围绕同一 object竞争，而不是各说
-各话。
-
-该 bound一旦成立就给
+此外加法正交性逐式给
 
 ```text
-ell_X(B_(k_X)) >= eta * a_(k_X) * X + O(1) > 0
+epsilon_(k,p)
+  = (1/p)sum_(1<=a<p)(1+e_p(2a))
+      sum_(X<n<=2X)B_k(n)e_p(an).                         (5.2)
 ```
 
-对所有充分大 `X`，从而每个充分大的 dyadic window都有 twin pair。这里
-`DISCREPANCY` 是精确 conclusion；one-sided cone、projective norm或 operator
-contraction只是可能的 proof mechanisms，在真正给出 normed spaces与 uniform
-estimate前不得与 conclusion混名。
+这使 stage renormalization与 additive Fourier/dispersion合法相接；但 (5.2) 还不是
+TPC-32 packet coefficient，actual crosslink仍缺。
 
-依赖图为：
+V1 的 strong target
 
 ```text
-exact sieve replication--deletion cocycle                     [PROVED]
-          |
-          +--> full-cycle mean mode a_k and 2C2 ratio          [PROVED]
-          |
-          +--> physical ell_X is exact twin count              [PROVED]
-          |
-          v
-pointed diagonal complement discrepancy                        [CRITICAL GAP]
-          |
-          +--> moving-target variance / recurrence             [DERIVED TARGET]
-          |
-          v
-infinitely many twin primes                                   [CONDITIONAL]
+ell_X(W_(k_X))=o(a_(k_X)X)
 ```
+
+现标记为 `HEURISTICALLY_MISCENTERED / DEPRIORITIZED`。临界 cutoff下，Mertens与
+Hardy--Littlewood标准主项预测 physical/Haar ratio趋于
+`exp(2gamma)/4=0.793054740...`，不是 `1`。这里 HL只作 normalization stress，
+不作 theorem premise。正确的新未知对象是 pair-sieve/Buchstab profile
+
+```text
+C_k(X)=a_k X Phi_2(log X/log p_k)+Error_k(X),              (5.3)
+```
+
+`Phi_2` 尚未定义成已证函数，更没有 endpoint theorem。
+
+因此 V2 不再把 pointed recurrence叫“中间桥”。主 theorem class改为
+
+```text
+PARITY_BREAKING_AFFINE_PATTERN_TRANSFERENCE_THEOREM (PBAPT),
+```
+
+其 spine为
+
+```text
+general admissible affine-pattern decomposition
+       + uniform Type I
+       + determinant-uniform fixed-atom Type II
+                         |
+                         v
+             target-coupled Gram/Bessel reassembly
+                         |
+                         v
+             exactly-once cover + complete loss ledger
+                         |
+                         v
+                 prime-producing lower bound
+                         |
+                         v
+                      h0=2 / TPC.
+```
+
+PBAPT必须对一类与 prime outcomes无关的 patterns陈述，并统一支付 literal
+coefficients、fixed physical shift、domains、parameter ranges、uniform constants、
+normalization及全部 losses。否则它只是 TPC endpoint的改名。
 
 ## 6. Logistic 的新角色：carrier，不是 prime orbit
 
@@ -285,14 +319,15 @@ Err_k: V_k -> B_(k+1)^dyn.
    ```
 
    不能只给 abstract operator norm而不支付 physical evaluation；
-5. `Q_k` 的 complement须对 actual schedule满足 uniform arbitrary-product memory
-   loss；
+5. `Q_k` 必须实现 forced-triangular cocycle，而非假设 complement invariant；除
+   arbitrary-product memory loss外，还须逐 stage传递 (5.1) 的 deletion forcing；
 6. 结论必须作用于 distinguished arithmetic section，而不只是 ACIP-a.e. fibers。
 
-如果这些成立，RH-3 类型的 sequential covariance可望把 logistic complement
-contraction传回 `ell_X(W_(k_X))`。这是大胆的 `HYPOTHESIS`，不是现有 isomorphism的
-改名。若无法构造保持 physical functional的 `J_k`，就立即停止 logistic carrier，
-回到 direct arithmetic/analytic attack；不再用数值相似性续命。
+如果这些成立，RH-3 类型的 sequential covariance才可能把 logistic estimates传回
+physical innovation/profile或 PBAPT 的 Type-II input；不得再把抽象 complement
+contraction直接宣布为 `ell_X(W)=o(a_kX)`。这是大胆的 `HYPOTHESIS`，不是现有
+isomorphism的改名。若无法构造保持 physical functional与 forcing的 `J_k`，就立即
+停止 logistic carrier，回到 direct arithmetic/analytic attack；不再用数值相似性续命。
 
 还有一个早停 no-go：在 stationary measure-preserving category中，mixing system的
 factor仍然 mixing，故真正 mixing的 logistic system不可能把 nonmixing odometer当作
@@ -310,18 +345,21 @@ rho_*(mu_H,k)=mu_F,k.
 
 否则 Hénon继续是可解释结构，不占主通道预算。
 
-## 7. H0--H4 集中 ledger
+## 7. H0/H_occ/H_dyn/H2/H3_metric/H3_phys/H4 typed ledger
 
 | gate | exact statement | current status | promotion test |
 |---|---|---|---|
 | H0 arithmetic base | typed `R_p` cocycle、Haar pair mass、odometer moving event与 twin identity | `PROVED` | locked to TPC-1/RH-1--3 objects |
-| H1 stage/event carrier | same stage/time/event/seed intertwiner from sieve cocycle to nonautonomous dynamics | `HYPOTHESIS` | coefficientwise operator identity plus physical functional preservation |
+| H_occ (legacy H1) | pre-TT-star source-backed linear occurrence edge family | `OPEN / NOT_TESTABLE` | actual edges、schedule、ranges、normalization；不得由 quadratic pair逆生 |
+| H_dyn | same stage/time/event/seed forced-triangular intertwiner to nonautonomous dynamics | `HYPOTHESIS` | coefficientwise identity、physical functional、forcing与 uniform evaluation |
 | H2 rare mass | full-cycle `a_k asymp log^-2 N` | `PROVED_FULL_CYCLE`; physical evolution attachment `OPEN` | no use of `pi_2(N)` or Hardy--Littlewood lower bound |
-| H3 complement covariance | exact CRT two-time identity plus a summable covariance/one-sided discrepancy theorem at natural scale | identity `DERIVED_EXACT`; summation/actual attachment `OPEN` | uniform constants, growing targets, complete loss ledger |
-| H4 distinguished seed | pointed arithmetic section satisfies recurrence/discrepancy theorem | `CRITICAL GAP` | direct theorem for the named seed; a.e. membership is insufficient |
-| HC closure | H0--H4 imply infinitely many twin primes | `DERIVED_CONDITIONAL` | Chebyshev--Borel--Cantelli or direct one-sided count |
+| H3_metric | Haar moving covariance/variance for exact primorial targets | `PROVED_HAAR_VARIANCE_O_N` | explicit resonance expansion与 independent checker；不产生 arithmetic credit |
+| H3_phys | Type II/far-copy cancellation attached to actual physical carrier | `OPEN` | literal coefficients、growing ranges、target-coupled reassembly、full ledger |
+| H4 distinguished seed | pointed arithmetic section satisfies recurrence/discrepancy theorem | `ENDPOINT_EQUIVALENT_TARGET` | direct theorem for named seed；a.e. membership is insufficient |
+| HC closure | PBAPT physical lower bound或 H4 pointed endpoint推出 infinitely many twin primes | `DERIVED_CONDITIONAL` | complete arithmetic carrier、cover、normalization与 loss ledger |
 
-Theorem-state progress只按这张表记录。新增 source或 certificate若不改变 H1--H4，
+Theorem-state progress只按这张表记录。新增 source或 certificate若不改变
+`H_occ/H_dyn/H3_phys/H4`，
 只进入 handoff log，不编号。
 
 ## 8. Circularity kill tests
@@ -341,80 +379,84 @@ Theorem-state progress只按这张表记录。新增 source或 certificate若不
    不能改变 base hit sequence。
 7. `NO_WEAKER_NORMALIZATION`：logarithmic、averaged或 renormalized model result必须
    显式支付回 natural physical count的全部 losses。
+8. `NO_HAAR_ENDPOINT_CENTERING`：full-cycle Haar mean不得默认成为 critical physical
+   main；必须给 pair-sieve/Buchstab profile或独立 endpoint theorem。
+9. `NO_QUADRATIC_INVERSE`：post-TT-star pair/Gram数据不得逆生 pre-TT-star signs或
+   linear occurrence carrier。
 
 任何一项失败就标记该 construction `STOP_SCOPED`；不再衍生一串微型修补论文。
 
-## 9. 两种 proof engine，只服务同一主通道
+## 9. 两种 proof engine，只服务同一 endpoint
 
-TPC并非只剩一张彩票。当前仍有四个 `OPEN` interfaces，但它们不再各自扩张为一条
-编号 paper chain，而按下面的合流图服务同一主通道：
+Review3 的四路汇流现在按 typed graph解释。实线只有各 component内部的 exact arrows；
+packet/O161到 primorial/physical carrier的箭头仍是虚线：
 
 ```text
-pair-native / linear H1 carrier
+pre-TT-star actual linear carrier                        [H_occ OPEN]
           |
           v
-literal fixed-atom O161 cancellation
+determinant-uniform fixed-atom Type II                  [OPEN]
           |
           v
-small-content far-copy / covariance theorem
+small-content far-copy / target-coupled reassembly     [OPEN]
           |
           v
-pointed moving-target recurrence
+prime-producing lower bound                            [OPEN]
           |
           v
-TPC
+h0=2 endpoint / TPC
+
+exact CRT resonance -> Haar Var=O(N) -> a.e. hits       [PROVED METRIC]
+                                      -X-> seed 0       [NO FREE ARROW]
 ```
 
-其中任一箭头也可能被一个更强的 direct theorem跳过。四个活接口的精确角色是：
+五个活接口的精确角色是：
 
 | live interface | role | current first missing |
 |---|---|---|
 | analytic far-copy | 产生 target-coupled collective cancellation/covariance | `Q^3/J` saving / raw zero-column Bessel |
-| nonautonomous pointed dynamics | 把 mass与 covariance升级成 infinitely many physical hits | distinguished arithmetic seed recurrence |
+| nonautonomous dynamics | 若能保持 forcing与 physical evaluation，提供 Type-II/physical transfer机制 | target-independent forced-triangular intertwiner |
 | two O161 fixed-atom parents | 提供 determinant-two literal local arithmetic cancellation | growing natural prescribed-atom fixed-power theorem |
-| pair-native / H1 | 保证估计作用在同一 actual physical carrier | opened `D`、pair-to-`omega`、linear occurrence与 normalization |
+| H_occ (legacy H1) | pre-TT-star source-backed linear occurrence carrier | actual edges、schedule、ranges与 normalization |
+| pair-native | H_occ附着后的 post-TT-star quadratic analytic shadow | actual pair、opened `D`、pair-to-`omega`与 normalized return；无逆箭头到 H_occ |
 
-这四项保持 route portfolio意义上的 `OPEN`；主控资源优先给能改变 H1--H4或把上述
+这五项保持 route portfolio意义上的 `OPEN`；主控资源优先给能改变
+`H_occ/H_dyn/H3_phys/H4`或把上述
 合流图缩短的 theorem。只补接口字段但不改变主 ledger，仍不编号。
 
 ### Engine A: direct arithmetic/analytic
 
-把 TPC-32 small-content far-copy target重写为对 `W_k` 或其 exact coefficientwise
-image的 physical Gram/Bessel bound。成功标准是直接支付 `o(a_(k_X)X)` 或上述 one-sided
-margin；普通 marginal large sieve不算成功。
+先构造 locally matched prime-producing comparison，再对 actual affine packets证明
+uniform Type I、multiplicative Type II与 target-coupled Gram/Bessel reassembly。
+TPC-32 small-content far-copy只有在 coefficientwise physical return完整支付后才给
+credit；普通 marginal large sieve不算成功。
 
 ### Engine B: nonautonomous dynamical carrier
 
-构造 `J_k,Q_k,Err_k`，先在 model schedule上证明 moving target covariance，再验证
-actual sieve-driven schedule与 distinguished section。成功标准是把 operator
-contraction无损传回 `ell_X(W_(k_X))`；只证明 typical logistic orbit有正 `LRL` mass
-不算成功。
+构造 `J_k,Q_k,Err_k`，显式处理 deletion forcing，先在一般 affine pattern class上
+产生可送入 Engine A 的 Type-II或 physical-evaluation estimate。Haar variance已经
+独立闭合，重复证明 typical recurrence不算成功；只证明 typical logistic orbit有正
+`LRL` mass也不算成功。
 
-两个 engines可以并行，但不得生成两个互不相干的 paper chains。它们都必须在 H3
-或 H4 上产生状态变化。
+两个 engines可以并行，但不得生成两个互不相干的 paper chains。它们必须在
+`H_occ/H_dyn/H3_phys`上产生状态变化；H4只是最终 arithmetic endpoint。
 
-## 10. 下一轮只做四个大动作
+## 10. 下一轮只做三个大动作
 
-1. **Exact operator/covariance build**：在一个未编号 working artifact中正式定义
-   `R_p`、mean projector、centered complement、copy labels与 `ell_X`；证明
-   full-cycle `p-2` law和 physical twin identity，把上节 exact CRT covariance
-   product展开成 character/Ramanujan resonance formula并建立独立 checker。这里
-   不重复 TPC-1，而是形成同一 operator API。
-2. **Stress experiment**：对 actual first many prime stages测量
-   `ell_X(W_(k_X))/(a_(k_X)X)`、copy-deletion discrepancy、complement singular values，加入
-   random-translation、wrong-shift与scrambled-copy controls。结果只用于判断
-   contraction ansatz是否值得证明，不作 theorem claim。
-3. **Master theorem attack**：优先寻找 one-sided cone/projective contraction、
-   martingale approximation或 target-coupled Bessel theorem；所有文献必须 literal
-   接受 growing diagonal functional。
-4. **Carrier kill-or-build**：给 logistic intertwiner一个有限期限。若不能同时保持
-   event与 physical functional，就记录一个 broad STOP并退出；若能，则集中证明
-   actual paired cocycle memory loss与 pointed section theorem。
+1. **FM/Buchstab compiler**：构造 locally matched comparison并把 actual affine
+   decomposition逐式对齐 Type I/II；直接 survivor与 shifted-prime在 `b=1` 时均已于
+   multiplier `m=2` fail closed，不再重复。
+2. **General fixed-atom Type-II attack**：对与 prime outcomes无关的 determinant-uniform
+   affine class证明或否证 natural-scale saving；同一 theorem必须给完整 ranges与
+   uniform constants。
+3. **Target-coupled reassembly/crosslink**：只接受逐 coefficient operator
+   `Sigma_k J_X L_X c_X=nu_X W_k+R_X` 及 paid physical norm return；若 affine cofactor
+   alphabet、linear signs或 normalization无法保留，发布一个 broad crosslink no-go。
 
 下一轮结束时只允许三种高层结果：
 
 ```text
-CHANNEL_ADVANCE: one of H1--H4 genuinely improved;
+CHANNEL_ADVANCE: H_occ, H_dyn or H3_phys genuinely improved;
 CHANNEL_REDESIGN: stress/circularity test found a fatal and the spine changed;
 CHANNEL_STOP: both engines fail a named master criterion.
 ```
@@ -426,8 +468,9 @@ CHANNEL_STOP: both engines fail a named master criterion.
 如果主通道存活，TPC-1--206 的最终外部形态应压缩为：
 
 1. 一篇 obstruction/type-system synthesis，解释为何常见伪桥失败；
-2. 一篇 primorial-diagonal bold-channel paper，明确 H0--H4与 master theorem；
-3. 只为真正关闭 H1--H4 的少数技术论文；
+2. 一篇 parity-breaking affine-transference bold-channel paper，明确 typed gates与
+   PBAPT master theorem；
+3. 只为真正关闭 `H_occ/H_dyn/H3_phys/H4` 的少数技术论文；
 4. 一个可复现 repository，保留 200+ research nodes作为审计证据库。
 
 在形成 theorem-backed channel advance前，不创建 TPC-207，不构建 paper/PDF。

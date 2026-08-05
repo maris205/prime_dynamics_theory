@@ -2,7 +2,67 @@
 
 更新时间：2026-08-05
 交接状态：`SEALED_FOR_NEW_SESSION`
-本轮启动基线为
+
+第 53 节本轮启动基线为
+`5e277223c025921748681f407861c8555bc50e31`，与 `origin/main` 一致；启动
+`git pull --rebase origin main` 返回 already up to date。启动时
+`TPC_HANDOFF.md` SHA-256 为
+`9b0cf24ee85a21a591a7fbe8027a9396a114c5f74083dcaf7e968d0617d27a23`，
+`TPC_COMPASS.md` SHA-256 为
+`e871bbdeadb13697e4f02fbf9cd128db32959071343c401a725aff563550f8ef`；
+tracked/cached diff为空。130 个既有 protected untracked files 的 manifest为
+`9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1`。
+第 1 节 22 项只读启动回归为 `22/22 PASS`；TPC-27--32 legacy writers与
+TPC-122 writer均未执行，所有既有 untracked原样保留。
+
+第 53 节参考 `TPC_review3.md` 启动的不是第 52 节又一项微型 source audit，而是
+`BOLD_CHANNEL_V2` 大路重构。主控与三个 read-only agents完成 source lock、typed
+architecture和 adversarial audit，并建立未编号 working artifact
+`research/tpc-big-road/`。本轮发现并修正 V1 的两个关键设计错误：
+
+1. critical physical diagonal不以 full-cycle Haar mean为正确 endpoint中心；标准
+   Hardy--Littlewood/Mertens normalization heuristic给 ratio
+   `exp(2gamma)/4=0.793054740...`，故 `ell_X(W)=o(a_kX)` 标为
+   `HEURISTICALLY_MISCENTERED / DEPRIORITIZED`，不是 theorem target；
+2. `W_(k+1)` 含来自 `R_p1` 的逐 prime forcing，mean/complement是 triangular
+   forced cocycle，不是 invariant contracting splitting。
+
+正面 theorem-state推进是 exact CRT resonance product现已无条件展开并求和：对任意
+integer interval `I`，
+
+```text
+|sum_(d in I)(K_q(d)-1)|
+  <= 6 product_(5<=p<=q)(1-2/p)^(-2),
+```
+
+结合 Abel summation与 exact `alpha(q)^2D(q)=1/6`，得到 profinite Haar moving sum
+`Var<=X/2+O(1)`，从而 Haar-a.e. moving recurrence。因此
+`H3_METRIC=PROVED_HAAR_MOVING_VARIANCE_O_N`。该结果不包含 distinguished seed
+`0`；pointed recurrence由 exact event identity与 TPC等价，继续为
+`ENDPOINT_EQUIVALENT_TARGET`，不能由 a.e. statement升级。
+
+Review3 的四路合流也已分型：primorial incidence到 `W_k` 与 TPC-32/O161到
+TPC-34/37 Gram energy是两个 exact connected components；packet quadratic data不能
+逆生 pre-TT-star linear signs，当前也没有 coefficientwise packet-to-primorial map。
+direct composition因此新增一个 broad `STOP_SCOPED`，但 analytic far-copy、两个
+O161 pointwise parents、pair-native reroute、legacy H1与 global architecture保持
+`OPEN`。新主干只保留
+`PARITY_BREAKING_AFFINE_PATTERN_TRANSFERENCE_THEOREM`：general affine
+decomposition、uniform Type I、determinant-uniform Type II、target-coupled
+reassembly、physical cover/normalization/loss ledger，最后进入 prime-producing
+lower bound。
+
+Ford--Maynard source lock确认 Type II确是合格框架，但两个直接 instantiation均先于
+`m=2` Type I fail：normalized survivor with `b=1`有 `w_(2n)=-1`；shifted-prime
+with `b=1`也有 linear parity bias。locally matched comparison尚未构造；即使修复，
+multiplicative `mn` Type II仍为真正 first large wall，不能由本轮 additive covariance
+推出。
+
+本轮因此是 `CHANNEL_REDESIGN_WITH_H3_METRIC_ADVANCE`，不是 arithmetic advance。
+fixed-atom credit=`0`，strict `1/400=UNPAID`，`L2=NONE`。没有 TPC-207 trigger、
+编号论文或 PDF。
+
+上一轮第 52 节启动基线为
 `10efbe0de1d08b512ae765d2c30230b23940f72a`，与 `origin/main` 一致；启动
 `git pull --rebase origin main` 返回 already up to date。启动时
 `TPC_HANDOFF.md` SHA-256 为
@@ -13,7 +73,7 @@ tracked/cached diff 均为空；127 个既有 protected untracked files 的 mani
 第 1 节 22 项只读启动回归为 `22/22 PASS`；TPC-27--32 legacy writers 与
 TPC-122 writer 均未执行。
 
-正式写入与回归期间，工作区依次晚到启动 manifest中不存在的 untracked
+上一轮正式写入与回归期间，工作区依次晚到启动 manifest中不存在的 untracked
 `TPC_review1.md`、`TPC_review2.md` 与 `TPC_review3.md`。用户明确要求参考前两份，
 第三份也只读纳入 route-portfolio审阅；主控没有创建、修改、删除或 stage这三份
 文件，也不推断其来源，按并行工作保护政策原样保留。故发布前 protected untracked
@@ -170,10 +230,11 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_DYNAMICS_COMPASS_20260805_RLR_INFINITY_CRITICAL_ORBIT_EVENTUALLY_FIXED_UC_ACIP_LRL_POSITIVE_BUT_ARITHMETICALLY_WRONG_OBJECT_EXACT_PRIME_LRL_ORDINARY_MEASURE_ZERO_NONAUTONOMOUS_RARE_EVENT_DBC_ROUTE_OPEN_STAGE_EVENT_MASS_AND_DISTINGUISHED_SEED_GATES_UNPAID_NO_TRIGGER_STOP_SCOPED`
-下一篇：`null`；下一项不编号审计：`null`（仅在第 32.6 节或
+`TPC_BIG_ROAD_V2_20260805_EXACT_DELETION_BIAS_FORCED_COCYCLE_HAAR_CENTER_HEURISTICALLY_MISCENTERED_CRT_RESONANCE_INTERVAL_DISCREPANCY_AND_HAAR_VARIANCE_O_N_PROVED_AE_TO_POINTED_ARROW_ABSENT_PACKET_PRIMORIAL_LINEAR_CROSSLINK_ABSENT_PBAPT_TYPE_II_REASSEMBLY_HIGHWAY_OPEN_NO_ARITHMETIC_TRIGGER`
+下一篇：`null`；下一项不编号大动作：`PBAPT_FM_LOCALLY_MATCHED_TYPE_I_II_COMPILER`
+（第 53.8 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -183,9 +244,10 @@ TPC-206 授权并完成：`true`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
-上下文节省入口：新会话先读 `TPC_COMPASS.md`，再读本页页首及第 1、6、22、24、29、30、31、32、
-33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48、49、50、51、52 节；第 23、
-27、28 节只在第 29--52 节明确引用时展开。第 22 节的
+上下文节省入口：新会话先读 `TPC_COMPASS.md` 与
+`research/tpc-big-road/README.md`，再读本页页首及第 1、6、22、24、53 节；
+第 29--52 节只在第 53 节或上述入口明确引用时展开，第 23、27、28 节仍只在后续
+审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
@@ -1530,6 +1592,22 @@ rare-event mass与 covariance theorem、distinguished-seed dynamical
 Borel--Cantelli/discrepancy theorem、真正 Hénon semiconjugacy/event pullback、
 TPC-1 prime-sensitive survivor-to-prime bridge、现有 analytic TPC parents或任何
 独立新 theorem。精确对象分离、条件 closure lemma与 reopen interface见第 52 节。
+
+2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
+
+```text
+DECLARED_TPC_REVIEW3_20260805_PAIR_O161_PACKET_TO_PRIMORIAL_
+LINEAR_CROSSLINK_DIRECT_COMPOSITION_V1 = STOP_SCOPED
+```
+
+它停止把 post-TT-star pair/Gram、O161 affine cofactors或 TPC-32 packet energy直接
+改名成 canonical primorial incidence array或 `W_k`。第一处 fatal同时包含 object
+alphabet与 linear/quadratic type：O161 affine values一般不是 `P_k` divisors；Gram
+data不保留 pre-TT-star signs；两侧 masks、outer labels、prefixes、clocks与
+normalization也没有同 source operator支付。本 cell不停止 primorial deletion/Haar
+covariance、TPC-32/34/37 analytic parent、两个 O161 pointwise parents、pair-native
+reroute、legacy H1或 global architecture。只有第 53.5 节 coefficientwise `J_X`
+theorem连同完整 physical return形成，才可重开。
 
 ## 7. Reopen triggers
 
@@ -5182,7 +5260,68 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V2 current）
+
+```text
+进入仓库：
+D:\26-aimath\理论研究3\prime_dynamics_theory
+
+以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
+TPC_COMPASS.md、research/tpc-big-road/README.md、TPC_HANDOFF.md 页首及
+第 1、6、22、24、53 节；其他历史块只在这些入口明确引用时展开。
+
+先执行：
+
+git status --short --branch
+git pull --rebase origin main
+Get-Content -Raw -Encoding UTF8 TPC_HANDOFF.md
+$env:PYTHONDONTWRITEBYTECODE = "1"
+
+保留全部既有 tracked/untracked；不得 reset、checkout、clean、自动 stash、删除
+或纳入本轮提交。若 existing work使 rebase不安全，停止并报告。完整执行第 1 节
+22 项只读回归；任一 checker非零即 fail closed。TPC-27--32 legacy与 TPC-122
+writers不得执行。
+
+当前编号事实终点 TPC-206；TPC-207 trigger=false，TPC-207未创建。当前大路状态：
+
+H3_METRIC = PROVED_HAAR_MOVING_VARIANCE_O_N
+H4_POINTED_x0 = ENDPOINT_EQUIVALENT_TARGET_OPEN
+PAIR_O161_PACKET_TO_PRIMORIAL_DIRECT_COMPOSITION = STOP_SCOPED
+PBAPT_TYPE_I_TYPE_II_REASSEMBLY_HIGHWAY = OPEN
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+
+不要恢复 ell_X(W)=o(a_kX)；该 target已因 critical endpoint centering在标准
+HL/Mertens heuristic下错位而降级。不要把 Haar-a.e. recurrence升级到 seed 0，
+不要把 post-TT-star pair/Gram逆生 linear H1，也不要把 additive covariance改写成
+Ford--Maynard multiplicative Type II。
+
+下一轮只执行第 53.8 节三个大动作，优先 A：
+
+PBAPT_FM_LOCALLY_MATCHED_TYPE_I_II_COMPILER
+
+先为 general affine pattern构造或否证 locally matched comparison；逐式核对
+Ford--Maynard Type I/II 的 literal sequence、multiplier/product domains、ranges、
+uniform constants与 normalization。direct survivor和 shifted-prime在 b=1时都已于
+m=2 Type I fail closed，不要重复。若 local matching成功，再定位并攻击第一个
+multiplicative Type II；若失败，发布一个 broad CHANNEL_STOP，不生微型论文。
+
+并行只读 agents可分别承担 source lock、proof audit与 architecture/reassembly；
+正式写入只由主控完成。两个工作包 checker为：
+
+python research/tpc-big-road/tpc_big_road_lab.py --check
+python research/tpc-big-road/tpc_big_road_independent_checker.py --check
+
+第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
+legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
+TPC-207；必须有真实 arithmetic theorem trigger并另过全部 provenance/physical
+gates。没有 trigger时只更新 compass/handoff/unnumbered big-road artifact，不创建
+paper、PDF或下一编号。
+```
+
+## 24H. 2026-08-04--05 历史粘贴块（不得作为当前入口）
 
 ```text
 进入仓库：
@@ -9055,6 +9194,391 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 53. 2026-08-05 `TPC_review3` 大路 V2：forced deletion cocycle、Haar variance theorem 与 PBAPT
+
+### 53.1 基线、分工与 artifact scope
+
+本轮启动 HEAD 与 `origin/main` 均为
+`5e277223c025921748681f407861c8555bc50e31`。启动 `TPC_HANDOFF.md` 与
+`TPC_COMPASS.md` hashes分别为
+
+```text
+9b0cf24ee85a21a591a7fbe8027a9396a114c5f74083dcaf7e968d0617d27a23
+e871bbdeadb13697e4f02fbf9cd128db32959071343c401a725aff563550f8ef
+```
+
+`git pull --rebase origin main` 返回 already up to date；tracked/cached diff为空；
+protected untracked为 130 files、manifest
+`9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1`。
+第 1 节 22 项只读回归 `22/22 PASS`。没有执行 TPC-27--32 legacy writers或
+TPC-122 writer。
+
+本轮使用 ARS research architecture、source verification与 devil's-advocate流程，
+并由三个 read-only agents执行：
+
+```text
+TPC-BIGROAD-20260805-H3-RESONANCE
+TPC-BIGROAD-20260805-H1-TYPED-ARCHITECTURE
+TPC-BIGROAD-20260805-H4-DEVILS-AUDIT
+```
+
+三者都回报相同 baseline、`files_changed=[]` 与 tracked/cached diff为空；正式写入只
+由主控完成。`TPC_review1/2/3.md` 与全部既有 protected untracked保持未修改、未
+stage。新建 `research/tpc-big-road/` 是一个未编号 working artifact，不是 paper
+directory、TPC-207或 theorem release bundle；其中包含完整 V2 contract、一个 exact
+finite stress lab与一个不 import主 lab的 independent checker。
+
+### 53.2 V1 的两个 broad redesign verdicts
+
+第一，V1 的
+
+```text
+ell_X(W_(k_X))=o(a_(k_X)X)
+```
+
+不再作为 success target。critical cutoff `y asymp sqrt(2X)` 下，full-cycle local
+mass满足 `a_y~8C_2e^(-2gamma)/log^2X`，而 Hardy--Littlewood standard heuristic
+给 dyadic physical main `2C_2X/log^2X`；两者 ratio为
+
+```text
+exp(2gamma)/4 = 0.793054740... .
+```
+
+因此 V1 centering在标准预期下有 order-`a_yX` bias。这里 HL只用于检出错误
+normalization，不作 premise或 arithmetic evidence；该 target正式标为
+`HEURISTICALLY_MISCENTERED / DEPRIORITIZED`，不是无条件反例 theorem。
+
+第二，mean/complement并不形成 homogeneous invariant splitting。`R_p1` 是 deletion
+mask而非常数，故
+
+```text
+W_(k+1)=R_pW_k+a_k(R_p1-(1-2/p)1).
+```
+
+任何 logistic/Hénon carrier必须证明 forced-triangular evolution、uniform evaluation
+norm与 accumulated physical forcing；只给 abstract complement contraction将按 broad
+scope停止。正确的 profile target写成
+
+```text
+C_k(X)=a_kX Phi_2(log X/log p_k)+Error_k(X),
+```
+
+但 `Phi_2` 当前未构造为 theorem object，其 endpoint也未证。
+
+### 53.3 Exact physical deletion-bias cocycle与 Fourier入口
+
+对 `I_X=(X,2X]`，令
+
+```text
+C_k=sum_(n in I_X)B_k(n),
+D_(k,p)=sum_(n in I_X)B_k(n)1_(p|n(n+2)),
+epsilon_(k,p)=D_(k,p)-(2/p)C_k,
+p=p_(k+1)>2.
+```
+
+逐项 deletion给
+
+```text
+C_(k+1)=C_k-D_(k,p),
+E_(k+1)=(1-2/p)E_k-epsilon_(k,p),
+
+C_(k+1)/(a_(k+1)|I_X|)
+  = C_k/(a_k|I_X|)-epsilon_(k,p)/(a_(k+1)|I_X|).
+```
+
+最后一式可逐 stage exact telescope。加法正交性又给
+
+```text
+epsilon_(k,p)
+  = (1/p)sum_(1<=a<p)(1+e_p(2a))
+      sum_(n in I_X)B_k(n)e_p(an).
+```
+
+所以 physical renormalization与非零 additive Fourier modes已有 exact bridge；但
+它没有 TPC-32 的 packet signs、actual masks、outer labels、content、copy order或
+`JQ^2 asymp XQ` normalization，不能升级为 packet crosslink。
+
+`tpc_big_road_lab.py` 以 exact rational recurrence核验该 telescope与 critical-cutoff
+primality identity。`X=10^4,10^5,10^6` 的 finite h0=2 ratios分别为
+
+```text
+0.8356729807
+0.8495112539
+0.8499075188
+```
+
+只作 normalization stress，不作渐近或 TPC claim。
+
+### 53.4 H3-metric 的真实 theorem advance
+
+沿第 52 节 exact profinite system，令
+
+```text
+Z_n(x)=1_(E_n)(T^n x),
+alpha_n=mu(E_n),
+y_n=sqrt(n+2).
+```
+
+对 `m<n`、`d=n-m`、`q=y_m`，已有
+
+```text
+Cov(Z_m,Z_n)=alpha_m alpha_n(K_q(d)-1).
+```
+
+本轮把每个 local factor完整展开。`p=2,3` 必须单列：
+
+```text
+k_2(d)=2*1_(2|d),
+k_3(d)=3*1_(3|d).
+```
+
+对 `p>=5`，
+
+```text
+k_p(d)
+ = 1-4/(p-2)^2
+   +2p/(p-2)^2*1_(p|d)
+   +p/(p-2)^2*(1_(p|d-2)+1_(p|d+2)).
+```
+
+其 local coefficient `ell^1` norms分别为
+`2,3,(1-2/p)^(-2)`，完整 residue mean均为 `1`。把 product展开为 compatible CRT
+classes，每个 class在任意 integer interval的 endpoint error至多 `1`，得到 exact
+uniform theorem
+
+```text
+|sum_(d in I)(K_q(d)-1)|
+  <= D(q):=6 product_(5<=p<=q)(1-2/p)^(-2).              (53.1)
+```
+
+固定 `m` 后对 monotone `alpha_(m+d)` 作 Abel summation，右侧为
+`alpha_(m+1)D(y_m)`。由于对 `y>=3` 有 exact
+
+```text
+alpha(y)=(1/6)product_(5<=p<=y)(1-2/p),
+alpha(y)^2D(y)=1/6,                                      (53.2)
+```
+
+每个 grouped off-diagonal contribution至多 `1/6`。加上 diagonal并记 variance中
+off-diagonal出现两次，得到
+
+```text
+Var_mu(sum_(X<n<=2X)Z_n) <= X/2+O(1),
+Var_mu(sum_(3<=n<=N)Z_n) << N.                           (53.3)
+```
+
+Mertens lower scale给 expectation `asymp N/log^2N`，Chebyshev加平方子序列
+Borel--Cantelli于是推出 Haar-a.e. seed无穷次命中。
+
+该结论精确记录为
+
+```text
+H3_METRIC = PROVED_HAAR_MOVING_VARIANCE_O_N
+H4_POINTED_x0 = ENDPOINT_EQUIVALENT_TARGET_OPEN
+ARITHMETIC_ADVANCE = NO.
+```
+
+independent checker在 finite fixtures上逐 residue核验 local formula、完整周期 mean、
+sampled interval endpoint bound、two-cutoff CRT joint probability、(53.2) 与 brute
+moving variance；universal `q/I`、Abel及 Borel--Cantelli结论由上面的符号证明承担，
+不把有限 checker冒充机器证明。它拒绝 missing `d+2` resonance与 subcritical
+primality cutoff mutations，并另核验 `p|h` 时 local rank为一的 control fixture。
+
+### 53.5 Review3 四路汇流的 typed stop与唯一 crosslink gate
+
+目前精确连通的 primorial component为：令
+
+```text
+c_k^sieve(d,e)=mu(d)mu(e),
+(M_kc)(r)=sum_(d,e|P_k)c(d,e)1_(d|r)1_(e|r+2),
+Sigma_k=(I-Pi_k)M_k.
+```
+
+有限 Möbius inversion给逐 residue identities
+
+```text
+M_k c_k^sieve=B_k,
+Sigma_k c_k^sieve=W_k.
+```
+
+另一 component是 TPC-32 literal determinant-two atom经 TPC-34/37 TT-star/Gram
+进入 far-copy energy。其 O161 affine values一般含大于 `p_(k_X)` 的素因子，不能
+改名为 `(d,e)|P_k`；截 smooth part不保持 Möbius sign。更根本地，post-TT-star
+pair/Gram由 `c` 与 `-c` 得到相同 quadratic data，却对应相反 linear pushforward，
+所以 pair-native不能逆生 legacy H1或 `W_k`。
+
+因此新增 broad cell：
+
+```text
+DECLARED_TPC_REVIEW3_20260805_PAIR_O161_PACKET_TO_PRIMORIAL_
+LINEAR_CROSSLINK_DIRECT_COMPOSITION_V1
+  = STOP_SCOPED_OBJECT_ALPHABET_LINEAR_QUADRATIC_AND_NORMALIZATION_MISMATCH.
+```
+
+只允许以下大型 theorem重开：在 complete actual `h0=2` packet family上构造
+pre-TT-star occurrence lift `L_X` 与 source-backed `J_X`，使
+
+```text
+Sigma_k J_X L_X c_X = nu_X W_k+R_X
+```
+
+在 `V_k` 中逐 residue成立，同时保留 signs、masks、weights、outer labels、
+multiplicities、prefix order、clocks及 normalization，并给
+
+```text
+ell_X Sigma_k J_X L_X c_X
+  = NormReturn_X(PhysicalReassembly_X(c_X)),
+|ell_X(R_X)|=o(nu_X a_kX).
+```
+
+只得到 scalar equality、formal packet、post-TT-star inverse或 unpaid normalization，
+均 fail closed。
+
+### 53.6 Ford--Maynard prime-producing source lock与 first fatal
+
+Ford--Maynard, *On the theory of prime-producing sieves*, `arXiv:2407.14368`
+对 nonnegative `a_n`、comparison `b_n` 与 `w_n=a_n-b_n`建立 Type I/II框架，
+并明确 substantial Type II是 prime lower bound所必需；`nu=0` 可容纳 prime-free
+parity伪序列。该 source支持 PBAPT的 theorem contract，不支持把现有 packet宣布为
+已满足 hypotheses。经典 Friedlander--Iwaniec asymptotic sieve的 bilinear axiom也
+支持同一 parity-breaking定位。
+
+两个直接 candidates都 fail closed：
+
+1. `a_r=B_(k_X)(r)/a_(k_X), b_r=1`：`B_(k_X)(2n)=0`，故 Type I在
+   multiplier `m=2` 给 linear negative bias；
+2. `a_r=Lambda(r+2)` 或 `(log X)1_(r+2 prime), b_r=1`：在 primes上求和时后者是
+   exact weighted twin count，前者另有 `r+2` 为高次 prime power的标准低阶 tail；
+   但 `m=2` 同样给
+   `sum(Lambda(2n+2)-1)=-X/4+O(log^2X)`。
+
+locally matched comparison或 `W`-trick可能先移除有限 local biases，但本轮没有
+构造。即使修复，Ford--Maynard所需 arbitrary-coefficient multiplicative `mn`
+Type II仍为 `OPEN`；(53.1)--(53.3) 的 additive shift covariance不推出它。
+
+### 53.7 新主干、状态 ledger与 STOP 防火墙
+
+V2 唯一 master class为
+
+```text
+PARITY_BREAKING_AFFINE_PATTERN_TRANSFERENCE_THEOREM (PBAPT):
+
+general affine decomposition
+  + uniform Type I
+  + determinant-uniform natural-scale fixed-atom Type II
+  + target-coupled Gram/Bessel reassembly
+  + all-D / tail / A-B / exactly-once cover
+  + original/global normalization and complete loss ledger
+  -> prime-producing lower bound.
+```
+
+它必须先对与 prime outcomes无关的一类 admissible affine patterns陈述；`h0=2`
+只能是 application。当前 ledger为：
+
+| gate | status |
+|---|---|
+| exact primorial/event/deletion algebra | `PROVED` |
+| H3 metric Haar variance | `PROVED_HAAR_VARIANCE_O_N` |
+| legacy H1 / pre-TT-star occurrence | `OPEN / NOT_TESTABLE` |
+| forced-triangular dynamical carrier | `HYPOTHESIS` |
+| determinant-uniform fixed-atom Type II | `OPEN`; credit `0` |
+| target-coupled reassembly / `Q^3/J` | `OPEN` |
+| Ford--Maynard locally matched Type I | `NOT_CONSTRUCTED` |
+| Ford--Maynard multiplicative Type II | `OPEN` |
+| distinguished seed `0` | `ENDPOINT_EQUIVALENT_TARGET` |
+| strict `1/400` | `UNPAID` |
+| `L2` | `NONE` |
+| TPC-207 trigger | `false` |
+
+第 6 节全部旧 method cells保持 `STOP_SCOPED`；尤其 TPC193 V1、common-k V1、
+tail-failure/A/B V1与 full-`r_Rr_R` ultra-complement V1均未重开。两个 O161
+pointwise parents、pair-native reroute、legacy H1与 global architecture保持 `OPEN`。
+
+### 53.8 下一轮只执行三个大动作
+
+```text
+A. FM/Buchstab compiler:
+   construct or rule out a locally matched comparison;
+   align the first literal Type-I/II formula and ranges.
+
+B. General fixed-atom Type-II attack:
+   prove or broadly stop determinant-uniform natural-scale saving
+   for a prime-outcome-independent affine class.
+
+C. Target-coupled reassembly/crosslink:
+   construct or broadly rule out the coefficientwise J_X gate,
+   with exactly-once cover and full normalization ledger.
+```
+
+不再把邻近 source mismatch、schema字段或有限数值补丁各自生成为 paper。只有
+`H_occ/H_dyn/H3_phys` 发生 theorem-backed变化才记 `CHANNEL_ADVANCE`；若上述三项
+都失败一个 named master criterion，则记一次 broad `CHANNEL_STOP`。即使局部 gate
+转正，也不自动创建 TPC-207；现有编号 provenance cascade与所有 downstream gates
+仍须另行通过。
+
+### 53.9 verification与 publication boundary
+
+本轮预期正式 files只有：
+
+```text
+TPC_HANDOFF.md
+TPC_COMPASS.md
+research/tpc-big-road/README.md
+research/tpc-big-road/tpc_big_road_lab.py
+research/tpc-big-road/tpc_big_road_independent_checker.py
+```
+
+没有 paper/PDF/build log。发布前必须重跑第 1 节 22 项、TPC-111/124/126/127 四项
+supplemental、两个新 `--check`、Markdown fences、protected manifest与 staged-file
+allowlist。只 stage上述五个 files。commit/push后确认 local HEAD、`origin/main` 与
+remote `refs/heads/main` 三 hash完全一致。
+
+pre-rebase final audit为：
+
+```text
+POST_WRITE_STARTUP_REGRESSION = 22/22 PASS
+POST_WRITE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+BIG_ROAD_LAB_CHECK = PASS; 16 exact cases
+BIG_ROAD_INDEPENDENT_CHECK = PASS; 170 local cases + N=50 variance fixture
+BIG_ROAD_STRESS_X_1E4_1E5_1E6_1E7 = PASS; FINITE_DIAGNOSTIC_NOT_THEOREM
+GIT_DIFF_CHECK = PASS
+MARKDOWN_FENCES = HANDOFF 1628; COMPASS 50; BIG_ROAD_README 92; ALL BALANCED
+NUMBERED_SECTIONS = 53 UNIQUE; DUPLICATES=0; MISSING=0
+PROTECTED_UNTRACKED = 130 FILES
+PROTECTED_MANIFEST
+  = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+SUBAGENT_FINAL_FORMULA_AUDIT = PASS
+SUBAGENT_FINAL_ADVERSARIAL_AUDIT = PASS_WITH_NOTES; ALL NOTES RESOLVED
+SUBAGENT_FINAL_ARCHITECTURE_AUDIT = PASS_AFTER_H_OCC_PAIR_NATIVE_SPLIT
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+```
+
+发布前 `git fetch origin main` 把 `origin/main` 从启动值推进至
+`54709f1c0b30e7970ebca010973a24a1d2656c7e`。该单一 remote commit只修改
+`RH_HANDOFF.md` 并新增 RH-362 的 22 个 release files；与上述五个 TPC目标文件无
+重叠。按用户已声明的 RH out-of-scope边界，本轮不审核或执行 RH-362 writers，
+只在本轮 allowlist commit后安全 rebase并重跑全部 TPC checks。
+
+allowlist commit在旧 base上为 `96a49e3`；`git pull --rebase origin main` 成功把它
+重放到 RH-362 tip之上，未发生冲突，临时 post-rebase tip为 `498b219`。post-rebase
+结果为：
+
+```text
+POST_REBASE_BASE = 54709f1c0b30e7970ebca010973a24a1d2656c7e
+POST_REBASE_STARTUP_REGRESSION = 22/22 PASS
+POST_REBASE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_REBASE_BIG_ROAD_CHECKS = 2/2 PASS
+POST_REBASE_GIT_DIFF_CHECK = PASS
+POST_REBASE_MARKDOWN_FENCES = 1628 + 50 + 92; ALL BALANCED
+POST_REBASE_NUMBERED_SECTIONS = 53 UNIQUE; DUPLICATES=0; MISSING=0
+POST_REBASE_PROTECTED_UNTRACKED = 130 FILES
+POST_REBASE_PROTECTED_MANIFEST
+  = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+POST_REBASE_EXPECTED_TRACKED_FILES = 5/5 EXACT
+RH362_WRITERS_OR_TESTS_EXECUTED = NO
+```
 
 ## 52. 2026-08-05 prime-dynamics 全局罗盘：从 `RLR^infinity` 正测度误区到 pointed shrinking-target 主路线
 
