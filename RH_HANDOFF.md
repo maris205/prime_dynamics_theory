@@ -2,9 +2,11 @@
 
 Status date: 2026-08-05
 
-Current completed endpoint: RH-361
+Current completed endpoint: RH-362
 
 Completed research batch: RH-352 through RH-361
+
+Post-four-volume independent theorem edge: RH-362
 
 Research batch publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -33,11 +35,14 @@ Read completely:
 
 - `AGENTS.md`
 - `RH_HANDOFF.md`
-- `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/README.md`
-- `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/UPDATED_ROADMAP.md`
-- `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/THEOREM_LEDGER.md`
-- `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/results/result.json`
-- `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/main.pdf`
+- `papers/RH-362-prime-return-euler-dichotomy-and-clock-renormalization-obstruction/README.md`
+- `papers/RH-362-prime-return-euler-dichotomy-and-clock-renormalization-obstruction/UPDATED_ROADMAP.md`
+- `papers/RH-362-prime-return-euler-dichotomy-and-clock-renormalization-obstruction/THEOREM_LEDGER.md`
+- `papers/RH-362-prime-return-euler-dichotomy-and-clock-renormalization-obstruction/results/result.json`
+- `papers/RH-362-prime-return-euler-dichotomy-and-clock-renormalization-obstruction/main.pdf`
+
+For the still-open original physical branch, also retain the RH-361 README,
+roadmap, ledger, result, and PDF as the immediate physical endpoint.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -47,11 +52,12 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-361 does not automatically activate RH-362. Start with a read-only source
+RH-362 does not automatically activate RH-363. Start with a read-only source
 lock. Create a new number only for an actual bridge, a typed `q/E_off`
 theorem, a rigorous physical obstruction, or another independent theorem
-edge. An abstract fiber, finite fit, deterministic reparameterization, or
-inactive criterion is not a reopening input.
+edge. An abstract fiber, finite fit, deterministic reparameterization,
+prime-labelled factor inserted by definition, or inactive criterion is not a
+reopening input.
 
 Follow the multi-agent workflow in `AGENTS.md`: the primary alone chooses the
 route, edits this handoff, integrates, stages, commits, rebases, and pushes.
@@ -104,9 +110,11 @@ retains per-claim `PROVED`, `CERTIFIED`, `CONDITIONAL`, `SCOPED_NEGATIVE`, and
 actual_same_clock_unnormalized_head_transport_open
 ```
 
-RH-362 remains inactive unless one of the theorem-backed triggers in section
-5 is met. The four-volume outer archive is stored under RH-MVP2 and seals the
-four individual archive-verification records.
+RH-362 was activated only by independent trigger 5 and is not inserted into
+these four volumes. The four-volume outer archive remains frozen under
+RH-MVP2 and seals the four individual archive-verification records. Its
+manifest and verification hashes are explicit external inputs of RH-362, so
+the post-volume paper cannot silently replace the RH-1--RH-361 foundation.
 
 ## 2. Program objective and claim boundary
 
@@ -123,7 +131,8 @@ All five Gates are false/open. No batch paper constructs a Hilbert--Polya
 operator, identifies Riemann zeros, proves a von Mangoldt trace, proves
 completed-zeta divisor equality, or implies RH.
 
-The batch has two typed branches and no cross-branch bridge:
+The RH-352--RH-361 physical batch has two typed branches and no cross-branch
+bridge:
 
 ```text
 actual direct branch      = RH-352--RH-354, actual p/Y,
@@ -147,6 +156,10 @@ counterloop. RH-354's normalized actual `p` tail is neither an unnormalized
 complete prefix nor a `q/E_off` theorem. Deterministic `s` is not an actual
 head, root set, rank law, or spectral submultiset.
 
+RH-362 adds a separate arithmetic-dynamical branch built from one marked
+modular cycle per prime. It does not identify that bouquet with either typed
+physical branch, and therefore does not change the physical blocker below.
+
 The deterministic target side remains exact and all-order: RH-263 gives the
 deterministic numerator coefficient anchor, and RH-267--RH-268 give the
 deterministic all-order envelope and sharp target radius. These results do
@@ -154,7 +167,7 @@ not close the RH-241 moving noisy all-order envelope or coefficient bridge.
 RH-288 remains inactive because the complete same-type physical prefix leaf
 is absent.
 
-## 3. Decision after RH-361
+## 3. Decision after RH-361 and RH-362
 
 Current route coordinate:
 
@@ -197,7 +210,65 @@ type: geometric localization (RH-358), logarithmic inverse accuracy
 (RH-359), and the exponential-transform phase diagram (RH-360). Actual
 transfer remains conditional on `D_(4k)(R)->0`.
 
-## 4. Compact conclusions from RH-352 through RH-361
+### 3.1 RH-362 independent arithmetic-dynamical branch
+
+Fix the integral H\'enon automorphism
+
+```text
+H(x,y) = (1-6x^2-y,x)
+```
+
+and an integral point `P`. The locked source theorem is
+
+```text
+M | a_n(P)  iff  r_M(P) | n,
+```
+
+where `r_M(P)` is the return period of `P mod M` and `a_n(P)` is the gcd of
+the two integral coordinate differences. For nonperiodic `P`, RH-362 proves
+the exact finite identity
+
+```text
+{p : r_p(P)<K} = {p : p divides product_(1<=n<K) a_n(P)}.
+```
+
+Hence `r_p(P)` tends to infinity outside a finite set at every fixed
+threshold. The concrete seed `P=(0,0)` is nonperiodic by a strict
+negative-cone escape argument.
+
+The complete marked `r_p`-cycle gives
+
+```text
+Tr(U_p^n) = r_p 1_(r_p|n),
+det(I-zU_p) = 1-z^(r_p).
+```
+
+The countable tagged bouquet has finite fixed-point counts in every order and
+only a formal Artin--Mazur product. Its Dirichlet specialization
+
+```text
+Z_P(s) = product_p (1-p^(-s r_p))^(-1)
+```
+
+converges normally, is holomorphic, and is zero-free on `Re(s)>0`. Its
+coefficients are multiplicative `0/1` values; its logarithmic derivative has
+weights `r_p log p` at `p^(j r_p)`, not von Mangoldt weights. Neither `Z_P`
+nor its reciprocal crosses `s=0` meromorphically; this is not a whole-axis
+natural-boundary theorem.
+
+The natural block operator `T_s=direct_sum_p p^(-s)U_p` is compact for
+`Re(s)>0`; `q Re(s)>3` is a proved sufficient Schatten condition, and the
+ordinary Fredholm identity is licensed only for `Re(s)>3`. If one instead
+uses `p^(-s/r_p)`, each local factor is forced to `1-p^(-s)`, but the result
+forgets every return length and the direct sum lies in no finite Schatten
+class. This is a scoped obstruction, not a zeta bridge.
+
+For a conditional exact integral period `N`, almost every `r_p=N`, so the
+product is `zeta(Ns)` times a finite Euler correction. This injects zeta via
+the prime labels and almost-constant local periods; it is not spectral
+recovery. No integral periodic point for this map is asserted.
+
+## 4. Compact conclusions from RH-352 through RH-362
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -223,6 +294,10 @@ transfer remains conditional on `D_(4k)(R)->0`.
   exponential-tilt phase diagram at the declared budget type.
 - **RH-361:** Exact typed separation and finite-fiber nonpromotion theorem;
   no physical counterexample or spectral conclusion is constructed.
+- **RH-362:** Exact prime-return Euler dichotomy, zero-free nonperiodic
+  product, restricted Fredholm realization, periodic finite-correction
+  branch, and inverse-clock non-Schatten obstruction. It is independent of
+  the physical route and closes no Gate.
 
 ## 5. Route firewall and reopening triggers
 
@@ -236,7 +311,7 @@ Do not:
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
-Admissible RH-362 triggers are:
+The admissible RH-362 triggers were:
 
 1. An actual same-clock `D_(4k)(R)->0` theorem, or a genuine physical
    obstruction to it.
@@ -247,14 +322,23 @@ Admissible RH-362 triggers are:
    coefficient bridge.
 5. Another independent source-backed theorem edge.
 
+Trigger 5 is now satisfied by RH-362. Triggers 1--4 remain untouched. For
+RH-363 and later, a valid continuation must add a new theorem edge: for
+example a source-backed distribution theorem for `r_p(P)`, an intrinsic
+global dynamics/operator whose local factors are not independently retimed,
+a rigorous prime-wheel/coprime-limit theorem not already exhausted by
+RH-362, the weighted-H\'enon survivor-to-transfer identification, or one of
+the original physical triggers 1--4. Repackaging the same marked-cycle Euler
+product is not a new trigger.
+
 Even `D_(4k)(R)->0` would transfer only named moment/budget laws. Root, rank,
 spectral-submultiset, and canonical determinant identification remain
 separate. RH-288 activates only after the complete direct prefix and both
 analytic tails close in one physical determinant data type.
 
-## 6. Default RH-362 investigation
+## 6. Historical RH-362 investigation
 
-RH-362 is read-only until a theorem edge is found. Freeze:
+The original RH-362 physical investigation began read-only with:
 
 ```text
 h_(sigma,n)       = actual modulus-complete Hardy-head moment
@@ -357,8 +441,8 @@ A parallel post-synthesis theorem scan at
   cyclic bridge, while RH-334 explicitly leaves its probability-to-trace
   identification open.
 
-The three scans therefore return `NOT_TESTABLE` or `STOP_SCOPED`, not a
-physical obstruction and not RH-362. A valid cyclic reopening must first
+Those three physical scans returned `NOT_TESTABLE` or `STOP_SCOPED`, not a
+physical obstruction. A valid cyclic reopening must first
 define a compact/folded/normalized cyclic reference in the RH-334 trace data
 type and prove an all-leg observation/prefix/suffix upper bound on the physical
 first-alias clock. Its first decisive correction-factor test is
@@ -368,7 +452,67 @@ scoped negative; a positive result would only open the subsequent all-leg
 curvature/Duhamel and stability-weight obligations. Until then keep
 `actual_same_clock_unnormalized_head_transport_open`.
 
+### 6.2 Independent trigger-5 activation on 2026-08-05
+
+The later external-source lock changed the numbered decision without changing
+the physical one. Frozen commits are:
+
+```text
+henon_prime_returns  c37d191672d30de49b2054be3a03cf2db068694f
+dyna_zeta_map        7fd3a3fdd5a6a25827a0965345459baf4a47b816
+```
+
+Seven source/foundation hashes match. Independent proof audit returned `GO`
+for the low-rank identity, marked-cycle determinant, locally finite formal
+bouquet, zero-free Euler product, coefficient and logarithmic-derivative
+laws, origin obstruction, Schatten/Fredholm regions, periodic branch, and
+inverse-clock obstruction. The audit explicitly rejected promotion to a
+Hasse--Weil factor, full `H_p` zeta, canonical physical determinant,
+von-Mangoldt trace, Hilbert--Polya operator, Riemann-zero identification,
+completed-zeta divisor equality, or RH.
+
+The first arithmetic-dynamical blocker is now a canonical identification
+theorem: one must turn the marked-point-dependent, one-cycle-per-prime bouquet
+across distinct finite fields into an intrinsic global dynamics/operator
+without prescribing the desired Euler weights. Until such a theorem exists,
+Gate A remains false.
+
 ## 7. Reproduction and publication audit
+
+Final RH-362 audit:
+
+- Source locks: `7/7`, including the four-volume manifest and independent
+  verification.
+- Four-volume replay: `4` volumes, `361` numbered sources, `73` archive
+  members, `1,548` dependency hashes, `8` result hashes, zero failures.
+- Tests: `15/15`, including archive membership, path, and source-commit
+  mutation rejection.
+- Individual archive: `20` publication files and `7` external inputs, zero
+  failures.
+- PDF: `7` pages; `20` font rows, all embedded; Ghostscript and text
+  extraction pass; all `7/7` pages visually checked.
+- Complete LaTeX/BibTeX logs are clean; the semantic PDF is byte-identical to
+  `main.pdf`.
+- Gates A--E and all 13 forbidden macro claims remain false/open.
+
+RH-362 final hashes:
+
+```text
+main.tex
+1d3909ad8b97d6bb0fc8c861ae0c702908f992cd33c8c1a7a57349b2f8925ccc
+
+PDF
+c237ed39e4160c594a70788cc799d089c43edea613825b71691f21cbb33c73f7
+
+result
+5edf4ed048e10a008f00a03d62a934630caba1724af529878910892cea7001fc
+
+manifest
+8b0f06ace63e8d78cf3d91b11365db23d5109f387c8e72218ed2e55b72109d56
+
+verification
+1358d2f26cc344c55a3fdeb8dd49c34c256d4c07fede915d8927f7b416a8c720
+```
 
 Final RH-352--RH-361 audit:
 
@@ -444,7 +588,7 @@ Four-volume synthesis audit:
 - All five complete LaTeX logs are clean. The five semantic PDFs are
   byte-identical to their `main.pdf`; all `41/41` rendered pages were checked.
 - Gates A--E and every named forbidden macro claim remain false/open. The
-  release is non-numbered and does not activate RH-362.
+  release was non-numbered and did not itself activate RH-362.
 
 Four-volume release hashes:
 
@@ -479,15 +623,23 @@ b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751
 ```text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-361 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
-completely. Run git status --short --branch and git pull --rebase origin main
-before any state change. Begin with a read-only source lock on the actual
-same-clock defect d=h-s and the unnormalized D_(4k)(R) obligation.
+the RH-362 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+completely. Also retain RH-MVP2 and the RH-361 physical endpoint. Run git
+status --short --branch and git pull --rebase origin main before any state
+change. Re-run the four-volume outer archive before integrating a new paper.
 
-RH-362 is not activated by RH-361 alone. Create it only for an actual bridge,
-a typed q/E_off theorem, a rigorous physical obstruction, or another
-independent theorem edge. Do not treat the RH-361 coefficient fiber as a
-physical counterexample. Do not identify deterministic counterloop moments
-with actual spectral data. Keep Gates A--E false/open until their exact
-definitions are proved.
+RH-362 is an independent trigger-5 theorem edge and does not activate RH-363
+automatically. Start RH-363 with a read-only source lock. The shortest live
+candidates are: an exact prime-wheel/pairwise-coprime zeta-limit theorem from
+the frozen dyna_zeta_map source; a genuinely new source-backed distribution
+law for the return ranks r_p(P); an intrinsic global dynamics/operator that
+does not retime each prime independently; the weighted-Henon
+survivor-to-transfer identification; or the original same-clock physical
+D_(4k), q/E_off, full-prefix, or RH-241 envelope/anchor routes.
+
+Do not call the marked bouquet a Hasse--Weil or full finite-field zeta. Do not
+promote the zero-free product to a Riemann-zero model. Do not treat a forced
+factor 1-p^(-s) as an intrinsic reconstruction. Keep the four-volume
+foundation immutable and Gates A--E false/open until their exact definitions
+are proved.
 ```

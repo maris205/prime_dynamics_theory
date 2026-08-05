@@ -1,0 +1,568 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[numbers]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\RePart}{\operatorname{Re}}
+\newcommand{\Fp}{\mathbb F_p}
+\newcommand{\N}{\mathbb N}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cH}{\mathcal H}
+
+\title{Prime-return Euler products:\\
+periodic--nonperiodic dichotomy and a clock-renormalization obstruction}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For the integral H\'enon automorphism
+\(
+H(x,y)=(1-6x^2-y,x)
+\)
+and an integral point \(P\), let \(r_p(P)\) be the return period of
+\(P\bmod p\).
+Starting from the exact return--divisibility identity
+\(
+p\mid a_n(P)\Longleftrightarrow r_p(P)\mid n
+\),
+we construct two zeta objects from the complete marked cycle of \(P\bmod p\).
+For a nonperiodic integral orbit, the countable cycle bouquet has finite
+fixed-point counts in every order and a well-defined formal Artin--Mazur zeta
+function.  Its Dirichlet specialization
+\[
+ Z_P(s)=\prod_p(1-p^{-s r_p(P)})^{-1}
+\]
+converges normally, is holomorphic, and is zero-free on the full half-plane
+\(\RePart s>0\).  We identify its multiplicative \(0/1\) coefficients and its
+logarithmic derivative, whose weights are \(r_p(P)\log p\) on
+\(p^{j r_p(P)}\), rather than von Mangoldt weights.  The natural cycle-block
+operator is compact for \(\RePart s>0\) and trace class for \(\RePart s>3\),
+where its Fredholm determinant equals \(Z_P(s)^{-1}\).  Conversely, dividing
+each prime's clock by \(r_p(P)\) forces the Riemann Euler factor locally but
+produces an operator in no finite Schatten class.  This is a rigorous
+nonpromotion result: the forced product erases the return lengths instead of
+recovering a canonical spectral determinant.  The paper is an independent
+post-four-volume theorem edge.  It does not alter the RH-1--RH-361 physical
+frontier, close Gates A--E, identify Riemann zeros, or prove the Riemann
+Hypothesis.
+\end{abstract}
+
+\section{Status relative to the four-volume foundation}
+
+The RH corpus through RH-361 is preserved in four disjoint, independently
+auditable volumes covering respectively RH-1--RH-160, RH-161--RH-241,
+RH-242--RH-281, and RH-282--RH-361 \citep{WangRHCorpus2026}.  Those volumes
+remain the atomic provenance base for the physical determinant program.  Its
+current route coordinate is
+\[
+ \texttt{actual\_same\_clock\_unnormalized\_head\_transport\_open},
+\]
+with the unproved first leaf
+\[
+ D_{4k}(R)=\sum_{2\le n<4k}
+ \frac{|h_{\sigma,n}-s_{k,n}|R^n}{n}\longrightarrow0.
+\]
+Nothing below estimates this quantity.  RH-362 is activated only by the
+independent-source trigger: it studies arithmetic return cycles across finite
+fields.  The old physical route and all four long-form volumes remain
+unchanged.
+
+The executable artifact locks the outer four-volume manifest and its
+independent verification as frozen inputs.  The replay covers four volumes,
+all 361 numbered sources, 73 archive members, 1,548 dependency hashes, and
+eight result hashes, with zero failures.  RH-362 is not included in or used to
+rewrite that archive.
+
+The source object comes from the exact arithmetic analysis in
+\citet{WangPrimeReturns2026}.  The finite-field and strong-divisibility
+statements used here are theorems, while the reported exponential--gamma
+return distributions in that source remain finite-range conjectural evidence
+and are not used.  The prime-wheel and infinite-coprime examples of
+\citet{WangPeriodicCollapse2026} provide a useful comparison: periodic-orbit
+zeta data can collapse even when symbolic entropy remains positive.  We do
+not identify either symbolic construction with the present marked cycles.
+
+\section{Integral and modular return data}
+
+Fix
+\[
+ H(x,y)=(1-6x^2-y,x),
+ \qquad
+ H^{-1}(u,v)=(v,1-6v^2-u).
+\]
+Thus reduction modulo every integer \(M\ge1\) is a permutation.  For
+\(P\in\Z^2\), define
+\[
+ r_M(P)=\min\{n\ge1:H^n(P)\equiv P\pmod M\},
+ \qquad r_1(P)=1,
+\]
+and, writing \(H^n(P)=(x_n,y_n)\),
+\[
+ a_n(P)=\gcd(|x_n-x_0|,|y_n-y_0|),
+\]
+with \(\gcd(0,0)=0\).  The source theorem is
+\begin{equation}
+ M\mid a_n(P)
+ \quad\Longleftrightarrow\quad
+ r_M(P)\mid n.
+ \label{eq:return-divisibility}
+\end{equation}
+For a nonperiodic integral orbit, every \(a_n(P)>0\), and the source also
+proves the strong divisibility identity
+\[
+ \gcd(a_m(P),a_n(P))=a_{\gcd(m,n)}(P).
+\]
+Only \eqref{eq:return-divisibility} is needed for the first new theorem.
+
+\begin{theorem}[Exact finite set of low return ranks]
+\label{thm:low-ranks}
+Let \(P\in\Z^2\) have a nonperiodic integral orbit.  For every integer
+\(K\ge2\),
+\[
+ \{p:r_p(P)<K\}
+ =
+ \left\{p:p\mid\prod_{1\le n<K}a_n(P)\right\}.
+ \label{eq:low-rank-set}
+\]
+In particular the set on the left is finite for every \(K\), and
+\(r_p(P)\to\infty\) in the cofinite-prime sense.
+\end{theorem}
+
+\begin{proof}
+If \(r_p<K\), take \(n=r_p\) in \eqref{eq:return-divisibility}; then
+\(p\mid a_{r_p}(P)\).  Conversely, if \(p\mid a_n(P)\) for some \(n<K\),
+then \eqref{eq:return-divisibility} gives \(r_p\mid n\), hence \(r_p<K\).
+All factors in the product are positive integers, so it has finitely many
+prime divisors.
+\end{proof}
+
+The concrete point used in the executable artifact is unconditional.
+
+\begin{lemma}[Escape of the primary integral seed]
+\label{lem:escape}
+The orbit of \(P_0=(0,0)\) is nonperiodic.
+\end{lemma}
+
+\begin{proof}
+The first coordinate satisfies
+\[
+ x_{n+1}=1-6x_n^2-x_{n-1},
+\]
+and begins
+\[
+ x_0=0,\qquad x_1=1,\qquad x_2=-5,\qquad x_3=-150.
+\]
+Suppose \(x_{n-1}=-b_{n-1}\), \(x_n=-b_n\), with
+\(b_n>b_{n-1}\ge5\).  Then
+\[
+ x_{n+1}=1-6b_n^2+b_{n-1}<0,
+ \qquad
+ |x_{n+1}|=6b_n^2-b_{n-1}-1>b_n.
+\]
+The base pair \(b_2=5,b_3=150\) starts the induction.  Hence the absolute
+values grow strictly and the orbit cannot return to \(P_0\).
+\end{proof}
+
+\section{Pointed cycles and a formal Artin--Mazur bouquet}
+
+For a prime \(p\), let
+\[
+ \cO_{p,P}=\{P,H_pP,\ldots,H_p^{r_p-1}P\}
+\]
+be the complete cycle containing \(P\bmod p\), and let \(U_{p,P}\) be its
+cyclic permutation matrix.  The complete cycle, rather than a single return
+indicator, is essential.
+
+\begin{proposition}[Local marked-cycle determinant]
+\label{prop:local-cycle}
+For every \(n\ge1\),
+\[
+ \Tr(U_{p,P}^n)=r_p\mathbf 1_{r_p\mid n},
+ \qquad
+ \det(I-zU_{p,P})=1-z^{r_p}.
+\]
+Consequently the Artin--Mazur zeta function of this finite cycle is
+\[
+ \zeta_{\cO_{p,P}}(z)=(1-z^{r_p})^{-1}.
+\]
+\end{proposition}
+
+\begin{proof}
+The \(n\)-th power of a cyclic shift fixes every basis vector exactly when
+\(r_p\mid n\).  The eigenvalues of \(U_{p,P}\) are all \(r_p\)-th roots of
+unity, whose characteristic product gives \(1-z^{r_p}\).
+\end{proof}
+
+Define the countable disjoint union
+\[
+ \cX_P=\bigsqcup_p\cO_{p,P},
+ \qquad
+ F_P|_{\cO_{p,P}}=H_p.
+\]
+
+\begin{theorem}[Locally finite formal bouquet]
+\label{thm:bouquet}
+If \(P\) is nonperiodic over \(\Z\), then every fixed-point set of \(F_P^n\)
+is finite and
+\[
+ T_n(P):=\#\Fix(F_P^n)
+ =\sum_{p:r_p\mid n}r_p
+ =\sum_{p\mid a_n(P)}r_p.
+ \label{eq:bouquet-trace}
+\]
+The formal Artin--Mazur zeta function is therefore
+\[
+ \mathcal Z_P(z)
+ =\exp\!\left(\sum_{n\ge1}\frac{T_n(P)}n z^n\right)
+ =\prod_p(1-z^{r_p})^{-1}
+ \in\Z[[z]].
+ \label{eq:formal-zeta}
+\]
+\end{theorem}
+
+\begin{proof}
+By theorem~\ref{thm:low-ranks}, only finitely many primes have \(r_p\le n\).
+Proposition~\ref{prop:local-cycle} then gives the first sum in
+\eqref{eq:bouquet-trace}; equation~\eqref{eq:return-divisibility} gives the
+second.  Each coefficient of the exponential depends on finitely many fixed
+point counts, so the usual finite-cycle Euler-product calculation is valid
+coefficientwise.
+\end{proof}
+
+\begin{remark}
+The theorem claims a formal power series, not a positive analytic radius,
+entropy formula, pressure identity, or zeta function of the full maps
+\(H_p:\Fp^2\to\Fp^2\).  It uses one marked cycle from each distinct finite
+dynamical system.
+\end{remark}
+
+\section{The return-rank Dirichlet Euler product}
+
+Use the real logarithm of \(p\) and write \(p^{-s}=e^{-s\log p}\).
+
+\begin{theorem}[Zero-free return Euler product]
+\label{thm:euler-product}
+For a nonperiodic integral point \(P\),
+\[
+ Z_P(s)
+ :=\prod_p\det(I-p^{-s}U_{p,P})^{-1}
+ =\prod_p(1-p^{-s r_p})^{-1}
+ \label{eq:dirichlet-zeta}
+\]
+converges normally on every closed half-plane
+\(\RePart s\ge\delta>0\).  It defines a holomorphic, zero-free function on
+\(\RePart s>0\), with canonical logarithm
+\[
+ \log Z_P(s)
+ =\sum_p\sum_{j\ge1}\frac{p^{-s j r_p}}j.
+ \label{eq:log-zeta}
+\]
+\end{theorem}
+
+\begin{proof}
+Fix \(\delta>0\) and choose \(K\) with \(\delta K>1\).  Theorem
+\ref{thm:low-ranks} leaves only finitely many primes with \(r_p<K\).  For all
+remaining primes and \(\RePart s\ge\delta\),
+\[
+ |p^{-s r_p}|\le p^{-\delta K},
+ \qquad
+ \sum_p p^{-\delta K}<\infty.
+\]
+After discarding finitely many initial factors, the logarithmic geometric
+series is uniformly dominated by a constant multiple of this convergent
+prime sum.  Thus \eqref{eq:log-zeta} converges normally.  Its exponential is
+holomorphic and never zero; every finite exceptional factor is also
+holomorphic and nonzero in the open right half-plane.
+\end{proof}
+
+\begin{corollary}[Multiplicative coefficients and trace weights]
+\label{cor:coefficients}
+The absolutely convergent Dirichlet expansion is
+\[
+ Z_P(s)=\sum_{m\ge1}\frac{c_P(m)}{m^s},
+ \qquad
+ c_P(m)=
+ \mathbf 1_{\{r_p(P)\mid v_p(m)\ \text{for every }p\}}.
+ \label{eq:coefficients}
+\]
+The function \(c_P\) is multiplicative, takes only the values zero and one,
+and need not be completely multiplicative.  Both its ordinary and absolute
+convergence abscissae equal zero.  Moreover
+\[
+ -\frac{Z_P'}{Z_P}(s)
+ =\sum_p\sum_{j\ge1}
+ r_p\log p\;p^{-s j r_p}.
+ \label{eq:log-derivative}
+\]
+\end{corollary}
+
+\begin{proof}
+Expand each local geometric series and use unique factorization; this gives
+\eqref{eq:coefficients}.  Theorem~\ref{thm:euler-product} gives absolute
+convergence for every positive real part.  At \(s=0\), the infinitely many
+distinct terms \(m=p^{r_p}\) all have coefficient one, so even ordinary
+convergence fails.  Normal convergence permits termwise differentiation on
+compact subsets, giving \eqref{eq:log-derivative}.
+\end{proof}
+
+The support and weight in \eqref{eq:log-derivative} differ from the classical
+von Mangoldt ledger
+\(
+-\zeta'/\zeta=\sum_{p,j}\log p\,p^{-sj}
+\).
+This difference is a theorem, not a missing numerical calibration.
+
+\begin{theorem}[No meromorphic crossing at the origin]
+\label{thm:origin}
+Neither \(Z_P\) nor \(D_P=Z_P^{-1}\) admits a meromorphic continuation through
+\(s=0\).  This statement does not assert that the full line
+\(\RePart s=0\) is a natural boundary.
+\end{theorem}
+
+\begin{proof}
+For real \(\sigma>0\), \(0<D_P(\sigma)<1\).  Fix any \(N\) primes
+\(p_1,\ldots,p_N\).  Since \(1-e^{-x}\le x\),
+\[
+ 0<D_P(\sigma)
+ \le\prod_{j=1}^N(1-p_j^{-\sigma r_{p_j}})
+ \le \sigma^N\prod_{j=1}^N r_{p_j}\log p_j.
+\]
+If \(D_P\) were meromorphic at zero, its decay along the positive real axis
+would make the singularity removable.  The resulting analytic function would
+have a zero of every order and hence vanish identically, contradicting
+\(D_P(\sigma)>0\).  A meromorphic continuation of \(Z_P\) would give one for
+its reciprocal, so it is also impossible.
+\end{proof}
+
+\section{Natural cycle blocks and the Fredholm region}
+
+Let
+\[
+ \cH_P=\bigoplus_p\ell^2(\cO_{p,P}),
+ \qquad
+ T_s=\bigoplus_p p^{-s}U_{p,P}.
+\]
+
+\begin{theorem}[Compact and Schatten regions]
+\label{thm:operator}
+For \(\sigma=\RePart s>0\), \(T_s\) is compact.  For every \(q>0\),
+\[
+ \|T_s\|_{S_q}^q=\sum_p r_p p^{-q\sigma}.
+ \label{eq:schatten}
+\]
+Since \(r_p\le p^2\), the condition \(q\sigma>3\) is sufficient for
+\(T_s\in S_q\).  In particular, for \(\RePart s>3\),
+\[
+ \det_F(I-T_s)=\prod_p(1-p^{-s r_p})=Z_P(s)^{-1}.
+ \label{eq:fredholm}
+\]
+If an integer \(m\ge1\) satisfies \(m\RePart s>3\), then
+\[
+ Z_P(s)^{-1}
+ =\exp\!\left(-\sum_{n=1}^{m-1}\frac{\tau_n(s)}n\right)
+ \det_m(I-T_s),
+ \quad
+ \tau_n(s)=\sum_{p:r_p\mid n}r_p p^{-sn}.
+ \label{eq:regularized}
+\]
+\end{theorem}
+
+\begin{proof}
+The block norms \(p^{-\sigma}\) tend to zero, so the finite-rank truncations
+converge to \(T_s\) in operator norm.  Each block contributes \(r_p\) equal
+singular values \(p^{-\sigma}\), which gives \eqref{eq:schatten}.  The orbit
+of \(P\bmod p\) lies in a set of \(p^2\) points, so \(r_p\le p^2\), and
+\(
+\sum_p p^{2-q\sigma}<\infty
+\)
+when \(q\sigma>3\).  The trace-class determinant factors blockwise and
+proposition~\ref{prop:local-cycle} gives \eqref{eq:fredholm}.  The standard
+definition of the regularized determinant \citep{Simon2005}, together with
+the finite combinatorial trace sums \(\tau_n\), gives
+\eqref{eq:regularized}.
+\end{proof}
+
+\begin{remark}
+Equation \eqref{eq:fredholm} licenses an ordinary Fredholm interpretation
+only in the proved trace-class region.  The scalar function \(Z_P^{-1}\)
+continues holomorphically to \(\RePart s>0\), but this continuation is not by
+itself a theorem that \(T_s\) is trace class there.  Moreover \(T_s\) is an
+\(s\)-dependent direct sum, uses a marked point, and mixes distinct finite
+fields.  It is not the canonical physical determinant required by Gate A.
+\end{remark}
+
+\section{Periodic comparison}
+
+The nonperiodic hypothesis is exactly what makes the bouquet locally finite
+and moves the Euler product's convergence boundary to zero.
+
+\begin{proposition}[Periodic branch]
+\label{prop:periodic}
+Suppose \(P\in\Z^2\) has exact integral period \(N\).  Then \(r_p(P)\mid N\)
+for every prime.  The exceptional set
+\[
+ E_P=\{p:r_p(P)<N\}
+ =\left\{p:p\mid
+ \prod_{\substack{d\mid N\\d<N}}a_d(P)\right\}
+\]
+is finite, and for \(\RePart s>1/N\),
+\[
+ Z_P(s)=\zeta(Ns)
+ \prod_{p\in E_P}
+ \frac{1-p^{-Ns}}{1-p^{-r_p(P)s}}.
+ \label{eq:periodic-factor}
+\]
+The right side gives a meromorphic continuation and a simple pole at
+\(s=1/N\).  In this branch \(F_P^N\) fixes infinitely many bouquet points, so
+the formal locally finite Artin--Mazur construction of
+theorem~\ref{thm:bouquet} is unavailable.  For \(N=1\), the proper-divisor
+product defining \(E_P\) and the finite Euler correction over \(E_P\) are both
+understood as empty products.
+\end{proposition}
+
+\begin{proof}
+Integral periodicity gives \(H^N(P)=P\), hence \(r_p\mid N\).  If \(r_p<N\),
+then \(r_p\) is a proper divisor of \(N\) and
+\eqref{eq:return-divisibility} puts \(p\) among the displayed finite prime
+divisors.  The converse follows in the same way.  Outside \(E_P\), every
+local factor is \(1-p^{-Ns}\), so separating the finite exceptional factors
+from Euler's product proves \eqref{eq:periodic-factor}.
+\end{proof}
+
+\begin{remark}
+The source lock does not assert that this particular H\'enon map has an
+integral periodic point.  More importantly, \eqref{eq:periodic-factor}
+imports \(\zeta(Ns)\) because the local periods are almost everywhere equal
+to \(N\).  It is not an independent spectral reconstruction of zeta or its
+zeros.
+\end{remark}
+
+\section{Why inverse-length weighting is not a bridge}
+
+One may force the desired Euler factor by changing every prime's clock:
+\[
+ \widetilde T_s
+ =\bigoplus_p p^{-s/r_p}U_{p,P}.
+\]
+Blockwise,
+\[
+ \det(I-p^{-s/r_p}U_{p,P})=1-p^{-s},
+\]
+and therefore the scalar product of inverse block determinants is
+\(\zeta(s)\) for \(\RePart s>1\).  The output no longer depends on \(r_p\).
+
+\begin{theorem}[Clock-renormalization Schatten obstruction]
+\label{thm:forced-zeta}
+Let \(P\) be nonperiodic.  For every finite \(q>0\) and every
+\(\sigma=\RePart s>0\),
+\[
+ \|\widetilde T_s\|_{S_q}^q
+ =\sum_p r_p p^{-q\sigma/r_p}=\infty.
+ \label{eq:forced-divergence}
+\]
+Thus the forced Riemann Euler product is not the ordinary or finite-order
+regularized Fredholm determinant of this block direct sum on any positive
+half-plane.
+\end{theorem}
+
+\begin{proof}
+By theorem~\ref{thm:low-ranks}, eventually \(r_p>2q\sigma\).  For those
+primes, \(q\sigma/r_p<1/2\), so each summand in
+\eqref{eq:forced-divergence} is at least \(p^{-1/2}\).  The prime sum
+diverges.
+\end{proof}
+
+This is the decisive scoped negative result.  The local normalization
+\(s\mapsto s/r_p\) prescribes that one complete cycle has weight \(p^{-s}\).
+It therefore deletes the very return-length data that the construction was
+supposed to explain.  The exact scalar Euler product is not evidence for a
+Hilbert--Polya operator, a time-oriented scattering completion, or an
+intrinsic arithmetic trace.
+
+\section{Executable protocol and claim firewall}
+
+The executable artifact performs only finite exact checks:
+
+\begin{enumerate}
+\item it hashes the frozen four-volume foundation records together with the
+return--divisibility and prime-wheel sources;
+\item it reproduces the first integral iterates and gcd terms for \(P_0\);
+\item it verifies \eqref{eq:return-divisibility} for every prime at most 43
+and every order at most 12;
+\item it checks \eqref{eq:low-rank-set} at \(K=5\), giving the exact set
+\(\{2,3,5\}\);
+\item it records complete-cycle traces for selected primes and verifies the
+finite rank bound \(r_p\le p^2\) through \(p\le43\);
+\item it requires every Gate and every forbidden macro claim to remain false.
+\end{enumerate}
+
+These rows reproduce formulas; they do not prove normal convergence or an
+all-prime distribution law.  The all-prime statements are theorems proved in
+sections 2--7.
+
+The exact crosswalk is:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Item & Status & Reason \\
+\midrule
+Trigger 1 & untouched & no actual \(D_{4k}(R)\) theorem \\
+Trigger 2 & untouched & no typed \(q/E_{\mathrm{off}}\) theorem \\
+Trigger 3 & untouched & no complete unnormalised physical prefix \\
+Trigger 4 & untouched & no RH-241 noisy envelope/anchor bridge \\
+Trigger 5 & active & independent source-backed zeta theorem edge \\
+Gates A--E & false/open & no physical determinant-to-completed-zeta chain \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In particular, the paper constructs no Hilbert--Polya operator, identifies no
+Riemann zero as a spectrum, proves no von Mangoldt-weighted prime-power trace,
+proves no completed-zeta divisor equality, and does not prove the Riemann
+Hypothesis.
+
+\section{Conclusion}
+
+The return--divisibility theorem supports a natural all-prime zeta object, but
+its analytic behavior is sharply different from the Riemann zeta function on
+the nonperiodic branch: the return Euler product is already holomorphic and
+zero-free on the whole open right half-plane.  The natural block operator
+retains the return ranks and has a genuine, though restricted, Fredholm
+region.  The inverse-length clock produces the desired Riemann local factor
+only by making every cycle contribute the same prescribed prime weight, and
+the resulting direct sum loses all finite Schatten classes.
+
+The narrow next arithmetic questions are therefore source-backed constraints
+on the ranks themselves---average-over-primes theorems, Chebotarev-type
+finite-period events, primitive divisors, or height growth---and a genuinely
+intrinsic global dynamics whose determinant does not arise from independently
+retiming every prime.  The original physical RH route remains available and
+unchanged on top of the four-volume foundation.
+
+\begingroup
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}
