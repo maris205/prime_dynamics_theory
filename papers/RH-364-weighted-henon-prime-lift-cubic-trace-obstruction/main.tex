@@ -1,0 +1,774 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[numbers]{natbib}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\numberwithin{equation}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\RePart}{\operatorname{Re}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\Lam}{\Lambda}
+
+\title{Weighted H\'enon prime lifts:\\
+analytic domains, Fredholm regions, and a cubic trace obstruction}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For the integral area-preserving H\'enon map
+\(
+H_6(x,y)=(1-6x^2-y,x)
+\), a locked source constructs a local mixing hyperbolic survivor conjugate
+to a four-state subshift.  We extract two all-order consequences.  First, if
+\(L_o\) is the unstable multiplier modulus of a primitive survivor orbit,
+the exact cone expansion \(L_o\ge(773/224)^{n_o}\), together with the
+four-state orbit count, gives a certified zero-free disk and an explicit
+primitive-period tail for every nonnegative multiplier weight.  The
+Euler/flat correction has a larger analytic disk, but does not continue the
+complete determinants or certify the reported finite-section root.
+
+Second, we copy the same four-state matrix over all rational primes with one
+common Dirichlet clock.  The resulting direct sum is in \(S_q\) exactly when
+\(q\RePart s>1\), has an ordinary Fredholm determinant for \(\RePart s>1\),
+and genuine regularized determinants on their exact Schatten half-planes.
+Its inverse determinant factors into Riemann zeta functions, but its
+prime-power trace weights begin
+\(
+(F_1,F_2,F_3)=(1,1,4)
+\): primes and squares match von Mangoldt, while cubes have exact surplus
+\(3\log p\).  Positive multiplier weights produce a fractional
+non-meromorphic singularity at \(s=1\); the unique common scalar
+normalization repairs orders one and two but still fails at cubes.
+
+The local survivor is intrinsic, but copying it over prime labels is an
+engineered functor rather than a finite-field reduction or canonical global
+operator.  Gates A--E remain false/open.  No Hilbert--P\'olya operator,
+Riemann-zero identification, completed-zeta divisor equality, or proof of the
+Riemann Hypothesis is claimed.
+\end{abstract}
+
+\section{Frozen foundation and exact scope}
+
+The RH-1--RH-361 corpus remains frozen in four provenance-preserving volumes
+\citep{WangRHCorpus2026}.  RH-362 and RH-363 opened an independent
+arithmetic-dynamical branch, but left the physical route coordinate
+\begin{equation}
+ \texttt{actual\_same\_clock\_unnormalized\_head\_transport\_open}
+ \label{eq:physical-coordinate}
+\end{equation}
+unchanged \citep{WangRH3632026}.  Nothing here estimates the physical
+same-clock defect, supplies a typed \(q/E_{\rm off}\) theorem, or closes the
+RH-241 moving noisy trace envelope.
+
+The external source studied in this paper is the map
+\begin{equation}
+ H_6(x,y)=(1-6x^2-y,x)
+ \label{eq:henon-map}
+\end{equation}
+and the explicitly defined compact survivor \(\Lam_*\) in four rational
+state rectangles \citep{WangWeightedHenon2026}.  On \(\Lam_*\), the map is
+conjugate to the mixing subshift with adjacency matrix
+\begin{equation}
+ A=\begin{pmatrix}
+ 1&0&1&0\\
+ 1&0&0&0\\
+ 0&1&0&1\\
+ 0&1&0&0
+ \end{pmatrix}.
+ \label{eq:adjacency}
+\end{equation}
+The same source proves an exact period-preserving bijection between primitive
+symbolic necklaces and primitive H\'enon orbits in \(\Lam_*\), as well as a
+two-sided cone certificate.  These are theorems about this local survivor,
+not the full nonwandering set of the H\'enon plane.
+
+Write
+\begin{equation}
+ \varphi=\frac{1+\sqrt5}{2},
+ \qquad
+ \kappa=\frac{773}{224}.
+ \label{eq:constants}
+\end{equation}
+The numerical finite-volume matrices and the period-eight through
+period-twelve root table in the source remain finite experiments.  We use
+neither as asymptotic evidence.
+
+\section{Symbolic counts and a certified weighted Euler disk}
+
+Let
+\(
+F_n=\Tr(A^n)
+\)
+and let \(p_n\) be the number of primitive survivor orbits of period \(n\).
+
+\begin{theorem}[Exact all-order symbolic ledger]
+\label{thm:symbolic-ledger}
+For every \(n\ge1\),
+\begin{align}
+ \det(\lambda I-A)
+ &=(\lambda^2-\lambda-1)(\lambda^2+1),
+ \label{eq:characteristic}\\
+ F_n
+ &=\mathsf L_n+2\cos\!\left(\frac{n\pi}{2}\right),
+ \label{eq:trace-lucas}\\
+ p_n
+ &=\frac1n\sum_{d\mid n}\mu(d)F_{n/d},
+ \qquad
+ 0\le p_n\le\frac{F_n}{n}\le\frac{4\varphi^n}{n},
+ \label{eq:primitive-envelope}
+\end{align}
+where \(\mathsf L_n=\varphi^n+(-\varphi^{-1})^n\) is the \(n\)-th Lucas
+number.
+\end{theorem}
+
+\begin{proof}
+Direct expansion of \(\det(\lambda I-A)\) gives
+\eqref{eq:characteristic}.  The eigenvalues are
+\(
+\varphi,-\varphi^{-1},i,-i
+\), so taking power traces proves \eqref{eq:trace-lucas}.  The
+period-preserving conjugacy and finite-state fixed-point identity give
+\(
+F_n=\sum_{d\mid n}d p_d
+\); M\"obius inversion gives the first part of
+\eqref{eq:primitive-envelope}.  Since the points on primitive period-\(n\)
+orbits form a subset of \(\Fix(A^n)\), one has \(np_n\le F_n\).  Finally,
+\(
+|\mathsf L_n|\le\varphi^n+1
+\)
+and \(|2\cos(n\pi/2)|\le2\), which is at most \(4\varphi^n\).
+\end{proof}
+
+For a primitive survivor orbit \(o\), let \(n_o\) be its primitive period,
+\(\sigma_o\in\{-1,1\}\) the sign of its unstable multiplier, and
+\(L_o>1\) its modulus.  The cone certificate acts on the invariant unstable
+line at every iterate and gives
+\begin{equation}
+ L_o\ge\kappa^{n_o}.
+ \label{eq:multiplier-envelope}
+\end{equation}
+Here \(L_o\) is a monodromy multiplier of \(H_6\); it is not an eigenvalue of
+the four-state matrix \(A\).
+
+For real \(\beta\ge0\), define
+\begin{equation}
+ Z_\beta(z)=\prod_{o\in\cP_*}
+ (1-z^{n_o}L_o^{-\beta})^{-1},
+ \qquad
+ D_{E,\beta}(z)=Z_\beta(z)^{-1}.
+ \label{eq:weighted-euler}
+\end{equation}
+
+\begin{theorem}[Certified weighted disk and all-order tail]
+\label{thm:weighted-disk}
+For every real \(\beta\ge0\), both objects in
+\eqref{eq:weighted-euler} converge normally, are holomorphic, and are
+zero-free on
+\begin{equation}
+ |z|<R_\beta:=\frac{\kappa^\beta}{\varphi}.
+ \label{eq:weighted-radius}
+\end{equation}
+Fix \(0<R<R_\beta\), put
+\(
+t=R\kappa^{-\beta}
+\)
+and \(q=\varphi t\).  If the logarithm is truncated after all primitive
+periods at most \(N\), then
+\begin{equation}
+ \sup_{|z|\le R}
+ \left|\log Z_\beta(z)-\log Z_\beta^{(\mathrm{prim}\le N)}(z)\right|
+ \le
+ \frac{4q^{N+1}}
+ {(N+1)(1-q)(1-t^{N+1})}.
+ \label{eq:euler-tail}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For an orbit of period \(n\), equation \eqref{eq:multiplier-envelope}
+bounds its logarithmic repetition sum by
+\(
+t^n/(1-t^n)
+\)
+on the closed disk.  Theorem~\ref{thm:symbolic-ledger} therefore gives
+\begin{align*}
+ \sum_{n>N}p_n\frac{t^n}{1-t^n}
+ &\le
+ \frac{4}{(N+1)(1-t^{N+1})}
+ \sum_{n>N}(\varphi t)^n,
+\end{align*}
+which is \eqref{eq:euler-tail}.  Normal convergence supplies a canonical
+holomorphic logarithm.  Exponentiating it and its negative proves the
+zero-free statements.
+\end{proof}
+
+This is a certified disk, not a maximal-domain theorem.  In particular, for
+\(\beta=1\),
+\begin{equation}
+ R_1=\frac{\kappa}{\varphi}=2.132769077248\ldots,
+ \label{eq:euler-beta-one-radius}
+\end{equation}
+while the source reports a finite-section reciprocal root near
+\(3.429\).  That numerical value lies outside the proved disk.
+
+\subsection{The larger flat correction}
+
+The periodic-point flat determinant has the formal factorization
+\begin{equation}
+ D_F(z)=\prod_{o\in\cP_*}\prod_{j\ge0}
+ \left(1-\sigma_o^jL_o^{-(j+1)}z^{n_o}\right)^{j+1}.
+ \label{eq:flat-factorization}
+\end{equation}
+Its \(j=0\) factor is \(D_{E,1}\).  Define the remaining correction
+\begin{equation}
+ C_F(z)=\prod_{o\in\cP_*}\prod_{j\ge1}
+ \left(1-\sigma_o^jL_o^{-(j+1)}z^{n_o}\right)^{j+1}.
+ \label{eq:flat-correction}
+\end{equation}
+
+\begin{theorem}[Analytic flat correction, with a strict firewall]
+\label{thm:flat-correction}
+The product \(C_F\) converges normally and is holomorphic and zero-free on
+\begin{equation}
+ |z|<R_F^{\rm corr}:=\frac{\kappa^2}{\varphi}
+ =7.359957574612\ldots.
+ \label{eq:flat-correction-radius}
+\end{equation}
+The analytic identity
+\(
+D_F=D_{E,1}C_F
+\)
+is directly licensed by the products only on the common smaller disk
+\(|z|<\kappa/\varphi\).  The larger correction disk alone does not continue
+either complete determinant.
+\end{theorem}
+
+\begin{proof}
+For \(0<x<1\),
+\begin{equation}
+ \sum_{j\ge1}(j+1)x^{j+1}
+ =\frac{x^2(2-x)}{(1-x)^2}.
+ \label{eq:flat-geometric}
+\end{equation}
+Use \(x=L_o^{-r}\), sum the logarithmic repetitions, and apply
+\eqref{eq:multiplier-envelope}.  Uniformly in \(n_o\) and \(r\), the
+right side of \eqref{eq:flat-geometric} is bounded by a constant times
+\(\kappa^{-2rn_o}\).  The remaining orbit sum is dominated by
+\(
+\sum_n4\varphi^n u^n/(1-u^n)
+\)
+with \(u=|z|\kappa^{-2}\), which converges when \(\varphi u<1\).
+Each factor is then nonzero, so the normal product is zero-free.  The final
+scope statement follows because theorem~\ref{thm:weighted-disk} controls the
+\(j=0\) Euler factor only to \(\kappa/\varphi\).
+\end{proof}
+
+\section{A common-clock prime-copy operator}
+
+Let \(\ell\) denote a rational prime and use the real logarithm in
+\(\ell^{-s}=e^{-s\log\ell}\).  On
+\(
+\mathcal H=\bigoplus_{\ell}\C^4
+\), define
+\begin{equation}
+ \cT_s=\bigoplus_{\ell\ \mathrm{prime}}\ell^{-s}A.
+ \label{eq:prime-copy-operator}
+\end{equation}
+This is a common-clock copy: every prime receives the same local matrix and
+the same exponent \(s\).  It is not a reduction of \(H_6\) modulo \(\ell\).
+We use the standard Schatten and regularized-determinant conventions of
+\citet{Simon2005}.
+
+\begin{theorem}[Exact bounded, compact, and Schatten regions]
+\label{thm:schatten}
+The operator \(\cT_s\) is bounded exactly for \(\RePart s\ge0\), and compact
+exactly for \(\RePart s>0\).  For every finite \(q>0\),
+\begin{equation}
+ \|\cT_s\|_{S_q}^q
+ =\|A\|_{S_q}^q\sum_{\ell}\ell^{-q\RePart s},
+ \qquad
+ \cT_s\in S_q\Longleftrightarrow q\RePart s>1.
+ \label{eq:schatten-law}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The norm of the \(\ell\)-block is
+\(
+\ell^{-\RePart s}\|A\|
+\).  These block norms are uniformly bounded exactly for
+\(\RePart s\ge0\), and tend to zero exactly for \(\RePart s>0\).  Each
+singular value of \(A\) is multiplied by \(\ell^{-\RePart s}\), so summing
+their \(q\)-powers gives \eqref{eq:schatten-law}.  The prime Dirichlet series
+converges exactly when its real exponent exceeds one.
+\end{proof}
+
+The unweighted survivor determinant is
+\begin{equation}
+ D_{E,0}(z)=\det(I-zA)=1-z-z^3-z^4
+ =(1+z^2)(1-z-z^2).
+ \label{eq:unweighted-polynomial}
+\end{equation}
+
+\begin{theorem}[Fredholm identity and scalar zeta factorization]
+\label{thm:fredholm}
+For \(\RePart s>1\),
+\begin{align}
+ \cD_A(s):=\det_F(I-\cT_s)
+ &=\prod_{\ell}
+ \left(1-\ell^{-s}-\ell^{-3s}-\ell^{-4s}\right)
+ \label{eq:fredholm-product}\\
+ &=\prod_{n\ge1}\zeta(ns)^{-p_n}.
+ \label{eq:fredholm-zeta}
+\end{align}
+Consequently
+\begin{equation}
+ \cZ_A(s):=\cD_A(s)^{-1}
+ =\prod_{n\ge1}\zeta(ns)^{p_n}
+ \label{eq:inverse-zeta-product}
+\end{equation}
+in the same region.  The scalar right sides continue meromorphically to
+\begin{equation}
+ \RePart s>\log_2\varphi,
+ \label{eq:scalar-continuation-region}
+\end{equation}
+but below \(\RePart s>1\) they are not ordinary Fredholm determinants of
+\(\cT_s\).
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:schatten} makes \(\cT_s\) trace class for
+\(\RePart s>1\).  The Fredholm determinant then factors normally over the
+finite-dimensional blocks, and \eqref{eq:unweighted-polynomial} gives
+\eqref{eq:fredholm-product}.  The primitive-orbit identity
+\(
+\det(I-zA)=\prod_n(1-z^n)^{p_n}
+\)
+and absolute convergence permit interchange of the prime and period products,
+giving \eqref{eq:fredholm-zeta}.  The sign is essential: positive zeta
+exponents belong to the inverse determinant.
+
+For a compact set in \(\RePart s>\log_2\varphi\), the large-\(n\) estimate
+\(
+|\log\zeta(ns)|\ll2^{-n\RePart s}
+\)
+combines with \(p_n\le4\varphi^n/n\).  The tail product therefore converges
+normally; finitely many initial zeta factors are meromorphic.
+\end{proof}
+
+\begin{theorem}[Exact regularized determinant regions]
+\label{thm:regularized}
+Let \(m\ge1\) be an integer.  On \(m\RePart s>1\), the regularized
+determinant exists and has the branch-free block product
+\begin{equation}
+ \det_m(I-\cT_s)
+ =\prod_{\ell}
+ \left[
+  \left(1-\ell^{-s}-\ell^{-3s}-\ell^{-4s}\right)
+  \exp\!\left(
+   \sum_{r=1}^{m-1}\frac{F_r}{r}\ell^{-rs}
+  \right)
+ \right].
+ \label{eq:regularized-product}
+\end{equation}
+In particular \(\det_2(I-\cT_s)\) is a genuine regularized determinant on
+\(\RePart s>1/2\).
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:schatten} gives \(\cT_s\in S_m\) exactly in the stated
+region.  In finite dimension,
+\begin{equation}
+ \det_m(I-zA)=\det(I-zA)
+ \exp\!\left(\sum_{r=1}^{m-1}\frac{z^r\Tr(A^r)}r\right).
+ \label{eq:finite-regularization}
+\end{equation}
+The defining regularized product converges normally because its local
+remainder begins at order \(m\), and \(\sum_\ell\ell^{-m\RePart s}<\infty\).
+Equations \eqref{eq:unweighted-polynomial} and
+\eqref{eq:finite-regularization} give \eqref{eq:regularized-product}.
+\end{proof}
+
+\begin{remark}
+The power-trace logarithm
+\(
+-\sum_{r\ge m}F_r\sum_\ell\ell^{-rs}/r
+\)
+is directly absolutely convergent only after also imposing
+\(\RePart s>\log_2\varphi\).  The block product
+\eqref{eq:regularized-product}, not an unlicensed logarithm branch, is the
+global statement on the full \(S_m\) half-plane.
+\end{remark}
+
+\begin{corollary}[An entropy-block zero of the regularized determinant]
+\label{cor:entropy-zero}
+At the positive real point
+\begin{equation}
+ s_2=\log_2\varphi=0.694241913630\ldots,
+ \label{eq:entropy-zero}
+\end{equation}
+the operator belongs to \(S_2\) and \(\det_2(I-\cT_{s_2})=0\).
+\end{corollary}
+
+\begin{proof}
+The \(\ell=2\) block has scalar \(2^{-s_2}=\varphi^{-1}\), and
+\eqref{eq:unweighted-polynomial} vanishes at \(z=\varphi^{-1}\).  The
+regularizing exponential is nonzero.  Also \(2s_2>1\), so theorem
+\ref{thm:regularized} applies.
+\end{proof}
+
+This zero is the topological-entropy zero of one copied \(\ell=2\) block.  It
+is not a Riemann zero, a self-adjoint eigenvalue, or evidence for Gate E.
+
+\section{The first arithmetic defect is at prime cubes}
+
+In \(\RePart s>1\), differentiate the inverse determinant logarithm:
+\begin{equation}
+ -\frac{\cZ_A'}{\cZ_A}(s)
+ =\sum_{\ell}\sum_{r\ge1}
+ F_r\log\ell\,\ell^{-rs}.
+ \label{eq:trace-ledger}
+\end{equation}
+The classical von Mangoldt ledger would have coefficient one at every power
+\(\ell^r\).
+
+\begin{theorem}[Exact cubic trace obstruction]
+\label{thm:cubic-obstruction}
+The first symbolic ledgers are
+\begin{equation}
+ (F_1,F_2,F_3)=(1,1,4),
+ \qquad
+ (p_1,p_2,p_3)=(1,0,1).
+ \label{eq:first-ledgers}
+\end{equation}
+Thus \eqref{eq:trace-ledger} gives the classical weight \(\log\ell\) at
+primes and prime squares, but gives \(4\log\ell\) at prime cubes.  The first
+surplus is exactly \(3\log\ell\).
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:symbolic-ledger} gives \(F_1=1,F_2=1,F_3=4\).
+M\"obius inversion gives
+\(
+p_1=1
+\),
+\(
+p_2=(F_2-F_1)/2=0
+\), and
+\(
+p_3=(F_3-F_1)/3=1
+\).  Substitution in \eqref{eq:trace-ledger} proves the weight statement.
+\end{proof}
+
+Equivalently, the first zeta factors of \(\cZ_A\) are
+\begin{equation}
+ \cZ_A(s)=\zeta(s)\zeta(3s)\zeta(4s)^2\cdots.
+ \label{eq:first-zeta-factors}
+\end{equation}
+The factor \(\zeta(s)\) comes from the unique survivor fixed orbit.  The first
+chaotic surplus is the unique primitive period-three orbit and the factor
+\(\zeta(3s)\).  The appearance of Riemann zeta here is forced by copying the
+same finite-state orbit factor over the prime labels; it is not spectral
+recovery of Riemann zeros.
+
+\section{Positive weights and common scalar normalization}
+
+The full real H\'enon map has two fixed points.  Only one belongs to the
+certified survivor.
+
+\begin{lemma}[The unique survivor fixed atom]
+\label{lem:fixed-atom}
+The unique fixed point in \(\Lam_*\) is
+\begin{equation}
+ P_*=(x_*,x_*),
+ \qquad
+ x_*=-\frac{1+\sqrt7}{6}.
+ \label{eq:fixed-point}
+\end{equation}
+Its unstable multiplier modulus is
+\begin{equation}
+ L_*=1+\sqrt7+\sqrt{7+2\sqrt7}
+ =7.151675243800\ldots.
+ \label{eq:fixed-multiplier}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The fixed-point equation is \(6x^2+2x-1=0\).  The negative root lies in the
+negative state interval; the positive root does not lie in either certified
+state interval.  At the negative root, the derivative has determinant one and
+trace \(-12x_*=2+2\sqrt7\).  Solving its quadratic characteristic equation
+gives \eqref{eq:fixed-multiplier}.
+\end{proof}
+
+For real \(\beta\ge0\) and \(c>0\), define, initially in a sufficiently far
+right half-plane,
+\begin{equation}
+ \mathfrak Z_{\beta,c}(s)
+ =\prod_{\ell}Z_\beta(c\ell^{-s}).
+ \label{eq:weighted-prime-lift}
+\end{equation}
+
+\begin{theorem}[Natural weighted lift and a fractional singularity]
+\label{thm:fractional}
+For \(c=1\) and every real \(\beta\ge0\), the product
+\eqref{eq:weighted-prime-lift} converges normally and is holomorphic and
+zero-free on \(\RePart s>1\).  As real \(\sigma\downarrow1\),
+\begin{equation}
+ \log\mathfrak Z_{\beta,1}(\sigma)
+ =L_*^{-\beta}\log\frac1{\sigma-1}+O(1).
+ \label{eq:fractional-asymptotic}
+\end{equation}
+For \(\beta=0\), the singularity is an ordinary simple pole.  For every real
+\(\beta>0\), the exponent lies strictly between zero and one, so
+\(\mathfrak Z_{\beta,1}\) has no meromorphic continuation through \(s=1\).
+Along the real boundary, its inverse has corresponding fractional-order
+vanishing; this is not a holomorphic zero through \(s=1\).
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:weighted-disk} gives
+\(
+R_\beta\ge1/\varphi>1/2
+\).  Thus all local arguments \(\ell^{-s}\) stay in one compact subdisk for
+\(\RePart s\ge1\), and
+\begin{equation}
+ \log Z_\beta(z)=L_*^{-\beta}z+O(z^2)
+ \label{eq:local-fixed-expansion}
+\end{equation}
+uniformly there.  Summing the linear term over primes gives
+\(
+L_*^{-\beta}\sum_\ell\ell^{-s}
+\), while the quadratic remainders converge normally near \(s=1\).  The
+prime zeta asymptotic \citep{Tenenbaum2015}
+\(
+\sum_\ell\ell^{-\sigma}=\log(1/(\sigma-1))+O(1)
+\)
+proves \eqref{eq:fractional-asymptotic}.  A meromorphic function has an
+integer zero or pole order, so a noninteger leading logarithmic coefficient
+is impossible.
+\end{proof}
+
+To test whether one common scalar can repair the arithmetic trace weights,
+put
+\begin{equation}
+ G_m(\beta)=\sum_{o:n_o\mid m}
+ n_oL_o^{-\beta m/n_o},
+ \qquad
+ Q_m(\beta,c)=c^mG_m(\beta).
+ \label{eq:weighted-ledger}
+\end{equation}
+Whenever \eqref{eq:weighted-prime-lift} is expanded in a common convergence
+half-plane,
+\begin{equation}
+ -\frac{\mathfrak Z_{\beta,c}'}{\mathfrak Z_{\beta,c}}(s)
+ =\sum_{\ell,m\ge1}Q_m(\beta,c)
+ \log\ell\,\ell^{-ms}.
+ \label{eq:weighted-trace-ledger}
+\end{equation}
+
+\begin{theorem}[Scalar normalization fails exactly at cubes]
+\label{thm:scalar-obstruction}
+Fix real \(\beta\ge0\).  If \(c>0\) is required to match the prime weight,
+\(Q_1(\beta,c)=1\), then uniquely
+\begin{equation}
+ c=L_*^\beta.
+ \label{eq:forced-scalar}
+\end{equation}
+For this scalar,
+\begin{equation}
+ Q_2(\beta,L_*^\beta)=1,
+ \qquad
+ Q_3(\beta,L_*^\beta)
+ =1+3\left(\frac{L_*^3}{L_3}\right)^\beta>1,
+ \label{eq:weighted-cubic-defect}
+\end{equation}
+where \(L_3\) is the unstable multiplier modulus of the unique primitive
+period-three survivor orbit.  At \(\beta=0\), the cubic value is four.
+Therefore no common positive scalar normalization produces von Mangoldt
+weights at all prime powers.
+\end{theorem}
+
+\begin{proof}
+Only the fixed orbit divides order one, so
+\(
+Q_1=cL_*^{-\beta}
+\), proving \eqref{eq:forced-scalar}.  Since \(p_2=0\), order two contains
+only the second repetition of the fixed orbit and hence
+\(
+Q_2=c^2L_*^{-2\beta}=1
+\).  Since \(p_3=1\), order three contains the third fixed repetition and
+one primitive period-three orbit, giving
+\(
+G_3=L_*^{-3\beta}+3L_3^{-\beta}
+\).  Multiplication by \(c^3=L_*^{3\beta}\) gives
+\eqref{eq:weighted-cubic-defect}.
+\end{proof}
+
+The coefficient obstruction is valid for every real \(\beta\ge0\).  The
+analytic normalized product near \(s=1\) requires an additional strict
+radius condition.
+
+\begin{proposition}[Exact currently certified normalization threshold]
+\label{prop:beta-threshold}
+The all-order source bound proves that the normalized local arguments in
+\eqref{eq:weighted-prime-lift}, with \(c=L_*^\beta\), lie strictly inside the
+weighted Euler disk at \(s=1\) exactly when
+\begin{equation}
+ 0\le\beta<\beta_0,
+ \qquad
+ \beta_0=
+ \frac{\log(2/\varphi)}{\log(L_*/\kappa)}
+ =0.290834898770\ldots.
+ \label{eq:beta-threshold}
+\end{equation}
+In this range the normalized prime lift has a simple zeta pole times a
+holomorphic nonzero factor near \(s=1\).  For \(\beta\ge\beta_0\), the exact
+coefficient identities \eqref{eq:forced-scalar}--
+\eqref{eq:weighted-cubic-defect} remain valid, but the present source does not
+license the same near-\(s=1\) infinite-product statement.
+\end{proposition}
+
+\begin{proof}
+At \(s=1\), the largest local argument is the \(\ell=2\) argument
+\(
+L_*^\beta/2
+\).  Theorem~\ref{thm:weighted-disk} places it strictly inside the certified
+disk precisely when
+\(
+L_*^\beta/2<\kappa^\beta/\varphi
+\), which is \eqref{eq:beta-threshold}.  In the strict range, the local
+logarithm has first coefficient one and a uniformly summable quadratic
+remainder, so the global product is \(\zeta(s)\) times a holomorphic nonzero
+factor.  Equality or reversal of the radius inequality supplies no such
+continuation theorem.
+\end{proof}
+
+Complex and negative weights are outside the theorem.  Because every
+\(L_o>0\), complex powers can be defined using the real logarithm, but the
+absolute-value estimates then depend on \(\RePart\beta\), and \(Q_3\) has no
+real order relation.  Negative real weights require an explicit all-order
+multiplier upper envelope that is not established in this paper.
+
+\section{Route A value, Route B obstruction, and Gates}
+
+\begin{center}
+\begin{tabular}{p{0.18\textwidth}p{0.73\textwidth}}
+\toprule
+Route & Exact verdict \\
+\midrule
+Route A & \textbf{GO.}  The local survivor yields an all-order weighted
+analytic theorem and a larger flat correction domain.  The prime-copy functor
+has exact compact/Schatten/Fredholm regions, a scalar zeta factorization, a
+fractional singularity theorem, and a strict cubic normalization obstruction.\\
+Route B & \textbf{STOP\_SCOPED.}  The first fatal mismatch is Gate A data
+type: copying one local matrix over all prime labels is engineered, not a
+canonical arithmetic globalization.  Even if this functor is accepted, Gate
+D fails at prime cubes because the trace weight is four rather than one.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The following distinctions are mandatory.
+\begin{enumerate}
+\item The survivor \(\Lam_*\) is an intrinsic local hyperbolic set, but
+\(\cT_s\) is not the reduction of that real set modulo primes.  The prime
+labels are added by definition.
+\item Neither \(\cD_A\) nor \(\det_2(I-\cT_s)\) is the stationary-centered
+physical noisy determinant used in the original RH route.
+\item The factorization into \(\zeta(ns)\) is an exact consequence of copying
+the same primitive orbit factors over prime labels.  It is not a discovery of
+Riemann zeros in the H\'enon spectrum.
+\item The cube obstruction excludes common scalar normalization of this
+positive orbit ledger.  It does not exclude signed cancellations,
+orbit-dependent weights, or a different intrinsic global construction.
+\item The larger flat correction disk does not certify the source's finite
+root near \(3.429\), and finite root stability is not analytic continuation.
+\end{enumerate}
+
+Thus the Gate ledger remains
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Gate & Status & First missing or failed object \\
+\midrule
+A & false/open & canonical intrinsic global physical determinant \\
+B & false/open & time-oriented scattering or unitary completion \\
+C & false/open & self-adjoint generator and intrinsic \(T\log T\) \\
+D & false/open & cube weight is \(4\log p\), not \(\log p\) \\
+E & false/open & completed-zeta divisor equality \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+No Hilbert--P\'olya operator, self-adjoint generator, Riemann-zero spectral
+identification, completed-zeta divisor equality, or proof of the Riemann
+Hypothesis follows.
+
+\section{Executable protocol}
+
+The artifact performs finite exact reproduction and provenance checks only:
+\begin{enumerate}
+\item it hashes the locked survivor theorem, contraction, weighted-zeta,
+orbit, limitation, RH-363, and four-volume sources;
+\item it recomputes \(F_1,\ldots,F_{12}\), the Lucas trace identity, and
+\(p_1,\ldots,p_{12}\);
+\item it checks
+\(
+\det(I-zA)=1-z-z^3-z^4
+\), the exact fixed point and multiplier, the two certified radii, and
+\(\beta_0\);
+\item it verifies the source contains exactly one selected survivor orbit at
+periods one and three and reproduces representative scalar-normalization
+ledgers;
+\item it requires every Gate and every forbidden macro claim to remain false.
+\end{enumerate}
+
+These rows do not prove the all-order convergence theorems; sections 2--5 do.
+They also do not promote the stored multiplier decimals to interval
+certificates beyond the exact symbolic multiplicities and analytic formulas
+used in the proofs.
+
+\section{Conclusion}
+
+The certified survivor supplies more than a finite cycle table: its exact
+symbolic entropy and cone expansion give a rigorous weighted analytic domain.
+Prime copying then yields unusually clean operator ideals and Fredholm
+formulas.  Precisely because the construction is clean, its arithmetic
+failure is visible at the first nontrivial primitive orbit: the unique
+period-three orbit changes the cube trace weight from one to four.
+
+This is useful Route A structure and a sharp Route B boundary.  The natural
+next questions are a positive-radius theorem for the unweighted return-cycle
+bouquet, a genuine primitive-divisor theorem for its coefficient anchors, or
+an intrinsic globalization that does not add prime copies by hand.  The
+original physical same-clock route remains open and unchanged.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
