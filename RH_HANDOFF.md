@@ -9,6 +9,11 @@ Completed research batch: RH-352 through RH-361
 Research batch publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
 
+Non-numbered corpus synthesis: RH-MVP2
+
+Synthesis publication commit:
+`85269d06977fdfe52a501a8aac0104e63ad37fba`
+
 The repository, not an old chat transcript, is the source of truth.
 
 ## 1. Continuation protocol
@@ -31,6 +36,14 @@ Read completely:
 - `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/results/result.json`
 - `papers/RH-361-ten-layer-signed-completion-and-upper-counterloop-review/main.pdf`
 
+For corpus-level synthesis or new-route selection, also read completely:
+
+- `papers/RH-MVP2-corpus-frontier-synthesis/README.md`
+- `papers/RH-MVP2-corpus-frontier-synthesis/CROSSWALK.md`
+- `papers/RH-MVP2-corpus-frontier-synthesis/THEOREM_LEDGER.md`
+- `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
+- `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
+
 RH-361 does not automatically activate RH-362. Start with a read-only source
 lock. Create a new number only for an actual bridge, a typed `q/E_off`
 theorem, a rigorous physical obstruction, or another independent theorem
@@ -43,6 +56,49 @@ Use subagents for source lock, adversarial proof audit, one exclusive writer,
 and release QA. Preserve all unrelated caches, checkpoints, LaTeX
 intermediates, and TPC work. Stage only the active RH files. Pull with rebase
 before every commit and again before every push.
+
+### 1.1 Non-numbered corpus synthesis layer
+
+`papers/RH-MVP2-corpus-frontier-synthesis/` is a provenance-preserving
+umbrella survey for RH-1--RH-361. It is not RH-362 and does not change the
+completed numbered endpoint. The original papers remain the atomic sources;
+the synthesis records their canonical paths and selected SHA-256 hashes.
+
+The executable inventory verifies:
+
+- 361 unique numerical labels, exactly RH-1--RH-361;
+- 365 numerical RH directories, with four empty legacy alias directories at
+  RH-302, RH-303, RH-304, and RH-306;
+- 29 established review anchors with a declared-range union of 349/361 IDs;
+- 1,356 selected source-file hashes; and
+- all five Gates and all five named forbidden macro claims remain false.
+
+The umbrella manuscript has 6 pages. Its tests pass `3/3`; the local/corpus
+archive verifier covers 18 publication files with zero failures; Ghostscript
+parses the PDF; all 17 font rows are embedded; all six rendered pages were
+visually checked; and two forced rebuilds are byte-identical. The semantic
+PDF is byte-identical to `main.pdf`.
+
+The preferred expansion, if larger thematic syntheses are useful, is to keep
+RH-MVP1 for RH-1--RH-160 and derive three provenance-preserving volumes:
+
+1. RH-161--RH-241: physical Riesz packets, temporal clouds, relative
+   determinants, and the trace-envelope frontier;
+2. RH-242--RH-281: deterministic numerator anchors, selectors, analytic
+   tails, and counterloops; and
+3. RH-282--RH-361: noisy heads, weighted/annular endpoints, first alias, and
+   actual-versus-deterministic signed completion.
+
+These would be synthesis papers, not a new unconditional theorem chain. They
+must retain per-claim `PROVED`, `CERTIFIED`, `CONDITIONAL`,
+`SCOPED_NEGATIVE`, and `OPEN` labels. The mathematical route coordinate stays
+
+```text
+actual_same_clock_unnormalized_head_transport_open
+```
+
+RH-362 remains inactive unless one of the theorem-backed triggers in section
+5 is met.
 
 ## 2. Program objective and claim boundary
 
@@ -283,6 +339,24 @@ RH-352--RH-361 batch manifest
 
 RH-352--RH-361 batch verification
 46ebbd8a76edbf4a7e76efada06ee51971d932bd7fec732f47b4d80bcc3109d8
+
+RH-MVP2 main.tex
+d7e894ddd74b615673bf264d1950051bdd6b61e746ba8b53b19f0f909f34219a
+
+RH-MVP2 PDF
+75ed330838b7073d249eea0d01538d819d4b8fde60257792077b01b846c4f914
+
+RH-MVP2 corpus inventory
+61650327a6eb0e4b64bf2a94aed3b725927ac8d9deca4bf898a13e2660e7e907
+
+RH-MVP2 dependency manifest
+a75b3d69187670bb01ae57252f7e4643076f44bc6cb879c252dd2fab01694290
+
+RH-MVP2 summary
+b831f1a8141b853d29cdeb7dda852560bd032d77b5d187ab93a6e697504755a5
+
+RH-MVP2 archive verification
+c56fde30b784d73270cda1ce7f784e341a7cd26ddbc943242f0b237cc4b4f189
 ```
 
 ## 8. Continuation prompt
