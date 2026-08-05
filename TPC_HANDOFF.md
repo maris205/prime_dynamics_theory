@@ -3,15 +3,80 @@
 更新时间：2026-08-05
 交接状态：`SEALED_FOR_NEW_SESSION`
 本轮启动基线为
-`c0743f42bf7e6fd6eed7b7b50ab70b7a7abdda32`，与 `origin/main` 一致；启动
+`10efbe0de1d08b512ae765d2c30230b23940f72a`，与 `origin/main` 一致；启动
 `git pull --rebase origin main` 返回 already up to date。启动时
 `TPC_HANDOFF.md` SHA-256 为
-`ddeba2f0b502c9fef8291e34c05b54402bb3714e9e8145f5791674cd9de7a849`，
+`26205b4fda4eb1bb5d1df693514d204558db3e2417c138de3a9223cdddda2ab7`，
 tracked/cached diff 均为空；127 个既有 protected untracked files 的 manifest
 仍为
 `35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f`。
 第 1 节 22 项只读启动回归为 `22/22 PASS`；TPC-27--32 legacy writers 与
 TPC-122 writer 均未执行。
+
+正式写入与回归期间，工作区依次晚到启动 manifest中不存在的 untracked
+`TPC_review1.md`、`TPC_review2.md` 与 `TPC_review3.md`。用户明确要求参考前两份，
+第三份也只读纳入 route-portfolio审阅；主控没有创建、修改、删除或 stage这三份
+文件，也不推断其来源，按并行工作保护政策原样保留。故发布前 protected untracked
+现为 130 files，manifest为
+`9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1`；排除这三份
+late files后的原 127-file manifest仍精确等于启动值
+`35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f`。
+
+第 52 节执行的是全局路线罗盘，不是第 49--51 节 small-content gate 的又一项
+局部修补。它 source-lock RH-1--4、TPC-1、已发表的 prime--logistic heuristic
+与非自治 dynamical Borel--Cantelli theorem pattern，并把四个经常被混同的对象
+彻底分开：band-merging critical kneading word `RLR^infinity`、`u_c`-ACIP 的
+typical orbit、exact prime kneading word、以及随算术 cutoff 移动的 finite-sieve
+diagonal orbit。
+
+大胆但精确的结论是：TPC 的动力学路线确实可以压缩成一条短的
+nonautonomous rare-event/measure spine；但 literal
+“`RLR^infinity` 对应轨道遍历，所以有无穷多个 gap-2”是错误对象。
+`RLR^infinity` 的 critical orbit最终固定在 `R`，其 shift orbit closure只有三个点；
+`f_(u_c)` 的遍历性属于 ACIP-a.e. typical points，而不是该指定 critical orbit。
+相反，typical `u_c` orbit 的 `LRL` cylinder有正 ACIP measure，却没有算术素数
+语义。exact prime word上的 `LRL` visit与 twin pair逐点等价，但其普通自然时间
+Cesaro measure满足 `pi_2(N)/N <= pi(N)/N -> 0`，不能由固定正测度的普通
+Birkhoff/Poincare recurrence推出。
+
+合法的修复是 moving/shrinking target。若同一 stage-preserving nonautonomous
+system给出非循环的 exact gap-2 event intertwiner、正确 evolution/path measure、
+
+```text
+p_n = mu_n(E_(2,n)) >= c/(log(n+2))^2,
+sum_n p_n = infinity,
+Var(sum_(n<=N) 1_(E_(2,n))) << N,
+```
+
+并且 corresponding Borel--Cantelli full-measure set真实包含指定 arithmetic seed，
+则沿平方子序列的 Chebyshev--Borel--Cantelli 已足以推出无穷多 hits，进而推出
+无穷多 twin primes。这里“正测度”的正确含义是
+`(log n)^2 p_n` 保持正下界或至少 `sum p_n=infinity`，不是 fixed positive
+ordinary invariant mass。RH-3 已给 abstract sequential covariance/Birkhoff
+architecture；现缺 exact stage/event crosswalk、actual logarithmic schedule 的
+moving-target tower/cocycle attachment、noncircular mass law与 distinguished-seed
+genericity。Hénon 的 exact area preservation/reversibility不提供 logistic factor、
+event pullback或 measure pushforward，因此只保留为 optional auxiliary route。
+
+这条 repaired route保持 `OPEN`，但当前为 `CURRENT_THEORY_GAP`，不是 theorem
+advance。第 52 节只新增一个 broad direct-composition `STOP_SCOPED` cell，停止把
+当前 RH-1--4/TPC-1 objects直接拼成 twin infinitude；不停止 strengthened
+stage isomorphism、nonautonomous tower、rare-event mass/covariance theorem、
+distinguished-orbit DBC、Hénon factor theorem或 TPC-1 prime-sensitive bridge。
+没有 TPC-207 trigger、编号论文、PDF或 L2 credit。
+
+用户随后要求保留 200+ research nodes的价值但停止论文式碎片化，并把它们压缩为
+“major obstruction classes -> two bottlenecks -> one bold channel”。主控据此新增根级
+`TPC_COMPASS.md`：它把旧节点蒸馏为 13 类可复用 firewall，把 analytic far-copy与
+dynamical pointed recurrence视为同一 physical complement-cancellation问题的两种
+坐标，并提出唯一 Primorial Diagonal Renormalization Channel。该文件集中维护
+H0--H4、circularity kill tests、direct analytic与 nonautonomous logistic carrier两个
+proof engines；不是论文、不是 theorem evidence，也不改变本页 fail-closed状态。
+它还在同一 profinite probability system中补齐 typed replication--deletion operators、
+Haar mean projector、moving targets与 physical diagonal functional，并由 CRT导出
+`Cov(Z_m,Z_n)` 的 exact shifted local-product identity；该 identity是合法 derived
+channel progress，但其 resonance sum、one-sided physical discrepancy与 pointed
+recurrence仍全部 `OPEN`。
 
 第 51 节继续锁定第 50 节的同一 small-content far-copy 物理对象，并分别审核
 source-averaged Mellin、exceptional-character、many-auxiliary-modulus 与 shifted
@@ -105,10 +170,10 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC32_34_37_38_H0_2_20260805_SOURCE_AVERAGED_MELLIN_L1_PRESENT_TARGET_WEIGHTED_OVERLAP_EXTRA_J_UNPAID_EXCEPTIONAL_DELETION_NO_BULK_GAIN_MULTI_AUXILIARY_MODULUS_IDENTITY_RATIO_BUCKET_UNSUPPRESSED_RAW_ZERO_COLUMN_BESSEL_THEOREM_ABSENT_NO_TRIGGER_STOP_SCOPED_PARENTS_OPEN`
+`TPC_DYNAMICS_COMPASS_20260805_RLR_INFINITY_CRITICAL_ORBIT_EVENTUALLY_FIXED_UC_ACIP_LRL_POSITIVE_BUT_ARITHMETICALLY_WRONG_OBJECT_EXACT_PRIME_LRL_ORDINARY_MEASURE_ZERO_NONAUTONOMOUS_RARE_EVENT_DBC_ROUTE_OPEN_STAGE_EVENT_MASS_AND_DISTINGUISHED_SEED_GATES_UNPAID_NO_TRIGGER_STOP_SCOPED`
 下一篇：`null`；下一项不编号审计：`null`（仅在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -118,9 +183,9 @@ TPC-206 授权并完成：`true`
 TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
-上下文节省入口：新会话优先读取本页页首及第 1、6、22、24、29、30、31、32、
-33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48、49、50、51 节；第 23、
-27、28 节只在第 29--51 节明确引用时展开。第 22 节的
+上下文节省入口：新会话先读 `TPC_COMPASS.md`，再读本页页首及第 1、6、22、24、29、30、31、32、
+33、34、35、36、37、38、39、40、41、42、43、44、45、46、47、48、49、50、51、52 节；第 23、
+27、28 节只在第 29--52 节明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
 high-beta selected packet。两条 source lock 不得拼接。
@@ -1440,6 +1505,31 @@ Carella `arXiv:2208.12219v8` 不新增 method cell。它已属于第 31.3 节及
 `DECLARED_TPC32_FIXED_D0_OUTER_REGROUP_AND_POST30_DIRECT_FRAME_SOURCE_CANDIDATES_V1`
 的既有 scope；第 35.4 节只补充三项独立 proof-chain fatal与 exact equation
 locators，不把旧 STOP 重新包装成新方法。
+
+2026-08-05 的全局 prime-dynamics compass只新增一个 broad cell：
+
+```text
+DECLARED_RH1_4_TPC1_20260805_AUTONOMOUS_LIMIT_INVERSE_PRIME_KNEADING_
+NONAUTONOMOUS_SCHEDULE_HENON_LIFT_TO_DISTINGUISHED_E2_RECURRENCE_
+DIRECT_COMPOSITION_V1 = STOP_SCOPED
+```
+
+它只停止把当前 RH-1 的 `RLR^infinity` pointwise limit、RH-2 的 inverse exact-prime
+kneading parameter、RH-3 的 conditional sequential Birkhoff architecture、RH-4 的
+area-preserving Hénon construction、TPC-1 的 finite primorial local pair mass与已发表
+prime--logistic heuristic直接拼接成 distinguished arithmetic orbit的 gap-2 infinite
+recurrence。第一处 literal mismatch是：positive ACIP measure与 ergodicity属于
+`u_c` 的 typical attractor orbit，arithmetic-faithful coding属于另一个 exact prime
+word或 moving finite-sieve diagonal；当前没有保持 stage、time、event、measure与
+specified seed的同一 crosswalk。它也停止把 fixed positive ordinary invariant mass
+无 normalization 地替代自然尺度 `1/(log n)^2` 的 moving rare-event mass。
+
+本 cell不停止 profinite/primorial moving-target formulation、strengthened exact
+stage-preserving isomorphism、nonautonomous matched tower/rank-two cocycle、
+rare-event mass与 covariance theorem、distinguished-seed dynamical
+Borel--Cantelli/discrepancy theorem、真正 Hénon semiconjugacy/event pullback、
+TPC-1 prime-sensitive survivor-to-prime bridge、现有 analytic TPC parents或任何
+独立新 theorem。精确对象分离、条件 closure lemma与 reopen interface见第 52 节。
 
 ## 7. Reopen triggers
 
@@ -8965,6 +9055,394 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 52. 2026-08-05 prime-dynamics 全局罗盘：从 `RLR^infinity` 正测度误区到 pointed shrinking-target 主路线
+
+### 52.1 基线、任务范围与 source locks
+
+本轮启动时 HEAD 与 `origin/main` 均为
+`10efbe0de1d08b512ae765d2c30230b23940f72a`，`TPC_HANDOFF.md` 的启动
+SHA-256 为
+`26205b4fda4eb1bb5d1df693514d204558db3e2417c138de3a9223cdddda2ab7`。
+working tree没有 tracked/cached diff；127 个既有 protected untracked files 的
+manifest仍为
+`35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f`。
+启动 `git pull --rebase origin main` 返回 already up to date；第 1 节 22 项只读
+回归为 `22/22 PASS`。TPC-27--32 legacy writers与 TPC-122 writer均未执行。
+
+本轮不继续穷举 small-content far-copy 的微型变体，而执行一个有限的 global
+compass gate：判断“prime/sieve symbolic dynamics + logistic/Hénon + gap-2
+measure/recurrence”究竟是通路、启发桥、当前理论缺口还是结构死路。三个 read-only
+agents按根 `AGENTS.md` 完成：
+
+```text
+TPC-COMPASS-20260805-DYNAMICS-SOURCE-LOCK
+TPC-COMPASS-20260805-DYNAMICS-ARCHITECT
+TPC-COMPASS-20260805-DYNAMICS-DA
+```
+
+三者回报同一 HEAD/handoff hash、`files_changed=[]`、tracked/cached diff为空；所有
+正式写入只由主控完成。仓库内 theorem anchors为：
+
+1. RH-1 `main.tex:154--219,226--325,503--569`：cumulative sieve words、
+   `RLR^infinity` pointwise limit、band-merging critical orbit、entropy obstruction；
+2. RH-2 `main.tex:193--205,213--279,305--328,778--791`：natural prime word的
+   unique inverse kneading realization及其 nonpredictive boundary；
+3. RH-3 `main.tex:148--245,738--747,749--904`：`u_c` ACIP/ergodicity、
+   conditional rank-two sequential Birkhoff architecture及 actual schedule缺口；
+4. RH-4 `main.tex:685--766`：nonautonomous memory-loss boundary与 Hénon exact
+   symplectic/reversible structure；
+5. TPC-1 `main.tex:99--127,194--233,625--684,703--846`：finite primorial
+   pair cylinder、exact primality cutoff、period mismatch与 prime-sensitive lower-bound
+   barrier。
+
+已发表的 Wang, *The emergence of prime distribution from low-dimensional
+deterministic chaos*, DOI `10.1080/27684830.2026.2684334` 把 dynamical sieve
+isomorphism与 twin-prime fixed point明确列为 Conjecture A/B及 heuristic/numerical
+framework；本轮按其实际 claim strength使用，不把发表状态升级成 theorem。
+Haydn--Nicol--Persson--Vaienti `arXiv:1103.2113`、Haydn--Nicol--Török--Vaienti
+`arXiv:1406.4266` 与 Fishman--Mance--Simmons--Urbański `arXiv:1409.7950`
+只证明 dynamical/nonautonomous shrinking-target theorem这一“工具类型”真实存在；
+它们的 map class、target class与 a.e. initial laws没有 literal attachment到本轮
+arithmetic seed或 quadratic/Hénon schedule，因而不给 TPC theorem credit。
+
+只读 remote source refresh得到：
+
+```text
+maris205/riemann_logistic main
+  = 9584407bf5bf2488b1b06ba97178ada679a66549
+maris205/riemann_henon main
+  = f86bf21a32ad5bcb21ba81d312cc68e91bcc7db0
+```
+
+`D:/26-aimath/logistic_riemann` 与 `D:/26-aimath/henon_riemann` 本地镜像都不是
+Git worktree；未建立其 bytes与上述 remote heads的 crosswalk，故只作 heuristic
+context，不计 committed theorem evidence。本轮不触及 RH zero-spectrum 或
+Hilbert--Pólya路线。
+
+### 52.2 四个不能拼接的 orbit/measure 对象
+
+令 `f_u(x)=1-u*x^2`，`u_c` 为第一 band-merging 参数，`b=u_c-1`。当前精确
+source-backed对象为：
+
+| object | exact fact | status for TPC |
+|---|---|---|
+| cumulative sieve pointwise limit | 对每个固定 `n>=2`，一旦其某个素因子进入 sieve，`Q_k(n)=R` 永久成立；故 `Q_k -> RLR^infinity` | `PROVED_SEGMENT`，但逐点极限擦除全部固定素数 |
+| band-merging critical orbit | `0 -> 1 -> -b -> b -> b`，critical-value itinerary为 `RLR^infinity`；其 shift orbit closure是 `{RLR^infinity,LR^infinity,R^infinity}`、entropy `0` | direct arithmetic recurrence为 `STRUCTURAL_DEAD_END`；该指定 orbit没有无穷多个 `LRL` |
+| full `u_c` attractor with ACIP `mu_c` | `f_(u_c)` 有唯一 ACIP，遍历但不 mixing；由 full-branch Markov geometry，autonomous `LRL` cylinder包含非退化区间并有正 `mu_c` measure | positive measure是合法 dynamical fact，但 typical orbit没有 prime semantics |
+| natural prime word `P` | `P(n)=L` iff `n` prime (`n>=2`)；存在唯一 `u_P` 使 critical itinerary等于 `P` | exact inverse encoding为 `PROVED_SEGMENT`；作为独立 generator是 circular/wrong direction |
+
+这给出对本轮大胆命题的精确裁决：
+
+```text
+ERGODIC_MAP != GENERIC_DISTINGUISHED_CRITICAL_ORBIT
+POSITIVE_UC_ACIP_LRL_CYLINDER != ARITHMETIC_TWIN_CYLINDER
+RLR_INFINITY_CRITICAL_ITINERARY != TYPICAL_UC_ATTRACTOR_ITINERARY
+```
+
+对 exact prime word则有完全正确但不产生新下界的 identity：对 `n>=3`，
+
+```text
+sigma^n(P) in [LRL]
+  iff n and n+2 are both prime.
+```
+
+其普通 natural-time cylinder measure必为零，因为
+
+```text
+(1/N) sum_(n<N) 1_[LRL](sigma^n(P))
+  = pi_2(N)/N
+  <= pi(N)/N
+  -> 0.
+```
+
+因此 fixed positive ordinary invariant measure加普通 Birkhoff若真能无损作用于
+arithmetic word，会给正自然密度 `c*N`，远强于预期 `N/(log N)^2`；这不是
+“尚缺一个小 lemma”，而是 normalization/object mismatch。合法的“正测度”必须
+解释成随 stage缩小但不可求和的 rare-event mass，或显式改用
+`ds=dn/(log n)^2` 的 aging clock。用公式说，正确候选是
+
+```text
+p_n > 0,
+(log n)^2 p_n >= c > 0,
+sum_n p_n = infinity,
+```
+
+而不是 `p_n >= c > 0`。
+
+### 52.3 非循环的 arithmetic base 与最短主路线
+
+本轮最强的非循环 formulation不需要先用完整 prime word选择 `u_P`。令
+
+```text
+X_arith = inverse_limit_q Z/qZ = Z_hat,
+T(x) = x+1,
+m = Haar probability on Z_hat,
+rho_y = product_(p<=y) (1-1/p),
+E_2(y) = {x : p does not divide x(x+2) for every prime p<=y}.
+```
+
+CRT给出 exact finite-stage mass
+
+```text
+m(E_2(y))
+  = (1/2) product_(2<p<=y) (1-2/p) > 0,
+m(E_2(y))/rho_y^2 -> 2*C_2.
+```
+
+令 `y_n=sqrt(n+2)`、`E_n=E_2(y_n)`，并取 distinguished arithmetic orbit
+`x_n=T^n(0)=n`。对每个 `n>=3`，任一 `m in {n,n+2}` 若 composite就有一个
+prime divisor不超过 `sqrt(m)<=sqrt(n+2)`，故
+
+```text
+T^n(0) in E_n
+  iff n and n+2 are both prime.
+```
+
+这是只用有限整除关系的 exact stage identity，没有把未来 twin-prime答案写入
+parameter。Mertens product又给
+
+```text
+m(E_n) asymp 1/(log n)^2,
+sum_n m(E_n) = infinity.
+```
+
+所以用户所说“归根到底是测度问题”有一个完全准确的 repaired版本；其依赖 DAG为：
+
+```text
+finite primorial systems + CRT local pair mass                 [PROVED]
+                    |
+                    v
+(Z_hat, x->x+1, Haar) + E_n=E_2(sqrt(n+2))                    [PROVED]
+                    |
+                    +--> positive nonsummable moving mass      [PROVED]
+                    |
+                    +--> T^n(0) in E_n iff twin at n           [PROVED]
+                                      |
+                                      v
+POINTED_CRITICAL_SHRINKING_TARGET_RECURRENCE_AT_0               [OPEN]
+                                      |
+                                      v
+infinitely many twin primes
+```
+
+唯一主墙不是定义或 local measure，而是
+
+```text
+CRITICAL_SCALE_POINTED_ODOMETER_SHRINKING_TARGET_RECURRENCE
+```
+
+即从一个独立可核验的 discrepancy/correlation criterion证明
+
+```text
+sum_(n>=3) 1_(E_n)(T^n(0)) = infinity.
+```
+
+普通 Poincaré recurrence不能处理 moving targets；ordinary ergodic theorem不能
+处理 complexity随 `P_(sqrt n)=exp((1+o(1))*sqrt n)` 增长而 observation time只有
+`n` 的 diagonal family；odometer本身也不 mixing。TPC-1 的完整 primorial period
+与 primality-exact physical window不重叠，正是同一 endpoint/period mismatch。
+因此“每个 `E_n` 正测度”与“总 mass发散”都还不能单独控制指定点 `0`。
+
+### 52.4 logistic/Hénon 应放在 DAG 的哪里
+
+nonautonomous logistic route只有在它增加一个独立的 pointed recurrence mechanism
+时才有证明价值。所需 strengthened hypothesis不能只是 limit kneading word equality，
+而必须在同一 construction上给：
+
+```text
+H_STAGE_EVENT:
+  pi_(n+1) o F_n = S_n o pi_n,
+  1_(E^dyn_n)(F_(n-1)...F_0(z_*)) = 1_(E_n)(T^n(0));
+
+H_EVOLUTION_MEASURE:
+  (F_n)_* mu_n = mu_(n+1)
+  or an exact path-space law, with no ACIP/Haar/empirical-measure swap;
+
+H_RARE_MASS:
+  p_n=mu_n(E^dyn_n) >= c/(log(n+2))^2
+  from an independent source, not calibration to Hardy--Littlewood;
+
+H_MOVING_MIX:
+  uniform tower/mixed-block/rank-two complement contraction and
+  moving-target multiplier/covariance bounds for the actual schedule;
+
+H_POINTED:
+  the distinguished arithmetic seed z_* belongs to the resulting
+  Borel--Cantelli set, or satisfies a direct deterministic discrepancy bound.
+```
+
+RH-3 的 sequential theorem证明了 `H_MOVING_MIX` 一类结论在 uniform block-memory
+loss、bounded multipliers与 common paired means下如何导出 exponential covariance，
+但 actual logarithmic quadratic schedule仍缺 matched tower、mixed-block isolated
+rank-two cluster、arbitrary-product contraction、moving phase labels与 internal
+`2 by 2` cocycle；其结论也只对 allowed initial densities的 almost every point，
+不是 `H_POINTED`。published Conjecture A/B 可作为 `H_STAGE_EVENT/H_RARE_MASS`
+的启发来源，不能作已证明 attachment。
+
+Hénon若加入路线，还必须先有真正 factor theorem：
+
+```text
+rho_(n+1) o H_n = f_n o rho_n,
+E^Henon_n = rho_n^(-1)(E^logistic_n),
+rho_*(mu^Henon_n) = mu^logistic_n,
+```
+
+并保持同一 stage、seed与 event。当前
+
+```text
+H_a(x,y)=(1-a*x^2-y,x),
+x_(n+1)=1-a*x_n^2-x_(n-1),
+det(DH_a)=1
+```
+
+只给 exact symplecticity与 reversibility；`pi_x o H_a` 不等于 logistic map，
+`y=0` 也不是 invariant graph。area preservation不能自动传递 prime itinerary、
+gap-2 event或 pointed genericity。因此 Hénon是 `OPTIONAL_AUXILIARY_OPEN`，不是
+当前主 spine，更不绕过 pointed recurrence node。
+
+### 52.5 条件 closure lemma：一旦真正成为测度问题，最后一步很短
+
+令 `Z_n=1_(E^dyn_n) o Phi_n` 定义在同一 initial probability space上，
+`p_n=E[Z_n]`，`S_N=sum_(n<=N) Z_n`，`A_N=sum_(n<=N) p_n`。若 source-backed
+theorem真正给出
+
+```text
+p_n >= c/(log(n+2))^2,
+Var(S_N) <= C*N,
+```
+
+则 `A_N >> N/(log N)^2`。取 `N_j=j^2`，Chebyshev给
+
+```text
+P(|S_(N_j)-A_(N_j)| > A_(N_j)/2)
+  << N_j/A_(N_j)^2
+  << (log j)^4/j^2.
+```
+
+右侧可求和，故 Borel--Cantelli推出 almost every initial point沿 `N_j` 最终满足
+`S_(N_j)>=A_(N_j)/2 -> infinity`。所以无需先证明完整 Hardy--Littlewood
+asymptotic；一个 natural rare-mass lower bound与 `O(N)` variance已经足够得到
+infinitely many hits。
+
+这项 closure是 elementary derived theorem pattern，不是 arithmetic advance，原因
+正是 almost-everywhere set尚未证明包含 `z_*`。不得把
+
+```text
+mu_0(BC_set)=1
+```
+
+改写成
+
+```text
+z_* in BC_set.
+```
+
+若 exact event factor只依赖 arithmetic base，那么同一 fiber上的额外 Hénon/logistic
+coordinates也不能改变 base event sequence；extension中的 generic lift不能替代
+arithmetic seed的 pointed theorem。这是对“加一个更混合的高维 lift即可自动完成”
+的 no-free-promotion firewall，不是对未来 transversality/pointed discrepancy theorem
+的 nonexistence claim。
+
+### 52.6 路线分类、精确 verdict 与唯一高杠杆 reopen
+
+| route | current classification | first fatal / next theorem |
+|---|---|---|
+| literal `RLR^infinity` critical orbit + ordinary recurrence | `STRUCTURAL_DEAD_END` | orbit eventually fixed；没有 infinite `LRL` |
+| typical `u_c` ACIP orbit + positive `LRL` mass | `PROVED_DYNAMICS_WRONG_ARITHMETIC_OBJECT` | no prime/event/seed crosswalk |
+| exact `u_P` prime kneading orbit | `PROVED_INVERSE_ENCODING_ONLY` | independent generator/prediction is circular |
+| profinite/primorial moving target | `BEST_OPEN_ROUTE / CURRENT_THEORY_GAP` | pointed critical shrinking-target recurrence at `0` |
+| nonautonomous logarithmic logistic | `PLAUSIBLE_HEURISTIC_BRIDGE` | exact stage/event factor、actual tower/cocycle、rare mass、pointed seed |
+| Hénon lift | `OPTIONAL_AUXILIARY_OPEN` | semiconjugacy/event/measure/seed transfer absent |
+| TPC-32 analytic small-content far-copy parent | `OPEN_BACKUP` | 第 51 节 extra `J` / raw zero-column Bessel wall unchanged |
+
+第 6 节 broad cell
+
+```text
+DECLARED_RH1_4_TPC1_20260805_AUTONOMOUS_LIMIT_INVERSE_PRIME_KNEADING_
+NONAUTONOMOUS_SCHEDULE_HENON_LIFT_TO_DISTINGUISHED_E2_RECURRENCE_
+DIRECT_COMPOSITION_V1 = STOP_SCOPED
+```
+
+只停止把当前 objects直接拼成 TPC。所有 strengthened gates保持 `OPEN`。
+
+本轮精确有限 verdict为：
+
+```text
+TPC_DYNAMICS_COMPASS_20260805_RLR_INFINITY_CRITICAL_ORBIT_EVENTUALLY_FIXED_
+UC_ACIP_LRL_POSITIVE_BUT_ARITHMETICALLY_WRONG_OBJECT_
+EXACT_PRIME_LRL_ORDINARY_MEASURE_ZERO_
+PROFINITE_NONAUTONOMOUS_RARE_EVENT_ROUTE_EXACT_THROUGH_MOVING_MASS_
+POINTED_CRITICAL_RECURRENCE_ABSENT_
+LOGISTIC_HENON_STAGE_EVENT_MEASURE_SEED_ATTACHMENTS_ABSENT_
+NO_TRIGGER_STOP_SCOPED_ROUTE_OPEN
+
+THEOREM_TRIGGER = false
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC207_CREATED = false
+```
+
+唯一值得投入下一大轮、且不是微型补丁的 theorem target为：
+
+```text
+CRITICAL_SCALE_POINTED_ODOMETER_SHRINKING_TARGET_RECURRENCE
+```
+
+可接受的 reopen evidence必须给独立、可核验的 endpoint discrepancy/covariance
+criterion并证明它适用于 `x=0`；或给一个 exact stage-preserving nonautonomous
+logistic/Hénon factor，加 actual rare-event mass、moving covariance与 distinguished
+seed theorem。不得把 `m(E_n)>0`、`sum m(E_n)=infinity`、ordinary a.e. DBC、
+complete-period Haar mean、inverse `u_P` encoding或 Conjecture A/B本身当成该结论。
+
+任一 dynamics subgate转正可记为真实路线进展，但不自动创建 TPC-207。只有
+prime-sensitive pointed recurrence真正改变 arithmetic theorem state，且另行通过
+all-`D` uniformity、exactly-once physical cover、original/global normalization、
+tail-failure、A/B selection、actual packet attachment与完整 provenance gates，才进入
+现有 numbered release pipeline。第 6 节全部旧 method cells、两个 O161 parents、
+pair-native、H1与 global architecture状态不变。
+
+### 52.7 distilled bold-channel controller 与 publication boundary
+
+本轮没有创建 TPC-207、论文、paper directory、PDF、数值模型或构建日志。没有修改
+RH/TPC paper artifacts，也没有把 external local mirrors纳入 source locks。用户要求
+压缩 200+ research nodes并切换到 bold-channel mode后，正式预期 tracked writes仅为
+`TPC_HANDOFF.md` 与根级 `TPC_COMPASS.md`；后者是 controller/route ledger，不是
+paper或 theorem artifact。所有 protected untracked必须原样保留且不得纳入提交。
+
+正式写入后必须重跑第 1 节 22 项只读回归、supplemental checks、Markdown fence与
+protected manifest；只 stage上述两个预期 files。commit/push后必须验证 local `HEAD`、
+`origin/main` 与 remote `refs/heads/main` 三个 hash完全一致。
+
+发布前只读结果为：
+
+```text
+POST_WRITE_BOOTSTRAP_REGRESSION = 22/22 PASS
+POST_WRITE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_WRITE_GIT_DIFF_CHECK = PASS; TPC_HANDOFF.md + TPC_COMPASS.md ONLY
+POST_WRITE_MARKDOWN_FENCES = 1566 MARKERS BALANCED
+POST_WRITE_COMPASS_FENCES = 44 MARKERS BALANCED
+TPC_COMPASS_SHA256
+  = e871bbdeadb13697e4f02fbf9cd128db32959071343c401a725aff563550f8ef
+POST_WRITE_NUMBERED_SECTIONS = 52 UNIQUE; DUPLICATES=0
+STARTUP_PROTECTED_UNTRACKED = 127 FILES
+STARTUP_PROTECTED_MANIFEST
+  = 35ad4ac2d5def3ecec536bf3943fd0279cbea23b332ed5d7fff659cd6f673f2f
+LATE_UNTRACKED_PRESERVED_NOT_STAGED
+  = TPC_review1.md + TPC_review2.md + TPC_review3.md
+POST_WRITE_PROTECTED_UNTRACKED = 130 FILES
+POST_WRITE_PROTECTED_MANIFEST
+  = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+PRE_COMMIT_FINAL_FETCH_ORIGIN_MAIN
+  = 10efbe0de1d08b512ae765d2c30230b23940f72a
+PRE_COMMIT_FINAL_FETCH_DELTA = NONE
+SUBAGENT_REPORTED_FILES_CHANGED = 0
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+EXPECTED_TRACKED_RELEASE_FILES = TPC_HANDOFF.md + TPC_COMPASS.md
+```
 
 ## 51. 2026-08-05 source-averaged Mellin、exceptional characters 与 identity-bucket gate
 
