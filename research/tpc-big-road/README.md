@@ -1,11 +1,31 @@
-# TPC big road V2: parity-breaking affine transference
+# TPC big road V7: conductor-projected HB4 highway
 
 更新时间：2026-08-05
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / CHANNEL_REDESIGN_WITH_H3_METRIC_ADVANCE`
+状态：`UNNUMBERED_WORKING_ARTIFACT / HB4_QUARTER_OFFDIAGONAL_FOR_EVERY_FIXED_DELTA_BELOW_HALF_PROVED`
 
 ```text
-ARITHMETIC_ADVANCE = NO
+COARSE_COMPARISON_TYPE_I_ADVANCE = RETAINED
+COARSE_COMPARISON_TYPE_II = STOP_SCOPED_FALSE_MOD3_RANK_ONE
+HYBRID_TENSOR_LOCAL_PROFILE = PROVED_EXACT
+HYBRID_b1_w_AND_SUBHALF_TYPE_I = PROVED_SOURCE_BACKED
+HYBRID_UNIVERSAL_HIGH_CONDUCTOR_TYPE_II = OPEN
+H3_U_UNIVERSAL_FORK = OPEN_RESERVE_OVERSTRONG
+DIRECT_HB2_EXTRACTOR = PROVED_EXACT_REDUCTION_TO_SHB_D2
+SHB_D2_MASTER = SELECTED_PRIMARY_OPEN_NEW_THEOREM
+HB2_B3_MINIMAL_CORE = SELECTED_PROVISIONAL_OPEN_NEW_THEOREM
+ONE_POISSON_BC1_QUARTER = STOP_SCOPED_FIRST_SUMMAND_NO_NEW_RANGE
+NAIVE_NATIVE_TWO_STAGE = STOP_SCOPED_AT_QUADRATIC_DIAGONAL
+HB4_QUARTER_COLLECTIVE_MAIN = PROVED_SOURCE_BACKED_ALL_D_ATTACHMENT
+HB4_QUARTER_RAMANUJAN_AXES = PROVED_X3_OVER_4_POWER_SAVING
+HB4_QUARTER_WEIL_WINDOW = PROVED_FOR_1_OVER_4_LT_DELTA_LT_1_OVER_3
+HB4_QUARTER_PASCADI_WINDOW = PROVED_FOR_1_OVER_3_LE_DELTA_LT_3_OVER_8
+HB4_LOW_CONDUCTOR_PROJECTOR = PROVED_GAUSS_CRT_PLUS_PRIMITIVE_LARGE_SIEVE
+HB4_HIGH_CONDUCTOR_WINDOW = PROVED_FOR_3_OVER_8_LE_DELTA_LT_1_OVER_2
+HB4_QUARTER_FULL_WINDOW = PROVED_FOR_1_OVER_4_LT_DELTA_LT_1_OVER_2
+HB4_EXACT_HALF_ENDPOINT = OPEN_LOG_POWER_GATE
+LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
+HB4xHB2_DIVISOR_VORONOI_DETERMINANT = OPEN_NEW_THEOREM
 TPC_207_TRIGGER = false
 FIXED_ATOM_CREDIT = 0
 STRICT_1_OVER_400 = UNPAID
@@ -13,7 +33,13 @@ L2 = NONE
 ```
 
 本目录不是 TPC-207，也不是论文。它把 `TPC_review3.md` 的四条活路压成一条可证伪
-的主干，并记录一个新的无条件 metric theorem。所有 TPC-1--206 的 source locks、
+的主干，记录一个无条件 metric theorem，并用 rank-one测试发现 coarse
+Ford--Maynard comparison的致命 local tensor漏项；随后构造了 growing-`z` hybrid
+comparison；V6 把 factorized HB4 quarter cell的 collective main、Ramanujan轴
+与首个 off-diagonal window闭合；V7 再用 conductor projector把窗口推进到每个
+fixed `delta<1/2`，并把 large-`D` quotient-Möbius墙精确改写成 bilateral
+HB4xHB2 divisor-log determinant。完整 compiler见
+[`fm_local_comparison_compiler.md`](fm_local_comparison_compiler.md)。所有 TPC-1--206 的 source locks、
 `STOP_SCOPED` cells、actuality/provenance 与 normalization firewalls继续有效。
 
 ## 1. 先给大胆结论
@@ -47,7 +73,7 @@ general affine-pattern decomposition
                      h0 = 2 / TPC.
 ```
 
-它的 master target命名为
+这个抽象 master target命名为
 
 ```text
 PARITY_BREAKING_AFFINE_PATTERN_TRANSFERENCE_THEOREM (PBAPT).
@@ -61,6 +87,36 @@ PBAPT必须先对一类与 prime outcomes无关的 admissible affine patterns陈
 `H3_METRIC_PROVED`，可推出 Haar-a.e. profinite seed无穷命中；但没有从 Haar-a.e.
 到 distinguished arithmetic seed `0` 的箭头。它是结构诊断和 covariance模型，
 不是 TPC credit。
+
+本轮还得到一条更窄、更直接的 specialization。coarse comparison
+
+```text
+a(n)=Lambda(n+2),
+b(n)=2 C2 1_(n odd) product_(p|n,p>2)(p-1)/(p-2).
+```
+
+的 comparison regularity与每个固定 `gamma<1/2` 的 maximal Type I均已闭合；但
+它的 universal Type II被 `m=n=1 mod 6`的 mod-3 rank-one selector线性否定，故
+direct route已 `STOP_SCOPED`。replacement是
+
+```text
+b^(z)(n)=C_(2,>z)
+ product_(p<=z)[p/(p-1)1_(p does not divide n+2)]
+ product_(p|n,p>z)(p-1)/(p-2),
+z=log^K X.
+```
+
+它在所有 `p<=z`上精确匹配 full product-residue tensor；其 local profile、global
+sieve regularity与每个 fixed `gamma<1/2`的 sub-half maximal Type I均已证，只有
+universal high-conductor Type II仍未证。若这个 gate在
+
+```text
+(gamma,theta,nu)=(1/2,133/400,67/400),
+```
+
+闭合，并证明 hybrid literal Ford--Maynard Type II于
+`(X/2)^(133/400)<m<=X^(1/2)`，Proposition 4.11就自动给互补尺度到
+`(X/2)^(267/400)`，Theorem 2.2才给 twin-prime dyadic asymptotic。
 
 ## 2. Exact physical deletion-bias cocycle
 
@@ -433,7 +489,7 @@ Ford--Maynard, *On the theory of prime-producing sieves*,
 突破 parity 的关键，见 Friedlander--Iwaniec,
 <https://annals.math.princeton.edu/articles/13036>。
 
-### 6.1 Ford--Maynard 两个直接候选的 fail-closed 结果
+### 6.1 Ford--Maynard 两个 `b=1` 候选的 fail-closed 结果
 
 这个 framework给主路提供合同，但两个最直观的代入都尚未进入其 theorem。
 
@@ -466,16 +522,216 @@ sum_(X/2<2n<=X)(Lambda(2n+2)-1)
 ```
 
 因为非零项只可能来自 `2n+2` 为 2 的幂。一个 locally matched comparison或
-`W`-trick或许能先消除这些有限 local biases，但本轮没有构造它。即使修复，首个
-真正大墙仍是 arbitrary divisor-bounded coefficients下的 multiplicative Type II；
+`W`-trick可以消除有限 local biases，但 growing-`W` comparison还要另付 regularity。
+本轮没有采用该截断，而是在 6.2 构造了 all-prime locally matched comparison。
+修复后真正大墙仍是 arbitrary divisor-bounded coefficients下的 multiplicative Type II；
 第 4 节 additive shift covariance不推出该 `mn`-bilinear estimate。
 
 ```text
 FM_DIRECT_SURVIVOR_WITH_b_1 = FAIL_TYPE_I_AT_m_2
 FM_SHIFTED_PRIME_WITH_b_1 = FAIL_TYPE_I_AT_m_2
-FM_LOCALLY_MATCHED_COMPARISON = NOT_CONSTRUCTED
-FM_MULTIPLICATIVE_TYPE_II = OPEN
+FM_b_1_CLASS = STOP_SCOPED
 ```
+
+### 6.2 Coarse comparison的真实推进与 rank-one fatal
+
+令
+
+```text
+b^(2)(n)=2 C2 1_(n odd) product_(p|n,p>2)(p-1)/(p-2).
+```
+
+它逐 multiplier匹配 `Lambda(mn+2)` 的 AP主项，并由 maximal
+Bombieri--Vinogradov给每个固定 `gamma<1/2` 的 Type I；这些一侧结论继续有效。
+但任意双侧 Type II会看见更细的 local tensor mode。取合法块 `M=X^(1/3)`及
+
+```text
+xi_m=1_(m=1 mod 6),   kappa_n=1_(n=1 mod 6).
+```
+
+支撑上 `mn+2=0 mod 3`，所以真实 Mangoldt项除 `3^j`外消失，而
+`b^(2)(mn)>=2C2`。数对有 `asymp X` 个，故原 universal Type II左侧为
+`-cX+o(X)`，不是 `X/log^B X`。因此状态必须是
+
+```text
+COARSE_COMPARISON_TYPE_I = PROVED_SOURCE_BACKED
+COARSE_COMPARISON_UNIVERSAL_TYPE_II = STOP_SCOPED_FALSE_MOD3_RANK_ONE
+```
+
+这不是 endpoint技术问题；它说明“逐 multiplier local matching”弱于“任意 factored
+test下的 tensor-local matching”。
+
+### 6.3 Tensor-local hybrid comparison
+
+令 `z>=2`，定义
+
+```text
+C_(2,>z)=product_(p>z)(1-1/(p-1)^2),
+
+b^(z)(n)=C_(2,>z)
+ product_(p<=z)[p/(p-1) 1_(p does not divide n+2)]
+ product_(p|n,p>z)(p-1)/(p-2).
+```
+
+`z=2`恰回到 coarse comparison。对 `p<=z`，它保留完整 forbidden residue
+`n=-2 mod p`；对 `p>z`，保留旧 divisibility projection。两种 local factor均值为
+`1`，且条件 `p|m` 后均给 `p/(p-1)`，所以所有 multiplier local constants仍精确。
+
+未纳入的 prime `p>z`之 local residual在 `F_p^*`上的 bilinear cut norm为
+`asymp p`；乘 residue-cell mass `X/p^2`后，单 prime obstruction为 `asymp X/p`。
+因此 fixed `z`永远不够，而对一次固定 Ford--Maynard saving `B`可取
+`z=log^K X,K>B+margin`，把全部 fixed local selectors压入误差。当前新主干为
+
+```text
+exact hybrid Euler profile                         PROVED_EXACT
+hybrid (b.1)/(w), each fixed z=log^K X             PROVED_SOURCE_BACKED
+hybrid (b.2) at P_TPC                              VACUOUS_PROVED_R_EMPTY
+hybrid maximal Type I, every fixed gamma<1/2       PROVED_SOURCE_BACKED
+hybrid maximal Type I at gamma=1/2                 NOT_PROVED_BY_BV
+hybrid high-conductor universal Type II [J,1/2]    OPEN_MAJOR_WALL
+```
+
+`J=133/400`、`Q=267/400`及 mirrored Vaughan surplus `1/400`仍是 exact
+conditional compass。对每个 fixed `K`，Rosser--Iwaniec fundamental lemma加
+Bombieri--Vinogradov已经闭合 `(b.1)/(w)`及每个固定 `gamma<1/2` 的 maximal
+Type I；普通 BV不包含 exact `gamma=1/2`，该 fringe只在 H3成立后由
+Ford--Maynard mirror支付。旧 comparison不能支付 H3。完整公式、counterexample、
+hybrid proof与 checker见 `fm_local_comparison_compiler.md`。
+
+另一个独立 exact bridge仍成立：
+
+```text
+Lambda(mn+2)=sum_(d r-m n=2)mu(d)log r.
+```
+
+它与 TPC-31 next gate的 `mu(d)log ell`在 `r=ell`后 formula-level相同，并生成
+primitive determinant-two affine family；但 `omega_D/psi_L`、masks、three channels、
+scales与 provenance均未附着。local tensor gate付清后，现有 bounded source scan仍
+没有覆盖“固定 rough `mu(d)`加两组 arbitrary rough `xi_m,kappa_n`”的 literal
+shifted-determinant theorem。
+
+### 6.4 High-conductor主路：direct modified-HB2 `-> SHB-D2`
+
+universal fork `U`要求对任意 divisor-bounded `xi,kappa`控制原始 shifted-prime
+operator norm；在合法 `K=K(B)`量词下尚无反例，但也没有 source compiler，作为
+reserve保留。沿 Ford--Maynard Proposition 7.22的通用 `S+` closure虽逻辑上可行，
+却会保留 largest-prime fragmentation与至多 `60+19` 个通用 slots，远宽于本问题。
+它现已 `DEPRIORITIZED_BROADER_THAN_NEEDED`。
+
+selected route直接对
+
+```text
+w_x^(z)(n)=Lambda(n+2)-b_x^(z)(n)
+```
+
+应用 modified Heath--Brown identity，取最小安全值 `h=2`。perfect-power `r>=2`
+branch由当前 literal `w_x^(z)(n)=x^o(1)`在 `x^(1/2+o(1))`内吸收；`r=1`只剩
+`j<=2`、最多四个 literal variables与至多两个 HB Möbius slots。large `f_q`的补乘积
+`D<=x^J`由已证 H2 at `gamma=J`支付，其余进入 structured master。若 large factor
+是 `e_i`，由 `e_i<=sqrt(x)`与 `n>x/2`可知它及补乘积都在 constant-factor
+square-root corridor，仍进入同一 master。无 large factor时由
+`R(P_TPC)=empty`选择 first admissible subset，所得乘积严格落在
+`(x/2)^J<M<=sqrt(x)`。`h=1`会允许 `e`远大于 `sqrt(x)`且小补因子低于 `x^J`，
+同时大变量带 Möbius weight，既非 H2也非 master，故 fail closed。first-subset
+selectors、hard cutoffs、`rho_x=log x/log n`与 Perron/Mellin twists必须
+exactly-once编译，不能直接删去。
+
+唯一 selected analytic gate记为
+
+```text
+(SHB-D2)
+sup_((Xi,Kappa) emitted by C_HB2)
+|sum_((x/2)^J<m<=sqrt(x), x/2<mn<=x)
+ rho_x(mn) Xi(m)Kappa(n)
+ [sum_(dr-mn=2)mu(d)log r-b_x^(z)(mn)]|
+ <<_(A,K) x/log^A x.
+```
+
+这里 supremum只遍历 fixed finite HB2 templates与其 transform参数，不是 arbitrary
+divisor-bounded sequences。direct extractor已经把 prime residual精确归约到该 gate；
+`SHB-D2`本身仍是新的高导数定理，尚未证明。它必须覆盖 closed `sqrt(X)` endpoint；
+调用 published Proposition 4.11或 Theorem 2.2会循环回 universal `(II)`。
+
+range atlas已把首个中央墙压到一个 literal normal form：在 `h=2,j=2`中取 fixed odd
+`f_1=c>1,f_2=1`与 `e_1,e_2 asymp sqrt(X/c)`，出现
+
+```text
+sum_(dr-c e_1e_2=2) mu(d)mu(e_1)mu(e_2)log r W
+ - matching hybrid-comparison cell.
+```
+
+这是三个 primitive rough coordinates加一个 smooth coordinate，但可将 `e_1e_2`
+卷成一个 arbitrary coefficient，并把 fixed `c`置于 compact smooth slot；所以
+Bettin--Chandee Corollary 1在类型上能接。真正 STOP是完整 error
+`X^(11/10)D^(17/20)`从 bounded `D`起就不省。把 HB4 quarter lift先 Poisson再用其
+三线性 theorem也没有打开新范围：完整 bound
+的第一项只在 `delta<11/56<1/4`省，而非零 Poisson从 `delta>1/4`才开始；只引用第二项
+得到的伪 `2/7` window已封锁。
+
+V6 保留 HB4 的两个 smooth quarter variables直到双 Poisson。`h=0` principal必须先
+对全部 signed `d` dyads重组；Vinogradov--Korobov/Perron给 odd multiplier的
+`m/phi(m)`，even multiplier的 `d'`/`2d'`配对给零，短 `f_2` comparison slice再由
+fundamental lemma给同一 weighted main。因此 collective principal已经逐同一
+HB4 quarter family附着到 `b_x^(z)`；单个 `D`没有自然 `b_(z,D)`，仍禁止逐 dyad
+认领 main。`h!=0,ell=0` Ramanujan轴为 `X^(3/4+o(1))`；全非零轴由 Weil给
+
+```text
+X^(1/2+o(1))D^(3/2),
+```
+
+所以 `1/4<delta<1/3`先得到一个真 power-saving window。随后把
+`a=e_1e_2`卷成 source coefficient，并按 residue
+`n=-4h conjugate(a) mod d`压缩；source的 `r asymp1` singleton为 `r=2`，而
+`S(ell conjugate(2),-4h conjugate(a);d)=S(ell,-2h conjugate(a);d)`
+逐项回到目标。其平方精确变成
+`h_1a_2=h_2a_1 mod d`的乘法 incidence，给 `||b||_2<<FDX^o(1)`。将这个最优
+coefficient放入 Pascadi Theorem 10.3 的完整五项 bound后，所有项在
+`delta<3/8`同时节省；因此合并窗口已经推进为 `1/4<delta<3/8`。只引用有利项伪造
+`delta<1/2`仍被禁止。当前 selected central contract直接保留
+`mu(d)mu(e_1)mu(e_2)`：若 `F=X^(1/4)`且把双 Poisson prefactor提出，只需在尚未覆盖的
+`X^(3/8)<=D<=X^(1/2)`证明
+
+```text
+|K_D| <<_A F^2 D^2/log^A X.
+```
+
+这是 V6 时比“再做一次 generic dispersion”更窄的 central contract；V7 对它作
+conductor split，并另行重编译大于平方根的 `D`。
+
+V7 没有对全部 characters误用 multiplicative large sieve。按 `g=(h,d)`、
+`d=gq`分层后，`cond(chi)>=F`才进入 primitive large sieve并把 Pascadi coefficient
+norm从 `FD`降到 `sqrt(F)D`；`cond(chi)<F`则保留 exact Kloosterman character
+projector。squarefree CRT把它分成 primitive Gauss square与 Ramanujan factor，
+两次 primitive large sieve给
+
+```text
+(F^2/D^2)|K_D^(low)| << X^(7/8+o(1)),
+(F^2/D^2)|K_D^(high)| << F^2D X^o(1).
+```
+
+因此同一个 HB4 quarter family现已对每个 fixed `1/4<delta<1/2`得到
+source-backed power saving；`delta=1/2`时 high-conductor bound仍只有
+`X^(1+o(1))`，严格 endpoint没有关闭。固定 mod-3 character诱导到 `q=3p`给出
+`F/log Q`增长反例，继续封锁“all-character large sieve”捷径。
+
+large-`D`侧也已找到 exact switch。对 fixed dyadic top `Z`、`Y=sqrt(Z)`，令
+
+```text
+A1(N)=sum_(ef=N,e<=Y)mu(e)log f,
+A2(N)=sum_(e1,e2<=Y,e1e2f1f2=N)mu(e1)mu(e2)log f1.
+```
+
+则 `Lambda=2A1-A2`，从而 `sum_(d|N,d>Y)mu(d)log(N/d)=A1-A2`。所以旧
+quotient-Möbius object已被精确淘汰；代价是出现
+
+```text
+e1e2f1f2-a1a2b1b2=2
+```
+
+的四-Möbius、双 Eisenstein/divisor-log determinant。它为 paired
+divisor-Voronoi/Estermann加外层 Kuznetsov提供了合法接口；现有 BC在 literal展开后
+无 balanced-quarter saving，而当前 Pascadi source map尚未附着 simultaneous
+second-row incidence/range/`L^2`，故 analytic large-`D` closure继续 `OPEN`。
 
 ## 7. 两个 engine，只有一个 endpoint
 
@@ -500,18 +756,22 @@ quasi-intertwiner，并保持 event、seed与 physical evaluation时才重新进
 `RLR^infinity`、typical ACIP、positive fixed cylinder measure或 area preservation本身
 都不占 proof credit。
 
-## 8. 接下来只做三个大动作
+## 8. 当前 umbrella gate只做两个大动作
 
-1. **FM/Buchstab compiler**：把 shifted-prime candidate与 actual TPC decomposition
-   对齐到明确 Type I/II hypotheses；第一处缺失必须定位为一个 formula/range，而不是
-   “parity barrier”四个字。
-2. **General fixed-atom theorem attack**：先证明或否证 determinant-uniform Type II
-   class，再谈 TPC specialization；不得用 block/cumulative、metric/prescribed或
-   logarithmic/natural互换。
-3. **Target-coupled reassembly**：以 (5.2)--(5.3) 为唯一 crosslink gate，构造或
-   广义否证 packet到 primorial/physical carrier的线性 pushforward。
-
-若三者均没有 theorem-state变化，发布一个 broad `CHANNEL_STOP`，不要再生成小论文。
+1. **HB4 exact-half endpoint**：只攻击 `D=F^2=X^(1/2)` 的 high-conductor projected
+   coefficient，要求真实 `log^-A X` gain；不得把所有 fixed `delta<1/2`的 theorem
+   取极限，或重开已封锁的 all-character shortcut。
+2. **HB4xHB2 bilateral determinant**：对 exactly-paired shells将 `A1-A2`在
+   triangle inequality前联合并只减一次 collective main，再攻击两条
+   weighted `mu_F*mu_F` rows与两条 truncated ordered `(log W_I)*W_J`
+   Eisenstein columns的 `ER-AB=2` collective（保留全局 `6/log X`）
+   error；首选 paired divisor-Voronoi/Estermann加外层 Kuznetsov，不得把 divisor
+   convolution假装成 smooth slot。
+General fixed-atom/O161、pair-native、H1与动力学 distinguished-seed路线继续开放，
+但不与上述两个解析对象拼接。Target-coupled reassembly仍是 portfolio-level
+`OPEN/RESERVE` crosslink，不属于本轮 current umbrella gate；只有上述解析门之一先
+发生 theorem-backed变化时才按 (5.2)--(5.3) 单独调度。若两者均没有 theorem-state
+变化，发布一个精确 scoped `CHANNEL_STOP`，不要再生成小论文。
 若 `H_occ/H_dyn/H3_phys` 任一发生 theorem-backed推进，更新本 artifact与
 `TPC_COMPASS.md`；它仍不自动
 触发 TPC-207。
@@ -522,10 +782,11 @@ quasi-intertwiner，并保持 event、seed与 physical evaluation时才重新进
 $env:PYTHONDONTWRITEBYTECODE = "1"
 python research/tpc-big-road/tpc_big_road_lab.py --check
 python research/tpc-big-road/tpc_big_road_independent_checker.py --check
+python research/tpc-big-road/tpc_fm_local_comparison_checker.py --check
 python research/tpc-big-road/tpc_big_road_lab.py --stress --x 10000 100000 1000000
 ```
 
-两个 `--check` 入口只读且互相独立；不会修改 committed artifacts。independent
-checker提供 finite exact fixtures与 mutations，universal `q/I`、Abel及
+三个 `--check` 入口只读；不会修改 committed artifacts。两个 independent
+checker分别覆盖 metric covariance与 FM compiler的 finite exact fixtures/mutations，universal `q/I`、Abel及
 Borel--Cantelli量词仍由第 4 节符号证明承担。`--stress` 只把 JSON写到 stdout，
 不创建文件。

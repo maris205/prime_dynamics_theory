@@ -1,12 +1,12 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-05
-状态：`BOLD_CHANNEL_V2 / PARITY_BREAKING_AFFINE_TRANSFERENCE`
-claim level：`METRIC_HAAR_THEOREM_PLUS_ROUTE_CONSTRUCTION_NOT_TWIN_PRIME_THEOREM`
+状态：`BOLD_CHANNEL_V7 / HB4_QUARTER_OFFDIAGONAL_FOR_EVERY_FIXED_DELTA_BELOW_HALF_PROVED`
+claim level：`SOURCE_BACKED_CONDUCTOR_PROJECTED_HB4_QUARTER_WITH_EXACT_HALF_AND_BILATERAL_LARGE_D_OPEN`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V2 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V7 的完整
 公式、proof与独立 checker位于 `research/tpc-big-road/`。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
@@ -17,7 +17,7 @@ claim level：`METRIC_HAAR_THEOREM_PLUS_ROUTE_CONSTRUCTION_NOT_TWIN_PRIME_THEORE
 200+ local research nodes
   -> 13 major obstruction classes
   -> 2 visible bottlenecks
-  -> 1 parity-breaking affine-pattern transference highway.
+  -> 1 tensor-local hybrid J-to-sqrt(X) prime-producing highway.
 ```
 
 不再因为一个新 schema、一个新 source mismatch或一个有限 certificate自动生成下一篇
@@ -191,7 +191,7 @@ Abel summation与 exact identity
 随即给 dyadic Haar moving sum `Var<=X/2+O(1)`。因此
 `H3_METRIC=PROVED_HAAR_MOVING_VARIANCE_O_N`；pointed discrepancy仍完全没有得到。
 
-## 5. 大胆主通道 V2：deletion-bias renormalization 到 PBAPT
+## 5. 大胆主通道 V4：PBAPT 与 tensor-local Ford--Maynard redesign
 
 Haar decomposition
 
@@ -283,6 +283,146 @@ PBAPT必须对一类与 prime outcomes无关的 patterns陈述，并统一支付
 coefficients、fixed physical shift、domains、parameter ranges、uniform constants、
 normalization及全部 losses。否则它只是 TPC endpoint的改名。
 
+V3 的 coarse specialization取
+
+```text
+a(n)=Lambda(n+2),
+b(n)=2 C2 1_(n odd) product_(p|n,p>2)(p-1)/(p-2).
+```
+
+则 local Euler mean、所有 multiplier slice main term、Ford--Maynard
+comparison regularity与每个固定 `gamma<1/2` 的 maximal Type I已经闭合。但 V4
+adversarial audit证明其 universal Type II为 false：在合法 `M=X^(1/3)` block取
+`xi_m=1_(m=1 mod6),kappa_n=1_(n=1 mod6)`，支撑上 `mn+2=0 mod3`；Mangoldt项除
+`3^j`外消失而 `b(mn)>=2C2`，故 bilinear sum为 `-cX+o(X)`。因此
+
+```text
+COARSE_b2_UNIVERSAL_TYPE_II = STOP_SCOPED_FALSE_MOD3_RANK_ONE
+```
+
+V4 replacement对 `z>=2`定义
+
+```text
+C_(2,>z)=product_(p>z)(1-1/(p-1)^2),
+b^(z)(n)=C_(2,>z)
+ product_(p<=z)[p/(p-1)1_(p does not divide n+2)]
+ product_(p|n,p>z)(p-1)/(p-2).
+```
+
+`z=2`回到 coarse `b`。对 `p<=z`，new factor精确杀掉 `mn=-2 mod p`；对 `p>z`
+保留 divisibility projection。两者 local mean均为 `1`且 multiplier conditional
+factor均为 `p/(p-1)`。遗漏 prime `p`的 tensor cut contribution为 `Theta(X/p)`，
+所以一次固定 saving `B`必须取 `z=log^K X,K>B+margin`；fixed `z`或 fixed `K`
+不能支付 all-`B` ledger。
+
+当前 exact parameter仍为
+
+```text
+P_TPC=(gamma,theta,nu)=(1/2,133/400,67/400).
+```
+
+其 `A1/A2`与 `J -> sqrt(X) -> Q` mirror均精确。对每个 fixed `K`，fundamental
+lemma加 Bombieri--Vinogradov已经闭合 `(b.1)/(w)`与每个固定 `gamma<1/2` 的
+maximal Type I；`(b.2)`在 `R(P_TPC)=empty`时 vacuous proved。ordinary BV不覆盖
+exact `gamma=1/2`，该 fringe只在 H3成立后由 Ford--Maynard mirror补齐。当前唯一
+direct analytic大墙是 high-conductor Type II。完整证明与 checker见
+`research/tpc-big-road/fm_local_comparison_compiler.md`。
+
+镜像 full-window的另一组 ledger是
+
+```text
+(gamma,theta,nu)=(Q,J,Q-J),
+gamma+nu=267/400+134/400=1+1/400.
+```
+
+所以 strict `1/400`仍有一个精确的 conditional付款位置：它是 full `J/Q`
+Type II进入 Vaughan `gamma+nu>1`区间的 surplus；coarse route已 false，hybrid
+global gates与 literal physical attachment未证，故 charge继续 `UNPAID`。
+
+V3还找到一个合法但未闭合的 structural bridge：
+
+```text
+b^(2,circ)(n)=S(2n)=sum_q mu(q)^2/phi(q)^2 c_q(2n),
+Lambda(mn+2)= sum_(dr-mn=2)mu(d)log r
+            =-sum_(dr-mn=2)mu(d)log d.
+```
+
+第一式只是 coarse divisibility projection的 Ramanujan profile，mod-3 witness证明它
+并非 arbitrary factored tests的完整 local model。第二式把 shifted prime逐项落在
+determinant-two surface；odd sector固定 coprime `(d,m)`后，`n=n0+d z,r=r0+m z`
+保持 determinant `2`。它与 TPC-31
+已提交 next gate的 prime--Möbius core `mu(d)log ell`在 `r=ell`后逐 coefficient相同，
+故 `FM_TO_TPC31_PRIME_MOBIUS_CORE=PROVED_FORMULA_LEVEL`。但 `omega_D/psi_L`、fixed
+residue factors、pair mask、three-channel physical weights、outer HB coefficients、
+O161 two-Mobius atom与 packet normalization尚未形成同一 source ledger，direct
+attachment仍 `ABSENT`。付清 local tensor gate后，determinant核含一个 fixed rough
+`mu(d)`与两组 arbitrary rough `xi_m,kappa_n`；bounded primary scan没有 literal
+theorem。hybrid classical sieve ledger现已闭合；当前排序是 high-conductor
+determinant dispersion在先，closed `sqrt(X)` endpoint必须包含在同一 master gate。
+
+high-conductor fork现已作 broad route选择。universal `U`在合法 `K=K(B)`下没有
+已知反例，但要求 arbitrary two-sided operator norm，作为 reserve保留。通用
+Proposition 7.22 `S+` closure会保留 largest-prime fragmentation与至多 `60+19`
+个通用 slots，逻辑上足够但过宽，已降为 reserve。
+
+primary route直接把 modified Heath--Brown identity取最小安全值 `h=2`作用于
+prime residual。perfect powers由当前 literal sequence的 `x^(1/2+o(1))` bound吸收；
+其余只有 `j<=2`、最多四个 variables与两个 HB Möbius slots。large smooth factor、
+constant-factor square-root rough factor与 `R(P_TPC)=empty` cover把每项 exactly-once
+送入已证 H2或 exact `(X/2)^J<M<=sqrt(X)`的 structured master `SHB-D2`。`h=1`
+会产生超 square-root large-Möbius escape branch，故不合法。
+该 direct extractor已经 `PROVED_EXACT_REDUCTION_TO_SHB_D2`；新的 determinant estimate
+本身仍 `SELECTED_PRIMARY_OPEN_NEW_THEOREM`。published Proposition 4.11/Theorem 2.2
+不能用于支付 closed square-root endpoint，否则会循环回 universal `(II)`。
+
+source-locked range atlas又把 `SHB-D2`压到最小中央 cell：`h=2,j=2`、fixed odd
+`f_1=c,f_2=1`给 `dr-c e_1e_2=2`上的
+`mu(d)mu(e_1)mu(e_2)log r`。把 `e_1e_2`卷成一个 arbitrary coefficient并把 fixed
+`c`放入 compact smooth slot后，Bettin--Chandee Corollary 1的类型其实匹配；真正
+STOP是完整 error为 `X^(11/10)D^(17/20)`，从 bounded `D`起就没有 saving。
+HB4 quarter lift的一次 Poisson虽能形成 BC三线性 phase，但完整 error的第一项要求
+`delta<11/56`，而新非零区从 `delta>1/4`开始，故没有新 window；第二项单独显示的
+`2/7`不得使用。`HB2`只作为 minimal-slot normal form；HB4 factorized lift现已证明
+解析上更有力。保留两个 smooth quarter variables作双 Poisson后，full-`D` Euler germ
+与短 comparison slice把 collective principal精确附着到 `b_x^(z)`；单个 dyadic
+`D`仍不得单独认领 comparison main。Ramanujan轴为 `X^(3/4+o(1))`，Weil先覆盖
+`1/4<delta<1/3`。
+
+进一步把 `a=e_1e_2`卷成 residue coefficient
+`b_(n,d)`，其平方是 `d|(h_1a_2-h_2a_1)`的 exact multiplicative incidence，给
+`||b||_2<<FDX^o(1)`。Pascadi Theorem 10.3 的完整五项因此再覆盖
+`1/3<=delta<3/8`，不是选择性删项。V7 随后不对全部 characters误用 large
+sieve，而是按 primitive conductor切开同一个 incidence coefficient。
+`cond(chi)>=F`的部分由 primitive multiplicative large sieve把 norm降为
+`sqrt(F)D X^o(1)`；`cond(chi)<F`保留 exact Kloosterman projector。squarefree CRT、
+Gauss square、Ramanujan cofactor与两次 primitive large sieve给
+
+```text
+(F^2/D^2)|K_D^(low)| << X^(7/8+o(1)),
+(F^2/D^2)|K_D^(high)| << F^2D X^o(1).
+```
+
+所以 factorized HB4 quarter的完整 off-diagonal窗口已经推进到每个 fixed
+`1/4<delta<1/2`。exact `delta=1/2`时 high part只有 `X^(1+o(1))`，仍缺任意
+`log^-A X`；不得用 fixed-`delta`结论取极限。固定 mod-3 character的 induced family
+给出 `F/log Q`增长，继续阻止 all-character shortcut。
+
+`D>X^(1/2)`也不再以 quotient-Möbius为唯一对象。exact HB2 identity
+`Lambda=2A1-A2`把 large divisor逐系数切成 `A1-A2`；代回 outer HB4 quarter后，
+首个 hard cell为
+
+```text
+e1e2f1f2-a1a2b1b2=2,
+```
+
+含四个 literal Möbius slots与两个 ordered divisor-log/Eisenstein columns。exact
+swapped-shell pairing后，它是两条 weighted `mu_F*mu_F` rows对两条 truncated
+ordered `(log W_I)*W_J` columns的 `ER-AB=2` determinant，并保留全局 `6/log X`。
+这是 paired divisor-Voronoi/Estermann加外层 Kuznetsov的
+合法新接口；现有 BC在展开后无 balanced-quarter saving，当前 Pascadi source map则
+未附着 simultaneous second-row incidence/range/`L^2`。generic HB2 second Cauchy继续停在 quadratic
+CRT diagonal，不再作为 selected route。
+
 ## 6. Logistic 的新角色：carrier，不是 prime orbit
 
 `RLR^infinity` 保留为 band-merging/parity coordinate与可能的 rank-two model，不再
@@ -354,7 +494,15 @@ rho_*(mu_H,k)=mu_F,k.
 | H_dyn | same stage/time/event/seed forced-triangular intertwiner to nonautonomous dynamics | `HYPOTHESIS` | coefficientwise identity、physical functional、forcing与 uniform evaluation |
 | H2 rare mass | full-cycle `a_k asymp log^-2 N` | `PROVED_FULL_CYCLE`; physical evolution attachment `OPEN` | no use of `pi_2(N)` or Hardy--Littlewood lower bound |
 | H3_metric | Haar moving covariance/variance for exact primorial targets | `PROVED_HAAR_VARIANCE_O_N` | explicit resonance expansion与 independent checker；不产生 arithmetic credit |
-| H3_phys | Type II/far-copy cancellation attached to actual physical carrier | `OPEN` | literal coefficients、growing ranges、target-coupled reassembly、full ledger |
+| H3_phys | Type II/far-copy cancellation attached to actual physical carrier | `OPEN`; factorized HB4 quarter fixed `delta<1/2` `PROVED_PARTIAL` | literal coefficients、all shapes、target-coupled reassembly、full ledger |
+| H_FM_coarse | divisibility-projected comparison、regularity与 sub-square-root Type I | `PROVED_ONE_SIDED`; direct Type II `STOP_FALSE_MOD3` | 不得把 multiplier matching升级为 tensor matching |
+| H_FM_hybrid_local | growing-`z` full product-residue factors与 omitted-prime `X/p` ledger | `PROVED_EXACT_LOCAL` | fixed saving先选 `B`再取 `K>B+margin` |
+| H_FM_hybrid_sieve | hybrid `(b.1)/(w)`与 sub-half maximal Type I | `PROVED_SOURCE_BACKED`; `(b.2)` `VACUOUS_PROVED` at `P_TPC` | fixed `B`后选 fixed `K(B)`；不得升级 exact half |
+| H_FM_hybrid_II | high-conductor multiplicative Type II on literal `[J,1/2]` | `OPEN_MAJOR_WALL` | arbitrary divisor-bounded coefficients、exact endpoints与 log-power norm |
+| H_FM_U | universal arbitrary-coefficient H3 | `OPEN_RESERVE_OVERSTRONG` | 无已知反例，但不作 primary target |
+| H_FM_SHB_D2 | actual `E_FM(P_TPC)` emitted-multilinear determinant umbrella | `OPEN`; generic Prop. 7.22 fork `DEPRIORITIZED` | source completeness、all shapes、Mellin uniformity与 closed `sqrt(X)` |
+| H_FM_HB4_QTR | factorized HB4 quarter collective main and off-diagonal | `PROVED` for every fixed `1/4<delta<1/2`; exact half `OPEN` | conductor projection、complete Pascadi bound、closed endpoint log saving |
+| H_FM_HB4xHB2 | exact large-divisor switch to bilateral divisor-log determinant | switch `PROVED_EXACT`; analytic closure `OPEN` | four literal Möbius slots、paired shells、collective main、Voronoi/Kuznetsov ledger |
 | H4 distinguished seed | pointed arithmetic section satisfies recurrence/discrepancy theorem | `ENDPOINT_EQUIVALENT_TARGET` | direct theorem for named seed；a.e. membership is insufficient |
 | HC closure | PBAPT physical lower bound或 H4 pointed endpoint推出 infinitely many twin primes | `DERIVED_CONDITIONAL` | complete arithmetic carrier、cover、normalization与 loss ledger |
 
@@ -441,17 +589,20 @@ credit；普通 marginal large sieve不算成功。
 两个 engines可以并行，但不得生成两个互不相干的 paper chains。它们必须在
 `H_occ/H_dyn/H3_phys`上产生状态变化；H4只是最终 arithmetic endpoint。
 
-## 10. 下一轮只做三个大动作
+## 10. 当前 umbrella gate只做两个大动作
 
-1. **FM/Buchstab compiler**：构造 locally matched comparison并把 actual affine
-   decomposition逐式对齐 Type I/II；直接 survivor与 shifted-prime在 `b=1` 时均已于
-   multiplier `m=2` fail closed，不再重复。
-2. **General fixed-atom Type-II attack**：对与 prime outcomes无关的 determinant-uniform
-   affine class证明或否证 natural-scale saving；同一 theorem必须给完整 ranges与
-   uniform constants。
-3. **Target-coupled reassembly/crosslink**：只接受逐 coefficient operator
-   `Sigma_k J_X L_X c_X=nu_X W_k+R_X` 及 paid physical norm return；若 affine cofactor
-   alphabet、linear signs或 normalization无法保留，发布一个 broad crosslink no-go。
+1. **HB4 exact-half endpoint**：只攻击 conductor-projected HB4 quarter在
+   `D=F^2=X^(1/2)`的 high part，必须产生任意 `log^-A X`；不得把 fixed
+   `delta<1/2`定理取极限，也不得回到已反例封锁的 all-character大筛。
+2. **HB4xHB2 bilateral determinant**：在 exactly-swapped shells上联合处理 `A1-A2`，
+   对两条 weighted `mu_F*mu_F` rows与两条 truncated ordered Eisenstein
+   `(log W_I)*W_J` columns的 `ER-AB=2`（含全局 `6/log X`）
+   collective error建立 divisor-Voronoi/Estermann--Kuznetsov theorem；不得把
+   divisor convolution冒充 smooth slot或把四个 Möbius signs压成两个。
+Target-coupled reassembly/crosslink继续作为 portfolio-level `OPEN/RESERVE`，不属于
+本轮 current umbrella gate。只有上述两个解析门之一先发生 theorem-backed变化，才另行
+要求逐 coefficient operator `Sigma_k J_X L_X c_X=nu_X W_k+R_X`与 paid physical
+norm return；不得提前把这条历史动作计成当前第三 target。
 
 下一轮结束时只允许三种高层结果：
 
