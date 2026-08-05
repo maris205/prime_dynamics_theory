@@ -1,6 +1,6 @@
 # RH Research Handoff
 
-Status date: 2026-08-04
+Status date: 2026-08-05
 
 Current completed endpoint: RH-361
 
@@ -13,6 +13,9 @@ Non-numbered corpus synthesis: RH-MVP2
 
 Synthesis publication commit:
 `85269d06977fdfe52a501a8aac0104e63ad37fba`
+
+Four-volume synthesis publication commit:
+`c0aed13a34b8bbc53061aed23738660adcd3624c`
 
 The repository, not an old chat transcript, is the source of truth.
 
@@ -73,32 +76,37 @@ The executable inventory verifies:
 - 1,356 selected source-file hashes; and
 - all five Gates and all five named forbidden macro claims remain false.
 
-The umbrella manuscript has 6 pages. Its tests pass `3/3`; the local/corpus
-archive verifier covers 18 publication files with zero failures; Ghostscript
-parses the PDF; all 17 font rows are embedded; all six rendered pages were
-visually checked; and two forced rebuilds are byte-identical. The semantic
-PDF is byte-identical to `main.pdf`.
+The umbrella manuscript has 6 pages. Its tests pass `7/7`, including the
+four-volume archive mutation checks; the local/corpus archive verifier covers
+23 publication files with zero failures; Ghostscript parses the PDF; all 17
+font rows are embedded; all six rendered pages were visually checked; and the
+semantic PDF is byte-identical to `main.pdf`.
 
-The preferred expansion, if larger thematic syntheses are useful, is to keep
-RH-MVP1 for RH-1--RH-160 and derive three provenance-preserving volumes:
+The publication-scale expansion is complete as four provenance-preserving
+volumes:
 
-1. RH-161--RH-241: physical Riesz packets, temporal clouds, relative
-   determinants, and the trace-envelope frontier;
-2. RH-242--RH-281: deterministic numerator anchors, selectors, analytic
-   tails, and counterloops; and
-3. RH-282--RH-361: noisy heads, weighted/annular endpoints, first alias, and
-   actual-versus-deterministic signed completion.
+1. `papers/RH-MVP1-conditional-prime-dynamics-hilbert-polya-roadmap/`,
+   Volume I, RH-1--RH-160;
+2. `papers/RH-VOL2-physical-riesz-cloud-trace-envelope-synthesis/`,
+   Volume II, RH-161--RH-241;
+3. `papers/RH-VOL3-deterministic-numerator-anchor-counterloop-synthesis/`,
+   Volume III, RH-242--RH-281; and
+4. `papers/RH-VOL4-noisy-head-annulus-signed-completion-synthesis/`,
+   Volume IV, RH-282--RH-361.
 
-These would be synthesis papers, not a new unconditional theorem chain. They
-must retain per-claim `PROVED`, `CERTIFIED`, `CONDITIONAL`,
-`SCOPED_NEGATIVE`, and `OPEN` labels. The mathematical route coordinate stays
+These are synthesis papers, not a new unconditional theorem chain. The 361
+numbered papers remain the atomic provenance layer, and the four executable
+indices cover 160, 81, 40, and 80 labels with no gap or overlap. Every volume
+retains per-claim `PROVED`, `CERTIFIED`, `CONDITIONAL`, `SCOPED_NEGATIVE`, and
+`OPEN` distinctions. The mathematical route coordinate stays
 
 ```text
 actual_same_clock_unnormalized_head_transport_open
 ```
 
 RH-362 remains inactive unless one of the theorem-backed triggers in section
-5 is met.
+5 is met. The four-volume outer archive is stored under RH-MVP2 and seals the
+four individual archive-verification records.
 
 ## 2. Program objective and claim boundary
 
@@ -301,13 +309,11 @@ branches without producing an RH-362 `GO`.
 
 ### 6.1 Post-synthesis consolidation and external-route audit
 
-For route selection, retain RH-MVP2 as the single corpus umbrella. It is the
-short provenance and frontier map; it must not replace or silently concatenate
-the 361 atomic sources. If a publication-scale expansion becomes useful, use
-RH-MVP1 as Volume I and the three thematic ranges in section 1.1 as Volumes
-II--IV. Such volumes are deferred while the purpose is to find a new theorem
-edge: writing them now would improve exposition but would not change the
-mathematical frontier or activate RH-362.
+For route selection, retain RH-MVP2 as the single short corpus umbrella. It
+must not replace or silently concatenate the 361 atomic sources. The
+publication-scale four-volume expansion in section 1.1 is now complete and
+improves exposition and provenance only; it does not change the mathematical
+frontier, create a theorem edge, or activate RH-362.
 
 A parallel post-synthesis theorem scan at
 `HEAD=273c07b0ca58be600f18d41c7198570665b97549` returned `GO=0`:
@@ -404,22 +410,68 @@ RH-352--RH-361 batch verification
 46ebbd8a76edbf4a7e76efada06ee51971d932bd7fec732f47b4d80bcc3109d8
 
 RH-MVP2 main.tex
-d7e894ddd74b615673bf264d1950051bdd6b61e746ba8b53b19f0f909f34219a
+32d0826c731ab7aa5273529e1e9d7b9652cbef775334b23acce28ad7156e6913
 
 RH-MVP2 PDF
-75ed330838b7073d249eea0d01538d819d4b8fde60257792077b01b846c4f914
+ed6a93f52c39a659ef2e6e5905e625a83d2943f86093f5911421db3645ce7dba
 
 RH-MVP2 corpus inventory
-61650327a6eb0e4b64bf2a94aed3b725927ac8d9deca4bf898a13e2660e7e907
+c557f83480be297650eb94390b18e5f17f041819aba85d23cc9c37ac09dfaa19
 
 RH-MVP2 dependency manifest
-a75b3d69187670bb01ae57252f7e4643076f44bc6cb879c252dd2fab01694290
+ec8470e98618c0684a9a942b8ca608832c4856bbebb927ae00d2cfeafcce10b2
 
 RH-MVP2 summary
-b831f1a8141b853d29cdeb7dda852560bd032d77b5d187ab93a6e697504755a5
+3cf3261c0c2c6fbe7511b16615f032edfcbd6b6b1e0c73f5e2ef932a1e6a694c
 
 RH-MVP2 archive verification
-c56fde30b784d73270cda1ce7f784e341a7cd26ddbc943242f0b237cc4b4f189
+8be16281d3f6af1be1a172ccb6443cf1af138ccd786c9236378c3fcad6f4d72e
+```
+
+Four-volume synthesis audit:
+
+- Atomic indices: `160,81,40,80`, total `361/361`, with disjoint consecutive
+  ranges and four preserved empty legacy aliases in Volume IV.
+- Tests: Volume I--IV `11,4,4,4`; RH-MVP2 including archive-mutation tests
+  `7`; total `30/30`.
+- Individual archive files: `16,19,19,19`; outer four-volume archive `73`,
+  zero failures.
+- Outer replay: `1,548` dependency hashes and `8` result hashes, zero
+  failures. RH-MVP2's own publication archive contains `23` files.
+- PDF pages: Volume I--IV `13,7,6,9`, plus RH-MVP2 `6`, total `41`.
+- Font rows: `20,13,15,19,17`, total `84`, all embedded. Ghostscript parsed
+  `5/5`; text extraction and required boundary phrases passed `5/5`.
+- All five complete LaTeX logs are clean. The five semantic PDFs are
+  byte-identical to their `main.pdf`; all `41/41` rendered pages were checked.
+- Gates A--E and every named forbidden macro claim remain false/open. The
+  release is non-numbered and does not activate RH-362.
+
+Four-volume release hashes:
+
+```text
+Volume I main.tex / PDF / archive verification
+b9451acd42136ab1d705a72401d5edbdc5f1ce45fea1ce76e7732664240b21e8
+64ece95279b7e5e6194ddf7f6dcb01fbdb0a30b77f14d26f33b764a3c91c07ef
+03f9577fcba8a63f74208c54636837141d65a8de70e6aaba573bd3ca834ccf81
+
+Volume II main.tex / PDF / archive verification
+5b9874b680a968c887d6ba99e9f8cf3da9aae14e5fb4d26c7fb8bcb83b56da41
+e05c1f39941c4fd1b79c3ede17cd054e3098c80cf1d65367143f205440bcdcd6
+7aa0f5d5ae3f6bf6116d5694ea1e95fee28b3bf6ab63a3a90e7e4c9568b1bb74
+
+Volume III main.tex / PDF / archive verification
+0d1fbaed123fc7e877d7253eeb4d442e81279cb35075e9783771d6e4d5adb89b
+ca3a7d697957babb39dd9c70000c8b38687cf8efbe7207f8519756f4ab0c426a
+58795f5821eaf16d90d641e3fa67025b2ed0e643576b18e12624e3d44d1c985c
+
+Volume IV main.tex / PDF / archive verification
+ba7a9a2849e0219cdab2a733a9f7865e97cfd0d278ca4bbc1cad8528eacb76cc
+fc16b61241d5fc3fd1cfde292b1bb8c9d685af2ce026e518ddd8dceceaee9c4e
+7c7ffee7fd1a742c48285fc7412ffbdc4943b382d5693bb5b246561860317be8
+
+Four-volume manifest / verification
+24dcf3c6e74c5252e7e278d9141a656c6b97bb30fad6578da8c193cc1063a897
+b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751
 ```
 
 ## 8. Continuation prompt
