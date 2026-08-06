@@ -160,6 +160,90 @@ def cyclotomic_integer_equal(left: list[int], right: list[int]) -> bool:
     return all(value == differences[0] for value in differences)
 
 
+def add_scaled_cyclotomic(
+    target: list[int], source: tuple[int, ...] | list[int], scale: int
+) -> None:
+    """Add a formal cyclotomic coefficient array with an integer scale."""
+    if len(target) != len(source):
+        raise ValueError("cyclotomic array lengths differ")
+    for index, coefficient in enumerate(source):
+        target[index] += scale * coefficient
+
+
+def cyclic_integer_convolution(left: list[int], right: list[int]) -> list[int]:
+    """Multiply two formal coefficient arrays in Z[Z/pZ]."""
+    if len(left) != len(right):
+        raise ValueError("cyclic convolution lengths differ")
+    modulus = len(left)
+    answer = [0] * modulus
+    for left_index, left_value in enumerate(left):
+        for right_index, right_value in enumerate(right):
+            answer[(left_index + right_index) % modulus] += (
+                left_value * right_value
+            )
+    return answer
+
+
+def cyclotomic_conjugate_coefficients(value: tuple[int, ...] | list[int]) -> list[int]:
+    """Complex conjugation before zeta_p specialization."""
+    modulus = len(value)
+    answer = [0] * modulus
+    for exponent, coefficient in enumerate(value):
+        answer[(-exponent) % modulus] += coefficient
+    return answer
+
+
+def gauss_dual_product_fixture(
+    p: int,
+    a1: dict[int, int],
+    a2: dict[int, int],
+    u_weight: dict[int, int],
+    v_weight: dict[int, int],
+    product_residue: int = -2,
+    conjugate_second_dual: bool = False,
+) -> list[int]:
+    """Raw additive-dual fixed-product convolution in Z[zeta_p]."""
+    answer = [0] * p
+    for e1, weight_e1 in a1.items():
+        for e2, weight_e2 in a2.items():
+            for z in range(1, p):
+                w = (
+                    product_residue
+                    * pow((e1 * e2 * z) % p, -1, p)
+                ) % p
+                for h, weight_h in u_weight.items():
+                    for ell, weight_ell in v_weight.items():
+                        second_sign = -1 if conjugate_second_dual else 1
+                        exponent = (z * h + second_sign * w * ell) % p
+                        answer[exponent] += (
+                            weight_e1 * weight_e2 * weight_h * weight_ell
+                        )
+    return answer
+
+
+def physical_kloosterman_product_fixture(
+    p: int,
+    a1: dict[int, int],
+    a2: dict[int, int],
+    u_weight: dict[int, int],
+    v_weight: dict[int, int],
+) -> list[int]:
+    """Literal physical Kloosterman product in Z[zeta_p]."""
+    answer = [0] * p
+    for e1, weight_e1 in a1.items():
+        for e2, weight_e2 in a2.items():
+            inverse_product = pow((e1 * e2) % p, -1, p)
+            for h, weight_h in u_weight.items():
+                for ell, weight_ell in v_weight.items():
+                    n = (-2 * h * ell * inverse_product) % p
+                    add_scaled_cyclotomic(
+                        answer,
+                        kloosterman_exponent_multiset(1, n, p),
+                        weight_e1 * weight_e2 * weight_h * weight_ell,
+                    )
+    return answer
+
+
 def odd_multiplier(n: int) -> Fraction:
     if n % 2 == 0:
         return Fraction(0, 1)
@@ -300,11 +384,29 @@ def run_checks() -> dict[str, object]:
     umbrella_gate = "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE"
     primary_route = "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION"
     independent_reserve = "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI"
+    v9_status_registry = {
+        "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
+        "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
+        "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
+        "HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT": "PROVED_EXACT_EQUIVALENCE",
+        "COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER": "STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS",
+        "GLOBAL_MOVING_UNIT_CAUCHY": "STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE",
+        "MOHAMMADI_WEIGHTED_A0_ATTACHMENT": "SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT",
+        "BOURGAIN_GARAEV_N3_ATTACHMENT": "SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT",
+        "DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION": "STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT",
+        "STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES": "ABSENT",
+        "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION": "FIRST_SUBGATE_OPEN_NEW_THEOREM",
+        "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV": "SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM",
+    }
     route_freeze = {
+        "route_version": "V9",
         "umbrella_gate": umbrella_gate,
         "primary_route": primary_route,
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
+        "first_subgate": "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION",
+        "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
+        "selected_construction": "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV",
+        "v9_status_registry": v9_status_registry,
         "independent_reserve": independent_reserve,
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
         "independent_polar_main_attachment": "OPEN_NEW_ATTACHMENT",
@@ -319,10 +421,27 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     expected_route_freeze = {
+        "route_version": "V9",
         "umbrella_gate": "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE",
         "primary_route": "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION",
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
+        "first_subgate": "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION",
+        "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
+        "selected_construction": "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV",
+        "v9_status_registry": {
+            "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
+            "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
+            "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
+            "HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT": "PROVED_EXACT_EQUIVALENCE",
+            "COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER": "STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS",
+            "GLOBAL_MOVING_UNIT_CAUCHY": "STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE",
+            "MOHAMMADI_WEIGHTED_A0_ATTACHMENT": "SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT",
+            "BOURGAIN_GARAEV_N3_ATTACHMENT": "SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT",
+            "DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION": "STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT",
+            "STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES": "ABSENT",
+            "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION": "FIRST_SUBGATE_OPEN_NEW_THEOREM",
+            "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV": "SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM",
+        },
         "independent_reserve": "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI",
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
         "independent_polar_main_attachment": "OPEN_NEW_ATTACHMENT",
@@ -337,9 +456,9 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     if route_freeze != expected_route_freeze:
-        raise AssertionError("V8 route/physical freeze changed")
+        raise AssertionError("V9 route/physical freeze changed")
     if primary_route == independent_reserve:
-        raise AssertionError("independent V8 source locks were merged")
+        raise AssertionError("independent V9 source locks were merged")
     route_mutations: list[dict[str, object]] = []
     swapped_routes = dict(route_freeze)
     swapped_routes["primary_route"] = independent_reserve
@@ -363,8 +482,13 @@ def run_checks() -> dict[str, object]:
     numbered_trigger = dict(route_freeze)
     numbered_trigger["TPC_207_TRIGGER"] = True
     route_mutations.append(numbered_trigger)
+    weakened_registry = dict(route_freeze)
+    weakened_statuses = dict(v9_status_registry)
+    weakened_statuses["GLOBAL_MOVING_UNIT_CAUCHY"] = "OPEN"
+    weakened_registry["v9_status_registry"] = weakened_statuses
+    route_mutations.append(weakened_registry)
     if any(mutation == expected_route_freeze for mutation in route_mutations):
-        raise AssertionError("V8 route/physical mutation escaped")
+        raise AssertionError("V9 route/physical mutation escaped")
     sample_a1 = Fraction(3, 1)
     sample_a2 = Fraction(5, 1)
     outer_switched_value = -6 * (sample_a1 - sample_a2)
@@ -375,6 +499,216 @@ def run_checks() -> dict[str, object]:
         or wrong_physical_order == outer_switched_value
     ):
         raise AssertionError("HB4xHB2 physical A2-A1 sign ledger failed")
+
+    # V9 exact prime-cell identity.  With the raw additive transforms
+    # U^#(z)=sum_h U(h)e_p(zh) and V^# defined likewise, the literal physical
+    # Kloosterman product is exactly the fixed-product convolution
+    # e1*e2*z*w=-2.  No square root, floating point, or character table is
+    # used here; equality is checked in Z[zeta_p].
+    gauss_dual_fixtures = (
+        (
+            5,
+            {1: 2, 2: -1},
+            {1: 1, 3: 2},
+            {1: 1, 2: -2},
+            {1: 3, 4: 1},
+        ),
+        (
+            7,
+            {1: -1, 3: 2},
+            {2: 3, 5: -1},
+            {1: 2, 4: 1},
+            {2: -2, 6: 3},
+        ),
+    )
+    gauss_dual_product_cases = 0
+    principal_nonzero_frequency_cases = 0
+    gauss_dual_minus_two_mutation_detected = False
+    centered_principal_mutation_detected = False
+    dual_second_conjugation_mutation_detected = False
+    dual_zero_frequency_mutation_detected = False
+    prime_angle_normalization_mutation_detected = False
+    for p, a1, a2, u_weight, v_weight in gauss_dual_fixtures:
+        physical = physical_kloosterman_product_fixture(
+            p, a1, a2, u_weight, v_weight
+        )
+        dual_product = gauss_dual_product_fixture(
+            p, a1, a2, u_weight, v_weight
+        )
+        if not cyclotomic_integer_equal(physical, dual_product):
+            raise AssertionError("Gauss dual fixed-product identity failed")
+        gauss_dual_product_cases += 1
+
+        # The multiplicative dual uses only z != 0.  Its total is -H(1),
+        # including for the principal character tau(chi_0)=-1.
+        dual_u_total = [0] * p
+        for z in range(1, p):
+            for h, weight_h in u_weight.items():
+                dual_u_total[(z * h) % p] += weight_h
+        expected_dual_u_total = [0] * p
+        expected_dual_u_total[0] = -sum(u_weight.values())
+        if not cyclotomic_integer_equal(
+            dual_u_total, expected_dual_u_total
+        ):
+            raise AssertionError("nonzero-frequency principal Gauss total failed")
+        principal_nonzero_frequency_cases += 1
+        wrong_dual_u_total = list(dual_u_total)
+        wrong_dual_u_total[0] += sum(u_weight.values())
+        if not cyclotomic_integer_equal(
+            wrong_dual_u_total, expected_dual_u_total
+        ):
+            dual_zero_frequency_mutation_detected = True
+
+        wrong_product_sign = gauss_dual_product_fixture(
+            p, a1, a2, u_weight, v_weight, product_residue=2
+        )
+        if not cyclotomic_integer_equal(physical, wrong_product_sign):
+            gauss_dual_minus_two_mutation_detected = True
+        wrong_second_conjugation = gauss_dual_product_fixture(
+            p,
+            a1,
+            a2,
+            u_weight,
+            v_weight,
+            conjugate_second_dual=True,
+        )
+        if not cyclotomic_integer_equal(
+            physical, wrong_second_conjugation
+        ):
+            dual_second_conjugation_mutation_detected = True
+
+        principal_mass = (
+            sum(a1.values())
+            * sum(a2.values())
+            * sum(u_weight.values())
+            * sum(v_weight.values())
+        )
+        centered_high_numerator = [
+            (p - 1) * coefficient for coefficient in dual_product
+        ]
+        centered_high_numerator[0] -= principal_mass
+        wrong_centered_high_numerator = [
+            (p - 1) * coefficient for coefficient in dual_product
+        ]
+        wrong_centered_high_numerator[0] += principal_mass
+        if not cyclotomic_integer_equal(
+            centered_high_numerator, wrong_centered_high_numerator
+        ):
+            centered_principal_mutation_detected = True
+        angle_from_nonprincipal = [
+            Fraction((p - 1) * coefficient, p)
+            for coefficient in dual_product
+        ]
+        angle_from_nonprincipal[0] -= Fraction(principal_mass, p)
+        angle_from_centered_product = [
+            Fraction(p - 1, p) * Fraction(coefficient, 1)
+            for coefficient in dual_product
+        ]
+        angle_from_centered_product[0] -= Fraction(principal_mass, p)
+        if not cyclotomic_integer_equal(
+            angle_from_nonprincipal, angle_from_centered_product
+        ):
+            raise AssertionError("prime angle (p-1)/p normalization failed")
+        wrong_angle_normalization = [
+            Fraction(coefficient, 1) for coefficient in dual_product
+        ]
+        wrong_angle_normalization[0] -= Fraction(principal_mass, p - 1)
+        if not cyclotomic_integer_equal(
+            angle_from_nonprincipal, wrong_angle_normalization
+        ):
+            prime_angle_normalization_mutation_detected = True
+    if not gauss_dual_minus_two_mutation_detected:
+        raise AssertionError("dual-product minus-two mutation escaped")
+    if not centered_principal_mutation_detected:
+        raise AssertionError("centered principal subtraction mutation escaped")
+    if not dual_second_conjugation_mutation_detected:
+        raise AssertionError("second dual conjugation mutation escaped")
+    if not dual_zero_frequency_mutation_detected:
+        raise AssertionError("dual zero-frequency mutation escaped")
+    if not prime_angle_normalization_mutation_detected:
+        raise AssertionError("prime angle normalization mutation escaped")
+
+    # A modular ratio fiber is not a single rational common-k ray.  These two
+    # primitive points have the same residue ratio modulo 13, but determinant
+    # 13 rather than zero.  The full box count also freezes the presence of
+    # nonzero wrap fibers.
+    wrap_modulus = 13
+    wrap_left = (5, 3)
+    wrap_right = (4, 5)
+    wrap_determinant = (
+        wrap_left[0] * wrap_right[1] - wrap_right[0] * wrap_left[1]
+    )
+    if (
+        wrap_left[0] * pow(wrap_left[1], -1, wrap_modulus)
+        - wrap_right[0] * pow(wrap_right[1], -1, wrap_modulus)
+    ) % wrap_modulus:
+        raise AssertionError("nonzero-wrap ratio fixture is invalid")
+    if wrap_determinant != wrap_modulus:
+        raise AssertionError("nonzero-wrap determinant fixture changed")
+    wrap_zero_collisions = 0
+    wrap_nonzero_collisions = 0
+    wrap_points = [(e, h) for e in range(3, 8) for h in range(3, 8)]
+    for left_index, (e1, h1) in enumerate(wrap_points):
+        for e2, h2 in wrap_points[left_index + 1 :]:
+            determinant = e1 * h2 - e2 * h1
+            if determinant % wrap_modulus == 0:
+                if determinant == 0:
+                    wrap_zero_collisions += 1
+                else:
+                    wrap_nonzero_collisions += 1
+    if wrap_nonzero_collisions == 0:
+        raise AssertionError("common-k unique-fiber mutation escaped")
+
+    # Complete moving-unit covariance.  A global Cauchy step in A has an exact
+    # product resonance h1*l1=h2*l2 and therefore returns the critical
+    # endpoint; it is not a source of an extra square-root saving.
+    moving_unit_resonance_cases = 0
+    moving_unit_mean_cases = 0
+    for p in (5, 7):
+        kernels: dict[tuple[int, int, int], tuple[int, ...]] = {}
+        for unit in range(1, p):
+            for h in range(1, p):
+                for ell in range(1, p):
+                    kernels[(unit, h, ell)] = kloosterman_exponent_multiset(
+                        ell, (-2 * h * pow(unit, -1, p)) % p, p
+                    )
+        for h in range(1, p):
+            for ell in range(1, p):
+                mean_array = [0] * p
+                for unit in range(1, p):
+                    add_scaled_cyclotomic(
+                        mean_array, kernels[(unit, h, ell)], 1
+                    )
+                expected_mean = [0] * p
+                expected_mean[0] = 1
+                if not cyclotomic_integer_equal(mean_array, expected_mean):
+                    raise AssertionError("complete moving-unit mean failed")
+                moving_unit_mean_cases += 1
+        for h1 in range(1, p):
+            for ell1 in range(1, p):
+                for h2 in range(1, p):
+                    for ell2 in range(1, p):
+                        correlation = [0] * p
+                        for unit in range(1, p):
+                            product = cyclic_integer_convolution(
+                                list(kernels[(unit, h1, ell1)]),
+                                cyclotomic_conjugate_coefficients(
+                                    kernels[(unit, h2, ell2)]
+                                ),
+                            )
+                            add_scaled_cyclotomic(correlation, product, 1)
+                        expected_correlation = [0] * p
+                        if (h1 * ell1 - h2 * ell2) % p == 0:
+                            expected_correlation[0] = p * p - p - 1
+                        else:
+                            expected_correlation[0] = -p - 1
+                        if not cyclotomic_integer_equal(
+                            correlation, expected_correlation
+                        ):
+                            raise AssertionError(
+                                "complete moving-unit covariance failed"
+                            )
+                        moving_unit_resonance_cases += 1
 
     if J + NU != HALF or 1 - J != Q or HALF - J != NU:
         raise AssertionError("J/nu/Q compiler identities failed")
@@ -1191,8 +1525,9 @@ def run_checks() -> dict[str, object]:
         "scope": (
             "finite exact algebra, rank-one obstruction, and compiler geometry; "
             "source-backed analytic estimates are not numerical checks; the "
-            "universal Type II umbrella, Gauss-twisted exact-half correlation, "
-            "and structured two-row paired-Voronoi theorem remain open"
+            "universal Type II umbrella, actual-atom dual-product dispersion, "
+            "signed-modulus Type-IV construction, and structured two-row "
+            "paired-Voronoi theorem remain open"
         ),
         "exponents": {
             "J": "133/400",
@@ -1281,7 +1616,13 @@ def run_checks() -> dict[str, object]:
             "absolute p=13 physical convention and character-matched interval are frozen",
             "Burgess r=2 leaves every actual single-character prime mode below F^4",
             "naive two-row additive-difference Kloosterman kernel has operator norm q",
-            "V8 primary and independent source locks remain separate with zero physical credit",
+            "raw Gauss duality maps the physical prime Kloosterman cell exactly to product residue -2",
+            "nonzero additive frequencies retain the principal tau(chi_0)=-1 total",
+            "the second additive dual factor is not conjugated",
+            "the nonprincipal Gauss angle has exact (p-1)/p centered fixed-product normalization",
+            "modular ratio fibers contain nonzero determinant-p wraps beyond one common-k ray",
+            "complete moving-unit Kloosterman covariance has an exact product-resonance endpoint floor",
+            "V9 primary and independent source locks remain separate with zero physical credit",
             "outer minus six converts source A1-A2 into physical A2-A1",
         ],
         "case_counts": {
@@ -1303,6 +1644,12 @@ def run_checks() -> dict[str, object]:
             "bp_quartic_character_rank_one": bp_character_rank_one_cases,
             "bp_character_matched_interval_magnitude": bp_rank_one_interval_magnitude,
             "two_row_difference_kernel_spectrum": difference_kernel_spectrum_cases,
+            "gauss_dual_fixed_product": gauss_dual_product_cases,
+            "gauss_dual_principal_nonzero_frequency": principal_nonzero_frequency_cases,
+            "common_k_zero_wrap_collisions_mod13_box3_to7": wrap_zero_collisions,
+            "common_k_nonzero_wrap_collisions_mod13_box3_to7": wrap_nonzero_collisions,
+            "moving_unit_complete_mean": moving_unit_mean_cases,
+            "moving_unit_product_resonance": moving_unit_resonance_cases,
         },
         "mutation_tests": {
             "J_above_one_third": "DETECTED",
@@ -1331,11 +1678,19 @@ def run_checks() -> dict[str, object]:
             "two_row_naive_residue_compression": "DETECTED",
             "two_row_plus_kernel": "DETECTED",
             "two_row_sqrt_q_norm": "DETECTED",
-            "v8_primary_reserve_swap": "DETECTED",
-            "v8_source_lock_merge": "DETECTED",
-            "v8_paired_polar_main_promotion": "DETECTED",
-            "v8_bilateral_A1_A2_sign_reversal": "DETECTED",
-            "v8_physical_credit_promotion": "DETECTED",
+            "gauss_dual_minus_two_to_plus_two": "DETECTED",
+            "gauss_dual_principal_subtraction_sign": "DETECTED",
+            "gauss_dual_second_factor_conjugation": "DETECTED",
+            "gauss_dual_zero_frequency_inclusion": "DETECTED",
+            "gauss_dual_prime_angle_normalization": "DETECTED",
+            "common_k_unique_modular_fiber": "DETECTED_FALSE",
+            "global_moving_unit_cauchy_saving": "DETECTED_FALSE",
+            "v9_primary_reserve_swap": "DETECTED",
+            "v9_source_lock_merge": "DETECTED",
+            "v9_paired_polar_main_promotion": "DETECTED",
+            "v9_bilateral_A1_A2_sign_reversal": "DETECTED",
+            "v9_physical_credit_promotion": "DETECTED",
+            "v9_status_registry_weakening": "DETECTED",
         },
         "open_gate": umbrella_gate,
         "route_freeze": route_freeze,

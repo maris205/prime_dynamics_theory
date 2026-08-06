@@ -15,6 +15,18 @@ HB4_EXACT_HALF_ENDPOINT_OPEN_LOG_POWER_GATE
 BP2607_FIXED_UNIT_LOCAL_ENGINE_ATTACHED_BUT_OUTER_SUM_INSUFFICIENT
 BP2607_ARBITRARY_UNIT_VECTOR_LIFT_STOP_SCOPED_FALSE_CHARACTER_EIGENMODE
 HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION_SELECTED_PRIMARY_OPEN
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP = OPEN_ATTACHMENT
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT = PROVED_EXACT_EQUIVALENCE
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS
+GLOBAL_MOVING_UNIT_CAUCHY = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH_PROVED_EXACT_ANALYTIC_HB4xHB2_GATE_OPEN
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION_STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI_INDEPENDENT_OPEN
@@ -2515,3 +2527,302 @@ its physical source map and saturating terms are already complete, while
 developing `(12.10.10)` as the independent fallback.  This is a route pivot,
 not an arithmetic advance: fixed-atom credit remains `0`, strict `1/400`
 remains unpaid, `L2=NONE`, and `TPC207_TRIGGER=false`.
+
+### 12.11 V9: exact Gauss dual product and the balanced Type-IV road
+
+V8 left the prime first wall as a character angle.  V9 removes that coordinate
+choice completely.  The Gauss-square phase is exactly Fourier dual to a fixed
+multiplicative product residue.  This is a useful normal form, but it is still
+the same critical obstruction; no level-of-distribution theorem is inferred
+from the change of variables.
+
+#### 12.11.1 A testable theorem contract
+
+The phrase `actual source atom` in `(12.10.6)` is too implicit to serve as a
+stand-alone theorem quantifier.  Freeze the following broader superclass.  For
+`p asymp F^2`, an admissible atom consists of
+
+```text
+a_i(e)=mu(e)W_i(e), i=1,2;
+supp(W_i) contained in one fixed dyadic F-shell;
+supp(U),supp(V) contained in O(log^B X) signed nonzero F-shells;
+fixed physical h0=2 and the literal product residue -2;
+fixed signs, gcd/conductor/cofactor dyads, and actual masks;
+finite inert smooth/log-derivative/Mellin factors with
+  scale^j ||w^(j)||_infinity <= log^(B_j) X for every fixed j;
+total product-atom decomposition L1 <= log^B X;
+all common transform parameters shared exactly as emitted by (12.8.1a).
+```
+
+Complex Mellin phases are allowed, but the second factor is not conjugated.
+Constants must be uniform in `p`, the dyadic locations, every frozen common
+parameter, and every member of the displayed seminorm ball.  Block sums,
+cumulative prefixes, logarithmic averages, and arbitrary residue vectors are
+not in this class.  This makes the proposed theorem falsifiable without
+silently enlarging it.  A per-atom source registry has not yet been generated,
+so membership remains a separate fail-closed attachment gate:
+
+```text
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE
+ = FROZEN_TESTABLE_SUPERCLASS_CONTRACT,
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP
+ = OPEN_ATTACHMENT.                                   (12.11.1)
+```
+
+#### 12.11.2 Exact finite Gauss duality
+
+Write
+
+```text
+a_i(e)=mu(e)W_i(e),
+A_i=sum_e a_i(e), H_0=sum_h U(h), L_0=sum_ell V(ell),
+U_p^sharp(z)=sum_(h!=0)U(h)e_p(zh),
+V_p^sharp(w)=sum_(ell!=0)V(ell)e_p(w ell),
+M_p=A_1 A_2 H_0 L_0.
+```
+
+All variables below lie in `F_p^*`.  For every multiplicative character,
+including the principal character,
+
+```text
+sum_(z!=0)chi(z)U_p^sharp(z)=tau(chi)H(conjugate chi). (12.11.2)
+```
+
+The sign in `e_p(zh)` is forced.  For `chi_0`, both sides equal `-H_0`
+because `tau(chi_0)=-1`; a hidden `z=0` term would break this equality.  Define
+
+```text
+Q_p(-2)=sum_(e_1 e_2 z w=-2 mod p)
+ a_1(e_1)a_2(e_2)U_p^sharp(z)V_p^sharp(w).              (12.11.3)
+```
+
+Multiplicative-character orthogonality and `(12.11.2)` give the exact identity
+
+```text
+sum_(chi!=chi_0) p^(-1)tau(chi)^2 conjugate(chi)(-2)
+ E_1(chi)E_2(chi)H(conjugate chi)L(conjugate chi)
+
+ = (p-1)/p [Q_p(-2)-M_p/(p-1)].                        (12.11.4)
+```
+
+There is no conjugate on the second dual weight, so `(12.11.4)` is not a
+positive Parseval form.  Opening the Kloosterman sum gives a second exact form:
+
+```text
+Q_p(-2)=sum_(e_1,e_2,h,ell)
+ a_1(e_1)a_2(e_2)U(h)V(ell)
+ S(1,-2h ell conjugate(e_1e_2);p).                     (12.11.5)
+```
+
+Consequently the complete prime cell `(12.10.5a)` is simply
+
+```text
+G_p=mu(p)Q_p(-2).                                      (12.11.6)
+```
+
+The principal cell cancels exactly against the subtraction in the
+nonprincipal decomposition; this is a reassembly identity, not cancellation
+credit.  With normalized dual weights `U_tilde=p^(-1/2)U^sharp`, `(12.11.4)`
+is the centered fixed-product discrepancy relative to uniform mass
+`1/(p-1)`.  The checker verifies `(12.11.5)` in `Z[zeta_p]` for two independent
+integer-weight fixtures and detects `-2 -> +2`, principal-sign, and `z=0`
+mutations.  Thus
+
+```text
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY
+ = PROVED_EXACT_FINITE,
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT
+ = PROVED_EXACT_EQUIVALENCE.                           (12.11.7)
+```
+
+The old character gate and the new product gate are equivalent coordinates,
+not two savings that may be multiplied.  The narrow prime theorem target is
+
+```text
+|Q_p(-2)-M_p/(p-1)|
+ << F^(-eta)||C_hat_1||_2||C_hat_2||_2, p asymp F^2,   (12.11.8)
+```
+
+uniformly over the frozen class.  The harmless factor `p/(p-1)` converts
+`(12.11.8)` back to the prime angle `(12.10.5e)`.  The full squarefree theorem
+`(12.10.6)` still requires the open CRT/imprimitive lift below.
+
+Equivalently, define the normalized centered discrepancy
+
+```text
+D_p(-2)=sum_(e_1,e_2,z,w)a_1(e_1)a_2(e_2)U_tilde(z)V_tilde(w)
+ [1_(e_1e_2zw=-2)-1/(p-1)].
+```
+
+Then `(12.11.4)` is `(p-1)D_p(-2)`, and the source-scale version of the
+new theorem is `|D_p(-2)| << F^(2-eta)log^C X`, equivalently a physical
+prime-cell bound `F^(4-eta)log^C X`.  The full ledger
+
+```text
+F^(-2) (physical prefactor) * F^2 (prime moduli) * F^(4-eta)
+ = X^(1-eta/4)
+```
+
+shows that an exact-half power saving needs only `eta>0`, but paying the
+pre-existing strict `1/400` surplus would require `eta>1/100` after all
+polynomial losses.  No such `eta` is currently proved.
+
+#### 12.11.3 Why the common-k construction does not cover the object
+
+Two integer points `(e,h)` and `(a,b)` give the same modular ratio precisely
+when
+
+```text
+b e-a h=t p.                                           (12.11.9)
+```
+
+Only `t=0` is the rational ray `(e,h)=(ak,bk)` and supplies the familiar
+factorization
+
+```text
+mu(ak)=mu(a)mu(k)1_((a,k)=1).
+```
+
+For `t!=0`, the fiber is an affine translate and its coefficient is
+`mu(e_t+ak)`, not a common-`k` prefix.  These wraps are individually short but
+there are enough primitive directions for their aggregate to remain at the
+endpoint.  Already modulo `13`, `(e,h)=(5,3)` and `(a,b)=(4,5)` have the same
+ratio and determinant `13`, not zero.  The exact checker finds 11 nonzero-wrap
+and 10 zero-wrap unordered collisions in the box `[3,7]^2`.  Therefore
+
+```text
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER
+ = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS,
+COMMON_K_LONG_INTEGER_RAYS
+ = PLAUSIBLE_LOCAL_MOBIUS_SUBLEMMA_ONLY.                (12.11.10)
+```
+
+This does not reopen the unrelated TPC-18 same-`k` TT-star cell.
+
+There is a second exact firewall.  Put
+
+```text
+K_A(h,ell)=S(ell,-2h conjugate(A);p).
+```
+
+Complete finite orthogonality gives
+
+```text
+sum_A K_A(h_1,ell_1)conjugate(K_A(h_2,ell_2))
+ = p^2-p-1, if h_1 ell_1=h_2 ell_2 mod p,
+ = -p-1,    otherwise,
+sum_A K_A(h,ell)=1.                                    (12.11.10a)
+```
+
+Thus, after centering, a global Cauchy step in the moving product unit has the
+exact product-resonance norm
+
+```text
+p^2 [sum_t |sum_(h ell=t)U(h)V(ell)|^2
+     -|H_0L_0|^2/(p-1)].                               (12.11.10b)
+```
+
+It returns the critical endpoint and cannot supply an additional square-root
+saving.  The checker verifies `(12.11.10a)` exactly for 1,552 covariance cases
+and 52 complete-mean cases.  Accordingly
+
+```text
+GLOBAL_MOVING_UNIT_CAUCHY
+ = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE.        (12.11.10c)
+```
+
+#### 12.11.4 Source screen and full loss ledger
+
+Poisson summation in `ell` transforms `(12.11.5)`, schematically but with the
+essential outer scale retained, into
+
+```text
+F sum_(h,x,e_1,e_2 asymp F)
+ U(h)V_x(x)mu(e_1)W_1(e_1)mu(e_2)W_2(e_2)
+ e_p(-2h conjugate(x e_1e_2)).                         (12.11.11)
+```
+
+Its raw scale is `F^5`; the physical target is `F^(4-eta)`.  Two recent
+inverse-product estimates attach literally only after outer variables are
+frozen.  [Mohammadi, Theorem 1](https://arxiv.org/abs/2608.01203) permits the
+phase `Axy+B(xy)^(-1)` with `A=0`, while
+[Bourgain--Garaev, Theorem 13](https://arxiv.org/abs/1211.4184) permits a
+multilinear inverse-product phase.  Each supplies some `p^(-delta)` local
+saving, but outer triangle and `p=F^2` leave
+
+```text
+F^(5-2delta).
+```
+
+Closing `(12.11.11)` would require `delta >= (1+eta)/2`; neither source states
+that exponent, and their local savings cannot be multiplied by a separate
+Gauss/Cauchy gain after the signed `h` correlation has already been discarded.
+Hence
+
+```text
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT
+ = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT,
+BOURGAIN_GARAEV_N3_ATTACHMENT
+ = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT,
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION
+ = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT.      (12.11.12)
+```
+
+No checked standard divisor-in-progressions theorem attaches to `(12.11.3)`.
+The dual
+weights depend explicitly on `p`, two coefficients retain literal Mobius
+signs, and the residue is prescribed.  [Nguyen](https://arxiv.org/abs/2308.06839)
+averages restricted factorable/smooth modulus families rather than the prime
+critical modulus with these coefficients;
+[Parry](https://arxiv.org/abs/2404.04749) obtains a `d_4` result only with an
+additional average over the residue class.  Removing that average or replacing
+`d_4` by the present modulus-dependent weights is not a legal attachment.
+Dispersion of `(12.11.3)` produces the balanced resonance
+
+```text
+e_1e_2zw-e'_1e'_2z'w'=nu p,                            (12.11.13)
+```
+
+which is the same determinant wall in a clearer coordinate system.  Thus
+
+```text
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES
+ = ABSENT.                                              (12.11.14)
+```
+
+#### 12.11.5 Selected construction road
+
+The next construction must preserve `(12.11.11)` before any outer triangle.
+The selected road is:
+
+1. certify every emitted atom against `(12.11.1)` and prove uniform dual-tail
+   localization with `z,w!=0`;
+2. derive the squarefree `g,q`, imprimitive-character, CRT, and Ramanujan-
+   cofactor analogue of `(12.11.4)` without losing `mu(gq)`;
+3. square only the complete centered modulus average, retain both literal
+   Mobius rows, and separate the exact diagonal from the nonzero resonances in
+   `(12.11.13)`;
+4. prove a collective determinant/Kuznetsov or dispersion estimate strong
+   enough to recover the full `F^(-1)` signed Fourier cancellation and an
+   additional power saving, rather than freezing `h`;
+5. reassemble the conductor/cofactor strata into `(12.10.6)` with every
+   Mellin, tail, and physical normalization loss shown.
+
+The prime gate remains the first falsifiable test; on primes `mu(p)=-1`, so it
+has no modulus-sign saving.  The signed-modulus construction begins only at the
+full squarefree average and is presently a theorem target, not a derived
+identity:
+
+```text
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION
+ = FIRST_SUBGATE_OPEN_NEW_THEOREM,
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV
+ = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM.              (12.11.15)
+```
+
+The independent HB4xHB2 paired-Voronoi parent remains exactly as in
+`(12.10.11)` and may not be spliced into this source lock.  V9 is a
+`CHANNEL_REDESIGN_WITH_EXACT_GAUSS_DUAL_PRODUCT_NORMAL_FORM_AND_TYPED_TYPE_IV_TARGET`,
+not an arithmetic advance:
+fixed-atom credit is `0`, strict `1/400` is `UNPAID`, `L2=NONE`, and
+`TPC207_TRIGGER=false`.

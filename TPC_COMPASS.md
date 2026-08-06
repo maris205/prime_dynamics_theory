@@ -1,12 +1,12 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-06
-状态：`BOLD_CHANNEL_V8 / EXACT_HALF_CHARACTER_AWARE_ROUTE_PIVOT`
-claim level：`SOURCE_BACKED_FIXED_UNIT_ENGINE_PLUS_EXACT_OBSTRUCTIONS_WITH_TWO_STRUCTURED_NEW_THEOREMS_OPEN`
+状态：`BOLD_CHANNEL_V9 / EXACT_GAUSS_DUAL_PRODUCT_ROUTE_REDESIGN`
+claim level：`EXACT_FINITE_NORMAL_FORM_PLUS_EXACT_OBSTRUCTIONS_WITH_DUAL_TYPE_IV_AND_PAIRED_VORONOI_OPEN`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V8 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V9 的完整
 公式、proof与独立 checker位于 `research/tpc-big-road/`。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
@@ -597,16 +597,49 @@ canonical umbrella继续是
 TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE.
 ```
 
-1. **Primary：HB4 exact-half Gauss-twisted signed correlation**。固定 unit/modulus的
-   临界 Kloosterman theorem给 `D^(-1/32)=X^(-1/64)`局部 saving，但冻结外层后仍差
-   `F^(15/16)`；对 arbitrary moving-unit coefficients的无损 vector lift又被 exact
-   character eigenmode否定。合法新 theorem必须限制在 actual source-emitted
-   Möbius-product class，在 Pascadi triangle/Cauchy前保留 `mu(d)`、Gauss-square phase、
-   moving unit与 complete conductor split，并给真实 `D^(-eta)`或 `log^-A X`。
-   prime `p asymp F^2`、`g=1`的 first subgate已压成两条 literal Möbius
-   ratio-incidence vectors对 unitary Gauss multiplier的 principal-angle saving。
-   Burgess排除了单个 character饱和；必须击中 broad-spectrum alignment，而不是继续
-   优化 unsigned norm。
+按岛屿地图的导航语义，Bridge A现在必须拆成两座 source-lock不同的桥：A1 是
+两条 literal Möbius rows加两条 Gauss-dual rows的 centered Type-IV主桥；A2 是
+四 Möbius rows加双 divisor-log columns的 paired-Voronoi reserve。固定原子岛与
+Pair-native/H1岛是 attachment层，不自动提供桥梁 saving。Bridge B仍是
+distinguished-seed genericity动力学大桥；Hénon/几何岛只作辅助提升，不给解析桥
+credit。V9 canonical状态表为：
+
+```text
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP = OPEN_ATTACHMENT
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT = PROVED_EXACT_EQUIVALENCE
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS
+GLOBAL_MOVING_UNIT_CAUCHY = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+```
+
+1. **Primary：HB4 exact-half dual-product dispersion**。V9 已把 Gauss-square
+   character angle精确化为 prescribed residue的 centered product convolution：
+
+   ```text
+   Q_p(-2)=sum_(e_1e_2zw=-2 mod p)
+     mu(e_1)W_1(e_1)mu(e_2)W_2(e_2)U_p^sharp(z)V_p^sharp(w).
+   ```
+
+   完整 prime cell为 `mu(p)Q_p(-2)`，nonprincipal gate为
+   `(p-1)/p[Q_p(-2)-M_p/(p-1)]`。这是 exact finite equivalence，不是 arithmetic
+   saving。当前 first subgate是
+   `HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION`：在冻结、可测试的 source
+   superclass上证明 normalized discrepancy `F^(2-eta)`，等价 prime cell
+   `F^(4-eta)`；支付 strict `1/400`需最终 `eta>1/100`。actual atom逐项 membership、
+   dual tails、squarefree CRT/imprimitive lift仍须显式支付。common-`k` unique-fiber因
+   `be-ah=tp`的 `t!=0` wraps而 `STOP_SCOPED`；global moving-unit Cauchy也被 exact
+   product-resonance endpoint floor封死。选中的构造目标是
+   `HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV`：在 full squarefree modulus average
+   中保留 `mu(gq)`、两条 literal Möbius rows与 centered product-difference resonance，
+   不在 prime或 outer-variable层先取绝对值。已核查的 local inverse-product与普通
+   `d_4` level-of-distribution sources只提供 supporting sublemmas，未附着这一 gate。
 2. **Independent reserve：HB4xHB2 structured two-row paired-Voronoi**。在
    exactly-swapped shells上联合处理 source `A1-A2`；乘 outer `-6`后 physical顺序
    为 `A2-A1`。它对两条 weighted `mu_F*mu_F` rows与
@@ -619,9 +652,9 @@ TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE.
    polar-main attachment，随后须从 direct DFI的 `F^7` ledger联合回收 `F^3`到
    physical `F^4`。
 
-两条 source lock不得拼接。调度上先对 prime modulus、`g=1`、单个 source atom证明或
-否定 primary 的 Gauss-twisted signed moment，同时独立展开 paired-Voronoi的 polar/
-zero/Bessel ledger。
+两条 source lock不得拼接。调度上先把 prime modulus、`g=1`、单个 source atom的
+centered dual-product theorem证明或否定，并同步把它提升为保留 modulus sign的
+squarefree Type-IV contract；同时独立展开 paired-Voronoi的 polar/zero/Bessel ledger。
 Target-coupled reassembly/crosslink继续作为 portfolio-level `OPEN/RESERVE`，不属于
 本轮 current umbrella gate。只有上述两个解析门之一先发生 theorem-backed变化，才另行
 要求逐 coefficient operator `Sigma_k J_X L_X c_X=nu_X W_k+R_X`与 paid physical

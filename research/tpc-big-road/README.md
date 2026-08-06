@@ -1,8 +1,8 @@
-# TPC big road V8: exact-half signed-correlation highway
+# TPC big road V9: exact-half dual-product Type-IV highway
 
 更新时间：2026-08-06
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_HALF_CHARACTER_AWARE_ROUTE_PIVOT`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_GAUSS_DUAL_PRODUCT_ROUTE_REDESIGN`
 
 ```text
 COARSE_COMPARISON_TYPE_I_ADVANCE = RETAINED
@@ -27,6 +27,18 @@ HB4_EXACT_HALF_ENDPOINT = OPEN_LOG_POWER_GATE
 BP2607_FIXED_UNIT_LOCAL_ENGINE = ATTACHED_BUT_OUTER_SUM_INSUFFICIENT
 BP2607_GENERIC_MOVING_UNIT_LIFT = STOP_SCOPED_FALSE_CHARACTER_EIGENMODE
 HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION = SELECTED_PRIMARY_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP = OPEN_ATTACHMENT
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT = PROVED_EXACT_EQUIVALENCE
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS
+GLOBAL_MOVING_UNIT_CAUCHY = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI = INDEPENDENT_OPEN_NEW_THEOREM
@@ -48,7 +60,10 @@ fixed `delta<1/2`，并把 large-`D` quotient-Möbius墙精确改写成 bilatera
 HB4xHB2 divisor-log determinant。V8 又锁定了 fixed-unit 临界 Kloosterman 的真实
 局部 saving，同时用 exact character eigenmode否定 generic moving-unit lift；当前
 primary 因而改成 literal Möbius/Gauss signed correlation，paired-Voronoi作为不可
-拼接的独立 reserve。完整 compiler见
+拼接的独立 reserve。V9 再把 Gauss-square character angle精确化成 prescribed
+residue `e_1e_2zw=-2 (mod p)` 的 centered four-fold product convolution，并据此
+封死 common-`k` unique-fiber与 global moving-unit Cauchy两个伪 shortcut；当前主攻
+已转成保留两条 literal Möbius rows的 dual Type-IV dispersion。完整 compiler见
 [`fm_local_comparison_compiler.md`](fm_local_comparison_compiler.md)。所有 TPC-1--206 的 source locks、
 `STOP_SCOPED` cells、actuality/provenance 与 normalization firewalls继续有效。
 
@@ -774,20 +789,42 @@ canonical umbrella仍为
 TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE.
 ```
 
-当前 primary 是 **HB4 exact-half Gauss-twisted signed correlation**。在
-`D=F^2=X^(1/2)`、complete projector与 high conductors上，必须把 literal
-`mu(gq)mu(e_1)mu(e_2)`、Gauss-square phase、moving unit和 physical `h0=2`
-保留到 Pascadi triangle/Cauchy之前，并在 actual source-product coefficient class中
-得到 `D^(-eta)`或任意 `log^-A X`。Blomer--Pascadi fixed-unit theorem的
-`D^(-1/32)=X^(-1/64)`是真实引擎；冻结 unit/modulus后仍差 `F^(15/16)`，generic
-vector lift又被 exact multiplicative-character rank-one mode否定。因此下一步不是继续
-改 coefficient norm，而是证明或反驳 literal Möbius--Gauss joint signed moment。
-prime `p asymp F^2`的 complete formula已进一步压成两条 Möbius-weighted
-ratio-incidence vectors受 unitary Gauss multiplier作用的 principal-angle问题。Burgess
-在长度 `F=sqrt(p)`排除了单个 character饱和；真正 first wall是 broad spectrum的
-Gauss-phase alignment。最窄 subgate为
-`HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE`，要求对 actual ratio vectors给
-`F^(-eta)` angle saving。
+当前 primary 仍是 **HB4 exact-half Gauss-twisted signed correlation**，但 V9 已把
+它从 character语言精确改写。令 `a_i(e)=mu(e)W_i(e)`，并令
+`U_p^sharp(z)=sum_h U(h)e_p(zh)`、`V_p^sharp`同理，则完整 prime cell正好是
+
+```text
+mu(p) Q_p(-2),
+Q_p(-2)=sum_(e_1e_2zw=-2 mod p)
+ a_1(e_1)a_2(e_2)U_p^sharp(z)V_p^sharp(w).
+```
+
+nonprincipal Gauss angle精确等于
+`(p-1)/p[Q_p(-2)-M_p/(p-1)]`；没有第二个可乘的 saving，也没有第二因子的
+复共轭。checker在 cyclotomic group ring中验证 Kloosterman与 fixed-product两种
+表示，并冻结 principal、`-2`、inverse与 normalization。
+
+因此最窄 subgate更新为
+`HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION`：对 `p asymp F^2`、actual
+source weight envelope证明 normalized centered discrepancy
+`D_p(-2)<<F^(2-eta)log^C X`，等价 prime cell `F^(4-eta)`。任意 `eta>0`给 exact-half
+power saving；要支付旧 strict `1/400`账本则须在全部 polynomial losses后
+`eta>1/100`。当前已核查 sources没有给出该结论。
+
+两条 shortcut已经关闭。模比 fiber满足 `be-ah=tp`；common-`k`只覆盖 `t=0`，
+`t!=0`是带 `mu(e_t+ak)`的 affine wraps，故 unique-fiber construction为
+`STOP_SCOPED_FALSE_COVER`。对 moving unit先作 global Cauchy也有 exact
+`h_1 ell_1=h_2 ell_2` product-resonance floor，只返回 endpoint。Mohammadi与
+Bourgain--Garaev可作 literal local inverse-product sublemma，但 outer triangle后只到
+`F^(5-2delta)`，其 source未给关闭目标所需的 `delta>1/2`强度；已核查的普通 `d_4`/BV/BDH
+又不接受 prescribed residue、两条 Möbius rows与 modulus-dependent dual weights。
+
+selected construction因此是
+`HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV`：先完成 actual-atom membership与
+dual-tail ledger，再在 squarefree `g,q`层导出 CRT/imprimitive analogue，最后只对
+完整 centered modulus average作 dispersion，保留 `mu(gq)`与两条 literal Möbius
+rows直到 balanced product-difference resonance被 collective处理。prime family上
+`mu(p)=-1`恒定，本身没有 modulus-sign saving。
 
 独立 reserve 是 **HB4xHB2 structured two-row paired-Voronoi**。它对 exactly-paired
 shells将 source switch `A1-A2`在 triangle前联合；乘 outer `-6`后 physical顺序为

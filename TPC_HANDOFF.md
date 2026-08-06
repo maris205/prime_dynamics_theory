@@ -3,49 +3,56 @@
 更新时间：2026-08-06
 交接状态：`SEALED_FOR_NEW_SESSION`
 
-第 55 节本轮启动基线为
-`a7306753f0af4bf02448f2833fa4015aad6d623f`，与 `origin/main`一致；启动
+第 56 节本轮启动基线为
+`cfe26af99bed702aad5d346100a39134c3ac8520`，与 `origin/main`一致；启动
 `git pull --rebase origin main`返回 already up to date。启动时
 `TPC_HANDOFF.md` SHA-256为
-`dbef7fb0781d844aa172bbae0e02d698aeae605685c1c8ecafb30c4598ae0316`；
-tracked/cached diff为空。130 个既有 protected untracked files原样保留，第 1 节
-22 项只读启动回归为 `22/22 PASS`；TPC-27--32 legacy writers与 TPC-122 writer
-均未执行。
+`8cf2a59c05f77e270a217a6849bcaba877287cfaf68f116c9e780d24eeb381d8`；
+tracked/cached diff为空。130 个既有 protected untracked files原样保留，其 canonical
+manifest为 `9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1`。
+第 1 节 22 项只读启动回归为 `22/22 PASS`；TPC-27--32 legacy writers与
+TPC-122 writer均未执行。
 
-V8 执行的是第 54.19 节 canonical
-`TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE`的 source screen与路线定向，不是
-下一篇小论文。新文献确有真实局部引擎：[Blomer--Pascadi](https://arxiv.org/abs/2607.24311)
-在 fixed modulus、fixed unit与临界长度给 `q^(-1/32)` saving；于
-`D=F^2=X^(1/2)`对应 `F^(-1/16)=X^(-1/64)`。但冻结 physical product unit与
-modulus再作 outer triangle后为 `F^(111/16)`，相对 raw `F^6`仍差 `F^(15/16)`，
-故不是 endpoint closure。
-
-更关键的是 arbitrary moving-unit vector lift严格为假。对 prime `p`与非平凡
-character，按第 55 节 convention有 exact rank-one identity
+V9 继续同一个 canonical
+`TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE`，但不再把 prime first wall停留在
+抽象 character angle。对 raw additive dual weights
+`U_p^sharp(z)=sum_h U(h)e_p(zh)`、`V_p^sharp`同理，完整 prime cell精确等于
 
 ```text
-sum_(A mod p)^* chi(A)S(ell,-2h A^(-1);p)
- =tau(conjugate(chi))^2 chi(-2h ell).
+mu(p)Q_p(-2),
+Q_p(-2)=sum_(e_1e_2zw=-2 mod p)
+ mu(e_1)W_1(e_1)mu(e_2)W_2(e_2)U_p^sharp(z)V_p^sharp(w).
 ```
 
-character-matched临界 vectors给左侧 `p^2`，而无损 vectorized BP只容许
-`p^(63/32)`，精确差 `p^(1/32)`。checker以 quartic character mod `13`在 group
-ring中 exact验证，并冻结 absolute convention fixture。因此 generic lift为
-`STOP_SCOPED_FALSE_CHARACTER_EIGENMODE`；它不否定 actual Möbius class，而是强制
-新 theorem使用 literal `E_1(chi)E_2(chi)`、`mu(d)`与 Gauss-square phase的 joint
-signed correlation。
+nonprincipal Gauss angle精确为
+`(p-1)/p[Q_p(-2)-M_p/(p-1)]`。checker在 `Z[zeta_p]`中 exact验证 physical
+Kloosterman与 fixed-product两种表示，并冻结 principal、`z,w!=0`、`-2`、inverse、
+conjugation与所有 `p/(p-1)` normalization。这是
+`PROVED_EXACT_EQUIVALENCE`，不是 arithmetic saving。
 
-当前 primary为
-`HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION = OPEN_NEW_THEOREM`。
-HB4xHB2 source lock独立保留为
-`HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI = OPEN_NEW_THEOREM_PLAUSIBLE`；若先把
-两行压成 arbitrary residue sequences，所得 `S(-2,u-v;q)` circulant的 operator
-norm精确为 `q`，故该 shortcut已 `STOP_SCOPED`。其 legal first transform已经
-source-backed导出：`A_2`为 double Voronoi而 `A_1`只能 single Voronoi加未变换
-smooth-log列；collective polar main attachment仍 OPEN，逐 row DFI为 `F^7`对目标
-`F^4`，须由两条 literal Möbius rows联合回收 `F^3`。两个 source lock不得拼接。
+V8 的 common-`k` construction不能覆盖完整模比 fiber：相同比例满足
+`be-ah=tp`，只有 `t=0`是 rational common-`k` ray，`t!=0`是 coefficient
+`mu(e_t+ak)`的 affine wrap。故
+`COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER=STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS`。
+完整 moving-unit Cauchy也有 exact `h_1 ell_1=h_2 ell_2` product-resonance floor，
+只返回 endpoint，记为 `STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE`。
 
-本轮是 `CHANNEL_REDESIGN_WITH_SOURCE_BACKED_LOCAL_ENGINE_AND_EXACT_OBSTRUCTIONS`，
+当前 first subgate更新为
+`HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM`；目标是对
+`p asymp F^2`的 frozen source superclass证明 normalized centered discrepancy
+`F^(2-eta)`，等价 physical prime cell `F^(4-eta)`。任意 `eta>0`给 exact-half
+power saving；支付旧 strict `1/400`须在全部 polynomial losses后 `eta>1/100`。
+actual atom membership与 dual tails仍是显式 attachment gate。Mohammadi与
+Bourgain--Garaev只提供 exponent不足的 local inverse-product sublemma；普通
+已核查的 `d_4`/BV/BDH source不接受 prescribed residue、两条 literal Möbius rows与
+modulus-dependent dual weights。
+
+selected construction为
+`HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM`：在 full
+squarefree `g,q` average中保留 `mu(gq)`、两条 literal Möbius rows与 centered
+product-difference resonance，禁止 prime/outer-variable层先取绝对值。HB4xHB2
+paired-Voronoi仍是不可拼接的 independent reserve。本轮裁决为
+`CHANNEL_REDESIGN_WITH_EXACT_GAUSS_DUAL_PRODUCT_NORMAL_FORM_AND_TYPED_TYPE_IV_TARGET`，
 不是 arithmetic advance。TPC-207仍为 false；fixed-atom credit=`0`、strict
 `1/400=UNPAID`、`L2=NONE`，第 6 节全部旧 STOP cells与其余 OPEN parents均不变。
 
@@ -123,6 +130,18 @@ BP2607_FIXED_UNIT_LOCAL_ENGINE = SOURCE_ATTACHED_F_MINUS_1_OVER_16_SAVING
 BP2607_AFTER_FREEZE_AND_OUTER_TRIANGLE = STOP_SCOPED_F_15_OVER_16_DEFICIT
 BP2607_ARBITRARY_UNIT_VECTOR_LIFT = STOP_SCOPED_FALSE_CHARACTER_EIGENMODE
 HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION = SELECTED_PRIMARY_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP = OPEN_ATTACHMENT
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT = PROVED_EXACT_EQUIVALENCE
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS
+GLOBAL_MOVING_UNIT_CAUCHY = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 LARGE_D_QUOTIENT_MOBIUS_GATE = SUPERSEDED
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_ADDITIVE_DIFFERENCE_KERNEL_NORM_Q
@@ -191,9 +210,12 @@ balanced-quarter saving，当前 Pascadi map则尚未附着 simultaneous second-
 incidence/range/`L^2`。
 
 因此第 54.8--54.19 节给出覆盖第 54.5--54.7 旧 V3 status段的 V7 theorem base，
-第 55 节再控制当前 V8 route priority与新 STOP/OPEN边界。V7裁决仍是
+第 55 节记录 V8 route priority，第 56 节控制当前 V9 exact normal form与新
+STOP/OPEN边界。V7裁决仍是
 `ARITHMETIC_HB4_FIXED_SUBHALF_RANGE_ADVANCE_AND_LARGE_D_EXACT_RECOMPILATION_NOT_TPC_TRIGGER`；
 V8裁决为 `CHANNEL_REDESIGN_WITH_SOURCE_BACKED_LOCAL_ENGINE_AND_EXACT_OBSTRUCTIONS`。
+V9裁决为
+`CHANNEL_REDESIGN_WITH_EXACT_GAUSS_DUAL_PRODUCT_NORMAL_FORM_AND_TYPED_TYPE_IV_TARGET`。
 TPC-207仍为 false；fixed-atom credit=`0`、strict `1/400=UNPAID`、`L2=NONE`，
 第 6 节全部旧 cells及 H3/H4边界不变。以下第 53 节页首叙述是 V2发布快照，
 其余 V2 theorem与 STOP/OPEN边界继续有效。
@@ -413,12 +435,12 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V8_20260806_FIXED_UNIT_CRITICAL_KLOOSTERMAN_ENGINE_REAL_GENERIC_MOVING_UNIT_LIFT_FALSE_CHARACTER_EIGENMODE_ACTUAL_MOBIUS_GAUSS_SIGNED_CORRELATION_SELECTED_PRIMARY_TWO_ROW_PAIRED_VORONOI_FIRST_TRANSFORM_DERIVED_POLAR_MAIN_AND_F3_FAMILY_SAVING_OPEN_NAIVE_RESIDUE_COMPRESSION_NORM_Q_STOP_NO_ARITHMETIC_TRIGGER_CHANNEL_REDESIGN`
+`TPC_BIG_ROAD_V9_20260806_PRIME_GAUSS_DUAL_PRODUCT_EXACT_CENTERED_FIXED_RESIDUE_EQUIVALENCE_COMMON_K_UNIQUE_FIBER_FALSE_NONZERO_WRAPS_GLOBAL_MOVING_UNIT_CAUCHY_ENDPOINT_RESONANCE_LOCAL_INVERSE_PRODUCT_EXPONENT_INSUFFICIENT_STANDARD_LOD_ABSENT_SIGNED_MODULUS_DUAL_TYPE_IV_SELECTED_PAIRED_VORONOI_RESERVE_SEPARATE_NO_ARITHMETIC_TRIGGER_CHANNEL_REDESIGN`
 下一篇：`null`；下一项不编号大动作：`TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE`
-；当前 first subgate：`HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE`
-（第 55 节控制；既有 local source只有在第 32.6 节或
+；当前 first subgate：`HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION`
+（第 56 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--56 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -431,7 +453,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 上下文节省入口：新会话先读 `TPC_COMPASS.md` 与
 `research/tpc-big-road/README.md`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--56 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -5445,7 +5467,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V8 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V9 current）
 
 ```text
 进入仓库：
@@ -5454,7 +5476,7 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--56 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -5502,6 +5524,18 @@ BP2607_FIXED_UNIT_LOCAL_ENGINE = SOURCE_ATTACHED_F_MINUS_1_OVER_16_SAVING
 BP2607_AFTER_FREEZE_AND_OUTER_TRIANGLE = STOP_SCOPED_F_15_OVER_16_DEFICIT
 BP2607_ARBITRARY_UNIT_VECTOR_LIFT = STOP_SCOPED_FALSE_CHARACTER_EIGENMODE
 HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION = SELECTED_PRIMARY_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP = OPEN_ATTACHMENT
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT = PROVED_EXACT_EQUIVALENCE
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS
+GLOBAL_MOVING_UNIT_CAUCHY = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 LARGE_D_QUOTIENT_MOBIUS_GATE = SUPERSEDED
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_ADDITIVE_DIFFERENCE_KERNEL_NORM_Q
@@ -5525,16 +5559,19 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮只执行第 55 节控制的同一个 canonical umbrella：
+下一轮只执行第 56 节控制的同一个 canonical umbrella：
 
 TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
 
 当前 primary subgate为
-`HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION`；先在 prime modulus、`g=1`、
-单个 source product atom上证明或否定 Gauss-root-number phase与两条 literal
-Möbius-character polynomials的 signed moment saving，再扩展到 squarefree
-conductor/cofactor strata。不得猜 arbitrary unit/vector BP theorem；该对象已有 exact
-character eigenmode反例。HB4xHB2 structured two-row paired-Voronoi只作独立 reserve，
+`HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION`。先冻结 actual atom membership
+与 dual-tail ledger，再对 prime `p asymp F^2`的 centered prescribed-product residue
+`e_1e_2zw=-2`证明或否定 `F^(2-eta)` normalized discrepancy；其 character-angle版本
+只是 exact等价坐标，二者 saving不得相乘。common-`k` unique-fiber与 global
+moving-unit Cauchy已由 exact wrap/resonance identity `STOP_SCOPED`，不得重开。若 prime
+gate存活，下一构造是 squarefree `g,q`层保留 `mu(gq)`与两条 literal Möbius rows的
+signed-modulus dual Type-IV dispersion；不得把 ordinary `d_4` averaged-residue theorem
+升级为 prescribed `-2`。HB4xHB2 structured two-row paired-Voronoi只作独立 reserve，
 不得和 exact-half source lock拼接，也不得先压成 operator norm为 `q`的 arbitrary
 additive-difference residue kernel。
 
@@ -11062,6 +11099,305 @@ FM_ROUTE_FREEZE
   reserve = HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI
   source_lock_merge = false
   physical_order = A2_MINUS_A1
+GIT_DIFF_CHECK = PASS
+MARKDOWN_FENCES = ALL BALANCED
+EXPECTED_TRACKED_DIFF = 5/5 EXACT
+CACHED_DIFF = EMPTY
+PROTECTED_UNTRACKED = 130 FILES
+PROTECTED_MANIFEST
+  = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+PAPER_PDF_NUMBERED_RELEASE_CREATED = NO
+```
+
+## 56. 2026-08-06 V9：Gauss dual product、exact resonance firewalls与 signed Type-IV主路
+
+### 56.1 基线、分工与 claim level
+
+本轮启动 `HEAD=origin/main`：
+
+```text
+cfe26af99bed702aad5d346100a39134c3ac8520
+```
+
+启动 `TPC_HANDOFF.md` SHA-256为
+`8cf2a59c05f77e270a217a6849bcaba877287cfaf68f116c9e780d24eeb381d8`；
+tracked/cached diff为空。130 个 protected untracked files按 canonical PowerShell
+manifest为
+`9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1`，均原样
+保留。启动 pull返回 already up to date，第 1 节 22 项只读 regression为
+`22/22 PASS`；TPC-27--32与 TPC-122 writers未执行。
+
+主控按 `AGENTS.md`与 ARS source/proof审计流程调度三个 `READ_ONLY_FROZEN`
+agents：source-lock/common-`k` audit、physical-kernel/architecture audit与
+devil's-advocate exact-duality audit。三者均回报同一 baseline、
+`files_changed=[]`、`TPC207_TRIGGER=false`；正式写入只由主控完成。
+
+本节的最高 claim为 `POSITIVE_DERIVED_SUBLEMMA`：它证明 exact finite normal
+form并封闭两个 broad shortcuts，但没有证明 power saving。fixed-atom credit=`0`、
+strict `1/400=UNPAID`、`L2=NONE`。
+
+### 56.2 frozen source-weight theorem contract
+
+第 55 节的 `actual source atom`若不说明函数类，无法独立证伪。V9冻结一个更宽的
+testable superclass：`p asymp F^2`；`a_i(e)=mu(e)W_i(e)`支撑于 fixed dyadic
+`F`-shell；`U,V`支撑于有限个 signed nonzero `F`-shell；physical `h0=2`、
+所有 sign/mask、gcd/conductor/cofactor dyads与 common transform parameters固定；
+每个 fixed derivative order满足 inert/log-Mellin seminorm `log^O(1)X`，总 product-
+atom decomposition `L1<=log^O(1)X`。第二个 dual factor不取 conjugate，constants须
+uniform于全部显示参数。
+
+block/cumulative、logarithmic/natural、arbitrary residue vectors均不在该 class。
+但当前 tracked source未生成逐 atom registry，所以 fail-closed状态为
+
+```text
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE
+ = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP
+ = OPEN_ATTACHMENT.                                    (56.2.1)
+```
+
+这解决 theorem statement可测试性，不产生 arithmetic credit；任何实际 atom若不在
+envelope内，必须扩展 contract并重审，不能默认为已覆盖。
+
+### 56.3 exact Gauss-square to fixed-product duality
+
+在 prime `p`上令
+
+```text
+a_i(e)=mu(e)W_i(e),
+A_i=sum_e a_i(e), H_0=sum_h U(h), L_0=sum_ell V(ell),
+U_p^sharp(z)=sum_(h!=0)U(h)e_p(zh),
+V_p^sharp(w)=sum_(ell!=0)V(ell)e_p(w ell),
+M_p=A_1A_2H_0L_0.
+```
+
+所有 multiplicative characters包括 `chi_0`均满足
+
+```text
+sum_(z!=0)chi(z)U_p^sharp(z)=tau(chi)H(conjugate chi). (56.3.1)
+```
+
+其中 positive phase、`z!=0`与 `tau(chi_0)=-1`全部强制。定义
+
+```text
+Q_p(-2)=sum_(e_1e_2zw=-2 mod p)
+ a_1(e_1)a_2(e_2)U_p^sharp(z)V_p^sharp(w).              (56.3.2)
+```
+
+complete character orthogonality给 exact nonprincipal identity
+
+```text
+sum_(chi!=chi_0)p^(-1)tau(chi)^2 conjugate(chi)(-2)
+ E_1(chi)E_2(chi)H(conjugate chi)L(conjugate chi)
+ = (p-1)/p [Q_p(-2)-M_p/(p-1)].                        (56.3.3)
+```
+
+并且
+
+```text
+Q_p(-2)=sum_(e_1,e_2,h,ell)
+ a_1(e_1)a_2(e_2)U(h)V(ell)
+ S(1,-2h ell conjugate(e_1e_2);p),
+G_p=mu(p)Q_p(-2).                                      (56.3.4)
+```
+
+principal项与 `(56.3.3)` subtraction只是在 full cell中 exact重组，不能记为 saving。
+以 normalized dual weights `U_tilde=p^(-1/2)U^sharp`定义
+
+```text
+D_p(-2)=sum_(e_1,e_2,z,w)a_1a_2 U_tilde(z)V_tilde(w)
+ [1_(e_1e_2zw=-2)-1/(p-1)],                            (56.3.5)
+```
+
+则 character gate精确为 `(p-1)D_p(-2)`。因此第 55 节
+`HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE`与 `(56.3.5)`只是同一 gate的两种
+坐标，saving不得相乘。checker在 `Z[zeta_p]`中以两个独立 integer-weight fixtures
+验证 `(56.3.4)`，并检测 principal sign、`-2 -> +2`与 nonzero-frequency mutations。
+
+状态为
+
+```text
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY
+ = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT
+ = PROVED_EXACT_EQUIVALENCE.                           (56.3.6)
+```
+
+最窄 source-class theorem target是
+
+```text
+|D_p(-2)| << F^(2-eta)log^C X,
+equivalently |prime cell| << F^(4-eta)log^C X.          (56.3.7)
+```
+
+physical ledger为
+
+```text
+F^(-2) * F^2 prime moduli * F^(4-eta)
+ = X^(1-eta/4).                                        (56.3.8)
+```
+
+任意 `eta>0`给 exact-half power saving；支付既有 strict `1/400`必须在全部
+polynomial losses后 `eta>1/100`。当前已核查 sources没有这样的 theorem。
+
+### 56.4 two exact firewalls
+
+第一，modular ratio equality不是单一 rational ray。相对 primitive direction
+`(a,b)`，同 residue fiber满足
+
+```text
+b e-a h=t p.                                           (56.4.1)
+```
+
+只有 `t=0`给 `(e,h)=(ak,bk)`与 common-`k` Möbius factorization；`t!=0`是 affine
+translate，coefficient为 `mu(e_t+ak)`。每个 wrap虽短，aggregate仍可 endpoint-sized。
+mod `13`中 `(5,3)`与 `(4,5)`同 modular ratio而 determinant=`13`；checker在
+`[3,7]^2` exact计得 11 个 nonzero-wrap与 10 个 zero-wrap unordered collisions。
+故
+
+```text
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER
+ = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS
+COMMON_K_LONG_INTEGER_RAYS
+ = PLAUSIBLE_LOCAL_MOBIUS_SUBLEMMA_ONLY.                (56.4.2)
+```
+
+这不重开第 6 节 TPC-18/TPC193 common-`k` cells。
+
+第二，对 `K_A(h,ell)=S(ell,-2h conjugate(A);p)`有 exact complete-unit covariance
+
+```text
+sum_A K_A(h_1,ell_1)conjugate(K_A(h_2,ell_2))
+ = p^2-p-1, if h_1ell_1=h_2ell_2 mod p,
+ = -p-1, otherwise;
+sum_A K_A(h,ell)=1.                                    (56.4.3)
+```
+
+centered moving-unit norm因此含 exact product-resonance floor，只返回临界
+`F^4` endpoint。checker以 1,552 个 covariance cases与 52 个 mean cases exact
+验证。因此
+
+```text
+GLOBAL_MOVING_UNIT_CAUCHY
+ = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE.        (56.4.4)
+```
+
+它是 method obstruction，不是 actual signed correlation的 lower-bound反例。
+
+### 56.5 source screen与 full loss ledger
+
+对 `(56.3.4)`在 `ell`作 Poisson，保留 essential outer factor，得到结构
+
+```text
+F sum_(h,x,e_1,e_2 asymp F)
+ U(h)V_x(x)mu(e_1)W_1(e_1)mu(e_2)W_2(e_2)
+ e_p(-2h conjugate(xe_1e_2)).                           (56.5.1)
+```
+
+raw scale为 `F^5`，physical target为 `F^(4-eta)`。
+[Mohammadi Theorem 1](https://arxiv.org/abs/2608.01203)可在 fixed outer
+`(h,e_2)`后 literal取 `A=0`；
+[Bourgain--Garaev Theorem 13](https://arxiv.org/abs/1211.4184)可在 fixed `h`后
+literal附着 three-variable inverse product。但 outer triangle后两者均只给
+`F^(5-2delta)`；关闭目标需 `delta>=(1+eta)/2`，source只给 unspecified positive
+`delta`。已有 Gauss/Cauchy gain不能在 signed `h` correlation已被 triangle消费后再乘。
+
+已核查的普通 divisor-in-progressions source也不附着。[Nguyen](https://arxiv.org/abs/2308.06839)
+处理特殊 factorable/smooth composite modulus average，prime critical modulus与两条
+Möbius rows不在 class；[Parry](https://arxiv.org/abs/2404.04749)的 `d_4`结果额外
+平均 residue `a`，不能升级为 prescribed `a=-2`。这里 dual weights显式依赖 `p`，
+且 dispersion重回 balanced resonance
+
+```text
+e_1e_2zw-e'_1e'_2z'w'=nu p.                            (56.5.2)
+```
+
+裁决为
+
+```text
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT
+ = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+BOURGAIN_GARAEV_N3_ATTACHMENT
+ = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION
+ = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES
+ = ABSENT.                                              (56.5.3)
+```
+
+### 56.6 selected construction、reserve与 release裁决
+
+新的 first subgate与 construction priority为
+
+```text
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION
+ = FIRST_SUBGATE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV
+ = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM.              (56.6.1)
+```
+
+执行顺序：
+
+1. 给每个 emitted atom生成 `(56.2.1)` membership与 uniform dual-tail ledger；
+2. 在 triangle前导出 squarefree `g,q`、imprimitive character、CRT与 Ramanujan
+   cofactor版本的 `(56.3.3)`，保持 `mu(gq)`；
+3. 只 square完整 centered modulus average，保留两条 literal Möbius rows并分离
+   `(56.5.2)`的 exact diagonal/nonzero wraps；
+4. 寻找 coefficient-sensitive determinant/Kuznetsov或 dispersion theorem，同时回收
+  完整 `F^(-1)` signed Fourier cancellation与额外 power saving；
+5. 按第 55.4 节 full contract重组所有 conductor/cofactor strata、Mellin tails与
+   physical normalization。
+
+prime family上 `mu(p)=-1`恒定，signed-modulus construction只从 full squarefree
+average开始；不得给 prime subgate偷记 modulus-sign saving。HB4xHB2
+`STRUCTURED_TWO_ROW_PAIRED_VORONOI`保持独立 reserve，第 55.5 节 first transform、
+polar-main attachment与 `F^3` family deficit不变；两条 source lock不得拼接。
+
+正式裁决为
+
+```text
+TPC_BIG_ROAD_V9_20260806_PRIME_GAUSS_DUAL_PRODUCT_EXACT_CENTERED_FIXED_
+RESIDUE_EQUIVALENCE_COMMON_K_UNIQUE_FIBER_FALSE_NONZERO_WRAPS_GLOBAL_
+MOVING_UNIT_CAUCHY_ENDPOINT_RESONANCE_LOCAL_INVERSE_PRODUCT_EXPONENT_
+INSUFFICIENT_STANDARD_LOD_ABSENT_SIGNED_MODULUS_DUAL_TYPE_IV_SELECTED_
+PAIRED_VORONOI_RESERVE_SEPARATE_NO_ARITHMETIC_TRIGGER_CHANNEL_REDESIGN
+```
+
+这是
+`CHANNEL_REDESIGN_WITH_EXACT_GAUSS_DUAL_PRODUCT_NORMAL_FORM_AND_TYPED_TYPE_IV_TARGET`，
+不是 arithmetic advance。all-`D`
+uniformity、exactly-once physical cover、original/global normalization、tail/A/B、
+actual packet attachment与 provenance全部未过；第 6 节 STOP cells、两个 O161
+parents、pair-native reroute、H1、global architecture与 dynamics portfolio状态不变。
+不创建 TPC-207、论文、paper directory或 PDF。
+
+### 56.7 post-write fail-closed verification
+
+本节发布前必须满足：
+
+```text
+POST_WRITE_STARTUP_REGRESSION = 22/22 PASS
+POST_WRITE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_WRITE_BIG_ROAD_CHECKS = 3/3 PASS
+FM_V9_EXACT_ADDITIONS
+  GAUSS_DUAL_FIXED_PRODUCT = 2 cases
+  PRINCIPAL_NONZERO_FREQUENCY = 2 cases
+  COMMON_K_WRAPS = 11 nonzero + 10 zero
+  MOVING_UNIT_COVARIANCE = 1552 cases
+  MOVING_UNIT_COMPLETE_MEAN = 52 cases
+FM_ROUTE_FREEZE
+  primary = HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION
+  first_subgate = HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION
+  selected_construction = HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV
+  reserve = HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI
+  source_lock_merge = false
+  fixed_physical_h0 = 2
+  fixed_atom_credit = 0
+  strict_1_over_400 = UNPAID
+  L2 = NONE
+  TPC_207_TRIGGER = false
 GIT_DIFF_CHECK = PASS
 MARKDOWN_FENCES = ALL BALANCED
 EXPECTED_TRACKED_DIFF = 5/5 EXACT
