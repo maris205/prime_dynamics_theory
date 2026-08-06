@@ -25,7 +25,7 @@ MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFI
 BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
 DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
 STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
-HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_PROJECTOR_CORE
 HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
 HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
 HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
@@ -33,9 +33,21 @@ HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
 HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
 HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
 EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
-FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_PRIME_PROJECTOR_ATTACHMENT
 HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
 HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SMALL_PROJECTOR_ABSOLUTE_WEIL_DYADIC_BOUND = PROVED_CONTRACT_LEVEL_PARTIAL_THEOREM
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_SMALL_PROJECTOR_WINDOW = PROVED_CONTRACT_LEVEL_POWER_SAVING
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_150_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_LARGE_T_DIRECT_EARNST_TRANSFER = STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_AND_REASSEMBLY_MISMATCH
+HB4_EXACT_HALF_LARGE_T_PHASE_BLIND_CHARACTER_LARGE_SIEVE = STOP_SCOPED_ROOT_NUMBER_AND_PROJECTOR_GEOMETRY_ERASED
+HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS = STOP_SCOPED_FALSE_COEFFICIENT_SUBSTITUTION
+HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION = STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = OPEN_COLLECTIVE_DISPERSION
+HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = OPEN_OUTER_LEDGER_AND_COLLECTIVE_DISPERSION
+HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH_PROVED_EXACT_ANALYTIC_HB4xHB2_GATE_OPEN
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION_STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI_INDEPENDENT_OPEN
@@ -44,6 +56,7 @@ HB4xHB2_COLLECTIVE_POLAR_MAIN_ATTACHMENT_OPEN
 DIRECT_DFI_ROW_BY_ROW_STOP_SCOPED_F7_VERSUS_F4
 CURRENT_UMBRELLA_GATE = TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
 CURRENT_PRIMARY_ROUTE = HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION
+CURRENT_FIRST_SUBGATE = HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION
 CURRENT_INDEPENDENT_RESERVE = HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI
 TPC_THEOREM = NO
 TPC207_TRIGGER = false
@@ -3234,3 +3247,275 @@ not an arithmetic advance.  The prime first gate `(12.11.8)`, actual atom
 membership, and the independent paired-Voronoi reserve remain open.  No old
 `STOP_SCOPED` cell is reopened; fixed-atom credit is `0`, strict `1/400` is
 `UNPAID`, `L2=NONE`, and `TPC207_TRIGGER=false`.
+
+### 12.13 V11: small-projector closure and the first prime-projector trace highway
+
+V11 does not change the exact conductor/projector algebra in Section 12.12.
+It asks which dyadic regions of `(12.12.17b)` can already be estimated by a
+source-backed theorem.  To avoid the most dangerous notation collision, write
+
+```text
+g~G, rho~P, t_r~T, a~A, b~B,
+GPTAB asymp F^2,  PT>=F,  K=F/A.                     (12.13.1)
+```
+
+Here `P` is the projector modulus.  It is not the primitive conductor
+`r=rho*t_r`, whose dyadic size is `PT`.  The literal masks and pairwise
+coprimality conditions remain those of `(12.12.17b)`.
+
+#### 12.13.1 An unconditional small-projector theorem
+
+The product constraints in `(12.13.1)` give `GAB<<F`, hence `K>>G`.  Since
+`g` is squarefree and `(a,g)=1`,
+
+```text
+|c_g(ak)|=phi((g,k)).                                (12.13.2)
+```
+
+Using `phi((g,k))<=(g,k)` and opening the gcd divisor sum gives, uniformly for
+every actual interval and smooth dyadic restriction,
+
+```text
+sum_(0<|k|<<K)|c_g(ak)|
+ << K sum_(d|g)phi(d)/d + sum_(d|g)phi(d)
+ << (K+g)tau(g)
+ << K F^o(1).                                        (12.13.3)
+```
+
+Every input of the Kloosterman sum is a `rho`-unit.  The classical composite
+Weil bound therefore gives
+
+```text
+|S(1,n;rho)| << P^(1/2)F^o(1),                       (12.13.4)
+```
+
+with the harmless convention `S(1,n;1)=1`.  For fixed outer variables, the
+two length-`F` rows, the length-`F/G` `u` row, the averaged length-`F/A` `k`
+row, and `(12.13.4)` contribute
+
+```text
+F^2 * F/G * F/A * P^(1/2)
+ = F^4 P^(1/2)/(GA).                                 (12.13.5)
+```
+
+Moreover
+
+```text
+a/[phi(t_r)phi(a)phi(b)] << F^o(1)/(TB).              (12.13.6)
+```
+
+Multiplying `(12.13.5)--(12.13.6)` by the `GPTAB` outer count yields the
+complete dyadic estimate
+
+```text
+|V(P)| << F^4 P^(3/2+o(1)).                           (12.13.7)
+```
+
+Consequently, for every fixed `delta>0`,
+
+```text
+P<=F^(4/3-delta)
+  ==> |V(P)| << F^(6-3delta/2+o(1))
+              =F^6 D^(-eta_D),
+      any eta_D<3delta/4.                             (12.13.8)
+```
+
+This is a contract-level partial theorem on the literal normal form, not a
+heuristic.  It is also a large-complementary-conductor theorem: if
+`T>=F^(2/3+delta)`, then `P<<F^(4/3-delta)`; shrinking `delta` by an
+arbitrarily small fixed margin absorbs the dyadic constant into `(12.13.8)`.
+The local strict endpoint
+budget admits `eta_D>1/200` precisely with a fixed margin
+`delta>1/150`; equality is not enough because `(12.13.8)` is strict and its
+`F^o(1)` loss must be absorbed.  Any later fixed physical loss `lambda_D`
+changes this to `delta>1/150+(4/3)lambda_D`.
+
+#### 12.13.2 A genuine FKMS prime-projector attachment
+
+For prime `rho`, freeze `(g,rho,t_r,a,b,u,k)` and use only the two literal
+`e_1,e_2` rows as the bilinear variables.  Put
+
+```text
+M=N=F,  b_FKMS=c_FKMS=-1,
+C=-2uk conjugate(g a b^2 t_r^2)_rho.                  (12.13.9)
+```
+
+Then
+
+```text
+S(1,C conjugate(e_1e_2);rho)
+ =rho^(1/2) Kl_2(C e_1^(-1)e_2^(-1);rho).            (12.13.10)
+```
+
+The standard `Kl_2` sheaf has geometric monodromy `SL_2`, hence is gallant
+and light in the terminology of
+[Fouvry--Kowalski--Michel--Sawin, Theorem 1.3(2)](https://arxiv.org/html/2511.09459v3#S1.Thmtheorem3).
+The unit scaling by `C` has uniformly bounded complexity, the negative
+monomial exponents are allowed, and the actual source masks keep both rows in
+`F_rho^*`.  By the source-envelope definition `(12.11.1)`, every common
+transform parameter has already been frozen and the weight is a product atom;
+the `e_1,e_2` coefficients are therefore two independent one-variable arrays,
+not slices of an unseparated joint weight.  Their `L2` norms are
+`<<F^(1/2)X^o(1)`, and the total product-atom `L1` costs only `X^o(1)`.
+
+Choose `l=3` in that theorem.  Its literal length range is
+
+```text
+10rho^(1/2)<=F<=rho^(3/4).                            (12.13.11)
+```
+
+After `rho~P` and fixed-margin shrinking this starts at the dyadic transition
+`P>=F^(4/3)`; throughout the range used below the lower inequality also has a
+fixed power margin.  Substitution into the displayed FKMS bound gives a
+normalized two-row estimate
+
+```text
+F^(5/3)P^(2/9+o(1)).                                  (12.13.12)
+```
+
+Restoring the exact `rho^(1/2)` in `(12.13.10)` is mandatory; only after
+using `rho~P` may it be bounded by `asymp P^(1/2)`.  Thus the unnormalized
+`e_1,e_2` sum is
+
+```text
+<<F^(5/3)P^(13/18+o(1)).                              (12.13.13)
+```
+
+Now sum `u` and `k` by `(12.13.3)`, apply `(12.13.6)`, and count all outer
+variables including the `P` prime moduli.  No credit is assigned to
+`mu(g)mu(rho)mu(b)`.  The result is
+
+```text
+|V_prime(P)| << F^(11/3)P^(31/18+o(1)).               (12.13.14)
+```
+
+Since
+
+```text
+11/3+(31/18)(42/31)=6,
+```
+
+`(12.13.14)` proves the nonempty source-backed interval
+
+```text
+F^(4/3)<=P<=F^(42/31-epsilon),  rho prime,
+|V_prime(P)| << F^(6-31epsilon/18+o(1))
+              =F^6D^(-eta_D),
+any eta_D<31epsilon/36.                               (12.13.15)
+```
+
+At the transition `P=F^(4/3)` the supremal local budget is `1/54`, so every
+fixed `eta_D<1/54` is available after absorbing `F^o(1)`.  The local
+strict endpoint budget can exceed `1/200` when
+`epsilon>9/1550`, again with a fixed ledger margin.  For the displayed FKMS
+estimate, `l=2` expires below the `4/3` transition; `l=4` requires
+`P>=F^(16/11)` although its outer-ledger saving has already expired at
+`P=F^(288/211)`.  Hence `l=3` is the unique useful neighbouring choice for
+this literal two-row compilation.  This is only a scoped statement about the
+displayed theorem and grouping, not a universal obstruction to stronger trace
+methods.
+
+#### 12.13.3 What did not cross the bridge
+
+The large-`T` character coordinate supplies no further theorem.  In the
+character formula `(12.12.9)`, `t_r=r/rho` is not an intrinsic parameter of
+the primitive-character family before the projector expansion.  After the
+expansion, its large range is already covered by `(12.13.8)`.  In particular:
+
+* [Earnst, Theorem 1.6](https://arxiv.org/abs/2603.22124) is tied to prime
+  conductor, even primitive characters and the asymmetric approximate-
+  functional-equation coefficients for a root-number-square central moment.
+  It does not accept the actual four polynomials, both parities, composite
+  conductor or the outer reassembly.
+* Replacing `E_1E_2HB` by those AFE coefficients is a false coefficient
+  substitution, not an attachment.
+* Cauchy plus the primitive large sieve erases the root-number phase and the
+  projector signs.  The exact substitution already frozen in `(12.8.11)` is
+  endpoint-saturating in its first and fourth terms.
+
+The resulting scoped stops are therefore
+
+```text
+HB4_EXACT_HALF_LARGE_T_DIRECT_EARNST_TRANSFER
+ = STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_AND_REASSEMBLY_MISMATCH,
+HB4_EXACT_HALF_LARGE_T_PHASE_BLIND_CHARACTER_LARGE_SIEVE
+ = STOP_SCOPED_ROOT_NUMBER_AND_PROJECTOR_GEOMETRY_ERASED,
+HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS
+ = STOP_SCOPED_FALSE_COEFFICIENT_SUBSTITUTION,
+HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION
+ = STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION.       (12.13.16)
+```
+
+The reduced core has three pieces: the fixed-margin-free collar immediately
+below the `F^(4/3)` transition for all squarefree `rho`; composite squarefree
+`rho` at and above that transition; and the fixed-margin-free collar at
+`F^(42/31)` together with larger prime `rho`.  In the last piece the `u,k`
+`L1` treatment and outer modulus count consume the displayed local trace
+saving.  This leaves a collective theorem in the three exact signs and/or a
+stronger grouping as the selected next wall:
+
+```text
+HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION
+ = SELECTED_CORE_OPEN_NEW_THEOREM.                    (12.13.17)
+```
+
+It must cover both critical collars, the large composite projector sector,
+and extend the large-prime sector, without promoting a fixed-prime mean to a
+varying-modulus theorem.
+The restricted estimates `(12.13.8)` and `(12.13.15)` may legally take outer
+absolute values because they already pay their own dyadic targets; the
+unresolved core may not discard the three signs and then claim collective
+credit.
+
+#### 12.13.4 Canonical V11 state and bridge map
+
+The canonical V11 registry is
+
+```text
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP = OPEN_ATTACHMENT
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT = PROVED_EXACT_EQUIVALENCE
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS
+GLOBAL_MOVING_UNIT_CAUCHY = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_PROJECTOR_CORE
+HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
+HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_PRIME_PROJECTOR_ATTACHMENT
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SMALL_PROJECTOR_ABSOLUTE_WEIL_DYADIC_BOUND = PROVED_CONTRACT_LEVEL_PARTIAL_THEOREM
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_SMALL_PROJECTOR_WINDOW = PROVED_CONTRACT_LEVEL_POWER_SAVING
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_150_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_LARGE_T_DIRECT_EARNST_TRANSFER = STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_AND_REASSEMBLY_MISMATCH
+HB4_EXACT_HALF_LARGE_T_PHASE_BLIND_CHARACTER_LARGE_SIEVE = STOP_SCOPED_ROOT_NUMBER_AND_PROJECTOR_GEOMETRY_ERASED
+HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS = STOP_SCOPED_FALSE_COEFFICIENT_SUBSTITUTION
+HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION = STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = OPEN_COLLECTIVE_DISPERSION
+HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = OPEN_OUTER_LEDGER_AND_COLLECTIVE_DISPERSION
+HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+```
+
+On the user's island map, Bridge A1 now has two theorem-backed road segments:
+the all-squarefree small-projector span `(12.13.8)` and the prime-projector
+FKMS span `(12.13.15)`.  The red break moves to the two fixed-margin-free
+collars plus the reduced large-composite/large-prime core `(12.13.17)`.  Bridge A2 paired-Voronoi, Bridge B distinguished-seed
+genericity, and the Hénon/geometric auxiliary route remain independent.
+
+V11 is a
+`CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE_AND_CORE_SHRINK`, not a full
+physical theorem.  Actual-atom membership, all-`D` cover, exactly-once physical
+reassembly, tails, A/B selection, original normalization and provenance remain
+open.  Hence fixed-atom credit is `0`, global strict `1/400` is `UNPAID`,
+`L2=NONE`, and `TPC207_TRIGGER=false`.

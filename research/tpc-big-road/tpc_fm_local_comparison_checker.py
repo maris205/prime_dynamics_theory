@@ -524,7 +524,7 @@ def run_checks() -> dict[str, object]:
     umbrella_gate = "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE"
     primary_route = "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION"
     independent_reserve = "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI"
-    v10_status_registry = {
+    v11_status_registry = {
         "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
         "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
         "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
@@ -535,7 +535,7 @@ def run_checks() -> dict[str, object]:
         "BOURGAIN_GARAEV_N3_ATTACHMENT": "SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT",
         "DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION": "STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT",
         "STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES": "ABSENT",
-        "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION": "FIRST_SUBGATE_OPEN_NEW_THEOREM",
+        "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION": "ANCESTOR_OPEN_REDUCED_TO_PROJECTOR_CORE",
         "HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY": "PROVED_EXACT_FINITE",
         "HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE": "PROVED_EXACT_SOURCE_LOCK",
         "HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT": "STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION",
@@ -543,19 +543,31 @@ def run_checks() -> dict[str, object]:
         "HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT": "STOP_SCOPED_FALSE_DIVISOR_LATTICE",
         "HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING": "PROVED_EXACT_FINITE",
         "EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT": "SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET",
-        "FKMS_PRIME_MONOMIAL_TRACE_ENGINE": "SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT",
+        "FKMS_PRIME_MONOMIAL_TRACE_ENGINE": "SOURCE_BACKED_LOCAL_PRIME_PROJECTOR_ATTACHMENT",
         "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV": "RETYPED_PRE_CRT_SHORTHAND_ONLY",
         "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV": "SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM",
+        "HB4_EXACT_HALF_SMALL_PROJECTOR_ABSOLUTE_WEIL_DYADIC_BOUND": "PROVED_CONTRACT_LEVEL_PARTIAL_THEOREM",
+        "HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_SMALL_PROJECTOR_WINDOW": "PROVED_CONTRACT_LEVEL_POWER_SAVING",
+        "HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_STRICT_ENDPOINT_BUDGET": "LOCAL_ONLY_DELTA_GT_1_OVER_150_PLUS_LEDGER_MARGIN",
+        "HB4_EXACT_HALF_LARGE_T_DIRECT_EARNST_TRANSFER": "STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_AND_REASSEMBLY_MISMATCH",
+        "HB4_EXACT_HALF_LARGE_T_PHASE_BLIND_CHARACTER_LARGE_SIEVE": "STOP_SCOPED_ROOT_NUMBER_AND_PROJECTOR_GEOMETRY_ERASED",
+        "HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS": "STOP_SCOPED_FALSE_COEFFICIENT_SUBSTITUTION",
+        "HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION": "STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION",
+        "HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW": "PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON",
+        "HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET": "LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN",
+        "HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS": "OPEN_COLLECTIVE_DISPERSION",
+        "HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE": "OPEN_OUTER_LEDGER_AND_COLLECTIVE_DISPERSION",
+        "HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
     }
     route_freeze = {
-        "route_version": "V10",
+        "route_version": "V11",
         "umbrella_gate": umbrella_gate,
         "primary_route": primary_route,
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION",
+        "first_subgate": "HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
         "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
-        "v10_status_registry": v10_status_registry,
+        "v11_status_registry": v11_status_registry,
         "independent_reserve": independent_reserve,
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
         "independent_polar_main_attachment": "OPEN_NEW_ATTACHMENT",
@@ -570,14 +582,14 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     expected_route_freeze = {
-        "route_version": "V10",
+        "route_version": "V11",
         "umbrella_gate": "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE",
         "primary_route": "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION",
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION",
+        "first_subgate": "HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
         "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
-        "v10_status_registry": {
+        "v11_status_registry": {
             "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
             "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
             "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
@@ -588,7 +600,7 @@ def run_checks() -> dict[str, object]:
             "BOURGAIN_GARAEV_N3_ATTACHMENT": "SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT",
             "DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION": "STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT",
             "STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES": "ABSENT",
-            "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION": "FIRST_SUBGATE_OPEN_NEW_THEOREM",
+            "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION": "ANCESTOR_OPEN_REDUCED_TO_PROJECTOR_CORE",
             "HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY": "PROVED_EXACT_FINITE",
             "HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE": "PROVED_EXACT_SOURCE_LOCK",
             "HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT": "STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION",
@@ -596,9 +608,21 @@ def run_checks() -> dict[str, object]:
             "HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT": "STOP_SCOPED_FALSE_DIVISOR_LATTICE",
             "HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING": "PROVED_EXACT_FINITE",
             "EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT": "SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET",
-            "FKMS_PRIME_MONOMIAL_TRACE_ENGINE": "SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT",
+            "FKMS_PRIME_MONOMIAL_TRACE_ENGINE": "SOURCE_BACKED_LOCAL_PRIME_PROJECTOR_ATTACHMENT",
             "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV": "RETYPED_PRE_CRT_SHORTHAND_ONLY",
             "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV": "SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM",
+            "HB4_EXACT_HALF_SMALL_PROJECTOR_ABSOLUTE_WEIL_DYADIC_BOUND": "PROVED_CONTRACT_LEVEL_PARTIAL_THEOREM",
+            "HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_SMALL_PROJECTOR_WINDOW": "PROVED_CONTRACT_LEVEL_POWER_SAVING",
+            "HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_STRICT_ENDPOINT_BUDGET": "LOCAL_ONLY_DELTA_GT_1_OVER_150_PLUS_LEDGER_MARGIN",
+            "HB4_EXACT_HALF_LARGE_T_DIRECT_EARNST_TRANSFER": "STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_AND_REASSEMBLY_MISMATCH",
+            "HB4_EXACT_HALF_LARGE_T_PHASE_BLIND_CHARACTER_LARGE_SIEVE": "STOP_SCOPED_ROOT_NUMBER_AND_PROJECTOR_GEOMETRY_ERASED",
+            "HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS": "STOP_SCOPED_FALSE_COEFFICIENT_SUBSTITUTION",
+            "HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION": "STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION",
+            "HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW": "PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON",
+            "HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET": "LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN",
+            "HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS": "OPEN_COLLECTIVE_DISPERSION",
+            "HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE": "OPEN_OUTER_LEDGER_AND_COLLECTIVE_DISPERSION",
+            "HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
         },
         "independent_reserve": "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI",
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
@@ -614,7 +638,7 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     if route_freeze != expected_route_freeze:
-        raise AssertionError("V10 route/physical freeze changed")
+        raise AssertionError("V11 route/physical freeze changed")
     if primary_route == independent_reserve:
         raise AssertionError("independent V10 source locks were merged")
     route_mutations: list[dict[str, object]] = []
@@ -641,12 +665,12 @@ def run_checks() -> dict[str, object]:
     numbered_trigger["TPC_207_TRIGGER"] = True
     route_mutations.append(numbered_trigger)
     weakened_registry = dict(route_freeze)
-    weakened_statuses = dict(v10_status_registry)
+    weakened_statuses = dict(v11_status_registry)
     weakened_statuses["GLOBAL_MOVING_UNIT_CAUCHY"] = "OPEN"
-    weakened_registry["v10_status_registry"] = weakened_statuses
+    weakened_registry["v11_status_registry"] = weakened_statuses
     route_mutations.append(weakened_registry)
     if any(mutation == expected_route_freeze for mutation in route_mutations):
-        raise AssertionError("V10 route/physical mutation escaped")
+        raise AssertionError("V11 route/physical mutation escaped")
     sample_a1 = Fraction(3, 1)
     sample_a2 = Fraction(5, 1)
     outer_switched_value = -6 * (sample_a1 - sample_a2)
@@ -1532,6 +1556,30 @@ def run_checks() -> dict[str, object]:
     if not v10_missing_r_over_phi_r_mutation_detected:
         raise AssertionError("V10 missing-r/phi(r) mutation escaped")
 
+    # V11 starts from the literal projector normal form, not from the full
+    # primitive conductor.  For squarefree g and (a,g)=1, the exact absolute
+    # Ramanujan weight is phi((g,k)); this is the finite identity behind the
+    # interval L1 bound used in the small-projector and FKMS dyads.
+    v11_ramanujan_absolute_cases = 0
+    v11_missing_squarefree_mutation_detected = False
+    for g in (1, 3, 5, 15, 21, 35):
+        for a in (1, 2, 4, 8):
+            if math.gcd(a, g) != 1:
+                continue
+            for k in range(1, 3 * max(g, 1) + 1):
+                exact_absolute = abs(ramanujan_sum(g, a * k))
+                expected_absolute = phi(math.gcd(g, k))
+                if exact_absolute != expected_absolute:
+                    raise AssertionError("V11 squarefree Ramanujan absolute identity failed")
+                v11_ramanujan_absolute_cases += 1
+    nonsquarefree_g = 9
+    if abs(ramanujan_sum(nonsquarefree_g, 1)) != phi(
+        math.gcd(nonsquarefree_g, 1)
+    ):
+        v11_missing_squarefree_mutation_detected = True
+    if not v11_missing_squarefree_mutation_detected:
+        raise AssertionError("V11 squarefree-mask mutation escaped")
+
     if J + NU != HALF or 1 - J != Q or HALF - J != NU:
         raise AssertionError("J/nu/Q compiler identities failed")
     if Fraction(1, 3) - J != Fraction(1, 1200):
@@ -1551,6 +1599,136 @@ def run_checks() -> dict[str, object]:
         != 2 * v10_strict_d_saving_exponent
     ):
         raise AssertionError("V10 D-saving and F-saving exponents were conflated")
+
+    # V11 dyadic exponent geometry.  Write P~rho for the projector modulus,
+    # reserving r=P*T for the primitive conductor.  Absolute Weil plus the
+    # averaged Ramanujan L1 bound gives F^4 P^(3/2).  The critical P exponent
+    # is 4/3, and P<=F^(4/3-delta) yields eta_D<3delta/4.
+    v11_small_projector_f_base = Fraction(4, 1)
+    v11_small_projector_p_slope = Fraction(3, 2)
+    v11_small_projector_critical = Fraction(4, 3)
+    v11_small_projector_eta_d_slope = Fraction(3, 4)
+    v11_small_projector_strict_delta = Fraction(1, 150)
+    v11_large_complementary_t_start = Fraction(2, 3)
+    if (
+        v11_small_projector_f_base
+        + v11_small_projector_p_slope * v11_small_projector_critical
+        != 6
+        or v11_small_projector_eta_d_slope
+        * v11_small_projector_strict_delta
+        != Fraction(1, 200)
+        or 2 - v11_large_complementary_t_start
+        != v11_small_projector_critical
+    ):
+        raise AssertionError("V11 small-projector exponent ledger failed")
+
+    # FKMS Theorem 1.3(2), l=3, applied only to the two length-F Mobius
+    # rows.  Its normalized Kl_2 bound is F^(5/3)P^(2/9); restoring the
+    # unnormalized Kloosterman sum contributes the indispensable P^(1/2).
+    v11_fkms_l = 3
+    v11_fkms_length_lower_p_exponent = Fraction(3, 2 * v11_fkms_l)
+    v11_fkms_length_upper_p_exponent = HALF + Fraction(3, 4 * v11_fkms_l)
+    v11_fkms_prime_projector_start = Fraction(1, 1) / (
+        v11_fkms_length_upper_p_exponent
+    )
+    v11_fkms_normalized_f_exponent = Fraction(5, 3)
+    v11_fkms_normalized_p_exponent = Fraction(2, 9)
+    v11_fkms_unnormalized_p_exponent = (
+        v11_fkms_normalized_p_exponent + HALF
+    )
+    v11_fkms_full_f_exponent = Fraction(11, 3)
+    v11_fkms_full_p_exponent = Fraction(31, 18)
+    v11_fkms_prime_projector_end = (
+        6 - v11_fkms_full_f_exponent
+    ) / v11_fkms_full_p_exponent
+    v11_fkms_transition_eta_d_supremum = (
+        6
+        - v11_fkms_full_f_exponent
+        - v11_fkms_full_p_exponent * v11_fkms_prime_projector_start
+    ) / 2
+    v11_fkms_eta_d_epsilon_slope = v11_fkms_full_p_exponent / 2
+    v11_fkms_strict_epsilon = Fraction(9, 1550)
+    v11_sample_projector_modulus = 101
+    v11_sample_projector_dyadic_scale = 100
+    if (
+        v11_fkms_length_lower_p_exponent != HALF
+        or v11_fkms_length_upper_p_exponent != Fraction(3, 4)
+        or v11_fkms_prime_projector_start != Fraction(4, 3)
+        or v11_fkms_unnormalized_p_exponent != Fraction(13, 18)
+        or v11_fkms_prime_projector_end != Fraction(42, 31)
+        or v11_fkms_transition_eta_d_supremum != Fraction(1, 54)
+        or v11_fkms_eta_d_epsilon_slope != Fraction(31, 36)
+        or v11_fkms_eta_d_epsilon_slope * v11_fkms_strict_epsilon
+        != Fraction(1, 200)
+        or v11_sample_projector_modulus == v11_sample_projector_dyadic_scale
+    ):
+        raise AssertionError("V11 FKMS prime-projector exponent ledger failed")
+
+    # The displayed l=2 estimate expires below the Weil transition, while
+    # l=4 starts only after its outer-ledger saving has expired.  This is a
+    # scoped comparison of the displayed FKMS bounds, not a universal
+    # nonexistence statement for other trace-function methods.
+    v11_fkms_l2_end = Fraction(80, 61)
+    v11_fkms_l4_start = Fraction(16, 11)
+    v11_fkms_l4_end = Fraction(288, 211)
+    if not (
+        v11_fkms_l2_end < v11_small_projector_critical
+        and v11_fkms_l4_end < v11_fkms_l4_start
+    ):
+        raise AssertionError("V11 FKMS neighbouring-l comparison failed")
+
+    # V11 mutation sentinels.  They freeze the strict inequalities and the
+    # distinction P=rho versus r=P*T; they do not numerically prove Weil or
+    # FKMS.  The prime-only status is also kept distinct from the open
+    # composite-projector core in the canonical registry.
+    v11_projector_conductor_mutation_detected = (
+        v11_small_projector_f_base
+        + v11_small_projector_p_slope
+        * (v11_small_projector_critical + v11_large_complementary_t_start)
+        > 6
+    )
+    v11_small_threshold_promotion_detected = (
+        v11_small_projector_f_base
+        + v11_small_projector_p_slope * v11_small_projector_critical
+        == 6
+    )
+    v11_small_strict_equality_detected = (
+        v11_small_projector_eta_d_slope
+        * v11_small_projector_strict_delta
+        == v10_strict_d_saving_exponent
+    )
+    v11_missing_kl2_normalization_detected = (
+        v11_fkms_normalized_p_exponent
+        != v11_fkms_unnormalized_p_exponent
+    )
+    v11_fkms_length_promotion_detected = (
+        v11_fkms_prime_projector_start
+        * v11_fkms_length_upper_p_exponent
+        == 1
+    )
+    v11_fkms_strict_equality_detected = (
+        v11_fkms_eta_d_epsilon_slope * v11_fkms_strict_epsilon
+        == v10_strict_d_saving_exponent
+    )
+    v11_prime_composite_promotion_detected = (
+        v11_status_registry["HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW"]
+        != v11_status_registry[
+            "HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS"
+        ]
+    )
+    if not all(
+        (
+            v11_projector_conductor_mutation_detected,
+            v11_missing_squarefree_mutation_detected,
+            v11_small_threshold_promotion_detected,
+            v11_small_strict_equality_detected,
+            v11_missing_kl2_normalization_detected,
+            v11_fkms_length_promotion_detected,
+            v11_fkms_strict_equality_detected,
+            v11_prime_composite_promotion_detected,
+        )
+    ):
+        raise AssertionError("V11 range or object-type mutation escaped")
     hb_padding_slots = 6 * math.ceil(Fraction(1, 1) / (1 - HALF))
     if hb_padding_slots != 12:
         raise AssertionError("Ford--Maynard Lemma 7.14 slot count failed")
@@ -2357,9 +2535,11 @@ def run_checks() -> dict[str, object]:
         "scope": (
             "finite exact algebra, rank-one obstruction, and compiler geometry; "
             "source-backed analytic estimates are not numerical checks; the "
-            "universal Type II umbrella, actual-atom dual-product dispersion, "
-            "signed conductor/cofactor/projector Type-IV construction, and structured two-row "
-            "paired-Voronoi theorem remain open"
+            "small-projector Weil and prime-projector FKMS windows are audited "
+            "contract-level partial theorems; actual-atom attachment, the reduced "
+            "composite/large-prime projector core, the full signed Type-IV "
+            "construction, the fixed-margin-free transition collars, and "
+            "structured two-row paired-Voronoi theorem remain open"
         ),
         "exponents": {
             "J": "133/400",
@@ -2371,6 +2551,53 @@ def run_checks() -> dict[str, object]:
             "vaughan_surplus": "1/400",
             "v10_strict_D_saving_exponent": str(v10_strict_d_saving_exponent),
             "v10_strict_F_saving_exponent": str(v10_strict_f_saving_exponent),
+            "v11_small_projector_bound": "F^4 P^(3/2+o(1))",
+            "v11_small_projector_critical_P_exponent": str(
+                v11_small_projector_critical
+            ),
+            "v11_small_projector_eta_D_slope": str(
+                v11_small_projector_eta_d_slope
+            ),
+            "v11_small_projector_strict_delta": str(
+                v11_small_projector_strict_delta
+            ),
+            "v11_large_complementary_t_start": str(
+                v11_large_complementary_t_start
+            ),
+            "v11_fkms_l": v11_fkms_l,
+            "v11_fkms_length_lower_P_exponent": str(
+                v11_fkms_length_lower_p_exponent
+            ),
+            "v11_fkms_length_upper_P_exponent": str(
+                v11_fkms_length_upper_p_exponent
+            ),
+            "v11_fkms_normalized_F_exponent": str(
+                v11_fkms_normalized_f_exponent
+            ),
+            "v11_fkms_normalized_P_exponent": str(
+                v11_fkms_normalized_p_exponent
+            ),
+            "v11_fkms_unnormalized_P_exponent": str(
+                v11_fkms_unnormalized_p_exponent
+            ),
+            "v11_fkms_full_F_exponent": str(v11_fkms_full_f_exponent),
+            "v11_fkms_full_P_exponent": str(v11_fkms_full_p_exponent),
+            "v11_fkms_prime_projector_start": str(
+                v11_fkms_prime_projector_start
+            ),
+            "v11_fkms_prime_projector_end": str(
+                v11_fkms_prime_projector_end
+            ),
+            "v11_fkms_transition_eta_D_supremum": str(
+                v11_fkms_transition_eta_d_supremum
+            ),
+            "v11_fkms_eta_D_epsilon_slope": str(
+                v11_fkms_eta_d_epsilon_slope
+            ),
+            "v11_fkms_strict_epsilon": str(v11_fkms_strict_epsilon),
+            "v11_fkms_l2_end": str(v11_fkms_l2_end),
+            "v11_fkms_l4_start": str(v11_fkms_l4_start),
+            "v11_fkms_l4_end": str(v11_fkms_l4_end),
             "lemma_7_14_padding_slots": hb_padding_slots,
             "bc_h2_j1_worst": str(bc_h2_j1_worst),
             "bc_h3_thin_worst": str(bc_h3_thin_worst),
@@ -2467,6 +2694,18 @@ def run_checks() -> dict[str, object]:
             "the induced composite conductor/cofactor cell equals the full signed primitive-projector Kloosterman lattice end to end",
             "Ramanujan divisor unfolding converts ell*s^(-2) to the exact k*a^(-1)*b^(-2) monomial phase",
             "primitive-projector phi cancellation retains both 1/phi(s) and r/phi(r)",
+            "squarefree Ramanujan absolute value is phi(gcd(g,k)) on the V11 unit-masked k row",
+            "small-projector absolute Weil dyads are F^4 P^(3/2+o(1)) with critical exponent 4/3",
+            "large complementary conductor T>=F^(2/3+delta) lies in the small-projector window",
+            "FKMS l=3 literal length conditions are 10 rho^(1/2)<=F<=rho^(3/4)",
+            "rho~P converts the literal FKMS range to dyadic P exponents only after fixed-margin shrinking",
+            "restoring unnormalized Kl_2 changes P^(2/9) to P^(13/18) in the local e1-e2 sum",
+            "the exact Kl_2 normalization uses literal rho^(1/2), with P^(1/2) only after rho~P dyadic bounding",
+            "the full prime-projector FKMS dyad is F^(11/3)P^(31/18+o(1))",
+            "the prime-projector FKMS interval is F^(4/3)<=P<=F^(42/31-epsilon)",
+            "the FKMS transition has supremal eta_D budget 1/54, so only fixed eta_D<1/54 is available",
+            "the FKMS strict local endpoint needs epsilon>9/1550",
+            "displayed FKMS l=2 ends below 4/3 and l=4 starts after its saving expires",
             "V10 primary and independent source locks remain separate with zero physical credit",
             "outer minus six converts source A1-A2 into physical A2-A1",
         ],
@@ -2505,11 +2744,21 @@ def run_checks() -> dict[str, object]:
             "ramanujan_cofactor_gcd_stratification": ramanujan_cofactor_stratification_cases,
             "ramanujan_divisor_monomial_unfolding": ramanujan_divisor_monomial_cases,
             "v10_phi_normalization": v10_phi_normalization_cases,
+            "v11_squarefree_ramanujan_absolute": v11_ramanujan_absolute_cases,
         },
         "mutation_tests": {
             "J_above_one_third": "DETECTED",
             "loss_of_exact_sqrt_endpoint": "DETECTED",
             "v10_D_vs_F_eta_normalization": "DETECTED",
+            "v11_projector_vs_full_conductor": "DETECTED",
+            "v11_missing_squarefree_ramanujan_mask": "DETECTED",
+            "v11_small_projector_threshold_to_endpoint": "DETECTED",
+            "v11_small_projector_strict_delta_equality": "DETECTED",
+            "v11_fkms_normalized_to_unnormalized_Kl2": "DETECTED",
+            "v11_fkms_literal_rho_to_dyadic_P": "DETECTED",
+            "v11_fkms_prime_to_composite_promotion": "DETECTED",
+            "v11_fkms_length_window_promotion": "DETECTED",
+            "v11_fkms_strict_epsilon_equality": "DETECTED",
             "hb2_sqrt_endpoint_to_large": "DETECTED",
             "hb2_A2_product_mobius_collapse": "DETECTED",
             "hb2_prime_power_to_prime_indicator": "DETECTED",
@@ -2561,7 +2810,7 @@ def run_checks() -> dict[str, object]:
             "v10_paired_polar_main_promotion": "DETECTED",
             "v10_bilateral_A1_A2_sign_reversal": "DETECTED",
             "v10_physical_credit_promotion": "DETECTED",
-            "v10_status_registry_weakening": "DETECTED",
+            "v11_status_registry_weakening": "DETECTED",
         },
         "open_gate": umbrella_gate,
         "route_freeze": route_freeze,

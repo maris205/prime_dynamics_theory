@@ -1,8 +1,8 @@
-# TPC big road V10: conductor/projector Type-IV highway
+# TPC big road V11: projector range closure and prime trace highway
 
 更新时间：2026-08-06
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / INDUCED_CRT_PRIMITIVE_PROJECTOR_ROUTE_RETYPE`
+状态：`UNNUMBERED_WORKING_ARTIFACT / CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE_AND_CORE_SHRINK`
 
 ```text
 COARSE_COMPARISON_TYPE_I_ADVANCE = RETAINED
@@ -37,7 +37,7 @@ MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFI
 BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
 DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
 STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
-HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_PROJECTOR_CORE
 HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
 HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
 HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
@@ -45,9 +45,21 @@ HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
 HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
 HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
 EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
-FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_PRIME_PROJECTOR_ATTACHMENT
 HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
 HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SMALL_PROJECTOR_ABSOLUTE_WEIL_DYADIC_BOUND = PROVED_CONTRACT_LEVEL_PARTIAL_THEOREM
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_SMALL_PROJECTOR_WINDOW = PROVED_CONTRACT_LEVEL_POWER_SAVING
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_150_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_LARGE_T_DIRECT_EARNST_TRANSFER = STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_AND_REASSEMBLY_MISMATCH
+HB4_EXACT_HALF_LARGE_T_PHASE_BLIND_CHARACTER_LARGE_SIEVE = STOP_SCOPED_ROOT_NUMBER_AND_PROJECTOR_GEOMETRY_ERASED
+HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS = STOP_SCOPED_FALSE_COEFFICIENT_SUBSTITUTION
+HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION = STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = OPEN_COLLECTIVE_DISPERSION
+HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = OPEN_OUTER_LEDGER_AND_COLLECTIVE_DISPERSION
+HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI = INDEPENDENT_OPEN_NEW_THEOREM
@@ -83,7 +95,12 @@ conductor 又把单一 fixed-product residue展开成 `rho|r` 的 signed project
 lattice。打开两枚 primitive Gauss sums后，完整 normal form保留
 `mu(g)mu(rho)mu(b)`和 prescribed monomial
 `u k/(g e_1e_2 a b^2 t^2) (mod rho)`。这是本轮真正的“大路重排”，不是新
-arithmetic saving；prime gate与 paired-Voronoi reserve仍分别开放。
+arithmetic saving；prime gate与 paired-Voronoi reserve仍分别开放。V11 随后在这个
+exact normal form上第一次得到非空 analytic range advance：所有平方自由
+`rho<=F^(4/3-delta)`由 Ramanujan 平均加 composite Weil闭合，素 projector的两条
+literal `e_1,e_2`行又可直接附着 FKMS Theorem 1.3(2)，把桥面延长到
+`rho<=F^(42/31-epsilon)`。剩余墙现在是 large composite projector 与更大的 prime
+projector collective dispersion，而不是完整 `rho`轴。
 
 ## 1. 先给大胆结论
 
@@ -944,3 +961,93 @@ varying/composite `rho`段才是需要新 dispersion/Kuznetsov输入的核心墙
 `L2=NONE`、`TPC_207_TRIGGER=false`。地图中的 Bridge B（distinguished-seed
 genericity）仍独立开放；Logistic/Hénon只作结构与启发式辅助，不给 Bridge A
 解析账本加分。
+
+## 11. V11 已铺成的桥面与下一段核心墙
+
+V11 的结论不再只是“这里也许能用 trace function”。在 V10 exact normal form 上，
+令 projector `rho~P`，完整 primitive conductor为 `r=rho*t`。两者不能混写。对
+
+```text
+g~G, rho~P, t~T, a~A, b~B,
+GPTAB asymp F^2, PT>=F,
+```
+
+平方自由 `g`与 `(a,g)=1`给出
+
+```text
+|c_g(ak)|=phi((g,k)),
+sum_(|k|<<F/A)|c_g(ak)| << (F/A)F^o(1).
+```
+
+这和 composite Weil bound合并为无条件 dyadic estimate
+
+```text
+|V(P)| << F^4 P^(3/2+o(1)).
+```
+
+所以所有平方自由 projector均有
+
+```text
+P<=F^(4/3-delta)
+  ==> |V(P)|<<F^(6-3delta/2+o(1))
+  ==> any eta_D<3delta/4.
+```
+
+特别地，`T>=F^(2/3+delta)`自动落入这段；局部 strict `1/400`预算需要
+`delta>1/150`加完整 ledger margin。
+
+素 projector还能再向前。冻结 `(g,rho,t,a,b,u,k)`，仅把两条实际
+`e_1,e_2~F`行送入
+[FKMS Theorem 1.3(2)](https://arxiv.org/html/2511.09459v3)，取 `l=3`、
+`M=N=F`与 monomial powers `(-1,-1)`。实际 unit masks保证
+
+```text
+S(1,C/(e_1e_2);rho)=rho^(1/2)Kl_2(C e_1^(-1)e_2^(-1);rho),
+10rho^(1/2)<=F<=rho^(3/4).
+```
+
+这里 exact factor是 `rho^(1/2)`；只有在 `rho~P` dyad的 bound中才可写成
+`asymp P^(1/2)`，source length range也只在缩小 fixed margin后转成 `P`指数窗口。
+source envelope已先冻结 common transform parameter并完成 product-atom separation，
+所以两条输入确是 independent one-variable arrays，总 atom `L1`只计 `X^o(1)`。
+
+恢复未归一化 Kloosterman因子并支付所有 outer `L1` 后得到
+
+```text
+|V_prime(P)| << F^(11/3)P^(31/18+o(1)).
+```
+
+因此真实的 prime-projector区间是
+
+```text
+F^(4/3)<=P<=F^(42/31-epsilon),
+eta_D<31epsilon/36.
+```
+
+在 `P=F^(4/3)`的 supremal local budget为 `1/54`，即任意固定
+`eta_D<1/54`可取；局部 strict endpoint需要
+`epsilon>9/1550`加 ledger margin。这里没有给 `mu(g)mu(rho)mu(b)`任何符号信用，
+所以不是把平均结果冒充 prescribed cancellation。
+
+地图上的红色断桥因而向前移动。下一条真正的大路只剩：
+
+```text
+HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION
+ = SELECTED_CORE_OPEN_NEW_THEOREM:
+
+  (i) composite squarefree P above F^(4/3), and
+  (ii) prime P at or above F^(42/31),
+  (iii) both critical boundary collars with no fixed exponent margin,
+
+while preserving the literal masks, normalization and outer reassembly.
+```
+
+Earnst不能直接接管 large-`T`：其 prime/even/AFE coefficients不是 actual
+`E_1E_2HB`。普通 primitive large sieve又抹去 root-number phase并在 exact-half
+端点饱和。这两条均已 `STOP_SCOPED`，不再重新包装。
+
+这是一项 `CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE_AND_CORE_SHRINK`。
+actual-atom membership、all-`D`、exact cover、tails、A/B selection、original
+normalization和 provenance仍未支付，故不创建 TPC-207；fixed-atom credit=`0`、
+global strict `1/400=UNPAID`、`L2=NONE`。岛屿图中的 paired-Voronoi A2、动力学
+Bridge B与 Hénon辅助岛保持独立开放。
