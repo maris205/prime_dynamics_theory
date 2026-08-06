@@ -13,8 +13,8 @@ Latest route verdict: RH-366 Route A `GO`; Route B `STOP_SCOPED`
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
 
-RH-366 integration commit: recorded by the release commit that adds this
-handoff entry and the RH-366 publication package.
+RH-366 integration commit:
+`0396fab97bbe3348c8237f8734dec0e1893fd3bf`
 
 Non-numbered corpus synthesis: RH-MVP2
 
