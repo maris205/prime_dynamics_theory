@@ -1,12 +1,12 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-05
-状态：`BOLD_CHANNEL_V7 / HB4_QUARTER_OFFDIAGONAL_FOR_EVERY_FIXED_DELTA_BELOW_HALF_PROVED`
-claim level：`SOURCE_BACKED_CONDUCTOR_PROJECTED_HB4_QUARTER_WITH_EXACT_HALF_AND_BILATERAL_LARGE_D_OPEN`
+更新时间：2026-08-06
+状态：`BOLD_CHANNEL_V8 / EXACT_HALF_CHARACTER_AWARE_ROUTE_PIVOT`
+claim level：`SOURCE_BACKED_FIXED_UNIT_ENGINE_PLUS_EXACT_OBSTRUCTIONS_WITH_TWO_STRUCTURED_NEW_THEOREMS_OPEN`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V7 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V8 的完整
 公式、proof与独立 checker位于 `research/tpc-big-road/`。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
@@ -589,16 +589,39 @@ credit；普通 marginal large sieve不算成功。
 两个 engines可以并行，但不得生成两个互不相干的 paper chains。它们必须在
 `H_occ/H_dyn/H3_phys`上产生状态变化；H4只是最终 arithmetic endpoint。
 
-## 10. 当前 umbrella gate只做两个大动作
+## 10. 当前 umbrella gate：primary 与 independent reserve
 
-1. **HB4 exact-half endpoint**：只攻击 conductor-projected HB4 quarter在
-   `D=F^2=X^(1/2)`的 high part，必须产生任意 `log^-A X`；不得把 fixed
-   `delta<1/2`定理取极限，也不得回到已反例封锁的 all-character大筛。
-2. **HB4xHB2 bilateral determinant**：在 exactly-swapped shells上联合处理 `A1-A2`，
-   对两条 weighted `mu_F*mu_F` rows与两条 truncated ordered Eisenstein
-   `(log W_I)*W_J` columns的 `ER-AB=2`（含全局 `6/log X`）
-   collective error建立 divisor-Voronoi/Estermann--Kuznetsov theorem；不得把
-   divisor convolution冒充 smooth slot或把四个 Möbius signs压成两个。
+canonical umbrella继续是
+
+```text
+TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE.
+```
+
+1. **Primary：HB4 exact-half Gauss-twisted signed correlation**。固定 unit/modulus的
+   临界 Kloosterman theorem给 `D^(-1/32)=X^(-1/64)`局部 saving，但冻结外层后仍差
+   `F^(15/16)`；对 arbitrary moving-unit coefficients的无损 vector lift又被 exact
+   character eigenmode否定。合法新 theorem必须限制在 actual source-emitted
+   Möbius-product class，在 Pascadi triangle/Cauchy前保留 `mu(d)`、Gauss-square phase、
+   moving unit与 complete conductor split，并给真实 `D^(-eta)`或 `log^-A X`。
+   prime `p asymp F^2`、`g=1`的 first subgate已压成两条 literal Möbius
+   ratio-incidence vectors对 unitary Gauss multiplier的 principal-angle saving。
+   Burgess排除了单个 character饱和；必须击中 broad-spectrum alignment，而不是继续
+   优化 unsigned norm。
+2. **Independent reserve：HB4xHB2 structured two-row paired-Voronoi**。在
+   exactly-swapped shells上联合处理 source `A1-A2`；乘 outer `-6`后 physical顺序
+   为 `A2-A1`。它对两条 weighted `mu_F*mu_F` rows与
+   两条 truncated ordered Eisenstein columns的 `ER-AB=2`（含全局 `6/log X`）
+   collective error建立新 theorem。先压成 arbitrary residue rows会得到 operator
+   norm精确为 `q`的 additive-difference Kloosterman kernel，因此该 shortcut已
+   `STOP_SCOPED`；reserve必须保留四个 literal Möbius slots、双行 incidence与两个
+   ordered divisor-log columns。legal first transform已经导出并显示 `A_2`为 double
+   Voronoi、`A_1`为 single Voronoi加未变换 smooth-log列；当前先缺 collective
+   polar-main attachment，随后须从 direct DFI的 `F^7` ledger联合回收 `F^3`到
+   physical `F^4`。
+
+两条 source lock不得拼接。调度上先对 prime modulus、`g=1`、单个 source atom证明或
+否定 primary 的 Gauss-twisted signed moment，同时独立展开 paired-Voronoi的 polar/
+zero/Bessel ledger。
 Target-coupled reassembly/crosslink继续作为 portfolio-level `OPEN/RESERVE`，不属于
 本轮 current umbrella gate。只有上述两个解析门之一先发生 theorem-backed变化，才另行
 要求逐 coefficient operator `Sigma_k J_X L_X c_X=nu_X W_k+R_X`与 paid physical

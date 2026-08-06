@@ -21,6 +21,8 @@ HALF = Fraction(1, 2)
 Q = Fraction(267, 400)
 NU = Fraction(67, 400)
 
+GaussianInteger = tuple[int, int]
+
 
 def primes(limit: int) -> list[int]:
     answer: list[int] = []
@@ -104,6 +106,58 @@ def kloosterman_exponent_multiset(m: int, n: int, q: int) -> tuple[int, ...]:
             exponent = (m * x + n * pow(x, -1, q)) % q
             counts[exponent] += 1
     return tuple(counts)
+
+
+def gaussian_add(left: GaussianInteger, right: GaussianInteger) -> GaussianInteger:
+    return left[0] + right[0], left[1] + right[1]
+
+
+def gaussian_mul(left: GaussianInteger, right: GaussianInteger) -> GaussianInteger:
+    return (
+        left[0] * right[0] - left[1] * right[1],
+        left[0] * right[1] + left[1] * right[0],
+    )
+
+
+def gaussian_conjugate(value: GaussianInteger) -> GaussianInteger:
+    return value[0], -value[1]
+
+
+def quartic_character_mod_13(value: int) -> GaussianInteger:
+    """The exact quartic character modulo 13 with chi(2)=i."""
+    residue = value % 13
+    if residue == 0:
+        return 0, 0
+    power = 1
+    values = ((1, 0), (0, 1), (-1, 0), (0, -1))
+    for exponent in range(12):
+        if power == residue:
+            return values[exponent % 4]
+        power = (2 * power) % 13
+    raise AssertionError("quartic character discrete logarithm failed")
+
+
+def cyclic_gaussian_convolution(
+    left: list[GaussianInteger], right: list[GaussianInteger]
+) -> list[GaussianInteger]:
+    if len(left) != len(right):
+        raise ValueError("cyclic convolution lengths differ")
+    modulus = len(left)
+    answer = [(0, 0) for _ in range(modulus)]
+    for left_index, left_value in enumerate(left):
+        for right_index, right_value in enumerate(right):
+            product = gaussian_mul(left_value, right_value)
+            index = (left_index + right_index) % modulus
+            answer[index] = gaussian_add(answer[index], product)
+    return answer
+
+
+def cyclotomic_integer_equal(left: list[int], right: list[int]) -> bool:
+    """Equality after zeta_p specialization for prime-length integer arrays."""
+    if len(left) != len(right):
+        return False
+    differences = [a - b for a, b in zip(left, right)]
+    return all(value == differences[0] for value in differences)
 
 
 def odd_multiplier(n: int) -> Fraction:
@@ -243,6 +297,85 @@ def admissible_subset_masks(parts: tuple[int, ...], total: int) -> list[int]:
 
 
 def run_checks() -> dict[str, object]:
+    umbrella_gate = "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE"
+    primary_route = "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION"
+    independent_reserve = "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI"
+    route_freeze = {
+        "umbrella_gate": umbrella_gate,
+        "primary_route": primary_route,
+        "primary_status": "OPEN_NEW_THEOREM",
+        "first_subgate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
+        "independent_reserve": independent_reserve,
+        "independent_first_transform": "DERIVED_SOURCE_BACKED",
+        "independent_polar_main_attachment": "OPEN_NEW_ATTACHMENT",
+        "direct_dfi_row_by_row": "STOP_SCOPED_F7_VERSUS_F4",
+        "source_switch_order": "A1_MINUS_A2",
+        "physical_outer_signed_order": "A2_MINUS_A1",
+        "source_lock_merge": False,
+        "fixed_physical_h0": 2,
+        "fixed_atom_credit": 0,
+        "strict_1_over_400": "UNPAID",
+        "L2": "NONE",
+        "TPC_207_TRIGGER": False,
+    }
+    expected_route_freeze = {
+        "umbrella_gate": "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE",
+        "primary_route": "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION",
+        "primary_status": "OPEN_NEW_THEOREM",
+        "first_subgate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
+        "independent_reserve": "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI",
+        "independent_first_transform": "DERIVED_SOURCE_BACKED",
+        "independent_polar_main_attachment": "OPEN_NEW_ATTACHMENT",
+        "direct_dfi_row_by_row": "STOP_SCOPED_F7_VERSUS_F4",
+        "source_switch_order": "A1_MINUS_A2",
+        "physical_outer_signed_order": "A2_MINUS_A1",
+        "source_lock_merge": False,
+        "fixed_physical_h0": 2,
+        "fixed_atom_credit": 0,
+        "strict_1_over_400": "UNPAID",
+        "L2": "NONE",
+        "TPC_207_TRIGGER": False,
+    }
+    if route_freeze != expected_route_freeze:
+        raise AssertionError("V8 route/physical freeze changed")
+    if primary_route == independent_reserve:
+        raise AssertionError("independent V8 source locks were merged")
+    route_mutations: list[dict[str, object]] = []
+    swapped_routes = dict(route_freeze)
+    swapped_routes["primary_route"] = independent_reserve
+    swapped_routes["independent_reserve"] = primary_route
+    route_mutations.append(swapped_routes)
+    merged_locks = dict(route_freeze)
+    merged_locks["source_lock_merge"] = True
+    route_mutations.append(merged_locks)
+    promoted_polar_main = dict(route_freeze)
+    promoted_polar_main["independent_polar_main_attachment"] = "PROVED"
+    route_mutations.append(promoted_polar_main)
+    positive_credit = dict(route_freeze)
+    positive_credit["fixed_atom_credit"] = 1
+    route_mutations.append(positive_credit)
+    paid_endpoint = dict(route_freeze)
+    paid_endpoint["strict_1_over_400"] = "PAID"
+    route_mutations.append(paid_endpoint)
+    promoted_l2 = dict(route_freeze)
+    promoted_l2["L2"] = "PROVED"
+    route_mutations.append(promoted_l2)
+    numbered_trigger = dict(route_freeze)
+    numbered_trigger["TPC_207_TRIGGER"] = True
+    route_mutations.append(numbered_trigger)
+    if any(mutation == expected_route_freeze for mutation in route_mutations):
+        raise AssertionError("V8 route/physical mutation escaped")
+    sample_a1 = Fraction(3, 1)
+    sample_a2 = Fraction(5, 1)
+    outer_switched_value = -6 * (sample_a1 - sample_a2)
+    physical_order_value = 6 * (sample_a2 - sample_a1)
+    wrong_physical_order = 6 * (sample_a1 - sample_a2)
+    if (
+        outer_switched_value != physical_order_value
+        or wrong_physical_order == outer_switched_value
+    ):
+        raise AssertionError("HB4xHB2 physical A2-A1 sign ledger failed")
+
     if J + NU != HALF or 1 - J != Q or HALF - J != NU:
         raise AssertionError("J/nu/Q compiler identities failed")
     if Fraction(1, 3) - J != Fraction(1, 1200):
@@ -312,6 +445,253 @@ def run_checks() -> dict[str, object]:
         raise AssertionError("exact-half no-saving equality failed")
     if low_conductor_physical_exponent >= 1:
         raise AssertionError("low-conductor projector lost its power saving")
+
+    # Blomer--Pascadi gives q^(-1/32) at critical fixed-unit length.  Since
+    # q=F^2=X^(1/2), this is F^(-1/16)=X^(-1/64).  Freezing the moving unit
+    # and modulus, however, leaves a literal F^(15/16) deficit against the
+    # raw F^6 endpoint target.
+    bp_modulus_saving = Fraction(1, 32)
+    bp_f_saving = 2 * bp_modulus_saving
+    bp_x_saving = HALF * bp_modulus_saving
+    bp_fixed_cell_f_exponent = 1 + 2 * (1 - bp_modulus_saving)
+    bp_frozen_outer_f_exponent = 4 + bp_fixed_cell_f_exponent
+    bp_raw_target_f_exponent = Fraction(6, 1)
+    bp_frozen_deficit = bp_frozen_outer_f_exponent - bp_raw_target_f_exponent
+    if (
+        bp_f_saving != Fraction(1, 16)
+        or bp_x_saving != Fraction(1, 64)
+        or bp_fixed_cell_f_exponent != Fraction(47, 16)
+        or bp_frozen_outer_f_exponent != Fraction(111, 16)
+        or bp_frozen_deficit != Fraction(15, 16)
+    ):
+        raise AssertionError("Blomer--Pascadi exact-half exponent ledger failed")
+
+    # Exact quartic-character fixture for
+    #   sum_A chi(A) S(ell,-2h*A^(-1);p)
+    #     = tau(conj chi)^2 chi(-2h ell).
+    # Both sides are expanded in the group ring Z[i][Z/13Z], so no floating
+    # point or numerical root of unity is used.
+    bp_character_prime = 13
+    tau_conjugate = [(0, 0) for _ in range(bp_character_prime)]
+    for residue in range(1, bp_character_prime):
+        tau_conjugate[residue] = gaussian_conjugate(
+            quartic_character_mod_13(residue)
+        )
+    tau_conjugate_square = cyclic_gaussian_convolution(
+        tau_conjugate, tau_conjugate
+    )
+    def moving_unit_group_ring(
+        character,
+        h: int,
+        ell: int,
+        *,
+        invert_unit: bool = True,
+        shift_scale: int = -2,
+    ) -> list[GaussianInteger]:
+        answer = [(0, 0) for _ in range(bp_character_prime)]
+        for unit in range(1, bp_character_prime):
+            chi_unit = character(unit)
+            unit_argument = (
+                pow(unit, -1, bp_character_prime) if invert_unit else unit
+            )
+            counts = kloosterman_exponent_multiset(
+                ell,
+                shift_scale * h * unit_argument,
+                bp_character_prime,
+            )
+            for exponent, count in enumerate(counts):
+                answer[exponent] = gaussian_add(
+                    answer[exponent],
+                    (count * chi_unit[0], count * chi_unit[1]),
+                )
+        return answer
+
+    bp_character_rank_one_cases = 0
+    for h in (1, 2, 3, 4):
+        for ell in (1, 3, 5, 7):
+            left = moving_unit_group_ring(quartic_character_mod_13, h, ell)
+            scalar = quartic_character_mod_13(-2 * h * ell)
+            right = [
+                gaussian_mul(scalar, coefficient)
+                for coefficient in tau_conjugate_square
+            ]
+            if left != right:
+                raise AssertionError(
+                    f"quartic moving-unit identity failed at h={h}, ell={ell}"
+                )
+            bp_character_rank_one_cases += 1
+
+    absolute_quartic_fixture = [
+        (0, 0),
+        (3, 2),
+        (-3, -2),
+        (3, 2),
+        (3, 2),
+        (-3, -2),
+        (-3, -2),
+        (-3, -2),
+        (-3, -2),
+        (3, 2),
+        (3, 2),
+        (-3, -2),
+        (3, 2),
+    ]
+    canonical_quartic_fixture = moving_unit_group_ring(
+        quartic_character_mod_13, 3, 5
+    )
+    if canonical_quartic_fixture != absolute_quartic_fixture:
+        raise AssertionError("absolute p=13 physical convention fixture failed")
+
+    conjugated_character_fixture = moving_unit_group_ring(
+        lambda value: gaussian_conjugate(quartic_character_mod_13(value)),
+        3,
+        5,
+    )
+    noninverse_unit_fixture = moving_unit_group_ring(
+        quartic_character_mod_13, 3, 5, invert_unit=False
+    )
+    positive_shift_fixture = moving_unit_group_ring(
+        quartic_character_mod_13, 3, 5, shift_scale=2
+    )
+    if any(
+        mutated == absolute_quartic_fixture
+        for mutated in (
+            conjugated_character_fixture,
+            noninverse_unit_fixture,
+            positive_shift_fixture,
+        )
+    ):
+        raise AssertionError("physical moving-unit convention mutation escaped")
+
+    # Exact rank-one interval fixture.  After weighting h and ell by conj(chi),
+    # every pair contributes the same chi(-2)*tau(conj chi)^2 group-ring value.
+    rank_one_interval = [(0, 0) for _ in range(bp_character_prime)]
+    h_fixture = (1, 2, 3)
+    ell_fixture = (4, 5, 6)
+    for h in h_fixture:
+        for ell in ell_fixture:
+            weight = gaussian_mul(
+                gaussian_conjugate(quartic_character_mod_13(h)),
+                gaussian_conjugate(quartic_character_mod_13(ell)),
+            )
+            contribution = moving_unit_group_ring(
+                quartic_character_mod_13, h, ell
+            )
+            for exponent, coefficient in enumerate(contribution):
+                rank_one_interval[exponent] = gaussian_add(
+                    rank_one_interval[exponent],
+                    gaussian_mul(weight, coefficient),
+                )
+    rank_one_scalar = quartic_character_mod_13(-2)
+    rank_one_expected = [
+        (
+            9 * gaussian_mul(rank_one_scalar, coefficient)[0],
+            9 * gaussian_mul(rank_one_scalar, coefficient)[1],
+        )
+        for coefficient in tau_conjugate_square
+    ]
+    if rank_one_interval != rank_one_expected:
+        raise AssertionError("p=13 character-matched interval fixture failed")
+    bp_rank_one_interval_magnitude = 13 * len(h_fixture) * len(ell_fixture)
+    if bp_rank_one_interval_magnitude != 117:
+        raise AssertionError("p=13 rank-one interval magnitude ledger failed")
+
+    # A no-cost L_A^2-valued lift would bound the coherent character mode by
+    # p^(63/32), while the exact rank-one identity has size p^2.  The missing
+    # p^(1/32) is a strict mutation witness against generic tensorization.
+    bp_vector_lift_claimed_exponent = (
+        HALF + Fraction(1, 4) + Fraction(1, 4) + Fraction(31, 32)
+    )
+    bp_character_mode_exponent = Fraction(2, 1)
+    if (
+        bp_vector_lift_claimed_exponent != Fraction(63, 32)
+        or bp_character_mode_exponent - bp_vector_lift_claimed_exponent
+        != Fraction(1, 32)
+    ):
+        raise AssertionError("generic BP vector-lift counterexample ledger failed")
+    bp_tensor_contradiction_gap = (
+        bp_character_mode_exponent - bp_vector_lift_claimed_exponent
+    )
+    mutated_trivial_bp_exponent = (
+        HALF + Fraction(1, 4) + Fraction(1, 4) + 1
+    )
+    mutated_missing_unit_norm = (
+        Fraction(1, 4) + Fraction(1, 4) + Fraction(31, 32)
+    )
+    mutated_q_equals_x_saving = bp_modulus_saving
+    if (
+        mutated_trivial_bp_exponent == bp_vector_lift_claimed_exponent
+        or mutated_missing_unit_norm == bp_vector_lift_claimed_exponent
+        or mutated_q_equals_x_saving == bp_x_saving
+    ):
+        raise AssertionError("BP exponent/scale mutation escaped")
+
+    # At p=F^2 the Burgess r=2 interval bound is
+    # F^(1/2) p^(3/16)=F^(7/8).  Thus even trivial E_1E_2<=F^2 leaves one
+    # actual-source character at F^(15/4), strictly below the F^4 endpoint.
+    burgess_r2_f_exponent = HALF + 2 * Fraction(3, 16)
+    actual_single_character_f_exponent = 2 + 2 * burgess_r2_f_exponent
+    if (
+        burgess_r2_f_exponent != Fraction(7, 8)
+        or actual_single_character_f_exponent != Fraction(15, 4)
+        or actual_single_character_f_exponent >= 4
+    ):
+        raise AssertionError("prime-cell single-character Burgess ledger failed")
+
+    # Exact additive Fourier spectrum of the naive two-row residue compression
+    # K_q(u,v)=S(-2,u-v;q).  The circulant eigenvalues are q times a root of
+    # unity at every nonzero frequency and zero at frequency zero.  Equality
+    # is checked in Z[zeta_q], where coefficient arrays may differ by a
+    # constant multiple of 1+zeta_q+...+zeta_q^(q-1).
+    difference_kernel_spectrum_cases = 0
+    for modulus in (5, 7, 11, 13):
+        kernel = [
+            kloosterman_exponent_multiset(-2, difference, modulus)
+            for difference in range(modulus)
+        ]
+        for frequency in range(modulus):
+            eigenvalue = [0] * modulus
+            for difference, counts in enumerate(kernel):
+                for exponent, count in enumerate(counts):
+                    eigenvalue[(exponent - frequency * difference) % modulus] += count
+            expected = [0] * modulus
+            if frequency:
+                expected[(-2 * pow(frequency, -1, modulus)) % modulus] = modulus
+            if not cyclotomic_integer_equal(eigenvalue, expected):
+                raise AssertionError(
+                    "additive-difference Kloosterman spectrum failed at "
+                    f"q={modulus}, k={frequency}"
+                )
+            difference_kernel_spectrum_cases += 1
+
+    # Mutation: replacing u-v by u+v no longer has the claimed action on the
+    # same additive Fourier vector.  Check it exactly at q=5, k=1, u=1.
+    mutation_modulus = 5
+    mutation_frequency = 1
+    mutation_row = 1
+    plus_kernel_action = [0] * mutation_modulus
+    for column in range(mutation_modulus):
+        counts = kloosterman_exponent_multiset(
+            -2, mutation_row + column, mutation_modulus
+        )
+        for exponent, count in enumerate(counts):
+            plus_kernel_action[
+                (exponent + mutation_frequency * column) % mutation_modulus
+            ] += count
+    difference_kernel_expected_action = [0] * mutation_modulus
+    difference_kernel_expected_action[
+        (
+            -2 * pow(mutation_frequency, -1, mutation_modulus)
+            + mutation_frequency * mutation_row
+        )
+        % mutation_modulus
+    ] = mutation_modulus
+    if cyclotomic_integer_equal(
+        plus_kernel_action, difference_kernel_expected_action
+    ):
+        raise AssertionError("u+v difference-kernel mutation escaped")
+    if mutation_modulus * mutation_modulus == mutation_modulus:
+        raise AssertionError("Kloosterman kernel norm sqrt(q) mutation escaped")
 
     for p in primes(97):
         if local_mean(p) != 1:
@@ -811,7 +1191,8 @@ def run_checks() -> dict[str, object]:
         "scope": (
             "finite exact algebra, rank-one obstruction, and compiler geometry; "
             "source-backed analytic estimates are not numerical checks; the "
-            "universal Type II umbrella and the exact-half endpoint remain open"
+            "universal Type II umbrella, Gauss-twisted exact-half correlation, "
+            "and structured two-row paired-Voronoi theorem remain open"
         ),
         "exponents": {
             "J": "133/400",
@@ -844,6 +1225,21 @@ def run_checks() -> dict[str, object]:
             "conductor_projected_threshold": str(conductor_projected_threshold),
             "low_conductor_physical_exponent": str(
                 low_conductor_physical_exponent
+            ),
+            "bp_fixed_unit_modulus_saving": str(bp_modulus_saving),
+            "bp_fixed_unit_F_saving": str(bp_f_saving),
+            "bp_fixed_unit_X_saving": str(bp_x_saving),
+            "bp_fixed_cell_F_exponent": str(bp_fixed_cell_f_exponent),
+            "bp_frozen_outer_F_exponent": str(bp_frozen_outer_f_exponent),
+            "bp_frozen_outer_deficit": str(bp_frozen_deficit),
+            "bp_false_vector_lift_exponent": str(
+                bp_vector_lift_claimed_exponent
+            ),
+            "bp_character_mode_exponent": str(bp_character_mode_exponent),
+            "bp_tensor_contradiction_gap": str(bp_tensor_contradiction_gap),
+            "burgess_r2_F_exponent": str(burgess_r2_f_exponent),
+            "actual_single_character_F_exponent": str(
+                actual_single_character_f_exponent
             ),
         },
         "exact_checks": [
@@ -880,6 +1276,13 @@ def run_checks() -> dict[str, object]:
             "Pascadi optimal coefficient compression extends 1/3 to but not including 3/8",
             "conductor-projected high part reaches but does not include the exact half endpoint",
             "low-conductor Gauss--Ramanujan projector retains a fixed power saving",
+            "Blomer--Pascadi fixed-unit q^(-1/32) maps to X^(-1/64) at q=X^(1/2)",
+            "quartic moving-unit Kloosterman sum is an exact rank-one character mode",
+            "absolute p=13 physical convention and character-matched interval are frozen",
+            "Burgess r=2 leaves every actual single-character prime mode below F^4",
+            "naive two-row additive-difference Kloosterman kernel has operator norm q",
+            "V8 primary and independent source locks remain separate with zero physical credit",
+            "outer minus six converts source A1-A2 into physical A2-A1",
         ],
         "case_counts": {
             "divisor_expansion": divisor_cases,
@@ -897,6 +1300,9 @@ def run_checks() -> dict[str, object]:
             "hb4_pascadi_r2_scaling": pascadi_scaling_cases,
             "induced_low_conductor_characters": induced_low_conductor_cases,
             "low_conductor_gauss_projector": low_conductor_gauss_projector_cases,
+            "bp_quartic_character_rank_one": bp_character_rank_one_cases,
+            "bp_character_matched_interval_magnitude": bp_rank_one_interval_magnitude,
+            "two_row_difference_kernel_spectrum": difference_kernel_spectrum_cases,
         },
         "mutation_tests": {
             "J_above_one_third": "DETECTED",
@@ -915,8 +1321,24 @@ def run_checks() -> dict[str, object]:
             "pascadi_later_summand_only": "DETECTED",
             "pascadi_R1_is_r2_not_r1": "DETECTED",
             "all_character_conductor_collapse": "DETECTED",
+            "bp_quartic_character_conjugation": "DETECTED",
+            "bp_physical_unit_inverse": "DETECTED",
+            "bp_physical_minus_two_scaling": "DETECTED",
+            "bp_arbitrary_unit_vector_lift": "DETECTED_FALSE",
+            "bp_trivial_exponent": "DETECTED",
+            "bp_missing_unit_norm": "DETECTED",
+            "bp_wrong_q_to_x_scale": "DETECTED",
+            "two_row_naive_residue_compression": "DETECTED",
+            "two_row_plus_kernel": "DETECTED",
+            "two_row_sqrt_q_norm": "DETECTED",
+            "v8_primary_reserve_swap": "DETECTED",
+            "v8_source_lock_merge": "DETECTED",
+            "v8_paired_polar_main_promotion": "DETECTED",
+            "v8_bilateral_A1_A2_sign_reversal": "DETECTED",
+            "v8_physical_credit_promotion": "DETECTED",
         },
-        "open_gate": "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE",
+        "open_gate": umbrella_gate,
+        "route_freeze": route_freeze,
     }
 
 

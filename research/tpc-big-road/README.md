@@ -1,8 +1,8 @@
-# TPC big road V7: conductor-projected HB4 highway
+# TPC big road V8: exact-half signed-correlation highway
 
-更新时间：2026-08-05
+更新时间：2026-08-06
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / HB4_QUARTER_OFFDIAGONAL_FOR_EVERY_FIXED_DELTA_BELOW_HALF_PROVED`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_HALF_CHARACTER_AWARE_ROUTE_PIVOT`
 
 ```text
 COARSE_COMPARISON_TYPE_I_ADVANCE = RETAINED
@@ -24,8 +24,15 @@ HB4_LOW_CONDUCTOR_PROJECTOR = PROVED_GAUSS_CRT_PLUS_PRIMITIVE_LARGE_SIEVE
 HB4_HIGH_CONDUCTOR_WINDOW = PROVED_FOR_3_OVER_8_LE_DELTA_LT_1_OVER_2
 HB4_QUARTER_FULL_WINDOW = PROVED_FOR_1_OVER_4_LT_DELTA_LT_1_OVER_2
 HB4_EXACT_HALF_ENDPOINT = OPEN_LOG_POWER_GATE
+BP2607_FIXED_UNIT_LOCAL_ENGINE = ATTACHED_BUT_OUTER_SUM_INSUFFICIENT
+BP2607_GENERIC_MOVING_UNIT_LIFT = STOP_SCOPED_FALSE_CHARACTER_EIGENMODE
+HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION = SELECTED_PRIMARY_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
-HB4xHB2_DIVISOR_VORONOI_DETERMINANT = OPEN_NEW_THEOREM
+HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_KERNEL_NORM_Q
+HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI = INDEPENDENT_OPEN_NEW_THEOREM
+HB4xHB2_PAIRED_VORONOI_FIRST_TRANSFORM = DERIVED_SOURCE_BACKED
+HB4xHB2_COLLECTIVE_POLAR_MAIN_ATTACHMENT = OPEN
+DIRECT_DFI_ROW_BY_ROW = STOP_SCOPED_F7_VERSUS_F4
 TPC_207_TRIGGER = false
 FIXED_ATOM_CREDIT = 0
 STRICT_1_OVER_400 = UNPAID
@@ -38,7 +45,10 @@ Ford--Maynard comparison的致命 local tensor漏项；随后构造了 growing-`
 comparison；V6 把 factorized HB4 quarter cell的 collective main、Ramanujan轴
 与首个 off-diagonal window闭合；V7 再用 conductor projector把窗口推进到每个
 fixed `delta<1/2`，并把 large-`D` quotient-Möbius墙精确改写成 bilateral
-HB4xHB2 divisor-log determinant。完整 compiler见
+HB4xHB2 divisor-log determinant。V8 又锁定了 fixed-unit 临界 Kloosterman 的真实
+局部 saving，同时用 exact character eigenmode否定 generic moving-unit lift；当前
+primary 因而改成 literal Möbius/Gauss signed correlation，paired-Voronoi作为不可
+拼接的独立 reserve。完整 compiler见
 [`fm_local_comparison_compiler.md`](fm_local_comparison_compiler.md)。所有 TPC-1--206 的 source locks、
 `STOP_SCOPED` cells、actuality/provenance 与 normalization firewalls继续有效。
 
@@ -756,17 +766,42 @@ quasi-intertwiner，并保持 event、seed与 physical evaluation时才重新进
 `RLR^infinity`、typical ACIP、positive fixed cylinder measure或 area preservation本身
 都不占 proof credit。
 
-## 8. 当前 umbrella gate只做两个大动作
+## 8. 当前 umbrella gate：一条主攻、一条独立 reserve
 
-1. **HB4 exact-half endpoint**：只攻击 `D=F^2=X^(1/2)` 的 high-conductor projected
-   coefficient，要求真实 `log^-A X` gain；不得把所有 fixed `delta<1/2`的 theorem
-   取极限，或重开已封锁的 all-character shortcut。
-2. **HB4xHB2 bilateral determinant**：对 exactly-paired shells将 `A1-A2`在
-   triangle inequality前联合并只减一次 collective main，再攻击两条
-   weighted `mu_F*mu_F` rows与两条 truncated ordered `(log W_I)*W_J`
-   Eisenstein columns的 `ER-AB=2` collective（保留全局 `6/log X`）
-   error；首选 paired divisor-Voronoi/Estermann加外层 Kuznetsov，不得把 divisor
-   convolution假装成 smooth slot。
+canonical umbrella仍为
+
+```text
+TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE.
+```
+
+当前 primary 是 **HB4 exact-half Gauss-twisted signed correlation**。在
+`D=F^2=X^(1/2)`、complete projector与 high conductors上，必须把 literal
+`mu(gq)mu(e_1)mu(e_2)`、Gauss-square phase、moving unit和 physical `h0=2`
+保留到 Pascadi triangle/Cauchy之前，并在 actual source-product coefficient class中
+得到 `D^(-eta)`或任意 `log^-A X`。Blomer--Pascadi fixed-unit theorem的
+`D^(-1/32)=X^(-1/64)`是真实引擎；冻结 unit/modulus后仍差 `F^(15/16)`，generic
+vector lift又被 exact multiplicative-character rank-one mode否定。因此下一步不是继续
+改 coefficient norm，而是证明或反驳 literal Möbius--Gauss joint signed moment。
+prime `p asymp F^2`的 complete formula已进一步压成两条 Möbius-weighted
+ratio-incidence vectors受 unitary Gauss multiplier作用的 principal-angle问题。Burgess
+在长度 `F=sqrt(p)`排除了单个 character饱和；真正 first wall是 broad spectrum的
+Gauss-phase alignment。最窄 subgate为
+`HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE`，要求对 actual ratio vectors给
+`F^(-eta)` angle saving。
+
+独立 reserve 是 **HB4xHB2 structured two-row paired-Voronoi**。它对 exactly-paired
+shells将 source switch `A1-A2`在 triangle前联合；乘 outer `-6`后 physical顺序为
+`A2-A1`，并只减一次 collective main。它保留两条 weighted
+`mu_F*mu_F` rows、两条 truncated ordered `(log W_I)*W_J` Eisenstein columns、
+`ER-AB=2`及全局 `6/log X`。把两行先压成 arbitrary residue sequences会得到
+`S(-2,u-v;q)`，其 operator norm精确为 `q`，所以该压缩已 `STOP_SCOPED`；reserve
+只能在压缩前利用四个 Möbius slots与双行因子化结构。其 legal first transform已
+导出，并显示 `A_2`是 double Voronoi、`A_1`是 single Voronoi加未变换 smooth-log列；
+下一步先闭合 joint polar main ownership，再从 row-by-row DFI的 `F^7`账本中联合
+回收 `F^3`到 physical `F^4`。
+
+primary与 reserve 的 source lock不同，不得互相提供 theorem credit或拼成一个
+“组合证明”。
 General fixed-atom/O161、pair-native、H1与动力学 distinguished-seed路线继续开放，
 但不与上述两个解析对象拼接。Target-coupled reassembly仍是 portfolio-level
 `OPEN/RESERVE` crosslink，不属于本轮 current umbrella gate；只有上述解析门之一先

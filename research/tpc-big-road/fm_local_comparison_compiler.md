@@ -12,8 +12,18 @@ HB4_QUARTER_COLLECTIVE_MAIN_PROVED_SOURCE_BACKED_ALL_D
 HB4_QUARTER_OFFDIAGONAL_1_4_LT_DELTA_LT_3_8_PROVED_WEIL_PLUS_PASCADI
 HB4_QUARTER_OFFDIAGONAL_1_4_LT_DELTA_LT_1_2_PROVED_CONDUCTOR_PROJECTOR
 HB4_EXACT_HALF_ENDPOINT_OPEN_LOG_POWER_GATE
+BP2607_FIXED_UNIT_LOCAL_ENGINE_ATTACHED_BUT_OUTER_SUM_INSUFFICIENT
+BP2607_ARBITRARY_UNIT_VECTOR_LIFT_STOP_SCOPED_FALSE_CHARACTER_EIGENMODE
+HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION_SELECTED_PRIMARY_OPEN
 LARGE_D_HB2_SWITCH_PROVED_EXACT_ANALYTIC_HB4xHB2_GATE_OPEN
-CURRENT_GATE = TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
+HB4xHB2_NAIVE_RESIDUE_COMPRESSION_STOP_SCOPED_KERNEL_NORM_Q
+HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI_INDEPENDENT_OPEN
+HB4xHB2_PAIRED_VORONOI_FIRST_TRANSFORM_DERIVED_SOURCE_BACKED
+HB4xHB2_COLLECTIVE_POLAR_MAIN_ATTACHMENT_OPEN
+DIRECT_DFI_ROW_BY_ROW_STOP_SCOPED_F7_VERSUS_F4
+CURRENT_UMBRELLA_GATE = TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
+CURRENT_PRIMARY_ROUTE = HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION
+CURRENT_INDEPENDENT_RESERVE = HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI
 TPC_THEOREM = NO
 TPC207_TRIGGER = false
 ```
@@ -2088,3 +2098,420 @@ the exact-half logarithmic endpoint for the conductor-projected HB4 family,
 and the bilateral divisor-log determinant beyond the square-root switch.  Neither one
 changes the all-shape physical cover, normalization, tail/A/B, actual packet,
 or provenance gates, so neither alone triggers TPC-207.
+
+### 12.10 V8 source screen: fixed-unit engine, character obstruction, and route pivot
+
+This section separates three levels which must not be merged: a published
+fixed-unit estimate, exact finite algebra showing that its generic moving-unit
+lift is false, and two genuinely new structured theorem targets.
+
+#### 12.10.1 What the new fixed-unit theorem really gives
+
+[Blomer--Pascadi, Theorem 1.1](https://arxiv.org/abs/2607.24311) bounds a
+critical-length Kloosterman bilinear form at a fixed modulus `c` and fixed unit
+parameter by
+
+```text
+||alpha||_2 ||beta||_2 c^(31/32+o(1)).                  (12.10.1)
+```
+
+At the exact-half scale `D=F^2`, fixing the physical product unit
+`A=e_1e_2` and modulus `d` makes the target kernel a literal instance after
+unit scaling.  The local saving is therefore
+
+```text
+d^(-1/32)=F^(-1/16)=X^(-1/64).                         (12.10.2)
+```
+
+This is a real analytic engine, but not an endpoint theorem.  A fixed cell has
+scale `F D^(31/32)=F^(47/16)`.  Freezing and taking absolute values over the
+`F^2` product units and `F^2` moduli gives `F^(111/16)`, while the raw endpoint
+target is `F^6`.  It still misses by `F^(15/16)`.  The same conclusion survives
+the exact `g=(h,d)` stratification; it does not supply the lost outer signed
+compression.
+
+The critical moving-unit lift is not merely unproved.  With
+
+```text
+e_p(t)=exp(2 pi i t/p),
+S(m,n;p)=sum_(x mod p)^* e_p(mx+n x^(-1)),
+tau(psi)=sum_(y mod p)^* psi(y)e_p(y),
+```
+
+every nontrivial multiplicative character satisfies the exact identity
+
+```text
+sum_(A mod p)^* chi(A) S(ell,-2h A^(-1);p)
+ =tau(conjugate(chi))^2 chi(-2h ell).                   (12.10.3)
+```
+
+Thus the unit variable contains a rank-one character eigenmode of magnitude
+`p`.  On intervals `H=L=sqrt(p)`, take `P(A)=chi(A)` and character-matched
+`h,ell` coefficients.  The trilinear form has size `pHL=p^2`, whereas a
+no-cost `L_A^2`-valued version of `(12.10.1)` would give only
+
+```text
+p^(1/2) p^(1/4) p^(1/4) p^(31/32)=p^(63/32).
+```
+
+It is false by the exact factor `p^(1/32)`.  The independent checker verifies
+`(12.10.3)` in `Z[i][Z/13Z]` for a quartic character without floating point.
+Consequently
+
+```text
+BP2607_FIXED_UNIT_EXACT_HALF_LOCAL_ENGINE
+ = SOURCE_ATTACHED_LOCAL_F^(-1/16)_SAVING,
+
+BP2607_AFTER_FREEZE_AND_OUTER_TRIANGLE
+ = STOP_SCOPED_F^(15/16)_DEFICIT,
+
+BP2607_ARBITRARY_UNIT_VECTOR_LIFT
+ = STOP_SCOPED_FALSE_CHARACTER_EIGENMODE.               (12.10.4)
+```
+
+[Pascadi's frequency-concentrated large sieve](https://arxiv.org/abs/2404.04239)
+does not repair this: its coefficient uses a fixed-multiplier integer equality,
+whereas the physical incidence has moving products and a modular inverse; its
+improvement is also in the exceptional spectral slot, not the regular first
+and fourth majorants which saturate `(12.8.11)`.
+[Pascadi's non-abelian amplification](https://arxiv.org/abs/2511.08445) again
+has fixed-unit bilinear inputs, and its modulus average takes an absolute value
+before the physical `mu(d)` cancellation can be used.  These are supporting
+engines, not direct attachments.
+
+#### 12.10.2 Selected exact-half theorem contract
+
+The physical product-unit coefficient does not have a formal orthogonality to
+the bad mode.  On a separated source atom,
+
+```text
+P_p(A)=sum_(e_1e_2=A mod p) mu(e_1)mu(e_2)W_1(e_1)W_2(e_2),
+
+P_hat_p(chi)=E_1(chi)E_2(chi),
+E_i(chi)=sum_(e_i asymp F)mu(e_i)W_i(e_i)chi(e_i).       (12.10.5)
+```
+
+The natural norm of `P_p` is already the norm of a bad character vector.
+Pointwise nonconcentration of `(12.10.5)` is therefore insufficient; the new
+estimate must exploit a joint signed correlation before the Pascadi
+triangle/Cauchy step.
+
+The prime-modulus `g=1` model makes the missing geometry more precise.  For a
+single frozen atom put
+
+```text
+H(chi)=sum_(|h|<<F)U(h)chi(h),
+L(chi)=sum_(|ell|<<F)V(ell)chi(ell).
+```
+
+The exact complete-character inversion, before Cauchy, is
+
+```text
+G_p=mu(p)/(p-1) sum_(chi mod p)
+ tau(chi)^2 conjugate(chi)(-2)
+ E_1(chi)E_2(chi)H(conjugate chi)L(conjugate chi).       (12.10.5a)
+```
+
+The principal contribution is `O(p^(-1)F^4)=O(F^2)`.  For nonprincipal
+characters write `epsilon_p(chi)=p^(-1/2)tau(chi)`.  Then
+
+```text
+G_p^hi=mu(p)p/(p-1) sum_(chi!=1)
+ epsilon_p(chi)^2 conjugate(chi)(-2)
+ E_1(chi)E_2(chi)H(conjugate chi)L(conjugate chi).       (12.10.5b)
+```
+
+Define the two literal ratio-incidence vectors
+
+```text
+C_1(r)=sum_(e conjugate(h)=r)mu(e)W_1(e)U(h),
+C_2(r)=sum_(e conjugate(ell)=r)mu(e)W_2(e)V(ell).
+```
+
+Their multiplicative Fourier transforms are `E_1(chi)H(conjugate chi)` and
+`E_2(chi)L(conjugate chi)`.  The Gauss multiplier
+
+```text
+m_p(chi)=epsilon_p(chi)^2 conjugate(chi)(-2)             (12.10.5c)
+```
+
+has absolute value one.  Thus an estimate for arbitrary ratio vectors is
+impossible.  Orthogonality and the critical determinant incidence give
+`||C_hat_i||_2<<F^(2+o(1))`; plain Cauchy is exactly `F^(4+o(1))` per prime,
+which is the known endpoint after the `F^2` moduli and physical `F^(-2)`
+prefactor.
+
+The arbitrary character fixture does not supply a fatal actual-class
+counterexample.  For source-smooth intervals of length `F=sqrt(p)`, the
+Burgess `r=2` estimate, in the form discussed by
+[Heath--Brown](https://arxiv.org/abs/1203.5219), gives
+
+```text
+H(chi),L(chi)<<F^(7/8+o(1)).                            (12.10.5d)
+```
+
+Even the trivial `|E_1E_2|<=F^2` then bounds one character by
+`F^(15/4+o(1))=o(F^4)`.  Hence no single character can saturate the actual
+prime cell; the unresolved obstruction is broad-spectrum alignment of the two
+Mobius ratio vectors under `(12.10.5c)`.  Unsigned fourth moments already have
+an `F^4` diagonal floor, so the gain must use the Gauss phase rather than a
+smaller unsigned norm.
+
+For every source-emitted product atom, retain the notation of Section 12.8 and
+put
+
+```text
+C_(g,q)(chi)=E_1(conjugate chi)E_2(conjugate chi)H_g(chi),
+
+L_(g,q)(chi)=tau_q(conjugate chi,1)
+ sum_ell W^ell(ell/F)c_g(ell)tau_q(conjugate chi,ell).
+```
+
+The selected new theorem is the source-class statement that, at `D=F^2`, for
+some fixed `eta>0`,
+
+```text
+|sum_(g<=F) sum_(q asymp F^2/g) mu(gq)/phi(q)
+  sum_(chi mod q, cond(chi)>=F) C_(g,q)(chi)L_(g,q)(chi)|
+ << F^2 D^2 D^(-eta) X^o(1).                           (12.10.6)
+```
+
+It must be uniform in every gcd/conductor/cofactor dyad, transform parameter,
+actual mask, and source product atom.  Projectors are taken on the complete
+residue group; the principal/low-conductor branch remains the already proved
+Gauss--CRT route.  The signed `mu(gq)`, Gauss-square phase, fixed physical
+shift `2`, and moving unit remain present until the saving in `(12.10.6)` is
+created.  No arbitrary unit coefficient is quantified.
+
+Any fixed `eta>0` is enough for the endpoint.  If the fixed-unit
+`eta=1/32` survived in this restricted signed family, the physical scale would
+be `X D^(-1/32)=X^(63/64+o(1))`; this is a target ledger, not a claim that the
+theorem is known.  The frozen status is
+
+```text
+HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION
+ = SELECTED_PRIMARY_OPEN_NEW_THEOREM.                   (12.10.7)
+```
+
+The first proof-or-refutation subgate is therefore
+
+```text
+HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE:
+
+|sum_(chi!=1)m_p(chi)C_hat_1(chi)C_hat_2(chi)|
+ <<F^(-eta)||C_hat_1||_2||C_hat_2||_2                  (12.10.5e)
+```
+
+for the literal source-emitted ratio vectors only.  Per prime this gives
+`F^(4-eta+o(1))`; summing `O(F^2)` prime moduli and restoring `F^(-2)` gives
+`F^(4-eta+o(1))=X^(1-eta/4+o(1))`.  Since `mu(p)=-1` on this subfamily, the
+prime-stage gain cannot be credited to modulus-Mobius cancellation.  It must
+come from the inner Mobius ratio structure and the Gauss root-number phase.
+No checked source proves `(12.10.5e)`, and no actual-class counterexample was
+found.  Its status is
+
+```text
+HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE
+ = FIRST_SUBGATE_OPEN_NEW_THEOREM_PLAUSIBLE.             (12.10.5f)
+```
+
+The construction attempt is now specific.  Parameterize each reduced ratio by
+`e=ak, h=bk`.  Long common-`k` fibers are the only place where classical
+smooth Mobius cancellation can be harvested after removing `(k,a)=1`;
+primitive or short fibers must instead retain both quotient-incidence vectors
+inside the quadratic-character fourth-moment mechanism behind
+Blomer--Pascadi.  The missing step is a power-saving principal angle between
+those two restricted incidence manifolds under the Gauss multiplier.  Results
+on Mobius against trace functions just above the critical length, such as
+[Korolev--Shparlinski](https://arxiv.org/abs/1804.01337), do not include
+`N=sqrt(p)` or this four-factor Gauss correlation, so they are evidence for a
+mechanism rather than an attachment.
+
+#### 12.10.3 Independent bilateral road and its own firewall
+
+The exact HB2 switch in Section 12.9 remains an independent parent.  Its first
+transform is source-backed, but it is not symmetric between `A_2` and `A_1`.
+For one exactly-swapped shell cell, the literal joint object is
+
+```text
+H_sigma=(6/log X) sum_(ER-AB=2)
+ C_A^(2)(A)D_B^(2)(B)rho_X(AB)Omega_sigma(A,B,E,R)
+ [C_E^(2)(E)D_R^(2)(R)-C_E^(1)(E)D_R^(1)(R)],          (12.10.8a)
+```
+
+where `C_A^(2),C_E^(2)` are the two literal weighted `mu_F*mu_F` rows,
+`D_B^(2),D_R^(2)` are ordered truncated divisor-log columns, while
+
+```text
+C_E^(1)(E)=mu(E)W_E(E),
+D_R^(1)(R)=W_R(R)log R.                                (12.10.8b)
+```
+
+Thus `A_2` has two Estermann/Voronoi columns, but `A_1` has one such column
+and one untransformed smooth-log column.  Inventing a second divisor column
+for `A_1` changes the physical coefficient and is forbidden.
+
+The ordered column has a legal generalized Estermann compiler.  Put
+
+```text
+tau_(u,v)(n)=sum_(rs=n)r^(-u)s^(-v).
+```
+
+Mellin inversion writes `c_Eis^(I,J)` as a double integral of
+`(-partial_u)tau_(u,v)`.  Pairing the exactly-swapped shell replaces this by
+`-(partial_u+partial_v)tau_(u,v)`; the diagonal shell has the corresponding
+factor `1/2`.  This preserves the truncated factor weights.  The generalized
+functional equation in
+[Kaneko, Theorem 2.6](https://arxiv.org/abs/2110.08974) has two polar residues
+and two Bessel signs.  At `u=v=0` its polar term is
+
+```text
+q^(-1) integral G(x)(log x+2 gamma-2log q)dx.           (12.10.8c)
+```
+
+Every Mellin derivative must act on the polar residues, `q` powers,
+Gamma/Bessel kernels, and dual coefficients together; appending only a
+`log m` to the dual coefficient is not the source formula.
+
+The determinant itself sharply controls the gcd branches:
+
+```text
+(A,E)|2,
+A=gA_0, E=gE_0, (A_0,E_0)=1, g in {1,2},
+E_0R-A_0B=h_g, h_g=2/g.                                (12.10.8d)
+```
+
+Hence `g=1` has physical shift `2`, while `g=2` is the unique two-adic common
+row and has reduced shift `1`; there is no odd common-row branch.  For
+`g_A=(A_0,q)` define the reduced-and-lifted inverse
+
+```text
+A_q^sharp=g_A conjugate(A_0/g_A) (mod q),               (12.10.8e)
+```
+
+where the inverse is first taken modulo `q/g_A`; define `E_q^sharp`
+similarly.  This is the reduced-inverse convention in
+[Duke--Friedlander--Iwaniec](https://www.math.ucla.edu/~wdduke/preprints/quadraticdiv.pdf).
+
+With every delta weight, Mellin derivative, gcd power, and Bessel transform
+kept inside the displayed `I` weights, the `A_2` first transform has exactly
+the following branch skeleton:
+
+```text
+c_q(h_g) I^(00)
++sum_(eta_B,b*) S(h_g,-eta_B A_q^sharp b*;q) I^(eta_B,0)
++sum_(eta_R,r*) S(h_g, eta_R E_q^sharp r*;q) I^(0,eta_R)
++sum_(eta_B,eta_R,b*,r*)
+ S(h_g,eta_R E_q^sharp r*-eta_B A_q^sharp b*;q)
+ I^(eta_B,eta_R).                                      (12.10.8f)
+```
+
+These are polar x polar, both one-polar families, and all four dual x dual
+families.  The `Y_0Y_0` branch contains the previously displayed kernel
+
+```text
+S(h_g,E_q^sharp r* - A_q^sharp b*;q).                   (12.10.8g)
+```
+
+The other three Bessel-sign branches and every one-polar branch remain.  In
+the complete zero-shift divisor specialization this agrees with DFI equations
+(22)--(24), including the extra `K_0` terms.
+
+For `A_1`, only the `B` column is transformed; `R` stays literal:
+
+```text
+sum_R c_q(E_0R-h_g)J^0(R)
++sum_(eta_B,b*,R)
+ S(E_0R-h_g,eta_B A_q^sharp b*;q)J^(eta_B)(b*,R).       (12.10.8h)
+```
+
+Let `Z_2` be the `A_2` polar x polar branch and `Z_1` the `A_1`
+Ramanujan/progression zero column.  The only legal main ownership statement is
+
+```text
+Z_joint=sum_(sigma,D)(Z_(2,sigma)-Z_(1,sigma))
+        -M_cmp^(all-D).                                 (12.10.8i)
+```
+
+Neither `Z_2`, `Z_1`, nor a single shell/`D` contribution is independently the
+hybrid main.  Therefore
+
+```text
+HB4xHB2_PAIRED_VORONOI_FIRST_TRANSFORM
+ = DERIVED_SOURCE_BACKED,
+HB4xHB2_PAIRED_VORONOI_COLLECTIVE_POLAR_MAIN_IDENTITY
+ = OPEN_NEW_ATTACHMENT.                                (12.10.8j)
+```
+
+The scale audit identifies the next estimate.  In the balanced cell
+`q asymp D_0=F^2`, the generic dual lengths are
+`b*,r* asymp q^2/D_0 asymp F^2`.  DFI gives `F^(3+o(1))` for a fixed pair of
+complete divisor rows, while the two literal Mobius-row `L^1` ledgers have
+product `F^(4+o(1))`.  Row-by-row application therefore gives `F^7`, against
+the physical `F^4 log^(-A)X` target.  The first genuinely new family estimate
+must jointly recover `F^3`:
+
+```text
+sum_(sigma,D)[O_(2,sigma)-O_(1,sigma)]
+ <<_A F^4/log^A X,                                     (12.10.8k)
+```
+
+where `O_2` contains both one-polar and all four dual x dual branches, and
+`O_1` contains the complete one-Voronoi branch.  Consequently
+
+```text
+DIRECT_DFI_ROW_BY_ROW = STOP_SCOPED_F7_VERSUS_F4,
+HB4xHB2_STRUCTURED_TWO_ROW_KLOOSTERMAN_FAMILY
+ = OPEN_NEW_THEOREM.                                   (12.10.8l)
+```
+
+This family saving must use the two original factorized Mobius rows.  If the
+rows are first compressed into arbitrary residue sequences, the next exact
+firewall applies.
+
+If the two rows are first compressed into arbitrary residue sequences, the
+kernel becomes `K_q(u,v)=S(-2,u-v;q)`.  Its additive Fourier eigenvalues are
+exactly
+
+```text
+lambda_k=q e_q(-2k^(-1))  for k in (Z/qZ)^*,
+lambda_k=0                 otherwise,                  (12.10.9)
+```
+
+so its `L^2` operator norm is `q`.  The checker verifies `(12.10.9)` exactly
+for four prime moduli.  Hence generic residue compression destroys the only
+structure from which a saving could come:
+
+```text
+BP2607_AFTER_NAIVE_RESIDUE_COMPRESSION
+ = STOP_SCOPED_ADDITIVE_DIFFERENCE_KERNEL_NORM_Q.
+```
+
+The surviving theorem must act before that compression and keep four literal
+Mobius slots, both reciprocal-incidence rows, both ordered Voronoi columns,
+exactly-swapped shell pairing, shift `2`, and the physical `A_2-A_1`
+combination forced by the outer `-6` times the source switch `A_1-A_2`.
+For paired shell tuples `sigma`, with the collective main subtracted once, its
+minimal contract is
+
+```text
+E_sigma=(A_(2,sigma)-A_(1,sigma))-M_(cmp,sigma),
+
+sum_sigma E_sigma << X^(1-eta)(log X)^C.                (12.10.10)
+```
+
+The estimate must be uniform over the moving/fixed square-root corridor,
+gcd/two-adic branches, Estermann poles and zero modes, Bessel tails, Mellin
+losses, and the original `6/log X` normalization.  Thus
+
+```text
+HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI
+ = OPEN_NEW_THEOREM_PLAUSIBLE_INDEPENDENT_PARENT.       (12.10.11)
+```
+
+Equations `(12.10.7)` and `(12.10.11)` have different source locks and cannot
+be spliced.  The scheduling decision is to attack `(12.10.6)` first because
+its physical source map and saturating terms are already complete, while
+developing `(12.10.10)` as the independent fallback.  This is a route pivot,
+not an arithmetic advance: fixed-atom credit remains `0`, strict `1/400`
+remains unpaid, `L2=NONE`, and `TPC207_TRIGGER=false`.
