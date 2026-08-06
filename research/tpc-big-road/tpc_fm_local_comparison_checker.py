@@ -4,8 +4,10 @@
 The checker writes JSON only to stdout.  It verifies finite exact algebra,
 the exponent geometry, and mutation fixtures.  The hybrid comparison and
 Type-I theorems use source-backed analytic estimates and are not numerically
-proved by this checker; the universal high-conductor Type-II umbrella and the
-exact-half HB4 endpoint remain open.
+proved by this checker.  The V14 common-coefficient secondary-conductor cutoff
+is audited at contract level; actual-atom attachment, the universal
+high-conductor Type-II umbrella, and the near-primitive Gauss-square angle
+remain open.
 """
 
 from __future__ import annotations
@@ -551,7 +553,7 @@ def run_checks() -> dict[str, object]:
     umbrella_gate = "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE"
     primary_route = "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION"
     independent_reserve = "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI"
-    v13_status_registry = {
+    v14_status_registry = {
         "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
         "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
         "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
@@ -598,17 +600,26 @@ def run_checks() -> dict[str, object]:
         "HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET": "LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN",
         "PASCADI_DI_TOP_PROJECTOR_ATTACHMENT": "STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH",
         "BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT": "STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH",
-        "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
+        "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION": "ANCESTOR_OPEN_REDUCED_TO_NEAR_PRIMITIVE_COLLAR",
+        "HB4_EXACT_HALF_TOP_INDUCED_CONDUCTOR_DECOMPOSITION": "PROVED_EXACT_FINITE",
+        "HB4_EXACT_HALF_TOP_COMMON_COEFFICIENT_PRIMITIVE_LARGE_SIEVE": "PROVED_SOURCE_BACKED_CONTRACT_LEVEL",
+        "HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_CUTOFF": "PROVED_CONTRACT_LEVEL_P_MINUS_MIN_ONE_TWO_KAPPA",
+        "HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_STRICT_BUDGET": "LOCAL_ONLY_MIN_ONE_TWO_KAPPA_MINUS_LEDGER_GT_ONE_OVER_200",
+        "HB4_EXACT_HALF_TOP_FROZEN_SUPERCLASS_PRIMITIVE_AVOIDANCE": "STOP_SCOPED_FALSE_LITERAL_MOBIUS_SMOOTH_EQUAL_ROW",
+        "HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE": "OPEN_ATTACHMENT",
+        "HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE": "STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR",
+        "HB4_EXACT_HALF_TOP_OUTER_MU_ALONE": "STOP_SCOPED_PRIME_SIGN_CONSTANT",
+        "HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE": "SELECTED_CORE_OPEN_NEW_THEOREM",
     }
     route_freeze = {
-        "route_version": "V13",
+        "route_version": "V14",
         "umbrella_gate": umbrella_gate,
         "primary_route": primary_route,
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION",
+        "first_subgate": "HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
         "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
-        "v13_status_registry": v13_status_registry,
+        "v14_status_registry": v14_status_registry,
         "independent_reserve": independent_reserve,
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
         "independent_polar_main_attachment": "OPEN_NEW_ATTACHMENT",
@@ -623,14 +634,14 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     expected_route_freeze = {
-        "route_version": "V13",
+        "route_version": "V14",
         "umbrella_gate": "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE",
         "primary_route": "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION",
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION",
+        "first_subgate": "HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
         "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
-        "v13_status_registry": {
+        "v14_status_registry": {
             "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
             "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
             "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
@@ -677,7 +688,16 @@ def run_checks() -> dict[str, object]:
             "HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET": "LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN",
             "PASCADI_DI_TOP_PROJECTOR_ATTACHMENT": "STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH",
             "BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT": "STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH",
-            "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
+            "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION": "ANCESTOR_OPEN_REDUCED_TO_NEAR_PRIMITIVE_COLLAR",
+            "HB4_EXACT_HALF_TOP_INDUCED_CONDUCTOR_DECOMPOSITION": "PROVED_EXACT_FINITE",
+            "HB4_EXACT_HALF_TOP_COMMON_COEFFICIENT_PRIMITIVE_LARGE_SIEVE": "PROVED_SOURCE_BACKED_CONTRACT_LEVEL",
+            "HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_CUTOFF": "PROVED_CONTRACT_LEVEL_P_MINUS_MIN_ONE_TWO_KAPPA",
+            "HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_STRICT_BUDGET": "LOCAL_ONLY_MIN_ONE_TWO_KAPPA_MINUS_LEDGER_GT_ONE_OVER_200",
+            "HB4_EXACT_HALF_TOP_FROZEN_SUPERCLASS_PRIMITIVE_AVOIDANCE": "STOP_SCOPED_FALSE_LITERAL_MOBIUS_SMOOTH_EQUAL_ROW",
+            "HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE": "OPEN_ATTACHMENT",
+            "HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE": "STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR",
+            "HB4_EXACT_HALF_TOP_OUTER_MU_ALONE": "STOP_SCOPED_PRIME_SIGN_CONSTANT",
+            "HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE": "SELECTED_CORE_OPEN_NEW_THEOREM",
         },
         "independent_reserve": "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI",
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
@@ -693,7 +713,29 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     if route_freeze != expected_route_freeze:
-        raise AssertionError("V13 route/physical freeze changed")
+        raise AssertionError("V14 route/physical freeze changed")
+    v14_claim_boundary_exact = (
+        v14_status_registry[
+            "HB4_EXACT_HALF_TOP_FROZEN_SUPERCLASS_PRIMITIVE_AVOIDANCE"
+        ]
+        == "STOP_SCOPED_FALSE_LITERAL_MOBIUS_SMOOTH_EQUAL_ROW"
+        and v14_status_registry[
+            "HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE"
+        ]
+        == "OPEN_ATTACHMENT"
+        and v14_status_registry[
+            "HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE"
+        ]
+        == "STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR"
+        and v14_status_registry["HB4_EXACT_HALF_TOP_OUTER_MU_ALONE"]
+        == "STOP_SCOPED_PRIME_SIGN_CONSTANT"
+        and v14_status_registry[
+            "HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE"
+        ]
+        == "SELECTED_CORE_OPEN_NEW_THEOREM"
+    )
+    if not v14_claim_boundary_exact:
+        raise AssertionError("V14 superclass/actual/phase claim boundary changed")
     if primary_route == independent_reserve:
         raise AssertionError("independent V10 source locks were merged")
     route_mutations: list[dict[str, object]] = []
@@ -720,12 +762,42 @@ def run_checks() -> dict[str, object]:
     numbered_trigger["TPC_207_TRIGGER"] = True
     route_mutations.append(numbered_trigger)
     weakened_registry = dict(route_freeze)
-    weakened_statuses = dict(v13_status_registry)
+    weakened_statuses = dict(v14_status_registry)
     weakened_statuses["GLOBAL_MOVING_UNIT_CAUCHY"] = "OPEN"
-    weakened_registry["v13_status_registry"] = weakened_statuses
+    weakened_registry["v14_status_registry"] = weakened_statuses
     route_mutations.append(weakened_registry)
+    actual_atom_false_stop = dict(route_freeze)
+    actual_atom_false_stop_statuses = dict(v14_status_registry)
+    actual_atom_false_stop_statuses[
+        "HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE"
+    ] = "STOP_SCOPED_FALSE_LITERAL_MOBIUS_SMOOTH_EQUAL_ROW"
+    actual_atom_false_stop["v14_status_registry"] = actual_atom_false_stop_statuses
+    route_mutations.append(actual_atom_false_stop)
+    phase_blind_reopened = dict(route_freeze)
+    phase_blind_reopened_statuses = dict(v14_status_registry)
+    phase_blind_reopened_statuses[
+        "HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE"
+    ] = "OPEN"
+    phase_blind_reopened["v14_status_registry"] = phase_blind_reopened_statuses
+    route_mutations.append(phase_blind_reopened)
+    outer_mu_promoted = dict(route_freeze)
+    outer_mu_promoted_statuses = dict(v14_status_registry)
+    outer_mu_promoted_statuses[
+        "HB4_EXACT_HALF_TOP_OUTER_MU_ALONE"
+    ] = "PROVED_POWER_SAVING"
+    outer_mu_promoted["v14_status_registry"] = outer_mu_promoted_statuses
+    route_mutations.append(outer_mu_promoted)
+    surviving_angle_promoted = dict(route_freeze)
+    surviving_angle_promoted_statuses = dict(v14_status_registry)
+    surviving_angle_promoted_statuses[
+        "HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE"
+    ] = "PROVED"
+    surviving_angle_promoted[
+        "v14_status_registry"
+    ] = surviving_angle_promoted_statuses
+    route_mutations.append(surviving_angle_promoted)
     if any(mutation == expected_route_freeze for mutation in route_mutations):
-        raise AssertionError("V13 route/physical mutation escaped")
+        raise AssertionError("V14 route/physical mutation escaped")
     sample_a1 = Fraction(3, 1)
     sample_a2 = Fraction(5, 1)
     outer_switched_value = -6 * (sample_a1 - sample_a2)
@@ -1766,8 +1838,8 @@ def run_checks() -> dict[str, object]:
         == v10_strict_d_saving_exponent
     )
     v11_prime_composite_promotion_detected = (
-        v13_status_registry["HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW"]
-        != v13_status_registry[
+        v14_status_registry["HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW"]
+        != v14_status_registry[
             "HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS"
         ]
     )
@@ -1913,7 +1985,7 @@ def run_checks() -> dict[str, object]:
         v12_complete_local_p_exponent != HALF
     )
     v12_short_interval_support_promotion_detected = (
-        v13_status_registry[
+        v14_status_registry[
             "BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION"
         ]
         == "STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL"
@@ -2302,13 +2374,13 @@ def run_checks() -> dict[str, object]:
     ):
         raise AssertionError("V13 product-fiber exponent ledger failed")
     v13_endpoint_promotion_detected = (
-        v13_status_registry[
+        v14_status_registry[
             "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION"
         ]
-        == "SELECTED_CORE_OPEN_NEW_THEOREM"
+        == "ANCESTOR_OPEN_REDUCED_TO_NEAR_PRIMITIVE_COLLAR"
     )
     v13_historical_stop_reopening_detected = (
-        v13_status_registry["GLOBAL_MOVING_UNIT_CAUCHY"]
+        v14_status_registry["GLOBAL_MOVING_UNIT_CAUCHY"]
         == "STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE"
     )
     if not (
@@ -2316,6 +2388,344 @@ def run_checks() -> dict[str, object]:
         and v13_historical_stop_reopening_detected
     ):
         raise AssertionError("V13 endpoint scope mutation escaped")
+
+    # V14 decomposes each top Fourier character by its exact conductor
+    # rho=f*m.  A complex sextic fixture is used so that squaring the Gauss
+    # sum does not erase a mistaken cofactor conjugation.  All comparisons
+    # take place exactly in Z[zeta_lcm(6,rho)].
+    def sextic_character_exponent_mod_7(value: int) -> int:
+        residue = value % 7
+        if residue == 0:
+            raise ValueError("sextic character evaluated at a nonunit")
+        power = 1
+        for exponent in range(6):
+            if power == residue:
+                return exponent
+            power = 3 * power % 7
+        raise AssertionError("sextic discrete logarithm failed")
+
+    v14_rho = 35
+    v14_conductor = 7
+    v14_cofactor = 5
+    v14_unit_c = 3
+    v14_ambient_order = math.lcm(6, v14_rho)
+    v14_character_step = v14_ambient_order // 6
+    v14_direct_tau_bar = [0] * v14_ambient_order
+    for residue in range(v14_rho):
+        if math.gcd(residue, v14_rho) != 1:
+            continue
+        bar_exponent = (-sextic_character_exponent_mod_7(residue)) % 6
+        exponent = (
+            bar_exponent * v14_character_step
+            + residue * (v14_ambient_order // v14_rho)
+        ) % v14_ambient_order
+        v14_direct_tau_bar[exponent] += 1
+    v14_primitive_tau_bar = [0] * v14_ambient_order
+    for residue in range(v14_conductor):
+        if math.gcd(residue, v14_conductor) != 1:
+            continue
+        bar_exponent = (-sextic_character_exponent_mod_7(residue)) % 6
+        exponent = (
+            bar_exponent * v14_character_step
+            + residue * (v14_ambient_order // v14_conductor)
+        ) % v14_ambient_order
+        v14_primitive_tau_bar[exponent] += 1
+    v14_cofactor_exponent = sextic_character_exponent_mod_7(v14_cofactor)
+    v14_expected_tau_bar = cyclic_shift_scaled(
+        v14_primitive_tau_bar,
+        (-v14_cofactor_exponent) * v14_character_step,
+        mobius(v14_cofactor),
+    )
+    if not general_cyclotomic_integer_equal(
+        v14_direct_tau_bar, v14_expected_tau_bar
+    ):
+        raise AssertionError("V14 induced Gauss/cofactor identity failed")
+    v14_direct_gauss_square = cyclic_integer_convolution(
+        v14_direct_tau_bar, v14_direct_tau_bar
+    )
+    v14_primitive_gauss_square = cyclic_integer_convolution(
+        v14_primitive_tau_bar, v14_primitive_tau_bar
+    )
+    v14_c_exponent = sextic_character_exponent_mod_7(v14_unit_c)
+    v14_correct_phase = (
+        v14_c_exponent - 2 * v14_cofactor_exponent
+    ) * v14_character_step
+    v14_direct_kernel = cyclic_shift_scaled(
+        v14_direct_gauss_square,
+        v14_c_exponent * v14_character_step,
+    )
+    v14_expected_kernel = cyclic_shift_scaled(
+        v14_primitive_gauss_square, v14_correct_phase
+    )
+    if not general_cyclotomic_integer_equal(
+        v14_direct_kernel, v14_expected_kernel
+    ):
+        raise AssertionError("V14 induced Gauss-square phase failed")
+    v14_missing_cofactor_square = cyclic_shift_scaled(
+        v14_primitive_gauss_square,
+        v14_c_exponent * v14_character_step,
+    )
+    v14_wrong_cofactor_conjugation = cyclic_shift_scaled(
+        v14_primitive_gauss_square,
+        (v14_c_exponent + 2 * v14_cofactor_exponent) * v14_character_step,
+    )
+    v14_wrong_c_conjugation = cyclic_shift_scaled(
+        v14_primitive_gauss_square,
+        (-v14_c_exponent - 2 * v14_cofactor_exponent) * v14_character_step,
+    )
+    v14_extra_mobius_after_square = cyclic_shift_scaled(
+        v14_primitive_gauss_square,
+        v14_correct_phase,
+        mobius(v14_cofactor),
+    )
+    if any(
+        general_cyclotomic_integer_equal(v14_expected_kernel, mutation)
+        for mutation in (
+            v14_missing_cofactor_square,
+            v14_wrong_cofactor_conjugation,
+            v14_wrong_c_conjugation,
+            v14_extra_mobius_after_square,
+        )
+    ):
+        raise AssertionError("V14 conductor/cofactor phase mutation escaped")
+    v14_full_outer_scalar = Fraction(
+        mobius(v14_conductor) * mobius(v14_cofactor),
+        phi(v14_conductor) * phi(v14_cofactor),
+    )
+    v14_dropped_outer_cofactor_scalar = Fraction(
+        mobius(v14_conductor),
+        phi(v14_conductor) * phi(v14_cofactor),
+    )
+    v14_dropped_outer_cofactor_sign_detected = (
+        v14_full_outer_scalar != v14_dropped_outer_cofactor_scalar
+        and v14_full_outer_scalar == Fraction(1, 24)
+        and v14_dropped_outer_cofactor_scalar == Fraction(-1, 24)
+    )
+    if not v14_dropped_outer_cofactor_sign_detected:
+        raise AssertionError("V14 outer cofactor Mobius sign mutation escaped")
+    v14_induced_conductor_phase_cases = 1
+
+    # Exact conductor counts and a lifted H_5 function show that no
+    # phi(f)/phi(rho) dimension gain is available after conductor projection.
+    v14_projector_rho = 15
+    v14_projector_units = [
+        residue
+        for residue in range(v14_projector_rho)
+        if math.gcd(residue, v14_projector_rho) == 1
+    ]
+    v14_lifted_h5 = {1: 1, 2: -1, 3: 1, 4: -1}
+    v14_conductor_counts = {1: 0, 3: 0, 5: 0, 15: 0}
+    v14_conductor_energy = {1: 0, 3: 0, 5: 0, 15: 0}
+    for character_5_index in range(4):
+        for character_3_index in range(2):
+            conductor = (5 if character_5_index else 1) * (
+                3 if character_3_index else 1
+            )
+            v14_conductor_counts[conductor] += 1
+            fourier_value = (0, 0)
+            for residue in v14_projector_units:
+                character_5 = quartic_family_character_mod_5(
+                    residue, character_5_index
+                )
+                character_3 = (
+                    1
+                    if character_3_index == 0 or residue % 3 == 1
+                    else -1
+                )
+                conjugate_character = gaussian_conjugate(character_5)
+                fourier_value = gaussian_add(
+                    fourier_value,
+                    (
+                        v14_lifted_h5[residue % 5]
+                        * character_3
+                        * conjugate_character[0],
+                        v14_lifted_h5[residue % 5]
+                        * character_3
+                        * conjugate_character[1],
+                    ),
+                )
+            v14_conductor_energy[conductor] += (
+                fourier_value[0] ** 2 + fourier_value[1] ** 2
+            )
+    if v14_conductor_counts != {1: 1, 3: 1, 5: 3, 15: 3}:
+        raise AssertionError("V14 squarefree conductor count failed")
+    if v14_conductor_energy != {1: 0, 3: 0, 5: 64, 15: 0}:
+        raise AssertionError("V14 low-conductor projector energy failed")
+    if sum(v14_conductor_energy.values()) != (
+        phi(v14_projector_rho) * len(v14_projector_units)
+    ):
+        raise AssertionError("V14 conductor projector Parseval failed")
+    v14_conductor_projector_cases = 8
+
+    # Induction to rho=f*m leaves an explicit (n,m)=1 mask on every
+    # polynomial.  Both character orientations are checked with integer
+    # weights in Z[i].
+    v14_mask_weights = {1: 1, 2: 2, 3: 4, 4: 8, 5: 16}
+    v14_full_modulus_mask_cases = 0
+    v14_missing_m_mask_mutation_detected = False
+    for use_conjugate in (False, True):
+        induced_value = (0, 0)
+        explicit_mask_value = (0, 0)
+        missing_mask_value = (0, 0)
+        for integer, weight in v14_mask_weights.items():
+            character_value = quartic_character_mod_5(integer)
+            if use_conjugate:
+                character_value = gaussian_conjugate(character_value)
+            if math.gcd(integer, 15) == 1:
+                induced_value = gaussian_add(
+                    induced_value,
+                    (weight * character_value[0], weight * character_value[1]),
+                )
+            if math.gcd(integer, 3) == 1:
+                explicit_mask_value = gaussian_add(
+                    explicit_mask_value,
+                    (weight * character_value[0], weight * character_value[1]),
+                )
+            missing_mask_value = gaussian_add(
+                missing_mask_value,
+                (weight * character_value[0], weight * character_value[1]),
+            )
+        if induced_value != explicit_mask_value:
+            raise AssertionError("V14 full-modulus mask transfer failed")
+        if induced_value != missing_mask_value:
+            v14_missing_m_mask_mutation_detected = True
+        v14_full_modulus_mask_cases += 1
+    if not v14_missing_m_mask_mutation_detected:
+        raise AssertionError("V14 missing secondary-cofactor mask escaped")
+
+    # A bounded-cofactor quadratic character has only a constant eigenvalue
+    # reduction.  The exact rho=3*17 fixture gives normalized coefficient
+    # 17/32, so conductor projection alone cannot create a fixed power.
+    def quadratic_character_mod_17(value: int) -> int:
+        residue = value % 17
+        if residue == 0:
+            return 0
+        return 1 if pow(residue, 8, 17) == 1 else -1
+
+    v14_sharp_rho = 51
+    v14_sharp_tau = [0] * v14_sharp_rho
+    for residue in range(v14_sharp_rho):
+        if math.gcd(residue, v14_sharp_rho) == 1:
+            v14_sharp_tau[residue] += quadratic_character_mod_17(residue)
+    v14_sharp_square = cyclic_integer_convolution(v14_sharp_tau, v14_sharp_tau)
+    v14_sharp_expected = [0] * v14_sharp_rho
+    v14_sharp_expected[0] = 17
+    if not general_cyclotomic_integer_equal(
+        v14_sharp_square, v14_sharp_expected
+    ):
+        raise AssertionError("V14 bounded-cofactor Gauss-square fixture failed")
+    v14_sharp_wrong_primitive = [0] * v14_sharp_rho
+    v14_sharp_wrong_primitive[0] = v14_sharp_rho
+    if general_cyclotomic_integer_equal(
+        v14_sharp_square, v14_sharp_wrong_primitive
+    ):
+        raise AssertionError("V14 bounded cofactor was promoted to primitive")
+    v14_sharp_normalized = Fraction(
+        mobius(v14_sharp_rho)
+        * quadratic_character_mod_17(-2)
+        * 17,
+        phi(v14_sharp_rho),
+    )
+    if v14_sharp_normalized != Fraction(17, 32):
+        raise AssertionError("V14 bounded-cofactor normalization failed")
+    v14_bounded_cofactor_sharpness_cases = 1
+
+    # Prime nonprincipal characters are exactly the maximal Gauss-square
+    # eigenspace.  A literal finite Mobius row verifies the exact second and
+    # fourth moment identities and the phase-blind Cauchy floor.
+    v14_prime_mass_modulus = 101
+    v14_mobius_row = {
+        integer: mobius(integer)
+        for integer in range(10, 20)
+        if mobius(integer) != 0
+    }
+    v14_row_norm = sum(value * value for value in v14_mobius_row.values())
+    v14_row_sum = sum(v14_mobius_row.values())
+    v14_primitive_second_moment = (
+        (v14_prime_mass_modulus - 1) * v14_row_norm - v14_row_sum**2
+    )
+    if v14_primitive_second_moment < (
+        v14_prime_mass_modulus
+        - 1
+        - len(v14_mobius_row)
+    ) * v14_row_norm:
+        raise AssertionError("V14 primitive single-row mass inequality failed")
+    v14_product_row: dict[int, int] = {}
+    for left, left_weight in v14_mobius_row.items():
+        for right, right_weight in v14_mobius_row.items():
+            residue = left * right % v14_prime_mass_modulus
+            v14_product_row[residue] = (
+                v14_product_row.get(residue, 0) + left_weight * right_weight
+            )
+    v14_primitive_fourth_moment = (
+        (v14_prime_mass_modulus - 1)
+        * sum(value * value for value in v14_product_row.values())
+        - v14_row_sum**4
+    )
+    if (
+        v14_primitive_fourth_moment * (v14_prime_mass_modulus - 2)
+        < v14_primitive_second_moment**2
+    ):
+        raise AssertionError("V14 primitive fourth-moment floor failed")
+    if any(mobius(p) != -1 for p in primes(199) if p >= 101):
+        raise AssertionError("V14 prime outer-Mobius sign fixture failed")
+    v14_prime_primitive_mass_cases = 1
+
+    # Standard primitive large sieve on common coefficients gives the tail
+    # F^4+F^2*P^2/M^2.  At P=F^2=D and M=P^kappa this is
+    # F^max(4,6-4*kappa), hence D^-min(1,2*kappa).
+    v14_kappa_fixtures = {
+        Fraction(1, 400): Fraction(599, 100),
+        Fraction(1, 100): Fraction(149, 25),
+        Fraction(1, 4): Fraction(5, 1),
+        Fraction(1, 2): Fraction(4, 1),
+        Fraction(3, 4): Fraction(4, 1),
+    }
+    v14_tail_exponent_cases = 0
+    for kappa, expected_f_exponent in v14_kappa_fixtures.items():
+        actual_f_exponent = max(Fraction(4, 1), 6 - 4 * kappa)
+        actual_d_saving = (6 - actual_f_exponent) / 2
+        if actual_f_exponent != expected_f_exponent:
+            raise AssertionError("V14 large-cofactor F-exponent ledger failed")
+        if actual_d_saving != min(Fraction(1, 1), 2 * kappa):
+            raise AssertionError("V14 large-cofactor D-saving ledger failed")
+        v14_tail_exponent_cases += 1
+    v14_strict_kappa_without_downstream_loss = Fraction(1, 400)
+    v14_small_kappa_downstream_lambda_multiplier = Fraction(1, 2)
+    v14_strict_equality_mutation_detected = (
+        2 * v14_strict_kappa_without_downstream_loss
+        == v10_strict_d_saving_exponent
+    )
+    v14_single_power_tail_mutation_detected = (
+        min(Fraction(1, 1), 2 * Fraction(1, 100))
+        != Fraction(1, 100)
+    )
+    v14_saturation_kappa = Fraction(3, 4)
+    v14_saturation_lambda = Fraction(199, 200)
+    v14_saturation_mutation_detected = (
+        min(Fraction(1, 1), 2 * v14_saturation_kappa)
+        - v14_saturation_lambda
+        == v10_strict_d_saving_exponent
+        and 2 * v14_saturation_kappa - v14_saturation_lambda
+        > v10_strict_d_saving_exponent
+    )
+    v14_common_coefficient_scope_frozen = (
+        v14_status_registry[
+            "HB4_EXACT_HALF_TOP_COMMON_COEFFICIENT_PRIMITIVE_LARGE_SIEVE"
+        ]
+        == "PROVED_SOURCE_BACKED_CONTRACT_LEVEL"
+        and v14_status_registry["HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP"]
+        == "OPEN_ATTACHMENT"
+    )
+    if not all(
+        (
+            v14_strict_equality_mutation_detected,
+            v14_single_power_tail_mutation_detected,
+            v14_saturation_mutation_detected,
+            v14_common_coefficient_scope_frozen,
+        )
+    ):
+        raise AssertionError("V14 cutoff exponent or source scope mutation escaped")
 
     hb_padding_slots = 6 * math.ceil(Fraction(1, 1) / (1 - HALF))
     if hb_padding_slots != 12:
@@ -3124,9 +3534,11 @@ def run_checks() -> dict[str, object]:
             "finite exact algebra, rank-one obstruction, and compiler geometry; "
             "source-backed analytic estimates are not numerical checks; the "
             "V11 Weil/FKMS windows and the V12 all-squarefree inverse-residue "
-            "window are retained, while V13 proves the product-fiber window "
-            "P<=F^(2-delta) at contract level; actual-atom attachment, the "
-            "top-projector signed-modulus collar, the full signed Type-IV "
+            "window are retained, V13 proves the product-fiber window "
+            "P<=F^(2-delta), and V14 removes every fixed-power-separated "
+            "secondary-conductor tail on the common-coefficient contract; "
+            "actual-atom attachment, the near-primitive Gauss-square angle, "
+            "the full signed Type-IV "
             "construction, the fixed-margin-free endpoint, and "
             "structured two-row paired-Voronoi theorem remain open"
         ),
@@ -3223,6 +3635,18 @@ def run_checks() -> dict[str, object]:
             ),
             "v13_downstream_lambda_multiplier": str(
                 v13_downstream_lambda_multiplier
+            ),
+            "v14_top_tail_bound": "F^4+F^2 P^2/M^2",
+            "v14_top_tail_relative_saving": "P^(-min(1,2*kappa)+o(1))",
+            "v14_strict_kappa_without_downstream_loss": str(
+                v14_strict_kappa_without_downstream_loss
+            ),
+            "v14_strict_tail_condition": "min(1,2*kappa)-lambda_D>1/200",
+            "v14_small_kappa_downstream_lambda_multiplier": str(
+                v14_small_kappa_downstream_lambda_multiplier
+            ),
+            "v14_bounded_cofactor_normalized_fixture": str(
+                v14_sharp_normalized
             ),
             "lemma_7_14_padding_slots": hb_padding_slots,
             "bc_h2_j1_worst": str(bc_h2_j1_worst),
@@ -3350,6 +3774,14 @@ def run_checks() -> dict[str, object]:
             "at P=F^(3/2) the V13 local eta_D supremum is 1/8",
             "the strict local budget needs delta>1/50+4*lambda_D",
             "P=F^2 remains an exact endpoint for the phase-blind product-fiber operator",
+            "rho=f*m induction retains outer mu(f)mu(m), the bar-psi(m)^2 Gauss-square phase, and every explicit m-unit mask",
+            "exact conductor projection can place all Fourier energy in one imprimitive conductor without a dimension gain",
+            "the common-coefficient primitive large sieve bounds the m>=M tail by F^4+F^2 P^2/M^2",
+            "M=P^kappa gives D^-min(1,2*kappa) on the removed top-conductor tail",
+            "rho=3*17 has exact bounded-cofactor normalized Gauss-square coefficient 17/32",
+            "literal finite Mobius rows have a prime primitive second-moment identity and phase-blind fourth-moment floor",
+            "outer mu(p) is constant minus one throughout the prime top collar",
+            "the remaining top gate is the phase-sensitive near-primitive Gauss-square four-polynomial angle",
             "V10 primary and independent source locks remain separate with zero physical credit",
             "outer minus six converts source A1-A2 into physical A2-A1",
         ],
@@ -3395,6 +3827,12 @@ def run_checks() -> dict[str, object]:
             "v13_four_polynomial_character_orientation": v13_four_polynomial_orientation_cases,
             "v13_signed_ramanujan_reassembly": v13_ramanujan_reassembly_cases,
             "v13_multiplicative_product_fiber_compression": v13_product_fiber_cases,
+            "v14_induced_conductor_gauss_square_phase": v14_induced_conductor_phase_cases,
+            "v14_conductor_projector_characters": v14_conductor_projector_cases,
+            "v14_full_modulus_secondary_cofactor_masks": v14_full_modulus_mask_cases,
+            "v14_bounded_cofactor_sharpness": v14_bounded_cofactor_sharpness_cases,
+            "v14_prime_primitive_mass": v14_prime_primitive_mass_cases,
+            "v14_large_cofactor_tail_exponents": v14_tail_exponent_cases,
         },
         "mutation_tests": {
             "J_above_one_third": "DETECTED",
@@ -3425,6 +3863,22 @@ def run_checks() -> dict[str, object]:
             "v13_historical_global_cauchy_reopening": "DETECTED_FALSE",
             "v13_strict_delta_equality": "DETECTED",
             "v13_downstream_lambda_factor": "DETECTED",
+            "v14_missing_secondary_cofactor_square": "DETECTED",
+            "v14_wrong_secondary_cofactor_conjugation": "DETECTED",
+            "v14_wrong_physical_c_conjugation": "DETECTED",
+            "v14_extra_mobius_after_gauss_square": "DETECTED_FALSE",
+            "v14_dropped_outer_cofactor_mobius": "DETECTED_FALSE",
+            "v14_missing_secondary_cofactor_unit_masks": "DETECTED",
+            "v14_conductor_dimension_gain": "DETECTED_FALSE",
+            "v14_bounded_cofactor_to_primitive": "DETECTED_FALSE",
+            "v14_large_cofactor_single_power_only": "DETECTED_FALSE",
+            "v14_strict_kappa_equality": "DETECTED",
+            "v14_strict_tail_saturation": "DETECTED",
+            "v14_common_coefficient_to_rho_dependent_superclass": "DETECTED_FALSE",
+            "v14_superclass_stop_to_actual_atom_stop": "DETECTED_FALSE",
+            "v14_phase_blind_stop_reopening": "DETECTED_FALSE",
+            "v14_outer_mu_alone_promotion": "DETECTED_FALSE",
+            "v14_surviving_angle_promotion": "DETECTED_FALSE",
             "hb2_sqrt_endpoint_to_large": "DETECTED",
             "hb2_A2_product_mobius_collapse": "DETECTED",
             "hb2_prime_power_to_prime_indicator": "DETECTED",
@@ -3476,7 +3930,7 @@ def run_checks() -> dict[str, object]:
             "v10_paired_polar_main_promotion": "DETECTED",
             "v10_bilateral_A1_A2_sign_reversal": "DETECTED",
             "v10_physical_credit_promotion": "DETECTED",
-            "v13_status_registry_weakening": "DETECTED",
+            "v14_status_registry_weakening": "DETECTED",
         },
         "open_gate": umbrella_gate,
         "route_freeze": route_freeze,

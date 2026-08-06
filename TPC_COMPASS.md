@@ -1,12 +1,12 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-06
-状态：`BOLD_CHANNEL_V13 / PRODUCT_FIBER_PROJECTOR_RANGE_ADVANCE`
+状态：`BOLD_CHANNEL_V14 / NEAR_PRIMITIVE_CONDUCTOR_COLLAR_ADVANCE`
 claim level：`CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE_AND_CORE_SHRINK`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V13 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V14 的完整
 公式、proof与独立 checker位于 `research/tpc-big-road/`。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
@@ -602,7 +602,7 @@ TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE.
 四 Möbius rows加双 divisor-log columns的 paired-Voronoi reserve。固定原子岛与
 Pair-native/H1岛是 attachment层，不自动提供桥梁 saving。Bridge B仍是
 distinguished-seed genericity动力学大桥；Hénon/几何岛只作辅助提升，不给解析桥
-credit。V12 canonical状态表为：
+credit。V14 canonical状态表为：
 
 ```text
 HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
@@ -651,7 +651,16 @@ HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_WINDOW = PROVED_CONTRACT_LEVEL_TO_TW
 HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN
 PASCADI_DI_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH
 BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH
-HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_NEAR_PRIMITIVE_COLLAR
+HB4_EXACT_HALF_TOP_INDUCED_CONDUCTOR_DECOMPOSITION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_COMMON_COEFFICIENT_PRIMITIVE_LARGE_SIEVE = PROVED_SOURCE_BACKED_CONTRACT_LEVEL
+HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_CUTOFF = PROVED_CONTRACT_LEVEL_P_MINUS_MIN_ONE_TWO_KAPPA
+HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_STRICT_BUDGET = LOCAL_ONLY_MIN_ONE_TWO_KAPPA_MINUS_LEDGER_GT_ONE_OVER_200
+HB4_EXACT_HALF_TOP_FROZEN_SUPERCLASS_PRIMITIVE_AVOIDANCE = STOP_SCOPED_FALSE_LITERAL_MOBIUS_SMOOTH_EQUAL_ROW
+HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE = OPEN_ATTACHMENT
+HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE = STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR
+HB4_EXACT_HALF_TOP_OUTER_MU_ALONE = STOP_SCOPED_PRIME_SIGN_CONSTANT
+HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE = SELECTED_CORE_OPEN_NEW_THEOREM
 ```
 
 1. **Primary：HB4 exact-half dual-product dispersion**。V9 已把 Gauss-square
@@ -871,3 +880,62 @@ normalization与 provenance仍 OPEN，故 TPC-207 trigger仍为 `false`。
 4. 一个可复现 repository，保留 200+ research nodes作为审计证据库。
 
 在形成 theorem-backed channel advance前，不创建 TPC-207，不构建 paper/PDF。
+
+## 15. V14 后的罗盘：墙已缩成 near-primitive phase collar
+
+V14把 V13 的 top-projector wall再分型一次。写
+
+```text
+rho=fm,  f=cond(chi),  chi=Ind_f^(fm)psi.
+```
+
+Gauss-square eigenvalue大小为 `f`，但更重要的是 exact phase与 sign为
+
+```text
+mu(f)mu(m)/[phi(f)phi(m)]
+  * psi(c_v)conjugate(psi)(m)^2 tau_f(conjugate psi)^2.
+```
+
+每条 polynomial还带 `(n,m)=1`。对 common-coefficient source contract，固定
+`m`后的 primitive large sieve给出
+
+```text
+V_(m>=M)<<[F^4+F^2P^2/M^2]X^o(1).
+```
+
+因此对任意 fixed `kappa>0`，`m>=P^kappa`全部成为已支付海域；在
+`P=F^2=D`上的 saving为 `D^(-min(1,2kappa)+o(1))`。罗盘上的红色断点不再覆盖
+整个 `P=F^2`谱面，而只覆盖
+
+```text
+m<P^kappa for every fixed kappa>0:
+primitive + bounded/subpower-cofactor induced collar.
+```
+
+这里“subpower collar”是 exponent-topological说法：每个 fixed-power cofactor尾都
+已闭合，并不声称存在一个对 `kappa->0`一致的 quantitative theorem。
+
+两条看似自然的路已被 exact firewall排除：
+
+1. conductor/primitive projection本身不够。`rho=51,f=17,m=3`的 normalized
+   coefficient精确为 `17/32`；bounded cofactor没有 fixed power。
+2. phase-blind spectral avoidance不够。prime modulus的 nonprincipal谱全部是 maximal
+   Gauss-square eigenspace，literal Möbius/smooth equal rows已有 endpoint fourth-moment
+   floor；`mu(p)=-1`在 prime sector又是常数。
+
+这两个 STOP都只是 mechanism/superclass结论，不是 actual signed packet下界。
+未提交的探索性 numerical proxy不作为本轮证据；罗盘只依据上述 exact firewalls
+选择保留 phase，而不是放弃解析桥。
+
+所以 Bridge A1 当前唯一主关是
+
+```text
+HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE.
+```
+
+它有两个可接受出口：fixed-prime/near-primitive actual angle theorem，或完整
+varying-squarefree outer-`mu` collective theorem。二者都必须保留 actual coefficients、
+fixed physical `h0=2`、physical `c_v`、masks、signed shells、orientation、uniform
+parameters与全部 losses。A2 paired-Voronoi、Bridge B distinguished seed与 Hénon
+辅助岛仍是独立桥，不拼接 credit。当前仍是 contract-level partial advance；
+fixed atom=`0`、global `1/400=UNPAID`、`L2=NONE`、TPC-207=`false`。

@@ -1,4 +1,4 @@
-# TPC big road V13: multiplicative product-fiber highway
+# TPC big road V14: near-primitive conductor-collar highway
 
 更新时间：2026-08-06
 
@@ -73,7 +73,16 @@ HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_WINDOW = PROVED_CONTRACT_LEVEL_TO_TW
 HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN
 PASCADI_DI_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH
 BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH
-HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_NEAR_PRIMITIVE_COLLAR
+HB4_EXACT_HALF_TOP_INDUCED_CONDUCTOR_DECOMPOSITION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_COMMON_COEFFICIENT_PRIMITIVE_LARGE_SIEVE = PROVED_SOURCE_BACKED_CONTRACT_LEVEL
+HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_CUTOFF = PROVED_CONTRACT_LEVEL_P_MINUS_MIN_ONE_TWO_KAPPA
+HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_STRICT_BUDGET = LOCAL_ONLY_MIN_ONE_TWO_KAPPA_MINUS_LEDGER_GT_ONE_OVER_200
+HB4_EXACT_HALF_TOP_FROZEN_SUPERCLASS_PRIMITIVE_AVOIDANCE = STOP_SCOPED_FALSE_LITERAL_MOBIUS_SMOOTH_EQUAL_ROW
+HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE = OPEN_ATTACHMENT
+HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE = STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR
+HB4_EXACT_HALF_TOP_OUTER_MU_ALONE = STOP_SCOPED_PRIME_SIGN_CONSTANT
+HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE = SELECTED_CORE_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI = INDEPENDENT_OPEN_NEW_THEOREM
@@ -103,6 +112,12 @@ projector normal form与两个初始区间冻结；V12再用 inverse-residue zer
 complete additive Parseval统一穿过 `P<F^(3/2)`。V13随后用 signed Ramanujan
 divisor transfer、multiplicative Gauss-square operator与 ordinary product-fiber
 energy，把全部 squarefree projector继续推进到 `P<F^2`的每个 fixed-margin子区间。
+V14再对 top collar作 exact secondary-conductor decomposition；在仓库冻结的
+common-coefficient source contract上，primitive multiplicative large sieve把全部
+`m=rho/cond(chi)>=P^kappa`尾压到
+`F^4+F^2P^2/P^(2kappa)`。因此真正未解的不是全部 top spectrum，而是
+primitive及 fixed/subpower small-cofactor induced characters上的 phase-sensitive
+Gauss-square four-polynomial angle。
 完整 compiler见
 [`fm_local_comparison_compiler.md`](fm_local_comparison_compiler.md)。所有 TPC-1--206 的 source locks、
 `STOP_SCOPED` cells、actuality/provenance 与 normalization firewalls继续有效。
@@ -1228,3 +1243,77 @@ moving inverse index。这是 scoped screen，不是文献不存在的普遍断�
 exact cover、tails、A/B selection、global normalization和 provenance仍 OPEN；
 fixed-atom credit=`0`、global strict `1/400=UNPAID`、`L2=NONE`、
 `TPC_207_TRIGGER=false`。A2、Bridge B与 Hénon辅助岛保持独立。
+
+## 14. V14 near-primitive conductor collar
+
+V13 的 `P=F^2`端点不是一整块不可分的 character spectrum。写
+
+```text
+rho=fm,
+chi=Ind_f^(fm) psi,
+f=cond(chi),
+```
+
+则 odd squarefree Gauss sum精确满足
+
+```text
+tau_(fm)(conjugate chi)^2
+ =conjugate(psi)(m)^2 tau_f(conjugate psi)^2.
+```
+
+outer coefficient仍是 `mu(f)mu(m)/[phi(f)phi(m)]`；Gauss square并没有消去
+outer `mu(m)`。在 primitive `f`坐标中，每条 polynomial都必须继续带
+`(n,m)=1`，并保持
+`E_1(conjugate psi)E_2(conjugate psi)U(psi)V_v(psi)`的方向。
+
+对第 54.18、57.3 节冻结的 common-coefficient source atoms，固定 `m`后两条
+grouped arrays可合法进入 primitive multiplicative large sieve。其结果是
+
+```text
+|T_(v,m)|
+ <<F^2/[phi(m)sqrt(GAv)] [F^2+P^2/m^2]X^o(1),
+
+V_(m>=M)(P)
+ <<[F^4+F^2P^2/M^2]X^o(1).                            (14.1)
+```
+
+所以在 `P=F^2=D`取 `M=P^kappa`，全部
+`cond(chi)<=P^(1-kappa)` sector得到
+
+```text
+D^(-min(1,2kappa)+o(1)).                               (14.2)
+```
+
+若 downstream损 `D^lambda_D`，被删 sector支付 local strict `1/200`须
+`min(1,2kappa)-lambda_D>1/200`；在 `0<kappa<=1/2`时才等价于
+`kappa>1/400+lambda_D/2`，此后 saving饱和于 `D^(-1+o(1))`。这是真实的
+contract-level range compression；但
+若 coefficient只逐 `rho`给 uniform `L2`、却可随 modulus自适应，则 `(14.1)`不能用。
+actual atom membership因此仍是 OPEN。
+
+剩下的墙不是 primitive-only，而是对每个 fixed `kappa>0`的
+`m<P^kappa` primitive/near-primitive collar。`rho=51,f=17,m=3`的 exact
+normalized kernel coefficient为 `17/32`，说明 bounded cofactor只给常数改善。
+prime `p~F^2`上全部 nonprincipal characters又都是 maximal Gauss-square
+eigencharacters；literal Möbius/smooth equal-row subfamily有 exact fourth-moment
+floor `>>pF^2`。因此以下三种 shortcut已耗尽：
+
+```text
+phase-blind primitive eigenspace avoidance,
+phase-blind fourth moment / large sieve,
+outer mu(rho) alone.
+```
+
+最后一项在 prime sector尤其清楚：`mu(p)=-1`恒定，只能产生 logarithmic density
+而非 fixed power。以上都是 method/superclass firewalls，不是 actual signed packet
+lower bound。真正值得继续造的路是保留 root-number-square phase的
+
+```text
+HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE.
+```
+
+它必须接受 actual四多项式、fixed physical `h0=2`、physical
+`c_v=-2v conjugate(gab^2t^2)`、所有 masks/正负 shells、outer signs、uniform
+transform parameters及完整 loss ledger。若只在 frozen superclass上成立而没有
+actual membership，仍不给 fixed-atom credit。A2 paired-Voronoi、Bridge B与
+Hénon辅助岛继续独立；TPC-207 trigger仍为 `false`。

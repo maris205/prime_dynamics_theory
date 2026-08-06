@@ -3,6 +3,68 @@
 更新时间：2026-08-06
 交接状态：`SEALED_FOR_NEW_SESSION`
 
+第 61 节从已发布 V13 commit
+`ea1db5210f7db34a30bce372084dc2d4eee1b4a0`继续同一个 canonical
+`TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE`。V14只处理
+`P=F^(2-o(1))` top collar。写 `rho=fm`，其中 `f=cond(chi)`、
+`chi=Ind_f^(fm) psi`且 `psi` primitive。odd squarefree induction精确给
+
+```text
+tau_(fm)(conjugate chi)^2
+ = conjugate(psi)(m)^2 tau_f(conjugate psi)^2,
+mu(rho)/phi(rho)=mu(f)mu(m)/[phi(f)phi(m)].
+```
+
+所以 Gauss square只消去内部 `mu(m)^2`；outer `mu(m)`不消失。每条 character
+polynomial还必须显式保留 `(n,m)=1` mask，orientation仍是
+`E_1(conjugate psi)E_2(conjugate psi)U(psi)V_v(psi)`，physical phase为
+`psi(c_v)conjugate(psi)(m)^2`。这是 exact finite decomposition，不是 saving。
+
+对第 54.18、57.3 节已经冻结的 common-coefficient source contract，固定 `m` 后
+arithmetic arrays不依赖 varying primitive modulus `f`；残余 smooth modulus scalar由
+bounded-variation partial summation支付。因此可合法使用 primitive multiplicative
+large sieve。若 `N_E,N_L<=F^2`且两条 grouped energies分别为
+`F^2X^o(1)`与 `F^2/(GAv)X^o(1)`，则
+
+```text
+|T_(v,m)|
+ << F^2/[phi(m)sqrt(GAv)] * [F^2+P^2/m^2] X^o(1),
+
+V_(m>=M)(P)
+ << [F^4+F^2P^2/M^2]X^o(1).                         (TOP-CUTOFF)
+```
+
+在 `P=F^2=D`取 `M=P^kappa`，被删除的 low-secondary-conductor sector
+`m>=P^kappa`在 dyadic exponent尺度对应 `f<<P^(1-kappa)`；特别地全部
+`f<=P^(1-kappa)`均被删除，并获得
+`D^(-min(1,2kappa)+o(1))`。若 downstream另损 `D^lambda_D`，仅就该 sector支付
+local strict `1/200`须
+`min(1,2kappa)-lambda_D>1/200`；在 `0<kappa<=1/2`时等价于
+`kappa>1/400+lambda_D/2`，而 `kappa>=1/2`后 saving饱和于 `D^(-1+o(1))`。
+等号不能吸收 `X^o(1)`。这个正面结论只量化
+common-coefficient contract，不能升级到 V13额外允许的 arbitrary
+`rho`-dependent joint-`L2` superclass；actual-atom membership仍 OPEN。
+
+剩余墙不能再命名为 primitive-only。bounded cofactor `rho=3p,f=p,m=3`已有 exact
+operator fixture：`p=17`时 normalized Gauss-square coefficient为 `17/32`；一般
+`p=1 (mod 24)`时趋于 `1/2`，没有 fixed-power gain。prime modulus上全部
+nonprincipal characters本来就是 maximal Gauss-square eigenspace；literal
+Möbius/smooth equal-row subfamily的 primitive fourth-moment floor为 `pF^2`。因此
+frozen superclass上的 phase-blind eigenspace avoidance、fourth moment/large sieve
+均精确 `STOP_SCOPED`。这不是 actual signed packet lower bound；它反而说明下一步
+必须保留 root-number-square phase。prime sector又有 `mu(p)=-1`恒定，outer
+Möbius sign单独至多给 logarithmic而非 fixed-power saving。
+
+current first subgate更新为
+`HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE`：对每个 fixed
+`kappa>0`，只需处理 `m<P^kappa`的 primitive/near-primitive collar，并在 actual
+四多项式、physical `c_v=-2v conjugate(gab^2t^2)`、全部 masks/shells与 outer signs
+仍在式内时创造 fixed power。V14最高 claim仍是
+`CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE_AND_CORE_SHRINK`。actual-atom、
+all-`D`、exact cover、tails、A/B selection、original/global normalization与
+provenance仍 OPEN；TPC-207=false、fixed-atom credit=`0`、global strict
+`1/400=UNPAID`、`L2=NONE`。A2、Bridge B与 Hénon辅助岛保持独立。
+
 第 60 节从已发布 V12 commit
 `a1bbe9916841c8b546cae660eadf1be798104361`继续同一个 canonical
 `TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE`。V13 不再逐条支付 `u,k`，而是在
@@ -662,12 +724,12 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V13_20260806_RAMANUJAN_SIGNED_DIVISOR_PRODUCT_FIBER_MULTIPLICATIVE_GAUSS_SQUARE_OPERATOR_F5P_HALF_ALL_SQUAREFREE_TO_TWO_MINUS_DELTA_LOCAL_STRICT_DELTA_GT_ONE_OVER_50_PLUS_FOUR_LEDGER_COMMON_THREE_HALVES_CORE_CLOSED_TOP_PROJECTOR_COLLAR_OPEN_NO_GLOBAL_TRIGGER_CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE`
+`TPC_BIG_ROAD_V14_20260806_TOP_INDUCED_CONDUCTOR_EXACT_COMMON_COEFFICIENT_PRIMITIVE_LARGE_SIEVE_LARGE_SECONDARY_COFACTOR_M_GE_P_KAPPA_TAIL_F4_PLUS_F2P2_OVER_M2_D_MINUS_MIN_ONE_TWO_KAPPA_CONTRACT_RANGE_COMPRESSION_PHASE_BLIND_PRIMITIVE_AVOIDANCE_FALSE_PRIME_DIAGONAL_FLOOR_OUTER_MU_ALONE_CONSTANT_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE_OPEN_NO_GLOBAL_TRIGGER`
 下一篇：`null`；下一项不编号大动作：`TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE`
-；当前 first subgate：`HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION`
-（第 60 节控制；既有 local source只有在第 32.6 节或
+；当前 first subgate：`HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE`
+（第 61 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--60 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--61 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -680,7 +742,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 上下文节省入口：新会话先读 `TPC_COMPASS.md` 与
 `research/tpc-big-road/README.md`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--60 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--61 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -5694,7 +5756,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V13 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V14 current）
 
 ```text
 进入仓库：
@@ -5703,7 +5765,7 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--60 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--61 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -5797,7 +5859,16 @@ HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_WINDOW = PROVED_CONTRACT_LEVEL_TO_TW
 HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN
 PASCADI_DI_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH
 BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH
-HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_NEAR_PRIMITIVE_COLLAR
+HB4_EXACT_HALF_TOP_INDUCED_CONDUCTOR_DECOMPOSITION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_COMMON_COEFFICIENT_PRIMITIVE_LARGE_SIEVE = PROVED_SOURCE_BACKED_CONTRACT_LEVEL
+HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_CUTOFF = PROVED_CONTRACT_LEVEL_P_MINUS_MIN_ONE_TWO_KAPPA
+HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_STRICT_BUDGET = LOCAL_ONLY_MIN_ONE_TWO_KAPPA_MINUS_LEDGER_GT_ONE_OVER_200
+HB4_EXACT_HALF_TOP_FROZEN_SUPERCLASS_PRIMITIVE_AVOIDANCE = STOP_SCOPED_FALSE_LITERAL_MOBIUS_SMOOTH_EQUAL_ROW
+HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE = OPEN_ATTACHMENT
+HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE = STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR
+HB4_EXACT_HALF_TOP_OUTER_MU_ALONE = STOP_SCOPED_PRIME_SIGN_CONSTANT
+HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE = SELECTED_CORE_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 LARGE_D_QUOTIENT_MOBIUS_GATE = SUPERSEDED
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_ADDITIVE_DIFFERENCE_KERNEL_NORM_Q
@@ -5821,13 +5892,13 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮只执行第 60 节控制的同一个 canonical umbrella：
+下一轮只执行第 61 节控制的同一个 canonical umbrella：
 
 TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
 
 当前 primary subgate为
-`HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION`。
-V11--V13已经闭合四段，
+`HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE`。
+V11--V14已经闭合五段，
 不得重复：
 
 1. 全部 squarefree `rho<=F^(4/3-delta)`由
@@ -5848,20 +5919,27 @@ V11--V13已经闭合四段，
    `rho<=F^(2-delta)`有任意 fixed `eta_D<delta/4`；局部 strict
    `eta_D>1/200` budget连同
    downstream `D^lambda_D`须 `delta>1/50+4lambda_D`。
+5. 在 top collar写 `rho=fm`、`f=cond(chi)`。对第 54.18、57.3 节冻结的
+   common-coefficient source contract，primitive multiplicative large sieve给
+   `V_(m>=M)<<[F^4+F^2P^2/M^2]X^o(1)`。所以 `M=P^kappa`删除全部
+   `f<=P^(1-kappa)`，局部 saving为 `D^(-min(1,2kappa)+o(1))`；支付被删 sector
+   的 strict `1/200`须
+   `min(1,2kappa)-lambda_D>1/200`。这不适用于任意
+   `rho`-dependent coefficients，actual-atom membership仍 OPEN。
 
-下一步只攻击顶端 `rho=F^(2-o(1))` collar；由 `GPTAB asymp F^2`，exact endpoint
-主 cell迫使 `G,T,A,B`均在常数/次幂尺度。V13在 `rho=F^2`恰返回 `F^6`，故必须
-利用 `mu(rho)`、primitive-character projection或证明 actual product fibers避开最大
-Gauss-square eigenspaces，不能再靠 phase-blind operator norm。
-必须继续使用 exact conductor/cofactor/projector normal form：character坐标保留
-`mu(g)mu(r)epsilon_r(conjugate(psi))^2`与 physical
-`psi(-2 conjugate(g)conjugate(s)^2)`；additive坐标保留
-`mu(g)mu(rho)mu(b)`和
-`S(1,-2u k conjugate(g e_1e_2 a b^2 t^2);rho)`。允许 restricted proven windows
-逐 outer cell取绝对值，因为它们已独立支付 target；未解 core不得丢掉三枚 signs后
-再认领 collective saving。V13 中原 `mu(g)`已 exact转成 divisor sign `mu(v)`；不得
-误写成它仍作为 outer sign存在。优先寻找接受四条 actual character polynomials、
-root-number square与 outer `mu(rho)`的 varying-modulus dispersion/Kuznetsov theorem。
+下一步只攻击 `m<P^kappa` 的 primitive/near-primitive collar。induction后必须保留
+`mu(f)mu(m)/[phi(f)phi(m)]`、`conjugate(psi)(m)^2`、每条 polynomial的
+`(n,m)=1` mask及 orientation
+`E_1(conjugate psi)E_2(conjugate psi)U(psi)V_v(psi)`。不得把 Gauss square内部的
+`mu(m)^2=1`改写成 outer `mu(m)`也消失。bounded cofactor已有 `17/32` exact fixture；
+prime characters又几乎全部位于 maximal eigenspace，所以 conductor projection、
+phase-blind fourth moment/large sieve与 frozen-superclass eigenspace avoidance均已耗尽。
+这不是 actual signed packet lower bound：合法路线是证明保留 root-number-square phase的
+actual four-polynomial angle，或证明完整 varying-squarefree outer-`mu` collective theorem。
+prime sector的 `mu(p)=-1`恒定，不能把 outer sign单独记作 fixed-power saving。
+允许 restricted proven windows逐 outer cell取绝对值，因为它们已独立支付 target；
+未解 core不得丢掉 signs/phase后再认领 collective saving。V13 中原 `mu(g)`已 exact
+转成 divisor sign `mu(v)`，不得误写成它仍作为 outer sign存在。
 不得把 BP2607 scattered inverse support的 cardinality强写成 ordinary interval
 length，不得把 ordinary averaged-residue theorem升级为 prescribed `-2`，也不得把
 fixed-prime FKMS推广为 composite/varying modulus。Earnst direct large-`t` transfer、
@@ -9776,6 +9854,303 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 61. 2026-08-06 V14：secondary-conductor cutoff 与 near-primitive phase collar
+
+### 61.1 source lock、top geometry与 claim ceiling
+
+V14从已发布且本地/remote三 hash一致的 V13 commit启动：
+
+```text
+ea1db5210f7db34a30bce372084dc2d4eee1b4a0
+```
+
+启动 tracked/cached diff为空；130个 protected untracked files原样保留，canonical
+manifest仍为
+`9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1`。
+三个 `READ_ONLY_FROZEN` agents分别审核 top modulus dispersion、secondary
+conductor family及 actual outer spectrum；所有正式写入仍只由主控完成。
+
+本节继续 `(60.1.1)`的同一个 theorem-valid source contract，并只处理
+
+```text
+P=F^(2-epsilon_F), epsilon_F=o(1),
+GPTAB asymp F^2.                                      (61.1.1)
+```
+
+所以 `G,T,A,B,v=F^o(1)`、`U=F/G`、`J=F/(Av)`。V13的 exact product fibers继续
+逐字保留 `W^ell(avj/F)`、fixed physical `h0=2`、全部 masks、正负 `j` shells及
+physical `c_v=-2v conjugate(gab^2t^2)_rho`。
+
+本节最高结论是
+`CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE_AND_CORE_SHRINK`。它只给
+common-coefficient source contract上的 positive conductor-tail compression；actual
+atom membership、all-`D`、exact cover、tails、A/B selection、original/global
+normalization与 provenance仍分别 OPEN。
+
+### 61.2 exact induced-conductor decomposition
+
+写 `rho=fm`，令 `chi=Ind_f^(fm)psi`且 `psi` primitive mod `f`。odd squarefree
+induction给
+
+```text
+tau_(fm)(conjugate chi)
+ =mu(m)conjugate(psi)(m)tau_f(conjugate psi).          (61.2.1)
+```
+
+因此 V13 top cell精确变成
+
+```text
+sum_(fm~P) mu(f)mu(m)/[phi(f)phi(m)]
+ sum_(psi mod f)^*
+ psi(c_(v,f))conjugate(psi)(m)^2 tau_f(conjugate psi)^2
+ E_m(conjugate psi)L_(v,m)(psi),                       (61.2.2)
+```
+
+其中 `c_(v,f)=-2v conjugate(gab^2t^2)_f`。source atom分离时，最后一行是
+
+```text
+E_(1,m)(conjugate psi)E_(2,m)(conjugate psi)
+U_m(psi)V_(v,m)(psi).                                  (61.2.3)
+```
+
+`(61.2.1)`平方只令内部 `mu(m)^2=1`；outer `mu(m)`仍在 `(61.2.2)`。primitive
+character zero extension代管 `f`-unit mask，但每条 polynomial必须显式保留
+`(n,m)=1`。checker以 `rho=35,f=7,m=5`的 complex sextic character exact锁定
+`conjugate(psi)(m)^2`、physical `psi(c_v)`、outer sign及 orientation，并检测删 mask、
+错共轭、漏 cofactor-square和错误保留第三枚 `mu(m)`等 mutations。
+
+### 61.3 common-coefficient primitive large sieve
+
+固定 `m`。因 `|tau_f(conjugate psi)|^2=f`，Cauchy给
+
+```text
+|T_(v,m)|<=1/phi(m)[S_E(m)S_L(m)]^(1/2),              (61.3.1)
+```
+
+两项的 primitive-large-sieve权均为 exact `f/phi(f)`。第 54.18、57.3 节已冻结：
+coprimality expansion后，fixed outer variables与 transform parameter的 arithmetic
+arrays不依赖 varying primitive modulus `f`；残余 smooth modulus scalar由 BV partial
+summation移除。joint `E` block按 `n=e_1e_2` grouping后由 divisor bound保持
+`L2^2<<F^2X^o(1)`。所以
+[Pascadi Lemma 3.4](https://doi.org/10.1112/S0010437X2500747X)的 standard primitive
+multiplicative large sieve合法给
+
+```text
+S_E(m)<<[F^2+P^2/m^2]F^2X^o(1),
+S_L(m)<<[F^2+P^2/m^2]F^2/(GAv)X^o(1),
+
+|T_(v,m)|
+ <<F^2/[phi(m)sqrt(GAv)] [F^2+P^2/m^2]X^o(1).          (61.3.2)
+```
+
+若只有逐 `rho`给出的 `A_rho(e_1,e_2)`与 uniform `L2`，而 arrays可随 modulus
+自适应，则 `(61.3.2)`非法；不得把 V13 arbitrary joint-`L2` superclass升级成
+common coefficient。
+
+对 `m>=M`求和，使用
+`sum 1/phi(m)<<log P`与
+`sum_(m>=M)1/[phi(m)m^2]<<M^(-2)P^o(1)`，再乘回 physical `v`与 top outer
+ledger，得到
+
+```text
+V_(m>=M)(P)
+ <<[F^4+F^2P^2/M^2]X^o(1).                            (61.3.3)
+```
+
+`M^-2`来自 fixed-`m`的 `1/phi(m)`与 conductor-family `(P/m)^2`共同形成
+`m^-3` tail，不是把 pointwise operator gain重复计算。
+
+### 61.4 range、strict budget与 near-primitive剩余核
+
+在 `P=F^2=D`，top baseline为 `F^2P^2=F^6`。取 `M=P^kappa`，则
+
+```text
+V_(m>=P^kappa)/F^6
+ <<P^(-1+o(1))+P^(-2kappa+o(1))
+ =D^(-min(1,2kappa)+o(1)).                             (61.4.1)
+```
+
+所以对每个 fixed `kappa>0`，全部
+
+```text
+m>=P^kappa  ==>  f<<P^(1-kappa),
+f<=P^(1-kappa)  ==>  m>=P^kappa.                      (61.4.2)
+```
+
+已在 contract level闭合。若 downstream损 `D^lambda_D`，被删 sector支付 local
+strict `1/200`须
+
+```text
+min(1,2kappa)-lambda_D>1/200.                          (61.4.3)
+```
+
+在 `0<kappa<=1/2`时，`(61.4.3)`等价于
+`kappa>1/400+lambda_D/2`；`kappa>=1/2`时 saving饱和于 `D^(-1+o(1))`。
+等号不能吸收 `X^o(1)`。`(61.4.3)`不给剩余 core任何 credit。“subpower-cofactor
+collar”只表示每个 fixed-power-separated tail均已闭合，不声称 `kappa->0`有 uniform
+常数。
+
+### 61.5 两个 phase-blind STOP与真正的 surviving angle
+
+剩余核不能命名为 primitive-only。取 `rho=3p,f=p,m=3`、`p=1 (mod 24)`与
+primitive quadratic character，normalized Gauss-square coefficient为
+
+```text
+p/[2(p-1)] ->1/2.                                     (61.5.1)
+```
+
+checker的 exact最小方便实例 `rho=51,f=17`给 `17/32`。这只否定 conductor
+projection自身提供 fixed power；它是 coefficient-class/operator fixture，不是 actual
+Möbius packet lower bound。
+
+另取 prime `p~F^2`与长度 `O(F)` row
+`A(chi)=sum_n a(n)chi(n)`。支撑模 `p`单射时 exact有
+
+```text
+sum_(chi!=chi_0)|A(chi)|^2
+ =(p-1)||a||_2^2-|sum a|^2
+ >=(p-1-|supp a|)||a||_2^2.                            (61.5.2)
+```
+
+prime nonprincipal characters全部 primitive且 `|tau_p(chi)|^2=p`。在 frozen source
+envelope允许的 literal Möbius/smooth equal-row subfamily `E_1=E_2=E`中，Cauchy再给
+
+```text
+sum_(chi!=chi_0)|E(chi)|^4 >>pF^2.                    (61.5.3)
+```
+
+smooth equal `U=V`同样达到 endpoint scale。因此 frozen superclass上的 primitive
+eigenspace avoidance与 phase-blind fourth moment/large sieve精确 `STOP_SCOPED`；
+actual-atom-specific avoidance仍为 `OPEN_ATTACHMENT`。`mu(p)=-1`在 prime sector恒定，
+outer Möbius sign单独只给 `F^6/log F`级 logarithmic density，不给 fixed power。
+
+合法 surviving theorem必须保留 root-number-square phase，证明 actual fixed-prime/
+near-primitive angle，或证明完整 varying-squarefree outer-`mu` collective bound。
+current first subgate因此为
+
+```text
+HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE.
+                                                               (61.5.4)
+```
+
+它必须同时接受 literal physical coefficients、fixed `h0=2`、summation/prefix domain、
+`X/N/q` ranges、uniform constants、normalization、全部 masks/signed shells、physical
+`c_v`、non-Hermitian four-polynomial orientation与完整 physical-loss ledger。
+
+### 61.6 finite primary screen
+
+[Pascadi Theorem 10.3](https://arxiv.org/abs/2304.11696)把 moving coefficient放入
+level-dependent `L2` array时抹去 sign且在 top geometry返回 endpoint；若把 `rho`放入
+smooth modulus slot，则不接受 literal `mu(rho)`。
+[Blomer--Risager--Shparlinski Theorem 1.3](https://arxiv.org/html/2411.17823v3#S1.Thmtheorem3)
+的 literal statement在 sharp unweighted modulus sum中保持 fixed inner index，而
+physical index随 `rho`取 modular inverse；smooth-weight版本只能由相关
+Theorem 1.1/Remark 1.2或 partial summation另行导出，仍不接受 literal `mu(rho)`。
+[Earnst Theorem 1.6](https://arxiv.org/html/2603.22124v1#S1.Thmtheorem6)证明 prime-even
+root-number-square `|L(1/2,chi)|^2` moment的 fixed saving，是正面的 mechanism
+evidence；但其 AFE/fixed-twist coefficients不是 actual `E_1E_2UV`，不能替换。
+以上只是列明 statements的 attachment screen，不声称全局文献不存在。
+
+### 61.7 canonical V14 registry、岛屿地图与 release边界
+
+```text
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP = OPEN_ATTACHMENT
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT = PROVED_EXACT_EQUIVALENCE
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS
+GLOBAL_MOVING_UNIT_CAUCHY = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_PROJECTOR_CORE
+HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
+HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_PRIME_PROJECTOR_ATTACHMENT
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SMALL_PROJECTOR_ABSOLUTE_WEIL_DYADIC_BOUND = PROVED_CONTRACT_LEVEL_PARTIAL_THEOREM
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_SMALL_PROJECTOR_WINDOW = PROVED_CONTRACT_LEVEL_POWER_SAVING
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_150_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_LARGE_T_DIRECT_EARNST_TRANSFER = STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_AND_REASSEMBLY_MISMATCH
+HB4_EXACT_HALF_LARGE_T_PHASE_BLIND_CHARACTER_LARGE_SIEVE = STOP_SCOPED_ROOT_NUMBER_AND_PROJECTOR_GEOMETRY_ERASED
+HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS = STOP_SCOPED_FALSE_COEFFICIENT_SUBSTITUTION
+HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION = STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+BP2607_COMPLETE_BILINEAR_KLOOSTERMAN_L2 = SOURCE_BACKED_ANY_MODULUS_UNNORMALIZED
+HB4_EXACT_HALF_INVERSE_RESIDUE_TWO_ROW_TRANSFER = PROVED_EXACT_NORM_PRESERVING
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN
+BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION = STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL
+HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_TOP_PROJECTOR_COLLAR
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_PRODUCT_FIBER_TRANSFER = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_MULTIPLICATIVE_GAUSS_SQUARE_OPERATOR = PROVED_EXACT_ANY_ODD_SQUAREFREE
+HB4_EXACT_HALF_PRODUCT_FIBER_COLLISION_ENERGY = PROVED_ELEMENTARY_COMPOSITE_UNIFORM
+HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_WINDOW = PROVED_CONTRACT_LEVEL_TO_TWO_MINUS_DELTA
+HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN
+PASCADI_DI_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH
+BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH
+HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_NEAR_PRIMITIVE_COLLAR
+HB4_EXACT_HALF_TOP_INDUCED_CONDUCTOR_DECOMPOSITION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_COMMON_COEFFICIENT_PRIMITIVE_LARGE_SIEVE = PROVED_SOURCE_BACKED_CONTRACT_LEVEL
+HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_CUTOFF = PROVED_CONTRACT_LEVEL_P_MINUS_MIN_ONE_TWO_KAPPA
+HB4_EXACT_HALF_TOP_LARGE_SECONDARY_COFACTOR_STRICT_BUDGET = LOCAL_ONLY_MIN_ONE_TWO_KAPPA_MINUS_LEDGER_GT_ONE_OVER_200
+HB4_EXACT_HALF_TOP_FROZEN_SUPERCLASS_PRIMITIVE_AVOIDANCE = STOP_SCOPED_FALSE_LITERAL_MOBIUS_SMOOTH_EQUAL_ROW
+HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE = OPEN_ATTACHMENT
+HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE = STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR
+HB4_EXACT_HALF_TOP_OUTER_MU_ALONE = STOP_SCOPED_PRIME_SIGN_CONSTANT
+HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE = SELECTED_CORE_OPEN_NEW_THEOREM
+```
+
+岛屿图上 Bridge A1断点缩到 near-primitive phase collar；A2 paired-Voronoi、Bridge B
+distinguished-seed genericity与 Hénon辅助岛保持 source-lock独立。第 6 节全部旧
+method cells继续 `STOP_SCOPED`，尤其 TPC193 V1、common-`k` V1、tail-failure/A/B V1
+与 full-`r_Rr_R` ultra-complement V1。两个 O161 pointwise parents、pair-native
+reroute、H1与 global architecture继续 OPEN。
+
+本轮没有创建 TPC-207、paper directory、论文、PDF或 build log。fixed-atom
+credit=`0`、global strict `1/400=UNPAID`、`L2=NONE`、
+`TPC207_TRIGGER=false`。
+
+### 61.8 post-write fail-closed audit
+
+正式写入后，主控与三个 read-only agents分别完成数学、schema/mutation和 release
+审计。共同系数量词下的 `M^-2` tail、strict budget、prime diagonal floor及
+`OPEN_ATTACHMENT`/`STOP_SCOPED`边界均通过复核；agents没有修改、暂存或生成文件。
+当前 registry在六个文档块与 checker的两个 dict中均为 `56 raw / 56 unique`，键序、
+键值完全一致，canonical LF-final SHA-256为
+`d5844f93a3653ea24c36820beee899b46c742c5b89fb3e783a2b978a74889de2`。
+
+```text
+STARTUP_REGRESSION = 22/22 PASS
+TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+BIG_ROAD_READ_ONLY_CHECKERS = 3/3 PASS
+FM_LOCAL_COMPARISON_NORMAL_AND_OPTIMIZED = PASS
+GIT_DIFF_CHECK = PASS
+EXPECTED_TRACKED_RELEASE_FILES = 5
+PROTECTED_UNTRACKED = 130 FILES
+PROTECTED_UNTRACKED_MANIFEST_SHA256
+  = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+SUBAGENT_FILES_CHANGED = 0
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+TPC207_TRIGGER = false
+```
+
+Git的 LF-to-CRLF提示不影响 `git diff --check`，本轮也没有修改任何以 worktree raw
+bytes作证书的 tracked artifact。发布仍只允许 stage本节列出的五个预期文件；其余
+既有 untracked不得纳入提交。
 
 ## 60. 2026-08-06 V13：Ramanujan signed product-fiber 大路与顶端 `2` core
 
