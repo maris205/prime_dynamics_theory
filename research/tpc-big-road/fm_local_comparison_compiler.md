@@ -4,6 +4,7 @@ Status:
 
 ```text
 UNNUMBERED_WORKING_ARTIFACT
+ROUTE_VERSION_V15_ROOT_NUMBER_SQUARE_PRESCRIBED_PHASE
 COARSE_COMPARISON_TYPE_I_ADVANCE_RETAINED
 COARSE_COMPARISON_UNIVERSAL_TYPE_II_FALSE_LOCAL_RANK_ONE
 TENSOR_LOCAL_HYBRID_COMPARISON_EXACT_LOCAL_PROFILE_CONSTRUCTED
@@ -71,6 +72,17 @@ HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE = OPEN_ATTACHMENT
 HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE = STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR
 HB4_EXACT_HALF_TOP_OUTER_MU_ALONE = STOP_SCOPED_PRIME_SIGN_CONSTANT
 HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_TOP_BOUNDED_SUBPOWER_M_PRIMITIVE_ROOT_NUMBER_ANGLE_RETYPE = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_PRIME_GAUSS_ROOT_RECIPROCAL_ADDITIVE_FACTORIZATION = PROVED_EXACT_FINITE_REFINEMENT_OF_V9_NO_SAVING
+HB4_EXACT_HALF_TOP_GAUSS_ROOT_SPLIT_PHASE_BLIND_L2_TTSTAR = STOP_SCOPED_EXACT_NONPRINCIPAL_ISOMETRY_ENDPOINT
+HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_SECOND_MOMENT = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_AVERAGE_TO_PRESCRIBED_CV = STOP_SCOPED_PRESCRIBED_PHASE_AND_SHORT_FAMILY_MISMATCH
+HB4_EXACT_HALF_TOP_GENERIC_PRIME_TRACE_BILINEAR_RELATIVE_TO_GAUSS_UNITARY = STOP_SCOPED_SOURCE_SAVING_BELOW_EXACT_OPERATOR_BASELINE
+HB4_EXACT_HALF_TOP_EARNST_ACTUAL_PACKET_ATTACHMENT = STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_FIXED_TWIST_L1_AND_PARITY_MISMATCH
+HB4_EXACT_HALF_TOP_FIXED_M_TO_SUBPOWER_M_SUMMATION = CONDITIONAL_POLYNOMIAL_UNIFORM_CONSTANTS_SUFFICE
+HB4_EXACT_HALF_TOP_PRIME_DOMINATED_SQUAREFREE_CONDUCTOR = CONDITIONAL_ON_TENSOR_STABLE_ACTUAL_PRIME_ANGLE
+HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION = OPEN_NEW_COMPOSITE_OR_COMPLETELY_BOUNDED_TENSOR_THEOREM
+HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER = SELECTED_CORE_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH_PROVED_EXACT_ANALYTIC_HB4xHB2_GATE_OPEN
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION_STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI_INDEPENDENT_OPEN
@@ -79,7 +91,9 @@ HB4xHB2_COLLECTIVE_POLAR_MAIN_ATTACHMENT_OPEN
 DIRECT_DFI_ROW_BY_ROW_STOP_SCOPED_F7_VERSUS_F4
 CURRENT_UMBRELLA_GATE = TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
 CURRENT_PRIMARY_ROUTE = HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION
-CURRENT_FIRST_SUBGATE = HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE
+CURRENT_FIRST_SUBGATE = HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER
+CURRENT_COMPOSITE_FOLLOWUP = HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION
+CURRENT_SOURCE_SCAN = NO_SOURCE_BACKED_GAUSS_UNITARY_RELATIVE_SAVING
 CURRENT_INDEPENDENT_RESERVE = HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI
 TPC_THEOREM = NO
 TPC207_TRIGGER = false
@@ -4249,3 +4263,209 @@ This is a contract-level positive range compression and core shrink, not an
 actual physical endpoint theorem.  Fixed-atom credit remains `0`, global
 strict `1/400` is `UNPAID`, `L2=NONE`, and `TPC207_TRIGGER=false`.  Bridge A2,
 Bridge B and the Hénon/geometric auxiliary route remain source-lock independent.
+
+### 12.17 V15: root-number-square moment and the exact unitary firewall
+
+#### 12.17.1 Exact retype of the surviving collar
+
+Retain the V14 notation `rho=fm`, put `chi=conjugate(psi)`, and define
+
+```text
+delta_chi=(1-chi(-1))/2,
+epsilon_f(chi)=tau_f(chi)/(i^delta_chi sqrt(f)).
+```
+
+Then
+
+```text
+tau_f(chi)^2=f chi(-1)epsilon_f(chi)^2,                 (12.17.1)
+```
+
+and the complete induced layer is exactly
+
+```text
+sum_(fm~P) mu(f)mu(m)f/[phi(f)phi(m)]
+  sum_(chi mod f)^* chi(-1)chi(m^2)conjugate(chi)(c_(v,f))
+   epsilon_f(chi)^2 E_(1,m)(chi)E_(2,m)(chi)
+   U_m(conjugate chi)V_(v,m)(conjugate chi).            (12.17.2)
+```
+
+Here `c_(v,f)=-2v conjugate(gab^2t^2)_f`.  All four `(n,m)=1`
+masks, the outer `mu(m)/phi(m)`, both parities, signed `j` shells and the
+non-Hermitian orientation remain literal.  In particular the odd sector has
+the extra `chi(-1)=-1` and cannot be imported from an even-character theorem.
+
+For `f=ps`, `psi=alpha beta`, the primitive Gauss CRT formula gives the exact
+physical factorization
+
+```text
+psi(c)conjugate(psi)(m)^2 tau_f(conjugate psi)^2
+ = [alpha(c)conjugate(alpha)(ms)^2 tau_p(conjugate alpha)^2]
+   [beta(c)conjugate(beta)(mp)^2 tau_s(conjugate beta)^2].
+                                                               (12.17.3)
+```
+
+The checker verifies `(12.17.1)--(12.17.3)` in exact cyclotomic arithmetic for
+both parities and the primitive `3*5` fixture.  This is an exact coordinate
+change, not a saving.
+
+#### 12.17.2 Gauss-root split and prescribed phase
+
+In the prime stratum set
+
+```text
+C_i(r)=sum_(e conjugate(h)=r) mu(e)W_i(e)U_i(h),
+X_i(chi)=sum_r C_i(r)conjugate(chi)(r)
+        =E_i(conjugate chi)U_i(chi).
+```
+
+Choose `c_1c_2=c_v` and define
+
+```text
+B_i(x)=p^(-1/2)sum_r C_i(r)e_p(c_i x conjugate(r)).     (12.17.4)
+```
+
+Under the frozen Fourier convention,
+
+```text
+B_i^(chi)=p^(-1/2)tau_p(conjugate chi)chi(c_i)X_i(chi)
+```
+
+and the physical nonprincipal angle is
+
+```text
+A_p(c_v)
+ =(p-1)sum_(x!=0)B_1(x)B_2(x^(-1))
+   -B_1^(chi_0)B_2^(chi_0).                             (12.17.5)
+```
+
+There is no conjugation in the inverse-pair correlation.  The operator in
+`(12.17.4)` satisfies
+
+```text
+T_c^*T_c=I-J/p.                                         (12.17.6)
+```
+
+Thus every nonprincipal singular value is exactly one; the constant singular
+value is `p^(-1/2)`.  This is a refinement of the V9 Gauss-square/fixed-product
+equivalence, not an independent bridge.  Separate Cauchy, phase-blind `L2`,
+`TT*`, Parseval, or separate Poisson therefore returns to the same endpoint.
+
+There is also an exact complete-phase identity
+
+```text
+sum_(c in F_p^*)|A_p(c)|^2
+ =(p-1)sum_(chi!=chi_0)|Gamma(chi)Lambda(chi)|^2.        (12.17.7)
+```
+
+It is useful navigation but gives no prescribed `c_v` bound: the physical
+outer family supplies only `F^o(1)` phases rather than all `p-1` phases.  The
+checker includes an exact spectral concentration counterfixture to the false
+average-to-point promotion.
+
+#### 12.17.3 Source scale audit against the correct baseline
+
+The exact prime baseline is
+
+```text
+|A_p(c_v)|
+ <=[M_Gamma^*M_Lambda^*]^(1/2),
+M_Gamma^*=sum_(chi!=chi_0)|E_1(conjugate chi)E_2(conjugate chi)|^2,
+M_Lambda^*=sum_(chi!=chi_0)|U(chi)V(chi)|^2.             (12.17.8)
+```
+
+On the frozen contract, `B_unit<<F^(4+o(1))` is the reference upper envelope,
+and allowed superclass fixtures make that envelope sharp.  No two-sided
+asymptotic is asserted for the actual packet.  A theorem that is merely
+nontrivial relative to termwise Weil does not advance `(12.17.8)`.
+
+[Kowalski--Michel--Sawin, Theorem 1.1](https://arxiv.org/abs/1511.01636)
+gives a `p^(-1/64)` improvement in its normalized `M=N=sqrt(p)` product-
+kernel interval fixture.  The literal TPC ratio row first fails because
+`e -> conjugate(e)` sends an `F`-shell to inverse support, not an interval.
+Even granting the friendlier product-kernel surrogate, freezing the other two
+`F`-rows and restoring the unnormalized Kloosterman factor yields
+`F^(5-1/32)`, still `F^(31/32)` above the exact `F^4` reference envelope.
+Grouping both product fibers instead creates complete `p`-scale rows outside
+that theorem's range.
+
+[Fouvry--Kowalski--Michel--Sawin, Theorem 1.1](https://arxiv.org/html/2511.09459v3#S1.Thmtheorem1)
+has the schematic full-scale form
+`||alpha||||beta||(MN)^(1/2-eta)`.  At `M=N=p`, restoration of the physical
+`sqrt(p)` would beat the exact `p||alpha||||beta||` operator only if
+
+```text
+eta>=1/4+sigma_D/2                                      (12.17.9)
+```
+
+for a desired `p^(-sigma_D)` gain, with a fixed strict margin absorbing
+`o(1)`.  In particular any gain first requires `eta>1/4`.  The source
+supplies some positive `eta`, not the contract `(12.17.9)`.  Its
+explicit [Theorem 1.3](https://arxiv.org/html/2511.09459v3#S1.Thmtheorem3)
+with `l=2` has literal `N<=p^(7/8)`, so it cannot be applied at `N=p`.
+Even a deliberately non-theorem formal substitution gives normalized exponent
+`p^(29/32)`, which is `p^(13/32)` worse than the exact `p^(1/2)` unitary
+operator.  This V15 stop does not alter the shorter V11 prime-projector FKMS
+window where the literal range is valid.
+
+[Earnst, Theorem 1.6](https://arxiv.org/html/2603.22124v1#S1.Thmtheorem6)
+proves a prime/even root-number-square moment with a `q^(23/24+epsilon)` bound,
+but its coefficient is the special AFE weight `|L(1/2,chi)|^2`.  It is not the
+literal, nonconjugated `E_1E_2UV` packet and does not state both parities.
+Expanding four actual rows into fixed twists and applying the theorem termwise
+pays an uncontrolled `L1` reassembly loss.  The phase mechanism matches; the
+coefficient family and quantifiers do not.
+
+These are source-scoped attachment failures.  They do not assert that a new
+coefficient-sensitive theorem is impossible.
+
+#### 12.17.4 The two surviving theorem contracts
+
+The first contract is the actual prescribed-phase prime theorem: for some
+fixed `sigma_D>0`, uniformly over every admissible actual prime cell,
+
+```text
+|A_p(c_v)|
+ <<p^(-sigma_D+o(1))[M_Gamma^*M_Lambda^*]^(1/2).        (12.17.10)
+```
+
+It must retain fixed physical `h0=2`, principal subtraction, all masks and
+signed shells, literal Mobius rows, actual `c_v`, outer dyads, inert seminorm
+balls and the nonconjugated ordering.  Since `p~D=F^2`, a downstream loss
+`D^lambda_D` leaves the strict condition
+
+```text
+sigma_D-lambda_D>1/200.                                 (12.17.11)
+```
+
+Equivalently, for an `F^(-sigma_F)` statement,
+`sigma_F>1/100+2lambda_D`.  Equality cannot absorb `X^o(1)`.
+
+Polynomial dependence `C(m,s)<< (ms)^A tau(ms)^B` is harmless on
+`ms=P^o(1)`.  Under a tensor-stable version of `(12.17.10)`, `(12.17.3)` then
+conditionally closes the prime-dominated conductor stratum `f=ps` with
+`ms=P^o(1)`.  A theorem only for each fixed `m`, with uncontrolled constants,
+does not cover the growing collar.
+
+The second contract is genuinely composite.  A smooth squarefree `f` may have
+no fixed-power prime factor, so scalar iteration of a prime theorem supplies
+only `P^(-o(1))` and destroys the other local phases.  Completion therefore
+requires a completely bounded/tensor-stable squarefree-conductor theorem.
+
+The canonical V15 registry is the 67-row block at the top of this file.  Its
+new first subgate is
+
+```text
+HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER,
+```
+
+followed by
+
+```text
+HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION.
+```
+
+V15 proves exact retyping and operator firewalls but no new source-backed
+arithmetic saving.  Fixed-atom credit remains `0`, global strict `1/400` is
+`UNPAID`, `L2=NONE`, and `TPC207_TRIGGER=false`.  A2, Bridge B and the
+Hénon/geometric auxiliary route remain source-lock independent.

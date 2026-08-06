@@ -4,15 +4,18 @@
 The checker writes JSON only to stdout.  It verifies finite exact algebra,
 the exponent geometry, and mutation fixtures.  The hybrid comparison and
 Type-I theorems use source-backed analytic estimates and are not numerically
-proved by this checker.  The V14 common-coefficient secondary-conductor cutoff
-is audited at contract level; actual-atom attachment, the universal
-high-conductor Type-II umbrella, and the near-primitive Gauss-square angle
-remain open.
+proved by this checker.  V15 retains the V14 common-coefficient
+secondary-conductor cutoff, retypes its surviving collar as a root-number-
+square four-polynomial moment, and checks that generic trace-function bounds
+do not beat the already exact Gauss-unitary endpoint.  Actual-atom attachment,
+the coefficient-sensitive prime moment, and composite tensor completion remain
+open.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 from fractions import Fraction
@@ -611,15 +614,44 @@ def run_checks() -> dict[str, object]:
         "HB4_EXACT_HALF_TOP_OUTER_MU_ALONE": "STOP_SCOPED_PRIME_SIGN_CONSTANT",
         "HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE": "SELECTED_CORE_OPEN_NEW_THEOREM",
     }
+    v15_status_registry = {
+        **v14_status_registry,
+        "HB4_EXACT_HALF_TOP_BOUNDED_SUBPOWER_M_PRIMITIVE_ROOT_NUMBER_ANGLE_RETYPE": "PROVED_EXACT_FINITE",
+        "HB4_EXACT_HALF_TOP_PRIME_GAUSS_ROOT_RECIPROCAL_ADDITIVE_FACTORIZATION": "PROVED_EXACT_FINITE_REFINEMENT_OF_V9_NO_SAVING",
+        "HB4_EXACT_HALF_TOP_GAUSS_ROOT_SPLIT_PHASE_BLIND_L2_TTSTAR": "STOP_SCOPED_EXACT_NONPRINCIPAL_ISOMETRY_ENDPOINT",
+        "HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_SECOND_MOMENT": "PROVED_EXACT_FINITE",
+        "HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_AVERAGE_TO_PRESCRIBED_CV": "STOP_SCOPED_PRESCRIBED_PHASE_AND_SHORT_FAMILY_MISMATCH",
+        "HB4_EXACT_HALF_TOP_GENERIC_PRIME_TRACE_BILINEAR_RELATIVE_TO_GAUSS_UNITARY": "STOP_SCOPED_SOURCE_SAVING_BELOW_EXACT_OPERATOR_BASELINE",
+        "HB4_EXACT_HALF_TOP_EARNST_ACTUAL_PACKET_ATTACHMENT": "STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_FIXED_TWIST_L1_AND_PARITY_MISMATCH",
+        "HB4_EXACT_HALF_TOP_FIXED_M_TO_SUBPOWER_M_SUMMATION": "CONDITIONAL_POLYNOMIAL_UNIFORM_CONSTANTS_SUFFICE",
+        "HB4_EXACT_HALF_TOP_PRIME_DOMINATED_SQUAREFREE_CONDUCTOR": "CONDITIONAL_ON_TENSOR_STABLE_ACTUAL_PRIME_ANGLE",
+        "HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION": "OPEN_NEW_COMPOSITE_OR_COMPLETELY_BOUNDED_TENSOR_THEOREM",
+        "HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER": "SELECTED_CORE_OPEN_NEW_THEOREM",
+    }
+    v15_registry_rows = [
+        f"{key} = {value}" for key, value in v15_status_registry.items()
+    ]
+    v15_registry_final_lf_sha256 = hashlib.sha256(
+        ("\n".join(v15_registry_rows) + "\n").encode("utf-8")
+    ).hexdigest()
+    if not (
+        len(v15_registry_rows) == 67
+        and len(set(v15_status_registry)) == 67
+        and v15_registry_final_lf_sha256
+        == "cdc16629411afb8b126f533c23bf4cdd71f6af51223880bec69d456e9a620110"
+    ):
+        raise AssertionError("V15 canonical registry count/hash changed")
     route_freeze = {
-        "route_version": "V14",
+        "route_version": "V15",
         "umbrella_gate": umbrella_gate,
         "primary_route": primary_route,
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE",
+        "first_subgate": "HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER",
+        "composite_followup_gate": "HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION",
+        "source_scan_verdict": "NO_SOURCE_BACKED_GAUSS_UNITARY_RELATIVE_SAVING",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
         "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
-        "v14_status_registry": v14_status_registry,
+        "v15_status_registry": v15_status_registry,
         "independent_reserve": independent_reserve,
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
         "independent_polar_main_attachment": "OPEN_NEW_ATTACHMENT",
@@ -634,14 +666,16 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     expected_route_freeze = {
-        "route_version": "V14",
+        "route_version": "V15",
         "umbrella_gate": "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE",
         "primary_route": "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION",
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE",
+        "first_subgate": "HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER",
+        "composite_followup_gate": "HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION",
+        "source_scan_verdict": "NO_SOURCE_BACKED_GAUSS_UNITARY_RELATIVE_SAVING",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
         "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
-        "v14_status_registry": {
+        "v15_status_registry": {
             "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
             "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
             "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
@@ -698,6 +732,17 @@ def run_checks() -> dict[str, object]:
             "HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE": "STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR",
             "HB4_EXACT_HALF_TOP_OUTER_MU_ALONE": "STOP_SCOPED_PRIME_SIGN_CONSTANT",
             "HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE": "SELECTED_CORE_OPEN_NEW_THEOREM",
+            "HB4_EXACT_HALF_TOP_BOUNDED_SUBPOWER_M_PRIMITIVE_ROOT_NUMBER_ANGLE_RETYPE": "PROVED_EXACT_FINITE",
+            "HB4_EXACT_HALF_TOP_PRIME_GAUSS_ROOT_RECIPROCAL_ADDITIVE_FACTORIZATION": "PROVED_EXACT_FINITE_REFINEMENT_OF_V9_NO_SAVING",
+            "HB4_EXACT_HALF_TOP_GAUSS_ROOT_SPLIT_PHASE_BLIND_L2_TTSTAR": "STOP_SCOPED_EXACT_NONPRINCIPAL_ISOMETRY_ENDPOINT",
+            "HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_SECOND_MOMENT": "PROVED_EXACT_FINITE",
+            "HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_AVERAGE_TO_PRESCRIBED_CV": "STOP_SCOPED_PRESCRIBED_PHASE_AND_SHORT_FAMILY_MISMATCH",
+            "HB4_EXACT_HALF_TOP_GENERIC_PRIME_TRACE_BILINEAR_RELATIVE_TO_GAUSS_UNITARY": "STOP_SCOPED_SOURCE_SAVING_BELOW_EXACT_OPERATOR_BASELINE",
+            "HB4_EXACT_HALF_TOP_EARNST_ACTUAL_PACKET_ATTACHMENT": "STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_FIXED_TWIST_L1_AND_PARITY_MISMATCH",
+            "HB4_EXACT_HALF_TOP_FIXED_M_TO_SUBPOWER_M_SUMMATION": "CONDITIONAL_POLYNOMIAL_UNIFORM_CONSTANTS_SUFFICE",
+            "HB4_EXACT_HALF_TOP_PRIME_DOMINATED_SQUAREFREE_CONDUCTOR": "CONDITIONAL_ON_TENSOR_STABLE_ACTUAL_PRIME_ANGLE",
+            "HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION": "OPEN_NEW_COMPOSITE_OR_COMPLETELY_BOUNDED_TENSOR_THEOREM",
+            "HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER": "SELECTED_CORE_OPEN_NEW_THEOREM",
         },
         "independent_reserve": "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI",
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
@@ -713,7 +758,7 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     if route_freeze != expected_route_freeze:
-        raise AssertionError("V14 route/physical freeze changed")
+        raise AssertionError("V15 route/physical freeze changed")
     v14_claim_boundary_exact = (
         v14_status_registry[
             "HB4_EXACT_HALF_TOP_FROZEN_SUPERCLASS_PRIMITIVE_AVOIDANCE"
@@ -736,6 +781,34 @@ def run_checks() -> dict[str, object]:
     )
     if not v14_claim_boundary_exact:
         raise AssertionError("V14 superclass/actual/phase claim boundary changed")
+    v15_claim_boundary_exact = (
+        v15_status_registry[
+            "HB4_EXACT_HALF_TOP_GAUSS_ROOT_SPLIT_PHASE_BLIND_L2_TTSTAR"
+        ]
+        == "STOP_SCOPED_EXACT_NONPRINCIPAL_ISOMETRY_ENDPOINT"
+        and v15_status_registry[
+            "HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_AVERAGE_TO_PRESCRIBED_CV"
+        ]
+        == "STOP_SCOPED_PRESCRIBED_PHASE_AND_SHORT_FAMILY_MISMATCH"
+        and v15_status_registry[
+            "HB4_EXACT_HALF_TOP_GENERIC_PRIME_TRACE_BILINEAR_RELATIVE_TO_GAUSS_UNITARY"
+        ]
+        == "STOP_SCOPED_SOURCE_SAVING_BELOW_EXACT_OPERATOR_BASELINE"
+        and v15_status_registry[
+            "HB4_EXACT_HALF_TOP_EARNST_ACTUAL_PACKET_ATTACHMENT"
+        ]
+        == "STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_FIXED_TWIST_L1_AND_PARITY_MISMATCH"
+        and v15_status_registry[
+            "HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION"
+        ]
+        == "OPEN_NEW_COMPOSITE_OR_COMPLETELY_BOUNDED_TENSOR_THEOREM"
+        and v15_status_registry[
+            "HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER"
+        ]
+        == "SELECTED_CORE_OPEN_NEW_THEOREM"
+    )
+    if not v15_claim_boundary_exact:
+        raise AssertionError("V15 source-stop/open-master boundary changed")
     if primary_route == independent_reserve:
         raise AssertionError("independent V10 source locks were merged")
     route_mutations: list[dict[str, object]] = []
@@ -762,42 +835,70 @@ def run_checks() -> dict[str, object]:
     numbered_trigger["TPC_207_TRIGGER"] = True
     route_mutations.append(numbered_trigger)
     weakened_registry = dict(route_freeze)
-    weakened_statuses = dict(v14_status_registry)
+    weakened_statuses = dict(v15_status_registry)
     weakened_statuses["GLOBAL_MOVING_UNIT_CAUCHY"] = "OPEN"
-    weakened_registry["v14_status_registry"] = weakened_statuses
+    weakened_registry["v15_status_registry"] = weakened_statuses
     route_mutations.append(weakened_registry)
     actual_atom_false_stop = dict(route_freeze)
-    actual_atom_false_stop_statuses = dict(v14_status_registry)
+    actual_atom_false_stop_statuses = dict(v15_status_registry)
     actual_atom_false_stop_statuses[
         "HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE"
     ] = "STOP_SCOPED_FALSE_LITERAL_MOBIUS_SMOOTH_EQUAL_ROW"
-    actual_atom_false_stop["v14_status_registry"] = actual_atom_false_stop_statuses
+    actual_atom_false_stop["v15_status_registry"] = actual_atom_false_stop_statuses
     route_mutations.append(actual_atom_false_stop)
     phase_blind_reopened = dict(route_freeze)
-    phase_blind_reopened_statuses = dict(v14_status_registry)
+    phase_blind_reopened_statuses = dict(v15_status_registry)
     phase_blind_reopened_statuses[
         "HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE"
     ] = "OPEN"
-    phase_blind_reopened["v14_status_registry"] = phase_blind_reopened_statuses
+    phase_blind_reopened["v15_status_registry"] = phase_blind_reopened_statuses
     route_mutations.append(phase_blind_reopened)
     outer_mu_promoted = dict(route_freeze)
-    outer_mu_promoted_statuses = dict(v14_status_registry)
+    outer_mu_promoted_statuses = dict(v15_status_registry)
     outer_mu_promoted_statuses[
         "HB4_EXACT_HALF_TOP_OUTER_MU_ALONE"
     ] = "PROVED_POWER_SAVING"
-    outer_mu_promoted["v14_status_registry"] = outer_mu_promoted_statuses
+    outer_mu_promoted["v15_status_registry"] = outer_mu_promoted_statuses
     route_mutations.append(outer_mu_promoted)
     surviving_angle_promoted = dict(route_freeze)
-    surviving_angle_promoted_statuses = dict(v14_status_registry)
+    surviving_angle_promoted_statuses = dict(v15_status_registry)
     surviving_angle_promoted_statuses[
         "HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE"
     ] = "PROVED"
     surviving_angle_promoted[
-        "v14_status_registry"
+        "v15_status_registry"
     ] = surviving_angle_promoted_statuses
     route_mutations.append(surviving_angle_promoted)
+    generic_trace_promoted = dict(route_freeze)
+    generic_trace_promoted_statuses = dict(v15_status_registry)
+    generic_trace_promoted_statuses[
+        "HB4_EXACT_HALF_TOP_GENERIC_PRIME_TRACE_BILINEAR_RELATIVE_TO_GAUSS_UNITARY"
+    ] = "PROVED_POWER_SAVING"
+    generic_trace_promoted["v15_status_registry"] = generic_trace_promoted_statuses
+    route_mutations.append(generic_trace_promoted)
+    earnst_promoted = dict(route_freeze)
+    earnst_promoted_statuses = dict(v15_status_registry)
+    earnst_promoted_statuses[
+        "HB4_EXACT_HALF_TOP_EARNST_ACTUAL_PACKET_ATTACHMENT"
+    ] = "PROVED"
+    earnst_promoted["v15_status_registry"] = earnst_promoted_statuses
+    route_mutations.append(earnst_promoted)
+    composite_promoted = dict(route_freeze)
+    composite_promoted_statuses = dict(v15_status_registry)
+    composite_promoted_statuses[
+        "HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION"
+    ] = "PROVED"
+    composite_promoted["v15_status_registry"] = composite_promoted_statuses
+    route_mutations.append(composite_promoted)
+    master_promoted = dict(route_freeze)
+    master_promoted_statuses = dict(v15_status_registry)
+    master_promoted_statuses[
+        "HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER"
+    ] = "PROVED"
+    master_promoted["v15_status_registry"] = master_promoted_statuses
+    route_mutations.append(master_promoted)
     if any(mutation == expected_route_freeze for mutation in route_mutations):
-        raise AssertionError("V14 route/physical mutation escaped")
+        raise AssertionError("V15 route/physical mutation escaped")
     sample_a1 = Fraction(3, 1)
     sample_a2 = Fraction(5, 1)
     outer_switched_value = -6 * (sample_a1 - sample_a2)
@@ -2727,6 +2828,295 @@ def run_checks() -> dict[str, object]:
     ):
         raise AssertionError("V14 cutoff exponent or source scope mutation escaped")
 
+    # V15 retypes the bounded/subpower-cofactor collar without changing a
+    # coefficient.  A primitive character chi has
+    # tau_f(chi)^2=f*chi(-1)*epsilon_f(chi)^2.  The exact f=3*5 fixture below
+    # also checks every CRT cross twist in the physical phase.  Arrays live in
+    # Z[zeta_60], so no floating root number or tolerance is used.
+    v15_cyclotomic_order = 60
+
+    def v15_quadratic_mod_3_exponent(value: int, conjugate: bool = False) -> int:
+        del conjugate
+        residue = value % 3
+        if residue == 0:
+            raise ValueError("quadratic character evaluated at a nonunit")
+        return 0 if residue == 1 else 30
+
+    def v15_quartic_mod_5_exponent(value: int, conjugate: bool = False) -> int:
+        residue = value % 5
+        if residue == 0:
+            raise ValueError("quartic character evaluated at a nonunit")
+        exponent = {1: 0, 2: 15, 3: 45, 4: 30}[residue]
+        return (-exponent) % v15_cyclotomic_order if conjugate else exponent
+
+    v15_tau_3_bar = [0] * v15_cyclotomic_order
+    for residue in range(3):
+        if math.gcd(residue, 3) == 1:
+            exponent = (
+                v15_quadratic_mod_3_exponent(residue, conjugate=True)
+                + residue * (v15_cyclotomic_order // 3)
+            ) % v15_cyclotomic_order
+            v15_tau_3_bar[exponent] += 1
+    v15_tau_5_bar = [0] * v15_cyclotomic_order
+    for residue in range(5):
+        if math.gcd(residue, 5) == 1:
+            exponent = (
+                v15_quartic_mod_5_exponent(residue, conjugate=True)
+                + residue * (v15_cyclotomic_order // 5)
+            ) % v15_cyclotomic_order
+            v15_tau_5_bar[exponent] += 1
+    v15_tau_15_bar = [0] * v15_cyclotomic_order
+    for residue in range(15):
+        if math.gcd(residue, 15) == 1:
+            exponent = (
+                v15_quadratic_mod_3_exponent(residue, conjugate=True)
+                + v15_quartic_mod_5_exponent(residue, conjugate=True)
+                + residue * (v15_cyclotomic_order // 15)
+            ) % v15_cyclotomic_order
+            v15_tau_15_bar[exponent] += 1
+    v15_crt_scalar_exponent = (
+        v15_quadratic_mod_3_exponent(5, conjugate=True)
+        + v15_quartic_mod_5_exponent(3, conjugate=True)
+    ) % v15_cyclotomic_order
+    v15_tau_15_expected = cyclic_shift_scaled(
+        cyclic_integer_convolution(v15_tau_3_bar, v15_tau_5_bar),
+        v15_crt_scalar_exponent,
+    )
+    if not general_cyclotomic_integer_equal(
+        v15_tau_15_bar, v15_tau_15_expected
+    ):
+        raise AssertionError("V15 primitive squarefree Gauss CRT failed")
+
+    v15_physical_c = 7
+    v15_secondary_m = 2
+    v15_direct_phase_exponent = (
+        v15_quadratic_mod_3_exponent(v15_physical_c)
+        + v15_quartic_mod_5_exponent(v15_physical_c)
+        + 2
+        * (
+            v15_quadratic_mod_3_exponent(v15_secondary_m, conjugate=True)
+            + v15_quartic_mod_5_exponent(v15_secondary_m, conjugate=True)
+        )
+    ) % v15_cyclotomic_order
+    v15_direct_physical_kernel = cyclic_shift_scaled(
+        cyclic_integer_convolution(v15_tau_15_bar, v15_tau_15_bar),
+        v15_direct_phase_exponent,
+    )
+    v15_local_3_phase = (
+        v15_quadratic_mod_3_exponent(v15_physical_c)
+        + 2
+        * v15_quadratic_mod_3_exponent(
+            v15_secondary_m * 5, conjugate=True
+        )
+    ) % v15_cyclotomic_order
+    v15_local_5_phase = (
+        v15_quartic_mod_5_exponent(v15_physical_c)
+        + 2
+        * v15_quartic_mod_5_exponent(
+            v15_secondary_m * 3, conjugate=True
+        )
+    ) % v15_cyclotomic_order
+    v15_factored_physical_kernel = cyclic_integer_convolution(
+        cyclic_shift_scaled(
+            cyclic_integer_convolution(v15_tau_3_bar, v15_tau_3_bar),
+            v15_local_3_phase,
+        ),
+        cyclic_shift_scaled(
+            cyclic_integer_convolution(v15_tau_5_bar, v15_tau_5_bar),
+            v15_local_5_phase,
+        ),
+    )
+    if not general_cyclotomic_integer_equal(
+        v15_direct_physical_kernel, v15_factored_physical_kernel
+    ):
+        raise AssertionError("V15 physical CRT root-square phase failed")
+    v15_missing_cross_twists = cyclic_integer_convolution(
+        cyclic_shift_scaled(
+            cyclic_integer_convolution(v15_tau_3_bar, v15_tau_3_bar),
+            (
+                v15_quadratic_mod_3_exponent(v15_physical_c)
+                + 2
+                * v15_quadratic_mod_3_exponent(
+                    v15_secondary_m, conjugate=True
+                )
+            )
+            % v15_cyclotomic_order,
+        ),
+        cyclic_shift_scaled(
+            cyclic_integer_convolution(v15_tau_5_bar, v15_tau_5_bar),
+            (
+                v15_quartic_mod_5_exponent(v15_physical_c)
+                + 2
+                * v15_quartic_mod_5_exponent(
+                    v15_secondary_m, conjugate=True
+                )
+            )
+            % v15_cyclotomic_order,
+        ),
+    )
+    v15_crt_cross_twist_mutation_detected = not general_cyclotomic_integer_equal(
+        v15_direct_physical_kernel, v15_missing_cross_twists
+    )
+    if not v15_crt_cross_twist_mutation_detected:
+        raise AssertionError("V15 missing CRT cross twists escaped")
+    v15_root_number_retype_cases = 0
+    for character_index, parity in ((1, -1), (2, 1)):
+        tau_bar = [0] * v15_cyclotomic_order
+        for residue in range(5):
+            if math.gcd(residue, 5) != 1:
+                continue
+            exponent = (
+                -character_index
+                * v15_quartic_mod_5_exponent(residue)
+                + residue * (v15_cyclotomic_order // 5)
+            ) % v15_cyclotomic_order
+            tau_bar[exponent] += 1
+        tau_square = cyclic_integer_convolution(tau_bar, tau_bar)
+        f_epsilon_square = [parity * coefficient for coefficient in tau_square]
+        reconstructed = [parity * coefficient for coefficient in f_epsilon_square]
+        if not general_cyclotomic_integer_equal(tau_square, reconstructed):
+            raise AssertionError("V15 root-number-square parity retype failed")
+        if parity == -1 and general_cyclotomic_integer_equal(
+            tau_square, f_epsilon_square
+        ):
+            raise AssertionError("V15 odd root-number parity omission escaped")
+        v15_root_number_retype_cases += 1
+    v15_squarefree_crt_phase_cases = 1
+
+    # The reciprocal additive Gauss root T_c is a factorization of the V9
+    # operator, not a saving: p*T_c^*T_c has p-1 on the diagonal and -1 off
+    # it, i.e. T_c^*T_c=I-J/p.  The check is exact in Z[zeta_p].
+    v15_gauss_root_prime = 7
+    v15_gauss_root_isometry_cases = 0
+    for left in range(1, v15_gauss_root_prime):
+        for right in range(1, v15_gauss_root_prime):
+            gram = [0] * v15_gauss_root_prime
+            for x in range(1, v15_gauss_root_prime):
+                exponent = (
+                    x
+                    * (
+                        pow(left, -1, v15_gauss_root_prime)
+                        - pow(right, -1, v15_gauss_root_prime)
+                    )
+                ) % v15_gauss_root_prime
+                gram[exponent] += 1
+            expected_gram = [0] * v15_gauss_root_prime
+            expected_gram[0] = (
+                v15_gauss_root_prime - 1 if left == right else -1
+            )
+            if not cyclotomic_integer_equal(gram, expected_gram):
+                raise AssertionError("V15 Gauss-root isometry failed")
+            v15_gauss_root_isometry_cases += 1
+
+    # Complete phase averaging is exact, but it cannot prescribe c_v.  The
+    # second fixture concentrates a legal nonprincipal spectrum at one phase.
+    v15_phase_coefficients = ((1, 2), (-1, 1), (2, -1))
+    v15_phase_energy = 0
+    for unit in range(1, 5):
+        phase_value = (0, 0)
+        for character_index, coefficient in enumerate(
+            v15_phase_coefficients, start=1
+        ):
+            phase_value = gaussian_add(
+                phase_value,
+                gaussian_mul(
+                    coefficient,
+                    quartic_family_character_mod_5(unit, character_index),
+                ),
+            )
+        v15_phase_energy += phase_value[0] ** 2 + phase_value[1] ** 2
+    v15_spectral_energy = sum(
+        real * real + imaginary * imaginary
+        for real, imaginary in v15_phase_coefficients
+    )
+    if v15_phase_energy != 4 * v15_spectral_energy:
+        raise AssertionError("V15 complete-phase second moment failed")
+    v15_concentrated_phase_squares: list[int] = []
+    for unit in range(1, 5):
+        phase_value = (0, 0)
+        for character_index in range(1, 4):
+            phase_value = gaussian_add(
+                phase_value,
+                quartic_family_character_mod_5(unit, character_index),
+            )
+        v15_concentrated_phase_squares.append(
+            phase_value[0] ** 2 + phase_value[1] ** 2
+        )
+    v15_phase_average_to_point_mutation_detected = (
+        max(v15_concentrated_phase_squares) * 4
+        > sum(v15_concentrated_phase_squares)
+    )
+    if not v15_phase_average_to_point_mutation_detected:
+        raise AssertionError("V15 complete phase average was promoted to c_v")
+    v15_complete_phase_second_moment_cases = 1
+
+    # At full product-fiber scale M=N=p, the explicit l=2 FKMS expression is
+    # not in its literal N-range.  Even a formal substitution gives p^(29/32)
+    # for normalized Kl_2, versus the exact multiplicative-operator p^(1/2).
+    # Restoring sqrt(p) leaves p^(45/32) versus p, a p^(13/32) deficit.
+    v15_fkms_l = 2
+    v15_fkms_n_length_cap = Fraction(1, 2) + Fraction(3, 4 * v15_fkms_l)
+    v15_full_product_fiber_length = Fraction(1, 1)
+    v15_fkms_full_scale_range_failure = (
+        v15_full_product_fiber_length > v15_fkms_n_length_cap
+    )
+    v15_fkms_formal_normalized_exponent = Fraction(29, 32)
+    v15_exact_unitary_normalized_exponent = Fraction(1, 2)
+    v15_fkms_formal_deficit = (
+        v15_fkms_formal_normalized_exponent
+        - v15_exact_unitary_normalized_exponent
+    )
+    v15_test_sigma_d = Fraction(1, 100)
+    v15_eta_required_for_test_sigma_d = (
+        Fraction(1, 4) + v15_test_sigma_d / 2
+    )
+    v15_sigma_d_from_eta = (
+        2 * v15_eta_required_for_test_sigma_d - Fraction(1, 2)
+    )
+    v15_fkms_margin_identity = (
+        Fraction(3, 2) - 2 * v15_eta_required_for_test_sigma_d
+        == 1 - v15_test_sigma_d
+        and v15_sigma_d_from_eta == v15_test_sigma_d
+    )
+    if not (
+        v15_fkms_full_scale_range_failure
+        and v15_fkms_formal_deficit == Fraction(13, 32)
+        and v15_fkms_formal_normalized_exponent + Fraction(1, 2)
+        == Fraction(45, 32)
+        and v15_fkms_margin_identity
+    ):
+        raise AssertionError("V15 generic trace/unitary exponent firewall failed")
+    v15_generic_trace_baseline_cases = 1
+
+    # A future p^(-sigma_D) actual-angle theorem would pay the D-ledger
+    # directly because p~D=F^2.  Equality at 1/200 is not strict.  Polynomial
+    # dependence on m is harmless only on a genuinely subpower collar.
+    v15_sigma_d_equality = Fraction(1, 200)
+    v15_sigma_d_margin = Fraction(1, 100)
+    v15_strict_sigma_equality_detected = (
+        v15_sigma_d_equality == v10_strict_d_saving_exponent
+        and not v15_sigma_d_equality > v10_strict_d_saving_exponent
+        and v15_sigma_d_margin > v10_strict_d_saving_exponent
+    )
+    v15_subpower_polynomial_loss_cases = 0
+    for constant_exponent, sigma_d, kappa, expected_loss in (
+        (Fraction(1, 1), Fraction(1, 100), Fraction(1, 20), Fraction(0, 1)),
+        (
+            Fraction(3, 1),
+            Fraction(1, 100),
+            Fraction(1, 20),
+            Fraction(101, 2000),
+        ),
+    ):
+        actual_loss = kappa * max(
+            Fraction(0, 1), constant_exponent + sigma_d - 2
+        )
+        if actual_loss != expected_loss:
+            raise AssertionError("V15 subpower-m constant ledger failed")
+        v15_subpower_polynomial_loss_cases += 1
+    if not v15_strict_sigma_equality_detected:
+        raise AssertionError("V15 strict root-angle budget mutation escaped")
+
     hb_padding_slots = 6 * math.ceil(Fraction(1, 1) / (1 - HALF))
     if hb_padding_slots != 12:
         raise AssertionError("Ford--Maynard Lemma 7.14 slot count failed")
@@ -3536,8 +3926,13 @@ def run_checks() -> dict[str, object]:
             "V11 Weil/FKMS windows and the V12 all-squarefree inverse-residue "
             "window are retained, V13 proves the product-fiber window "
             "P<=F^(2-delta), and V14 removes every fixed-power-separated "
-            "secondary-conductor tail on the common-coefficient contract; "
-            "actual-atom attachment, the near-primitive Gauss-square angle, "
+            "secondary-conductor tail on the common-coefficient contract; V15 "
+            "retypes the surviving collar as an actual root-number-square "
+            "four-polynomial moment, proves the Gauss-root isometry and "
+            "complete-phase mean, and records that checked generic trace "
+            "bounds do not beat the exact unitary endpoint; actual-atom "
+            "attachment, the coefficient-sensitive prescribed-phase moment, "
+            "composite tensor completion, "
             "the full signed Type-IV "
             "construction, the fixed-margin-free endpoint, and "
             "structured two-row paired-Voronoi theorem remain open"
@@ -3648,6 +4043,29 @@ def run_checks() -> dict[str, object]:
             "v14_bounded_cofactor_normalized_fixture": str(
                 v14_sharp_normalized
             ),
+            "v15_fkms_l2_literal_N_cap_exponent": str(
+                v15_fkms_n_length_cap
+            ),
+            "v15_fkms_formal_normalized_exponent": str(
+                v15_fkms_formal_normalized_exponent
+            ),
+            "v15_exact_unitary_normalized_exponent": str(
+                v15_exact_unitary_normalized_exponent
+            ),
+            "v15_fkms_formal_deficit_over_unitary": str(
+                v15_fkms_formal_deficit
+            ),
+            "v15_fkms_eta_condition_for_p_minus_sigma_D": (
+                "eta>=1/4+sigma_D/2"
+            ),
+            "v15_fkms_equivalent_sigma_D_ceiling": "sigma_D<=2*eta-1/2",
+            "v15_future_prime_angle_strict_condition": (
+                "sigma_D-lambda_D>1/200"
+            ),
+            "v15_equivalent_F_saving_condition": (
+                "sigma_F>1/100+2*lambda_D"
+            ),
+            "v15_registry_final_lf_sha256": v15_registry_final_lf_sha256,
             "lemma_7_14_padding_slots": hb_padding_slots,
             "bc_h2_j1_worst": str(bc_h2_j1_worst),
             "bc_h3_thin_worst": str(bc_h3_thin_worst),
@@ -3782,6 +4200,15 @@ def run_checks() -> dict[str, object]:
             "literal finite Mobius rows have a prime primitive second-moment identity and phase-blind fourth-moment floor",
             "outer mu(p) is constant minus one throughout the prime top collar",
             "the remaining top gate is the phase-sensitive near-primitive Gauss-square four-polynomial angle",
+            "tau_f(chi)^2=f*chi(-1)*epsilon_f(chi)^2 retains the odd parity sign",
+            "the f=3*5 primitive CRT factorization retains m*s, m*p, c_v, and both character orientations",
+            "the reciprocal additive Gauss-root transform refines the V9 operator and is exactly isometric on the nonprincipal space",
+            "complete phase-c averaging has an exact second moment but does not bound the prescribed physical c_v",
+            "the literal FKMS l=2 N-cap excludes the full product-fiber scale and its formal exponent remains p^(13/32) above exact unitarity",
+            "a p^(-sigma_D) gain from the schematic full-scale trace exponent requires eta>=1/4+sigma_D/2",
+            "a future p^(-sigma_D) actual angle pays the strict D-ledger only when sigma_D-lambda_D>1/200",
+            "fixed polynomial m-dependence is harmless only on a genuinely subpower cofactor collar",
+            "the V15 source scan supplies no theorem-backed saving relative to the exact Gauss-unitary baseline",
             "V10 primary and independent source locks remain separate with zero physical credit",
             "outer minus six converts source A1-A2 into physical A2-A1",
         ],
@@ -3833,6 +4260,13 @@ def run_checks() -> dict[str, object]:
             "v14_bounded_cofactor_sharpness": v14_bounded_cofactor_sharpness_cases,
             "v14_prime_primitive_mass": v14_prime_primitive_mass_cases,
             "v14_large_cofactor_tail_exponents": v14_tail_exponent_cases,
+            "v15_root_number_parity_retype": v15_root_number_retype_cases,
+            "v15_squarefree_crt_physical_phase": v15_squarefree_crt_phase_cases,
+            "v15_gauss_root_isometry": v15_gauss_root_isometry_cases,
+            "v15_complete_phase_second_moment": v15_complete_phase_second_moment_cases,
+            "v15_generic_trace_unitary_baseline": v15_generic_trace_baseline_cases,
+            "v15_subpower_polynomial_loss": v15_subpower_polynomial_loss_cases,
+            "v15_registry_rows": len(v15_registry_rows),
         },
         "mutation_tests": {
             "J_above_one_third": "DETECTED",
@@ -3879,6 +4313,17 @@ def run_checks() -> dict[str, object]:
             "v14_phase_blind_stop_reopening": "DETECTED_FALSE",
             "v14_outer_mu_alone_promotion": "DETECTED_FALSE",
             "v14_surviving_angle_promotion": "DETECTED_FALSE",
+            "v15_missing_root_number_parity": "DETECTED",
+            "v15_missing_crt_cross_twists": "DETECTED",
+            "v15_phase_average_to_prescribed_cv": "DETECTED_FALSE",
+            "v15_fkms_full_scale_range_promotion": "DETECTED_FALSE",
+            "v15_generic_trace_to_unitary_saving": "DETECTED_FALSE",
+            "v15_fkms_eta_sigma_margin": "DETECTED",
+            "v15_strict_sigma_equality": "DETECTED",
+            "v15_earnst_actual_packet_promotion": "DETECTED_FALSE",
+            "v15_prime_to_smooth_composite_promotion": "DETECTED_FALSE",
+            "v15_actual_master_promotion": "DETECTED_FALSE",
+            "v15_registry_count_or_hash_mutation": "DETECTED",
             "hb2_sqrt_endpoint_to_large": "DETECTED",
             "hb2_A2_product_mobius_collapse": "DETECTED",
             "hb2_prime_power_to_prime_indicator": "DETECTED",
@@ -3930,7 +4375,7 @@ def run_checks() -> dict[str, object]:
             "v10_paired_polar_main_promotion": "DETECTED",
             "v10_bilateral_A1_A2_sign_reversal": "DETECTED",
             "v10_physical_credit_promotion": "DETECTED",
-            "v14_status_registry_weakening": "DETECTED",
+            "v15_status_registry_weakening": "DETECTED",
         },
         "open_gate": umbrella_gate,
         "route_freeze": route_freeze,

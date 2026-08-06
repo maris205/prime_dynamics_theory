@@ -3,6 +3,62 @@
 更新时间：2026-08-06
 交接状态：`SEALED_FOR_NEW_SESSION`
 
+第 62 节从已发布 V14 commit
+`1bdd428d7173372bd74b713cf695aa5ac611cf79`继续同一个 canonical
+`TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE`。V15不再把 near-primitive collar
+留作一句宽泛的 “Gauss-square angle”。令 `chi=conjugate(psi)`、
+`epsilon_f(chi)=tau_f(chi)/(i^delta_chi sqrt(f))`，则 exact
+
+```text
+tau_f(chi)^2=f chi(-1)epsilon_f(chi)^2,
+```
+
+并把完整 surviving layer无损重写为
+
+```text
+sum_(fm~P) mu(f)mu(m)f/[phi(f)phi(m)]
+  sum_(chi mod f)^* chi(-1)chi(m^2)conjugate(chi)(c_(v,f))
+    epsilon_f(chi)^2 E_(1,m)(chi)E_(2,m)(chi)
+    U_m(conjugate chi)V_(v,m)(conjugate chi).
+```
+
+这里 `c_(v,f)=-2v conjugate(gab^2t^2)_f`；四条 `(n,m)=1` masks、outer
+`mu(m)`、odd parity sign、signed shells与 non-Hermitian orientation全部保留。对
+`f=ps`，physical phase精确分裂成带 `ms`与 `mp` cross twists的两枚 local Gauss
+squares；prime theorem不能在遗漏这些 twists后提升到 composite conductor。
+
+V15又把 V9的 Gauss-square operator精确分解成两枚 reciprocal additive Gauss
+roots。其矩阵满足 `T_c^*T_c=I-J/p`，所以 nonprincipal空间恰为 isometry；
+phase-blind Cauchy、`L2/TT*`、Parseval或 separate Poisson全部返回 endpoint。完整
+phase-`c` second moment虽 exact，但不能升级到 prescribed physical `c_v`。
+
+primary-source scale audit没有找到相对这个 exact Gauss-unitary baseline的固定幂：
+KMS/FKMS bounds改善的是 Deligne/trivial baseline；full product-fiber格式要越过 exact
+operator须先有 schematic exponent `eta>1/4`，若要支付 `p^(-sigma_D)`则须
+`eta>=1/4+sigma_D/2`并留固定 margin；来源没有该合同，显式 FKMS `l=2`的
+literal range又排除 `N=p`。Earnst root-number-square moment的 phase匹配，但其
+prime/even `|L(1/2,chi)|^2` AFE coefficients、fixed-twist量词、`L1`
+reassembly与 parity不等于 actual `E_1E_2UV`。因此 V15是
+`EXACT_ROUTE_RETYPE_AND_SOURCE_SCOPED_STOP`，不是新的
+source-backed arithmetic advance。
+
+current first subgate更新为
+`HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER`：它必须在同一
+actual prime cell、prescribed `c_v`上相对 exact baseline给
+`p^(-sigma_D+o(1))`。若 downstream损 `D^lambda_D`，因 `p~D=F^2`，strict ledger为
+`sigma_D-lambda_D>1/200`；等价 `F`-saving须
+`sigma_F>1/100+2lambda_D`，等号不能吸收 `X^o(1)`。fixed polynomial `m`
+dependence可在 `m=P^o(1)`吸收；逐 fixed-`m`且常数无控制的 theorem不够。
+
+若 `f=ps`且 `ms=P^o(1)`，tensor-stable actual prime theorem可条件闭合
+prime-dominated stratum。smooth squarefree conductor仍需第二道独立门
+`HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION`；逐 prime scalar迭代
+不能自动提供 fixed power。actual-atom、all-`D`、exact cover、tails、A/B
+selection、original/global normalization与 provenance仍 OPEN；TPC-207=false、
+fixed-atom credit=`0`、global strict `1/400=UNPAID`、`L2=NONE`。A2、Bridge B与
+Hénon辅助岛保持独立；下一轮大路探索优先转向 Bridge B，但不得把遍历性直接升级成
+孪生素数或 prescribed arithmetic seed genericity。
+
 第 61 节从已发布 V13 commit
 `ea1db5210f7db34a30bce372084dc2d4eee1b4a0`继续同一个 canonical
 `TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE`。V14只处理
@@ -724,12 +780,12 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V14_20260806_TOP_INDUCED_CONDUCTOR_EXACT_COMMON_COEFFICIENT_PRIMITIVE_LARGE_SIEVE_LARGE_SECONDARY_COFACTOR_M_GE_P_KAPPA_TAIL_F4_PLUS_F2P2_OVER_M2_D_MINUS_MIN_ONE_TWO_KAPPA_CONTRACT_RANGE_COMPRESSION_PHASE_BLIND_PRIMITIVE_AVOIDANCE_FALSE_PRIME_DIAGONAL_FLOOR_OUTER_MU_ALONE_CONSTANT_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE_OPEN_NO_GLOBAL_TRIGGER`
+`TPC_BIG_ROAD_V15_20260806_NEAR_PRIMITIVE_ROOT_NUMBER_SQUARE_EXACT_RETYPE_GAUSS_ROOT_NONPRINCIPAL_ISOMETRY_COMPLETE_PHASE_AVERAGE_PRESCRIBED_CV_MISMATCH_GENERIC_TRACE_BELOW_EXACT_UNITARY_BASELINE_EARNST_ACTUAL_PACKET_MISMATCH_PRIME_MASTER_AND_SMOOTH_COMPOSITE_TENSOR_GATES_OPEN_NO_GLOBAL_TRIGGER`
 下一篇：`null`；下一项不编号大动作：`TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE`
-；当前 first subgate：`HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE`
-（第 61 节控制；既有 local source只有在第 32.6 节或
+；当前 first subgate：`HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER`
+（第 62 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--61 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--62 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -742,7 +798,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 上下文节省入口：新会话先读 `TPC_COMPASS.md` 与
 `research/tpc-big-road/README.md`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--61 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--62 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -5756,7 +5812,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V14 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V15 current）
 
 ```text
 进入仓库：
@@ -5765,7 +5821,7 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--61 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--62 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -5869,6 +5925,17 @@ HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE = OPEN_ATTACHMENT
 HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE = STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR
 HB4_EXACT_HALF_TOP_OUTER_MU_ALONE = STOP_SCOPED_PRIME_SIGN_CONSTANT
 HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_TOP_BOUNDED_SUBPOWER_M_PRIMITIVE_ROOT_NUMBER_ANGLE_RETYPE = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_PRIME_GAUSS_ROOT_RECIPROCAL_ADDITIVE_FACTORIZATION = PROVED_EXACT_FINITE_REFINEMENT_OF_V9_NO_SAVING
+HB4_EXACT_HALF_TOP_GAUSS_ROOT_SPLIT_PHASE_BLIND_L2_TTSTAR = STOP_SCOPED_EXACT_NONPRINCIPAL_ISOMETRY_ENDPOINT
+HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_SECOND_MOMENT = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_AVERAGE_TO_PRESCRIBED_CV = STOP_SCOPED_PRESCRIBED_PHASE_AND_SHORT_FAMILY_MISMATCH
+HB4_EXACT_HALF_TOP_GENERIC_PRIME_TRACE_BILINEAR_RELATIVE_TO_GAUSS_UNITARY = STOP_SCOPED_SOURCE_SAVING_BELOW_EXACT_OPERATOR_BASELINE
+HB4_EXACT_HALF_TOP_EARNST_ACTUAL_PACKET_ATTACHMENT = STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_FIXED_TWIST_L1_AND_PARITY_MISMATCH
+HB4_EXACT_HALF_TOP_FIXED_M_TO_SUBPOWER_M_SUMMATION = CONDITIONAL_POLYNOMIAL_UNIFORM_CONSTANTS_SUFFICE
+HB4_EXACT_HALF_TOP_PRIME_DOMINATED_SQUAREFREE_CONDUCTOR = CONDITIONAL_ON_TENSOR_STABLE_ACTUAL_PRIME_ANGLE
+HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION = OPEN_NEW_COMPOSITE_OR_COMPLETELY_BOUNDED_TENSOR_THEOREM
+HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER = SELECTED_CORE_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 LARGE_D_QUOTIENT_MOBIUS_GATE = SUPERSEDED
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_ADDITIVE_DIFFERENCE_KERNEL_NORM_Q
@@ -5892,13 +5959,13 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮只执行第 61 节控制的同一个 canonical umbrella：
+下一轮只执行第 62 节控制的同一个 canonical umbrella：
 
 TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
 
 当前 primary subgate为
-`HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE`。
-V11--V14已经闭合五段，
+`HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER`。
+V11--V15已经闭合或精确分型六段，
 不得重复：
 
 1. 全部 squarefree `rho<=F^(4/3-delta)`由
@@ -5926,17 +5993,28 @@ V11--V14已经闭合五段，
    的 strict `1/200`须
    `min(1,2kappa)-lambda_D>1/200`。这不适用于任意
    `rho`-dependent coefficients，actual-atom membership仍 OPEN。
+6. 对 `m=P^o(1)` collar，V15已完成 root-number-square retype、Gauss-root
+   factorization、nonprincipal isometry与 complete-phase second moment。generic
+   KMS/FKMS bounds没有 source-backed gain越过 exact Gauss-unitary baseline；Earnst
+   AFE coefficients也不等于 actual四 polynomials。这一 source screen已
+   `STOP_SCOPED`，不得换名重开。
 
-下一步只攻击 `m<P^kappa` 的 primitive/near-primitive collar。induction后必须保留
-`mu(f)mu(m)/[phi(f)phi(m)]`、`conjugate(psi)(m)^2`、每条 polynomial的
-`(n,m)=1` mask及 orientation
-`E_1(conjugate psi)E_2(conjugate psi)U(psi)V_v(psi)`。不得把 Gauss square内部的
-`mu(m)^2=1`改写成 outer `mu(m)`也消失。bounded cofactor已有 `17/32` exact fixture；
-prime characters又几乎全部位于 maximal eigenspace，所以 conductor projection、
-phase-blind fourth moment/large sieve与 frozen-superclass eigenspace avoidance均已耗尽。
-这不是 actual signed packet lower bound：合法路线是证明保留 root-number-square phase的
-actual four-polynomial angle，或证明完整 varying-squarefree outer-`mu` collective theorem。
-prime sector的 `mu(p)=-1`恒定，不能把 outer sign单独记作 fixed-power saving。
+下一步只攻击 actual prescribed-phase prime master，随后才处理 smooth-squarefree
+tensor completion。induction后必须保留
+`mu(f)mu(m)f/[phi(f)phi(m)]`、`chi(-1)chi(m^2)conjugate(chi)(c_v)`、四条
+`(n,m)=1` masks及 orientation
+`E_1(chi)E_2(chi)U(conjugate chi)V_v(conjugate chi)`。prime master必须相对 exact
+unitary baseline给 `p^(-sigma_D+o(1))`，并满足
+`sigma_D-lambda_D>1/200`。不得把一般 trace theorem相对 Deligne的 saving改写为
+相对 unitary endpoint的 saving；complete phase average也不得升级为 prescribed
+`c_v`。对 `f=ps`必须保留 `ms/mp` cross twists与 coefficient twists，且 prime theorem
+须 tensor-stable；smooth `f`需要 genuinely composite theorem。
+
+bounded cofactor已有 `17/32` exact fixture；prime characters又几乎全部位于 maximal
+eigenspace，所以 conductor projection、phase-blind fourth moment/large sieve、
+Gauss-root `L2/TT*`与 frozen-superclass eigenspace avoidance均已耗尽。这不是 actual
+signed packet lower bound。prime sector的 `mu(p)=-1`恒定，不能把 outer sign单独记作
+fixed-power saving。
 允许 restricted proven windows逐 outer cell取绝对值，因为它们已独立支付 target；
 未解 core不得丢掉 signs/phase后再认领 collective saving。V13 中原 `mu(g)`已 exact
 转成 divisor sign `mu(v)`，不得误写成它仍作为 outer sign存在。
@@ -5956,16 +6034,25 @@ additive-difference residue kernel。
 不得重复。合法量词始终是 target saving `-> B -> fixed K(B) -> x_0`；不得把 fixed
 `K`升级为 all-`B` uniform object。direct modified-HB2 extractor、determinant range
 atlas、HB4 collective main、Ramanujan axes与每个 fixed `1/4<delta<1/2`
-off-diagonal均已完成，不得重复。令 `F=X^(1/4)`；下一步只攻击 exact
-`D=F^2=X^(1/2)` high-conductor endpoint的真实 `log^-A X` gain，以及 exact
-HB2 switch后两条 `mu_F*mu_F` rows对两条 Eisenstein columns的 `ER-AB=2`
-bilateral determinant。必须保留 conductor projector、四个 literal Möbius slots、
-ordered/swapped-shell exactly-once ledger与同一 collective hybrid main；不得使用
-all-character大筛、把 `mu(e1)mu(e2)`压成 `mu(e1e2)`，或把 divisor convolution
-冒充 smooth slot。universal U、通用 Prop. 7.22、HB2 quadratic CRT
-diagonal、BC Corollary-1 direct attachment及 one-Poisson `2/7`伪 window均不得重开。
-不得把 formula-level `dr-mn=2` / TPC-31 core升级为 packet attachment。若这两个
-structured gates不能闭合，发布一个 broad STOP/OPEN map，不生微型论文。
+off-diagonal均已完成，不得重复。
+
+当前大路探索优先转向 Bridge B：在保持现有
+`moving rare-event mass + covariance + distinguished-seed genericity`三道缺口分离的
+前提下，检查 symbolic/logistic/Hénon的 nonautonomous encoding是否能为 physical
+短 phase family构造 prescribed-seed genericity，而不是再次扫描普通解析 bilinear
+bound。必须首先 source-lock moving events `E_(2,n)`、真实 invariant/nonstationary
+measure、seed、clock、arithmetic coding与 gap-2 carrier；Haar-a.e.、positive phase
+measure或 full-phase RMS均不能自动升级到 arithmetic seed。任何动力学结论也不得
+逆向给 A1 theorem credit，除非存在逐式 arithmetic intertwiner。
+
+A1的新主定理与 A2 paired-Voronoi仍保留为独立 reserve。若返回 A2，必须保留
+conductor projector、四个 literal Möbius slots、ordered/swapped-shell exactly-once
+ledger与同一 collective hybrid main；不得使用 all-character大筛、把
+`mu(e1)mu(e2)`压成 `mu(e1e2)`，或把 divisor convolution冒充 smooth slot。
+universal U、通用 Prop. 7.22、HB2 quadratic CRT diagonal、BC Corollary-1 direct
+attachment及 one-Poisson `2/7`伪 window均不得重开。不得把 formula-level
+`dr-mn=2` / TPC-31 core升级为 packet attachment。若主干没有真实 theorem trigger，
+发布 broad STOP/OPEN map，不生微型论文。
 
 并行只读 agents可分别承担 source lock、proof audit与 architecture/reassembly；
 正式写入只由主控完成。两个工作包 checker为：
@@ -9854,6 +9941,307 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 62. 2026-08-06 V15：root-number-square prescribed-phase 与 unitary firewall
+
+### 62.1 baseline、source lock与 claim ceiling
+
+V15从已发布且 local/remote三 hash一致的 V14 commit启动：
+
+```text
+1bdd428d7173372bd74b713cf695aa5ac611cf79
+```
+
+启动 tracked/cached diff为空；130个 protected untracked files原样保留，canonical
+manifest为
+`9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1`。
+三个 `READ_ONLY_FROZEN` agents分别审核 primary theorem/source、exact phase-preserving
+rearrangement与 bounded/subpower-`m` / composite conductor family；所有正式写入仍只由
+主控完成，agents changed files=`0`。
+
+本节只处理第 61 节留下的
+
+```text
+P=F^(2-o(1)),  rho=fm,  m=P^o(1),  f=cond(chi).
+```
+
+V14的 common-coefficient contract、actual masks、fixed physical `h0=2`、physical
+`c_v`、outer signs与 non-Hermitian orientation全部冻结。claim ceiling是
+
+```text
+EXACT_ROUTE_RETYPE_AND_SOURCE_SCOPED_STOP_NO_NEW_ARITHMETIC_ADVANCE.
+```
+
+### 62.2 primitive root-number-square retype与 squarefree CRT
+
+令 `chi=conjugate(psi)`、
+
+```text
+delta_chi=(1-chi(-1))/2,
+epsilon_f(chi)=tau_f(chi)/(i^delta_chi sqrt(f)).
+```
+
+则 exact
+
+```text
+tau_f(chi)^2=f chi(-1)epsilon_f(chi)^2,                 (62.2.1)
+```
+
+并把第 61.2 节完整 layer逐式改写为
+
+```text
+V=sum_(fm~P) mu(f)mu(m)f/[phi(f)phi(m)]
+    sum_(chi mod f)^* chi(-1)chi(m^2)conjugate(chi)(c_(v,f))
+      epsilon_f(chi)^2 E_(1,m)(chi)E_(2,m)(chi)
+      U_m(conjugate chi)V_(v,m)(conjugate chi).         (62.2.2)
+```
+
+这里
+
+```text
+c_(v,f)=-2v conjugate(gab^2t^2)_f.
+```
+
+四条 `(n,m)=1` masks、outer `mu(m)/phi(m)`与 odd-sector `chi(-1)=-1`均没有
+消失；`E_1,E_2`在 `chi`上，`U,V`在 `conjugate(chi)`上，不能 Hermitian化。
+
+进一步写 `f=ps`、`psi=alpha beta`，primitive Gauss CRT精确给
+
+```text
+tau_(ps)(conjugate(alpha beta))
+ =conjugate(alpha)(s)conjugate(beta)(p)
+  tau_p(conjugate alpha)tau_s(conjugate beta),
+```
+
+所以完整 physical phase为
+
+```text
+psi(c)conjugate(psi)(m)^2 tau_f(conjugate psi)^2
+ =[alpha(c)conjugate(alpha)(ms)^2 tau_p(conjugate alpha)^2]
+  [beta(c)conjugate(beta)(mp)^2 tau_s(conjugate beta)^2]. (62.2.3)
+```
+
+checker在 `f=15=3*5`的 complex primitive fixture中用 exact cyclotomic arithmetic
+验证 `(62.2.1)--(62.2.3)`、两种 parity与 missing-cross-twist mutation。这不是
+saving。
+
+### 62.3 Gauss-root factorization、isometry与 phase-average边界
+
+prime stratum上定义 ratio fibers
+
+```text
+C_i(r)=sum_(e conjugate(h)=r)mu(e)W_i(e)U_i(h),
+X_i(chi)=sum_r C_i(r)conjugate(chi)(r)
+        =E_i(conjugate chi)U_i(chi).
+```
+
+任取 `c_1c_2=c_v`，令
+
+```text
+B_i(x)=p^(-1/2)sum_r C_i(r)e_p(c_i x conjugate(r)).     (62.3.1)
+```
+
+则
+
+```text
+B_i^(chi)=p^(-1/2)tau_p(conjugate chi)chi(c_i)X_i(chi),
+```
+
+且 physical nonprincipal angle无共轭地满足
+
+```text
+A_p(c_v)
+ =(p-1)sum_(x!=0)B_1(x)B_2(x^(-1))
+   -B_1^(chi_0)B_2^(chi_0).                             (62.3.2)
+```
+
+对应矩阵 exact
+
+```text
+T_c^*T_c=I-J/p.                                         (62.3.3)
+```
+
+所以 nonprincipal空间全部 singular values为 `1`，constant singular value为
+`p^(-1/2)`。这是 V9 fixed-product/Gauss-square operator的进一步 exact
+factorization，不是新桥或 saving。separate Cauchy、phase-blind `L2/TT*`、Parseval
+与 separate Poisson均严格回到 endpoint。
+
+完整 phase平均另有 exact identity
+
+```text
+sum_(c in F_p^*)|A_p(c)|^2
+ =(p-1)sum_(chi!=chi_0)|Gamma(chi)Lambda(chi)|^2.        (62.3.4)
+```
+
+但 physical `c_v`是 prescribed phase，outer family只产生 `F^o(1)`个单位。checker
+给出合法 nonprincipal spectrum集中在单一 phase的 finite counterfixture；因此
+`COMPLETE_PHASE_C_AVERAGE_TO_PRESCRIBED_CV`精确 `STOP_SCOPED`。任何未经
+distinguished-phase theorem的 RMS、density-one或 generic-`c` statement均不给 credit。
+
+### 62.4 primary-source scale audit
+
+actual prime target保留
+
+```text
+A_p(c_v)=sum_(chi!=chi_0)chi(c_v)tau_p(conjugate chi)^2/p
+          E_1(conjugate chi)E_2(conjugate chi)U(chi)V_v(chi),
+
+B_unit=[M_Gamma^*M_Lambda^*]^(1/2),
+M_Gamma^*=sum_(chi!=chi_0)|E_1(conjugate chi)E_2(conjugate chi)|^2,
+M_Lambda^*=sum_(chi!=chi_0)|U(chi)V_v(chi)|^2.           (62.4.1)
+```
+
+在 frozen contract上，`B_unit<<F^(4+o(1))`是 reference upper envelope，且
+allowed superclass fixtures说明该 envelope可 sharp；这里不声称 actual packet有
+two-sided asymptotic。source theorem只有相对 exact Cauchy quantity本身再给 fixed
+power才算 advance。
+
+1. [Kowalski--Michel--Sawin bilinear Kloosterman theorem](https://arxiv.org/abs/1511.01636)
+   在 `M=N=sqrt(p)`的 product-kernel interval fixture相对 normalized pointwise
+   baseline给 `p^(-1/64)`。literal TPC ratio row先失败于
+   `e -> conjugate(e)`后的 inverse support不是 interval。即使反事实授予更友好的
+   product-kernel surrogate，固定另两条 `F` rows并恢复 physical `sqrt(p)`后仍为
+   `F^(5-1/32)`，高于 `F^4` reference envelope达 `F^(31/32)`。若先 group
+   两侧 product fibers，则 support为 full `p`-scale并离开其 literal range。
+2. [Fouvry--Kowalski--Michel--Sawin Theorem 1.1](https://arxiv.org/html/2511.09459v3#S1.Thmtheorem1)
+   的 schematic `p^(1-2eta)` normalized full-scale形式恢复 `sqrt(p)`后，要给
+   `p^(-sigma_D)`相对 saving必须
+   `eta>=1/4+sigma_D/2`并留 fixed margin；存在任意 saving首先就须
+   `eta>1/4`。来源只给某个 positive `eta`，没有这一合同。
+   显式 [Theorem 1.3](https://arxiv.org/html/2511.09459v3#S1.Thmtheorem3)
+   的 `l=2` literal `N<=p^(7/8)`排除 `N=p`；即使故意越界只作指数诊断，
+   `p^(29/32)`仍比 exact normalized `p^(1/2)`差 `p^(13/32)`。这不影响 V11
+   literal shorter prime-projector window。
+3. [Earnst Theorem 1.6](https://arxiv.org/html/2603.22124v1#S1.Thmtheorem6)
+   的 `epsilon(chi)^2` phase确实匹配 even sector，twist `m^2/c_v`本身不是 fatal；
+   第一 fatal是其 prime/even `|L(1/2,chi)|^2` AFE coefficients、fixed-twist
+   quantifiers与 parity不等于 actual `E_1E_2UV`。把四条 actual rows展开成 fixed
+   twists再逐项应用会支付 uncontrolled `L1` reassembly并丢失 saving。
+
+结论是 checked sources中
+
+```text
+NO_SOURCE_BACKED_GAUSS_UNITARY_RELATIVE_SAVING.
+```
+
+这只是精确 source/normalization STOP，不是新 theorem的 global不存在性结论。
+
+### 62.5 两道 surviving theorem contracts与 strict ledger
+
+第一道 contract是：存在 fixed `sigma_D>0`，对全部 admissible actual prime cells、
+masks、signed shells、outer dyads、actual `c_v`、common transform parameters、inert
+seminorm ball及 principal subtraction统一有
+
+```text
+|A_p(c_v)|
+ <<p^(-sigma_D+o(1))[M_Gamma^*M_Lambda^*]^(1/2).        (62.5.1)
+```
+
+因为 `p~D=F^2`，支付 downstream `D^lambda_D`后的 strict endpoint条件是
+
+```text
+sigma_D-lambda_D>1/200.                                 (62.5.2)
+```
+
+若写成 `F^(-sigma_F)`，则 `sigma_F>1/100+2lambda_D`。等号不能吸收
+`X^o(1)`。
+
+若 theorem constant满足
+
+```text
+C(m,s)<< (ms)^A tau(ms)^B
+```
+
+且 `ms=P^o(1)`，fixed polynomial dependence只贡献 `P^o(1)`；bounded/subpower
+`m`本身不是主障碍。若只逐 fixed `m`成立而 constants无 uniform control，则 growing
+collar仍未闭合。
+
+对 `f=ps`且 `ms=P^o(1)`，只有一个接受 `beta` coefficient twists、两种 parity、
+unequal lengths与 vector/tensor-valued uniformity的 actual prime theorem，才能条件给
+prime-dominated stratum fixed power。smooth squarefree `f`可能没有 fixed-power大
+prime factor，scalar迭代只给 `P^(-o(1))`并破坏其他 local phases；第二道 contract
+因此是 completely bounded/tensor-stable composite-conductor theorem。
+
+### 62.6 canonical V15 registry、路线选择与 release边界
+
+canonical V15 registry是第 24 节与 big-road三份 current blocks中的同一 67-row
+表；四个 document blocks均为 `67 raw / 67 unique`，按当前顺序保留 final LF的
+SHA-256为
+`cdc16629411afb8b126f533c23bf4cdd71f6af51223880bec69d456e9a620110`。checker的
+`v15_status_registry`及 independent expected dict逐 key冻结。V15新增
+11 rows，从
+
+```text
+HB4_EXACT_HALF_TOP_BOUNDED_SUBPOWER_M_PRIMITIVE_ROOT_NUMBER_ANGLE_RETYPE
+```
+
+至
+
+```text
+HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER.
+```
+
+current first subgate为后者；下一 global subgate为
+`HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION`。本轮没有
+source-backed arithmetic saving，故 `ARITHMETIC_ROUTE_ADVANCE`仍只继承 V14的
+contract-level partial range compression，不新增 credit。
+
+Bridge A1现已从“搜索现成 nontrivial bilinear bound”进入“构造 coefficient-sensitive
+prescribed-phase theorem”阶段。下一轮大路探索优先转向 Bridge B，检查 moving
+rare-event mass、covariance与 distinguished-seed genericity能否为 physical短 phase
+family提供真正的 prescribed-seed mechanism；但 Haar-a.e.、positive measure、full
+phase RMS、logistic/Hénon mixing或 orbit recurrence均不得直接升级为 arithmetic seed
+或 TPC。A1、A2、Bridge B与 Hénon辅助岛仍分别记账。
+
+本轮没有创建 TPC-207、论文、paper directory、PDF或构建日志。actual-atom、
+all-`D`、exactly-once physical cover、tails、A/B selection、original/global
+normalization与 provenance仍 OPEN；fixed-atom credit=`0`、strict
+`1/400=UNPAID`、`L2=NONE`、TPC207 trigger=`false`。正式发布审核结果在完成全部
+post-write regression、protected manifest与三 hash同步后回填本节；TPC-27--32及
+TPC-122 writers均不得执行。
+
+### 62.7 independent QA、post-write regression与 preservation
+
+三个只读 stations的最终 verdict均为 `PASS`，且 `files_changed=[]`：
+
+1. source QA先发现并由主控修正四项 claim firewall：KMS inverse-support literal
+   range、`B_unit`只能记作 actual upper/reference envelope、FKMS
+   `eta>=1/4+sigma_D/2` exact margin、Earnst fixed-twist/`L1`/parity而非错误的
+   mollifier归因；correction recheck=`PASS`。
+2. proof QA修正 complete-phase RMS措辞：只有 exact second-moment identity，
+   square-root RMS另需 spectral spread；root parity、CRT twists、principal
+   subtraction、Gauss-root isometry、V9 no-repackaging与 prescribed-`c_v` firewall
+   全部 `PASS`。
+3. composite/release QA确认 bounded/subpower `m`只作 conditional uniform-constant
+   statement、prime-dominated与 smooth-composite gates分离、67-row registry、
+   Markdown、git preservation与 TPC207=false均 `PASS`。
+
+主控正式 post-write结果为：
+
+```text
+POST_WRITE_STARTUP_REGRESSION = 22/22 PASS
+TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+BIG_ROAD_NORMAL_OPTIMIZED_LAB_INDEPENDENT = 4/4 PASS
+V15_CANONICAL_REGISTRY_DOCUMENT_BLOCKS = 4/4 MATCH
+V15_CANONICAL_REGISTRY_CHECKER_DICTS = 2/2 MATCH
+V15_CANONICAL_REGISTRY_ROWS = 67 RAW / 67 UNIQUE
+V15_CANONICAL_REGISTRY_FINAL_LF_SHA256
+  = cdc16629411afb8b126f533c23bf4cdd71f6af51223880bec69d456e9a620110
+GIT_DIFF_CHECK = PASS
+GIT_CACHED_DIFF = EMPTY
+MARKDOWN_FENCE_MARKERS = 3224 BALANCED
+PROTECTED_UNTRACKED = 130 FILES
+PROTECTED_UNTRACKED_MANIFEST_SHA256
+  = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+SUBAGENT_FILES_CHANGED = 0
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+TPC207_PAPER_OR_PDF_CREATED = NO
+```
+
+正式提交仅允许本节已列的五个 tracked big-road文件。同步、commit、push与
+local `HEAD` / `origin/main` / remote `refs/heads/main`三 hash一致性由主控在发布
+边界执行并在会话最终审核摘要中报告。
 
 ## 61. 2026-08-06 V14：secondary-conductor cutoff 与 near-primitive phase collar
 

@@ -1,8 +1,8 @@
-# TPC big road V14: near-primitive conductor-collar highway
+# TPC big road V15: root-number-square prescribed-phase highway
 
 更新时间：2026-08-06
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE_AND_CORE_SHRINK`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_ROUTE_RETYPE_AND_SOURCE_SCOPED_STOP`
 
 ```text
 COARSE_COMPARISON_TYPE_I_ADVANCE = RETAINED
@@ -83,6 +83,17 @@ HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE = OPEN_ATTACHMENT
 HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE = STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR
 HB4_EXACT_HALF_TOP_OUTER_MU_ALONE = STOP_SCOPED_PRIME_SIGN_CONSTANT
 HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_TOP_BOUNDED_SUBPOWER_M_PRIMITIVE_ROOT_NUMBER_ANGLE_RETYPE = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_PRIME_GAUSS_ROOT_RECIPROCAL_ADDITIVE_FACTORIZATION = PROVED_EXACT_FINITE_REFINEMENT_OF_V9_NO_SAVING
+HB4_EXACT_HALF_TOP_GAUSS_ROOT_SPLIT_PHASE_BLIND_L2_TTSTAR = STOP_SCOPED_EXACT_NONPRINCIPAL_ISOMETRY_ENDPOINT
+HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_SECOND_MOMENT = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_AVERAGE_TO_PRESCRIBED_CV = STOP_SCOPED_PRESCRIBED_PHASE_AND_SHORT_FAMILY_MISMATCH
+HB4_EXACT_HALF_TOP_GENERIC_PRIME_TRACE_BILINEAR_RELATIVE_TO_GAUSS_UNITARY = STOP_SCOPED_SOURCE_SAVING_BELOW_EXACT_OPERATOR_BASELINE
+HB4_EXACT_HALF_TOP_EARNST_ACTUAL_PACKET_ATTACHMENT = STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_FIXED_TWIST_L1_AND_PARITY_MISMATCH
+HB4_EXACT_HALF_TOP_FIXED_M_TO_SUBPOWER_M_SUMMATION = CONDITIONAL_POLYNOMIAL_UNIFORM_CONSTANTS_SUFFICE
+HB4_EXACT_HALF_TOP_PRIME_DOMINATED_SQUAREFREE_CONDUCTOR = CONDITIONAL_ON_TENSOR_STABLE_ACTUAL_PRIME_ANGLE
+HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION = OPEN_NEW_COMPOSITE_OR_COMPLETELY_BOUNDED_TENSOR_THEOREM
+HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER = SELECTED_CORE_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI = INDEPENDENT_OPEN_NEW_THEOREM
@@ -117,7 +128,11 @@ common-coefficient source contract上，primitive multiplicative large sieve把�
 `m=rho/cond(chi)>=P^kappa`尾压到
 `F^4+F^2P^2/P^(2kappa)`。因此真正未解的不是全部 top spectrum，而是
 primitive及 fixed/subpower small-cofactor induced characters上的 phase-sensitive
-Gauss-square four-polynomial angle。
+Gauss-square four-polynomial angle。V15把这最后一圈无损改写成
+root-number-square prescribed-phase moment，证明 Gauss-root split在 nonprincipal
+空间恰为 isometry，并核清现有 generic trace-function bounds只改善
+Deligne/trivial baseline、没有越过这个更强的 exact unitary baseline。当前大门因此
+只剩 actual coefficient-sensitive prime moment及其 smooth-squarefree tensor completion。
 完整 compiler见
 [`fm_local_comparison_compiler.md`](fm_local_comparison_compiler.md)。所有 TPC-1--206 的 source locks、
 `STOP_SCOPED` cells、actuality/provenance 与 normalization firewalls继续有效。
@@ -1317,3 +1332,90 @@ HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE.
 transform parameters及完整 loss ledger。若只在 frozen superclass上成立而没有
 actual membership，仍不给 fixed-atom credit。A2 paired-Voronoi、Bridge B与
 Hénon辅助岛继续独立；TPC-207 trigger仍为 `false`。
+
+## 15. V15 root-number-square prescribed-phase gate
+
+V14 剩下的 bounded/subpower-cofactor collar可以无损换坐标。令
+
+```text
+chi=conjugate(psi),
+epsilon_f(chi)=tau_f(chi)/(i^delta_chi sqrt(f)),
+chi(-1)=(-1)^delta_chi.
+```
+
+则
+
+```text
+tau_f(chi)^2=f chi(-1) epsilon_f(chi)^2,
+```
+
+而完整 conductor cell成为
+
+```text
+sum_(fm~P) mu(f)mu(m)f/[phi(f)phi(m)]
+  sum_(chi mod f)^* chi(-1)chi(m^2)conjugate(chi)(c_(v,f))
+    epsilon_f(chi)^2 E_(1,m)(chi)E_(2,m)(chi)
+    U_m(conjugate chi)V_(v,m)(conjugate chi).              (15.1)
+```
+
+四条 `(n,m)=1` masks、outer `mu(m)`、odd parity sign、non-Hermitian
+orientation与 physical
+`c_(v,f)=-2v conjugate(gab^2t^2)_f`全部保留。`f=3*5` exact CRT fixture又验证
+
+```text
+psi(c)conjugate(psi)(m)^2 tau_f(conjugate psi)^2
+ = [alpha(c)conjugate(alpha)(ms)^2 tau_p(conjugate alpha)^2]
+   [beta(c)conjugate(beta)(mp)^2 tau_s(conjugate beta)^2]. (15.2)
+```
+
+在 prime cell上还能把 V9 Gauss-square operator精确拆成两枚 reciprocal additive
+Gauss roots。该分解保持 prescribed phase与 principal subtraction，但
+`T_c^*T_c=I-J/p`，所以 nonprincipal空间上全部 singular values恰为 `1`。这是一条
+有用的结构坐标，不是 saving；任何 separate Cauchy、phase-blind `L2/TT*`或
+Parseval都会回到 exact endpoint。完整 phase-`c` second moment虽精确成立，也不能
+升级为 physical `c_v`，因为后者是 prescribed phase且只来自很短的 outer family。
+
+现有 source screen没有越过这个更强的 baseline：KMS/FKMS 型 bilinear trace
+theorems改善的是 pointwise/Deligne基线；在 full product-fiber尺度要优于 exact
+unitary operator，简化的 `(MN)^(1/2-eta)`格式必须先有 `eta>1/4`；若要支付
+`p^(-sigma_D)`，精确条件是 `eta>=1/4+sigma_D/2`并留固定 margin。来源没有给出该
+量级，显式 FKMS `l=2` 的 literal `N<=p^(7/8)`又不包含 `N=p`；即使越界作纯
+指数诊断，其 `p^(29/32)`仍比 exact `p^(1/2)`差 `p^(13/32)`。Earnst的
+root-number-square theorem确认机制存在，但 literal对象是 prime/even character上的
+`|L(1/2,chi)|^2` AFE，不是 `(15.1)`的 actual四条 polynomials。
+
+因此当前唯一可记账的 master theorem必须在同一 actual prime cell上证明
+
+```text
+|A_p(c_v)|
+ << p^(-sigma_D+o(1)) [M_Gamma^* M_Lambda^*]^(1/2),
+sigma_D>0,                                                 (15.3)
+```
+
+并统一接受 masks、signed shells、outer dyads、inert seminorms、principal
+subtraction与非共轭方向。若 downstream损失为 `D^lambda_D`，因 `p~D=F^2`，strict
+endpoint要求
+
+```text
+sigma_D-lambda_D>1/200,
+```
+
+等价的 `F^(-sigma_F)`记号是
+`sigma_F>1/100+2lambda_D`。fixed polynomial dependence on `m`可在
+`m=P^o(1)`上吸收；只有逐 fixed-`m`、常数任意增长的 theorem不够。
+
+若 `f=ps`且 `ms=P^o(1)`，一个对 local coefficient twists completely bounded /
+tensor-stable 的 actual prime theorem可条件闭合 prime-dominated stratum。smooth
+squarefree `f`没有 fixed-power大素因子，仍需独立的 composite tensor theorem；prime
+结果不能逐因子 scalar迭代后自动升级。
+
+本轮因此是 exact route retype与 source-scoped stop，没有新的 source-backed
+arithmetic saving。current first subgate更新为
+
+```text
+HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER.
+```
+
+下一道 global subgate是
+`HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION`。fixed-atom credit仍为
+`0`，strict `1/400=UNPAID`，`L2=NONE`，TPC-207 trigger=`false`。

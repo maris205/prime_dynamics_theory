@@ -1,12 +1,12 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-06
-状态：`BOLD_CHANNEL_V14 / NEAR_PRIMITIVE_CONDUCTOR_COLLAR_ADVANCE`
-claim level：`CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE_AND_CORE_SHRINK`
+状态：`BOLD_CHANNEL_V15 / ROOT_NUMBER_SQUARE_PRESCRIBED_PHASE_GATE`
+claim level：`EXACT_ROUTE_RETYPE_AND_SOURCE_SCOPED_STOP_NO_NEW_ARITHMETIC_ADVANCE`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V14 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V15 的完整
 公式、proof与独立 checker位于 `research/tpc-big-road/`。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
@@ -602,7 +602,7 @@ TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE.
 四 Möbius rows加双 divisor-log columns的 paired-Voronoi reserve。固定原子岛与
 Pair-native/H1岛是 attachment层，不自动提供桥梁 saving。Bridge B仍是
 distinguished-seed genericity动力学大桥；Hénon/几何岛只作辅助提升，不给解析桥
-credit。V14 canonical状态表为：
+credit。V15 canonical状态表为：
 
 ```text
 HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
@@ -661,6 +661,17 @@ HB4_EXACT_HALF_TOP_ACTUAL_ATOM_PRIMITIVE_AVOIDANCE = OPEN_ATTACHMENT
 HB4_EXACT_HALF_TOP_PHASE_BLIND_FOURTH_MOMENT_LARGE_SIEVE = STOP_SCOPED_EXACT_PRIME_DIAGONAL_FLOOR
 HB4_EXACT_HALF_TOP_OUTER_MU_ALONE = STOP_SCOPED_PRIME_SIGN_CONSTANT
 HB4_EXACT_HALF_TOP_NEAR_PRIMITIVE_GAUSS_SQUARE_FOUR_POLYNOMIAL_ANGLE = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_TOP_BOUNDED_SUBPOWER_M_PRIMITIVE_ROOT_NUMBER_ANGLE_RETYPE = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_PRIME_GAUSS_ROOT_RECIPROCAL_ADDITIVE_FACTORIZATION = PROVED_EXACT_FINITE_REFINEMENT_OF_V9_NO_SAVING
+HB4_EXACT_HALF_TOP_GAUSS_ROOT_SPLIT_PHASE_BLIND_L2_TTSTAR = STOP_SCOPED_EXACT_NONPRINCIPAL_ISOMETRY_ENDPOINT
+HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_SECOND_MOMENT = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_TOP_COMPLETE_PHASE_C_AVERAGE_TO_PRESCRIBED_CV = STOP_SCOPED_PRESCRIBED_PHASE_AND_SHORT_FAMILY_MISMATCH
+HB4_EXACT_HALF_TOP_GENERIC_PRIME_TRACE_BILINEAR_RELATIVE_TO_GAUSS_UNITARY = STOP_SCOPED_SOURCE_SAVING_BELOW_EXACT_OPERATOR_BASELINE
+HB4_EXACT_HALF_TOP_EARNST_ACTUAL_PACKET_ATTACHMENT = STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_FIXED_TWIST_L1_AND_PARITY_MISMATCH
+HB4_EXACT_HALF_TOP_FIXED_M_TO_SUBPOWER_M_SUMMATION = CONDITIONAL_POLYNOMIAL_UNIFORM_CONSTANTS_SUFFICE
+HB4_EXACT_HALF_TOP_PRIME_DOMINATED_SQUAREFREE_CONDUCTOR = CONDITIONAL_ON_TENSOR_STABLE_ACTUAL_PRIME_ANGLE
+HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION = OPEN_NEW_COMPOSITE_OR_COMPLETELY_BOUNDED_TENSOR_THEOREM
+HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER = SELECTED_CORE_OPEN_NEW_THEOREM
 ```
 
 1. **Primary：HB4 exact-half dual-product dispersion**。V9 已把 Gauss-square
@@ -939,3 +950,39 @@ fixed physical `h0=2`、physical `c_v`、masks、signed shells、orientation、u
 parameters与全部 losses。A2 paired-Voronoi、Bridge B distinguished seed与 Hénon
 辅助岛仍是独立桥，不拼接 credit。当前仍是 contract-level partial advance；
 fixed atom=`0`、global `1/400=UNPAID`、`L2=NONE`、TPC-207=`false`。
+
+## 16. V15 后的罗盘：不是再找“非平凡界”，而是越过 unitary 基线
+
+V15把 A1 红色断点从一句宽泛的 “Gauss-square angle” 压成两扇有顺序的门：
+
+```text
+A1.1 actual prescribed-phase prime root-number-square moment
+  -> A1.2 tensor-stable smooth-squarefree conductor completion.
+```
+
+第一扇门的 exact对象是 `(15.1)` 的四 polynomials；它必须相对仓库已有
+Gauss-unitary Cauchy基线再赢 `p^(-sigma_D)`，而不是只相对 Weil逐项估计非平凡。
+这是本轮最重要的罗盘修正。现有 KMS/FKMS trace bounds与 Earnst AFE moment都没有
+literal支付这条差额，所以它们被精确 `STOP_SCOPED`，但不否定未来的
+coefficient-sensitive theorem。
+
+Gauss-root factorization给出一个更大胆、也更具体的构造视角：actual Möbius/smooth
+rows经过两枚 reciprocal additive transforms后，问题成为一个 prescribed inverse-pair
+correlation。完整 phase平均只有 exact second-moment/RMS identity导航；只有额外
+spectral spread时才启发式呈 square-root型。physical `c_v`不是随机 phase，不能靠
+平均直接得到。因而可继续探索的 theorem形态只有两类：
+
+1. 直接利用 literal Möbius rows证明 uniform prescribed-phase high moment / dispersion；
+2. 在 outer variables或 moduli上建立仍保留 moving inverse index与 literal signs的
+   collective theorem，使 physical短 phase family本身获得 genericity。
+
+第二扇 composite门要求 completely bounded/tensor-stable uniformity。若
+`f=ps`、`ms=P^o(1)`，prime theorem可条件处理 prime-dominated层；若 `f` smooth，逐
+prime scalar bounds不够，必须有真正 composite theorem。
+
+这意味着解析 A1 已经从“搜索现成估计”进入“定义新主定理”的阶段。下一轮的大路
+探索优先级转向 Bridge B 的 moving rare-event mass、covariance与 distinguished-seed
+genericity：不是把遍历性直接改写成孪生素数，而是看动力学桥能否产生 A1缺少的
+prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
+只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
+TPC-207=`false`。
