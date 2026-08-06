@@ -1,4 +1,4 @@
-# TPC big road V12: inverse-residue Parseval highway
+# TPC big road V13: multiplicative product-fiber highway
 
 更新时间：2026-08-06
 
@@ -65,7 +65,15 @@ HB4_EXACT_HALF_INVERSE_RESIDUE_TWO_ROW_TRANSFER = PROVED_EXACT_NORM_PRESERVING
 HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA
 HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN
 BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION = STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL
-HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_TOP_PROJECTOR_COLLAR
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_PRODUCT_FIBER_TRANSFER = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_MULTIPLICATIVE_GAUSS_SQUARE_OPERATOR = PROVED_EXACT_ANY_ODD_SQUAREFREE
+HB4_EXACT_HALF_PRODUCT_FIBER_COLLISION_ENERGY = PROVED_ELEMENTARY_COMPOSITE_UNIFORM
+HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_WINDOW = PROVED_CONTRACT_LEVEL_TO_TWO_MINUS_DELTA
+HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN
+PASCADI_DI_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH
+BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH
+HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI = INDEPENDENT_OPEN_NEW_THEOREM
@@ -92,8 +100,10 @@ residue `e_1e_2zw=-2 (mod p)` 的 centered four-fold product convolution，并�
 封死 common-`k` unique-fiber与 global moving-unit Cauchy两个伪 shortcut；当前主攻
 已转成保留两条 literal Möbius rows的 dual Type-IV dispersion。V10--V11先把
 projector normal form与两个初始区间冻结；V12再用 inverse-residue zero padding及
-complete additive Parseval，把全部 squarefree projector统一推进到
-`P<F^(3/2)`的每个 fixed-margin子区间。完整 compiler见
+complete additive Parseval统一穿过 `P<F^(3/2)`。V13随后用 signed Ramanujan
+divisor transfer、multiplicative Gauss-square operator与 ordinary product-fiber
+energy，把全部 squarefree projector继续推进到 `P<F^2`的每个 fixed-margin子区间。
+完整 compiler见
 [`fm_local_comparison_compiler.md`](fm_local_comparison_compiler.md)。所有 TPC-1--206 的 source locks、
 `STOP_SCOPED` cells、actuality/provenance 与 normalization firewalls继续有效。
 
@@ -1148,3 +1158,73 @@ membership、all-`D`、exact cover、tails、A/B selection、original/global
 normalization和 provenance仍 OPEN；fixed-atom credit=`0`、global strict
 `1/400=UNPAID`、`L2=NONE`、`TPC_207_TRIGGER=false`。地图上的 A2、Bridge B与
 Hénon辅助岛仍不与本解析证明拼接。
+
+## 13. V13 Ramanujan signed product-fiber highway
+
+V12 的 `3/2`墙不是最终墙。同一个 `(57.4.2)` source atom还保留了没有使用的
+Ramanujan signed structure。squarefree `g`与 `(a,g)=1`逐字给
+
+```text
+mu(g)c_g(ak)=sum_(v|g,v|k)mu(v)v,  k=vj.             (13.1)
+```
+
+固定 outer variables，把两组 ordinary products压到 `H=(Z/rho Z)^*`：
+
+```text
+Gamma(r)=sum_(e_1e_2=r)A(e_1,e_2),
+Lambda_v(s)=sum_(uj=s)x(u)W^ell(avj/F).              (13.2)
+```
+
+这里 `avj`是 literal `ell=ak`；遗漏 `a`会被 checker杀死。actual masks保证全部
+entries为 units，fixed physical `h0=2`完整保留在
+
+```text
+K_v(z)=S(1,-2v conjugate(gab^2t^2)_rho z;rho).
+```
+
+这个 kernel在乘法 characters下的 exact eigenvalue是
+
+```text
+chi(c_v)tau_rho(conjugate chi)^2.
+```
+
+对 odd squarefree `rho`，包括 imprimitive characters在内均有
+`|tau_rho(chi)|<=sqrt(rho)`，所以 physical unnormalized operator norm至多
+`rho`。另一方面，ordinary integer product collisions给
+
+```text
+||Gamma||_2^2 << F^2(1+F^2/P)X^o(1),
+||Lambda_v||_2^2
+ << (UK/v)(1+UK/(vP))X^o(1).                         (13.3)
+```
+
+对 `v|g`求和、乘回 literal coefficient和全部 `GPTAB` cells后，且不给
+`mu(rho)mu(b)`任何 cancellation credit，得到
+
+```text
+|V(P)| << F^5P^(1/2)X^o(1).                         (13.4)
+```
+
+因此每个 fixed `delta>0`上，全部 squarefree
+
+```text
+P<=F^(2-delta)
+```
+
+都有任意 fixed `eta_D<delta/4`。旧 `P=F^(3/2)`位置现在已有 supremal local
+budget `1/8`；若 downstream另损 `D^lambda_D`，local strict
+`eta_D>1/200`条件是
+`delta>1/50+4lambda_D`。
+
+新的红色断桥只剩 `P=F^(2-o(1))` top collar。在 exact `P=F^2`，本方法恰返回
+`F^6`；下一关必须真正利用 outer `mu(rho)`、primitive projection或 actual fibers
+对最大 Gauss-square eigenspaces的避让。Pascadi DI top cell只返回 endpoint；
+[Blomer--Risager--Shparlinski Theorem 1.3](https://arxiv.org/html/2411.17823v3#S1.Thmtheorem3)
+要求跨 modulus保持 fixed inner index且没有 literal `mu(rho)`权，不能附着 actual
+moving inverse index。这是 scoped screen，不是文献不存在的普遍断言。
+
+`GLOBAL_MOVING_UNIT_CAUCHY`仍为旧 `STOP_SCOPED`：V13使用受限 product fibers，
+只在 exact top endpoint与旧 resonance会合。actual-atom membership、all-`D`、
+exact cover、tails、A/B selection、global normalization和 provenance仍 OPEN；
+fixed-atom credit=`0`、global strict `1/400=UNPAID`、`L2=NONE`、
+`TPC_207_TRIGGER=false`。A2、Bridge B与 Hénon辅助岛保持独立。

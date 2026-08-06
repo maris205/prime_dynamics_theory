@@ -138,6 +138,33 @@ def quartic_character_mod_13(value: int) -> GaussianInteger:
     raise AssertionError("quartic character discrete logarithm failed")
 
 
+def quartic_character_mod_5(value: int) -> GaussianInteger:
+    """The exact quartic character modulo 5 with chi(2)=i."""
+    residue = value % 5
+    return {
+        0: (0, 0),
+        1: (1, 0),
+        2: (0, 1),
+        3: (0, -1),
+        4: (-1, 0),
+    }[residue]
+
+
+def gaussian_unit_power(value: GaussianInteger, exponent: int) -> GaussianInteger:
+    """Raise one of 1,i,-1,-i to a nonnegative integer power."""
+    answer = (1, 0)
+    for _ in range(exponent):
+        answer = gaussian_mul(answer, value)
+    return answer
+
+
+def quartic_family_character_mod_5(value: int, index: int) -> GaussianInteger:
+    """The character chi_index modulo 5 with chi_index(2)=i^index."""
+    if value % 5 == 0:
+        return 0, 0
+    return gaussian_unit_power(quartic_character_mod_5(value), index % 4)
+
+
 def cyclic_gaussian_convolution(
     left: list[GaussianInteger], right: list[GaussianInteger]
 ) -> list[GaussianInteger]:
@@ -524,7 +551,7 @@ def run_checks() -> dict[str, object]:
     umbrella_gate = "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE"
     primary_route = "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION"
     independent_reserve = "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI"
-    v12_status_registry = {
+    v13_status_registry = {
         "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
         "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
         "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
@@ -563,17 +590,25 @@ def run_checks() -> dict[str, object]:
         "HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW": "PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA",
         "HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET": "LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN",
         "BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION": "STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL",
-        "HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
+        "HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION": "ANCESTOR_OPEN_REDUCED_TO_TOP_PROJECTOR_COLLAR",
+        "HB4_EXACT_HALF_RAMANUJAN_DIVISOR_PRODUCT_FIBER_TRANSFER": "PROVED_EXACT_FINITE",
+        "HB4_EXACT_HALF_MULTIPLICATIVE_GAUSS_SQUARE_OPERATOR": "PROVED_EXACT_ANY_ODD_SQUAREFREE",
+        "HB4_EXACT_HALF_PRODUCT_FIBER_COLLISION_ENERGY": "PROVED_ELEMENTARY_COMPOSITE_UNIFORM",
+        "HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_WINDOW": "PROVED_CONTRACT_LEVEL_TO_TWO_MINUS_DELTA",
+        "HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET": "LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN",
+        "PASCADI_DI_TOP_PROJECTOR_ATTACHMENT": "STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH",
+        "BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT": "STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH",
+        "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
     }
     route_freeze = {
-        "route_version": "V12",
+        "route_version": "V13",
         "umbrella_gate": umbrella_gate,
         "primary_route": primary_route,
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION",
+        "first_subgate": "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
         "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
-        "v12_status_registry": v12_status_registry,
+        "v13_status_registry": v13_status_registry,
         "independent_reserve": independent_reserve,
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
         "independent_polar_main_attachment": "OPEN_NEW_ATTACHMENT",
@@ -588,14 +623,14 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     expected_route_freeze = {
-        "route_version": "V12",
+        "route_version": "V13",
         "umbrella_gate": "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE",
         "primary_route": "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION",
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION",
+        "first_subgate": "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
         "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
-        "v12_status_registry": {
+        "v13_status_registry": {
             "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
             "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
             "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
@@ -634,7 +669,15 @@ def run_checks() -> dict[str, object]:
             "HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW": "PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA",
             "HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET": "LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN",
             "BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION": "STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL",
-            "HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
+            "HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION": "ANCESTOR_OPEN_REDUCED_TO_TOP_PROJECTOR_COLLAR",
+            "HB4_EXACT_HALF_RAMANUJAN_DIVISOR_PRODUCT_FIBER_TRANSFER": "PROVED_EXACT_FINITE",
+            "HB4_EXACT_HALF_MULTIPLICATIVE_GAUSS_SQUARE_OPERATOR": "PROVED_EXACT_ANY_ODD_SQUAREFREE",
+            "HB4_EXACT_HALF_PRODUCT_FIBER_COLLISION_ENERGY": "PROVED_ELEMENTARY_COMPOSITE_UNIFORM",
+            "HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_WINDOW": "PROVED_CONTRACT_LEVEL_TO_TWO_MINUS_DELTA",
+            "HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET": "LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN",
+            "PASCADI_DI_TOP_PROJECTOR_ATTACHMENT": "STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH",
+            "BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT": "STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH",
+            "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
         },
         "independent_reserve": "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI",
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
@@ -650,7 +693,7 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     if route_freeze != expected_route_freeze:
-        raise AssertionError("V12 route/physical freeze changed")
+        raise AssertionError("V13 route/physical freeze changed")
     if primary_route == independent_reserve:
         raise AssertionError("independent V10 source locks were merged")
     route_mutations: list[dict[str, object]] = []
@@ -677,12 +720,12 @@ def run_checks() -> dict[str, object]:
     numbered_trigger["TPC_207_TRIGGER"] = True
     route_mutations.append(numbered_trigger)
     weakened_registry = dict(route_freeze)
-    weakened_statuses = dict(v12_status_registry)
+    weakened_statuses = dict(v13_status_registry)
     weakened_statuses["GLOBAL_MOVING_UNIT_CAUCHY"] = "OPEN"
-    weakened_registry["v12_status_registry"] = weakened_statuses
+    weakened_registry["v13_status_registry"] = weakened_statuses
     route_mutations.append(weakened_registry)
     if any(mutation == expected_route_freeze for mutation in route_mutations):
-        raise AssertionError("V12 route/physical mutation escaped")
+        raise AssertionError("V13 route/physical mutation escaped")
     sample_a1 = Fraction(3, 1)
     sample_a2 = Fraction(5, 1)
     outer_switched_value = -6 * (sample_a1 - sample_a2)
@@ -1723,8 +1766,8 @@ def run_checks() -> dict[str, object]:
         == v10_strict_d_saving_exponent
     )
     v11_prime_composite_promotion_detected = (
-        v12_status_registry["HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW"]
-        != v12_status_registry[
+        v13_status_registry["HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW"]
+        != v13_status_registry[
             "HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS"
         ]
     )
@@ -1870,7 +1913,7 @@ def run_checks() -> dict[str, object]:
         v12_complete_local_p_exponent != HALF
     )
     v12_short_interval_support_promotion_detected = (
-        v12_status_registry[
+        v13_status_registry[
             "BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION"
         ]
         == "STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL"
@@ -1887,6 +1930,393 @@ def run_checks() -> dict[str, object]:
         )
     ):
         raise AssertionError("V12 normalization or scope mutation escaped")
+
+    # V13 first expands the physical Ramanujan sign and then compresses the
+    # two ordinary products e1*e2 and u*j on the multiplicative unit group.
+    # The kernel Fourier transform is checked exactly in
+    # Z[i][Z/rho Z], including imprimitive composite characters induced from
+    # the quartic character modulo 5.  No floating roots of unity are used.
+    v13_gauss_square_fixtures = ((5, 2), (15, 2), (35, 3))
+    v13_gauss_square_transform_cases = 0
+    v13_gauss_conjugation_mutation_detected = False
+    v13_gauss_unit_phase_mutation_detected = False
+    for rho, unit_c in v13_gauss_square_fixtures:
+        kernel_transform = [(0, 0) for _ in range(rho)]
+        tau_bar = [(0, 0) for _ in range(rho)]
+        tau_plain = [(0, 0) for _ in range(rho)]
+        for residue in range(rho):
+            if math.gcd(residue, rho) != 1:
+                continue
+            chi_value = quartic_character_mod_5(residue)
+            chi_bar = gaussian_conjugate(chi_value)
+            tau_bar[residue] = gaussian_add(tau_bar[residue], chi_bar)
+            tau_plain[residue] = gaussian_add(tau_plain[residue], chi_value)
+            counts = kloosterman_exponent_multiset(
+                1, unit_c * residue, rho
+            )
+            for exponent, count in enumerate(counts):
+                kernel_transform[exponent] = gaussian_add(
+                    kernel_transform[exponent],
+                    (count * chi_bar[0], count * chi_bar[1]),
+                )
+        expected_transform = [
+            gaussian_mul(quartic_character_mod_5(unit_c), coefficient)
+            for coefficient in cyclic_gaussian_convolution(tau_bar, tau_bar)
+        ]
+        wrong_conjugation = [
+            gaussian_mul(quartic_character_mod_5(unit_c), coefficient)
+            for coefficient in cyclic_gaussian_convolution(
+                tau_plain, tau_plain
+            )
+        ]
+        wrong_unit_phase = [
+            gaussian_mul(
+                gaussian_conjugate(quartic_character_mod_5(unit_c)),
+                coefficient,
+            )
+            for coefficient in cyclic_gaussian_convolution(tau_bar, tau_bar)
+        ]
+        if kernel_transform != expected_transform:
+            raise AssertionError("V13 multiplicative Gauss-square transform failed")
+        if kernel_transform != wrong_conjugation:
+            v13_gauss_conjugation_mutation_detected = True
+        if kernel_transform != wrong_unit_phase:
+            v13_gauss_unit_phase_mutation_detected = True
+        v13_gauss_square_transform_cases += 1
+    if not (
+        v13_gauss_conjugation_mutation_detected
+        and v13_gauss_unit_phase_mutation_detected
+    ):
+        raise AssertionError("V13 Gauss-square orientation mutation escaped")
+
+    # The full multiplicative Fourier bilinear identity fixes which side of
+    # the four physical polynomials is conjugated.  With the convention above,
+    # Gamma^(chi) uses conjugate(chi), whereas Lambda^(conjugate chi) uses chi.
+    # Multiplying by phi(5)=4 keeps this check integral in Z[i][Z/5Z].
+    v13_fourier_modulus = 5
+    v13_fourier_unit_c = 2
+    v13_fourier_gamma = {1: 2, 2: -1, 3: 3, 4: 1}
+    v13_fourier_lambda = {1: -2, 2: 1, 3: 2, 4: -1}
+    v13_fourier_physical = [0] * v13_fourier_modulus
+    for r_value, r_weight in v13_fourier_gamma.items():
+        for s_value, s_weight in v13_fourier_lambda.items():
+            add_scaled_cyclotomic(
+                v13_fourier_physical,
+                kloosterman_exponent_multiset(
+                    1,
+                    v13_fourier_unit_c
+                    * s_value
+                    * pow(r_value, -1, v13_fourier_modulus),
+                    v13_fourier_modulus,
+                ),
+                r_weight * s_weight,
+            )
+    v13_fourier_numerator = [(0, 0) for _ in range(v13_fourier_modulus)]
+    v13_fourier_wrong_orientation = [
+        (0, 0) for _ in range(v13_fourier_modulus)
+    ]
+    for character_index in range(4):
+        kernel_hat = [(0, 0) for _ in range(v13_fourier_modulus)]
+        gamma_hat = (0, 0)
+        lambda_hat_bar = (0, 0)
+        wrong_gamma_hat = (0, 0)
+        wrong_lambda_hat_bar = (0, 0)
+        for z_value in range(1, v13_fourier_modulus):
+            character_value = quartic_family_character_mod_5(
+                z_value, character_index
+            )
+            conjugate_value = gaussian_conjugate(character_value)
+            counts = kloosterman_exponent_multiset(
+                1, v13_fourier_unit_c * z_value, v13_fourier_modulus
+            )
+            for exponent, count in enumerate(counts):
+                kernel_hat[exponent] = gaussian_add(
+                    kernel_hat[exponent],
+                    (count * conjugate_value[0], count * conjugate_value[1]),
+                )
+        for residue, weight in v13_fourier_gamma.items():
+            character_value = quartic_family_character_mod_5(
+                residue, character_index
+            )
+            gamma_hat = gaussian_add(
+                gamma_hat,
+                tuple(
+                    weight * entry
+                    for entry in gaussian_conjugate(character_value)
+                ),
+            )
+            wrong_gamma_hat = gaussian_add(
+                wrong_gamma_hat,
+                tuple(weight * entry for entry in character_value),
+            )
+        for residue, weight in v13_fourier_lambda.items():
+            character_value = quartic_family_character_mod_5(
+                residue, character_index
+            )
+            lambda_hat_bar = gaussian_add(
+                lambda_hat_bar,
+                tuple(weight * entry for entry in character_value),
+            )
+            wrong_lambda_hat_bar = gaussian_add(
+                wrong_lambda_hat_bar,
+                tuple(
+                    weight * entry
+                    for entry in gaussian_conjugate(character_value)
+                ),
+            )
+        scalar = gaussian_mul(gamma_hat, lambda_hat_bar)
+        wrong_scalar = gaussian_mul(wrong_gamma_hat, wrong_lambda_hat_bar)
+        for exponent, coefficient in enumerate(kernel_hat):
+            v13_fourier_numerator[exponent] = gaussian_add(
+                v13_fourier_numerator[exponent],
+                gaussian_mul(scalar, coefficient),
+            )
+            v13_fourier_wrong_orientation[exponent] = gaussian_add(
+                v13_fourier_wrong_orientation[exponent],
+                gaussian_mul(wrong_scalar, coefficient),
+            )
+    v13_fourier_expected_numerator = [
+        (phi(v13_fourier_modulus) * coefficient, 0)
+        for coefficient in v13_fourier_physical
+    ]
+    if v13_fourier_numerator != v13_fourier_expected_numerator:
+        raise AssertionError("V13 four-polynomial Fourier orientation failed")
+    v13_four_polynomial_orientation_mutation_detected = (
+        v13_fourier_wrong_orientation != v13_fourier_expected_numerator
+    )
+    if not v13_four_polynomial_orientation_mutation_detected:
+        raise AssertionError("V13 four-polynomial orientation mutation escaped")
+    v13_four_polynomial_orientation_cases = 1
+
+    # Exact physical Ramanujan reassembly.  The a!=1 fixtures freeze the
+    # literal ell-weight W^ell(a*v*j/F), while positive and negative k values
+    # freeze both signed shells.  Every comparison is made in Z[zeta_rho].
+    v13_physical_fixtures = (
+        (
+            35,
+            3,
+            2,
+            {(11, 13): 2, (13, 17): -1},
+            {11: 1, 19: -2},
+            (-6, -3, -1, 1, 3, 6),
+        ),
+        (
+            77,
+            15,
+            2,
+            {(13, 17): 1, (17, 19): -2},
+            {13: 2, 23: -1},
+            (-15, -5, -3, -1, 1, 3, 5, 15),
+        ),
+    )
+    v13_ramanujan_reassembly_cases = 0
+    v13_ramanujan_sign_mutation_detected = False
+    v13_missing_divisor_phase_mutation_detected = False
+    v13_missing_a_weight_mutation_detected = False
+    for rho, g, a, e_pair_weights, u_weights, k_support in v13_physical_fixtures:
+        if mobius(g) == 0 or math.gcd(a, g) != 1 or math.gcd(g, rho) != 1:
+            raise AssertionError("V13 physical fixture violates source masks")
+
+        def ell_weight(ell: int) -> int:
+            return ((3 * abs(ell) + (1 if ell > 0 else 4)) % 7) - 3
+
+        physical = [0] * rho
+        reassembled = [0] * rho
+        wrong_sign = [0] * rho
+        wrong_phase = [0] * rho
+        wrong_weight = [0] * rho
+        outer_inverse = pow((g * a) % rho, -1, rho)
+        for (e1, e2), e_weight in e_pair_weights.items():
+            e_inverse = pow((e1 * e2) % rho, -1, rho)
+            for u, u_weight in u_weights.items():
+                for k in k_support:
+                    if math.gcd(k, rho) != 1:
+                        raise AssertionError("V13 k fixture is not a projector unit")
+                    scale = (
+                        e_weight
+                        * u_weight
+                        * ell_weight(a * k)
+                        * mobius(g)
+                        * ramanujan_sum(g, a * k)
+                    )
+                    phase = -2 * u * k * outer_inverse * e_inverse
+                    add_scaled_cyclotomic(
+                        physical,
+                        kloosterman_exponent_multiset(1, phase, rho),
+                        scale,
+                    )
+                for v in divisors(g):
+                    for k in k_support:
+                        if k % v:
+                            continue
+                        j_value = k // v
+                        base_scale = e_weight * u_weight * v
+                        phase = -2 * v * u * j_value * outer_inverse * e_inverse
+                        add_scaled_cyclotomic(
+                            reassembled,
+                            kloosterman_exponent_multiset(1, phase, rho),
+                            base_scale * mobius(v) * ell_weight(a * v * j_value),
+                        )
+                        add_scaled_cyclotomic(
+                            wrong_sign,
+                            kloosterman_exponent_multiset(1, phase, rho),
+                            base_scale
+                            * mobius(g // v)
+                            * ell_weight(a * v * j_value),
+                        )
+                        add_scaled_cyclotomic(
+                            wrong_phase,
+                            kloosterman_exponent_multiset(
+                                1,
+                                -2 * u * j_value * outer_inverse * e_inverse,
+                                rho,
+                            ),
+                            base_scale * mobius(v) * ell_weight(a * v * j_value),
+                        )
+                        add_scaled_cyclotomic(
+                            wrong_weight,
+                            kloosterman_exponent_multiset(1, phase, rho),
+                            base_scale * mobius(v) * ell_weight(v * j_value),
+                        )
+                        v13_ramanujan_reassembly_cases += 1
+        if not general_cyclotomic_integer_equal(physical, reassembled):
+            raise AssertionError("V13 signed Ramanujan reassembly failed")
+        if not general_cyclotomic_integer_equal(physical, wrong_sign):
+            v13_ramanujan_sign_mutation_detected = True
+        if not general_cyclotomic_integer_equal(physical, wrong_phase):
+            v13_missing_divisor_phase_mutation_detected = True
+        if not general_cyclotomic_integer_equal(physical, wrong_weight):
+            v13_missing_a_weight_mutation_detected = True
+    if not all(
+        (
+            v13_ramanujan_sign_mutation_detected,
+            v13_missing_divisor_phase_mutation_detected,
+            v13_missing_a_weight_mutation_detected,
+        )
+    ):
+        raise AssertionError("V13 physical Ramanujan mutation escaped")
+
+    # Product-fiber compression is an exact reindexing, independent of any
+    # interval-injectivity claim.  Joint e-pair coefficients are allowed.
+    v13_product_fiber_cases = 0
+    v13_additive_fiber_mutation_detected = False
+    v13_ratio_orientation_mutation_detected = False
+    for rho, unit_c in ((15, 2), (35, 3), (55, 2)):
+        e_pair_weights = {(2, 4): 2, (4, 7): -1, (7, 8): 3}
+        uj_weights = {(2, 4): 1, (4, 7): -2, (7, 8): 2}
+        e_pair_weights = {
+            pair: value
+            for pair, value in e_pair_weights.items()
+            if all(math.gcd(entry, rho) == 1 for entry in pair)
+        }
+        uj_weights = {
+            pair: value
+            for pair, value in uj_weights.items()
+            if all(math.gcd(entry, rho) == 1 for entry in pair)
+        }
+        gamma: dict[int, int] = {}
+        lambda_row: dict[int, int] = {}
+        direct = [0] * rho
+        for (e1, e2), weight in e_pair_weights.items():
+            residue = e1 * e2 % rho
+            gamma[residue] = gamma.get(residue, 0) + weight
+        for (u, j_value), weight in uj_weights.items():
+            residue = u * j_value % rho
+            lambda_row[residue] = lambda_row.get(residue, 0) + weight
+        for (e1, e2), e_weight in e_pair_weights.items():
+            for (u, j_value), uj_weight in uj_weights.items():
+                phase = unit_c * u * j_value * pow(e1 * e2, -1, rho)
+                add_scaled_cyclotomic(
+                    direct,
+                    kloosterman_exponent_multiset(1, phase, rho),
+                    e_weight * uj_weight,
+                )
+        compressed = [0] * rho
+        wrong_additive = [0] * rho
+        wrong_orientation = [0] * rho
+        for r_value, r_weight in gamma.items():
+            for s_value, s_weight in lambda_row.items():
+                scale = r_weight * s_weight
+                add_scaled_cyclotomic(
+                    compressed,
+                    kloosterman_exponent_multiset(
+                        1, unit_c * s_value * pow(r_value, -1, rho), rho
+                    ),
+                    scale,
+                )
+                add_scaled_cyclotomic(
+                    wrong_additive,
+                    kloosterman_exponent_multiset(
+                        1, unit_c * (s_value - r_value), rho
+                    ),
+                    scale,
+                )
+                add_scaled_cyclotomic(
+                    wrong_orientation,
+                    kloosterman_exponent_multiset(
+                        1, unit_c * r_value * pow(s_value, -1, rho), rho
+                    ),
+                    scale,
+                )
+                v13_product_fiber_cases += 1
+        if not general_cyclotomic_integer_equal(direct, compressed):
+            raise AssertionError("V13 multiplicative product-fiber compression failed")
+        if not general_cyclotomic_integer_equal(direct, wrong_additive):
+            v13_additive_fiber_mutation_detected = True
+        if not general_cyclotomic_integer_equal(direct, wrong_orientation):
+            v13_ratio_orientation_mutation_detected = True
+    if not (
+        v13_additive_fiber_mutation_detected
+        and v13_ratio_orientation_mutation_detected
+    ):
+        raise AssertionError("V13 product-fiber mutation escaped")
+
+    # The proved contract-level dyadic bound is F^5 P^(1/2).  Its only
+    # method endpoint is P=F^2; at P=F^(2-delta) it yields eta_D<delta/4.
+    v13_full_f_exponent = Fraction(5, 1)
+    v13_full_p_exponent = HALF
+    v13_projector_critical = Fraction(2, 1)
+    v13_eta_d_delta_slope = Fraction(1, 4)
+    v13_eta_d_supremum_at_three_halves = (
+        6
+        - v13_full_f_exponent
+        - v13_full_p_exponent * Fraction(3, 2)
+    ) / 2
+    v13_strict_delta = Fraction(1, 50)
+    v13_downstream_lambda_multiplier = 1 / v13_eta_d_delta_slope
+    v13_strict_equality_detected = (
+        v13_eta_d_delta_slope * v13_strict_delta
+        == v10_strict_d_saving_exponent
+    )
+    v13_downstream_factor_mutation_detected = (
+        v13_downstream_lambda_multiplier == 4
+    )
+    if (
+        v13_full_f_exponent
+        + v13_full_p_exponent * v13_projector_critical
+        != 6
+        or v13_eta_d_delta_slope != Fraction(1, 4)
+        or v13_eta_d_supremum_at_three_halves != Fraction(1, 8)
+        or not v13_strict_equality_detected
+        or not v13_downstream_factor_mutation_detected
+    ):
+        raise AssertionError("V13 product-fiber exponent ledger failed")
+    v13_endpoint_promotion_detected = (
+        v13_status_registry[
+            "HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION"
+        ]
+        == "SELECTED_CORE_OPEN_NEW_THEOREM"
+    )
+    v13_historical_stop_reopening_detected = (
+        v13_status_registry["GLOBAL_MOVING_UNIT_CAUCHY"]
+        == "STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE"
+    )
+    if not (
+        v13_endpoint_promotion_detected
+        and v13_historical_stop_reopening_detected
+    ):
+        raise AssertionError("V13 endpoint scope mutation escaped")
+
     hb_padding_slots = 6 * math.ceil(Fraction(1, 1) / (1 - HALF))
     if hb_padding_slots != 12:
         raise AssertionError("Ford--Maynard Lemma 7.14 slot count failed")
@@ -2694,9 +3124,10 @@ def run_checks() -> dict[str, object]:
             "finite exact algebra, rank-one obstruction, and compiler geometry; "
             "source-backed analytic estimates are not numerical checks; the "
             "V11 Weil/FKMS windows and the V12 all-squarefree inverse-residue "
-            "window are audited contract-level partial theorems; actual-atom "
-            "attachment, the three-halves projector core, the full signed Type-IV "
-            "construction, the fixed-margin-free three-halves collar, and "
+            "window are retained, while V13 proves the product-fiber window "
+            "P<=F^(2-delta) at contract level; actual-atom attachment, the "
+            "top-projector signed-modulus collar, the full signed Type-IV "
+            "construction, the fixed-margin-free endpoint, and "
             "structured two-row paired-Voronoi theorem remain open"
         ),
         "exponents": {
@@ -2776,6 +3207,22 @@ def run_checks() -> dict[str, object]:
             ),
             "v12_eta_D_supremum_at_forty_two_over_thirty_one": str(
                 v12_old_fkms_end_eta_d_supremum
+            ),
+            "v13_full_bound": "F^5 P^(1/2+o(1))",
+            "v13_full_F_exponent": str(v13_full_f_exponent),
+            "v13_full_P_exponent": str(v13_full_p_exponent),
+            "v13_projector_critical_P_exponent": str(
+                v13_projector_critical
+            ),
+            "v13_eta_D_delta_slope": str(v13_eta_d_delta_slope),
+            "v13_eta_D_supremum_at_three_halves": str(
+                v13_eta_d_supremum_at_three_halves
+            ),
+            "v13_strict_delta_without_downstream_loss": str(
+                v13_strict_delta
+            ),
+            "v13_downstream_lambda_multiplier": str(
+                v13_downstream_lambda_multiplier
             ),
             "lemma_7_14_padding_slots": hb_padding_slots,
             "bc_h2_j1_worst": str(bc_h2_j1_worst),
@@ -2892,6 +3339,17 @@ def run_checks() -> dict[str, object]:
             "the V12 window is F^(4/3)<=P<=F^(3/2-delta) with eta_D<delta",
             "the V12 strict local endpoint needs delta>1/200",
             "the BP2607 nontrivial interval theorem cannot replace inverse support cardinality by interval length",
+            "squarefree Ramanujan signing is exactly transferred to divisor signs mu(v) before product compression",
+            "the multiplicative Fourier transform of S(1,c*z;rho) is chi(c)*tau_rho(conjugate chi)^2",
+            "the full four-polynomial Fourier integrand is chi(c)*tau(conjugate chi)^2*E1(conjugate chi)*E2(conjugate chi)*U(chi)*V(chi)",
+            "imprimitive odd-squarefree Gauss factors give operator norm at most rho without a hidden phi(rho)",
+            "ordinary integer product fibers compress the actual e1e2 and uj rows without interval injectivity",
+            "the literal ell-weight after k=vj is W^ell(a*v*j/F)",
+            "the V13 all-squarefree dyad is F^5 P^(1/2+o(1))",
+            "the V13 window P<=F^(2-delta) gives every eta_D<delta/4",
+            "at P=F^(3/2) the V13 local eta_D supremum is 1/8",
+            "the strict local budget needs delta>1/50+4*lambda_D",
+            "P=F^2 remains an exact endpoint for the phase-blind product-fiber operator",
             "V10 primary and independent source locks remain separate with zero physical credit",
             "outer minus six converts source A1-A2 into physical A2-A1",
         ],
@@ -2933,6 +3391,10 @@ def run_checks() -> dict[str, object]:
             "v11_squarefree_ramanujan_absolute": v11_ramanujan_absolute_cases,
             "v12_inverse_residue_kloosterman_transfer": v12_inverse_residue_transfer_cases,
             "v12_complete_additive_parseval": v12_complete_parseval_cases,
+            "v13_gauss_square_character_transform": v13_gauss_square_transform_cases,
+            "v13_four_polynomial_character_orientation": v13_four_polynomial_orientation_cases,
+            "v13_signed_ramanujan_reassembly": v13_ramanujan_reassembly_cases,
+            "v13_multiplicative_product_fiber_compression": v13_product_fiber_cases,
         },
         "mutation_tests": {
             "J_above_one_third": "DETECTED",
@@ -2951,6 +3413,18 @@ def run_checks() -> dict[str, object]:
             "v12_normalized_to_unnormalized_complete_bound": "DETECTED",
             "v12_inverse_support_cardinality_to_short_interval": "DETECTED_FALSE",
             "v12_strict_delta_equality": "DETECTED",
+            "v13_gauss_square_conjugation": "DETECTED",
+            "v13_gauss_square_unit_phase": "DETECTED",
+            "v13_four_polynomial_character_orientation": "DETECTED",
+            "v13_ramanujan_divisor_sign": "DETECTED",
+            "v13_ramanujan_divisor_phase": "DETECTED",
+            "v13_literal_a_in_ell_weight": "DETECTED",
+            "v13_product_fiber_to_additive_fiber": "DETECTED",
+            "v13_product_ratio_orientation": "DETECTED",
+            "v13_top_projector_endpoint_promotion": "DETECTED_FALSE",
+            "v13_historical_global_cauchy_reopening": "DETECTED_FALSE",
+            "v13_strict_delta_equality": "DETECTED",
+            "v13_downstream_lambda_factor": "DETECTED",
             "hb2_sqrt_endpoint_to_large": "DETECTED",
             "hb2_A2_product_mobius_collapse": "DETECTED",
             "hb2_prime_power_to_prime_indicator": "DETECTED",
@@ -3002,7 +3476,7 @@ def run_checks() -> dict[str, object]:
             "v10_paired_polar_main_promotion": "DETECTED",
             "v10_bilateral_A1_A2_sign_reversal": "DETECTED",
             "v10_physical_credit_promotion": "DETECTED",
-            "v12_status_registry_weakening": "DETECTED",
+            "v13_status_registry_weakening": "DETECTED",
         },
         "open_gate": umbrella_gate,
         "route_freeze": route_freeze,

@@ -53,7 +53,15 @@ HB4_EXACT_HALF_INVERSE_RESIDUE_TWO_ROW_TRANSFER = PROVED_EXACT_NORM_PRESERVING
 HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA
 HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN
 BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION = STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL
-HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_TOP_PROJECTOR_COLLAR
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_PRODUCT_FIBER_TRANSFER = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_MULTIPLICATIVE_GAUSS_SQUARE_OPERATOR = PROVED_EXACT_ANY_ODD_SQUAREFREE
+HB4_EXACT_HALF_PRODUCT_FIBER_COLLISION_ENERGY = PROVED_ELEMENTARY_COMPOSITE_UNIFORM
+HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_WINDOW = PROVED_CONTRACT_LEVEL_TO_TWO_MINUS_DELTA
+HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN
+PASCADI_DI_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH
+BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH
+HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH_PROVED_EXACT_ANALYTIC_HB4xHB2_GATE_OPEN
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION_STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI_INDEPENDENT_OPEN
@@ -62,7 +70,7 @@ HB4xHB2_COLLECTIVE_POLAR_MAIN_ATTACHMENT_OPEN
 DIRECT_DFI_ROW_BY_ROW_STOP_SCOPED_F7_VERSUS_F4
 CURRENT_UMBRELLA_GATE = TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
 CURRENT_PRIMARY_ROUTE = HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION
-CURRENT_FIRST_SUBGATE = HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION
+CURRENT_FIRST_SUBGATE = HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION
 CURRENT_INDEPENDENT_RESERVE = HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI
 TPC_THEOREM = NO
 TPC207_TRIGGER = false
@@ -3728,3 +3736,228 @@ membership, all-`D` cover, exactly-once physical reassembly, tails, A/B
 selection, original/global normalization and provenance remain open.  Hence
 fixed-atom credit is `0`, global strict `1/400` is `UNPAID`, `L2=NONE`, and
 `TPC207_TRIGGER=false`.
+
+### 12.15 V13: signed Ramanujan product fibers and the top-projector wall
+
+#### 12.15.1 Literal sign transfer and source-atom lock
+
+Retain `(12.12.17b)` and freeze
+
+```text
+g~G, rho~P, t_r~T, a~A, b~B,
+GPTAB asymp F^2, PT>=F,
+U=F/G, K=F/A.                                         (12.15.1)
+```
+
+The outer variables remain pairwise coprime odd squarefree, the physical shift
+is still `h0=2`, and every unit mask is literal.  Squarefree `g` and `(a,g)=1`
+give the exact signed identity
+
+```text
+mu(g)c_g(ak)=sum_(v|g,v|k)mu(v)v.                     (12.15.2)
+```
+
+Write `k=vj`, splitting positive and negative `j`.  The source weight is
+literally `W^ell(avj/F)`, not `W^ell(vj/F)`.  The source envelope separates the
+`(e_1,e_2)` block from the `u` and `ell` rows after freezing the common
+transform parameter.  No separation inside the joint `e` block is needed:
+its actual joint square norm `<<F^2X^o(1)` suffices.
+
+For `H=(Z/rho Z)^*`, put
+
+```text
+Gamma(r)=sum_(e_1e_2=r mod rho)A(e_1,e_2),
+Lambda_v(s)=sum_(uj=s mod rho)x(u)W^ell(avj/F),
+c_v=-2v conjugate(gab^2t_r^2)_rho,
+K_v(z)=S(1,c_vz;rho).                                 (12.15.3)
+```
+
+All displayed entries are units by the actual masks.  The physical `v` cell is
+therefore the exact multiplicative convolution
+
+```text
+T_v=sum_(r,s in H)Gamma(r)Lambda_v(s)K_v(s conjugate(r)).
+                                                               (12.15.4)
+```
+
+#### 12.15.2 Any odd-squarefree multiplicative operator
+
+Use
+
+```text
+f^(chi)=sum_(z in H)f(z)conjugate(chi(z)),
+f(z)=phi(rho)^(-1)sum_chi f^(chi)chi(z).               (12.15.5)
+```
+
+Opening the unnormalized Kloosterman sum and substituting
+`w=c_v z conjugate(x)` gives
+
+```text
+K_v^(chi)=chi(c_v)tau_rho(conjugate chi)^2.            (12.15.6)
+```
+
+If `rho=fm` and `chi` is induced by primitive `chi* (mod f)`, squarefree CRT
+gives
+
+```text
+tau_rho(chi)=mu(m)chi*(m)tau_f(chi*),
+|tau_rho(chi)|=sqrt(f)<=sqrt(rho).                     (12.15.7)
+```
+
+Thus Plancherel has neither an omitted `rho/phi(rho)` nor an extra normalized
+Kloosterman factor:
+
+```text
+|T_v|<=rho||Gamma||_2||Lambda_v||_2.                  (12.15.8)
+```
+
+The checker verifies `(12.15.6)` exactly in `Z[i][Z/rho Z]` for
+`rho=5,15,35`, including complex imprimitive conductor-`5` characters, and
+kills the conjugation, unit-phase and ratio-orientation mutations.
+
+#### 12.15.3 Product-fiber energy and full outer ledger
+
+Ordinary products in the same residue fiber differ by an integer multiple of
+`rho`.  Divisor counting and fiberwise Cauchy give
+
+```text
+||Gamma||_2^2
+ <<F^2(1+F^2/P)X^o(1),
+
+||Lambda_v||_2^2
+ <<(UK/v)(1+UK/(vP))X^o(1).                           (12.15.9)
+```
+
+For the second line, lift `uj-u'j'=h rho`; the `h=0` primitive-ratio
+parametrization and the two gcd estimates for `h!=0` are uniform in composite
+`rho`.  Hence
+
+```text
+sum_(v|g)v||Lambda_v||_2
+ <<F/sqrt(A)+F^2/(GA sqrt(P)).                        (12.15.10)
+```
+
+Since `P<=F^2`, `(12.15.8)--(12.15.10)` bound a fixed outer cell by
+
+```text
+F^4/(GA)+F^3sqrt(P/A),                                (12.15.11)
+```
+
+up to `X^o(1)`.  The literal coefficient and complete outer count are
+
+```text
+a/[phi(t_r)phi(a)phi(b)]<<X^o(1)/(TB),
+# outer cells <<GPTAB.                                (12.15.12)
+```
+
+No cancellation from `mu(rho)mu(b)` is used.  Consequently
+
+```text
+|V(P)|
+ <<[F^4P+F^3Gsqrt(A)P^(3/2)]X^o(1)
+ <<F^5P^(1/2)X^o(1),                                 (12.15.13)
+```
+
+because `Gsqrt(A)<=GA<<F^2/P`.  Therefore
+
+```text
+P<=F^(2-delta)
+ ==> |V(P)|<<F^(6-delta/2+o(1))
+     =F^6D^(-eta_D), every fixed eta_D<delta/4.       (12.15.14)
+```
+
+At the former `P=F^(3/2)` wall the supremal local budget is `eta_D=1/8`.
+After a downstream loss `D^lambda_D`, strict `eta_D>1/200` requires
+
+```text
+delta>1/50+4lambda_D.                                 (12.15.15)
+```
+
+#### 12.15.4 Endpoint screen and next theorem
+
+At `P=F^2`, the dyadic geometry forces `G,T,A,B` to constant/subpower scale and
+`(12.15.13)` returns `F^6`.  This is a method ceiling, not a lower bound for the
+signed packet.  The next theorem must retain a top-projector expression of the
+form
+
+```text
+ sum_(rho~F^2) mu(rho)/phi(rho) sum_(chi mod rho)
+ chi(c_v)tau_rho(conjugate chi)^2
+ E_1(conjugate chi)E_2(conjugate chi)U(chi)V_v(chi)   (12.15.16)
+```
+
+and create a fixed saving from the modulus sign, primitive projection or
+avoidance of the maximal Gauss-square eigenspaces.
+
+[Pascadi, Theorem 10.3](https://arxiv.org/abs/2304.11696) is endpoint-sized in
+this top geometry; moving `rho` into its modulus variable also puts the literal
+Mobius sign in a location where its smooth modulus weight does not accept it.
+[Blomer--Risager--Shparlinski, Theorem 1.3](https://arxiv.org/html/2411.17823v3#S1.Thmtheorem3)
+keeps one fixed inner index across its unweighted/smooth modulus sum, whereas
+the index in `(12.15.16)` moves by modular inversion and retains `mu(rho)`.
+BP2607 and MQW remain fixed-modulus interval results, and Earnst has different
+prime/even AFE coefficients.  These are scoped attachment failures for the
+listed statements, not a universal absence claim.
+
+`GLOBAL_MOVING_UNIT_CAUCHY` remains a historical
+`STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE`.  V13 uses restricted ordinary
+product fibers and gains below the endpoint from their multiplicities; it only
+meets the old resonance at `P=F^2`.
+
+#### 12.15.5 Canonical V13 state and island map
+
+```text
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP = OPEN_ATTACHMENT
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT = PROVED_EXACT_EQUIVALENCE
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS
+GLOBAL_MOVING_UNIT_CAUCHY = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_PROJECTOR_CORE
+HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
+HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_PRIME_PROJECTOR_ATTACHMENT
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SMALL_PROJECTOR_ABSOLUTE_WEIL_DYADIC_BOUND = PROVED_CONTRACT_LEVEL_PARTIAL_THEOREM
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_SMALL_PROJECTOR_WINDOW = PROVED_CONTRACT_LEVEL_POWER_SAVING
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_150_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_LARGE_T_DIRECT_EARNST_TRANSFER = STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_AND_REASSEMBLY_MISMATCH
+HB4_EXACT_HALF_LARGE_T_PHASE_BLIND_CHARACTER_LARGE_SIEVE = STOP_SCOPED_ROOT_NUMBER_AND_PROJECTOR_GEOMETRY_ERASED
+HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS = STOP_SCOPED_FALSE_COEFFICIENT_SUBSTITUTION
+HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION = STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+BP2607_COMPLETE_BILINEAR_KLOOSTERMAN_L2 = SOURCE_BACKED_ANY_MODULUS_UNNORMALIZED
+HB4_EXACT_HALF_INVERSE_RESIDUE_TWO_ROW_TRANSFER = PROVED_EXACT_NORM_PRESERVING
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN
+BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION = STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL
+HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_TOP_PROJECTOR_COLLAR
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_PRODUCT_FIBER_TRANSFER = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_MULTIPLICATIVE_GAUSS_SQUARE_OPERATOR = PROVED_EXACT_ANY_ODD_SQUAREFREE
+HB4_EXACT_HALF_PRODUCT_FIBER_COLLISION_ENERGY = PROVED_ELEMENTARY_COMPOSITE_UNIFORM
+HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_WINDOW = PROVED_CONTRACT_LEVEL_TO_TWO_MINUS_DELTA
+HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN
+PASCADI_DI_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH
+BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH
+HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+```
+
+Bridge A1's red break moves from the common `3/2` wall to the maximal
+projector endpoint `2`.  Bridge A2 paired-Voronoi, Bridge B distinguished-seed
+genericity and the Hénon/geometric auxiliary route remain independent.  V13 is
+still a contract-level range advance: fixed-atom credit is `0`, global strict
+`1/400` is `UNPAID`, `L2=NONE`, and `TPC207_TRIGGER=false`.

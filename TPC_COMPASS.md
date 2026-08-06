@@ -1,12 +1,12 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-06
-状态：`BOLD_CHANNEL_V12 / INVERSE_RESIDUE_PROJECTOR_RANGE_ADVANCE`
+状态：`BOLD_CHANNEL_V13 / PRODUCT_FIBER_PROJECTOR_RANGE_ADVANCE`
 claim level：`CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE_AND_CORE_SHRINK`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V12 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V13 的完整
 公式、proof与独立 checker位于 `research/tpc-big-road/`。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
@@ -643,7 +643,15 @@ HB4_EXACT_HALF_INVERSE_RESIDUE_TWO_ROW_TRANSFER = PROVED_EXACT_NORM_PRESERVING
 HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA
 HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN
 BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION = STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL
-HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_TOP_PROJECTOR_COLLAR
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_PRODUCT_FIBER_TRANSFER = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_MULTIPLICATIVE_GAUSS_SQUARE_OPERATOR = PROVED_EXACT_ANY_ODD_SQUAREFREE
+HB4_EXACT_HALF_PRODUCT_FIBER_COLLISION_ENERGY = PROVED_ELEMENTARY_COMPOSITE_UNIFORM
+HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_WINDOW = PROVED_CONTRACT_LEVEL_TO_TWO_MINUS_DELTA
+HB4_EXACT_HALF_ALL_SQUAREFREE_PRODUCT_FIBER_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_50_PLUS_FOUR_LEDGER_MARGIN
+PASCADI_DI_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_ENDPOINT_OR_MODULUS_WEIGHT_LOCATION_MISMATCH
+BRS_MODULUS_SECOND_MOMENT_TOP_PROJECTOR_ATTACHMENT = STOP_SCOPED_MOVING_INDEX_AND_MOBIUS_WEIGHT_MISMATCH
+HB4_EXACT_HALF_TOP_PROJECTOR_MOBIUS_GAUSS_SQUARE_FOUR_POLYNOMIAL_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
 ```
 
 1. **Primary：HB4 exact-half dual-product dispersion**。V9 已把 Gauss-square
@@ -801,7 +809,58 @@ distinguished-seed genericity与 Hénon辅助岛继续独立；actual atom、all
 cover、tails、A/B、global normalization与 provenance仍 OPEN。因此 fixed-atom
 credit=`0`、global strict `1/400=UNPAID`、`L2=NONE`、TPC-207 trigger=`false`。
 
-## 13. 对外成果的最终压缩目标
+## 13. V13 后的罗盘：只剩 projector 轴的顶端 `2` 墙
+
+V13在 V10 exact packet上把此前只作为 nuisance支付的 Ramanujan row改造成
+真正的乘法结构。squarefree `g`与 `(a,g)=1`给
+
+```text
+mu(g)c_g(ak)=sum_(v|g,v|k)mu(v)v,
+```
+
+再把 `e_1e_2`与 `uj`压成 `H=(Z/rho Z)^*`上的两个 product fibers。对应
+Kloosterman kernel的乘法 Fourier eigenvalue精确为
+
+```text
+chi(c_v)tau_rho(conjugate chi)^2,
+```
+
+故 odd-squarefree/imprimitive operator norm至多 `rho`。ordinary integer product
+collision energy支付两个 fiber后，完整 outer ledger是
+
+```text
+|V(P)| << F^5P^(1/2)X^o(1).                          (13.1)
+```
+
+这把 V12 的 common `3/2`墙整体穿过：
+
+```text
+P<=F^(2-delta)
+  ==> every fixed eta_D<delta/4.
+```
+
+在旧 `P=F^(3/2)`处已有 supremal local budget `1/8`；支付 downstream
+`D^lambda_D`后，local strict `eta_D>1/200`要求
+`delta>1/50+4lambda_D`。
+
+新的红色断桥只剩
+
+```text
+P=F^(2-o(1)) top-projector collar.
+```
+
+exact `P=F^2`时 phase-blind product-fiber operator恰返回 `F^6`。下一步必须利用
+outer `mu(rho)`、primitive projection或 actual fibers对 maximal Gauss-square
+eigenspaces的避让，而不是再堆一个局部 Kloosterman bound。Pascadi DI top cell与
+BRS fixed-index modulus second moment均已 scoped screen：前者仍 endpoint，后者不接受
+随 `rho`移动的 inverse index及 literal `mu(rho)`。
+
+`GLOBAL_MOVING_UNIT_CAUCHY`保持历史 STOP；V13只在 exact top endpoint与其
+resonance会合。岛屿地图上只有 Bridge A1断点前移到最大 projector端；A2、Bridge B
+和 Hénon辅助岛保持独立。actual atom、all-`D`、exact cover、tails、A/B、global
+normalization与 provenance仍 OPEN，故 TPC-207 trigger仍为 `false`。
+
+## 14. 对外成果的最终压缩目标
 
 如果主通道存活，TPC-1--206 的最终外部形态应压缩为：
 
