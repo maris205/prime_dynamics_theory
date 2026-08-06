@@ -1,0 +1,823 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[numbers]{natbib}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\numberwithin{equation}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\cH}{\mathcal H}
+
+\title{Prime-return bouquet height and analytic radius:\\
+midpoint compression and prime-order anchors}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For the integral H\'enon automorphism
+\(
+H(x,y)=(1-6x^2-y,x)
+\)
+and the reversing-axis seed \(P_0=(0,0)\), let \(r_p\) be the return period
+of \(P_0\) modulo a rational prime \(p\).  RH-362 attached one complete
+marked \(r_p\)-cycle to each prime and obtained a locally finite formal
+Artin--Mazur product.  We prove that this formal object has a nontrivial
+analytic domain.
+
+Reversibility compresses every two-coordinate gcd term to one midpoint
+coordinate difference:
+\(
+a_{2k}=|x_k-x_{k-1}|
+\)
+and
+\(
+a_{2k+1}=|x_{k+1}-x_{k-1}|
+\).
+The escaping negative orbit then satisfies
+\(
+5b_n^2\le b_{n+1}\le6b_n^2
+\),
+which yields explicit two-sided bounds and
+\(
+\log a_n=\Theta(2^{n/2})
+\).
+For the bouquet fixed-point ledger
+\(
+T_n=\sum_{p:r_p\mid n}r_p
+\),
+we obtain the all-order envelope
+\[
+ T_n\le(\log_2 30)n\,2^{\lceil n/2\rceil-2}.
+\]
+Consequently
+\(
+\prod_p(1-z^{r_p})^{-1}
+\)
+converges normally and is holomorphic and zero-free on
+\(
+|z|<2^{-1/2}
+\).
+
+At every odd prime order \(\ell\), the term \(a_\ell\) has a primitive prime
+divisor and
+\(
+[z^\ell]\log\mathcal Z_0=\omega(a_\ell)\ge1
+\).
+This is an Euler-exponent and logarithmic-coefficient anchor, not a raw zeta
+coefficient: decomposable lower-order cycles already change the coefficient
+at order seven.  Finally, the naive Hilbert direct sum
+\(
+\bigoplus_p zU_p
+\)
+is noncompact and belongs to no finite Schatten class for \(z\ne0\);
+therefore the analytic Euler product is not its ordinary Fredholm
+determinant.
+
+The bouquet remains a marked disjoint union across distinct finite fields,
+not a full finite-field zeta, Hasse--Weil factor, canonical global H\'enon
+operator, or von-Mangoldt trace model.  Gates A--E remain false/open, and no
+Hilbert--P\'olya, Riemann-zero, completed-divisor, or RH conclusion is
+claimed.
+\end{abstract}
+
+\section{Frozen foundation and exact object}
+
+The RH-1--RH-361 foundation remains frozen in four provenance-preserving
+volumes \citep{WangRHCorpus2026}.  RH-362 opened an independent
+arithmetic-dynamical branch by assigning one marked modular return cycle to
+each prime \citep{WangRH3622026}; RH-364 is the immediate numbered baseline
+and leaves the original physical route coordinate
+\begin{equation}
+ \texttt{actual\_same\_clock\_unnormalized\_head\_transport\_open}
+ \label{eq:physical-coordinate}
+\end{equation}
+unchanged \citep{WangRH3642026}.  Nothing below estimates that physical
+same-clock defect, supplies a typed \(q/E_{\rm off}\) theorem, or closes the
+RH-241 moving noisy envelope.
+
+Fix the integral polynomial automorphism
+\begin{equation}
+ H(x,y)=(1-6x^2-y,x),
+ \qquad
+ H^{-1}(u,v)=(v,1-6v^2-u).
+ \label{eq:henon-map}
+\end{equation}
+Let
+\begin{equation}
+ R(x,y)=(y,x).
+ \label{eq:reversor}
+\end{equation}
+Direct substitution gives
+\begin{equation}
+ R^2=\operatorname{id},
+ \qquad
+ RHR=H^{-1}.
+ \label{eq:reversibility}
+\end{equation}
+These identities hold over every commutative ring and hence after reduction
+modulo every positive integer \citep{WangPrimeReturns2026}.
+
+For \(P\in\Z^2\), let
+\begin{equation}
+ r_M(P)=\min\{n\ge1:H^n(P)\equiv P\pmod M\},
+ \qquad r_1(P)=1,
+ \label{eq:return-rank}
+\end{equation}
+and, writing \(H^n(P)=(x_n,y_n)\), define
+\begin{equation}
+ a_n(P)=\gcd(|x_n-x_0|,|y_n-y_0|).
+ \label{eq:gcd-sequence-general}
+\end{equation}
+The locked source theorem is
+\begin{equation}
+ M\mid a_n(P)
+ \quad\Longleftrightarrow\quad
+ r_M(P)\mid n.
+ \label{eq:return-divisibility}
+\end{equation}
+It also proves strong divisibility for every nonperiodic integral orbit
+\citep{Silverman2007,WangPrimeReturns2026}.
+
+This paper uses only
+\begin{equation}
+ P_0=(0,0).
+ \label{eq:seed}
+\end{equation}
+Set \(x_{-1}=x_0=0\) and define
+\begin{equation}
+ x_{n+1}=1-6x_n^2-x_{n-1}.
+ \label{eq:scalar-recurrence}
+\end{equation}
+Then
+\begin{equation}
+ H^n(P_0)=(x_n,x_{n-1}),
+ \qquad
+ a_n:=a_n(P_0)=\gcd(|x_n|,|x_{n-1}|).
+ \label{eq:orbit-indexing}
+\end{equation}
+
+\section{Exact reversibility midpoint compression}
+
+The seed lies on the reversing axis: \(RP_0=P_0\).  Thus
+\begin{equation}
+ H^{-k}P_0=RH^kP_0
+ \qquad(k\ge0).
+ \label{eq:reversed-orbit}
+\end{equation}
+This turns a long return into equality of two midpoint states.
+
+\begin{theorem}[Midpoint identities]
+\label{thm:midpoint}
+For every \(k\ge1\),
+\begin{equation}
+ a_{2k}=|x_k-x_{k-1}|,
+ \label{eq:even-midpoint}
+\end{equation}
+and for every \(k\ge0\),
+\begin{equation}
+ a_{2k+1}=|x_{k+1}-x_{k-1}|.
+ \label{eq:odd-midpoint}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix a positive modulus \(M\).  Because \(H\) is invertible modulo \(M\),
+\begin{align*}
+ H^{2k}P_0\equiv P_0\pmod M
+ &\Longleftrightarrow
+ H^kP_0\equiv H^{-k}P_0\pmod M\\
+ &\Longleftrightarrow
+ (x_k,x_{k-1})\equiv(x_{k-1},x_k)\pmod M\\
+ &\Longleftrightarrow
+ M\mid x_k-x_{k-1}.
+\end{align*}
+Together with \eqref{eq:return-divisibility}, this says that the two
+nonnegative integers in \eqref{eq:even-midpoint} have exactly the same
+positive divisors, hence are equal.
+
+Likewise,
+\begin{align*}
+ H^{2k+1}P_0\equiv P_0\pmod M
+ &\Longleftrightarrow
+ H^{k+1}P_0\equiv H^{-k}P_0\pmod M\\
+ &\Longleftrightarrow
+ (x_{k+1},x_k)\equiv(x_{k-1},x_k)\pmod M\\
+ &\Longleftrightarrow
+ M\mid x_{k+1}-x_{k-1},
+\end{align*}
+which proves \eqref{eq:odd-midpoint}.  The convention \(x_{-1}=0\) includes
+\(k=0\).
+\end{proof}
+
+\begin{remark}
+The theorem is specific to the reversing-axis seed \(P_0\).  It is not a
+height theorem for every integral point and is not inferred from the
+finite return-rank tables.
+\end{remark}
+
+\section{Quadratic escape and the two-sided height scale}
+
+The first scalar values are
+\begin{equation}
+ x_0=0,\qquad x_1=1,\qquad x_2=-5,\qquad x_3=-150.
+ \label{eq:first-x-values}
+\end{equation}
+For \(n\ge2\), put
+\begin{equation}
+ b_n=-x_n.
+ \label{eq:b-definition}
+\end{equation}
+
+\begin{theorem}[Quadratic height recursion and closed bounds]
+\label{thm:height}
+The sequence \(b_n\) is positive and strictly increasing.  It satisfies
+\begin{equation}
+ b_2=5,\qquad b_3=150=6b_2^2,
+ \label{eq:b-bases}
+\end{equation}
+and, for \(n\ge3\),
+\begin{equation}
+ b_{n+1}=6b_n^2-b_{n-1}-1.
+ \label{eq:b-exact}
+\end{equation}
+For every \(n\ge2\),
+\begin{equation}
+ 5b_n^2\le b_{n+1}\le6b_n^2.
+ \label{eq:b-quadratic}
+\end{equation}
+Consequently,
+\begin{equation}
+ 5^{\,2^{n-1}-1}
+ \le b_n\le
+ \frac{30^{\,2^{n-2}}}{6}.
+ \label{eq:b-closed}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The bases follow from \eqref{eq:scalar-recurrence}.  Suppose
+\(b_n>b_{n-1}\ge5\).  Because the variables are integral,
+\(
+b_{n-1}+1\le b_n
+\).
+Equation \eqref{eq:scalar-recurrence} gives \eqref{eq:b-exact}, and hence
+\[
+ b_{n+1}
+ \ge6b_n^2-b_n
+ >b_n.
+\]
+This proves positivity and strict increase by induction from
+\((b_2,b_3)=(5,150)\).  The upper inequality in \eqref{eq:b-quadratic} is
+immediate from \eqref{eq:b-exact}; for the lower inequality,
+\[
+ b_{n-1}+1\le b_n\le b_n^2
+\]
+gives
+\(
+b_{n+1}\ge5b_n^2
+\).
+The case \(n=2\) follows directly from \eqref{eq:b-bases}.
+
+Multiplying the lower recurrence by five gives
+\(
+5b_{n+1}\ge(5b_n)^2
+\),
+and multiplying the upper recurrence by six gives
+\(
+6b_{n+1}\le(6b_n)^2
+\).
+Iterating from \(5b_2=25\) and \(6b_2=30\) yields
+\eqref{eq:b-closed}.
+\end{proof}
+
+Strict increase proves again that the integral orbit of \(P_0\) is
+nonperiodic.  In particular every \(a_n\) is positive.
+
+\begin{theorem}[Explicit two-sided bounds for the gcd sequence]
+\label{thm:gcd-height}
+The first values are
+\begin{equation}
+ a_1=a_2=1,\qquad
+ a_3=5,\quad a_4=6,\quad a_5=151.
+ \label{eq:a-bases}
+\end{equation}
+Let \(n\ge6\) and \(m=\lceil n/2\rceil\).  Then
+\begin{equation}
+ \frac{24}{25}b_m\le a_n<b_m.
+ \label{eq:a-sharp-comparison}
+\end{equation}
+Uniformly for every \(n\ge3\),
+\begin{equation}
+ 4\,5^{\,2^{m-1}-2}
+ \le a_n\le
+ \frac{30^{\,2^{m-2}}}{5},
+ \qquad m=\left\lceil\frac n2\right\rceil.
+ \label{eq:a-closed}
+\end{equation}
+Thus
+\begin{equation}
+ \log a_n=\Theta(2^{n/2}).
+ \label{eq:log-height}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The bases follow from theorem~\ref{thm:midpoint}.  If \(n=2m\ge6\), then
+\[
+ a_n=b_m-b_{m-1}.
+\]
+If \(n=2m-1\ge7\), then
+\[
+ a_n=b_m-b_{m-2}.
+\]
+In either case the subtracted term is at most \(b_{m-1}\).  Since
+\[
+ b_m\ge5b_{m-1}^2\ge25b_{m-1},
+\]
+equation \eqref{eq:a-sharp-comparison} follows.
+
+The three special values in \eqref{eq:a-bases}, together with
+\eqref{eq:a-sharp-comparison}, give the uniform comparison
+\begin{equation}
+ \frac45b_m\le a_n\le\frac65b_m
+ \qquad(n\ge3).
+ \label{eq:a-uniform-comparison}
+\end{equation}
+Combining this with \eqref{eq:b-closed} proves \eqref{eq:a-closed}.
+Finally \(2^{m-1}\) is comparable to \(2^{n/2}\), proving
+\eqref{eq:log-height}.
+\end{proof}
+
+\section{The all-order bouquet trace envelope}
+
+For a rational prime \(p\), write \(r_p=r_p(P_0)\), and let
+\begin{equation}
+ \cO_p=\{P_0,H_pP_0,\ldots,H_p^{r_p-1}P_0\}
+ \label{eq:marked-cycle}
+\end{equation}
+be the complete marked cycle in \(\mathbb F_p^2\).  Let \(U_p\) be its cyclic
+permutation matrix.  Then
+\begin{equation}
+ \Tr(U_p^n)=r_p\mathbf 1_{r_p\mid n},
+ \qquad
+ \det(I-zU_p)=1-z^{r_p}.
+ \label{eq:local-cycle}
+\end{equation}
+
+Define the countable marked disjoint union
+\begin{equation}
+ \cX_0=\bigsqcup_p\cO_p
+ \label{eq:bouquet}
+\end{equation}
+and let \(F_0\) act on each component as the cyclic restriction of \(H_p\):
+\begin{equation}
+ F_0|_{\cO_p}=H_p|_{\cO_p}.
+ \label{eq:bouquet-map}
+\end{equation}
+Define also the rank multiplicities
+\begin{equation}
+ c_d=\#\{p:r_p=d\}.
+ \label{eq:rank-multiplicity}
+\end{equation}
+The return-divisibility theorem implies that \(c_d\) is finite for every
+\(d\): every such prime divides the fixed positive integer \(a_d\).
+
+\begin{theorem}[Exact fixed-point ledger and all-order envelope]
+\label{thm:trace-envelope}
+For every \(n\ge1\), the fixed-point set of the \(n\)-th bouquet iterate is
+finite and
+\begin{equation}
+ T_n:=\#\Fix(F_0^n)
+ =\sum_{p:r_p\mid n}r_p
+ =\sum_{d\mid n}d\,c_d
+ =\sum_{p\mid a_n}r_p.
+ \label{eq:trace-ledger}
+\end{equation}
+Moreover \(T_1=T_2=0\), and for every \(n\ge1\),
+\begin{equation}
+ T_n\le
+ (\log_2 30)n\,2^{\lceil n/2\rceil-2}.
+ \label{eq:trace-envelope}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:local-cycle} and finiteness of the set \(r_p\le n\) give
+the first three expressions in \eqref{eq:trace-ledger}.  Equation
+\eqref{eq:return-divisibility} gives the last.
+
+If \(p\mid a_n\), then \(r_p\mid n\), hence \(r_p\le n\).  Therefore
+\begin{equation}
+ T_n\le n\,\omega(a_n),
+ \label{eq:T-omega}
+\end{equation}
+where \(\omega\) counts distinct prime factors.  Since
+\(
+2^{\omega(a_n)}\le\rad(a_n)\le a_n
+\),
+\begin{equation}
+ \omega(a_n)\le\log_2a_n.
+ \label{eq:omega-log}
+\end{equation}
+For \(n\ge3\), theorem~\ref{thm:gcd-height} gives
+\[
+ \log_2a_n
+ \le2^{\lceil n/2\rceil-2}\log_2 30-\log_2 5,
+\]
+which proves \eqref{eq:trace-envelope}.  The terms \(a_1=a_2=1\) give
+\(T_1=T_2=0\), so the same displayed envelope holds at the two base orders.
+\end{proof}
+
+\begin{remark}[Data type]
+\label{rem:trace-data-type}
+The term \emph{trace ledger} refers to the finite sum of local cycle traces,
+or equivalently the bouquet fixed-point count.  It is not yet the
+Hilbert-space trace of a trace-class global operator.
+Section~\ref{sec:naive-operator} proves the precise obstruction.
+\end{remark}
+
+\section{A strict zero-free disk}
+
+The RH-362 formal Artin--Mazur product is
+\begin{equation}
+ \cZ_0(z)
+ =\exp\left(\sum_{n\ge1}\frac{T_n}{n}z^n\right)
+ =\prod_p(1-z^{r_p})^{-1}.
+ \label{eq:formal-zeta}
+\end{equation}
+RH-362 asserted this coefficientwise, without a positive analytic radius.
+
+\begin{theorem}[Normal convergence and zero-free disk]
+\label{thm:analytic-disk}
+For every
+\begin{equation}
+ 0\le r<2^{-1/2},
+ \label{eq:strict-radius}
+\end{equation}
+one has
+\begin{equation}
+ \sum_{n\ge1}\frac{T_n}{n}r^n
+ \le
+ (\log_2 30)\frac{r^3+r^4}{1-2r^2}.
+ \label{eq:log-majorant}
+\end{equation}
+Consequently the logarithmic series and Euler product in
+\eqref{eq:formal-zeta} converge locally normally on
+\begin{equation}
+ |z|<2^{-1/2}.
+ \label{eq:analytic-disk}
+\end{equation}
+They define a holomorphic zero-free function \(\cZ_0\) there, and
+\(\cZ_0^{-1}\) is also holomorphic and zero-free.
+\end{theorem}
+
+\begin{proof}
+The base traces vanish.  The odd and even parts of
+\eqref{eq:trace-envelope} give
+\begin{align*}
+ \sum_{n\ge1}\frac{T_n}{n}r^n
+ &\le(\log_2 30)
+ \left(
+  \sum_{j\ge0}2^jr^{2j+3}
+  +\sum_{j\ge0}2^jr^{2j+4}
+ \right),
+\end{align*}
+which is \eqref{eq:log-majorant}.
+
+For \(|z|\le r<2^{-1/2}\), Tonelli's theorem and
+\eqref{eq:trace-ledger} give
+\begin{equation}
+ \sum_p\sum_{j\ge1}\frac{|z|^{jr_p}}j
+ =\sum_{n\ge1}\frac{T_n}{n}|z|^n<\infty.
+ \label{eq:tonelli-log}
+\end{equation}
+Thus the analytic logarithms
+\(
+\sum_{j\ge1}z^{jr_p}/j
+\)
+sum absolutely and uniformly on compact subdisks.  Exponentiating their sum
+and its negative proves normal convergence and the two zero-free claims.
+\end{proof}
+
+The inequality is strict at the boundary: the denominator in
+\eqref{eq:log-majorant} vanishes when \(r=2^{-1/2}\).  No assertion is made
+there.
+
+\begin{corollary}[Origin Taylor-radius bracket]
+\label{cor:radius-bracket}
+Let \(R_{\log}\) and \(R_{\cZ}\) be the origin Taylor radii of
+\(\log\cZ_0\) and \(\cZ_0\), respectively.  Then
+\begin{equation}
+ 2^{-1/2}\le R_{\log}\le1,
+ \qquad
+ 2^{-1/2}\le R_{\cZ}\le1.
+ \label{eq:radius-bracket}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The lower bounds are theorem~\ref{thm:analytic-disk}.  The upper bounds
+follow from the prime-order anchors in theorem~\ref{thm:prime-anchors}:
+the logarithmic coefficient is at least one at infinitely many orders, and
+the coefficients of the Euler product are nonnegative with the raw
+coefficient at least the primitive contribution.
+\end{proof}
+
+This is a bracket for the origin power-series radii.  It is not an exact
+radius, a meromorphic-continuation theorem, or a natural-boundary theorem.
+
+\section{Odd-prime primitive anchors and the raw-coefficient firewall}
+
+\begin{definition}
+A prime \(p\) is a primitive prime divisor of \(a_n\) when
+\(
+p\mid a_n
+\)
+and \(p\nmid a_m\) for every \(1\le m<n\).
+\end{definition}
+
+\begin{theorem}[Primitive anchors at every odd prime order]
+\label{thm:prime-anchors}
+Let \(\ell\) be an odd rational prime.  Then \(a_\ell>1\), and
+\begin{equation}
+ \{p:p\mid a_\ell\}
+ =\{p:r_p=\ell\}.
+ \label{eq:prime-anchor-set}
+\end{equation}
+Every distinct prime divisor of \(a_\ell\) is primitive.  In particular,
+\begin{equation}
+ c_\ell=\omega(a_\ell)\ge1,
+ \qquad
+ T_\ell=\ell c_\ell,
+ \qquad
+ [z^\ell]\log\cZ_0(z)=c_\ell.
+ \label{eq:prime-anchor-ledger}
+\end{equation}
+The number of primitive bouquet cycles of length \(\ell\) is exactly
+\(c_\ell\).
+\end{theorem}
+
+\begin{proof}
+The lower bound in theorem~\ref{thm:gcd-height} gives \(a_\ell\ge4\), so
+\(a_\ell\) has a prime divisor.  Equation \eqref{eq:return-divisibility}
+gives
+\[
+ p\mid a_\ell
+ \quad\Longleftrightarrow\quad
+ r_p\mid\ell.
+\]
+No prime has \(r_p=1\), because that would imply \(p\mid a_1=1\).
+Since \(\ell\) is prime, the only remaining divisor is \(r_p=\ell\), proving
+\eqref{eq:prime-anchor-set}.  If such a \(p\) divided \(a_m\) for some
+\(m<\ell\), then \(\ell=r_p\mid m\), a contradiction.  The first two
+identities in \eqref{eq:prime-anchor-ledger} follow.
+
+Finally,
+\[
+ [z^\ell]\log\cZ_0=\frac{T_\ell}{\ell}=c_\ell.
+\]
+Equivalently, M\"obius inversion of the fixed-point ledger gives primitive
+cycle count
+\(
+(T_\ell-T_1)/\ell=c_\ell
+\).
+\end{proof}
+
+The theorem does not assert that \(a_\ell\) is squarefree.  The symbol
+\(\omega\) counts distinct factors, not factors with multiplicity.  It also
+does not imply a primitive divisor at any composite order.
+
+\begin{proposition}[The anchor is not the raw zeta coefficient]
+\label{prop:raw-firewall}
+Write
+\begin{equation}
+ \cZ_0(z)=\sum_{n\ge0}q_nz^n.
+ \label{eq:raw-coefficients}
+\end{equation}
+Then
+\begin{equation}
+ nq_n=\sum_{k=1}^nT_kq_{n-k},
+ \qquad q_0=1.
+ \label{eq:zeta-recurrence}
+\end{equation}
+The exact finite ledger begins
+\begin{equation}
+ (q_0,\ldots,q_7)=(1,0,0,1,2,1,2,3).
+ \label{eq:first-zeta-coefficients}
+\end{equation}
+At the prime order seven,
+\begin{equation}
+ c_7=1,
+ \qquad
+ [z^7]\log\cZ_0=1,
+ \qquad
+ [z^7]\cZ_0=3.
+ \label{eq:order-seven-firewall}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Differentiating \eqref{eq:formal-zeta} and comparing coefficients gives
+\eqref{eq:zeta-recurrence}.  The midpoint identities give
+\[
+ a_3=5,\qquad a_4=6,\qquad a_7=134989.
+\]
+Direct exact factorization gives rank multiplicities
+\(
+c_3=1,c_4=2,c_7=1
+\);
+the artifact independently checks the return ranks and the primality of
+\(134989\).  Thus
+\[
+ (T_1,\ldots,T_7)=(0,0,3,8,5,9,7).
+\]
+Substitution in \eqref{eq:zeta-recurrence} proves
+\eqref{eq:first-zeta-coefficients} and \eqref{eq:order-seven-firewall}.
+The two extra order-seven contributions are decomposable products of one
+length-three and one of the two length-four cycles.
+\end{proof}
+
+\section{Naive direct-sum obstruction}
+\label{sec:naive-operator}
+
+Let
+\begin{equation}
+ \cH_0=\bigoplus_p\C^{r_p},
+ \qquad
+ U=\bigoplus_pU_p,
+ \qquad
+ B_z=zU.
+ \label{eq:naive-operator}
+\end{equation}
+The operator \(U\) is unitary.  Formally, its finite blocks have the local
+determinants used in \eqref{eq:formal-zeta}.  Ordinary Fredholm determinants,
+however, require trace-ideal hypotheses \citep{Simon2005}.
+
+\begin{theorem}[Noncompactness and the Fredholm firewall]
+\label{thm:noncompact}
+For every \(z\ne0\), the operator \(B_z\) is noncompact and belongs to no
+finite Schatten class \(S_q\).  For every \(n\ge1\), \(U^n\) is not trace
+class, so \(T_n\) is not its Hilbert-space trace.  Consequently
+\(\cZ_0^{-1}\) is not the ordinary Fredholm determinant
+\(\det_F(I-B_z)\) of this naive direct sum.
+
+For \(|z|<1\), the operator \(I-B_z\) is nevertheless invertible.
+Noncompactness is not a non-Fredholmness statement.
+\end{theorem}
+
+\begin{proof}
+Choose one unit vector \(e_p\) in each prime block.  The vectors
+\(
+B_ze_p
+\)
+are mutually orthogonal and all have norm \(|z|\).  They therefore have no
+convergent subsequence when \(z\ne0\), proving noncompactness.
+
+Every singular value of \(U_p\) is one.  Hence the partial \(S_q\) burden of
+\(B_z\) over any finite prime set \(S\) is
+\begin{equation}
+ |z|^q\sum_{p\in S}r_p.
+ \label{eq:partial-schatten}
+\end{equation}
+This diverges as \(S\) exhausts the primes, so no finite \(S_q\) membership
+holds.  The same observation with \(z=1\) shows that every \(U^n\) has
+infinitely many singular values equal to one and is not trace class.
+Thus the finite block sum in \eqref{eq:trace-ledger} is a fixed-point ledger,
+not a global operator trace.
+
+Finally, if \(|z|<1\), then \(\|B_z\|=|z|<1\), so the Neumann series
+\(
+\sum_{j\ge0}B_z^j
+\)
+inverts \(I-B_z\).
+\end{proof}
+
+This theorem excludes only the naive constant-weight cycle direct sum.
+It is not a nonexistence theorem for every compact realization of the same
+scalar germ.
+
+\section{Route verdicts and Gate ledger}
+
+\begin{center}
+\begin{tabular}{p{0.18\textwidth}p{0.73\textwidth}}
+\toprule
+Route & Exact verdict \\
+\midrule
+Route A & \textbf{GO.}  Reversibility supplies exact midpoint compression;
+escape gives the two-sided height scale; the resulting all-order fixed-point
+envelope produces a strict zero-free disk and infinitely many prime-order
+primitive anchors.  The direct-sum theorem supplies a rigorous scoped
+operator negative.\\
+Route B & \textbf{STOP\_SCOPED.}  The first fatal mismatch is Gate A data
+type: one marked cycle is selected from each of distinct finite-field maps,
+so the bouquet is not a canonical intrinsic global H\'enon operator.  Its
+fixed-point counts are also not signed von-Mangoldt traces of one trace-class
+operator.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The following boundaries are mandatory.
+\begin{enumerate}
+\item The bouquet is not the zeta function of the full map
+\(H_p:\mathbb F_p^2\to\mathbb F_p^2\), and is not a Hasse--Weil local factor.
+\item The certified disk is a lower bound for the origin analytic radius.  No
+exact radius, continuation across its boundary, or natural boundary is
+proved.
+\item The odd-prime theorem gives primitive divisors only at odd prime
+orders.  It does not give an eventual composite-order Zsigmondy theorem or
+squarefreeness.
+\item The exact anchor is \(c_\ell\) in the Euler exponent, primitive-cycle
+ledger, and logarithmic coefficient.  The raw coefficient \(q_\ell\) can be
+larger.
+\item The global operator \(U\) is noncompact; the locally finite block trace
+ledger is not a Hilbert-space trace.
+\end{enumerate}
+
+Thus:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Gate & Status & First missing object \\
+\midrule
+A & false/open & canonical intrinsic global physical determinant \\
+B & false/open & time-oriented scattering or unitary completion \\
+C & false/open & self-adjoint generator and intrinsic \(T\log T\) \\
+D & false/open & signed von-Mangoldt prime-power operator trace \\
+E & false/open & completed-zeta divisor equality \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+No Hilbert--P\'olya operator, self-adjoint generator, Riemann-zero spectral
+identification, completed-zeta divisor equality, or proof of the Riemann
+Hypothesis follows.
+
+\section{Executable protocol}
+
+The publication artifact performs finite exact reproduction and provenance
+checks only:
+\begin{enumerate}
+\item it hashes the locked reversibility, divisibility, finite diagnostic,
+RH-362, RH-364, and four-volume inputs;
+\item it checks the exact midpoint identities through order twelve and an
+extended test through order sixteen;
+\item it checks the quadratic height step and both closed bounds;
+\item it factors \(a_1,\ldots,a_{12}\), verifies each factor's first modular
+return, and reconstructs \(c_n\), \(T_n\), and \(q_n\);
+\item it checks the prime-order anchors at orders \(3,5,7,11\), including
+the raw-coefficient mismatch at orders seven and eleven;
+\item it validates the strict analytic-majorant domain, result schema,
+fixed-member archive, five Gate values, and fifteen forbidden macro claims.
+\end{enumerate}
+
+The finite factor rows are not evidence for an all-large-order primitive
+divisor law.  The all-order conclusions are the analytic theorems proved in
+sections 2--6.
+
+\section{Conclusion}
+
+The marked return bouquet has more structure than its original formal
+definition suggested.  Reversibility halves the orbit depth of the gcd
+problem, and the escaping midpoint height pays an explicit all-order
+fixed-point budget.  This produces a genuine zero-free analytic germ without
+inserting prime weights or changing local clocks.
+
+The same argument also exposes the boundary.  Prime order forces new
+divisors because the only possible earlier rank is one, but composite order
+does not.  The scalar Euler product converges even though the most immediate
+global cycle operator is noncompact.  The shortest new arithmetic problem is
+therefore a genuine composite-order primitive-divisor theorem; the shortest
+operator problem is an intrinsic compact globalization rather than another
+marked direct sum.  The original physical same-clock route remains open and
+unchanged.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

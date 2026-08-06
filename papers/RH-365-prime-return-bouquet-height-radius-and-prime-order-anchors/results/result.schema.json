@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "false_claims": {"type": "object"},
+    "finite_checks": {"type": "object"},
+    "finite_rows_are_reproduction_only": {"type": "boolean"},
+    "four_volume_foundation_audit": {"type": "object"},
+    "gates": {"type": "object"},
+    "route": {"type": "object"},
+    "source_audit": {"type": "object"},
+    "source_commits": {"type": "object"},
+    "status": {"type": "string"},
+    "theorem_flags": {"type": "object"}
+  },
+  "required": [
+    "status",
+    "source_commits",
+    "source_audit",
+    "four_volume_foundation_audit",
+    "finite_checks",
+    "theorem_flags",
+    "route",
+    "gates",
+    "false_claims",
+    "finite_rows_are_reproduction_only"
+  ],
+  "title": "RH-365 result payload",
+  "type": "object"
+}

@@ -1,14 +1,14 @@
 # RH Research Handoff
 
-Status date: 2026-08-05
+Status date: 2026-08-06
 
-Current completed endpoint: RH-364
+Current completed endpoint: RH-365
 
 Completed research batch: RH-352 through RH-361
 
-Post-four-volume independent theorem edges: RH-362 through RH-364
+Post-four-volume independent theorem edges: RH-362 through RH-365
 
-Latest route verdict: RH-364 Route A `GO`; Route B `STOP_SCOPED`
+Latest route verdict: RH-365 Route A `GO`; Route B `STOP_SCOPED`
 
 Research batch publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -37,15 +37,15 @@ Read completely:
 
 - `AGENTS.md`
 - `RH_HANDOFF.md`
-- `papers/RH-364-weighted-henon-prime-lift-cubic-trace-obstruction/README.md`
-- `papers/RH-364-weighted-henon-prime-lift-cubic-trace-obstruction/UPDATED_ROADMAP.md`
-- `papers/RH-364-weighted-henon-prime-lift-cubic-trace-obstruction/THEOREM_LEDGER.md`
-- `papers/RH-364-weighted-henon-prime-lift-cubic-trace-obstruction/results/result.json`
-- `papers/RH-364-weighted-henon-prime-lift-cubic-trace-obstruction/main.pdf`
+- `papers/RH-365-prime-return-bouquet-height-radius-and-prime-order-anchors/README.md`
+- `papers/RH-365-prime-return-bouquet-height-radius-and-prime-order-anchors/UPDATED_ROADMAP.md`
+- `papers/RH-365-prime-return-bouquet-height-radius-and-prime-order-anchors/THEOREM_LEDGER.md`
+- `papers/RH-365-prime-return-bouquet-height-radius-and-prime-order-anchors/results/result.json`
+- `papers/RH-365-prime-return-bouquet-height-radius-and-prime-order-anchors/main.pdf`
 
 Retain RH-362 as the return-rank input, RH-363 as the entropy-tower input,
-and RH-361 as the immediate endpoint of the still-open original physical
-branch.
+RH-364 as the weighted-survivor/prime-copy input, and RH-361 as the immediate
+endpoint of the still-open original physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -55,16 +55,17 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-364 does not automatically activate RH-365. A read-only source lock has
-returned Route A `GO` and Route B `STOP_SCOPED` for the natural return-bouquet
-height route, but production must bind its archive baseline to the final
-RH-364 release commit. RH search remains breadth-first: generate bold
-source-backed candidates, evaluate standalone discovery value as Route A and
-RH data-type compatibility as Route B, then issue `GO`, `STOP_SCOPED`, or
-`NOT_TESTABLE`. Create a new number only for an actual bridge, a typed
-`q/E_off` theorem, a rigorous physical obstruction, or another independent
-theorem edge. An abstract fiber, finite fit, deterministic
-reparameterization, prime-labelled factor inserted by definition, or
+RH-365 does not automatically activate RH-366. The next breadth-first source
+lock must compare the remaining external theorem packages, especially the
+certified H\'enon M\"obius typical/exceptional dichotomy and the cyclic-Ulam
+structural package, against the completed RH-1--RH-365 corpus. RH search
+remains breadth-first: generate bold source-backed candidates, evaluate
+standalone discovery value as Route A and RH data-type compatibility as Route
+B, then issue `GO`, `STOP_SCOPED`, or `NOT_TESTABLE`. Create a new number only
+for an actual bridge, a typed `q/E_off` theorem, a rigorous physical
+obstruction, or another independent theorem edge. An abstract fiber, finite
+fit, deterministic reparameterization, prime-labelled factor inserted by
+definition, adaptive arithmetic encoding presented as intrinsic coupling, or
 inactive criterion is not a reopening input.
 
 Follow the multi-agent workflow in `AGENTS.md`: the primary alone chooses the
@@ -164,12 +165,13 @@ counterloop. RH-354's normalized actual `p` tail is neither an unnormalized
 complete prefix nor a `q/E_off` theorem. Deterministic `s` is not an actual
 head, root set, rank law, or spectral submultiset.
 
-RH-362 through RH-364 add a separate arithmetic-dynamical branch. RH-362
+RH-362 through RH-365 add a separate arithmetic-dynamical branch. RH-362
 builds one marked modular cycle per prime; RH-363 inserts the resulting ranks
 into a pairwise-coprime admissible-shift tower; RH-364 derives weighted
 analytic domains for a certified local survivor and audits an engineered
-prime-copy operator. None is identified with either typed physical branch,
-so the physical blocker below is unchanged.
+prime-copy operator; RH-365 proves an analytic disk and odd-prime primitive
+anchors for the unweighted marked bouquet. None is identified with either
+typed physical branch, so the physical blocker below is unchanged.
 
 The deterministic target side remains exact and all-order: RH-263 gives the
 deterministic numerator coefficient anchor, and RH-267--RH-268 give the
@@ -178,7 +180,7 @@ not close the RH-241 moving noisy all-order envelope or coefficient bridge.
 RH-288 remains inactive because the complete same-type physical prefix leaf
 is absent.
 
-## 3. Decision after RH-361 through RH-364
+## 3. Decision after RH-361 through RH-365
 
 Current route coordinate:
 
@@ -417,7 +419,85 @@ Hasse--Weil factor, full `H_p` zeta, canonical global H\'enon operator, or
 the physical noisy determinant. Gate A fails at data type, and Gate D also
 fails exactly at prime cubes. Gates A--E remain false/open.
 
-## 4. Compact conclusions from RH-352 through RH-364
+### 3.4 RH-365 return-bouquet height, analytic radius, and prime anchors
+
+RH-365 freezes the reversing-axis seed `P_0=(0,0)` and writes
+
+```text
+x_(-1)=x_0=0,
+x_(n+1)=1-6x_n^2-x_(n-1),
+a_n=gcd(|x_n|,|x_(n-1)|).
+```
+
+Reversibility and the return-divisibility theorem give the exact all-order
+midpoint identities
+
+```text
+a_(2k)   = |x_k-x_(k-1)|,
+a_(2k+1) = |x_(k+1)-x_(k-1)|.
+```
+
+For `b_n=-x_n`, `n>=2`, the exact recursion and quadratic envelope are
+
+```text
+b_(n+1)=6b_n^2-b_(n-1)-1,
+5b_n^2 <= b_(n+1) <= 6b_n^2,
+5^(2^(n-1)-1) <= b_n <= 30^(2^(n-2))/6.
+```
+
+With `m=ceil(n/2)`, RH-365 proves explicit two-sided bounds for every
+`n>=3`, hence `log a_n=Theta(2^(n/2))`. If
+
+```text
+c_d = #{p:r_p=d},
+T_n = sum_(d|n) d c_d,
+```
+
+then `T_1=T_2=0` and
+
+```text
+T_n <= (log_2 30)n 2^(ceil(n/2)-2).
+```
+
+Therefore the marked-cycle Euler product
+
+```text
+Z_0(z)=product_p (1-z^(r_p))^(-1)
+```
+
+is holomorphic and zero-free on the strict disk `|z|<2^(-1/2)`, with
+
+```text
+sum_(n>=1) T_n r^n/n
+ <= (log_2 30)(r^3+r^4)/(1-2r^2).
+```
+
+The origin Taylor radii of `log Z_0` and `Z_0` lie in
+`[2^(-1/2),1]`; no exact radius, continuation, or natural boundary is
+proved. For every odd prime order `ell`,
+
+```text
+{p:p|a_ell}={p:r_p=ell},
+c_ell=omega(a_ell)>=1,
+T_ell=ell c_ell,
+[z^ell] log Z_0=c_ell.
+```
+
+This is an Euler-exponent, primitive-cycle, and logarithmic-coefficient
+anchor. It is not the raw coefficient of `Z_0`: already
+`[z^7]Z_0=3` while `c_7=1`, and `[z^11]Z_0=13` while `c_11=4`.
+
+On the naive Hilbert direct sum, `direct_sum_p zU_p` is noncompact and lies
+in no finite Schatten class for every `z!=0`. Thus the analytic Euler product
+is not its ordinary Fredholm determinant, although `I-zU` is invertible for
+`|z|<1`.
+
+Route A is `GO`. Route B is `STOP_SCOPED`: the bouquet selects one marked
+cycle from each of distinct finite-field maps, is not a full `H_p` zeta or
+Hasse--Weil factor, and supplies no canonical global operator or signed
+von-Mangoldt trace. Gates A--E remain false/open.
+
+## 4. Compact conclusions from RH-352 through RH-365
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -456,6 +536,11 @@ fails exactly at prime cubes. Gates A--E remain false/open.
   Schatten/Fredholm regions, fractional weighted singularity, and common
   scalar normalization failure first at prime cubes. The copy is engineered
   and closes no Gate.
+- **RH-365:** Exact reversibility midpoint compression, double-exponential
+  gcd height, an all-order marked-bouquet fixed-point envelope, a strict
+  zero-free disk, odd-prime primitive/logarithmic anchors, a raw-coefficient
+  firewall, and a naive-direct-sum noncompactness theorem. The bouquet remains
+  marked and noncanonical and closes no Gate.
 
 ## 5. Route firewall and reopening triggers
 
@@ -466,6 +551,9 @@ Do not:
 - promote deterministic `s` to an actual spectrum, root set, or rank law;
 - state a conditional `D_(4k)(R)` transfer as proved;
 - identify a selected window with the full prefix or `E_off`;
+- identify `[z^ell] Z_0` with the prime-order primitive anchor;
+- identify the locally finite bouquet ledger `T_n` with a trace-class
+  Hilbert-space trace;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -481,26 +569,36 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-364. Triggers 1--4 remain untouched. For RH-365 and later, the shortest exact
-candidates are:
+RH-365. Triggers 1--4 remain untouched. RH-365 closes the natural
+return-bouquet height/radius route at its declared scope. For RH-366 and
+later, the shortest exact candidates are:
 
-1. The source-locked natural return-bouquet route for `P_0=(0,0)` at
-   `henon_prime_returns` commit
-   `c37d191672d30de49b2054be3a03cf2db068694f`: prove the reversibility
-   midpoint identities, `log a_n=Theta(2^(n/2))`, the explicit
-   `O(n 2^(n/2))` all-order trace envelope, a zero-free disk at least
-   `|z|<2^(-1/2)`, and deterministic primitive anchors at every odd prime
-   order. The read-only source lock is Route A `GO`; production must rebind
-   to the final RH-364 release commit.
+1. The certified H\'enon M\"obius-correlation package at
+   `henon_mobius_correlations` commit
+   `34490443f50cfe9af9ff93888e51e7e7e534a5a7`: audit the periodic and
+   Parry-almost-sure orthogonality theorems, the explicit M\"obius-adapted
+   orbit with correlation `4/pi^2`, the exact Parry covariance and linear
+   variance bound, and the finite-horizon adaptive-capacity theorem. The
+   first Route-B firewall is that the exceptional orbit is constructed only
+   after reading the M\"obius sequence; encoding capacity is not spontaneous
+   arithmetic coupling or an operator trace.
 2. A genuine composite-order primitive-divisor upgrade, such as an eventual
    Zsigmondy theorem or a `p`-adic lifting bound strong enough to force new
    primes. No such theorem is present in the locked source.
-3. A quantitative finite-entropy-data theorem that certifies or excludes a
+3. A sharp return-rank multiplicity theorem strong enough to determine the
+   exact origin radius or a genuine boundary law for `Z_0`. RH-365 supplies
+   only the bracket `[2^(-1/2),1]`.
+4. A quantitative finite-entropy-data theorem that certifies or excludes a
    finite prime/rank prefix without promoting numerical conditioning to exact
    infinite recovery.
-4. An intrinsic pressure/transfer/groupoid operator producing the entropy
+5. An intrinsic pressure/transfer/groupoid operator producing the entropy
    tower without inserting every modulus by hand.
-5. One of the original physical triggers 1--4.
+6. A cyclic-Ulam source audit restricted to its exact aligned block/sign-mode
+   theorem and a rigorously scoped leakage statement. The reported noisy
+   square-root-like slopes are finite-range observations, not a continuum
+   perturbation theorem, and overlap with the four-volume physical corpus
+   must be checked before numbering.
+7. One of the original physical triggers 1--4.
 
 RH-364 closes the declared weighted-H\'enon prime-copy audit. It must still be
 called a prime lift or copy, not a finite-field reduction, Hasse--Weil local
@@ -508,6 +606,12 @@ factor, or full `H_p` zeta. Its prime and square trace weights match after
 the unique scalar normalization, but the cube coefficient `4 log p` is an
 exact Gate-D obstruction for that construction. Repackaging the same local
 survivor, marked-cycle, or entropy product is not a new trigger.
+
+RH-365 closes the declared unweighted return-bouquet height/radius audit. Its
+odd-prime anchor must remain a primitive Euler/logarithmic coefficient, not a
+raw zeta coefficient or a composite-order Zsigmondy theorem. Repackaging the
+same midpoint identities, radius lower bound, or noncompact direct sum is not
+a new trigger.
 
 Even `D_(4k)(R)->0` would transfer only named moment/budget laws. Root, rank,
 spectral-submultiset, and canonical determinant identification remain
@@ -656,6 +760,40 @@ without prescribing the desired Euler weights. Until such a theorem exists,
 Gate A remains false.
 
 ## 7. Reproduction and publication audit
+
+Final RH-365 audit:
+
+- Source locks: `15/15`; the four-volume replay remains `4` volumes, `361`
+  numbered sources, `73` archive members, `1,548` dependency hashes, `8`
+  result hashes, and zero failures.
+- Tests: `15/15`; individual archive: `21` publication files and `15`
+  external inputs, zero failures; strict JSON parsing passes `4/4` files.
+- PDF: `9` pages and `283,695` bytes; `21` font rows, all embedded and
+  subsetted with Unicode maps; Ghostscript and text extraction pass; all
+  `9/9` rendered pages were visually checked.
+- Complete LaTeX/BibTeX logs contain zero errors, undefined references or
+  citations, overfull/underfull boxes, actionable warnings, or rerun notices.
+- The semantic PDF is byte-identical to `main.pdf`; all five Gates and all
+  `15` named forbidden macro claims remain false/open.
+
+RH-365 final hashes:
+
+```text
+main.tex
+cf70fb8a3bb2b9fb4158e75c91426ff07c4f501523cee02bbc7e1a13f1982e1f
+
+PDF
+a14dae97006f81ace467a1712d50a28f002ae0f83029714f4ce0c5d912eb5a7c
+
+result
+18d4f7f30533df2f741c53f402fdcae71f73c7da3dbc963c348be86b270ca55a
+
+manifest
+b4b2d3442521272be11009a1b6d285b59e4f807cb560dfc2cbdc2efd5ff3635a
+
+verification
+73e921c26666a5711054787f07d58bfd63a1c005a1ec05e00d4ccee74d4ea05a
+```
 
 Final RH-364 audit:
 
@@ -869,9 +1007,10 @@ b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751
 ```text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-364 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-365 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
-tower, RH-MVP2 as the corpus umbrella, and RH-361 as the physical endpoint.
+tower, RH-364 as the weighted survivor/prime-copy input, RH-MVP2 as the
+corpus umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -881,26 +1020,32 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-364 is an independent trigger-5 theorem edge and does not close any
-physical Gate. A read-only source lock has returned Route A GO and Route B
-STOP_SCOPED for RH-365, based on the axis seed P_0=(0,0) and
-henon_prime_returns commit c37d191672d30de49b2054be3a03cf2db068694f.
-After binding to the final RH-364 release commit, prove the reversibility
-midpoint identities, the two-sided height scale log a_n=Theta(2^(n/2)), the
-explicit all-order envelope T_n<=log_2(30)n2^(ceil(n/2)-2), the zero-free
-disk |z|<2^(-1/2), and primitive anchors at every odd prime order. Also
-record that the naive direct-sum bouquet is noncompact for every z!=0.
+RH-365 is an independent trigger-5 theorem edge and does not close any
+physical Gate. It proves exact midpoint compression, the two-sided height
+scale log a_n=Theta(2^(n/2)), the all-order envelope
+T_n<=log_2(30)n2^(ceil(n/2)-2), the zero-free disk |z|<2^(-1/2), odd-prime
+primitive/logarithmic anchors, and the naive-direct-sum noncompactness
+theorem. Do not identify a raw coefficient [z^ell]Z_0 with c_ell, promote the
+odd-prime anchors to a composite-order Zsigmondy theorem, claim the exact
+radius or a natural boundary, or identify the bouquet with a full H_p zeta,
+Hasse--Weil factor, canonical operator, or von-Mangoldt trace.
 
-Do not promote the odd-prime anchors to an eventual composite-order
-Zsigmondy theorem, do not claim the exact zeta radius or a natural boundary,
-and do not identify the marked bouquet with a full finite-field H_p zeta,
-Hasse--Weil factor, canonical global operator, or von-Mangoldt trace. Retain
-the finite entropy-data, intrinsic pressure/globalization, composite
-primitive-divisor, and original same-clock physical routes independently.
+For the next breadth-first source lock, first audit
+henon_mobius_correlations commit
+34490443f50cfe9af9ff93888e51e7e7e534a5a7. Separate the exact periodic and
+Parry-almost-sure orthogonality theorems, the explicit Mobius-adapted orbit
+with correlation 4/pi^2, the exact covariance/linear variance theorem, and
+the finite-horizon capacity theorem from the finite ensemble diagnostics.
+The exceptional orbit is defined only after reading the Mobius sequence, so
+encoding capacity is not spontaneous coupling, a canonical operator, or a
+prime-power trace. Evaluate this package by Route A and Route B before
+assigning RH-366. In parallel retain the composite primitive-divisor, sharp
+radius, finite entropy-data, intrinsic globalization, cyclic-Ulam, and
+original same-clock physical routes.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
 factor, or full H_p zeta. Do not promote the entropy tower, weighted Euler
-samples, or bouquet coefficients to a Riemann-zero model. Keep the
-four-volume foundation immutable and Gates A--E false/open until their exact
-definitions are proved.
+samples, bouquet coefficients, or adaptive Mobius coding to a Riemann-zero
+model. Keep the four-volume foundation immutable and Gates A--E false/open
+until their exact definitions are proved.
 ```

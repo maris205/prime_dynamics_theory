@@ -1,0 +1,666 @@
+{
+  "false_claims": {
+    "T_n_is_hilbert_space_trace_of_naive_direct_sum": false,
+    "analytic_product_is_naive_fredholm_determinant": false,
+    "bouquet_is_canonical_global_henon_operator": false,
+    "bouquet_is_full_H_p_zeta": false,
+    "bouquet_is_hasse_weil_zeta": false,
+    "certified_disk_is_exact_radius": false,
+    "completed_zeta_divisor_equality": false,
+    "hilbert_polya_constructed": false,
+    "odd_prime_anchor_proves_composite_zsigmondy": false,
+    "prime_order_terms_are_proved_squarefree": false,
+    "raw_zeta_coefficient_equals_prime_order_anchor": false,
+    "riemann_hypothesis_proved": false,
+    "riemann_zeros_spectrally_identified": false,
+    "unit_circle_natural_boundary_proved": false,
+    "von_mangoldt_trace_proved": false
+  },
+  "finite_checks": {
+    "all_gcd_height_bounds_pass": true,
+    "all_height_rows_pass": true,
+    "all_midpoint_rows_pass": true,
+    "all_odd_prime_anchor_rows_pass": true,
+    "all_raw_coefficient_firewalls_pass": true,
+    "analytic_certificate": {
+      "majorant_at_one_half": 1.8400839733531944,
+      "majorant_at_zero_point_six_five": 14.34493851097635,
+      "origin_radius_bracket": {
+        "lower": 0.7071067811865475,
+        "upper": 1.0
+      },
+      "strict_disk": "abs(z)<2^(-1/2)"
+    },
+    "bouquet_traces_T_1_to_12": [
+      0,
+      0,
+      3,
+      8,
+      5,
+      9,
+      7,
+      24,
+      12,
+      25,
+      44,
+      53
+    ],
+    "first_coordinates_x_0_to_11": [
+      "0",
+      "1",
+      "-5",
+      "-150",
+      "-134994",
+      "-109340280065",
+      "-71731781068155818290355",
+      "-30872690491259024805625764668027334821175876084",
+      "-5718738109014452438329310581154112048547165390364419064335927184202453032353696377793720759980",
+      "-196223793356965171804102861783557468442725951648714901290024235589263974012759715264163963034552966659796975510154527958021355450791955135605510199190245923833128150190638951124551441726315",
+      "-231022662476381814528117401302688734473085828407404129794376409292303749608456738535782473661962746200856954426711855523578520004691319364423718708386614293812125111173543308525269247305602393810161871129473781488777051450748554980720916836214225762015624219145943150030254855424876591053437476555071861155681224887753991606150644020357867247558963452533185809705469810460115369",
+      "-320228823466057404409749270048242915668539271417911263964212258689864751689889716929695442166062895128109330244953405127883538391691605993285638721297011381943264872388812782291576519210737687511070279296804056957996748791137459888151357217649142027518765838438909610459636177468142007542483240994968325199701583731635667398370323204752690616824911034927948984876772630549979493909860132942411280658678279709918346789858732518451683648830481560694905581456031548347567180956287552373627742013544646764824312077844988583238187420558610295966439060160961680937822291307775086194793588455016149080294857450878527336577675116516538863314375773154145454027504543490914533700615868635742891996375401508580096705731283144365798139257551716778237677231045298310650"
+    ],
+    "gcd_height_bound_rows": [
+      {
+        "a_n": "5",
+        "lower": "4",
+        "order": 3,
+        "pass": true,
+        "upper": "6"
+      },
+      {
+        "a_n": "6",
+        "lower": "4",
+        "order": 4,
+        "pass": true,
+        "upper": "6"
+      },
+      {
+        "a_n": "151",
+        "lower": "100",
+        "order": 5,
+        "pass": true,
+        "upper": "180"
+      },
+      {
+        "a_n": "145",
+        "lower": "100",
+        "order": 6,
+        "pass": true,
+        "upper": "180"
+      },
+      {
+        "a_n": "134989",
+        "lower": "62500",
+        "order": 7,
+        "pass": true,
+        "upper": "162000"
+      },
+      {
+        "a_n": "134844",
+        "lower": "62500",
+        "order": 8,
+        "pass": true,
+        "upper": "162000"
+      },
+      {
+        "a_n": "109340279915",
+        "lower": "24414062500",
+        "order": 9,
+        "pass": true,
+        "upper": "131220000000"
+      },
+      {
+        "a_n": "109340145071",
+        "lower": "24414062500",
+        "order": 10,
+        "pass": true,
+        "upper": "131220000000"
+      },
+      {
+        "a_n": "71731781068155818155361",
+        "lower": "3725290298461914062500",
+        "order": 11,
+        "pass": true,
+        "upper": "86093442000000000000000"
+      },
+      {
+        "a_n": "71731781068046478010290",
+        "lower": "3725290298461914062500",
+        "order": 12,
+        "pass": true,
+        "upper": "86093442000000000000000"
+      }
+    ],
+    "gcd_terms_a_1_to_12": [
+      "1",
+      "1",
+      "5",
+      "6",
+      "151",
+      "145",
+      "134989",
+      "134844",
+      "109340279915",
+      "109340145071",
+      "71731781068155818155361",
+      "71731781068046478010290"
+    ],
+    "height_rows": [
+      {
+        "b_n": "5",
+        "b_next": "150",
+        "closed_bounds": {
+          "lower": "5",
+          "upper": "5"
+        },
+        "closed_bounds_pass": true,
+        "index": 2,
+        "quadratic_step_pass": true
+      },
+      {
+        "b_n": "150",
+        "b_next": "134994",
+        "closed_bounds": {
+          "lower": "125",
+          "upper": "150"
+        },
+        "closed_bounds_pass": true,
+        "index": 3,
+        "quadratic_step_pass": true
+      },
+      {
+        "b_n": "134994",
+        "b_next": "109340280065",
+        "closed_bounds": {
+          "lower": "78125",
+          "upper": "135000"
+        },
+        "closed_bounds_pass": true,
+        "index": 4,
+        "quadratic_step_pass": true
+      },
+      {
+        "b_n": "109340280065",
+        "b_next": "71731781068155818290355",
+        "closed_bounds": {
+          "lower": "30517578125",
+          "upper": "109350000000"
+        },
+        "closed_bounds_pass": true,
+        "index": 5,
+        "quadratic_step_pass": true
+      },
+      {
+        "b_n": "71731781068155818290355",
+        "b_next": "30872690491259024805625764668027334821175876084",
+        "closed_bounds": {
+          "lower": "4656612873077392578125",
+          "upper": "71744535000000000000000"
+        },
+        "closed_bounds_pass": true,
+        "index": 6,
+        "quadratic_step_pass": true
+      },
+      {
+        "b_n": "30872690491259024805625764668027334821175876084",
+        "b_next": "5718738109014452438329310581154112048547165390364419064335927184202453032353696377793720759980",
+        "closed_bounds": {
+          "lower": "108420217248550443400745280086994171142578125",
+          "upper": "30883669814197350000000000000000000000000000000"
+        },
+        "closed_bounds_pass": true,
+        "index": 7,
+        "quadratic_step_pass": true
+      },
+      {
+        "b_n": "5718738109014452438329310581154112048547165390364419064335927184202453032353696377793720759980",
+        "b_next": "196223793356965171804102861783557468442725951648714901290024235589263974012759715264163963034552966659796975510154527958021355450791955135605510199190245923833128150190638951124551441726315",
+        "closed_bounds": {
+          "lower": "58774717541114375398436826861112283890933277838604376075437585313920862972736358642578125",
+          "upper": "5722806367154187474429748482135000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "closed_bounds_pass": true,
+        "index": 8,
+        "quadratic_step_pass": true
+      },
+      {
+        "b_n": "196223793356965171804102861783557468442725951648714901290024235589263974012759715264163963034552966659796975510154527958021355450791955135605510199190245923833128150190638951124551441726315",
+        "b_next": "231022662476381814528117401302688734473085828407404129794376409292303749608456738535782473661962746200856954426711855523578520004691319364423718708386614293812125111173543308525269247305602393810161871129473781488777051450748554980720916836214225762015624219145943150030254855424876591053437476555071861155681224887753991606150644020357867247558963452533185809705469810460115369",
+        "closed_bounds": {
+          "lower": "17272337110188889250772703725600799142232000728872562770047406940337183606324854115943015006944576453121094587892299327193990197893663893387306007554116149549372494220733642578125",
+          "upper": "196503076295643052858681214356875311094636859871264018484949350000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "closed_bounds_pass": true,
+        "index": 9,
+        "quadratic_step_pass": true
+      },
+      {
+        "b_n": "231022662476381814528117401302688734473085828407404129794376409292303749608456738535782473661962746200856954426711855523578520004691319364423718708386614293812125111173543308525269247305602393810161871129473781488777051450748554980720916836214225762015624219145943150030254855424876591053437476555071861155681224887753991606150644020357867247558963452533185809705469810460115369",
+        "b_next": "320228823466057404409749270048242915668539271417911263964212258689864751689889716929695442166062895128109330244953405127883538391691605993285638721297011381943264872388812782291576519210737687511070279296804056957996748791137459888151357217649142027518765838438909610459636177468142007542483240994968325199701583731635667398370323204752690616824911034927948984876772630549979493909860132942411280658678279709918346789858732518451683648830481560694905581456031548347567180956287552373627742013544646764824312077844988583238187420558610295966439060160961680937822291307775086194793588455016149080294857450878527336577675116516538863314375773154145454027504543490914533700615868635742891996375401508580096705731283144365798139257551716778237677231045298310650",
+        "closed_bounds": {
+          "lower": "1491668146240041348658193063092586767475294306920081378854303666641255677014023660987234978080085560672302320651167220290682545619045060532097232965918416938296252158463756275499040814853287052588289310873012782953082843452117701424006337364600644548459512739853070043067441211667303325729200722585486710369393731465299801630663978357915766537189483642578125",
+          "upper": "231680753961907887941566311316102171857031418014215229986008040716726787716277393235002948590182682536352775900914832392535000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "closed_bounds_pass": true,
+        "index": 10,
+        "quadratic_step_pass": true
+      }
+    ],
+    "midpoint_rows": [
+      {
+        "a_n": "1",
+        "midpoint": "1",
+        "order": 1,
+        "pass": true
+      },
+      {
+        "a_n": "1",
+        "midpoint": "1",
+        "order": 2,
+        "pass": true
+      },
+      {
+        "a_n": "5",
+        "midpoint": "5",
+        "order": 3,
+        "pass": true
+      },
+      {
+        "a_n": "6",
+        "midpoint": "6",
+        "order": 4,
+        "pass": true
+      },
+      {
+        "a_n": "151",
+        "midpoint": "151",
+        "order": 5,
+        "pass": true
+      },
+      {
+        "a_n": "145",
+        "midpoint": "145",
+        "order": 6,
+        "pass": true
+      },
+      {
+        "a_n": "134989",
+        "midpoint": "134989",
+        "order": 7,
+        "pass": true
+      },
+      {
+        "a_n": "134844",
+        "midpoint": "134844",
+        "order": 8,
+        "pass": true
+      },
+      {
+        "a_n": "109340279915",
+        "midpoint": "109340279915",
+        "order": 9,
+        "pass": true
+      },
+      {
+        "a_n": "109340145071",
+        "midpoint": "109340145071",
+        "order": 10,
+        "pass": true
+      },
+      {
+        "a_n": "71731781068155818155361",
+        "midpoint": "71731781068155818155361",
+        "order": 11,
+        "pass": true
+      },
+      {
+        "a_n": "71731781068046478010290",
+        "midpoint": "71731781068046478010290",
+        "order": 12,
+        "pass": true
+      }
+    ],
+    "odd_prime_anchor_rows": [
+      {
+        "T_ell": 3,
+        "a_ell": "5",
+        "all_factors_have_exact_rank": true,
+        "c_ell": 1,
+        "distinct_prime_factors": [
+          "5"
+        ],
+        "odd_prime_order": 3,
+        "return_ranks": [
+          3
+        ]
+      },
+      {
+        "T_ell": 5,
+        "a_ell": "151",
+        "all_factors_have_exact_rank": true,
+        "c_ell": 1,
+        "distinct_prime_factors": [
+          "151"
+        ],
+        "odd_prime_order": 5,
+        "return_ranks": [
+          5
+        ]
+      },
+      {
+        "T_ell": 7,
+        "a_ell": "134989",
+        "all_factors_have_exact_rank": true,
+        "c_ell": 1,
+        "distinct_prime_factors": [
+          "134989"
+        ],
+        "odd_prime_order": 7,
+        "return_ranks": [
+          7
+        ]
+      },
+      {
+        "T_ell": 44,
+        "a_ell": "71731781068155818155361",
+        "all_factors_have_exact_rank": true,
+        "c_ell": 4,
+        "distinct_prime_factors": [
+          "73",
+          "3923",
+          "9511",
+          "26335663496869"
+        ],
+        "odd_prime_order": 11,
+        "return_ranks": [
+          11,
+          11,
+          11,
+          11
+        ]
+      }
+    ],
+    "primitive_rank_counts_c_1_to_12": [
+      0,
+      0,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      4,
+      3
+    ],
+    "rank_table_through_order_12": {
+      "134989": 7,
+      "151": 5,
+      "17": 8,
+      "2": 4,
+      "20641": 10,
+      "21437482181": 12,
+      "21868055983": 9,
+      "26335663496869": 11,
+      "29": 6,
+      "3": 4,
+      "3067": 12,
+      "35081": 10,
+      "3923": 11,
+      "418007": 12,
+      "5": 3,
+      "661": 8,
+      "73": 11,
+      "9511": 11
+    },
+    "raw_coefficient_firewall_rows": [
+      {
+        "logarithmic_coefficient": 1,
+        "order": 7,
+        "primitive_euler_exponent": 1,
+        "raw_coefficient_is_not_anchor": true,
+        "raw_zeta_coefficient": 3
+      },
+      {
+        "logarithmic_coefficient": 4,
+        "order": 11,
+        "primitive_euler_exponent": 4,
+        "raw_coefficient_is_not_anchor": true,
+        "raw_zeta_coefficient": 13
+      }
+    ],
+    "seed": [
+      0,
+      0
+    ],
+    "trace_envelope_rows": [
+      {
+        "T_n": 0,
+        "envelope": 2.4534452978042594,
+        "order": 1,
+        "pass": true
+      },
+      {
+        "T_n": 0,
+        "envelope": 4.906890595608519,
+        "order": 2,
+        "pass": true
+      },
+      {
+        "T_n": 3,
+        "envelope": 14.720671786825555,
+        "order": 3,
+        "pass": true
+      },
+      {
+        "T_n": 8,
+        "envelope": 19.627562382434075,
+        "order": 4,
+        "pass": true
+      },
+      {
+        "T_n": 5,
+        "envelope": 49.06890595608519,
+        "order": 5,
+        "pass": true
+      },
+      {
+        "T_n": 9,
+        "envelope": 58.88268714730222,
+        "order": 6,
+        "pass": true
+      },
+      {
+        "T_n": 7,
+        "envelope": 137.39293667703853,
+        "order": 7,
+        "pass": true
+      },
+      {
+        "T_n": 24,
+        "envelope": 157.0204990594726,
+        "order": 8,
+        "pass": true
+      },
+      {
+        "T_n": 12,
+        "envelope": 353.2961228838133,
+        "order": 9,
+        "pass": true
+      },
+      {
+        "T_n": 25,
+        "envelope": 392.5512476486815,
+        "order": 10,
+        "pass": true
+      },
+      {
+        "T_n": 44,
+        "envelope": 863.6127448270993,
+        "order": 11,
+        "pass": true
+      },
+      {
+        "T_n": 53,
+        "envelope": 942.1229943568355,
+        "order": 12,
+        "pass": true
+      }
+    ],
+    "zeta_coefficients_q_0_to_12": [
+      1,
+      0,
+      0,
+      1,
+      2,
+      1,
+      2,
+      3,
+      6,
+      5,
+      8,
+      13,
+      18
+    ]
+  },
+  "finite_rows_are_reproduction_only": true,
+  "four_volume_foundation_audit": {
+    "archive_member_count": 73,
+    "dependency_hash_count": 1548,
+    "failure_count": 0,
+    "manifest_sha256": "24dcf3c6e74c5252e7e278d9141a656c6b97bb30fad6578da8c193cc1063a897",
+    "numbered_source_count": 361,
+    "pass": true,
+    "result_hash_count": 8,
+    "volume_count": 4
+  },
+  "gates": {
+    "A_canonical_intrinsic_dynamical_spectral_determinant": false,
+    "B_time_oriented_scattering_or_unitary_completion": false,
+    "C_self_adjoint_generator_and_intrinsic_T_log_T": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "route": {
+    "four_volume_foundation_preserved": true,
+    "physical_route_coordinate": "actual_same_clock_unnormalized_head_transport_open",
+    "route_A": "GO",
+    "route_B": "STOP_SCOPED",
+    "route_B_first_fatal_mismatch": "marked_cycles_across_distinct_finite_fields_are_not_a_canonical_global_operator",
+    "route_B_second_fatal_mismatch": "fixed_point_counts_are_not_signed_von_mangoldt_operator_traces",
+    "trigger_5_independent_theorem_edge": true,
+    "triggers_1_to_4_touched": false
+  },
+  "source_audit": {
+    "pass": true,
+    "rows": [
+      {
+        "actual_sha256": "02898f6f72250fd7c3729b0819caa288fc1fba591c4e67f19b842ca448cca49c",
+        "expected_sha256": "02898f6f72250fd7c3729b0819caa288fc1fba591c4e67f19b842ca448cca49c",
+        "pass": true,
+        "path": "henon_prime_returns/PRIME_RETURN_THEOREMS.md"
+      },
+      {
+        "actual_sha256": "17c635a6285a9b6782d3400b47cf3bd47ff31546366ca53cd1baac19a510330a",
+        "expected_sha256": "17c635a6285a9b6782d3400b47cf3bd47ff31546366ca53cd1baac19a510330a",
+        "pass": true,
+        "path": "henon_prime_returns/paper/sections/03_reversible_structure.tex"
+      },
+      {
+        "actual_sha256": "919e61920432b3296bb50c6ee00449005068e5b7d20a7b733349695220b161d9",
+        "expected_sha256": "919e61920432b3296bb50c6ee00449005068e5b7d20a7b733349695220b161d9",
+        "pass": true,
+        "path": "henon_prime_returns/paper/sections/04_divisibility.tex"
+      },
+      {
+        "actual_sha256": "ceb93e2c7394c323b7e605c5ad10824b822f4e4e8305e5d9f7b02e738d88d705",
+        "expected_sha256": "ceb93e2c7394c323b7e605c5ad10824b822f4e4e8305e5d9f7b02e738d88d705",
+        "pass": true,
+        "path": "henon_prime_returns/paper/sections/app_diagnostics.tex"
+      },
+      {
+        "actual_sha256": "70842cfe7ef7b65b00de27b0280b866bbb56316d778a498133ab3a170e240722",
+        "expected_sha256": "70842cfe7ef7b65b00de27b0280b866bbb56316d778a498133ab3a170e240722",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-362-prime-return-euler-dichotomy-and-clock-renormalization-obstruction/README.md"
+      },
+      {
+        "actual_sha256": "1d3909ad8b97d6bb0fc8c861ae0c702908f992cd33c8c1a7a57349b2f8925ccc",
+        "expected_sha256": "1d3909ad8b97d6bb0fc8c861ae0c702908f992cd33c8c1a7a57349b2f8925ccc",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-362-prime-return-euler-dichotomy-and-clock-renormalization-obstruction/main.tex"
+      },
+      {
+        "actual_sha256": "2fdf7ce5825230b613c0517c803b87c3ddc5179c9c36d1998c512ed930519ed4",
+        "expected_sha256": "2fdf7ce5825230b613c0517c803b87c3ddc5179c9c36d1998c512ed930519ed4",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-362-prime-return-euler-dichotomy-and-clock-renormalization-obstruction/THEOREM_LEDGER.md"
+      },
+      {
+        "actual_sha256": "5edf4ed048e10a008f00a03d62a934630caba1724af529878910892cea7001fc",
+        "expected_sha256": "5edf4ed048e10a008f00a03d62a934630caba1724af529878910892cea7001fc",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-362-prime-return-euler-dichotomy-and-clock-renormalization-obstruction/results/result.json"
+      },
+      {
+        "actual_sha256": "4882c6d1efefff58d2ac6cd86699a111b91c2aa24e8f83e786ba5a0f17223ff3",
+        "expected_sha256": "4882c6d1efefff58d2ac6cd86699a111b91c2aa24e8f83e786ba5a0f17223ff3",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-364-weighted-henon-prime-lift-cubic-trace-obstruction/README.md"
+      },
+      {
+        "actual_sha256": "44df56838023323b55fbb0e90e7b47d8d697686dbfddfb245ff3a5dd70917345",
+        "expected_sha256": "44df56838023323b55fbb0e90e7b47d8d697686dbfddfb245ff3a5dd70917345",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-364-weighted-henon-prime-lift-cubic-trace-obstruction/main.tex"
+      },
+      {
+        "actual_sha256": "1a1bbbf5355505cadfd478bd9119db116a451f645f80243f1f3d82f3377373c3",
+        "expected_sha256": "1a1bbbf5355505cadfd478bd9119db116a451f645f80243f1f3d82f3377373c3",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-364-weighted-henon-prime-lift-cubic-trace-obstruction/THEOREM_LEDGER.md"
+      },
+      {
+        "actual_sha256": "ca8e57f6d057e6d2e8df2c87c1fca9bc6a1f4cc1c90009cb41554a797402555f",
+        "expected_sha256": "ca8e57f6d057e6d2e8df2c87c1fca9bc6a1f4cc1c90009cb41554a797402555f",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-364-weighted-henon-prime-lift-cubic-trace-obstruction/UPDATED_ROADMAP.md"
+      },
+      {
+        "actual_sha256": "2d02e456330fb5a7ca161b0cea58ae6f6781ad76c077599e98fd91485cc89478",
+        "expected_sha256": "2d02e456330fb5a7ca161b0cea58ae6f6781ad76c077599e98fd91485cc89478",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-364-weighted-henon-prime-lift-cubic-trace-obstruction/results/result.json"
+      },
+      {
+        "actual_sha256": "24dcf3c6e74c5252e7e278d9141a656c6b97bb30fad6578da8c193cc1063a897",
+        "expected_sha256": "24dcf3c6e74c5252e7e278d9141a656c6b97bb30fad6578da8c193cc1063a897",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_manifest.json"
+      },
+      {
+        "actual_sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751",
+        "expected_sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json"
+      }
+    ]
+  },
+  "source_commits": {
+    "henon_prime_returns": "c37d191672d30de49b2054be3a03cf2db068694f",
+    "prime_dynamics_theory_rh364_release": "ba4d11aab349d3301a713e4a6e4f16c0cd84d45a"
+  },
+  "status": "RH-365_prime_return_bouquet_height_radius_and_prime_order_anchors",
+  "theorem_flags": {
+    "all_order_bouquet_trace_envelope": true,
+    "exact_reversibility_midpoint_identities": true,
+    "explicit_two_sided_gcd_height_bounds": true,
+    "naive_direct_sum_noncompact_and_non_schatten": true,
+    "odd_prime_order_primitive_divisor_anchors": true,
+    "origin_taylor_radius_bracket": true,
+    "primitive_anchor_is_log_euler_not_raw_coefficient": true,
+    "strict_zero_free_disk_abs_z_below_two_to_minus_half": true,
+    "two_sided_quadratic_height_scale": true
+  }
+}
