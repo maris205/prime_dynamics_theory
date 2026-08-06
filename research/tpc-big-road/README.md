@@ -1,10 +1,11 @@
-# TPC big road V17: Bridge B growing-rank physical-dual highway
+# TPC big road V18: Bridge B typed backward-dual and forced-innovation highway
 
 更新时间：2026-08-06
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_PHYSICAL_DUAL_RANK_GEOMETRY_AND_ROUTE_REDESIGN`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_TYPED_CORE_BACKWARD_HULL_AND_ROUTE_REDESIGN`
 
-当前主路线见第 17 节及 `bridge_b_observable_rank.md`；第 16 节与
+当前主路线见第 18 节及 `bridge_b_backward_hull.md`；第 17 节与
+`bridge_b_observable_rank.md`继续冻结 V17 rank contract，第 16 节与
 `bridge_b_physical_intertwiner.md`继续冻结 V16 common physical-return contract。
 下列 analytic registry继续冻结 V15/A1 的独立 reserve，不因 Bridge B 的优先级变化而
 取得或失去 theorem credit。
@@ -1620,3 +1621,104 @@ canonical V17 registry为 24 rows，final-LF SHA-256
 V17是 `EXACT_ACTUAL_PHYSICAL_DUAL_RANK_GEOMETRY_AND_ARCHITECTURE_RETYPE`，不是
 arithmetic advance；fixed-atom credit=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207 trigger=`false`。A1/A2继续作独立 analytic reserves。
+
+## 18. V18 Bridge B：backward atoms不爆炸，untyped full hull停止
+
+V17 的下一 gate原写成 `R^*` backward hull，但 functional pullback必须先分型。若
+`w`是 raw coefficient row，则
+
+```text
+(R_p^vee w)(r)=sum_j m_p(r+jP_k)w(r+jP_k),
+(R_p^*h)(r)=p^(-1)sum_j m_p(r+jP_k)h(r+jP_k),
+R_p^vee w=pR_p^*w.                                    (18.1)
+```
+
+遗漏 `p`不改变 rank，却会破坏 literal coefficients、dual norm与 loss ledger。exact
+adjoint在 atom上是 survivor collapse：`R_p^*e_x=p^(-1)e_(x mod P_k)`或零；forward
+`R_p`才复制成 `p-2` atoms。later deletion forcing又满足
+
+```text
+R_p^*g_(k,p)=alpha_p(1-alpha_p)1,                     (18.2)
+```
+
+所以 pull回 base只增加 scalar mean，不发生反向 atom explosion。
+
+当前真正 canonical 的 primorial dual family只有 normalized Haar mean与 actual
+same-stage intervals。对它们定义的 exact interval--mean hull，关键 fixtures为
+
+```text
+dim H_(4,6)^IM=119,  dim V_4=P_4=210,
+dim H_(5,6)^IM=85,   dim V_5=P_5=2310,
+dim H_(6,6)^IM=61,   dim V_6=P_6=30030.               (18.3)
+```
+
+`k=4,j=6`少两维来自 literal zero increments
+`u_103=u_104`及 `u_109=u_110`；三 atoms分别被 `11/13`删除。全部 backward
+increments仍至多三稀疏。
+
+更一般地，对任意 fixed horizon `h`及任何已物化为 physical-window rows的 family
+（加 Haar mean），只有 uniform upper bound
+
+```text
+dim H_(k,k+h)^vee
+ <=1+4^(h+1)p_k^2
+ =o(P_k).                                             (18.4)
+```
+
+只有当 `k>=4`且该 typed family还包含 V17 canonical mean/interval core时，才另有
+`BANDCOUNT_k+1<=dim H_(k,k+h)^vee`。因此 required core-containing exact-return
+family的 fixed rank继续被停止，而任意 fixed-horizon windowed family都不可能自动爆成
+full primorial rank。若条件性地保留同 stage全部 deletion Fourier modes，其
+DFT-equivalent residue-sliced bank也满足
+
+```text
+rank<=q+3(BANDCOUNT_k-1)=O(q^2)=o(P_k).               (18.5)
+```
+
+这不是 canonical family宣言。repo只 source-back exact aggregate
+
+```text
+E_(k,X,q)
+ =q^(-1)sum_(1<=a<q)(1+e_q(2a))F_(k,X,q,a)
+ =(1-2/q)ell_(k,X)-ell_(k+1,X) composed with R_q,     (18.6)
+```
+
+却没有 active tuple registry，也未决定 aggregate versus individual modes。
+
+更致命的是，PBAPT Type-II仍是 analytic contract；selected `SHB-D2`没有物化成
+`V_k^vee` rows，TPC-32 packet又属于不同 clock/modulus/normalization。因此
+
+```text
+COMPLETE_DECLARED_PHYSICAL_DUAL_FAMILY = NOT_TYPED,
+COMPLETE_HULL_RANK = NOT_TESTABLE_FAIL_CLOSED.         (18.7)
+```
+
+all global characters则是另一 family：它们构成 full Fourier basis，立即 rank=`P_k`，
+故 fixed finite dictionary版本 `STOP_SCOPED`；不得用这个 control替换 windowed modes。
+
+zero-defect intertwiner下 typed hull确实给 `rank(J_k)>=dim H`。V16允许 nonzero
+physical defect，故 current hull对它只是 diagnostic；missing lookahead directions可经
+innovation port进入，并必须在 actual trajectory上付清。current primary更新为
+
+```text
+BRIDGE_B_TYPED_WINDOWED_FORCED_INNOVATION
+  = SELECTED_OPEN_NEW_THEOREM.                         (18.8)
+```
+
+下一 gate只做 `SHB-D2` 到 primorial covector的 literal row materialization：冻结
+representation、`stage/X/A/h0`、coefficient class、frequency domain、normalization与
+source locator，再算 `k=5,b=7` incremental rank/support/norm/conditioning/loss。空
+PBAPT family、template count、continuous Mellin parameter count或 Parseval norm均不得
+冒充 linear rank。
+
+完整 proof与 checker为
+
+```text
+research/tpc-big-road/bridge_b_backward_hull.md
+research/tpc-big-road/tpc_bridge_b_backward_hull_checker.py
+```
+
+canonical V18 registry为 32 rows，final-LF SHA-256
+`57ddfe6635fe56020516680d9be5732ea39196d0bac5f6d4492a9c7d7890cd9b`。
+V18不是 arithmetic advance；fixed-atom credit=`0`、strict `1/400=UNPAID`、
+`L2=NONE`、TPC-207 trigger=`false`。A1/A2继续作独立 analytic reserves。

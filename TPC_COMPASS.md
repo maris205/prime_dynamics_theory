@@ -1,15 +1,15 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-06
-状态：`BOLD_CHANNEL_V17 / BRIDGE_B_COMMON_STAGE_GROWING_RANK_SPARSE_CARRIER`
-claim level：`EXACT_ACTUAL_PHYSICAL_DUAL_RANK_GEOMETRY_NO_ARITHMETIC_ADVANCE`
+状态：`BOLD_CHANNEL_V18 / BRIDGE_B_TYPED_WINDOWED_FORCED_INNOVATION`
+claim level：`EXACT_TYPED_CORE_BACKWARD_HULL_GEOMETRY_NO_ARITHMETIC_ADVANCE`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V17 的完整
-proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_observable_rank.md`
-及 `research/tpc-big-road/tpc_bridge_b_rank_growth_checker.py`；V16 common-return contract
-继续冻结于 `bridge_b_physical_intertwiner.md`。正式 theorem
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V18 的完整
+proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_backward_hull.md`
+及 `research/tpc-big-road/tpc_bridge_b_backward_hull_checker.py`；V17 rank contract与
+V16 common-return contract继续冻结于各自 artifacts。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
 
@@ -19,7 +19,7 @@ proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_observable_
 200+ local research nodes
   -> 13 major obstruction classes
   -> 2 visible bottlenecks
-  -> 1 selected growing-rank physical-dual Bridge B highway
+  -> 1 selected typed windowed forced-innovation Bridge B highway
      + 2 independent analytic reserves (A1/A2).
 ```
 
@@ -1022,6 +1022,66 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 19. V18 后的罗盘：typed windowed innovation，而不是 placeholder full hull
+
+V18先修正 dual类型：raw functional用 `R^vee`，normalized-Haar vector用 `R^*`，两者
+相差 source/target modulus ratio。精确公式显示 backward survivor atom只塌回一个
+parent atom或零，later deletion forcing只塌成 mean；V17担心的反向 atom explosion为
+错误方向。
+
+canonical mean/interval core的 exact ranks包括
+
+```text
+dim H_(4,6)^IM=119,  dim V_4=P_4=210,
+dim H_(5,6)^IM=85,   dim V_5=P_5=2310,
+dim H_(6,6)^IM=61,   dim V_6=P_6=30030.
+```
+
+全部 pulled increments仍至多三稀疏。对每个 fixed horizon `h`，任意真正物化为
+physical-window rows的 typed family（加 Haar mean）满足 upper bound
+
+```text
+dim H_(k,k+h)^vee<=1+4^(h+1)p_k^2=o(P_k).             (19.1)
+```
+
+若 `k>=4`且该 family还包含 V17 canonical mean/interval core，才另有
+`BANDCOUNT_k+1<=dim H_(k,k+h)^vee`。所以 required core-containing exact-return
+family的 fixed rank死，而任意 fixed-horizon family的 full-primorial explosion也死；
+growing sparse carrier仍有路。即便条件性加入同 stage全部 windowed deletion modes，
+rank upper bound仍为 `q+3(BANDCOUNT_k-1)=o(P_k)`。
+
+但完整 hull当前不合法。repo只给 deletion innovation aggregate的 exact Fourier/
+adjacent-stage identity，没有 active mode registry；PBAPT与 selected `SHB-D2`仍是
+analytic forms，未成为 `V_k^vee` rows。TPC-32 packet frequency又是另一 modulus与
+normalization。因此
+
+```text
+UNTYPED_PLACEHOLDER_TO_COMPLETE_HULL = STOP_SCOPED,
+COMPLETE_HULL_RANK = NOT_TESTABLE_FAIL_CLOSED.         (19.2)
+```
+
+global complete characters作为 control会立即给 full rank `P_k`，但不能改写成 actual
+windowed family。zero-defect exact intertwiner受 hull rank必要条件约束；V16 nonzero
+physical `Err`版本只把 hull当 diagnostic，missing directions由 innovation port进入并在
+actual trajectory上支付。
+
+current primary为
+
+```text
+BRIDGE_B_TYPED_WINDOWED_FORCED_INNOVATION
+  = SELECTED_OPEN_NEW_THEOREM.                         (19.3)
+```
+
+下一关不是继续算空 family，而是把 selected `SHB-D2`逐式 materialize为 primorial
+covectors；冻结 stage、physical `X`、`A`、fixed `h0=2`、frequency、coefficient class、
+normalization与 source locator，再对 `k=5,b=7`算 rank/support/norm/conditioning/loss。
+
+proof/checker见 `bridge_b_backward_hull.md`与
+`tpc_bridge_b_backward_hull_checker.py`。V18 registry为 32 rows、SHA-256
+`57ddfe6635fe56020516680d9be5732ea39196d0bac5f6d4492a9c7d7890cd9b`。
+arithmetic advance=`NO`；fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
+TPC-207=`false`。A1/A2仍是独立 reserves。
 
 ## 18. V17 后的罗盘：common fixed rank 停止，sparse dual hull 开工
 

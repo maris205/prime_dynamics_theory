@@ -3,6 +3,59 @@
 更新时间：2026-08-06
 交接状态：`SEALED_FOR_NEW_SESSION`
 
+第 65 节从已发布 V17 commit
+`487fcbd594e880a5e0e4941ae97e08fbe4265d44`继续 Bridge B。V18首先修正第 64 节
+backward hull的类型：functional用 algebraic `R^vee`，normalized-Haar vector用
+Hilbert `R^*`；两者相差 exact modulus ratio，rank相同但 literal normalization与 loss
+不同。
+
+精确 adjoint显示 survivor atom只 pull back成一个 scaled parent atom，deleted atom成
+零；later deletion forcing只 pull back成 scalar mean。canonical mean/interval core的
+exact fixtures为
+
+```text
+dim H_(4,6)^IM=119,  dim V_4=P_4=210,
+dim H_(5,6)^IM=85,   dim V_5=P_5=2310,
+dim H_(6,6)^IM=61,   dim V_6=P_6=30030.
+```
+
+全部 backward increments保持 support至多 `3`。对每个 fixed horizon `h`，任意已经
+物化为 physical-window rows的 family（加 Haar mean）都有 uniform upper bound
+
+```text
+dim H_(k,k+h)^vee<=1+4^(h+1)p_k^2=o(P_k).
+```
+
+只有当 `k>=4`且该 typed family还包含 V17 canonical mean/interval core时，才另有
+`BANDCOUNT_k+1<=dim H_(k,k+h)^vee`。所以 required core-containing exact-return
+family的 fixed rank继续 STOP，而任意 fixed-horizon windowed hull都没有 primorial
+explosion。
+repo source-back deletion innovation aggregate的 exact Fourier与 adjacent-stage identity，
+却没有 active mode registry，也未决定 aggregate或 individual modes；PBAPT selected
+`SHB-D2`更尚未 materialize成 `V_k^vee` rows。TPC-32 packet frequency属于另一
+clock/modulus/normalization。因此
+
+```text
+COMPLETE_DECLARED_PHYSICAL_DUAL_FAMILY = NOT_TYPED,
+COMPLETE_HULL_RANK = NOT_TESTABLE_FAIL_CLOSED.
+```
+
+zero-defect exact intertwiner下 typed hull rank是必要 obstruction；V16允许 nonzero
+physical `Err`，故 hull对 current route只作 diagnostic。current primary更新为
+
+```text
+BRIDGE_B_TYPED_WINDOWED_FORCED_INNOVATION
+  = SELECTED_OPEN_NEW_THEOREM.
+```
+
+下一 gate只 materialize selected `SHB-D2` 到 primorial covectors，冻结 representation、
+`stage/X/A/h0`、frequency、coefficient class、normalization与 source locator，再做
+`k=5,b=7` rank/support/norm/conditioning/loss。V18不是 arithmetic advance。
+TPC-207=false、fixed-atom credit=`0`、global strict `1/400=UNPAID`、`L2=NONE`。
+proof与 32-row registry见 `research/tpc-big-road/bridge_b_backward_hull.md`；checker为
+`research/tpc-big-road/tpc_bridge_b_backward_hull_checker.py`，registry final-LF SHA-256为
+`57ddfe6635fe56020516680d9be5732ea39196d0bac5f6d4492a9c7d7890cd9b`。
+
 第 64 节从已发布 V16 commit
 `b088a717ea85cb0c328a3ff247694569a594947a`继续 Bridge B。V16已经冻结一个 common
 stage map `J_k`：它先于 `X,A,ell`选择，并对每个 `f in V_k` exact return declared
@@ -2302,6 +2355,35 @@ level-state vector的 S-adic/Bratteli或 Hénon growing observable family。curr
 不含 all translations；其 circulant rank theorem只作 conditional falsifier。surviving
 primary为 `BRIDGE_B_COMMON_STAGE_GROWING_RANK_SPARSE_CARRIER`，精确 proof与下一
 backward-closed dual-hull gate见第 64 节。
+
+2026-08-06 的 Bridge B V18 typed backward-dual audit新增两个 broad cells：
+
+```text
+DECLARED_TPC_BRIDGE_B_20260806_UNTYPED_PLACEHOLDER_PHYSICAL_DUAL_FAMILY_
+TO_COMPLETE_BACKWARD_HULL_RANK_V1 = STOP_SCOPED
+
+DECLARED_TPC_BRIDGE_B_20260806_ALL_GLOBAL_ADDITIVE_CHARACTERS_THROUGH_
+FIXED_FINITE_DICTIONARY_V1 = STOP_SCOPED
+```
+
+第一 cell停止把 V16 contract中的名字列表、空 PBAPT family、analytic template count、
+continuous Mellin parameter count、Parseval norm或 TPC-32 auxiliary frequency直接
+注册成 `V_k^vee` rows并宣称 complete hull rank。当前 canonical family只有 Haar mean与
+actual intervals；deletion innovation只有 exact aggregate formula、无 active registry；
+selected `SHB-D2`到 primorial covector的 linear crosswalk ABSENT。故 full-family模式
+必须 `NOT_TESTABLE_FAIL_CLOSED`，不能以空集合通过。
+
+第二 cell只停止 mean加全部 global nonzero characters仍声称 low-rank fixed finite
+dictionary：global characters已经是 `V_k`的 full Fourier basis，rank恰为 `P_k`。
+它不停止 actual window-truncated deletion aggregate、selected windowed modes或 CRT
+tensor multiplier本身；global/full-cycle control不得替换 physical window。
+
+两个 cells均不停止 canonical mean/interval core、fixed-horizon windowed
+`O_h(p_k^2)=o(P_k)` carrier、typed nonzero-defect innovation port、growing Logistic/
+S-adic/Bratteli observables或 Hénon natural extension。zero-defect typed hull rank仍是
+合法 necessary obstruction；V16 nonzero physical `Err`下只作 diagnostic。surviving
+primary为 `BRIDGE_B_TYPED_WINDOWED_FORCED_INNOVATION`；proof、typed schema与下一
+`SHB-D2` row-materialization gate见第 65 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -5970,7 +6052,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V17 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V18 current）
 
 ```text
 进入仓库：
@@ -5978,10 +6060,11 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--64 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--65 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -6007,7 +6090,16 @@ BRIDGE_B_FULL_CENTERED_NEGLIGIBLE_DUHAMEL_DEFECT = STOP_SCOPED_EXACT_RATE_MISMAT
 BRIDGE_B_ACTUAL_STAGE_BAND_INTERVAL_RANK = PROVED_EXACT_GROWING_BANDCOUNT_K
 BRIDGE_B_ACTUAL_INTERVAL_PLUS_MEAN_RANK = PROVED_EXACT_GROWING_BANDCOUNT_K_PLUS_1
 BRIDGE_B_COMMON_STAGE_FIXED_RANK_EXACT_RETURN = STOP_SCOPED_STAGE_BAND_RANK_GROWTH
-BRIDGE_B_COMMON_STAGE_GROWING_SPARSE_CARRIER = SELECTED_OPEN_NEW_THEOREM
+BRIDGE_B_HAAR_ADJOINT = PROVED_EXACT_P_INVERSE_AVERAGE
+BRIDGE_B_BACKWARD_INCREMENT_SUPPORT = PROVED_EXACT_AT_MOST_THREE
+BRIDGE_B_CORE_HULL_K4_B6 = PROVED_EXACT_RANK_119_OF_210
+BRIDGE_B_CORE_HULL_K5_B6 = PROVED_EXACT_RANK_85_OF_2310
+BRIDGE_B_CORE_HULL_K6_B6 = PROVED_EXACT_RANK_61_OF_30030
+BRIDGE_B_FIXED_HORIZON_WINDOWED_SUPPORT = PROVED_O_H_LOWERCASE_P_K_SQUARED_AND_O_PRIMORIAL
+BRIDGE_B_COMPLETE_DECLARED_DUAL_FAMILY = NOT_TYPED
+BRIDGE_B_COMPLETE_HULL_RANK = NOT_TESTABLE_FAIL_CLOSED
+BRIDGE_B_PBAPT_TYPEII_PRIMORIAL_CROSSWALK = ABSENT
+BRIDGE_B_TYPED_WINDOWED_FORCED_INNOVATION = SELECTED_OPEN_NEW_THEOREM
 BRIDGE_B_ALL_TRANSLATIONS_CURRENT_GATE = NO
 BRIDGE_B_APPROXIMATE_LOW_RANK_RETURN = OPEN_REQUIRES_WIDTH_AND_PHYSICAL_NORM
 BRIDGE_B_BRATTELI_AGING_CLOCK = OPEN_RESERVE_RANK_GROWTH_FALSIFIER
@@ -6132,18 +6224,20 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮首先执行第 64 节 Bridge B current primary：
+下一轮首先执行第 65 节 Bridge B current primary：
 
 ```text
-BRIDGE_B_COMMON_STAGE_GROWING_RANK_SPARSE_CARRIER.
+BRIDGE_B_TYPED_WINDOWED_FORCED_INNOVATION.
 ```
 
-它必须从 mean、base interval与三稀疏 increments出发，构造并计算 deletion forcing、
-additive-Fourier、PBAPT Type-II duals及 `R_p^*` pullbacks的 finite-horizon
-backward-closed physical dual hull。若 rank迅速达到 `asymp P_k`，就 broad-falsify
-sparse route；若 growing dimension、transition sparsity、dual norms与 loss均受控，
-才构造 target-independent observable quotient、forced nonautonomous evolution、
-actual physical dual return及 accumulated physical error。
+它不得继续对 untyped complete family算空 hull。首先把 selected `SHB-D2` analytic
+templates逐式 materialize为 primorial `V_k^vee` rows，冻结 covector/Riesz
+representation、stage、physical `X`、`A`、fixed `h0=2`、frequency domain、coefficient
+class、normalization与 source locator。然后在 `k=5,b=7`分别计算 physical innovation
+aggregate、selected windowed modes与 actual emitted Type-II rows的 incremental
+rank/support、transition sparsity、dual norms、conditioning与 physical loss。若 literal
+crosswalk不存在则 precise STOP；若 typed windowed family保持 subprimorial且 loss可付，
+才进入 nonautonomous Logistic carrier。
 A1 的 `HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER`与 A2
 paired-Voronoi只作独立 reserves，不与 Bridge B拼接 theorem credit。
 
@@ -6224,8 +6318,10 @@ V16 又证明 full centered sieve cocycle是 scaled isometry并有 orthogonal fo
 uniformly coercive full-space `J`到 uniformly exponentially mixing `Q`的 exact/
 negligible-full-defect版本已 STOP。V17又证明 common fixed-rank exact return因 actual
 same-stage interval dual rank增长而 STOP；但 exact三稀疏 difference basis保留
-growing-rank highway。当前先做 backward-closed physical dual hull，再构造 observable/
-physical quotient：必须保持 fixed `h0=2`、stage、event、clock、forcing与整个
+growing-rank highway。V18已证明 backward atom不扩散、later forcing塌成 mean，且
+fixed-horizon windowed support为 `o(P_k)`；但 complete dual family因 PBAPT crosswalk
+ABSENT而 `NOT_TESTABLE`。当前先 materialize typed Type-II rows，再构造 observable/
+physical quotient：必须保持 fixed `h0=2`、stage、event、clock、forcing与整个 typed
 physical dual family，并输出 deterministic `H_dyn/H3_phys` estimate。任何 a.e.结论、
 单向量 fit、word-only
 isomorphism或 abstract norm contraction都不算成功；任何动力学结论也不得逆向给 A1
@@ -6248,6 +6344,7 @@ python research/tpc-big-road/tpc_big_road_independent_checker.py --check
 python research/tpc-big-road/tpc_fm_local_comparison_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_carrier_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_rank_growth_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_backward_hull_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -10129,6 +10226,311 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 65. 2026-08-06 V18：typed backward-dual core 与 forced-innovation 大路
+
+### 65.1 baseline、分工与 claim ceiling
+
+本轮从已发布 V17
+`487fcbd594e880a5e0e4941ae97e08fbe4265d44`启动；local `HEAD`、`origin/main`与 remote
+main三 hash一致。V17已证明 same-stage fixed rank不可能，并把下一 early falsifier写成
+backward dual hull。V18不预设该 hull会 sparse或 full，而是先 source-lock它到底包含
+哪些 covectors。
+
+三个 read-only agents分别完成：
+
+```text
+V18_READ_ONLY_ADJOINT_HULL_ALGEBRA
+V18_READ_ONLY_PHYSICAL_DUAL_SOURCE_LOCK
+V18_READ_ONLY_ARCHITECTURE_FALSIFIER
+```
+
+三者均观察 V17 baseline、回报 `files_changed=[]`。主控另独立计算 future interval
+fixtures与 conditional Fourier-bank rank，并正式写入。ARS methodology在这里强制
+分开：covector/Hilbert vector、primal forcing/dual row、aggregate/individual modes、
+window/global characters、zero-defect/nonzero-Err及 analytic template/primorial row。
+
+本轮最大 claim为
+
+```text
+EXACT_NORMALIZED_HAAR_ADJOINT_ALGEBRA
++ EXACT_CANONICAL_MEAN_INTERVAL_BACKWARD_HULL_GEOMETRY
++ EXACT_DELETION_INNOVATION_FORMULA
++ FIXED_HORIZON_WINDOWED_SUBPRIMORIAL_SUPPORT
++ COMPLETE_UNTYPED_HULL_NOT_TESTABLE
++ TYPED_WINDOWED_FORCED_INNOVATION_SELECTED_OPEN
++ NO_ARITHMETIC_ADVANCE.
+```
+
+它不是 TPC-207或 numbered paper。fixed `h0=2`、fixed-atom credit=`0`、strict
+`1/400=UNPAID`、`L2=NONE`、TPC-207 trigger=`false`。
+
+### 65.2 algebraic dual、Haar adjoint与 atom方向
+
+写 `P=P_k,p=p_(k+1)`，child为 `x=r+jP`，deletion mask为
+`m_p(x)=1_(p does not divide x(x+2))`。raw coefficient row与 normalized-Haar vector
+必须分别 pull back：
+
+```text
+(R_p^vee w)(r)=sum_j m_p(r+jP)w(r+jP),
+(R_p^*h)(r)=p^(-1)sum_j m_p(r+jP)h(r+jP),
+R_p^vee w=pR_p^*w.                                    (65.1)
+```
+
+multi-stage Riesz identity为
+
+```text
+R_(j:k)^*(P_j conjugate(w))
+ =P_k conjugate(R_(j:k)^vee w).                        (65.2)
+```
+
+因此 rank/span不受 stage scalar影响，但 literal normalization、dual norm、condition
+number与 physical loss会受影响。对 child atom，
+
+```text
+R_p^*e_x=p^(-1)e_(x mod P), if x survives;
+R_p^*e_x=0, otherwise.                                 (65.3)
+```
+
+forward `R_p`才把 parent atom复制成 `p-2` survivors；backward `R_p^*`只 collapse。
+若 `g_(k,p)=R_p1-alpha_p1`，则
+
+```text
+R_p^*g_(k,p)=alpha_p(1-alpha_p)1.                      (65.4)
+```
+
+所以 later deletion forcing pull到 base只给 scalar mean。incoming
+`g_(k-1,p_k)`可在 finite diagnostics中加一维，但它是 primal vector，不得未经 Riesz
+typing注册成 physical dual。
+
+### 65.3 canonical core与 exact finite hull
+
+当前 repo真正 canonical 的 primorial family只有
+
+```text
+D_k^core={normalized Haar mean}
+         union {ell_(k,X):X in X_k^int}.               (65.5)
+```
+
+令 `u_(k<-j,X)=R_(j:k)^vee w_(j,X)`。literal row为
+
+```text
+u_(k<-j,X)(r)
+ =sum_(X<n<=2X, n=r mod P_k)
+  product_(k<t<=j)1_(p_t does not divide n(n+2)).      (65.6)
+```
+
+canonical diagnostic hull定义为 mean加全部 `k<=j<=b`的 (65.6)。pulled consecutive
+increment仍是三个 coordinate atoms分别乘 survival mask、再按 residue合并，故 support
+严格不超过 `3`。
+
+exact rational fixtures为：
+
+| `k` | `b` | `P_k` | supplied rows incl. mean | core rank |
+|---:|---:|---:|---:|---:|
+| 2 | 2 | 6 | 9 | 5 |
+| 2 | 3 | 6 | 21 | 6 |
+| 3 | 3 | 30 | 13 | 13 |
+| 3 | 4 | 30 | 49 | 30 |
+| 4 | 4 | 210 | 37 | 37 |
+| 4 | 5 | 210 | 61 | 61 |
+| 4 | 6 | 210 | 121 | 119 |
+| 5 | 5 | 2310 | 25 | 25 |
+| 5 | 6 | 2310 | 85 | 85 |
+| 6 | 6 | 30030 | 61 | 61 |
+
+`k=2,3`是 tiny wrap controls，不能外推。`k=4,j=6`的两个 exact relations为
+
+```text
+u_103=u_104,
+u_109=u_110.                                          (65.7)
+```
+
+对应 increments的三个 atoms分别全被 `11/13`删除，故 `121` rows精确降为 rank
+`119`；不存在 float/modular或 normalization伪差。
+
+### 65.4 fixed-horizon window theorem
+
+固定 `h=b-k`。任一已经 literal materialize成 stage `j<=k+h` physical-window row的
+dual，其 source coordinates来自 `n< p_(j+1)^2`；algebraic pullback只删除并映射
+`n mod P_k`，不扩大 support。repeated Bertrand给
+
+```text
+dim H_(k,k+h)^vee
+ <=1+p_(k+h+1)^2
+ <=1+4^(h+1)p_k^2.                                    (65.8)
+```
+
+又因 `P_k>=(k+1)!`且 `p_k<2^k`，对每个 fixed `h`，任意 such typed window family
+都只有 upper conclusion
+
+```text
+dim H_(k,k+h)^vee<=O_h(p_k^2)=o(P_k).                 (65.9)
+```
+
+对不包含 canonical core的任意 window family不主张 `BANDCOUNT_k+1`下界。只有当
+`k>=4`且 typed family还包含第 64 节/V17 canonical mean/interval core时，结合 exact
+core rank才得到 sandwich
+
+```text
+BANDCOUNT_k+1
+ <=dim H_(k,k+h)^vee
+ <=O_h(p_k^2)=o(P_k).                                  (65.10)
+```
+
+所以 required core-containing exact-return family的 fixed rank STOP保持；与此同时，
+任意 fixed-horizon windowed family都不可能 full-primorial explosion。这个 theorem
+不覆盖 unbounded horizon、global characters或尚未成为 physical-window row的
+analytic Type-II object。
+
+### 65.5 deletion innovation、conditional Fourier bank与 global control
+
+source-backed exact aggregate为
+
+```text
+E_(k,X,q)(f)
+ =sum_(X<n<=2X)f(n mod P_k)
+   [1_(q divides n(n+2))-2/q]
+
+ =q^(-1)sum_(1<=a<q)(1+e_q(2a))F_(k,X,q,a)
+ =(1-2/q)ell_(k,X)-ell_(k+1,X) composed with R_q.      (65.11)
+```
+
+zero mode严格排除。repo没有 active `(k,X,q,A,h0)` registry，也未决定只保留
+aggregate还是逐 mode return。因此 individual modes只能 conditional。
+
+作为 strongest natural test，对 `k>=4`，若条件性加入 `a=0,...,q-1`全部 windowed
+modes，DFT把它们等价成 residue-sliced intervals；一个 base bank加每个后续 `X`至多
+三条非零 increment rows给
+
+```text
+BANDCOUNT_k
+ <=rank windowed bank
+ <=q+3(BANDCOUNT_k-1)=O(q^2)=o(P_k).                  (65.12)
+```
+
+故 maximal same-stage windowed completion也没有杀死 sparse route。但 mean加全部
+global nonzero characters已经是 full `V_k` Fourier basis，rank=`P_k`；fixed finite
+dictionary版本 STOP。global/full-cycle control、complete-frequency Parseval或 TPC-32
+auxiliary frequency不得替换 (65.11) physical window。
+
+### 65.6 complete family first fatal 与 Err firewall
+
+V16 family contract只命名 deletion-bias Fourier与 PBAPT Type-II tests，没有 materialize
+member registry。PBAPT current selected `SHB-D2`仍是 analytic bilinear formula，不是
+`V_k^vee`；universal arbitrary-coefficient Type II又已被 mod-3 witness停止。TPC-32
+packet保持另一 clock、auxiliary modulus、masks、raw channels与 normalization，没有
+coefficientwise primorial crosswalk。因此第一个 fatal为
+
+```text
+COMPLETE_DECLARED_PHYSICAL_DUAL_FAMILY = NOT_TYPED,
+PBAPT_TYPEII_TO_PRIMORIAL_CROSSWALK = ABSENT,
+COMPLETE_HULL_RANK = NOT_TESTABLE_FAIL_CLOSED.          (65.13)
+```
+
+空 PBAPT family、template数量、Mellin parameter标签或 Parseval norm不能算 hull。
+
+若 `Err=0`且 exact intertwining，则每个 future pullback属于 `range(J_k^vee)`，所以
+typed hull给 `rank(J_k)>=dim H`的必要条件。V16却允许
+
+```text
+J_jR_(j:k)=Q_(j:k)J_k+Delta_(j:k),
+R_(j:k)^vee ell_j
+ =J_k^vee Q_(j:k)^vee lambda_j+Delta_(j:k)^vee lambda_j. (65.14)
+```
+
+V16只在 actual source trajectory上控制最后一项，未令它 forall-`f`为零或 factor
+through `J_k`。故
+
+```text
+ZERO_DEFECT_HULL_RANK = VALID_NECESSARY_OBSTRUCTION,
+NONZERO_ERR_HULL_RANK = DIAGNOSTIC_ONLY.                (65.15)
+```
+
+对 minimal same-stage carrier，missing lookahead directions正由 physical innovation
+port进入；它是下一 Type-II theorem要控制的内容，不是可以删掉的 nuisance。
+
+### 65.7 route retype、typed schema与下一 gate
+
+第 6 节新增 untyped-placeholder与 all-global-character两个 broad STOP cells。surviving
+primary更新为
+
+```text
+BRIDGE_B_TYPED_WINDOWED_FORCED_INNOVATION
+  = SELECTED_OPEN_NEW_THEOREM.                          (65.16)
+```
+
+每条 candidate dual必须冻结：
+
+```text
+representation = COVECTOR_COORDINATE_SUM | HAAR_RIESZ_VECTOR,
+active tuple = stage,next_prime,X,terminal_stage,A_id,h0,
+dual = id,kind,literal_formula,source/frequency domains,
+       normalization,source locator,attachment status. (65.17)
+```
+
+下一 unnumbered gate只 materialize selected `SHB-D2` emitted templates为 primorial
+rows，或证明 literal crosswalk不存在。第一 fixture为 `k=5,b=7`，分别列 physical
+innovation aggregate、individually selected windowed modes与 actual Type-II rows；输出
+incremental rank/support、transition nonzeros、Riesz/physical norms、conditioning与
+loss。continuous twist必须按 actual vector span计算，不能按 template数计算。
+
+Logistic一维、Hénon二维、fixed alphabet或 finite vertices仍不等于 fixed observable
+rank。fixed finite dictionary exact return继续停止；growing partition/BV space、
+unbounded path memory、tower levels与 growing observables继续 OPEN。A1/A2仍为独立
+analytic reserves，不与 Bridge B拼 credit。
+
+### 65.8 artifact、registry与 publication boundary
+
+本轮预期 tracked files严格为：
+
+```text
+TPC_COMPASS.md
+TPC_HANDOFF.md
+research/tpc-big-road/README.md
+research/tpc-big-road/bridge_b_backward_hull.md
+research/tpc-big-road/tpc_bridge_b_backward_hull_checker.py
+```
+
+checker验证 exact adjoint/Riesz scale、atom/forcing collapse、15个 core ranks、五张
+increment histograms、两个 literal zero increments、六个 adjacent-stage aggregates、
+cyclotomic deletion identity、三个 conditional bank bounds、24项 contract mutations与
+34项 registry-semantic mutations。contract强制 exact key set、literal bool、empty PBAPT
+row registry、null source locator、`pbapt_attachment=false`及
+`complete_hull_rank=null`；registry另独立锁定全部 32 keys/values，每一行 rewrite、key
+replacement与 coordinated false release即使同步重算 hash也会被拒绝。
+
+canonical V18 registry为 32 rows，final-LF SHA-256
+
+```text
+57ddfe6635fe56020516680d9be5732ea39196d0bac5f6d4492a9c7d7890cd9b
+```
+
+没有 paper、PDF、build log或 TPC-207。正式写入后必须执行第 1 节 22项、
+TPC-111/124/126/127四项 supplemental、六个 big-road checkers普通与 optimized共
+12项、registry/doc、Markdown fences、section numbering、`git diff --check`及 protected
+manifest。只 stage上述五 files；pull/rebase与 push后验证三 hash一致。
+
+最终 pre-sync audit为
+
+```text
+POST_WRITE_BOOTSTRAP = 22/22 PASS
+POST_WRITE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_WRITE_BIGROAD_NORMAL_AND_OPTIMIZED = 12/12 PASS
+V18_PROOF_QA = PASS
+V18_CHECKER_SCHEMA_QA = PASS / 24 CONTRACT / 34 REGISTRY-SEMANTIC
+V18_RELEASE_ARCHITECTURE_QA = PASS
+V18_REGISTRY = 32/32 UNIQUE / DOC EXACT / HASH MATCH
+MARKDOWN_FENCES = BALANCED
+HANDOFF_SECTIONS = 65 UNIQUE / 1--65 COMPLETE
+SECTION65_FORMULAS = 17 UNIQUE / 65.1--65.17 COMPLETE
+GIT_DIFF_CHECK = PASS
+GIT_CACHED_DIFF = EMPTY
+PROTECTED_UNTRACKED = 130 / MANIFEST MATCH
+TPC122_WRITER_EXECUTED = NO
+TPC27_32_LEGACY_WRITERS_EXECUTED = NO
+TPC_207_CREATED = NO
+```
 
 ## 64. 2026-08-06 V17：actual physical-dual rank barrier 与 sparse growing-rank 大路
 
