@@ -1,12 +1,12 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-06
-状态：`BOLD_CHANNEL_V9 / EXACT_GAUSS_DUAL_PRODUCT_ROUTE_REDESIGN`
-claim level：`EXACT_FINITE_NORMAL_FORM_PLUS_EXACT_OBSTRUCTIONS_WITH_DUAL_TYPE_IV_AND_PAIRED_VORONOI_OPEN`
+状态：`BOLD_CHANNEL_V10 / INDUCED_CRT_PRIMITIVE_PROJECTOR_ROUTE_RETYPE`
+claim level：`EXACT_CONDUCTOR_PROJECTOR_NORMAL_FORM_PLUS_MONOMIAL_TRACE_BLUEPRINT_WITH_TYPE_IV_AND_PAIRED_VORONOI_OPEN`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V9 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V10 的完整
 公式、proof与独立 checker位于 `research/tpc-big-road/`。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
@@ -602,7 +602,7 @@ TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE.
 四 Möbius rows加双 divisor-log columns的 paired-Voronoi reserve。固定原子岛与
 Pair-native/H1岛是 attachment层，不自动提供桥梁 saving。Bridge B仍是
 distinguished-seed genericity动力学大桥；Hénon/几何岛只作辅助提升，不给解析桥
-credit。V9 canonical状态表为：
+credit。V10 canonical状态表为：
 
 ```text
 HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
@@ -616,7 +616,16 @@ BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIE
 DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
 STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
 HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
-HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
+HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
 ```
 
 1. **Primary：HB4 exact-half dual-product dispersion**。V9 已把 Gauss-square
@@ -633,13 +642,17 @@ HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEO
    `HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION`：在冻结、可测试的 source
    superclass上证明 normalized discrepancy `F^(2-eta)`，等价 prime cell
    `F^(4-eta)`；支付 strict `1/400`需最终 `eta>1/100`。actual atom逐项 membership、
-   dual tails、squarefree CRT/imprimitive lift仍须显式支付。common-`k` unique-fiber因
+   dual tails与 full source reassembly仍须显式支付。common-`k` unique-fiber因
    `be-ah=tp`的 `t!=0` wraps而 `STOP_SCOPED`；global moving-unit Cauchy也被 exact
-   product-resonance endpoint floor封死。选中的构造目标是
-   `HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV`：在 full squarefree modulus average
-   中保留 `mu(gq)`、两条 literal Möbius rows与 centered product-difference resonance，
-   不在 prime或 outer-variable层先取绝对值。已核查的 local inverse-product与普通
-   `d_4` level-of-distribution sources只提供 supporting sublemmas，未附着这一 gate。
+   product-resonance endpoint floor封死。V10 已完成 squarefree/imprimitive exact
+   lift，并证明 literal `mu(gq)`不会原样穿过 CRT：cofactor sign精确相消；剩余对象
+   是 conductor root-number-square coordinate，或等价的 `rho|r` primitive-projector
+   divisor lattice。进一步展开 `c_s(ell)`后，选中的构造目标变为
+   `HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV`，
+   保留 `mu(g)mu(rho)mu(b)`与 monomial
+   `u k/(g e_1e_2 a b^2 t^2) (mod rho)`，不在 outer-variable层先取绝对值。Earnst
+   root-number-square moment与 Fouvry--Kowalski--Michel--Sawin monomial trace bound
+   是合法机制蓝图，但都没有附着 full varying/composite projector gate。
 2. **Independent reserve：HB4xHB2 structured two-row paired-Voronoi**。在
    exactly-swapped shells上联合处理 source `A1-A2`；乘 outer `-6`后 physical顺序
    为 `A2-A1`。它对两条 weighted `mu_F*mu_F` rows与
@@ -652,9 +665,11 @@ HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEO
    polar-main attachment，随后须从 direct DFI的 `F^7` ledger联合回收 `F^3`到
    physical `F^4`。
 
-两条 source lock不得拼接。调度上先把 prime modulus、`g=1`、单个 source atom的
-centered dual-product theorem证明或否定，并同步把它提升为保留 modulus sign的
-squarefree Type-IV contract；同时独立展开 paired-Voronoi的 polar/zero/Bessel ledger。
+两条 source lock不得拼接。调度上保留 prime modulus、`g=1`、单个 source atom的
+centered dual-product theorem作为 first falsifier；full bridge则先按 projector
+modulus `rho`分 large prime-like、large complementary conductor与 balanced
+varying/composite三段，尝试把 local monomial trace engine编译成 collective theorem。
+同时独立展开 paired-Voronoi的 polar/zero/Bessel ledger。
 Target-coupled reassembly/crosslink继续作为 portfolio-level `OPEN/RESERVE`，不属于
 本轮 current umbrella gate。只有上述两个解析门之一先发生 theorem-backed变化，才另行
 要求逐 coefficient operator `Sigma_k J_X L_X c_X=nu_X W_k+R_X`与 paid physical

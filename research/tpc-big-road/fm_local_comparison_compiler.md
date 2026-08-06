@@ -26,7 +26,16 @@ BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIE
 DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
 STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
 HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
-HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
+HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH_PROVED_EXACT_ANALYTIC_HB4xHB2_GATE_OPEN
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION_STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI_INDEPENDENT_OPEN
@@ -2826,3 +2835,402 @@ The independent HB4xHB2 paired-Voronoi parent remains exactly as in
 not an arithmetic advance:
 fixed-atom credit is `0`, strict `1/400` is `UNPAID`, `L2=NONE`, and
 `TPC207_TRIGGER=false`.
+
+### 12.12 V10: induced CRT retype and the primitive-projector highway
+
+V9 deliberately left its squarefree CRT lift as an open construction.  The
+first exact calculation in that construction changes the type of the bridge.
+The historical instruction in Step 2 of Section 12.11.5 to pass through CRT
+"without losing `mu(gq)`" is false if read literally on an imprimitive
+cofactor stratum.  This is a scoped failure of that coefficient description,
+not a failure of the prime identity `(12.11.4)` and not a counterexample to
+the full analytic route.
+
+#### 12.12.1 Physical source convention before CRT
+
+Return to the literal Kloosterman cell, put
+
+```text
+g=(h,d), d=gq, h=gu, A=e_1e_2.
+```
+
+The active moduli are squarefree, so `(g,q)=1`, and multiplicativity gives
+
+```text
+S(ell,-2gu conjugate(A);gq)
+ =c_g(ell)S(ell conjugate(g),-2u conjugate(A);q).       (12.12.1)
+```
+
+Complete multiplicative inversion in `u` gives
+
+```text
+S(ell conjugate(g),-2u conjugate(A);q)
+ =1/phi(q) sum_(chi mod q)
+   chi(-2)chi(u)conjugate(chi)(A)
+   tau_q(conjugate(chi),1)
+   tau_q(conjugate(chi),ell conjugate(g)).              (12.12.2)
+```
+
+Since
+
+```text
+tau_q(conjugate(chi),ell conjugate(g))
+ =conjugate(chi)(g)tau_q(conjugate(chi),ell),           (12.12.3)
+```
+
+the displayed source object `(12.10.6)` must be read with the explicit unit
+phase `chi(-2)conjugate(chi)(g)`; V10 fixes that convention instead of hiding
+it in `H_g` or `L_(g,q)`.  The `-4` in `(12.8.1)` is the Pascadi
+`r_source=2` coordinate.  It combines with the first-coordinate scaling to
+give exactly the physical `-2` in `(12.12.1)` and is not a second shift.
+
+#### 12.12.2 Exact induced Gauss phase and the first false coefficient
+
+Let
+
+```text
+q=rs, r=cond(chi), chi=Ind_r^(rs) psi,
+```
+
+where `psi (mod r)` is primitive.  The odd squarefree variables `g,r,s` are
+pairwise coprime.  Direct CRT in the convention of `(12.8.5a)` gives, for
+every integer `a`,
+
+```text
+tau_(rs)(conjugate(chi),a)
+ =psi(a conjugate(s)_r)tau_r(conjugate(psi),1)c_s(a)
+   1_((a,r)=1).                                       (12.12.4)
+```
+
+In particular, `c_s(1)=mu(s)`, and therefore
+
+```text
+chi(-2)conjugate(chi)(g)
+ tau_q(conjugate(chi),1)tau_q(conjugate(chi),ell)
+
+ =mu(s)c_s(ell)tau_r(conjugate(psi),1)^2
+  psi(-2 ell conjugate(g)_r conjugate(s)_r^2)
+  1_((ell,r)=1).                                      (12.12.5)
+```
+
+Every item in the phase is forced: physical `-2`, `conjugate(g)_r`, and
+`conjugate(s)_r^2`.  Multiplying by the source coefficient gives
+
+```text
+mu(gq)/phi(q) * [the left side of (12.12.5)]
+
+ =mu(g)mu(r)/(phi(r)phi(s)) c_s(ell)
+  tau_r(conjugate(psi),1)^2
+  psi(-2 ell conjugate(g)_r conjugate(s)_r^2)
+  1_((ell,r)=1).                                      (12.12.6)
+```
+
+The two copies of `mu(s)` have multiplied to one.  Thus
+
+```text
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT
+ = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION. (12.12.7)
+```
+
+This does **not** authorize taking the cofactor absolute value.  If
+
+```text
+d_s=(s,ell), t_s=s/d_s,
+```
+
+then squarefreeness gives the exact identities
+
+```text
+c_s(ell)=mu(t_s)phi(d_s),
+c_s(ell)/phi(s)=mu(t_s)/phi(t_s).                      (12.12.8)
+```
+
+The surviving sign is the reduced-cofactor sign `mu(t_s)`, tied to the gcd
+stratum and to the moving primitive phase.  It is not an independent copy of
+`mu(s)`.
+
+Writing
+
+```text
+epsilon_r(conjugate(psi))
+ =r^(-1/2)tau_r(conjugate(psi),1),
+```
+
+one frozen conductor/cofactor atom has the exact character-side form
+
+```text
+mu(g)mu(r)/phi(s) * r/phi(r)
+ sum_(psi mod r)^* epsilon_r(conjugate(psi))^2
+   psi(-2 conjugate(g)_r conjugate(s)_r^2)
+   E_(1,g,s,t)(conjugate(psi))
+   E_(2,g,s,t)(conjugate(psi))
+   H_(g,s,t)(psi) B_(g,s,t)(psi),                     (12.12.9)
+```
+
+where, schematically but with every arithmetic mask displayed,
+
+```text
+E_(i,g,s,t)(conjugate(psi))
+ =sum_(e_i asymp F) mu(e_i)A_(i,t)^P(e_i;g)
+   1_((e_i,gs)=1)conjugate(psi)(e_i),
+
+H_(g,s,t)(psi)
+ =sum_(u asymp F/g) A_t^U(u;g)1_((u,s)=1)psi(u),
+
+B_(g,s,t)(psi)
+ =sum_(0<|ell|<<F) W_t^ell(ell/F)c_g(ell)c_s(ell)psi(ell).
+                                                               (12.12.10)
+```
+
+The zero extension of `psi` implements all `r`-coprimality.  The explicit
+masks implement `g,s`-coprimality and keep the coefficient arrays independent
+of the varying primitive conductor after `(g,s,t)` is frozen.  The factors
+`W_t^q(rs/Q)`, `W_t^s(s/S)`, actual signs and support masks, the common
+Mellin/Fourier parameter, total product-atom `L1`, and the bounded-variation
+cost of partial summation in `r` remain part of the theorem contract.  At the
+exact half endpoint,
+
+```text
+Q=F^2/g, U=F/g, r asymp R>=F,
+s asymp F^2/(gr), |ell| asymp F.                       (12.12.11)
+```
+
+Thus the balanced prime geometry is only the slice `g=s=1`; it cannot be
+declared uniform over the full source by renaming variables.
+
+The checker proves `(12.12.4)--(12.12.8)` exactly in `Z[zeta_210]` with the
+complex primitive sextic character modulo `7` induced to modulus `35`.  Its
+mutations detect `-2 -> +2`, `g` in place of `conjugate(g)`, one inverse of
+`s` in place of two, the wrong `psi(s)^2` conjugation, deletion of the
+Ramanujan factor, deletion of the coprimality indicator, and retention of a
+false free `mu(s)`.  Hence
+
+```text
+HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY
+ = PROVED_EXACT_FINITE,
+HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE
+ = PROVED_EXACT_SOURCE_LOCK,
+HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION
+ = PROVED_EXACT_FINITE.                                (12.12.12)
+```
+
+#### 12.12.3 Primitive characters create a divisor-projector lattice
+
+There is a second type correction.  For composite squarefree `r`, the inner
+sum in `(12.12.9)` is over primitive characters, not all characters modulo
+`r`.  For units `x,a_0 (mod r)`, exact primitive orthogonality is
+
+```text
+sum_(psi mod r)^* psi(x)conjugate(psi)(a_0)
+ =sum_(rho|r) mu(r/rho)phi(rho)1_(x=a_0 mod rho).
+                                                               (12.12.13)
+```
+
+After the outer conductor sign is restored,
+
+```text
+mu(r)mu(r/rho)=mu(rho).                                (12.12.14)
+```
+
+Therefore the additive dual of the full primitive cell is not one centered
+fixed-product condition modulo `r`.  It is a signed divisor-projector lattice
+of product conditions modulo every `rho|r`.  When `r=p` is prime, the two
+cells `rho=1,p` reduce exactly to the centered V9 prime expression; this is
+why `(12.11.4)` remains correct.
+
+Opening the two primitive Gauss factors sharpens `(12.12.13)`.  For every
+unit `A (mod r)` and `t_r=r/rho`,
+
+```text
+sum_(psi mod r)^* tau_r(conjugate(psi),1)^2 psi(A)
+ =sum_(rho|r) mu(r/rho)phi(rho)
+   S(1,A conjugate(t_r)_rho^2;rho).                    (12.12.15)
+```
+
+The two unrestricted CRT coordinates modulo `t_r` contribute
+`c_(t_r)(1)^2=1`; the change of variable in the remaining coordinate forces
+the inverse square in `(12.12.15)`.  Multiplying by `mu(r)` changes the kernel
+coefficient to `mu(rho)phi(rho)`.  The checker verifies both `(12.12.13)` and
+`(12.12.15)` for the composite conductor `r=15`, using all three primitive
+characters, and detects replacement by one fixed residue and deletion of
+`conjugate(t_r)^2`.  Thus
+
+```text
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT
+ = STOP_SCOPED_FALSE_DIVISOR_LATTICE.                  (12.12.16)
+```
+
+Combining `(12.12.8)` and `(12.12.15)`, the exact additive-side sign axes are
+
+```text
+mu(g) mu(rho) mu(t_s),                                 (12.12.17)
+```
+
+with Kloosterman modulus `rho` and prescribed unit carrying
+`conjugate(g)`, `conjugate(s)^2`, and `conjugate(t_r)^2`.  These signs are
+coupled to their projector and gcd strata.  They may be exploited only before
+an outer triangle or generic Cauchy step destroys them.
+
+There is a useful exact normalization simplification.  Write `r=rho t_r`.
+The factor `phi(rho)` in `(12.12.15)` cancels its copy inside
+`phi(r)=phi(rho)phi(t_r)`.  After all character polynomials are opened, the
+full high-conductor normal form is
+
+```text
+sum_(g,rho,t_r,s: g rho t_r s asymp F^2, rho t_r>=F)
+ mu(g)mu(rho)/(phi(t_r)phi(s))
+ sum_(e_1,e_2,u,ell) mu(e_1)mu(e_2) W(...)
+   c_g(ell)c_s(ell)
+   S(1,-2u ell conjugate(g e_1e_2(s t_r)^2);rho),       (12.12.17a)
+```
+
+Here the additive display carries the masks literally, rather than relying on
+the primitive character's zero extension:
+
+```text
+g,rho,t_r,s are pairwise coprime odd squarefree;
+e_i asymp F, (e_i,g rho t_r s)=1;
+u asymp F/g, (u,rho t_r s)=1;
+0<|ell|<<F, (ell,rho t_r)=1;
+s asymp F^2/(g rho t_r).
+```
+
+All actual smooth masks and the common transform parameter remain as in
+`(12.12.10)--(12.12.11)`.  Now expand the Ramanujan factor before taking a
+norm:
+
+```text
+c_s(ell)=sum_(a|s, a|ell) a mu(s/a).
+```
+
+Writing `s=ab` and `ell=ak`, each summand of `(12.12.17a)` becomes
+
+```text
+mu(g)mu(rho)mu(b) a/[phi(t_r)phi(a)phi(b)]
+ * mu(e_1)mu(e_2)W(...)c_g(ak)
+ * S(1,-2u k conjugate(g e_1e_2 a b^2 t_r^2);rho).
+                                                               (12.12.17b)
+```
+
+In `(12.12.17b)`, `g,rho,t_r,a,b` are pairwise coprime odd squarefree,
+`ab asymp F^2/(g rho t_r)`, `0<|ak|<<F`, `(k,rho t_r)=1`, and hence the
+literal `k`-length is `F/a`; also `(e_i,g rho t_r a b)=1` and
+`(u,rho t_r a b)=1`.  None of these masks may be dropped when a fixed-prime
+trace theorem is tested.
+
+Thus the cofactor coupling is not an opaque `L2` weight.  It unfolds to a
+third signed axis `mu(b)` and the exact monomial
+
+```text
+u k (g e_1e_2 a b^2 t_r^2)^(-1) mod rho.              (12.12.17c)
+```
+
+The checker verifies the divisor expansion and the forced
+`k a^(-1)b^(-2)` phase over two independent projector primes.  In particular,
+omitting `a^(-1)` is detected.  Hence
+
+```text
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING
+ = PROVED_EXACT_FINITE.                                (12.12.17d)
+```
+
+#### 12.12.4 Checked sources and the missing collective theorem
+
+The exact retype also changes the correct literature query.  A theorem for a
+fixed modulus, even one uniform in the choice of that modulus, is not by
+itself an estimate for the signed lattice `(12.12.17)`.
+
+* [Blomer--Pascadi, Theorem 1.1](https://arxiv.org/abs/2607.24311) gives the
+  critical fixed-modulus Kloosterman engine with a `rho^(-1/32)` local gain.
+  It can be applied after `g,s,t_r,rho` are frozen and `c_s(ell)` is charged
+  to a coefficient norm.  Bounding every projector cell separately loses
+  `mu(rho)`, `mu(t_s)`, and the collective gain required here.
+* [Milićević--Qin--Wu, Theorem 1.1](https://arxiv.org/abs/2511.07550) is also
+  a fixed-modulus bilinear Kloosterman theorem.  Its local power saving and
+  length hypotheses do not uniformly cover `(12.12.11)`, and its internal
+  divisor factorization is not the varying primitive-conductor/cofactor
+  lattice above.
+* [Kerr--Shparlinski--Wu--Xi](https://arxiv.org/abs/2204.05038) supplies
+  fixed-modulus Type-I and incomplete inverse-phase estimates.  The divisor
+  called `r` in its incomplete-period setup is not `cond(chi)` in
+  `(12.12.9)`; the results do not simultaneously retain two literal Möbius
+  rows, `c_s(ell)`, and the primitive projector sum.
+* [Earnst, Theorem 1.6](https://arxiv.org/abs/2603.22124) proves a genuine
+  root-number-square power saving for a moment of even primitive characters
+  of prime conductor.  This is strong mechanism evidence for retaining
+  `epsilon(psi)^2`, but the theorem is tied to the specific approximate-
+  functional-equation coefficients for `|L(1/2,psi)|^2` (with mollified
+  applications later in the paper), not the four actual length-`sqrt(r)`
+  polynomials in `(12.12.9)`.
+* [Fouvry--Kowalski--Michel--Sawin](https://arxiv.org/abs/2511.09459) gives a
+  local prime-modulus bilinear trace-function engine for arbitrary
+  coefficients and monomial arguments under its monodromy and length
+  hypotheses.  Formula `(12.12.17c)` is now a literal algebraic reason to
+  investigate that engine.  The stated theorem
+  does not average the varying/composite projector modulus `rho`, preserve
+  `mu(rho)`, or perform the simultaneous `(g,a,b,t_r)` reassembly.
+
+These are legal local engines and remain useful inside a future dyadic proof,
+but none of the checked statements directly proves the unfrozen
+`(g,r,s,rho,t_s)` source average.  Their local savings may not be multiplied
+after the signed axes have been separately discarded.
+
+The two closest positive source cells are therefore typed as
+
+```text
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT
+ = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET,
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE
+ = SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT.           (12.12.17e)
+```
+
+The narrow full-source target is now:
+
+```text
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_
+PRIMITIVE_PROJECTOR_DUAL_TYPE_IV:
+
+the literal sum (12.12.9), equivalently the complete signed lattice
+(12.12.15)--(12.12.17), is
+  << F^2 D^2 D^(-eta_D) X^o(1)                        (12.12.18)
+at D=F^2, uniformly over every actual atom, mask, dyad, transform
+parameter, unequal source length, and the complete physical-loss ledger.
+```
+
+Any fixed `eta_D>0` gives an exact-half saving.  Since `D=F^2=X^(1/2)`, the
+equivalent `F`-saving exponent is `eta_F=2eta_D`.  The inherited strict
+endpoint requires `eta_D>1/200`, equivalently `eta_F>1/100`, after all
+polynomial losses.  A plausible proof partition is now concrete:
+
+1. use fixed-modulus Kloosterman engines only on large-`rho` cells while
+   preserving the outer signed projector sum;
+2. use the character-side conductor formulation `(12.12.9)` when the
+   complementary conductor `t_r` is large;
+3. use `(12.12.17b)` rather than charging `|c_s|` pointwise, and test the
+   Fouvry--Kowalski--Michel--Sawin monomial engine on prime-`rho` cells;
+4. mine the root-number-square mechanism in Earnst for the character-side
+   transition, without substituting its special `L`-function coefficients;
+5. attack the balanced varying/composite-`rho` transition by one collective
+   trace/dispersion/Kuznetsov estimate in the three signed axes
+   `(12.12.17)`;
+6. reassemble before any claim of physical credit, including atom membership,
+   tails, all-`D` uniformity, and the original normalization.
+
+This is the analytic bridge represented by Bridge A in `TPC_COMPASS.md`; the
+dynamical distinguished-seed Bridge B remains independent and contributes no
+analytic credit.  The canonical construction status is
+
+```text
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV
+ = RETYPED_PRE_CRT_SHORTHAND_ONLY,
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_
+PRIMITIVE_PROJECTOR_DUAL_TYPE_IV
+ = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM.             (12.12.19)
+```
+
+V10 is a
+`CHANNEL_RETYPE_WITH_EXACT_INDUCED_CRT_AND_PRIMITIVE_PROJECTOR_LATTICE`,
+not an arithmetic advance.  The prime first gate `(12.11.8)`, actual atom
+membership, and the independent paired-Voronoi reserve remain open.  No old
+`STOP_SCOPED` cell is reopened; fixed-atom credit is `0`, strict `1/400` is
+`UNPAID`, `L2=NONE`, and `TPC207_TRIGGER=false`.

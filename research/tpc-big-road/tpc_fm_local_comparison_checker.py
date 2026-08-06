@@ -14,6 +14,7 @@ import argparse
 import json
 import math
 from fractions import Fraction
+from functools import lru_cache
 
 
 J = Fraction(133, 400)
@@ -181,6 +182,145 @@ def cyclic_integer_convolution(left: list[int], right: list[int]) -> list[int]:
             answer[(left_index + right_index) % modulus] += (
                 left_value * right_value
             )
+    return answer
+
+
+def trim_integer_polynomial(value: list[int]) -> list[int]:
+    """Remove trailing zero coefficients, retaining a canonical zero."""
+    answer = list(value)
+    while len(answer) > 1 and answer[-1] == 0:
+        answer.pop()
+    return answer
+
+
+def exact_monic_polynomial_quotient(
+    numerator: tuple[int, ...] | list[int],
+    denominator: tuple[int, ...] | list[int],
+) -> list[int]:
+    """Divide integer polynomials exactly by a monic denominator."""
+    remainder = trim_integer_polynomial(list(numerator))
+    divisor = trim_integer_polynomial(list(denominator))
+    if divisor[-1] != 1:
+        raise ValueError("polynomial denominator is not monic")
+    if len(remainder) < len(divisor):
+        raise ValueError("polynomial quotient is not exact")
+    quotient = [0] * (len(remainder) - len(divisor) + 1)
+    while len(remainder) >= len(divisor) and any(remainder):
+        shift = len(remainder) - len(divisor)
+        coefficient = remainder[-1]
+        quotient[shift] += coefficient
+        for index, divisor_coefficient in enumerate(divisor):
+            remainder[index + shift] -= coefficient * divisor_coefficient
+        remainder = trim_integer_polynomial(remainder)
+    if any(remainder):
+        raise ValueError("polynomial division left a nonzero remainder")
+    return trim_integer_polynomial(quotient)
+
+
+@lru_cache(maxsize=None)
+def cyclotomic_polynomial(order: int) -> tuple[int, ...]:
+    """Return Phi_order in ascending integer-coefficient order."""
+    if order < 1:
+        raise ValueError("cyclotomic order must be positive")
+    polynomial = [-1] + [0] * (order - 1) + [1]
+    for divisor in divisors(order):
+        if divisor < order:
+            polynomial = exact_monic_polynomial_quotient(
+                polynomial, cyclotomic_polynomial(divisor)
+            )
+    return tuple(polynomial)
+
+
+def cyclotomic_remainder(
+    value: tuple[int, ...] | list[int], order: int
+) -> tuple[int, ...]:
+    """Specialize a cyclic coefficient array at a primitive order-th root."""
+    if len(value) != order:
+        raise ValueError("cyclotomic array has the wrong ambient order")
+    remainder = trim_integer_polynomial(list(value))
+    modulus = list(cyclotomic_polynomial(order))
+    while len(remainder) >= len(modulus):
+        shift = len(remainder) - len(modulus)
+        coefficient = remainder[-1]
+        for index, modulus_coefficient in enumerate(modulus):
+            remainder[index + shift] -= coefficient * modulus_coefficient
+        remainder = trim_integer_polynomial(remainder)
+    target_length = len(modulus) - 1
+    return tuple(remainder + [0] * (target_length - len(remainder)))
+
+
+def general_cyclotomic_integer_equal(
+    left: tuple[int, ...] | list[int],
+    right: tuple[int, ...] | list[int],
+) -> bool:
+    """Exact equality in Z[zeta_n] for arbitrary common ambient order n."""
+    if len(left) != len(right):
+        return False
+    difference = [a - b for a, b in zip(left, right)]
+    return not any(cyclotomic_remainder(difference, len(difference)))
+
+
+def cyclic_shift_scaled(
+    value: tuple[int, ...] | list[int], shift: int, scale: int = 1
+) -> list[int]:
+    """Multiply a cyclic coefficient array by scale*zeta^shift."""
+    order = len(value)
+    answer = [0] * order
+    for exponent, coefficient in enumerate(value):
+        answer[(exponent + shift) % order] += scale * coefficient
+    return answer
+
+
+def sextic_character_exponent_mod7(
+    value: int, ambient_order: int, conjugate: bool = False
+) -> int | None:
+    """Exponent of the primitive sextic psi mod 7 with psi(3)=zeta_6."""
+    if ambient_order % 6:
+        raise ValueError("ambient order does not contain the sextic values")
+    residue = value % 7
+    if residue == 0:
+        return None
+    power = 1
+    for exponent in range(6):
+        if power == residue:
+            character_exponent = (ambient_order // 6) * exponent
+            return (-character_exponent if conjugate else character_exponent) % ambient_order
+        power = (3 * power) % 7
+    raise AssertionError("sextic character discrete logarithm failed")
+
+
+def induced_sextic_gauss_mod35(argument: int, ambient_order: int = 210) -> list[int]:
+    """Exact tau_35(bar(Ind psi),argument) in Z[zeta_ambient_order]."""
+    if ambient_order % 35:
+        raise ValueError("ambient order does not contain zeta_35")
+    answer = [0] * ambient_order
+    additive_step = ambient_order // 35
+    for unit in range(35):
+        if math.gcd(unit, 35) != 1:
+            continue
+        character_exponent = sextic_character_exponent_mod7(
+            unit, ambient_order, conjugate=True
+        )
+        if character_exponent is None:
+            raise AssertionError("induced unit lost its primitive character")
+        exponent = (character_exponent + additive_step * argument * unit) % ambient_order
+        answer[exponent] += 1
+    return answer
+
+
+def primitive_sextic_gauss_mod7(ambient_order: int = 210) -> list[int]:
+    """Exact tau_7(bar psi,1) embedded in Z[zeta_ambient_order]."""
+    if ambient_order % 7:
+        raise ValueError("ambient order does not contain zeta_7")
+    answer = [0] * ambient_order
+    additive_step = ambient_order // 7
+    for unit in range(1, 7):
+        character_exponent = sextic_character_exponent_mod7(
+            unit, ambient_order, conjugate=True
+        )
+        if character_exponent is None:
+            raise AssertionError("primitive unit lost its character")
+        answer[(character_exponent + additive_step * unit) % ambient_order] += 1
     return answer
 
 
@@ -384,7 +524,7 @@ def run_checks() -> dict[str, object]:
     umbrella_gate = "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE"
     primary_route = "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION"
     independent_reserve = "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI"
-    v9_status_registry = {
+    v10_status_registry = {
         "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
         "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
         "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
@@ -396,17 +536,26 @@ def run_checks() -> dict[str, object]:
         "DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION": "STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT",
         "STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES": "ABSENT",
         "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION": "FIRST_SUBGATE_OPEN_NEW_THEOREM",
-        "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV": "SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM",
+        "HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY": "PROVED_EXACT_FINITE",
+        "HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE": "PROVED_EXACT_SOURCE_LOCK",
+        "HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT": "STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION",
+        "HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION": "PROVED_EXACT_FINITE",
+        "HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT": "STOP_SCOPED_FALSE_DIVISOR_LATTICE",
+        "HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING": "PROVED_EXACT_FINITE",
+        "EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT": "SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET",
+        "FKMS_PRIME_MONOMIAL_TRACE_ENGINE": "SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT",
+        "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV": "RETYPED_PRE_CRT_SHORTHAND_ONLY",
+        "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV": "SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM",
     }
     route_freeze = {
-        "route_version": "V9",
+        "route_version": "V10",
         "umbrella_gate": umbrella_gate,
         "primary_route": primary_route,
         "primary_status": "OPEN_NEW_THEOREM",
         "first_subgate": "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
-        "selected_construction": "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV",
-        "v9_status_registry": v9_status_registry,
+        "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
+        "v10_status_registry": v10_status_registry,
         "independent_reserve": independent_reserve,
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
         "independent_polar_main_attachment": "OPEN_NEW_ATTACHMENT",
@@ -421,14 +570,14 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     expected_route_freeze = {
-        "route_version": "V9",
+        "route_version": "V10",
         "umbrella_gate": "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE",
         "primary_route": "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION",
         "primary_status": "OPEN_NEW_THEOREM",
         "first_subgate": "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
-        "selected_construction": "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV",
-        "v9_status_registry": {
+        "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
+        "v10_status_registry": {
             "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
             "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
             "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
@@ -440,7 +589,16 @@ def run_checks() -> dict[str, object]:
             "DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION": "STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT",
             "STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES": "ABSENT",
             "HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION": "FIRST_SUBGATE_OPEN_NEW_THEOREM",
-            "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV": "SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM",
+            "HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY": "PROVED_EXACT_FINITE",
+            "HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE": "PROVED_EXACT_SOURCE_LOCK",
+            "HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT": "STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION",
+            "HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION": "PROVED_EXACT_FINITE",
+            "HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT": "STOP_SCOPED_FALSE_DIVISOR_LATTICE",
+            "HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING": "PROVED_EXACT_FINITE",
+            "EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT": "SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET",
+            "FKMS_PRIME_MONOMIAL_TRACE_ENGINE": "SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT",
+            "HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV": "RETYPED_PRE_CRT_SHORTHAND_ONLY",
+            "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV": "SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM",
         },
         "independent_reserve": "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI",
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
@@ -456,9 +614,9 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     if route_freeze != expected_route_freeze:
-        raise AssertionError("V9 route/physical freeze changed")
+        raise AssertionError("V10 route/physical freeze changed")
     if primary_route == independent_reserve:
-        raise AssertionError("independent V9 source locks were merged")
+        raise AssertionError("independent V10 source locks were merged")
     route_mutations: list[dict[str, object]] = []
     swapped_routes = dict(route_freeze)
     swapped_routes["primary_route"] = independent_reserve
@@ -483,12 +641,12 @@ def run_checks() -> dict[str, object]:
     numbered_trigger["TPC_207_TRIGGER"] = True
     route_mutations.append(numbered_trigger)
     weakened_registry = dict(route_freeze)
-    weakened_statuses = dict(v9_status_registry)
+    weakened_statuses = dict(v10_status_registry)
     weakened_statuses["GLOBAL_MOVING_UNIT_CAUCHY"] = "OPEN"
-    weakened_registry["v9_status_registry"] = weakened_statuses
+    weakened_registry["v10_status_registry"] = weakened_statuses
     route_mutations.append(weakened_registry)
     if any(mutation == expected_route_freeze for mutation in route_mutations):
-        raise AssertionError("V9 route/physical mutation escaped")
+        raise AssertionError("V10 route/physical mutation escaped")
     sample_a1 = Fraction(3, 1)
     sample_a2 = Fraction(5, 1)
     outer_switched_value = -6 * (sample_a1 - sample_a2)
@@ -710,6 +868,670 @@ def run_checks() -> dict[str, object]:
                             )
                         moving_unit_resonance_cases += 1
 
+    # V10 exact imprimitive CRT lift.  The primitive sextic character modulo
+    # r=7 is induced to q=rs=35 with s=5 and embedded exactly in
+    # Z[zeta_210].  Unlike the older real mod-3 fixture, this detects the
+    # direction of the forced bar(psi)(s)^2 phase.
+    induced_ambient_order = 210
+    induced_r = 7
+    induced_s = 5
+    induced_q = induced_r * induced_s
+    induced_s_inverse = pow(induced_s, -1, induced_r)
+    primitive_tau = primitive_sextic_gauss_mod7(induced_ambient_order)
+    induced_gauss_crt_cases = 0
+    induced_coprimality_mutation_detected = False
+    for argument in (1, 2, 5, 7):
+        direct_gauss = induced_sextic_gauss_mod35(
+            argument, induced_ambient_order
+        )
+        if math.gcd(argument, induced_r) == 1:
+            phase = sextic_character_exponent_mod7(
+                argument * induced_s_inverse, induced_ambient_order
+            )
+            if phase is None:
+                raise AssertionError("CRT phase lost a primitive unit")
+            expected_gauss = cyclic_shift_scaled(
+                primitive_tau,
+                phase,
+                ramanujan_sum(induced_s, argument),
+            )
+        else:
+            expected_gauss = [0] * induced_ambient_order
+        if not general_cyclotomic_integer_equal(direct_gauss, expected_gauss):
+            raise AssertionError("induced generalized Gauss CRT identity failed")
+        induced_gauss_crt_cases += 1
+        if math.gcd(argument, induced_r) != 1:
+            wrong_without_indicator = cyclic_shift_scaled(
+                primitive_tau, 0, ramanujan_sum(induced_s, argument)
+            )
+            if not general_cyclotomic_integer_equal(
+                direct_gauss, wrong_without_indicator
+            ):
+                induced_coprimality_mutation_detected = True
+    if not induced_coprimality_mutation_detected:
+        raise AssertionError("induced CRT coprimality mutation escaped")
+
+    # The primitive character zero extension enforces r-coprimality only.
+    # The source must still retain the explicit g,s masks: E_i excludes
+    # factors of g*s, while H excludes factors of s but may contain g.
+    source_mask_fixture_weights = {1: 1, 3: 2, 5: -3}
+    source_mask_g = 3
+    source_mask_cases = 0
+    source_e_missing_g_mask_mutation_detected = False
+    source_h_missing_s_mask_mutation_detected = False
+
+    actual_e_mask = [0] * induced_ambient_order
+    wrong_e_without_g = [0] * induced_ambient_order
+    actual_h_mask = [0] * induced_ambient_order
+    wrong_h_without_s = [0] * induced_ambient_order
+    for value, weight in source_mask_fixture_weights.items():
+        bar_phase = sextic_character_exponent_mod7(
+            value, induced_ambient_order, conjugate=True
+        )
+        phase = sextic_character_exponent_mod7(
+            value, induced_ambient_order
+        )
+        if bar_phase is None or phase is None:
+            raise AssertionError("source-mask fixture hit the primitive conductor")
+        if math.gcd(value, source_mask_g * induced_q) == 1:
+            actual_e_mask[bar_phase] += weight
+        if math.gcd(value, induced_q) == 1:
+            wrong_e_without_g[bar_phase] += weight
+            actual_h_mask[phase] += weight
+        if math.gcd(value, induced_r) == 1:
+            wrong_h_without_s[phase] += weight
+    if not general_cyclotomic_integer_equal(
+        actual_e_mask, wrong_e_without_g
+    ):
+        source_e_missing_g_mask_mutation_detected = True
+    if not general_cyclotomic_integer_equal(
+        actual_h_mask, wrong_h_without_s
+    ):
+        source_h_missing_s_mask_mutation_detected = True
+    if not source_e_missing_g_mask_mutation_detected:
+        raise AssertionError("E source g-mask mutation escaped")
+    if not source_h_missing_s_mask_mutation_detected:
+        raise AssertionError("H source s-mask mutation escaped")
+    source_mask_cases = 2
+
+    primitive_tau_square = cyclic_integer_convolution(
+        primitive_tau, primitive_tau
+    )
+    induced_outer_cancellation_cases = 0
+    induced_s_square_mutation_detected = False
+    induced_ramanujan_mutation_detected = False
+    induced_free_cofactor_mobius_mutation_detected = False
+    for ell in (2, 5):
+        direct_product = cyclic_integer_convolution(
+            induced_sextic_gauss_mod35(1, induced_ambient_order),
+            induced_sextic_gauss_mod35(ell, induced_ambient_order),
+        )
+        psi_ell = sextic_character_exponent_mod7(
+            ell, induced_ambient_order
+        )
+        bar_psi_s = sextic_character_exponent_mod7(
+            induced_s, induced_ambient_order, conjugate=True
+        )
+        psi_s = sextic_character_exponent_mod7(
+            induced_s, induced_ambient_order
+        )
+        if psi_ell is None or bar_psi_s is None or psi_s is None:
+            raise AssertionError("induced product phase lost a unit")
+        correct_phase = (2 * bar_psi_s + psi_ell) % induced_ambient_order
+        expected_product = cyclic_shift_scaled(
+            primitive_tau_square,
+            correct_phase,
+            mobius(induced_s) * ramanujan_sum(induced_s, ell),
+        )
+        if not general_cyclotomic_integer_equal(
+            direct_product, expected_product
+        ):
+            raise AssertionError("induced two-Gauss product identity failed")
+
+        wrong_s_square_phase = (2 * psi_s + psi_ell) % induced_ambient_order
+        wrong_s_square = cyclic_shift_scaled(
+            primitive_tau_square,
+            wrong_s_square_phase,
+            mobius(induced_s) * ramanujan_sum(induced_s, ell),
+        )
+        if not general_cyclotomic_integer_equal(
+            direct_product, wrong_s_square
+        ):
+            induced_s_square_mutation_detected = True
+        wrong_without_ramanujan = cyclic_shift_scaled(
+            primitive_tau_square,
+            correct_phase,
+            mobius(induced_s),
+        )
+        if not general_cyclotomic_integer_equal(
+            direct_product, wrong_without_ramanujan
+        ):
+            induced_ramanujan_mutation_detected = True
+
+        # Multiplying by the physical outer mu(q) cancels the Gauss-lift
+        # mu(s)^2.  The exact result has mu(r)c_s(ell), not a second free
+        # cofactor-Mobius sign.
+        outer_direct = [mobius(induced_q) * value for value in direct_product]
+        outer_expected = cyclic_shift_scaled(
+            primitive_tau_square,
+            correct_phase,
+            mobius(induced_r) * ramanujan_sum(induced_s, ell),
+        )
+        if not general_cyclotomic_integer_equal(
+            outer_direct, outer_expected
+        ):
+            raise AssertionError("outer cofactor-Mobius cancellation failed")
+        wrong_free_cofactor_mobius = [
+            mobius(induced_s) * value for value in outer_expected
+        ]
+        if not general_cyclotomic_integer_equal(
+            outer_direct, wrong_free_cofactor_mobius
+        ):
+            induced_free_cofactor_mobius_mutation_detected = True
+        induced_outer_cancellation_cases += 1
+    if not induced_s_square_mutation_detected:
+        raise AssertionError("induced conjugate-s-square mutation escaped")
+    if not induced_ramanujan_mutation_detected:
+        raise AssertionError("induced Ramanujan-factor mutation escaped")
+    if not induced_free_cofactor_mobius_mutation_detected:
+        raise AssertionError("free cofactor-Mobius mutation escaped")
+
+    # Restore the source's physical chi(-2)bar(chi)(g) unit before reducing to
+    # conductor r.  This freezes the exact -2*bar(g)*bar(s)^2 phase and makes
+    # the previously harmless unit scaling unavailable for signed estimates.
+    physical_phase_g = 3
+    physical_phase_ell = 2
+    physical_direct = cyclic_integer_convolution(
+        induced_sextic_gauss_mod35(1, induced_ambient_order),
+        induced_sextic_gauss_mod35(physical_phase_ell, induced_ambient_order),
+    )
+    chi_minus_two = sextic_character_exponent_mod7(
+        -2, induced_ambient_order
+    )
+    bar_chi_g = sextic_character_exponent_mod7(
+        physical_phase_g, induced_ambient_order, conjugate=True
+    )
+    if chi_minus_two is None or bar_chi_g is None:
+        raise AssertionError("physical phase lost a primitive unit")
+    physical_direct = cyclic_shift_scaled(
+        physical_direct, chi_minus_two + bar_chi_g
+    )
+    correct_physical_residue = (
+        -2
+        * physical_phase_ell
+        * pow(physical_phase_g, -1, induced_r)
+        * pow(induced_s, -2, induced_r)
+    ) % induced_r
+    correct_physical_phase = sextic_character_exponent_mod7(
+        correct_physical_residue, induced_ambient_order
+    )
+    if correct_physical_phase is None:
+        raise AssertionError("physical conductor residue is not a unit")
+    physical_expected = cyclic_shift_scaled(
+        primitive_tau_square,
+        correct_physical_phase,
+        mobius(induced_s)
+        * ramanujan_sum(induced_s, physical_phase_ell),
+    )
+    if not general_cyclotomic_integer_equal(
+        physical_direct, physical_expected
+    ):
+        raise AssertionError("physical -2*gbar*sbar^2 phase failed")
+    induced_physical_phase_cases = 1
+
+    induced_minus_two_mutation_detected = False
+    induced_g_inverse_mutation_detected = False
+    induced_s_inverse_square_mutation_detected = False
+    physical_phase_mutations = (
+        (
+            2
+            * physical_phase_ell
+            * pow(physical_phase_g, -1, induced_r)
+            * pow(induced_s, -2, induced_r)
+        )
+        % induced_r,
+        (
+            -2
+            * physical_phase_ell
+            * physical_phase_g
+            * pow(induced_s, -2, induced_r)
+        )
+        % induced_r,
+        (
+            -2
+            * physical_phase_ell
+            * pow(physical_phase_g, -1, induced_r)
+            * pow(induced_s, -1, induced_r)
+        )
+        % induced_r,
+    )
+    physical_mutation_flags = [False, False, False]
+    for index, mutated_residue in enumerate(physical_phase_mutations):
+        mutated_phase = sextic_character_exponent_mod7(
+            mutated_residue, induced_ambient_order
+        )
+        if mutated_phase is None:
+            raise AssertionError("mutated physical residue is not a unit")
+        mutated_expected = cyclic_shift_scaled(
+            primitive_tau_square,
+            mutated_phase,
+            mobius(induced_s)
+            * ramanujan_sum(induced_s, physical_phase_ell),
+        )
+        if not general_cyclotomic_integer_equal(
+            physical_direct, mutated_expected
+        ):
+            physical_mutation_flags[index] = True
+    (
+        induced_minus_two_mutation_detected,
+        induced_g_inverse_mutation_detected,
+        induced_s_inverse_square_mutation_detected,
+    ) = physical_mutation_flags
+    if not all(physical_mutation_flags):
+        raise AssertionError("physical induced-phase mutation escaped")
+
+    # Composite primitive conductors yield a divisor-projector lattice, not
+    # one fixed-product residue modulo r.  This exact mod-15 fixture sums the
+    # three primitive characters (the nonprincipal mod-3 character times the
+    # three nonprincipal mod-5 characters) in Gaussian integers.
+    primitive_projector_modulus = 15
+    primitive_projector_cases = 0
+    primitive_projector_single_residue_mutation_detected = False
+    primitive_units = [
+        value
+        for value in range(1, primitive_projector_modulus)
+        if math.gcd(value, primitive_projector_modulus) == 1
+    ]
+
+    def character_three(value: int) -> int:
+        return 1 if value % 3 == 1 else -1
+
+    def discrete_log_five(value: int) -> int:
+        residue = value % 5
+        power = 1
+        for exponent in range(4):
+            if power == residue:
+                return exponent
+            power = (2 * power) % 5
+        raise AssertionError("mod-5 discrete logarithm failed")
+
+    gaussian_fourth_roots = ((1, 0), (0, 1), (-1, 0), (0, -1))
+    for value in primitive_units:
+        for target in primitive_units:
+            primitive_sum = (0, 0)
+            log_difference = (
+                discrete_log_five(value) - discrete_log_five(target)
+            ) % 4
+            real_factor = character_three(value) * character_three(target)
+            for character_power in (1, 2, 3):
+                root = gaussian_fourth_roots[
+                    (character_power * log_difference) % 4
+                ]
+                primitive_sum = gaussian_add(
+                    primitive_sum,
+                    (real_factor * root[0], real_factor * root[1]),
+                )
+            divisor_lattice = sum(
+                mobius(primitive_projector_modulus // rho)
+                * phi(rho)
+                * int((value - target) % rho == 0)
+                for rho in divisors(primitive_projector_modulus)
+            )
+            if primitive_sum != (divisor_lattice, 0):
+                raise AssertionError("primitive projector divisor lattice failed")
+            outer_signed_lattice = mobius(primitive_projector_modulus) * divisor_lattice
+            transformed_lattice = sum(
+                mobius(rho)
+                * phi(rho)
+                * int((value - target) % rho == 0)
+                for rho in divisors(primitive_projector_modulus)
+            )
+            if outer_signed_lattice != transformed_lattice:
+                raise AssertionError("outer conductor sign did not transform to mu(rho)")
+            false_single_residue = (
+                phi(primitive_projector_modulus)
+                * int(value == target)
+                - 1
+            )
+            if divisor_lattice != false_single_residue:
+                primitive_projector_single_residue_mutation_detected = True
+            primitive_projector_cases += 1
+    if not primitive_projector_single_residue_mutation_detected:
+        raise AssertionError("single-residue primitive-projector mutation escaped")
+
+    # Opening both primitive Gauss factors sharpens the same lattice to
+    # Kloosterman kernels on every projector divisor rho|r.  The complementary
+    # conductor t=r/rho is not inert: its CRT lift forces tbar^2 in the kernel.
+    primitive_gauss_projector_order = 60
+    primitive_gauss_projector_cases = 0
+    primitive_projector_complement_inverse_mutation_detected = False
+    for physical_unit in (1, 2, 7):
+        primitive_gauss_sum = [0] * primitive_gauss_projector_order
+        for character_power in (1, 2, 3):
+            tau = [0] * primitive_gauss_projector_order
+            for unit in primitive_units:
+                chi_three_exponent = 0 if character_three(unit) == 1 else 30
+                chi_five_exponent = (
+                    -15 * character_power * discrete_log_five(unit)
+                ) % primitive_gauss_projector_order
+                additive_exponent = 4 * unit
+                tau[
+                    (
+                        chi_three_exponent
+                        + chi_five_exponent
+                        + additive_exponent
+                    )
+                    % primitive_gauss_projector_order
+                ] += 1
+            tau_square = cyclic_integer_convolution(tau, tau)
+            chi_three_phase = (
+                0 if character_three(physical_unit) == 1 else 30
+            )
+            chi_five_phase = (
+                15
+                * character_power
+                * discrete_log_five(physical_unit)
+            ) % primitive_gauss_projector_order
+            add_scaled_cyclotomic(
+                primitive_gauss_sum,
+                cyclic_shift_scaled(
+                    tau_square, chi_three_phase + chi_five_phase
+                ),
+                1,
+            )
+
+        projector_kloosterman_lattice = [0] * primitive_gauss_projector_order
+        wrong_without_complement_inverse = [0] * primitive_gauss_projector_order
+        for rho in divisors(primitive_projector_modulus):
+            complement = primitive_projector_modulus // rho
+            if rho == 1:
+                kernel_argument = 0
+                wrong_kernel_argument = 0
+            else:
+                kernel_argument = (
+                    physical_unit * pow(complement, -2, rho)
+                ) % rho
+                wrong_kernel_argument = physical_unit % rho
+            embedded_kernel = [0] * primitive_gauss_projector_order
+            embedded_wrong_kernel = [0] * primitive_gauss_projector_order
+            for exponent, count in enumerate(
+                kloosterman_exponent_multiset(1, kernel_argument, rho)
+            ):
+                embedded_kernel[
+                    (primitive_gauss_projector_order // rho) * exponent
+                ] += count
+            for exponent, count in enumerate(
+                kloosterman_exponent_multiset(1, wrong_kernel_argument, rho)
+            ):
+                embedded_wrong_kernel[
+                    (primitive_gauss_projector_order // rho) * exponent
+                ] += count
+            add_scaled_cyclotomic(
+                projector_kloosterman_lattice,
+                embedded_kernel,
+                mobius(complement) * phi(rho),
+            )
+            add_scaled_cyclotomic(
+                wrong_without_complement_inverse,
+                embedded_wrong_kernel,
+                mobius(complement) * phi(rho),
+            )
+        if not general_cyclotomic_integer_equal(
+            primitive_gauss_sum, projector_kloosterman_lattice
+        ):
+            raise AssertionError("primitive Gauss projector Kloosterman lattice failed")
+        if not general_cyclotomic_integer_equal(
+            primitive_gauss_sum, wrong_without_complement_inverse
+        ):
+            primitive_projector_complement_inverse_mutation_detected = True
+
+        outer_primitive_gauss_sum = [
+            mobius(primitive_projector_modulus) * value
+            for value in primitive_gauss_sum
+        ]
+        outer_signed_kloosterman_lattice = [0] * primitive_gauss_projector_order
+        for rho in divisors(primitive_projector_modulus):
+            complement = primitive_projector_modulus // rho
+            kernel_argument = (
+                0
+                if rho == 1
+                else physical_unit * pow(complement, -2, rho) % rho
+            )
+            embedded_kernel = [0] * primitive_gauss_projector_order
+            for exponent, count in enumerate(
+                kloosterman_exponent_multiset(1, kernel_argument, rho)
+            ):
+                embedded_kernel[
+                    (primitive_gauss_projector_order // rho) * exponent
+                ] += count
+            add_scaled_cyclotomic(
+                outer_signed_kloosterman_lattice,
+                embedded_kernel,
+                mobius(rho) * phi(rho),
+            )
+        if not general_cyclotomic_integer_equal(
+            outer_primitive_gauss_sum, outer_signed_kloosterman_lattice
+        ):
+            raise AssertionError("outer signed primitive Kloosterman lattice failed")
+        primitive_gauss_projector_cases += 1
+    if not primitive_projector_complement_inverse_mutation_detected:
+        raise AssertionError("projector complement-inverse mutation escaped")
+
+    # End-to-end composite conductor/cofactor fixture: primitive characters
+    # modulo r=15 are induced to q=rs=105 with s=7.  The physical -2 phase,
+    # both generalized Gauss sums, outer mu(q), Ramanujan factor, primitive
+    # projector signs, and the modulus-one Kloosterman convention are compared
+    # in one exact Z[zeta_420] identity.
+    end_to_end_r = 15
+    end_to_end_s = 7
+    end_to_end_q = end_to_end_r * end_to_end_s
+    end_to_end_order = 420
+
+    def primitive_mod15_character_exponent(
+        value: int, character_power: int, conjugate: bool = False
+    ) -> int | None:
+        if math.gcd(value, end_to_end_r) != 1:
+            return None
+        real_exponent = (
+            0 if character_three(value) == 1 else end_to_end_order // 2
+        )
+        quartic_exponent = (
+            (end_to_end_order // 4)
+            * character_power
+            * discrete_log_five(value)
+        )
+        if conjugate:
+            quartic_exponent = -quartic_exponent
+        return (real_exponent + quartic_exponent) % end_to_end_order
+
+    def induced_mod105_gauss(
+        character_power: int, argument: int
+    ) -> list[int]:
+        answer = [0] * end_to_end_order
+        additive_step = end_to_end_order // end_to_end_q
+        for unit in range(end_to_end_q):
+            if math.gcd(unit, end_to_end_q) != 1:
+                continue
+            character_exponent = primitive_mod15_character_exponent(
+                unit, character_power, conjugate=True
+            )
+            if character_exponent is None:
+                raise AssertionError("end-to-end induced character lost a unit")
+            answer[
+                (
+                    character_exponent
+                    + additive_step * argument * unit
+                )
+                % end_to_end_order
+            ] += 1
+        return answer
+
+    induced_projector_end_to_end_cases = 0
+    induced_projector_missing_ramanujan_mutation_detected = False
+    for ell in (2, 7, 14):
+        direct_end_to_end = [0] * end_to_end_order
+        for character_power in (1, 2, 3):
+            gauss_product = cyclic_integer_convolution(
+                induced_mod105_gauss(character_power, 1),
+                induced_mod105_gauss(character_power, ell),
+            )
+            physical_character_phase = primitive_mod15_character_exponent(
+                -2, character_power
+            )
+            if physical_character_phase is None:
+                raise AssertionError("end-to-end physical phase is not a unit")
+            add_scaled_cyclotomic(
+                direct_end_to_end,
+                cyclic_shift_scaled(
+                    gauss_product, physical_character_phase
+                ),
+                mobius(end_to_end_q),
+            )
+
+        expected_end_to_end = [0] * end_to_end_order
+        wrong_without_ramanujan = [0] * end_to_end_order
+        cofactor_ramanujan = ramanujan_sum(end_to_end_s, ell)
+        for rho in divisors(end_to_end_r):
+            complement = end_to_end_r // rho
+            if rho == 1:
+                kernel_argument = 0
+            else:
+                kernel_argument = (
+                    -2
+                    * ell
+                    * pow(end_to_end_s, -2, rho)
+                    * pow(complement, -2, rho)
+                ) % rho
+            embedded_kernel = [0] * end_to_end_order
+            for exponent, count in enumerate(
+                kloosterman_exponent_multiset(1, kernel_argument, rho)
+            ):
+                embedded_kernel[(end_to_end_order // rho) * exponent] += count
+            add_scaled_cyclotomic(
+                expected_end_to_end,
+                embedded_kernel,
+                cofactor_ramanujan * mobius(rho) * phi(rho),
+            )
+            add_scaled_cyclotomic(
+                wrong_without_ramanujan,
+                embedded_kernel,
+                mobius(rho) * phi(rho),
+            )
+        if not general_cyclotomic_integer_equal(
+            direct_end_to_end, expected_end_to_end
+        ):
+            raise AssertionError("induced primitive-projector end-to-end identity failed")
+        if not general_cyclotomic_integer_equal(
+            direct_end_to_end, wrong_without_ramanujan
+        ):
+            induced_projector_missing_ramanujan_mutation_detected = True
+        induced_projector_end_to_end_cases += 1
+    if not induced_projector_missing_ramanujan_mutation_detected:
+        raise AssertionError("end-to-end Ramanujan mutation escaped")
+
+    # The exact Ramanujan cofactor stratification is c_s(ell)/phi(s)
+    # =mu(t)/phi(t), where d=(s,ell), t=s/d.  It retains a reduced-cofactor
+    # sign tied to the gcd stratum, never a free copy of mu(s).
+    ramanujan_cofactor_stratification_cases = 0
+    ramanujan_divisor_monomial_cases = 0
+    ramanujan_monomial_inverse_mutation_detected = False
+    for cofactor in (1, 3, 5, 15, 21, 35):
+        for ell in range(1, 2 * cofactor + 1):
+            gcd_stratum = math.gcd(cofactor, ell)
+            reduced_cofactor = cofactor // gcd_stratum
+            left = Fraction(
+                ramanujan_sum(cofactor, ell), phi(cofactor)
+            )
+            right = Fraction(
+                mobius(reduced_cofactor), phi(reduced_cofactor)
+            )
+            if left != right:
+                raise AssertionError("Ramanujan cofactor gcd stratification failed")
+            ramanujan_cofactor_stratification_cases += 1
+            divisor_expansion = sum(
+                divisor_axis * mobius(cofactor // divisor_axis)
+                for divisor_axis in divisors(math.gcd(cofactor, ell))
+            )
+            if divisor_expansion != ramanujan_sum(cofactor, ell):
+                raise AssertionError("Ramanujan divisor unfolding failed")
+
+            # Each divisor term s=a*b, ell=a*k has the same original
+            # ell*s^(-2) phase, now written k*a^(-1)*b^(-2).  This is the
+            # monomial coordinate needed by the local trace-function engine.
+            for projector_modulus in (11, 13):
+                if math.gcd(cofactor * ell, projector_modulus) != 1:
+                    continue
+                original_phase = (
+                    ell * pow(cofactor, -2, projector_modulus)
+                ) % projector_modulus
+                for divisor_axis in divisors(math.gcd(cofactor, ell)):
+                    reduced_cofactor = cofactor // divisor_axis
+                    reduced_ell = ell // divisor_axis
+                    monomial_phase = (
+                        reduced_ell
+                        * pow(divisor_axis, -1, projector_modulus)
+                        * pow(reduced_cofactor, -2, projector_modulus)
+                    ) % projector_modulus
+                    if monomial_phase != original_phase:
+                        raise AssertionError("Ramanujan monomial phase failed")
+                    wrong_without_divisor_inverse = (
+                        reduced_ell
+                        * pow(reduced_cofactor, -2, projector_modulus)
+                    ) % projector_modulus
+                    if wrong_without_divisor_inverse != original_phase:
+                        ramanujan_monomial_inverse_mutation_detected = True
+                    ramanujan_divisor_monomial_cases += 1
+    if not ramanujan_monomial_inverse_mutation_detected:
+        raise AssertionError("Ramanujan monomial inverse mutation escaped")
+
+    # V10 normalization: the primitive projector phi(rho) cancels exactly
+    # against its factor in phi(rho*t), while the cofactor 1/phi(s) remains.
+    # The root-number form equivalently retains r/[phi(r)phi(s)].
+    v10_phi_normalization_cases = 0
+    v10_missing_phi_s_mutation_detected = False
+    v10_missing_r_over_phi_r_mutation_detected = False
+    for conductor in (15, 21, 35):
+        for projector_modulus in divisors(conductor):
+            complement = conductor // projector_modulus
+            projector_ratio = Fraction(
+                phi(projector_modulus), phi(conductor)
+            )
+            if projector_ratio != Fraction(1, phi(complement)):
+                raise AssertionError("primitive projector phi cancellation failed")
+            for cofactor in (5, 7, 11):
+                if math.gcd(conductor, cofactor) != 1:
+                    continue
+                root_number_prefactor = Fraction(
+                    conductor, phi(conductor) * phi(cofactor)
+                )
+                wrong_without_r_over_phi_r = Fraction(1, phi(cofactor))
+                if root_number_prefactor != wrong_without_r_over_phi_r:
+                    v10_missing_r_over_phi_r_mutation_detected = True
+                for ell in (1, cofactor):
+                    lattice_prefactor = (
+                        projector_ratio
+                        * Fraction(ramanujan_sum(cofactor, ell), phi(cofactor))
+                    )
+                    divisor_prefactor = sum(
+                        Fraction(
+                            divisor_axis * mobius(cofactor // divisor_axis),
+                            phi(complement) * phi(cofactor),
+                        )
+                        for divisor_axis in divisors(math.gcd(cofactor, ell))
+                    )
+                    if lattice_prefactor != divisor_prefactor:
+                        raise AssertionError("V10 phi/Ramanujan normalization failed")
+                    wrong_without_phi_s = (
+                        projector_ratio * ramanujan_sum(cofactor, ell)
+                    )
+                    if lattice_prefactor != wrong_without_phi_s:
+                        v10_missing_phi_s_mutation_detected = True
+                    v10_phi_normalization_cases += 1
+    if not v10_missing_phi_s_mutation_detected:
+        raise AssertionError("V10 missing-phi(s) mutation escaped")
+    if not v10_missing_r_over_phi_r_mutation_detected:
+        raise AssertionError("V10 missing-r/phi(r) mutation escaped")
+
     if J + NU != HALF or 1 - J != Q or HALF - J != NU:
         raise AssertionError("J/nu/Q compiler identities failed")
     if Fraction(1, 3) - J != Fraction(1, 1200):
@@ -719,6 +1541,16 @@ def run_checks() -> dict[str, object]:
     full_width = Q - J
     if Q + full_width - 1 != Fraction(1, 400):
         raise AssertionError("strict 1/400 Vaughan surplus failed")
+    v10_strict_d_saving_exponent = Fraction(1, 200)
+    v10_strict_f_saving_exponent = Fraction(1, 100)
+    if (
+        HALF * v10_strict_d_saving_exponent != Fraction(1, 400)
+        or Fraction(1, 4) * v10_strict_f_saving_exponent
+        != Fraction(1, 400)
+        or v10_strict_f_saving_exponent
+        != 2 * v10_strict_d_saving_exponent
+    ):
+        raise AssertionError("V10 D-saving and F-saving exponents were conflated")
     hb_padding_slots = 6 * math.ceil(Fraction(1, 1) / (1 - HALF))
     if hb_padding_slots != 12:
         raise AssertionError("Ford--Maynard Lemma 7.14 slot count failed")
@@ -1526,7 +2358,7 @@ def run_checks() -> dict[str, object]:
             "finite exact algebra, rank-one obstruction, and compiler geometry; "
             "source-backed analytic estimates are not numerical checks; the "
             "universal Type II umbrella, actual-atom dual-product dispersion, "
-            "signed-modulus Type-IV construction, and structured two-row "
+            "signed conductor/cofactor/projector Type-IV construction, and structured two-row "
             "paired-Voronoi theorem remain open"
         ),
         "exponents": {
@@ -1537,6 +2369,8 @@ def run_checks() -> dict[str, object]:
             "one_third_margin": "1/1200",
             "full_mirror_width": "134/400",
             "vaughan_surplus": "1/400",
+            "v10_strict_D_saving_exponent": str(v10_strict_d_saving_exponent),
+            "v10_strict_F_saving_exponent": str(v10_strict_f_saving_exponent),
             "lemma_7_14_padding_slots": hb_padding_slots,
             "bc_h2_j1_worst": str(bc_h2_j1_worst),
             "bc_h3_thin_worst": str(bc_h3_thin_worst),
@@ -1601,6 +2435,7 @@ def run_checks() -> dict[str, object]:
             "HB2 equality case retains the closed one-half endpoint",
             "J-to-half-to-Q exponent identities",
             "Q+(Q-J)=1+1/400 Vaughan surplus",
+            "V10 D^(-eta_D) requires eta_D>1/200 while F^(-eta_F) requires eta_F>1/100",
             "Ford--Maynard Lemma 7.14 uses 12 padded factors at gamma=1/2",
             "Bettin--Chandee adjacent h=2,j=1 worst exponent is 39/40",
             "Bettin--Chandee h=3 thin-cell worst exponent is 5/6",
@@ -1622,7 +2457,17 @@ def run_checks() -> dict[str, object]:
             "the nonprincipal Gauss angle has exact (p-1)/p centered fixed-product normalization",
             "modular ratio fibers contain nonzero determinant-p wraps beyond one common-k ray",
             "complete moving-unit Kloosterman covariance has an exact product-resonance endpoint floor",
-            "V9 primary and independent source locks remain separate with zero physical credit",
+            "induced generalized Gauss sums retain the exact complex CRT phase",
+            "the physical induced phase is exactly -2*gbar*sbar^2",
+            "actual E and H source masks retain distinct g and s coprimality",
+            "the cofactor Gauss-lift Mobius sign cancels the outer cofactor sign",
+            "Ramanujan cofactor weights retain only the gcd-stratified reduced sign",
+            "composite primitive-character orthogonality is a divisor-projector lattice",
+            "primitive Gauss squares become a signed Kloosterman divisor lattice with complement inverse-square phase",
+            "the induced composite conductor/cofactor cell equals the full signed primitive-projector Kloosterman lattice end to end",
+            "Ramanujan divisor unfolding converts ell*s^(-2) to the exact k*a^(-1)*b^(-2) monomial phase",
+            "primitive-projector phi cancellation retains both 1/phi(s) and r/phi(r)",
+            "V10 primary and independent source locks remain separate with zero physical credit",
             "outer minus six converts source A1-A2 into physical A2-A1",
         ],
         "case_counts": {
@@ -1650,10 +2495,21 @@ def run_checks() -> dict[str, object]:
             "common_k_nonzero_wrap_collisions_mod13_box3_to7": wrap_nonzero_collisions,
             "moving_unit_complete_mean": moving_unit_mean_cases,
             "moving_unit_product_resonance": moving_unit_resonance_cases,
+            "induced_complex_gauss_crt": induced_gauss_crt_cases,
+            "induced_outer_cofactor_cancellation": induced_outer_cancellation_cases,
+            "induced_physical_minus_two_g_s_phase": induced_physical_phase_cases,
+            "v10_actual_E_H_source_masks": source_mask_cases,
+            "composite_primitive_projector_lattice": primitive_projector_cases,
+            "composite_primitive_gauss_kloosterman_lattice": primitive_gauss_projector_cases,
+            "induced_composite_projector_end_to_end": induced_projector_end_to_end_cases,
+            "ramanujan_cofactor_gcd_stratification": ramanujan_cofactor_stratification_cases,
+            "ramanujan_divisor_monomial_unfolding": ramanujan_divisor_monomial_cases,
+            "v10_phi_normalization": v10_phi_normalization_cases,
         },
         "mutation_tests": {
             "J_above_one_third": "DETECTED",
             "loss_of_exact_sqrt_endpoint": "DETECTED",
+            "v10_D_vs_F_eta_normalization": "DETECTED",
             "hb2_sqrt_endpoint_to_large": "DETECTED",
             "hb2_A2_product_mobius_collapse": "DETECTED",
             "hb2_prime_power_to_prime_indicator": "DETECTED",
@@ -1685,12 +2541,27 @@ def run_checks() -> dict[str, object]:
             "gauss_dual_prime_angle_normalization": "DETECTED",
             "common_k_unique_modular_fiber": "DETECTED_FALSE",
             "global_moving_unit_cauchy_saving": "DETECTED_FALSE",
-            "v9_primary_reserve_swap": "DETECTED",
-            "v9_source_lock_merge": "DETECTED",
-            "v9_paired_polar_main_promotion": "DETECTED",
-            "v9_bilateral_A1_A2_sign_reversal": "DETECTED",
-            "v9_physical_credit_promotion": "DETECTED",
-            "v9_status_registry_weakening": "DETECTED",
+            "induced_crt_coprimality_indicator": "DETECTED",
+            "induced_crt_conjugate_s_square": "DETECTED",
+            "induced_crt_ramanujan_factor": "DETECTED",
+            "induced_crt_free_cofactor_mobius": "DETECTED_FALSE",
+            "induced_physical_minus_two_to_plus_two": "DETECTED",
+            "induced_physical_g_inverse": "DETECTED",
+            "induced_physical_s_inverse_square": "DETECTED",
+            "v10_E_missing_g_mask": "DETECTED",
+            "v10_H_missing_s_mask": "DETECTED",
+            "primitive_projector_single_fixed_residue": "DETECTED_FALSE",
+            "primitive_projector_complement_inverse_square": "DETECTED",
+            "induced_projector_end_to_end_ramanujan_factor": "DETECTED",
+            "ramanujan_monomial_divisor_inverse": "DETECTED",
+            "v10_missing_phi_s": "DETECTED",
+            "v10_missing_r_over_phi_r": "DETECTED",
+            "v10_primary_reserve_swap": "DETECTED",
+            "v10_source_lock_merge": "DETECTED",
+            "v10_paired_polar_main_promotion": "DETECTED",
+            "v10_bilateral_A1_A2_sign_reversal": "DETECTED",
+            "v10_physical_credit_promotion": "DETECTED",
+            "v10_status_registry_weakening": "DETECTED",
         },
         "open_gate": umbrella_gate,
         "route_freeze": route_freeze,

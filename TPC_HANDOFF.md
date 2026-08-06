@@ -3,6 +3,60 @@
 更新时间：2026-08-06
 交接状态：`SEALED_FOR_NEW_SESSION`
 
+第 57 节从已发布 V9 commit
+`cd983e193fedfd6a274e52a84be69fecf0f0a26e`继续同一个 canonical
+`TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE`。V10 完成 V9 留下的第一段
+squarefree/imprimitive CRT，但精确结果要求重写 full-source contract。若
+`q=rs`、`r=cond(chi)`、`chi=Ind_r^(rs)psi`，则
+
+```text
+tau_q(conjugate(chi),a)
+ =psi(a conjugate(s)_r)tau_r(conjugate(psi),1)c_s(a)1_((a,r)=1).
+```
+
+恢复 physical `chi(-2)conjugate(chi)(g)` 并乘 source
+`mu(gq)/phi(q)` 后，cofactor 的两枚 `mu(s)`精确相消；normalized character
+coefficient保留 `mu(g)mu(r)r/[phi(r)phi(s)]`、B-polynomial中的 `c_s(ell)`、
+root-number square与强制相位
+`psi(-2 ell conjugate(g)_r conjugate(s)_r^2)`。因此
+`HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT`
+已精确 `STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION`。这不允许把
+`c_s(ell)`取绝对值：若 `d_s=(s,ell)`、`t_s=s/d_s`，则
+`c_s(ell)/phi(s)=mu(t_s)/phi(t_s)`。
+
+对 composite primitive conductor，primitive orthogonality又把单一 product residue
+改成 `rho|r` 的 divisor-projector lattice。打开两枚 primitive Gauss sums并写
+`r=rho t` 后，outer `mu(r)`把 projector sign变为 `mu(rho)`，同时
+`phi(rho)`与 `phi(r)`中的同一因子精确相消。再展开
+`c_s(ell)=sum_(a|s,a|ell)a mu(s/a)`、写 `s=ab, ell=ak`，完整 additive normal
+form的关键 cell为
+
+```text
+mu(g)mu(rho)mu(b) a/[phi(t)phi(a)phi(b)]
+ * mu(e_1)mu(e_2)W(...)c_g(ak)
+ * S(1,-2u k conjugate(g e_1e_2 a b^2 t^2);rho).
+```
+
+这是真正的 V10 路线推进：三条 coupled signed axes
+`mu(g)mu(rho)mu(b)`与一个 literal inverse-square monomial，而不是可自由调用的
+`mu(q)`。complex sextic induced-character、composite conductor `r=15`、primitive
+projector/Kloosterman lattice、physical
+`-2*conjugate(g)_r*conjugate(s)_r^2`与 Ramanujan monomial均由 checker
+exact验证并有 mutation tests。
+
+[Earnst](https://arxiv.org/abs/2603.22124) 的 prime-conductor
+root-number-square moment与
+[Fouvry--Kowalski--Michel--Sawin](https://arxiv.org/abs/2511.09459) 的 prime
+monomial trace-function bound是当前最接近的 mechanism/adaptation blueprints；它们
+分别缺 actual `E_1E_2HB` coefficients，或缺 varying/composite `rho`、outer
+`mu(rho)`与完整重组，故没有 theorem credit。当前 selected construction重写为
+`HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV`。
+V10裁决为
+`CHANNEL_RETYPE_WITH_EXACT_INDUCED_CRT_AND_PRIMITIVE_PROJECTOR_LATTICE`，不是
+arithmetic advance。TPC-207仍为 false；fixed-atom credit=`0`、strict
+`1/400=UNPAID`、`L2=NONE`，prime first gate、paired-Voronoi reserve、Bridge B与
+第 6 节全部旧 STOP cells均不变。
+
 第 56 节本轮启动基线为
 `cfe26af99bed702aad5d346100a39134c3ac8520`，与 `origin/main`一致；启动
 `git pull --rebase origin main`返回 already up to date。启动时
@@ -47,7 +101,7 @@ Bourgain--Garaev只提供 exponent不足的 local inverse-product sublemma；普
 已核查的 `d_4`/BV/BDH source不接受 prescribed residue、两条 literal Möbius rows与
 modulus-dependent dual weights。
 
-selected construction为
+V9 当时的 selected construction为
 `HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM`：在 full
 squarefree `g,q` average中保留 `mu(gq)`、两条 literal Möbius rows与 centered
 product-difference resonance，禁止 prime/outer-variable层先取绝对值。HB4xHB2
@@ -141,7 +195,16 @@ BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIE
 DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
 STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
 HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
-HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
+HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 LARGE_D_QUOTIENT_MOBIUS_GATE = SUPERSEDED
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_ADDITIVE_DIFFERENCE_KERNEL_NORM_Q
@@ -5467,7 +5530,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V9 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V10 current）
 
 ```text
 进入仓库：
@@ -5476,7 +5539,7 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--56 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--57 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -5535,7 +5598,16 @@ BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIE
 DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
 STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
 HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
-HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
+HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 LARGE_D_QUOTIENT_MOBIUS_GATE = SUPERSEDED
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_ADDITIVE_DIFFERENCE_KERNEL_NORM_Q
@@ -5559,7 +5631,7 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮只执行第 56 节控制的同一个 canonical umbrella：
+下一轮只执行第 57 节控制的同一个 canonical umbrella：
 
 TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
 
@@ -5569,9 +5641,17 @@ TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
 `e_1e_2zw=-2`证明或否定 `F^(2-eta)` normalized discrepancy；其 character-angle版本
 只是 exact等价坐标，二者 saving不得相乘。common-`k` unique-fiber与 global
 moving-unit Cauchy已由 exact wrap/resonance identity `STOP_SCOPED`，不得重开。若 prime
-gate存活，下一构造是 squarefree `g,q`层保留 `mu(gq)`与两条 literal Möbius rows的
-signed-modulus dual Type-IV dispersion；不得把 ordinary `d_4` averaged-residue theorem
-升级为 prescribed `-2`。HB4xHB2 structured two-row paired-Voronoi只作独立 reserve，
+gate存活时，不得再声称 squarefree CRT原样保留 literal `mu(gq)`。V10 的 full
+construction必须使用 exact conductor/cofactor/projector normal form：character坐标保留
+`mu(g)mu(r)epsilon_r(conjugate(psi))^2`与 physical
+`psi(-2 conjugate(g)conjugate(s)^2)`；additive坐标保留
+`mu(g)mu(rho)mu(b)`和
+`S(1,-2u k conjugate(g e_1e_2 a b^2 t^2);rho)`。先按 large prime-like `rho`、
+large complementary conductor `t`与 balanced varying/composite `rho`三段攻击
+`V10-COLLECTIVE-MONOMIAL-PROJECTOR-TYPE-IV`；不得逐 `(g,rho,t,a,b)` cell取绝对值后
+再认领 signed saving，也不得把 ordinary `d_4` averaged-residue theorem升级为
+prescribed `-2`。Earnst与 FKMS只分别是 mechanism analogue和 local adaptation
+blueprint，不是 actual packet theorem。HB4xHB2 structured two-row paired-Voronoi只作独立 reserve，
 不得和 exact-half source lock拼接，也不得先压成 operator norm为 `q`的 arbitrary
 additive-difference residue kernel。
 
@@ -11408,6 +11488,360 @@ PROTECTED_MANIFEST
 TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
 TPC122_WRITER_EXECUTED = NO
 PAPER_PDF_NUMBERED_RELEASE_CREATED = NO
+```
+
+## 57. 2026-08-06 V10：induced CRT、primitive-projector lattice 与 monomial trace 大路
+
+### 57.1 基线、分工与 claim boundary
+
+V10 从已发布并三重 hash一致的 V9 commit启动：
+
+```text
+cd983e193fedfd6a274e52a84be69fecf0f0a26e
+```
+
+启动 tracked/index为空；130 个 protected untracked files保持原样，canonical
+manifest仍为
+`9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1`。
+主控继续按根 `AGENTS.md`与 ARS source/proof/integrity流程调度三个
+`READ_ONLY_FROZEN` agents：exact induced-Gauss proof audit、full physical source
+attachment audit、conductor-native Type-IV source screen。三者均基于同一 commit，
+`files_changed=[]`；正式写入只由主控完成。
+
+V10 的最高 claim仍是 `POSITIVE_DERIVED_SUBLEMMA / CHANNEL_RETYPE`：证明了 full
+squarefree lift的精确 finite normal form，修正一个错误 coefficient contract，并找到
+两个 source-backed mechanism blueprints；没有证明 analytic power saving。
+
+### 57.2 physical phase与 exact induced CRT
+
+令 `g=(h,d)`、`d=gq`、`h=gu`、`A=e_1e_2`。active `d` squarefree，故
+`(g,q)=1`，physical kernel精确分解为
+
+```text
+S(ell,-2gu conjugate(A);gq)
+ =c_g(ell)S(ell conjugate(g),-2u conjugate(A);q).       (57.2.1)
+```
+
+对第二参数作 complete multiplicative inversion后，若继续使用 V8/V9 的
+`tau_q(conjugate(chi),ell)` convention，则 summand必须显式保留
+
+```text
+chi(-2)conjugate(chi)(g).                              (57.2.2)
+```
+
+`-4`只属于 Pascadi `r_source=2` coordinate，与 first-coordinate unit scaling合并
+后正好回到 `(57.2.1)`的 physical `-2`；两者不得拼接成另一个 shift。
+
+写
+
+```text
+q=rs, r=cond(chi), chi=Ind_r^(rs)psi,
+```
+
+其中 `psi (mod r)` primitive，`g,r,s`两两互素。当前 Gauss convention下，exact
+CRT为
+
+```text
+tau_(rs)(conjugate(chi),a)
+ =psi(a conjugate(s)_r)tau_r(conjugate(psi),1)c_s(a)
+  1_((a,r)=1).                                        (57.2.3)
+```
+
+所以
+
+```text
+chi(-2)conjugate(chi)(g)
+ tau_q(conjugate(chi),1)tau_q(conjugate(chi),ell)
+
+ =mu(s)c_s(ell)tau_r(conjugate(psi),1)^2
+  psi(-2 ell conjugate(g)_r conjugate(s)_r^2)
+  1_((ell,r)=1).                                      (57.2.4)
+```
+
+外乘 source `mu(gq)/phi(q)` 后，outer `mu(s)`与 Gauss-lift
+`c_s(1)=mu(s)`精确相消：
+
+```text
+mu(g)mu(r)c_s(ell)/[phi(r)phi(s)]
+ * tau_r(conjugate(psi),1)^2
+ * psi(-2 ell conjugate(g)_r conjugate(s)_r^2)
+ * 1_((ell,r)=1).                                     (57.2.5)
+```
+
+因此 V9 Step 2 若按 literal coefficient理解是 false：
+
+```text
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT
+ = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION. (57.2.6)
+```
+
+但 cofactor不能取绝对值。若 `d_s=(s,ell)`、`t_s=s/d_s`，则
+
+```text
+c_s(ell)=mu(t_s)phi(d_s),
+c_s(ell)/phi(s)=mu(t_s)/phi(t_s).                      (57.2.7)
+```
+
+故 `(57.2.5)`保留一个与 gcd stratum和复相位耦合的 reduced-cofactor sign。
+
+### 57.3 character normal form与 primitive-projector lattice
+
+令 `epsilon_r(conjugate(psi))=r^(-1/2)tau_r(conjugate(psi),1)`。一个 frozen
+actual source atom的 character form为
+
+```text
+mu(g)mu(r)/phi(s) * r/phi(r)
+ sum_(psi mod r)^* epsilon_r(conjugate(psi))^2
+  psi(-2 conjugate(g)_r conjugate(s)_r^2)
+  E_(1,g,s,t)(conjugate(psi))E_(2,g,s,t)(conjugate(psi))
+  H_(g,s,t)(psi)B_(g,s,t)(psi),                       (57.3.1)
+```
+
+其中
+
+```text
+E_i: length F, literal mu(e_i), mask (e_i,gs)=1;
+H:   length F/g, mask (u,s)=1;
+B:   ell length F, coefficient c_g(ell)c_s(ell);
+r asymp R>=F, s asymp F^2/(gr), g r s asymp F^2.        (57.3.2)
+```
+
+所有 actual signs/masks、`W^q(rs/Q)`、`W^s(s/S)`、common transform parameter、
+product-atom `L1`、`r` partial-summation BV、tails与 unequal-length ranges均属于
+contract。V9 prime superclass只是 `g=s=1` slice。
+
+对 composite squarefree `r`，不能把 primitive characters换成全部 characters：
+
+```text
+sum_(psi mod r)^* psi(x)conjugate(psi)(a_0)
+ =sum_(rho|r)mu(r/rho)phi(rho)1_(x=a_0 mod rho).       (57.3.3)
+```
+
+外乘 `mu(r)`后，sign变成 `mu(rho)`。进一步打开两枚 primitive Gauss sums，令
+`t=r/rho`，则
+
+```text
+sum_(psi mod r)^* tau_r(conjugate(psi),1)^2 psi(A)
+ =sum_(rho|r)mu(r/rho)phi(rho)
+  S(1,A conjugate(t)_rho^2;rho).                       (57.3.4)
+```
+
+因此 full dual object不是 modulo `r`的一个 fixed-product residue，而是所有
+`rho|r`的 Kloosterman projector lattice。prime `r=p`只有 `rho=1,p`，恰好退化成
+V9 centered prime identity；prime gate不受影响。scoped firewall为
+
+```text
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT
+ = STOP_SCOPED_FALSE_DIVISOR_LATTICE.                  (57.3.5)
+```
+
+### 57.4 exact monomial Type-IV normal form
+
+在 `(57.3.4)`中 `phi(rho)`与
+`phi(r)=phi(rho)phi(t)`的对应因子相消。打开全部 polynomials后，high-conductor
+cell为
+
+```text
+sum_(g,rho,t,s: g rho t s asymp F^2, rho t>=F)
+ mu(g)mu(rho)/[phi(t)phi(s)]
+ sum_(e_1,e_2,u,ell)mu(e_1)mu(e_2)W(...)c_g(ell)c_s(ell)
+ S(1,-2u ell conjugate(g e_1e_2(s t)^2);rho).          (57.4.1)
+```
+
+这里 `g,rho,t,s`两两互素、odd squarefree；`e_i asymp F`且
+`(e_i,g rho t s)=1`；`u asymp F/g`且 `(u,rho t s)=1`；
+`0<|ell|<<F`且 `(ell,rho t)=1`；`s asymp F^2/(g rho t)`。primitive
+character消失后，这些 masks必须显式保留，不能继续由 zero extension代管。
+
+必须在 norm前展开
+
+```text
+c_s(ell)=sum_(a|s,a|ell)a mu(s/a).
+```
+
+写 `s=ab`、`ell=ak`后得到 V10 clean normal form：
+
+```text
+sum_(g,rho,t,a,b: g rho t a b asymp F^2, rho t>=F)
+ mu(g)mu(rho)mu(b)a/[phi(t)phi(a)phi(b)]
+ sum_(e_1,e_2,u,k)mu(e_1)mu(e_2)W(...)c_g(ak)
+ S(1,-2u k conjugate(g e_1e_2 a b^2 t^2);rho).        (57.4.2)
+```
+
+在 `(57.4.2)`中 `g,rho,t,a,b`两两互素、odd squarefree，
+`ab asymp F^2/(g rho t)`，`0<|ak|<<F`、`(k,rho t)=1`，所以 literal
+`k`-length为 `F/a`；并且 `(e_i,g rho t a b)=1`、`(u,rho t a b)=1`。
+任何 fixed-prime trace engine都必须接受这些 actual masks与 unequal lengths。
+
+所以 current analytic bridge有三条 coupled signed axes
+
+```text
+mu(g) mu(rho) mu(b),                                  (57.4.3)
+```
+
+和 literal monomial `u k/(g e_1e_2 a b^2 t^2) (mod rho)`。这比 V9 的
+“signed modulus”名称更窄也更可证伪。
+
+### 57.5 五篇 source screen与下一条 theorem contract
+
+本轮逐 theorem核查五篇 primary sources，结论仅限这些 checked statements，不作
+universal absence claim：
+
+1. [Blomer--Pascadi](https://arxiv.org/abs/2607.24311)：fixed `rho` critical
+   Kloosterman engine，local `rho^(-1/32)`；逐 cell使用会丢 `(57.4.3)`，不足 full
+   outer ledger。
+2. [Milićević--Qin--Wu](https://arxiv.org/abs/2511.07550)：fixed-modulus
+   bilinear `Kl_2` engine；length hypotheses不覆盖全部 projector dyads，论文内部
+   divisor不是 V10 averaged cofactor。
+3. [Kerr--Shparlinski--Wu--Xi](https://arxiv.org/abs/2204.05038)：fixed-modulus
+   Type-I/incomplete inverse-phase sublemma；不能同时保留两条 Möbius rows、
+   Ramanujan axis与 primitive projector。
+4. [Earnst](https://arxiv.org/abs/2603.22124)：prime conductor、`k=2`
+   root-number-square moment真正有 power saving，是 `(57.3.1)`的 mechanism
+   evidence；但 theorem是由 approximate functional equation打开的 fixed-twist
+   `|L(1/2,psi)|^2` moment，mollifier coefficients只进入后续 application，二者都
+   不能替换 actual `E_1E_2HB`。
+5. [Fouvry--Kowalski--Michel--Sawin](https://arxiv.org/abs/2511.09459)：prime
+   modulus arbitrary-coefficient monomial trace-function engine，和 `(57.4.2)`形状
+   literal相容（仍须满足 source的 monodromy与 length hypotheses）；但没有
+   varying/composite `rho`、outer `mu(rho)`及 `(g,a,b,t)` collective reassembly。
+
+最接近的 positive source cells只能记为
+
+```text
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT
+ = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE
+ = SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT.           (57.5.1)
+```
+
+下一条 central theorem必须直接声明：
+
+```text
+V10-COLLECTIVE-MONOMIAL-PROJECTOR-TYPE-IV
+
+对完整 actual-source (57.4.2)，uniform于全部 admissible dyads、masks、
+transform parameters、unequal source lengths与 physical-loss ledger，有
+
+|V| << F^2 D^2 D^(-eta_D)X^o(1), D=F^2,              (57.5.2)
+
+并且证明过程保留 mu(g)mu(rho)mu(b)，不得先逐
+(g,rho,t,a,b) cell取绝对值再重组。
+```
+
+任意 `eta_D>0`给 exact-half arithmetic advance。因 `D=F^2=X^(1/2)`，等价
+`F`-saving exponent为 `eta_F=2eta_D`；支付 strict `1/400`必须在完整
+polynomial-loss ledger后 `eta_D>1/200`，等价 `eta_F>1/100`。proof engineering按三段进行：large
+prime-like `rho`测试 FKMS；large complementary conductor `t`回到 Earnst型
+root-number coordinate；balanced varying/composite `rho`才是需要新
+dispersion/Kuznetsov/composite trace-family theorem的核心墙。
+
+canonical V10 registry为
+
+```text
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP = OPEN_ATTACHMENT
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT = PROVED_EXACT_EQUIVALENCE
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS
+GLOBAL_MOVING_UNIT_CAUCHY = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
+HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+```
+
+### 57.6 compass映射、裁决与 release boundary
+
+按用户给出的 `TPC岛屿地图`，Bridge A1现在从 prime centered-product桥进一步细分为
+character/conductor坐标与 primitive-projector/monomial坐标；A2 paired-Voronoi仍是
+独立 reserve。固定原子岛与 Pair-native/H1岛只负责 attachment，不自动提供 saving。
+Bridge B distinguished-seed genericity、非自治 dynamics岛及 Hénon/几何辅助岛均保持
+独立 OPEN，不给本解析 ledger记 credit。
+
+V10正式 verdict为
+
+```text
+TPC_BIG_ROAD_V10_20260806_INDUCED_GAUSS_CRT_EXACT_PHYSICAL_MINUS_TWO_GBAR_
+SBAR_SQUARED_PHASE_LITERAL_MU_GQ_PRESERVATION_FALSE_COFACTOR_SIGN_CANCELLATION_
+RAMANUJAN_REDUCED_COFACTOR_SIGN_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT_FALSE_
+SIGNED_KLOOSTERMAN_DIVISOR_LATTICE_RAMANUJAN_MONOMIAL_UNFOLDING_EXACT_EARNST_
+ROOT_NUMBER_MECHANISM_FKMS_PRIME_TRACE_BLUEPRINT_NO_DIRECT_UNFROZEN_ATTACHMENT_
+SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_TYPE_IV_SELECTED_NO_
+ARITHMETIC_TRIGGER_CHANNEL_RETYPE
+```
+
+即
+`CHANNEL_RETYPE_WITH_EXACT_INDUCED_CRT_AND_PRIMITIVE_PROJECTOR_LATTICE`。
+prime first gate、actual atom membership、paired-Voronoi reserve与全部 downstream
+physical/provenance gates仍未过。fixed-atom credit=`0`、strict
+`1/400=UNPAID`、`L2=NONE`、`TPC207_TRIGGER=false`。没有创建 TPC-207、论文、
+paper directory、PDF或 build logs；TPC-27--32与 TPC-122 writers未执行。
+
+### 57.7 post-write fail-closed verification
+
+本节发布前必须满足并在最终同步后冻结：
+
+```text
+POST_WRITE_STARTUP_REGRESSION = 22/22 PASS
+POST_WRITE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_WRITE_BIG_ROAD_CHECKS = 3/3 PASS
+POST_WRITE_INDEPENDENT_READ_ONLY_AUDITS = 3/3 PASS
+FM_V10_EXACT_ADDITIONS
+  INDUCED_COMPLEX_GAUSS_CRT = 4 cases
+  INDUCED_OUTER_COFACTOR_CANCELLATION = 2 cases
+  PHYSICAL_MINUS_TWO_G_S_PHASE = 1 case
+  ACTUAL_E_H_SOURCE_MASKS = 2 cases
+  COMPOSITE_PRIMITIVE_PROJECTOR = 64 cases
+  PRIMITIVE_GAUSS_KLOOSTERMAN_LATTICE = 3 cases
+  INDUCED_COMPOSITE_END_TO_END = 3 cases
+  RAMANUJAN_GCD_STRATIFICATION = 160 cases
+  RAMANUJAN_DIVISOR_MONOMIAL = 435 cases
+  PHI_NORMALIZATION = 40 cases
+  STRICT_ETA_D = 1/200
+  STRICT_ETA_F = 1/100
+GIT_DIFF_CHECK = PASS
+MARKDOWN_RAW_MARKER_BALANCE
+  HANDOFF = 1982 EVEN
+  COMPASS = 70 EVEN
+  README = 136 EVEN
+  COMPILER = 512 EVEN
+V10_NEW_REGIONS_STRICT_FENCE_ALTERNATION = PASS
+PREEXISTING_24H_NESTED_TRIPLE_FENCE = RETAINED_NOT_REOPENED
+EXPECTED_TRACKED_DIFF = 5/5 EXACT
+CACHED_DIFF = EMPTY
+PROTECTED_UNTRACKED = 130 FILES
+PROTECTED_MANIFEST
+  = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+SUBAGENT_FILES_CHANGED = 0
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+PAPER_PDF_NUMBERED_RELEASE_CREATED = NO
+POST_REBASE_REMOTE_DELTA
+  ORIGIN_MAIN_BASE = af10d4caf5f5291073bda473f3631fe94152ee7b
+  RH_368_ONLY = ebcf29a + af10d4c
+  TPC_SOURCE_LOCK_CHANGE = NONE
+POST_REBASE_V10_COMMIT_BEFORE_FINAL_HANDOFF_AMEND
+  = 9bbfbfe8e22b6f91e17298a8f953519ec3339559
+POST_REBASE_STARTUP_REGRESSION = 22/22 PASS
+POST_REBASE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_REBASE_BIG_ROAD_CHECKS = 3/3 PASS
+POST_REBASE_GIT_DIFF_CHECK = PASS
+POST_REBASE_PROTECTED_UNTRACKED = 130 FILES
+POST_REBASE_PROTECTED_MANIFEST
+  = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+FINAL_REBASE_AND_REMOTE_HASH_SYNC = READY_FOR_FINAL_PULL_PUSH_VERIFICATION
 ```
 
 ## 53. 2026-08-05 `TPC_review3` 大路 V2：forced deletion cocycle、Haar variance theorem 与 PBAPT

@@ -1,8 +1,8 @@
-# TPC big road V9: exact-half dual-product Type-IV highway
+# TPC big road V10: conductor/projector Type-IV highway
 
 更新时间：2026-08-06
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_GAUSS_DUAL_PRODUCT_ROUTE_REDESIGN`
+状态：`UNNUMBERED_WORKING_ARTIFACT / INDUCED_CRT_PRIMITIVE_PROJECTOR_ROUTE_RETYPE`
 
 ```text
 COARSE_COMPARISON_TYPE_I_ADVANCE = RETAINED
@@ -38,7 +38,16 @@ BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIE
 DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
 STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
 HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = FIRST_SUBGATE_OPEN_NEW_THEOREM
-HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
+HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_ADAPTATION_BLUEPRINT
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI = INDEPENDENT_OPEN_NEW_THEOREM
@@ -66,6 +75,15 @@ residue `e_1e_2zw=-2 (mod p)` 的 centered four-fold product convolution，并�
 已转成保留两条 literal Möbius rows的 dual Type-IV dispersion。完整 compiler见
 [`fm_local_comparison_compiler.md`](fm_local_comparison_compiler.md)。所有 TPC-1--206 的 source locks、
 `STOP_SCOPED` cells、actuality/provenance 与 normalization firewalls继续有效。
+
+V10 已完成 V9 留下的第一段 squarefree/imprimitive CRT。结果不是“整枚
+`mu(gq)`原样穿桥”，而是一个更精确的 conductor/projector 格：cofactor 的
+`mu(s)`精确相消，Ramanujan 展开留下 reduced cofactor sign；composite primitive
+conductor 又把单一 fixed-product residue展开成 `rho|r` 的 signed projector
+lattice。打开两枚 primitive Gauss sums后，完整 normal form保留
+`mu(g)mu(rho)mu(b)`和 prescribed monomial
+`u k/(g e_1e_2 a b^2 t^2) (mod rho)`。这是本轮真正的“大路重排”，不是新
+arithmetic saving；prime gate与 paired-Voronoi reserve仍分别开放。
 
 ## 1. 先给大胆结论
 
@@ -819,12 +837,13 @@ Bourgain--Garaev可作 literal local inverse-product sublemma，但 outer triang
 `F^(5-2delta)`，其 source未给关闭目标所需的 `delta>1/2`强度；已核查的普通 `d_4`/BV/BDH
 又不接受 prescribed residue、两条 Möbius rows与 modulus-dependent dual weights。
 
-selected construction因此是
-`HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV`：先完成 actual-atom membership与
-dual-tail ledger，再在 squarefree `g,q`层导出 CRT/imprimitive analogue，最后只对
-完整 centered modulus average作 dispersion，保留 `mu(gq)`与两条 literal Möbius
-rows直到 balanced product-difference resonance被 collective处理。prime family上
-`mu(p)=-1`恒定，本身没有 modulus-sign saving。
+V9 曾把 selected construction简称为
+`HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV`。V10 已证明这个名字不足以充当 full
+source contract：CRT 后不能声称 literal `mu(gq)`原样保留。当前 construction是
+`HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV`；
+它先完成 actual-atom membership与 dual-tail ledger，再在 squarefree `g,q`层保留
+精确 conductor/cofactor/projector lattice，最后只对完整 signed normal form作
+dispersion。prime family上 `mu(p)=-1`恒定，本身没有 modulus-sign saving。
 
 独立 reserve 是 **HB4xHB2 structured two-row paired-Voronoi**。它对 exactly-paired
 shells将 source switch `A1-A2`在 triangle前联合；乘 outer `-6`后 physical顺序为
@@ -862,3 +881,66 @@ python research/tpc-big-road/tpc_big_road_lab.py --stress --x 10000 100000 10000
 checker分别覆盖 metric covariance与 FM compiler的 finite exact fixtures/mutations，universal `q/I`、Abel及
 Borel--Cantelli量词仍由第 4 节符号证明承担。`--stress` 只把 JSON写到 stdout，
 不创建文件。
+
+## 10. V10 下一关：三符号轴的 monomial trace highway
+
+V10 的大胆结论是：Bridge A 仍有路，但正确的桥面不是“一般模数上直接平均
+`mu(q)`”，而是下列等价的两种坐标。
+
+Character 坐标保留
+
+```text
+mu(g)mu(r)r/[phi(r)phi(s)] * epsilon_r(conjugate(psi))^2
+* psi(-2 conjugate(g) conjugate(s)^2)
+* E_1(conjugate(psi))E_2(conjugate(psi))H(psi)B(psi).
+```
+
+Primitive-projector 坐标写 `r=rho t`，再展开
+`c_s(ell)=sum_(a|s,a|ell)a mu(s/a)`、`s=ab`、`ell=ak`，得到
+
+```text
+mu(g)mu(rho)mu(b) * a/[phi(t)phi(a)phi(b)]
+* mu(e_1)mu(e_2)c_g(ak)W(...)
+* S(1,-2u k conjugate(g e_1e_2 a b^2 t^2);rho).
+```
+
+这里五个 outer factors两两互素、odd squarefree；`e_i`保留 full
+`g rho t a b` unit mask，`u`保留 `rho t a b` unit mask，`k`长度为 `F/a`且
+`(k,rho t)=1`。这些不是 inert notation，不能在调用 prime trace theorem时删除。
+
+这一步把“cofactor 与 `ell`耦合”从一个模糊障碍变成了可攻击的 monomial trace
+argument。它也清楚显示三种不能提前丢掉的 cancellation：outer gcd 的 `mu(g)`、
+projector modulus 的 `mu(rho)`、Ramanujan quotient 的 `mu(b)`。
+
+当前最有启发性的 source 不是 closure，而是两个机制蓝图：
+
+* [Earnst](https://arxiv.org/abs/2603.22124) 在 prime conductor上真正得到
+  root-number-square moment的 power saving，说明保留 `epsilon(psi)^2`不是形式装饰；
+  但该 theorem绑定 `|L(1/2,psi)|^2`的特定 approximate-functional-equation
+  coefficients，不能替换 actual `E_1E_2HB` packet。
+* [Fouvry--Kowalski--Michel--Sawin](https://arxiv.org/abs/2511.09459) 给出 prime
+  modulus的 bilinear monomial trace-function engine，恰好与上面的 inverse-square
+  monomial相容（仍须满足 source的 monodromy与 length hypotheses）；但它没有
+  varying/composite `rho`、`mu(rho)` outer average和完整
+  `(g,a,b,t)`重组。
+
+所以下一关不是再写一篇小审计，而是构造并尝试证明一个新的 collective theorem：
+
+```text
+V10-COLLECTIVE-MONOMIAL-PROJECTOR-TYPE-IV
+
+在 actual source dyads上，对完整 (g,rho,t,a,b) normal form证明
+F^2 D^2 D^(-eta_D) X^o(1), D=F^2,
+且 eta_D>0；若要支付 strict 1/400，则完整损耗后 eta_D>1/200。
+等价 F-saving参数为 eta_F=2eta_D，阈值 eta_F>1/100。
+```
+
+首轮 proof engineering 应按 `rho`大小分三段：large prime-like `rho`先测试 trace
+engine；large complementary conductor `t`回到 root-number character坐标；中间
+varying/composite `rho`段才是需要新 dispersion/Kuznetsov输入的核心墙。任何分段都
+不得逐 cell取绝对值后再声称三枚符号仍有 credit。
+
+本轮只完成 exact route retype：`fixed-atom credit=0`、`strict 1/400=UNPAID`、
+`L2=NONE`、`TPC_207_TRIGGER=false`。地图中的 Bridge B（distinguished-seed
+genericity）仍独立开放；Logistic/Hénon只作结构与启发式辅助，不给 Bridge A
+解析账本加分。
