@@ -25,7 +25,8 @@ RH-368 integration commit:
 RH-369 integration commit:
 `77549262532625c5dec8ac514a97bcee7b4503fc`.
 
-RH-370 integration commit: pending release.
+RH-370 integration commit:
+`9ad958a1f326eae6f43f026c84ab9378a4a42f16`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
