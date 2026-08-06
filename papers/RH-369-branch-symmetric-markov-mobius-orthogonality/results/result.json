@@ -1,0 +1,675 @@
+{
+  "claim_boundary": {
+    "notes": [
+      "The theorem is pointwise in fixed t and has no common full-measure set over all t.",
+      "The Parry value t=phi^{-1} is an overlap, not a new physical construction.",
+      "The conditional variance density is not an unconditional Chowla result.",
+      "No Hilbert--Polya operator, von Mangoldt trace, zero identification, or RH implication is claimed."
+    ],
+    "physical_coordinate": "actual_same_clock_unnormalized_head_transport_open",
+    "route_b_first_blocker": "externally selected symbolic Markov parameter; no canonical arithmetic/operator identification"
+  },
+  "endpoint_diagnostic": {
+    "N": 14,
+    "interpretation": "finite exact reproduction only; no asymptotic fit",
+    "t": "1/2",
+    "variance": "143/16"
+  },
+  "exact_theorems": {
+    "conditional_density": "V_N/N -> 6/pi^2 only under ordinary fixed-shift two-point Chowla",
+    "fixed_parameter_orthogonality": "for every fixed t, nu_t-a.e. simultaneous all-continuous-observable Mobius cancellation",
+    "normalized_covariance": "odd lags 0; lag 2k equals (-(1-t))^k",
+    "stationary_law": "pi_t=(1,1-t,1-t,(1-t)^2)/(2-t)^2",
+    "transition_family": "P_t=[[t,0,1-t,0],[1,0,0,0],[0,t,0,1-t],[0,1,0,0]], 0<t<1",
+    "variance_bound": "0<=V_N<=((2-t)/t)N",
+    "variance_formula": "V_N=sum mu^2+2 sum_{k>=1} (-(1-t))^k sum_n mu(n)mu(n+2k)"
+  },
+  "false_claims": {
+    "canonical_spectral_determinant_constructed": false,
+    "hilbert_polya_constructed": false,
+    "markov_covariance_is_prime_trace": false,
+    "markov_family_is_henon_selected": false,
+    "parry_family_extension_is_new_physical_trace": false,
+    "riemann_hypothesis_proved": false,
+    "riemann_zeros_identified": false,
+    "uniform_in_t_theorem": false,
+    "variance_density_is_unconditional": false
+  },
+  "finite_checks": {
+    "all_pass": true,
+    "parameter_rows": [
+      {
+        "centered_p2_residual": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "characteristic_nontrivial_radius": 0.7071067811865476,
+        "expected_mean": "-1/3",
+        "expected_variance": "8/9",
+        "mean": "-1/3",
+        "odd_covariance_residual": "0",
+        "p4_positive": true,
+        "pass": true,
+        "q": "1/2",
+        "stationary": [
+          "4/9",
+          "2/9",
+          "2/9",
+          "1/9"
+        ],
+        "stationary_residual": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "t": "1/2",
+        "variance": "8/9"
+      },
+      {
+        "centered_p2_residual": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "characteristic_nontrivial_radius": 0.5773502691896257,
+        "expected_mean": "-1/2",
+        "expected_variance": "3/4",
+        "mean": "-1/2",
+        "odd_covariance_residual": "0",
+        "p4_positive": true,
+        "pass": true,
+        "q": "1/3",
+        "stationary": [
+          "9/16",
+          "3/16",
+          "3/16",
+          "1/16"
+        ],
+        "stationary_residual": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "t": "2/3",
+        "variance": "3/4"
+      },
+      {
+        "centered_p2_residual": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "characteristic_nontrivial_radius": 0.5,
+        "expected_mean": "-3/5",
+        "expected_variance": "16/25",
+        "mean": "-3/5",
+        "odd_covariance_residual": "0",
+        "p4_positive": true,
+        "pass": true,
+        "q": "1/4",
+        "stationary": [
+          "16/25",
+          "4/25",
+          "4/25",
+          "1/25"
+        ],
+        "stationary_residual": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "t": "3/4",
+        "variance": "16/25"
+      }
+    ],
+    "variance_rows": [
+      {
+        "N": 1,
+        "bound_holds": true,
+        "direct": "1",
+        "formula": "1",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 1,
+        "bound_holds": true,
+        "direct": "1",
+        "formula": "1",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 1,
+        "bound_holds": true,
+        "direct": "1",
+        "formula": "1",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 2,
+        "bound_holds": true,
+        "direct": "2",
+        "formula": "2",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 2,
+        "bound_holds": true,
+        "direct": "2",
+        "formula": "2",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 2,
+        "bound_holds": true,
+        "direct": "2",
+        "formula": "2",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 3,
+        "bound_holds": true,
+        "direct": "4",
+        "formula": "4",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 3,
+        "bound_holds": true,
+        "direct": "11/3",
+        "formula": "11/3",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 3,
+        "bound_holds": true,
+        "direct": "7/2",
+        "formula": "7/2",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 4,
+        "bound_holds": true,
+        "direct": "4",
+        "formula": "4",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 4,
+        "bound_holds": true,
+        "direct": "11/3",
+        "formula": "11/3",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 4,
+        "bound_holds": true,
+        "direct": "7/2",
+        "formula": "7/2",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 5,
+        "bound_holds": true,
+        "direct": "7/2",
+        "formula": "7/2",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 5,
+        "bound_holds": true,
+        "direct": "34/9",
+        "formula": "34/9",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 5,
+        "bound_holds": true,
+        "direct": "31/8",
+        "formula": "31/8",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 6,
+        "bound_holds": true,
+        "direct": "4",
+        "formula": "4",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 6,
+        "bound_holds": true,
+        "direct": "41/9",
+        "formula": "41/9",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 6,
+        "bound_holds": true,
+        "direct": "19/4",
+        "formula": "19/4",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 7,
+        "bound_holds": true,
+        "direct": "19/4",
+        "formula": "19/4",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 7,
+        "bound_holds": true,
+        "direct": "140/27",
+        "formula": "140/27",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 7,
+        "bound_holds": true,
+        "direct": "173/32",
+        "formula": "173/32",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 8,
+        "bound_holds": true,
+        "direct": "19/4",
+        "formula": "19/4",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 8,
+        "bound_holds": true,
+        "direct": "140/27",
+        "formula": "140/27",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 8,
+        "bound_holds": true,
+        "direct": "173/32",
+        "formula": "173/32",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 9,
+        "bound_holds": true,
+        "direct": "19/4",
+        "formula": "19/4",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 9,
+        "bound_holds": true,
+        "direct": "140/27",
+        "formula": "140/27",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 9,
+        "bound_holds": true,
+        "direct": "173/32",
+        "formula": "173/32",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 10,
+        "bound_holds": true,
+        "direct": "49/8",
+        "formula": "49/8",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 10,
+        "bound_holds": true,
+        "direct": "517/81",
+        "formula": "517/81",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 10,
+        "bound_holds": true,
+        "direct": "835/128",
+        "formula": "835/128",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 11,
+        "bound_holds": true,
+        "direct": "121/16",
+        "formula": "121/16",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 11,
+        "bound_holds": true,
+        "direct": "1838/243",
+        "formula": "1838/243",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 11,
+        "bound_holds": true,
+        "direct": "3905/512",
+        "formula": "3905/512",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 12,
+        "bound_holds": true,
+        "direct": "121/16",
+        "formula": "121/16",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 12,
+        "bound_holds": true,
+        "direct": "1838/243",
+        "formula": "1838/243",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 12,
+        "bound_holds": true,
+        "direct": "3905/512",
+        "formula": "3905/512",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 13,
+        "bound_holds": true,
+        "direct": "235/32",
+        "formula": "235/32",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 13,
+        "bound_holds": true,
+        "direct": "5713/729",
+        "formula": "5713/729",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 13,
+        "bound_holds": true,
+        "direct": "16591/2048",
+        "formula": "16591/2048",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      },
+      {
+        "N": 14,
+        "bound_holds": true,
+        "direct": "143/16",
+        "formula": "143/16",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "1/2"
+      },
+      {
+        "N": 14,
+        "bound_holds": true,
+        "direct": "6620/729",
+        "formula": "6620/729",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "2/3"
+      },
+      {
+        "N": 14,
+        "bound_holds": true,
+        "direct": "9455/1024",
+        "formula": "9455/1024",
+        "formula_equals_direct": true,
+        "nonnegative": true,
+        "t": "3/4"
+      }
+    ]
+  },
+  "gates": {
+    "A_canonical_intrinsic_dynamical_spectral_determinant": false,
+    "B_time_oriented_scattering_or_unitary_completion": false,
+    "C_self_adjoint_generator_and_intrinsic_T_log_T": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "overlap_ledger": {
+    "RH-366": "supplies the frozen graph, sign observable, Parry specialization, and a.s. proof template",
+    "RH-367": "not used as a continuum spectral bridge",
+    "RH-368": "distinct PCF parity-factor capacity; not identified with this family",
+    "distinct_edge": true,
+    "henon_mobius_correlations": "supplies the source theorem and exact Parry covariance anchors"
+  },
+  "parameter_checks": [
+    {
+      "centered_p2_residual": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "characteristic_nontrivial_radius": 0.7071067811865476,
+      "expected_mean": "-1/3",
+      "expected_variance": "8/9",
+      "mean": "-1/3",
+      "odd_covariance_residual": "0",
+      "p4_positive": true,
+      "pass": true,
+      "q": "1/2",
+      "stationary": [
+        "4/9",
+        "2/9",
+        "2/9",
+        "1/9"
+      ],
+      "stationary_residual": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "t": "1/2",
+      "variance": "8/9"
+    },
+    {
+      "centered_p2_residual": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "characteristic_nontrivial_radius": 0.5773502691896257,
+      "expected_mean": "-1/2",
+      "expected_variance": "3/4",
+      "mean": "-1/2",
+      "odd_covariance_residual": "0",
+      "p4_positive": true,
+      "pass": true,
+      "q": "1/3",
+      "stationary": [
+        "9/16",
+        "3/16",
+        "3/16",
+        "1/16"
+      ],
+      "stationary_residual": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "t": "2/3",
+      "variance": "3/4"
+    },
+    {
+      "centered_p2_residual": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "characteristic_nontrivial_radius": 0.5,
+      "expected_mean": "-3/5",
+      "expected_variance": "16/25",
+      "mean": "-3/5",
+      "odd_covariance_residual": "0",
+      "p4_positive": true,
+      "pass": true,
+      "q": "1/4",
+      "stationary": [
+        "16/25",
+        "4/25",
+        "4/25",
+        "1/25"
+      ],
+      "stationary_residual": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "t": "3/4",
+      "variance": "16/25"
+    }
+  ],
+  "route_verdict": {
+    "route_a": "GO",
+    "route_b": "STOP_SCOPED"
+  },
+  "source_audit": {
+    "pass": true,
+    "rows": [
+      {
+        "actual_sha256": "42d1567b7b746bf2dd775b94bd539cf781ea45812a7dca092d0bbd0a46d191d7",
+        "expected_sha256": "42d1567b7b746bf2dd775b94bd539cf781ea45812a7dca092d0bbd0a46d191d7",
+        "pass": true,
+        "path": "henon_mobius_correlations/henon_mobius/sft.py"
+      },
+      {
+        "actual_sha256": "5bee8e61f615d674d92bafb9b00163003dc2f8b91b5c4e63316c46dd27980eb7",
+        "expected_sha256": "5bee8e61f615d674d92bafb9b00163003dc2f8b91b5c4e63316c46dd27980eb7",
+        "pass": true,
+        "path": "henon_mobius_correlations/paper/sections/3_henon_setup.tex"
+      },
+      {
+        "actual_sha256": "045ff9554dae44d923255b8d33d0509b47e01335390839d2253effcad42cd5a7",
+        "expected_sha256": "045ff9554dae44d923255b8d33d0509b47e01335390839d2253effcad42cd5a7",
+        "pass": true,
+        "path": "henon_mobius_correlations/paper/sections/5_parry_typical.tex"
+      },
+      {
+        "actual_sha256": "634fd9543ceab91c19766015141e83636d64213f131d5c1b098385ef68c3b102",
+        "expected_sha256": "634fd9543ceab91c19766015141e83636d64213f131d5c1b098385ef68c3b102",
+        "pass": true,
+        "path": "henon_mobius_correlations/THEOREM_PACKAGE.md"
+      },
+      {
+        "actual_sha256": "d357192bfb80da578459cdac4add37840b8e1e47c5b2188ca0e49e7b096cbb23",
+        "expected_sha256": "d357192bfb80da578459cdac4add37840b8e1e47c5b2188ca0e49e7b096cbb23",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/README.md"
+      },
+      {
+        "actual_sha256": "6a125ca90b0964945f95b39397b6e83f15a23ad24c94d2e8b9c90d320db8e418",
+        "expected_sha256": "6a125ca90b0964945f95b39397b6e83f15a23ad24c94d2e8b9c90d320db8e418",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/results/result.json"
+      },
+      {
+        "actual_sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751",
+        "expected_sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json"
+      }
+    ]
+  },
+  "source_commits": {
+    "henon_mobius_correlations": "34490443f50cfe9af9ff93888e51e7e7e534a5a7",
+    "prime_dynamics_theory_rh366_release": "6da1b94deaa865bbb297546f3de238433184772a"
+  },
+  "status": "RH-369_branch_symmetric_markov_mobius_orthogonality"
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["status", "route_verdict", "gates", "false_claims", "source_audit", "parameter_checks", "finite_checks", "endpoint_diagnostic"],
+  "properties": {
+    "status": {"const": "RH-369_branch_symmetric_markov_mobius_orthogonality"},
+    "route_verdict": {
+      "type": "object",
+      "required": ["route_a", "route_b"],
+      "properties": {"route_a": {"const": "GO"}, "route_b": {"const": "STOP_SCOPED"}}
+    },
+    "gates": {"type": "object", "additionalProperties": {"const": false}},
+    "false_claims": {"type": "object", "additionalProperties": {"const": false}},
+    "source_audit": {
+      "type": "object",
+      "required": ["pass", "rows"],
+      "properties": {"pass": {"const": true}, "rows": {"type": "array"}}
+    },
+    "parameter_checks": {"type": "array", "minItems": 3},
+    "finite_checks": {
+      "type": "object",
+      "required": ["all_pass", "parameter_rows", "variance_rows"],
+      "properties": {"all_pass": {"const": true}, "parameter_rows": {"type": "array"}, "variance_rows": {"type": "array"}}
+    },
+    "endpoint_diagnostic": {
+      "type": "object",
+      "required": ["N", "t", "variance"],
+      "properties": {"N": {"const": 14}, "t": {"const": "1/2"}, "variance": {"type": "string"}}
+    }
+  }
+}
