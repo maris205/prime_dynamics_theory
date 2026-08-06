@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "status",
+    "source_locks",
+    "source_commits",
+    "graph_instances",
+    "graph_capacity",
+    "finite_audit",
+    "theorem_contract",
+    "claim_boundary",
+    "gates"
+  ],
+  "properties": {
+    "status": {"type": "string"},
+    "source_locks": {
+      "type": "object",
+      "required": ["count", "files", "pass"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 1},
+        "files": {"type": "object", "additionalProperties": {"type": "string"}},
+        "pass": {"const": true}
+      },
+      "additionalProperties": true
+    },
+    "source_commits": {"type": "object", "additionalProperties": {"type": "string"}},
+    "graph_instances": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "object", "required": ["name", "safe", "one_site", "path_check"]}
+    },
+    "graph_capacity": {"type": "object"},
+    "finite_audit": {"type": "object", "required": ["endpoint_N", "prefix_witness_rows"]},
+    "theorem_contract": {"type": "object"},
+    "claim_boundary": {"type": "object", "required": ["route_a", "route_b"]},
+    "gates": {
+      "type": "object",
+      "required": [
+        "A_canonical_intrinsic_dynamical_spectral_determinant",
+        "B_time_oriented_scattering_or_unitary_completion",
+        "C_self_adjoint_generator_and_intrinsic_T_log_T",
+        "D_von_mangoldt_weighted_prime_power_traces",
+        "E_completed_zeta_divisor_equality"
+      ],
+      "additionalProperties": {"const": false}
+    }
+  },
+  "additionalProperties": true
+}
