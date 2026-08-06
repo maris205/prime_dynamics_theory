@@ -2,19 +2,22 @@
 
 Status date: 2026-08-06
 
-Current completed endpoint: RH-366
+Current completed endpoint: RH-367
 
-Completed research batch: RH-352 through RH-366
+Completed research batch: RH-352 through RH-367
 
-Post-four-volume independent theorem edges: RH-362 through RH-366
+Post-four-volume independent theorem edges: RH-362 through RH-367
 
-Latest route verdict: RH-366 Route A `GO`; Route B `STOP_SCOPED`
+Latest route verdict: RH-367 Route A `GO`; Route B `STOP_SCOPED`
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
 
 RH-366 integration commit:
 `0396fab97bbe3348c8237f8734dec0e1893fd3bf`
+
+RH-367 integration commit: recorded by the release commit that adds this
+handoff entry and the RH-367 publication package.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -40,6 +43,11 @@ Read completely:
 
 - `AGENTS.md`
 - `RH_HANDOFF.md`
+- `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
+- `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
+- `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
+- `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/results/result.json`
+- `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/main.pdf`
 - `papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/README.md`
 - `papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/UPDATED_ROADMAP.md`
 - `papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/THEOREM_LEDGER.md`
@@ -48,8 +56,9 @@ Read completely:
 
 Retain RH-362 as the return-rank input, RH-363 as the entropy-tower input,
 RH-364 as the weighted-survivor/prime-copy input, RH-365 as the unweighted
-return-bouquet input, RH-366 as the Hénon Möbius-correlation input, and RH-361
-as the immediate endpoint of the still-open original physical branch.
+return-bouquet input, RH-366 as the Hénon Möbius-correlation input, RH-367 as
+the boundary-aligned cyclic-Ulam input, and RH-361 as the immediate endpoint
+of the still-open original physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -59,11 +68,11 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-366 does not automatically activate RH-367. The next breadth-first source
-lock must compare the remaining external theorem packages, especially the
+RH-367 does not automatically activate RH-368. The next breadth-first source
+lock must compare the remaining external theorem packages, especially a
+common strong-space projector/resolvent bridge for cyclic Ulam data and the
 capacity-limit/nonadaptive-measure continuations of the certified Hénon
-Möbius package and the cyclic-Ulam structural package, against the completed
-RH-1--RH-366 corpus. RH search
+Möbius package, against the completed RH-1--RH-367 corpus. RH search
 remains breadth-first: generate bold source-backed candidates, evaluate
 standalone discovery value as Route A and RH data-type compatibility as Route
 B, then issue `GO`, `STOP_SCOPED`, or `NOT_TESTABLE`. Create a new number only
@@ -170,14 +179,16 @@ counterloop. RH-354's normalized actual `p` tail is neither an unnormalized
 complete prefix nor a `q/E_off` theorem. Deterministic `s` is not an actual
 head, root set, rank law, or spectral submultiset.
 
-RH-362 through RH-366 add a separate arithmetic-dynamical branch. RH-362
+RH-362 through RH-367 add a separate arithmetic-dynamical branch. RH-362
 builds one marked modular cycle per prime; RH-363 inserts the resulting ranks
 into a pairwise-coprime admissible-shift tower; RH-364 derives weighted
 analytic domains for a certified local survivor and audits an engineered
 prime-copy operator; RH-365 proves an analytic disk and odd-prime primitive
 anchors for the unweighted marked bouquet; RH-366 proves a periodic/Parry
 Möbius-orthogonality dichotomy, an offline adaptive correlation, exact Parry
-covariances, and an open capacity bracket on that survivor. None is identified
+covariances, and an open capacity bracket on that survivor; RH-367 proves the
+exact aligned finite-Ulam block/sign inheritance and crossing-cell phase
+defect for a cyclic postcritically finite quadratic map. None is identified
 with either typed physical branch, so the physical blocker below is unchanged.
 
 The deterministic target side remains exact and all-order: RH-263 gives the
@@ -571,7 +582,59 @@ von-Mangoldt prime-power ledger, or spectral zero set.  Positive entropy means
 the construction is outside the zero-entropy hypothesis of Sarnak's
 conjecture.  Gates A--E remain false/open.
 
-## 4. Compact conclusions from RH-352 through RH-366
+### 3.6 RH-367 boundary-aligned cyclic-Ulam structure and phase leakage
+
+RH-367 freezes the postcritically finite quadratic map
+
+```text
+f_u(x)=1-u x^2,
+u^3-2u^2+2u-2=0,
+J=[-(u-1),1],
+```
+
+with `r=u-1`, `B_0=[-r,r]`, and `B_1=[r,1]`.  The exact band exchange is
+`f(B_0)=B_1` and `f(B_1)=B_0`.  It proves, for every finite exact
+cell-overlap Ulam partition with `r` as a cell boundary,
+
+```text
+P_h = [[0,A],[B,0]],       P_h s=-s,
+```
+
+where `s` is the band-sign vector.  This gives a finite-dimensional
+`-1` mode and no claim about isolated continuum spectrum.
+
+For a cell crossing `r`, with fraction `theta` in `B_0`, the projected sign
+defect is exactly
+
+```text
+1-(2theta-1)^2=4theta(1-theta),
+```
+
+and a cell of width `h` contributes `4h theta(1-theta)`.  The global
+stationary same-band mass and near-`-1` displacement are finite phase
+diagnostics, not the local identity itself.  The frozen source scan has 33
+phases at each of `N=256,512,1024,2048` plus one snapped aligned row: 136
+rows, four aligned and 132 crossing.  Crossing projected mass ranges from
+about `1.14e-4` to `7.71e-3`; maximum near-`-1` displacement is about
+`4.91e-3`.
+
+The cyclic source is locked at
+`e7d21f646498d77e1c3213d1e4f35dc8466038ff`.  Source-lock and proof-audit
+checks report 12/12 upstream tests, geometry residual at most `4.44e-16`,
+and a zero-failure source protocol.  The RH-367 executable package has
+23/23 external-input locks, 9/9 local tests, 21 publication files, 23
+external inputs, a zero-failure archive, and a four-page PDF with 16 embedded
+Unicode-mapped font rows; the semantic PDF is byte-identical to `main.pdf`.
+
+The overlap ledger against RH-3, RH-10, and RH-55 is positive: those papers
+cover continuum parity/periodograms, long-cycle/noise determinants, and a
+folded-Gaussian strong--weak midpoint bridge, respectively, but do not prove
+this arbitrary aligned finite-Ulam block theorem plus crossing-cell identity.
+Route A is `GO`; Route B is `STOP_SCOPED` at the missing common strong-space
+projector/resolvent bridge.  No universal `sqrt(sigma)` law, arithmetic
+operator, prime-power trace, zeta-zero model, or RH implication is claimed.
+
+## 4. Compact conclusions from RH-352 through RH-367
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -621,6 +684,12 @@ conjecture.  Gates A--E remain false/open.
   variance bound; a conditional `6/pi^2` variance-density limit; and an exact
   `O(N)` adaptive-capacity bracket. The capacity limit and any intrinsic
   arithmetic coupling remain open, and the package closes no Gate.
+- **RH-367:** Exact aligned finite-Ulam anti-diagonal block structure and
+  band-sign `-1` inheritance for the PCF two-band map; exact crossing-cell
+  projection defect `4theta(1-theta)` and width-weighted defect
+  `4h theta(1-theta)`; and a 136-row finite phase audit. No continuum
+  projector/resolvent bridge or universal noise exponent is proved, and the
+  package closes no Gate.
 
 ## 5. Route firewall and reopening triggers
 
@@ -641,6 +710,11 @@ Do not:
   theorem or infer ordinary Chowla from the finite variance rows;
 - identify a Möbius-weighted orbit average or a Parry variance with a
   von-Mangoldt trace, spectral determinant, or Riemann-zero model;
+- promote the RH-367 finite Ulam `-1` mode to an isolated continuum resonance;
+- promote a finite phase scan or fitted noise slope to a universal asymptotic
+  law;
+- identify the crossing-cell local identity `4h theta(1-theta)` with the
+  global stationary leakage observable for every discretization;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -656,41 +730,34 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-366. Triggers 1--4 remain untouched. RH-365 closes the natural
-return-bouquet height/radius route at its declared scope, while RH-366 closes
-the declared periodic/typical/capacity audit at its declared scope. For
-RH-367 and later, the shortest exact candidates are:
+RH-367. Triggers 1--4 remain untouched. RH-365 closes the natural
+return-bouquet height/radius route at its declared scope, RH-366 closes the
+declared periodic/typical/capacity audit, and RH-367 closes the declared
+finite-Ulam alignment/phase-defect audit. For RH-368 and later, the shortest
+exact candidates are:
 
-1. A capacity-limit theorem (or a rigorous nonexistence/scoped negative) for
+1. A common strong-space projector/resolvent theorem that genuinely connects
+   the RH-367 finite-Ulam family to a declared continuum operator. Without
+   this bridge, no spectral limit may be inferred from phase scans.
+2. A capacity-limit theorem (or a rigorous nonexistence/scoped negative) for
    `lim K_N/N` under the distance-two constraint. Pair correlations alone do
    not control this nonlinear maximum-weight functional.
-2. A nonadaptive-measure theorem identifying geometrically or dynamically
+3. A nonadaptive-measure theorem identifying geometrically or dynamically
    selected invariant measures, beyond Parry, for which a quantitative
    Möbius theorem holds without reading the arithmetic sequence.
-3. A general constraint-graph classification of mixing subshifts admitting
+4. A general constraint-graph classification of mixing subshifts admitting
    explicit arithmetic-adapted points and graph-dependent capacity brackets.
-4. A genuine composite-order primitive-divisor upgrade, such as an eventual
+5. A genuine composite-order primitive-divisor upgrade, such as an eventual
    Zsigmondy theorem or a `p`-adic lifting bound strong enough to force new
    primes. No such theorem is present in the locked source.
-5. A sharp return-rank multiplicity theorem strong enough to determine the
+6. A sharp return-rank multiplicity theorem strong enough to determine the
    exact origin radius or a genuine boundary law for `Z_0`. RH-365 supplies
    only the bracket `[2^(-1/2),1]`.
-6. A quantitative finite-entropy-data theorem that certifies or excludes a
+7. A quantitative finite-entropy-data theorem that certifies or excludes a
    finite prime/rank prefix without promoting numerical conditioning to exact
    infinite recovery.
-7. An intrinsic pressure/transfer/groupoid operator producing the entropy
+8. An intrinsic pressure/transfer/groupoid operator producing the entropy
    tower without inserting every modulus by hand.
-8. A boundary-aligned cyclic-Ulam structural paper at commit
-   `e7d21f646498d77e1c3213d1e4f35dc8466038ff`. The source proves the exact
-   two-band exchange, the `L^1` sign mode, the block matrix
-   `P=[[0,A],[B,0]]` with `Ps=-s` for every aligned partition, and the exact
-   crossing-cell leakage defect `4h theta(1-theta)`. Route A is provisionally
-   `GO`; Route B is `STOP_SCOPED` because the result is finite-dimensional
-   Ulam/L1 data and lacks a common strong-space projector/resolvent theorem or
-   intrinsic arithmetic operator. The noisy square-root slopes remain finite
-   diagnostics only. Before numbering, run an explicit overlap ledger against
-   RH-3, RH-10, and RH-55; if the structural edge is not distinct, keep it
-   non-numbered.
 9. One of the original physical triggers 1--4.
 
 RH-364 closes the declared weighted-H\'enon prime-copy audit. It must still be
@@ -713,6 +780,13 @@ are Parry-measure statements; and its finite capacity bracket does not assert
 a limit. Repackaging the same offline coding, finite plateau, or conditional
 Chowla comparison is not a new trigger. Any successor must supply a new
 source-backed theorem or a proved scoped negative in a distinct data type.
+
+RH-367 closes the declared boundary-aligned cyclic-Ulam audit. Its finite
+anti-diagonal block theorem and local crossing-cell identity must not be
+repackaged as a continuum spectral theorem; its phase scan and noisy slopes
+are finite diagnostics only. A successor must either prove the missing
+strong-space projector/resolvent bridge or supply a genuinely different
+source-backed edge.
 
 Even `D_(4k)(R)->0` would transfer only named moment/budget laws. Root, rank,
 spectral-submultiset, and canonical determinant identification remain
@@ -887,7 +961,7 @@ operator trace, determinant, or von-Mangoldt prime-power ledger. Gates A--E
 remain false/open, and the physical coordinate remains
 `actual_same_clock_unnormalized_head_transport_open`.
 
-### 6.4 RH-367 candidate overlap ledger (read-only, 2026-08-06)
+### 6.4 RH-367 source lock, overlap ledger, and route decision (2026-08-06)
 
 The only fresh candidate is the boundary-aligned cyclic-Ulam structural
 package at
@@ -915,15 +989,52 @@ The overlap audit is positive but narrow:
   two-band finite-Ulam sign inheritance or its crossing-cell defect.
 
 Thus the cyclic package is a distinct finite-dimensional theorem/diagnostic
-edge after this ledger, not a rebranding of RH-3, RH-10, or RH-55.  Provisional
-decision for RH-367 is `Route A=GO`, `Route B=STOP_SCOPED`, with a narrow
-scope: exact aligned block/sign inheritance and phase-local leakage only.
-The Route-B blocker is the absent common strong-space projector/resolvent
-theorem; finite noisy slopes remain diagnostics.  If the eventual paper
-passes this exact scope, it may be numbered RH-367.  Gates A--E remain
-false/open and the physical coordinate is unchanged.
+edge after this ledger, not a rebranding of RH-3, RH-10, or RH-55.  Independent
+source-lock and proof-audit checks returned `GO` narrowly, with 12/12 upstream
+tests and no source changes.  The final RH-367 decision is
+`Route A=GO`, `Route B=STOP_SCOPED`, with scope restricted to exact aligned
+block/sign inheritance, the local crossing-cell identity, and the frozen
+phase protocol.  The Route-B blocker is the absent common strong-space
+projector/resolvent theorem; finite noisy slopes remain diagnostics.  Gates
+A--E remain false/open and the physical coordinate is unchanged.
 
 ## 7. Reproduction and publication audit
+
+Final RH-367 audit:
+
+- Source locks: `23/23`; cyclic source commit
+  `e7d21f646498d77e1c3213d1e4f35dc8466038ff`; overlap sources RH-3, RH-10,
+  RH-55 and the four-volume verification all match their frozen hashes.
+- Upstream cyclic checks: `12/12` tests; geometry maximum residual
+  `4.44e-16`; phase scan `136` rows (`4` aligned, `132` crossing).
+- Local tests: `9/9`; source audit passes; all Gates and forbidden-claim
+  booleans remain false.  Individual archive: `21` publication files and
+  `23` external inputs, zero failures.
+- PDF: `4` pages and `209,891` bytes; `16` embedded, subsetted,
+  Unicode-mapped font rows; Ghostscript parsing and text extraction pass; all
+  `4/4` rendered pages were visually inspected.
+- Complete LaTeX logs have no undefined references, overfull/underfull boxes,
+  actionable warnings, or rerun notices.  The semantic PDF is byte-identical
+  to `main.pdf`.
+
+RH-367 final hashes:
+
+```text
+main.tex
+b6d59b16169a73b386db927618e3be198c2a369e13c907fd837d3057f8369ecb
+
+PDF
+ad5381a2164b84f455b043f2352b932d8d9c6b258dc6afc520b769653027a90e
+
+result
+473fb75147bf38c47f38d1f2254ae1ca0cef64cd30e3731eafa51e59ef39be7f
+
+manifest
+89aea280c88426dca3ccd85d54ffde15019bac27ef17b6b53f0ef087e547a99b
+
+verification
+dacd22835634f71cb40e046729b7add9230c80470c1d3feca30ec12300d7246a
+```
 
 Final RH-366 audit:
 
@@ -1207,11 +1318,12 @@ b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751
 ```text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-366 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-367 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
-return-bouquet input, RH-366 as the Möbius-correlation input, RH-MVP2 as the
-corpus umbrella, and RH-361 as the physical endpoint.
+return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
+boundary-aligned cyclic-Ulam input, RH-MVP2 as the corpus umbrella, and RH-361
+as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -1240,18 +1352,22 @@ coding to spontaneous arithmetic coupling, the finite capacity plateau to a
 limit, the conditional Chowla consequence to an unconditional theorem, or
 any orbit average/variance to a prime-power trace or Riemann-zero model.
 
-For the next breadth-first source lock, investigate the RH-366 roadmap in
-order: (i) existence or a proved scoped negative for `lim K_N/N`; (ii)
-nonadaptive invariant measures with quantitative Möbius orthogonality; (iii)
-general distance-two/constraint-graph capacity laws; (iv) the cyclic-Ulam
-aligned block/sign-mode theorem and a rigorous leakage bound at
-`cyclic_ulam_map=e7d21f646498d77e1c3213d1e4f35dc8466038ff`; this candidate is
-Route-A `GO` only after the explicit RH-3/RH-10/RH-55 overlap ledger, and its
-finite noisy slopes must remain non-theorem diagnostics; (v) the composite
-primitive-divisor, sharp-radius, finite-entropy-data, intrinsic globalization,
-and original same-clock physical routes. Evaluate each by Route A and Route B
-before assigning RH-367. In parallel retain the exact source locks and the
-four-volume foundation.
+RH-367 is an independent trigger-5 theorem edge and does not close any
+physical Gate. It proves exact aligned finite-Ulam block/sign inheritance and
+the crossing-cell identity `4h theta(1-theta)` for the declared PCF map. Do
+not promote the finite `-1` mode to an isolated continuum resonance, the
+phase scan to an asymptotic law, or fitted noisy slopes to a universal
+`sqrt(sigma)` theorem.
+
+For the next breadth-first source lock, investigate the RH-367 roadmap in
+order: (i) a common strong-space projector/resolvent theorem connecting the
+finite-Ulam family to a declared continuum operator; (ii) existence or a
+proved scoped negative for `lim K_N/N`; (iii) nonadaptive invariant measures
+with quantitative Möbius orthogonality; (iv) general constraint-graph capacity
+laws; (v) the composite primitive-divisor, sharp-radius, finite-entropy-data,
+intrinsic globalization, cyclic-noise, and original same-clock physical
+routes. Evaluate each by Route A and Route B before assigning RH-368. In
+parallel retain the exact source locks and the four-volume foundation.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
 factor, or full H_p zeta. Do not promote the entropy tower, weighted Euler

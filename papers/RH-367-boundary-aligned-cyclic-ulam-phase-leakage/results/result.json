@@ -1,0 +1,299 @@
+{
+  "claim_boundary": {
+    "notes": [
+      "Finite Ulam/L1 statements are not continuum spectral statements.",
+      "Noise slopes are finite-range diagnostics only.",
+      "No arithmetic, zeta, prime, operator, or RH identification is supplied."
+    ],
+    "physical_coordinate": "actual_same_clock_unnormalized_head_transport_open",
+    "route_b_first_blocker": "common strong-space projector/resolvent theorem is absent"
+  },
+  "exact_theorems": {
+    "aligned_block": "P=[[0,A],[B,0]] and P s=-s for any exact partition with r as a boundary",
+    "crossing_projection": "1-(2 theta-1)^2=4 theta(1-theta)",
+    "global_projection_mass": "zero for aligned exact Ulam; positive phase diagnostic when crossing",
+    "weighted_local_defect": "4 h theta(1-theta)"
+  },
+  "false_claims": {
+    "arithmetic_coupling_constructed": false,
+    "continuum_projector_or_resolvent_theorem": false,
+    "finite_phase_scan_is_an_asymptotic_law": false,
+    "finite_ulam_matrix_is_canonical_operator": false,
+    "hilbert_polya_constructed": false,
+    "isolated_continuum_minus_one_resonance": false,
+    "riemann_hypothesis_proved": false,
+    "riemann_zeros_identified": false,
+    "sqrt_sigma_leakage_is_a_theorem": false,
+    "universal_noise_exponent": false,
+    "von_mangoldt_trace_constructed": false
+  },
+  "finite_checks": {
+    "aligned_block_shape": [
+      8,
+      8
+    ],
+    "aligned_projected_same_band_mass": 0.0,
+    "aligned_row_sums": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "crossing_identity_pass": true,
+    "crossing_identity_rows": [
+      {
+        "identity": 0.0,
+        "local_defect": 0.0,
+        "theta": 0.0
+      },
+      {
+        "identity": 0.75,
+        "local_defect": 0.1875,
+        "theta": 0.25
+      },
+      {
+        "identity": 1.0,
+        "local_defect": 0.25,
+        "theta": 0.5
+      },
+      {
+        "identity": 0.75,
+        "local_defect": 0.1875,
+        "theta": 0.75
+      },
+      {
+        "identity": 0.0,
+        "local_defect": 0.0,
+        "theta": 1.0
+      }
+    ],
+    "geometry_max_abs_residual": 4.440892098500626e-16,
+    "geometry_residuals": {
+      "critical_0_to_1": 0.0,
+      "critical_1_to_minus_r": 0.0,
+      "critical_minus_r_to_r": 0.0,
+      "critical_r_fixed": 0.0,
+      "lrl_boundary_f2_zero": 0.0,
+      "parameter_polynomial": 4.440892098500626e-16
+    },
+    "sign_mode_image": [
+      -1.0,
+      -1.0,
+      -1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "sign_mode_residual": 0.0
+  },
+  "gates": {
+    "A_canonical_intrinsic_dynamical_spectral_determinant": false,
+    "B_time_oriented_scattering_or_unitary_completion": false,
+    "C_self_adjoint_generator_and_intrinsic_T_log_T": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "geometry": {
+    "interval": [
+      -0.5436890126920764,
+      1.0
+    ],
+    "max_residual": 4.440892098500626e-16,
+    "r": 0.5436890126920764,
+    "u": 1.5436890126920764
+  },
+  "overlap_ledger": {
+    "RH-10": "long-cycle/noise traces and parity determinant; no phase-local Ulam defect",
+    "RH-3": "continuum parity eigenmode and periodograms; no crossing-cell Ulam theorem",
+    "RH-55": "folded-Gaussian midpoint-Ulam strong-weak transfer; no PCF block inheritance",
+    "distinct_edge": true
+  },
+  "phase_protocol": {
+    "cells": [
+      256,
+      512,
+      1024,
+      2048
+    ],
+    "interpretation": "finite diagnostic; no universal power law",
+    "phase_count": 33,
+    "rows": 136,
+    "source": "cyclic_ulam_map/results/phase_scan.json"
+  },
+  "phase_scan": {
+    "aligned_projected_mass_max": 0.0,
+    "aligned_rows": 4,
+    "cells": [
+      256,
+      512,
+      1024,
+      2048
+    ],
+    "crossing_distance_to_minus_one_max": 0.004904083996404296,
+    "crossing_projected_mass_max": 0.007706249577602585,
+    "crossing_projected_mass_min": 0.00011371447816197307,
+    "crossing_rows": 132,
+    "max_row_sum_error": 6.367299132392645e-09,
+    "max_stationary_l1_residual": 1.8750143581866552e-13,
+    "phase_count": 33,
+    "row_count": 136
+  },
+  "route_verdict": {
+    "route_a": "GO",
+    "route_b": "STOP_SCOPED"
+  },
+  "source_audit": {
+    "pass": true,
+    "rows": [
+      {
+        "actual_sha256": "bda637e0838b156ae3b147e70c82770151756ab01c57cd463991067aaf538c28",
+        "expected_sha256": "bda637e0838b156ae3b147e70c82770151756ab01c57cd463991067aaf538c28",
+        "pass": true,
+        "path": "cyclic_ulam_map/README.md"
+      },
+      {
+        "actual_sha256": "f14d98e5b13c6332a058e5c9aebc3d906aae1f70ef6781dbc15f05d5ac9640ae",
+        "expected_sha256": "f14d98e5b13c6332a058e5c9aebc3d906aae1f70ef6781dbc15f05d5ac9640ae",
+        "pass": true,
+        "path": "cyclic_ulam_map/research/PROOF_PACKAGE.md"
+      },
+      {
+        "actual_sha256": "0bac05d7fa0f2519b6b8b51c3a570522111342fad50a44a140158c212d046eec",
+        "expected_sha256": "0bac05d7fa0f2519b6b8b51c3a570522111342fad50a44a140158c212d046eec",
+        "pass": true,
+        "path": "cyclic_ulam_map/research/PAPER2_GATE_REPORT.md"
+      },
+      {
+        "actual_sha256": "a577012779940e5f3efde148cbf41779553234feaabc9167889ba97665b3399a",
+        "expected_sha256": "a577012779940e5f3efde148cbf41779553234feaabc9167889ba97665b3399a",
+        "pass": true,
+        "path": "cyclic_ulam_map/paper/main.tex"
+      },
+      {
+        "actual_sha256": "8cd15c1628153cdabef03f767f0fc9ba5b49e15695c1cf5c4e2f08096a16adb5",
+        "expected_sha256": "8cd15c1628153cdabef03f767f0fc9ba5b49e15695c1cf5c4e2f08096a16adb5",
+        "pass": true,
+        "path": "cyclic_ulam_map/paper/sections/3_map_observables.tex"
+      },
+      {
+        "actual_sha256": "dcb68b82a385eb24d49b11bb3d447e0566aee643ae2af0d8eb00894f7100c14f",
+        "expected_sha256": "dcb68b82a385eb24d49b11bb3d447e0566aee643ae2af0d8eb00894f7100c14f",
+        "pass": true,
+        "path": "cyclic_ulam_map/paper/sections/4_ulam_theory.tex"
+      },
+      {
+        "actual_sha256": "c3080f3a94d21ccc265c7f69598ab21b53ac1ff3bd2aa4dee9a92e0564b17f46",
+        "expected_sha256": "c3080f3a94d21ccc265c7f69598ab21b53ac1ff3bd2aa4dee9a92e0564b17f46",
+        "pass": true,
+        "path": "cyclic_ulam_map/paper/sections/5_experiments.tex"
+      },
+      {
+        "actual_sha256": "064c002cd5e3684324ba8fce317bc2d6cef97be6ce6748faea31425a69932328",
+        "expected_sha256": "064c002cd5e3684324ba8fce317bc2d6cef97be6ce6748faea31425a69932328",
+        "pass": true,
+        "path": "cyclic_ulam_map/paper/sections/6_limitations_conclusion.tex"
+      },
+      {
+        "actual_sha256": "376efa023edb53414f879443b9a9e98aaf6eeda9cbf1a904a5445fbaf439bc17",
+        "expected_sha256": "376efa023edb53414f879443b9a9e98aaf6eeda9cbf1a904a5445fbaf439bc17",
+        "pass": true,
+        "path": "cyclic_ulam_map/results/geometry_certificate.json"
+      },
+      {
+        "actual_sha256": "c86f803b25e7f7e51e4ff07306f30f2e9d4c3e71d23e5e367277e6c3b09e03a0",
+        "expected_sha256": "c86f803b25e7f7e51e4ff07306f30f2e9d4c3e71d23e5e367277e6c3b09e03a0",
+        "pass": true,
+        "path": "cyclic_ulam_map/results/deterministic_gate.json"
+      },
+      {
+        "actual_sha256": "dbe7f9b888aea977c737b906436797dccd87df1478e2e2da1dbc82f798e66d9a",
+        "expected_sha256": "dbe7f9b888aea977c737b906436797dccd87df1478e2e2da1dbc82f798e66d9a",
+        "pass": true,
+        "path": "cyclic_ulam_map/results/phase_scan.json"
+      },
+      {
+        "actual_sha256": "679715a0b418044f8b8e6ec0a3672b0887e1ed14c25eb811372322586a8d3981",
+        "expected_sha256": "679715a0b418044f8b8e6ec0a3672b0887e1ed14c25eb811372322586a8d3981",
+        "pass": true,
+        "path": "cyclic_ulam_map/results/noise_gate.json"
+      },
+      {
+        "actual_sha256": "63928805abbd528c8d80d644dca21ac4aa31bc2ebae0f4f83b5fc6cd91e654e3",
+        "expected_sha256": "63928805abbd528c8d80d644dca21ac4aa31bc2ebae0f4f83b5fc6cd91e654e3",
+        "pass": true,
+        "path": "cyclic_ulam_map/cyclic_ulam/ulam.py"
+      },
+      {
+        "actual_sha256": "a4f0763375dc26af223d2a03ca8af791e4204cd770aa8c2a97079b7136cec37c",
+        "expected_sha256": "a4f0763375dc26af223d2a03ca8af791e4204cd770aa8c2a97079b7136cec37c",
+        "pass": true,
+        "path": "cyclic_ulam_map/cyclic_ulam/geometry.py"
+      },
+      {
+        "actual_sha256": "3112e88cb673040b94268370d816cac2483fd4139793d1adb2d2d60ac9a67e52",
+        "expected_sha256": "3112e88cb673040b94268370d816cac2483fd4139793d1adb2d2d60ac9a67e52",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-3-parity-resolved-band-merging-spectrum/README.md"
+      },
+      {
+        "actual_sha256": "5d9cf065571a2877301abc7c1eabdc3e75670f56615d9fca2454ba5a690acc3c",
+        "expected_sha256": "5d9cf065571a2877301abc7c1eabdc3e75670f56615d9fca2454ba5a690acc3c",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-3-parity-resolved-band-merging-spectrum/main.tex"
+      },
+      {
+        "actual_sha256": "d7058208aa5ae160f3b1222ac37d4d57d0fd49fe50929e7b7a2ea3329c3face8",
+        "expected_sha256": "d7058208aa5ae160f3b1222ac37d4d57d0fd49fe50929e7b7a2ea3329c3face8",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-10-parity-renormalized-long-cycle-determinant/README.md"
+      },
+      {
+        "actual_sha256": "dba591e47d7082d78f2f31d44f4499a5fcf5361046b39947d793816ff733d63b",
+        "expected_sha256": "dba591e47d7082d78f2f31d44f4499a5fcf5361046b39947d793816ff733d63b",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-10-parity-renormalized-long-cycle-determinant/main.tex"
+      },
+      {
+        "actual_sha256": "d25bf4082145b1486c3477a338d1c55b1d014380d7ee2bf42101da1d39e64dfb",
+        "expected_sha256": "d25bf4082145b1486c3477a338d1c55b1d014380d7ee2bf42101da1d39e64dfb",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-55-strong-weak-riesz-cutoff-transfer/README.md"
+      },
+      {
+        "actual_sha256": "c353086ffd925592a4b70baed356414514fbd819fe1de44d499afc58495fd2ac",
+        "expected_sha256": "c353086ffd925592a4b70baed356414514fbd819fe1de44d499afc58495fd2ac",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-55-strong-weak-riesz-cutoff-transfer/main.tex"
+      },
+      {
+        "actual_sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751",
+        "expected_sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json"
+      },
+      {
+        "actual_sha256": "d357192bfb80da578459cdac4add37840b8e1e47c5b2188ca0e49e7b096cbb23",
+        "expected_sha256": "d357192bfb80da578459cdac4add37840b8e1e47c5b2188ca0e49e7b096cbb23",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/README.md"
+      },
+      {
+        "actual_sha256": "6a125ca90b0964945f95b39397b6e83f15a23ad24c94d2e8b9c90d320db8e418",
+        "expected_sha256": "6a125ca90b0964945f95b39397b6e83f15a23ad24c94d2e8b9c90d320db8e418",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/results/result.json"
+      }
+    ]
+  },
+  "source_commits": {
+    "cyclic_ulam_map": "e7d21f646498d77e1c3213d1e4f35dc8466038ff",
+    "prime_dynamics_theory_rh366_release": "6da1b94deaa865bbb297546f3de238433184772a"
+  },
+  "status": "RH-367_fixed_boundary_aligned_cyclic_ulam_ledger"
+}

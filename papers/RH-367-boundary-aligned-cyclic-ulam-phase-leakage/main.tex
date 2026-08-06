@@ -1,0 +1,280 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\J}{J}
+\newcommand{\Bzero}{B_0}
+\newcommand{\Bone}{B_1}
+\newcommand{\Leb}{\operatorname{Leb}}
+\newcommand{\spec}{\operatorname{spec}}
+
+\title{Boundary-Aligned Cyclic-Ulam Structure and Phase-Local Leakage\\
+\large An exact finite-dimensional edge at a postcritically finite quadratic map}
+\author{RH research program}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We isolate an exact finite-dimensional mechanism in a postcritically finite
+quadratic map.  At the algebraic parameter $u_c$ satisfying
+$u_c^3-2u_c^2+2u_c-2=0$, the invariant interval splits into two bands that
+are exchanged by one iterate.  For every finite exact cell-overlap Ulam
+partition whose boundary contains the band endpoint $r=u_c-1$, the matrix is
+anti-diagonal in band coordinates and inherits a sign vector with eigenvalue
+$-1$.  If one cell crosses the endpoint, the projected sign has the exact
+local defect $4\theta(1-\theta)$, or $4h\theta(1-\theta)$ after weighting by
+the cell width.  A frozen 33-phase scan at four resolutions reproduces the
+predicted aligned/crossing dichotomy and records the finite near-$-1$ drift.
+The scan is a diagnostic: no universal power law, continuum isolated-spectrum
+theorem, canonical arithmetic operator, or Riemann-Hypothesis implication is
+claimed.  An explicit overlap ledger separates this edge from RH-3, RH-10,
+and RH-55.
+\end{abstract}
+
+\section{Scope and claim boundary}
+
+The object of this paper is a finite exact Ulam matrix, not an unnamed
+continuum transfer operator.  We use the phrase ``cyclic mode'' for the
+two-band exchange and ``leakage'' for a projected finite-cell diagnostic.
+The following statements are outside the paper's claim ceiling: a
+strong-Banach-space isolated eigenvalue or a common resolvent contour as the
+mesh is refined; a universal $\sqrt{\sigma}$ law (or any exponent inferred
+from a finite log--log fit); and a canonical global H\'enon operator, zeta
+factor, von Mangoldt trace, Hilbert--Polya construction, Riemann-zero
+identification, or proof of RH.
+All numerical rows are frozen source diagnostics and are not asymptotic
+evidence.  The exact route verdict is Route A $=\texttt{GO}$ and Route B
+$=\texttt{STOP\_SCOPED}$.
+
+\section{The postcritically finite two-band map}
+
+Let
+\begin{equation}
+ p(u)=u^3-2u^2+2u-2,
+ \qquad u_c=1.5436890126920764\ldots,
+ \qquad r=u_c-1.
+\end{equation}
+The map and its invariant interval are
+\begin{equation}
+ f(x)=1-u_cx^2,
+ \qquad \J=[-r,1].
+\end{equation}
+The symbolic source certificate records
+\begin{equation}
+ f(0)=1,\qquad f(1)=-r,\qquad f(-r)=r,\qquad f(r)=r.
+ \label{eq:critical}
+\end{equation}
+Define the two closed bands (with their common endpoint understood in the
+usual measure-zero convention)
+\begin{equation}
+ \Bzero=[-r,r],\qquad \Bone=[r,1].
+\end{equation}
+Monotonicity on either side of zero and \eqref{eq:critical} give
+\begin{equation}
+ f(\Bzero)=\Bone,\qquad f(\Bone)=\Bzero.
+ \label{eq:exchange}
+\end{equation}
+
+The source paper also records the normalized invariant density $h$ and the
+$L^1$ sign mode
+\begin{equation}
+ g=h(\mathbf 1_{\Bzero}-\mathbf 1_{\Bone}),
+ \qquad \mathcal P g=-g,
+ \label{eq:l1mode}
+\end{equation}
+in the invariant-density normalization.  Equation \eqref{eq:l1mode} is an
+$L^1$ statement.  It does not assert that $-1$ is isolated on a selected
+strong space.
+
+\section{Exact aligned Ulam inheritance}
+
+\begin{definition}[Exact cell-overlap matrix]
+Let $\mathcal D_h=\{D_i\}_{i=1}^N$ be a finite interval partition of $\J$.
+The row-stochastic exact cell-overlap matrix is
+\begin{equation}
+ (P_h)_{ij}=\frac{\Leb(D_i\cap f^{-1}(D_j))}{\Leb(D_i)}.
+ \label{eq:ulam}
+\end{equation}
+We call the partition aligned when $r$ is a cell boundary.  Source cells are
+split at the turning point and inverse-branch breakpoints before the overlap
+integrals are evaluated.
+\end{definition}
+
+\begin{theorem}[Aligned block and sign mode]\label{thm:block}
+For every aligned finite partition, after ordering cells by band,
+\begin{equation}
+ P_h=\begin{pmatrix}0&A\\B&0\end{pmatrix}.
+ \label{eq:block}
+\end{equation}
+If $s_i=+1$ on $\Bzero$ cells and $s_i=-1$ on $\Bone$ cells, then
+\begin{equation}
+ P_hs=-s.
+ \label{eq:sign}
+\end{equation}
+In particular, $-1\in\spec(P_h)$ in exact arithmetic.
+\end{theorem}
+
+\begin{proof}
+Every source cell belongs to one band.  By \eqref{eq:exchange}, its image
+belongs to the opposite band, so an overlap between cells in the same band is
+zero.  This is exactly the anti-diagonal form \eqref{eq:block}.  Every
+nonzero row therefore sends its mass to cells carrying the opposite sign;
+multiplication by $P_h$ changes $s$ to $-s$, which proves \eqref{eq:sign}.
+No uniform mesh assumption is used.
+\end{proof}
+
+\begin{remark}
+The theorem is finite-dimensional and normalization-specific.  It does not
+identify the vector $s$ with a right eigenfunction of an arbitrary Lebesgue
+reference Perron--Frobenius operator, and it does not control the rest of the
+finite spectrum or its limit as $h\to0$.
+\end{remark}
+
+\section{Crossing-cell projection defect}
+
+Suppose a single cell $D_*$ crosses $r$.  Define the band fraction and the
+projected sign by
+\begin{equation}
+ q_i=\frac{\Leb(D_i\cap\Bzero)}{\Leb(D_i)},
+ \qquad s_i^{(h)}=2q_i-1.
+ \label{eq:q}
+\end{equation}
+For an aligned cell, $q_i\in\{0,1\}$.  For the crossing cell,
+$q_* =\theta\in(0,1)$.  The elementary identity below is the exact local
+phase law.
+
+\begin{proposition}[Local phase defect]\label{prop:defect}
+For $\theta\in[0,1]$,
+\begin{equation}
+ 1-(2\theta-1)^2=4\theta(1-\theta).
+ \label{eq:identity}
+\end{equation}
+If the crossing cell has width $h$, its width-weighted defect is
+$4h\theta(1-\theta)$.
+\end{proposition}
+
+\begin{proof}
+Expand $(2\theta-1)^2=4\theta^2-4\theta+1$ and subtract from one.
+Multiplying by $h$ gives the second assertion.
+\end{proof}
+
+The global diagnostic used by the source is the stationary same-band mass
+\begin{equation}
+ L_h=\sum_i\pi_iq_i\sum_j(P_h)_{ij}q_j
+ +\sum_i\pi_i(1-q_i)\sum_j(P_h)_{ij}(1-q_j),
+ \label{eq:global}
+\end{equation}
+where $\pi$ is a stationary cell-mass vector.  If the partition is aligned,
+the anti-diagonal theorem makes $L_h=0$ exactly.  When a cell crosses $r$,
+$L_h$ depends on the stationary weights and all other cells; it is not equal
+to the local expression in every discretization.  This distinction matters:
+the local identity is a theorem, while the global phase scan is an observed
+finite quantity.
+
+\section{Frozen numerical protocol}
+
+The external source uses analytic inverse-branch overlap assembly, row
+normalization, stationary iteration, and a tracked eigenvalue nearest $-1$.
+The retained deterministic scan has four resolutions
+\[
+ N\in\{256,512,1024,2048\}
+\]
+and 33 translated phases at each resolution, together with one snapped
+aligned phase.  Thus there are 136 rows: 4 aligned and 132 crossing.  The
+aligned rows have zero projected same-band mass and an exact sign residual up
+to floating assembly error.  Crossing rows have positive projected mass and a
+nonzero finite displacement of the tracked near-$-1$ eigenvalue.
+
+\begin{table}[t]
+\centering
+\caption{Frozen phase-scan counts and ranges.  These values are diagnostics.}
+\label{tab:scan}
+\begin{tabular}{@{}lr@{}}
+\toprule
+quantity & value\\
+\midrule
+resolutions & $256,512,1024,2048$\\
+phases per resolution & $33$\\
+total rows & $136$\\
+aligned / crossing rows & $4/132$\\
+crossing $L_h$ range & $1.14\times10^{-4}$ to $7.71\times10^{-3}$\\
+maximum crossing distance from $-1$ & $4.91\times10^{-3}$\\
+maximum row-sum error & $6.4\times10^{-9}$\\
+maximum stationary $L^1$ residual & $1.9\times10^{-13}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The source also contains direct, split, and cycle-constrained noisy matrices.
+Their fitted slopes over a finite range are deliberately not promoted here.
+The boundary convention and kernel change the finite intercepts, and no
+common strong-space perturbation theorem is supplied.
+
+\section{Overlap audit and route decision}
+
+RH-3 uses the same band-merging map to prove a continuum parity eigenmode,
+periodogram limits, and conditional two-step operator decompositions.  It
+does not contain the arbitrary aligned finite-Ulam block theorem or the
+crossing-cell identity.  RH-10 studies exact periodic counts, exponentially
+close boundary cycles, noncommuting long-cycle/noise limits, and a
+parity-renormalized determinant; it does not state the phase-local Ulam
+defect.  RH-55 proves midpoint--Ulam strong--weak contour transfer for a
+conditioned folded-Gaussian kernel; it does not prove deterministic PCF sign
+inheritance for arbitrary aligned partitions.  The overlap is therefore
+structural context, not duplication.
+
+Route A is \texttt{GO} for Theorems~\ref{thm:block} and
+\ref{prop:defect}, together with the source-locked finite protocol.  Route B
+is \texttt{STOP\_SCOPED}: the first missing bridge is a common strong-space
+projector/resolvent theorem connecting the finite matrices to a continuum
+operator.  In particular, no finite scan proves a universal noise exponent,
+an isolated continuum resonance, or any arithmetic/RH statement.
+
+\section{Conclusion}
+
+The exact content of RH-367 is a reusable finite-volume fact: a genuine
+band-boundary alignment preserves a two-cycle sign mode in every exact
+cell-overlap matrix, while a crossing cell has an explicit phase defect.  The
+global leakage and near-$-1$ displacement are useful diagnostics for choosing
+what must be proved next, but they are not substitutes for a strong-space
+limit theorem.  The physical route coordinate remains
+\texttt{actual\_same\_clock\_unnormalized\_head\_transport\_open}; all five
+RH gates remain false/open.
+
+\begingroup\raggedright
+\begin{thebibliography}{9}
+\bibitem{cyclic}
+  Cyclic Ulam Map, source package and proof bundle, 2026.  Frozen commit
+  \texttt{e7d21f646498d77e1c3213d1e4f35dc8466038ff}.
+\bibitem{rh3}
+  RH-3, \emph{Parity-Resolved Dynamics at a Quadratic Band-Merging
+  Parameter}, repository artifact.
+\bibitem{rh10}
+  RH-10, \emph{Parity-Renormalized Long-Cycle Determinants}, repository
+  artifact.
+\bibitem{rh55}
+  RH-55, \emph{Strong--Weak Adaptive Cutoff Transfer for Intrinsic Riesz
+  Factors}, repository artifact.
+\bibitem{ulam}
+  G. Froyland, ``On Ulam approximation of isolated spectrum and
+  eigenfunctions of hyperbolic maps,'' \emph{DCDS} 17 (2007), 671--689.
+\end{thebibliography}
+\endgroup
+
+\end{document}

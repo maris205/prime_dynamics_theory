@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "route_verdict",
+    "gates",
+    "false_claims",
+    "source_commits",
+    "source_audit",
+    "geometry",
+    "exact_theorems",
+    "finite_checks",
+    "phase_scan",
+    "phase_protocol",
+    "overlap_ledger",
+    "claim_boundary"
+  ],
+  "properties": {
+    "status": {"type": "string"},
+    "route_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["route_a", "route_b"],
+      "properties": {"route_a": {"type": "string"}, "route_b": {"type": "string"}}
+    },
+    "gates": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "false_claims": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "source_commits": {"type": "object", "additionalProperties": {"type": "string"}},
+    "source_audit": {"type": "object"},
+    "geometry": {"type": "object"},
+    "exact_theorems": {"type": "object"},
+    "finite_checks": {"type": "object"},
+    "phase_scan": {"type": "object"},
+    "phase_protocol": {"type": "object"},
+    "overlap_ledger": {"type": "object"},
+    "claim_boundary": {"type": "object"}
+  }
+}
