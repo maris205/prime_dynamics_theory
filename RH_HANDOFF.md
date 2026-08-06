@@ -29,7 +29,7 @@ RH-370 integration commit:
 `9ad958a1f326eae6f43f026c84ab9378a4a42f16`.
 
 RH-371 integration commit:
-`7ab7717574ace4e5a6f22b10f5d4c53b61ace9a7`.
+`241b78a89ccbc0bad96d9ef20ee9256d61b4eaca`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
