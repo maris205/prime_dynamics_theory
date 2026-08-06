@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RH-366 result ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "source_commits",
+    "source_audit",
+    "four_volume_foundation_audit",
+    "finite_checks",
+    "r001_diagnostic",
+    "theorem_flags",
+    "route",
+    "gates",
+    "false_claims",
+    "finite_rows_are_reproduction_only"
+  ],
+  "properties": {
+    "status": {"type": "string"},
+    "source_commits": {"type": "object"},
+    "source_audit": {"type": "object"},
+    "four_volume_foundation_audit": {"type": "object"},
+    "finite_checks": {"type": "object"},
+    "r001_diagnostic": {"type": "object"},
+    "theorem_flags": {"type": "object"},
+    "route": {"type": "object"},
+    "gates": {"type": "object"},
+    "false_claims": {"type": "object"},
+    "finite_rows_are_reproduction_only": {"type": "boolean"}
+  }
+}

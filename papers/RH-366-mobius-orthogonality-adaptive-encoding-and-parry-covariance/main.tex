@@ -1,0 +1,549 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\Mob}{\mu}
+\newcommand{\Lam}{\Lambda_*}
+\newcommand{\Hmap}{H_6}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cN}{\mathcal C_N}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+
+\title{M\"obius orthogonality and adaptive encoding on a certified H\'enon basic set:\\
+exact Parry covariance and a finite-capacity firewall}
+\author{Bin Wang}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+On the certified local survivor of the area-preserving H\'enon map
+$\Hmap(x,y)=(1-6x^2-y,x)$, we isolate a rigorous typical--exceptional
+M\"obius dichotomy.  The survivor is conjugate to a primitive four-state
+subshift whose scalar sign code forbids two plus signs at distance two.
+Every fixed periodic point is M\"obius-orthogonal for every continuous
+observable, and Parry-almost every point is simultaneously orthogonal for
+all continuous observables.  In contrast, an explicitly M\"obius-adapted
+point, chosen after the full positive-time arithmetic sequence is read, has
+raw sign correlation $4/\pi^2$.  For the centered variance-one sign
+observable we prove zero covariance at odd lags, covariance
+$(-\varphi^{-2})^k$ at lag $2k$, the exact finite-prefix variance formula,
+and the unconditional bound $V_N\leq\sqrt5N$.  The density limit
+$V_N/N\to6/\pi^2$ remains conditional on ordinary Ces\`aro two-point
+Chowla.  The finite-horizon adaptive capacity is exactly two path
+maximum-weight-independent-set problems, computable in $O(N)$, with
+$4/\pi^2\leq\liminf K_N/N\leq\limsup K_N/N\leq6/\pi^2$.
+A frozen $N=2^{20}$ ordering audit returns $p=0.4111$, a scoped negative
+finite result.  Adaptive encoding is not spontaneous arithmetic coupling,
+an operator trace, or a zeta bridge.  Gates A--E remain false/open.
+\end{abstract}
+
+\section{Frozen object and claim boundary}
+
+The RH-1--RH-361 foundation is preserved by the four-volume synthesis
+\cite{WangRHMVP22026}.  RH-364 froze a certified local hyperbolic survivor
+for the H\'enon map and audited a separate engineered prime lift
+\cite{WangRH3642026}; RH-365 proved a return-bouquet height and radius theorem
+\cite{WangRH3652026}.  Neither result supplies the M\"obius statements below,
+which enter as an independent source-backed edge
+\cite{WangHenonMobius2026}.  The physical route coordinate remains
+\begin{equation}
+ \texttt{actual\_same\_clock\_unnormalized\_head\_transport\_open}.
+ \label{eq:physical-coordinate}
+\end{equation}
+
+Consider
+\begin{equation}
+ \Hmap(x,y)=(1-6x^2-y,x).
+ \label{eq:henon}
+\end{equation}
+The frozen geometric input is a locally maximal mixing basic set $\Lam$
+conjugate to the subshift $\Sigma_A$ with state order
+$(--,-+,+-,++)$ and adjacency matrix
+\begin{equation}
+ A=
+ \begin{pmatrix}
+ 1&0&1&0\\
+ 1&0&0&0\\
+ 0&1&0&1\\
+ 0&1&0&0
+ \end{pmatrix}.
+ \label{eq:adjacency}
+\end{equation}
+This is an inherited theorem, not a conclusion from finite orbit tables
+\cite{WangHenonWeighted2026}.  It concerns the local survivor $\Lam$, not the
+full nonwandering set of $\Hmap$.
+
+Writing a state as $w_n=(\eps_n,\eps_{n-1})$, admissibility is equivalent to
+\begin{equation}
+ \eps_n\in\{-1,+1\},\qquad
+ \text{there is no }n\text{ with }\eps_n=\eps_{n+2}=+1.
+ \label{eq:distance-two}
+\end{equation}
+The continuous clipping observable
+\begin{equation}
+ s(x,y)=
+ \begin{cases}
+ -1,&x\leq-1/3,\\
+ 3x,&\abs{x}<1/3,\\
+ +1,&x\geq1/3
+ \end{cases}
+ \label{eq:sign-observable}
+\end{equation}
+equals the sign code on $\Lam$.  Indeed the certified survivor lies strictly
+inside $\abs{x}>1/3$ on its two branches.
+
+For $z\in\Lam$ and $f\in C(\Lam)$ define
+\begin{equation}
+ \cN(z,f)=\frac1N\sum_{n=1}^{N}\Mob(n)f(\Hmap^n z).
+ \label{eq:correlation}
+\end{equation}
+This is a time correlation along one orbit.  It is not a sum over an orbit
+catalogue and is not an operator trace.
+
+\section{Fixed periodic cancellation and an adaptive exceptional point}
+
+\begin{theorem}[Every fixed periodic orbit is orthogonal]
+\label{thm:periodic}
+For every periodic $z\in\Lam$ and every $f\in C(\Lam)$,
+\begin{equation}
+ \cN(z,f)\longrightarrow0.
+ \label{eq:periodic-zero}
+\end{equation}
+The point, and hence its period, is fixed before $N\to\infty$.
+\end{theorem}
+
+\begin{proof}
+If the period is $p$, then $b_n=f(\Hmap^n z)$ is a bounded $p$-periodic
+sequence.  Its finite Fourier expansion is
+\[
+ b_n=\sum_{j=0}^{p-1}\widehat b_j e^{2\pi ijn/p}.
+\]
+Davenport's uniform estimate gives, for each fixed $A_0>0$,
+\[
+ \sup_{\theta\in\mathbb R}
+ \abs{\sum_{n\leq N}\Mob(n)e^{2\pi i n\theta}}
+ \ll_{A_0}N(\log N)^{-A_0}
+\]
+\cite{Davenport1937,IwaniecKowalski2004}.  Applying it at the finitely many
+frequencies $j/p$ and dividing by $N$ proves the claim.
+\end{proof}
+
+Positive entropy nevertheless gives enough symbolic freedom to encode an
+arithmetic sequence.  Define a bi-infinite sign word by $\eps_n=-1$ for
+$n\leq0$, and for $n\geq1$ set
+\begin{equation}
+ \eps_n=+1
+ \quad\Longleftrightarrow\quad
+ \Mob(n)=1\ \text{ and }\ n\bmod4\in\{1,2\}.
+ \label{eq:adaptive-word}
+\end{equation}
+Adding two maps the selected residue classes $1,2$ to the unselected classes
+$3,0$.  Thus \eqref{eq:distance-two} holds, and the conjugacy supplies a
+unique point $z_{\Mob}\in\Lam$ with this itinerary.
+
+\begin{theorem}[Exact adaptive correlation]
+\label{thm:exceptional}
+For the point selected by \eqref{eq:adaptive-word},
+\begin{equation}
+ \lim_{N\to\infty}\cN(z_{\Mob},s)=\frac4{\pi^2}.
+ \label{eq:four-over-pi2}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $M(N)=\sum_{n\leq N}\Mob(n)$.  From the definition,
+\begin{equation}
+ \sum_{n\leq N}\Mob(n)\eps_n
+ =-M(N)+2\#\{n\leq N:\Mob(n)=1,\ n\bmod4\in\{1,2\}\}.
+ \label{eq:exceptional-identity}
+\end{equation}
+For $r=1,2$ one has
+\begin{equation}
+ \frac1N\sum_{\substack{n\leq N\\n\equiv r\ (4)}}\Mob(n)\to0,
+ \qquad
+ \frac1N\sum_{\substack{n\leq N\\n\equiv r\ (4)}}\Mob(n)^2
+ \to\frac2{\pi^2}.
+ \label{eq:residue-density}
+\end{equation}
+For $r=1$, these are the fixed-progression prime number theorem and the
+squarefree density.  For $r=2$, write $n=2m$ with $m$ odd.  Then
+$\Mob(2m)=-\Mob(m)$, while odd squarefree integers have density $4/\pi^2$;
+counting $m\leq N/2$ again gives $2/\pi^2$ after normalization by $N$
+\cite{Mirsky1948}.  Since
+\[
+ \mathbf1_{\{\Mob=1\}}=\frac{\Mob^2+\Mob}{2},
+\]
+each selected residue class contributes density $1/\pi^2$.  Finally
+$M(N)=o(N)$.  Divide \eqref{eq:exceptional-identity} by $N$.
+\end{proof}
+
+\begin{remark}[The essential firewall]
+The complete positive-time M\"obius sequence is read before $z_{\Mob}$ is
+selected.  Theorem~\ref{thm:exceptional} proves offline encoding capacity.  It
+does not prove a nonadaptive prediction rule, a dynamically preferred initial
+condition, or spontaneous arithmetic coupling.  Moreover $\Lam$ has positive
+entropy, so this is not a counterexample to Sarnak's zero-entropy conjecture
+\cite{Sarnak2010}.  Positive-entropy systems can display either correlation or
+uniform decorrelation, and entropy alone is not a switch
+\cite{Karagulyan2017,DownarowiczSerafin2019}.
+\end{remark}
+
+\section{Parry covariance, variance, and typical orthogonality}
+
+Let $\nu$ be the Parry measure on $\Sigma_A$, transported to $\Lam$.  Put
+$\varphi=(1+\sqrt5)/2$.  In the state order of \eqref{eq:adjacency},
+\begin{equation}
+ \pi=\left(\frac{3+\sqrt5}{10},\frac15,\frac15,
+            \frac{3-\sqrt5}{10}\right)
+ \label{eq:parry-pi}
+\end{equation}
+and
+\begin{equation}
+ P=\begin{pmatrix}
+ \varphi^{-1}&0&\varphi^{-2}&0\\
+ 1&0&0&0\\
+ 0&\varphi^{-1}&0&\varphi^{-2}\\
+ 0&1&0&0
+ \end{pmatrix}.
+ \label{eq:parry-P}
+\end{equation}
+The raw sign has mean $-1/\sqrt5$.  Hence
+\begin{equation}
+ F(w)=\frac{\sqrt5\,\eps(w)+1}{2}
+ \label{eq:F}
+\end{equation}
+has mean zero and variance one.
+
+\begin{proposition}[Exact covariance]
+\label{prop:covariance}
+For every $k\geq0$,
+\begin{align}
+ \Cov_\nu(F,F\circ\sigma^{2k+1})&=0,\label{eq:odd-cov}\\
+ \Cov_\nu(F,F\circ\sigma^{2k})&=(-\varphi^{-2})^k.\label{eq:even-cov}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+As a state vector,
+\[
+ F=(-\varphi^{-1},-\varphi^{-1},\varphi,\varphi)^{\mathsf T}.
+\]
+Direct multiplication gives
+\begin{equation}
+ P^2F=-\varphi^{-2}F,
+ \qquad
+ \pi\,\operatorname{diag}(F)PF=0.
+ \label{eq:cov-algebra}
+\end{equation}
+Since
+$\Cov_\nu(F,F\circ\sigma^\ell)=
+ \pi\operatorname{diag}(F)P^\ell F$, the two identities follow.  The
+executable artifact verifies this algebra exactly in $\mathbb Q(\sqrt5)$;
+no floating eigendecomposition is used.
+\end{proof}
+
+For the fixed arithmetic weights define
+\begin{equation}
+ S_N(\omega)=\sum_{n=1}^{N}\Mob(n)F(\sigma^n\omega),
+ \qquad V_N=\Var_\nu S_N.
+ \label{eq:SN}
+\end{equation}
+
+\begin{corollary}[Exact finite-prefix variance]
+\label{cor:variance}
+For every $N\geq1$,
+\begin{equation}
+ V_N=\sum_{n\leq N}\Mob(n)^2
+ +2\sum_{k\geq1}(-\varphi^{-2})^k
+   \sum_{n\leq N-2k}\Mob(n)\Mob(n+2k),
+ \label{eq:variance-formula}
+\end{equation}
+where terms with $2k\geq N$ vanish.  Unconditionally,
+\begin{equation}
+ 0\leq V_N\leq\sqrt5\,N.
+ \label{eq:sqrt5-bound}
+\end{equation}
+If ordinary Ces\`aro two-point Chowla holds for every fixed even shift, then
+\begin{equation}
+ \frac{V_N}{N}\longrightarrow\frac6{\pi^2}.
+ \label{eq:conditional-limit}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Expand \eqref{eq:SN}, group pairs by their lag, and insert
+Proposition~\ref{prop:covariance}.  This gives \eqref{eq:variance-formula}.
+Taking absolute values in the off-diagonal terms yields
+\[
+ V_N\leq N\left(1+2\sum_{k\geq1}\varphi^{-2k}\right)
+ =N(1+2\varphi^{-1})=\sqrt5N.
+\]
+Variance is nonnegative by definition.  Under ordinary Chowla, for each
+fixed $k$ the inner correlation in \eqref{eq:variance-formula} is $o(N)$.
+After division by $N$ it is bounded by one, while the coefficients are
+summable.  Dominated convergence therefore passes through the $k$-sum, and
+$N^{-1}\sum_{n\leq N}\Mob(n)^2\to6/\pi^2$ proves
+\eqref{eq:conditional-limit}.  The logarithmically averaged theorem does not
+imply these ordinary Ces\`aro hypotheses \cite{Tao2016}.
+\end{proof}
+
+\begin{theorem}[Parry-almost-sure simultaneous orthogonality]
+\label{thm:typical}
+For $\nu$-almost every $z\in\Lam$, simultaneously for every
+$f\in C(\Lam)$,
+\begin{equation}
+ \cN(z,f)\longrightarrow0.
+ \label{eq:typical-zero}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Work first on $\Sigma_A$.  Let $g$ be a centered locally constant function.
+Exponential mixing of the finite-state Parry chain gives constants
+$C_g<\infty$ and $0<\rho_g<1$ with
+\[
+ \abs{\Cov_\nu(g,g\circ\sigma^h)}\leq C_g\rho_g^h.
+\]
+Because $\abs{\Mob(n)}\leq1$, the weighted partial sums
+$T_N=\sum_{n\leq N}\Mob(n)g\circ\sigma^n$ satisfy
+$\Var_\nu T_N=O_g(N)$.  Chebyshev's inequality at $N=k^2$ gives, for every
+$\delta>0$,
+\[
+ \sum_{k\geq1}
+ \nu\{\abs{T_{k^2}}>\delta k^2\}<\infty.
+\]
+Borel--Cantelli yields $T_{k^2}/k^2\to0$ almost surely.  Between $k^2$ and
+$(k+1)^2$ there are at most $2k+1$ additional bounded summands, so convergence
+holds for every $N$.
+
+Choose a countable uniformly dense family of rational-valued locally
+constant functions.  Intersect their full-measure convergence sets.  For a
+noncentered function the constant component contributes a multiple of
+$M(N)/N$, which vanishes by the prime number theorem.  Uniform approximation,
+together with $N^{-1}\sum_{n\leq N}\abs{\Mob(n)}\leq1$, extends the conclusion
+on this one full-measure set to every continuous function.  Transport through
+the conjugacy.
+\end{proof}
+
+The quantifier is important: one full-measure set works for all continuous
+observables, but the conclusion is not uniform over all $z\in\Lam$ because
+Theorem~\ref{thm:exceptional} supplies an explicit exception.
+
+\section{Finite-horizon adaptive capacity}
+
+\begin{definition}
+For $N\geq1$, define the open raw capacity
+\begin{equation}
+ K_N=\max_{\substack{\eps_1,\ldots,\eps_N\in\{-1,+1\}\\
+              \eps_n=\eps_{n+2}=+1\ \mathrm{never}}}
+ \abs{\sum_{n=1}^{N}\Mob(n)\eps_n}.
+ \label{eq:capacity}
+\end{equation}
+The optimizing word may depend on $N$ and on the complete M\"obius prefix.
+\end{definition}
+
+\begin{theorem}[Linear-time exact optimization and asymptotic bracket]
+\label{thm:capacity}
+The value $K_N$ and a witnessing word can be computed exactly in $O(N)$ time.
+Moreover
+\begin{equation}
+ \frac4{\pi^2}
+ \leq\liminf_{N\to\infty}\frac{K_N}{N}
+ \leq\limsup_{N\to\infty}\frac{K_N}{N}
+ \leq\frac6{\pi^2}.
+ \label{eq:capacity-bracket}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Start from the all-negative word.  If $I$ is the set of positions changed to
+plus, then
+\begin{equation}
+ \sum_{n\leq N}\Mob(n)\eps_n=-M(N)+2\sum_{n\in I}\Mob(n).
+ \label{eq:capacity-baseline}
+\end{equation}
+The constraint says exactly that $I$ is an independent set in the disjoint
+union of the odd-index path and the even-index path.  For path weights $a_j$,
+the maximum-weight-independent-set recurrence is
+\begin{equation}
+ D_j=\max\{D_{j-1},D_{j-2}+a_j\},
+ \qquad D_0=0,\quad D_1=\max\{0,a_1\}.
+ \label{eq:mwis}
+\end{equation}
+Run it on both paths with weights $\Mob(n)$ to maximize
+\eqref{eq:capacity-baseline}, and with weights $-\Mob(n)$ to minimize it.
+Traceback recovers witnesses.  The total work is linear.
+
+Every prefix of the word in \eqref{eq:adaptive-word} is feasible, so
+Theorem~\ref{thm:exceptional} gives the lower bound in
+\eqref{eq:capacity-bracket}.  For every sign word,
+\[
+ \abs{\sum_{n\leq N}\Mob(n)\eps_n}
+ \leq\sum_{n\leq N}\Mob(n)^2.
+\]
+The squarefree density gives the upper bound.
+\end{proof}
+
+No existence theorem for $\lim K_N/N$ follows.  The optimizer can change with
+$N$, so a nonvanishing envelope also does not contradict
+Theorem~\ref{thm:periodic}, which fixes one periodic point before taking the
+limit.  Filling signs outside $[1,N]$ with $-1$ realizes each open optimizer
+by an $N$-dependent point of $\Lam$.
+
+\section{Frozen finite audit and numerical boundary}
+
+The source experiment fixed $N_{\max}=2^{20}$, 1024 stationary Parry paths,
+and 1023 conditional arithmetic surrogates before reading the production
+results \cite{WangHenonMobius2026}.  The surrogates preserve the squarefree
+zero support and the numbers of positive and negative signs within frozen
+growing blocks; every surrogate undergoes the same adaptive optimization.
+The rank statistic is
+\begin{equation}
+ p_{\mathrm{cap}}=
+ \frac{1+\#\{b:K_{N_{\max},b}\geq K_{N_{\max},\mathrm{real}}\}}{1024}.
+ \label{eq:rank-p}
+\end{equation}
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Locked endpoint diagnostics.  These are finite reproduction facts,
+not asymptotic theorems.}
+\label{tab:finite}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Quantity at $N=2^{20}$ & Value\\
+\midrule
+Exceptional raw integer score & $425025$\\
+Exceptional raw correlation & $0.405335426$\\
+Open maximum / minimum & $515983\,/\,-516163$\\
+Open absolute capacity & $0.492251396$\\
+Conditional-null exceedances & $420$ of $1023$\\
+Rank $p$-value & $421/1024=0.4111328125$\\
+Stored floating variance density & $0.608082565$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The rank test is a scoped negative result: the natural ordering is not
+exceptional under this frozen finite null.  It is not a probability model for
+M\"obius itself, and it does not prove any asymptotic ordering law.
+
+The variance distinction is equally strict.  Formula
+\eqref{eq:variance-formula} is exact.  The upstream production routine,
+however, evaluates it in floating arithmetic and stops after the geometric
+coefficient falls below $10^{-15}$.  The first omitted geometric tail has
+normalized absolute bound below $1.3\times10^{-15}$ before floating roundoff,
+but the stored decimal is still a tolerance-controlled diagnostic, not an
+exact algebraic evaluation.  The RH-366 artifact instead checks small finite
+prefixes exactly in $\mathbb Q(\sqrt5)$.
+
+The executable package also performs the following independent checks:
+\begin{enumerate}[leftmargin=2em]
+ \item all frozen source and Paper-3 dependency hashes;
+ \item exhaustive equivalence of the sign rule and graph cycles through
+       length eight;
+ \item the exceptional integer identity on finite prefixes;
+ \item exact $\mathbb Q(\sqrt5)$ covariance and variance rows;
+ \item dynamic programming against brute force through length twelve;
+ \item the four-volume replay, strict JSON parsing, fixed archive membership,
+       and mutation rejection.
+\end{enumerate}
+Finite checks reproduce identities and provenance.  They are not evidence for
+the prime number theorem, ordinary Chowla, or a capacity limit.
+
+\section{Route verdict and Gate ledger}
+
+\begin{table}[ht]
+\centering
+\small
+\caption{The strongest warranted route interpretation.}
+\label{tab:route}
+\begin{tabular}{@{}p{0.16\textwidth}p{0.72\textwidth}@{}}
+\toprule
+Route & Verdict\\
+\midrule
+Route A & \texttt{GO}.  Fixed periodic and Parry-typical orthogonality,
+the exact adaptive correlation, covariance and variance theorems, the
+linear-time capacity theorem, and the frozen scoped negative form a
+standalone theorem package.\\
+Route B & \texttt{STOP\_SCOPED}.  The first fatal mismatch is data type:
+$z_{\Mob}$ is chosen after reading $\Mob$.  Its scalar time correlation is
+not a canonical determinant, operator trace, or signed von-Mangoldt
+prime-power ledger.\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The following boundaries are mandatory.
+\begin{enumerate}[leftmargin=2em]
+ \item $\Lam$ is a certified local basic set, not the full H\'enon dynamics.
+ \item The exceptional point is an offline encoding, not an intrinsic or
+       independently selected coupling.
+ \item The Parry theorem is almost sure and simultaneous in $f$, not uniform
+       over all points or measures.
+ \item The variance-density limit is conditional on ordinary fixed-shift
+       Ces\`aro Chowla.
+ \item The finite capacity plateau is not a proved limit.
+ \item M\"obius-weighted orbit averages are not von-Mangoldt traces and do
+       not define an Euler product or an L-function family.
+\end{enumerate}
+
+Consequently the Gate ledger remains
+\begin{center}
+\begin{tabular}{@{}cll@{}}
+\toprule
+Gate & Status & First missing object\\
+\midrule
+A & false/open & canonical intrinsic dynamical spectral determinant\\
+B & false/open & time-oriented scattering or unitary completion\\
+C & false/open & self-adjoint generator and intrinsic $T\log T$ law\\
+D & false/open & signed von-Mangoldt prime-power operator trace\\
+E & false/open & completed-zeta divisor equality\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+No Hilbert--P\'olya operator, Riemann-zero spectral identification,
+completed-zeta divisor equality, or proof of the Riemann Hypothesis follows.
+
+\section{Conclusion and next exact questions}
+
+One explicit positive-entropy H\'enon subsystem supports both rigorous
+M\"obius cancellation and rigorous arithmetic tracking.  The distinction is
+selection: fixed periodic and Parry-typical points cancel, while a point
+chosen after reading the arithmetic sequence tracks it with correlation
+$4/\pi^2$.  Exact covariance and linear-time capacity quantify the mechanism
+without promoting it to a spectral or zeta construction.
+
+The shortest new theorem problems are correspondingly narrow: determine
+whether $K_N/N$ has a limit; classify nonadaptive invariant measures with
+quantitative M\"obius cancellation; and generalize the graph-capacity theorem
+to other mixing subshifts.  Independent breadth-first routes, including the
+cyclic-Ulam structural audit and the RH-365 primitive-divisor/radius problems,
+remain separate.  Repackaging adaptive encoding as intrinsic coupling would
+not be a continuation.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

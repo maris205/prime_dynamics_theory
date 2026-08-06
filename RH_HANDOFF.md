@@ -2,16 +2,19 @@
 
 Status date: 2026-08-06
 
-Current completed endpoint: RH-365
+Current completed endpoint: RH-366
 
-Completed research batch: RH-352 through RH-361
+Completed research batch: RH-352 through RH-366
 
-Post-four-volume independent theorem edges: RH-362 through RH-365
+Post-four-volume independent theorem edges: RH-362 through RH-366
 
-Latest route verdict: RH-365 Route A `GO`; Route B `STOP_SCOPED`
+Latest route verdict: RH-366 Route A `GO`; Route B `STOP_SCOPED`
 
-Research batch publication commit:
+Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
+
+RH-366 integration commit: recorded by the release commit that adds this
+handoff entry and the RH-366 publication package.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -37,15 +40,16 @@ Read completely:
 
 - `AGENTS.md`
 - `RH_HANDOFF.md`
-- `papers/RH-365-prime-return-bouquet-height-radius-and-prime-order-anchors/README.md`
-- `papers/RH-365-prime-return-bouquet-height-radius-and-prime-order-anchors/UPDATED_ROADMAP.md`
-- `papers/RH-365-prime-return-bouquet-height-radius-and-prime-order-anchors/THEOREM_LEDGER.md`
-- `papers/RH-365-prime-return-bouquet-height-radius-and-prime-order-anchors/results/result.json`
-- `papers/RH-365-prime-return-bouquet-height-radius-and-prime-order-anchors/main.pdf`
+- `papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/README.md`
+- `papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/UPDATED_ROADMAP.md`
+- `papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/THEOREM_LEDGER.md`
+- `papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/results/result.json`
+- `papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/main.pdf`
 
 Retain RH-362 as the return-rank input, RH-363 as the entropy-tower input,
-RH-364 as the weighted-survivor/prime-copy input, and RH-361 as the immediate
-endpoint of the still-open original physical branch.
+RH-364 as the weighted-survivor/prime-copy input, RH-365 as the unweighted
+return-bouquet input, RH-366 as the Hénon Möbius-correlation input, and RH-361
+as the immediate endpoint of the still-open original physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -55,10 +59,11 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-365 does not automatically activate RH-366. The next breadth-first source
+RH-366 does not automatically activate RH-367. The next breadth-first source
 lock must compare the remaining external theorem packages, especially the
-certified H\'enon M\"obius typical/exceptional dichotomy and the cyclic-Ulam
-structural package, against the completed RH-1--RH-365 corpus. RH search
+capacity-limit/nonadaptive-measure continuations of the certified Hénon
+Möbius package and the cyclic-Ulam structural package, against the completed
+RH-1--RH-366 corpus. RH search
 remains breadth-first: generate bold source-backed candidates, evaluate
 standalone discovery value as Route A and RH data-type compatibility as Route
 B, then issue `GO`, `STOP_SCOPED`, or `NOT_TESTABLE`. Create a new number only
@@ -165,13 +170,15 @@ counterloop. RH-354's normalized actual `p` tail is neither an unnormalized
 complete prefix nor a `q/E_off` theorem. Deterministic `s` is not an actual
 head, root set, rank law, or spectral submultiset.
 
-RH-362 through RH-365 add a separate arithmetic-dynamical branch. RH-362
+RH-362 through RH-366 add a separate arithmetic-dynamical branch. RH-362
 builds one marked modular cycle per prime; RH-363 inserts the resulting ranks
 into a pairwise-coprime admissible-shift tower; RH-364 derives weighted
 analytic domains for a certified local survivor and audits an engineered
 prime-copy operator; RH-365 proves an analytic disk and odd-prime primitive
-anchors for the unweighted marked bouquet. None is identified with either
-typed physical branch, so the physical blocker below is unchanged.
+anchors for the unweighted marked bouquet; RH-366 proves a periodic/Parry
+Möbius-orthogonality dichotomy, an offline adaptive correlation, exact Parry
+covariances, and an open capacity bracket on that survivor. None is identified
+with either typed physical branch, so the physical blocker below is unchanged.
 
 The deterministic target side remains exact and all-order: RH-263 gives the
 deterministic numerator coefficient anchor, and RH-267--RH-268 give the
@@ -497,7 +504,74 @@ cycle from each of distinct finite-field maps, is not a full `H_p` zeta or
 Hasse--Weil factor, and supplies no canonical global operator or signed
 von-Mangoldt trace. Gates A--E remain false/open.
 
-## 4. Compact conclusions from RH-352 through RH-365
+### 3.5 RH-366 Möbius orthogonality, adaptive encoding, and Parry covariance
+
+RH-366 freezes the certified local Hénon survivor for
+
+```text
+H_6(x,y) = (1-6x^2-y,x)
+```
+
+and its primitive four-state subshift code, whose scalar signs obey the exact
+distance-two rule that two `+` signs cannot occur at distance two.  With
+
+```text
+C_N(z,f) = N^(-1) sum_(n=1)^N mu(n) f(H_6^n z),
+```
+
+the paper proves six independent edges at the declared data type:
+
+1. Every fixed periodic `z` is Möbius-orthogonal for every continuous `f`.
+   The period is fixed before `N -> infinity`; no growing-period uniformity is
+   asserted.
+2. For transported Parry measure `nu`, a single full-measure set of points is
+   simultaneously orthogonal for every continuous observable.  This is
+   `nu`-almost sure, not uniform over the survivor.
+3. After reading the complete positive-time Möbius sequence, an admissible
+   coded point `z_mu` is selected with raw-sign correlation exactly
+   `4/pi^2` (and correlation `2 sqrt(5)/pi^2` for the centered observable
+   below).  This is an offline encoding theorem, not a spontaneous coupling.
+4. For `F=(sqrt(5) epsilon+1)/2`, the mean is zero, variance is one, odd
+   covariances vanish, and the lag-`2k` covariance is
+   `(-phi^(-2))^k`.  The exact finite-prefix variance formula gives the
+   unconditional bound `0 <= V_N <= sqrt(5) N`.
+5. The density limit `V_N/N -> 6/pi^2` is conditional on ordinary (unweighted)
+   Cesàro two-point Chowla at every fixed even shift.  Logarithmically averaged
+   Chowla and the finite decimal diagnostic do not imply this limit.
+6. The finite-horizon adaptive capacity `K_N` is exactly two path-MWIS
+   problems, computable in `O(N)`, with
+
+```text
+4/pi^2 <= liminf K_N/N <= limsup K_N/N <= 6/pi^2.
+```
+
+No existence of `lim K_N/N` is proved.  The frozen `N=2^20` ordering test has
+exceptional correlation `0.405335426`, capacity `0.492251396`, 420/1023 null
+exceedances, and rank `p=421/1024=0.4111328125`; these are finite diagnostics
+only.
+
+The source locks are:
+
+```text
+henon_mobius_correlations  34490443f50cfe9af9ff93888e51e7e7e534a5a7
+henon_weighted_zeta         ff44f961261349848c9f65ede6a031b7e155aca9
+dyna_zeta_map               7fd3a3fdd5a6a25827a0965345459baf4a47b816
+```
+
+The package has `23/23` external-input locks, `17/17` tests, an independent
+R001 checker pass with eight surrogate replays and witness residual about
+`7.1e-15`, and a zero-failure archive.  The publication has 21 files; the
+eight-page PDF has 20 embedded Unicode-mapped font rows and all pages pass
+rendered inspection.  The semantic PDF is byte-identical to `main.pdf`.
+
+Route A is `GO`.  Route B is `STOP_SCOPED` before Gate A: `z_mu` depends on
+the full observed Möbius prefix, while the outputs are scalar orbit averages
+and Parry variances rather than a canonical determinant, operator trace,
+von-Mangoldt prime-power ledger, or spectral zero set.  Positive entropy means
+the construction is outside the zero-entropy hypothesis of Sarnak's
+conjecture.  Gates A--E remain false/open.
+
+## 4. Compact conclusions from RH-352 through RH-366
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -541,6 +615,12 @@ von-Mangoldt trace. Gates A--E remain false/open.
   zero-free disk, odd-prime primitive/logarithmic anchors, a raw-coefficient
   firewall, and a naive-direct-sum noncompactness theorem. The bouquet remains
   marked and noncanonical and closes no Gate.
+- **RH-366:** Fixed-periodic and Parry-almost-sure Möbius orthogonality for
+  continuous observables; an explicitly offline Möbius-adapted point with
+  correlation `4/pi^2`; exact Parry covariance and unconditional linear
+  variance bound; a conditional `6/pi^2` variance-density limit; and an exact
+  `O(N)` adaptive-capacity bracket. The capacity limit and any intrinsic
+  arithmetic coupling remain open, and the package closes no Gate.
 
 ## 5. Route firewall and reopening triggers
 
@@ -554,6 +634,13 @@ Do not:
 - identify `[z^ell] Z_0` with the prime-order primitive anchor;
 - identify the locally finite bouquet ledger `T_n` with a trace-class
   Hilbert-space trace;
+- call the RH-366 offline optimizer a spontaneous or canonical arithmetic
+  coupling;
+- promote the finite `0.492...` capacity diagnostic to an asymptotic constant;
+- promote the conditional `V_N/N -> 6/pi^2` statement to an unconditional
+  theorem or infer ordinary Chowla from the finite variance rows;
+- identify a Möbius-weighted orbit average or a Parry variance with a
+  von-Mangoldt trace, spectral determinant, or Riemann-zero model;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -569,36 +656,42 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-365. Triggers 1--4 remain untouched. RH-365 closes the natural
-return-bouquet height/radius route at its declared scope. For RH-366 and
-later, the shortest exact candidates are:
+RH-366. Triggers 1--4 remain untouched. RH-365 closes the natural
+return-bouquet height/radius route at its declared scope, while RH-366 closes
+the declared periodic/typical/capacity audit at its declared scope. For
+RH-367 and later, the shortest exact candidates are:
 
-1. The certified H\'enon M\"obius-correlation package at
-   `henon_mobius_correlations` commit
-   `34490443f50cfe9af9ff93888e51e7e7e534a5a7`: audit the periodic and
-   Parry-almost-sure orthogonality theorems, the explicit M\"obius-adapted
-   orbit with correlation `4/pi^2`, the exact Parry covariance and linear
-   variance bound, and the finite-horizon adaptive-capacity theorem. The
-   first Route-B firewall is that the exceptional orbit is constructed only
-   after reading the M\"obius sequence; encoding capacity is not spontaneous
-   arithmetic coupling or an operator trace.
-2. A genuine composite-order primitive-divisor upgrade, such as an eventual
+1. A capacity-limit theorem (or a rigorous nonexistence/scoped negative) for
+   `lim K_N/N` under the distance-two constraint. Pair correlations alone do
+   not control this nonlinear maximum-weight functional.
+2. A nonadaptive-measure theorem identifying geometrically or dynamically
+   selected invariant measures, beyond Parry, for which a quantitative
+   Möbius theorem holds without reading the arithmetic sequence.
+3. A general constraint-graph classification of mixing subshifts admitting
+   explicit arithmetic-adapted points and graph-dependent capacity brackets.
+4. A genuine composite-order primitive-divisor upgrade, such as an eventual
    Zsigmondy theorem or a `p`-adic lifting bound strong enough to force new
    primes. No such theorem is present in the locked source.
-3. A sharp return-rank multiplicity theorem strong enough to determine the
+5. A sharp return-rank multiplicity theorem strong enough to determine the
    exact origin radius or a genuine boundary law for `Z_0`. RH-365 supplies
    only the bracket `[2^(-1/2),1]`.
-4. A quantitative finite-entropy-data theorem that certifies or excludes a
+6. A quantitative finite-entropy-data theorem that certifies or excludes a
    finite prime/rank prefix without promoting numerical conditioning to exact
    infinite recovery.
-5. An intrinsic pressure/transfer/groupoid operator producing the entropy
+7. An intrinsic pressure/transfer/groupoid operator producing the entropy
    tower without inserting every modulus by hand.
-6. A cyclic-Ulam source audit restricted to its exact aligned block/sign-mode
-   theorem and a rigorously scoped leakage statement. The reported noisy
-   square-root-like slopes are finite-range observations, not a continuum
-   perturbation theorem, and overlap with the four-volume physical corpus
-   must be checked before numbering.
-7. One of the original physical triggers 1--4.
+8. A boundary-aligned cyclic-Ulam structural paper at commit
+   `e7d21f646498d77e1c3213d1e4f35dc8466038ff`. The source proves the exact
+   two-band exchange, the `L^1` sign mode, the block matrix
+   `P=[[0,A],[B,0]]` with `Ps=-s` for every aligned partition, and the exact
+   crossing-cell leakage defect `4h theta(1-theta)`. Route A is provisionally
+   `GO`; Route B is `STOP_SCOPED` because the result is finite-dimensional
+   Ulam/L1 data and lacks a common strong-space projector/resolvent theorem or
+   intrinsic arithmetic operator. The noisy square-root slopes remain finite
+   diagnostics only. Before numbering, run an explicit overlap ledger against
+   RH-3, RH-10, and RH-55; if the structural edge is not distinct, keep it
+   non-numbered.
+9. One of the original physical triggers 1--4.
 
 RH-364 closes the declared weighted-H\'enon prime-copy audit. It must still be
 called a prime lift or copy, not a finite-field reduction, Hasse--Weil local
@@ -612,6 +705,14 @@ odd-prime anchor must remain a primitive Euler/logarithmic coefficient, not a
 raw zeta coefficient or a composite-order Zsigmondy theorem. Repackaging the
 same midpoint identities, radius lower bound, or noncompact direct sum is not
 a new trigger.
+
+RH-366 closes the declared Hénon Möbius typical/exceptional and adaptive-
+capacity audit. Its exceptional point is selected only after the full
+positive-time Möbius sequence is known; its covariance and variance results
+are Parry-measure statements; and its finite capacity bracket does not assert
+a limit. Repackaging the same offline coding, finite plateau, or conditional
+Chowla comparison is not a new trigger. Any successor must supply a new
+source-backed theorem or a proved scoped negative in a distinct data type.
 
 Even `D_(4k)(R)->0` would transfer only named moment/budget laws. Root, rank,
 spectral-submultiset, and canonical determinant identification remain
@@ -759,7 +860,106 @@ across distinct finite fields into an intrinsic global dynamics/operator
 without prescribing the desired Euler weights. Until such a theorem exists,
 Gate A remains false.
 
+### 6.3 RH-366 independent source lock and route decision on 2026-08-06
+
+The certified `henon_mobius_correlations` package was frozen at
+
+```text
+34490443f50cfe9af9ff93888e51e7e7e534a5a7
+```
+
+with the inherited local-survivor foundation locked to
+`henon_weighted_zeta=ff44f961261349848c9f65ede6a031b7e155aca9` and the
+cross-checking zeta source locked to
+`dyna_zeta_map=7fd3a3fdd5a6a25827a0965345459baf4a47b816`.  Source-lock and
+proof-audit agents independently returned `PASS`, with no files changed.
+The exact package separates fixed-periodic orthogonality, Parry-almost-sure
+orthogonality, the post-hoc Möbius-adapted point, the Parry covariance/variance
+theorem, the conditional Chowla density, and the finite adaptive-capacity
+algorithm and bracket.  Finite diagnostics remain scoped to their frozen
+protocol and null model.
+
+The primary route decision is `Route A=GO`, `Route B=STOP_SCOPED`.
+The first Route-B mismatch is prior to Gate A: the exceptional point is
+selected after reading the full Möbius sequence, and the measured quantities
+are scalar orbit averages and Parry variances rather than a canonical
+operator trace, determinant, or von-Mangoldt prime-power ledger. Gates A--E
+remain false/open, and the physical coordinate remains
+`actual_same_clock_unnormalized_head_transport_open`.
+
+### 6.4 RH-367 candidate overlap ledger (read-only, 2026-08-06)
+
+The only fresh candidate is the boundary-aligned cyclic-Ulam structural
+package at
+`cyclic_ulam_map=e7d21f646498d77e1c3213d1e4f35dc8466038ff`.  Its exact claims
+are: the PCF two-band exchange; the `L^1` sign mode; for every partition with
+the band boundary as a cell edge, the row-stochastic block form
+`P=[[0,A],[B,0]]` and `Ps=-s`; and the crossing-cell projection defect
+`4h theta(1-theta)`.  It explicitly does not prove a universal
+`sqrt(sigma)` law, an isolated continuum resonance, or a strong-space
+perturbation theorem.
+
+The overlap audit is positive but narrow:
+
+- RH-3 uses the same band-merging geometry to prove a continuum/Koopman
+  parity eigenmode, periodograms, and (under a component-gap hypothesis) a
+  Perron--Frobenius decomposition.  It does not prove the arbitrary
+  finite-partition cell-overlap block theorem or the crossing-cell phase
+  defect.
+- RH-10 uses the same map for exact periodic counts, boundary crowding,
+  noncommuting long-cycle/noise limits, and parity-renormalized determinants.
+  It does not supply the aligned-versus-misaligned Ulam theorem or the local
+  phase-leakage identity.
+- RH-55 proves a midpoint--Ulam bridge and strong--weak contour transfer for a
+  conditioned folded-Gaussian kernel.  It does not establish the PCF
+  two-band finite-Ulam sign inheritance or its crossing-cell defect.
+
+Thus the cyclic package is a distinct finite-dimensional theorem/diagnostic
+edge after this ledger, not a rebranding of RH-3, RH-10, or RH-55.  Provisional
+decision for RH-367 is `Route A=GO`, `Route B=STOP_SCOPED`, with a narrow
+scope: exact aligned block/sign inheritance and phase-local leakage only.
+The Route-B blocker is the absent common strong-space projector/resolvent
+theorem; finite noisy slopes remain diagnostics.  If the eventual paper
+passes this exact scope, it may be numbered RH-367.  Gates A--E remain
+false/open and the physical coordinate is unchanged.
+
 ## 7. Reproduction and publication audit
+
+Final RH-366 audit:
+
+- Source locks: `23/23`; frozen external commits include
+  `henon_mobius_correlations=34490443f50cfe9af9ff93888e51e7e7e534a5a7`,
+  `henon_weighted_zeta=ff44f961261349848c9f65ede6a031b7e155aca9`, and
+  `dyna_zeta_map=7fd3a3fdd5a6a25827a0965345459baf4a47b816`.
+- Tests: `17/17`; the independent upstream R001 checker passes, with `8/8`
+  surrogate replays and witness residual approximately `7.1e-15`.
+- Individual archive: `21` publication files and `23` external inputs, zero
+  failures.
+- PDF: `8` pages and `271,477` bytes; `20` embedded Unicode-mapped font rows;
+  Ghostscript parsing and text extraction pass; all `8/8` rendered pages were
+  visually checked.
+- Complete LaTeX/BibTeX logs are clean; the semantic PDF is byte-identical to
+  `main.pdf`; all Gates A--E and all named forbidden macro claims remain
+  false/open.
+
+RH-366 final hashes:
+
+```text
+main.tex
+7df165bd63d43f52dc217dea6691d231d8e40c00c148ab7e1aa4abcac55060fb
+
+PDF
+fb74ac4675a75c2b76cd24767a9095445b7e661b8a6a28bec1489c31183904bf
+
+result
+6a125ca90b0964945f95b39397b6e83f15a23ad24c94d2e8b9c90d320db8e418
+
+manifest
+1f978b49cbb7f3c99a7dfffdd6de85fe7e73c085f611d944280dc724ace5e45c
+
+verification
+9d23bfdc732f62e41e24269356fc0ffbfa82a95fab3ee24245082f3c97292770
+```
 
 Final RH-365 audit:
 
@@ -1007,9 +1207,10 @@ b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751
 ```text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-365 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-366 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
-tower, RH-364 as the weighted survivor/prime-copy input, RH-MVP2 as the
+tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
+return-bouquet input, RH-366 as the Möbius-correlation input, RH-MVP2 as the
 corpus umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
@@ -1030,18 +1231,27 @@ odd-prime anchors to a composite-order Zsigmondy theorem, claim the exact
 radius or a natural boundary, or identify the bouquet with a full H_p zeta,
 Hasse--Weil factor, canonical operator, or von-Mangoldt trace.
 
-For the next breadth-first source lock, first audit
-henon_mobius_correlations commit
-34490443f50cfe9af9ff93888e51e7e7e534a5a7. Separate the exact periodic and
-Parry-almost-sure orthogonality theorems, the explicit Mobius-adapted orbit
-with correlation 4/pi^2, the exact covariance/linear variance theorem, and
-the finite-horizon capacity theorem from the finite ensemble diagnostics.
-The exceptional orbit is defined only after reading the Mobius sequence, so
-encoding capacity is not spontaneous coupling, a canonical operator, or a
-prime-power trace. Evaluate this package by Route A and Route B before
-assigning RH-366. In parallel retain the composite primitive-divisor, sharp
-radius, finite entropy-data, intrinsic globalization, cyclic-Ulam, and
-original same-clock physical routes.
+RH-366 is an independent trigger-5 theorem edge and does not close any
+physical Gate. It proves fixed-periodic and Parry-almost-sure Möbius
+orthogonality, an offline Möbius-adapted correlation 4/pi^2, exact Parry
+covariance with `0 <= V_N <= sqrt(5)N`, and the exact O(N) capacity bracket
+`4/pi^2 <= liminf K_N/N <= limsup K_N/N <= 6/pi^2`. Do not promote offline
+coding to spontaneous arithmetic coupling, the finite capacity plateau to a
+limit, the conditional Chowla consequence to an unconditional theorem, or
+any orbit average/variance to a prime-power trace or Riemann-zero model.
+
+For the next breadth-first source lock, investigate the RH-366 roadmap in
+order: (i) existence or a proved scoped negative for `lim K_N/N`; (ii)
+nonadaptive invariant measures with quantitative Möbius orthogonality; (iii)
+general distance-two/constraint-graph capacity laws; (iv) the cyclic-Ulam
+aligned block/sign-mode theorem and a rigorous leakage bound at
+`cyclic_ulam_map=e7d21f646498d77e1c3213d1e4f35dc8466038ff`; this candidate is
+Route-A `GO` only after the explicit RH-3/RH-10/RH-55 overlap ledger, and its
+finite noisy slopes must remain non-theorem diagnostics; (v) the composite
+primitive-divisor, sharp-radius, finite-entropy-data, intrinsic globalization,
+and original same-clock physical routes. Evaluate each by Route A and Route B
+before assigning RH-367. In parallel retain the exact source locks and the
+four-volume foundation.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
 factor, or full H_p zeta. Do not promote the entropy tower, weighted Euler
