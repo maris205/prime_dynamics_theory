@@ -2,13 +2,13 @@
 
 Status date: 2026-08-06
 
-Current completed endpoint: RH-367
+Current completed endpoint: RH-368
 
-Completed research batch: RH-352 through RH-367
+Completed research batch: RH-352 through RH-368
 
-Post-four-volume independent theorem edges: RH-362 through RH-367
+Post-four-volume independent theorem edges: RH-362 through RH-368
 
-Latest route verdict: RH-367 Route A `GO`; Route B `STOP_SCOPED`
+Latest route verdict: RH-368 Route A `GO`; Route B `STOP_SCOPED`
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -18,6 +18,9 @@ RH-366 integration commit:
 
 RH-367 integration commit:
 `ed2076391759499d46a3d5f64d223cf469d63bbb`.
+
+RH-368 integration commit: recorded by the release commit that adds this
+handoff entry and the RH-368 publication package.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -48,6 +51,11 @@ Read completely:
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/results/result.json`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/main.pdf`
+- `papers/RH-368-parity-factor-mobius-capacity-limit/README.md`
+- `papers/RH-368-parity-factor-mobius-capacity-limit/UPDATED_ROADMAP.md`
+- `papers/RH-368-parity-factor-mobius-capacity-limit/THEOREM_LEDGER.md`
+- `papers/RH-368-parity-factor-mobius-capacity-limit/results/result.json`
+- `papers/RH-368-parity-factor-mobius-capacity-limit/main.pdf`
 - `papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/README.md`
 - `papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/UPDATED_ROADMAP.md`
 - `papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/THEOREM_LEDGER.md`
@@ -57,8 +65,9 @@ Read completely:
 Retain RH-362 as the return-rank input, RH-363 as the entropy-tower input,
 RH-364 as the weighted-survivor/prime-copy input, RH-365 as the unweighted
 return-bouquet input, RH-366 as the Hénon Möbius-correlation input, RH-367 as
-the boundary-aligned cyclic-Ulam input, and RH-361 as the immediate endpoint
-of the still-open original physical branch.
+the boundary-aligned cyclic-Ulam input, RH-368 as the parity-factor capacity
+input, and RH-361 as the immediate endpoint of the still-open original
+physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -68,11 +77,11 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-367 does not automatically activate RH-368. The next breadth-first source
-lock must compare the remaining external theorem packages, especially a
-common strong-space projector/resolvent bridge for cyclic Ulam data and the
-capacity-limit/nonadaptive-measure continuations of the certified Hénon
-Möbius package, against the completed RH-1--RH-367 corpus. RH search
+RH-368 does not automatically activate RH-369. The next breadth-first source
+lock must compare the remaining external theorem packages, especially the
+nonadaptive Markov/Gibbs family on the RH-366 graph, a common strong-space
+projector/resolvent bridge for cyclic Ulam data, and the still-open
+distance-two capacity route, against the completed RH-1--RH-368 corpus. RH search
 remains breadth-first: generate bold source-backed candidates, evaluate
 standalone discovery value as Route A and RH data-type compatibility as Route
 B, then issue `GO`, `STOP_SCOPED`, or `NOT_TESTABLE`. Create a new number only
@@ -179,7 +188,7 @@ counterloop. RH-354's normalized actual `p` tail is neither an unnormalized
 complete prefix nor a `q/E_off` theorem. Deterministic `s` is not an actual
 head, root set, rank law, or spectral submultiset.
 
-RH-362 through RH-367 add a separate arithmetic-dynamical branch. RH-362
+RH-362 through RH-368 add a separate arithmetic-dynamical branch. RH-362
 builds one marked modular cycle per prime; RH-363 inserts the resulting ranks
 into a pairwise-coprime admissible-shift tower; RH-364 derives weighted
 analytic domains for a certified local survivor and audits an engineered
@@ -188,7 +197,9 @@ anchors for the unweighted marked bouquet; RH-366 proves a periodic/Parry
 Möbius-orthogonality dichotomy, an offline adaptive correlation, exact Parry
 covariances, and an open capacity bracket on that survivor; RH-367 proves the
 exact aligned finite-Ulam block/sign inheritance and crossing-cell phase
-defect for a cyclic postcritically finite quadratic map. None is identified
+defect for a cyclic postcritically finite quadratic map; RH-368 proves an
+exact capacity formula and the all-order `4/pi^2` limit for the distinct
+three-cell parity factor `A_{\{2\}}`. None is identified
 with either typed physical branch, so the physical blocker below is unchanged.
 
 The deterministic target side remains exact and all-order: RH-263 gives the
@@ -634,7 +645,48 @@ Route A is `GO`; Route B is `STOP_SCOPED` at the missing common strong-space
 projector/resolvent bridge.  No universal `sqrt(sigma)` law, arithmetic
 operator, prime-power trace, zeta-zero model, or RH implication is claimed.
 
-## 4. Compact conclusions from RH-352 through RH-367
+### 3.7 RH-368 parity-factor Möbius capacity limit
+
+RH-368 freezes the source-backed PCF three-cell partition from
+`dyna_zeta_map=7fd3a3fdd5a6a25827a0965345459baf4a47b816`:
+
+```text
+A = [[0,0,1],[0,0,1],[1,1,0]],
+zeta_{f|J}(z) = zeta_{A_{\{2\}}}(z) = (1+z)/(1-2z^2).
+```
+
+The binary factor `A_{\{2\}}` consists of sign words whose positive
+positions lie in one parity class.  It is a distinct reduced language, not a
+subset of the RH-366 distance-two language: `+-+` and `++-` separate the two
+constraints in opposite directions.  For
+`M_N=sum_{n<=N} mu(n)`, `P_r(N)=#{mu(n)=+1}` and
+`N_r(N)=#{mu(n)=-1}` in parity class `r`, the exact finite capacity is
+
+```text
+K_N^(2) = max_r max(|-M_N+2P_r(N)|,|-M_N-2N_r(N)|).
+```
+
+Davenport's fixed-frequency estimate at `1/2` gives signed parity cancellation;
+the squarefree sieve gives odd/even densities `4/pi^2` and `2/pi^2`.  Hence
+
+```text
+K_N^(2)/N -> 4/pi^2.
+```
+
+The executable endpoint is `N=2^20`, `K_N^(2)=425095`, ratio
+`0.40540218353271484`; this row is diagnostic only.  The package has 11/11
+source locks, 5/5 local tests, 21 publication files, 11 external inputs, a
+zero-failure archive, and a three-page PDF with 20 embedded Unicode-mapped
+font rows; Ghostscript, text extraction, and all three rendered pages pass.
+
+The overlap ledger is positive and narrow: dyna_zeta_map supplies the PCF
+factor, RH-366 supplies the distinct four-state distance-two capacity bracket
+but no limit, and RH-367 supplies a finite-Ulam two-band theorem but no
+three-cell parity-factor capacity law.  Route A is `GO`; Route B is
+`STOP_SCOPED` because the optimizer reads the complete Möbius prefix and the
+capacity is not a canonical trace.  Gates A--E remain false/open.
+
+## 4. Compact conclusions from RH-352 through RH-368
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -690,6 +742,11 @@ operator, prime-power trace, zeta-zero model, or RH implication is claimed.
   `4h theta(1-theta)`; and a 136-row finite phase audit. No continuum
   projector/resolvent bridge or universal noise exponent is proved, and the
   package closes no Gate.
+- **RH-368:** Source-locked PCF three-cell factor `A_{\{2\}}`; exact finite
+  capacity formula for one-parity positive words; Davenport parity
+  cancellation and odd/even squarefree densities yielding the all-order
+  limit `K_N^(2)/N -> 4/pi^2`. This is not the RH-366 distance-two capacity,
+  not a canonical arithmetic coupling, and closes no Gate.
 
 ## 5. Route firewall and reopening triggers
 
@@ -715,6 +772,12 @@ Do not:
   law;
 - identify the crossing-cell local identity `4h theta(1-theta)` with the
   global stationary leakage observable for every discretization;
+- identify the RH-368 parity-factor `A_{\{2\}}` capacity with the RH-366
+  distance-two capacity, or claim that one admissible language contains the
+  other;
+- promote the RH-368 endpoint row `0.405402...` to evidence for the limit;
+- identify the adaptive parity-factor optimizer with a nonadaptive orbit,
+  canonical operator trace, or von-Mangoldt ledger;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -730,35 +793,38 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-367. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-368. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
-declared periodic/typical/capacity audit, and RH-367 closes the declared
-finite-Ulam alignment/phase-defect audit. For RH-368 and later, the shortest
-exact candidates are:
+declared periodic/typical/distance-two capacity audit, RH-367 closes the
+declared finite-Ulam alignment/phase-defect audit, and RH-368 closes the
+declared `A_{\{2\}}` parity-factor capacity route. For RH-369 and later, the
+shortest exact candidates are:
 
-1. A common strong-space projector/resolvent theorem that genuinely connects
+1. A nonadaptive branch-symmetric Markov/Gibbs family on the RH-366 graph,
+   with exact covariance and fixed-parameter almost-sure Möbius orthogonality;
+2. A common strong-space projector/resolvent theorem that genuinely connects
    the RH-367 finite-Ulam family to a declared continuum operator. Without
    this bridge, no spectral limit may be inferred from phase scans.
-2. A capacity-limit theorem (or a rigorous nonexistence/scoped negative) for
+3. A capacity-limit theorem (or a rigorous nonexistence/scoped negative) for
    `lim K_N/N` under the distance-two constraint. Pair correlations alone do
    not control this nonlinear maximum-weight functional.
-3. A nonadaptive-measure theorem identifying geometrically or dynamically
+4. A nonadaptive-measure theorem identifying geometrically or dynamically
    selected invariant measures, beyond Parry, for which a quantitative
    Möbius theorem holds without reading the arithmetic sequence.
-4. A general constraint-graph classification of mixing subshifts admitting
+5. A general constraint-graph classification of mixing subshifts admitting
    explicit arithmetic-adapted points and graph-dependent capacity brackets.
-5. A genuine composite-order primitive-divisor upgrade, such as an eventual
+6. A genuine composite-order primitive-divisor upgrade, such as an eventual
    Zsigmondy theorem or a `p`-adic lifting bound strong enough to force new
    primes. No such theorem is present in the locked source.
-6. A sharp return-rank multiplicity theorem strong enough to determine the
+7. A sharp return-rank multiplicity theorem strong enough to determine the
    exact origin radius or a genuine boundary law for `Z_0`. RH-365 supplies
    only the bracket `[2^(-1/2),1]`.
-7. A quantitative finite-entropy-data theorem that certifies or excludes a
+8. A quantitative finite-entropy-data theorem that certifies or excludes a
    finite prime/rank prefix without promoting numerical conditioning to exact
    infinite recovery.
-8. An intrinsic pressure/transfer/groupoid operator producing the entropy
+9. An intrinsic pressure/transfer/groupoid operator producing the entropy
    tower without inserting every modulus by hand.
-9. One of the original physical triggers 1--4.
+10. One of the original physical triggers 1--4.
 
 RH-364 closes the declared weighted-H\'enon prime-copy audit. It must still be
 called a prime lift or copy, not a finite-field reduction, Hasse--Weil local
@@ -787,6 +853,13 @@ repackaged as a continuum spectral theorem; its phase scan and noisy slopes
 are finite diagnostics only. A successor must either prove the missing
 strong-space projector/resolvent bridge or supply a genuinely different
 source-backed edge.
+
+RH-368 closes the declared PCF `A_{\{2\}}` parity-factor capacity audit. Its
+ `4/pi^2` limit belongs to the distinct one-parity factor and must not be
+ rebranded as the RH-366 distance-two limit, a nonadaptive orbit law, or a
+ canonical arithmetic trace. Any successor must supply a new graph, a new
+ nonadaptive measure theorem, the missing Ulam bridge, or one of the original
+ physical triggers.
 
 Even `D_(4k)(R)->0` would transfer only named moment/budget laws. Root, rank,
 spectral-submultiset, and canonical determinant identification remain
@@ -998,6 +1071,32 @@ phase protocol.  The Route-B blocker is the absent common strong-space
 projector/resolvent theorem; finite noisy slopes remain diagnostics.  Gates
 A--E remain false/open and the physical coordinate is unchanged.
 
+### 6.5 RH-368 source lock, parity-factor theorem, and route decision (2026-08-06)
+
+RH-368 locks `dyna_zeta_map` at
+`7fd3a3fdd5a6a25827a0965345459baf4a47b816`.  The source's PCF three-cell
+matrix is `[[0,0,1],[0,0,1],[1,1,0]]`, and its binary factor
+`A_{\{2\}}` has all positive positions in one parity class.  This language is
+distinct and non-comparable by inclusion with RH-366's four-state
+distance-two language.  The source also supplies the boundary-aware factor
+zeta identity `(1+z)/(1-2z^2)`; RH-368 uses it only as a provenance anchor.
+
+The exact finite capacity identity is
+
+```text
+K_N^(2) = max_r max(|-M_N+2P_r(N)|,|-M_N-2N_r(N)|).
+```
+
+Davenport's fixed frequency estimate at `1/2` supplies signed parity
+cancellation, while the squarefree sieve supplies odd/even densities
+`4/pi^2` and `2/pi^2`; therefore `K_N^(2)/N -> 4/pi^2`.  The independent
+proof audit checked the parity formula against exhaustive words through
+`N=12` and flagged the non-comparability boundary explicitly.  Route A is
+`GO`; Route B is `STOP_SCOPED` at adaptive data type, before Gate A.  The
+RH-366 distance-two capacity remains open, and no canonical operator, prime
+trace, zeta-zero model, Hilbert--Polya construction, or RH implication is
+claimed.
+
 ## 7. Reproduction and publication audit
 
 Final RH-367 audit:
@@ -1034,6 +1133,41 @@ manifest
 
 verification
 dacd22835634f71cb40e046729b7add9230c80470c1d3feca30ec12300d7246a
+```
+
+Final RH-368 audit:
+
+- Source locks: `11/11`; frozen commits include
+  `dyna_zeta_map=7fd3a3fdd5a6a25827a0965345459baf4a47b816`, the RH-366 release,
+  the RH-367 release, and the four-volume verification.
+- Tests: `5/5`; finite formula versus exhaustive `A_{\{2\}}` words through
+  `N=12`; source audit and claim firewall pass.
+- Individual archive: `21` publication files and `11` external inputs, zero
+  failures.
+- PDF: `3` pages and `299,799` bytes; `20` embedded Unicode-mapped font rows;
+  Ghostscript and text extraction pass; all `3/3` rendered pages were
+  visually inspected.
+- Complete LaTeX logs have no undefined references, overfull/underfull boxes,
+  actionable warnings, or rerun notices.  The semantic PDF is byte-identical
+  to `main.pdf`.
+
+RH-368 final hashes:
+
+```text
+main.tex
+8829edbf3c4f449f0a555a456e011559e3dfeeef7268dc5e8547ea42595848cb
+
+PDF
+eb995fab1d0c0eab87ec5f201b1d573e3a55f1985bc76725b2b34e6ba886ecb7
+
+result
+dab505dd68e6cb011bb5e8b5ae6dce4268be7fa0431bc2ebbe921cb562f0a4d8
+
+manifest
+2dde9095c506f3a862295994e0433a1eda4a7c0a12b215c3f04db0143a75bf38
+
+verification
+ec4472f3ead9f305215808f9799ca01048dfa6abc88a23c093fd8a94017a5699
 ```
 
 Final RH-366 audit:
@@ -1318,12 +1452,12 @@ b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751
 ```text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-367 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-368 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
-boundary-aligned cyclic-Ulam input, RH-MVP2 as the corpus umbrella, and RH-361
-as the physical endpoint.
+boundary-aligned cyclic-Ulam input, RH-368 as the parity-factor capacity
+input, RH-MVP2 as the corpus umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -1359,15 +1493,24 @@ not promote the finite `-1` mode to an isolated continuum resonance, the
 phase scan to an asymptotic law, or fitted noisy slopes to a universal
 `sqrt(sigma)` theorem.
 
-For the next breadth-first source lock, investigate the RH-367 roadmap in
-order: (i) a common strong-space projector/resolvent theorem connecting the
-finite-Ulam family to a declared continuum operator; (ii) existence or a
-proved scoped negative for `lim K_N/N`; (iii) nonadaptive invariant measures
-with quantitative Möbius orthogonality; (iv) general constraint-graph capacity
-laws; (v) the composite primitive-divisor, sharp-radius, finite-entropy-data,
-intrinsic globalization, cyclic-noise, and original same-clock physical
-routes. Evaluate each by Route A and Route B before assigning RH-368. In
-parallel retain the exact source locks and the four-volume foundation.
+RH-368 is an independent trigger-5 theorem edge and does not close any
+physical Gate. It proves the exact finite capacity and all-order
+`K_N^(2)/N -> 4/pi^2` for the distinct PCF parity factor `A_{\{2\}}`.
+Do not identify this with RH-366's distance-two capacity, claim an inclusion
+between the two languages, promote the endpoint row to asymptotic evidence,
+or turn the adaptive optimizer into a nonadaptive orbit or canonical trace.
+
+For the next breadth-first source lock, investigate the RH-368 roadmap in
+order: (i) a branch-symmetric nonadaptive Markov/Gibbs family on the RH-366
+graph, with exact covariance and fixed-parameter almost-sure Möbius
+orthogonality; (ii) a common strong-space projector/resolvent theorem
+connecting the RH-367 finite-Ulam family to a declared continuum operator;
+(iii) existence or a proved scoped negative for the RH-366 distance-two
+capacity limit; (iv) general constraint-graph capacity laws; (v) the
+composite primitive-divisor, sharp-radius, finite-entropy-data, intrinsic
+globalization, cyclic-noise, and original same-clock physical routes. Evaluate
+each by Route A and Route B before assigning RH-369. In parallel retain the
+exact source locks and the four-volume foundation.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
 factor, or full H_p zeta. Do not promote the entropy tower, weighted Euler

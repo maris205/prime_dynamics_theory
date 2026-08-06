@@ -1,0 +1,204 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Mob}{\mu}
+\newcommand{\ParityFactor}{A_{\{2\}}}
+
+\title{Parity-factor M\"obius capacity limit}
+\author{RH research program}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We isolate an exact constraint-graph theorem from a postcritically finite
+quadratic map.  Its three-cell Markov partition has matrix
+\(A=\left(\begin{smallmatrix}0&0&1\\0&0&1\\1&1&0\end{smallmatrix}\right)\),
+and the binary factor \(\ParityFactor\) consists of words whose positive symbols
+lie in one parity class.  For the M\"obius prefix, the resulting adaptive
+capacity has an exact finite formula and satisfies
+\(K_N^{(2)}/N\to4/\pi^2\).  The proof uses parity Mertens cancellation and
+odd/even squarefree densities.  This is a reduced parity factor, not the
+four-state distance-two constraint of RH-366.  The optimizer is chosen after
+reading the arithmetic prefix, so no canonical operator, prime trace,
+Riemann-zero model, Hilbert--Polya construction, or RH implication is claimed.
+\end{abstract}
+
+\section{Scope and source boundary}
+
+The external source \cite{DynaZeta2026} proves that the restriction of
+\(f_u(x)=1-ux^2\) at the real root
+\[
+ u_c^3-2u_c^2+2u_c-2=0,
+ \qquad r=u_c-1,\qquad J=[-r,1],
+\]
+has the postcritical itinerary
+\[
+0\longmapsto1\longmapsto-r\longmapsto r\longmapsto r.
+\]
+The partition \(I_1=[-r,0], I_2=[0,r], I_3=[r,1]\) has transition matrix
+\[
+ A=\begin{pmatrix}0&0&1\\0&0&1\\1&1&0\end{pmatrix}.
+ \tag{1}
+\]
+Labelling \(I_1\) by $1$ and the other intervals by $0$ gives the factor
+\(\ParityFactor\): all $1$-positions lie in one parity class.  The same source
+records the boundary-aware factor zeta function
+\[
+ \zeta_{f_{u_c}|_J}(z)=\zeta_{\ParityFactor}(z)=\frac{1+z}{1-2z^2},
+ \tag{2}
+\]
+but (2) is used here only as a provenance anchor.
+
+The distinction from RH-366 is essential.  RH-366 permits positive symbols
+on both parity paths but forbids two positives at distance two; its capacity
+limit is still open.  Here we study a distinct, explicitly defined reduced
+factor
+\(\ParityFactor\), where all positive positions must use one parity class.
+
+\section{The finite parity-factor capacity}
+
+For $N\geq1$, write $\Mob_n=\Mob(n)$ and
+\[
+ M_N=\sum_{n\leq N}\Mob_n,
+ \qquad
+ P_r(N)=\#\{n\leq N:n\equiv r\pmod 2,\ \Mob_n=1\},
+\]
+\[
+ N_r(N)=\#\{n\leq N:n\equiv r\pmod 2,\ \Mob_n=-1\},
+ \qquad r\in\{0,1\}.
+\]
+Define
+\[
+ K_N^{(2)}=\max_{\varepsilon\in(\ParityFactor)_N}
+ \left|\sum_{n=1}^N\Mob_n\varepsilon_n\right|,
+ \tag{3}
+\]
+where \((\ParityFactor)_N\) is the set of sign words for which the set
+\(\{n:\varepsilon_n=+1\}\) is empty or contained in one residue class
+modulo $2$.
+
+\begin{proposition}[Exact finite capacity]
+\label{prop:finite}
+For every $N$,
+\[
+ K_N^{(2)}=
+ \max_{r\in\{0,1\}}
+ \max\bigl\{|{-M_N+2P_r(N)}|,\ |{-M_N-2N_r(N)}|\bigr\}.
+ \tag{4}
+\]
+\end{proposition}
+
+\begin{proof}
+Start with the all-negative word, whose score is $-M_N$.  If positives are
+allowed only in parity class $r$, changing a position with $\Mob_n=1$ from
+$-1$ to $+1$ raises the score by $2$, while changing a position with
+$\Mob_n=-1$ lowers it by $2$.  Thus the largest score in that class is
+$-M_N+2P_r(N)$, obtained by flipping every positive M\"obius entry; the
+smallest is $-M_N-2N_r(N)$, obtained by flipping every negative entry.  Empty
+or partial flips cannot improve either extremum.  Taking absolute values and
+then the two parity classes proves (4).
+\end{proof}
+
+\section{All-order limit}
+
+We use the standard consequences of the prime number theorem in arithmetic
+progressions and squarefree counting:
+\[
+ \frac{M_N}{N}\to0,\qquad
+ \frac{P_1(N)+N_1(N)}{N}\to\frac4{\pi^2},\qquad
+ \frac{P_0(N)+N_0(N)}{N}\to\frac2{\pi^2}.
+ \tag{5}
+\]
+The signed parity cancellation is an independent input: Davenport's fixed
+frequency estimate at \(\theta=1/2\) gives
+\[
+ A_N=\sum_{n\le N}\Mob(n)(-1)^n=o(N)
+ \quad\text{(see \cite{Davenport1937}).}
+\]
+Together with \(M_N=o(N)\), this implies that the even and odd M\"obius
+sums, \((M_N+A_N)/2\) and \((M_N-A_N)/2\), are both $o(N)$.  The
+squarefree sieve gives the two densities in (5).  Since
+\(P_r-N_r=o(N)\) on each class, (5) gives
+\[
+ \frac{P_1(N)}N,\frac{N_1(N)}N\to\frac2{\pi^2},
+ \qquad
+ \frac{P_0(N)}N,\frac{N_0(N)}N\to\frac1{\pi^2}.
+ \tag{6}
+\]
+
+\begin{theorem}[Parity-factor capacity limit]
+\label{thm:limit}
+For the factor \(\ParityFactor\),
+\[
+ \boxed{\displaystyle \lim_{N\to\infty}\frac{K_N^{(2)}}N=\frac4{\pi^2}.}
+ \tag{7}
+\]
+\end{theorem}
+
+\begin{proof}
+By (4) and (6), the two odd-parity candidates converge after division by
+$N$ to $+4/\pi^2$ and $-4/\pi^2$, respectively.  The two even-parity
+candidates converge to $+2/\pi^2$ and $-2/\pi^2$.  The maximum of their
+absolute values therefore converges to $4/\pi^2$.
+\end{proof}
+
+\begin{remark}[What this does not prove]
+The limit in (7) is not the unresolved RH-366 capacity for the distance-two
+four-state survivor.  It is a capacity law for the distinct reduced factor
+\(\ParityFactor\); the two languages are not comparable by set inclusion.
+Nor does (7) turn an adaptive
+sign word into a nonadaptive orbit, a canonical coupling, or a trace.
+\end{remark}
+
+\section{Frozen executable audit}
+
+The package checks the integer M\"obius sieve, (4) against exhaustive words
+through $N=12$, and the source hashes.  At $N=2^{20}$ it records
+\[
+ K_N^{(2)}=425095,
+ \qquad K_N^{(2)}/N=0.40540218353271484.
+\]
+This row is a reproduction diagnostic only.  It is not a fit and is not used
+to establish (7).
+
+\section{Route and Gate ledger}
+
+Route A is \texttt{GO}: (1)--(7) give a source-locked PCF realization, an
+exact finite identity, and an all-order capacity theorem.  Route B is
+\texttt{STOP\_SCOPED}: the maximizing word reads the complete M\"obius prefix,
+and the quantities are scalar adaptive sums.  They are not a canonical
+dynamical determinant, a von Mangoldt prime-power trace, or a completed-zeta
+divisor.  Gates A--E remain false/open.  No Hilbert--Polya operator,
+Riemann-zero identification, or proof of RH follows.
+
+\begingroup\sloppy
+\begin{thebibliography}{9}
+\bibitem{DynaZeta2026}
+Source package, \emph{A postcritically finite quadratic realization of
+$W=2$}, source commit \texttt{7fd3a3fdd5a6}, 2026.
+\bibitem{RH366}
+RH-366, \emph{M\"obius orthogonality, adaptive encoding, and Parry
+covariance}, repository release, 2026.
+\bibitem{RH367}
+RH-367, \emph{Boundary-aligned cyclic-Ulam structure and phase-local
+leakage}, repository release, 2026.
+\bibitem{Mirsky1949}
+L. Mirsky, Arithmetical pattern problems relating to divisibility by
+$r$th powers, \emph{Proc. London Math. Soc.} 50 (1949), 497--508.
+\bibitem{Davenport1937}
+H. Davenport, On some infinite series involving arithmetical functions (II),
+\emph{Quart. J. Math.} 8 (1937), 313--320.
+\end{thebibliography}
+\endgroup
+
+\end{document}

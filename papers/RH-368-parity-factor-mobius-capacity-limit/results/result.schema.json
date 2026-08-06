@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["status", "route_verdict", "gates", "false_claims", "source_audit", "finite_checks", "endpoint_diagnostic"],
+  "properties": {
+    "status": {"const": "RH-368_parity_factor_mobius_capacity_limit"},
+    "route_verdict": {
+      "type": "object",
+      "required": ["route_a", "route_b"],
+      "properties": {"route_a": {"const": "GO"}, "route_b": {"const": "STOP_SCOPED"}}
+    },
+    "gates": {"type": "object", "additionalProperties": {"const": false}},
+    "false_claims": {"type": "object", "additionalProperties": {"const": false}},
+    "source_audit": {
+      "type": "object",
+      "required": ["pass", "rows"],
+      "properties": {"pass": {"const": true}, "rows": {"type": "array"}}
+    },
+    "finite_checks": {
+      "type": "object",
+      "required": ["all_pass", "rows"],
+      "properties": {"all_pass": {"const": true}, "rows": {"type": "array"}}
+    },
+    "endpoint_diagnostic": {
+      "type": "object",
+      "required": ["N", "capacity", "capacity_over_N"],
+      "properties": {"N": {"const": 1048576}, "capacity": {"const": 425095}, "capacity_over_N": {"type": "number"}}
+    }
+  }
+}
