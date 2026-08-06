@@ -1,13 +1,14 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-06
-状态：`BOLD_CHANNEL_V15 / ROOT_NUMBER_SQUARE_PRESCRIBED_PHASE_GATE`
-claim level：`EXACT_ROUTE_RETYPE_AND_SOURCE_SCOPED_STOP_NO_NEW_ARITHMETIC_ADVANCE`
+状态：`BOLD_CHANNEL_V16 / BRIDGE_B_PHYSICAL_OBSERVABLE_QUOTIENT_INTERTWINER`
+claim level：`EXACT_FINITE_OPERATOR_GEOMETRY_AND_ROUTE_REDESIGN_NO_ARITHMETIC_ADVANCE`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V15 的完整
-公式、proof与独立 checker位于 `research/tpc-big-road/`。正式 theorem
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V16 的完整
+proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_physical_intertwiner.md`
+及 `research/tpc-big-road/tpc_bridge_b_carrier_checker.py`。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
 
@@ -17,7 +18,8 @@ claim level：`EXACT_ROUTE_RETYPE_AND_SOURCE_SCOPED_STOP_NO_NEW_ARITHMETIC_ADVAN
 200+ local research nodes
   -> 13 major obstruction classes
   -> 2 visible bottlenecks
-  -> 1 tensor-local hybrid J-to-sqrt(X) prime-producing highway.
+  -> 1 selected physical-observable Bridge B highway
+     + 2 independent analytic reserves (A1/A2).
 ```
 
 不再因为一个新 schema、一个新 source mismatch或一个有限 certificate自动生成下一篇
@@ -72,6 +74,13 @@ CRITICAL_SCALE_POINTED_ODOMETER_SHRINKING_TARGET_RECURRENCE.
 ordinary a.e. dynamical Borel--Cantelli不能代替这个 pointed theorem。更准确地，
 该 pointed conclusion由 exact event identity与 TPC等价；它是 endpoint，不是一个
 逻辑上更弱的新 bridge。
+
+V16 因此不再直接把 H4当作中间施工门。exact replication--deletion geometry给出
+`R_p^*R_p=(1-2/p)I`与正交 deletion forcing；full centered space只有 logarithmic
+prime-scale衰减，不能 uniformly coercively exact intertwine到 uniformly exponential
+memory-loss carrier。surviving Bridge B改为 physical-observable quotient：先让
+nonautonomous dynamics产生 deterministic `H_dyn/H3_phys` estimate，再进入 PBAPT，
+而不是把 a.e. genericity升级到 seed `0`。
 
 V1 把 A 与 B 暂视为同一个 centered-complement问题。V2 的 adversarial audit证明
 这个说法必须分型：primorial incidence与 TPC-32/O161 packet目前是两个 exact
@@ -447,27 +456,51 @@ Err_k: V_k -> B_(k+1)^dyn.
 
 1. `R_p` 是上节 exact sieve pair replication--deletion operator；
 2. `Q_k` 是 actual nonautonomous paired logistic transfer block；
-3. `J_k` 同时保持 mean mode、pair event与 physical functional：必须另有
-   `Lambda_X^dyn` 使 `ell_X(f)=Lambda_X^dyn(J_(k_X)f)`，而不只保持一个 symbolic
-   word；
-4. `Err_k` 的 accumulated physical loss必须满足
+3. `J_k` 同时保持 mean mode、pair event与整个 declared physical dual family：对
+   预先声明 class的 active `A in A_X`及带 literal normalization的
+   `ell in L_(k_X,X,A)`，必须有
+   `Lambda_(X,A,ell)^dyn` 使
+   `ell(f)=Lambda_(X,A,ell)^dyn(J_(k_X)f)` 对每个 `f in V_(k_X)`成立，而不只保持
+   一个 symbolic word或 fitted trajectory；对充分大 `X`，`A_X`须非空，且 arithmetic
+   promotion前必须含 separately source-locked 的 actual `h0=2` application；
+4. 写 `f_(j,X,A)`为 exact stage source trajectory，并约定
+   不依赖 `X,A`的 common predeclared `j_0`，要求对充分大 `X`有 `k_X>j_0`且
+   `f_(j+1,X,A)=R_(p_(j+1))f_(j,X,A)`；另约定
+   `Q_(b:a)=Q_(b-1)...Q_a`、`Q_(a:a)=I`。`Err_k` 的 accumulated physical loss必须由
+   一个对全部 active `A,ell`共同的 `epsilon(X)->0`支付：
 
    ```text
-   sum_(j<k_X)
-     |Lambda_X^dyn(Q_(k_X-1)...Q_(j+1) Err_j B_j)|
-       = o(a_(k_X) X);
+   sup_(A in A_X, ell in L_(k_X,X,A)) sum_(j_0<=j<k_X)
+     |Lambda_(X,A,ell)^dyn(
+        Q_(k_X:j+1) Err_j f_(j,X,A))|
+       <= epsilon(X) X/(log X)^2;
    ```
 
    不能只给 abstract operator norm而不支付 physical evaluation；
 5. `Q_k` 必须实现 forced-triangular cocycle，而非假设 complement invariant；除
    arbitrary-product memory loss外，还须逐 stage传递 (5.1) 的 deletion forcing；
-6. 结论必须作用于 distinguished arithmetic section，而不只是 ACIP-a.e. fibers。
+6. 结论必须作用于 actual deterministic physical evaluation，而不只是 ACIP-a.e.
+   fibers；本条不得改写成免费解决 pointed H4。
 
 如果这些成立，RH-3 类型的 sequential covariance才可能把 logistic estimates传回
 physical innovation/profile或 PBAPT 的 Type-II input；不得再把抽象 complement
 contraction直接宣布为 `ell_X(W)=o(a_kX)`。这是大胆的 `HYPOTHESIS`，不是现有
 isomorphism的改名。若无法构造保持 physical functional与 forcing的 `J_k`，就立即
 停止 logistic carrier，回到 direct arithmetic/analytic attack；不再用数值相似性续命。
+
+V16 对这个 display 加入一个 exact scope firewall。在 normalized Haar `L2` 上，
+
+```text
+R_p^*R_p=(1-2/p)I,
+g_(k,p)=R_p1-(1-2/p)1 orthogonal to R_p(V_k^0).
+```
+
+故 uniformly lower-coercive full-centered-space `J_k` 加 uniformly exponential
+memory-loss `Q_k` 的 exact intertwiner已 `STOP_SCOPED`；telescoped full-operator
+defect相对 raw product norm可忽略的版本也同样停止。合法的 `J_k` 必须是
+noncoercive/observable quotient或只在 physical dual seminorm中控制误差，且不能丢
+actual evaluation。完整 theorem与 scope见
+`research/tpc-big-road/bridge_b_physical_intertwiner.md`。
 
 还有一个早停 no-go：在 stationary measure-preserving category中，mixing system的
 factor仍然 mixing，故真正 mixing的 logistic system不可能把 nonmixing odometer当作
@@ -491,7 +524,7 @@ rho_*(mu_H,k)=mu_F,k.
 |---|---|---|---|
 | H0 arithmetic base | typed `R_p` cocycle、Haar pair mass、odometer moving event与 twin identity | `PROVED` | locked to TPC-1/RH-1--3 objects |
 | H_occ (legacy H1) | pre-TT-star source-backed linear occurrence edge family | `OPEN / NOT_TESTABLE` | actual edges、schedule、ranges、normalization；不得由 quadratic pair逆生 |
-| H_dyn | same stage/time/event/seed forced-triangular intertwiner to nonautonomous dynamics | `HYPOTHESIS` | coefficientwise identity、physical functional、forcing与 uniform evaluation |
+| H_dyn | same stage/time/event/physical-functional forced-triangular intertwiner to nonautonomous dynamics | full-centered coercive exponential-mix version `STOP_SCOPED`; physical-observable quotient `SELECTED OPEN` | target-independent coefficientwise identity、physical dual family、forcing与 uniform evaluation |
 | H2 rare mass | full-cycle `a_k asymp log^-2 N` | `PROVED_FULL_CYCLE`; physical evolution attachment `OPEN` | no use of `pi_2(N)` or Hardy--Littlewood lower bound |
 | H3_metric | Haar moving covariance/variance for exact primorial targets | `PROVED_HAAR_VARIANCE_O_N` | explicit resonance expansion与 independent checker；不产生 arithmetic credit |
 | H3_phys | Type II/far-copy cancellation attached to actual physical carrier | `OPEN`; factorized HB4 quarter fixed `delta<1/2` `PROVED_PARTIAL` | literal coefficients、all shapes、target-coupled reassembly、full ledger |
@@ -581,10 +614,12 @@ credit；普通 marginal large sieve不算成功。
 
 ### Engine B: nonautonomous dynamical carrier
 
-构造 `J_k,Q_k,Err_k`，显式处理 deletion forcing，先在一般 affine pattern class上
-产生可送入 Engine A 的 Type-II或 physical-evaluation estimate。Haar variance已经
-独立闭合，重复证明 typical recurrence不算成功；只证明 typical logistic orbit有正
-`LRL` mass也不算成功。
+构造 observable-quotient `J_k,Q_k,Err_k`，显式处理 deletion forcing，先在一般
+affine pattern class上产生可送入 Engine A 的 Type-II或 physical-evaluation estimate。
+不得要求它在 full centered Haar space上同时 uniformly coercive与 uniformly
+exponentially mixing；V16 exact scaled-isometry theorem已停止该版本。Haar variance
+已经独立闭合，重复证明 typical recurrence不算成功；只证明 typical logistic orbit有
+正 `LRL` mass也不算成功。
 
 两个 engines可以并行，但不得生成两个互不相干的 paper chains。它们必须在
 `H_occ/H_dyn/H3_phys`上产生状态变化；H4只是最终 arithmetic endpoint。
@@ -985,4 +1020,65 @@ prime scalar bounds不够，必须有真正 composite theorem。
 genericity：不是把遍历性直接改写成孪生素数，而是看动力学桥能否产生 A1缺少的
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
+TPC-207=`false`。
+
+## 17. V16 后的罗盘：Bridge B 改接 `H_dyn/H3_phys`，不再伪装 H4
+
+V16 对 exact primorial pair cocycle证明
+
+```text
+R_p^*R_p=(1-2/p)I,
+mean(R_pf)=(1-2/p)mean(f),
+(1-2/p)^(-1/2)R_p is an isometric injection.
+```
+
+deletion forcing
+
+```text
+g_(k,p)=R_p1-(1-2/p)1
+```
+
+又与 `R_p(V_k^0)`正交，故
+
+```text
+W_(k+1)=R_pW_k+a_k g_(k,p),
+||W_k/a_k||^2=1/a_k-1 asymp(log p_k)^2.
+```
+
+这不是一个微型谱计算，而是直接决定岛屿地图的桥型：exact sieve centered dynamics
+本身没有隐藏的 uniformly contracting complement。任何在全部 centered space上
+uniformly lower-coercive的 `J_k`，都不能把 raw logarithmic-rate product exact
+intertwine到 uniformly exponentially memory-losing Logistic transfer products；
+相对 raw product norm可忽略的 full-operator Duhamel defect也不可能。该 broad cell
+只停止 full-space版本，不停止 physical quotient。
+
+当前 Bridge B 主门因此更新为
+
+```text
+BRIDGE_B_PHYSICAL_OBSERVABLE_QUOTIENT_INTERTWINER
+  = SELECTED_OPEN_NEW_THEOREM.
+```
+
+它必须对 target-independent affine class建立 forced-triangular nonautonomous
+evolution，并保留 fixed `h0=2`、event、stage/clock、deletion forcing、actual physical
+dual family及 accumulated physical error。目标输出是 deterministic Type-II/
+physical-evaluation estimate，先改变 `H_dyn/H3_phys`，再接 PBAPT；不是再给一个
+ACIP-a.e. 或 Haar-a.e. recurrence theorem。
+
+Bridge B 的 reserve次序是：
+
+1. observable quotient / physical cyclic subspace；
+2. Bratteli--Vershik/S-adic aging-clock compression的 rank-growth falsifier；
+3. deterministic shadowing，且必须支付 moving-boundary margins；
+4. Hénon natural extension，只有 exact factor/event/measure/functional diagram后加入。
+
+proof与 checker见
+`research/tpc-big-road/bridge_b_physical_intertwiner.md`及
+`research/tpc-big-road/tpc_bridge_b_carrier_checker.py`。canonical V16 registry为
+20 rows、final-LF SHA-256
+`cc63154e3a1bb21513ed7b86fe30236133d110d48eef191bc3bfab7841bc9fb1`。
+
+V16是 `EXACT_FINITE_OPERATOR_GEOMETRY_AND_ROUTE_REDESIGN`，不是 arithmetic
+advance。A1 actual root-number-square master与 A2 paired-Voronoi继续作为独立 reserves；
+Bridge B不给它们自动 credit。fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。

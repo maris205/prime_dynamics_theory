@@ -3,6 +3,65 @@
 更新时间：2026-08-06
 交接状态：`SEALED_FOR_NEW_SESSION`
 
+第 63 节从已发布 V15 commit
+`1841e9cdfa692de53f90cb4855bea33e87cc0ab7`切换到岛屿地图的 Bridge B，但没有
+重复 ordinary DBC。第 52--53 节已经证明 exact profinite moving mass、总 mass、
+Haar `O(N)` variance与 a.e. recurrence；而
+
+```text
+T^n(0) in E_n iff n,n+2 are both prime
+```
+
+使 seed `0` 的 pointed recurrence本身成为 TPC-equivalent endpoint。positive
+measure、unique ergodicity、ACIP/Haar-a.e. 或 generic Hénon fiber均不能作该 seed 的
+替代。
+
+V16 对同一个 finite primorial pair replication--deletion operator取得 exact
+Hilbert geometry。若 `alpha_p=1-2/p`，normalized Haar `L2`上
+
+```text
+R_p^*R_p=alpha_p I,
+mean(R_pf)=alpha_p mean(f),
+alpha_p^(-1/2)R_p is an isometric injection.
+```
+
+令 `g_(k,p)=R_p1-alpha_p1`，则它 centered、满足
+`||g_(k,p)||^2=alpha_p(1-alpha_p)`，并与 `R_p(V_k^0)`正交。因而
+
+```text
+W_(k+1)=R_pW_k+a_k g_(k,p),
+||W_k/a_k||^2=1/a_k-1 asymp(log p_k)^2.
+```
+
+这给出新的 broad STOP：在全部 centered sieve space上 uniformly lower-coercive的
+`J_k`，不能把只有 logarithmic prime-scale decay 的 `R` products exact intertwine到
+uniformly exponentially memory-losing `Q` products；telescoped full-operator Duhamel
+defect若相对 `sqrt(product(1-2/p))` 为 `o(1)`也同样矛盾。该 cell只停止 full-space
+coercive/exponential-mix版本，不停止 observable seminorm、noncoercive quotient、
+nonuniform carrier或只在 physical functional后控制的 forced trajectory。
+
+Bridge B current first gate更新为
+
+```text
+BRIDGE_B_PHYSICAL_OBSERVABLE_QUOTIENT_INTERTWINER
+  = SELECTED_OPEN_NEW_THEOREM.
+```
+
+它必须对 target-independent affine class保持 fixed physical `h0=2`、event、stage/
+clock、deletion forcing、actual physical dual family与 accumulated physical loss，
+并输出 deterministic `H_dyn/H3_phys` Type-II或 physical-evaluation estimate再接 PBAPT；
+不是把 a.e. genericity升级到 named seed。Bratteli--Vershik/S-adic aging clock仅作
+rank-growth falsifier reserve；Hénon仍须 exact natural-extension factor/event/
+measure/functional diagram。A1 root-number-square master与 A2 paired-Voronoi继续独立，
+不得与 Bridge B拼接 theorem credit。
+
+V16是 `EXACT_FINITE_OPERATOR_GEOMETRY_AND_ROUTE_REDESIGN`，不是 source-backed
+arithmetic advance。TPC-207=false、fixed-atom credit=`0`、global strict
+`1/400=UNPAID`、`L2=NONE`。proof与 20-row canonical registry见
+`research/tpc-big-road/bridge_b_physical_intertwiner.md`；checker为
+`research/tpc-big-road/tpc_bridge_b_carrier_checker.py`，registry final-LF SHA-256为
+`cc63154e3a1bb21513ed7b86fe30236133d110d48eef191bc3bfab7841bc9fb1`。
+
 第 62 节从已发布 V14 commit
 `1bdd428d7173372bd74b713cf695aa5ac611cf79`继续同一个 canonical
 `TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE`。V15不再把 near-primitive collar
@@ -2144,6 +2203,26 @@ rare-event mass与 covariance theorem、distinguished-seed dynamical
 Borel--Cantelli/discrepancy theorem、真正 Hénon semiconjugacy/event pullback、
 TPC-1 prime-sensitive survivor-to-prime bridge、现有 analytic TPC parents或任何
 独立新 theorem。精确对象分离、条件 closure lemma与 reopen interface见第 52 节。
+
+2026-08-06 的 Bridge B V16 exact geometry新增且仅新增一个 broad cell：
+
+```text
+DECLARED_TPC_BRIDGE_B_20260806_UNIFORMLY_COERCIVE_FULL_CENTERED_SIEVE_
+TO_EXPONENTIALLY_MIXING_LOGISTIC_INTERTWINER_V1 = STOP_SCOPED
+```
+
+它停止在 normalized Haar full centered spaces上同时要求：uniformly lower-coercive
+`J_k`、uniform exponential arbitrary-product memory loss、以及 exact
+`J_(k+1)R_p=Q_kJ_k`；也停止 telescoped full-operator Duhamel defect为
+`o(sqrt(product(1-2/p)))`的同型版本。第一处 exact fatal是
+`R_p^*R_p=(1-2/p)I`：raw products只有 logarithmic prime-scale decay，而 normalized
+maps为 isometric injections；deletion forcing又正交注入 centered space，不能删除。
+
+本 cell不停止 observable seminorm、noncoercive/quotient `J_k`、nonuniform/neutral
+`Q_k`、只在 actual physical trajectory或 `Lambda_X^dyn` 后控制的 Duhamel error、
+forced-triangular carrier、Bratteli aging-clock quotient或 exact Hénon natural extension。
+这些 strengthened gates只有在保持 fixed `h0=2`、stage、event、measure、clock、
+physical functional与完整 loss ledger时才 OPEN；精确 proof与 surviving gate见第 63 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -5812,7 +5891,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V15 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V16 current）
 
 ```text
 进入仓库：
@@ -5820,8 +5899,9 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--62 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--63 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -5839,6 +5919,14 @@ writers不得执行。
 
 H3_METRIC = PROVED_HAAR_MOVING_VARIANCE_O_N
 H4_POINTED_x0 = ENDPOINT_EQUIVALENT_TARGET_OPEN
+BRIDGE_B_HAAR_L2_GRAM = PROVED_EXACT_FINITE
+BRIDGE_B_NORMALIZED_SCALED_ISOMETRY = PROVED_EXACT_FINITE
+BRIDGE_B_ORTHOGONAL_DELETION_FORCING = PROVED_EXACT_FINITE
+BRIDGE_B_FULL_CENTERED_EXP_MIX_INTERTWINER = STOP_SCOPED_EXACT_RATE_MISMATCH
+BRIDGE_B_FULL_CENTERED_NEGLIGIBLE_DUHAMEL_DEFECT = STOP_SCOPED_EXACT_RATE_MISMATCH
+BRIDGE_B_PHYSICAL_OBSERVABLE_QUOTIENT_INTERTWINER = SELECTED_OPEN_NEW_THEOREM
+BRIDGE_B_BRATTELI_AGING_CLOCK = OPEN_RESERVE_RANK_GROWTH_FALSIFIER
+BRIDGE_B_HENON_NATURAL_EXTENSION = OPTIONAL_OPEN_EXACT_FACTOR_REQUIRED
 PAIR_O161_PACKET_TO_PRIMORIAL_DIRECT_COMPOSITION = STOP_SCOPED
 PBAPT_TYPE_I_TYPE_II_REASSEMBLY_HIGHWAY = OPEN
 COARSE_COMPARISON_TYPE_I = PROVED_SOURCE_BACKED
@@ -5959,13 +6047,18 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮只执行第 62 节控制的同一个 canonical umbrella：
+下一轮首先执行第 63 节 Bridge B current primary：
 
-TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
+```text
+BRIDGE_B_PHYSICAL_OBSERVABLE_QUOTIENT_INTERTWINER.
+```
 
-当前 primary subgate为
-`HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER`。
-V11--V15已经闭合或精确分型六段，
+它必须构造或 broad-falsify target-independent observable quotient、forced
+nonautonomous evolution、actual physical dual return及 accumulated physical error。
+A1 的 `HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER`与 A2
+paired-Voronoi只作独立 reserves，不与 Bridge B拼接 theorem credit。
+
+若返回 A1，V11--V15已经闭合或精确分型六段，
 不得重复：
 
 1. 全部 squarefree `rho<=F^(4/3-delta)`由
@@ -5999,8 +6092,8 @@ V11--V15已经闭合或精确分型六段，
    AFE coefficients也不等于 actual四 polynomials。这一 source screen已
    `STOP_SCOPED`，不得换名重开。
 
-下一步只攻击 actual prescribed-phase prime master，随后才处理 smooth-squarefree
-tensor completion。induction后必须保留
+若 Bridge B broad-falsified而返回 A1，只攻击 actual prescribed-phase prime master，
+随后才处理 smooth-squarefree tensor completion。induction后必须保留
 `mu(f)mu(m)f/[phi(f)phi(m)]`、`chi(-1)chi(m^2)conjugate(chi)(c_v)`、四条
 `(n,m)=1` masks及 orientation
 `E_1(chi)E_2(chi)U(conjugate chi)V_v(conjugate chi)`。prime master必须相对 exact
@@ -6036,14 +6129,15 @@ additive-difference residue kernel。
 atlas、HB4 collective main、Ramanujan axes与每个 fixed `1/4<delta<1/2`
 off-diagonal均已完成，不得重复。
 
-当前大路探索优先转向 Bridge B：在保持现有
-`moving rare-event mass + covariance + distinguished-seed genericity`三道缺口分离的
-前提下，检查 symbolic/logistic/Hénon的 nonautonomous encoding是否能为 physical
-短 phase family构造 prescribed-seed genericity，而不是再次扫描普通解析 bilinear
-bound。必须首先 source-lock moving events `E_(2,n)`、真实 invariant/nonstationary
-measure、seed、clock、arithmetic coding与 gap-2 carrier；Haar-a.e.、positive phase
-measure或 full-phase RMS均不能自动升级到 arithmetic seed。任何动力学结论也不得
-逆向给 A1 theorem credit，除非存在逐式 arithmetic intertwiner。
+Bridge B source lock已完成：moving mass、Haar covariance与 metric DBC为 PROVED，
+seed `0` pointed gate为 TPC-equivalent endpoint。不要继续扫描普通 a.e. DBC。
+V16 又证明 full centered sieve cocycle是 scaled isometry并有 orthogonal forcing，故
+uniformly coercive full-space `J`到 uniformly exponentially mixing `Q`的 exact/
+negligible-full-defect版本已 STOP。当前只构造 observable/physical quotient：必须
+保持 fixed `h0=2`、stage、event、clock、forcing与整个 physical dual family，并输出
+deterministic `H_dyn/H3_phys` estimate。任何 a.e.结论、单向量 fit、word-only
+isomorphism或 abstract norm contraction都不算成功；任何动力学结论也不得逆向给 A1
+theorem credit，除非有逐式 arithmetic/physical intertwiner与完整 loss ledger。
 
 A1的新主定理与 A2 paired-Voronoi仍保留为独立 reserve。若返回 A2，必须保留
 conductor projector、四个 literal Möbius slots、ordered/swapped-shell exactly-once
@@ -6055,11 +6149,12 @@ attachment及 one-Poisson `2/7`伪 window均不得重开。不得把 formula-lev
 发布 broad STOP/OPEN map，不生微型论文。
 
 并行只读 agents可分别承担 source lock、proof audit与 architecture/reassembly；
-正式写入只由主控完成。两个工作包 checker为：
+正式写入只由主控完成。工作包 checker为：
 
 python research/tpc-big-road/tpc_big_road_lab.py --check
 python research/tpc-big-road/tpc_big_road_independent_checker.py --check
 python research/tpc-big-road/tpc_fm_local_comparison_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_carrier_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -9941,6 +10036,358 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 63. 2026-08-06 V16：Bridge B scaled-isometry firewall 与 physical-observable 大路
+
+### 63.1 baseline、分工与 claim ceiling
+
+本轮从已发布 V15
+`1841e9cdfa692de53f90cb4855bea33e87cc0ab7`启动；local HEAD、`origin/main`与
+remote `refs/heads/main`三 hash一致。启动/发布边界沿用第 1 节 22 项只读回归，
+TPC-27--32 legacy writers与 TPC-122 writer均未执行。130 个 protected untracked
+files按既有 manifest原样保留。
+
+本轮使用 ARS deep-research/source-verification/devil's-advocate分层，并由三个
+read-only agents完成：
+
+```text
+V16_BRIDGE_B_SOURCE_LOCK
+V16_BRIDGE_B_PROOF_AUDIT
+V16_BRIDGE_B_ARCHITECTURE
+```
+
+另对主控提出的 exact scaled-isometry theorem执行
+`V16_BRIDGE_B_SCALED_ISOMETRY_NO_GO_AUDIT`。所有 agents观察 baseline
+`1841e9c...`、启动 handoff SHA-256
+`db168b859895902e1b404bd736c2f62909cb403ca244f1914efb2f4fdd85f9d4`，
+回报 `files_changed=[]`；正式写入只由主控完成。
+
+本轮不是 numbered paper或 TPC-207 release。最大 claim为
+
+```text
+EXACT_FINITE_HAAR_OPERATOR_GEOMETRY
++ MERTENS_ASYMPTOTIC_STRUCTURAL_NO_GO
++ BRIDGE_B_ROUTE_REDESIGN
++ NO_ARITHMETIC_ADVANCE.
+```
+
+fixed physical `h0=2`始终冻结；fixed-atom credit=`0`、strict
+`1/400=UNPAID`、`L2=NONE`、TPC-207 trigger=`false`。
+
+### 63.2 source-locked Bridge B对象与 H4 endpoint firewall
+
+第 52--53 节当前事实不能再沿 review早期 ledger理解为 “H2 heuristic/H3 partial”。
+精确状态是：
+
+| object/gate | current repo-backed status |
+|---|---|
+| finite primorial pair cocycle `R_p,B_k` | `PROVED_EXACT` |
+| profinite base `(Z_hat,x->x+1,Haar)` | `PROVED_EXACT` |
+| moving event `E_n`与 fixed `h0=2` seed identity | `PROVED_EXACT` |
+| `mu(E_n) asymp (log n)^(-2)`及总 mass发散 | `PROVED_FULL_CYCLE` |
+| exact CRT covariance、Haar moving variance `O(N)` | `PROVED_HAAR_MOVING_VARIANCE_O_N` |
+| Haar-a.e. infinite hits | `DERIVED_METRIC` |
+| named seed `0` recurrence | `OPEN_ENDPOINT_EQUIVALENT_TARGET` |
+| same-stage Logistic physical intertwiner | `HYPOTHESIS` |
+| Hénon event/measure/functional natural extension | `ABSENT / OPTIONAL OPEN` |
+
+关键 exact identity仍为
+
+```text
+T^n(0) in E_n iff n and n+2 are both prime,  n>=3.
+```
+
+因此直接证明同一 `E_n`上 seed `0`的 infinite recurrence已经等价于 TPC endpoint，
+不能再称为由普通遍历性轻易供应的中间桥。两种逻辑反模型分别冻结：取独立
+Bernoulli product space、`P(omega_n=1)=1/log^2(n+2)`，其 limsup full measure但 named
+all-zero sequence从不命中，否定 a.e. 到指定点的提升；另在 `([0,1],Leb)`取 nested
+events `F_n=(0,1/n]`，则总 mass发散而 `limsup F_n`为空，否定无 dependence control的
+mass-to-a.e. 提升。故
+
+```text
+POSITIVE_MEASURE_TO_POINTED_RECURRENCE = STOP_SCOPED_FALSE
+DIVERGENT_MASS_WITHOUT_DEPENDENCE_TO_AE_DBC = STOP_SCOPED_FALSE
+METRIC_DBC_TO_DISTINGUISHED_SEED = STOP_SCOPED_FALSE.
+```
+
+`RLR^infinity` critical orbit最终固定、`u_c` ACIP typical orbit无 prime semantics、
+inverse prime kneading parameter由完整 prime word选择、Hénon area preservation无
+arithmetic factor；第 6 节已有 broad direct-composition STOP保持不变。
+
+### 63.3 exact Haar Gram、scaled isometry与 orthogonal forcing
+
+令 `P=P_k`，`V_k=C^(Z/PZ)`配 normalized Haar inner product。对新奇素数
+`p`，每个 child唯一写成 `r+jP`，并定义
+
+```text
+(R_pf)(r+jP)
+ = f(r)1_(p does not divide r+jP)1_(p does not divide r+jP+2).
+```
+
+因 `P`可逆且 fixed `h0=2`在 `p>2`下非零，两个 forbidden copy indices不同；每个
+parent恰有 `p-2` survivors。写 `alpha_p=1-2/p`，逐 parent求和即得
+
+```text
+<R_pf,R_pg>_(k+1)=alpha_p<f,g>_k,
+mean_(k+1)(R_pf)=alpha_p mean_k(f),
+R_p^*R_p=alpha_p I.                                    (63.1)
+```
+
+故 centered subspace `V_k^0`保持，且
+
+```text
+S_p=alpha_p^(-1/2)R_p
+```
+
+是 exact isometric injection；它不是 surjection/unitary，禁止把
+`R_pR_p^*`误写成 `alpha_p I`。
+
+constants并不 invariant。令
+
+```text
+g_(k,p)=R_p1-alpha_p1,
+```
+
+则
+
+```text
+mean(g_(k,p))=0,
+||g_(k,p)||^2=alpha_p(1-alpha_p),
+g_(k,p) orthogonal to R_p(V_k^0).                       (63.2)
+```
+
+对 `B_k=a_k1+W_k`，exact forced recursion与 energy为
+
+```text
+W_(k+1)=R_pW_k+a_k g_(k,p),
+||W_(k+1)||^2
+ =alpha_p||W_k||^2+a_k^2alpha_p(1-alpha_p)
+ =a_(k+1)(1-a_(k+1)),
+||W_k/a_k||^2=1/a_k-1 asymp(log p_k)^2.                 (63.3)
+```
+
+所以 naive homogeneous contracting complement不仅未证，而且被 actual exact
+Haar geometry否定。
+
+### 63.4 full-space exponential-mixing intertwiner的 broad STOP
+
+对 prime block写
+
+```text
+R_(b:a)=R_(p_b)...R_(p_(a+1)),
+beta_(b:a)=product_(a<j<=b)(1-2/p_j).
+```
+
+约定 `R_(a:a)=I`；对 dynamical products约定
+`Q_(b:a)=Q_(b-1)...Q_a`及 `Q_(a:a)=I`。
+
+(63.1)给全部 singular values恰为 `sqrt(beta_(b:a))`。Mertens与 twin local
+Euler product给
+
+```text
+sqrt(beta_(b:a))
+  =(log p_a/log p_b)^(1+o(1))                          (63.4)
+```
+
+（固定 `a`时为 `C_a/log p_b`），即 stage index中 subexponential/logarithmic decay。
+
+若 `J_k:V_k^0->Y_k^0` uniformly lower-coercive，且 `Q` arbitrary products满足
+`||Q_(b:a)||<=C exp(-lambda(b-a))`，exact
+
+```text
+J_(k+1)R_(p_(k+1))=Q_kJ_k
+```
+
+会迫使同一向量同时具有 lower bound
+`c sqrt(beta_(b:a))`与 exponential upper bound，矛盾。因此新增 broad cell：
+
+```text
+UNIFORMLY_COERCIVE_FULL_CENTERED_SIEVE_TO_EXPONENTIALLY_MIXING_
+LOGISTIC_INTERTWINER_V1
+  = STOP_SCOPED_EXACT_SCALED_ISOMETRY_RATE_MISMATCH.     (63.5)
+```
+
+带 defect时，令
+
+```text
+Err_k=J_(k+1)R_(p_(k+1))-Q_kJ_k,
+Delta_(b:a)=sum_(a<=j<b)Q_(b:j+1)Err_jR_(j:a).
+```
+
+若 full operator norm中
+`||Delta_(b:a)||=o(sqrt(beta_(b:a)))`，同一矛盾仍成立，故
+
+```text
+FULL_CENTERED_EXP_MIX_NEGLIGIBLE_DUHAMEL_DEFECT
+  = STOP_SCOPED_EXACT_DUHAMEL_RATE_MISMATCH.             (63.6)
+```
+
+(63.5)--(63.6) 不覆盖：observable seminorm、noncoercive/quotient `J_k`、
+nonuniform/neutral `Q` bundles、只对 actual physical trajectory的 estimate、或只在
+`Lambda_X^dyn` 后给 `o(a_kX)`的 physical defect。特别地，不得把 latter改写成
+full operator `o(sqrt(beta))`，也不得用本 no-go关闭所有 Logistic construction。
+
+### 63.5 selected surviving gate：physical-observable quotient
+
+岛屿图的 Bridge B因此不再把 H4 named-seed endpoint当作“容易的测度桥”，而先接
+`H_dyn/H3_phys`。selected master为
+
+```text
+BRIDGE_B_PHYSICAL_OBSERVABLE_QUOTIENT_INTERTWINER
+  = SELECTED_OPEN_NEW_THEOREM.                           (63.7)
+```
+
+它必须在同一 source ledger上满足：
+
+1. theorem先对与未来 prime/twin outcomes无关的 admissible affine-pattern class
+   陈述；对充分大 `X`，须有 `k_X>j_0`、active `A_X`非空，且 arithmetic promotion前必须含
+   separately source-locked 的 actual `h0=2` application；
+2. `J_k`只可商掉被一整族 physical functionals共同消灭的方向；该族必须含 mean、
+   actual interval、deletion-bias Fourier与 PBAPT Type-II tests，并冻结 literal
+   physical normalizations，不能只 fit单个 `B_k` trajectory；
+3. 对预先声明 class在尺度 `X`的 active `A in A_X`，令 `f_(j,X,A) in V_j`为 exact
+   stage source trajectory，冻结不依赖 `X,A`的 common `j_0`及 source normalization，并要求
+   `f_(j+1,X,A)=R_(p_(j+1))f_(j,X,A)`。exact/controlled
+   `J_(k+1)R_p=Q_kJ_k+Err_k`保留 event、stage、clock、deletion forcing、masks及
+   fixed shift；
+4. actual physical dual return
+
+   ```text
+   ell(f)=Lambda_(X,A,ell)^dyn(J_(k_X)f)
+   ```
+
+   对全部 `ell in L_(k_X,X,A)`及每个 `f in V_(k_X)`成立；
+5. propagated error在 physical evaluation后统一支付：必须存在对全部 active
+   `A,ell`共同的 `epsilon(X)->0`，使
+
+   ```text
+   sup_(A in A_X, ell in L_(k_X,X,A)) sum_(j_0<=j<k_X)
+    |Lambda_(X,A,ell)^dyn(
+       Q_(k_X:j+1)Err_j f_(j,X,A))|
+      <=epsilon(X)X/(log X)^2,                          (63.8)
+   ```
+
+   或直接给 PBAPT所需更强 literal Type-II saving；
+6. constants、actual schedule、Banach/dual norms、boundary margins与完整 physical
+   loss ledger uniform。
+
+成功输出必须是 deterministic Type-II/physical-evaluation theorem，可送入 PBAPT或
+actual packet reassembly；ACIP-a.e.、Haar-a.e.、full-phase RMS或 word-only
+`RLR^infinity` fit均不改变 `H_dyn/H3_phys`。
+
+reserve次序为：Bratteli--Vershik/S-adic aging-clock event-preserving rank-growth
+falsifier；deterministic shadowing加 explicit moving-boundary margins；最后才是具有
+exact event/measure/functional natural-extension diagram的 Hénon。finite-rank
+Bratteli source `arXiv:1003.2816`提供工具类型但没有本 arithmetic attachment；
+Haydn--Nicol--Persson--Vaienti `arXiv:1103.2113`仍是 metric shrinking-target工具，
+不给 named point或 physical functional theorem credit。
+
+### 63.6 artifact、registry与 route verdict
+
+本轮新增两个未编号 working artifacts：
+
+```text
+research/tpc-big-road/bridge_b_physical_intertwiner.md
+research/tpc-big-road/tpc_bridge_b_carrier_checker.py
+```
+
+checker只用 exact rational finite quotient，验证四个 primorial extensions、四 stage
+product、Gram/mean/isometry/forcing/energy identities，并拒绝 one-deletion、wrong
+forcing center及 false normalized-contraction mutations。它不构造 Logistic/Hénon map，
+也不把 finite fixtures冒充 asymptotic proof。
+
+canonical registry为 20 raw/unique rows，按
+`key<TAB>value<LF>` ordinal排序后的 final-LF SHA-256为
+
+```text
+cc63154e3a1bb21513ed7b86fe30236133d110d48eef191bc3bfab7841bc9fb1
+```
+
+current route verdict为
+
+```text
+DIRECT_RLR_INFINITY_RECURRENCE = STRUCTURAL_DEAD_END
+METRIC_DBC_TO_SEED_0 = STOP_SCOPED_FALSE
+FULL_CENTERED_EXP_MIX_LOGISTIC_INTERTWINER = STOP_SCOPED
+PHYSICAL_OBSERVABLE_QUOTIENT_INTERTWINER = SELECTED_OPEN_NEW_THEOREM
+BRATTELI_AGING_CLOCK = OPEN_RESERVE
+HENON_NATURAL_EXTENSION = OPTIONAL_OPEN
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false
+```
+
+A1 actual root-number-square master、A1 smooth composite completion与 A2
+paired-Voronoi仍为独立 analytic reserves，不因 (63.7)获得 theorem credit。第 6 节
+全部旧 STOP cells保持；两个 O161 parents、pair-native、legacy H1、PBAPT与 global
+architecture保持 OPEN。
+
+### 63.7 verification与 publication boundary
+
+本轮预期 tracked files严格为：
+
+```text
+TPC_COMPASS.md
+TPC_HANDOFF.md
+research/tpc-big-road/README.md
+research/tpc-big-road/bridge_b_physical_intertwiner.md
+research/tpc-big-road/tpc_bridge_b_carrier_checker.py
+```
+
+没有 paper/PDF/build log/TPC-207。正式写入后必须执行：第 1 节 22 项、
+TPC-111/124/126/127 四项 supplemental、全部 big-road checkers普通与 optimized
+模式、新 registry/doc一致性、Markdown fences、`git diff --check`及 protected manifest。
+只 stage上述五 files。停止所有 agents后，pull/rebase；若 remote相关文件变化则重审。
+push后验证 local HEAD、`origin/main`与 remote `refs/heads/main`三 hash一致。
+
+正式冻结后的 pre-sync audit为：
+
+```text
+POST_WRITE_BOOTSTRAP = 22/22 PASS
+POST_WRITE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_WRITE_BIGROAD_NORMAL_AND_OPTIMIZED = 8/8 PASS
+V16_PROOF_QA = PASS
+V16_CHECKER_SCHEMA_QA = PASS
+V16_REGISTRY = 20/20 UNIQUE / HASH MATCH
+MARKDOWN_FENCES = BALANCED
+HANDOFF_SECTIONS = 63 UNIQUE / 1--63 COMPLETE
+GIT_DIFF_CHECK = PASS
+GIT_CACHED_DIFF = EMPTY
+PROTECTED_UNTRACKED = 130 / MANIFEST MATCH
+TPC122_WRITER_EXECUTED = NO
+TPC27_32_LEGACY_WRITERS_EXECUTED = NO
+TPC_207_CREATED = NO
+```
+
+protected manifest仍为
+`9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1`；V16
+registry仍为
+`cc63154e3a1bb21513ed7b86fe30236133d110d48eef191bc3bfab7841bc9fb1`。最终 proof
+QA逐项封住 empty `A_X`、one-vector return、逐对象 `o(1)`、free `f_j`及空 Duhamel
+interval，要求 eventually nonempty active family、common fixed `j_0`、actual
+`R_p` source recurrence、forall-`f` physical return与 uniform `epsilon(X)`。
+
+`git fetch origin main`先发现三项 RH-371-only commits；正式 pull时上游又加入 RH-372，
+最终 rebase base为 `b6197da50d97da1cfc933293a3b11ef10f8f6240`。新增 paths仅为
+`RH_HANDOFF.md`及 `papers/RH-371-*`、`papers/RH-372-*`，和本五文件、AGENTS及
+big-road无 overlap。主控只 stage上述五 files并完成无 stash rebase。post-rebase
+audit为：
+
+```text
+POST_REBASE_BOOTSTRAP = 22/22 PASS
+POST_REBASE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_REBASE_BIGROAD_NORMAL_AND_OPTIMIZED = 8/8 PASS
+POST_REBASE_PROTECTED_UNTRACKED = 130 / MANIFEST MATCH
+POST_REBASE_TRACKED_WORKTREE = EMPTY
+POST_REBASE_CACHED_DIFF = EMPTY
+POST_REBASE_PARENT_EQUALS_ORIGIN_MAIN = YES
+```
+
+本段 audit-only amendment后仍须重跑 final checker/structure、再次 pull并在 push后验证
+local `HEAD`、`origin/main`与 remote `refs/heads/main`三 hash一致；任何非零项继续
+fail closed。
 
 ## 62. 2026-08-06 V15：root-number-square prescribed-phase 与 unitary firewall
 

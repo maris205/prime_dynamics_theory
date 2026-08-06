@@ -1,8 +1,12 @@
-# TPC big road V15: root-number-square prescribed-phase highway
+# TPC big road V16: Bridge B physical-observable highway
 
 更新时间：2026-08-06
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_ROUTE_RETYPE_AND_SOURCE_SCOPED_STOP`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_FINITE_OPERATOR_GEOMETRY_AND_ROUTE_REDESIGN`
+
+当前主路线见第 16 节及 `bridge_b_physical_intertwiner.md`。下列 analytic registry
+继续冻结 V15/A1 的独立 reserve，不因 Bridge B 的优先级变化而取得或失去 theorem
+credit。
 
 ```text
 COARSE_COMPARISON_TYPE_I_ADVANCE = RETAINED
@@ -1419,3 +1423,104 @@ HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER.
 下一道 global subgate是
 `HB4_EXACT_HALF_TOP_SMOOTH_SQUAREFREE_CONDUCTOR_COMPLETION`。fixed-atom credit仍为
 `0`，strict `1/400=UNPAID`，`L2=NONE`，TPC-207 trigger=`false`。
+
+## 16. V16 Bridge B：从 named-seed endpoint 转向 physical-observable carrier
+
+V16 不再重复证明 ordinary dynamical Borel--Cantelli。第 52--53 节已经在 exact
+profinite base上闭合 moving mass、总 mass、Haar `O(N)` variance与 a.e. recurrence；
+而
+
+```text
+T^n(0) in E_n iff n,n+2 are both prime
+```
+
+使 seed `0` 的 pointed recurrence本身成为 TPC-equivalent endpoint。positive
+measure、unique ergodicity、ACIP-a.e.、full-measure DBC、algorithmic typicality或
+generic Hénon fiber都不能免费选中该 Dirac seed。
+
+本轮对 exact pair replication--deletion operator发现了更强的 Hilbert geometry。
+在 normalized Haar `L2(G_k)`上，若 `alpha_p=1-2/p`，则
+
+```text
+R_p^*R_p=alpha_p I,
+mean(R_pf)=alpha_p mean(f),
+alpha_p^(-1/2)R_p is an isometric injection.             (16.1)
+```
+
+令 `g_(k,p)=R_p1-alpha_p1`，又有
+
+```text
+mean(g_(k,p))=0,
+||g_(k,p)||^2=alpha_p(1-alpha_p),
+g_(k,p) orthogonal to R_p(V_k^0),
+W_(k+1)=R_pW_k+a_k g_(k,p).                              (16.2)
+```
+
+因此 centered energy按正交和精确传播，且
+`||W_k/a_k||^2=1/a_k-1 asymp(log p_k)^2`。筛法 normalized centered state不是
+一个隐藏的 contracting complement。
+
+这给出一个 broad而非微型的 STOP：若 `J_k` 在全部 centered space上 uniformly
+lower-coercive，而 `Q` 的 arbitrary products uniformly exponentially memory-losing，
+则 exact `J_(k+1)R_p=Q_kJ_k`不可能成立。原因为 raw product norm只有
+
+```text
+sqrt(product_p(1-2/p))
+  = logarithmic prime-scale decay,
+```
+
+不能等于 exponential stage decay。即使带 `Err_k`，若 telescoped full-operator
+Duhamel defect相对上述 raw norm为 `o(1)`，同样矛盾。精确 proof、scope与 checker见
+[`bridge_b_physical_intertwiner.md`](bridge_b_physical_intertwiner.md)。
+
+这不关闭 Logistic。它强迫下一座桥改用
+
+```text
+BRIDGE_B_PHYSICAL_OBSERVABLE_QUOTIENT_INTERTWINER
+  = SELECTED_OPEN_NEW_THEOREM.                           (16.3)
+```
+
+`J_k` 只允许商掉对预先声明 physical dual family不可见的方向；它必须同时保持
+mean mode、fixed `h0=2` event、deletion forcing、stage/clock、actual interval
+evaluation与 PBAPT所需 Type-II functionals。对预先声明 class在尺度 `X`的 active
+成员 `A in A_X`，令 `f_(j,X,A)`为 exact stage trajectory；对充分大 `X`，`A_X`
+必须非空，且取得 arithmetic promotion前必须含 separately source-locked 的 actual
+nonzero `h0=2` application。所有 trajectory须共享不依赖 `X,A`的 predeclared `j_0`，
+对充分大 `X`有 `k_X>j_0`，并满足
+`f_(j+1,X,A)=R_(p_(j+1))f_(j,X,A)`，不得逐 stage自由挑选测试向量。dual family的
+literal physical normalizations冻结，return identity须对每个 `f in V_(k_X)`成立，
+不能只在 fitted trajectory成立。`Q_k`必须是 actual nonautonomous paired transfer
+block；约定
+`Q_(b:a)=Q_(b-1)...Q_a`及 `Q_(a:a)=I`，并要求存在一个对全部 active `A`与 declared
+physical functionals共同的 `epsilon(X)->0`，使
+
+```text
+sup_(A in A_X, ell in L_(k_X,X,A))
+ sum_(j_0<=j<k_X)
+ |Lambda_(X,A,ell)^dyn(
+    Q_(k_X:j+1)Err_j f_(j,X,A))|
+   <= epsilon(X) X/(log X)^2,                           (16.4)
+```
+
+或更强的 literal Type-II saving。对单向量 `B_k` 的 finite fit、word-only
+`RLR^infinity` match、abstract norm contraction或 a.e. orbit conclusion均不给 credit。
+
+岛屿图因此作一次宏观重连：Bridge B不再以“metric recurrence直接选中 seed 0”为
+中间桥，而以 deterministic physical-functional transference接入 `H_dyn/H3_phys`，
+再送入 PBAPT/Bridge A 的 prime-producing层。Bratteli--Vershik/S-adic aging clock保留
+为 rank-growth falsifier reserve；Hénon只有在 exact natural-extension diagram保持
+event、measure、stage与 physical functional时加入。
+
+read-only exact checker为
+
+```powershell
+python -B research/tpc-big-road/tpc_bridge_b_carrier_checker.py --check
+python -B -O research/tpc-big-road/tpc_bridge_b_carrier_checker.py --check
+```
+
+其 canonical V16 registry为 20 rows，final-LF SHA-256
+`cc63154e3a1bb21513ed7b86fe30236133d110d48eef191bc3bfab7841bc9fb1`。
+本轮 claim ceiling仅为 exact finite operator geometry与 route redesign；
+`fixed-atom credit=0`、`strict 1/400=UNPAID`、`L2=NONE`、
+`TPC_207_TRIGGER=false`。A1 actual root-number-square master与 A2 paired-Voronoi仍作
+独立解析 reserves，不与 V16 theorem credit拼接。
