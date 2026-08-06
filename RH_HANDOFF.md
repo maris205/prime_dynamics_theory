@@ -22,8 +22,8 @@ RH-367 integration commit:
 RH-368 integration commit:
 `ebcf29a4a2d248d8320067d85899b3b8039a7b12`.
 
-RH-369 integration commit: recorded by the release commit that adds this
-handoff entry and the RH-369 publication package.
+RH-369 integration commit:
+`77549262532625c5dec8ac514a97bcee7b4503fc`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
