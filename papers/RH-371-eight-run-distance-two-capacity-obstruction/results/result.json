@@ -1,0 +1,240 @@
+{
+  "claim_boundary": {
+    "notes": [
+      "The eight-run identity is an exact finite-prefix theorem, not an asymptotic limit.",
+      "The pair obstruction is cyclic/periodic and synthetic; its words are not Mobius.",
+      "Open-prefix pair ledgers differ and are not claimed equal.",
+      "The adaptive optimizer reads the complete Mobius prefix and is not a canonical trace.",
+      "No Hilbert--Polya operator, von Mangoldt trace, zero identification, or RH implication is claimed."
+    ],
+    "physical_coordinate": "actual_same_clock_unnormalized_head_transport_open",
+    "route_b_first_blocker": "no theorem for convergence of the alternating eight-run Mobius envelope"
+  },
+  "endpoint": {
+    "C_minus": [
+      212419,
+      84346,
+      32781,
+      12409,
+      4487,
+      1487,
+      425,
+      100
+    ],
+    "C_plus": [
+      212554,
+      84630,
+      32950,
+      12359,
+      4447,
+      1493,
+      453,
+      107
+    ],
+    "E_minus": 106183,
+    "E_plus": 106305,
+    "K_N": 516163,
+    "M_N": 257,
+    "N": 1048576,
+    "W_minus": 257953,
+    "W_plus": 258120,
+    "interpretation": "exact finite reproduction only; no asymptotic fit",
+    "maximum": 515983,
+    "minimum": -516163
+  },
+  "exact_theorems": {
+    "capacity_identity": "K_N=max(abs(-M_N+2W_+),abs(-M_N-2W_-))",
+    "cyclic_pair_obstruction": "u and v have identical cyclic ordered pair ledgers but different capacities",
+    "density_criterion": "K_N/N converges iff max(R_+(N),R_-(N))/N converges",
+    "mod9_cutoff": "every nine odd step-two positions include a multiple of 9",
+    "periodic_capacities": "K_(18q)(u^q)=10q and K_(18q)(v^q)=12q",
+    "run_reduction": "W_sigma=E_sigma+sum_{k=1}^8(-1)^(k+1) C_sigma,k for every N"
+  },
+  "false_claims": {
+    "adaptive_optimizer_is_canonical_coupling": false,
+    "canonical_spectral_determinant_constructed": false,
+    "capacity_limit_proved": false,
+    "cyclic_ledger_is_open_prefix_ledger": false,
+    "finite_endpoint_is_asymptotic_evidence": false,
+    "hilbert_polya_constructed": false,
+    "pair_data_is_sufficient_for_capacity": false,
+    "periodic_witness_is_mobius": false,
+    "riemann_hypothesis_proved": false,
+    "riemann_zeros_identified": false
+  },
+  "finite_checks": {
+    "all_pass": true,
+    "capacity_rows": [
+      {
+        "pass": true,
+        "q_count": 256,
+        "word": "u"
+      },
+      {
+        "pass": true,
+        "q_count": 256,
+        "word": "v"
+      }
+    ],
+    "endpoint": {
+      "C_minus": [
+        212419,
+        84346,
+        32781,
+        12409,
+        4487,
+        1487,
+        425,
+        100
+      ],
+      "C_plus": [
+        212554,
+        84630,
+        32950,
+        12359,
+        4447,
+        1493,
+        453,
+        107
+      ],
+      "E_minus": 106183,
+      "E_plus": 106305,
+      "K_N": 516163,
+      "M_N": 257,
+      "W_minus": 257953,
+      "W_plus": 258120,
+      "maximum": 515983,
+      "minimum": -516163
+    },
+    "endpoint_pass": true,
+    "pair_ledger_pass": true,
+    "prefix_count": 1000,
+    "prefix_formula_pass": true
+  },
+  "gates": {
+    "A_canonical_intrinsic_dynamical_spectral_determinant": false,
+    "B_time_oriented_scattering_or_unitary_completion": false,
+    "C_self_adjoint_generator_and_intrinsic_T_log_T": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "overlap_ledger": {
+    "RH-366": "supplies the frozen distance-two constraint, path MWIS, and bracket; the capacity limit remains open",
+    "RH-370": "identifies the run-reduction candidate but does not prove the capacity theorem",
+    "distinct_edge": true,
+    "henon_mobius_correlations": "supplies the source implementation and brute-force checks"
+  },
+  "periodic_audit": {
+    "cyclic_ledger_equal": true,
+    "cyclic_ledger_rows": 18,
+    "cyclic_pair_cells": 162,
+    "interpretation": "cyclic/periodic ledger only; not an open-prefix or Mobius counterexample",
+    "open_lag2_differs": true,
+    "open_lag2_u": [
+      4,
+      3,
+      1,
+      2,
+      4,
+      1,
+      0,
+      1,
+      0
+    ],
+    "open_lag2_v": [
+      3,
+      3,
+      1,
+      3,
+      4,
+      1,
+      0,
+      1,
+      0
+    ],
+    "pair_order": [
+      "++",
+      "+-",
+      "+0",
+      "-+",
+      "--",
+      "-0",
+      "0+",
+      "0-",
+      "00"
+    ],
+    "words": {
+      "u": "+++++-++0--+-----0",
+      "v": "+++++---0--+---++0"
+    }
+  },
+  "route_verdict": {
+    "route_a": "GO",
+    "route_b": "STOP_SCOPED"
+  },
+  "source_audit": {
+    "pass": true,
+    "rows": [
+      {
+        "actual_sha256": "1c415c1e4f8adfeaa0bd27b7fd04cb0f5b88a0acb50a81e9553a9b3239450833",
+        "expected_sha256": "1c415c1e4f8adfeaa0bd27b7fd04cb0f5b88a0acb50a81e9553a9b3239450833",
+        "pass": true,
+        "path": "henon_mobius_correlations/henon_mobius/capacity.py"
+      },
+      {
+        "actual_sha256": "634fd9543ceab91c19766015141e83636d64213f131d5c1b098385ef68c3b102",
+        "expected_sha256": "634fd9543ceab91c19766015141e83636d64213f131d5c1b098385ef68c3b102",
+        "pass": true,
+        "path": "henon_mobius_correlations/THEOREM_PACKAGE.md"
+      },
+      {
+        "actual_sha256": "0f70143c2f0dc880eef19ca625ddb69f2ecd9556e4cced3e357d6141cd188188",
+        "expected_sha256": "0f70143c2f0dc880eef19ca625ddb69f2ecd9556e4cced3e357d6141cd188188",
+        "pass": true,
+        "path": "henon_mobius_correlations/tests/test_capacity.py"
+      },
+      {
+        "actual_sha256": "7c04a7c403ca1879f61e4238144d9044f77f05441fdfd3ccc76cc4c743ba2a37",
+        "expected_sha256": "7c04a7c403ca1879f61e4238144d9044f77f05441fdfd3ccc76cc4c743ba2a37",
+        "pass": true,
+        "path": "henon_mobius_correlations/paper/sections/6_capacity_audit.tex"
+      },
+      {
+        "actual_sha256": "7df165bd63d43f52dc217dea6691d231d8e40c00c148ab7e1aa4abcac55060fb",
+        "expected_sha256": "7df165bd63d43f52dc217dea6691d231d8e40c00c148ab7e1aa4abcac55060fb",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/main.tex"
+      },
+      {
+        "actual_sha256": "d357192bfb80da578459cdac4add37840b8e1e47c5b2188ca0e49e7b096cbb23",
+        "expected_sha256": "d357192bfb80da578459cdac4add37840b8e1e47c5b2188ca0e49e7b096cbb23",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/README.md"
+      },
+      {
+        "actual_sha256": "6a125ca90b0964945f95b39397b6e83f15a23ad24c94d2e8b9c90d320db8e418",
+        "expected_sha256": "6a125ca90b0964945f95b39397b6e83f15a23ad24c94d2e8b9c90d320db8e418",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/results/result.json"
+      },
+      {
+        "actual_sha256": "9fc7eafad7763d32d49a617ecdd87ec1b64e625112e6dc39084bd8715397e6f5",
+        "expected_sha256": "9fc7eafad7763d32d49a617ecdd87ec1b64e625112e6dc39084bd8715397e6f5",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-370-fold-compatible-ulam-spike-barrier/UPDATED_ROADMAP.md"
+      },
+      {
+        "actual_sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751",
+        "expected_sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751",
+        "pass": true,
+        "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json"
+      }
+    ]
+  },
+  "source_commits": {
+    "henon_mobius_correlations": "34490443f50cfe9af9ff93888e51e7e7e534a5a7",
+    "prime_dynamics_theory_rh366_release": "6da1b94deaa865bbb297546f3de238433184772a",
+    "prime_dynamics_theory_rh370_release": "9ad958a1f326eae6f43f026c84ab9378a4a42f16"
+  },
+  "status": "RH-371_eight_run_distance_two_capacity_obstruction"
+}
