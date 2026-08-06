@@ -16,8 +16,8 @@ Prior RH-352--RH-361 publication commit:
 RH-366 integration commit:
 `0396fab97bbe3348c8237f8734dec0e1893fd3bf`
 
-RH-367 integration commit: recorded by the release commit that adds this
-handoff entry and the RH-367 publication package.
+RH-367 integration commit:
+`ed2076391759499d46a3d5f64d223cf469d63bbb`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
