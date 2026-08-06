@@ -3,6 +3,60 @@
 更新时间：2026-08-06
 交接状态：`SEALED_FOR_NEW_SESSION`
 
+第 64 节从已发布 V16 commit
+`b088a717ea85cb0c328a3ff247694569a594947a`继续 Bridge B。V16已经冻结一个 common
+stage map `J_k`：它先于 `X,A,ell`选择，并对每个 `f in V_k` exact return declared
+physical dual family。V17把这个量词顺序接回 actual physical intervals。
+
+固定 `k>=2`、`p=p_k`、`q=p_(k+1)`，同一 `k_X=k`的整数 scales恰为
+
+```text
+X_k^int={(p^2-1)/2,...,(q^2-3)/2},
+BANDCOUNT_k=(q^2-p^2)/2>=2p_k+2 -> infinity.
+```
+
+对 `k>=4`，整个 band满足 `q^2-3<P_k`而无 wrap。actual interval coefficient rows
+`w_(k,X)`的 endpoint minor `w_(k,X)(2Y)`为 unit lower triangular，故 interval rank为
+`BANDCOUNT_k`；加入 V16要求保留的 Haar mean后为 `BANDCOUNT_k+1`。于是新增 broad
+cell：
+
+```text
+BRIDGE_B_COMMON_STAGE_FIXED_RANK_EXACT_RETURN
+  = STOP_SCOPED_STAGE_BAND_RANK_GROWTH.
+```
+
+这只使用整数尺度子族，不错误声称任意实数 `X`都给不同 functional，也不把 historical
+scale-dependent PBAPT `J_X`改写成 common `J_k`。同时 exact
+
+```text
+w_(k,X)-w_(k,X-1)=-e_X+e_(2X-1)+e_(2X)
+```
+
+给出三稀疏正面 skeleton，故 current primary更新为
+
+```text
+BRIDGE_B_COMMON_STAGE_GROWING_RANK_SPARSE_CARRIER
+  = SELECTED_OPEN_NEW_THEOREM.
+```
+
+下一 gate不是 fixed-rank Logistic fit，而是 mean/base interval/三稀疏 increments加
+deletion forcing、additive-Fourier、PBAPT Type-II duals及 `R_p^*` pullbacks组成的
+finite-horizon backward-closed physical dual hull。若 hull迅速达到 `asymp P_k`则
+Bridge B sparse road broad-stop；若 growing dimension、transition sparsity、dual norms与
+physical loss受控，才进入 actual nonautonomous construction。
+
+all-translations family的 conditional exact rank为 `P-gcd(P,L)+1`，但 current gate不含
+all translations；approximate return仍需 physical norm中的 width/singular-value theorem。
+fixed alphabet、finite-vertex Bratteli、Logistic/Hénon phase-space dimension均不得自动
+改写成 fixed observable rank。
+
+V17是 `EXACT_ACTUAL_PHYSICAL_DUAL_RANK_GEOMETRY_AND_ARCHITECTURE_RETYPE`，不是
+arithmetic advance。TPC-207=false、fixed-atom credit=`0`、global strict
+`1/400=UNPAID`、`L2=NONE`。proof与 24-row registry见
+`research/tpc-big-road/bridge_b_observable_rank.md`；checker为
+`research/tpc-big-road/tpc_bridge_b_rank_growth_checker.py`，registry final-LF SHA-256为
+`8edf44c0af0146acfe9f0cb7e9c1a72f53bc2a05dc852cac11e547db478f2aac`。
+
 第 63 节从已发布 V15 commit
 `1841e9cdfa692de53f90cb4855bea33e87cc0ab7`切换到岛屿地图的 Bridge B，但没有
 重复 ordinary DBC。第 52--53 节已经证明 exact profinite moving mass、总 mass、
@@ -2223,6 +2277,31 @@ maps为 isometric injections；deletion forcing又正交注入 centered space，
 forced-triangular carrier、Bratteli aging-clock quotient或 exact Hénon natural extension。
 这些 strengthened gates只有在保持 fixed `h0=2`、stage、event、measure、clock、
 physical functional与完整 loss ledger时才 OPEN；精确 proof与 surviving gate见第 63 节。
+
+2026-08-06 的 Bridge B V17 actual physical-dual rank geometry再新增且仅新增一个
+broad cell：
+
+```text
+DECLARED_TPC_BRIDGE_B_20260806_COMMON_STAGE_FIXED_RANK_EXACT_PHYSICAL_
+RETURN_V1 = STOP_SCOPED
+```
+
+它停止存在一个 uniformly bounded-rank common `J_k`，同时 exact return同一 stage内
+全部 sufficiently-large integer actual interval functionals及 Haar mean。固定
+`p=p_k,q=p_(k+1)`，这些整数尺度恰有
+`BANDCOUNT_k=(q^2-p^2)/2`个；对 `k>=4`整 band无 wrap，endpoint minor为 unit
+triangular，故任何 such common map均有
+`rank(J_k)>=BANDCOUNT_k+1>=2p_k+3 -> infinity`。第一处 fatal是 common-stage
+quantifier与 actual dual rank，不依赖 mixing、PNT、arithmetic saving或 all-translations
+closure。逐 `X`拟合的 `J_(k,X)`不能冒充 `J_k`。
+
+本 cell不停止 growing/infinite-dimensional carrier、actual 三稀疏 interval-difference
+basis、properly quantified approximate return、预先声明且有 uniform ledger的
+`X`-specific triangular family、Logistic growing function space、未因子化成 finite
+level-state vector的 S-adic/Bratteli或 Hénon growing observable family。current gate
+不含 all translations；其 circulant rank theorem只作 conditional falsifier。surviving
+primary为 `BRIDGE_B_COMMON_STAGE_GROWING_RANK_SPARSE_CARRIER`，精确 proof与下一
+backward-closed dual-hull gate见第 64 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -5891,7 +5970,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V16 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V17 current）
 
 ```text
 进入仓库：
@@ -5899,9 +5978,10 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--63 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--64 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -5924,7 +6004,12 @@ BRIDGE_B_NORMALIZED_SCALED_ISOMETRY = PROVED_EXACT_FINITE
 BRIDGE_B_ORTHOGONAL_DELETION_FORCING = PROVED_EXACT_FINITE
 BRIDGE_B_FULL_CENTERED_EXP_MIX_INTERTWINER = STOP_SCOPED_EXACT_RATE_MISMATCH
 BRIDGE_B_FULL_CENTERED_NEGLIGIBLE_DUHAMEL_DEFECT = STOP_SCOPED_EXACT_RATE_MISMATCH
-BRIDGE_B_PHYSICAL_OBSERVABLE_QUOTIENT_INTERTWINER = SELECTED_OPEN_NEW_THEOREM
+BRIDGE_B_ACTUAL_STAGE_BAND_INTERVAL_RANK = PROVED_EXACT_GROWING_BANDCOUNT_K
+BRIDGE_B_ACTUAL_INTERVAL_PLUS_MEAN_RANK = PROVED_EXACT_GROWING_BANDCOUNT_K_PLUS_1
+BRIDGE_B_COMMON_STAGE_FIXED_RANK_EXACT_RETURN = STOP_SCOPED_STAGE_BAND_RANK_GROWTH
+BRIDGE_B_COMMON_STAGE_GROWING_SPARSE_CARRIER = SELECTED_OPEN_NEW_THEOREM
+BRIDGE_B_ALL_TRANSLATIONS_CURRENT_GATE = NO
+BRIDGE_B_APPROXIMATE_LOW_RANK_RETURN = OPEN_REQUIRES_WIDTH_AND_PHYSICAL_NORM
 BRIDGE_B_BRATTELI_AGING_CLOCK = OPEN_RESERVE_RANK_GROWTH_FALSIFIER
 BRIDGE_B_HENON_NATURAL_EXTENSION = OPTIONAL_OPEN_EXACT_FACTOR_REQUIRED
 PAIR_O161_PACKET_TO_PRIMORIAL_DIRECT_COMPOSITION = STOP_SCOPED
@@ -6047,14 +6132,18 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮首先执行第 63 节 Bridge B current primary：
+下一轮首先执行第 64 节 Bridge B current primary：
 
 ```text
-BRIDGE_B_PHYSICAL_OBSERVABLE_QUOTIENT_INTERTWINER.
+BRIDGE_B_COMMON_STAGE_GROWING_RANK_SPARSE_CARRIER.
 ```
 
-它必须构造或 broad-falsify target-independent observable quotient、forced
-nonautonomous evolution、actual physical dual return及 accumulated physical error。
+它必须从 mean、base interval与三稀疏 increments出发，构造并计算 deletion forcing、
+additive-Fourier、PBAPT Type-II duals及 `R_p^*` pullbacks的 finite-horizon
+backward-closed physical dual hull。若 rank迅速达到 `asymp P_k`，就 broad-falsify
+sparse route；若 growing dimension、transition sparsity、dual norms与 loss均受控，
+才构造 target-independent observable quotient、forced nonautonomous evolution、
+actual physical dual return及 accumulated physical error。
 A1 的 `HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER`与 A2
 paired-Voronoi只作独立 reserves，不与 Bridge B拼接 theorem credit。
 
@@ -6133,9 +6222,12 @@ Bridge B source lock已完成：moving mass、Haar covariance与 metric DBC为 P
 seed `0` pointed gate为 TPC-equivalent endpoint。不要继续扫描普通 a.e. DBC。
 V16 又证明 full centered sieve cocycle是 scaled isometry并有 orthogonal forcing，故
 uniformly coercive full-space `J`到 uniformly exponentially mixing `Q`的 exact/
-negligible-full-defect版本已 STOP。当前只构造 observable/physical quotient：必须
-保持 fixed `h0=2`、stage、event、clock、forcing与整个 physical dual family，并输出
-deterministic `H_dyn/H3_phys` estimate。任何 a.e.结论、单向量 fit、word-only
+negligible-full-defect版本已 STOP。V17又证明 common fixed-rank exact return因 actual
+same-stage interval dual rank增长而 STOP；但 exact三稀疏 difference basis保留
+growing-rank highway。当前先做 backward-closed physical dual hull，再构造 observable/
+physical quotient：必须保持 fixed `h0=2`、stage、event、clock、forcing与整个
+physical dual family，并输出 deterministic `H_dyn/H3_phys` estimate。任何 a.e.结论、
+单向量 fit、word-only
 isomorphism或 abstract norm contraction都不算成功；任何动力学结论也不得逆向给 A1
 theorem credit，除非有逐式 arithmetic/physical intertwiner与完整 loss ledger。
 
@@ -6155,6 +6247,7 @@ python research/tpc-big-road/tpc_big_road_lab.py --check
 python research/tpc-big-road/tpc_big_road_independent_checker.py --check
 python research/tpc-big-road/tpc_fm_local_comparison_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_carrier_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_rank_growth_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -10036,6 +10129,310 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 64. 2026-08-06 V17：actual physical-dual rank barrier 与 sparse growing-rank 大路
+
+### 64.1 baseline、分工与 claim ceiling
+
+本轮从已发布 V16 commit
+`b088a717ea85cb0c328a3ff247694569a594947a`继续；V16已经冻结 common-stage、
+target-independent、forall-`f` exact physical-return contract。本轮不重新扫描 ordinary
+DBC，也不回到 full-centered exponentially mixing intertwiner，而是先问同一 common
+carrier必须保留多少 actual physical dual state。
+
+三个 read-only agents分别完成：
+
+```text
+V17_PHYSICAL_STAGE_BAND_SOURCE_LOCK
+V17_OBSERVABLE_RANK_PROOF_AUDIT
+V17_GROWING_RANK_ARCHITECTURE_AND_CHECKER
+```
+
+agents在 V16 baseline观察 source locks、证明量词与 checker architecture，均回报
+`files_changed=[]`。正式写入只由主控协调。ARS source-verification与 devil's-advocate
+分层在这里强制区分 integer/real scales、exact/approximate return、actual/all-
+translated family及 phase-space/observable rank。
+
+本轮不是 numbered paper、TPC-207或 arithmetic `L2` advance。最大 claim严格为
+
+```text
+EXACT_ACTUAL_PHYSICAL_DUAL_RANK_GEOMETRY
++ COMMON_FIXED_RANK_CARRIER_STOP_SCOPED
++ GROWING_RANK_SPARSE_CARRIER_SELECTED_OPEN
++ NO_ARITHMETIC_ADVANCE.
+```
+
+fixed physical `h0=2`保持；fixed-atom credit=`0`、strict `1/400=UNPAID`、
+`L2=NONE`、TPC-207 trigger=`false`。
+
+### 64.2 common-stage source lock与 exact integer band
+
+写 `p_1=2<p_2<...`、`P_k=product_(j<=k)p_j`、`V_k=C^(Z/P_kZ)`。physical scale的
+source lock为
+
+```text
+p_(k_X)<=sqrt(2X+2)<p_(k_X+1),
+ell_X(f)=sum_(X<n<=2X)f(n mod P_(k_X)).                (64.1)
+```
+
+V16 contract的量词顺序是先给 common stage maps `(J_k,Q_k,Err_k)`，再对每个充分大
+`X`、active `A`、declared `ell`及每个 `f in V_k`给 exact return。故
+
+```text
+exists J_k for every same-stage X
+  != for every X exists fitted J_(k,X).                 (64.2)
+```
+
+historical PBAPT `J_X`依赖 scale，不是该 common `J_k`。固定 `k>=2`，写
+`p=p_k,q=p_(k+1)`。同一 stage内全部整数 scales恰为
+
+```text
+X_k^int={(p^2-1)/2,...,(q^2-3)/2},
+BANDCOUNT_k=(q^2-p^2)/2.                               (64.3)
+```
+
+任意实数 `X`版本不能声称全部独立，因为 nearby reals可以给相同整数 window；只取
+(64.3)的整数子族已经足够。由 consecutive odd prime gap至少为 `2`，无需 PNT即有
+
+```text
+BANDCOUNT_k>=p+q>=2p_k+2 -> infinity.                  (64.4)
+```
+
+这是 actual `h0=2` family，不是抽象 test rows。对 incidence state
+`B_k(r)=1_((r,P_k)=1)1_((r+2,P_k)=1)`，source-locked cutoff保证
+
+```text
+ell_X(B_(k_X))
+ = sum_(X<n<=2X)1_(n prime)1_(n+2 prime).               (64.5)
+```
+
+因为任一 composite `n`或 `n+2<=2X+2`都有不超过 `sqrt(2X+2)`的 prime divisor，
+会被 `P_(k_X)`删除。式 (64.5)只认证 fixed shift与 physical interval attachment；它
+不供应 named recurrence、Type-II saving或 TPC-207 trigger。
+
+### 64.3 no-wrap、independence、mean与三稀疏 skeleton
+
+整个 (64.3) band无 wrap的 exact条件是
+
+```text
+2 max(X_k^int)=q^2-3<P_k.                              (64.6)
+```
+
+它对全部 `k>=4`成立。基础步 `P_4=210>11^2`；若
+`P_k>p_(k+1)^2`，Bertrand给 `p_(k+2)<2p_(k+1)`，从而
+`P_(k+1)>p_(k+1)^3>p_(k+2)^2`。因此 actual coefficient row为 ordinary interval
+indicator；全阶段统一公式为
+
+```text
+w_(k,X)(r)
+ = floor((2X-r)/P_k)-floor((X-r)/P_k).                 (64.7)
+```
+
+按递增 `X,Y in X_k^int`取 endpoint minor
+
+```text
+C_(X,Y)=w_(k,X)(2Y).                                   (64.8)
+```
+
+当 `Y>X`时为零，对角元为一，故是 unit lower triangular。于是对 `k>=4`
+
+```text
+rank span{ell_X:X in X_k^int}=BANDCOUNT_k.             (64.9)
+```
+
+V16 declared family还保留 Haar mean。全部无-wrap interval rows在 residue `0`为零，
+mean row在那里非零，所以
+
+```text
+rank span{mean,ell_X:X in X_k^int}=BANDCOUNT_k+1.      (64.10)
+```
+
+同时 consecutive rows有 exact 三稀疏差分
+
+```text
+w_(k,X)-w_(k,X-1)=-e_X+e_(2X-1)+e_(2X).               (64.11)
+```
+
+因此 rank必须增长，但 (64.9)--(64.11)并不推出必须保存全部 `P_k` residue states。
+checker把 `k=2`的 rank `5/8`与 `k=3`的 rank `12/12`只作 wrap controls；asymptotic
+theorem只使用 uniform `k>=4` no-wrap range。
+
+### 64.4 common fixed-rank exact return的 broad STOP
+
+若一个 common linear map `J_k:V_k->B_k^dyn`对同 stage全部 integer actual intervals
+及 mean满足 forall-`f` exact return，则这些 duals都属于 `range(J_k^*)`，从而
+
+```text
+rank(J_k)>=BANDCOUNT_k+1>=2p_k+3 -> infinity.           (64.12)
+```
+
+故第 6 节新增
+
+```text
+DECLARED_TPC_BRIDGE_B_20260806_COMMON_STAGE_FIXED_RANK_EXACT_PHYSICAL_
+RETURN_V1 = STOP_SCOPED.                                (64.13)
+```
+
+这是路线级结论：fixed finite Markov/Ulam dictionary若承担同一 common exact return，
+在 mixing与 physical-loss估计之前已经失败。任意 one-scale rank-one fit也在 (64.2)
+失败，不是 cocycle。
+
+作用域必须同时保留：这不停止 rank-growing/infinite carrier、properly quantified
+approximate return、具有 common formula与 uniform ledger的预声明 triangular family、
+Logistic infinite-dimensional transfer space、fixed alphabet加 unbounded memory、未
+因子化到 finite level-state vector的 Bratteli，或 Hénon growing observable family。
+二维 phase space绝不等于二维 observable rank。
+
+### 64.5 all translations conditional theorem与 approximate边界
+
+若额外要求长度 `L>=1` interval的全部 `P`个 cyclic translations，Fourier multiplier
+`H_L(m)=sum_(1<=j<=L)exp(2 pi i m j/P)`只在 `gcd(P,L)-1`个 nonconstant
+frequencies为零，因此 over `R/C/Q`
+
+```text
+rank T_(P,L)=P-gcd(P,L)+1.                             (64.14)
+```
+
+特别地，`gcd(P,L)=1`时 exact factor map必须 injective。但 current Bridge B只声明
+anchored actual intervals，不声明 all translations，所以
+
+```text
+BRIDGE_B_ALL_TRANSLATIONS_CURRENT_GATE = NO.            (64.15)
+```
+
+不得用 (64.14)人为加强当前 gate。checker枚举 `1<=P<=16`、
+`1<=L<=2P+2`的 304 个 exact integer matrices并核对闭式，只认证 finite theorem。
+
+同样，exact determinant/rank不能自动 broad-stop approximate factorization。后者必须
+先冻结 physical dual norm，并给 actual anchored family的 Kolmogorov width，或把
+operator error控制到 relevant least positive singular value以下。qualitative `o(1)`、
+single-trajectory fit、modular rank或未冻结 normalization均不够。因此
+
+```text
+BRIDGE_B_APPROXIMATE_LOW_RANK_RETURN
+  = OPEN_REQUIRES_WIDTH_AND_PHYSICAL_NORM.              (64.16)
+```
+
+### 64.6 selected sparse highway与下一 early falsifier
+
+current primary更新为
+
+```text
+BRIDGE_B_COMMON_STAGE_GROWING_RANK_SPARSE_CARRIER
+  = SELECTED_OPEN_NEW_THEOREM.                          (64.17)
+```
+
+第一候选 dual skeleton是 mean、一个 base interval与 (64.11)三稀疏 increments。
+对 finite horizon `b>=k`，下一 canonical object为
+
+```text
+H_(k,b)^dual
+ = span{R_(j:k)^* ell:
+        k<=j<=b,
+        ell in declared stage-j physical dual family}. (64.18)
+```
+
+下一 gate必须分别 source-lock并加入：deletion-forcing dual、actual additive-Fourier
+functionals、PBAPT Type-II tests及 `R_p^*` pullbacks，然后精确计算 dimension、
+transition sparsity、dual norms与 accumulated physical loss。若一两次 backward
+closure已经膨胀到 rank `asymp P_k`，sparse Bridge B broad-stop并返回独立 A1/A2
+reserves；若 growth远小于 `P_k`且全部 norms/loss受控，才进入 actual nonautonomous
+Logistic construction。
+
+这一步不能以 fixed alphabet/finite vertices替代 rank计算，也不能把 orbit Poisson
+zero、metric recurrence、Parseval、complete-frequency mean或 phase-space mixing改写成
+distinguished `h0=2` physical return。Hénon仍只是 optional natural-extension reserve，
+须另给 exact factor/event/measure/functional diagram。
+
+### 64.7 artifact、registry与 route verdict
+
+本轮预期新增两个未编号 working artifacts：
+
+```text
+research/tpc-big-road/bridge_b_observable_rank.md
+research/tpc-big-road/tpc_bridge_b_rank_growth_checker.py
+```
+
+checker只用 standard-library exact integer/rational algebra，验证三个 no-wrap stages、
+两个 wrap controls、interval/mean ranks、三稀疏 difference、304个 small circulants、
+large formula fixtures与八项 semantic mutations。它不构造 Logistic/Hénon carrier，
+不认证 asymptotic physical loss，也不产生 arithmetic credit。
+
+canonical V17 registry为 24 raw/unique rows，按
+`key<TAB>value<LF>` ordinal排序后的 final-LF SHA-256为
+
+```text
+8edf44c0af0146acfe9f0cb7e9c1a72f53bc2a05dc852cac11e547db478f2aac
+```
+
+route verdict为
+
+```text
+COMMON_STAGE_FIXED_RANK_EXACT_RETURN = STOP_SCOPED
+COMMON_STAGE_GROWING_RANK_SPARSE_CARRIER = SELECTED_OPEN_NEW_THEOREM
+X_SPECIFIC_ONE_SCALE_FIT = STOP_SCOPED_NO_COMMON_COCYCLE
+APPROXIMATE_LOW_RANK_RETURN = OPEN_STABILITY_THEOREM_REQUIRED
+ALL_TRANSLATIONS_CURRENT_GATE = NO
+LOGISTIC_GROWING_FUNCTION_SPACE = OPEN
+BRATTELI_AND_FIXED_ALPHABET = SCOPE_DEPENDS_ON_LEVEL_STATE_FACTORIZATION
+HENON_GROWING_OBSERVABLE_FAMILY = OPTIONAL_OPEN
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false
+```
+
+A1 actual root-number-square master与 A2 paired-Voronoi保持独立 analytic reserves；
+V17与它们不拼接 theorem credit。两个 O161 pointwise parents、pair-native reroute、
+legacy H1、PBAPT及 global architecture继续 OPEN；第 6 节全部旧 STOP保持。
+
+### 64.8 verification与 publication boundary
+
+本轮预期 tracked files严格为：
+
+```text
+TPC_COMPASS.md
+TPC_HANDOFF.md
+research/tpc-big-road/README.md
+research/tpc-big-road/bridge_b_observable_rank.md
+research/tpc-big-road/tpc_bridge_b_rank_growth_checker.py
+```
+
+没有 paper、PDF、build log或 TPC-207。正式写入后必须执行第 1 节 22项、
+TPC-111/124/126/127四项 supplemental、全部 big-road checkers普通与 optimized模式、
+registry/doc一致性、Markdown fences、section numbering、`git diff --check`及 protected
+manifest。只 stage上述五 files；pull/rebase前停止 agents，remote相关路径变化则重审；
+push后验证 local `HEAD`、`origin/main`与 remote `refs/heads/main`三 hash一致。
+
+正式冻结后的 pre-sync audit为：
+
+```text
+POST_WRITE_BOOTSTRAP = 22/22 PASS
+POST_WRITE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_WRITE_BIGROAD_NORMAL_AND_OPTIMIZED = 10/10 PASS
+V17_PROOF_QA = PASS
+V17_CHECKER_SCHEMA_QA = PASS
+V17_RELEASE_PRESERVATION_QA = PASS
+V17_REGISTRY = 24/24 UNIQUE / DOC EXACT / HASH MATCH
+MARKDOWN_FENCES = BALANCED
+HANDOFF_SECTIONS = 64 UNIQUE / 1--64 COMPLETE
+GIT_DIFF_CHECK = PASS
+GIT_CACHED_DIFF = EMPTY
+PROTECTED_UNTRACKED = 130 / MANIFEST MATCH
+TPC122_WRITER_EXECUTED = NO
+TPC27_32_LEGACY_WRITERS_EXECUTED = NO
+TPC_207_CREATED = NO
+```
+
+protected manifest仍为
+`9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1`；V17
+registry仍为
+`8edf44c0af0146acfe9f0cb7e9c1a72f53bc2a05dc852cac11e547db478f2aac`。proof QA
+独立重算 integer band、Bertrand no-wrap、normalized-Haar augmented minor、三稀疏符号、
+circulant rank与 actual `h0=2` attachment；schema QA确认 checker只读、无 Python
+`assert`优化绕过、普通/`-O`输出一致且八项 mutations真实执行。release QA确认只有
+上述五文件、旧 STOP/OPEN边界完整且第 24 节可直接启动 (64.18) hull gate。
 
 ## 63. 2026-08-06 V16：Bridge B scaled-isometry firewall 与 physical-observable 大路
 

@@ -1,12 +1,13 @@
-# TPC big road V16: Bridge B physical-observable highway
+# TPC big road V17: Bridge B growing-rank physical-dual highway
 
 更新时间：2026-08-06
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_FINITE_OPERATOR_GEOMETRY_AND_ROUTE_REDESIGN`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_PHYSICAL_DUAL_RANK_GEOMETRY_AND_ROUTE_REDESIGN`
 
-当前主路线见第 16 节及 `bridge_b_physical_intertwiner.md`。下列 analytic registry
-继续冻结 V15/A1 的独立 reserve，不因 Bridge B 的优先级变化而取得或失去 theorem
-credit。
+当前主路线见第 17 节及 `bridge_b_observable_rank.md`；第 16 节与
+`bridge_b_physical_intertwiner.md`继续冻结 V16 common physical-return contract。
+下列 analytic registry继续冻结 V15/A1 的独立 reserve，不因 Bridge B 的优先级变化而
+取得或失去 theorem credit。
 
 ```text
 COARSE_COMPARISON_TYPE_I_ADVANCE = RETAINED
@@ -1524,3 +1525,98 @@ python -B -O research/tpc-big-road/tpc_bridge_b_carrier_checker.py --check
 `fixed-atom credit=0`、`strict 1/400=UNPAID`、`L2=NONE`、
 `TPC_207_TRIGGER=false`。A1 actual root-number-square master与 A2 paired-Voronoi仍作
 独立解析 reserves，不与 V16 theorem credit拼接。
+
+## 17. V17 Bridge B：fixed rank 停止，三稀疏 growing rank 接棒
+
+V16要求一个 common stage map `J_k`，并对每个充分大 `X`、每个 declared physical
+functional及每个 `f in V_k`给 exact return；它不是逐尺度重新拟合的 `J_(k,X)`。V17
+把这个量词顺序接到 actual physical intervals，而不是引入抽象 test family。
+
+固定 `k>=2`，写 `p=p_k`、`q=p_(k+1)`。具有同一 `k_X=k`的整数 scales恰为
+
+```text
+X_k^int
+ = {(p^2-1)/2,...,(q^2-3)/2},
+BANDCOUNT_k=(q^2-p^2)/2.                               (17.1)
+```
+
+只用 consecutive odd prime gap至少为 `2`，即有
+`BANDCOUNT_k>=2p_k+2 -> infinity`。对 `k>=4`，Bertrand归纳给
+
+```text
+2 max(X_k^int)=q^2-3<P_k,                              (17.2)
+```
+
+所以全部窗口无 wrap。若 `w_(k,X)`是 `ell_X`的 coefficient row，则 endpoint minor
+
+```text
+C_(X,Y)=w_(k,X)(2Y)
+```
+
+是 unit lower triangular，故这些 actual integer-window duals的 rank精确为
+`BANDCOUNT_k`。加上 V16要求保留的 Haar mean后，rank为
+`BANDCOUNT_k+1`。因此任何 common exact carrier都满足
+
+```text
+rank(J_k)>=BANDCOUNT_k+1.                              (17.3)
+```
+
+由此新增 broad cell：
+
+```text
+BRIDGE_B_COMMON_STAGE_FIXED_RANK_EXACT_RETURN
+  = STOP_SCOPED_STAGE_BAND_RANK_GROWTH.                 (17.4)
+```
+
+这里结论只使用整数尺度子族；任意实数 `X`的全部 functionals并不独立，因为附近实数
+可以定义同一个整数窗口。整数子族已足够推出 (17.3)。历史 PBAPT `J_X`又是另一条
+scale-dependent operator，不能冒充 V16 common `J_k`。
+
+V17同时发现正面 skeleton：
+
+```text
+w_(k,X)-w_(k,X-1)
+  = -e_X+e_(2X-1)+e_(2X).                              (17.5)
+```
+
+所以 rank必须增长，但不必保留全部 `P_k` residue states。current selected gate改为
+
+```text
+BRIDGE_B_COMMON_STAGE_GROWING_RANK_SPARSE_CARRIER
+  = SELECTED_OPEN_NEW_THEOREM.                          (17.6)
+```
+
+下一步以 mean、一个 base interval及 (17.5)三稀疏 increments为 dual skeleton，再逐层
+加入 deletion forcing、additive-Fourier、PBAPT Type-II functionals及 `R_p^*` backward
+closure。若 closed hull在一两 stage内膨胀到 `asymp P_k`，该 sparse highway broad-stop；
+若维数、transition sparsity及 physical dual norms仍受控，则继续构造 nonautonomous
+Logistic carrier。
+
+还有一条更强但 conditional 的 falsifier：若额外要求长度 `L` interval的全部 `P`
+translations，则 exact circulant rank为
+
+```text
+P-gcd(P,L)+1.                                          (17.7)
+```
+
+但 current gate不要求 all translations，故 (17.7)不能偷加为新假设。approximate return
+也保持 OPEN，必须另证 declared physical norm中的 singular-value/Kolmogorov-width
+稳定性。
+
+这不会停止 Logistic infinite-dimensional transfer space、带 unbounded path memory的
+fixed-alphabet S-adic，或未因子化到 finite level-state vector的 Bratteli system；二维
+Hénon phase space也不等于二维 observable rank。只停止 common exact return经过 fixed
+finite dictionary的版本。
+
+精确 proof与 checker为
+
+```text
+research/tpc-big-road/bridge_b_observable_rank.md
+research/tpc-big-road/tpc_bridge_b_rank_growth_checker.py
+```
+
+canonical V17 registry为 24 rows，final-LF SHA-256
+`8edf44c0af0146acfe9f0cb7e9c1a72f53bc2a05dc852cac11e547db478f2aac`。
+V17是 `EXACT_ACTUAL_PHYSICAL_DUAL_RANK_GEOMETRY_AND_ARCHITECTURE_RETYPE`，不是
+arithmetic advance；fixed-atom credit=`0`、strict `1/400=UNPAID`、`L2=NONE`、
+TPC-207 trigger=`false`。A1/A2继续作独立 analytic reserves。

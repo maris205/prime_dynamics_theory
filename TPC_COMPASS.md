@@ -1,14 +1,15 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-06
-状态：`BOLD_CHANNEL_V16 / BRIDGE_B_PHYSICAL_OBSERVABLE_QUOTIENT_INTERTWINER`
-claim level：`EXACT_FINITE_OPERATOR_GEOMETRY_AND_ROUTE_REDESIGN_NO_ARITHMETIC_ADVANCE`
+状态：`BOLD_CHANNEL_V17 / BRIDGE_B_COMMON_STAGE_GROWING_RANK_SPARSE_CARRIER`
+claim level：`EXACT_ACTUAL_PHYSICAL_DUAL_RANK_GEOMETRY_NO_ARITHMETIC_ADVANCE`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V16 的完整
-proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_physical_intertwiner.md`
-及 `research/tpc-big-road/tpc_bridge_b_carrier_checker.py`。正式 theorem
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V17 的完整
+proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_observable_rank.md`
+及 `research/tpc-big-road/tpc_bridge_b_rank_growth_checker.py`；V16 common-return contract
+继续冻结于 `bridge_b_physical_intertwiner.md`。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
 
@@ -18,7 +19,7 @@ proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_physical_in
 200+ local research nodes
   -> 13 major obstruction classes
   -> 2 visible bottlenecks
-  -> 1 selected physical-observable Bridge B highway
+  -> 1 selected growing-rank physical-dual Bridge B highway
      + 2 independent analytic reserves (A1/A2).
 ```
 
@@ -1021,6 +1022,71 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 18. V17 后的罗盘：common fixed rank 停止，sparse dual hull 开工
+
+V16 的 `J_k`是 common stage map：它先于 `X,A,ell`选择，并对每个 `f in V_k`
+exact return declared physical duals。固定 `k>=2`、`p=p_k`、`q=p_(k+1)`，同一 stage
+包含的整数 physical scales恰为
+
+```text
+X_k^int={(p^2-1)/2,...,(q^2-3)/2},
+BANDCOUNT_k=(q^2-p^2)/2>=2p_k+2.                        (18.1)
+```
+
+对 `k>=4`，`q^2-3<P_k`，所以这些窗口全部无 wrap。actual interval coefficient rows
+`w_(k,X)`的 endpoint minor `w_(k,X)(2Y)`为 unit lower triangular；加上 Haar mean后
+
+```text
+rank span{mean,w_(k,X):X in X_k^int}=BANDCOUNT_k+1.     (18.2)
+```
+
+因此
+
+```text
+BRIDGE_B_COMMON_STAGE_FIXED_RANK_EXACT_RETURN
+  = STOP_SCOPED_STAGE_BAND_RANK_GROWTH.                 (18.3)
+```
+
+这条 STOP不依赖 PNT，也不把 nearby real scales误算为不同 windows。只取整数子族已经
+足够。它还封锁 `forall X exists J_(k,X)`冒充 `exists J_k forall X`的量词偷渡。
+
+正面结构为
+
+```text
+w_(k,X)-w_(k,X-1)=-e_X+e_(2X-1)+e_(2X),               (18.4)
+```
+
+所以 current primary更新为
+
+```text
+BRIDGE_B_COMMON_STAGE_GROWING_RANK_SPARSE_CARRIER
+  = SELECTED_OPEN_NEW_THEOREM.                          (18.5)
+```
+
+下一 gate构造 finite-horizon backward-closed physical dual hull：从 mean、base interval、
+三稀疏 increments出发，加入 deletion forcing、additive-Fourier、PBAPT Type-II duals及
+`R_p^*` pullbacks。若 hull rank迅速达到 `asymp P_k`，Bridge B sparse road停止；若
+dimension、transition sparsity、dual norms与 physical loss均受控，则开始 actual
+nonautonomous Logistic construction。
+
+all-translations family有 exact circulant rank `P-gcd(P,L)+1`，但 current gate不含该
+family，不能偷加。approximate low-rank return也保持 OPEN，必须给 physical norm中的
+width/singular-value theorem。
+
+fixed finite Markov/Ulam dictionary在 common exact return下停止；Logistic infinite-
+dimensional transfer space、fixed alphabet加 unbounded memory、未经过 finite level-state
+factorization的 Bratteli及 growing Hénon observable family均未被停止。phase-space
+dimension不得改写成 observable rank。
+
+proof与 checker见 `research/tpc-big-road/bridge_b_observable_rank.md`及
+`research/tpc-big-road/tpc_bridge_b_rank_growth_checker.py`。canonical V17 registry为
+24 rows、final-LF SHA-256
+`8edf44c0af0146acfe9f0cb7e9c1a72f53bc2a05dc852cac11e547db478f2aac`。
+
+V17是 `EXACT_ACTUAL_PHYSICAL_DUAL_RANK_GEOMETRY_AND_ARCHITECTURE_RETYPE`，不是
+arithmetic advance。fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
+TPC-207=`false`；A1/A2仍是独立 reserves。
 
 ## 17. V16 后的罗盘：Bridge B 改接 `H_dyn/H3_phys`，不再伪装 H4
 
