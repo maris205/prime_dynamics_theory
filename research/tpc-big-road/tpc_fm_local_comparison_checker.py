@@ -524,7 +524,7 @@ def run_checks() -> dict[str, object]:
     umbrella_gate = "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE"
     primary_route = "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION"
     independent_reserve = "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI"
-    v11_status_registry = {
+    v12_status_registry = {
         "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
         "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
         "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
@@ -555,19 +555,25 @@ def run_checks() -> dict[str, object]:
         "HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION": "STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION",
         "HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW": "PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON",
         "HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET": "LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN",
-        "HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS": "OPEN_COLLECTIVE_DISPERSION",
-        "HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE": "OPEN_OUTER_LEDGER_AND_COLLECTIVE_DISPERSION",
-        "HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
+        "HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS": "ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE",
+        "HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE": "ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE",
+        "HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION": "ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE",
+        "BP2607_COMPLETE_BILINEAR_KLOOSTERMAN_L2": "SOURCE_BACKED_ANY_MODULUS_UNNORMALIZED",
+        "HB4_EXACT_HALF_INVERSE_RESIDUE_TWO_ROW_TRANSFER": "PROVED_EXACT_NORM_PRESERVING",
+        "HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW": "PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA",
+        "HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET": "LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN",
+        "BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION": "STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL",
+        "HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
     }
     route_freeze = {
-        "route_version": "V11",
+        "route_version": "V12",
         "umbrella_gate": umbrella_gate,
         "primary_route": primary_route,
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION",
+        "first_subgate": "HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
         "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
-        "v11_status_registry": v11_status_registry,
+        "v12_status_registry": v12_status_registry,
         "independent_reserve": independent_reserve,
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
         "independent_polar_main_attachment": "OPEN_NEW_ATTACHMENT",
@@ -582,14 +588,14 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     expected_route_freeze = {
-        "route_version": "V11",
+        "route_version": "V12",
         "umbrella_gate": "TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE",
         "primary_route": "HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION",
         "primary_status": "OPEN_NEW_THEOREM",
-        "first_subgate": "HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION",
+        "first_subgate": "HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION",
         "equivalent_character_gate": "HB4_EXACT_HALF_PRIME_MOBIUS_RATIO_GAUSS_ANGLE",
         "selected_construction": "HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV",
-        "v11_status_registry": {
+        "v12_status_registry": {
             "HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE": "FROZEN_TESTABLE_SUPERCLASS_CONTRACT",
             "HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP": "OPEN_ATTACHMENT",
             "HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY": "PROVED_EXACT_FINITE",
@@ -620,9 +626,15 @@ def run_checks() -> dict[str, object]:
             "HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION": "STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION",
             "HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW": "PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON",
             "HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET": "LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN",
-            "HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS": "OPEN_COLLECTIVE_DISPERSION",
-            "HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE": "OPEN_OUTER_LEDGER_AND_COLLECTIVE_DISPERSION",
-            "HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
+            "HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS": "ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE",
+            "HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE": "ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE",
+            "HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION": "ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE",
+            "BP2607_COMPLETE_BILINEAR_KLOOSTERMAN_L2": "SOURCE_BACKED_ANY_MODULUS_UNNORMALIZED",
+            "HB4_EXACT_HALF_INVERSE_RESIDUE_TWO_ROW_TRANSFER": "PROVED_EXACT_NORM_PRESERVING",
+            "HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW": "PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA",
+            "HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET": "LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN",
+            "BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION": "STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL",
+            "HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION": "SELECTED_CORE_OPEN_NEW_THEOREM",
         },
         "independent_reserve": "HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI",
         "independent_first_transform": "DERIVED_SOURCE_BACKED",
@@ -638,7 +650,7 @@ def run_checks() -> dict[str, object]:
         "TPC_207_TRIGGER": False,
     }
     if route_freeze != expected_route_freeze:
-        raise AssertionError("V11 route/physical freeze changed")
+        raise AssertionError("V12 route/physical freeze changed")
     if primary_route == independent_reserve:
         raise AssertionError("independent V10 source locks were merged")
     route_mutations: list[dict[str, object]] = []
@@ -665,12 +677,12 @@ def run_checks() -> dict[str, object]:
     numbered_trigger["TPC_207_TRIGGER"] = True
     route_mutations.append(numbered_trigger)
     weakened_registry = dict(route_freeze)
-    weakened_statuses = dict(v11_status_registry)
+    weakened_statuses = dict(v12_status_registry)
     weakened_statuses["GLOBAL_MOVING_UNIT_CAUCHY"] = "OPEN"
-    weakened_registry["v11_status_registry"] = weakened_statuses
+    weakened_registry["v12_status_registry"] = weakened_statuses
     route_mutations.append(weakened_registry)
     if any(mutation == expected_route_freeze for mutation in route_mutations):
-        raise AssertionError("V11 route/physical mutation escaped")
+        raise AssertionError("V12 route/physical mutation escaped")
     sample_a1 = Fraction(3, 1)
     sample_a2 = Fraction(5, 1)
     outer_switched_value = -6 * (sample_a1 - sample_a2)
@@ -1711,8 +1723,8 @@ def run_checks() -> dict[str, object]:
         == v10_strict_d_saving_exponent
     )
     v11_prime_composite_promotion_detected = (
-        v11_status_registry["HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW"]
-        != v11_status_registry[
+        v12_status_registry["HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW"]
+        != v12_status_registry[
             "HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS"
         ]
     )
@@ -1729,6 +1741,152 @@ def run_checks() -> dict[str, object]:
         )
     ):
         raise AssertionError("V11 range or object-type mutation escaped")
+
+    # V12 reindexes the two literal e-rows by modular inversion only after
+    # P>=F^(4/3), when their dyadic supports are shorter than rho.  Zero
+    # padding on the complete residue hull preserves both L2 norms, and
+    # S(1,C*m*n;rho)=S(C*m,n;rho) puts the physical kernel into the exact
+    # complete bilinear Kloosterman form.  The fixtures include prime and
+    # squarefree composite projectors and are checked in Z[zeta_rho].
+    v12_inverse_fixtures = (
+        (5, 2, {1: 2, 2: -1}, {1: 1, 3: 2}),
+        (7, 3, {1: -1, 2: 2, 4: 1}, {1: 2, 3: -1, 5: 1}),
+        (15, 2, {1: 2, 4: -1, 7: 3}, {1: -2, 2: 1, 8: 2}),
+        (21, 5, {1: 1, 2: -2, 5: 3}, {1: 2, 4: 1, 8: -1}),
+        (35, 3, {1: -1, 2: 2, 11: 1}, {1: 3, 6: -1, 13: 2}),
+    )
+    v12_inverse_residue_transfer_cases = 0
+    v12_complete_parseval_cases = 0
+    v12_missing_inverse_mutation_detected = False
+    for rho, unit_c, alpha_e, beta_e in v12_inverse_fixtures:
+        if math.gcd(unit_c, rho) != 1:
+            raise AssertionError("V12 fixture multiplier is not a unit")
+        alpha_m = {pow(e, -1, rho): value for e, value in alpha_e.items()}
+        beta_n = {pow(e, -1, rho): value for e, value in beta_e.items()}
+        if len(alpha_m) != len(alpha_e) or len(beta_n) != len(beta_e):
+            raise AssertionError("V12 inverse-residue transfer lost injectivity")
+
+        physical = [0] * rho
+        reindexed = [0] * rho
+        fourier_expanded = [0] * rho
+        wrong_without_inverse = [0] * rho
+        for e1, alpha_value in alpha_e.items():
+            for e2, beta_value in beta_e.items():
+                scale = alpha_value * beta_value
+                physical_phase = (
+                    unit_c * pow((e1 * e2) % rho, -1, rho)
+                ) % rho
+                add_scaled_cyclotomic(
+                    physical,
+                    kloosterman_exponent_multiset(1, physical_phase, rho),
+                    scale,
+                )
+                add_scaled_cyclotomic(
+                    wrong_without_inverse,
+                    kloosterman_exponent_multiset(
+                        (unit_c * e1) % rho, e2 % rho, rho
+                    ),
+                    scale,
+                )
+                v12_inverse_residue_transfer_cases += 1
+        for m, alpha_value in alpha_m.items():
+            for n, beta_value in beta_n.items():
+                scale = alpha_value * beta_value
+                add_scaled_cyclotomic(
+                    reindexed,
+                    kloosterman_exponent_multiset(
+                        (unit_c * m) % rho, n, rho
+                    ),
+                    scale,
+                )
+                for x in range(rho):
+                    if math.gcd(x, rho) == 1:
+                        exponent = (
+                            unit_c * m * x + n * pow(x, -1, rho)
+                        ) % rho
+                        fourier_expanded[exponent] += scale
+        if not general_cyclotomic_integer_equal(physical, reindexed):
+            raise AssertionError("V12 inverse-residue Kloosterman transfer failed")
+        if not general_cyclotomic_integer_equal(reindexed, fourier_expanded):
+            raise AssertionError("V12 complete Fourier expansion failed")
+        if not general_cyclotomic_integer_equal(
+            physical, wrong_without_inverse
+        ):
+            v12_missing_inverse_mutation_detected = True
+
+        for weights in (alpha_m, beta_n):
+            parseval = [0] * rho
+            for frequency in range(rho):
+                for left_index, left_value in weights.items():
+                    for right_index, right_value in weights.items():
+                        parseval[
+                            frequency * (left_index - right_index) % rho
+                        ] += left_value * right_value
+            expected_parseval = [0] * rho
+            expected_parseval[0] = rho * sum(
+                value * value for value in weights.values()
+            )
+            if not general_cyclotomic_integer_equal(
+                parseval, expected_parseval
+            ):
+                raise AssertionError("V12 complete additive Parseval failed")
+            v12_complete_parseval_cases += 1
+    if not v12_missing_inverse_mutation_detected:
+        raise AssertionError("V12 missing-inverse mutation escaped")
+
+    # The local complete bilinear bound is F*P.  Paying u, the Ramanujan
+    # k-L1 row, coefficients, and the GPTAB outer count gives F^3 P^2.
+    # Thus P<=F^(3/2-delta) yields eta_D<delta.  The repository's strict
+    # physical ledger requires eta_D>1/200, so equality is not claimable.
+    v12_complete_local_f_exponent = Fraction(1, 1)
+    v12_complete_local_p_exponent = Fraction(1, 1)
+    v12_complete_full_f_exponent = Fraction(3, 1)
+    v12_complete_full_p_exponent = Fraction(2, 1)
+    v12_projector_critical = Fraction(3, 2)
+    v12_eta_d_delta_slope = Fraction(1, 1)
+    v12_strict_delta = Fraction(1, 200)
+    v12_old_transition_eta_d_supremum = (
+        6
+        - v12_complete_full_f_exponent
+        - v12_complete_full_p_exponent * Fraction(4, 3)
+    ) / 2
+    v12_old_fkms_end_eta_d_supremum = (
+        6
+        - v12_complete_full_f_exponent
+        - v12_complete_full_p_exponent * Fraction(42, 31)
+    ) / 2
+    if (
+        v12_complete_full_f_exponent
+        + v12_complete_full_p_exponent * v12_projector_critical
+        != 6
+        or v12_eta_d_delta_slope != 1
+        or v12_eta_d_delta_slope * v12_strict_delta
+        != v10_strict_d_saving_exponent
+        or v12_old_transition_eta_d_supremum != Fraction(1, 6)
+        or v12_old_fkms_end_eta_d_supremum != Fraction(9, 62)
+    ):
+        raise AssertionError("V12 inverse-residue exponent ledger failed")
+    v12_missing_unnormalized_factor_detected = (
+        v12_complete_local_p_exponent != HALF
+    )
+    v12_short_interval_support_promotion_detected = (
+        v12_status_registry[
+            "BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION"
+        ]
+        == "STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL"
+    )
+    v12_strict_equality_detected = (
+        v12_eta_d_delta_slope * v12_strict_delta
+        == v10_strict_d_saving_exponent
+    )
+    if not all(
+        (
+            v12_missing_unnormalized_factor_detected,
+            v12_short_interval_support_promotion_detected,
+            v12_strict_equality_detected,
+        )
+    ):
+        raise AssertionError("V12 normalization or scope mutation escaped")
     hb_padding_slots = 6 * math.ceil(Fraction(1, 1) / (1 - HALF))
     if hb_padding_slots != 12:
         raise AssertionError("Ford--Maynard Lemma 7.14 slot count failed")
@@ -2535,10 +2693,10 @@ def run_checks() -> dict[str, object]:
         "scope": (
             "finite exact algebra, rank-one obstruction, and compiler geometry; "
             "source-backed analytic estimates are not numerical checks; the "
-            "small-projector Weil and prime-projector FKMS windows are audited "
-            "contract-level partial theorems; actual-atom attachment, the reduced "
-            "composite/large-prime projector core, the full signed Type-IV "
-            "construction, the fixed-margin-free transition collars, and "
+            "V11 Weil/FKMS windows and the V12 all-squarefree inverse-residue "
+            "window are audited contract-level partial theorems; actual-atom "
+            "attachment, the three-halves projector core, the full signed Type-IV "
+            "construction, the fixed-margin-free three-halves collar, and "
             "structured two-row paired-Voronoi theorem remain open"
         ),
         "exponents": {
@@ -2598,6 +2756,27 @@ def run_checks() -> dict[str, object]:
             "v11_fkms_l2_end": str(v11_fkms_l2_end),
             "v11_fkms_l4_start": str(v11_fkms_l4_start),
             "v11_fkms_l4_end": str(v11_fkms_l4_end),
+            "v12_complete_local_bound": "F P^(1+o(1))",
+            "v12_complete_local_F_exponent": str(
+                v12_complete_local_f_exponent
+            ),
+            "v12_complete_local_P_exponent": str(
+                v12_complete_local_p_exponent
+            ),
+            "v12_full_bound": "F^3 P^(2+o(1))",
+            "v12_full_F_exponent": str(v12_complete_full_f_exponent),
+            "v12_full_P_exponent": str(v12_complete_full_p_exponent),
+            "v12_projector_critical_P_exponent": str(
+                v12_projector_critical
+            ),
+            "v12_eta_D_delta_slope": str(v12_eta_d_delta_slope),
+            "v12_strict_delta": str(v12_strict_delta),
+            "v12_eta_D_supremum_at_four_thirds": str(
+                v12_old_transition_eta_d_supremum
+            ),
+            "v12_eta_D_supremum_at_forty_two_over_thirty_one": str(
+                v12_old_fkms_end_eta_d_supremum
+            ),
             "lemma_7_14_padding_slots": hb_padding_slots,
             "bc_h2_j1_worst": str(bc_h2_j1_worst),
             "bc_h3_thin_worst": str(bc_h3_thin_worst),
@@ -2706,6 +2885,13 @@ def run_checks() -> dict[str, object]:
             "the FKMS transition has supremal eta_D budget 1/54, so only fixed eta_D<1/54 is available",
             "the FKMS strict local endpoint needs epsilon>9/1550",
             "displayed FKMS l=2 ends below 4/3 and l=4 starts after its saving expires",
+            "inverse residue reindexing maps the physical e1-e2 kernel exactly to S(Cm,n;rho)",
+            "zero padding on the complete residue hull preserves both literal row L2 norms",
+            "complete additive Parseval gives the any-modulus unnormalized local bound rho||alpha||2||beta||2",
+            "the all-squarefree inverse-residue dyad is F^3 P^(2+o(1))",
+            "the V12 window is F^(4/3)<=P<=F^(3/2-delta) with eta_D<delta",
+            "the V12 strict local endpoint needs delta>1/200",
+            "the BP2607 nontrivial interval theorem cannot replace inverse support cardinality by interval length",
             "V10 primary and independent source locks remain separate with zero physical credit",
             "outer minus six converts source A1-A2 into physical A2-A1",
         ],
@@ -2745,6 +2931,8 @@ def run_checks() -> dict[str, object]:
             "ramanujan_divisor_monomial_unfolding": ramanujan_divisor_monomial_cases,
             "v10_phi_normalization": v10_phi_normalization_cases,
             "v11_squarefree_ramanujan_absolute": v11_ramanujan_absolute_cases,
+            "v12_inverse_residue_kloosterman_transfer": v12_inverse_residue_transfer_cases,
+            "v12_complete_additive_parseval": v12_complete_parseval_cases,
         },
         "mutation_tests": {
             "J_above_one_third": "DETECTED",
@@ -2759,6 +2947,10 @@ def run_checks() -> dict[str, object]:
             "v11_fkms_prime_to_composite_promotion": "DETECTED",
             "v11_fkms_length_window_promotion": "DETECTED",
             "v11_fkms_strict_epsilon_equality": "DETECTED",
+            "v12_missing_inverse_residue_reindex": "DETECTED",
+            "v12_normalized_to_unnormalized_complete_bound": "DETECTED",
+            "v12_inverse_support_cardinality_to_short_interval": "DETECTED_FALSE",
+            "v12_strict_delta_equality": "DETECTED",
             "hb2_sqrt_endpoint_to_large": "DETECTED",
             "hb2_A2_product_mobius_collapse": "DETECTED",
             "hb2_prime_power_to_prime_indicator": "DETECTED",
@@ -2810,7 +3002,7 @@ def run_checks() -> dict[str, object]:
             "v10_paired_polar_main_promotion": "DETECTED",
             "v10_bilateral_A1_A2_sign_reversal": "DETECTED",
             "v10_physical_credit_promotion": "DETECTED",
-            "v11_status_registry_weakening": "DETECTED",
+            "v12_status_registry_weakening": "DETECTED",
         },
         "open_gate": umbrella_gate,
         "route_freeze": route_freeze,

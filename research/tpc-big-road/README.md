@@ -1,4 +1,4 @@
-# TPC big road V11: projector range closure and prime trace highway
+# TPC big road V12: inverse-residue Parseval highway
 
 更新时间：2026-08-06
 
@@ -57,9 +57,15 @@ HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS = STOP_SCOPED_
 HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION = STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION
 HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON
 HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN
-HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = OPEN_COLLECTIVE_DISPERSION
-HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = OPEN_OUTER_LEDGER_AND_COLLECTIVE_DISPERSION
-HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+BP2607_COMPLETE_BILINEAR_KLOOSTERMAN_L2 = SOURCE_BACKED_ANY_MODULUS_UNNORMALIZED
+HB4_EXACT_HALF_INVERSE_RESIDUE_TWO_ROW_TRANSFER = PROVED_EXACT_NORM_PRESERVING
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN
+BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION = STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL
+HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH = PROVED_EXACT_COEFFICIENTWISE
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION = STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI = INDEPENDENT_OPEN_NEW_THEOREM
@@ -84,7 +90,10 @@ primary 因而改成 literal Möbius/Gauss signed correlation，paired-Voronoi�
 拼接的独立 reserve。V9 再把 Gauss-square character angle精确化成 prescribed
 residue `e_1e_2zw=-2 (mod p)` 的 centered four-fold product convolution，并据此
 封死 common-`k` unique-fiber与 global moving-unit Cauchy两个伪 shortcut；当前主攻
-已转成保留两条 literal Möbius rows的 dual Type-IV dispersion。完整 compiler见
+已转成保留两条 literal Möbius rows的 dual Type-IV dispersion。V10--V11先把
+projector normal form与两个初始区间冻结；V12再用 inverse-residue zero padding及
+complete additive Parseval，把全部 squarefree projector统一推进到
+`P<F^(3/2)`的每个 fixed-margin子区间。完整 compiler见
 [`fm_local_comparison_compiler.md`](fm_local_comparison_compiler.md)。所有 TPC-1--206 的 source locks、
 `STOP_SCOPED` cells、actuality/provenance 与 normalization firewalls继续有效。
 
@@ -1051,3 +1060,91 @@ actual-atom membership、all-`D`、exact cover、tails、A/B selection、origina
 normalization和 provenance仍未支付，故不创建 TPC-207；fixed-atom credit=`0`、
 global strict `1/400=UNPAID`、`L2=NONE`。岛屿图中的 paired-Voronoi A2、动力学
 Bridge B与 Hénon辅助岛保持独立开放。
+
+## 12. V12 inverse-residue Parseval highway
+
+V11 的两个窗口不是终点。对 reduced core 的同一个 source atom，冻结
+`(g,rho,t,a,b,u,k)`并写
+
+```text
+C=-2uk conjugate(g a b^2 t^2)_rho.
+```
+
+literal masks保证 `C,e_1,e_2`全是 `rho`-units。对
+`P>=F^(4/3)`，实际 `e_i~F`支撑最终短于 `rho`，所以映射
+
+```text
+m=conjugate(e_1)_rho,  n=conjugate(e_2)_rho
+```
+
+在每一条支撑上单射。把两条 one-variable coefficients按这些逆剩余类放入
+`{1,...,rho}`并在其余位置补零，逐字保留两条 `L2` norm。此时
+
+```text
+S(1,C conjugate(e_1e_2);rho)=S(Cm,n;rho)              (12.1)
+```
+
+是 exact Kloosterman scaling identity，不是平均或 support relabelling。
+[Blomer--Pascadi, Lemma 5.1](https://arxiv.org/abs/2607.24311) 对任意正整数模数、
+任意 complex arrays及 unnormalized `S(am,n;c)`给 complete bilinear bound。取
+`M=N=c=rho`与上述 zero-padded arrays，或直接打开 Kloosterman sum并用 complete
+additive Parseval，得到 literal constant-one estimate
+
+```text
+|sum_(e_1,e_2) alpha_(e_1) beta_(e_2)
+     S(1,C conjugate(e_1e_2);rho)|
+ <= rho ||alpha||_2 ||beta||_2
+ << F P X^o(1).                                      (12.2)
+```
+
+这里没有漏掉 `rho^(1/2)`：source lemma与 physical packet都使用 unnormalized
+Kloosterman sum。product-atom envelope先冻结全部 common parameters，故两条 norm各为
+`F^(1/2)X^o(1)`，总 atom `L1`只损 `X^o(1)`。
+
+继续使用 V11 的 Ramanujan `k`-row、`u`长度、outer coefficient与完整 cell count，
+且不给 `mu(g)mu(rho)mu(b)`任何 cancellation credit，得到
+
+```text
+|V(P)|
+ << (F P)(F/G)(F/A)(TB)^(-1)(GPTAB)X^o(1)
+ = F^3 P^(2+o(1)).                                   (12.3)
+```
+
+所以对每个 fixed `0<delta<1/6`，
+
+```text
+F^(4/3)<=P<=F^(3/2-delta)
+ ==> |V(P)|<<F^(6-2delta+o(1))
+     =F^6D^(-eta_D),  every fixed eta_D<delta.        (12.4)
+```
+
+在旧 `4/3` transition处的 supremal local budget变为 `1/6`；在旧
+`42/31` prime endpoint处变为 `9/62`。仓库的 strict physical endpoint需要
+`eta_D>1/200`，故 `(12.4)`须 `delta>1/200`加 downstream ledger margin；等号不能
+吸收 `X^o(1)`。
+
+这同时覆盖 prime与 composite squarefree projectors，因而 V11 的三个 reduced-core
+分支统一缩成
+
+```text
+HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION
+ = SELECTED_CORE_OPEN_NEW_THEOREM:
+
+  P=F^(3/2-o(1)) below the transition, and
+  all squarefree P>=F^(3/2),
+  with the exact moving inverse phase and full outer reassembly.
+```
+
+Blomer--Pascadi 的非平凡 short-interval theorem不能被额外调用：取逆后的实际支撑
+散布在完整 residue hull中，support cardinality `F`不是 ordinary interval length。
+将其强写成 length `F`是 block/support偷换；取合法 ambient length `rho`又不优于
+complete bound。因此
+`BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION`精确保持 `STOP_SCOPED`。
+
+本段也没有重开 `GLOBAL_MOVING_UNIT_CAUCHY`：后者是对另一条完整 moving-product
+unit轴的全域 shortcut，并被 exact resonance卡在 endpoint；这里是两条 literal
+`e_i`行的 inverse-residue transfer及受限 `P`-dyadic ledger。actual-atom
+membership、all-`D`、exact cover、tails、A/B selection、original/global
+normalization和 provenance仍 OPEN；fixed-atom credit=`0`、global strict
+`1/400=UNPAID`、`L2=NONE`、`TPC_207_TRIGGER=false`。地图上的 A2、Bridge B与
+Hénon辅助岛仍不与本解析证明拼接。

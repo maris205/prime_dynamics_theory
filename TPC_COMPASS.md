@@ -1,12 +1,12 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-06
-状态：`BOLD_CHANNEL_V11 / PROJECTOR_RANGE_ADVANCE_AND_CORE_SHRINK`
+状态：`BOLD_CHANNEL_V12 / INVERSE_RESIDUE_PROJECTOR_RANGE_ADVANCE`
 claim level：`CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE_AND_CORE_SHRINK`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V11 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V12 的完整
 公式、proof与独立 checker位于 `research/tpc-big-road/`。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
@@ -602,7 +602,7 @@ TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE.
 四 Möbius rows加双 divisor-log columns的 paired-Voronoi reserve。固定原子岛与
 Pair-native/H1岛是 attachment层，不自动提供桥梁 saving。Bridge B仍是
 distinguished-seed genericity动力学大桥；Hénon/几何岛只作辅助提升，不给解析桥
-credit。V11 canonical状态表为：
+credit。V12 canonical状态表为：
 
 ```text
 HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
@@ -635,9 +635,15 @@ HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS = STOP_SCOPED_
 HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION = STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION
 HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON
 HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN
-HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = OPEN_COLLECTIVE_DISPERSION
-HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = OPEN_OUTER_LEDGER_AND_COLLECTIVE_DISPERSION
-HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+BP2607_COMPLETE_BILINEAR_KLOOSTERMAN_L2 = SOURCE_BACKED_ANY_MODULUS_UNNORMALIZED
+HB4_EXACT_HALF_INVERSE_RESIDUE_TWO_ROW_TRANSFER = PROVED_EXACT_NORM_PRESERVING
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN
+BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION = STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL
+HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
 ```
 
 1. **Primary：HB4 exact-half dual-product dispersion**。V9 已把 Gauss-square
@@ -662,17 +668,18 @@ HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEORE
    divisor lattice。进一步展开 `c_s(ell)`后，选中的构造目标变为
    `HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV`，
    保留 `mu(g)mu(rho)mu(b)`与 monomial
-   `u k/(g e_1e_2 a b^2 t^2) (mod rho)`，不在 outer-variable层先取绝对值。Earnst
-   root-number-square moment仍只是机制蓝图；但 V11 已把
-   Fouvry--Kowalski--Michel--Sawin Theorem 1.3(2)合法附着到 prime projector的两条
-   literal `e_1,e_2`行。所有 squarefree `rho<=F^(4/3-delta)`由 composite Weil
-   闭合；prime `F^(4/3)<=rho<=F^(42/31-epsilon)`由 FKMS `l=3`闭合。前者给
-   `eta_D<3delta/4`，后者给 `eta_D<31epsilon/36`；large `t>=F^(2/3+delta)`也
-   自动进入第一段。剩余 first subgate已缩成
-   `HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION`：large composite projector
-   与 `rho>=F^(42/31-o(1))`的 large-prime outer ledger。restricted windows可因
-   自己已支付 target而取 outer绝对值；未解 core仍不得丢掉三条 signs再声称
-   collective credit。
+   `u k/(g e_1e_2 a b^2 t^2) (mod rho)`，不在 unresolved outer-variable层先取
+   绝对值。Earnst root-number-square moment仍只是机制蓝图。V11 已先闭合
+   all-squarefree small-projector段与 prime FKMS段；V12进一步在
+   `rho>=F^(4/3)`把两条 literal `e_i`行按 modular inverse单射重排，并在完整
+   residue hull中补零。Blomer--Pascadi Lemma 5.1/complete additive Parseval给
+   unnormalized local bound `F rho`，完整 outer ledger为
+   `F^3rho^(2+o(1))`。因此 prime与 composite统一在
+   `F^(4/3)<=rho<=F^(3/2-delta)`闭合，`eta_D<delta`；局部 strict budget需
+   `delta>1/200`加 margin。剩余 first subgate已缩成
+   `HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION`。restricted windows可因
+   自己已支付 target而取 outer绝对值；未解 `3/2` core仍不得丢掉三条 signs再
+   声称 collective credit。
 2. **Independent reserve：HB4xHB2 structured two-row paired-Voronoi**。在
    exactly-swapped shells上联合处理 source `A1-A2`；乘 outer `-6`后 physical顺序
    为 `A2-A1`。它对两条 weighted `mu_F*mu_F` rows与
@@ -687,9 +694,9 @@ HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEORE
 
 两条 source lock不得拼接。调度上保留 prime modulus、`g=1`、单个 source atom的
 centered dual-product theorem作为 first falsifier；full bridge现在不再重做已闭合的
-small-projector与 FKMS prime窗口，而是直接攻 large composite projector及
-`rho>=F^(42/31-o(1))`的 prime core，尝试把 outer modulus、`u,k`与三条 signed axes
-编译成 collective theorem。
+small-projector、FKMS或 inverse-residue Parseval窗口，而是直接攻
+`rho=F^(3/2-o(1))` collar及全部 `rho>=F^(3/2)` core，尝试把 outer modulus、
+`u,k`与三条 signed axes编译成 collective theorem。
 同时独立展开 paired-Voronoi的 polar/zero/Bessel ledger。
 Target-coupled reassembly/crosslink继续作为 portfolio-level `OPEN/RESERVE`，不属于
 本轮 current umbrella gate。只有上述两个解析门之一先发生 theorem-backed变化，才另行
@@ -744,7 +751,57 @@ replacement均已精确 `STOP_SCOPED`。Bridge A2、Bridge B和 Hénon辅助路�
 没有因 V11 自动取得 credit。actual atom与全局 physical gates未闭合，所以这张地图
 显示的是“已有一段可走的大路”，不是 TPC proof。
 
-## 12. 对外成果的最终压缩目标
+## 12. V12 后的罗盘：两堵旧墙合并为 `3/2` 新墙
+
+V12在 V10 exact packet上冻结
+
+```text
+C=-2uk conjugate(g a b^2 t^2)_rho,
+m=conjugate(e_1)_rho,
+n=conjugate(e_2)_rho.
+```
+
+对 `rho>=F^(4/3)`，两条 actual `e_i~F`支撑短于 `rho`，所以 modular inverse
+逐条单射；complete-residue zero padding精确保留两条 `L2` norm，且
+
+```text
+S(1,C conjugate(e_1e_2);rho)=S(Cm,n;rho).
+```
+
+[Blomer--Pascadi Lemma 5.1](https://arxiv.org/abs/2607.24311)或其 complete
+additive Parseval证明给出任意模数、unnormalized estimate
+
+```text
+local e_1,e_2 sum << rho ||alpha||_2||beta||_2 << F P X^o(1),
+full dyadic cell   << F^3P^(2+o(1)).
+```
+
+故所有 squarefree projectors统一获得
+
+```text
+F^(4/3)<=P<=F^(3/2-delta)
+  ==> any eta_D<delta.
+```
+
+旧 `4/3` transition与 prime `42/31`墙不再属于 current core。新红色断桥是
+
+```text
+P=F^(3/2-o(1)) below F^(3/2),
+and all squarefree P>=F^(3/2).
+```
+
+BP2607 的 nontrivial short-interval theorem不能把 scattered inverse support的
+cardinality `F`偷换成 interval length；这个 direct extension精确 `STOP_SCOPED`。
+下一轮只寻找保留 moving inverse phase并利用 varying `rho`、`u/k`或 outer Möbius
+signs的 collective theorem。`GLOBAL_MOVING_UNIT_CAUCHY`仍是另一条全域 shortcut的
+historical STOP，不因本段重开。
+
+岛屿地图上只有 Bridge A1 的红色断点向前移动。A2 paired-Voronoi、Bridge B
+distinguished-seed genericity与 Hénon辅助岛继续独立；actual atom、all-`D`、exact
+cover、tails、A/B、global normalization与 provenance仍 OPEN。因此 fixed-atom
+credit=`0`、global strict `1/400=UNPAID`、`L2=NONE`、TPC-207 trigger=`false`。
+
+## 13. 对外成果的最终压缩目标
 
 如果主通道存活，TPC-1--206 的最终外部形态应压缩为：
 

@@ -45,9 +45,15 @@ HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS = STOP_SCOPED_
 HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION = STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION
 HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON
 HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN
-HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = OPEN_COLLECTIVE_DISPERSION
-HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = OPEN_OUTER_LEDGER_AND_COLLECTIVE_DISPERSION
-HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+BP2607_COMPLETE_BILINEAR_KLOOSTERMAN_L2 = SOURCE_BACKED_ANY_MODULUS_UNNORMALIZED
+HB4_EXACT_HALF_INVERSE_RESIDUE_TWO_ROW_TRANSFER = PROVED_EXACT_NORM_PRESERVING
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN
+BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION = STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL
+HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
 LARGE_D_HB2_SWITCH_PROVED_EXACT_ANALYTIC_HB4xHB2_GATE_OPEN
 HB4xHB2_NAIVE_RESIDUE_COMPRESSION_STOP_SCOPED_KERNEL_NORM_Q
 HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI_INDEPENDENT_OPEN
@@ -56,7 +62,7 @@ HB4xHB2_COLLECTIVE_POLAR_MAIN_ATTACHMENT_OPEN
 DIRECT_DFI_ROW_BY_ROW_STOP_SCOPED_F7_VERSUS_F4
 CURRENT_UMBRELLA_GATE = TPC_FM_EXACT_HALF_AND_HB4xHB2_VORONOI_GATE
 CURRENT_PRIMARY_ROUTE = HB4_EXACT_HALF_GAUSS_TWISTED_SIGNED_CORRELATION
-CURRENT_FIRST_SUBGATE = HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION
+CURRENT_FIRST_SUBGATE = HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION
 CURRENT_INDEPENDENT_RESERVE = HB4xHB2_STRUCTURED_TWO_ROW_PAIRED_VORONOI
 TPC_THEOREM = NO
 TPC207_TRIGGER = false
@@ -3519,3 +3525,206 @@ physical theorem.  Actual-atom membership, all-`D` cover, exactly-once physical
 reassembly, tails, A/B selection, original normalization and provenance remain
 open.  Hence fixed-atom credit is `0`, global strict `1/400` is `UNPAID`,
 `L2=NONE`, and `TPC207_TRIGGER=false`.
+
+### 12.14 V12: inverse-residue complete bilinear highway
+
+V12 keeps the literal conductor/projector normal form `(12.12.17b)` and the
+dyadic source lock `(12.13.1)`.  It changes only the treatment of the two
+independent product-atom rows `e_1,e_2~F` in the V11 reduced core.
+
+#### 12.14.1 Exact norm-preserving inverse transfer
+
+Freeze `(g,rho,t_r,a,b,u,k)` and put
+
+```text
+C=-2uk conjugate(g a b^2 t_r^2)_rho.                 (12.14.1)
+```
+
+The literal masks make `C,e_1,e_2` units modulo `rho`.  In the sector
+`P>=F^(4/3)`, the fixed dyadic constants and `rho~P`, `e_i~F` imply, for all
+sufficiently large `F`, that each `e_i` support is shorter than and lies below
+`rho`.  Hence inversion is injective on both actual supports.  For one frozen
+product atom define zero-padded complete-residue arrays by
+
+```text
+alpha_tilde(m)=alpha(e_1),  m=conjugate(e_1)_rho,
+beta_tilde(n)=beta(e_2),    n=conjugate(e_2)_rho,
+and zero otherwise.                                      (12.14.2)
+```
+
+This is an exact reindexing, so
+
+```text
+||alpha_tilde||_2=||alpha||_2,
+||beta_tilde||_2=||beta||_2.                         (12.14.3)
+```
+
+The product-atom envelope `(12.11.1)` already froze all common transform
+parameters.  Thus the two arrays remain independent one-variable arrays with
+norms `<<F^(1/2)X^o(1)`, while the total atom `L1` mass is `X^o(1)`.  The
+Kloosterman scaling identity is literal:
+
+```text
+S(1,C conjugate(e_1e_2);rho)
+ =S(1,Cmn;rho)=S(Cm,n;rho).                           (12.14.4)
+```
+
+No block/cumulative substitution, averaging, or support-cardinality claim is
+used in `(12.14.2)--(12.14.4)`.
+
+#### 12.14.2 Complete any-modulus L2 theorem
+
+[Blomer--Pascadi, Lemma 5.1, equation (5.1)](https://arxiv.org/abs/2607.24311)
+is stated for arbitrary positive modulus `c`, arbitrary complex arrays on
+ordinary intervals, a unit multiplier, and the unnormalized sum `S(am,n;c)`.
+Taking the complete intervals `M=N=c=rho` and the zero-padded arrays in
+`(12.14.2)` gives
+
+```text
+|sum_(m,n mod rho) alpha_tilde(m)beta_tilde(n)S(Cm,n;rho)|
+ << rho^(1+o(1))||alpha_tilde||_2||beta_tilde||_2.     (12.14.5)
+```
+
+In fact the needed version has literal constant one.  Opening the
+Kloosterman sum and writing unnormalized additive transforms gives
+
+```text
+B_rho=sum_(x mod rho)^* A(Cx)B(conjugate(x)),          (12.14.6)
+```
+
+so Cauchy and complete additive Parseval imply
+
+```text
+|B_rho|
+ <=(sum_(r mod rho)|A(r)|^2)^(1/2)
+   (sum_(s mod rho)|B(s)|^2)^(1/2)
+ =rho||alpha_tilde||_2||beta_tilde||_2
+ <<F P X^o(1).                                        (12.14.7)
+```
+
+This holds for prime and composite `rho` alike.  There is no missing
+`rho^(1/2)` normalization: both `(12.14.5)` and the physical packet use
+unnormalized `S`.  If one writes normalized `Kl_2`, the local estimate first
+contains `rho^(1/2)||alpha||_2||beta||_2`; restoring the physical
+`rho^(1/2)` returns `(12.14.7)`.
+
+#### 12.14.3 Full outer ledger and the new three-halves wall
+
+Apply the V11 Ramanujan row `(12.13.3)`, the coefficient estimate
+`(12.13.6)`, and the exact lengths/counts in `(12.13.1)`.  Taking absolute
+values of `mu(g)mu(rho)mu(b)` gives no sign credit and yields
+
+```text
+|V(P)|
+ <<(F P)(F/G)(F/A)(TB)^(-1)(GPTAB)X^o(1)
+ =F^3P^(2+o(1)).                                      (12.14.8)
+```
+
+Therefore, for every fixed `0<delta<1/6`,
+
+```text
+F^(4/3)<=P<=F^(3/2-delta)
+ ==> |V(P)|<<F^(6-2delta+o(1))
+              =F^6D^(-eta_D),
+     every fixed eta_D<delta.                         (12.14.9)
+```
+
+At the old `P=F^(4/3)` transition the supremal local budget is `1/6`; at the
+old `P=F^(42/31)` endpoint it is `9/62`.  The strict physical ledger requires
+`eta_D>1/200`, so `(12.14.9)` pays it locally when
+
+```text
+delta>1/200+lambda_D,                                 (12.14.10)
+```
+
+where `lambda_D` is any later fixed `D`-loss.  Equality is insufficient
+because the `X^o(1)` atom/outer loss must be absorbed.
+
+The previous composite, large-prime, and reduced-core cells are now ancestors.
+The remaining first wall is
+
+```text
+HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION
+ = SELECTED_CORE_OPEN_NEW_THEOREM.                    (12.14.11)
+```
+
+It consists of the fixed-margin-free lower collar
+`P=F^(3/2-o(1))<F^(3/2)` and all squarefree projectors at or above
+`F^(3/2)`.  Extending `(12.14.8)` to the transition gives only
+`F^(6+o(1))`; a further theorem must use varying `rho`, the `u/k` families,
+or one of the literal outer signs.
+
+The nontrivial short-interval part of Blomer--Pascadi does not give this
+extension.  After inversion the physical interval becomes a scattered subset
+of the complete residue hull.  Its cardinality `F` is not the ordinary
+interval length required by that theorem.  Taking legal ambient length `rho`
+does not improve `(12.14.5)`, while replacing it by `F` is a forbidden
+block/support substitution.  Accordingly
+
+```text
+BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION
+ = STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL.    (12.14.12)
+```
+
+This does not reopen `GLOBAL_MOVING_UNIT_CAUCHY`: that historical stop is a
+full-domain Cauchy shortcut in a different moving product-unit axis and is
+exactly endpoint-resonant.  V12 instead uses the two literal inverse `e` rows
+and the restricted dyadic ledger `(12.14.8)`.
+
+#### 12.14.4 Canonical V12 state and island map
+
+The canonical V12 registry is
+
+```text
+HB4_EXACT_HALF_SOURCE_WEIGHT_ENVELOPE = FROZEN_TESTABLE_SUPERCLASS_CONTRACT
+HB4_EXACT_HALF_ACTUAL_ATOM_MEMBERSHIP = OPEN_ATTACHMENT
+HB4_EXACT_HALF_PRIME_GAUSS_DUAL_PRODUCT_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIME_CENTERED_DUAL_PRODUCT = PROVED_EXACT_EQUIVALENCE
+COMMON_K_AS_UNIQUE_MODULAR_RATIO_FIBER = STOP_SCOPED_FALSE_COVER_NONZERO_WRAPS
+GLOBAL_MOVING_UNIT_CAUCHY = STOP_SCOPED_EXACT_ENDPOINT_PRODUCT_RESONANCE
+MOHAMMADI_WEIGHTED_A0_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+BOURGAIN_GARAEV_N3_ATTACHMENT = SOURCE_BACKED_LOCAL_SUBLEMMA_EXPONENT_INSUFFICIENT
+DIRECT_LOCAL_BOX_TO_ENDPOINT_COMPILATION = STOP_SCOPED_NORMALIZATION_AND_EXPONENT_DEFICIT
+STANDARD_LEVEL_OF_DISTRIBUTION_ATTACHMENT_IN_CHECKED_SOURCES = ABSENT
+HB4_EXACT_HALF_ACTUAL_ATOM_DUAL_PRODUCT_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_PROJECTOR_CORE
+HB4_EXACT_HALF_INDUCED_GAUSS_CRT_SIGNED_PHASE_IDENTITY = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PHYSICAL_MINUS_TWO_G_S_UNIT_PHASE = PROVED_EXACT_SOURCE_LOCK
+HB4_EXACT_HALF_LITERAL_MU_GQ_PRESERVATION_THROUGH_IMPRIMITIVE_CRT = STOP_SCOPED_FALSE_EXACT_COFACTOR_SIGN_CANCELLATION
+HB4_EXACT_HALF_RAMANUJAN_COFACTOR_GCD_STRATIFICATION = PROVED_EXACT_FINITE
+HB4_EXACT_HALF_PRIMITIVE_PROJECTOR_SINGLE_FIXED_PRODUCT = STOP_SCOPED_FALSE_DIVISOR_LATTICE
+HB4_EXACT_HALF_RAMANUJAN_DIVISOR_MONOMIAL_UNFOLDING = PROVED_EXACT_FINITE
+EARNST_ROOT_NUMBER_SQUARE_PRIME_MOMENT = SOURCE_BACKED_MECHANISM_ANALOGUE_NOT_ACTUAL_PACKET
+FKMS_PRIME_MONOMIAL_TRACE_ENGINE = SOURCE_BACKED_LOCAL_PRIME_PROJECTOR_ATTACHMENT
+HB4_EXACT_HALF_SIGNED_MODULUS_DUAL_TYPE_IV = RETYPED_PRE_CRT_SHORTHAND_ONLY
+HB4_EXACT_HALF_SIGNED_CONDUCTOR_RAMANUJAN_COFACTOR_PRIMITIVE_PROJECTOR_DUAL_TYPE_IV = SELECTED_CONSTRUCTION_OPEN_NEW_THEOREM
+HB4_EXACT_HALF_SMALL_PROJECTOR_ABSOLUTE_WEIL_DYADIC_BOUND = PROVED_CONTRACT_LEVEL_PARTIAL_THEOREM
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_SMALL_PROJECTOR_WINDOW = PROVED_CONTRACT_LEVEL_POWER_SAVING
+HB4_EXACT_HALF_LARGE_COMPLEMENTARY_T_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_150_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_LARGE_T_DIRECT_EARNST_TRANSFER = STOP_SCOPED_PRIME_EVEN_AFE_COEFFICIENT_AND_REASSEMBLY_MISMATCH
+HB4_EXACT_HALF_LARGE_T_PHASE_BLIND_CHARACTER_LARGE_SIEVE = STOP_SCOPED_ROOT_NUMBER_AND_PROJECTOR_GEOMETRY_ERASED
+HB4_EXACT_HALF_LARGE_T_AFE_REPLACEMENT_OF_ACTUAL_FOUR_POLYNOMIALS = STOP_SCOPED_FALSE_COEFFICIENT_SUBSTITUTION
+HB4_EXACT_HALF_LARGE_T_CHARACTER_SIDE_PROJECTOR_COMPLEMENT_SELECTION = STOP_SCOPED_T_NOT_INTRINSIC_BEFORE_PROJECTOR_EXPANSION
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_E1E2_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_FORTY_TWO_OVER_THIRTY_ONE_MINUS_EPSILON
+HB4_EXACT_HALF_PRIME_PROJECTOR_FKMS_STRICT_ENDPOINT_BUDGET = LOCAL_ONLY_EPSILON_GT_9_OVER_1550_PLUS_LEDGER_MARGIN
+HB4_EXACT_HALF_COMPOSITE_PROJECTOR_ABOVE_FOUR_THIRDS = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_PRIME_PROJECTOR_AT_OR_ABOVE_FORTY_TWO_OVER_THIRTY_ONE = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+HB4_EXACT_HALF_REDUCED_PROJECTOR_CORE_DISPERSION = ANCESTOR_OPEN_REDUCED_TO_THREE_HALVES_CORE
+BP2607_COMPLETE_BILINEAR_KLOOSTERMAN_L2 = SOURCE_BACKED_ANY_MODULUS_UNNORMALIZED
+HB4_EXACT_HALF_INVERSE_RESIDUE_TWO_ROW_TRANSFER = PROVED_EXACT_NORM_PRESERVING
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_WINDOW = PROVED_CONTRACT_LEVEL_FOUR_THIRDS_TO_THREE_HALVES_MINUS_DELTA
+HB4_EXACT_HALF_ALL_SQUAREFREE_INVERSE_RESIDUE_STRICT_BUDGET = LOCAL_ONLY_DELTA_GT_1_OVER_200_PLUS_LEDGER_MARGIN
+BP2607_NONTRIVIAL_INTERVAL_BOUND_AFTER_INVERSION = STOP_SCOPED_INVERSE_SUPPORT_NOT_SHORT_INTERVAL
+HB4_EXACT_HALF_THREE_HALVES_PROJECTOR_CORE_DISPERSION = SELECTED_CORE_OPEN_NEW_THEOREM
+```
+
+On the island map, Bridge A1's red break moves from the split `4/3` and
+`42/31` walls to one common `3/2` wall.  Bridge A2 paired-Voronoi, Bridge B
+distinguished-seed genericity, and the Hénon/geometric auxiliary route remain
+independent and provide no analytic credit here.
+
+V12 remains a
+`CONTRACT_LEVEL_PARTIAL_ARITHMETIC_RANGE_ADVANCE_AND_CORE_SHRINK`.  Actual-atom
+membership, all-`D` cover, exactly-once physical reassembly, tails, A/B
+selection, original/global normalization and provenance remain open.  Hence
+fixed-atom credit is `0`, global strict `1/400` is `UNPAID`, `L2=NONE`, and
+`TPC207_TRIGGER=false`.
