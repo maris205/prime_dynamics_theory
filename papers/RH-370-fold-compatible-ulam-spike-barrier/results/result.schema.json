@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["status", "route_verdict", "gates", "false_claims", "source_audit", "finite_checks", "spike_checks"],
+  "properties": {
+    "status": {"const": "RH-370_fold_compatible_ulam_spike_barrier"},
+    "route_verdict": {
+      "type": "object",
+      "required": ["route_a", "route_b"],
+      "properties": {"route_a": {"const": "GO"}, "route_b": {"const": "STOP_SCOPED"}}
+    },
+    "gates": {"type": "object", "additionalProperties": {"const": false}},
+    "false_claims": {"type": "object", "additionalProperties": {"const": false}},
+    "source_audit": {
+      "type": "object",
+      "required": ["pass", "rows"],
+      "properties": {"pass": {"const": true}, "rows": {"type": "array", "minItems": 9}}
+    },
+    "finite_checks": {
+      "type": "object",
+      "required": ["all_pass", "rows"],
+      "properties": {"all_pass": {"const": true}, "rows": {"type": "array", "minItems": 4}}
+    },
+    "spike_checks": {
+      "type": "object",
+      "required": ["all_pass", "rows", "coefficient"],
+      "properties": {"all_pass": {"const": true}, "rows": {"type": "array", "minItems": 4}, "coefficient": {"type": "number"}}
+    }
+  }
+}

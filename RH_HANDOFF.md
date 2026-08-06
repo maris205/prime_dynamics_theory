@@ -2,13 +2,13 @@
 
 Status date: 2026-08-06
 
-Current completed endpoint: RH-369
+Current completed endpoint: RH-370
 
-Completed research batch: RH-352 through RH-369
+Completed research batch: RH-352 through RH-370
 
-Post-four-volume independent theorem edges: RH-362 through RH-369
+Post-four-volume independent theorem edges: RH-362 through RH-370
 
-Latest route verdict: RH-369 Route A `GO`; Route B `STOP_SCOPED`
+Latest route verdict: RH-370 Route A `GO`; Route B `STOP_SCOPED`
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -24,6 +24,8 @@ RH-368 integration commit:
 
 RH-369 integration commit:
 `77549262532625c5dec8ac514a97bcee7b4503fc`.
+
+RH-370 integration commit: pending release.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -54,6 +56,11 @@ Read completely:
 - `papers/RH-369-branch-symmetric-markov-mobius-orthogonality/THEOREM_LEDGER.md`
 - `papers/RH-369-branch-symmetric-markov-mobius-orthogonality/results/result.json`
 - `papers/RH-369-branch-symmetric-markov-mobius-orthogonality/main.pdf`
+- `papers/RH-370-fold-compatible-ulam-spike-barrier/README.md`
+- `papers/RH-370-fold-compatible-ulam-spike-barrier/UPDATED_ROADMAP.md`
+- `papers/RH-370-fold-compatible-ulam-spike-barrier/THEOREM_LEDGER.md`
+- `papers/RH-370-fold-compatible-ulam-spike-barrier/results/result.json`
+- `papers/RH-370-fold-compatible-ulam-spike-barrier/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -74,8 +81,9 @@ Retain RH-362 as the return-rank input, RH-363 as the entropy-tower input,
 RH-364 as the weighted-survivor/prime-copy input, RH-365 as the unweighted
 return-bouquet input, RH-366 as the Hénon Möbius-correlation input, RH-367 as
 the boundary-aligned cyclic-Ulam input, RH-368 as the parity-factor capacity
-input, RH-369 as the branch-symmetric Markov/Gibbs input, and RH-361 as the
-immediate endpoint of the still-open original physical branch.
+input, RH-369 as the branch-symmetric Markov/Gibbs input, RH-370 as the
+fold-compatible Ulam/spike input, and RH-361 as the immediate endpoint of the
+still-open original physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -85,11 +93,11 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-369 does not automatically activate RH-370. The next breadth-first source
+RH-370 does not automatically activate RH-371. The next breadth-first source
 lock must compare the remaining external theorem packages, especially a
 common strong-space projector/resolvent bridge for cyclic Ulam data, the
 still-open distance-two capacity route, and general constraint-graph
-arithmetic laws, against the completed RH-1--RH-369 corpus. RH search
+arithmetic laws, against the completed RH-1--RH-370 corpus. RH search
 remains breadth-first: generate bold source-backed candidates, evaluate
 standalone discovery value as Route A and RH data-type compatibility as Route
 B, then issue `GO`, `STOP_SCOPED`, or `NOT_TESTABLE`. Create a new number only
@@ -196,7 +204,7 @@ counterloop. RH-354's normalized actual `p` tail is neither an unnormalized
 complete prefix nor a `q/E_off` theorem. Deterministic `s` is not an actual
 head, root set, rank law, or spectral submultiset.
 
-RH-362 through RH-369 add a separate arithmetic-dynamical branch. RH-362
+RH-362 through RH-370 add a separate arithmetic-dynamical branch. RH-362
 builds one marked modular cycle per prime; RH-363 inserts the resulting ranks
 into a pairwise-coprime admissible-shift tower; RH-364 derives weighted
 analytic domains for a certified local survivor and audits an engineered
@@ -209,7 +217,10 @@ defect for a cyclic postcritically finite quadratic map; RH-368 proves an
 exact capacity formula and the all-order `4/pi^2` limit for the distinct
 three-cell parity factor `A_{\{2\}}`; RH-369 derives a non-Parry
 branch-symmetric Markov family with fixed-parameter Möbius orthogonality and
-exact covariance on the RH-366 graph. None is identified
+exact covariance on the RH-366 graph; RH-370 proves exact finite folding for
+mirror-compatible Ulam partitions, an exterior `L^1` resolvent bridge, and a
+deterministic terminal-spike/BV obstruction to the natural strong-space route.
+None is identified
 with either typed physical branch, so the physical blocker below is unchanged.
 
 The deterministic target side remains exact and all-order: RH-263 gives the
@@ -738,7 +749,51 @@ full-measure set, uniform endpoint control, a geometrically selected
 parameter, or a canonical arithmetic trace.  Route A is `GO`; Route B is
 `STOP_SCOPED`; Gates A--E remain false/open.
 
-## 4. Compact conclusions from RH-352 through RH-369
+### 3.9 RH-370 fold-compatible Ulam quotients and deterministic spike barrier
+
+RH-370 locks the cyclic-Ulam source at
+`e7d21f646498d77e1c3213d1e4f35dc8466038ff` and audits the PCF map
+`f(x)=1-u x^2` on `J=[-(u-1),1]` through the fold `q(x)=|x|` and
+`T(y)=|1-u y^2|`.  It proves three separately typed facts.
+
+First, for every genuinely mirror-compatible partition, the exact full
+cell-overlap matrix has observable and mass intertwiners with the folded
+matrix.  If `m` paired cells are present,
+
+```text
+chi_full(z) = z^m chi_fold(z),
+P_full^T ker(A) = 0.
+```
+
+Thus all nonzero finite eigenvalues and their Jordan data are inherited; the
+additional zero structure is deliberately unclassified.  The theorem does
+not cover merely band-aligned, crossing, or phase-shifted grids.
+
+Second, conditional expectations give the genuine weak statement
+`E_h P_T E_h g -> P_T g` in `L^1` for every fixed `g`, and strong resolvent
+convergence uniformly on compact subsets of `|z|>1`.  Since `-1` lies on the
+unit circle, this is not a Riesz-projector theorem and cannot promote the
+finite `-1` mode to a continuum resonance.
+
+Third, on the standard `BV` component, the deterministic terminal profile is
+
+```text
+P_T 1 = (2 sqrt(u))^(-1) (1-y)^(-1/2),   u-1 < y < 1,
+```
+
+and adjacent terminal cell averages differ by
+`(2-sqrt(2))/sqrt(u h)=0.4714757998... h^(-1/2)`.  The deterministic
+projection therefore has no uniform bound in that natural strong norm.  This
+is a scoped negative only; a new fractional/tower-adapted space is not ruled
+out.  RH-52/RH-55 positive-noise hypotheses require `h=o(sigma^2)` and cannot
+be specialized to `sigma=0`.
+
+Route A is `GO` for the exact quotient, exterior weak bridge, and BV
+obstruction.  Route B is `STOP_SCOPED` before Gate A.  Gates A--E remain
+false/open; no canonical determinant, Hilbert--Polya operator, prime trace,
+zero identification, or RH implication is claimed.
+
+## 4. Compact conclusions from RH-352 through RH-370
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -805,6 +860,11 @@ parameter, or a canonical arithmetic trace.  Route A is `GO`; Route B is
   observable, and the finite bound `V_(N,t)<=((2-t)/t)N`. The Chowla density
   remains conditional, no uniform-in-`t` theorem is claimed, and no Gate is
   closed.
+- **RH-370:** Exact finite folding quotient for mirror-compatible Ulam
+  partitions, an `L^1`/exterior-resolvent bridge, and a terminal square-root
+  spike giving a sharp `h^(-1/2)` BV projection barrier. The quotient is not
+  a continuum spectral theorem, arbitrary partitions and zero-noise limits
+  remain open, and no Gate is closed.
 
 ## 5. Route firewall and reopening triggers
 
@@ -844,6 +904,13 @@ Do not:
   unconditional two-point Chowla theorem;
 - identify the RH-369 Markov covariance with a prime trace, determinant, or
   Riemann-zero model;
+- promote the RH-370 finite nonzero quotient spectrum to a continuum
+  resonance or Riesz projector;
+- apply the RH-370 quotient to non-mirror, crossing, or phase-shifted grids;
+- treat the RH-370 `L^1` exterior resolvent as a contour theorem at `-1`;
+- substitute `sigma=0` into the positive-noise hypotheses of RH-52/RH-55;
+- treat the RH-370 finite quotient audit or spike rows as asymptotic or
+  universal noise evidence;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -859,20 +926,25 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-369. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-370. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
 declared periodic/typical/distance-two capacity audit, RH-367 closes the
 declared finite-Ulam alignment/phase-defect audit, and RH-368 closes the
 declared `A_{\{2\}}` parity-factor capacity route. RH-369 closes the declared
-fixed-parameter branch-symmetric Markov/Gibbs route. For RH-370 and later,
+fixed-parameter branch-symmetric Markov/Gibbs route. RH-370 closes the
+declared fold-compatible quotient/exterior-bridge/BV-barrier audit. For RH-371
+and later,
 the shortest exact candidates are:
 
-1. A common strong-space projector/resolvent theorem that genuinely connects
+1. A new fractional/tower-adapted strong-space projector/resolvent theorem
+   that genuinely connects
    the RH-367 finite-Ulam family to a declared continuum operator. Without
    this bridge, no spectral limit may be inferred from phase scans.
 2. A capacity-limit theorem (or a rigorous nonexistence/scoped negative) for
-   `lim K_N/N` under the distance-two constraint. Pair correlations alone do
-   not control this nonlinear maximum-weight functional.
+   `lim K_N/N` under the RH-366 distance-two constraint. The first admissible
+   RH-371 edge is an exact eight-site run reduction plus a pair-ledger
+   obstruction; it does not by itself determine the limit. Pair correlations
+   alone do not control this nonlinear maximum-weight functional.
 3. A nonadaptive-measure theorem identifying geometrically or dynamically
    selected invariant measures, beyond Parry, for which a quantitative
    Möbius theorem holds without reading the arithmetic sequence.
@@ -1207,6 +1279,31 @@ Route A is `GO`; Route B is `STOP_SCOPED` at the externally selected symbolic
 measure, before Gate A.  Gates A--E and the original physical coordinate are
 unchanged.
 
+### 6.7 RH-370 source lock, fold theorem, and route decision (2026-08-06)
+
+RH-370 freezes `cyclic_ulam_map` at
+`e7d21f646498d77e1c3213d1e4f35dc8466038ff`, with RH-367, RH-14, RH-52,
+RH-55, and the RH-MVP2 four-volume verification as explicit source inputs.
+The source audit has `9/9` matching hashes; the upstream cyclic-Ulam test
+suite is `12/12`.
+
+The proof audit accepts the finite statement only for mirror-compatible cells:
+the observable and mass intertwiners, the annihilated mirror kernel, and the
+characteristic factor `chi_full(z)=z^m chi_fold(z)` are exact finite algebra.
+The `L^1` conditional-expectation argument is valid for fixed functions and
+resolvents on compact subsets of `|z|>1`.  It does not surround `-1`.
+The terminal formula and four scaling rows verify the deterministic jump
+coefficient `0.4714757998... h^(-1/2)`, which blocks a uniform standard-BV
+deterministic projector.  The audit rejects arbitrary aligned partitions,
+zero-noise specialization of positive-noise schedules, continuum spectral
+promotion, and every Gate claim.
+
+The primary route decision is `Route A=GO`, `Route B=STOP_SCOPED`.  The first
+Route-B blocker is the missing common strong-space projector/resolvent
+theorem; the declared reopening is a fractional/tower-adapted space or a
+different partition theorem.  The next independent candidate is RH-371's
+distance-two eight-site run reduction, pending final source and proof audit.
+
 ## 7. Reproduction and publication audit
 
 Final RH-367 audit:
@@ -1278,6 +1375,39 @@ de6945eae1a1ac03d70aab087163c762dded696f5175e1ed2745b39b49ce5ffc
 
 verification
 df8ad0301938109c45847e4d62025c37bc41d230391cc60b5a716e856203c9c4
+```
+
+Final RH-370 audit:
+
+- Source locks: `9/9`; cyclic-Ulam upstream tests: `12/12`.
+- Local tests: `5/5`; strict result checks: `4/4`; source and claim
+  firewalls pass.  Individual archive: `21` publication files and `9`
+  external inputs, zero failures.
+- PDF: `5` pages; `20` font rows are embedded (`19` Unicode-mapped and one
+  Type3 custom row without a ToUnicode map); Ghostscript, text extraction,
+  and all `5/5` rendered pages pass.  The semantic PDF is byte-identical to
+  `main.pdf`; the complete
+  LaTeX log has no actionable warning or error.
+- The four finite quotient rows and four spike-scaling rows are exact or
+  reproduction checks only; no row is treated as spectral-limit evidence.
+
+RH-370 final hashes:
+
+```text
+main.tex
+f1fa2b7890d67b86e0dd5716b9a9259264afec1c836bdb6d601dff19e9b05689
+
+PDF
+272ce8de4ecf908ff5e5778b2744d44eb4bf31f225722d65e9669514c6a9b2cb
+
+result
+b69e0e7084f4b1abda93c3cbcb609dcc69449dc1506c7252dc1364373286c376
+
+manifest
+038739f50c3bbd773b011cfad4a2f70be3989135e260c0fd88a023dfed32c61f
+
+verification
+25eeb20f882443835389ae0637b7066a189b485e35b4809c404a3877e50de2ac
 ```
 
 Final RH-368 audit:
@@ -1597,13 +1727,14 @@ b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751
 ```text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-369 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-370 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
 boundary-aligned cyclic-Ulam input, RH-368 as the parity-factor capacity
-input, RH-369 as the branch-symmetric Markov/Gibbs input, RH-MVP2 as the
-corpus umbrella, and RH-361 as the physical endpoint.
+input, RH-369 as the branch-symmetric Markov/Gibbs input, RH-370 as the
+fold-compatible Ulam/spike input, RH-MVP2 as the corpus umbrella, and RH-361
+as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -1612,6 +1743,13 @@ RH search is breadth-first. Generate bold candidates, then evaluate each by
 Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
+
+RH-370 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  It proves exact finite folding for mirror-compatible
+partitions, an `L^1` bridge only outside the unit circle, and a deterministic
+standard-BV spike barrier.  Do not promote the finite quotient to a continuum
+resonance, apply it to arbitrary grids, specialize positive noise to zero, or
+call the spike rows asymptotic evidence.
 
 RH-365 is an independent trigger-5 theorem edge and does not close any
 physical Gate. It proves exact midpoint compression, the two-sided height
@@ -1653,15 +1791,17 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-For the next breadth-first source lock, investigate the RH-369 roadmap in
-order: (i) a common strong-space projector/resolvent theorem connecting the
-RH-367 finite-Ulam family to a declared continuum operator; (ii) existence
-or a proved scoped negative for the RH-366 distance-two capacity limit;
+For the next breadth-first source lock, investigate the RH-370 roadmap in
+order: (i) a new fractional/tower-adapted strong-space projector/resolvent
+theorem connecting the RH-367 finite-Ulam family to a declared continuum
+operator; (ii) existence or a proved scoped negative for the RH-366
+distance-two capacity limit, beginning with RH-371's exact eight-site run
+reduction and pair-ledger obstruction;
 (iii) a general mixing constraint-graph arithmetic classification; (iv) a
 geometrically selected non-Parry measure theorem; (v) the composite
 primitive-divisor, sharp-radius, finite-entropy-data, intrinsic globalization,
 cyclic-noise, and original same-clock physical routes. Evaluate each by Route
-A and Route B before assigning RH-370. In parallel retain the exact source
+A and Route B before assigning RH-371. In parallel retain the exact source
 locks and the four-volume foundation.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
