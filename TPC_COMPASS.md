@@ -1,15 +1,16 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-07
-状态：`BOLD_CHANNEL_V23 / PRIME_SHELL_JUTILA_KLOOSTERMAN_INTERTWINED_PHYSICAL_COMPILER`
-claim level：`SOURCE_BACKED_PRIME_SHELL_ATTACHMENT_AND_NONEMPTY_CONDITIONAL_EXPONENT_WINDOW_ONLY`
+更新时间：2026-08-08
+状态：`BOLD_CHANNEL_V24 / LITERAL_JUTILA_FAREY_ATOM_COMPILER`
+claim level：`EXACT_L0_DETERMINANT_TO_JUTILA_FAREY_KLOOSTERMAN_ATOMS_ONLY`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V23 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V24 的完整
 proof、scope与独立 checker位于
-`research/tpc-big-road/bridge_b_prime_shell_jutila_and_stable_dynamics.md`及
-`research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py`；V22 projector firewall、V21 wrapped mean、V20 terminal
+`research/tpc-big-road/bridge_b_literal_jutila_farey_atom_compiler.md`及
+`research/tpc-big-road/tpc_bridge_b_literal_jutila_farey_atom_checker.py`；V23 prime-shell
+Jutila interface、V22 projector firewall、V21 wrapped mean、V20 terminal
 innovation、V19 raw-row/source
 innovation、V18 typed
 backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 artifacts。正式 theorem
@@ -22,7 +23,10 @@ backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 art
 200+ local research nodes
   -> 13 major obstruction classes
   -> 2 visible bottlenecks
-  -> 1 prime-shell Jutila + Kloosterman intertwined physical compiler gate
+  -> exact literal determinant
+  -> Jutila main/error split
+  -> complete Farey/Kloosterman atoms
+  -> {signed q,c,b physical emitter | factorable auxiliary ensemble}
      + 1 independent stable-block/summable-bad-set dynamical reserve
      + 2 independent analytic reserves (A1/A2).
 ```
@@ -1026,6 +1030,67 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 25. V24 后的罗盘：原子已经落地，缺的是 collective emitter
+
+V23留下的不是一句模糊的“也许能用第二 circle method”。V24已经把同一个 fixed
+`h0=2` literal physical scalar逐 occurrence展开为 determinant atoms。Blomer--Li
+Lemma 1 source-backed给 Jutila split；其 printed Lemma 2 却把 Farey interval写成
+`max`并在左右半弧都用 fixed-plus inverse phase。两个 finite counterexamples锁定该
+source typo，随后由 Farey neighbors独立证明 `min`/`sigma(z)` corrected identity，得到
+
+```text
+literal V19 determinant
+  -> exact Jutila main/error split
+  -> corrected signed Farey representation
+  -> bare identity branch S(D,sigma(z)u;c).
+V24_BARE_FAREY_B_SUM_TO_COMPLETE_KLOOSTERMAN_BILINEAR = PROVED_EXACT_L0
+```
+
+其中 `d_phys,d_rough,e_sieve,q_J,d_J,c_F,b_F,u_F,t_F,ell_J,d_BL`全部分型；
+`q_J`不能改名为 `c_F`，physical divisor也不能改名为 Jutila divisor。打开
+`chi(b_F/c_F+z_F)`后，真正未解对象是一个在外层取绝对值之前保留
+identity/`-chi`、`d_J=1/q_J`、prime/hybrid、zero/nonunit/axes/tails及左右半弧的完整
+signed `(q_J,c_F,b_F,sigma)` ensemble。
+
+因此解析主路已经分成两个明确 theorem：
+
+```text
+V24_SIGNED_q_c_b_COLLECTIVE_PHYSICAL_EMITTER
+  = OPEN_NEW_CONSTRUCTION
+V24_PRIME_SHELL_JUTILA_ERROR_SIGNED_FAREY_KLOOSTERMAN_THEOREM
+  = OPEN_NEW_THEOREM
+V24_PRIME_SHELL_JUTILA_MAIN_TO_BP_COLLECTIVE_EMITTER
+  = OPEN_NEW_THEOREM.
+```
+
+Blomer--Pascadi在真正发射出 fixed-modulus、fixed-unit short arrays后仍可提供 local
+`q^(-11/512)` ledger；在 `q=x^(1/3)`上对应 `x^(-11/1536)`，compiler losses之前的
+strict margin仍为 `179/38400`。但 source theorem不负责发射 TPC arrays，也不支付
+outer labels与 exactly-once reassembly。
+
+三条 scoped错误路线已经停止：printed Lemma 2 的 `max`/fixed-plus literal transfer；
+direct GL(3)-divisor theorem transfer；prime-only/factorable splice。Blomer--Li最终
+`41/42` theorem使用
+`A(n,1)tau(m)`、divisor/GL(3) Voronoi与自己的 clock，不是 literal Möbius/log row；
+其 factorable weight为 `q=pt`且 `t`必须 unrestricted smooth，不能与 V23 prime-only
+shell拼成同一个 source lock。保留的第三条解析 reserve只能是独立声明的 source-native
+factorable auxiliary ensemble，并重新支付 normalizer、error、clock与 physical
+reassembly。
+
+所以 V24不是 arithmetic advance，却是路线推进：旧墙“缺第二 refinement”已经压缩为
+两个可写定理、一个可构造 auxiliary architecture以及三个明确 STOP。优先级为
+
+```text
+1. signed prime-shell error emitter theorem;
+2. Jutila main -> BP collective short-array emitter;
+3. independent factorable auxiliary ensemble;
+4. V23 stable-block dynamics reserve;
+5. A1/A2 independent reserves.
+```
+
+overall arithmetic advance=`NO`、fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
+TPC-207=false。
 
 ## 24. V23 后的罗盘：prime-shell 入口合法，第二 Kloosterman compiler 接棒
 

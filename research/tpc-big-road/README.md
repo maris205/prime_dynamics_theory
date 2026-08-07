@@ -1,10 +1,12 @@
-# TPC big road V23: prime-shell Jutila highway and stable nonautonomous blocks
+# TPC big road V24: literal Jutila--Farey atom compiler
 
-更新时间：2026-08-07
+更新时间：2026-08-08
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / SOURCE_BACKED_PRIME_SHELL_ENTRY_AND_CONDITIONAL_INTERTWINED_COMPILER`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_LITERAL_DETERMINANT_TO_JUTILA_FAREY_ATOMS`
 
-当前主路线见第 23 节及 `bridge_b_prime_shell_jutila_and_stable_dynamics.md`；第 22 节与
+当前主路线见第 24 节及 `bridge_b_literal_jutila_farey_atom_compiler.md`；第 23 节与
+`bridge_b_prime_shell_jutila_and_stable_dynamics.md`冻结 V23 prime-shell exponent
+interface及 stable-cell reserve，第 22 节与
 `bridge_b_centered_projector_firewall.md`冻结 V22 operator firewall，第 21 节与
 `bridge_b_mesoscopic_covariance.md`冻结 V21 wrapped mean compiler，第 20 节与
 `bridge_b_terminal_innovation_floor.md`冻结 V20 terminal-innovation equivalence，第 19 节与
@@ -2207,3 +2209,105 @@ checker冻结 33-field contract、48-row registry，registry SHA-256为
 `15e40e8c20050549c3e244be59747019f115ebb8ccb9356f95fd449250073b07`；
 102/151 adversarial mutations必须全部拒绝。V23 arithmetic advance=`NO`、fixed
 atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false；没有编号 paper/PDF/build。
+
+## 24. V24 Bridge B：determinant 到 Jutila--Farey/Kloosterman atoms
+
+V24把 V23 的 conditional compiler继续拆到 source identities允许的最深 exact层。
+对每个 V19 ordered MASTER occurrence `o`，保留 original `+2,-1`、Möbius/log、
+physical shell、prime/hybrid signs与 normalization，写
+
+```text
+G_x(alpha)=sum_nu A_x(nu)e(alpha D_x(nu)),
+S_x=int_0^1G_x(alpha)dalpha=sum_(D_x(nu)=0)A_x(nu). (24.1)
+```
+
+这里 prime mismatch为 `d_phys r_p-T_o-2`，hybrid mismatch为
+`e_sieve r_h-T_o-2`。`d_phys,d_rough,e_sieve,q_J,d_J,c_F,b_F,u_F,t_F,ell_J,d_BL`
+全部异型，不允许靠共享字母拼接 theorem。
+
+Blomer--Li Lemma 1的 universal Jutila approximant在 V23 prime shell上给 exact split
+
+```text
+S_x=int chi G_x+int(1-chi)G_x.                       (24.2)
+```
+
+main kernel为 `L^(-1)sum_q omega(q)c_q(D)hatpsi(-delta D)`，不是 exact delta，也
+没有 free `1/R_x`。Blomer--Li printed Lemma 2的 `max` interval与 fixed-plus phase有
+finite counterexamples；V24从 exact Farey neighbors独立证明
+
+```text
+I_C^corr(c,z)=(C-c,min(1/(c|z|)-c,C)] intersection Z,
+sigma(z)=sign(z),                                    (24.3)
+```
+
+并对 error branch得到 corrected exact identity
+
+```text
+sum_(c<=C)int_(-1/(cC))^(1/(cC)) dz 1/c
+ sum_(u mod c)sum_(t_F in I_C^corr(c,z))e_c(u t_F)
+ sum_(b mod c)^*e_c(sigma(z)u inverse(b))(1-chi)G_x(b/c+z). (24.4)
+```
+
+bare identity branch的完整 unit sum逐 mismatch成为
+
+```text
+sum_(b mod c)^*e_c(bD+sigma(z)u inverse(b))
+  =S(D,sigma(z)u;c).                                 (24.5)
+```
+
+所以 determinant 到 complete Farey/Kloosterman atoms 已 `PROVED_EXACT_L0`；这不是
+saving；更精确地，printed Lemma 2为 scoped STOP，而
+`V24_CORRECTED_SIGNED_FAREY_IDENTITY=PROVED_EXACT_L0_REPOSITORY_DERIVATION`，且
+`V24_BARE_FAREY_B_SUM_TO_COMPLETE_KLOOSTERMAN_BILINEAR=PROVED_EXACT_L0`。打开
+rational `chi`后必须在一个 outer absolute value之前同时保留
+identity/`-chi`、prime `d_J=1/q_J`两支、whole `(q_J,c_F,b_F,sigma)` ensemble、
+zero/nonunit/axes、prime/hybrid与 tails。第二行 normalization精确为
+
+```text
+1/(delta L) sum_q omega(q)sum_(d_J|q)mu(q/d_J)
+ sum_(ell_J congruent b_F d_J mod c_F)
+ psi(delta^(-1)(ell_J/(c_F d_J)+z_F)),               (24.6)
+```
+
+没有额外 `q` factor。
+
+V24把 surviving analytic route分成：
+
+```text
+V24_SIGNED_q_c_b_COLLECTIVE_PHYSICAL_EMITTER
+  = OPEN_NEW_CONSTRUCTION
+V24_PRIME_SHELL_JUTILA_ERROR_SIGNED_FAREY_KLOOSTERMAN_THEOREM
+  = OPEN_NEW_THEOREM
+V24_PRIME_SHELL_JUTILA_MAIN_TO_BP_COLLECTIVE_EMITTER
+  = OPEN_NEW_THEOREM
+V24_FACTORIZABLE_AUXILIARY_JUTILA_ENSEMBLE_WITH_LITERAL_PHYSICAL_REASSEMBLY
+  = OPEN_NEW_CONSTRUCTION.                            (24.7)
+```
+
+Blomer--Li 的最终 theorem不能直接搬用：其 coefficients是 `A(n,1)tau(m)`或 smooth
+divisor convolution，并经过 divisor/GL(3) Voronoi；source factorable weight为 `q=pt`，
+其中 `t`必须 unrestricted smooth以便后续 Poisson。V23 prime-only shell不能冒充这个
+weight。其 complete character sum也不是 Blomer--Pascadi的 two-array input。因此
+
+```text
+V24_BLOMER_LI_LEMMA2_AS_PRINTED_MAX_FIXED_PLUS
+  = STOP_SCOPED_LITERAL_FAREY_COUNTEREXAMPLES
+V24_DIRECT_BLOMER_LI_GL3_DIVISOR_TO_LITERAL_TPC_TRANSFER
+  = STOP_SCOPED_COEFFICIENT_VORONOI_CLOCK_AND_REASSEMBLY_MISMATCH
+V24_PRIME_ONLY_JUTILA_SHELL_AS_BLOMER_LI_FACTORIZABLE_WEIGHT
+  = STOP_SCOPED_UNRESTRICTED_SMOOTH_t_REQUIRED_FOR_POISSON.    (24.8)
+```
+
+完整 artifact与 checker为
+
+```text
+research/tpc-big-road/bridge_b_literal_jutila_farey_atom_compiler.md
+research/tpc-big-road/tpc_bridge_b_literal_jutila_farey_atom_checker.py
+```
+
+checker冻结 58-field contract、55-row registry、registry SHA-256
+`6ce7f2c3d2eb3a2e30900aaa7285d8e99bca139711db04915bdd9453a0a1808e`，并要求
+176/170 mutations与7个 dependency-lock attacks全部拒绝。V24最大 claim仅为 exact
+`L0` atomization与 source-transfer
+firewalls；arithmetic advance=`NO`、fixed atom=`0`、strict `1/400=UNPAID`、
+`L2=NONE`、TPC-207=false。没有编号 paper/PDF/build。
