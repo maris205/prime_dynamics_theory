@@ -2,13 +2,13 @@
 
 Status date: 2026-08-07
 
-Current completed endpoint: RH-377
+Current completed endpoint: RH-378
 
-Completed research batch: RH-352 through RH-377
+Completed research batch: RH-352 through RH-378
 
-Post-four-volume independent theorem edges: RH-362 through RH-377
+Post-four-volume independent theorem edges: RH-362 through RH-378
 
-Latest route verdict: RH-377 Route A `GO`; Route B `STOP_SCOPED`
+Latest route verdict: RH-378 Route A `GO`; Route B `STOP_SCOPED`
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -48,6 +48,9 @@ RH-376 integration commit:
 
 RH-377 integration commit:
 `3c6e5658f4147891d15dac18d303a22a46d6e289`.
+
+RH-378 integration commit:
+`08574b1bab1b9f549d4c07df97bb548d40aae51f`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -118,6 +121,11 @@ Read completely:
 - `papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/THEOREM_LEDGER.md`
 - `papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/results/result.json`
 - `papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/main.pdf`
+- `papers/RH-378-safe-window-memory-and-online-capacity-transducers/README.md`
+- `papers/RH-378-safe-window-memory-and-online-capacity-transducers/UPDATED_ROADMAP.md`
+- `papers/RH-378-safe-window-memory-and-online-capacity-transducers/THEOREM_LEDGER.md`
+- `papers/RH-378-safe-window-memory-and-online-capacity-transducers/results/result.json`
+- `papers/RH-378-safe-window-memory-and-online-capacity-transducers/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -144,8 +152,9 @@ capacity input, RH-372 as the bounded graph/transducer input, RH-373 as the
 composite-clock capacity-floor input, RH-374 as the square-clock
 Euler-product family input, RH-375 as the all-finite-clock one-site supremum
 input, RH-376 as the shift-two Chowla/run-density boundary input, RH-377 as
-the mixed-exponent run-hierarchy/two-envelope input, and RH-361 as the
-immediate endpoint of the still-open original
+the mixed-exponent run-hierarchy/two-envelope input, RH-378 as the
+safe-window/online-transducer input, and RH-361 as the immediate endpoint of
+the still-open original
 physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
@@ -156,15 +165,17 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-377 is now integrated.  It closes the exact family-level Boolean
-run/correlation hierarchy and reduces the RH-371 capacity limit to one
-two-envelope convergence problem, but it proves neither that envelope nor
-the capacity convergent.  The next activated Route-A target is the
-source-locked fixed-window memory route: a complete `q=1` lag-two safe-table
-classification together with two fixed four-state online transducers that
-realize the two RH-366 capacity orientations at every prefix.  Its
-asymptotic arithmetic boundary remains shift-two and higher mixed Chowla;
-finite-state realization is not capacity convergence.  The geometrically
+RH-378 is now integrated.  It closes the fixed finite-window safety test, the
+complete `q=1` lag-two table classification, the exact two-orientation
+four-state realization, and the scoped single-policy/window-minimality
+questions.  It proves neither shift-two Chowla nor convergence of the
+RH-377 envelope or the adaptive capacity.  The next activated Route-A target
+is the independently source-locked phase-dependent Chowla-free lag-two
+route: finite-clock memory gains admit an exact max-plus classification while
+their all-finite-clock supremum remains the RH-375 value `B_infinity`.  This
+target must stay
+restricted to phasewise `c_11=0` unless a new correlation theorem pays for
+the missing phase-weighted shift-two terms.  The geometrically
 selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
@@ -1252,7 +1263,95 @@ it does not match Möbius squarefree density and proves no arithmetic
 nonconvergence.  Route A is `GO`; Route B is `STOP_SCOPED`; Gates A--E remain
 false/open.
 
-## 4. Compact conclusions from RH-352 through RH-377
+### 3.17 RH-378 safe windows and online capacity transducers
+
+RH-378 first fixes a finite clock `q`, a causal contiguous window length
+`ell`, and ternary input `a_n in {-1,0,1}`.  A `q`-periodic window table is
+universally distance-two safe if and only if the two shifted outputs are not
+both positive on every compatible block of length `ell+2`.  The exact finite
+test therefore has
+
+```text
+q 3^(ell+2)
+```
+
+rows.  For a score function that vanishes when the current input is zero,
+the displayed monomials with previous exponents in `{0,1,2}` and current
+exponent in `{1,2}` form a basis, with a unique expansion and formal
+dimension `2q3^(ell-1)`.  This is a function-space statement, not an
+arithmetic minimality theorem and not a theorem that its mixed Möbius
+coefficients have limits.
+
+For the `q=1` lag-two table
+
+```text
+epsilon_n=f(mu(n-2),mu(n)),   mu(j)=0 for j<=0,
+```
+
+universal safety is equivalent to the plus-edge relation having no
+composable pair.  Exactly `13` of the `512` Boolean tables are safe.  Their
+six score-coefficient columns have rational rank `5` and the unique relation
+
+```text
+c_22=-c_02-c_11.
+```
+
+With the common RH-376 endpoint `m<=N-2`, the exact finite ledger is
+
+```text
+L_f=c_01 M_N+c_02 Q_1+c_11 D_2+c_12 U_2+c_21 V_2+c_22 Q_2.
+```
+
+Consequently
+
+```text
+L_f/N=c_02(6/pi^2-kappa_2)
+      +c_11(D_2/N-kappa_2)+o(1).
+```
+
+Exactly seven safe tables have unconditionally certified limits; their
+class-optimal absolute value is `6/pi^2-kappa_2`.  For each of the other six,
+RH-376 Cesaro rigidity gives
+
+```text
+L_f(N)/N converges  iff  D_2(N)=o(N).
+```
+
+Under that unproved condition their class-optimal absolute value is
+`6/pi^2-kappa_2/2`, which conditionally exceeds `B_infinity`.  Both optima
+are restricted to the declared thirteen-table class.  No shift-two Chowla
+theorem or larger memory optimum is proved.
+
+For each sign `sigma`, RH-378 also gives a fixed four-state Mealy machine
+with state `(epsilon_(n-1),epsilon_(n-2))` and output
+
+```text
+epsilon_n=+1 iff a_n=sigma and epsilon_(n-2)=-1.
+```
+
+On every finite ternary word the two machines have scores exactly
+`S_N^max` and `S_N^min`; hence `K_N` is the endpoint maximum of their two
+absolute scores.  Four states are necessary only for reproducing either
+one frozen orientation stream.  This is not one online machine computing
+`K_N`.  In fact no single deterministic causal universally safe policy,
+even with unbounded memory, can attain `abs(score)=K_N` on every input branch
+at every prefix; the exact policy-tree counts through horizon four are
+`8,256,65536,0`.
+
+Finally, an explicit `q=1` stateless contiguous length-`15` table is
+universally safe on every ternary input.  It reproduces either four-state
+orientation stream when every step-two target-sign run has length at most
+eight.  The Möbius word satisfies that hypothesis because nine same-parity
+positions span all residues modulo nine.  Length `15` is minimal only in the
+declared causal contiguous stateless exact-stream class.  A synthetic run of
+nine same-parity target signs over `17` integer sites is the first
+unrestricted counterexample; it is not a Möbius counterexample.
+
+The finite-state identities do not prove `K_N/N` convergent.  Its arithmetic
+blocker remains the RH-377 two-envelope problem.  Route A is `GO`; Route B is
+`STOP_SCOPED`; Gates A--E remain false/open.
+
+## 4. Compact conclusions from RH-352 through RH-378
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -1369,6 +1468,14 @@ false/open.
   two-envelope criterion for `K_N/N`.  Its `466 -> 13` rank is formal only,
   the conditional Euler constant is unproved, the stationary witness is
   synthetic rather than Möbius, and no capacity limit or Gate is closed.
+- **RH-378:** Exact compatible-block safety for fixed finite windows; the
+  complete `512/13` lag-two census and rank-five score ledger; seven
+  unconditional versus six shift-two-Chowla-hard tables; two fixed
+  four-state machines realizing the two capacity orientations on every
+  prefix; a deterministic single-policy obstruction; and a narrowly minimal
+  length-`15` stateless realization on the Möbius run-cutoff class.  The two
+  machines are not one online optimizer, finite memory proves no capacity
+  limit, and no operator, trace, zero, or Gate is constructed.
 
 ## 5. Route firewall and reopening triggers
 
@@ -1475,6 +1582,27 @@ Do not:
   squarefree-density model, or arithmetic counterexample;
 - identify the RH-377 envelope with an intrinsic operator, determinant,
   prime-power trace, zero model, Hilbert--Polya construction, or Gate result;
+- call the RH-378 displayed monomials a unique basis, promote their formal
+  dimension or the lag-table rank to an arithmetic correlation minimum, or
+  infer unknown mixed-moment limits from finite interpolation;
+- call either RH-378 scoped lag-table constant an optimum over arbitrary
+  memory transducers; in particular, the larger value
+  `6/pi^2-kappa_2/2` remains conditional on `D_2=o(N)`;
+- infer convergence or nonconvergence of the RH-377 envelope or `K_N/N`
+  from the RH-378 finite-state realization or the endpoint rows;
+- call the two fixed RH-378 orientation machines one deterministic online
+  policy computing `K_N`, or extend the single-policy obstruction to
+  offline, horizon-aware, randomized, approximate, or Möbius-only policies;
+- promote the four-state lower bound beyond exact reproduction of one frozen
+  orientation stream, or promote the length-`15` lower bound beyond `q=1`
+  causal contiguous stateless exact-stream rules on the run-at-most-eight
+  class;
+- claim that the length-`15` formula equals the recursion on every ternary
+  input, or treat its `17`-site synthetic counterexample as a Möbius
+  counterexample;
+- identify an RH-378 window table or Mealy state with an intrinsic operator,
+  determinant, prime-power trace, zero model, Hilbert--Polya construction,
+  or Gate result;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -1490,7 +1618,7 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-377. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-378. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
 declared periodic/typical/distance-two capacity audit, RH-373 closes the
 declared fixed composite-clock phase-selector floor route, and RH-374 closes
@@ -1508,19 +1636,33 @@ explicit q=180 arithmetic lower certificate. RH-374 closes only the declared
 square-clock one-site family. RH-375 closes only the declared all-finite-clock
 one-site class. RH-376 closes only the declared shift-two interval-density
 hardness theorem. RH-377 closes only the declared mixed-exponent hierarchy
-and two-envelope reduction; it does not close the capacity limit. For RH-378
-and later,
+and two-envelope reduction; it does not close the capacity limit. RH-378
+closes only the fixed-window safety, `q=1` lag-two classification, and exact
+online-orientation realization route; it proves neither its Chowla-hard
+subclass nor the capacity limit. For RH-379 and later,
 the shortest exact candidates are:
 
-1. The independently source-locked and adversarially audited RH-378
-   candidate: a finite de Bruijn safety/moment-basis theorem, the complete
-   `q=1` lag-two classification (`512` tables, `13` universally safe), and
-   two fixed four-state online transducers whose two scores realize the
-   RH-366 capacity at every prefix after an endpoint comparison.  The seven
-   unconditional lag-two tables and six shift-two-Chowla-hard tables must
-   remain separate.  The two scoped optimum constants apply only inside the
-   thirteen-table class, and finite-state realization does not prove
-   `K_N/N` convergent.
+1. The independently source-locked and adversarially audited phase-dependent
+   Chowla-free lag-two theorem assigned to RH-379.  Fix `q` before
+   `N->infinity` and require `c_11(r)=0` at every phase.  The exact max-plus
+   optimizer has canonical states `{0,I,J}`; at `q=36` it gives the strict
+   same-clock gain
+
+   ```text
+   G(36)=9/(2*pi^2)-kappa_2/7 > F(36)=4/pi^2.
+   ```
+
+   Nevertheless its cofinal theorem is only
+
+   ```text
+   sup_(q finite) G(q)=B_infinity.
+   ```
+
+   The proof must
+   pay for the discarded lag-zero tail by an explicit
+   `sum_(p>p_y)1/p^2` bound after a fixed-clock lift; it must not introduce
+   `q=q(N)`, claim finite-clock attainment or nonattainment, or promote
+   phasewise `c_11=0` to the unrestricted memory class.
 2. A genuine higher-order Möbius correlation theorem controlling the
    RH-377 envelope or a larger memory-dependent transducer class.
 3. A nonadaptive geometrically selected measure theorem.  The 2026-08-07
@@ -2210,6 +2352,45 @@ classification, and two fixed online capacity-orientation transducers.  Its
 lag-two hard class still requires RH-376 shift-two Cesaro Chowla, and its
 full capacity asymptotics still require the RH-377 envelope.  No Gate A--E
 conclusion changes.
+
+### 6.15 RH-378 source lock, safe memory, and route decision (2026-08-07)
+
+RH-378 freezes thirty-three repository files and eight Git releases:
+
+```text
+RH-366 release              0396fab97bbe3348c8237f8734dec0e1893fd3bf
+RH-371 release              241b78a89ccbc0bad96d9ef20ee9256d61b4eaca
+RH-372 release              7a7b10b74722b520b145064923af8df6d4e2e73f
+RH-374 release              2bb3baa6a09491c2d679d10c0dbcd39587d1f831
+RH-375 release              071fed1b2a5d8488b9d2e35a99a753953b233584
+RH-376 release              0cf6179084bc8151318bb8f0955e529c12c0661a
+RH-377 release              3c6e5658f4147891d15dac18d303a22a46d6e289
+RH-MVP2 archive             c0aed13a34b8bbc53061aed23738660adcd3624c
+```
+
+Independent proof and numerical audits reconstructed the compatible-block
+test, the current-zero interpolation basis, all `512` lag-two tables, the
+`13` safe relations, the rank-five coefficient matrix, and the exact
+six-term common-endpoint ledger.  They independently checked the separation
+between seven unconditional tables and six RH-376 shift-two-Chowla-hard
+tables, including the conditional `B_infinity` comparison.
+
+The executable audit checks two `243`-row graph lifts, `72` Mealy safety
+rows, `88572` ternary words through length ten, and the exact causal-policy
+tree counts `8,256,65536,0`.  At the Möbius endpoint `2^20` it checks
+`2097152` orientation-extremum equalities, `1048576` all-prefix lag-ledger
+identities, and `2097152` recursive/window equalities.  The parity-window
+certificate checks all `512` assignments and records the exact `17`-site
+unrestricted counterexample.  All checks pass.
+
+The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  Independent
+source and proof locks establish the next phase-dependent,
+phasewise-`c_11=0` lag-two edge: an exact three-state cyclic max-plus
+optimizer, a strict same-clock gain at `q=36`, and the cofinal identity
+`sup_(q finite)G(q)=B_infinity`.  RH-379 is therefore activated.  The lock
+does not prove finite-clock attainment or nonattainment.  Unrestricted memory
+still requires phase-weighted shift-two or higher mixed Möbius cancellation.
+No Gate A--E conclusion changes.
 
 ## 7. Reproduction and publication audit
 
@@ -2943,12 +3124,61 @@ verification
 e4eced0db77e901dd1182234b0932257eb9c3eb48d90e89b2e13c12d8d342785
 ```
 
-## 8. Continuation prompt
+Final RH-378 audit:
+
+- Tests: `9/9`; isolated regeneration of `result.json` is byte-identical,
+  four JSON files have zero duplicate keys, and the closed Draft 2020-12
+  schema passes.
+- Independent exact regeneration checks `512` lag tables, `13` universally
+  safe tables, `8` coefficient vectors, rank `5`, two `243`-row graph lifts,
+  `72` Mealy safety rows, `88572` ternary words, and the causal-policy counts
+  `8,256,65536,0`.
+- At `N=2^20`, all `2097152` orientation-extremum equalities, `1048576`
+  all-prefix lag ledgers, and `2097152` recursive/window equalities pass.  The
+  `512` parity-window safety cases and the `17`-site counterexample also pass.
+- Source locks: `33/33`; all eight declared Git objects exist.  The
+  bibliography has nine entries and nine unique cited keys, with zero
+  dangling or orphan citations.  The repository-locked ARS proof/integrity
+  audit has no remaining blocker or minor.
+- Individual archive: `22` publication members plus `33` external inputs,
+  zero failures.  The four-volume replay remains `4` volumes, `73` members,
+  `1548` dependency hashes, `8` result hashes, `361` numbered sources, and
+  zero failures; the MVP2 suite remains `7/7`.
+- PDF: `8` pages and `262139` bytes, with all `20` font entries embedded.
+  Ghostscript, text extraction, full LaTeX/BibTeX log scans, semantic-PDF
+  identity, isolated recompilation, and all `8/8` rendered pages pass.
+- No shift-two Chowla theorem, adaptive-capacity convergence, unrestricted
+  memory optimum, intrinsic operator, trace, zero identification,
+  Hilbert--Polya object, or RH claim is made.  Gates A--E remain false/open.
+
+RH-378 final hashes:
 
 ```text
+main.tex
+ebc5cb3eaf33ad2ecf1d65c3ab202a4ea6d23bbbbeeecc685ac65cbf1ea10ff0
+
+PDF
+562687110524fb3e6dd0784256bc28ab7e9dc4403f432f6b3b9fafb995b323b3
+
+result
+31c546f308453e155e203e717e50b7dea560fbe57bbe88a81524ab34736ed83f
+
+schema
+0a3f226f61228030eb0eb26ed44a8f3caef46dca1395137904a2a1e2ba61fbf0
+
+manifest
+dc8386048291d43558685c0fd068eb754865e07f0c1e01774a541443eb483e0f
+
+verification
+0e75c96a8dd01e2ea7e0d1c2b23618ddc07b9ea336ba6294df62ba22ecc509ce
+```
+
+## 8. Continuation prompt
+
+````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-377 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-378 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -2959,8 +3189,9 @@ capacity input, RH-372 as the bounded graph/transducer certificate input,
 RH-373 as the composite-clock capacity-floor input, RH-374 as the square-clock
 Euler-product family input, RH-375 as the all-finite-clock one-site supremum
 input, RH-376 as the shift-two Chowla/run-density boundary input, RH-377 as
-the mixed-exponent run-hierarchy/two-envelope input, RH-MVP2 as the corpus
-umbrella, and RH-361 as the physical endpoint.
+the mixed-exponent run-hierarchy/two-envelope input, RH-378 as the
+safe-window/online-transducer input, RH-MVP2 as the corpus umbrella, and
+RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -2970,10 +3201,21 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-377 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  It proves the exact all-prefix mixed identity, the
-unconditional laws `H_(k,0)/N->e_k/2` and `H_(k,1)=o(N)`, the simultaneous
-sixteen-density to thirteen-aggregate equivalence, and
+RH-378 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  It proves the exact compatible-block safety test, the
+complete `512/13` `q=1` lag-table classification and rank-five endpoint
+ledger, two fixed four-state machines realizing the two capacity
+orientations, the deterministic single-policy obstruction, and the scoped
+length-`15` realization/minimality theorem.  Keep the seven unconditional
+tables separate from the six shift-two-Chowla-hard tables.  Do not call the
+two machines one online optimizer, extend either minimality statement beyond
+its declared model, treat the `17`-site word as Möbius, or infer that the
+RH-377 envelope or capacity converges.
+
+RH-377 remains the preceding mixed-hierarchy edge.  It proves the exact
+all-prefix mixed identity, the unconditional laws
+`H_(k,0)/N->e_k/2` and `H_(k,1)=o(N)`, the simultaneous sixteen-density to
+thirteen-aggregate equivalence, and
 `K_N/N=2r_0+2(U_N+abs(V_N))/N+o(1)`.  Do not call the `466 -> 13` formal rank
 an arithmetic minimality theorem, infer separate aggregate limits from one
 sign, promote the conditional Euler constant, treat the stationary ternary
@@ -3071,42 +3313,67 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-For the next paper, write only the independently source-locked and
-adversarially audited RH-378 finite-window memory theorem.  First state the
-finite de Bruijn universal-safety check and unique ternary interpolation
-basis for a fixed causal window.  Formal function-space dimension or
-coefficient rank is not arithmetic minimality and does not supply unknown
-mixed-correlation limits.
+For the next paper, write RH-379 on the independently source-locked and
+adversarially audited phase-dependent Chowla-free lag-two theorem.  Fix a
+finite clock `q` before `N->infinity` and consider universally safe
+tables
 
-Then classify the `q=1` lag-two tables
-`epsilon_n=f(mu(n-2),mu(n))`, with `mu(j)=0` for `j<=0`.  Universal safety is
-equivalent to the plus-edge relation containing no composable pair.  Freeze
-the exact census `512` total, `13` safe, the six-coefficient rank `5`, and
-the relation `c_22=-c_02-c_11`.  Prove first the exact six-term endpoint
-ledger
+`epsilon_n=f_(n mod q)(mu(n-2),mu(n))`
 
-`L_f=c_01 M_N+c_02 Q_1+c_11 D_2+c_12 U_2+c_21 V_2+c_22 Q_2`,
+with `c_11(r)=0` at every phase.  Call this the phasewise Chowla-free class,
+not the unrestricted memory class; a cancellation between unknown
+phase-weighted shift-two correlations is not available from the frozen
+sources.
 
-and hence the asymptotic reduction
+First exhaust all `512` local truth tables and freeze the exact `192` with
+`c_11=0`.  For positive limiting score, prove the uniform canonical
+dominance reduction to
 
-`L_f/N=c_02(6/pi^2-kappa_2)+c_11(D_2/N-kappa_2)+o(1)`.
+```text
+0,
+J={(0,+1)},
+K={(-1,+1),(+1,+1)},
+I={(-1,+1),(0,+1),(+1,+1)},
+```
 
-Exactly seven tables have unconditionally certified limits, with scoped
-class optimum `6/pi^2-kappa_2`; the remaining six are
-shift-two-Chowla-hard only after explicitly invoking RH-376 Cesaro rigidity,
-and their conditional scoped class optimum is `6/pi^2-kappa_2/2`.  Neither
-constant is an optimum over all memory transducers or the adaptive capacity.
+with weights `0`, `delta_1-delta_2`, `delta_2`, and `delta_1`.  Subset
+replacement must occur before replacing `K` by `I`: their compatibility is
+identical only against already canonical neighbors.  The final exact
+max-plus alphabet is `{0,I,J}`, where `I` requires predecessor `0` along the
+`+2` phase cycle and `J` may follow any canonical state.  State the resulting
+cycle DP as the exact fixed-`q` optimum `G(q)`, not a numerical scan.  The
+reverse supremum inequality follows from the RH-375 one-site embedding
+`f_r(x,z)=g_r(z)`, which is phasewise `c_11=0`.
 
-Finally prove that two fixed four-state online transducers, one for each
-sign orientation, have scores exactly `S_N^max` and `S_N^min` on every
-finite ternary prefix, so `K_N` is the endpoint maximum of their two absolute
-scores.  Do not call this one transducer computing `K_N`.  The length-15
-truncated window is universally safe on arbitrary ternary inputs, but equals
-the recursive transducer only when every step-two same-sign run has length
-at most eight; actual Möbius has that cutoff modulo nine.  A nine-site
-same-parity synthetic run is the first counterexample to unrestricted
-equivalence.  Finite-state realization does not prove `K_N/N` convergent;
-its asymptotic blocker remains the RH-377 envelope.  The geometrically
+Freeze the exact strict same-clock gain at `q=36` only after exact density
+normalization:
+
+```text
+G(36)=9/(2*pi^2)-kappa_2/7,
+F(36)=4/pi^2,
+G(36)-F(36)=1/(2*pi^2)-kappa_2/7>0.
+```
+
+Then prove the cofinal upper bound in the correct order.  For fixed `q`, lift
+to `Q_y=lcm(q,q_y)` after `y` contains every odd prime divisor of `q`; keep `y`
+fixed while taking `N->infinity`.  Retain every `I` and only those `J` phases
+whose predecessor is forced divisible by some `p^2`, `p<=p_y`.  After
+zero-density phases are removed, the retained phases form a one-site
+distance-two independent set and contribute at most
+`F(Q_y)=B_y`.  Charge every discarded `J` to a square divisor
+`p^2 | n-2` with `p>p_y`, giving the explicit total error
+`sum_(p>p_y)1/p^2`.  Only then send `y->infinity`.  Input-sign reflection
+must be used to pass from positive to absolute score.  The intended theorem
+is
+
+```text
+sup_(q finite) G(q)=B_infinity.
+```
+
+Do not claim a finite-clock maximizer, use `q=q(N)`, extend the result to
+phases with `c_11 != 0`, infer the RH-377 envelope or adaptive capacity
+limit, or identify the arithmetic selector with an intrinsic dynamical
+operator.  The geometrically
 selected non-Parry measure route is `STOP_SCOPED` until a fixed non-Parry
 equilibrium state and mixing theorem are proved.  The fractional/tower-adapted
 deterministic Ulam route is
@@ -3123,4 +3390,4 @@ factor, or full H_p zeta. Do not promote the entropy tower, weighted Euler
 samples, bouquet coefficients, or adaptive Mobius coding to a Riemann-zero
 model. Keep the four-volume foundation immutable and Gates A--E false/open
 until their exact definitions are proved.
-```
+````
