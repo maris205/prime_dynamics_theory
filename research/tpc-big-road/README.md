@@ -1,10 +1,11 @@
-# TPC big road V20: terminal innovation floor and the surviving signed highway
+# TPC big road V21: paid wrapped mean and the centered covariance highway
 
 更新时间：2026-08-07
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_TERMINAL_INNOVATION_EQUIVALENCE_AND_BYPASS_STOP`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_WRAPPED_NORMAL_FORM_AND_SOURCE_BACKED_MEAN_COMPILER`
 
-当前主路线见第 20 节及 `bridge_b_terminal_innovation_floor.md`；第 19 节与
+当前主路线见第 21 节及 `bridge_b_mesoscopic_covariance.md`；第 20 节与
+`bridge_b_terminal_innovation_floor.md`冻结 V20 terminal-innovation equivalence，第 19 节与
 `bridge_b_shbd2_innovation.md`冻结 V19 raw-row/source-innovation interface，第 18 节与
 `bridge_b_backward_hull.md`继续冻结 V18 typed backward-dual contract，第 17 节与
 `bridge_b_observable_rank.md`继续冻结 V17 rank contract，第 16 节与
@@ -1926,3 +1927,103 @@ canonical V20 registry为 37 rows，final-LF SHA-256
 `0408cb3e4fd0bbfb7815df0df24902d4cc9fa1b75875e66f41482c30768652ee`。
 V20是大路排障，不是 arithmetic advance；fixed atom=`0`、strict `1/400=UNPAID`、
 `L2=NONE`、TPC-207 trigger=`false`，没有编号论文或 PDF。
+
+## 21. V21 Bridge B：wrapped mean 已付，中心化 physical covariance 接棒
+
+V20把 terminal innovation route压回原 combined raw MASTER wall。V21不再重复 terminal
+clock，而在同一个 literal target上引入预声明 mesoscopic prime ensemble
+
+```text
+Q_mes=x^(1/3),
+Q_x={q prime:Q_mes<q<=2Q_mes},
+R_x=#Q_x.                                             (21.1)
+```
+
+`Q_mes`与 packet `Q=X^(267/400+o(1))`严格分型。对 strict shell的 actual fibers定义
+`n_(q,a),B_(q,a),W_(q,a)`后，逐 `q` exact有
+
+```text
+S_x=H_q+C_q,
+H_q=sum_a B_(q,a)W_(q,a)/n_(q,a),
+C_q=sum_a sum_(t in I_(q,a))
+ beta_x^raw(t)[w_x^(z)(t)-W_(q,a)/n_(q,a)].           (21.2)
+```
+
+平均全部 `q`仍是同一个 `S_x`；centered term的 pair form带 literal kernel
+`q|(t-u)`。不得把 actual `n_(q,a)`换成 `x/q`，也不得在内层插绝对值或挑 good `q`。
+
+对 sufficiently large `x`，全部 `q>z=(log x)^K`。prime与 hybrid comparison的
+residual local profile为
+
+```text
+d_q(0)=0,
+d_q(-2)=-q(q-2)/(q-1)^2,
+d_q(a)=q/(q-1)^2 otherwise,
+sum_a d_q(a)=0.                                      (21.3)
+```
+
+最大型 Bombieri--Vinogradov支付 `Lambda(t+2)`的 whole-ensemble AP remainder；对
+`b_x^(z)`，exact `q` Euler extraction、rough-divisor truncation、Rosser--Iwaniec
+fundamental lemma与 CRT lattice counting给 uniform all-residue remainder
+
+```text
+max_(q,a)|E_b(q,a)|<<_(A,K)x/[q log^A x].             (21.4)
+```
+
+这是一条从 source theorem新推导的 corollary，不是声称 Iwaniec原文逐字包含本 physical
+formula。保留 `|beta|<=3d_4`、actual fiber counts和 `1/R_x`的完整 ledger得到
+
+```text
+Hbar_Q<<_(A,K)x/log^A x.                              (21.5)
+```
+
+所以 V21形成 scoped正面推进：
+
+```text
+HYBRID_BLOCK_AP_REMAINDER_COMPILER
+ = PROVED_SOURCE_BACKED_DERIVED_COROLLARY;
+AVERAGED_WRAPPED_LOW_FREQUENCY_MEAN
+ = PROVED_SOURCE_BACKED_ARBITRARY_LOG_POWER;
+ARITHMETIC_SUBGATE_ADVANCE
+ = YES_F12_ONLY.                                      (21.6)
+```
+
+它把原 wall精确收缩为
+
+```text
+S_x=Cbar_Q+O_(A,K)(x/log^A x),
+BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE
+ = OPEN_NEW_ARITHMETIC_THEOREM.                       (21.7)
+```
+
+六类 checked primary sources没有 direct survivor。Ford--Maynard Prop. 4.11假设缺失
+Type II；classical AP/BDH只控制单序列 discrepancy；Maynard/Pascadi的 coefficient型
+不同；Zheng arbitrary-`q`入口止于 `7/36`且 prime shell不能放入其 well-factorable
+slot；Blomer--Pascadi只是尚未完成 physical reduction/reassembly的 local engine。
+
+centering本身也不赠送 saving。conditional-expectation projection的 norm为一；若 shell
+长度为 `H>=q`，则 centered projection rank精确为 `H-q`，仍是 asymptotically full
+rank。literal
+`beta_166^raw`在 `M=30,35`的 centered-energy ratios是
+`16340/192531,3544/6639`。mean-only state又不与 deletion闭合：
+`E_30(e_84-e_114)=0`，但应用 `p=7` pair mask后同 fiber mean为 `-1/3`。因此新增
+
+```text
+DECLARED_TPC_BRIDGE_B_20260807_MESOSCOPIC_WRAPPED_RESIDUE_FIBER_
+AUTOMATIC_SIGNED_SMOOTHING_FIXED_LOW_RANK_OR_MEAN_ONLY_DELETION_CARRIER_V1
+ = STOP_SCOPED_EXACT_PROJECTION_NORM_ONE_RANK_H_MINUS_q_AND_
+   DELETION_NONCOMMUTATION.                            (21.8)
+```
+
+真正 signed covariance、enlarged martingale/path carrier、A1/A2、O161、pair-native、H1
+与 global architecture保持 OPEN。完整 proof与 checker为
+
+```text
+research/tpc-big-road/bridge_b_mesoscopic_covariance.md
+research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py
+```
+
+canonical V21 registry为 48 rows，final-LF SHA-256
+`757ca58fabffda4d2ac5d3b3ce3103f0b0474d47f5ff0f104eee4c9996c00e74`。
+overall arithmetic advance仍为 `NO`；fixed atom=`0`、strict `1/400=UNPAID`、
+`L2=NONE`、TPC-207 trigger=`false`。没有编号论文、PDF或 build output。

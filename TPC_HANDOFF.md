@@ -3,6 +3,94 @@
 更新时间：2026-08-07
 交接状态：`SEALED_FOR_NEW_SESSION`
 
+第 68 节从已发布 V20 commit
+`f43b56113127140cf7eee90c33086b44f32cf74c`继续同一 combined raw MASTER gate。
+V20已经证明 terminal innovation只把原 arithmetic wall换了坐标；V21因此取完整
+predeclared prime ensemble
+
+```text
+Q_mes=x^(1/3),
+Q_x={q prime:Q_mes<q<=2Q_mes},
+R_x=#Q_x,
+```
+
+并对同一 literal `beta_x^raw(t)`、fixed `h0=2`与
+`w_x^(z)(t)=Lambda(t+2)-b_x^(z)(t)`作 exact wrapped fiber split：
+
+```text
+S_x=Hbar_Q+Cbar_Q,
+
+Hbar_Q=R_x^(-1)sum_q sum_a B_(q,a)W_(q,a)/n_(q,a),
+
+Cbar_Q=R_x^(-1)sum_q sum_a sum_(t in I_(q,a))
+ beta_x^raw(t)[w_x^(z)(t)-W_(q,a)/n_(q,a)].
+```
+
+这里 `n_(q,a)`是 strict shell的 actual floor/ceiling count，`Q_mes`不是 physical packet
+`Q`，且整个 prime ensemble等权保留。centered branch又有 exact pair kernel
+`q|(t-u)`。
+
+对 sufficiently large `x`有 `q>z=(log x)^K`。`Lambda`与 hybrid comparison的 local
+profile之差为
+
+```text
+d_q(0)=0,
+d_q(-2)=-q(q-2)/(q-1)^2,
+d_q(a)=q/(q-1)^2 otherwise,
+sum_a d_q(a)=0.
+```
+
+最大型 Bombieri--Vinogradov支付 `Lambda` whole-ensemble AP remainder；exact `q` Euler
+extraction、rough-divisor truncation、Rosser--Iwaniec fundamental lemma与 CRT lattice
+counting给 hybrid comparison的 uniform all-residue AP remainder。保留
+`|beta_x^raw|<=3d_4`、actual `n_(q,a)`与 `1/R_x`的完整 physical loss后，对每个 fixed
+`A,K`有
+
+```text
+Hbar_Q<<_(A,K)x/log^A x.
+```
+
+所以 V21取得 scoped正面 arithmetic subgate advance：
+
+```text
+HYBRID_BLOCK_AP_REMAINDER_COMPILER
+ = PROVED_SOURCE_BACKED_DERIVED_COROLLARY,
+AVERAGED_WRAPPED_LOW_FREQUENCY_MEAN
+ = PROVED_SOURCE_BACKED_ARBITRARY_LOG_POWER,
+ARITHMETIC_SUBGATE_ADVANCE = YES_F12_ONLY.
+```
+
+但 original target现在只是精确收缩为
+
+```text
+S_x=Cbar_Q+O_(A,K)(x/log^A x).
+```
+
+六类 checked primary sources没有 literal centered-covariance survivor；current primary为
+
+```text
+BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE
+ = OPEN_NEW_ARITHMETIC_THEOREM.
+```
+
+conditional-expectation projection的 norm为一，且 mean-only state不与 prime deletion
+commute；因此 V21只新增 narrow STOP：
+
+```text
+DECLARED_TPC_BRIDGE_B_20260807_MESOSCOPIC_WRAPPED_RESIDUE_FIBER_
+AUTOMATIC_SIGNED_SMOOTHING_FIXED_LOW_RANK_OR_MEAN_ONLY_DELETION_CARRIER_V1
+ = STOP_SCOPED_EXACT_PROJECTION_NORM_ONE_RANK_H_MINUS_q_AND_
+   DELETION_NONCOMMUTATION.
+```
+
+它不停止 genuine signed covariance、legal martingale/path state、A1/A2、两个 O161
+parents、pair-native、H1或 global architecture。overall arithmetic advance仍为 `NO`；
+fixed-atom credit=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false。proof为
+`research/tpc-big-road/bridge_b_mesoscopic_covariance.md`；checker为
+`research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py`，48-row registry
+final-LF SHA-256为
+`757ca58fabffda4d2ac5d3b3ce3103f0b0474d47f5ff0f104eee4c9996c00e74`。
+
 第 67 节从已发布 V19 commit
 `a96bac95db63b9fcbc99b98fb24c90c0ac6e37fb`继续 source-innovation gate。V20问的
 不是 affine source是否能 exact编码，而是 canonical innovation能否成为比原 SHB-D2
@@ -1096,13 +1184,13 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V20_20260807_TERMINAL_SOURCE_INNOVATION_EXACT_NORM_FLOOR_RAW_MASTER_LOG_POWER_EQUIVALENCE_NONNEGATIVE_HORIZON_PARTITION_FULL_DIMENSION_PATH_STATE_AUTOMATIC_SMOOTHING_TELESCOPE_LOW_RANK_BYPASS_STOP_DIRECT_SIGNED_PHYSICAL_EVALUATION_OPEN_NO_ARITHMETIC_ADVANCE_NO_GLOBAL_TRIGGER`
+`TPC_BIG_ROAD_V21_20260807_EXACT_WRAPPED_FIBER_NORMAL_FORM_COMPLETE_PRIME_ENSEMBLE_HYBRID_AP_REMAINDER_AND_LOW_FREQUENCY_MEAN_SOURCE_BACKED_F12_ADVANCE_AUTOMATIC_CENTERING_AND_MEAN_ONLY_CARRIER_STOP_CENTERED_PHYSICAL_COVARIANCE_OPEN_NO_GLOBAL_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`TPC_BIG_ROAD_BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION_GATE`；
-当前 first subgate：`BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION`
-（第 67 节控制；既有 local source只有在第 32.6 节或
+`TPC_BIG_ROAD_BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE_GATE`；
+当前 first subgate：`BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE`
+（第 68 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--67 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--68 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -1114,12 +1202,14 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md` 与
 `research/tpc-big-road/README.md`与
+`research/tpc-big-road/bridge_b_mesoscopic_covariance.md`与
+`research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py`与
 `research/tpc-big-road/bridge_b_terminal_innovation_floor.md`与
 `research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py`与
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--67 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--68 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -1180,6 +1270,14 @@ foreach ($s in @(
 TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
+
+22项启动回归之后，当前不编号 V21 gate还须分别执行 normal与 optimized只读 checker；
+两次必须都为零且 stdout byte-identical：
+
+```powershell
+python -B research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py --check
+```
 
 随后优先读取：
 
@@ -2586,6 +2684,37 @@ coding或独立 A1/A2。它也不否定 V19 source port；它只证明该 port�
 surviving primary为
 `BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION`，精确 proof、checker与
 下一 gate见第 67 节。
+
+2026-08-07 的 Bridge B V21 wrapped-covariance audit新增且仅新增两个 scoped cells：
+
+```text
+DECLARED_TPC_BRIDGE_B_20260807_MESOSCOPIC_WRAPPED_RESIDUE_FIBER_
+AUTOMATIC_SIGNED_SMOOTHING_FIXED_LOW_RANK_OR_MEAN_ONLY_DELETION_CARRIER_V1
+  = STOP_SCOPED_EXACT_PROJECTION_NORM_ONE_RANK_H_MINUS_q_AND_
+    DELETION_NONCOMMUTATION
+
+DECLARED_TPC_BRIDGE_B_20260807_CENTERED_HB2_SHIFTED_PRIME_COVARIANCE_
+SIX_CHECKED_PRIMARY_FAMILY_DIRECT_ATTACHMENT_V1
+  = STOP_SCOPED_DECLARED_CORPUS_NO_LITERAL_SURVIVOR
+```
+
+第一 cell停止从 counting-measure centering本身推出 automatic signed saving、fixed
+low rank或 mean-only exact deletion carrier。exact first fatals为：`I-E_q` operator norm
+等于一；shell长度 `H>=q`时其 rank精确为 `H-q`；且
+`E_30(e_84-e_114)=0`，应用 `p=7` pair deletion后同 fiber mean为 `-1/3`。这些是
+finite/exact geometry，不是假设 actual residual饱和。
+
+第二 cell只停止六类本轮逐 theorem检查的 direct attachment：Ford--Maynard、
+Bombieri--Friedlander--Iwaniec、Maynard large-moduli、Pascadi smooth-number、Zheng
+simultaneous-AP与 Blomer--Pascadi Kloosterman theorem。它不是 universal literature
+absence theorem；新 source或从 physical covariance到 transformed engine的完整
+exactly-once reduction/reassembly仍可重开。
+
+两个 cells均不停止 V21已 source-backed闭合的 wrapped low-frequency mean、真正的
+signed centered-covariance theorem、legal martingale/path carrier、A1/A2、O161 parents、
+pair-native、H1或 global architecture。surviving primary为
+`BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE`；proof、checker与 next gate见
+第 68 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -6254,7 +6383,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V20 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V21 current）
 
 ```text
 进入仓库：
@@ -6262,6 +6391,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_mesoscopic_covariance.md、
+research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py、
 research/tpc-big-road/bridge_b_terminal_innovation_floor.md、
 research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py、
 research/tpc-big-road/bridge_b_shbd2_innovation.md、
@@ -6270,7 +6401,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--67 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--68 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -6317,7 +6448,15 @@ BRIDGE_B_TERMINAL_INNOVATION_RAW_TARGET_EQUIVALENCE = PROVED_AT_FIXED_LOG_POWER_
 BRIDGE_B_GROWING_HORIZON_WEIGHTS = PROVED_NONNEGATIVE_PARTITION_OF_ONE
 BRIDGE_B_AFFINE_PATH_STATE = PROVED_EXACT_FULL_DIMENSION_WEIGHTED_ISOMETRY
 BRIDGE_B_INNOVATION_AUTOMATIC_SMOOTHING_TELESCOPE_LOW_RANK_BYPASS = STOP_SCOPED_TERMINAL_NEAR_IDENTITY
-BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION = SELECTED_OPEN_NEW_ARITHMETIC_THEOREM
+BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION = SUPERSEDED_BY_V21_WRAPPED_EQUIVALENCE_GATE
+BRIDGE_B_WRAPPED_FIBER_NORMAL_FORM = PROVED_EXACT
+BRIDGE_B_HYBRID_BLOCK_AP_REMAINDER_COMPILER = PROVED_SOURCE_BACKED_DERIVED_COROLLARY
+BRIDGE_B_AVERAGED_WRAPPED_LOW_FREQUENCY_MEAN = PROVED_SOURCE_BACKED_ARBITRARY_LOG_POWER
+BRIDGE_B_ARITHMETIC_SUBGATE_ADVANCE = YES_F12_ONLY
+BRIDGE_B_CENTERED_PROJECTION_RANK = PROVED_EXACT_H_MINUS_q
+BRIDGE_B_AUTOMATIC_CENTERING_FIXED_LOW_RANK_MEAN_ONLY_CARRIER = STOP_SCOPED
+BRIDGE_B_CENTERED_SIX_FAMILY_DIRECT_ATTACHMENT = STOP_SCOPED_DECLARED_CORPUS
+BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE = SELECTED_OPEN_NEW_ARITHMETIC_THEOREM
 BRIDGE_B_ALL_TRANSLATIONS_CURRENT_GATE = NO
 BRIDGE_B_APPROXIMATE_LOW_RANK_RETURN = OPEN_REQUIRES_WIDTH_AND_PHYSICAL_NORM
 BRIDGE_B_BRATTELI_AGING_CLOCK = OPEN_RESERVE_RANK_GROWTH_FALSIFIER
@@ -6442,10 +6581,10 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮首先执行第 67 节 Bridge B current primary：
+下一轮首先执行第 68 节 Bridge B current primary：
 
 ```text
-BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION.
+BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE.
 ```
 
 V19已经完成 combined raw MASTER row到 primorial `V_k^vee`的 exact materialization；
@@ -6453,14 +6592,21 @@ V19已经完成 combined raw MASTER row到 primorial `V_k^vee`的 exact material
 canonical source innovation在 terminal no-wrap stage具有 `(p-3)/(p-2)` norm floor，
 其 combined raw physical evaluation与原 MASTER target只差
 `O_K(x^(1/2)log^C x)`；growing-horizon weights是非负 partition of one，affine path
-space保持 full terminal dimension。不得再把 innovation、Duhamel expansion、abstract
-direct sum或 finite low-rank diagnostic包装成 automatic smoothing/cancellation。
+space保持 full terminal dimension。V21又已经对 complete prime ensemble
+`x^(1/3)<q<=2x^(1/3)`完成 exact wrapped split，并用 maximal BV与
+Rosser--Iwaniec/CRT compiler支付全部 low-frequency mean。不得再把该 mean写成缺失，
+也不得把它升级为 centered covariance。centering projection norm为一、rank为 `H-q`，
+且 mean-only state不与 deletion commute；不得把 centering、martingale名字或 finite
+low-frequency theorem包装成 automatic full saving。
 
-下一关只接受真正的 signed theorem：在 source-locked combined raw rows上，直接、
-uniform地证明 `x/log^A x` saving，或证明严格等价的 terminal-innovation physical
-evaluation bound。必须保留 fixed `h0=2`、`x=2X`、ordered coefficients、actual masks、
-normalization、source locator、Mellin/Perron separation/reassembly与完整 strict
-`1/400` loss ledger。若走 Logistic/symbolic carrier，还须给 target-independent affine
+下一关只接受真正的 signed centered theorem：在 source-locked combined raw rows与完整
+predeclared equal-weight prime ensemble上，直接、uniform地证明
+`|Cbar_Q|<<_(A,K)x/log^A x`。必须保留 fixed `h0=2`、`x=2X`、ordered coefficients、
+actual ragged `n_(q,a)`、外层唯一绝对值、`1/R_x` normalization、source locator、
+任意 transformed dispersion/Kloosterman reduction的 exactly-once reassembly与完整 strict
+`1/400` loss ledger。不得挑 good `q`，不得把单序列 AP/BDH discrepancy、
+Ford--Maynard assumed Type II或 post-Poisson local engine改写成该 theorem。若走
+Logistic/symbolic carrier，还须给 target-independent affine
 input-output law、exact event coding与 distinguished-seed deterministic return；positive
 measure、a.e. genericity、complete-frequency mean square或 recurrence本身均不够。
 A1 的 `HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER`与 A2
@@ -6549,9 +6695,12 @@ MASTER dual rows，但 separated analytic registry仍 ABSENT；同时 literal re
 fiber-range violation不能作为 homogeneous primal source。V20进一步证明 terminal
 innovation保留 `1-O(1/p)` energy，且其 signed combined-raw evaluation在 log-power scale
 等价于原 MASTER target；nonnegative horizon decomposition与 full-dimensional path state
-不提供 automatic saving。当前须直接证明 signed terminal-innovation physical
-evaluation theorem：保持 fixed `h0=2`、stage、event、clock、forcing与整个 typed
-physical dual family，并输出 uniform deterministic `H_dyn/H3_phys` estimate。
+不提供 automatic saving。V21已经用 complete prime ensemble把 wrapped mean branch
+source-backed闭合，并把原 target精确缩成 centered covariance。当前须直接证明
+`BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE`：保持 fixed `h0=2`、
+literal raw row、actual ragged fibers、whole-ensemble `1/R_x`、外层唯一绝对值、stage、
+event、clock、forcing与整个 typed physical dual family，并输出 uniform deterministic
+`H_dyn/H3_phys` estimate。
 任何 a.e.结论、
 单向量 fit、word-only
 isomorphism或 abstract norm contraction都不算成功；任何动力学结论也不得逆向给 A1
@@ -6577,6 +6726,7 @@ python research/tpc-big-road/tpc_bridge_b_rank_growth_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_backward_hull_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -10458,6 +10608,369 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 68. 2026-08-07 V21：wrapped mesoscopic mean compiler 与 centered-covariance wall
+
+### 68.1 基线、目标与只读分工
+
+V21从已发布 V20 commit
+`f43b56113127140cf7eee90c33086b44f32cf74c`启动；启动时 `HEAD`、`origin/main`与 remote
+`refs/heads/main`一致，working-tree只有 130个 protected untracked files，manifest仍为
+
+```text
+9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1. (68.1)
+```
+
+启动 `TPC_HANDOFF.md` SHA-256为
+`458d72ffd5270496da6af289ad7dc441434f1221e3338874a2f7deacfbc7cd2c`；
+`git pull --rebase origin main`返回 already up to date。TPC-27--32 legacy writers与
+TPC-122 writer均未执行。
+
+三个 read-only agents分别审核 wrapped normal form/AP mean compiler、exact
+normalization/finite falsifier及六类 primary source attachment；另一个 bounded follow-up
+给 checker/release blueprint。全部正式写入由主控完成，agents `files_changed=[]`。
+
+本 gate不是继续制造 terminal-innovation micro-variant，而是回答一个大路分叉：能否把
+原 combined raw MASTER scalar分成一个 classical distribution已经支付的 mean branch，
+以及一个形状足够明确、可交给 dispersion或 dynamics的新 centered branch。
+
+### 68.2 Literal object 与 exact wrapped split
+
+冻结
+
+```text
+h0=2,
+x=2X,
+I_x={t in Z:x/2<t<=x},
+z=(log x)^K,
+w_x^(z)(t)=Lambda(t+2)-b_x^(z)(t),
+beta_x^raw=V19 combined raw MASTER covector.          (68.2)
+```
+
+V19 ordered HB2 types的 literal outer constants `+2,-1`、Möbius signs、
+`log(f_1)/log t`与 bound `|beta_x^raw(t)|<=3d_4(t)`全部保留。取
+
+```text
+Q_mes=x^(1/3),
+Q_x={q prime:Q_mes<q<=2Q_mes},
+R_x=#Q_x.                                             (68.3)
+```
+
+`Q_mes`不是 packet `Q=X^(267/400+o(1))`。整个 `Q_x`预先声明、等权保留，不作 good-`q`
+selection。对 actual strict-shell fibers定义
+
+```text
+I_(q,a)={t in I_x:t=a mod q},
+n_(q,a)=#I_(q,a),
+B_(q,a)=sum_(t in I_(q,a))beta_x^raw(t),
+W_(q,a)=sum_(t in I_(q,a))w_x^(z)(t).                 (68.4)
+```
+
+实际 `n_(q,a)`为 `floor(X/q)`或 `ceil(X/q)`。逐 `q` exact algebra给
+
+```text
+S_x=H_q+C_q,
+
+S_x=sum_(t in I_x)beta_x^raw(t)w_x^(z)(t),
+
+H_q=sum_(a mod q)B_(q,a)W_(q,a)/n_(q,a),
+
+C_q=sum_(a mod q)sum_(t in I_(q,a))
+ beta_x^raw(t)[w_x^(z)(t)-W_(q,a)/n_(q,a)].           (68.5)
+```
+
+平均整个 ensemble仍有
+
+```text
+S_x=Hbar_Q+Cbar_Q.                                    (68.6)
+```
+
+centered branch的 exact pair form为
+
+```text
+Cbar_Q=R_x^(-1)sum_q sum_a 1/(2n_(q,a))
+ sum_(t,u in I_(q,a))[beta(t)-beta(u)][w(t)-w(u)],    (68.7)
+```
+
+故 literal new kernel是 `q|(t-u)`；绝对值只能放在 complete ensemble外层。
+
+### 68.3 Exact local profiles 与完整 residual error
+
+对 fixed `K`和 sufficiently large `x`，全部 `q in Q_x`满足 `q>z`。定义
+
+```text
+ell_q(a)=0                    if a=-2,
+         q/(q-1)              otherwise,
+
+g_q(a)=q/(q-1)                if a=0,
+       q(q-2)/(q-1)^2         otherwise.              (68.8)
+```
+
+第二式来自 committed tensor-local hybrid；在 `a=0` row须把 rough divisor显式分成
+`d=e`与 `d=qe`，由 `1+1/(q-2)=(q-1)/(q-2)`抽出 forced `q` factor；`a!=0`时只有
+`d=e`。此后 CRT中使用的 `d`与 `q`互素。
+
+残差 profile为
+
+```text
+d_q(0)=0,
+d_q(-2)=-q(q-2)/(q-1)^2,
+d_q(a)=q/(q-1)^2              otherwise,
+sum_(a mod q)d_q(a)=0.                              (68.9)
+```
+
+finite shell须保留完整 errors
+
+```text
+sum_(I_(q,a))Lambda(t+2)=n_(q,a)ell_q(a)+E_Lambda(q,a),
+sum_(I_(q,a))b_x^(z)(t)=n_(q,a)g_q(a)+E_b(q,a),
+W_(q,a)=n_(q,a)d_q(a)+E_Lambda(q,a)-E_b(q,a).        (68.10)
+```
+
+`a=-2`的 possible `q^j`项留在 `E_Lambda`；local Euler profile不得改写成 exact finite AP
+equality。
+
+### 68.4 Source-backed low-frequency AP compiler
+
+`Lambda` side使用 Bombieri/Vinogradov maximal Bombieri--Vinogradov，maximal endpoint
+locator锁到 Vaughan Corollary 1.1.1：对每个 fixed `A_*`，
+
+```text
+sum_(q in Q_x)max_a|E_Lambda(q,a)|
+ <<_(A_*)x/log^(A_*)x+R_x log x.                     (68.11)
+```
+
+special row的 `R_x log x`支付 prime powers。
+
+hybrid side把 committed comparison写成
+
+```text
+b_x^(z)(t)=1_(I_x)(t)C_zW_z1_((t+2,P(z))=1)sum_(d|t)g_z(d),
+g_z(d)=mu^2(d)1_(P^-(d)>z)product_(p|d)1/(p-2).      (68.12)
+```
+
+本轮从 Iwaniec, *Rosser's sieve*, Theorem 1，导出新的 all-residue corollary：在显式
+`d=e/qe` split后，把 coprime cofactor重命名为 `d`并截于 `E=log^(L_E)x`（`a=0`时
+full rough divisor可为 `qd`），取 Rosser level `D=x^(1/6)`；对 `(qd,P(z))=1`的 CRT lattice
+应用 upper/lower fundamental-lemma weights。uniform error ledger为
+
+```text
+E_b(q,a)
+ <<epsilon_x n_(q,a)+Dlog^C x+x/(qE)log^C x+log^C x,
+epsilon_x<<_(A_*,K)log^(-A_*)x.                      (68.13)
+```
+
+由 `g_z(d)<=3^omega(d)/d`支付 rough tail；`log D/log z->infinity`支付 arbitrary fixed
+log power。先选 `L_E(A_*,K)`，再取 `x>=x_0`，得到
+
+```text
+max_(q in Q_x,a mod q)|E_b(q,a)|
+ <<_(A_*,K)x/[qlog^(A_*)x].                          (68.14)
+```
+
+这是从 source theorem与 committed Euler formula推导的新 corollary，不声称 Iwaniec原文
+逐字陈述 V21 physical AP formula，也没有把旧 multiplier Type-I改名。
+
+### 68.5 Physical loss 与 F12 arithmetic subgate advance
+
+profile main逐 `q` exact化为
+
+```text
+D_q=sum_aB_(q,a)d_q(a)
+ =q/(q-1)^2[B_(q,tot)-B_(q,0)]-q/(q-1)B_(q,-2).      (68.15)
+```
+
+每个 `t+2<=x+2`至多被三个 `q in Q_x`整除；结合
+`sum_t|beta_x^raw(t)|<<xlog^3x`与 `R_x asymp Q_mes/log Q_mes`，
+
+```text
+R_x^(-1)sum_q|D_q|<<x^(2/3)log^4x.                   (68.16)
+```
+
+又有
+
+```text
+sum_a|B_(q,a)|/n_(q,a)<<qlog^3x.                     (68.17)
+```
+
+把 (68.11)、(68.14)代入并取 `A_*=A+6`得
+
+```text
+Hbar_Q<<_(A,K)x/log^A x.                              (68.18)
+```
+
+合法量词为 target `A -> A_* -> Ford--Maynard B -> fixed K(B) -> L_E -> x_0`；fixed
+`K`不升级为 all-`B` object。独立 sufficient-norm firewall为
+
+```text
+F_12=R_x^(-1)sum_(q,a)|E_w(q,a)|^2/n_(q,a),
+|Hbar_Q-Dbar_Q|<=||beta_x^raw||_2 F_12^(1/2),         (68.19)
+```
+
+故用 `||beta||_2^2<<xlog^15x`时 `B>=2A+17`足够；这锁住 `1/R_x`、actual
+`1/n_(q,a)`与完整 `Lambda-b` error。正式正面状态为
+
+```text
+HYBRID_BLOCK_AP_REMAINDER_COMPILER
+ = PROVED_SOURCE_BACKED_DERIVED_COROLLARY
+AVERAGED_WRAPPED_LOW_FREQUENCY_MEAN
+ = PROVED_SOURCE_BACKED_ARBITRARY_LOG_POWER
+ARITHMETIC_SUBGATE_ADVANCE
+ = YES_F12_ONLY.                                      (68.20)
+```
+
+### 68.6 Centering firewalls
+
+counting-measure conditional expectation `E_q`是 orthogonal projection，`I-E_q` norm等于
+一。shell长度 `H>=q`时全部 fibers非空、indicator vectors独立，故
+
+```text
+rank(E_q)=q,
+rank(I-E_q)=H-q.                                      (68.21)
+```
+
+所以 center不是 automatic contraction或 fixed-low-rank carrier。literal `x=166` raw
+row有 energy `64177/1764`；`M=30,35` centered-energy ratios分别为
+`16340/192531,3544/6639`。这些 finite diagnostics不作 asymptotic arithmetic claim。
+
+mean-only state也不与 deletion闭合：在 `I=(83,166]`，
+`E_30(e_84-e_114)=0`，而应用 `p=7` pair mask后同 fiber mean为 `-1/3`。因此新增
+
+```text
+DECLARED_TPC_BRIDGE_B_20260807_MESOSCOPIC_WRAPPED_RESIDUE_FIBER_
+AUTOMATIC_SIGNED_SMOOTHING_FIXED_LOW_RANK_OR_MEAN_ONLY_DELETION_CARRIER_V1
+ = STOP_SCOPED_EXACT_PROJECTION_NORM_ONE_RANK_H_MINUS_q_AND_
+   DELETION_NONCOMMUTATION.                            (68.22)
+```
+
+### 68.7 Six-family source screen 与 current theorem
+
+逐 theorem检查 Ford--Maynard Prop. 4.11、Bombieri--Friedlander--Iwaniec AP mean square、
+Maynard large-moduli convolution、Pascadi smooth-number/triple convolution、Zheng
+simultaneous AP及 Blomer--Pascadi Kloosterman bilinear form。没有 theorem同时保留
+literal `beta_x^raw`、fixed `h0=2`、pointwise shifted residual、all-residue empirical
+centering、`q=x^(1/3)` complete prime ensemble与外层唯一 absolute value。
+
+具体 first fatals依次为：assumed Type II；single-sequence AP discrepancy；wrong
+multiplicative convolution；wrong coefficient/center；arbitrary-`q` exponent `7/36`且 prime
+shell非 well-factorable slot；没有 physical-to-Kloosterman reduction/reassembly。因此新增
+
+```text
+DECLARED_TPC_BRIDGE_B_20260807_CENTERED_HB2_SHIFTED_PRIME_COVARIANCE_
+SIX_CHECKED_PRIMARY_FAMILY_DIRECT_ATTACHMENT_V1
+ = STOP_SCOPED_DECLARED_CORPUS_NO_LITERAL_SURVIVOR.    (68.23)
+```
+
+它不是 universal literature absence theorem。由 (68.6)、(68.18)，current theorem精确为
+
+```text
+BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE
+ = OPEN_NEW_ARITHMETIC_THEOREM,                        (68.24)
+
+|Cbar_Q|<<_(A,K)x/log^A x.
+```
+
+要求 complete predeclared equal-weight ensemble、actual `n_(q,a)`、one outer absolute、
+literal physical coefficients及从任何 transform返回 physical sum的 exactly-once ledger。
+
+### 68.8 Dynamics boundary
+
+V21把 dynamics可攻击的 observable缩成一个 exact centered scalar，但不把它证明掉。
+positive measure、ordinary ergodicity、a.e. genericity、complete-frequency Parseval或 good-
+modulus existence都不能选择 arithmetic seed并证明 (68.24)。Logistic/symbolic/Hénon route
+仍须给 target-independent affine input-output law、exact event coding、distinguished-seed
+deterministic return及同一 physical normalization。legal enlarged martingale/path state、
+A1/A2、两个 O161 parents、pair-native、H1与 global architecture继续 OPEN。
+
+### 68.9 Artifact、checker 与 registry
+
+正式 V21 artifacts为
+
+```text
+research/tpc-big-road/bridge_b_mesoscopic_covariance.md
+research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py. (68.25)
+```
+
+checker锁 V20/V19 canonical final-LF hashes，以 exact integer/rational arithmetic复核 36个
+wrapped identities、348个 local-profile residues、deterministic closed form、literal
+`x=166` coefficient/energy、projection norm/rank、deletion noncommutation、weighted F12
+normalization、exponent ledger，以及完整 `x=1000,Q_mes=10,q=11,13,17,19,R=4`
+prime-ensemble `1/R` fixture。canonical registry有 48 rows，final-LF SHA-256为
+
+```text
+757ca58fabffda4d2ac5d3b3ce3103f0b0474d47f5ff0f104eee4c9996c00e74. (68.26)
+```
+
+baseline拒绝 25 contract与 101 registry mutations；normal/optimized输出须 byte-identical。
+checker不证明 BV、fundamental lemma、derived AP corollary、source absence或 centered theorem。
+
+### 68.10 Release boundary 与 QA state
+
+V21最高 claim为
+
+```text
+EXACT_L0_WRAPPED_NORMAL_FORM_AND_SOURCE_BACKED_MEAN_COMPILER. (68.27)
+```
+
+`ARITHMETIC_SUBGATE_ADVANCE=YES_F12_ONLY`，但 overall arithmetic advance=`NO`；fixed-atom
+credit=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false。A1/A2与 all downstream
+physical/provenance gates未自动通过。不创建 numbered paper、PDF、build output或 TPC-207。
+
+当前 release allowlist严格为
+
+```text
+TPC_COMPASS.md
+TPC_HANDOFF.md
+research/tpc-big-road/README.md
+research/tpc-big-road/bridge_b_mesoscopic_covariance.md
+research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py. (68.28)
+```
+
+独立 source/normalization audit接受 F12 scoped promotion并确认 centered theorem仍 OPEN。
+proof audit逐式复算 local profiles、hybrid AP compiler、BV/Rosser loss ledger、完整
+`1/R_x` normalization、rank/deletion firewalls与六类 source boundary；checker audit曾发现
+`CONTRACT+canonical_contract` coordinated self-attestation fatal，主控随后加入独立 21-field
+literal contract、48-row semantic registry与 release-output locks。修复后的原攻击在输出前以
+`contract field centered_covariance changed` fail closed；normal/optimized仍 byte-identical。
+
+最终冻结 artifact hashes为
+
+```text
+V21_PROOF_CANONICAL_LF_SHA256
+  = e9838ebee8aa027421dad9bc2d05cb7b3655d2de413da0aa11aa143095636c37
+V21_CHECKER_CANONICAL_LF_SHA256
+  = b6350ce0f7ed38dd7671f5076a0c26bf82bb57850ec35505c4cfec3239ad336e
+V21_CHECKER_STDOUT_SHA256
+  = 51574732ce2714d0067db52929bc94237b3cce7d8e35f1ca2720bf63fa44d319
+V21_REGISTRY_ROWS = 48
+V21_REGISTRY_SHA256
+  = 757ca58fabffda4d2ac5d3b3ce3103f0b0474d47f5ff0f104eee4c9996c00e74.
+                                                               (68.29)
+```
+
+release-owner与三个 read-only audits在 pre-seal candidate上得到：
+
+```text
+V21_MATH_PROOF_QA = PASS
+V21_CHECKER_ADVERSARIAL_QA = PASS
+V21_RELEASE_SCOPE_QA = PASS
+STARTUP_READ_ONLY_REGRESSION = 22/22 PASS
+TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+BIG_ROAD_NORMAL_OPTIMIZED = 18/18 PASS, 9/9 BYTE_IDENTICAL
+V21_CONTRACT_REGISTRY_MUTATIONS = 25/101 ALL REJECTED
+RELEASE_ALLOWLIST = 5/5 EXACT
+PROTECTED_UNTRACKED = 130
+PROTECTED_UNTRACKED_MANIFEST_SHA256
+  = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+NUMBERED_PAPER_PDF_BUILD_OR_TPC207_CREATED = NO
+V21_FINAL_RELEASE_QA = PASS.                           (68.30)
+```
+
+正式 commit前由 release owner再执行一次同样的 full read-only regression、protected
+manifest与精确五文件 staged allowlist；commit/rebase/push后必须在会话中确认 local
+`HEAD`、`origin/main`与 remote `refs/heads/main`三者完全一致。该发布动作不改变
+`ARITHMETIC_SUBGATE_ADVANCE=YES_F12_ONLY`、overall arithmetic advance=`NO`或
+TPC-207=false。
 
 ## 67. 2026-08-07 V20：terminal innovation floor 与 automatic-bypass STOP
 

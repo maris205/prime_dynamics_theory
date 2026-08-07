@@ -1,14 +1,15 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-07
-状态：`BOLD_CHANNEL_V20 / BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION`
-claim level：`EXACT_L0_TERMINAL_INNOVATION_EQUIVALENCE_AND_BYPASS_STOP_NO_ARITHMETIC_ADVANCE`
+状态：`BOLD_CHANNEL_V21 / BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE`
+claim level：`EXACT_L0_WRAPPED_NORMAL_FORM_AND_SOURCE_BACKED_MEAN_COMPILER_F12_ONLY`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V20 的完整
-proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_terminal_innovation_floor.md`
-及 `research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py`；V19 raw-row/source
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V21 的完整
+proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_mesoscopic_covariance.md`
+及 `research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py`；V20 terminal
+innovation、V19 raw-row/source
 innovation、V18 typed
 backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 artifacts。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
@@ -20,7 +21,7 @@ backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 art
 200+ local research nodes
   -> 13 major obstruction classes
   -> 2 visible bottlenecks
-  -> 1 selected SHB-D2 signed terminal-innovation Bridge B highway
+  -> 1 selected SHB-D2 q-averaged centered-covariance Bridge B highway
      + 2 independent analytic reserves (A1/A2).
 ```
 
@@ -1023,6 +1024,97 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 22. V21 后的罗盘：均值支路已付，中心化协方差成为唯一正面墙
+
+V20说明 terminal innovation不会自动变小；V21因此换到 wrapped mesoscopic clock。
+取完整预声明素模 ensemble
+
+```text
+Q_mes=x^(1/3),
+Q_x={q prime:Q_mes<q<=2Q_mes},
+R_x=#Q_x,                                             (22.1)
+```
+
+并对同一个 V19 literal `beta_x^raw`与 residual `w_x^(z)`作 actual residue-fiber
+分解。逐 `q` exact有
+
+```text
+S_x=H_q+C_q,
+H_q=sum_a B_(q,a)W_(q,a)/n_(q,a),
+C_q=sum_a sum_(t in I_(q,a))beta(t)[w(t)-W_(q,a)/n_(q,a)]. (22.2)
+```
+
+这里 `n_(q,a)`是 strict shell中的 actual `floor/ceiling` count，不是 `x/q`；平均整个
+ensemble后左边仍是同一个 `S_x`。centered branch又有 exact pair kernel
+
+```text
+q divides t-u.                                       (22.3)
+```
+
+真正的正面推进在 mean branch。对 sufficiently large `x`有 `q>z=(log x)^K`；
+`Lambda(t+2)`与 tensor-local hybrid comparison的 local profiles之差为
+
+```text
+d_q(0)=0,
+d_q(-2)=-q(q-2)/(q-1)^2,
+d_q(a)=q/(q-1)^2 otherwise,
+sum_a d_q(a)=0.                                      (22.4)
+```
+
+最大型 Bombieri--Vinogradov支付 `Lambda`的 complete-modulus average；exact `q` Euler
+factor extraction、rough-divisor truncation、Rosser--Iwaniec fundamental lemma与 CRT
+lattice counting另给 hybrid comparison的 uniform all-residue AP remainder。保留
+`|beta|<=3d_4`、全部 actual `n_(q,a)`与 `1/R_x`后，完整 loss ledger得到
+
+```text
+Hbar_Q=R_x^(-1)sum_(q in Q_x)H_q
+ <<_(A,K)x/log^A x                                    (22.5)
+```
+
+对每个 fixed target `A`成立。整个 `Q_x`都保留，没有挑选 good `q`。这是
+
+```text
+ARITHMETIC_SUBGATE_ADVANCE = YES_F12_ONLY.            (22.6)
+```
+
+它不是 TPC arithmetic trigger，因为 exact equivalence现在只是
+
+```text
+S_x=Cbar_Q+O_(A,K)(x/log^A x).                        (22.7)
+```
+
+六类最接近 primary theorem均不能 literal attachment：现有 AP/BDH结果控制单序列
+discrepancy，Ford--Maynard Prop. 4.11假设缺失 Type II，Maynard/Pascadi需要不同
+convolution，Zheng的 arbitrary-`q` exponent止于 `7/36`，Blomer--Pascadi仍缺从 physical
+sum到 Kloosterman form的 exactly-once reduction/reassembly。因此 current primary是
+
+```text
+BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE
+ = OPEN_NEW_ARITHMETIC_THEOREM.                       (22.8)
+```
+
+它要求外层唯一绝对值、完整 equal-weight prime ensemble、literal `+2,-1` raw row、
+fixed `h0=2`、`x=2X`、actual shell counts与全部 parameter/loss ledger。不得把 separate
+AP discrepancy、complete-frequency mean或 good-modulus selection改写成 (22.8)。
+
+centering也不是自动 smoothing。counting-measure projection的 norm为一；对 shell
+长度 `H>=q`，centered projection rank精确为 `H-q`，不是 fixed-low-rank bypass。literal
+`x=166` raw row在 `M=30,35`的 centered-energy ratios分别为
+`16340/192531`与 `3544/6639`。而 `E_30(e_84-e_114)=0`，应用 `p=7` deletion后其
+mean在同 fiber变成 `-1/3`，所以 mean-only state不闭合。V21新增 narrow STOP：
+
+```text
+DECLARED_TPC_BRIDGE_B_20260807_MESOSCOPIC_WRAPPED_RESIDUE_FIBER_
+AUTOMATIC_SIGNED_SMOOTHING_FIXED_LOW_RANK_OR_MEAN_ONLY_DELETION_CARRIER_V1
+ = STOP_SCOPED_EXACT_PROJECTION_NORM_ONE_RANK_H_MINUS_q_AND_
+   DELETION_NONCOMMUTATION.                            (22.9)
+```
+
+真正 signed covariance、合法 martingale/path carrier、A1/A2、O161 parents、pair-native、
+H1与 global architecture仍 OPEN。Logistic/Hénon若要取得 credit，必须直接返回 (22.8)
+的 distinguished-seed physical scalar，而不是只给正测度、遍历性或 a.e. recurrence。
+全局 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=`false`。
 
 ## 21. V20 后的罗盘：innovation 是入口，不是免费降阶
 
