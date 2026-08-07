@@ -1,0 +1,315 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Mob}{\mu}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\delta}
+
+\title{Composite-clock phase selectors and an improved\\
+M\"obius capacity floor}
+\author{RH research program}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The RH-366 distance-two capacity has an unconditional lower floor
+$4/\pi^2$ and a squarefree upper ceiling $6/\pi^2$, but its adaptive
+finite-prefix limit is open.  We give a strict, source-locked improvement of
+the lower floor.  A clocked selector with period $q=180$ uses an explicit set
+of eighty phases having no two elements at distance two modulo $180$.  The
+resulting sign word is admissible for every possible M\"obius input.  Exact
+squarefree densities in the $180$ arithmetic progressions and fixed-frequency
+M\"obius cancellation give the correlation
+\[
+       \frac{97}{24\pi^2}
+       =\frac4{\pi^2}+\frac1{24\pi^2}.
+\]
+Consequently $\liminf K_N/N\ge97/(24\pi^2)$.  We also give a literal
+two-state universal-safety completion on the frozen four-state graph and
+check all $3240$ input-pair rows.  This is one explicit lower-bound witness,
+not an optimization over all clocks or memories; the ordinary capacity limit,
+intrinsic operators, prime-power traces, Riemann-zero identification, and RH
+remain outside scope.
+\end{abstract}
+
+\section{Frozen capacity and claim boundary}
+
+The RH-366 scalar capacity is
+\begin{equation}
+ K_N=\max_{\substack{\eps_1,\ldots,\eps_N\in\{-1,+1\}\\
+ \text{not }(\eps_n,\eps_{n+2})=(+1,+1)}}
+ \left|\sum_{n\le N}\Mob(n)\eps_n\right|.
+ \label{eq:capacity}
+\end{equation}
+The optimizer may read the complete prefix and may change with $N$.  RH-366
+proves
+\begin{equation}
+ \frac4{\pi^2}\le\liminf_{N\to\infty}\frac{K_N}{N}
+ \le\limsup_{N\to\infty}\frac{K_N}{N}\le\frac6{\pi^2},
+ \label{eq:old-bracket}
+\end{equation}
+without asserting convergence \cite{RH366}.  RH-371 reduces each finite value
+to eight odd-run frequencies but leaves their ordinary M\"obius convergence
+open \cite{RH371}.
+
+All statements here remain in the scalar adaptive-capacity data type.  The
+selector is a prescribed arithmetic observable depending only on the phase
+and current M\"obius value.  It is not a canonical dynamical coupling, a
+trace, a determinant, or a model of Riemann zeros.
+
+\section{A general phase-selector lemma}
+
+Let $q\ge1$ and let $I\subset\Z/q\Z$ satisfy
+\begin{equation}
+             I\cap(I+2)=\varnothing .
+\label{eq:independent}
+\end{equation}
+Define the one-site selector
+\begin{equation}
+ e_r(a)=
+ \begin{cases}
+ +1,&r\in I\text{ and }a=+1,\\
+ -1,&\text{otherwise},
+ \end{cases}
+ \qquad
+ \eps_n=e_{n\bmod q}(\Mob(n)).
+ \label{eq:selector}
+\end{equation}
+
+\begin{lemma}[Universal admissibility]
+The sign word in \eqref{eq:selector} obeys the RH-366 distance-two rule for
+every ternary input word $a_n\in\{-1,0,+1\}$.
+\end{lemma}
+
+\begin{proof}
+If $\eps_n=+1$ and $\eps_{n+2}=+1$, then both residues $n$ and $n+2$
+belong to $I$, contradicting \eqref{eq:independent}.  No arithmetic property
+of the input is used.
+\end{proof}
+
+For a residue $r\pmod q$, write
+\begin{equation}
+ \dd_{q,r}=\lim_{N\to\infty}\frac1N
+ \#\{n\le N:n\equiv r\pmod q,\ \Mob(n)^2=1\}.
+ \label{eq:delta-def}
+\end{equation}
+
+\begin{theorem}[Phase-selector correlation]
+For every finite $q$ and $I$ satisfying \eqref{eq:independent},
+\begin{equation}
+ \lim_{N\to\infty}\frac1N\sum_{n\le N}\Mob(n)\eps_n
+   =\sum_{r\in I}\dd_{q,r}.
+ \label{eq:selector-limit}
+\end{equation}
+Consequently
+\begin{equation}
+ \sum_{r\in I}\dd_{q,r}
+ \le \liminf_{N\to\infty}\frac{K_N}{N}.
+ \label{eq:selector-floor}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Put $M_r(N)=\sum_{n\le N,\ n\equiv r\ (q)}\Mob(n)$ and
+$Q_r(N)=\sum_{n\le N,\ n\equiv r\ (q)}\Mob(n)^2$.  On the selected residue
+classes,
+\[
+ \Mob(n)e_r(\Mob(n))
+ =-\Mob(n)+2\mathbf 1_{\{\Mob(n)=1\}}
+ =-\Mob(n)+\Mob(n)^2+\Mob(n).
+\]
+Thus the total sum equals
+\[
+ -\sum_{n\le N}\Mob(n)+\sum_{r\in I}Q_r(N)+\sum_{r\in I}M_r(N).
+\]
+Fixed-frequency Davenport cancellation, followed by finite Fourier inversion
+in the fixed arithmetic progressions, gives $M_r(N)=o(N)$, and the squarefree progression sieve gives
+$Q_r(N)/N\to\dd_{q,r}$ \cite{Davenport1937,Mirsky1948}.  The global
+M\"obius sum is also $o(N)$, proving \eqref{eq:selector-limit}.  The lemma
+makes the selector admissible, so its absolute correlation is bounded by
+$K_N$ for every $N$; taking the liminf gives \eqref{eq:selector-floor}.
+\end{proof}
+
+\begin{remark}[No optimization claim]
+The theorem applies to every fixed finite clock, but it does not say that the
+best $I$ for a given $q$ has been found, nor that the supremum over $q$ equals
+the adaptive capacity limit.  A finite selector is a lower certificate only.
+\end{remark}
+
+\section{\texorpdfstring{The composite clock $q=180$}{The composite clock q=180}}
+
+Take $q=180=2^2\,3^2\,5$.  The squarefree progression density has the exact
+piecewise form
+\begin{equation}
+ \pi^2\dd_{180,r}=
+ \begin{cases}
+ 0,&4\mid r\text{ or }9\mid r,\\
+ 5/96,&4\nmid r,\ 9\nmid r,\ 5\nmid r,\\
+ 1/24,&4\nmid r,\ 9\nmid r,\ 5\mid r.
+ \end{cases}
+ \label{eq:180-density}
+\end{equation}
+
+\begin{proof}[Derivation of \eqref{eq:180-density}]
+The congruence class is empty of squarefree integers when it is forced to be
+zero modulo $4$ or $9$.  Otherwise, the unrestricted primes contribute
+\[
+ \frac1{180}\prod_{p\nmid180}(1-p^{-2})
+ =\frac1{180}\frac{6/\pi^2}
+ {(1-2^{-2})(1-3^{-2})(1-5^{-2})}
+ =\frac5{96\pi^2}.
+\]
+When $5\mid r$, the class is zero modulo $5$ and one of the five lifts modulo
+$25$ is forbidden, multiplying by $1-1/5=4/5$ and giving $1/(24\pi^2)$.
+\end{proof}
+
+Use the following explicit phase set:
+\begin{align*}
+ I_{\rm even}&=\{r\in\Z/180\Z:r\equiv2\pmod4,\ 9\nmid r\},\\
+ I_{\rm odd}&=\{3,7,11,15,19,23,29,33,37,41,47,51,57,61,65,69,\\
+ &\qquad 73,77,83,87,91,97,101,105,109,113,119,123,127,131,\\
+ &\qquad 137,141,147,151,155,159,163,167,173,177\},\\
+ I&=I_{\rm even}\cup I_{\rm odd}.
+\end{align*}
+The even set has $40$ elements and the displayed odd list has $40$ elements.
+Direct reduction modulo $180$ gives
+\begin{equation}
+                 I\cap(I+2)=\varnothing.
+\label{eq:I-safe}
+\end{equation}
+Among the selected phases, $68$ have density coefficient $5/96$ and $12$
+have coefficient $1/24$; none has coefficient zero.  Therefore
+\begin{equation}
+ \sum_{r\in I}\dd_{180,r}
+ =\frac{68\cdot5+12\cdot4}{96\pi^2}
+ =\frac{97}{24\pi^2}.
+ \label{eq:180-floor}
+\end{equation}
+
+\begin{theorem}[Improved RH-366 lower floor]
+For the RH-366 distance-two capacity,
+\begin{equation}
+ \boxed{\displaystyle
+ \liminf_{N\to\infty}\frac{K_N}{N}\ge\frac{97}{24\pi^2}}
+ \label{eq:main-floor}
+\end{equation}
+and hence
+\[
+ \frac{97}{24\pi^2}=\frac4{\pi^2}+\frac1{24\pi^2}>
+ \frac4{\pi^2}.
+\]
+\end{theorem}
+
+\begin{proof}
+Apply Theorem 2.2 to the set $I$ in \eqref{eq:I-safe} and use
+\eqref{eq:180-floor}.
+\end{proof}
+
+\section{Literal graph completion}
+
+For completeness, the selector can be represented by a universally safe
+finite-memory table on the frozen RH-366 graph.  Its state set is
+$\{M,P\}$, and the graph vertices are ordered as
+\[
+ (--),\quad(-+),\quad(+-),\quad(++),
+\]
+with observable $(-1,-1,+1,+1)$ and the six frozen edges from RH-366.
+For $r\in\Z/180\Z$ put
+\[
+ b_M(r)=-1,\qquad
+ b_P(r)=\begin{cases}+1,&r-1\in I,\\-1,&r-1\notin I,\end{cases}
+\]
+and let
+\[
+ e_r(a)=\begin{cases}+1,&r\in I,\ a=+1,\\-1,&\text{otherwise}.\end{cases}
+\]
+The output in state $s$ is the pair $(e_r(a),b_s(r))$, and the next state is
+$P$ exactly when $e_r(a)=+1$ (otherwise it is $M$).
+
+\begin{proposition}[Universal-safety completion]
+The table above is universally safe and has the one-site observable
+$e_r(a)$.
+\end{proposition}
+
+\begin{proof}
+If $e_r(a)=-1$, the next state is $M$ and its previous-sign coordinate at
+phase $r+1$ is $-1=e_r(a)$.  If $e_r(a)=+1$, then $r\in I$, the next state is
+$P$, and $b_P(r+1)=+1=e_r(a)$.  Thus the pair coordinates shift correctly.
+The only forbidden edge would have current previous sign $+1$ and next
+current sign $+1$.  The former implies $r-1\in I$ and the latter implies
+$r+1\in I$, contradicting $I\cap(I+2)=\varnothing$.  The first coordinate
+of every output is $e_r(a)$, so the one-site condition is literal for both
+states.
+\end{proof}
+
+This completion is a finite certificate, not a new operator.  It merely
+embeds the explicit sign word in the already frozen graph language.
+
+\section{Executable audit}
+
+The exact artifact uses an integer M\"obius sieve, rational density
+coefficients, and the table construction above.  Its principal rows are:
+\begin{center}
+\begin{tabular}{@{}lr@{}}
+\toprule
+selected phases & $80$\\
+distance-two conflicts & $0$\\
+coefficient-$5/96$ phases & $68$\\
+coefficient-$1/24$ phases & $12$\\
+universal state/phase/input-pair rows & $3240$\\
+prefix witness rows ($1\le N\le2048$) & $2048$\\
+endpoint & $N=2^{16}$\\
+endpoint selector score & $26852$\\
+endpoint capacity & $32320$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The endpoint rows and all prefix rows are finite reproducibility checks, not
+asymptotic evidence.  Source hashes for RH-366, RH-371, RH-372, the arithmetic
+source, and the four-volume archive are stored in
+\texttt{results/result.json}.
+
+\section{Route verdict and Gate ledger}
+
+Route A is \texttt{GO} narrowly: the phase-selector theorem and the explicit
+$q=180$ density calculation are unconditional and independent.  Route B is
+\texttt{STOP\_SCOPED}.  This paper does not prove convergence of $K_N/N$, does
+not optimize over all clocks or memory budgets, and does not supply the
+higher-order M\"obius correlations needed for the unrestricted genuinely
+memory-dependent class.
+
+Gates A--E remain false/open.  In particular, the selector uses an externally
+prescribed phase and current M\"obius input and has no canonical operator,
+Fredholm determinant,
+von-Mangoldt prime-power trace, self-adjoint generator, zero identification,
+Hilbert--Polya construction, or implication for the Riemann Hypothesis.
+
+\section{Conclusion}
+
+A composite clock can exploit squarefree residue-class defects without
+violating the distance-two sign rule.  The explicit $q=180$ witness raises the
+rigorous capacity floor by $1/(24\pi^2)$.  The remaining gap to the squarefree
+ceiling is still a nonlinear adaptive problem: the new certificate does not
+turn a finite selector family into an asymptotic capacity theorem.  The next
+mathematical edge must address that distinction rather than extrapolate from
+the finite endpoint.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

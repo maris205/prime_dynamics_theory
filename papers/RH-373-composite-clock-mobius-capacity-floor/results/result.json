@@ -1,0 +1,79 @@
+{
+  "certificate": {
+    "all_pass": true,
+    "conflicts": [],
+    "counts": {
+      "selected": 80,
+      "weight_1_over_24": 12,
+      "weight_5_over_96": 68,
+      "weight_zero": 0
+    },
+    "density_constant": "97/(24*pi^2)",
+    "density_numerator_over_96_pi2": 388,
+    "endpoint": {
+      "N": 65536,
+      "capacity": 32320,
+      "capacity_witness": true,
+      "path_ok": true,
+      "same_score": true,
+      "selector_score": 26852,
+      "transducer_score": 26852
+    },
+    "one_site": true,
+    "prefix_witness_rows": 2048,
+    "q": 180,
+    "safe_transducer": true,
+    "universal_rows": 3240
+  },
+  "claim_boundary": {
+    "notes": [
+      "The q=180 phase selector is an explicit lower-bound witness, not an optimizer classification.",
+      "The ordinary limit of the adaptive RH-366 capacity remains open.",
+      "No supremum over clocks or memory-dependent observables is claimed.",
+      "The transducer uses prescribed phase and current Mobius input and is not an intrinsic operator or trace.",
+      "No Hilbert--Polya operator, zero identification, or RH implication is claimed."
+    ],
+    "route_a": "GO",
+    "route_b": "STOP_SCOPED"
+  },
+  "gates": {
+    "A_canonical_intrinsic_dynamical_spectral_determinant": false,
+    "B_time_oriented_scattering_or_unitary_completion": false,
+    "C_self_adjoint_generator_and_intrinsic_T_log_T": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "source_commits": {
+    "henon_mobius_correlations": "34490443f50cfe9af9ff93888e51e7e7e534a5a7",
+    "rh366_release": "0396fab97bbe3348c8237f8734dec0e1893fd3bf",
+    "rh371_release": "241b78a89ccbc0bad96d9ef20ee9256d61b4eaca",
+    "rh372_release": "7a7b10b74722b520b145064923af8df6d4e2e73f",
+    "rh_mvp2_archive": "c0aed13a34b8bbc53061aed23738660adcd3624c"
+  },
+  "source_locks": {
+    "count": 10,
+    "files": {
+      "henon_mobius_correlations/THEOREM_PACKAGE.md": "634fd9543ceab91c19766015141e83636d64213f131d5c1b098385ef68c3b102",
+      "henon_mobius_correlations/henon_mobius/arithmetic.py": "cce5cdf5f78e56ea70d1546fd2eded6230aad3c8befd088869890697dfcf5eb7",
+      "henon_mobius_correlations/henon_mobius/capacity.py": "1c415c1e4f8adfeaa0bd27b7fd04cb0f5b88a0acb50a81e9553a9b3239450833",
+      "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/README.md": "d357192bfb80da578459cdac4add37840b8e1e47c5b2188ca0e49e7b096cbb23",
+      "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/results/result.json": "6a125ca90b0964945f95b39397b6e83f15a23ad24c94d2e8b9c90d320db8e418",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/README.md": "813a9afa3028c8b6774277399bfb2363f744ecf113121cf653767f74b78e7987",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/results/result.json": "00210432e5169df7b450b8a764e67547a1fd4f1213714d51d9d98b80fc9ca657",
+      "prime_dynamics_theory/papers/RH-372-bounded-constraint-graph-transducer-certificates/README.md": "2b86f0bdcbfbfba3ccd2edb8e518699c99d413884b37e33a9936ff8f01210a8c",
+      "prime_dynamics_theory/papers/RH-372-bounded-constraint-graph-transducer-certificates/results/result.json": "8256ddc3e50c7ab641e0ee8dceffc3e18cfd0877fff667613fb30ff23f632163",
+      "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751"
+    },
+    "pass": true
+  },
+  "status": "RH-373_composite_clock_mobius_capacity_floor",
+  "theorem": {
+    "baseline": "4/pi^2",
+    "clock": 180,
+    "density": "97/(24*pi^2)",
+    "improvement": "1/(24*pi^2)",
+    "phase_set_cardinality": 80,
+    "unconditional_statement": "liminf K_N/N >= 97/(24*pi^2)",
+    "upper_bound_inherited": "limsup K_N/N <= 6/pi^2"
+  }
+}
