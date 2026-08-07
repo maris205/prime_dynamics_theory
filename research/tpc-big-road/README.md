@@ -1,10 +1,11 @@
-# TPC big road V21: paid wrapped mean and the centered covariance highway
+# TPC big road V22: centered-projector firewall and the two surviving compilers
 
 更新时间：2026-08-07
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_WRAPPED_NORMAL_FORM_AND_SOURCE_BACKED_MEAN_COMPILER`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_PROJECTOR_FIREWALL_AND_CONDITIONAL_FORK`
 
-当前主路线见第 21 节及 `bridge_b_mesoscopic_covariance.md`；第 20 节与
+当前主路线见第 22 节及 `bridge_b_centered_projector_firewall.md`；第 21 节与
+`bridge_b_mesoscopic_covariance.md`冻结 V21 wrapped mean compiler，第 20 节与
 `bridge_b_terminal_innovation_floor.md`冻结 V20 terminal-innovation equivalence，第 19 节与
 `bridge_b_shbd2_innovation.md`冻结 V19 raw-row/source-innovation interface，第 18 节与
 `bridge_b_backward_hull.md`继续冻结 V18 typed backward-dual contract，第 17 节与
@@ -1927,6 +1928,95 @@ canonical V20 registry为 37 rows，final-LF SHA-256
 `0408cb3e4fd0bbfb7815df0df24902d4cc9fa1b75875e66f41482c30768652ee`。
 V20是大路排障，不是 arithmetic advance；fixed atom=`0`、strict `1/400=UNPAID`、
 `L2=NONE`、TPC-207 trigger=`false`，没有编号论文或 PDF。
+
+## 22. V22 Bridge B：centered projector firewall 与两条仍存大路
+
+V21已 source-backed支付 complete `q asymp x^(1/3)` ensemble的 wrapped mean：
+
+```text
+S_x=Hbar_Q+Cbar_Q,
+Hbar_Q<<_(A,K)x/log^A x.                             (22.1)
+```
+
+V22把 actual-fiber conditional expectation记为 `E_q`，把完整平均记为
+`Pbar_Q=R_x^(-1)sum_qE_q`。于是
+
+```text
+Cbar_Q=<beta_x^raw,(I-Pbar_Q)w_x^(z)>=S_x-Hbar_Q.   (22.2)
+```
+
+对 `r_q=(I-E_q)w`，逐 fiber和为零，故全部 mod-`q` residue Fourier coefficients
+exactly zero。这个 annihilation不意味着 covariance为零：`beta`在 fiber内仍变化。
+在 `x=166,q=7`取 literal `beta_166^raw`，但刻意设置 synthetic
+`w_syn=beta_166^raw`，则 exact information-loss fixture给
+
+```text
+sum_(t=a mod 7)(I-E_7)w_syn(t)=0 for every a,
+<beta,(I-E_7)w_syn>=2359675/77616 !=0.              (22.3)
+```
+
+这里 second vector是 synthetic，不是 actual prime residual `w_166^(z)`，不产生
+arithmetic evidence；它只证明 residue transform丢失 within-fiber information。
+
+完整 ensemble仍留下一个大 identity space：`rank(Pbar_Q)<=sum_q q=O(x^(2/3))`，
+所以 `I-Pbar_Q`有至少 `x/2-o(x)`个 eigenvalue `1`。`x=1000`、
+`q=11,13,17,19`的 exact rank是 `57`，identity multiplicity是 `443`。因此
+
+```text
+DIRECT_CENTERED_RESIDUE_FOURIER_OR_KLOOSTERMAN = STOP_SCOPED,
+COMPLETE_MESOSCOPIC_PROJECTOR_AUTOMATIC_COMPRESSION = STOP_SCOPED. (22.4)
+```
+
+shift-comb/diagonal分解还原出
+
+```text
+Cbar_Q=(S_x-Abar_Q)+(Abar_Q-Hbar_Q),
+Abar_Q=O(x^(1/3+o(1))).                             (22.5)
+```
+
+off-diagonal projector branch已经由 paid `Hbar_Q`控制；困难的 diagonal仍是原始
+`S_x`。所以 Blomer--Pascadi不能从 centered residue transform直接接入。它只在一个
+尚缺的 literal SHB-D2 diagonal-to-post-Poisson compiler之后有真实潜力：balanced local
+bound的 gain为 `q^(-1/32)=x^(-1/96)`，未计 compiler losses前比 strict `1/400`
+多 `19/2400`。但是 full-`q` completion再切 `sqrt(q)` blocks且只用 black-box
+Cauchy时，uniform proof引入可能 sharp 的 `q^(1/4)` factor，故没有额外 block
+structure就不能认证 net gain；只停止这个 Cauchy-only版本。解析 current gate为
+
+```text
+V22_LITERAL_SHBD2_DIAGONAL_POST_POISSON_COMPILER_GATE
+  = OPEN_CONDITIONAL.                               (22.6)
+```
+
+另一方面，profinite odometer `T(r)=r+1`给 distinguished seed `0`的 exact `L0`
+orbit-sum：
+
+```text
+Phi_x(T^t0):=beta_x^raw(t)R_x^(-1)sum_q(I-E_q)w_x^(z)(t),
+Cbar_Q=sum_(t in I_x)Phi_x(T^t0).                   (22.7)
+```
+
+这只是无损编码。它没有把 growing signed observable变成 bounded-complexity Logistic
+observable，也没有把 a.e.-seed/parameter theorem升级成 prescribed seed。仍开放的大胆
+动力学接口是 positive-measure transversal common-return family：要求 parameter-independent
+arithmetic return、coefficientwise exact physical intertwiner、small carrier mean及同一
+good parameter上 all-large-stage uniform pointed bound。记为
+
+```text
+V22_TRANSVERSAL_COMMON_RETURN_CENTERED_PHYSICAL_CARRIER_GATE
+  = OPEN_NEW_CONSTRUCTION.                          (22.8)
+```
+
+V22没有 arithmetic advance，也不创建 TPC-207。完整公式、source boundary、finite
+fixtures与 checker见：
+
+```text
+research/tpc-big-road/bridge_b_centered_projector_firewall.md
+research/tpc-big-road/tpc_bridge_b_centered_projector_checker.py
+```
+
+canonical V22 contract为 20 fields，registry为 36 rows，SHA-256
+`19c228b356cf1b8034eb3e018c0ef0e2d8363515062f9472c4857b54b1f1d8c7`。
+fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207 trigger=`false`。
 
 ## 21. V21 Bridge B：wrapped mean 已付，中心化 physical covariance 接棒
 

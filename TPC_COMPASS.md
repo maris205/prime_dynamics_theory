@@ -1,14 +1,14 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-07
-状态：`BOLD_CHANNEL_V21 / BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE`
-claim level：`EXACT_L0_WRAPPED_NORMAL_FORM_AND_SOURCE_BACKED_MEAN_COMPILER_F12_ONLY`
+状态：`BOLD_CHANNEL_V22 / CENTERED_PROJECTOR_FIREWALL_AND_TWO_SURVIVING_COMPILERS`
+claim level：`EXACT_L0_OPERATOR_FIREWALL / CONDITIONAL_ANALYTIC_AND_DYNAMICAL_FORK`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V21 的完整
-proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_mesoscopic_covariance.md`
-及 `research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py`；V20 terminal
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V22 的完整
+proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_centered_projector_firewall.md`
+及 `research/tpc-big-road/tpc_bridge_b_centered_projector_checker.py`；V21 wrapped mean、V20 terminal
 innovation、V19 raw-row/source
 innovation、V18 typed
 backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 artifacts。正式 theorem
@@ -21,7 +21,8 @@ backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 art
 200+ local research nodes
   -> 13 major obstruction classes
   -> 2 visible bottlenecks
-  -> 1 selected SHB-D2 q-averaged centered-covariance Bridge B highway
+  -> 1 literal SHB-D2 diagonal/post-Poisson compiler gate
+     + 1 independent transversal common-return dynamical gate
      + 2 independent analytic reserves (A1/A2).
 ```
 
@@ -1024,6 +1025,90 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 23. V22 后的罗盘：projector 不是色散入口，对角编译器与横截回返分叉
+
+V21把原 target精确写成 `S_x=Hbar_Q+Cbar_Q`并支付 `Hbar_Q`。V22把 actual-fiber
+conditional expectations记为正交投影 `E_q`，令
+
+```text
+Pbar_Q=R_x^(-1)sum_(q in Q_x)E_q,
+Cbar_Q=<beta_x^raw,(I-Pbar_Q)w_x^(z)>
+      =S_x-Hbar_Q.                                  (23.1)
+```
+
+这个式子是新的大路 firewall。对 `r_q=(I-E_q)w`，每个 residue fiber内的和为零，
+所以对全部 `h mod q`都有
+
+```text
+sum_(t in I_x)r_q(t)e_q(ht)=0.                      (23.2)
+```
+
+因此 mod-`q` residue Fourier或直接 additive congruence展开完全看不见 centered
+directions；而 `C_q`仍可非零，因为 `beta`在同一 fiber内变化。完整 ensemble也没有
+低秩化这一对象：
+
+```text
+rank(Pbar_Q)<=sum_q q=O(x^(2/3)),
+dim ker(Pbar_Q)>=|I_x|-sum_q q=x/2-o(x),             (23.3)
+```
+
+且 `I-Pbar_Q`在该空间上就是恒等。`x=1000`、`q=11,13,17,19`的 exact fixture给
+mean-span rank `57`、identity multiplicity `443`。另取 literal coefficient
+`beta_166^raw`但刻意设置 synthetic second vector `w_syn=beta_166^raw`，则
+全部 residue marginals为零而
+`<beta,(I-E_7)w_syn>=2359675/77616`。这只是 operator information-loss witness，
+不是 actual `w_166^(z)` covariance或 arithmetic evidence。所以“center后直接 Fourier/Kloosterman”以及
+“完整 mesoscopic ensemble自动压缩”都正式 `STOP_SCOPED`。
+
+shift-comb展开进一步给
+
+```text
+Cbar_Q=(S_x-Abar_Q)+(Abar_Q-Hbar_Q),
+Abar_Q=R_x^(-1)sum_(q,t)beta(t)w(t)/n_q(t)
+      =O(x^(1/3+o(1))).                             (23.4)
+```
+
+第二项由 V21 paid mean反解；第一项的 diagonal仍是 `S_x`。因此真正解析入口不能从
+paid projector branch开始，而必须从 literal SHB-D2 determinant diagonal开始，完成
+Möbius/log展开、coprime inversion、Poisson、zero/nonunit/diagonal/tail ledger及
+exactly-once reassembly后，才可能调用 Kloosterman engine。Blomer--Pascadi 的 balanced
+local theorem若得到无损编译，可提供 `q^(-1/32)=x^(-1/96)`，在未计 compiler losses前
+超过 strict `1/400`的 margin为 `19/2400`。但 full-`q` Fourier completion再切
+`sqrt(q)` blocks、且只用 black-box Cauchy时，uniform proof会引入可能 sharp 的
+`q^(1/4)` factor，因而在没有额外 block structure时不能认证 net gain；只停止这个
+Cauchy-only版本。当前解析 gate是
+
+```text
+V22_LITERAL_SHBD2_DIAGONAL_POST_POISSON_COMPILER_GATE
+  = OPEN_CONDITIONAL.                                (23.5)
+```
+
+动力学侧有一个同样 exact但不自带 cancellation的 `L0` 编码。在 profinite odometer
+`T(r)=r+1`、distinguished seed `0`上，取
+
+```text
+Phi_x(T^t0):=beta_x^raw(t)R_x^(-1)sum_q(I-E_q)w_x^(z)(t),
+Cbar_Q=sum_(t in I_x)Phi_x(T^t0).                    (23.6)
+```
+
+这证明 exact orbit-sum/Bratteli return，不证明 Logistic mixing estimate。普通 ergodicity
+只 center了 `w`，没有 center `beta*w`；observable随 `x`增长且 pointed seed固定，现有
+a.e.-seed ASIP/DBC或 a.e.-parameter typicality均不能升级为需要的定理。保留的大胆动力学
+gate是构造 positive-measure transversal family，使同一 arithmetic return成为独立于参数的
+common-return carrier，并给 coefficientwise exact intertwiner、small carrier mean和同一
+good parameter上的 uniform triangular pointed bound：
+
+```text
+V22_TRANSVERSAL_COMMON_RETURN_CENTERED_PHYSICAL_CARRIER_GATE
+  = OPEN_NEW_CONSTRUCTION.                           (23.7)
+```
+
+V22没有 arithmetic advance；它删除一条貌似最直接、实际只绕回 paid mean的伪路，并把
+剩余“大路”压成两个可证伪接口。fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
+TPC-207=`false`。下一有限解析关检查 literal diagonal是否能产生 `sqrt(q)`-scale short
+support而不付 full-`q` completion loss；下一有限动力学关检查相邻 physical stages的
+common-return transversality/parameter derivative。两关独立，不拼接 theorem credit。
 
 ## 22. V21 后的罗盘：均值支路已付，中心化协方差成为唯一正面墙
 
