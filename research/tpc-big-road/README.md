@@ -1,10 +1,11 @@
-# TPC big road V19: exact HB2 raw covectors and source-innovation highway
+# TPC big road V20: terminal innovation floor and the surviving signed highway
 
 更新时间：2026-08-07
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_RAW_ROW_AND_SOURCE_INNOVATION_INTERFACE`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_TERMINAL_INNOVATION_EQUIVALENCE_AND_BYPASS_STOP`
 
-当前主路线见第 19 节及 `bridge_b_shbd2_innovation.md`；第 18 节与
+当前主路线见第 20 节及 `bridge_b_terminal_innovation_floor.md`；第 19 节与
+`bridge_b_shbd2_innovation.md`冻结 V19 raw-row/source-innovation interface，第 18 节与
 `bridge_b_backward_hull.md`继续冻结 V18 typed backward-dual contract，第 17 节与
 `bridge_b_observable_rank.md`继续冻结 V17 rank contract，第 16 节与
 `bridge_b_physical_intertwiner.md`继续冻结 V16 common physical-return contract。
@@ -1845,3 +1846,83 @@ canonical V19 registry为 30 rows，final-LF SHA-256
 V19最高 claim是 exact L0 raw-row/source-innovation interface，不是 arithmetic
 advance；fixed-atom credit=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207 trigger=`false`。A1/A2、O161 parents、pair-native与H1/global继续独立 OPEN。
+
+## 20. V20 Bridge B：末级 innovation 近恒等，自动平滑旁路停止
+
+V19找到了正确的 source port；V20问的是，这个 port会不会自动把原算术墙变小。答案是
+否。对 parent modulus `P`、新素数 `p`与 normalized-Haar projection
+`Pi_p=alpha_p^(-1)R_pR_p^*`，逐 fiber的 source innovation精确为
+
+```text
+eta_p(V)(q_j)=V(q_j),                         j deleted,
+eta_p(V)(q_j)=V(q_j)-Vbar,                    j surviving.       (20.1)
+```
+
+在 terminal no-wrap clock `P_(s-1)>x`，physical shell每个 parent fiber至多占一个
+child，因此
+
+```text
+||eta_p(V)||^2
+ =1/(pP)[sum_deleted |V|^2
+          +(p-3)/(p-2) sum_surviving |V|^2]
+ >=(p-3)/(p-2)||V||^2.                              (20.2)
+```
+
+由于 terminal `p asymp sqrt(x)`，这个 ratio趋于 1；innovation不是小误差。对 V19
+combined raw MASTER row，精确 fiber公式进一步给
+
+```text
+L_(beta_x^raw)(eta_p(w_x^(z)))
+ =S_x+O_K(x^(1/2)log^C x),
+S_x=sum_(x/2<t<=x)beta_x^raw(t)w_x^(z)(t).           (20.3)
+```
+
+因此在任意 fixed log-power target上，terminal-innovation saving与原 combined raw
+MASTER saving等价。growing-horizon Duhamel coefficients还是逐 coordinate的非负
+partition of one；terminal survivor本身携带 `(p-3)/(p-2)`，没有交替 telescope。
+
+affine/path state仍有结构价值，但只是 exact weighted isometry：
+
+```text
+V_a direct_sum E_(a+1) direct_sum ... direct_sum E_b  ~=  V_b,
+dim(left)=dim V_b=P_b.                               (20.4)
+```
+
+它不降维、不赠送 `L2`。actual row `beta_168^raw`对 innovation direction
+`(I-Pi_13)e_90`的值为 `20/11`；不能 quotient掉整个 innovation space。changing-scale
+rows也不形成一条 coboundary orbit：`beta_166^raw(84)=1`，而 `x=168` strict shell已排除
+84。第一 V19 fixture的 exact ranks进一步为 raw source `65`、base `56`、terminal eta
+`50`、all eta `54`、eta+base union `76`；component union没有自动塌缩。
+
+所以 V20只新增一个 broad stop：
+
+```text
+DECLARED_TPC_BRIDGE_B_20260807_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_
+SMALL_NORM_AUTOMATIC_TELESCOPE_OR_LOW_RANK_BYPASS_V1
+  = STOP_SCOPED_EXACT_TERMINAL_NEAR_IDENTITY.         (20.5)
+```
+
+它不停止真正的 signed dynamical theorem。唯一诚实的 surviving gate是
+
+```text
+BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION
+  = OPEN_NEW_ARITHMETIC_THEOREM.                      (20.6)
+```
+
+该 theorem必须直接、uniform地给 combined raw target或等价 terminal-innovation target
+任意 log-power saving，并保留 fixed `h0=2`、`x=2X`、literal ordered coefficients、
+全部 masks、normalization、separation/reassembly与 physical-loss ledger。Logistic/
+symbolic carrier若要有 credit，也必须返回这一 prescribed signed scalar；正测度、a.e.
+genericity、complete-frequency mean或抽象编码均不够。
+
+完整 proof与 checker为
+
+```text
+research/tpc-big-road/bridge_b_terminal_innovation_floor.md
+research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py
+```
+
+canonical V20 registry为 37 rows，final-LF SHA-256
+`0408cb3e4fd0bbfb7815df0df24902d4cc9fa1b75875e66f41482c30768652ee`。
+V20是大路排障，不是 arithmetic advance；fixed atom=`0`、strict `1/400=UNPAID`、
+`L2=NONE`、TPC-207 trigger=`false`，没有编号论文或 PDF。

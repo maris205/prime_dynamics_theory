@@ -1,14 +1,15 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-07
-状态：`BOLD_CHANNEL_V19 / BRIDGE_B_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_RETURN`
-claim level：`EXACT_L0_RAW_ROW_AND_SOURCE_INNOVATION_INTERFACE_NO_ARITHMETIC_ADVANCE`
+状态：`BOLD_CHANNEL_V20 / BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION`
+claim level：`EXACT_L0_TERMINAL_INNOVATION_EQUIVALENCE_AND_BYPASS_STOP_NO_ARITHMETIC_ADVANCE`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V19 的完整
-proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_shbd2_innovation.md`
-及 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`；V18 typed
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V20 的完整
+proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_terminal_innovation_floor.md`
+及 `research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py`；V19 raw-row/source
+innovation、V18 typed
 backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 artifacts。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
@@ -19,7 +20,7 @@ backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 art
 200+ local research nodes
   -> 13 major obstruction classes
   -> 2 visible bottlenecks
-  -> 1 selected SHB-D2 long-horizon source-innovation Bridge B highway
+  -> 1 selected SHB-D2 signed terminal-innovation Bridge B highway
      + 2 independent analytic reserves (A1/A2).
 ```
 
@@ -1022,6 +1023,58 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 21. V20 后的罗盘：innovation 是入口，不是免费降阶
+
+V19把 homogeneous source改成 affine source，这是正确的类型修复；V20进一步证明，
+不能把这项修复误读成一个自动变小的 error term。对 terminal no-wrap stage，canonical
+innovation满足 exact floor
+
+```text
+||eta_p(V)||^2 >= (p-3)/(p-2)||V||^2,                (21.1)
+```
+
+而 `p asymp sqrt(x)`，所以它保留趋近全部 physical energy。对 source-locked combined
+raw MASTER row还有更强的 exact target comparison：
+
+```text
+L_(beta_x^raw)(eta_p(w_x^(z)))
+ =sum_(x/2<t<=x)beta_x^raw(t)w_x^(z)(t)
+  +O_K(x^(1/2)log^C x).                              (21.2)
+```
+
+因此任意 fixed log-power saving在两边等价。把 growing horizon展开也不会产生符号
+telescope：各 stage weights逐 coordinate非负且总和为一，terminal stage已带走
+`1-O(1/p)`。path-space carrier是 full-dimensional weighted isometry，不是压缩；第一
+fixture的 raw/base/terminal-eta/all-eta/union exact ranks为
+`65/56/50/54/76`，也没有 finite collapse。
+
+这关闭的是一个足够大的伪大路，而非细节：
+
+```text
+DECLARED_TPC_BRIDGE_B_20260807_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_
+SMALL_NORM_AUTOMATIC_TELESCOPE_OR_LOW_RANK_BYPASS_V1
+  = STOP_SCOPED_EXACT_TERMINAL_NEAR_IDENTITY.         (21.3)
+```
+
+真正保留下来的 Bridge B highway变得更干净：
+
+```text
+BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION
+  = OPEN_NEW_ARITHMETIC_THEOREM.                      (21.4)
+```
+
+也就是说，动力学若要过桥，必须直接证明 prescribed physical signed scalar的 log-power
+saving；它可以提供新的机制，但不能靠“innovation”“遍历”“正测度”或“高维编码”这些
+名字取得算术 credit。一个合格的 nonautonomous Logistic/symbolic theorem至少要给
+target-independent affine input-output law、exact arithmetic event coding、distinguished
+seed return与 (21.2) 的 uniform signed bound。Hénon natural extension只在 exact factor
+确实保留同一 scalar时作辅助，不独立支付墙。
+
+这也是当前路线图的关键分叉：Bridge B不再寻找自动 smoothing，而直接寻找 signed
+physical evaluation theorem；若该 theorem没有新结构，就回到同一个 SHB-D2 arithmetic
+core。A1/A2继续独立，不拼接 theorem credit。全局状态保持 fixed atom=`0`、strict
+`1/400=UNPAID`、`L2=NONE`、TPC-207=`false`。
 
 ## 20. V19 后的罗盘：combined raw row可载，source innovation不可省
 

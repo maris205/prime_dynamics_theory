@@ -3,6 +3,80 @@
 更新时间：2026-08-07
 交接状态：`SEALED_FOR_NEW_SESSION`
 
+第 67 节从已发布 V19 commit
+`a96bac95db63b9fcbc99b98fb24c90c0ac6e37fb`继续 source-innovation gate。V20问的
+不是 affine source是否能 exact编码，而是 canonical innovation能否成为比原 SHB-D2
+residual更小、更低秩或自动 telescoping的对象。逐 parent fiber exact projection给
+
+```text
+eta_p(V)(q_j)=V(q_j),                         j deleted,
+eta_p(V)(q_j)=V(q_j)-Vbar_r,                  j surviving.
+```
+
+在 terminal no-wrap clock `P_(s-1)>x`，physical shell每个 fiber至多占一个 child，故
+
+```text
+||eta_p(V)||_(pP)^2
+ =1/(pP)[sum_deleted |V|^2
+          +(p-3)/(p-2)sum_surviving |V|^2]
+ >=(p-3)/(p-2)||V||_(pP)^2.
+```
+
+terminal `p asymp sqrt(x)`，所以 ratio趋于 1；source innovation没有 automatic small
+norm。对 V19 source-locked combined raw MASTER covector还有 exact comparison
+
+```text
+L_(beta_x^raw)(eta_p(w_x^(z)))
+ =S_x+O_K(x^(1/2)log^C x),
+S_x=sum_(x/2<t<=x)beta_x^raw(t)w_x^(z)(t).
+```
+
+因此任意 fixed log-power target上，terminal-innovation saving与原 combined raw
+MASTER saving等价。growing-horizon Duhamel weights逐 coordinate非负且总和为一；
+terminal survivor weight为 `(p-3)/(p-2)`，不存在由 stage bookkeeping自动生成的
+alternating cancellation。
+
+affine/path state
+
+```text
+V_a direct_sum E_(a+1) direct_sum ... direct sum E_b -> V_b
+```
+
+是 exact weighted isometry，dimension仍为 `P_b`。actual row witness
+`L_(beta_168)((I-Pi_13)e_90)=20/11`排除 quotient掉整个 innovation space；
+`beta_166^raw(84)=1`而 `x=168` strict shell不含 84，排除 changing-scale raw rows
+自动形成一条 pullback/coboundary orbit。V19 fixture的 independent exact component
+ranks为 raw `65`、base `56`、terminal eta `50`、all eta `54`、eta+base union `76`；
+finite component family也没有自动低秩塌缩。
+
+所以 V20新增且只新增一个 broad cell：
+
+```text
+DECLARED_TPC_BRIDGE_B_20260807_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_
+SMALL_NORM_AUTOMATIC_TELESCOPE_OR_LOW_RANK_BYPASS_V1
+  = STOP_SCOPED_EXACT_TERMINAL_NEAR_IDENTITY.
+```
+
+它只停止把 canonical innovation本身当作免费 smoothing/telescope/low-rank bypass；不
+停止真正的 signed arithmetic/dynamical theorem、合法 physical quotient、A1/A2、两个
+O161 parents、pair-native、H1或 global architecture。current primary收紧为
+
+```text
+BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION
+  = OPEN_NEW_ARITHMETIC_THEOREM.
+```
+
+它必须直接证明 combined raw MASTER target或等价 terminal-innovation target的 uniform
+log-power saving，并保留 fixed physical `h0=2`、`x=2X`、literal ordered
+coefficients、actual masks、normalization、separation/reassembly与完整 physical-loss
+ledger。抽象 direct-sum coding、positive measure、a.e. genericity、complete-frequency
+mean或仅有 orbit recurrence均不给 arithmetic credit。V20不是 arithmetic advance。
+TPC-207=false、fixed-atom credit=`0`、strict `1/400=UNPAID`、`L2=NONE`。
+proof为 `research/tpc-big-road/bridge_b_terminal_innovation_floor.md`；checker为
+`research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py`，37-row registry
+final-LF SHA-256为
+`0408cb3e4fd0bbfb7815df0df24902d4cc9fa1b75875e66f41482c30768652ee`。
+
 第 66 节从已发布 V18 commit
 `94077a4712433af4404f7d67a8b27e9896700cac`继续同一 Bridge B gate。V19首先回到
 Ford--Maynard Lemma 5.2 printed p.19，锁定 `h=2,s=1`只有两个 ordered raw term
@@ -1022,13 +1096,13 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V19_20260807_HB2_TWO_TYPE_RAW_MASTER_PRIMORIAL_COVECTOR_EXACT_RANK_56_SEPARATED_SHB_D2_OPEN_LITERAL_RESIDUAL_HOMOGENEOUS_SOURCE_STOP_AFFINE_SOURCE_INNOVATION_RETURN_SELECTED_NO_ARITHMETIC_ADVANCE_NO_GLOBAL_TRIGGER`
+`TPC_BIG_ROAD_V20_20260807_TERMINAL_SOURCE_INNOVATION_EXACT_NORM_FLOOR_RAW_MASTER_LOG_POWER_EQUIVALENCE_NONNEGATIVE_HORIZON_PARTITION_FULL_DIMENSION_PATH_STATE_AUTOMATIC_SMOOTHING_TELESCOPE_LOW_RANK_BYPASS_STOP_DIRECT_SIGNED_PHYSICAL_EVALUATION_OPEN_NO_ARITHMETIC_ADVANCE_NO_GLOBAL_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`TPC_BIG_ROAD_BRIDGE_B_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_RETURN_GATE`；
-当前 first subgate：`BRIDGE_B_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_RETURN`
-（第 66 节控制；既有 local source只有在第 32.6 节或
+`TPC_BIG_ROAD_BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION_GATE`；
+当前 first subgate：`BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION`
+（第 67 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--66 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--67 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -1040,10 +1114,12 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md` 与
 `research/tpc-big-road/README.md`与
+`research/tpc-big-road/bridge_b_terminal_innovation_floor.md`与
+`research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py`与
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--66 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--67 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2487,6 +2563,29 @@ actual raw row没有定义 complete physical dual family，也没有生成 separ
 Mellin/Perron registry。surviving primary为
 `BRIDGE_B_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_RETURN`，精确 proof与下一 gate见第
 66节。
+
+2026-08-07 的 Bridge B V20 terminal-innovation audit新增且仅新增一个 broad cell：
+
+```text
+DECLARED_TPC_BRIDGE_B_20260807_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_
+SMALL_NORM_AUTOMATIC_TELESCOPE_OR_LOW_RANK_BYPASS_V1
+  = STOP_SCOPED_EXACT_TERMINAL_NEAR_IDENTITY
+```
+
+它停止把 canonical source innovation直接登记为 automatic small error、cancellative
+stage telescope、uniform low-rank family或 independently easier dynamical target。第一处
+fatal是 terminal no-wrap norm floor `(p-3)/(p-2)`；对 actual combined raw row，其
+physical evaluation与原 raw MASTER target只差 `O_K(x^(1/2)log^C x)`，所以 fixed
+log-power saving等价。growing-horizon weights还是非负 partition of one；exact path-state
+isometry保持 full terminal dimension，finite component union rank也从 raw 65升到 76，
+不是自动塌缩。
+
+本 cell不停止真正的 signed terminal-innovation theorem、source-backed all-horizon
+physical quotient、target-independent affine input-output theorem、exact symbolic/dynamical
+coding或独立 A1/A2。它也不否定 V19 source port；它只证明该 port不免费降低算术难度。
+surviving primary为
+`BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION`，精确 proof、checker与
+下一 gate见第 67 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -6155,7 +6254,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V19 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V20 current）
 
 ```text
 进入仓库：
@@ -6163,13 +6262,15 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_terminal_innovation_floor.md、
+research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py、
 research/tpc-big-road/bridge_b_shbd2_innovation.md、
 research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py、
 research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--66 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--67 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -6210,7 +6311,13 @@ LITERAL_SHB_D2_RESIDUAL_AS_HOMOGENEOUS_R_SOURCE = STOP_SCOPED_EXACT_FIBER_RANGE_
 SHB_D2_SOURCE_INNOVATION = MANDATORY_IF_RESIDUAL_IS_PRIMAL
 SOURCE_INNOVATION_VERSUS_V16_ERR = DISTINCT_UNTYPED_CROSSWALK
 BRIDGE_B_TYPED_WINDOWED_FORCED_INNOVATION = SUPERSEDED_BY_V19_SOURCE_INNOVATION_GATE
-BRIDGE_B_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_RETURN = SELECTED_OPEN_NEW_THEOREM
+BRIDGE_B_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_RETURN = SUPERSEDED_BY_V20_TERMINAL_EQUIVALENCE_GATE
+BRIDGE_B_TERMINAL_INNOVATION_NORM_FLOOR = PROVED_EXACT_RATIO_P_MINUS_3_OVER_P_MINUS_2
+BRIDGE_B_TERMINAL_INNOVATION_RAW_TARGET_EQUIVALENCE = PROVED_AT_FIXED_LOG_POWER_SCALE
+BRIDGE_B_GROWING_HORIZON_WEIGHTS = PROVED_NONNEGATIVE_PARTITION_OF_ONE
+BRIDGE_B_AFFINE_PATH_STATE = PROVED_EXACT_FULL_DIMENSION_WEIGHTED_ISOMETRY
+BRIDGE_B_INNOVATION_AUTOMATIC_SMOOTHING_TELESCOPE_LOW_RANK_BYPASS = STOP_SCOPED_TERMINAL_NEAR_IDENTITY
+BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION = SELECTED_OPEN_NEW_ARITHMETIC_THEOREM
 BRIDGE_B_ALL_TRANSLATIONS_CURRENT_GATE = NO
 BRIDGE_B_APPROXIMATE_LOW_RANK_RETURN = OPEN_REQUIRES_WIDTH_AND_PHYSICAL_NORM
 BRIDGE_B_BRATTELI_AGING_CLOCK = OPEN_RESERVE_RANK_GROWTH_FALSIFIER
@@ -6335,22 +6442,27 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮首先执行第 66 节 Bridge B current primary：
+下一轮首先执行第 67 节 Bridge B current primary：
 
 ```text
-BRIDGE_B_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_RETURN.
+BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION.
 ```
 
 V19已经完成 combined raw MASTER row到 primorial `V_k^vee`的 exact materialization；
-不得再把这一步写成缺失，也不得把它升级为 separated SHB-D2 theorem。下一关须构造
-typed affine source cocycle `V_(j+1)=R_(p_(j+1))V_j+eta_(j+1)`或等价 enlarged state，
-保留 fixed `h0=2`、stage、physical `X`、coefficient、normalization与 source locator，
-并在 `z=(log x)^K`到 physical square-root clock的 growing horizon上统一控制 pulled raw
-rows对 `eta`的 deterministic physical evaluations。eta-to-dynamics、V16 intertwiner
-`Err`、Mellin/Perron separation/reassembly与 strict `1/400` ledger必须分别付账；不得把
-source innovation塞进 covector后改称 homogeneous source。若 typed return不存在则发布
-precise STOP；只有 theorem-backed growing-horizon saving才可进入 nonautonomous
-Logistic carrier。
+不得再把这一步写成缺失，也不得把它升级为 separated SHB-D2 theorem。V20又已经证明
+canonical source innovation在 terminal no-wrap stage具有 `(p-3)/(p-2)` norm floor，
+其 combined raw physical evaluation与原 MASTER target只差
+`O_K(x^(1/2)log^C x)`；growing-horizon weights是非负 partition of one，affine path
+space保持 full terminal dimension。不得再把 innovation、Duhamel expansion、abstract
+direct sum或 finite low-rank diagnostic包装成 automatic smoothing/cancellation。
+
+下一关只接受真正的 signed theorem：在 source-locked combined raw rows上，直接、
+uniform地证明 `x/log^A x` saving，或证明严格等价的 terminal-innovation physical
+evaluation bound。必须保留 fixed `h0=2`、`x=2X`、ordered coefficients、actual masks、
+normalization、source locator、Mellin/Perron separation/reassembly与完整 strict
+`1/400` loss ledger。若走 Logistic/symbolic carrier，还须给 target-independent affine
+input-output law、exact event coding与 distinguished-seed deterministic return；positive
+measure、a.e. genericity、complete-frequency mean square或 recurrence本身均不够。
 A1 的 `HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER`与 A2
 paired-Voronoi只作独立 reserves，不与 Bridge B拼接 theorem credit。
 
@@ -6434,9 +6546,12 @@ same-stage interval dual rank增长而 STOP；但 exact三稀疏 difference basi
 growing-rank highway。V18已证明 backward atom不扩散、later forcing塌成 mean，且
 fixed-horizon windowed support为 `o(P_k)`。V19进一步 exact materialize combined raw
 MASTER dual rows，但 separated analytic registry仍 ABSENT；同时 literal residual因
-fiber-range violation不能作为 homogeneous primal source。当前须构造并控制 typed
-source innovation return：保持 fixed `h0=2`、stage、event、clock、forcing与整个 typed
-physical dual family，并输出 growing-horizon deterministic `H_dyn/H3_phys` estimate。
+fiber-range violation不能作为 homogeneous primal source。V20进一步证明 terminal
+innovation保留 `1-O(1/p)` energy，且其 signed combined-raw evaluation在 log-power scale
+等价于原 MASTER target；nonnegative horizon decomposition与 full-dimensional path state
+不提供 automatic saving。当前须直接证明 signed terminal-innovation physical
+evaluation theorem：保持 fixed `h0=2`、stage、event、clock、forcing与整个 typed
+physical dual family，并输出 uniform deterministic `H_dyn/H3_phys` estimate。
 任何 a.e.结论、
 单向量 fit、word-only
 isomorphism或 abstract norm contraction都不算成功；任何动力学结论也不得逆向给 A1
@@ -6461,6 +6576,7 @@ python research/tpc-big-road/tpc_bridge_b_carrier_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_rank_growth_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_backward_hull_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -10342,6 +10458,292 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 67. 2026-08-07 V20：terminal innovation floor 与 automatic-bypass STOP
+
+### 67.1 基线、问题与只读分工
+
+V20从已发布 V19 commit
+`a96bac95db63b9fcbc99b98fb24c90c0ac6e37fb`继续。冻结的 physical object仍是
+
+```text
+h0=2,
+x=2X,
+z=(log x)^K,
+w_x^(z)(t)=Lambda(t+2)-b_x^(z)(t),
+beta_x^raw=V19 combined raw MASTER covector.          (67.1)
+```
+
+本 gate只判断 canonical source innovation是否提供比原 signed MASTER target更小的
+对象；不搜索 201st micro-paper，不创建 TPC-207。三个 read-only audits分别核对 exact
+fiber/horizon公式、affine-state/physical-quotient边界、finite rank与 terminal falsifier；
+所有正式写入仍由主会话完成。
+
+### 67.2 Exact fiber projection 与 physical evaluation
+
+固定 `gcd(P,p)=1`，逐 parent fiber有两条 deleted copies与 `p-2` survivors。写
+
+```text
+Pi_p=alpha_p^(-1)R_pR_p^*,
+alpha_p=(p-2)/p,
+eta_p(V)=(I-Pi_p)V,
+Vbar_r=(p-2)^(-1)sum_(j surviving)V(q_(r,j)).          (67.2)
+```
+
+则 exact coordinate formula为
+
+```text
+eta_p(V)(q_(r,j))
+ =V(q_(r,j)),                    j deleted,
+ =V(q_(r,j))-Vbar_r,             j surviving.         (67.3)
+```
+
+对 algebraic raw functional `L_beta(V)=sum beta(q)V(q)`，没有缺失的 Haar scalar：
+
+```text
+L_beta(eta_p(V))
+ =sum_r [
+    sum_(j deleted)beta_j V_j
+   +sum_(j surviving)beta_j V_j
+   -(p-2)^(-1)(sum_surviving beta_j)(sum_surviving V_j)
+  ].                                                    (67.4)
+```
+
+normalized-Haar Riesz vector是 `pP conjugate(beta)`；complete-frequency Parseval或
+averaged covariance不能替换 (67.4) 的 prescribed physical scalar。
+
+### 67.3 Terminal no-wrap norm floor
+
+取 terminal prime clock
+
+```text
+p_s^2<=x+2<p_(s+1)^2,
+p=p_s,
+P=P_(s-1).                                             (67.5)
+```
+
+对 sufficiently large stage，V19的 primorial growth给 `P_(s-1)>p_(s+1)^2>x`，
+physical shell每个 fiber至多一个 nonzero child。由 (67.3)逐 fiber exact求和得
+
+```text
+||eta_p(V)||_(pP)^2
+ =1/(pP)[
+    sum_(t deleted)|V(t)|^2
+   +(p-3)/(p-2)sum_(t surviving)|V(t)|^2
+  ],                                                    (67.6)
+
+||eta_p(V)||_(pP)^2
+ >=(p-3)/(p-2)||V||_(pP)^2.                            (67.7)
+```
+
+support也会在 survivor fiber展开：
+
+```text
+#supp eta
+ =#deleted active+(p-2)#surviving active.              (67.8)
+```
+
+由于 `p asymp sqrt(x)`，(67.7) 的 ratio趋于一。ambient Haar dilution不是 coordinate-
+sum saving，不能支付 physical normalization。
+
+### 67.4 Combined raw target的 log-power equivalence
+
+在同一 terminal no-wrap stage，(67.4)对 V19 literal combined raw row与 residual给
+
+```text
+L_(beta_x^raw)(eta_p(w_x^(z)))
+ =S_x-(p-2)^(-1)
+   sum_(x/2<t<=x, p does not divide t(t+2))
+      beta_x^raw(t)w_x^(z)(t),                         (67.9)
+
+S_x=sum_(x/2<t<=x)beta_x^raw(t)w_x^(z)(t).
+```
+
+两条 source-locked ordered HB2 types与 literal constants `+2,-1`给
+`|beta_x^raw(t)|<=3d_4(t)`。committed residual pointwise bound、fixed divisor moments
+及 Bertrand给
+
+```text
+L_(beta_x^raw)(eta_p(w_x^(z)))
+ =S_x+O_K(x^(1/2)log^C x).                             (67.10)
+```
+
+所以对每个 fixed `A,K`，terminal-innovation `x/log^A x` saving当且仅当原 combined
+raw MASTER target有同样 saving。这一 equivalence不 materialize缺失的 separated
+`Xi,Kappa` template registry，也不支付 transform tails。
+
+### 67.5 Growing horizon没有 automatic telescope
+
+在 no-wrap horizon定义
+
+```text
+q_s(t)=1_(p_s does not divide t(t+2))/(p_s-2),
+omega_base(t)=product_(a<u<=b)q_u(t),
+omega_s(t)=[1-q_s(t)]product_(s<u<=b)q_u(t).           (67.11)
+```
+
+逐 physical coordinate exact有
+
+```text
+omega_base+sum_(a<s<=b)omega_s=1,
+omega_base>=0,
+omega_s>=0.                                            (67.12)
+```
+
+terminal deleted coordinate有 `omega_b=1`；terminal survivor有
+`omega_b=(p_b-3)/(p_b-2)`。因此 Duhamel expansion只是 nonnegative partition of one，
+不是 alternating/cancellative telescope。跨 coordinate的 arithmetic signs仍可能取消，
+但必须由新 theorem证明。
+
+### 67.6 Exact path state、quotient firewall 与 coherence witness
+
+令 `E_s=ker R_(s-1)^*`。递归 pseudoinverse给 unique exact decomposition
+
+```text
+W_b=R_(b:a)W_a+sum_(a<s<=b)R_(b:s)eta_s,
+
+||W_b||_b^2
+ =alpha_(b:a)||W_a||_a^2
+  +sum_(a<s<=b)alpha_(b:s)||eta_s||_s^2.              (67.13)
+```
+
+该 weighted synthesis从 `V_a direct_sum E_(a+1)...direct_sum E_b`到 `V_b`是 isometry，
+且
+
+```text
+dim V_a+sum_(a<s<=b)(dim V_s-dim V_(s-1))=dim V_b=P_b. (67.14)
+```
+
+所以 abstract affine/path carrier是 full-dimensional re-coordinatization，不自动降秩或
+改善 Cauchy--Schwarz。whole innovation space也不能 quotient掉：actual V19 row满足
+
+```text
+beta_168^raw(90)=2,
+L_(beta_168)((I-Pi_13)e_90)=20/11.                    (67.15)
+```
+
+changing-scale rows不是单一 pullback orbit：
+
+```text
+beta_166^raw(84)=1,
+84 survives p=13,
+but 84 is outside the strict x=168 shell.              (67.16)
+```
+
+故 single-terminal telescope不能升级为 cross-scale coboundary theorem。
+
+### 67.7 Exact finite rank falsifier
+
+V19 `k=5,b=7` rows去掉各 nonzero prime-log column scalar后，独立 exact rational
+elimination给
+
+```text
+raw source rows / coordinates / partitions = 120 / 110 / 3984,
+raw source rank                              = 65,
+base component rank                         = 56,
+terminal eta rank                           = 50,
+all eta rank                                = 54,
+all eta plus base union rank                = 76.      (67.17)
+```
+
+component union从 raw rank 65增至 76，不是 automatic low-rank collapse。这是 finite
+falsifier，不是 all-horizon asymptotic rank theorem；数值 energy diagnostics不进入正式
+claim。
+
+### 67.8 Scoped stop 与 surviving theorem
+
+本轮新增且只新增
+
+```text
+DECLARED_TPC_BRIDGE_B_20260807_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_
+SMALL_NORM_AUTOMATIC_TELESCOPE_OR_LOW_RANK_BYPASS_V1
+  = STOP_SCOPED_EXACT_TERMINAL_NEAR_IDENTITY.          (67.18)
+```
+
+它只停止 automatic small norm、stagewise cancellation、uniform low rank或 independently
+easier dynamical error的推断。合法 enlarged state、complete physical quotient、真正
+signed dynamical theorem、separated analytic proof及 A1/A2均未停止。
+
+surviving Bridge B theorem精确为
+
+```text
+BRIDGE_B_SHBD2_TERMINAL_INNOVATION_SIGNED_PHYSICAL_EVALUATION
+  = OPEN_NEW_ARITHMETIC_THEOREM.                       (67.19)
+```
+
+它必须直接、uniform地证明 source-locked combined raw MASTER scalar或 (67.10) 的等价
+terminal-innovation scalar有 arbitrary log-power saving。必须保留 fixed physical
+`h0=2`、`x=2X`、ordered physical coefficients、actual masks、normalization、全部
+parameter ranges、uniform constants、separation/reassembly与完整 physical-loss ledger。
+若由 Logistic/symbolic dynamics提供，还须给 target-independent affine input-output law、
+exact arithmetic event coding与 distinguished-seed deterministic return；positive measure、
+a.e. genericity、complete-frequency mean或 recurrence均不够。
+
+### 67.9 Artifact、checker 与 publication boundary
+
+正式 V20 artifacts为
+
+```text
+research/tpc-big-road/bridge_b_terminal_innovation_floor.md
+research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py. (67.20)
+```
+
+checker先锁 V19 canonical final-LF checker SHA-256，再以 exact integer/rational arithmetic
+复核 fiber formulas、terminal floor/support/evaluation、299个 horizon partition cases、
+path isometry、两个 actual witnesses与 (67.17)。canonical registry有 37 unique rows，
+final-LF SHA-256为
+
+```text
+0408cb3e4fd0bbfb7815df0df24902d4cc9fa1b75875e66f41482c30768652ee. (67.21)
+```
+
+baseline run拒绝 19 contract与 39 registry mutations；normal与 optimized Python必须输出
+byte-identical。最大 claim仅
+
+```text
+EXACT_L0_TERMINAL_INNOVATION_EQUIVALENCE_AND_BYPASS_STOP. (67.22)
+```
+
+当前 release allowlist严格为
+
+```text
+TPC_COMPASS.md
+TPC_HANDOFF.md
+research/tpc-big-road/README.md
+research/tpc-big-road/bridge_b_terminal_innovation_floor.md
+research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py. (67.23)
+```
+
+独立 QA 与最终只读回归 closure为
+
+```text
+V20_MATH_PROOF_QA = PASS / FIRST_FATAL_NONE
+V20_CHECKER_ADVERSARIAL_QA = PASS
+V20_EXTERNAL_CONTRACT_ATTACKS = 50/50 REJECTED
+V20_EXTERNAL_REGISTRY_ATTACKS = 83/83 REJECTED
+V20_INTERNAL_MUTATIONS = 19 CONTRACT / 39 REGISTRY
+V20_RELEASE_ENTRY_QA = PASS
+V20_STARTUP_REGRESSION = 22/22 PASS
+V20_SUPPLEMENTAL = 4/4 PASS
+V20_BIG_ROAD_NORMAL_AND_OPTIMIZED = 16/16 PASS / BYTE_IDENTICAL
+V20_RELEASE_ALLOWLIST = 5/5 EXACT
+V20_PROTECTED_UNTRACKED = 130 / 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+V20_PAPER_PDF_BUILD_TPC207_OUTPUT = NONE.                 (67.24)
+```
+
+V20 proof与 checker committed canonical final-LF bytes的 SHA-256分别为
+
+```text
+bridge_b_terminal_innovation_floor.md
+  2f11526ae5c17371de3d51c9990abcd7723834df07cfa7b631aaf96ebb9b4bef
+tpc_bridge_b_terminal_innovation_checker.py
+  ce62b12023a4d65a8eb7ff2e01db50110d7d96183c5db771e11728da10ce50a7. (67.25)
+```
+
+这些 hash按 final-LF canonical bytes计算；Windows working-tree CRLF不改变冻结对象。
+三项 read-only audits的 `files_changed=[]`，cached diff为空。无 arithmetic advance、无
+fixed-atom credit、strict `1/400`仍 UNPAID、`L2=NONE`、TPC-207=false；不创建 numbered
+paper、PDF或 build artifact。
 
 ## 66. 2026-08-07 V19：SHB-D2 raw row 与 source-innovation 架构重构
 
