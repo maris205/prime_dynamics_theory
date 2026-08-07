@@ -1,10 +1,11 @@
-# TPC big road V26: compensated dilation and block highways
+# TPC big road V27: Ramanujan energy and pointed block gates
 
 更新时间：2026-08-08
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_COMPENSATED_PRIME_DILATION_AND_FACTORIZABLE_J1_SHORT_DUAL_NORMAL_FORMS_PLUS_SOURCE_BACKED_CRITICAL_SEED_ASIP_INTERFACE_AND_WHOLE_SHELL_BLOCK_RETYPE`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_PRIME_SHELL_WEIGHT_ENERGY_AND_ENDPOINT_REDUCTION_PLUS_SOURCE_CORPUS_STOPS_AND_POINTED_WHOLE_SHELL_ROUTE`
 
-当前主路线见第 26 节及 `bridge_b_compensated_dilation_and_block_highway.md`；第 25 节与
+当前主路线见第 27 节及 `bridge_b_ramanujan_energy_and_pointed_block_gate.md`；第 26 节与
+`bridge_b_compensated_dilation_and_block_highway.md`冻结 V26 compensated dilation，第 25 节与
 `bridge_b_corrected_fourier_factorable_emitter.md`冻结 V25 corrected emitter，第 24 节与
 `bridge_b_literal_jutila_farey_atom_compiler.md`冻结 V24 atom compiler，第 23 节与
 `bridge_b_prime_shell_jutila_and_stable_dynamics.md`冻结 V23 prime-shell exponent
@@ -2211,6 +2212,93 @@ checker冻结 33-field contract、48-row registry，registry SHA-256为
 `15e40e8c20050549c3e244be59747019f115ebb8ccb9356f95fd449250073b07`；
 102/151 adversarial mutations必须全部拒绝。V23 arithmetic advance=`NO`、fixed
 atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false；没有编号 paper/PDF/build。
+
+## 27. V27 Bridge B：Ramanujan energy、zero axis 与 pointed block
+
+V27 对 V26 compensated scalar作 exact Hilbert reduction。定义
+
+~~~text
+A_Q(h)=sum_(q prime~x^(1/3))c_q(h),
+r_x(h)=sum_(t,t+h in I_x)beta_x^raw(t)
+       [Lambda(t+h+2)-b_x^(z)(t+h)].
+~~~
+
+prime-shell coefficient的 hard-window energy有 exact floor formula；Schwartz tails中
+两个 shell primes同时整除的 cross terms也被完整保留。结果是
+
+~~~text
+|| |hatpsi|^(1/2)A_Q ||_2/L_pr=x^(-1/192+o(1)).
+~~~
+
+因此严格 endpoint等价于一个 tail-inclusive physical energy theorem
+
+~~~text
+(sum_(0<|h|<x/2)|hatpsi(h/H)||r_x(h)|^2)^(1/2)
+  <=x^(1+theta+o(1)), theta<13/4800.
+~~~
+
+原 scalar只有一个 `hatpsi`；两侧各放完整 `hatpsi`是 normalization error。
+`H=x^(21/32)`只是 effective horizon，不是 hard support。
+
+smooth main也不是免费项。Poisson精确给
+
+~~~text
+1/L_pr sum_(h!=0)A_Q(h)F(h/H)
+ =-F(0)+O_s(||F^(s)||_1(Q/H)^(s-1)).
+~~~
+
+所以删除 zero correlation shift后必须另付 diagonal/axis；单点把 `F(0)`改成零会
+破坏 uniform derivative ledger。当前真正并列的解析 gates是 literal vector covariance
+与 signed local-main zero-axis reassembly。
+
+MRT、MRSTT Higher Uniformity、Leung arbitrary weighted shifts及既有 spectral/Kloosterman
+corpus均未直接附着。MRT energy差 `781/2400`，MRSTT只有单相位 log input，Leung虽
+提供架构类比但系数不同且差 `181/2400`。mixed HB route必须继续使用 tagged direct
+sum，不能把 ordered J1/J2/hybrid压成一个 source array。
+
+动力学侧本轮审计两种 parameter designs：same-output exact carrier的 normalized
+conditional mean已等于待证 arithmetic count；null-graph/single-parameter carrier又不被
+a.e. theorem选中。这两种 designs STOP；本轮保留的 reserve改成 exact
+single-parameter factor之后的 pointed whole-shell
+discrepancy，而不是 parameter-a.e. ASIP拼接。
+
+~~~text
+V27_PRIME_SHELL_HARD_WINDOW_RAMANUJAN_L2_IDENTITY
+  = PROVED_EXACT_L0_FOR_N_LT_FIRST_DISTINCT_PRIME_PRODUCT
+V27_PRIME_SHELL_RAMANUJAN_WEIGHTED_ENERGY
+  = PROVED_EXACT_FINITE_PLUS_SCHWARTZ_ASYMPTOTIC
+V27_EFFECTIVE_HORIZON_AS_HARD_SUPPORT
+  = STOP_SCOPED_FALSE_SCHWARTZ_TAIL_AND_DOUBLE_DIVISOR_CROSS_TERMS
+V27_ONE_PSI_WEIGHTED_CAUCHY_INTERFACE
+  = PROVED_EXACT_ABS_PSI_HALF_WEIGHT_ON_BOTH_FACTORS
+V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE = SELECTED_OPEN_NEW_THEOREM
+V27_FULL_LATTICE_SMOOTH_MAIN_POISSON_IDENTITY
+  = PROVED_EXACT_DETERMINISTIC_INTERFACE
+V27_AUTOMATIC_SMOOTH_LOCAL_MAIN_ANNIHILATION_AFTER_CORRELATION_ZERO_SHIFT_DELETION
+  = STOP_SCOPED_ZERO_AXIS_MINUS_F_OF_ZERO
+V27_SIGNED_LOCAL_MAIN_ZERO_AXIS_AND_RESIDUAL_REASSEMBLY = OPEN_NEW_THEOREM
+V27_MRT_MRSTT_TO_LITERAL_PRIME_RAMANUJAN_WEIGHTED_NUMERATOR
+  = STOP_SCOPED_NO_COLLECTIVE_POWER_NORM
+V27_EXISTING_SHIFTED_CONVOLUTION_SPECTRAL_CORPUS_DIRECT_ATTACHMENT
+  = STOP_SCOPED_NO_LITERAL_WHOLE_PHYSICAL_SCALAR
+V27_MIXED_HB2_ONE_COMMON_SOURCE_ARRAY = STOP_SCOPED_FINITE_SELECTOR_MINOR_ONE
+V27_TAGGED_VECTOR_MIXED_HB2_DETERMINANT_REASSEMBLY = OPEN_NEW_THEOREM
+V27_PARAMETER_AVERAGED_EXACT_SAME_ARITHMETIC_OUTPUT_CARRIER
+  = STOP_SCOPED_TAUTOLOGICAL_MEAN_OR_NULL_GRAPH
+V27_STAGEWISE_TRANSVERSE_PARAMETER_RESELECTION = STOP_SCOPED_NO_COMMON_PARAMETER
+V27_POINTED_CRITICAL_SECTION_WHOLE_SHELL_DISCREPANCY
+  = OPEN_NEW_THEOREM_AFTER_EXACT_SINGLE_PARAMETER_FACTOR
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false
+~~~
+
+完整 proof与 checker分别为
+`bridge_b_ramanujan_energy_and_pointed_block_gate.md`及
+`tpc_bridge_b_ramanujan_energy_checker.py`。本节是不编号 route release，不创建
+TPC-207、paper、PDF或 build。
 
 ## 26. V26 Bridge B：compensated dilation 与 whole-shell block highway
 

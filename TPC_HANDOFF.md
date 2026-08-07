@@ -1,7 +1,106 @@
 # TPC HANDOFF
 
 更新时间：2026-08-08
-交接状态：`BOLD_CHANNEL_V26_SEALED`
+交接状态：`BOLD_CHANNEL_V27_SEALED`
+
+第 74 节把 V26 的 square-root design ledger收缩成一个精确、tail-safe 的 Hilbert
+gate。固定 physical `h0=2`、V19 ordered `+2,-1` coefficient与同一个
+`w_x^(z)=Lambda(.+2)-b_x^(z)`，定义
+
+~~~text
+A_Q(h)=sum_(q prime~x^(1/3))c_q(h),
+r_x(h)=sum_(t,t+h in I_x)beta_x^raw(t)w_x^(z)(t+h),
+H=x^(21/32).
+~~~
+
+若 `N` 小于两个不同 shell primes的首个乘积，则
+
+~~~text
+sum_(0<|h|<=N)|A_Q(h)|^2
+ =2[N R^2+sum_q floor(N/q)(q^2-2qR)].
+~~~
+
+Schwartz tails和 double-divisor cross terms完整支付后，
+`|| |hatpsi|^(1/2)A_Q||_2/L_pr=x^(-1/192+o(1))`。原 scalar只有一个
+`hatpsi`，所以合法 Cauchy必须把 `|hatpsi|^(1/2)`各放一侧。当前解析主 theorem
+精确变成
+
+~~~text
+(sum_(0<|h|<x/2)|hatpsi(h/H)||r_x(h)|^2)^(1/2)
+  <=x^(1+theta+o(1)), theta<13/4800.                (V27.1)
+~~~
+
+等号不足以支付 strict endpoint。`H`只是 Schwartz-effective horizon，不是 hard
+support；截去 `|h|>H` 或把两侧各放一个完整 `hatpsi`均为 normalization failure。
+
+V27 同时发现先于 residual theorem的 zero-axis wall。对 uniformly smooth `F`，
+
+~~~text
+1/L_pr sum_(h!=0)A_Q(h)F(h/H)
+ =-F(0)+O_s(||F^(s)||_1(Q/H)^(s-1)).               (V27.2)
+~~~
+
+删除 correlation zero shift后，smooth local main不会自动消失。只把单个 lattice
+value设为零会把同一损失搬进 derivative seminorm；合法 theorem必须另证 signed
+local-main/zero-axis reassembly。
+
+MRT/MRSTT/Leung/source-corpus screen没有 direct survivor。MRT proof-level energy
+相对 numerator ceiling差 `781/2400`；Higher Uniformity只给单 phase/AP的 local
+log input，triangle power scale为 `223/96`；Leung是 arbitrary-shift-weight
+automorphic analogue，但 coefficient不同且仍差 `181/2400`。mixed-HB reserve因此
+只能保持 tagged vector direct sum，不能把 ordered J1/J2/hybrid改名成同一个 source
+array。
+
+动力学 route也进一步 fail closed：若 exact carrier在正测度 parameter set上总等于
+同一个 arithmetic block count，则 normalized conditional parameter mean就是待证
+count、variance为零；
+若 carrier只在 arithmetic phase的单点/null graph成立，a.e.-parameter theorem又选
+不中。本轮审计的 same-output parameter averaging与 null-graph a.e. splice因此
+STOP；surviving dynamics gate是 exact single-parameter natural-section factor之后的
+pointed whole-shell discrepancy theorem。
+
+V27 路线裁决是
+
+~~~text
+V27_PRIME_SHELL_HARD_WINDOW_RAMANUJAN_L2_IDENTITY
+  = PROVED_EXACT_L0_FOR_N_LT_FIRST_DISTINCT_PRIME_PRODUCT
+V27_PRIME_SHELL_RAMANUJAN_WEIGHTED_ENERGY
+  = PROVED_EXACT_FINITE_PLUS_SCHWARTZ_ASYMPTOTIC
+V27_EFFECTIVE_HORIZON_AS_HARD_SUPPORT
+  = STOP_SCOPED_FALSE_SCHWARTZ_TAIL_AND_DOUBLE_DIVISOR_CROSS_TERMS
+V27_ONE_PSI_WEIGHTED_CAUCHY_INTERFACE
+  = PROVED_EXACT_ABS_PSI_HALF_WEIGHT_ON_BOTH_FACTORS
+V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE = SELECTED_OPEN_NEW_THEOREM
+V27_FULL_LATTICE_SMOOTH_MAIN_POISSON_IDENTITY
+  = PROVED_EXACT_DETERMINISTIC_INTERFACE
+V27_AUTOMATIC_SMOOTH_LOCAL_MAIN_ANNIHILATION_AFTER_CORRELATION_ZERO_SHIFT_DELETION
+  = STOP_SCOPED_ZERO_AXIS_MINUS_F_OF_ZERO
+V27_SIGNED_LOCAL_MAIN_ZERO_AXIS_AND_RESIDUAL_REASSEMBLY = OPEN_NEW_THEOREM
+V27_MRT_MRSTT_TO_LITERAL_PRIME_RAMANUJAN_WEIGHTED_NUMERATOR
+  = STOP_SCOPED_NO_COLLECTIVE_POWER_NORM
+V27_EXISTING_SHIFTED_CONVOLUTION_SPECTRAL_CORPUS_DIRECT_ATTACHMENT
+  = STOP_SCOPED_NO_LITERAL_WHOLE_PHYSICAL_SCALAR
+V27_MIXED_HB2_ONE_COMMON_SOURCE_ARRAY = STOP_SCOPED_FINITE_SELECTOR_MINOR_ONE
+V27_TAGGED_VECTOR_MIXED_HB2_DETERMINANT_REASSEMBLY = OPEN_NEW_THEOREM
+V27_PARAMETER_AVERAGED_EXACT_SAME_ARITHMETIC_OUTPUT_CARRIER
+  = STOP_SCOPED_TAUTOLOGICAL_MEAN_OR_NULL_GRAPH
+V27_STAGEWISE_TRANSVERSE_PARAMETER_RESELECTION = STOP_SCOPED_NO_COMMON_PARAMETER
+V27_POINTED_CRITICAL_SECTION_WHOLE_SHELL_DISCREPANCY
+  = OPEN_NEW_THEOREM_AFTER_EXACT_SINGLE_PARAMETER_FACTOR
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false.                              (V27.3)
+~~~
+
+proof 与 checker 为
+`research/tpc-big-road/bridge_b_ramanujan_energy_and_pointed_block_gate.md` 和
+`research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py`。当前 checker冻结
+27-field contract、31-row registry，registry SHA-256为
+`dfce061f4324601dc57e6ae402fbda95b427622ae381355ddac9bdd23efb52bd`；
+83/64/20/15/16 个 contract/registry/source/dependency/semantic mutations必须全部
+拒绝。V27是不编号 big-road release，不创建 TPC-207、paper、PDF或 build output。
 
 第 73 节把 V25 的 exact nonzero-shift emitter压缩成两个真正的“大路”对象，
 而不是继续增加 fixed-cell 小节点。解析主路保留 fixed `h0=2`、V19 ordered
@@ -1594,13 +1693,15 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V24_20260808_LITERAL_DETERMINANT_JUTILA_MAIN_ERROR_AND_CORRECTED_SIGNED_FAREY_KLOOSTERMAN_ATOMIZATION_PRINTED_LEMMA2_STOP_COLLECTIVE_EMITTER_OPEN_NO_GLOBAL_TRIGGER`
+`TPC_BIG_ROAD_V27_20260808_RAMANUJAN_ENERGY_ZERO_AXIS_AND_POINTED_WHOLE_SHELL_ROUTE_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V24_SIGNED_q_c_b_COLLECTIVE_PHYSICAL_EMITTER_GATE`；
-当前 first subgate：`V24_SIGNED_q_c_b_COLLECTIVE_PHYSICAL_EMITTER`
-（第 71 节控制；既有 local source只有在第 32.6 节或
+`V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE_AND_SIGNED_ZERO_AXIS_REASSEMBLY_GATE`；
+当前 first subgates：
+`V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE` 与
+`V27_SIGNED_LOCAL_MAIN_ZERO_AXIS_AND_RESIDUAL_REASSEMBLY`
+（第 74 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--71 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--74 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -1612,6 +1713,12 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_ramanujan_energy_and_pointed_block_gate.md`、
+`research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py`、
+`research/tpc-big-road/bridge_b_compensated_dilation_and_block_highway.md`、
+`research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py`、
+`research/tpc-big-road/bridge_b_corrected_fourier_factorable_emitter.md`、
+`research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checker.py`、
 `research/tpc-big-road/bridge_b_literal_jutila_farey_atom_compiler.md`、
 `research/tpc-big-road/tpc_bridge_b_literal_jutila_farey_atom_checker.py`、
 `research/tpc-big-road/bridge_b_prime_shell_jutila_and_stable_dynamics.md`、
@@ -1625,7 +1732,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--71 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--74 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -1687,8 +1794,9 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V26 gate及其 V25/V24/V23 dependencies还须分别执行
-normal与 optimized只读 checker；八次必须都为零，且每一对 stdout byte-identical：
+22项启动回归之后，当前不编号 V27 gate及其 V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；十次必须都为零，且每一对 stdout
+byte-identical：
 
 ```powershell
 python -B research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py --check
@@ -1699,6 +1807,8 @@ python -B research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checke
 python -O -B research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py --check
 ```
 
 随后优先读取：
@@ -3390,6 +3500,65 @@ V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM
 J2/hybrid或 reassembly；`13/4800`只是 square-root design margin；parameter ASIP不提供
 exact arithmetic carrier。完整 theorem出现前，arithmetic advance仍为 `NO`。精确
 proof、checker与 reopen gates见第 73 节。
+
+2026-08-08 的 Bridge B V27 Ramanujan-energy/pointed-block 审计新增且仅新增以下
+七个 scoped STOP cells：
+
+~~~text
+V27_EFFECTIVE_HORIZON_AS_HARD_SUPPORT
+  = STOP_SCOPED_FALSE_SCHWARTZ_TAIL_AND_DOUBLE_DIVISOR_CROSS_TERMS
+
+V27_AUTOMATIC_SMOOTH_LOCAL_MAIN_ANNIHILATION_AFTER_CORRELATION_ZERO_SHIFT_DELETION
+  = STOP_SCOPED_ZERO_AXIS_MINUS_F_OF_ZERO
+
+V27_MRT_MRSTT_TO_LITERAL_PRIME_RAMANUJAN_WEIGHTED_NUMERATOR
+  = STOP_SCOPED_NO_COLLECTIVE_POWER_NORM
+
+V27_EXISTING_SHIFTED_CONVOLUTION_SPECTRAL_CORPUS_DIRECT_ATTACHMENT
+  = STOP_SCOPED_NO_LITERAL_WHOLE_PHYSICAL_SCALAR
+
+V27_MIXED_HB2_ONE_COMMON_SOURCE_ARRAY
+  = STOP_SCOPED_FINITE_SELECTOR_MINOR_ONE
+
+V27_PARAMETER_AVERAGED_EXACT_SAME_ARITHMETIC_OUTPUT_CARRIER
+  = STOP_SCOPED_TAUTOLOGICAL_MEAN_OR_NULL_GRAPH
+
+V27_STAGEWISE_TRANSVERSE_PARAMETER_RESELECTION
+  = STOP_SCOPED_NO_COMMON_PARAMETER
+~~~
+
+第一项只停止把 Schwartz-effective `H`写成 hard support；全 tail weighted theorem
+保留。第二项停止删除 correlation zero shift后仍宣称 smooth main自动消失；若
+`F(0)=0`连同 uniform derivative ledger或 diagonal另行支付，Poisson interface保留。
+第三项只停止当前 MRT/MRSTT theorem黑箱 direct attachment；其 local Fourier inputs
+可进入未来 vector-valued proof。第四项停止其余已审 shifted-convolution/spectral
+corpus直接改名成 literal whole scalar。第五项停止 scalar common source array，不停止
+tagged direct sum。第六、七项停止用 parameter mean或逐 stage重选参数绕过
+prescribed seed；pointed fixed-parameter theorem仍 OPEN。
+
+surviving gates为
+
+~~~text
+V27_PRIME_SHELL_HARD_WINDOW_RAMANUJAN_L2_IDENTITY
+  = PROVED_EXACT_L0_FOR_N_LT_FIRST_DISTINCT_PRIME_PRODUCT
+V27_PRIME_SHELL_RAMANUJAN_WEIGHTED_ENERGY
+  = PROVED_EXACT_FINITE_PLUS_SCHWARTZ_ASYMPTOTIC
+V27_ONE_PSI_WEIGHTED_CAUCHY_INTERFACE
+  = PROVED_EXACT_ABS_PSI_HALF_WEIGHT_ON_BOTH_FACTORS
+V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE
+  = SELECTED_OPEN_NEW_THEOREM
+V27_SIGNED_LOCAL_MAIN_ZERO_AXIS_AND_RESIDUAL_REASSEMBLY
+  = OPEN_NEW_THEOREM
+V27_TAGGED_VECTOR_MIXED_HB2_DETERMINANT_REASSEMBLY
+  = OPEN_NEW_THEOREM
+V27_POINTED_CRITICAL_SECTION_WHOLE_SHELL_DISCREPANCY
+  = OPEN_NEW_THEOREM_AFTER_EXACT_SINGLE_PARAMETER_FACTOR
+~~~
+
+这些 gates互不借 theorem credit。deterministic coefficient energy不产生 arithmetic
+`L2`；`13/4800`只是 residual theorem的 strict ceiling；pointed dynamics仍须 exact
+factor与独立 positive main。完整 theorem出现前，arithmetic advance仍为 `NO`。
+精确 proof、checker与 reopen gates见第 74 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -7058,7 +7227,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V26 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V27 current）
 
 ```text
 进入仓库：
@@ -7066,6 +7235,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_ramanujan_energy_and_pointed_block_gate.md、
+research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py、
 research/tpc-big-road/bridge_b_compensated_dilation_and_block_highway.md、
 research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py、
 research/tpc-big-road/bridge_b_corrected_fourier_factorable_emitter.md、
@@ -7086,7 +7257,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--73 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--74 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -7209,6 +7380,21 @@ V26_LOGISTIC_CRITICAL_SEED_PARAMETER_ASIP = SOURCE_BACKED_FIXED_HOLDER_OBSERVABL
 V26_ARITHMETIC_SEED_TO_CRITICAL_SECTION_INTERTWINER = ABSENT
 V26_GROWING_TRIANGULAR_CRITICAL_SECTION_THEOREM = ABSENT
 V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM = OPEN_NEW_THEOREM
+V27_PRIME_SHELL_HARD_WINDOW_RAMANUJAN_L2_IDENTITY = PROVED_EXACT_L0_FOR_N_LT_FIRST_DISTINCT_PRIME_PRODUCT
+V27_PRIME_SHELL_RAMANUJAN_WEIGHTED_ENERGY = PROVED_EXACT_FINITE_PLUS_SCHWARTZ_ASYMPTOTIC
+V27_EFFECTIVE_HORIZON_AS_HARD_SUPPORT = STOP_SCOPED_FALSE_SCHWARTZ_TAIL_AND_DOUBLE_DIVISOR_CROSS_TERMS
+V27_ONE_PSI_WEIGHTED_CAUCHY_INTERFACE = PROVED_EXACT_ABS_PSI_HALF_WEIGHT_ON_BOTH_FACTORS
+V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE = SELECTED_OPEN_NEW_THEOREM
+V27_FULL_LATTICE_SMOOTH_MAIN_POISSON_IDENTITY = PROVED_EXACT_DETERMINISTIC_INTERFACE
+V27_AUTOMATIC_SMOOTH_LOCAL_MAIN_ANNIHILATION_AFTER_CORRELATION_ZERO_SHIFT_DELETION = STOP_SCOPED_ZERO_AXIS_MINUS_F_OF_ZERO
+V27_SIGNED_LOCAL_MAIN_ZERO_AXIS_AND_RESIDUAL_REASSEMBLY = OPEN_NEW_THEOREM
+V27_MRT_MRSTT_TO_LITERAL_PRIME_RAMANUJAN_WEIGHTED_NUMERATOR = STOP_SCOPED_NO_COLLECTIVE_POWER_NORM
+V27_EXISTING_SHIFTED_CONVOLUTION_SPECTRAL_CORPUS_DIRECT_ATTACHMENT = STOP_SCOPED_NO_LITERAL_WHOLE_PHYSICAL_SCALAR
+V27_MIXED_HB2_ONE_COMMON_SOURCE_ARRAY = STOP_SCOPED_FINITE_SELECTOR_MINOR_ONE
+V27_TAGGED_VECTOR_MIXED_HB2_DETERMINANT_REASSEMBLY = OPEN_NEW_THEOREM
+V27_PARAMETER_AVERAGED_EXACT_SAME_ARITHMETIC_OUTPUT_CARRIER = STOP_SCOPED_TAUTOLOGICAL_MEAN_OR_NULL_GRAPH
+V27_STAGEWISE_TRANSVERSE_PARAMETER_RESELECTION = STOP_SCOPED_NO_COMMON_PARAMETER
+V27_POINTED_CRITICAL_SECTION_WHOLE_SHELL_DISCREPANCY = OPEN_NEW_THEOREM_AFTER_EXACT_SINGLE_PARAMETER_FACTOR
 BRIDGE_B_ALL_TRANSLATIONS_CURRENT_GATE = NO
 BRIDGE_B_APPROXIMATE_LOW_RANK_RETURN = OPEN_REQUIRES_WIDTH_AND_PHYSICAL_NORM
 BRIDGE_B_BRATTELI_AGING_CLOCK = OPEN_RESERVE_RANK_GROWTH_FALSIFIER
@@ -7333,18 +7519,21 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮首先执行第 73 节冻结的 compensated prime-dilation covariance；动力学路线
-只使用 whole-shell critical-section block transfer，mixed HB determinant compiler作为
-第二解析 construction。不再回到 V21 centered projector、V22 full-`q` Cauchy
+下一轮首先执行第 74 节冻结的 literal Ramanujan vector covariance与 signed
+local-main zero-axis reassembly；mixed HB只使用 tagged-vector whole theorem，动力学
+只使用 pointed single-parameter whole-shell discrepancy。不再回到 V21 centered
+projector、V22 full-`q` Cauchy
 completion、V24 尚未分型的 `ell_J` emitter或 V25 的 cellwise outer triangle：
 
 ```text
-V26_PRIME_SHELL_RAMANUJAN_COMPENSATED_DILATION_COVARIANCE
+V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE
+  = SELECTED_OPEN_NEW_THEOREM
+V27_SIGNED_LOCAL_MAIN_ZERO_AXIS_AND_RESIDUAL_REASSEMBLY
   = OPEN_NEW_THEOREM
-V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM
+V27_TAGGED_VECTOR_MIXED_HB2_DETERMINANT_REASSEMBLY
   = OPEN_NEW_THEOREM
-V26_MIXED_HB_DETERMINANT_COMPILER
-  = OPEN_NEW_THEOREM_RANK1
+V27_POINTED_CRITICAL_SECTION_WHOLE_SHELL_DISCREPANCY
+  = OPEN_NEW_THEOREM_AFTER_EXACT_SINGLE_PARAMETER_FACTOR
 ```
 
 V19已经完成 combined raw MASTER row到 primorial `V_k^vee`的 exact materialization；
@@ -7409,6 +7598,24 @@ whole-shell first/second moments或 summable pointed bad sets、uniform pointed 
 shell exactly-once reassembly。普通
 ergodicity、positive measure、a.e.-seed ASIP/DBC、a.e.-parameter typicality、word-only
 conjugacy或 single-stage fitting仍均不够。
+
+V27 已把 V26 joint bracket进一步压成 exact weighted Hilbert gate。任何 candidate
+必须证明全 physical difference range的单-`hatpsi` energy；`H=x^(21/32)`只是
+Schwartz-effective scale。不得把 `|h|>H`截掉，不得忽略 `h=qq'` 的 cross terms，
+也不得给两个 Cauchy factors各自一个完整 `hatpsi`。所需 fixed power严格是
+`theta<13/4800`，等号没有 margin。
+
+local main也不能按“Ramanujan mean zero”直接删除。删除 `h=0`后，uniformly smooth
+scaled main留下 `-F(0)`；这一项必须由原始 `+2,-1` prime/hybrid signed mains和
+physical zero-axis ledger精确支付。MRT/MRSTT的 almost-all/logarithmic inputs、Leung
+automorphic weighted-shift theorem、现有 spectral cells均不得改写成这一 collective
+physical norm。
+
+动力学侧不得再提出 positive-measure same-output carrier作为独立概率桥：若 exact
+output对参数恒定，normalized conditional parameter mean已经等于 arithmetic count；
+若 exact fiber为 null
+graph，a.e. theorem选不中。合法 reserve必须先固定一个具体 parameter/natural section，
+再对同一 growing whole-shell family证明 pointed discrepancy与独立 positive main。
 
 A1 的 `HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER`与 A2
 paired-Voronoi仍只作独立 reserves，不与 V23解析/dynamics gates拼接 theorem credit。
@@ -7503,16 +7710,19 @@ original `S_x` diagonal原样保留。V23又用 source-backed prime-shell Jutila
 在 full compiler losses之前保留 `179/38400` strict margin。V24进一步把 literal
 determinant精确展开到 Jutila main与 complete Farey/Kloosterman atoms；V25再修正
 source (2.2) 的 missing-`d` Fourier phase，并证明 full-ensemble zero cancellation与
-exact nonzero-shift emitter。故当前须直接处理
-`V25_RAMANUJAN_WEIGHTED_NONZERO_SHIFT_PHYSICAL_THEOREM`或
-`V25_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER`：保持 fixed `h0=2`、literal raw row、
-完整 `B_x(D)`、corrected `kappa(n)`、typed Fourier/rational indices、unit/nonunit/axes、
-hybrid zero mode、outer唯一绝对值与 exactly-once physical cover。不得使用 source的错误
-`e(-alpha m)` phase，不能把 `n=dm`与 `lambda_J^rat`混同，也不能从 exact cell直接认领
-BP saving。独立 factorable ensemble必须保持 common macro shift `(1,1,2)`、
-`q_aux=p_aux t_aux` multiplicity、自己的 `L_aux`与 unrestricted smooth `t_aux`；其
-`x^(-1/14)`仅是 Jutila error-factor upper bound，不能升级为 literal physical `L2`或 source
-`41/42` transfer。
+exact nonzero-shift emitter。V26把该 emitter压成 joint compensated prime dilation；
+V27又把其 coefficient side精确闭合到 weighted Hilbert geometry，并发现 smooth-main
+zero-axis。故当前须直接处理
+`V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE`与
+`V27_SIGNED_LOCAL_MAIN_ZERO_AXIS_AND_RESIDUAL_REASSEMBLY`：保持 fixed `h0=2`、
+literal raw row、完整 `B_x(D)`、corrected `kappa(n)`、typed Fourier/rational indices、
+unit/nonunit/axes、hybrid zero mode、outer唯一绝对值与 exactly-once physical cover。
+不得使用 source的错误 `e(-alpha m)` phase，不能把 `n=dm`与
+`lambda_J^rat`混同，不能把 effective `H`写成 hard support，也不能从 exact cell或
+single-phase log theorem直接认领 collective saving。独立 factorable ensemble必须保持
+common macro shift `(1,1,2)`、`q_aux=p_aux t_aux` multiplicity、自己的 `L_aux`与
+unrestricted smooth `t_aux`；其 `x^(-1/14)`仅是 Jutila error-factor upper bound，不能
+升级为 literal physical `L2`或 source `41/42` transfer。
 任何 a.e.结论、
 单向量 fit、word-only
 isomorphism或 abstract norm contraction都不算成功；任何动力学结论也不得逆向给 A1
@@ -7544,6 +7754,7 @@ python research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_literal_jutila_farey_atom_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -11425,6 +11636,385 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 74. 2026-08-08 V27：Ramanujan energy、zero-axis main 与 pointed block gate
+
+### 74.1 基线、任务与路线裁决
+
+本轮从已发布 V26 基线
+`73c62860000467fc9cf22cb8cc7d524193828769`启动，完整保留既有 untracked、
+TPC-105 `__pycache__`、TPC-63 build products与 `tmp/`。三条只读分身分别审核：
+
+1. compensated prime-dilation的 exact coefficient energy与 current-source attachment；
+2. mixed J1/J2/hybrid whole-object compiler与 signed-main reassembly；
+3. Logistic/Hénon whole-shell route的 prescribed-seed和 parameter quantifiers。
+
+主控另行完成 weighted Cauchy、zero-axis Poisson identity与 fail-closed finite checker。
+本节不编号，不创建 TPC-207、paper、PDF或 build。
+
+结论是：解析大路仍排第一，但 V26 的“square-root cancellation”必须精确拆成
+`coefficient geometry + physical residual energy + signed zero-axis main`；动力学
+parameter-average route出现 tautological/null-graph dichotomy，只保留 pointed reserve。
+
+### 74.2 Frozen scalar与 exact Ramanujan coefficient
+
+固定
+
+\[
+h_0=2,\quad x=2X,\quad I_x=(x/2,x]\cap\mathbb Z,\quad
+w_x^{(z)}(u)=\Lambda(u+2)-b_x^{(z)}(u),
+\tag{74.1}
+\]
+
+并完整保留 V19 ordered `+2,-1` raw coefficient `beta_x^raw`。对 `h!=0`，
+
+\[
+r_x(h)=\sum_{t,t+h\in I_x}
+\beta_x^{\rm raw}(t)w_x^{(z)}(t+h).
+\tag{74.2}
+\]
+
+取
+
+\[
+Q=x^{1/3},\quad H=x^{21/32},\quad
+\mathcal Q=\{q\ {\rm prime}:Q<q\le2Q\},
+\quad R=\#\mathcal Q,\quad L_{\rm pr}=\sum_{q\in\mathcal Q}(q-1),
+\tag{74.3}
+\]
+
+以及
+
+\[
+A_Q(h)=\sum_{q\in\mathcal Q}c_q(h)
+=-R+\sum_{\substack{q\in\mathcal Q\\q\mid h}}q.
+\tag{74.4}
+\]
+
+V25/V26 exact scalar为
+
+\[
+\boxed{
+E_x=-\frac1{L_{\rm pr}}\sum_{h\ne0}
+\widehat\psi_+(h/H)A_Q(h)r_x(h).}
+\tag{74.5}
+\]
+
+`h` 是 correlation shift，不是已经固定在 `w` 内的 physical gap `h0=2`。
+
+### 74.3 Hard-window energy与 Schwartz tail firewall
+
+设 `N` 小于两个不同 shell primes的最小乘积。每个非零 `|h|<=N`至多被一个
+shell prime整除，故
+
+\[
+\boxed{
+\sum_{0<|h|\le N}|A_Q(h)|^2
+=2\left[
+NR^2+\sum_{q\in\mathcal Q}
+\left\lfloor\frac Nq\right\rfloor(q^2-2qR)
+\right].}
+\tag{74.6}
+\]
+
+在 fixture `Qset={11,13},N=40` 上，右端与 direct enumeration均为 `1484`。
+把 `N`推进到 `143=11*13` 后，naive no-cross formula为 `5720`，direct energy为
+`6292`，精确缺口 `572=2*2*11*13`。
+
+令 `W(v)=|hatpsi_+(v)|`。全 tail identity含
+
+\[
+2\sum_{q<q'}qq'\sum_{k\ne0}W(qq'k/H),
+\tag{74.7}
+\]
+
+所以 `H`不是 hard support。利用 `Q^2/H=x^{1/96+o(1)}`与固定 Schwartz
+seminorms，
+
+\[
+\mathcal N_A^2:=
+\sum_{0<|h|<x/2}W(h/H)|A_Q(h)|^2
+=H\left(\int W\right)\left(\sum_q q-R^2\right)(1+o(1)),
+\tag{74.8}
+\]
+
+\[
+\mathcal N_A=x^{127/192+o(1)},\qquad
+\mathcal N_A/L_{\rm pr}=x^{-1/192+o(1)}.
+\tag{74.9}
+\]
+
+deterministic coefficient energy不产生 arithmetic `L2`。
+
+### 74.4 单-hatpsi Hilbert gate与 strict theta
+
+原式只有一个 `hatpsi`。令
+
+\[
+\mathcal N_r^2=
+\sum_{0<|h|<x/2}W(h/H)|r_x(h)|^2.
+\tag{74.10}
+\]
+
+把 `W^(1/2)`各放一侧并把 `hatpsi/|hatpsi|` phase保留在 residual factor，得到
+
+\[
+|E_x|\le \frac{\mathcal N_A}{L_{\rm pr}}\mathcal N_r.
+\tag{74.11}
+\]
+
+所以真正的 theorem contract是
+
+\[
+\boxed{
+\mathcal N_r\ll x^{1+\theta+o(1)}
+\quad\hbox{for one fixed}\quad
+\theta<\frac{13}{4800}.}
+\tag{74.12}
+\]
+
+此时 `E_x<<x^(191/192+theta+o(1))`，而
+
+\[
+\frac{399}{400}-\frac{191}{192}=\frac{13}{4800}.
+\tag{74.13}
+\]
+
+等号没有 strict margin。只证 `|h|<=H`、只证 density-one shifts、选择 good
+moduli，或在 Cauchy两侧各放一个完整 `hatpsi`，均不满足 (74.12)。
+
+### 74.5 Smooth main的精确 zero-axis项
+
+对 Schwartz `F`，Poisson逐 `q`给
+
+\[
+\begin{aligned}
+\sum_{h\ne0}A_Q(h)F(h/H)
+={}&-L_{\rm pr}F(0)\\
+&+H\sum_q\sum_{\ell\ne0}
+\left[\widehat F(\ell H/q)-\widehat F(\ell H)\right].
+\end{aligned}
+\tag{74.14}
+\]
+
+对 `s>=2`，第二行至多
+
+\[
+\frac{2\zeta(s)}{(2\pi)^s}\|F^{(s)}\|_1H^{1-s}
+\left(\sum_q q^s+R\right).
+\tag{74.15}
+\]
+
+因此 normalized pairing是
+
+\[
+-F(0)+O_s\!\left(\|F^{(s)}\|_1(Q/H)^{s-1}\right).
+\tag{74.16}
+\]
+
+完整 period fixture `{11,13}`满足
+`sum_(h=0..142)A_Q(h)=0`，但
+`sum_(h=1..142)A_Q(h)=-22=-L_pr`。所以删除 `h=0` 后 smooth main不自动
+消失。只有 source-backed decomposition同时证明 uniform smooth extension、
+`F(0)=0`或另付 diagonal，并支付 endpoints/tails，才可使用 (74.16) 的 power term。
+
+### 74.6 Primary-source quantitative screen
+
+MRT `arXiv:1707.01315v3` 的 shift range包含 `H=x^(21/32)`，但 proof-level
+energy只有
+
+\[
+\|r-M\|_2\ll x\sqrt H\log^{-A}x=x^{85/64}\log^{-A}x.
+\tag{74.17}
+\]
+
+与 (74.9) 配对的 numerator exponent为 `191/96`，高于 target
+`1997/1200`，差
+
+\[
+\frac{191}{96}-\frac{1997}{1200}=\frac{781}{2400}.
+\tag{74.18}
+\]
+
+MRSTT Higher Uniformity I/II 对 `Lambda-LambdaSharp`给真正的 all-interval或
+almost-all local Fourier/AP logarithmic input，但没有 outer `beta_raw`与 collective
+rational-frequency square function。逐 phase triangle的 power scale是 `223/96`。
+而且 `LambdaSharp` 的 cutoff/profile与 tensor-local `b_z`不相等。
+
+Leung `arXiv:2210.13081v2` 是 genuine arbitrary-shift-weight GL(3)xGL(2)
+architecture analogue，但 coefficient不匹配；其当前 raw exponent `167/96`比 target
+仍高 `181/2400`。Bettin--Chandee、Drappeau、DI/Kuznetsov、BP/Pascadi仍只是
+different-coefficient或 post-compiler local engines。
+
+因此现有 direct attachment均 STOP_SCOPED；合法 proof-level改造是进入 Higher
+Uniformity的 Type I/I2/II分解，在取 phase supremum或 triangle之前保留全部 prime
+rational phases、outer `beta_raw`与 `Lambda-b_z`，直接证明 (74.12)。
+
+### 74.7 Tagged mixed-HB reserve
+
+V26 的 finite selector minor已证明 ordered MASTER family不是一个 rank-one
+rough/smooth array。合法 whole theorem必须是 tagged direct sum，保留 J1/J2 slots、
+original mask、route、literal coefficient、prime/hybrid channel、`q` versus
+`lcm(q,d_rough)`、axes/nonunits、incidences、source mains/errors与 provenance。
+
+在任何 species-wise absolute value之前，必须证明
+
+\[
+\sum_\sigma\varepsilon_\sigma M_\sigma=M_{\rm physical},
+\tag{74.19}
+\]
+
+并把 (74.16) 的 zero-axis项放入同一 signed ledger。故 common scalar source array
+STOP；tagged vector mixed-HB theorem保持 OPEN。
+
+### 74.8 Parameter-averaging dynamics firewall
+
+V26 whole-shell Haar mean/variance与 summable bad mass保持正确，但不选择 arithmetic
+seed。设 \(0<\nu(C)<\infty\)，令
+\(\nu_C(A)=\nu(A\cap C)/\nu(C)\)，并令 parameter set `C`上的 critical-orbit
+block为 `S_j(a)`。
+
+若 exact carrier对所有 `a in C`给同一个 arithmetic count `B_j^arith`，则
+
+\[
+\int_C S_j(a)d\nu_C(a)=B_j^{\rm arith},\qquad
+\operatorname{Var}_{\nu_C}(S_j)=0.
+\tag{74.20}
+\]
+
+normalized conditional parameter mean已经是待证 arithmetic positivity。若 exact carrier只在一个
+parameter或 arithmetic phase的 null graph成立，a.e.-parameter ASIP/DBC又选不中。
+
+逐 stage transversality也不能修复：Logistic critical seed满足
+`x1(a)=a/4`、`x2(a)=a^2(4-a)/16`；`x1=3/4`选择 `a=3`，而
+`x2=49/128`有 transverse solution `a=7/2`，且 `a=3` 时 residual为 `23/128`。
+
+因此 surviving dynamics target必须先给一个 exact single-parameter natural-section
+factor，再直接证明
+
+\[
+|S_j(a^\dagger)-M_j(a^\dagger)|
+=o(x_j/\log^2x_j),\qquad
+M_j(a^\dagger)\gg x_j/\log^2x_j.
+\tag{74.21}
+\]
+
+ABP critical-seed ASIP仍是 source interface，但不能越过 (74.20)。
+
+### 74.9 Status atlas与路线顺序
+
+~~~text
+V27_PRIME_SHELL_HARD_WINDOW_RAMANUJAN_L2_IDENTITY
+  = PROVED_EXACT_L0_FOR_N_LT_FIRST_DISTINCT_PRIME_PRODUCT
+V27_PRIME_SHELL_RAMANUJAN_WEIGHTED_ENERGY
+  = PROVED_EXACT_FINITE_PLUS_SCHWARTZ_ASYMPTOTIC
+V27_EFFECTIVE_HORIZON_AS_HARD_SUPPORT
+  = STOP_SCOPED_FALSE_SCHWARTZ_TAIL_AND_DOUBLE_DIVISOR_CROSS_TERMS
+V27_ONE_PSI_WEIGHTED_CAUCHY_INTERFACE
+  = PROVED_EXACT_ABS_PSI_HALF_WEIGHT_ON_BOTH_FACTORS
+V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE
+  = SELECTED_OPEN_NEW_THEOREM
+V27_FULL_LATTICE_SMOOTH_MAIN_POISSON_IDENTITY
+  = PROVED_EXACT_DETERMINISTIC_INTERFACE
+V27_AUTOMATIC_SMOOTH_LOCAL_MAIN_ANNIHILATION_AFTER_CORRELATION_ZERO_SHIFT_DELETION
+  = STOP_SCOPED_ZERO_AXIS_MINUS_F_OF_ZERO
+V27_SIGNED_LOCAL_MAIN_ZERO_AXIS_AND_RESIDUAL_REASSEMBLY
+  = OPEN_NEW_THEOREM
+V27_MRSTT_ALL_INTERVAL_LAMBDA_MINUS_LAMBDASHARP_LINEAR_PHASE
+  = SOURCE_BACKED_LOCAL_LOG_INPUT
+V27_MRSTT_LAMBDASHARP_TO_TENSOR_LOCAL_BZ_TRANSFER
+  = OPEN_NEW_COMPARISON_THEOREM
+V27_MRT_MRSTT_TO_LITERAL_PRIME_RAMANUJAN_WEIGHTED_NUMERATOR
+  = STOP_SCOPED_NO_COLLECTIVE_POWER_NORM
+V27_LEUNG_ARBITRARY_WEIGHTED_SHIFT_ARCHITECTURE
+  = SOURCE_BACKED_AUTOMORPHIC_ANALOGUE_ONLY
+V27_EXISTING_SHIFTED_CONVOLUTION_SPECTRAL_CORPUS_DIRECT_ATTACHMENT
+  = STOP_SCOPED_NO_LITERAL_WHOLE_PHYSICAL_SCALAR
+V27_MIXED_HB2_ONE_COMMON_SOURCE_ARRAY
+  = STOP_SCOPED_FINITE_SELECTOR_MINOR_ONE
+V27_TAGGED_VECTOR_MIXED_HB2_DETERMINANT_REASSEMBLY
+  = OPEN_NEW_THEOREM
+V27_PARAMETER_AVERAGED_EXACT_SAME_ARITHMETIC_OUTPUT_CARRIER
+  = STOP_SCOPED_TAUTOLOGICAL_MEAN_OR_NULL_GRAPH
+V27_STAGEWISE_TRANSVERSE_PARAMETER_RESELECTION
+  = STOP_SCOPED_NO_COMMON_PARAMETER
+V27_POINTED_CRITICAL_SECTION_WHOLE_SHELL_DISCREPANCY
+  = OPEN_NEW_THEOREM_AFTER_EXACT_SINGLE_PARAMETER_FACTOR
+V27_HENON_POINTED_WHOLE_SHELL_SECTION_TRANSFER
+  = OPEN_ONLY_AFTER_EXACT_NATURAL_SECTION_DIAGRAM
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false
+~~~
+
+路线排序：literal vector covariance与signed zero-axis reassembly并列 analytic
+primary；tagged mixed-HB theorem为 analytic construction reserve；pointed
+single-parameter whole-shell theorem为 dynamics reserve。O161 parents、
+pair-native/H1、A1/A2与 global architecture继续独立 OPEN。
+
+### 74.10 Artifact、checker与 release 状态
+
+proof为
+`research/tpc-big-road/bridge_b_ramanujan_energy_and_pointed_block_gate.md`；
+checker为
+`research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py`。checker冻结
+27-field contract、31-row registry与 SHA-256
+
+~~~text
+dfce061f4324601dc57e6ae402fbda95b427622ae381355ddac9bdd23efb52bd.
+~~~
+
+83 contract、64 registry、20 source、15 dependency及16 semantic mutations必须
+全部拒绝；normal/optimized `--check`必须 stdout byte-identical。maximum claim为
+
+~~~text
+EXACT_PRIME_SHELL_WEIGHT_ENERGY_AND_ENDPOINT_REDUCTION_PLUS_SOURCE_CORPUS_STOPS_AND_POINTED_WHOLE_SHELL_ROUTE
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false.
+~~~
+
+~~~text
+V27_FINAL_RELEASE_QA = PASS
+V27_MATH_SOURCE_FORMULA_QA = PASS
+V27_CHECKER_ADVERSARIAL_QA = PASS
+V27_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+STARTUP_READ_ONLY_REGRESSION = 22/22 PASS
+SUPPLEMENTAL_TPC111_124_126_127 = 4/4 PASS
+CURRENT_BIG_ROAD_NORMAL_OPTIMIZED = 30/30 PASS
+CURRENT_BIG_ROAD_STDOUT_BYTE_IDENTITIES = 15/15 PASS
+V27_CONTRACT_FIELDS_MUTATIONS = 27/83
+V27_REGISTRY_ROWS_MUTATIONS = 31/64
+V27_SOURCE_LOCKS_MUTATIONS = 9/20
+V27_DEPENDENCY_LOCKS_MUTATIONS = 6/15
+V27_SEMANTIC_MUTATIONS = 16
+V27_RESULT_FIELDS = 41
+V27_TOTAL_MUTATION_LABELS = 198/198 EXECUTED
+V27_REGISTRY_SHA256 = dfce061f4324601dc57e6ae402fbda95b427622ae381355ddac9bdd23efb52bd
+V27_CHECKER_STDOUT_RAW_CRLF_SHA256 = 4a10de294b74ec08d34e0dfbc8e53435728d85640b943f7bd7ae869657e1bd6d
+V27_CHECKER_STDOUT_CANONICAL_LF_SHA256 = dfe4fe11dc821e79b9b949b5f86b83ce1112aefa58c2c33a6244fa6e35184f4f
+V27_PROOF_RAW_AND_CANONICAL_LF_SHA256 = 90f8cd26b9dd6b99a4f5083e80cdf13fc6ec2498081e269455f9b12726e66c5c
+V27_CHECKER_RAW_AND_CANONICAL_LF_SHA256 = 61bba5c8f860617e5e938b29a77d2ca85adddd4ce79f1b3e33811c31ab1d4580
+PRE_CLOSURE_HANDOFF_SHA256 = 13ab52fe80ec95d09437bf3dd2fb5ad33cdaf7c81c224f09fa55f5ce1ba38a33
+MARKDOWN_FENCES = HANDOFF_2860_COMPASS_238_README_388_PROOF_24_BALANCED
+EXPECTED_RELEASE_PATHS = 5
+CACHED_DIFF_PATHS = 0
+PROTECTED_UNTRACKED = 130
+PROTECTED_MANIFEST_SHA256 = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+PRE_RELEASE_BASE_HEAD = 73c62860000467fc9cf22cb8cc7d524193828769
+OBSERVED_ORIGIN_MAIN = 73c62860000467fc9cf22cb8cc7d524193828769
+OBSERVED_REMOTE_MAIN = 73c62860000467fc9cf22cb8cc7d524193828769
+REMOTE_DELTA_SCOPE = NONE_AT_PRECLOSURE
+NUMBERED_RELEASE = NO
+TPC207_CREATED = false
+NUMBERED_PAPER_PDF_BUILD_CREATED = NO
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+~~~
 
 ## 73. 2026-08-08 V26：compensated prime dilation 与 critical-section block highway
 
