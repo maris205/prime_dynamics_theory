@@ -1,0 +1,402 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/RH-381/result.schema.json",
+  "title": "RH-381 exact result ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "source_commits",
+    "source_locks",
+    "predecessor_checks",
+    "certificate",
+    "theorem",
+    "claim_boundary",
+    "gates"
+  ],
+  "properties": {
+    "status": {"const": "RH-381_prime_square_tail_rate_and_quadratic_memory_remainder"},
+    "source_commits": {"$ref": "#/$defs/sourceCommits"},
+    "source_locks": {"$ref": "#/$defs/sourceLocks"},
+    "predecessor_checks": {"$ref": "#/$defs/predecessorChecks"},
+    "certificate": {"$ref": "#/$defs/certificate"},
+    "theorem": {"$ref": "#/$defs/theorem"},
+    "claim_boundary": {"$ref": "#/$defs/claimBoundary"},
+    "gates": {"$ref": "#/$defs/gates"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "fraction": {"type": "string", "pattern": "^-?(?:0|[1-9][0-9]*)(?:/[1-9][0-9]*)?$"},
+    "decimal": {"type": "string", "pattern": "^-?[0-9]+(?:\\.[0-9]+)?(?:E[+-]?[0-9]+)?$"},
+    "decimalInterval": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/decimal"}
+    },
+    "euler": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inv_pi2", "kappa2"],
+      "properties": {
+        "inv_pi2": {"$ref": "#/$defs/fraction"},
+        "kappa2": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "sourceCommits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rh374_release", "rh379_release", "rh380_release", "rh_mvp2_archive"],
+      "properties": {
+        "rh374_release": {"const": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831"},
+        "rh379_release": {"const": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22"},
+        "rh380_release": {"const": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee"},
+        "rh_mvp2_archive": {"const": "c0aed13a34b8bbc53061aed23738660adcd3624c"}
+      }
+    },
+    "sourceLock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["group", "commit", "path", "sha256"],
+      "properties": {
+        "group": {"enum": ["rh374_release", "rh379_release", "rh380_release", "rh_mvp2_archive"]},
+        "commit": {"$ref": "#/$defs/commit"},
+        "path": {"type": "string", "pattern": "^prime_dynamics_theory/papers/.+"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "groupDigests": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rh374_release", "rh379_release", "rh380_release", "rh_mvp2_archive"],
+      "properties": {
+        "rh374_release": {"const": "1110169db1afe2bcb1242cd8284665be9681f955ff942b23908a9401635695ff"},
+        "rh379_release": {"const": "c029ccbe0b499a38f675292c2260cfde5d4b7aede6c6ddee9f87d2c816ecd848"},
+        "rh380_release": {"const": "3c488551cf9b8bdf6a4509b1f39af2119ea6b2ac401bda3cb63f87df38a0e751"},
+        "rh_mvp2_archive": {"const": "c22c0a9e4702c3bc615acfc19e564cbfd7d08a3bc845b28c659511065c05989b"}
+      }
+    },
+    "sourceLocks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "count", "entries", "group_digests", "all_source_digest",
+        "release_blob_identity_pass", "digest_contract_pass",
+        "mutable_root_files_excluded", "pass"
+      ],
+      "properties": {
+        "count": {"const": 25},
+        "entries": {
+          "type": "array", "minItems": 25, "maxItems": 25,
+          "uniqueItems": true, "items": {"$ref": "#/$defs/sourceLock"}
+        },
+        "group_digests": {"$ref": "#/$defs/groupDigests"},
+        "all_source_digest": {"const": "e4487f2f776cb42e202e9f0c01d4c6d922b0eeedfad7730df194eedb71bed314"},
+        "release_blob_identity_pass": {"const": true},
+        "digest_contract_pass": {"const": true},
+        "mutable_root_files_excluded": {"const": true},
+        "pass": {"const": true}
+      }
+    },
+    "predecessorChecks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rh374_status_pass", "rh379_status_pass", "rh380_status_pass",
+        "rh380_increment_anchor_pass", "rh380_fixed_clock_scope_pass",
+        "mvp2_gates_pass", "all_pass"
+      ],
+      "properties": {
+        "rh374_status_pass": {"const": true},
+        "rh379_status_pass": {"const": true},
+        "rh380_status_pass": {"const": true},
+        "rh380_increment_anchor_pass": {"const": true},
+        "rh380_fixed_clock_scope_pass": {"const": true},
+        "mvp2_gates_pass": {"const": true},
+        "all_pass": {"const": true}
+      }
+    },
+    "runCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["1", "2", "3", "4", "5", "6", "7", "8"],
+      "properties": {
+        "1": {"type": "integer", "minimum": 0},
+        "2": {"type": "integer", "minimum": 0},
+        "3": {"type": "integer", "minimum": 0},
+        "4": {"type": "integer", "minimum": 0},
+        "5": {"type": "integer", "minimum": 0},
+        "6": {"type": "integer", "minimum": 0},
+        "7": {"type": "integer", "minimum": 0},
+        "8": {"type": "integer", "minimum": 0}
+      }
+    },
+    "uRatios": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["4", "5", "6", "7", "8"],
+      "properties": {
+        "4": {"$ref": "#/$defs/fraction"},
+        "5": {"$ref": "#/$defs/fraction"},
+        "6": {"$ref": "#/$defs/fraction"},
+        "7": {"$ref": "#/$defs/fraction"},
+        "8": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "canonicalRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "A", "D", "E", "L", "M", "M_over_A", "O", "R", "U4_8",
+        "X_integer", "X_normalized", "a_next", "increment", "p_y", "y"
+      ],
+      "properties": {
+        "A": {"type": "integer", "minimum": 1},
+        "D": {"type": "integer", "minimum": 1},
+        "E": {"type": "integer", "minimum": 0},
+        "L": {"type": "integer", "minimum": 0},
+        "M": {"type": "integer", "minimum": 0},
+        "M_over_A": {"$ref": "#/$defs/fraction"},
+        "O": {"type": "integer", "minimum": 0},
+        "R": {"$ref": "#/$defs/runCounts"},
+        "U4_8": {"$ref": "#/$defs/uRatios"},
+        "X_integer": {"type": "integer", "minimum": 0},
+        "X_normalized": {"$ref": "#/$defs/fraction"},
+        "a_next": {"$ref": "#/$defs/fraction"},
+        "increment": {"$ref": "#/$defs/euler"},
+        "p_y": {"type": "integer", "minimum": 3},
+        "y": {"type": "integer", "minimum": 1, "maximum": 6}
+      }
+    },
+    "telescoping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["1_to_3", "1_to_6"],
+      "properties": {
+        "1_to_3": {"$ref": "#/$defs/euler"},
+        "1_to_6": {"$ref": "#/$defs/euler"}
+      }
+    },
+    "canonicalFixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rows", "telescoping"],
+      "properties": {
+        "rows": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {"$ref": "#/$defs/canonicalRow"}
+        },
+        "telescoping": {"$ref": "#/$defs/telescoping"}
+      }
+    },
+    "uIntervals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["2", "3", "4", "5", "6", "7", "8"],
+      "properties": {
+        "2": {"$ref": "#/$defs/decimalInterval"},
+        "3": {"$ref": "#/$defs/decimalInterval"},
+        "4": {"$ref": "#/$defs/decimalInterval"},
+        "5": {"$ref": "#/$defs/decimalInterval"},
+        "6": {"$ref": "#/$defs/decimalInterval"},
+        "7": {"$ref": "#/$defs/decimalInterval"},
+        "8": {"$ref": "#/$defs/decimalInterval"}
+      }
+    },
+    "intervalRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "y", "T", "gap_pi2", "residual_pi2", "residual_abs_upper",
+        "bound342_lower", "bound_margin", "bound_pass", "x_error_abs_upper",
+        "bound170_lower", "x_bound_pass"
+      ],
+      "properties": {
+        "y": {"enum": [1, 2, 3, 5, 10, 25]},
+        "T": {"$ref": "#/$defs/decimalInterval"},
+        "gap_pi2": {"$ref": "#/$defs/decimalInterval"},
+        "residual_pi2": {"$ref": "#/$defs/decimalInterval"},
+        "residual_abs_upper": {"$ref": "#/$defs/decimal"},
+        "bound342_lower": {"$ref": "#/$defs/decimal"},
+        "bound_margin": {"$ref": "#/$defs/decimal"},
+        "bound_pass": {"const": true},
+        "x_error_abs_upper": {"$ref": "#/$defs/decimal"},
+        "bound170_lower": {"$ref": "#/$defs/decimal"},
+        "x_bound_pass": {"const": true}
+      }
+    },
+    "intervalFixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cutoff", "precision", "prime_count", "last_prime", "prime_json_sha256",
+        "integer_tail_bound", "u_m", "C_infinity", "X_infinity", "rows", "all_pass"
+      ],
+      "properties": {
+        "cutoff": {"const": 100000},
+        "precision": {"const": 60},
+        "prime_count": {"const": 9592},
+        "last_prime": {"const": 99991},
+        "prime_json_sha256": {"const": "58d50e221dbd4709974e2282bdb5ff0b2f6758e34e8faa3e8387eb8ccca439d7"},
+        "integer_tail_bound": {"const": "200001/20000200000"},
+        "u_m": {"$ref": "#/$defs/uIntervals"},
+        "C_infinity": {"$ref": "#/$defs/decimalInterval"},
+        "X_infinity": {"$ref": "#/$defs/decimalInterval"},
+        "rows": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {"$ref": "#/$defs/intervalRow"}
+        },
+        "all_pass": {"const": true}
+      }
+    },
+    "tailIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "count", "T", "S", "current_identity_pass", "next_identity_pass",
+        "current_upper_pass", "next_upper_pass", "all_pass", "start_index", "end_index"
+      ],
+      "properties": {
+        "count": {"type": "integer", "minimum": 1},
+        "T": {"$ref": "#/$defs/fraction"},
+        "S": {"$ref": "#/$defs/fraction"},
+        "current_identity_pass": {"const": true},
+        "next_identity_pass": {"const": true},
+        "current_upper_pass": {"const": true},
+        "next_upper_pass": {"const": true},
+        "all_pass": {"const": true},
+        "start_index": {"type": "integer", "minimum": 0},
+        "end_index": {"type": "integer", "minimum": 1}
+      }
+    },
+    "xContributions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["4", "5", "6", "7", "8"],
+      "properties": {
+        "4": {"const": 6},
+        "5": {"const": 16},
+        "6": {"const": 30},
+        "7": {"const": 48},
+        "8": {"const": 70}
+      }
+    },
+    "coefficientLedger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x_contributions", "x_lipschitz", "main_remainder",
+        "memory_remainder", "total_remainder", "pass"
+      ],
+      "properties": {
+        "x_contributions": {"$ref": "#/$defs/xContributions"},
+        "x_lipschitz": {"const": 170},
+        "main_remainder": {"const": 340},
+        "memory_remainder": {"const": 2},
+        "total_remainder": {"const": 342},
+        "pass": {"const": true}
+      }
+    },
+    "certificateBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixed_finite_q_before_N_limit", "phasewise_c11_zero_only",
+        "finite_rows_are_reproduction_only", "no_PNT", "no_second_order_coefficient_claim",
+        "no_p_y_asymptotic", "no_growing_clock", "no_adaptive_capacity_convergence",
+        "gates_A_through_E"
+      ],
+      "properties": {
+        "fixed_finite_q_before_N_limit": {"const": true},
+        "phasewise_c11_zero_only": {"const": true},
+        "finite_rows_are_reproduction_only": {"const": true},
+        "no_PNT": {"const": true},
+        "no_second_order_coefficient_claim": {"const": true},
+        "no_p_y_asymptotic": {"const": true},
+        "no_growing_clock": {"const": true},
+        "no_adaptive_capacity_convergence": {"const": true},
+        "gates_A_through_E": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {"const": false}
+        }
+      }
+    },
+    "certificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_fixture", "canonical_fixture_bytes", "canonical_fixture_sha256",
+        "interval_fixture", "interval_fixture_bytes", "interval_fixture_sha256",
+        "numeric_plan_interval_sha256", "interval_digest_matches_independent_plan",
+        "exact_tail_identity_rows", "coefficient_ledger", "claim_boundary", "all_pass"
+      ],
+      "properties": {
+        "canonical_fixture": {"$ref": "#/$defs/canonicalFixture"},
+        "canonical_fixture_bytes": {"const": 2574},
+        "canonical_fixture_sha256": {"const": "d55fd48071eb5b88c054f3d34329f274f792f2bbd859b4ab98e31b5b7020beb8"},
+        "interval_fixture": {"$ref": "#/$defs/intervalFixture"},
+        "interval_fixture_bytes": {"const": 6851},
+        "interval_fixture_sha256": {"const": "e0342f871b1f952039da2b1025fa7598771b9fa089295f07cb60b11f70cee15c"},
+        "numeric_plan_interval_sha256": {"const": "e0342f871b1f952039da2b1025fa7598771b9fa089295f07cb60b11f70cee15c"},
+        "interval_digest_matches_independent_plan": {"const": true},
+        "exact_tail_identity_rows": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {"$ref": "#/$defs/tailIdentity"}
+        },
+        "coefficient_ledger": {"$ref": "#/$defs/coefficientLedger"},
+        "claim_boundary": {"$ref": "#/$defs/certificateBoundary"},
+        "all_pass": {"const": true}
+      }
+    },
+    "theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "factor_class", "tail", "x_limit", "x_bound", "h_bound", "memory_bound",
+        "tail_identities", "rate_bound", "ratio_limit", "prime_distribution_input"
+      ],
+      "properties": {
+        "factor_class": {"type": "string"},
+        "tail": {"type": "string"},
+        "x_limit": {"type": "string"},
+        "x_bound": {"type": "string"},
+        "h_bound": {"type": "string"},
+        "memory_bound": {"type": "string"},
+        "tail_identities": {"type": "string"},
+        "rate_bound": {"type": "string"},
+        "ratio_limit": {"type": "string"},
+        "prime_distribution_input": {"type": "string"}
+      }
+    },
+    "claimBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["route_a", "route_b", "first_unresolved_object", "notes"],
+      "properties": {
+        "route_a": {"const": "GO"},
+        "route_b": {"const": "STOP_SCOPED"},
+        "first_unresolved_object": {"type": "string"},
+        "notes": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string"}}
+      }
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "A_canonical_intrinsic_dynamical_spectral_determinant",
+        "B_time_oriented_scattering_or_unitary_completion",
+        "C_self_adjoint_generator_and_intrinsic_T_log_T",
+        "D_von_mangoldt_weighted_prime_power_traces",
+        "E_completed_zeta_divisor_equality"
+      ],
+      "properties": {
+        "A_canonical_intrinsic_dynamical_spectral_determinant": {"const": false},
+        "B_time_oriented_scattering_or_unitary_completion": {"const": false},
+        "C_self_adjoint_generator_and_intrinsic_T_log_T": {"const": false},
+        "D_von_mangoldt_weighted_prime_power_traces": {"const": false},
+        "E_completed_zeta_divisor_equality": {"const": false}
+      }
+    }
+  }
+}

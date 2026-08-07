@@ -1,0 +1,554 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\mob}{\mu}
+\newcommand{\Ecal}{\mathcal E}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\kap}{\kappa_2}
+
+\hypersetup{
+  pdftitle={Prime-Square Tail Rate and a Quadratic Memory Remainder},
+  pdfauthor={RH research program},
+  pdfsubject={First-order square-clock gap rate in a fixed phasewise Mobius factor class},
+  pdfkeywords={Mobius function, prime-square tail, Euler product, finite clocks, quantitative remainder}
+}
+
+\title{Prime-Square Tail Rate and a Quadratic Memory Remainder\\
+for Phasewise Chowla-Free Memory}
+\author{RH research program}
+\date{August 7, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Within the fixed finite-clock, universally distance-two-safe phasewise
+lag-two class whose interpolation coefficient $c_{11}(r)$ vanishes at every
+phase, RH-379 identifies an all-clock supremum $B_\infty$ and RH-380 proves
+that the square-clock values $G(q_y)$ increase strictly to it.  We determine
+the first-order rate of that convergence.  Put
+\[
+ a_{j+1}=\frac1{p_{j+1}^2-1},\qquad
+ T_y=\sum_{j\ge y}a_{j+1},
+\]
+where $3=p_1<p_2<\cdots$ are the odd primes, and let
+\[
+ e_m=\prod_{p\ \mathrm{odd}}\left(1-\frac m{p^2}\right),\qquad
+ X_\infty=\frac{2e_4-4e_5+6e_6-8e_7+10e_8}{e_1}.
+\]
+The run formula gives $X_\infty\ge6e_8/e_1>0$.  A factorwise Euler-tail
+comparison proves $|X_j-X_\infty|\le170T_j$.  The exact RH-379 product for
+$H_{j+1}$ gives
+\[
+ 0\le\frac4{\pi^2}-H_{j+1}
+ \le\frac4{\pi^2}T_{j+1},
+\]
+and the normalized memory statistic satisfies $0\le M_j/A_j\le1$.
+Telescoping the exact RH-380 increment and using two exact tail-sum
+identities yields, for every $y\ge1$,
+\[
+ \left|B_\infty-G(q_y)-\frac{2X_\infty}{\pi^2}T_y\right|
+ \le \frac{342}{\pi^2}T_y^2.
+\]
+Consequently
+\[
+ \frac{B_\infty-G(q_y)}{T_y}\longrightarrow
+ \frac{2X_\infty}{\pi^2}>0.
+\]
+No prime number theorem is used.  The result supplies neither a second-order
+coefficient nor a $p_y$-scale asymptotic, growing-clock theorem, adaptive
+capacity limit, operator, trace formula, zero identification, or implication
+for the Riemann hypothesis.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius function; prime-square Euler tail;
+square clocks; quantitative convergence; lag-two memory.
+
+\section{Frozen class and exact predecessor inputs}
+
+The theorem concerns exactly the class isolated in RH-379 and retained in
+RH-380 \cite{RH379,RH380}.  We begin by fixing its quantifiers.
+
+\begin{definition}[Fixed-clock phasewise class]
+Fix an integer $q\ge1$ before taking $N\to\infty$.  For every
+$r\in\Z/q\Z$, choose a table
+\[
+ f_r:\{-1,0,1\}^2\longrightarrow\{-1,+1\},\qquad
+ \epsilon_n=f_{n\bmod q}\bigl(\mob(n-2),\mob(n)\bigr).
+\]
+The family is universally distance-two-safe if no ternary input can give
+$\epsilon_n=\epsilon_{n+2}=+1$.  It is in the present class only when the
+coefficient $c_{11}(r)$ of $\mob(n-2)\mob(n)$ in the RH-379 interpolation is
+zero for every phase.  The exact fixed-clock optimum is denoted by $G(q)$.
+\end{definition}
+
+The phasewise condition is not cosmetic.  If $c_{11}(r)\ne0$, the limiting
+expansion contains a phase-weighted shift-two M\"obius correlation that is
+not controlled by the frozen sources.  Nothing below averages or cancels
+those missing terms.
+
+Let $3=p_1<p_2<\cdots$ be the odd primes and define the square-clock data
+\begin{equation}
+ P_y=\prod_{i\le y}p_i^2,\qquad q_y=4P_y,\qquad
+ A_y=\prod_{i\le y}(p_i^2-1),\qquad
+ D_y=\prod_{i\le y}(p_i^2-2).
+ \label{eq:square-data}
+\end{equation}
+RH-374 associates a cyclic odd squarefree-support word to $P_y$.  Its
+positive runs have lengths at most eight; write $R_\ell^{(y)}$ for the
+number of runs of length $\ell$ \cite{RH374}.  With
+\begin{equation}
+ E_m^{(y)}=\prod_{i\le y}\left(1-\frac m{p_i^2}\right),
+ \label{eq:finite-euler}
+\end{equation}
+the exact run formula is
+\begin{equation}
+ R_\ell^{(y)}=
+ \begin{cases}
+ P_y\bigl(E_\ell^{(y)}-2E_{\ell+1}^{(y)}+E_{\ell+2}^{(y)}\bigr),
+      &1\le\ell\le7,\\
+ P_yE_8^{(y)},&\ell=8.
+ \end{cases}
+ \label{eq:run-formula}
+\end{equation}
+Set
+\begin{align}
+ \Ecal_y&=R_2^{(y)}+R_4^{(y)}+R_6^{(y)}+R_8^{(y)},
+ &L_y&=2R_2^{(y)}+4R_4^{(y)}+6R_6^{(y)}+8R_8^{(y)},
+ \label{eq:EL}\\
+ M_y&=2R_3^{(y)}+4R_5^{(y)}+6R_7^{(y)}.
+ \label{eq:M}
+\end{align}
+RH-380 proves the exact increment
+\begin{equation}
+\begin{aligned}
+G(q_{j+1})-G(q_j)
+={}&\frac{2(L_j-2\Ecal_j)}{\pi^2A_j(p_{j+1}^2-1)}\\
+&+\frac{M_j}{A_j(p_{j+1}^2-1)}
+\left(\frac4{\pi^2}-H_{j+1}\right),
+\end{aligned}
+\label{eq:rh380-increment}
+\end{equation}
+where $H_j=\kap A_j/D_j$, and it records
+\begin{equation}
+ G(q_j)\longrightarrow B_\infty.
+ \label{eq:G-limit}
+\end{equation}
+The limit in \eqref{eq:G-limit} is the RH-379 all-clock supremum.  It is a
+cofinal limit after the fixed-clock $N$-limits, not a growing choice
+$q=q(N)$.
+
+\section{Prime-square tails and the normalized run statistic}
+
+For $j\ge1$, put
+\begin{equation}
+ a_{j+1}=\frac1{p_{j+1}^2-1},\qquad
+ T_j=\sum_{k\ge j}a_{k+1}.
+ \label{eq:T}
+\end{equation}
+The notation deliberately keeps the successor index visible: the increment
+from $q_j$ to $q_{j+1}$ carries $a_{j+1}$.
+
+For $1\le m\le8$, define
+\begin{equation}
+ e_m=\prod_{p\ \mathrm{odd}}\left(1-\frac m{p^2}\right),\qquad
+ U_m^{(j)}=\frac{E_m^{(j)}}{E_1^{(j)}},\qquad
+ u_m=\frac{e_m}{e_1}.
+ \label{eq:ratios}
+\end{equation}
+All factors in these products are positive.  Their convergence and
+positivity follow elementarily from convergence of $\sum_{n\ge3}n^{-2}$.
+The RH-374 normalization is $e_1=8/\pi^2$ \cite{RH374}.
+
+\begin{definition}[Normalized deterministic numerator]
+Define
+\begin{equation}
+ X_j=\frac{L_j-2\Ecal_j}{A_j},
+ \qquad
+ X_\infty=2u_4-4u_5+6u_6-8u_7+10u_8.
+ \label{eq:X-def}
+\end{equation}
+Equivalently,
+\[
+ X_\infty=
+ \frac{2e_4-4e_5+6e_6-8e_7+10e_8}{e_1}.
+\]
+\end{definition}
+
+\begin{lemma}[Exact finite Euler form]
+\label{lem:X-euler}
+For every $j\ge1$,
+\begin{equation}
+ X_j=2U_4^{(j)}-4U_5^{(j)}+6U_6^{(j)}
+      -8U_7^{(j)}+10U_8^{(j)}.
+ \label{eq:X-euler}
+\end{equation}
+Moreover,
+\begin{equation}
+ X_\infty\ge\frac{6e_8}{e_1}>0.
+ \label{eq:X-positive}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The run identity in RH-380 is
+\[
+ L_j-2\Ecal_j=2R_4^{(j)}+4R_6^{(j)}+6R_8^{(j)}.
+\]
+Since $A_j=P_jE_1^{(j)}$, substituting \eqref{eq:run-formula} gives
+\begin{align*}
+X_j
+&=2\frac{E_4^{(j)}-2E_5^{(j)}+E_6^{(j)}}{E_1^{(j)}}
+ +4\frac{E_6^{(j)}-2E_7^{(j)}+E_8^{(j)}}{E_1^{(j)}}
+ +6\frac{E_8^{(j)}}{E_1^{(j)}}\\
+&=2U_4^{(j)}-4U_5^{(j)}+6U_6^{(j)}
+ -8U_7^{(j)}+10U_8^{(j)}.
+\end{align*}
+Passing to convergent Euler products proves the formula for $X_\infty$.
+The two finite second differences in the first line are normalized run
+counts and hence nonnegative.  Their limits remain nonnegative.  Dropping
+them leaves $6e_8/e_1$, which is strictly positive.
+\end{proof}
+
+\begin{lemma}[Factorwise tail bound]
+\label{lem:X-bound}
+For every $j\ge1$,
+\begin{equation}
+                 \boxed{|X_j-X_\infty|\le170T_j.}
+ \label{eq:X-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $m\in\{4,5,6,7,8\}$, division of the Euler factors gives the exact
+tail identity
+\begin{equation}
+ \frac{u_m}{U_m^{(j)}}
+ =\prod_{p>p_j}\frac{1-m/p^2}{1-1/p^2}
+ =\prod_{p>p_j}\left(1-\frac{m-1}{p^2-1}\right).
+ \label{eq:ratio-tail}
+\end{equation}
+For numbers $0\le v_i\le1$, the elementary product union bound
+$0\le1-\prod_i(1-v_i)\le\sum_i v_i$ follows first for finite products and
+then by monotone passage to the limit.  Also $0<U_m^{(j)}\le1$.  Therefore
+\begin{equation}
+ 0\le U_m^{(j)}-u_m
+ \le (m-1)T_j.
+ \label{eq:one-ratio-bound}
+\end{equation}
+Apply the triangle inequality to \eqref{eq:X-euler}.  The coefficient
+ledger is
+\[
+ 2\cdot3+4\cdot4+6\cdot5+8\cdot6+10\cdot7
+ =6+16+30+48+70=170,
+\]
+which proves \eqref{eq:X-bound}.
+\end{proof}
+
+\section{The \texorpdfstring{$H$}{H} tail and the memory statistic}
+
+\begin{lemma}[Exact $H$ product and its tail loss]
+\label{lem:H-tail}
+For every $j\ge1$,
+\begin{equation}
+ \frac{H_{j+1}}{4/\pi^2}
+ =\prod_{p>p_{j+1}}\left(1-\frac1{p^2-1}\right),
+ \label{eq:H-product}
+\end{equation}
+and hence
+\begin{equation}
+ 0\le\frac4{\pi^2}-H_{j+1}
+ \le\frac4{\pi^2}T_{j+1}.
+ \label{eq:H-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The exact RH-379 product is $H_j=\kap A_j/D_j$, where
+$\kap=\prod_p(1-2/p^2)$.  Separating the prime $2$ and cancelling the
+finite odd-prime factors gives
+\[
+ H_{j+1}=\frac12 E_1^{(j+1)}
+ \prod_{p>p_{j+1}}\left(1-\frac2{p^2}\right).
+\]
+Because $4/\pi^2=e_1/2$, division yields
+\[
+ \frac{H_{j+1}}{4/\pi^2}
+ =\prod_{p>p_{j+1}}
+ \frac{1-2/p^2}{1-1/p^2}
+ =\prod_{p>p_{j+1}}\left(1-\frac1{p^2-1}\right).
+\]
+The same product union bound used in Lemma~\ref{lem:X-bound} now gives
+\eqref{eq:H-bound}.
+\end{proof}
+
+\begin{lemma}[Quadratic-memory normalization]
+\label{lem:M-bound}
+For every $j\ge1$,
+\begin{equation}
+                         0\le\frac{M_j}{A_j}\le1.
+ \label{eq:M-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Nonnegativity is immediate from \eqref{eq:M}.  An odd run of length
+$\ell$ contributes $\ell-1\le\ell$ to $M_j$.  Thus $M_j$ is at most the
+number of positive sites lying in odd runs, which is at most the total
+number of positive sites.  The latter is exactly
+$P_jE_1^{(j)}=A_j$.  This proves \eqref{eq:M-bound}.
+\end{proof}
+
+The word ``quadratic'' in the title refers to the contribution of this
+memory statistic to the final $T_y^2$ remainder.  It does not announce a
+quadratic coefficient expansion.
+
+\section{Two exact tail-sum identities}
+
+\begin{lemma}[Tail algebra]
+\label{lem:tail-algebra}
+For every $y\ge1$,
+\begin{align}
+ \sum_{j\ge y}a_{j+1}T_j
+ &=\frac12\left(T_y^2+\sum_{j\ge y}a_{j+1}^2\right)
+ \le T_y^2,
+ \label{eq:tail-current}\\
+ \sum_{j\ge y}a_{j+1}T_{j+1}
+ &=\frac12\left(T_y^2-\sum_{j\ge y}a_{j+1}^2\right)
+ \le\frac12T_y^2.
+ \label{eq:tail-next}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Since $T_{j+1}=T_j-a_{j+1}$,
+\begin{align*}
+ a_{j+1}T_j
+ &=\frac12\bigl(T_j^2-T_{j+1}^2+a_{j+1}^2\bigr),\\
+ a_{j+1}T_{j+1}
+ &=\frac12\bigl(T_j^2-T_{j+1}^2-a_{j+1}^2\bigr).
+\end{align*}
+Sum these identities from $j=y$ to a finite endpoint and then let that
+endpoint tend to infinity.  The tails tend to zero because
+\begin{equation}
+ 0<T_y\le\sum_{n>p_y}\frac1{n^2-1}
+ =\frac12\left(\frac1{p_y}+\frac1{p_y+1}\right)\longrightarrow0.
+ \label{eq:T-zero}
+\end{equation}
+Here positivity holds for every finite $y$ because there are infinitely
+many odd primes.  Finally,
+$\sum a_{j+1}^2\le(\sum a_{j+1})^2=T_y^2$, which gives both displayed
+inequalities.  No estimate for the distribution of primes is involved.
+\end{proof}
+
+\section{First-order gap rate}
+
+\begin{proposition}[Exact infinite increment sum]
+\label{prop:infinite-sum}
+For every $y\ge1$,
+\begin{equation}
+\begin{aligned}
+B_\infty-G(q_y)
+=\sum_{j\ge y}\biggl[
+ &\frac{2X_j}{\pi^2}a_{j+1}\\
+ &+\frac{M_j}{A_j}a_{j+1}
+ \left(\frac4{\pi^2}-H_{j+1}\right)
+\biggr].
+\end{aligned}
+\label{eq:infinite-sum}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For a finite $K>y$, telescope the exact RH-380 increment
+\eqref{eq:rh380-increment} from $j=y$ through $K-1$ and use
+$X_j=(L_j-2\Ecal_j)/A_j$ and
+$a_{j+1}=(p_{j+1}^2-1)^{-1}$.  Then let $K\to\infty$ and invoke the
+already proved cofinal limit \eqref{eq:G-limit}.  This is a limit of finite
+telescoping identities after all fixed-clock $N$-limits have been taken;
+there is no exchange of an $N$-limit with a $j$-limit.
+\end{proof}
+
+\begin{theorem}[Prime-square tail rate]
+\label{thm:rate}
+For every $y\ge1$,
+\begin{equation}
+ \boxed{
+ \left|B_\infty-G(q_y)-\frac{2X_\infty}{\pi^2}T_y\right|
+ \le\frac{342}{\pi^2}T_y^2.}
+ \label{eq:rate-bound}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ \frac{B_\infty-G(q_y)}{T_y}
+ \longrightarrow\frac{2X_\infty}{\pi^2}>0.}
+ \label{eq:ratio-limit}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Subtract $(2X_\infty/\pi^2)T_y$ from
+\eqref{eq:infinite-sum}.  Since $T_y=\sum_{j\ge y}a_{j+1}$, the first
+remainder is bounded using Lemma~\ref{lem:X-bound} and
+\eqref{eq:tail-current}:
+\begin{align}
+\left|\sum_{j\ge y}\frac{2(X_j-X_\infty)}{\pi^2}a_{j+1}\right|
+&\le\frac{340}{\pi^2}\sum_{j\ge y}a_{j+1}T_j
+\le\frac{340}{\pi^2}T_y^2.
+\label{eq:X-remainder}
+\end{align}
+The memory summand is nonnegative.  Lemmas~\ref{lem:H-tail} and
+\ref{lem:M-bound}, followed by \eqref{eq:tail-next}, give
+\begin{align}
+0&\le\sum_{j\ge y}\frac{M_j}{A_j}a_{j+1}
+ \left(\frac4{\pi^2}-H_{j+1}\right)\\
+&\le\frac4{\pi^2}\sum_{j\ge y}a_{j+1}T_{j+1}
+\le\frac2{\pi^2}T_y^2.
+\label{eq:M-remainder}
+\end{align}
+Adding \eqref{eq:X-remainder} and \eqref{eq:M-remainder} proves
+\eqref{eq:rate-bound}; the ledger is $340+2=342$.
+
+For each finite $y$, $T_y>0$ by \eqref{eq:T-zero}.  Divide
+\eqref{eq:rate-bound} by $T_y$, then use $T_y\to0$ from the same elementary
+integer-square comparison.  Equation \eqref{eq:ratio-limit} follows, and
+its limit is positive by \eqref{eq:X-positive}.
+\end{proof}
+
+\begin{remark}[No prime number theorem]
+The scale in Theorem~\ref{thm:rate} is the intrinsic prime-square tail
+$T_y$.  We never replace it by a function of $p_y$.  The only tail
+comparison is \eqref{eq:T-zero}, obtained by telescoping the integer series
+$(n^2-1)^{-1}$.  Thus the proof uses neither the prime number theorem nor a
+weaker prime-counting asymptotic.
+\end{remark}
+
+\section{Exact artifact and finite diagnostics}
+
+The standard-library artifact has two distinct layers.  First, exact
+\texttt{Fraction} arithmetic regenerates the run statistics, normalized
+Euler ratios, RH-380 increments, and finite versions of both identities in
+Lemma~\ref{lem:tail-algebra}.  The independently frozen six-row fixture has
+canonical SHA-256
+\begin{center}
+\texttt{d55fd48071eb5b88c054f3d34329f274f792f2bbd859b4ab98e31b5b7020beb8}.
+\end{center}
+Second, directed decimal arithmetic at precision $60$ is converted to
+exact rational endpoints.  It enumerates the $9592$ primes through
+$100000$ and bounds every omitted prime by the exact integer tail
+\begin{equation}
+ \sum_{n>100000}\frac1{n^2-1}
+ =\frac{200001}{20000200000}.
+ \label{eq:numeric-tail}
+\end{equation}
+All comparisons fail closed if outward upper and lower endpoints overlap in
+the wrong order.  The rows $y=1,2,3,5,10,25$ reproduce the $170$ and $342$
+bounds; they do not prove the all-$y$ theorem by fitting.
+
+For orientation only, the directed product layer encloses
+\[
+ 0.46967971561917<X_\infty<0.46993774873491.
+\]
+These decimals are a finite diagnostic.  Positivity in the theorem is the
+exact run argument \eqref{eq:X-positive}, not this numerical enclosure.
+
+The release builder locks exactly $25$ immutable inputs: seven RH-374
+files, eight RH-379 files, eight RH-380 files, and two RH-MVP2 archive
+summaries.  It checks both the live SHA-256 and byte identity with each
+declared release commit.  Mutable project instructions and handoff state
+are deliberately excluded.  The result ledger has a recursively closed
+Draft 2020-12 schema, and archive replay rejects missing members, unsafe
+paths, duplicate JSON keys, hash drift, release-commit rebinding, or a
+semantic PDF that differs from \texttt{main.pdf}.
+
+Reproduction from this directory is
+\begin{verbatim}
+make result
+make test
+make pdf
+make archive
+\end{verbatim}
+
+\section{Scope, limitations, and next edge}
+
+The theorem closes one precise question: it identifies the first-order
+prime-square-tail scale of the square-clock nonattainment gap and proves an
+explicit quadratic remainder inside the frozen RH-379 class.  Its limits
+are equally precise.
+
+\begin{itemize}[leftmargin=2em]
+\item The theorem is phasewise $c_{11}=0$.  It does not cover unrestricted
+      lag-two tables or assume the missing phase-weighted shift-two
+      correlation cancellation.
+\item The constant $342$ is explicit and uniform for $y\ge1$, but no
+      optimality is claimed for either $170$ or $342$.
+\item No exact second-order coefficient is identified.  In particular,
+      the theorem does not collapse all quadratic information to one
+      multiple of $T_y^2$.
+\item No asymptotic for $T_y$ in terms of $p_y$, no growing clock $q(N)$,
+      and no adaptive-capacity convergence is proved.
+\item Finite product rows and decimal enclosures are reproduction only;
+      they are not finite-order regression promoted to an all-order claim.
+\item No canonical intrinsic dynamical spectral determinant,
+      time-oriented scattering completion, self-adjoint generator,
+      von Mangoldt prime-power trace identity, or completed-zeta divisor
+      equality is constructed.  Gates A--E remain false/open
+      \cite{RHMVP2}.
+\item There is no Hilbert--P\'olya operator, no identification of Riemann
+      zeros, and no implication for the Riemann hypothesis.
+\end{itemize}
+
+The immediate within-class next edge is a genuinely second-order analysis
+of the Euler tails and of $M_j/A_j$.  Such a successor must retain every
+independent quadratic tail scale that survives the exact algebra and prove
+an all-order remainder; this paper does not state its coefficient.  The
+first class-enlargement trigger remains a theorem for the required
+phase-weighted shift-two M\"obius correlations.
+
+\section*{Declarations}
+
+\paragraph{Data and code availability.}
+All theorem inputs, exact source code, tests, closed result schema, source
+locks, and archive manifests are contained in the repository paper
+directory.  No private dataset is used.
+
+\paragraph{Author contributions.}
+The RH research program performed conceptualization, formal analysis,
+software construction, verification, artifact curation, adversarial review,
+and manuscript preparation.
+
+\paragraph{Funding.}
+No external funding is declared.
+
+\paragraph{Competing interests.}
+No competing interests are declared.
+
+\paragraph{Ethics and human participants.}
+This mathematical and computational study uses no human participants,
+animals, or personal data; ethics approval and consent are not applicable.
+
+\paragraph{AI assistance disclosure.}
+AI-assisted tools supported source triage, symbolic checking, deterministic
+artifact generation, drafting, and adversarial review.  Every released
+claim is constrained by immutable repository sources and reproducible
+verification artifacts; responsibility for the scoped mathematical
+statements remains with the research program.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
