@@ -2,13 +2,13 @@
 
 Status date: 2026-08-07
 
-Current completed endpoint: RH-375
+Current completed endpoint: RH-376
 
-Completed research batch: RH-352 through RH-375
+Completed research batch: RH-352 through RH-376
 
-Post-four-volume independent theorem edges: RH-362 through RH-375
+Post-four-volume independent theorem edges: RH-362 through RH-376
 
-Latest route verdict: RH-375 Route A `GO`; Route B `STOP_SCOPED`
+Latest route verdict: RH-376 Route A `GO`; Route B `STOP_SCOPED`
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -42,6 +42,9 @@ RH-374 integration commit:
 
 RH-375 integration commit:
 `071fed1b2a5d8488b9d2e35a99a753953b233584`.
+
+RH-376 integration commit:
+`0cf6179084bc8151318bb8f0955e529c12c0661a`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -102,6 +105,11 @@ Read completely:
 - `papers/RH-375-all-clock-one-site-mobius-capacity-supremum/THEOREM_LEDGER.md`
 - `papers/RH-375-all-clock-one-site-mobius-capacity-supremum/results/result.json`
 - `papers/RH-375-all-clock-one-site-mobius-capacity-supremum/main.pdf`
+- `papers/RH-376-shift-two-chowla-run-density-boundary/README.md`
+- `papers/RH-376-shift-two-chowla-run-density-boundary/UPDATED_ROADMAP.md`
+- `papers/RH-376-shift-two-chowla-run-density-boundary/THEOREM_LEDGER.md`
+- `papers/RH-376-shift-two-chowla-run-density-boundary/results/result.json`
+- `papers/RH-376-shift-two-chowla-run-density-boundary/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -127,7 +135,8 @@ fold-compatible Ulam/spike input, RH-371 as the exact eight-run/cyclic-pair
 capacity input, RH-372 as the bounded graph/transducer input, RH-373 as the
 composite-clock capacity-floor input, RH-374 as the square-clock
 Euler-product family input, RH-375 as the all-finite-clock one-site supremum
-input, and RH-361 as the immediate endpoint of the still-open original
+input, RH-376 as the shift-two Chowla/run-density boundary input, and RH-361
+as the immediate endpoint of the still-open original
 physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
@@ -138,11 +147,13 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-375 is now integrated and does not automatically activate RH-376. The next
-breadth-first source lock must test the exact Chowla-hardness theorem for the
-RH-371 two-site run interval, the higher run-correlation hierarchy, and
-restricted memory-dependent arithmetic laws against the completed
-RH-1--RH-375 corpus.  The geometrically selected non-Parry measure route is
+RH-376 is now integrated.  It closes the exact shift-two interval-density
+hardness theorem but does not prove shift-two Chowla or the RH-371 capacity
+limit.  The next activated Route-A paper is the independently source-locked
+and proof-audited family-level Boolean run/correlation hierarchy with its
+two-envelope capacity reduction.  Restricted memory-dependent arithmetic
+laws remain a later source-lock target against the completed RH-1--RH-376
+corpus.  The geometrically selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
 is `STOP_SCOPED` until a fixed mesh-independent norm, a
@@ -1096,7 +1107,63 @@ uniform-in-clock Davenport theorem.  Route A is `GO`; Route B is
 ordinary capacity convergence, intrinsic operators/traces/zeros, and Gates
 A--E remain open/false.
 
-## 4. Compact conclusions from RH-352 through RH-375
+### 3.15 RH-376 shift-two Chowla/run-density boundary
+
+RH-376 isolates the first correlation-hard term in the RH-371 run hierarchy.
+For `sigma in {-1,+1}`, `C_(sigma,2)(N)` is the number of overlapping odd
+starts `1<=n<=N-2` with `mu(n)=mu(n+2)=sigma`; it is not a maximal
+exact-length-two run count.  With every sum taken over this common endpoint,
+write
+
+```text
+Q_2 = sum mu(n)^2 mu(n+2)^2,
+U_2 = sum mu(n)   mu(n+2)^2,
+V_2 = sum mu(n)^2 mu(n+2),
+D_2 = sum mu(n)   mu(n+2).
+```
+
+Every even start makes one of `n,n+2` divisible by four, so all four
+monomials and both signed indicators vanish.  The pointwise Boolean
+expansion therefore gives, for every prefix,
+
+```text
+4C_(sigma,2) = Q_2 + sigma U_2 + sigma V_2 + D_2.
+```
+
+The squarefree-pair sieve has two distinct forbidden classes modulo every
+`p^2`, including `p=2`, and hence
+
+```text
+Q_2/N -> kappa_2 = product_p (1-2/p^2).
+```
+
+Expanding one squarefree mask, fixing a divisor cutoff `R`, and applying
+Davenport cancellation only in the finitely many fixed progressions modulo
+`d^2` proves `U_2,V_2=o(N)`.  The tail is
+`O(N/R+sqrt(N))`; the order is first `N->infinity` at fixed `R`, then
+`R->infinity`.  No growing-modulus theorem is used.  Consequently
+
+```text
+4C_(sigma,2)(N)/N = kappa_2 + D_2(N)/N + o(1).
+```
+
+The frozen Teravainen--Walker logarithmic affine theorem applies to the fixed
+forms `m+1,m+3`, determinant two, and zero twist.  If `D_2(N)/N` has a
+Cesaro limit, one-way Abel summation gives the same logarithmic limit; the
+source theorem forces it to be zero.  Thus, for either one fixed sign,
+
+```text
+C_(sigma,2)(N)/N converges
+    iff D_2(N)=o(N),
+```
+
+and then both signed interval densities equal `kappa_2/4`.  This is an exact
+hardness equivalence, not a proof of shift-two Chowla and not a
+nonconvergence theorem.  It does not settle any `k>=3` run density, the
+alternating eight-run envelope, or `K_N/N`.  Route A is `GO`; Route B is
+`STOP_SCOPED`; Gates A--E remain false/open.
+
+## 4. Compact conclusions from RH-352 through RH-376
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -1199,6 +1266,14 @@ A--E remain open/false.
   `sup_(q finite)F(q)=B_infinity`.  This closes only the universally safe
   one-site class; memory, growing clocks, adaptive capacity convergence,
   intrinsic operators/traces/zeros, and Gates A--E remain open/false.
+- **RH-376:** Exact common-endpoint Boolean reduction of each signed
+  two-site run interval to a squarefree-pair term, two one-sign masked terms,
+  and the raw shift-two correlation.  The first three terms are unconditional;
+  a frozen logarithmic affine theorem plus one-way Abel summation makes
+  existence of either interval density equivalent to ordinary shift-two
+  Cesaro Chowla, with value `kappa_2/4`.  The theorem proves neither Chowla
+  nor nonconvergence, does not settle the eight-run capacity envelope, and
+  closes no Gate.
 
 ## 5. Route firewall and reopening triggers
 
@@ -1284,6 +1359,16 @@ Do not:
 - turn the RH-375 prescribed factors into intrinsic dynamics, an operator,
   determinant, prime-power trace, zero model, Hilbert--Polya construction, or
   RH proof;
+- call `C_(sigma,2)` a maximal exact-length-two run count, or change the
+  common endpoint independently in its four-term identity;
+- read the RH-376 logarithmic affine theorem as an unconditional natural
+  shift-two Chowla theorem, reverse the one-way Abel implication, or use a
+  divisor modulus growing with `N`;
+- infer convergence or nonconvergence of either signed interval density, the
+  eight-run envelope, or `K_N/N` from the RH-376 equivalence or finite rows;
+- promote the RH-376 scalar arithmetic interval count to an intrinsic
+  dynamical observable, operator trace, prime-power ledger, zero model, or
+  Gate result;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -1299,7 +1384,7 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-375. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-376. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
 declared periodic/typical/distance-two capacity audit, RH-373 closes the
 declared fixed composite-clock phase-selector floor route, and RH-374 closes
@@ -1315,48 +1400,43 @@ obstruction; it does not close the capacity-limit route. RH-372 closes only
 the fixed-resource graph/transducer certificate route. RH-373 closes only the
 explicit q=180 arithmetic lower certificate. RH-374 closes only the declared
 square-clock one-site family. RH-375 closes only the declared all-finite-clock
-one-site class. For RH-376 and later,
+one-site class. RH-376 closes only the declared shift-two interval-density
+hardness theorem. For RH-377 and later,
 the shortest exact candidates are:
 
-1. The source-locked RH-376 candidate: an exact scoped Chowla-hardness theorem
-   for the RH-371 two-site interval count.  With a common endpoint,
-   `4C_(sigma,2)=Q_2+sigma U_2+sigma V_2+D_2`; the squarefree-pair term has
-   density `product_p(1-2/p^2)` and the one-sign masked terms are `o(N)`.
-   Repository logarithmic Chowla then makes existence of one
-   `C_(sigma,2)/N` limit equivalent to ordinary fixed-shift-two Cesaro Chowla
-   and forces value `product_p(1-2/p^2)/4`.  Independent proof and numeric
-   audits are `GO`.  This is not nonconvergence of a run density, the
-   eight-run envelope, or the capacity limit.
-2. The family-level run/correlation hierarchy source lock: exact Boolean
-   cylinder expansion for all `1<=k<=8`, thirteen parity aggregates for all
-   individual run densities, and a sharper two-envelope capacity reduction.
-   This candidate follows RH-376 and requires an independent proof audit;
-   naked distinct-shift Chowla must not be substituted for the required
-   mixed-exponent correlations.
-3. A genuine higher-order Möbius correlation theorem for a restricted
+1. The independently audited RH-377 candidate: the exact Boolean cylinder
+   transform for all `1<=k<=8`, the thirteen aggregate parity channels
+   governing simultaneous existence of all signed run densities, and the
+   sharper two-envelope capacity criterion
+   `K_N/N=2r_0+2(U_N+|V_N|)/N+o(1)`.  The `466 -> 13` rank statement is only
+   a formal mixed-moment block-sum map, not an arithmetic minimal-dimension
+   theorem.  A stationary ternary countermodel may show that naked raw
+   correlations do not algebraically determine masked moments, but it is not
+   a Möbius model.  Independent source and proof audits are `GO`.
+2. A genuine higher-order Möbius correlation theorem for a restricted
    memory-dependent transducer class, or a proved scoped negative identifying
    the first missing correlation.
-4. A nonadaptive geometrically selected measure theorem.  The 2026-08-07
+3. A nonadaptive geometrically selected measure theorem.  The 2026-08-07
    source lock is `STOP_SCOPED`: RH-369's non-Parry `P_t` is externally
    selected, while the weighted-Hénon and cyclic-Ulam sources do not prove a
    fixed non-Parry equilibrium state with the required mixing theorem.
-5. A new fractional/tower-adapted strong-space projector/resolvent theorem
+4. A new fractional/tower-adapted strong-space projector/resolvent theorem
    that genuinely connects the RH-367 finite-Ulam family to a declared
    continuum operator.  The 2026-08-07 source lock is `STOP_SCOPED` until a
    fixed mesh-independent norm, uniform projection/lift estimate, and common
    contour around `-1` are explicitly proved.
-6. A genuine composite-order primitive-divisor upgrade, such as an eventual
+5. A genuine composite-order primitive-divisor upgrade, such as an eventual
    Zsigmondy theorem or a `p`-adic lifting bound strong enough to force new
    primes. No such theorem is present in the locked source.
-7. A sharp return-rank multiplicity theorem strong enough to determine the
+6. A sharp return-rank multiplicity theorem strong enough to determine the
    exact origin radius or a genuine boundary law for `Z_0`. RH-365 supplies
    only the bracket `[2^(-1/2),1]`.
-8. A quantitative finite-entropy-data theorem that certifies or excludes a
+7. A quantitative finite-entropy-data theorem that certifies or excludes a
    finite prime/rank prefix without promoting numerical conditioning to exact
    infinite recovery.
-9. An intrinsic pressure/transfer/groupoid operator producing the entropy
+8. An intrinsic pressure/transfer/groupoid operator producing the entropy
    tower without inserting every modulus by hand.
-10. One of the original physical triggers 1--4.
+9. One of the original physical triggers 1--4.
 
 RH-364 closes the declared weighted-H\'enon prime-copy audit. It must still be
 called a prime lift or copy, not a finite-field reduction, Hasse--Weil local
@@ -1439,6 +1519,15 @@ saturation proof depends on the square-clock support and cannot be repackaged
 as a general cover-MWIS law.  A successor must address the RH-371 run
 correlations, a genuine memory-dependent arithmetic theorem, a geometrically
 selected measure, the blocked Ulam bridge, or another source-backed edge.
+
+RH-376 closes only the shift-two signed interval-density boundary.  Its
+common-endpoint identity and three unconditional terms reduce existence of
+either density to ordinary shift-two Cesaro Chowla, but do not prove or
+disprove that open statement.  The logarithmic input is used only after a
+natural limit is assumed; it cannot be repackaged as unconditional natural
+cancellation.  A successor must address the mixed-exponent hierarchy, its
+two-envelope capacity combination, a genuine memory theorem, or another
+source-backed edge.
 
 Even `D_(4k)(R)->0` would transfer only named moment/budget laws. Root, rank,
 spectral-submultiset, and canonical determinant identification remain
@@ -1944,10 +2033,40 @@ The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  RH-375 closes
 the all-finite-clock universally safe one-site class exactly at the
 nonattained supremum `B_infinity`.  It does not close memory-dependent
 factors, a growing-clock regime, the RH-371 run envelope, or the adaptive
-capacity limit.  The next independently audited Route-A candidate is the
-RH-376 two-site run/shift-two Chowla-hardness theorem; the geometrically
-selected non-Parry measure and deterministic strong-space Ulam routes remain
+capacity limit.  At the RH-375 endpoint, the next independently audited
+Route-A candidate was the RH-376 two-site run/shift-two Chowla-hardness
+theorem, now integrated in Section 6.13.  The geometrically selected
+non-Parry measure and deterministic strong-space Ulam routes remain
 `STOP_SCOPED`.  No Gate A--E conclusion is changed.
+
+### 6.13 RH-376 source lock, shift-two boundary, and route decision (2026-08-07)
+
+RH-376 freezes thirteen repository files and five Git releases:
+
+```text
+RH-371 release              241b78a89ccbc0bad96d9ef20ee9256d61b4eaca
+RH-374 release              2bb3baa6a09491c2d679d10c0dbcd39587d1f831
+RH-375 release              071fed1b2a5d8488b9d2e35a99a753953b233584
+TPC-193 release             14d7a1dfd82b0575b43a65c8254fce3cf53acda5
+RH-MVP2 archive             c0aed13a34b8bbc53061aed23738660adcd3624c
+```
+
+Independent proof and numerical audits reconstructed the common-endpoint
+identity, checked that all even starts vanish, and verified the squarefree
+normalization including the `p=2` local factor.  They also checked the
+cutoff order in the one-sign terms, the exact Teravainen--Walker forms
+`m+1,m+3` with determinant two, the bounded reindexing error, and the
+one-way Abel implication.  No logarithmic-to-natural promotion occurs.
+
+The exact executable audit checks `1048574` pointwise identities,
+`1048576` cumulative prefixes, `524287` even starts, and `1024` RH-371
+endpoints (`2048` sign cells).  All checks pass.  The route verdict is
+`Route A=GO` and `Route B=STOP_SCOPED`.  The next Route-A candidate is the
+independently audited RH-377 mixed-exponent run hierarchy and two-envelope
+capacity reduction.  Its `466 -> 13` statement must remain a formal
+block-sum rank calculation, and its stationary ternary witness must not be
+called a Möbius counterexample.  The first unresolved arithmetic object is
+the convergence of `(U_N+|V_N|)/N`; no Gate A--E conclusion changes.
 
 ## 7. Reproduction and publication audit
 
@@ -2587,12 +2706,59 @@ integrity audit
 ce31660540a1e71a576634ae64ff5db19408aadee8cf79ffe09a7f6793427ab6
 ```
 
+Final RH-376 audit:
+
+- Tests: `8/8`; isolated regeneration of `result.json` is byte-identical and
+  the closed Draft 2020-12 schema has zero errors or duplicate JSON keys.
+- Independent exact regeneration checks `1048574` pointwise Boolean
+  identities, `1048576` cumulative prefixes, `524287` even-start zero rows,
+  and `1024` RH-371 endpoints (`2048` sign cells).  The three frozen rows at
+  `N=1024,65536,1048576` match exactly.  These are reproduction checks only.
+- Source locks: `13/13`; all five declared Git objects exist.  The
+  bibliography has six entries and six unique cited keys, with zero dangling
+  or orphan references.  Davenport, Mirsky, and Teravainen--Walker metadata
+  match their frozen repository sources.
+- Individual archive: `22` publication files plus `13` external inputs, zero
+  failures.  The four-volume replay remains `4` volumes, `73` members, `1548`
+  dependency hashes, `8` result hashes, `361` numbered sources, and zero
+  failures.
+- PDF: `6` pages and `313218` bytes, with `20/20` fonts embedded, subsetted,
+  and Unicode-mapped.  Ghostscript, text extraction, complete LaTeX/BibTeX
+  log scans, semantic-PDF identity, and all `6/6` rendered pages pass.
+- The repository-locked ARS audit has zero remaining blocker or minor.  No
+  ordinary Chowla theorem, density nonconvergence, higher-run limit,
+  adaptive-capacity convergence, intrinsic operator, trace, zero
+  identification, Hilbert--Polya object, or RH claim is made.  Gates A--E
+  remain false/open.
+
+RH-376 final hashes:
+
+```text
+main.tex
+414728a8ac2e29add0ec9a4e11fc4d2dd3991be8c5de696c3bd2d5ebbd25b70e
+
+PDF
+8af92d63b279f0b3d7db027ba3c2d22d6116827574f167f55f7c53c1cdb5b01a
+
+result
+8e320b70c168a640dab60e94ba965947c388372f46ce8268fde9ae11d1d6df91
+
+manifest
+22a9851ca0694c5ffe58683b6cde5c00c37ac653ef9c346a8848210e86b9affb
+
+verification
+a7a6bb0e4b6bbee41007277bbabf409902b0c2c9aad6e2f06e2f8c95f8de4b33
+
+integrity audit
+00c5697d3a09fe6485300757c9e3a3f5ea208abc8f3cad77cc58c4d047ac67d7
+```
+
 ## 8. Continuation prompt
 
 ```text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-375 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-376 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -2602,7 +2768,8 @@ fold-compatible Ulam/spike input, RH-371 as the exact eight-run/cyclic-pair
 capacity input, RH-372 as the bounded graph/transducer certificate input,
 RH-373 as the composite-clock capacity-floor input, RH-374 as the square-clock
 Euler-product family input, RH-375 as the all-finite-clock one-site supremum
-input, RH-MVP2 as the corpus umbrella, and RH-361 as the physical endpoint.
+input, RH-376 as the shift-two Chowla/run-density boundary input, RH-MVP2 as
+the corpus umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -2612,16 +2779,23 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-375 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  For every fixed finite clock it proves the exact
-squarefree-density weighted phase MWIS `F(q)`, clock-divisibility monotonicity,
-and special same-prime-support square-clock saturation.  Consequently
-`sup_(q finite)F(q)=B_infinity`, and no finite clock attains the supremum.
-The period need not be minimal.  Do not replace the special `4`/`9` zero-split
-proof by a general cover-MWIS law, use the bounded scan as theorem evidence,
-introduce `q(N)`, or promote the result to memory, adaptive-capacity
-convergence, an operator, trace, zero model, Hilbert--Polya construction, or
-RH proof.
+RH-376 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  It proves the exact common-endpoint identity
+`4C_(sigma,2)=Q_2+sigma U_2+sigma V_2+D_2`, the unconditional asymptotics
+`Q_2/N->kappa_2` and `U_2,V_2=o(N)`, and the equivalence between existence of
+either signed two-site interval density and ordinary shift-two Cesaro Chowla.  The density,
+if it exists, is `product_p(1-2/p^2)/4` for both signs.  Do not call the
+interval a maximal exact-length-two run, turn the logarithmic rigidity input
+into unconditional natural cancellation, claim convergence or
+nonconvergence, or infer the eight-run envelope or `K_N/N` limit.
+
+RH-375 remains the preceding all-clock one-site edge.  For every fixed finite
+clock it proves the exact squarefree-density weighted phase MWIS `F(q)`,
+clock-divisibility monotonicity, special same-prime-support square-clock
+saturation, and the nonattained supremum `B_infinity`.  The period need not
+be minimal.  Do not replace the special `4`/`9` zero-split proof by a general
+cover-MWIS law, introduce `q(N)`, or promote the result to memory or adaptive
+capacity convergence.
 
 RH-374 remains the preceding square-clock family edge.  It proves the exact
 fixed-`q_y` values `B_y`, strict prime-adjoining monotonicity, and the
@@ -2697,26 +2871,31 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-For the next paper, independently source-lock and write only the audited
-RH-376 scoped theorem.  Use the RH-371 definition of `C_(sigma,2)` with one
-common endpoint and prove
+For the next paper, write only the independently audited RH-377 family-level
+Boolean run/correlation theorem.  For common odd-start endpoints define the
+mixed moments `T_(k,S)` and their cardinality layers `H_(k,r)`, and prove
 
-`4C_(sigma,2)=Q_2+sigma U_2+sigma V_2+D_2`,
+`2^k C_(sigma,k)=H_(k,0)+A_k+sigma(H_(k,1)+B_k)`
 
-where `Q_2/N -> product_p(1-2/p^2)` and `U_2,V_2=o(N)`.  Use the frozen
-logarithmic fixed-affine Möbius theorem only to show that if `D_2/N` has a
-Cesaro limit, that limit is zero.  The exact conclusion is that existence of
-either one signed two-site interval density is equivalent to ordinary
-shift-two Cesaro Chowla, with value `product_p(1-2/p^2)/4`.  Do not call
-`C_(sigma,2)` an exact-length maximal run count, claim it fails to converge,
-or infer nonconvergence/convergence of the eight-run envelope or `K_N/N`.
+for `1<=k<=8`, with `H_(k,0)/N->e_k/2` and `H_(k,1)=o(N)`.  State the thirteen
+aggregate channels only as the exact block sums governing simultaneous
+existence of all signed run densities.  The `466 -> 13` map has formal rank
+13 and kernel dimension 453; do not call this the arithmetic minimal
+dimension of actual Möbius correlations.
 
-After RH-376, independently audit the family-level Boolean run/correlation
-hierarchy and its two-envelope capacity reduction before assigning a further
-number.  Keep naked distinct-shift correlations separate from the required
-mixed-exponent terms carrying squarefree masks.  The geometrically selected
-non-Parry measure route is `STOP_SCOPED` until a fixed non-Parry equilibrium
-state and mixing theorem are proved.  The fractional/tower-adapted
+Derive the exact asymptotic capacity reduction
+
+`K_N/N = 2r_0 + 2(U_N+|V_N|)/N + o(1)`
+
+and the equivalent two-envelope convergence criterion.  The full required
+mixed-exponent cancellation is only a sufficient hypothesis for the
+conditional constant
+`2/pi^2+sum_(k=1)^8(-1)^(k+1)e_k/2^k`; naked top-layer Chowla does not control
+proper masked moments.  A stationary ternary countermodel may certify that
+formal non-implication, but it must be labelled synthetic and not Möbius.
+Do not claim convergence of the envelope or capacity.  The geometrically
+selected non-Parry measure route is `STOP_SCOPED` until a fixed non-Parry
+equilibrium state and mixing theorem are proved.  The fractional/tower-adapted
 deterministic Ulam route is
 currently `STOP_SCOPED`: reopen it only with an explicit fixed
 mesh-independent norm, a uniform projection/lift estimate, and a common
