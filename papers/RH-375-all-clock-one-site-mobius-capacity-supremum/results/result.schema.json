@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "certificate": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "gates": {"type": "object"},
+    "source_commits": {"type": "object"},
+    "source_locks": {"type": "object"},
+    "status": {"const": "RH-375_all_clock_one_site_mobius_capacity_supremum"},
+    "theorem": {"type": "object"}
+  },
+  "required": [
+    "certificate",
+    "claim_boundary",
+    "gates",
+    "source_commits",
+    "source_locks",
+    "status",
+    "theorem"
+  ],
+  "title": "RH-375 result ledger",
+  "type": "object"
+}
