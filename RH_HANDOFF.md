@@ -3133,9 +3133,10 @@ cancellations, and `804/804` arbitrary-order remainder rows for
 were rejected.  These rows are a reproduction and adversarial layer, not the
 proof of the infinite identities.
 
-The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  Independent
-post-RH-382 source, proof, and symbolic audits establish a genuine RH-383
-candidate: an exact Euler-tail cluster/exponential normal form in all power sums
+The route verdict was `Route A=GO` and `Route B=STOP_SCOPED`.  At that
+historical stage, independent post-RH-382 source, proof, and symbolic audits
+established the candidate later published as RH-383 in Section 6.20: an exact
+Euler-tail cluster/exponential normal form in all power sums
 `P_r(y)=sum_(p>p_y)(p^2-1)^(-r)`, with a finite partition coefficient
 algorithm, exact all-order `m=2` cancellation, a new cubic block, and a
 uniform arbitrary-order truncation bound.  The first two homogeneous layers
