@@ -1,0 +1,633 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\mob}{\mu}
+\newcommand{\kap}{\kappa_2}
+\newcommand{\Ecal}{\mathcal E}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\dd}{\delta}
+\newcommand{\thh}{\vartheta}
+
+\hypersetup{
+  pdftitle={Square-Clock Monotonicity and Finite-Clock Nonattainment for Phasewise Chowla-Free Memory},
+  pdfauthor={RH research program},
+  pdfsubject={Exact recurrence, saturation, and finite-clock gap for a phasewise Mobius factor class},
+  pdfkeywords={Mobius function, finite clocks, max-plus optimization, run recurrence, nonattainment}
+}
+
+\title{Square-Clock Monotonicity and Finite-Clock Nonattainment\\
+for Phasewise Chowla-Free Memory}
+\author{RH research program}
+\date{August 7, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We close the finite-clock attainment question left open by RH-379, without
+enlarging its factor class.  A clock $q$ is fixed before $N\to\infty$; the
+admissible objects are universally distance-two-safe phasewise lag-two
+tables, and their interpolation coefficient $c_{11}(r)$ is zero at every
+phase.  At the square clocks
+\[
+ q_y=4\prod_{i\le y}p_i^2,
+ \qquad A_y=\prod_{i\le y}(p_i^2-1),
+ \qquad D_y=\prod_{i\le y}(p_i^2-2),
+\]
+let $R_\ell^{(y)}$ count positive runs of length $\ell$ in the odd support
+word, and put
+\[
+ \Ecal_y=\sum_{\ell\ \mathrm{even}}R_\ell^{(y)},\quad
+ L_y=\sum_{\ell\ \mathrm{even}}\ell R_\ell^{(y)},\quad
+ M_y=\sum_{\ell\ \mathrm{odd}}(\ell-1)R_\ell^{(y)}.
+\]
+Deleting the new prime-square residue from replicated old runs gives the
+all-order identity
+\[
+ \Ecal_{y+1}=(p_{y+1}^2-2)\Ecal_y+M_y.
+\]
+Combining it with the locked RH-374 odd-run recurrence and the exact RH-379
+square-clock formula yields an exact increment.  Since
+$L_y-2\Ecal_y=2R_4^{(y)}+4R_6^{(y)}+6R_8^{(y)}\ge6$, the sequence $G(q_y)$
+is strictly increasing.
+
+We then prove a deliberately special saturation law: if $q_y\mid Q$ and
+$Q$ has exactly the same prime support, the mod-$4$ and mod-$9$ zero-weight
+separators split the fine addition-by-two cycles into replicated finite
+paths, and $G(Q)=G(q_y)$.  For arbitrary fixed $q$, taking
+$Q=\operatorname{lcm}(q,q_y)$ therefore gives
+\[
+ G(q)\le G(q_y)<B_\infty,
+ \qquad
+ B_\infty-G(q)\ge
+ \frac{12}{\pi^2A_y(p_{y+1}^2-1)}.
+\]
+Thus the RH-379 all-clock supremum is not attained by any finite clock.
+This is not a growing-clock result, a general cyclic-cover theorem, an
+adaptive-capacity limit, an operator or trace construction, a zero
+identification, or a statement about the Riemann hypothesis.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius function; square clocks; max-plus
+optimization; run deletion; finite-clock nonattainment.
+
+\section{Frozen class and predecessor inputs}
+
+The object optimized here is exactly the RH-379 phasewise Chowla-free
+memory class \cite{RH379}.  We restate the boundary because every theorem
+below depends on it.
+
+\begin{definition}[Fixed-clock phasewise class]
+Fix a finite integer $q\ge1$ before taking any natural-density limit.  At
+each $r\in\Z/q\Z$, choose a table
+\[
+ f_r:\{-1,0,1\}^2\longrightarrow\{-1,+1\},
+ \qquad
+ \epsilon_n=f_{n\bmod q}\bigl(\mob(n-2),\mob(n)\bigr).
+\]
+The phase family is universally safe if no ternary input can produce
+$\epsilon_n=\epsilon_{n+2}=+1$.  It belongs to the declared class only if
+the coefficient $c_{11}(r)$ of
+$\mob(n-2)\mob(n)$ in the RH-379 interpolation is zero for every phase
+$r$.  Let $G(q)$ be the largest absolute fixed-clock limiting correlation
+over this class.
+\end{definition}
+
+The phasewise condition is essential.  If $c_{11}(r)\ne0$ at even one
+phase, the limiting expansion contains a phase-weighted shift-two M\"obius
+correlation not controlled by the frozen sources.  No cancellation between
+different phases is assumed here.
+
+We use three exact predecessor results.  RH-374 introduces the square-clock
+support word, proves its run formula and odd-run recurrence, proves the
+persistence of a length-eight run, and defines $B_\infty$ as the limit of
+its strictly increasing square-clock sequence \cite{RH374}.  RH-375
+identifies the same constant as the all-clock supremum in the one-site
+class \cite{RH375}.  RH-379 reduces the present memory class to the three
+actions $0,J,I$, proves input reflection, and establishes
+\begin{equation}
+ \sup_{q<\infty}G(q)=B_\infty.
+ \label{eq:rh379-supremum}
+\end{equation}
+It did not decide finite-clock attainment.
+
+For reference, the exact progression weights at phase $r$ are
+\[
+ w_r(0)=0,\qquad w_r(J)=\dd_{q,r}-\thh_{q,r},\qquad
+ w_r(I)=\dd_{q,r},
+\]
+where $\dd_{q,r}$ is the squarefree density and $\thh_{q,r}$ is the joint
+squarefree density at displacement two.  Along an addition-by-two cycle,
+the compatibility matrix is
+\begin{equation}
+\begin{array}{c|ccc}
+ &0&J&I\\ \hline
+0&1&1&1\\
+J&1&1&0\\
+I&1&1&0
+\end{array}.
+\label{eq:compatibility}
+\end{equation}
+In particular, action $0$ is compatible with everything in both directions.
+RH-379 proves that the positive three-state optimum equals $G(q)$: input
+reflection realizes the negative of every limiting score, so the absolute
+optimum introduces no additional case.
+
+\section{Square-clock runs and a deletion recurrence}
+
+Let $3=p_1<p_2<\cdots$ be the odd primes and define
+\begin{equation}
+ P_y=\prod_{i\le y}p_i^2,\qquad q_y=4P_y,\qquad
+ A_y=\prod_{i\le y}(p_i^2-1),\qquad
+ D_y=\prod_{i\le y}(p_i^2-2).
+ \label{eq:square-parameters}
+\end{equation}
+On $\Z/P_y\Z$, set
+\begin{equation}
+ w_y(k)=\mathbf1_{\{p_i^2\nmid 2k+1\ \text{for every }i\le y\}}.
+ \label{eq:support-word}
+\end{equation}
+The multiples of $9$ cut its cyclic positive runs, so every run has length
+at most eight.  Write $R_\ell^{(y)}$ for the number of runs of exact length
+$\ell$.  We need four statistics:
+\begin{align}
+ O_y&=R_1^{(y)}+R_3^{(y)}+R_5^{(y)}+R_7^{(y)},
+ &\Ecal_y&=R_2^{(y)}+R_4^{(y)}+R_6^{(y)}+R_8^{(y)},
+ \label{eq:OE}\\
+ L_y&=2R_2^{(y)}+4R_4^{(y)}+6R_6^{(y)}+8R_8^{(y)},
+ &M_y&=2R_3^{(y)}+4R_5^{(y)}+6R_7^{(y)}.
+ \label{eq:LM}
+\end{align}
+Thus $L_y$ counts sites inside even runs, while $M_y$ is the sum of
+$\ell-1$ over odd runs.  These quantities must not be conflated with one
+another.
+
+RH-374 gives, with
+\[
+ e_m^{(y)}=\prod_{i\le y}\left(1-\frac{m}{p_i^2}\right),
+\]
+the exact finite formula
+\begin{equation}
+ R_\ell^{(y)}=
+ \begin{cases}
+ P_y(e_\ell^{(y)}-2e_{\ell+1}^{(y)}+e_{\ell+2}^{(y)}),&1\le\ell\le7,\\
+ P_y e_8^{(y)},&\ell=8.
+ \end{cases}
+ \label{eq:run-formula}
+\end{equation}
+It also proves
+\begin{equation}
+ O_{y+1}=(s-1)O_y+L_y,\qquad s=p_{y+1}^2.
+ \label{eq:odd-recurrence}
+\end{equation}
+
+\begin{lemma}[Per-run deletion ledger]
+\label{lem:deletion}
+Let an old positive run have length $1\le\ell\le8$, and let
+$s=p_{y+1}^2$.  Across the $s$ replicated copies used to pass from
+$w_y$ to $w_{y+1}$, the number of descendant even positive runs is
+\begin{equation}
+ \begin{cases}
+ s-2,&\ell\text{ even},\\
+ \ell-1,&\ell\text{ odd}.
+ \end{cases}
+ \label{eq:per-run-ledger}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Represent each cyclic old run as an unwrapped interval bracketed by its two
+old zero sites.  Those zeros remain zero in every lift, so no run crosses
+the chosen $P_y$ seam and no descendant can merge across either bracket.
+Because $(P_y,s)=1$, each old positive site has exactly one lift at which
+the new prime square divides $2k+1$.  If two distinct positions $d,d'$ in
+the same run were deleted in the same copy, subtraction would give
+$2(d-d')\equiv0\pmod s$.  This is impossible because
+$0<2|d-d'|\le14<s$ and every new $s=p_{y+1}^2$ is at least $25$.  Hence an
+old run has $s-\ell$ untouched copies and exactly one single-site deletion
+at each of its $\ell$ positions, all in distinct copies.
+
+Suppose first that $\ell$ is even.  Each untouched copy contributes one
+even run, giving $s-\ell$.  Deleting either endpoint leaves one odd run and
+contributes no even run.  Each of the $\ell-2$ internal deletions leaves two
+pieces of opposite parity, exactly one of which is a positive even run.
+The total is $(s-\ell)+(\ell-2)=s-2$.
+
+Now suppose that $\ell$ is odd.  Untouched copies contribute no even run.
+For $\ell=1$, deleting the sole site leaves no positive piece, agreeing
+with $\ell-1=0$.  Let $\ell\ge3$.  For a deletion at position
+$d\in\{0,\ldots,\ell-1\}$, the two pieces have lengths $d$ and
+$\ell-1-d$, hence the same parity.  Each of the two distinct endpoints
+contributes one positive even piece, and every internal even deletion
+position contributes two.  The total is
+$2+2(\ell-3)/2=\ell-1$.  Odd deletion positions contribute none.  This
+proves \eqref{eq:per-run-ledger}.
+\end{proof}
+
+\begin{proposition}[Even-run recurrence]
+\label{prop:even-recurrence}
+For every $y\ge1$,
+\begin{equation}
+ \boxed{\displaystyle
+ \Ecal_{y+1}=(s-2)\Ecal_y+M_y,\qquad s=p_{y+1}^2.}
+ \label{eq:even-recurrence}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Sum Lemma~\ref{lem:deletion} over all old runs.  Each old even run supplies
+$s-2$ descendant even runs.  An old odd run of length $\ell$ supplies
+$\ell-1$, and the sum of those contributions is precisely $M_y$.
+Old zero sites remain zero, while new deletions only split positive runs;
+there is therefore no uncounted merger across old run boundaries.
+\end{proof}
+
+\section{Exact increment and strict monotonicity}
+
+The locked RH-379 square-clock formula can be written
+\begin{equation}
+ G(q_y)=\frac{4}{\pi^2}
+       +\frac{2O_y+4\Ecal_y}{A_y\pi^2}
+       -\frac{\Ecal_y}{D_y}\kap.
+ \label{eq:G-square}
+\end{equation}
+Put
+\begin{equation}
+ H_y=\kap\frac{A_y}{D_y}.
+ \label{eq:H}
+\end{equation}
+RH-379 proves the exact Euler-product inequality
+\begin{equation}
+                         0<H_y<\frac4{\pi^2},\qquad
+                         H_y\longrightarrow\frac4{\pi^2}.
+ \label{eq:H-gap}
+\end{equation}
+No finite decimal is used in this statement.
+
+\begin{theorem}[Exact square-clock increment]
+\label{thm:increment}
+For $s=p_{y+1}^2$,
+\begin{equation}
+\boxed{\begin{aligned}
+G(q_{y+1})-G(q_y)
+={}&\frac{2(L_y-2\Ecal_y)}{\pi^2A_y(s-1)}\\
+&+\frac{M_y}{A_y(s-1)}
+ \left(\frac4{\pi^2}-H_{y+1}\right).
+\end{aligned}}
+\label{eq:increment}
+\end{equation}
+Consequently
+\begin{equation}
+ G(q_{y+1})-G(q_y)
+ \ge \frac{12}{\pi^2A_y(s-1)}>0.
+ \label{eq:increment-lower}
+\end{equation}
+Thus $G(q_y)$ is strictly increasing for every $y\ge1$.
+\end{theorem}
+
+\begin{proof}
+Besides \eqref{eq:odd-recurrence} and
+\eqref{eq:even-recurrence}, the definitions give
+\[
+ A_{y+1}=(s-1)A_y,\qquad D_{y+1}=(s-2)D_y.
+\]
+Substituting all four recurrences into \eqref{eq:G-square} and subtracting
+the $y$ expression gives, in the exact basis
+$\mathbb Q\pi^{-2}+\mathbb Q\kap$,
+\begin{equation}
+ \frac{2(L_y-2\Ecal_y)+4M_y}{A_y(s-1)\pi^2}
+ -\frac{M_y}{D_y(s-2)}\kap.
+ \label{eq:increment-basis}
+\end{equation}
+Since
+\[
+ \frac{H_{y+1}}{A_y(s-1)}
+ =\frac{\kap}{D_y(s-2)},
+\]
+equation \eqref{eq:increment-basis} is exactly
+\eqref{eq:increment}.
+
+The first numerator has the combinatorial identity
+\begin{equation}
+ L_y-2\Ecal_y
+ =2R_4^{(y)}+4R_6^{(y)}+6R_8^{(y)}.
+ \label{eq:X}
+\end{equation}
+RH-374 proves $R_8^{(y)}\ge1$, so this is at least six.  Also $M_y\ge0$
+by definition, and the parenthesis in the second line of
+\eqref{eq:increment} is positive by \eqref{eq:H-gap}.  Dropping that
+nonnegative term yields \eqref{eq:increment-lower}.
+\end{proof}
+
+\begin{remark}[What is not monotone]
+RH-379 writes $G(q_y)=B_y+\Delta_y$ and proves $\Delta_y\to0$.  Theorem
+\ref{thm:increment} proves monotonicity of the sum $G(q_y)$; it neither uses
+nor asserts monotonicity of $\Delta_y$.
+\end{remark}
+
+\section{A separator-specific same-support theorem}
+
+The next result is not a general statement about covers of weighted cyclic
+graphs.  Its proof uses the precise local densities and zero-weight phases
+of the square clocks.
+
+\begin{theorem}[Same-prime-support square-clock saturation]
+\label{thm:saturation}
+Fix $y\ge1$.  Suppose $q_y\mid Q$ and $Q$ has exactly the same prime
+divisors as $q_y$.  Writing $Q=Rq_y$, one has
+\begin{equation}
+                         \boxed{G(Q)=G(q_y).}
+ \label{eq:saturation}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Every prime in either clock occurs to exponent at least two.  The exact
+local squarefree formula therefore says that a phase has positive
+$\dd$ precisely when it is nonzero modulo every supported prime square.
+At such a phase,
+\begin{equation}
+ \dd_{q_y,r}=\frac{2}{A_y\pi^2},\qquad
+ \dd_{Q,t}=\frac{2}{RA_y\pi^2}
+ \quad(t\equiv r\pmod{q_y}),
+ \label{eq:delta-scale}
+\end{equation}
+and both sides are zero simultaneously otherwise.  Likewise, the exact
+two-squarefree formula gives
+\begin{equation}
+ \thh_{q_y,r}=\frac{\kap}{2D_y},\qquad
+ \thh_{Q,t}=\frac{\kap}{2RD_y}
+ \quad(t\equiv r\pmod{q_y}),
+ \label{eq:theta-scale}
+\end{equation}
+whenever neither the current nor its predecessor is forced divisible by a
+supported prime square, with simultaneous zero otherwise.  Thus every
+three-state weight on a fine phase is exactly $1/R$ times the weight of its
+projection modulo $q_y$.
+
+Addition by two has an even and an odd cycle because both clocks are even.
+On the even cycle, a phase divisible by $4$ has $\dd=\thh=0$.  On the odd
+cycle, a phase divisible by $9$ has $\dd=\thh=0$.  At a zero-weight phase,
+replace the action by $0$.  This cannot lower the score and, by
+\eqref{eq:compatibility}, can only relax the two adjacent compatibility
+conditions.  These mod-$4$ and mod-$9$ phases are therefore genuine
+separators.
+
+Under projection modulo $q_y$, each fine addition-by-two cycle traverses
+the corresponding base cycle exactly $R$ times.  The separators cut it
+into $R$ copies of the same finite path collection.  Each copied path has
+weights scaled by $1/R$ by \eqref{eq:delta-scale}--\eqref{eq:theta-scale}.
+Max-plus path optimization is positively homogeneous, so the $R$ copies
+together have exactly the base optimum.  Summing the even and odd
+components proves \eqref{eq:saturation}.  Finally, the RH-379 input
+reflection transfers the positive optimum identity to the absolute value
+defining $G$.
+\end{proof}
+
+\begin{remark}[Scoped negative control]
+The prime-support hypothesis cannot be erased from this proof.  For
+example, $36\mid180$, but $180$ adds the prime $5$, and the exact values are
+\[
+ G(36)=\frac{9}{2\pi^2}-\frac{\kap}{7},\qquad
+ G(180)=\frac{73}{16\pi^2}-\frac{25\kap}{161}.
+\]
+The inequality is exact rather than a comparison of formal coefficient
+pairs: with $H=\pi^2\kap<4$ from the locked RH-379 enclosure,
+\[
+ G(180)-G(36)
+ =\frac1{\pi^2}\left(\frac1{16}-\frac{2H}{161}\right)
+ >\frac1{\pi^2}\left(\frac1{16}-\frac8{161}\right)>0.
+\]
+This is a negative control against a general-multiple or general-cover
+reading of Theorem~\ref{thm:saturation}; it is not a counterexample to the
+theorem's same-support statement.
+\end{remark}
+
+\section{Finite-clock nonattainment and an explicit gap}
+
+\begin{lemma}[Clock divisibility]
+\label{lem:divisibility}
+If $q\mid Q$, then $G(q)\le G(Q)$.
+\end{lemma}
+
+\begin{proof}
+Repeat every phase table modulo $Q$ according to its residue modulo $q$.
+The output word is unchanged for every input, so universal safety,
+$c_{11}=0$, and the fixed-clock limiting score are unchanged.  The
+$Q$-class can only have a larger optimum.  Input reflection again identifies
+the positive and absolute formulations.
+\end{proof}
+
+\begin{theorem}[Quantitative finite-clock nonattainment]
+\label{thm:nonattainment}
+Let $q\ge1$ be any fixed finite clock.  Choose $y\ge1$ so that every odd
+prime divisor of $q$ belongs to $\{p_1,\ldots,p_y\}$.  Then
+\begin{equation}
+ \boxed{\displaystyle
+ G(q)<B_\infty,\qquad
+ B_\infty-G(q)\ge
+ \frac{12}{\pi^2A_y(p_{y+1}^2-1)}>0.}
+ \label{eq:gap}
+\end{equation}
+Consequently no fixed finite clock attains the all-clock supremum
+\eqref{eq:rh379-supremum}.
+\end{theorem}
+
+\begin{proof}
+Set
+\[
+                         Q=\operatorname{lcm}(q,q_y).
+\]
+Then $q\mid Q$ and $q_y\mid Q$.  The prime support of $Q$ is exactly that
+of $q_y$: the choice of $y$ contains all odd divisors of $q$, while the
+factor $4$ in $q_y$ handles the prime $2$.  This remains true for an
+arbitrary $2$-adic exponent in $q$ and arbitrary exponents of its supported
+odd primes; those exponents merely enlarge $R=Q/q_y$.  Lemma
+\ref{lem:divisibility} and Theorem~\ref{thm:saturation} give
+\begin{equation}
+                         G(q)\le G(Q)=G(q_y).
+ \label{eq:lcm-chain}
+\end{equation}
+
+RH-379 proves $G(q_j)\to B_\infty$.  Theorem~\ref{thm:increment} makes
+that sequence strictly increasing, hence $G(q_y)<B_\infty$.  More
+quantitatively, telescope the nonnegative increments:
+\[
+ B_\infty-G(q_y)
+ =\sum_{j\ge y}\bigl(G(q_{j+1})-G(q_j)\bigr)
+ \ge G(q_{y+1})-G(q_y)
+ \ge\frac{12}{\pi^2A_y(p_{y+1}^2-1)}.
+\]
+Combining this with \eqref{eq:lcm-chain} proves \eqref{eq:gap}.
+\end{proof}
+
+The quantifiers in Theorem~\ref{thm:nonattainment} are fixed-clock
+quantifiers.  The index $y$ may be chosen after the finite integer $q$ is
+given, but both $q$ and the auxiliary clock $Q$ are fixed before the
+$N\to\infty$ limits already used to define $G$.  There is no diagonal
+choice $q=q(N)$.
+
+\section{Exact certificate and reproduction protocol}
+
+The standard-library artifact is a proof companion, not a source of the
+all-$y$ theorem.  It implements exact rational arithmetic in the basis
+$u/\pi^2+v\kap$ and fails closed if the locked enclosure
+$3.18<\pi^2\kap<3.19$ cannot decide a max-plus comparison.  The release
+builder verifies that the sharper RH-379 rational interval lies strictly
+inside this coarse interval.
+
+The certificate performs four independent finite checks:
+\begin{enumerate}[leftmargin=2em]
+\item it compares the Euler-product run formula with direct cyclic words
+      for $y=1,2,3$ and samples the per-run deletion ledger at
+      $s=25,49,121$;
+\item it checks the recurrence and increment algebra, including the exact
+      anchors in Table~\ref{tab:anchors};
+\item for nine same-support refinements it checks every fine-residue
+      $\dd$ and $\thh$ scaling law, the mod-$4$/mod-$9$ separator causes,
+      run replication, and an independent generic three-state cyclic
+      max-plus dynamic program;
+\item it locks $Q=180$ as a new-prime negative control and records finite
+      least-common-multiple fixtures for the exponent scope.
+\end{enumerate}
+
+\begin{table}[ht]
+\centering
+\caption{Exact finite anchors.  These rows reproduce identities; the
+all-order proofs are Theorem~\ref{thm:increment} and
+Theorem~\ref{thm:saturation}.}
+\label{tab:anchors}
+\begin{tabular}{crrrrl}
+\toprule
+$y$&$\Ecal_y$&$L_y$&$M_y$&$L_y-2\Ecal_y$
+ &$G(q_{y+1})-G(q_y)$\\
+\midrule
+1&1&8&0&6&$\frac{1}{16\pi^2}$\\[1mm]
+2&23&160&24&114&$\frac{9}{256\pi^2}-\frac{24}{7567}\kap$\\[1mm]
+3&1105&7160&1512&4950&$\frac{443}{30720\pi^2}-\frac{216}{128639}\kap$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The result ledger has a recursively closed Draft 2020-12 schema.  Its 24
+source locks exclude the mutable project instructions and handoff file.
+For each locked predecessor input, the builder checks both the live SHA-256
+and byte identity with the file at its declared release commit.  To replay
+from this directory, run
+\begin{verbatim}
+make result
+make test
+make pdf
+make archive
+\end{verbatim}
+The semantic PDF must be byte-identical to \texttt{main.pdf}; archive
+verification fails on any missing member, hash mismatch, source-lock drift,
+or PDF mismatch.
+
+\section{Boundaries and next theorem edge}
+
+The proved result is narrow but complete: it supplies an all-order even-run
+recurrence, exact strict square-clock monotonicity, a
+separator-specific saturation theorem, finite-clock nonattainment, and an
+explicit positive gap within the frozen RH-379 class.
+
+The following statements are outside the theorem.
+\begin{itemize}[leftmargin=2em]
+\item No table with phasewise $c_{11}(r)\ne0$ is covered.  The first missing
+      object is a phase-weighted shift-two M\"obius correlation theorem.
+\item Same-support saturation is not asserted for an arbitrary weighted
+      cyclic graph, an arbitrary cover, or a multiplier that introduces a
+      new prime.
+\item No monotonicity is asserted for the correction $\Delta_y$.
+\item No growing clock $q(N)$ and no convergence to adaptive distance-two
+      capacity is asserted.
+\item The construction supplies no canonical intrinsic dynamical spectral
+      determinant, time-oriented scattering completion, self-adjoint
+      generator, von Mangoldt prime-power trace identity, or completed-zeta
+      divisor equality.  Gates A--E therefore remain false/open.
+\item There is no Hilbert--P\'olya operator, no identification of Riemann
+      zeros, and no implication for the Riemann hypothesis.
+\end{itemize}
+
+\paragraph{Immediate analytic rate trigger (not proved here).}
+There is a within-class refinement beyond nonattainment.  Put
+\[
+ T_y=\sum_{p>p_y}\frac1{p^2-1},\qquad
+ e_m=\prod_{p\ {\rm odd}}\left(1-\frac{m}{p^2}\right),
+\]
+and
+\[
+ X_\infty=
+ \frac{2e_4-4e_5+6e_6-8e_7+10e_8}{e_1}>0.
+\]
+Indeed, if
+$E_m^{(y)}=\prod_{i\le y}(1-m/p_i^2)$, the locked run formula gives
+\[
+ \frac{L_y-2\Ecal_y}{A_y}
+ =\frac{2E_4^{(y)}-4E_5^{(y)}+6E_6^{(y)}
+              -8E_7^{(y)}+10E_8^{(y)}}{E_1^{(y)}}
+ \longrightarrow X_\infty.
+\]
+The same quantity is the normalized
+$2R_4^{(y)}+4R_6^{(y)}+6R_8^{(y)}$, so
+$X_\infty\ge6e_8/e_1>0$.  This identifies the proposed first-order
+coefficient; it does not prove the tail asymptotic.
+The exact reopen target is
+\[
+ B_\infty-G(q_y)=\frac{2X_\infty}{\pi^2}T_y+O(T_y^2),
+\]
+with the successor required to show that the $M_y$ contribution is only
+second order.  RH-380 does not prove this rate theorem; proving the required
+Euler-product expansion and $O(T_y^2)$ remainder, not computing further
+finite rows or fitting decay, is the trigger.
+
+\paragraph{First class-enlargement blocker.}
+Extending beyond $c_{11}=0$ still requires a genuine theorem for
+phase-weighted shift-two M\"obius correlations.  Without such an input, the
+unrestricted-memory route remains \textsc{stop\_scoped}.
+
+\section*{Declarations}
+
+\paragraph{Data and code availability.}
+All theorem inputs, exact code, tests, result schema, source locks, and
+archive manifests are contained in the repository paper directory.  No
+private dataset is used.
+
+\paragraph{Author contributions.}
+The RH research program performed conceptualization, formal analysis,
+software construction, verification, visualization checks, and manuscript
+preparation.
+
+\paragraph{Funding.}
+No external funding is declared.
+
+\paragraph{Competing interests.}
+No competing interests are declared.
+
+\paragraph{Ethics and human participants.}
+This mathematical and computational study uses no human participants,
+animals, or personal data; ethics approval and consent are not applicable.
+
+\paragraph{AI assistance disclosure.}
+AI-assisted tools supported algebra checking, artifact generation, drafting,
+and adversarial review.  Every released claim is constrained by the locked
+repository sources and deterministic verification artifacts; responsibility
+for the scoped mathematical statements remains with the research program.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
