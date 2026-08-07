@@ -1,10 +1,11 @@
-# TPC big road V22: centered-projector firewall and the two surviving compilers
+# TPC big road V23: prime-shell Jutila highway and stable nonautonomous blocks
 
 更新时间：2026-08-07
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_PROJECTOR_FIREWALL_AND_CONDITIONAL_FORK`
+状态：`UNNUMBERED_WORKING_ARTIFACT / SOURCE_BACKED_PRIME_SHELL_ENTRY_AND_CONDITIONAL_INTERTWINED_COMPILER`
 
-当前主路线见第 22 节及 `bridge_b_centered_projector_firewall.md`；第 21 节与
+当前主路线见第 23 节及 `bridge_b_prime_shell_jutila_and_stable_dynamics.md`；第 22 节与
+`bridge_b_centered_projector_firewall.md`冻结 V22 operator firewall，第 21 节与
 `bridge_b_mesoscopic_covariance.md`冻结 V21 wrapped mean compiler，第 20 节与
 `bridge_b_terminal_innovation_floor.md`冻结 V20 terminal-innovation equivalence，第 19 节与
 `bridge_b_shbd2_innovation.md`冻结 V19 raw-row/source-innovation interface，第 18 节与
@@ -2117,3 +2118,92 @@ canonical V21 registry为 48 rows，final-LF SHA-256
 `757ca58fabffda4d2ac5d3b3ce3103f0b0474d47f5ff0f104eee4c9996c00e74`。
 overall arithmetic advance仍为 `NO`；fixed atom=`0`、strict `1/400=UNPAID`、
 `L2=NONE`、TPC-207 trigger=`false`。没有编号论文、PDF或 build output。
+
+## 23. V23 Bridge B：prime-shell Jutila 入口与 stable-cell reserve
+
+V23回到 V19 literal physical scalar，而不是继续变换 V21 paid projector branch：
+
+```text
+S_x=sum_(x/2<t<=x)beta_x^raw(t)w_x^(z)(t)
+   =int_0^1 B_x(alpha)W_x(alpha)dalpha.               (23.1)
+```
+
+这里 fixed `h0=2`、`x=2X`、ordered `+2,-1`、Möbius/log weights、rough cutoff与
+one outer absolute全部冻结。一个外置 `q`上的 finite Fourier只给
+`dr-t congruent 2 (mod q)`，不能删掉 `dr-t=2+qL,L!=0`；standard delta也没有
+source-backed prime-only exactly-once specialization。
+
+Blomer--Li `arXiv:2511.03294v1` §2.1 Lemma 1 原生允许 bounded prime-shell weight。
+取
+
+```text
+Q_mes=x^(1/3), Q_src=2Q_mes,
+Q_x={q prime:Q_mes<q<=2Q_mes},
+L_x=sum_(q in Q_x)(q-1),
+delta_x=Q_mes^(-2+eta), eta=1/32.                     (23.2)
+```
+
+固定 smooth `psi:R->[0,1]` supported on `[-1,1]`、`int psi=1`；source
+specialization只在 shell nonempty、`L_x>0`且 `0<delta_x<1/2`时使用。
+Jutila approximant给 `||1-chi_x||_2^2<<Q_mes^(-eta+o(1))`，并通过定义得到 exact split
+
+```text
+S_x=int chi_x G_x+int(1-chi_x)G_x,
+|E_x^Jut|<=Q_mes^(-eta/2+o(1))||G_x||_2.             (23.3)
+```
+
+它是 approximation，不是 exact delta。当前 crude physical energy
+`||G_x||_2<=x^(3/2+o(1))`失败；纯 energy gate在这个 `eta`上要求
+`theta<13/4800`。
+
+Blomer--Li 的 source architecture在 major arcs上交织第二种 Kloosterman/Farey
+refinement。把该结构与 Blomer--Pascadi local engine对齐后，conditional ledger为
+
+```text
+dual support exponent = 17/32,
+q-saving = min(11/512,5/144)=11/512,
+x-saving = 11/1536,
+strict pre-compiler margin = 179/38400.               (23.4)
+```
+
+因此当前 primary是
+
+```text
+V23_PRIME_SHELL_JUTILA_KLOOSTERMAN_INTERTWINED_PHYSICAL_COMPILER_GATE
+  = OPEN_CONDITIONAL.                                 (23.5)
+```
+
+它仍缺 literal source arrays、第二 major-arc refinement、unit/nonunit/axes、hybrid
+zero-mode、smoothing/tails、`1/L_x`、`delta_x^(-1)`、whole prime ensemble与
+exactly-once physical reassembly。Blomer--Li GL(3)-divisor theorem不能替换 TPC
+coefficients；正的 exponent window也不等于 arithmetic saving。
+
+finite dynamics atlas同时证明 sparse walls不是 telescope。`166->168`的 raw beta
+overlap不变且 boundary为 `-e_84+e_168`，但 prime shell从 `{7}`变成 `{7,11}`，
+新生 `q=11`有全部十个 nonzero DFT frequencies。100--400 的 150个 adjacent even
+pairs中，beta stable 147、prime-shell stable 146、joint stable 143；full stable
+pairs仍有 fiber-wide centered updates。
+
+若同一个 physical return在 open parameter interval coefficientwise固定，它的参数
+导数恒为零，故不能同时是 nondegenerate transversal function。合法 reserve改为
+
+```text
+V23_LACUNARY_STABLE_BLOCK_AFFINE_COCYCLE_WITH_SUMMABLE_TRANSVERSAL_BAD_SETS
+  = OPEN_NEW_THEOREM.                                 (23.6)
+```
+
+transversality必须作用在独立 critical relation，并给一个 fixed parameter/seed、
+growing exact carrier、summable bad sets、uniform pointed power bound及 event-cocycle
+reassembly。
+
+完整 proof与 checker为
+
+```text
+research/tpc-big-road/bridge_b_prime_shell_jutila_and_stable_dynamics.md
+research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py
+```
+
+checker冻结 33-field contract、48-row registry，registry SHA-256为
+`15e40e8c20050549c3e244be59747019f115ebb8ccb9356f95fd449250073b07`；
+102/151 adversarial mutations必须全部拒绝。V23 arithmetic advance=`NO`、fixed
+atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false；没有编号 paper/PDF/build。

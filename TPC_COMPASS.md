@@ -1,14 +1,15 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-07
-状态：`BOLD_CHANNEL_V22 / CENTERED_PROJECTOR_FIREWALL_AND_TWO_SURVIVING_COMPILERS`
-claim level：`EXACT_L0_OPERATOR_FIREWALL / CONDITIONAL_ANALYTIC_AND_DYNAMICAL_FORK`
+状态：`BOLD_CHANNEL_V23 / PRIME_SHELL_JUTILA_KLOOSTERMAN_INTERTWINED_PHYSICAL_COMPILER`
+claim level：`SOURCE_BACKED_PRIME_SHELL_ATTACHMENT_AND_NONEMPTY_CONDITIONAL_EXPONENT_WINDOW_ONLY`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V22 的完整
-proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_centered_projector_firewall.md`
-及 `research/tpc-big-road/tpc_bridge_b_centered_projector_checker.py`；V21 wrapped mean、V20 terminal
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V23 的完整
+proof、scope与独立 checker位于
+`research/tpc-big-road/bridge_b_prime_shell_jutila_and_stable_dynamics.md`及
+`research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py`；V22 projector firewall、V21 wrapped mean、V20 terminal
 innovation、V19 raw-row/source
 innovation、V18 typed
 backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 artifacts。正式 theorem
@@ -21,8 +22,8 @@ backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 art
 200+ local research nodes
   -> 13 major obstruction classes
   -> 2 visible bottlenecks
-  -> 1 literal SHB-D2 diagonal/post-Poisson compiler gate
-     + 1 independent transversal common-return dynamical gate
+  -> 1 prime-shell Jutila + Kloosterman intertwined physical compiler gate
+     + 1 independent stable-block/summable-bad-set dynamical reserve
      + 2 independent analytic reserves (A1/A2).
 ```
 
@@ -1025,6 +1026,66 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 24. V23 后的罗盘：prime-shell 入口合法，第二 Kloosterman compiler 接棒
+
+V22已经证明 projector branch只重写 V21 paid mean，original diagonal仍是
+`S_x`。V23不再从 centered residue marginal找信息，而先冻结 exact Fourier diagonal
+
+```text
+S_x=int_0^1 B_x(alpha)W_x(alpha)dalpha.
+```
+
+single `q` congruence只检测 determinant被 `q`整除；standard delta也没有
+prime-only exactly-once TPC specialization。这两类 shortcut均停止。
+
+新的合法入口是 Blomer--Li `2511.03294v1` §2.1 Lemma 1：令
+`Q_mes=x^(1/3)`、source cutoff `Q_src=2Q_mes`，在
+`Q_mes<q<=2Q_mes` prime shell上取 `delta=Q_mes^(-2+eta)`，得到 source-backed
+Jutila `L2` approximation及 exact main/error split；smooth
+`psi:R->[0,1]`、nonempty `L`与
+`0<delta<1/2`保持 source hypotheses。它不是 exact delta。当前 crude
+`||G_x||_2<=x^(3/2+o(1))`不能支付 error；纯 energy theorem在 `eta=1/32`须达到
+`||G_x||_2<=x^(1+theta+o(1))`、`theta<13/4800`。
+
+真正选中的主干是在 Cauchy之前交织第二个 Kloosterman-sensitive major-arc
+refinement。Blomer--Pascadi ledger在 `eta=1/32`给
+
+```text
+dual support = Q^(17/32),
+q-saving = 11/512,
+x-saving = 11/1536,
+pre-compiler strict margin = 179/38400.
+```
+
+所以当前解析 gate为
+
+```text
+V23_PRIME_SHELL_JUTILA_KLOOSTERMAN_INTERTWINED_PHYSICAL_COMPILER_GATE
+  = OPEN_CONDITIONAL.
+```
+
+它必须支付 literal arrays、major-arc second refinement、unit/nonunit/axes、hybrid
+zero mode、smoothing/tails、`1/L`、`1/delta`、whole prime ensemble及 one-outer-
+absolute exactly-once reassembly。正 margin不是 arithmetic advance；strict
+`1/400`仍未付。
+
+动力学侧，`166->168` exact core beta stable但 `q=11`出生，且新模数有十个全部
+nonzero DFT frequencies。150个 finite transitions只有 143 个同时 source/carrier
+stable；stable scheduling不消除 fiber-wide renormalization。更重要的是，同一个
+parameter-independent exact physical return的参数导数恒为零，不能同时充当
+transversality function。保留的 reserve必须把 transversality放到独立 critical
+relation，并给 fixed parameter/seed、growing affine carrier、summable bad sets与
+uniform pointed power bound：
+
+```text
+V23_LACUNARY_STABLE_BLOCK_AFFINE_COCYCLE_WITH_SUMMABLE_TRANSVERSAL_BAD_SETS
+  = OPEN_NEW_THEOREM.
+```
+
+路线排序现在是：V23 analytic compiler第一，V23 dynamics reserve第二，A1/A2保持
+独立。overall arithmetic advance=`NO`、fixed atom=`0`、strict
+`1/400=UNPAID`、`L2=NONE`、TPC-207=false。
 
 ## 23. V22 后的罗盘：projector 不是色散入口，对角编译器与横截回返分叉
 

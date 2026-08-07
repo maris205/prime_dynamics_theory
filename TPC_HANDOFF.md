@@ -3,6 +3,97 @@
 更新时间：2026-08-07
 交接状态：`SEALED_FOR_NEW_SESSION`
 
+第 70 节在 V22 operator firewall 之后选择新的解析主干，并把动力学路线改造成
+独立 stable-cell reserve。对同一个 literal V19 physical scalar
+
+```text
+S_x=sum_(x/2<t<=x) beta_x^raw(t)
+     [Lambda(t+2)-b_x^(z)(t)]
+    =int_0^1 B_x(alpha)W_x(alpha)dalpha,              (V23.1)
+```
+
+外置 prime shell `Q_mes<q<=2Q_mes`、`Q_mes=x^(1/3)`不能用一次 finite Fourier congruence
+冒充 exact determinant：`dr-t congruent 2 (mod q)`还包含全部非零 copies
+`dr-t=2+qL`。standard DFI/Farey delta也没有 source-backed prime-only、exactly-once
+TPC specialization。因此 single-modulus、standard-conductor lowering与 minimal
+HB2-B3 direct BP attachment均精确 `STOP_SCOPED`。
+
+真正留下的条件入口来自 Blomer--Li `arXiv:2511.03294v1` §2.1 Lemma 1 的
+prime-shell Jutila approximant。区分 physical shell scale与 source cutoff，取
+
+```text
+Q_mes=x^(1/3), Q_src=2Q_mes,
+omega(q)=1_(q prime,Q_mes<q<=2Q_mes),
+L=sum_q(q-1),
+delta=Q_mes^(-2+eta),
+eta=1/32,
+```
+
+则 source-backed `L2` approximation与 exact error split给
+
+```text
+S_x=int chi_x(alpha)G_x(alpha)dalpha
+    +int (1-chi_x(alpha))G_x(alpha)dalpha,
+|E_Jut|<=Q_mes^(-eta/2+o(1))||G_x||_2.              (V23.2)
+```
+
+Jutila不是 exact delta；当前 crude physical energy只有
+`||G_x||_2<=x^(3/2+o(1))`，所以 black-box energy route失败。若独立 theorem给
+`||G_x||_2<=x^(1+theta+o(1))`，在 `eta=1/32`必须有
+`theta<13/4800` 才能支付 strict endpoint。更可信的 survivor是按 Blomer--Li 的
+方法动机，在 Cauchy 之前交织第二个 Kloosterman-sensitive major-arc refinement。
+arc-shifted dual support为 `Q^(17/32)`；Blomer--Pascadi local ledger给
+
+```text
+q-saving=min(11/512,5/144)=11/512,
+x-saving=11/1536,
+11/1536-1/400=179/38400>0.                           (V23.3)
+```
+
+这只证明 compiler losses之前存在非空 exponent window，不是 arithmetic saving。
+当前解析 gate为
+
+```text
+V23_PRIME_SHELL_JUTILA_KLOOSTERMAN_INTERTWINED_PHYSICAL_COMPILER_GATE
+  = OPEN_CONDITIONAL.                                (V23.4)
+```
+
+它必须 source-emitted literal arrays、fixed/nonunit branches、major-arc refinement、
+hybrid zero-mode、axes/tails、`1/L`、`1/delta`、whole prime ensemble与 one-outer-
+absolute exactly-once reassembly全部闭合。Blomer--Li 的 GL(3)-divisor theorem只作
+architecture template，不能替代 TPC coefficients。
+
+动力学侧的 exact finite atlas把 source stability与 carrier stability分开。
+`166->168` 有
+
+```text
+Delta_core beta=0,
+Delta_boundary beta=-e_84+e_168,
+Q_166={7}, Q_168={7,11},
+```
+
+且新生 `q=11` 上十个 nonzero frequencies全部出现。100--400 的 150 个 even-stage
+transitions中，beta overlap stable为 147，prime-shell stable为 146，joint stable为
+143；这是 finite scheduling diagnostic，不是 cancellation。即使 full stable pair，
+fiber denominator更新也在整条 residue fibers传播。same-evaluation Logistic
+transversality ansatz又有精确导数 fatal：若 physical return在 open parameter interval
+coefficientwise固定，则该同一 evaluation的参数导数恒为零。可存活的动力学路线必须把
+transversality放到独立 bad-set/critical-relation function，并证明
+
+```text
+V23_LACUNARY_STABLE_BLOCK_AFFINE_COCYCLE_WITH_SUMMABLE_TRANSVERSAL_BAD_SETS
+  = OPEN_NEW_THEOREM.                                (V23.5)
+```
+
+V23最大 claim仅为 source-backed prime-shell attachment、exact Jutila error split、
+positive conditional exponent window与 finite transport falsifiers。overall arithmetic
+advance=`NO`；fixed-atom credit=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false。
+proof与 checker分别为
+`research/tpc-big-road/bridge_b_prime_shell_jutila_and_stable_dynamics.md`和
+`research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py`；checker冻结
+33-field contract、48-row registry，registry SHA-256为
+`15e40e8c20050549c3e244be59747019f115ebb8ccb9356f95fd449250073b07`。
+
 第 69 节从已发布 V21 commit
 `a6d3cbc8cabff382ce0f4c1d3d8ee2e86d79ca3b`继续 centered-covariance gate。V22把
 actual residue-fiber conditional expectations记为正交投影 `E_q`，并令
@@ -1358,12 +1449,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V22 gate还须分别执行 normal与 optimized只读 checker；
+22项启动回归之后，当前不编号 V23 gate还须分别执行 normal与 optimized只读 checker；
 两次必须都为零且 stdout byte-identical：
 
 ```powershell
-python -B research/tpc-big-road/tpc_bridge_b_centered_projector_checker.py --check
-python -O -B research/tpc-big-road/tpc_bridge_b_centered_projector_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py --check
 ```
 
 随后优先读取：
@@ -2851,6 +2942,61 @@ V22_TRANSVERSAL_COMMON_RETURN_CENTERED_PHYSICAL_CARRIER_GATE = OPEN_NEW_CONSTRUC
 ```
 
 精确 proof、checker与 finite reopen gates见第 69 节。
+
+2026-08-07 的 Bridge B V23 prime-shell Jutila / stable-cell atlas新增且仅新增以下
+scoped cells；它们不改写 V21 paid mean，也不重开 V22 projector cells：
+
+```text
+V23_NAIVE_SINGLE_q_FINITE_FOURIER_EXACT_DIAGONAL
+  = STOP_SCOPED_DIVISIBILITY_ONLY
+
+V23_STANDARD_HB_DFI_C_EQ_X_1_3_SINGLE_MODULUS_COMPILER
+  = STOP_SCOPED_WRONG_MODULUS_SUPPORT
+
+V23_PHYSICAL_K_EQ_q_CONDUCTOR_LOWERING_TO_SINGLE_BP_q
+  = STOP_SCOPED_SECOND_MODULUS_OR_RETAINED_CONGRUENCE
+
+V23_BLACK_BOX_PRIME_SHELL_JUTILA_L2_TO_LITERAL_HB2_HYBRID
+  = STOP_SCOPED_PHYSICAL_FOURIER_ENERGY_UNPAID
+
+V23_MINIMAL_HB2_B3_TO_TWO_CRITICAL_BP_ARRAYS
+  = STOP_SCOPED_NO_SECOND_SMOOTH_VARIABLE_AND_QUADRATIC_CRT_ZERO_MODE
+
+V23_FIX_A_APPLY_BP_THEN_OUTER_TRIANGLE
+  = STOP_SCOPED_Q_15_OVER_32_DEFICIT
+
+V23_ARBITRARY_MOVING_UNIT_BP_VECTOR_LIFT
+  = STOP_SCOPED_FALSE_CHARACTER_EIGENMODE
+
+V23_SAME_PHYSICAL_EVALUATION_AS_PARAMETER_TRANSVERSAL_FUNCTION
+  = STOP_SCOPED_EXACT_RETURN_HAS_ZERO_PARAMETER_DERIVATIVE
+```
+
+前两项只停止把 `D=0`改成 `D congruent 0 (mod q)`，或把 standard delta的完整
+modulus/Farey geometry删成预声明 prime shell；它们不停止 source原生允许 prime-shell
+weight的 Jutila `L2` approximant。第四项只停止把 crude
+`||G_x||_2<=x^(3/2+o(1))`送入 Jutila Cauchy；它不停止 Cauchy之前交织的第二
+Kloosterman major-arc refinement，也不声称所需 physical energy theorem不存在。
+
+`d=q` double-Poisson island只对 separated local atom给 fixed-unit source attachment；
+outer physical `(e1,e2)` triangle恢复 `q^(15/32)` deficit。它是 V8 的 unbalanced
+long-`e` sibling，不是同一个 source lock，也不是 Jutila主路的证明。same-evaluation
+dynamics cell只停止把 parameter-independent exact arithmetic return本身当
+transversality function；独立 critical relation、growing affine carrier与 summable bad-set
+theorem仍 OPEN。
+
+V23 surviving gates为
+
+```text
+V23_PRIME_SHELL_JUTILA_KLOOSTERMAN_INTERTWINED_PHYSICAL_COMPILER_GATE
+  = OPEN_CONDITIONAL
+V23_LACUNARY_STABLE_BLOCK_AFFINE_COCYCLE_WITH_SUMMABLE_TRANSVERSAL_BAD_SETS
+  = OPEN_NEW_THEOREM
+```
+
+前者是当前 primary，后者是独立 dynamics reserve。二者不得互借 saving；正的
+`179/38400`只属于完整 compiler losses之前的 local exponent budget。精确 proof、
+checker与 finite reopen gates见第 70 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -6519,7 +6665,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V22 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V23 current）
 
 ```text
 进入仓库：
@@ -6527,6 +6673,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_prime_shell_jutila_and_stable_dynamics.md、
+research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py、
 research/tpc-big-road/bridge_b_centered_projector_firewall.md、
 research/tpc-big-road/tpc_bridge_b_centered_projector_checker.py、
 research/tpc-big-road/bridge_b_mesoscopic_covariance.md、
@@ -6539,7 +6687,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--69 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--70 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -6607,6 +6755,17 @@ V22_LITERAL_SHBD2_DIAGONAL_POST_POISSON_COMPILER_GATE = OPEN_CONDITIONAL
 BRIDGE_B_ODOMETER_CENTERED_ORBIT_SUM = PROVED_EXACT_L0_NO_CANCELLATION
 BRIDGE_B_LOGISTIC_CENTERED_PHYSICAL_INTERTWINER = ABSENT
 V22_TRANSVERSAL_COMMON_RETURN_CENTERED_PHYSICAL_CARRIER_GATE = OPEN_NEW_CONSTRUCTION
+V23_PRIME_SHELL_JUTILA_L2_APPROXIMANT = PROVED_SOURCE_BACKED
+V23_JUTILA_PHYSICAL_SCALAR_SPLIT = PROVED_EXACT_WITH_EXPLICIT_ERROR
+V23_NAIVE_SINGLE_q_FINITE_FOURIER_EXACT_DIAGONAL = STOP_SCOPED_DIVISIBILITY_ONLY
+V23_STANDARD_HB_DFI_C_EQ_X_1_3_SINGLE_MODULUS_COMPILER = STOP_SCOPED_WRONG_MODULUS_SUPPORT
+V23_PHYSICAL_K_EQ_q_CONDUCTOR_LOWERING_TO_SINGLE_BP_q = STOP_SCOPED_SECOND_MODULUS_OR_RETAINED_CONGRUENCE
+V23_BLACK_BOX_PRIME_SHELL_JUTILA_L2_TO_LITERAL_HB2_HYBRID = STOP_SCOPED_PHYSICAL_FOURIER_ENERGY_UNPAID
+V23_JUTILA_ETA_AND_BP_EXPONENT_LEDGER = PROVED_EXACT_RATIONAL_POSITIVE_LOCAL_MARGIN
+V23_PRIME_SHELL_JUTILA_KLOOSTERMAN_INTERTWINED_PHYSICAL_COMPILER_GATE = OPEN_CONDITIONAL
+V23_SOURCE_AND_CARRIER_STABLE_CELL_SPLIT = PROVED_EXACT_FINITE_DIAGNOSTIC
+V23_SAME_PHYSICAL_EVALUATION_AS_PARAMETER_TRANSVERSAL_FUNCTION = STOP_SCOPED_EXACT_RETURN_HAS_ZERO_PARAMETER_DERIVATIVE
+V23_LACUNARY_STABLE_BLOCK_AFFINE_COCYCLE_WITH_SUMMABLE_TRANSVERSAL_BAD_SETS = OPEN_NEW_THEOREM
 BRIDGE_B_ALL_TRANSLATIONS_CURRENT_GATE = NO
 BRIDGE_B_APPROXIMATE_LOW_RANK_RETURN = OPEN_REQUIRES_WIDTH_AND_PHYSICAL_NORM
 BRIDGE_B_BRATTELI_AGING_CLOCK = OPEN_RESERVE_RANK_GROWTH_FALSIFIER
@@ -6731,12 +6890,12 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮首先执行第 69 节两个独立有限 gates，不再把 V21 centered projector本身当成
-色散入口：
+下一轮首先执行第 70 节解析 primary与独立 dynamics reserve，不再回到 V21
+centered projector或 V22 full-`q` Cauchy completion：
 
 ```text
-V22_LITERAL_SHBD2_DIAGONAL_POST_POISSON_COMPILER_GATE
-V22_TRANSVERSAL_COMMON_RETURN_CENTERED_PHYSICAL_CARRIER_GATE.
+V23_PRIME_SHELL_JUTILA_KLOOSTERMAN_INTERTWINED_PHYSICAL_COMPILER_GATE
+V23_LACUNARY_STABLE_BLOCK_AFFINE_COCYCLE_WITH_SUMMABLE_TRANSVERSAL_BAD_SETS.
 ```
 
 V19已经完成 combined raw MASTER row到 primorial `V_k^vee`的 exact materialization；
@@ -6751,26 +6910,25 @@ marginals exactly为零；完整 projector平均只作用于 rank至多 `sum_q q
 `Hbar_Q`，original `S_x` diagonal原样留下。不得把这个 off-diagonal branch、zero
 marginal、martingale命名或 Kloosterman符号包装成 centered saving。
 
-解析 gate必须从 literal original `S_x` diagonal开始，保留 fixed `h0=2`、`x=2X`、
-ordered `+2,-1` coefficients、Möbius/log weights、rough cutoff、zero/nonunit/diagonal/tails、
-actual modulus/ranges、normalization与 exactly-once reassembly，推到一个 source theorem
-真正接受的 post-Poisson bilinear form。Blomer--Pascadi balanced local gain只有
-`q^(-1/32)=x^(-1/96)`；compiler总 loss必须严格小于 `19/2400` exponent margin。
-full-`q` Fourier completion再切 `sqrt(q)` blocks且只用 black-box Cauchy、因而可能付
-sharp `q^(1/4)` factor的 uniform proof已经 STOP；只有 source端原生 short
-`sqrt(q)` support、额外 block structure或另一条 source-backed collective reduction可继续。
+解析 gate从 exact Fourier diagonal与 Blomer--Li prime-shell Jutila split开始。固定
+`eta=1/32`后，Blomer--Pascadi ledger在 compiler losses前给 `x^(-11/1536)`，相对
+strict endpoint尚余 `179/38400`。下一有限 construction必须真正 materialize
+major-arc source atoms和第二 Kloosterman refinement，逐项登记 primal/dual lengths、
+unit/nonunit/axes、hybrid zero mode、smooth/Mellin norms、tails、`1/L`、`1/delta`、
+whole prime ensemble及 exactly-once outer reassembly。不能把 Jutila approximation写成
+exact delta，也不能把 `d=q` local slice或 Blomer--Li GL(3)-divisor theorem改名成
+literal TPC attachment。
 
-动力学 gate从 exact odometer orbit-sum出发，但它只取得 `L0`编码，不取得 cancellation。
-下一关必须在预声明 positive-measure parameter family上构造同一个 arithmetic
-common-return carrier，给 coefficientwise exact physical intertwiner、parameter-independent
-return、independent small carrier mean，以及同一 good parameter对 all sufficiently large
-stages成立的 uniform triangular pointed bound。普通 ergodicity、positive measure、
-a.e.-seed ASIP/DBC、a.e.-parameter typicality、word-only conjugacy或 single-stage fitting
-均不够。下一有限 falsifier优先检查相邻 `x=166,168` stages、全部 active `q`的 exact
-common return与 nondegenerate parameter derivative。
+动力学 reserve只把 safe lacunary scheduling作为 event-cocycle骨架。`166->168`
+已经证明 source-core stable不等于 carrier stable；same-evaluation parameter
+transversality也因 exact return导数为零而停止。下一合法 construction必须使用独立
+critical-relation/bad-set function、一个固定 parameter/seed、growing exact affine carrier、
+summable bad sets、uniform pointed power bound与 shell exactly-once reassembly。普通
+ergodicity、positive measure、a.e.-seed ASIP/DBC、a.e.-parameter typicality、word-only
+conjugacy或 single-stage fitting仍均不够。
 
 A1 的 `HB4_EXACT_HALF_TOP_ACTUAL_FOUR_POLYNOMIAL_ROOT_NUMBER_SQUARE_MASTER`与 A2
-paired-Voronoi仍只作独立 reserves，不与 Bridge B或这两个 V22 gates拼接 theorem credit。
+paired-Voronoi仍只作独立 reserves，不与 V23解析/dynamics gates拼接 theorem credit。
 
 若返回 A1，V11--V15已经闭合或精确分型六段，
 不得重复：
@@ -6856,11 +7014,16 @@ fiber-range violation不能作为 homogeneous primal source。V20进一步证明
 innovation保留 `1-O(1/p)` energy，且其 signed combined-raw evaluation在 log-power scale
 等价于原 MASTER target；nonnegative horizon decomposition与 full-dimensional path state
 不提供 automatic saving。V21已经用 complete prime ensemble把 wrapped mean branch
-source-backed闭合，并把原 target精确缩成 centered covariance。当前须直接证明
-`BRIDGE_B_SHBD2_Q_AVERAGED_CENTERED_PHYSICAL_COVARIANCE`：保持 fixed `h0=2`、
-literal raw row、actual ragged fibers、whole-ensemble `1/R_x`、外层唯一绝对值、stage、
-event、clock、forcing与整个 typed physical dual family，并输出 uniform deterministic
-`H_dyn/H3_phys` estimate。
+source-backed闭合。V22证明 centered projector/congruence transform只重写 paid mean，
+original `S_x` diagonal原样保留。V23又用 source-backed prime-shell Jutila approximant
+给出合法的 modulus入口与 exact main/error split，并证明 `eta=1/32`时 local BP ledger
+在 full compiler losses之前保留 `179/38400` strict margin。当前须构造
+`V23_PRIME_SHELL_JUTILA_KLOOSTERMAN_INTERTWINED_PHYSICAL_COMPILER_GATE`：保持 fixed
+`h0=2`、literal raw row、`Q_src=2Q_mes`、whole prime-shell weight、
+`L=sum(q-1)`、`delta=Q_mes^(-2+eta)`、
+unit/nonunit/axes、hybrid zero mode、外层唯一绝对值与 exactly-once physical cover，
+并在 Cauchy之前完成第二 Kloosterman-sensitive major-arc refinement。Jutila approximation
+不得改写成 exact delta，正的 local margin也不得改写成 arithmetic advance。
 任何 a.e.结论、
 单向量 fit、word-only
 isomorphism或 abstract norm contraction都不算成功；任何动力学结论也不得逆向给 A1
@@ -6888,6 +7051,7 @@ python research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_terminal_innovation_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_mesoscopic_covariance_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_centered_projector_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -10769,6 +10933,264 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 70. 2026-08-07 V23：prime-shell Jutila highway 与 stable nonautonomous blocks
+
+### 70.1 基线、任务与只读分工
+
+V23从已发布 V22 commit
+`ab438b69e1e0613f641f134e259b18568df678f8`继续。正式写入前同步到
+`HEAD=origin/main=07637f11236d0642752c5617f0fd9db70ca9e48f`；远端增量只含 RH-379，
+没有 TPC source或 scoped policy overlap。启动 `TPC_HANDOFF.md` raw SHA-256为
+`6cdb142062bdcddeb47042b2cc68a566d3c1100e3d8687e30482435b0a692263`。
+
+三个 read-only agents分别完成：delta/Jutila/Kloosterman source screen、
+adjacent-stage/stable-cell exact atlas，以及 checker/adversarial schema blueprint。
+全部正式写入由主控完成；agents回报 `files_changed=[]`。TPC-27--32 legacy writers与
+TPC-122 writer均未执行，全部 protected untracked保持原样。
+
+本轮只回答“大路有没有可构造入口”：解析侧是否能合法把预声明 prime shell放入
+literal diagonal；动力学侧 sparse stage changes是否真能形成 common-return telescope。
+
+### 70.2 Literal Fourier diagonal 与 single-modulus firewall
+
+冻结 fixed `h0=2`、`x=2X`、strict shell、V19 ordered `+2,-1` raw MASTER row及
+V19/V21 hybrid residual，定义
+
+```text
+B_x(alpha)=sum_t beta_x^raw(t)e(-alpha t),
+W_x(alpha)=sum_t w_x^(z)(t)e(alpha t),
+G_x(alpha)=B_x(alpha)W_x(alpha).                       (70.1)
+```
+
+则 exact finite identity为
+
+```text
+S_x=int_0^1 G_x(alpha)dalpha.                          (70.2)
+```
+
+它逐项保留 prime determinant `dr-t=2`与 hybrid same-index diagonal。若直接改成
+`dr-t congruent 2 (mod q)`，会加入全部 `dr-t=2+qL,L!=0` copies；一个 `q`上的
+finite Fourier只认证 divisibility，不认证 equality。standard HB/DFI delta把 nominal
+conductor降到 `x^(1/3)`时仍保留第二 modulus或更长 support；exact Farey identity又需要
+完整 `c<=C` geometry。仓库没有 source-backed prime-only exactly-once specialization。
+
+因此本轮不把 standard delta或 single congruence作为主路。它们只在出现全部 copies的
+signed reassembly与 physical normalization theorem时重开。
+
+### 70.3 Prime-shell Jutila exact error split
+
+source lock为 Blomer--Li `arXiv:2511.03294v1` §2.1 Lemma 1。令
+
+```text
+Q_mes=x^(1/3),
+Q_src=2Q_mes,
+Q_x={q prime:Q_mes<q<=2Q_mes},
+omega_x(q)=1_(q in Q_x),
+L_x=sum_(q in Q_x)(q-1),
+delta_x=Q_mes^(-2+eta).                                (70.3)
+```
+
+同时固定 smooth `psi:R->[0,1]` supported on `[-1,1]`、`int psi=1`；只在
+prime shell nonempty、`L_x>0`且 `0<delta_x<1/2`的 sufficiently-large range使用。
+该 lemma原生允许 supported on `q<=Q_src` 的 bounded nonnegative modulus weight，故
+上述 prime shell是合法 source specialization。Jutila approximant `chi_x`只满足
+
+```text
+||1-chi_x||_2^2 << Q_mes^(-eta+o(1));                 (70.4)
+```
+
+它不是 exact delta。正确用法是 exact decomposition
+
+```text
+S_x=S_x^Jut+E_x^Jut,
+S_x^Jut=int chi_x G_x,
+E_x^Jut=int (1-chi_x)G_x,
+|E_x^Jut|<=Q^(-eta/2+o(1))||G_x||_2.                  (70.5)
+```
+
+这一步是 V23真正的 source-backed prime-shell入口。
+
+### 70.4 Physical energy gate与 exponent ledger
+
+当前 literal bounds只给
+
+```text
+||B_x||_infty << x log^3 x,
+||W_x||_2 <<_K x^(1/2)log^C x,
+||G_x||_2 <<_K x^(3/2)log^C x.                        (70.6)
+```
+
+所以 standalone Jutila Cauchy完全失败。若新 theorem给
+`||G_x||_2<=x^(1+theta+o(1))`，则 `eta=1/32`时需要
+`theta<13/4800`。`L2=NONE`保持不变。
+
+Blomer--Pascadi `arXiv:2607.24311v1`在 arc-shifted dual support
+`Q^(1/2+eta)`上的 two-branch ledger为
+
+```text
+gamma_BP(eta)=min(1/32-5eta/16,1/18-2eta/3).          (70.7)
+```
+
+formal joint window是 `3/200<eta<173/2400`。选择 `eta=1/32`给
+
+```text
+dual support exponent = 17/32,
+q-saving = min(11/512,5/144)=11/512,
+x-saving = 11/1536,
+strict local margin = 179/38400.                      (70.8)
+```
+
+这个 margin只在 physical compiler全部 losses之前成立。
+
+### 70.5 Intertwined compiler contract
+
+Blomer--Li明确以第二 Kloosterman/Farey refinement处理 major arcs上过大的 divisor
+exponential sums。因此当前 analytic primary不是“Jutila后直接 Cauchy”，而是
+
+```text
+V23_PRIME_SHELL_JUTILA_KLOOSTERMAN_INTERTWINED_PHYSICAL_COMPILER_GATE
+  = OPEN_CONDITIONAL.                                 (70.9)
+```
+
+合法 theorem必须同时给 literal source-emitted arrays、`Q^(17/32)` dual supports、
+fixed-unit与 nonunit branches、second major-arc refinement、zero/Ramanujan axes、
+hybrid coefficientwise zero-mode、smooth/Mellin losses、tails、`1/L_x`、
+`delta_x^(-1)`、whole `q,a,gamma` ensemble及 one outer absolute exactly-once
+reassembly。Blomer--Li GL(3)-divisor theorem是 source-backed architecture analogue，
+不是 TPC coefficient attachment。
+
+### 70.6 `d=q` local island 与 V8 sibling
+
+在 separated local atom `qr-Af_1f_2=2`、`A=e_1e_2`、`q` prime、`q`不整除 `A`上，
+exact double Poisson给 Kloosterman sum `S(k,-2hA^(-1);q)`。但 `q=x^(1/3)`、
+`F_1,F_2 asymp sqrt(q)`时有 `e_1,e_2 asymp q`、`r asymp q^2`；固定 physical pair
+接 BP后为 `q^(15/32)`，再对约 `q^2` outer pairs作 triangle不产生 saving。
+
+这与 V8共享 character eigenmode obstruction，却是 lengths不同的 unbalanced long-`e`
+sibling。未来只有 varying-unit/Möbius collective assembler连同 full physical registry
+可重开；本 local island不得与 Jutila外置 circle modulus混成同一 source lock。
+
+### 70.7 Adjacent-stage与 stable-cell exact atlas
+
+checker对 `x=166,168`重算 V19 literal beta、actual prime shells及 rational operators：
+
+```text
+x=166: H=83,Q={7},rank(Pbar)=7,rank(I-Pbar)=76;
+x=168: H=84,Q={7,11},rank(Pbar)=17,rank(I-Pbar)=83,
+       rank(Pbar^2-Pbar)=16.                          (70.10)
+```
+
+在 overlap `85..166`，raw beta exact相同；zero extension给
+
+```text
+beta_168-beta_166=-e_84+e_168.                        (70.11)
+```
+
+但 `q=11`出生使 centered carrier产生 rank-16 update；新生 modulus上的 boundary
+innovation有全部十个 nonzero DFT frequencies。`gamma=(I-Pbar)beta`更新 support为
+81，不是 boundary-supported。
+
+100--400 的 150 个相邻 even-stage pairs中，beta stable为 147、prime-shell stable为
+146、joint stable为 143。beta routing avalanches只在 `126->128`、`218->220`、
+`348->350`出现；prime-shell births/deaths在 `124->126`、`166->168`、
+`274->276`、`342->344`出现。这个 exact finite atlas只证明 safe stages丰富，不证明
+asymptotic density或 cancellation。
+
+### 70.8 Dynamics transversality firewall与 reserve
+
+任意 unbounded subsequence仍跨越无穷多 source/carrier cells；即使一个 pair full stable，
+actual fiber denominators也使 centered update沿完整 residue fibers传播。更根本地，若
+同一个 physical carrier evaluation在一个 open parameter interval coefficientwise等于
+parameter-independent arithmetic return，则其参数导数逐系数恒为零；它不能同时充当
+nondegenerate transversal function。
+
+所以旧 same-evaluation common-return ansatz停止。保留路线是把 transversality移到独立
+critical-relation/bad-set function，并要求一个固定 parameter/seed、growing affine
+carrier、summable bad sets、uniform triangular pointed power bound、event cocycle signed
+summability与 exact shell reassembly：
+
+```text
+V23_LACUNARY_STABLE_BLOCK_AFFINE_COCYCLE_WITH_SUMMABLE_TRANSVERSAL_BAD_SETS
+  = OPEN_NEW_THEOREM.                                 (70.12)
+```
+
+Logistic/Henon ordinary ergodicity、a.e. seed/parameter或 symbolic word matching不支付
+这些量词。analytic primary与 dynamics reserve不互借 theorem credit。
+
+### 70.9 Checker、claim ceiling与 release边界
+
+proof为
+`research/tpc-big-road/bridge_b_prime_shell_jutila_and_stable_dynamics.md`；checker为
+`research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py`。checker锁定 V19、
+V21、V22 canonical hashes，独立重算 exact Fraction fixtures、DFT ranks、stable pairs、
+wall census与 exponent ledger；33-field contract、48-row registry、registry SHA-256为
+
+```text
+15e40e8c20050549c3e244be59747019f115ebb8ccb9356f95fd449250073b07. (70.13)
+```
+
+其 102 contract mutations与 151 registry mutations必须全部拒绝；normal与 optimized
+`--check`必须 stdout byte-identical。maximum claim为
+
+```text
+EXACT_L0_PRIME_SHELL_JUTILA_EXPONENT_INTERFACE_AND_FINITE_TRANSPORT_FALSIFIERS
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false.                              (70.14)
+```
+
+没有创建 TPC-207、编号论文、PDF或 build output；原 protected untracked不得纳入提交。
+
+### 70.10 Release QA
+
+```text
+V23_FINAL_RELEASE_QA = PASS
+FIRST_FATAL = NONE
+SOURCE_FORMULA_QA = PASS
+CHECKER_ADVERSARIAL_QA = PASS
+CROSSDOC_FINITE_RELEASE_QA = PASS
+POST_WRITE_STARTUP_REGRESSION = 22/22 PASS
+POST_WRITE_TPC111_124_126_127_SUPPLEMENTAL = 4/4 PASS
+POST_WRITE_BIG_ROAD_CHECKS = 22/22 PASS
+POST_WRITE_BIG_ROAD_BYTE_IDENTITY = 11/11 PASS
+V23_CHECKER_STDOUT_CRLF_SHA256
+  = 81f33043d985852dabe493815dae645e5cfaf30099e08244680948880ce521b0
+V23_PROOF_SHA256
+  = 7f8131f59a1161e795f6a982a80d4e4bdfee0d16ced49c43e25e84ef2957e955
+V23_CHECKER_SHA256
+  = 29ebf909a5c0c4209aba5ddb6eb76a3b91832a613578dadc6589272b855beb19
+EXPECTED_RELEASE_PATHS = 5/5 EXACT
+CACHED_DIFF = EMPTY
+GIT_DIFF_CHECK = PASS
+MARKDOWN_FENCE_TOKENS = HANDOFF2742_COMPASS200_README340_PROOF132_ALL_BALANCED
+PROTECTED_UNTRACKED = 130 FILES
+PROTECTED_MANIFEST_SHA256
+  = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+PRE_COMMIT_FETCH_ORIGIN_MAIN
+  = 4eebdfcf8b05f2712ee7bfc0b2b9e2244c2b75ae
+PRE_COMMIT_REMOTE_DELTA
+  = RH380_ONLY_NO_TPC_OR_SHARED_POLICY_OVERLAP
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+TPC207_CREATED = false
+NUMBERED_PAPER_PDF_BUILD_CREATED = NO
+```
+
+三路独立 read-only QA均在最终五文件冻结哈希上返回 `PASS`、
+first fatal=`NONE`、`files_changed=[]`。Blomer--Li source contract显式保留
+`psi:R->[0,1]`、`Q_src=2Q_mes`、`Q_src^2`、nonempty `L`与 `0<delta<1/2`；
+conditional endpoint显式保留 `lambda_comp<179/38400`。checker normal/optimized均
+exit `0`、stderr为空、stdout byte-identical；33/48 schema与102/151 mutations全部执行，
+coordinated provider/digest及 false-release attacks均被拒绝。
+
+最终 pre-commit fetch只引入 RH-380 的 `RH_HANDOFF.md`与 `papers/RH-380-*`，没有触及
+TPC handoff、V19--V23 dependencies、根 policy或本轮五文件。发布仍须由主控只 stage
+上述五文件，commit后在 clean tracked state执行 `git pull --rebase origin main`；
+rebase后须复核五个 blobs、全部 claim firewalls与 protected manifest，再 push并验证
+local `HEAD`、`origin/main`、remote `refs/heads/main`三 hash一致。
 
 ## 69. 2026-08-07 V22：centered-projector firewall 与两条 surviving compilers
 
