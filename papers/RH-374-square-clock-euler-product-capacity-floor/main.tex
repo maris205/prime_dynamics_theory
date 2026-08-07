@@ -1,0 +1,464 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Mob}{\mu}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\delta}
+
+\title{Square clocks, run recurrences, and an Euler-product\\
+floor for M\"obius distance-two capacity}
+\author{RH research program}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The RH-373 composite clock gives one strict improvement to the unconditional
+lower floor for the RH-366 distance-two M\"obius capacity.  We construct and
+optimize a whole square-clock family.  If $3=p_1<p_2<\cdots$ are the odd
+primes, $P_y=\prod_{i\le y}p_i^2$, $q_y=4P_y$, and
+$A_y=\prod_{i\le y}(p_i^2-1)$, then the exact optimum among universally safe
+one-site phase/current-input factors at the fixed clock $q_y$ is
+\[
+ B_y=\frac{4+2O_y/A_y}{\pi^2}.
+\]
+Here $O_y$ counts odd-length positive runs in one period of a squarefree
+word, and it has a finite Euler-product formula.  Adjoining a prime $p\ge5$
+gives $A'=(p^2-1)A$ and
+$O'=(p^2-1)O+L_{\mathrm{even}}$, where $L_{\mathrm{even}}$ counts sites in even-length
+old runs.  A length-eight run persists by the Chinese remainder theorem, so
+$B_y$ increases strictly.  The fixed-clock certificates converge to an
+explicit Euler-product constant $B_\infty$, and
+\[
+        \liminf_{N\to\infty}\frac{K_N}{N}\ge B_\infty.
+\]
+The quantifier fixes $y$ before $N\to\infty$; no growing clock, uniform
+Davenport theorem, or infinite selector is asserted.  The optimization does
+not include arbitrary memory transducers or all clocks, and the adaptive
+capacity limit, intrinsic operators, traces, Riemann-zero identification,
+and RH remain open or outside scope.
+\end{abstract}
+
+\section{Frozen capacity and the exact selector class}
+
+The RH-366 distance-two capacity is
+\begin{equation}
+ K_N=\max_{\substack{\eps_1,\ldots,\eps_N\in\{-1,+1\}\\
+ \text{not }(\eps_n,\eps_{n+2})=(+1,+1)}}
+ \left|\sum_{n\le N}\Mob(n)\eps_n\right|.
+ \label{eq:capacity}
+\end{equation}
+Its optimizer may read the full finite prefix and may change with $N$.
+RH-366 proves
+\begin{equation}
+ \frac4{\pi^2}\le\liminf_{N\to\infty}\frac{K_N}{N}
+ \le\limsup_{N\to\infty}\frac{K_N}{N}\le\frac6{\pi^2},
+ \label{eq:old-bracket}
+\end{equation}
+without proving an ordinary limit \cite{RH366}.  RH-371 isolates an exact
+eight-run finite-prefix ledger, but the required M\"obius run frequencies
+remain open \cite{RH371}.  RH-373 instead supplies the externally prescribed
+$q=180$ certificate $97/(24\pi^2)$ \cite{RH373}.
+
+We now freeze the narrower class that is optimized here.
+
+\begin{definition}[Universally safe one-site factor]
+For a fixed clock $q$, a one-site phase/current-input factor is a family
+\[
+       g_r:\{-1,0,+1\}\longrightarrow\{-1,+1\},
+       \qquad r\in\Z/q\Z.
+\]
+It is \emph{universally safe} when, for every ternary input word $a_n$, the
+word $g_{n\bmod q}(a_n)$ has no two $+1$ values at distance two.  Its active
+phase set is
+\[
+       S_g=\{r:g_r(a)=+1\text{ for at least one }a\in\{-1,0,+1\}\}.
+\]
+\end{definition}
+
+Universal safety is equivalent to $S_g\cap(S_g+2)=\varnothing$.  Necessity
+follows by choosing the two activating input values independently; sufficiency
+is immediate.  This is the one-site factor boundary used for finite
+transducer certificates in RH-372 \cite{RH372}.  It is not the class of all
+finite-memory transducers.
+
+For $r\pmod q$, let
+\[
+ \dd_{q,r}=\lim_{N\to\infty}\frac1N
+ \#\{n\le N:n\equiv r\pmod q,\ \Mob(n)^2=1\}.
+\]
+Fixed-frequency Davenport cancellation, followed by finite Fourier
+inversion, gives
+\[
+ M_r(N):=\sum_{\substack{n\le N\\ n\equiv r\ (q)}}\Mob(n)=o(N)
+\]
+for every fixed $q,r$.
+The squarefree progression sieve supplies $\dd_{q,r}$
+\cite{Davenport1937,Mirsky1948}.  Splitting the squarefree terms according to
+$\Mob(n)=\pm1$ therefore gives
+\begin{equation}
+ \lim_{N\to\infty}\frac1N\sum_{n\le N}
+ \Mob(n)g_{n\bmod q}(\Mob(n))
+ =\frac12\sum_{r\bmod q}\dd_{q,r}
+       \bigl(g_r(+1)-g_r(-1)\bigr).
+ \label{eq:factor-correlation}
+\end{equation}
+
+For an active phase, the absolute contribution in
+\eqref{eq:factor-correlation} is at most $\dd_{q,r}$; an inactive phase
+contributes zero.  Conversely, any distance-two independent set $I$ realizes
+its full positive weight by taking
+\begin{equation}
+ g_r(+1)=+1,\quad g_r(0)=g_r(-1)=-1\quad(r\in I),
+ \qquad g_r\equiv-1\quad(r\notin I).
+ \label{eq:canonical-factor}
+\end{equation}
+Thus the maximum absolute limiting correlation in this fixed-$q$ class is
+exactly the maximum-weight independent-set value for the phase graph, with
+vertex weights $\dd_{q,r}$.
+
+\section{Square clocks and the run formula}
+
+Let
+\begin{equation}
+ 3=p_1<p_2<\cdots,\qquad
+ P_y=\prod_{i\le y}p_i^2,\qquad q_y=4P_y,\qquad
+ A_y=\prod_{i\le y}(p_i^2-1),
+ \label{eq:clock-def}
+\end{equation}
+and, for $1\le m\le9$, put
+\begin{equation}
+          E_m^{(y)}=\prod_{i\le y}\left(1-\frac{m}{p_i^2}\right).
+ \label{eq:E-def}
+\end{equation}
+
+\begin{lemma}[Equal positive progression weights]
+For $q=q_y$, a squarefree progression density is zero exactly when
+$4\mid r$ or $p_i^2\mid r$ for some $i\le y$.  Every other phase has
+\begin{equation}
+                    \dd_{q_y,r}=\frac{2}{A_y\pi^2}.
+ \label{eq:equal-density}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The zero cases force a square divisor.  In every other class the fixed
+progression sieve gives
+\[
+ \frac1{q_y}\prod_{p\nmid q_y}(1-p^{-2})
+ =\frac1{4P_y}\frac{6/\pi^2}
+ {(1-2^{-2})\prod_{i\le y}(1-p_i^{-2})}
+ =\frac2{A_y\pi^2}.
+\]
+\end{proof}
+
+The distance-two phase graph has an even and an odd cycle, each of length
+$2P_y$.  On the even cycle, every positive-weight phase is $2\pmod4$.
+There are $A_y$ such phases by the Chinese remainder theorem, and no two are
+adjacent in the distance-two graph.  Hence the even contribution to the
+maximum independent-set cardinality is exactly $A_y$.
+
+Parametrize the odd phases by $r=2k+1$.  Their positive-weight indicator is
+the $P_y$-periodic word
+\begin{equation}
+ w_y(k)=\mathbf 1_{\{p_i^2\nmid 2k+1\text{ for every }i\le y\}}.
+ \label{eq:word}
+\end{equation}
+One period has $A_y$ one-sites.  Because $p_1^2=9$, a zero occurs every nine
+positions, so every positive run has length at most eight.  Let $R_j^{(y)}$
+be the number of cyclic runs of exact length $j$ in one period and define
+\[
+                   O_y=R_1^{(y)}+R_3^{(y)}+R_5^{(y)}+R_7^{(y)}.
+\]
+
+\begin{lemma}[Exact run ledger]
+For $1\le j\le7$,
+\begin{equation}
+ R_j^{(y)}=P_y\left(E_j^{(y)}-2E_{j+1}^{(y)}+E_{j+2}^{(y)}\right),
+ \label{eq:run-count}
+\end{equation}
+whereas the terminal row is separately
+\begin{equation}
+                   R_8^{(y)}=P_yE_8^{(y)}.
+ \label{eq:run-eight}
+\end{equation}
+In particular,
+\begin{equation}
+ O_y=P_y\sum_{j\in\{1,3,5,7\}}
+ \left(E_j^{(y)}-2E_{j+1}^{(y)}+E_{j+2}^{(y)}\right).
+ \label{eq:O-formula}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $N_m$ count cyclic starting positions at which $m$ consecutive entries
+of $w_y$ equal one.  For $m\le9$, the $m$ forbidden congruence classes
+modulo each $p_i^2$ are distinct.  The Chinese remainder theorem gives
+\[
+                         N_m=P_yE_m^{(y)}.
+\]
+For $j\le7$, inclusion--exclusion on extension by one site to the left and
+right gives $R_j=N_j-2N_{j+1}+N_{j+2}$.  The factor at $p_1=3$ makes
+$E_9^{(y)}=0$, hence $N_9=0$ and no run exceeds eight.  Therefore a
+length-eight block is already a whole run, so $R_8=N_8$; no $E_{10}$ term is
+introduced.  Summing the four odd rows proves \eqref{eq:O-formula}.
+\end{proof}
+
+\begin{theorem}[Fixed square-clock optimum]
+Among universally safe one-site phase/current-input factors at the fixed
+clock $q_y$, the exact maximum absolute limiting correlation is
+\begin{equation}
+             \boxed{B_y=\frac{4+2O_y/A_y}{\pi^2}}.
+ \label{eq:B-y}
+\end{equation}
+Consequently
+\begin{equation}
+             B_y\le\liminf_{N\to\infty}\frac{K_N}{N}.
+ \label{eq:fixed-floor}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The odd phase cycle contains two copies of the $P_y$-periodic word.  A run of
+length $\ell$ contributes $\lceil\ell/2\rceil$ vertices to a maximum
+independent set.  Hence the two copies contribute
+\[
+ 2\sum_{\mathrm{runs}}\left\lceil\frac\ell2\right\rceil
+ =\sum_{\mathrm{runs}}\bigl(\ell+\mathbf1_{\{\ell\ \mathrm{odd}\}}\bigr)
+ =A_y+O_y.
+\]
+Adding the $A_y$ even phases gives $2A_y+O_y$ positive phases.  Every one has
+weight $2/(A_y\pi^2)$ by \eqref{eq:equal-density}, so the phase MWIS value is
+\eqref{eq:B-y}.  Equation \eqref{eq:canonical-factor} realizes that value,
+and its output is admissible in \eqref{eq:capacity} for every $N$.
+\end{proof}
+
+\begin{remark}[Exact scope of ``optimum'']
+The theorem optimizes one fixed $q_y$ and only the universally safe one-site
+phase/current-input factor class.  It is not an optimum over arbitrary
+memory transducers, over all clocks, or over the adaptive finite-prefix
+optimizers defining $K_N$.
+\end{remark}
+
+\section{Prime adjoining and strict monotonicity}
+
+Adjoin a new odd prime $p\ge5$ to an old clock, and write $A',O'$ for the
+new quantities.  Let
+\begin{equation}
+ L_{\mathrm{even}}=\sum_{\substack{\text{old runs }R\\ |R|\ \mathrm{even}}}|R|
+ \label{eq:L-even}
+\end{equation}
+be the number of old one-sites contained in even-length runs.
+
+\begin{proposition}[Run recurrence]
+For every newly adjoined $p\ge5$,
+\begin{equation}
+       A'=(p^2-1)A,\qquad
+       O'=(p^2-1)O+L_{\mathrm{even}}.
+ \label{eq:recurrence}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Before imposing the new condition $p^2\nmid2k+1$, one new period consists of
+$p^2$ copies of the old cyclic word.  Every old one-site has $p^2$ lifts,
+and exactly one lift is deleted, proving the formula for $A'$.  Within a
+fixed old run of length $\ell\le8$, its $\ell$ deleted lifts occur in
+distinct copies: two positions assigned to the same copy would differ by
+zero modulo $p^2$, impossible because $0<|j-j'|\le7<p^2$.
+
+Suppose first that $\ell$ is odd.  There are $p^2-\ell$ untouched copies of
+the odd run.  Deleting position $t\in\{0,\ldots,\ell-1\}$ leaves runs of
+length $t$ and $\ell-1-t$.  The $(\ell+1)/2$ even values of $t$ produce no
+odd subrun, while the $(\ell-1)/2$ odd values produce two.  The total number
+of odd runs descending from this old run is therefore
+\[
+ (p^2-\ell)+2\frac{\ell-1}{2}=p^2-1.
+\]
+If $\ell$ is even, each of its $\ell$ deletions splits the run into one odd
+and one even subrun, contributing $\ell$ odd runs in total.  Summing over old
+odd and even runs proves \eqref{eq:recurrence}.
+\end{proof}
+
+\begin{lemma}[Persistent length-eight run]
+For every $y\ge1$, the cyclic word $w_y$ has a run of exact length eight.
+\end{lemma}
+
+\begin{proof}
+Choose $k\equiv5\pmod9$.  Then the two boundary values at $k-1$ and $k+8$
+are zero modulo $9$, while the eight values $2(k+j)+1$, $0\le j\le7$, are
+nonzero modulo $9$.  For each other prime square $p_i^2\ge25$, choose
+$k\pmod{p_i^2}$ outside the eight forbidden classes
+$2(k+j)+1\equiv0\pmod{p_i^2}$.  Such a choice exists because $p_i^2>8$.
+The Chinese remainder theorem joins these choices.  The eight interior sites
+are then one-sites for every old prime square, and the two boundary sites are
+zeros because of $9$.
+\end{proof}
+
+The lemma gives $L_{\mathrm{even}}\ge8$.  Dividing \eqref{eq:recurrence} by
+$A'=(p^2-1)A$ yields
+\begin{equation}
+        \frac{O'}{A'}=\frac OA+
+        \frac{L_{\mathrm{even}}}{(p^2-1)A}>\frac OA.
+ \label{eq:strict-ratio}
+\end{equation}
+Thus $B_{y+1}>B_y$ at every step.
+
+\section{Euler limit and the capacity floor}
+
+For $1\le m\le9$, define
+\begin{equation}
+ e_m=\prod_{p\ \mathrm{odd}}\left(1-\frac{m}{p^2}\right).
+ \label{eq:e-infinite}
+\end{equation}
+The products are positive for $m\le8$ because $\sum_p p^{-2}<\infty$, while
+$e_9=0$ because the $p=3$ factor vanishes.  Moreover
+\begin{equation}
+             e_1=\prod_{p\ \mathrm{odd}}(1-p^{-2})=\frac8{\pi^2}.
+ \label{eq:e-one}
+\end{equation}
+Put
+\begin{equation}
+ C=\frac{1}{e_1}\sum_{j\in\{1,3,5,7\}}
+       (e_j-2e_{j+1}+e_{j+2}),
+ \qquad
+ B_\infty=\frac{4+2C}{\pi^2}.
+ \label{eq:B-infinity}
+\end{equation}
+
+\begin{theorem}[Euler-product capacity floor]
+The sequence $B_y$ is strictly increasing and converges to $B_\infty$.
+Furthermore,
+\begin{equation}
+       \boxed{\displaystyle
+       \liminf_{N\to\infty}\frac{K_N}{N}\ge B_\infty.}
+ \label{eq:limit-floor}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Since $A_y=P_yE_1^{(y)}$, equations \eqref{eq:O-formula} and
+\eqref{eq:B-y} give
+\[
+ \frac{O_y}{A_y}=
+ \frac{\sum_{j\in\{1,3,5,7\}}
+ (E_j^{(y)}-2E_{j+1}^{(y)}+E_{j+2}^{(y)})}{E_1^{(y)}}.
+\]
+Termwise convergence of the finitely many Euler products proves
+$B_y\to B_\infty$; strictness was proved in \eqref{eq:strict-ratio}.
+
+For the last assertion, fix $y$ first.  The clock $q_y$ is then finite, so
+the fixed-frequency arithmetic used in \eqref{eq:factor-correlation} proves
+$\liminf K_N/N\ge B_y$.  The same scalar liminf dominates every $B_y$.
+It therefore dominates $\sup_yB_y=B_\infty$.  This argument neither chooses
+$y=y(N)$ nor requires a Davenport estimate uniform in $q_y$.
+\end{proof}
+
+\begin{remark}[No infinite selector]
+Equation \eqref{eq:limit-floor} takes the supremum of already proved scalar
+lower bounds.  It does not construct a selector with an infinite clock and
+does not exchange the $y$ and $N$ limits.
+\end{remark}
+
+\section{Exact rows and executable audit}
+
+The first four exact rows are
+\begin{center}
+\begin{tabular}{@{}rrrrrrr@{}}
+\toprule
+$y$ & $q_y$ & $A_y$ & $O_y$ & $L_{\mathrm{even}}$ & selected & $\pi^2B_y$\\
+\midrule
+1 & 36 & 8 & 0 & 8 & 16 & $4$\\
+2 & 900 & 192 & 8 & 160 & 392 & $49/12$\\
+3 & 44100 & 9216 & 544 & 7160 & 18976 & $593/144$\\
+4 & 5336100 & 1105920 & 72440 & 838240 & 2284280 & $57107/13824$\\
+\bottomrule
+\end{tabular}
+\end{center}
+In particular,
+\begin{equation}
+ \frac{49}{12}-\frac{97}{24}=\frac1{24},
+ \label{eq:q900-improvement}
+\end{equation}
+so the fixed $q=900$ selector improves the RH-373 coefficient by
+$1/(24\pi^2)$.
+
+The artifact evaluates the Fraction formulas through $y=6$, directly builds
+the cyclic words and phase MWIS only for $y=1,2,3$, and checks the recurrence
+for $3\to5$, $5\to7$, and $7\to11$.  At $q=900$ it constructs an explicit $392$-phase
+selector, finds zero cyclic distance-two conflicts, and checks all
+$900\cdot3^2=8100$ phase/input-pair safety rows.  The sorted selector has
+SHA-256
+\begin{center}
+\texttt{a8e41ecc18c1cb6dec3e5aaeb64868beba8a11c095e65731c48f1a700a10053a}.
+\end{center}
+
+A direct finite M\"obius check at $N=2^{16}$ gives selector score $27174$
+and exact open-prefix capacity $32320$; all $2048$ initial prefixes satisfy
+the witness inequality.  These rows are non-asymptotic reproduction checks.
+They do not prove \eqref{eq:limit-floor}.
+
+For orientation only, a prime product through $200000$ plus the elementary
+tail estimate
+\[
+ -\log\prod_{p>X}(1-m/p^2)
+ \le \frac{m}{X(1-m/X^2)}
+ \qquad(1\le m\le8)
+\]
+gives the conservative enclosure
+\[
+ 4.164146694132415320<\pi^2B_\infty<4.164353662045959253,
+\]
+or
+\[
+ 0.421916271909824186<B_\infty<0.421937242143800443.
+\]
+The enclosure is explicitly labelled a numerical diagnostic; the theorem is
+the exact Euler expression \eqref{eq:B-infinity}.
+
+\section{Route verdict and Gate ledger}
+
+Route A is \texttt{GO}: the fixed-clock optimization, run recurrence, strict
+monotonicity, Euler limit, and scalar-supremum argument are unconditional.
+Route B is \texttt{STOP\_SCOPED}.  The result does not optimize arbitrary
+memory transducers or all clocks, does not supply a growing-clock theorem,
+and does not prove convergence of the adaptive capacity $K_N/N$.  A theorem
+for the RH-371 run envelope or higher-order M\"obius correlations would be a
+different mathematical input.
+
+Gates A--E remain false/open.  The selectors use externally prescribed
+arithmetic phase and the current M\"obius input.  They supply no canonical
+dynamical operator, Fredholm determinant, scattering completion, or
+self-adjoint generator.  They also supply no intrinsic $T\log T$ law,
+von-Mangoldt trace, completed-zeta divisor equality, Riemann-zero
+identification, Hilbert--Polya construction, or proof of RH.
+
+\section{Conclusion}
+
+Square clocks turn the RH-373 example into a rigorous family theorem.  The
+finite combinatorics are exact: equal positive progression weights reduce the
+fixed-clock selector class to a cyclic MWIS, the run ledger has a closed
+Euler-product form, and adjoining a prime creates a positive correction from
+even-length runs.  The supremum of these fixed certificates is therefore an
+explicit Euler-product lower floor.  The next route must address a genuinely
+larger selector class or the adaptive run envelope, rather than promote this
+family optimum beyond its proved scope.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

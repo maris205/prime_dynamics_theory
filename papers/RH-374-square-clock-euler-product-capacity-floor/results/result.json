@@ -1,0 +1,362 @@
+{
+  "certificate": {
+    "all_pass": true,
+    "brute_mwis_checks": [
+      {
+        "brute_mwis": 16,
+        "formula_mwis": 16,
+        "pass": true,
+        "y": 1
+      },
+      {
+        "brute_mwis": 392,
+        "formula_mwis": 392,
+        "pass": true,
+        "y": 2
+      },
+      {
+        "brute_mwis": 18976,
+        "formula_mwis": 18976,
+        "pass": true,
+        "y": 3
+      }
+    ],
+    "euler_product_diagnostic": {
+      "B_infinity_interval": {
+        "lower": "0.421916271909824186",
+        "upper": "0.421937242143800443"
+      },
+      "C_interval": {
+        "lower": "0.082073347066207660",
+        "upper": "0.082176831022979627"
+      },
+      "e1_equals_8_over_pi2_enclosed": true,
+      "e_intervals": {
+        "1": {
+          "lower": "0.810565724453401638",
+          "upper": "0.810569777292156096"
+        },
+        "2": {
+          "lower": "0.645262235846002151",
+          "upper": "0.645268688500624154"
+        },
+        "3": {
+          "lower": "0.501940966927731190",
+          "upper": "0.501948496098704313"
+        },
+        "4": {
+          "lower": "0.378592409893022374",
+          "upper": "0.378599981816939979"
+        },
+        "5": {
+          "lower": "0.273339260614551644",
+          "upper": "0.273346094181487094"
+        },
+        "6": {
+          "lower": "0.184429830000218315",
+          "upper": "0.184435362978113406"
+        },
+        "7": {
+          "lower": "0.110231714009485464",
+          "upper": "0.110235572186994185"
+        },
+        "8": {
+          "lower": "0.049225714088307671",
+          "upper": "0.049227683156252694"
+        },
+        "9": {
+          "lower": "0.000000000000000000",
+          "upper": "0.000000000000000000"
+        }
+      },
+      "odd_prime_count": 17983,
+      "pi2_times_B_infinity_interval": {
+        "lower": "4.164146694132415320",
+        "upper": "4.164353662045959253"
+      },
+      "prime_cutoff": 200000,
+      "status": "diagnostic_only_not_theorem_evidence",
+      "tail_log_bound_max_m8": "0.000040000000008001"
+    },
+    "expected_row_checks": [
+      true,
+      true,
+      true
+    ],
+    "finite_diagnostic": {
+      "endpoint": {
+        "N": 65536,
+        "capacity": 32320,
+        "capacity_witness": true,
+        "selector_score": 27174
+      },
+      "label": "non_asymptotic_reproduction_only",
+      "prefix_witness_rows": 2048
+    },
+    "formula_rows": [
+      {
+        "A": 8,
+        "L_even": 8,
+        "O": 0,
+        "P": 9,
+        "largest_prime": 3,
+        "pi2_times_B": "4",
+        "q": 36,
+        "selected_phase_count": 16,
+        "y": 1
+      },
+      {
+        "A": 192,
+        "L_even": 160,
+        "O": 8,
+        "P": 225,
+        "largest_prime": 5,
+        "pi2_times_B": "49/12",
+        "q": 900,
+        "selected_phase_count": 392,
+        "y": 2
+      },
+      {
+        "A": 9216,
+        "L_even": 7160,
+        "O": 544,
+        "P": 11025,
+        "largest_prime": 7,
+        "pi2_times_B": "593/144",
+        "q": 44100,
+        "selected_phase_count": 18976,
+        "y": 3
+      },
+      {
+        "A": 1105920,
+        "L_even": 838240,
+        "O": 72440,
+        "P": 1334025,
+        "largest_prime": 11,
+        "pi2_times_B": "57107/13824",
+        "q": 5336100,
+        "selected_phase_count": 2284280,
+        "y": 4
+      },
+      {
+        "A": 185794560,
+        "L_even": 138469400,
+        "O": 13008160,
+        "P": 225450225,
+        "largest_prime": 13,
+        "pi2_times_B": "2403733/580608",
+        "q": 901800900,
+        "selected_phase_count": 384597280,
+        "y": 5
+      },
+      {
+        "A": 53508833280,
+        "L_even": 39501518560,
+        "O": 3884819480,
+        "P": 65155115025,
+        "largest_prime": 17,
+        "pi2_times_B": "2772562151/668860416",
+        "q": 260620460100,
+        "selected_phase_count": 110902486040,
+        "y": 6
+      }
+    ],
+    "q900_selector": {
+      "distance_two_conflicts": [],
+      "even_phase_count": 192,
+      "inactive_selected_phases": [],
+      "odd_phase_count": 200,
+      "selected_phase_count": 392,
+      "sorted_phase_sha256": "a8e41ecc18c1cb6dec3e5aaeb64868beba8a11c095e65731c48f1a700a10053a",
+      "universal_pass": true,
+      "universal_rows": 8100
+    },
+    "q900_vs_rh373": {
+      "difference": "1/24",
+      "q900_pi2_coefficient": "49/12",
+      "rh373_pi2_coefficient": "97/24"
+    },
+    "recurrence_checks": [
+      {
+        "A_new": 192,
+        "A_old": 8,
+        "A_recurrence_rhs": 192,
+        "L_even": 8,
+        "O_new": 8,
+        "O_old": 0,
+        "O_recurrence_rhs": 8,
+        "adjoined_prime": 5,
+        "exact_length_8_run": true,
+        "p2_greater_than_8": true,
+        "pass": true,
+        "strict": true,
+        "y": 1
+      },
+      {
+        "A_new": 9216,
+        "A_old": 192,
+        "A_recurrence_rhs": 9216,
+        "L_even": 160,
+        "O_new": 544,
+        "O_old": 8,
+        "O_recurrence_rhs": 544,
+        "adjoined_prime": 7,
+        "exact_length_8_run": true,
+        "p2_greater_than_8": true,
+        "pass": true,
+        "strict": true,
+        "y": 2
+      },
+      {
+        "A_new": 1105920,
+        "A_old": 9216,
+        "A_recurrence_rhs": 1105920,
+        "L_even": 7160,
+        "O_new": 72440,
+        "O_old": 544,
+        "O_recurrence_rhs": 72440,
+        "adjoined_prime": 11,
+        "exact_length_8_run": true,
+        "p2_greater_than_8": true,
+        "pass": true,
+        "strict": true,
+        "y": 3
+      }
+    ],
+    "run_formula_checks": [
+      {
+        "direct": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 1
+        },
+        "formula": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 1
+        },
+        "max_run": 8,
+        "pass": true,
+        "y": 1
+      },
+      {
+        "direct": {
+          "1": 2,
+          "2": 2,
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "7": 2,
+          "8": 17
+        },
+        "formula": {
+          "1": 2,
+          "2": 2,
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "7": 2,
+          "8": 17
+        },
+        "max_run": 8,
+        "pass": true,
+        "y": 2
+      },
+      {
+        "direct": {
+          "1": 154,
+          "2": 148,
+          "3": 142,
+          "4": 136,
+          "5": 130,
+          "6": 124,
+          "7": 118,
+          "8": 697
+        },
+        "formula": {
+          "1": 154,
+          "2": 148,
+          "3": 142,
+          "4": 136,
+          "5": 130,
+          "6": 124,
+          "7": 118,
+          "8": 697
+        },
+        "max_run": 8,
+        "pass": true,
+        "y": 3
+      }
+    ]
+  },
+  "claim_boundary": {
+    "notes": [
+      "The exact optimum is only for fixed-q_y universally safe one-site phase/current-input factors.",
+      "No optimizer over arbitrary memory transducers or all clocks is claimed.",
+      "No q(N), uniform-in-q Davenport estimate, or infinite selector is used.",
+      "The ordinary limit of the adaptive RH-366 capacity remains open.",
+      "Finite Mobius endpoints and the decimal Euler enclosure are diagnostics, not asymptotic evidence.",
+      "No intrinsic operator, prime-power trace, zero identification, Hilbert--Polya construction, or RH implication is claimed."
+    ],
+    "route_a": "GO",
+    "route_b": "STOP_SCOPED"
+  },
+  "gates": {
+    "A_canonical_intrinsic_dynamical_spectral_determinant": false,
+    "B_time_oriented_scattering_or_unitary_completion": false,
+    "C_self_adjoint_generator_and_intrinsic_T_log_T": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "source_commits": {
+    "henon_mobius_correlations": "34490443f50cfe9af9ff93888e51e7e7e534a5a7",
+    "rh366_release": "0396fab97bbe3348c8237f8734dec0e1893fd3bf",
+    "rh371_release": "241b78a89ccbc0bad96d9ef20ee9256d61b4eaca",
+    "rh372_release": "7a7b10b74722b520b145064923af8df6d4e2e73f",
+    "rh373_release": "e46a0b0ef0e459fc26711c379ce8c1b68deb9c58",
+    "rh_mvp2_archive": "c0aed13a34b8bbc53061aed23738660adcd3624c"
+  },
+  "source_locks": {
+    "count": 12,
+    "files": {
+      "henon_mobius_correlations/THEOREM_PACKAGE.md": "634fd9543ceab91c19766015141e83636d64213f131d5c1b098385ef68c3b102",
+      "henon_mobius_correlations/henon_mobius/arithmetic.py": "cce5cdf5f78e56ea70d1546fd2eded6230aad3c8befd088869890697dfcf5eb7",
+      "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/README.md": "d357192bfb80da578459cdac4add37840b8e1e47c5b2188ca0e49e7b096cbb23",
+      "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/results/result.json": "6a125ca90b0964945f95b39397b6e83f15a23ad24c94d2e8b9c90d320db8e418",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/README.md": "813a9afa3028c8b6774277399bfb2363f744ecf113121cf653767f74b78e7987",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/results/result.json": "00210432e5169df7b450b8a764e67547a1fd4f1213714d51d9d98b80fc9ca657",
+      "prime_dynamics_theory/papers/RH-372-bounded-constraint-graph-transducer-certificates/README.md": "2b86f0bdcbfbfba3ccd2edb8e518699c99d413884b37e33a9936ff8f01210a8c",
+      "prime_dynamics_theory/papers/RH-372-bounded-constraint-graph-transducer-certificates/results/result.json": "8256ddc3e50c7ab641e0ee8dceffc3e18cfd0877fff667613fb30ff23f632163",
+      "prime_dynamics_theory/papers/RH-373-composite-clock-mobius-capacity-floor/README.md": "e2bcb912fbc372437c289bfeef54a254ffaa48a677b755b49314574babb5048f",
+      "prime_dynamics_theory/papers/RH-373-composite-clock-mobius-capacity-floor/THEOREM_LEDGER.md": "04e3d21ab323cb53013723f846650b7b1dd3ec4b1cac7b409d2f2680a1ee4e01",
+      "prime_dynamics_theory/papers/RH-373-composite-clock-mobius-capacity-floor/results/result.json": "96cb93d97abffed83f57b90fec996ea51dcc199fec05063995b974f480d31773",
+      "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751"
+    },
+    "pass": true
+  },
+  "status": "RH-374_square_clock_euler_product_capacity_floor",
+  "theorem": {
+    "capacity_statement": "liminf K_N/N >= B_infinity",
+    "clocks": "q_y=4*prod_{i<=y}p_i^2 with p_1=3",
+    "euler_limit": "B_infinity=(4+2*C)/pi^2 with C=sum_odd(e_j-2e_(j+1)+e_(j+2))/e_1",
+    "fixed_clock_optimum": "B_y=(4+2*O_y/A_y)/pi^2",
+    "fixed_clock_optimum_scope": "universally safe one-site phase/current-input factors at fixed q_y",
+    "q900_improvement_over_rh373": "1/(24*pi^2)",
+    "quantifier": "fix y before N tends to infinity; one scalar liminf dominates all B_y",
+    "recurrence": "A'=(p^2-1)A; O'=(p^2-1)O+L_even",
+    "run_formula": "O_y=P_y*sum_{j in {1,3,5,7}}(E_j-2*E_(j+1)+E_(j+2))",
+    "strict_monotonicity": true
+  }
+}

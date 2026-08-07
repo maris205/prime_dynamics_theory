@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rh374-square-clock-capacity"
+version = "0.1.0"
+description = "Exact square-clock Euler-product certificate for the RH-366 Mobius capacity floor"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
