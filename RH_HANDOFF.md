@@ -1,14 +1,14 @@
 # RH Research Handoff
 
-Status date: 2026-08-07
+Status date: 2026-08-08
 
-Current completed endpoint: RH-382
+Current completed endpoint: RH-383
 
-Completed research batch: RH-352 through RH-382
+Completed research batch: RH-352 through RH-383
 
-Post-four-volume independent theorem edges: RH-362 through RH-382
+Post-four-volume independent theorem edges: RH-362 through RH-383
 
-Latest route verdict: RH-382 Route A `GO`; Route B `STOP_SCOPED`
+Latest route verdict: RH-383 Route A `GO`; Route B `STOP_SCOPED`
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -63,6 +63,9 @@ RH-381 integration commit:
 
 RH-382 integration commit:
 `32afe96176ac00f4f261cf7097e0342a5c5194f1`.
+
+RH-383 integration commit:
+`bea5c88ca4ae9ca75511af42296ed099c1d6b11a`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -158,6 +161,11 @@ Read completely:
 - `papers/RH-382-two-scale-prime-square-tail-expansion/THEOREM_LEDGER.md`
 - `papers/RH-382-two-scale-prime-square-tail-expansion/results/result.json`
 - `papers/RH-382-two-scale-prime-square-tail-expansion/main.pdf`
+- `papers/RH-383-exact-euler-tail-partition-normal-form/README.md`
+- `papers/RH-383-exact-euler-tail-partition-normal-form/UPDATED_ROADMAP.md`
+- `papers/RH-383-exact-euler-tail-partition-normal-form/THEOREM_LEDGER.md`
+- `papers/RH-383-exact-euler-tail-partition-normal-form/results/result.json`
+- `papers/RH-383-exact-euler-tail-partition-normal-form/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -188,8 +196,9 @@ the mixed-exponent run-hierarchy/two-envelope input, RH-378 as the
 safe-window/online-transducer input, RH-379 as the phasewise Chowla-free
 memory-supremum input, RH-380 as the finite-clock nonattainment/gap input,
 RH-381 as the prime-square-tail rate/quadratic-remainder input, RH-382 as the
-two-scale second-order/cubic-remainder input, and RH-361 as the immediate
-endpoint of the still-open original physical branch.
+two-scale second-order/cubic-remainder input, RH-383 as the exact Euler-tail
+partition-normal-form input, and RH-361 as the immediate endpoint of the
+still-open original physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -199,28 +208,33 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-382 is now integrated.  Inside the frozen RH-379 phasewise-`c_11=0`
-class it proves the two-scale prime-square-tail expansion
+RH-383 is now integrated.  Inside the frozen RH-379 phasewise-`c_11=0`
+class it proves the exact Euler-tail endpoint normal form
 
 ```text
-B_infinity-G(q_y)
- =(2X_infinity/pi^2)T_y
-  +((Y_infinity+2m_infinity)/pi^2)T_y^2
-  +((Y_infinity-2m_infinity)/pi^2)S_y+R_y,
-abs(R_y)<=3301T_y^3/(6pi^2)<551T_y^3/pi^2.
+U_m^(y)=u_m exp(Phi_(m-1)(y)),
+H_y=(4/pi^2)exp(-Phi_1(y)),
+pi^2(B_infinity-G(q_y))
+ =2(C(u)-C(U^(y)))-4W(U^(y))(1-exp(-Phi_1(y))).
 ```
 
-Here `T_y=sum_(p>p_y)(p^2-1)^(-1)` and
-`S_y=sum_(p>p_y)(p^2-1)^(-2)`.  The proof keeps the two quadratic scales
-separate, uses all-order product inequalities rather than finite fitting,
-fixes every clock before its `N`-limit, and uses no prime number theorem or
-`p_y` rewrite.  Independent source, proof, and symbolic audits give `GO` to
-the next within-class candidate: an exact Euler-tail cluster/exponential
-normal form encoding every homogeneous order through the power sums
-`P_r(y)=sum_(p>p_y)(p^2-1)^(-r)`, together with a finite partition
-coefficient algorithm, a new cubic block, and a uniform arbitrary-order
-truncation bound.  Any extension to genuinely active phasewise `c_11!=0`
-remains `STOP_SCOPED` without a phase-weighted shift-two correlation theorem.
+Here `Phi_c(y)=sum_(r>=1)c^rP_r(y)/r` and
+`P_r(y)=sum_(p>p_y)(p^2-1)^(-r)`.  A finite partition compiler gives every
+homogeneous coefficient, cancels the `m=2` channel at all positive orders,
+reproduces RH-381/RH-382 in its first two layers, and freezes a new cubic
+block.  For every exact integer `D>=1`, its remainder obeys
+`abs(R_(D,y))<=(92/(3pi^2))(7T_y)^(D+1)`.  The proof establishes absolute
+convergence, fixes every clock before its `N`-limit, and uses neither finite
+fitting nor a prime number theorem.
+
+Independent source and proof audits give `GO` to the next within-class
+candidate, RH-384: use a separately source-locked prime number theorem to
+resolve the power sums into distinct `p_y` scales.  In particular the
+candidate proves `S_y=o(T_y^2)` but `T_y^3=o(S_y)`, so the first scale below
+`T_y^2` is `S_y`, not a scalar cubic power of `T_y`.  This remains a
+candidate until its paper and release audits are complete.  Any extension to
+genuinely active phasewise `c_11!=0` remains `STOP_SCOPED` without a
+phase-weighted shift-two correlation theorem.
 The geometrically selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
@@ -1676,7 +1690,95 @@ PNT, introduce `q(N)`, activate nonzero phasewise `c_11`, settle the RH-377
 adaptive envelope, or construct an intrinsic operator, trace, zero model,
 or Gate A--E result.  Route A is `GO`; Route B is `STOP_SCOPED`.
 
-## 4. Compact conclusions from RH-352 through RH-382
+### 3.22 RH-383 exact Euler-tail partition normal form
+
+RH-383 retains the same fixed-finite-clock, universally safe,
+phasewise-`c_11=0` class.  For
+
+```text
+a_(j+1)=1/(p_(j+1)^2-1),
+P_r(y)=sum_(j>=y)a_(j+1)^r,
+Phi_c(y)=sum_(r>=1)c^r P_r(y)/r,
+C(V)=1-2V_2+2V_3-2V_4+2V_5-2V_6+2V_7-2V_8,
+W(V)=V_2-2V_3+2V_4-2V_5+2V_6-2V_7+2V_8,
+```
+
+the square-clock gap has the exact endpoint form
+
+```text
+U_m^(y)=u_m exp(Phi_(m-1)(y)),
+H_y=(4/pi^2)exp(-Phi_1(y)),
+pi^2(B_infinity-G(q_y))
+ =2(C(u)-C(U^(y)))-4W(U^(y))(1-exp(-Phi_1(y))).
+```
+
+For a nonempty partition `lambda=1^k_1...d^k_d`, put
+
+```text
+degree(lambda)=d,
+P_lambda(y)=product_r P_r(y)^k_r,
+z_lambda=product_r r^k_r k_r!,
+alpha=(-2,2,-2,2,-2,2,-2),
+beta=(1,-2,2,-2,2,-2,2),  indexed by m=2,...,8.
+```
+
+Absolute convergence and finite partition expansion give
+
+```text
+pi^2(B_infinity-G(q_y))
+ =sum_(d>=1) sum_(lambda partition d) gamma_lambda P_lambda(y),
+gamma_lambda
+ =-(2/z_lambda)sum_(m=2)^8 alpha_m u_m (m-1)^d
+  -(4/z_lambda)sum_(m=2)^8 beta_m u_m
+    [(m-1)^d-product_r((m-1)^r-1)^k_r].
+```
+
+The `m=2` summand vanishes for every nonempty partition.  In the independent
+increment compiler the tail-product sign is `(-1)^length(lambda)` and the
+loss sign is `(-1)^(length(lambda)+1)`, not degree parity.  Its memory term
+uses the strict successor tail `j+1`.  Endpoint coefficients `alpha/beta`
+remain distinct from increment coefficients
+
+```text
+XI=(2,-4,6,-8,10),       indexed by m=4,...,8,
+ETA=(2,-4,6,-8,10,-12), indexed by m=3,...,8,
+xi_m=-alpha_m(m-1)-2beta_m,
+eta_m=-beta_m(m-2).
+```
+
+The first two homogeneous layers reproduce RH-381 and RH-382 exactly.  The
+new cubic coefficients are
+
+```text
+gamma_(1,1,1)
+ =4u_3-(22/3)u_4+(20/3)u_5+2u_6-(68/3)u_7+(178/3)u_8,
+gamma_(2,1)
+ =4u_3+10u_4-52u_5+134u_6-268u_7+466u_8,
+gamma_(3)
+ =-8u_3+(100/3)u_4-(248/3)u_5+164u_6
+   -(856/3)u_7+(1364/3)u_8.
+```
+
+For every exact integer `D>=1`, with `rho_y=7T_y<=7/8`, the remainder in
+the unscaled gap satisfies
+
+```text
+abs(R_(D,y))<=(92/(3pi^2))rho_y^(D+1)
+             <(31/pi^2)rho_y^(D+1).
+```
+
+The exact majorant ledger is `20+32/3=92/3`; it uses
+`sum abs(XI_m)u_m<=35/4` and `sum abs(ETA_m)u_m<=14`.  Terminal
+`R_8=mathcal_P_yE_8`, the licensed `E_9=0`, and the absence of `E_10` remain
+explicit.  Repeated endpoint or inert coefficient labels in the artifact
+are declared bookkeeping copies, not distinct theorems.
+
+RH-383 does not replace its exact power sums by `p_y` asymptotics, use PNT,
+introduce `q(N)`, activate nonzero phasewise `c_11`, settle the RH-377
+adaptive envelope, or construct an intrinsic operator, trace, zero model,
+or Gate A--E result.  Route A is `GO`; Route B is `STOP_SCOPED`.
+
+## 4. Compact conclusions from RH-352 through RH-383
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -1828,6 +1930,14 @@ or Gate A--E result.  Route A is `GO`; Route B is `STOP_SCOPED`.
   Terminal `R_8`, `E_9=0`, and the absence of `E_10` are paid explicitly.
   It does not use PNT, rewrite in `p_y`, activate nonzero `c_11`, introduce
   growing clocks, settle adaptive capacity, or construct any Gate object.
+- **RH-383:** Exact absolutely convergent Euler-tail endpoint and partition
+  normal form for the square-clock gap, with a finite coefficient compiler,
+  all-order disappearance of the `m=2` channel, exact recovery of the first
+  two homogeneous layers, a new cubic block, and the uniform arbitrary-order
+  remainder `(92/(3pi^2))(7T_y)^(D+1)`.  It keeps partition length distinct
+  from degree, uses the strict successor tail, and does not use PNT, rewrite
+  in `p_y`, enlarge the phasewise-`c_11=0` class, settle adaptive capacity,
+  or construct any Gate object.
 
 ## 5. Route firewall and reopening triggers
 
@@ -2009,6 +2119,18 @@ Do not:
   active phasewise-`c_11` cancellation, adaptive-capacity limit, intrinsic
   operator, determinant, trace, zero model, Hilbert--Polya construction, or
   Gate result;
+- replace the RH-383 partition-length sign by total-degree parity, or replace
+  its strict successor tail `j+1` by the current tail `j`;
+- conflate RH-383 endpoint coefficients `alpha/beta` with increment
+  coefficients `XI/ETA`, or inherit the special RH-381/RH-382 remainder
+  constants `342` or `3301/6` as its arbitrary-order majorant;
+- call the inert-`c`, endpoint-labelled, or low-order bookkeeping copies in
+  the RH-383 artifact distinct theorems, or treat its finite rows as the
+  proof of absolute convergence or the infinite partition identity;
+- promote RH-383 to a PNT or `p_y` scale theorem, growing-clock theorem,
+  active phasewise-`c_11` cancellation, adaptive-capacity limit, intrinsic
+  operator, determinant, trace, zero model, Hilbert--Polya construction, or
+  Gate result;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -2024,7 +2146,7 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-382. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-383. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
 declared periodic/typical/distance-two capacity audit, RH-373 closes the
 declared fixed composite-clock phase-selector floor route, and RH-374 closes
@@ -2059,63 +2181,67 @@ It does not identify the second-order coefficients, replace `T_y` by a
 RH-382 closes only the two-scale second-order expansion and uniform cubic
 remainder inside that same class.  It does not prove an arbitrary-order
 normal form, replace `T_y` by a `p_y` asymptotic, enlarge the class, or close
-the adaptive capacity limit.  For RH-383 and later,
+the adaptive capacity limit.  RH-383 closes only the exact Euler-tail
+endpoint/partition normal form, absolute convergence, all-order `m=2`
+cancellation, cubic layer, and uniform arbitrary-order remainder inside that
+same class.  It does not supply a PNT scale dictionary, enlarge the class, or
+close the adaptive capacity limit.  For RH-384 and later,
 the shortest exact candidates are:
 
-1. The independently source-locked, proof-audited, and symbolically audited
-   RH-383 exact Euler-tail cluster/exponential normal form.  Retain the
-   RH-382 class and define
+1. The independently source-locked and proof-audited RH-384 prime-tail scale
+   separation theorem.  Retain the RH-383 class and use a separately sourced
+   prime number theorem to prove, for every fixed `r>=1`,
 
    ```text
-   P_r(y)=sum_(j>=y)a_(j+1)^r,
-   Phi_c(y)=sum_(r>=1)c^r P_r(y)/r,
-   C(V)=1-2V_2+2V_3-2V_4+2V_5-2V_6+2V_7-2V_8,
-   W(V)=V_2-2V_3+2V_4-2V_5+2V_6-2V_7+2V_8.
+   P_r(y)=sum_(p>p_y)(p^2-1)^(-r)
+         ~1/[(2r-1)p_y^(2r-1)log p_y].
    ```
 
-   The candidate exact identities are
+   For a fixed partition `lambda=1^k_1...d^k_d` of degree `d` and length
+   `ell=sum k_r`, the target dictionary is
 
    ```text
-   U_m^(y)=u_m exp(Phi_(m-1)(y)),
-   H_y=(4/pi^2)exp(-Phi_1(y)),
-   pi^2(B_infinity-G(q_y))
-    =2(C(u)-C(U^(y)))-4W(U^(y))(1-exp(-Phi_1(y))).
+   P_lambda(y)
+    ~[product_r(2r-1)^(-k_r)]
+      p_y^(-(2d-ell))(log p_y)^(-ell).
    ```
 
-   For `lambda=1^k_1...d^k_d`, put
+   In particular, with `T=P_1` and `S=P_2`, prove
 
    ```text
-   P_lambda=product_r P_r^k_r,
-   z_lambda=product_r r^k_r*k_r!,
-   alpha=(-2,2,-2,2,-2,2,-2),
-   beta=(1,-2,2,-2,2,-2,2),  indexed by m=2,...,8.
+   p_y log(p_y) T_y ->1,
+   3p_y^3 log(p_y) S_y ->1,
+   S_y/T_y^2 ->0,
+   T_y^3/S_y ->0,
+   S_y/[T_y^3 log(p_y)^2] ->1/3.
    ```
 
-   The audited finite coefficient algorithm is
+   Put
 
    ```text
-   gamma_lambda
-    =-(2/z_lambda)sum_(m=2)^8 alpha_m*u_m*(m-1)^d
-     -(4/z_lambda)sum_(m=2)^8 beta_m*u_m*
-       ((m-1)^d-product_r((m-1)^r-1)^k_r).
+   A=2X_infinity/pi^2,
+   B=(Y_infinity+2m_infinity)/pi^2,
+   C=(Y_infinity-2m_infinity)/pi^2.
    ```
 
-   It must be proved with absolute convergence.  The `m=2` summand cancels
-   for every nonempty partition.  For `rho_y=7T_y<=7/8`, let `R_(D,y)` be
-   the remainder in `B_infinity-G(q_y)` after total degree `D>=1`.  The
-   audited safe bound is
+   RH-382 then yields five normalized limits:
 
    ```text
-   abs(R_(D,y))<=(92/(3pi^2))*rho_y^(D+1)
-                <(31/pi^2)*rho_y^(D+1).
+   p_y log(p_y)(B_infinity-G(q_y)) ->A,
+   [p_y log(p_y)]^2(B_infinity-G(q_y)-A T_y) ->B,
+   [B_infinity-G(q_y)-A T_y-B T_y^2]/S_y ->C,
+   3p_y^3 log(p_y)[B_infinity-G(q_y)-A T_y-B T_y^2] ->C,
+   [B_infinity-G(q_y)-A T_y-B T_y^2]
+     /[T_y^3 log(p_y)^2] ->C/3.
    ```
 
-   The first two homogeneous layers must recover RH-381 and RH-382 exactly,
-   including the independent `S_y` sign, and the paper must display the new
-   cubic layer.  The general bound does not inherit RH-381/RH-382's sharper
-   special-purpose constants.  The analytic series is an auxiliary
-   Euler-tail normal form, not a new clock at complex parameter, and must not
-   be promoted beyond the fixed phasewise-`c_11=0` class.
+   The proof-grade interval `1.5463476716710499204 <= Y_infinity-2m_infinity
+   <= 1.5484488989771761113` makes `C>0`.  The exact second-scale subtraction
+   must use `A T_y`, not the PNT surrogate `A/[p_y log(p_y)]`, whose unknown
+   relative error can dominate `T_y^2`.  Keep the endpoint strictly
+   `p>p_y`, the first tail atom `p_(y+1)`, and every partition fixed.  Bare
+   PNT supplies no effective threshold, uniform growing-degree theorem, or
+   growing-clock result.
 2. A genuine phase-weighted shift-two or higher-order Möbius correlation
    theorem controlling active `c_11(r)` terms, the
    RH-377 envelope or a larger memory-dependent transducer class.
@@ -3016,6 +3142,75 @@ uniform arbitrary-order truncation bound.  The first two homogeneous layers
 reproduce RH-381 and RH-382 exactly.  Active nonzero `c_11(r)` remains
 `STOP_SCOPED` at phase-weighted shift-two Cesaro cancellation, and the RH-377
 adaptive envelope remains open.  No Gate A--E conclusion changes.
+
+### 6.20 RH-383 source lock, partition normal form, and route decision (2026-08-08)
+
+RH-383 is published at
+`bea5c88ca4ae9ca75511af42296ed099c1d6b11a`.  It freezes forty-one
+immutable predecessor files and six Git releases; mutable root policy and
+handoff files are intentionally excluded:
+
+```text
+RH-374 release              2bb3baa6a09491c2d679d10c0dbcd39587d1f831
+RH-379 release              9ae9802ed17529ef4adfb81d7e2158d47c3c8d22
+RH-380 release              dd94b9cfebdbf5df92084ba870b10d3a4d432bee
+RH-381 release              b6a6355b3390f3d00091a02cf77845b4f68a4a22
+RH-382 release              32afe96176ac00f4f261cf7097e0342a5c5194f1
+RH-MVP2 archive             c0aed13a34b8bbc53061aed23738660adcd3624c
+```
+
+The group sizes are `7/8/8/8/8/2`, and the aggregate source digest is
+`492100fe3b6b823a39b58cec25b0dcddf6d52c02bd1941f0978611f01a2b8db9`.
+Independent proof, symbolic, numerical, integrity, and release audits
+reconstructed the endpoint `C/W` identity, the partition and ordered-
+increment compilers, the partition-length sign, the strict successor tail,
+all-order `m=2` cancellation, the low-order and cubic blocks, and the exact
+`92/3` majorant.
+
+The final executable suite has `25/25` tests.  It freezes `67` endpoint
+rows, `864` A/F rows, `432` Q-labelled rows, `1084` gamma-labelled rows,
+`144` channel comparisons, `33` low-order bundles, the cubic and terminal
+ledgers, `1151` labelled `m=2` checks, `804` remainder rows, and `20/20`
+genuine formula/interface mutations.  The repeated labels are disclosed as
+bookkeeping copies rather than distinct theorems.  The exact certificate is
+`12245` canonical bytes with SHA-256
+`9e2742fcdb2f626909eeb528c5081c9ace5414a1e6466c15b8b6800f427b6f16`.
+The single-paper archive contains twenty-nine publication members plus
+forty-one external inputs with zero failures.
+
+The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  RH-383 proves
+the exact absolutely convergent Euler-tail endpoint/partition normal form,
+all-order disappearance of the `m=2` channel, a new cubic layer, and the
+uniform arbitrary-order remainder inside the fixed phasewise-`c_11=0`
+class.  It does not use PNT or provide a `p_y` scale theorem.
+
+Independent post-RH-383 source and proof audits give `GO` to the RH-384
+prime-tail scale-separation candidate.  Its repository PNT source is RH-2,
+release `836426546db31e2737e877182848c538ed4cd436`, with frozen hashes
+
+```text
+main.tex
+5f2538e648c2ed850b94a03c072a3526f31bcc0c70c90639f65601507f52e532
+
+references.bib
+bd86702192cd4bc6d1c2975c7da4b305541e0c5943f13c5edf044686f0faf2ab
+```
+
+and Montgomery--Vaughan DOI `10.1017/CBO9780511618314`.  RH-368/RH-371
+record Möbius consequences of PNT but are not the source for the needed
+prime-counting asymptotic.  Abel summation gives, for each fixed `r>=1`,
+
+```text
+P_r(y)~1/[(2r-1)p_y^(2r-1)log p_y].
+```
+
+Combining this scale dictionary with RH-382 gives the five normalized gap
+limits in the RH-384 contract and proves that `S_y` lies strictly between
+`T_y^2` and `T_y^3`.  A precision-80 outward computation certifies
+`1.5463476716710499204<=Y_infinity-2m_infinity<=1.5484488989771761113`,
+so the twice-subtracted coefficient is positive.  This is a candidate until
+its manuscript and release audits complete.  Active nonzero `c_11(r)` and
+the RH-377 adaptive envelope remain open; no Gate A--E conclusion changes.
 
 ## 7. Reproduction and publication audit
 
@@ -4051,12 +4246,82 @@ visual audit
 2bf180c1fb5565f42100f7624a2309f7de7ad3461759af94abc63778c76e1849
 ```
 
+Final RH-383 audit:
+
+- Tests: `25/25`; isolated result/schema regeneration and optimized Python
+  execution are exact.  The artifact independently compares endpoint,
+  ordered-increment, and A/F-telescope compilers and rejects all `20/20`
+  genuine formula/interface mutations.
+- The exact certificate is `12245` bytes with SHA-256
+  `9e2742fcdb2f626909eeb528c5081c9ace5414a1e6466c15b8b6800f427b6f16`.
+  It checks `67` endpoint rows, `864` A/F rows, `432` Q-labelled rows,
+  `1084` gamma-labelled rows, `144` channel comparisons, `33` low-order
+  bundles, the cubic and terminal ledgers, `1151` labelled `m=2` checks, and
+  `804` remainder rows.  All label redundancy is declared explicitly.
+- Source locks: `41/41`, grouped `7/8/8/8/8/2`; every live source equals its
+  declared release blob.  The aggregate digest is
+  `492100fe3b6b823a39b58cec25b0dcddf6d52c02bd1941f0978611f01a2b8db9`.
+  Independent proof, symbolic, manuscript, numerical, integrity, and
+  post-seal release audits report zero blocker and zero minor.
+- Individual archive: `29` publication members plus `41` external inputs,
+  zero failures.  The four-volume replay remains `4` volumes, `73` members,
+  `1548` dependency hashes, `8` result hashes, `361` numbered sources, and
+  zero failures.
+- PDF: `9` A4 pages and `368911` bytes, with all `25` font entries embedded,
+  subsetted, and Unicode-mapped.  Ghostscript, text extraction, complete
+  LaTeX/BibTeX scans, semantic-PDF byte identity, and all `9/9` rendered pages
+  pass.  Six standard declarations are present and match the audit record.
+- No PNT or `p_y` rewrite, active phasewise-`c_11` cancellation, growing
+  clock, adaptive-capacity convergence, intrinsic operator, prime-power
+  trace, zero identification, Hilbert--Polya object, RH claim, or Gate A--E
+  conclusion is made.
+
+RH-383 final hashes:
+
+```text
+main.tex
+b1030a1203685121ddc99504d0d8a5b389611b41e47a1009fea70a0215ab3bb3
+
+PDF
+a3d467a54e99b8de0ff9da796cad3423e0683115b5998517e6493f95e77592b0
+
+result
+519f585f4cf867c0d41ae674c3fb16bc0fbcf529af32131ad1afbba6692355ab
+
+schema
+8985f41cd7043b58d3b2fa9ee387bd6da4cb9d6156d3e5226acf57123674c118
+
+manifest
+f29eca0431b24ad5c453ba71c7198e01a9eec165521577eea3401e4bc71d8c90
+
+verification
+1deb5d7347c5d84070bbe048d34e50487692e80fc4d5cbbe5e1480d4bee7bab1
+
+core
+7f976ebb09374d0df339a71947e4c4dd7d49c7bc226ab05ac7de481f1e26defb
+
+integrity audit
+f8b16b31bb513751e2158af13bbc38950873cfeef26adeb20f01611a0613908a
+
+review audit
+2fd954c3610fc3a84dafa9b3f7a593e78bbe588c63db150e172a434ed5ddd543
+
+format audit
+6825342d35ee0baf734320aa0983a96a669755e60aa740593210500b6b3cca20
+
+replay audit
+07ea25fdfcf63ff5851ce1cf2c0498dee1063101de0a7c2130ab1ceb714d7de1
+
+visual audit
+8c442fb66adc1ef92fda58ccf052d2f61a5de1a6e8ebe3e074531e5164967e92
+```
+
 ## 8. Continuation prompt
 
 ````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-382 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-383 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -4072,8 +4337,9 @@ safe-window/online-transducer input, RH-379 as the phasewise Chowla-free
 memory-supremum input, RH-380 as the square-clock monotonicity and
 finite-clock nonattainment input, RH-381 as the prime-square-tail
 rate/quadratic-remainder input, RH-382 as the two-scale
-second-order/cubic-remainder input, RH-MVP2 as the corpus umbrella, and
-RH-361 as the physical endpoint.
+second-order/cubic-remainder input, RH-383 as the exact Euler-tail
+partition-normal-form input, RH-MVP2 as the corpus umbrella, and RH-361 as
+the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -4083,8 +4349,27 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-382 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  It proves the exact two-scale second-order expansion
+RH-383 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  It proves the exact absolutely convergent endpoint form
+
+```text
+U_m^(y)=u_m exp(Phi_(m-1)(y)),
+H_y=(4/pi^2)exp(-Phi_1(y)),
+pi^2(B_infinity-G(q_y))
+ =2(C(u)-C(U^(y)))-4W(U^(y))(1-exp(-Phi_1(y))).
+```
+
+Its finite partition compiler gives every homogeneous coefficient, cancels
+the `m=2` channel at all positive orders, recovers the RH-381/RH-382 layers,
+and gives a new cubic block.  For every exact integer `D>=1`,
+`abs(R_(D,y))<=(92/(3pi^2))(7T_y)^(D+1)`.  It uses no PNT.  Keep every `q_y`
+fixed before `N->infinity`; keep partition length distinct from degree and
+the successor tail distinct from the current tail; do not infer the theorem
+from finite rows, conflate endpoint and increment coefficients, replace the
+power sums by `p_y` asymptotics, activate nonzero phasewise `c_11`, introduce
+`q(N)`, or infer adaptive-capacity convergence.
+
+RH-382 remains the preceding two-scale edge.  It proves the exact expansion
 
 ```text
 B_infinity-G(q_y)
@@ -4094,11 +4379,9 @@ B_infinity-G(q_y)
 abs(R_y)<=3301T_y^3/(6pi^2)<551T_y^3/pi^2.
 ```
 
-It uses no PNT.  Keep every `q_y` fixed before `N->infinity`; do not infer the
-theorem from finite rows, suppress the independent `S_y` scale, change its
-memory sign, invent `E_10`, replace `T_y` by a `p_y` asymptotic, activate
-nonzero phasewise `c_11`, introduce `q(N)`, or infer adaptive-capacity
-convergence.
+Do not call the finite `p=71` mutation the proof, suppress `S_y`, change its
+memory sign, invent `E_10`, or claim RH-382 itself proved the RH-383
+arbitrary-order normal form.
 
 RH-381 remains the preceding prime-square-tail edge.  It proves
 `abs(B_infinity-G(q_y)-(2X_infinity/pi^2)T_y)<=342T_y^2/pi^2` and the positive
@@ -4232,97 +4515,90 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-For the next paper, write RH-383 only if the independently reconstructed
-all-order Euler-tail normal form retains its full coefficient and convergence
+For the next paper, write RH-384 only if the independently reconstructed
+prime-tail scale dictionary retains its exact endpoint and subtraction
 content.  Stay inside the same fixed-finite-clock, universally safe,
-phasewise-`c_11=0` class.  Let
+phasewise-`c_11=0` class.  Source the prime number theorem from RH-2 release
+`836426546db31e2737e877182848c538ed4cd436`, not merely from the Möbius
+consequence cited in RH-368/RH-371.  The frozen RH-2 hashes are
 
 ```text
-a_(j+1)=1/(p_(j+1)^2-1),
-P_r(y)=sum_(j>=y)a_(j+1)^r,
-Phi_c(y)=sum_(r>=1)c^r*P_r(y)/r,
-C(V)=1-2V_2+2V_3-2V_4+2V_5-2V_6+2V_7-2V_8,
-W(V)=V_2-2V_3+2V_4-2V_5+2V_6-2V_7+2V_8.
+main.tex
+5f2538e648c2ed850b94a03c072a3526f31bcc0c70c90639f65601507f52e532
+references.bib
+bd86702192cd4bc6d1c2975c7da4b305541e0c5943f13c5edf044686f0faf2ab
 ```
 
-Start from the exact RH-374/RH-379 run and memory identities.  For every
-`y>=1` and `2<=m<=8`, prove the exact formulas
+and the source cites Montgomery--Vaughan, DOI
+`10.1017/CBO9780511618314`.  For every fixed integer `r>=1`, prove by Abel
+summation that
 
 ```text
-U_m^(y)=u_m*exp(Phi_(m-1)(y)),
-H_y=(4/pi^2)*exp(-Phi_1(y)),
-pi^2*(B_infinity-G(q_y))
- =2*(C(u)-C(U^(y)))-4*W(U^(y))*(1-exp(-Phi_1(y))).
+P_r(y)=sum_(p>p_y)(p^2-1)^(-r)
+      ~1/[(2r-1)p_y^(2r-1)log p_y].
 ```
 
-For each partition `lambda=1^k_1...d^k_d` of `d`, define
+For every fixed partition `lambda=1^k_1...d^k_d` with degree `d` and
+length `ell=sum k_r`, prove
 
 ```text
-P_lambda=product_r P_r(y)^k_r,
-z_lambda=product_r r^k_r*k_r!.
+P_lambda(y)
+ ~[product_r(2r-1)^(-k_r)]
+   p_y^(-(2d-ell))(log p_y)^(-ell).
 ```
 
-Then give the finite exact partition algorithm for every coefficient in
+In particular, with `T_y=P_1(y)` and `S_y=P_2(y)`, prove
 
 ```text
-pi^2*(B_infinity-G(q_y))
- =sum_(d>=1) sum_(lambda partition d) gamma_lambda*P_lambda(y).
+p_y log(p_y) T_y ->1,
+3p_y^3 log(p_y) S_y ->1,
+S_y/T_y^2 ->0,
+T_y^3/S_y ->0,
+S_y/[T_y^3 log(p_y)^2] ->1/3.
 ```
 
-With `alpha=(-2,2,-2,2,-2,2,-2)` and
-`beta=(1,-2,2,-2,2,-2,2)` indexed by `m=2,...,8`, the audited target is
+Let
 
 ```text
-gamma_lambda
- =-(2/z_lambda)sum_(m=2)^8 alpha_m*u_m*(m-1)^d
-  -(4/z_lambda)sum_(m=2)^8 beta_m*u_m*
-    ((m-1)^d-product_r((m-1)^r-1)^k_r).
+A=2X_infinity/pi^2,
+B=(Y_infinity+2m_infinity)/pi^2,
+C=(Y_infinity-2m_infinity)/pi^2.
 ```
 
-If the equivalent increment compiler is used as an independent oracle, the
-tail product `exp(-Phi_1)` has partition sign `(-1)^length(lambda)` and the
-loss has sign `(-1)^(length(lambda)+1)`, not total-degree parity.  The memory
-factor uses the successor tail `j+1`; replacing it by `j` flips the second
-order `S_y` channel and must be a rejected mutation.
-
-Prove the exact `m=2` cancellation for every nonempty partition.  With
-`rho_y=7T_y<=7/8`, the audited all-order truncation target for every `D>=1`
-is
+Use RH-382 to prove the five normalized limits
 
 ```text
-abs(R_(D,y))<=(92/(3pi^2))*rho_y^(D+1)
-             <(31/pi^2)*rho_y^(D+1).
+p_y log(p_y)(B_infinity-G(q_y)) ->A,
+[p_y log(p_y)]^2(B_infinity-G(q_y)-A T_y) ->B,
+[B_infinity-G(q_y)-A T_y-B T_y^2]/S_y ->C,
+3p_y^3 log(p_y)[B_infinity-G(q_y)-A T_y-B T_y^2] ->C,
+[B_infinity-G(q_y)-A T_y-B T_y^2]
+  /[T_y^3 log(p_y)^2] ->C/3.
 ```
 
-Here `R_(D,y)` is the remainder in `B_infinity-G(q_y)`, not in its
-`pi^2`-multiple.  Freeze the new cubic block explicitly:
+Freeze a proof-grade outward interval for `Y_infinity-2m_infinity`; the
+audited enclosure is
 
 ```text
-gamma_(1,1,1)
- =4u_3-(22/3)u_4+(20/3)u_5+2u_6-(68/3)u_7+(178/3)u_8,
-gamma_(2,1)
- =4u_3+10u_4-52u_5+134u_6-268u_7+466u_8,
-gamma_(3)
- =-8u_3+(100/3)u_4-(248/3)u_5+164u_6
-   -(856/3)u_7+(1364/3)u_8.
+1.5463476716710499204 <= Y_infinity-2m_infinity
+                      <= 1.5484488989771761113.
 ```
 
-The first two homogeneous layers must reproduce RH-381 and RH-382 exactly,
-including the opposite `S_y` memory sign.  To be an independent paper rather
-than a reparameterization, RH-383 must also prove absolute convergence, a
-uniform arbitrary-order truncation bound, the exact all-order disappearance
-of the `m=2` channel, and at least one genuinely new higher-order block.  Do
-not compress the independent power sums to a one-scale `T_y` series, rewrite
-them using `p_y`, infer coefficients from finite regression, leave the
-phasewise-`c_11=0` class, introduce `q(N)`, infer the RH-377 envelope or
-adaptive-capacity limit, or identify the arithmetic normal form with an
-intrinsic dynamical operator.  The geometrically selected non-Parry measure
-route remains `STOP_SCOPED` without a fixed non-Parry equilibrium state and
-mixing theorem.  The fractional/tower-adapted deterministic Ulam route
-remains `STOP_SCOPED` without a fixed mesh-independent norm, uniform
-projection/lift estimate, and common contour around `-1`.  Retain the other
-source-backed breadth-first candidates and evaluate each by Route A and Route
-B before assigning a further paper.  Preserve the exact source locks and the
+Thus `C>0`, and after subtracting the exact `A T_y+B T_y^2` terms the gap is
+eventually positive and grows relative to `T_y^3`.  The first subtraction
+must use the exact arithmetic tail `A T_y`, not the PNT surrogate
+`A/[p_y log(p_y)]`: bare PNT gives no error rate that is small relative to
+`T_y^2`.  Keep the strict endpoint `p>p_y`, the first atom `p_(y+1)`, and
+every `r` and partition fixed.  Do not claim an effective threshold, a
+uniform growing-degree theorem, a growing clock, active nonzero phasewise
+`c_11`, the RH-377 envelope, adaptive-capacity convergence, or an intrinsic
+dynamical operator.  The geometrically selected non-Parry measure route
+remains `STOP_SCOPED` without a fixed non-Parry equilibrium state and mixing
+theorem.  The fractional/tower-adapted deterministic Ulam route remains
+`STOP_SCOPED` without a fixed mesh-independent norm, uniform projection/lift
+estimate, and common contour around `-1`.  Retain the other source-backed
+breadth-first candidates and evaluate each by Route A and Route B before
+assigning a further paper.  Preserve the exact source locks and the
 four-volume foundation.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
