@@ -1,13 +1,16 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-08
-状态：`BOLD_CHANNEL_V25 / CORRECTED_FOURIER_FACTORIZABLE_EMITTER`
-claim level：`EXACT_L0_CORRECTED_JUTILA_FOURIER_AND_FACTORIZABLE_AUXILIARY_EMITTER_ONLY`
+状态：`BOLD_CHANNEL_V26 / COMPENSATED_DILATION_AND_BLOCK_HIGHWAY`
+claim level：`EXACT_L0_COMPENSATED_PRIME_DILATION_AND_FACTORIZABLE_J1_SHORT_DUAL_NORMAL_FORMS_PLUS_SOURCE_BACKED_CRITICAL_SEED_ASIP_INTERFACE_AND_WHOLE_SHELL_BLOCK_RETYPE`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V25 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V26 的完整
 proof、scope与独立 checker位于
+`research/tpc-big-road/bridge_b_compensated_dilation_and_block_highway.md`及
+`research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py`；V25 corrected
+emitter位于
 `research/tpc-big-road/bridge_b_corrected_fourier_factorable_emitter.md`及
 `research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checker.py`；V24 atom
 compiler位于
@@ -30,8 +33,9 @@ backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 art
   -> Jutila main/error split
   -> complete Farey/Kloosterman atoms
   -> corrected Fourier nonzero-shift emitter
-  -> {Ramanujan-weighted physical theorem | factorable literal transform compiler}
-     + 1 independent stable-block/summable-bad-set dynamical reserve
+  -> exact compensated prime-dilation covariance
+  -> {joint literal covariance theorem | mixed-HB determinant compiler}
+     + 1 whole-shell critical-section block-transfer dynamical reserve
      + 2 independent analytic reserves (A1/A2).
 ```
 
@@ -1034,6 +1038,103 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 27. V26 后的罗盘：两条大桥，不再堆 fixed cells
+
+V26 把当前迷宫压缩成一个解析主桥、一个动力学主桥和一个 mixed-HB construction。
+解析主桥不再从 Farey/Kloosterman cell向外猜，而直接控制 exact compensated object
+
+```text
+E_x=-1/L_pr [sum_(q prime~x^(1/3)) q sum_(k!=0) C_x(qk)
+             -R sum_(h!=0) C_x(h)],
+C_x(h)=hatpsi_+(x^(-21/32)h)
+       sum_(t,t+h in I_x) beta_x^raw(t)w_x^(z)(t+h).
+```
+
+这里 `h`是 correlation shift，physical gap仍固定为 `h0=2`并已经包含在
+`w_x^(z)(u)=Lambda(u+2)-b_x^(z)(u)`。两个 summands是一枚 Ramanujan
+multiplier，不能分开取绝对值，也不能再换名为 V21/V22 centered projector。
+
+若 joint family达到完整 square-root cancellation，则 normalized exponent为
+`191/192`，相对 strict `399/400` 有 `13/4800`正 margin。这给出一个尺寸正确、
+对象正确、可以证伪的 theorem contract：
+
+```text
+V26_PRIME_SHELL_RAMANUJAN_COMPENSATED_DILATION_COVARIANCE
+  = OPEN_NEW_THEOREM.
+```
+
+它不是既有 source theorem。Drappeau/DI/Kuznetsov/BP/Pascadi等最近对象在 modulus
+ensemble、product/additive congruence、coefficient independence、axes或 outer norm上
+不匹配，故 declared direct corpus attachment STOP_SCOPED。
+
+factorable reserve里真正的正面结果只属于 smooth J1-by-J1 determinant
+`RS-EF=2`，其中两个 J1 rows各自的 `+2` coefficient给 literal product `+4`。
+Bettin--Chandee Corollary 1给 local error exponent至多 `39/40`，
+其前提包括 balance ratio `O(1)`、`eta=x^(o(1))` smooth derivative ledger及 natural
+outer `L2` envelopes；common-`q` Poisson又给 short-dual relation
+`KR+HM=0 mod q`与长度 `x^(1/14)`。
+这是 rank-1 bridge pier，不是整座桥。ordered J2的 dual area为 `x^(1/7)E`，
+zero/nonunit axes不可删，hybrid又使用 `lcm(q,d_rough)` progression；所以 whole
+factorable compiler必须 STOP，而
+
+```text
+V26_MIXED_HB_DETERMINANT_COMPILER = OPEN_NEW_THEOREM_RANK1
+```
+
+只允许作为一个统一 J1/J2/hybrid mains与 reassembly的宏观 theorem，不再拆成一串
+局部论文。
+
+动力学路线也发生了真正的方向修正。safe lacunary `x_n~8^n` 上每段只取一个 event时，
+mass约为 `1/n^2`，总和有限；single-event DBC不会推出无穷多个 gaps。正确 object是
+整个 shell count：mean约 `x_n/log^2x_n`、variance `O(x_n)`，故 Haar bad mass
+`O(log^4x_n/x_n)`可求和。缺口集中为
+
+```text
+V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM
+  = OPEN_NEW_THEOREM.
+```
+
+Aspenberg--Baladi--Persson已对 Logistic critical seed `1/2`证明 fixed-observable
+parameter ASIP；所以 distinguished critical seed不再是 blanket impossibility。
+但 exact arithmetic seed carrier、same return locus、growing triangular norms与
+positive physical block output仍全部要由新 theorem支付。Hénon只在 exact natural-
+section factor之后进入同一 gate。
+
+V26 atlas：
+
+```text
+V26_PRIME_SHELL_COMPENSATED_DILATION_IDENTITY = PROVED_EXACT_L0
+V26_PRIME_SHELL_SQUARE_ROOT_ENDPOINT_LEDGER = PROVED_EXACT_RATIONAL_POSITIVE_MARGIN
+V26_PRIME_SHELL_RAMANUJAN_COMPENSATED_DILATION_COVARIANCE = OPEN_NEW_THEOREM
+V26_J1xJ1_SMOOTH_DETERMINANT_CELL
+  = SOURCE_BACKED_CONDITIONAL_LOCAL_ENGINE_ERROR_39_OVER_40_BEFORE_MAIN_REASSEMBLY
+V26_COMMON_FACTORABLE_J1_SHORT_DUAL_DETERMINANT = PROVED_EXACT_L0_COPRIME_SMOOTH_CELL
+V26_COMMON_ENSEMBLE_GOOD_BAD_p_INCIDENCE = PROVED_EXACT_L0_ANALYTIC_COST_OPEN
+V26_SINGLE_TEMPLATE_MASTER_FACTORIZATION = STOP_SCOPED_FINITE_2X2_MINOR
+V26_ALL_HB2_TYPES_ONE_COMMON_SOURCE_ARRAY
+  = STOP_SCOPED_J2_DEGENERATE_AXIS_AND_NORMALIZATION_MISMATCH
+V26_HYBRID_TO_SAME_ARRAYS
+  = STOP_SCOPED_PROGRESS_MODULUS_MAIN_REASSEMBLY_MISMATCH
+V26_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER
+  = STOP_SCOPED_PARTIAL_J1_ONLY_NO_WHOLE_OBJECT
+V26_MIXED_HB_DETERMINANT_COMPILER = OPEN_NEW_THEOREM_RANK1
+V26_LACUNARY_SINGLE_EVENT_DBC = STOP_SCOPED_FINITE_TOTAL_EVENT_MASS
+V26_WHOLE_SHELL_BLOCK_CHEBYSHEV = PROVED_ELEMENTARY_SUMMABLE_HAAR_BAD_MASS
+V26_LOGISTIC_CRITICAL_SEED_PARAMETER_ASIP = SOURCE_BACKED_FIXED_HOLDER_OBSERVABLE
+V26_ARITHMETIC_SEED_TO_CRITICAL_SECTION_INTERTWINER = ABSENT
+V26_GROWING_TRIANGULAR_CRITICAL_SECTION_THEOREM = ABSENT
+V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM = OPEN_NEW_THEOREM
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false
+```
+
+当前排序是：compensated covariance第一，whole-shell dynamical transfer第二，mixed
+HB compiler第三。A1/A2、O161 parents、pair-native/H1与 global architecture仍是独立
+reserves；任何局部 margin都不能互借 theorem credit。
 
 ## 26. V25 后的罗盘：Fourier emitter 已纠正，主墙是 literal weighted shift
 

@@ -1,7 +1,80 @@
 # TPC HANDOFF
 
 更新时间：2026-08-08
-交接状态：`BOLD_CHANNEL_V25_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V26_SEALED`
+
+第 73 节把 V25 的 exact nonzero-shift emitter压缩成两个真正的“大路”对象，
+而不是继续增加 fixed-cell 小节点。解析主路保留 fixed `h0=2`、V19 ordered
+`+2,-1` coefficient与同一个 residual，定义
+
+```text
+C_x(h)=hatpsi_+(delta h) sum_(t,t+h in I_x)
+       beta_x^raw(t) w_x^(z)(t+h),
+Q=x^(1/3), delta=x^(-21/32), L_pr=sum_(Q<q<=2Q, q prime)(q-1),
+E_x=-1/L_pr [sum_q q sum_(k!=0) C_x(qk)-R sum_(h!=0) C_x(h)]. (V26.1)
+```
+
+这是 V25 Ramanujan multiplier的 exact compensated prime-dilation normal form；
+两支必须联合估计，分别取绝对值会丢失补偿并回到 V21/V22 projector STOP。
+若 literal shift family达到完整 square-root cancellation，则 normalized exponent为
+`191/192`，相对 strict `399/400` 仍有精确 `13/4800` margin；这只是 theorem
+design ledger，当前没有 source-backed theorem。
+
+factorable reserve中，Bettin--Chandee Corollary 1第一次合法附着到 smooth J1-by-J1
+determinant cell `RS-EF=2`，其 local error至多 `x^(39/40+o(1))`，在 main、
+hard-shell losses与 signed reassembly之前有 gross `9/400` margin。同一 cell还具有
+common-`q` short-dual relation `KR+HM=0 (mod q)`，dual lengths至多 `x^(1/14)`。
+但 ordered J2的 transform species、zero/nonunit axes及 hybrid
+`lcm(q,d_rough)` progression不同，不能与 J1强行合成一个 source array；whole-object
+compiler因此 STOP_SCOPED，mixed HB determinant theorem仍为 rank-1 OPEN。
+
+动力学主路也被重新定型：V23 lacunary schedule上的单个 event mass约为 `1/n^2`，
+总和有限，所以 single-event DBC是错路。正确对象是整个 dyadic shell block；现有
+Haar mean约 `x_n/log^2(x_n)`、variance `O(x_n)`，Chebyshev bad mass
+`O(log^4(x_n)/x_n)`可求和。Aspenberg--Baladi--Persson
+`arXiv:2212.12202v2` 对 Logistic critical seed `1/2`提供 genuine parameter-ASIP
+interface，但只覆盖一个 fixed Hölder observable，并在 normalized Lebesgue parameter
+space上给 a.e. statement，而不是选择一个 prescribed fixed parameter；exact
+arithmetic-seed-to-critical-section carrier与 growing triangular theorem仍缺失。
+
+V26 的精确路线裁决是
+
+```text
+V26_PRIME_SHELL_COMPENSATED_DILATION_IDENTITY = PROVED_EXACT_L0
+V26_PRIME_SHELL_SQUARE_ROOT_ENDPOINT_LEDGER = PROVED_EXACT_RATIONAL_POSITIVE_MARGIN
+V26_PRIME_SHELL_RAMANUJAN_COMPENSATED_DILATION_COVARIANCE = OPEN_NEW_THEOREM
+V26_J1xJ1_SMOOTH_DETERMINANT_CELL
+  = SOURCE_BACKED_CONDITIONAL_LOCAL_ENGINE_ERROR_39_OVER_40_BEFORE_MAIN_REASSEMBLY
+V26_COMMON_FACTORABLE_J1_SHORT_DUAL_DETERMINANT = PROVED_EXACT_L0_COPRIME_SMOOTH_CELL
+V26_COMMON_ENSEMBLE_GOOD_BAD_p_INCIDENCE = PROVED_EXACT_L0_ANALYTIC_COST_OPEN
+V26_SINGLE_TEMPLATE_MASTER_FACTORIZATION = STOP_SCOPED_FINITE_2X2_MINOR
+V26_ALL_HB2_TYPES_ONE_COMMON_SOURCE_ARRAY
+  = STOP_SCOPED_J2_DEGENERATE_AXIS_AND_NORMALIZATION_MISMATCH
+V26_HYBRID_TO_SAME_ARRAYS
+  = STOP_SCOPED_PROGRESS_MODULUS_MAIN_REASSEMBLY_MISMATCH
+V26_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER
+  = STOP_SCOPED_PARTIAL_J1_ONLY_NO_WHOLE_OBJECT
+V26_MIXED_HB_DETERMINANT_COMPILER = OPEN_NEW_THEOREM_RANK1
+V26_LACUNARY_SINGLE_EVENT_DBC = STOP_SCOPED_FINITE_TOTAL_EVENT_MASS
+V26_WHOLE_SHELL_BLOCK_CHEBYSHEV = PROVED_ELEMENTARY_SUMMABLE_HAAR_BAD_MASS
+V26_LOGISTIC_CRITICAL_SEED_PARAMETER_ASIP = SOURCE_BACKED_FIXED_HOLDER_OBSERVABLE
+V26_ARITHMETIC_SEED_TO_CRITICAL_SECTION_INTERTWINER = ABSENT
+V26_GROWING_TRIANGULAR_CRITICAL_SECTION_THEOREM = ABSENT
+V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM = OPEN_NEW_THEOREM
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false.                              (V26.2)
+```
+
+proof 与 checker 为
+`research/tpc-big-road/bridge_b_compensated_dilation_and_block_highway.md` 和
+`research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py`。当前 checker
+冻结 26-field contract、30-row registry，registry SHA-256为
+`23e400afbb8d57de0c143a3fecd648ce240a282600688cd56bd4cc75b1dcc6c0`；
+79/62/10 个 contract/registry/dependency mutations必须全部拒绝。V26是不编号
+big-road release，不创建 TPC-207、paper、PDF或 build output。
 
 第 72 节重新核对 V24 打开的 Jutila Fourier branch，并发现 Blomer--Li
 `arXiv:2511.03294v1` (2.2) 第一行还有一个独立 source defect：将
@@ -1614,8 +1687,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V25 gate及其 V24/V23 dependencies还须分别执行
-normal与 optimized只读 checker；六次必须都为零，且每一对 stdout byte-identical：
+22项启动回归之后，当前不编号 V26 gate及其 V25/V24/V23 dependencies还须分别执行
+normal与 optimized只读 checker；八次必须都为零，且每一对 stdout byte-identical：
 
 ```powershell
 python -B research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py --check
@@ -1624,6 +1697,8 @@ python -B research/tpc-big-road/tpc_bridge_b_literal_jutila_farey_atom_checker.p
 python -O -B research/tpc-big-road/tpc_bridge_b_literal_jutila_farey_atom_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py --check
 ```
 
 随后优先读取：
@@ -3258,6 +3333,63 @@ V25_FIXED_c_z_NONUNIT_PASCADI_CELL
 credit。`x^(-1/14)`是 approximant upper bound而非 physical scalar saving；完整 coefficient、
 norm、zero/nonunit/axis、tail、normalization与 one-outer-absolute reassembly未付之前，
 arithmetic advance仍为 `NO`。精确 proof、checker 与 reopen gates见第 72 节。
+
+2026-08-08 的 Bridge B V26 compensated-dilation/block-highway 审计新增且仅新增以下
+六个 scoped STOP cells：
+
+```text
+V26_DECLARED_DI_KUZNETSOV_DISPERSION_SHIFTED_CONVOLUTION_
+JUTILA_BP_PASCADI_PRIMARY_CORPUS_DIRECT_ATTACHMENT_V1
+  = STOP_SCOPED_NO_LITERAL_COLLECTIVE_PHYSICAL_SCALAR_THEOREM
+
+V26_SINGLE_TEMPLATE_MASTER_FACTORIZATION
+  = STOP_SCOPED_FINITE_2X2_MINOR
+
+V26_ALL_HB2_TYPES_ONE_COMMON_SOURCE_ARRAY
+  = STOP_SCOPED_J2_DEGENERATE_AXIS_AND_NORMALIZATION_MISMATCH
+
+V26_HYBRID_TO_SAME_ARRAYS
+  = STOP_SCOPED_PROGRESS_MODULUS_MAIN_REASSEMBLY_MISMATCH
+
+V26_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER
+  = STOP_SCOPED_PARTIAL_J1_ONLY_NO_WHOLE_OBJECT
+
+V26_LACUNARY_SINGLE_EVENT_DBC
+  = STOP_SCOPED_FINITE_TOTAL_EVENT_MASS
+```
+
+第一项只停止把已核的 DI/Kuznetsov、Drappeau、Jutila、BP/Pascadi与 shifted-
+convolution theorems黑箱附着到完整 literal compensated physical scalar；它不停止新的
+joint covariance theorem。第二至五项分别停止 rank-one MASTER selector、把 ordered
+J2强写成 J1 source array、把 hybrid progression拼入同一数组，以及从 partial J1
+engine认领 whole-object compiler。第六项只停止在 V23 lacunary endpoints每段抽一个
+moving event再用 DBC；其 masses总和有限。它不停止 whole-shell block theorem。
+
+surviving gates为
+
+```text
+V26_PRIME_SHELL_RAMANUJAN_COMPENSATED_DILATION_COVARIANCE
+  = OPEN_NEW_THEOREM
+V26_J1xJ1_SMOOTH_DETERMINANT_CELL
+  = SOURCE_BACKED_CONDITIONAL_LOCAL_ENGINE_ERROR_39_OVER_40_BEFORE_MAIN_REASSEMBLY
+V26_COMMON_FACTORABLE_J1_SHORT_DUAL_DETERMINANT
+  = PROVED_EXACT_L0_COPRIME_SMOOTH_CELL
+V26_COMMON_ENSEMBLE_GOOD_BAD_p_INCIDENCE
+  = PROVED_EXACT_L0_ANALYTIC_COST_OPEN
+V26_MIXED_HB_DETERMINANT_COMPILER
+  = OPEN_NEW_THEOREM_RANK1
+V26_WHOLE_SHELL_BLOCK_CHEBYSHEV
+  = PROVED_ELEMENTARY_SUMMABLE_HAAR_BAD_MASS
+V26_LOGISTIC_CRITICAL_SEED_PARAMETER_ASIP
+  = SOURCE_BACKED_FIXED_HOLDER_OBSERVABLE
+V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM
+  = OPEN_NEW_THEOREM
+```
+
+这些 gates互不借 theorem credit。`39/40`只付 local determinant error，不付 source main、
+J2/hybrid或 reassembly；`13/4800`只是 square-root design margin；parameter ASIP不提供
+exact arithmetic carrier。完整 theorem出现前，arithmetic advance仍为 `NO`。精确
+proof、checker与 reopen gates见第 73 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -6926,7 +7058,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V25 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V26 current）
 
 ```text
 进入仓库：
@@ -6934,6 +7066,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_compensated_dilation_and_block_highway.md、
+research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py、
 research/tpc-big-road/bridge_b_corrected_fourier_factorable_emitter.md、
 research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checker.py、
 research/tpc-big-road/bridge_b_literal_jutila_farey_atom_compiler.md、
@@ -6952,7 +7086,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--72 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--73 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -7057,6 +7191,24 @@ V25_DIRECT_BLOMER_LI_41_OVER_42_TO_LITERAL_TPC_TRANSFER = STOP_SCOPED_COEFFICIEN
 V25_ATOMWISE_COMMON_GOOD_PRIME_ENSEMBLE = STOP_SCOPED_MOVING_SLOPE_GCD_AND_REASSEMBLY_MISMATCH
 V25_RAMANUJAN_WEIGHTED_NONZERO_SHIFT_PHYSICAL_THEOREM = OPEN_NEW_THEOREM
 V25_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER = OPEN_NEW_CONSTRUCTION
+V26_PRIME_SHELL_COMPENSATED_DILATION_IDENTITY = PROVED_EXACT_L0
+V26_PRIME_SHELL_SQUARE_ROOT_ENDPOINT_LEDGER = PROVED_EXACT_RATIONAL_POSITIVE_MARGIN
+V26_PRIME_SHELL_RAMANUJAN_COMPENSATED_DILATION_COVARIANCE = OPEN_NEW_THEOREM
+V26_DECLARED_DI_KUZNETSOV_DISPERSION_SHIFTED_CONVOLUTION_JUTILA_BP_PASCADI_PRIMARY_CORPUS_DIRECT_ATTACHMENT_V1 = STOP_SCOPED_NO_LITERAL_COLLECTIVE_PHYSICAL_SCALAR_THEOREM
+V26_J1xJ1_SMOOTH_DETERMINANT_CELL = SOURCE_BACKED_CONDITIONAL_LOCAL_ENGINE_ERROR_39_OVER_40_BEFORE_MAIN_REASSEMBLY
+V26_COMMON_FACTORABLE_J1_SHORT_DUAL_DETERMINANT = PROVED_EXACT_L0_COPRIME_SMOOTH_CELL
+V26_COMMON_ENSEMBLE_GOOD_BAD_p_INCIDENCE = PROVED_EXACT_L0_ANALYTIC_COST_OPEN
+V26_SINGLE_TEMPLATE_MASTER_FACTORIZATION = STOP_SCOPED_FINITE_2X2_MINOR
+V26_ALL_HB2_TYPES_ONE_COMMON_SOURCE_ARRAY = STOP_SCOPED_J2_DEGENERATE_AXIS_AND_NORMALIZATION_MISMATCH
+V26_HYBRID_TO_SAME_ARRAYS = STOP_SCOPED_PROGRESS_MODULUS_MAIN_REASSEMBLY_MISMATCH
+V26_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER = STOP_SCOPED_PARTIAL_J1_ONLY_NO_WHOLE_OBJECT
+V26_MIXED_HB_DETERMINANT_COMPILER = OPEN_NEW_THEOREM_RANK1
+V26_LACUNARY_SINGLE_EVENT_DBC = STOP_SCOPED_FINITE_TOTAL_EVENT_MASS
+V26_WHOLE_SHELL_BLOCK_CHEBYSHEV = PROVED_ELEMENTARY_SUMMABLE_HAAR_BAD_MASS
+V26_LOGISTIC_CRITICAL_SEED_PARAMETER_ASIP = SOURCE_BACKED_FIXED_HOLDER_OBSERVABLE
+V26_ARITHMETIC_SEED_TO_CRITICAL_SECTION_INTERTWINER = ABSENT
+V26_GROWING_TRIANGULAR_CRITICAL_SECTION_THEOREM = ABSENT
+V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM = OPEN_NEW_THEOREM
 BRIDGE_B_ALL_TRANSLATIONS_CURRENT_GATE = NO
 BRIDGE_B_APPROXIMATE_LOW_RANK_RETURN = OPEN_REQUIRES_WIDTH_AND_PHYSICAL_NORM
 BRIDGE_B_BRATTELI_AGING_CLOCK = OPEN_RESERVE_RANK_GROWTH_FALSIFIER
@@ -7181,18 +7333,18 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮首先执行第 72 节冻结的 Ramanujan-weighted nonzero-shift theorem与独立
-factorable literal transform compiler；V23 stable-cell dynamics继续排在其后，不再
-回到 V21 centered projector、V22 full-`q` Cauchy completion或 V24 尚未分型的
-`ell_J` emitter：
+下一轮首先执行第 73 节冻结的 compensated prime-dilation covariance；动力学路线
+只使用 whole-shell critical-section block transfer，mixed HB determinant compiler作为
+第二解析 construction。不再回到 V21 centered projector、V22 full-`q` Cauchy
+completion、V24 尚未分型的 `ell_J` emitter或 V25 的 cellwise outer triangle：
 
 ```text
-V25_RAMANUJAN_WEIGHTED_NONZERO_SHIFT_PHYSICAL_THEOREM
+V26_PRIME_SHELL_RAMANUJAN_COMPENSATED_DILATION_COVARIANCE
   = OPEN_NEW_THEOREM
-V25_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER
-  = OPEN_NEW_CONSTRUCTION
-V23_LACUNARY_STABLE_BLOCK_AFFINE_COCYCLE_WITH_SUMMABLE_TRANSVERSAL_BAD_SETS
+V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM
   = OPEN_NEW_THEOREM
+V26_MIXED_HB_DETERMINANT_COMPILER
+  = OPEN_NEW_THEOREM_RANK1
 ```
 
 V19已经完成 combined raw MASTER row到 primorial `V_k^vee`的 exact materialization；
@@ -7231,11 +7383,30 @@ Möbius/log × `Lambda-b` dual arrays。factorable reserve的
 也不允许搬用 source `41/42`。fixed-`c,z` BP/Pascadi cells只有在 physical convolution
 norm、长区间、unit/nonunit/axes、tails与唯一 outer reassembly全部支付后才能积累 credit。
 
-动力学 reserve只把 safe lacunary scheduling作为 event-cocycle骨架。`166->168`
+V26 已把 prime-shell branch无损收缩为一个 joint compensated-dilation theorem：
+`sum_q q sum_k C_x(qk)-R sum_h C_x(h)`。两个 summands不得分别取绝对值；后者不是可删
+main，前者也不是单一 congruence theorem。任何 theorem必须接受 literal
+`beta_x^raw(t)[Lambda(t+h+2)-b_x^(z)(t+h)]`、prime-only `q~x^(1/3)`、
+`|h|<=x^(21/32+o(1))`、hard shell与原 normalization，并在一个 outer absolute内
+给出 normalized `x^(191/192+o(1))`级别或其他超过 `1/400`的 bound。
+
+factorable route只在 smooth J1-by-J1 determinant cell得到 source-backed local error与
+exact short-dual skeleton。不得把其 `39/40` error当成 complete signed main，也不得把
+ordered J2、hybrid、zero/nonunit axes或 bad-prime rows改名为同一 Bettin--Chandee array。
+合法下一步是一个 mixed HB determinant theorem，必须在 common ensemble中完成所有
+template main cancellation与 exactly-once reassembly；再做 fixed cell estimate不算路线推进。
+
+动力学 reserve只把 safe lacunary scheduling作为 block-cocycle骨架。单个 selected
+endpoint event的 masses约为 `1/n^2`，总和有限，故 lacunary single-event DBC已 STOP。
+必须使用每个 selected dyadic shell内的完整 event count；其 Haar bad mass可求和，但这
+仍没有选择 arithmetic seed `0`。Aspenberg--Baladi--Persson parameter ASIP只说明
+Logistic critical seed本身不是绝对禁区，不提供 exact TPC carrier或 growing observables。
+`166->168`
 已经证明 source-core stable不等于 carrier stable；same-evaluation parameter
 transversality也因 exact return导数为零而停止。下一合法 construction必须使用独立
 critical-relation/bad-set function、一个固定 parameter/seed、growing exact affine carrier、
-summable bad sets、uniform pointed power bound与 shell exactly-once reassembly。普通
+whole-shell first/second moments或 summable pointed bad sets、uniform pointed power bound与
+shell exactly-once reassembly。普通
 ergodicity、positive measure、a.e.-seed ASIP/DBC、a.e.-parameter typicality、word-only
 conjugacy或 single-stage fitting仍均不够。
 
@@ -7372,6 +7543,7 @@ python research/tpc-big-road/tpc_bridge_b_centered_projector_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_literal_jutila_farey_atom_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -11253,6 +11425,317 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 73. 2026-08-08 V26：compensated prime dilation 与 critical-section block highway
+
+### 73.1 基线、任务与路线选择
+
+V26 从已发布 V25 commit
+`641cf94bac650cbe8777ec9127866ed9a6278ec3`继续。V25 已把 literal Jutila error
+精确压成 `-sum_(D!=0)B_x(D)kappa(D)`；本轮不再增加 fixed Kloosterman cells，而是
+同时回答三个宏观问题：
+
+1. prime-shell Ramanujan kernel能否写成一个可直接攻击的 growing theorem；
+2. factorable reserve中究竟哪一种 literal HB determinant已真正进入 source theorem；
+3. Logistic/Hénon reserve应使用 single rare event还是 whole-shell block。
+
+三条只读审计分别完成 primary-source theorem screen、mixed HB transform/reassembly
+falsifier及 critical-seed/DBC quantifier audit；正式写入仍只由主控完成。本节只发布
+route map，arithmetic theorem state没有提升。
+
+### 73.2 Exact compensated prime-dilation normal form
+
+固定
+
+\[
+h_0=2,\quad x=2X,\quad I_x=(x/2,x]\cap\mathbb Z,
+\quad w_x^{(z)}(u)=\Lambda(u+2)-b_x^{(z)}(u),
+\tag{73.1}
+\]
+
+并保留 V19 ordered `+2,-1` raw coefficient `beta_x^raw`的 occurrence multiplicity、
+Möbius/log factors与 physical normalization。取
+
+\[
+Q=x^{1/3},\quad \delta=x^{-21/32},\quad
+\mathcal Q=\{q\ {\mathrm{prime}}:Q<q\le2Q\},
+\quad L_{\rm pr}=\sum_{q\in\mathcal Q}(q-1).
+\tag{73.2}
+\]
+
+对 `h!=0` 定义
+
+\[
+\mathcal C_x(h)=\widehat\psi_+(\delta h)
+\sum_{t,t+h\in I_x}\beta_x^{\rm raw}(t)w_x^{(z)}(t+h).
+\tag{73.3}
+\]
+
+由 prime Ramanujan identity `c_q(h)=q 1_(q|h)-1`，V25 error精确等于
+
+\[
+\boxed{
+E_x=-\frac1{L_{\rm pr}}
+\left[
+ \sum_{q\in\mathcal Q}q\sum_{k\ne0}\mathcal C_x(qk)
+ -R\sum_{h\ne0}\mathcal C_x(h)
+\right],\qquad R=\#\mathcal Q .}
+\tag{73.4}
+\]
+
+等价的 same-residue form保留 multiplier
+`q 1_(u=t mod q)-1`与一个 outer absolute。两支是同一个 compensated object；
+分别估计、把第二支当 main删除，或改写成 complete centered projector，都丢掉 literal
+Ramanujan compensation并回到 V21/V22 STOP。
+
+### 73.3 Endpoint ledger与新解析主定理
+
+Schwartz-effective horizon及 dilation length为
+
+\[
+H=\delta^{-1}=x^{21/32},\qquad H/Q=x^{31/96}.
+\tag{73.5}
+\]
+
+strict endpoint要求 (73.4) 方括号至多
+
+\[
+L_{\rm pr}x^{399/400-\varepsilon_0},
+\qquad \frac23+\frac{399}{400}=\frac{1997}{1200}.
+\tag{73.6}
+\]
+
+若 literal shift family在 elementary `x^(1+o(1))` per-shift envelope之上达到完整
+square-root cancellation，则 numerator exponent为
+
+\[
+1+\frac13+\frac{21}{64}=\frac{319}{192},
+\quad E_x\ll x^{191/192+o(1)},
+\quad \frac{399}{400}-\frac{191}{192}=\frac{13}{4800}>0.
+\tag{73.7}
+\]
+
+这只是 exact rational design ledger，不是 theorem。选中的解析主定理是
+
+```text
+V26_PRIME_SHELL_RAMANUJAN_COMPENSATED_DILATION_COVARIANCE
+  = OPEN_NEW_THEOREM.
+```
+
+它必须直接接受 literal `beta_x^raw(t)w_x^(z)(t+h)`、prime-only shell、hard
+endpoints、whole compensated bracket、uniform constants及完整 normalization。
+
+已核 DI/Kuznetsov、Drappeau、Jutila、Blomer--Pascadi、Pascadi与普通 shifted-
+convolution sources没有这一 theorem：最接近的 Drappeau dispersion是 all-dyadic-`q`
+fixed product congruence与 `q`-independent arrays；对 literal moving equation取逆会使
+coefficients依赖 `q`。因此 direct black-box attachment精确 STOP_SCOPED，但新 joint
+covariance theorem仍 OPEN。
+
+### 73.4 J1 local source engine与 common short-dual skeleton
+
+对 smooth J1-by-J1 cell，literal determinant为
+
+\[
+RS-EF=2,
+\tag{73.8}
+\]
+
+其中 `E,R<=sqrt(x)`、`F~x/E`、`S~x/R`，且完整保留两个 J1 rows各自的
+`+2` coefficient（literal product为 `+4`）、Möbius/log与 physical normalization。按
+
+```text
+m1=S, n2=R, m2=F, n1=E, Delta=2
+```
+
+Bettin--Chandee Corollary 1的 error exponent为
+
+\[
+\frac{17}{20}(e+r)+\frac14\max(e,r)\le\frac{39}{40},
+\qquad E=x^e,\ R=x^r,
+\tag{73.9}
+\]
+
+这里使用 source balance ratio `O(1)`、smooth derivative parameter `eta=x^(o(1))`
+及 outer Möbius/divisor sequences的 natural `L2` envelopes。相对 `399/400` 有
+gross `9/400` margin。该 credit只属于 source error；main
+integral、hard-shell Mellin/variation losses及 signed J1/J2/hybrid reassembly均未付。
+
+令 `M:=E`，同一 smooth coprime cell经两次一维 Poisson还有 exact relation
+
+\[
+KR+HM\equiv0\pmod q,
+\tag{73.10}
+\]
+
+和 phase `e_q(-2 K inverse(M))`。在 factorable `q~x^(4/7)` 下，
+`|K|,|H|<=x^(1/14+o(1))`，且 `KR+HM=ell q`只有 `O(1)` effective copies。
+common auxiliary ensemble内可按每个 fixed nonzero slope精确分成 `p`-good/bad rows；
+每个 label只有 `O(1)` bad shell primes，但其 analytic cost仍 OPEN。
+
+### 73.5 Whole-object compiler fatal与有限 falsifiers
+
+J1 local engine不能升级成 whole mixed compiler。ordered J2有两个 smooth slots；若
+`E=e1e2`、`F1F2~x/E`，其 dual area为
+
+\[
+\frac{q^2}{F_1F_2}=x^{1/7}E,
+\tag{73.11}
+\]
+
+不等于 J1 support或 normalization。hybrid branch又落在
+`lcm(q,d_rough)` progression，sieve variable与 main cancellation不同。
+
+checker冻结四个 exact falsifiers：`x=100` 的四 cell MASTER route matrix
+`[[1,1],[0,1]]` minor为 `1`；`x=100,t=54`存在 active
+`(e1,e2,f1,f2)=(1,6,3,3)` degenerate J2 row；`q=5` constant double-Poisson
+cell的 periodic DFT support严格只有 `(0,0)`，其 zero-axis Ramanujan mass为 `4`；
+`q=6,A=2` 有8个 solutions而 unit rows只有2个。
+
+所以 whole factorable compiler STOP_SCOPED；真正的大路 repair不是另一 fixed-cell
+bound，而是一个 mixed HB determinant theorem，同时支付 J1、ordered J2、hybrid、
+axes/nonunits、bad incidences、所有 source mains与 exactly-once reassembly。
+
+### 73.6 Dynamics：从 summable single events改成 whole-shell blocks
+
+对 V23 predeclared safe schedule
+`x_n in [8^n,2*8^n]`，单个 moving event满足
+
+\[
+\mu(E_{x_n})\asymp(\log x_n)^{-2}\asymp n^{-2},
+\qquad\sum_n\mu(E_{x_n})<\infty.
+\tag{73.12}
+\]
+
+因此只在 selected endpoints做 single-event DBC不能推出 infinitude。正确 object是
+
+\[
+\mathcal B_n(y)=\sum_{x_n/2<t\le x_n}{\bf1}_{E_t}(T^t y).
+\tag{73.13}
+\]
+
+仓库既有 Haar estimates给
+
+\[
+\mathbb E\mathcal B_n\asymp\frac{x_n}{\log^2x_n},\qquad
+\operatorname{Var}(\mathcal B_n)=O(x_n),
+\quad
+\mu(\mathcal B_n=0)\ll\frac{\log^4x_n}{x_n}.
+\tag{73.14}
+\]
+
+最后一项可求和，故 Haar-a.e. phase最终每个 selected shell都有 positive count；
+缺口完全是 arithmetic seed `0`的 exact section transfer，而不是 ordinary metric
+recurrence。
+
+Aspenberg--Baladi--Persson `arXiv:2212.12202v2` Theorem 1.1对 Logistic
+critical seed `1/2`的 fixed Hölder observable，在 normalized Lebesgue parameter
+space上给 parameter-functions ASIP。这证明 distinguished critical seed不是 blanket
+fatal，但它不选择一个 prescribed fixed parameter，也不提供 TPC exact carrier、
+growing triangular observables或 same return locus。
+因此 strongest honest target是
+
+```text
+V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM
+  = OPEN_NEW_THEOREM.
+```
+
+它必须给一个 fixed parameter/seed、stage-preserving exact event intertwiner、实际
+growing norms、uniform block moments或 summable pointed bad sets，以及 positive
+physical block count与 exactly-once output。Hénon仍须先有 exact natural-section factor。
+
+### 73.7 Status atlas与路线排序
+
+```text
+V26_PRIME_SHELL_COMPENSATED_DILATION_IDENTITY = PROVED_EXACT_L0
+V26_PRIME_SHELL_SQUARE_ROOT_ENDPOINT_LEDGER = PROVED_EXACT_RATIONAL_POSITIVE_MARGIN
+V26_PRIME_SHELL_RAMANUJAN_COMPENSATED_DILATION_COVARIANCE = OPEN_NEW_THEOREM
+V26_DECLARED_DI_KUZNETSOV_DISPERSION_SHIFTED_CONVOLUTION_JUTILA_BP_PASCADI_PRIMARY_CORPUS_DIRECT_ATTACHMENT_V1
+  = STOP_SCOPED_NO_LITERAL_COLLECTIVE_PHYSICAL_SCALAR_THEOREM
+V26_J1xJ1_SMOOTH_DETERMINANT_CELL
+  = SOURCE_BACKED_CONDITIONAL_LOCAL_ENGINE_ERROR_39_OVER_40_BEFORE_MAIN_REASSEMBLY
+V26_COMMON_FACTORABLE_J1_SHORT_DUAL_DETERMINANT = PROVED_EXACT_L0_COPRIME_SMOOTH_CELL
+V26_COMMON_ENSEMBLE_GOOD_BAD_p_INCIDENCE = PROVED_EXACT_L0_ANALYTIC_COST_OPEN
+V26_SINGLE_TEMPLATE_MASTER_FACTORIZATION = STOP_SCOPED_FINITE_2X2_MINOR
+V26_ALL_HB2_TYPES_ONE_COMMON_SOURCE_ARRAY
+  = STOP_SCOPED_J2_DEGENERATE_AXIS_AND_NORMALIZATION_MISMATCH
+V26_HYBRID_TO_SAME_ARRAYS
+  = STOP_SCOPED_PROGRESS_MODULUS_MAIN_REASSEMBLY_MISMATCH
+V26_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER
+  = STOP_SCOPED_PARTIAL_J1_ONLY_NO_WHOLE_OBJECT
+V26_MIXED_HB_DETERMINANT_COMPILER = OPEN_NEW_THEOREM_RANK1
+V26_LACUNARY_SINGLE_EVENT_DBC = STOP_SCOPED_FINITE_TOTAL_EVENT_MASS
+V26_WHOLE_SHELL_BLOCK_CHEBYSHEV = PROVED_ELEMENTARY_SUMMABLE_HAAR_BAD_MASS
+V26_LOGISTIC_CRITICAL_SEED_PARAMETER_ASIP = SOURCE_BACKED_FIXED_HOLDER_OBSERVABLE
+V26_ARITHMETIC_SEED_TO_CRITICAL_SECTION_INTERTWINER = ABSENT
+V26_GROWING_TRIANGULAR_CRITICAL_SECTION_THEOREM = ABSENT
+V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM = OPEN_NEW_THEOREM
+V26_HENON_SECTION_TRANSFER = OPEN_ONLY_AFTER_EXACT_FACTOR
+```
+
+路线优先级是：compensated prime-dilation theorem第一；whole-shell critical-section
+transfer为动力学主 reserve；mixed HB determinant theorem为第二解析 construction。
+O161 parents、pair-native/H1、A1/A2与 global architecture继续独立 OPEN。
+
+### 73.8 Artifact、checker与 release 状态
+
+proof为
+`research/tpc-big-road/bridge_b_compensated_dilation_and_block_highway.md`；checker为
+`research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py`。checker冻结
+26-field contract、30-row registry与 SHA-256
+
+```text
+23e400afbb8d57de0c143a3fecd648ce240a282600688cd56bd4cc75b1dcc6c0. (73.15)
+```
+
+79 contract mutations、62 registry mutations与10 dependency-lock attacks必须全部拒绝；
+normal/optimized `--check`必须 stdout byte-identical。maximum claim为
+
+```text
+EXACT_L0_COMPENSATED_PRIME_DILATION_AND_FACTORIZABLE_J1_SHORT_DUAL_NORMAL_FORMS_PLUS_SOURCE_BACKED_CRITICAL_SEED_ASIP_INTERFACE_AND_WHOLE_SHELL_BLOCK_RETYPE
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false.                              (73.16)
+```
+
+```text
+V26_FINAL_RELEASE_QA = PASS
+V26_MATH_SOURCE_FORMULA_QA = PASS
+V26_CHECKER_ADVERSARIAL_QA = PASS
+V26_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+STARTUP_READ_ONLY_REGRESSION = 22/22 PASS
+SUPPLEMENTAL_TPC111_124_126_127 = 4/4 PASS
+CURRENT_BIG_ROAD_NORMAL_OPTIMIZED = 28/28 PASS
+CURRENT_BIG_ROAD_STDOUT_BYTE_IDENTITIES = 14/14 PASS
+V26_CONTRACT_FIELDS_MUTATIONS = 26/79
+V26_REGISTRY_ROWS_MUTATIONS = 30/62
+V26_DEPENDENCY_LOCKS_MUTATIONS = 5/10
+V26_RESULT_FIELDS = 34
+V26_TOTAL_MUTATION_LABELS = 151/151 EXECUTED
+V26_REGISTRY_SHA256 = 23e400afbb8d57de0c143a3fecd648ce240a282600688cd56bd4cc75b1dcc6c0
+V26_CHECKER_STDOUT_RAW_CRLF_SHA256 = ebd917a56f4dfa3c81bb3bbb4671ef8347ab37137e64e8a903b7d4db65b5d539
+V26_CHECKER_STDOUT_CANONICAL_LF_SHA256 = c839002a3963545e53ff9fca883dd8c056d3437ecd99717c9a70b6d0175fda5e
+V26_PROOF_RAW_AND_CANONICAL_LF_SHA256 = 96fb71f5e24c3d04a27724b964010066d721d453139e0e84117d3bb9e6bdaa65
+V26_CHECKER_RAW_AND_CANONICAL_LF_SHA256 = d3fa5285543d879429f832dcb1a51152521a518da136ddd53291aa90150be9a8
+PRE_CLOSURE_HANDOFF_SHA256 = 31c2cb57ff7559caafd993e7268751883ba0fe82d264edcf16caf6218774bc93
+MARKDOWN_FENCES = HANDOFF_2838_COMPASS_224_README_378_PROOF_24_BALANCED
+EXPECTED_RELEASE_PATHS = 5
+CACHED_DIFF_PATHS = 0
+PROTECTED_UNTRACKED = 130
+PROTECTED_MANIFEST_SHA256 = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+PRE_RELEASE_BASE_HEAD = 641cf94bac650cbe8777ec9127866ed9a6278ec3
+OBSERVED_ORIGIN_MAIN = 73bd6a37465b4f3a69e93c6f3837c32084968d4f
+REMOTE_DELTA_SCOPE = RH_HANDOFF_AND_RH385_ONLY_TPC_OVERLAP_0
+NUMBERED_RELEASE = NO
+TPC207_CREATED = false
+NUMBERED_PAPER_PDF_BUILD_CREATED = NO
+TPC27_TO_32_LEGACY_WRITERS_EXECUTED = NO
+TPC122_WRITER_EXECUTED = NO
+```
+
+V26是不编号 big-road route release。即使任一 local subgate转正，也不自动创建
+TPC-207；必须先出现 whole literal arithmetic theorem及全部 physical/provenance gates。
 
 ## 72. 2026-08-08 V25：corrected Fourier emitter 与 factorable auxiliary reserve
 

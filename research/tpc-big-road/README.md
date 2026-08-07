@@ -1,10 +1,11 @@
-# TPC big road V25: corrected Fourier and factorable emitter
+# TPC big road V26: compensated dilation and block highways
 
 更新时间：2026-08-08
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_CORRECTED_JUTILA_FOURIER_AND_FACTORIZABLE_AUXILIARY_EMITTER`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_COMPENSATED_PRIME_DILATION_AND_FACTORIZABLE_J1_SHORT_DUAL_NORMAL_FORMS_PLUS_SOURCE_BACKED_CRITICAL_SEED_ASIP_INTERFACE_AND_WHOLE_SHELL_BLOCK_RETYPE`
 
-当前主路线见第 25 节及 `bridge_b_corrected_fourier_factorable_emitter.md`；第 24 节与
+当前主路线见第 26 节及 `bridge_b_compensated_dilation_and_block_highway.md`；第 25 节与
+`bridge_b_corrected_fourier_factorable_emitter.md`冻结 V25 corrected emitter，第 24 节与
 `bridge_b_literal_jutila_farey_atom_compiler.md`冻结 V24 atom compiler，第 23 节与
 `bridge_b_prime_shell_jutila_and_stable_dynamics.md`冻结 V23 prime-shell exponent
 interface及 stable-cell reserve，第 22 节与
@@ -2210,6 +2211,82 @@ checker冻结 33-field contract、48-row registry，registry SHA-256为
 `15e40e8c20050549c3e244be59747019f115ebb8ccb9356f95fd449250073b07`；
 102/151 adversarial mutations必须全部拒绝。V23 arithmetic advance=`NO`、fixed
 atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false；没有编号 paper/PDF/build。
+
+## 26. V26 Bridge B：compensated dilation 与 whole-shell block highway
+
+V26 不再扩张 fixed-cell inventory，而把 V25 exact error重写成一个 joint theorem
+target。固定 physical `h0=2`、V19 `+2,-1` raw coefficient及同一 hybrid residual，取
+
+```text
+Q=x^(1/3), delta=x^(-21/32),
+C_x(h)=hatpsi_+(delta h) sum_(t,t+h in I_x)
+       beta_x^raw(t)[Lambda(t+h+2)-b_x^(z)(t+h)].
+```
+
+prime Ramanujan identity给 exact normal form
+
+```text
+E_x=-1/L_pr [sum_q q sum_(k!=0) C_x(qk)-R sum_(h!=0) C_x(h)].
+```
+
+两个 branches必须联合估计。把它们分别取绝对值或改写成 centered projector会返回
+V21/V22已封死的 identity-space wall。完整 square-root cancellation的 normalized
+exponent是 `191/192`，比 strict `399/400`多出精确 `13/4800` margin；当前没有
+source theorem支付这个 joint literal covariance。
+
+factorable reserve得到一枚真实桥墩：smooth J1-by-J1 determinant `RS-EF=2`保留
+两个 J1 rows各自的 `+2` coefficient（product `+4`），并可附着
+Bettin--Chandee Corollary 1；在 balance `O(1)`、`eta=x^(o(1))` smooth derivative
+ledger与 natural outer `L2` envelopes下，local error exponent至多 `39/40`。同一 coprime cell
+两次 Poisson给 `KR+HM=0 mod q`、dual lengths `x^(1/14)`。但该结果不覆盖 source
+main、hard-shell losses或 global signed reassembly。ordered J2具有不同 dual area，
+hybrid位于 `lcm(q,d_rough)` progression，zero/nonunit axes也不可删除，故 whole
+factorable compiler STOP，mixed HB determinant theorem继续 OPEN。
+
+动力学路线从 single event改为 whole shell。对 safe lacunary `x_n~8^n`，单个 event
+mass约为 `1/n^2`，总和有限；single-event DBC无效。整个 shell block count则有 Haar
+mean `~x_n/log^2x_n`、variance `O(x_n)`，所以 zero-count bad mass
+`O(log^4x_n/x_n)`可求和。Aspenberg--Baladi--Persson的 Logistic critical-seed
+parameter ASIP是一个 genuine source interface，但仍缺 exact arithmetic carrier和
+growing triangular observables。新的动力学大门是 whole-shell critical-section block
+transfer，不是 ordinary ergodicity。
+
+```text
+V26_PRIME_SHELL_COMPENSATED_DILATION_IDENTITY = PROVED_EXACT_L0
+V26_PRIME_SHELL_SQUARE_ROOT_ENDPOINT_LEDGER = PROVED_EXACT_RATIONAL_POSITIVE_MARGIN
+V26_PRIME_SHELL_RAMANUJAN_COMPENSATED_DILATION_COVARIANCE = OPEN_NEW_THEOREM
+V26_DECLARED_DI_KUZNETSOV_DISPERSION_SHIFTED_CONVOLUTION_JUTILA_BP_PASCADI_PRIMARY_CORPUS_DIRECT_ATTACHMENT_V1
+  = STOP_SCOPED_NO_LITERAL_COLLECTIVE_PHYSICAL_SCALAR_THEOREM
+V26_J1xJ1_SMOOTH_DETERMINANT_CELL
+  = SOURCE_BACKED_CONDITIONAL_LOCAL_ENGINE_ERROR_39_OVER_40_BEFORE_MAIN_REASSEMBLY
+V26_COMMON_FACTORABLE_J1_SHORT_DUAL_DETERMINANT = PROVED_EXACT_L0_COPRIME_SMOOTH_CELL
+V26_COMMON_ENSEMBLE_GOOD_BAD_p_INCIDENCE = PROVED_EXACT_L0_ANALYTIC_COST_OPEN
+V26_SINGLE_TEMPLATE_MASTER_FACTORIZATION = STOP_SCOPED_FINITE_2X2_MINOR
+V26_ALL_HB2_TYPES_ONE_COMMON_SOURCE_ARRAY
+  = STOP_SCOPED_J2_DEGENERATE_AXIS_AND_NORMALIZATION_MISMATCH
+V26_HYBRID_TO_SAME_ARRAYS
+  = STOP_SCOPED_PROGRESS_MODULUS_MAIN_REASSEMBLY_MISMATCH
+V26_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER
+  = STOP_SCOPED_PARTIAL_J1_ONLY_NO_WHOLE_OBJECT
+V26_MIXED_HB_DETERMINANT_COMPILER = OPEN_NEW_THEOREM_RANK1
+V26_LACUNARY_SINGLE_EVENT_DBC = STOP_SCOPED_FINITE_TOTAL_EVENT_MASS
+V26_WHOLE_SHELL_BLOCK_CHEBYSHEV = PROVED_ELEMENTARY_SUMMABLE_HAAR_BAD_MASS
+V26_LOGISTIC_CRITICAL_SEED_PARAMETER_ASIP = SOURCE_BACKED_FIXED_HOLDER_OBSERVABLE
+V26_ARITHMETIC_SEED_TO_CRITICAL_SECTION_INTERTWINER = ABSENT
+V26_GROWING_TRIANGULAR_CRITICAL_SECTION_THEOREM = ABSENT
+V26_SAFE_LACUNARY_CRITICAL_SECTION_BLOCK_TRANSFER_THEOREM = OPEN_NEW_THEOREM
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false
+```
+
+完整 proof与 checker分别为
+[`bridge_b_compensated_dilation_and_block_highway.md`](bridge_b_compensated_dilation_and_block_highway.md)
+及
+[`tpc_bridge_b_compensated_dilation_block_checker.py`](tpc_bridge_b_compensated_dilation_block_checker.py)。
+本节是不编号 route release，不是 TPC-207，也不创建 paper/PDF/build。
 
 ## 25. V25 Bridge B：corrected Fourier emitter 与 factorable reserve
 
