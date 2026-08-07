@@ -1,0 +1,3014 @@
+{
+  "all_pass": true,
+  "ars_integrity": {
+    "ai_assistance": "AI-assisted proof auditing, code checking, and typesetting disclosed; author retains responsibility",
+    "author_contributions": "single author: all CRediT roles applicable to this work",
+    "competing_interests": "none declared",
+    "data_code_availability": "analytic proof plus exact/direct-rounding certificate included",
+    "ethics": "no human participants, animals, or personal data",
+    "funding": "no external funding"
+  },
+  "certificate": {
+    "all_pass": true,
+    "claim_boundary": {
+      "fixed_finite_q_before_N_limit": true,
+      "fixed_r_and_partition_only": true,
+      "gates_A_through_E": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "no_effective_rate_or_threshold": true,
+      "no_growing_clock_or_adaptive_capacity": true,
+      "no_operator_trace_zeros_or_RH": true,
+      "route_a": "GO",
+      "route_b": "STOP_SCOPED",
+      "strict_prime_endpoint": true,
+      "universally_safe_phasewise_c11_zero_only": true
+    },
+    "counts": {
+      "fixed_r": 8,
+      "gap_limits": 5,
+      "negative_mutations": 20,
+      "partitions": 66,
+      "scale_limits": 5,
+      "successors": 48
+    },
+    "fixed_r": [
+      {
+        "asymptotic": "P_1(y)~1/(1*p_y^1*log(p_y))",
+        "constant": "1",
+        "endpoint": "p>p_y",
+        "first_atom": "p_(y+1)",
+        "fixed_r_only": true,
+        "log_exponent": 1,
+        "p_exponent": 1,
+        "pass": true,
+        "r": 1
+      },
+      {
+        "asymptotic": "P_2(y)~1/(3*p_y^3*log(p_y))",
+        "constant": "1/3",
+        "endpoint": "p>p_y",
+        "first_atom": "p_(y+1)",
+        "fixed_r_only": true,
+        "log_exponent": 1,
+        "p_exponent": 3,
+        "pass": true,
+        "r": 2
+      },
+      {
+        "asymptotic": "P_3(y)~1/(5*p_y^5*log(p_y))",
+        "constant": "1/5",
+        "endpoint": "p>p_y",
+        "first_atom": "p_(y+1)",
+        "fixed_r_only": true,
+        "log_exponent": 1,
+        "p_exponent": 5,
+        "pass": true,
+        "r": 3
+      },
+      {
+        "asymptotic": "P_4(y)~1/(7*p_y^7*log(p_y))",
+        "constant": "1/7",
+        "endpoint": "p>p_y",
+        "first_atom": "p_(y+1)",
+        "fixed_r_only": true,
+        "log_exponent": 1,
+        "p_exponent": 7,
+        "pass": true,
+        "r": 4
+      },
+      {
+        "asymptotic": "P_5(y)~1/(9*p_y^9*log(p_y))",
+        "constant": "1/9",
+        "endpoint": "p>p_y",
+        "first_atom": "p_(y+1)",
+        "fixed_r_only": true,
+        "log_exponent": 1,
+        "p_exponent": 9,
+        "pass": true,
+        "r": 5
+      },
+      {
+        "asymptotic": "P_6(y)~1/(11*p_y^11*log(p_y))",
+        "constant": "1/11",
+        "endpoint": "p>p_y",
+        "first_atom": "p_(y+1)",
+        "fixed_r_only": true,
+        "log_exponent": 1,
+        "p_exponent": 11,
+        "pass": true,
+        "r": 6
+      },
+      {
+        "asymptotic": "P_7(y)~1/(13*p_y^13*log(p_y))",
+        "constant": "1/13",
+        "endpoint": "p>p_y",
+        "first_atom": "p_(y+1)",
+        "fixed_r_only": true,
+        "log_exponent": 1,
+        "p_exponent": 13,
+        "pass": true,
+        "r": 7
+      },
+      {
+        "asymptotic": "P_8(y)~1/(15*p_y^15*log(p_y))",
+        "constant": "1/15",
+        "endpoint": "p>p_y",
+        "first_atom": "p_(y+1)",
+        "fixed_r_only": true,
+        "log_exponent": 1,
+        "p_exponent": 15,
+        "pass": true,
+        "r": 8
+      }
+    ],
+    "gap_limits": [
+      {
+        "exact_subtraction": [],
+        "expression": "B_infinity-G(q_y)",
+        "id": "L1",
+        "limit": "A",
+        "normalizer": "p_y*log(p_y)",
+        "pass": true
+      },
+      {
+        "exact_subtraction": [
+          "A*T_y"
+        ],
+        "expression": "B_infinity-G(q_y)-A*T_y",
+        "id": "L2",
+        "limit": "B",
+        "normalizer": "[p_y*log(p_y)]^2",
+        "pass": true,
+        "pnt_surrogates_forbidden": [
+          "A/[p_y*log(p_y)]"
+        ]
+      },
+      {
+        "exact_subtraction": [
+          "A*T_y",
+          "B*T_y^2"
+        ],
+        "expression": "B_infinity-G(q_y)-A*T_y-B*T_y^2",
+        "id": "L3",
+        "limit": "C",
+        "normalizer": "1/S_y",
+        "pass": true,
+        "pnt_surrogates_forbidden": [
+          "A/[p_y*log(p_y)]",
+          "B/[p_y^2*log(p_y)^2]"
+        ]
+      },
+      {
+        "exact_subtraction": [
+          "A*T_y",
+          "B*T_y^2"
+        ],
+        "expression": "B_infinity-G(q_y)-A*T_y-B*T_y^2",
+        "id": "L4",
+        "limit": "C",
+        "normalizer": "3*p_y^3*log(p_y)",
+        "pass": true,
+        "pnt_surrogates_forbidden": [
+          "A/[p_y*log(p_y)]",
+          "B/[p_y^2*log(p_y)^2]"
+        ]
+      },
+      {
+        "exact_subtraction": [
+          "A*T_y",
+          "B*T_y^2"
+        ],
+        "expression": "B_infinity-G(q_y)-A*T_y-B*T_y^2",
+        "id": "L5",
+        "limit": "C/3",
+        "normalizer": "1/[T_y^3*log(p_y)^2]",
+        "pass": true,
+        "pnt_surrogates_forbidden": [
+          "A/[p_y*log(p_y)]",
+          "B/[p_y^2*log(p_y)^2]"
+        ]
+      }
+    ],
+    "negative_mutations": {
+      "endpoint_asymptotic_disclosure": "inclusive/current-prime endpoint changes are exact-interface errors, not leading-asymptotic counterexamples",
+      "rejected": 20,
+      "rows": [
+        {
+          "category": "interface",
+          "label": "endpoint-inclusive",
+          "note": "p>=p_y adds the exact current atom; leading PNT asymptotics alone would not detect it",
+          "rejected": true
+        },
+        {
+          "category": "interface",
+          "label": "first-atom-current",
+          "note": "the strict tail starts at p_(y+1), not p_y; this is an exact-interface check",
+          "rejected": true
+        },
+        {
+          "category": "theorem",
+          "label": "abel-denominator-2r",
+          "note": "the Abel constant is 1/(2r-1)",
+          "rejected": true
+        },
+        {
+          "category": "theorem",
+          "label": "partition-p-exponent-2d",
+          "note": "the exponent is 2d-length(lambda)",
+          "rejected": true
+        },
+        {
+          "category": "theorem",
+          "label": "partition-log-exponent-degree",
+          "note": "the logarithmic exponent is partition length",
+          "rejected": true
+        },
+        {
+          "category": "theorem",
+          "label": "partition-constant-degree-only",
+          "note": "the constant is the product over parts",
+          "rejected": true
+        },
+        {
+          "category": "theorem",
+          "label": "S-normalizer-without-3",
+          "note": "P_2 has Abel constant 1/3",
+          "rejected": true
+        },
+        {
+          "category": "theorem-interface",
+          "label": "PNT-surrogate-quadratic-subtraction",
+          "note": "bare PNT does not license replacing exact B*T_y^2 at the smaller S_y scale",
+          "rejected": true
+        },
+        {
+          "category": "theorem",
+          "label": "memory-sign-Y-plus-2m",
+          "note": "the twice-subtracted coefficient is C=(Y-2m)/pi^2",
+          "rejected": true
+        },
+        {
+          "category": "theorem-interface",
+          "label": "PNT-surrogate-second-subtraction",
+          "note": "bare PNT does not control T_y-1/(p_y log p_y) at the T_y^2 scale",
+          "rejected": true
+        },
+        {
+          "category": "provenance",
+          "label": "wrong-RH2-release",
+          "note": "the source commit is frozen",
+          "rejected": true
+        },
+        {
+          "category": "provenance",
+          "label": "wrong-RH2-main-hash",
+          "note": "the PNT-bearing source blob is frozen",
+          "rejected": true
+        },
+        {
+          "category": "provenance",
+          "label": "wrong-RH2-reference-hash",
+          "note": "the citation source blob is frozen",
+          "rejected": true
+        },
+        {
+          "category": "numeric-interface",
+          "label": "binary-float-injection",
+          "note": "FloatOperation is trapped at precision 80",
+          "rejected": true
+        },
+        {
+          "category": "type-interface",
+          "label": "bool-as-integer-r",
+          "note": "bool is rejected rather than aliased to exact integer 1",
+          "rejected": true
+        },
+        {
+          "category": "json-interface",
+          "label": "duplicate-json-key",
+          "note": "strict JSON rejects this input",
+          "rejected": true
+        },
+        {
+          "category": "json-interface",
+          "label": "NaN-json",
+          "note": "strict JSON rejects this input",
+          "rejected": true
+        },
+        {
+          "category": "json-interface",
+          "label": "Infinity-json",
+          "note": "strict JSON rejects this input",
+          "rejected": true
+        },
+        {
+          "category": "numeric-interface",
+          "label": "cutoff-last-prime",
+          "note": "the tail bound is anchored at integer N=100000, not 99991",
+          "rejected": true
+        },
+        {
+          "category": "numeric-interface",
+          "label": "cutoff-next-prime",
+          "note": "the tail bound is anchored at integer N=100000, not 100003",
+          "rejected": true
+        }
+      ]
+    },
+    "numeric_interval": {
+      "all_pass": true,
+      "cutoff_anchor": 100000,
+      "cutoff_is_neither_last_nor_next_prime": true,
+      "derived_intervals": [
+        {
+          "coefficients": {
+            "4": 6,
+            "5": -16,
+            "6": 30,
+            "7": -48,
+            "8": 70
+          },
+          "lower": "1.9556262879606853184831663833469820384396561080652422149919592352100387729686008",
+          "name": "Y_infinity",
+          "pass": true,
+          "upper": "1.9569567517370304093465324259136121074366453090567248895071303760391764062465501"
+        },
+        {
+          "coefficients": {
+            "3": 2,
+            "4": -4,
+            "5": 6,
+            "6": -8,
+            "7": 10,
+            "8": -12
+          },
+          "lower": "0.20425392637992714902894335506607582124898874327123396041806948840429943371214348",
+          "name": "m_infinity",
+          "pass": true,
+          "upper": "0.20463930814481769903822069240281804436290897518362814004485649065191192498376308"
+        },
+        {
+          "coefficients": {
+            "3": -4,
+            "4": 14,
+            "5": -28,
+            "6": 46,
+            "7": -68,
+            "8": 94
+          },
+          "lower": "1.5463476716710499204067249985413459497138381576979859349022462539062149230010740",
+          "name": "Y_infinity-2m_infinity",
+          "pass": true,
+          "upper": "1.5484488989771761112886457157814604649386678225142569686709913992305775388222634"
+        }
+      ],
+      "first_prime_above_cutoff": 100003,
+      "float_operation_trapped": true,
+      "last_prime_at_or_below_cutoff": 99991,
+      "linear_form": "Y_infinity-2m_infinity=-4u3+14u4-28u5+46u6-68u7+94u8",
+      "numeric_row_count": 10,
+      "odd_prime_count": 9591,
+      "positive_pass": true,
+      "precision": 80,
+      "published_lower": "1.5463476716710499204",
+      "published_upper": "1.5484488989771761113",
+      "raw_lower": "1.5463476716710499204067249985413459497138381576979859349022462539062149230010740",
+      "raw_upper": "1.5484488989771761112886457157814604649386678225142569686709913992305775388222634",
+      "rounding": [
+        "ROUND_FLOOR",
+        "ROUND_CEILING"
+      ],
+      "tail_bound_formula": "sum_(p>N)1/(p^2-1)<=sum_(n>N)1/(n^2-1)=0.5*(1/N+1/(N+1))",
+      "tail_integer_bound": "200001/20000200000",
+      "u_intervals": [
+        {
+          "bonferroni_factor_positive": true,
+          "finite_product_lower": "0.79606836935287354498059773749834613448214436140422608565968368163277992812717002",
+          "finite_product_upper": "0.79606836935287354498059773749834613448214436140422608565968368163277992812734109",
+          "m": 2,
+          "pass": true,
+          "tail_factor_lower": "0.99999000004999950000499995000049999500004999950000499995000049999500004999950000",
+          "tail_loss_upper": "0.0000099999500004999950000499995000049999500004999950000499995000049999500004999950001",
+          "u_lower": "0.79606040870898303668258723437697247788244823019781688942057817156808006324489857",
+          "u_upper": "0.79606836935287354498059773749834613448214436140422608565968368163277992812734109"
+        },
+        {
+          "bonferroni_factor_positive": true,
+          "finite_product_lower": "0.61925442310539659663090836798019670672619725578792199982731263510830127823647113",
+          "finite_product_upper": "0.61925442310539659663090836798019670672619725578792199982731263510830127823662602",
+          "m": 3,
+          "pass": true,
+          "tail_factor_lower": "0.99998000009999900000999990000099999000009999900000999990000099999000009999900000",
+          "tail_loss_upper": "0.000019999900000999990000099999000009999900000999990000099999000009999900000999990001",
+          "u_lower": "0.61924203807885931176128478638556221233898693327341166091191304286879024381042052",
+          "u_upper": "0.61925442310539659663090836798019670672619725578792199982731263510830127823662602"
+        },
+        {
+          "bonferroni_factor_positive": true,
+          "finite_product_lower": "0.46707941971443928894176245156363994112927289254772155985953302903120660751638671",
+          "finite_product_upper": "0.46707941971443928894176245156363994112927289254772155985953302903120660751652680",
+          "m": 4,
+          "pass": true,
+          "tail_factor_lower": "0.99997000014999850001499985000149998500014999850001499985000149998500014999850001",
+          "tail_loss_upper": "0.000029999850001499985000149998500014999850001499985000149998500014999850001499985001",
+          "u_lower": "0.46706540740190906810813664160692823131359118000867958475033010109068512217833360",
+          "u_upper": "0.46707941971443928894176245156363994112927289254772155985953302903120660751652680"
+        },
+        {
+          "bonferroni_factor_positive": true,
+          "finite_product_lower": "0.33722766791368962040853632583965885752876677515408526796859712719631534066531322",
+          "finite_product_upper": "0.33722766791368962040853632583965885752876677515408526796859712719631534066544246",
+          "m": 5,
+          "pass": true,
+          "tail_factor_lower": "0.99996000019999800001999980000199998000019999800001999980000199998000019999800001",
+          "tail_loss_upper": "0.000039999800001999980000199998000019999800001999980000199998000019999800001999980001",
+          "u_lower": "0.33721417887441793195786656700250637753133382730680422233751764051237490201681002",
+          "u_upper": "0.33722766791368962040853632583965885752876677515408526796859712719631534066544246"
+        },
+        {
+          "bonferroni_factor_positive": true,
+          "finite_product_lower": "0.22753840246431479165058321998070523893926657988019982017113068500907168956011581",
+          "finite_product_upper": "0.22753840246431479165058321998070523893926657988019982017113068500907168956023382",
+          "m": 6,
+          "pass": true,
+          "tail_factor_lower": "0.99995000024999750002499975000249997500024999750002499975000249997500024999750002",
+          "tail_loss_upper": "0.000049999750002499975000249997500024999750002499975000249997500024999750002499975001",
+          "u_lower": "0.22752702560107560768676163112294897624477025177967017050656881905069814845878089",
+          "u_upper": "0.22753840246431479165058321998070523893926657988019982017113068500907168956023382"
+        },
+        {
+          "bonferroni_factor_positive": true,
+          "finite_product_lower": "0.13599797876129768932939305595582384250511352267690115354646754910672869761672688",
+          "finite_product_upper": "0.13599797876129768932939305595582384250511352267690115354646754910672869761683598",
+          "m": 7,
+          "pass": true,
+          "tail_factor_lower": "0.99994000029999700002999970000299997000029999700002999970000299997000029999700002",
+          "tail_loss_upper": "0.000059999700002999970000299997000029999700002999970000299997000029999700002999970001",
+          "u_lower": "0.13598981892337099710656621384206971382910282322100104167530312663406675578226961",
+          "u_upper": "0.13599797876129768932939305595582384250511352267690115354646754910672869761683598"
+        },
+        {
+          "bonferroni_factor_positive": true,
+          "finite_product_lower": "0.060732376140477795694564349336715194239732675841161692614726342545899839773674265",
+          "finite_product_upper": "0.060732376140477795694564349336715194239732675841161692614726342545899839773689660",
+          "m": 8,
+          "pass": true,
+          "tail_factor_lower": "0.99993000034999650003499965000349996500034999650003499965000349996500034999650003",
+          "tail_loss_upper": "0.000069999650003499965000349996500034999650003499965000349996500034999650003499965001",
+          "u_lower": "0.060728124895404081336842078561871850341724556651138274986013006420128664605576844",
+          "u_upper": "0.060732376140477795694564349336715194239732675841161692614726342545899839773689660"
+        }
+      ]
+    },
+    "partitions": [
+      {
+        "constant": "1",
+        "degree": 1,
+        "fixed_partition_only": true,
+        "length": 1,
+        "log_exponent": 1,
+        "multiplicities": {
+          "1": 1
+        },
+        "p_exponent": 1,
+        "p_exponent_identity": "1=2*1-1",
+        "partition": [
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/3",
+        "degree": 2,
+        "fixed_partition_only": true,
+        "length": 1,
+        "log_exponent": 1,
+        "multiplicities": {
+          "2": 1
+        },
+        "p_exponent": 3,
+        "p_exponent_identity": "3=2*2-1",
+        "partition": [
+          2
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1",
+        "degree": 2,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "1": 2
+        },
+        "p_exponent": 2,
+        "p_exponent_identity": "2=2*2-2",
+        "partition": [
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/5",
+        "degree": 3,
+        "fixed_partition_only": true,
+        "length": 1,
+        "log_exponent": 1,
+        "multiplicities": {
+          "3": 1
+        },
+        "p_exponent": 5,
+        "p_exponent_identity": "5=2*3-1",
+        "partition": [
+          3
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/3",
+        "degree": 3,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "1": 1,
+          "2": 1
+        },
+        "p_exponent": 4,
+        "p_exponent_identity": "4=2*3-2",
+        "partition": [
+          2,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1",
+        "degree": 3,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 3
+        },
+        "p_exponent": 3,
+        "p_exponent_identity": "3=2*3-3",
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/7",
+        "degree": 4,
+        "fixed_partition_only": true,
+        "length": 1,
+        "log_exponent": 1,
+        "multiplicities": {
+          "4": 1
+        },
+        "p_exponent": 7,
+        "p_exponent_identity": "7=2*4-1",
+        "partition": [
+          4
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/5",
+        "degree": 4,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "1": 1,
+          "3": 1
+        },
+        "p_exponent": 6,
+        "p_exponent_identity": "6=2*4-2",
+        "partition": [
+          3,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/9",
+        "degree": 4,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "2": 2
+        },
+        "p_exponent": 6,
+        "p_exponent_identity": "6=2*4-2",
+        "partition": [
+          2,
+          2
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/3",
+        "degree": 4,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 2,
+          "2": 1
+        },
+        "p_exponent": 5,
+        "p_exponent_identity": "5=2*4-3",
+        "partition": [
+          2,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1",
+        "degree": 4,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "1": 4
+        },
+        "p_exponent": 4,
+        "p_exponent_identity": "4=2*4-4",
+        "partition": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/9",
+        "degree": 5,
+        "fixed_partition_only": true,
+        "length": 1,
+        "log_exponent": 1,
+        "multiplicities": {
+          "5": 1
+        },
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*5-1",
+        "partition": [
+          5
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/7",
+        "degree": 5,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "1": 1,
+          "4": 1
+        },
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*5-2",
+        "partition": [
+          4,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/15",
+        "degree": 5,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "2": 1,
+          "3": 1
+        },
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*5-2",
+        "partition": [
+          3,
+          2
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/5",
+        "degree": 5,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 2,
+          "3": 1
+        },
+        "p_exponent": 7,
+        "p_exponent_identity": "7=2*5-3",
+        "partition": [
+          3,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/9",
+        "degree": 5,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 1,
+          "2": 2
+        },
+        "p_exponent": 7,
+        "p_exponent_identity": "7=2*5-3",
+        "partition": [
+          2,
+          2,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/3",
+        "degree": 5,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "1": 3,
+          "2": 1
+        },
+        "p_exponent": 6,
+        "p_exponent_identity": "6=2*5-4",
+        "partition": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1",
+        "degree": 5,
+        "fixed_partition_only": true,
+        "length": 5,
+        "log_exponent": 5,
+        "multiplicities": {
+          "1": 5
+        },
+        "p_exponent": 5,
+        "p_exponent_identity": "5=2*5-5",
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/11",
+        "degree": 6,
+        "fixed_partition_only": true,
+        "length": 1,
+        "log_exponent": 1,
+        "multiplicities": {
+          "6": 1
+        },
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*6-1",
+        "partition": [
+          6
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/9",
+        "degree": 6,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "1": 1,
+          "5": 1
+        },
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*6-2",
+        "partition": [
+          5,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/21",
+        "degree": 6,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "2": 1,
+          "4": 1
+        },
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*6-2",
+        "partition": [
+          4,
+          2
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/7",
+        "degree": 6,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 2,
+          "4": 1
+        },
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*6-3",
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/25",
+        "degree": 6,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "3": 2
+        },
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*6-2",
+        "partition": [
+          3,
+          3
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/15",
+        "degree": 6,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*6-3",
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/5",
+        "degree": 6,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "1": 3,
+          "3": 1
+        },
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*6-4",
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/27",
+        "degree": 6,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "2": 3
+        },
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*6-3",
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/9",
+        "degree": 6,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "1": 2,
+          "2": 2
+        },
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*6-4",
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/3",
+        "degree": 6,
+        "fixed_partition_only": true,
+        "length": 5,
+        "log_exponent": 5,
+        "multiplicities": {
+          "1": 4,
+          "2": 1
+        },
+        "p_exponent": 7,
+        "p_exponent_identity": "7=2*6-5",
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1",
+        "degree": 6,
+        "fixed_partition_only": true,
+        "length": 6,
+        "log_exponent": 6,
+        "multiplicities": {
+          "1": 6
+        },
+        "p_exponent": 6,
+        "p_exponent_identity": "6=2*6-6",
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/13",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 1,
+        "log_exponent": 1,
+        "multiplicities": {
+          "7": 1
+        },
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*7-1",
+        "partition": [
+          7
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/11",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "1": 1,
+          "6": 1
+        },
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*7-2",
+        "partition": [
+          6,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/27",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "2": 1,
+          "5": 1
+        },
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*7-2",
+        "partition": [
+          5,
+          2
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/9",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 2,
+          "5": 1
+        },
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*7-3",
+        "partition": [
+          5,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/35",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "3": 1,
+          "4": 1
+        },
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*7-2",
+        "partition": [
+          4,
+          3
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/21",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 1,
+          "2": 1,
+          "4": 1
+        },
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*7-3",
+        "partition": [
+          4,
+          2,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/7",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "1": 3,
+          "4": 1
+        },
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*7-4",
+        "partition": [
+          4,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/25",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 1,
+          "3": 2
+        },
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*7-3",
+        "partition": [
+          3,
+          3,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/45",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "2": 2,
+          "3": 1
+        },
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*7-3",
+        "partition": [
+          3,
+          2,
+          2
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/15",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "1": 2,
+          "2": 1,
+          "3": 1
+        },
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*7-4",
+        "partition": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/5",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 5,
+        "log_exponent": 5,
+        "multiplicities": {
+          "1": 4,
+          "3": 1
+        },
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*7-5",
+        "partition": [
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/27",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "1": 1,
+          "2": 3
+        },
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*7-4",
+        "partition": [
+          2,
+          2,
+          2,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/9",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 5,
+        "log_exponent": 5,
+        "multiplicities": {
+          "1": 3,
+          "2": 2
+        },
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*7-5",
+        "partition": [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/3",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 6,
+        "log_exponent": 6,
+        "multiplicities": {
+          "1": 5,
+          "2": 1
+        },
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*7-6",
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1",
+        "degree": 7,
+        "fixed_partition_only": true,
+        "length": 7,
+        "log_exponent": 7,
+        "multiplicities": {
+          "1": 7
+        },
+        "p_exponent": 7,
+        "p_exponent_identity": "7=2*7-7",
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/15",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 1,
+        "log_exponent": 1,
+        "multiplicities": {
+          "8": 1
+        },
+        "p_exponent": 15,
+        "p_exponent_identity": "15=2*8-1",
+        "partition": [
+          8
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/13",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "1": 1,
+          "7": 1
+        },
+        "p_exponent": 14,
+        "p_exponent_identity": "14=2*8-2",
+        "partition": [
+          7,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/33",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "2": 1,
+          "6": 1
+        },
+        "p_exponent": 14,
+        "p_exponent_identity": "14=2*8-2",
+        "partition": [
+          6,
+          2
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/11",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 2,
+          "6": 1
+        },
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*8-3",
+        "partition": [
+          6,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/45",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "3": 1,
+          "5": 1
+        },
+        "p_exponent": 14,
+        "p_exponent_identity": "14=2*8-2",
+        "partition": [
+          5,
+          3
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/27",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 1,
+          "2": 1,
+          "5": 1
+        },
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*8-3",
+        "partition": [
+          5,
+          2,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/9",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "1": 3,
+          "5": 1
+        },
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*8-4",
+        "partition": [
+          5,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/49",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 2,
+        "log_exponent": 2,
+        "multiplicities": {
+          "4": 2
+        },
+        "p_exponent": 14,
+        "p_exponent_identity": "14=2*8-2",
+        "partition": [
+          4,
+          4
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/35",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "1": 1,
+          "3": 1,
+          "4": 1
+        },
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*8-3",
+        "partition": [
+          4,
+          3,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/63",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "2": 2,
+          "4": 1
+        },
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*8-3",
+        "partition": [
+          4,
+          2,
+          2
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/21",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "1": 2,
+          "2": 1,
+          "4": 1
+        },
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*8-4",
+        "partition": [
+          4,
+          2,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/7",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 5,
+        "log_exponent": 5,
+        "multiplicities": {
+          "1": 4,
+          "4": 1
+        },
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*8-5",
+        "partition": [
+          4,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/75",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 3,
+        "log_exponent": 3,
+        "multiplicities": {
+          "2": 1,
+          "3": 2
+        },
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*8-3",
+        "partition": [
+          3,
+          3,
+          2
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/25",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "1": 2,
+          "3": 2
+        },
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*8-4",
+        "partition": [
+          3,
+          3,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/45",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "1": 1,
+          "2": 2,
+          "3": 1
+        },
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*8-4",
+        "partition": [
+          3,
+          2,
+          2,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/15",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 5,
+        "log_exponent": 5,
+        "multiplicities": {
+          "1": 3,
+          "2": 1,
+          "3": 1
+        },
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*8-5",
+        "partition": [
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/5",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 6,
+        "log_exponent": 6,
+        "multiplicities": {
+          "1": 5,
+          "3": 1
+        },
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*8-6",
+        "partition": [
+          3,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/81",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 4,
+        "log_exponent": 4,
+        "multiplicities": {
+          "2": 4
+        },
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*8-4",
+        "partition": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/27",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 5,
+        "log_exponent": 5,
+        "multiplicities": {
+          "1": 2,
+          "2": 3
+        },
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*8-5",
+        "partition": [
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/9",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 6,
+        "log_exponent": 6,
+        "multiplicities": {
+          "1": 4,
+          "2": 2
+        },
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*8-6",
+        "partition": [
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1/3",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 7,
+        "log_exponent": 7,
+        "multiplicities": {
+          "1": 6,
+          "2": 1
+        },
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*8-7",
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "constant": "1",
+        "degree": 8,
+        "fixed_partition_only": true,
+        "length": 8,
+        "log_exponent": 8,
+        "multiplicities": {
+          "1": 8
+        },
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*8-8",
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      }
+    ],
+    "proof_ledger": {
+      "abel": "strict Stieltjes partial summation with pi(t)=t/log(t)*(1+delta(t)); sup_(t>=x)|delta(t)|->0",
+      "finite_rows_are_reproduction_only": true,
+      "fixed_partition": "multiply finitely many fixed-r equivalents; no growing-degree uniformity",
+      "fixed_r": "P_r(y)~1/((2r-1)*p_y^(2r-1)*log(p_y)) for each fixed r>=1",
+      "gap_input": "RH-382 gives gap=A*T+B*T^2+C*S+O(T^3)",
+      "interval": "finite Euler-product intervals plus integer-tail Bonferroni bound, directed at precision 80",
+      "scale_order": "T_y^3=o(S_y) and S_y=o(T_y^2)",
+      "subtraction": "L2 subtracts exact A*T_y; L3--L5 subtract exact A*T_y+B*T_y^2; neither term may be replaced by its bare-PNT surrogate"
+    },
+    "scale_separation": [
+      {
+        "derived_constant": "1",
+        "id": "S1",
+        "pass": true,
+        "statement": "p_y*log(p_y)*T_y->1"
+      },
+      {
+        "derived_constant": "1",
+        "id": "S2",
+        "pass": true,
+        "statement": "3*p_y^3*log(p_y)*S_y->1"
+      },
+      {
+        "derived_equivalent": "log(p_y)/(3*p_y)",
+        "id": "S3",
+        "pass": true,
+        "statement": "S_y/T_y^2->0"
+      },
+      {
+        "derived_equivalent": "3/log(p_y)^2",
+        "id": "S4",
+        "pass": true,
+        "statement": "T_y^3/S_y->0"
+      },
+      {
+        "derived_constant": "1/3",
+        "id": "S5",
+        "pass": true,
+        "statement": "S_y/[T_y^3*log(p_y)^2]->1/3"
+      }
+    ],
+    "status": "RH-384_exact_certificate",
+    "successors": [
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 5,
+        "first_atom": "1/24",
+        "first_atom_pass": true,
+        "first_tail_prime": 5,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "43/560",
+        "p_y": 3,
+        "pass": true,
+        "r": 1,
+        "rhs": "43/560",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "59/1680",
+        "y": 1
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 5,
+        "first_atom": "1/576",
+        "first_atom_pass": true,
+        "first_tail_prime": 5,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "6421/2822400",
+        "p_y": 3,
+        "pass": true,
+        "r": 2,
+        "rhs": "6421/2822400",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "169/313600",
+        "y": 1
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 5,
+        "first_atom": "1/13824",
+        "first_atom_pass": true,
+        "first_tail_prime": 5,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "43291/526848000",
+        "p_y": 3,
+        "pass": true,
+        "r": 3,
+        "rhs": "43291/526848000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "46619/4741632000",
+        "y": 1
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 5,
+        "first_atom": "1/331776",
+        "first_atom_pass": true,
+        "first_tail_prime": 5,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "25559041/7965941760000",
+        "p_y": 3,
+        "pass": true,
+        "r": 4,
+        "rhs": "25559041/7965941760000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "516347/2655313920000",
+        "y": 1
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 5,
+        "first_atom": "1/7962624",
+        "first_atom_pass": true,
+        "first_tail_prime": 5,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "577953233/4460927385600000",
+        "p_y": 3,
+        "pass": true,
+        "r": 5,
+        "rhs": "577953233/4460927385600000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "53159699/13382782156800000",
+        "y": 1
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 5,
+        "first_atom": "1/191102976",
+        "first_atom_pass": true,
+        "first_tail_prime": 5,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "119495795161/22483074023424000000",
+        "p_y": 3,
+        "pass": true,
+        "r": 6,
+        "rhs": "119495795161/22483074023424000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "615598387/7494358007808000000",
+        "y": 1
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 5,
+        "first_atom": "1/4586471424",
+        "first_atom_pass": true,
+        "first_tail_prime": 5,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "2766628236793/12590521453117440000000",
+        "p_y": 3,
+        "pass": true,
+        "r": 7,
+        "rhs": "2766628236793/12590521453117440000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "64454710379/37771564359352320000000",
+        "y": 1
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 5,
+        "first_atom": "1/110075314176",
+        "first_atom_pass": true,
+        "first_tail_prime": 5,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "578733551179681/63456228123711897600000000",
+        "p_y": 3,
+        "pass": true,
+        "r": 8,
+        "rhs": "578733551179681/63456228123711897600000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "83461154803/2350230671248588800000000",
+        "y": 1
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 6,
+        "first_atom": "1/48",
+        "first_atom_pass": true,
+        "first_tail_prime": 7,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "389/10080",
+        "p_y": 5,
+        "pass": true,
+        "r": 1,
+        "rhs": "389/10080",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "179/10080",
+        "y": 2
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 6,
+        "first_atom": "1/2304",
+        "first_atom_pass": true,
+        "first_tail_prime": 7,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "55981/101606400",
+        "p_y": 5,
+        "pass": true,
+        "r": 2,
+        "rhs": "55981/101606400",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "11881/101606400",
+        "y": 2
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 6,
+        "first_atom": "1/110592",
+        "first_atom_pass": true,
+        "first_tail_prime": 7,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "10112579/1024192512000",
+        "p_y": 5,
+        "pass": true,
+        "r": 3,
+        "rhs": "10112579/1024192512000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "851579/1024192512000",
+        "y": 2
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 6,
+        "first_atom": "1/5308416",
+        "first_atom_pass": true,
+        "first_tail_prime": 7,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "2009057761/10323860520960000",
+        "p_y": 5,
+        "pass": true,
+        "r": 4,
+        "rhs": "2009057761/10323860520960000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "64247761/10323860520960000",
+        "y": 2
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 6,
+        "first_atom": "1/254803968",
+        "first_atom_pass": true,
+        "first_tail_prime": 7,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "413422341299/104064514051276800000",
+        "p_y": 5,
+        "pass": true,
+        "r": 5,
+        "rhs": "413422341299/104064514051276800000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "5012241299/104064514051276800000",
+        "y": 2
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 6,
+        "first_atom": "1/12230590464",
+        "first_atom_pass": true,
+        "first_tail_prime": 7,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "86165913297241/1048970301636870144000000",
+        "p_y": 5,
+        "pass": true,
+        "r": 6,
+        "rhs": "86165913297241/1048970301636870144000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "399792297241/1048970301636870144000000",
+        "y": 2
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 6,
+        "first_atom": "1/587068342272",
+        "first_atom_pass": true,
+        "first_tail_prime": 7,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "18043258143952619/10573620640499651051520000000",
+        "p_y": 5,
+        "pass": true,
+        "r": 7,
+        "rhs": "18043258143952619/10573620640499651051520000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "32372733952619/10573620640499651051520000000",
+        "y": 2
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 6,
+        "first_atom": "1/28179280429056",
+        "first_atom_pass": true,
+        "first_tail_prime": 7,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "3784934908486473121/106582096056236482599321600000000",
+        "p_y": 5,
+        "pass": true,
+        "r": 8,
+        "rhs": "3784934908486473121/106582096056236482599321600000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "2648972386473121/106582096056236482599321600000000",
+        "y": 2
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 7,
+        "first_atom": "1/120",
+        "first_atom_pass": true,
+        "first_tail_prime": 11,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "23/1120",
+        "p_y": 7,
+        "pass": true,
+        "r": 1,
+        "rhs": "23/1120",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "41/3360",
+        "y": 3
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 7,
+        "first_atom": "1/14400",
+        "first_atom_pass": true,
+        "first_tail_prime": 11,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "2533/20321280",
+        "p_y": 7,
+        "pass": true,
+        "r": 2,
+        "rhs": "2533/20321280",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "5609/101606400",
+        "y": 3
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 7,
+        "first_atom": "1/1728000",
+        "first_atom_pass": true,
+        "first_tail_prime": 11,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "32353/37933056000",
+        "p_y": 7,
+        "pass": true,
+        "r": 3,
+        "rhs": "32353/37933056000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "3467/12644352000",
+        "y": 3
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 7,
+        "first_atom": "1/207360000",
+        "first_atom_pass": true,
+        "first_tail_prime": 11,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "64862417/10323860520960000",
+        "p_y": 7,
+        "pass": true,
+        "r": 4,
+        "rhs": "64862417/10323860520960000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "15075281/10323860520960000",
+        "y": 3
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 7,
+        "first_atom": "1/24883200000",
+        "first_atom_pass": true,
+        "first_tail_prime": 11,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "558827963/11562723783475200000",
+        "p_y": 7,
+        "pass": true,
+        "r": 5,
+        "rhs": "558827963/11562723783475200000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "94148027/11562723783475200000",
+        "y": 3
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 7,
+        "first_atom": "1/2985984000000",
+        "first_atom_pass": true,
+        "first_tail_prime": 11,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "80054837509/209794060327374028800000",
+        "p_y": 7,
+        "pass": true,
+        "r": 6,
+        "rhs": "80054837509/209794060327374028800000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "48976155929/1048970301636870144000000",
+        "y": 3
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 7,
+        "first_atom": "1/358318080000000",
+        "first_atom_pass": true,
+        "first_tail_prime": 11,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "3598469653459/1174846737833294561280000000",
+        "p_y": 7,
+        "pass": true,
+        "r": 7,
+        "rhs": "3598469653459/1174846737833294561280000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "319688025043/1174846737833294561280000000",
+        "y": 3
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 7,
+        "first_atom": "1/42998169600000000",
+        "first_atom_pass": true,
+        "first_tail_prime": 11,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "2649350188471457/106582096056236482599321600000000",
+        "p_y": 7,
+        "pass": true,
+        "r": 8,
+        "rhs": "2649350188471457/106582096056236482599321600000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "170591277388961/106582096056236482599321600000000",
+        "y": 3
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 9,
+        "first_atom": "1/288",
+        "first_atom_pass": true,
+        "first_tail_prime": 17,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "23/2464",
+        "p_y": 13,
+        "pass": true,
+        "r": 1,
+        "rhs": "23/2464",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "65/11088",
+        "y": 5
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 9,
+        "first_atom": "1/82944",
+        "first_atom_pass": true,
+        "first_tail_prime": 17,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "304613/12294374400",
+        "p_y": 13,
+        "pass": true,
+        "r": 2,
+        "rhs": "304613/12294374400",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "39097/3073593600",
+        "y": 5
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 9,
+        "first_atom": "1/23887872",
+        "first_atom_pass": true,
+        "first_tail_prime": 17,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "724783/10097779507200",
+        "p_y": 13,
+        "pass": true,
+        "r": 3,
+        "rhs": "724783/10097779507200",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "1019477/34080005836800",
+        "y": 5
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 9,
+        "first_atom": "1/6879707136",
+        "first_atom_pass": true,
+        "first_tail_prime": 17,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "33218234897/151151641887375360000",
+        "p_y": 13,
+        "pass": true,
+        "r": 4,
+        "rhs": "33218234897/151151641887375360000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "702974017/9446977617960960000",
+        "y": 5
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 9,
+        "first_atom": "1/1981355655168",
+        "first_atom_pass": true,
+        "first_tail_prime": 17,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "51906365377/74487529122098577408000",
+        "p_y": 13,
+        "pass": true,
+        "r": 5,
+        "rhs": "51906365377/74487529122098577408000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "4025289649/20949617565590224896000",
+        "y": 5
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 9,
+        "first_atom": "1/570630428688384",
+        "first_atom_pass": true,
+        "first_tail_prime": 17,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "4201353731536193/1858314876538115309174784000000",
+        "p_y": 13,
+        "pass": true,
+        "r": 6,
+        "rhs": "4201353731536193/1858314876538115309174784000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "14761781916337/29036169945908051705856000000",
+        "y": 5
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 9,
+        "first_atom": "1/164341563462254592",
+        "first_atom_pass": true,
+        "first_tail_prime": 17,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "34120867364594341/4578887855789916121806667776000000",
+        "p_y": 13,
+        "pass": true,
+        "r": 7,
+        "rhs": "34120867364594341/4578887855789916121806667776000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "440075236224773/321953052360228477314531328000000",
+        "y": 5
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 9,
+        "first_atom": "1/47330370277129322496",
+        "first_atom_pass": true,
+        "first_tail_prime": 17,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "567569158819986754817/22846818845249365481366549535129600000000",
+        "p_y": 13,
+        "pass": true,
+        "r": 8,
+        "rhs": "567569158819986754817/22846818845249365481366549535129600000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "331483085680366657/89245386114255333911588084121600000000",
+        "y": 5
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 12,
+        "first_atom": "1/840",
+        "first_atom_pass": true,
+        "first_tail_prime": 29,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "1363/383040",
+        "p_y": 23,
+        "pass": true,
+        "r": 1,
+        "rhs": "1363/383040",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "907/383040",
+        "y": 8
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 12,
+        "first_atom": "1/705600",
+        "first_atom_pass": true,
+        "first_tail_prime": 29,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "497521/146719641600",
+        "p_y": 23,
+        "pass": true,
+        "r": 2,
+        "rhs": "497521/146719641600",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "57917/29343928320",
+        "y": 8
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 12,
+        "first_atom": "1/592704000",
+        "first_atom_pass": true,
+        "first_tail_prime": 29,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "192144367/56199491518464000",
+        "p_y": 23,
+        "pass": true,
+        "r": 3,
+        "rhs": "192144367/56199491518464000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "97325551/56199491518464000",
+        "y": 8
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 12,
+        "first_atom": "1/497871360000",
+        "first_atom_pass": true,
+        "first_tail_prime": 29,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "77431234753/21526653231232450560000",
+        "p_y": 23,
+        "pass": true,
+        "r": 4,
+        "rhs": "77431234753/21526653231232450560000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "34193854657/21526653231232450560000",
+        "y": 8
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 12,
+        "first_atom": "1/418211942400000",
+        "first_atom_pass": true,
+        "first_tail_prime": 29,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "32166053192143/8245569253691277862502400000",
+        "p_y": 23,
+        "pass": true,
+        "r": 5,
+        "rhs": "32166053192143/8245569253691277862502400000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "12449807868367/8245569253691277862502400000",
+        "y": 8
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 12,
+        "first_atom": "1/351298031616000000",
+        "first_atom_pass": true,
+        "first_tail_prime": 29,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "13647919141971361/3158382846933907072452919296000000",
+        "p_y": 23,
+        "pass": true,
+        "r": 6,
+        "rhs": "13647919141971361/3158382846933907072452919296000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "931462254865901/631676569386781414490583859200000",
+        "y": 8
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 12,
+        "first_atom": "1/295090346557440000000",
+        "first_atom_pass": true,
+        "first_tail_prime": 29,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "5876617659529803247/1209786965689563765032366207139840000000",
+        "p_y": 23,
+        "pass": true,
+        "r": 7,
+        "rhs": "5876617659529803247/1209786965689563765032366207139840000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "1776900471885116911/1209786965689563765032366207139840000000",
+        "y": 8
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 12,
+        "first_atom": "1/247875891108249600000000",
+        "first_atom_pass": true,
+        "first_tail_prime": 29,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "2556920774988489543553/463396799337730504557997551982844313600000000",
+        "p_y": 23,
+        "pass": true,
+        "r": 8,
+        "rhs": "2556920774988489543553/463396799337730504557997551982844313600000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "687449737422512574337/463396799337730504557997551982844313600000000",
+        "y": 8
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 17,
+        "first_atom": "1/2208",
+        "first_atom_pass": true,
+        "first_tail_prime": 47,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "317059/232244064",
+        "p_y": 43,
+        "pass": true,
+        "r": 1,
+        "rhs": "317059/232244064",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "2303/2524392",
+        "y": 13
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 17,
+        "first_atom": "1/4875264",
+        "first_atom_pass": true,
+        "first_tail_prime": 47,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "656388299017/1348432631580902400",
+        "p_y": 43,
+        "pass": true,
+        "r": 2,
+        "rhs": "656388299017/1348432631580902400",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "44872603/159313874241600",
+        "y": 13
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 17,
+        "first_atom": "1/10764582912",
+        "first_atom_pass": true,
+        "first_tail_prime": 47,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "56750734392149959/313165474388563518163353600",
+        "p_y": 43,
+        "pass": true,
+        "r": 3,
+        "rhs": "56750734392149959/313165474388563518163353600",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "35519395943/402170669624501107200",
+        "y": 13
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 17,
+        "first_atom": "1/23768199069696",
+        "first_atom_pass": true,
+        "first_tail_prime": 47,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "127638915803435295734257/1818270561912197664509876398325760000",
+        "p_y": 43,
+        "pass": true,
+        "r": 4,
+        "rhs": "127638915803435295734257/1818270561912197664509876398325760000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "713836936234867/25380910525868339975170560000",
+        "y": 13
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 17,
+        "first_atom": "1/52480183545888768",
+        "first_atom_pass": true,
+        "first_tail_prime": 47,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "2377113839188390148411992163/84456508950010479355416452576971459657728000",
+        "p_y": 43,
+        "pass": true,
+        "r": 5,
+        "rhs": "2377113839188390148411992163/84456508950010479355416452576971459657728000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "116497119421545859/12814273496843566097320152059904000",
+        "y": 13
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 17,
+        "first_atom": "1/115876245269322399744",
+        "first_atom_pass": true,
+        "first_tail_prime": 47,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "28466080394651805584382959253642697/2451815358725350821011252169867390575365349965824000000",
+        "p_y": 43,
+        "pass": true,
+        "r": 6,
+        "rhs": "28466080394651805584382959253642697/2451815358725350821011252169867390575365349965824000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "12050972894160724257163/4043531187655490438443276662350647296000000",
+        "y": 13
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 17,
+        "first_atom": "1/255854749554663858634752",
+        "first_atom_pass": true,
+        "first_tail_prime": 47,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "2789112265288944456181523748163553266711/569419563087993334497389793658821128298147160845226868736000000",
+        "p_y": 43,
+        "pass": true,
+        "r": 7,
+        "rhs": "2789112265288944456181523748163553266711/569419563087993334497389793658821128298147160845226868736000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "10102317528623405035711607/10207457781868018818882700060224675228844032000000",
+        "y": 13
+      },
+      {
+        "asymptotic_note": "endpoint mutations are interface errors but do not change the leading PNT equivalent",
+        "endpoint_y": 17,
+        "first_atom": "1/564927287016697799865532416",
+        "first_atom_pass": true,
+        "first_tail_prime": 47,
+        "identity_pass": true,
+        "inclusive_interface_mutation_rejected": true,
+        "lhs": "6951469089180251773223258770063214591599079137/3306107836316499040214630076786151207125677507618929074931079577600000000",
+        "p_y": 43,
+        "pass": true,
+        "r": 8,
+        "rhs": "6951469089180251773223258770063214591599079137/3306107836316499040214630076786151207125677507618929074931079577600000000",
+        "strict_endpoint": "p>p_y",
+        "successor_tail": "214177165158882110675630708707/644190619122134294055923424260767208757301090713600000000",
+        "y": 13
+      }
+    ]
+  },
+  "certificate_fixture": {
+    "canonical_bytes": 48689,
+    "pass": true,
+    "sha256": "01c91e57a01de9841f282327ab2f6e1a9368e136393ddab7a2cfe6b019a519c8"
+  },
+  "claim_boundary": {
+    "fixed_finite_q_before_N_limit": true,
+    "fixed_r_and_partition_only": true,
+    "gates_A_through_E": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "no_effective_rate_or_threshold": true,
+    "no_growing_clock_or_adaptive_capacity": true,
+    "no_operator_trace_zeros_or_RH": true,
+    "route_a": "GO",
+    "route_b": "STOP_SCOPED",
+    "strict_prime_endpoint": true,
+    "universally_safe_phasewise_c11_zero_only": true
+  },
+  "forbidden_claims": {
+    "active_phasewise_c11_cancellation": false,
+    "adaptive_capacity_limit": false,
+    "effective_PNT_rate_or_threshold": false,
+    "growing_clock_q_of_N": false,
+    "hilbert_polya_operator": false,
+    "proof_of_RH": false,
+    "riemann_zero_identification": false,
+    "uniform_growing_partition_degree": false
+  },
+  "gates": {
+    "A_intrinsic_determinant": false,
+    "B_scattering_completion": false,
+    "C_self_adjoint_generator": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "paper": "RH-384",
+  "predecessor_checks": {
+    "all_pass": true,
+    "checks": {
+      "rh2_is_prime_counting_source_not_mobius_consequence": true,
+      "rh2_main_cites_montgomery_vaughan": true,
+      "rh2_main_invokes_pnt": true,
+      "rh2_reference_has_book_doi": true,
+      "rh374_release_status_pass": true,
+      "rh379_release_status_pass": true,
+      "rh380_release_status_pass": true,
+      "rh381_release_status_pass": true,
+      "rh382_gap_input_present": true,
+      "rh382_release_status_pass": true,
+      "rh383_exact_tail_input_present": true,
+      "rh383_release_status_pass": true
+    }
+  },
+  "source_locks": {
+    "all_source_digest": "90434e0468ecc062cb522da096a267748725b5dca8e59c642bb7711f45a3e0e4",
+    "count": 51,
+    "declared_hash_identity_pass": true,
+    "digest_contract_pass": true,
+    "entries": [
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/README.md",
+        "sha256": "dbc0041d012d6316ef6a8ffab6f05d510a1cc68414eae30c3744a7c411925c4c"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/THEOREM_LEDGER.md",
+        "sha256": "9451ee6faf1f523a62a10c85ba494b8617011dab7b8d7bc517e7c0c26aabb4ee"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/UPDATED_ROADMAP.md",
+        "sha256": "c6857ef5bc9cd88074108254fc39a93e985daae7fa545e26badbfdfc086bf28c"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/main.tex",
+        "sha256": "2129075ec4bae1c5f0f25fcd09cec273fe322d44116d51e5191e3cade4fb9f6d"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/references.bib",
+        "sha256": "ce1e5123ff7edc05c6436f2534044e7058b4a3857bf0f084971954ced3e7c184"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/results/result.json",
+        "sha256": "ca492e96bd557b966d7924ee7acca7eceb9248dafe513a674f36f78891438bdd"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/src/square_clock/core.py",
+        "sha256": "79afe7d583c3db30f876c62605a42f2ee77819028a40d01a3ec24d3259a40615"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/README.md",
+        "sha256": "8beb603782f40db86031515d3a70d82e4f76cdf10d60561062d88ff581daffe5"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/THEOREM_LEDGER.md",
+        "sha256": "7229a3969c48463724ed573b4dde1da3e8a48790ebe7663af68b1139a033c2bb"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/UPDATED_ROADMAP.md",
+        "sha256": "75c243a5ae12fbe71cdb2ce3cb3c46a8e7a61d016dd6c8dba2b98b6b9dac3464"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/main.tex",
+        "sha256": "c5d97a227398a4f1d46a39fdec73ffb86aeb9bfc0f16296be7023b187b497090"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/references.bib",
+        "sha256": "d728ca8571bfcc96e78be3b5231db83c3bb61140d0dfabb3be0b4848738673c6"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.json",
+        "sha256": "a209b922ad6235263bb5213d090a2fb0ad0bcfdd0168788e64115b33d95a4ca8"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.schema.json",
+        "sha256": "0af712350369e3f7e4a51ce5a8ee1179928e9397372b7b1040183dc3668406df"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/src/phasewise_memory/core.py",
+        "sha256": "cd3949cc0a1ece1dadab59c049c8a4d3fc170a9c7b6332b93ad62567277fd582"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/README.md",
+        "sha256": "eb241b1fd954ba689750d47dd51ae7cd5980c2bb7706165e3fcbab2e2375bc23"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/THEOREM_LEDGER.md",
+        "sha256": "c274c2a5685ba6d472d392c5097149742e432e938aeb61fd3f5b7f001a382c7a"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/UPDATED_ROADMAP.md",
+        "sha256": "8a82e86bf66248d5dda44ca806fd2c5d974530b5b7e85baac25c0aa98f41ce1d"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/main.tex",
+        "sha256": "6110b876e1b31fe79e7ff72e5058d97179575cf1dccce86e8c7c0a049d57451f"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/references.bib",
+        "sha256": "5ea4b95e74c63e47b5eb6a92564941748fb02fc7e7729efe05f52932bb657604"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.json",
+        "sha256": "e7e6bc2acc46b9346e2fdd90306e9f8c5fb18c193ed0601466bbf4e01a92be33"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.schema.json",
+        "sha256": "62bb03f0e61043bdeda0bf49afcbc0877d95115ca677e7cda20a73d955c5a57f"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/src/finite_clock_gap/core.py",
+        "sha256": "ed88dd657fcf4c3fa4ae1c2cd2d0a434770433e7cffd0b52297faab1d5459074"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/README.md",
+        "sha256": "891ebd30acfbffd90cddda3bd96719f01d7cae13eec399894b08c0c20435dae3"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/THEOREM_LEDGER.md",
+        "sha256": "a7a79197bba2a423cff77f6f74e63c8621a40c2bcef368e5ce6ce954857edcda"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/UPDATED_ROADMAP.md",
+        "sha256": "f2ea88b81441c78171a2a54d85ddc7f2a405ae78b94cac43ca6f6ae46048d703"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/main.tex",
+        "sha256": "b1025502880530602f134ea5bdc6dcde34e2cdfd18fb364cb104343d456b643a"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/references.bib",
+        "sha256": "bb61978aebc465b05e3ffda154926ad20bb15e4a475e12304cc6147903d40625"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.json",
+        "sha256": "a7a869f40af0a17656b28a07fe58e337d9b8e619d13de8bc671326912f875ffd"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.schema.json",
+        "sha256": "ed1788580270f03bdcbb43172edf149f086b76564697dd93e1556282855aad5b"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/src/prime_square_tail/core.py",
+        "sha256": "acc1e11ff57b634ec702996526f4ddd12ac58d372236a8d77202b529faca9322"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/README.md",
+        "sha256": "5f818841bb7db7c8b27e75d892a2fa6f3de549edb7456f65fb2275b82356203a"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/THEOREM_LEDGER.md",
+        "sha256": "1c835ef614fd9381c08019f0cb5358c829bafdb2e7502861649566508b4ea586"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/UPDATED_ROADMAP.md",
+        "sha256": "793e27292d6f99fc1c23a550e66b247bbc1aa1b5c0bfef266339697bf3b9e66e"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/main.tex",
+        "sha256": "929b4304390036843c5e4f0d165f3be45d683e36f2a7537a3a5d14ed197b5d0c"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/references.bib",
+        "sha256": "c8ea97c3b3626d27fc6a3ec0dca69aa87c4eb2b248ec410bc989aff0aa4f11dc"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.json",
+        "sha256": "960ef6ce017ad62b6c552ed30a41b9f0c3e41a9a217ef103c4a3f812c80a71d2"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.schema.json",
+        "sha256": "573b631820edd3b911b9792f9587fee07a03cf13ecefd03a6247d115cfa42394"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/src/two_scale_tail/core.py",
+        "sha256": "3fd8bd0233385aeb440d0703769ea6b624792aef4460ec5b887116fe3554b56e"
+      },
+      {
+        "commit": "bea5c88ca4ae9ca75511af42296ed099c1d6b11a",
+        "group": "rh383_release",
+        "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/README.md",
+        "sha256": "a666c7d396bb54062b761f06d95d35a3b27ddceec7ed7a6519cbfc61e7d590f3"
+      },
+      {
+        "commit": "bea5c88ca4ae9ca75511af42296ed099c1d6b11a",
+        "group": "rh383_release",
+        "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/THEOREM_LEDGER.md",
+        "sha256": "eb117b3e731cfc2bb9b6df0368f475d25ec0b1646f4ac7e616dd29e1d7ddd896"
+      },
+      {
+        "commit": "bea5c88ca4ae9ca75511af42296ed099c1d6b11a",
+        "group": "rh383_release",
+        "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/UPDATED_ROADMAP.md",
+        "sha256": "9d9e36e923e1430aeee6715684b3039ccca576360e3c5528d85fe355a088ae51"
+      },
+      {
+        "commit": "bea5c88ca4ae9ca75511af42296ed099c1d6b11a",
+        "group": "rh383_release",
+        "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/main.tex",
+        "sha256": "b1030a1203685121ddc99504d0d8a5b389611b41e47a1009fea70a0215ab3bb3"
+      },
+      {
+        "commit": "bea5c88ca4ae9ca75511af42296ed099c1d6b11a",
+        "group": "rh383_release",
+        "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/references.bib",
+        "sha256": "0cd86c21c7b65399043ec4994baecb3501b8e7e61294b211131488a9fe9e0dad"
+      },
+      {
+        "commit": "bea5c88ca4ae9ca75511af42296ed099c1d6b11a",
+        "group": "rh383_release",
+        "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/results/result.json",
+        "sha256": "519f585f4cf867c0d41ae674c3fb16bc0fbcf529af32131ad1afbba6692355ab"
+      },
+      {
+        "commit": "bea5c88ca4ae9ca75511af42296ed099c1d6b11a",
+        "group": "rh383_release",
+        "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/results/result.schema.json",
+        "sha256": "8985f41cd7043b58d3b2fa9ee387bd6da4cb9d6156d3e5226acf57123674c118"
+      },
+      {
+        "commit": "bea5c88ca4ae9ca75511af42296ed099c1d6b11a",
+        "group": "rh383_release",
+        "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/src/euler_tail_normal_form/core.py",
+        "sha256": "7f976ebb09374d0df339a71947e4c4dd7d49c7bc226ab05ac7de481f1e26defb"
+      },
+      {
+        "commit": "c0aed13a34b8bbc53061aed23738660adcd3624c",
+        "group": "rh_mvp2_archive",
+        "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json",
+        "sha256": "3cf3261c0c2c6fbe7511b16615f032edfcbd6b6b1e0c73f5e2ef932a1e6a694c"
+      },
+      {
+        "commit": "c0aed13a34b8bbc53061aed23738660adcd3624c",
+        "group": "rh_mvp2_archive",
+        "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json",
+        "sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751"
+      },
+      {
+        "commit": "836426546db31e2737e877182848c538ed4cd436",
+        "group": "rh2_pnt_release",
+        "path": "prime_dynamics_theory/papers/RH-2-exact-prime-kneading-spectral-stability/main.tex",
+        "sha256": "5f2538e648c2ed850b94a03c072a3526f31bcc0c70c90639f65601507f52e532"
+      },
+      {
+        "commit": "836426546db31e2737e877182848c538ed4cd436",
+        "group": "rh2_pnt_release",
+        "path": "prime_dynamics_theory/papers/RH-2-exact-prime-kneading-spectral-stability/references.bib",
+        "sha256": "bd86702192cd4bc6d1c2975c7da4b305541e0c5943f13c5edf044686f0faf2ab"
+      }
+    ],
+    "group_digests": {
+      "rh2_pnt_release": "5219f97f85322d1f6a51c7db4a6d81db8c64000be56ebbb6726d370b40369f5b",
+      "rh374_release": "1110169db1afe2bcb1242cd8284665be9681f955ff942b23908a9401635695ff",
+      "rh379_release": "c029ccbe0b499a38f675292c2260cfde5d4b7aede6c6ddee9f87d2c816ecd848",
+      "rh380_release": "3c488551cf9b8bdf6a4509b1f39af2119ea6b2ac401bda3cb63f87df38a0e751",
+      "rh381_release": "5d07b1b897aa36127f2f190517229534719f37ce0f3ff904d1c31adebae6c9df",
+      "rh382_release": "ca26217907f59b219ba2d2b3e4e77ec6e344d036c3a8a92ab5683497d3309f7e",
+      "rh383_release": "038b2b88b6357f39fffb1b1d4ce681542ed73b2e5131ef6677d83c13f77fc730",
+      "rh_mvp2_archive": "c22c0a9e4702c3bc615acfc19e564cbfd7d08a3bc845b28c659511065c05989b"
+    },
+    "group_sizes": {
+      "rh2_pnt_release": 2,
+      "rh374_release": 7,
+      "rh379_release": 8,
+      "rh380_release": 8,
+      "rh381_release": 8,
+      "rh382_release": 8,
+      "rh383_release": 8,
+      "rh_mvp2_archive": 2
+    },
+    "mutable_root_files_excluded": true,
+    "pass": true,
+    "release_blob_identity_pass": true
+  },
+  "status": "RH-384_prime_tail_scale_separation",
+  "theorem": {
+    "coefficients": {
+      "A": "2*X_infinity/pi^2",
+      "B": "(Y_infinity+2*m_infinity)/pi^2",
+      "C": "(Y_infinity-2*m_infinity)/pi^2"
+    },
+    "contrast_interval": {
+      "lower": "1.5463476716710499204",
+      "quantity": "Y_infinity-2*m_infinity",
+      "upper": "1.5484488989771761113"
+    },
+    "exact_subtraction_firewall": "L2 subtracts exact A*T_y; L3--L5 subtract exact A*T_y+B*T_y^2; bare-PNT surrogates are forbidden",
+    "fixed_partition": "P_lambda(y)~product_r(2r-1)^(-k_r)*p_y^(-(2d-ell))*log(p_y)^(-ell) for every fixed lambda",
+    "fixed_r": "P_r(y)~1/[(2r-1)*p_y^(2r-1)*log(p_y)] for every fixed r>=1",
+    "gap_expansion_input": "B_infinity-G(q_y)=A*T_y+B*T_y^2+C*S_y+O(T_y^3)",
+    "scale_separation": [
+      "p_y*log(p_y)*T_y->1",
+      "3*p_y^3*log(p_y)*S_y->1",
+      "S_y/T_y^2->0",
+      "T_y^3/S_y->0",
+      "S_y/[T_y^3*log(p_y)^2]->1/3"
+    ],
+    "twice_subtracted_residual": "positive eventually and divided by T_y^3 tends to +infinity"
+  },
+  "title": "Prime-Tail Scale Separation below the Quadratic Square-Clock Gap"
+}
