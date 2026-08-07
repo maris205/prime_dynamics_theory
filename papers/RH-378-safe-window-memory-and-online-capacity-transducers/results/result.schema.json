@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "certificate": {"type": "object"},
+    "claim_boundary": {"type": "object"},
+    "gates": {"type": "object"},
+    "source_commits": {"type": "object"},
+    "source_locks": {"type": "object"},
+    "status": {"const": "RH-378_safe_window_memory_and_online_capacity_transducers"},
+    "theorem": {"type": "object"}
+  },
+  "required": [
+    "certificate",
+    "claim_boundary",
+    "gates",
+    "source_commits",
+    "source_locks",
+    "status",
+    "theorem"
+  ],
+  "title": "RH-378 result ledger",
+  "type": "object"
+}

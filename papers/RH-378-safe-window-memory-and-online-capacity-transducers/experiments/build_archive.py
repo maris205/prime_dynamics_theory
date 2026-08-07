@@ -1,0 +1,99 @@
+"""Build the fixed RH-378 publication and dependency manifest."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+WORKSPACE = ROOT.parents[2]
+OUTPUT = ROOT / "results" / "dependency_manifest.json"
+
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+if str(ROOT / "src") not in sys.path:
+    sys.path.insert(0, str(ROOT / "src"))
+from experiments.build_result import SOURCE_COMMITS, SOURCE_FILES  # noqa: E402
+
+
+LOCAL_MEMBERS = [
+    ".gitignore",
+    "INTEGRITY_AUDIT.md",
+    "Makefile",
+    "README.md",
+    "THEOREM_LEDGER.md",
+    "UPDATED_ROADMAP.md",
+    "experiments/build_archive.py",
+    "experiments/build_result.py",
+    "experiments/verify_archive.py",
+    "main.pdf",
+    "main.tex",
+    "pyproject.toml",
+    "references.bib",
+    "requirements.txt",
+    "results/result.json",
+    "results/result.schema.json",
+    "safe-window-memory-and-online-capacity-transducers.pdf",
+    "src/safe_window_transducers/__init__.py",
+    "src/safe_window_transducers/core.py",
+    "tests/test_archive.py",
+    "tests/test_core.py",
+    "tests/test_results.py",
+]
+
+
+def digest(path: Path) -> str:
+    hasher = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1 << 20), b""):
+            hasher.update(chunk)
+    return hasher.hexdigest()
+
+
+def _check_members(members: list[str]) -> None:
+    if len(members) != len(set(members)):
+        raise ValueError("manifest member list contains duplicates")
+    for relative in members:
+        path = Path(relative)
+        if path.is_absolute() or ".." in path.parts:
+            raise ValueError(f"manifest member escapes its base: {relative}")
+
+
+def hash_map(base: Path, members: list[str]) -> dict[str, str]:
+    _check_members(members)
+    output: dict[str, str] = {}
+    for relative in members:
+        path = base / relative
+        if not path.is_file():
+            raise FileNotFoundError(path)
+        output[relative] = digest(path)
+    return output
+
+
+def main() -> None:
+    payload = {
+        "status": "RH-378_fixed_publication_manifest",
+        "publication_file_count": len(LOCAL_MEMBERS),
+        "publication_artifacts": hash_map(ROOT, LOCAL_MEMBERS),
+        "external_input_count": len(SOURCE_FILES),
+        "external_inputs": hash_map(WORKSPACE, SOURCE_FILES),
+        "source_commits": SOURCE_COMMITS,
+    }
+    OUTPUT.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+    print(
+        json.dumps(
+            {
+                "status": payload["status"],
+                "publication_file_count": len(LOCAL_MEMBERS),
+                "external_input_count": len(SOURCE_FILES),
+            },
+            sort_keys=True,
+        )
+    )
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,817 @@
+{
+  "certificate": {
+    "all_pass": true,
+    "ell15_truncation": {
+      "all_pass": true,
+      "alternating_product_depth": 8,
+      "binary_safety_pass": true,
+      "binary_same_parity_case_count": 512,
+      "first_integer_index_of_divergence": 17,
+      "narrow_stateless_minimality": {
+        "greedy_current_outputs": [
+          1,
+          -1
+        ],
+        "input_class": "all same-parity sigma-runs have length at most eight",
+        "last_fourteen_symbols_equal": true,
+        "minimum_contiguous_window_length": 15,
+        "run_lengths": [
+          7,
+          8
+        ],
+        "scope": "q=1 causal contiguous stateless exact-stream realization"
+      },
+      "not_nine_consecutive_integers": true,
+      "run_behavior_pass": true,
+      "same_parity_recursive_outputs": [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "same_parity_sigma_site_count": 9,
+      "same_parity_window_outputs": [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      "synthetic_prefix_length": 17,
+      "window_length": 15
+    },
+    "exhaustive_prefix_extrema": {
+      "all_pass": true,
+      "by_length": [
+        {
+          "length": 1,
+          "word_count": 3
+        },
+        {
+          "length": 2,
+          "word_count": 9
+        },
+        {
+          "length": 3,
+          "word_count": 27
+        },
+        {
+          "length": 4,
+          "word_count": 81
+        },
+        {
+          "length": 5,
+          "word_count": 243
+        },
+        {
+          "length": 6,
+          "word_count": 729
+        },
+        {
+          "length": 7,
+          "word_count": 2187
+        },
+        {
+          "length": 8,
+          "word_count": 6561
+        },
+        {
+          "length": 9,
+          "word_count": 19683
+        },
+        {
+          "length": 10,
+          "word_count": 59049
+        }
+      ],
+      "extrema_equality_count": 177144,
+      "maximum_length": 10,
+      "word_count": 88572
+    },
+    "graph_lift_safety": {
+      "all_pass": true,
+      "cases_per_witness": 243,
+      "rows": [
+        {
+          "cases": 243,
+          "name": "unconditional",
+          "plus_edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "safe": true
+        },
+        {
+          "cases": 243,
+          "name": "conditional",
+          "plus_edges": [
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "safe": true
+        }
+      ],
+      "total_cases": 486,
+      "witness_count": 2
+    },
+    "lag_two_census": {
+      "ab_multiplicities": [
+        {
+          "c02": "-1",
+          "c11": "0",
+          "count": 1
+        },
+        {
+          "c02": "-1",
+          "c11": "1/2",
+          "count": 1
+        },
+        {
+          "c02": "0",
+          "c11": "-1/2",
+          "count": 2
+        },
+        {
+          "c02": "0",
+          "c11": "0",
+          "count": 5
+        },
+        {
+          "c02": "0",
+          "c11": "1/2",
+          "count": 2
+        },
+        {
+          "c02": "1",
+          "c11": "-1/2",
+          "count": 1
+        },
+        {
+          "c02": "1",
+          "c11": "0",
+          "count": 1
+        }
+      ],
+      "all_pass": true,
+      "c11_nonzero_count": 6,
+      "c11_zero_count": 7,
+      "coefficient_multiplicity_histogram": {
+        "1": 5,
+        "2": 2,
+        "4": 1
+      },
+      "coefficient_order": [
+        "c01",
+        "c02",
+        "c11",
+        "c12",
+        "c21",
+        "c22"
+      ],
+      "coefficient_rank": 5,
+      "coefficient_vector_multiplicities": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        4
+      ],
+      "conditional_witness": [
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "conditional_witness_coefficients": [
+        "0",
+        "1",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2"
+      ],
+      "distinct_coefficient_vector_count": 8,
+      "relation_pass": true,
+      "safe_size_histogram": {
+        "0": 1,
+        "1": 6,
+        "2": 6
+      },
+      "safe_table_count": 13,
+      "tables": [
+        {
+          "c02": "0",
+          "c11": "0",
+          "coefficients": [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "plus_edges": []
+        },
+        {
+          "c02": "0",
+          "c11": "0",
+          "coefficients": [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "plus_edges": [
+            [
+              -1,
+              0
+            ]
+          ]
+        },
+        {
+          "c02": "0",
+          "c11": "-1/2",
+          "coefficients": [
+            "-1",
+            "0",
+            "-1/2",
+            "-1/2",
+            "1/2",
+            "1/2"
+          ],
+          "plus_edges": [
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "c02": "0",
+          "c11": "-1/2",
+          "coefficients": [
+            "-1",
+            "0",
+            "-1/2",
+            "-1/2",
+            "1/2",
+            "1/2"
+          ],
+          "plus_edges": [
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "c02": "-1",
+          "c11": "0",
+          "coefficients": [
+            "0",
+            "-1",
+            "0",
+            "0",
+            "-1",
+            "1"
+          ],
+          "plus_edges": [
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "c02": "1",
+          "c11": "0",
+          "coefficients": [
+            "0",
+            "1",
+            "0",
+            "0",
+            "-1",
+            "-1"
+          ],
+          "plus_edges": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "c02": "1",
+          "c11": "-1/2",
+          "coefficients": [
+            "0",
+            "1",
+            "-1/2",
+            "-1/2",
+            "-1/2",
+            "-1/2"
+          ],
+          "plus_edges": [
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "c02": "0",
+          "c11": "0",
+          "coefficients": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "-2",
+            "0"
+          ],
+          "plus_edges": [
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "c02": "0",
+          "c11": "1/2",
+          "coefficients": [
+            "-1",
+            "0",
+            "1/2",
+            "-1/2",
+            "1/2",
+            "-1/2"
+          ],
+          "plus_edges": [
+            [
+              1,
+              -1
+            ]
+          ]
+        },
+        {
+          "c02": "-1",
+          "c11": "1/2",
+          "coefficients": [
+            "0",
+            "-1",
+            "1/2",
+            "-1/2",
+            "-1/2",
+            "1/2"
+          ],
+          "plus_edges": [
+            [
+              0,
+              -1
+            ],
+            [
+              1,
+              -1
+            ]
+          ]
+        },
+        {
+          "c02": "0",
+          "c11": "0",
+          "coefficients": [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "plus_edges": [
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "c02": "0",
+          "c11": "0",
+          "coefficients": [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "plus_edges": [
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "c02": "0",
+          "c11": "1/2",
+          "coefficients": [
+            "-1",
+            "0",
+            "1/2",
+            "-1/2",
+            "1/2",
+            "-1/2"
+          ],
+          "plus_edges": [
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "total_table_count": 512,
+      "two_edge_in_star_count": 3,
+      "two_edge_out_star_count": 3,
+      "unconditional_witness": [
+        [
+          0,
+          1
+        ]
+      ],
+      "unconditional_witness_coefficients": [
+        "0",
+        "1",
+        "0",
+        "0",
+        "-1",
+        "-1"
+      ],
+      "unique_linear_relation": "c22=-c02-c11"
+    },
+    "mobius_finite_reproduction": {
+      "all_pass": true,
+      "endpoint": 1048576,
+      "finite_ledger_pass": true,
+      "finite_not_asymptotic": true,
+      "lag_ledger_all_prefixes_pass": true,
+      "lag_ledger_prefix_count": 1048576,
+      "no_same_parity_sigma_run_of_length_nine": {
+        "-1": true,
+        "1": true
+      },
+      "prefix_extrema_equality_count": 2097152,
+      "recursive_window_equality_count": 2097152,
+      "rows": [
+        {
+          "D2": -34,
+          "K": 530,
+          "M": -4,
+          "N": 1024,
+          "Q1": 624,
+          "Q2": 330,
+          "S0": 308,
+          "Sh": 492,
+          "Smax": 530,
+          "Smin": -504,
+          "U2": -18,
+          "V2": -14
+        },
+        {
+          "D2": 33,
+          "K": 32320,
+          "M": 14,
+          "N": 65536,
+          "Q1": 39844,
+          "Q2": 21155,
+          "S0": 18654,
+          "Sh": 29258,
+          "Smax": 32320,
+          "Smin": -32222,
+          "U2": -51,
+          "V2": 35
+        },
+        {
+          "D2": -382,
+          "K": 516163,
+          "M": 257,
+          "N": 1048576,
+          "Q1": 637461,
+          "Q2": 338334,
+          "S0": 298689,
+          "Sh": 468201,
+          "Smax": 515983,
+          "Smin": -516163,
+          "U2": 130,
+          "V2": 438
+        }
+      ]
+    },
+    "online_single_policy_obstruction": {
+      "adversarial_branch_replay_pass": true,
+      "adversarial_first_symbol": 1,
+      "all_pass": true,
+      "first_zero_horizon": 4,
+      "if_first_output_minus_choice_rows": [
+        {
+          "prefix_length": 2,
+          "safe_prefix_optimal_choices": [
+            1
+          ]
+        },
+        {
+          "prefix_length": 3,
+          "safe_prefix_optimal_choices": [
+            1
+          ]
+        },
+        {
+          "prefix_length": 4,
+          "safe_prefix_optimal_choices": []
+        }
+      ],
+      "if_first_output_minus_extension": [
+        -1,
+        -1,
+        -1
+      ],
+      "if_first_output_minus_forced_outputs": [
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "if_first_output_minus_prefix_capacities": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "if_first_output_minus_scores": [
+        -1,
+        -2,
+        -3,
+        -2
+      ],
+      "if_first_output_plus_choice_rows": [
+        {
+          "prefix_length": 2,
+          "safe_prefix_optimal_choices": [
+            -1
+          ]
+        },
+        {
+          "prefix_length": 3,
+          "safe_prefix_optimal_choices": []
+        }
+      ],
+      "if_first_output_plus_extension": [
+        -1,
+        1
+      ],
+      "if_first_output_plus_forced_outputs": [
+        1,
+        -1,
+        -1
+      ],
+      "if_first_output_plus_prefix_capacities": [
+        1,
+        2,
+        3
+      ],
+      "if_first_output_plus_scores": [
+        1,
+        2,
+        1
+      ],
+      "maximum_universal_horizon": 3,
+      "policy_tree_counts": [
+        {
+          "count": 8,
+          "horizon": 1
+        },
+        {
+          "count": 256,
+          "horizon": 2
+        },
+        {
+          "count": 65536,
+          "horizon": 3
+        },
+        {
+          "count": 0,
+          "horizon": 4
+        }
+      ],
+      "scope": "single deterministic causal universally safe policy attaining absolute K on every input prefix"
+    },
+    "orientation_mealy": {
+      "all_pass": true,
+      "exact_output_state_minimum": 4,
+      "minimality_scope": "exact output realization of one frozen orientation transducer",
+      "pairwise_distinguishability_cases": 12,
+      "reachable_state_count_per_orientation": [
+        4,
+        4
+      ],
+      "reachable_states": {
+        "-1": [
+          [
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "1": [
+          [
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "safety_case_count": 72,
+      "safety_pass": true
+    },
+    "window_basis": {
+      "all_pass": true,
+      "basis": "prod_(j<ell) x_j^alpha_j * x_ell^e, alpha_j in {0,1,2}, e in {1,2}",
+      "dimension_formula": "2*q*3^(ell-1)",
+      "formal_not_arithmetic_minimal": true,
+      "sample_dimensions": [
+        {
+          "dimension": 2,
+          "ell": 1,
+          "q": 1
+        },
+        {
+          "dimension": 6,
+          "ell": 2,
+          "q": 1
+        },
+        {
+          "dimension": 36,
+          "ell": 3,
+          "q": 2
+        },
+        {
+          "dimension": 9565938,
+          "ell": 15,
+          "q": 1
+        }
+      ]
+    }
+  },
+  "claim_boundary": {
+    "first_unresolved_object": "ordinary shift-two Chowla cancellation D2=o(N), and beyond it the RH-371 capacity envelope",
+    "notes": [
+      "The formal window-basis dimension is not an arithmetic minimal-dimension theorem.",
+      "The unconditional and conditional optima are only within the 13 safe lag-two tables.",
+      "The conditional lag-two optimum is not an unconditional lower bound.",
+      "Two fixed orientation machines plus an endpoint maximum are not one machine that directly outputs K.",
+      "The online obstruction concerns a single deterministic causal policy that must be optimal at every input prefix; it does not exclude an offline endpoint optimizer.",
+      "The four-state lower bound concerns exact realization of one frozen output stream, not all capacity algorithms or encodings.",
+      "The ell=15 lower bound concerns q=1 contiguous stateless windows on the run-at-most-eight class, not stateful or nonlocal models.",
+      "Finite Mobius rows reproduce exact identities and are not asymptotic evidence.",
+      "No capacity limit, intrinsic operator, trace formula, zeta-zero identification, Hilbert--Polya construction, or RH implication is claimed."
+    ],
+    "route_a": "GO",
+    "route_b": "STOP_SCOPED"
+  },
+  "gates": {
+    "A_canonical_intrinsic_dynamical_spectral_determinant": false,
+    "B_time_oriented_scattering_or_unitary_completion": false,
+    "C_self_adjoint_generator_and_intrinsic_T_log_T": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "source_commits": {
+    "rh366_release": "0396fab97bbe3348c8237f8734dec0e1893fd3bf",
+    "rh371_release": "241b78a89ccbc0bad96d9ef20ee9256d61b4eaca",
+    "rh372_release": "7a7b10b74722b520b145064923af8df6d4e2e73f",
+    "rh374_release": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+    "rh375_release": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+    "rh376_release": "0cf6179084bc8151318bb8f0955e529c12c0661a",
+    "rh377_release": "3c6e5658f4147891d15dac18d303a22a46d6e289",
+    "rh_mvp2_archive": "c0aed13a34b8bbc53061aed23738660adcd3624c"
+  },
+  "source_locks": {
+    "count": 33,
+    "files": {
+      "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/README.md": "d357192bfb80da578459cdac4add37840b8e1e47c5b2188ca0e49e7b096cbb23",
+      "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/THEOREM_LEDGER.md": "10b5a5080d8424dd6729357a8760ab4276dce85a14e2393ba13c422bf7fdc435",
+      "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/main.tex": "7df165bd63d43f52dc217dea6691d231d8e40c00c148ab7e1aa4abcac55060fb",
+      "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/results/result.json": "6a125ca90b0964945f95b39397b6e83f15a23ad24c94d2e8b9c90d320db8e418",
+      "prime_dynamics_theory/papers/RH-366-mobius-orthogonality-adaptive-encoding-and-parry-covariance/src/mobius_henon_dichotomy/core.py": "5997b950ec0ca75a71bb9ca56ccc39b8a763cca1f1b2678765fe0c03a7027e3b",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/README.md": "813a9afa3028c8b6774277399bfb2363f744ecf113121cf653767f74b78e7987",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/THEOREM_LEDGER.md": "72c23a19383bd7de854293d919208635cf4b50e153a8af057060948a6635eba3",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/main.tex": "fa2b1e37c5daf791b9d44cb424f63457014d8ca5b8293e524f66c14425a31a0e",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/results/result.json": "00210432e5169df7b450b8a764e67547a1fd4f1213714d51d9d98b80fc9ca657",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/src/distance_capacity/core.py": "b2ca105f90b5170dba680da52e46b286877d3b5c8675d5a00b007fcc43f0e5f0",
+      "prime_dynamics_theory/papers/RH-372-bounded-constraint-graph-transducer-certificates/README.md": "2b86f0bdcbfbfba3ccd2edb8e518699c99d413884b37e33a9936ff8f01210a8c",
+      "prime_dynamics_theory/papers/RH-372-bounded-constraint-graph-transducer-certificates/THEOREM_LEDGER.md": "7a8357a79e3a140ada689c343fc5742835dbc56a2004b945ed0274e6defcb95b",
+      "prime_dynamics_theory/papers/RH-372-bounded-constraint-graph-transducer-certificates/main.tex": "059f8bee897d6b4b4cfdf0bbb9fb7908b1cb27b53691097b725f54fcd2724b90",
+      "prime_dynamics_theory/papers/RH-372-bounded-constraint-graph-transducer-certificates/results/result.json": "8256ddc3e50c7ab641e0ee8dceffc3e18cfd0877fff667613fb30ff23f632163",
+      "prime_dynamics_theory/papers/RH-372-bounded-constraint-graph-transducer-certificates/src/constraint_transducers/core.py": "c505934acd7b21732d15d74d971f08e2ae5cf72cd0efb8c12f74089cdfbf5498",
+      "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/references.bib": "ce1e5123ff7edc05c6436f2534044e7058b4a3857bf0f084971954ced3e7c184",
+      "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/results/result.json": "ca492e96bd557b966d7924ee7acca7eceb9248dafe513a674f36f78891438bdd",
+      "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/README.md": "4949823c38e81dce9b04d46405a7a1d1bbd156375d2332f9a9ea90a7b8927c11",
+      "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/THEOREM_LEDGER.md": "93afb2db541ca58cf563d4ba7bed06634f5d3be77e9059c11498d6e83c417ec8",
+      "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/main.tex": "7d96987b0236d2788a781565bc03195c59ad2b72d07f1ff8988f8a3fef4a5117",
+      "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/results/result.json": "81d905c2476abc36fdd1ab0e468ad33d85f4df9db35afbd3bc79bf0771fe0a08",
+      "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/src/all_clock_capacity/core.py": "575a5d2371f1bc0d29b33bc15e983f3e41c9b5b9ceb60d97369a1ef73f51a694",
+      "prime_dynamics_theory/papers/RH-376-shift-two-chowla-run-density-boundary/README.md": "d83aebd710d94546c6a0782d68da0ff289d8715def4059027cf6c0166fcae91c",
+      "prime_dynamics_theory/papers/RH-376-shift-two-chowla-run-density-boundary/THEOREM_LEDGER.md": "51283b788b63a7ff972e676daa64b21fd782746eab1da7dbd69bbe68d7be6f97",
+      "prime_dynamics_theory/papers/RH-376-shift-two-chowla-run-density-boundary/main.tex": "414728a8ac2e29add0ec9a4e11fc4d2dd3991be8c5de696c3bd2d5ebbd25b70e",
+      "prime_dynamics_theory/papers/RH-376-shift-two-chowla-run-density-boundary/results/result.json": "8e320b70c168a640dab60e94ba965947c388372f46ce8268fde9ae11d1d6df91",
+      "prime_dynamics_theory/papers/RH-376-shift-two-chowla-run-density-boundary/src/shift_two_chowla/core.py": "4296eff628303012cef88bbd56849a9c9bac43814b81a0981967275b4c3575a0",
+      "prime_dynamics_theory/papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/README.md": "231504940c4797b7ae402a485459ebe77c7c675f1dcf844b92eced997caa3e2f",
+      "prime_dynamics_theory/papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/THEOREM_LEDGER.md": "1bbbfd7f017fc36f3eb0763ab39089ebf856c10da5fc315697e81b9fe2d36101",
+      "prime_dynamics_theory/papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/main.tex": "35a3d2b9eecede4f526490dc184b24e5530762933922962df04c3436e2d39433",
+      "prime_dynamics_theory/papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/results/result.json": "0abfb9b4d268675acba95186027816ad50c504142c04a7d92b57c2f387c7d144",
+      "prime_dynamics_theory/papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/src/mixed_run_hierarchy/core.py": "1d039a78f699a3d05f1f8bff3c3327fa5ab6098502ddc3e7c9a6052db5e5a96b",
+      "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751"
+    },
+    "pass": true
+  },
+  "status": "RH-378_safe_window_memory_and_online_capacity_transducers",
+  "theorem": {
+    "current_zero_basis": "current-zero scores have a canonical 2*q*3^(ell-1)-element ternary monomial basis with unique coefficients",
+    "ell15_narrow_minimality": "within q=1 causal contiguous stateless exact-stream realizations on that class, window length 15 is minimal",
+    "ell15_truncation": "the alternating depth-eight ell=15 table is universally safe and agrees with the orientation recursion on the run-at-most-eight class",
+    "general_window_safety": "a fixed q-periodic ell-window table is universally distance-two safe iff all q*3^(ell+2) compatible blocks pass",
+    "lag_two_asymptotic_boundary": "seven c11=0 tables have unconditional limits; each of the other six has a limit iff ordinary shift-two Chowla D2=o(N)",
+    "lag_two_classification": "among 512 lag-two tables exactly 13 are universally safe; their six-column coefficient matrix has rank five and relation c22=-c02-c11",
+    "online_capacity": "two fixed four-state orientation machines output Smax and Smin exactly, while no single deterministic causal universally safe policy attains absolute K on every input prefix",
+    "state_minimality": "four reachable states are necessary for exact output realization of either frozen orientation machine"
+  }
+}
