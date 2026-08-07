@@ -1,0 +1,715 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\mob}{\mu}
+\newcommand{\TT}{\{-1,0,1\}}
+\newcommand{\dd}{\delta}
+\newcommand{\thh}{\vartheta}
+\newcommand{\kap}{\kappa_2}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Ecal}{\mathcal E}
+
+\hypersetup{
+  pdftitle={Phasewise Chowla-Free Lag-Two Memory: Exact Max-Plus Optimization and the All-Clock Supremum},
+  pdfauthor={RH research program},
+  pdfsubject={Exact fixed-clock max-plus optimization for phasewise Chowla-free lag-two memory},
+  pdfkeywords={Mobius function, squarefree progressions, max-plus optimization, finite clocks}
+}
+
+\title{Phasewise Chowla-Free Lag-Two Memory:\\
+Exact Max-Plus Optimization and the All-Clock Supremum}
+\author{RH research program}
+\date{August 7, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Fix a finite clock $q$ before taking $N\to\infty$.  We optimize all
+universally distance-two-safe phasewise lag-two tables
+\[
+ \epsilon_n=f_{n\bmod q}\bigl(\mob(n-2),\mob(n)\bigr)
+\]
+whose interpolation coefficient $c_{11}(r)$ vanishes at every phase.  This
+is the phasewise Chowla-free class, not unrestricted memory.  Exhausting all
+$512$ local truth tables leaves exactly $192$ with $c_{11}=0$.  A
+subset-dominance reduction first maps them to four relations $0,J,K,I$;
+only afterward may $K$ be replaced by $I$, because their full compatibility
+profiles agree against canonical neighbors.  The resulting exact
+fixed-clock optimum $G(q)$ is a three-state cyclic max-plus problem with
+arithmetic weights in $\mathbb Q\pi^{-2}+\mathbb Q\kap$.
+
+At the square clock $q=36$ this gives the exact strict same-clock gain
+\[
+ G(36)=\frac{9}{2\pi^2}-\frac{\kap}{7}
+ >F(36)=\frac4{\pi^2}.
+\]
+More generally, for the RH-374 clocks $q_y=4\prod_{i\le y}p_i^2$, an exact
+run recurrence yields
+\[
+ G(q_y)=B_y+\Delta_y,
+ \qquad
+ \Delta_y=\Ecal_y\left(\frac4{A_y\pi^2}-\frac{\kap}{D_y}\right)>0,
+ \qquad \Delta_y\to0,
+\]
+where $\Ecal_y$ counts even-length positive runs.  A separate arbitrary-clock
+argument lifts fixed $q$ to $Q_y=\operatorname{lcm}(q,q_y)$, retains a
+one-site independent set, and charges every discarded $J$ contribution to
+$\sum_{p>p_y}p^{-2}$.  It proves
+\[
+                    \sup_{q<\infty}G(q)=B_\infty.
+\]
+No finite-clock attainment or nonattainment statement, growing clock,
+phasewise $c_{11}\ne0$ theorem, adaptive-capacity limit, operator, trace,
+zero model, or implication for the Riemann hypothesis is asserted.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius function; squarefree progressions;
+max-plus optimization; cyclic independent sets; fixed finite clocks.
+
+\section{Problem, class, and exact arithmetic}
+
+The frozen distance-two capacity allows sign words with no two $+1$ values
+at distance two.  RH-375 identifies the all-clock supremum $B_\infty$ only
+for universally safe one-site factors \cite{RH375}.  RH-378 classifies the
+unphased lag-two tables and isolates the coefficient of the ordinary
+shift-two correlation \cite{RH378}.  Here the clock is phase dependent, but
+that coefficient is required to vanish separately at each phase.
+
+\begin{definition}[Phasewise Chowla-free lag-two class]
+Fix $q\ge1$.  For each $r\in\Z/q\Z$, let
+\[
+             f_r:\TT^2\longrightarrow\{-1,+1\}.
+\]
+On every ternary input $a=(a_n)$, with zero padding before its first site,
+the output is $\epsilon_n=f_{n\bmod q}(a_{n-2},a_n)$.  The family is
+\emph{universally safe} if $\epsilon_n=\epsilon_{n+2}=+1$ never occurs for
+any ternary input.  It is \emph{phasewise Chowla-free} if the coefficient
+$c_{11}(r)$ in
+\begin{equation}
+ zf_r(x,z)=c_{01}(r)z+c_{02}(r)z^2+c_{11}(r)xz+c_{12}(r)xz^2
+            +c_{21}(r)x^2z+c_{22}(r)x^2z^2
+ \label{eq:interpolation}
+\end{equation}
+is zero for every $r$.
+\end{definition}
+
+The displayed monomials form a current-zero interpolation basis on $\TT^2$,
+and the expansion in that basis is unique, as proved in RH-378.  The
+condition is phasewise: cancellation among
+unknown correlations carrying different phase weights is not assumed.
+
+Let
+\begin{align}
+ \dd_{q,r}&=\lim_{N\to\infty}\frac1N
+   \sum_{\substack{n\le N\\n\equiv r\ (q)}}\mob(n)^2,
+ \label{eq:delta-def}\\
+ \thh_{q,r}&=\lim_{N\to\infty}\frac1N
+   \sum_{\substack{n\le N\\n\equiv r\ (q)}}
+   \mob(n-2)^2\mob(n)^2.
+ \label{eq:theta-def}
+\end{align}
+The first two padded sites change neither limit.  The progression sieve
+gives exact local formulae.  If $p^a\Vert q$, then
+\begin{equation}
+ \pi^2\dd_{q,r}=
+ \begin{cases}
+ 0,&a\ge2\text{ and }r\equiv0\pmod{p^2}\text{ for some }p,\\[1mm]
+ \displaystyle\frac6q\prod_{p\mid q}(1-p^{-2})^{-1}
+  \prod_{\substack{p\parallel q\\p\mid r}}(1-p^{-1}),&\text{otherwise}.
+ \end{cases}
+ \label{eq:delta-local}
+\end{equation}
+Put $\kap=\prod_p(1-2/p^2)$.  Then
+\begin{equation}
+ \thh_{q,r}=\beta_{q,r}\kap,
+ \label{eq:theta-local}
+\end{equation}
+where $\beta_{q,r}=0$ if $a\ge2$ and
+$r\equiv0$ or $2\pmod{p^2}$ for some $p$, or if $2\parallel q$ and $r$ is
+even.  In every other case,
+\begin{equation}
+ \beta_{q,r}=\frac1q\prod_{p\mid q}(1-2p^{-2})^{-1}
+ \prod_{\substack{p\parallel q,\ p\text{ odd}\\r\equiv0\text{ or }2\ (p)}}
+ (1-p^{-1}).
+ \label{eq:beta-local}
+\end{equation}
+Both formulae follow by conditioning the squarefree and two-squarefree
+Euler products on one residue class \cite{Mirsky1948}.  In particular,
+\begin{equation}
+                       0\le\thh_{q,r}\le\dd_{q,r}.
+ \label{eq:density-cone}
+\end{equation}
+
+\subsection{Fixed-clock cancellation}
+
+\begin{proposition}[Phasewise limiting score]
+\label{prop:phase-limit}
+For every fixed finite $q$ and every phasewise Chowla-free family,
+\begin{equation}
+ \lim_{N\to\infty}\frac1N\sum_{n\le N}
+ \mob(n)f_{n\bmod q}(\mob(n-2),\mob(n))
+ =\sum_{r\bmod q}\bigl(c_{02}(r)\dd_{q,r}
+                         +c_{22}(r)\thh_{q,r}\bigr).
+ \label{eq:phase-limit}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:interpolation}.  The $c_{02}$ and $c_{22}$ terms converge
+by \eqref{eq:delta-def}--\eqref{eq:theta-def}, and the $c_{11}$ term is
+absent at every phase.  The $c_{01}$ term is a M\"obius sum in one fixed
+arithmetic progression and is $o(N)$ by Davenport cancellation and finite
+Fourier inversion \cite{Davenport1937}.
+
+For a masked term, use
+\[
+                       \mob(m)^2=\sum_{d^2\mid m}\mob(d).
+\]
+Fix a cutoff $R$.  Combining the phase congruence modulo $q$ with
+$d^2\mid n$ or $d^2\mid n-2$ produces only finitely many progressions modulo
+$\operatorname{lcm}(q,d^2)$ for $d\le R$; Davenport applies to each fixed
+progression.  The absolute tail is
+\[
+ \sum_{R<d\le\sqrt{N+2}}\left(\frac{N}{d^2}+1\right)
+       =O(N/R+\sqrt N).
+\]
+Thus $q$ and $R$ are fixed first, then $N\to\infty$, and only afterward
+$R\to\infty$.  Both $c_{12}$ and $c_{21}$ contributions are $o(N)$.
+\end{proof}
+
+The first missing extension is now explicit.  If any $c_{11}(r)\ne0$, the
+proof meets a phase-weighted shift-two sum
+\[
+ \sum_{n\le N}c_{11}(n\bmod q)\mob(n-2)\mob(n),
+\]
+for which the frozen sources supply no natural-average cancellation.  RH-376
+identifies even the unweighted $q=1$ case as the ordinary shift-two
+Chowla boundary \cite{RH376}.
+
+\section{The 512-table census and canonical dominance}
+
+For a local table $f$, write
+\[
+              E_f=\{(x,z)\in\TT^2:f(x,z)=+1\}.
+\]
+Two phase tables $E$ at $r$ and $E'$ at $r+2$ are compatible precisely when
+there are no $x,z,w\in\TT$ with $(x,z)\in E$ and $(z,w)\in E'$.  Universal
+safety is exactly this test at every consecutive pair along addition by two.
+
+The exact interpolation census of all $2^9=512$ truth tables gives
+\begin{center}
+\begin{tabular}{c|rrrrr}
+\toprule
+$c_{11}$&$-1$&$-1/2$&$0$&$1/2$&$1$\\
+\midrule
+count&32&128&192&128&32\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus exactly $192$ tables enter the declared class.  Their nine possible
+main pairs, multiplicities, and canonical targets are as follows.
+\begin{center}
+\begin{tabular}{rrrcl}
+\toprule
+$c_{02}$&$c_{22}$&count&target&target minus original payoff\\
+\midrule
+$-1$&$0$&8&$0$&$\dd$\\
+$-1$&$1$&32&$0$&$\dd-\thh$\\
+$-1$&$2$&8&$K$&$\dd-\thh$\\
+$0$&$-1$&16&$0$&$\thh$\\
+$0$&$0$&64&$0$&$0$\\
+$0$&$1$&16&$K$&$0$\\
+$1$&$-2$&8&$J$&$\thh$\\
+$1$&$-1$&32&$J$&$0$\\
+$1$&$0$&8&$I$&$0$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here the four canonical plus-edge relations and weights are
+\begin{align}
+ E_0&=\varnothing,&w_r(0)&=0,\nonumber\\
+ E_J&=\{(0,+1)\},&w_r(J)&=J_r:=\dd_{q,r}-\thh_{q,r},\nonumber\\
+ E_K&=\{(-1,+1),(+1,+1)\},&w_r(K)&=K_r:=\thh_{q,r},\nonumber\\
+ E_I&=\TT\times\{+1\},&w_r(I)&=I_r:=\dd_{q,r}.
+ \label{eq:canonical-relations}
+\end{align}
+
+\begin{proposition}[Canonical subset dominance]
+\label{prop:subset-dominance}
+For every one of the $192$ tables, the target relation in the preceding
+table is a subset of its plus-edge relation, and its limiting payoff is at
+least the original payoff for every $0\le\thh\le\dd$.
+\end{proposition}
+
+\begin{proof}
+The subset assertion is a finite nine-edge check.  The last column gives the
+payoff difference.  Every entry is nonnegative by
+\eqref{eq:density-cone}.  Replacing a plus-edge set by a subset can only
+remove possible composable pairs, so the replacement preserves compatibility
+with both neighbors.
+\end{proof}
+
+The compatibility matrix after this reduction is
+\begin{equation}
+\begin{array}{c|cccc}
+ &0&J&K&I\\ \hline
+0&1&1&1&1\\
+J&1&1&0&0\\
+K&1&1&0&0\\
+I&1&1&0&0
+\end{array}.
+\label{eq:compatibility-matrix}
+\end{equation}
+In particular, $K$ and $I$ now have identical full incoming and outgoing
+profiles.  Since
+\[
+                          I_r=J_r+K_r\ge K_r,
+\]
+every $K$ may be replaced by $I$ without changing compatibility.  The order
+of these two operations is essential: $E_K\subset E_I$, so the replacement
+need not preserve compatibility against an arbitrary noncanonical neighbor.
+The subset reduction must come first.
+
+\section{Exact three-state cyclic max-plus optimization}
+
+After the preceding reductions the action set is
+\[
+                         \mathcal A=\{0,J,I\}.
+\]
+Let $C(a,b)$ be the restriction of \eqref{eq:compatibility-matrix} to this
+alphabet.  Addition by two partitions $\Z/q\Z$ into one cycle when $q$ is
+odd and two cycles when $q$ is even; for $q=1,2$ the components retain their
+self-loops.
+
+\begin{definition}[Fixed-clock max-plus value]
+For an addition-by-two cycle $(r_0,\ldots,r_{m-1})$, put
+\begin{equation}
+ \Gamma(r_0,\ldots,r_{m-1})=
+ \max_{\substack{a_0,\ldots,a_{m-1}\in\mathcal A\\
+ C(a_i,a_{i+1})=1\ \mathrm{cyclically}}}
+ \sum_{i=0}^{m-1}w_{r_i}(a_i).
+ \label{eq:cycle-value}
+\end{equation}
+Define $G^+(q)$ as the sum of \eqref{eq:cycle-value} over all components.
+\end{definition}
+
+This is an exact finite optimization, not a numerical scan.  For a
+conditioned start $a_0=s$, its dynamic program is
+\begin{equation}
+ V_0^{(s)}(a)=
+ \begin{cases}w_{r_0}(s),&a=s,\\-\infty,&a\ne s,\end{cases}
+ \qquad
+ V_i^{(s)}(b)=w_{r_i}(b)+\max_{a:C(a,b)=1}V_{i-1}^{(s)}(a),
+ \label{eq:max-plus-dp}
+\end{equation}
+followed by $\max_{b:C(b,s)=1}V_{m-1}^{(s)}(b)$ and a maximum over the three
+starts.  All weights lie in
+$\mathbb Q\pi^{-2}+\mathbb Q\kap$.  The artifact stores them as exact pairs
+and uses a certified rational enclosure of $\pi^2\kap$ for comparisons; an
+unresolved comparison fails closed.
+
+There is also a useful independent form.  Start from the compatible all-$J$
+configuration.  Replacing $J_r$ by $I_r$ forces the predecessor $r-2$ to
+change from $J$ to $0$, for net gain
+\begin{equation}
+                 I_r-J_r-J_{r-2}=K_r-J_{r-2}.
+ \label{eq:vertex-gain}
+\end{equation}
+Two chosen $I$ sites cannot be adjacent on the addition-by-two cycle.
+Conversely, any zero action not immediately preceding an $I$ may be changed
+to $J$: its weight is nonnegative and the $J$ column is compatible with
+every possible predecessor left by the construction.  Thus an optimum is
+encoded exactly by its independent set of $I$ sites.
+Consequently
+\begin{equation}
+ G^+(q)=\sum_{r\bmod q}J_r+
+ \operatorname{MWIS}_{+2}\bigl(K_r-J_{r-2}\bigr),
+ \label{eq:independent-reduction}
+\end{equation}
+with self-loops retained.  The executable certificate checks
+\eqref{eq:max-plus-dp} and \eqref{eq:independent-reduction} independently.
+
+\begin{lemma}[Input reflection]
+If $E_r$ is a universally safe phase family, then
+\[
+                E_r^*=\{(-x,-z):(x,z)\in E_r\}
+\]
+is universally safe.  For $c_{11}(r)=0$, its main coefficients
+$(c_{02}(r),c_{22}(r))$ are the negatives of the original pair.
+\end{lemma}
+
+\begin{proof}
+A composable pair in the reflected family negates to a composable pair in
+the original family, and conversely.  Also
+$zf_r^*(x,z)=-[zf_r(x,z)]_{(x,z)\mapsto(-x,-z)}$.  The even-degree main
+coefficients therefore change sign, while $c_{11}=0$ remains zero.  The
+terms outside the main pair vanish by Proposition~\ref{prop:phase-limit}.
+\end{proof}
+
+Thus the negative of every limiting score is also attainable.  We henceforth
+define
+\begin{equation}
+ \boxed{\displaystyle
+ G(q)=\max_{(f_r)}\left|\lim_{N\to\infty}\frac1N
+ \sum_{n\le N}\mob(n)f_{n\bmod q}(\mob(n-2),\mob(n))\right|
+ =G^+(q).}
+ \label{eq:G-definition}
+\end{equation}
+
+For orientation, the smallest clocks already show that memory changes the
+one-site problem:
+\begin{equation}
+                 G(1)=G(2)=\frac6{\pi^2}-\kap>0,
+ \label{eq:q1}
+\end{equation}
+whereas $F(1)=F(2)=0$ because their one-site phase graphs have self-loops.
+
+\section{Exact square-clock refinement}
+
+Let $3=p_1<p_2<\cdots$ be the odd primes and put
+\begin{equation}
+ P_y=\prod_{i\le y}p_i^2,
+ \quad q_y=4P_y,
+ \quad A_y=\prod_{i\le y}(p_i^2-1),
+ \quad D_y=\prod_{i\le y}(p_i^2-2).
+ \label{eq:square-parameters}
+\end{equation}
+On one period of the RH-374 odd squarefree-support word, let $R_j^{(y)}$ be
+the number of positive runs of exact length $j$.  All runs have length at
+most eight, and RH-374 gives their exact Euler-product formula
+\cite{RH374}.  Retain its odd-run count $O_y$ and define the new symbol
+\begin{equation}
+ O_y=R_1^{(y)}+R_3^{(y)}+R_5^{(y)}+R_7^{(y)},
+ \qquad
+ \Ecal_y=R_2^{(y)}+R_4^{(y)}+R_6^{(y)}+R_8^{(y)}.
+ \label{eq:run-counts}
+\end{equation}
+The notation $\Ecal_y$ counts even-length runs; it is distinct from the
+Euler products and from the number of sites inside even runs used in
+RH-374.
+The locked one-site square-clock value is
+\begin{equation}
+                 B_y=\frac{4+2O_y/A_y}{\pi^2},
+                 \qquad B_y\longrightarrow B_\infty,
+ \label{eq:B-y}
+\end{equation}
+by RH-374 and RH-375 \cite{RH374,RH375}.
+
+Every positive current phase has
+\begin{equation}
+             a_y=\frac{2}{A_y\pi^2},
+ \label{eq:a-weight}
+\end{equation}
+and every phase at which both current and predecessor supports are positive
+has
+\begin{equation}
+             b_y=\frac{\kap}{2D_y}.
+ \label{eq:b-weight}
+\end{equation}
+Define $H_y=\kap A_y/D_y$.  The Euler products give
+\begin{equation}
+ H_y=\frac12
+ \prod_{i\le y}\left(1-\frac1{p_i^2}\right)
+ \prod_{\substack{p>p_y\\p\text{ odd}}}
+        \left(1-\frac2{p^2}\right)
+ \nearrow \frac12\prod_{p\text{ odd}}(1-p^{-2})=\frac4{\pi^2}.
+ \label{eq:H-limit}
+\end{equation}
+Moreover $H_y\ge H_1=8\kap/7>2/\pi^2$.  One elementary lower bound is
+\[
+ \kap=\frac12\prod_{p\text{ odd}}(1-2p^{-2})
+ >\frac12\left(1-2\sum_{\substack{n\ge3\\n\text{ odd}}}n^{-2}\right)
+ =\frac32-\frac{\pi^2}{8}>\frac14;
+\]
+here $3<\pi<\sqrt{10}$ suffices.  Together with
+\eqref{eq:H-limit}, this proves
+\begin{equation}
+                         \frac{a_y}{2}<b_y<a_y.
+ \label{eq:a-b-order}
+\end{equation}
+
+Consider a positive odd-support run of length $n$, bracketed on the left by
+a zero phase.  If $M_n$ is its optimal three-state score, then
+\begin{equation}
+ M_0=0,\quad M_1=a_y,\qquad
+ M_n=\max\{M_{n-2}+a_y,\ M_{n-1}+a_y-b_y\}.
+ \label{eq:run-recurrence}
+\end{equation}
+The first alternative ends with $I$ and forces the preceding site to zero;
+the second ends with $J$.  Induction using \eqref{eq:a-b-order} gives
+\begin{equation}
+ M_{2m}=(m+1)a_y-b_y\quad(m\ge1),
+ \qquad
+ M_{2m+1}=(m+1)a_y\quad(m\ge0).
+ \label{eq:run-solution}
+\end{equation}
+Thus an odd-length run matches its one-site MWIS score, while each
+even-length run gains exactly $a_y-b_y$.  The odd phase cycle contains two
+copies of the support word; the even phase cycle adds no such correction.
+
+\begin{theorem}[Exact square-clock memory formula]
+\label{thm:square-memory}
+For every $y\ge1$,
+\begin{equation}
+ \boxed{\displaystyle
+ G(q_y)=B_y+\Delta_y,\qquad
+ \Delta_y=\Ecal_y\left(\frac4{A_y\pi^2}-\frac{\kap}{D_y}\right)>0.}
+ \label{eq:square-memory}
+\end{equation}
+Furthermore $\Delta_y\to0$, and hence $G(q_y)\to B_\infty$.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:run-solution}, summed over the two copies of every run,
+adds $2\Ecal_y(a_y-b_y)$ to the RH-374 one-site value $B_y$, which is
+exactly \eqref{eq:square-memory}.  RH-374 proves that an exact length-eight
+run persists, so $\Ecal_y>0$; inequality \eqref{eq:a-b-order} proves
+strictness.
+
+Every even run contains at least two positive sites and distinct runs are
+disjoint, so $\Ecal_y/A_y\le1/2$.  By \eqref{eq:H-limit},
+\[
+ \Delta_y=\frac{\Ecal_y}{A_y}
+           \left(\frac4{\pi^2}-H_y\right)\longrightarrow0.
+\]
+Finally $B_y\to B_\infty$ by RH-374.  No monotonicity of $\Delta_y$ is used
+or asserted.
+\end{proof}
+
+For $y=1$, one has $q_1=36$, $A_1=8$, $D_1=7$, $O_1=0$, and
+$\Ecal_1=1$.  Therefore
+\begin{equation}
+ G(36)=\frac9{2\pi^2}-\frac{\kap}{7},
+ \qquad
+ G(36)-F(36)=\frac1{2\pi^2}-\frac{\kap}{7}.
+ \label{eq:q36-value}
+\end{equation}
+The sign is exact:
+\begin{equation}
+ \kap<\prod_{p\in\{2,3,5,7\}}(1-2p^{-2})
+ =\frac{7567}{22050}<\frac7{20}<\frac7{2\pi^2},
+ \label{eq:q36-strict}
+\end{equation}
+where the last step uses $\pi^2<10$.  Thus \eqref{eq:q36-value} is an
+exact square-clock strict gain.  It is not called the first same-clock gain,
+because \eqref{eq:q1} already gives $G(1)>F(1)$.
+
+\section{The all-clock supremum}
+
+Let $F(q)$ be the RH-375 one-site optimum.  Every one-site family embeds in
+the present class by
+\begin{equation}
+                         f_r(x,z)=g_r(z).
+ \label{eq:one-site-embedding}
+\end{equation}
+Its score expansion has $c_{11}(r)=0$, and its universal safety is unchanged.
+Hence
+\begin{equation}
+                         G(q)\ge F(q)\quad\text{for every }q.
+ \label{eq:lower-embedding}
+\end{equation}
+
+The opposite supremum inequality needs a different argument from
+Theorem~\ref{thm:square-memory}; no same-prime-support saturation law is
+claimed for memory tables.
+
+\begin{theorem}[Exact all-clock phasewise-memory supremum]
+\label{thm:all-clock}
+Over all fixed finite clocks and universally safe phasewise Chowla-free
+lag-two tables,
+\begin{equation}
+                  \boxed{\displaystyle\sup_{q<\infty}G(q)=B_\infty.}
+ \label{eq:all-clock}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix an arbitrary finite $q$ and an optimal canonical action family for
+$G(q)$.  Choose $y$ so that $p_1,\ldots,p_y$ contain every odd prime divisor
+of $q$, and put
+\begin{equation}
+                  Q_y=\operatorname{lcm}(q,q_y).
+ \label{eq:cofinal-clock}
+\end{equation}
+Lift the $q$-periodic family to $Q_y$.  The lifted family produces the same
+output word and the same fixed-clock limit.  The clock $Q_y$ is divisible by
+$q_y$ and has exactly the same prime support as $q_y$.
+
+On the fine $Q_y$ phases, retain every positive-weight $I$ phase.  Retain a
+$J$ phase only when its predecessor phase is forced divisible by $p^2$ for
+some supported prime $p\le p_y$, including $p=2$.  At such a $J$ phase,
+$\thh=0$, so its contribution $J=\dd$ is a one-site weight.  Delete every
+zero-density current phase.
+
+The retained positive phases form a distance-two independent set.  Indeed,
+the compatibility column of $I$ in \eqref{eq:compatibility-matrix} forces
+its predecessor action to be $0$.  For a retained $J$, the predecessor has
+zero squarefree density by construction.  Therefore the total retained
+weight is at most the one-site optimum at $Q_y$.  The special RH-375
+same-support theorem applies only at this one-site step and gives
+\begin{equation}
+                   \text{retained contribution}\le F(Q_y)=B_y.
+ \label{eq:retained-bound}
+\end{equation}
+
+It remains to bound the discarded $J$ phases.  Their payoff
+$J=\dd-\thh$ is the density of current-squarefree inputs for which the
+predecessor is not squarefree.  Since the predecessor fine phase was not
+forced divisible by any supported prime square, every such input has
+$p^2\mid n-2$ for some $p>p_y$.  Summing first over the disjoint fine phases,
+the number of discarded inputs up to $N$ is at most
+\[
+ N\sum_{p>p_y}p^{-2}+\pi(\sqrt{N+2})+O(1),
+\]
+because only primes $p\le\sqrt{N+2}$ can occur and each congruence
+$p^2\mid n-2$ has at most $N/p^2+1$ solutions; the $O(1)$ term absorbs the
+two zero-padded initial sites.  Division by $N$ and then
+$N\to\infty$, with $q,y,Q_y$ fixed, gives
+\begin{equation}
+              \text{discarded contribution}
+              \le\sum_{p>p_y}\frac1{p^2}.
+ \label{eq:discarded-bound}
+\end{equation}
+The clock $q$, the index $y$, and hence $Q_y$ are fixed while the
+$N\to\infty$ limits underlying \eqref{eq:retained-bound} and
+\eqref{eq:discarded-bound} are taken.  Combining them yields
+\[
+                 G(q)\le B_y+\sum_{p>p_y}p^{-2}.
+\]
+Only now send $y\to\infty$.  Since $B_y\to B_\infty$ and the convergent
+prime-square tail tends to zero, $G(q)\le B_\infty$ for every fixed $q$.
+
+Conversely, \eqref{eq:lower-embedding} and the RH-375 theorem give
+\[
+     \sup_qG(q)\ge\sup_qF(q)=B_\infty.
+\]
+Together the two inequalities prove \eqref{eq:all-clock}.
+\end{proof}
+
+The theorem does not decide whether some finite clock attains
+$B_\infty$.  The proof supplies neither attainment nor nonattainment for
+$G$, and it never chooses $q=q(N)$.
+
+\section{Exact executable certificate}
+
+The standard-library artifact exhausts all local tables.  It evaluates
+\eqref{eq:delta-local} and \eqref{eq:beta-local} with exact rational
+arithmetic and solves \eqref{eq:max-plus-dp} in the
+Euler-symbol basis.  Its deterministic finite fixtures are
+\begin{center}
+\begin{tabular}{rll}
+\toprule
+$q$&exact $G(q)$&role\\
+\midrule
+$1$&$6/\pi^2-\kap$&self-loop boundary\\
+$2$&$6/\pi^2-\kap$&two self-loop components\\
+$3$&$9/(2\pi^2)-3\kap/7$&small-clock fixture\\
+$4$&$4/\pi^2$&small-clock fixture\\
+$5$&$15/(4\pi^2)-5\kap/23$&small-clock fixture\\
+$6$&$5/\pi^2-3\kap/7$&small-clock fixture\\
+$36$&$9/(2\pi^2)-\kap/7$&exact square-clock strict gain\\
+$180$&$73/(16\pi^2)-25\kap/161$&composite fixture\\
+$900$&$73/(16\pi^2)-\kap/7$&square-clock fixture\\
+$44100$&$1177/(256\pi^2)-1105\kap/7567$&square-clock fixture\\
+\bottomrule
+\end{tabular}
+\end{center}
+For $q=1,\ldots,6$ and all four larger clocks, the three-state cyclic DP
+equals the independent-set reduction \eqref{eq:independent-reduction}.
+The square-clock run counts give
+\[
+        \Ecal_1=1,\qquad \Ecal_2=23,\qquad \Ecal_3=1105,
+\]
+and reproduce the corresponding $q=36,900,44100$ formulas.  The artifact
+also checks $\sum_r\dd_{q,r}=6/\pi^2$ and
+$\sum_r\thh_{q,r}=\kap$ for twelve distinct local normalization patterns.
+
+Finite decimal intervals in the result ledger are labelled
+\texttt{diagnostic\_only}.  They reproduce the exact rows but play no role
+in the cofinal proof or in any asymptotic inference.  The full 512-row
+census serialization has SHA-256
+\begin{center}
+\texttt{aaae39b0af85b13e7cc75baa7170a29f1ac60355443d7b80f3fee06d4af56121}.
+\end{center}
+
+\section{Limitations, route verdict, and Gates}
+
+Route A is \texttt{GO}.  The fixed-clock phase cancellation, exhaustive
+canonical reduction, exact cyclic max-plus optimizer, square-clock strict
+gain, and cofinal union-bound theorem form a standalone exact chain.  Route B
+is \texttt{STOP\_SCOPED}.  The first blocker is the phase-weighted
+shift-two term displayed after Proposition~\ref{prop:phase-limit}; neither
+RH-376 nor any other locked source cancels it in ordinary averages.
+
+The result is limited in four further ways.  First, the exact square-clock
+formula is not extended to arbitrary same-support multiples.  Second, no
+monotonicity of $\Delta_y$ is claimed.  Third, the finite-clock attainment
+question is left open.  Fourth, the scalar supremum is not an ordinary limit
+of the adaptive capacity and uses no infinite or growing-clock selector.
+
+Gates A--E remain false/open.  These externally prescribed arithmetic
+tables do not define a canonical intrinsic dynamical spectral determinant,
+a time-oriented scattering or unitary completion, a self-adjoint generator
+with an intrinsic $T\log T$ law, a von-Mangoldt prime-power trace, or a
+completed-zeta divisor equality.  Nothing here identifies Riemann zeros,
+constructs a Hilbert--P\'olya operator, or proves the Riemann hypothesis.
+
+\section{Conclusion}
+
+The phasewise $c_{11}=0$ memory problem has the same all-finite-clock
+supremum as the one-site class, even though memory produces exact strict
+gains at individual clocks.  The mechanism is now separated cleanly: local
+truth-table dominance gives a three-state optimizer; even square-clock runs
+create the finite gain; and a retained one-site set plus an explicit
+prime-square tail prevents that gain from changing the cofinal endpoint.
+Any larger memory theorem must pay for the phase-weighted $D_2$ terms rather
+than infer their cancellation from this finite classification.
+
+\section*{Reproducibility and declarations}
+
+\textbf{Data availability.}  All source code, exact outputs, tests, closed
+schema, source hashes, and archive-verification files are contained in the
+RH-379 repository directory.  No external dataset was created or analyzed.
+
+\textbf{Ethics.}  This mathematical study uses no human participants,
+animals, personal data, or biological materials.  Ethics approval was not
+required.
+
+\textbf{Author contributions.}  The RH research program performed
+conceptualization, methodology, formal analysis, software, validation, and
+writing---original draft and review/editing.
+
+\textbf{Funding.}  This research received no specific grant from any
+funding agency in the public, commercial, or not-for-profit sectors.
+
+\textbf{Declaration of interests.}  The authors declare no known competing
+financial interests or personal relationships that could have influenced
+the work reported here.
+
+\textbf{AI-assisted workflow.}  The manuscript and executable checks were
+prepared with AI-assisted academic writing and coding tools under the
+repository's documented multi-agent workflow.  The mathematical claims are
+bounded by the frozen sources, exact proofs, independent audits, and
+reproducible artifacts.  The authors retain responsibility for the final
+content and its integrity.
+
+\begingroup
+\small
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+\end{document}

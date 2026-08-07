@@ -1,0 +1,728 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "rational": {
+      "pattern": "^-?(0|[1-9][0-9]*)(/[1-9][0-9]*)?$",
+      "type": "string"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "euler_value": {
+      "additionalProperties": false,
+      "properties": {
+        "inv_pi2": {"$ref": "#/$defs/rational"},
+        "kappa2": {"$ref": "#/$defs/rational"}
+      },
+      "required": ["inv_pi2", "kappa2"],
+      "type": "object"
+    },
+    "diagnostic_interval": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {"const": "diagnostic_only"},
+        "lower": {"pattern": "^-?[0-9]+\\.[0-9]+$", "type": "string"},
+        "upper": {"pattern": "^-?[0-9]+\\.[0-9]+$", "type": "string"}
+      },
+      "required": ["label", "lower", "upper"],
+      "type": "object"
+    },
+    "density_aggregation_row": {
+      "additionalProperties": false,
+      "properties": {
+        "Q": {"minimum": 1, "type": "integer"},
+        "all_pass": {"const": true},
+        "delta_aggregation_pass": {"const": true},
+        "fiber_size": {"minimum": 1, "type": "integer"},
+        "q": {"minimum": 1, "type": "integer"},
+        "residue_count": {"minimum": 1, "type": "integer"},
+        "theta_aggregation_pass": {"const": true}
+      },
+      "required": [
+        "Q",
+        "all_pass",
+        "delta_aggregation_pass",
+        "fiber_size",
+        "q",
+        "residue_count",
+        "theta_aggregation_pass"
+      ],
+      "type": "object"
+    },
+    "density_normalization_row": {
+      "additionalProperties": false,
+      "properties": {
+        "pass": {"const": true},
+        "q": {"minimum": 1, "type": "integer"},
+        "sum_kappa2_theta_coefficient": {"const": "1"},
+        "sum_pi2_delta": {"const": "6"}
+      },
+      "required": [
+        "pass",
+        "q",
+        "sum_kappa2_theta_coefficient",
+        "sum_pi2_delta"
+      ],
+      "type": "object"
+    },
+    "fixed_clock_row": {
+      "additionalProperties": false,
+      "properties": {
+        "G": {"$ref": "#/$defs/euler_value"},
+        "action_counts": {
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "0": {"minimum": 0, "type": "integer"},
+            "I": {"minimum": 0, "type": "integer"},
+            "J": {"minimum": 0, "type": "integer"}
+          },
+          "type": "object"
+        },
+        "action_sha256": {"$ref": "#/$defs/sha256"},
+        "all_pass": {"const": true},
+        "cyclic_compatibility_pass": {"const": true},
+        "diagnostic_interval": {"$ref": "#/$defs/diagnostic_interval"},
+        "expected_fixture": {"$ref": "#/$defs/euler_value"},
+        "expected_fixture_pass": {"const": true},
+        "formula": {"minLength": 1, "type": "string"},
+        "independent_set_crosscheck_pass": {"const": true},
+        "independent_set_reduction": {"$ref": "#/$defs/euler_value"},
+        "max_plus_comparisons": {"minimum": 0, "type": "integer"},
+        "q": {"minimum": 1, "type": "integer"}
+      },
+      "required": [
+        "G",
+        "action_counts",
+        "action_sha256",
+        "all_pass",
+        "cyclic_compatibility_pass",
+        "diagnostic_interval",
+        "expected_fixture",
+        "expected_fixture_pass",
+        "formula",
+        "independent_set_crosscheck_pass",
+        "independent_set_reduction",
+        "max_plus_comparisons",
+        "q"
+      ],
+      "type": "object"
+    },
+    "run_recurrence_row": {
+      "additionalProperties": false,
+      "properties": {
+        "expected_pass": {"const": true},
+        "length": {"maximum": 8, "minimum": 1, "type": "integer"},
+        "value": {"$ref": "#/$defs/euler_value"}
+      },
+      "required": ["expected_pass", "length", "value"],
+      "type": "object"
+    },
+    "square_clock_row": {
+      "additionalProperties": false,
+      "properties": {
+        "A_y": {"minimum": 1, "type": "integer"},
+        "B_y": {"$ref": "#/$defs/euler_value"},
+        "D_y": {"minimum": 1, "type": "integer"},
+        "Delta_limit_mechanism": {"minLength": 1, "type": "string"},
+        "Delta_y": {"$ref": "#/$defs/euler_value"},
+        "G_formula": {"$ref": "#/$defs/euler_value"},
+        "G_formula_text": {"minLength": 1, "type": "string"},
+        "H_limit": {"minLength": 1, "type": "string"},
+        "O_y": {"minimum": 0, "type": "integer"},
+        "P_y": {"minimum": 1, "type": "integer"},
+        "a_half_lt_b_lt_a": {"const": true},
+        "a_y": {"$ref": "#/$defs/euler_value"},
+        "all_pass": {"const": true},
+        "b_y_pair_weight": {"$ref": "#/$defs/euler_value"},
+        "direct_dp": {
+          "anyOf": [
+            {"$ref": "#/$defs/euler_value"},
+            {"type": "null"}
+          ]
+        },
+        "direct_dp_pass": {"type": ["boolean", "null"]},
+        "even_run_bound": {"minLength": 1, "type": "string"},
+        "mathcal_E_y": {"minimum": 1, "type": "integer"},
+        "primes": {
+          "items": {"minimum": 3, "type": "integer"},
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "q_y": {"minimum": 1, "type": "integer"},
+        "run_counts": {
+          "additionalProperties": false,
+          "properties": {
+            "1": {"minimum": 0, "type": "integer"},
+            "2": {"minimum": 0, "type": "integer"},
+            "3": {"minimum": 0, "type": "integer"},
+            "4": {"minimum": 0, "type": "integer"},
+            "5": {"minimum": 0, "type": "integer"},
+            "6": {"minimum": 0, "type": "integer"},
+            "7": {"minimum": 0, "type": "integer"},
+            "8": {"minimum": 0, "type": "integer"}
+          },
+          "required": ["1", "2", "3", "4", "5", "6", "7", "8"],
+          "type": "object"
+        },
+        "run_recurrence": {"minLength": 1, "type": "string"},
+        "run_recurrence_rows": {
+          "items": {"$ref": "#/$defs/run_recurrence_row"},
+          "maxItems": 8,
+          "minItems": 8,
+          "type": "array"
+        },
+        "strict_gain": {"const": true},
+        "y": {"minimum": 1, "type": "integer"}
+      },
+      "required": [
+        "A_y",
+        "B_y",
+        "D_y",
+        "Delta_limit_mechanism",
+        "Delta_y",
+        "G_formula",
+        "G_formula_text",
+        "H_limit",
+        "O_y",
+        "P_y",
+        "a_half_lt_b_lt_a",
+        "a_y",
+        "all_pass",
+        "b_y_pair_weight",
+        "direct_dp",
+        "direct_dp_pass",
+        "even_run_bound",
+        "mathcal_E_y",
+        "primes",
+        "q_y",
+        "run_counts",
+        "run_recurrence",
+        "run_recurrence_rows",
+        "strict_gain",
+        "y"
+      ],
+      "type": "object"
+    },
+    "cofinal_protocol_row": {
+      "additionalProperties": false,
+      "properties": {
+        "Q_y": {"minimum": 1, "type": "integer"},
+        "all_pass": {"const": true},
+        "coarse_score": {"$ref": "#/$defs/euler_value"},
+        "cover_pass": {"const": true},
+        "decomposition_pass": {"const": true},
+        "density_aggregation": {"$ref": "#/$defs/density_aggregation_row"},
+        "discarded_J_count": {"minimum": 0, "type": "integer"},
+        "discarded_J_score": {"$ref": "#/$defs/euler_value"},
+        "discarded_charge": {"minLength": 1, "type": "string"},
+        "discarded_charge_precondition_pass": {"const": true},
+        "lift_score_pass": {"const": true},
+        "lifted_score": {"$ref": "#/$defs/euler_value"},
+        "no_same_support_memory_saturation_claim": {"const": true},
+        "odd_prime_cover": {
+          "items": {"minimum": 3, "type": "integer"},
+          "type": "array",
+          "uniqueItems": true
+        },
+        "order_of_limits": {"minLength": 1, "type": "string"},
+        "q": {"minimum": 1, "type": "integer"},
+        "q_y": {"minimum": 1, "type": "integer"},
+        "retained_I_count": {"minimum": 0, "type": "integer"},
+        "retained_J_count": {"minimum": 0, "type": "integer"},
+        "retained_bound": {"minLength": 1, "type": "string"},
+        "retained_bound_pass": {"const": true},
+        "retained_bound_value_B_y": {"$ref": "#/$defs/euler_value"},
+        "retained_independent_pass": {"const": true},
+        "retained_one_site_weight_pass": {"const": true},
+        "retained_rule": {"minLength": 1, "type": "string"},
+        "retained_score": {"$ref": "#/$defs/euler_value"},
+        "same_prime_support_as_q_y": {"const": true},
+        "tail_bound": {"minLength": 1, "type": "string"},
+        "y": {"minimum": 1, "type": "integer"},
+        "zero_density_deleted_count": {"minimum": 0, "type": "integer"}
+      },
+      "required": [
+        "Q_y",
+        "all_pass",
+        "coarse_score",
+        "cover_pass",
+        "decomposition_pass",
+        "density_aggregation",
+        "discarded_J_count",
+        "discarded_J_score",
+        "discarded_charge",
+        "discarded_charge_precondition_pass",
+        "lift_score_pass",
+        "lifted_score",
+        "no_same_support_memory_saturation_claim",
+        "odd_prime_cover",
+        "order_of_limits",
+        "q",
+        "q_y",
+        "retained_I_count",
+        "retained_J_count",
+        "retained_bound",
+        "retained_bound_pass",
+        "retained_bound_value_B_y",
+        "retained_independent_pass",
+        "retained_one_site_weight_pass",
+        "retained_rule",
+        "retained_score",
+        "same_prime_support_as_q_y",
+        "tail_bound",
+        "y",
+        "zero_density_deleted_count"
+      ],
+      "type": "object"
+    },
+    "c11_histogram_row": {
+      "additionalProperties": false,
+      "properties": {
+        "c11": {"$ref": "#/$defs/rational"},
+        "count": {"minimum": 1, "type": "integer"}
+      },
+      "required": ["c11", "count"],
+      "type": "object"
+    },
+    "main_pair_row": {
+      "additionalProperties": false,
+      "properties": {
+        "c02": {"$ref": "#/$defs/rational"},
+        "c22": {"$ref": "#/$defs/rational"},
+        "count": {"minimum": 1, "type": "integer"}
+      },
+      "required": ["c02", "c22", "count"],
+      "type": "object"
+    },
+    "census_row": {
+      "additionalProperties": false,
+      "properties": {
+        "c02": {"$ref": "#/$defs/rational"},
+        "c22": {"$ref": "#/$defs/rational"},
+        "canonical_target": {"enum": ["0", "J", "K", "I"]},
+        "mask": {"maximum": 511, "minimum": 0, "type": "integer"}
+      },
+      "required": ["c02", "c22", "canonical_target", "mask"],
+      "type": "object"
+    },
+    "edge": {
+      "items": {"maximum": 1, "minimum": -1, "type": "integer"},
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    "edge_list": {
+      "items": {"$ref": "#/$defs/edge"},
+      "maxItems": 9,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "six_rationals": {
+      "items": {"$ref": "#/$defs/rational"},
+      "maxItems": 6,
+      "minItems": 6,
+      "type": "array"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "certificate": {
+      "additionalProperties": false,
+      "properties": {
+        "all_pass": {"const": true},
+        "census": {
+          "additionalProperties": false,
+          "properties": {
+            "all_pass": {"const": true},
+            "c11_histogram": {
+              "items": {"$ref": "#/$defs/c11_histogram_row"},
+              "maxItems": 5,
+              "minItems": 5,
+              "type": "array"
+            },
+            "c11_zero_tables": {"const": 192},
+            "canonical_coefficients": {
+              "additionalProperties": false,
+              "properties": {
+                "0": {"$ref": "#/$defs/six_rationals"},
+                "I": {"$ref": "#/$defs/six_rationals"},
+                "J": {"$ref": "#/$defs/six_rationals"},
+                "K": {"$ref": "#/$defs/six_rationals"}
+              },
+              "required": ["0", "I", "J", "K"],
+              "type": "object"
+            },
+            "canonical_edges": {
+              "additionalProperties": false,
+              "properties": {
+                "0": {"$ref": "#/$defs/edge_list"},
+                "I": {"$ref": "#/$defs/edge_list"},
+                "J": {"$ref": "#/$defs/edge_list"},
+                "K": {"$ref": "#/$defs/edge_list"}
+              },
+              "required": ["0", "I", "J", "K"],
+              "type": "object"
+            },
+            "canonical_target_counts": {
+              "additionalProperties": false,
+              "properties": {
+                "0": {"const": 120},
+                "I": {"const": 8},
+                "J": {"const": 40},
+                "K": {"const": 24}
+              },
+              "required": ["0", "I", "J", "K"],
+              "type": "object"
+            },
+            "census_sha256": {"$ref": "#/$defs/sha256"},
+            "compatibility_matrix": {
+              "items": {
+                "items": {"type": "boolean"},
+                "maxItems": 4,
+                "minItems": 4,
+                "type": "array"
+              },
+              "maxItems": 4,
+              "minItems": 4,
+              "type": "array"
+            },
+            "compatibility_order": {
+              "items": {"enum": ["0", "J", "K", "I"]},
+              "maxItems": 4,
+              "minItems": 4,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "dominance_pass": {"const": true},
+            "input_reflection_pass": {"const": true},
+            "k_i_full_compatibility_equivalent": {"const": true},
+            "main_pair_histogram": {
+              "items": {"$ref": "#/$defs/main_pair_row"},
+              "maxItems": 9,
+              "minItems": 9,
+              "type": "array"
+            },
+            "reflection_neighbor_pair_checks": {"const": 262144},
+            "reflection_neighbor_pair_failures": {"const": 0},
+            "rows": {
+              "items": {"$ref": "#/$defs/census_row"},
+              "maxItems": 192,
+              "minItems": 192,
+              "type": "array"
+            },
+            "subset_pass": {"const": true},
+            "subset_reduction_precedes_k_to_i": {"const": true},
+            "total_tables": {"const": 512}
+          },
+          "required": [
+            "all_pass",
+            "c11_histogram",
+            "c11_zero_tables",
+            "canonical_coefficients",
+            "canonical_edges",
+            "canonical_target_counts",
+            "census_sha256",
+            "compatibility_matrix",
+            "compatibility_order",
+            "dominance_pass",
+            "input_reflection_pass",
+            "k_i_full_compatibility_equivalent",
+            "main_pair_histogram",
+            "reflection_neighbor_pair_checks",
+            "reflection_neighbor_pair_failures",
+            "rows",
+            "subset_pass",
+            "subset_reduction_precedes_k_to_i",
+            "total_tables"
+          ],
+          "type": "object"
+        },
+        "certified_constants": {
+          "additionalProperties": false,
+          "properties": {
+            "cutoff": {"minimum": 2, "type": "integer"},
+            "kappa2_interval": {
+              "items": {"$ref": "#/$defs/rational"},
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            "pi2_interval": {
+              "items": {"$ref": "#/$defs/rational"},
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            "pi2_kappa2_interval": {
+              "items": {"$ref": "#/$defs/rational"},
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            "pi_method": {"minLength": 1, "type": "string"},
+            "precision": {"minimum": 1, "type": "integer"},
+            "prime_count": {"minimum": 1, "type": "integer"},
+            "product_method": {"minLength": 1, "type": "string"},
+            "tail_inequality": {"minLength": 1, "type": "string"}
+          },
+          "required": [
+            "cutoff",
+            "kappa2_interval",
+            "pi2_interval",
+            "pi2_kappa2_interval",
+            "pi_method",
+            "precision",
+            "prime_count",
+            "product_method",
+            "tail_inequality"
+          ],
+          "type": "object"
+        },
+        "claim_boundary": {
+          "additionalProperties": false,
+          "properties": {
+            "delta_monotonicity_not_claimed": {"const": true},
+            "finite_clock_attainment_or_nonattainment_not_claimed": {"const": true},
+            "first_blocker": {"const": "phase-weighted D2 cancellation"},
+            "fixed_finite_q_before_N_limit": {"const": true},
+            "gates_A_through_E": {
+              "items": {"const": false},
+              "maxItems": 5,
+              "minItems": 5,
+              "type": "array"
+            },
+            "input_reflection_for_absolute_value": {"const": true},
+            "one_site_embedding_for_reverse_supremum": {"const": true},
+            "phasewise_c11_zero_only": {"const": true},
+            "same_support_memory_saturation_not_claimed": {"const": true}
+          },
+          "required": [
+            "delta_monotonicity_not_claimed",
+            "finite_clock_attainment_or_nonattainment_not_claimed",
+            "first_blocker",
+            "fixed_finite_q_before_N_limit",
+            "gates_A_through_E",
+            "input_reflection_for_absolute_value",
+            "one_site_embedding_for_reverse_supremum",
+            "phasewise_c11_zero_only",
+            "same_support_memory_saturation_not_claimed"
+          ],
+          "type": "object"
+        },
+        "cofinal_protocol_rows": {
+          "items": {"$ref": "#/$defs/cofinal_protocol_row"},
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        "density_aggregation": {
+          "items": {"$ref": "#/$defs/density_aggregation_row"},
+          "maxItems": 10,
+          "minItems": 10,
+          "type": "array"
+        },
+        "density_normalization": {
+          "items": {"$ref": "#/$defs/density_normalization_row"},
+          "maxItems": 12,
+          "minItems": 12,
+          "type": "array"
+        },
+        "fixture_clocks": {
+          "items": {"$ref": "#/$defs/fixed_clock_row"},
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        "q1_memory_gain_over_F1_zero": {
+          "additionalProperties": false,
+          "properties": {
+            "G1": {"$ref": "#/$defs/euler_value"},
+            "positive": {"const": true}
+          },
+          "required": ["G1", "positive"],
+          "type": "object"
+        },
+        "q36_strict_gain": {
+          "additionalProperties": false,
+          "properties": {
+            "F36": {"$ref": "#/$defs/euler_value"},
+            "G36": {"$ref": "#/$defs/euler_value"},
+            "certified_sign_pass": {"const": true},
+            "gain": {"$ref": "#/$defs/euler_value"},
+            "label": {"const": "exact_square_clock_strict_gain_not_first_same_clock_gain"},
+            "partial_lt_7_over_20": {"const": true},
+            "partial_product": {"$ref": "#/$defs/rational"},
+            "proof_chain": {
+              "items": {"minLength": 1, "type": "string"},
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            }
+          },
+          "required": [
+            "F36",
+            "G36",
+            "certified_sign_pass",
+            "gain",
+            "label",
+            "partial_lt_7_over_20",
+            "partial_product",
+            "proof_chain"
+          ],
+          "type": "object"
+        },
+        "small_clocks": {
+          "items": {"$ref": "#/$defs/fixed_clock_row"},
+          "maxItems": 6,
+          "minItems": 6,
+          "type": "array"
+        },
+        "source_hashes": {
+          "additionalProperties": false,
+          "properties": {
+            "census_sha256": {"$ref": "#/$defs/sha256"},
+            "fixture_action_sha256": {
+              "additionalProperties": false,
+              "properties": {
+                "180": {"$ref": "#/$defs/sha256"},
+                "36": {"$ref": "#/$defs/sha256"},
+                "44100": {"$ref": "#/$defs/sha256"},
+                "900": {"$ref": "#/$defs/sha256"}
+              },
+              "required": ["180", "36", "44100", "900"],
+              "type": "object"
+            }
+          },
+          "required": ["census_sha256", "fixture_action_sha256"],
+          "type": "object"
+        },
+        "square_clocks": {
+          "items": {"$ref": "#/$defs/square_clock_row"},
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        }
+      },
+      "required": [
+        "all_pass",
+        "census",
+        "certified_constants",
+        "claim_boundary",
+        "cofinal_protocol_rows",
+        "density_aggregation",
+        "density_normalization",
+        "fixture_clocks",
+        "q1_memory_gain_over_F1_zero",
+        "q36_strict_gain",
+        "small_clocks",
+        "source_hashes",
+        "square_clocks"
+      ],
+      "type": "object"
+    },
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "first_unresolved_object": {"type": "string"},
+        "notes": {"items": {"type": "string"}, "minItems": 1, "type": "array"},
+        "route_a": {"const": "GO"},
+        "route_b": {"const": "STOP_SCOPED"}
+      },
+      "required": ["first_unresolved_object", "notes", "route_a", "route_b"],
+      "type": "object"
+    },
+    "gates": {
+      "additionalProperties": false,
+      "properties": {
+        "A_canonical_intrinsic_dynamical_spectral_determinant": {"const": false},
+        "B_time_oriented_scattering_or_unitary_completion": {"const": false},
+        "C_self_adjoint_generator_and_intrinsic_T_log_T": {"const": false},
+        "D_von_mangoldt_weighted_prime_power_traces": {"const": false},
+        "E_completed_zeta_divisor_equality": {"const": false}
+      },
+      "required": [
+        "A_canonical_intrinsic_dynamical_spectral_determinant",
+        "B_time_oriented_scattering_or_unitary_completion",
+        "C_self_adjoint_generator_and_intrinsic_T_log_T",
+        "D_von_mangoldt_weighted_prime_power_traces",
+        "E_completed_zeta_divisor_equality"
+      ],
+      "type": "object"
+    },
+    "source_commits": {
+      "additionalProperties": false,
+      "properties": {
+        "rh374_release": {"pattern": "^[0-9a-f]{40}$", "type": "string"},
+        "rh375_release": {"pattern": "^[0-9a-f]{40}$", "type": "string"},
+        "rh376_release": {"pattern": "^[0-9a-f]{40}$", "type": "string"},
+        "rh378_release": {"pattern": "^[0-9a-f]{40}$", "type": "string"},
+        "rh_mvp2_archive": {"pattern": "^[0-9a-f]{40}$", "type": "string"}
+      },
+      "required": [
+        "rh374_release",
+        "rh375_release",
+        "rh376_release",
+        "rh378_release",
+        "rh_mvp2_archive"
+      ],
+      "type": "object"
+    },
+    "source_locks": {
+      "additionalProperties": false,
+      "properties": {
+        "count": {"const": 28},
+        "files": {
+          "additionalProperties": {"$ref": "#/$defs/sha256"},
+          "maxProperties": 28,
+          "minProperties": 28,
+          "propertyNames": {"minLength": 1, "type": "string"},
+          "type": "object"
+        },
+        "pass": {"const": true}
+      },
+      "required": ["count", "files", "pass"],
+      "type": "object"
+    },
+    "status": {"const": "RH-379_phasewise_chowla_free_memory_supremum"},
+    "theorem": {
+      "additionalProperties": false,
+      "properties": {
+        "all_clock_supremum": {"type": "string"},
+        "canonical_reduction": {"type": "string"},
+        "factor_class": {"type": "string"},
+        "fixed_clock_formula": {"type": "string"},
+        "phasewise_cancellation": {"type": "string"},
+        "q36_gain": {"type": "string"},
+        "reverse_inequality": {"type": "string"},
+        "square_clock_refinement": {"type": "string"},
+        "table_census": {"type": "string"}
+      },
+      "required": [
+        "all_clock_supremum",
+        "canonical_reduction",
+        "factor_class",
+        "fixed_clock_formula",
+        "phasewise_cancellation",
+        "q36_gain",
+        "reverse_inequality",
+        "square_clock_refinement",
+        "table_census"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "certificate",
+    "claim_boundary",
+    "gates",
+    "source_commits",
+    "source_locks",
+    "status",
+    "theorem"
+  ],
+  "title": "RH-379 exact result ledger",
+  "type": "object"
+}
