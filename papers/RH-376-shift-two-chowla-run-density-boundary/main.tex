@@ -1,0 +1,444 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Mob}{\mu}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\R}{\mathbb R}
+
+\title{The shift-two Chowla boundary for\
+two-site M\"obius run intervals}
+\author{RH research program}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We isolate the first correlation-hard component of the exact RH-371
+eight-run formula.  For either sign $\sigma$, let $C_{\sigma,2}(N)$ count
+odd starts $1\le n\le N-2$ for which
+$\mu(n)=\mu(n+2)=\sigma$.  With all sums taken over that common endpoint,
+put
+\[
+ Q_2=\sum\mu(n)^2\mu(n+2)^2,\quad
+ U_2=\sum\mu(n)\mu(n+2)^2,
+\]
+\[
+ V_2=\sum\mu(n)^2\mu(n+2),\quad
+ D_2=\sum\mu(n)\mu(n+2).
+\]
+Even starts vanish identically, and Boolean expansion gives the exact
+all-prefix identity
+\[
+ 4C_{\sigma,2}=Q_2+\sigma U_2+\sigma V_2+D_2.
+\]
+We prove unconditionally that
+$Q_2/N\to\kappa_2:=\prod_p(1-2/p^2)$ and
+$U_2,V_2=o(N)$.  The latter proof fixes a square-divisor cutoff, applies
+Davenport cancellation only in finitely many fixed progressions, and then
+removes the cutoff.  The frozen Ter\"av\"ainen--Walker fixed-affine
+logarithmic theorem and Abel summation show that any Ces\`aro limit of
+$D_2/N$ must be zero.  Consequently, existence of either signed two-site
+interval density is equivalent to ordinary shift-two Ces\`aro Chowla, and
+the density is then $\kappa_2/4$ for both signs.  This is a scoped hardness
+equivalence: it neither proves shift-two Chowla nor settles higher run
+densities, the alternating eight-run envelope, or the adaptive capacity
+limit.  No operator, trace, Riemann-zero identification, Hilbert--Polya
+construction, or proof of RH is claimed.
+\end{abstract}
+
+\section{Frozen interval count and scope}
+
+RH-371 writes the distance-two adaptive M\"obius capacity in terms of eight
+overlapping run-interval counts.  Its definition for the second count is
+\begin{equation}
+ C_{\sigma,2}(N)
+ =\#\{1\le n\le N-2:n\text{ odd},\
+        \Mob(n)=\Mob(n+2)=\sigma\},
+ \qquad \sigma\in\{-1,+1\}.
+ \label{eq:C-definition}
+\end{equation}
+The starts are allowed to overlap.  Thus $C_{\sigma,2}$ counts two-site
+same-sign intervals; it is not the number of maximal runs having exact
+length two.  RH-371 proves an exact finite-prefix capacity formula but does
+not prove density convergence for these intervals or for its alternating
+eight-run envelope \cite{RH371}.  RH-375 closes a separate fixed-clock
+one-site class without changing this adaptive correlation question
+\cite{RH375}.
+
+Every sum below uses the single endpoint
+\begin{equation}
+                         1\le n\le N-2.
+ \label{eq:common-endpoint}
+\end{equation}
+Empty sums are zero when $N<3$.  Define
+\begin{align}
+ Q_2(N)&=\sum_{n\le N-2}\Mob(n)^2\Mob(n+2)^2,
+ &U_2(N)&=\sum_{n\le N-2}\Mob(n)\Mob(n+2)^2,
+ \label{eq:masked-one}\\
+ V_2(N)&=\sum_{n\le N-2}\Mob(n)^2\Mob(n+2),
+ &D_2(N)&=\sum_{n\le N-2}\Mob(n)\Mob(n+2).
+ \label{eq:masked-two}
+\end{align}
+Here $D_2(N)=o(N)$ is the ordinary shift-two Ces\`aro Chowla statement.
+It remains open in the present source corpus.
+
+\begin{remark}[Claim firewall]
+The theorem below is an equivalence with that open statement, not a proof of
+it.  No failure of convergence is established.  A conclusion about one
+two-site count does not by itself determine the seven remaining RH-371 run
+levels or their alternating capacity envelope.
+\end{remark}
+
+\section{The exact Boolean identity}
+
+For $x\in\{-1,0,+1\}$ and $\sigma\in\{-1,+1\}$,
+\begin{equation}
+              \one_{\{x=\sigma\}}=\frac{x^2+\sigma x}{2}.
+ \label{eq:boolean}
+\end{equation}
+There is one small endpoint issue: equation \eqref{eq:C-definition} uses odd
+starts, whereas \eqref{eq:masked-one}--\eqref{eq:masked-two} sum over all
+starts.  The distinction vanishes exactly.
+
+\begin{lemma}[Even starts vanish]
+For every even $n$, both same-sign indicators and all four product terms in
+\eqref{eq:masked-one}--\eqref{eq:masked-two} are zero.
+\end{lemma}
+
+\begin{proof}
+If $n\equiv0\pmod4$, then $\Mob(n)=0$.  If
+$n\equiv2\pmod4$, then $\Mob(n+2)=0$.  Every listed summand contains both
+sites, either as a sign indicator or as a product, and therefore vanishes.
+\end{proof}
+
+\begin{theorem}[Common-endpoint two-site identity]
+For every $N\ge1$ and $\sigma\in\{-1,+1\}$,
+\begin{equation}
+ \boxed{\displaystyle
+ 4C_{\sigma,2}(N)
+ =Q_2(N)+\sigma U_2(N)+\sigma V_2(N)+D_2(N).}
+ \label{eq:master-identity}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The preceding lemma permits summation over all starts in
+\eqref{eq:common-endpoint}.  Apply \eqref{eq:boolean} at $\Mob(n)$ and
+$\Mob(n+2)$ and multiply:
+\[
+ 4\one_{\{\Mob(n)=\sigma\}}\one_{\{\Mob(n+2)=\sigma\}}
+ =\bigl(\Mob(n)^2+\sigma\Mob(n)\bigr)
+  \bigl(\Mob(n+2)^2+\sigma\Mob(n+2)\bigr).
+\]
+Since $\sigma^2=1$, expansion and summation give
+\eqref{eq:master-identity}.
+\end{proof}
+
+The identity is pointwise before summation.  It introduces no probability,
+independence, or finite-to-asymptotic inference.
+
+\section{The three unconditional terms}
+
+\subsection{The squarefree-pair density}
+
+Put
+\begin{equation}
+                    \kappa_2=\prod_p\left(1-\frac2{p^2}\right).
+ \label{eq:kappa}
+\end{equation}
+The two forbidden classes $0$ and $-2$ modulo $p^2$ are distinct for every
+prime, including $p=2$.  Thus the local factor at $2$ is $1/2$; there is no
+additional parity factor.
+
+\begin{lemma}[Squarefree shift-two density]
+\begin{equation}
+                         \frac{Q_2(N)}N\longrightarrow\kappa_2.
+ \label{eq:Q-limit}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Fix $R\ge2$ and first forbid only the prime squares $p^2$ with $p\le R$.
+The Chinese remainder theorem gives the density
+\[
+                         \prod_{p\le R}(1-2/p^2)
+\]
+for the remaining residue classes.  A number accepted by this finite sieve
+but not counted by $Q_2$ has $p^2\mid n$ or $p^2\mid n+2$ for some
+$p>R$.  The union bound gives, uniformly in the common endpoint,
+\[
+ \#\{\text{such starts}\}
+ \le 2\sum_{R<p\le\sqrt{N+2}}
+       \left(\frac{N}{p^2}+1\right)
+ =O\!\left(\frac NR+\sqrt N\right).
+\]
+First let $N\to\infty$ at fixed $R$, and only then let $R\to\infty$.
+The finite products converge to \eqref{eq:kappa}, proving
+\eqref{eq:Q-limit}.  This is the classical squarefree-pattern sieve in the
+scope recorded by Mirsky \cite{Mirsky1948}.
+\end{proof}
+
+\subsection{The one-sign squarefree masks}
+
+Davenport's fixed-frequency bound, followed by finite Fourier inversion,
+implies that for every fixed modulus $q$ and residue $a$,
+\begin{equation}
+                  \sum_{\substack{m\le X\\m\equiv a\ (q)}}\Mob(m)=o(X).
+ \label{eq:fixed-ap}
+\end{equation}
+Only fixed progressions will be used \cite{Davenport1937}.
+
+\begin{lemma}[Masked one-point cancellation]
+\begin{equation}
+                         U_2(N)=o(N),\qquad V_2(N)=o(N).
+ \label{eq:UV-limit}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Use the exact identity
+\[
+                         \Mob(m)^2=\sum_{d^2\mid m}\Mob(d).
+\]
+Fix an integer cutoff $R$.  Expanding the mask at $n+2$ gives
+\begin{equation}
+ U_2(N)=\sum_{d\le R}\Mob(d)
+       \sum_{\substack{n\le N-2\\n\equiv-2\ (d^2)}}\Mob(n)
+       +O\!\left(\frac NR+\sqrt N\right).
+ \label{eq:U-cutoff}
+\end{equation}
+Indeed, the absolute tail is at most
+\[
+ \sum_{R<d\le\sqrt{N+2}}\left(\frac{N}{d^2}+1\right)
+ =O(N/R+\sqrt N).
+\]
+For every fixed $d$, the inner sum in \eqref{eq:U-cutoff} is $o(N)$ by
+\eqref{eq:fixed-ap}.  The sum over $d\le R$ is finite, so after division by
+$N$ and passage to the limit,
+\[
+                         \limsup_{N\to\infty}\frac{|U_2(N)|}{N}
+                         \ll\frac1R.
+\]
+Now send $R\to\infty$.
+
+For $V_2$, expand $\Mob(n)^2$ instead.  At fixed $d$, the inner sum is
+$\sum_{n\equiv0\ (d^2)}\Mob(n+2)$; after the translation $m=n+2$ this is
+again a fixed arithmetic progression.  The same tail estimate and the same
+order of limits prove $V_2=o(N)$.
+\end{proof}
+
+\begin{remark}[No growing-modulus promotion]
+The proof fixes $R$, takes $N\to\infty$ in finitely many moduli $d^2$, and
+then removes $R$.  It does not apply Davenport with a modulus growing with
+$N$ and supplies no uniform growing-clock theorem.
+\end{remark}
+
+Combining \eqref{eq:master-identity}, \eqref{eq:Q-limit}, and
+\eqref{eq:UV-limit} gives the unconditional reduction
+\begin{equation}
+ \frac{4C_{\sigma,2}(N)}N
+ =\kappa_2+\frac{D_2(N)}N+o(1),
+ \qquad \sigma\in\{-1,+1\}.
+ \label{eq:reduction}
+\end{equation}
+The only unresolved term is the unmasked shift-two correlation.
+
+\section{Logarithmic input and Ces\`aro rigidity}
+
+The frozen source theorem applies to fixed nonparallel positive affine forms
+and a fixed additive twist.  Specializing Ter\"av\"ainen--Walker to
+$f_1=f_2=\Mob$, the forms $m+1,m+3$, and twist $\gamma=0$ gives
+\begin{equation}
+ \lim_{X\to\infty}\frac1{\log X}
+ \sum_{m\le X}\frac{\Mob(m+1)\Mob(m+3)}m=0.
+ \label{eq:TW}
+\end{equation}
+The affine determinant is $1\cdot3-1\cdot1=2$.  This exact specialization
+and its qualitative logarithmic normalization are locked in TPC-193
+\cite{TeravainenWalker2025,TPC193}.  No natural-average conclusion is read
+directly from \eqref{eq:TW}.
+
+Let $a_n=\Mob(n)\Mob(n+2)$ and $A(X)=\sum_{n\le X}a_n$.  Reindexing
+\eqref{eq:TW} replaces $1/(n-1)$ by $1/n$.  The total error is bounded by
+\[
+ \sum_{n\ge2}\left|\frac1{n-1}-\frac1n\right|\le1,
+\]
+and changing finitely many endpoints costs $O(1)$.  Hence
+\begin{equation}
+ \frac1{\log X}\sum_{n\le X}\frac{a_n}{n}\longrightarrow0.
+ \label{eq:log-D}
+\end{equation}
+
+\begin{lemma}[One-way Abel principle]
+If $A(X)/X\to L$, then
+\begin{equation}
+             \frac1{\log X}\sum_{n\le X}\frac{a_n}{n}\longrightarrow L.
+ \label{eq:abel-limit}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Partial summation gives
+\begin{equation}
+ \sum_{n\le X}\frac{a_n}{n}
+ =\frac{A(X)}X+\int_1^X\frac{A(t)}{t^2}\,dt.
+ \label{eq:abel}
+\end{equation}
+Write $A(t)=Lt+o(t)$.  The first term in \eqref{eq:abel}, divided by
+$\log X$, tends to zero.  The integral equals
+$L\log X+o(\log X)$: for any $\varepsilon>0$, the tail error is bounded by
+$\varepsilon\int_T^Xdt/t$, while the initial interval contributes
+$O_T(1)$.  This proves \eqref{eq:abel-limit}.
+\end{proof}
+
+\begin{proposition}[Ces\`aro-limit rigidity]
+If $D_2(N)/N$ has a limit, then that limit is zero.
+\end{proposition}
+
+\begin{proof}
+Since $D_2(N)=A(N-2)$, existence of $D_2(N)/N\to L$ is equivalent to
+$A(X)/X\to L$.  The Abel lemma says that the logarithmic average in
+\eqref{eq:log-D} tends to $L$, while the frozen affine theorem says it tends
+to zero.  Therefore $L=0$.
+\end{proof}
+
+The argument uses logarithmic cancellation only as a rigidity statement
+after a natural Ces\`aro limit is assumed to exist.  It does not invert Abel
+summation and does not promote a logarithmic theorem to unconditional
+natural cancellation.
+
+\section{The shift-two hardness equivalence}
+
+\begin{theorem}[Signed two-site density boundary]
+Fix either $\sigma\in\{-1,+1\}$.  The following are equivalent:
+\begin{enumerate}[label=(\roman*),leftmargin=*]
+\item $C_{\sigma,2}(N)/N$ has a limit;
+\item $D_2(N)/N$ has a limit;
+\item $D_2(N)=o(N)$, the ordinary shift-two Ces\`aro Chowla statement;
+\item both $C_{+1,2}(N)/N$ and $C_{-1,2}(N)/N$ converge.
+\end{enumerate}
+Whenever these conditions hold,
+\begin{equation}
+ \boxed{\displaystyle
+ \lim_{N\to\infty}\frac{C_{+1,2}(N)}N
+ =\lim_{N\to\infty}\frac{C_{-1,2}(N)}N
+ =\frac{\kappa_2}{4}.}
+ \label{eq:final-density}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:reduction} shows that, for either fixed sign, the signed
+interval density has a limit if and only if $D_2(N)/N$ has a limit.  The
+rigidity proposition forces any such limit to be zero, proving
+(i)$\Rightarrow$(ii)$\Rightarrow$(iii).  Conversely, (iii) inserted into
+\eqref{eq:reduction} proves \eqref{eq:final-density} for both signs, hence
+(iii)$\Rightarrow$(iv)$\Rightarrow$(i).
+\end{proof}
+
+Thus one signed density cannot converge to an unknown biased constant: its
+existence already forces the open unweighted correlation to cancel and
+forces both signs to have the same density.  The result proves neither that
+the equivalent conditions hold nor that they fail.
+
+\section{Exact executable protocol}
+
+The artifact uses a linear integer M\"obius sieve and one streaming pass.
+For every start $1\le n\le2^{20}-2$, it verifies both pointwise Boolean
+identities.  For every prefix $1\le N\le2^{20}$, it independently verifies
+their cumulative forms under the common endpoint
+\eqref{eq:common-endpoint}.  It also checks all $524287$ even starts, aligns
+both signs with the locked RH-371 definition at every endpoint
+$N\le1024$, and freezes the following rows:
+\begin{center}
+\small
+\begin{tabular}{@{}rrrrrrr@{}}
+\toprule
+$N$ & $C_{+,2}$ & $C_{-,2}$ & $Q_2$ & $U_2$ & $V_2$ & $D_2$\\
+\midrule
+$1024$ & $66$ & $82$ & $330$ & $-18$ & $-14$ & $-34$\\
+$65536$ & $5293$ & $5301$ & $21155$ & $-51$ & $35$ & $33$\\
+$1048576$ & $84630$ & $84346$ & $338334$ & $130$ & $438$ & $-382$\\
+\bottomrule
+\end{tabular}
+\end{center}
+All entries are exact integer reproduction.  In particular, their apparent
+small correlations are not used to infer $D_2=o(N)$, a limit, or any
+asymptotic rate.  The source-lock manifest and closed result schema are
+checked separately.
+
+\section{Route verdict, boundaries, and Gates}
+
+Route A is \texttt{GO}.  The all-prefix identity, unconditional masked-term
+asymptotics, and exact equivalence with shift-two Ces\`aro Chowla form a
+standalone theorem edge.  Route B is \texttt{STOP\_SCOPED}.  The two-site
+count is a scalar arithmetic statistic extracted from an adaptive capacity,
+not an intrinsic dynamical trace, and the required natural correlation remains
+open.
+
+The scope is strict:
+\begin{itemize}[leftmargin=*]
+\item $C_{\sigma,2}$ is not a maximal exact-length-two run count;
+\item neither convergence nor nonconvergence is proved unconditionally;
+\item run levels $k\ge3$ require additional mixed-exponent correlations;
+\item no conclusion follows for the alternating eight-run envelope or for
+      convergence of $K_N/N$;
+\item no growing-modulus, growing-clock, or uniform-in-clock Davenport
+      theorem is used.
+\end{itemize}
+
+Gates A--E remain false/open.  This paper does not construct a canonical
+intrinsic spectral determinant, a time-oriented scattering completion, a
+self-adjoint generator with an intrinsic $T\log T$ law, a von
+Mangoldt-weighted prime-power trace, or equality with the completed-zeta
+divisor.  It does not identify Riemann zeros, construct a Hilbert--Polya
+operator, or prove the Riemann Hypothesis.
+
+\section{Conclusion}
+
+The first nontrivial RH-371 run interval has an exact boundary.  Its
+squarefree support and one-mask terms are unconditional; the only remaining
+quantity is the ordinary shift-two M\"obius correlation.  A logarithmic
+affine theorem does not by itself prove that natural cancellation, but it rules out any
+nonzero Ces\`aro limit.  Consequently even the existence of one signed
+two-site density is precisely as hard as shift-two Ces\`aro Chowla.  The next
+family-level step must track the genuinely mixed moments for run lengths
+$3$ through $8$, rather than replace them by naked distinct-shift
+correlations.
+
+\section*{Reproducibility and declarations}
+
+\textbf{Data availability.}  All source, exact outputs, tests, schema, and
+SHA-256 manifests are contained in the RH-376 repository directory.
+
+\textbf{Ethics.}  The study uses no human participants, animals, or personal
+data.  No ethics approval was required.
+
+\textbf{Author contributions.}  The RH research program performed
+conceptualization, formal analysis, software, validation, and writing.
+
+\textbf{Funding and conflicts.}  No external funding or conflict of interest
+is declared.
+
+\textbf{AI-assisted workflow.}  Drafting and executable checking used the
+repository's documented multi-agent workflow.  Mathematical claims are
+limited by the source locks, proofs, independent audits, and reproducible
+artifacts recorded here.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

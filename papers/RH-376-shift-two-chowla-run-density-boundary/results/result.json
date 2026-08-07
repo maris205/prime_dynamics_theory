@@ -1,0 +1,99 @@
+{
+  "certificate": {
+    "all_pass": true,
+    "common_endpoint": "1<=n<=N-2",
+    "cumulative_identities_pass": true,
+    "cumulative_prefix_count": 1048576,
+    "endpoint": 1048576,
+    "even_start_count": 524287,
+    "even_start_zero_pass": true,
+    "frozen_rows": {
+      "1024": {
+        "C_minus": 82,
+        "C_plus": 66,
+        "D2": -34,
+        "Q2": 330,
+        "U2": -18,
+        "V2": -14
+      },
+      "1048576": {
+        "C_minus": 84346,
+        "C_plus": 84630,
+        "D2": -382,
+        "Q2": 338334,
+        "U2": 130,
+        "V2": 438
+      },
+      "65536": {
+        "C_minus": 5301,
+        "C_plus": 5293,
+        "D2": 33,
+        "Q2": 21155,
+        "U2": -51,
+        "V2": 35
+      }
+    },
+    "frozen_rows_pass": true,
+    "label": "finite_exact_reproduction_only_not_asymptotic_evidence",
+    "pointwise_identities_pass": true,
+    "pointwise_identity_count": 1048574,
+    "rh371_alignment_pass": true,
+    "rh371_alignment_prefix_count": 1024,
+    "rh371_alignment_sign_cells": 2048
+  },
+  "claim_boundary": {
+    "notes": [
+      "C_(sigma,2) counts overlapping two-site same-sign intervals, not maximal or exact-length-two runs.",
+      "Ordinary shift-two Cesaro Chowla is not proved; the result is an equivalence and hardness boundary.",
+      "No failure of convergence is proved for either signed interval density.",
+      "No conclusion is drawn about the RH-371 eight-run envelope or convergence of K_N/N.",
+      "The cutoff proof fixes the square-divisor cutoff before N tends to infinity; no growing-modulus theorem is used.",
+      "Run lengths k>=3 and all memory-dependent classes remain open.",
+      "No intrinsic operator, trace, zero identification, Hilbert--Polya construction, or RH implication is claimed."
+    ],
+    "route_a": "GO",
+    "route_b": "STOP_SCOPED"
+  },
+  "gates": {
+    "A_canonical_intrinsic_dynamical_spectral_determinant": false,
+    "B_time_oriented_scattering_or_unitary_completion": false,
+    "C_self_adjoint_generator_and_intrinsic_T_log_T": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "source_commits": {
+    "rh371_release": "241b78a89ccbc0bad96d9ef20ee9256d61b4eaca",
+    "rh374_release": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+    "rh375_release": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+    "rh_mvp2_archive": "c0aed13a34b8bbc53061aed23738660adcd3624c",
+    "tpc193_release": "14d7a1dfd82b0575b43a65c8254fce3cf53acda5"
+  },
+  "source_locks": {
+    "count": 13,
+    "files": {
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/README.md": "813a9afa3028c8b6774277399bfb2363f744ecf113121cf653767f74b78e7987",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/THEOREM_LEDGER.md": "72c23a19383bd7de854293d919208635cf4b50e153a8af057060948a6635eba3",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/main.tex": "fa2b1e37c5daf791b9d44cb424f63457014d8ca5b8293e524f66c14425a31a0e",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/results/result.json": "00210432e5169df7b450b8a764e67547a1fd4f1213714d51d9d98b80fc9ca657",
+      "prime_dynamics_theory/papers/RH-371-eight-run-distance-two-capacity-obstruction/src/distance_capacity/core.py": "b2ca105f90b5170dba680da52e46b286877d3b5c8675d5a00b007fcc43f0e5f0",
+      "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/references.bib": "ce1e5123ff7edc05c6436f2534044e7058b4a3857bf0f084971954ced3e7c184",
+      "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/README.md": "4949823c38e81dce9b04d46405a7a1d1bbd156375d2332f9a9ea90a7b8927c11",
+      "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/results/result.json": "81d905c2476abc36fdd1ab0e468ad33d85f4df9db35afbd3bc79bf0771fe0a08",
+      "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751",
+      "prime_dynamics_theory/papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/README.md": "c6c3fa6054e5999ef2c498f249426dafdde379a0501f8b1d2fd0d113e26ed388",
+      "prime_dynamics_theory/papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json": "6d57d443b0efee28ee8e6cdb09f4386347095ca248b9a0cd42533b326537c244",
+      "prime_dynamics_theory/papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/main.tex": "bd8c9a9d8a0112c7fcca003bf69fe27e235f6b2c8439c7393c32c91274dbbcec",
+      "prime_dynamics_theory/papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/references.bib": "703c6ba80f9e258372e7713bfa44ffe48b06a3cace06b00b0c3e3adf3da262d1"
+    },
+    "pass": true
+  },
+  "status": "RH-376_shift_two_chowla_run_density_boundary",
+  "theorem": {
+    "boolean_identity": "4C_(sigma,2)=Q2+sigma*U2+sigma*V2+D2 for sigma in {-1,+1}",
+    "common_endpoint": "all sums use 1<=n<=N-2",
+    "equivalence": "for either fixed sigma, C_(sigma,2)/N converges iff D2=o(N); then its limit is kappa2/4",
+    "masked_cancellation": "U2=o(N) and V2=o(N), by fixed-cutoff AP cancellation",
+    "rigidity": "if D2/N has a Cesaro limit, the frozen logarithmic affine theorem forces that limit to be zero",
+    "squarefree_pair_density": "Q2/N -> kappa2=product_p(1-2/p^2)"
+  }
+}
