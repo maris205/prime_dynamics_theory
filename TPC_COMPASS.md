@@ -1,15 +1,15 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-06
-状态：`BOLD_CHANNEL_V18 / BRIDGE_B_TYPED_WINDOWED_FORCED_INNOVATION`
-claim level：`EXACT_TYPED_CORE_BACKWARD_HULL_GEOMETRY_NO_ARITHMETIC_ADVANCE`
+更新时间：2026-08-07
+状态：`BOLD_CHANNEL_V19 / BRIDGE_B_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_RETURN`
+claim level：`EXACT_L0_RAW_ROW_AND_SOURCE_INNOVATION_INTERFACE_NO_ARITHMETIC_ADVANCE`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V18 的完整
-proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_backward_hull.md`
-及 `research/tpc-big-road/tpc_bridge_b_backward_hull_checker.py`；V17 rank contract与
-V16 common-return contract继续冻结于各自 artifacts。正式 theorem
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V19 的完整
+proof、scope与独立 checker位于 `research/tpc-big-road/bridge_b_shbd2_innovation.md`
+及 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`；V18 typed
+backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 artifacts。正式 theorem
 事实仍以 `TPC_HANDOFF.md`、已提交 papers、artifacts与 checkers为准；本文件本身
 不是新 theorem evidence，也不解除任何 `STOP_SCOPED` 或 release gate。
 
@@ -19,7 +19,7 @@ V16 common-return contract继续冻结于各自 artifacts。正式 theorem
 200+ local research nodes
   -> 13 major obstruction classes
   -> 2 visible bottlenecks
-  -> 1 selected typed windowed forced-innovation Bridge B highway
+  -> 1 selected SHB-D2 long-horizon source-innovation Bridge B highway
      + 2 independent analytic reserves (A1/A2).
 ```
 
@@ -1022,6 +1022,85 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 20. V19 后的罗盘：combined raw row可载，source innovation不可省
+
+V18把下一关写成 `SHB-D2 -> V_k^vee`。V19证明这条箭头必须分成两层。
+Ford--Maynard Lemma 5.2的 `h=2,s=1`部分只有两类 ordered raw occurrences，exact
+outer constants为 `+2,-1`。冻结一个 derived source-slot/bitmask routing后，每个
+nonzero occurrence exactly once落入 H2或 MASTER。于是无需先虚构 Mellin template，
+就能定义 canonical combined physical row
+
+```text
+beta_x^raw(t)
+ =1_(x/2<t<=x)
+  sum_(MASTER occurrences over t)
+    c_j product_i mu(e_i) log(f_1)/log t.              (20.1)
+```
+
+取 `x=2X`，它是 actual physical-window primorial covector；backward pullback先乘新
+prime deletion masks，再按 base residue periodize；仅在 no-wrap regime才是 pointwise
+mask公式。第一 `k=5,b=7` fixture因此真正非空：120 rows、92 active
+coordinates、cumulative exact rank 56，incremental ranks为 `(17,27,12)`。这说明
+
+```text
+HB2_RAW_MASTER_TO_PRIMORIAL_COVECTOR = PROVED_EXACT.   (20.2)
+```
+
+但 combined raw row不是 separated analytic family。此前失败 subsets的 joint cutoffs
+仍缺 literal Perron/Mellin domain、measure、`Xi/Kappa`、free/integrated semantics、
+`L1` norm与tails。因此
+
+```text
+SHB_D2_SEPARATED_TEMPLATE_REGISTRY = ABSENT,
+SHB_D2_ANALYTIC_SAVING = OPEN_NEW_THEOREM.             (20.3)
+```
+
+V19对 primal side取得更重要的罗盘修正。对 `gcd(P,p)=1`，`R_p`的 range恰由两条 fiber条件刻画：
+deleted copies为零、survivor copies常值。projection与 source innovation为
+
+```text
+Pi_p=alpha_p^(-1)R_pR_p^*,
+eta_p(V)=(I-Pi_p)V.                                   (20.4)
+```
+
+literal residual `w_x^(z)=Lambda(.+2)-b_x^(z)`不满足 homogeneous range。最小
+no-wrap same-shell two-survivor constancy witness为 `P_2=6,p_3=5,x=26`：同一
+parent的 survivors `14,26`有
+residual values `log2,0`。arbitrarily large反例由 sufficiently large distinct primes
+`a,b>z=(log x)^K`及 `x=ab+1,t=ab-2`给出。因此
+
+```text
+LITERAL_SHB_D2_RESIDUAL_AS_HOMOGENEOUS_R_SOURCE
+ = STOP_SCOPED_EXACT_FIBER_RANGE_VIOLATION.            (20.5)
+```
+
+source innovation `eta in V_child`与 V16 intertwiner defect
+`Err:V_k->B_(k+1)^dyn`不是同型。对任何 raw row只有 exact
+
+```text
+L_beta(V)
+ =L_(R_p^vee beta)(alpha_p^(-1)R_p^*V)
+  +L_beta(eta_p(V)).                                   (20.6)
+```
+
+所以“允许 nonzero Err”不自动支付 source innovation。下一主路是
+
+```text
+BRIDGE_B_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_RETURN
+  = SELECTED_OPEN_NEW_THEOREM.                         (20.7)
+```
+
+它要么构造 typed affine source cocycle
+`V_(j+1)=R_(p_(j+1))V_j+eta_(j+1)`，要么扩大 state使 residual只作 observable；
+随后在 primes `z=(log x)^K`到 physical square-root clock的 growing horizon上统一控制
+pulled raw rows对 `eta`的 deterministic physical evaluation，并把 eta-to-dynamics与
+V16 `Err`分别付账。这个 target可能很难，但它已经是一个精确可证伪的新定理，而不是
+“遍历性推出 seed 0”的换名。
+
+V19仍是 exact L0 architecture advance，不是 arithmetic advance。A1/A2、两个 O161
+parents、pair-native、H1与 global architecture保持独立 OPEN；fixed atom=`0`、strict
+`1/400=UNPAID`、`L2=NONE`、TPC-207=`false`。
 
 ## 19. V18 后的罗盘：typed windowed innovation，而不是 placeholder full hull
 

@@ -1,10 +1,11 @@
-# TPC big road V18: Bridge B typed backward-dual and forced-innovation highway
+# TPC big road V19: exact HB2 raw covectors and source-innovation highway
 
-更新时间：2026-08-06
+更新时间：2026-08-07
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_TYPED_CORE_BACKWARD_HULL_AND_ROUTE_REDESIGN`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_RAW_ROW_AND_SOURCE_INNOVATION_INTERFACE`
 
-当前主路线见第 18 节及 `bridge_b_backward_hull.md`；第 17 节与
+当前主路线见第 19 节及 `bridge_b_shbd2_innovation.md`；第 18 节与
+`bridge_b_backward_hull.md`继续冻结 V18 typed backward-dual contract，第 17 节与
 `bridge_b_observable_rank.md`继续冻结 V17 rank contract，第 16 节与
 `bridge_b_physical_intertwiner.md`继续冻结 V16 common physical-return contract。
 下列 analytic registry继续冻结 V15/A1 的独立 reserve，不因 Bridge B 的优先级变化而
@@ -1722,3 +1723,125 @@ canonical V18 registry为 32 rows，final-LF SHA-256
 `57ddfe6635fe56020516680d9be5732ea39196d0bac5f6d4492a9c7d7890cd9b`。
 V18不是 arithmetic advance；fixed-atom credit=`0`、strict `1/400=UNPAID`、
 `L2=NONE`、TPC-207 trigger=`false`。A1/A2继续作独立 analytic reserves。
+
+## 19. V19 Bridge B：raw HB2 row转正，homogeneous residual state停止
+
+V19不再把“actual emitted Type-II rows”与“separated Mellin templates”混成一个
+对象。Ford--Maynard Lemma 5.2 printed p.19对 `h=2,s=1`给出两个 exact ordered
+raw types：
+
+```text
+HB2-J1: +2 sum_(t=e_1f_1,e_1<=sqrt x)mu(e_1)log f_1,
+
+HB2-J2: -1 sum_(t=e_1e_2f_1f_2,e_i<=sqrt x)
+             mu(e_1)mu(e_2)log f_1.                  (19.1)
+```
+
+单位槽与 ordered multiplicity全部保留。V19冻结 derived deterministic routing：
+component用 source slot order，单位槽只在 grouping时移除，large component与
+no-large admissible subset分别取该顺序和 original-slot bitmask顺序的第一项。每个
+nonzero root-one occurrence因而 exactly once落入 H2或 MASTER。
+
+把同一 `t`的全部 MASTER occurrences重组，定义 combined physical row
+
+```text
+beta_x^raw(t)
+ =1_(x/2<t<=x)
+  sum_(MASTER o with product t)
+   c_(j(o)) product_i mu(e_i(o)) log(f_1(o))/log t.   (19.2)
+```
+
+它无需先做 Mellin/Perron separation，且在 `x=2X`后是 actual `(X,2X]`
+primorial covector。对 source stage `j>=k`的 raw pullback须先乘新 prime deletion
+masks、再按 `t=a mod P_k` periodize；仅在 `P_k>x`时退化为 pointwise mask公式。
+
+第一 `k=5,b=7` fixture现在非空且 exact：
+
+```text
+source-stage rows = 24+60+36=120,
+MASTER occurrences before pullback = 259551,
+H2 occurrences before pullback = 153885,
+active base coordinates = 92,
+stage ranks = 17,29,12,
+cumulative ranks = 17,44,56,
+incremental ranks = 17,27,12.                         (19.3)
+```
+
+rank 56不是 floating threshold。对每个 active coordinate `t`，全部 numerator位于
+同一 nonzero primitive prime-log direction；移除该 nonzero column scalar后，exact
+rational elimination给 rank 56。raw/Riesz norm分别保持
+`||L_v||=sqrt(P_5)||v||_2`；70-digit reproduction给 raw norm约
+`4.134..--6.416..`，但 physical condition number没有 rigorous log-interval certificate，
+仍记 `NOT_CERTIFIED`。
+
+这个正面结果只 materialize combined raw reassembly row。joint failed-subset cutoffs的
+separated presentation仍缺 template IDs、`Xi/Kappa`、transform domain/measure、free
+versus integrated semantics、`L1` norm与tails。因此
+
+```text
+HB2_RAW_MASTER_TO_PRIMORIAL_COVECTOR = PROVED_EXACT,
+SHB_D2_SEPARATED_TEMPLATE_REGISTRY = ABSENT,
+SHB_D2_ANALYTIC_SAVING = OPEN_NEW_THEOREM.             (19.4)
+```
+
+V19又关闭一个更大的错误识别。对 `gcd(P,p)=1`的 pair replication map，child vector属于
+`ran R_p`当且仅当逐 parent fiber在两个 deleted copies上为零、在 `p-2` survivor
+copies上常值。精确 projection为
+
+```text
+Pi_p=alpha_p^(-1)R_pR_p^*,
+eta_p(V)=(I-Pi_p)V perpendicular to ran R_p.           (19.5)
+```
+
+最小 no-wrap same-shell two-survivor constancy witness是
+`P_2=6,p_3=5,x=26,X=13`。同一 parent `2 mod6`的
+survivors `14,26`均在 `(13,26]`；对全部 `z>=2`，两点 baseline都因 prime 2 local
+factor为零，但
+
+```text
+w_26^(z)(14)=Lambda(16)=log 2,
+w_26^(z)(26)=Lambda(28)=0.                            (19.6)
+```
+
+所以 literal residual不能是 homogeneous `R_5` source。该问题也不是小 stage偶然；
+`P_k>p_(k+2)^2`对 `k>=4`成立，而充分大 distinct primes `a,b>z=(log x)^K`取
+`x=ab+1,t=ab-2`给 `w_x^(z)(t)=-b_x^(z)(t)<0`。因此
+
+```text
+LITERAL_SHB_D2_RESIDUAL_AS_HOMOGENEOUS_R_SOURCE
+  = STOP_SCOPED_EXACT_FIBER_RANGE_VIOLATION.           (19.7)
+```
+
+source innovation与 V16 `Err`不是同型：前者是 child primal vector，后者是
+`V_k -> B_(k+1)^dyn` intertwiner defect。对任意 raw row有 exact one-step Duhamel
+
+```text
+L_beta(V)
+ =L_(R_p^vee beta)(alpha_p^(-1)R_p^*V)
+  +L_beta(eta_p(V)).                                   (19.8)
+```
+
+下一条主路因而改成
+
+```text
+BRIDGE_B_SHBD2_LONG_HORIZON_SOURCE_INNOVATION_RETURN
+  = SELECTED_OPEN_NEW_THEOREM.                         (19.9)
+```
+
+它必须让 source affine recursion、`eta` physical evaluation、eta-to-dynamics map与
+V16 `Err`分别 typed，并在 growing prime horizon上统一支付 transform/reassembly与
+strict `1/400` ledger。把 residual塞入 covector再作用于 constant state属于
+prime-dependent coefficient type change，不给 credit。
+
+完整 proof与 checker为
+
+```text
+research/tpc-big-road/bridge_b_shbd2_innovation.md
+research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py
+```
+
+canonical V19 registry为 30 rows，final-LF SHA-256
+`f17522e84c5c3a3de0ef0ab7ceb4f429e9aea8e89eee92d255d1b5d0fdc42342`。
+V19最高 claim是 exact L0 raw-row/source-innovation interface，不是 arithmetic
+advance；fixed-atom credit=`0`、strict `1/400=UNPAID`、`L2=NONE`、
+TPC-207 trigger=`false`。A1/A2、O161 parents、pair-native与H1/global继续独立 OPEN。
