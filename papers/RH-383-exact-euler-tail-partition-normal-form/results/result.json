@@ -1,0 +1,991 @@
+{
+  "certificate": {
+    "all_pass": true,
+    "claim_boundary": {
+      "finite_rows_are_reproduction_only": true,
+      "fixed_finite_q_before_N_limit": true,
+      "gates_A_through_E": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "no_PNT_or_p_y_rewrite": true,
+      "no_growing_clock_or_adaptive_capacity": true,
+      "no_operator_trace_zeros_or_RH": true,
+      "rho_is_not_square_clock_q": true,
+      "route_a": "GO",
+      "route_b": "STOP_SCOPED",
+      "universally_safe_phasewise_c11_zero_only": true
+    },
+    "counts": {
+      "af_coefficients": 864,
+      "channel_equivalence": 144,
+      "cubic_endpoint": 67,
+      "cubic_symbolic": 12,
+      "endpoint_normal_form": 67,
+      "gamma_equivalence": 1084,
+      "low_order": 33,
+      "m2_cancellation": 1151,
+      "negative_mutations": 20,
+      "q_signs": 432,
+      "remainder": 804,
+      "successor_tail": 7,
+      "terminal": 4
+    },
+    "partition_count_degrees_1_through_12": 271,
+    "proof_ledger": {
+      "absolute_convergence": "for c<=7, sum_r c^r P_r/r converges absolutely because c*a_(j+1)<=7/24 and sum a_(j+1)<infinity",
+      "endpoint_products": "A_c=exp(Phi_c)=product(1-ca)^(-1), F_c=exp(Phi_c-Phi_1)=product(1-a)/(1-ca)",
+      "finite_rows_are_reproduction_only": true,
+      "general_vs_special": "the 92/3 arbitrary-order ledger does not inherit the sharper RH-381 or RH-382 special-purpose constants",
+      "increment_memory_bound": "sum_(m=3)^8 |eta_m|u_m<=14 and the successor loss s>=1 give |Gamma_M,n|<=4*rho^n/3",
+      "increment_x_bound": "sum_(m=4)^8 |xi_m|u_m<=35/4 gives |Gamma_X,n|<=5*rho^n/2",
+      "m2": "for every nonempty partition, the endpoint alpha_2 and beta_2 terms cancel exactly",
+      "partition_sign": "exp(-Phi_1) uses (-1)^length(lambda); 1-exp(-Phi_1) uses (-1)^(length(lambda)+1)",
+      "tail_bound": "rho<=7/8 and sum_(n>D)rho^n<=8*rho^(D+1), hence 20+32/3=92/3"
+    },
+    "sections": {
+      "af_coefficients": {
+        "all_pass": true,
+        "coefficient_count": 864,
+        "coefficient_digest": "37a0693537a380e4f4489fad0bcb9426d46ba18fc50a0acbdf9d63eeb7f11f1d",
+        "coefficient_samples": [
+          {
+            "c": 2,
+            "degree": 1,
+            "endpoint": 2,
+            "kind": "A",
+            "pass": true,
+            "start": 1
+          },
+          {
+            "c": 2,
+            "degree": 1,
+            "endpoint": 2,
+            "kind": "F",
+            "pass": true,
+            "start": 1
+          },
+          {
+            "c": 7,
+            "degree": 12,
+            "endpoint": 19,
+            "kind": "A",
+            "pass": true,
+            "start": 18
+          },
+          {
+            "c": 7,
+            "degree": 12,
+            "endpoint": 19,
+            "kind": "F",
+            "pass": true,
+            "start": 18
+          }
+        ],
+        "q_sign_count": 432,
+        "q_sign_digest": "f689e1302dd73d7ff577280f396099bed526e0f289e002d096eb64455b72d309",
+        "q_sign_redundancy_note": "432 labeled rows repeat 72 tail/degree Q identities under six inert c labels; Q is independent of c, and the repetitions are not 432 different theorems",
+        "q_sign_samples": [
+          {
+            "a_minus_f_nonnegative_separate_check": true,
+            "c_label": 2,
+            "c_label_is_redundant": true,
+            "degree": 1,
+            "endpoint": 2,
+            "pass": true,
+            "q_elementary": "-1/24",
+            "q_partition": "-1/24",
+            "start": 1
+          },
+          {
+            "a_minus_f_nonnegative_separate_check": true,
+            "c_label": 2,
+            "c_label_is_redundant": true,
+            "degree": 2,
+            "endpoint": 2,
+            "pass": true,
+            "q_elementary": "0",
+            "q_partition": "0",
+            "start": 1
+          },
+          {
+            "a_minus_f_nonnegative_separate_check": true,
+            "c_label": 7,
+            "c_label_is_redundant": true,
+            "degree": 11,
+            "endpoint": 19,
+            "pass": true,
+            "q_elementary": "0",
+            "q_partition": "0",
+            "start": 18
+          },
+          {
+            "a_minus_f_nonnegative_separate_check": true,
+            "c_label": 7,
+            "c_label_is_redundant": true,
+            "degree": 12,
+            "endpoint": 19,
+            "pass": true,
+            "q_elementary": "0",
+            "q_partition": "0",
+            "start": 18
+          }
+        ]
+      },
+      "channel_equivalence": {
+        "all_pass": true,
+        "count": 144,
+        "row_digest": "edc0ca33883f774ace2b7317d15ee0d7d3994b17f9e37f067fcbcdd3cf51824e",
+        "samples": [
+          {
+            "channel": "numerator",
+            "degree": 1,
+            "endpoint": 2,
+            "pass": true,
+            "start": 1
+          },
+          {
+            "channel": "memory",
+            "degree": 1,
+            "endpoint": 2,
+            "pass": true,
+            "start": 1
+          },
+          {
+            "channel": "numerator",
+            "degree": 12,
+            "endpoint": 19,
+            "pass": true,
+            "start": 18
+          },
+          {
+            "channel": "memory",
+            "degree": 12,
+            "endpoint": 19,
+            "pass": true,
+            "start": 18
+          }
+        ]
+      },
+      "cubic": {
+        "all_pass": true,
+        "endpoint_count": 67,
+        "endpoint_digest": "26682674760fb2035267ae7cc6a7299c291dd0144e658681c399e1ce90be2335",
+        "frozen_vectors": {
+          "(1, 1, 1)": {
+            "2": "0",
+            "3": "4",
+            "4": "-22/3",
+            "5": "20/3",
+            "6": "2",
+            "7": "-68/3",
+            "8": "178/3"
+          },
+          "(2, 1)": {
+            "2": "0",
+            "3": "4",
+            "4": "10",
+            "5": "-52",
+            "6": "134",
+            "7": "-268",
+            "8": "466"
+          },
+          "(3,)": {
+            "2": "0",
+            "3": "-8",
+            "4": "100/3",
+            "5": "-248/3",
+            "6": "164",
+            "7": "-856/3",
+            "8": "1364/3"
+          }
+        },
+        "symbolic_count": 12,
+        "symbolic_digest": "1ef44623276de9d3526a197df80db106ee773e67538a26c2e99af3d809947c8a"
+      },
+      "endpoint_normal_form": {
+        "all_pass": true,
+        "count": 67,
+        "row_digest": "26682674760fb2035267ae7cc6a7299c291dd0144e658681c399e1ce90be2335",
+        "samples": [
+          {
+            "endpoint": 8,
+            "pass": true,
+            "start": 1
+          },
+          {
+            "endpoint": 8,
+            "pass": true,
+            "start": 2
+          },
+          {
+            "endpoint": 32,
+            "pass": true,
+            "start": 30
+          },
+          {
+            "endpoint": 32,
+            "pass": true,
+            "start": 31
+          }
+        ]
+      },
+      "gamma_equivalence": {
+        "all_pass": true,
+        "gamma_count": 1084,
+        "gamma_digest": "5f7a329c03f5f45f097bd8609bae2bcc5d05fafeb3de022c6433a0c2ee07d247",
+        "gamma_redundancy_note": "1084=271 unique symbolic partitions times four endpoint labels; these are labeled exact evaluations, not 1084 different identities",
+        "gamma_samples": [
+          {
+            "endpoint": 8,
+            "partition": [
+              1
+            ],
+            "pass": true
+          },
+          {
+            "endpoint": 8,
+            "partition": [
+              2
+            ],
+            "pass": true
+          },
+          {
+            "endpoint": 32,
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "pass": true
+          },
+          {
+            "endpoint": 32,
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "pass": true
+          }
+        ],
+        "m2_direct_count": 67,
+        "m2_direct_digest": "26682674760fb2035267ae7cc6a7299c291dd0144e658681c399e1ce90be2335",
+        "m2_partition_count": 1084,
+        "m2_partition_digest": "5f7a329c03f5f45f097bd8609bae2bcc5d05fafeb3de022c6433a0c2ee07d247",
+        "m2_redundancy_note": "1151=271 unique symbolic cancellations times four endpoint labels, plus 67 direct finite telescopes; this is not 1151 distinct all-order theorems",
+        "m2_total_count": 1151
+      },
+      "low_order": {
+        "all_pass": true,
+        "count": 33,
+        "redundancy_note": "33 endpoint-labeled bundles repeat the same three symbolic coefficient identities; these are not 33 different theorems",
+        "row_digest": "06a79be49bebd24ec1f81e25228038c6b134b0d1e30b1410b30ac56f783d2534",
+        "samples": [
+          {
+            "checks": {
+              "(1, 1)": true,
+              "(1,)": true,
+              "(2,)": true
+            },
+            "endpoint": 1,
+            "pass": true
+          },
+          {
+            "checks": {
+              "(1, 1)": true,
+              "(1,)": true,
+              "(2,)": true
+            },
+            "endpoint": 2,
+            "pass": true
+          },
+          {
+            "checks": {
+              "(1, 1)": true,
+              "(1,)": true,
+              "(2,)": true
+            },
+            "endpoint": 32,
+            "pass": true
+          },
+          {
+            "checks": {
+              "(1, 1)": true,
+              "(1,)": true,
+              "(2,)": true
+            },
+            "endpoint": 33,
+            "pass": true
+          }
+        ],
+        "statement": "gamma_(1)=2X; gamma_(1,1)=Y+2m; gamma_(2)=Y-2m, retaining the independent P2 sign"
+      },
+      "negative_mutations": {
+        "all_pass": true,
+        "count": 20,
+        "rejected": 20,
+        "rows": [
+          {
+            "expected_digest": "7b3798e7bd6d28994342bbfa6cfe418a8499b4f88a465675a5052dce449fbec3",
+            "mutation": "Q_length_parity_replaced_by_total_degree_2",
+            "pass": true,
+            "wrong_digest": "380c3d51d25b66ccf1f793e68b7c83912702db201d48dd30294022d8ca953c36"
+          },
+          {
+            "expected_digest": "50cd7a7a4b48448861ecb8c6cc106e6e75efe59f567f7649d383671e654f21be",
+            "mutation": "Q_length_parity_replaced_by_total_degree_3",
+            "pass": true,
+            "wrong_digest": "362b09af4716b8089d40ffbd63b1d16925b4799dc0fd41c9dd3b2ab511deae84"
+          },
+          {
+            "expected_digest": "98089e6d36f78e9766c9ea34d5acb3611f3a92cd81c5eb102095d924ffc7d08b",
+            "mutation": "Q_length_parity_replaced_by_total_degree_4",
+            "pass": true,
+            "wrong_digest": "9c6da8dc5d7cc7fd3829d9ed89fb6467f6528b4b467c139b1c19059050540fe9"
+          },
+          {
+            "expected_digest": "57f47a0df1a6a6df186e119ffc36d6239b2fefe73bf612124d5eb6e0696f0ef2",
+            "mutation": "gamma_omit_multiplicity_factorial_(1, 1, 1)",
+            "pass": true,
+            "wrong_digest": "9204e38a5b0323b6129de026b2dfcff99cd7a4620968dd67fe2b256daf50e4a7"
+          },
+          {
+            "expected_digest": "50a99448b9435bea1f662d80d7c12b418067cbc5a4c33209bae5cd9bd3082aad",
+            "mutation": "gamma_omit_part_power_(2,)",
+            "pass": true,
+            "wrong_digest": "9ed844e496d35eaa94f010a2ca065930a77e679369ae69f701cc0503e9b1979d"
+          },
+          {
+            "expected_digest": "560f1d96276d81d7bf4cea8c9867f1d65d8013f4883056c0eab34ac35d529742",
+            "mutation": "gamma_replace_z_by_degree_factorial_(2, 1)",
+            "pass": true,
+            "wrong_digest": "a562fb35c860c3d9896d514f5c7a6125b22571f275710060abbd5705db72f483"
+          },
+          {
+            "expected_digest": "178c5e39d056a5f8da102f3538c3b7be64b402639c5a51b9a3d959f6078f2e85",
+            "mutation": "successor_tail_replaced_by_current_in_full_gap",
+            "pass": true,
+            "wrong_digest": "774454a020e166710786171679521a4a6bba51d6e5b853d1637a3db47932bc5b"
+          },
+          {
+            "expected_digest": "d9d90b9d336bd9cd460599f5e289c98221c4c92456118a1665a661c6396d7b69",
+            "mutation": "endpoint_C_prefactor_2_replaced_by_1",
+            "pass": true,
+            "wrong_digest": "d121e44c4aa414427e13b675895fee1c7eaf90b5156337ff958772d32db05139"
+          },
+          {
+            "expected_digest": "d9d90b9d336bd9cd460599f5e289c98221c4c92456118a1665a661c6396d7b69",
+            "mutation": "endpoint_memory_prefactor_4_replaced_by_2",
+            "pass": true,
+            "wrong_digest": "a66ce2ec72c0295017f2639fca575aaadb797245f8fafc406431f123ce58682d"
+          },
+          {
+            "expected_digest": "98089e6d36f78e9766c9ea34d5acb3611f3a92cd81c5eb102095d924ffc7d08b",
+            "mutation": "m2_endpoint_alpha_minus2_replaced_by_minus1",
+            "pass": true,
+            "wrong_digest": "1214b192bd91caef232936e17d9eb0f14540c007dca2df1ecdb7bf2749da281c"
+          },
+          {
+            "expected_digest": "98089e6d36f78e9766c9ea34d5acb3611f3a92cd81c5eb102095d924ffc7d08b",
+            "mutation": "m2_endpoint_beta_1_replaced_by_2",
+            "pass": true,
+            "wrong_digest": "a4786e87c2788e137f5e716bf8eba8a2d83b9e809a3ccf5043ccd1099a015a1d"
+          },
+          {
+            "expected_digest": "57f47a0df1a6a6df186e119ffc36d6239b2fefe73bf612124d5eb6e0696f0ef2",
+            "mutation": "cubic_memory_A_minus_F_replaced_by_A_plus_F",
+            "pass": true,
+            "wrong_digest": "7b07ecc4a8bc953fe480770c2b4ee5f762a0860895e5ebac778e0b6288f25b31"
+          },
+          {
+            "expected_digest": "560f1d96276d81d7bf4cea8c9867f1d65d8013f4883056c0eab34ac35d529742",
+            "mutation": "cubic_factor_c_power_minus1_replaced_by_c_power_plus1",
+            "pass": true,
+            "wrong_digest": "020c7083f4a304e9716224b588ce52bbcb73f3bd4343975f957efa085032fd75"
+          },
+          {
+            "expected_digest": "02bcf23a18fc68a8aa4fca8dadffbafa30b72745bb0a0684e9916f2615707e9f",
+            "mutation": "increment_xi_m4_2_replaced_by_1",
+            "pass": true,
+            "wrong_digest": "88ca5de53b3e1d23190c298cd6441b45a7fd3d9ed539ef868338ebe8380e5b8e"
+          },
+          {
+            "expected_digest": "02bcf23a18fc68a8aa4fca8dadffbafa30b72745bb0a0684e9916f2615707e9f",
+            "mutation": "increment_eta_m4_minus4_replaced_by_2",
+            "pass": true,
+            "wrong_digest": "49b9e6163c6626e2c84d86bee95ab2e438bcd58e0159bf3c9f129ccaba378ffd"
+          },
+          {
+            "mutation": "D_bool",
+            "pass": true,
+            "rejected_exception": "ValueError"
+          },
+          {
+            "mutation": "D_float",
+            "pass": true,
+            "rejected_exception": "ValueError"
+          },
+          {
+            "mutation": "D_zero",
+            "pass": true,
+            "rejected_exception": "ValueError"
+          },
+          {
+            "mutation": "terminal_R8_second_difference_E10",
+            "pass": true,
+            "rejected_exception": "ValueError"
+          },
+          {
+            "expected_digest": "982198b1d1c1e384bd9be3641189a3cd282ae87b833a93ee7286d5b5f485ddfc",
+            "mutation": "rho_7T_replaced_by_T_in_remainder_bound",
+            "pass": true,
+            "wrong_digest": "8535b8dd4204884159415854324ba76c3d02d23f812c33111ad2d4e79e06b511",
+            "wrong_residual_to_bound": "150526912975424127758776655/122900326556978949321129984"
+          }
+        ]
+      },
+      "remainder": {
+        "all_pass": true,
+        "bound": "abs(pi^2 R_D)<=92*rho^(D+1)/3, hence abs(R_D)<=92*rho^(D+1)/(3*pi^2)",
+        "count": 804,
+        "row_digest": "3357ae233a224c16c0a87cf3c2234f0cbe54e6adb8ab3890b12568e6de0f1e34",
+        "samples": [
+          {
+            "D": 1,
+            "endpoint": 8,
+            "pass": true,
+            "start": 1
+          },
+          {
+            "D": 2,
+            "endpoint": 8,
+            "pass": true,
+            "start": 1
+          },
+          {
+            "D": 11,
+            "endpoint": 32,
+            "pass": true,
+            "start": 31
+          },
+          {
+            "D": 12,
+            "endpoint": 32,
+            "pass": true,
+            "start": 31
+          }
+        ]
+      },
+      "remainder_ledger": {
+        "all_pass": true,
+        "endpoint_alpha_coefficients": {
+          "2": -2,
+          "3": 2,
+          "4": -2,
+          "5": 2,
+          "6": -2,
+          "7": 2,
+          "8": -2
+        },
+        "endpoint_beta_coefficients": {
+          "2": 1,
+          "3": -2,
+          "4": 2,
+          "5": -2,
+          "6": 2,
+          "7": -2,
+          "8": 2
+        },
+        "geometric_tail_factor": 8,
+        "increment_memory_coefficients": {
+          "3": 2,
+          "4": -4,
+          "5": 6,
+          "6": -8,
+          "7": 10,
+          "8": -12
+        },
+        "increment_x_coefficients": {
+          "4": 2,
+          "5": -4,
+          "6": 6,
+          "7": -8,
+          "8": 10
+        },
+        "memory_absolute_sum": "14",
+        "memory_absolute_terms": {
+          "3": "3/2",
+          "4": "5/2",
+          "5": "3",
+          "6": "3",
+          "7": "5/2",
+          "8": "3/2"
+        },
+        "memory_homogeneous": "4/3",
+        "memory_phi_loss_factor": "1/42",
+        "memory_tail": "32/3",
+        "nomenclature_firewall": "35/4 and 14 belong only to increment XI/ETA, never endpoint ALPHA/BETA",
+        "published_coarse_pi2": 31,
+        "total_pi2": "92/3",
+        "x_absolute_sum": "35/4",
+        "x_absolute_terms": {
+          "4": "5/4",
+          "5": "2",
+          "6": "9/4",
+          "7": "2",
+          "8": "5/4"
+        },
+        "x_homogeneous": "5/2",
+        "x_tail": "20"
+      },
+      "successor_tail": {
+        "all_pass": true,
+        "count": 7,
+        "indexing": "the memory loss begins at j+1, the strict successor suffix",
+        "row_digest": "544a5ee3857cb635a2adcd147c86270d8f1602ba859f9981e6effbf1fcb317c9",
+        "rows": [
+          {
+            "endpoint": 32,
+            "pass": true,
+            "start": 1
+          },
+          {
+            "endpoint": 32,
+            "pass": true,
+            "start": 2
+          },
+          {
+            "endpoint": 32,
+            "pass": true,
+            "start": 3
+          },
+          {
+            "endpoint": 32,
+            "pass": true,
+            "start": 5
+          },
+          {
+            "endpoint": 32,
+            "pass": true,
+            "start": 8
+          },
+          {
+            "endpoint": 32,
+            "pass": true,
+            "start": 12
+          },
+          {
+            "endpoint": 32,
+            "pass": true,
+            "start": 18
+          }
+        ]
+      },
+      "terminal": {
+        "all_pass": true,
+        "construction": "R_l=P(E_l-2E_(l+1)+E_(l+2)) only for l<=7; R8=P*E8 separately; E9=0; no E10",
+        "count": 4,
+        "rows": [
+          {
+            "E10_constructed": false,
+            "E9": "0",
+            "P_E8": 1,
+            "R8": 1,
+            "pass": true,
+            "y": 1
+          },
+          {
+            "E10_constructed": false,
+            "E9": "0",
+            "P_E8": 17,
+            "R8": 17,
+            "pass": true,
+            "y": 2
+          },
+          {
+            "E10_constructed": false,
+            "E9": "0",
+            "P_E8": 697,
+            "R8": 697,
+            "pass": true,
+            "y": 3
+          },
+          {
+            "E10_constructed": false,
+            "E9": "0",
+            "P_E8": 3563226401,
+            "R8": 3563226401,
+            "pass": true,
+            "y": 6
+          }
+        ]
+      }
+    },
+    "status": "RH-383_exact_euler_tail_partition_certificate"
+  },
+  "certificate_fixture": {
+    "bytes": 12245,
+    "matches": true,
+    "sha256": "9e2742fcdb2f626909eeb528c5081c9ace5414a1e6466c15b8b6800f427b6f16"
+  },
+  "claim_boundary": {
+    "first_unresolved_object": "a phase-weighted shift-two correlation theorem for active c11(r), or a new theorem-backed independent route",
+    "notes": [
+      "The N-limit is taken at fixed finite q before the cofinal square-clock index tends to infinity.",
+      "The theorem is restricted to universally safe phasewise tables with c11(r)=0 at every phase.",
+      "The partition loss sign is controlled by partition length, not total degree.",
+      "The memory increment uses the strict successor tail j+1.",
+      "The general 92/3 bound does not inherit RH-381 or RH-382's sharper special-purpose constants.",
+      "Finite rows reproduce and attack symbolic identities; they are not fits or asymptotic evidence.",
+      "No PNT, p_y rewrite, q=q(N), active-c11 theorem, or adaptive-capacity convergence is claimed.",
+      "No operator, determinant, prime-power trace, zero identification, Hilbert--Polya construction, RH implication, or Gate promotion is claimed."
+    ],
+    "route_a": "GO",
+    "route_b": "STOP_SCOPED"
+  },
+  "forbidden_claims": {
+    "active_c11_controlled": false,
+    "adaptive_capacity_limit_proved": false,
+    "finite_fit_promoted": false,
+    "growing_clock_q_of_N_used": false,
+    "hilbert_polya_operator_constructed": false,
+    "p_y_asymptotic_claimed": false,
+    "prime_number_theorem_used": false,
+    "riemann_hypothesis_proved": false,
+    "riemann_zeros_identified": false,
+    "von_mangoldt_trace_formula_proved": false
+  },
+  "gates": {
+    "A_canonical_intrinsic_dynamical_spectral_determinant": false,
+    "B_time_oriented_scattering_or_unitary_completion": false,
+    "C_self_adjoint_generator_and_intrinsic_T_log_T": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "predecessor_checks": {
+    "all_pass": true,
+    "mvp2_gates_pass": true,
+    "rh374_status_pass": true,
+    "rh379_status_pass": true,
+    "rh380_status_pass": true,
+    "rh381_status_pass": true,
+    "rh382_status_pass": true,
+    "rh382_two_scale_sign_pass": true
+  },
+  "reproduction": {
+    "finite_rows_only": true,
+    "low_order_redundancy": "33 endpoint-labeled bundles repeat the same three symbolic coefficient identities and are not 33 separate theorems",
+    "q_sign_redundancy": "432 c-labeled rows share 72 tail/degree positions and are not 432 separate theorems",
+    "three_independent_oracles": [
+      "endpoint C/W canonical partition compiler",
+      "ordered increment Gamma/h/e/Phi compiler with successor tail",
+      "A_c/F_c telescope direct-gap compiler"
+    ]
+  },
+  "source_commits": {
+    "rh374_release": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+    "rh379_release": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+    "rh380_release": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+    "rh381_release": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+    "rh382_release": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+    "rh_mvp2_archive": "c0aed13a34b8bbc53061aed23738660adcd3624c"
+  },
+  "source_locks": {
+    "all_source_digest": "492100fe3b6b823a39b58cec25b0dcddf6d52c02bd1941f0978611f01a2b8db9",
+    "count": 41,
+    "digest_contract_pass": true,
+    "entries": [
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/README.md",
+        "sha256": "dbc0041d012d6316ef6a8ffab6f05d510a1cc68414eae30c3744a7c411925c4c"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/THEOREM_LEDGER.md",
+        "sha256": "9451ee6faf1f523a62a10c85ba494b8617011dab7b8d7bc517e7c0c26aabb4ee"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/UPDATED_ROADMAP.md",
+        "sha256": "c6857ef5bc9cd88074108254fc39a93e985daae7fa545e26badbfdfc086bf28c"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/main.tex",
+        "sha256": "2129075ec4bae1c5f0f25fcd09cec273fe322d44116d51e5191e3cade4fb9f6d"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/references.bib",
+        "sha256": "ce1e5123ff7edc05c6436f2534044e7058b4a3857bf0f084971954ced3e7c184"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/results/result.json",
+        "sha256": "ca492e96bd557b966d7924ee7acca7eceb9248dafe513a674f36f78891438bdd"
+      },
+      {
+        "commit": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+        "group": "rh374_release",
+        "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/src/square_clock/core.py",
+        "sha256": "79afe7d583c3db30f876c62605a42f2ee77819028a40d01a3ec24d3259a40615"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/README.md",
+        "sha256": "8beb603782f40db86031515d3a70d82e4f76cdf10d60561062d88ff581daffe5"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/THEOREM_LEDGER.md",
+        "sha256": "7229a3969c48463724ed573b4dde1da3e8a48790ebe7663af68b1139a033c2bb"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/UPDATED_ROADMAP.md",
+        "sha256": "75c243a5ae12fbe71cdb2ce3cb3c46a8e7a61d016dd6c8dba2b98b6b9dac3464"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/main.tex",
+        "sha256": "c5d97a227398a4f1d46a39fdec73ffb86aeb9bfc0f16296be7023b187b497090"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/references.bib",
+        "sha256": "d728ca8571bfcc96e78be3b5231db83c3bb61140d0dfabb3be0b4848738673c6"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.json",
+        "sha256": "a209b922ad6235263bb5213d090a2fb0ad0bcfdd0168788e64115b33d95a4ca8"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.schema.json",
+        "sha256": "0af712350369e3f7e4a51ce5a8ee1179928e9397372b7b1040183dc3668406df"
+      },
+      {
+        "commit": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+        "group": "rh379_release",
+        "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/src/phasewise_memory/core.py",
+        "sha256": "cd3949cc0a1ece1dadab59c049c8a4d3fc170a9c7b6332b93ad62567277fd582"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/README.md",
+        "sha256": "eb241b1fd954ba689750d47dd51ae7cd5980c2bb7706165e3fcbab2e2375bc23"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/THEOREM_LEDGER.md",
+        "sha256": "c274c2a5685ba6d472d392c5097149742e432e938aeb61fd3f5b7f001a382c7a"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/UPDATED_ROADMAP.md",
+        "sha256": "8a82e86bf66248d5dda44ca806fd2c5d974530b5b7e85baac25c0aa98f41ce1d"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/main.tex",
+        "sha256": "6110b876e1b31fe79e7ff72e5058d97179575cf1dccce86e8c7c0a049d57451f"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/references.bib",
+        "sha256": "5ea4b95e74c63e47b5eb6a92564941748fb02fc7e7729efe05f52932bb657604"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.json",
+        "sha256": "e7e6bc2acc46b9346e2fdd90306e9f8c5fb18c193ed0601466bbf4e01a92be33"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.schema.json",
+        "sha256": "62bb03f0e61043bdeda0bf49afcbc0877d95115ca677e7cda20a73d955c5a57f"
+      },
+      {
+        "commit": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+        "group": "rh380_release",
+        "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/src/finite_clock_gap/core.py",
+        "sha256": "ed88dd657fcf4c3fa4ae1c2cd2d0a434770433e7cffd0b52297faab1d5459074"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/README.md",
+        "sha256": "891ebd30acfbffd90cddda3bd96719f01d7cae13eec399894b08c0c20435dae3"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/THEOREM_LEDGER.md",
+        "sha256": "a7a79197bba2a423cff77f6f74e63c8621a40c2bcef368e5ce6ce954857edcda"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/UPDATED_ROADMAP.md",
+        "sha256": "f2ea88b81441c78171a2a54d85ddc7f2a405ae78b94cac43ca6f6ae46048d703"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/main.tex",
+        "sha256": "b1025502880530602f134ea5bdc6dcde34e2cdfd18fb364cb104343d456b643a"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/references.bib",
+        "sha256": "bb61978aebc465b05e3ffda154926ad20bb15e4a475e12304cc6147903d40625"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.json",
+        "sha256": "a7a869f40af0a17656b28a07fe58e337d9b8e619d13de8bc671326912f875ffd"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.schema.json",
+        "sha256": "ed1788580270f03bdcbb43172edf149f086b76564697dd93e1556282855aad5b"
+      },
+      {
+        "commit": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+        "group": "rh381_release",
+        "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/src/prime_square_tail/core.py",
+        "sha256": "acc1e11ff57b634ec702996526f4ddd12ac58d372236a8d77202b529faca9322"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/README.md",
+        "sha256": "5f818841bb7db7c8b27e75d892a2fa6f3de549edb7456f65fb2275b82356203a"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/THEOREM_LEDGER.md",
+        "sha256": "1c835ef614fd9381c08019f0cb5358c829bafdb2e7502861649566508b4ea586"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/UPDATED_ROADMAP.md",
+        "sha256": "793e27292d6f99fc1c23a550e66b247bbc1aa1b5c0bfef266339697bf3b9e66e"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/main.tex",
+        "sha256": "929b4304390036843c5e4f0d165f3be45d683e36f2a7537a3a5d14ed197b5d0c"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/references.bib",
+        "sha256": "c8ea97c3b3626d27fc6a3ec0dca69aa87c4eb2b248ec410bc989aff0aa4f11dc"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.json",
+        "sha256": "960ef6ce017ad62b6c552ed30a41b9f0c3e41a9a217ef103c4a3f812c80a71d2"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.schema.json",
+        "sha256": "573b631820edd3b911b9792f9587fee07a03cf13ecefd03a6247d115cfa42394"
+      },
+      {
+        "commit": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+        "group": "rh382_release",
+        "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/src/two_scale_tail/core.py",
+        "sha256": "3fd8bd0233385aeb440d0703769ea6b624792aef4460ec5b887116fe3554b56e"
+      },
+      {
+        "commit": "c0aed13a34b8bbc53061aed23738660adcd3624c",
+        "group": "rh_mvp2_archive",
+        "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json",
+        "sha256": "3cf3261c0c2c6fbe7511b16615f032edfcbd6b6b1e0c73f5e2ef932a1e6a694c"
+      },
+      {
+        "commit": "c0aed13a34b8bbc53061aed23738660adcd3624c",
+        "group": "rh_mvp2_archive",
+        "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json",
+        "sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751"
+      }
+    ],
+    "group_digests": {
+      "rh374_release": "1110169db1afe2bcb1242cd8284665be9681f955ff942b23908a9401635695ff",
+      "rh379_release": "c029ccbe0b499a38f675292c2260cfde5d4b7aede6c6ddee9f87d2c816ecd848",
+      "rh380_release": "3c488551cf9b8bdf6a4509b1f39af2119ea6b2ac401bda3cb63f87df38a0e751",
+      "rh381_release": "5d07b1b897aa36127f2f190517229534719f37ce0f3ff904d1c31adebae6c9df",
+      "rh382_release": "ca26217907f59b219ba2d2b3e4e77ec6e344d036c3a8a92ab5683497d3309f7e",
+      "rh_mvp2_archive": "c22c0a9e4702c3bc615acfc19e564cbfd7d08a3bc845b28c659511065c05989b"
+    },
+    "mutable_root_files_excluded": true,
+    "pass": true,
+    "release_blob_identity_pass": true
+  },
+  "status": "RH-383_exact_euler_tail_partition_normal_form",
+  "theorem": {
+    "cubic_block": "gamma_111, gamma_21 and gamma_3 are frozen exactly in the manuscript and certificate",
+    "endpoint_normal_form": "pi^2(B_infinity-G(q_y))=2(C(u)-C(U^(y)))-4W(U^(y))(1-exp(-Phi_1(y)))",
+    "endpoint_ratios": "U_m^(y)=u_m exp(Phi_(m-1)(y)); H_y=(4/pi^2)exp(-Phi_1(y))",
+    "factor_class": "fixed finite q before N tends to infinity; universally safe phasewise lag-two tables with c11(r)=0 at every phase",
+    "m2_cancellation": "the m=2 contribution vanishes exactly for every nonempty partition",
+    "partition_compiler": "gamma_lambda=-(2/z_lambda)sum alpha_m u_m(m-1)^d-(4/z_lambda)sum beta_m u_m((m-1)^d-product_r((m-1)^r-1)^k_r)",
+    "power_sums": "P_r(y)=sum_(j>=y)a_(j+1)^r; Phi_c(y)=sum_(r>=1)c^r P_r(y)/r; a_(j+1)=1/(p_(j+1)^2-1)",
+    "prime_distribution_input": "no prime number theorem and no p_y-scale rewrite is used",
+    "remainder": "for exact integer D>=1 and rho_y=7T_y<=7/8, abs(R_(D,y))<=92*rho_y^(D+1)/(3*pi^2)<31*rho_y^(D+1)/pi^2",
+    "terminal": "R8=P_y*E8 is separate; E9=0 from p=3; E10 is not used or constructed"
+  }
+}

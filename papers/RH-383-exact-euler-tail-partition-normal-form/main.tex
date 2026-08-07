@@ -1,0 +1,655 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\mob}{\mu}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\ellp}{\ell}
+\newcommand{\Afun}{\mathsf A}
+\newcommand{\Ffun}{\mathsf F}
+
+\hypersetup{
+  pdftitle={An Exact Euler-Tail Partition Normal Form for the Square-Clock Gap},
+  pdfauthor={RH research program},
+  pdfsubject={All-order prime-square Euler-tail expansion in a fixed phasewise Mobius factor class},
+  pdfkeywords={Mobius function, Euler product, partitions, power sums, finite clocks, exact normal form}
+}
+
+\title{An Exact Euler-Tail Partition Normal Form\\
+for the Square-Clock Gap}
+\author{RH research program}
+\date{August 7, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Inside the fixed finite-clock, universally distance-two-safe phasewise
+lag-two class with $c_{11}(r)=0$ at every phase, we give an exact all-order
+normal form for the square-clock gap.  With
+\[
+ a_{j+1}=\frac1{p_{j+1}^{2}-1},\qquad
+ P_r(y)=\sum_{j\ge y}a_{j+1}^{r},\qquad
+ \Phi_c(y)=\sum_{r\ge1}\frac{c^rP_r(y)}r,
+\]
+the finite Euler ratios and squarefree tail satisfy
+\[
+ U_m^{(y)}=u_m e^{\Phi_{m-1}(y)},\qquad
+ H_y=\frac4{\pi^2}e^{-\Phi_1(y)}.
+\]
+Writing
+\[
+ C(V)=1-2V_2+2V_3-\cdots-2V_8,
+ \qquad W(V)=V_2-2V_3+\cdots+2V_8,
+\]
+we prove
+\[
+ \pi^2\bigl(B_\infty-G(q_y)\bigr)
+ =2\bigl(C(u)-C(U^{(y)})\bigr)
+  -4W(U^{(y)})\bigl(1-e^{-\Phi_1(y)}\bigr).
+\]
+Every homogeneous coefficient is then compiled by a finite partition
+formula.  The $m=2$ channel cancels at every nonempty partition, the first
+two layers recover RH-381 and RH-382 with the independent $P_2$ sign, and a
+new cubic block is displayed explicitly.  If $\rho_y=7P_1(y)\le7/8$, then
+for every integer $D\ge1$ the remainder after total degree $D$ obeys
+\[
+ |R_{D,y}|\le \frac{92}{3\pi^2}\rho_y^{D+1}
+ <\frac{31}{\pi^2}\rho_y^{D+1}.
+\]
+The proof is an absolutely convergent Euler-tail calculation, not a finite
+fit.  It supplies no growing-clock theorem, active-$c_{11}$ cancellation,
+operator, prime-power trace, zero identification, or implication for the
+Riemann hypothesis.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius function; prime-square Euler tail;
+integer partitions; exact power-sum expansion; finite clocks; uniform
+remainder.
+
+\section{Frozen class and predecessor identities}
+
+We retain exactly the class and order of limits fixed in RH-379--RH-382
+\cite{RH379,RH380,RH381,RH382}.  Nothing in this paper enlarges that class.
+
+\begin{definition}[Fixed-clock phasewise class]
+Fix an integer $q\ge1$ before taking $N\to\infty$.  At every phase
+$r\in\Z/q\Z$, choose
+\[
+ f_r:\{-1,0,1\}^2\longrightarrow\{-1,+1\},\qquad
+ \epsilon_n=f_{n\bmod q}\bigl(\mob(n-2),\mob(n)\bigr).
+\]
+The table is universally distance-two-safe if no ternary input can produce
+$\epsilon_n=\epsilon_{n+2}=+1$.  We further require the RH-379 interpolation
+coefficient $c_{11}(r)$ of $\mob(n-2)\mob(n)$ to vanish at every phase.
+The exact optimum after the fixed-$q$ prefix limit is denoted by $G(q)$.
+\end{definition}
+
+An active $c_{11}(r)$ produces a phase-weighted shift-two M\"obius
+correlation.  No theorem in the frozen source set controls that term, so it
+is excluded rather than averaged away.
+
+Let $3=p_1<p_2<\cdots$ be the odd primes and, for $1\le m\le9$, put
+\begin{equation}
+ E_m^{(y)}=\prod_{i\le y}\left(1-\frac m{p_i^2}\right),
+ \qquad
+ U_m^{(y)}=\frac{E_m^{(y)}}{E_1^{(y)}}\quad(1\le m\le8).
+ \label{eq:finite-ratios}
+\end{equation}
+The limiting ratios are
+\begin{equation}
+ e_m=\prod_{p\ \mathrm{odd}}\left(1-\frac m{p^2}\right),
+ \qquad u_m=\frac{e_m}{e_1}.
+ \label{eq:limit-ratios}
+\end{equation}
+For $m\le8$ all factors used below are positive; $E_9^{(y)}=0$ is handled
+separately.  RH-374 supplies $e_1=8/\pi^2$ and the finite run formula;
+RH-379 supplies the memory correction \cite{RH374,RH379}.  Put
+$A_y=\prod_{i\le y}(p_i^2-1)$, the positive-support count.  If $O_y$ and
+$\mathcal E_y$ denote the odd-run and even-run counts, those formulas give
+$O_y/A_y=C(U^{(y)})$ and $\mathcal E_y/A_y=W(U^{(y)})$.  In the notation
+\begin{align}
+ C(V)&=1-2V_2+2V_3-2V_4+2V_5-2V_6+2V_7-2V_8,\\
+ W(V)&=V_2-2V_3+2V_4-2V_5+2V_6-2V_7+2V_8,
+ \label{eq:CW}
+\end{align}
+their exact endpoint identities are
+\begin{equation}
+ B_y=\frac{4+2C(U^{(y)})}{\pi^2},\qquad
+ B_\infty=\frac{4+2C(u)}{\pi^2},
+ \label{eq:B-endpoints}
+\end{equation}
+and
+\begin{equation}
+ G(q_y)=B_y+W(U^{(y)})\left(\frac4{\pi^2}-H_y\right),
+ \qquad q_y=4\prod_{i\le y}p_i^2.
+ \label{eq:G-endpoint}
+\end{equation}
+These are frozen inputs, not conclusions inferred from the finite rows in
+Section~\ref{sec:artifact}.
+
+The terminal run convention also remains frozen.  Put
+$\mathcal P_y=\prod_{i\le y}p_i^2$.  Second differences are used only for
+lengths $1\le\ell\le7$,
+\[
+ R_\ell=\mathcal P_y(E_\ell-2E_{\ell+1}+E_{\ell+2}),
+\]
+whereas $R_8=\mathcal P_yE_8$ is separate.  The factor at $p=3$ gives $E_9=0$ in
+the licensed length-seven formula.  No $E_{10}$ is defined or needed.
+
+\section{Absolute Euler-tail coordinates}
+
+For $y\ge1$, set
+\begin{equation}
+ a_{j+1}=\frac1{p_{j+1}^2-1},\qquad
+ P_r(y)=\sum_{j\ge y}a_{j+1}^r,\qquad
+ T_y=P_1(y).
+ \label{eq:power-sums}
+\end{equation}
+Because the odd primes beyond $3$ form a subset of the odd integers at
+least $5$,
+\begin{equation}
+ 0<T_y\le\sum_{k\ge2}\frac1{(2k+1)^2-1}
+ =\frac14\sum_{k\ge2}\left(\frac1k-\frac1{k+1}\right)=\frac18.
+ \label{eq:T-bound}
+\end{equation}
+Also $a_{j+1}\le1/24$.  For $0\le c\le7$, define
+\begin{equation}
+ \Phi_c(y)=\sum_{r\ge1}\frac{c^rP_r(y)}r.
+ \label{eq:Phi}
+\end{equation}
+
+\begin{lemma}[Absolute convergence and products]
+\label{lem:absolute}
+For every $y\ge1$ and $0\le c\le7$, the series \eqref{eq:Phi} converges
+absolutely and
+\begin{equation}
+ \Afun_c(y):=e^{\Phi_c(y)}
+ =\prod_{j\ge y}(1-ca_{j+1})^{-1},
+ \qquad
+ \Ffun_c(y):=e^{\Phi_c(y)-\Phi_1(y)}
+ =\prod_{j\ge y}\frac{1-a_{j+1}}{1-ca_{j+1}}.
+ \label{eq:AF}
+\end{equation}
+All rearrangements into homogeneous power-sum series used below are
+absolutely convergent.
+\end{lemma}
+
+\begin{proof}
+Since $ca_{j+1}\le7/24<1$,
+\[
+ \sum_{j\ge y}\sum_{r\ge1}\frac{(ca_{j+1})^r}{r}
+ \le \frac{c}{1-7/24}\sum_{j\ge y}a_{j+1}<\infty.
+\]
+Thus Tonelli's theorem applies to the nonnegative absolute majorant, and
+the logarithmic product identities give \eqref{eq:AF}.  The signed series
+for $e^{-\Phi_1}$ is absolutely dominated by $e^{\Phi_1}$; multiplying by
+the finitely many $m$-channels preserves absolute convergence.
+\end{proof}
+
+\begin{theorem}[Exact endpoint normal form]
+\label{thm:endpoint}
+For every $y\ge1$ and $2\le m\le8$,
+\begin{equation}
+ U_m^{(y)}=u_m e^{\Phi_{m-1}(y)},
+ \qquad H_y=\frac4{\pi^2}e^{-\Phi_1(y)}.
+ \label{eq:ratio-H}
+\end{equation}
+Consequently
+\begin{equation}
+ \boxed{\;
+ \pi^2\bigl(B_\infty-G(q_y)\bigr)
+ =2\bigl(C(u)-C(U^{(y)})\bigr)
+  -4W(U^{(y)})\bigl(1-e^{-\Phi_1(y)}\bigr).\;}
+ \label{eq:normal-form}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Factorwise division of \eqref{eq:limit-ratios} by
+\eqref{eq:finite-ratios} gives
+\[
+ \frac{u_m}{U_m^{(y)}}
+ =\prod_{j\ge y}\frac{p_{j+1}^2-m}{p_{j+1}^2-1}
+ =\prod_{j\ge y}\bigl(1-(m-1)a_{j+1}\bigr).
+\]
+Lemma~\ref{lem:absolute} gives the first identity.  The frozen squarefree
+tail product gives
+\[
+ \frac{\pi^2H_y}{4}=\prod_{j\ge y}(1-a_{j+1})=e^{-\Phi_1(y)},
+\]
+which is the second.  Substitute these identities into
+\eqref{eq:B-endpoints}--\eqref{eq:G-endpoint} and subtract from
+$B_\infty$.
+\end{proof}
+
+\section{The finite partition compiler}
+
+Let $\lambda=1^{k_1}\cdots d^{k_d}$ be a partition of total degree
+$|\lambda|=\sum_r rk_r=d$.  Write
+\begin{equation}
+ \ellp(\lambda)=\sum_r k_r,\qquad
+ P_\lambda(y)=\prod_rP_r(y)^{k_r},\qquad
+ z_\lambda=\prod_r r^{k_r}k_r!.
+ \label{eq:partition-data}
+\end{equation}
+The exponential formula and Lemma~\ref{lem:absolute} give
+\begin{equation}
+ \Afun_c(y)=\sum_\lambda\frac{c^{|\lambda|}}{z_\lambda}P_\lambda(y),
+ \qquad
+ \Ffun_c(y)=\sum_\lambda
+ \frac{\prod_r(c^r-1)^{k_r}}{z_\lambda}P_\lambda(y),
+ \label{eq:partition-AF}
+\end{equation}
+where the empty partition contributes $1$.
+
+Index the endpoint coefficient arrays by $m=2,\ldots,8$:
+\begin{equation}
+ (\alpha_m)=(-2,2,-2,2,-2,2,-2),\qquad
+ (\beta_m)=(1,-2,2,-2,2,-2,2).
+ \label{eq:alpha-beta}
+\end{equation}
+
+\begin{theorem}[All-order partition normal form]
+\label{thm:partition}
+The absolutely convergent expansion
+\begin{equation}
+ \pi^2\bigl(B_\infty-G(q_y)\bigr)
+ =\sum_{d\ge1}\ \sum_{\lambda\vdash d}
+ \gamma_\lambda P_\lambda(y)
+ \label{eq:partition-normal-form}
+\end{equation}
+has the finite exact coefficient compiler
+\begin{equation}
+\boxed{\begin{aligned}
+ \gamma_\lambda={}&-\frac2{z_\lambda}
+   \sum_{m=2}^8\alpha_m u_m(m-1)^d\\
+ &-\frac4{z_\lambda}\sum_{m=2}^8\beta_m u_m
+ \left((m-1)^d-\prod_r\bigl((m-1)^r-1\bigr)^{k_r}\right).
+\end{aligned}}
+ \label{eq:gamma}
+\end{equation}
+For every nonempty partition, the $m=2$ summand in
+\eqref{eq:gamma} is exactly zero.
+\end{theorem}
+
+\begin{proof}
+Write $c=m-1$.  From \eqref{eq:normal-form},
+\begin{align*}
+ 2(C(u)-C(U^{(y)}))
+   &=-2\sum_{m=2}^8\alpha_mu_m(\Afun_c-1),\\
+ -4W(U^{(y)})(1-e^{-\Phi_1})
+   &=-4\sum_{m=2}^8\beta_mu_m(\Afun_c-\Ffun_c).
+\end{align*}
+Insert \eqref{eq:partition-AF}; the coefficient of each nonempty
+$P_\lambda$ is \eqref{eq:gamma}.  Absolute convergence was proved in
+Lemma~\ref{lem:absolute}, so coefficient collection and the finite
+$m$-sums are legitimate.
+
+For $m=2$ one has $c=1$, $\alpha_2=-2$, and $\beta_2=1$.  Because
+$\lambda$ is nonempty,
+\[
+ \prod_r(1^r-1)^{k_r}=0.
+\]
+The two terms are therefore $4u_2/z_\lambda$ and
+$-4u_2/z_\lambda$, proving exact cancellation at every order.
+\end{proof}
+
+\begin{remark}[The partition-sign firewall]
+The coefficient of $P_\lambda$ in $e^{-\Phi_1}$ is
+$(-1)^{\ellp(\lambda)}/z_\lambda$; in
+$1-e^{-\Phi_1}$ it is
+$(-1)^{\ellp(\lambda)+1}/z_\lambda$.  Total-degree parity is not a
+termwise substitute.  For a finite set of tail variables, cancellation
+after summing all partitions of degree $n$ gives the different-basis
+identity
+\[
+ \sum_{\lambda\vdash n}\frac{(-1)^{\ellp(\lambda)}}{z_\lambda}P_\lambda
+ =(-1)^ne_n.
+\]
+The executable $Q$ oracle checks both sides independently; it does not
+replace the length sign in \eqref{eq:gamma}.
+\end{remark}
+
+\section{Independent increment and telescope compilers}
+
+The coefficient formula above comes from the endpoint $C/W$ form.  We now
+recover it from the frozen increment law, both to expose the successor-tail
+index and to prepare the uniform remainder bound.  Define the \emph{increment}
+arrays
+\begin{equation}
+ (\xi_m)_{m=4}^8=(2,-4,6,-8,10),\qquad
+ (\eta_m)_{m=3}^8=(2,-4,6,-8,10,-12).
+ \label{eq:xi-eta}
+\end{equation}
+They are not the endpoint arrays $\alpha,\beta$ in
+\eqref{eq:alpha-beta}.
+
+RH-380--RH-382 give, after every fixed-clock limit has already been taken,
+\begin{equation}
+\begin{aligned}
+ \pi^2(B_\infty-G(q_y))
+ =\sum_{j\ge y}\biggl[&2a_{j+1}X_j
+ +4a_{j+1}\frac{M_j}{A_j}d_{j+1}\biggr],\\
+ X_j&=\sum_{m=4}^8\xi_mU_m^{(j)},\qquad
+ \frac{M_j}{A_j}=\sum_{m=3}^8\eta_mU_m^{(j)},\\
+ d_{j+1}&=1-e^{-\Phi_1(j+1)}.
+\end{aligned}
+ \label{eq:increment}
+\end{equation}
+The strict successor $j+1$ in $d_{j+1}$ is essential.
+
+For a finite tail, let $h_r^{(j)}$ be the complete homogeneous polynomial
+of degree $r$ in the current suffix $\{a_{k+1}:k\ge j\}$, and let
+$e_s^{(j+1)}$ be the elementary polynomial in the strict successor suffix.
+After a common scale $t$ is inserted into all $a$'s, the degree-$n$
+increment channels are
+\begin{align}
+ \Gamma_{X,n}
+ &=2\sum_{m=4}^8\xi_mu_m\sum_{j\ge y}
+ a_{j+1}(m-1)^{n-1}h_{n-1}^{(j)},
+ \label{eq:Gamma-X}\\
+ \Gamma_{M,n}
+ &=4\sum_{m=3}^8\eta_mu_m
+ \sum_{\substack{r+s=n-1\\r\ge0,\ s\ge1}}
+ \sum_{j\ge y}a_{j+1}(m-1)^rh_r^{(j)}
+ (-1)^{s+1}e_s^{(j+1)}.
+ \label{eq:Gamma-M}
+\end{align}
+The infinite version follows by absolute convergence.  Equations
+\eqref{eq:Gamma-X}--\eqref{eq:Gamma-M} are the independent
+$\Gamma/h/e/\Phi$ compiler.
+
+There is also a direct telescope.  For $c\ge2$, factorwise differences give
+\begin{align}
+ \sum_{j\ge y}a_{j+1}\Afun_c(j)
+ &=\frac{\Afun_c(y)-1}{c},
+ \label{eq:A-telescope}\\
+ \sum_{j\ge y}a_{j+1}\Afun_c(j)e^{-\Phi_1(j+1)}
+ &=\frac{\Ffun_c(y)-1}{c-1}.
+ \label{eq:F-telescope}
+\end{align}
+Indeed, the summands are respectively the successive differences of
+$\Afun_c/c$ and $\Ffun_c/(c-1)$.  Thus the two increment channels equal
+\begin{align}
+ &2\sum_{m=4}^8\frac{\xi_m}{m-1}u_m(\Afun_{m-1}-1),
+ \label{eq:X-AF}\\
+ &4\sum_{m=3}^8\eta_mu_m\left(
+ \frac{\Afun_{m-1}-1}{m-1}
+ -\frac{\Ffun_{m-1}-1}{m-2}\right).
+ \label{eq:M-AF}
+\end{align}
+Direct coefficient comparison shows that
+\eqref{eq:X-AF}--\eqref{eq:M-AF} sum to the $C/W$ compiler
+\eqref{eq:gamma}.  Explicitly, after extending $\xi_m$ and $\eta_m$ by
+zero outside their displayed ranges,
+\[
+ \xi_m=-\alpha_m(m-1)-2\beta_m,
+ \qquad \eta_m=-\beta_m(m-2)\qquad(2\le m\le8).
+\]
+These two finite identities make the bridge coefficientwise.  This is the
+third, $\Afun_c/\Ffun_c$ telescope oracle.
+The $m=2$ endpoint cancellation is handled before these $c-1$ denominators
+appear.
+
+\section{Low orders and the new cubic block}
+
+Set
+\begin{align}
+ X_\infty&=2u_4-4u_5+6u_6-8u_7+10u_8,\\
+ Y_\infty&=6u_4-16u_5+30u_6-48u_7+70u_8,\\
+ m_\infty&=2u_3-4u_4+6u_5-8u_6+10u_7-12u_8.
+ \label{eq:XYm}
+\end{align}
+Applying \eqref{eq:gamma} to the partitions of degrees one and two gives
+\begin{equation}
+ \gamma_{(1)}=2X_\infty,\qquad
+ \gamma_{(1,1)}=Y_\infty+2m_\infty,
+ \qquad
+ \gamma_{(2)}=Y_\infty-2m_\infty.
+ \label{eq:low-orders}
+\end{equation}
+Since $P_{(1,1)}=T_y^2$ and $P_{(2)}=P_2(y)$, these are exactly the
+RH-381 leading layer and RH-382 two-scale quadratic layer.  In particular,
+$P_2(y)$ is not collapsed into a multiple of $T_y^2$, and its memory sign
+is opposite to the $T_y^2$ sign.
+
+The first genuinely new homogeneous layer is cubic:
+\begin{align}
+ \gamma_{(1,1,1)}={}&4u_3-\frac{22}{3}u_4+\frac{20}{3}u_5+2u_6
+ -\frac{68}{3}u_7+\frac{178}{3}u_8,
+ \label{eq:cubic111}\\
+ \gamma_{(2,1)}={}&4u_3+10u_4-52u_5+134u_6-268u_7+466u_8,
+ \label{eq:cubic21}\\
+ \gamma_{(3)}={}&-8u_3+\frac{100}{3}u_4-\frac{248}{3}u_5+164u_6
+ -\frac{856}{3}u_7+\frac{1364}{3}u_8.
+ \label{eq:cubic3}
+\end{align}
+Thus the cubic contribution is
+\[
+ \gamma_{(1,1,1)}T_y^3
+ +\gamma_{(2,1)}T_yP_2(y)
+ +\gamma_{(3)}P_3(y).
+\]
+These identities follow symbolically from \eqref{eq:gamma}; no regression
+or numerical coefficient recognition is used.
+
+\section{Uniform arbitrary-order remainder}
+
+Put
+\begin{equation}
+ \rho_y=7T_y\le\frac78.
+ \label{eq:rho}
+\end{equation}
+This analytic tail radius is not the square clock $q_y$.  Let
+$R_{D,y}$ be the remainder in $B_\infty-G(q_y)$ after all partitions of
+total degree at most an integer $D\ge1$ have been retained.
+
+\begin{theorem}[All-order truncation bound]
+\label{thm:remainder}
+For every $y\ge1$ and every integer $D\ge1$,
+\begin{equation}
+ \boxed{
+ |R_{D,y}|\le\frac{92}{3\pi^2}\rho_y^{D+1}
+ <\frac{31}{\pi^2}\rho_y^{D+1}.}
+ \label{eq:remainder}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The $p=3$ factor in $u_m$ and positivity of all later factors give
+\[
+ 0<u_m\le\frac{9-m}{8}\qquad(2\le m\le8).
+\]
+For the increment arrays in \eqref{eq:xi-eta}, this yields the distinct
+absolute ledgers
+\begin{equation}
+ \sum_{m=4}^8|\xi_m|u_m\le\frac{35}{4},
+ \qquad
+ \sum_{m=3}^8|\eta_m|u_m\le14.
+ \label{eq:increment-ledgers}
+\end{equation}
+The constants $35/4$ and $14$ belong to $\xi$ and $\eta$, not to the
+endpoint arrays $\alpha$ and $\beta$.
+
+For nonnegative tail variables,
+\[
+ h_r^{(j)}\le T_j^r,\qquad
+ e_s^{(j+1)}\le\frac{T_{j+1}^s}{s!},
+ \qquad \sum_{j\ge y}a_{j+1}=T_y.
+\]
+The degree-$n$ numerator layer \eqref{eq:Gamma-X} therefore satisfies
+\[
+ |\Gamma_{X,n}|
+ \le2\frac{35}{4}\,7^{n-1}T_y^n
+ =\frac52\rho_y^n.
+\]
+For the memory layer, write $r+s=n-1$ with $s\ge1$.  Each fixed $s$
+contributes at most
+\[
+ 4\cdot14\,\frac{7^{n-s-1}T_y^n}{s!}
+ =4\cdot14\,\frac{\rho_y^n}{7^{s+1}s!}.
+\]
+Since
+\[
+ \sum_{s\ge1}\frac1{7^{s+1}s!}
+ \le\sum_{s\ge1}\frac1{7^{s+1}}=\frac1{42},
+\]
+we obtain $|\Gamma_{M,n}|\le(4/3)\rho_y^n$; for $n=1$ this channel is
+zero.  Consequently the $\pi^2$-scaled tail after degree $D$ is bounded by
+\[
+ \left(\frac52+\frac43\right)
+ \sum_{n>D}\rho_y^n
+ \le\frac{23}{6}\cdot8\rho_y^{D+1}
+ =\frac{92}{3}\rho_y^{D+1}.
+\]
+Divide by $\pi^2$.  Finally $92/3<31$.
+\end{proof}
+
+\begin{remark}[General versus special-purpose bounds]
+Theorem~\ref{thm:remainder} is uniform in arbitrary order.  It does not
+replace, inherit, or claim to sharpen RH-381's quadratic constant $342$ or
+RH-382's cubic constant $3301/6$.  Those papers use cancellations tailored
+to their fixed truncation orders.
+\end{remark}
+
+\section{Executable protocol and adversarial checks}
+\label{sec:artifact}
+
+The artifact uses only exact rational arithmetic.  Its source contract locks
+$41$ immutable files: groups of sizes $7,8,8,8,8,2$ from RH-374,
+RH-379, RH-380, RH-381, RH-382, and the four-volume synthesis archive.
+Every live input is checked byte-for-byte against its declared Git release.
+Mutable root policy and handoff files are deliberately excluded.
+
+Three independently organized oracles are compared:
+\begin{enumerate}[leftmargin=2em]
+ \item the canonical endpoint $C/W$ partition compiler
+       \eqref{eq:gamma};
+ \item the ordered-increment $\Gamma/h/e/\Phi$ compiler
+       \eqref{eq:Gamma-X}--\eqref{eq:Gamma-M}, with the strict successor
+       tail; and
+ \item the direct $\Afun_c/\Ffun_c$ telescope compiler
+       \eqref{eq:A-telescope}--\eqref{eq:M-AF}.
+\end{enumerate}
+The frozen exact grid is summarized in Table~\ref{tab:protocol}.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}lrp{0.57\linewidth}@{}}
+\toprule
+check & rows & scope \\
+\midrule
+endpoint normal form & 67 & starts $1\le s<e$ at $e\in\{8,12,19,32\}$ \\
+$\Afun/\Ffun$ coefficients & 864 & six tails, $c=2,\ldots,7$, degrees $1,\ldots,12$, two functions \\
+$Q$ length-sign oracle & 432 & 72 tail/degree identities repeated under six inert $c$ labels \\
+partition gamma & 1084 & 271 unique partitions through degree 12, evaluated under four endpoint labels \\
+increment channels & 144 & six tails, 12 degrees, numerator and memory \\
+low orders & 33 & endpoint-labeled bundles of the same three RH-381/RH-382 coefficient identities \\
+cubic block & $67+12$ & direct finite cubic rows plus three coefficients at four labels \\
+$m=2$ cancellation & 1151 & $4\times271$ labeled symbolic rows plus 67 direct finite telescopes \\
+remainder & 804 & 67 tails and every $1\le D\le12$ \\
+terminal/successor & $4+7$ & $R_8,E_9,$ no $E_{10}$; strict $j+1$ telescope \\
+negative mutations & 20 & wrong signs, denominators, factors, prefactors, channels, types, terminal, and $\rho$ \\
+\bottomrule
+\end{tabular}
+\caption{Exact reproduction and adversarial grid.  Label repetitions are
+reported explicitly and are not counted as distinct mathematical theorems.}
+\label{tab:protocol}
+\end{table}
+
+The $20$ negative rows execute mutated compilers or complete formulas:
+degree parity in place of partition length, three wrong $z_\lambda$
+denominators, current-tail memory, two endpoint normalizations, two broken
+$m=2$ coefficients, two cubic formula mutations, two increment coefficient
+mutations, Boolean/float/zero truncation orders, the forbidden $E_{10}$
+terminal extension, and $\rho=T$ in place of $7T$.  All are rejected.  The
+closed Draft 2020--12 schema freezes every stored value and rejects numeric
+aliases, duplicate keys, nonfinite constants, extra members, and source-lock
+rebinding.
+
+All finite rows in this section reproduce or attack identities already
+proved symbolically.  They are not fits, asymptotic evidence, or evidence
+for a physical spectral model.
+
+\section{Boundary and next theorem budget}
+
+The standalone discovery verdict is \textbf{Route A: GO}: the exact
+all-order coefficient compiler, absolute convergence, universal truncation
+bound, all-order $m=2$ cancellation, and cubic block are new theorem content
+inside the frozen class.  The RH-compatibility verdict is
+\textbf{Route B: STOP\_SCOPED}.  The normal form is an auxiliary arithmetic
+Euler-tail expansion, not a complex clock, intrinsic dynamical determinant,
+or Hilbert--P\'olya operator.
+
+The following claims are outside the theorem:
+\begin{itemize}[leftmargin=2em]
+ \item no nonzero phasewise $c_{11}(r)$ term is controlled;
+ \item no growing choice $q=q(N)$, exchange of limits, RH-377 adaptive
+       envelope, or adaptive-capacity limit is proved;
+ \item no prime number theorem or rewrite in terms of $p_y$ is used;
+ \item no finite row is promoted to an all-$y$ theorem or physical signal;
+ \item no intrinsic operator, determinant, scattering completion,
+       self-adjoint generator, von Mangoldt weighted prime-power trace, or
+       completed-zeta divisor equality is constructed;
+ \item no Riemann zero is identified and the Riemann hypothesis is neither
+       proved nor reduced to the present calculation.
+\end{itemize}
+Thus Gates A--E retain their frozen false/open status.  Enlarging the active
+factor class requires a phase-weighted shift-two correlation theorem for
+nonzero $c_{11}$.  Orthogonally, a within-class translation from the intrinsic
+tails $P_r(y)$ to a $p_y$ scale could be legitimate after independently
+source-locking a prime-counting theorem such as the RH-2 PNT input.  A
+separate successor could then prove fixed-$r$ tail asymptotics and locate the
+independent $P_2$ scale relative to $T_y^3$.  No such translation is used or
+proved here, and it would not promote an operator or RH Gate.  Any different
+route must contribute its own source-backed theorem edge.  The four-volume RH-1--RH-361 synthesis remains
+the preserved foundation rather than being replaced by this short paper
+\cite{RHMVP2}.
+
+\section*{Declarations}
+
+\paragraph{Data and code availability.}
+All theorem inputs, exact source code, tests, closed result schema, source
+locks, and archive manifests are contained in the repository paper
+directory.  No private dataset is used.
+
+\paragraph{Author contributions.}
+The RH research program performed conceptualization, formal analysis,
+software construction, verification, artifact curation, adversarial review,
+and manuscript preparation.
+
+\paragraph{Funding.}
+No external funding is declared.
+
+\paragraph{Competing interests.}
+No competing interests are declared.
+
+\paragraph{Ethics and human participants.}
+This mathematical and computational study uses no human participants,
+animals, or personal data; ethics approval and consent are not applicable.
+
+\paragraph{AI assistance disclosure.}
+AI-assisted tools supported source triage, symbolic checking, deterministic
+artifact generation, drafting, and adversarial review.  Every released
+claim is constrained by immutable repository sources and reproducible
+verification artifacts; responsibility for the scoped mathematical
+statements remains with the research program.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

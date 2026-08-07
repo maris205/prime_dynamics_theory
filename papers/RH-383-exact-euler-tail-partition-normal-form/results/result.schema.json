@@ -1,0 +1,4657 @@
+{
+  "$id": "https://example.invalid/RH-383/result.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "certificate": {
+      "additionalProperties": false,
+      "properties": {
+        "all_pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "claim_boundary": {
+          "additionalProperties": false,
+          "properties": {
+            "finite_rows_are_reproduction_only": {
+              "const": true,
+              "type": "boolean"
+            },
+            "fixed_finite_q_before_N_limit": {
+              "const": true,
+              "type": "boolean"
+            },
+            "gates_A_through_E": {
+              "items": false,
+              "maxItems": 5,
+              "minItems": 5,
+              "prefixItems": [
+                {
+                  "const": false,
+                  "type": "boolean"
+                },
+                {
+                  "const": false,
+                  "type": "boolean"
+                },
+                {
+                  "const": false,
+                  "type": "boolean"
+                },
+                {
+                  "const": false,
+                  "type": "boolean"
+                },
+                {
+                  "const": false,
+                  "type": "boolean"
+                }
+              ],
+              "type": "array"
+            },
+            "no_PNT_or_p_y_rewrite": {
+              "const": true,
+              "type": "boolean"
+            },
+            "no_growing_clock_or_adaptive_capacity": {
+              "const": true,
+              "type": "boolean"
+            },
+            "no_operator_trace_zeros_or_RH": {
+              "const": true,
+              "type": "boolean"
+            },
+            "rho_is_not_square_clock_q": {
+              "const": true,
+              "type": "boolean"
+            },
+            "route_a": {
+              "const": "GO",
+              "type": "string"
+            },
+            "route_b": {
+              "const": "STOP_SCOPED",
+              "type": "string"
+            },
+            "universally_safe_phasewise_c11_zero_only": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "finite_rows_are_reproduction_only",
+            "fixed_finite_q_before_N_limit",
+            "gates_A_through_E",
+            "no_PNT_or_p_y_rewrite",
+            "no_growing_clock_or_adaptive_capacity",
+            "no_operator_trace_zeros_or_RH",
+            "rho_is_not_square_clock_q",
+            "route_a",
+            "route_b",
+            "universally_safe_phasewise_c11_zero_only"
+          ],
+          "type": "object"
+        },
+        "counts": {
+          "additionalProperties": false,
+          "properties": {
+            "af_coefficients": {
+              "const": 864,
+              "type": "integer"
+            },
+            "channel_equivalence": {
+              "const": 144,
+              "type": "integer"
+            },
+            "cubic_endpoint": {
+              "const": 67,
+              "type": "integer"
+            },
+            "cubic_symbolic": {
+              "const": 12,
+              "type": "integer"
+            },
+            "endpoint_normal_form": {
+              "const": 67,
+              "type": "integer"
+            },
+            "gamma_equivalence": {
+              "const": 1084,
+              "type": "integer"
+            },
+            "low_order": {
+              "const": 33,
+              "type": "integer"
+            },
+            "m2_cancellation": {
+              "const": 1151,
+              "type": "integer"
+            },
+            "negative_mutations": {
+              "const": 20,
+              "type": "integer"
+            },
+            "q_signs": {
+              "const": 432,
+              "type": "integer"
+            },
+            "remainder": {
+              "const": 804,
+              "type": "integer"
+            },
+            "successor_tail": {
+              "const": 7,
+              "type": "integer"
+            },
+            "terminal": {
+              "const": 4,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "af_coefficients",
+            "channel_equivalence",
+            "cubic_endpoint",
+            "cubic_symbolic",
+            "endpoint_normal_form",
+            "gamma_equivalence",
+            "low_order",
+            "m2_cancellation",
+            "negative_mutations",
+            "q_signs",
+            "remainder",
+            "successor_tail",
+            "terminal"
+          ],
+          "type": "object"
+        },
+        "partition_count_degrees_1_through_12": {
+          "const": 271,
+          "type": "integer"
+        },
+        "proof_ledger": {
+          "additionalProperties": false,
+          "properties": {
+            "absolute_convergence": {
+              "const": "for c<=7, sum_r c^r P_r/r converges absolutely because c*a_(j+1)<=7/24 and sum a_(j+1)<infinity",
+              "type": "string"
+            },
+            "endpoint_products": {
+              "const": "A_c=exp(Phi_c)=product(1-ca)^(-1), F_c=exp(Phi_c-Phi_1)=product(1-a)/(1-ca)",
+              "type": "string"
+            },
+            "finite_rows_are_reproduction_only": {
+              "const": true,
+              "type": "boolean"
+            },
+            "general_vs_special": {
+              "const": "the 92/3 arbitrary-order ledger does not inherit the sharper RH-381 or RH-382 special-purpose constants",
+              "type": "string"
+            },
+            "increment_memory_bound": {
+              "const": "sum_(m=3)^8 |eta_m|u_m<=14 and the successor loss s>=1 give |Gamma_M,n|<=4*rho^n/3",
+              "type": "string"
+            },
+            "increment_x_bound": {
+              "const": "sum_(m=4)^8 |xi_m|u_m<=35/4 gives |Gamma_X,n|<=5*rho^n/2",
+              "type": "string"
+            },
+            "m2": {
+              "const": "for every nonempty partition, the endpoint alpha_2 and beta_2 terms cancel exactly",
+              "type": "string"
+            },
+            "partition_sign": {
+              "const": "exp(-Phi_1) uses (-1)^length(lambda); 1-exp(-Phi_1) uses (-1)^(length(lambda)+1)",
+              "type": "string"
+            },
+            "tail_bound": {
+              "const": "rho<=7/8 and sum_(n>D)rho^n<=8*rho^(D+1), hence 20+32/3=92/3",
+              "type": "string"
+            }
+          },
+          "required": [
+            "absolute_convergence",
+            "endpoint_products",
+            "finite_rows_are_reproduction_only",
+            "general_vs_special",
+            "increment_memory_bound",
+            "increment_x_bound",
+            "m2",
+            "partition_sign",
+            "tail_bound"
+          ],
+          "type": "object"
+        },
+        "sections": {
+          "additionalProperties": false,
+          "properties": {
+            "af_coefficients": {
+              "additionalProperties": false,
+              "properties": {
+                "all_pass": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "coefficient_count": {
+                  "const": 864,
+                  "type": "integer"
+                },
+                "coefficient_digest": {
+                  "const": "37a0693537a380e4f4489fad0bcb9426d46ba18fc50a0acbdf9d63eeb7f11f1d",
+                  "type": "string"
+                },
+                "coefficient_samples": {
+                  "items": false,
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "c": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "degree": {
+                          "const": 1,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "kind": {
+                          "const": "A",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "c",
+                        "degree",
+                        "endpoint",
+                        "kind",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "c": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "degree": {
+                          "const": 1,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "kind": {
+                          "const": "F",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "c",
+                        "degree",
+                        "endpoint",
+                        "kind",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "c": {
+                          "const": 7,
+                          "type": "integer"
+                        },
+                        "degree": {
+                          "const": 12,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 19,
+                          "type": "integer"
+                        },
+                        "kind": {
+                          "const": "A",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 18,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "c",
+                        "degree",
+                        "endpoint",
+                        "kind",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "c": {
+                          "const": 7,
+                          "type": "integer"
+                        },
+                        "degree": {
+                          "const": 12,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 19,
+                          "type": "integer"
+                        },
+                        "kind": {
+                          "const": "F",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 18,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "c",
+                        "degree",
+                        "endpoint",
+                        "kind",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "q_sign_count": {
+                  "const": 432,
+                  "type": "integer"
+                },
+                "q_sign_digest": {
+                  "const": "f689e1302dd73d7ff577280f396099bed526e0f289e002d096eb64455b72d309",
+                  "type": "string"
+                },
+                "q_sign_redundancy_note": {
+                  "const": "432 labeled rows repeat 72 tail/degree Q identities under six inert c labels; Q is independent of c, and the repetitions are not 432 different theorems",
+                  "type": "string"
+                },
+                "q_sign_samples": {
+                  "items": false,
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "a_minus_f_nonnegative_separate_check": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "c_label": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "c_label_is_redundant": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "degree": {
+                          "const": 1,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "q_elementary": {
+                          "const": "-1/24",
+                          "type": "string"
+                        },
+                        "q_partition": {
+                          "const": "-1/24",
+                          "type": "string"
+                        },
+                        "start": {
+                          "const": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "a_minus_f_nonnegative_separate_check",
+                        "c_label",
+                        "c_label_is_redundant",
+                        "degree",
+                        "endpoint",
+                        "pass",
+                        "q_elementary",
+                        "q_partition",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "a_minus_f_nonnegative_separate_check": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "c_label": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "c_label_is_redundant": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "degree": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "q_elementary": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "q_partition": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "start": {
+                          "const": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "a_minus_f_nonnegative_separate_check",
+                        "c_label",
+                        "c_label_is_redundant",
+                        "degree",
+                        "endpoint",
+                        "pass",
+                        "q_elementary",
+                        "q_partition",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "a_minus_f_nonnegative_separate_check": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "c_label": {
+                          "const": 7,
+                          "type": "integer"
+                        },
+                        "c_label_is_redundant": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "degree": {
+                          "const": 11,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 19,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "q_elementary": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "q_partition": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "start": {
+                          "const": 18,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "a_minus_f_nonnegative_separate_check",
+                        "c_label",
+                        "c_label_is_redundant",
+                        "degree",
+                        "endpoint",
+                        "pass",
+                        "q_elementary",
+                        "q_partition",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "a_minus_f_nonnegative_separate_check": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "c_label": {
+                          "const": 7,
+                          "type": "integer"
+                        },
+                        "c_label_is_redundant": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "degree": {
+                          "const": 12,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 19,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "q_elementary": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "q_partition": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "start": {
+                          "const": 18,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "a_minus_f_nonnegative_separate_check",
+                        "c_label",
+                        "c_label_is_redundant",
+                        "degree",
+                        "endpoint",
+                        "pass",
+                        "q_elementary",
+                        "q_partition",
+                        "start"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "all_pass",
+                "coefficient_count",
+                "coefficient_digest",
+                "coefficient_samples",
+                "q_sign_count",
+                "q_sign_digest",
+                "q_sign_redundancy_note",
+                "q_sign_samples"
+              ],
+              "type": "object"
+            },
+            "channel_equivalence": {
+              "additionalProperties": false,
+              "properties": {
+                "all_pass": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "count": {
+                  "const": 144,
+                  "type": "integer"
+                },
+                "row_digest": {
+                  "const": "edc0ca33883f774ace2b7317d15ee0d7d3994b17f9e37f067fcbcdd3cf51824e",
+                  "type": "string"
+                },
+                "samples": {
+                  "items": false,
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "channel": {
+                          "const": "numerator",
+                          "type": "string"
+                        },
+                        "degree": {
+                          "const": 1,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "channel",
+                        "degree",
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "channel": {
+                          "const": "memory",
+                          "type": "string"
+                        },
+                        "degree": {
+                          "const": 1,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "channel",
+                        "degree",
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "channel": {
+                          "const": "numerator",
+                          "type": "string"
+                        },
+                        "degree": {
+                          "const": 12,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 19,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 18,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "channel",
+                        "degree",
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "channel": {
+                          "const": "memory",
+                          "type": "string"
+                        },
+                        "degree": {
+                          "const": 12,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 19,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 18,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "channel",
+                        "degree",
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "all_pass",
+                "count",
+                "row_digest",
+                "samples"
+              ],
+              "type": "object"
+            },
+            "cubic": {
+              "additionalProperties": false,
+              "properties": {
+                "all_pass": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "endpoint_count": {
+                  "const": 67,
+                  "type": "integer"
+                },
+                "endpoint_digest": {
+                  "const": "26682674760fb2035267ae7cc6a7299c291dd0144e658681c399e1ce90be2335",
+                  "type": "string"
+                },
+                "frozen_vectors": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "(1, 1, 1)": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "2": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "3": {
+                          "const": "4",
+                          "type": "string"
+                        },
+                        "4": {
+                          "const": "-22/3",
+                          "type": "string"
+                        },
+                        "5": {
+                          "const": "20/3",
+                          "type": "string"
+                        },
+                        "6": {
+                          "const": "2",
+                          "type": "string"
+                        },
+                        "7": {
+                          "const": "-68/3",
+                          "type": "string"
+                        },
+                        "8": {
+                          "const": "178/3",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8"
+                      ],
+                      "type": "object"
+                    },
+                    "(2, 1)": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "2": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "3": {
+                          "const": "4",
+                          "type": "string"
+                        },
+                        "4": {
+                          "const": "10",
+                          "type": "string"
+                        },
+                        "5": {
+                          "const": "-52",
+                          "type": "string"
+                        },
+                        "6": {
+                          "const": "134",
+                          "type": "string"
+                        },
+                        "7": {
+                          "const": "-268",
+                          "type": "string"
+                        },
+                        "8": {
+                          "const": "466",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8"
+                      ],
+                      "type": "object"
+                    },
+                    "(3,)": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "2": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "3": {
+                          "const": "-8",
+                          "type": "string"
+                        },
+                        "4": {
+                          "const": "100/3",
+                          "type": "string"
+                        },
+                        "5": {
+                          "const": "-248/3",
+                          "type": "string"
+                        },
+                        "6": {
+                          "const": "164",
+                          "type": "string"
+                        },
+                        "7": {
+                          "const": "-856/3",
+                          "type": "string"
+                        },
+                        "8": {
+                          "const": "1364/3",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "(1, 1, 1)",
+                    "(2, 1)",
+                    "(3,)"
+                  ],
+                  "type": "object"
+                },
+                "symbolic_count": {
+                  "const": 12,
+                  "type": "integer"
+                },
+                "symbolic_digest": {
+                  "const": "1ef44623276de9d3526a197df80db106ee773e67538a26c2e99af3d809947c8a",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "all_pass",
+                "endpoint_count",
+                "endpoint_digest",
+                "frozen_vectors",
+                "symbolic_count",
+                "symbolic_digest"
+              ],
+              "type": "object"
+            },
+            "endpoint_normal_form": {
+              "additionalProperties": false,
+              "properties": {
+                "all_pass": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "count": {
+                  "const": 67,
+                  "type": "integer"
+                },
+                "row_digest": {
+                  "const": "26682674760fb2035267ae7cc6a7299c291dd0144e658681c399e1ce90be2335",
+                  "type": "string"
+                },
+                "samples": {
+                  "items": false,
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 8,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 8,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 2,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 30,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 31,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "all_pass",
+                "count",
+                "row_digest",
+                "samples"
+              ],
+              "type": "object"
+            },
+            "gamma_equivalence": {
+              "additionalProperties": false,
+              "properties": {
+                "all_pass": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "gamma_count": {
+                  "const": 1084,
+                  "type": "integer"
+                },
+                "gamma_digest": {
+                  "const": "5f7a329c03f5f45f097bd8609bae2bcc5d05fafeb3de022c6433a0c2ee07d247",
+                  "type": "string"
+                },
+                "gamma_redundancy_note": {
+                  "const": "1084=271 unique symbolic partitions times four endpoint labels; these are labeled exact evaluations, not 1084 different identities",
+                  "type": "string"
+                },
+                "gamma_samples": {
+                  "items": false,
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 8,
+                          "type": "integer"
+                        },
+                        "partition": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "partition",
+                        "pass"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 8,
+                          "type": "integer"
+                        },
+                        "partition": {
+                          "items": false,
+                          "maxItems": 1,
+                          "minItems": 1,
+                          "prefixItems": [
+                            {
+                              "const": 2,
+                              "type": "integer"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "partition",
+                        "pass"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "partition": {
+                          "items": false,
+                          "maxItems": 11,
+                          "minItems": 11,
+                          "prefixItems": [
+                            {
+                              "const": 2,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "partition",
+                        "pass"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "partition": {
+                          "items": false,
+                          "maxItems": 12,
+                          "minItems": 12,
+                          "prefixItems": [
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            },
+                            {
+                              "const": 1,
+                              "type": "integer"
+                            }
+                          ],
+                          "type": "array"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "partition",
+                        "pass"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "m2_direct_count": {
+                  "const": 67,
+                  "type": "integer"
+                },
+                "m2_direct_digest": {
+                  "const": "26682674760fb2035267ae7cc6a7299c291dd0144e658681c399e1ce90be2335",
+                  "type": "string"
+                },
+                "m2_partition_count": {
+                  "const": 1084,
+                  "type": "integer"
+                },
+                "m2_partition_digest": {
+                  "const": "5f7a329c03f5f45f097bd8609bae2bcc5d05fafeb3de022c6433a0c2ee07d247",
+                  "type": "string"
+                },
+                "m2_redundancy_note": {
+                  "const": "1151=271 unique symbolic cancellations times four endpoint labels, plus 67 direct finite telescopes; this is not 1151 distinct all-order theorems",
+                  "type": "string"
+                },
+                "m2_total_count": {
+                  "const": 1151,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "all_pass",
+                "gamma_count",
+                "gamma_digest",
+                "gamma_redundancy_note",
+                "gamma_samples",
+                "m2_direct_count",
+                "m2_direct_digest",
+                "m2_partition_count",
+                "m2_partition_digest",
+                "m2_redundancy_note",
+                "m2_total_count"
+              ],
+              "type": "object"
+            },
+            "low_order": {
+              "additionalProperties": false,
+              "properties": {
+                "all_pass": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "count": {
+                  "const": 33,
+                  "type": "integer"
+                },
+                "redundancy_note": {
+                  "const": "33 endpoint-labeled bundles repeat the same three symbolic coefficient identities; these are not 33 different theorems",
+                  "type": "string"
+                },
+                "row_digest": {
+                  "const": "06a79be49bebd24ec1f81e25228038c6b134b0d1e30b1410b30ac56f783d2534",
+                  "type": "string"
+                },
+                "samples": {
+                  "items": false,
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "checks": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "(1, 1)": {
+                              "const": true,
+                              "type": "boolean"
+                            },
+                            "(1,)": {
+                              "const": true,
+                              "type": "boolean"
+                            },
+                            "(2,)": {
+                              "const": true,
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "(1, 1)",
+                            "(1,)",
+                            "(2,)"
+                          ],
+                          "type": "object"
+                        },
+                        "endpoint": {
+                          "const": 1,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "checks",
+                        "endpoint",
+                        "pass"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "checks": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "(1, 1)": {
+                              "const": true,
+                              "type": "boolean"
+                            },
+                            "(1,)": {
+                              "const": true,
+                              "type": "boolean"
+                            },
+                            "(2,)": {
+                              "const": true,
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "(1, 1)",
+                            "(1,)",
+                            "(2,)"
+                          ],
+                          "type": "object"
+                        },
+                        "endpoint": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "checks",
+                        "endpoint",
+                        "pass"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "checks": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "(1, 1)": {
+                              "const": true,
+                              "type": "boolean"
+                            },
+                            "(1,)": {
+                              "const": true,
+                              "type": "boolean"
+                            },
+                            "(2,)": {
+                              "const": true,
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "(1, 1)",
+                            "(1,)",
+                            "(2,)"
+                          ],
+                          "type": "object"
+                        },
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "checks",
+                        "endpoint",
+                        "pass"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "checks": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "(1, 1)": {
+                              "const": true,
+                              "type": "boolean"
+                            },
+                            "(1,)": {
+                              "const": true,
+                              "type": "boolean"
+                            },
+                            "(2,)": {
+                              "const": true,
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "(1, 1)",
+                            "(1,)",
+                            "(2,)"
+                          ],
+                          "type": "object"
+                        },
+                        "endpoint": {
+                          "const": 33,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "checks",
+                        "endpoint",
+                        "pass"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                },
+                "statement": {
+                  "const": "gamma_(1)=2X; gamma_(1,1)=Y+2m; gamma_(2)=Y-2m, retaining the independent P2 sign",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "all_pass",
+                "count",
+                "redundancy_note",
+                "row_digest",
+                "samples",
+                "statement"
+              ],
+              "type": "object"
+            },
+            "negative_mutations": {
+              "additionalProperties": false,
+              "properties": {
+                "all_pass": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "count": {
+                  "const": 20,
+                  "type": "integer"
+                },
+                "rejected": {
+                  "const": 20,
+                  "type": "integer"
+                },
+                "rows": {
+                  "items": false,
+                  "maxItems": 20,
+                  "minItems": 20,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "7b3798e7bd6d28994342bbfa6cfe418a8499b4f88a465675a5052dce449fbec3",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "Q_length_parity_replaced_by_total_degree_2",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "380c3d51d25b66ccf1f793e68b7c83912702db201d48dd30294022d8ca953c36",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "50cd7a7a4b48448861ecb8c6cc106e6e75efe59f567f7649d383671e654f21be",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "Q_length_parity_replaced_by_total_degree_3",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "362b09af4716b8089d40ffbd63b1d16925b4799dc0fd41c9dd3b2ab511deae84",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "98089e6d36f78e9766c9ea34d5acb3611f3a92cd81c5eb102095d924ffc7d08b",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "Q_length_parity_replaced_by_total_degree_4",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "9c6da8dc5d7cc7fd3829d9ed89fb6467f6528b4b467c139b1c19059050540fe9",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "57f47a0df1a6a6df186e119ffc36d6239b2fefe73bf612124d5eb6e0696f0ef2",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "gamma_omit_multiplicity_factorial_(1, 1, 1)",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "9204e38a5b0323b6129de026b2dfcff99cd7a4620968dd67fe2b256daf50e4a7",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "50a99448b9435bea1f662d80d7c12b418067cbc5a4c33209bae5cd9bd3082aad",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "gamma_omit_part_power_(2,)",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "9ed844e496d35eaa94f010a2ca065930a77e679369ae69f701cc0503e9b1979d",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "560f1d96276d81d7bf4cea8c9867f1d65d8013f4883056c0eab34ac35d529742",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "gamma_replace_z_by_degree_factorial_(2, 1)",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "a562fb35c860c3d9896d514f5c7a6125b22571f275710060abbd5705db72f483",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "178c5e39d056a5f8da102f3538c3b7be64b402639c5a51b9a3d959f6078f2e85",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "successor_tail_replaced_by_current_in_full_gap",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "774454a020e166710786171679521a4a6bba51d6e5b853d1637a3db47932bc5b",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "d9d90b9d336bd9cd460599f5e289c98221c4c92456118a1665a661c6396d7b69",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "endpoint_C_prefactor_2_replaced_by_1",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "d121e44c4aa414427e13b675895fee1c7eaf90b5156337ff958772d32db05139",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "d9d90b9d336bd9cd460599f5e289c98221c4c92456118a1665a661c6396d7b69",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "endpoint_memory_prefactor_4_replaced_by_2",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "a66ce2ec72c0295017f2639fca575aaadb797245f8fafc406431f123ce58682d",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "98089e6d36f78e9766c9ea34d5acb3611f3a92cd81c5eb102095d924ffc7d08b",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "m2_endpoint_alpha_minus2_replaced_by_minus1",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "1214b192bd91caef232936e17d9eb0f14540c007dca2df1ecdb7bf2749da281c",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "98089e6d36f78e9766c9ea34d5acb3611f3a92cd81c5eb102095d924ffc7d08b",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "m2_endpoint_beta_1_replaced_by_2",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "a4786e87c2788e137f5e716bf8eba8a2d83b9e809a3ccf5043ccd1099a015a1d",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "57f47a0df1a6a6df186e119ffc36d6239b2fefe73bf612124d5eb6e0696f0ef2",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "cubic_memory_A_minus_F_replaced_by_A_plus_F",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "7b07ecc4a8bc953fe480770c2b4ee5f762a0860895e5ebac778e0b6288f25b31",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "560f1d96276d81d7bf4cea8c9867f1d65d8013f4883056c0eab34ac35d529742",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "cubic_factor_c_power_minus1_replaced_by_c_power_plus1",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "020c7083f4a304e9716224b588ce52bbcb73f3bd4343975f957efa085032fd75",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "02bcf23a18fc68a8aa4fca8dadffbafa30b72745bb0a0684e9916f2615707e9f",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "increment_xi_m4_2_replaced_by_1",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "88ca5de53b3e1d23190c298cd6441b45a7fd3d9ed539ef868338ebe8380e5b8e",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "02bcf23a18fc68a8aa4fca8dadffbafa30b72745bb0a0684e9916f2615707e9f",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "increment_eta_m4_minus4_replaced_by_2",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "49b9e6163c6626e2c84d86bee95ab2e438bcd58e0159bf3c9f129ccaba378ffd",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "mutation": {
+                          "const": "D_bool",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "rejected_exception": {
+                          "const": "ValueError",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "mutation",
+                        "pass",
+                        "rejected_exception"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "mutation": {
+                          "const": "D_float",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "rejected_exception": {
+                          "const": "ValueError",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "mutation",
+                        "pass",
+                        "rejected_exception"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "mutation": {
+                          "const": "D_zero",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "rejected_exception": {
+                          "const": "ValueError",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "mutation",
+                        "pass",
+                        "rejected_exception"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "mutation": {
+                          "const": "terminal_R8_second_difference_E10",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "rejected_exception": {
+                          "const": "ValueError",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "mutation",
+                        "pass",
+                        "rejected_exception"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "expected_digest": {
+                          "const": "982198b1d1c1e384bd9be3641189a3cd282ae87b833a93ee7286d5b5f485ddfc",
+                          "type": "string"
+                        },
+                        "mutation": {
+                          "const": "rho_7T_replaced_by_T_in_remainder_bound",
+                          "type": "string"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "wrong_digest": {
+                          "const": "8535b8dd4204884159415854324ba76c3d02d23f812c33111ad2d4e79e06b511",
+                          "type": "string"
+                        },
+                        "wrong_residual_to_bound": {
+                          "const": "150526912975424127758776655/122900326556978949321129984",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "expected_digest",
+                        "mutation",
+                        "pass",
+                        "wrong_digest",
+                        "wrong_residual_to_bound"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "all_pass",
+                "count",
+                "rejected",
+                "rows"
+              ],
+              "type": "object"
+            },
+            "remainder": {
+              "additionalProperties": false,
+              "properties": {
+                "all_pass": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "bound": {
+                  "const": "abs(pi^2 R_D)<=92*rho^(D+1)/3, hence abs(R_D)<=92*rho^(D+1)/(3*pi^2)",
+                  "type": "string"
+                },
+                "count": {
+                  "const": 804,
+                  "type": "integer"
+                },
+                "row_digest": {
+                  "const": "3357ae233a224c16c0a87cf3c2234f0cbe54e6adb8ab3890b12568e6de0f1e34",
+                  "type": "string"
+                },
+                "samples": {
+                  "items": false,
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "D": {
+                          "const": 1,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 8,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "D",
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "D": {
+                          "const": 2,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 8,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "D",
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "D": {
+                          "const": 11,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 31,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "D",
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "D": {
+                          "const": 12,
+                          "type": "integer"
+                        },
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 31,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "D",
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "all_pass",
+                "bound",
+                "count",
+                "row_digest",
+                "samples"
+              ],
+              "type": "object"
+            },
+            "remainder_ledger": {
+              "additionalProperties": false,
+              "properties": {
+                "all_pass": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "endpoint_alpha_coefficients": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "2": {
+                      "const": -2,
+                      "type": "integer"
+                    },
+                    "3": {
+                      "const": 2,
+                      "type": "integer"
+                    },
+                    "4": {
+                      "const": -2,
+                      "type": "integer"
+                    },
+                    "5": {
+                      "const": 2,
+                      "type": "integer"
+                    },
+                    "6": {
+                      "const": -2,
+                      "type": "integer"
+                    },
+                    "7": {
+                      "const": 2,
+                      "type": "integer"
+                    },
+                    "8": {
+                      "const": -2,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                  ],
+                  "type": "object"
+                },
+                "endpoint_beta_coefficients": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "2": {
+                      "const": 1,
+                      "type": "integer"
+                    },
+                    "3": {
+                      "const": -2,
+                      "type": "integer"
+                    },
+                    "4": {
+                      "const": 2,
+                      "type": "integer"
+                    },
+                    "5": {
+                      "const": -2,
+                      "type": "integer"
+                    },
+                    "6": {
+                      "const": 2,
+                      "type": "integer"
+                    },
+                    "7": {
+                      "const": -2,
+                      "type": "integer"
+                    },
+                    "8": {
+                      "const": 2,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                  ],
+                  "type": "object"
+                },
+                "geometric_tail_factor": {
+                  "const": 8,
+                  "type": "integer"
+                },
+                "increment_memory_coefficients": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "3": {
+                      "const": 2,
+                      "type": "integer"
+                    },
+                    "4": {
+                      "const": -4,
+                      "type": "integer"
+                    },
+                    "5": {
+                      "const": 6,
+                      "type": "integer"
+                    },
+                    "6": {
+                      "const": -8,
+                      "type": "integer"
+                    },
+                    "7": {
+                      "const": 10,
+                      "type": "integer"
+                    },
+                    "8": {
+                      "const": -12,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                  ],
+                  "type": "object"
+                },
+                "increment_x_coefficients": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "4": {
+                      "const": 2,
+                      "type": "integer"
+                    },
+                    "5": {
+                      "const": -4,
+                      "type": "integer"
+                    },
+                    "6": {
+                      "const": 6,
+                      "type": "integer"
+                    },
+                    "7": {
+                      "const": -8,
+                      "type": "integer"
+                    },
+                    "8": {
+                      "const": 10,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                  ],
+                  "type": "object"
+                },
+                "memory_absolute_sum": {
+                  "const": "14",
+                  "type": "string"
+                },
+                "memory_absolute_terms": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "3": {
+                      "const": "3/2",
+                      "type": "string"
+                    },
+                    "4": {
+                      "const": "5/2",
+                      "type": "string"
+                    },
+                    "5": {
+                      "const": "3",
+                      "type": "string"
+                    },
+                    "6": {
+                      "const": "3",
+                      "type": "string"
+                    },
+                    "7": {
+                      "const": "5/2",
+                      "type": "string"
+                    },
+                    "8": {
+                      "const": "3/2",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                  ],
+                  "type": "object"
+                },
+                "memory_homogeneous": {
+                  "const": "4/3",
+                  "type": "string"
+                },
+                "memory_phi_loss_factor": {
+                  "const": "1/42",
+                  "type": "string"
+                },
+                "memory_tail": {
+                  "const": "32/3",
+                  "type": "string"
+                },
+                "nomenclature_firewall": {
+                  "const": "35/4 and 14 belong only to increment XI/ETA, never endpoint ALPHA/BETA",
+                  "type": "string"
+                },
+                "published_coarse_pi2": {
+                  "const": 31,
+                  "type": "integer"
+                },
+                "total_pi2": {
+                  "const": "92/3",
+                  "type": "string"
+                },
+                "x_absolute_sum": {
+                  "const": "35/4",
+                  "type": "string"
+                },
+                "x_absolute_terms": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "4": {
+                      "const": "5/4",
+                      "type": "string"
+                    },
+                    "5": {
+                      "const": "2",
+                      "type": "string"
+                    },
+                    "6": {
+                      "const": "9/4",
+                      "type": "string"
+                    },
+                    "7": {
+                      "const": "2",
+                      "type": "string"
+                    },
+                    "8": {
+                      "const": "5/4",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                  ],
+                  "type": "object"
+                },
+                "x_homogeneous": {
+                  "const": "5/2",
+                  "type": "string"
+                },
+                "x_tail": {
+                  "const": "20",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "all_pass",
+                "endpoint_alpha_coefficients",
+                "endpoint_beta_coefficients",
+                "geometric_tail_factor",
+                "increment_memory_coefficients",
+                "increment_x_coefficients",
+                "memory_absolute_sum",
+                "memory_absolute_terms",
+                "memory_homogeneous",
+                "memory_phi_loss_factor",
+                "memory_tail",
+                "nomenclature_firewall",
+                "published_coarse_pi2",
+                "total_pi2",
+                "x_absolute_sum",
+                "x_absolute_terms",
+                "x_homogeneous",
+                "x_tail"
+              ],
+              "type": "object"
+            },
+            "successor_tail": {
+              "additionalProperties": false,
+              "properties": {
+                "all_pass": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "count": {
+                  "const": 7,
+                  "type": "integer"
+                },
+                "indexing": {
+                  "const": "the memory loss begins at j+1, the strict successor suffix",
+                  "type": "string"
+                },
+                "row_digest": {
+                  "const": "544a5ee3857cb635a2adcd147c86270d8f1602ba859f9981e6effbf1fcb317c9",
+                  "type": "string"
+                },
+                "rows": {
+                  "items": false,
+                  "maxItems": 7,
+                  "minItems": 7,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 2,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 3,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 5,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 8,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 12,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "endpoint": {
+                          "const": 32,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "start": {
+                          "const": 18,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "endpoint",
+                        "pass",
+                        "start"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "all_pass",
+                "count",
+                "indexing",
+                "row_digest",
+                "rows"
+              ],
+              "type": "object"
+            },
+            "terminal": {
+              "additionalProperties": false,
+              "properties": {
+                "all_pass": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "construction": {
+                  "const": "R_l=P(E_l-2E_(l+1)+E_(l+2)) only for l<=7; R8=P*E8 separately; E9=0; no E10",
+                  "type": "string"
+                },
+                "count": {
+                  "const": 4,
+                  "type": "integer"
+                },
+                "rows": {
+                  "items": false,
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "prefixItems": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "E10_constructed": {
+                          "const": false,
+                          "type": "boolean"
+                        },
+                        "E9": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "P_E8": {
+                          "const": 1,
+                          "type": "integer"
+                        },
+                        "R8": {
+                          "const": 1,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "y": {
+                          "const": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "E10_constructed",
+                        "E9",
+                        "P_E8",
+                        "R8",
+                        "pass",
+                        "y"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "E10_constructed": {
+                          "const": false,
+                          "type": "boolean"
+                        },
+                        "E9": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "P_E8": {
+                          "const": 17,
+                          "type": "integer"
+                        },
+                        "R8": {
+                          "const": 17,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "y": {
+                          "const": 2,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "E10_constructed",
+                        "E9",
+                        "P_E8",
+                        "R8",
+                        "pass",
+                        "y"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "E10_constructed": {
+                          "const": false,
+                          "type": "boolean"
+                        },
+                        "E9": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "P_E8": {
+                          "const": 697,
+                          "type": "integer"
+                        },
+                        "R8": {
+                          "const": 697,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "y": {
+                          "const": 3,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "E10_constructed",
+                        "E9",
+                        "P_E8",
+                        "R8",
+                        "pass",
+                        "y"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "E10_constructed": {
+                          "const": false,
+                          "type": "boolean"
+                        },
+                        "E9": {
+                          "const": "0",
+                          "type": "string"
+                        },
+                        "P_E8": {
+                          "const": 3563226401,
+                          "type": "integer"
+                        },
+                        "R8": {
+                          "const": 3563226401,
+                          "type": "integer"
+                        },
+                        "pass": {
+                          "const": true,
+                          "type": "boolean"
+                        },
+                        "y": {
+                          "const": 6,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "E10_constructed",
+                        "E9",
+                        "P_E8",
+                        "R8",
+                        "pass",
+                        "y"
+                      ],
+                      "type": "object"
+                    }
+                  ],
+                  "type": "array"
+                }
+              },
+              "required": [
+                "all_pass",
+                "construction",
+                "count",
+                "rows"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "af_coefficients",
+            "channel_equivalence",
+            "cubic",
+            "endpoint_normal_form",
+            "gamma_equivalence",
+            "low_order",
+            "negative_mutations",
+            "remainder",
+            "remainder_ledger",
+            "successor_tail",
+            "terminal"
+          ],
+          "type": "object"
+        },
+        "status": {
+          "const": "RH-383_exact_euler_tail_partition_certificate",
+          "type": "string"
+        }
+      },
+      "required": [
+        "all_pass",
+        "claim_boundary",
+        "counts",
+        "partition_count_degrees_1_through_12",
+        "proof_ledger",
+        "sections",
+        "status"
+      ],
+      "type": "object"
+    },
+    "certificate_fixture": {
+      "additionalProperties": false,
+      "properties": {
+        "bytes": {
+          "const": 12245,
+          "type": "integer"
+        },
+        "matches": {
+          "const": true,
+          "type": "boolean"
+        },
+        "sha256": {
+          "const": "9e2742fcdb2f626909eeb528c5081c9ace5414a1e6466c15b8b6800f427b6f16",
+          "type": "string"
+        }
+      },
+      "required": [
+        "bytes",
+        "matches",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "first_unresolved_object": {
+          "const": "a phase-weighted shift-two correlation theorem for active c11(r), or a new theorem-backed independent route",
+          "type": "string"
+        },
+        "notes": {
+          "items": false,
+          "maxItems": 8,
+          "minItems": 8,
+          "prefixItems": [
+            {
+              "const": "The N-limit is taken at fixed finite q before the cofinal square-clock index tends to infinity.",
+              "type": "string"
+            },
+            {
+              "const": "The theorem is restricted to universally safe phasewise tables with c11(r)=0 at every phase.",
+              "type": "string"
+            },
+            {
+              "const": "The partition loss sign is controlled by partition length, not total degree.",
+              "type": "string"
+            },
+            {
+              "const": "The memory increment uses the strict successor tail j+1.",
+              "type": "string"
+            },
+            {
+              "const": "The general 92/3 bound does not inherit RH-381 or RH-382's sharper special-purpose constants.",
+              "type": "string"
+            },
+            {
+              "const": "Finite rows reproduce and attack symbolic identities; they are not fits or asymptotic evidence.",
+              "type": "string"
+            },
+            {
+              "const": "No PNT, p_y rewrite, q=q(N), active-c11 theorem, or adaptive-capacity convergence is claimed.",
+              "type": "string"
+            },
+            {
+              "const": "No operator, determinant, prime-power trace, zero identification, Hilbert--Polya construction, RH implication, or Gate promotion is claimed.",
+              "type": "string"
+            }
+          ],
+          "type": "array"
+        },
+        "route_a": {
+          "const": "GO",
+          "type": "string"
+        },
+        "route_b": {
+          "const": "STOP_SCOPED",
+          "type": "string"
+        }
+      },
+      "required": [
+        "first_unresolved_object",
+        "notes",
+        "route_a",
+        "route_b"
+      ],
+      "type": "object"
+    },
+    "forbidden_claims": {
+      "additionalProperties": false,
+      "properties": {
+        "active_c11_controlled": {
+          "const": false,
+          "type": "boolean"
+        },
+        "adaptive_capacity_limit_proved": {
+          "const": false,
+          "type": "boolean"
+        },
+        "finite_fit_promoted": {
+          "const": false,
+          "type": "boolean"
+        },
+        "growing_clock_q_of_N_used": {
+          "const": false,
+          "type": "boolean"
+        },
+        "hilbert_polya_operator_constructed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "p_y_asymptotic_claimed": {
+          "const": false,
+          "type": "boolean"
+        },
+        "prime_number_theorem_used": {
+          "const": false,
+          "type": "boolean"
+        },
+        "riemann_hypothesis_proved": {
+          "const": false,
+          "type": "boolean"
+        },
+        "riemann_zeros_identified": {
+          "const": false,
+          "type": "boolean"
+        },
+        "von_mangoldt_trace_formula_proved": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "active_c11_controlled",
+        "adaptive_capacity_limit_proved",
+        "finite_fit_promoted",
+        "growing_clock_q_of_N_used",
+        "hilbert_polya_operator_constructed",
+        "p_y_asymptotic_claimed",
+        "prime_number_theorem_used",
+        "riemann_hypothesis_proved",
+        "riemann_zeros_identified",
+        "von_mangoldt_trace_formula_proved"
+      ],
+      "type": "object"
+    },
+    "gates": {
+      "additionalProperties": false,
+      "properties": {
+        "A_canonical_intrinsic_dynamical_spectral_determinant": {
+          "const": false,
+          "type": "boolean"
+        },
+        "B_time_oriented_scattering_or_unitary_completion": {
+          "const": false,
+          "type": "boolean"
+        },
+        "C_self_adjoint_generator_and_intrinsic_T_log_T": {
+          "const": false,
+          "type": "boolean"
+        },
+        "D_von_mangoldt_weighted_prime_power_traces": {
+          "const": false,
+          "type": "boolean"
+        },
+        "E_completed_zeta_divisor_equality": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "A_canonical_intrinsic_dynamical_spectral_determinant",
+        "B_time_oriented_scattering_or_unitary_completion",
+        "C_self_adjoint_generator_and_intrinsic_T_log_T",
+        "D_von_mangoldt_weighted_prime_power_traces",
+        "E_completed_zeta_divisor_equality"
+      ],
+      "type": "object"
+    },
+    "predecessor_checks": {
+      "additionalProperties": false,
+      "properties": {
+        "all_pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "mvp2_gates_pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "rh374_status_pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "rh379_status_pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "rh380_status_pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "rh381_status_pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "rh382_status_pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "rh382_two_scale_sign_pass": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "all_pass",
+        "mvp2_gates_pass",
+        "rh374_status_pass",
+        "rh379_status_pass",
+        "rh380_status_pass",
+        "rh381_status_pass",
+        "rh382_status_pass",
+        "rh382_two_scale_sign_pass"
+      ],
+      "type": "object"
+    },
+    "reproduction": {
+      "additionalProperties": false,
+      "properties": {
+        "finite_rows_only": {
+          "const": true,
+          "type": "boolean"
+        },
+        "low_order_redundancy": {
+          "const": "33 endpoint-labeled bundles repeat the same three symbolic coefficient identities and are not 33 separate theorems",
+          "type": "string"
+        },
+        "q_sign_redundancy": {
+          "const": "432 c-labeled rows share 72 tail/degree positions and are not 432 separate theorems",
+          "type": "string"
+        },
+        "three_independent_oracles": {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "const": "endpoint C/W canonical partition compiler",
+              "type": "string"
+            },
+            {
+              "const": "ordered increment Gamma/h/e/Phi compiler with successor tail",
+              "type": "string"
+            },
+            {
+              "const": "A_c/F_c telescope direct-gap compiler",
+              "type": "string"
+            }
+          ],
+          "type": "array"
+        }
+      },
+      "required": [
+        "finite_rows_only",
+        "low_order_redundancy",
+        "q_sign_redundancy",
+        "three_independent_oracles"
+      ],
+      "type": "object"
+    },
+    "source_commits": {
+      "additionalProperties": false,
+      "properties": {
+        "rh374_release": {
+          "const": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+          "type": "string"
+        },
+        "rh379_release": {
+          "const": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+          "type": "string"
+        },
+        "rh380_release": {
+          "const": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+          "type": "string"
+        },
+        "rh381_release": {
+          "const": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+          "type": "string"
+        },
+        "rh382_release": {
+          "const": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+          "type": "string"
+        },
+        "rh_mvp2_archive": {
+          "const": "c0aed13a34b8bbc53061aed23738660adcd3624c",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rh374_release",
+        "rh379_release",
+        "rh380_release",
+        "rh381_release",
+        "rh382_release",
+        "rh_mvp2_archive"
+      ],
+      "type": "object"
+    },
+    "source_locks": {
+      "additionalProperties": false,
+      "properties": {
+        "all_source_digest": {
+          "const": "492100fe3b6b823a39b58cec25b0dcddf6d52c02bd1941f0978611f01a2b8db9",
+          "type": "string"
+        },
+        "count": {
+          "const": 41,
+          "type": "integer"
+        },
+        "digest_contract_pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "entries": {
+          "items": false,
+          "maxItems": 41,
+          "minItems": 41,
+          "prefixItems": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh374_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/README.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "dbc0041d012d6316ef6a8ffab6f05d510a1cc68414eae30c3744a7c411925c4c",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh374_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/THEOREM_LEDGER.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "9451ee6faf1f523a62a10c85ba494b8617011dab7b8d7bc517e7c0c26aabb4ee",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh374_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/UPDATED_ROADMAP.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "c6857ef5bc9cd88074108254fc39a93e985daae7fa545e26badbfdfc086bf28c",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh374_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/main.tex",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "2129075ec4bae1c5f0f25fcd09cec273fe322d44116d51e5191e3cade4fb9f6d",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh374_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/references.bib",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "ce1e5123ff7edc05c6436f2534044e7058b4a3857bf0f084971954ced3e7c184",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh374_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/results/result.json",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "ca492e96bd557b966d7924ee7acca7eceb9248dafe513a674f36f78891438bdd",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "2bb3baa6a09491c2d679d10c0dbcd39587d1f831",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh374_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/src/square_clock/core.py",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "79afe7d583c3db30f876c62605a42f2ee77819028a40d01a3ec24d3259a40615",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh379_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/README.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "8beb603782f40db86031515d3a70d82e4f76cdf10d60561062d88ff581daffe5",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh379_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/THEOREM_LEDGER.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "7229a3969c48463724ed573b4dde1da3e8a48790ebe7663af68b1139a033c2bb",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh379_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/UPDATED_ROADMAP.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "75c243a5ae12fbe71cdb2ce3cb3c46a8e7a61d016dd6c8dba2b98b6b9dac3464",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh379_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/main.tex",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "c5d97a227398a4f1d46a39fdec73ffb86aeb9bfc0f16296be7023b187b497090",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh379_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/references.bib",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "d728ca8571bfcc96e78be3b5231db83c3bb61140d0dfabb3be0b4848738673c6",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh379_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.json",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "a209b922ad6235263bb5213d090a2fb0ad0bcfdd0168788e64115b33d95a4ca8",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh379_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.schema.json",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "0af712350369e3f7e4a51ce5a8ee1179928e9397372b7b1040183dc3668406df",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "9ae9802ed17529ef4adfb81d7e2158d47c3c8d22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh379_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/src/phasewise_memory/core.py",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "cd3949cc0a1ece1dadab59c049c8a4d3fc170a9c7b6332b93ad62567277fd582",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh380_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/README.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "eb241b1fd954ba689750d47dd51ae7cd5980c2bb7706165e3fcbab2e2375bc23",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh380_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/THEOREM_LEDGER.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "c274c2a5685ba6d472d392c5097149742e432e938aeb61fd3f5b7f001a382c7a",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh380_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/UPDATED_ROADMAP.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "8a82e86bf66248d5dda44ca806fd2c5d974530b5b7e85baac25c0aa98f41ce1d",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh380_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/main.tex",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "6110b876e1b31fe79e7ff72e5058d97179575cf1dccce86e8c7c0a049d57451f",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh380_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/references.bib",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "5ea4b95e74c63e47b5eb6a92564941748fb02fc7e7729efe05f52932bb657604",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh380_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.json",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "e7e6bc2acc46b9346e2fdd90306e9f8c5fb18c193ed0601466bbf4e01a92be33",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh380_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.schema.json",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "62bb03f0e61043bdeda0bf49afcbc0877d95115ca677e7cda20a73d955c5a57f",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "dd94b9cfebdbf5df92084ba870b10d3a4d432bee",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh380_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/src/finite_clock_gap/core.py",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "ed88dd657fcf4c3fa4ae1c2cd2d0a434770433e7cffd0b52297faab1d5459074",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh381_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/README.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "891ebd30acfbffd90cddda3bd96719f01d7cae13eec399894b08c0c20435dae3",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh381_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/THEOREM_LEDGER.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "a7a79197bba2a423cff77f6f74e63c8621a40c2bcef368e5ce6ce954857edcda",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh381_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/UPDATED_ROADMAP.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "f2ea88b81441c78171a2a54d85ddc7f2a405ae78b94cac43ca6f6ae46048d703",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh381_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/main.tex",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "b1025502880530602f134ea5bdc6dcde34e2cdfd18fb364cb104343d456b643a",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh381_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/references.bib",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "bb61978aebc465b05e3ffda154926ad20bb15e4a475e12304cc6147903d40625",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh381_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.json",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "a7a869f40af0a17656b28a07fe58e337d9b8e619d13de8bc671326912f875ffd",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh381_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.schema.json",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "ed1788580270f03bdcbb43172edf149f086b76564697dd93e1556282855aad5b",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "b6a6355b3390f3d00091a02cf77845b4f68a4a22",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh381_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/src/prime_square_tail/core.py",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "acc1e11ff57b634ec702996526f4ddd12ac58d372236a8d77202b529faca9322",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh382_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/README.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "5f818841bb7db7c8b27e75d892a2fa6f3de549edb7456f65fb2275b82356203a",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh382_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/THEOREM_LEDGER.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "1c835ef614fd9381c08019f0cb5358c829bafdb2e7502861649566508b4ea586",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh382_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/UPDATED_ROADMAP.md",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "793e27292d6f99fc1c23a550e66b247bbc1aa1b5c0bfef266339697bf3b9e66e",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh382_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/main.tex",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "929b4304390036843c5e4f0d165f3be45d683e36f2a7537a3a5d14ed197b5d0c",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh382_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/references.bib",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "c8ea97c3b3626d27fc6a3ec0dca69aa87c4eb2b248ec410bc989aff0aa4f11dc",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh382_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.json",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "960ef6ce017ad62b6c552ed30a41b9f0c3e41a9a217ef103c4a3f812c80a71d2",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh382_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.schema.json",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "573b631820edd3b911b9792f9587fee07a03cf13ecefd03a6247d115cfa42394",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "32afe96176ac00f4f261cf7097e0342a5c5194f1",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh382_release",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/src/two_scale_tail/core.py",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "3fd8bd0233385aeb440d0703769ea6b624792aef4460ec5b887116fe3554b56e",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "c0aed13a34b8bbc53061aed23738660adcd3624c",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh_mvp2_archive",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "3cf3261c0c2c6fbe7511b16615f032edfcbd6b6b1e0c73f5e2ef932a1e6a694c",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "commit": {
+                  "const": "c0aed13a34b8bbc53061aed23738660adcd3624c",
+                  "type": "string"
+                },
+                "group": {
+                  "const": "rh_mvp2_archive",
+                  "type": "string"
+                },
+                "path": {
+                  "const": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json",
+                  "type": "string"
+                },
+                "sha256": {
+                  "const": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "commit",
+                "group",
+                "path",
+                "sha256"
+              ],
+              "type": "object"
+            }
+          ],
+          "type": "array"
+        },
+        "group_digests": {
+          "additionalProperties": false,
+          "properties": {
+            "rh374_release": {
+              "const": "1110169db1afe2bcb1242cd8284665be9681f955ff942b23908a9401635695ff",
+              "type": "string"
+            },
+            "rh379_release": {
+              "const": "c029ccbe0b499a38f675292c2260cfde5d4b7aede6c6ddee9f87d2c816ecd848",
+              "type": "string"
+            },
+            "rh380_release": {
+              "const": "3c488551cf9b8bdf6a4509b1f39af2119ea6b2ac401bda3cb63f87df38a0e751",
+              "type": "string"
+            },
+            "rh381_release": {
+              "const": "5d07b1b897aa36127f2f190517229534719f37ce0f3ff904d1c31adebae6c9df",
+              "type": "string"
+            },
+            "rh382_release": {
+              "const": "ca26217907f59b219ba2d2b3e4e77ec6e344d036c3a8a92ab5683497d3309f7e",
+              "type": "string"
+            },
+            "rh_mvp2_archive": {
+              "const": "c22c0a9e4702c3bc615acfc19e564cbfd7d08a3bc845b28c659511065c05989b",
+              "type": "string"
+            }
+          },
+          "required": [
+            "rh374_release",
+            "rh379_release",
+            "rh380_release",
+            "rh381_release",
+            "rh382_release",
+            "rh_mvp2_archive"
+          ],
+          "type": "object"
+        },
+        "mutable_root_files_excluded": {
+          "const": true,
+          "type": "boolean"
+        },
+        "pass": {
+          "const": true,
+          "type": "boolean"
+        },
+        "release_blob_identity_pass": {
+          "const": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "all_source_digest",
+        "count",
+        "digest_contract_pass",
+        "entries",
+        "group_digests",
+        "mutable_root_files_excluded",
+        "pass",
+        "release_blob_identity_pass"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "const": "RH-383_exact_euler_tail_partition_normal_form",
+      "type": "string"
+    },
+    "theorem": {
+      "additionalProperties": false,
+      "properties": {
+        "cubic_block": {
+          "const": "gamma_111, gamma_21 and gamma_3 are frozen exactly in the manuscript and certificate",
+          "type": "string"
+        },
+        "endpoint_normal_form": {
+          "const": "pi^2(B_infinity-G(q_y))=2(C(u)-C(U^(y)))-4W(U^(y))(1-exp(-Phi_1(y)))",
+          "type": "string"
+        },
+        "endpoint_ratios": {
+          "const": "U_m^(y)=u_m exp(Phi_(m-1)(y)); H_y=(4/pi^2)exp(-Phi_1(y))",
+          "type": "string"
+        },
+        "factor_class": {
+          "const": "fixed finite q before N tends to infinity; universally safe phasewise lag-two tables with c11(r)=0 at every phase",
+          "type": "string"
+        },
+        "m2_cancellation": {
+          "const": "the m=2 contribution vanishes exactly for every nonempty partition",
+          "type": "string"
+        },
+        "partition_compiler": {
+          "const": "gamma_lambda=-(2/z_lambda)sum alpha_m u_m(m-1)^d-(4/z_lambda)sum beta_m u_m((m-1)^d-product_r((m-1)^r-1)^k_r)",
+          "type": "string"
+        },
+        "power_sums": {
+          "const": "P_r(y)=sum_(j>=y)a_(j+1)^r; Phi_c(y)=sum_(r>=1)c^r P_r(y)/r; a_(j+1)=1/(p_(j+1)^2-1)",
+          "type": "string"
+        },
+        "prime_distribution_input": {
+          "const": "no prime number theorem and no p_y-scale rewrite is used",
+          "type": "string"
+        },
+        "remainder": {
+          "const": "for exact integer D>=1 and rho_y=7T_y<=7/8, abs(R_(D,y))<=92*rho_y^(D+1)/(3*pi^2)<31*rho_y^(D+1)/pi^2",
+          "type": "string"
+        },
+        "terminal": {
+          "const": "R8=P_y*E8 is separate; E9=0 from p=3; E10 is not used or constructed",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cubic_block",
+        "endpoint_normal_form",
+        "endpoint_ratios",
+        "factor_class",
+        "m2_cancellation",
+        "partition_compiler",
+        "power_sums",
+        "prime_distribution_input",
+        "remainder",
+        "terminal"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "certificate",
+    "certificate_fixture",
+    "claim_boundary",
+    "forbidden_claims",
+    "gates",
+    "predecessor_checks",
+    "reproduction",
+    "source_commits",
+    "source_locks",
+    "status",
+    "theorem"
+  ],
+  "title": "RH-383 exact result ledger",
+  "type": "object"
+}
