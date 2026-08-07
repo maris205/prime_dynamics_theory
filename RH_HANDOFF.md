@@ -2,13 +2,13 @@
 
 Status date: 2026-08-08
 
-Current completed endpoint: RH-383
+Current completed endpoint: RH-384
 
-Completed research batch: RH-352 through RH-383
+Completed research batch: RH-352 through RH-384
 
-Post-four-volume independent theorem edges: RH-362 through RH-383
+Post-four-volume independent theorem edges: RH-362 through RH-384
 
-Latest route verdict: RH-383 Route A `GO`; Route B `STOP_SCOPED`
+Latest route verdict: RH-384 Route A `GO`; Route B `STOP_SCOPED`
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -66,6 +66,9 @@ RH-382 integration commit:
 
 RH-383 integration commit:
 `bea5c88ca4ae9ca75511af42296ed099c1d6b11a`.
+
+RH-384 integration commit:
+`386b66a55c9263353c7d407fd712be7e6279f1e6`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -166,6 +169,11 @@ Read completely:
 - `papers/RH-383-exact-euler-tail-partition-normal-form/THEOREM_LEDGER.md`
 - `papers/RH-383-exact-euler-tail-partition-normal-form/results/result.json`
 - `papers/RH-383-exact-euler-tail-partition-normal-form/main.pdf`
+- `papers/RH-384-prime-tail-scale-separation/README.md`
+- `papers/RH-384-prime-tail-scale-separation/UPDATED_ROADMAP.md`
+- `papers/RH-384-prime-tail-scale-separation/THEOREM_LEDGER.md`
+- `papers/RH-384-prime-tail-scale-separation/results/result.json`
+- `papers/RH-384-prime-tail-scale-separation/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -197,8 +205,9 @@ safe-window/online-transducer input, RH-379 as the phasewise Chowla-free
 memory-supremum input, RH-380 as the finite-clock nonattainment/gap input,
 RH-381 as the prime-square-tail rate/quadratic-remainder input, RH-382 as the
 two-scale second-order/cubic-remainder input, RH-383 as the exact Euler-tail
-partition-normal-form input, and RH-361 as the immediate endpoint of the
-still-open original physical branch.
+partition-normal-form input, RH-384 as the prime-tail scale-separation input,
+and RH-361 as the immediate endpoint of the still-open original physical
+branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -208,32 +217,34 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-383 is now integrated.  Inside the frozen RH-379 phasewise-`c_11=0`
-class it proves the exact Euler-tail endpoint normal form
+RH-384 is now integrated.  Inside the frozen RH-379 phasewise-`c_11=0`
+class it source-locks the prime number theorem and proves, for every fixed
+integer `r>=1`,
 
 ```text
-U_m^(y)=u_m exp(Phi_(m-1)(y)),
-H_y=(4/pi^2)exp(-Phi_1(y)),
-pi^2(B_infinity-G(q_y))
- =2(C(u)-C(U^(y)))-4W(U^(y))(1-exp(-Phi_1(y))).
+P_r(y)=sum_(p>p_y)(p^2-1)^(-r)
+      ~1/[(2r-1)p_y^(2r-1)log p_y].
 ```
 
-Here `Phi_c(y)=sum_(r>=1)c^rP_r(y)/r` and
-`P_r(y)=sum_(p>p_y)(p^2-1)^(-r)`.  A finite partition compiler gives every
-homogeneous coefficient, cancels the `m=2` channel at all positive orders,
-reproduces RH-381/RH-382 in its first two layers, and freezes a new cubic
-block.  For every exact integer `D>=1`, its remainder obeys
-`abs(R_(D,y))<=(92/(3pi^2))(7T_y)^(D+1)`.  The proof establishes absolute
-convergence, fixes every clock before its `N`-limit, and uses neither finite
-fitting nor a prime number theorem.
+It multiplies these fixed-`r` laws for every fixed partition and proves
+`T_y^3=o(S_y)=o(T_y^2)`.  Combined with RH-382, this yields five normalized
+gap limits and proves that the twice-subtracted residual has positive
+`S_y` coefficient and is logarithmically larger than `T_y^3`.  The
+second-scale formulas subtract the exact arithmetic terms `A T_y` and
+`B T_y^2`; bare-PNT surrogates are explicitly forbidden because their
+unknown errors can swamp the next scale.  Every clock is fixed before its
+`N`-limit, and every `r` and partition is fixed before `y->infinity`.
 
-Independent source and proof audits give `GO` to the next within-class
-candidate, RH-384: use a separately source-locked prime number theorem to
-resolve the power sums into distinct `p_y` scales.  In particular the
-candidate proves `S_y=o(T_y^2)` but `T_y^3=o(S_y)`, so the first scale below
-`T_y^2` is `S_y`, not a scalar cubic power of `T_y`.  This remains a
-candidate until its paper and release audits are complete.  Any extension to
-genuinely active phasewise `c_11!=0` remains `STOP_SCOPED` without a
+The post-RH-384 breadth-first audit separated a direct corollary from a new
+theorem budget.  Combining the RH-383 cubic layer with the RH-384 scale
+dictionary resolves the next fixed square-clock coefficients, but uses no new
+estimate or uniformity and therefore receives no new paper number.  By
+contrast, RH-366's uniform-in-frequency Davenport estimate pays a genuine
+limit-exchange budget: for every fixed `B>0`, the full RH-379 universally safe
+phasewise-`c_11=0` class is uniform over `q<=floor((log N)^B)`.  Independent
+proof and numerical audits give this candidate `GO`; it is assigned to
+RH-385 subject to manuscript, artifact, integrity, and release gates.  Any
+extension to active phasewise `c_11!=0` remains `STOP_SCOPED` without a
 phase-weighted shift-two correlation theorem.
 The geometrically selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
@@ -1778,7 +1789,89 @@ introduce `q(N)`, activate nonzero phasewise `c_11`, settle the RH-377
 adaptive envelope, or construct an intrinsic operator, trace, zero model,
 or Gate A--E result.  Route A is `GO`; Route B is `STOP_SCOPED`.
 
-## 4. Compact conclusions from RH-352 through RH-383
+### 3.23 RH-384 prime-tail scale separation
+
+RH-384 retains the fixed-finite-clock, universally safe,
+phasewise-`c_11=0` class and adds a separately frozen prime-counting input.
+For each fixed integer `r>=1`, with `x=p_y` and
+`f_r(t)=(t^2-1)^(-r)`, strict Stieltjes summation gives
+
+```text
+P_r(y)=sum_(p>x)f_r(p)
+      =-pi(x)f_r(x)-integral_x^infinity pi(t)f_r'(t)dt.
+```
+
+The negative endpoint term is essential: the integral contributes the
+apparent coefficient `2r/(2r-1)`, and the boundary subtracts `1`.  The prime
+number theorem therefore yields
+
+```text
+P_r(y)~1/[(2r-1)p_y^(2r-1)log p_y].
+```
+
+For every fixed partition `lambda=1^k_1...d^k_d` of degree `d` and length
+`ell=sum k_r`, finite multiplication gives
+
+```text
+P_lambda(y)
+ ~[product_r(2r-1)^(-k_r)]
+   p_y^(-(2d-ell))(log p_y)^(-ell).
+```
+
+In particular, with `T_y=P_1(y)` and `S_y=P_2(y)`,
+
+```text
+p_y log(p_y)T_y ->1,
+3p_y^3 log(p_y)S_y ->1,
+S_y/T_y^2 ->0,
+T_y^3/S_y ->0,
+S_y/[T_y^3 log(p_y)^2] ->1/3.
+```
+
+Write
+
+```text
+A=2X_infinity/pi^2,
+B=(Y_infinity+2m_infinity)/pi^2,
+C=(Y_infinity-2m_infinity)/pi^2.
+```
+
+The exact RH-382 expansion then implies
+
+```text
+p_y log(p_y)(B_infinity-G(q_y)) ->A,
+[p_y log(p_y)]^2(B_infinity-G(q_y)-A T_y) ->B,
+[B_infinity-G(q_y)-A T_y-B T_y^2]/S_y ->C,
+3p_y^3 log(p_y)[B_infinity-G(q_y)-A T_y-B T_y^2] ->C,
+[B_infinity-G(q_y)-A T_y-B T_y^2]
+  /[T_y^3 log(p_y)^2] ->C/3.
+```
+
+The directed interval certificate proves
+
+```text
+1.5463476716710499204 <= Y_infinity-2m_infinity
+                      <= 1.5484488989771761113,
+```
+
+so `C>0`; the twice-subtracted residual is eventually positive and its ratio
+to `T_y^3` tends to `+infinity`.  The interval is for the unnormalized
+numerator `Y_infinity-2m_infinity`, not for `C` itself.
+
+The exact interface uses `p>p_y` and first atom `p_(y+1)`.  Inclusive versus
+strict endpoint and current versus successor prime are exact-interface
+distinctions but are invisible to the leading PNT asymptotic.  Limit 2 must
+subtract exact `A T_y`; limits 3--5 must subtract exact
+`A T_y+B T_y^2`.  Replacing either by a bare-PNT surrogate is unsupported at
+the smaller scales.
+
+RH-384 proves no uniformity for growing `r`, degree, length, or clock; no
+effective PNT remainder or computable eventual-sign threshold; no active
+phasewise-`c_11` cancellation or adaptive-capacity limit; and no intrinsic
+operator, trace, zero model, or Gate A--E result.  Route A is `GO`; Route B is
+`STOP_SCOPED`.
+
+## 4. Compact conclusions from RH-352 through RH-384
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -1938,6 +2031,13 @@ or Gate A--E result.  Route A is `GO`; Route B is `STOP_SCOPED`.
   from degree, uses the strict successor tail, and does not use PNT, rewrite
   in `p_y`, enlarge the phasewise-`c_11=0` class, settle adaptive capacity,
   or construct any Gate object.
+- **RH-384:** Fixed-`r` prime-tail and fixed-partition `p_y`/log asymptotics,
+  with the strict Abel boundary and exact coefficient `1/(2r-1)`; the scale
+  separation `T_y^3=o(S_y)=o(T_y^2)`; and five normalized square-clock gap
+  limits with a proof-grade positive `S_y` coefficient.  It uses exact
+  arithmetic subtractions at smaller scales and proves no effective PNT
+  rate, growing parameter, class enlargement, adaptive-capacity result, or
+  Gate object.
 
 ## 5. Route firewall and reopening triggers
 
@@ -2131,6 +2231,21 @@ Do not:
   active phasewise-`c_11` cancellation, adaptive-capacity limit, intrinsic
   operator, determinant, trace, zero model, Hilbert--Polya construction, or
   Gate result;
+- omit the negative strict-endpoint Abel boundary in RH-384 or replace its
+  net constant `1/(2r-1)` by the integral-only coefficient
+  `2r/(2r-1)`;
+- call `p>=p_y` or a `p_(y+1)` right-hand scale a leading-asymptotic
+  counterexample: those are exact-interface distinctions but have the same
+  leading fixed-`r` PNT asymptotic;
+- replace exact `A T_y` in RH-384 limit 2, or exact
+  `A T_y+B T_y^2` in limits 3--5, by bare-PNT surrogates whose uncontrolled
+  error may dominate the next scale;
+- identify the certified interval for `Y_infinity-2m_infinity` with the
+  normalized coefficient `C` before dividing by `pi^2`;
+- promote RH-384 to an effective threshold or rate, uniform growing-`r` or
+  growing-partition theorem, growing-clock theorem, active phasewise-`c_11`
+  cancellation, adaptive-capacity limit, intrinsic operator, determinant,
+  trace, zero model, Hilbert--Polya construction, or Gate result;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -2146,7 +2261,7 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-383. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-384. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
 declared periodic/typical/distance-two capacity audit, RH-373 closes the
 declared fixed composite-clock phase-selector floor route, and RH-374 closes
@@ -2185,63 +2300,67 @@ the adaptive capacity limit.  RH-383 closes only the exact Euler-tail
 endpoint/partition normal form, absolute convergence, all-order `m=2`
 cancellation, cubic layer, and uniform arbitrary-order remainder inside that
 same class.  It does not supply a PNT scale dictionary, enlarge the class, or
-close the adaptive capacity limit.  For RH-384 and later,
+close the adaptive capacity limit.  RH-384 closes only the fixed-`r`,
+fixed-partition prime-tail scale dictionary and normalized gap limits inside
+that class.  It does not provide effective PNT error, growing-parameter
+uniformity, active phasewise cancellation, a growing clock, or an adaptive
+capacity limit.  For RH-385 and later,
 the shortest exact candidates are:
 
-1. The independently source-locked and proof-audited RH-384 prime-tail scale
-   separation theorem.  Retain the RH-383 class and use a separately sourced
-   prime number theorem to prove, for every fixed `r>=1`,
+1. The independently proof- and numerically audited RH-385 polylogarithmic-
+   clock uniformization theorem.  For every fixed `B>0`, retain the RH-379
+   universally safe, phasewise-`c_11=0`, `q`-periodic lag-two class.  With
 
    ```text
-   P_r(y)=sum_(p>p_y)(p^2-1)^(-r)
-         ~1/[(2r-1)p_y^(2r-1)log p_y].
+   S_N(q,f)=N^(-1) sum_(n<=N) mu(n)
+              f_(n mod q)(mu_0(n-2),mu(n)),
+   L_q(f)=sum_(r mod q)[c_02(r)delta_(q,r)+c_22(r)theta_(q,r)],
+   mu_0(m)=mu(m) for m>=1 and 0 for m<=0,
    ```
 
-   For a fixed partition `lambda=1^k_1...d^k_d` of degree `d` and length
-   `ell=sum k_r`, the target dictionary is
+   prove the triangular-array limit
 
    ```text
-   P_lambda(y)
-    ~[product_r(2r-1)^(-k_r)]
-      p_y^(-(2d-ell))(log p_y)^(-ell).
+   sup_(1<=q<=floor((log N)^B), f) abs(S_N(q,f)-L_q(f)) ->0.
    ```
 
-   In particular, with `T=P_1` and `S=P_2`, prove
+   Define
 
    ```text
-   p_y log(p_y) T_y ->1,
-   3p_y^3 log(p_y) S_y ->1,
-   S_y/T_y^2 ->0,
-   T_y^3/S_y ->0,
-   S_y/[T_y^3 log(p_y)^2] ->1/3.
+   G_N(q)=max_f abs(S_N(q,f)),
+   G(q)=max_f abs(L_q(f)).
    ```
 
-   Put
+   Then the exact endpoint is
 
    ```text
-   A=2X_infinity/pi^2,
-   B=(Y_infinity+2m_infinity)/pi^2,
-   C=(Y_infinity-2m_infinity)/pi^2.
+   sup_(q<=floor((log N)^B)) abs(G_N(q)-G(q)) ->0,
+   max_(q<=floor((log N)^B)) G_N(q) -> B_infinity.
    ```
 
-   RH-382 then yields five normalized limits:
+   The proof must use the squarefree cutoff
+   `P_N=floor(sqrt(log log N))`, eventually with `P_N>=2`, the mask period
+   `M_P=(product_(p<=P)p)^2`, and common period
+   `Q=lcm(q,M_P)`.  These are periods, not necessarily minimal periods.
+   The proof-grade uniform ledger is
 
    ```text
-   p_y log(p_y)(B_infinity-G(q_y)) ->A,
-   [p_y log(p_y)]^2(B_infinity-G(q_y)-A T_y) ->B,
-   [B_infinity-G(q_y)-A T_y-B T_y^2]/S_y ->C,
-   3p_y^3 log(p_y)[B_infinity-G(q_y)-A T_y-B T_y^2] ->C,
-   [B_infinity-G(q_y)-A T_y-B T_y^2]
-     /[T_y^3 log(p_y)^2] ->C/3.
+   abs(S_N(q,f)-L_q(f))
+    <=4sqrt(Q)D_*(N)/N+13tau_P+6Q/N+4/N,
+   tau_P=sum_(p>P)p^(-2),
+   D_*(N)=max_(X in {N,N-2}) sup_alpha
+          abs(sum_(n<=X)mu(n)exp(2pi i alpha n)).
    ```
 
-   The proof-grade interval `1.5463476716710499204 <= Y_infinity-2m_infinity
-   <= 1.5484488989771761113` makes `C>0`.  The exact second-scale subtraction
-   must use `A T_y`, not the PNT surrogate `A/[p_y log(p_y)]`, whose unknown
-   relative error can dominate `T_y^2`.  Keep the endpoint strictly
-   `p>p_y`, the first tail atom `p_(y+1)`, and every partition fixed.  Bare
-   PNT supplies no effective threshold, uniform growing-degree theorem, or
-   growing-clock result.
+   RH-366 gives `D_*(N)/N <<_A (log N)^(-A)` for every fixed `A>0`,
+   uniformly in frequency.  Since `M_P=(log N)^(o(1))`, any fixed
+   `A>B/2` closes the Fourier loss.  The coefficient alphabet must retain
+   `abs(c_21),abs(c_22)<=2`; in particular the `c_21` channel costs
+   `2sqrt(Q)`, not `sqrt(Q)`.  Keep `B>0` fixed, preserve zero padding, and
+   define the square-clock diagonal witness only after the admissible set is
+   nonempty.  Do not extend the clock range to `N^epsilon`, activate
+   `c_11`, replace the restricted maximum by `sup_(q<infinity)G_N(q)`, infer
+   `K_N/N` convergence, or claim an effective threshold or Gate result.
 2. A genuine phase-weighted shift-two or higher-order Möbius correlation
    theorem controlling active `c_11(r)` terms, the
    RH-377 envelope or a larger memory-dependent transducer class.
@@ -3185,8 +3304,9 @@ all-order disappearance of the `m=2` channel, a new cubic layer, and the
 uniform arbitrary-order remainder inside the fixed phasewise-`c_11=0`
 class.  It does not use PNT or provide a `p_y` scale theorem.
 
-Independent post-RH-383 source and proof audits give `GO` to the RH-384
-prime-tail scale-separation candidate.  Its repository PNT source is RH-2,
+At that historical stage, independent post-RH-383 source and proof audits
+gave `GO` to the candidate later published as RH-384 in Section 6.21.  Its
+repository PNT source is RH-2,
 release `836426546db31e2737e877182848c538ed4cd436`, with frozen hashes
 
 ```text
@@ -3210,8 +3330,171 @@ limits in the RH-384 contract and proves that `S_y` lies strictly between
 `T_y^2` and `T_y^3`.  A precision-80 outward computation certifies
 `1.5463476716710499204<=Y_infinity-2m_infinity<=1.5484488989771761113`,
 so the twice-subtracted coefficient is positive.  This is a candidate until
-its manuscript and release audits complete.  Active nonzero `c_11(r)` and
-the RH-377 adaptive envelope remain open; no Gate A--E conclusion changes.
+its manuscript and release audits complete.  Those audits are recorded in
+Section 6.21.  Active nonzero `c_11(r)` and the RH-377 adaptive envelope
+remain open; no Gate A--E conclusion changes.
+
+### 6.21 RH-384 source lock, prime-tail scales, and route decision (2026-08-08)
+
+RH-384 is published at
+`386b66a55c9263353c7d407fd712be7e6279f1e6`.  It freezes fifty-one
+immutable predecessor files and eight Git releases; mutable root policy and
+handoff files are intentionally excluded:
+
+```text
+RH-374 release              2bb3baa6a09491c2d679d10c0dbcd39587d1f831
+RH-379 release              9ae9802ed17529ef4adfb81d7e2158d47c3c8d22
+RH-380 release              dd94b9cfebdbf5df92084ba870b10d3a4d432bee
+RH-381 release              b6a6355b3390f3d00091a02cf77845b4f68a4a22
+RH-382 release              32afe96176ac00f4f261cf7097e0342a5c5194f1
+RH-383 release              bea5c88ca4ae9ca75511af42296ed099c1d6b11a
+RH-MVP2 archive             c0aed13a34b8bbc53061aed23738660adcd3624c
+RH-2 PNT release            836426546db31e2737e877182848c538ed4cd436
+```
+
+The group sizes are `7/8/8/8/8/8/2/2`, and the aggregate source digest is
+`90434e0468ecc062cb522da096a267748725b5dca8e59c642bb7711f45a3e0e4`.
+The RH-2 source locks Montgomery--Vaughan's prime number theorem provenance;
+the exact strict-endpoint Abel identity and its negative boundary are proved
+inside RH-384 rather than inferred from finite rows.
+
+The final executable suite has `20/20` tests.  The exact certificate contains
+eight fixed-`r` rows, sixty-six fixed-partition rows through degree eight,
+forty-eight strict-successor rows, five scale ledgers, five normalized-gap
+ledgers, ten precision-80 numerical rows, and twenty genuine mutations.  The
+exact certificate is `48689` canonical bytes with SHA-256
+`01c91e57a01de9841f282327ab2f6e1a9368e136393ddab7a2cfe6b019a519c8`.
+The inclusive/current-endpoint variants are explicitly interface checks,
+not false claims that the leading PNT asymptotic changes.
+
+The interval code traps hostile Decimal contexts, rounds each upper tail
+loss before forming a lower product, and validates exact-Fraction
+containment.  Official Draft 2020-12 metaschema and instance validation pass.
+The single-paper archive contains twenty-nine publication members plus
+fifty-one external inputs with zero failures.
+
+The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  RH-384 proves
+the fixed-`r` and fixed-partition prime-tail scale dictionary, the strict
+placement `T_y^3=o(S_y)=o(T_y^2)`, the five normalized gap limits, and the
+positive twice-subtracted coefficient.  It supplies no effective PNT rate,
+uniform growing-parameter theorem, active phasewise correlation, growing
+clock, adaptive-capacity result, or Gate A--E conclusion.  No RH-385 is
+assigned merely by continuing the Euler-tail expansion.
+
+### 6.22 Post-RH-384 breadth-first audit and RH-385 contract (2026-08-08)
+
+The first synthesis check is a direct corollary, not a new paper.  Put
+
+```text
+R_y=B_infinity-G(q_y)-A T_y-B T_y^2-C S_y.
+```
+
+The RH-383 cubic compiler and the RH-384 scale dictionary give
+
+```text
+R_y/T_y^3 -> gamma_(1,1,1)/pi^2,
+[R_y-gamma_(1,1,1)T_y^3/pi^2]/(T_y S_y)
+ -> gamma_(2,1)/pi^2.
+```
+
+Directed evaluations certify
+
+```text
+2.2754488766457144244 <= gamma_(1,1,1)
+                      <= 2.2761510512327535499,
+11.9522528185973202595 <= gamma_(2,1)
+                       <= 11.9588363283136544645.
+```
+
+More generally, the fixed-cell ordering follows mechanically from the
+already published partition compiler and PNT scale dictionary.  These facts
+pay no new estimate, uniformity, or source budget, so the primary records them
+as corollaries and does not assign them RH-385.
+
+The genuinely new edge is a restricted growing-clock theorem.  For fixed
+`B>0`, let `F_q` be the RH-379 universally safe, phasewise-`c_11=0`,
+`q`-periodic lag-two families and define
+
+```text
+S_N(q,f)=N^(-1)sum_(n<=N)mu(n)
+           f_(n mod q)(mu_0(n-2),mu(n)),
+L_q(f)=sum_(r mod q)[c_02(r)delta_(q,r)+c_22(r)theta_(q,r)].
+```
+
+Here `mu_0(m)=mu(m)` for `m>=1` and is zero for `m<=0`.  Independent proof
+and numerical audits establish
+
+```text
+sup_(1<=q<=floor((log N)^B), f in F_q)
+ abs(S_N(q,f)-L_q(f)) ->0.
+```
+
+For any integer cutoff `P>=2`, set
+
+```text
+M_P=(product_(p<=P)p)^2,
+Q=lcm(q,M_P),
+tau_P=sum_(p>P)p^(-2),
+D_*(N)=max_(X in {N,N-2}) sup_alpha
+       abs(sum_(n<=X)mu(n)exp(2pi i alpha n)).
+```
+
+The proof-grade ledger is
+
+```text
+abs(S_N(q,f)-L_q(f))
+ <=4sqrt(Q)D_*(N)/N+13tau_P+6Q/N+4/N.
+```
+
+The three Fourier channels cost respectively `sqrt(Q)`, `sqrt(Q)`, and
+`2sqrt(Q)`; the last factor is forced by legal tables with `abs(c_21)=2`.
+Choosing `P=floor(sqrt(log log N))`, eventually at least two, gives
+`M_P=(log N)^(o(1))`.  RH-366's uniform-in-frequency Davenport estimate
+then closes the Fourier term for any fixed exponent `A>B/2`.
+
+With
+
+```text
+G_N(q)=max_(f in F_q)abs(S_N(q,f)),
+G(q)=max_(f in F_q)abs(L_q(f)),
+```
+
+the max lemma and RH-379 imply
+
+```text
+sup_(q<=floor((log N)^B))abs(G_N(q)-G(q)) ->0,
+max_(q<=floor((log N)^B))G_N(q) -> B_infinity.
+```
+
+The square clocks also give an explicit diagonal witness after the admissible
+set is nonempty.  If
+`y_B(N)=max{y:q_y<=floor((log N)^B)}`, then `y_B(N)->infinity` and the
+certified positive optimizer at `q_(y_B(N))` has score tending to
+`B_infinity`.
+
+The core theorem inputs are RH-366 release
+`0396fab97bbe3348c8237f8734dec0e1893fd3bf` and RH-379 release
+`9ae9802ed17529ef4adfb81d7e2158d47c3c8d22`, with main-source hashes
+
+```text
+RH-366 main.tex
+7df165bd63d43f52dc217dea6691d231d8e40c00c148ab7e1aa4abcac55060fb
+
+RH-379 main.tex
+c5d97a227398a4f1d46a39fdec73ffb86aeb9bfc0f16296be7023b187b497090
+```
+
+RH-375 and RH-378 remain the squarefree-density and six-monomial interface
+inputs.  The primary route verdict is `Route A=GO`; the paper number RH-385
+is assigned to this polylogarithmic-clock uniformization theorem, subject to
+the full artifact, manuscript, integrity, and release gates.  Route B remains
+`STOP_SCOPED`.  Polynomial clocks such as `q=N^epsilon` are unsupported
+because a fixed log-power Davenport saving cannot pay their Fourier mass.
+Active `c_11` still meets ordinary shift-two Chowla already at `q=1`, and the
+theorem supplies no upper bound for arbitrary adaptive words and hence no
+limit for `K_N/N`.  It also supplies no effective finite threshold,
+projectively compatible infinite selector, intrinsic operator, trace, zero
+model, or Gate A--E result.
 
 ## 7. Reproduction and publication audit
 
@@ -4317,12 +4600,80 @@ visual audit
 8c442fb66adc1ef92fda58ccf052d2f61a5de1a6e8ebe3e074531e5164967e92
 ```
 
+Final RH-384 audit:
+
+- Tests: `20/20`; isolated result/schema regeneration, optimized Python,
+  hostile Decimal contexts, official Draft 2020-12 metaschema validation,
+  strict JSON, exact types, and source/provenance mutations all pass or fail
+  closed as declared.
+- The exact certificate is `48689` bytes with SHA-256
+  `01c91e57a01de9841f282327ab2f6e1a9368e136393ddab7a2cfe6b019a519c8`.
+  It checks `8` fixed-`r` constants, all `66` partitions through degree
+  eight, `48` exact successor identities, `5` scale and `5` normalized-gap
+  ledgers, `10` directed numerical rows, and `20/20` genuine mutations.
+- Source locks: `51/51`, grouped `7/8/8/8/8/8/2/2`; every live source
+  equals its declared release blob.  The aggregate digest is
+  `90434e0468ecc062cb522da096a267748725b5dca8e59c642bb7711f45a3e0e4`.
+  Independent source, proof, manuscript, symbolic, numerical, integrity, and
+  post-seal release audits report zero blocker and zero minor.
+- Individual archive: `29` publication members plus `51` external inputs,
+  zero failures.  The four-volume replay remains `4` volumes, `73` members,
+  `1548` dependency hashes, `8` result hashes, `361` numbered sources, and
+  zero failures.
+- PDF: `8` A4 pages and `366799` bytes, with all `23` font entries embedded
+  and Unicode-mapped.  Ghostscript, text extraction, complete LaTeX/BibTeX
+  scans, semantic-PDF byte identity, and all `8/8` rendered pages pass.
+- No effective PNT rate or threshold, growing parameter or clock, active
+  phasewise-`c_11` cancellation, adaptive-capacity convergence, intrinsic
+  operator, prime-power trace, zero identification, Hilbert--Polya object,
+  RH claim, or Gate A--E conclusion is made.
+
+RH-384 final hashes:
+
+```text
+main.tex
+f38a39739ec472c3d0c846638739e9e5cb57b6679f60f8f90ba1e2a6188186ef
+
+PDF
+87f3ef9b67af90c204907121946c1fe736573321b3eb526623f8bb9352b29f74
+
+result
+4365c693461cdc4d5d986c97e7dcf4bbfcac6ff2136e1a20779d4b4e46078c69
+
+schema
+04cac47501a66e6c82640517cc980e0efc8f5142e682dd1c1216bd6cd13cefbf
+
+manifest
+c2e06f6054f92e71fb5a2c2bb7e281c4afee3bd63b706308aab5779ae055f8a3
+
+verification
+c73facf2230e5c88cf552bd254f8f44bbc21fb96a54efe3ce7eac0ae92c11657
+
+core
+ea3473d63e25351d7bd6737eeb0bc8309dcf5f19746a89c4ced7c0d1f1713ebc
+
+integrity audit
+b0b756fe729c62d68e88f9f4653713f69f0a06fb036ff6e902dd232b6421a27d
+
+review audit
+64c8dd307ecad685cadcc5744b481817d0dfe1c001042e9a096a58f201f0f703
+
+format audit
+8a181a553117f97fde3121dc7470803210838a84251747be9eb0744505193b25
+
+replay audit
+d6591d95203e4516ac8020f8d596ddeab38d51c4420696824b9fe681cd7d18c3
+
+visual audit
+787981a0639c89c0f7aa940a9861c8c6152a00843429329c700e7927866ebd14
+```
+
 ## 8. Continuation prompt
 
 ````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-383 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-384 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -4339,8 +4690,8 @@ memory-supremum input, RH-380 as the square-clock monotonicity and
 finite-clock nonattainment input, RH-381 as the prime-square-tail
 rate/quadratic-remainder input, RH-382 as the two-scale
 second-order/cubic-remainder input, RH-383 as the exact Euler-tail
-partition-normal-form input, RH-MVP2 as the corpus umbrella, and RH-361 as
-the physical endpoint.
+partition-normal-form input, RH-384 as the prime-tail scale-separation input,
+RH-MVP2 as the corpus umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -4350,25 +4701,32 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-383 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  It proves the exact absolutely convergent endpoint form
+RH-384 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  For every fixed integer `r>=1`, it proves
 
 ```text
-U_m^(y)=u_m exp(Phi_(m-1)(y)),
-H_y=(4/pi^2)exp(-Phi_1(y)),
-pi^2(B_infinity-G(q_y))
- =2(C(u)-C(U^(y)))-4W(U^(y))(1-exp(-Phi_1(y))).
+P_r(y)=sum_(p>p_y)(p^2-1)^(-r)
+      ~1/[(2r-1)p_y^(2r-1)log p_y],
+T_y^3=o(S_y),
+S_y=o(T_y^2).
 ```
 
-Its finite partition compiler gives every homogeneous coefficient, cancels
-the `m=2` channel at all positive orders, recovers the RH-381/RH-382 layers,
-and gives a new cubic block.  For every exact integer `D>=1`,
-`abs(R_(D,y))<=(92/(3pi^2))(7T_y)^(D+1)`.  It uses no PNT.  Keep every `q_y`
-fixed before `N->infinity`; keep partition length distinct from degree and
-the successor tail distinct from the current tail; do not infer the theorem
-from finite rows, conflate endpoint and increment coefficients, replace the
-power sums by `p_y` asymptotics, activate nonzero phasewise `c_11`, introduce
-`q(N)`, or infer adaptive-capacity convergence.
+It proves the fixed-partition scale dictionary and five normalized gap
+limits.  Limits below first order subtract exact `A T_y`, and the `S_y`-scale
+limits subtract exact `A T_y+B T_y^2`; never replace those terms by bare-PNT
+surrogates.  The certified positive numerator is
+`1.5463476716710499204<=Y_infinity-2m_infinity<=1.5484488989771761113`.
+Keep every `q_y` fixed before `N->infinity` and every `r` and partition fixed
+before `y->infinity`; do not claim an effective threshold, uniform growing
+parameter, active nonzero phasewise `c_11`, `q(N)`, or adaptive-capacity
+convergence.
+
+RH-383 remains the preceding exact-normal-form edge.  It proves the
+absolutely convergent endpoint/partition compiler, all-order `m=2`
+cancellation, the RH-381/RH-382 low layers, a new cubic block, and
+`abs(R_(D,y))<=(92/(3pi^2))(7T_y)^(D+1)` for every exact integer `D>=1`.
+Do not replace partition length by degree, the strict successor tail by the
+current tail, or claim RH-383 itself proved the RH-384 PNT scale dictionary.
 
 RH-382 remains the preceding two-scale edge.  It proves the exact expansion
 
@@ -4516,90 +4874,115 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-For the next paper, write RH-384 only if the independently reconstructed
-prime-tail scale dictionary retains its exact endpoint and subtraction
-content.  Stay inside the same fixed-finite-clock, universally safe,
-phasewise-`c_11=0` class.  Source the prime number theorem from RH-2 release
-`836426546db31e2737e877182848c538ed4cd436`, not merely from the Möbius
-consequence cited in RH-368/RH-371.  The frozen RH-2 hashes are
+For the next paper, write RH-385 as the polylogarithmic-clock uniformization
+theorem only.  Stay inside the RH-379 universally safe,
+phasewise-`c_11=0`, periodic lag-two class.  For every fixed `B>0`, define
 
 ```text
-main.tex
-5f2538e648c2ed850b94a03c072a3526f31bcc0c70c90639f65601507f52e532
-references.bib
-bd86702192cd4bc6d1c2975c7da4b305541e0c5943f13c5edf044686f0faf2ab
+H_B(N)=floor((log N)^B),
+S_N(q,f)=N^(-1)sum_(n<=N)mu(n)
+           f_(n mod q)(mu_0(n-2),mu(n)),
+L_q(f)=sum_(r mod q)[c_02(r)delta_(q,r)+c_22(r)theta_(q,r)],
+mu_0(m)=mu(m) for m>=1 and 0 for m<=0.
 ```
 
-and the source cites Montgomery--Vaughan, DOI
-`10.1017/CBO9780511618314`.  For every fixed integer `r>=1`, prove by Abel
-summation that
+The main theorem must be the genuine triangular-array statement
 
 ```text
-P_r(y)=sum_(p>p_y)(p^2-1)^(-r)
-      ~1/[(2r-1)p_y^(2r-1)log p_y].
+sup_(1<=q<=H_B(N), f in F_q)abs(S_N(q,f)-L_q(f)) ->0.
 ```
 
-For every fixed partition `lambda=1^k_1...d^k_d` with degree `d` and
-length `ell=sum k_r`, prove
+Here `F_q` is exactly the finite universally safe phasewise-`c_11=0` class.
+The analytic uniform bound in the manuscript must retain every channel.  For
+an integer `P>=2`, set
 
 ```text
-P_lambda(y)
- ~[product_r(2r-1)^(-k_r)]
-   p_y^(-(2d-ell))(log p_y)^(-ell).
+M_P=(product_(p<=P)p)^2,
+Q=lcm(q,M_P),
+tau_P=sum_(p>P)p^(-2),
+D_*(N)=max_(X in {N,N-2}) sup_alpha
+       abs(sum_(n<=X)mu(n)exp(2pi i alpha n)).
 ```
 
-In particular, with `T_y=P_1(y)` and `S_y=P_2(y)`, prove
+Prove
 
 ```text
-p_y log(p_y) T_y ->1,
-3p_y^3 log(p_y) S_y ->1,
-S_y/T_y^2 ->0,
-T_y^3/S_y ->0,
-S_y/[T_y^3 log(p_y)^2] ->1/3.
+abs(S_N(q,f)-L_q(f))
+ <=4sqrt(Q)D_*(N)/N+13tau_P+6Q/N+4/N.
 ```
 
-Let
+The exact coefficient census has `192` phasewise-zero tables and `24`
+distinct score vectors.  Keep
+`c_01,c_02,c_12 in {-1,0,1}` and
+`c_21,c_22 in {-2,-1,0,1,2}`.  In particular, the legal `c_21=-2` witness
+forces the third Fourier cost to be `2sqrt(Q)`.  Do not clip it to
+`sqrt(Q)`.  The small-prime square mask is periodic modulo `M_P`; `M_P` and
+`Q` are valid periods, not asserted minimal periods.  Treat zero-padded
+`n=1,2` outside the tail union bound and pay the endpoint ledger explicitly.
+
+Take `P=floor(sqrt(log log N))`, eventually at least two.  The elementary
+bound `log M_P<=2P log P=o(log log N)` gives
+`Q<=(log N)^(B+o(1))`.  Source the uniform-in-frequency estimate
 
 ```text
-A=2X_infinity/pi^2,
-B=(Y_infinity+2m_infinity)/pi^2,
-C=(Y_infinity-2m_infinity)/pi^2.
+D_*(N)/N <<_A (log N)^(-A)
 ```
 
-Use RH-382 to prove the five normalized limits
+from RH-366 release `0396fab97bbe3348c8237f8734dec0e1893fd3bf`, whose
+frozen `main.tex` hash is
+`7df165bd63d43f52dc217dea6691d231d8e40c00c148ab7e1aa4abcac55060fb`.
+Choose a fixed `A>B/2`.  The fixed-clock class, limit, and all-clock
+supremum come from RH-379 release
+`9ae9802ed17529ef4adfb81d7e2158d47c3c8d22`, whose frozen `main.tex` hash is
+`c5d97a227398a4f1d46a39fdec73ffb86aeb9bfc0f16296be7023b187b497090`.
+RH-375 and RH-378 remain the squarefree-density and interpolation-interface
+inputs.  Begin from the immutable RH-384 source closure, add the standard
+RH-384 and RH-366 theorem groups, and verify every live file against its
+release blob; do not lock mutable root policy or handoff files.
+
+Define
 
 ```text
-p_y log(p_y)(B_infinity-G(q_y)) ->A,
-[p_y log(p_y)]^2(B_infinity-G(q_y)-A T_y) ->B,
-[B_infinity-G(q_y)-A T_y-B T_y^2]/S_y ->C,
-3p_y^3 log(p_y)[B_infinity-G(q_y)-A T_y-B T_y^2] ->C,
-[B_infinity-G(q_y)-A T_y-B T_y^2]
-  /[T_y^3 log(p_y)^2] ->C/3.
+G_N(q)=max_(f in F_q)abs(S_N(q,f)),
+G(q)=max_(f in F_q)abs(L_q(f)).
 ```
 
-Freeze a proof-grade outward interval for `Y_infinity-2m_infinity`; the
-audited enclosure is
+Then prove exactly
 
 ```text
-1.5463476716710499204 <= Y_infinity-2m_infinity
-                      <= 1.5484488989771761113.
+sup_(q<=H_B(N))abs(G_N(q)-G(q)) ->0,
+max_(q<=H_B(N))G_N(q) ->B_infinity.
 ```
 
-Thus `C>0`, and after subtracting the exact `A T_y+B T_y^2` terms the gap is
-eventually positive and grows relative to `T_y^3`.  The first subtraction
-must use the exact arithmetic tail `A T_y`, not the PNT surrogate
-`A/[p_y log(p_y)]`: bare PNT gives no error rate that is small relative to
-`T_y^2`.  Keep the strict endpoint `p>p_y`, the first atom `p_(y+1)`, and
-every `r` and partition fixed.  Do not claim an effective threshold, a
-uniform growing-degree theorem, a growing clock, active nonzero phasewise
-`c_11`, the RH-377 envelope, adaptive-capacity convergence, or an intrinsic
-dynamical operator.  The geometrically selected non-Parry measure route
-remains `STOP_SCOPED` without a fixed non-Parry equilibrium state and mixing
-theorem.  The fractional/tower-adapted deterministic Ulam route remains
-`STOP_SCOPED` without a fixed mesh-independent norm, uniform projection/lift
-estimate, and common contour around `-1`.  Retain the other source-backed
-breadth-first candidates and evaluate each by Route A and Route B before
-assigning a further paper.  Preserve the exact source locks and the
+Also freeze the explicit square-clock diagonal witness
+`y_B(N)=max{y:q_y<=H_B(N)}` only after this set is nonempty; for smaller
+`N`, record `no_square_clock_available` rather than silently substituting
+`q_1`.  Do not write the maximum as `sup_(q<infinity)G_N(q)`, let `B` vary
+with `N`, extend to `q=N^epsilon`, activate `c_11`, claim a projectively
+compatible infinite selector, or infer the full adaptive-capacity limit
+`K_N/N`.
+
+The artifact is finite reproduction, not the analytic proof.  It should
+freeze the `512/192/24` table and coefficient census, all `4608`
+interpolation evaluations, exact cutoff periods `4,36,900,44100`, coprime
+and noncoprime `lcm` fixtures, normalized-DFT channel checks including the
+`c_21=-2` witness, square-channel means, tail-union and padding rows,
+small-clock max-plus comparisons, optimized-Python/type/schema/source gates,
+and genuine mutations for the missing factor two, wrong square-mask period,
+wrong shift, active `c_11`, missing absolute value, unrestricted clock, and
+empty square-clock sentinel.  Use a closed official Draft 2020-12 schema,
+strict finite JSON, exact regeneration, immutable source digests, individual
+archive verification, outer four-volume replay, and full PDF/log/font/text/
+page QA.
+
+The direct cubic consequences of RH-383 and RH-384 belong in context only;
+they are not RH-385's discovery claim.  Polynomial-clock uniformity is
+`STOP_SCOPED` because fixed log-power Davenport savings do not pay its
+Fourier mass.  Active nonzero `c_11` is still blocked by ordinary shift-two
+Chowla already at `q=1`.  The theorem gives no upper bound for arbitrary
+adaptive words, no effective finite threshold, and no intrinsic operator,
+trace, zero model, Hilbert--Polya construction, or Gate A--E result.  Retain
+the other source-backed breadth-first candidates and preserve the immutable
 four-volume foundation.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
