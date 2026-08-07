@@ -2,13 +2,13 @@
 
 Status date: 2026-08-07
 
-Current completed endpoint: RH-379
+Current completed endpoint: RH-380
 
-Completed research batch: RH-352 through RH-379
+Completed research batch: RH-352 through RH-380
 
-Post-four-volume independent theorem edges: RH-362 through RH-379
+Post-four-volume independent theorem edges: RH-362 through RH-380
 
-Latest route verdict: RH-379 Route A `GO`; Route B `STOP_SCOPED`
+Latest route verdict: RH-380 Route A `GO`; Route B `STOP_SCOPED`
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -54,6 +54,9 @@ RH-378 integration commit:
 
 RH-379 integration commit:
 `9ae9802ed17529ef4adfb81d7e2158d47c3c8d22`.
+
+RH-380 integration commit:
+`dd94b9cfebdbf5df92084ba870b10d3a4d432bee`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -134,6 +137,11 @@ Read completely:
 - `papers/RH-379-phasewise-chowla-free-memory-supremum/THEOREM_LEDGER.md`
 - `papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.json`
 - `papers/RH-379-phasewise-chowla-free-memory-supremum/main.pdf`
+- `papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/README.md`
+- `papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/UPDATED_ROADMAP.md`
+- `papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/THEOREM_LEDGER.md`
+- `papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.json`
+- `papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -162,8 +170,9 @@ Euler-product family input, RH-375 as the all-finite-clock one-site supremum
 input, RH-376 as the shift-two Chowla/run-density boundary input, RH-377 as
 the mixed-exponent run-hierarchy/two-envelope input, RH-378 as the
 safe-window/online-transducer input, RH-379 as the phasewise Chowla-free
-memory-supremum input, and RH-361 as the immediate endpoint of the still-open original
-physical branch.
+memory-supremum input, RH-380 as the finite-clock nonattainment/gap input,
+and RH-361 as the immediate endpoint of the still-open original physical
+branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -173,17 +182,17 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-379 is now integrated.  It closes the exact fixed-clock max-plus
-classification and all-finite-clock supremum for universally safe lag-two
-tables satisfying phasewise `c_11(r)=0`.  It proves exact memory gains at
-individual clocks and a positive square-clock correction tending to zero,
-but it does not itself decide finite-clock attainment of `B_infinity`, the
-RH-377 envelope, or adaptive-capacity convergence.  The next activated
-Route-A target is the independently source-locked and adversarially audited
-RH-380 finite-clock nonattainment refinement: special same-prime-support
-saturation plus a strict square-clock recurrence should prove
-`G(q)<B_infinity` for every finite `q`.  Any extension to genuinely active
-phasewise `c_11!=0` remains `STOP_SCOPED` without a phase-weighted shift-two
+RH-380 is now integrated.  Inside the frozen RH-379 phasewise-`c_11=0`
+class it proves the exact even-run prime-adjoining recurrence, strict
+monotonicity of the square-clock values, separator-specific same-support
+saturation, and `G(q)<B_infinity` with an explicit positive gap for every
+finite clock.  It does not prove monotonicity of `Delta_y`, any general
+cover theorem, active phasewise `c_11`, a growing-clock exchange, or
+adaptive-capacity convergence.  The next activated Route-A target is the
+independently proved RH-381 prime-square-tail rate theorem: an explicit
+positive Euler constant controls `B_infinity-G(q_y)` to quadratic error in
+`T_y=sum_(p>p_y)(p^2-1)^(-1)`.  Any extension to genuinely active phasewise
+`c_11!=0` remains `STOP_SCOPED` without a phase-weighted shift-two
 correlation theorem.  The geometrically
 selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
@@ -1447,7 +1456,77 @@ No growing clock, adaptive-capacity limit, intrinsic dynamical operator,
 trace, zero identification, Hilbert--Polya construction, RH implication, or
 Gate A--E result follows.  Route A is `GO`; Route B is `STOP_SCOPED`.
 
-## 4. Compact conclusions from RH-352 through RH-379
+### 3.19 RH-380 square-clock monotonicity and finite-clock nonattainment
+
+RH-380 stays inside the exact RH-379 class: the clock `q` is finite and fixed
+before `N->infinity`, every lag-two phase table is universally distance-two
+safe, and `c_11(r)=0` holds phasewise.  For the RH-374 square clocks write
+
+```text
+q_y=4 product_(i<=y)p_i^2,
+A_y=product_(i<=y)(p_i^2-1),
+D_y=product_(i<=y)(p_i^2-2),
+mathcal_E_y=sum_(ell even)R_ell^(y),
+L_y=sum_(ell even)ell R_ell^(y),
+M_y=sum_(ell odd)(ell-1)R_ell^(y).
+```
+
+If `s=p_(y+1)^2`, an all-order deletion ledger over each old run proves
+
+```text
+mathcal_E_(y+1)=(s-2)mathcal_E_y+M_y.
+```
+
+Combining this with the locked RH-374 odd-run recurrence and the exact
+RH-379 square-clock formula gives
+
+```text
+G(q_(y+1))-G(q_y)
+ =2(L_y-2mathcal_E_y)/(pi^2 A_y(s-1))
+  +M_y[4/pi^2-H_(y+1)]/[A_y(s-1)],
+H_y=kappa_2 A_y/D_y.
+```
+
+The persistent length-eight run supplies
+
+```text
+L_y-2mathcal_E_y=2R_4^(y)+4R_6^(y)+6R_8^(y)>=6,
+```
+
+so `G(q_y)` is strictly increasing and each increment is at least
+`12/[pi^2 A_y(s-1)]`.  This is monotonicity of `G(q_y)`, not of the RH-379
+correction `Delta_y=G(q_y)-B_y`.
+
+RH-380 also proves a separator-dependent saturation theorem.  If
+`q_y|Q=R q_y` and `Q` has exactly the same prime support as `q_y`, then the
+fine `delta` and `theta` weights scale by `1/R`; forced mod-4 and mod-9
+zero-weight phases split the addition-by-two cycles into repeated finite
+paths.  Consequently
+
+```text
+G(Q)=G(q_y).
+```
+
+The hypothesis is essential: `Q=180=5*36` adds the prime five and is a
+certified negative control to general-multiple saturation, with
+`G(180)>G(36)`.  For any fixed finite `q`, choose `y` containing all odd
+prime divisors of `q` and put `Q=lcm(q,q_y)`.  Clock lifting and the special
+saturation theorem yield
+
+```text
+G(q)<=G(Q)=G(q_y)<B_infinity,
+B_infinity-G(q)>=12/[pi^2 A_y(p_(y+1)^2-1)]>0.
+```
+
+Thus no finite clock attains the RH-379 supremum in the declared class.
+RH-380 proves neither a general cyclic-cover theorem nor anything for active
+phasewise `c_11`, growing `q(N)`, or the RH-377 adaptive envelope.  The
+prime-square-tail rate is a successor trigger, not an RH-380 result.  No
+intrinsic operator, trace, zero identification, Hilbert--Polya construction,
+RH implication, or Gate A--E result follows.  Route A is `GO`; Route B is
+`STOP_SCOPED`.
+
+## 4. Compact conclusions from RH-352 through RH-380
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -1579,6 +1658,13 @@ Gate A--E result follows.  Route A is `GO`; Route B is `STOP_SCOPED`.
   all-finite-clock supremum `sup_q G(q)=B_infinity`.  The theorem does not
   decide finite-clock attainment, cancel active phase-weighted shift-two
   terms, or prove an adaptive-capacity limit, operator, trace, zero, or Gate.
+- **RH-380:** Exact all-order even-run deletion recurrence and square-clock
+  increment; strict monotonicity of `G(q_y)`; separator-specific
+  same-prime-support saturation; and the strict quantitative conclusion
+  `G(q)<B_infinity` for every fixed finite clock in the RH-379 class.  It
+  does not prove `Delta_y` monotone, a general cover law, the successor tail
+  rate, active phasewise shift-two cancellation, adaptive-capacity
+  convergence, an operator, trace, zero, or Gate.
 
 ## 5. Route firewall and reopening triggers
 
@@ -1723,6 +1809,18 @@ Do not:
   shift-two theorem, or identify an RH-379 table with an intrinsic operator,
   determinant, prime-power trace, zero model, Hilbert--Polya construction,
   or Gate result;
+- promote strict monotonicity of the RH-380 values `G(q_y)` to monotonicity
+  of `Delta_y=G(q_y)-B_y`;
+- extend the RH-380 identity `G(Q)=G(q_y)` to a general multiple or cyclic
+  cover: it requires identical prime support and the forced mod-4/mod-9
+  separators, and `Q=180` is the locked negative control;
+- turn RH-380 finite-clock nonattainment into a growing-clock `q(N)` theorem,
+  an adaptive-capacity limit, or a uniform-in-clock Davenport estimate;
+- present the RH-381 prime-square-tail expansion as proved by RH-380, or
+  infer it from finite values without an all-order remainder estimate;
+- identify the RH-380 max-plus selector with an intrinsic operator,
+  determinant, prime-power trace, zero model, Hilbert--Polya construction,
+  or Gate result;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -1738,7 +1836,7 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-379. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-380. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
 declared periodic/typical/distance-two capacity audit, RH-373 closes the
 declared fixed composite-clock phase-selector floor route, and RH-374 closes
@@ -1761,48 +1859,54 @@ closes only the fixed-window safety, `q=1` lag-two classification, and exact
 online-orientation realization route; it proves neither its Chowla-hard
 subclass nor the capacity limit. RH-379 closes only the fixed-finite-clock,
 phasewise-`c_11=0` max-plus and supremum route; it does not close active
-phase-weighted shift-two cancellation, finite-clock nonattainment, or the
-adaptive capacity limit. For RH-380 and later,
+phase-weighted shift-two cancellation or the adaptive capacity limit.
+RH-380 closes only the finite-clock attainment question, exact run
+recurrence, strict square-clock monotonicity, and separator-specific
+same-support saturation inside that same class.  It does not prove the
+normalized prime-square-tail rate, enlarge the class, or close the adaptive
+capacity limit. For RH-381 and later,
 the shortest exact candidates are:
 
-1. The independently source-locked and twice adversarially audited RH-380
-   finite-clock nonattainment refinement.  Retain the RH-379 class and define
-   `mathcal_E_y` as the number of even-length runs,
-   `L_y=sum_(ell even) ell R_ell`, and
-   `M_y=sum_(ell odd)(ell-1)R_ell`.  If `s=p_(y+1)^2`, prove the exact run
-   recurrence
+1. The independently source-locked and twice audited RH-381 normalized
+   prime-square-tail rate.  Retain the RH-380 class and define
 
    ```text
-   mathcal_E_(y+1)=(s-2)mathcal_E_y+M_y
+   a_(j+1)=1/(p_(j+1)^2-1),
+   T_y=sum_(j>=y)a_(j+1)=sum_(p>p_y)1/(p^2-1),
+   X_j=(L_j-2mathcal_E_j)/A_j,
+   X_infinity=(2e_4-4e_5+6e_6-8e_7+10e_8)/e_1,
+   e_m=product_(p odd)(1-m/p^2).
    ```
 
-   and the exact square-clock increment
+   Start from the exact RH-380 telescoping identity
 
    ```text
-   G(q_(y+1))-G(q_y)
-     =2(L_y-2mathcal_E_y)/(pi^2 A_y(s-1))
-      +M_y[4/pi^2-H_(y+1)]/[A_y(s-1)].
+   B_infinity-G(q_y)
+    =sum_(j>=y) [2X_j a_(j+1)/pi^2
+      +(M_j/A_j)a_(j+1)(4/pi^2-H_(j+1))].
    ```
 
-   RH-374's persistent length-eight run gives
-   `L_y-2mathcal_E_y>=6`, hence strict monotonicity.  Separately prove the
-   special separator-dependent saturation
+   Prove the all-order bounds
 
    ```text
-   q_y | Q and supp(Q)=supp(q_y)  =>  G(Q)=G(q_y),
+   X_infinity>=6e_8/e_1>0,
+   abs(X_j-X_infinity)<=170T_j,
+   0<=4/pi^2-H_(j+1)<=(4/pi^2)T_(j+1),
+   0<=M_j/A_j<=1,
    ```
 
-   not a general max-plus cover law.  Combining it with the clock lift must
-   give the quantitative finite-clock gap and nonattainment
+   and hence the explicit remainder theorem
 
    ```text
-   B_infinity-G(q)
-     >= 12/[pi^2 A_y(p_(y+1)^2-1)] > 0
+   abs(B_infinity-G(q_y)-(2X_infinity/pi^2)T_y)
+     <=(342/pi^2)T_y^2.
    ```
 
-   after `y` contains every odd prime divisor of the fixed `q`.  Do not call
-   `Delta_y` monotone, introduce `q(N)`, leave the phasewise-`c_11=0` class,
-   or infer adaptive-capacity convergence.
+   This gives the first-order ratio and makes the memory contribution
+   second-order without PNT.  Do not replace `T_y` by a `p_y` scale without
+   a new prime-tail theorem, claim an exact second-order coefficient, infer
+   the result from finite regression, leave the phasewise-`c_11=0` class, or
+   infer adaptive-capacity convergence.
 2. A genuine phase-weighted shift-two or higher-order Möbius correlation
    theorem controlling active `c_11(r)` terms, the
    RH-377 envelope or a larger memory-dependent transducer class.
@@ -2572,6 +2676,45 @@ memory saturation, and therefore finite-clock nonattainment of `B_infinity`
 inside the same phasewise-`c_11=0` class.  Active nonzero `c_11(r)` remains
 `STOP_SCOPED` at phase-weighted shift-two Cesaro cancellation.  No Gate A--E
 conclusion changes.
+
+### 6.17 RH-380 source lock, finite-clock nonattainment, and route decision (2026-08-07)
+
+RH-380 freezes twenty-four immutable predecessor files and four Git releases;
+mutable root policy and handoff files are intentionally excluded:
+
+```text
+RH-374 release              2bb3baa6a09491c2d679d10c0dbcd39587d1f831
+RH-375 release              071fed1b2a5d8488b9d2e35a99a753953b233584
+RH-379 release              9ae9802ed17529ef4adfb81d7e2158d47c3c8d22
+RH-MVP2 archive             c0aed13a34b8bbc53061aed23738660adcd3624c
+```
+
+Independent proof and numerical audits reconstructed the deletion rule for
+every run length `1<=ell<=8`, the exact even-run recurrence, all three frozen
+increment anchors, and the persistent `R_8>=1` strict term.  They separately
+checked the same-support theorem by residuewise `delta/theta` scaling,
+cause-specific mod-4/mod-9 separators, and a generic three-state cyclic
+max-plus dynamic program.  The `Q=180` new-prime case is retained as a
+strict negative control to any general-multiple interpretation.
+
+The final executable suite has `15/15` tests.  It checks three direct run
+rows, twenty-four deletion fixtures, four prime-adjoining transitions, nine
+same-support refinements, `10152` fine-residue density identities, `121428`
+exact max-plus comparisons, and seven arbitrary-clock/lcm-gap fixtures.
+Result regeneration is byte-identical, the recursively closed Draft 2020-12
+schema validates with zero errors, all twenty-four source digests match both
+the live files and the declared release blobs, and the single-paper archive
+contains twenty-eight publication members plus twenty-four external inputs
+with zero failures.
+
+The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  Two independent
+post-RH-380 audits prove the next RH-381 theorem edge: with
+`T_y=sum_(p>p_y)(p^2-1)^(-1)`, the normalized gap has leading constant
+`2X_infinity/pi^2` and a fully explicit quadratic remainder bounded by
+`342T_y^2/pi^2`.  This successor uses only Euler-product tails and the exact
+RH-380 increment; it needs no PNT.  Active nonzero `c_11(r)` remains
+`STOP_SCOPED` at phase-weighted shift-two Cesaro cancellation, and the
+RH-377 adaptive envelope remains open.  No Gate A--E conclusion changes.
 
 ## 7. Reproduction and publication audit
 
@@ -3410,12 +3553,74 @@ review audit
 214162877e2457e473f72dd4a6d768f2fa40075b20c6314e7e6ef6042556fde7
 ```
 
+Final RH-380 audit:
+
+- Tests: `15/15`; complete `result.json`, dependency manifest, and archive
+  verification regeneration are byte-identical.  The recursively closed
+  Draft 2020-12 schema validates with zero errors, and duplicate JSON keys
+  are rejected.
+- The exact certificate checks three direct run rows, twenty-four per-run
+  deletion fixtures, four prime-adjoining transitions, all three frozen
+  increment anchors, nine same-support refinements, `10152` fine-residue
+  `delta/theta` scaling identities, `121428` generic three-state max-plus
+  comparisons, seven arbitrary-clock/lcm-gap fixtures, and the `Q=180`
+  new-prime negative control.  All pass without an ambiguous comparison.
+- Source locks: `24/24`; all four declared Git objects exist and every locked
+  live file is byte-identical to its declared release blob.  ARS integrity,
+  proof, reviewer, formatter, numerical, and post-seal release audits report
+  zero blocker and zero content minor.
+- Individual archive: `28` publication members plus `24` external inputs,
+  zero failures.  The four-volume replay remains `4` volumes, `73` members,
+  `1548` dependency hashes, `8` result hashes, `361` numbered sources, and
+  zero failures; the MVP2 suite remains `7/7`.
+- PDF: `8` pages and `371156` bytes, with all `24` font entries embedded,
+  subsetted, and Unicode-mapped.  Ghostscript, text extraction, LaTeX/BibTeX
+  scans, semantic-PDF byte identity, and all `8/8` rendered pages pass.
+  Hand-written staged files pass whitespace/EOF checks; the generated TeX
+  `main.log` is excluded from the repository diff-check by established
+  project convention.
+- No `Delta_y` monotonicity, general cover saturation, nonzero phasewise
+  `c_11` cancellation, growing clock, adaptive-capacity convergence,
+  intrinsic operator, prime-power trace, zero identification, Hilbert--Polya
+  object, RH claim, or Gate A--E conclusion is made.
+
+RH-380 final hashes:
+
+```text
+main.tex
+6110b876e1b31fe79e7ff72e5058d97179575cf1dccce86e8c7c0a049d57451f
+
+PDF
+813206ae797072ca258e27e6afaf5d077f7f0203db72dcd224754cc49ab5fbcc
+
+result
+e7e6bc2acc46b9346e2fdd90306e9f8c5fb18c193ed0601466bbf4e01a92be33
+
+schema
+62bb03f0e61043bdeda0bf49afcbc0877d95115ca677e7cda20a73d955c5a57f
+
+manifest
+e9b66366f12fbfb22b68909bba42b8a98dbcb321630fddf1152dc7f4206a6ca3
+
+verification
+36de5a06cd8121c361335697e70892b6ad22bac0ad3910ce8c6d3226a22eb9d2
+
+integrity audit
+c2c5a3f029adcb9aa26c3fd4c3095565981718dab2dab7c05f306355ff6535d6
+
+review audit
+546d79382dce14200a6ed638e0889c98eb9427b621cb7c17f32829a4345f591b
+
+format audit
+70fbad6af9b74cd5e6712a5bff487319bb8426f63007c3896d0bf252f820a472
+```
+
 ## 8. Continuation prompt
 
 ````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-379 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-380 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -3428,8 +3633,9 @@ Euler-product family input, RH-375 as the all-finite-clock one-site supremum
 input, RH-376 as the shift-two Chowla/run-density boundary input, RH-377 as
 the mixed-exponent run-hierarchy/two-envelope input, RH-378 as the
 safe-window/online-transducer input, RH-379 as the phasewise Chowla-free
-memory-supremum input, RH-MVP2 as the corpus umbrella, and RH-361 as the
-physical endpoint.
+memory-supremum input, RH-380 as the square-clock monotonicity and
+finite-clock nonattainment input, RH-MVP2 as the corpus umbrella, and RH-361
+as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -3439,15 +3645,23 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-379 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  It proves fixed-phase cancellation for `c_11(r)=0`, the
-complete `512/192` census, subset-first canonical reduction, the exact
-three-state cyclic max-plus optimizer, strict memory gains at fixed clocks,
-the positive vanishing square-clock correction, and
-`sup_(q finite)G(q)=B_infinity`.  Keep `q` fixed before `N->infinity`; do not
-extend the theorem to active nonzero `c_11(r)`, claim finite-clock attainment
-or nonattainment, introduce `q(N)`, or infer that the RH-377 envelope or
-adaptive capacity converges.
+RH-380 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  It proves the all-order even-run recurrence, the exact
+square-clock increment, strict monotonicity of `G(q_y)`, the special
+same-prime-support saturation theorem, and `G(q)<B_infinity` with an explicit
+positive gap for every fixed finite clock in the RH-379 class.  Keep `q`
+fixed before `N->infinity`; do not call `Delta_y` monotone, replace the
+separator-dependent theorem by a general cover law, activate nonzero
+phasewise `c_11`, introduce `q(N)`, infer adaptive-capacity convergence, or
+claim that RH-380 already proves the successor prime-square-tail rate.
+
+RH-379 remains the preceding phasewise-memory edge.  It proves fixed-phase
+cancellation for `c_11(r)=0`, the complete `512/192` census, subset-first
+canonical reduction, the exact three-state cyclic max-plus optimizer, strict
+memory gains at fixed clocks, the positive vanishing square-clock correction,
+and `sup_(q finite)G(q)=B_infinity`.  Do not extend it to active nonzero
+`c_11(r)`, a growing clock, the RH-377 envelope, or adaptive-capacity
+convergence.
 
 RH-378 remains the preceding safe-window/online-transducer edge.  It proves
 the exact compatible-block safety test, the complete `512/13` `q=1`
@@ -3560,68 +3774,62 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-For the next paper, write RH-380 on the independently source-locked and twice
-adversarially audited finite-clock nonattainment refinement of RH-379.  Stay
-inside the same fixed-finite-clock, universally safe, phasewise-`c_11=0`
-class.  Let
+For the next paper, write RH-381 on the independently source-locked and twice
+audited prime-square-tail rate of the RH-380 square-clock gap.  Stay inside
+the same fixed-finite-clock, universally safe, phasewise-`c_11=0` class.  Let
 
 ```text
-q_y=4 product_(i<=y)p_i^2,
-A_y=product_(i<=y)(p_i^2-1),
-D_y=product_(i<=y)(p_i^2-2),
-mathcal_E_y=sum_(ell even)R_ell^(y),
-L_y=sum_(ell even)ell R_ell^(y),
-M_y=sum_(ell odd)(ell-1)R_ell^(y).
+a_(j+1)=1/(p_(j+1)^2-1),
+T_y=sum_(j>=y)a_(j+1)=sum_(p>p_y)1/(p^2-1),
+X_j=(L_j-2mathcal_E_j)/A_j,
+e_m=product_(p odd)(1-m/p^2),
+X_infinity=(2e_4-4e_5+6e_6-8e_7+10e_8)/e_1.
 ```
 
-With `s=p_(y+1)^2`, prove by an exact per-run deletion ledger
+Start from the exact RH-380 telescoping identity
 
 ```text
-mathcal_E_(y+1)=(s-2)mathcal_E_y+M_y.
+B_infinity-G(q_y)
+ =sum_(j>=y) [2X_j a_(j+1)/pi^2
+   +(M_j/A_j)a_(j+1)(4/pi^2-H_(j+1))].
 ```
 
-Combine this with the RH-374 recurrence for `C_y=O_y/A_y`, the identity
-`H_y=kappa_2 A_y/D_y`, and the RH-379 formula
+Derive the Euler-ratio formula for `X_j` and prove, at the exact tail index
+`p>p_j`,
 
 ```text
-G(q_y)=(4+2C_y)/pi^2+(mathcal_E_y/A_y)(4/pi^2-H_y)
+X_infinity>=6e_8/e_1>0,
+abs(X_j-X_infinity)<=170T_j.
 ```
 
-to derive, without numerical fitting,
+Use the RH-380 definitions and the tail product for `H_(j+1)` to prove
 
 ```text
-G(q_(y+1))-G(q_y)
- =2(L_y-2mathcal_E_y)/(pi^2 A_y(s-1))
-  +M_y[4/pi^2-H_(y+1)]/[A_y(s-1)].
+0<=M_j/A_j<=1,
+0<=4/pi^2-H_(j+1)<=(4/pi^2)T_(j+1),
+sum_(j>=y)a_(j+1)T_j<=T_y^2,
+sum_(j>=y)a_(j+1)T_(j+1)<=T_y^2/2.
 ```
 
-Use `L_y-2mathcal_E_y=2R_4+4R_6+6R_8>=6` from the persistent RH-374
-length-eight run to prove strict monotonicity and the quantitative increment.
-
-Next prove the special same-prime-support memory saturation.  If
-`q_y|Q=R q_y` and `Q` has the same prime support, both `delta` and `theta`
-weights scale by `1/R`; forced mod-`4` and mod-`9` zero phases split the
-cycles into repeated finite runs.  Therefore
+The target theorem is the explicit all-order remainder bound
 
 ```text
-G(Q)=G(q_y).
+abs(B_infinity-G(q_y)-(2X_infinity/pi^2)T_y)
+ <=(342/pi^2)T_y^2,
 ```
 
-This is separator-dependent and is not a general cyclic-cover max-plus law.
-For arbitrary fixed finite `q`, choose `y` containing every odd prime divisor
-of `q` and set `Q=lcm(q,q_y)`.  The lift and saturation must give
+and hence
 
 ```text
-G(q)<=G(Q)=G(q_y)<B_infinity,
-B_infinity-G(q)>=12/[pi^2 A_y(p_(y+1)^2-1)]>0.
+(B_infinity-G(q_y))/T_y -> 2X_infinity/pi^2 > 0.
 ```
 
-Thus the intended RH-380 conclusion is that the RH-379 supremum is not
-attained by any finite clock in its declared class.  Do not claim
-monotonicity of `Delta_y=G(q_y)-B_y`, extend saturation beyond the special
-squarefree separators, activate nonzero `c_11(r)`, introduce `q(N)`, infer
-the RH-377 envelope or adaptive-capacity limit, or identify the arithmetic
-selector with an intrinsic dynamical operator.  The geometrically
+No PNT is needed at the `T_y` scale.  Do not rewrite the theorem in terms of
+`p_y` without a separately sourced prime-tail estimate, claim an exact
+second-order coefficient, infer the result from finite regression, leave the
+phasewise-`c_11=0` class, introduce `q(N)`, infer the RH-377 envelope or
+adaptive-capacity limit, or identify the arithmetic selector with an
+intrinsic dynamical operator.  The geometrically
 selected non-Parry measure route is `STOP_SCOPED` until a fixed non-Parry
 equilibrium state and mixing theorem are proved.  The fractional/tower-adapted
 deterministic Ulam route is
