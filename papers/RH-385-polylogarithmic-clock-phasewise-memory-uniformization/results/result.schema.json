@@ -1,0 +1,1287 @@
+{
+  "$id": "https://example.invalid/RH-385/result.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "all_pass": {
+      "type": "boolean"
+    },
+    "certificate": {
+      "additionalProperties": false,
+      "properties": {
+        "all_pass": {
+          "type": "boolean"
+        },
+        "analytic_firewall": {
+          "additionalProperties": false,
+          "properties": {
+            "B_may_depend_on_N": {
+              "type": "boolean"
+            },
+            "active_c11": {
+              "type": "boolean"
+            },
+            "adaptive_capacity_limit_claimed": {
+              "type": "boolean"
+            },
+            "clock_budget": {
+              "type": "string"
+            },
+            "davenport_exponent": {
+              "type": "string"
+            },
+            "effective_threshold_claimed": {
+              "type": "boolean"
+            },
+            "fixed_B_positive": {
+              "type": "boolean"
+            },
+            "polynomial_clock": {
+              "type": "boolean"
+            },
+            "projective_selector_claimed": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "B_may_depend_on_N",
+            "active_c11",
+            "adaptive_capacity_limit_claimed",
+            "clock_budget",
+            "davenport_exponent",
+            "effective_threshold_claimed",
+            "fixed_B_positive",
+            "polynomial_clock",
+            "projective_selector_claimed"
+          ],
+          "type": "object"
+        },
+        "coefficient_contract": {
+          "additionalProperties": false,
+          "properties": {
+            "c01_alphabet": {
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            },
+            "c02_alphabet": {
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            },
+            "c11_histogram": {
+              "additionalProperties": false,
+              "properties": {
+                "-1": {
+                  "type": "integer"
+                },
+                "-1/2": {
+                  "type": "integer"
+                },
+                "0": {
+                  "type": "integer"
+                },
+                "1": {
+                  "type": "integer"
+                },
+                "1/2": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "-1",
+                "-1/2",
+                "0",
+                "1",
+                "1/2"
+              ],
+              "type": "object"
+            },
+            "c11_required": {
+              "type": "integer"
+            },
+            "c12_alphabet": {
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            },
+            "c21_alphabet": {
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 5,
+              "minItems": 5,
+              "type": "array"
+            },
+            "c21_minus_two_self_compatible_witness": {
+              "type": "integer"
+            },
+            "c22_alphabet": {
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 5,
+              "minItems": 5,
+              "type": "array"
+            },
+            "max_zero_vector_l1": {
+              "type": "integer"
+            },
+            "max_zero_vector_l2_squared": {
+              "type": "integer"
+            },
+            "names": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 6,
+              "minItems": 6,
+              "type": "array"
+            },
+            "witness_plus_edges": {
+              "items": {
+                "items": {
+                  "type": "integer"
+                },
+                "maxItems": 2,
+                "minItems": 2,
+                "type": "array"
+              },
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            "zero_vector_multiplicities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "multiplicity": {
+                    "type": "integer"
+                  },
+                  "vector": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "maxItems": 6,
+                    "minItems": 6,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "multiplicity",
+                  "vector"
+                ],
+                "type": "object"
+              },
+              "maxItems": 24,
+              "minItems": 24,
+              "type": "array"
+            }
+          },
+          "required": [
+            "c01_alphabet",
+            "c02_alphabet",
+            "c11_histogram",
+            "c11_required",
+            "c12_alphabet",
+            "c21_alphabet",
+            "c21_minus_two_self_compatible_witness",
+            "c22_alphabet",
+            "max_zero_vector_l1",
+            "max_zero_vector_l2_squared",
+            "names",
+            "witness_plus_edges",
+            "zero_vector_multiplicities"
+          ],
+          "type": "object"
+        },
+        "counts": {
+          "additionalProperties": false,
+          "properties": {
+            "cutoff_period_rows": {
+              "type": "integer"
+            },
+            "dft_channels": {
+              "type": "integer"
+            },
+            "distinct_zero_score_vectors": {
+              "type": "integer"
+            },
+            "interpolation_evaluations": {
+              "type": "integer"
+            },
+            "mutation_rows": {
+              "type": "integer"
+            },
+            "phasewise_c11_zero_tables": {
+              "type": "integer"
+            },
+            "triangular_clock_rows": {
+              "type": "integer"
+            },
+            "truth_tables": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "cutoff_period_rows",
+            "dft_channels",
+            "distinct_zero_score_vectors",
+            "interpolation_evaluations",
+            "mutation_rows",
+            "phasewise_c11_zero_tables",
+            "triangular_clock_rows",
+            "truth_tables"
+          ],
+          "type": "object"
+        },
+        "dft_contract": {
+          "additionalProperties": false,
+          "properties": {
+            "c21_factor_two_fixture": {
+              "additionalProperties": false,
+              "properties": {
+                "P": {
+                  "type": "integer"
+                },
+                "Q": {
+                  "type": "integer"
+                },
+                "exceeds_sqrt_Q_without_sup_norm": {
+                  "type": "boolean"
+                },
+                "l1": {
+                  "type": "string"
+                },
+                "magnitudes": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "type": "array"
+                },
+                "normalized_dft": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "imag": {
+                        "type": "string"
+                      },
+                      "real": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "imag",
+                      "real"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "type": "array"
+                },
+                "period_values": {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "type": "array"
+                },
+                "q": {
+                  "type": "integer"
+                },
+                "sqrt_Q": {
+                  "type": "integer"
+                },
+                "within_factor_two_bound": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "P",
+                "Q",
+                "exceeds_sqrt_Q_without_sup_norm",
+                "l1",
+                "magnitudes",
+                "normalized_dft",
+                "period_values",
+                "q",
+                "sqrt_Q",
+                "within_factor_two_bound"
+              ],
+              "type": "object"
+            },
+            "channel_sup_norms": {
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            },
+            "channel_total": {
+              "type": "integer"
+            },
+            "l1_bound": {
+              "type": "string"
+            },
+            "normalization": {
+              "type": "string"
+            },
+            "parseval": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "c21_factor_two_fixture",
+            "channel_sup_norms",
+            "channel_total",
+            "l1_bound",
+            "normalization",
+            "parseval"
+          ],
+          "type": "object"
+        },
+        "diagonal_sentinel": {
+          "additionalProperties": false,
+          "properties": {
+            "below_36": {
+              "type": "string"
+            },
+            "first_square_clock": {
+              "type": "integer"
+            },
+            "never_substitute_q1": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "below_36",
+            "first_square_clock",
+            "never_substitute_q1"
+          ],
+          "type": "object"
+        },
+        "epistemic_role": {
+          "type": "string"
+        },
+        "interpolation_evaluations": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "actual": {
+                "type": "string"
+              },
+              "expected": {
+                "type": "string"
+              },
+              "pass": {
+                "type": "boolean"
+              },
+              "point_index": {
+                "type": "integer"
+              },
+              "table_id": {
+                "type": "integer"
+              },
+              "x": {
+                "type": "integer"
+              },
+              "z": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "actual",
+              "expected",
+              "pass",
+              "point_index",
+              "table_id",
+              "x",
+              "z"
+            ],
+            "type": "object"
+          },
+          "maxItems": 4608,
+          "minItems": 4608,
+          "type": "array"
+        },
+        "period_contract": {
+          "additionalProperties": false,
+          "properties": {
+            "cutoff_periods": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "M_P": {
+                    "type": "integer"
+                  },
+                  "P": {
+                    "type": "integer"
+                  },
+                  "pass": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "M_P",
+                  "P",
+                  "pass"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 4,
+              "type": "array"
+            },
+            "lcm_fixtures": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "M_P": {
+                      "type": "integer"
+                    },
+                    "P": {
+                      "type": "integer"
+                    },
+                    "Q": {
+                      "type": "integer"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "q": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "M_P",
+                    "P",
+                    "Q",
+                    "kind",
+                    "q"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "M_P": {
+                      "type": "integer"
+                    },
+                    "P": {
+                      "type": "integer"
+                    },
+                    "Q": {
+                      "type": "integer"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "q": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "M_P",
+                    "P",
+                    "Q",
+                    "kind",
+                    "q"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "M_P": {
+                      "type": "integer"
+                    },
+                    "P": {
+                      "type": "integer"
+                    },
+                    "Q": {
+                      "type": "integer"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "q": {
+                      "type": "integer"
+                    },
+                    "relevant_mask_minimal_period": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "M_P",
+                    "P",
+                    "Q",
+                    "kind",
+                    "q",
+                    "relevant_mask_minimal_period"
+                  ],
+                  "type": "object"
+                }
+              ],
+              "type": "array"
+            },
+            "periods_are_not_asserted_minimal": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "cutoff_periods",
+            "lcm_fixtures",
+            "periods_are_not_asserted_minimal"
+          ],
+          "type": "object"
+        },
+        "small_clock_triangular_dp": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "G_N": {
+                "type": "string"
+              },
+              "N": {
+                "type": "integer"
+              },
+              "diagnostic_only": {
+                "type": "boolean"
+              },
+              "max_over_clocks_up_to_q": {
+                "type": "string"
+              },
+              "maximum_sum": {
+                "type": "integer"
+              },
+              "minimum_sum": {
+                "type": "integer"
+              },
+              "q": {
+                "type": "integer"
+              },
+              "state_count": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "G_N",
+              "N",
+              "diagnostic_only",
+              "max_over_clocks_up_to_q",
+              "maximum_sum",
+              "minimum_sum",
+              "q",
+              "state_count"
+            ],
+            "type": "object"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "square_means": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "cutoff": {
+                "type": "integer"
+              },
+              "one_count": {
+                "type": "integer"
+              },
+              "one_formula": {
+                "type": "string"
+              },
+              "one_mean": {
+                "type": "string"
+              },
+              "pair_count": {
+                "type": "integer"
+              },
+              "pair_formula": {
+                "type": "string"
+              },
+              "pair_mean": {
+                "type": "string"
+              },
+              "pass": {
+                "type": "boolean"
+              },
+              "period": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "cutoff",
+              "one_count",
+              "one_formula",
+              "one_mean",
+              "pair_count",
+              "pair_formula",
+              "pair_mean",
+              "pass",
+              "period"
+            ],
+            "type": "object"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        "status": {
+          "type": "string"
+        },
+        "tail_and_padding": {
+          "additionalProperties": false,
+          "properties": {
+            "eta_minus_one": {
+              "type": "integer"
+            },
+            "eta_zero": {
+              "type": "integer"
+            },
+            "ledger": {
+              "additionalProperties": false,
+              "properties": {
+                "fourier_multiplier": {
+                  "type": "integer"
+                },
+                "padding_multiplier": {
+                  "type": "integer"
+                },
+                "period_multiplier": {
+                  "type": "integer"
+                },
+                "tail_multiplier": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "fourier_multiplier",
+                "padding_multiplier",
+                "period_multiplier",
+                "tail_multiplier"
+              ],
+              "type": "object"
+            },
+            "ledger_formula": {
+              "type": "string"
+            },
+            "padding_rows": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "channel": {
+                    "type": "string"
+                  },
+                  "cost": {
+                    "type": "integer"
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "site": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "channel",
+                  "cost",
+                  "reason",
+                  "site"
+                ],
+                "type": "object"
+              },
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            "tail_fixture": {
+              "additionalProperties": false,
+              "properties": {
+                "combined_tail_total": {
+                  "type": "integer"
+                },
+                "cutoff": {
+                  "type": "integer"
+                },
+                "difference_count": {
+                  "type": "integer"
+                },
+                "difference_is_nonnegative": {
+                  "type": "boolean"
+                },
+                "finite_tail_coefficients": {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "type": "array"
+                },
+                "finite_tail_total": {
+                  "type": "integer"
+                },
+                "floor_union_bound_form": {
+                  "type": "string"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "limit_tail_coefficients": {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "type": "array"
+                },
+                "limit_tail_total": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "combined_tail_total",
+                "cutoff",
+                "difference_count",
+                "difference_is_nonnegative",
+                "finite_tail_coefficients",
+                "finite_tail_total",
+                "floor_union_bound_form",
+                "limit",
+                "limit_tail_coefficients",
+                "limit_tail_total"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "eta_minus_one",
+            "eta_zero",
+            "ledger",
+            "ledger_formula",
+            "padding_rows",
+            "tail_fixture"
+          ],
+          "type": "object"
+        },
+        "truth_tables": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "c11_zero": {
+                "type": "boolean"
+              },
+              "coefficients": {
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 6,
+                "minItems": 6,
+                "type": "array"
+              },
+              "self_compatible": {
+                "type": "boolean"
+              },
+              "table_id": {
+                "type": "integer"
+              },
+              "truth": {
+                "items": {
+                  "type": "integer"
+                },
+                "maxItems": 9,
+                "minItems": 9,
+                "type": "array"
+              }
+            },
+            "required": [
+              "c11_zero",
+              "coefficients",
+              "self_compatible",
+              "table_id",
+              "truth"
+            ],
+            "type": "object"
+          },
+          "maxItems": 512,
+          "minItems": 512,
+          "type": "array"
+        }
+      },
+      "required": [
+        "all_pass",
+        "analytic_firewall",
+        "coefficient_contract",
+        "counts",
+        "dft_contract",
+        "diagonal_sentinel",
+        "epistemic_role",
+        "interpolation_evaluations",
+        "period_contract",
+        "small_clock_triangular_dp",
+        "square_means",
+        "status",
+        "tail_and_padding",
+        "truth_tables"
+      ],
+      "type": "object"
+    },
+    "certificate_canonical_bytes": {
+      "type": "integer"
+    },
+    "certificate_fixture_pass": {
+      "type": "boolean"
+    },
+    "certificate_sha256": {
+      "type": "string"
+    },
+    "claim_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "finite_artifact_role": {
+          "type": "string"
+        },
+        "first_route_b_blocker": {
+          "type": "string"
+        },
+        "route_a": {
+          "type": "string"
+        },
+        "route_b": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "finite_artifact_role",
+        "first_route_b_blocker",
+        "route_a",
+        "route_b"
+      ],
+      "type": "object"
+    },
+    "declarations": {
+      "additionalProperties": false,
+      "properties": {
+        "ai_assisted_workflow_disclosed": {
+          "type": "boolean"
+        },
+        "conflict_of_interest": {
+          "type": "boolean"
+        },
+        "human_or_animal_subjects": {
+          "type": "boolean"
+        },
+        "new_external_dataset": {
+          "type": "boolean"
+        },
+        "specific_funding": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ai_assisted_workflow_disclosed",
+        "conflict_of_interest",
+        "human_or_animal_subjects",
+        "new_external_dataset",
+        "specific_funding"
+      ],
+      "type": "object"
+    },
+    "forbidden_claims": {
+      "additionalProperties": false,
+      "properties": {
+        "B_depends_on_N": {
+          "type": "boolean"
+        },
+        "active_phasewise_c11": {
+          "type": "boolean"
+        },
+        "adaptive_capacity_limit": {
+          "type": "boolean"
+        },
+        "effective_finite_threshold": {
+          "type": "boolean"
+        },
+        "intrinsic_operator_or_trace": {
+          "type": "boolean"
+        },
+        "polynomial_clock_uniformity": {
+          "type": "boolean"
+        },
+        "projectively_compatible_infinite_selector": {
+          "type": "boolean"
+        },
+        "riemann_hypothesis_proved": {
+          "type": "boolean"
+        },
+        "riemann_zeros_identified": {
+          "type": "boolean"
+        },
+        "unrestricted_growing_clock": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "B_depends_on_N",
+        "active_phasewise_c11",
+        "adaptive_capacity_limit",
+        "effective_finite_threshold",
+        "intrinsic_operator_or_trace",
+        "polynomial_clock_uniformity",
+        "projectively_compatible_infinite_selector",
+        "riemann_hypothesis_proved",
+        "riemann_zeros_identified",
+        "unrestricted_growing_clock"
+      ],
+      "type": "object"
+    },
+    "gates": {
+      "additionalProperties": false,
+      "properties": {
+        "A_intrinsic_dynamical_spectral_determinant": {
+          "type": "boolean"
+        },
+        "B_time_oriented_scattering_completion": {
+          "type": "boolean"
+        },
+        "C_self_adjoint_generator_with_T_log_T": {
+          "type": "boolean"
+        },
+        "D_von_mangoldt_weighted_prime_power_traces": {
+          "type": "boolean"
+        },
+        "E_completed_zeta_divisor_equality": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "A_intrinsic_dynamical_spectral_determinant",
+        "B_time_oriented_scattering_completion",
+        "C_self_adjoint_generator_with_T_log_T",
+        "D_von_mangoldt_weighted_prime_power_traces",
+        "E_completed_zeta_divisor_equality"
+      ],
+      "type": "object"
+    },
+    "mutations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "error_class": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "rejected": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "error_class",
+          "name",
+          "rejected"
+        ],
+        "type": "object"
+      },
+      "maxItems": 24,
+      "minItems": 24,
+      "type": "array"
+    },
+    "outer_four_volume_replay": {
+      "additionalProperties": false,
+      "properties": {
+        "archive_member_count": {
+          "type": "integer"
+        },
+        "dependency_hash_count": {
+          "type": "integer"
+        },
+        "expected": {
+          "additionalProperties": false,
+          "properties": {
+            "archive_member_count": {
+              "type": "integer"
+            },
+            "dependency_hash_count": {
+              "type": "integer"
+            },
+            "failure_count": {
+              "type": "integer"
+            },
+            "numbered_source_count": {
+              "type": "integer"
+            },
+            "result_hash_count": {
+              "type": "integer"
+            },
+            "volume_count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "archive_member_count",
+            "dependency_hash_count",
+            "failure_count",
+            "numbered_source_count",
+            "result_hash_count",
+            "volume_count"
+          ],
+          "type": "object"
+        },
+        "failure_count": {
+          "type": "integer"
+        },
+        "forbidden_claims_false": {
+          "type": "boolean"
+        },
+        "gates_false": {
+          "type": "boolean"
+        },
+        "numbered_source_count": {
+          "type": "integer"
+        },
+        "pass": {
+          "type": "boolean"
+        },
+        "result_hash_count": {
+          "type": "integer"
+        },
+        "volume_count": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "archive_member_count",
+        "dependency_hash_count",
+        "expected",
+        "failure_count",
+        "forbidden_claims_false",
+        "gates_false",
+        "numbered_source_count",
+        "pass",
+        "result_hash_count",
+        "volume_count"
+      ],
+      "type": "object"
+    },
+    "source_locks": {
+      "additionalProperties": false,
+      "properties": {
+        "all_source_digest": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "declared_hash_identity_pass": {
+          "type": "boolean"
+        },
+        "digest_contract_pass": {
+          "type": "boolean"
+        },
+        "entries": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "commit": {
+                "type": "string"
+              },
+              "group": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "commit",
+              "group",
+              "path",
+              "sha256"
+            ],
+            "type": "object"
+          },
+          "maxItems": 67,
+          "minItems": 67,
+          "type": "array"
+        },
+        "group_digests": {
+          "additionalProperties": false,
+          "properties": {
+            "rh366_davenport_standard8": {
+              "type": "string"
+            },
+            "rh384_immutable_closure": {
+              "type": "string"
+            },
+            "rh384_standard8": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "rh366_davenport_standard8",
+            "rh384_immutable_closure",
+            "rh384_standard8"
+          ],
+          "type": "object"
+        },
+        "group_sizes": {
+          "additionalProperties": false,
+          "properties": {
+            "rh366_davenport_standard8": {
+              "type": "integer"
+            },
+            "rh384_immutable_closure": {
+              "type": "integer"
+            },
+            "rh384_standard8": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "rh366_davenport_standard8",
+            "rh384_immutable_closure",
+            "rh384_standard8"
+          ],
+          "type": "object"
+        },
+        "live_file_identity_pass": {
+          "type": "boolean"
+        },
+        "mutable_root_files_excluded": {
+          "type": "boolean"
+        },
+        "release_blob_identity_pass": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "all_source_digest",
+        "count",
+        "declared_hash_identity_pass",
+        "digest_contract_pass",
+        "entries",
+        "group_digests",
+        "group_sizes",
+        "live_file_identity_pass",
+        "mutable_root_files_excluded",
+        "release_blob_identity_pass",
+        "status"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "type": "string"
+    },
+    "theorem_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "class": {
+          "type": "string"
+        },
+        "clock_budget": {
+          "type": "string"
+        },
+        "common_period": {
+          "type": "string"
+        },
+        "cutoff": {
+          "type": "string"
+        },
+        "davenport": {
+          "type": "string"
+        },
+        "diagonal": {
+          "type": "string"
+        },
+        "finite_score": {
+          "type": "string"
+        },
+        "fixed_clock_limit": {
+          "type": "string"
+        },
+        "fixed_parameter": {
+          "type": "string"
+        },
+        "ledger": {
+          "type": "string"
+        },
+        "optimizer_limits": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "uniform_limit": {
+          "type": "string"
+        },
+        "zero_padding": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "class",
+        "clock_budget",
+        "common_period",
+        "cutoff",
+        "davenport",
+        "diagonal",
+        "finite_score",
+        "fixed_clock_limit",
+        "fixed_parameter",
+        "ledger",
+        "optimizer_limits",
+        "uniform_limit",
+        "zero_padding"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "all_pass",
+    "certificate",
+    "certificate_canonical_bytes",
+    "certificate_fixture_pass",
+    "certificate_sha256",
+    "claim_boundary",
+    "declarations",
+    "forbidden_claims",
+    "gates",
+    "mutations",
+    "outer_four_volume_replay",
+    "source_locks",
+    "status",
+    "theorem_contract"
+  ],
+  "title": "RH-385 exact finite reproduction ledger",
+  "type": "object"
+}

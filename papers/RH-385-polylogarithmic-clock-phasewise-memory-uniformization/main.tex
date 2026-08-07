@@ -1,0 +1,654 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\mob}{\mu}
+\newcommand{\TT}{\{-1,0,1\}}
+\newcommand{\Fcal}{\mathcal F}
+\newcommand{\e}{\mathrm e}
+\newcommand{\dd}{\delta}
+\newcommand{\thh}{\vartheta}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+
+\hypersetup{
+  pdftitle={Polylogarithmic-Clock Uniformization for Phasewise Chowla-Free Lag-Two Memory},
+  pdfauthor={RH research program},
+  pdfsubject={A uniform Mobius limit for polylogarithmically growing finite clocks},
+  pdfkeywords={Mobius function, Davenport estimate, growing clocks, lag-two memory}
+}
+
+\title{Polylogarithmic-Clock Uniformization for\\
+Phasewise Chowla-Free Lag-Two Memory}
+\author{RH research program}
+\date{August 8, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Fix $B>0$.  For every clock
+$1\le q\le\lfloor(\log N)^B\rfloor$, consider the RH-379 class of
+universally distance-two-safe, $q$-periodic lag-two sign tables whose
+shift-two interpolation coefficient vanishes separately at each phase.
+We prove a limit uniform in both the clock and every table family in that
+class.  If $S_N(q,f)$ is its normalized M\"obius score and $L_q(f)$ is the
+fixed-clock limit, then
+\[
+ \sup_{q\le\lfloor(\log N)^B\rfloor}\ \sup_{f\in\Fcal_q}
+       \abs{S_N(q,f)-L_q(f)}\longrightarrow0.
+\]
+The proof truncates squarefreeness at
+$P=\lfloor\sqrt{\log\log N}\rfloor$.  With
+$M_P=(\prod_{p\le P}p)^2$, $Q=\operatorname{lcm}(q,M_P)$,
+$\tau_P=\sum_{p>P}p^{-2}$, and $D_*(N)$ the maximum of the uniform
+Davenport sums at $N$ and $N-2$, we retain the explicit bound
+\[
+ \abs{S_N(q,f)-L_q(f)}
+ \le \frac{4\sqrt QD_*(N)}{N}+13\tau_P+\frac{6Q}{N}+\frac4N.
+\]
+The Fourier coefficient costs are $1,1,2$; the last factor cannot be
+removed because a legal self-compatible table has $c_{21}=-2$.
+Consequently the finite optimizers converge uniformly to the fixed-clock
+optimizers, their triangular-array maximum tends to the RH-379 endpoint
+$B_\infty$, and the cofinal square clocks supply an explicit positive
+diagonal witness after the admissible set becomes nonempty.  The result is
+not polynomial-clock uniformity, an adaptive-capacity limit, a projective
+infinite selector, an operator or trace construction, or a statement about
+Riemann zeros.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius function; Davenport estimate;
+polylogarithmic clocks; squarefree cutoff; phasewise lag-two memory.
+
+\section{Frozen problem and claim boundary}
+
+RH-366 records Davenport's estimate uniformly in the additive frequency
+\cite{Davenport1937,IwaniecKowalski2004,RH366}.  RH-378 gives the exact
+six-monomial interpolation of lag-two tables, including the ordinary
+shift-two coefficient $c_{11}$ \cite{RH378}.  RH-379 then optimizes the
+universally safe class with $c_{11}(r)=0$ at every fixed phase and proves
+\begin{equation}
+                         \sup_{q<\infty}G(q)=B_\infty.
+ \label{eq:rh379-supremum}
+\end{equation}
+That theorem fixes $q$ before $N\to\infty$ \cite{RH379}.  The purpose here
+is exactly one limit exchange: clocks may now grow no faster than a fixed
+power of $\log N$.
+
+Let
+\begin{equation}
+ \mob_0(m)=
+ \begin{cases}
+  \mob(m),&m\ge1,\\
+  0,&m\le0.
+ \end{cases}
+ \label{eq:zero-padding}
+\end{equation}
+The zero padding in \eqref{eq:zero-padding} is part of the finite score,
+not an asymptotic convention.
+
+\begin{definition}[Phasewise class]
+Fix $q\ge1$.  A family $f=(f_r)_{r\bmod q}$ belongs to $\Fcal_q$ when
+each $f_r:\TT^2\to\{-1,+1\}$ and the following hold.
+\begin{enumerate}[leftmargin=2em]
+ \item For every ternary input word, the output
+ $\epsilon_n=f_{n\bmod q}(a_{n-2},a_n)$ never has
+ $\epsilon_n=\epsilon_{n+2}=+1$.
+ \item In the unique interpolation
+ \begin{equation}
+ zf_r(x,z)=c_{01}(r)z+c_{02}(r)z^2+c_{11}(r)xz
+ +c_{12}(r)xz^2+c_{21}(r)x^2z+c_{22}(r)x^2z^2,
+ \label{eq:interpolation}
+ \end{equation}
+ one has $c_{11}(r)=0$ for every phase $r$.
+\end{enumerate}
+\end{definition}
+
+The first condition is universal safety, not safety merely along the
+M\"obius word.  The second is phasewise: no cancellation between unknown
+shift-two correlations carrying different phase weights is assumed.
+
+Define
+\begin{equation}
+ S_N(q,f)=\frac1N\sum_{n\le N}\mob(n)
+ f_{n\bmod q}\bigl(\mob_0(n-2),\mob(n)\bigr).
+ \label{eq:finite-score}
+\end{equation}
+The one-site progression densities come from RH-375, and RH-379 supplies
+the lag-two squarefree density and the resulting fixed-clock limit
+\cite{RH375,RH379}:
+\begin{align}
+ \dd_{q,r}&=\lim_{N\to\infty}\frac1N
+  \sum_{\substack{n\le N\\n\equiv r\ (q)}}\mob(n)^2,
+ \label{eq:delta}\\
+ \thh_{q,r}&=\lim_{N\to\infty}\frac1N
+  \sum_{\substack{n\le N\\n\equiv r\ (q)}}
+       \mob(n-2)^2\mob(n)^2.
+ \label{eq:theta}
+\end{align}
+The corresponding fixed-clock functional is
+\begin{equation}
+ L_q(f)=\sum_{r\bmod q}
+       \bigl(c_{02}(r)\dd_{q,r}+c_{22}(r)\thh_{q,r}\bigr).
+ \label{eq:fixed-limit}
+\end{equation}
+
+\begin{lemma}[Exact coefficient census]
+\label{lem:coefficient-census}
+Among the $512$ truth tables, exactly $192$ have $c_{11}=0$.  On those
+tables,
+\begin{align*}
+ c_{01},c_{02},c_{12}&\in\{-1,0,1\},\\
+ c_{21},c_{22}&\in\{-2,-1,0,1,2\}.
+\end{align*}
+There are $24$ distinct six-coefficient vectors, each with multiplicity
+eight.  The table with plus-edge relation
+\[
+                       E=\{(0,-1),(0,+1)\}
+\]
+is self-compatible and has vector
+$(c_{01},c_{02},c_{11},c_{12},c_{21},c_{22})=(1,0,0,0,-2,0)$.
+\end{lemma}
+
+\begin{proof}
+This is exact ternary interpolation in the basis of
+\eqref{eq:interpolation}.  The $c_{11}$ histogram over all $512$ tables is
+\[
+\begin{array}{c|rrrrr}
+c_{11}&-1&-1/2&0&1/2&1\\ \hline
+\text{count}&32&128&192&128&32.
+\end{array}
+\]
+Exact row enumeration gives the alphabets and multiplicities.  For the
+displayed relation, every plus edge has source $0$ and target nonzero, so
+two plus edges cannot compose.  Direct interpolation gives the stated
+vector.  All $4608$ point evaluations are reproduced independently in the
+finite certificate; the enumeration is a finite identity, not asymptotic
+evidence.
+\end{proof}
+
+\section{Squarefree cutoff and periodic Fourier bounds}
+
+Fix an integer $P\ge2$ and put
+\begin{equation}
+ \eta_P(m)=\prod_{p\le P}\bigl(1-\mathbf1_{p^2\mid m}\bigr),
+ \qquad
+ M_P=\left(\prod_{p\le P}p\right)^2,
+ \qquad
+ \tau_P=\sum_{p>P}\frac1{p^2}.
+ \label{eq:cutoff}
+\end{equation}
+Divisibility in \eqref{eq:cutoff} is defined for every integer.  In
+particular,
+\begin{equation}
+                         \eta_P(0)=0,\qquad \eta_P(-1)=1.
+ \label{eq:eta-endpoints}
+\end{equation}
+The function $\eta_P$ has period $M_P$.  This is a valid period; it need
+not be the minimal period of a particular product involving $\eta_P$.
+
+\begin{lemma}[Tail union bound]
+\label{lem:tail}
+For every positive integer $m$,
+\begin{equation}
+ 0\le\eta_P(m)-\mob(m)^2
+ \le\sum_{p>P}\mathbf1_{p^2\mid m}.
+ \label{eq:point-tail}
+\end{equation}
+Consequently, for every $X\ge1$,
+\begin{equation}
+ \sum_{m\le X}\bigl(\eta_P(m)-\mob(m)^2\bigr)
+ \le\sum_{p>P}\left\lfloor\frac X{p^2}\right\rfloor
+ \le X\tau_P.
+ \label{eq:summed-tail}
+\end{equation}
+The same inequalities compare every limiting periodic squarefree mean with
+its $P$-cutoff mean.
+\end{lemma}
+
+\begin{proof}
+If $\eta_P(m)=1$ but $\mob(m)^2=0$, a prime $p>P$ has $p^2\mid m$.
+This proves \eqref{eq:point-tail}; summation gives
+\eqref{eq:summed-tail}.  Notice that the exact count is
+$\lfloor X/p^2\rfloor$, so no $\pi(\sqrt X)$ or $X^{-1/2}$ loss appears.
+Divide the identical inequalities by $X$ and take limits along any fixed
+periodic phase selection to obtain the last assertion.
+\end{proof}
+
+For a $Q$-periodic complex function $w$, use the normalized transform
+\begin{equation}
+ \widehat w(a)=\frac1Q\sum_{r\bmod Q}w(r)\e^{-2\pi i ar/Q}.
+ \label{eq:dft}
+\end{equation}
+
+\begin{lemma}[Periodic M\"obius channel]
+\label{lem:fourier}
+Let
+\[
+ D(X)=\sup_{\alpha\in\mathbb R}
+       \abs{\sum_{n\le X}\mob(n)\e^{2\pi i\alpha n}}.
+\]
+If $w$ has period $Q$, then
+\begin{equation}
+ \abs{\sum_{n\le X}w(n)\mob(n)}
+ \le\sqrt Q\norm{w}_\infty D(X).
+ \label{eq:fourier-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Fourier inversion and the definition of $D(X)$ give the right side with
+$\sum_a\abs{\widehat w(a)}$ in place of
+$\sqrt Q\norm{w}_\infty$.  Parseval and Cauchy--Schwarz give
+\[
+ \sum_a\abs{\widehat w(a)}
+ \le\sqrt Q\left(\sum_a\abs{\widehat w(a)}^2\right)^{1/2}
+ =\sqrt Q\left(\frac1Q\sum_r\abs{w(r)}^2\right)^{1/2}
+ \le\sqrt Q\norm{w}_\infty.
+\]
+The sup norm is essential.  For $P=2$, $q=1$, and the legal
+$c_{21}=-2$ witness, one period of the relevant shifted mask is
+$(-2,-2,0,-2)$.  Its normalized Fourier $\ell^1$ norm is $3$, which is
+larger than $\sqrt4=2$ but no larger than $2\sqrt4$.
+\end{proof}
+
+\section{The uniform analytic ledger}
+
+For $N\ge3$, set
+\begin{equation}
+ D_*(N)=\max_{X\in\{N,N-2\}}D(X),
+ \qquad Q=\operatorname{lcm}(q,M_P).
+ \label{eq:D-star}
+\end{equation}
+Every coefficient sequence $c_{ij}(n\bmod q)$ and every cutoff mask in the
+proof is $Q$-periodic.  Again, $Q$ is only asserted to be a common period.
+
+\begin{proposition}[Exact conservative ledger]
+\label{prop:ledger}
+For every $N\ge3$, $P\ge2$, $q\ge1$, and $f\in\Fcal_q$,
+\begin{equation}
+ \boxed{
+ \abs{S_N(q,f)-L_q(f)}
+ \le\frac{4\sqrt QD_*(N)}N+13\tau_P+\frac{6Q}N+\frac4N.}
+ \label{eq:master-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:interpolation} into \eqref{eq:finite-score}.  The
+$c_{11}$ channel is absent phase by phase.  We account for the remaining
+five channels separately.
+
+The $c_{01}$ channel is a $Q$-periodic weight of sup norm one against
+$\mob(n)$.  Lemma~\ref{lem:fourier} bounds it by
+$\sqrt QD(N)/N$.
+
+For $c_{12}$, the first two sites vanish and the change of variables
+$m=n-2$ gives
+\[
+ \sum_{m\le N-2}c_{12}(m+2)\mob(m)\mob(m+2)^2.
+\]
+Replace $\mob(m+2)^2$ by $\eta_P(m+2)$.  The cost is at most
+$N\tau_P$ by Lemma~\ref{lem:tail}.  The remaining periodic weight has sup
+norm one, so its Fourier cost is $\sqrt QD(N-2)$.
+
+For $c_{21}$, replace $\mob(n-2)^2$ by $\eta_P(n-2)$ for $n\ge3$.
+The coefficient bound $\abs{c_{21}}\le2$ makes the tail cost
+$2N\tau_P$.  Extend the periodic M\"obius sum to $1\le n\le N$.
+At $n=2$, $\eta_P(0)=0$; at $n=1$, the cutoff has
+$\eta_P(-1)=1$ whereas $\mob_0(-1)=0$, costing at most two.  The periodic
+weight has sup norm two.  This channel therefore contributes
+\[
+                    2\sqrt QD(N)+2N\tau_P+2.
+\]
+The three Fourier costs are thus $1+1+2=4$.
+
+It remains to compare the two square-only channels with
+\eqref{eq:fixed-limit}.  For a bounded $Q$-periodic sequence $a$, complete
+periods plus the final incomplete block give
+\begin{equation}
+ \abs{\frac1N\sum_{n\le N}a(n)-\frac1Q\sum_{r\bmod Q}a(r)}
+ \le\frac{2Q\norm a_\infty}{N}.
+ \label{eq:period-discrepancy}
+\end{equation}
+For $c_{02}\mob(n)^2$, finite-to-cutoff and
+limit-to-cutoff each cost $\tau_P$, while
+\eqref{eq:period-discrepancy} costs $2Q/N$.  Its total is
+\begin{equation}
+                         2\tau_P+2Q/N.
+ \label{eq:c02-cost}
+\end{equation}
+
+For $c_{22}\mob_0(n-2)^2\mob(n)^2$, the product difference is bounded by
+the sum of the two one-site differences.  Since
+$\abs{c_{22}}\le2$, finite-to-cutoff costs $4\tau_P$ and
+limit-to-cutoff costs another $4\tau_P$.  The cutoff product has sup norm
+two, so \eqref{eq:period-discrepancy} costs $4Q/N$.  Extending the cutoff
+product across the padded sites costs two at $n=1$ and zero at $n=2$ by
+\eqref{eq:eta-endpoints}.  This channel contributes
+\begin{equation}
+                         8\tau_P+4Q/N+2/N.
+ \label{eq:c22-cost}
+\end{equation}
+
+Collecting the tail coefficients gives
+\[
+ \underbrace{1+2}_{\text{Fourier masks}}
+ +\underbrace{2}_{c_{02}}
+ +\underbrace{8}_{c_{22}}=13.
+\]
+The periodic discrepancies give $2+4=6$, and the two endpoint costs give
+$2+2=4$.  After division by $N$, this is
+\eqref{eq:master-bound}.
+\end{proof}
+
+The decomposition also explains the tail constant in a second way.  The
+finite mask replacements cost $1+1+2+4=8$ across the
+$c_{12},c_{02},c_{21},c_{22}$ channels, and the two limiting square means
+cost $1+4=5$.  These are conservative uniform costs; no sign cancellation
+between channels is used.
+
+\section{Polylogarithmic-clock uniformization}
+
+All logarithms in the clock budget are natural.  For fixed $B>0$, put
+\begin{equation}
+                    H_B(N)=\left\lfloor(\log N)^B\right\rfloor.
+ \label{eq:clock-budget}
+\end{equation}
+All suprema and maxima using this budget are understood for sufficiently
+large $N$, when $H_B(N)\ge1$.
+
+\begin{theorem}[Uniform polylogarithmic-clock limit]
+\label{thm:uniform}
+For every fixed real $B>0$,
+\begin{equation}
+ \boxed{
+ \sup_{1\le q\le H_B(N)}\ \sup_{f\in\Fcal_q}
+       \abs{S_N(q,f)-L_q(f)}\longrightarrow0.}
+ \label{eq:uniform-limit}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Take
+\begin{equation}
+                   P=P_N=\left\lfloor\sqrt{\log\log N}\right\rfloor,
+ \label{eq:P-choice}
+\end{equation}
+which is at least two for all sufficiently large $N$.  The elementary
+estimate
+\begin{equation}
+ \log M_P=2\sum_{p\le P}\log p\le2P\log P=o(\log\log N)
+ \label{eq:M-growth}
+\end{equation}
+shows $M_P=(\log N)^{o(1)}$.  Uniformly for $q\le H_B(N)$,
+\begin{equation}
+               Q\le qM_P\le(\log N)^{B+o(1)}.
+ \label{eq:Q-growth}
+\end{equation}
+
+RH-366 freezes Davenport's estimate: for every fixed $A>0$,
+\begin{equation}
+ \sup_{\alpha\in\mathbb R}
+ \abs{\sum_{n\le X}\mob(n)\e^{2\pi i\alpha n}}
+ \ll_A X(\log X)^{-A}.
+ \label{eq:davenport}
+\end{equation}
+Choose one fixed $A>B/2$.  Equations \eqref{eq:Q-growth} and
+\eqref{eq:davenport} make the Fourier term in
+\eqref{eq:master-bound}
+\[
+                \ll_A(\log N)^{B/2-A+o(1)}=o(1).
+\]
+Also
+\[
+ \tau_P\le\sum_{n>P}n^{-2}\le\frac1{P-1}\longrightarrow0,
+ \qquad Q/N\longrightarrow0,
+ \qquad 1/N\longrightarrow0.
+\]
+The right side of \eqref{eq:master-bound} is independent of $f$ and
+otherwise depends on $q$ only through the displayed uniform bound for $Q$.
+This proves \eqref{eq:uniform-limit}.
+\end{proof}
+
+The fixed nature of $B$ is load-bearing.  The proof does not supply a
+constant uniform in a varying $B=B(N)$.  For $q=N^\varepsilon$, the
+$\sqrt Q$ Fourier mass is polynomial, while \eqref{eq:davenport} supplies
+only an arbitrarily fixed logarithmic saving; this route therefore stops
+before polynomial clocks.
+
+\section{Triangular optimizers and a diagonal witness}
+
+Because every $\Fcal_q$ is finite, define
+\begin{equation}
+ G_N(q)=\max_{f\in\Fcal_q}\abs{S_N(q,f)},
+ \qquad
+ G(q)=\max_{f\in\Fcal_q}\abs{L_q(f)}.
+ \label{eq:optimizers}
+\end{equation}
+The second quantity is exactly the RH-379 fixed-clock optimizer.
+
+\begin{corollary}[Uniform optimizer transfer]
+\label{cor:optimizer-transfer}
+For every fixed $B>0$,
+\begin{equation}
+ \sup_{1\le q\le H_B(N)}\abs{G_N(q)-G(q)}\longrightarrow0.
+ \label{eq:optimizer-uniform}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+For any two finite families of real numbers $(a_f)$ and $(b_f)$,
+\[
+ \abs{\max_f\abs{a_f}-\max_f\abs{b_f}}
+ \le\max_f\abs{a_f-b_f}.
+\]
+Apply this at each $q$ and then Theorem~\ref{thm:uniform}.
+\end{proof}
+
+\begin{theorem}[Restricted triangular-array endpoint]
+\label{thm:triangular-endpoint}
+For every fixed $B>0$,
+\begin{equation}
+          \boxed{\displaystyle
+          \max_{1\le q\le H_B(N)}G_N(q)\longrightarrow B_\infty.}
+ \label{eq:triangular-endpoint}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:rh379-supremum} gives $G(q)\le B_\infty$ for every
+fixed $q$.  Conversely, for every $\varepsilon>0$ there is one fixed clock
+$q_\varepsilon$ with $G(q_\varepsilon)>B_\infty-\varepsilon$.
+Since $H_B(N)\to\infty$, that clock is eventually admissible.  Hence
+\[
+              \max_{q\le H_B(N)}G(q)\longrightarrow B_\infty.
+\]
+Corollary~\ref{cor:optimizer-transfer} transfers this scalar maximum to
+$G_N$.
+\end{proof}
+
+There is also an explicit cofinal witness, with a necessary empty-set
+convention.  Let $3=p_1<p_2<\cdots$ be the odd primes and set
+\begin{equation}
+                       q_y=4\prod_{i\le y}p_i^2.
+ \label{eq:square-clocks}
+\end{equation}
+When $H_B(N)<q_1=36$, record
+\texttt{no\_square\_clock\_available}; do not silently substitute $q_1$.
+Once the set is nonempty, define
+\begin{equation}
+ y_B(N)=\max\{y\ge1:q_y\le H_B(N)\}.
+ \label{eq:y-diagonal}
+\end{equation}
+For each $y$, choose the RH-379 positive optimizer
+$f_y^+\in\Fcal_{q_y}$ with $L_{q_y}(f_y^+)=G(q_y)>0$.
+
+\begin{corollary}[Square-clock diagonal]
+\label{cor:diagonal}
+After \eqref{eq:y-diagonal} becomes defined,
+\begin{equation}
+ S_N\bigl(q_{y_B(N)},f_{y_B(N)}^+\bigr)\longrightarrow B_\infty.
+ \label{eq:diagonal-limit}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+For every fixed $y$, eventually $q_y\le H_B(N)$; hence
+$y_B(N)\to\infty$.  RH-379 proves $G(q_y)\to B_\infty$.  Therefore
+\begin{align*}
+ \abs{S_N(q_{y_B},f_{y_B}^+)-B_\infty}
+ &\le\sup_{q\le H_B(N),\ f\in\Fcal_q}\abs{S_N(q,f)-L_q(f)}\\
+ &\quad+\abs{G(q_{y_B})-B_\infty}\longrightarrow0.
+\end{align*}
+\end{proof}
+
+The families $f_{y_B(N)}^+$ form a triangular-array witness only.  No
+projective compatibility across clocks, and no single infinite selector,
+is asserted.
+
+\section{Finite certificate, source lock, and reproducibility}
+
+The standard-library artifact reproduces the finite interfaces used above.
+It contains all $512$ truth rows and all $4608$ interpolation evaluations;
+the $192$ zero-$c_{11}$ rows reduce to $24$ coefficient vectors of
+multiplicity eight.  It checks maximum coefficient-vector $\ell^1$ norm
+$3$, maximum squared $\ell^2$ norm $5$, the self-compatible
+$c_{21}=-2$ witness, and the three normalized-DFT channel costs $1,1,2$.
+
+The cutoff rows have exact periods
+\[
+                         4,\quad36,\quad900,\quad44100
+\]
+for $P=2,3,5,7$.  Coprime and noncoprime least-common-multiple fixtures are
+included.  One additional fixture has $q=5$, $P=3$, and $Q=180$, while its
+relevant mask has minimal period $36$; this prevents the valid common
+period from being promoted to a minimal-period claim.  Exact square-mask
+means, the $13=8+5$ tail split, the $4$ endpoint cost, and small-clock
+finite max-plus rows are regenerated from source.
+
+The certificate is explicitly labelled
+\texttt{reproduction\_not\_analytic\_proof}.  Its finite rows do not prove
+Davenport's theorem, a uniform asymptotic, or any limit in this paper.  A
+closed official Draft 2020--12 schema fixes every nested member and exact
+JSON primitive type.  Twenty-four nontrivial certificate mutations test
+coefficient, period, shift, factor-two, square-mean, tail, padding, clock,
+sentinel, and claim-boundary failures.  Separate tests mutate source-lock
+commits and group digests.  Optimized Python mode and bool-for-int
+substitutions are also tested.
+
+The source lock contains $67$ unique files in groups $51/8/8$: the released
+RH-384 immutable closure, the standard eight RH-384 theorem files, and the
+standard eight RH-366 Davenport files.  Every live file is compared with
+its Git release blob.  Mutable root policy and handoff files are excluded.
+The RH-366 release is
+\texttt{0396fab97bbe3348c8237f8734dec0e1893fd3bf}.  Its frozen
+\texttt{main.tex} SHA-256 is
+\begin{center}
+\footnotesize\ttfamily
+7df165bd63d43f52dc217dea6691d231d8e40c00c148ab7e1aa4abcac55060fb
+\end{center}
+The RH-379 release is
+\texttt{9ae9802ed17529ef4adfb81d7e2158d47c3c8d22}.  Its frozen
+\texttt{main.tex} SHA-256 is
+\begin{center}
+\footnotesize\ttfamily
+c5d97a227398a4f1d46a39fdec73ffb86aeb9bfc0f16296be7023b187b497090
+\end{center}
+
+\section{Context, limitations, and Gates}
+
+The cubic residual limits recorded in RH-384 are useful context, but they
+are not the discovery claim here \cite{RH384}.  The new theorem is the
+restricted growing-clock uniformization in
+Theorem~\ref{thm:uniform}.
+
+Route A is \texttt{GO}.  Proposition~\ref{prop:ledger}, the fixed-$B$
+cutoff, optimizer transfer, endpoint theorem, and diagonal witness form a
+closed theorem chain.  Route B is \texttt{STOP\_SCOPED}.  The proof gives
+no polynomial-clock uniformity: a fixed logarithmic Davenport saving does
+not pay polynomial Fourier mass.  If $c_{11}(r)$ is activated, already
+$q=1$ exposes the ordinary shift-two Chowla sum, which the frozen sources
+do not cancel.
+
+The following boundaries are mandatory.
+\begin{enumerate}[leftmargin=2em]
+ \item $B>0$ is fixed before $N\to\infty$; no $B=B(N)$ theorem is proved.
+ \item No effective finite threshold or rate is claimed.  Constants in
+       Davenport's estimate depend on the chosen fixed exponent.
+ \item The maximum in \eqref{eq:triangular-endpoint} is restricted to
+       $q\le H_B(N)$; it is not $\sup_{q<\infty}G_N(q)$.
+ \item The theorem optimizes periodic phase tables, not arbitrary adaptive
+       sign words.  It supplies no upper bound proving a limit for $K_N/N$.
+ \item The diagonal witness is not a projectively compatible infinite
+       selector.
+\end{enumerate}
+
+Gates A--E remain false/open.  These externally prescribed arithmetic
+tables do not construct a canonical intrinsic dynamical spectral
+determinant, time-oriented scattering completion, self-adjoint generator
+with an intrinsic $T\log T$ law, signed von-Mangoldt weighted prime-power
+trace, or completed-zeta divisor equality.  Nothing here identifies
+Riemann zeros, constructs a Hilbert--P\'olya operator, or proves the Riemann
+hypothesis.
+
+\section{Conclusion}
+
+The fixed-clock RH-379 limit is uniform throughout every fixed
+polylogarithmic clock window.  The proof pays every source of growth: four
+units of Fourier mass, thirteen units of squarefree-tail loss, six units of
+period discrepancy, and four zero-padding endpoints.  The cutoff period is
+small enough to fit inside Davenport's logarithmic saving precisely because
+$B$ is fixed.  This establishes a genuine, restricted growing-clock theorem
+while leaving polynomial clocks, active shift-two correlations, adaptive
+capacity, and all spectral Gates open.
+
+\section*{Reproducibility and declarations}
+
+\textbf{Data availability.}  All source code, exact outputs, tests, closed
+schema, source hashes, and archive-verification files are included in the
+RH-385 repository directory.  No new external dataset was created or
+analyzed.  Finite certificate rows reproduce interfaces and are not the
+analytic proof.
+
+\textbf{Ethics.}  This mathematical study uses no human participants,
+animals, personal data, or biological materials.  Ethics approval was not
+required.
+
+\textbf{Author contributions.}  The RH research program performed
+conceptualization, methodology, formal analysis, software, validation, and
+writing---original draft and review/editing.
+
+\textbf{Funding.}  This research received no specific grant from any
+funding agency in the public, commercial, or not-for-profit sectors.
+
+\textbf{Declaration of interests.}  The authors declare no known competing
+financial interests or personal relationships that could have influenced
+the work reported here.
+
+\textbf{AI-assisted workflow.}  The manuscript and executable checks were
+prepared with AI-assisted academic writing and coding tools under the
+repository's documented multi-agent workflow.  The mathematical claims are
+bounded by frozen sources, explicit proofs, independent audits, and
+reproducible artifacts.  The authors retain responsibility for the final
+content and its integrity.
+
+\begingroup
+\small
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+\end{document}
