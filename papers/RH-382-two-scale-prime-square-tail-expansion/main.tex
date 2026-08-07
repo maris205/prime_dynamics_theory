@@ -1,0 +1,619 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\mob}{\mu}
+\newcommand{\Ecal}{\mathcal E}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\kap}{\kappa_2}
+\newcommand{\Tin}{T}
+\newcommand{\Sin}{S}
+
+\hypersetup{
+  pdftitle={A Two-Scale Prime-Square Tail Expansion with a Uniform Cubic Remainder},
+  pdfauthor={RH research program},
+  pdfsubject={Second-order square-clock gap expansion in a fixed phasewise Mobius factor class},
+  pdfkeywords={Mobius function, prime-square tail, Euler product, two-scale expansion, cubic remainder}
+}
+
+\title{A Two-Scale Prime-Square Tail Expansion\\
+with a Uniform Cubic Remainder}
+\author{RH research program}
+\date{August 7, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We stay inside the fixed finite-clock, universally distance-two-safe
+phasewise lag-two class in which the interpolation coefficient $c_{11}(r)$
+vanishes at every phase.  RH-381 expresses the square-clock gap as an exact
+infinite increment sum.  Let
+\[
+ a_{j+1}=\frac1{p_{j+1}^{2}-1},\qquad
+ T_y=\sum_{j\ge y}a_{j+1},\qquad
+ S_y=\sum_{j\ge y}a_{j+1}^{2},
+\]
+where $3=p_1<p_2<\cdots$ are the odd primes.  For
+$e_m=\prod_{p\ \mathrm{odd}}(1-m/p^2)$ and $u_m=e_m/e_1$, put
+\begin{align*}
+ X_\infty&=2u_4-4u_5+6u_6-8u_7+10u_8,\\
+ Y_\infty&=6u_4-16u_5+30u_6-48u_7+70u_8,\\
+ m_\infty&=2u_3-4u_4+6u_5-8u_6+10u_7-12u_8.
+\end{align*}
+All-order product inequalities, rather than finite fitting, give for every
+$y\ge1$
+\[
+ B_\infty-G(q_y)
+ =\frac{2X_\infty}{\pi^2}T_y
+ +\frac{Y_\infty+2m_\infty}{\pi^2}T_y^2
+ +\frac{Y_\infty-2m_\infty}{\pi^2}S_y+R_y,
+\]
+with the explicit stronger ledger
+\[
+ |R_y|\le \frac{3301}{6\pi^2}T_y^3
+ <\frac{551}{\pi^2}T_y^3.
+\]
+The numerator contributes $931/2$ and the memory channel $254/3$.
+The proof keeps $S_y$ independent, treats $R_8=P_yE_8$ separately, uses
+$E_9=0$ exactly, and never introduces $E_{10}$.  No prime number theorem,
+$p_y$-scale rewrite, growing clock, adaptive-capacity limit, operator,
+trace formula, zero identification, or implication for the Riemann
+hypothesis is supplied.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius function; prime-square Euler tail;
+two-scale asymptotics; finite clocks; explicit remainder.
+
+\section{Frozen class and exact gap input}
+
+The quantifiers are inherited without enlargement from RH-379--RH-381
+\cite{RH379,RH380,RH381}.
+
+\begin{definition}[Fixed-clock phasewise class]
+Fix an integer $q\ge1$ before taking $N\to\infty$.  At every
+$r\in\Z/q\Z$, choose
+\[
+ f_r:\{-1,0,1\}^2\longrightarrow\{-1,+1\},\qquad
+ \epsilon_n=f_{n\bmod q}\bigl(\mob(n-2),\mob(n)\bigr).
+\]
+The family is universally distance-two-safe if no ternary input can give
+$\epsilon_n=\epsilon_{n+2}=+1$.  It belongs to the present class only when
+the RH-379 interpolation coefficient $c_{11}(r)$ of
+$\mob(n-2)\mob(n)$ is zero at every phase.  Write $G(q)$ for the exact
+fixed-clock optimum in this class.
+\end{definition}
+
+No phase cancellation is assumed.  If $c_{11}(r)$ is active, a
+phase-weighted shift-two M\"obius correlation appears and is not controlled
+by the frozen inputs.
+
+Let $3=p_1<p_2<\cdots$ be the odd primes and define
+\begin{equation}
+ P_j=\prod_{i\le j}p_i^2,\qquad q_j=4P_j,\qquad
+ A_j=\prod_{i\le j}(p_i^2-1),\qquad
+ D_j=\prod_{i\le j}(p_i^2-2).
+ \label{eq:square-data}
+\end{equation}
+If $R_\ell^{(j)}$ is the RH-374 positive-run count, put
+\begin{align}
+ \Ecal_j&=R_2^{(j)}+R_4^{(j)}+R_6^{(j)}+R_8^{(j)},
+ &L_j&=2R_2^{(j)}+4R_4^{(j)}+6R_6^{(j)}+8R_8^{(j)},
+ \label{eq:EL}\\
+ M_j&=2R_3^{(j)}+4R_5^{(j)}+6R_7^{(j)},
+ &X_j&=\frac{L_j-2\Ecal_j}{A_j}.
+ \label{eq:MX}
+\end{align}
+RH-380 proves the exact increment, and RH-381 telescopes it after all
+fixed-clock limits have been taken \cite{RH380,RH381}:
+\begin{proposition}[Frozen exact infinite increment sum]
+For every $y\ge1$,
+\begin{equation}
+\begin{aligned}
+B_\infty-G(q_y)=\sum_{j\ge y}\biggl[
+ &\frac{2X_j}{\pi^2}a_{j+1}\\
+ &+\frac{M_j}{A_j}a_{j+1}
+ \left(\frac4{\pi^2}-H_{j+1}\right)\biggr],
+\end{aligned}
+\label{eq:gap-sum}
+\end{equation}
+where
+\[
+ a_{j+1}=\frac1{p_{j+1}^2-1},\qquad
+ H_j=\kap\frac{A_j}{D_j}.
+\]
+\end{proposition}
+
+Equation~\eqref{eq:gap-sum} is an input, not a simultaneous limit in $N$
+and $j$.  Its use below creates no clock $q=q(N)$.
+
+\section{Finite Euler ratios and the terminal run}
+
+For $1\le m\le9$, define
+\begin{equation}
+ E_m^{(j)}=\prod_{i\le j}\left(1-\frac m{p_i^2}\right),
+ \qquad
+ U_m^{(j)}=\frac{E_m^{(j)}}{E_1^{(j)}}\quad(1\le m\le8),
+ \label{eq:finite-euler}
+\end{equation}
+and let
+\begin{equation}
+ e_m=\prod_{p\ \mathrm{odd}}\left(1-\frac m{p^2}\right),
+ \qquad u_m=\frac{e_m}{e_1}\quad(1\le m\le8).
+ \label{eq:infinite-euler}
+\end{equation}
+These products converge and are positive for $m\le8$ because
+$\sum_{n\ge3}n^{-2}<\infty$ and every factor is positive.
+
+The terminal convention matters.  RH-374 proves \cite{RH374}
+\begin{equation}
+ R_\ell^{(j)}=P_j
+ \bigl(E_\ell^{(j)}-2E_{\ell+1}^{(j)}+E_{\ell+2}^{(j)}\bigr),
+ \qquad 1\le\ell\le7,
+ \label{eq:run-seven}
+\end{equation}
+but the last run is
+\begin{equation}
+                         R_8^{(j)}=P_jE_8^{(j)}.
+ \label{eq:R8-terminal}
+\end{equation}
+Thus \eqref{eq:run-seven} is not extended to $\ell=8$.  In particular,
+$E_{10}$ is neither needed nor defined in the run ledger.
+
+\begin{lemma}[Exact numerator and memory Euler forms]
+For every $j\ge1$,
+\begin{align}
+ X_j={}&2U_4^{(j)}-4U_5^{(j)}+6U_6^{(j)}
+        -8U_7^{(j)}+10U_8^{(j)},
+ \label{eq:X-euler}\\
+ \frac{M_j}{A_j}={}&2U_3^{(j)}-4U_4^{(j)}+6U_5^{(j)}
+        -8U_6^{(j)}+10U_7^{(j)}-12U_8^{(j)}.
+ \label{eq:m-euler}
+\end{align}
+Moreover $0\le M_j/A_j\le1$.
+\end{lemma}
+
+\begin{proof}
+The combinatorial identity
+\[
+ L_j-2\Ecal_j=2R_4^{(j)}+4R_6^{(j)}+6R_8^{(j)}
+\]
+uses the terminal term \eqref{eq:R8-terminal} separately.  Substitution of
+\eqref{eq:run-seven} only at lengths four and six gives
+\eqref{eq:X-euler}; no $E_9$ or $E_{10}$ appears.
+
+For the memory statistic, substitute \eqref{eq:run-seven} at lengths
+three, five, and seven.  Before simplification, the numerator is
+\[
+ 2E_3^{(j)}-4E_4^{(j)}+6E_5^{(j)}-8E_6^{(j)}
+ +10E_7^{(j)}-12E_8^{(j)}+6E_9^{(j)}.
+\]
+Here
+\[
+ E_9^{(j)}=0
+\]
+exactly for every $j\ge1$, because its $p_1=3$ factor is $1-9/9$.
+Division by $E_1^{(j)}$ proves \eqref{eq:m-euler}.  Finally, $M_j$ counts
+at most all positive sites in the support word, whose number is $A_j$.
+\end{proof}
+
+Passing to the infinite products in these two formulas defines the three
+coefficients used in the theorem:
+\begin{align}
+ X_\infty&=2u_4-4u_5+6u_6-8u_7+10u_8,
+ \label{eq:Xinf}\\
+ Y_\infty&=6u_4-16u_5+30u_6-48u_7+70u_8,
+ \label{eq:Yinf}\\
+ m_\infty&=2u_3-4u_4+6u_5-8u_6+10u_7-12u_8.
+ \label{eq:minf}
+\end{align}
+Since $0\le M_j/A_j\le1$ and the Euler ratios converge,
+\begin{equation}
+                         0\le m_\infty\le1.
+ \label{eq:minf-site}
+\end{equation}
+
+\section{An all-order product expansion}
+
+Put
+\begin{equation}
+ T_j=\sum_{k\ge j}a_{k+1},\qquad
+ S_j=\sum_{k\ge j}a_{k+1}^2.
+ \label{eq:tails}
+\end{equation}
+The elementary comparison
+\[
+ T_y\le\sum_{n>p_y}\frac1{n^2-1}
+ =\frac12\left(\frac1{p_y}+\frac1{p_y+1}\right)
+\]
+shows convergence and $T_y\to0$.  This is not a prime-counting asymptotic.
+
+\begin{lemma}[Bonferroni product bounds]
+\label{lem:bonferroni}
+Let $0\le b_i<1$ and $x=\sum_i b_i<\infty$.  Then
+\begin{equation}
+ x-\frac{x^2}{2}\le1-\prod_i(1-b_i)\le x,
+ \qquad
+ \prod_i(1-b_i)\le\frac1{1+x}.
+ \label{eq:bonferroni}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For a finite product, the union bound gives the upper inequality.  Keeping
+the first two elementary symmetric sums gives
+\[
+ 1-\prod_i(1-b_i)\ge \sum_i b_i-\sum_{i<k}b_ib_k
+ \ge x-\frac{x^2}{2}.
+\]
+Also $(1-b_i)^{-1}\ge1+b_i$, so
+\[
+ \prod_i(1-b_i)^{-1}\ge\prod_i(1+b_i)\ge1+x.
+\]
+Finite truncation followed by monotone passage proves all three inequalities
+for the infinite product.  No Taylor truncation is being treated as an
+identity.
+\end{proof}
+
+\begin{lemma}[Uniform Euler-ratio expansion]
+\label{lem:ratio-expansion}
+For $3\le m\le8$ and every $j\ge1$,
+\begin{equation}
+ 0\le U_m^{(j)}-u_m-(m-1)u_mT_j
+ \le U_m^{(j)}(m-1)^2T_j^2
+ \le\frac{9-m}{8}(m-1)^2T_j^2.
+ \label{eq:ratio-expansion}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since $j\ge1$, every tail prime is at least $p_{j+1}\ge5$.  Hence, for
+$3\le m\le8$,
+\[
+ 0\le (m-1)a_{k+1}\le\frac7{24}<1\qquad(k\ge j),
+\]
+so Lemma~\ref{lem:bonferroni} applies to every factor below.
+Factorwise cancellation gives
+\begin{equation}
+ P_{m,j}:=\frac{u_m}{U_m^{(j)}}
+ =\prod_{k\ge j}\left(1-(m-1)a_{k+1}\right).
+ \label{eq:P-tail}
+\end{equation}
+Write $x=(m-1)T_j$ and $\delta=1-P_{m,j}$.  Lemma
+\ref{lem:bonferroni} gives
+\[
+ P_{m,j}\le\frac1{1+x},\qquad \frac{x}{1+x}\le\delta\le x.
+\]
+Because $u_m=U_m^{(j)}P_{m,j}$,
+\begin{align*}
+ U_m^{(j)}-u_m-xu_m
+ &=U_m^{(j)}\bigl[(1+x)\delta-x\bigr].
+\end{align*}
+The last bracket lies between zero and $x^2$.  Finally,
+$U_m^{(j)}$ contains the $p=3$ ratio $(9-m)/8$, while every later factor
+lies in $(0,1)$, proving the last bound.
+\end{proof}
+
+\begin{proposition}[Numerator and memory first variations]
+\label{prop:first-variations}
+For every $j\ge1$,
+\begin{align}
+ \left|X_j-X_\infty-Y_\infty T_j\right|
+ &\le\frac{931}{4}T_j^2,
+ \label{eq:X-quadratic}\\
+ \left|\frac{M_j}{A_j}-m_\infty\right|
+ &\le63T_j.
+ \label{eq:m-linear}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Apply Lemma~\ref{lem:ratio-expansion} to \eqref{eq:X-euler}.  The linear
+coefficient is exactly \eqref{eq:Yinf}, and the absolute quadratic ledger is
+\[
+ \frac{45}{4}+32+\frac{225}{4}+72+\frac{245}{4}
+ =\frac{931}{4}.
+\]
+For \eqref{eq:m-linear}, the union-bound consequence
+\[
+ 0\le U_m^{(j)}-u_m
+ \le U_m^{(j)}(m-1)T_j
+ \le\frac{9-m}{8}(m-1)T_j
+\]
+is applied to \eqref{eq:m-euler}.  The six absolute contributions are
+\[
+ 3+\frac{15}{2}+12+15+15+\frac{21}{2}=63.
+\]
+Both estimates hold for the entire infinite tail, not just the finite rows
+in the certificate.
+\end{proof}
+
+\section{The \texorpdfstring{$H$}{H} loss and exact tail algebra}
+
+RH-381 derives the exact product \cite{RH381}
+\begin{equation}
+ \frac{H_{j+1}}{4/\pi^2}
+ =\prod_{k\ge j+1}(1-a_{k+1}).
+ \label{eq:H-product}
+\end{equation}
+Define its normalized loss
+\begin{equation}
+ d_{j+1}:=1-\frac{H_{j+1}}{4/\pi^2}.
+ \label{eq:d-loss}
+\end{equation}
+Lemma~\ref{lem:bonferroni}, now with $x=T_{j+1}$, gives
+\begin{equation}
+ d_{j+1}=T_{j+1}+\eta_{j+1},\qquad
+ -\frac12T_{j+1}^2\le\eta_{j+1}\le0.
+ \label{eq:H-quadratic}
+\end{equation}
+Equivalently,
+\[
+ \left|\left(\frac4{\pi^2}-H_{j+1}\right)
+ -\frac4{\pi^2}T_{j+1}\right|
+ \le\frac2{\pi^2}T_{j+1}^2.
+\]
+
+We next retain the two different quadratic scales.
+
+\begin{lemma}[Quadratic and cubic telescopes]
+\label{lem:tail-algebra}
+For every $y\ge1$,
+\begin{align}
+ \sum_{j\ge y}a_{j+1}T_j
+ &=\frac{T_y^2+S_y}{2},
+ \label{eq:current-tail}\\
+ \sum_{j\ge y}a_{j+1}T_{j+1}
+ &=\frac{T_y^2-S_y}{2}.
+ \label{eq:next-tail}
+\end{align}
+If $C_y=\sum_{j\ge y}a_{j+1}^3$, then
+\begin{align}
+ \sum_{j\ge y}a_{j+1}T_jT_{j+1}
+ &=\frac{T_y^3-C_y}{3}\le\frac{T_y^3}{3},
+ \label{eq:cross-cube}\\
+ \sum_{j\ge y}a_{j+1}T_{j+1}^2
+ &\le\frac{T_y^3}{3},
+ \label{eq:right-cube}\\
+ \sum_{j\ge y}a_{j+1}T_j^2&\le T_y^3.
+ \label{eq:left-cube}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+Since $T_j=T_{j+1}+a_{j+1}$,
+\begin{align*}
+ a_{j+1}T_j
+ &=\tfrac12(T_j^2-T_{j+1}^2+a_{j+1}^2),\\
+ a_{j+1}T_{j+1}
+ &=\tfrac12(T_j^2-T_{j+1}^2-a_{j+1}^2).
+\end{align*}
+Finite summation and $T_j\to0$ prove
+\eqref{eq:current-tail}--\eqref{eq:next-tail}.  For the mixed cube,
+\[
+ T_j^3-T_{j+1}^3
+ =3a_{j+1}T_jT_{j+1}+a_{j+1}^3,
+\]
+which proves \eqref{eq:cross-cube}.  The alternative expansion
+\[
+ T_j^3-T_{j+1}^3
+ =3a_{j+1}T_{j+1}^2+3a_{j+1}^2T_{j+1}+a_{j+1}^3
+\]
+proves \eqref{eq:right-cube}; nonnegative finite terms justify passage to
+the limit.  Finally $T_j\le T_y$ and $\sum_{j\ge y}a_{j+1}=T_y$ give
+\eqref{eq:left-cube}.
+\end{proof}
+
+\section{The two-scale theorem}
+
+\begin{theorem}[Two-scale prime-square tail expansion]
+\label{thm:two-scale}
+For every $y\ge1$ in the fixed class of Definition~1.1,
+\begin{equation}
+\boxed{\begin{aligned}
+B_\infty-G(q_y)
+={}&\frac{2X_\infty}{\pi^2}T_y
++\frac{Y_\infty+2m_\infty}{\pi^2}T_y^2\\
+&+\frac{Y_\infty-2m_\infty}{\pi^2}S_y+R_y,
+\end{aligned}}
+\label{eq:two-scale}
+\end{equation}
+where
+\begin{equation}
+ \boxed{|R_y|\le\frac{3301}{6\pi^2}T_y^3
+ <\frac{551}{\pi^2}T_y^3.}
+ \label{eq:cubic-bound}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Write
+\[
+ X_j=X_\infty+Y_\infty T_j+\rho_j,\qquad
+ |\rho_j|\le\frac{931}{4}T_j^2
+\]
+by Proposition~\ref{prop:first-variations}.  The numerator part of
+\eqref{eq:gap-sum} is therefore
+\begin{align}
+\sum_{j\ge y}\frac{2a_{j+1}X_j}{\pi^2}
+={}&\frac{2X_\infty}{\pi^2}T_y
+ +\frac{Y_\infty}{\pi^2}(T_y^2+S_y)+R_y^{(X)},
+ \label{eq:X-channel}
+\end{align}
+where Lemma~\ref{lem:tail-algebra} gives
+\begin{equation}
+ |R_y^{(X)}|
+ \le\frac{931}{2\pi^2}\sum_{j\ge y}a_{j+1}T_j^2
+ \le\frac{931}{2\pi^2}T_y^3.
+ \label{eq:X-budget}
+\end{equation}
+
+Let $m_j=M_j/A_j$.  By \eqref{eq:d-loss}, the memory part is
+\[
+ \frac4{\pi^2}\sum_{j\ge y}a_{j+1}m_jd_{j+1}.
+\]
+Subtract its proposed main term
+$(4m_\infty/\pi^2)\sum a_{j+1}T_{j+1}$.  Equations
+\eqref{eq:m-linear}, \eqref{eq:minf-site}, and
+\eqref{eq:H-quadratic} give
+\begin{align*}
+|m_jd_{j+1}-m_\infty T_{j+1}|
+&\le |m_j-m_\infty|T_{j+1}
+   +m_j|d_{j+1}-T_{j+1}|\\
+&\le63T_jT_{j+1}+\tfrac12T_{j+1}^2.
+\end{align*}
+Using \eqref{eq:next-tail}, \eqref{eq:cross-cube}, and
+\eqref{eq:right-cube}, the memory channel becomes
+\begin{align}
+\sum_{j\ge y}a_{j+1}m_j
+\left(\frac4{\pi^2}-H_{j+1}\right)
+={}&\frac{2m_\infty}{\pi^2}(T_y^2-S_y)+R_y^{(M)},
+ \label{eq:M-channel}
+\end{align}
+where
+\begin{align}
+ |R_y^{(M)}|
+ &\le\frac4{\pi^2}
+ \left(63\frac{T_y^3}{3}+\frac12\frac{T_y^3}{3}\right)
+ =\frac{254}{3\pi^2}T_y^3.
+ \label{eq:M-budget}
+\end{align}
+Adding \eqref{eq:X-channel} and \eqref{eq:M-channel} produces the opposite
+$S_y$ signs in \eqref{eq:two-scale}.  The explicit budget is
+\[
+ \frac{931}{2}+\frac{254}{3}=\frac{3301}{6}
+ =550+\frac16<551,
+\]
+which proves \eqref{eq:cubic-bound}.
+\end{proof}
+
+\begin{remark}[Why $S_y$ cannot be suppressed]
+The numerator uses $\sum a_{j+1}T_j=(T_y^2+S_y)/2$, whereas the memory
+channel uses $\sum a_{j+1}T_{j+1}=(T_y^2-S_y)/2$.  No relation replacing
+$S_y$ by a fixed multiple of $T_y^2$ is assumed or proved.  Dropping this
+scale would erase an exact sign distinction.
+\end{remark}
+
+\section{Exact artifact and a scoped sign mutation}
+
+The standard-library artifact implements only exact rational arithmetic for
+the theorem ledger.  It checks $24$ finite Euler-ratio product rows, four
+Bonferroni rows, four quadratic/cubic telescope rows, and four finite
+endpoint gap rows.  These rows reproduce the symbolic identities and
+exercise their bounds; the proof of Theorem~\ref{thm:two-scale} is the
+all-order argument above.
+
+The certificate also freezes one deliberately scoped mutation.  Truncate
+the Euler endpoint after the nineteenth odd prime, $p_{19}=71$, and compare
+the one-prime tail from $p_{18}=67$.  Thus
+\[
+ a=T=\frac1{71^2-1}=\frac1{5040},\qquad
+ S=a^2=\frac1{5040^2}.
+\]
+All endpoint coefficients are exact fractions.  Under the displayed theorem
+sign, the exact residual
+divided by $551a^3$ is
+\[
+ 0.042746686479386\ldots<1.
+\]
+Mutate only the memory term
+\[
+ -2m_{19}S\quad\longmapsto\quad+2m_{19}S,
+\]
+while leaving the numerator term $+Y_{19}S$ unchanged.  The approximation
+then changes by exactly $4m_{19}S$, and the exact rational residual ratio is
+\[
+ 7.335622869337969\ldots>1.
+\]
+This is a reproduction-only wrong-sign rejection.  It is not a regression,
+not evidence for the infinite theorem, and not the different mutation that
+would flip the numerator's $Y S$ term.
+
+The result builder verifies $33$ immutable predecessor files against both
+their live SHA-256 digests and the exact blobs at the declared releases:
+seven from RH-374, eight each from RH-379, RH-380, and RH-381, and two from
+the RH-MVP2 archive.  Mutable root policy and handoff files are excluded.
+The result has a recursively closed Draft 2020-12 schema.  Result and
+archive loaders reject duplicate keys, non-finite constants, unsafe paths,
+membership drift, release rebinding, and hash drift.
+
+Reproduction from this directory is
+\begin{verbatim}
+make result
+make schema
+make test
+make pdf
+make archive
+\end{verbatim}
+
+\section{Scope and limitations}
+
+Theorem~\ref{thm:two-scale} is a complete second-order theorem inside one
+frozen class.  It is not a statement about a larger dynamical or arithmetic
+system.
+
+\begin{itemize}[leftmargin=2em]
+\item Every clock is finite and fixed before $N\to\infty$.  There is no
+      diagonal choice $q=q(N)$.
+\item Universal safety and phasewise $c_{11}(r)=0$ are hypotheses.  Active
+      $c_{11}$ remains blocked by a phase-weighted shift-two correlation
+      theorem not present in the source lock.
+\item The independent $S_y$ scale and its opposite memory sign are part of
+      the theorem.  Neither is replaced by numerical fitting.
+\item No prime number theorem is used, and the result is not rewritten as an
+      asymptotic in $p_y$.
+\item No adaptive-capacity convergence, geometrically selected non-Parry
+      measure, or deterministic strong-space Ulam bridge is inferred.
+\item The work constructs no canonical intrinsic dynamical spectral
+      determinant, scattering completion, self-adjoint generator,
+      von Mangoldt prime-power trace identity, or completed-zeta divisor
+      equality.  Gates A--E remain false/open \cite{RHMVP2}.
+\item There is no Hilbert--P\'olya operator, no identification of Riemann
+      zeros, and no implication for the Riemann hypothesis.
+\end{itemize}
+
+\section*{Declarations}
+
+\paragraph{Data and code availability.}
+All theorem inputs, exact source code, tests, closed result schema, source
+locks, and archive manifests are contained in the repository paper
+directory.  No private dataset is used.
+
+\paragraph{Author contributions.}
+The RH research program performed conceptualization, formal analysis,
+software construction, verification, artifact curation, adversarial review,
+and manuscript preparation.
+
+\paragraph{Funding.}
+No external funding is declared.
+
+\paragraph{Competing interests.}
+No competing interests are declared.
+
+\paragraph{Ethics and human participants.}
+This mathematical and computational study uses no human participants,
+animals, or personal data; ethics approval and consent are not applicable.
+
+\paragraph{AI assistance disclosure.}
+AI-assisted tools supported source triage, symbolic checking, deterministic
+artifact generation, drafting, and adversarial review.  Every released
+claim is constrained by immutable repository sources and reproducible
+verification artifacts; responsibility for the scoped mathematical
+statements remains with the research program.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
