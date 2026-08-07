@@ -1,13 +1,16 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-08
-状态：`BOLD_CHANNEL_V24 / LITERAL_JUTILA_FAREY_ATOM_COMPILER`
-claim level：`EXACT_L0_DETERMINANT_TO_JUTILA_FAREY_KLOOSTERMAN_ATOMS_ONLY`
+状态：`BOLD_CHANNEL_V25 / CORRECTED_FOURIER_FACTORIZABLE_EMITTER`
+claim level：`EXACT_L0_CORRECTED_JUTILA_FOURIER_AND_FACTORIZABLE_AUXILIARY_EMITTER_ONLY`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V24 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V25 的完整
 proof、scope与独立 checker位于
+`research/tpc-big-road/bridge_b_corrected_fourier_factorable_emitter.md`及
+`research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checker.py`；V24 atom
+compiler位于
 `research/tpc-big-road/bridge_b_literal_jutila_farey_atom_compiler.md`及
 `research/tpc-big-road/tpc_bridge_b_literal_jutila_farey_atom_checker.py`；V23 prime-shell
 Jutila interface、V22 projector firewall、V21 wrapped mean、V20 terminal
@@ -26,7 +29,8 @@ backward-dual、V17 rank与 V16 common-return contracts继续冻结于各自 art
   -> exact literal determinant
   -> Jutila main/error split
   -> complete Farey/Kloosterman atoms
-  -> {signed q,c,b physical emitter | factorable auxiliary ensemble}
+  -> corrected Fourier nonzero-shift emitter
+  -> {Ramanujan-weighted physical theorem | factorable literal transform compiler}
      + 1 independent stable-block/summable-bad-set dynamical reserve
      + 2 independent analytic reserves (A1/A2).
 ```
@@ -1030,6 +1034,87 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 26. V25 后的罗盘：Fourier emitter 已纠正，主墙是 literal weighted shift
+
+V24把 determinant送到了 corrected Farey atoms，但沿用了 Blomer--Li v1 (2.2)
+第一行的 printed Fourier phase。V25发现这行少了 divisor `d`：从
+`r_q(n)=sum_(d|(q,n))d mu(q/d)`写 `n=dm`，phase必须是 `e(-alpha d m)`。
+`q=2` 的 frequency-one coefficient给出立即反例；当前公开 source未见修订。因此合法
+路线只使用仓库从 Lemma 1重推的 corrected kernel，并严格区分 Fourier frequency
+`n=dm`与 rational Poisson dummy。
+
+完成 full-ensemble zero cancellation与 V24 corrected Farey reassembly后，Jutila error
+不再是模糊的 `(q,c,b)` cloud，而精确压缩为
+
+```text
+E_x=-sum_(D!=0) B_x(D) kappa(D),
+complete atom=S(D-n,sigma(z)u;c)e(z(D-n)).
+```
+
+这是真正的路线压缩：`V25_NONZERO_SHIFT_SIGNED_FAREY_KLOOSTERMAN_EMITTER` 已经
+`PROVED_EXACT_L0`。同时它说明继续逐 cell套 Blomer--Pascadi没有意义；第一项未付量是
+physical convolution `||(1-chi)G_x||_2`，再加长变量、nonunit/axes、tails与唯一 outer
+reassembly。fixed `c,z` short coprime cell保留 source-backed conditional engine，但
+physical credit仍为零。
+
+第二条 reserve也不再模糊。另设 source-native
+`Q1=x^(4/21),Q2=x^(8/21),q_aux=p t`，保留 unrestricted smooth `t`及所有
+`(p,t)` multiplicities，可对同一 macro shift `(1,1,2)`建立 common exact split，且
+
+```text
+||1-chi_aux||_2 <<_(psi,rho) x^(-1/14+o(1)).
+```
+
+这是有用的更宽 conditional window，但不是 arithmetic saving。现有 crude energy只给
+`x^(10/7+o(1))`；纯 energy闭合必须新证
+`||G_x||_2<=x^(1+theta+o(1))`, `theta<193/2800`。source `41/42` theorem依赖
+GL(3)/divisor coefficients与 Voronoi chain，不能替换 literal Möbius/log ×
+`Lambda-b`。atomwise改变 good-prime set也破坏 common normalization。
+
+因此当前路线排序为
+
+```text
+1. V25_RAMANUJAN_WEIGHTED_NONZERO_SHIFT_PHYSICAL_THEOREM
+     = OPEN_NEW_THEOREM;
+2. V25_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER
+     = OPEN_NEW_CONSTRUCTION;
+3. fixed-c,z BP/Pascadi cells
+     = CONDITIONAL_LOCAL_ENGINES_ONLY;
+4. V23 stable-block/summable-bad-set dynamics reserve;
+5. A1/A2 independent reserves.
+```
+
+精确 atlas为
+
+```text
+V25_BLOMER_LI_2_2_FIRST_LINE_AS_PRINTED_MISSING_d_PHASE
+  = STOP_SCOPED_LITERAL_q2_FOURIER_COUNTEREXAMPLE
+V25_CORRECTED_JUTILA_DIVISOR_FOURIER_EXPANSION
+  = PROVED_EXACT_L0_REPOSITORY_DERIVATION
+V25_FOURIER_RATIONAL_DUMMY_INDEX_IDENTIFICATION
+  = STOP_SCOPED_POISSON_DUAL_TYPE_ERROR
+V25_FULL_ENSEMBLE_ZERO_MODE_CANCELLATION = PROVED_EXACT_L0
+V25_NONZERO_SHIFT_SIGNED_FAREY_KLOOSTERMAN_EMITTER = PROVED_EXACT_L0
+V25_PRIME_SHELL_GROUPED_RAMANUJAN_KERNEL = PROVED_EXACT_L0
+V25_DIRECT_CELLWISE_BP_FROM_EXACT_EMITTER
+  = STOP_SCOPED_OUTER_NORM_LONG_RANGE_AND_REASSEMBLY_UNPAID
+V25_FIXED_c_z_COPRIME_SHORT_BP_CELL = SOURCE_BACKED_CONDITIONAL_ENGINE
+V25_FIXED_c_z_NONUNIT_PASCADI_CELL
+  = CONDITIONAL_BV_FOURIER_MEASURE_NORM_UNPAID
+V25_FACTORIZABLE_AUXILIARY_JUTILA_SPLIT = PROVED_EXACT_L0
+V25_FACTORIZABLE_AUXILIARY_L2_GAIN
+  = PROVED_SOURCE_BACKED_DERIVED_UPPER_BOUND_X_MINUS_1_OVER_14
+V25_DIRECT_BLOMER_LI_41_OVER_42_TO_LITERAL_TPC_TRANSFER
+  = STOP_SCOPED_COEFFICIENT_VORONOI_AND_REASSEMBLY_MISMATCH
+V25_ATOMWISE_COMMON_GOOD_PRIME_ENSEMBLE
+  = STOP_SCOPED_MOVING_SLOPE_GCD_AND_REASSEMBLY_MISMATCH
+V25_RAMANUJAN_WEIGHTED_NONZERO_SHIFT_PHYSICAL_THEOREM = OPEN_NEW_THEOREM
+V25_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER = OPEN_NEW_CONSTRUCTION
+```
+
+停止项不停止 corrected L0 emitter或 factorable exact split。overall arithmetic
+advance=`NO`、fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false。
 
 ## 25. V24 后的罗盘：原子已经落地，缺的是 collective emitter
 

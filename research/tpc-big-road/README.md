@@ -1,10 +1,11 @@
-# TPC big road V24: literal Jutila--Farey atom compiler
+# TPC big road V25: corrected Fourier and factorable emitter
 
 更新时间：2026-08-08
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_LITERAL_DETERMINANT_TO_JUTILA_FAREY_ATOMS`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_L0_CORRECTED_JUTILA_FOURIER_AND_FACTORIZABLE_AUXILIARY_EMITTER`
 
-当前主路线见第 24 节及 `bridge_b_literal_jutila_farey_atom_compiler.md`；第 23 节与
+当前主路线见第 25 节及 `bridge_b_corrected_fourier_factorable_emitter.md`；第 24 节与
+`bridge_b_literal_jutila_farey_atom_compiler.md`冻结 V24 atom compiler，第 23 节与
 `bridge_b_prime_shell_jutila_and_stable_dynamics.md`冻结 V23 prime-shell exponent
 interface及 stable-cell reserve，第 22 节与
 `bridge_b_centered_projector_firewall.md`冻结 V22 operator firewall，第 21 节与
@@ -2209,6 +2210,108 @@ checker冻结 33-field contract、48-row registry，registry SHA-256为
 `15e40e8c20050549c3e244be59747019f115ebb8ccb9356f95fd449250073b07`；
 102/151 adversarial mutations必须全部拒绝。V23 arithmetic advance=`NO`、fixed
 atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false；没有编号 paper/PDF/build。
+
+## 25. V25 Bridge B：corrected Fourier emitter 与 factorable reserve
+
+V25逐式复核 V24打开的 Jutila branch，发现 Blomer--Li v1 (2.2) 第一行缺失
+Fourier phase中的 divisor `d`。Lemma 1给
+
+```text
+kappa(n)=hatpsi_+(delta n)/L sum_q omega(q)r_q(n),
+r_q(n)=sum_(d|(q,n))d mu(q/d),
+```
+
+故写 `n=dm` 后必须使用 `e(-alpha d m)`；source printed `e(-alpha m)`在 `q=2`
+的 frequency-one coefficient产生额外 `2 H_2`。当前公开 v1与作者 correction页面未见
+修订，仓库只保留 Lemma 1真实 coefficient与 rational Poisson第二行的 source credit，
+corrected Fourier expansion记为 repository derivation。
+
+Fourier frequency `n=dm`与 rational dummy `lambda_J^rat`不得 termwise等同。结合
+V24 corrected `min/sigma(z)` Farey identity，full-ensemble zero mode精确抵消并给
+
+```text
+E_x=-sum_(D!=0)B_x(D)kappa(D),
+complete atom=S(D-n,sigma(z)u;c)e(z(D-n)).          (25.1)
+```
+
+所以 `V25_NONZERO_SHIFT_SIGNED_FAREY_KLOOSTERMAN_EMITTER=PROVED_EXACT_L0`；
+这仍是 rewrite而非 saving。若写成 Kloosterman normal form，`u`侧有 exact finite
+Parseval，但第一项未付 norm为
+
+```text
+sum_m|a_m(z)|^2=int_0^1|(1-chi(theta))G_x(theta)|^2dtheta. (25.2)
+```
+
+Jutila只控制 `||1-chi||_2`。因此 fixed-`c,z` BP short coprime cell与 Pascadi nonunit
+cell只保留 conditional engine资格；长 `m` range、small `c`、axes/nonunits、tails、
+coefficient norm与 single outer reassembly未付，不能记 physical credit。
+
+V25还把 V24 的 factorable reserve真正构造成 exact `L0` object。严格区别于 prime
+shell，声明
+
+```text
+Q1=x^(4/21), Q2=x^(8/21), q_aux=p_aux t_aux,
+omega_aux(q)=sum_(p_aux t_aux=q)rho(t_aux/Q2),
+L_aux=x^(8/7+o(1)).                                 (25.3)
+```
+
+`t_aux`必须 unrestricted smooth；同一 `q`的不同 `(p,t)`表示按 multiplicity保留。
+并且 `||omega_aux||_infty<=||rho||_infty tau(q)=x^(o(1))`，这个 source sup-norm
+factor没有被省略。
+在 macro physical shift `(lambda1,lambda2,h)=(1,1,2)`上这是 single common exact
+split。以只用于 Lemma 1/exact split的 `delta=x^(-1)`，source-backed推导给
+
+```text
+||1-chi_aux||_2 <<_(psi,rho) x^(-1/14+o(1)).        (25.4)
+```
+
+crude physical energy仍只产生 `x^(10/7+o(1))`。若走 pure-energy route，必须新证
+`||G_x||_2<=x^(1+theta+o(1))` 且 `theta<193/2800`。source后续 `41/42`
+endgame要求 `delta>=x^(-1+epsilon)`、GL(3)/divisor coefficients与相应 Voronoi chain；
+literal V19 Möbius/log × `Lambda-b`没有这些 transforms。逐 atom改变 good-prime shell也
+破坏 common normalization与 outer reassembly。
+
+正式 status为
+
+```text
+V25_BLOMER_LI_2_2_FIRST_LINE_AS_PRINTED_MISSING_d_PHASE
+  = STOP_SCOPED_LITERAL_q2_FOURIER_COUNTEREXAMPLE
+V25_CORRECTED_JUTILA_DIVISOR_FOURIER_EXPANSION
+  = PROVED_EXACT_L0_REPOSITORY_DERIVATION
+V25_FOURIER_RATIONAL_DUMMY_INDEX_IDENTIFICATION
+  = STOP_SCOPED_POISSON_DUAL_TYPE_ERROR
+V25_FULL_ENSEMBLE_ZERO_MODE_CANCELLATION = PROVED_EXACT_L0
+V25_NONZERO_SHIFT_SIGNED_FAREY_KLOOSTERMAN_EMITTER = PROVED_EXACT_L0
+V25_PRIME_SHELL_GROUPED_RAMANUJAN_KERNEL = PROVED_EXACT_L0
+V25_DIRECT_CELLWISE_BP_FROM_EXACT_EMITTER
+  = STOP_SCOPED_OUTER_NORM_LONG_RANGE_AND_REASSEMBLY_UNPAID
+V25_FIXED_c_z_COPRIME_SHORT_BP_CELL = SOURCE_BACKED_CONDITIONAL_ENGINE
+V25_FIXED_c_z_NONUNIT_PASCADI_CELL
+  = CONDITIONAL_BV_FOURIER_MEASURE_NORM_UNPAID
+V25_FACTORIZABLE_AUXILIARY_JUTILA_SPLIT = PROVED_EXACT_L0
+V25_FACTORIZABLE_AUXILIARY_L2_GAIN
+  = PROVED_SOURCE_BACKED_DERIVED_UPPER_BOUND_X_MINUS_1_OVER_14
+V25_DIRECT_BLOMER_LI_41_OVER_42_TO_LITERAL_TPC_TRANSFER
+  = STOP_SCOPED_COEFFICIENT_VORONOI_AND_REASSEMBLY_MISMATCH
+V25_ATOMWISE_COMMON_GOOD_PRIME_ENSEMBLE
+  = STOP_SCOPED_MOVING_SLOPE_GCD_AND_REASSEMBLY_MISMATCH
+V25_RAMANUJAN_WEIGHTED_NONZERO_SHIFT_PHYSICAL_THEOREM = OPEN_NEW_THEOREM
+V25_FACTORIZABLE_LITERAL_TRANSFORM_COMPILER = OPEN_NEW_CONSTRUCTION
+```
+
+完整 artifact与 checker为
+
+```text
+research/tpc-big-road/bridge_b_corrected_fourier_factorable_emitter.md
+research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checker.py
+```
+
+checker冻结 40-field contract、54-row registry、registry SHA-256
+`3781892c4b9a830f7bb0f7e1a73f97b2283245e42f02f7db4904d45d18391d42`，并要求
+121/164/13/8 个 contract/registry/semantic/source-lock mutations全部拒绝。V25最大
+claim仅为 exact `L0` corrected emitter与 factorable reserve；arithmetic advance=`NO`、
+fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false。没有编号
+paper/PDF/build。
 
 ## 24. V24 Bridge B：determinant 到 Jutila--Farey/Kloosterman atoms
 
