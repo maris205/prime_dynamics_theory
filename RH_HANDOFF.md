@@ -2,13 +2,13 @@
 
 Status date: 2026-08-07
 
-Current completed endpoint: RH-376
+Current completed endpoint: RH-377
 
-Completed research batch: RH-352 through RH-376
+Completed research batch: RH-352 through RH-377
 
-Post-four-volume independent theorem edges: RH-362 through RH-376
+Post-four-volume independent theorem edges: RH-362 through RH-377
 
-Latest route verdict: RH-376 Route A `GO`; Route B `STOP_SCOPED`
+Latest route verdict: RH-377 Route A `GO`; Route B `STOP_SCOPED`
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -45,6 +45,9 @@ RH-375 integration commit:
 
 RH-376 integration commit:
 `0cf6179084bc8151318bb8f0955e529c12c0661a`.
+
+RH-377 integration commit:
+`3c6e5658f4147891d15dac18d303a22a46d6e289`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -110,6 +113,11 @@ Read completely:
 - `papers/RH-376-shift-two-chowla-run-density-boundary/THEOREM_LEDGER.md`
 - `papers/RH-376-shift-two-chowla-run-density-boundary/results/result.json`
 - `papers/RH-376-shift-two-chowla-run-density-boundary/main.pdf`
+- `papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/README.md`
+- `papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/UPDATED_ROADMAP.md`
+- `papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/THEOREM_LEDGER.md`
+- `papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/results/result.json`
+- `papers/RH-377-mixed-exponent-run-hierarchy-two-envelope-capacity/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -135,8 +143,9 @@ fold-compatible Ulam/spike input, RH-371 as the exact eight-run/cyclic-pair
 capacity input, RH-372 as the bounded graph/transducer input, RH-373 as the
 composite-clock capacity-floor input, RH-374 as the square-clock
 Euler-product family input, RH-375 as the all-finite-clock one-site supremum
-input, RH-376 as the shift-two Chowla/run-density boundary input, and RH-361
-as the immediate endpoint of the still-open original
+input, RH-376 as the shift-two Chowla/run-density boundary input, RH-377 as
+the mixed-exponent run-hierarchy/two-envelope input, and RH-361 as the
+immediate endpoint of the still-open original
 physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
@@ -147,13 +156,16 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-376 is now integrated.  It closes the exact shift-two interval-density
-hardness theorem but does not prove shift-two Chowla or the RH-371 capacity
-limit.  The next activated Route-A paper is the independently source-locked
-and proof-audited family-level Boolean run/correlation hierarchy with its
-two-envelope capacity reduction.  Restricted memory-dependent arithmetic
-laws remain a later source-lock target against the completed RH-1--RH-376
-corpus.  The geometrically selected non-Parry measure route is
+RH-377 is now integrated.  It closes the exact family-level Boolean
+run/correlation hierarchy and reduces the RH-371 capacity limit to one
+two-envelope convergence problem, but it proves neither that envelope nor
+the capacity convergent.  The next activated Route-A target is the
+source-locked fixed-window memory route: a complete `q=1` lag-two safe-table
+classification together with two fixed four-state online transducers that
+realize the two RH-366 capacity orientations at every prefix.  Its
+asymptotic arithmetic boundary remains shift-two and higher mixed Chowla;
+finite-state realization is not capacity convergence.  The geometrically
+selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
 is `STOP_SCOPED` until a fixed mesh-independent norm, a
@@ -1163,7 +1175,84 @@ nonconvergence theorem.  It does not settle any `k>=3` run density, the
 alternating eight-run envelope, or `K_N/N`.  Route A is `GO`; Route B is
 `STOP_SCOPED`; Gates A--E remain false/open.
 
-## 4. Compact conclusions from RH-352 through RH-376
+### 3.16 RH-377 mixed-exponent run hierarchy and two-envelope boundary
+
+RH-377 expands every RH-371 signed window on its native odd-start endpoint.
+For `I_k={0,...,k-1}` and `S subset I_k`, let
+
+```text
+T_(k,S) = sum_n product_(j in S) mu(n+2j)
+                  product_(j not in S) mu(n+2j)^2,
+H_(k,r) = sum_(|S|=r) T_(k,S),
+```
+
+where every level-`k` sum uses exactly
+`1<=n<=N-2(k-1), n odd`.  Let `A_k` collect the even layers `r>=2` and
+`B_k` the odd layers `r>=3`.  The pointwise ternary Boolean expansion gives
+at every prefix
+
+```text
+2^k C_(sigma,k) = H_(k,0) + A_k + sigma(H_(k,1)+B_k).
+```
+
+For `1<=k<=8`, put
+
+```text
+e_k = product_(p odd)(1-k/p^2),
+Delta_k=e_k/2.
+```
+
+The outside factor `1/2` is the odd-start density; it is not a `p=2` local
+factor inside `e_k`.  A fixed finite square sieve proves
+`H_(k,0)/N->Delta_k`.  For `H_(k,1)`, first freeze a bounded periodic
+prime-square mask, then apply Davenport only in finitely many fixed residue
+classes, and finally remove the cutoff by a large-prime-square union bound.
+Thus `H_(k,1)=o(N)` without a growing modulus.
+
+It follows that all sixteen limits `C_(sigma,k)/N`, two signs and
+`1<=k<=8`, exist simultaneously if and only if the thirteen limits
+
+```text
+A_k/N, 2<=k<=8,
+B_k/N, 3<=k<=8
+```
+
+exist.  The `466 -> 13` map has rank `13` and kernel dimension `453` only
+as a formal block-sum map on mixed-moment coordinates.  It is not an
+arithmetic minimal-dimension theorem, and one sign at one `k>=3` controls
+only `A_k+sigma B_k`.
+
+With `s_k=(-1)^(k+1)`, define
+
+```text
+U_N=sum_(k=2)^8 s_k A_k/2^k,
+V_N=sum_(k=3)^8 s_k B_k/2^k,
+r_0=1/pi^2+sum_(k=1)^8 s_k Delta_k/2^k.
+```
+
+The exact `P,Q,U,V` ledger and RH-371 path identity give
+
+```text
+K_N/N = 2r_0 + 2(U_N+abs(V_N))/N + o(1).
+```
+
+Hence `K_N/N` converges exactly when `(U_N+abs(V_N))/N` converges.  Neither
+convergence is proved.  Full mixed-exponent cancellation would be sufficient
+for the conditional constant
+
+```text
+2/pi^2 + sum_(k=1)^8 (-1)^(k+1)e_k/2^k,
+```
+
+but is not necessary and is not established.  A uniform-pair stationary
+second-order ternary chain has identical raw, square-only, and exactly
+one-sign layers while its first directional two-sign moment varies as
+`8 epsilon/81`.  This is a synthetic algebraic witness, not a Möbius model;
+it does not match Möbius squarefree density and proves no arithmetic
+nonconvergence.  Route A is `GO`; Route B is `STOP_SCOPED`; Gates A--E remain
+false/open.
+
+## 4. Compact conclusions from RH-352 through RH-377
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -1274,6 +1363,12 @@ alternating eight-run envelope, or `K_N/N`.  Route A is `GO`; Route B is
   Cesaro Chowla, with value `kappa_2/4`.  The theorem proves neither Chowla
   nor nonconvergence, does not settle the eight-run capacity envelope, and
   closes no Gate.
+- **RH-377:** Exact all-prefix mixed-exponent transform for all sixteen
+  signed windows; unconditional zero-sign and one-sign layers; a thirteen
+  aggregate simultaneous-density boundary; and the sharper exact
+  two-envelope criterion for `K_N/N`.  Its `466 -> 13` rank is formal only,
+  the conditional Euler constant is unproved, the stationary witness is
+  synthetic rather than Möbius, and no capacity limit or Gate is closed.
 
 ## 5. Route firewall and reopening triggers
 
@@ -1369,6 +1464,17 @@ Do not:
 - promote the RH-376 scalar arithmetic interval count to an intrinsic
   dynamical observable, operator trace, prime-power ledger, zero model, or
   Gate result;
+- call the RH-377 `466 -> 13` formal block rank the arithmetic minimal
+  dimension of actual Möbius correlations, or infer separate `A_k/B_k`
+  convergence from only one signed density;
+- promote the RH-377 full mixed-exponent cancellation hypothesis or its
+  finite Euler diagnostic to an unconditional capacity constant;
+- infer convergence or nonconvergence of `(U_N+abs(V_N))/N` or `K_N/N`
+  from the exact RH-377 reduction or its finite prefix rows;
+- treat the RH-377 stationary ternary witness as a Möbius sequence,
+  squarefree-density model, or arithmetic counterexample;
+- identify the RH-377 envelope with an intrinsic operator, determinant,
+  prime-power trace, zero model, Hilbert--Polya construction, or Gate result;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -1384,7 +1490,7 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-376. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-377. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
 declared periodic/typical/distance-two capacity audit, RH-373 closes the
 declared fixed composite-clock phase-selector floor route, and RH-374 closes
@@ -1401,21 +1507,22 @@ the fixed-resource graph/transducer certificate route. RH-373 closes only the
 explicit q=180 arithmetic lower certificate. RH-374 closes only the declared
 square-clock one-site family. RH-375 closes only the declared all-finite-clock
 one-site class. RH-376 closes only the declared shift-two interval-density
-hardness theorem. For RH-377 and later,
+hardness theorem. RH-377 closes only the declared mixed-exponent hierarchy
+and two-envelope reduction; it does not close the capacity limit. For RH-378
+and later,
 the shortest exact candidates are:
 
-1. The independently audited RH-377 candidate: the exact Boolean cylinder
-   transform for all `1<=k<=8`, the thirteen aggregate parity channels
-   governing simultaneous existence of all signed run densities, and the
-   sharper two-envelope capacity criterion
-   `K_N/N=2r_0+2(U_N+|V_N|)/N+o(1)`.  The `466 -> 13` rank statement is only
-   a formal mixed-moment block-sum map, not an arithmetic minimal-dimension
-   theorem.  A stationary ternary countermodel may show that naked raw
-   correlations do not algebraically determine masked moments, but it is not
-   a Möbius model.  Independent source and proof audits are `GO`.
-2. A genuine higher-order Möbius correlation theorem for a restricted
-   memory-dependent transducer class, or a proved scoped negative identifying
-   the first missing correlation.
+1. The independently source-locked and adversarially audited RH-378
+   candidate: a finite de Bruijn safety/moment-basis theorem, the complete
+   `q=1` lag-two classification (`512` tables, `13` universally safe), and
+   two fixed four-state online transducers whose two scores realize the
+   RH-366 capacity at every prefix after an endpoint comparison.  The seven
+   unconditional lag-two tables and six shift-two-Chowla-hard tables must
+   remain separate.  The two scoped optimum constants apply only inside the
+   thirteen-table class, and finite-state realization does not prove
+   `K_N/N` convergent.
+2. A genuine higher-order Möbius correlation theorem controlling the
+   RH-377 envelope or a larger memory-dependent transducer class.
 3. A nonadaptive geometrically selected measure theorem.  The 2026-08-07
    source lock is `STOP_SCOPED`: RH-369's non-Parry `P_t` is externally
    selected, while the weighted-Hénon and cyclic-Ulam sources do not prove a
@@ -2067,6 +2174,42 @@ capacity reduction.  Its `466 -> 13` statement must remain a formal
 block-sum rank calculation, and its stationary ternary witness must not be
 called a Möbius counterexample.  The first unresolved arithmetic object is
 the convergence of `(U_N+|V_N|)/N`; no Gate A--E conclusion changes.
+
+### 6.14 RH-377 source lock, mixed hierarchy, and route decision (2026-08-07)
+
+RH-377 freezes thirteen repository files and four Git releases:
+
+```text
+RH-371 release              241b78a89ccbc0bad96d9ef20ee9256d61b4eaca
+RH-374 release              2bb3baa6a09491c2d679d10c0dbcd39587d1f831
+RH-376 release              0cf6179084bc8151318bb8f0955e529c12c0661a
+RH-MVP2 archive             c0aed13a34b8bbc53061aed23738660adcd3624c
+```
+
+Independent proof and numerical audits reconstructed the native endpoints,
+the odd-prime `e_k` products and external odd-start factor `1/2`, the fixed
+cutoff order in `H_(k,1)`, the sixteen-to-thirteen equivalence, and the
+formal-rank firewall.  They also checked the exact `P,Q,U,V` decomposition,
+the absolute-value residual bound, the two-envelope equivalence, and the
+arbitrary-distinct-time stationary-chain proof.  The chain's odd-lattice
+normalization is compared consistently as `2/3` versus `e_1=8/pi^2`, or
+equivalently `1/3` versus `Delta_1=4/pi^2` in the original `N`
+normalization.
+
+The executable audit checks `19680` Boolean cases, the exact `466 -> 13`
+rank and kernel, `1048548` native window updates, `4194304` cumulative
+signed identities, and `262144` path/decomposition/residual prefixes.  The
+synthetic certificate checks `27` transitions, `9` pair-stationarity cells,
+`502` raw moments, `502` square-only moments, and `1793` one-sign masked
+moments.  All checks pass.
+
+The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  The next
+independently source-locked and adversarially audited Route-A candidate is
+RH-378: finite-window safety/moment expansion, complete lag-two safe-table
+classification, and two fixed online capacity-orientation transducers.  Its
+lag-two hard class still requires RH-376 shift-two Cesaro Chowla, and its
+full capacity asymptotics still require the RH-377 envelope.  No Gate A--E
+conclusion changes.
 
 ## 7. Reproduction and publication audit
 
@@ -2753,12 +2896,59 @@ integrity audit
 00c5697d3a09fe6485300757c9e3a3f5ea208abc8f3cad77cc58c4d047ac67d7
 ```
 
+Final RH-377 audit:
+
+- Tests: `8/8`; isolated regeneration of `result.json` is byte-identical,
+  four JSON files have zero duplicate keys, and the closed Draft 2020-12
+  schema passes.
+- Independent exact regeneration checks `19680` Boolean cases, formal rank
+  `13` and kernel `453` on `466` coordinates, `1048548` native window
+  updates, `4194304` cumulative signed identities, and `262144`
+  path/decomposition/residual prefixes.  All frozen endpoint rows match.
+- The stationary witness independently passes `27` transition rows, `9`
+  stationarity cells, `502` raw cases, `502` square-only cases, and `1793`
+  one-sign masked cases.  The directional moments are exactly
+  `(8 epsilon/81,0,0)`.
+- Source locks: `13/13`; all four declared Git objects exist.  The
+  bibliography has four entries with zero dangling or orphan citations.
+  The repository-locked ARS proof/integrity audit has no remaining blocker
+  or minor.
+- Individual archive: `22` publication files plus `13` external inputs,
+  zero failures.  The four-volume replay remains `4` volumes, `73` members,
+  `1548` dependency hashes, `8` result hashes, `361` numbered sources, and
+  zero failures.
+- PDF: `8` pages and `339397` bytes, with `22/22` fonts embedded and
+  subsetted.  Ghostscript, text extraction, full LaTeX/BibTeX log scans,
+  semantic-PDF identity, and all `8/8` rendered pages pass.
+- No mixed-coordinate cancellation, capacity convergence, arithmetic
+  counterexample, intrinsic operator, trace, zero identification,
+  Hilbert--Polya object, or RH claim is made.  Gates A--E remain false/open.
+
+RH-377 final hashes:
+
+```text
+main.tex
+35a3d2b9eecede4f526490dc184b24e5530762933922962df04c3436e2d39433
+
+PDF
+508cabee3e4f760ace80c1ef26f70f93afb0e2548dc28496aa47c900b6a26b86
+
+result
+0abfb9b4d268675acba95186027816ad50c504142c04a7d92b57c2f387c7d144
+
+manifest
+c7d1825f0ca5c95f5410a3b6ddeddd2d4a25c520c856c84b52f55f2e176729c5
+
+verification
+e4eced0db77e901dd1182234b0932257eb9c3eb48d90e89b2e13c12d8d342785
+```
+
 ## 8. Continuation prompt
 
 ```text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-376 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-377 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -2768,8 +2958,9 @@ fold-compatible Ulam/spike input, RH-371 as the exact eight-run/cyclic-pair
 capacity input, RH-372 as the bounded graph/transducer certificate input,
 RH-373 as the composite-clock capacity-floor input, RH-374 as the square-clock
 Euler-product family input, RH-375 as the all-finite-clock one-site supremum
-input, RH-376 as the shift-two Chowla/run-density boundary input, RH-MVP2 as
-the corpus umbrella, and RH-361 as the physical endpoint.
+input, RH-376 as the shift-two Chowla/run-density boundary input, RH-377 as
+the mixed-exponent run-hierarchy/two-envelope input, RH-MVP2 as the corpus
+umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -2779,8 +2970,17 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-376 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  It proves the exact common-endpoint identity
+RH-377 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  It proves the exact all-prefix mixed identity, the
+unconditional laws `H_(k,0)/N->e_k/2` and `H_(k,1)=o(N)`, the simultaneous
+sixteen-density to thirteen-aggregate equivalence, and
+`K_N/N=2r_0+2(U_N+abs(V_N))/N+o(1)`.  Do not call the `466 -> 13` formal rank
+an arithmetic minimality theorem, infer separate aggregate limits from one
+sign, promote the conditional Euler constant, treat the stationary ternary
+witness as Möbius, or claim that the envelope or capacity converges.
+
+RH-376 remains the preceding shift-two theorem edge.  It proves the exact
+common-endpoint identity
 `4C_(sigma,2)=Q_2+sigma U_2+sigma V_2+D_2`, the unconditional asymptotics
 `Q_2/N->kappa_2` and `U_2,V_2=o(N)`, and the equivalence between existence of
 either signed two-site interval density and ordinary shift-two Cesaro Chowla.  The density,
@@ -2871,29 +3071,42 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-For the next paper, write only the independently audited RH-377 family-level
-Boolean run/correlation theorem.  For common odd-start endpoints define the
-mixed moments `T_(k,S)` and their cardinality layers `H_(k,r)`, and prove
+For the next paper, write only the independently source-locked and
+adversarially audited RH-378 finite-window memory theorem.  First state the
+finite de Bruijn universal-safety check and unique ternary interpolation
+basis for a fixed causal window.  Formal function-space dimension or
+coefficient rank is not arithmetic minimality and does not supply unknown
+mixed-correlation limits.
 
-`2^k C_(sigma,k)=H_(k,0)+A_k+sigma(H_(k,1)+B_k)`
+Then classify the `q=1` lag-two tables
+`epsilon_n=f(mu(n-2),mu(n))`, with `mu(j)=0` for `j<=0`.  Universal safety is
+equivalent to the plus-edge relation containing no composable pair.  Freeze
+the exact census `512` total, `13` safe, the six-coefficient rank `5`, and
+the relation `c_22=-c_02-c_11`.  Prove first the exact six-term endpoint
+ledger
 
-for `1<=k<=8`, with `H_(k,0)/N->e_k/2` and `H_(k,1)=o(N)`.  State the thirteen
-aggregate channels only as the exact block sums governing simultaneous
-existence of all signed run densities.  The `466 -> 13` map has formal rank
-13 and kernel dimension 453; do not call this the arithmetic minimal
-dimension of actual Möbius correlations.
+`L_f=c_01 M_N+c_02 Q_1+c_11 D_2+c_12 U_2+c_21 V_2+c_22 Q_2`,
 
-Derive the exact asymptotic capacity reduction
+and hence the asymptotic reduction
 
-`K_N/N = 2r_0 + 2(U_N+|V_N|)/N + o(1)`
+`L_f/N=c_02(6/pi^2-kappa_2)+c_11(D_2/N-kappa_2)+o(1)`.
 
-and the equivalent two-envelope convergence criterion.  The full required
-mixed-exponent cancellation is only a sufficient hypothesis for the
-conditional constant
-`2/pi^2+sum_(k=1)^8(-1)^(k+1)e_k/2^k`; naked top-layer Chowla does not control
-proper masked moments.  A stationary ternary countermodel may certify that
-formal non-implication, but it must be labelled synthetic and not Möbius.
-Do not claim convergence of the envelope or capacity.  The geometrically
+Exactly seven tables have unconditionally certified limits, with scoped
+class optimum `6/pi^2-kappa_2`; the remaining six are
+shift-two-Chowla-hard only after explicitly invoking RH-376 Cesaro rigidity,
+and their conditional scoped class optimum is `6/pi^2-kappa_2/2`.  Neither
+constant is an optimum over all memory transducers or the adaptive capacity.
+
+Finally prove that two fixed four-state online transducers, one for each
+sign orientation, have scores exactly `S_N^max` and `S_N^min` on every
+finite ternary prefix, so `K_N` is the endpoint maximum of their two absolute
+scores.  Do not call this one transducer computing `K_N`.  The length-15
+truncated window is universally safe on arbitrary ternary inputs, but equals
+the recursive transducer only when every step-two same-sign run has length
+at most eight; actual Möbius has that cutoff modulo nine.  A nine-site
+same-parity synthetic run is the first counterexample to unrestricted
+equivalence.  Finite-state realization does not prove `K_N/N` convergent;
+its asymptotic blocker remains the RH-377 envelope.  The geometrically
 selected non-Parry measure route is `STOP_SCOPED` until a fixed non-Parry
 equilibrium state and mixing theorem are proved.  The fractional/tower-adapted
 deterministic Ulam route is
