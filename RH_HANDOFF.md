@@ -1,14 +1,14 @@
 # RH Research Handoff
 
-Status date: 2026-08-06
+Status date: 2026-08-07
 
-Current completed endpoint: RH-372
+Current completed endpoint: RH-373
 
-Completed research batch: RH-352 through RH-372
+Completed research batch: RH-352 through RH-373
 
-Post-four-volume independent theorem edges: RH-362 through RH-372
+Post-four-volume independent theorem edges: RH-362 through RH-373
 
-Latest route verdict: RH-372 Route A `GO` narrowly; Route B `STOP_SCOPED`
+Latest route verdict: RH-373 Route A `GO` narrowly; Route B `STOP_SCOPED`
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -33,6 +33,9 @@ RH-371 integration commit:
 
 RH-372 integration commit:
 `7a7b10b74722b520b145064923af8df6d4e2e73f`.
+
+RH-373 integration commit:
+`e46a0b0ef0e459fc26711c379ce8c1b68deb9c58`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -78,6 +81,11 @@ Read completely:
 - `papers/RH-372-bounded-constraint-graph-transducer-certificates/THEOREM_LEDGER.md`
 - `papers/RH-372-bounded-constraint-graph-transducer-certificates/results/result.json`
 - `papers/RH-372-bounded-constraint-graph-transducer-certificates/main.pdf`
+- `papers/RH-373-composite-clock-mobius-capacity-floor/README.md`
+- `papers/RH-373-composite-clock-mobius-capacity-floor/UPDATED_ROADMAP.md`
+- `papers/RH-373-composite-clock-mobius-capacity-floor/THEOREM_LEDGER.md`
+- `papers/RH-373-composite-clock-mobius-capacity-floor/results/result.json`
+- `papers/RH-373-composite-clock-mobius-capacity-floor/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -100,8 +108,9 @@ return-bouquet input, RH-366 as the Hénon Möbius-correlation input, RH-367 as
 the boundary-aligned cyclic-Ulam input, RH-368 as the parity-factor capacity
 input, RH-369 as the branch-symmetric Markov/Gibbs input, RH-370 as the
 fold-compatible Ulam/spike input, RH-371 as the exact eight-run/cyclic-pair
-capacity input, and RH-361 as the immediate endpoint of the still-open
-original physical branch.
+capacity input, RH-372 as the bounded graph/transducer input, RH-373 as the
+composite-clock capacity-floor input, and RH-361 as the immediate endpoint
+of the still-open original physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -111,12 +120,14 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-372 is now integrated and does not automatically activate RH-373. The next
-breadth-first source lock must compare the remaining external theorem
-packages, especially a common strong-space projector/resolvent bridge for
-cyclic Ulam data, the still-open eight-run envelope, and unrestricted
-memory/graph arithmetic laws, against the completed RH-1--RH-372 corpus. RH search
-remains breadth-first: generate bold source-backed candidates, evaluate
+RH-373 is now integrated and does not automatically activate RH-374. The next
+breadth-first source lock must compare a genuine composite-clock family law,
+the still-open eight-run envelope, and restricted memory-dependent arithmetic
+laws against the completed RH-1--RH-373 corpus.  The deterministic cyclic-Ulam
+strong-space route is `STOP_SCOPED` until a fixed mesh-independent norm, a
+uniform projection/lift estimate, and a common contour around `-1` are
+actually supplied. RH search remains breadth-first: generate bold
+source-backed candidates, evaluate
 standalone discovery value as Route A and RH data-type compatibility as Route
 B, then issue `GO`, `STOP_SCOPED`, or `NOT_TESTABLE`. Create a new number only
 for an actual bridge, a typed `q/E_off` theorem, a rigorous physical
@@ -902,7 +913,46 @@ operator, determinant, prime-power trace, zero identification, or RH
 implication.  The RH-366 distance-two capacity limit and all Gates A--E remain
 false/open.
 
-## 4. Compact conclusions from RH-352 through RH-372
+### 3.12 RH-373 composite-clock Möbius capacity floor
+
+RH-373 adds a strict lower-bound edge for the still-open RH-366 distance-two
+capacity.  For any finite clock `q` and phase set `I` with
+`I cap (I+2)=emptyset`, the one-site selector
+
+```text
+epsilon_n = +1 iff (n mod q) in I and mu(n)=+1;
+            -1 otherwise
+```
+
+is admissible for every ternary input word.  Fixed arithmetic-progression
+Möbius cancellation and squarefree densities therefore give the exact
+correlation `sum_(r in I) delta_(q,r)` and a lower bound for `liminf K_N/N`.
+
+The explicit composite clock `q=180=2^2*3^2*5` uses `80` phases.  Its density
+coefficients are
+
+```text
+pi^2 delta_(180,r) = 0       if 4|r or 9|r,
+                     5/96    if 4∤r, 9∤r, 5∤r,
+                     1/24    if 4∤r, 9∤r, 5|r.
+```
+
+The selected set contains `68` phases of coefficient `5/96` and `12` of
+coefficient `1/24`, with no cyclic distance-two conflict.  Hence
+
+```text
+liminf K_N/N >= 97/(24*pi^2) = 4/pi^2 + 1/(24*pi^2).
+```
+
+The paper also gives a literal two-state universal-safety completion on the
+RH-366 four-state graph.  This is one fixed externally prescribed arithmetic
+witness, not an all-clock/transducer optimum and not a capacity-limit theorem.
+Route A is
+`GO` narrowly; Route B is `STOP_SCOPED`.  The ordinary capacity limit,
+memory-dependent Möbius correlations, all intrinsic operator/trace bridges,
+and Gates A--E remain open/false.
+
+## 4. Compact conclusions from RH-352 through RH-373
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -984,6 +1034,15 @@ false/open.
   including `4/pi^2`, `4/pi^2`, and `9/(4*pi^2)` one-site lower constants.
   Memory-dependent labels, the RH-366 capacity limit, all intrinsic operator
   and prime-trace bridges, and Gates A--E remain open/false.
+- **RH-373:** A general independent phase-selector lemma and an explicit
+  composite-clock `q=180` certificate on RH-366.  The `80`-phase set has no
+  cyclic distance-two conflict; exact `180`-progression squarefree densities
+  and fixed-AP Möbius cancellation give the unconditional floor
+  `liminf K_N/N >= 97/(24*pi^2) = 4/pi^2 + 1/(24*pi^2)`.  A literal two-state
+  universal-safety completion passes all `3240` table rows.  This is one fixed
+  externally prescribed arithmetic witness, not an all-clock optimum or a
+  capacity-limit theorem; memory-dependent correlations, intrinsic operators,
+  prime traces, and Gates A--E remain open/false.
 
 ## 5. Route firewall and reopening triggers
 
@@ -1041,6 +1100,12 @@ Do not:
   without a higher-order Möbius theorem;
 - call a safe transducer an intrinsic operator, determinant, prime-power trace,
   zero model, or RH proof;
+- call the RH-373 `q=180` selector an optimizer over all clocks, a proof that
+  `lim K_N/N` exists, or a replacement for the RH-371 run-envelope theorem;
+- promote `97/(24*pi^2)` from one fixed arithmetic lower certificate to the
+  adaptive capacity limit, to a universal transducer supremum, or to a Gate;
+- treat the two-state RH-373 completion as a new dynamical operator, a
+  spontaneous arithmetic coupling, a prime-power trace, or a zero model;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -1056,22 +1121,25 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-372. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-373. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
-declared periodic/typical/distance-two capacity audit, RH-367 closes the
+declared periodic/typical/distance-two capacity audit, RH-373 closes the
+declared fixed composite-clock phase-selector floor route but not the adaptive
+capacity limit, RH-367 closes the
 declared finite-Ulam alignment/phase-defect audit, and RH-368 closes the
 declared `A_{\{2\}}` parity-factor capacity route. RH-369 closes the declared
 fixed-parameter branch-symmetric Markov/Gibbs route. RH-370 closes the
 declared fold-compatible quotient/exterior-bridge/BV-barrier audit. RH-371
 closes only the declared exact eight-run reduction and cyclic pair-ledger
 obstruction; it does not close the capacity-limit route. RH-372 closes only
-the fixed-resource graph/transducer certificate route. For RH-373 and later,
+the fixed-resource graph/transducer certificate route. RH-373 closes only the
+explicit q=180 arithmetic lower certificate. For RH-374 and later,
 the shortest exact candidates are:
 
-1. A new fractional/tower-adapted strong-space projector/resolvent theorem
-   that genuinely connects
-   the RH-367 finite-Ulam family to a declared continuum operator. Without
-   this bridge, no spectral limit may be inferred from phase scans.
+1. A genuine family theorem for composite-clock phase selectors: an exact
+   law or rigorous limiting lower floor for a declared sequence of clocks,
+   with every fixed selector kept distinct from the adaptive capacity limit.
+   A larger finite clock or numerical weighted-cycle scan alone is not enough.
 2. A capacity-limit theorem (or a rigorous nonexistence/scoped negative) for
    `lim K_N/N` under the RH-366 distance-two constraint. The first admissible
    RH-371 edge is now complete: it gives an exact eight-site run reduction
@@ -1079,24 +1147,29 @@ the shortest exact candidates are:
    paper must supply a genuine Mobius run-envelope theorem or a separately
    proved scoped negative. Pair correlations alone do not control this
    nonlinear maximum-weight functional.
-3. A nonadaptive-measure theorem identifying geometrically or dynamically
-   selected invariant measures, beyond Parry, for which a quantitative
-   Möbius theorem holds without reading the arithmetic sequence.
-4. A genuine higher-order Möbius correlation theorem for a restricted
+3. A genuine higher-order Möbius correlation theorem for a restricted
    memory-dependent transducer class, or a proved scoped negative identifying
    the first missing correlation.
-5. A genuine composite-order primitive-divisor upgrade, such as an eventual
+4. A nonadaptive-measure theorem identifying geometrically or dynamically
+   selected invariant measures, beyond Parry, for which a quantitative
+   Möbius theorem holds without reading the arithmetic sequence.
+5. A new fractional/tower-adapted strong-space projector/resolvent theorem
+   that genuinely connects the RH-367 finite-Ulam family to a declared
+   continuum operator.  The 2026-08-07 source lock is `STOP_SCOPED` until a
+   fixed mesh-independent norm, uniform projection/lift estimate, and common
+   contour around `-1` are explicitly proved.
+6. A genuine composite-order primitive-divisor upgrade, such as an eventual
    Zsigmondy theorem or a `p`-adic lifting bound strong enough to force new
    primes. No such theorem is present in the locked source.
-6. A sharp return-rank multiplicity theorem strong enough to determine the
+7. A sharp return-rank multiplicity theorem strong enough to determine the
    exact origin radius or a genuine boundary law for `Z_0`. RH-365 supplies
    only the bracket `[2^(-1/2),1]`.
-7. A quantitative finite-entropy-data theorem that certifies or excludes a
+8. A quantitative finite-entropy-data theorem that certifies or excludes a
    finite prime/rank prefix without promoting numerical conditioning to exact
    infinite recovery.
-8. An intrinsic pressure/transfer/groupoid operator producing the entropy
+9. An intrinsic pressure/transfer/groupoid operator producing the entropy
    tower without inserting every modulus by hand.
-9. One of the original physical triggers 1--4.
+10. One of the original physical triggers 1--4.
 
 RH-364 closes the declared weighted-H\'enon prime-copy audit. It must still be
 called a prime lift or copy, not a finite-field reduction, Hasse--Weil local
@@ -1149,6 +1222,18 @@ memory-dependent observable is outside the theorem until a higher-order
 Möbius correlation result is proved.  The three frozen tables are offline
 selectors and do not become intrinsic dynamics, determinants, prime-power
 traces, or zero sets by reparameterization.
+
+RH-373 closes only the declared fixed composite-clock phase-selector floor
+route.  Its `q=180` witness is an explicit `80`-phase independent set with
+`liminf K_N/N >= 97/(24*pi^2)`.  This improves the RH-366 lower floor but does
+not prove an ordinary capacity limit, an all-clock supremum, or a
+memory-dependent correlation theorem.  The two-state graph completion is a
+literal universal-safety certificate and remains an externally prescribed
+arithmetic selector; it is not an intrinsic operator, determinant, prime-power
+trace, zero model, or RH proof.  A successor must supply a genuine
+composite-clock family theorem, the
+RH-371 run-envelope limit/negative, a higher-order correlation theorem, or a
+different source-backed edge.
 
 Even `D_(4k)(R)->0` would transfer only named moment/budget laws. Root, rank,
 spectral-submultiset, and canonical determinant identification remain
@@ -1517,6 +1602,64 @@ font rows; Ghostscript and text extraction pass, all five rendered pages pass
 visual inspection, and the final LaTeX log has no actionable warnings,
 undefined references, overfull boxes, or errors.  Gates A--E remain
 false/open.
+
+### 6.10 RH-373 source lock, phase-selector theorem, and route decision (2026-08-07)
+
+RH-373 freezes the following source commits and releases:
+
+```text
+henon_mobius_correlations  34490443f50cfe9af9ff93888e51e7e7e534a5a7
+RH-366 release              0396fab97bbe3348c8237f8734dec0e1893fd3bf
+RH-371 release              241b78a89ccbc0bad96d9ef20ee9256d61b4eaca
+RH-372 release              7a7b10b74722b520b145064923af8df6d4e2e73f
+RH-MVP2 archive             c0aed13a34b8bbc53061aed23738660adcd3624c
+```
+
+The source-lock and proof-audit stations first tested the proposed
+fractional/tower-adapted deterministic Ulam bridge.  The frozen
+`cyclic_ulam_map` source at
+`e7d21f646498d77e1c3213d1e4f35dc8466038ff` defines finite cell-overlap
+matrices but no explicit common Banach norm or projector.  RH-370 supplies
+only fixed-vector `L^1` convergence and resolvents on compact subsets of
+`|z|>1`; its deterministic terminal spike makes the standard-BV projection
+norm grow like `h^(-1/2)`.  RH-14 declares a tower/spike space without the
+norm and Ulam projection estimates needed here, while RH-52 and RH-55 retain
+positive-noise hypotheses.  Therefore the proposed deterministic
+strong-space bridge is `STOP_SCOPED`, and the unspecified fractional norm is
+`NOT_TESTABLE`.  The reopening input is an explicit fixed mesh-independent
+space, a uniform projection or lift estimate, and a common contour isolating
+`-1`.
+
+The independent capacity audit found a different Route-A edge.  For every
+fixed finite clock `q` and every phase set `I` with
+`I cap (I+2)=emptyset`, the selector that outputs `+1` exactly on
+`(n mod q) in I` and `mu(n)=+1` is universally distance-two safe.  Davenport
+fixed-frequency cancellation, finite Fourier inversion, and squarefree
+progression densities give the exact limiting correlation
+`sum_(r in I) delta_(q,r)`.
+
+For `q=180`, the explicit `80`-phase set has zero cyclic distance-two
+conflicts.  An independent regeneration found `68` phases of weight `5/96`,
+`12` of weight `1/24`, and no zero-weight phase, giving
+
+```text
+68*(5/96) + 12*(1/24) = 97/24,
+liminf K_N/N >= 97/(24*pi^2).
+```
+
+The same audit independently rebuilt the literal two-state completion and
+checked all `2*180*3^2=3240` state/phase/input-pair rows, the one-site
+observable, `2048` exact prefix witnesses, and the endpoint `N=2^16`.  At
+the endpoint the selector and transducer scores are both `26852`, the exact
+capacity is `32320`, and the graph path passes.  These finite rows only
+reproduce the certificate; the asymptotic theorem comes from the fixed-clock
+arithmetic proof.
+
+The route verdict is `Route A=GO` narrowly and `Route B=STOP_SCOPED`.  The
+result improves the fixed lower floor by `1/(24*pi^2)` but proves neither the
+ordinary RH-366 capacity limit nor an optimum over clocks or memory budgets.
+It supplies no intrinsic operator, determinant, prime-power trace, zero
+identification, or RH implication.  Gates A--E remain false/open.
 
 ## 7. Reproduction and publication audit
 
@@ -2013,12 +2156,58 @@ verification
 4c1ca9cc56fba3de5ea47a9fcc4e1026847579387ecd823f045816323045dcb9
 ```
 
+Final RH-373 audit:
+
+- Source locks: `10/10`; the frozen Hénon Möbius package, RH-366, RH-371,
+  RH-372, and the four-volume verification match.
+- Tests: `6/6`; the exact phase counts, cyclic distance-two independence,
+  rational density sum, universal-safe completion, one-site observable,
+  prefix capacity witnesses, result ledger, and archive contract all pass.
+- Independent regeneration checks all `3240` universal table rows and `2048`
+  prefixes.  At `N=2^16`, selector and transducer scores both equal `26852`,
+  the exact capacity is `32320`, and the graph path passes.  These rows are
+  reproduction checks rather than asymptotic evidence.
+- Individual archive: `21` publication files plus `10` external inputs, zero
+  failures.  The four-volume outer replay remains `4` volumes, `73` archive
+  members, `1,548` dependency hashes, `8` result hashes, `361` numbered
+  sources, and zero failures.
+- PDF: `4` pages and `308,516` bytes, with `23` embedded font rows;
+  Ghostscript and text extraction pass.  The complete LaTeX/BibTeX log has
+  zero warning, error, undefined-reference, overfull, or underfull matches;
+  the distribution PDF is byte-identical to `main.pdf`.
+- The repository-locked ARS-style final integrity audit passes `48/48`
+  normalized claim families, all `4/4` bibliography records, `4/4` citation
+  keys with zero dangling or orphan entries, and all seven AI-research
+  failure modes.  The finite checks are not used as proof of the asymptotic
+  statement.  No all-clock optimum, capacity limit, unrestricted
+  memory-dependent law, operator, trace, zero identification, or RH claim is
+  made.  Gates A--E remain false/open.
+
+RH-373 final hashes:
+
+```text
+main.tex
+2242a03b03e31707f44595930db7a8ff11cee7df1134ac0b575ef12e2d9feba5
+
+PDF
+aa44dee00b9601afce5ac7d89294070b482d8c0dff5d303103f01101dc3fe6f4
+
+result
+96cb93d97abffed83f57b90fec996ea51dcc199fec05063995b974f480d31773
+
+manifest
+f54d39659015eedafda65551c844544bb718e9326cd70c194e4a896b27c74e87
+
+verification
+cf18d1993f41792e7e36dc5a670bea2347230e966338b677fe3b1bb07e636991
+```
+
 ## 8. Continuation prompt
 
 ```text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-372 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-373 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -2026,8 +2215,8 @@ boundary-aligned cyclic-Ulam input, RH-368 as the parity-factor capacity
 input, RH-369 as the branch-symmetric Markov/Gibbs input, RH-370 as the
 fold-compatible Ulam/spike input, RH-371 as the exact eight-run/cyclic-pair
 capacity input, RH-372 as the bounded graph/transducer certificate input,
-RH-MVP2 as the corpus umbrella, and RH-361 as the physical
-endpoint.
+RH-373 as the composite-clock capacity-floor input, RH-MVP2 as the corpus
+umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -2037,12 +2226,18 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-372 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  It proves exact finite graph max-plus DP, a bounded
-universal-safe transducer/one-site theorem, and three finite certificates.
-Do not promote fixed-resource enumeration to an all-SFT classification, apply
-the one-site formula to memory-dependent labels, or call a transducer an
-operator, trace, zero model, or RH proof.
+RH-373 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  For every fixed finite clock it proves the independent
+phase-selector correlation formula, and at q=180 it gives the explicit floor
+`liminf K_N/N >= 97/(24*pi^2)`.  Do not promote this single prescribed
+arithmetic witness to an all-clock optimum, the adaptive capacity limit, a memory-dependent
+correlation theorem, an operator, a trace, a zero model, or an RH proof.
+
+RH-372 remains the preceding bounded-resource edge.  It proves exact finite
+graph max-plus DP, a universal-safe transducer/one-site theorem, and three
+finite certificates.  Do not promote fixed-resource enumeration to an
+all-SFT classification or apply its one-site formula to memory-dependent
+labels.
 
 RH-371 remains the preceding independent edge.  It proves the exact all-prefix
 eight-run reduction and a cyclic pair-ledger obstruction described below.  Do
@@ -2101,18 +2296,21 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-For the next breadth-first source lock, investigate the RH-372 roadmap in
-order: (i) a new fractional/tower-adapted strong-space projector/resolvent
-theorem connecting the RH-367 finite-Ulam family to a declared continuum
-operator; (ii) existence or a proved scoped negative for the RH-366
-distance-two capacity limit, beginning from RH-371's exact eight-site run
-reduction and pair-ledger obstruction;
-(iii) a genuine higher-order Möbius theorem for memory-dependent transducers;
-(iv) a geometrically selected non-Parry measure theorem; (v) the composite
-primitive-divisor, sharp-radius, finite-entropy-data, intrinsic globalization,
-cyclic-noise, and original same-clock physical routes. Evaluate each by Route
-A and Route B before assigning RH-373. In parallel retain the exact source
-locks and the four-volume foundation.
+For the next breadth-first source lock, investigate the RH-373 roadmap in
+order: (i) a genuine family theorem for an explicitly declared sequence of
+composite clocks, with a rigorous limiting selector floor rather than a
+larger finite scan; (ii) existence or a proved scoped negative for the
+RH-366 distance-two capacity limit, beginning from RH-371's exact eight-site
+run reduction; (iii) a genuine higher-order Möbius theorem for a restricted
+memory-dependent transducer class; (iv) a geometrically selected non-Parry
+measure theorem.  The fractional/tower-adapted deterministic Ulam route is
+currently `STOP_SCOPED`: reopen it only with an explicit fixed
+mesh-independent norm, a uniform projection/lift estimate, and a common
+contour around `-1`.  Then retain the composite primitive-divisor,
+sharp-radius, finite-entropy-data, intrinsic globalization, cyclic-noise, and
+original same-clock physical routes. Evaluate each by Route A and Route B
+before assigning RH-374. In parallel retain the exact source locks and the
+four-volume foundation.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
 factor, or full H_p zeta. Do not promote the entropy tower, weighted Euler
