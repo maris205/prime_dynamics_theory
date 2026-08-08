@@ -2,15 +2,15 @@
 
 Status date: 2026-08-08
 
-Current completed endpoint: RH-386
+Current completed endpoint: RH-387
 
-Completed research batch: RH-352 through RH-386
+Completed research batch: RH-352 through RH-387
 
-Post-four-volume independent theorem edges: RH-362 through RH-386
+Post-four-volume independent theorem edges: RH-362 through RH-387
 
-Latest completed-paper verdict: RH-386 Route A `GO`; Route B `STOP_SCOPED`
+Latest completed-paper verdict: RH-387 Route A `GO`; Route B `STOP_SCOPED`
 
-Post-RH-386 breadth audit: pending; no RH-387 assigned
+Post-RH-387 breadth audit: pending; no RH-388 assigned
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -77,6 +77,9 @@ RH-385 integration commit:
 
 RH-386 integration commit:
 `9778e3515d45816665d672a641947b93906abf54`.
+
+RH-387 integration commit:
+`dedd8e8d2c44564e66524a646f9cf5fb9a389c77`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -192,6 +195,11 @@ Read completely:
 - `papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/THEOREM_LEDGER.md`
 - `papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/results/result.json`
 - `papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/main.pdf`
+- `papers/RH-387-all-order-prime-tail-integral-resummation/README.md`
+- `papers/RH-387-all-order-prime-tail-integral-resummation/UPDATED_ROADMAP.md`
+- `papers/RH-387-all-order-prime-tail-integral-resummation/THEOREM_LEDGER.md`
+- `papers/RH-387-all-order-prime-tail-integral-resummation/results/result.json`
+- `papers/RH-387-all-order-prime-tail-integral-resummation/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -226,8 +234,9 @@ two-scale second-order/cubic-remainder input, RH-383 as the exact Euler-tail
 partition-normal-form input, RH-384 as the prime-tail scale-separation input,
 RH-385 as the fixed-polylogarithmic-clock phasewise-memory uniformization
 input, RH-386 as the Vinogradov--Korobov growing-order prime-tail
-uniformization input, and RH-361 as the immediate endpoint of the still-open
-original physical branch.
+uniformization input, RH-387 as the all-order prime-tail integral-resummation
+input, and RH-361 as the immediate endpoint of the still-open original
+physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -236,6 +245,38 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/THEOREM_LEDGER.md`
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
+
+RH-387 is now integrated.  It resums the entire strict prime-tail family
+before any relative logarithm is taken.  For `x=p_y`, `L=log x>=512`, and
+each real integer channel `1<=c<=7`, put
+
+```text
+V=L^(3/5)(log L)^(-1/5),
+epsilon_x=0.027L^1.801 exp(-0.1853V),
+Phi_c^P=sum_(r>=1)c^r P_r(y)/r,
+Phi_c^J=integral_x^infinity -log(1-c/(t^2-1))/log(t) dt,
+Phi_c^I=integral_x^infinity -log(1-c/t^2)/log(t) dt.
+```
+
+Writing the seven-vectors as `Phi^P`, `Phi^J`, and `Phi^I`, the exact RH-383
+endpoint map `F` defines the actual square-clock gap and its two integral
+surrogates.  The new finite-dimensional transfer proves
+
+```text
+max_c abs(Phi_c^P-Phi_c^J)<=28epsilon_x/(xL),
+0<=max_c(Phi_c^J-Phi_c^I)<=14/(3x^3L),
+pi^2 abs(Gap_P-Gap_J)<=3528epsilon_x/(xL),
+pi^2 abs(Gap_J-Gap_I)<=588/(x^3L).
+```
+
+The proof first sums the absolute strict-Stieltjes error by nonnegative
+Tonelli and only then applies a new `ell^infinity`-to-`ell^1` endpoint
+Lipschitz bound `126`.  It therefore pays the infinite-order source/kernel
+exchange that is outside RH-386's finite-partition theorem.  Since
+`epsilon_x x^2->infinity`, this source error is larger than the `P_2` scale:
+RH-387 proves no second-order or cubic precision, no complex-`c` theorem, no
+growing clock or active `c_11` result, and no Gate A--E conclusion.  Its
+verdict is `Route A=GO`; Route B is `STOP_SCOPED`.
 
 RH-386 is now integrated.  It imports the Johnston--Yang explicit
 Vinogradov--Korobov estimate through a versioned, hash-locked remote source
@@ -308,8 +349,9 @@ The post-RH-385 source gate was later paid by the versioned Johnston--Yang
 lock, and the resulting growing-order theorem is now published as RH-386.
 Fixed-period logarithmic cancellation still does not activate `c_11`, and
 the available Davenport theorem still does not prescribe a
-super-polylogarithmic clock.  No post-RH-386 breadth audit has yet assigned
-RH-387.
+super-polylogarithmic clock.  The subsequent breadth audit assigned and
+published RH-387 as the distinct all-order resummation theorem above.  No
+post-RH-387 breadth audit has yet assigned RH-388.
 The geometrically selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
@@ -2107,7 +2149,83 @@ phasewise table class, activate nonzero `c_11`, settle `K_N/N`, or construct
 an operator, trace, zero model, RH statement, or Gate object.  Route A is
 `GO`; Route B remains `STOP_SCOPED`.
 
-## 4. Compact conclusions from RH-352 through RH-386
+### 3.26 RH-387 all-order prime-tail integral resummation
+
+Retain the RH-386 notation `x=p_y`, `L=log x`, `epsilon_x`, `P_r(y)`,
+`J_r(x)`, and `I_(2r)(x)`.  RH-387 works only with `L>=512` and the seven
+real integer channels `1<=c<=7`.  It defines
+
+```text
+Phi_c^P=sum_(r>=1)c^r P_r(y)/r,
+Phi_c^J=sum_(r>=1)c^r J_r(x)/r
+       =integral_x^infinity -log(1-c/(t^2-1))/log(t) dt,
+Phi_c^I=sum_(r>=1)c^r I_(2r)(x)/r
+       =integral_x^infinity -log(1-c/t^2)/log(t) dt.
+```
+
+All series and integrals are nonnegative and absolutely convergent.  The
+strict Stieltjes estimate is used before taking relative logarithms:
+
+```text
+abs(P_r-J_r)<=epsilon_x{2x h_r(x)+J_r},
+h_r(x)=(x^2-1)^(-r)/L.
+```
+
+Summing this absolute bound with weights `c^r/r` and using
+`-log(1-z)<=z/(1-z)` gives, with `b=1+c<=8`,
+
+```text
+abs(Phi_c^P-Phi_c^J)
+ <=3c epsilon_x/[xL{1-b/x^2}]
+ <4c epsilon_x/(xL).
+```
+
+The exact-to-power logarithmic integrand is nonnegative and at most
+`c/[t^4{1-b/x^2}]<=2c/t^4`, so
+
+```text
+0<=Phi_c^J-Phi_c^I
+ <=c/[3x^3L{1-b/x^2}]
+ <2c/(3x^3L).
+```
+
+The implication `L>=512 => x=e^L>2^512>256` places `Phi^P`, `Phi^J`, and
+`Phi^I` and their joining segments inside `[0,1/2]^7`.  For the frozen
+RH-383 endpoint arrays and Euler products,
+
+```text
+sum_(m=2)^8 abs(alpha_m)u_m<=7,
+sum_(m=2)^8 abs(beta_m)u_m<=49/8.
+```
+
+The three derivative channels of the exact endpoint map have coefficients
+`2,4,4`.  Pairing the `ell^infinity` input norm with the dual `ell^1`
+gradient norm and using `e^(1/2)<2` yields
+
+```text
+sup_(z in [0,1/2]^7) norm(grad F(z))_1<126.
+```
+
+With `Gap_P=B_infinity-G(q_y)=F(Phi^P)/pi^2` and the two analytic surrogates
+`Gap_J=F(Phi^J)/pi^2`, `Gap_I=F(Phi^I)/pi^2`, the final theorem is
+
+```text
+pi^2 abs(Gap_P-Gap_J)<=3528epsilon_x/(xL),
+pi^2 abs(Gap_J-Gap_I)<=588/(x^3L),
+pi^2 abs(Gap_P-Gap_I)
+ <=3528epsilon_x/(xL)+588/(x^3L).
+```
+
+This is an infinite-order source/kernel exchange followed by a new endpoint
+Lipschitz transfer, not a substitution into the RH-386 finite-partition
+ledger.  The available source error satisfies `epsilon_x x^2->infinity`, so
+the theorem deliberately does not resolve the `P_2`, second-order, or cubic
+scale.  It also proves no complex-channel statement, simultaneous prefix and
+prime-index limit, active `c_11`, growing clock, adaptive capacity, operator,
+trace, zero model, RH statement, or Gate A--E conclusion.  Route A is `GO`;
+Route B remains `STOP_SCOPED`.
+
+## 4. Compact conclusions from RH-352 through RH-387
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -2288,6 +2406,13 @@ an operator, trace, zero model, RH statement, or Gate object.  Route A is
   external source is hash-locked but not redistributed.  It does not enlarge
   clocks or the phasewise class, activate `c_11`, settle adaptive capacity,
   make an effective threshold, or construct any Gate object.
+- **RH-387:** Infinite-order resummation of all seven real prime-tail
+  coordinates into strict-source and power-kernel logarithmic integrals,
+  followed by the exact RH-383 endpoint map.  It proves the coordinate
+  constants `28` and `14/3`, the endpoint Lipschitz constant `126`, and the
+  gap constants `3528` and `588`.  The certified source error is larger than
+  the `P_2` scale, so no second-order or cubic precision, complex channel,
+  growing clock, active `c_11`, adaptive capacity, or Gate object follows.
 
 ## 5. Route firewall and reopening triggers
 
@@ -2562,7 +2687,12 @@ Gate.  RH-386 closes the quantitative-PNT source gate, growing-order
 single-tail uniformity, growing finite partition families, and the sharp
 `H/L` leading-kernel criterion.  It does not provide an effective first
 index, growing clock, active phasewise cancellation, adaptive capacity, or
-any Gate.  For RH-387 and later, the shortest exact candidates are:
+any Gate.  RH-387 closes only the all-order absolute source-to-integral
+resummation and endpoint Lipschitz transfer on the seven real channels.  Its
+certified error is larger than the `P_2` scale, and it does not provide
+second-order precision, complex-channel uniformity, a growing clock, active
+phasewise cancellation, adaptive capacity, or any Gate.  For RH-388 and
+later, the shortest exact candidates are:
 
 1. A genuine phase-weighted shift-two or higher-order Möbius correlation
    theorem controlling active `c_11(r)` terms, the
@@ -3902,6 +4032,51 @@ minor.  The route verdict is `Route A=GO`; Route B remains `STOP_SCOPED`.
 No active `c_11`, growing-clock, adaptive-capacity, operator, trace, zero,
 RH, or Gate conclusion is imported.
 
+### 6.26 RH-387 all-order resummation proof and release (2026-08-08)
+
+The post-RH-386 breadth audit compared three routes.  Active phasewise
+`c_11` remained stopped at ordinary shift-two Cesaro cancellation, and the
+clock route supplied no prescribed stronger window beyond RH-385.  The
+selected route instead combined RH-383's absolutely convergent endpoint
+normal form with RH-386's absolute strict-Stieltjes source estimate.  This
+route is not a finite-partition corollary: every order is first resummed by
+Tonelli into a closed logarithmic integral, and only then is the resulting
+seven-vector passed through the endpoint map.
+
+The exact coordinate ledgers are
+
+```text
+max_(1<=c<=7)abs(Phi_c^P-Phi_c^J)<=28epsilon_x/(xL),
+0<=max_(1<=c<=7)(Phi_c^J-Phi_c^I)<=14/(3x^3L).
+```
+
+The frozen endpoint coefficients give `7` and `49/8`; the derivative split
+is `2/4/4`; and the resulting `ell^infinity`-to-`ell^1` Lipschitz constant is
+`126`.  Therefore the published gap constants are exactly
+
+```text
+126*28=3528,
+126*(14/3)=588.
+```
+
+The executable artifact freezes `42=12+7+7+14+2` oracle rows and rejects
+`24/24` genuine field-level mutations.  Its immutable source closure has
+`68` Git blobs grouped `59/8/1` with ordered digest
+`19def5cbed919da8e9652012cf011f3b5728efd4b24a9eef0911bb7346467d27`,
+plus the remote logical Johnston--Yang lock.  The full logical digest is
+`5016397fe59962954514b3b42d68e9de6dfeff0dae949791b01c6a516f5c61fe`,
+and the canonical remote-lock digest remains
+`d53b93212b7c5b5b6b3f7e890099c48ce8e35f2bff9bdd49f9c330a9b5039786`.
+The external PDF, source tar, and source `main.tex` are not redistributed.
+
+Independent proof/release and source/integrity audits both returned
+`GO / ACCEPT`, zero blocker and zero minor.  The route verdict is
+`Route A=GO`; Route B remains `STOP_SCOPED`.  Because
+`epsilon_x x^2->infinity`, the release explicitly forbids promoting the
+`588/(x^3L)` surrogate difference to a `P_2`-scale approximation of the
+actual gap.  Complex channels, active `c_11`, growing clocks, adaptive
+capacity, operators, traces, zeros, RH, and Gates A--E remain outside scope.
+
 ## 7. Reproduction and publication audit
 
 Final RH-367 audit:
@@ -5220,12 +5395,89 @@ remote-source audit
 46f70473ebc4a7b5edb2911354e00fd6847476d30de9a42fd662e04a9be4e999
 ```
 
+Final RH-387 audit:
+
+- Tests: `47/47`; exact result/schema regeneration, optimized Python,
+  field-level verification with the fresh builder disabled, strict JSON and
+  exact types, official Draft 2020-12 schema, remote-source failure modes,
+  source identity, and archive mutations all pass or fail closed as declared.
+- The canonical certificate is `10785` bytes with SHA-256
+  `3c89e51662bbc2f1c7712f4205ff8cde88e9eb80636e2779d06154e914459b4b`.
+  It contains `42=12+7+7+14+2` oracle rows and `24/24` genuine mutations.
+- Source closure: `68` immutable Git blobs grouped `59/8/1`, plus one remote
+  logical Johnston--Yang lock.  Offline verification makes zero requests;
+  live opt-in replay matches the PDF, source tar, and source `main.tex`
+  hashes.  The remote lock-object SHA-256 is
+  `d53b93212b7c5b5b6b3f7e890099c48ce8e35f2bff9bdd49f9c330a9b5039786`.
+  No external payload is redistributed.
+- Individual archive: `33` publication members, `68` Git inputs, one remote
+  lock, and zero failures.  The four-volume replay remains `4` volumes,
+  `73` members, `1548` dependency hashes, `8` result hashes, `361` numbered
+  sources, and zero failures.
+- The integration commit contains exactly `35` RH-387 files: the `33`
+  publication members plus `results/dependency_manifest.json` and
+  `results/archive_verification.json`.
+- PDF: `6` A4 pages and `336464` bytes, with all `21` font entries embedded,
+  subsetted, and Unicode-mapped.  Ghostscript, text extraction, complete
+  LaTeX/BibTeX scans, semantic-PDF byte identity, clean rebuild rendering,
+  and all `6/6` rendered pages pass.
+- Two independent final audits report zero blocker and zero minor.  The
+  `P_2`/second-order firewall, real-channel restriction, active-`c_11`,
+  clock, adaptive-capacity, operator, trace, zero, RH, and Gate boundaries
+  remain intact.
+
+RH-387 final hashes:
+
+```text
+main.tex
+f03d935192e9cfd122de3e85569062e836f15ef6375e9772fd114b160d0b184b
+
+PDF
+465ae4c9e6e08b47c3f69fa650cb0a92dac8457943403a5847a97a48c577c450
+
+result
+d71c69de7e5d05c5ac558a17d2a6089815334d19b43a74ecfde219affcc1e16c
+
+schema
+c90e39f473234e5e0e103dba171cc9cdfdaff9be9b88fbb9ea75059ee9429d6e
+
+manifest
+6727517f72e5cd9cebaf9443e89516252acd9a872def7be95e9e17b7a9b191dc
+
+verification
+b588459ca593fc54fc8b849a361a08206bb640bb447d2272cfdc00aa8cedc7ae
+
+core
+136ecd57027966ee8d5cad9d428c941228baf5824e5cd11e1f43b94cdc51b85e
+
+external source lock
+d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058
+
+integrity audit
+e19b5d53849d9690f8703b06e461715a4b9083cdca443aeedee420abc0f8b1c5
+
+review audit
+dde9f4fc3abcbe6afd22c9949e2abca2249509ec8a4e86473ba0a5f84abe29ac
+
+format audit
+bae52cafa1dab8b40a26f3a1adac65b4e7cce913f9ba42bc8585f06cef0ac655
+
+replay audit
+88c758b8eacab36e7c182dc6d675486f13ad98091a0395f289b3c670b5b7a00b
+
+visual audit
+3bdd50f1b74ae74c3a3c60c0f8348e68a1c0db67ecbb7be55a5bed69ee1a6a5c
+
+remote-source audit
+0a7bc0f194bf2d109d940d23325e99591786ba044157ba4853e94a851e4016d5
+```
+
 ## 8. Continuation prompt
 
 ````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-386 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-387 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -5245,8 +5497,8 @@ second-order/cubic-remainder input, RH-383 as the exact Euler-tail
 partition-normal-form input, RH-384 as the prime-tail scale-separation input,
 RH-385 as the fixed-polylogarithmic-clock phasewise-memory uniformization
 input, RH-386 as the Vinogradov--Korobov growing-order prime-tail
-uniformization input, RH-MVP2 as the corpus umbrella, and RH-361 as the
-physical endpoint.
+uniformization input, RH-387 as the all-order prime-tail integral-resummation
+input, RH-MVP2 as the corpus umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -5256,8 +5508,39 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-386 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  Put `x=p_y`, `L=log x`,
+RH-387 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  Put `x=p_y`, `L=log x>=512`, and for `1<=c<=7` define
+
+```text
+V=L^(3/5)(log L)^(-1/5),
+epsilon_x=0.027L^1.801 exp(-0.1853V),
+Phi_c^P=sum_(r>=1)c^rP_r(y)/r,
+Phi_c^J=integral_x^infinity -log(1-c/(t^2-1))/log(t)dt,
+Phi_c^I=integral_x^infinity -log(1-c/t^2)/log(t)dt.
+```
+
+The seven-vectors enter the exact RH-383 endpoint map `F`.  Retain
+
+```text
+max_c abs(Phi_c^P-Phi_c^J)<=28epsilon_x/(xL),
+0<=max_c(Phi_c^J-Phi_c^I)<=14/(3x^3L),
+sup_(z in [0,1/2]^7)norm(grad F(z))_1<126,
+pi^2 abs(Gap_P-Gap_J)<=3528epsilon_x/(xL),
+pi^2 abs(Gap_J-Gap_I)<=588/(x^3L).
+```
+
+The proof sums the absolute strict-Stieltjes error over every order before
+using the finite-dimensional endpoint Lipschitz theorem.  Do not replace it
+by the RH-386 relative logarithmic ledger, which requires a finite largest
+order.  Keep the endpoint strict, the Stieltjes boundary term, the seven real
+integer channels, and the `ell^infinity`/dual-`ell^1` norm pairing.  Because
+`epsilon_x x^2->infinity`, do not promote the theorem to actual-gap
+second-order, `P_2`, or cubic precision.  Do not infer complex-channel,
+simultaneous prime-index/prefix, growing-clock, active-`c_11`, adaptive
+capacity, operator, trace, zero, RH, or Gate conclusions.
+
+RH-386 remains the preceding growing-order theorem edge.  Put `x=p_y`,
+`L=log x`,
 
 ```text
 V=L^(3/5)(log L)^(-1/5),
@@ -5493,12 +5776,18 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-RH-386 is complete; do not rewrite it as the next candidate.  Its remote
-source gate, growing-order theorem, family-supremum quantifiers, sharp `H/L`
-criterion, release archive, and two independent final audits are closed.  No
-post-RH-386 breadth audit has yet assigned RH-387.  Run that audit before
-creating another number, and require a genuinely new source-backed theorem
-rather than a repackaging of the RH-386 kernels or the `H/L` obstruction.
+RH-387 is complete; do not rewrite it as the next candidate.  Its
+infinite-order Tonelli resummation, strict source/power kernels, endpoint
+Lipschitz theorem, constants `126/3528/588`, source closure, release archive,
+and two independent final audits are closed.  No post-RH-387 breadth audit
+has yet assigned RH-388.  Run that audit before creating another number, and
+require a genuinely new source-backed theorem rather than a repackaging of
+the RH-387 integrals or its `P_2`-scale obstruction.
+
+RH-386 remains complete as the preceding source/growing-order theorem.  Its
+remote source gate, finite-partition family quantifiers, sharp `H/L`
+criterion, and release archive are closed; do not conflate those finite
+relative-logarithm statements with RH-387's all-order absolute resummation.
 
 TPC-137 does not reopen active `c_11`: it proves fixed-periodic terminal
 logarithmic cancellation, not ordinary Cesaro or growing-period uniformity.
