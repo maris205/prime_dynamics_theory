@@ -1,0 +1,3069 @@
+{
+  "all_pass": true,
+  "auxiliary_attacks": {
+    "count": 7,
+    "rejected": 7,
+    "rows": [
+      {
+        "mode": "field_level_semantic",
+        "name": "source_url",
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "source_bytes",
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "source_DOI",
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "source_MIME",
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "source_pages_type",
+        "rejected": true
+      },
+      {
+        "mode": "strict_json",
+        "name": "nonfinite_JSON",
+        "rejected": true
+      },
+      {
+        "mode": "strict_json",
+        "name": "duplicate_JSON",
+        "rejected": true
+      }
+    ],
+    "scope": "source metadata exact types plus duplicate/nonfinite strict JSON"
+  },
+  "certificate": {
+    "all_pass": true,
+    "analytic_rows": [
+      {
+        "derived": {
+          "V_log_power": "3/5",
+          "V_loglog_power": "-1/5",
+          "coefficient": "27/1000",
+          "exponent": "1853/10000",
+          "log_power": "1801/1000",
+          "source_x_min": 23
+        },
+        "domain": "source",
+        "id": "source_vk_constants",
+        "pass": true,
+        "statement": "Theorem 1.4 (1.8) supplies 0.027, 1.801, 0.1853, 3/5, -1/5"
+      },
+      {
+        "derived": {
+          "V_multiplier_log_power": "3/5",
+          "V_multiplier_loglog_correction": "-1/5",
+          "negative_coefficient": "1853/10000",
+          "positive_term": "1801/1000"
+        },
+        "domain": "source",
+        "id": "eta_log_derivative",
+        "pass": true,
+        "statement": "L*d(log eta)/dL=1.801-0.1853*V*(3/5-1/(5log L))"
+      },
+      {
+        "derived": {
+          "L_min": 512,
+          "derivative_direction": "decreasing",
+          "exact_lower_margin": "76361/150000",
+          "factor_lower": "17/30",
+          "sqrt_L_strict_lower": 22
+        },
+        "domain": "source",
+        "id": "eta_tail_monotone",
+        "pass": true,
+        "statement": "eta is decreasing for L>=512"
+      },
+      {
+        "derived": {
+          "boundary_coefficient": -1,
+          "endpoint": "(x,infinity)",
+          "integration_by_parts_boundary_coefficient": 1,
+          "main_measure_boundary_coefficient": -1,
+          "prime_condition": "p>x"
+        },
+        "domain": "endpoint",
+        "id": "strict_stieltjes_boundary",
+        "pass": true,
+        "statement": "P_r=-theta(x)h_r(x)-integral_x^infinity theta(t)h_r'(t)dt"
+      },
+      {
+        "derived": {
+          "current_atom_excluded": true,
+          "first_atom": "p_(y+1)",
+          "tail": "strict",
+          "witness_first_atom": "1/576",
+          "witness_lhs": "43/19200",
+          "witness_p_y": 3,
+          "witness_r": 2,
+          "witness_rhs": "43/19200",
+          "witness_successor": "29/57600",
+          "witness_tail_primes": [
+            5,
+            7,
+            11
+          ]
+        },
+        "domain": "endpoint",
+        "id": "strict_successor",
+        "pass": true,
+        "statement": "P_r(y)=(p_(y+1)^2-1)^(-r)+P_r(y+1)"
+      },
+      {
+        "derived": {
+          "algebraic_term": "2*r*t/(t^2-1)",
+          "first_numerator_coefficient": 2,
+          "h_includes_log_denominator": true,
+          "log_term": "1/(t*log(t))",
+          "log_term_present": true
+        },
+        "domain": "hazard",
+        "id": "hazard_formula",
+        "pass": true,
+        "statement": "q_r=-h_r'/h_r=2rt/(t^2-1)+1/(t log t)"
+      },
+      {
+        "derived": {
+          "derivative_sign": -1,
+          "positive_factor": "2r(t^2+1)/(t^2-1)^2"
+        },
+        "domain": "hazard",
+        "id": "hazard_algebraic_part_decreases",
+        "pass": true,
+        "statement": "d[2rt/(t^2-1)]/dt=-2r(t^2+1)/(t^2-1)^2<0"
+      },
+      {
+        "derived": {
+          "derivative_sign": -1,
+          "positive_factor": "(log(t)+1)/(t^2*log(t)^2)"
+        },
+        "domain": "hazard",
+        "id": "hazard_log_part_decreases",
+        "pass": true,
+        "statement": "d[1/(t log t)]/dt=-(log t+1)/(t^2 log(t)^2)<0"
+      },
+      {
+        "derived": {
+          "comparison_kernel": "h_r(x)*exp(-q_r(x)*(t-x))",
+          "direction": ">=",
+          "hazard_direction": "q_r(t)<=q_r(x)",
+          "integrated_lower": "h_r(x)/q_r(x)"
+        },
+        "domain": "hazard",
+        "id": "hazard_integral_lower",
+        "pass": true,
+        "statement": "decreasing q_r implies J_r>=h_r(x)/q_r(x)"
+      },
+      {
+        "derived": {
+          "r1_exact_margin_lower": "175/264",
+          "uses_log_x_gt": 3
+        },
+        "domain": "hazard",
+        "id": "endpoint_hazard_upper",
+        "pass": true,
+        "statement": "x*q_r(x)<=3r for x>=23"
+      },
+      {
+        "derived": {
+          "boundary_xh_units": 1,
+          "derived_relative": "6r+1",
+          "derived_xh_units": 2,
+          "hazard_xq_coefficient": 3,
+          "integral_J_units": 1,
+          "integral_xh_units": 1,
+          "rounded_relative": "7r"
+        },
+        "domain": "source_transfer",
+        "id": "stieltjes_error_relative",
+        "pass": true,
+        "statement": "abs(P_r/J_r-1)<=(6r+1)*eta<=7r*eta"
+      },
+      {
+        "derived": {
+          "coefficient": 14,
+          "smallness": "7r*eta<=1/2"
+        },
+        "domain": "source_transfer",
+        "id": "source_logarithmic_error",
+        "pass": true,
+        "statement": "7r*eta<=1/2 implies abs(log(P_r/J_r))<=14r*eta"
+      },
+      {
+        "derived": {
+          "coefficient_r": 1,
+          "denominator": "x^2-1",
+          "log_direction": "nonnegative",
+          "pointwise_factor": "(1-t^-2)^(-r)",
+          "ratio": "J_r/I_2r"
+        },
+        "domain": "kernel",
+        "id": "exact_to_power_kernel",
+        "pass": true,
+        "statement": "0<=log(J_r/I_(2r))<=-r log(1-x^-2)<=r/(x^2-1)"
+      },
+      {
+        "derived": {
+          "role": "optional_coarser_corollary",
+          "smallness": "r/x^2<=3/8"
+        },
+        "domain": "kernel",
+        "id": "coarse_power_kernel",
+        "pass": true,
+        "statement": "under r/x^2<=3/8, abs(log(J_r/I_(2r)))<=4r/x^2"
+      },
+      {
+        "derived": {
+          "K_denominator": "(2r-1)*L",
+          "K_r": "x^(1-2r)/((2r-1)*L)",
+          "a_r": "1/((2r-1)*L)",
+          "bounds": "1/(1+a_r)<=G<=1",
+          "exponential_moment_1": 1,
+          "exponential_moment_2": 2,
+          "jensen_direction": "lower",
+          "laplace_rate": "2r-1",
+          "substitution": "t=x*exp(u), v=(2r-1)*u"
+        },
+        "domain": "kernel",
+        "id": "power_to_leading_integral",
+        "pass": true,
+        "statement": "I_(2r)/K_r=G(a_r)=integral_0^infinity e^-v/(1+a_r v)dv"
+      },
+      {
+        "derived": {
+          "lower_tool": "Jensen: G>=exp(-a)",
+          "quadratic_coefficient": 2,
+          "upper_tool": "G<=1-a+2a^2"
+        },
+        "domain": "kernel",
+        "id": "leading_kernel_refinement",
+        "pass": true,
+        "statement": "for a<=1/4, 0<=log G(a)+a<=2a^2"
+      }
+    ],
+    "claim_boundary": {
+      "fixed_finite_q_before_prefix_limit": true,
+      "gates": {
+        "A_intrinsic_determinant": false,
+        "B_scattering_completion": false,
+        "C_self_adjoint_generator": false,
+        "D_von_mangoldt_weighted_prime_power_traces": false,
+        "E_completed_zeta_divisor_equality": false
+      },
+      "no_active_c11": true,
+      "no_adaptive_capacity_limit": true,
+      "no_effective_threshold": true,
+      "no_growing_clock": true,
+      "no_operator_trace_zeros_or_RH": true,
+      "route_a": "GO",
+      "route_b": "STOP_SCOPED",
+      "universally_safe_phasewise_c11_zero_only": true
+    },
+    "contracts": {
+      "definitions": {
+        "H": "sum_r k_r/(2r-1)",
+        "H2": "sum_r k_r/(2r-1)^2",
+        "I_2r": "integral_x^infinity t^(-2r)/log(t)dt",
+        "J_r": "integral_x^infinity h_r(t)dt",
+        "K_r": "x^(1-2r)/((2r-1)*L)",
+        "d": "sum_r r*k_r",
+        "h_r": "(t^2-1)^(-r)/log(t)"
+      },
+      "endpoint": {
+        "boundary_term": "-theta(x)*h_r(x)",
+        "prime_tail": "p>x with x=p_y",
+        "stieltjes_interval": "(x,infinity)",
+        "successor_tail": "p_(y+1) then P_r(y+1)"
+      },
+      "growth": {
+        "leading_condition": "H/L->0",
+        "single_r": "log(R)=o(V)",
+        "single_r_sharper": "R<=exp((0.1853-delta)*V), fixed delta in (0,0.1853)",
+        "source_and_power_conditions": "d*eta+d/x^2->0",
+        "sufficient": "log(d)=o(V) and H=o(L)"
+      },
+      "kernel_ledger": {
+        "canonical_exact_to_power": "0<=log(J_r/I_2r)<=r/(x^2-1)",
+        "leading": "abs(log(I_2r/K_r))<=1/((2r-1)*L)",
+        "optional_coarse": "abs(log(J_r/I_2r))<=4r/x^2 when r/x^2<=3/8",
+        "refined": "0<=log(I_2r/K_r)+1/((2r-1)*L)<=2/((2r-1)^2*L^2)"
+      },
+      "partition_ledger": {
+        "exact_kernel": "14*d*eta",
+        "leading_addition": "H/L",
+        "power_kernel_addition": "d/(x^2-1)",
+        "refined_leading_sign": "-H/L",
+        "refined_remainder": "2*H2/L^2"
+      },
+      "sharpness": {
+        "family": "lambda=1^k",
+        "leading_ratio": "P_lambda/M_lambda->exp(-c)",
+        "regime": "k/L->c"
+      },
+      "source_ledger": {
+        "logarithmic": "abs(log(P_r/J_r))<=14r*eta when 7r*eta<=1/2",
+        "relative": "abs(P_r/J_r-1)<=(6r+1)*eta<=7r*eta"
+      }
+    },
+    "counts": {
+      "analytic_source_rows": 16,
+      "envelope_sharpness_rows": 6,
+      "oracle_rows_total": 96,
+      "partition_rows": 66,
+      "r_fixtures": 8
+    },
+    "envelopes": [
+      {
+        "bound": "abs(log(P_lambda/J_lambda))<=14*d*eta",
+        "hypothesis": "7*d*eta<=1/2",
+        "id": "exact_kernel_partition",
+        "log_coefficient": 14,
+        "pass": true,
+        "smallness_coefficient": 7,
+        "weight": "degree_d"
+      },
+      {
+        "bound": "abs(log(P_lambda/I_lambda))<=14*d*eta+d/(x^2-1)",
+        "hypothesis": "exact-kernel hypothesis",
+        "id": "power_kernel_partition",
+        "pass": true,
+        "power_coefficient": 1,
+        "power_denominator": "x^2-1",
+        "power_weight": "degree_d",
+        "source_coefficient": 14
+      },
+      {
+        "bound": "abs(log(P_lambda/M_lambda))<=14*d*eta+d/(x^2-1)+H/L",
+        "hypothesis": "power-kernel hypothesis",
+        "id": "leading_kernel_partition",
+        "leading_absolute_coefficient": 1,
+        "leading_denominator": "L",
+        "leading_weight": "H",
+        "pass": true
+      },
+      {
+        "H2_coefficient": 2,
+        "H2_denominator_power": 2,
+        "bound": "abs(log(P_lambda/M_lambda)+H/L)<=14*d*eta+d/(x^2-1)+2*H2/L^2",
+        "hypothesis": "a_r<=1/4 on every active part",
+        "id": "refined_leading_expansion",
+        "leading_log_sign": -1,
+        "pass": true
+      },
+      {
+        "V_dominates_log_L": true,
+        "bound": "d*eta+d/x^2->0 and H/L->0",
+        "eta_exponential_rate": "1853/10000",
+        "hypothesis": "log(d)=o(V) and H=o(L)",
+        "id": "sufficient_growing_family",
+        "pass": true,
+        "polynomial_log_power": "1801/1000",
+        "single_r_refinement": "for fixed delta in (0,0.1853), R<=exp((0.1853-delta)*V) is sufficient"
+      },
+      {
+        "H2_per_copy": "1",
+        "H_per_copy": "1",
+        "bound": "P_lambda/M_lambda->exp(-c)",
+        "d_per_copy": 1,
+        "hypothesis": "lambda=1^k and k/L->c",
+        "id": "sharpness_partition_ones",
+        "log_ratio_limit_coefficient": -1,
+        "obstruction": "under source/power admissibility, leading uniformity holds iff H/L->0",
+        "part": 1,
+        "pass": true,
+        "two_r_minus_one": 1
+      }
+    ],
+    "epistemic_role": "reproduction_not_analytic_proof",
+    "partitions": [
+      {
+        "H": "1",
+        "H2": "1",
+        "H2_le_H": true,
+        "degree_d": 1,
+        "leading_constant": "1",
+        "length": 1,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          }
+        ],
+        "p_exponent": 1,
+        "p_exponent_identity": "1=2*1-1",
+        "partition": [
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "1/3",
+        "H2": "1/9",
+        "H2_le_H": true,
+        "degree_d": 2,
+        "leading_constant": "1/3",
+        "length": 1,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 2
+          }
+        ],
+        "p_exponent": 3,
+        "p_exponent_identity": "3=2*2-1",
+        "partition": [
+          2
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "2",
+        "H2": "2",
+        "H2_le_H": true,
+        "degree_d": 2,
+        "leading_constant": "1",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 1
+          }
+        ],
+        "p_exponent": 2,
+        "p_exponent_identity": "2=2*2-2",
+        "partition": [
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "1/5",
+        "H2": "1/25",
+        "H2_le_H": true,
+        "degree_d": 3,
+        "leading_constant": "1/5",
+        "length": 1,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 5,
+        "p_exponent_identity": "5=2*3-1",
+        "partition": [
+          3
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "4/3",
+        "H2": "10/9",
+        "H2_le_H": true,
+        "degree_d": 3,
+        "leading_constant": "1/3",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          }
+        ],
+        "p_exponent": 4,
+        "p_exponent_identity": "4=2*3-2",
+        "partition": [
+          2,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "3",
+        "H2": "3",
+        "H2_le_H": true,
+        "degree_d": 3,
+        "leading_constant": "1",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 3,
+            "r": 1
+          }
+        ],
+        "p_exponent": 3,
+        "p_exponent_identity": "3=2*3-3",
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "1/7",
+        "H2": "1/49",
+        "H2_le_H": true,
+        "degree_d": 4,
+        "leading_constant": "1/7",
+        "length": 1,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 4
+          }
+        ],
+        "p_exponent": 7,
+        "p_exponent_identity": "7=2*4-1",
+        "partition": [
+          4
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "6/5",
+        "H2": "26/25",
+        "H2_le_H": true,
+        "degree_d": 4,
+        "leading_constant": "1/5",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 6,
+        "p_exponent_identity": "6=2*4-2",
+        "partition": [
+          3,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "2/3",
+        "H2": "2/9",
+        "H2_le_H": true,
+        "degree_d": 4,
+        "leading_constant": "1/9",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 2
+          }
+        ],
+        "p_exponent": 6,
+        "p_exponent_identity": "6=2*4-2",
+        "partition": [
+          2,
+          2
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "7/3",
+        "H2": "19/9",
+        "H2_le_H": true,
+        "degree_d": 4,
+        "leading_constant": "1/3",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          }
+        ],
+        "p_exponent": 5,
+        "p_exponent_identity": "5=2*4-3",
+        "partition": [
+          2,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "4",
+        "H2": "4",
+        "H2_le_H": true,
+        "degree_d": 4,
+        "leading_constant": "1",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 4,
+            "r": 1
+          }
+        ],
+        "p_exponent": 4,
+        "p_exponent_identity": "4=2*4-4",
+        "partition": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "1/9",
+        "H2": "1/81",
+        "H2_le_H": true,
+        "degree_d": 5,
+        "leading_constant": "1/9",
+        "length": 1,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 5
+          }
+        ],
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*5-1",
+        "partition": [
+          5
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "8/7",
+        "H2": "50/49",
+        "H2_le_H": true,
+        "degree_d": 5,
+        "leading_constant": "1/7",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 4
+          }
+        ],
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*5-2",
+        "partition": [
+          4,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "8/15",
+        "H2": "34/225",
+        "H2_le_H": true,
+        "degree_d": 5,
+        "leading_constant": "1/15",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*5-2",
+        "partition": [
+          3,
+          2
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "11/5",
+        "H2": "51/25",
+        "H2_le_H": true,
+        "degree_d": 5,
+        "leading_constant": "1/5",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 7,
+        "p_exponent_identity": "7=2*5-3",
+        "partition": [
+          3,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "5/3",
+        "H2": "11/9",
+        "H2_le_H": true,
+        "degree_d": 5,
+        "leading_constant": "1/9",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 2,
+            "r": 2
+          }
+        ],
+        "p_exponent": 7,
+        "p_exponent_identity": "7=2*5-3",
+        "partition": [
+          2,
+          2,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "10/3",
+        "H2": "28/9",
+        "H2_le_H": true,
+        "degree_d": 5,
+        "leading_constant": "1/3",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 3,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          }
+        ],
+        "p_exponent": 6,
+        "p_exponent_identity": "6=2*5-4",
+        "partition": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "5",
+        "H2": "5",
+        "H2_le_H": true,
+        "degree_d": 5,
+        "leading_constant": "1",
+        "length": 5,
+        "multiplicities": [
+          {
+            "k": 5,
+            "r": 1
+          }
+        ],
+        "p_exponent": 5,
+        "p_exponent_identity": "5=2*5-5",
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "1/11",
+        "H2": "1/121",
+        "H2_le_H": true,
+        "degree_d": 6,
+        "leading_constant": "1/11",
+        "length": 1,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 6
+          }
+        ],
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*6-1",
+        "partition": [
+          6
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "10/9",
+        "H2": "82/81",
+        "H2_le_H": true,
+        "degree_d": 6,
+        "leading_constant": "1/9",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 5
+          }
+        ],
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*6-2",
+        "partition": [
+          5,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "10/21",
+        "H2": "58/441",
+        "H2_le_H": true,
+        "degree_d": 6,
+        "leading_constant": "1/21",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 4
+          }
+        ],
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*6-2",
+        "partition": [
+          4,
+          2
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "15/7",
+        "H2": "99/49",
+        "H2_le_H": true,
+        "degree_d": 6,
+        "leading_constant": "1/7",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 4
+          }
+        ],
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*6-3",
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "2/5",
+        "H2": "2/25",
+        "H2_le_H": true,
+        "degree_d": 6,
+        "leading_constant": "1/25",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 3
+          }
+        ],
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*6-2",
+        "partition": [
+          3,
+          3
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "23/15",
+        "H2": "259/225",
+        "H2_le_H": true,
+        "degree_d": 6,
+        "leading_constant": "1/15",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*6-3",
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "16/5",
+        "H2": "76/25",
+        "H2_le_H": true,
+        "degree_d": 6,
+        "leading_constant": "1/5",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 3,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*6-4",
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "1",
+        "H2": "1/3",
+        "H2_le_H": true,
+        "degree_d": 6,
+        "leading_constant": "1/27",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 3,
+            "r": 2
+          }
+        ],
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*6-3",
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "8/3",
+        "H2": "20/9",
+        "H2_le_H": true,
+        "degree_d": 6,
+        "leading_constant": "1/9",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 1
+          },
+          {
+            "k": 2,
+            "r": 2
+          }
+        ],
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*6-4",
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "13/3",
+        "H2": "37/9",
+        "H2_le_H": true,
+        "degree_d": 6,
+        "leading_constant": "1/3",
+        "length": 5,
+        "multiplicities": [
+          {
+            "k": 4,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          }
+        ],
+        "p_exponent": 7,
+        "p_exponent_identity": "7=2*6-5",
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "6",
+        "H2": "6",
+        "H2_le_H": true,
+        "degree_d": 6,
+        "leading_constant": "1",
+        "length": 6,
+        "multiplicities": [
+          {
+            "k": 6,
+            "r": 1
+          }
+        ],
+        "p_exponent": 6,
+        "p_exponent_identity": "6=2*6-6",
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "1/13",
+        "H2": "1/169",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/13",
+        "length": 1,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 7
+          }
+        ],
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*7-1",
+        "partition": [
+          7
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "12/11",
+        "H2": "122/121",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/11",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 6
+          }
+        ],
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*7-2",
+        "partition": [
+          6,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "4/9",
+        "H2": "10/81",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/27",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 5
+          }
+        ],
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*7-2",
+        "partition": [
+          5,
+          2
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "19/9",
+        "H2": "163/81",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/9",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 5
+          }
+        ],
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*7-3",
+        "partition": [
+          5,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "12/35",
+        "H2": "74/1225",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/35",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 3
+          },
+          {
+            "k": 1,
+            "r": 4
+          }
+        ],
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*7-2",
+        "partition": [
+          4,
+          3
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "31/21",
+        "H2": "499/441",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/21",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 4
+          }
+        ],
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*7-3",
+        "partition": [
+          4,
+          2,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "22/7",
+        "H2": "148/49",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/7",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 3,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 4
+          }
+        ],
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*7-4",
+        "partition": [
+          4,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "7/5",
+        "H2": "27/25",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/25",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 2,
+            "r": 3
+          }
+        ],
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*7-3",
+        "partition": [
+          3,
+          3,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "13/15",
+        "H2": "59/225",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/45",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*7-3",
+        "partition": [
+          3,
+          2,
+          2
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "38/15",
+        "H2": "484/225",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/15",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*7-4",
+        "partition": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "21/5",
+        "H2": "101/25",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/5",
+        "length": 5,
+        "multiplicities": [
+          {
+            "k": 4,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*7-5",
+        "partition": [
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "2",
+        "H2": "4/3",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/27",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 3,
+            "r": 2
+          }
+        ],
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*7-4",
+        "partition": [
+          2,
+          2,
+          2,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "11/3",
+        "H2": "29/9",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/9",
+        "length": 5,
+        "multiplicities": [
+          {
+            "k": 3,
+            "r": 1
+          },
+          {
+            "k": 2,
+            "r": 2
+          }
+        ],
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*7-5",
+        "partition": [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "16/3",
+        "H2": "46/9",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1/3",
+        "length": 6,
+        "multiplicities": [
+          {
+            "k": 5,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          }
+        ],
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*7-6",
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "7",
+        "H2": "7",
+        "H2_le_H": true,
+        "degree_d": 7,
+        "leading_constant": "1",
+        "length": 7,
+        "multiplicities": [
+          {
+            "k": 7,
+            "r": 1
+          }
+        ],
+        "p_exponent": 7,
+        "p_exponent_identity": "7=2*7-7",
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "1/15",
+        "H2": "1/225",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/15",
+        "length": 1,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 8
+          }
+        ],
+        "p_exponent": 15,
+        "p_exponent_identity": "15=2*8-1",
+        "partition": [
+          8
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "14/13",
+        "H2": "170/169",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/13",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 7
+          }
+        ],
+        "p_exponent": 14,
+        "p_exponent_identity": "14=2*8-2",
+        "partition": [
+          7,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "14/33",
+        "H2": "130/1089",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/33",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 6
+          }
+        ],
+        "p_exponent": 14,
+        "p_exponent_identity": "14=2*8-2",
+        "partition": [
+          6,
+          2
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "23/11",
+        "H2": "243/121",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/11",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 6
+          }
+        ],
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*8-3",
+        "partition": [
+          6,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "14/45",
+        "H2": "106/2025",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/45",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 3
+          },
+          {
+            "k": 1,
+            "r": 5
+          }
+        ],
+        "p_exponent": 14,
+        "p_exponent_identity": "14=2*8-2",
+        "partition": [
+          5,
+          3
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "13/9",
+        "H2": "91/81",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/27",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 5
+          }
+        ],
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*8-3",
+        "partition": [
+          5,
+          2,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "28/9",
+        "H2": "244/81",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/9",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 3,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 5
+          }
+        ],
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*8-4",
+        "partition": [
+          5,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "2/7",
+        "H2": "2/49",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/49",
+        "length": 2,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 4
+          }
+        ],
+        "p_exponent": 14,
+        "p_exponent_identity": "14=2*8-2",
+        "partition": [
+          4,
+          4
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "47/35",
+        "H2": "1299/1225",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/35",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 3
+          },
+          {
+            "k": 1,
+            "r": 4
+          }
+        ],
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*8-3",
+        "partition": [
+          4,
+          3,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "17/21",
+        "H2": "107/441",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/63",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 4
+          }
+        ],
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*8-3",
+        "partition": [
+          4,
+          2,
+          2
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "52/21",
+        "H2": "940/441",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/21",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 4
+          }
+        ],
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*8-4",
+        "partition": [
+          4,
+          2,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "29/7",
+        "H2": "197/49",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/7",
+        "length": 5,
+        "multiplicities": [
+          {
+            "k": 4,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 4
+          }
+        ],
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*8-5",
+        "partition": [
+          4,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "11/15",
+        "H2": "43/225",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/75",
+        "length": 3,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 2
+          },
+          {
+            "k": 2,
+            "r": 3
+          }
+        ],
+        "p_exponent": 13,
+        "p_exponent_identity": "13=2*8-3",
+        "partition": [
+          3,
+          3,
+          2
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "12/5",
+        "H2": "52/25",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/25",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 1
+          },
+          {
+            "k": 2,
+            "r": 3
+          }
+        ],
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*8-4",
+        "partition": [
+          3,
+          3,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "28/15",
+        "H2": "284/225",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/45",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 1,
+            "r": 1
+          },
+          {
+            "k": 2,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*8-4",
+        "partition": [
+          3,
+          2,
+          2,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "53/15",
+        "H2": "709/225",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/15",
+        "length": 5,
+        "multiplicities": [
+          {
+            "k": 3,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          },
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*8-5",
+        "partition": [
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "26/5",
+        "H2": "126/25",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/5",
+        "length": 6,
+        "multiplicities": [
+          {
+            "k": 5,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 3
+          }
+        ],
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*8-6",
+        "partition": [
+          3,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "4/3",
+        "H2": "4/9",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/81",
+        "length": 4,
+        "multiplicities": [
+          {
+            "k": 4,
+            "r": 2
+          }
+        ],
+        "p_exponent": 12,
+        "p_exponent_identity": "12=2*8-4",
+        "partition": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "3",
+        "H2": "7/3",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/27",
+        "length": 5,
+        "multiplicities": [
+          {
+            "k": 2,
+            "r": 1
+          },
+          {
+            "k": 3,
+            "r": 2
+          }
+        ],
+        "p_exponent": 11,
+        "p_exponent_identity": "11=2*8-5",
+        "partition": [
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "14/3",
+        "H2": "38/9",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/9",
+        "length": 6,
+        "multiplicities": [
+          {
+            "k": 4,
+            "r": 1
+          },
+          {
+            "k": 2,
+            "r": 2
+          }
+        ],
+        "p_exponent": 10,
+        "p_exponent_identity": "10=2*8-6",
+        "partition": [
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "19/3",
+        "H2": "55/9",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1/3",
+        "length": 7,
+        "multiplicities": [
+          {
+            "k": 6,
+            "r": 1
+          },
+          {
+            "k": 1,
+            "r": 2
+          }
+        ],
+        "p_exponent": 9,
+        "p_exponent_identity": "9=2*8-7",
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      },
+      {
+        "H": "8",
+        "H2": "8",
+        "H2_le_H": true,
+        "degree_d": 8,
+        "leading_constant": "1",
+        "length": 8,
+        "multiplicities": [
+          {
+            "k": 8,
+            "r": 1
+          }
+        ],
+        "p_exponent": 8,
+        "p_exponent_identity": "8=2*8-8",
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "pass": true,
+        "rh384_regression_role": "reproduction_only"
+      }
+    ],
+    "r_fixtures": [
+      {
+        "K": "x^(-1)/(1*L)",
+        "hazard_x_upper": 3,
+        "leading_a": "1/(1*L)",
+        "pass": true,
+        "power_kernel_coefficient": 1,
+        "r": 1,
+        "source_log_coefficient": 14,
+        "source_relative_coefficient": "7<=7r",
+        "source_smallness": "7*eta<=1/2",
+        "two_r_minus_one": 1
+      },
+      {
+        "K": "x^(-3)/(3*L)",
+        "hazard_x_upper": 6,
+        "leading_a": "1/(3*L)",
+        "pass": true,
+        "power_kernel_coefficient": 2,
+        "r": 2,
+        "source_log_coefficient": 28,
+        "source_relative_coefficient": "13<=7r",
+        "source_smallness": "14*eta<=1/2",
+        "two_r_minus_one": 3
+      },
+      {
+        "K": "x^(-5)/(5*L)",
+        "hazard_x_upper": 9,
+        "leading_a": "1/(5*L)",
+        "pass": true,
+        "power_kernel_coefficient": 3,
+        "r": 3,
+        "source_log_coefficient": 42,
+        "source_relative_coefficient": "19<=7r",
+        "source_smallness": "21*eta<=1/2",
+        "two_r_minus_one": 5
+      },
+      {
+        "K": "x^(-7)/(7*L)",
+        "hazard_x_upper": 12,
+        "leading_a": "1/(7*L)",
+        "pass": true,
+        "power_kernel_coefficient": 4,
+        "r": 4,
+        "source_log_coefficient": 56,
+        "source_relative_coefficient": "25<=7r",
+        "source_smallness": "28*eta<=1/2",
+        "two_r_minus_one": 7
+      },
+      {
+        "K": "x^(-15)/(15*L)",
+        "hazard_x_upper": 24,
+        "leading_a": "1/(15*L)",
+        "pass": true,
+        "power_kernel_coefficient": 8,
+        "r": 8,
+        "source_log_coefficient": 112,
+        "source_relative_coefficient": "49<=7r",
+        "source_smallness": "56*eta<=1/2",
+        "two_r_minus_one": 15
+      },
+      {
+        "K": "x^(-31)/(31*L)",
+        "hazard_x_upper": 48,
+        "leading_a": "1/(31*L)",
+        "pass": true,
+        "power_kernel_coefficient": 16,
+        "r": 16,
+        "source_log_coefficient": 224,
+        "source_relative_coefficient": "97<=7r",
+        "source_smallness": "112*eta<=1/2",
+        "two_r_minus_one": 31
+      },
+      {
+        "K": "x^(-63)/(63*L)",
+        "hazard_x_upper": 96,
+        "leading_a": "1/(63*L)",
+        "pass": true,
+        "power_kernel_coefficient": 32,
+        "r": 32,
+        "source_log_coefficient": 448,
+        "source_relative_coefficient": "193<=7r",
+        "source_smallness": "224*eta<=1/2",
+        "two_r_minus_one": 63
+      },
+      {
+        "K": "x^(-127)/(127*L)",
+        "hazard_x_upper": 192,
+        "leading_a": "1/(127*L)",
+        "pass": true,
+        "power_kernel_coefficient": 64,
+        "r": 64,
+        "source_log_coefficient": 896,
+        "source_relative_coefficient": "385<=7r",
+        "source_smallness": "448*eta<=1/2",
+        "two_r_minus_one": 127
+      }
+    ],
+    "remote_source_lock": {
+      "article_number": "127460",
+      "artifact_role": "audited_arxiv_author_manuscript",
+      "arxiv_id_version": "2204.01980v2",
+      "bytes": 278380,
+      "issue": 2,
+      "journal": "Journal of Mathematical Analysis and Applications",
+      "known_out_of_scope_typos": [
+        {
+          "arxiv_v2_text": "Corollary 1.5",
+          "intended_reference": "Corollary 1.2 / equation (1.5)",
+          "location": "Section 5.2",
+          "used_by_RH386": false
+        },
+        {
+          "arxiv_v2_text": "absolute value of pi(x)-x",
+          "location": "Theorem 1.4 equation (1.9)",
+          "used_by_RH386": false,
+          "version_of_record_text": "absolute value of pi(x)-li(x)"
+        }
+      ],
+      "license": {
+        "scope": "non-exclusive distribution permission granted to arXiv; no third-party republication grant",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "version_of_record_copyright": "Copyright 2023 Elsevier Inc. All rights reserved."
+      },
+      "locators": [
+        {
+          "equation": "(1.5)",
+          "label": "Corollary 1.2",
+          "printed_page": 2,
+          "role": "global explicit theta bound",
+          "section": "1.2"
+        },
+        {
+          "label": "Table 1",
+          "printed_page": 3,
+          "role": "A=9.39, B=1.515, C=0.8274",
+          "row": "X=log 2",
+          "section": "1.2"
+        },
+        {
+          "equation": "(1.8)",
+          "label": "Theorem 1.4",
+          "printed_page": 2,
+          "role": "global explicit Vinogradov--Korobov theta bound for x>=23",
+          "section": "1.2"
+        }
+      ],
+      "mime": "application/pdf",
+      "network_verification": {
+        "checks": [
+          "HTTP status 200",
+          "exact allowlisted final URLs; every other redirect rejected",
+          "PDF Content-Type application/pdf",
+          "PDF byte count 278380",
+          "PDF SHA-256",
+          "PDF page count 22 via pdfinfo",
+          "source tar byte count 21523",
+          "source tar SHA-256",
+          "source tar main.tex SHA-256"
+        ],
+        "default": "disabled",
+        "fixed_url_only": true,
+        "offline_build_claim": "lock-object verification only; no claim of refetching",
+        "opt_in_flag": "--network"
+      },
+      "pages": 22,
+      "pdf_vendored": false,
+      "redistributable_in_release": false,
+      "sha256": "565993a6def48b237a68a92acba604f2c42f99165e0e71e390f8e21a313b74b2",
+      "source_key": "johnston-yang-arxiv-2204.01980v2",
+      "source_main_tex_sha256": "2a79d56dbd6da46d46c6ddd8852d9fa763c716110ebf08b7b029e52346f92602",
+      "source_tar_bytes": 21523,
+      "source_tar_final_url": "https://arxiv.org/src/2204.01980v2",
+      "source_tar_sha256": "572d5739936ad3f5e867a142eccb0193b001dd2ee9b27b1d7183124071ec7edd",
+      "source_tar_url": "https://arxiv.org/src/2204.01980v2",
+      "source_tar_vendored": false,
+      "version_of_record_doi": "10.1016/j.jmaa.2023.127460",
+      "versioned_url": "https://arxiv.org/pdf/2204.01980v2",
+      "volume": 527
+    },
+    "source_theorem": {
+      "L": "log(x)",
+      "V": "L^(3/5)*(log(L))^(-1/5)",
+      "V_log_power": {
+        "denominator": 5,
+        "numerator": 3
+      },
+      "V_loglog_power": {
+        "denominator": 5,
+        "numerator": -1
+      },
+      "eta": "0.027*L^1.801*exp(-0.1853*V)",
+      "eta_coefficient": {
+        "denominator": 1000,
+        "numerator": 27
+      },
+      "eta_exponent": {
+        "denominator": 10000,
+        "numerator": 1853
+      },
+      "eta_log_power": {
+        "denominator": 1000,
+        "numerator": 1801
+      },
+      "evidence_role": "peer_reviewed_explicit_VK_theorem_not_finite_fit",
+      "locator": "Johnston--Yang Theorem 1.4 equation (1.8)",
+      "monotonicity_proof": {
+        "V_lower": "sqrt(L)",
+        "derivative_factor_lower": {
+          "denominator": 30,
+          "numerator": 17
+        },
+        "log_L_lower": 6,
+        "negative_bracket_margin_lower": {
+          "denominator": 150000,
+          "numerator": 76361
+        },
+        "pass": true,
+        "sqrt_L_strict_lower": 22
+      },
+      "source_x_min": 23,
+      "tail_monotonicity_L_min": 512,
+      "theta_bound": "abs(theta(x)-x)<=eta(log(x))*x for every x>=23"
+    },
+    "status": "RH-386_exact_proof_interface_certificate"
+  },
+  "certificate_fixture": {
+    "canonical_bytes": 29717,
+    "pass": true,
+    "sha256": "64761d3a85afdee4682982ad545d20a66d2ed69926764bcc9580e0dc8c5f8710"
+  },
+  "claim_boundary": {
+    "fixed_finite_q_before_prefix_limit": true,
+    "gates": {
+      "A_intrinsic_determinant": false,
+      "B_scattering_completion": false,
+      "C_self_adjoint_generator": false,
+      "D_von_mangoldt_weighted_prime_power_traces": false,
+      "E_completed_zeta_divisor_equality": false
+    },
+    "no_active_c11": true,
+    "no_adaptive_capacity_limit": true,
+    "no_effective_threshold": true,
+    "no_growing_clock": true,
+    "no_operator_trace_zeros_or_RH": true,
+    "route_a": "GO",
+    "route_b": "STOP_SCOPED",
+    "universally_safe_phasewise_c11_zero_only": true
+  },
+  "declarations": {
+    "ai_assistance": "AI-assisted proof and artifact auditing disclosed; author retains responsibility",
+    "author_contributions": "single author responsible for all applicable roles",
+    "competing_interests": "none",
+    "data_code_availability": "analytic proof, exact artifact, tests, schemas, and source-lock records included; remote PDF not redistributed",
+    "ethics": "not applicable",
+    "funding": "none"
+  },
+  "forbidden_claims": {
+    "active_phasewise_c11": false,
+    "adaptive_capacity_limit": false,
+    "effective_threshold": false,
+    "finite_fit_as_VK_proof": false,
+    "growing_clock": false,
+    "operator_or_trace": false,
+    "proof_of_RH": false,
+    "riemann_zero_identification": false,
+    "vendored_nonredistributable_source_pdf": false
+  },
+  "gates": {
+    "A_intrinsic_determinant": false,
+    "B_scattering_completion": false,
+    "C_self_adjoint_generator": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "mutations": {
+    "count": 24,
+    "rejected": 24,
+    "rows": [
+      {
+        "mode": "field_level_semantic",
+        "name": "eta_coefficient_0027",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "eta_log_power_1801",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "eta_exponent_01853",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "V_loglog_sign",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "source_domain_23",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "source_SHA256",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "wrong_ge_endpoint",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "missing_stieltjes_boundary",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "h_missing_log_denominator",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "hazard_missing_log_term",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "hazard_monotonicity_direction",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "hazard_integral_lower_direction",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "stieltjes_missing_2xh_plus_J",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "missing_r_coefficient",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "J_over_I_direction",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "x_squared_minus_one",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "wrong_laplace_rate",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "wrong_jensen_direction",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "wrong_K_denominator",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "degree_replaced_by_length",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "wrong_H_denominator",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "omit_H_over_L",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "degree_only_leading_firewall",
+        "payload_changed": true,
+        "rejected": true
+      },
+      {
+        "mode": "field_level_semantic",
+        "name": "redistributable_true",
+        "payload_changed": true,
+        "rejected": true
+      }
+    ],
+    "verification_mode": "field-level semantic verification; strict JSON attacks use the strict loader"
+  },
+  "paper": "RH-386",
+  "predecessor_checks": {
+    "all_pass": true,
+    "checks": {
+      "new_source_is_johnston_yang_not_rh384_pnt": true,
+      "rh384_main_hash": true,
+      "rh384_partition_regression_66": true,
+      "rh384_regression_label_reproduction_only": true,
+      "rh384_status": true
+    }
+  },
+  "source_locks": {
+    "git": {
+      "all_git_source_digest": "6247477a1744ccfe676ebd1c20b4d659c597ce0749f3d3a9a0b1c8aa2c87069d",
+      "count": 59,
+      "declared_hash_identity_pass": true,
+      "digest_contract_pass": true,
+      "entries": [
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/README.md",
+          "sha256": "dbc0041d012d6316ef6a8ffab6f05d510a1cc68414eae30c3744a7c411925c4c"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/THEOREM_LEDGER.md",
+          "sha256": "9451ee6faf1f523a62a10c85ba494b8617011dab7b8d7bc517e7c0c26aabb4ee"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/UPDATED_ROADMAP.md",
+          "sha256": "c6857ef5bc9cd88074108254fc39a93e985daae7fa545e26badbfdfc086bf28c"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/main.tex",
+          "sha256": "2129075ec4bae1c5f0f25fcd09cec273fe322d44116d51e5191e3cade4fb9f6d"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/references.bib",
+          "sha256": "ce1e5123ff7edc05c6436f2534044e7058b4a3857bf0f084971954ced3e7c184"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/results/result.json",
+          "sha256": "ca492e96bd557b966d7924ee7acca7eceb9248dafe513a674f36f78891438bdd"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/src/square_clock/core.py",
+          "sha256": "79afe7d583c3db30f876c62605a42f2ee77819028a40d01a3ec24d3259a40615"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/README.md",
+          "sha256": "8beb603782f40db86031515d3a70d82e4f76cdf10d60561062d88ff581daffe5"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/THEOREM_LEDGER.md",
+          "sha256": "7229a3969c48463724ed573b4dde1da3e8a48790ebe7663af68b1139a033c2bb"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/UPDATED_ROADMAP.md",
+          "sha256": "75c243a5ae12fbe71cdb2ce3cb3c46a8e7a61d016dd6c8dba2b98b6b9dac3464"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/main.tex",
+          "sha256": "c5d97a227398a4f1d46a39fdec73ffb86aeb9bfc0f16296be7023b187b497090"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/references.bib",
+          "sha256": "d728ca8571bfcc96e78be3b5231db83c3bb61140d0dfabb3be0b4848738673c6"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.json",
+          "sha256": "a209b922ad6235263bb5213d090a2fb0ad0bcfdd0168788e64115b33d95a4ca8"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.schema.json",
+          "sha256": "0af712350369e3f7e4a51ce5a8ee1179928e9397372b7b1040183dc3668406df"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/src/phasewise_memory/core.py",
+          "sha256": "cd3949cc0a1ece1dadab59c049c8a4d3fc170a9c7b6332b93ad62567277fd582"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/README.md",
+          "sha256": "eb241b1fd954ba689750d47dd51ae7cd5980c2bb7706165e3fcbab2e2375bc23"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/THEOREM_LEDGER.md",
+          "sha256": "c274c2a5685ba6d472d392c5097149742e432e938aeb61fd3f5b7f001a382c7a"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/UPDATED_ROADMAP.md",
+          "sha256": "8a82e86bf66248d5dda44ca806fd2c5d974530b5b7e85baac25c0aa98f41ce1d"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/main.tex",
+          "sha256": "6110b876e1b31fe79e7ff72e5058d97179575cf1dccce86e8c7c0a049d57451f"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/references.bib",
+          "sha256": "5ea4b95e74c63e47b5eb6a92564941748fb02fc7e7729efe05f52932bb657604"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.json",
+          "sha256": "e7e6bc2acc46b9346e2fdd90306e9f8c5fb18c193ed0601466bbf4e01a92be33"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.schema.json",
+          "sha256": "62bb03f0e61043bdeda0bf49afcbc0877d95115ca677e7cda20a73d955c5a57f"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/src/finite_clock_gap/core.py",
+          "sha256": "ed88dd657fcf4c3fa4ae1c2cd2d0a434770433e7cffd0b52297faab1d5459074"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/README.md",
+          "sha256": "891ebd30acfbffd90cddda3bd96719f01d7cae13eec399894b08c0c20435dae3"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/THEOREM_LEDGER.md",
+          "sha256": "a7a79197bba2a423cff77f6f74e63c8621a40c2bcef368e5ce6ce954857edcda"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/UPDATED_ROADMAP.md",
+          "sha256": "f2ea88b81441c78171a2a54d85ddc7f2a405ae78b94cac43ca6f6ae46048d703"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/main.tex",
+          "sha256": "b1025502880530602f134ea5bdc6dcde34e2cdfd18fb364cb104343d456b643a"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/references.bib",
+          "sha256": "bb61978aebc465b05e3ffda154926ad20bb15e4a475e12304cc6147903d40625"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.json",
+          "sha256": "a7a869f40af0a17656b28a07fe58e337d9b8e619d13de8bc671326912f875ffd"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.schema.json",
+          "sha256": "ed1788580270f03bdcbb43172edf149f086b76564697dd93e1556282855aad5b"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/src/prime_square_tail/core.py",
+          "sha256": "acc1e11ff57b634ec702996526f4ddd12ac58d372236a8d77202b529faca9322"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/README.md",
+          "sha256": "5f818841bb7db7c8b27e75d892a2fa6f3de549edb7456f65fb2275b82356203a"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/THEOREM_LEDGER.md",
+          "sha256": "1c835ef614fd9381c08019f0cb5358c829bafdb2e7502861649566508b4ea586"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/UPDATED_ROADMAP.md",
+          "sha256": "793e27292d6f99fc1c23a550e66b247bbc1aa1b5c0bfef266339697bf3b9e66e"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/main.tex",
+          "sha256": "929b4304390036843c5e4f0d165f3be45d683e36f2a7537a3a5d14ed197b5d0c"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/references.bib",
+          "sha256": "c8ea97c3b3626d27fc6a3ec0dca69aa87c4eb2b248ec410bc989aff0aa4f11dc"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.json",
+          "sha256": "960ef6ce017ad62b6c552ed30a41b9f0c3e41a9a217ef103c4a3f812c80a71d2"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.schema.json",
+          "sha256": "573b631820edd3b911b9792f9587fee07a03cf13ecefd03a6247d115cfa42394"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/src/two_scale_tail/core.py",
+          "sha256": "3fd8bd0233385aeb440d0703769ea6b624792aef4460ec5b887116fe3554b56e"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/README.md",
+          "sha256": "a666c7d396bb54062b761f06d95d35a3b27ddceec7ed7a6519cbfc61e7d590f3"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/THEOREM_LEDGER.md",
+          "sha256": "eb117b3e731cfc2bb9b6df0368f475d25ec0b1646f4ac7e616dd29e1d7ddd896"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/UPDATED_ROADMAP.md",
+          "sha256": "9d9e36e923e1430aeee6715684b3039ccca576360e3c5528d85fe355a088ae51"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/main.tex",
+          "sha256": "b1030a1203685121ddc99504d0d8a5b389611b41e47a1009fea70a0215ab3bb3"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/references.bib",
+          "sha256": "0cd86c21c7b65399043ec4994baecb3501b8e7e61294b211131488a9fe9e0dad"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/results/result.json",
+          "sha256": "519f585f4cf867c0d41ae674c3fb16bc0fbcf529af32131ad1afbba6692355ab"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/results/result.schema.json",
+          "sha256": "8985f41cd7043b58d3b2fa9ee387bd6da4cb9d6156d3e5226acf57123674c118"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/src/euler_tail_normal_form/core.py",
+          "sha256": "7f976ebb09374d0df339a71947e4c4dd7d49c7bc226ab05ac7de481f1e26defb"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json",
+          "sha256": "3cf3261c0c2c6fbe7511b16615f032edfcbd6b6b1e0c73f5e2ef932a1e6a694c"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json",
+          "sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-2-exact-prime-kneading-spectral-stability/main.tex",
+          "sha256": "5f2538e648c2ed850b94a03c072a3526f31bcc0c70c90639f65601507f52e532"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-2-exact-prime-kneading-spectral-stability/references.bib",
+          "sha256": "bd86702192cd4bc6d1c2975c7da4b305541e0c5943f13c5edf044686f0faf2ab"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_standard8",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/README.md",
+          "sha256": "ee5198cd9bbcd72713922942be4313bab973cb3d7c289c614a08088fae7a6a99"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_standard8",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/THEOREM_LEDGER.md",
+          "sha256": "7f823d243b2a9d02687c4460ad389f6fca7b2c6a01bae1ddeb4a5c78dbca969a"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_standard8",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/UPDATED_ROADMAP.md",
+          "sha256": "23acf4d082ad4e16728544533ec1f99ec38a47f8e3cc6b10713a3db72d154f33"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_standard8",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/main.tex",
+          "sha256": "f38a39739ec472c3d0c846638739e9e5cb57b6679f60f8f90ba1e2a6188186ef"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_standard8",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/references.bib",
+          "sha256": "7eb930f1717888b500e6c8a26ba391261ba302c9b259fec4a94178cfafe69f48"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_standard8",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/results/result.json",
+          "sha256": "4365c693461cdc4d5d986c97e7dcf4bbfcac6ff2136e1a20779d4b4e46078c69"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_standard8",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/results/result.schema.json",
+          "sha256": "04cac47501a66e6c82640517cc980e0efc8f5142e682dd1c1216bd6cd13cefbf"
+        },
+        {
+          "commit": "386b66a55c9263353c7d407fd712be7e6279f1e6",
+          "group": "rh384_standard8",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/src/prime_tail_scales/core.py",
+          "sha256": "ea3473d63e25351d7bd6737eeb0bc8309dcf5f19746a89c4ced7c0d1f1713ebc"
+        }
+      ],
+      "group_digests": {
+        "rh384_immutable_closure": "a070fef658256fa4744d88faa7bf56f1308979e8ee20393c2fd78d84a127c970",
+        "rh384_standard8": "82bbab8d99ae27b4629aeab53c8681c2c4e8b8bfa713b728fda3d9b320027aae"
+      },
+      "group_sizes": {
+        "rh384_immutable_closure": 51,
+        "rh384_standard8": 8
+      },
+      "live_file_identity_pass": true,
+      "mutable_root_files_excluded": true,
+      "pass": true,
+      "release_blob_identity_pass": true,
+      "status": "RH-386_immutable_git_source_lock"
+    },
+    "git_count": 59,
+    "logical_count": 60,
+    "logical_source_digest": "031c79e105e71a463dfebcc079bd3a31a383322c0ad6c80d800f14b963869bce",
+    "pass": true,
+    "remote": {
+      "count": 1,
+      "lock_object_sha256": "d53b93212b7c5b5b6b3f7e890099c48ce8e35f2bff9bdd49f9c330a9b5039786",
+      "network_fetch_performed": false,
+      "objects": [
+        {
+          "article_number": "127460",
+          "artifact_role": "audited_arxiv_author_manuscript",
+          "arxiv_id_version": "2204.01980v2",
+          "bytes": 278380,
+          "issue": 2,
+          "journal": "Journal of Mathematical Analysis and Applications",
+          "known_out_of_scope_typos": [
+            {
+              "arxiv_v2_text": "Corollary 1.5",
+              "intended_reference": "Corollary 1.2 / equation (1.5)",
+              "location": "Section 5.2",
+              "used_by_RH386": false
+            },
+            {
+              "arxiv_v2_text": "absolute value of pi(x)-x",
+              "location": "Theorem 1.4 equation (1.9)",
+              "used_by_RH386": false,
+              "version_of_record_text": "absolute value of pi(x)-li(x)"
+            }
+          ],
+          "license": {
+            "scope": "non-exclusive distribution permission granted to arXiv; no third-party republication grant",
+            "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+            "version_of_record_copyright": "Copyright 2023 Elsevier Inc. All rights reserved."
+          },
+          "locators": [
+            {
+              "equation": "(1.5)",
+              "label": "Corollary 1.2",
+              "printed_page": 2,
+              "role": "global explicit theta bound",
+              "section": "1.2"
+            },
+            {
+              "label": "Table 1",
+              "printed_page": 3,
+              "role": "A=9.39, B=1.515, C=0.8274",
+              "row": "X=log 2",
+              "section": "1.2"
+            },
+            {
+              "equation": "(1.8)",
+              "label": "Theorem 1.4",
+              "printed_page": 2,
+              "role": "global explicit Vinogradov--Korobov theta bound for x>=23",
+              "section": "1.2"
+            }
+          ],
+          "mime": "application/pdf",
+          "network_verification": {
+            "checks": [
+              "HTTP status 200",
+              "exact allowlisted final URLs; every other redirect rejected",
+              "PDF Content-Type application/pdf",
+              "PDF byte count 278380",
+              "PDF SHA-256",
+              "PDF page count 22 via pdfinfo",
+              "source tar byte count 21523",
+              "source tar SHA-256",
+              "source tar main.tex SHA-256"
+            ],
+            "default": "disabled",
+            "fixed_url_only": true,
+            "offline_build_claim": "lock-object verification only; no claim of refetching",
+            "opt_in_flag": "--network"
+          },
+          "pages": 22,
+          "pdf_vendored": false,
+          "redistributable_in_release": false,
+          "sha256": "565993a6def48b237a68a92acba604f2c42f99165e0e71e390f8e21a313b74b2",
+          "source_key": "johnston-yang-arxiv-2204.01980v2",
+          "source_main_tex_sha256": "2a79d56dbd6da46d46c6ddd8852d9fa763c716110ebf08b7b029e52346f92602",
+          "source_tar_bytes": 21523,
+          "source_tar_final_url": "https://arxiv.org/src/2204.01980v2",
+          "source_tar_sha256": "572d5739936ad3f5e867a142eccb0193b001dd2ee9b27b1d7183124071ec7edd",
+          "source_tar_url": "https://arxiv.org/src/2204.01980v2",
+          "source_tar_vendored": false,
+          "version_of_record_doi": "10.1016/j.jmaa.2023.127460",
+          "versioned_url": "https://arxiv.org/pdf/2204.01980v2",
+          "volume": 527
+        }
+      ],
+      "pass": true,
+      "redistributable_in_release": false
+    },
+    "remote_count": 1
+  },
+  "status": "RH-386_VK_growing_order_prime_tail_uniformization_certified",
+  "theorem": {
+    "conditions": "d*eta+d/x^2->0; leading formula additionally requires H/L->0",
+    "leading_kernel": "abs(log(I_2r/K_r))<=1/((2r-1)L)",
+    "partition_exact": "abs(log(P_lambda/J_lambda))<=14d*eta",
+    "partition_leading": "add H/L",
+    "partition_power": "add d/(x^2-1)",
+    "power_kernel": "0<=log(J_r/I_2r)<=r/(x^2-1); hence <=4r/x^2 under the declared coarse condition",
+    "refined": "abs(log(P_lambda/M_lambda)+H/L)<=14d*eta+d/(x^2-1)+2H2/L^2",
+    "sharpness": "lambda=1^k and k/L->c gives P_lambda/M_lambda->exp(-c)",
+    "single_r": "abs(log(P_r/J_r))<=14r*eta when 7r*eta<=1/2",
+    "single_r_uniform": "log R=o(V), or R<=exp((0.1853-delta)V) for fixed delta in (0,0.1853)",
+    "sufficient": "log d=o(V), H=o(L)",
+    "variables": "x=p_y, L=log(x), V=L^(3/5)*(log L)^(-1/5), eta=0.027*L^1.801*exp(-0.1853*V)"
+  },
+  "title": "Vinogradov--Korobov Growing-Order Prime-Tail Uniformization"
+}
