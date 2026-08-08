@@ -1,7 +1,85 @@
 # TPC HANDOFF
 
 更新时间：2026-08-08
-交接状态：`BOLD_CHANNEL_V31_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V32_SEALED_FOR_NEW_SESSION`
+
+第 79 节在 V31 同一个 literal tagged object 上完成一次真正的 B 路收缩。令
+
+~~~text
+R_x(alpha)=P_x(alpha)-L_x(alpha),
+hat(R_x)(h)=e_x(h),
+Y0=2^ceil(log2(H)), H<=Y0<2H.                         (V32.1)
+~~~
+
+把圆周预先分成 `2Y` 个 aligned half-open cells，并只模掉一个 global complex
+constant：
+
+~~~text
+q_Y,j(c)=int_(I_Y,j)|R_x(alpha)-c|dalpha,
+Q_Y^osc(R_x)=inf_(c in C) Y sum_j q_Y,j(c)^2.         (V32.2)
+~~~
+
+常数 quotient 只改变 Fourier zero mode；不得改成逐 cell constants。Fejer kernel
+与 aligned cell Schur bound 给
+
+~~~text
+sum_(0<|h|<=Y)|e_x(h)|^2 <=16 Q_Y^osc(R_x),           (V32.3)
+Q_(2Y)^osc(R_x)<=2 Q_Y^osc(R_x).                      (V32.4)
+~~~
+
+因此只需在单一 base scale `Y0` 证明
+
+~~~text
+Q_Y0^osc(R_x)<<x^(2+2sigma+o(1)),
+0<=sigma<13/4800,                                     (V32.5)
+~~~
+
+就能由 Schwartz shells 的 `2^k*2^(-Ak)` 几何求和支付完整 weighted offzero B：
+
+~~~text
+N_e<<x^(1+sigma+o(1)),
+|E(e_x)|<<x^(191/192+sigma+o(1)),
+eta_E=13/4800-sigma>0.                                (V32.6)
+~~~
+
+V31 的 `D_lambda+cell cross-flatness` 严格推出 (V32.5)，反向被 disjoint-factor 与
+narrow-spike fixtures 否定；所以 V32 删除了 hard major、full Parseval 与 uniform
+all-scale cell gate 的过付。若 `R_x` 是任意常数，则 `Q_Y0^osc=0` 而
+`hat(R_x)(0)=S_x^physical` 仍任意，故 terminal A 完整保留。conditional endpoint
+仍为
+
+~~~text
+eta_*<min(eta_R,19/2400,13/4800-sigma).               (V32.7)
+~~~
+
+V32 页首只摘要核心边界；完整 47-row canonical registry 在 Handoff 第 24、79 节、
+Compass 第 33 节、big-road README 第 32 节与 V32 proof 第 10 节逐字冻结。当前核心为
+
+~~~text
+V32_SINGLE_SCALE_TO_ALL_SCHWARTZ_SHELLS
+  = PROVED_EXACT_A_GREATER_THAN_1_GEOMETRIC_REASSEMBLY
+V32_BASE_SCALE_OSCILLATION_BOUND = SELECTED_PRIMARY_OPEN_NEW_THEOREM
+V32_ZERO_AXIS_FIREWALL
+  = PROVED_EXACT_CONSTANT_RESIDUAL_HAS_Q_ZERO_AND_AXIS_ARBITRARY
+V32_A_TERMINAL_COVARIANCE = RETAINED_SELECTED_TERMINAL_OPEN_NEW_THEOREM
+V32_ARITHMETIC_ADVANCE = NO
+V32_FIXED_ATOM_CREDIT = 0
+V32_STRICT_1_OVER_400 = UNPAID
+V32_L2 = NONE
+TPC_207_TRIGGER = false                               (V32.8)
+~~~
+
+proof 为
+`research/tpc-big-road/bridge_b_base_scale_residual_oscillation_compiler.md`，
+checker 为
+`research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py`。当前 checker
+冻结 43/47/5/4 contract/registry/source/dependency rows，registry SHA-256
+`8d654f428dc5452f31b0c86d3e0e41270e0dc69df372bc3329c9b968ac63f41b`，并执行
+88/97/12/10/131 mutations，共 338 个 unique reject actions。V32 是不编号
+big-road release；不创建 TPC-207、paper、PDF 或 build output。
+
+以下 V31 页首块作为已封存的直接上游快照保留；current truth 由上面的 V32 摘要、
+第 24 节与第 79 节控制。
 
 第 78 节继续冻结 V30 的同一 literal pair：
 
@@ -1898,18 +1976,17 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V31_20260808_WHOLE_OBJECT_MODEL_MAJOR_MISMATCH_COMPILER_NO_ARITHMETIC_TRIGGER`
+`TPC_BIG_ROAD_V32_20260808_SINGLE_SCALE_RESIDUAL_OSCILLATION_COMPILER_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V31_MODEL_LEVEL_MAJOR_MISMATCH_ENERGY_AND_MINOR_CROSS_FLATNESS`；
+`V32_BASE_SCALE_COLLECTIVE_OSCILLATION_FOR_LITERAL_MASTER_HYBRID_OCCURRENCE_EMITTER`；
 当前 first subgates：
-`V31_MAJOR_MISMATCH_ENERGY` 与
-`V31_CELL_LINF_CROSS_FLATNESS`；
+`V32_BASE_SCALE_OSCILLATION_BOUND`；
 已支付并可复用的 source-backed local subgate 为
 `V30_LOCAL_BC_CARRIER`；已支付的 exact q-local major model为
 `V30_QLOCAL_MODEL_BOUND`
-（第 78 节控制；既有 local source只有在第 32.6 节或
+（第 79 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--78 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--79 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -1921,6 +1998,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_base_scale_residual_oscillation_compiler.md`、
+`research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py`、
 `research/tpc-big-road/bridge_b_whole_object_major_mismatch_and_terminal_compiler.md`、
 `research/tpc-big-road/tpc_bridge_b_whole_object_major_mismatch_checker.py`、
 `research/tpc-big-road/bridge_b_terminal_major_cross_flatness_and_equivariant_quotient.md`、
@@ -1948,7 +2027,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--78 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--79 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2010,11 +2089,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V31 gate及其 V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；十八次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V32 gate及其 V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；二十次必须都为零，且每一对 stdout
 byte-identical：
 
 ```powershell
+python -B research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_whole_object_major_mismatch_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_whole_object_major_mismatch_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_terminal_major_cross_flatness_checker.py --check
@@ -3902,6 +3983,40 @@ compiler；surviving primary estimates为 `V31_MAJOR_MISMATCH_ENERGY` 与
 `V31_CELL_LINF_CROSS_FLATNESS`，terminal gate为 `V31_A_TERMINAL_COVARIANCE`。
 完整 theorem出现前 arithmetic advance仍为 `NO`。精确 proof、checker与 release
 boundary见第 78 节。
+
+2026-08-08 的 Bridge B V32 base-scale residual oscillation审计新增且仅新增以下十个
+scoped STOP cells：
+
+~~~text
+V32_CELL_DEPENDENT_CONSTANTS
+  = STOP_SCOPED_NONZERO_FOURIER_CONTAMINATION
+V32_V32_GATE_IMPLIES_V31_PAIR
+  = STOP_SCOPED_DISJOINT_FACTOR_AND_NARROW_SPIKE_FALSIFIERS
+V32_FULL_PARSEVAL_EQUIVALENCE
+  = STOP_SCOPED_SINGLE_BASE_SCALE_ONLY
+V32_UNIFORM_ALL_SCALE_SAME_BOUND
+  = STOP_SCOPED_TERMINAL_SCALE_OVERPAYMENT
+V32_OFFZERO_B_ALONE
+  = STOP_SCOPED_TERMINAL_A_SURVIVES
+V32_MRT_DIRECT_ATTACHMENT
+  = STOP_SCOPED_NO_LITERAL_RESIDUAL_OSCILLATION_BOUND
+V32_GUTH_MAYNARD_DIRECT_ATTACHMENT
+  = STOP_SCOPED_MULTIPLICATIVE_PHASE_MARGINAL_LARGE_VALUES
+V32_HARPER_BDH_DIRECT_ATTACHMENT
+  = STOP_SCOPED_SINGLE_SEQUENCE_MODULUS_AVERAGE_WRONG_NORM
+V32_BAZIN_DIRECT_ATTACHMENT
+  = STOP_SCOPED_TYPE_I_II_RATIONAL_TUBES_NO_LITERAL_EMITTER
+V32_GRANVILLE_LAMZOURI_DIRECT_ATTACHMENT
+  = STOP_SCOPED_ONE_BOUNDED_MULTIPLICATIVE_WRONG_COEFFICIENT
+~~~
+
+前五项阻止把 zero-mode quotient、单尺度 cell-square或 B 门冒充 full residual energy与
+terminal scalar；后五项阻止把当前 primary-source theorem改名为 literal MASTER/hybrid
+whole emitter。`V32_FEJER_BAND_CELL_BOUND`、`V32_DYADIC_REFINEMENT` 与
+`V32_SINGLE_SCALE_TO_ALL_SCHWARTZ_SHELLS` 是已证明的 exact compiler；唯一新算术门为
+`V32_BASE_SCALE_OSCILLATION_BOUND`，terminal gate仍为
+`V32_A_TERMINAL_COVARIANCE`。两门都出现前 arithmetic advance仍为 `NO`。精确 proof、
+checker与 release boundary见第 79 节。
 
 2026-08-08 的 Bridge B V30 q-local major、cell cross-flatness 与 equivariant
 quotient审计新增且仅新增以下七个 scoped STOP cells：
@@ -7598,7 +7713,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V31 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V32 current）
 
 ```text
 进入仓库：
@@ -7606,6 +7721,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_base_scale_residual_oscillation_compiler.md、
+research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py、
 research/tpc-big-road/bridge_b_whole_object_major_mismatch_and_terminal_compiler.md、
 research/tpc-big-road/tpc_bridge_b_whole_object_major_mismatch_checker.py、
 research/tpc-big-road/bridge_b_terminal_major_cross_flatness_and_equivariant_quotient.md、
@@ -7636,7 +7753,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--78 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--79 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -7852,6 +7969,53 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V32_MAXIMUM_CLAIM = EXACT_SINGLE_SCALE_ZERO_AXIS_QUOTIENTED_WIENER_CELL_COMPILER_FOR_THE_LITERAL_WHOLE_RESIDUAL
+V32_ROUTE_ADVANCE = YES
+V32_ARITHMETIC_ADVANCE = NO
+V32_FIXED_ATOM_CREDIT = 0
+V32_STRICT_1_OVER_400 = UNPAID
+V32_L2 = NONE
+V32_TPC_207_TRIGGER = false
+V32_NUMBERED_RELEASE = NO
+V32_SELECTED_RESEARCH_ROUTE = B_SINGLE_SCALE_RESIDUAL_OSCILLATION_THEN_A_TERMINAL_COVARIANCE_THEN_C_SYMMETRY_BREAK
+V32_WHOLE_OBJECT_SPACE = SAME_LITERAL_TAGGED_P_MINUS_OCCURRENCE_NATIVE_L
+V32_LITERAL_OCCURRENCE_EMITTER = PROVED_EXACT_MASTER_MASKED_PLUS2_MINUS1_MOBIUS_LOG_HYBRID_FORM
+V32_FOURIER_COEFFICIENT_IDENTITY = PROVED_EXACT_HAT_R_PLUS_H_EQUALS_E_H
+V32_PHYSICAL_DIFFERENCE_SUPPORT = PROVED_EXACT_ABS_H_LESS_THAN_X_OVER_2
+V32_BASE_SCALE = Y0_SMALLEST_DYADIC_WITH_H_LE_Y0_LESS_THAN_2H
+V32_ALIGNED_CELL_PARTITION = PROVED_EXACT_2Y_HALF_OPEN_CELLS
+V32_GLOBAL_CONSTANT_QUOTIENT = PROVED_EXACT_COMPLEX_ONE_CONSTANT_PER_SCALE
+V32_QUOTIENT_INFIMUM = PROVED_ATTAINED_CONTINUOUS_COERCIVE
+V32_QUOTIENT_TRANSLATION_INVARIANCE = PROVED_EXACT_ZERO_FOURIER_ONLY
+V32_CELL_DEPENDENT_CONSTANTS = STOP_SCOPED_NONZERO_FOURIER_CONTAMINATION
+V32_FEJER_KERNEL = PROVED_EXACT_POSITIVE_TRIANGULAR_KERNEL
+V32_FEJER_BAND_CELL_BOUND = PROVED_EXACT_SAFE_CONSTANT_16
+V32_DYADIC_REFINEMENT = PROVED_EXACT_Q_2Y_LE_2_Q_Y
+V32_SINGLE_SCALE_TO_ALL_SCHWARTZ_SHELLS = PROVED_EXACT_A_GREATER_THAN_1_GEOMETRIC_REASSEMBLY
+V32_BASE_SCALE_OSCILLATION_BOUND = SELECTED_PRIMARY_OPEN_NEW_THEOREM
+V32_BASE_SCALE_OSCILLATION_EXPONENT = OPEN_SIGMA_STRICTLY_BELOW_13_OVER_4800
+V32_WEIGHTED_RESIDUAL_NORM = PROVED_CONDITIONAL_X_1_PLUS_SIGMA
+V32_E_ERROR_EXPONENT = PROVED_CONDITIONAL_191_OVER_192_PLUS_SIGMA
+V32_E_ENDPOINT_MARGIN = PROVED_EXACT_13_OVER_4800_MINUS_SIGMA
+V32_V31_PAIR_IMPLIES_V32_GATE = PROVED_EXACT_MINKOWSKI_CELL_COMPILER
+V32_V32_GATE_IMPLIES_V31_PAIR = STOP_SCOPED_DISJOINT_FACTOR_AND_NARROW_SPIKE_FALSIFIERS
+V32_FULL_PARSEVAL_EQUIVALENCE = STOP_SCOPED_SINGLE_BASE_SCALE_ONLY
+V32_UNIFORM_ALL_SCALE_SAME_BOUND = STOP_SCOPED_TERMINAL_SCALE_OVERPAYMENT
+V32_ZERO_AXIS_FIREWALL = PROVED_EXACT_CONSTANT_RESIDUAL_HAS_Q_ZERO_AND_AXIS_ARBITRARY
+V32_OFFZERO_B_ALONE = STOP_SCOPED_TERMINAL_A_SURVIVES
+V32_QLOCAL_MODEL_BOUND = RETAINED_PROVED_ELEMENTARY_X_95_OVER_96_PLUS_O1
+V32_A_TERMINAL_COVARIANCE = RETAINED_SELECTED_TERMINAL_OPEN_NEW_THEOREM
+V32_CONDITIONAL_ENDPOINT_FORMULA = MIN_ETA_R_19_OVER_2400_13_OVER_4800_MINUS_SIGMA
+V32_MRT_DIRECT_ATTACHMENT = STOP_SCOPED_NO_LITERAL_RESIDUAL_OSCILLATION_BOUND
+V32_GUTH_MAYNARD_DIRECT_ATTACHMENT = STOP_SCOPED_MULTIPLICATIVE_PHASE_MARGINAL_LARGE_VALUES
+V32_HARPER_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_SINGLE_SEQUENCE_MODULUS_AVERAGE_WRONG_NORM
+V32_BAZIN_DIRECT_ATTACHMENT = STOP_SCOPED_TYPE_I_II_RATIONAL_TUBES_NO_LITERAL_EMITTER
+V32_GRANVILLE_LAMZOURI_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_BOUNDED_MULTIPLICATIVE_WRONG_COEFFICIENT
+V32_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_08
+V32_NEXT_THEOREM = BASE_SCALE_COLLECTIVE_OSCILLATION_FOR_LITERAL_MASTER_HYBRID_OCCURRENCE_EMITTER
+V32_FIRST_FATAL = BASE_SCALE_COLLECTIVE_OSCILLATION_BOUND_FOR_LITERAL_MASTER_HYBRID_OCCURRENCE_EMITTER
+V32_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
+V32_PROVENANCE_CASCADE = REQUIRED
 V31_MAXIMUM_CLAIM = EXACT_WHOLE_OBJECT_MODEL_LEVEL_MAJOR_ATTACHMENT_COMPILER_PLUS_CONDITIONAL_ENDPOINT_BUDGET_PLUS_EQUIVARIANT_QUOTIENT_NO_GO
 V31_ROUTE_ADVANCE = YES
 V31_ARITHMETIC_ADVANCE = NO
@@ -8282,8 +8446,11 @@ smooth main，证明 local carrier在 joint \(J+E\) 中 exact cancellation，并
 exact hard-shell、CRT、Möbius、smooth 与 Bettin--Chandee编译，并证明 local bound
 `x^(1891/1920+o(1))`。V30 进一步把 q-local formal Euler model逐 occurrence重组并付到
 `x^(95/96+o(1))`，但 residual diagonal仍以系数 `1-O(x^(-1/3+o(1)))` 保留 physical
-`S_x`。同一轮又把 MRT reduction精确压成 cell-product certificate：当前首要研究门是
-`V31_MAJOR_MISMATCH_ENERGY` 与 `V31_CELL_LINF_CROSS_FLATNESS`。B 门支付后，
+`S_x`。V31 把 MRT reduction压成 model-major mismatch 与 cell-product 两门；V32 又以
+Fejer band-to-cell bound和 dyadic refinement把它们严格压成同一 literal residual 的单尺度
+`V32_BASE_SCALE_OSCILLATION_BOUND`。只需在 `Y_0` 证明一个 global-constant quotient
+cell-square theorem；不得把它扩成 terminal-scale global Parseval norm，也不得改用逐 cell
+constants。B 门支付后，
 `S_x=J(e_x)+E(e_x)` 使 A 门与原标量 terminal-equivalent；不得把 A 写成更容易的
 preliminary，也不得把已经付清的 local carriers反复登记为 global progress。全部路线必须保持
 fixed `h0=2`、literal raw row、完整 `B_x(D)`、corrected `kappa(n)`、typed
@@ -8331,6 +8498,7 @@ python research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_joint_major_minor_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_terminal_major_cross_flatness_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_whole_object_major_mismatch_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -12212,6 +12380,290 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 79. 2026-08-08 V32：base-scale residual oscillation 与 quotient Fejer compiler
+
+### 79.1 范围、结论与 claim ceiling
+
+V32 不改 fixed physical `h0=2`、ordered HB2 系数、MASTER route、hybrid term、hard
+shell、Jutila normalization或 terminal q-local gate。它只在 V31 的同一 literal tagged
+object上证明一个新的 exact compiler，并把 B 路所需新算术压成一个单尺度 theorem：
+
+~~~text
+MAXIMUM_CLAIM
+  = EXACT_SINGLE_SCALE_ZERO_AXIS_QUOTIENTED_WIENER_CELL_COMPILER_FOR_THE_LITERAL_WHOLE_RESIDUAL
+ROUTE_ADVANCE = YES
+ARITHMETIC_ADVANCE = NO
+FIXED_ATOM_CREDIT = 0
+STRICT_1_OVER_400 = UNPAID
+L2 = NONE
+TPC_207_TRIGGER = false
+NUMBERED_RELEASE = NO
+~~~
+
+### 79.2 Frozen whole residual 与 occurrence emitter
+
+保留
+
+\[
+P_x=\mathcal B_x\overline{\mathcal W_x},\qquad
+R_x=P_x-L_x,\qquad
+\widehat R_x(h)=e_x(h)=r_x(h)-M_x^{\rm loc}(h),
+\tag{79.1}
+\]
+
+其中 Fourier 约定为 `+h`，所以 physical row满足 `u=t+h`；相关 shift `h` 与已经冻入
+`w_x^{(z)}(u)=Lambda(u+2)-b_x^{(z)}(u)` 的 fixed gap `h0=2` 不得混同。对 root
+`s=1`、`t_o in I_x` 的 labelled HB2 occurrences，令
+
+\[
+a_o^M={\bf1}_{\operatorname{route}(o)=\mathrm{MASTER}}
+c_{j(o)}\prod_i\mu(e_i(o)){\log f_1(o)\over\log t_o},
+\quad c_1=2,\quad c_2=-1.
+\tag{79.2}
+\]
+
+则无 triangle 地精确有
+
+\[
+R_x(\alpha)=\sum_o a_o^M\sum_{u\in I_x}
+\{w_x^{(z)}(u)-\Delta_{m(o),z}(u-t_o)\}e((t_o-u)\alpha).
+\tag{79.3}
+\]
+
+这保留全部 unit slots、Mobius/log weights、occurrence multiplicity及 prime/hybrid
+combination；H2只由显式 MASTER mask删除，`s>=2` perfect powers仍走既有独立 payment。
+
+### 79.3 单尺度 quotient Wiener functional
+
+令
+
+\[
+H=x^{21/32},\qquad Y_0=2^{\lceil\log_2H\rceil},\qquad H\le Y_0<2H,
+\tag{79.4}
+\]
+
+并把 circle预先切成 `2Y` 个 aligned half-open cells
+`I_(Y,j)=[j/(2Y),(j+1)/(2Y))`。只允许一个 global complex constant：
+
+\[
+\mathfrak Q_Y^{\rm osc}(R)=
+\inf_{c\in\mathbb C}Y\sum_{j=0}^{2Y-1}
+\left(\int_{I_{Y,j}}|R(\alpha)-c|\,d\alpha\right)^2.
+\tag{79.5}
+\]
+
+该 infimum由 continuity/coercivity达到，并在 `R -> R+C` 下 exact invariant。逐 cell
+constants会制造非零 Fourier modes，严格禁止。V32唯一新算术门为
+
+\[
+\boxed{\mathfrak Q_{Y_0}^{\rm osc}(R_x)
+\ll x^{2+2\sigma+o(1)},\qquad 0\le\sigma<{13\over4800}.}
+\tag{79.6}
+\]
+
+它必须在查看 target saving前作为同一 literal whole-object theorem证明；当前仍 OPEN。
+
+### 79.4 Fejer band-to-cell 与 dyadic refinement
+
+positive triangular Fejer kernel、aligned-cell Schur bound及同一 global constant给出安全接口
+
+\[
+\sum_{0<|h|\le Y}|e_x(h)|^2
+\le16\mathfrak Q_Y^{\rm osc}(R_x).
+\tag{79.7}
+\]
+
+父 cell是两个 child cells的 disjoint union，所以
+
+\[
+\mathfrak Q_{2Y}^{\rm osc}(R)\le2\mathfrak Q_Y^{\rm osc}(R).
+\tag{79.8}
+\]
+
+因此不需要对所有 scales重新假设同样 bound。由 `|widehat(psi)(h/H)|<<_A
+(1+|h|/H)^(-A)`、`A>1`，第 `k` 层只损 `2^k 2^(-Ak)`，从而
+
+\[
+\sum_{0<|h|<x/2}|\widehat\psi_+(h/H)|\,|e_x(h)|^2
+\ll_\psi\mathfrak Q_{Y_0}^{\rm osc}(R_x).
+\tag{79.9}
+\]
+
+把同样 bound要求到 `Y asymp x`会过付为 global off-zero Parseval energy；V32只声明
+base scale `Y0`。
+
+### 79.5 Endpoint 与 terminal firewall
+
+(79.6)条件下
+
+\[
+\mathcal N_e\ll x^{1+\sigma+o(1)},\qquad
+|E(e_x)|\ll x^{191/192+\sigma+o(1)},\qquad
+\eta_E={13\over4800}-\sigma>0.
+\tag{79.10}
+\]
+
+但若 `R_x`为任意常数 `T`，则 `Q_Y0^osc=0` 而 `hat(R_x)(0)=T`仍任意。因此 B
+绝不支付 physical axis，且
+
+\[
+S_x^{\rm physical}=J(e_x)+E(e_x),\qquad
+J(e_x)=\mathfrak R_x^{q\mathrm{loc}}+O(x^{95/96+o(1)})
+\tag{79.11}
+\]
+
+保持原样。若 terminal theorem另给任意 `eta_R>0`，conditional whole-object saving可取
+
+\[
+0<\eta_*<\min\left\{\eta_R,{19\over2400},
+{13\over4800}-\sigma\right\}.
+\tag{79.12}
+\]
+
+### 79.6 与 V31 两门的严格关系
+
+取 `c=0`，在 V31 model-major/complement上分解每个 cell的 `|P_x-L_x|`，由 cell
+Cauchy--Schwarz与 Minkowski得到
+
+\[
+\sqrt{\mathfrak Q_Y^{\rm osc}(R_x)}
+\le\sqrt{\mathscr D_\lambda/2}
++\sqrt{Y\|C_Y\|_1\|C_Y\|_\infty}+\lambda/\sqrt2.
+\tag{79.13}
+\]
+
+故 V31 pair严格推出 V32 gate；反向不成立。disjoint factor subatoms可令
+`P=B conjugate(W)=0`但 marginal L2 product任意大，narrow spike又可令 cell L1-square
+远小于 full L2。V32是更弱的 sufficient whole-object gate，不是 V31 pair或 full
+Parseval的 equivalent rewrite。
+
+### 79.7 Primary-source ceiling
+
+MRT `arXiv:1707.01315v3` Proposition 3.1只给 arbitrary finite pair/measurable major的
+abstract reduction；Guth--Maynard `2405.20552v2`是 multiplicative-phase Dirichlet
+polynomial large values；Harper `2412.19644v1`是单序列 BDH/AP modulus average；Bazin
+`2607.15137v1`是特定 Type-I/II rational tubes；Granville--Lamzouri
+`2604.02306v1`是单个 1-bounded multiplicative sequence。无一 source接受 (79.3) 的
+ordered `+2,-1`、MASTER mask、hybrid、hard shell、axes及一个 collective outer norm并证明
+(79.6)。Fejer/refinement compiler是 repository-derived；direct source attachment为
+`NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_08`。
+
+### 79.8 Executable fixtures
+
+checker冻结：normalized `Z/4Z` quotient minimizer与 off-zero Fourier energy；global
+translation invariance；constant zero-axis firewall；八原子 nested refinement；V31 full-L2
+overpayment；disjoint-factor与 narrow-spike strictness；Fejer row sums；Schwartz shell ratio；
+以及保留 MASTER mask与 `+h` sign的 signed occurrence emitter。它们只认证 type、sign、
+normalization与 strictness，不给 growing arithmetic estimate。
+
+### 79.9 Canonical registry
+
+~~~text
+V32_MAXIMUM_CLAIM = EXACT_SINGLE_SCALE_ZERO_AXIS_QUOTIENTED_WIENER_CELL_COMPILER_FOR_THE_LITERAL_WHOLE_RESIDUAL
+V32_ROUTE_ADVANCE = YES
+V32_ARITHMETIC_ADVANCE = NO
+V32_FIXED_ATOM_CREDIT = 0
+V32_STRICT_1_OVER_400 = UNPAID
+V32_L2 = NONE
+V32_TPC_207_TRIGGER = false
+V32_NUMBERED_RELEASE = NO
+V32_SELECTED_RESEARCH_ROUTE = B_SINGLE_SCALE_RESIDUAL_OSCILLATION_THEN_A_TERMINAL_COVARIANCE_THEN_C_SYMMETRY_BREAK
+V32_WHOLE_OBJECT_SPACE = SAME_LITERAL_TAGGED_P_MINUS_OCCURRENCE_NATIVE_L
+V32_LITERAL_OCCURRENCE_EMITTER = PROVED_EXACT_MASTER_MASKED_PLUS2_MINUS1_MOBIUS_LOG_HYBRID_FORM
+V32_FOURIER_COEFFICIENT_IDENTITY = PROVED_EXACT_HAT_R_PLUS_H_EQUALS_E_H
+V32_PHYSICAL_DIFFERENCE_SUPPORT = PROVED_EXACT_ABS_H_LESS_THAN_X_OVER_2
+V32_BASE_SCALE = Y0_SMALLEST_DYADIC_WITH_H_LE_Y0_LESS_THAN_2H
+V32_ALIGNED_CELL_PARTITION = PROVED_EXACT_2Y_HALF_OPEN_CELLS
+V32_GLOBAL_CONSTANT_QUOTIENT = PROVED_EXACT_COMPLEX_ONE_CONSTANT_PER_SCALE
+V32_QUOTIENT_INFIMUM = PROVED_ATTAINED_CONTINUOUS_COERCIVE
+V32_QUOTIENT_TRANSLATION_INVARIANCE = PROVED_EXACT_ZERO_FOURIER_ONLY
+V32_CELL_DEPENDENT_CONSTANTS = STOP_SCOPED_NONZERO_FOURIER_CONTAMINATION
+V32_FEJER_KERNEL = PROVED_EXACT_POSITIVE_TRIANGULAR_KERNEL
+V32_FEJER_BAND_CELL_BOUND = PROVED_EXACT_SAFE_CONSTANT_16
+V32_DYADIC_REFINEMENT = PROVED_EXACT_Q_2Y_LE_2_Q_Y
+V32_SINGLE_SCALE_TO_ALL_SCHWARTZ_SHELLS = PROVED_EXACT_A_GREATER_THAN_1_GEOMETRIC_REASSEMBLY
+V32_BASE_SCALE_OSCILLATION_BOUND = SELECTED_PRIMARY_OPEN_NEW_THEOREM
+V32_BASE_SCALE_OSCILLATION_EXPONENT = OPEN_SIGMA_STRICTLY_BELOW_13_OVER_4800
+V32_WEIGHTED_RESIDUAL_NORM = PROVED_CONDITIONAL_X_1_PLUS_SIGMA
+V32_E_ERROR_EXPONENT = PROVED_CONDITIONAL_191_OVER_192_PLUS_SIGMA
+V32_E_ENDPOINT_MARGIN = PROVED_EXACT_13_OVER_4800_MINUS_SIGMA
+V32_V31_PAIR_IMPLIES_V32_GATE = PROVED_EXACT_MINKOWSKI_CELL_COMPILER
+V32_V32_GATE_IMPLIES_V31_PAIR = STOP_SCOPED_DISJOINT_FACTOR_AND_NARROW_SPIKE_FALSIFIERS
+V32_FULL_PARSEVAL_EQUIVALENCE = STOP_SCOPED_SINGLE_BASE_SCALE_ONLY
+V32_UNIFORM_ALL_SCALE_SAME_BOUND = STOP_SCOPED_TERMINAL_SCALE_OVERPAYMENT
+V32_ZERO_AXIS_FIREWALL = PROVED_EXACT_CONSTANT_RESIDUAL_HAS_Q_ZERO_AND_AXIS_ARBITRARY
+V32_OFFZERO_B_ALONE = STOP_SCOPED_TERMINAL_A_SURVIVES
+V32_QLOCAL_MODEL_BOUND = RETAINED_PROVED_ELEMENTARY_X_95_OVER_96_PLUS_O1
+V32_A_TERMINAL_COVARIANCE = RETAINED_SELECTED_TERMINAL_OPEN_NEW_THEOREM
+V32_CONDITIONAL_ENDPOINT_FORMULA = MIN_ETA_R_19_OVER_2400_13_OVER_4800_MINUS_SIGMA
+V32_MRT_DIRECT_ATTACHMENT = STOP_SCOPED_NO_LITERAL_RESIDUAL_OSCILLATION_BOUND
+V32_GUTH_MAYNARD_DIRECT_ATTACHMENT = STOP_SCOPED_MULTIPLICATIVE_PHASE_MARGINAL_LARGE_VALUES
+V32_HARPER_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_SINGLE_SEQUENCE_MODULUS_AVERAGE_WRONG_NORM
+V32_BAZIN_DIRECT_ATTACHMENT = STOP_SCOPED_TYPE_I_II_RATIONAL_TUBES_NO_LITERAL_EMITTER
+V32_GRANVILLE_LAMZOURI_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_BOUNDED_MULTIPLICATIVE_WRONG_COEFFICIENT
+V32_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_08
+V32_NEXT_THEOREM = BASE_SCALE_COLLECTIVE_OSCILLATION_FOR_LITERAL_MASTER_HYBRID_OCCURRENCE_EMITTER
+V32_FIRST_FATAL = BASE_SCALE_COLLECTIVE_OSCILLATION_BOUND_FOR_LITERAL_MASTER_HYBRID_OCCURRENCE_EMITTER
+V32_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
+V32_PROVENANCE_CASCADE = REQUIRED
+~~~
+
+### 79.10 Artifact、checker 与 pending closure
+
+V32 proof与 checker分别为
+`research/tpc-big-road/bridge_b_base_scale_residual_oscillation_compiler.md` 与
+`research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py`。checker当前冻结
+43/47/5/4 contract/registry/source/dependency rows，registry digest为
+`8d654f428dc5452f31b0c86d3e0e41270e0dc69df372bc3329c9b968ac63f41b`，并广告
+88/97/12/10/131共338项 fail-closed mutations。
+
+~~~text
+V32_FINAL_RELEASE_QA = PASS
+V32_MATH_SOURCE_FORMULA_QA = PASS
+V32_CHECKER_ADVERSARIAL_QA = PASS
+V32_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V32_PRE_CLOSURE_HANDOFF_SHA256_RAW = d1921e609d4327454453e4101a0e7c417260a86b2bf1b6813ac62c33406ea284
+V32_PRE_CLOSURE_HANDOFF_SHA256_CANONICAL_LF = 9b0e4228f2a00aaab6923ea9c284b3c96d1dd896533b5f7dfaa12c3469d88e9d
+V32_COMPASS_SHA256_RAW = 9ae0749ba169a5cf5e791f8359f259babfb26ea905321ceb01446629a2ec3ef3
+V32_COMPASS_SHA256_CANONICAL_LF = d6c87da71ce9ddbb7efb6c88e017f36855c2416e42376b7ea63fb2b5153c3456
+V32_README_SHA256_RAW = 2e17bdbbd548160acfc5c1e5989cdc48b04e75e1a16446d027d821291d8233e6
+V32_README_SHA256_CANONICAL_LF = 731f233e856cb9228abb0186754b73781b11c17f71e1e1d39acbb5bcbcd36a07
+V32_PROOF_SHA256_RAW_CANONICAL_LF = 13ec946f776008f4eadaf9a2576fa105f8500661075fe8993e04f25d3c0e6148
+V32_CHECKER_SHA256_RAW_CANONICAL_LF = 963b7ff835735252ffebfd2c9e05635c62738ab88ac59db859c31ac9f3202893
+V32_CHECKER_STDOUT_SHA256_RAW_CRLF = 3027aea246e8ba2cf533963924e644170cbd27fb6c8c185f33768ea6866e34bc
+V32_CHECKER_STDOUT_SHA256_CANONICAL_LF = 4aad9bb4fb8042bb01f0d716051d2ddcb12fe5b860e882b202377fa85303b1f3
+V32_CHECKER_STDOUT_PAYLOAD_SHA256 = 6378b767d5b896163b6bcdb6b18168fcc4462a5e45106277496ad6b1de527c6a
+V32_CHECKER_CONTRACT_REGISTRY_SOURCE_DEPENDENCY = 43/47/5/4
+V32_CHECKER_MUTATIONS = 88/97/12/10/131
+V32_CHECKER_ADVERSARIAL_ACTIONS = 338/338_UNIQUE_REJECTED
+V32_CHECKER_REGISTRY_SHA256 = 8d654f428dc5452f31b0c86d3e0e41270e0dc69df372bc3329c9b968ac63f41b
+STARTUP_REGRESSION = 22/22
+SUPPLEMENTAL_TPC111_TPC124_TPC126_TPC127 = 4/4
+V23_TO_V32_DEPENDENCY_PROCESSES = 20/20
+V23_TO_V32_DEPENDENCY_STDOUT_IDENTITIES = 10/10
+BIG_ROAD_CHECKER_PROCESSES = 40/40
+BIG_ROAD_CHECKER_STDOUT_IDENTITIES = 20/20
+RELEASE_ALLOWLIST = EXACT_FIVE_PATHS
+CACHED_DIFF = EMPTY
+DIFF_CHECK = PASS
+PROTECTED_UNTRACKED_COUNT = 130
+PROTECTED_UNTRACKED_MANIFEST_SHA256 = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+MARKDOWN_FENCES = HANDOFF_BACKTICK_2844_TILDE_174__COMPASS_BACKTICK_224_TILDE_58__README_BACKTICK_378_TILDE_56__PROOF_BACKTICK_0_TILDE_4
+EQUATION_TAGS = HANDOFF_104_OF_104_UNIQUE__PROOF_47_OF_47_UNIQUE
+BASELINE_HEAD_ORIGIN_REMOTE = e08b1c04e0ebb92867d5a4370e4d245de2185965
+FILES_CHANGED = EXACT_FIVE_RELEASE_PATHS
+GENERATED_OUTPUTS = NONE
+V32_ROUTE_ADVANCE = YES
+V32_ARITHMETIC_ADVANCE = NO
+V32_FIXED_ATOM_CREDIT = 0
+V32_STRICT_1_OVER_400 = UNPAID
+V32_L2 = NONE
+V32_TPC_207_TRIGGER = false
+V32_SEALED_FOR_NEW_SESSION = true
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+~~~
 
 ## 78. 2026-08-08 V31：whole-object model major、minor cross-flatness 与 terminal compiler
 
