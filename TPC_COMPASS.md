@@ -1,13 +1,15 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-08
-状态：`BOLD_CHANNEL_V27 / RAMANUJAN_ENERGY_AND_POINTED_BLOCK_GATE`
-claim level：`EXACT_PRIME_SHELL_WEIGHT_ENERGY_AND_ENDPOINT_REDUCTION_PLUS_SOURCE_CORPUS_STOPS_AND_POINTED_WHOLE_SHELL_ROUTE`
+状态：`BOLD_CHANNEL_V28 / EULER_ZERO_AXIS_REDUCED_RADICAL_AND_COMPRESSED_KERNEL_GATE`
+claim level：`EXACT_OCCURRENCE_NATIVE_EULER_ZERO_AXIS_AND_REDUCED_RADICAL_CORRIDOR_PLUS_SOURCE_BACKED_CONDITIONAL_BETTIN_CHANDEE_ENGINE_PLUS_STATIONARY_FACTOR_NO_GO_AND_COMPRESSED_KERNEL_ROUTE`
 编号事实终点：TPC-206；TPC-207 trigger：`false`
 
 本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V27 的完整
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V28 的完整
 proof、scope与独立 checker位于
+`research/tpc-big-road/bridge_b_euler_zero_axis_and_kernel_carrier.md`及
+`research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py`；V27 位于
 `research/tpc-big-road/bridge_b_ramanujan_energy_and_pointed_block_gate.md`及
 `research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py`；V26 compensated
 dilation位于
@@ -1042,6 +1044,118 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 29. V28 后的罗盘：循环零轴已拆开，reduced-radical corridor 接上真引擎
+
+V28 把 V27 的 `-F(0)` wall重型为两个不能混同的 main。generic smooth
+interpolant若强制 `M(0)=S_x`，仍把原目标以系数一返回；但 actual selected
+MASTER occurrence产生的 local Euler tensor满足
+
+~~~text
+Delta_m,z(0)=0,
+mean_(h mod rad(m)) Delta_m,z(h)=0,
+mean_(h mod lcm(q,rad(m))) c_q(h)Delta_m,z(h)=0,
+Mloc_x(0)=0,
+J(Mloc_x)+E(Mloc_x)=0.
+~~~
+
+这是 exact occurrence-native algebra，不是 finite-interval weighted AP theorem。
+把 \(g=(n,D)\)、\(D=gR\)、\(n=ga\) 后，composite DFT 中 \(g\) 精确消失：
+
+~~~text
+P_hat_D(n qbar)=mu(R)/phi(R)e_R(2a qbar),
+B_hat_D,z(n qbar)
+ =mu(R0)/(phi(R0)phi(R1)^2)e_R0(2a overline(qR1)).
+~~~
+
+真正 dual corridor因此只有
+`R>=H/q=x^(31/96+o(1))`、`|a|<=qR/H<=x^(17/96+o(1))`。
+selected-group mass与 radical Euler sum给 dyadic norm
+`x^(1+o(1))R^(-3/2)`。Bettin--Chandee Theorem 1在 exact smooth emitter
+完成后产生
+
+~~~text
+CORRIDOR_EXPONENT = 1891/1920,
+399/400-CORRIDOR_EXPONENT = 121/9600.
+~~~
+
+这是第一条真正越过 endpoint的 source-backed conditional corridor engine；但
+moving \(R_0/R_1\) emitter、`q|D` collective cancellation、both signs、
+hard-shell partial summation与 exactly-once reassembly未完，所以不记 arithmetic
+credit。解析主路仍是同一个 tagged residual的 joint J/E compiler与 two-sided
+product-local flatness；MRT Proposition 3.1只是 reduction，one-sided input损失
+`H^(1/4)`并差 `1549/9600`。
+
+动力学地图也更干净：stationary mixing system不能 exact factor到 rotation/odometer，
+否则出现 root-of-unity eigenfunction。合法 reserve改为 nonautonomous、
+target-independent low-norm kernel，要求
+`||K_j||_2 V_j=o(x_j/log^2 x_j)`；full primorial point kernel的 norm
+`sqrt(P)=exp((1/2+o(1))sqrt x)`，因此停止。
+
+V28 atlas：
+
+~~~text
+V28_MAXIMUM_CLAIM = EXACT_OCCURRENCE_NATIVE_EULER_ZERO_AXIS_AND_REDUCED_RADICAL_CORRIDOR_PLUS_SOURCE_BACKED_CONDITIONAL_BETTIN_CHANDEE_ENGINE_PLUS_STATIONARY_FACTOR_NO_GO_AND_COMPRESSED_KERNEL_ROUTE
+V28_ROUTE_ADVANCE = YES
+V28_ARITHMETIC_ADVANCE = NO
+V28_FIXED_ATOM_CREDIT = 0
+V28_STRICT_1_OVER_400 = UNPAID
+V28_L2 = NONE
+V28_TPC_207_TRIGGER = false
+V28_NUMBERED_RELEASE = NO
+V28_MASTER_OCCURRENCE_LOCAL_EULER_TENSOR = PROVED_EXACT_ALGEBRAIC
+V28_LOCAL_EULER_ZERO_MEAN_RAMANUJAN_ORTHOGONALITY = PROVED_EXACT_ALGEBRAIC
+V28_LOCAL_EULER_TENSOR_AS_ACTUAL_WEIGHTED_AP_MAIN = OPEN_ATTACHMENT
+V28_SMOOTH_MAIN_WITH_M0_EQUAL_PHYSICAL_TARGET
+  = STOP_SCOPED_CIRCULAR_ZERO_AXIS_COEFFICIENT_ONE
+V28_LOCAL_MAIN_JUTILA_J_PLUS_E_CANCELLATION = PROVED_EXACT_ALGEBRAIC
+V28_REDUCED_RADICAL_CRT_PHASE
+  = PROVED_EXACT_G_CANCELLATION_AND_PLUS_TWO_PHASE
+V28_LOCAL_MAIN_SHARED_Q_DIVIDES_RADICAL_BRANCH
+  = PROVED_EXACT_AFTER_FULL_UNIT_FREQUENCY_SUM
+V28_SELECTED_MASTER_RADICAL_L2_ENVELOPE
+  = PROVED_ELEMENTARY_FROM_ORDERED_D2_D4_AND_RADICAL_EULER_SUM
+V28_SHORT_INVERSE_RESIDUE_BETTIN_CHANDEE_CORRIDOR
+  = SOURCE_BACKED_POWER_SAVING_AFTER_EXACT_COMPILER
+V28_SHORT_INVERSE_RESIDUE_CORRIDOR_EXPONENT = 1891/1920
+V28_SHORT_INVERSE_RESIDUE_CORRIDOR_MARGIN_TO_399_400 = 121/9600
+V28_LITERAL_MASTER_CORRIDOR_SMOOTH_EMITTER_AND_G_REASSEMBLY
+  = OPEN_EXACT_COMPILER
+V28_LOCAL_MAIN_HARD_SHELL_ENDPOINT
+  = PROVED_ELEMENTARY_X_47_OVER_48_PLUS_EPSILON
+V28_MRT_ABSTRACT_PRODUCT_LOCAL_L2_REDUCTION = SOURCE_BACKED_ABSTRACT_INTERFACE_ONLY
+V28_LITERAL_BILINEAR_PRODUCT_LOCAL_FLATNESS = OPEN_NEW_THEOREM
+V28_ONE_SIDED_MRT_TO_ENDPOINT = STOP_SCOPED_H_QUARTER_LOSS
+V28_TAGGED_RESIDUAL_JUTILA_MAIN_ERROR_REASSEMBLY
+  = SELECTED_PRIMARY_OPEN_ATTACHMENT
+V28_STATIONARY_MIXING_TO_ROTATION_ODOMETER_FACTOR
+  = STOP_SCOPED_ROOT_OF_UNITY_EIGENFUNCTION_NO_GO
+V28_NONAUTONOMOUS_POINTED_ESCAPE
+  = LOGICALLY_OPEN_EXACT_STAGE_DIAGRAM_REQUIRED
+V28_LOW_NORM_POINT_EVALUATION_KERNEL_CRITERION = PROVED_EXACT_ALGEBRAIC
+V28_POSITIVE_MEAN_WITHOUT_KERNEL_COVARIANCE_CONTROL
+  = STOP_SCOPED_EXACT_TWO_POINT_FALSIFIERS
+V28_FULL_PRIMORIAL_POINT_RIESZ_NORM
+  = PROVED_EXACT_FINITE_PLUS_STANDARD_PNT_ASYMPTOTIC
+V28_COMPRESSED_TARGET_INDEPENDENT_KERNEL_WHOLE_SHELL_COMPILER
+  = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
+V28_ABP_HNTV_INTERFACES = SOURCE_BACKED_TOOL_CLASSES_ONLY
+V28_HENON_WANG_YOUNG_DENSE_TREE_NATURAL_EXTENSION
+  = SOURCE_BACKED_TOPOLOGICAL_GEOMETRY_ONLY
+V28_HENON_TPC_STAGE_EVENT_MEASURE_SEED_FUNCTIONAL_DIAGRAM = OPEN_ATTACHMENT
+V28_O161_PARENTS_PAIR_NATIVE_H1_GLOBAL = OPEN_UNCHANGED
+V28_A1_A2_TAIL_SELECTION_PACKET_PROVENANCE = INDEPENDENT_AND_UNPAID
+~~~
+
+proof 与 checker分别为
+`research/tpc-big-road/bridge_b_euler_zero_axis_and_kernel_carrier.md`、
+`research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py`。checker冻结
+49-field contract、36-row registry、digest
+`2926e4dc94080ff3179970dc134c1a1edb76bcb5b7f64be783b4bc747d5c7a0b`，
+并执行 149/75/12/15/149 个 contract/registry/source/dependency/result mutations。
+
+路线排序：joint tagged residual theorem第一；BC reduced-radical compiler第二；
+nonautonomous compressed kernel第三。三者不互借 theorem credit。
 
 ## 28. V27 后的罗盘：能量门已精确，零轴和 pointed seed 是真墙
 

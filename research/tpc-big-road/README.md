@@ -1,10 +1,11 @@
-# TPC big road V27: Ramanujan energy and pointed block gates
+# TPC big road V28: Euler zero-axis, reduced-radical corridors, and compressed kernels
 
 更新时间：2026-08-08
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_PRIME_SHELL_WEIGHT_ENERGY_AND_ENDPOINT_REDUCTION_PLUS_SOURCE_CORPUS_STOPS_AND_POINTED_WHOLE_SHELL_ROUTE`
+状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_OCCURRENCE_NATIVE_EULER_ZERO_AXIS_AND_REDUCED_RADICAL_CORRIDOR_PLUS_SOURCE_BACKED_CONDITIONAL_BETTIN_CHANDEE_ENGINE_PLUS_STATIONARY_FACTOR_NO_GO_AND_COMPRESSED_KERNEL_ROUTE`
 
-当前主路线见第 27 节及 `bridge_b_ramanujan_energy_and_pointed_block_gate.md`；第 26 节与
+当前主路线见第 28 节及 `bridge_b_euler_zero_axis_and_kernel_carrier.md`；第 27 节与
+`bridge_b_ramanujan_energy_and_pointed_block_gate.md`冻结 V27 Ramanujan energy，第 26 节与
 `bridge_b_compensated_dilation_and_block_highway.md`冻结 V26 compensated dilation，第 25 节与
 `bridge_b_corrected_fourier_factorable_emitter.md`冻结 V25 corrected emitter，第 24 节与
 `bridge_b_literal_jutila_farey_atom_compiler.md`冻结 V24 atom compiler，第 23 节与
@@ -2212,6 +2213,119 @@ checker冻结 33-field contract、48-row registry，registry SHA-256为
 `15e40e8c20050549c3e244be59747019f115ebb8ccb9356f95fd449250073b07`；
 102/151 adversarial mutations必须全部拒绝。V23 arithmetic advance=`NO`、fixed
 atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false；没有编号 paper/PDF/build。
+
+## 28. V28 Bridge B：Euler zero axis、reduced radicals 与 compressed kernels
+
+V28 没有把 V27 的 zero-axis wall抹掉，而是把两种 main分开。generic smooth
+interpolant若令 `M(0)=S_x`，仍以系数一返回原目标；actual V19 selected
+MASTER occurrence产生的 local Euler tensor则逐 occurrence满足
+
+~~~text
+Delta_m,z(0)=0,
+sum_(h mod rad(m))Delta_m,z(h)=0,
+sum_(h mod lcm(q,rad(m)))c_q(h)Delta_m,z(h)=0,
+Mloc_x(0)=0,
+J(Mloc_x)+E(Mloc_x)=0.
+~~~
+
+这里保留 ordered `+2,-1`、Mobius/log、source slots、deterministic route与
+`m(o)` provenance。它是 exact algebraic carrier，不是已证 finite-interval AP
+main。
+
+对 inverse-residue row令 `g=(n,D),D=gR,n=ga`。normalized DFT/CRT给
+
+~~~text
+P_hat_D(n qbar)=mu(R)/phi(R)e_R(2a qbar),
+B_hat_D,z(n qbar)
+ =mu(R0)/(phi(R0)phi(R1)^2)e_R0(2a overline(qR1)),
+R=R0R1, p|R0 iff p<=z.
+~~~
+
+\(g\) 精确消失，active range为
+`R>=H/q=x^(31/96+o(1))` 与
+`|a|<=qR/H<=x^(17/96+o(1))`。actual selected-group mass及 radical Euler
+sum给 `F` block norm `x^(1+o(1))R^(-3/2)`；hybrid `G` 对固定
+\(R_1\) 给 `x^(1+o(1))R0^(-3/2)R1^(-3)`。Bettin--Chandee
+`arXiv:1502.00769v1` Theorem 1于是成为 conditional local engine：
+
+~~~text
+V28_SHORT_INVERSE_RESIDUE_CORRIDOR_EXPONENT = 1891/1920
+V28_SHORT_INVERSE_RESIDUE_CORRIDOR_MARGIN_TO_399_400 = 121/9600
+~~~
+
+其 literal parameter maps为
+`(A,M,N)=(QR/H,Q,R)` 与
+`(QR0R1/H,QR1,R0)`，统一外部 normalization为 `H/L_pr`；
+\(F/G\) 两支的 second source term均在两段分别由
+`737/768`、`23/24` 控制。
+
+但 exact smooth emitter、moving \(R_0/R_1\) split、`q|D` collective
+cancellation、both signs、hard-shell partial summation与 one-outer-absolute
+reassembly仍未封口。MRT Proposition 3.1只提供 abstract product-local reduction；
+one-sided input仍损失 `H^(1/4)`并差 `1549/9600`。因此 analytic
+primary仍是 same tagged residual的 joint J/E reassembly与 two-sided
+product-local flatness。
+
+动力学侧，stationary mixing system不能 exact factor到 finite rotation/odometer，
+否则 pullback character产生 root-of-unity eigenfunction。合法 reserve改成
+nonautonomous target-independent kernel：
+
+~~~text
+integral K_j=1,
+||K_j||_2 V_j=o(x_j/log^2 x_j).
+~~~
+
+full primorial point kernel的 norm为
+`sqrt(P)=exp((1/2+o(1))sqrt x)`，所以 generic Haar variance不够。
+
+V28 canonical atlas：
+
+~~~text
+V28_MAXIMUM_CLAIM = EXACT_OCCURRENCE_NATIVE_EULER_ZERO_AXIS_AND_REDUCED_RADICAL_CORRIDOR_PLUS_SOURCE_BACKED_CONDITIONAL_BETTIN_CHANDEE_ENGINE_PLUS_STATIONARY_FACTOR_NO_GO_AND_COMPRESSED_KERNEL_ROUTE
+V28_ROUTE_ADVANCE = YES
+V28_ARITHMETIC_ADVANCE = NO
+V28_FIXED_ATOM_CREDIT = 0
+V28_STRICT_1_OVER_400 = UNPAID
+V28_L2 = NONE
+V28_TPC_207_TRIGGER = false
+V28_NUMBERED_RELEASE = NO
+V28_MASTER_OCCURRENCE_LOCAL_EULER_TENSOR = PROVED_EXACT_ALGEBRAIC
+V28_LOCAL_EULER_ZERO_MEAN_RAMANUJAN_ORTHOGONALITY = PROVED_EXACT_ALGEBRAIC
+V28_LOCAL_EULER_TENSOR_AS_ACTUAL_WEIGHTED_AP_MAIN = OPEN_ATTACHMENT
+V28_SMOOTH_MAIN_WITH_M0_EQUAL_PHYSICAL_TARGET = STOP_SCOPED_CIRCULAR_ZERO_AXIS_COEFFICIENT_ONE
+V28_LOCAL_MAIN_JUTILA_J_PLUS_E_CANCELLATION = PROVED_EXACT_ALGEBRAIC
+V28_REDUCED_RADICAL_CRT_PHASE = PROVED_EXACT_G_CANCELLATION_AND_PLUS_TWO_PHASE
+V28_LOCAL_MAIN_SHARED_Q_DIVIDES_RADICAL_BRANCH = PROVED_EXACT_AFTER_FULL_UNIT_FREQUENCY_SUM
+V28_SELECTED_MASTER_RADICAL_L2_ENVELOPE = PROVED_ELEMENTARY_FROM_ORDERED_D2_D4_AND_RADICAL_EULER_SUM
+V28_SHORT_INVERSE_RESIDUE_BETTIN_CHANDEE_CORRIDOR = SOURCE_BACKED_POWER_SAVING_AFTER_EXACT_COMPILER
+V28_SHORT_INVERSE_RESIDUE_CORRIDOR_EXPONENT = 1891/1920
+V28_SHORT_INVERSE_RESIDUE_CORRIDOR_MARGIN_TO_399_400 = 121/9600
+V28_LITERAL_MASTER_CORRIDOR_SMOOTH_EMITTER_AND_G_REASSEMBLY = OPEN_EXACT_COMPILER
+V28_LOCAL_MAIN_HARD_SHELL_ENDPOINT = PROVED_ELEMENTARY_X_47_OVER_48_PLUS_EPSILON
+V28_MRT_ABSTRACT_PRODUCT_LOCAL_L2_REDUCTION = SOURCE_BACKED_ABSTRACT_INTERFACE_ONLY
+V28_LITERAL_BILINEAR_PRODUCT_LOCAL_FLATNESS = OPEN_NEW_THEOREM
+V28_ONE_SIDED_MRT_TO_ENDPOINT = STOP_SCOPED_H_QUARTER_LOSS
+V28_TAGGED_RESIDUAL_JUTILA_MAIN_ERROR_REASSEMBLY = SELECTED_PRIMARY_OPEN_ATTACHMENT
+V28_STATIONARY_MIXING_TO_ROTATION_ODOMETER_FACTOR = STOP_SCOPED_ROOT_OF_UNITY_EIGENFUNCTION_NO_GO
+V28_NONAUTONOMOUS_POINTED_ESCAPE = LOGICALLY_OPEN_EXACT_STAGE_DIAGRAM_REQUIRED
+V28_LOW_NORM_POINT_EVALUATION_KERNEL_CRITERION = PROVED_EXACT_ALGEBRAIC
+V28_POSITIVE_MEAN_WITHOUT_KERNEL_COVARIANCE_CONTROL = STOP_SCOPED_EXACT_TWO_POINT_FALSIFIERS
+V28_FULL_PRIMORIAL_POINT_RIESZ_NORM = PROVED_EXACT_FINITE_PLUS_STANDARD_PNT_ASYMPTOTIC
+V28_COMPRESSED_TARGET_INDEPENDENT_KERNEL_WHOLE_SHELL_COMPILER = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
+V28_ABP_HNTV_INTERFACES = SOURCE_BACKED_TOOL_CLASSES_ONLY
+V28_HENON_WANG_YOUNG_DENSE_TREE_NATURAL_EXTENSION = SOURCE_BACKED_TOPOLOGICAL_GEOMETRY_ONLY
+V28_HENON_TPC_STAGE_EVENT_MEASURE_SEED_FUNCTIONAL_DIAGRAM = OPEN_ATTACHMENT
+V28_O161_PARENTS_PAIR_NATIVE_H1_GLOBAL = OPEN_UNCHANGED
+V28_A1_A2_TAIL_SELECTION_PACKET_PROVENANCE = INDEPENDENT_AND_UNPAID
+~~~
+
+完整 proof与 checker分别为
+`bridge_b_euler_zero_axis_and_kernel_carrier.md`及
+`tpc_bridge_b_euler_kernel_checker.py`。checker冻结 49-field contract、
+36-row registry、digest
+`2926e4dc94080ff3179970dc134c1a1edb76bcb5b7f64be783b4bc747d5c7a0b`，
+并执行 149/75/12/15/149 mutations。V28是不编号 route release，不创建
+TPC-207、paper、PDF或 build。
 
 ## 27. V27 Bridge B：Ramanujan energy、zero axis 与 pointed block
 

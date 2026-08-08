@@ -1,7 +1,108 @@
 # TPC HANDOFF
 
 更新时间：2026-08-08
-交接状态：`BOLD_CHANNEL_V27_SEALED`
+交接状态：`BOLD_CHANNEL_V28_SEALED`
+
+第 75 节把 V27 的 generic smooth-main zero-axis wall分成两个不同对象。对 V19
+actual selected MASTER occurrence \(o\)，保留 ordered `+2,-1`、Mobius/log、
+original slots与 deterministic route，定义 \(m(o)\)、\(D(o)=\operatorname{rad}m(o)\)
+以及 occurrence-native Euler tensor
+
+~~~text
+F_p(h)=p/(p-1) 1_(h!=-2 mod p),
+G_p,z(h)=F_p(h)                                      (p<=z),
+G_p,z(0)=p/(p-1), G_p,z(h!=0)=p(p-2)/(p-1)^2        (p>z),
+Delta_m,z(h)=prod_(p|m)F_p(h)-prod_(p|m)G_p,z(h),
+Mloc_x(h)=sum_(MASTER o) a_o Delta_(m(o),z)(h).
+~~~
+
+逐 occurrence精确有
+
+~~~text
+Delta_m,z(0)=0,
+mean_(h mod rad(m)) Delta_m,z(h)=0,
+mean_(h mod lcm(q,rad(m))) c_q(h)Delta_m,z(h)=0,
+Mloc_x(0)=0,
+J(Mloc_x)+E(Mloc_x)=0.                               (V28.1)
+~~~
+
+所以任何强制 `M(0)=r_x(0)=S_x` 的 generic smooth main仍以系数一返回原目标并
+STOP；但这个 source-native local Euler carrier不是循环主项。它仍只是 exact
+algebraic carrier，不是已经证明的 weighted AP asymptotic。
+
+对 \(q\nmid D\) 的 inverse-residue row令
+\(g=(n,D),D=gR,n=ga\)。CRT 精确消去 \(g\)，并给出
+
+~~~text
+P_hat_D(n qbar)=mu(R)/phi(R) e_R(2a qbar),
+B_hat_D,z(n qbar)
+ =mu(R0)/(phi(R0)phi(R1)^2)e_R0(2a overline(qR1)),
+R=R0R1, p|R0 iff p<=z,
+0<|a|<=qR/H, R>=H/q=x^(31/96+o(1)),
+qR/H<=x^(17/96+o(1)).                               (V28.2)
+~~~
+
+actual selected-group mass与 radical Euler sum给
+`||B_F||_2<=x^(1+o(1))R^(-3/2)`；hybrid \(G\) 对固定 \(R_1\) 给
+`x^(1+o(1))R0^(-3/2)R1^(-3)`。Bettin--Chandee
+`arXiv:1502.00769v1`, Theorem 1因此成为真实的 conditional local engine：
+
+~~~text
+V28_SHORT_INVERSE_RESIDUE_CORRIDOR_EXPONENT = 1891/1920
+399/400-1891/1920 = 121/9600 > 0.                    (V28.3)
+~~~
+
+这仍要求 exact smooth emitter、\(R_0/R_1\) provenance、`q|D` rows在绝对值前
+集体消去、both signs与 one-outer-absolute reassembly；因此整体
+`ARITHMETIC_ADVANCE=NO`。MRT Proposition 3.1只登记为 abstract product-local
+L2 reduction。literal two-sided product-local flatness与同一个 tagged residual
+的 joint Jutila main/error theorem仍 OPEN；one-sided MRT即使理想化也损失
+`H^(1/4)`，超过 endpoint `1549/9600`。
+
+动力学侧证明 stationary mixing Logistic/Hénon system不能
+measure-preservingly factor到 residue rotation/odometer：有限 quotient character
+会拉回 nontrivial root-of-unity eigenfunction。非自治出口仍在，但必须产生
+target-independent Riesz kernel \(K_j\) 且
+`||K_j||_2 V_j=o(x_j/log^2 x_j)`。full primorial point kernel的 norm为
+`\sqrt P=exp((1/2+o(1))sqrt x)`，因此 generic Haar variance route停止。
+
+V28 当前边界为
+
+~~~text
+V28_MASTER_OCCURRENCE_LOCAL_EULER_TENSOR = PROVED_EXACT_ALGEBRAIC
+V28_LOCAL_EULER_TENSOR_AS_ACTUAL_WEIGHTED_AP_MAIN = OPEN_ATTACHMENT
+V28_SMOOTH_MAIN_WITH_M0_EQUAL_PHYSICAL_TARGET
+  = STOP_SCOPED_CIRCULAR_ZERO_AXIS_COEFFICIENT_ONE
+V28_REDUCED_RADICAL_CRT_PHASE
+  = PROVED_EXACT_G_CANCELLATION_AND_PLUS_TWO_PHASE
+V28_SELECTED_MASTER_RADICAL_L2_ENVELOPE
+  = PROVED_ELEMENTARY_FROM_ORDERED_D2_D4_AND_RADICAL_EULER_SUM
+V28_SHORT_INVERSE_RESIDUE_BETTIN_CHANDEE_CORRIDOR
+  = SOURCE_BACKED_POWER_SAVING_AFTER_EXACT_COMPILER
+V28_LITERAL_MASTER_CORRIDOR_SMOOTH_EMITTER_AND_G_REASSEMBLY
+  = OPEN_EXACT_COMPILER
+V28_LITERAL_BILINEAR_PRODUCT_LOCAL_FLATNESS = OPEN_NEW_THEOREM
+V28_ONE_SIDED_MRT_TO_ENDPOINT = STOP_SCOPED_H_QUARTER_LOSS
+V28_TAGGED_RESIDUAL_JUTILA_MAIN_ERROR_REASSEMBLY
+  = SELECTED_PRIMARY_OPEN_ATTACHMENT
+V28_STATIONARY_MIXING_TO_ROTATION_ODOMETER_FACTOR
+  = STOP_SCOPED_ROOT_OF_UNITY_EIGENFUNCTION_NO_GO
+V28_COMPRESSED_TARGET_INDEPENDENT_KERNEL_WHOLE_SHELL_COMPILER
+  = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
+V28_ARITHMETIC_ADVANCE = NO
+V28_FIXED_ATOM_CREDIT = 0
+V28_STRICT_1_OVER_400 = UNPAID
+V28_L2 = NONE
+V28_TPC_207_TRIGGER = false                           (V28.4)
+~~~
+
+proof 与 checker 为
+`research/tpc-big-road/bridge_b_euler_zero_axis_and_kernel_carrier.md` 和
+`research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py`。当前 checker冻结
+49-field contract、36-row registry，registry SHA-256为
+`2926e4dc94080ff3179970dc134c1a1edb76bcb5b7f64be783b4bc747d5c7a0b`；
+149/75/12/15/149 个 contract/registry/source/dependency/result mutations必须全部
+拒绝。V28是不编号 big-road release，不创建 TPC-207、paper、PDF或 build output。
 
 第 74 节把 V26 的 square-root design ledger收缩成一个精确、tail-safe 的 Hilbert
 gate。固定 physical `h0=2`、V19 ordered `+2,-1` coefficient与同一个
@@ -1693,15 +1794,17 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V27_20260808_RAMANUJAN_ENERGY_ZERO_AXIS_AND_POINTED_WHOLE_SHELL_ROUTE_NO_ARITHMETIC_TRIGGER`
+`TPC_BIG_ROAD_V28_20260808_EULER_ZERO_AXIS_REDUCED_RADICAL_CORRIDOR_AND_COMPRESSED_KERNEL_ROUTE_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE_AND_SIGNED_ZERO_AXIS_REASSEMBLY_GATE`；
+`V28_TAGGED_RESIDUAL_JUTILA_MAIN_ERROR_REASSEMBLY_AND_LITERAL_PRODUCT_LOCAL_FLATNESS_GATE`；
 当前 first subgates：
-`V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE` 与
-`V27_SIGNED_LOCAL_MAIN_ZERO_AXIS_AND_RESIDUAL_REASSEMBLY`
-（第 74 节控制；既有 local source只有在第 32.6 节或
+`V28_TAGGED_RESIDUAL_JUTILA_MAIN_ERROR_REASSEMBLY` 与
+`V28_LITERAL_BILINEAR_PRODUCT_LOCAL_FLATNESS`；
+source-backed conditional second road 为
+`V28_LITERAL_MASTER_CORRIDOR_SMOOTH_EMITTER_AND_G_REASSEMBLY`
+（第 75 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--74 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--75 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -1713,6 +1816,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_euler_zero_axis_and_kernel_carrier.md`、
+`research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py`、
 `research/tpc-big-road/bridge_b_ramanujan_energy_and_pointed_block_gate.md`、
 `research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py`、
 `research/tpc-big-road/bridge_b_compensated_dilation_and_block_highway.md`、
@@ -1732,7 +1837,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--74 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--75 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -1794,8 +1899,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V27 gate及其 V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；十次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V28 gate及其 V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；十二次必须都为零，且每一对 stdout
 byte-identical：
 
 ```powershell
@@ -1809,6 +1914,8 @@ python -B research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.
 python -O -B research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py --check
 ```
 
 随后优先读取：
@@ -3559,6 +3666,58 @@ V27_POINTED_CRITICAL_SECTION_WHOLE_SHELL_DISCREPANCY
 `L2`；`13/4800`只是 residual theorem的 strict ceiling；pointed dynamics仍须 exact
 factor与独立 positive main。完整 theorem出现前，arithmetic advance仍为 `NO`。
 精确 proof、checker与 reopen gates见第 74 节。
+
+2026-08-08 的 Bridge B V28 Euler-zero-axis/reduced-radical/kernel-carrier 审计新增且仅
+新增以下四个 scoped STOP cells：
+
+~~~text
+V28_SMOOTH_MAIN_WITH_M0_EQUAL_PHYSICAL_TARGET
+  = STOP_SCOPED_CIRCULAR_ZERO_AXIS_COEFFICIENT_ONE
+
+V28_ONE_SIDED_MRT_TO_ENDPOINT
+  = STOP_SCOPED_H_QUARTER_LOSS
+
+V28_STATIONARY_MIXING_TO_ROTATION_ODOMETER_FACTOR
+  = STOP_SCOPED_ROOT_OF_UNITY_EIGENFUNCTION_NO_GO
+
+V28_POSITIVE_MEAN_WITHOUT_KERNEL_COVARIANCE_CONTROL
+  = STOP_SCOPED_EXACT_TWO_POINT_FALSIFIERS
+~~~
+
+第一项不停止 occurrence-native \(M_x^{\rm loc}(0)=0\) carrier；它只停止把
+`M(0)=S_x` 的 generic smooth interpolant称为新 main。第二项不停止 MRT
+Proposition 3.1作为 abstract reduction；它停止用单边 local energy支付 literal
+product flatness。第三项只停止 stationary mixing factor到 rotation/odometer；
+nonautonomous stage diagram仍 OPEN。第四项停止从 positive Haar mean直接推出指定
+seed positivity；low-norm target-independent Riesz kernel仍 OPEN。
+
+surviving gates为
+
+~~~text
+V28_LOCAL_EULER_ZERO_MEAN_RAMANUJAN_ORTHOGONALITY
+  = PROVED_EXACT_ALGEBRAIC
+V28_LOCAL_EULER_TENSOR_AS_ACTUAL_WEIGHTED_AP_MAIN
+  = OPEN_ATTACHMENT
+V28_SELECTED_MASTER_RADICAL_L2_ENVELOPE
+  = PROVED_ELEMENTARY_FROM_ORDERED_D2_D4_AND_RADICAL_EULER_SUM
+V28_SHORT_INVERSE_RESIDUE_BETTIN_CHANDEE_CORRIDOR
+  = SOURCE_BACKED_POWER_SAVING_AFTER_EXACT_COMPILER
+V28_LITERAL_MASTER_CORRIDOR_SMOOTH_EMITTER_AND_G_REASSEMBLY
+  = OPEN_EXACT_COMPILER
+V28_LITERAL_BILINEAR_PRODUCT_LOCAL_FLATNESS
+  = OPEN_NEW_THEOREM
+V28_TAGGED_RESIDUAL_JUTILA_MAIN_ERROR_REASSEMBLY
+  = SELECTED_PRIMARY_OPEN_ATTACHMENT
+V28_LOW_NORM_POINT_EVALUATION_KERNEL_CRITERION
+  = PROVED_EXACT_ALGEBRAIC
+V28_COMPRESSED_TARGET_INDEPENDENT_KERNEL_WHOLE_SHELL_COMPILER
+  = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
+~~~
+
+BC corridor的 `1891/1920` 与 `121/9600` margin是 conditional local engine，
+不是 whole scalar arithmetic credit；residual \(e_x\) 的 `theta<13/4800` gate仍未付。
+完整 theorem出现前，arithmetic advance仍为 `NO`。精确 proof、checker与 route
+见第 75 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -7227,7 +7386,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V27 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V28 current）
 
 ```text
 进入仓库：
@@ -7235,6 +7394,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_euler_zero_axis_and_kernel_carrier.md、
+research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py、
 research/tpc-big-road/bridge_b_ramanujan_energy_and_pointed_block_gate.md、
 research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py、
 research/tpc-big-road/bridge_b_compensated_dilation_and_block_highway.md、
@@ -7257,7 +7418,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--74 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--75 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -7395,6 +7556,42 @@ V27_TAGGED_VECTOR_MIXED_HB2_DETERMINANT_REASSEMBLY = OPEN_NEW_THEOREM
 V27_PARAMETER_AVERAGED_EXACT_SAME_ARITHMETIC_OUTPUT_CARRIER = STOP_SCOPED_TAUTOLOGICAL_MEAN_OR_NULL_GRAPH
 V27_STAGEWISE_TRANSVERSE_PARAMETER_RESELECTION = STOP_SCOPED_NO_COMMON_PARAMETER
 V27_POINTED_CRITICAL_SECTION_WHOLE_SHELL_DISCREPANCY = OPEN_NEW_THEOREM_AFTER_EXACT_SINGLE_PARAMETER_FACTOR
+V28_MAXIMUM_CLAIM = EXACT_OCCURRENCE_NATIVE_EULER_ZERO_AXIS_AND_REDUCED_RADICAL_CORRIDOR_PLUS_SOURCE_BACKED_CONDITIONAL_BETTIN_CHANDEE_ENGINE_PLUS_STATIONARY_FACTOR_NO_GO_AND_COMPRESSED_KERNEL_ROUTE
+V28_ROUTE_ADVANCE = YES
+V28_ARITHMETIC_ADVANCE = NO
+V28_FIXED_ATOM_CREDIT = 0
+V28_STRICT_1_OVER_400 = UNPAID
+V28_L2 = NONE
+V28_TPC_207_TRIGGER = false
+V28_NUMBERED_RELEASE = NO
+V28_MASTER_OCCURRENCE_LOCAL_EULER_TENSOR = PROVED_EXACT_ALGEBRAIC
+V28_LOCAL_EULER_ZERO_MEAN_RAMANUJAN_ORTHOGONALITY = PROVED_EXACT_ALGEBRAIC
+V28_LOCAL_EULER_TENSOR_AS_ACTUAL_WEIGHTED_AP_MAIN = OPEN_ATTACHMENT
+V28_SMOOTH_MAIN_WITH_M0_EQUAL_PHYSICAL_TARGET = STOP_SCOPED_CIRCULAR_ZERO_AXIS_COEFFICIENT_ONE
+V28_LOCAL_MAIN_JUTILA_J_PLUS_E_CANCELLATION = PROVED_EXACT_ALGEBRAIC
+V28_REDUCED_RADICAL_CRT_PHASE = PROVED_EXACT_G_CANCELLATION_AND_PLUS_TWO_PHASE
+V28_LOCAL_MAIN_SHARED_Q_DIVIDES_RADICAL_BRANCH = PROVED_EXACT_AFTER_FULL_UNIT_FREQUENCY_SUM
+V28_SELECTED_MASTER_RADICAL_L2_ENVELOPE = PROVED_ELEMENTARY_FROM_ORDERED_D2_D4_AND_RADICAL_EULER_SUM
+V28_SHORT_INVERSE_RESIDUE_BETTIN_CHANDEE_CORRIDOR = SOURCE_BACKED_POWER_SAVING_AFTER_EXACT_COMPILER
+V28_SHORT_INVERSE_RESIDUE_CORRIDOR_EXPONENT = 1891/1920
+V28_SHORT_INVERSE_RESIDUE_CORRIDOR_MARGIN_TO_399_400 = 121/9600
+V28_LITERAL_MASTER_CORRIDOR_SMOOTH_EMITTER_AND_G_REASSEMBLY = OPEN_EXACT_COMPILER
+V28_LOCAL_MAIN_HARD_SHELL_ENDPOINT = PROVED_ELEMENTARY_X_47_OVER_48_PLUS_EPSILON
+V28_MRT_ABSTRACT_PRODUCT_LOCAL_L2_REDUCTION = SOURCE_BACKED_ABSTRACT_INTERFACE_ONLY
+V28_LITERAL_BILINEAR_PRODUCT_LOCAL_FLATNESS = OPEN_NEW_THEOREM
+V28_ONE_SIDED_MRT_TO_ENDPOINT = STOP_SCOPED_H_QUARTER_LOSS
+V28_TAGGED_RESIDUAL_JUTILA_MAIN_ERROR_REASSEMBLY = SELECTED_PRIMARY_OPEN_ATTACHMENT
+V28_STATIONARY_MIXING_TO_ROTATION_ODOMETER_FACTOR = STOP_SCOPED_ROOT_OF_UNITY_EIGENFUNCTION_NO_GO
+V28_NONAUTONOMOUS_POINTED_ESCAPE = LOGICALLY_OPEN_EXACT_STAGE_DIAGRAM_REQUIRED
+V28_LOW_NORM_POINT_EVALUATION_KERNEL_CRITERION = PROVED_EXACT_ALGEBRAIC
+V28_POSITIVE_MEAN_WITHOUT_KERNEL_COVARIANCE_CONTROL = STOP_SCOPED_EXACT_TWO_POINT_FALSIFIERS
+V28_FULL_PRIMORIAL_POINT_RIESZ_NORM = PROVED_EXACT_FINITE_PLUS_STANDARD_PNT_ASYMPTOTIC
+V28_COMPRESSED_TARGET_INDEPENDENT_KERNEL_WHOLE_SHELL_COMPILER = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
+V28_ABP_HNTV_INTERFACES = SOURCE_BACKED_TOOL_CLASSES_ONLY
+V28_HENON_WANG_YOUNG_DENSE_TREE_NATURAL_EXTENSION = SOURCE_BACKED_TOPOLOGICAL_GEOMETRY_ONLY
+V28_HENON_TPC_STAGE_EVENT_MEASURE_SEED_FUNCTIONAL_DIAGRAM = OPEN_ATTACHMENT
+V28_O161_PARENTS_PAIR_NATIVE_H1_GLOBAL = OPEN_UNCHANGED
+V28_A1_A2_TAIL_SELECTION_PACKET_PROVENANCE = INDEPENDENT_AND_UNPAID
 BRIDGE_B_ALL_TRANSLATIONS_CURRENT_GATE = NO
 BRIDGE_B_APPROXIMATE_LOW_RANK_RETURN = OPEN_REQUIRES_WIDTH_AND_PHYSICAL_NORM
 BRIDGE_B_BRATTELI_AGING_CLOCK = OPEN_RESERVE_RANK_GROWTH_FALSIFIER
@@ -7519,21 +7716,23 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮首先执行第 74 节冻结的 literal Ramanujan vector covariance与 signed
-local-main zero-axis reassembly；mixed HB只使用 tagged-vector whole theorem，动力学
-只使用 pointed single-parameter whole-shell discrepancy。不再回到 V21 centered
+下一轮首先执行第 75 节冻结的同一 tagged residual之 joint Jutila main/error
+reassembly与 two-sided product-local flatness。第二解析路只允许 exact
+reduced-radical smooth emitter、\(q\mid D\) aggregate cancellation与一个 collective
+Bettin--Chandee outer reassembly；动力学只允许 target-independent compressed
+low-norm kernel与 exact nonautonomous stage diagram。不再回到 V21 centered
 projector、V22 full-`q` Cauchy
 completion、V24 尚未分型的 `ell_J` emitter或 V25 的 cellwise outer triangle：
 
 ```text
-V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE
-  = SELECTED_OPEN_NEW_THEOREM
-V27_SIGNED_LOCAL_MAIN_ZERO_AXIS_AND_RESIDUAL_REASSEMBLY
+V28_TAGGED_RESIDUAL_JUTILA_MAIN_ERROR_REASSEMBLY
+  = SELECTED_PRIMARY_OPEN_ATTACHMENT
+V28_LITERAL_BILINEAR_PRODUCT_LOCAL_FLATNESS
   = OPEN_NEW_THEOREM
-V27_TAGGED_VECTOR_MIXED_HB2_DETERMINANT_REASSEMBLY
-  = OPEN_NEW_THEOREM
-V27_POINTED_CRITICAL_SECTION_WHOLE_SHELL_DISCREPANCY
-  = OPEN_NEW_THEOREM_AFTER_EXACT_SINGLE_PARAMETER_FACTOR
+V28_LITERAL_MASTER_CORRIDOR_SMOOTH_EMITTER_AND_G_REASSEMBLY
+  = OPEN_EXACT_COMPILER
+V28_COMPRESSED_TARGET_INDEPENDENT_KERNEL_WHOLE_SHELL_COMPILER
+  = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 ```
 
 V19已经完成 combined raw MASTER row到 primorial `V_k^vee`的 exact materialization；
@@ -7712,11 +7911,15 @@ determinant精确展开到 Jutila main与 complete Farey/Kloosterman atoms；V25
 source (2.2) 的 missing-`d` Fourier phase，并证明 full-ensemble zero cancellation与
 exact nonzero-shift emitter。V26把该 emitter压成 joint compensated prime dilation；
 V27又把其 coefficient side精确闭合到 weighted Hilbert geometry，并发现 smooth-main
-zero-axis。故当前须直接处理
-`V27_LITERAL_PRIME_SHELL_RAMANUJAN_VECTOR_COVARIANCE`与
-`V27_SIGNED_LOCAL_MAIN_ZERO_AXIS_AND_RESIDUAL_REASSEMBLY`：保持 fixed `h0=2`、
-literal raw row、完整 `B_x(D)`、corrected `kappa(n)`、typed Fourier/rational indices、
-unit/nonunit/axes、hybrid zero mode、outer唯一绝对值与 exactly-once physical cover。
+zero-axis。V28 已把这个 wall 分成 occurrence-native Euler carrier与 generic circular
+smooth main，证明 local carrier在 joint \(J+E\) 中 exact cancellation，并把非零 corridor
+压到 \(R\ge x^{31/96+o(1)}\)、\(|a|\le x^{17/96+o(1)}\)。故当前须直接处理
+`V28_TAGGED_RESIDUAL_JUTILA_MAIN_ERROR_REASSEMBLY`与
+`V28_LITERAL_BILINEAR_PRODUCT_LOCAL_FLATNESS`；第二解析路只使用
+`V28_LITERAL_MASTER_CORRIDOR_SMOOTH_EMITTER_AND_G_REASSEMBLY`。全部路线必须保持
+fixed `h0=2`、literal raw row、完整 `B_x(D)`、corrected `kappa(n)`、typed
+Fourier/rational indices、unit/nonunit/axes、hybrid zero mode、outer唯一绝对值与
+exactly-once physical cover。
 不得使用 source的错误 `e(-alpha m)` phase，不能把 `n=dm`与
 `lambda_J^rat`混同，不能把 effective `H`写成 hard support，也不能从 exact cell或
 single-phase log theorem直接认领 collective saving。独立 factorable ensemble必须保持
@@ -7755,6 +7958,7 @@ python research/tpc-big-road/tpc_bridge_b_literal_jutila_farey_atom_checker.py -
 python research/tpc-big-road/tpc_bridge_b_corrected_fourier_factorable_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -11636,6 +11840,428 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 75. 2026-08-08 V28：Euler zero axis、reduced-radical corridor 与 compressed kernel
+
+### 75.1 基线、任务与路线裁决
+
+本轮从已发布 V27 基线
+`a2d82be3375b9592ad86b107c56745e1a7f325cd`启动，完整保留 protected
+untracked、TPC-105 `__pycache__`、TPC-63 build products与 `tmp/`。三条只读
+scout分别审核：
+
+1. occurrence-native local Euler main、zero axis与 composite DFT/CRT；
+2. MRT/BC/current weighted-shift source corpus与 strict endpoint；
+3. Logistic/Hénon stationary factor、nonautonomous escape与 low-norm seed kernel。
+
+主控另行完成 exact radical envelope、proof artifact与 fail-closed checker。本节不编号，
+不创建 TPC-207、paper、PDF或 build。
+
+路线结论是：V27 的 generic smooth-main STOP保持，但 source-native Euler tensor具有
+精确零轴；其 inverse-residue corridor已有 Bettin--Chandee conditional power engine。
+整体首墙前移到 literal smooth emitter、same-residual joint J/E reassembly与
+two-sided product-local flatness。动力学 stationary odometer factor被谱论否定，只保留
+nonautonomous compressed-kernel reserve。
+
+### 75.2 Occurrence-native Euler tensor
+
+固定 V19 同一个 physical scalar、`h0=2`、`x=2X`、`Q=x^(1/3)`、
+`H=x^(21/32)` 与 comparison cutoff `z=(log x)^K`。对每个 MASTER
+occurrence \(o\)，令
+
+\[
+a_o=c_j\prod_i\mu(e_i)\frac{\log f_1}{\log t(o)},
+\qquad c_1=2,\quad c_2=-1,
+\tag{75.1}
+\]
+
+并令 \(m(o)\) 为 actual deterministic routing选出的 group，满足
+
+\[
+(x/2)^{133/400}<m(o)\le x^{1/2},\qquad
+D(o)=\operatorname{rad}m(o).
+\tag{75.2}
+\]
+
+对 \(p\mid m\) 定义
+
+\[
+F_p(h)=\frac p{p-1}{\bf1}_{h\not\equiv-2\pmod p},
+\tag{75.3}
+\]
+
+\[
+G_{p,z}(h)=
+\begin{cases}
+F_p(h),&p\le z,\\
+p/(p-1),&p>z,\ h\equiv0\pmod p,\\
+p(p-2)/(p-1)^2,&p>z,\ h\not\equiv0\pmod p,
+\end{cases}
+\tag{75.4}
+\]
+
+以及
+
+\[
+\Delta_{m,z}(h)=
+\prod_{p\mid m}F_p(h)-\prod_{p\mid m}G_{p,z}(h).
+\tag{75.5}
+\]
+
+source-native formal carrier为
+
+\[
+M_x^{\rm loc}(h)=
+\sum_{\substack{o:\ {\rm MASTER}\\t(o),t(o)+h\in I_x}}
+a_o\Delta_{m(o),z}(h),
+\qquad e_x(h)=r_x(h)-M_x^{\rm loc}(h).
+\tag{75.6}
+\]
+
+这是 exact decomposition和 source-native local tensor定义；尚未证明
+\(M_x^{\rm loc}\) 是 hard finite interval上的 actual weighted AP main。
+
+### 75.3 Zero、mean、Ramanujan 与 noncircular J/E
+
+对 \(D=\operatorname{rad}m\) 逐 tensor精确有
+
+\[
+\Delta_{m,z}(0)=0,\qquad
+\sum_{h\bmod D}\Delta_{m,z}(h)=0,
+\tag{75.7}
+\]
+
+以及对每个素数 \(q\)
+
+\[
+\sum_{h\bmod\operatorname{lcm}(q,D)}
+c_q(h)\Delta_{m,z}(h)=0.
+\tag{75.8}
+\]
+
+\(q\nmid D\) 时这是 CRT independence；\(q\mid D\) 时必须保留完整 unit-frequency
+sum并使用 \(F_q(0)=G_{q,z}(0)\)，不得逐 row取绝对值。
+
+令
+
+\[
+\kappa_x(h)=\widehat\psi_+(h/H)A_Q(h)/L_{\rm pr},\quad
+J(f)=\sum_h\kappa_x(h)f(h),\quad E(f)=f(0)-J(f).
+\tag{75.9}
+\]
+
+则 \(J(f)+E(f)=f(0)\)。generic interpolant若强制 \(M(0)=S_x\)，就以系数一返回
+目标；而 (75.7) 给出
+
+\[
+\boxed{M_x^{\rm loc}(0)=0,\qquad
+J(M_x^{\rm loc})+E(M_x^{\rm loc})=0.}
+\tag{75.10}
+\]
+
+这个 cancellation只在 tagged Jutila main/error共同重组时有用；它本身不估计
+\(e_x\)。
+
+### 75.4 Reduced-radical CRT normal form
+
+采用 normalized negative-sign DFT。对 \(q\nmid D\) 的 determinant row令
+
+\[
+g=(n,D),\qquad D=gR,\qquad n=ga.
+\tag{75.11}
+\]
+
+local frequency满足 \(k_p=0\) for \(p\mid g\)，而 \(p\mid R\) 时
+\(k_p=a\bar q\,\overline{R/p}\pmod p\)。因此 \(g\) 精确消失：
+
+\[
+\widehat P_D(n\bar q)
+=\frac{\mu(R)}{\varphi(R)}e_R(2a\bar q).
+\tag{75.12}
+\]
+
+写 \(R=R_0R_1\)，其中 \(p\mid R_0\) iff \(p\le z\)，则
+
+\[
+\widehat B_{D,z}(n\bar q)
+=\frac{\mu(R_0)}
+{\varphi(R_0)\varphi(R_1)^2}
+e_{R_0}(2a\overline{qR_1}).
+\tag{75.13}
+\]
+
+\(R_1=1\) 时两项相同、difference为零。active rows满足
+
+\[
+0<|a|\le qR/H,\quad (a,qR)=1,\quad
+R\ge H/q=x^{31/96+o(1)},\quad
+qR/H\le x^{17/96+o(1)}.
+\tag{75.14}
+\]
+
+fixture \(D=30,q=11,n=2\) 给
+\(g=2,R=15,a=1\) 与 phase \(e_{15}(7)\)；错误保留 \(g\) 会给
+\(e_{15}(14)\)，checker必须拒绝。
+
+### 75.5 Radical envelope 与 Bettin--Chandee conditional engine
+
+actual selected group的 ordered occurrence mass满足
+
+\[
+\sum_{o:m(o)=M}|a_o|\ll x^{1+o(1)}/M,
+\qquad
+\sum_{\operatorname{rad}M=D}1/M\le1/\varphi(D).
+\tag{75.15}
+\]
+
+所以 dyadic \(R\asymp S\) 上
+
+\[
+\|B_F\|_2\ll x^{1+o(1)}S^{-3/2},
+\tag{75.16}
+\]
+
+而固定 \(R_1\) 的 hybrid branch满足
+
+\[
+\|B_G(\cdot;R_1)\|_2
+\ll x^{1+o(1)}S^{-3/2}R_1^{-3}.
+\tag{75.17}
+\]
+
+对 \(R=x^\rho\)，Bettin--Chandee
+`arXiv:1502.00769v1` Theorem 1给条件指数
+
+\[
+\mathfrak E_F(\rho)\le
+\begin{cases}
+2077/1920-3\rho/10,&31/96\le\rho\le1/3,\\
+639/640-\rho/20,&1/3\le\rho\le1/2.
+\end{cases}
+\tag{75.18}
+\]
+
+最坏点为
+
+\[
+\boxed{\mathfrak E_F(31/96)=1891/1920,\qquad
+399/400-1891/1920=121/9600.}
+\tag{75.19}
+\]
+
+这里的 source theorem 参数与外部 normalization 不能省略。对 \(F\) branch，
+
+\[
+(A,M,N)=(QR/H,Q,R),\qquad \vartheta=\pm2,
+\tag{75.19a}
+\]
+
+而对固定 \(R_1\) 的 \(G\) branch，
+
+\[
+(A,M,N)=(QR_0R_1/H,QR_1,R_0).
+\tag{75.19b}
+\]
+
+prime-\(q\)、short-\(a\) arrays 的 norms分别是
+\(Q^{1/2+o(1)}\)、\(A^{1/2+o(1)}\)，第三个 array使用
+(75.16)--(75.17)，外部 normalization统一为 \(H/L_{\rm pr}\)。
+coprimality由 Mobius split保留。若
+\(R_0=x^\sigma,R_1=x^\lambda\)，则 \(G\) 的 second
+Bettin--Chandee term满足
+
+\[
+\mathfrak E_{G,2}(\sigma,\lambda)\le
+\begin{cases}
+1-\sigma/8-\lambda/2,&1/3+\lambda\ge\sigma,\\
+23/24-5\lambda/8,&\sigma\ge1/3+\lambda,
+\end{cases}
+\tag{75.19c}
+\]
+
+两支分别至多 \(737/768\) 与 \(23/24\)。\(F\) 的 second term也分别至多
+\(737/768\)、\(23/24\)；\(G\) first term的 worst endpoint仍为
+\((\sigma,\lambda)=(31/96,0)\)，即 \(1891/1920\)。因此两个 source terms、
+两个 \(F/G\) branches均严格越过 endpoint。这个 source-backed local engine仍以
+exact hard-shell smoothing、moving \(R_0/R_1\) emitter、coprimality Mobius cells、
+both signs、\(q\mid D\) aggregate cancellation与 one outer reassembly为条件。
+因此 `ARITHMETIC_ADVANCE=NO`。
+
+### 75.6 Residual product-local gate
+
+MRT `arXiv:1707.01315v3` Proposition 3.1是 abstract finite-sequence
+product-local L2 reduction。一个充分的新 theorem是对每个 dyadic \(Y\ge H\)
+
+\[
+\int_{\mathfrak m}|B_xW_x|\le x^{1+o(1)},\qquad
+\sup_\alpha\int_{\mathfrak m\cap I(\alpha,1/Y)}|B_xW_x|
+\le x^{1+2\theta+o(1)}/Y
+\tag{75.20}
+\]
+
+with one fixed \(\theta<13/4800\)，并 exact重组为同一个 tagged \(e_x\)。
+现有 MRT只给 one-sided logarithmic input；即使理想化 one-sided flatness，输出仍有
+\(H^{1/4}=x^{21/128}\) loss，超过 endpoint
+
+\[
+21/128-13/4800=1549/9600.
+\tag{75.21}
+\]
+
+因此 product-local flatness与 same-residual J/E reassembly仍是 analytic primary。
+
+### 75.7 Stationary factor no-go 与 compressed kernel
+
+若 mixing probability system exact factor到 finite rotation或 odometer，则 nontrivial
+quotient character拉回 root-of-unity eigenfunction，其 correlations不趋零，矛盾。
+所以 stationary Logistic/Hénon-to-odometer factor STOP；nonautonomous stage diagram
+不受这个 theorem直接排除。
+
+若指定 seed evaluation有 target-independent Riesz representer \(K_j\)，则
+
+\[
+S_j(a^\dagger)=\int K_jS_j\,d\nu,\quad
+\int K_jd\nu=1,\quad
+|S_j(a^\dagger)-m_j|\le\|K_j\|_2V_j.
+\tag{75.22}
+\]
+
+要从 \(m_j\gg x_j/\log^2x_j\) 推出 positivity，充分条件是
+
+\[
+\|K_j\|_2V_j=o(x_j/\log^2x_j).
+\tag{75.23}
+\]
+
+在 full primorial quotient上，point evaluation的唯一 kernel为
+\(P{\bf1}_{0}\)，norm \(=\sqrt P\)。取 \(P=\prod_{p\le\sqrt x}p\) 时为
+\(\exp((1/2+o(1))\sqrt x)\)，generic variance无法支付。Wang--Young Hénon
+dense-tree/natural-extension只登记为 topology；arithmetic stage/event/measure/seed
+diagram仍 OPEN。
+
+### 75.8 Status atlas 与路线顺序
+
+~~~text
+V28_MAXIMUM_CLAIM
+  = EXACT_OCCURRENCE_NATIVE_EULER_ZERO_AXIS_AND_REDUCED_RADICAL_CORRIDOR_PLUS_SOURCE_BACKED_CONDITIONAL_BETTIN_CHANDEE_ENGINE_PLUS_STATIONARY_FACTOR_NO_GO_AND_COMPRESSED_KERNEL_ROUTE
+V28_ROUTE_ADVANCE = YES
+V28_ARITHMETIC_ADVANCE = NO
+V28_FIXED_ATOM_CREDIT = 0
+V28_STRICT_1_OVER_400 = UNPAID
+V28_L2 = NONE
+V28_TPC_207_TRIGGER = false
+V28_NUMBERED_RELEASE = NO
+V28_MASTER_OCCURRENCE_LOCAL_EULER_TENSOR = PROVED_EXACT_ALGEBRAIC
+V28_LOCAL_EULER_ZERO_MEAN_RAMANUJAN_ORTHOGONALITY = PROVED_EXACT_ALGEBRAIC
+V28_LOCAL_EULER_TENSOR_AS_ACTUAL_WEIGHTED_AP_MAIN = OPEN_ATTACHMENT
+V28_SMOOTH_MAIN_WITH_M0_EQUAL_PHYSICAL_TARGET = STOP_SCOPED_CIRCULAR_ZERO_AXIS_COEFFICIENT_ONE
+V28_LOCAL_MAIN_JUTILA_J_PLUS_E_CANCELLATION = PROVED_EXACT_ALGEBRAIC
+V28_REDUCED_RADICAL_CRT_PHASE = PROVED_EXACT_G_CANCELLATION_AND_PLUS_TWO_PHASE
+V28_LOCAL_MAIN_SHARED_Q_DIVIDES_RADICAL_BRANCH = PROVED_EXACT_AFTER_FULL_UNIT_FREQUENCY_SUM
+V28_SELECTED_MASTER_RADICAL_L2_ENVELOPE = PROVED_ELEMENTARY_FROM_ORDERED_D2_D4_AND_RADICAL_EULER_SUM
+V28_SHORT_INVERSE_RESIDUE_BETTIN_CHANDEE_CORRIDOR = SOURCE_BACKED_POWER_SAVING_AFTER_EXACT_COMPILER
+V28_SHORT_INVERSE_RESIDUE_CORRIDOR_EXPONENT = 1891/1920
+V28_SHORT_INVERSE_RESIDUE_CORRIDOR_MARGIN_TO_399_400 = 121/9600
+V28_LITERAL_MASTER_CORRIDOR_SMOOTH_EMITTER_AND_G_REASSEMBLY = OPEN_EXACT_COMPILER
+V28_LOCAL_MAIN_HARD_SHELL_ENDPOINT = PROVED_ELEMENTARY_X_47_OVER_48_PLUS_EPSILON
+V28_MRT_ABSTRACT_PRODUCT_LOCAL_L2_REDUCTION = SOURCE_BACKED_ABSTRACT_INTERFACE_ONLY
+V28_LITERAL_BILINEAR_PRODUCT_LOCAL_FLATNESS = OPEN_NEW_THEOREM
+V28_ONE_SIDED_MRT_TO_ENDPOINT = STOP_SCOPED_H_QUARTER_LOSS
+V28_TAGGED_RESIDUAL_JUTILA_MAIN_ERROR_REASSEMBLY = SELECTED_PRIMARY_OPEN_ATTACHMENT
+V28_STATIONARY_MIXING_TO_ROTATION_ODOMETER_FACTOR = STOP_SCOPED_ROOT_OF_UNITY_EIGENFUNCTION_NO_GO
+V28_NONAUTONOMOUS_POINTED_ESCAPE = LOGICALLY_OPEN_EXACT_STAGE_DIAGRAM_REQUIRED
+V28_LOW_NORM_POINT_EVALUATION_KERNEL_CRITERION = PROVED_EXACT_ALGEBRAIC
+V28_POSITIVE_MEAN_WITHOUT_KERNEL_COVARIANCE_CONTROL = STOP_SCOPED_EXACT_TWO_POINT_FALSIFIERS
+V28_FULL_PRIMORIAL_POINT_RIESZ_NORM = PROVED_EXACT_FINITE_PLUS_STANDARD_PNT_ASYMPTOTIC
+V28_COMPRESSED_TARGET_INDEPENDENT_KERNEL_WHOLE_SHELL_COMPILER = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
+V28_ABP_HNTV_INTERFACES = SOURCE_BACKED_TOOL_CLASSES_ONLY
+V28_HENON_WANG_YOUNG_DENSE_TREE_NATURAL_EXTENSION = SOURCE_BACKED_TOPOLOGICAL_GEOMETRY_ONLY
+V28_HENON_TPC_STAGE_EVENT_MEASURE_SEED_FUNCTIONAL_DIAGRAM = OPEN_ATTACHMENT
+V28_O161_PARENTS_PAIR_NATIVE_H1_GLOBAL = OPEN_UNCHANGED
+V28_A1_A2_TAIL_SELECTION_PACKET_PROVENANCE = INDEPENDENT_AND_UNPAID
+~~~
+
+路线顺序：
+
+1. analytic primary：same tagged \(e_x\) 的 joint Jutila main/error reassembly与
+   product-local flatness；
+2. analytic second road：完成 reduced-radical \(F/G\) smooth emitter并集体应用
+   Bettin--Chandee；
+3. dynamics reserve：nonautonomous target-independent low-norm kernel compiler。
+
+三条路线互不借 theorem credit。O161 parents、pair-native/H1、A1/A2与 global
+architecture继续独立 OPEN。
+
+### 75.9 Artifact、checker 与 release 状态
+
+proof为
+`research/tpc-big-road/bridge_b_euler_zero_axis_and_kernel_carrier.md`；
+checker为
+`research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py`。checker冻结
+49-field contract、36-row registry与 SHA-256
+
+~~~text
+2926e4dc94080ff3179970dc134c1a1edb76bcb5b7f64be783b4bc747d5c7a0b
+~~~
+
+149 contract、75 registry、12 source、15 dependency与149 result mutations必须
+全部拒绝；normal/optimized `--check`必须 stdout byte-identical。maximum claim为
+
+~~~text
+V28_MAXIMUM_CLAIM = EXACT_OCCURRENCE_NATIVE_EULER_ZERO_AXIS_AND_REDUCED_RADICAL_CORRIDOR_PLUS_SOURCE_BACKED_CONDITIONAL_BETTIN_CHANDEE_ENGINE_PLUS_STATIONARY_FACTOR_NO_GO_AND_COMPRESSED_KERNEL_ROUTE
+V28_ARITHMETIC_ADVANCE = NO
+V28_FIXED_ATOM_CREDIT = 0
+V28_STRICT_1_OVER_400 = UNPAID
+V28_L2 = NONE
+V28_TPC_207_TRIGGER = false
+~~~
+
+### 75.10 Final QA pending
+
+~~~text
+V28_FINAL_RELEASE_QA = PASS
+V28_MATH_SOURCE_FORMULA_QA = PASS
+V28_CHECKER_ADVERSARIAL_QA = PASS
+V28_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V28_PRE_CLOSURE_HANDOFF_SHA256_RAW = 3180cf9f08e835391dc523d812faf3b794812d8c80c58723010a4c3225467e1a
+V28_PRE_CLOSURE_HANDOFF_SHA256_CANONICAL_LF = 619e1c3ec6fd7397feefbefd6c75c2851c7963de1b91d976279b7dd300935718
+V28_COMPASS_SHA256_RAW = 00534a02ee7812ad5383728e031af69058c63130084f48a461baf03f0232c297
+V28_COMPASS_SHA256_CANONICAL_LF = 325c3f1ec4a64fd36e40038fda778d72682af19b5b26f0ca7c10a72683218e63
+V28_README_SHA256_RAW = d03e223ff3fdea50731dce029d2e985a2fd0b30d0e49ef9fbfc061d4a30f57df
+V28_README_SHA256_CANONICAL_LF = d2f35ca8e1791b4037f60085b187ba7eab0002c6f5e19edf2f01b16373696f13
+V28_PROOF_SHA256_RAW_CANONICAL_LF = 922d5601b088a8a3a8dd52d3e9d186c85e7fea00ca670f3c6f324c1d433da464
+V28_CHECKER_SHA256_RAW_CANONICAL_LF = dddff8b09472fe9fc563caa3f6c204c24895aa45613781efba0877ae3fc421a7
+V28_CHECKER_STDOUT_SHA256_RAW_CRLF = 920584fdf53ed8ea792af358e7d5ededd08d690eeecaa8f30207a74181958acd
+V28_CHECKER_STDOUT_SHA256_CANONICAL_LF = 568df7eda9b9141e6a99731de8399bca4b7ffc765fd15ca8b365d546ac57458d
+V28_CHECKER_STDOUT_PAYLOAD_SHA256 = 9a71441fd68c53b24acad40f71902722e80a73df70183b75842896c89eddedea
+V28_CHECKER_CONTRACT_REGISTRY_SOURCE_DEPENDENCY = 49/36/5/6
+V28_CHECKER_MUTATIONS = 149/75/12/15/149
+V28_CHECKER_REGISTRY_SHA256 = 2926e4dc94080ff3179970dc134c1a1edb76bcb5b7f64be783b4bc747d5c7a0b
+STARTUP_REGRESSION = 22/22
+SUPPLEMENTAL_TPC111_TPC124_TPC126_TPC127 = 4/4
+V23_TO_V28_DEPENDENCY_PROCESSES = 12/12
+V23_TO_V28_DEPENDENCY_STDOUT_IDENTITIES = 6/6
+BIG_ROAD_CHECKER_PROCESSES = 32/32
+BIG_ROAD_CHECKER_STDOUT_IDENTITIES = 16/16
+RELEASE_ALLOWLIST = EXACT_FIVE_PATHS
+CACHED_DIFF = EMPTY
+DIFF_CHECK = PASS
+PROTECTED_UNTRACKED_COUNT = 130
+PROTECTED_UNTRACKED_MANIFEST_SHA256 = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+MARKDOWN_FENCES = HANDOFF_BACKTICK_2838_TILDE_44__COMPASS_BACKTICK_224_TILDE_22__README_BACKTICK_378_TILDE_20__PROOF_BACKTICK_0_TILDE_28
+EQUATION_TAGS = HANDOFF_78_OF_78_UNIQUE__PROOF_77_OF_77_UNIQUE
+BASELINE_HEAD_ORIGIN_REMOTE = a2d82be3375b9592ad86b107c56745e1a7f325cd
+FILES_CHANGED = EXACT_FIVE_RELEASE_PATHS
+GENERATED_OUTPUTS = NONE
+V28_ARITHMETIC_ADVANCE = NO
+V28_FIXED_ATOM_CREDIT = 0
+V28_STRICT_1_OVER_400 = UNPAID
+V28_L2 = NONE
+V28_TPC_207_TRIGGER = false
+V28_SEALED_FOR_NEW_SESSION = true
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+~~~
 
 ## 74. 2026-08-08 V27：Ramanujan energy、zero-axis main 与 pointed block gate
 
