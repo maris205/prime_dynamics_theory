@@ -1,0 +1,754 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\PhiP}{\Phi^{P}}
+\newcommand{\PhiJ}{\Phi^{J}}
+\newcommand{\PhiI}{\Phi^{I}}
+\newcommand{\PsiK}{\Psi^{[K]}}
+\newcommand{\GapP}{\operatorname{Gap}_{P}}
+\newcommand{\GapJ}{\operatorname{Gap}_{J}}
+\newcommand{\GapI}{\operatorname{Gap}_{I}}
+\newcommand{\GapK}{\operatorname{Gap}_{K}}
+\newcommand{\Binfty}{B_{\infty}}
+
+\hypersetup{
+  pdftitle={Rank-One P2-Scale Prime-Tail Resummation and Bounded-Gap Necessity},
+  pdfauthor={RH research program},
+  pdfsubject={Uniform factorial resummation below the P2 scale with a bounded-prime-gap necessity theorem},
+  pdfkeywords={prime gaps, prime-square tails, asymptotic series, Euler products, P2 scale}
+}
+
+\title{Rank-One $P_2$-Scale Prime-Tail Resummation\\
+and Bounded-Gap Necessity}
+\author{RH research program}
+\date{August 8, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $x=p_y$, $L=\log x\ge512$, and retain the exact first strict prime
+tail $P_1(y)$.  For every integer $1\le K\le\lfloor3L\rfloor$, we
+replace all higher tails by the factorial Laplace kernel
+\[
+ I_{2r}^{[K]}=\frac{x^{1-2r}}{(2r-1)L}
+ \sum_{j=0}^{K-1}\frac{(-1)^j j!}{((2r-1)L)^j}\qquad(r\ge2).
+\]
+For the seven endpoint channels and the exact RH-383 endpoint map, the
+resulting rank-one surrogate $\GapK$ satisfies
+\[
+ \pi^2|\GapP-\GapK|
+ \le \frac{x^{-3}}{L}\left(
+ 7560\eps_x+\frac{1638}{x^2}
+ +1176\frac{K!}{(3L)^K}\right),
+\]
+where $\eps_x=0.027L^{1.801}\exp[-0.1853L^{3/5}(\log L)^{-1/5}]$.
+The factorial ratio is at most $1/(3L)$ throughout the full integer
+window, so the maximum over all such $K$ is $o(P_2(y))$.
+
+This rank-one retention is sharp within the frozen $P/J/I$ kernel
+hierarchy.  Maynard's theorem on infinitely many bounded consecutive
+prime gaps implies
+\[
+ \limsup_y p_y^2|P_1(y)-I_2(p_y)|\ge\frac12
+\]
+and, with $X_\infty>0$ from the exact endpoint,
+\[
+ \limsup_y p_y^2\pi^2|\GapP-\GapI|\ge X_\infty,
+ \qquad
+ \limsup_y p_y^2\pi^2|\GapP-\GapJ|\ge X_\infty.
+\]
+Thus a fully smooth $J/I$ surrogate cannot attain the $P_2$ scale,
+whereas preserving the exact $P_1$ coordinate does.  The result is not a
+claim that the factorial series converges and not a universal
+impossibility theorem for every conceivable surrogate.  A 56-row exact
+artifact reproduces the algebraic interfaces but is not an analytic
+proof.
+\end{abstract}
+
+\noindent\textbf{Keywords:} bounded consecutive prime gaps; strict prime
+tails; factorial asymptotics; rank-one retention; square-clock endpoint;
+$P_2$ scale.
+
+\section{Setting, inherited endpoint, and main results}
+
+Let $3=p_1<p_2<\cdots$ be the odd primes and put
+\[
+ x=p_y,\qquad L=\log x,\qquad
+ V(L)=L^{3/5}(\log L)^{-1/5},\qquad
+ \eps_x=\frac{27}{1000}L^{1801/1000}
+ e^{-(1853/10000)V(L)}.
+\]
+Johnston and Yang's Theorem~1.4, equation~(1.8), printed page~2, gives
+\begin{equation}
+ |\vartheta(t)-t|\le t\eps_t\qquad(t\ge23),
+ \label{eq:JY}
+\end{equation}
+and RH-386 proves that the displayed envelope decreases once
+$\log t\ge512$ \cite{JohnstonYang2023,RH386}.  Hence $\eps_t\le\eps_x$
+for $t\ge x$ in our domain.
+
+For $r\ge1$ define the strict prime and integral tails
+\begin{equation}
+ P_r(y)=\sum_{p>x}(p^2-1)^{-r},\qquad
+ J_r(x)=\int_x^\infty\frac{dt}{(t^2-1)^r\log t},\qquad
+ I_{2r}(x)=\int_x^\infty\frac{t^{-2r}}{\log t}\,dt.
+ \label{eq:tails}
+\end{equation}
+For $c=1,\ldots,7$ let
+\begin{equation}
+ \PhiP_c=\sum_{r\ge1}\frac{c^rP_r}{r},\qquad
+ \PhiJ_c=\sum_{r\ge1}\frac{c^rJ_r}{r},\qquad
+ \PhiI_c=\sum_{r\ge1}\frac{c^rI_{2r}}{r}.
+ \label{eq:PhiPJI}
+\end{equation}
+The nonnegative Tonelli identities identify $\PhiJ_c$ and $\PhiI_c$
+with the logarithmic integrals in RH-387 \cite{RH387}.
+
+For $r\ge2$, set
+\begin{equation}
+ K_r=\frac{x^{1-2r}}{(2r-1)L},\qquad
+ a_r=\frac{1}{(2r-1)L},\qquad
+ S_K(a)=\sum_{j=0}^{K-1}(-1)^j j!a^j,
+ \label{eq:factorial-defs}
+\end{equation}
+and
+\begin{equation}
+ I_{2r}^{[K]}=K_rS_K(a_r),\qquad
+ \PsiK_c=cP_1(y)+\sum_{r\ge2}\frac{c^rI_{2r}^{[K]}}r.
+ \label{eq:Psi}
+\end{equation}
+The first coordinate is therefore retained exactly; every rank $r\ge2$
+is replaced.
+
+We recall the exact endpoint map.  For $2\le m\le8$, put
+\[
+ u_m=\prod_{p\ \mathrm{odd}}
+ \frac{1-m/p^2}{1-1/p^2},
+\]
+and index
+\[
+ (\alpha_m)=(-2,2,-2,2,-2,2,-2),\qquad
+ (\beta_m)=(1,-2,2,-2,2,-2,2).
+\]
+With
+\[
+ C(Z)=1+\sum_{m=2}^8\alpha_mZ_m,
+ \qquad W(Z)=\sum_{m=2}^8\beta_mZ_m,
+ \qquad Z_m(z)=u_me^{z_{m-1}},
+\]
+define
+\begin{equation}
+ F(z)=2\{C(u)-C(Z(z))\}
+ -4W(Z(z))(1-e^{-z_1}).
+ \label{eq:F}
+\end{equation}
+The exact normal form of RH-383 \cite{RH383} gives, for
+$q_y=4\prod_{i\le y}p_i^2$,
+\begin{equation}
+ \GapP:=\Binfty-G(q_y)=\frac{F(\PhiP)}{\pi^2},\quad
+ \GapJ:=\frac{F(\PhiJ)}{\pi^2},\quad
+ \GapI:=\frac{F(\PhiI)}{\pi^2},\quad
+ \GapK:=\frac{F(\PsiK)}{\pi^2}.
+ \label{eq:gaps}
+\end{equation}
+Here each undecorated coordinate symbol denotes its seven-vector.  Only
+$\GapP$ is the actual square-clock gap; the other three are declared
+surrogates.
+
+\begin{theorem}[Uniform rank-one $P_2$-scale resummation]
+\label{thm:sufficiency}
+Let $x=p_y$, $L\ge512$, and let $K$ be any integer satisfying
+$1\le K\le\lfloor3L\rfloor$.  The vectors $\PhiP,\PhiJ,\PhiI,$ and
+$\PsiK$ belong to $[0,1/2]^7$, and
+\begin{equation}
+ \max_{1\le c\le7}|\PhiP_c-\PsiK_c|
+ \le\frac{x^{-3}}L\left(
+ 60\eps_x+\frac{13}{x^2}
+ +\frac{28}{3}\frac{K!}{(3L)^K}\right).
+ \label{eq:coordinate-master}
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{
+ \pi^2|\GapP-\GapK|
+ \le\frac{x^{-3}}L\left(
+ 7560\eps_x+\frac{1638}{x^2}
+ +1176\frac{K!}{(3L)^K}\right).}
+ \label{eq:gap-master}
+\end{equation}
+Moreover,
+\begin{equation}
+ \lim_{y\to\infty}
+ \max_{1\le K\le\lfloor3\log p_y\rfloor}
+ \frac{|\GapP-\GapK|}{P_2(y)}=0.
+ \label{eq:uniform-P2}
+\end{equation}
+\end{theorem}
+
+Define the positive endpoint constant
+\begin{equation}
+ X_\infty=2u_4-4u_5+6u_6-8u_7+10u_8>0.
+ \label{eq:X}
+\end{equation}
+Its positivity is the exact run-count consequence proved in RH-381
+\cite{RH381}.
+
+\begin{theorem}[Bounded-gap necessity in the frozen hierarchy]
+\label{thm:necessity}
+Within the $P/J/I$ hierarchy defined above,
+\begin{align}
+ \limsup_{y\to\infty}p_y^2|P_1(y)-I_2(p_y)|&\ge\frac12,
+ \label{eq:scalar-I}\\
+ \limsup_{y\to\infty}p_y^2|P_1(y)-J_1(p_y)|&\ge\frac12,
+ \label{eq:scalar-J}\\
+ \limsup_{y\to\infty}p_y^2\pi^2|\GapP-\GapI|&\ge X_\infty,
+ \label{eq:gap-I-necessity}\\
+ \limsup_{y\to\infty}p_y^2\pi^2|\GapP-\GapJ|&\ge X_\infty.
+ \label{eq:gap-J-necessity}
+\end{align}
+In particular,
+\begin{equation}
+ \limsup_y\frac{|\GapP-\GapI|}{P_2(y)}
+ =\limsup_y\frac{|\GapP-\GapJ|}{P_2(y)}=+\infty.
+ \label{eq:ratio-divergence}
+\end{equation}
+Thus the exact $P_1$ term is necessary for the specific smooth-surrogate
+$P_2$ contract in Theorem~\ref{thm:sufficiency}.  No statement is made
+about every conceivable surrogate.
+\end{theorem}
+
+\section{Higher-rank source and power transfers}
+
+Write $E(t)=\vartheta(t)-t$ and
+$h_r(t)=(t^2-1)^{-r}/\log t$.  The strict endpoint $p>x$ gives
+\begin{equation}
+ P_r-J_r=-E(x)h_r(x)-\int_x^\infty E(t)h_r'(t)\,dt,
+ \qquad
+ |P_r-J_r|\le\eps_x\{2xh_r(x)+J_r\}.
+ \label{eq:strict-source}
+\end{equation}
+The boundary $-E(x)h_r(x)$ and the second copy of $xh_r(x)$ produced by
+integration by parts are distinct.  We apply \eqref{eq:strict-source}
+only for $r\ge2$.
+
+Let
+\begin{equation}
+ R(z)=-\log(1-z)-z=\sum_{r\ge2}\frac{z^r}{r}.
+ \label{eq:R}
+\end{equation}
+For $0\le z<1$,
+\begin{equation}
+ 0\le R(z)\le\frac{z^2}{2(1-z)},
+ \qquad R'(z)=\frac{z}{1-z}.
+ \label{eq:R-bounds}
+\end{equation}
+The first estimate retains the divisor $2$; the second will control the
+change from $(t^2-1)^{-1}$ to $t^{-2}$.
+
+\begin{proposition}[Higher-rank coordinate ledger]
+\label{prop:coordinates}
+For every $c\in\{1,\ldots,7\}$ and $L\ge512$,
+\begin{align}
+ \left|\sum_{r\ge2}\frac{c^r(P_r-J_r)}r\right|
+ &<\frac{60\eps_x}{x^3L},
+ \label{eq:source60}\\
+ 0\le\sum_{r\ge2}\frac{c^r(J_r-I_{2r})}r
+ &<\frac{13}{x^5L}.
+ \label{eq:power13}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Since $L\ge512$,
+\begin{equation}
+ x=e^L>2^L\ge2^{512}>256.
+ \label{eq:bridge}
+\end{equation}
+All summands are absolutely summable, so Tonelli may be applied to their
+nonnegative majorants.  Summing the boundary term in
+\eqref{eq:strict-source} and using \eqref{eq:R-bounds} gives
+\[
+ 2x\sum_{r\ge2}\frac{c^rh_r(x)}r
+ \le\frac{x^{-3}}L
+ \frac{c^2}{(1-x^{-2})^2\{1-c/(x^2-1)\}}.
+\]
+The $J_r$ contribution obeys
+\[
+ \sum_{r\ge2}\frac{c^rJ_r}r
+ =\int_x^\infty\frac{R(c/(t^2-1))}{\log t}\,dt
+ \le\frac{x^{-3}}L
+ \frac{c^2}{6(1-x^{-2})^2\{1-c/(x^2-1)\}}.
+\]
+The reciprocal denominator common to these two terms and to the power
+comparison below is
+\begin{equation}
+ D_c(x)^{-1}:=
+ \frac1{(1-x^{-2})^2\{1-c/(x^2-1)\}}
+ =\frac1{(1-x^{-2})\{1-(1+c)/x^2\}}.
+ \label{eq:Dc}
+\end{equation}
+It increases with $c$ and decreases with $x$, so
+\begin{equation}
+ D_c(x)^{-1}<D_7(256)^{-1}
+ =\frac{536870912}{536797185}<\frac{36}{35}<\frac54.
+ \label{eq:Dc-bound}
+\end{equation}
+The source coefficient is therefore
+\[
+ \frac76c^2D_c(x)^{-1}<\frac65c^2
+ \le\frac{294}{5}<60,
+\]
+which proves \eqref{eq:source60} by explicit arithmetic.
+
+For the second comparison, the mean-value theorem and
+$R'(z)=z/(1-z)$ give
+\[
+ 0\le R\!\left(\frac{c}{t^2-1}\right)-R\!\left(\frac{c}{t^2}\right)
+ \le\frac{c^2}{t^2(t^2-1)(t^2-1-c)}.
+\]
+Therefore
+\[
+ \sum_{r\ge2}\frac{c^r(J_r-I_{2r})}r
+ \le\frac{x^{-5}}L
+ \frac{c^2}{5(1-x^{-2})\{1-(1+c)/x^2\}}.
+\]
+By \eqref{eq:Dc-bound}, the last coefficient is
+\[
+ \frac{c^2}{5}D_c(x)^{-1}<\frac{c^2}{4}
+ \le\frac{49}{4}<13.
+\]
+This proves \eqref{eq:power13} by explicit arithmetic.
+\end{proof}
+
+\section{Exact factorial remainder, cube, and moving window}
+
+The power kernel has a Laplace representation with an exact finite
+remainder.
+
+\begin{lemma}[Factorial Laplace identity]
+\label{lem:factorial}
+For $a>0$, let
+\[
+ G(a)=\int_0^\infty\frac{e^{-v}}{1+av}\,dv.
+\]
+Then $I_{2r}=K_rG(a_r)$ and, for every integer $K\ge1$,
+\begin{equation}
+ G(a)-S_K(a)=(-a)^K
+ \int_0^\infty\frac{e^{-v}v^K}{1+av}\,dv.
+ \label{eq:exact-remainder}
+\end{equation}
+Consequently
+\begin{equation}
+ (-1)^K(I_{2r}-I_{2r}^{[K]})\ge0,\qquad
+ |I_{2r}-I_{2r}^{[K]}|\le K_r a_r^K K!.
+ \label{eq:factorial-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Substitute $t=xe^u$ in $I_{2r}$ and then set
+$v=(2r-1)u$.  This gives $I_{2r}=K_rG(a_r)$.  The finite geometric
+identity
+\[
+ \frac1{1+av}=\sum_{j=0}^{K-1}(-av)^j
+ +\frac{(-av)^K}{1+av}
+\]
+may be integrated termwise because it is finite.  Since
+$\int_0^\infty e^{-v}v^j\,dv=j!$, it gives
+\eqref{eq:exact-remainder}; positivity of its integral and
+$1/(1+av)\le1$ give \eqref{eq:factorial-bound}.
+\end{proof}
+
+\begin{proposition}[Factorial coordinate and cube]
+\label{prop:factorial-coordinate}
+If $1\le K\le\lfloor3L\rfloor$, then
+\begin{equation}
+ \max_{1\le c\le7}
+ \left|\sum_{r\ge2}\frac{c^r(I_{2r}-I_{2r}^{[K]})}r\right|
+ \le\frac{28}{3}\frac{x^{-3}}L\frac{K!}{(3L)^K}.
+ \label{eq:factorial28}
+\end{equation}
+Moreover $0<S_K(a_r)\le1$ for every $r\ge2$, and $\PsiK$ belongs to
+$[0,1/2]^7$.
+\end{proposition}
+
+\begin{proof}
+Lemma~\ref{lem:factorial}, $2r-1\ge3$, and $1/r\le1/2$ give
+\begin{align*}
+ \sum_{r\ge2}\frac{c^r}{r}|I_{2r}-I_{2r}^{[K]}|
+ &\le \frac{x^{-3}}L\frac{K!}{(3L)^K}
+ \frac{c^2}{6(1-c/x^2)}\\
+ &<\frac{4c}{3}\frac{x^{-3}}L\frac{K!}{(3L)^K}.
+\end{align*}
+Maximizing $4c/3$ over $c\le7$ proves \eqref{eq:factorial28}.  This
+sum is over all $r\ge2$, not only $r=2$.
+
+The magnitudes $j!a_r^j$ in $S_K(a_r)$ have successive ratio
+$(j+1)a_r$.  Within the stated window every ratio that occurs is at most
+$(K-1)/(3L)<1$.  Pairing the decreasing alternating terms, with the
+case $K=1$ immediate, gives $0<S_K(a_r)\le1$.
+
+Finally,
+\[
+ P_1(y)\le\sum_{n>x}\frac1{n^2-1}
+ =\frac12\left(\frac1x+\frac1{x+1}\right),
+\]
+whereas
+\[
+ 0\le\sum_{r\ge2}\frac{c^rI_{2r}^{[K]}}r
+ \le\frac{c^2}{6x^3L(1-c/x^2)}.
+\]
+At $x>256$, $L\ge512$, their sum after multiplication of the first term
+by $c\le7$ is below $1/2$.  This proves the cube assertion.
+\end{proof}
+
+\begin{lemma}[Uniform integer window]
+\label{lem:window}
+For every integer $1\le K\le\lfloor3L\rfloor$,
+\begin{equation}
+ b_K:=\frac{K!}{(3L)^K}\le b_1=\frac1{3L}.
+ \label{eq:bK}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $K+1\le\lfloor3L\rfloor$,
+\[
+ \frac{b_{K+1}}{b_K}=\frac{K+1}{3L}\le1.
+\]
+Induction from $b_1$ proves the assertion over the complete integer
+window.  Finite checks of small $K$ are only regression fixtures and are
+not used as a proof of this quantified statement.
+\end{proof}
+
+\section{Endpoint derivative ledgers and proof of sufficiency}
+
+The factors in $u_m$ have summable deficits, and the $p=3$ factor gives
+\begin{equation}
+ 0<u_m\le\frac{9-m}{8}\qquad(2\le m\le8).
+ \label{eq:u-bound}
+\end{equation}
+Thus the endpoint arrays satisfy
+\begin{equation}
+ A:=\sum_{m=2}^8|\alpha_m|u_m\le7,\qquad
+ B:=\sum_{m=2}^8|\beta_m|u_m\le\frac{49}{8}.
+ \label{eq:AB}
+\end{equation}
+
+\begin{lemma}[Endpoint gradient and Hessian]
+\label{lem:endpoint-derivatives}
+For every $z\in[0,1/2]^7$,
+\begin{align}
+ \|\nabla F(z)\|_1&<126,
+ \label{eq:gradient126}\\
+ \sum_{i,j=1}^7|\partial_{ij}F(z)|&<224.
+ \label{eq:Hessian224}
+\end{align}
+In particular,
+\begin{equation}
+ |F(z)-\nabla F(0)\mathbin{\cdot}z|
+ \le112\|z\|_\infty^2.
+ \label{eq:Taylor112}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For the gradient, the derivative of the $C$ term, the derivative falling
+on $W$, and the derivative falling on $1-e^{-z_1}$ have coefficients
+$2,4,4$.  Since $e^{z_j}\le e^{1/2}<2$, their entrywise ledger is
+\[
+ \|\nabla F(z)\|_1
+ \le e^{1/2}(2A+4B+4B)
+ \le63e^{1/2}<126.
+\]
+This is the dual $\ell^1$ gradient for an $\ell^\infty$ input.
+
+For the Hessian, the $C$ term contributes $2A$ before the exponential
+factor.  In the product of $W$ and the loss $1-e^{-z_1}$, the Hessian of
+$W$, the two gradient cross terms, and the Hessian of the loss contribute
+$4B,8B,4B$.  Hence
+\[
+ \sum_{i,j}|\partial_{ij}F(z)|
+ \le e^{1/2}\{2A+(4+8+4)B\}
+ \le112e^{1/2}<224.
+\]
+Taylor's theorem on the segment from $0$ to $z$ gives
+\eqref{eq:Taylor112}, including the factor $1/2$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:sufficiency}]
+The cube assertion for $\PhiP,\PhiJ,\PhiI$ is the direct integer-tail and
+integral estimate of RH-387; Proposition~\ref{prop:factorial-coordinate}
+proves it for $\PsiK$.  Insert between $\PhiP_c$ and $\PsiK_c$ the two
+coordinates
+\[
+ cP_1+\sum_{r\ge2}\frac{c^rJ_r}{r},
+ \qquad
+ cP_1+\sum_{r\ge2}\frac{c^rI_{2r}}{r}.
+\]
+Propositions~\ref{prop:coordinates} and
+\ref{prop:factorial-coordinate} give \eqref{eq:coordinate-master}.
+
+The segment from $\PhiP$ to $\PsiK$ lies in the convex cube.  The
+$\ell^\infty/\ell^1$ mean-value estimate in
+Lemma~\ref{lem:endpoint-derivatives} therefore multiplies the three
+coordinate constants by $126$:
+\[
+ 126\cdot60=7560,\qquad
+ 126\cdot13=1638,\qquad
+ 126\cdot\frac{28}{3}=1176.
+\]
+Together with \eqref{eq:gaps}, this proves \eqref{eq:gap-master}.
+
+RH-384 proves the intrinsic scale
+\begin{equation}
+ P_2(y)\sim\frac1{3x^3L}
+ \label{eq:P2-scale}
+\end{equation}
+\cite{RH384}.  Lemma~\ref{lem:window} makes the right side of
+\eqref{eq:gap-master} uniform in all admissible $K$.  Since
+$\eps_x\to0$, $x^{-2}\to0$, and $L^{-1}\to0$, division by
+\eqref{eq:P2-scale} proves \eqref{eq:uniform-P2}.
+\end{proof}
+
+\section{Bounded consecutive gaps and the rank-one obstruction}
+
+Maynard's unconditional Theorem~1.3, printed page~385 (PDF page~3),
+states
+\begin{equation}
+ \liminf_{n\to\infty}(p_{n+1}-p_n)\le600
+ \label{eq:Maynard}
+\end{equation}
+\cite{Maynard2015}.  We use only the resulting infinitely many
+\emph{consecutive} prime pairs $x=p_y$, $q=p_{y+1}=x+h$ with
+$h\le600$.  Indeed the gaps are integers: if only finitely many were at
+most $600$, every sufficiently late gap would be at least $601$, forcing
+the liminf to be at least $601$.
+
+\begin{lemma}[Successor jump]
+\label{lem:jump}
+Let $E_y=P_1(y)-I_2(p_y)$.  Along the bounded consecutive gaps supplied
+by \eqref{eq:Maynard},
+\begin{equation}
+ E_y-E_{y+1}=\frac1{q^2-1}
+ -\int_x^q\frac{dt}{t^2\log t},
+ \qquad x^2(E_y-E_{y+1})\longrightarrow1.
+ \label{eq:E-jump}
+\end{equation}
+Consequently $\limsup_y p_y^2|E_y|\ge1/2$.
+\end{lemma}
+
+\begin{proof}
+The exact strict successor identity is
+$P_1(y)=(q^2-1)^{-1}+P_1(y+1)$.  Subtract the two integral tails to get
+the first formula.  Since $h\le600$, $q/x\to1$ and
+\[
+ \frac{x^2}{q^2-1}\to1,
+ \qquad
+ 0\le x^2\int_x^q\frac{dt}{t^2\log t}
+ \le\frac{h}{\log x}\to0.
+\]
+Thus the scaled jump tends to one.  The triangle inequality at the two
+endpoints, together with $q/x\to1$, shows that at least one endpoint of
+each such pair has its own normalized absolute value at least
+$1/2-o(1)$.  Infinitely many pairs supply infinitely many distinct
+endpoints, proving the limsup assertion.  An eventual $1/16$ lower
+witness is a safe finite certificate row, not the sharp constant.
+\end{proof}
+
+The same conclusion holds with $J_1$ because
+\begin{equation}
+ 0\le J_1(x)-I_2(x)
+ =\int_x^\infty\frac{dt}{t^2(t^2-1)\log t}
+ =O\!\left(\frac1{x^3L}\right)=o(x^{-2}).
+ \label{eq:J1-I2}
+\end{equation}
+
+We now lift the scalar jump through the full endpoint.  Set
+$D_y=\PhiP(y)-\PhiI(p_y)$.  Exact successors and Tonelli give, in channel
+$c$,
+\begin{equation}
+ (D_y-D_{y+1})_c
+ =-\log\!\left(1-\frac{c}{q^2-1}\right)
+ -\int_x^q\frac{-\log(1-c/t^2)}{\log t}\,dt.
+ \label{eq:vector-jump}
+\end{equation}
+Uniformly for $c=1,\ldots,7$, the first term is
+$c/q^2+O(q^{-4})$, while the scaled integral is $O(h/L)$.  Hence, along
+the same bounded gaps,
+\begin{equation}
+ x^2(D_y-D_{y+1})\longrightarrow(1,2,3,4,5,6,7).
+ \label{eq:rank-one-direction}
+\end{equation}
+
+The endpoint direction is exact.  From \eqref{eq:F},
+\begin{align}
+ \nabla F(0)\mathbin{\cdot}(1,2,3,4,5,6,7)
+ &=\sum_{m=2}^8u_m\{-2\alpha_m(m-1)-4\beta_m\}\\
+ &=4u_4-8u_5+12u_6-16u_7+20u_8
+ =2X_\infty.
+ \label{eq:gradient-direction}
+\end{align}
+The individual coefficients for $m=2,\ldots,8$ are
+$0,0,4,-8,12,-16,20$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:necessity}]
+Lemma~\ref{lem:jump} proves \eqref{eq:scalar-I}, and
+\eqref{eq:J1-I2} proves \eqref{eq:scalar-J}.  The direct integral bounds
+of RH-387 give $\PhiI=O(1/(xL))$.  Its source comparison gives
+$\PhiP=O(1/(xL))$ as well.  Lemma~\ref{lem:endpoint-derivatives} therefore
+implies
+\begin{align*}
+ F(\PhiP)-F(\PhiI)
+ &=\nabla F(0)\mathbin{\cdot}(\PhiP-\PhiI)+o(x^{-2}),
+\end{align*}
+because $x^2\|\PhiP\|_\infty^2+x^2\|\PhiI\|_\infty^2=O(L^{-2})$.
+
+Equations \eqref{eq:rank-one-direction} and
+\eqref{eq:gradient-direction} show that the scalar sequence
+$\nabla F(0)\cdot D_y$ has scaled successor jump tending to
+$2X_\infty$.  The same two-endpoint triangle argument as in
+Lemma~\ref{lem:jump} yields limsup at least $X_\infty$.  The Taylor
+remainder is $o(x^{-2})$, so \eqref{eq:gaps} proves
+\eqref{eq:gap-I-necessity}.
+
+RH-387 gives
+$\pi^2|\GapJ-\GapI|\le588/(x^3L)=o(x^{-2})$, which transfers the same
+lower bound to \eqref{eq:gap-J-necessity}.  Finally divide these
+subsequence lower bounds by \eqref{eq:P2-scale}; since $xL\to\infty$,
+the two limsup ratios are infinite.  This proves the theorem.
+\end{proof}
+
+\section{Novelty, limitations, and claim firewall}
+
+RH-387 replaced every rank, including $P_1$, by a smooth integral.  Its
+source error $\eps_x/(xL)$ is larger than the $P_2$ scale because
+$\eps_xx^2\to\infty$.  The present theorem does not sharpen that source
+estimate.  Instead it keeps $P_1$ exact and applies the source transfer
+only to $r\ge2$, gaining the factor $x^{-2}$ needed for a uniform
+$P_2$-scale result.  The exact Laplace remainder simultaneously compiles
+every $r\ge2$ and every integer $K$ in a moving window; this is not a
+finite-partition corollary of RH-386 or RH-387.
+
+The bounded-gap theorem supplies the complementary negative edge:
+within the declared $P/J/I$ hierarchy, smoothing the rank-one coordinate
+creates an actual-prime jump of order $x^{-2}$, much larger than $P_2$.
+This establishes necessity for this hierarchy only.  It does not exclude
+surrogates carrying different exact prime data or other correction terms.
+
+The finite sums $S_K$ are asymptotic truncations.  We claim neither that
+$\sum_j(-1)^jj!a^j$ converges nor that the window may be enlarged beyond
+$K\le\lfloor3L\rfloor$.  The paid error gives no $P_3$ or cubic
+coefficient precision.  Channels are the seven real integers; there is
+no complex-$c$ theorem.  The finite clock is fixed before the prefix
+limit, $c_{11}=0$ remains phasewise, and neither the clock nor an order
+$K_N$ grows with the prefix length.  No active-$c_{11}$ cancellation,
+operator, trace, prime-power trace, zeta-zero identification, or proof of
+the Riemann hypothesis is supplied.  Gates A--E are all false.
+
+\section{Executable reproduction and source integrity}
+\label{sec:artifact}
+
+The exact artifact has epistemic role
+\texttt{reproduction\_not\_analytic\_proof}.  Its 56 rows comprise 12
+analytic interfaces, seven channel ledgers, 12 finite factorial
+regressions, seven endpoint rows, ten bounded-gap/Taylor rows, and eight
+master ledgers.  The canonical certificate has 14,531 bytes and SHA-256
+\begin{center}
+\small\ttfamily
+373d870847bb0bf134aa1eba30c5e4d2c3a01dba470af9c75ebacadd81976371.
+\end{center}
+It independently recomputes the exact fractions, the universal
+$b_K$ induction, the $60,13,28/3$ coordinate constants, the
+$126,224,112$ endpoint ledgers, and the $7560,1638,1176$ products.
+Twenty-four genuine semantic mutations are rejected without calling the
+fresh certificate or any row builder.  Strict JSON parsing, exact Python
+types, optimized \texttt{-OO} replay, and a closed official Draft
+2020--12 schema are tested.  These finite checks do not prove
+\eqref{eq:JY}, Maynard's theorem, Stieltjes integration, Tonelli's
+theorem, or the asymptotic limits.
+
+The immutable Git closure contains 77 blobs from the RH-387 release
+commit
+\begin{center}
+\small\ttfamily
+dedd8e8d2c44564e66524a646f9cf5fb9a389c77.
+\end{center}
+Two canonical remote objects, Johnston--Yang and Maynard, give 79 logical
+sources.  The ordered
+Git and logical digests are
+\begin{center}
+\small\ttfamily
+\begin{tabular}{@{}l@{}}
+d7f2ee43f56631c8f3442db8fcc6fb423a801b5af7607351623cd449a92c3f73\\
+bffce602d6e3b568eb96662820f08aa457ff5d0de4065f3c9eeac53d8d8dfa39.
+\end{tabular}
+\end{center}
+The canonical remote-lock digests, in source-key order, are
+\begin{center}
+\small\ttfamily
+\begin{tabular}{@{}l@{}}
+d53b93212b7c5b5b6b3f7e890099c48ce8e35f2bff9bdd49f9c330a9b5039786\\
+bd4aad4b7042218e5733bb07db2a513770710628a8ac52d5bcc9881fcb0b5d2e.
+\end{tabular}
+\end{center}
+
+Neither external PDF nor the Johnston--Yang source tar is vendored or
+archived.  Network verification is disabled by default and requires an
+explicit opt-in.  Offline semantic verification freezes the Maynard
+article page and DOI.  The opt-in retrieval gate checks only the exact
+requested/final PDF URL, status, PDF MIME type, 528,115 bytes, 31 pages,
+and SHA-256.  The version of record is Copyright 2015 Department of
+Mathematics, Princeton University.  Current publisher policy materials
+do not establish the agreement applicable to this 2015 article, so the
+release conservatively records no article-specific redistribution grant
+and \texttt{redistributable\_in\_release=false}.  The inherited
+Johnston--Yang author-manuscript lock remains nonredistributable as well.
+
+\section*{Declarations}
+
+\paragraph{Data and code availability.}
+The proof, certificate compiler, strict tests, closed schema, two remote
+source-lock records, offline-by-default verification, and release replay
+tools accompany this paper.  The external PDFs and source tar are not
+redistributed.
+
+\paragraph{Author contributions.}
+The author is responsible for conceptualization, proof, software,
+validation, writing, and release auditing.
+
+\paragraph{Funding.}
+No external funding was received.
+
+\paragraph{Competing interests.}
+The author declares no competing interests.
+
+\paragraph{Ethics.}
+No human participants, animals, personal data, or clinical interventions
+are involved.
+
+\paragraph{AI assistance.}
+AI-assisted tools were used for exact symbolic-interface enumeration,
+adversarial testing, manuscript drafting, and release auditing.  All
+mathematical claims, citations, source locks, and final text remain under
+author responsibility.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
