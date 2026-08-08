@@ -8,6 +8,10 @@
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
+配套原图（同样仅作高层导航参考）：
+
+![TPC 岛屿地图：通往孪生素数猜想的大致路线](figures/tpc_route_cn.png)
+
 本文件把“TPC 岛屿地图”的图像语言保存成可搜索、可版本化、可持续更新的
 Markdown。它用于回答三个问题：已经走过哪些结构层、当前站在哪里、下一座真正需要
 证明的桥是什么。
@@ -299,4 +303,4 @@ BASE_SCALE_COLLECTIVE_OSCILLATION_BOUND_FOR_LITERAL_MASTER_HYBRID_OCCURRENCE_EMI
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
-| 2026-08-08 | V32 | Bridge A 桥头：single-scale residual oscillation | `66dcd9a08b1adb92b117941aae92b9a17ab6298f` | 首次将岛屿图保存为可更新文字地图；未改变数学状态 |
+| 2026-08-08 | V32 | Bridge A 桥头：single-scale residual oscillation | `66dcd9a08b1adb92b117941aae92b9a17ab6298f` | 首次将岛屿图保存为可更新文字地图并收录配套原图；未改变数学状态 |
