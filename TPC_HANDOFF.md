@@ -1,7 +1,85 @@
 # TPC HANDOFF
 
 更新时间：2026-08-08
-交接状态：`BOLD_CHANNEL_V32_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V33_SEALED_FOR_NEW_SESSION`
+
+第 80 节在 V32 的同一个 literal tagged object 上完成一次非微型的边缘塌缩。对
+\(x\geq8\)、\(t\in(x/2,x]\cap\mathbb Z\)，保留 V19 ordered slots、unit policy、
+first-large 与 first-admissible-bitmask route，则所有 root-one MASTER occurrences
+合并后精确满足
+
+~~~text
+beta_raw_x(t)
+ = Lambda(t)/log(t)
+   - sum_(d|t, d^400<=x^133) mu(d).                  (V33.1)
+~~~
+
+证明不是新造 HB extractor：已 source-lock 的 full root-one numerator为
+\(\Lambda(t)\)，三个 H2 分支对每个 cutoff divisor \(d\) 分别给
+
+~~~text
+2 mu(d) log(t/d), -mu(d) log(t/d), +mu(d) log(d),
+~~~
+
+总和正好是 \(\mu(d)\log t\)。精确 cutoff满足
+\(x^{133/400}<\sqrt{x/2}<\sqrt t\)，两枚 J2 large-\(F\) H2 branches在
+\(x\geq8\) 上不相交。独立整数幂枚举已经重算 25,744 个 shell cases、
+422,101 个 MASTER occurrences 与 257,830 个 H2 occurrences。
+
+Bazin 2607.15137v1 Theorem 8 因此真实接受 collapsed marginal：
+\(\mu_{U_x}\) 支持到 \(x^{133/400}<x^{2/3}\)，\(1\) 是 Type I，
+\(\Lambda/\log\) 由 source 的 Vaughan decomposition 加 Abel summation得到。但在
+\(Q_0=x^{21/64}\)、\(\vartheta_0=x^{-21/32}\) 上，source advertised
+rational-tube route只到 norm exponent
+
+~~~text
+85/64-21/128=149/128=1+21/128,
+21/128-13/4800=1549/9600.                            (V33.2)
+~~~
+
+这只是 marginal source interface，不是 V32 whole residual theorem。发生在
+\(x=121,t=77,z=5\) 的 exact occurrence collision把同一 \(\log7\) marginal
+消去，却保留 selected groups \(7,11\) 的不同 local Euler values
+
+~~~text
+Delta_7,5(5)=-35/36, Delta_11,5(5)=11/100.           (V33.3)
+~~~
+
+所以 marginal theorem不能冒充 occurrence-native \(L_x\)、\(R_x=P_x-L_x\) 或
+\(\mathfrak Q_{Y_0}^{\rm osc}(R_x)\) 的 theorem。当前路线位置仍是
+“解析消去岛 / Bridge A / Gate B”；本轮只把 prime-side marginal从 opaque HB2
+rows压成 truncated Möbius sieve remainder，下一红叉是同一个 joint residual
+power mean square。
+
+V33 页首只摘要核心边界；完整 43-row canonical registry 在 Handoff 第 24、80 节、
+Compass 第 34 节、big-road README 第 33 节与 V33 proof 第 10 节逐字冻结。当前核心为
+
+~~~text
+V33_MASTER_MARGINAL_IDENTITY
+  = PROVED_EXACT_LAMBDA_OVER_LOG_MINUS_TRUNCATED_MU_CONV_ONE
+V33_BAZIN_BETA_MARGINAL = SOURCE_BACKED_TYPE_I_II_XI_ATTACHMENT
+V33_MARGINAL_TO_OCCURRENCE_LOCAL_CARRIER
+  = STOP_SCOPED_SELECTED_GROUP_DATA_NOT_ACCEPTED_BY_MARGINAL_THEOREM
+V33_NEXT_THEOREM
+  = POWER_MEAN_SQUARE_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_WITH_OCCURRENCE_NATIVE_LOCAL_CARRIER
+V33_ARITHMETIC_ADVANCE = NO
+V33_FIXED_ATOM_CREDIT = 0
+V33_STRICT_1_OVER_400 = UNPAID
+V33_L2 = NONE
+TPC_207_TRIGGER = false                               (V33.4)
+~~~
+
+proof 为
+research/tpc-big-road/bridge_b_master_marginal_collapse_and_joint_residual_firewall.md，
+checker 为
+research/tpc-big-road/tpc_bridge_b_master_marginal_collapse_checker.py。checker冻结
+36/43/5/4 contract/registry/source/dependency rows，registry SHA-256
+b53790e71a636abd4b91866d46e80904ced1286b1b98c3fec1d67b0db54b74bb，并执行
+74/89/12/10/107 mutations，共 292 个 unique reject actions。V33 是不编号
+big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
+
+以下 V32 页首块作为已封存的直接上游快照保留；current truth 由上面的 V33 摘要、
+第 24 节与第 80 节控制。
 
 第 79 节在 V31 同一个 literal tagged object 上完成一次真正的 B 路收缩。令
 
@@ -1976,17 +2054,17 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V32_20260808_SINGLE_SCALE_RESIDUAL_OSCILLATION_COMPILER_NO_ARITHMETIC_TRIGGER`
+`TPC_BIG_ROAD_V33_20260808_MASTER_MARGINAL_COLLAPSE_AND_JOINT_RESIDUAL_FIREWALL_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V32_BASE_SCALE_COLLECTIVE_OSCILLATION_FOR_LITERAL_MASTER_HYBRID_OCCURRENCE_EMITTER`；
+`V33_POWER_MEAN_SQUARE_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_WITH_OCCURRENCE_NATIVE_LOCAL_CARRIER`；
 当前 first subgates：
-`V32_BASE_SCALE_OSCILLATION_BOUND`；
+`V33_NEXT_THEOREM`；
 已支付并可复用的 source-backed local subgate 为
-`V30_LOCAL_BC_CARRIER`；已支付的 exact q-local major model为
+`V33_BAZIN_BETA_MARGINAL` 与 `V30_LOCAL_BC_CARRIER`；已支付的 exact q-local major model为
 `V30_QLOCAL_MODEL_BOUND`
-（第 79 节控制；既有 local source只有在第 32.6 节或
+（第 80 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--79 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--80 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -1998,6 +2076,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_master_marginal_collapse_and_joint_residual_firewall.md`、
+`research/tpc-big-road/tpc_bridge_b_master_marginal_collapse_checker.py`、
 `research/tpc-big-road/bridge_b_base_scale_residual_oscillation_compiler.md`、
 `research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py`、
 `research/tpc-big-road/bridge_b_whole_object_major_mismatch_and_terminal_compiler.md`、
@@ -2027,7 +2107,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--79 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--80 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2089,11 +2169,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V32 gate及其 V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；二十次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V33 gate及其 V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；二十二次必须都为零，且每一对 stdout
 byte-identical：
 
 ```powershell
+python -B research/tpc-big-road/tpc_bridge_b_master_marginal_collapse_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_master_marginal_collapse_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_whole_object_major_mismatch_checker.py --check
@@ -4017,6 +4099,27 @@ whole emitter。`V32_FEJER_BAND_CELL_BOUND`、`V32_DYADIC_REFINEMENT` 与
 `V32_BASE_SCALE_OSCILLATION_BOUND`，terminal gate仍为
 `V32_A_TERMINAL_COVARIANCE`。两门都出现前 arithmetic advance仍为 `NO`。精确 proof、
 checker与 release boundary见第 79 节。
+
+2026-08-08 的 Bridge A / Gate B V33 MASTER marginal collapse审计新增且仅新增以下
+四个 scoped STOP cells：
+
+~~~text
+V33_MARGINAL_TO_OCCURRENCE_LOCAL_CARRIER
+  = STOP_SCOPED_SELECTED_GROUP_DATA_NOT_ACCEPTED_BY_MARGINAL_THEOREM
+V33_BAZIN_TO_V32_QOSC
+  = STOP_SCOPED_MARGINAL_WRONG_NORM_AND_H_QUARTER_LOSS
+V33_EVANS_PRIME_E2_TO_LITERAL_RESIDUAL
+  = STOP_SCOPED_FIXED_E2_LOG_SAVING_AND_NO_LOCAL_CARRIER
+V33_MRSTT_ALMOST_ALL_SHIFT_TO_LITERAL_RESIDUAL_L2
+  = STOP_SCOPED_QUALITATIVE_DENSITY_ONE_WRONG_NORM
+~~~
+
+第一项由 \(x=121,t=77,z=5\) 的 selected-group collision精确阻断；后三项只阻止
+把当前 primary theorem直接重命名为 literal joint residual estimate，不否定未来的
+coefficient-native theorem。V33 已证明 root-one MASTER marginal identity，并把
+Bazin Type-I/II theorem接到这个 marginal；它没有证明
+\(\mathfrak Q_{Y_0}^{\rm osc}(R_x)\)，arithmetic advance仍为 NO。精确 proof、
+checker与 release boundary见第 80 节。
 
 2026-08-08 的 Bridge B V30 q-local major、cell cross-flatness 与 equivariant
 quotient审计新增且仅新增以下七个 scoped STOP cells：
@@ -7713,7 +7816,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V32 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V33 current）
 
 ```text
 进入仓库：
@@ -7721,6 +7824,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_master_marginal_collapse_and_joint_residual_firewall.md、
+research/tpc-big-road/tpc_bridge_b_master_marginal_collapse_checker.py、
 research/tpc-big-road/bridge_b_base_scale_residual_oscillation_compiler.md、
 research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py、
 research/tpc-big-road/bridge_b_whole_object_major_mismatch_and_terminal_compiler.md、
@@ -7753,7 +7858,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--79 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--80 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -7969,6 +8074,49 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V33_MAXIMUM_CLAIM = EXACT_ROOT_ONE_MASTER_MARGINAL_COLLAPSE_TO_TRUNCATED_MOBIUS_SIEVE_REMAINDER_PLUS_BAZIN_MARGINAL_INTERFACE_AND_LOCAL_CARRIER_FIREWALL
+V33_ROUTE_ADVANCE = YES
+V33_ARITHMETIC_ADVANCE = NO
+V33_FIXED_ATOM_CREDIT = 0
+V33_STRICT_1_OVER_400 = UNPAID
+V33_L2 = NONE
+V33_TPC_207_TRIGGER = false
+V33_NUMBERED_RELEASE = NO
+V33_SELECTED_RESEARCH_ROUTE = B_JOINT_RESIDUAL_THEN_A_TERMINAL_COVARIANCE_THEN_C_SYMMETRY_BREAK
+V33_ROOT_ONE_SCOPE = EXACT_MASTER_MARGINAL_ONLY
+V33_PHYSICAL_SHELL = X_OVER_2_LT_T_LE_X_WITH_X_GE_8
+V33_EXACT_CUTOFF = D_POWER_400_LE_X_POWER_133
+V33_CUTOFF_BELOW_SQRT_T = PROVED_EXACT_FROM_67_OVER_400_AND_X_GE_8
+V33_HB2_FULL_ROOT_ONE_NUMERATOR = RETAINED_SOURCE_LOCKED_LAMBDA_T
+V33_H2_J1_BRANCH = PROVED_EXACT_2_MU_D_LOG_T_OVER_D
+V33_H2_J2_LARGE_F1_BRANCH = PROVED_EXACT_MINUS_MU_D_LOG_T_OVER_D
+V33_H2_J2_LARGE_F2_BRANCH = PROVED_EXACT_PLUS_MU_D_LOG_D
+V33_MU_MU_ONE_IDENTITY = PROVED_EXACT_MU
+V33_MU_MU_LOG_IDENTITY = PROVED_EXACT_MINUS_MU_LOG
+V33_TWO_J2_H2_BRANCHES = PROVED_DISJOINT_ON_X_GE_8
+V33_MASTER_MARGINAL_IDENTITY = PROVED_EXACT_LAMBDA_OVER_LOG_MINUS_TRUNCATED_MU_CONV_ONE
+V33_PRIME_MASTER_MARGINAL = PROVED_EXACT_ZERO
+V33_ROOT_ONE_PRIME_POWER_TERM = RETAINED_EXACT_LAMBDA_OVER_LOG
+V33_ROOT_GE_2_PERFECT_POWER_REMAINDER = RETAINED_SEPARATE_X_1_OVER_2_PLUS_O1
+V33_FINITE_ROUTING_RECOMPUTATION = PROVED_25744_SHELL_CASES_422101_MASTER_257830_H2
+V33_WRONG_J2_SIGN = STOP_SCOPED_X8_T6_FORMAL_LOG_VECTOR
+V33_WRONG_CUTOFF_132 = STOP_SCOPED_X127_T65_FORMAL_LOG_VECTOR
+V33_OCCURRENCE_LOCAL_COLLISION = PROVED_EXACT_X121_T77_Z5_GROUPS_7_AND_11
+V33_MARGINAL_TO_OCCURRENCE_LOCAL_CARRIER = STOP_SCOPED_SELECTED_GROUP_DATA_NOT_ACCEPTED_BY_MARGINAL_THEOREM
+V33_BAZIN_BETA_MARGINAL = SOURCE_BACKED_TYPE_I_II_XI_ATTACHMENT
+V33_BAZIN_BASE_CELL_Q = X_POWER_21_OVER_64
+V33_BAZIN_BASE_CELL_THETA = X_POWER_MINUS_21_OVER_32
+V33_BAZIN_XI_DOMINANT_EXPONENT = 85_OVER_64
+V33_BAZIN_ADDITIVE_TUBE_EXPONENT = 149_OVER_128
+V33_BAZIN_ENDPOINT_DEFICIT = 1549_OVER_9600
+V33_BAZIN_TO_V32_QOSC = STOP_SCOPED_MARGINAL_WRONG_NORM_AND_H_QUARTER_LOSS
+V33_EVANS_PRIME_E2_TO_LITERAL_RESIDUAL = STOP_SCOPED_FIXED_E2_LOG_SAVING_AND_NO_LOCAL_CARRIER
+V33_MRSTT_ALMOST_ALL_SHIFT_TO_LITERAL_RESIDUAL_L2 = STOP_SCOPED_QUALITATIVE_DENSITY_ONE_WRONG_NORM
+V33_DIRECT_PRIMARY_SOURCE_ATTACHMENT_TO_QOSC = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_08
+V33_NEXT_THEOREM = POWER_MEAN_SQUARE_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_WITH_OCCURRENCE_NATIVE_LOCAL_CARRIER
+V33_FIRST_FATAL = NO_JOINT_POWER_MEAN_SQUARE_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_WITH_OCCURRENCE_NATIVE_LOCAL_CARRIER
+V33_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
+V33_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
 V32_MAXIMUM_CLAIM = EXACT_SINGLE_SCALE_ZERO_AXIS_QUOTIENTED_WIENER_CELL_COMPILER_FOR_THE_LITERAL_WHOLE_RESIDUAL
 V32_ROUTE_ADVANCE = YES
 V32_ARITHMETIC_ADVANCE = NO
@@ -8450,7 +8598,10 @@ exact hard-shell、CRT、Möbius、smooth 与 Bettin--Chandee编译，并证明 
 Fejer band-to-cell bound和 dyadic refinement把它们严格压成同一 literal residual 的单尺度
 `V32_BASE_SCALE_OSCILLATION_BOUND`。只需在 `Y_0` 证明一个 global-constant quotient
 cell-square theorem；不得把它扩成 terminal-scale global Parseval norm，也不得改用逐 cell
-constants。B 门支付后，
+constants。V33 又把 root-one MASTER scalar marginal精确塌缩为
+`Lambda/log-(mu_U*1)`，并接上 Bazin Type-I/II marginal interface；但 selected group
+仍留在 occurrence-native local carrier中，严禁把 marginal theorem冒充 whole residual
+theorem。B 门支付后，
 `S_x=J(e_x)+E(e_x)` 使 A 门与原标量 terminal-equivalent；不得把 A 写成更容易的
 preliminary，也不得把已经付清的 local carriers反复登记为 global progress。全部路线必须保持
 fixed `h0=2`、literal raw row、完整 `B_x(D)`、corrected `kappa(n)`、typed
@@ -8499,6 +8650,7 @@ python research/tpc-big-road/tpc_bridge_b_joint_major_minor_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_terminal_major_cross_flatness_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_whole_object_major_mismatch_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_master_marginal_collapse_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -12380,6 +12532,292 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 80. 2026-08-08 V33：MASTER marginal collapse 与 joint-residual firewall
+
+### 80.1 范围、结论与 claim ceiling
+
+V33 固定 V19 已 source-lock 的 root-one HB2 rows、ordered source slots、unit
+policy、first-large 与 first-admissible-original-bitmask route。它不声明新 extractor，
+只对同一 physical integer上的 MASTER occurrences作 collective sum。令
+
+\[
+ I_x=(x/2,x]\cap\mathbb Z,\qquad
+ U_x=\{d\in\mathbb N:d^{400}\leq x^{133}\},\qquad x\geq8.
+\]
+
+则
+
+\[
+\boxed{\displaystyle
+ \beta_x^{\rm raw}(t)
+ ={\Lambda(t)\over\log t}
+ -\sum_{\substack{d\mid t\\d^{400}\leq x^{133}}}\mu(d),
+ \qquad t\in I_x .}
+\tag{80.1}
+\]
+
+这是 root-one MASTER scalar marginal identity；不是 separated HB2 theorem，也不是
+occurrence-native local Euler carrier identity。root \(s\geq2\) 的 perfect-power
+remainder继续由此前 \(x^{1/2+o(1)}\) payment控制。
+
+### 80.2 Exact cutoff 与三个 H2 branches
+
+写 \(J=133/400\)。对 \(x\geq8\)，
+
+\[
+x^{1/2-J}=x^{67/400}
+\geq8^{67/400}=2^{201/400}>2^{200/400}=\sqrt2,
+\]
+
+故
+
+\[
+x^J<\sqrt{x/2}<\sqrt t,\qquad t\in I_x.
+\tag{80.2}
+\]
+
+对每个 \(d\mid t\)、\(d^{400}\leq x^{133}\)，J1 large-\(f_1\)、J2
+large-\(f_1\)、J2 large-\(f_2\) 分支分别给
+
+\[
+2\mu(d)\log(t/d),\qquad
+-\mu(d)\log(t/d),\qquad
++\mu(d)\log d.
+\]
+
+用 \(\mu*\mu*1=\mu\) 与
+\(\mu*\mu*\log=\mu*\Lambda=-\mu\log\)，其和为
+
+\[
+\mu(d)\log t.
+\tag{80.3}
+\]
+
+两枚 J2 H2 branches不重叠：其 complements之积为
+\((e_1e_2)t>x/2\)，而同时 H2会迫使该积不超过
+\(x^{266/400}<x/2\)。从 source-locked full root-one numerator
+\(\Lambda(t)\) 中扣除 (80.3) 的 divisor sum即得 (80.1)。
+
+### 80.3 Finite exact recomputation
+
+checker 独立实现 factorization、Möbius、ordered occurrence enumeration 与 V19
+router；不调用上游 checker helper。它逐一重算 \(8\leq x\leq320\) 的所有 shell
+integers，共 25,744 cases、422,101 MASTER occurrences、257,830 H2 occurrences。
+形式 prime-log vectors逐字满足 (80.1) 与三个 branch identities。
+
+两个最先故障 witness为：
+
+1. 把 J2 outer sign从 \(-1\) 改为 \(+1\)：\(x=8,t=6\) 从
+   \(-\log2-\log3\) 变成 \(\log2-3\log3\)；
+2. 把 cutoff exponent 133改成 132：\(x=127,t=65\) 从零变成
+   \(-\log5-\log13\)。
+
+\(x=100\) 的 \(t=84,64,100\) 又分别冻结 composite、prime-power与 zero rows。
+
+### 80.4 Occurrence-local carrier firewall
+
+V32 的 local carrier保留 selected group：
+
+\[
+M_x^{\rm loc}(h)=\sum_o a_o^M\Delta_{m(o),z}(h).
+\]
+
+在 \(x=121,t=77,z=5\)，两条 J2 MASTER occurrences
+
+\[
+(1,1,7,11),\ c=-1,\ m=7;\qquad
+(1,11,7,1),\ c=+1,\ m=11
+\]
+
+的 \(-\log7,+\log7\) 在 scalar marginal中相消，但
+
+\[
+\Delta_{7,5}(5)=-{35\over36},\qquad
+\Delta_{11,5}(5)={11\over100},\qquad
+-\Delta_{7,5}(5)+\Delta_{11,5}(5)={487\over450}\ne0.
+\tag{80.4}
+\]
+
+所以只接受 collapsed \(\beta_x^{\rm raw}\) 的 theorem不能被宣称为
+\(L_x\)、\(R_x=P_x-L_x\) 或
+\(\mathfrak Q_{Y_0}^{\rm osc}(R_x)\) 的 theorem。
+
+### 80.5 Bazin marginal interface 与 exact loss ledger
+
+[Bazin, arXiv:2607.15137v1, Theorem 8](https://arxiv.org/abs/2607.15137v1)
+接受有限个 Dirichlet convolutions：每个 factor为 Type I character-sum factor，
+或支持在 \([1,x^{2/3}]\)。式 (80.1) 中 \(1\) 由
+Pólya--Vinogradov给 Type I，\(\mu_{U_x}\) 支持到
+\(x^{133/400}<x^{2/3}\)，而 source 本身记录 Vaughan decomposition for
+\(\Lambda\)。Abel summation给 \(1/\log t\)，两个 endpoint sums给 hard shell。因此
+collapsed marginal真实满足
+
+\[
+\Xi(\beta_x^{\rm raw}{\bf1}_{I_x},x,Q,\vartheta)
+\ll
+\{x^{1/2}Q^2+x^{5/6}Q+x+xQ^2\vartheta^{1/2}\}
+(\log x)^{O(1)}.
+\tag{80.5}
+\]
+
+在 V32 natural cell parameters
+
+\[
+H=x^{21/32},\qquad Q_0=x^{21/64},\qquad
+\vartheta_0=x^{-21/32},
+\]
+
+四项 exponents为 \(37/32,223/192,1,85/64\)。source advertised
+additive-tube conversion再给 \(Q_0^{-1/2}\)，故
+
+\[
+{85\over64}-{21\over128}={149\over128},\qquad
+{21\over128}-{13\over4800}={1549\over9600}.
+\tag{80.6}
+\]
+
+这是 route-loss ledger，不是不同 norms之间的 impossibility theorem。它精确说明：
+单独把 collapsed marginal送进现有 source conversion仍保留 \(H^{1/4}\) loss。
+
+[MRT Proposition 3.1](https://arxiv.org/abs/1707.01315v3)只是 abstract
+product-energy reduction；[Evans Theorem 1.4](https://arxiv.org/abs/2102.12297v3)
+是 fixed prime--\(E_2\)、almost-all shifts及 logarithmic mean square；
+[MRSTT II Theorem 1.5](https://arxiv.org/abs/2411.05770v2)只给
+proportion \(1-o(1)\) 的 shifts。无一 source保留同一个 occurrence-native
+\(M_x^{\rm loc}\) 并证明 V32 quotient norm。
+
+### 80.6 Route decision
+
+当前路线位置没有跨过 Bridge A，只是 Gate B 内部向前：
+
+~~~text
+解析消去岛 / Bridge A / Gate B
+  已过：root-one MASTER marginal exact collapse
+  已接：Bazin Type-I/II marginal interface
+  红叉：joint residual power mean square with occurrence-native local carrier
+  之后：terminal q-local covariance A
+  reserve：symmetry-breaking pointed dynamics C
+~~~
+
+必须新证明
+
+\[
+\boxed{\text{a power mean square for the collapsed sieve remainder times the
+physical hybrid, with the same occurrence-native local carrier subtracted.}}
+\tag{80.7}
+\]
+
+在此之前 arithmetic advance=NO、fixed atom=0、strict \(1/400\)=UNPAID、
+\(L^2\)=NONE、TPC-207=false。
+
+### 80.7 Canonical registry
+
+~~~text
+V33_MAXIMUM_CLAIM = EXACT_ROOT_ONE_MASTER_MARGINAL_COLLAPSE_TO_TRUNCATED_MOBIUS_SIEVE_REMAINDER_PLUS_BAZIN_MARGINAL_INTERFACE_AND_LOCAL_CARRIER_FIREWALL
+V33_ROUTE_ADVANCE = YES
+V33_ARITHMETIC_ADVANCE = NO
+V33_FIXED_ATOM_CREDIT = 0
+V33_STRICT_1_OVER_400 = UNPAID
+V33_L2 = NONE
+V33_TPC_207_TRIGGER = false
+V33_NUMBERED_RELEASE = NO
+V33_SELECTED_RESEARCH_ROUTE = B_JOINT_RESIDUAL_THEN_A_TERMINAL_COVARIANCE_THEN_C_SYMMETRY_BREAK
+V33_ROOT_ONE_SCOPE = EXACT_MASTER_MARGINAL_ONLY
+V33_PHYSICAL_SHELL = X_OVER_2_LT_T_LE_X_WITH_X_GE_8
+V33_EXACT_CUTOFF = D_POWER_400_LE_X_POWER_133
+V33_CUTOFF_BELOW_SQRT_T = PROVED_EXACT_FROM_67_OVER_400_AND_X_GE_8
+V33_HB2_FULL_ROOT_ONE_NUMERATOR = RETAINED_SOURCE_LOCKED_LAMBDA_T
+V33_H2_J1_BRANCH = PROVED_EXACT_2_MU_D_LOG_T_OVER_D
+V33_H2_J2_LARGE_F1_BRANCH = PROVED_EXACT_MINUS_MU_D_LOG_T_OVER_D
+V33_H2_J2_LARGE_F2_BRANCH = PROVED_EXACT_PLUS_MU_D_LOG_D
+V33_MU_MU_ONE_IDENTITY = PROVED_EXACT_MU
+V33_MU_MU_LOG_IDENTITY = PROVED_EXACT_MINUS_MU_LOG
+V33_TWO_J2_H2_BRANCHES = PROVED_DISJOINT_ON_X_GE_8
+V33_MASTER_MARGINAL_IDENTITY = PROVED_EXACT_LAMBDA_OVER_LOG_MINUS_TRUNCATED_MU_CONV_ONE
+V33_PRIME_MASTER_MARGINAL = PROVED_EXACT_ZERO
+V33_ROOT_ONE_PRIME_POWER_TERM = RETAINED_EXACT_LAMBDA_OVER_LOG
+V33_ROOT_GE_2_PERFECT_POWER_REMAINDER = RETAINED_SEPARATE_X_1_OVER_2_PLUS_O1
+V33_FINITE_ROUTING_RECOMPUTATION = PROVED_25744_SHELL_CASES_422101_MASTER_257830_H2
+V33_WRONG_J2_SIGN = STOP_SCOPED_X8_T6_FORMAL_LOG_VECTOR
+V33_WRONG_CUTOFF_132 = STOP_SCOPED_X127_T65_FORMAL_LOG_VECTOR
+V33_OCCURRENCE_LOCAL_COLLISION = PROVED_EXACT_X121_T77_Z5_GROUPS_7_AND_11
+V33_MARGINAL_TO_OCCURRENCE_LOCAL_CARRIER = STOP_SCOPED_SELECTED_GROUP_DATA_NOT_ACCEPTED_BY_MARGINAL_THEOREM
+V33_BAZIN_BETA_MARGINAL = SOURCE_BACKED_TYPE_I_II_XI_ATTACHMENT
+V33_BAZIN_BASE_CELL_Q = X_POWER_21_OVER_64
+V33_BAZIN_BASE_CELL_THETA = X_POWER_MINUS_21_OVER_32
+V33_BAZIN_XI_DOMINANT_EXPONENT = 85_OVER_64
+V33_BAZIN_ADDITIVE_TUBE_EXPONENT = 149_OVER_128
+V33_BAZIN_ENDPOINT_DEFICIT = 1549_OVER_9600
+V33_BAZIN_TO_V32_QOSC = STOP_SCOPED_MARGINAL_WRONG_NORM_AND_H_QUARTER_LOSS
+V33_EVANS_PRIME_E2_TO_LITERAL_RESIDUAL = STOP_SCOPED_FIXED_E2_LOG_SAVING_AND_NO_LOCAL_CARRIER
+V33_MRSTT_ALMOST_ALL_SHIFT_TO_LITERAL_RESIDUAL_L2 = STOP_SCOPED_QUALITATIVE_DENSITY_ONE_WRONG_NORM
+V33_DIRECT_PRIMARY_SOURCE_ATTACHMENT_TO_QOSC = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_08
+V33_NEXT_THEOREM = POWER_MEAN_SQUARE_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_WITH_OCCURRENCE_NATIVE_LOCAL_CARRIER
+V33_FIRST_FATAL = NO_JOINT_POWER_MEAN_SQUARE_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_WITH_OCCURRENCE_NATIVE_LOCAL_CARRIER
+V33_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
+V33_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
+~~~
+
+### 80.8 Artifact、checker 与 pending closure
+
+V33 proof与 checker分别为
+research/tpc-big-road/bridge_b_master_marginal_collapse_and_joint_residual_firewall.md 与
+research/tpc-big-road/tpc_bridge_b_master_marginal_collapse_checker.py。checker冻结
+36/43/5/4 contract/registry/source/dependency rows，registry digest为
+b53790e71a636abd4b91866d46e80904ced1286b1b98c3fec1d67b0db54b74bb，并执行
+74/89/12/10/107共292项 fail-closed mutations。
+
+~~~text
+V33_FINAL_RELEASE_QA = PASS_WITH_SCOPED_EXTERNAL_TPC126_ONE_ULP_PLATFORM_DIAGNOSTIC
+V33_MATH_SOURCE_FORMULA_QA = PASS
+V33_CHECKER_ADVERSARIAL_QA = PASS
+V33_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V33_PRE_CLOSURE_HANDOFF_SHA256_RAW = 7c760da610ea16b045e0875900f3e541bf1689623b3b8405c4a4632c591b4969
+V33_PRE_CLOSURE_HANDOFF_SHA256_CANONICAL_LF = 7c760da610ea16b045e0875900f3e541bf1689623b3b8405c4a4632c591b4969
+V33_COMPASS_SHA256_RAW_CANONICAL_LF = 1d6ccad26f8381b80312673bc28bb6c6dbbe4e5226d601d0c87f21d40a76d0c1
+V33_README_SHA256_RAW_CANONICAL_LF = fff8e0b7b68e6eb049916e06e708d6435064e41a1452b0492c712c3d0637feef
+V33_PROOF_SHA256_RAW_CANONICAL_LF = 6785eab0d05ec1b564c99d6d155788950bc7383b0fdfa10e2458dab71956b167
+V33_CHECKER_SHA256_RAW_CANONICAL_LF = c70e30b1437350fefbd9236eb29fab5d94356ec5ff0040a90358b470f02e0a13
+V33_CHECKER_STDOUT_SHA256_RAW_CANONICAL_LF = ea12e774c9441ead0ae03f4e05661c31ac63b6dd4a827d7d2a30f1e615555fa3
+V33_CHECKER_STDOUT_PAYLOAD_SHA256 = a4e6752aa52b9c3c005c29e9c04e2171b2de26c189bd3de6d63ef11b50c5757c
+V33_CHECKER_CONTRACT_REGISTRY_SOURCE_DEPENDENCY = 36/43/5/4
+V33_CHECKER_MUTATIONS = 74/89/12/10/107
+V33_CHECKER_ADVERSARIAL_ACTIONS = 292/292_UNIQUE_REJECTED
+V33_CHECKER_REGISTRY_SHA256 = b53790e71a636abd4b91866d46e80904ced1286b1b98c3fec1d67b0db54b74bb
+STARTUP_REGRESSION = 22/22
+SUPPLEMENTAL_TPC111_TPC124_TPC126_TPC127_ATTEMPTED = 4/4
+SUPPLEMENTAL_TPC111_TPC124_TPC126_TPC127_BYTE_EXACT = 3/4
+TPC126_SEMANTIC_CERTIFICATE = PASS
+TPC126_BYTE_CHECK = FAIL_SCOPED_ONE_ULP_PLATFORM_SERIALIZATION_ONLY
+TPC126_EXPECTED_DIRECT_REAL = 40.17369814909115
+TPC126_LINUX_DIRECT_REAL = 40.17369814909116
+TPC126_FILES_CHANGED = NONE
+V23_TO_V33_DEPENDENCY_PROCESSES = 22/22
+V23_TO_V33_DEPENDENCY_STDOUT_IDENTITIES = 11/11
+BIG_ROAD_CHECKER_PROCESSES = 42/42
+BIG_ROAD_CHECKER_STDOUT_IDENTITIES = 21/21
+RELEASE_ALLOWLIST = EXACT_FIVE_PATHS
+CACHED_DIFF = EMPTY
+DIFF_CHECK = PASS
+PROTECTED_UNTRACKED_COUNT = 0
+PROTECTED_UNTRACKED_MANIFEST_SHA256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+PYC_COUNT = 0
+MARKDOWN_FENCES = HANDOFF_BACKTICK_2844_TILDE_192__COMPASS_BACKTICK_224_TILDE_62__README_BACKTICK_378_TILDE_60__PROOF_BACKTICK_6_TILDE_0
+EQUATION_TAGS = HANDOFF_111_OF_111_UNIQUE__PROOF_26_OF_26_UNIQUE
+BASELINE_HEAD_ORIGIN_REMOTE = 55e333b5dce3564b7786aa35db83b9b3dfec9e11
+FILES_CHANGED = EXACT_FIVE_RELEASE_PATHS
+GENERATED_OUTPUTS = NONE
+V33_ROUTE_ADVANCE = YES
+V33_ARITHMETIC_ADVANCE = NO
+V33_FIXED_ATOM_CREDIT = 0
+V33_STRICT_1_OVER_400 = UNPAID
+V33_L2 = NONE
+V33_TPC_207_TRIGGER = false
+V33_SEALED_FOR_NEW_SESSION = true
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+~~~
 
 ## 79. 2026-08-08 V32：base-scale residual oscillation 与 quotient Fejer compiler
 
