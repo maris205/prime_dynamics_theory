@@ -1045,6 +1045,114 @@ prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；�
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
 
+## 30. V29 后的罗盘：local corridor 已付，全局必须过独立 major/minor 两门
+
+V29 先钉死一个容易被隐藏的逻辑点。对同一个 tagged residual
+
+~~~text
+e_x=r_x-Mloc_x,
+Mloc_x(0)=0,
+S_x=J(e_x)+E(e_x).
+~~~
+
+有限对象 `e=T delta_0` 有 `E(e)=0` 且全部 off-zero energy为零，却有
+`J(e)=S=T`。所以 analytic primary不再写成模糊的 joint residual estimate，而是
+严格分成
+
+~~~text
+|J(e_x)| << x^(399/400-eta_M), eta_M>0,
+|| |hatpsi|^(1/2)e_x ||_(h!=0,2)
+  << x^(1+theta+epsilon_N), theta<13/4800.
+~~~
+
+第二门只支付 `E(e_x)<<x^(191/192+theta+epsilon_N+o(1))`；两门共同 fixed margin
+要求 `epsilon_*<min(eta_M,(13/4800-theta)/2)`。MRT Proposition 3.1仍只是
+`Y P0 PY` reduction；它不证明 actual `MT_M=Mloc+a` attachment，也不碰零坐标。
+
+与此同时，V28 的 conditional reduced-radical corridor已经在 V29 变成真正完成的
+local theorem。exact interior/boundary cover给 boundary `x^(47/48+epsilon)`，
+`epsilon<11/1920`；`q|D`在绝对值前消去，而 active rows有
+`g<=x^(17/96)<q`，故不存在 `q|g` correction。F/G 的 Möbius coprimality costs为
+`d^-2`、`d0^-2 d1^-3`；fixed-
+`R1` triangle与 log-Fourier separation的全部 loss已进入 ledger。Bettin--Chandee
+因此给
+
+~~~text
+J(Mloc_x), E(Mloc_x) << x^(1891/1920+o(1)),
+margin to 399/400 = 121/9600.
+~~~
+
+但 `J(Mloc)+E(Mloc)=0`，所以这是 reusable local subgate，不是 arithmetic credit。
+
+动力学 reserve现在有精确宽度。预声明 target-blind subspace的最小 Riesz kernel若
+`kappa=||K*||_2^2`、`kappa0=kappa-1`，则
+
+~~~text
+L(S)>=mean(S)-sqrt(kappa0)||S-mean(S)||_2.
+~~~
+
+在 positive main `>>x/log^2x`、variance `O(x)` 下，uniform L2 sharp threshold是
+`kappa0=o(x/log^4x)`。`Z/4Z` 的三频 finite model证明通道非空；full coordinates、
+coarse cells、martingale level count、target-calibrated fit与 skew tags均有 exact scoped
+no-go。真正缺的是 actual whole-shell low-Christoffel quotient与独立 positive main。
+
+V29 atlas：
+
+~~~text
+V29_MAXIMUM_CLAIM = EXACT_LOCAL_CARRIER_BETTIN_CHANDEE_COMPILER_PLUS_ZERO_AXIS_TWO_GATE_FIREWALL_PLUS_LOW_CHRISTOFFEL_RIESZ_CRITERION
+V29_ROUTE_ADVANCE = YES
+V29_ARITHMETIC_ADVANCE = NO
+V29_FIXED_ATOM_CREDIT = 0
+V29_STRICT_1_OVER_400 = UNPAID
+V29_L2 = NONE
+V29_TPC_207_TRIGGER = false
+V29_NUMBERED_RELEASE = NO
+V29_ZERO_AXIS_RESIDUAL_IDENTITY = PROVED_EXACT_FROM_V28_TAGGED_DEFINITION
+V29_ZERO_AXIS_DIRAC_FIREWALL = PROVED_EXACT_FINITE_E_ZERO_J_FULL_EXAMPLE
+V29_OFFZERO_RESIDUAL_ENERGY_ALONE = STOP_SCOPED_DELTA_ZERO_SELF_RETURN
+V29_TAGGED_RESIDUAL_INDEPENDENT_JUTILA_MAJOR = SELECTED_PRIMARY_OPEN_NEW_THEOREM
+V29_TAGGED_RESIDUAL_OFFZERO_WEIGHTED_L2 = OPEN_NEW_THEOREM
+V29_TAGGED_RESIDUAL_TWO_GATE_CLOSURE = OPEN_MAJOR_AND_MINOR_THEOREM
+V29_MRT_ABSTRACT_PRODUCT_LOCAL_L2 = SOURCE_BACKED_REDUCTION_ONLY
+V29_WEAKEST_PRODUCT_LOCAL_CONDITION = PRODUCT_P0_TIMES_PY_WITH_HARD_MAJOR_ATTACHMENT
+V29_ACTUAL_MAJOR_COEFFICIENT_MLOC_PLUS_A = OPEN_WEIGHTED_AP_ATTACHMENT
+V29_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_08
+V29_MASTER_INTERIOR_BOUNDARY_EXACT_COVER = PROVED_WITH_X_47_OVER_48_PLUS_EPSILON
+V29_Q_DIVIDES_D_PRE_ABSOLUTE_CANCELLATION = PROVED_EXACT_FULL_LATTICE_BULK
+V29_Q_DIVIDES_G_CORRECTION = PROVED_EMPTY_BY_G_LT_Q
+V29_F_G_SIGNED_REDUCED_RADICAL_EMITTER = PROVED_EXACT
+V29_R1_EQUAL_ONE_PRE_ABSOLUTE_CANCELLATION = PROVED_EXACT
+V29_F_COPRIMALITY_MOBIUS_COMPILER = PROVED_D_MINUS_2_SUMMABLE
+V29_G_COPRIMALITY_MOBIUS_COMPILER = PROVED_D0_MINUS_2_D1_MINUS_3_SUMMABLE
+V29_EXACT_R1_LOCAL_TRIANGLE = PROVED_L_FACTOR_PAID_IN_EXPONENT_LEDGER
+V29_SMOOTH_DYADIC_SEPARATION = PROVED_EXACT_LOG_FOURIER_X_O1
+V29_LOCAL_CARRIER_BC_BOUND = PROVED_SOURCE_BACKED_X_1891_OVER_1920_PLUS_O1
+V29_LOCAL_CARRIER_BC_EXPONENT = 1891/1920
+V29_LOCAL_CARRIER_BC_MARGIN_TO_399_400 = 121/9600
+V29_LOCAL_EULER_TENSOR_AS_ACTUAL_AP_MAIN = OPEN_ATTACHMENT
+V29_PREDECLARED_SUBSPACE_MINIMUM_RIESZ_KERNEL = PROVED_EXACT_FINITE_HILBERT
+V29_EVALUATION_FACTORIZATION_GATE = PROVED_EXACT_KER_Q_SUBSET_KER_L_IFF
+V29_VARIANCE_O_X_CHRISTOFFEL_THRESHOLD = PROVED_EXACT_KAPPA0_O_X_OVER_LOG4
+V29_FINITE_CYCLIC_SPECTRAL_KERNEL = PROVED_EXACT_KAPPA_EQUALS_FREQUENCY_DIMENSION
+V29_NONCONSTANT_LOW_NORM_KERNEL_CHANNEL = PROVED_NONEMPTY_EXACT_FINITE_MODEL
+V29_COARSE_CELL_AS_POINT_EVALUATION = STOP_SCOPED_EXACT_FOUR_POINT_COUNTEREXAMPLE
+V29_SPARSE_MARTINGALE_LEVEL_COUNT = STOP_SCOPED_ORTHOGONAL_ENERGY_REASSEMBLES_SINGLETON_NORM
+V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTOR_FIT
+V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
+V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
+V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+~~~
+
+proof与 checker分别为
+`research/tpc-big-road/bridge_b_joint_major_minor_and_low_christoffel.md`、
+`research/tpc-big-road/tpc_bridge_b_joint_major_minor_checker.py`。checker冻结
+44/42/4/6 contract/registry/source/dependency rows，registry digest为
+`39b3aaf04f28763bca249ef874f07ade304e71d3e4eb390613fa1870455826a6`，并执行
+134/87/10/15/149 mutations。
+
+路线排序：independent major第一；same-residual minor/L2第二；已付 local BC作为工具；
+actual low-Christoffel quotient第三条新 construction。四者不互借 theorem credit。
+
 ## 29. V28 后的罗盘：循环零轴已拆开，reduced-radical corridor 接上真引擎
 
 V28 把 V27 的 `-F(0)` wall重型为两个不能混同的 main。generic smooth
