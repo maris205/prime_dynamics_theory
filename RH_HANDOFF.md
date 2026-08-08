@@ -2,15 +2,15 @@
 
 Status date: 2026-08-08
 
-Current completed endpoint: RH-387
+Current completed endpoint: RH-388
 
-Completed research batch: RH-352 through RH-387
+Completed research batch: RH-352 through RH-388
 
-Post-four-volume independent theorem edges: RH-362 through RH-387
+Post-four-volume independent theorem edges: RH-362 through RH-388
 
-Latest completed-paper verdict: RH-387 Route A `GO`; Route B `STOP_SCOPED`
+Latest completed-paper verdict: RH-388 Routes A/B `GO`; Route C `STOP_SCOPED`
 
-Post-RH-387 breadth audit: pending; no RH-388 assigned
+Post-RH-388 breadth audit: pending; no RH-389 assigned
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -80,6 +80,9 @@ RH-386 integration commit:
 
 RH-387 integration commit:
 `dedd8e8d2c44564e66524a646f9cf5fb9a389c77`.
+
+RH-388 integration commit:
+`8e6f89ee1e58e67c53c5f4719c05e881107113ac`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -200,6 +203,11 @@ Read completely:
 - `papers/RH-387-all-order-prime-tail-integral-resummation/THEOREM_LEDGER.md`
 - `papers/RH-387-all-order-prime-tail-integral-resummation/results/result.json`
 - `papers/RH-387-all-order-prime-tail-integral-resummation/main.pdf`
+- `papers/RH-388-rank-one-p2-tail-resummation/README.md`
+- `papers/RH-388-rank-one-p2-tail-resummation/UPDATED_ROADMAP.md`
+- `papers/RH-388-rank-one-p2-tail-resummation/THEOREM_LEDGER.md`
+- `papers/RH-388-rank-one-p2-tail-resummation/results/result.json`
+- `papers/RH-388-rank-one-p2-tail-resummation/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -235,7 +243,8 @@ partition-normal-form input, RH-384 as the prime-tail scale-separation input,
 RH-385 as the fixed-polylogarithmic-clock phasewise-memory uniformization
 input, RH-386 as the Vinogradov--Korobov growing-order prime-tail
 uniformization input, RH-387 as the all-order prime-tail integral-resummation
-input, and RH-361 as the immediate endpoint of the still-open original
+input, RH-388 as the rank-one `P_2`-scale resummation and bounded-gap
+necessity input, and RH-361 as the immediate endpoint of the still-open original
 physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
@@ -245,6 +254,53 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/THEOREM_LEDGER.md`
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
+
+RH-388 is now integrated.  It separates the exact rank-one prime tail from
+the smooth higher-rank hierarchy and resolves the intrinsic `P_2` scale.  For
+`x=p_y`, `L=log x>=512`, `c in {1,...,7}`, and every integer
+`1<=K<=floor(3L)`, put
+
+```text
+V=L^(3/5)(log L)^(-1/5),
+epsilon_x=0.027L^1.801 exp(-0.1853V),
+K_r=x^(1-2r)/[(2r-1)L],
+a_r=1/[(2r-1)L],
+S_K(a)=sum_(j=0)^(K-1)(-1)^j j!a^j,
+I_(2r)^[K]=K_r S_K(a_r),
+Psi_c^[K]=cP_1(y)+sum_(r>=2)c^r I_(2r)^[K]/r.
+```
+
+For the exact RH-383 endpoint map `F`, let
+`Gap_K=F(Psi^[K])/pi^2`.  The higher-rank source, power-kernel, and exact
+factorial ledgers give
+
+```text
+pi^2 abs(Gap_P-Gap_K)
+ <=x^(-3)/L[7560epsilon_x+1638/x^2+1176K!/(3L)^K],
+lim_(y->infinity) max_(1<=K<=floor(3log p_y))
+ abs(Gap_P-Gap_K)/P_2(y)=0.
+```
+
+The recurrence `b_(K+1)/b_K=(K+1)/(3L)<=1` pays the complete moving
+integer window; finite `K` fixtures are not used as its proof.  The exact
+`P_1` coordinate is essential within the frozen `P/J/I` hierarchy.
+Maynard's unconditional bounded-consecutive-gap theorem and exact strict
+succession imply
+
+```text
+limsup_y p_y^2 abs(P_1(y)-I_2(p_y))>=1/2,
+limsup_y p_y^2 pi^2 abs(Gap_P-Gap_I)>=X_infinity,
+limsup_y p_y^2 pi^2 abs(Gap_P-Gap_J)>=X_infinity.
+```
+
+The endpoint proof uses the exact direction
+`grad F(0).(1,2,3,4,5,6,7)=2X_infinity`, Hessian ledger `224`, and Taylor
+remainder `112`.  This is a necessity theorem only for the declared smooth
+kernel hierarchy, not for every conceivable surrogate.  It proves no
+convergent factorial series, larger `K` window, `P_3` or cubic precision,
+complex channel, growing clock, active `c_11`, adaptive capacity, operator,
+trace, zero model, RH statement, or Gate A--E conclusion.  Routes A and B
+are `GO`; Route C is `STOP_SCOPED`.
 
 RH-387 is now integrated.  It resums the entire strict prime-tail family
 before any relative logarithm is taken.  For `x=p_y`, `L=log x>=512`, and
@@ -349,9 +405,9 @@ The post-RH-385 source gate was later paid by the versioned Johnston--Yang
 lock, and the resulting growing-order theorem is now published as RH-386.
 Fixed-period logarithmic cancellation still does not activate `c_11`, and
 the available Davenport theorem still does not prescribe a
-super-polylogarithmic clock.  The subsequent breadth audit assigned and
-published RH-387 as the distinct all-order resummation theorem above.  No
-post-RH-387 breadth audit has yet assigned RH-388.
+super-polylogarithmic clock.  The subsequent breadth audits assigned and
+published RH-387 and then RH-388 as the distinct all-order and rank-one
+`P_2` theorems above.  No post-RH-388 breadth audit has yet assigned RH-389.
 The geometrically selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
@@ -2225,7 +2281,100 @@ prime-index limit, active `c_11`, growing clock, adaptive capacity, operator,
 trace, zero model, RH statement, or Gate A--E conclusion.  Route A is `GO`;
 Route B remains `STOP_SCOPED`.
 
-## 4. Compact conclusions from RH-352 through RH-387
+### 3.27 RH-388 rank-one `P_2`-scale resummation and necessity
+
+Retain `x=p_y`, `L=log x>=512`, the channels `c in {1,...,7}`, and the
+RH-387 tails.  For every integer `1<=K<=floor(3L)` and every `r>=2`, define
+
+```text
+K_r=x^(1-2r)/[(2r-1)L],
+a_r=1/[(2r-1)L],
+S_K(a)=sum_(j=0)^(K-1)(-1)^j j!a^j,
+I_(2r)^[K]=K_r S_K(a_r),
+Psi_c^[K]=cP_1(y)+sum_(r>=2)c^r I_(2r)^[K]/r.
+```
+
+The rank-one coordinate remains the exact strict prime tail.  Strict
+Stieltjes transfer is applied only for `r>=2`.  Writing
+`R(z)=-log(1-z)-z`, the source and exact-to-power ledgers are
+
+```text
+max_c abs(sum_(r>=2)c^r(P_r-J_r)/r)<60epsilon_x/(x^3L),
+max_c sum_(r>=2)c^r(J_r-I_(2r))/r<13/(x^5L).
+```
+
+The common denominator is paid explicitly:
+
+```text
+D_c(x)^(-1)
+ =[(1-x^(-2))(1-(1+c)/x^2)]^(-1)
+ <536870912/536797185<36/35<5/4.
+```
+
+The finite geometric identity gives the exact factorial remainder
+
+```text
+G(a)-S_K(a)=(-a)^K integral_0^infinity e^(-v)v^K/(1+av)dv,
+abs(I_(2r)-I_(2r)^[K])<=K_r a_r^K K!,
+max_c abs(sum_(r>=2)c^r(I_(2r)-I_(2r)^[K])/r)
+ <=(28/3)x^(-3)K!/[L(3L)^K].
+```
+
+Every `Psi^[K]` lies in `[0,1/2]^7`.  With
+`b_K=K!/(3L)^K`, the recurrence
+`b_(K+1)/b_K=(K+1)/(3L)<=1` proves `b_K<=1/(3L)` over the
+complete integer window.  This universal recurrence, not the twelve finite
+regression fixtures, pays the moving-`K` quantifier.
+
+The endpoint ledgers are
+
+```text
+sup_(z in [0,1/2]^7) norm(grad F(z))_1<126,
+sup_(z in [0,1/2]^7) sum_(i,j)abs(partial_(i,j)F(z))<224,
+abs(F(z)-grad F(0).z)<=112 norm(z)_infinity^2
+  for z in [0,1/2]^7.
+```
+
+Consequently
+
+```text
+pi^2 abs(Gap_P-Gap_K)
+ <=x^(-3)/L[7560epsilon_x+1638/x^2+1176K!/(3L)^K],
+lim_(y->infinity) max_(1<=K<=floor(3log p_y))
+ abs(Gap_P-Gap_K)/P_2(y)=0.
+```
+
+For necessity, Maynard's unconditional theorem supplies infinitely many
+consecutive prime pairs `x=p_y`, `q=p_(y+1)=x+h` with integer `h<=600`.
+Exact succession gives
+
+```text
+x^2[(P_1-I_2)_y-(P_1-I_2)_(y+1)]->1,
+limsup_y p_y^2 abs(P_1(y)-I_2(p_y))>=1/2.
+```
+
+The seven-coordinate jump tends to `(1,2,3,4,5,6,7)`, while
+
+```text
+grad F(0).(1,2,3,4,5,6,7)=2X_infinity>0.
+```
+
+The Hessian remainder is `o(x^(-2))`; hence
+
+```text
+limsup_y p_y^2 pi^2 abs(Gap_P-Gap_I)>=X_infinity,
+limsup_y p_y^2 pi^2 abs(Gap_P-Gap_J)>=X_infinity,
+limsup_y abs(Gap_P-Gap_I)/P_2(y)=infinity,
+limsup_y abs(Gap_P-Gap_J)/P_2(y)=infinity.
+```
+
+Necessity is restricted to the frozen `P/J/I` smooth-kernel hierarchy.
+RH-388 makes no assertion about every possible surrogate, factorial-series
+convergence, a larger `K` window, `P_3` or cubic precision, complex channels,
+growing clocks, active `c_11`, adaptive capacity, operators, traces, zeros,
+RH, or Gates A--E.  Routes A and B are `GO`; Route C is `STOP_SCOPED`.
+
+## 4. Compact conclusions from RH-352 through RH-388
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -2413,6 +2562,14 @@ Route B remains `STOP_SCOPED`.
   gap constants `3528` and `588`.  The certified source error is larger than
   the `P_2` scale, so no second-order or cubic precision, complex channel,
   growing clock, active `c_11`, adaptive capacity, or Gate object follows.
+- **RH-388:** Uniform `P_2`-scale factorial resummation of every higher rank
+  while retaining the exact strict `P_1` coordinate.  It proves the
+  coordinate constants `60`, `13`, and `28/3`, the complete moving window
+  `1<=K<=floor(3L)`, and the endpoint constants `7560/1638/1176`.  Maynard's
+  bounded consecutive gaps prove the complementary sharp `1/2` scalar and
+  `X_infinity` endpoint limsup obstruction for the fully smooth `P/J/I`
+  hierarchy.  No universal surrogate obstruction, factorial convergence,
+  `P_3` precision, class enlargement, or Gate object follows.
 
 ## 5. Route firewall and reopening triggers
 
@@ -2636,7 +2793,7 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-385. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-388. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
 declared periodic/typical/distance-two capacity audit, RH-373 closes the
 declared fixed composite-clock phase-selector floor route, and RH-374 closes
@@ -2691,8 +2848,13 @@ any Gate.  RH-387 closes only the all-order absolute source-to-integral
 resummation and endpoint Lipschitz transfer on the seven real channels.  Its
 certified error is larger than the `P_2` scale, and it does not provide
 second-order precision, complex-channel uniformity, a growing clock, active
-phasewise cancellation, adaptive capacity, or any Gate.  For RH-388 and
-later, the shortest exact candidates are:
+phasewise cancellation, adaptive capacity, or any Gate.  RH-388 closes the
+rank-one-retained `P_2`-scale factorial resummation and the bounded-gap
+necessity theorem only inside the frozen `P/J/I` hierarchy.  It does not
+prove factorial-series convergence, a larger `K` window, a universal
+surrogate obstruction, `P_3` precision, a complex channel, growing clock,
+active phasewise cancellation, adaptive capacity, or any Gate.  For RH-389
+and later, the shortest exact candidates are:
 
 1. A genuine phase-weighted shift-two or higher-order Möbius correlation
    theorem controlling active `c_11(r)` terms, the
@@ -4076,6 +4238,64 @@ Independent proof/release and source/integrity audits both returned
 `588/(x^3L)` surrogate difference to a `P_2`-scale approximation of the
 actual gap.  Complex channels, active `c_11`, growing clocks, adaptive
 capacity, operators, traces, zeros, RH, and Gates A--E remain outside scope.
+
+### 6.27 RH-388 rank-one `P_2` proof and release (2026-08-08)
+
+The post-RH-387 breadth audit compared all-order factorial refinement,
+bounded-gap obstruction, complex-channel extension, active-`c_11`, and
+stronger-clock routes.  The selected theorem combines two nontrivial edges:
+exact rank-one retention is sufficient for uniform `P_2` accuracy, while
+Maynard's actual bounded consecutive prime gaps show that smoothing rank one
+fails at that scale inside the frozen `P/J/I` hierarchy.
+
+The positive proof applies the RH-386 strict-Stieltjes estimate only for
+`r>=2`, then uses the exact finite geometric remainder for every higher
+rank.  The coordinate constants are exactly
+
+```text
+60, 13, 28/3,
+```
+
+and the RH-383 endpoint Lipschitz constant `126` produces
+
+```text
+126*60=7560,
+126*13=1638,
+126*(28/3)=1176.
+```
+
+The complete moving window is paid by the symbolic recurrence for
+`b_K=K!/(3L)^K`; the twelve finite `K` rows are explicitly regression only.
+The negative proof uses Maynard Theorem 1.3, the integer-valued gap
+implication, exact strict succession, the endpoint Hessian bound `224`, and
+the direction `grad F(0).(1,...,7)=2X_infinity`.  Its sharp limsup constants
+are `1/2` and `X_infinity`; the finite `1/16` row is eventual and nonsharp.
+
+The executable artifact freezes `56=12+7+12+7+10+8` rows and rejects
+`24/24` genuine field-level mutations.  The immutable Git closure contains
+`77` release blobs grouped `68/8/1`, with ordered digest
+`d7f2ee43f56631c8f3442db8fcc6fb423a801b5af7607351623cd449a92c3f73`.
+The ordered Johnston--Yang and Maynard canonical remote digests are
+
+```text
+d53b93212b7c5b5b6b3f7e890099c48ce8e35f2bff9bdd49f9c330a9b5039786
+bd4aad4b7042218e5733bb07db2a513770710628a8ac52d5bcc9881fcb0b5d2e
+```
+
+and the resulting `79`-input logical digest is
+`bffce602d6e3b568eb96662820f08aa457ff5d0de4065f3c9eeac53d8d8dfa39`.
+Neither external source payload is redistributed.  Both verifiers are
+offline by default; both explicit opt-in source replays passed.
+
+The final release has `36` publication members plus manifest and verification
+report, hence exactly `38` RH-388 files in integration commit
+`8e6f89ee1e58e67c53c5f4719c05e881107113ac`.  The test suite is `58/58`,
+the archive has zero failures, and both independent final audits returned
+zero blocker and zero minor.  Routes A and B are `GO`; Route C is
+`STOP_SCOPED`.  Factorial convergence, an enlarged `K` window, universal
+surrogate necessity, `P_3` precision, complex channels, active `c_11`,
+growing clocks, adaptive capacity, operators, traces, zeros, RH, and Gates
+A--E remain outside scope.
 
 ## 7. Reproduction and publication audit
 
@@ -5472,12 +5692,95 @@ remote-source audit
 0a7bc0f194bf2d109d940d23325e99591786ba044157ba4853e94a851e4016d5
 ```
 
+Final RH-388 audit:
+
+- Tests: `58/58`; exact normal and optimized result/schema/manifest/report
+  regeneration, independent field validation, strict JSON and exact types,
+  official Draft 2020-12 schema, both remote-source failure modes, source
+  identity, and archive mutations all pass or fail closed as declared.
+- The canonical certificate is `14531` bytes with SHA-256
+  `373d870847bb0bf134aa1eba30c5e4d2c3a01dba470af9c75ebacadd81976371`.
+  It contains `56=12+7+12+7+10+8` rows and rejects `24/24` genuine
+  field-level mutations; finite factorial rows are regression only.
+- Source closure: `77` immutable Git blobs grouped `68/8/1`, plus the
+  ordered Johnston--Yang and Maynard remote logical locks.  The logical
+  input count is `79`, both default verifiers make zero requests, and both
+  live opt-in replays pass.  All four external payload hashes are absent
+  from the release tree and archive.
+- Individual archive: `36` publication members, `77` Git inputs, two remote
+  logical locks, and zero failures.  Integration commit
+  `8e6f89ee1e58e67c53c5f4719c05e881107113ac` contains exactly `38`
+  RH-388 files: the `36` members plus manifest and verification report.
+- PDF: `10` A4 pages and `362578` bytes, with all `22` font rows embedded,
+  subsetted, and Unicode-mapped.  Ghostscript, text extraction, complete
+  LaTeX/BibTeX scans, semantic-PDF byte identity, and all `10/10` rendered
+  pages pass.
+- Two independent final audits and the incremental EOF reseal report zero
+  blocker and zero minor.  The hierarchy-only necessity boundary and all
+  factorial, `P_3`, complex-channel, clock, active-`c_11`, adaptive-capacity,
+  operator, trace, zero, RH, and Gate firewalls remain intact.
+
+RH-388 final hashes:
+
+```text
+main.tex
+e2b04590643db06266649551f92942a1d3a261af4a8270aede017787e3392dca
+
+references.bib
+10d7ef89df233a8f8b516466d324fcd048c20053903045f26a2e867faeba04f3
+
+PDF
+e4e58fba1fbf8481ca258380d64a634fdce82ecb1811da837270e2f63f8c0da9
+
+main.log
+7e29a541e13a1d00221d6745c3ae754c21016e5eb6c9c62b5d7c0d1c83703d57
+
+result
+b80e29174e6616bc7f4c2de999069ba9d745d80d7c46f88ae8046bf2b5b41665
+
+schema
+283182d019009b282f4e653efe1dbbc4ab48510046e65ddd77ca4e9db968cbb5
+
+manifest
+107280822a7be75c1774d56d3c7622cb44ebf1de4f9fda29a34487312f93f5c2
+
+verification
+c1a7eb141aeccf01dd9d0e52829a889e2ca56ae585f9f1904b78871379025760
+
+core
+96d85b44d905d35015450f8d196a52a6ecbe0a79857dce49d4a188ca74c43432
+
+Johnston--Yang external source lock
+d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058
+
+Maynard external source lock
+9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba
+
+integrity audit
+6414ad6d4365e9c6edd0fa3b3738e87bd7be9f6e2d27a351cd77e3de39b0f36d
+
+review audit
+428e3bbee2ab8957e232f51b610626ce0811226d4255dd332ed1e8c108afcdd8
+
+format audit
+0f41a4b4982622b6c896774e7219beac2281ecd3bf4081f7ec9863ebd7c4071a
+
+replay audit
+52679e4192c63c32749c0052bcd7fb8fcfc2feac080f4f05cdcbdb9f90023430
+
+visual audit
+ac3b9dd6c90549a6f95c7c250ce6e8a692869383c6e424ae70a654aa51aac06a
+
+remote-source audit
+a713384ac17bb2a86a59acd9949700276d4355702b8e49cc805397c6704e803f
+```
+
 ## 8. Continuation prompt
 
 ````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-387 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-388 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -5498,7 +5801,9 @@ partition-normal-form input, RH-384 as the prime-tail scale-separation input,
 RH-385 as the fixed-polylogarithmic-clock phasewise-memory uniformization
 input, RH-386 as the Vinogradov--Korobov growing-order prime-tail
 uniformization input, RH-387 as the all-order prime-tail integral-resummation
-input, RH-MVP2 as the corpus umbrella, and RH-361 as the physical endpoint.
+input, RH-388 as the rank-one `P_2`-scale resummation and bounded-gap
+necessity input, RH-MVP2 as the corpus umbrella, and RH-361 as the physical
+endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -5508,36 +5813,50 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-387 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  Put `x=p_y`, `L=log x>=512`, and for `1<=c<=7` define
+RH-388 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  Put `x=p_y`, `L=log x>=512`, `c in {1,...,7}`, and for
+every integer `1<=K<=floor(3L)` define
 
 ```text
 V=L^(3/5)(log L)^(-1/5),
 epsilon_x=0.027L^1.801 exp(-0.1853V),
-Phi_c^P=sum_(r>=1)c^rP_r(y)/r,
-Phi_c^J=integral_x^infinity -log(1-c/(t^2-1))/log(t)dt,
-Phi_c^I=integral_x^infinity -log(1-c/t^2)/log(t)dt.
+K_r=x^(1-2r)/[(2r-1)L],
+a_r=1/[(2r-1)L],
+S_K(a)=sum_(j=0)^(K-1)(-1)^j j!a^j,
+I_(2r)^[K]=K_rS_K(a_r),
+Psi_c^[K]=cP_1(y)+sum_(r>=2)c^rI_(2r)^[K]/r.
 ```
 
-The seven-vectors enter the exact RH-383 endpoint map `F`.  Retain
+For the exact endpoint map `F`, retain
 
 ```text
-max_c abs(Phi_c^P-Phi_c^J)<=28epsilon_x/(xL),
-0<=max_c(Phi_c^J-Phi_c^I)<=14/(3x^3L),
-sup_(z in [0,1/2]^7)norm(grad F(z))_1<126,
-pi^2 abs(Gap_P-Gap_J)<=3528epsilon_x/(xL),
-pi^2 abs(Gap_J-Gap_I)<=588/(x^3L).
+pi^2 abs(Gap_P-Gap_K)
+ <=x^(-3)/L[7560epsilon_x+1638/x^2+1176K!/(3L)^K],
+lim_(y->infinity) max_(1<=K<=floor(3log p_y))
+ abs(Gap_P-Gap_K)/P_2(y)=0.
 ```
 
-The proof sums the absolute strict-Stieltjes error over every order before
-using the finite-dimensional endpoint Lipschitz theorem.  Do not replace it
-by the RH-386 relative logarithmic ledger, which requires a finite largest
-order.  Keep the endpoint strict, the Stieltjes boundary term, the seven real
-integer channels, and the `ell^infinity`/dual-`ell^1` norm pairing.  Because
-`epsilon_x x^2->infinity`, do not promote the theorem to actual-gap
-second-order, `P_2`, or cubic precision.  Do not infer complex-channel,
-simultaneous prime-index/prefix, growing-clock, active-`c_11`, adaptive
-capacity, operator, trace, zero, RH, or Gate conclusions.
+The exact `P_1` term is never smoothed in this positive theorem.  The full
+integer window is paid by `b_(K+1)/b_K=(K+1)/(3L)<=1`, not by the finite
+fixtures.  Maynard's bounded consecutive gaps and exact succession give
+
+```text
+limsup_y p_y^2 abs(P_1-I_2)>=1/2,
+limsup_y p_y^2 pi^2 abs(Gap_P-Gap_I)>=X_infinity,
+limsup_y p_y^2 pi^2 abs(Gap_P-Gap_J)>=X_infinity.
+```
+
+Keep this necessity statement restricted to the frozen `P/J/I` hierarchy.
+Do not infer factorial-series convergence, a larger `K` window, a universal
+surrogate obstruction, `P_3` or cubic precision, complex channels,
+simultaneous prime-index/prefix limits, growing clocks, active `c_11`,
+adaptive capacity, operators, traces, zeros, RH, or Gate conclusions.
+
+RH-387 remains the preceding all-order absolute resummation theorem.  Its
+`126/3528/588` endpoint transfer is valid, but its actual-gap source error is
+larger than `P_2`.  RH-388 pays that scale only by retaining exact `P_1` and
+transferring ranks `r>=2`; do not rewrite this rank separation as a direct
+RH-387 corollary.
 
 RH-386 remains the preceding growing-order theorem edge.  Put `x=p_y`,
 `L=log x`,
@@ -5776,13 +6095,19 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-RH-387 is complete; do not rewrite it as the next candidate.  Its
-infinite-order Tonelli resummation, strict source/power kernels, endpoint
-Lipschitz theorem, constants `126/3528/588`, source closure, release archive,
-and two independent final audits are closed.  No post-RH-387 breadth audit
-has yet assigned RH-388.  Run that audit before creating another number, and
-require a genuinely new source-backed theorem rather than a repackaging of
-the RH-387 integrals or its `P_2`-scale obstruction.
+RH-388 is complete; do not rewrite it as the next candidate.  Its exact
+rank-one retention, higher-rank factorial resummation, full moving-`K`
+window, bounded-gap necessity theorem, two remote source locks, release
+archive, and two independent final audits are closed.  No post-RH-388
+breadth audit has yet assigned RH-389.  Run that audit before creating
+another number, and require a genuinely new source-backed theorem rather
+than a repackaging of the RH-388 `P_2` ledger or its hierarchy-only
+obstruction.
+
+RH-387 remains complete as the preceding all-order absolute-resummation
+theorem.  Its strict source/power kernels and `126/3528/588` endpoint
+transfer are closed; do not erase the exact-rank separation that makes the
+RH-388 scale theorem possible.
 
 RH-386 remains complete as the preceding source/growing-order theorem.  Its
 remote source gate, finite-partition family quantifiers, sharp `H/L`
