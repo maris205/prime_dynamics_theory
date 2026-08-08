@@ -1,103 +1,101 @@
 # TPC HANDOFF
 
 更新时间：2026-08-08
-交接状态：`BOLD_CHANNEL_V29_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V30_SEALED_FOR_NEW_SESSION`
 
-第 76 节把 V28 的 joint-main/error 入口再拆成一个不能省略的零坐标二门合同。保持
+第 77 节继续冻结 V29 的同一 literal residual：
 
 ~~~text
 e_x(h)=r_x(h)-Mloc_x(h),
 Mloc_x(0)=0,
-J(f)=sum_h kappa_x(h)f(h),
-E(f)=f(0)-J(f)=-sum_(h!=0)kappa_x(h)f(h).
+S_x^physical=e_x(0)=J(e_x)+E(e_x).                    (V30.1)
 ~~~
 
-于是精确有
+V30 在 major端提取一个 exact q-local density tensor。对 `q>z`，formal
+shifted-prime profile `F_(q,a)` 与 hybrid profile `G_(q,a)` 的差
+`Delta_(q,a)` 满足
 
 ~~~text
-e_x(0)=S_x^physical,
-S_x^physical=J(e_x)+E(e_x).                           (V29.1)
+mean_h Delta_(q,a)(h)=0,
+mean_h c_q(h)Delta_(q,a)(h)=Delta_(q,a)(0).
 ~~~
 
-有限反例 `e=T delta_0` 给 `E(e)=0`、全部 off-zero weighted energy为零，然而
-`J(e)=S=T`。因此任何只控制 off-zero residual energy 的 theorem 都不能闭合原标量；
-当前全局主门必须分成
+当 `H=x^(21/32)>2Q`，完整格 Poisson 的常数精确为
+`H psi(0)Delta_(q,a)(0)`，不是 `H hatpsi(0)`。ordered occurrence envelope、
+V29 hard-shell cover与 Schwartz tail给
 
 ~~~text
-MAJOR: |J(e_x)| << x^(399/400-eta_M), eta_M>0,
-MINOR: (sum_(h!=0)|hatpsi(h/H)||e_x(h)|^2)^(1/2)
-       << x^(1+theta+epsilon_N), theta<13/4800.        (V29.2)
+M_q-local << x^(95/96+o(1)),
+399/400-95/96=19/2400,
+J(e_x)=R_q-local+O(x^(95/96+o(1))).                   (V30.2)
 ~~~
 
-第二门与 V27 coefficient norm组合只给
-`|E(e_x)|<<x^(191/192+theta+epsilon_N+o(1))`。一个共同的 strict margin只能在
-`epsilon_*<min(eta_M,(13/4800-theta)/2)`时选择。MRT Proposition 3.1只把 MINOR
-门约化为 `P0*PY<<x^(2+2theta+2epsilon)/Y` 加实际 major coefficient
-`MT_M,h=Mloc_x(h)+a_x(h)` 的独立 weighted-
-L2 payment；当前来源没有支付 MAJOR 或这个 literal attachment。
+但 residual diagonal仍是 `S_x+O(x^(2/3+o(1)))`。所以 q-local model是真正付清的
+L0/major subgate；actual `R_q-local` signed covariance仍是 terminal open theorem，
+没有 fixed-atom或 arithmetic credit。
 
-V29 同时把 V28 reduced-radical corridor正式编译完成。interior/boundary是 exact cover，
-boundary 为 `x^(47/48+epsilon)` 且可取 `epsilon<11/1920`；`q|D` branch在绝对值前
-完整消去。active corridor中
+minor端的新 exact compiler更有研究杠杆。固定一个预声明 hard major set，并将其
+minor complement分成 `2Y` 个 half-open cells，令 `u_j=||B||_(2,I_j)`、`v_j=||W||_(2,I_j)`、
+`c_j=u_jv_j`，则
 
 ~~~text
-R>=H/q=x^(31/96+o(1)),
-g<=q sqrt(x)/H=x^(17/96+o(1))<q,
+P0<=||c||_1,
+PY<=3||c||_infinity,
+sum_(|h-h*|<=Y)|r(h)-MT_M,h|^2
+  << 3Y||c||_1||c||_infinity.                         (V30.3)
 ~~~
 
-所以不存在额外 `q|g` correction。CRT、coprimality Möbius split、fixed-
-`R1` local triangle与 log-Fourier smooth separation给 Bettin--Chandee literal arrays，
-并证明
+`||c||_1<<x^(1+o(1))` 已由 Parseval/divisor envelope支付；下一 theorem须新证
+`||c||_infinity<<x^(1+2theta+2epsilon)/Y`，同时证明 literal
+`MT_M,h=Mloc_x(h)+a_x(h)` 与同一 `a_x` 的 weighted L2 bound。反相 spike family
+`u=(R,R^-1),v=(R^-1,R)` 证明 cross-flatness严格弱于两侧分别 flat。
+
+一旦 minor门支付
+`|E(e_x)|<<x^(399/400-eta_E)`，由 `S=J+E` 与 `J=S-E`，strict-power
+`J(e_x)` bound与 physical `S_x` bound双向等价。因此研究排序更新为
 
 ~~~text
-E(Mloc_x), J(Mloc_x) << x^(1891/1920+o(1)),
-399/400-1891/1920=121/9600.                            (V29.3)
+B: tagged cell cross-flatness + literal Mloc+a attachment;
+A: terminal q-local residual major covariance;
+C: symmetry-breaking low-Christoffel arithmetic quotient. (V30.4)
 ~~~
 
-这是已付 local carrier theorem；因 `J(Mloc)+E(Mloc)=0`，它不给 whole scalar
-arithmetic credit。
+full cyclic coordinate space上的 translation-equivariant quotient若 exact factor point
+evaluation，就必须 injective；其 `kappa=N,kappa0=N-1`，不能满足
+`o(x/log^4x)`。这只停止 full-coordinate symmetry-preserving版本，不停止
+distinguished arithmetic seed。有限 `q=5` kernel
+`K5=(5/3)1_{1,2,4}` 有 `kappa=5/3,kappa0=2/3`，却仍缺 independent positive
+prime main。
 
-动力学 reserve被压成 finite Hilbert/Riesz gate。对预声明子空间与 target-blind
-evaluation，最小核 (K^*) 的
-`κ=||K*||_2^2`、`κ0=κ-1` 满足
-
-~~~text
-L(S)>=mean(S)-sqrt(kappa0) ||S-mean(S)||_2.
-~~~
-
-若 positive main 为 `>>x/log^2x` 且 variance 为 `O(x)`，则只用 uniform L2 信息时的
-sharp sufficient threshold 是 `kappa0=o(x/log^4x)`。`Z/4Z` 的三频 kernel
-`K=(3,1,-1,1)`、`S=(4,2,0,2)`给 `kappa=3` 与 exact point value 4，说明该通道
-非空；coarse cell、完整坐标、martingale level count、target-calibrated single-vector
-fit 与 skew-stage tags 均有精确 scoped no-go。
-
-V29 页首只摘要核心边界；完整 42-row canonical registry在 Handoff 第 24、76 节、
-Compass 第 30 节、big-road README 第 29 节与 V29 proof 第 10 节逐字冻结。当前核心为
+V30 页首只摘要核心边界；完整 52-row canonical registry在 Handoff 第 24、77 节、
+Compass 第 31 节、big-road README 第 30 节与 V30 proof 第 10 节逐字冻结。当前核心为
 
 ~~~text
-V29_TAGGED_RESIDUAL_INDEPENDENT_JUTILA_MAJOR
-  = SELECTED_PRIMARY_OPEN_NEW_THEOREM
-V29_TAGGED_RESIDUAL_OFFZERO_WEIGHTED_L2 = OPEN_NEW_THEOREM
-V29_OFFZERO_RESIDUAL_ENERGY_ALONE
-  = STOP_SCOPED_DELTA_ZERO_SELF_RETURN
-V29_LOCAL_CARRIER_BC_BOUND
-  = PROVED_SOURCE_BACKED_X_1891_OVER_1920_PLUS_O1
-V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT
-  = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
-V29_ARITHMETIC_ADVANCE = NO
-V29_FIXED_ATOM_CREDIT = 0
-V29_STRICT_1_OVER_400 = UNPAID
-V29_L2 = NONE
-V29_TPC_207_TRIGGER = false                           (V29.4)
+V30_QLOCAL_MODEL_BOUND = PROVED_ELEMENTARY_X_95_OVER_96_PLUS_O1
+V30_TAGGED_QLOCAL_RESIDUAL_MAJOR_COVARIANCE
+  = SELECTED_TERMINAL_OPEN_NEW_THEOREM
+V30_B_CELL_PRODUCT_CERTIFICATE
+  = PROVED_EXACT_PARTITION_AND_CAUCHY_SCHWARZ
+V30_B_CELL_LINF_CROSS_FLATNESS = OPEN_ACTUAL_TAGGED_LOCAL_THEOREM
+V30_B_MLOC_PLUS_A_ATTACHMENT = OPEN_WEIGHTED_AP_ATTACHMENT
+V30_A_B_ENDPOINT_EQUIVALENCE = PROVED_EXACT_STRICT_EXPONENT_CLASS
+V30_C_EQUIVARIANT_WHOLE_SHELL_QUOTIENT
+  = STOP_SCOPED_TRANSLATION_INVARIANCE_FORCES_INJECTIVITY
+V30_ARITHMETIC_ADVANCE = NO
+V30_FIXED_ATOM_CREDIT = 0
+V30_STRICT_1_OVER_400 = UNPAID
+V30_L2 = NONE
+V30_TPC_207_TRIGGER = false                           (V30.5)
 ~~~
 
 proof 与 checker 为
-`research/tpc-big-road/bridge_b_joint_major_minor_and_low_christoffel.md` 和
-`research/tpc-big-road/tpc_bridge_b_joint_major_minor_checker.py`。当前 checker冻结
-44-field contract、42-row registry、registry SHA-256
-`39b3aaf04f28763bca249ef874f07ade304e71d3e4eb390613fa1870455826a6`，并执行
-134/87/10/15/149 个 contract/registry/source/dependency/result mutations。V29 是
-不编号 big-road release；不创建 TPC-207、paper、PDF或 build output。
+`research/tpc-big-road/bridge_b_terminal_major_cross_flatness_and_equivariant_quotient.md`
+和
+`research/tpc-big-road/tpc_bridge_b_terminal_major_cross_flatness_checker.py`。当前
+checker冻结 49/52/7/6 contract/registry/source/dependency rows，registry SHA-256
+`acead73d0c6e12b03d30d40f35ea345c32d859bea5106456f33b4724fdf23563`，并执行
+100/107/16/14/155 mutations，共 392 个 unique reject actions。V30 是不编号
+big-road release；不创建 TPC-207、paper、PDF或 build output。
 
 第 75 节把 V27 的 generic smooth-main zero-axis wall分成两个不同对象。对 V19
 actual selected MASTER occurrence \(o\)，保留 ordered `+2,-1`、Mobius/log、
@@ -1890,17 +1888,18 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V29_20260808_JOINT_MAJOR_MINOR_COMPLETED_LOCAL_CORRIDOR_AND_LOW_CHRISTOFFEL_ROUTE_NO_ARITHMETIC_TRIGGER`
+`TPC_BIG_ROAD_V30_20260808_QLOCAL_MAJOR_CELL_CROSS_FLATNESS_AND_TERMINAL_GATE_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V29_TAGGED_RESIDUAL_INDEPENDENT_JUTILA_MAJOR_AND_OFFZERO_WEIGHTED_L2_TWO_GATE`；
+`V30_TAGGED_HARD_MAJOR_CELL_CROSS_FLATNESS_PLUS_MLOC_WEIGHTED_ATTACHMENT`；
 当前 first subgates：
-`V29_TAGGED_RESIDUAL_INDEPENDENT_JUTILA_MAJOR` 与
-`V29_TAGGED_RESIDUAL_OFFZERO_WEIGHTED_L2`；
+`V30_B_CELL_LINF_CROSS_FLATNESS` 与
+`V30_B_MLOC_PLUS_A_ATTACHMENT`；
 已支付并可复用的 source-backed local subgate 为
-`V29_LOCAL_CARRIER_BC_BOUND`
-（第 76 节控制；既有 local source只有在第 32.6 节或
+`V30_LOCAL_BC_CARRIER`；已支付的 exact q-local major model为
+`V30_QLOCAL_MODEL_BOUND`
+（第 77 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--76 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--77 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -1912,6 +1911,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_terminal_major_cross_flatness_and_equivariant_quotient.md`、
+`research/tpc-big-road/tpc_bridge_b_terminal_major_cross_flatness_checker.py`、
 `research/tpc-big-road/bridge_b_joint_major_minor_and_low_christoffel.md`、
 `research/tpc-big-road/tpc_bridge_b_joint_major_minor_checker.py`、
 `research/tpc-big-road/bridge_b_euler_zero_axis_and_kernel_carrier.md`、
@@ -1935,7 +1936,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--76 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--77 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -1997,11 +1998,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V29 gate及其 V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；十四次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V30 gate及其 V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；十六次必须都为零，且每一对 stdout
 byte-identical：
 
 ```powershell
+python -B research/tpc-big-road/tpc_bridge_b_terminal_major_cross_flatness_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_terminal_major_cross_flatness_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_joint_major_minor_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_joint_major_minor_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_prime_shell_jutila_checker.py --check
@@ -3863,6 +3866,34 @@ V29_INDEPENDENT_POSITIVE_KERNEL_MAIN
 local BC theorem不支付 residual major/minor；finite Riesz criterion不生产 actual
 arithmetic quotient或 positive main。全部完整 gate同时通过前，arithmetic advance仍为
 `NO`。精确 proof、checker与 release boundary见第 76 节。
+
+2026-08-08 的 Bridge B V30 q-local major、cell cross-flatness 与 equivariant
+quotient审计新增且仅新增以下七个 scoped STOP cells：
+
+~~~text
+V30_A_AS_EASIER_PRELIMINARY
+  = STOP_SCOPED_TERMINAL_EQUIVALENCE_AFTER_B
+V30_DIRECT_BV_BDH_ATTACHMENT
+  = STOP_SCOPED_WRONG_SIGNED_COVARIANCE_OBJECT
+V30_B_ADAPTIVE_LARGE_SPECTRUM_EXCISION
+  = STOP_SCOPED_MAJOR_ABSORBS_TARGET_WITHOUT_MLOC_ATTACHMENT
+V30_MRT_FOURIER_UNIFORMITY_ATTACHMENT
+  = STOP_SCOPED_LIOUVILLE_OR_NONPRETENTIOUS_1_BOUNDED_AVERAGED_WRONG_QUANTIFIERS
+V30_GUTH_MAYNARD_LARGE_VALUES_ATTACHMENT
+  = STOP_SCOPED_MULTIPLICATIVE_FREQUENCY_WRONG_TRANSFORM
+V30_C_EQUIVARIANT_WHOLE_SHELL_QUOTIENT
+  = STOP_SCOPED_TRANSLATION_INVARIANCE_FORCES_INJECTIVITY
+V30_Q5_TO_PHYSICAL_POSITIVE_MAIN
+  = STOP_SCOPED_LOCAL_ADMISSIBILITY_DOES_NOT_FORCE_PRIME_MASS
+~~~
+
+第一项只停止把 A 描述成 B 之后更容易的 preliminary，不停止 terminal major theorem；
+第二、第四、第五项只停止错误 source transfer；第三项要求 hard major预声明；第六项
+只停止 full-coordinate translation-equivariant exact compression；第七项只停止
+local admissibility自动推出 prime mass。surviving primary为
+`V30_B_CELL_LINF_CROSS_FLATNESS` 与 `V30_B_MLOC_PLUS_A_ATTACHMENT`；terminal
+analytic gate为 `V30_TAGGED_QLOCAL_RESIDUAL_MAJOR_COVARIANCE`。完整 theorem出现前，
+arithmetic advance仍为 `NO`。精确 proof、checker与 release boundary见第 77 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -7531,7 +7562,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V29 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V30 current）
 
 ```text
 进入仓库：
@@ -7539,6 +7570,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_terminal_major_cross_flatness_and_equivariant_quotient.md、
+research/tpc-big-road/tpc_bridge_b_terminal_major_cross_flatness_checker.py、
 research/tpc-big-road/bridge_b_joint_major_minor_and_low_christoffel.md、
 research/tpc-big-road/tpc_bridge_b_joint_major_minor_checker.py、
 research/tpc-big-road/bridge_b_euler_zero_axis_and_kernel_carrier.md、
@@ -7565,7 +7598,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--76 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--77 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -7781,6 +7814,58 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V30_MAXIMUM_CLAIM = EXACT_QLOCAL_MAJOR_MODEL_X_95_OVER_96_PLUS_CELL_PRODUCT_MRT_REDUCTION_PLUS_ENDPOINT_EQUIVALENCE_PLUS_EQUIVARIANT_QUOTIENT_NO_GO
+V30_ROUTE_ADVANCE = YES
+V30_ARITHMETIC_ADVANCE = NO
+V30_FIXED_ATOM_CREDIT = 0
+V30_STRICT_1_OVER_400 = UNPAID
+V30_L2 = NONE
+V30_TPC_207_TRIGGER = false
+V30_NUMBERED_RELEASE = NO
+V30_SELECTED_RESEARCH_ROUTE = B_TAGGED_HARD_MAJOR_CELL_PRODUCT_AND_MLOC_ATTACHMENT
+V30_LOGICAL_TERMINAL_GATE = A_TAGGED_QLOCAL_RESIDUAL_MAJOR_AFTER_B
+V30_LITERAL_JUTILA_MAJOR_SCALAR = PROVED_EXACT_L0_WITH_REFLECTED_KERNEL_SIGN
+V30_J_ZERO_AXIS_SELF_RETURN = PROVED_EXACT_S_PLUS_OFFZERO
+V30_OFFZERO_GATE_TO_E_MARGIN = PROVED_EXACT_CONDITIONAL_13_OVER_4800_MINUS_THETA_MINUS_EPSILON
+V30_A_B_ENDPOINT_EQUIVALENCE = PROVED_EXACT_STRICT_EXPONENT_CLASS
+V30_A_AS_EASIER_PRELIMINARY = STOP_SCOPED_TERMINAL_EQUIVALENCE_AFTER_B
+V30_A_ADJOINT_CONVOLUTION_IDENTITY = PROVED_EXACT_ALGEBRAIC
+V30_QLOCAL_F_G_DELTA_PROFILE = PROVED_EXACT_FINITE_PERIOD
+V30_QLOCAL_RAMANUJAN_PAIRING = PROVED_EXACT_NORMALIZED_MEAN_EQUALS_DELTA_AT_ZERO
+V30_QLOCAL_POISSON_CONSTANT = PROVED_EXACT_H_TIMES_PSI_AT_ZERO
+V30_QLOCAL_UNIT_NONUNIT_LEDGER = PROVED_EXACT_ZERO_NUMERATOR_ADDED_AND_SUBTRACTED_ONCE
+V30_QLOCAL_MODEL_RESIDUAL_REASSEMBLY = PROVED_EXACT_OCCURRENCEWISE
+V30_QLOCAL_MODEL_BOUND = PROVED_ELEMENTARY_X_95_OVER_96_PLUS_O1
+V30_QLOCAL_MODEL_MARGIN_TO_399_400 = 19/2400
+V30_QLOCAL_BOUNDARY = PROVED_X_47_OVER_48_PLUS_EPSILON
+V30_QLOCAL_DIAGONAL_MODEL_BOUND = PROVED_X_2_OVER_3_PLUS_O1
+V30_QLOCAL_PHYSICAL_DIAGONAL_SURVIVES = PROVED_EXACT_COEFFICIENT_ONE_MINUS_SMALL_MODEL
+V30_TAGGED_QLOCAL_RESIDUAL_MAJOR_COVARIANCE = SELECTED_TERMINAL_OPEN_NEW_THEOREM
+V30_A_FIRST_FATAL = TAGGED_QLOCAL_RESIDUAL_MAJOR_COVARIANCE
+V30_DIRECT_BV_BDH_ATTACHMENT = STOP_SCOPED_WRONG_SIGNED_COVARIANCE_OBJECT
+V30_LOCAL_BC_CARRIER = PROVED_SOURCE_BACKED_X_1891_OVER_1920_BUT_ZERO_GLOBAL_CREDIT
+V30_B_MRT_PRODUCT_LOCAL_REDUCTION = SOURCE_BACKED_REDUCTION_ONLY
+V30_B_HARD_MAJOR_PREDECLARATION = REQUIRED_CIRCULARITY_FIREWALL
+V30_B_CELL_PRODUCT_CERTIFICATE = PROVED_EXACT_PARTITION_AND_CAUCHY_SCHWARZ
+V30_B_CELL_L1_GLOBAL_BOUND = PROVED_ELEMENTARY_X_1_PLUS_O1
+V30_B_CELL_LINF_CROSS_FLATNESS = OPEN_ACTUAL_TAGGED_LOCAL_THEOREM
+V30_B_ACTUAL_CELL_ENERGY_BOUND = OPEN_NEW_THEOREM
+V30_B_MLOC_PLUS_A_ATTACHMENT = OPEN_WEIGHTED_AP_ATTACHMENT
+V30_B_CROSS_FLATNESS_STRICTLY_WEAKER = PROVED_EXACT_ANTISPIKE_FAMILY
+V30_B_ADAPTIVE_LARGE_SPECTRUM_EXCISION = STOP_SCOPED_MAJOR_ABSORBS_TARGET_WITHOUT_MLOC_ATTACHMENT
+V30_MRT_FOURIER_UNIFORMITY_ATTACHMENT = STOP_SCOPED_LIOUVILLE_OR_NONPRETENTIOUS_1_BOUNDED_AVERAGED_WRONG_QUANTIFIERS
+V30_GUTH_MAYNARD_LARGE_VALUES_ATTACHMENT = STOP_SCOPED_MULTIPLICATIVE_FREQUENCY_WRONG_TRANSFORM
+V30_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_08
+V30_C_EQUIVARIANT_WHOLE_SHELL_QUOTIENT = STOP_SCOPED_TRANSLATION_INVARIANCE_FORCES_INJECTIVITY
+V30_C_FULL_COORDINATE_CHRISTOFFEL = PROVED_EXACT_KAPPA_N_KAPPA0_N_MINUS_1
+V30_C_DISTINGUISHED_SEED_SYMMETRY_BREAK = SURVIVES_SCOPED_OPEN
+V30_C_ACTUAL_ARITHMETIC_QUOTIENT = OPEN_NEW_THEOREM
+V30_Q5_GAP2_LOCAL_DENSITY_KERNEL = PROVED_EXACT_FINITE_LOW_CHRISTOFFEL_CARRIER
+V30_Q5_TO_PHYSICAL_POSITIVE_MAIN = STOP_SCOPED_LOCAL_ADMISSIBILITY_DOES_NOT_FORCE_PRIME_MASS
+V30_NEXT_THEOREM = TAGGED_HARD_MAJOR_CELL_CROSS_FLATNESS_PLUS_MLOC_WEIGHTED_ATTACHMENT
+V30_FIRST_FATAL = MISSING_LITERAL_MT_EQUALS_MLOC_PLUS_A_AND_TAGGED_CELL_CROSS_FLATNESS
+V30_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
+V30_PROVENANCE_CASCADE = REQUIRED
 BRIDGE_B_ALL_TRANSLATIONS_CURRENT_GATE = NO
 BRIDGE_B_APPROXIMATE_LOW_RANK_RETURN = OPEN_REQUIRES_WIDTH_AND_PHYSICAL_NORM
 BRIDGE_B_BRATTELI_AGING_CLOCK = OPEN_RESERVE_RANK_GROWTH_FALSIFIER
@@ -7905,25 +7990,26 @@ Ford--Maynard multiplicative Type II。
 coarse comparison不得重开为 Type II：合法 `M=X^(1/3)`、
 `xi_m=1_(m=1 mod6)`、`kappa_n=1_(n=1 mod6)`已给线性 mod-3反例。
 
-下一轮首先执行第 76 节冻结的独立 major gate `J(e_x)`，并在同一 tagged residual上
-执行 off-zero weighted L2。不得把第二门或 `E(e_x)` 的 bound反解为第一门。MRT
-Proposition 3.1只允许作为 product-local reduction，并且必须另付
-`MT_M,h=Mloc_x(h)+a_x(h)`。第二解析层的 reduced-radical smooth emitter已经由 V29
-编译完成并给出 local `1891/1920`；它不再是缺失项，也不得重复计算成 whole-scalar
-credit。动力学只允许 target-independent low-Christoffel quotient与 exact
+下一轮首先执行第 77 节冻结的 B 门：在预声明 hard major之外，对同一 tagged residual
+证明 cell-product cross-flatness，并独立给出 `MT_M,h=Mloc_x(h)+a_x(h)` 的 weighted
+attachment。不得把自适应 large spectrum吸收到 major后再称为 flatness。B 门一旦支付，
+`S_x=J(e_x)+E(e_x)` 使 A 门 `J(e_x)` 与原 physical scalar在 strict endpoint 类中双向
+等价；因此 A 是 terminal gate，不是较容易的 preliminary。第二解析层的 reduced-radical
+smooth emitter已经由 V29 编译完成并给出 local `1891/1920`，V30 的 q-local formal
+model又独立支付 `x^(95/96+o(1))`；二者都不得重复计算成 whole-scalar credit。动力学只允许
+target-independent low-Christoffel quotient与 exact
 nonautonomous stage diagram。不再回到 V21 centered
 projector、V22 full-`q` Cauchy
 completion、V24 尚未分型的 `ell_J` emitter或 V25 的 cellwise outer triangle：
 
 ```text
-V29_TAGGED_RESIDUAL_INDEPENDENT_JUTILA_MAJOR
-  = SELECTED_PRIMARY_OPEN_NEW_THEOREM
-V29_TAGGED_RESIDUAL_OFFZERO_WEIGHTED_L2
-  = OPEN_NEW_THEOREM
-V29_LOCAL_CARRIER_BC_BOUND
-  = PROVED_SOURCE_BACKED_X_1891_OVER_1920_PLUS_O1
-V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT
-  = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
+V30_B_CELL_LINF_CROSS_FLATNESS = OPEN_ACTUAL_TAGGED_LOCAL_THEOREM
+V30_B_MLOC_PLUS_A_ATTACHMENT = OPEN_WEIGHTED_AP_ATTACHMENT
+V30_TAGGED_QLOCAL_RESIDUAL_MAJOR_COVARIANCE
+  = SELECTED_TERMINAL_OPEN_NEW_THEOREM
+V30_LOCAL_BC_CARRIER
+  = PROVED_SOURCE_BACKED_X_1891_OVER_1920_BUT_ZERO_GLOBAL_CREDIT
+V30_C_ACTUAL_ARITHMETIC_QUOTIENT = OPEN_NEW_THEOREM
 ```
 
 V19已经完成 combined raw MASTER row到 primorial `V_k^vee`的 exact materialization；
@@ -8106,10 +8192,12 @@ zero-axis。V28 已把这个 wall 分成 occurrence-native Euler carrier与 gene
 smooth main，证明 local carrier在 joint \(J+E\) 中 exact cancellation，并把非零 corridor
 压到 \(R\ge x^{31/96+o(1)}\)、\(|a|\le x^{17/96+o(1)}\)。V29 又完成该 corridor的
 exact hard-shell、CRT、Möbius、smooth 与 Bettin--Chandee编译，并证明 local bound
-`x^(1891/1920+o(1))`。同时 `e=T delta_0` 证明 off-zero theorem不能支付 `J(e)`。
-故当前须直接处理 `V29_TAGGED_RESIDUAL_INDEPENDENT_JUTILA_MAJOR`，再对同一 residual
-处理 `V29_TAGGED_RESIDUAL_OFFZERO_WEIGHTED_L2`；不得把已经付清的 local carrier
-反复登记为 global progress。全部路线必须保持
+`x^(1891/1920+o(1))`。V30 进一步把 q-local formal Euler model逐 occurrence重组并付到
+`x^(95/96+o(1))`，但 residual diagonal仍以系数 `1-O(x^(-1/3+o(1)))` 保留 physical
+`S_x`。同一轮又把 MRT reduction精确压成 cell-product certificate：当前首要研究门是
+`V30_B_CELL_LINF_CROSS_FLATNESS` 与 `V30_B_MLOC_PLUS_A_ATTACHMENT`。B 门支付后，
+`S_x=J(e_x)+E(e_x)` 使 A 门与原标量 terminal-equivalent；不得把 A 写成更容易的
+preliminary，也不得把已经付清的 local carriers反复登记为 global progress。全部路线必须保持
 fixed `h0=2`、literal raw row、完整 `B_x(D)`、corrected `kappa(n)`、typed
 Fourier/rational indices、unit/nonunit/axes、hybrid zero mode、outer唯一绝对值与
 exactly-once physical cover。
@@ -8153,6 +8241,7 @@ python research/tpc-big-road/tpc_bridge_b_compensated_dilation_block_checker.py 
 python research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py --check
 python research/tpc-big-road/tpc_bridge_b_joint_major_minor_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_terminal_major_cross_flatness_checker.py --check
 
 第 6 节全部旧 STOP_SCOPED cells保持；两个 O161 parents、pair-native reroute、
 legacy H1与 global architecture保持 OPEN。即使一个 subgate转正也不自动创建
@@ -12034,6 +12123,311 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 77. 2026-08-08 V30：q-local major、cell cross-flatness 与 terminal-equivalent gate
+
+### 77.1 范围与最大 claim
+
+本轮仍固定 V19/V21/V27--V29 的同一物理对象：`h0=2`、ordered `+2,-1`
+occurrence、deterministic MASTER/H2 route、`Lambda(.+2)-b_z`、prime shell
+`q~x^(1/3)`、`H=x^(21/32)` 以及原始 normalization。没有替换 coefficient，
+没有删除 zero/nonunit/axis，也没有把 formal Euler model升级为 prime theorem。
+
+最大合法 claim为
+
+~~~text
+EXACT_QLOCAL_MAJOR_MODEL_X_95_OVER_96_PLUS_CELL_PRODUCT_MRT_REDUCTION_
+PLUS_ENDPOINT_EQUIVALENCE_PLUS_EQUIVARIANT_QUOTIENT_NO_GO
+~~~
+
+route advance为 `YES`；arithmetic advance为 `NO`。
+
+### 77.2 Exact J scalar 与 endpoint-equivalence
+
+令
+
+~~~text
+e_x(h)=r_x(h)-Mloc_x(h),                 Mloc_x(0)=0,
+kappa_x(h)=hatpsi_+(h/H)A_Q(h)/L_pr,
+J(f)=sum_h kappa_x(h)f(h),
+E(f)=f(0)-J(f).
+~~~
+
+则 exact
+
+~~~text
+S_x^physical=e_x(0)=J(e_x)+E(e_x).                       (77.1)
+~~~
+
+`J(r_x)` 的 circle form必须使用 `chi_x(-alpha)B_x(alpha)conj(W_x(alpha))`；
+reflection由既定 Fourier sign强制。若 B 门已给
+`|E(e_x)|<<x^(399/400-eta_E)`，则 `J(e_x)` 有 strict endpoint saving当且仅当
+`S_x^physical` 有 strict endpoint saving，方向分别由
+`S=J+E` 与 `J=S-E` 得到。因此 A 门仍是必需的 terminal theorem，但不是更容易的
+preliminary。
+
+### 77.3 q-local density tensor
+
+对充分大的 `x`、`q>z` 及 `a mod q`，定义
+
+~~~text
+F_(q,a)(h)=q/(q-1) * 1_(a+h+2 != 0 mod q),
+G_(q,a)(h)=q/(q-1)                  if a+h=0 mod q,
+            q(q-2)/(q-1)^2          otherwise,
+Delta_(q,a)=F_(q,a)-G_(q,a).
+~~~
+
+写 `u=a+h`，则 `Delta` 在 `u=-2,0,other` 三类上分别为
+
+~~~text
+-q(q-2)/(q-1)^2,  0,  q/(q-1)^2.                        (77.2)
+~~~
+
+exact finite identities为
+
+~~~text
+q^(-1) sum_(h mod q) Delta_(q,a)(h)=0,
+q^(-1) sum_(h mod q) c_q(h)Delta_(q,a)(h)=Delta_(q,a)(0)=delta_q(a),
+sum_(a mod q)delta_q(a)=0,
+sum_(a mod q)|delta_q(a)|=2q(q-2)/(q-1)^2<2.             (77.3)
+~~~
+
+这只是 formal local shifted-prime density与 external `q>z` hybrid Euler density的
+exact difference，不是 weighted prime-distribution theorem。
+
+### 77.4 Poisson extraction 与已付 `x^(95/96)`
+
+因 `H>2Q` 且 `supp psi subset [-1,1]`，非零 period aliases精确消失：
+
+~~~text
+sum_h hatpsi_+(h/H)c_q(h)Delta_(q,a)(h)
+  = H psi(0) delta_q(a).                                (77.4)
+~~~
+
+常数是 `H psi(0)`，不是 `H hatpsi_+(0)`。后者只保证 `kappa_x(0)=1`。
+对每个 labelled occurrence逐项加减该 profile，得到 exact
+
+~~~text
+J(r_x)=M_q-local+R_q-local.                              (77.5)
+~~~
+
+由 `sum_(o:t_o=t)|a_o|<=3d4(t)` 与
+`|delta_q(t)|<=1_(q|t+2)+2/q`，
+
+~~~text
+M_q-local << x^(95/96+o(1)),
+399/400-95/96=19/2400.                                  (77.6)
+~~~
+
+V29 的 exact boundary cover给 `x^(47/48+epsilon+o(1))`，
+`epsilon<11/1920`；interior tail由 Schwartz decay支付。因此
+
+~~~text
+J(e_x)=R_q-local+O(x^(95/96+o(1))).                     (77.7)
+~~~
+
+### 77.5 Unit、diagonal 与 terminal residual
+
+`c_q(0)=q-1` 已包含全部 unit residues。证明 (77.4) 时允许为 Fourier inversion
+补上 zero numerator，但必须在同一 identity中精确减回一次；不得借此删除 physical
+diagonal。q-local model在 diagonal上的绝对量为 `x^(2/3+o(1))`，而 residual
+diagonal仍为
+
+~~~text
+S_x^physical+O(x^(2/3+o(1))).                           (77.8)
+~~~
+
+所以 first major-side fatal仍是同一 literal signed q-local residual covariance，
+不是 formal model、BV/BDH residue mean或已付 local Bettin--Chandee carrier。
+
+### 77.6 B 门：cell-product MRT reduction
+
+固定预声明 hard major `M`，令 `m` 为其 circle complement。对 dyadic `H<=Y<=x` 把 circle划成
+`2Y` 个 half-open cells，并设
+
+~~~text
+u_j=||B_x||_(L2(I_j intersect m)),
+v_j=||W_x||_(L2(I_j intersect m)),
+c_j=u_j v_j.
+~~~
+
+cellwise Cauchy--Schwarz 与一个长度 `1/Y` 的 circular interval至多交三个 cells给
+
+~~~text
+P0<=||c||_1,  PY<=3||c||_infinity,
+sum_(|h-h*|<=Y)|r_x(h)-MT_(M,h)|^2
+  << 3Y||c||_1||c||_infinity.                           (77.9)
+~~~
+
+literal divisor envelopes给 `||c||_1<<x^(1+o(1))`。因此最窄当前 theorem应同时证明
+
+~~~text
+||c||_infinity << x^(1+2theta+2epsilon_N)/Y,
+theta+epsilon_N<13/4800,
+MT_(M,h)=Mloc_x(h)+a_x(h),
+~~~
+
+并支付同一 `a_x` 的 weighted L2。`u=(R,R^-1)`、
+`v=(R^-1,R)`、`c=(1,1)` 证明 cross-flatness严格弱于两边各自 flatness。
+major set必须预声明；事后把共同 spike移入 major只是给 target改名。
+
+### 77.7 Primary-source ceiling
+
+Blomer--Li Lemma 1只给 Jutila/Ramanujan interface；MRT
+`arXiv:1707.01315v3` Proposition 3.1只给 (77.9) reduction；MRT
+`arXiv:1812.01224v1` Theorem 1.2只给 Liouville 的 averaged additive Fourier
+uniformity；一般 1-bounded 版本须读作 Theorem 1.4 pretentiousness inverse theorem，
+并附带 non-pretentiousness 条件；
+Guth--Maynard `arXiv:2405.20552v2` 是 multiplicative-frequency large values；
+Bettin--Chandee已只支付 V29 local `1891/1920` corridor。BV/BDH corpus也不接收
+prime-shell moving-residue signed covariance。当前 primary corpus没有给
+`MT=Mloc+a` 加同一 tagged cross-flatness，也没有给 terminal residual major theorem。
+
+### 77.8 Equivariant quotient no-go 与 q=5 survivor
+
+若 `Q:l2(Z/NZ)->Z` translation-equivariant且 point evaluation
+`ev_0=ell o Q`，则 `ker Q` translation-invariant且包含于 `ker ev_0`。对
+`f in ker Q` 的全部 translates在零点求值，得到 `f=0`，故 `Q` 必须 injective。
+full coordinate point kernel满足
+
+~~~text
+kappa=N,  kappa0=N-1.                                  (77.10)
+~~~
+
+这排除 translation-equivariant whole-shell compression；distinguished arithmetic seed、
+restricted source class或 nonautonomous tag仍 scoped open。
+
+在 `Z/5Z` 上 `A5={1,2,4}`、`K5=(5/3)1_A5` 给
+`int K5=1`、`||K5||_2^2=5/3`、`||K5-1||_2^2=2/3`。
+它是 genuine low-Christoffel finite carrier，但 `f=0` 也满足相同 admissible support，
+故 local admissibility不产生 positive prime mass。
+
+### 77.9 路线排序与 first fatal
+
+当前路线次序为：
+
+~~~text
+1. B: predeclared hard-major Mloc+a attachment plus tagged cell cross-flatness;
+2. A: terminal q-local residual major covariance on the same physical scalar;
+3. C: symmetry-breaking low-Christoffel arithmetic quotient;
+4. unchanged O161, pair-native, H1, A1/A2 and provenance reserves.
+~~~
+
+A 与 B 都必需；排序只表示研究杠杆。当前 overall first fatal为
+`MISSING_LITERAL_MT_EQUALS_MLOC_PLUS_A_AND_TAGGED_CELL_CROSS_FLATNESS`。
+
+### 77.10 Canonical registry、checker 与发布边界
+
+~~~text
+V30_MAXIMUM_CLAIM = EXACT_QLOCAL_MAJOR_MODEL_X_95_OVER_96_PLUS_CELL_PRODUCT_MRT_REDUCTION_PLUS_ENDPOINT_EQUIVALENCE_PLUS_EQUIVARIANT_QUOTIENT_NO_GO
+V30_ROUTE_ADVANCE = YES
+V30_ARITHMETIC_ADVANCE = NO
+V30_FIXED_ATOM_CREDIT = 0
+V30_STRICT_1_OVER_400 = UNPAID
+V30_L2 = NONE
+V30_TPC_207_TRIGGER = false
+V30_NUMBERED_RELEASE = NO
+V30_SELECTED_RESEARCH_ROUTE = B_TAGGED_HARD_MAJOR_CELL_PRODUCT_AND_MLOC_ATTACHMENT
+V30_LOGICAL_TERMINAL_GATE = A_TAGGED_QLOCAL_RESIDUAL_MAJOR_AFTER_B
+V30_LITERAL_JUTILA_MAJOR_SCALAR = PROVED_EXACT_L0_WITH_REFLECTED_KERNEL_SIGN
+V30_J_ZERO_AXIS_SELF_RETURN = PROVED_EXACT_S_PLUS_OFFZERO
+V30_OFFZERO_GATE_TO_E_MARGIN = PROVED_EXACT_CONDITIONAL_13_OVER_4800_MINUS_THETA_MINUS_EPSILON
+V30_A_B_ENDPOINT_EQUIVALENCE = PROVED_EXACT_STRICT_EXPONENT_CLASS
+V30_A_AS_EASIER_PRELIMINARY = STOP_SCOPED_TERMINAL_EQUIVALENCE_AFTER_B
+V30_A_ADJOINT_CONVOLUTION_IDENTITY = PROVED_EXACT_ALGEBRAIC
+V30_QLOCAL_F_G_DELTA_PROFILE = PROVED_EXACT_FINITE_PERIOD
+V30_QLOCAL_RAMANUJAN_PAIRING = PROVED_EXACT_NORMALIZED_MEAN_EQUALS_DELTA_AT_ZERO
+V30_QLOCAL_POISSON_CONSTANT = PROVED_EXACT_H_TIMES_PSI_AT_ZERO
+V30_QLOCAL_UNIT_NONUNIT_LEDGER = PROVED_EXACT_ZERO_NUMERATOR_ADDED_AND_SUBTRACTED_ONCE
+V30_QLOCAL_MODEL_RESIDUAL_REASSEMBLY = PROVED_EXACT_OCCURRENCEWISE
+V30_QLOCAL_MODEL_BOUND = PROVED_ELEMENTARY_X_95_OVER_96_PLUS_O1
+V30_QLOCAL_MODEL_MARGIN_TO_399_400 = 19/2400
+V30_QLOCAL_BOUNDARY = PROVED_X_47_OVER_48_PLUS_EPSILON
+V30_QLOCAL_DIAGONAL_MODEL_BOUND = PROVED_X_2_OVER_3_PLUS_O1
+V30_QLOCAL_PHYSICAL_DIAGONAL_SURVIVES = PROVED_EXACT_COEFFICIENT_ONE_MINUS_SMALL_MODEL
+V30_TAGGED_QLOCAL_RESIDUAL_MAJOR_COVARIANCE = SELECTED_TERMINAL_OPEN_NEW_THEOREM
+V30_A_FIRST_FATAL = TAGGED_QLOCAL_RESIDUAL_MAJOR_COVARIANCE
+V30_DIRECT_BV_BDH_ATTACHMENT = STOP_SCOPED_WRONG_SIGNED_COVARIANCE_OBJECT
+V30_LOCAL_BC_CARRIER = PROVED_SOURCE_BACKED_X_1891_OVER_1920_BUT_ZERO_GLOBAL_CREDIT
+V30_B_MRT_PRODUCT_LOCAL_REDUCTION = SOURCE_BACKED_REDUCTION_ONLY
+V30_B_HARD_MAJOR_PREDECLARATION = REQUIRED_CIRCULARITY_FIREWALL
+V30_B_CELL_PRODUCT_CERTIFICATE = PROVED_EXACT_PARTITION_AND_CAUCHY_SCHWARZ
+V30_B_CELL_L1_GLOBAL_BOUND = PROVED_ELEMENTARY_X_1_PLUS_O1
+V30_B_CELL_LINF_CROSS_FLATNESS = OPEN_ACTUAL_TAGGED_LOCAL_THEOREM
+V30_B_ACTUAL_CELL_ENERGY_BOUND = OPEN_NEW_THEOREM
+V30_B_MLOC_PLUS_A_ATTACHMENT = OPEN_WEIGHTED_AP_ATTACHMENT
+V30_B_CROSS_FLATNESS_STRICTLY_WEAKER = PROVED_EXACT_ANTISPIKE_FAMILY
+V30_B_ADAPTIVE_LARGE_SPECTRUM_EXCISION = STOP_SCOPED_MAJOR_ABSORBS_TARGET_WITHOUT_MLOC_ATTACHMENT
+V30_MRT_FOURIER_UNIFORMITY_ATTACHMENT = STOP_SCOPED_LIOUVILLE_OR_NONPRETENTIOUS_1_BOUNDED_AVERAGED_WRONG_QUANTIFIERS
+V30_GUTH_MAYNARD_LARGE_VALUES_ATTACHMENT = STOP_SCOPED_MULTIPLICATIVE_FREQUENCY_WRONG_TRANSFORM
+V30_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_08
+V30_C_EQUIVARIANT_WHOLE_SHELL_QUOTIENT = STOP_SCOPED_TRANSLATION_INVARIANCE_FORCES_INJECTIVITY
+V30_C_FULL_COORDINATE_CHRISTOFFEL = PROVED_EXACT_KAPPA_N_KAPPA0_N_MINUS_1
+V30_C_DISTINGUISHED_SEED_SYMMETRY_BREAK = SURVIVES_SCOPED_OPEN
+V30_C_ACTUAL_ARITHMETIC_QUOTIENT = OPEN_NEW_THEOREM
+V30_Q5_GAP2_LOCAL_DENSITY_KERNEL = PROVED_EXACT_FINITE_LOW_CHRISTOFFEL_CARRIER
+V30_Q5_TO_PHYSICAL_POSITIVE_MAIN = STOP_SCOPED_LOCAL_ADMISSIBILITY_DOES_NOT_FORCE_PRIME_MASS
+V30_NEXT_THEOREM = TAGGED_HARD_MAJOR_CELL_CROSS_FLATNESS_PLUS_MLOC_WEIGHTED_ATTACHMENT
+V30_FIRST_FATAL = MISSING_LITERAL_MT_EQUALS_MLOC_PLUS_A_AND_TAGGED_CELL_CROSS_FLATNESS
+V30_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
+V30_PROVENANCE_CASCADE = REQUIRED
+~~~
+
+proof 与 checker为
+`research/tpc-big-road/bridge_b_terminal_major_cross_flatness_and_equivariant_quotient.md`、
+`research/tpc-big-road/tpc_bridge_b_terminal_major_cross_flatness_checker.py`。checker冻结
+`49/52/7/6` contract/registry/source/dependency rows，执行
+`100/107/16/14/155` mutations，共 `392` 个 unique reject actions，registry SHA-256为
+`acead73d0c6e12b03d30d40f35ea345c32d859bea5106456f33b4724fdf23563`。
+
+closure前状态为：
+
+~~~text
+V30_FINAL_RELEASE_QA = PASS
+V30_MATH_SOURCE_FORMULA_QA = PASS
+V30_CHECKER_ADVERSARIAL_QA = PASS
+V30_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V30_PRE_CLOSURE_HANDOFF_SHA256_RAW = 512c061acda8b91310316cfbc4916e38d432e59bb20aa8079c3207b960e713fa
+V30_PRE_CLOSURE_HANDOFF_SHA256_CANONICAL_LF = 48849be7aeb0f84026cb8d91db6ac517f0ff911ff2a13582e81ad8545bcc8962
+V30_COMPASS_SHA256_RAW = 3f630341f9376351b1f1634961d42f40089bb4312257f8bb179110bdc7ce47b0
+V30_COMPASS_SHA256_CANONICAL_LF = c8974aa5de47c26e01f4c88f25c0a402d271351490215565c60813c960af09d3
+V30_README_SHA256_RAW = bdee87e4d80059babb894575bf62466bbd6f1c37ce996660fe1640afa08618f3
+V30_README_SHA256_CANONICAL_LF = 40dcc575b9f63619a6606fe888a7e9fb3685ea541683492c89bc07ea22831652
+V30_PROOF_SHA256_RAW_CANONICAL_LF = 5c3d59e3b324a8c67109566c5e54dd3d3fc381b295b2c6cce15c49762ea4bbf6
+V30_CHECKER_SHA256_RAW_CANONICAL_LF = 662dbe9259f8a6176894711d692470608115b9df89f255e6c53dbd493e11cfcf
+V30_CHECKER_STDOUT_SHA256_RAW_CRLF = 8187fd0e2719ec554d305314666a7af9b49818e5121d1c890a8e147ae5b1492c
+V30_CHECKER_STDOUT_SHA256_CANONICAL_LF = 76f4269353b7670e9103961f0449ca7c11161dd5f0021268f6bd1b811e7a135a
+V30_CHECKER_STDOUT_PAYLOAD_SHA256 = 09780e8aca48430b79cb69991ffc87736985d9d5c079682e7e7a855a95aeadf7
+V30_CHECKER_CONTRACT_REGISTRY_SOURCE_DEPENDENCY = 49/52/7/6
+V30_CHECKER_MUTATIONS = 100/107/16/14/155
+V30_CHECKER_ADVERSARIAL_ACTIONS = 392/392_UNIQUE_REJECTED
+V30_CHECKER_REGISTRY_SHA256 = acead73d0c6e12b03d30d40f35ea345c32d859bea5106456f33b4724fdf23563
+STARTUP_REGRESSION = 22/22
+SUPPLEMENTAL_TPC111_TPC124_TPC126_TPC127 = 4/4
+V23_TO_V30_DEPENDENCY_PROCESSES = 16/16
+V23_TO_V30_DEPENDENCY_STDOUT_IDENTITIES = 8/8
+BIG_ROAD_CHECKER_PROCESSES = 36/36
+BIG_ROAD_CHECKER_STDOUT_IDENTITIES = 18/18
+RELEASE_ALLOWLIST = EXACT_FIVE_PATHS
+CACHED_DIFF = EMPTY
+DIFF_CHECK = PASS
+PROTECTED_UNTRACKED_COUNT = 130
+PROTECTED_UNTRACKED_MANIFEST_SHA256 = 9c46e2112b0c71d0fbfae0282f3bf7ecc7d8ea5f2437a06dfbcee8a7909230e1
+MARKDOWN_FENCES = HANDOFF_BACKTICK_2838_TILDE_144__COMPASS_BACKTICK_224_TILDE_42__README_BACKTICK_378_TILDE_38__PROOF_BACKTICK_0_TILDE_8
+EQUATION_TAGS = HANDOFF_78_OF_78_UNIQUE__PROOF_76_OF_76_UNIQUE
+BASELINE_HEAD_ORIGIN_REMOTE = dadf2e896a1bf083b7f91a03e39e0a7c308c9831
+FILES_CHANGED = EXACT_FIVE_RELEASE_PATHS
+GENERATED_OUTPUTS = NONE
+V30_ROUTE_ADVANCE = YES
+V30_ARITHMETIC_ADVANCE = NO
+V30_FIXED_ATOM_CREDIT = 0
+V30_STRICT_1_OVER_400 = UNPAID
+V30_L2 = NONE
+V30_TPC_207_TRIGGER = false
+V30_SEALED_FOR_NEW_SESSION = true
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+~~~
 
 ## 76. 2026-08-08 V29：joint major/minor、completed local corridor 与 low-Christoffel gate
 
