@@ -2,15 +2,15 @@
 
 Status date: 2026-08-08
 
-Current completed endpoint: RH-385
+Current completed endpoint: RH-386
 
-Completed research batch: RH-352 through RH-385
+Completed research batch: RH-352 through RH-386
 
-Post-four-volume independent theorem edges: RH-362 through RH-385
+Post-four-volume independent theorem edges: RH-362 through RH-386
 
-Latest completed-paper verdict: RH-385 Route A `GO`; Route B `STOP_SCOPED`
+Latest completed-paper verdict: RH-386 Route A `GO`; Route B `STOP_SCOPED`
 
-Post-RH-385 breadth verdict: `STOP_SCOPED`; no RH-386 assigned
+Post-RH-386 breadth audit: pending; no RH-387 assigned
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -74,6 +74,9 @@ RH-384 integration commit:
 
 RH-385 integration commit:
 `4fdb628bd624145082553e0a2ea57b5755ec571d`.
+
+RH-386 integration commit:
+`9778e3515d45816665d672a641947b93906abf54`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -184,6 +187,11 @@ Read completely:
 - `papers/RH-385-polylogarithmic-clock-phasewise-memory-uniformization/THEOREM_LEDGER.md`
 - `papers/RH-385-polylogarithmic-clock-phasewise-memory-uniformization/results/result.json`
 - `papers/RH-385-polylogarithmic-clock-phasewise-memory-uniformization/main.pdf`
+- `papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/README.md`
+- `papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/UPDATED_ROADMAP.md`
+- `papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/THEOREM_LEDGER.md`
+- `papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/results/result.json`
+- `papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -217,8 +225,9 @@ RH-381 as the prime-square-tail rate/quadratic-remainder input, RH-382 as the
 two-scale second-order/cubic-remainder input, RH-383 as the exact Euler-tail
 partition-normal-form input, RH-384 as the prime-tail scale-separation input,
 RH-385 as the fixed-polylogarithmic-clock phasewise-memory uniformization
-input, and RH-361 as the immediate endpoint of the still-open original
-physical branch.
+input, RH-386 as the Vinogradov--Korobov growing-order prime-tail
+uniformization input, and RH-361 as the immediate endpoint of the still-open
+original physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -227,6 +236,49 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/THEOREM_LEDGER.md`
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
+
+RH-386 is now integrated.  It imports the Johnston--Yang explicit
+Vinogradov--Korobov estimate through a versioned, hash-locked remote source
+record while excluding the copyrighted PDF and source tar from the release.
+For `x=p_y`, `L=log x`,
+
+```text
+V=L^(3/5)(log L)^(-1/5),
+epsilon_x=0.027L^1.801 exp(-0.1853V),
+P_r(y)=sum_(p>x)(p^2-1)^(-r),
+K_r=x^(1-2r)/[(2r-1)L].
+```
+
+The strict Stieltjes boundary, the exact and power kernels, and the leading
+kernel give a uniform growing-order theorem.  For a partition
+`lambda=1^k_1 2^k_2 ...`, with
+
+```text
+d=sum_r r k_r,
+R=max{r:k_r>0},
+H=sum_r k_r/(2r-1),
+H_2=sum_r k_r/(2r-1)^2,
+```
+
+then, whenever `L>=512` and `7R epsilon_x<=1/2`, the refined estimate is
+
+```text
+abs(log(P_lambda/M_lambda)+H/L)
+ <=14d epsilon_x+d/(x^2-1)+2H_2/L^2.
+```
+
+Thus the source-and-power condition
+`d epsilon_x+d/x^2->0` is robustly sufficient, and within that regime the
+elementary leading equivalent holds if and only if `H/L->0`, uniformly for
+finite partition families as stated in the paper.  The simpler conditions
+`log d=o(V)` and `H=o(L)` suffice.  For one factor, `log R=o(V)` is uniform,
+and every fixed `0<delta<0.1853` permits
+`R<=exp((0.1853-delta)V)`.  For every fixed `c>0`, the family
+`1^floor(cL)` tends to `exp(-c)` and proves that the `H/L` obstruction is
+intrinsic.  RH-386 is
+`Route A=GO`; Route B is `STOP_SCOPED`.  It proves no growing clock, active
+`c_11`, adaptive capacity, effective first index, operator, trace, zero
+model, RH statement, or Gate A--E conclusion.
 
 RH-385 is now integrated.  It retains the frozen RH-379 universally safe,
 phasewise-`c_11=0`, periodic lag-two class and proves that every fixed
@@ -252,11 +304,12 @@ an explicit positive witness.  This is not polynomial-clock uniformity, a
 varying-`B` theorem, active phasewise-`c_11` cancellation, an adaptive
 capacity limit, or a projectively compatible infinite selector.  RH-385 is
 `Route A=GO`; Route B remains `STOP_SCOPED`, and all Gates remain false/open.
-The post-RH-385 breadth audit assigns no RH-386.  Its nearest conditional
-edge needs a new immutable global quantitative-PNT source with absolute
-constants before growing tail indices or partition degree can be licensed.
-Fixed-period logarithmic cancellation does not activate `c_11`, and the
-available Davenport theorem does not prescribe a super-polylogarithmic clock.
+The post-RH-385 source gate was later paid by the versioned Johnston--Yang
+lock, and the resulting growing-order theorem is now published as RH-386.
+Fixed-period logarithmic cancellation still does not activate `c_11`, and
+the available Davenport theorem still does not prescribe a
+super-polylogarithmic clock.  No post-RH-386 breadth audit has yet assigned
+RH-387.
 The geometrically selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
@@ -1959,7 +2012,102 @@ projective infinite selector, give an effective threshold, or create an
 intrinsic determinant, trace, zero model, or Gate A--E object.  Route A is
 `GO`; Route B is `STOP_SCOPED`.
 
-## 4. Compact conclusions from RH-352 through RH-385
+### 3.25 RH-386 Vinogradov--Korobov growing-order prime-tail uniformization
+
+Let `x=p_y`, `L=log x`, and
+
+```text
+V(L)=L^(3/5)(log L)^(-1/5),
+epsilon_x=0.027L^1.801 exp(-0.1853V(L)).
+```
+
+The external source lock fixes Johnston--Yang, Theorem 1.4, equation (1.8),
+which gives `abs(vartheta(t)-t)<=t epsilon_t` for `t>=23`.  The lock records
+the exact arXiv-v2 PDF and source-tar URLs, hashes, byte counts, page count,
+DOI, locators, and redistribution restriction.  Network replay is opt-in;
+the publication contains the metadata lock and verifier but not either
+external payload.
+
+For each integer `r>=1`, define
+
+```text
+h_r(t)=(t^2-1)^(-r)/log t,
+J_r(x)=integral_x^infinity h_r(t)dt,
+I_(2r)(x)=integral_x^infinity t^(-2r)/log t dt,
+K_r(x)=x^(1-2r)/[(2r-1)L].
+```
+
+The strict endpoint is essential:
+
+```text
+P_r(y)=integral_(x,infinity)h_r(t)d vartheta(t)
+      =-vartheta(x)h_r(x)-integral_x^infinity vartheta(t)h'_r(t)dt,
+P_r(y)=(p_(y+1)^2-1)^(-r)+P_r(y+1).
+```
+
+For `L>=512`, the source envelope decreases.  The exact logarithmic hazard
+
+```text
+q_r(t)=-h'_r(t)/h_r(t)
+      =2rt/(t^2-1)+1/(t log t)
+```
+
+is decreasing, `J_r>=h_r/q_r`, and `xq_r(x)<=3r`.  Consequently
+
+```text
+abs(P_r/J_r-1)<=(6r+1)epsilon_x<=7r epsilon_x,
+abs(log(P_r/J_r))<=14r epsilon_x
+```
+
+when `7r epsilon_x<=1/2`.  The two kernel comparisons are
+
+```text
+0<=log(J_r/I_(2r))<=r/(x^2-1),
+abs(log(I_(2r)/K_r))<=1/[(2r-1)L],
+0<=log(I_(2r)/K_r)+1/[(2r-1)L]
+  <=2/[(2r-1)^2L^2].
+```
+
+For a nonempty partition `lambda=1^k_1 2^k_2 ...`, put
+
+```text
+d=sum_r r k_r,
+ell=sum_r k_r,
+R=max{r:k_r>0},
+H=sum_r k_r/(2r-1),
+H_2=sum_r k_r/(2r-1)^2.
+```
+
+If `L>=512` and `7R epsilon_x<=1/2`, multiplication gives the exact finite
+ledgers
+
+```text
+abs(log(P_lambda/J_lambda))<=14d epsilon_x,
+abs(log(P_lambda/I_lambda))<=14d epsilon_x+d/(x^2-1),
+abs(log(P_lambda/M_lambda)+H/L)
+ <=14d epsilon_x+d/(x^2-1)+2H_2/L^2.
+```
+
+Hence `d_y epsilon_(p_y)+d_y/p_y^2->0` yields the exact- and power-kernel
+equivalents.  Under the same condition,
+`P_(lambda_y)/M_(lambda_y)->1` if and only if `H_y/L_y->0`.  For finite
+nonempty families `F_y`, put `D_y=sup_(lambda in F_y)d(lambda)<infinity` and
+`H_y^*=sup_(lambda in F_y)H(lambda)<infinity`.  If
+`D_y epsilon_(p_y)+D_y/p_y^2->0`, the exact- and power-kernel conclusions are
+uniform over `F_y`, and the leading conclusion is uniform if and only if
+`H_y^*/L_y->0`.  In particular, `log d_y=o(V(L_y))` and `H_y=o(L_y)` are
+sufficient for a sequence.  For one factor, `log R_y=o(V(L_y))` is uniform,
+and the explicit window `R_y<=exp((0.1853-delta)V(L_y))` is valid for every
+fixed `0<delta<0.1853`.  For every fixed `c>0`, the all-ones family
+`lambda_y=1^floor(cL_y)` has ratio `P_lambda/M_lambda->exp(-c)`, proving
+the `H/L` obstruction is real.
+
+RH-386 does not make the first valid index effective, enlarge the clock or
+phasewise table class, activate nonzero `c_11`, settle `K_N/N`, or construct
+an operator, trace, zero model, RH statement, or Gate object.  Route A is
+`GO`; Route B remains `STOP_SCOPED`.
+
+## 4. Compact conclusions from RH-352 through RH-386
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -2132,6 +2280,14 @@ intrinsic determinant, trace, zero model, or Gate A--E object.  Route A is
   of the restricted maximum to `B_infinity`, and an explicit nonempty
   square-clock diagonal witness.  It does not cover polynomial clocks,
   varying `B`, active `c_11`, the full adaptive capacity, or any Gate object.
+- **RH-386:** Quantitative prime-tail comparison uniformly over growing
+  single orders and growing finite partition families, using the explicit
+  Johnston--Yang Vinogradov--Korobov estimate.  It proves the exact
+  source/kernel/leading ledgers, the uniform `log d=o(V)` window, the sharp
+  leading-kernel criterion `H/L->0`, and the all-ones limit `exp(-c)`.  The
+  external source is hash-locked but not redistributed.  It does not enlarge
+  clocks or the phasewise class, activate `c_11`, settle adaptive capacity,
+  make an effective threshold, or construct any Gate object.
 
 ## 5. Route firewall and reopening triggers
 
@@ -2402,39 +2558,36 @@ capacity limit.  RH-385 closes only fixed-`B` polylogarithmic-clock
 uniformity, restricted-max transfer, and the nonempty square-clock diagonal
 inside the phasewise-`c_11=0` class.  It does not cover polynomial clocks,
 varying `B`, active phasewise cancellation, the adaptive capacity, or any
-Gate.  For RH-386 and later, the shortest exact candidates are:
+Gate.  RH-386 closes the quantitative-PNT source gate, growing-order
+single-tail uniformity, growing finite partition families, and the sharp
+`H/L` leading-kernel criterion.  It does not provide an effective first
+index, growing clock, active phasewise cancellation, adaptive capacity, or
+any Gate.  For RH-387 and later, the shortest exact candidates are:
 
-1. First source-lock an immutable global quantitative PNT theorem of the
-   exact form `vartheta(t)=t+O(C t exp(-c sqrt(log t)))`, with absolute constants
-   and a theorem locator.  Only then rerun the audited growing-index route:
-   `log R_y=o(sqrt(log p_y))` for individual tails, and for partition families
-   `log sup d=o(sqrt(log p_y))` plus
-   `sup H(lambda)=o(log p_y)` for the elementary RH-384 leading product.
-   Without that source object the route is `STOP_SCOPED`, not RH-386.
-2. A genuine phase-weighted shift-two or higher-order Möbius correlation
+1. A genuine phase-weighted shift-two or higher-order Möbius correlation
    theorem controlling active `c_11(r)` terms, the
    RH-377 envelope or a larger memory-dependent transducer class.
-3. A nonadaptive geometrically selected measure theorem.  The 2026-08-07
+2. A nonadaptive geometrically selected measure theorem.  The 2026-08-07
    source lock is `STOP_SCOPED`: RH-369's non-Parry `P_t` is externally
    selected, while the weighted-Hénon and cyclic-Ulam sources do not prove a
    fixed non-Parry equilibrium state with the required mixing theorem.
-4. A new fractional/tower-adapted strong-space projector/resolvent theorem
+3. A new fractional/tower-adapted strong-space projector/resolvent theorem
    that genuinely connects the RH-367 finite-Ulam family to a declared
    continuum operator.  The 2026-08-07 source lock is `STOP_SCOPED` until a
    fixed mesh-independent norm, uniform projection/lift estimate, and common
    contour around `-1` are explicitly proved.
-5. A genuine composite-order primitive-divisor upgrade, such as an eventual
+4. A genuine composite-order primitive-divisor upgrade, such as an eventual
    Zsigmondy theorem or a `p`-adic lifting bound strong enough to force new
    primes. No such theorem is present in the locked source.
-6. A sharp return-rank multiplicity theorem strong enough to determine the
+5. A sharp return-rank multiplicity theorem strong enough to determine the
    exact origin radius or a genuine boundary law for `Z_0`. RH-365 supplies
    only the bracket `[2^(-1/2),1]`.
-7. A quantitative finite-entropy-data theorem that certifies or excludes a
+6. A quantitative finite-entropy-data theorem that certifies or excludes a
    finite prime/rank prefix without promoting numerical conditioning to exact
    infinite recovery.
-8. An intrinsic pressure/transfer/groupoid operator producing the entropy
+7. An intrinsic pressure/transfer/groupoid operator producing the entropy
    tower without inserting every modulus by hand.
-9. One of the original physical triggers 1--4.
+8. One of the original physical triggers 1--4.
 
 RH-364 closes the declared weighted-H\'enon prime-copy audit. It must still be
 called a prime lift or copy, not a finite-field reduction, Hasse--Weil local
@@ -2702,8 +2855,8 @@ remain false/open, and the physical coordinate remains
 
 ### 6.4 RH-367 source lock, overlap ledger, and route decision (2026-08-06)
 
-The only fresh candidate is the boundary-aligned cyclic-Ulam structural
-package at
+At that historical stage, the only fresh candidate was the boundary-aligned
+cyclic-Ulam structural package at
 `cyclic_ulam_map=e7d21f646498d77e1c3213d1e4f35dc8466038ff`.  Its exact claims
 are: the PCF two-band exchange; the `L^1` sign mode; for every partition with
 the band boundary as a cell edge, the row-stochastic block form
@@ -3059,8 +3212,9 @@ one-way Abel implication.  No logarithmic-to-natural promotion occurs.
 The exact executable audit checks `1048574` pointwise identities,
 `1048576` cumulative prefixes, `524287` even starts, and `1024` RH-371
 endpoints (`2048` sign cells).  All checks pass.  The route verdict is
-`Route A=GO` and `Route B=STOP_SCOPED`.  The next Route-A candidate is the
-independently audited RH-377 mixed-exponent run hierarchy and two-envelope
+`Route A=GO` and `Route B=STOP_SCOPED`.  At that historical stage, the next
+Route-A candidate was the independently audited RH-377 mixed-exponent run
+hierarchy and two-envelope
 capacity reduction.  Its `466 -> 13` statement must remain a formal
 block-sum rank calculation, and its stationary ternary witness must not be
 called a Möbius counterexample.  The first unresolved arithmetic object is
@@ -3094,8 +3248,9 @@ synthetic certificate checks `27` transitions, `9` pair-stationarity cells,
 `502` raw moments, `502` square-only moments, and `1793` one-sign masked
 moments.  All checks pass.
 
-The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  The next
-independently source-locked and adversarially audited Route-A candidate is
+The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  At that
+historical stage, the next independently source-locked and adversarially
+audited Route-A candidate was
 RH-378: finite-window safety/moment expansion, complete lag-two safe-table
 classification, and two fixed online capacity-orientation transducers.  Its
 lag-two hard class still requires RH-376 shift-two Cesaro Chowla, and its
@@ -3132,11 +3287,12 @@ identities, and `2097152` recursive/window equalities.  The parity-window
 certificate checks all `512` assignments and records the exact `17`-site
 unrestricted counterexample.  All checks pass.
 
-The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  Independent
-source and proof locks establish the next phase-dependent,
+The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  At that
+historical stage, independent source and proof locks established the next
+phase-dependent,
 phasewise-`c_11=0` lag-two edge: an exact three-state cyclic max-plus
 optimizer, a strict same-clock gain at `q=36`, and the cofinal identity
-`sup_(q finite)G(q)=B_infinity`.  RH-379 is therefore activated.  The lock
+`sup_(q finite)G(q)=B_infinity`.  RH-379 was therefore activated.  The lock
 does not prove finite-clock attainment or nonattainment.  Unrestricted memory
 still requires phase-weighted shift-two or higher mixed Möbius cancellation.
 No Gate A--E conclusion changes.
@@ -3173,8 +3329,9 @@ tests and an explicit fail-closed ambiguous comparison.  Full result
 regeneration is byte-identical, all twenty-eight source digests match, and
 the recursive Draft 2020-12 schema validates with zero errors.
 
-The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  Two independent
-post-RH-379 audits establish the next RH-380 theorem edge: an exact recurrence
+The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  At that
+historical stage, two independent post-RH-379 audits established the next
+RH-380 theorem edge: an exact recurrence
 for even-run counts, strict monotonicity of `G(q_y)`, special same-support
 memory saturation, and therefore finite-clock nonattainment of `B_infinity`
 inside the same phasewise-`c_11=0` class.  Active nonzero `c_11(r)` remains
@@ -3211,8 +3368,9 @@ the live files and the declared release blobs, and the single-paper archive
 contains twenty-eight publication members plus twenty-four external inputs
 with zero failures.
 
-The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  Two independent
-post-RH-380 audits prove the next RH-381 theorem edge: with
+The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  At that
+historical stage, two independent post-RH-380 audits proved the next RH-381
+theorem edge: with
 `T_y=sum_(p>p_y)(p^2-1)^(-1)`, the normalized gap has leading constant
 `2X_infinity/pi^2` and a fully explicit quadratic remainder bounded by
 `342T_y^2/pi^2`.  This successor uses only Euler-product tails and the exact
@@ -3252,8 +3410,9 @@ source files match their declared release blobs, and the single-paper archive
 contains twenty-eight publication members plus twenty-five external inputs
 with zero failures.
 
-The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  Independent
-post-RH-381 audits identify a genuine RH-382 candidate: a two-scale
+The route verdict is `Route A=GO` and `Route B=STOP_SCOPED`.  At that
+historical stage, independent post-RH-381 audits identified the candidate
+later published as RH-382: a two-scale
 second-order expansion in `T_y^2` and
 `S_y=sum_(p>p_y)(p^2-1)^(-2)` with a uniform cubic remainder.  It must retain
 the signed `S_y` channel, the terminal length-eight contribution, and the
@@ -3379,9 +3538,9 @@ Combining this scale dictionary with RH-382 gives the five normalized gap
 limits in the RH-384 contract and proves that `S_y` lies strictly between
 `T_y^2` and `T_y^3`.  A precision-80 outward computation certifies
 `1.5463476716710499204<=Y_infinity-2m_infinity<=1.5484488989771761113`,
-so the twice-subtracted coefficient is positive.  This is a candidate until
-its manuscript and release audits complete.  Those audits are recorded in
-Section 6.21.  Active nonzero `c_11(r)` and the RH-377 adaptive envelope
+so the twice-subtracted coefficient is positive.  At that historical stage
+this remained a candidate; its completed manuscript and release audits are
+recorded in Section 6.21.  Active nonzero `c_11(r)` and the RH-377 adaptive envelope
 remain open; no Gate A--E conclusion changes.
 
 ### 6.21 RH-384 source lock, prime-tail scales, and route decision (2026-08-08)
@@ -3599,10 +3758,13 @@ conclusion.
 ### 6.24 Post-RH-385 breadth-first source audit (2026-08-08)
 
 The next breadth-first audit compared three nonphysical arithmetic routes.
-The final repository-only verdict is `STOP_SCOPED`; no RH-386 is assigned.
+At that checkpoint the repository-only verdict was `STOP_SCOPED`, and no
+RH-386 was assigned.  The first source gate described below was later paid
+and the resulting theorem published as RH-386 in Section 6.25.
 
-The mathematically strongest conditional route is uniform prime-tail
-asymptotics for growing indices.  Put `x=p_y`, `L=log x`, and
+At that checkpoint, the mathematically strongest conditional route was
+uniform prime-tail asymptotics for growing indices.  Put `x=p_y`, `L=log x`,
+and
 
 ```text
 I_s(x)=integral_x^infinity t^(-s)/log(t) dt,
@@ -3646,12 +3808,13 @@ RH-384 leading product adds `O(H(lambda)/L)`.  Thus growing families require
 requires `sup H(lambda)=o(L)`; `ell=o(L)` suffices.  The `H/L` term is a
 genuine long-partition obstruction at this precision.
 
-This route is not source-licensed.  RH-2 and RH-384 freeze only qualitative
-PNT.  TPC-9 has constants depending on a fixed weight without the seminorm
-control needed when `r` grows; TPC-16 treats a uniformly bounded smooth
-family; TPC-7's displayed exponential estimate is for different Möbius
-quantities.  Importing a global `vartheta` remainder from folklore would violate
-the controlling provenance rule.  The audited anchors are:
+At that checkpoint, this route was not source-licensed.  RH-2 and RH-384
+froze only qualitative PNT.  TPC-9 had constants depending on a fixed weight
+without the seminorm control needed when `r` grows; TPC-16 treated a uniformly
+bounded smooth family; TPC-7's displayed exponential estimate was for
+different Möbius quantities.  Importing a global `vartheta` remainder from
+folklore would have violated the controlling provenance rule.  The audited
+anchors were:
 
 ```text
 RH-384 release  386b66a55c9263353c7d407fd712be7e6279f1e6
@@ -3686,11 +3849,58 @@ table weights.  A non-effective diagonal with a stepwise exponent tending to
 infinity follows directly from RH-385, but it has no prescribed rate and is
 not a new theorem edge.
 
-The earliest action that changes the breadth verdict is to add one immutable
+The earliest action identified at that checkpoint was to add one immutable
 source object with the exact global `vartheta` remainder, theorem locator,
-metadata, and hash.  Only after that source lock may the growing-index proof
-be rerun and an RH-386 number considered.  Active `c_11`, polynomial clocks,
-adaptive capacity, and Gates A--E remain untouched.
+metadata, and hash.  Section 6.25 records that later source lock and the
+resulting RH-386 proof.  Active `c_11`, polynomial clocks, adaptive capacity,
+and Gates A--E remained untouched.
+
+### 6.25 RH-386 source lock, growing-order theorem, and release (2026-08-08)
+
+The missing analytic input was supplied by a versioned lock for Daniel R.
+Johnston and Andrew Yang, *Some explicit estimates for the error term in the
+prime number theorem*, JMAA 527(2), article 127460 (2023), DOI
+`10.1016/j.jmaa.2023.127460`.  The proof uses only Theorem 1.4, equation
+(1.8).  The frozen author-manuscript PDF has SHA-256
+`565993a6def48b237a68a92acba604f2c42f99165e0e71e390f8e21a313b74b2`,
+`278380` bytes, and `22` pages.  Its source tar has SHA-256
+`572d5739936ad3f5e867a142eccb0193b001dd2ee9b27b1d7183124071ec7edd`,
+and source `main.tex` has SHA-256
+`2a79d56dbd6da46d46c6ddd8852d9fa763c716110ebf08b7b029e52346f92602`.
+The remote lock records the arXiv nonexclusive license and Elsevier
+copyright boundary; none of those external bytes is redistributed.
+
+Independent proof reconstruction closed the strict Stieltjes boundary,
+hazard, exact-to-power kernel, power-to-leading kernel, partition aggregation,
+uniform-family quantifiers, and sharpness obstruction.  The canonical ledger
+under the Section 3.25 hypotheses `L>=512` and
+`7R epsilon_x<=1/2` is
+
+```text
+abs(log(P_lambda/J_lambda))<=14d epsilon_x,
+abs(log(P_lambda/I_lambda))<=14d epsilon_x+d/(x^2-1),
+abs(log(P_lambda/M_lambda)+H/L)
+ <=14d epsilon_x+d/(x^2-1)+2H_2/L^2.
+```
+
+It yields growing-order single-tail uniformity, uniform finite partition
+families, and the exact leading-equivalent criterion `H/L->0`.  For every
+fixed `c>0`, the family `1^floor(cL)` tends to `exp(-c)`, so degree growth
+alone cannot replace the `H/L` condition.
+
+The artifact freezes `96=16+8+66+6` oracle rows, `24/24` theorem mutations,
+`7/7` auxiliary attacks, and `1522/1522` scalar-leaf attacks.  Its local Git
+closure is `59` blobs (`51+8`) with aggregate digest
+`6247477a1744ccfe676ebd1c20b4d659c597ce0749f3d3a9a0b1c8aa2c87069d`,
+plus one remote logical source lock whose canonical object SHA-256 is
+`d53b93212b7c5b5b6b3f7e890099c48ce8e35f2bff9bdd49f9c330a9b5039786`.
+The canonical certificate is `29717` bytes with SHA-256
+`64761d3a85afdee4682982ad545d20a66d2ed69926764bcc9580e0dc8c5f8710`.
+
+Two independent final audits returned `GO / ACCEPT`, zero blocker and zero
+minor.  The route verdict is `Route A=GO`; Route B remains `STOP_SCOPED`.
+No active `c_11`, growing-clock, adaptive-capacity, operator, trace, zero,
+RH, or Gate conclusion is imported.
 
 ## 7. Reproduction and publication audit
 
@@ -4933,12 +5143,89 @@ visual audit
 ea22b202bd3b53576edc7f26871cf7f93d98f3994ebc1ee9b5b63006ba3d2569
 ```
 
+Final RH-386 audit:
+
+- Tests: `77/77`; exact result/schema regeneration, optimized Python,
+  field-level verification with the builder disabled, all `1522` scalar-leaf
+  attacks, strict JSON and exact types, official Draft 2020-12 schema,
+  remote-source failure modes, source identity, and archive mutations all
+  pass or fail closed as declared.
+- The canonical certificate is `29717` bytes with SHA-256
+  `64761d3a85afdee4682982ad545d20a66d2ed69926764bcc9580e0dc8c5f8710`.
+  It contains `96=16+8+66+6` oracle rows, `24/24` theorem mutations, and
+  `7/7` auxiliary source/JSON attacks.
+- Source closure: `59` immutable Git blobs grouped `51/8`, plus one remote
+  logical Johnston--Yang lock.  Offline verification makes zero requests;
+  live opt-in replay matches the PDF, source tar, and source `main.tex`
+  hashes.  The remote lock-object SHA-256 is
+  `d53b93212b7c5b5b6b3f7e890099c48ce8e35f2bff9bdd49f9c330a9b5039786`.
+  No external payload is redistributed.
+- Individual archive: `33` publication members, `59` Git inputs, one remote
+  lock, and zero failures.  The four-volume replay remains `4` volumes,
+  `73` members, `1548` dependency hashes, `8` result hashes, `361` numbered
+  sources, and zero failures.
+- PDF: `8` A4 pages and `371254` bytes, with all `22` font entries embedded,
+  subsetted, and Unicode-mapped.  Ghostscript, text extraction, complete
+  LaTeX/BibTeX scans, semantic-PDF byte identity, and all `8/8` rendered
+  pages pass.
+- Two independent proof/release audits report zero blocker and zero minor.
+  No effective first index, growing clock, active phasewise-`c_11`
+  cancellation, adaptive-capacity convergence, intrinsic operator,
+  prime-power trace, zero identification, RH claim, or Gate A--E conclusion
+  is made.
+
+RH-386 final hashes:
+
+```text
+main.tex
+d4dcd69877b04c382ba5cdc27918f841a40709c8064908c5063fecd222552269
+
+PDF
+f05f74be2e8ad392bbba98f5488706912a0ece48e9b372ddf14b9d4e32d5de8d
+
+result
+b59fc7921ef89d556fbc81a409ada9304fafc92424b0f4a79f97aa4d57f25ff4
+
+schema
+a5f679c5ceccbb485dc526512994e0c2fa66dd94c69c8aed479599bdfb386330
+
+manifest
+11a4512c58c83c9be4b363ea37656810a3608497a2817d6b710251b8fee9ee69
+
+verification
+2cceb2aadfeea534211416e4e6dcd29af62a91733b1fff82f994a57bca42bd7b
+
+core
+c09dc16518730f88c88ed7a382c43ff5c87e76ad8f4eb3c76929ddf2438edbcf
+
+external source lock
+d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058
+
+integrity audit
+9d03e2f224a512fa742e7ae875afeb19879d1e74644f339cf0316b6ef680a578
+
+review audit
+fdf9d36fa3b06c1c52fa5df422a8b9470918c5d81a47228d4d15df2c8302fcba
+
+format audit
+6bdb51ff934f5abf86409b9b93a4e06934f528162a73984274d2558e16751aa0
+
+replay audit
+47365767d759baf0967eb5a60bc17247cf1bd01feaf58578ef561d13a0b1dfeb
+
+visual audit
+8122c2f417141cfdc675affc4f9d7a46b7a98c854e5f94a617826306a112b2c9
+
+remote-source audit
+46f70473ebc4a7b5edb2911354e00fd6847476d30de9a42fd662e04a9be4e999
+```
+
 ## 8. Continuation prompt
 
 ````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-385 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-386 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -4957,7 +5244,9 @@ rate/quadratic-remainder input, RH-382 as the two-scale
 second-order/cubic-remainder input, RH-383 as the exact Euler-tail
 partition-normal-form input, RH-384 as the prime-tail scale-separation input,
 RH-385 as the fixed-polylogarithmic-clock phasewise-memory uniformization
-input, RH-MVP2 as the corpus umbrella, and RH-361 as the physical endpoint.
+input, RH-386 as the Vinogradov--Korobov growing-order prime-tail
+uniformization input, RH-MVP2 as the corpus umbrella, and RH-361 as the
+physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -4967,7 +5256,46 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-385 is the current independent trigger-5 theorem edge and does not close
+RH-386 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  Put `x=p_y`, `L=log x`,
+
+```text
+V=L^(3/5)(log L)^(-1/5),
+epsilon_x=0.027L^1.801 exp(-0.1853V).
+```
+
+For every nonempty finite partition `lambda=1^k_1 2^k_2 ...`, retain
+
+```text
+d=sum_r r k_r,
+R=max{r:k_r>0},
+H=sum_r k_r/(2r-1),
+H_2=sum_r k_r/(2r-1)^2,
+abs(log(P_lambda/M_lambda)+H/L)
+ <=14d epsilon_x+d/(x^2-1)+2H_2/L^2.
+```
+
+The finite ledger assumes `L>=512` and `7R epsilon_x<=1/2`.  Under
+`d_y epsilon_(p_y)+d_y/p_y^2->0`, these hold eventually, the exact- and
+power-kernel ratios tend to one, and the elementary leading ratio tends to
+one if and only if `H_y/L_y->0`.  For finite nonempty families `F_y`, put
+`D_y=sup_(lambda in F_y)d(lambda)<infinity` and
+`H_y^*=sup_(lambda in F_y)H(lambda)<infinity`.  If
+`D_y epsilon_(p_y)+D_y/p_y^2->0`, exact- and power-kernel convergence is
+uniform over `F_y`, and leading convergence is uniform if and only if
+`H_y^*/L_y->0`.  The convenient sequence-level sufficient conditions are
+`log d_y=o(V(L_y))` and `H_y=o(L_y)`.  For one factor,
+`log R_y=o(V(L_y))` is uniform, and the fixed-delta window is
+`R_y<=exp((0.1853-delta)V(L_y))` only for `0<delta<0.1853`.  For every fixed
+`c>0`, the all-ones family `1^floor(cL_y)` tends to `exp(-c)`.
+
+Keep the endpoint strict, retain the negative Stieltjes boundary, and do not
+drop the exact `d/(x^2-1)` or `H/L` terms.  The Johnston--Yang source is a
+versioned remote logical lock; its PDF and source tar are not redistributed.
+Do not infer an effective first index, growing clock, active `c_11`, adaptive
+capacity, operator, trace, zero model, RH statement, or Gate conclusion.
+
+RH-385 remains the preceding independent trigger-5 theorem edge and does not close
 any physical Gate.  For every fixed `B>0`, with
 `H_B(N)=floor((log N)^B)`, it proves
 
@@ -5165,25 +5493,12 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-RH-385 is complete; do not rewrite it as the next candidate.  The first
-post-RH-385 breadth audit is also complete and assigns no RH-386.  Its three
-routes are `STOP_SCOPED` under the repository-only source rule.
-
-The nearest route is a growing-index extension of RH-384, but it may be
-reopened only after adding one immutable source object that explicitly states
-
-```text
-vartheta(t)=t+O(C_pi t exp(-c_pi sqrt(log t)))
-```
-
-globally with absolute constants, an exact theorem locator, source metadata,
-and a frozen hash.  RH-2/RH-384 contain only qualitative PNT; TPC-9,
-TPC-16, and TPC-7 do not provide the required growing-weight global theorem.
-Once that source exists, rerun the proof lock before assigning a number.  The
-conditional target has `log R_y=o(sqrt(log p_y))`; growing partitions also
-need `log sup d=o(sqrt(log p_y))`, while the elementary leading product needs
-`sup H(lambda)=o(log p_y)` for
-`H(lambda)=sum_r k_r/(2r-1)`.  Do not suppress this `H/log p_y` obstruction.
+RH-386 is complete; do not rewrite it as the next candidate.  Its remote
+source gate, growing-order theorem, family-supremum quantifiers, sharp `H/L`
+criterion, release archive, and two independent final audits are closed.  No
+post-RH-386 breadth audit has yet assigned RH-387.  Run that audit before
+creating another number, and require a genuinely new source-backed theorem
+rather than a repackaging of the RH-386 kernels or the `H/L` obstruction.
 
 TPC-137 does not reopen active `c_11`: it proves fixed-periodic terminal
 logarithmic cancellation, not ordinary Cesaro or growing-period uniformity.
@@ -5192,8 +5507,8 @@ ordinary shift-two Chowla blocker remains.  RH-366 likewise gives each fixed
 logarithmic saving separately, so no prescribed super-polylogarithmic or
 polynomial clock window is licensed.  A non-effective diagonal with a
 stepwise exponent tending to infinity is a direct RH-385 corollary, not a new
-edge.  Preserve the immutable four-volume foundation and Gates A--E while all
-three routes remain stopped.
+edge.  Preserve the immutable four-volume foundation and Gates A--E while
+these active-`c_11` and clock routes remain stopped.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
 factor, or full H_p zeta. Do not promote the entropy tower, weighted Euler
