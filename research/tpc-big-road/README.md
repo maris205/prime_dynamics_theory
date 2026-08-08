@@ -4,6 +4,9 @@
 
 状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_SINGLE_SCALE_ZERO_AXIS_QUOTIENTED_WIENER_CELL_COMPILER_FOR_THE_LITERAL_WHOLE_RESIDUAL`
 
+高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
+该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
 当前主路线见第 32 节及 `bridge_b_base_scale_residual_oscillation_compiler.md`；
 第 31 节与 `bridge_b_whole_object_major_mismatch_and_terminal_compiler.md`冻结 V31，
 第 30 节与 `bridge_b_terminal_major_cross_flatness_and_equivariant_quotient.md`冻结 V30，
