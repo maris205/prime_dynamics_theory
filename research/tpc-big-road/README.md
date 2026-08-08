@@ -2221,6 +2221,89 @@ checker冻结 33-field contract、48-row registry，registry SHA-256为
 102/151 adversarial mutations必须全部拒绝。V23 arithmetic advance=`NO`、fixed
 atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false；没有编号 paper/PDF/build。
 
+## 34. V34 Bridge A / Gate B：已付 local carrier 与 compensated prime frame
+
+V34 保留 V33 的 exact MASTER marginal，并把 large-divisor tail写成
+
+~~~text
+beta_raw(t)=Lambda(t)/log(t)+sum_(d|t,d^400>x^133)mu(d)
+           =rho(t)+sum_(dk=t,k>=2,d^400>x^133)mu(d),
+rho(t)=Lambda(t)/log(t)+mu(t), rho(p)=0.
+~~~
+
+V29 已独立支付
+`|E(Mloc)|,|J(Mloc)|<<x^(1891/1920+o(1))`，所以 exact scalar elimination
+
+~~~text
+E(e)=E(r)-E(Mloc)
+~~~
+
+允许新的 B theorem直接作用在 collapsed scalar `r`，不再携带 occurrence label。令
+`Q=x^(1/3)`、`H=x^(21/32)`，当前唯一选中算术目标是
+
+~~~text
+D=sum_(q prime,Q<q<=2Q) sum_(t!=u)
+  beta_raw(t) w^(z)(u) hatpsi_+((u-t)/H)
+  (q 1_(u=t mod q)-1),
+|D|<<x^(5/3-delta+o(1)), delta>1/400.
+~~~
+
+它给任意 `eta_B<min(delta-1/400,121/9600)`。Bazin 的 actual frame只控制一个
+marginal，指数为 `75/64`；MRT、Evans、MRSTT II也没有 literal all-frame physical
+product theorem。因此当前位置仍是解析消去岛 Bridge A / Gate B，但红叉已经从
+whole occurrence-native mean square缩成一个 signed compensated scalar covariance。
+
+~~~text
+V34_MAXIMUM_CLAIM = EXACT_PAID_LOCAL_CARRIER_ELIMINATION_TO_COLLAPSED_COMPENSATED_PRIME_FRAME_COVARIANCE_WITH_STRICT_DELTA_GT_1_OVER_400_GATE
+V34_ROUTE_ADVANCE = YES
+V34_ARITHMETIC_ADVANCE = NO
+V34_FIXED_ATOM_CREDIT = 0
+V34_STRICT_1_OVER_400 = UNPAID
+V34_L2 = NONE
+V34_TPC_207_TRIGGER = false
+V34_NUMBERED_RELEASE = NO
+V34_SELECTED_RESEARCH_ROUTE = B_DIRECT_COLLAPSED_PRIME_FRAME_THEN_A_TERMINAL_COVARIANCE_THEN_C_SYMMETRY_BREAK
+V34_BETA_MASTER_MARGINAL = RETAINED_EXACT_V33_LAMBDA_OVER_LOG_MINUS_TRUNCATED_MU_CONV_ONE
+V34_BETA_LARGE_DIVISOR_TAIL = PROVED_EXACT_LAMBDA_OVER_LOG_PLUS_MU_ABOVE_CUTOFF
+V34_PRIME_DELETED_ENDPOINT = PROVED_EXACT_RHO_EQUALS_LAMBDA_OVER_LOG_PLUS_MU_AND_RHO_P_EQUALS_ZERO
+V34_GENUINE_BILINEAR_TAIL = PROVED_EXACT_K_GE_2_D_ABOVE_CUTOFF
+V34_LOCAL_CARRIER_E_PAYMENT = RETAINED_SOURCE_BACKED_X_1891_OVER_1920_PLUS_O1
+V34_LOCAL_CARRIER_J_PAYMENT = RETAINED_SOURCE_BACKED_X_1891_OVER_1920_PLUS_O1
+V34_DIRECT_SCALAR_ELIMINATION = PROVED_EXACT_E_OF_E_EQUALS_E_OF_R_MINUS_E_OF_MLOC
+V34_OCCURRENCE_LABEL_IN_NEW_B_THEOREM = REMOVED_BY_SEPARATELY_PAID_SCALAR_LOCAL_CARRIER
+V34_QOSC_P_REPLACEMENT = STOP_SCOPED_REINTRODUCES_LARGE_OFFZERO_LOCAL_MAIN
+V34_V32_QOSC_P_MINUS_L = RETAINED_VALID_STRONGER_ALTERNATIVE
+V34_RAMANUJAN_PRIME_VECTOR = PROVED_EXACT_C_Q_EQUALS_Q_DIVISIBILITY_MINUS_ONE
+V34_ZERO_DELETED_SMOOTH_CORRELATION = PROVED_EXACT_PHI_H
+V34_COMPENSATED_DILATION_FORM = PROVED_EXACT_QK_MINUS_ALL_H
+V34_COMPENSATED_PAIR_FORM = PROVED_EXACT_ONE_OUTER_SIGNED_SCALAR
+V34_L_PR_NORMALIZATION = X_POWER_2_OVER_3_PLUS_O1
+V34_DIRECT_NUMERATOR_TARGET = X_POWER_5_OVER_3_MINUS_DELTA_PLUS_O1
+V34_REQUIRED_DELTA = STRICTLY_GREATER_THAN_1_OVER_400
+V34_DIRECT_E_R_EXPONENT = X_POWER_1_MINUS_DELTA_PLUS_O1
+V34_DIRECT_ENDPOINT_MARGIN = DELTA_MINUS_1_OVER_400
+V34_LOCAL_CARRIER_ENDPOINT_MARGIN = 121_OVER_9600
+V34_COMBINED_B_MARGIN = MIN_DELTA_MINUS_1_OVER_400_AND_121_OVER_9600
+V34_BAZIN_ACTUAL_FRAME_Q = X_POWER_1_OVER_3
+V34_BAZIN_ACTUAL_FRAME_THETA = X_POWER_MINUS_21_OVER_32
+V34_BAZIN_ACTUAL_FRAME_XI_EXPONENT = 257_OVER_192
+V34_BAZIN_ACTUAL_FRAME_ADDITIVE_EXPONENT = 75_OVER_64
+V34_BAZIN_TO_DIRECT_COVARIANCE = STOP_SCOPED_ONE_MARGINAL_NO_PHYSICAL_PRODUCT
+V34_MRT_TO_DIRECT_COVARIANCE = STOP_SCOPED_LOGARITHMIC_SHIFT_ENERGY_WRONG_COEFFICIENT_AND_FRAME
+V34_EVANS_TO_DIRECT_COVARIANCE = STOP_SCOPED_FIXED_E2_ALMOST_ALL_SHIFTS_WRONG_COEFFICIENT
+V34_MRSTT_TO_DIRECT_COVARIANCE = STOP_SCOPED_DENSITY_ONE_NO_QUANTITATIVE_FRAME_POWER
+V34_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_08
+V34_NEXT_THEOREM = DELTA_GT_1_OVER_400_POWER_SAVING_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_IN_COMPENSATED_PRIME_FRAME
+V34_FIRST_FATAL = NO_POWER_SAVING_BEYOND_X_5_OVER_3_FOR_COLLAPSED_PHYSICAL_COMPENSATED_PRIME_FRAME
+V34_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
+V34_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
+~~~
+
+完整 derivation/source ceiling见
+`bridge_b_paid_local_carrier_and_compensated_prime_frame.md`；独立 checker见
+`tpc_bridge_b_paid_local_carrier_prime_frame_checker.py`。这是 route/compiler advance，
+不是 arithmetic theorem：atom=0、strict `1/400`=UNPAID、`L2=NONE`、TPC-207=false。
+
 ## 33. V33 Bridge A / Gate B：MASTER marginal collapse 与 local-carrier firewall
 
 V33 在现有 V19 ordered HB2 extractor上完成 collective marginal collapse；没有重写
@@ -2241,8 +2324,8 @@ Bazin 2607.15137v1 Theorem 8现在是 collapsed marginal的真实 Type-I/II inte
 natural rational-tube route仍有 \(H^{1/4}\) loss，endpoint deficit为
 \(1549/9600\)。更重要的是 selected-group provenance不随 scalar marginal塌缩：
 \(x=121,t=77,z=5\) 的 groups \(7,11\) 在 marginal中发生同一 \(\log7\) collision，
-但 local Euler values不同。因此下一关仍是同一个 literal joint residual power
-mean square，而不是再估单边 beta。
+但 local Euler values不同。因此 V33 当时留下的下一关仍是 literal joint residual
+power mean square；该历史要求现由上方 V34 的 scalar payment进一步收窄。
 
 ~~~text
 V33_MAXIMUM_CLAIM = EXACT_ROOT_ONE_MASTER_MARGINAL_COLLAPSE_TO_TRUNCATED_MOBIUS_SIEVE_REMAINDER_PLUS_BAZIN_MARGINAL_INTERFACE_AND_LOCAL_CARRIER_FIREWALL
@@ -2292,7 +2375,7 @@ V33_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
 
 完整 derivation/source ceiling见
 bridge_b_master_marginal_collapse_and_joint_residual_firewall.md；独立 checker见
-tpc_bridge_b_master_marginal_collapse_checker.py。当前位置仍是解析消去岛
+tpc_bridge_b_master_marginal_collapse_checker.py。V33 checkpoint当时仍位于解析消去岛
 Bridge A / Gate B；arithmetic=NO、atom=0、strict \(1/400\)=UNPAID、
 \(L^2\)=NONE、TPC-207=false。
 

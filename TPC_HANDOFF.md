@@ -1,7 +1,98 @@
 # TPC HANDOFF
 
 更新时间：2026-08-08
-交接状态：`BOLD_CHANNEL_V33_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V34_SEALED_FOR_NEW_SESSION`
+
+第 81 节继续留在“解析消去岛 / Bridge A / Gate B”，但删除了 V33 下一定理中
+一个不必要的 occurrence-native hypothesis。V33 的 scalar marginal还可精确写成
+
+~~~text
+beta_raw_x(t)
+ = Lambda(t)/log(t) + sum_(d|t,d^400>x^133) mu(d)
+ = rho(t) + sum_(dk=t,k>=2,d^400>x^133) mu(d),
+rho(t)=Lambda(t)/log(t)+mu(t), rho(p)=0.             (V34.1)
+~~~
+
+V29 已经独立证明
+
+~~~text
+|E(Mloc_x)|,|J(Mloc_x)| << x^(1891/1920+o(1)).       (V34.2)
+~~~
+
+因此对 `e_x=r_x-Mloc_x`，B 门可直接使用精确标量恒等式
+
+~~~text
+E(e_x)=E(r_x)-E(Mloc_x),                             (V34.3)
+~~~
+
+而新算术 theorem 的 statement 不再需要 selected-group label、local Euler tensor
+或 circle model `L_x`。令 prime shell `Q=x^(1/3)`、`H=x^(21/32)`，
+
+~~~text
+c_q(h)=q 1_(q|h)-1,
+A_Q(h)=sum_(q prime,Q<q<=2Q)c_q(h),
+Phi_x(h)=1_(h!=0) hatpsi_+(h/H) r_x(h),
+D_x=sum_h A_Q(h)Phi_x(h).                            (V34.4)
+~~~
+
+则同一个 scalar有三种 exact normal forms：Ramanujan `h`-form、
+`q sum_(k!=0)Phi(qk)-sum_(h!=0)Phi(h)` dilation form，以及保留一个 outer
+signed scalar的 pair form
+
+~~~text
+sum_q sum_(t!=u) beta_raw_x(t) w_x^(z)(u) hatpsi_+((u-t)/H)
+  * (q 1_(u=t mod q)-1).                             (V34.5)
+~~~
+
+由于 `L_pr=sum_q(q-1)=x^(2/3+o(1))`，当前唯一新 B theorem被压成
+
+~~~text
+|D_x| << x^(5/3-delta+o(1)), delta>1/400.            (V34.6)
+~~~
+
+它给 `|E(r_x)|<<x^(1-delta+o(1))`；与 (V34.2) 合并后可取任意
+
+~~~text
+eta_B < min(delta-1/400,121/9600).                   (V34.7)
+~~~
+
+等号 `delta=1/400` 不够。Bazin Theorem 8 在 actual
+`Q=x^(1/3), theta=x^(-21/32)` 上真实给单 marginal `Xi` dominant exponent
+`257/192`，source additive conversion后为 `75/64`；它不接受第二个 physical
+hybrid factor，不能冒充 (V34.6)。MRT、Evans 与 MRSTT II也都没有 literal
+all-frame power attachment。因此 arithmetic advance仍为 NO。
+
+V34 页首只摘要核心边界；完整 43-row canonical registry 在 Handoff 第 24、81 节、
+Compass 第 35 节、big-road README 第 34 节、V34 proof 第 10 节与 checker中冻结。
+当前核心为
+
+~~~text
+V34_BETA_LARGE_DIVISOR_TAIL
+  = PROVED_EXACT_LAMBDA_OVER_LOG_PLUS_MU_ABOVE_CUTOFF
+V34_DIRECT_SCALAR_ELIMINATION
+  = PROVED_EXACT_E_OF_E_EQUALS_E_OF_R_MINUS_E_OF_MLOC
+V34_COMPENSATED_PAIR_FORM = PROVED_EXACT_ONE_OUTER_SIGNED_SCALAR
+V34_REQUIRED_DELTA = STRICTLY_GREATER_THAN_1_OVER_400
+V34_NEXT_THEOREM
+  = DELTA_GT_1_OVER_400_POWER_SAVING_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_IN_COMPENSATED_PRIME_FRAME
+V34_ARITHMETIC_ADVANCE = NO
+V34_FIXED_ATOM_CREDIT = 0
+V34_STRICT_1_OVER_400 = UNPAID
+V34_L2 = NONE
+TPC_207_TRIGGER = false                               (V34.8)
+~~~
+
+proof 为
+research/tpc-big-road/bridge_b_paid_local_carrier_and_compensated_prime_frame.md，
+checker 为
+research/tpc-big-road/tpc_bridge_b_paid_local_carrier_prime_frame_checker.py。checker
+冻结 32/43/5/4 contract/registry/source/dependency rows，registry SHA-256
+`8a6caddc05238b6706034e7e2b6cf9fb5bf8d70ff714c85d0c897a4f5e36ce3c`，并执行
+98/89/12/10/131 mutations，共 340 个 unique reject actions。V34 是不编号
+big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
+
+以下 V33 页首块作为已封存的直接上游快照保留；current truth 由上面的 V34 摘要、
+第 24 节与第 81 节控制。
 
 第 80 节在 V32 的同一个 literal tagged object 上完成一次非微型的边缘塌缩。对
 \(x\geq8\)、\(t\in(x/2,x]\cap\mathbb Z\)，保留 V19 ordered slots、unit policy、
@@ -46,10 +137,10 @@ Delta_7,5(5)=-35/36, Delta_11,5(5)=11/100.           (V33.3)
 ~~~
 
 所以 marginal theorem不能冒充 occurrence-native \(L_x\)、\(R_x=P_x-L_x\) 或
-\(\mathfrak Q_{Y_0}^{\rm osc}(R_x)\) 的 theorem。当前路线位置仍是
-“解析消去岛 / Bridge A / Gate B”；本轮只把 prime-side marginal从 opaque HB2
-rows压成 truncated Möbius sieve remainder，下一红叉是同一个 joint residual
-power mean square。
+\(\mathfrak Q_{Y_0}^{\rm osc}(R_x)\) 的 theorem。在 V33 快照中，位置仍是
+“解析消去岛 / Bridge A / Gate B”；该轮只把 prime-side marginal从 opaque HB2
+rows压成 truncated Möbius sieve remainder，当时留下的 joint-residual 红叉现由
+V34 的 paid scalar reduction进一步收窄。
 
 V33 页首只摘要核心边界；完整 43-row canonical registry 在 Handoff 第 24、80 节、
 Compass 第 34 节、big-road README 第 33 节与 V33 proof 第 10 节逐字冻结。当前核心为
@@ -78,8 +169,8 @@ b53790e71a636abd4b91866d46e80904ced1286b1b98c3fec1d67b0db54b74bb，并执行
 74/89/12/10/107 mutations，共 292 个 unique reject actions。V33 是不编号
 big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
 
-以下 V32 页首块作为已封存的直接上游快照保留；current truth 由上面的 V33 摘要、
-第 24 节与第 80 节控制。
+以下 V32 页首块作为已封存的更早上游快照保留；它在历史链中的状态由上面的
+V33 snapshot与第 80 节覆盖，current truth仍由 V34 页首、第 24 节与第 81 节控制。
 
 第 79 节在 V31 同一个 literal tagged object 上完成一次真正的 B 路收缩。令
 
@@ -156,8 +247,8 @@ checker 为
 88/97/12/10/131 mutations，共 338 个 unique reject actions。V32 是不编号
 big-road release；不创建 TPC-207、paper、PDF 或 build output。
 
-以下 V31 页首块作为已封存的直接上游快照保留；current truth 由上面的 V32 摘要、
-第 24 节与第 79 节控制。
+以下 V31 页首块作为已封存的更早上游快照保留；它在历史链中的状态由上面的
+V32 snapshot与第 79 节覆盖，current truth仍由 V34 页首、第 24 节与第 81 节控制。
 
 第 78 节继续冻结 V30 的同一 literal pair：
 
@@ -2054,17 +2145,18 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V33_20260808_MASTER_MARGINAL_COLLAPSE_AND_JOINT_RESIDUAL_FIREWALL_NO_ARITHMETIC_TRIGGER`
+`TPC_BIG_ROAD_V34_20260808_PAID_LOCAL_CARRIER_AND_COMPENSATED_PRIME_FRAME_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V33_POWER_MEAN_SQUARE_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_WITH_OCCURRENCE_NATIVE_LOCAL_CARRIER`；
+`V34_DELTA_GT_1_OVER_400_POWER_SAVING_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_IN_COMPENSATED_PRIME_FRAME`；
 当前 first subgates：
-`V33_NEXT_THEOREM`；
+`V34_NEXT_THEOREM`；
 已支付并可复用的 source-backed local subgate 为
-`V33_BAZIN_BETA_MARGINAL` 与 `V30_LOCAL_BC_CARRIER`；已支付的 exact q-local major model为
+`V34_LOCAL_CARRIER_E_PAYMENT`、`V34_LOCAL_CARRIER_J_PAYMENT` 与
+`V33_BAZIN_BETA_MARGINAL`；已支付的 exact q-local major model为
 `V30_QLOCAL_MODEL_BOUND`
-（第 80 节控制；既有 local source只有在第 32.6 节或
+（第 81 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--80 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--81 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -2076,6 +2168,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_paid_local_carrier_and_compensated_prime_frame.md`、
+`research/tpc-big-road/tpc_bridge_b_paid_local_carrier_prime_frame_checker.py`、
 `research/tpc-big-road/bridge_b_master_marginal_collapse_and_joint_residual_firewall.md`、
 `research/tpc-big-road/tpc_bridge_b_master_marginal_collapse_checker.py`、
 `research/tpc-big-road/bridge_b_base_scale_residual_oscillation_compiler.md`、
@@ -2107,7 +2201,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--80 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--81 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2169,11 +2263,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V33 gate及其 V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；二十二次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V34 gate及其 V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；二十四次必须都为零，且每一对 stdout
 byte-identical：
 
 ```powershell
+python -B research/tpc-big-road/tpc_bridge_b_paid_local_carrier_prime_frame_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_paid_local_carrier_prime_frame_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_master_marginal_collapse_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_master_marginal_collapse_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_residual_oscillation_checker.py --check
@@ -2469,6 +2565,21 @@ TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1 = STOP_SCOPED
 FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT = STOP_SCOPED
 ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ = STOP_SCOPED
 ```
+
+V34 在同一 Bridge A / Gate B object上新增且仅新增五个 scoped stops：
+
+```text
+V34_QOSC_P_REPLACEMENT = STOP_SCOPED_REINTRODUCES_LARGE_OFFZERO_LOCAL_MAIN
+V34_BAZIN_TO_DIRECT_COVARIANCE = STOP_SCOPED_ONE_MARGINAL_NO_PHYSICAL_PRODUCT
+V34_MRT_TO_DIRECT_COVARIANCE = STOP_SCOPED_LOGARITHMIC_SHIFT_ENERGY_WRONG_COEFFICIENT_AND_FRAME
+V34_EVANS_TO_DIRECT_COVARIANCE = STOP_SCOPED_FIXED_E2_ALMOST_ALL_SHIFTS_WRONG_COEFFICIENT
+V34_MRSTT_TO_DIRECT_COVARIANCE = STOP_SCOPED_DENSITY_ONE_NO_QUANTITATIVE_FRAME_POWER
+```
+
+第一项只停止把已经支付的 scalar `E(Mloc)`提升为 `Mloc` 的 off-zero
+mean-square payment；后四项只停止把列出的现有 source直接宣称为 literal
+compensated prime-frame covariance theorem。它们不停止新的 joint scalar theorem、
+V32 stronger quotient route、terminal A、dynamics C或全局架构。
 
 TPC-204 新增且仅新增：
 
@@ -7816,7 +7927,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V33 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V34 current）
 
 ```text
 进入仓库：
@@ -7824,6 +7935,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_paid_local_carrier_and_compensated_prime_frame.md、
+research/tpc-big-road/tpc_bridge_b_paid_local_carrier_prime_frame_checker.py、
 research/tpc-big-road/bridge_b_master_marginal_collapse_and_joint_residual_firewall.md、
 research/tpc-big-road/tpc_bridge_b_master_marginal_collapse_checker.py、
 research/tpc-big-road/bridge_b_base_scale_residual_oscillation_compiler.md、
@@ -7858,7 +7971,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--80 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--81 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -8074,6 +8187,49 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V34_MAXIMUM_CLAIM = EXACT_PAID_LOCAL_CARRIER_ELIMINATION_TO_COLLAPSED_COMPENSATED_PRIME_FRAME_COVARIANCE_WITH_STRICT_DELTA_GT_1_OVER_400_GATE
+V34_ROUTE_ADVANCE = YES
+V34_ARITHMETIC_ADVANCE = NO
+V34_FIXED_ATOM_CREDIT = 0
+V34_STRICT_1_OVER_400 = UNPAID
+V34_L2 = NONE
+V34_TPC_207_TRIGGER = false
+V34_NUMBERED_RELEASE = NO
+V34_SELECTED_RESEARCH_ROUTE = B_DIRECT_COLLAPSED_PRIME_FRAME_THEN_A_TERMINAL_COVARIANCE_THEN_C_SYMMETRY_BREAK
+V34_BETA_MASTER_MARGINAL = RETAINED_EXACT_V33_LAMBDA_OVER_LOG_MINUS_TRUNCATED_MU_CONV_ONE
+V34_BETA_LARGE_DIVISOR_TAIL = PROVED_EXACT_LAMBDA_OVER_LOG_PLUS_MU_ABOVE_CUTOFF
+V34_PRIME_DELETED_ENDPOINT = PROVED_EXACT_RHO_EQUALS_LAMBDA_OVER_LOG_PLUS_MU_AND_RHO_P_EQUALS_ZERO
+V34_GENUINE_BILINEAR_TAIL = PROVED_EXACT_K_GE_2_D_ABOVE_CUTOFF
+V34_LOCAL_CARRIER_E_PAYMENT = RETAINED_SOURCE_BACKED_X_1891_OVER_1920_PLUS_O1
+V34_LOCAL_CARRIER_J_PAYMENT = RETAINED_SOURCE_BACKED_X_1891_OVER_1920_PLUS_O1
+V34_DIRECT_SCALAR_ELIMINATION = PROVED_EXACT_E_OF_E_EQUALS_E_OF_R_MINUS_E_OF_MLOC
+V34_OCCURRENCE_LABEL_IN_NEW_B_THEOREM = REMOVED_BY_SEPARATELY_PAID_SCALAR_LOCAL_CARRIER
+V34_QOSC_P_REPLACEMENT = STOP_SCOPED_REINTRODUCES_LARGE_OFFZERO_LOCAL_MAIN
+V34_V32_QOSC_P_MINUS_L = RETAINED_VALID_STRONGER_ALTERNATIVE
+V34_RAMANUJAN_PRIME_VECTOR = PROVED_EXACT_C_Q_EQUALS_Q_DIVISIBILITY_MINUS_ONE
+V34_ZERO_DELETED_SMOOTH_CORRELATION = PROVED_EXACT_PHI_H
+V34_COMPENSATED_DILATION_FORM = PROVED_EXACT_QK_MINUS_ALL_H
+V34_COMPENSATED_PAIR_FORM = PROVED_EXACT_ONE_OUTER_SIGNED_SCALAR
+V34_L_PR_NORMALIZATION = X_POWER_2_OVER_3_PLUS_O1
+V34_DIRECT_NUMERATOR_TARGET = X_POWER_5_OVER_3_MINUS_DELTA_PLUS_O1
+V34_REQUIRED_DELTA = STRICTLY_GREATER_THAN_1_OVER_400
+V34_DIRECT_E_R_EXPONENT = X_POWER_1_MINUS_DELTA_PLUS_O1
+V34_DIRECT_ENDPOINT_MARGIN = DELTA_MINUS_1_OVER_400
+V34_LOCAL_CARRIER_ENDPOINT_MARGIN = 121_OVER_9600
+V34_COMBINED_B_MARGIN = MIN_DELTA_MINUS_1_OVER_400_AND_121_OVER_9600
+V34_BAZIN_ACTUAL_FRAME_Q = X_POWER_1_OVER_3
+V34_BAZIN_ACTUAL_FRAME_THETA = X_POWER_MINUS_21_OVER_32
+V34_BAZIN_ACTUAL_FRAME_XI_EXPONENT = 257_OVER_192
+V34_BAZIN_ACTUAL_FRAME_ADDITIVE_EXPONENT = 75_OVER_64
+V34_BAZIN_TO_DIRECT_COVARIANCE = STOP_SCOPED_ONE_MARGINAL_NO_PHYSICAL_PRODUCT
+V34_MRT_TO_DIRECT_COVARIANCE = STOP_SCOPED_LOGARITHMIC_SHIFT_ENERGY_WRONG_COEFFICIENT_AND_FRAME
+V34_EVANS_TO_DIRECT_COVARIANCE = STOP_SCOPED_FIXED_E2_ALMOST_ALL_SHIFTS_WRONG_COEFFICIENT
+V34_MRSTT_TO_DIRECT_COVARIANCE = STOP_SCOPED_DENSITY_ONE_NO_QUANTITATIVE_FRAME_POWER
+V34_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_08
+V34_NEXT_THEOREM = DELTA_GT_1_OVER_400_POWER_SAVING_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_IN_COMPENSATED_PRIME_FRAME
+V34_FIRST_FATAL = NO_POWER_SAVING_BEYOND_X_5_OVER_3_FOR_COLLAPSED_PHYSICAL_COMPENSATED_PRIME_FRAME
+V34_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
+V34_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
 V33_MAXIMUM_CLAIM = EXACT_ROOT_ONE_MASTER_MARGINAL_COLLAPSE_TO_TRUNCATED_MOBIUS_SIEVE_REMAINDER_PLUS_BAZIN_MARGINAL_INTERFACE_AND_LOCAL_CARRIER_FIREWALL
 V33_ROUTE_ADVANCE = YES
 V33_ARITHMETIC_ADVANCE = NO
@@ -12532,6 +12688,315 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 81. 2026-08-08 V34：paid local carrier 与 compensated prime frame
+
+### 81.1 范围、结论与 claim ceiling
+
+V34 固定 V33 的 scalar MASTER marginal、V23 prime shell、V29 已支付的
+occurrence-native local carrier，以及同一个 physical hybrid。它不修改
+`h0=2`、hard shell、Jutila normalization、terminal A或 dynamics C。令
+
+\[
+ I_x=(x/2,x]\cap\mathbb Z,
+ \quad H=x^{21/32},
+ \quad Q=x^{1/3},
+ \quad \mathcal Q=\{q\ {\rm prime}:Q<q\leq2Q\},
+\]
+
+\[
+ L_{\rm pr}=\sum_{q\in\mathcal Q}(q-1)=x^{2/3+o(1)},
+ \qquad
+ w_x^{(z)}(u)=\Lambda(u+2)-b_x^{(z)}(u),
+\]
+
+并写
+
+\[
+ r_x(h)=\sum_{\substack{t,t+h\in I_x}}
+ \beta_x^{\rm raw}(t)w_x^{(z)}(t+h).
+ \tag{81.1}
+\]
+
+V34 的最大 claim是 exact scalar reduction：新 B theorem不必再接受 selected-group
+label、local Euler tensor或 model spectrum；它只需控制一个 collapsed physical
+compensated prime-frame scalar。这是 route advance，不是 arithmetic estimate。
+
+### 81.2 Exact large-divisor tail
+
+由 V33 与 \(\sum_{d\mid t}\mu(d)=0\)，
+
+\[
+ \boxed{
+ \beta_x^{\rm raw}(t)
+ =\frac{\Lambda(t)}{\log t}
+ +\sum_{\substack{d\mid t\\d^{400}>x^{133}}}\mu(d).}
+ \tag{81.2}
+\]
+
+对 \(t\in I_x\)、\(x\geq8\)，
+
+\[
+ t^{400}>(x/2)^{400}>x^{133},
+\]
+
+因为 \(x^{267}\geq8^{267}=2^{801}>2^{400}\)。故 \(d=t\) 总在 cutoff外；拆出
+该项并写 \(t=dk\)，得到
+
+\[
+ \boxed{
+ \beta_x^{\rm raw}(t)=\rho(t)+
+ \sum_{\substack{dk=t\\k\geq2\\d^{400}>x^{133}}}\mu(d),
+ \qquad
+ \rho(t)=\frac{\Lambda(t)}{\log t}+\mu(t).}
+ \tag{81.3}
+\]
+
+特别地 \(\rho(p)=0\)。所以 collapsed coefficient不是 hidden prime--prime
+coefficient，而是 prime-deleted endpoint加真正的 large-divisor bilinear tail。
+checker逐一验证 \(8\leq x\leq320\) 的 25,744 个 shell cases，其中有 4,945 个
+prime rows、13,824 个 nonzero proper-tail rows与 44,205 个 nonzero proper-tail
+terms。
+
+### 81.3 已支付的 local carrier
+
+令
+
+\[
+ e_x(h)=r_x(h)-M_x^{\rm loc}(h).
+\]
+
+V29 的 reduced-radical Bettin--Chandee compiler已经证明
+
+\[
+ \boxed{
+ |E(M_x^{\rm loc})|,|J(M_x^{\rm loc})|
+ \ll x^{1891/1920+o(1)}.}
+ \tag{81.4}
+\]
+
+线性性给出
+
+\[
+ \boxed{E(e_x)=E(r_x)-E(M_x^{\rm loc}).}
+ \tag{81.5}
+\]
+
+这是 scalar elimination。它不证明 \(M_x^{\rm loc}\) 的 off-zero energy很小，
+也不允许把 V32 的 \(Q^{\rm osc}(P_x-L_x)\) 偷换成
+\(Q^{\rm osc}(P_x)\)。有限夹具 \(M(1)=3,M(2)=-3\) 对等权 nonzero kernel给
+\(E(M)=0\)，但 off-zero energy为 18，逐字阻止该提升。
+
+### 81.4 Compensated frame 的三个 exact normal forms
+
+定义
+
+\[
+ c_q(h)=q\mathbf1_{q\mid h}-1,
+ \qquad A_Q(h)=\sum_{q\in\mathcal Q}c_q(h),
+\]
+
+\[
+ \Phi_x(h)=\mathbf1_{h\ne0}\widehat\psi_+(h/H)r_x(h),
+ \qquad
+ \mathfrak D_x=\sum_hA_Q(h)\Phi_x(h).
+\]
+
+则
+
+\[
+ \boxed{E(r_x)=-{\mathfrak D_x\over L_{\rm pr}}.}
+ \tag{81.6}
+\]
+
+同时
+
+\[
+ \mathfrak D_x=
+ \sum_{q\in\mathcal Q}q\sum_{k\ne0}\Phi_x(qk)
+ -|\mathcal Q|\sum_{h\ne0}\Phi_x(h),
+\]
+
+并且
+
+\[
+ \boxed{
+ \begin{aligned}
+ \mathfrak D_x={}&\sum_{q\in\mathcal Q}
+ \sum_{\substack{t,u\in I_x\\t\ne u}}
+ \beta_x^{\rm raw}(t)w_x^{(z)}(u)
+ \widehat\psi_+\!\left({u-t\over H}\right)\\
+ &\hspace{22mm}\times
+ \left(q\mathbf1_{u\equiv t\pmod q}-1\right).
+ \end{aligned}}
+ \tag{81.7}
+\]
+
+最后括号内两项必须在一个 outer signed scalar内共同估计；逐项 triangle会退回
+已停止的 centered-projector ceiling。十点 exact fixture在 \(q=5,7\) 上把
+`h`-form、dilation form与 pair form共同冻结为 \(-6061/315\)，并给
+\(L_{\rm pr}=10\)、\(E(r)=6061/3150\)。
+
+### 81.5 Strict \(1/400\) clock
+
+当前 source-ready theorem必须是
+
+\[
+ \boxed{
+ |\mathfrak D_x|\ll x^{5/3-\delta+o(1)},
+ \qquad \delta>\frac1{400}.}
+ \tag{81.8}
+\]
+
+由 (81.6)，它给 \(|E(r_x)|\ll x^{1-\delta+o(1)}\)。与 (81.4)--(81.5)
+合并后，B gate可取任意
+
+\[
+ 0<\eta_B<
+ \min\left\{\delta-\frac1{400},\frac{121}{9600}\right\}.
+\]
+
+等号 \(\delta=1/400\) 不足。取 \(\delta=1/300\) 的有限 clock fixture给
+direct margin \(1/1200\)，而 local-carrier margin为 \(121/9600\)。
+
+### 81.6 Primary-source boundary
+
+[Bettin--Chandee](https://arxiv.org/abs/1502.00769)只支付 (81.4)。
+[Bazin Theorem 8](https://arxiv.org/abs/2607.15137v1)在
+\(Q=x^{1/3}\)、\(\vartheta=x^{-21/32}\) 上给四个 \(\Xi\) exponents
+
+\[
+ \frac76,\quad\frac76,\quad1,\quad\frac{257}{192},
+\]
+
+再经 source 的 \(Q^{-1/2}\) additive conversion得到 \(75/64\)。这是正确的
+collapsed marginal theorem，但没有第二个 physical factor，也不是 (81.8)。
+[MRT Proposition 3.1](https://arxiv.org/abs/1707.01315v3)只给 abstract
+shift-energy reduction；[Evans Theorem 1.4](https://arxiv.org/abs/2102.12297v3)
+是 fixed prime--\(E_2\)、almost-all shift与 logarithmic scale；
+[MRSTT II Theorem 1.5](https://arxiv.org/abs/2411.05770v2)是 density-one shift
+statement。无一 primary source证明 literal (81.8)。
+
+### 81.7 Route decision 与 canonical registry
+
+当前位置为
+
+~~~text
+解析消去岛 / Bridge A / Gate B
+  已过：MASTER marginal exact collapse
+  已付：occurrence-native local carrier scalar E(Mloc),J(Mloc)
+  红叉：collapsed physical compensated prime-frame, delta>1/400
+  之后：terminal q-local signed covariance A
+  reserve：distinguished-seed dynamics C
+~~~
+
+完整 registry为
+
+~~~text
+V34_MAXIMUM_CLAIM = EXACT_PAID_LOCAL_CARRIER_ELIMINATION_TO_COLLAPSED_COMPENSATED_PRIME_FRAME_COVARIANCE_WITH_STRICT_DELTA_GT_1_OVER_400_GATE
+V34_ROUTE_ADVANCE = YES
+V34_ARITHMETIC_ADVANCE = NO
+V34_FIXED_ATOM_CREDIT = 0
+V34_STRICT_1_OVER_400 = UNPAID
+V34_L2 = NONE
+V34_TPC_207_TRIGGER = false
+V34_NUMBERED_RELEASE = NO
+V34_SELECTED_RESEARCH_ROUTE = B_DIRECT_COLLAPSED_PRIME_FRAME_THEN_A_TERMINAL_COVARIANCE_THEN_C_SYMMETRY_BREAK
+V34_BETA_MASTER_MARGINAL = RETAINED_EXACT_V33_LAMBDA_OVER_LOG_MINUS_TRUNCATED_MU_CONV_ONE
+V34_BETA_LARGE_DIVISOR_TAIL = PROVED_EXACT_LAMBDA_OVER_LOG_PLUS_MU_ABOVE_CUTOFF
+V34_PRIME_DELETED_ENDPOINT = PROVED_EXACT_RHO_EQUALS_LAMBDA_OVER_LOG_PLUS_MU_AND_RHO_P_EQUALS_ZERO
+V34_GENUINE_BILINEAR_TAIL = PROVED_EXACT_K_GE_2_D_ABOVE_CUTOFF
+V34_LOCAL_CARRIER_E_PAYMENT = RETAINED_SOURCE_BACKED_X_1891_OVER_1920_PLUS_O1
+V34_LOCAL_CARRIER_J_PAYMENT = RETAINED_SOURCE_BACKED_X_1891_OVER_1920_PLUS_O1
+V34_DIRECT_SCALAR_ELIMINATION = PROVED_EXACT_E_OF_E_EQUALS_E_OF_R_MINUS_E_OF_MLOC
+V34_OCCURRENCE_LABEL_IN_NEW_B_THEOREM = REMOVED_BY_SEPARATELY_PAID_SCALAR_LOCAL_CARRIER
+V34_QOSC_P_REPLACEMENT = STOP_SCOPED_REINTRODUCES_LARGE_OFFZERO_LOCAL_MAIN
+V34_V32_QOSC_P_MINUS_L = RETAINED_VALID_STRONGER_ALTERNATIVE
+V34_RAMANUJAN_PRIME_VECTOR = PROVED_EXACT_C_Q_EQUALS_Q_DIVISIBILITY_MINUS_ONE
+V34_ZERO_DELETED_SMOOTH_CORRELATION = PROVED_EXACT_PHI_H
+V34_COMPENSATED_DILATION_FORM = PROVED_EXACT_QK_MINUS_ALL_H
+V34_COMPENSATED_PAIR_FORM = PROVED_EXACT_ONE_OUTER_SIGNED_SCALAR
+V34_L_PR_NORMALIZATION = X_POWER_2_OVER_3_PLUS_O1
+V34_DIRECT_NUMERATOR_TARGET = X_POWER_5_OVER_3_MINUS_DELTA_PLUS_O1
+V34_REQUIRED_DELTA = STRICTLY_GREATER_THAN_1_OVER_400
+V34_DIRECT_E_R_EXPONENT = X_POWER_1_MINUS_DELTA_PLUS_O1
+V34_DIRECT_ENDPOINT_MARGIN = DELTA_MINUS_1_OVER_400
+V34_LOCAL_CARRIER_ENDPOINT_MARGIN = 121_OVER_9600
+V34_COMBINED_B_MARGIN = MIN_DELTA_MINUS_1_OVER_400_AND_121_OVER_9600
+V34_BAZIN_ACTUAL_FRAME_Q = X_POWER_1_OVER_3
+V34_BAZIN_ACTUAL_FRAME_THETA = X_POWER_MINUS_21_OVER_32
+V34_BAZIN_ACTUAL_FRAME_XI_EXPONENT = 257_OVER_192
+V34_BAZIN_ACTUAL_FRAME_ADDITIVE_EXPONENT = 75_OVER_64
+V34_BAZIN_TO_DIRECT_COVARIANCE = STOP_SCOPED_ONE_MARGINAL_NO_PHYSICAL_PRODUCT
+V34_MRT_TO_DIRECT_COVARIANCE = STOP_SCOPED_LOGARITHMIC_SHIFT_ENERGY_WRONG_COEFFICIENT_AND_FRAME
+V34_EVANS_TO_DIRECT_COVARIANCE = STOP_SCOPED_FIXED_E2_ALMOST_ALL_SHIFTS_WRONG_COEFFICIENT
+V34_MRSTT_TO_DIRECT_COVARIANCE = STOP_SCOPED_DENSITY_ONE_NO_QUANTITATIVE_FRAME_POWER
+V34_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_08
+V34_NEXT_THEOREM = DELTA_GT_1_OVER_400_POWER_SAVING_FOR_COLLAPSED_SIEVE_REMAINDER_TIMES_PHYSICAL_HYBRID_IN_COMPENSATED_PRIME_FRAME
+V34_FIRST_FATAL = NO_POWER_SAVING_BEYOND_X_5_OVER_3_FOR_COLLAPSED_PHYSICAL_COMPENSATED_PRIME_FRAME
+V34_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
+V34_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
+~~~
+
+### 81.8 Artifact、checker 与 pending closure
+
+proof与 checker分别为
+research/tpc-big-road/bridge_b_paid_local_carrier_and_compensated_prime_frame.md 与
+research/tpc-big-road/tpc_bridge_b_paid_local_carrier_prime_frame_checker.py。checker
+冻结 32/43/5/4 contract/registry/source/dependency rows，registry digest为
+8a6caddc05238b6706034e7e2b6cf9fb5bf8d70ff714c85d0c897a4f5e36ce3c，并执行
+98/89/12/10/131共340项 fail-closed mutations。
+
+~~~text
+V34_FINAL_RELEASE_QA = PASS_WITH_SCOPED_EXTERNAL_TPC126_ONE_ULP_PLATFORM_DIAGNOSTIC
+V34_MATH_SOURCE_FORMULA_QA = PASS
+V34_CHECKER_ADVERSARIAL_QA = PASS
+V34_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V34_PRE_CLOSURE_HANDOFF_SHA256_RAW = fa162e11506ab577326373ed58c82a1218fa61bb7366157221363304dbc5ca81
+V34_PRE_CLOSURE_HANDOFF_SHA256_CANONICAL_LF = fa162e11506ab577326373ed58c82a1218fa61bb7366157221363304dbc5ca81
+V34_COMPASS_SHA256_RAW_CANONICAL_LF = 219f5c4b18a5a240763f171beb1931be6c579328f9346da7b79ec79b27337c46
+V34_README_SHA256_RAW_CANONICAL_LF = e7b2daf5e16a92748c82326bc51b4a0fe626a6f9181ebac3605ea4f517796f3c
+V34_PROOF_SHA256_RAW_CANONICAL_LF = e1816cdac10715bd982ef14960346f17968ac1ea96a3cdbf0b740d3f473ebca8
+V34_CHECKER_SHA256_RAW_CANONICAL_LF = d1ac9b35ac3c164cdf5931f5b01fa4021db233263c537c0602c73796632a151a
+V34_CHECKER_STDOUT_SHA256_RAW_CANONICAL_LF = 64914edcf89a28ed8117f4a1e1d9bd357831b60c26712c1b28bc47b3502db32e
+V34_CHECKER_STDOUT_PAYLOAD_SHA256 = 7f76d3a616ad2c89d343f55fb25339b05c357a288a3a0f1bbe81e4573dd823bb
+V34_CHECKER_CONTRACT_REGISTRY_SOURCE_DEPENDENCY = 32/43/5/4
+V34_CHECKER_MUTATIONS = 98/89/12/10/131
+V34_CHECKER_ADVERSARIAL_ACTIONS = 340/340_UNIQUE_REJECTED
+V34_CHECKER_REGISTRY_SHA256 = 8a6caddc05238b6706034e7e2b6cf9fb5bf8d70ff714c85d0c897a4f5e36ce3c
+STARTUP_REGRESSION = 22/22
+SUPPLEMENTAL_TPC111_TPC124_TPC126_TPC127_ATTEMPTED = 4/4
+SUPPLEMENTAL_TPC111_TPC124_TPC126_TPC127_BYTE_EXACT = 3/4
+TPC126_SEMANTIC_CERTIFICATE = PASS
+TPC126_BYTE_CHECK = FAIL_SCOPED_ONE_ULP_PLATFORM_SERIALIZATION_ONLY
+TPC126_EXPECTED_DIRECT_REAL = 40.17369814909115
+TPC126_LINUX_DIRECT_REAL = 40.17369814909116
+TPC126_FILES_CHANGED = NONE
+V23_TO_V34_DEPENDENCY_PROCESSES = 24/24
+V23_TO_V34_DEPENDENCY_STDOUT_IDENTITIES = 12/12
+BIG_ROAD_CHECKER_PROCESSES = 44/44
+BIG_ROAD_CHECKER_STDOUT_IDENTITIES = 22/22
+RELEASE_ALLOWLIST = EXACT_FIVE_PATHS
+CACHED_DIFF = EMPTY
+DIFF_CHECK = PASS
+PROTECTED_UNTRACKED_COUNT = 0
+PROTECTED_UNTRACKED_MANIFEST_SHA256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+PYC_COUNT = 0
+MARKDOWN_FENCES = HANDOFF_BACKTICK_2846_TILDE_214__COMPASS_BACKTICK_224_TILDE_70__README_BACKTICK_378_TILDE_68__PROOF_BACKTICK_8_TILDE_0
+EQUATION_TAGS = HANDOFF_119_OF_119_UNIQUE__PROOF_27_OF_27_UNIQUE
+BASELINE_HEAD_ORIGIN_REMOTE = b73cb6928d5ea3d3b58b87c0a1e5154d0d9c8f92
+FILES_CHANGED = EXACT_FIVE_RELEASE_PATHS
+GENERATED_OUTPUTS = NONE
+V34_ROUTE_ADVANCE = YES
+V34_ARITHMETIC_ADVANCE = NO
+V34_FIXED_ATOM_CREDIT = 0
+V34_STRICT_1_OVER_400 = UNPAID
+V34_L2 = NONE
+V34_TPC_207_TRIGGER = false
+V34_SEALED_FOR_NEW_SESSION = true
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+~~~
 
 ## 80. 2026-08-08 V33：MASTER marginal collapse 与 joint-residual firewall
 
