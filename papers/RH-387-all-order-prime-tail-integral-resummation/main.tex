@@ -1,0 +1,499 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\PhiP}{\Phi^{P}}
+\newcommand{\PhiJ}{\Phi^{J}}
+\newcommand{\PhiI}{\Phi^{I}}
+\newcommand{\GapP}{\operatorname{Gap}_{P}}
+\newcommand{\GapJ}{\operatorname{Gap}_{J}}
+\newcommand{\GapI}{\operatorname{Gap}_{I}}
+\newcommand{\Binfty}{B_{\infty}}
+
+\hypersetup{
+  pdftitle={All-Order Prime-Tail Integral Resummation},
+  pdfauthor={RH research program},
+  pdfsubject={Uniform integral replacement of an all-order prime-square Euler tail},
+  pdfkeywords={prime number theorem, prime-square tails, Tonelli theorem, Euler products, Lipschitz bound}
+}
+
+\title{All-Order Prime-Tail Integral Resummation}
+\author{RH research program}
+\date{August 8, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $3=p_1<p_2<\cdots$ be the odd primes, put $x=p_y$ and
+$L=\log x\ge512$, and let
+\[
+ V=L^{3/5}(\log L)^{-1/5},\qquad
+ \eps_x=0.027L^{1.801}e^{-0.1853V}.
+\]
+For $c=1,\ldots,7$ we resum the whole family of strict tails
+$P_r(y)=\sum_{p>x}(p^2-1)^{-r}$ into the coordinates
+$\PhiP_c=\sum_{r\ge1}c^rP_r/r$, and compare them with two integral
+coordinates $\PhiJ_c$ and $\PhiI_c$.  Summing the absolute Stieltjes
+error before taking relative logarithms gives
+\[
+ \max_c|\PhiP_c-\PhiJ_c|\le \frac{28\eps_x}{ xL},\qquad
+ 0\le\max_c(\PhiJ_c-\PhiI_c)\le \frac{14}{3x^3L}.
+\]
+The exact square-clock endpoint map is Lipschitz from $\ell^\infty$ to
+$\mathbb R$ with dual $\ell^1$ gradient bound $126$ on the required
+seven-dimensional cube.  Consequently, for precisely defined gaps
+$\GapP,\GapJ,\GapI$,
+\[
+ \pi^2|\GapP-\GapJ|\le \frac{3528\eps_x}{ xL},\qquad
+ \pi^2|\GapJ-\GapI|\le \frac{588}{ x^3L}.
+\]
+This is an infinite-order source--kernel exchange and endpoint Lipschitz
+theorem, not a termwise consequence of a finite-partition result.  Since
+$\eps_xx^2\to\infty$, it gives no second-order or $P_2$-scale precision.
+A 42-row exact artifact reproduces the algebraic interfaces but is not an
+analytic proof.
+\end{abstract}
+
+\noindent\textbf{Keywords:} explicit prime number theorem; strict prime
+tails; all-order logarithmic resummation; endpoint map; uniform Lipschitz
+bound.
+
+\section{Statement and scope}
+
+Let $\vartheta(t)=\sum_{p\le t}\log p$.  Johnston and Yang prove the
+explicit Vinogradov--Korobov estimate used below in their Theorem~1.4,
+equation~(1.8), printed page~2 \cite{JohnstonYang2023}.  In the present
+notation it yields
+\begin{equation}
+ |\vartheta(t)-t|\le t\eps_t,\qquad
+ \eps_t=0.027(\log t)^{1.801}
+ \exp\!\left[-0.1853(\log t)^{3/5}(\log\log t)^{-1/5}\right]
+ \label{eq:JY}
+\end{equation}
+for $t\ge23$.  Direct differentiation shows that $\eps_t$ decreases once
+$\log t\ge512$; this is also the source transfer frozen in RH-386
+\cite{RH386}.  Hence $|\vartheta(t)-t|\le t\eps_x$ for $t\ge x$.
+
+For every integer $r\ge1$ define
+\begin{equation}
+ P_r(y)=\sum_{p>x}(p^2-1)^{-r},\quad
+ h_r(t)=\frac{1}{(t^2-1)^r\log t},\quad
+ J_r=\int_x^\infty h_r(t)\,dt,\quad
+ I_{2r}=\int_x^\infty \frac{t^{-2r}}{\log t}\,dt.
+ \label{eq:tails}
+\end{equation}
+The endpoint $p>x$ is strict throughout.  For $1\le c\le7$ set
+\begin{align}
+ \PhiP_c&=\sum_{r\ge1}\frac{c^rP_r(y)}{ r},\label{eq:PhiP}\tag{P}\\
+ \PhiJ_c&=\int_x^\infty\frac{-\log(1-c/(t^2-1))}{\log t}\,dt,
+ \label{eq:PhiJ}\tag{J}\\
+ \PhiI_c&=\int_x^\infty\frac{-\log(1-c/t^2)}{\log t}\,dt.
+ \label{eq:PhiI}\tag{I}
+\end{align}
+We use the corresponding undecorated symbols for the seven-vectors:
+\begin{equation}
+ \PhiP=(\PhiP_1,\ldots,\PhiP_7),\qquad
+ \PhiJ=(\PhiJ_1,\ldots,\PhiJ_7),\qquad
+ \PhiI=(\PhiI_1,\ldots,\PhiI_7).
+ \label{eq:coordinate-vectors}
+\end{equation}
+
+The exact endpoint map $F$ and the three gaps are defined in
+Section~\ref{sec:endpoint}.  The main result is the following.
+
+\begin{theorem}[All-order integral resummation]
+\label{thm:main}
+For every $y$ with $x=p_y$ and $L=\log x\ge512$, all three coordinate
+vectors lie in $[0,1/2]^7$, and
+\begin{align}
+ \max_{1\le c\le7}|\PhiP_c-\PhiJ_c|
+ &\le \frac{28\eps_x}{ xL},\label{eq:coordinate-source}\\
+ 0\le\max_{1\le c\le7}(\PhiJ_c-\PhiI_c)
+ &\le \frac{14}{3x^3L}.\label{eq:coordinate-power}
+\end{align}
+Moreover
+\begin{align}
+ \pi^2|\GapP-\GapJ|&\le \frac{3528\eps_x}{ xL},
+ \label{eq:gap-source}\\
+ \pi^2|\GapJ-\GapI|&\le \frac{588}{ x^3L},
+ \label{eq:gap-power}\\
+ \pi^2|\GapP-\GapI|&\le \frac{3528\eps_x}{ xL}+\frac{588}{ x^3L}.
+ \label{eq:gap-combined}
+\end{align}
+All constants are uniform in the seven real integer channels
+$c\in\{1,\ldots,7\}$.
+\end{theorem}
+
+\section{Strict Stieltjes transfer before resummation}
+
+Write $E(t)=\vartheta(t)-t$.  Stieltjes integration at the strict endpoint
+gives
+\begin{align}
+ P_r&=\int_{(x,\infty)}h_r(t)\,d\vartheta(t)
+ =-\vartheta(x)h_r(x)-\int_x^\infty\vartheta(t)h_r'(t)\,dt,
+ \label{eq:stieltjes}\\
+ J_r&=-xh_r(x)-\int_x^\infty t h_r'(t)\,dt.\label{eq:Jparts}
+\end{align}
+Thus no prime at $x$ is included and
+\begin{equation}
+ P_r-J_r=-E(x)h_r(x)-\int_x^\infty E(t)h_r'(t)\,dt.
+ \label{eq:error-identity}
+\end{equation}
+Since $h_r$ decreases, \eqref{eq:JY} and \eqref{eq:Jparts} imply the
+absolute bound
+\begin{equation}
+ |P_r-J_r|\le\eps_x\{2xh_r(x)+J_r\}.
+ \label{eq:absolute-stieltjes}
+\end{equation}
+This is the crucial order of operations: we will sum
+\eqref{eq:absolute-stieltjes} over every $r$ directly.  The relative
+estimate $|\log(P_r/J_r)|\le14r\eps_x$ from RH-386 has an $r$-dependent
+smallness condition and cannot be summed over all orders.
+
+\begin{proposition}[All-order source coordinate]
+\label{prop:source}
+For $1\le c\le7$,
+\begin{equation}
+ |\PhiP_c-\PhiJ_c|
+ \le \frac{3c\eps_x}{ xL\{1-(1+c)/x^2\}}
+ <\frac{4c\eps_x}{ xL}.
+ \label{eq:per-c-source}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+All summands are nonnegative and $c/(p^2-1)\le7/24<1$.  Tonelli's
+theorem and $-\log(1-z)=\sum_{r\ge1}z^r/r$ give
+\begin{equation}
+ \PhiP_c=\sum_{p>x}-\log\!\left(1-\frac{c}{ p^2-1}\right),
+ \qquad
+ \PhiJ_c=\sum_{r\ge1}\frac{c^rJ_r}{ r},
+ \label{eq:tonelli}
+\end{equation}
+and the latter sum is precisely the integral in \eqref{eq:PhiJ}.  Now sum
+\eqref{eq:absolute-stieltjes} with weights $c^r/r$.  At the boundary,
+\[
+ \sum_{r\ge1}\frac{c^rh_r(x)}{ r}
+ =\frac{ -\log(1-c/(x^2-1))}{ L}
+ \le \frac{c}{ L(x^2-1-c)}.
+\]
+In the integral, $-\log(1-z)\le z/(1-z)$ and $t\ge x$ give
+\[
+ \PhiJ_c\le \frac{c}{ L\{1-(1+c)/x^2\}}
+ \int_x^\infty t^{-2}\,dt
+ =\frac{c}{ xL\{1-(1+c)/x^2\}}.
+\]
+The two boundary units and one integral unit total the first constant in
+\eqref{eq:per-c-source}.  Since $x>256$ and $c\le7$, the denominator is
+greater than $3/4$, proving the strict $4c$ bound.  Taking $c\le7$ yields
+\eqref{eq:coordinate-source}.
+\end{proof}
+
+\section{Power-kernel resummation}
+
+The same nonnegative Tonelli argument gives the second integral identity
+\begin{equation}
+ \PhiI_c=\sum_{r\ge1}\frac{c^rI_{2r}}{ r}.
+ \label{eq:I-tonelli}
+\end{equation}
+
+\begin{proposition}[Exact-to-power coordinate]
+\label{prop:power}
+For $1\le c\le7$,
+\begin{equation}
+ 0\le\PhiJ_c-\PhiI_c
+ \le \frac{c}{3x^3L\{1-(1+c)/x^2\}}
+ <\frac{2c}{3x^3L}.
+ \label{eq:per-c-power}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The difference of the two logarithmic integrands is nonnegative, and
+\begin{align*}
+ \log\frac{1-c/t^2}{1-c/(t^2-1)}
+ &=\log\!\left(1+\frac{c}{ t^2(t^2-1-c)}\right)\\
+ &\le \frac{c}{ t^2(t^2-1-c)}
+ \le \frac{ct^{-4}}{1-(1+c)/x^2}.
+\end{align*}
+Use $1/\log t\le1/L$ and $\int_x^\infty t^{-4}dt=1/(3x^3)$.
+Because $x>256$ the displayed denominator exceeds $1/2$.  Maximizing
+$2c/3$ over $c\le7$ proves \eqref{eq:coordinate-power}.
+\end{proof}
+
+\section{The real coordinate cube}
+\label{sec:cube}
+
+The analytic domain is deliberately much smaller than the source theorem's
+$x\ge23$.  Since $L\ge512$,
+\begin{equation}
+ x=e^L>2^L\ge2^{512}>256.
+ \label{eq:cube-bridge}
+\end{equation}
+For integral $x$ the telescoping identity
+\begin{equation}
+ \sum_{n>x}\frac{1}{ n^2-1}=\frac{1}{2}\left(\frac{1}{ x}+\frac{1}{ x+1}\right)
+ \label{eq:integer-tail}
+\end{equation}
+and $-\log(1-z)\le2z$ for $0\le z\le1/2$ show
+\[
+ 0\le\PhiP_c\le c\left(\frac{1}{ x}+\frac{1}{ x+1}\right)
+ <\frac{2c}{ x}<\frac{14}{256}<\frac{1}{2}.
+\]
+The direct integral bounds used above give the same conclusion for
+$\PhiJ_c$ and $\PhiI_c$ (also $0\le\PhiI_c\le\PhiJ_c$).  Therefore all
+three vectors and every line segment joining two of them belong to the
+convex cube $[0,1/2]^7$.
+
+\section{Exact endpoint map and its Lipschitz ledger}
+\label{sec:endpoint}
+
+For $2\le m\le8$ put
+\begin{equation}
+ u_m=\prod_{\substack{p\ \mathrm{odd}\\p\ \mathrm{prime}}}
+     \frac{1-m/p^2}{1-1/p^2}
+     =\prod_{\substack{p\ \mathrm{odd}\\p\ \mathrm{prime}}}
+     \left(1-\frac{m-1}{p^2-1}\right).
+ \label{eq:u}
+\end{equation}
+For fixed $m\le8$,
+\[
+ \sum_{p\ \mathrm{odd}}\frac{m-1}{p^2-1}<\infty.
+\]
+Thus the standard infinite-product criterion shows that \eqref{eq:u}
+converges to a positive value, not merely a product of positive finite
+factors.  All factors after $p=3$ are at most one, so retaining the
+$p=3$ factor gives
+\begin{equation}
+ 0<u_m\le \frac{9-m}{8}.
+ \label{eq:u-bound}
+\end{equation}
+Index the endpoint arrays by $m=2,\ldots,8$:
+\begin{equation}
+ (\alpha_m)=(-2,2,-2,2,-2,2,-2),\qquad
+ (\beta_m)=(1,-2,2,-2,2,-2,2),
+ \label{eq:arrays}
+\end{equation}
+and define
+\[
+ C(V)=1+\sum_{m=2}^8\alpha_mV_m,\qquad
+ W(V)=\sum_{m=2}^8\beta_mV_m.
+\]
+For $z=(z_1,\ldots,z_7)\in\mathbb R^7$, write
+$V_m(z)=u_me^{z_{m-1}}$ and set
+\begin{equation}
+ F(z)=2\{C(u)-C(V(z))\}
+      -4W(V(z))(1-e^{-z_1}).
+ \label{eq:F}
+\end{equation}
+
+The exact endpoint normal form of RH-383 \cite{RH383} applies to
+\eqref{eq:PhiP}.  With
+\begin{equation}
+ q_y=4\prod_{i\le y}p_i^2,\qquad
+ \GapP:=\Binfty-G(q_y)=\frac{F(\PhiP)}{\pi^2},\qquad
+ \GapJ:=\frac{F(\PhiJ)}{\pi^2},\qquad
+ \GapI:=\frac{F(\PhiI)}{\pi^2},
+ \label{eq:gaps}
+\end{equation}
+$\GapP$ is the actual square-clock gap, while $\GapJ$ and $\GapI$ are
+the two integral surrogates introduced here.  These are the only three
+gap objects used in the theorem.
+
+\begin{lemma}[Endpoint Lipschitz bound]
+\label{lem:lipschitz}
+For every $z\in[0,1/2]^7$,
+\begin{equation}
+ \|\nabla F(z)\|_1<126.
+ \label{eq:gradient}
+\end{equation}
+Consequently $|F(z)-F(z')|\le126\|z-z'\|_\infty$ for any two points of
+the cube.
+\end{lemma}
+
+\begin{proof}
+The bound \eqref{eq:u-bound} and the exact arrays give the two ledgers
+\begin{equation}
+ A:=\sum_{m=2}^8|\alpha_m|u_m\le7,\qquad
+ B:=\sum_{m=2}^8|\beta_m|u_m\le\frac{49}{8}.
+ \label{eq:AB}
+\end{equation}
+Differentiate \eqref{eq:F}.  The $C$ term, the derivative falling on
+$W$, and the derivative falling on $1-e^{-z_1}$ have respective
+coefficients
+\begin{equation}
+ 2,\qquad4,\qquad4.
+ \label{eq:derivative-terms}
+\end{equation}
+On the cube, $V_m(z)\le e^{1/2}u_m$, $0\le1-e^{-z_1}\le1$, and
+$e^{-z_1}\le1$.  Therefore the three contributions to the $\ell^1$
+gradient are bounded by $2e^{1/2}A$, $4e^{1/2}B$, and
+$4e^{1/2}B$.  Since $e^{1/2}<2$,
+\[
+ \|\nabla F(z)\|_1
+ \le e^{1/2}\left(2\cdot7+4\cdot\frac{49}{8}
+                         +4\cdot\frac{49}{8}\right)
+ =63e^{1/2}<126.
+\]
+The final assertion is the mean-value theorem along the segment from
+$z$ to $z'$, with the $\ell^\infty$ input norm paired with its dual
+$\ell^1$ gradient norm.
+\end{proof}
+
+\section{Proof of the main theorem}
+
+The coordinate assertions and the cube membership were proved in
+Propositions~\ref{prop:source} and \ref{prop:power} and
+Section~\ref{sec:cube}.  Apply Lemma~\ref{lem:lipschitz} on the segment
+from $\PhiP$ to $\PhiJ$.  Equations \eqref{eq:gaps} and
+\eqref{eq:coordinate-source} give
+\[
+ \pi^2|\GapP-\GapJ|
+ =|F(\PhiP)-F(\PhiJ)|
+ \le126\,\frac{28\eps_x}{ xL}
+ =\frac{3528\eps_x}{ xL}.
+\]
+The same argument between $\PhiJ$ and $\PhiI$ gives
+\[
+ \pi^2|\GapJ-\GapI|
+ \le126\,\frac{14}{3x^3L}=\frac{588}{ x^3L}.
+\]
+Their sum proves \eqref{eq:gap-combined} and completes the proof of
+Theorem~\ref{thm:main}.
+
+\section{Novelty and sharp scope}
+
+The preceding proof is not obtained by inserting every $r$ into the
+growing-order partition theorem of RH-386.  That theorem controls a
+finite partition through a relative logarithmic estimate whose source
+condition includes $7R\eps_x\le1/2$, where $R$ is the largest active
+order.  The vector \eqref{eq:PhiP} contains every $r\ge1$, so no finite
+$R$ exists.  Here the absolute strict Stieltjes error
+\eqref{eq:absolute-stieltjes} is summed first by Tonelli; only then is the
+result passed through the entire, partition-infinite endpoint map by the
+new uniform Lipschitz bound.  This simultaneous $r$-infinite and
+partition-infinite source--kernel exchange is the genuine new theorem.
+
+The available source error does not resolve the next power-kernel scale.
+Indeed
+\begin{equation}
+ \log(\eps_x x^2)
+ =2L+\log(0.027)+1.801\log L-0.1853V(L)\longrightarrow+\infty,
+ \label{eq:no-P2}
+\end{equation}
+because $V(L)=o(L)$.  Thus the source term $\eps_x/(xL)$ is asymptotically
+larger than the $r=2$ scale $1/(x^3L)$.  In particular,
+Theorem~\ref{thm:main} claims neither a second-order coefficient nor
+$P_2$-scale (and hence no cubic) precision.
+
+All channels in this paper are the seven real integers $1\le c\le7$.
+There is no complex-$c$ extension, no prefix/prime-index simultaneous
+limit exchange, and no clock varying with a prefix length.  The frozen
+phasewise class retains $c_{11}=0$; active $c_{11}$ is outside the source
+theory.  The result supplies no adaptive capacity and no operator, trace,
+or prime-power trace; it makes no zeta-zero identification and does not
+prove the Riemann hypothesis.  Gates A--E are all false.
+
+\section{Executable reproduction and source integrity}
+\label{sec:artifact}
+
+The companion exact artifact has epistemic role
+\texttt{reproduction\_not\_analytic\_proof}.  Its 42 oracle rows comprise
+12 analytic/source-interface rows, seven channel rows, seven endpoint
+rows, 14 finite formal-resummation rows, and two ledger rows.  They
+independently recompute the exact fractions, the cube bridge, the
+$2,4,4$ derivative ledger, $126$, $3528$, and $588$.  The 14 finite rows
+are degree-four truncations of the formal logarithm/product compiler, but
+they neither truncate nor prove the analytic theorem.
+
+Twenty-four genuine field-level mutations are rejected, including altered
+Vinogradov--Korobov constants, a reversed log--log exponent, the wrong
+domain or channel range, an inclusive prime endpoint, a missing series
+divisor or Stieltjes boundary, false $3c$ and $21$ source constants,
+interchanged $J/I$ kernels, wrong endpoint signs, deletion of the final
+loss derivative, the wrong norm pair, and an illicit claim of $P_2$
+precision.  Strict JSON parsing rejects duplicates, nonfinite values,
+wrong top-level types, and Boolean-for-integer aliases.  These tests check
+the algebraic declaration; Johnston--Yang's estimate, Stieltjes
+integration, Tonelli's theorem, and the mean-value argument remain the
+analytic proof above.
+
+The immutable evidentiary closure contains 68 Git blobs: 59 inherited
+RH-386 source rows, the eight standard RH-386 release files, and its
+external-lock blob.  One canonical remote Johnston--Yang lock makes 69
+logical sources.  The author-manuscript PDF and source tar are not
+vendored or archived.  Network verification is disabled by default and
+is available only as an explicit opt-in check of the versioned URLs,
+redirect policy, PDF MIME type, byte counts, page count, and SHA-256
+values.
+
+The immutable source identifiers are, in order, the RH-386 release
+commit, the ordered 68-Git-row digest, the 69-logical-source digest, and
+the canonical remote-lock digest:
+\begin{center}
+\small\ttfamily
+\begin{tabular}{@{}l@{}}
+9778e3515d45816665d672a641947b93906abf54\\
+19def5cbed919da8e9652012cf011f3b5728efd4b24a9eef0911bb7346467d27\\
+5016397fe59962954514b3b42d68e9de6dfeff0dae949791b01c6a516f5c61fe\\
+d53b93212b7c5b5b6b3f7e890099c48ce8e35f2bff9bdd49f9c330a9b5039786
+\end{tabular}
+\end{center}
+
+The arXiv nonexclusive-distribution permission is granted to arXiv; it is
+not a third-party republication license for this release.  The version of
+record is Copyright 2023 Elsevier Inc., all rights reserved, so the remote
+payload is recorded as nonredistributable.  The lock also records two
+out-of-scope source typos, one in a Section~5.2 reference to
+Corollary~1.2/equation~(1.5) and one in Theorem~1.4/equation~(1.9).
+Neither typo, Corollary~1.2, nor its table-based fallback is used in
+Theorem~\ref{thm:main}; its sole external analytic input is
+Theorem~1.4/equation~(1.8).
+
+\section*{Declarations}
+
+\paragraph{Data and code availability.}
+The proof, exact certificate compiler, strict tests, official closed
+Draft 2020--12 schema, source-lock records, offline-by-default verifier,
+and release replay tools accompany the paper.  The Johnston--Yang PDF and
+source tar are not redistributed; their exact remote identifiers are
+recorded in the external lock.
+
+\paragraph{Author contributions.}
+The author is responsible for the conceptualization, proof, software,
+validation, writing, and release audit.
+
+\paragraph{Funding.}
+No external funding was received.
+
+\paragraph{Competing interests.}
+The author declares no competing interests.
+
+\paragraph{Ethics.}
+No human participants, animals, personal data, or clinical interventions
+are involved.
+
+\paragraph{AI assistance.}
+AI-assisted tools were used for symbolic-interface enumeration,
+adversarial testing, manuscript drafting, and release auditing.  All
+mathematical claims, citations, source locks, and final text were reviewed
+under author responsibility.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
