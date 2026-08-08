@@ -1,16 +1,16 @@
 # RH Research Handoff
 
-Status date: 2026-08-08
+Status date: 2026-08-09
 
-Current completed endpoint: RH-388
+Current completed endpoint: RH-389
 
-Completed research batch: RH-352 through RH-388
+Completed research batch: RH-352 through RH-389
 
-Post-four-volume independent theorem edges: RH-362 through RH-388
+Post-four-volume independent theorem edges: RH-362 through RH-389
 
-Latest completed-paper verdict: RH-388 Routes A/B `GO`; Route C `STOP_SCOPED`
+Latest completed-paper verdict: RH-389 Route A `GO`; Route B `STOP_SCOPED`
 
-Post-RH-388 breadth audit: pending; no RH-389 assigned
+Post-RH-389 breadth audit: pending; no RH-390 assigned
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -83,6 +83,9 @@ RH-387 integration commit:
 
 RH-388 integration commit:
 `8e6f89ee1e58e67c53c5f4719c05e881107113ac`.
+
+RH-389 integration commit:
+`8b1a875b4bbefd955a419593951ce2d09987ac6f`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -208,6 +211,11 @@ Read completely:
 - `papers/RH-388-rank-one-p2-tail-resummation/THEOREM_LEDGER.md`
 - `papers/RH-388-rank-one-p2-tail-resummation/results/result.json`
 - `papers/RH-388-rank-one-p2-tail-resummation/main.pdf`
+- `papers/RH-389-active-c11-terminal-log-all-clock-capacity/README.md`
+- `papers/RH-389-active-c11-terminal-log-all-clock-capacity/UPDATED_ROADMAP.md`
+- `papers/RH-389-active-c11-terminal-log-all-clock-capacity/THEOREM_LEDGER.md`
+- `papers/RH-389-active-c11-terminal-log-all-clock-capacity/results/result.json`
+- `papers/RH-389-active-c11-terminal-log-all-clock-capacity/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -244,8 +252,9 @@ RH-385 as the fixed-polylogarithmic-clock phasewise-memory uniformization
 input, RH-386 as the Vinogradov--Korobov growing-order prime-tail
 uniformization input, RH-387 as the all-order prime-tail integral-resummation
 input, RH-388 as the rank-one `P_2`-scale resummation and bounded-gap
-necessity input, and RH-361 as the immediate endpoint of the still-open original
-physical branch.
+necessity input, RH-389 as the active-`c_11` fixed-clock terminal-log capacity
+input, and RH-361 as the immediate endpoint of the still-open original physical
+branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -254,6 +263,44 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/THEOREM_LEDGER.md`
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
+
+RH-389 is now integrated.  For every fixed integer `q>=1`, every fixed
+universally distance-two-safe `q`-periodic table family `f`, and every
+function `1<=omega(X)<=X` with `omega(X)->infinity`, define
+
+```text
+S_X^omega(q,f)
+ =(log omega(X))^(-1)
+   sum_(X/omega(X)<n<=X)
+   mu(n)f_(n mod q)(mu_0(n-2),mu(n))/n.
+```
+
+The terminal-logarithmic limit exists and is
+
+```text
+L_q(f)=sum_(r mod q)[c02(r)delta_(q,r)+c22(r)theta_(q,r)].
+```
+
+TPC-137 cancels the active periodic `c_11` channel at every individually
+fixed clock; Abel transfer pays the other oscillatory channels.  Pointwise
+projection reduces all `512` lag-two tables to eight actions.  Directed
+compatibility and an injective predecessor charge then prove
+
+```text
+G_log(q):=max_(f in A_q)abs(L_q(f))=6/pi^2-kappa_2/2
+```
+
+for every fixed `q`.  The constant action `{-1,0}` (table `36`) attains the
+positive value at every fixed clock, and input reflection (table `72`)
+attains the negative value.  Only after the fixed-clock limits are formed,
+the supremum over all fixed finite clocks has the same value.  RH-378 had
+already recorded the same constant and `q=1` witness conditionally on
+ordinary shift-two Cesaro cancellation; RH-389's new edge is unconditional
+terminal-log control with active periodic `c_11` plus the every-fixed-clock
+capacity charge.  It proves no ordinary Cesaro result, growing or
+`X`-dependent clock, unbounded-clock max-before-limit, adaptive capacity,
+operator, trace, zero model, RH statement, or Gate A--E conclusion.  Route A
+is `GO`; Route B is `STOP_SCOPED`.
 
 RH-388 is now integrated.  It separates the exact rank-one prime tail from
 the smooth higher-rank hierarchy and resolves the intrinsic `P_2` scale.  For
@@ -403,11 +450,14 @@ capacity limit, or a projectively compatible infinite selector.  RH-385 is
 `Route A=GO`; Route B remains `STOP_SCOPED`, and all Gates remain false/open.
 The post-RH-385 source gate was later paid by the versioned Johnston--Yang
 lock, and the resulting growing-order theorem is now published as RH-386.
-Fixed-period logarithmic cancellation still does not activate `c_11`, and
-the available Davenport theorem still does not prescribe a
-super-polylogarithmic clock.  The subsequent breadth audits assigned and
-published RH-387 and then RH-388 as the distinct all-order and rank-one
-`P_2` theorems above.  No post-RH-388 breadth audit has yet assigned RH-389.
+At the post-RH-385 checkpoint, fixed-period logarithmic cancellation had not
+yet been compiled into the active-`c_11` capacity class, and the available
+Davenport theorem still did not prescribe a super-polylogarithmic clock.
+The subsequent breadth audits published RH-387 and RH-388 as the all-order
+and rank-one `P_2` theorems, then RH-389 closed the active-`c_11`
+terminal-log fixed-clock route.  RH-389 does not change the ordinary-Cesaro
+or growing-clock barriers.  No post-RH-389 breadth audit has yet assigned
+RH-390.
 The geometrically selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
@@ -2374,7 +2424,85 @@ convergence, a larger `K` window, `P_3` or cubic precision, complex channels,
 growing clocks, active `c_11`, adaptive capacity, operators, traces, zeros,
 RH, or Gates A--E.  Routes A and B are `GO`; Route C is `STOP_SCOPED`.
 
-## 4. Compact conclusions from RH-352 through RH-388
+### 3.28 RH-389 active-`c_11` terminal-log all-clock capacity
+
+Fix an integer `q>=1`, a universally distance-two-safe `q`-periodic family
+`f in A_q`, and a function `1<=omega(X)<=X` with
+`omega(X)->infinity`.  With `mu_0(m)=0` for `m<=0`, define
+
+```text
+S_X^omega(q,f)
+ =(log omega(X))^(-1)
+   sum_(X/omega(X)<n<=X)
+   mu(n)f_(n mod q)(mu_0(n-2),mu(n))/n.
+```
+
+The family may have arbitrary active periodic `c_11(r)`.  The terminal Abel
+lemma handles both `X/omega(X)->infinity` and bounded or oscillating lower
+endpoints.  RH-379 supplies the three independent zero-prefix channels and
+the two squarefree-density channels.  TPC-137 applies to
+`(d,s,u,a)=(-2,1,0,1)`: the three primitive gcd conditions hold,
+`su-ad=2`, and deleting the finitely many terms `n<=2` pays positivity.
+Consequently, for every fixed `q`, `f`, and admissible `omega`,
+
+```text
+lim_(X->infinity)S_X^omega(q,f)=L_q(f),
+L_q(f)=sum_(r mod q)[c02(r)delta_(q,r)+c22(r)theta_(q,r)].
+```
+
+For a truth table with plus-edge set `E`, the positive-current projection
+`E^+=E intersect (T x {+1})` preserves safety and increases the finite
+pointwise score `z f(x,z)`.  It maps the `512` tables onto exactly eight
+actions `A subset {-1,0,+1}`, with `64` preimages each.  Their limiting
+weights are
+
+```text
+empty: 0,                 {-1}: theta/2,
+{0}: delta-theta,         {-1,0}: delta-theta/2,
+{+1}: theta/2,            {-1,+1}: theta,
+{0,+1}: delta-theta/2,    {-1,0,+1}: delta.
+```
+
+The directed compatibility rule for phases `r` and `r+2` is exact:
+the left action is empty or the right action excludes `+1`.  Take the
+baseline `B_0={-1,0}` with `H_r=delta_r-theta_r/2`.  If
+`P={r:+1 in A_r}`, then every `r in P` forces `A_(r-2)=empty`, and
+translation by `-2` is injective.  The exact charge is
+
+```text
+H_(r-2)-theta_r/2
+ =[(delta_(r-2)-theta_(r-2))
+   +(delta_(r-2)-theta_r)]/2>=0.
+```
+
+For `q=1,2`, the translation is the identity and compatibility forces
+`P=empty`, so no small-clock exception occurs.  Summing the injective
+charges and the density totals proves
+
+```text
+G_log(q):=max_(f in A_q)abs(L_q(f))
+ =6/pi^2-kappa_2/2
+```
+
+for every individually fixed `q`.  The constant table `36` attains the
+positive value for every `q`; input reflection preserves safety and has
+coefficient parity `(+,-,-,+,+,-)`, so table `72` attains the negative
+value.  Therefore
+
+```text
+sup_(q fixed finite)G_log(q)=6/pi^2-kappa_2/2,
+```
+
+where the supremum is taken only after the fixed-clock limits exist.  Since
+`A_q` is finite, the maximum over tables may commute with the limits at one
+fixed `q`; this does not license an unbounded-`q` interchange.  RH-378 had
+already identified the constant and `q=1` witness conditionally on ordinary
+shift-two Cesaro cancellation.  RH-389 proves no ordinary Cesaro active
+channel, quantitative rate, growing or `X`-dependent clock, adaptive
+max-before-limit, nonperiodic mask, operator, trace, zero model, RH result,
+or Gate A--E conclusion.  Route A is `GO`; Route B is `STOP_SCOPED`.
+
+## 4. Compact conclusions from RH-352 through RH-389
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -2570,6 +2698,13 @@ RH, or Gates A--E.  Routes A and B are `GO`; Route C is `STOP_SCOPED`.
   `X_infinity` endpoint limsup obstruction for the fully smooth `P/J/I`
   hierarchy.  No universal surrogate obstruction, factorial convergence,
   `P_3` precision, class enlargement, or Gate object follows.
+- **RH-389:** Unconditional terminal-log convergence for every fixed
+  universally safe periodic lag-two family with active `c_11`, plus an exact
+  `512 -> 8` projection and predecessor charge proving
+  `G_log(q)=6/pi^2-kappa_2/2` for every individually fixed clock.  The same
+  constant and `q=1` witness were already known conditionally from RH-378.
+  No ordinary Cesaro theorem, growing-clock uniformity, unbounded-clock
+  max-before-limit, adaptive capacity, or Gate object follows.
 
 ## 5. Route firewall and reopening triggers
 
@@ -2710,10 +2845,11 @@ Do not:
 - call `sup_(q finite)G(q)=B_infinity` a finite-clock maximum, a growing-clock
   `q(N)` theorem, an adaptive-capacity limit, or a uniform-in-clock
   Davenport estimate;
-- cancel nonzero active `c_11(r)` terms without a phase-weighted ordinary
-  shift-two theorem, or identify an RH-379 table with an intrinsic operator,
-  determinant, prime-power trace, zero model, Hilbert--Polya construction,
-  or Gate result;
+- cancel nonzero active `c_11(r)` terms in an ordinary Cesaro or RH-379
+  prefix limit without a phase-weighted ordinary shift-two theorem, or use
+  RH-389's terminal-log result in that norm; do not identify an RH-379 table
+  with an intrinsic operator, determinant, prime-power trace, zero model,
+  Hilbert--Polya construction, or Gate result;
 - promote strict monotonicity of the RH-380 values `G(q_y)` to monotonicity
   of `Delta_y=G(q_y)-B_y`;
 - extend the RH-380 identity `G(Q)=G(q_y)` to a general multiple or cyclic
@@ -2778,6 +2914,14 @@ Do not:
   growing-partition theorem, growing-clock theorem, active phasewise-`c_11`
   cancellation, adaptive-capacity limit, intrinsic operator, determinant,
   trace, zero model, Hilbert--Polya construction, or Gate result;
+- replace RH-389's terminal logarithmic average by an ordinary Cesaro
+  average, or promote fixed-period TPC-137 cancellation to a quantitative
+  rate, a nonperiodic mask, or uniformity over `q=q(X)`;
+- exchange the RH-389 post-limit supremum over fixed clocks with an
+  unbounded-clock maximum before `X->infinity`, or identify it with the
+  adaptive capacity `K_N/N`;
+- use RH-389's `602` finite rows as the analytic proof of Abel transfer,
+  determinant-two cancellation, the density cone, or the all-`q` charge;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -2793,7 +2937,7 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-388. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-389. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
 declared periodic/typical/distance-two capacity audit, RH-373 closes the
 declared fixed composite-clock phase-selector floor route, and RH-374 closes
@@ -2853,12 +2997,17 @@ rank-one-retained `P_2`-scale factorial resummation and the bounded-gap
 necessity theorem only inside the frozen `P/J/I` hierarchy.  It does not
 prove factorial-series convergence, a larger `K` window, a universal
 surrogate obstruction, `P_3` precision, a complex channel, growing clock,
-active phasewise cancellation, adaptive capacity, or any Gate.  For RH-389
-and later, the shortest exact candidates are:
+active phasewise cancellation, adaptive capacity, or any Gate.  RH-389 closes
+the active periodic `c_11` terminal-log fixed-clock limit and exact flat
+capacity over all already-formed fixed-clock limits.  It does not prove
+ordinary Cesaro cancellation, a quantitative rate, growing-clock uniformity,
+an unbounded-clock max-before-limit, adaptive capacity, or any Gate.  For
+RH-390 and later, the shortest exact candidates are:
 
-1. A genuine phase-weighted shift-two or higher-order Möbius correlation
-   theorem controlling active `c_11(r)` terms, the
-   RH-377 envelope or a larger memory-dependent transducer class.
+1. A genuine ordinary-Cesaro or growing-clock phase-weighted shift-two
+   theorem, or a higher-order correlation theorem controlling the RH-377
+   envelope or a larger memory-dependent transducer class.  RH-389's
+   fixed-clock terminal logarithmic theorem is not such an input.
 2. A nonadaptive geometrically selected measure theorem.  The 2026-08-07
    source lock is `STOP_SCOPED`: RH-369's non-Parry `P_t` is externally
    selected, while the weighted-Hénon and cyclic-Ulam sources do not prove a
@@ -4116,11 +4265,11 @@ TPC-16 release  eaa2b3546eb1cb5e8b3ef5d847aca24fae6faf66
 TPC-7 release   f3dd7e649461671fa63c83174c4a4bdb365f078c
 ```
 
-The active-`c_11` route also remains `STOP_SCOPED`.  TPC-137 proves a fixed
-bounded periodic coefficient theorem only in terminal logarithmic average;
-it supplies neither ordinary Cesaro convergence nor growing-period
-uniformity.  Moreover universal safety does not bound the period of the
-`c_11` profile.  The edge tables
+At that checkpoint, the active-`c_11` route also remained `STOP_SCOPED` for
+ordinary Cesaro or growing-period uniformization.  TPC-137 proved a fixed
+bounded periodic coefficient theorem only in terminal logarithmic average.
+Moreover universal safety does not bound the period of the `c_11` profile.
+The edge tables
 
 ```text
 A={(-1,+1)}, B={(-1,-1)}, C={(+1,+1)}
@@ -4131,7 +4280,9 @@ have `c_11=(-1/2,-1/2,+1/2)` and compatible transitions
 of `A` followed by `B,C` on the `+2` phase cycle gives a universally safe
 profile of minimal period `q`.  Already at `q=1`, RH-378's six active tables
 meet the ordinary shift-two Cesaro Chowla term.  TPC-137 release
-`0a67723ee2d0dd3171ee294816b8902b6e65285d` does not remove either blocker.
+`0a67723ee2d0dd3171ee294816b8902b6e65285d` did not remove either blocker.
+RH-389 later selected the narrower terminal-log norm and added the exact
+eight-action charge; the ordinary and growing-period blockers remain.
 
 No prescribed super-polylogarithmic clock window is source-backed.  RH-366
 gives every fixed logarithmic saving separately, while the worst periodic
@@ -4296,6 +4447,70 @@ zero blocker and zero minor.  Routes A and B are `GO`; Route C is
 surrogate necessity, `P_3` precision, complex channels, active `c_11`,
 growing clocks, adaptive capacity, operators, traces, zeros, RH, and Gates
 A--E remain outside scope.
+
+### 6.28 RH-389 active-`c_11` terminal-log proof and release (2026-08-09)
+
+The post-RH-388 breadth audit compared higher-rank tail uniformization,
+active-memory logarithmic capacity, complex-channel extensions, and stronger
+clock routes.  The selected theorem is the independent active-`c_11`
+terminal-log fixed-clock edge.  TPC-137 supplies full-Mobius cancellation for
+the primitive determinant-two pair `n-2,n`; RH-379 supplies the independent
+prefix and density channels.  The exact terminal Abel lemma covers every
+admissible `omega`, including bounded or oscillating `X/omega(X)`.
+
+The new finite-combinatorial proof is pointwise before any limit.  Positive-
+current projection maps all `512` tables to eight actions with `64` preimages
+each and preserves universal safety.  Edge triples give the directed
+compatibility law.  Every action containing `+1` forces an empty predecessor;
+the injective translation `r->r-2` and the two density inclusions pay its
+entire gain against the baseline `{-1,0}`.  The self-loop clocks `q=1,2` are
+included without exception.  Input reflection has coefficient parity
+`(+,-,-,+,+,-)` and converts the signed optimum to the absolute one.
+
+The executable certificate has
+
+```text
+602=512+8+64+8+6+4
+```
+
+rows, is `208648` canonical bytes, and has SHA-256
+`b31187db4ea284152b0c1cb895439e29cfa80a4e564c87814ee182f87be0a020`.
+It rejects `24/24` semantic mutations by independent field validation.  The
+finite rows reproduce the algebra and do not replace the analytic proof.
+
+The immutable source closure contains `95` Git blobs grouped `77/8/2/8`.
+Its ordered digest is
+`b7ff5b520d5e926f19346a1ac6e49fbccf07c5fe24de60758179e9959e673353`.
+The ordered Johnston--Yang, Maynard, and Tao canonical remote digests are
+
+```text
+d53b93212b7c5b5b6b3f7e890099c48ce8e35f2bff9bdd49f9c330a9b5039786
+bd4aad4b7042218e5733bb07db2a513770710628a8ac52d5bcc9881fcb0b5d2e
+d2ca5eb4c860090981411a587a58da191df0afba8d65158bc0a44a6db4009e84
+```
+
+and the resulting `98`-input logical digest is
+`99a9e6d4372a081b028c28acba7de539850b4092b64063d9553ca261809e3e74`.
+TPC-137 is the direct full-Mobius theorem input; Tao is its upstream
+Liouville provenance.  Johnston--Yang and Maynard are inherited closure-only
+objects.  Tao's Cambridge VOR is CC BY 4.0, but the publication policy still
+sets `pdf_vendored=false`; Johnston--Yang and Maynard retain their conservative
+nonredistribution boundaries.  All three verifiers are offline by default,
+and none of the five external payloads is vendored.
+
+The final official suite is `61/61`.  The archive contains `37` publication
+members, `95` Git inputs, three remote logical locks, and zero failures.
+Manifest and report bring the integration set to exactly `39` RH-389 files in
+commit `8b1a875b4bbefd955a419593951ce2d09987ac6f`.  The main and semantic PDFs
+are byte-identical, `410071` bytes, and eight A4 pages; all `25` font rows are
+embedded, subsetted, and Unicode-mapped.  Ghostscript, text extraction,
+LaTeX/BibTeX scans, and all `8/8` rendered pages pass.  Two independent final
+audits returned zero blocker and zero minor.
+
+Route A is `GO`; Route B is `STOP_SCOPED`.  RH-389 proves no ordinary Cesaro
+active-`c_11` theorem, quantitative rate, growing or adaptive clock, unbounded
+maximum-before-limit, nonperiodic mask, operator, trace, zero model, RH
+statement, or Gate A--E conclusion.
 
 ## 7. Reproduction and publication audit
 
@@ -5775,12 +5990,97 @@ remote-source audit
 a713384ac17bb2a86a59acd9949700276d4355702b8e49cc805397c6704e803f
 ```
 
+Final RH-389 audit:
+
+- Tests: `61/61`; exact normal and optimized result/schema/manifest/report
+  regeneration, independent field validation, strict JSON and exact types,
+  official Draft 2020-12 schema, three remote-source failure modes, source
+  identity, and archive mutations all pass or fail closed as declared.
+- The canonical certificate is `208648` bytes with SHA-256
+  `b31187db4ea284152b0c1cb895439e29cfa80a4e564c87814ee182f87be0a020`.
+  It contains `602=512+8+64+8+6+4` rows and rejects `24/24` genuine
+  semantic mutations; its epistemic role is finite reproduction, not proof.
+- Source closure: `95` immutable Git blobs grouped `77/8/2/8`, plus the
+  ordered Johnston--Yang, Maynard, and Tao remote logical locks.  The logical
+  input count is `98`; all three default verifiers make zero requests.  All
+  five external payload hashes are absent from the release members and tree.
+- Individual archive: `37` publication members, `95` Git inputs, three
+  remote logical locks, and zero failures.  Integration commit
+  `8b1a875b4bbefd955a419593951ce2d09987ac6f` contains exactly `39`
+  RH-389 files: the `37` members plus manifest and verification report.
+- PDF: `8` A4 pages and `410071` bytes, with all `25` font rows embedded,
+  subsetted, and Unicode-mapped.  Ghostscript, text extraction, complete
+  LaTeX/BibTeX scans, semantic-PDF byte identity, and all `8/8` rendered
+  pages pass.
+- Two independent final audits report zero blocker and zero minor.  The
+  ordinary-Cesaro, quantitative-rate, growing-clock, unbounded max-before-
+  limit, adaptive-capacity, operator, trace, zero, RH, and Gate firewalls
+  remain intact.
+
+RH-389 final hashes:
+
+```text
+main.tex
+6ab94513dfa12067e397b991485e67b76af3ea96ad6eb766fced35a8c7f1edc8
+
+references.bib
+8fe32f3e0bd5c69a29d6af400fdb7209da30c932c4c2c28a0a4a17607302e8fd
+
+PDF
+87466ccb24166e7f1a71e1c0cead1f776e6ad9a733667858442fb22485dd3d24
+
+main.log
+fc0d9b88046e0d32fcebeb76e7cb3ba6a12cf25a5251e8c51bddd9bb14021da5
+
+result
+3c551568aab4e0965b2b0236d9f684e1f953dc36ecbc575e6e007c5f15bfd310
+
+schema
+763d25bae19d35b36578619bd50aa79cc8121a73c543f8b051e54200e16445ec
+
+manifest
+83176bf92936c7745dd1f7efa5cb14f4a82773e19a86f22de889a8a8f4fe9508
+
+verification
+951bc5152d290acc4d4cb7b210ef7f2db36557cd22682c1f46d95febacf0fb5e
+
+core
+9d25ea10bf8961b42b1efc7f2bbf573dd575bf76e6295e5e26c643b5a59a3089
+
+Johnston--Yang external source lock
+d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058
+
+Maynard external source lock
+9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba
+
+Tao external source lock
+825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f
+
+integrity audit
+1a1f7dc9dcf61ee94f47a0e251de25c832e865e9803751ef322e04ea3c9791d9
+
+review audit
+e417b717bea6f5595966b29a292eac66f454601286fefdf2b4e2d876d15fb166
+
+format audit
+bb6ec27445948be8c37aee69263bbb06cc022d3dfcded10fa68ea0d5790a78b0
+
+replay audit
+487c3d651ba3a3a9830add98a49ac0134607f07c5b444f4ee93744fa95f54e9b
+
+visual audit
+c5fe53637a231a8a731d98bef99e166ed71a380007d694945e17379860141bba
+
+remote-source audit
+f108766c17205fd7bcc936b88e1bfc0ebbf9a7b32cb1ac613d3c53d4d99325dd
+```
+
 ## 8. Continuation prompt
 
 ````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-388 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-389 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -5802,8 +6102,8 @@ RH-385 as the fixed-polylogarithmic-clock phasewise-memory uniformization
 input, RH-386 as the Vinogradov--Korobov growing-order prime-tail
 uniformization input, RH-387 as the all-order prime-tail integral-resummation
 input, RH-388 as the rank-one `P_2`-scale resummation and bounded-gap
-necessity input, RH-MVP2 as the corpus umbrella, and RH-361 as the physical
-endpoint.
+necessity input, RH-389 as the active-`c_11` fixed-clock terminal-log capacity
+input, RH-MVP2 as the corpus umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -5813,8 +6113,34 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-388 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  Put `x=p_y`, `L=log x>=512`, `c in {1,...,7}`, and for
+RH-389 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  For every fixed integer `q>=1`, fixed universally
+distance-two-safe `q`-periodic family `f`, and every function
+`1<=omega(X)<=X` with `omega(X)->infinity`, retain
+
+```text
+S_X^omega(q,f)
+ =(log omega(X))^(-1)
+   sum_(X/omega(X)<n<=X)
+   mu(n)f_(n mod q)(mu_0(n-2),mu(n))/n,
+lim_(X->infinity)S_X^omega(q,f)
+ =L_q(f)=sum_(r mod q)[c02(r)delta_(q,r)+c22(r)theta_(q,r)],
+G_log(q)=max_(f in A_q)abs(L_q(f))=6/pi^2-kappa_2/2.
+```
+
+The Abel proof must keep both lower-endpoint cases.  The active channel uses
+TPC-137 only after checking `(d,s,u,a)=(-2,1,0,1)`, all primitive gcd
+conditions, determinant `2`, eventual positivity, and finite padding.  The
+all-clock statement is a supremum over fixed-clock limits formed first; it is
+not `lim_X sup_q`.  The exact finite reduction is `512 -> 8`, compatibility
+is directed, every plus phase charges to its distinct empty predecessor, and
+input reflection has parity `(+,-,-,+,+,-)`.  Do not infer ordinary Cesaro
+active-`c_11` cancellation, a rate, growing or `X`-dependent clocks,
+unbounded max-before-limit, adaptive capacity, a nonperiodic mask, operator,
+trace, zero, RH, or Gate conclusions.
+
+RH-388 remains the preceding rank-one theorem edge.  Put `x=p_y`,
+`L=log x>=512`, `c in {1,...,7}`, and for
 every integer `1<=K<=floor(3L)` define
 
 ```text
@@ -6095,14 +6421,19 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-RH-388 is complete; do not rewrite it as the next candidate.  Its exact
+RH-389 is complete; do not rewrite it as the next candidate.  Its active
+fixed-period terminal-log limit, `512 -> 8` projection, every-fixed-clock
+charge, three remote logical locks, release archive, and two independent
+final audits are closed.  No post-RH-389 breadth audit has yet assigned
+RH-390.  Run that audit before creating another number, and require a
+genuinely new source-backed theorem rather than repackaging the RH-389
+fixed-clock logarithmic limit or its finite charge.
+
+RH-388 remains complete as the preceding rank-one theorem.  Its exact
 rank-one retention, higher-rank factorial resummation, full moving-`K`
-window, bounded-gap necessity theorem, two remote source locks, release
-archive, and two independent final audits are closed.  No post-RH-388
-breadth audit has yet assigned RH-389.  Run that audit before creating
-another number, and require a genuinely new source-backed theorem rather
-than a repackaging of the RH-388 `P_2` ledger or its hierarchy-only
-obstruction.
+window, bounded-gap necessity theorem, and release archive are closed; do
+not erase its exact-rank separation or promote its hierarchy-only
+obstruction beyond the frozen `P/J/I` class.
 
 RH-387 remains complete as the preceding all-order absolute-resummation
 theorem.  Its strict source/power kernels and `126/3528/588` endpoint
@@ -6114,15 +6445,16 @@ remote source gate, finite-partition family quantifiers, sharp `H/L`
 criterion, and release archive are closed; do not conflate those finite
 relative-logarithm statements with RH-387's all-order absolute resummation.
 
-TPC-137 does not reopen active `c_11`: it proves fixed-periodic terminal
-logarithmic cancellation, not ordinary Cesaro or growing-period uniformity.
-Safe active profiles can have every odd minimal period, and the `q=1`
-ordinary shift-two Chowla blocker remains.  RH-366 likewise gives each fixed
-logarithmic saving separately, so no prescribed super-polylogarithmic or
-polynomial clock window is licensed.  A non-effective diagonal with a
-stepwise exponent tending to infinity is a direct RH-385 corollary, not a new
-edge.  Preserve the immutable four-volume foundation and Gates A--E while
-these active-`c_11` and clock routes remain stopped.
+TPC-137 now reopens active `c_11` only in RH-389's fixed-period terminal
+logarithmic norm.  It proves neither ordinary Cesaro cancellation nor
+growing-period uniformity.  Safe active profiles can have every odd minimal
+period, and the `q=1` ordinary shift-two Chowla blocker remains.  RH-366
+likewise gives each fixed logarithmic saving separately, so no prescribed
+super-polylogarithmic or polynomial clock window is licensed.  A
+non-effective diagonal with a stepwise exponent tending to infinity is a
+direct RH-385 corollary, not a new edge.  Preserve the immutable four-volume
+foundation and Gates A--E while these ordinary-`c_11` and growing-clock
+routes remain stopped.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
 factor, or full H_p zeta. Do not promote the entropy tower, weighted Euler
