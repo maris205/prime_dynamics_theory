@@ -1,7 +1,79 @@
 # TPC HANDOFF
 
 更新时间：2026-08-09
-交接状态：`BOLD_CHANNEL_V38_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V39_SEALED_FOR_NEW_SESSION`
+
+第 86 节仍位于“解析消去岛 / Bridge A / Gate B”，但 V39 对 V38 的 K lane
+作了真正的 macro reroute，而不是再加一个 local cell。V38 canonical emitter 与 scalar
+
+~~~text
+C_x=sum_(q prime) q sum_(r in F_q^*) d_q(r)          (V39.1)
+~~~
+
+保持逐字不变。对 V38 block nuclear budget 作 product-ball duality，精确得到全部
+block contractions诱导的 physical curve-test supremum；full matrix singular values又给
+
+~~~text
+A_q(d_q) >= lambda_q^(-1)
+  (q||d_q||_1-|sum_r d_q(r)|).                       (V39.2)
+~~~
+
+所以 scalar cancellation 可以已经发生，而 nuclear atomic budget仍保持很大。q=5
+alternating packet 的 scalar精确为零，lower budget却为 `500/21`。V39 随后审核所有
+generic Schatten endpoints：BP正式 operator theorem给
+
+~~~text
+|C_x| << Q^(71/32-7/(16p)+o(1)) E_pack^(1/2),
+E_pack=sum_(q,r)|d_q(r)|^2,                          (V39.3)
+~~~
+
+相应 admissible energy ceiling 为 `2219/1200+7/(24p)`，严格在 `p=2` 最大。
+即使反事实白送每个 ordered block 一个 `S4<=q^(31/32)` theorem，`p=4` ceiling
+也只有 `773/400`，仍劣于 `p=2` 的 `399/200`。因此 primary B bridge 改为
+
+~~~text
+H_P2(kappa): E_pack << x^(2-kappa+o(1)),
+kappa>1/200.                                         (V39.4)
+~~~
+
+direct Cauchy精确给
+
+~~~text
+|C_x| << Q^2 E_pack^(1/2)
+      << x^(5/3-kappa/2+o(1)),
+margin=kappa/2-1/400.                                (V39.5)
+~~~
+
+benchmark `kappa=1/100` 给 output `997/600` 与 margin `1/400`。V38 direct
+Schatten aggregate不被删除，而是降为必须使用特殊 physical cross-block compression的
+第二车道；E/X、terminal A、dynamics C依次保留。BP、Kerr--Shparlinski--Wu--Xi、
+Kowalski--Michel--Sawin与 Harper均没有 literal `q`-dependent centered packet
+energy theorem。
+
+~~~text
+V39_ROUTE_ADVANCE = YES
+V39_CONDITIONAL_BRIDGE_ADVANCE = YES
+V39_BLOCK_PROJECTIVE_DUALITY = PROVED_EXACT_PRODUCT_OF_BLOCK_OPERATOR_BALLS
+V39_ATOMIC_ABSOLUTE_MASS_LOWER_BARRIER = PROVED_LAMBDA_INVERSE_TIMES_Q_D_L1_MINUS_ABS_SUM_D
+V39_GENERIC_SCHATTEN_OPTIMUM = PROVED_P_EQUALS_2_EVEN_AFTER_OPTIMISTIC_S4_GRANT
+V39_PACKET_ENERGY_GATE = OPEN_CONJECTURE_X_POWER_2_MINUS_KAPPA
+V39_PACKET_ENERGY_KAPPA_THRESHOLD = KAPPA_STRICTLY_GREATER_THAN_1_OVER_200
+V39_ARITHMETIC_ADVANCE = NO
+V39_FIXED_ATOM_CREDIT = 0
+V39_STRICT_1_OVER_400 = UNPAID
+V39_L2 = NONE
+TPC_207_TRIGGER = false                              (V39.6)
+~~~
+
+完整 51-row canonical registry 位于 Handoff 第 24、86 节、Compass 第 40 节、
+big-road README 第 39 节、V39 proof 第 10 节与 checker。proof 为
+`research/tpc-big-road/bridge_b_schatten_duality_and_packet_energy_pivot.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_schatten_packet_energy_checker.py`。文字路线图
+同步标出“packet-energy pier selected、Schatten toll exposed”。V39 仍是不编号
+big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
+
+以下 V38 页首块作为已封存直接上游保留；current truth 由上面的 V39 摘要、
+第 24 节与第 86 节控制。
 
 第 85 节仍位于“解析消去岛 / Bridge A / Gate B / K lane”，并完成了 V37
 最重要的 open construction：exactly-once BP-admissible emitter 不再是假设。令
@@ -78,8 +150,8 @@ big-road README 第 38 节、V38 proof 第 10 节与 checker。proof 为
 同步标出“canonical emitter 已建、atomic Schatten pier 未证”。V38 仍是不编号
 big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
 
-以下 V37 页首块作为已封存直接上游保留；current truth 由上面的 V38 摘要、
-第 24 节与第 85 节控制。
+以下 V37 页首块作为已封存历史上游保留；V38 snapshot truth 由上面的 V38 摘要与
+第 85 节控制，current V39 truth 由页首第一块、第 24 节与第 86 节控制。
 
 第 84 节仍位于“解析消去岛 / Bridge A / Gate B”，但已把 V36 Route K 的
 `Q^(-31/32)` hard pier从一个零损耗口号改写成可证伪、可付有限损耗的 centered
@@ -156,8 +228,9 @@ research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py。文�
 `research/tpc-big-road/TPC_ROUTE_MAP.md`只作导航并同步标出 K lane的 loss-budgeted
 pier。V37仍是不编号 big-road checkpoint；不创建 TPC-207、paper、PDF或build output。
 
-以下 V36 页首块作为已封存直接上游保留；V37 snapshot truth由上面的 V37 摘要与
-第 84 节控制，current V38 truth由页首第一块、第 24 节与第 85 节控制。
+以下 V36 页首块作为已封存历史上游保留；V37 snapshot truth由上面的 V37 摘要与
+第 84 节控制，V38 snapshot truth由第 85 节控制，current V39 truth由页首第一块、
+第 24 节与第 86 节控制。
 
 第 83 节仍位于“解析消去岛 / Bridge A / Gate B”。V36 沿用户授权的
 multi-bridge 策略，把 V35 core 重排为一个 exact binary ratio covariance，并把
@@ -220,9 +293,9 @@ research/tpc-big-road/bridge_b_multiroute_ratio_core_atlas.md，checker 为
 research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py。V36 是不编号
 big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
 
-以下 V35 页首块作为已封存直接上游保留；V36 snapshot truth由本块、
-第 83 节控制；V37 snapshot truth由第 84 节控制，current V38 truth由页首第一块、
-第 24 节与第 85 节控制。
+以下 V35 页首块作为已封存历史上游保留；V36 snapshot truth由本块、
+第 83 节控制；V37 snapshot truth由第 84 节控制，V38 snapshot truth由第 85 节控制，
+current V39 truth由页首第一块、第 24 节与第 86 节控制。
 
 第 82 节继续位于“解析消去岛 / Bridge A / Gate B”。V35 把 V34 的
 compensated prime frame 精确压缩成一个更窄的 coprime ratio core。首先，
@@ -2460,19 +2533,21 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V38_20260809_CANONICAL_PACKET_KLOOSTERMAN_SCHATTEN_EMITTER_NO_ARITHMETIC_TRIGGER`
+`TPC_BIG_ROAD_V39_20260809_SCHATTEN_DUALITY_BARRIER_AND_PACKET_ENERGY_PIVOT_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V38_DIRECT_LITERAL_CANONICAL_BLOCK_SCHATTEN_AGGREGATE_OMEGA_1_OVER_100`；
+`V39_DIRECT_LITERAL_Q_DEPENDENT_CENTERED_PACKET_ENERGY_KAPPA_1_OVER_100`；
 当前 first subgates：
-`V38_CANONICAL_SCHATTEN_GATE`、`V36_ROUTE_E_STATUS`、`V36_ROUTE_X_STATUS`；
-已支付并可复用的 exact subgate 为 `V38_CANONICAL_SCALAR_EMITTER`；
+`V39_PACKET_ENERGY_GATE`、`V39_CANONICAL_SCHATTEN_GATE`、
+`V36_ROUTE_E_STATUS`、`V36_ROUTE_X_STATUS`；
+已支付并可复用的 exact subgate 为 `V39_BLOCK_PROJECTIVE_DUALITY`、
+`V39_ATOMIC_ABSOLUTE_MASS_LOWER_BARRIER` 与 `V38_CANONICAL_SCALAR_EMITTER`；
 已支付并可复用的 source-backed local subgate 为 `V38_BLOMER_PASCADI_CELL_ENGINE`、
 `V34_LOCAL_CARRIER_E_PAYMENT`、`V34_LOCAL_CARRIER_J_PAYMENT` 与
 `V33_BAZIN_BETA_MARGINAL`；已支付的 exact q-local major model为
 `V30_QLOCAL_MODEL_BOUND`
-（第 85 节控制；既有 local source只有在第 32.6 节或
+（第 86 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--85 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--86 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -2484,6 +2559,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_schatten_duality_and_packet_energy_pivot.md`、
+`research/tpc-big-road/tpc_bridge_b_schatten_packet_energy_checker.py`、
 `research/tpc-big-road/bridge_b_canonical_packet_schatten_emitter.md`、
 `research/tpc-big-road/tpc_bridge_b_canonical_packet_schatten_checker.py`、
 `research/tpc-big-road/bridge_b_loss_budgeted_shift_packet_compiler.md`、
@@ -2525,7 +2602,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--85 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--86 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2586,11 +2663,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V38 gate及其 V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；三十二次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V39 gate及其 V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；三十四次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
+python -B research/tpc-big-road/tpc_bridge_b_schatten_packet_energy_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_schatten_packet_energy_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_canonical_packet_schatten_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_canonical_packet_schatten_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py --check
@@ -2978,6 +3057,23 @@ V38_HIEU_SHORT_INTERVAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_SINGLE_LAMBDA_SEQUEN
 one-sequence BDH theorems 直接宣称为 literal `q`-dependent canonical block-Schatten
 aggregate。它们不停止 V38 已证明的 exact emitter、直接 Schatten theorem、V36 E/X
 lanes、terminal A、dynamics C 或其他明确标注的新 theorem。
+
+V39 对 Schatten duality barrier 与 packet-energy pivot 新增且仅新增四个 scoped
+stops：
+
+```text
+V39_SCALAR_ZERO_ATOMIC_ZERO_IMPLICATION = STOP_SCOPED_Q5_ALTERNATING_PACKET_COUNTEREXAMPLE
+V39_KERR_SHPARLINSKI_WU_XI_DIRECT_ATTACHMENT = STOP_SCOPED_SEPARABLE_BILINEAR_ARRAYS_NO_LITERAL_Q_DEPENDENT_PACKET_ENERGY
+V39_KOWALSKI_MICHEL_SAWIN_DIRECT_ATTACHMENT = STOP_SCOPED_SEPARABLE_HYPER_KLOOSTERMAN_BILINEAR_WRONG_MATRIX_AND_PACKET_NORM
+V39_HARPER_GENERAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_Q_INDEPENDENT_SEQUENCE_MODULUS_RANGE_AND_DISTRIBUTION_HYPOTHESES_MISMATCH
+```
+
+第一项只停止从 scalar cancellation 推出 canonical nuclear budget cancellation；
+q=5 alternating packet 已给 exact finite counterexample。后三项只停止把列出的
+separable-array 或 one-sequence theorem 直接宣称为 literal `q`-dependent centered
+packet-energy theorem。它们不停止 V39 主选的 direct `H_P2(kappa)` 新定理、特殊
+physical cross-block Schatten compression、V36 E/X lanes、terminal A、dynamics C 或
+其他清楚标注的新桥。
 
 TPC-204 新增且仅新增：
 
@@ -8325,7 +8421,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V38 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V39 current）
 
 ```text
 进入仓库：
@@ -8333,6 +8429,8 @@ TPC-127 --check = PASS
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_schatten_duality_and_packet_energy_pivot.md、
+research/tpc-big-road/tpc_bridge_b_schatten_packet_energy_checker.py、
 research/tpc-big-road/bridge_b_canonical_packet_schatten_emitter.md、
 research/tpc-big-road/tpc_bridge_b_canonical_packet_schatten_checker.py、
 research/tpc-big-road/bridge_b_loss_budgeted_shift_packet_compiler.md、
@@ -8377,7 +8475,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--85 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--86 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -8594,6 +8692,57 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V39_MAXIMUM_CLAIM = EXACT_BLOCK_PROJECTIVE_DUALITY_ABSOLUTE_MASS_LOWER_BARRIER_AND_GENERIC_SCHATTEN_CONTINUUM_SELECT_DIRECT_PACKET_ENERGY_AS_PRIMARY_OPEN_BRIDGE
+V39_ROUTE_ADVANCE = YES
+V39_CONDITIONAL_BRIDGE_ADVANCE = YES
+V39_ARITHMETIC_ADVANCE = NO
+V39_FIXED_ATOM_CREDIT = 0
+V39_STRICT_1_OVER_400 = UNPAID
+V39_L2 = NONE
+V39_TPC_207_TRIGGER = false
+V39_NUMBERED_RELEASE = NO
+V39_DERIVATION_STATUS = COHERENT_AFTER_BLOCK_NUCLEAR_DUALITY_MASS_BARRIER_CERTIFIED_AND_OPTIMISTIC_SCHATTEN_COMPARISON
+V39_ASSUMPTION_POLICY = PACKET_ENERGY_AND_SPECIALIZED_SCHATTEN_COMPRESSION_REMAIN_EXPLICIT_OPEN_THEOREMS
+V39_SELECTED_RESEARCH_ROUTE = P2_DIRECT_PACKET_ENERGY_FIRST__K_SPECIALIZED_SCHATTEN_SECOND__E_THIRD__X_FOURTH__A_TERMINAL_AFTER_B__C_RESERVE
+V39_V38_CANONICAL_EMITTER = RETAINED_EXACT_ZERO_REMAINDER
+V39_BLOCK_PROJECTIVE_DUALITY = PROVED_EXACT_PRODUCT_OF_BLOCK_OPERATOR_BALLS
+V39_BLOCK_DUAL_CURVE_TEST = PROVED_EXACT_PHI_Q_T_ON_R_AND_R_INVERSE
+V39_PHYSICAL_DUAL_EXPANSION = PROVED_EXACT_BETA_TIMES_CENTERED_G_TIMES_PHI
+V39_ATOMIC_ABSOLUTE_MASS_LOWER_BARRIER = PROVED_LAMBDA_INVERSE_TIMES_Q_D_L1_MINUS_ABS_SUM_D
+V39_SCALAR_ZERO_ATOMIC_ZERO_IMPLICATION = STOP_SCOPED_Q5_ALTERNATING_PACKET_COUNTEREXAMPLE
+V39_CANONICAL_SCHATTEN_GATE = RETAINED_OPEN_SPECIALIZED_NON_GENERIC_COMPRESSION_LANE
+V39_BLOMER_PASCADI_FORMAL_INTERFACE = SOURCE_BACKED_SEPARABLE_BILINEAR_OPERATOR_NORM_Q_MINUS_1_OVER_32
+V39_BLOMER_PASCADI_FOURTH_MOMENT = PROOF_ARCHITECTURE_NOT_STANDALONE_ALL_BLOCK_S4_THEOREM
+V39_OPTIMISTIC_S4_POLICY = COUNTERFACTUAL_GRANT_FOR_ROUTE_STRESS_TEST_NO_THEOREM_CREDIT
+V39_CERTIFIED_SCHATTEN_ALPHA = 71_OVER_32_MINUS_7_OVER_16P
+V39_CERTIFIED_SCHATTEN_ENERGY_CEILING = 2219_OVER_1200_PLUS_7_OVER_24P
+V39_CERTIFIED_P2_ENERGY_CEILING = 399_OVER_200
+V39_CERTIFIED_P4_ENERGY_CEILING = 4613_OVER_2400
+V39_CERTIFIED_PINFINITY_ENERGY_CEILING = 2219_OVER_1200
+V39_OPTIMISTIC_S4_P4_ENERGY_CEILING = 773_OVER_400
+V39_GENERIC_SCHATTEN_OPTIMUM = PROVED_P_EQUALS_2_EVEN_AFTER_OPTIMISTIC_S4_GRANT
+V39_PACKET_ENERGY = SUM_Q_SUM_R_ABS_D_Q_R_SQUARED
+V39_DIRECT_PACKET_ENERGY_CAUCHY = PROVED_Q_SQUARED_TIMES_PACKET_ENERGY_SQUARE_ROOT
+V39_PACKET_ENERGY_GATE = OPEN_CONJECTURE_X_POWER_2_MINUS_KAPPA
+V39_PACKET_ENERGY_KAPPA_THRESHOLD = KAPPA_STRICTLY_GREATER_THAN_1_OVER_200
+V39_PACKET_ENERGY_CONDITIONAL_OUTPUT = X_POWER_5_OVER_3_MINUS_KAPPA_OVER_2
+V39_PACKET_ENERGY_ENDPOINT_MARGIN = KAPPA_OVER_2_MINUS_1_OVER_400
+V39_SAMPLE_KAPPA = 1_OVER_100
+V39_SAMPLE_OUTPUT = 997_OVER_600
+V39_SAMPLE_ENDPOINT_MARGIN = 1_OVER_400
+V39_KERR_SHPARLINSKI_WU_XI_DIRECT_ATTACHMENT = STOP_SCOPED_SEPARABLE_BILINEAR_ARRAYS_NO_LITERAL_Q_DEPENDENT_PACKET_ENERGY
+V39_KOWALSKI_MICHEL_SAWIN_DIRECT_ATTACHMENT = STOP_SCOPED_SEPARABLE_HYPER_KLOOSTERMAN_BILINEAR_WRONG_MATRIX_AND_PACKET_NORM
+V39_HARPER_GENERAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_Q_INDEPENDENT_SEQUENCE_MODULUS_RANGE_AND_DISTRIBUTION_HYPOTHESES_MISMATCH
+V39_DIRECT_PRIMARY_SOURCE_FOR_PACKET_ENERGY_GATE = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_09
+V39_ROUTE_E = RETAINED_OPEN_WHOLE_RESIDUAL_SIGMA_LT_13_OVER_4800
+V39_ROUTE_X = RETAINED_OPEN_JOINT_CHARACTER_KAPPA_GT_403_OVER_1200
+V39_TERMINAL_A = OPEN_TERMINAL_EQUIVALENT_SIGNED_QLOCAL_COVARIANCE_AFTER_B
+V39_DYNAMICS_C = RESERVE_DISTINGUISHED_SEED_ATTACHMENT_STILL_OPEN
+V39_NEXT_THEOREM = DIRECT_LITERAL_Q_DEPENDENT_CENTERED_PACKET_ENERGY_WITH_KAPPA_1_OVER_100_BENCHMARK
+V39_FIRST_FATAL = NO_LITERAL_THEOREM_BOUNDS_SUM_Q_R_ABS_D_Q_R_SQUARED_BY_X_POWER_2_MINUS_KAPPA_FOR_KAPPA_GREATER_THAN_1_OVER_200
+V39_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B_CANONICAL_EMITTER_BUILT_PACKET_ENERGY_PIER_SELECTED_SCHATTEN_TOLL_EXPOSED
+V39_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V39_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
 V38_MAXIMUM_CLAIM = EXACT_CANONICAL_FOURIER_KLOOSTERMAN_BALANCED_BLOCK_SVD_EMITTER_PLUS_OPEN_PHYSICAL_SCHATTEN_AGGREGATE_AND_SOURCE_BACKED_BP_CELL_ENGINE
 V38_ROUTE_ADVANCE = YES
 V38_CONDITIONAL_BRIDGE_ADVANCE = YES
@@ -13618,6 +13767,307 @@ V34_SEALED_FOR_NEW_SESSION = true
 NUMBERED_RELEASE = NO
 TPC_207_TRIGGER = false
 ~~~
+
+## 86. 2026-08-09 V39：Schatten duality barrier 与 packet-energy pivot
+
+V39 保留 V38 的 literal centered residue vector、canonical matrix 与 exact scalar：
+
+```text
+C_x=sum_(q in Q) q sum_(r in F_q^*) d_q(r),
+M_q(m,n)=q^(-2)sum_(r in F_q^*)d_q(r)e_q(-mr-n rbar),
+lambda_q=(q^2-q+1)/q^2.                              (86.1)
+```
+
+若 `P_q` 是 V38 的 balanced consecutive frequency partition，定义
+
+```text
+A_q(d_q)=q^2/lambda_q sum_(I,J in P_q)||M_q^o[I,J]||_(S1),
+```
+
+其中 `M_q^o` 只把 `(0,0)` entry 置零。对每个 ordered block 允许独立 contraction
+`||T_(I,J)||op<=1`，nuclear/operator duality 与 block suprema independence 精确给出
+
+```text
+A_q(d_q)=lambda_q^(-1) sup_T Re sum_(r in F_q^*) d_q(r)Phi_(q,T)(r),
+Phi_(q,T)(r)=sum_((m,n)!=(0,0)) conjugate(T(m,n))e_q(-mr-n rbar).
+                                                               (86.2)
+```
+
+同一 dual scalar 有 literal physical expansion
+
+```text
+sum_r d_q(r)Phi_(q,T)(r)
+ =sum_(t in I_x,q does not divide t) beta_raw_x(t)G_(q,t)
+    Phi_(q,T)(t mod q).                              (86.3)
+```
+
+因此 V38 Schatten conjecture 等价于对全部 `q`-dependent block-contraction curve
+tests 的 uniform theorem；它不是原 scalar 的无损重命名。full matrix singular values
+`|d_q(r)|/q` 又强制 absolute-mass lower barrier
+
+```text
+A_q(d_q)>=lambda_q^(-1)
+  (q||d_q||_1-|sum_r d_q(r)|).                       (86.4)
+```
+
+q=5 alternating packet `d=(1,-1,1,-1)` 的 scalar 精确为零，full nuclear norm 为
+`4/5`，而 `(86.4)` lower bound 为 `500/21`。所以 generic scalar cancellation 不能
+支付 nuclear atomization；任何成功的 Schatten lane 必须在 block nuclear norms
+抹掉 cancellation 之前使用特殊 physical cross-block structure。
+
+### 86.1 Certified 与 optimistic Schatten continuum
+
+对 `2<=p<=infinity`，BP Theorem 1.1 的 formal operator estimate 与 Weil/Frobenius
+interpolation 给
+
+```text
+||K_q[I,J]||_(S_p) << q^(31/32+1/(16p)+o(1)),
+sum_(I,J)||M_q^o[I,J]||_(S_p')
+  << q^(-1/4-1/(2p))||d_q||_2.                       (86.5)
+```
+
+令 `E_pack=sum_(q,r)|d_q(r)|^2`，Schatten Holder 与 prime-shell Cauchy 得
+
+```text
+|C_x| << Q^(71/32-7/(16p)+o(1)) E_pack^(1/2).
+```
+
+达到 numerator strict endpoint `1997/1200` 所允许的 energy exponent ceiling 为
+
+```text
+eta_cert(p)=2219/1200+7/(24p),
+eta_cert(2)=399/200,
+eta_cert(4)=4613/2400,
+eta_cert(infinity)=2219/1200.                        (86.6)
+```
+
+BP proof architecture 确实使用 fourth moment，但 published theorem 没有声明全部
+ordered V38 blocks 的 standalone `S4` theorem。即使反事实白送
+`||K_q[I,J]||_(S4)<<q^(31/32+o(1))`，得到的 optimistic energy ceilings 仍为
+
+```text
+eta_opt(2)=399/200,
+eta_opt(4)=773/400,
+eta_opt(infinity)=2219/1200.                         (86.7)
+```
+
+故 certified 与最有利 counterfactual 两条 generic Schatten continuum 都在
+`p=2` 最优。这个结论只作 route stress test；反事实 `S4` 不记 theorem credit。
+
+### 86.2 Primary packet-energy bridge
+
+直接对 `(q,r)` Cauchy 给出更短的 exact compiler：
+
+```text
+|C_x| << Q^(2+o(1)) E_pack^(1/2).                   (86.8)
+```
+
+因此当前 primary B bridge 被压成一个 literal whole-object hypothesis：
+
+```text
+H_P2(kappa): E_pack << x^(2-kappa+o(1)),
+kappa>1/200.                                         (86.9)
+```
+
+它条件推出
+
+```text
+|C_x| << x^(5/3-kappa/2+o(1)),
+endpoint margin=kappa/2-1/400.                       (86.10)
+```
+
+benchmark `kappa=1/100` 给 output `997/600`、margin `1/400`。V39 并未证明
+`(86.9)`；它证明的是 route-selection theorem：全部 generic Schatten 路线中
+direct `p=2` packet energy要求最弱。V38 direct Schatten aggregate保留为第二车道，
+但必须是使用特殊 physical cross-block compression 的 non-generic theorem。
+
+### 86.3 Primary-source boundary
+
+截至 2026-08-09 的 primary theorem screen 为：
+
+1. Blomer--Pascadi, arXiv:2607.24311v1, Theorem 1.1 与 Sections 1.4--1.5：
+   source-backed separable bilinear/operator `q^(-1/32)` cell engine；没有 V39
+   block-projective dual theorem、literal packet energy或 all-block `S4` theorem；
+2. Kerr--Shparlinski--Wu--Xi, arXiv:2204.05038v5：bilinear Kloosterman arrays，
+   仍为 separable arrays；不接受 `q`-dependent physical `d_q` energy；
+3. Kowalski--Michel--Sawin, arXiv:1511.01636v5：general bilinear
+   hyper-Kloosterman forms；matrix class与 packet norm 均不匹配；
+4. Harper, arXiv:2412.19644v1, Theorems 1--2：one fixed general sequence 的
+   progression variance，带额外 distribution hypotheses 与不同 modulus regime；
+   不接受当前 `q=x^(1/3)` 的 `q`-dependent centered packet。
+
+没有已核 primary source 证明任一 `kappa>1/200` 的 `(86.9)`，也没有证明 V38
+non-generic Schatten compression。selected route 的 first fatal 因而是缺失 literal
+packet-energy theorem，而不是 emitter、normalization 或 local BP cell。
+
+### 86.4 Finite fixtures 与路线边界
+
+q=5、`d=(3,-2,5,1)`、blockwise identity contraction 给
+
+```text
+Phi=(-1,4,4,-1),
+sum_r d(r)Phi(r)=8.                                  (86.11)
+```
+
+它冻结 inverse phase、deleted `(0,0)` 与 physical dual expansion。synthetic blocks
+
+```text
+A1=diag(3,-2), A2=((0,4),(0,0))
+```
+
+的 nuclear sum与 product-ball dual value都精确为 `9`。这些是 duality/algebra
+fixtures，不是 open energy theorem 的有限证书。
+
+V39 路线顺序冻结为：
+
+```text
+P2 direct packet energy first
+  -> K specialized non-generic Schatten compression second
+  -> E whole-residual energy third
+  -> X joint-character route fourth
+  -> terminal q-local A after B
+  -> distinguished-seed dynamics C reserve.
+```
+
+`H_P2(kappa)` 必须逐字作用于 `(86.1)` 的 signed, centered, `q`-dependent physical
+`d_q`；divisor majorant、unsigned occurrence family 或 one `q`-independent sequence
+均不能冒充。当前是 route advance，不是 arithmetic credit。
+
+### 86.5 Canonical status registry
+
+```text
+V39_MAXIMUM_CLAIM = EXACT_BLOCK_PROJECTIVE_DUALITY_ABSOLUTE_MASS_LOWER_BARRIER_AND_GENERIC_SCHATTEN_CONTINUUM_SELECT_DIRECT_PACKET_ENERGY_AS_PRIMARY_OPEN_BRIDGE
+V39_ROUTE_ADVANCE = YES
+V39_CONDITIONAL_BRIDGE_ADVANCE = YES
+V39_ARITHMETIC_ADVANCE = NO
+V39_FIXED_ATOM_CREDIT = 0
+V39_STRICT_1_OVER_400 = UNPAID
+V39_L2 = NONE
+V39_TPC_207_TRIGGER = false
+V39_NUMBERED_RELEASE = NO
+V39_DERIVATION_STATUS = COHERENT_AFTER_BLOCK_NUCLEAR_DUALITY_MASS_BARRIER_CERTIFIED_AND_OPTIMISTIC_SCHATTEN_COMPARISON
+V39_ASSUMPTION_POLICY = PACKET_ENERGY_AND_SPECIALIZED_SCHATTEN_COMPRESSION_REMAIN_EXPLICIT_OPEN_THEOREMS
+V39_SELECTED_RESEARCH_ROUTE = P2_DIRECT_PACKET_ENERGY_FIRST__K_SPECIALIZED_SCHATTEN_SECOND__E_THIRD__X_FOURTH__A_TERMINAL_AFTER_B__C_RESERVE
+V39_V38_CANONICAL_EMITTER = RETAINED_EXACT_ZERO_REMAINDER
+V39_BLOCK_PROJECTIVE_DUALITY = PROVED_EXACT_PRODUCT_OF_BLOCK_OPERATOR_BALLS
+V39_BLOCK_DUAL_CURVE_TEST = PROVED_EXACT_PHI_Q_T_ON_R_AND_R_INVERSE
+V39_PHYSICAL_DUAL_EXPANSION = PROVED_EXACT_BETA_TIMES_CENTERED_G_TIMES_PHI
+V39_ATOMIC_ABSOLUTE_MASS_LOWER_BARRIER = PROVED_LAMBDA_INVERSE_TIMES_Q_D_L1_MINUS_ABS_SUM_D
+V39_SCALAR_ZERO_ATOMIC_ZERO_IMPLICATION = STOP_SCOPED_Q5_ALTERNATING_PACKET_COUNTEREXAMPLE
+V39_CANONICAL_SCHATTEN_GATE = RETAINED_OPEN_SPECIALIZED_NON_GENERIC_COMPRESSION_LANE
+V39_BLOMER_PASCADI_FORMAL_INTERFACE = SOURCE_BACKED_SEPARABLE_BILINEAR_OPERATOR_NORM_Q_MINUS_1_OVER_32
+V39_BLOMER_PASCADI_FOURTH_MOMENT = PROOF_ARCHITECTURE_NOT_STANDALONE_ALL_BLOCK_S4_THEOREM
+V39_OPTIMISTIC_S4_POLICY = COUNTERFACTUAL_GRANT_FOR_ROUTE_STRESS_TEST_NO_THEOREM_CREDIT
+V39_CERTIFIED_SCHATTEN_ALPHA = 71_OVER_32_MINUS_7_OVER_16P
+V39_CERTIFIED_SCHATTEN_ENERGY_CEILING = 2219_OVER_1200_PLUS_7_OVER_24P
+V39_CERTIFIED_P2_ENERGY_CEILING = 399_OVER_200
+V39_CERTIFIED_P4_ENERGY_CEILING = 4613_OVER_2400
+V39_CERTIFIED_PINFINITY_ENERGY_CEILING = 2219_OVER_1200
+V39_OPTIMISTIC_S4_P4_ENERGY_CEILING = 773_OVER_400
+V39_GENERIC_SCHATTEN_OPTIMUM = PROVED_P_EQUALS_2_EVEN_AFTER_OPTIMISTIC_S4_GRANT
+V39_PACKET_ENERGY = SUM_Q_SUM_R_ABS_D_Q_R_SQUARED
+V39_DIRECT_PACKET_ENERGY_CAUCHY = PROVED_Q_SQUARED_TIMES_PACKET_ENERGY_SQUARE_ROOT
+V39_PACKET_ENERGY_GATE = OPEN_CONJECTURE_X_POWER_2_MINUS_KAPPA
+V39_PACKET_ENERGY_KAPPA_THRESHOLD = KAPPA_STRICTLY_GREATER_THAN_1_OVER_200
+V39_PACKET_ENERGY_CONDITIONAL_OUTPUT = X_POWER_5_OVER_3_MINUS_KAPPA_OVER_2
+V39_PACKET_ENERGY_ENDPOINT_MARGIN = KAPPA_OVER_2_MINUS_1_OVER_400
+V39_SAMPLE_KAPPA = 1_OVER_100
+V39_SAMPLE_OUTPUT = 997_OVER_600
+V39_SAMPLE_ENDPOINT_MARGIN = 1_OVER_400
+V39_KERR_SHPARLINSKI_WU_XI_DIRECT_ATTACHMENT = STOP_SCOPED_SEPARABLE_BILINEAR_ARRAYS_NO_LITERAL_Q_DEPENDENT_PACKET_ENERGY
+V39_KOWALSKI_MICHEL_SAWIN_DIRECT_ATTACHMENT = STOP_SCOPED_SEPARABLE_HYPER_KLOOSTERMAN_BILINEAR_WRONG_MATRIX_AND_PACKET_NORM
+V39_HARPER_GENERAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_Q_INDEPENDENT_SEQUENCE_MODULUS_RANGE_AND_DISTRIBUTION_HYPOTHESES_MISMATCH
+V39_DIRECT_PRIMARY_SOURCE_FOR_PACKET_ENERGY_GATE = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_09
+V39_ROUTE_E = RETAINED_OPEN_WHOLE_RESIDUAL_SIGMA_LT_13_OVER_4800
+V39_ROUTE_X = RETAINED_OPEN_JOINT_CHARACTER_KAPPA_GT_403_OVER_1200
+V39_TERMINAL_A = OPEN_TERMINAL_EQUIVALENT_SIGNED_QLOCAL_COVARIANCE_AFTER_B
+V39_DYNAMICS_C = RESERVE_DISTINGUISHED_SEED_ATTACHMENT_STILL_OPEN
+V39_NEXT_THEOREM = DIRECT_LITERAL_Q_DEPENDENT_CENTERED_PACKET_ENERGY_WITH_KAPPA_1_OVER_100_BENCHMARK
+V39_FIRST_FATAL = NO_LITERAL_THEOREM_BOUNDS_SUM_Q_R_ABS_D_Q_R_SQUARED_BY_X_POWER_2_MINUS_KAPPA_FOR_KAPPA_GREATER_THAN_1_OVER_200
+V39_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B_CANONICAL_EMITTER_BUILT_PACKET_ENERGY_PIER_SELECTED_SCHATTEN_TOLL_EXPOSED
+V39_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V39_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
+```
+
+完整 artifact 与 checker 为
+
+```text
+research/tpc-big-road/bridge_b_schatten_duality_and_packet_energy_pivot.md
+research/tpc-big-road/tpc_bridge_b_schatten_packet_energy_checker.py
+```
+
+checker 冻结 32-field contract、51-row registry、4 个 source locks 与 4 个 dependency
+locks；registry SHA-256 为
+`4596392ed36f38b087677624005a45ffd1d9f57e1dbbe19dc361d8fb385dc1f7`，并要求
+98/105/10/10/152 个 contract/registry/source/dependency/result mutations 全部拒绝，
+共 375 个 unique actions。V39 不创建 TPC-207、paper、PDF 或 build。
+
+```text
+V39_FINAL_RELEASE_QA = PASS_WITH_SCOPED_EXTERNAL_TPC126_ONE_ULP_PLATFORM_DIAGNOSTIC
+V39_MATH_SOURCE_FORMULA_QA = PASS
+V39_CHECKER_ADVERSARIAL_QA = PASS
+V39_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V39_PRE_CLOSURE_HANDOFF_SHA256_RAW = 206267718a0920a569e90329744d03e85c2b1304a1c2842f44939a704f70d03e
+V39_PRE_CLOSURE_HANDOFF_SHA256_CANONICAL_LF = 206267718a0920a569e90329744d03e85c2b1304a1c2842f44939a704f70d03e
+V39_COMPASS_SHA256_RAW = c844719767b1dddb5910cc589796d1a051e5ffffaa3274c12136f5144b3b870c
+V39_README_SHA256_RAW = ebf2cd6e78278f193922ff68401c33aa720e5eb3fdc52ca2d7b260e377ae8096
+V39_ROUTE_MAP_SHA256_RAW = f2fa6000532045d7197b8a22f6e1475370c75f0106cc981f52b2f4fcfc7845aa
+V39_PROOF_SHA256_RAW = eac9c6975d23e8d2ba35d8884a0fc8b75ab6e73022d29cdcde18e38f4dbfa280
+V39_CHECKER_SHA256_RAW = cb943b1fc6d3b411ea7748f39f8495dcf446a35b95b9ed28a8515b18877cfa62
+V39_CHECKER_STDOUT_BYTES = 1658
+V39_CHECKER_STDOUT_SHA256_RAW_LF = 474e4cdc3faefc79f3cb2f90330e2805558452f6ac76a16201e26d9e5abec1bd
+V39_CHECKER_PAYLOAD_BYTES = 1657
+V39_CHECKER_PAYLOAD_SHA256 = 1ff9fc72dc9036926daaed125373783451f297eb2038bbbbb13b475e6b5d64fe
+V39_CHECKER_NO_FLAG_EXTRA_FLAG_STDERR_SHA256 = 078b42e7eef221757b232bfa0dad859ed7f05d13e1a8a04e146deddbc0c6c04a
+V39_CHECKER_CONTRACT_FIELDS = 32
+V39_CHECKER_REGISTRY_ROWS = 51
+V39_CHECKER_SOURCE_LOCKS = 4
+V39_CHECKER_DEPENDENCY_LOCKS = 4
+V39_CHECKER_CONTRACT_MUTATIONS = 98
+V39_CHECKER_REGISTRY_MUTATIONS = 105
+V39_CHECKER_SOURCE_MUTATIONS = 10
+V39_CHECKER_DEPENDENCY_MUTATIONS = 10
+V39_CHECKER_RESULT_MUTATIONS = 152
+V39_CHECKER_MUTATION_ACTIONS = 375
+V39_CHECKER_MUTATION_LABELS = 375/375 UNIQUE_AND_EXECUTED
+V39_CHECKER_REGISTRY_SHA256 = 4596392ed36f38b087677624005a45ffd1d9f57e1dbbe19dc361d8fb385dc1f7
+V39_CHECKER_NORMAL_OPTIMIZED = 2/2 PASS_BYTE_IDENTICAL
+V39_CHECKER_NO_FLAG_EXTRA_FLAG = 2/2 REJECTED
+V39_CHECKER_GLOBAL_PROVIDER_DEFAULT_CLOSURE_ATTACKS = PASS
+V39_CHECKER_REACHABLE_MUTABLE_CLOSURE_CONTAINERS = 0
+V39_CHECKER_AST_ASSERT_WRITE_NETWORK_SUBPROCESS = 0
+V39_INDEPENDENT_BLOCK_DUAL_AND_MASS_BARRIER_Q5 = PASS
+V39_INDEPENDENT_CERTIFIED_OPTIMISTIC_SCHATTEN_LEDGER = PASS
+V39_INDEPENDENT_PACKET_ENERGY_ENDPOINT_LEDGER = PASS
+V39_PRIMARY_SOURCE_SCOPE_QA = PASS_FAIL_CLOSED
+V39_CANONICAL_REGISTRY_MIRRORS = 6/6 EXACT_SAME_ORDER
+V39_STARTUP_READ_ONLY_REGRESSION = 22/22 PASS
+V39_SUPPLEMENTAL_ATTEMPTED = 4/4
+V39_SUPPLEMENTAL_BYTE_EXACT = 3/4
+V39_TPC126_SEMANTIC_CERTIFICATE = PASS
+V39_TPC126_PLATFORM_DIAGNOSTIC = EXACT_ONE_ULP_DIRECT_REAL_ONLY_40_17369814909115_TO_40_17369814909116
+V39_BIG_ROAD_CHECKER_PROCESSES = 34/34 PASS
+V39_BIG_ROAD_CHECKER_STDOUT_IDENTITIES = 17/17
+V39_RELEASE_ALLOWLIST = EXACT_SIX_PATHS
+V39_CACHED_DIFF = EMPTY
+V39_DIFF_CHECK = PASS
+V39_PROTECTED_UNTRACKED_COUNT = 0
+V39_PROTECTED_UNTRACKED_MANIFEST_SHA256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+V39_PYC_COUNT = 0
+V39_PYC_MANIFEST_SHA256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+V39_MARKDOWN_FENCES = HANDOFF_BACKTICK_2892_TILDE_338__COMPASS_BACKTICK_230_TILDE_86__README_BACKTICK_386_TILDE_84__ROUTE_MAP_BACKTICK_8_TILDE_0__PROOF_BACKTICK_4_TILDE_0
+V39_EQUATION_TAGS = HANDOFF_133_OF_133_UNIQUE__PROOF_42_OF_42_UNIQUE
+V39_BASELINE_HEAD_ORIGIN_REMOTE = 44a681ae29f1c13064fd672073eb7a7cd28694fd
+V39_FILES_CHANGED = EXACT_SIX_RELEASE_PATHS
+V39_GENERATED_OUTPUTS = NONE
+V39_ARITHMETIC_ADVANCE = NO
+V39_FIXED_ATOM_CREDIT = 0
+V39_STRICT_1_OVER_400 = UNPAID
+V39_L2 = NONE
+V39_SEALED_FOR_NEW_SESSION = true
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+```
 
 ## 85. 2026-08-09 V38：canonical packet--Kloosterman Schatten emitter
 
