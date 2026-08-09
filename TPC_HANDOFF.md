@@ -1,7 +1,85 @@
 # TPC HANDOFF
 
 更新时间：2026-08-09
-交接状态：`BOLD_CHANNEL_V37_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V38_SEALED_FOR_NEW_SESSION`
+
+第 85 节仍位于“解析消去岛 / Bridge A / Gate B / K lane”，并完成了 V37
+最重要的 open construction：exactly-once BP-admissible emitter 不再是假设。令
+
+~~~text
+d_q(r)=sum_(t=r mod q) beta(t)
+       [F_(q,t)(0)-1/(q-1)sum_(b!=-t)F_(q,t)(b)],
+r in F_q^*.                                           (V38.1)
+~~~
+
+则 V37 scalar 精确为 `C_x=sum_q q sum_r d_q(r)`。定义 canonical matrix
+
+~~~text
+M_q(m,n)=q^(-2)sum_(r in F_q^*)d_q(r)e_q(-mr-n rbar). (V38.2)
+~~~
+
+双重加法正交性给出
+
+~~~text
+sum_(m,n mod q)M_q(m,n)S(m,n;q)=sum_r d_q(r).         (V38.3)
+~~~
+
+唯一不满足 prime-unit cell 条件的是 `(m,n)=(0,0)`。它贡献原 scalar 的
+`(q-1)/q^2`，所以删去零轴后只需除以
+
+~~~text
+lambda_q=(q^2-q+1)/q^2.                              (V38.4)
+~~~
+
+把 `0,...,q-1` 划成长度约 `sqrt(q)` 的 consecutive intervals，并对每个 block
+做 SVD，便得到 zero-remainder、每个 matrix entry exactly once、`a=1` 的
+Blomer--Pascadi admissible rank-one cells。V37 的 existential emitter 因而关闭。
+当前唯一 K-lane 主猜想被压成 literal canonical block-Schatten aggregate
+
+~~~text
+H_Sch(omega):
+sum_q q^2/lambda_q sum_(balanced I,J)||M_q[I,J]||_(S1)
+  << x^(5/3+o(1)) Q^omega,
+omega<19/800.                                        (V38.5)
+~~~
+
+接 source-backed BP `Q^(-1/32)` cell saving 后，条件输出仍为
+
+~~~text
+x^(53/32+omega/3+o(1)),
+margin=19/2400-omega/3.                              (V38.6)
+~~~
+
+建议 benchmark 为 `omega=1/100`，输出 `3983/2400`，margin `11/2400`。generic
+block nuclear/Frobenius bound只给 `q^(-1/4)||d_q||_2`，导致 atomic scale
+`q^(7/4)||d_q||_2`；若先假设 packet energy 再绕道 BP，比直接 Cauchy 多付
+`x^(7/96)`。所以当前 next theorem 必须直接估计 canonical physical Schatten
+aggregate，不能把普通 packet `L2` 换名。Harper、Lewko--Lewko 与 Hieu 的 BDH
+theorems 均在 coefficient class、`q`-dependence、norm 或 modulus range 处不匹配。
+
+~~~text
+V38_ROUTE_ADVANCE = YES
+V38_CONDITIONAL_BRIDGE_ADVANCE = YES
+V38_CANONICAL_SCALAR_EMITTER = PROVED_EXACT_ZERO_REMAINDER
+V38_CANONICAL_SCHATTEN_GATE = OPEN_CONJECTURE_AGGREGATE_X_POWER_5_OVER_3_TIMES_Q_POWER_OMEGA
+V38_BLOMER_PASCADI_CELL_ENGINE = SOURCE_BACKED_Q_POWER_MINUS_1_OVER_32_AFTER_EXACT_EMISSION
+V38_PACKET_OVERHEAD_THRESHOLD = OMEGA_STRICTLY_LESS_THAN_19_OVER_800
+V38_ARITHMETIC_ADVANCE = NO
+V38_FIXED_ATOM_CREDIT = 0
+V38_STRICT_1_OVER_400 = UNPAID
+V38_L2 = NONE
+TPC_207_TRIGGER = false                              (V38.7)
+~~~
+
+完整 58-row canonical registry 位于 Handoff 第 24、85 节、Compass 第 39 节、
+big-road README 第 38 节、V38 proof 第 10 节与 checker。proof 为
+`research/tpc-big-road/bridge_b_canonical_packet_schatten_emitter.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_canonical_packet_schatten_checker.py`。文字路线图
+同步标出“canonical emitter 已建、atomic Schatten pier 未证”。V38 仍是不编号
+big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
+
+以下 V37 页首块作为已封存直接上游保留；current truth 由上面的 V38 摘要、
+第 24 节与第 85 节控制。
 
 第 84 节仍位于“解析消去岛 / Bridge A / Gate B”，但已把 V36 Route K 的
 `Q^(-31/32)` hard pier从一个零损耗口号改写成可证伪、可付有限损耗的 centered
@@ -78,8 +156,8 @@ research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py。文�
 `research/tpc-big-road/TPC_ROUTE_MAP.md`只作导航并同步标出 K lane的 loss-budgeted
 pier。V37仍是不编号 big-road checkpoint；不创建 TPC-207、paper、PDF或build output。
 
-以下 V36 页首块作为已封存直接上游保留；current truth由上面的 V37 摘要、
-第 24 节与第 84 节控制。
+以下 V36 页首块作为已封存直接上游保留；V37 snapshot truth由上面的 V37 摘要与
+第 84 节控制，current V38 truth由页首第一块、第 24 节与第 85 节控制。
 
 第 83 节仍位于“解析消去岛 / Bridge A / Gate B”。V36 沿用户授权的
 multi-bridge 策略，把 V35 core 重排为一个 exact binary ratio covariance，并把
@@ -143,7 +221,8 @@ research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py。V36 是不
 big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
 
 以下 V35 页首块作为已封存直接上游保留；V36 snapshot truth由本块、
-第 83 节控制，current V37 truth由页首第一块、第 24 节与第 84 节控制。
+第 83 节控制；V37 snapshot truth由第 84 节控制，current V38 truth由页首第一块、
+第 24 节与第 85 节控制。
 
 第 82 节继续位于“解析消去岛 / Bridge A / Gate B”。V35 把 V34 的
 compensated prime frame 精确压缩成一个更窄的 coprime ratio core。首先，
@@ -2381,19 +2460,19 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V37_20260809_LOSS_BUDGETED_CENTERED_SHIFT_PACKET_COMPILER_NO_ARITHMETIC_TRIGGER`
+`TPC_BIG_ROAD_V38_20260809_CANONICAL_PACKET_KLOOSTERMAN_SCHATTEN_EMITTER_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V37_EXACTLY_ONCE_BP_ADMISSIBLE_CENTERED_SHIFT_PACKET_EMITTER`；
+`V38_DIRECT_LITERAL_CANONICAL_BLOCK_SCHATTEN_AGGREGATE_OMEGA_1_OVER_100`；
 当前 first subgates：
-`V37_PACKET_EMITTER_STATUS`、`V36_ROUTE_E_STATUS`、`V36_ROUTE_X_STATUS`；
-已支付并可复用的 source-backed local subgate 为
-`V37_BLOMER_PASCADI_CELL_ENGINE`、
+`V38_CANONICAL_SCHATTEN_GATE`、`V36_ROUTE_E_STATUS`、`V36_ROUTE_X_STATUS`；
+已支付并可复用的 exact subgate 为 `V38_CANONICAL_SCALAR_EMITTER`；
+已支付并可复用的 source-backed local subgate 为 `V38_BLOMER_PASCADI_CELL_ENGINE`、
 `V34_LOCAL_CARRIER_E_PAYMENT`、`V34_LOCAL_CARRIER_J_PAYMENT` 与
 `V33_BAZIN_BETA_MARGINAL`；已支付的 exact q-local major model为
 `V30_QLOCAL_MODEL_BOUND`
-（第 84 节控制；既有 local source只有在第 32.6 节或
+（第 85 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--84 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--85 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -2405,6 +2484,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_canonical_packet_schatten_emitter.md`、
+`research/tpc-big-road/tpc_bridge_b_canonical_packet_schatten_checker.py`、
 `research/tpc-big-road/bridge_b_loss_budgeted_shift_packet_compiler.md`、
 `research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py`、
 `research/tpc-big-road/bridge_b_multiroute_ratio_core_atlas.md`、
@@ -2444,7 +2525,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--84 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--85 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2505,11 +2586,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V37 gate及其 V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；三十次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V38 gate及其 V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；三十二次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
+python -B research/tpc-big-road/tpc_bridge_b_canonical_packet_schatten_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_canonical_packet_schatten_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py --check
@@ -2880,6 +2963,21 @@ V37_BLOMER_RISAGER_SHPARLINSKI_DIRECT_ATTACHMENT = STOP_SCOPED_SPECIFIED_TRIPLE_
 frequency-concentrated或 partially-fixed source直接宣称为 V37 physical packet
 emitter。它们不停止 loss-budgeted exactly-once compiler、V36 E/X lanes、terminal A、
 dynamics C或其他明确标注的 conjectural bridge。
+
+V38 对 canonical packet--Kloosterman emitter 新增且仅新增四个 scoped stops：
+
+```text
+V38_PACKET_ENERGY_VIA_BP = STOP_SCOPED_GENERIC_BLOCK_LOSS_Q_1_OVER_4_EXCEEDS_BP_GAIN_Q_1_OVER_32
+V38_HARPER_GENERAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_Q_INDEPENDENT_SEQUENCE_Q_RANGE_AND_DISTRIBUTION_HYPOTHESES_MISMATCH
+V38_LEWKO_VARIATIONAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_PRIME_COUNTING_ONE_SEQUENCE_WRONG_PACKET_AND_NORM
+V38_HIEU_SHORT_INTERVAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_SINGLE_LAMBDA_SEQUENCE_NO_BETA_CENTERED_INVERSE_BLOCK
+```
+
+第一项只停止“先用 generic block nuclear/Frobenius bound 把 packet energy 送入 BP”
+这一具体路线；它比 direct energy Cauchy 多付 `x^(7/96)`。后三项只停止把列出的
+one-sequence BDH theorems 直接宣称为 literal `q`-dependent canonical block-Schatten
+aggregate。它们不停止 V38 已证明的 exact emitter、直接 Schatten theorem、V36 E/X
+lanes、terminal A、dynamics C 或其他明确标注的新 theorem。
 
 TPC-204 新增且仅新增：
 
@@ -8227,7 +8325,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V37 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V38 current）
 
 ```text
 进入仓库：
@@ -8235,6 +8333,8 @@ TPC-127 --check = PASS
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_canonical_packet_schatten_emitter.md、
+research/tpc-big-road/tpc_bridge_b_canonical_packet_schatten_checker.py、
 research/tpc-big-road/bridge_b_loss_budgeted_shift_packet_compiler.md、
 research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py、
 research/tpc-big-road/bridge_b_multiroute_ratio_core_atlas.md、
@@ -8277,7 +8377,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--84 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--85 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -8494,6 +8594,64 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V38_MAXIMUM_CLAIM = EXACT_CANONICAL_FOURIER_KLOOSTERMAN_BALANCED_BLOCK_SVD_EMITTER_PLUS_OPEN_PHYSICAL_SCHATTEN_AGGREGATE_AND_SOURCE_BACKED_BP_CELL_ENGINE
+V38_ROUTE_ADVANCE = YES
+V38_CONDITIONAL_BRIDGE_ADVANCE = YES
+V38_ARITHMETIC_ADVANCE = NO
+V38_FIXED_ATOM_CREDIT = 0
+V38_STRICT_1_OVER_400 = UNPAID
+V38_L2 = NONE
+V38_TPC_207_TRIGGER = false
+V38_NUMBERED_RELEASE = NO
+V38_DERIVATION_STATUS = COHERENT_AFTER_EXACT_SCALAR_RECOLLAPSE_DOUBLE_ORTHOGONALITY_ZERO_AXIS_REMOVAL_AND_BLOCK_SVD
+V38_ASSUMPTION_POLICY = ONLY_CANONICAL_PHYSICAL_SCHATTEN_AGGREGATE_IS_OPEN_AND_NEVER_PROMOTED
+V38_SELECTED_RESEARCH_ROUTE = K_CANONICAL_SCHATTEN_AGGREGATE_FIRST__E_SECOND__X_THIRD__A_TERMINAL_AFTER_B__C_RESERVE
+V38_V37_CENTERED_PACKET = RETAINED_EXACT_WITH_FULL_BACKGROUND_AND_DELETED_DIAGONAL
+V38_PHYSICAL_RESIDUE_VECTOR = PROVED_EXACT_FINAL_SCALAR_REGROUPING
+V38_CANONICAL_FOURIER_KLOOSTERMAN_MATRIX = PROVED_EXACT_DOUBLE_ADDITIVE_ORTHOGONALITY
+V38_ZERO_AXIS_SELF_RETURN = PROVED_EXACT_LAMBDA_Q_FACTOR
+V38_ZERO_AXIS_FACTOR = LAMBDA_Q_EQUALS_Q_SQUARED_MINUS_Q_PLUS_ONE_OVER_Q_SQUARED
+V38_PRIME_COPRIMALITY_AFTER_ZERO_REMOVAL = PROVED_EXACT_ONLY_ZERO_ZERO_EXCLUDED
+V38_BALANCED_FREQUENCY_PARTITION = PROVED_EXACT_CONSECUTIVE_BLOCKS_OF_LENGTH_ASYMPTOTIC_SQRT_Q
+V38_BLOCK_SVD = PROVED_EXACT_RANK_ONE_BP_ARRAY_DECOMPOSITION
+V38_CANONICAL_SCALAR_EMITTER = PROVED_EXACT_ZERO_REMAINDER
+V38_EXACTLY_ONCE_POLICY = FINAL_PHYSICAL_SCALAR_AND_EVERY_MATRIX_ENTRY_EXACTLY_ONCE
+V38_TEMPLATE_LABEL_RELAXATION = VALID_ONLY_AFTER_V35_V36_FINAL_SCALAR_RECOLLAPSE_NOT_FOR_LOCAL_CARRIER
+V38_CELL_TRIVIAL_SCALE = Q_SQUARED_OVER_LAMBDA_Q_TIMES_SINGULAR_VALUE
+V38_CANONICAL_ATOMIC_BUDGET = Q_SQUARED_OVER_LAMBDA_Q_TIMES_SUM_BLOCK_SCHATTEN_ONE
+V38_CANONICAL_SCHATTEN_GATE = OPEN_CONJECTURE_AGGREGATE_X_POWER_5_OVER_3_TIMES_Q_POWER_OMEGA
+V38_PACKET_OVERHEAD_THRESHOLD = OMEGA_STRICTLY_LESS_THAN_19_OVER_800
+V38_BLOMER_PASCADI_CELL_ENGINE = SOURCE_BACKED_Q_POWER_MINUS_1_OVER_32_AFTER_EXACT_EMISSION
+V38_CONDITIONAL_OUTPUT = X_POWER_53_OVER_32_PLUS_OMEGA_OVER_3
+V38_CONDITIONAL_ENDPOINT_MARGIN = 19_OVER_2400_MINUS_OMEGA_OVER_3
+V38_SAMPLE_OMEGA = 1_OVER_100
+V38_SAMPLE_OUTPUT = 3983_OVER_2400
+V38_SAMPLE_ENDPOINT_MARGIN = 11_OVER_2400
+V38_FULL_MATRIX_SINGULAR_VALUES = PROVED_EXACT_ABS_D_R_OVER_Q
+V38_FULL_MATRIX_FROBENIUS = PROVED_EXACT_Q_INVERSE_TIMES_D_L2
+V38_GENERIC_BLOCK_SCHATTEN_BASELINE = Q_POWER_MINUS_1_OVER_4_TIMES_D_L2
+V38_GENERIC_ATOMIC_L2_BASELINE = Q_POWER_7_OVER_4_TIMES_D_L2
+V38_GENERIC_ATOMIC_L1_BASELINE = Q_POWER_3_OVER_2_TIMES_D_L1
+V38_PACKET_ENERGY_TO_ATOMIC = PROVED_Q_POWER_9_OVER_4_TIMES_ENERGY_SQUARE_ROOT
+V38_PACKET_ENERGY_REQUIRED_BY_GENERIC_ATOMIC_ROUTE = X_POWER_11_OVER_6_PLUS_2_OMEGA_OVER_3
+V38_SAMPLE_PACKET_ENERGY_EXPONENT = 46_OVER_25
+V38_DIRECT_PACKET_ENERGY_CAUCHY = PROVED_Q_SQUARED_TIMES_ENERGY_SQUARE_ROOT
+V38_DIRECT_PACKET_ENERGY_OUTPUT = X_POWER_19_OVER_12_PLUS_OMEGA_OVER_3
+V38_PACKET_ENERGY_VIA_BP = STOP_SCOPED_GENERIC_BLOCK_LOSS_Q_1_OVER_4_EXCEEDS_BP_GAIN_Q_1_OVER_32
+V38_PACKET_ENERGY_BP_OVERPAY = X_POWER_7_OVER_96
+V38_HARPER_GENERAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_Q_INDEPENDENT_SEQUENCE_Q_RANGE_AND_DISTRIBUTION_HYPOTHESES_MISMATCH
+V38_LEWKO_VARIATIONAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_PRIME_COUNTING_ONE_SEQUENCE_WRONG_PACKET_AND_NORM
+V38_HIEU_SHORT_INTERVAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_SINGLE_LAMBDA_SEQUENCE_NO_BETA_CENTERED_INVERSE_BLOCK
+V38_DIRECT_PRIMARY_SOURCE_FOR_CANONICAL_SCHATTEN_GATE = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_09
+V38_ROUTE_E = RETAINED_OPEN_WHOLE_RESIDUAL_SIGMA_LT_13_OVER_4800
+V38_ROUTE_X = RETAINED_OPEN_JOINT_CHARACTER_KAPPA_GT_403_OVER_1200
+V38_TERMINAL_A = OPEN_TERMINAL_EQUIVALENT_SIGNED_QLOCAL_COVARIANCE_AFTER_B
+V38_DYNAMICS_C = RESERVE_DISTINGUISHED_SEED_ATTACHMENT_STILL_OPEN
+V38_NEXT_THEOREM = DIRECT_LITERAL_CANONICAL_BLOCK_SCHATTEN_AGGREGATE_WITH_OMEGA_1_OVER_100_BENCHMARK
+V38_FIRST_FATAL = NO_LITERAL_THEOREM_BOUNDS_THE_CANONICAL_PHYSICAL_BLOCK_SCHATTEN_AGGREGATE_WITH_OMEGA_LESS_THAN_19_OVER_800
+V38_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B_K_LANE_CANONICAL_EMITTER_BUILT_ATOMIC_PIER_OPEN
+V38_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V38_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
 V37_MAXIMUM_CLAIM = EXACT_CENTERED_RESIDUE_PACKETIZATION_PLUS_LOSS_BUDGETED_K_ROUTE_THRESHOLD_AND_SOURCE_BACKED_CELL_ENGINE_AFTER_CONJECTURAL_EMISSION
 V37_ROUTE_ADVANCE = YES
 V37_CONDITIONAL_BRIDGE_ADVANCE = YES
@@ -13461,6 +13619,251 @@ NUMBERED_RELEASE = NO
 TPC_207_TRIGGER = false
 ~~~
 
+## 85. 2026-08-09 V38：canonical packet--Kloosterman Schatten emitter
+
+V38 关闭 V37 的 existential emitter construction，但不宣称支付其 aggregate norm。
+保留 V37 centered packet `G_(q,t)`，并按 unit residue regroup：
+
+~~~text
+d_q(r)=sum_(t=r mod q)beta(t)G_(q,t),
+C_x=sum_q q sum_(r in F_q^*)d_q(r).                  (85.1)
+~~~
+
+V35--V36 已证明 final scalar 可以从 proper-factor occurrences 精确重合并回
+`beta(t)`；因此 `(85.1)` 是合法的 final-scalar regrouping。这个 relaxation 不用于
+V28--V31 的 occurrence-native local Euler carrier。
+
+采用 Blomer--Pascadi 的 Kloosterman convention
+
+~~~text
+S(m,n;q)=sum_(x in F_q^*)e_q(mx+n xbar),
+M_q(m,n)=q^(-2)sum_(r in F_q^*)d_q(r)e_q(-mr-n rbar).
+                                                               (85.2)
+~~~
+
+双重 additive orthogonality 精确给出
+
+~~~text
+sum_(m,n mod q)M_q(m,n)S(m,n;q)=sum_r d_q(r).       (85.3)
+~~~
+
+对 prime `q`，唯一不满足 `(m,n,q)=1` 的 relevant pair 是 `(0,0)`。它满足
+
+~~~text
+M_q(0,0)=q^(-2)sum_r d_q(r),
+S(0,0;q)=q-1,
+lambda_q=1-(q-1)/q^2=(q^2-q+1)/q^2.                (85.4)
+~~~
+
+令 `M_q^o(0,0)=0` 且其余 entry 不变，则
+
+~~~text
+sum_r d_q(r)=lambda_q^(-1)
+  sum_((m,n)!=(0,0))M_q^o(m,n)S(m,n;q).             (85.5)
+~~~
+
+把 representatives `0,...,q-1` 划成长度约 `sqrt(q)` 的 balanced consecutive
+intervals。对每个 block `M_q^o[I,J]` 做 SVD；若 singular triple 为
+`sigma,u,v`，取
+
+~~~text
+alpha_m=(q/lambda_q)sigma u_m,
+gamma_n=conjugate(v_n).                              (85.6)
+~~~
+
+则全部 block/rank-one cells 精确重合并为 `C_x`，每个 matrix entry exactly once，
+无 emitter remainder，且 `a=1`、`M,N<=q`、`(m,n,q)=1`，逐字满足 BP cell 的
+algebraic interface。每个 singular atom 的 source-native trivial scale 是
+
+~~~text
+q||alpha||_2||gamma||_2=q^2/lambda_q*sigma.         (85.7)
+~~~
+
+因此当前唯一 K-lane 主猜想是
+
+~~~text
+H_Sch(omega):
+sum_q q^2/lambda_q sum_(balanced I,J)||M_q^o[I,J]||_(S1)
+  << x^(5/3+o(1))Q^omega,
+omega<19/800.                                        (85.8)
+~~~
+
+Blomer--Pascadi Theorem 1.1 在 `N~sqrt(q)` 给 source-backed `q^(-1/32)`
+saving；条件输出与 endpoint margin 为
+
+~~~text
+x^(53/32+omega/3+o(1)),
+19/2400-omega/3.                                     (85.9)
+~~~
+
+benchmark `omega=1/100` 给输出 `3983/2400` 与 margin `11/2400`。
+
+generic baselines 说明为什么下一步不能退回普通 packet energy。full matrix 的
+singular values 是 `|d_q(r)|/q`，Frobenius norm 为 `q^(-1)||d_q||_2`；balanced
+block nuclear triangle只给
+
+~~~text
+sum_(I,J)||M_q^o[I,J]||_(S1) << q^(-1/4)||d_q||_2,
+A_q << q^(7/4)||d_q||_2,
+A_q << q^(3/2)||d_q||_1.                            (85.10)
+~~~
+
+若 `E_pack=sum_q||d_q||_2^2`，aggregate atomic budget只得到
+`Q^(9/4)E_pack^(1/2)`。令其满足 `(85.8)` 需要
+`E_pack<<x^(11/6+2omega/3)`；但同一 energy 直接作用于原 scalar 已给
+`|C_x|<<Q^2E_pack^(1/2)=x^(19/12+omega/3)`，比 BP detour 强 `x^(7/96)`。
+故 packet-energy-via-BP 被 scoped stop；选择的新 theorem 是 direct physical
+block-Schatten aggregate。
+
+source screen 只留下 BP cell engine。Harper general BDH 是 one fixed sequence 且有
+不同 `Q` range/distribution hypotheses；Lewko--Lewko 是 prime-counting variational
+BDH；Hieu short-interval BDH 是 single `Lambda` sequence。三者都不接受 literal
+`q`-dependent `beta x w` centered inverse block。没有已核 primary source 证明
+`(85.8)`。
+
+q=5 fixture 取 `d=(3,-2,5,1)`。它冻结 `sum d=7`、`lambda=21/25`、
+zero contribution `28/25`、off-axis sum `147/25`、recovered scalar `7`；错误
+`q^(-1)` normalization 给 `35`，漏 inverse phase 给 `4`。balanced block sizes 为
+`3,2`，25 个 entries 中 24 个 admissible，Frobenius square 为 `39/25`。
+
+~~~text
+V38_MAXIMUM_CLAIM = EXACT_CANONICAL_FOURIER_KLOOSTERMAN_BALANCED_BLOCK_SVD_EMITTER_PLUS_OPEN_PHYSICAL_SCHATTEN_AGGREGATE_AND_SOURCE_BACKED_BP_CELL_ENGINE
+V38_ROUTE_ADVANCE = YES
+V38_CONDITIONAL_BRIDGE_ADVANCE = YES
+V38_ARITHMETIC_ADVANCE = NO
+V38_FIXED_ATOM_CREDIT = 0
+V38_STRICT_1_OVER_400 = UNPAID
+V38_L2 = NONE
+V38_TPC_207_TRIGGER = false
+V38_NUMBERED_RELEASE = NO
+V38_DERIVATION_STATUS = COHERENT_AFTER_EXACT_SCALAR_RECOLLAPSE_DOUBLE_ORTHOGONALITY_ZERO_AXIS_REMOVAL_AND_BLOCK_SVD
+V38_ASSUMPTION_POLICY = ONLY_CANONICAL_PHYSICAL_SCHATTEN_AGGREGATE_IS_OPEN_AND_NEVER_PROMOTED
+V38_SELECTED_RESEARCH_ROUTE = K_CANONICAL_SCHATTEN_AGGREGATE_FIRST__E_SECOND__X_THIRD__A_TERMINAL_AFTER_B__C_RESERVE
+V38_V37_CENTERED_PACKET = RETAINED_EXACT_WITH_FULL_BACKGROUND_AND_DELETED_DIAGONAL
+V38_PHYSICAL_RESIDUE_VECTOR = PROVED_EXACT_FINAL_SCALAR_REGROUPING
+V38_CANONICAL_FOURIER_KLOOSTERMAN_MATRIX = PROVED_EXACT_DOUBLE_ADDITIVE_ORTHOGONALITY
+V38_ZERO_AXIS_SELF_RETURN = PROVED_EXACT_LAMBDA_Q_FACTOR
+V38_ZERO_AXIS_FACTOR = LAMBDA_Q_EQUALS_Q_SQUARED_MINUS_Q_PLUS_ONE_OVER_Q_SQUARED
+V38_PRIME_COPRIMALITY_AFTER_ZERO_REMOVAL = PROVED_EXACT_ONLY_ZERO_ZERO_EXCLUDED
+V38_BALANCED_FREQUENCY_PARTITION = PROVED_EXACT_CONSECUTIVE_BLOCKS_OF_LENGTH_ASYMPTOTIC_SQRT_Q
+V38_BLOCK_SVD = PROVED_EXACT_RANK_ONE_BP_ARRAY_DECOMPOSITION
+V38_CANONICAL_SCALAR_EMITTER = PROVED_EXACT_ZERO_REMAINDER
+V38_EXACTLY_ONCE_POLICY = FINAL_PHYSICAL_SCALAR_AND_EVERY_MATRIX_ENTRY_EXACTLY_ONCE
+V38_TEMPLATE_LABEL_RELAXATION = VALID_ONLY_AFTER_V35_V36_FINAL_SCALAR_RECOLLAPSE_NOT_FOR_LOCAL_CARRIER
+V38_CELL_TRIVIAL_SCALE = Q_SQUARED_OVER_LAMBDA_Q_TIMES_SINGULAR_VALUE
+V38_CANONICAL_ATOMIC_BUDGET = Q_SQUARED_OVER_LAMBDA_Q_TIMES_SUM_BLOCK_SCHATTEN_ONE
+V38_CANONICAL_SCHATTEN_GATE = OPEN_CONJECTURE_AGGREGATE_X_POWER_5_OVER_3_TIMES_Q_POWER_OMEGA
+V38_PACKET_OVERHEAD_THRESHOLD = OMEGA_STRICTLY_LESS_THAN_19_OVER_800
+V38_BLOMER_PASCADI_CELL_ENGINE = SOURCE_BACKED_Q_POWER_MINUS_1_OVER_32_AFTER_EXACT_EMISSION
+V38_CONDITIONAL_OUTPUT = X_POWER_53_OVER_32_PLUS_OMEGA_OVER_3
+V38_CONDITIONAL_ENDPOINT_MARGIN = 19_OVER_2400_MINUS_OMEGA_OVER_3
+V38_SAMPLE_OMEGA = 1_OVER_100
+V38_SAMPLE_OUTPUT = 3983_OVER_2400
+V38_SAMPLE_ENDPOINT_MARGIN = 11_OVER_2400
+V38_FULL_MATRIX_SINGULAR_VALUES = PROVED_EXACT_ABS_D_R_OVER_Q
+V38_FULL_MATRIX_FROBENIUS = PROVED_EXACT_Q_INVERSE_TIMES_D_L2
+V38_GENERIC_BLOCK_SCHATTEN_BASELINE = Q_POWER_MINUS_1_OVER_4_TIMES_D_L2
+V38_GENERIC_ATOMIC_L2_BASELINE = Q_POWER_7_OVER_4_TIMES_D_L2
+V38_GENERIC_ATOMIC_L1_BASELINE = Q_POWER_3_OVER_2_TIMES_D_L1
+V38_PACKET_ENERGY_TO_ATOMIC = PROVED_Q_POWER_9_OVER_4_TIMES_ENERGY_SQUARE_ROOT
+V38_PACKET_ENERGY_REQUIRED_BY_GENERIC_ATOMIC_ROUTE = X_POWER_11_OVER_6_PLUS_2_OMEGA_OVER_3
+V38_SAMPLE_PACKET_ENERGY_EXPONENT = 46_OVER_25
+V38_DIRECT_PACKET_ENERGY_CAUCHY = PROVED_Q_SQUARED_TIMES_ENERGY_SQUARE_ROOT
+V38_DIRECT_PACKET_ENERGY_OUTPUT = X_POWER_19_OVER_12_PLUS_OMEGA_OVER_3
+V38_PACKET_ENERGY_VIA_BP = STOP_SCOPED_GENERIC_BLOCK_LOSS_Q_1_OVER_4_EXCEEDS_BP_GAIN_Q_1_OVER_32
+V38_PACKET_ENERGY_BP_OVERPAY = X_POWER_7_OVER_96
+V38_HARPER_GENERAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_Q_INDEPENDENT_SEQUENCE_Q_RANGE_AND_DISTRIBUTION_HYPOTHESES_MISMATCH
+V38_LEWKO_VARIATIONAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_PRIME_COUNTING_ONE_SEQUENCE_WRONG_PACKET_AND_NORM
+V38_HIEU_SHORT_INTERVAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_SINGLE_LAMBDA_SEQUENCE_NO_BETA_CENTERED_INVERSE_BLOCK
+V38_DIRECT_PRIMARY_SOURCE_FOR_CANONICAL_SCHATTEN_GATE = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_09
+V38_ROUTE_E = RETAINED_OPEN_WHOLE_RESIDUAL_SIGMA_LT_13_OVER_4800
+V38_ROUTE_X = RETAINED_OPEN_JOINT_CHARACTER_KAPPA_GT_403_OVER_1200
+V38_TERMINAL_A = OPEN_TERMINAL_EQUIVALENT_SIGNED_QLOCAL_COVARIANCE_AFTER_B
+V38_DYNAMICS_C = RESERVE_DISTINGUISHED_SEED_ATTACHMENT_STILL_OPEN
+V38_NEXT_THEOREM = DIRECT_LITERAL_CANONICAL_BLOCK_SCHATTEN_AGGREGATE_WITH_OMEGA_1_OVER_100_BENCHMARK
+V38_FIRST_FATAL = NO_LITERAL_THEOREM_BOUNDS_THE_CANONICAL_PHYSICAL_BLOCK_SCHATTEN_AGGREGATE_WITH_OMEGA_LESS_THAN_19_OVER_800
+V38_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B_K_LANE_CANONICAL_EMITTER_BUILT_ATOMIC_PIER_OPEN
+V38_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V38_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
+~~~
+
+完整 artifact 与 checker 为
+
+~~~text
+research/tpc-big-road/bridge_b_canonical_packet_schatten_emitter.md
+research/tpc-big-road/tpc_bridge_b_canonical_packet_schatten_checker.py
+~~~
+
+checker 冻结 30-field contract、58-row registry、4 个 source locks 与 4 个 dependency
+locks；registry SHA-256 为
+`44bc40fc8971dc4a0b3d941719feb89cc3ce3580178a2c4ad1c5bdab9a59c574`，并要求
+92/119/10/10/164 个 contract/registry/source/dependency/result mutations 全部拒绝，
+共 395 个 unique actions。V38 不创建 TPC-207、paper、PDF 或 build。
+
+~~~text
+V38_FINAL_RELEASE_QA = PASS_WITH_SCOPED_EXTERNAL_TPC126_ONE_ULP_PLATFORM_DIAGNOSTIC
+V38_MATH_SOURCE_FORMULA_QA = PASS
+V38_CHECKER_ADVERSARIAL_QA = PASS
+V38_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V38_PRE_CLOSURE_HANDOFF_SHA256_RAW = b73947b4eabeba0d671840c6ce5465d2735de218b6e8ff29a83ee3e079c69013
+V38_PRE_CLOSURE_HANDOFF_SHA256_CANONICAL_LF = b73947b4eabeba0d671840c6ce5465d2735de218b6e8ff29a83ee3e079c69013
+V38_COMPASS_SHA256_RAW = 35ed77804ad4f9763cc9bfb6a4261a7678508b982bd8424c00124089858f2e2f
+V38_README_SHA256_RAW = 2d44826311e823342cb0b5d77bffc4c225c533c0eb28ebc8c88de9bc977d13af
+V38_ROUTE_MAP_SHA256_RAW = b49527a87fe0def70bcda75bbecbbeac57231fcd59b7abd254dc38b6bd107e4d
+V38_PROOF_SHA256_RAW = 3ba663dd409fd12a901d12799d0ee0ca851751d047eeaa09a605c867dc1495e1
+V38_CHECKER_SHA256_RAW = b0d986384bb0cf023505df63d5f07d3e7de1427194711d963b2d6e7757031cec
+V38_CHECKER_STDOUT_BYTES = 1718
+V38_CHECKER_STDOUT_SHA256_RAW_LF = ce5f24ae83f121c6e13f6c0813e9feccd73899b7a83f043150e18fd558daff6e
+V38_CHECKER_PAYLOAD_BYTES = 1717
+V38_CHECKER_PAYLOAD_SHA256 = 39838a8708278f0a7889d4afc0ecbdb516348292e84dc9344c1e89d7bdd50f0d
+V38_CHECKER_NO_FLAG_EXTRA_FLAG_STDERR_SHA256 = 078b42e7eef221757b232bfa0dad859ed7f05d13e1a8a04e146deddbc0c6c04a
+V38_CHECKER_CONTRACT_FIELDS = 30
+V38_CHECKER_REGISTRY_ROWS = 58
+V38_CHECKER_SOURCE_LOCKS = 4
+V38_CHECKER_DEPENDENCY_LOCKS = 4
+V38_CHECKER_CONTRACT_MUTATIONS = 92
+V38_CHECKER_REGISTRY_MUTATIONS = 119
+V38_CHECKER_SOURCE_MUTATIONS = 10
+V38_CHECKER_DEPENDENCY_MUTATIONS = 10
+V38_CHECKER_RESULT_MUTATIONS = 164
+V38_CHECKER_MUTATION_ACTIONS = 395
+V38_CHECKER_REGISTRY_SHA256 = 44bc40fc8971dc4a0b3d941719feb89cc3ce3580178a2c4ad1c5bdab9a59c574
+V38_CHECKER_NORMAL_OPTIMIZED = 2/2 PASS BYTE_IDENTICAL
+V38_CHECKER_NO_FLAG_EXTRA_FLAG = 2/2 REJECTED
+V38_CHECKER_GLOBAL_PROVIDER_DEFAULT_CLOSURE_ATTACKS = PASS
+V38_CHECKER_REACHABLE_MUTABLE_CLOSURE_CONTAINERS = 0
+V38_CHECKER_AST_ASSERT_WRITE_NETWORK_SUBPROCESS = 0
+V38_INDEPENDENT_NUMERIC_EMITTER_Q5_Q7_Q11 = PASS
+V38_INDEPENDENT_RATIONAL_EXPONENT_LEDGER = PASS
+V38_PRIMARY_SOURCE_SCOPE_QA = PASS_FAIL_CLOSED
+V38_CANONICAL_REGISTRY_MIRRORS = 6/6 EXACT_SAME_ORDER
+V38_STARTUP_READ_ONLY_REGRESSION = 22/22 PASS
+V38_SUPPLEMENTAL_ATTEMPTED = 4/4
+V38_SUPPLEMENTAL_BYTE_EXACT = 3/4
+V38_TPC126_SEMANTIC_CERTIFICATE = PASS
+V38_TPC126_PLATFORM_DIAGNOSTIC = EXACT_ONE_ULP_DIRECT_REAL_ONLY_40_17369814909115_TO_40_17369814909116
+V38_BIG_ROAD_CHECKER_PROCESSES = 32/32 PASS
+V38_BIG_ROAD_CHECKER_STDOUT_IDENTITIES = 16/16
+V38_RELEASE_ALLOWLIST = EXACT_SIX_PATHS
+V38_CACHED_DIFF = EMPTY
+V38_DIFF_CHECK = PASS
+V38_PROTECTED_UNTRACKED_COUNT = 0
+V38_PROTECTED_UNTRACKED_MANIFEST_SHA256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+V38_PYC_COUNT = 0
+V38_MARKDOWN_FENCES = HANDOFF_BACKTICK_2854_TILDE_326__COMPASS_BACKTICK_224_TILDE_86__README_BACKTICK_378_TILDE_84__ROUTE_MAP_BACKTICK_8_TILDE_0__PROOF_BACKTICK_4_TILDE_0
+V38_EQUATION_TAGS = HANDOFF_133_OF_133_UNIQUE__PROOF_50_OF_50_UNIQUE
+V38_BASELINE_HEAD_ORIGIN_REMOTE = c89d3a0fc5201cba2ef27e37cf388ad763c4d59b
+V38_FILES_CHANGED = EXACT_SIX_RELEASE_PATHS
+V38_GENERATED_OUTPUTS = NONE
+V38_ARITHMETIC_ADVANCE = NO
+V38_FIXED_ATOM_CREDIT = 0
+V38_STRICT_1_OVER_400 = UNPAID
+V38_L2 = NONE
+V38_SEALED_FOR_NEW_SESSION = true
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+~~~
+
 ## 84. 2026-08-09 V37：loss-budgeted centered shift packet compiler
 
 V37 不再把 V36 Route K 的 `Q^(-31/32)` 视为一个必须零损耗实现的黑箱。
@@ -13496,7 +13899,7 @@ V37 的核心 open hypothesis `H_pack(omega)` 要求：存在一个 exact exactl
 compiler，把同一 physical packet分解为 Blomer--Pascadi admissible balanced cells
 
 ~~~text
-K_(nu,q)=sum_(m,n,(mn,q)=1)alpha_(nu,q)(m)gamma_(nu,q)(n)
+K_(nu,q)=sum_(m,n,(m,n,q)=1)alpha_(nu,q)(m)gamma_(nu,q)(n)
          S(a_(nu,q)m,n;q),
 M,N as q^(1/2),                                      (84.4)
 ~~~

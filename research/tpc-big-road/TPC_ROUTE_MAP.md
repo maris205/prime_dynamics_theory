@@ -2,7 +2,7 @@
 
 更新时间：2026-08-09
 
-当前地图版本：V37
+当前地图版本：V38
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,9 +46,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +------------------------------------------+
-        | YOU ARE HERE — V37                      |
-        | K lane: loss-budgeted shift packet      |
-        | exactly-once emitter omega<19/800 OPEN  |
+        | YOU ARE HERE — V38                      |
+        | K lane: canonical Kloosterman emitter   |
+        | exact; block-Schatten aggregate OPEN    |
         +------------------------------------------+
                 |
                 v
@@ -64,9 +64,11 @@ Bridge A 的 terminal 桥墩
 ```
 
 一句话定位：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
-当前站在岛 2 通往岛 6 的 Bridge A / Gate B / K 车道；最后一段 BP cell bridge已有
-source engine，缺的是允许 overhead `omega<19/800` 的 exactly-once physical packet
-emitter。核心算术 saving 尚未证明。**
+当前站在岛 2 通往岛 6 的 Bridge A / Gate B / K 车道；V37 猜想的 exactly-once
+physical packet emitter 已由 V38 的 canonical Fourier--Kloosterman 矩阵、零轴消去与
+balanced-block SVD 精确构造。最后一段 BP cell bridge 也已有 source engine；现在唯一
+主红叉是 literal block-Schatten aggregate，目标 overhead 仍为 `omega<19/800`。
+核心算术 saving 尚未证明。**
 
 ## 2. 图例与状态语言
 
@@ -145,11 +147,11 @@ endpoint 的主桥。
 
 图像标签：`four-Möbius collective saving`。
 
-它代表从分析消去岛通往终点岛的核心算术估计。V23--V37 的作用不是宣称已经过桥，
+它代表从分析消去岛通往终点岛的核心算术估计。V23--V38 的作用不是宣称已经过桥，
 而是不断删除过付、修正 Fourier convention、保持 literal coefficients，并把红叉处的
 困难压缩到当前两个明确桥墩；第一个桥墩又保留三条条件车道：
 
-1. `B`：K loss-budgeted packet emitter优先，E residual energy与 X character route备用；
+1. `B`：K canonical block-Schatten aggregate优先，E residual energy与 X character route备用；
 2. `A`：terminal q-local signed covariance。
 
 Bridge A 当前状态：`OPEN`。
@@ -163,7 +165,7 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 当前精确位置：V37
+## 5. 当前精确位置：V38
 
 V36 已把 paid rows之后的 physical numerator压成 prime-only、off-diagonal、coprime
 binary ratio core。V37 对每个 prime `q` 与 unit `t` 定义 centered shift packet
@@ -192,16 +194,30 @@ Q=x^{1/3},\qquad H=x^{21/32},
 \frac HQ=x^{31/96}=Q^{31/32}.
 \]
 
-当前第一条真正开放的新定理是 loss-budgeted exactly-once emitter：把这个 literal
-packet发射成 BP-admissible balanced cells，且 aggregate source-native trivial budget满足
+V38 先把这个 packet 压成 unit-residue vector `d_q(r)`，再定义 canonical matrix
 
 \[
-\sum_{q,\nu}T_{\nu,q}\ll x^{5/3+o(1)}Q^\omega,
+M_q(m,n)=\frac1{q^2}\sum_{r\in\mathbb F_q^\times}
+d_q(r)e_q(-mr-n\bar r).
+\]
+
+双重加法正交性精确给出 Kloosterman 发射；删去唯一不满足 prime-unit 条件的
+`(m,n)=(0,0)` 后，只产生显式
+`lambda_q=(q^2-q+1)/q^2` 自返因子。随后把频率域划成边长约 `sqrt(q)` 的 consecutive
+blocks，并逐 block 做 SVD，便得到零余项、每个矩阵元 exactly once 的 BP-admissible
+rank-one cells。也就是说，V37 的 emitter 猜想已经关闭。
+
+当前第一条真正开放的新定理是同一个 literal packet 的 canonical block-Schatten
+aggregate：
+
+\[
+\sum_q\frac{q^2}{\lambda_q}
+\sum_{I,J}\|M_q[I,J]\|_{S_1}
+\ll x^{5/3+o(1)}Q^\omega,
 \qquad \omega<\frac{19}{800}.
 \]
 
-它相对 raw triangle给 (Q^{-31/32+\omega})；再接 Blomer--Pascadi fixed-modulus
-(Q^{-1/32}) cell saving，条件输出是
+再接 Blomer--Pascadi fixed-modulus `(Q^{-1/32})` cell saving，条件输出仍是
 
 \[
 x^{53/32+\omega/3+o(1)},
@@ -213,25 +229,26 @@ x^{53/32+\omega/3+o(1)},
 \frac{19}{2400}-\frac\omega3>0.
 \]
 
-generic per-shift Cauchy只给 pre-cell `rho=31/64`，即使再接 BP也输出
-`x^{349/192}`，所以当前 open theorem是 joint transform/norm/reassembly，而不是
-未经证明的 random cancellation。E lane的 residual energy与 X lane的 character
-decoupling继续作为独立后备；任何 B lane闭合后，terminal q-local A仍须另付。
+generic block nuclear/Frobenius baseline会损失 `Q^(1/4)`，超过 BP 的 `Q^(-1/32)`
+收益；若先假设 packet energy，再绕道 BP，反而比直接 Cauchy 多付 `x^(7/96)`。
+所以当前 open theorem必须直接利用 literal blocks 的 joint Schatten structure，不能把
+普通 packet energy 换名。E lane 与 X lane继续作为独立后备；任何 B lane闭合后，
+terminal q-local A仍须另付。
 
 ## 6. 图像名称与仓库名称的对应
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
 
-| 图像语言 | 仓库 V37 语言 | 关系 |
+| 图像语言 | 仓库 V38 语言 | 关系 |
 |---|---|---|
 | Bridge A：解析 collective saving | `B(K/E/X)` 后接 `A` | 图像的一座大桥被拆成多车道 B 与 terminal A |
 | Bridge B：distinguished-seed genericity | `C` symmetry-breaking reserve | 都是动力学/指定 seed 后备线 |
-| 核心算术估计 | K packet emitter `omega<19/800` + terminal covariance | 当前 red-X 的优先施工方案 |
+| 核心算术估计 | K block-Schatten aggregate `omega<19/800` + terminal covariance | 当前 red-X 的优先施工方案 |
 
 仓库选择路线为：
 
 ```text
-K_LOSS_BUDGETED_PACKET_EMITTER
+K_CANONICAL_BLOCK_SCHATTEN_AGGREGATE
 OR_E_WHOLE_RESIDUAL_ENERGY
 OR_X_JOINT_CHARACTER_DECOUPLING
 THEN_A_TERMINAL_COVARIANCE
@@ -240,7 +257,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V37：
+截至 V38：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -265,9 +282,9 @@ NUMBERED_RELEASE = NO
 
 优先级更新为：
 
-1. **B/K：证明 loss-budgeted centered shift-packet emitter**，必须 exactly once保留
-   physical `beta,w,K_H`、prime shell、deleted diagonal、unit/nonunit与 template labels，
-   aggregate overhead满足 `omega<19/800`；
+1. **B/K：证明 direct canonical block-Schatten aggregate**，使用已建的 exact
+   Fourier--Kloosterman/SVD emitter，并把 aggregate overhead 控制在
+   `omega<19/800`；首个 benchmark 为 `omega=1/100`；
 2. **B/E 与 B/X：保留并行后备**，分别是 `sigma<13/4800` whole residual energy和
    `kappa>403/1200` joint character theorem，不与 K lane叠加 theorem credit；
 3. **A：证明 terminal q-local signed covariance**，不能用 off-zero norm 循环支付
@@ -278,7 +295,7 @@ NUMBERED_RELEASE = NO
 最窄 first fatal：
 
 ```text
-NO_LITERAL_THEOREM_PROVES_THE_BP_ADMISSIBLE_PACKET_EMITTER_AND_AGGREGATE_NORM_WITH_OMEGA_LT_19_OVER_800
+NO_LITERAL_THEOREM_BOUNDS_THE_CANONICAL_PHYSICAL_BLOCK_SCHATTEN_AGGREGATE_WITH_OMEGA_LESS_THAN_19_OVER_800
 ```
 
 ## 9. 后续更新协议
@@ -297,5 +314,6 @@ NO_LITERAL_THEOREM_PROVES_THE_BP_ADMISSIBLE_PACKET_EMITTER_AND_AGGREGATE_NORM_WI
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-09 | V38 | Bridge A / Gate B / K lane：canonical emitter built, Schatten pier open | parent `c89d3a0fc5201cba2ef27e37cf388ad763c4d59b`; V38=current working release | 以 double orthogonality、zero-axis factor 与 balanced SVD 精确关闭 emitter construction；主红叉收缩为 `omega<19/800` physical block-Schatten aggregate；arithmetic 仍为 NO |
 | 2026-08-09 | V37 | Bridge A / Gate B / K lane：loss-budgeted shift packet | parent `2b199a9989f378666e5bc7b9bb8f2952015f75de`; V37=current release commit | 将零损耗 `Q^(-31/32)` 口号改写为 exact packet 与 `omega<19/800` emitter contract；状态仍为 arithmetic NO |
 | 2026-08-08 | V32 | Bridge A 桥头：single-scale residual oscillation | `66dcd9a08b1adb92b117941aae92b9a17ab6298f` | 首次将岛屿图保存为可更新文字地图并收录配套原图；未改变数学状态 |
