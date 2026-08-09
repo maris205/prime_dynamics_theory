@@ -1,7 +1,85 @@
 # TPC HANDOFF
 
 更新时间：2026-08-09
-交接状态：`BOLD_CHANNEL_V36_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V37_SEALED_FOR_NEW_SESSION`
+
+第 84 节仍位于“解析消去岛 / Bridge A / Gate B”，但已把 V36 Route K 的
+`Q^(-31/32)` hard pier从一个零损耗口号改写成可证伪、可付有限损耗的 centered
+shift-packet compiler。对 prime `q`、unit `t`，令
+
+~~~text
+F_(q,t)(b)=sum_(u in I_x,u!=t,u-t=b mod q) w(u)K_H(u-t),
+b in F_q minus {-t}.                                (V37.1)
+~~~
+
+映射 `a -> b=(a-1)t` 把 unit residue精确双射到 `F_q minus {-t}`，且
+`a=1`只对应 `b=0`。因此 V36 binary core逐字等于
+
+~~~text
+C_x=sum_q q sum_(t,q does not divide t) beta(t)
+    * [F_(q,t)(0)-1/(q-1) sum_(b!=-t)F_(q,t)(b)].   (V37.2)
+~~~
+
+这条 identity同时冻结三个容易误删的结构：只有 `b=0,ell=0` diagonal被删除；
+全部 `b!=-t` background必须保留；constant packet被 centered bracket精确消去。
+Schwartz有效 shift occupancy为
+
+~~~text
+H/Q=x^(31/96)=Q^(31/32),
+raw positive/compensating triangle=x^(191/96+o(1)). (V37.3)
+~~~
+
+V37 现在把 Route K 的 open input明确声明为 `H_pack(omega)`：必须 exactly once
+把同一个 physical packet发射成 Blomer--Pascadi admissible fixed-`q` balanced cells，
+保留 `beta,w,K_H`、prime shell、deleted diagonal、unit/nonunit与所有 template labels，
+并证明 aggregate source-native trivial budgets至多
+
+~~~text
+sum_(q,nu) T_(nu,q) << x^(5/3+o(1)) Q^omega.        (V37.4)
+~~~
+
+这相对 raw triangle产生 `Q^(-31/32+omega)` pre-cell gain；再接
+Blomer--Pascadi source-backed `Q^(-1/32)` cell saving，条件输出为
+
+~~~text
+x^(53/32+omega/3+o(1)).                              (V37.5)
+~~~
+
+所以零损耗不是必要条件：严格 endpoint恰好允许
+
+~~~text
+omega<19/800,
+endpoint margin=19/2400-omega/3.                     (V37.6)
+~~~
+
+更一般地，pre-cell `Q^(-rho)` 与 cell `Q^(-gamma)`只需
+`rho+gamma>781/800`；在 `gamma=1/32` 时即 `rho>189/200`。普通逐
+`ell` Cauchy只给 `rho=31/64`，即使再接 BP也输出 `x^(349/192)`，距严格
+endpoint仍差 `737/4800`；因此当前困难不是可随意假设的 random cancellation，
+而是避免几乎全部 per-shift L1 triangle的 joint transform/reassembly theorem。
+
+~~~text
+V37_ROUTE_ADVANCE = YES
+V37_CONDITIONAL_BRIDGE_ADVANCE = YES
+V37_PACKET_EMITTER_STATUS = OPEN_CONJECTURE_BP_ADMISSIBLE_EXACTLY_ONCE_JOINT_PACKET
+V37_PACKET_OVERHEAD_THRESHOLD = OMEGA_STRICTLY_LESS_THAN_19_OVER_800
+V37_BLOMER_PASCADI_CELL_ENGINE = SOURCE_BACKED_Q_POWER_MINUS_1_OVER_32_AT_CRITICAL_SQUARE_ROOT_RANGE
+V37_ARITHMETIC_ADVANCE = NO
+V37_FIXED_ATOM_CREDIT = 0
+V37_STRICT_1_OVER_400 = UNPAID
+V37_L2 = NONE
+TPC_207_TRIGGER = false                              (V37.7)
+~~~
+
+完整 53-row canonical registry位于 Handoff第 24、84 节、Compass第 38 节、
+big-road README第 37 节、V37 proof第 10 节与 checker。proof为
+research/tpc-big-road/bridge_b_loss_budgeted_shift_packet_compiler.md，checker为
+research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py。文字路线图
+`research/tpc-big-road/TPC_ROUTE_MAP.md`只作导航并同步标出 K lane的 loss-budgeted
+pier。V37仍是不编号 big-road checkpoint；不创建 TPC-207、paper、PDF或build output。
+
+以下 V36 页首块作为已封存直接上游保留；current truth由上面的 V37 摘要、
+第 24 节与第 84 节控制。
 
 第 83 节仍位于“解析消去岛 / Bridge A / Gate B”。V36 沿用户授权的
 multi-bridge 策略，把 V35 core 重排为一个 exact binary ratio covariance，并把
@@ -64,8 +142,8 @@ research/tpc-big-road/bridge_b_multiroute_ratio_core_atlas.md，checker 为
 research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py。V36 是不编号
 big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
 
-以下 V35 页首块作为已封存直接上游保留；current truth 由上面的 V36 摘要、
-第 24 节与第 83 节控制。
+以下 V35 页首块作为已封存直接上游保留；V36 snapshot truth由本块、
+第 83 节控制，current V37 truth由页首第一块、第 24 节与第 84 节控制。
 
 第 82 节继续位于“解析消去岛 / Bridge A / Gate B”。V35 把 V34 的
 compensated prime frame 精确压缩成一个更窄的 coprime ratio core。首先，
@@ -2303,19 +2381,19 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V36_20260809_BINARY_RATIO_CORE_WITH_THREE_EXPLICIT_CONDITIONAL_LANES_NO_ARITHMETIC_TRIGGER`
+`TPC_BIG_ROAD_V37_20260809_LOSS_BUDGETED_CENTERED_SHIFT_PACKET_COMPILER_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V36_ONE_OF_THREE_LITERAL_RATIO_CORE_BRIDGE_THEOREM`；
+`V37_EXACTLY_ONCE_BP_ADMISSIBLE_CENTERED_SHIFT_PACKET_EMITTER`；
 当前 first subgates：
-`V36_ROUTE_K0_STATUS`、`V36_ROUTE_E_STATUS`、`V36_ROUTE_X_STATUS`；
+`V37_PACKET_EMITTER_STATUS`、`V36_ROUTE_E_STATUS`、`V36_ROUTE_X_STATUS`；
 已支付并可复用的 source-backed local subgate 为
-`V36_ROUTE_K1_STATUS`、
+`V37_BLOMER_PASCADI_CELL_ENGINE`、
 `V34_LOCAL_CARRIER_E_PAYMENT`、`V34_LOCAL_CARRIER_J_PAYMENT` 与
 `V33_BAZIN_BETA_MARGINAL`；已支付的 exact q-local major model为
 `V30_QLOCAL_MODEL_BOUND`
-（第 83 节控制；既有 local source只有在第 32.6 节或
+（第 84 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--83 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--84 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -2327,6 +2405,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_loss_budgeted_shift_packet_compiler.md`、
+`research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py`、
 `research/tpc-big-road/bridge_b_multiroute_ratio_core_atlas.md`、
 `research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py`、
 `research/tpc-big-road/bridge_b_proper_factor_unit_ratio_reduction.md`、
@@ -2364,7 +2444,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--83 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--84 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2380,18 +2460,18 @@ high-beta selected packet。两条 source lock 不得拼接。
 
 ## 1. 启动与验证协议
 
-```powershell
-Set-Location "D:\26-aimath\理论研究3\prime_dynamics_theory"
+```bash
+cd /root/autodl-tmp/math_research3/prime_dynamics_theory
 git status --short --branch
 git pull --rebase origin main
-Get-Content -Raw -Encoding UTF8 TPC_HANDOFF.md
-$env:PYTHONDONTWRITEBYTECODE = "1"
+cat TPC_HANDOFF.md
+export PYTHONDONTWRITEBYTECODE=1
 
-$d = "papers/tpc-206-selected-lineage-pair-registry-projection/experiments"
+d="papers/tpc-206-selected-lineage-pair-registry-projection/experiments"
 python -B "$d/build_tpc206.py" --check
 python -B "$d/tpc206_selected_lineage_pair_registry.py" --check
 python -B "$d/tpc206_independent_checker.py" --check
-$p = "papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments"
+p="papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments"
 python -B "$p/build_tpc205.py" --check
 python -B "$p/tpc205_pair_native_registry_interface.py" --check
 python -B "$p/tpc205_independent_checker.py" --check
@@ -2405,18 +2485,17 @@ python -O -B papers/tpc-184-bad-endpoint-literal-target-contract/experiments/tpc
 python -B papers/tpc-189-direct-twist-literal-target-contract/experiments/tpc189_direct_twist_literal_target_contract.py --check
 python -O -B papers/tpc-189-direct-twist-literal-target-contract/experiments/tpc189_direct_twist_literal_target_contract.py --check
 
-foreach ($s in @(
-  "papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory.py",
-  "papers/tpc-174-local-occurrence-edge-witness-schema/experiments/tpc174_witness_contract.py",
-  "papers/tpc-175-declared-corpus-local-edge-family/experiments/tpc175_local_edge_family.py",
-  "papers/tpc-176-source-backed-coverage-gluing-audit/experiments/tpc176_coverage_gluing_audit.py",
-  "papers/tpc-177-actual-active-support-vacuity-firewall/experiments/tpc177_active_support_audit.py",
-  "papers/tpc-178-canonical-minimal-representation-eligibility/experiments/tpc178_representation_audit.py",
-  "papers/tpc-179-h1-structural-corpus-exhaustion-integration/experiments/tpc179_h1_integration.py"
-)) {
-  python -O -B $s --check
-  if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-}
+for s in \
+  papers/tpc-173-production-source-claim-inventory/experiments/tpc173_source_claim_inventory.py \
+  papers/tpc-174-local-occurrence-edge-witness-schema/experiments/tpc174_witness_contract.py \
+  papers/tpc-175-declared-corpus-local-edge-family/experiments/tpc175_local_edge_family.py \
+  papers/tpc-176-source-backed-coverage-gluing-audit/experiments/tpc176_coverage_gluing_audit.py \
+  papers/tpc-177-actual-active-support-vacuity-firewall/experiments/tpc177_active_support_audit.py \
+  papers/tpc-178-canonical-minimal-representation-eligibility/experiments/tpc178_representation_audit.py \
+  papers/tpc-179-h1-structural-corpus-exhaustion-integration/experiments/tpc179_h1_integration.py
+do
+  python -O -B "$s" --check || exit $?
+done
 ```
 
 以上是当前完整的 22 项只读启动回归；任一命令非零即 fail closed，不继续
@@ -2426,11 +2505,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V36 gate及其 V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；二十八次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V37 gate及其 V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；三十次必须都为零，且每一对 stdout
 byte-identical：
 
-```powershell
+```bash
+python -B research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_proper_factor_unit_ratio_checker.py --check
@@ -2782,6 +2863,23 @@ V36_RUNBO_LI_DIRECT_ATTACHMENT = STOP_SCOPED_SPECIAL_HARMAN_MAJORANTS_AND_MODULU
 只停止把相应 source 直接宣称为 literal V36 theorem。它们不停止新的 collective
 emitter、whole-residual energy、joint character theorem、terminal A、dynamics C
 或其他显式 conjectural bridge。
+
+V37 对 loss-budgeted centered shift packet新增且仅新增六个 scoped stops：
+
+```text
+V37_ELL_CAUCHY = STOP_SCOPED_EFFECTIVE_RHO_31_OVER_64_INSUFFICIENT
+V37_BLOMER_PASCADI_DIRECT_ATTACHMENT = STOP_SCOPED_REQUIRES_PRIOR_PHYSICAL_PACKET_EMISSION_AND_AGGREGATE_NORM
+V37_PASCADI_FREQUENCY_CONCENTRATION_DIRECT_ATTACHMENT = STOP_SCOPED_ASSUMPTION14_AND_SMOOTH_LEVEL_SEQUENCE_NOT_VERIFIED_FOR_LITERAL_PACKET
+V37_WRIGHT_PARTIALLY_FIXED_MODULUS_DIRECT_ATTACHMENT = STOP_SCOPED_WRONG_DISPERSION_ARRAYS_AND_NO_CENTERED_PACKET_REASSEMBLY
+V37_BETTIN_CHANDEE_DIRECT_ATTACHMENT = STOP_SCOPED_LOCAL_TRILINEAR_FRACTION_NO_PRIME_SHELL_PACKET_NORM
+V37_BLOMER_RISAGER_SHPARLINSKI_DIRECT_ATTACHMENT = STOP_SCOPED_SPECIFIED_TRIPLE_MODULAR_INVERSE_FAMILY_WRONG_PHYSICAL_COEFFICIENTS
+```
+
+第一项只停止 generic per-`ell` Cauchy：它给总 gain `33/64`、输出
+`x^(349/192)`，距严格 endpoint仍差 `737/4800`。后五项只停止把相应 local、
+frequency-concentrated或 partially-fixed source直接宣称为 V37 physical packet
+emitter。它们不停止 loss-budgeted exactly-once compiler、V36 E/X lanes、terminal A、
+dynamics C或其他明确标注的 conjectural bridge。
 
 TPC-204 新增且仅新增：
 
@@ -8129,14 +8227,16 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V36 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V37 current）
 
 ```text
 进入仓库：
-D:\26-aimath\理论研究3\prime_dynamics_theory
+/root/autodl-tmp/math_research3/prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_loss_budgeted_shift_packet_compiler.md、
+research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py、
 research/tpc-big-road/bridge_b_multiroute_ratio_core_atlas.md、
 research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py、
 research/tpc-big-road/bridge_b_proper_factor_unit_ratio_reduction.md、
@@ -8177,14 +8277,15 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--83 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--84 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
+cd /root/autodl-tmp/math_research3/prime_dynamics_theory
 git status --short --branch
 git pull --rebase origin main
-Get-Content -Raw -Encoding UTF8 TPC_HANDOFF.md
-$env:PYTHONDONTWRITEBYTECODE = "1"
+cat TPC_HANDOFF.md
+export PYTHONDONTWRITEBYTECODE=1
 
 保留全部既有 tracked/untracked；不得 reset、checkout、clean、自动 stash、删除
 或纳入本轮提交。若 existing work使 rebase不安全，停止并报告。完整执行第 1 节
@@ -8393,6 +8494,59 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V37_MAXIMUM_CLAIM = EXACT_CENTERED_RESIDUE_PACKETIZATION_PLUS_LOSS_BUDGETED_K_ROUTE_THRESHOLD_AND_SOURCE_BACKED_CELL_ENGINE_AFTER_CONJECTURAL_EMISSION
+V37_ROUTE_ADVANCE = YES
+V37_CONDITIONAL_BRIDGE_ADVANCE = YES
+V37_ARITHMETIC_ADVANCE = NO
+V37_FIXED_ATOM_CREDIT = 0
+V37_STRICT_1_OVER_400 = UNPAID
+V37_L2 = NONE
+V37_TPC_207_TRIGGER = false
+V37_NUMBERED_RELEASE = NO
+V37_DERIVATION_STATUS = COHERENT_AFTER_EXACT_PACKETIZATION_AND_LOSS_BUDGETING
+V37_ASSUMPTION_POLICY = PACKET_EMITTER_IS_EXPLICIT_CONJECTURE_AND_NEVER_PROMOTED_TO_THEOREM
+V37_SELECTED_RESEARCH_ROUTE = K_LOSS_BUDGETED_PACKET_EMITTER_FIRST__E_SECOND__X_THIRD__A_TERMINAL_AFTER_B__C_RESERVE
+V37_V36_BINARY_CORE = RETAINED_EXACT_OFF_DIAGONAL_COPRIME_RATIO_COVARIANCE
+V37_CENTERED_RESIDUE_PACKET = PROVED_EXACT_BINARY_CORE_PACKET_IDENTITY
+V37_UNIT_TO_DIFFERENCE_BIJECTION = PROVED_EXACT_A_TO_B_EQUALS_A_MINUS_ONE_TIMES_T
+V37_PACKET_DIAGONAL = PROVED_EXACT_ONLY_B_ZERO_ELL_ZERO_ROW_DELETED
+V37_PACKET_BACKGROUND = PROVED_EXACT_ALL_B_NOT_EQUAL_MINUS_T_REQUIRED
+V37_CONSTANT_PACKET = PROVED_EXACT_ANNIHILATED
+V37_SCHWARTZ_TAIL = PROVED_NEGLIGIBLE_AFTER_H_X_EPSILON_TRUNCATION
+V37_SHIFT_OCCUPANCY = Q_POWER_31_OVER_32
+V37_RAW_POSITIVE_COMPENSATING_TRIANGLE = X_POWER_191_OVER_96
+V37_PACKET_EMITTER_STATUS = OPEN_CONJECTURE_BP_ADMISSIBLE_EXACTLY_ONCE_JOINT_PACKET
+V37_PACKET_EXACTLY_ONCE_POLICY = PHYSICAL_BETA_W_K_PRIME_SHELL_ZERO_DELETION_AND_ALL_TEMPLATE_LABELS_PRESERVED
+V37_PACKET_PRE_CELL_BUDGET = X_POWER_5_OVER_3_TIMES_Q_POWER_OMEGA
+V37_PACKET_EFFECTIVE_GAIN = Q_POWER_MINUS_31_OVER_32_PLUS_OMEGA
+V37_PACKET_OVERHEAD_THRESHOLD = OMEGA_STRICTLY_LESS_THAN_19_OVER_800
+V37_BLOMER_PASCADI_CELL_ENGINE = SOURCE_BACKED_Q_POWER_MINUS_1_OVER_32_AT_CRITICAL_SQUARE_ROOT_RANGE
+V37_CONDITIONAL_OUTPUT = X_POWER_53_OVER_32_PLUS_OMEGA_OVER_3
+V37_CONDITIONAL_DELTA = 1_OVER_96_MINUS_OMEGA_OVER_3
+V37_CONDITIONAL_ENDPOINT_MARGIN = 19_OVER_2400_MINUS_OMEGA_OVER_3
+V37_GENERAL_GAIN_CONDITION = RHO_PLUS_GAMMA_STRICTLY_GREATER_THAN_781_OVER_800
+V37_WITH_BP_RHO_THRESHOLD = RHO_STRICTLY_GREATER_THAN_189_OVER_200
+V37_V36_ZERO_LOSS_COMPILER = SUFFICIENT_SPECIAL_CASE_OMEGA_ZERO_NOT_NECESSARY
+V37_ELL_CAUCHY = STOP_SCOPED_EFFECTIVE_RHO_31_OVER_64_INSUFFICIENT
+V37_ELL_CAUCHY_OUTPUT = X_POWER_349_OVER_192
+V37_ELL_CAUCHY_ENDPOINT_DEFICIT = 737_OVER_4800
+V37_PACKET_COMPILER_NOT_RANDOM_CANCELLATION = PROVED_STATUS_FIREWALL
+V37_GLOBAL_RANDOM_PHASE_BENCHMARK = RETAINED_HEURISTIC_ONLY_X_POWER_223_OVER_192
+V37_BLOMER_PASCADI_DIRECT_ATTACHMENT = STOP_SCOPED_REQUIRES_PRIOR_PHYSICAL_PACKET_EMISSION_AND_AGGREGATE_NORM
+V37_PASCADI_FREQUENCY_CONCENTRATION_DIRECT_ATTACHMENT = STOP_SCOPED_ASSUMPTION14_AND_SMOOTH_LEVEL_SEQUENCE_NOT_VERIFIED_FOR_LITERAL_PACKET
+V37_WRIGHT_PARTIALLY_FIXED_MODULUS_DIRECT_ATTACHMENT = STOP_SCOPED_WRONG_DISPERSION_ARRAYS_AND_NO_CENTERED_PACKET_REASSEMBLY
+V37_BETTIN_CHANDEE_DIRECT_ATTACHMENT = STOP_SCOPED_LOCAL_TRILINEAR_FRACTION_NO_PRIME_SHELL_PACKET_NORM
+V37_BLOMER_RISAGER_SHPARLINSKI_DIRECT_ATTACHMENT = STOP_SCOPED_SPECIFIED_TRIPLE_MODULAR_INVERSE_FAMILY_WRONG_PHYSICAL_COEFFICIENTS
+V37_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_09
+V37_ROUTE_E = RETAINED_OPEN_WHOLE_RESIDUAL_SIGMA_LT_13_OVER_4800
+V37_ROUTE_X = RETAINED_OPEN_JOINT_CHARACTER_KAPPA_GT_403_OVER_1200
+V37_TERMINAL_A = OPEN_TERMINAL_EQUIVALENT_SIGNED_QLOCAL_COVARIANCE_AFTER_B
+V37_DYNAMICS_C = RESERVE_DISTINGUISHED_SEED_ATTACHMENT_STILL_OPEN
+V37_NEXT_THEOREM = EXACTLY_ONCE_BP_ADMISSIBLE_CENTERED_SHIFT_PACKET_EMITTER_WITH_AGGREGATE_OVERHEAD_OMEGA_LT_19_OVER_800
+V37_FIRST_FATAL = NO_LITERAL_THEOREM_PROVES_THE_BP_ADMISSIBLE_PACKET_EMITTER_AND_AGGREGATE_NORM_WITH_OMEGA_LT_19_OVER_800
+V37_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B_K_LANE_LOSS_BUDGETED_PIER_MARKED
+V37_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V37_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
 V36_MAXIMUM_CLAIM = EXACT_PROPER_FACTOR_RECOLLAPSE_TO_BINARY_OFF_DIAGONAL_HYBRID_CHARACTER_COVARIANCE_PLUS_ONE_OF_THREE_CONDITIONAL_GATE_B_COMPILER_AND_EXPLICIT_HEURISTIC_CHARTER
 V36_ROUTE_ADVANCE = YES
 V36_CONDITIONAL_BRIDGE_ADVANCE = YES
@@ -13305,6 +13459,237 @@ V34_TPC_207_TRIGGER = false
 V34_SEALED_FOR_NEW_SESSION = true
 NUMBERED_RELEASE = NO
 TPC_207_TRIGGER = false
+~~~
+
+## 84. 2026-08-09 V37：loss-budgeted centered shift packet compiler
+
+V37 不再把 V36 Route K 的 `Q^(-31/32)` 视为一个必须零损耗实现的黑箱。
+它先从 V36 exact binary core中抽出 residue packet，再把真正需要的新 theorem
+写成一个带可容忍 overhead 的 exactly-once emitter contract。
+
+对 prime `q` 与 `q`-unit `t`，定义
+
+~~~text
+F_(q,t)(b)=sum_(u in I_x,u!=t,u-t=b mod q)w(u)K_H(u-t),
+b in F_q minus {-t}.                                 (84.1)
+~~~
+
+单位映射 `a -> b=(a-1)t` 是从 `F_q^*` 到 `F_q minus {-t}` 的双射，且
+`a=1`当且仅当 `b=0`。因此 ratio kernel精确成为
+
+~~~text
+C_x=sum_q q sum_(t,q does not divide t)beta(t)
+    * [F_(q,t)(0)-1/(q-1)sum_(b!=-t)F_(q,t)(b)].     (84.2)
+~~~
+
+这个 normal form不是启发式：`b=0,ell=0` 是唯一删除的 diagonal row；
+`b!=-t` 的完整 background是 compulsory；constant packet被 bracket精确消灭。
+对 `q~Q=x^(1/3)` 与 `H=x^(21/32)`，每个 residue的有效 shift occupancy是
+
+~~~text
+L=H/Q=x^(31/96)=Q^(31/32),                           (84.3)
+~~~
+
+而拆开 positive/background 两支的 raw triangle为 `x^(191/96+o(1))`。
+
+V37 的核心 open hypothesis `H_pack(omega)` 要求：存在一个 exact exactly-once
+compiler，把同一 physical packet分解为 Blomer--Pascadi admissible balanced cells
+
+~~~text
+K_(nu,q)=sum_(m,n,(mn,q)=1)alpha_(nu,q)(m)gamma_(nu,q)(n)
+         S(a_(nu,q)m,n;q),
+M,N as q^(1/2),                                      (84.4)
+~~~
+
+并保留 `beta,w,K_H`、prime shell、deleted diagonal、unit/nonunit、hard shell、
+ordered template与 multiplicity。以 source-native trivial scale
+
+~~~text
+T_(nu,q)=q ||alpha_(nu,q)||_2 ||gamma_(nu,q)||_2,    (84.5)
+~~~
+
+aggregate contract为
+
+~~~text
+sum_(q,nu)T_(nu,q)<<x^(5/3+o(1))Q^omega,             (84.6)
+~~~
+
+其余 paid remainder至多 `x^(53/32+o(1))`。相对 raw triangle，这给
+`Q^(-31/32+omega)` pre-cell gain。Blomer--Pascadi Theorem 1.1 在 critical
+square-root cell给 source-backed `Q^(-1/32)` saving，所以 conditional numerator为
+
+~~~text
+x^(53/32+omega/3+o(1)).                              (84.7)
+~~~
+
+严格 `1/400` endpoint当且仅当
+
+~~~text
+omega<19/800,
+margin=19/2400-omega/3.                              (84.8)
+~~~
+
+一般预算写成 pre-cell gain `Q^(-rho)` 与 cell gain `Q^(-gamma)` 时，只需
+
+~~~text
+rho+gamma>781/800.                                   (84.9)
+~~~
+
+对 BP 的 `gamma=1/32`，阈值是 `rho>189/200`。V36 的 `omega=0` 是充分特例，
+不是必要条件。作为 fail-closed 反例，generic per-`ell` Cauchy只产生
+`rho=31/64`；连同 BP 总 gain仅 `33/64`，输出 `x^(349/192)`，距严格 endpoint
+仍差 `737/4800`。因此 `H_pack` 不能被解释成“随机 shift自动平方根消去”；它是
+一个 joint transform、norm ledger和 reassembly theorem。
+
+primary-source screen的边界为：Blomer--Pascadi提供 cell engine但不提供 physical
+emitter；Pascadi frequency concentration要求其 Assumption 14 与特殊 level sequence；
+Wright 的 partially-fixed modulus theorem使用不同 dispersion arrays；
+Bettin--Chandee与 Blomer--Risager--Shparlinski只提供局部 Kloosterman-fraction/
+modular-inverse架构。没有一个已核 source证明 (84.6)。因此本轮是 route-level
+advance与 conditional bridge advance，不是 arithmetic advance。
+
+q=5,t=2 fixture冻结 packet identity：allowed residues为 `(0,1,2,4)`，对应
+packet values `(7,-2,3,1)`，总和 `9`、均值 `9/4`；direct ratio与 centered packet
+都等于 `95/4`，positive branch为 `35`，compensating background为 `45/4`，
+constant packet为 `0`。checker另冻结 `omega=1/100` 的合法样本输出
+`3983/2400` 与 margin `11/2400`。
+
+~~~text
+V37_MAXIMUM_CLAIM = EXACT_CENTERED_RESIDUE_PACKETIZATION_PLUS_LOSS_BUDGETED_K_ROUTE_THRESHOLD_AND_SOURCE_BACKED_CELL_ENGINE_AFTER_CONJECTURAL_EMISSION
+V37_ROUTE_ADVANCE = YES
+V37_CONDITIONAL_BRIDGE_ADVANCE = YES
+V37_ARITHMETIC_ADVANCE = NO
+V37_FIXED_ATOM_CREDIT = 0
+V37_STRICT_1_OVER_400 = UNPAID
+V37_L2 = NONE
+V37_TPC_207_TRIGGER = false
+V37_NUMBERED_RELEASE = NO
+V37_DERIVATION_STATUS = COHERENT_AFTER_EXACT_PACKETIZATION_AND_LOSS_BUDGETING
+V37_ASSUMPTION_POLICY = PACKET_EMITTER_IS_EXPLICIT_CONJECTURE_AND_NEVER_PROMOTED_TO_THEOREM
+V37_SELECTED_RESEARCH_ROUTE = K_LOSS_BUDGETED_PACKET_EMITTER_FIRST__E_SECOND__X_THIRD__A_TERMINAL_AFTER_B__C_RESERVE
+V37_V36_BINARY_CORE = RETAINED_EXACT_OFF_DIAGONAL_COPRIME_RATIO_COVARIANCE
+V37_CENTERED_RESIDUE_PACKET = PROVED_EXACT_BINARY_CORE_PACKET_IDENTITY
+V37_UNIT_TO_DIFFERENCE_BIJECTION = PROVED_EXACT_A_TO_B_EQUALS_A_MINUS_ONE_TIMES_T
+V37_PACKET_DIAGONAL = PROVED_EXACT_ONLY_B_ZERO_ELL_ZERO_ROW_DELETED
+V37_PACKET_BACKGROUND = PROVED_EXACT_ALL_B_NOT_EQUAL_MINUS_T_REQUIRED
+V37_CONSTANT_PACKET = PROVED_EXACT_ANNIHILATED
+V37_SCHWARTZ_TAIL = PROVED_NEGLIGIBLE_AFTER_H_X_EPSILON_TRUNCATION
+V37_SHIFT_OCCUPANCY = Q_POWER_31_OVER_32
+V37_RAW_POSITIVE_COMPENSATING_TRIANGLE = X_POWER_191_OVER_96
+V37_PACKET_EMITTER_STATUS = OPEN_CONJECTURE_BP_ADMISSIBLE_EXACTLY_ONCE_JOINT_PACKET
+V37_PACKET_EXACTLY_ONCE_POLICY = PHYSICAL_BETA_W_K_PRIME_SHELL_ZERO_DELETION_AND_ALL_TEMPLATE_LABELS_PRESERVED
+V37_PACKET_PRE_CELL_BUDGET = X_POWER_5_OVER_3_TIMES_Q_POWER_OMEGA
+V37_PACKET_EFFECTIVE_GAIN = Q_POWER_MINUS_31_OVER_32_PLUS_OMEGA
+V37_PACKET_OVERHEAD_THRESHOLD = OMEGA_STRICTLY_LESS_THAN_19_OVER_800
+V37_BLOMER_PASCADI_CELL_ENGINE = SOURCE_BACKED_Q_POWER_MINUS_1_OVER_32_AT_CRITICAL_SQUARE_ROOT_RANGE
+V37_CONDITIONAL_OUTPUT = X_POWER_53_OVER_32_PLUS_OMEGA_OVER_3
+V37_CONDITIONAL_DELTA = 1_OVER_96_MINUS_OMEGA_OVER_3
+V37_CONDITIONAL_ENDPOINT_MARGIN = 19_OVER_2400_MINUS_OMEGA_OVER_3
+V37_GENERAL_GAIN_CONDITION = RHO_PLUS_GAMMA_STRICTLY_GREATER_THAN_781_OVER_800
+V37_WITH_BP_RHO_THRESHOLD = RHO_STRICTLY_GREATER_THAN_189_OVER_200
+V37_V36_ZERO_LOSS_COMPILER = SUFFICIENT_SPECIAL_CASE_OMEGA_ZERO_NOT_NECESSARY
+V37_ELL_CAUCHY = STOP_SCOPED_EFFECTIVE_RHO_31_OVER_64_INSUFFICIENT
+V37_ELL_CAUCHY_OUTPUT = X_POWER_349_OVER_192
+V37_ELL_CAUCHY_ENDPOINT_DEFICIT = 737_OVER_4800
+V37_PACKET_COMPILER_NOT_RANDOM_CANCELLATION = PROVED_STATUS_FIREWALL
+V37_GLOBAL_RANDOM_PHASE_BENCHMARK = RETAINED_HEURISTIC_ONLY_X_POWER_223_OVER_192
+V37_BLOMER_PASCADI_DIRECT_ATTACHMENT = STOP_SCOPED_REQUIRES_PRIOR_PHYSICAL_PACKET_EMISSION_AND_AGGREGATE_NORM
+V37_PASCADI_FREQUENCY_CONCENTRATION_DIRECT_ATTACHMENT = STOP_SCOPED_ASSUMPTION14_AND_SMOOTH_LEVEL_SEQUENCE_NOT_VERIFIED_FOR_LITERAL_PACKET
+V37_WRIGHT_PARTIALLY_FIXED_MODULUS_DIRECT_ATTACHMENT = STOP_SCOPED_WRONG_DISPERSION_ARRAYS_AND_NO_CENTERED_PACKET_REASSEMBLY
+V37_BETTIN_CHANDEE_DIRECT_ATTACHMENT = STOP_SCOPED_LOCAL_TRILINEAR_FRACTION_NO_PRIME_SHELL_PACKET_NORM
+V37_BLOMER_RISAGER_SHPARLINSKI_DIRECT_ATTACHMENT = STOP_SCOPED_SPECIFIED_TRIPLE_MODULAR_INVERSE_FAMILY_WRONG_PHYSICAL_COEFFICIENTS
+V37_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_09
+V37_ROUTE_E = RETAINED_OPEN_WHOLE_RESIDUAL_SIGMA_LT_13_OVER_4800
+V37_ROUTE_X = RETAINED_OPEN_JOINT_CHARACTER_KAPPA_GT_403_OVER_1200
+V37_TERMINAL_A = OPEN_TERMINAL_EQUIVALENT_SIGNED_QLOCAL_COVARIANCE_AFTER_B
+V37_DYNAMICS_C = RESERVE_DISTINGUISHED_SEED_ATTACHMENT_STILL_OPEN
+V37_NEXT_THEOREM = EXACTLY_ONCE_BP_ADMISSIBLE_CENTERED_SHIFT_PACKET_EMITTER_WITH_AGGREGATE_OVERHEAD_OMEGA_LT_19_OVER_800
+V37_FIRST_FATAL = NO_LITERAL_THEOREM_PROVES_THE_BP_ADMISSIBLE_PACKET_EMITTER_AND_AGGREGATE_NORM_WITH_OMEGA_LT_19_OVER_800
+V37_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B_K_LANE_LOSS_BUDGETED_PIER_MARKED
+V37_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V37_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
+~~~
+
+完整 artifact与 checker分别为
+
+~~~text
+research/tpc-big-road/bridge_b_loss_budgeted_shift_packet_compiler.md
+research/tpc-big-road/tpc_bridge_b_loss_budgeted_shift_packet_checker.py
+~~~
+
+checker冻结 28-field contract、53-row registry、5个 source locks与4个 dependency
+locks；registry SHA-256为
+`bf34e1ac32ba6553d653cd78cec39c65ecd67db06ab2dd000424f8ade7b11c4c`，并要求
+86/109/12/10/170个 contract/registry/source/dependency/result mutations全部拒绝，
+共387个 unique actions。V37不创建 TPC-207、paper、PDF或build。
+
+~~~text
+V37_FINAL_RELEASE_QA = PASS_WITH_SCOPED_EXTERNAL_TPC126_ONE_ULP_PLATFORM_DIAGNOSTIC
+V37_MATH_SOURCE_FORMULA_QA = PASS
+V37_CHECKER_ADVERSARIAL_QA = PASS
+V37_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V37_PRE_CLOSURE_HANDOFF_SHA256_RAW = 1a3189163d06a821fc2090f8b74d56ccd558af1575b757969c99fc4dff35a093
+V37_PRE_CLOSURE_HANDOFF_SHA256_CANONICAL_LF = 1a3189163d06a821fc2090f8b74d56ccd558af1575b757969c99fc4dff35a093
+V37_COMPASS_SHA256_RAW = 371654a4a151e6e7938ae4535fa2394135858995f8d3772a564ddf8518066026
+V37_README_SHA256_RAW = 5bdf79f28fa771e8efd0033256023a79946bab3c65d5af074964a71ed86d8f03
+V37_ROUTE_MAP_SHA256_RAW = 1464709ad200630642ffcf905dd75dc47c67c2509c398be8d83c1edea7a87680
+V37_PROOF_SHA256_RAW = 07226c6af1c8145982f5cb71fbfe3159cb11f27e6ecd7eba4014431a0d024545
+V37_CHECKER_SHA256_RAW = cc0427402fa7f4df85bffb927e06ed5bdf3a9cc14a19bdf76dd832b87cfd4ee4
+V37_CHECKER_STDOUT_BYTES = 1720
+V37_CHECKER_STDOUT_SHA256_RAW_LF = b021c10a10d8e9cd4aa510ad702124d64220fcc12460e28bea087988a95e0abb
+V37_CHECKER_PAYLOAD_BYTES = 1719
+V37_CHECKER_PAYLOAD_SHA256 = f417dfa49584055765a3984b6df54993f7816135fec0cf78b60eafea6558cccf
+V37_CHECKER_CONTRACT_FIELDS = 28
+V37_CHECKER_REGISTRY_ROWS = 53
+V37_CHECKER_SOURCE_LOCKS = 5
+V37_CHECKER_DEPENDENCY_LOCKS = 4
+V37_CHECKER_CONTRACT_MUTATIONS = 86
+V37_CHECKER_REGISTRY_MUTATIONS = 109
+V37_CHECKER_SOURCE_MUTATIONS = 12
+V37_CHECKER_DEPENDENCY_MUTATIONS = 10
+V37_CHECKER_RESULT_MUTATIONS = 170
+V37_CHECKER_MUTATION_ACTIONS = 387
+V37_CHECKER_REGISTRY_SHA256 = bf34e1ac32ba6553d653cd78cec39c65ecd67db06ab2dd000424f8ade7b11c4c
+V37_CHECKER_NORMAL_OPTIMIZED = 2/2 PASS BYTE_IDENTICAL
+V37_CHECKER_NO_FLAG_EXTRA_FLAG = 2/2 REJECTED
+V37_CHECKER_GLOBAL_PROVIDER_DEFAULT_CLOSURE_ATTACKS = PASS
+V37_CHECKER_REACHABLE_MUTABLE_CLOSURE_CONTAINERS = 0
+V37_CHECKER_AST_ASSERT_WRITE_NETWORK_SUBPROCESS = 0
+V37_STARTUP_READ_ONLY_REGRESSION = 22/22 PASS
+V37_SUPPLEMENTAL_ATTEMPTED = 4/4
+V37_SUPPLEMENTAL_BYTE_EXACT = 3/4
+V37_SUPPLEMENTAL_SEMANTIC = 4/4 PASS
+V37_TPC126_PLATFORM_DIAGNOSTIC = EXACT_ONE_ULP_DIRECT_REAL_ONLY_40_17369814909115_TO_40_17369814909116
+V37_LATEST_V23_TO_V37_PROCESSES = 30/30 PASS
+V37_LATEST_V23_TO_V37_NORMAL_OPTIMIZED_IDENTITIES = 15/15 PASS
+V37_BIG_ROAD_PROCESSES = 50/50 PASS
+V37_BIG_ROAD_NORMAL_OPTIMIZED_IDENTITIES = 25/25 PASS
+V37_CANONICAL_REGISTRY_MIRRORS = 6/6 EXACT_SAME_ORDER
+V37_MARKDOWN_FENCES_HANDOFF = 2852_BACKTICK_286_TILDE_BALANCED
+V37_MARKDOWN_FENCES_COMPASS = 224_BACKTICK_82_TILDE_BALANCED
+V37_MARKDOWN_FENCES_README = 378_BACKTICK_78_TILDE_BALANCED
+V37_MARKDOWN_FENCES_ROUTE_MAP = 8_BACKTICK_0_TILDE_BALANCED
+V37_MARKDOWN_FENCES_PROOF = 8_BACKTICK_0_TILDE_BALANCED
+V37_PROOF_EQUATION_TAGS = 38/38 UNIQUE_DANGLING_REFERENCES_0
+V37_UTF8_C0_TRAILING_WHITESPACE = PASS
+V37_RELEASE_PATHS = 6/6 EXACT_ALLOWLIST
+V37_CACHED_DIFF = 0
+V37_GIT_DIFF_CHECK = PASS
+V37_PROTECTED_UNTRACKED_EXCLUDING_V37 = 0
+V37_PROTECTED_UNTRACKED_MANIFEST_SHA256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+V37_PYC_FILES = 0
+V37_BIG_ROAD_PYCACHE = ABSENT
+V37_BASELINE_HEAD_ORIGIN_REMOTE_MAIN = 2b199a9989f378666e5bc7b9bb8f2952015f75de
+V37_ROUTE_ADVANCE = YES
+V37_CONDITIONAL_BRIDGE_ADVANCE = YES
+V37_ARITHMETIC_ADVANCE = NO
+V37_FIXED_ATOM_CREDIT = 0
+V37_STRICT_1_OVER_400 = UNPAID
+V37_L2 = NONE
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+V37_NEW_TPC207_PAPER_PDF_BUILD_OUTPUT = NONE
+V37_FILES_CHANGED_BY_QA = 0
 ~~~
 
 ## 83. 2026-08-09 V36：binary ratio core 与三条显式条件桥

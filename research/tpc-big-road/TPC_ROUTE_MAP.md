@@ -1,8 +1,8 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-08
+更新时间：2026-08-09
 
-当前地图版本：V32
+当前地图版本：V37
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,9 +46,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +------------------------------------------+
-        | YOU ARE HERE — V32                      |
-        | 单尺度 whole-residual oscillation gate   |
-        | Q^osc_Y0(R_x) bound = OPEN               |
+        | YOU ARE HERE — V37                      |
+        | K lane: loss-budgeted shift packet      |
+        | exactly-once emitter omega<19/800 OPEN  |
         +------------------------------------------+
                 |
                 v
@@ -64,8 +64,9 @@ Bridge A 的 terminal 桥墩
 ```
 
 一句话定位：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
-当前站在岛 2 通往岛 6 的 Bridge A 桥头；困难已被压缩成一个精确单尺度估计，但核心
-算术 saving 尚未证明。**
+当前站在岛 2 通往岛 6 的 Bridge A / Gate B / K 车道；最后一段 BP cell bridge已有
+source engine，缺的是允许 overhead `omega<19/800` 的 exactly-once physical packet
+emitter。核心算术 saving 尚未证明。**
 
 ## 2. 图例与状态语言
 
@@ -144,11 +145,11 @@ endpoint 的主桥。
 
 图像标签：`four-Möbius collective saving`。
 
-它代表从分析消去岛通往终点岛的核心算术估计。V23--V32 的作用不是宣称已经过桥，
+它代表从分析消去岛通往终点岛的核心算术估计。V23--V37 的作用不是宣称已经过桥，
 而是不断删除过付、修正 Fourier convention、保持 literal coefficients，并把红叉处的
-困难压缩到当前两个明确桥墩：
+困难压缩到当前两个明确桥墩；第一个桥墩又保留三条条件车道：
 
-1. `B`：base-scale whole-residual oscillation；
+1. `B`：K loss-budgeted packet emitter优先，E residual energy与 X character route备用；
 2. `A`：terminal q-local signed covariance。
 
 Bridge A 当前状态：`OPEN`。
@@ -162,94 +163,84 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 当前精确位置：V32
+## 5. 当前精确位置：V37
 
-令
-
-\[
-P_x(\alpha)=B_x(\alpha)\overline{W_x(\alpha)},\qquad
-L_x(\alpha)=\sum_h M_x^{\rm loc}(h)e(-h\alpha),
-\]
-
-并定义同一个 literal whole residual
+V36 已把 paid rows之后的 physical numerator压成 prime-only、off-diagonal、coprime
+binary ratio core。V37 对每个 prime `q` 与 unit `t` 定义 centered shift packet
 
 \[
-R_x(\alpha)=P_x(\alpha)-L_x(\alpha),\qquad
-\widehat R_x(h)=e_x(h).
+F_{q,t}(b)=\sum_{\substack{u\in I_x,\ u\ne t\\u-t\equiv b\pmod q}}
+w(u)K_H(u-t),\qquad b\in\mathbb F_q\setminus\{-t\}.
 \]
 
-取
+映射 (a\mapsto b=(a-1)t) 给出 exact bijection，并把同一个 core写成
 
 \[
-H=x^{21/32},\qquad Y_0=2^{\lceil\log_2 H\rceil},
-\qquad H\le Y_0<2H.
+C_x=\sum_q q\sum_{q\nmid t}\beta(t)
+\left(F_{q,t}(0)-\frac1{q-1}\sum_{b\ne-t}F_{q,t}(b)\right).
 \]
 
-把圆周分成 `2Y` 个 aligned half-open cells，并只模掉一个 global complex constant：
+这一步保留完整 compensating background，并只删除 `b=0,ell=0` diagonal。对
 
 \[
-\mathfrak Q_Y^{\rm osc}(R)
-=\inf_{c\in\mathbb C}Y\sum_{j=0}^{2Y-1}
-\left(\int_{I_{Y,j}}|R(\alpha)-c|\,d\alpha\right)^2.
+Q=x^{1/3},\qquad H=x^{21/32},
 \]
 
-V32 已证明 exact compiler：
+每个 residue的有效 shift occupancy是
 
 \[
-\sum_{0<|h|\le Y}|\widehat R(h)|^2
-\le 16\mathfrak Q_Y^{\rm osc}(R),
-\qquad
-\mathfrak Q_{2Y}^{\rm osc}(R)\le2\mathfrak Q_Y^{\rm osc}(R).
+\frac HQ=x^{31/96}=Q^{31/32}.
 \]
 
-因此当前第一条真正开放的新定理是
+当前第一条真正开放的新定理是 loss-budgeted exactly-once emitter：把这个 literal
+packet发射成 BP-admissible balanced cells，且 aggregate source-native trivial budget满足
 
 \[
-\boxed{
-\mathfrak Q_{Y_0}^{\rm osc}(R_x)
-\ll x^{2+2\sigma+o(1)},
-\qquad 0\le\sigma<\frac{13}{4800}.}
+\sum_{q,\nu}T_{\nu,q}\ll x^{5/3+o(1)}Q^\omega,
+\qquad \omega<\frac{19}{800}.
 \]
 
-它一旦证明，就通过 Schwartz shells 支付完整 off-zero residual：
+它相对 raw triangle给 (Q^{-31/32+\omega})；再接 Blomer--Pascadi fixed-modulus
+(Q^{-1/32}) cell saving，条件输出是
 
 \[
-\mathcal N_e\ll x^{1+\sigma+o(1)},\qquad
-|E(e_x)|\ll x^{191/192+\sigma+o(1)}.
+x^{53/32+\omega/3+o(1)},
 \]
 
-但 global constant quotient 不改变 Fourier zero mode。若 `R_x` 是任意常数，
-`Q^osc=0` 而 physical axis 仍可任意。因此 terminal q-local covariance 必须独立支付。
-
-条件 endpoint ledger 为
+并保留严格 endpoint margin
 
 \[
-0<\eta_*<\min\left\{
-\eta_R,\frac{19}{2400},\frac{13}{4800}-\sigma
-\right\}.
+\frac{19}{2400}-\frac\omega3>0.
 \]
+
+generic per-shift Cauchy只给 pre-cell `rho=31/64`，即使再接 BP也输出
+`x^{349/192}`，所以当前 open theorem是 joint transform/norm/reassembly，而不是
+未经证明的 random cancellation。E lane的 residual energy与 X lane的 character
+decoupling继续作为独立后备；任何 B lane闭合后，terminal q-local A仍须另付。
 
 ## 6. 图像名称与仓库名称的对应
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
 
-| 图像语言 | 仓库 V32 语言 | 关系 |
+| 图像语言 | 仓库 V37 语言 | 关系 |
 |---|---|---|
-| Bridge A：解析 collective saving | `B` 后接 `A` | 图像的一座大桥被拆成两个可审核桥墩 |
+| Bridge A：解析 collective saving | `B(K/E/X)` 后接 `A` | 图像的一座大桥被拆成多车道 B 与 terminal A |
 | Bridge B：distinguished-seed genericity | `C` symmetry-breaking reserve | 都是动力学/指定 seed 后备线 |
-| 核心算术估计 | `Q^osc_Y0` bound + terminal covariance | 当前 red-X 的精确数学化 |
+| 核心算术估计 | K packet emitter `omega<19/800` + terminal covariance | 当前 red-X 的优先施工方案 |
 
 仓库选择路线为：
 
 ```text
-B_SINGLE_SCALE_RESIDUAL_OSCILLATION
+K_LOSS_BUDGETED_PACKET_EMITTER
+OR_E_WHOLE_RESIDUAL_ENERGY
+OR_X_JOINT_CHARACTER_DECOUPLING
 THEN_A_TERMINAL_COVARIANCE
 THEN_C_SYMMETRY_BREAK_RESERVE
 ```
 
 ## 7. 当前状态防火墙
 
-截至 V32：
+截至 V37：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -272,19 +263,22 @@ NUMBERED_RELEASE = NO
 
 ## 8. 下一步大路
 
-优先级保持：
+优先级更新为：
 
-1. **B：证明 base-scale collective oscillation**，对象必须是保留 MASTER mask、ordered
-   `+2/-1`、Möbius/log、hybrid 与 hard shell 的 literal occurrence emitter；
-2. **A：证明 terminal q-local signed covariance**，不能用 off-zero norm 循环支付
+1. **B/K：证明 loss-budgeted centered shift-packet emitter**，必须 exactly once保留
+   physical `beta,w,K_H`、prime shell、deleted diagonal、unit/nonunit与 template labels，
+   aggregate overhead满足 `omega<19/800`；
+2. **B/E 与 B/X：保留并行后备**，分别是 `sigma<13/4800` whole residual energy和
+   `kappa>403/1200` joint character theorem，不与 K lane叠加 theorem credit；
+3. **A：证明 terminal q-local signed covariance**，不能用 off-zero norm 循环支付
    physical scalar；
-3. **C：只在前两条路线真实阻断或新 source 出现时，重开 distinguished-seed
+4. **C：只在前三条路线真实阻断或新 source 出现时，重开 distinguished-seed
    symmetry-breaking/dynamics reserve。**
 
 最窄 first fatal：
 
 ```text
-BASE_SCALE_COLLECTIVE_OSCILLATION_BOUND_FOR_LITERAL_MASTER_HYBRID_OCCURRENCE_EMITTER
+NO_LITERAL_THEOREM_PROVES_THE_BP_ADMISSIBLE_PACKET_EMITTER_AND_AGGREGATE_NORM_WITH_OMEGA_LT_19_OVER_800
 ```
 
 ## 9. 后续更新协议
@@ -303,4 +297,5 @@ BASE_SCALE_COLLECTIVE_OSCILLATION_BOUND_FOR_LITERAL_MASTER_HYBRID_OCCURRENCE_EMI
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-09 | V37 | Bridge A / Gate B / K lane：loss-budgeted shift packet | parent `2b199a9989f378666e5bc7b9bb8f2952015f75de`; V37=current release commit | 将零损耗 `Q^(-31/32)` 口号改写为 exact packet 与 `omega<19/800` emitter contract；状态仍为 arithmetic NO |
 | 2026-08-08 | V32 | Bridge A 桥头：single-scale residual oscillation | `66dcd9a08b1adb92b117941aae92b9a17ab6298f` | 首次将岛屿图保存为可更新文字地图并收录配套原图；未改变数学状态 |
