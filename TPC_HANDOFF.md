@@ -1,7 +1,71 @@
 # TPC HANDOFF
 
 更新时间：2026-08-09
-交接状态：`BOLD_CHANNEL_V35_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V36_SEALED_FOR_NEW_SESSION`
+
+第 83 节仍位于“解析消去岛 / Bridge A / Gate B”。V36 沿用户授权的
+multi-bridge 策略，把 V35 core 重排为一个 exact binary ratio covariance，并把
+尚未证明的跨桥输入分成三条彼此独立、逐条显式标为 conjecture 的通道。V35 已证明
+
+~~~text
+beta(t)=sum_(dk=t,d,k>=2) mu(d) omega_x(d,k),
+D_x=C_x+P_x+N_x,
+|P_x|+|N_x| << x^(53/32+o(1)).                     (V36.1)
+~~~
+
+因此在 paid rows 之后可精确重合并
+
+~~~text
+C_x=sum_(q prime) q sum_(t!=u,q does not divide tu)
+      beta(t) w(u) K_H(u-t) u1(u inverse(t);q).     (V36.2)
+~~~
+
+它又有 compulsory diagonal subtraction 的 hybrid-character form
+
+~~~text
+C_x=int psi(v) sum_q q/(q-1) sum_(chi!=chi0)
+      (B_(q,chi)(v) W_(q,chi)(v)-Z_q) dv.          (V36.3)
+~~~
+
+V36 冻结一个 exact conditional OR compiler。以下任一输入若被真实 theorem证明，
+都足以支付当前 off-zero B gate：
+
+~~~text
+Route E: N_e << x^(1+sigma+o(1)), sigma<13/4800;
+Route K: conjectural collective Q^(-31/32) compiler
+         + source-backed fixed-modulus Q^(-1/32) cell engine;
+Route X: joint hybrid-character saving x^(2-kappa+o(1)),
+         kappa>403/1200.                            (V36.4)
+~~~
+
+Route K 的最终 `1/32` cell saving来自 Blomer--Pascadi；前面的 `31/32`
+emitter/reassembly仍是明确的 hard conjectural pier。Route E 与 Route X 也只是
+open conjectures。随机 occurrence model给 `x^(223/192+o(1))` 仅作为 heuristic
+benchmark，不产生 theorem credit。即使任一 B lane闭合，terminal q-local A仍是
+terminal-equivalent open bridge，distinguished-seed dynamics C仍是 reserve。
+
+~~~text
+V36_ROUTE_ADVANCE = YES
+V36_CONDITIONAL_BRIDGE_ADVANCE = YES
+V36_ONE_OF_THREE_COMPILER = PROVED_EXACT_CONDITIONAL_OR_GATE
+V36_ROUTE_K0_STATUS = OPEN_CONJECTURE_COLLECTIVE_Q_ELL_EMITTER_AND_REASSEMBLY
+V36_ROUTE_E_STATUS = OPEN_CONJECTURE_WHOLE_OBJECT_WEIGHTED_RESIDUAL_ENERGY
+V36_ROUTE_X_STATUS = OPEN_CONJECTURE_JOINT_HYBRID_CHARACTER_DECOUPLING
+V36_ARITHMETIC_ADVANCE = NO
+V36_FIXED_ATOM_CREDIT = 0
+V36_STRICT_1_OVER_400 = UNPAID
+V36_L2 = NONE
+TPC_207_TRIGGER = false                              (V36.5)
+~~~
+
+完整 51-row canonical registry 位于 Handoff 第 24、83 节、Compass 第 37 节、
+big-road README 第 36 节、V36 proof 第 10 节与 checker。proof 为
+research/tpc-big-road/bridge_b_multiroute_ratio_core_atlas.md，checker 为
+research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py。V36 是不编号
+big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
+
+以下 V35 页首块作为已封存直接上游保留；current truth 由上面的 V36 摘要、
+第 24 节与第 83 节控制。
 
 第 82 节继续位于“解析消去岛 / Bridge A / Gate B”。V35 把 V34 的
 compensated prime frame 精确压缩成一个更窄的 coprime ratio core。首先，
@@ -2239,18 +2303,19 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V35_20260809_PROPER_FACTOR_AND_COPRIME_FIXED_SHIFT_RATIO_CORE_NO_ARITHMETIC_TRIGGER`
+`TPC_BIG_ROAD_V36_20260809_BINARY_RATIO_CORE_WITH_THREE_EXPLICIT_CONDITIONAL_LANES_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V35_DELTA_GT_1_OVER_400_POWER_SAVING_FOR_PRIME_ONLY_ZERO_DELETED_THREE_ARRAY_FIXED_SHIFT_TWO_RATIO_CORE`；
+`V36_ONE_OF_THREE_LITERAL_RATIO_CORE_BRIDGE_THEOREM`；
 当前 first subgates：
-`V35_NEXT_THEOREM`；
+`V36_ROUTE_K0_STATUS`、`V36_ROUTE_E_STATUS`、`V36_ROUTE_X_STATUS`；
 已支付并可复用的 source-backed local subgate 为
+`V36_ROUTE_K1_STATUS`、
 `V34_LOCAL_CARRIER_E_PAYMENT`、`V34_LOCAL_CARRIER_J_PAYMENT` 与
 `V33_BAZIN_BETA_MARGINAL`；已支付的 exact q-local major model为
 `V30_QLOCAL_MODEL_BOUND`
-（第 82 节控制；既有 local source只有在第 32.6 节或
+（第 83 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--82 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--83 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -2262,6 +2327,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_multiroute_ratio_core_atlas.md`、
+`research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py`、
 `research/tpc-big-road/bridge_b_proper_factor_unit_ratio_reduction.md`、
 `research/tpc-big-road/tpc_bridge_b_proper_factor_unit_ratio_checker.py`、
 `research/tpc-big-road/bridge_b_paid_local_carrier_and_compensated_prime_frame.md`、
@@ -2297,7 +2364,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--82 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--83 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2359,11 +2426,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V35 gate及其 V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；二十六次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V36 gate及其 V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；二十八次必须都为零，且每一对 stdout
 byte-identical：
 
 ```powershell
+python -B research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_proper_factor_unit_ratio_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_proper_factor_unit_ratio_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_paid_local_carrier_prime_frame_checker.py --check
@@ -2697,6 +2766,22 @@ V35_BAZIN_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_MARGINAL_NO_PHYSICAL_PRODUCT
 scalar；后五项只停止把列出的 binary/fixed-determinant/one-marginal source直接宣称为
 V35 three-array zero-deleted ratio theorem。它们不停止专门的新 ternary dispersion
 theorem、terminal A、dynamics C或全局架构。
+
+V36 对 binary ratio core 的三条条件通道新增且仅新增六个 scoped stops：
+
+```text
+V36_SEPARATE_MARGINAL_LARGE_SIEVE = STOP_SCOPED_X_POWER_2_DEFICIT_403_OVER_1200
+V36_FIXED_Q_TRIANGLE = STOP_SCOPED_REQUIRES_Q_POWER_MINUS_31_OVER_32_MINUS_3_DELTA_BEFORE_MODULUS_SUM
+V36_BLOMER_PASCADI_DIRECT_ATTACHMENT = STOP_SCOPED_NO_COLLECTIVE_Q_ELL_EMITTER_COEFFICIENT_COMPILER_OR_REASSEMBLY
+V36_FOUVRY_SHPARLINSKI_XI_DIRECT_ATTACHMENT = STOP_SCOPED_FIXED_PRIME_SHORT_VARIABLES_WRONG_CROSS_WEIGHT_AND_NO_MODULUS_REASSEMBLY
+V36_DONG_ROBLES_ZEINDLER_DIRECT_ATTACHMENT = STOP_SCOPED_FIXED_BILINEAR_FRACTION_NO_PHYSICAL_JOINT_COVARIANCE
+V36_RUNBO_LI_DIRECT_ATTACHMENT = STOP_SCOPED_SPECIAL_HARMAN_MAJORANTS_AND_MODULUS_FORMS_WRONG_SIGNED_OBJECT
+```
+
+前两项只停止 marginal Cauchy 与 fixed-\(q\) triangle 两条已量化的不足路线；后四项
+只停止把相应 source 直接宣称为 literal V36 theorem。它们不停止新的 collective
+emitter、whole-residual energy、joint character theorem、terminal A、dynamics C
+或其他显式 conjectural bridge。
 
 TPC-204 新增且仅新增：
 
@@ -8044,7 +8129,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V35 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V36 current）
 
 ```text
 进入仓库：
@@ -8052,6 +8137,8 @@ D:\26-aimath\理论研究3\prime_dynamics_theory
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_multiroute_ratio_core_atlas.md、
+research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py、
 research/tpc-big-road/bridge_b_proper_factor_unit_ratio_reduction.md、
 research/tpc-big-road/tpc_bridge_b_proper_factor_unit_ratio_checker.py、
 research/tpc-big-road/bridge_b_paid_local_carrier_and_compensated_prime_frame.md、
@@ -8090,7 +8177,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--82 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--83 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -8306,6 +8393,57 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V36_MAXIMUM_CLAIM = EXACT_PROPER_FACTOR_RECOLLAPSE_TO_BINARY_OFF_DIAGONAL_HYBRID_CHARACTER_COVARIANCE_PLUS_ONE_OF_THREE_CONDITIONAL_GATE_B_COMPILER_AND_EXPLICIT_HEURISTIC_CHARTER
+V36_ROUTE_ADVANCE = YES
+V36_CONDITIONAL_BRIDGE_ADVANCE = YES
+V36_ARITHMETIC_ADVANCE = NO
+V36_FIXED_ATOM_CREDIT = 0
+V36_STRICT_1_OVER_400 = UNPAID
+V36_L2 = NONE
+V36_TPC_207_TRIGGER = false
+V36_NUMBERED_RELEASE = NO
+V36_DERIVATION_STATUS = COHERENT_AFTER_REFRAMING_AND_EXPLICIT_EXTRA_ASSUMPTIONS
+V36_ASSUMPTION_POLICY = CONJECTURES_EXPLICIT_AND_NEVER_PROMOTED_TO_THEOREMS
+V36_SELECTED_RESEARCH_ROUTE = K_COLLECTIVE_COMPILER_FIRST__E_ENERGY_SECOND__X_CHARACTER_THIRD__A_TERMINAL_AFTER_B__C_DYNAMICS_RESERVE
+V36_V35_CORE = RETAINED_EXACT_PRIME_ONLY_ZERO_DELETED_COPRIME_RATIO_CORE
+V36_PROPER_FACTOR_RECOLLAPSE = PROVED_EXACT_SUM_OCCURRENCES_BACK_TO_BETA_OF_T
+V36_BINARY_RATIO_CORE = PROVED_EXACT_TWO_ARRAY_OFF_DIAGONAL_FORM
+V36_HYBRID_CHARACTER_INVERSION = PROVED_EXACT_FOURIER_CHARACTER_NORMAL_FORM
+V36_CHARACTER_DIAGONAL_SUBTRACTION = PROVED_EXACT_Z_Q_REQUIRED
+V36_ONE_OF_THREE_COMPILER = PROVED_EXACT_CONDITIONAL_OR_GATE
+V36_ROUTE_E_STATUS = OPEN_CONJECTURE_WHOLE_OBJECT_WEIGHTED_RESIDUAL_ENERGY
+V36_ROUTE_E_INPUT = N_E_LE_X_POWER_1_PLUS_SIGMA_WITH_SIGMA_LT_13_OVER_4800
+V36_ROUTE_E_DELTA = 1_OVER_192_MINUS_SIGMA
+V36_ROUTE_E_ENDPOINT_MARGIN = 13_OVER_4800_MINUS_SIGMA
+V36_ROUTE_K0_STATUS = OPEN_CONJECTURE_COLLECTIVE_Q_ELL_EMITTER_AND_REASSEMBLY
+V36_ROUTE_K0_STRUCTURAL_GAIN = Q_POWER_MINUS_31_OVER_32
+V36_ROUTE_K1_STATUS = SOURCE_BACKED_FIXED_MODULUS_CELL_ENGINE_AFTER_EXACT_EMISSION
+V36_ROUTE_K1_CELL_GAIN = Q_POWER_MINUS_1_OVER_32
+V36_ROUTE_K_TOTAL_GAIN = Q_POWER_MINUS_1_EQUALS_X_POWER_MINUS_1_OVER_3
+V36_ROUTE_K_DELTA = 1_OVER_96
+V36_ROUTE_K_ENDPOINT_MARGIN = 19_OVER_2400
+V36_ROUTE_X_STATUS = OPEN_CONJECTURE_JOINT_HYBRID_CHARACTER_DECOUPLING
+V36_ROUTE_X_BASELINE = X_POWER_2_PLUS_O1_FROM_SEPARATE_LARGE_SIEVE_CAUCHY
+V36_ROUTE_X_REQUIRED_KAPPA = STRICTLY_GREATER_THAN_403_OVER_1200
+V36_ROUTE_X_DELTA = KAPPA_MINUS_1_OVER_3
+V36_ROUTE_X_ENDPOINT_MARGIN = KAPPA_MINUS_403_OVER_1200
+V36_RANDOM_PHASE_BENCHMARK = HEURISTIC_ONLY_X_POWER_223_OVER_192
+V36_RANDOM_PHASE_GAP_TO_X_5_OVER_3 = 97_OVER_192
+V36_SEPARATE_MARGINAL_LARGE_SIEVE = STOP_SCOPED_X_POWER_2_DEFICIT_403_OVER_1200
+V36_FIXED_Q_TRIANGLE = STOP_SCOPED_REQUIRES_Q_POWER_MINUS_31_OVER_32_MINUS_3_DELTA_BEFORE_MODULUS_SUM
+V36_BLOMER_PASCADI_CELL_ENGINE = SOURCE_BACKED_Q_POWER_MINUS_1_OVER_32_AT_CRITICAL_FIXED_MODULUS_RANGE
+V36_BLOMER_PASCADI_DIRECT_ATTACHMENT = STOP_SCOPED_NO_COLLECTIVE_Q_ELL_EMITTER_COEFFICIENT_COMPILER_OR_REASSEMBLY
+V36_FOUVRY_SHPARLINSKI_XI_DIRECT_ATTACHMENT = STOP_SCOPED_FIXED_PRIME_SHORT_VARIABLES_WRONG_CROSS_WEIGHT_AND_NO_MODULUS_REASSEMBLY
+V36_DONG_ROBLES_ZEINDLER_DIRECT_ATTACHMENT = STOP_SCOPED_FIXED_BILINEAR_FRACTION_NO_PHYSICAL_JOINT_COVARIANCE
+V36_RUNBO_LI_DIRECT_ATTACHMENT = STOP_SCOPED_SPECIAL_HARMAN_MAJORANTS_AND_MODULUS_FORMS_WRONG_SIGNED_OBJECT
+V36_TERMINAL_A = OPEN_TERMINAL_EQUIVALENT_SIGNED_QLOCAL_COVARIANCE_AFTER_B
+V36_DYNAMICS_C = RESERVE_DISTINGUISHED_SEED_ATTACHMENT_STILL_OPEN
+V36_HEURISTIC_DOES_NOT_IMPLY_ARITHMETIC_ADVANCE = PROVED_STATUS_FIREWALL
+V36_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_09
+V36_NEXT_THEOREM = COLLECTIVE_Q_POWER_MINUS_31_OVER_32_DETERMINANT_EMITTER_OR_WHOLE_RESIDUAL_SIGMA_LT_13_OVER_4800_OR_JOINT_CHARACTER_KAPPA_GT_403_OVER_1200
+V36_FIRST_FATAL = NO_LITERAL_THEOREM_SUPPLIES_ANY_ONE_OF_THE_THREE_CONJECTURAL_BRIDGE_INPUTS
+V36_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B_THREE_CONDITIONAL_LANES_MARKED
+V36_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
 V35_MAXIMUM_CLAIM = EXACT_ENDPOINT_FREE_PROPER_FACTOR_AND_PAID_NONUNIT_PRINCIPAL_REDUCTION_TO_ZERO_DELETED_COPRIME_FIXED_SHIFT_TWO_TERNARY_RATIO_CORE
 V35_ROUTE_ADVANCE = YES
 V35_ARITHMETIC_ADVANCE = NO
@@ -8954,6 +9092,9 @@ attachment及 one-Poisson `2/7`伪 window均不得重开。不得把 formula-lev
 并行只读 agents可分别承担 source lock、proof audit与 architecture/reassembly；
 正式写入只由主控完成。工作包 checker为：
 
+python research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_proper_factor_unit_ratio_checker.py --check
+python research/tpc-big-road/tpc_bridge_b_paid_local_carrier_prime_frame_checker.py --check
 python research/tpc-big-road/tpc_big_road_lab.py --check
 python research/tpc-big-road/tpc_big_road_independent_checker.py --check
 python research/tpc-big-road/tpc_fm_local_comparison_checker.py --check
@@ -13164,6 +13305,209 @@ V34_TPC_207_TRIGGER = false
 V34_SEALED_FOR_NEW_SESSION = true
 NUMBERED_RELEASE = NO
 TPC_207_TRIGGER = false
+~~~
+
+## 83. 2026-08-09 V36：binary ratio core 与三条显式条件桥
+
+### 83.1 本轮定位与最大声明
+
+V36 继续位于解析消去岛 / Bridge A / Gate B。本轮不证明新的算术估计，而是把
+V35 的 three-array presentation 在 paid nonunit/principal rows之后精确重合并为
+binary off-diagonal ratio covariance，并把后续研究拆成 E/K/X 三条可互换的条件桥。
+所有未证明输入都逐字标为 `OPEN_CONJECTURE`；random-phase 计算只标为
+`HEURISTIC_ONLY`。
+
+### 83.2 Exact binary 与 character normal forms
+
+V35 的 proper-factor identity给
+
+\[
+ \beta(t)=\sum_{\substack{dk=t\\d,k\ge2}}\mu(d)\omega_x(d,k).
+ \tag{83.1}
+\]
+
+在 `q`-unit、zero-deleted core中先对 occurrences求和，得到
+
+\[
+ \mathfrak C_x=\sum_{q\in\mathcal Q}q
+ \sum_{\substack{t,u\in I_x\\t\ne u\\q\nmid tu}}
+ \beta(t)w(u)K_H(u-t)u_1(u\bar t;q).
+ \tag{83.2}
+\]
+
+定义 proof 第 3 节的 \(B_{q,\chi}(v)\)、\(W_{q,\chi}(v)\) 与
+\(Z_q\)，character orthogonality进一步给
+
+\[
+ \mathfrak C_x=\int\psi_+(v)\sum_{q\in\mathcal Q}\frac q{q-1}
+ \sum_{\chi\ne\chi_0}
+ \bigl(B_{q,\chi}(v)W_{q,\chi}(v)-Z_q\bigr)\,dv.
+ \tag{83.3}
+\]
+
+\(Z_q\) 是 compulsory diagonal subtraction；删除它会恢复
+\(x^{5/3+o(1)}\) 级 diagonal。
+
+### 83.3 One-of-three conditional compiler
+
+以下三个输入互为替代，不得互相借 credit：
+
+1. Route E：证明同一个 tagged residual满足
+   \(N_e\ll x^{1+\sigma+o(1)}\)，\(\sigma<13/4800\)。这给
+   \(\delta_E=1/192-\sigma\)。
+2. Route K：先证明 collective \((q,\ell)\) emitter/reassembly获得
+   \(Q^{-31/32}\)；再使用 Blomer--Pascadi critical fixed-modulus cell的
+   source-backed \(Q^{-1/32}\)。条件输出为
+   \(x^{53/32+o(1)}\)，endpoint margin为 \(19/2400\)。只有后一个
+   \(1/32\) 是现有 source-backed theorem。
+3. Route X：证明 joint hybrid-character covariance
+   \(\mathcal H_\chi\ll x^{2-\kappa+o(1)}\)，其中
+   \(\kappa>403/1200\)。separate marginal large sieve只给 \(x^{2+o(1)}\)，
+   不足以推出此 gate。
+
+任一路线成立都只支付 off-zero B。terminal q-local A仍为 terminal-equivalent
+open bridge；distinguished-seed dynamics C仍为 reserve。
+
+### 83.4 Heuristic 与 source firewall
+
+random occurrence model预测 \(x^{223/192+o(1)}\)，相对 \(x^{5/3}\) 有
+\(97/192\) gap；这只是 heuristic benchmark。Blomer--Pascadi只提供 Route K
+最后一个 local cell engine；Matomäki--Radziwiłł--Tao Proposition 3.1只提供
+Route E 上游的 abstract measurable-major energy reduction。Fouvry--Shparlinski--Xi、Dong--Robles--Zeindler与
+Runbo Li的 theorem objects分别受 fixed-prime short variables、fixed bilinear
+fractions与 Harman majorants/modulus forms限制；均无 literal whole-object attachment。
+
+### 83.5 Canonical registry
+
+~~~text
+V36_MAXIMUM_CLAIM = EXACT_PROPER_FACTOR_RECOLLAPSE_TO_BINARY_OFF_DIAGONAL_HYBRID_CHARACTER_COVARIANCE_PLUS_ONE_OF_THREE_CONDITIONAL_GATE_B_COMPILER_AND_EXPLICIT_HEURISTIC_CHARTER
+V36_ROUTE_ADVANCE = YES
+V36_CONDITIONAL_BRIDGE_ADVANCE = YES
+V36_ARITHMETIC_ADVANCE = NO
+V36_FIXED_ATOM_CREDIT = 0
+V36_STRICT_1_OVER_400 = UNPAID
+V36_L2 = NONE
+V36_TPC_207_TRIGGER = false
+V36_NUMBERED_RELEASE = NO
+V36_DERIVATION_STATUS = COHERENT_AFTER_REFRAMING_AND_EXPLICIT_EXTRA_ASSUMPTIONS
+V36_ASSUMPTION_POLICY = CONJECTURES_EXPLICIT_AND_NEVER_PROMOTED_TO_THEOREMS
+V36_SELECTED_RESEARCH_ROUTE = K_COLLECTIVE_COMPILER_FIRST__E_ENERGY_SECOND__X_CHARACTER_THIRD__A_TERMINAL_AFTER_B__C_DYNAMICS_RESERVE
+V36_V35_CORE = RETAINED_EXACT_PRIME_ONLY_ZERO_DELETED_COPRIME_RATIO_CORE
+V36_PROPER_FACTOR_RECOLLAPSE = PROVED_EXACT_SUM_OCCURRENCES_BACK_TO_BETA_OF_T
+V36_BINARY_RATIO_CORE = PROVED_EXACT_TWO_ARRAY_OFF_DIAGONAL_FORM
+V36_HYBRID_CHARACTER_INVERSION = PROVED_EXACT_FOURIER_CHARACTER_NORMAL_FORM
+V36_CHARACTER_DIAGONAL_SUBTRACTION = PROVED_EXACT_Z_Q_REQUIRED
+V36_ONE_OF_THREE_COMPILER = PROVED_EXACT_CONDITIONAL_OR_GATE
+V36_ROUTE_E_STATUS = OPEN_CONJECTURE_WHOLE_OBJECT_WEIGHTED_RESIDUAL_ENERGY
+V36_ROUTE_E_INPUT = N_E_LE_X_POWER_1_PLUS_SIGMA_WITH_SIGMA_LT_13_OVER_4800
+V36_ROUTE_E_DELTA = 1_OVER_192_MINUS_SIGMA
+V36_ROUTE_E_ENDPOINT_MARGIN = 13_OVER_4800_MINUS_SIGMA
+V36_ROUTE_K0_STATUS = OPEN_CONJECTURE_COLLECTIVE_Q_ELL_EMITTER_AND_REASSEMBLY
+V36_ROUTE_K0_STRUCTURAL_GAIN = Q_POWER_MINUS_31_OVER_32
+V36_ROUTE_K1_STATUS = SOURCE_BACKED_FIXED_MODULUS_CELL_ENGINE_AFTER_EXACT_EMISSION
+V36_ROUTE_K1_CELL_GAIN = Q_POWER_MINUS_1_OVER_32
+V36_ROUTE_K_TOTAL_GAIN = Q_POWER_MINUS_1_EQUALS_X_POWER_MINUS_1_OVER_3
+V36_ROUTE_K_DELTA = 1_OVER_96
+V36_ROUTE_K_ENDPOINT_MARGIN = 19_OVER_2400
+V36_ROUTE_X_STATUS = OPEN_CONJECTURE_JOINT_HYBRID_CHARACTER_DECOUPLING
+V36_ROUTE_X_BASELINE = X_POWER_2_PLUS_O1_FROM_SEPARATE_LARGE_SIEVE_CAUCHY
+V36_ROUTE_X_REQUIRED_KAPPA = STRICTLY_GREATER_THAN_403_OVER_1200
+V36_ROUTE_X_DELTA = KAPPA_MINUS_1_OVER_3
+V36_ROUTE_X_ENDPOINT_MARGIN = KAPPA_MINUS_403_OVER_1200
+V36_RANDOM_PHASE_BENCHMARK = HEURISTIC_ONLY_X_POWER_223_OVER_192
+V36_RANDOM_PHASE_GAP_TO_X_5_OVER_3 = 97_OVER_192
+V36_SEPARATE_MARGINAL_LARGE_SIEVE = STOP_SCOPED_X_POWER_2_DEFICIT_403_OVER_1200
+V36_FIXED_Q_TRIANGLE = STOP_SCOPED_REQUIRES_Q_POWER_MINUS_31_OVER_32_MINUS_3_DELTA_BEFORE_MODULUS_SUM
+V36_BLOMER_PASCADI_CELL_ENGINE = SOURCE_BACKED_Q_POWER_MINUS_1_OVER_32_AT_CRITICAL_FIXED_MODULUS_RANGE
+V36_BLOMER_PASCADI_DIRECT_ATTACHMENT = STOP_SCOPED_NO_COLLECTIVE_Q_ELL_EMITTER_COEFFICIENT_COMPILER_OR_REASSEMBLY
+V36_FOUVRY_SHPARLINSKI_XI_DIRECT_ATTACHMENT = STOP_SCOPED_FIXED_PRIME_SHORT_VARIABLES_WRONG_CROSS_WEIGHT_AND_NO_MODULUS_REASSEMBLY
+V36_DONG_ROBLES_ZEINDLER_DIRECT_ATTACHMENT = STOP_SCOPED_FIXED_BILINEAR_FRACTION_NO_PHYSICAL_JOINT_COVARIANCE
+V36_RUNBO_LI_DIRECT_ATTACHMENT = STOP_SCOPED_SPECIAL_HARMAN_MAJORANTS_AND_MODULUS_FORMS_WRONG_SIGNED_OBJECT
+V36_TERMINAL_A = OPEN_TERMINAL_EQUIVALENT_SIGNED_QLOCAL_COVARIANCE_AFTER_B
+V36_DYNAMICS_C = RESERVE_DISTINGUISHED_SEED_ATTACHMENT_STILL_OPEN
+V36_HEURISTIC_DOES_NOT_IMPLY_ARITHMETIC_ADVANCE = PROVED_STATUS_FIREWALL
+V36_DIRECT_PRIMARY_SOURCE_ATTACHMENT = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_09
+V36_NEXT_THEOREM = COLLECTIVE_Q_POWER_MINUS_31_OVER_32_DETERMINANT_EMITTER_OR_WHOLE_RESIDUAL_SIGMA_LT_13_OVER_4800_OR_JOINT_CHARACTER_KAPPA_GT_403_OVER_1200
+V36_FIRST_FATAL = NO_LITERAL_THEOREM_SUPPLIES_ANY_ONE_OF_THE_THREE_CONJECTURAL_BRIDGE_INPUTS
+V36_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B_THREE_CONDITIONAL_LANES_MARKED
+V36_SOURCE_LOCK_POLICY = PRIMARY_SOURCES_ONLY_FAIL_CLOSED
+~~~
+
+### 83.6 Artifact、checker 与 pending closure
+
+proof与 checker分别为
+research/tpc-big-road/bridge_b_multiroute_ratio_core_atlas.md 与
+research/tpc-big-road/tpc_bridge_b_multiroute_ratio_core_checker.py。checker冻结
+28/51/5/6 contract/registry/source/dependency rows；registry digest为
+6cf2ae8722d14ec0966e1461748f426b171654c6076ef5f0e56111aaa3c6bf48。
+
+~~~text
+V36_FINAL_RELEASE_QA = PASS_WITH_SCOPED_EXTERNAL_TPC126_ONE_ULP_PLATFORM_DIAGNOSTIC
+V36_MATH_SOURCE_FORMULA_QA = PASS
+V36_CHECKER_ADVERSARIAL_QA = PASS
+V36_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V36_PRE_CLOSURE_HANDOFF_SHA256_RAW = 24f2c982110701b899dffc25e5314a01f642a7e71c9c480b908f76c8a9048466
+V36_PRE_CLOSURE_HANDOFF_SHA256_CANONICAL_LF = 24f2c982110701b899dffc25e5314a01f642a7e71c9c480b908f76c8a9048466
+V36_COMPASS_SHA256_RAW = fa10c761f9b02d3277de8a5f5ca16b8a6499455e84d086c02ee70d2d21805ef5
+V36_README_SHA256_RAW = 9e2eeadbf30613df036b62159989162b37ff5ebebfa39376319efb085f86e5e5
+V36_PROOF_SHA256_RAW = 97c725b3fd086825125aa5d9ea302bdb874243bddc2708e5603a1c1d591b0a98
+V36_CHECKER_SHA256_RAW = b4f383bccd05194af28665b9a6b98fe98756d89a12d37609ef65fbd92869f8ce
+V36_CHECKER_STDOUT_BYTES = 1866
+V36_CHECKER_STDOUT_SHA256_RAW_LF = 3914d652bce45f5cefd66845152ad2d00b05729d8efdf5f760bd3e8c7eccd54d
+V36_CHECKER_PAYLOAD_BYTES = 1865
+V36_CHECKER_PAYLOAD_SHA256 = 30b53c2a5be4532ac0b22492b457502701bf56e5bad5c58aea2ba5b59eefac92
+V36_CHECKER_CONTRACT_FIELDS = 28
+V36_CHECKER_REGISTRY_ROWS = 51
+V36_CHECKER_SOURCE_LOCKS = 5
+V36_CHECKER_DEPENDENCY_LOCKS = 6
+V36_CHECKER_CONTRACT_MUTATIONS = 86
+V36_CHECKER_REGISTRY_MUTATIONS = 105
+V36_CHECKER_SOURCE_MUTATIONS = 12
+V36_CHECKER_DEPENDENCY_MUTATIONS = 14
+V36_CHECKER_RESULT_MUTATIONS = 158
+V36_CHECKER_MUTATION_ACTIONS = 375
+V36_CHECKER_REGISTRY_SHA256 = 6cf2ae8722d14ec0966e1461748f426b171654c6076ef5f0e56111aaa3c6bf48
+V36_CHECKER_NORMAL_OPTIMIZED = 2/2 PASS BYTE_IDENTICAL
+V36_CHECKER_NO_FLAG_EXTRA_FLAG = 2/2 REJECTED
+V36_CHECKER_GLOBAL_PROVIDER_DEFAULT_CLOSURE_ATTACKS = PASS
+V36_CHECKER_REACHABLE_MUTABLE_CLOSURE_CONTAINERS = 0
+V36_CHECKER_AST_ASSERT_WRITE_NETWORK_SUBPROCESS = 0
+V36_STARTUP_READ_ONLY_REGRESSION = 22/22 PASS
+V36_SUPPLEMENTAL_ATTEMPTED = 4/4
+V36_SUPPLEMENTAL_BYTE_EXACT = 3/4
+V36_SUPPLEMENTAL_SEMANTIC = 4/4 PASS
+V36_TPC126_PLATFORM_DIAGNOSTIC = EXACT_ONE_ULP_DIRECT_REAL_ONLY_40_17369814909115_TO_40_17369814909116
+V36_BIG_ROAD_PROCESSES = 48/48 PASS
+V36_BIG_ROAD_NORMAL_OPTIMIZED_IDENTITIES = 24/24 PASS
+V36_CANONICAL_REGISTRY_MIRRORS = 6/6 EXACT_SAME_ORDER
+V36_MARKDOWN_FENCES_HANDOFF = 2850_BACKTICK_248_TILDE_BALANCED
+V36_MARKDOWN_FENCES_COMPASS = 224_BACKTICK_76_TILDE_BALANCED
+V36_MARKDOWN_FENCES_README = 378_BACKTICK_72_TILDE_BALANCED
+V36_MARKDOWN_FENCES_PROOF = 6_BACKTICK_0_TILDE_BALANCED
+V36_PROOF_EQUATION_TAGS = 36/36 UNIQUE_REFERENCES_COMPLETE
+V36_UTF8_C0_TRAILING_WHITESPACE = PASS
+V36_RELEASE_PATHS = 5/5 EXACT_ALLOWLIST
+V36_CACHED_DIFF = 0
+V36_GIT_DIFF_CHECK = PASS
+V36_PROTECTED_UNTRACKED_EXCLUDING_V36 = 0
+V36_PROTECTED_UNTRACKED_MANIFEST_SHA256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+V36_PYC_FILES = 0
+V36_BIG_ROAD_PYCACHE = ABSENT
+V36_BASELINE_HEAD_ORIGIN_MAIN = cb5467a3bef6137b8969d44b380e37352aee30f4
+V36_REMOTE_ADVANCE_AFTER_CLOSURE = CB5467A3_TO_995B00F5_TWO_RH389_ONLY_COMMITS_NO_TPC_OVERLAP
+V36_POST_REBASE_PARENT_ORIGIN_MAIN = 995b00f5ab26dc40d65e2ac8c4ab2276d3a66b58
+V36_POST_REBASE_COMMIT_PATHS = 5/5 EXACT_ALLOWLIST
+V36_ROUTE_ADVANCE = YES
+V36_CONDITIONAL_BRIDGE_ADVANCE = YES
+V36_ARITHMETIC_ADVANCE = NO
+V36_FIXED_ATOM_CREDIT = 0
+V36_STRICT_1_OVER_400 = UNPAID
+V36_L2 = NONE
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+V36_NEW_TPC207_PAPER_PDF_BUILD_OUTPUT = NONE
+V36_FILES_CHANGED_BY_QA = 0
+V36_GENERATED_PYC_REMOVED = research/tpc-big-road/__pycache__/tpc_bridge_b_multiroute_ratio_core_checker.cpython-312.pyc
 ~~~
 
 ## 82. 2026-08-09 V35：proper-factor endpoint elimination 与 coprime ratio core
