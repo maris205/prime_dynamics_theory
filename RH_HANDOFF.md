@@ -2,16 +2,16 @@
 
 Status date: 2026-08-10
 
-Current completed endpoint: RH-391
+Current completed endpoint: RH-392
 
-Completed research batch: RH-352 through RH-391
+Completed research batch: RH-352 through RH-392
 
-Post-four-volume independent theorem edges: RH-362 through RH-391
+Post-four-volume independent theorem edges: RH-362 through RH-392
 
-Latest completed-paper verdict: RH-391 Routes A and B `GO`; remaining routes
+Latest completed-paper verdict: RH-392 Routes A and B `GO`; remaining routes
 `STOP_SCOPED`
 
-Post-RH-391 breadth audit: pending; no RH-392 assigned
+Post-RH-392 breadth audit: pending; no RH-393 assigned
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -93,6 +93,9 @@ RH-390 integration commit:
 
 RH-391 integration commit:
 `997c824829adbfc5e69b132fc907de2e56d81811`.
+
+RH-392 integration commit:
+`9768c1cb5f56d959406c19119315afd542b6c30f`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -233,6 +236,11 @@ Read completely:
 - `papers/RH-391-linear-scale-moving-rank-prime-tail-retention-necessity/THEOREM_LEDGER.md`
 - `papers/RH-391-linear-scale-moving-rank-prime-tail-retention-necessity/results/result.json`
 - `papers/RH-391-linear-scale-moving-rank-prime-tail-retention-necessity/main.pdf`
+- `papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/README.md`
+- `papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/UPDATED_ROADMAP.md`
+- `papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/THEOREM_LEDGER.md`
+- `papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/results/result.json`
+- `papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/outputs/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -272,8 +280,9 @@ input, RH-388 as the rank-one `P_2`-scale resummation and bounded-gap
 necessity input, RH-389 as the active-`c_11` fixed-clock terminal-log capacity
 input, RH-390 as the growing-rank prime-tail filtration and fixed-rank
 retention-necessity input, RH-391 as the linear-scale moving-rank pairwise
-retention-necessity input, and RH-361 as the immediate endpoint of the
-still-open original physical branch.
+retention-necessity input, RH-392 as the fixed-lag terminal-log
+diagonalization and square-divisor capacity-landscape input, and RH-361 as
+the immediate endpoint of the still-open original physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -283,7 +292,74 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-391 is now integrated.  Maynard's bounded-consecutive-gap theorem and
+RH-392 is now integrated.  Fix exact integers `q>=1` and `h>=1`, fixed
+periodic data, and an admissible terminal window `1<=omega(X)<=X` with
+`omega(X)->infinity`.  The new arbitrary-determinant terminal lemma proves
+fixed-data cancellation for two nonparallel affine forms by rerunning the
+Boolean squarefree cutoff with reduced determinant
+
+```text
+L Delta/(c_D c_V) != 0.
+```
+
+TPC-137 supplies only the determinant-two blueprint; Tao's fixed
+nonparallel affine theorem is the analytic source.  Cutoff divisors need not
+be coprime, and the limit order is: fix the prime cutoff `P`, let
+`X->infinity`, then let `P->infinity`.
+
+For `A_p(h)={0,h mod p^2}`, put `nu_p(h)=#A_p(h)` and let
+`tau_(p,h)(r)` count the distinct elements of `A_p(h)` reducing to `r mod p`.
+The exact phase pair-squarefree density is
+
+```text
+theta_(q,r)^(h)
+ =q^-1 product_(p notdivides q)(1-nu_p(h)/p^2)
+       product_(p exactlydivides q)(1-tau_(p,h)(r)/p)
+       product_(p^2 divides q)1_(r mod p^2 notin A_p(h)).
+```
+
+Thus `sum_r theta_(q,r)^(h)=kappa_h`, where
+
+```text
+kappa_h=product_(p^2 divides h)(1-p^-2)
+        product_(p^2 notdivides h)(1-2p^-2).
+```
+
+The general fixed finite-shift theorem diagonalizes every total-degree-two
+periodic polynomial.  The separate one-lag coordinatewise-biquadratic
+compiler pays the higher total-degree square-masked channels locally.  For
+universally lag-`h`-safe tables, pointwise projection sends all `512` tables
+to eight actions, compatibility is
+
+```text
+A_r=empty or +1 notin A_(r+h),
+```
+
+and every plus phase charges injectively to the empty predecessor `r-h`.
+No coprimality of `q` and `h` is assumed.  The exact post-limit capacity is
+
+```text
+G_log(q,h)=6/pi^2-kappa_h/2.
+```
+
+It is independent of `q`, is attained positively by table `36` and
+negatively by its reflection table `72`, and has the square-divisor spectrum
+
+```text
+3/pi^2 < G_log(q,h) <= 6/pi^2-kappa_*/2,
+kappa_*=product_p(1-2/p^2).
+```
+
+The upper endpoint occurs exactly for squarefree `h`; the lower infimum is
+not attained and is approached by squared primorial lags.  All parameters
+and tables are fixed before `X->infinity`.  RH-392 proves no growing lag or
+period, ordinary-Cesaro law, quantitative rate, growing mask, unrestricted
+three-coordinate truth-table theorem, operator, trace, zero model, RH
+statement, or Gate A--E conclusion.  Routes A and B are `GO`; all
+enlargements are `STOP_SCOPED`.
+
+RH-391 remains the preceding moving-rank theorem.  Maynard's
+bounded-consecutive-gap theorem and
 finite pigeonhole extraction give one fixed positive integer `h_*<=600`
 and infinitely many consecutive-prime edges
 
@@ -623,7 +699,9 @@ terminal-log fixed-clock route.  RH-389 does not change the ordinary-Cesaro
 or growing-clock barriers.  RH-390 then closed the simultaneous growing-rank
 prime-tail filtration and fixed-rank `P/J/I` necessity hierarchy.  RH-391
 then closed same-rank pairwise necessity throughout every linear moving-rank
-regime.  No post-RH-391 breadth audit has yet assigned RH-392.
+regime.  RH-392 then closed every individually fixed nonzero lag at
+terminal-log scale, including the exact safe-table capacity and
+square-divisor landscape.  No post-RH-392 breadth audit has assigned RH-393.
 The geometrically selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
@@ -2810,7 +2888,71 @@ surrogates, superlinear rank, complex channels, active `c_11`, growing
 clocks, `K_N`, operators, traces, zeros, RH, or Gates A--E.  Routes A and B
 are `GO`; enlargements are `STOP_SCOPED`.
 
-## 4. Compact conclusions from RH-352 through RH-391
+### 3.31 RH-392 fixed-lag terminal-log capacity landscape
+
+Fix exact integers `q>=1` and `h>=1`, fixed periodic coefficients, and every
+admissible terminal clock `omega` with
+
+```text
+1<=omega(X)<=X, omega(X)->infinity.
+```
+
+For distinct fixed shifts, all linear and off-diagonal channels of a fixed
+total-degree-two polynomial have zero terminal-log limit.  Only the constant
+and diagonal squarefree-density terms remain.  For the separate one-lag
+compiler, put
+
+```text
+x=mu_0(n-h), z=mu(n),
+P_r(x,z)=sum_(0<=i,j<=2)c_(ij)(r)x^i z^j.
+```
+
+Then its limit is
+
+```text
+L_(q,h)(P)=sum_r[c00(r)/q+c20(r)delta_(q,r-h)
+                  +c02(r)delta_(q,r)+c22(r)theta_(q,r)^(h)],
+```
+
+and the five `c10,c01,c11,c12,c21` channels vanish.  The `c11` channel uses
+the new arbitrary-nonzero-determinant terminal lemma; square-masked channels
+use local prefix and CRT estimates.  The exact local density is
+
+```text
+theta_(q,r)^(h)
+ =q^-1 product_(p notdivides q)(1-nu_p(h)/p^2)
+       product_(p exactlydivides q)(1-tau_(p,h)(r)/p)
+       product_(p^2 divides q)1_(r mod p^2 notin A_p(h)),
+A_p(h)={0,h mod p^2}.
+```
+
+Here `tau` counts distinct residues modulo `p^2`, even when two such residues
+collide modulo `p`; this pays the `p divides h` but `p^2 notdivides h` trap.
+Summing over phases gives
+
+```text
+kappa_h=product_(p^2 divides h)(1-p^-2)
+        product_(p^2 notdivides h)(1-2p^-2).
+```
+
+For universally lag-`h`-safe tables, pointwise positive-current projection
+gives eight actions.  Translation `r->r-h` is a bijection for every `q`; no
+`gcd(q,h)=1` hypothesis is used, and when `q divides h` the self-loop itself
+forbids a plus phase.  The predecessor charge proves
+
+```text
+G_log(q,h)=max_f abs(L_(q,h)(f))=6/pi^2-kappa_h/2.
+```
+
+The maximum over fixed lags occurs exactly at squarefree `h`; the infimum
+`3/pi^2` is not attained and is approached by squared primorial lags.  These
+are post-limit extrema over already-formed fixed-`(q,h)` limits.  Do not
+infer growing `q` or `h`, ordinary Cesaro cancellation, a rate, adaptive
+tables, unrestricted multi-lag truth-table capacity, operators, traces,
+zeros, RH, or Gates A--E.  Routes A and B are `GO`; enlargements are
+`STOP_SCOPED`.
+
+## 4. Compact conclusions from RH-352 through RH-392
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -3026,6 +3168,12 @@ are `GO`; enlargements are `STOP_SCOPED`.
   and sharp sublinear lower bounds, and next-rank separation for the frozen
   `P/J/I` hierarchy.  No one-vertex schedule, different endpoint ranks,
   arbitrary surrogate, superlinear rank, growing clock, or Gate follows.
+- **RH-392:** Fixed finite-shift total-quadratic diagonalization, a separate
+  one-lag coordinatewise-biquadratic compiler, exact all-phase pair-squarefree
+  densities, and an every-fixed-`(q,h)` safe-table capacity
+  `6/pi^2-kappa_h/2`.  Its square-divisor spectrum has a squarefree maximum
+  and a nonattained `3/pi^2` infimum.  No growing lag or period, ordinary
+  Cesaro theorem, rate, unrestricted multi-lag table, or Gate follows.
 
 ## 5. Route firewall and reopening triggers
 
@@ -3342,18 +3490,21 @@ or any Gate.  RH-391 closes same-rank pairwise necessity throughout the
 linear moving-rank regime.  It does not prove a one-vertex schedule,
 different endpoint ranks, an arbitrary-surrogate obstruction, a superlinear
 rank theorem, active `c_11`, growing-clock uniformity, adaptive capacity, or
-any Gate.  No RH-392 is assigned.  The next breadth audit should distinguish:
+any Gate.  RH-392 closes every individually fixed nonzero lag and fixed
+period at terminal-log scale, including the one-lag safe-table capacity and
+its square-divisor landscape.  It does not prove a growing lag or period,
+ordinary Cesaro cancellation, a quantitative rate, unrestricted multi-lag
+truth-table capacity, adaptive capacity, or any Gate.  No RH-393 is assigned.
+The next breadth audit should distinguish:
 
-1. A fixed finite-lag terminal-log quadratic-memory theorem.  TPC-137's
-   determinant-two argument can be re-audited for each fixed nonzero lag,
-   but the scope remains degree at most two, fixed periodic masks, and
-   terminal logarithmic averaging.  This is the strongest source-visible
-   positive candidate; it must not be promoted to arbitrary tables.
-2. A prescribed growing-clock active-`c_11` theorem.  This is
+1. A prescribed growing-clock or growing-lag active-memory theorem.  This is
    `STOP_SCOPED`: TPC-137 is pointwise for fixed periodic data and supplies
-   no clock-dependent rate, so it cannot justify an unbounded-clock
-   maximum before the limit.  Ordinary Cesaro is already blocked at `q=1`
-   by the open shift-two Chowla correlation.
+   no clock- or lag-dependent rate, so it cannot justify a maximum before
+   the limit.  Ordinary Cesaro is already blocked at lag two by the open
+   Chowla correlation.
+2. An unrestricted safe-table theorem for three or more Möbius coordinates.
+   This is `STOP_SCOPED`: interpolation introduces unsquared correlations of
+   three or more fixed shifts, beyond the locked two-point input.
 3. The exact RH-365 bouquet origin radius or a boundary law.  This is
    `STOP_SCOPED`: the current upper coefficient bound and sparse odd-prime
    anchors do not supply the required exponential multiplicity lower bound
@@ -4984,6 +5135,75 @@ no arbitrary vertexwise rank schedule, different endpoint ranks, arbitrary
 surrogate, superlinear-rank theorem, linear-rank PNT asymptotic, complex
 channel, active `c_11`, growing clock, `K_N`, operator, trace, zero model, RH
 statement, or Gate A--E conclusion.
+
+### 6.31 RH-392 fixed-lag terminal-log capacity release (2026-08-10)
+
+The post-RH-391 breadth audit compared fixed-lag terminal-log
+diagonalization, growing-period active memory, return-bouquet boundary laws,
+and continuum-Ulam projector routes.  The selected theorem closes every
+individually fixed nonzero lag without adding a remote beyond RH-389.  It
+proves a new arbitrary-determinant terminal lemma locally from Tao's fixed
+nonparallel affine input and the TPC-137 cutoff architecture; it does not
+misstate TPC-137's determinant-two theorem as an all-lag result.
+
+The proof pays shared cutoff factors with
+`lcm(M,k^2,l^2)`, the reduced determinant `L Delta/(c_D c_V)`, the order
+`P` fixed, `X->infinity`, then `P->infinity`, and the collision-sensitive
+local density.  It separates the total-degree-two finite-shift theorem from
+the one-lag coordinatewise-biquadratic compiler.  The safe-table theorem
+then reruns the `512 -> 8` projection and predecessor charge with translation
+`r->r-h`, including every `gcd(q,h)` cycle and the `q divides h` self-loop.
+
+The executable certificate has
+
+```text
+640=512+8+64+8+9+7+12+8+6+6
+```
+
+semantic rows, is `220832` canonical bytes, and has SHA-256
+`614297795d4d4dfeadfb5667d3e0d405d04fbe8e07e9d87a743faed9cb267a96`.
+It rejects `24/24` genuine semantic mutations.  Its false-verification path
+is independent of every row, group, and certificate builder and audits all
+`262144` ordered truth-table pairs.  Its role is finite reproduction, not
+analytic proof.
+
+The proof-minimal closure contains `106` Git blobs from RH-389 release
+`8b1a875b4bbefd955a419593951ce2d09987ac6f`, grouped `95/8/3`.  The ordered
+group digests are
+
+```text
+8a674e5d60237b4463e1f68ef79965633ed11a4d098957e5be44e05f471174cb
+87bbdb455fa5217404d863d1054b4ae408de69da6701ff42ac439ec9bfe1605c
+a03e4ba7d8b5b054acc95288c70e753bf22b82bb1957f635891b28682c67840e
+```
+
+and their aggregate digest is
+`3b32865a14618a605915beb8eab6432b048fca49718b69519697ef861cbe650f`.
+The Johnston--Yang, Maynard, and Tao remote locks bring the closure to `109`
+logical inputs with digest
+`39bf8e9030b511e85fdf26a7c71722c3e4be5bc74bc738aa253bbc29c94517f9`.
+Only Tao is an analytic remote input; Johnston--Yang and Maynard are
+inherited provenance.  All three default verifiers make zero requests.  The
+five external payload hashes are absent from the publication members and
+the entire RH-392 tree.
+
+The final official suite is `60/60`.  Normal and optimized builds regenerate
+result, recursively closed Draft 2020-12 schema, manifest, and verification
+report byte-exactly.  The archive has `38` publication members, `106` Git
+inputs, three remote locks, and zero failures.  Manifest and report bring the
+integration set to exactly `40` RH-392 files in commit
+`9768c1cb5f56d959406c19119315afd542b6c30f`.
+
+The main and semantic PDFs are byte-identical, `391274` bytes, and eight A4
+pages; all `24` font rows are embedded, subsetted, and Unicode-mapped.
+Ghostscript, text extraction, LaTeX/BibTeX scans, and all `8/8` rendered
+pages pass.  Two independent final audits returned zero blocker and zero
+minor.
+
+Routes A and B are `GO`; all enlargements are `STOP_SCOPED`.  RH-392 proves
+no growing lag or period, ordinary-Cesaro theorem, rate, adaptive or
+unrestricted multi-lag truth-table capacity, three-point Chowla statement,
+operator, trace, zero model, RH statement, or Gate A--E conclusion.
 
 ## 7. Reproduction and publication audit
 
@@ -6712,12 +6932,97 @@ remote-source audit
 8060b7f46d30a564d33764e1feb1223e7f302fdec730a58138139e349388fb11
 ```
 
+Final RH-392 audit:
+
+- Tests: official `60/60`; fresh normal and optimized
+  result/schema/manifest/report regeneration, independent semantic
+  validation, official Draft 2020-12 schema, source rebinding, and archive
+  mutations all pass or fail closed as declared.
+- The canonical certificate is `220832` bytes with SHA-256
+  `614297795d4d4dfeadfb5667d3e0d405d04fbe8e07e9d87a743faed9cb267a96`.
+  It contains `640=512+8+64+8+9+7+12+8+6+6` semantic rows, rejects `24/24`
+  genuine mutations, and audits all `262144` ordered table pairs through an
+  independent false-verification path.
+- Source closure: `106` immutable Git blobs grouped `95/8/3`, plus ordered
+  Johnston--Yang, Maynard, and Tao remote logical locks.  The logical input
+  count is `109`; all three default verifiers make zero requests.  All five
+  external payload hashes are absent from the release members and tree.
+- Individual archive: `38` publication members, `106` Git inputs, three
+  remote locks, and zero failures.  Integration commit
+  `9768c1cb5f56d959406c19119315afd542b6c30f` contains exactly `40`
+  RH-392 files: the `38` members plus manifest and verification report.
+- PDF: `8` A4 pages and `391274` bytes, with all `24` font rows embedded,
+  subsetted, and Unicode-mapped.  Ghostscript, text extraction, complete
+  LaTeX/BibTeX scans, semantic-PDF byte identity, and all `8/8` rendered
+  pages pass.
+- Two independent final audits report zero blocker and zero minor.  The
+  fixed-`q`, fixed-`h`, terminal-log, two-coordinate, no-rate, no-Cesaro,
+  and all Gate firewalls remain intact.
+
+RH-392 final hashes:
+
+```text
+main.tex
+693f38a69b7f6c35d3a89e98191d0dd27789fd9d14e4057684c942f14bf18112
+
+references.bib
+5b3073a8381da87a30615e18f0b4ae09f1165acb28ed01bf457058489d9a8bb7
+
+PDF
+c8a90aadb7c1f86373e094124cf5e9b279cd764daeab8f014784f0b35345b056
+
+main.log
+060e40171624e9c7571e18a01a0025dc3e9f7ccf2aa1ab0e82f3337bc76358c1
+
+result
+83bab4eb57f1d4d2d31c646946df16203b155d49d78942f74a40df239e404bc0
+
+schema
+606d0ae74b4da9e4a97e6a951e89dfd4237108028c9b2436030e2d6861ec8f5d
+
+manifest
+c9b937884cea1d80b76b9e9266cf0ab9bd026e76e8f4fc5c2f47ccb12f8597eb
+
+verification
+82120af22cfdcd485642eeb4e2807a66c9891d6e12357f92c2ac9b158d395aa4
+
+core
+a4e297f4c324ba1fce1829e5c1caf1b8a7e451a9b90c1f78be5f00d44cd97397
+
+Johnston--Yang external source lock
+d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058
+
+Maynard external source lock
+9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba
+
+Tao external source lock
+825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f
+
+integrity audit
+2d75a2846225966331751202ed5795a6ce12323c8bac67950337939a9bc1a919
+
+review audit
+5e78d0582c692302922f84e43e78ddee44bf7886a1566461f187f3a5e57434cf
+
+format audit
+e9653529b6b736e064675f1e25753b8e858ba5faeded01c4a94261b31792a700
+
+replay audit
+c7b2b7ec06b67829fe0d61bb781377d237a9876eb4460a90e7f17ea634e4ad71
+
+visual audit
+f596e762c420b3798e5bfff56d5b26f6a68fe44736b5b4caad2af94f55245bec
+
+remote-source audit
+90c1d753c0f7bdbdfd5e67fb7fb0fb3dbac63532db60b30bf217b3560fc296c4
+```
+
 ## 8. Continuation prompt
 
 ````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-391 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-392 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -6742,8 +7047,9 @@ input, RH-388 as the rank-one `P_2`-scale resummation and bounded-gap
 necessity input, RH-389 as the active-`c_11` fixed-clock terminal-log capacity
 input, RH-390 as the growing-rank prime-tail filtration and fixed-rank
 retention-necessity input, RH-391 as the linear-scale same-rank pairwise
-retention-necessity input, RH-MVP2 as the corpus umbrella, and RH-361 as the
-physical endpoint.
+retention-necessity input, RH-392 as the fixed-lag terminal-log
+diagonalization and square-divisor capacity-landscape input, RH-MVP2 as the
+corpus umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -6753,8 +7059,64 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-391 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  Maynard's theorem and finite pigeonhole extraction give
+RH-392 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  Fix exact integers `q>=1` and `h>=1`, fixed periodic
+data, and every terminal clock satisfying
+
+```text
+1<=omega(X)<=X, omega(X)->infinity.
+```
+
+For distinct fixed shifts, every fixed total-degree-two polynomial has only
+constant and diagonal squarefree-density terms in its terminal-log limit.
+For the separate one-lag coordinatewise-biquadratic compiler,
+
+```text
+L_(q,h)(P)=sum_r[c00(r)/q+c20(r)delta_(q,r-h)
+                  +c02(r)delta_(q,r)+c22(r)theta_(q,r)^(h)].
+```
+
+The exact phase pair density uses
+
+```text
+A_p(h)={0,h mod p^2}, nu_p(h)=#A_p(h),
+theta_(q,r)^(h)
+ =q^-1 product_(p notdivides q)(1-nu_p(h)/p^2)
+       product_(p exactlydivides q)(1-tau_(p,h)(r)/p)
+       product_(p^2 divides q)1_(r mod p^2 notin A_p(h)).
+```
+
+Here `tau` counts distinct residues modulo `p^2`; do not cap it at one when
+the residues collide only modulo `p`.  Its phase sum is
+
+```text
+kappa_h=product_(p^2 divides h)(1-p^-2)
+        product_(p^2 notdivides h)(1-2p^-2).
+```
+
+For universally lag-`h`-safe tables, the pointwise projection has eight
+actions and compatibility `A_r=empty or +1 notin A_(r+h)`.  Charge every
+plus phase to `r-h`; this translation is bijective for every `q`, with no
+coprimality hypothesis.  Retain the exact post-limit theorem
+
+```text
+G_log(q,h)=max_f abs(L_(q,h)(f))=6/pi^2-kappa_h/2.
+```
+
+The maximum over fixed lags occurs exactly for squarefree `h`.  The infimum
+`3/pi^2` is not attained and is approached by squared primorial lags.  Fix
+all data before `X->infinity`.  TPC-137 is only the determinant-two
+blueprint; the all-lag terminal lemma is a new local proof using Tao's fixed
+nonparallel affine theorem, the reduced determinant `L Delta/(c_D c_V)`,
+and the order: fix `P`, take `X->infinity`, then `P->infinity`.
+
+Do not infer growing `q` or `h`, ordinary Cesaro cancellation, a rate,
+growing masks, unrestricted three-coordinate truth tables, adaptive
+capacity, operators, traces, zeros, RH, or Gates A--E.  Routes A and B are
+`GO`; enlargements are `STOP_SCOPED`.
+
+RH-391 remains the preceding pairwise moving-rank theorem.  Maynard's theorem
+and finite pigeonhole extraction give
 one fixed `h_* in {1,...,600}` on infinitely many consecutive-prime edges
 
 ```text
@@ -7154,13 +7516,19 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-RH-391 is complete; do not rewrite it as the next candidate.  Its exact
+RH-392 is complete; do not rewrite it as the next candidate.  Its fixed-lag
+terminal theorem, arbitrary-determinant local proof, exact phase densities,
+`512 -> 8` projection, every-fixed-`(q,h)` charge, capacity landscape, three
+remote logical locks, release archive, and two independent final audits are
+closed.  No post-RH-392 breadth audit has assigned RH-393.  Run that audit
+before creating another number, and require a genuinely new source-backed
+theorem rather than a growing-parameter restatement without a uniform rate.
+
+RH-391 remains complete as the preceding moving-rank theorem.  Its exact
 same-rank linear moving-rank edge jumps, pair profile, all-rank direction
 lower bound, next-rank separation, two remote logical locks, release archive,
-and two independent final audits are closed.  No post-RH-391 breadth audit
-has yet assigned RH-392.  Run that audit before creating another number,
-and require a genuinely new source-backed theorem rather than repackaging
-the pair profile or changing its endpoint quantifiers.
+and two independent final audits are closed.  Do not repackage its pair
+profile or change its endpoint quantifiers.
 
 RH-390 remains complete as the preceding growing-rank filtration theorem.
 Its exact positive filtration, complete factorial window, all-rank
@@ -7201,15 +7569,19 @@ direct RH-385 corollary, not a new edge.  Preserve the immutable four-volume
 foundation and Gates A--E while these ordinary-`c_11` and growing-clock
 routes remain stopped.
 
-No RH-392 is assigned.  The first source-visible breadth candidate is a
-fixed finite-lag terminal-log quadratic-memory theorem, restricted to fixed
-periodic masks and degree at most two.  A growing-period active-`c_11`
-maximum is `STOP_SCOPED` for lack of a clock-dependent correlation rate;
-the exact RH-365 bouquet radius is `STOP_SCOPED` for lack of exponential
-multiplicity or composite-order primitive divisors; and a continuum `-1`
-Riesz projector is `NOT_TESTABLE` without a declared Banach pair,
-projection/lift maps, and common resolvent contour.  Run a new breadth audit
-before assigning a number.
+No RH-393 is assigned.  The next breadth audit must compare at least:
+
+1. growing-period or growing-lag active memory, currently `STOP_SCOPED`
+   because no clock- or lag-dependent two-point rate is locked;
+2. unrestricted three-or-more-coordinate safe tables, currently
+   `STOP_SCOPED` because they require unsquared higher Chowla correlations;
+3. the exact RH-365 bouquet radius, currently `STOP_SCOPED` for lack of
+   exponential multiplicity or composite-order primitive divisors;
+4. a continuum `-1` Riesz projector, currently `NOT_TESTABLE` without a
+   Banach pair, projection/lift maps, and common resolvent contour; and
+5. any original physical trigger backed by its missing typed theorem.
+
+Run a fresh breadth audit before assigning a number.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
 factor, or full H_p zeta. Do not promote the entropy tower, weighted Euler
