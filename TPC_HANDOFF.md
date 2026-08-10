@@ -1,82 +1,80 @@
 # TPC HANDOFF
 
 更新时间：2026-08-10
-交接状态：`BOLD_CHANNEL_V45_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V46_SEALED_FOR_NEW_SESSION`
 
-第 92 节仍位于“解析消去岛 / Bridge A / Gates A--B”。V45 对 V44 reciprocal
-variance 作 primitive-conductor audit。V44 的 aggregate `P^2` ceiling仍正确，但
-“imprimitive characters只花 `x^o(1)`”不能作为 uniform endpoint ledger：同一小导子
-character会诱导到许多 reduced moduli `s`。令
-
-~~~text
-P=Q^2/H=x^(1/96),  D0=P^(1/2)=x^(1/192).             (V45.1)
-~~~
-
-对 `s~S`、primitive conductor `d~D`、`N~SQ/H`，correct induction weight及
-primitive multiplicative large sieve给
+第 93 节仍位于“解析消去岛 / Bridge A / Gates A--B”。V46 不再逐个追逐 V45
+principal 与 induced low-conductor characters，而是在原 proper-factor modulus
+上先做一个 physical local-profile split。保留
 
 ~~~text
-V_D^(2) << P^2(D/Q+1/D)x^o,
-V_D^(4) << P^2/N  if D>N,
-V_D^(4) << P^2/D  if D<=N.                           (V45.2)
+H=x^(21/32), Q=x^(1/3), U=x^(133/400),
+Y0=H/(4Q)=x^(31/96+o(1)), P=Q^2/H=x^(1/96).         (V46.1)
 ~~~
 
-在 `D>=D0` 上逐块取两界最小值，严格得到
+对 square-free `d`，令 `Delta_d,z=P_d-B_d,z` 为 shifted-prime local Euler profile
+与 hybrid local profile之差。因为 `d|t` 且 `u=t+h`，
 
 ~~~text
-V_high << P^(3/2)x^o=x^(1/64+o(1)),
-|T_high| << x^(213/128+o(1)),
-1997/1200-213/128=1/9600.                            (V45.3)
+Delta_d,z(h)=Delta_d,z(u),  Delta_d,z(0)=0.          (V46.2)
 ~~~
 
-所以 high-conductor transition spectrum已经 source-backed 支付。低导子不能靠
-centering删除。若 `s=de` 且 character由 primitive `chi* mod d`诱导，则 physical
-transform精确为
+所以 V43/V44 common transition scalar在第一道 outer absolute 之前精确拆成
+proper-factor local carrier与 all-residue AP residual。前者沿用 V29 已审核的
+reduced-radical Bettin--Chandee compiler，严格得到
 
 ~~~text
-tau(chi*) chi*(e) sum_u b(u) conjugate(chi*(u)) c_e(u),
-mu(e)c_e(u)=mu(gcd(e,u))phi(gcd(e,u)).               (V45.4)
+|L_pf|/L_pr << x^(1891/1920+o(1)),
+|L_pf| << x^(1057/640+o(1)),
+1997/1200-1057/640=121/9600.                         (V46.3)
 ~~~
 
-principal `d=1` 与 `1<d<D0` 因而组成一个 explicit Gauss--Ramanujan structured
-major spectrum。V44 的两道 transition gates收缩为唯一一门
+对 residual residue sums `R_d(a)` 与 reciprocal occupancy `A_d(r)`，V46 又证明
 
 ~~~text
-|M_low| << x^(1997/1200-eta_low+o(1)), eta_low>0.    (V45.5)
+sum_d sum_r |A_d(r)|^2 << P^2 x^o=x^(1/48+o(1)),
+sum_r |Rhat_d(r)|^2=d sum_a |R_d(a)|^2.              (V46.4)
 ~~~
 
-该门成立即条件闭合完整 transition；可保留的 saving为
-`min(eta_low,1/9600,13/4800,817/4800)`。balanced `d>U,k>U`、
-reverse-Type-I `d>U,k<=U`、V42 Gate B及最终 V43 A+B AND compiler仍开放。
-BFI low-conductor lane只有 logarithmic Siegel--Walfisz saving；现有 asymptotic
-large sieve与 products-of-primes dense model均不直接接受 literal physical low
-spectrum。
+因此完整 transition 被压成一个新的 whole-object AP--BDH 门：
 
 ~~~text
-V45_ROUTE_ADVANCE = YES
-V45_CONDITIONAL_BRIDGE_ADVANCE = YES
-V45_CONDUCTOR_SPLIT = PROVED_EXACT_AT_D0_EQUALS_P_POWER_1_OVER_2
-V45_HIGH_CONDUCTOR_VARIANCE = PROVED_SOURCE_BACKED_P_POWER_3_OVER_2_X_O1
-V45_HIGH_CONDUCTOR_OUTPUT = PROVED_X_POWER_213_OVER_128_PLUS_O1
-V45_HIGH_CONDUCTOR_ENDPOINT_MARGIN = 1_OVER_9600
-V45_LOW_STRUCTURED_MAJOR_GATE = OPEN_X_POWER_1997_OVER_1200_MINUS_ETA_LOW_WITH_ETA_LOW_POSITIVE
-V45_FIRST_FATAL = NO_LITERAL_THEOREM_BOUNDS_THE_PRINCIPAL_PLUS_LOW_CONDUCTOR_INDUCED_CHARACTER_GAUSS_RAMANUJAN_SPECTRUM_WITH_PHYSICAL_LAMBDA_MINUS_B_AT_THE_STRICT_TRANSITION_POWER
-V45_ARITHMETIC_ADVANCE = NO
-V45_FIXED_ATOM_CREDIT = 0
-V45_STRICT_1_OVER_400 = UNPAID
-V45_L2 = NONE
-TPC_207_TRIGGER = false                                (V45.6)
+E_AP^tr=sum_d d sum_a |R_d(a)|^2
+       << x U^2 x^(rho+o(1)), 0<=rho<33/100.         (V46.5)
 ~~~
 
-完整 56-row canonical registry 位于 Handoff 第 24、92 节、Compass 第 46 节、
-big-road README 第 45 节、V45 proof 第 10 节与 checker。proof 为
-`research/tpc-big-road/bridge_b_conductor_stratified_transition_spectrum.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_conductor_stratified_transition_checker.py`。文字路线图
-同步标出“high conductor paid；low structured major 与 long-Mobius open”。V45 仍是
-不编号 big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
+若该门成立，则 residual numerator 为
+`x^(1799/1200+rho/2+o(1))`，margin为 `33/200-rho/2`；与 V44 corrections
+及 local payment重组后，完整 transition saving可取
+`min(121/9600,33/200-rho/2,13/4800,817/4800)`。自然尺度 `rho=0`
+余量很大，但现有 classical/general-sequence BDH theorem不覆盖
+`x^(31/96)<d<=x^(133/400)<sqrt(x)` 上随 `d` 变化的 literal
+`Lambda(u+2)-b_z(u)-Delta_d,z(u)`。这仍是一项新算术定理，不是已证明结论。
 
-以下 V44 及更早页首块作为已封存历史上游保留；V44 的完整事实位于第 91 节，
-current truth 由上面的 V45 摘要、第 24 节与第 92 节控制。
+~~~text
+V46_ROUTE_ADVANCE = YES
+V46_CONDITIONAL_BRIDGE_ADVANCE = YES
+V46_LOCAL_BETTIN_CHANDEE_ATTACHMENT = SOURCE_BACKED_BY_V29_COMPILER_WITH_PROPER_FACTOR_AS_SELECTED_GROUP
+V46_LOCAL_ENDPOINT_MARGIN = 121_OVER_9600
+V46_RECIPROCAL_OCCUPANCY_ENERGY = PROVED_ELEMENTARY_P_SQUARED_X_O1
+V46_TRANSITION_AP_BDH_GATE = OPEN_X_U_SQUARED_X_POWER_RHO_WITH_ZERO_LE_RHO_LT_33_OVER_100
+V46_FIRST_FATAL = NO_LITERAL_THEOREM_PROVES_THE_NATURAL_SCALE_ALL_RESIDUE_AP_VARIANCE_FOR_LAMBDA_U_PLUS_2_MINUS_B_Z_U_MINUS_THE_PROPER_FACTOR_LOCAL_PROFILE_UNIFORMLY_FOR_X_POWER_31_OVER_96_LT_D_LE_X_POWER_133_OVER_400
+V46_ARITHMETIC_ADVANCE = NO
+V46_FIXED_ATOM_CREDIT = 0
+V46_STRICT_1_OVER_400 = UNPAID
+V46_L2 = NONE
+TPC_207_TRIGGER = false                                (V46.6)
+~~~
+
+完整 63-row canonical registry 位于 Handoff 第 24、93 节、Compass 第 47 节、
+big-road README 第 46 节、V46 proof 第 10 节与 checker。proof 为
+`research/tpc-big-road/bridge_b_transition_native_euler_bdh_compiler.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_transition_native_euler_bdh_checker.py`。文字路线图
+同步标出“proper-factor local Euler carrier PAID；AP--BDH residual OPEN”。
+V46 仍是不编号 big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
+
+以下 V45 及更早页首块作为已封存历史上游保留；V45 的完整事实位于第 92 节，
+current truth 由上面的 V46 摘要、第 24 节与第 93 节控制。
 
 第 91 节仍位于“解析消去岛 / Bridge A / Gates A--B”。V44 选择 V43 剩余三窗中的
 transition `H/(4Q)<d<=U`，在任何 outer absolute 之前写
@@ -147,7 +145,7 @@ long-Möbius open”。V44 仍是不编号 big-road checkpoint；不创建 TPC-2
 PDF 或 build output。
 
 以下 V43 及更早页首块作为已封存历史上游保留；V43 的完整事实位于第 90 节，
-current truth 由页首 V45 摘要、第 24 节与第 92 节控制。
+current truth 由页首 V46 摘要、第 24 节与第 93 节控制。
 
 第 90 节仍位于“解析消去岛 / Bridge A / Gates A--B”。V43 不再继续堆 fixed
 dyadic cells，而对 V35 proper-factor direction 在任何 outer absolute 之前作完整
@@ -213,8 +211,8 @@ long-Möbius span open”。V43 仍是不编号 big-road checkpoint；不创建 
 paper、PDF 或 build output。
 
 以下 V42 及更早页首块作为已封存历史上游保留；V42 的完整事实位于第 89 节，
-V43 historical truth由上面的 V43 摘要与第 90 节冻结；current truth由页首 V45、
-第 24 节与第 92 节控制。
+V43 historical truth由上面的 V43 摘要与第 90 节冻结；current truth由页首 V46、
+第 24 节与第 93 节控制。
 
 第 89 节仍位于“解析消去岛 / Bridge A / Gate B”。V41 已把 q-local model row
 支付到 `x^(37/16+o(1))`，留下 residual energy
@@ -297,7 +295,7 @@ big-road README 第 42 节、V42 proof 第 10 节与 checker。proof 为
 paper、PDF 或 build output。
 
 以下 V41 及更早页首块作为已封存历史上游保留；V41 的完整事实位于第 88 节，
-V42 历史 truth由本块与第 89 节冻结；current truth由页首 V45、第 24 节与第 92 节控制。
+V42 历史 truth由本块与第 89 节冻结；current truth由页首 V46、第 24 节与第 93 节控制。
 
 第 86 节仍位于“解析消去岛 / Bridge A / Gate B”，但 V39 对 V38 的 K lane
 作了真正的 macro reroute，而不是再加一个 local cell。V38 canonical emitter 与 scalar
@@ -2857,7 +2855,7 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 `V30_QLOCAL_MODEL_BOUND`
 （第 91 节控制；V43 transference由第 90 节冻结；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--92 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--93 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -2922,7 +2920,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--92 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--93 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2983,11 +2981,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V45 gate及其 V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；四十六次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V46 gate及其 V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；四十八次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
+python -B research/tpc-big-road/tpc_bridge_b_transition_native_euler_bdh_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_transition_native_euler_bdh_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_conductor_stratified_transition_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_conductor_stratified_transition_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_transition_reciprocal_variance_checker.py --check
@@ -3307,6 +3307,21 @@ TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1 = STOP_SCOPED
 FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT = STOP_SCOPED
 ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ = STOP_SCOPED
 ```
+
+V46 对 transition-native AP--BDH residual 新增且仅新增三个 source-specific
+scoped stops：
+
+```text
+V46_CLASSICAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_REQUIRES_MODULUS_SCALE_X_LOG_POWER_MINUS_A_NOT_U_X_POWER_133_OVER_400
+V46_HARPER_GENERAL_SEQUENCE_DIRECT_ATTACHMENT = STOP_SCOPED_REQUIRES_Q_GREATER_THAN_SQRT_2X_AND_MODULUS_INDEPENDENT_SEQUENCE_HYPOTHESES
+V46_KMT_MULTIPLICATIVE_AP_DIRECT_ATTACHMENT = STOP_SCOPED_BOUNDED_MULTIPLICATIVE_ALMOST_ALL_MODULI_NOT_SHIFTED_LAMBDA_MINUS_D_DEPENDENT_HYBRID_PROFILE
+```
+
+它们只停止把现有 natural-scale/general-sequence/bounded-multiplicative
+AP variance theorem直接改名为 V46 literal all-residue theorem。它们不停止证明
+`E_AP^tr << x U^2 x^(rho+o(1))` 的新 whole-object theorem，也不停止 long-Möbius、
+V42 Gate B、terminal A或 dynamics C。Fiorilli/Hooley below-square-root variance只作
+heuristic support，不登记为已证明 attachment。
 
 V45 对 conductor-stratified transition spectrum 新增且仅新增三个 source-specific
 scoped stops：
@@ -8903,7 +8918,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V45 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V46 current）
 
 ```text
 进入仓库：
@@ -8911,6 +8926,8 @@ TPC-127 --check = PASS
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_transition_native_euler_bdh_compiler.md、
+research/tpc-big-road/tpc_bridge_b_transition_native_euler_bdh_checker.py、
 research/tpc-big-road/bridge_b_conductor_stratified_transition_spectrum.md、
 research/tpc-big-road/tpc_bridge_b_conductor_stratified_transition_checker.py、
 research/tpc-big-road/bridge_b_transition_reciprocal_variance_and_ramanujan_mean.md、
@@ -8969,7 +8986,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--92 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--93 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -9186,6 +9203,69 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V46_MAXIMUM_CLAIM = EXACT_PROPER_FACTOR_LOCAL_PROFILE_SPLIT_PAYS_THE_TRANSITION_NATIVE_EULER_CARRIER_AND_REPLACES_THE_V45_LOW_CONDUCTOR_MAJOR_BY_ONE_LITERAL_ALL_RESIDUE_AP_BDH_ENERGY_GATE
+V46_ROUTE_ADVANCE = YES
+V46_CONDITIONAL_BRIDGE_ADVANCE = YES
+V46_ARITHMETIC_ADVANCE = NO
+V46_FIXED_ATOM_CREDIT = 0
+V46_STRICT_1_OVER_400 = UNPAID
+V46_L2 = NONE
+V46_TPC_207_TRIGGER = false
+V46_NUMBERED_RELEASE = NO
+V46_DERIVATION_STATUS = COHERENT_AFTER_EXACT_PROPER_FACTOR_EULER_SPLIT_RECIPROCAL_OCCUPANCY_ENERGY_AND_AP_PARSEVAL_COMPILER
+V46_ASSUMPTION_POLICY = ONE_LITERAL_TRANSITION_AP_BDH_ENERGY_REMAINS_OPEN_AND_IS_NOT_CALLED_AN_EQUIVALENT_OR_WEAKEST_REFORMULATION
+V46_SELECTED_RESEARCH_ROUTE = TRANSITION_NATIVE_EULER_PAID__ALL_RESIDUE_AP_BDH_NEXT__LONG_MOBIUS_SECOND__V42_GATE_B_PARALLEL__V43_A_B_JOIN__C_RESERVE
+V46_V43_TRANSITION_ALIAS = RETAINED_EXACT_PROPER_FACTOR_POISSON_SCALAR_BEFORE_OUTER_ABSOLUTE
+V46_V44_CORRECTION_LEDGER = RETAINED_Q_DIVIDES_U_AND_CENTERED_BACKGROUND_PAID
+V46_V45_HIGH_CONDUCTOR_PAYMENT = RETAINED_INDEPENDENT_SOURCE_BACKED_X_POWER_213_OVER_128
+V46_PROPER_FACTOR_SQUAREFREE = PROVED_EXACT_FROM_MU_D_NONZERO
+V46_SHIFTED_PRIME_LOCAL_PROFILE = PROVED_EXACT_PRODUCT_OF_F_P
+V46_HYBRID_LOCAL_PROFILE = PROVED_EXACT_PRODUCT_OF_G_P_Z
+V46_LOCAL_PROFILE_DIFFERENCE = DELTA_D_Z_EQUALS_P_D_MINUS_B_D_Z
+V46_LOCAL_PROFILE_ZERO_AXIS = PROVED_DELTA_D_Z_ZERO_EQUALS_ZERO
+V46_LOCAL_PROFILE_ZERO_MEAN = PROVED_SUM_A_MOD_D_DELTA_D_Z_A_EQUALS_ZERO
+V46_PROPER_FACTOR_CONGRUENCE = PROVED_D_DIVIDES_T_IMPLIES_DELTA_D_Z_U_MINUS_T_EQUALS_DELTA_D_Z_U
+V46_COMMON_TRANSITION_SPLIT = PROVED_EXACT_LOCAL_PLUS_AP_RESIDUAL_BEFORE_OUTER_ABSOLUTE
+V46_TRANSITION_NATIVE_CARRIER = PROVED_EXACT_WITH_LOG_T_PLUS_H_DENOMINATOR
+V46_TRANSITION_NATIVE_CARRIER_ZERO_AXIS = PROVED_EXACT_ZERO
+V46_LOCAL_RADICAL_ACTIVE_RANGE = PROVED_R_GE_H_OVER_Q_EQUALS_X_POWER_31_OVER_96
+V46_LOCAL_P_BRANCH = PROVED_EXACT_MU_R_OVER_PHI_R_TIMES_E_R_2_A_QBAR
+V46_LOCAL_B_BRANCH = PROVED_EXACT_MU_R0_OVER_PHI_R0_PHI_R1_SQUARED_TIMES_E_R0_2_A_QR1_BAR
+V46_LOCAL_COEFFICIENT_L2_P_BRANCH = PROVED_X_OVER_S_POWER_3_OVER_2
+V46_LOCAL_COEFFICIENT_L2_B_BRANCH = PROVED_X_OVER_S_POWER_3_OVER_2_R1_CUBED
+V46_LOCAL_BETTIN_CHANDEE_ATTACHMENT = SOURCE_BACKED_BY_V29_COMPILER_WITH_PROPER_FACTOR_AS_SELECTED_GROUP
+V46_LOCAL_NORMALIZED_OUTPUT = PROVED_X_POWER_1891_OVER_1920_PLUS_O1
+V46_LOCAL_NUMERATOR_OUTPUT = PROVED_X_POWER_1057_OVER_640_PLUS_O1
+V46_LOCAL_ENDPOINT_MARGIN = 121_OVER_9600
+V46_AP_RESIDUAL = PROVED_EXACT_W_MINUS_DELTA_D_Z_OVER_LOG_U_IN_EACH_RESIDUE_CLASS
+V46_AP_PARSEVAL = PROVED_EXACT_SUM_R_FOURIER_SQUARED_EQUALS_D_SUM_A_RESIDUAL_SQUARED
+V46_RECIPROCAL_OCCUPANCY = PROVED_EXACT_A_D_R_WITH_M_QBAR_MOD_D
+V46_RECIPROCAL_COLLISION = PROVED_M1_Q2_MINUS_M2_Q1_EQUALS_ELL_D_WITH_ABS_ELL_LE_P_X_O1
+V46_RECIPROCAL_OCCUPANCY_ENERGY = PROVED_ELEMENTARY_P_SQUARED_X_O1
+V46_RECIPROCAL_OCCUPANCY_ENERGY_EXPONENT = 1_OVER_48
+V46_TRANSITION_AP_BDH_ENERGY = DEFINED_SUM_D_SUM_A_D_TIMES_ABS_RESIDUAL_SQUARED
+V46_TRANSITION_AP_BDH_NATURAL_SCALE = X_TIMES_U_SQUARED_EQUALS_X_POWER_333_OVER_200
+V46_TRANSITION_AP_BDH_GATE = OPEN_X_U_SQUARED_X_POWER_RHO_WITH_ZERO_LE_RHO_LT_33_OVER_100
+V46_AP_RESIDUAL_NUMERATOR_OUTPUT = CONDITIONAL_X_POWER_1799_OVER_1200_PLUS_RHO_OVER_2_PLUS_O1
+V46_AP_RESIDUAL_NORMALIZED_OUTPUT = CONDITIONAL_X_POWER_333_OVER_400_PLUS_RHO_OVER_2_PLUS_O1
+V46_AP_RESIDUAL_MARGIN = 33_OVER_200_MINUS_RHO_OVER_2
+V46_TRANSITION_CONDITIONAL_COMPILER = PROVED_AP_BDH_GATE_PAYS_FULL_TRANSITION_WITH_LOCAL_AND_V44_CORRECTIONS
+V46_TRANSITION_CONDITIONAL_MARGIN = MIN_121_OVER_9600_33_OVER_200_MINUS_RHO_OVER_2_13_OVER_4800_817_OVER_4800
+V46_AP_GATE_STRENGTH = SUFFICIENT_WHOLE_OBJECT_THEOREM_STRONGER_THAN_ONLY_V45_LOW_CONDUCTOR_GATE
+V46_LOW_EXCEPTIONAL_CHARACTER_FIREWALL = RETAINED_INSIDE_AP_RESIDUAL_NO_LANDAU_PAGE_POWER_BORROWED
+V46_LONG_BALANCED_WINDOW = OPEN_D_GT_U_AND_K_GT_U
+V46_LONG_REVERSE_TYPE_I_WINDOW = OPEN_D_GT_U_AND_K_LE_U
+V46_V42_GATE_B = RETAINED_PARALLEL_OPEN_POSITIVE_GRAM_MPD_ROUTE
+V46_BETTIN_CHANDEE_LOCAL_ATTACHMENT = SOURCE_BACKED_TRANSITION_NATIVE_EULER_COMPONENT_ONLY
+V46_CLASSICAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_REQUIRES_MODULUS_SCALE_X_LOG_POWER_MINUS_A_NOT_U_X_POWER_133_OVER_400
+V46_HARPER_GENERAL_SEQUENCE_DIRECT_ATTACHMENT = STOP_SCOPED_REQUIRES_Q_GREATER_THAN_SQRT_2X_AND_MODULUS_INDEPENDENT_SEQUENCE_HYPOTHESES
+V46_KMT_MULTIPLICATIVE_AP_DIRECT_ATTACHMENT = STOP_SCOPED_BOUNDED_MULTIPLICATIVE_ALMOST_ALL_MODULI_NOT_SHIFTED_LAMBDA_MINUS_D_DEPENDENT_HYBRID_PROFILE
+V46_FIORILLI_HOOLEY_VARIANCE = HEURISTIC_SUPPORT_ONLY_NO_UNIFORM_LITERAL_THEOREM_BELOW_SQUARE_ROOT
+V46_DIRECT_PRIMARY_SOURCE_FOR_AP_BDH_GATE = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_10
+V46_FIRST_FATAL = NO_LITERAL_THEOREM_PROVES_THE_NATURAL_SCALE_ALL_RESIDUE_AP_VARIANCE_FOR_LAMBDA_U_PLUS_2_MINUS_B_Z_U_MINUS_THE_PROPER_FACTOR_LOCAL_PROFILE_UNIFORMLY_FOR_X_POWER_31_OVER_96_LT_D_LE_X_POWER_133_OVER_400
+V46_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_TRANSITION_LOCAL_EULER_PAID_AP_BDH_RESIDUAL_OPEN_LONG_MOBIUS_SPAN_OPEN
+V46_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V46_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATES_A_B
 V45_MAXIMUM_CLAIM = EXACT_CONDUCTOR_STRATIFICATION_REPLACES_THE_V44_CENTERED_VARIANCE_GATE_BY_A_SOURCE_BACKED_HIGH_CONDUCTOR_PAYMENT_AND_ONE_STRUCTURED_LOW_CONDUCTOR_MAJOR_SPECTRUM_GATE
 V45_ROUTE_ADVANCE = YES
 V45_CONDITIONAL_BRIDGE_ADVANCE = YES
@@ -14295,6 +14375,249 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 93. 2026-08-10 V46：transition-native Euler carrier 与 AP--BDH residual gate
+
+V46 保留 V43 proper-factor Poisson scalar、V44 physical corrections以及 V45
+high-conductor payment；新动作是在 common transition scalar内部按 proper factor
+\(d\) 插入 literal shifted-prime/hybrid local profile。对 square-free \(d\)，
+
+\[
+\Delta_{d,z}(a)=\prod_{p\mid d}F_p(a)-\prod_{p\mid d}G_{p,z}(a),
+\qquad \Delta_{d,z}(0)=0,\qquad \sum_{a\bmod d}\Delta_{d,z}(a)=0.
+\]
+
+因为 \(d\mid t\) 且 \(u=t+h\)，有
+\(\Delta_{d,z}(h)=\Delta_{d,z}(u)\)，故
+
+\[
+\mathfrak T_x^{\rm com}
+=\mathfrak L_x^{\rm pf}+\mathfrak R_x^{\rm AP}
+\]
+
+是第一次 outer absolute 之前的 exact identity。
+
+### 93.1 Local Euler carrier payment
+
+固定 proper factor \(D\) 的 occurrence mass满足
+\[
+\sum_{t\in I_x,D\mid t}
+\left|\mu(D)\frac{\log D}{\log t}\right|
+\ll x^{1+o(1)}/D.
+\]
+因此 V29 reduced-radical Fourier compiler与 Bettin--Chandee Theorem 1原样给
+\[
+\frac{|\mathfrak L_x^{\rm pf}|}{L_{\rm pr}}
+\ll x^{1891/1920+o(1)},\qquad
+|\mathfrak L_x^{\rm pf}|\ll x^{1057/640+o(1)}.
+\]
+其 numerator endpoint margin为 \(121/9600\)。这只支付 local component；
+不支付 residual或 physical zero coordinate。
+
+### 93.2 AP residual and reciprocal occupancy
+
+定义
+\[
+\mathcal R_d(a)=\sum_{\substack{u\in I_x\\u\equiv a\pmod d}}
+\frac{\Lambda(u+2)-b_x^{(z)}(u)-\Delta_{d,z}(a)}{\log u}
+\]
+及
+\[
+A_d(r)=\frac{\mu(d)\log d}{d}
+\sum_{q\in\mathcal Q}\sum_{\substack{m\ne0\\|m|\le dq/H}}
+\psi\!\left(\frac{Hm}{dq}\right)
+\mathbf1_{r\equiv m\bar q\pmod d}.
+\]
+则
+\[
+\mathfrak R_x^{\rm AP}
+=-H\sum_d\sum_{r\bmod d}A_d(r)\widehat{\mathcal R}_d(r)
+\]
+且 additive Parseval给
+\[
+\sum_r|\widehat{\mathcal R}_d(r)|^2
+=d\sum_a|\mathcal R_d(a)|^2.
+\]
+occupancy collisions满足
+\[
+m_1q_2-m_2q_1=\ell d,\qquad |\ell|\ll P,
+\]
+逐 dyadic block初等计数得到
+\[
+\sum_{d,r}|A_d(r)|^2\ll P^2x^{o(1)}=x^{1/48+o(1)}.
+\]
+
+### 93.3 One conditional whole-object theorem
+
+唯一新 transition gate为
+\[
+\mathcal E_{\rm AP}^{\rm tr}
+=\sum_{\substack{Y_0<d\le U\\\mu^2(d)=1}}
+d\sum_{a\bmod d}|\mathcal R_d(a)|^2
+\ll xU^2x^{\rho+o(1)},\qquad 0\le\rho<33/100.
+\]
+若成立，则
+\[
+|\mathfrak R_x^{\rm AP}|
+\ll x^{1799/1200+\rho/2+o(1)}
+\]
+且完整 transition saving可取
+\[
+0<\eta_{\rm tr}<
+\min\{121/9600,\ 33/200-\rho/2,\ 13/4800,\ 817/4800\}.
+\]
+这是一项比“只付 V45 low conductor tower”更强的充分 whole-object theorem，
+不是 equivalent/weakest reformulation。
+
+### 93.4 Source boundary and route position
+
+Bettin--Chandee只支付 local component。classical BDH自然尺度 theorem的 modulus
+lower endpoint约为 \(x(\log x)^{-A}\)；Harper general-sequence theorem假设
+\(Q>\sqrt{2x}\)；KMT处理 bounded multiplicative function与 almost-all-modulus
+接口。它们均不接受当前 \(d<x^{1/2}\)、coefficient随 \(d\) 变化的 literal
+shifted-prime/hybrid residual。Fiorilli/Hooley variance只提供 below-square-root
+heuristic support。截至 2026-08-10，direct primary theorem为 NONE。
+
+当前路线：
+
+~~~text
+proper-factor local Euler carrier              PAID
+all-residue transition AP--BDH variance        OPEN NEW THEOREM
+balanced and reverse-Type-I long-Mobius        OPEN
+V42 positive-Gram Gate B                       OPEN IN PARALLEL
+V43 exact A+B zero-axis reassembly             RETAINED
+distinguished-seed dynamics                    RESERVE
+~~~
+
+### 93.5 Canonical status registry
+
+~~~text
+V46_MAXIMUM_CLAIM = EXACT_PROPER_FACTOR_LOCAL_PROFILE_SPLIT_PAYS_THE_TRANSITION_NATIVE_EULER_CARRIER_AND_REPLACES_THE_V45_LOW_CONDUCTOR_MAJOR_BY_ONE_LITERAL_ALL_RESIDUE_AP_BDH_ENERGY_GATE
+V46_ROUTE_ADVANCE = YES
+V46_CONDITIONAL_BRIDGE_ADVANCE = YES
+V46_ARITHMETIC_ADVANCE = NO
+V46_FIXED_ATOM_CREDIT = 0
+V46_STRICT_1_OVER_400 = UNPAID
+V46_L2 = NONE
+V46_TPC_207_TRIGGER = false
+V46_NUMBERED_RELEASE = NO
+V46_DERIVATION_STATUS = COHERENT_AFTER_EXACT_PROPER_FACTOR_EULER_SPLIT_RECIPROCAL_OCCUPANCY_ENERGY_AND_AP_PARSEVAL_COMPILER
+V46_ASSUMPTION_POLICY = ONE_LITERAL_TRANSITION_AP_BDH_ENERGY_REMAINS_OPEN_AND_IS_NOT_CALLED_AN_EQUIVALENT_OR_WEAKEST_REFORMULATION
+V46_SELECTED_RESEARCH_ROUTE = TRANSITION_NATIVE_EULER_PAID__ALL_RESIDUE_AP_BDH_NEXT__LONG_MOBIUS_SECOND__V42_GATE_B_PARALLEL__V43_A_B_JOIN__C_RESERVE
+V46_V43_TRANSITION_ALIAS = RETAINED_EXACT_PROPER_FACTOR_POISSON_SCALAR_BEFORE_OUTER_ABSOLUTE
+V46_V44_CORRECTION_LEDGER = RETAINED_Q_DIVIDES_U_AND_CENTERED_BACKGROUND_PAID
+V46_V45_HIGH_CONDUCTOR_PAYMENT = RETAINED_INDEPENDENT_SOURCE_BACKED_X_POWER_213_OVER_128
+V46_PROPER_FACTOR_SQUAREFREE = PROVED_EXACT_FROM_MU_D_NONZERO
+V46_SHIFTED_PRIME_LOCAL_PROFILE = PROVED_EXACT_PRODUCT_OF_F_P
+V46_HYBRID_LOCAL_PROFILE = PROVED_EXACT_PRODUCT_OF_G_P_Z
+V46_LOCAL_PROFILE_DIFFERENCE = DELTA_D_Z_EQUALS_P_D_MINUS_B_D_Z
+V46_LOCAL_PROFILE_ZERO_AXIS = PROVED_DELTA_D_Z_ZERO_EQUALS_ZERO
+V46_LOCAL_PROFILE_ZERO_MEAN = PROVED_SUM_A_MOD_D_DELTA_D_Z_A_EQUALS_ZERO
+V46_PROPER_FACTOR_CONGRUENCE = PROVED_D_DIVIDES_T_IMPLIES_DELTA_D_Z_U_MINUS_T_EQUALS_DELTA_D_Z_U
+V46_COMMON_TRANSITION_SPLIT = PROVED_EXACT_LOCAL_PLUS_AP_RESIDUAL_BEFORE_OUTER_ABSOLUTE
+V46_TRANSITION_NATIVE_CARRIER = PROVED_EXACT_WITH_LOG_T_PLUS_H_DENOMINATOR
+V46_TRANSITION_NATIVE_CARRIER_ZERO_AXIS = PROVED_EXACT_ZERO
+V46_LOCAL_RADICAL_ACTIVE_RANGE = PROVED_R_GE_H_OVER_Q_EQUALS_X_POWER_31_OVER_96
+V46_LOCAL_P_BRANCH = PROVED_EXACT_MU_R_OVER_PHI_R_TIMES_E_R_2_A_QBAR
+V46_LOCAL_B_BRANCH = PROVED_EXACT_MU_R0_OVER_PHI_R0_PHI_R1_SQUARED_TIMES_E_R0_2_A_QR1_BAR
+V46_LOCAL_COEFFICIENT_L2_P_BRANCH = PROVED_X_OVER_S_POWER_3_OVER_2
+V46_LOCAL_COEFFICIENT_L2_B_BRANCH = PROVED_X_OVER_S_POWER_3_OVER_2_R1_CUBED
+V46_LOCAL_BETTIN_CHANDEE_ATTACHMENT = SOURCE_BACKED_BY_V29_COMPILER_WITH_PROPER_FACTOR_AS_SELECTED_GROUP
+V46_LOCAL_NORMALIZED_OUTPUT = PROVED_X_POWER_1891_OVER_1920_PLUS_O1
+V46_LOCAL_NUMERATOR_OUTPUT = PROVED_X_POWER_1057_OVER_640_PLUS_O1
+V46_LOCAL_ENDPOINT_MARGIN = 121_OVER_9600
+V46_AP_RESIDUAL = PROVED_EXACT_W_MINUS_DELTA_D_Z_OVER_LOG_U_IN_EACH_RESIDUE_CLASS
+V46_AP_PARSEVAL = PROVED_EXACT_SUM_R_FOURIER_SQUARED_EQUALS_D_SUM_A_RESIDUAL_SQUARED
+V46_RECIPROCAL_OCCUPANCY = PROVED_EXACT_A_D_R_WITH_M_QBAR_MOD_D
+V46_RECIPROCAL_COLLISION = PROVED_M1_Q2_MINUS_M2_Q1_EQUALS_ELL_D_WITH_ABS_ELL_LE_P_X_O1
+V46_RECIPROCAL_OCCUPANCY_ENERGY = PROVED_ELEMENTARY_P_SQUARED_X_O1
+V46_RECIPROCAL_OCCUPANCY_ENERGY_EXPONENT = 1_OVER_48
+V46_TRANSITION_AP_BDH_ENERGY = DEFINED_SUM_D_SUM_A_D_TIMES_ABS_RESIDUAL_SQUARED
+V46_TRANSITION_AP_BDH_NATURAL_SCALE = X_TIMES_U_SQUARED_EQUALS_X_POWER_333_OVER_200
+V46_TRANSITION_AP_BDH_GATE = OPEN_X_U_SQUARED_X_POWER_RHO_WITH_ZERO_LE_RHO_LT_33_OVER_100
+V46_AP_RESIDUAL_NUMERATOR_OUTPUT = CONDITIONAL_X_POWER_1799_OVER_1200_PLUS_RHO_OVER_2_PLUS_O1
+V46_AP_RESIDUAL_NORMALIZED_OUTPUT = CONDITIONAL_X_POWER_333_OVER_400_PLUS_RHO_OVER_2_PLUS_O1
+V46_AP_RESIDUAL_MARGIN = 33_OVER_200_MINUS_RHO_OVER_2
+V46_TRANSITION_CONDITIONAL_COMPILER = PROVED_AP_BDH_GATE_PAYS_FULL_TRANSITION_WITH_LOCAL_AND_V44_CORRECTIONS
+V46_TRANSITION_CONDITIONAL_MARGIN = MIN_121_OVER_9600_33_OVER_200_MINUS_RHO_OVER_2_13_OVER_4800_817_OVER_4800
+V46_AP_GATE_STRENGTH = SUFFICIENT_WHOLE_OBJECT_THEOREM_STRONGER_THAN_ONLY_V45_LOW_CONDUCTOR_GATE
+V46_LOW_EXCEPTIONAL_CHARACTER_FIREWALL = RETAINED_INSIDE_AP_RESIDUAL_NO_LANDAU_PAGE_POWER_BORROWED
+V46_LONG_BALANCED_WINDOW = OPEN_D_GT_U_AND_K_GT_U
+V46_LONG_REVERSE_TYPE_I_WINDOW = OPEN_D_GT_U_AND_K_LE_U
+V46_V42_GATE_B = RETAINED_PARALLEL_OPEN_POSITIVE_GRAM_MPD_ROUTE
+V46_BETTIN_CHANDEE_LOCAL_ATTACHMENT = SOURCE_BACKED_TRANSITION_NATIVE_EULER_COMPONENT_ONLY
+V46_CLASSICAL_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_REQUIRES_MODULUS_SCALE_X_LOG_POWER_MINUS_A_NOT_U_X_POWER_133_OVER_400
+V46_HARPER_GENERAL_SEQUENCE_DIRECT_ATTACHMENT = STOP_SCOPED_REQUIRES_Q_GREATER_THAN_SQRT_2X_AND_MODULUS_INDEPENDENT_SEQUENCE_HYPOTHESES
+V46_KMT_MULTIPLICATIVE_AP_DIRECT_ATTACHMENT = STOP_SCOPED_BOUNDED_MULTIPLICATIVE_ALMOST_ALL_MODULI_NOT_SHIFTED_LAMBDA_MINUS_D_DEPENDENT_HYBRID_PROFILE
+V46_FIORILLI_HOOLEY_VARIANCE = HEURISTIC_SUPPORT_ONLY_NO_UNIFORM_LITERAL_THEOREM_BELOW_SQUARE_ROOT
+V46_DIRECT_PRIMARY_SOURCE_FOR_AP_BDH_GATE = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_10
+V46_FIRST_FATAL = NO_LITERAL_THEOREM_PROVES_THE_NATURAL_SCALE_ALL_RESIDUE_AP_VARIANCE_FOR_LAMBDA_U_PLUS_2_MINUS_B_Z_U_MINUS_THE_PROPER_FACTOR_LOCAL_PROFILE_UNIFORMLY_FOR_X_POWER_31_OVER_96_LT_D_LE_X_POWER_133_OVER_400
+V46_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_TRANSITION_LOCAL_EULER_PAID_AP_BDH_RESIDUAL_OPEN_LONG_MOBIUS_SPAN_OPEN
+V46_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V46_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATES_A_B
+~~~
+
+### 93.6 Release boundary
+
+~~~text
+V46_FINAL_RELEASE_QA = PASS_WITH_SCOPED_EXTERNAL_TPC126_ONE_ULP_PLATFORM_DIAGNOSTIC
+V46_MATH_SOURCE_FORMULA_QA = PASS
+V46_CHECKER_ADVERSARIAL_QA = PASS
+V46_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V46_PRECLOSURE_HANDOFF_RAW_SHA256 = d4654b2d9b4e1cd7e08d782963d6f309ab730e06ec9e81b976bf92a85490c551
+V46_PRECLOSURE_HANDOFF_RAW_LF_SHA256 = d4654b2d9b4e1cd7e08d782963d6f309ab730e06ec9e81b976bf92a85490c551
+V46_COMPASS_RAW_LF_SHA256 = aaee3918fae9a1812d376cb400a97737dfc046de0510c301d42ba1d3e84260e6
+V46_BIG_ROAD_README_RAW_LF_SHA256 = 5b1f95d24699d1a8e5667c41a2257361421a84fd3dacf146ddf1196b1154e18d
+V46_ROUTE_MAP_RAW_LF_SHA256 = fb2ca3a92ca6af300edc7a4afb2d37bdf5682ea1079c77e30cbbd2db95d70d9e
+V46_PROOF_RAW_LF_SHA256 = f834c13f689b8283c40bd962b0ec4fa5cdcaaee061eca1914a6356a1cfd96011
+V46_CHECKER_RAW_LF_SHA256 = e679064886b4cc7ada2e63f75605bbcff7b5ade6eb6af7f1af8b6c46a64ddcc8
+V46_CHECKER_STDOUT_BYTES = 1523
+V46_CHECKER_STDOUT_RAW_LF_SHA256 = 018a85db8c12f8dd894d6fe14645b7e15942e1d015b5879e0806de6edfad4615
+V46_CHECKER_PAYLOAD_BYTES = 1522
+V46_CHECKER_PAYLOAD_SHA256 = 65f29e5db7f6a83b7503021782830d0f4c5b721e5277dba8f1508bd8bbd291b5
+V46_CHECKER_CONTRACT_FIELDS = 25
+V46_CHECKER_RESULT_FIELDS = 42
+V46_CHECKER_REGISTRY_ROWS = 63
+V46_CHECKER_SOURCE_LOCKS = 5
+V46_CHECKER_DEPENDENCY_LOCKS = 7
+V46_CHECKER_MUTATIONS = 78_192_18_24_127_TOTAL_439
+V46_CHECKER_MUTATION_ACTIONS_EXECUTED = 439_OF_439_UNIQUE
+V46_CHECKER_REGISTRY_SHA256 = d0948832a3d6e7921b8730f69826fc4499b25caa1e53066a7769d6f62176de99
+V46_CHECKER_NORMAL_OPTIMIZED = PASS_BYTE_IDENTICAL_STDERR_EMPTY
+V46_CHECKER_NOFLAG_EXTRAFLAG = FAIL_CLOSED_EXPLICIT_CHECK_REQUIRED
+V46_CHECKER_GLOBAL_PROVIDER_RESULT_STDOUT_ATTACKS = PASS_NO_FALSE_PROMOTION
+V46_REGISTRY_MIRRORS = HANDOFF_24_HANDOFF_93_COMPASS_47_README_46_PROOF_10_CHECKER_EXACT_63_OF_63
+V46_REGISTRY_MIRROR_BLOCKS = 6
+V46_PROOF_EQUATION_TAGS = 47_OF_47_UNIQUE
+V46_MARKDOWN_FENCES = HANDOFF_2926_BACKTICK_550_TILDE_COMPASS_268_94_README_440_92_ROUTE_8_0_PROOF_0_4_BALANCED
+V46_STARTUP_REGRESSION = 22_OF_22_PASS
+V46_BIG_ROAD_REGRESSION = 48_OF_48_PASS
+V46_BIG_ROAD_NORMAL_OPTIMIZED_IDENTITIES = 24_OF_24_PASS
+V46_SUPPLEMENTAL_BYTE_EXACT = TPC111_TPC124_TPC127_3_OF_4
+V46_SUPPLEMENTAL_SEMANTIC = TPC111_TPC124_TPC126_TPC127_4_OF_4_PASS
+V46_TPC126_SEMANTIC_CERTIFICATE = PASS_ONE_ULP_PLATFORM_SERIALIZATION_ONLY
+V46_TPC126_FROZEN_DIRECT_REAL = 40.17369814909115
+V46_TPC126_LINUX_DIRECT_REAL = 40.17369814909116
+V46_RELEASE_PATHS = 6
+V46_RELEASE_PATH_ALLOWLIST = HANDOFF_COMPASS_BIG_ROAD_README_ROUTE_MAP_V46_PROOF_V46_CHECKER
+V46_CACHED_DIFF = EMPTY
+V46_PROTECTED_UNTRACKED_COUNT = 0
+V46_PROTECTED_UNTRACKED_MANIFEST_SHA256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+V46_PYC_COUNT = 0
+V46_PYC_MANIFEST_SHA256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+V46_GIT_DIFF_CHECK = PASS
+V46_BASELINE_HEAD = 9737b62421770ed5f96c08f197488460833550d3
+V46_BASELINE_ORIGIN_MAIN = 9737b62421770ed5f96c08f197488460833550d3
+V46_BASELINE_REMOTE_MAIN = 9737b62421770ed5f96c08f197488460833550d3
+V46_FORBIDDEN_RELEASE_PATHS = NONE
+V46_ARITHMETIC_ADVANCE = NO
+V46_FIXED_ATOM_CREDIT = 0
+V46_STRICT_1_OVER_400 = UNPAID
+V46_L2 = NONE
+TPC_207_TRIGGER = false
+NUMBERED_RELEASE = NO
+SEALED_FOR_NEW_SESSION = true
+~~~
 
 ## 92. 2026-08-10 V45：conductor-stratified transition spectrum
 
