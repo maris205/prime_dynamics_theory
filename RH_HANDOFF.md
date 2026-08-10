@@ -1,17 +1,17 @@
 # RH Research Handoff
 
-Status date: 2026-08-09
+Status date: 2026-08-10
 
-Current completed endpoint: RH-390
+Current completed endpoint: RH-391
 
-Completed research batch: RH-352 through RH-390
+Completed research batch: RH-352 through RH-391
 
-Post-four-volume independent theorem edges: RH-362 through RH-390
+Post-four-volume independent theorem edges: RH-362 through RH-391
 
-Latest completed-paper verdict: RH-390 Routes A and B `GO`; remaining routes
+Latest completed-paper verdict: RH-391 Routes A and B `GO`; remaining routes
 `STOP_SCOPED`
 
-Post-RH-390 breadth audit: pending; no RH-391 assigned
+Post-RH-391 breadth audit: pending; no RH-392 assigned
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -90,6 +90,9 @@ RH-389 integration commit:
 
 RH-390 integration commit:
 `a3aa5977e9b3338e4c3035c6c42b60d50bc3ac3b`.
+
+RH-391 integration commit:
+`997c824829adbfc5e69b132fc907de2e56d81811`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -225,6 +228,11 @@ Read completely:
 - `papers/RH-390-growing-rank-prime-tail-filtration/THEOREM_LEDGER.md`
 - `papers/RH-390-growing-rank-prime-tail-filtration/results/result.json`
 - `papers/RH-390-growing-rank-prime-tail-filtration/main.pdf`
+- `papers/RH-391-linear-scale-moving-rank-prime-tail-retention-necessity/README.md`
+- `papers/RH-391-linear-scale-moving-rank-prime-tail-retention-necessity/UPDATED_ROADMAP.md`
+- `papers/RH-391-linear-scale-moving-rank-prime-tail-retention-necessity/THEOREM_LEDGER.md`
+- `papers/RH-391-linear-scale-moving-rank-prime-tail-retention-necessity/results/result.json`
+- `papers/RH-391-linear-scale-moving-rank-prime-tail-retention-necessity/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -263,6 +271,7 @@ uniformization input, RH-387 as the all-order prime-tail integral-resummation
 input, RH-388 as the rank-one `P_2`-scale resummation and bounded-gap
 necessity input, RH-389 as the active-`c_11` fixed-clock terminal-log capacity
 input, RH-390 as the growing-rank prime-tail filtration and fixed-rank
+retention-necessity input, RH-391 as the linear-scale moving-rank pairwise
 retention-necessity input, and RH-361 as the immediate endpoint of the
 still-open original physical branch.
 
@@ -274,7 +283,65 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-390 is now integrated.  It promotes RH-388's rank-one separation to a
+RH-391 is now integrated.  Maynard's bounded-consecutive-gap theorem and
+finite pigeonhole extraction give one fixed positive integer `h_*<=600`
+and infinitely many consecutive-prime edges
+
+```text
+x=p_y, q=p_(y+1)=x+h_*.
+```
+
+Fix `C>0`.  On each selected edge use the same exact integer rank `r` at
+both endpoints, with `r->infinity` and `r<=Cx`.  Define
+
+```text
+E^I_r=P_r-I_(2r), E^J_r=P_r-J_r,
+Delta^I_r=pi^2(GapP-GapI_(<r)),
+Delta^J_r=pi^2(GapP-GapJ_(<r)),
+a=(x^2/(q^2-1))^r, rho=(x/q)^(2r).
+```
+
+Then the scalar and endpoint edge jumps satisfy
+
+```text
+x^(2r)(E^I_r(y)-E^I_r(y+1))=a+o(1),
+x^(2r)(E^J_r(y)-E^J_r(y+1))=a+o(1),
+x^(2r)(Delta^I_r(y)-Delta^I_r(y+1))/gamma_r=a+o(1),
+x^(2r)(Delta^J_r(y)-Delta^J_r(y+1))/gamma_r=a+o(1).
+```
+
+For exact `r>=7`, the all-rank endpoint direction has the uniform lower
+bound
+
+```text
+gamma_r>=kappa_gamma 7^r/r,
+kappa_gamma=4u8_lower/7>0.0347017856545.
+```
+
+For any of the four scalar or gamma-normalized endpoint errors `Q_r`,
+
+```text
+liminf ((1+rho)/a)
+ max{x^(2r)abs(Q_r(y)),q^(2r)abs(Q_r(y+1))}>=1.
+```
+
+If `r/x->lambda<infinity`, put `a_0=exp(-2lambda h_*)`; the natural pair
+lower profile is `a_0/(1+a_0)`.  Without that optional limit, `r<=Cx`
+gives the safe lower bound `exp(-1200C)/2`; the sublinear case `r=o(x)`
+gives `1/2`.  The raw pair errors also dominate `P_(r+1)` by an unbounded
+factor.  This uses elementary integer tails, not a linear-rank asymptotic
+`P_r~K_r` or a growing-order Johnston--Yang input.
+
+The theorem is pairwise: the same rank is used at the two adjacent
+endpoints, and the obstruction is restricted to the frozen `P/J/I`
+hierarchy.  RH-391 proves no arbitrary one-vertex schedule, different
+endpoint ranks, arbitrary-surrogate obstruction, `r/x->infinity` theorem,
+complex channel, active `c_11`, growing clock, `K_N`, operator, trace, zero
+model, RH statement, or Gate A--E conclusion.  Routes A and B are `GO`;
+all enlargements are `STOP_SCOPED`.
+
+RH-390 remains the preceding growing-rank positive-filtration edge.  It
+promotes RH-388's rank-one separation to a
 simultaneous growing-rank filtration.  Put `x=p_y`, `L=log x>=512`, fix
 `0<delta<1`, and define
 
@@ -554,8 +621,9 @@ The subsequent breadth audits published RH-387 and RH-388 as the all-order
 and rank-one `P_2` theorems, then RH-389 closed the active-`c_11`
 terminal-log fixed-clock route.  RH-389 does not change the ordinary-Cesaro
 or growing-clock barriers.  RH-390 then closed the simultaneous growing-rank
-prime-tail filtration and fixed-rank `P/J/I` necessity hierarchy.  No
-post-RH-390 breadth audit has yet assigned RH-391.
+prime-tail filtration and fixed-rank `P/J/I` necessity hierarchy.  RH-391
+then closed same-rank pairwise necessity throughout every linear moving-rank
+regime.  No post-RH-391 breadth audit has yet assigned RH-392.
 The geometrically selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
@@ -2673,7 +2741,76 @@ convergence, a larger rank frontier, complex channels, active `c_11`, a
 growing clock, `K_N`, an operator, trace, zero model, RH result, or Gate
 A--E conclusion.  Routes A and B are `GO`; enlargements are `STOP_SCOPED`.
 
-## 4. Compact conclusions from RH-352 through RH-390
+### 3.30 RH-391 linear-scale moving-rank retention necessity
+
+Maynard's consecutive-gap theorem and integrality yield a fixed
+`h_* in {1,...,600}` occurring on infinitely many edges
+
+```text
+x=p_y, q=p_(y+1)=x+h_*.
+```
+
+Fix `C>0`, and on every selected edge choose one common exact rank at its
+two endpoints with `r->infinity` and `r<=Cx`.  Put
+
+```text
+E^I_r=P_r-I_(2r), E^J_r=P_r-J_r,
+Delta^I_r=pi^2(GapP-GapI_(<r)),
+Delta^J_r=pi^2(GapP-GapJ_(<r)),
+a=(x^2/(q^2-1))^r, rho=(x/q)^(2r).
+```
+
+Exact succession and the smooth interval bounds give
+
+```text
+x^(2r)(E^I_r(y)-E^I_r(y+1))=a+o(1),
+x^(2r)(E^J_r(y)-E^J_r(y+1))=a+o(1).
+```
+
+For `v_r=(c^r/r)_(c=1)^7`, exact differentiation gives
+
+```text
+gamma_r=grad F(0).v_r
+ =(4/r)[3^r u4-2^r u3+5^r u6-4^r u5+7^r u8-6^r u7
+        +2(u3-u4+u5-u6+u7-u8)].
+```
+
+The frozen RH-384 outward intervals imply, for exact `r>=7`,
+
+```text
+gamma_r>=kappa_gamma 7^r/r,
+kappa_gamma=4u8_lower/7>0.0347017856545.
+```
+
+The integer-tail payments `4/2/4/14` and common-head Taylor payments
+`18816/2240` then yield the two analogous gamma-normalized endpoint jumps.
+For any one of `E^I_r`, `E^J_r`, `Delta^I_r/gamma_r`, or
+`Delta^J_r/gamma_r`, denoted by `Q_r`,
+
+```text
+liminf ((1+rho)/a)
+ max{x^(2r)abs(Q_r(y)),q^(2r)abs(Q_r(y+1))}>=1.
+```
+
+If additionally `r/x->lambda<infinity`, the pair lower profile is
+
+```text
+exp(-2lambda h_*)/[1+exp(-2lambda h_*)].
+```
+
+For arbitrary `r<=Cx` the safe lower bound is `exp(-1200C)/2`, and for
+`r=o(x)` it is `1/2`.  The corresponding raw scalar and endpoint pair
+errors, with endpoint errors normalized by `gamma_r`, have ratios to
+`P_(r+1)` tending to infinity.  These comparisons use an elementary
+all-integer upper bound for `P_(r+1)`, never a linear-rank PNT asymptotic.
+
+Keep the same exact `r` at the two endpoints.  Do not infer a theorem for
+an arbitrary vertexwise schedule, different endpoint ranks, arbitrary
+surrogates, superlinear rank, complex channels, active `c_11`, growing
+clocks, `K_N`, operators, traces, zeros, RH, or Gates A--E.  Routes A and B
+are `GO`; enlargements are `STOP_SCOPED`.
+
+## 4. Compact conclusions from RH-352 through RH-391
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -2883,6 +3020,12 @@ A--E conclusion.  Routes A and B are `GO`; enlargements are `STOP_SCOPED`.
   frozen `P/J/I` hierarchy.  No growing-rank necessity, arbitrary-surrogate
   obstruction, factorial convergence, complex-channel extension, growing
   clock, or Gate object follows.
+- **RH-391:** Linear-scale moving-rank necessity on infinitely many fixed-gap
+  consecutive-prime edges, using the same exact rank at both endpoints.  It
+  proves the natural pair profile, the `r/x->lambda` profile, coarse linear
+  and sharp sublinear lower bounds, and next-rank separation for the frozen
+  `P/J/I` hierarchy.  No one-vertex schedule, different endpoint ranks,
+  arbitrary surrogate, superlinear rank, growing clock, or Gate follows.
 
 ## 5. Route firewall and reopening triggers
 
@@ -3105,6 +3248,12 @@ Do not:
   the complete finite `K` window;
 - promote RH-390's fixed-rank `P/J/I` necessity theorem to moving `s`, an
   arbitrary surrogate, a complex channel, or a growing-clock obstruction;
+- assign different ranks to the two endpoints in RH-391, replace its
+  pairwise maximum by an unconditional lower bound at a prescribed vertex,
+  or infer a theorem for `r/x->infinity`;
+- invoke a linear-rank prime-tail PNT asymptotic in RH-391, or promote its
+  frozen `P/J/I` obstruction to arbitrary surrogates, complex channels,
+  active `c_11`, growing clocks, operators, traces, zeros, RH, or a Gate;
 - use finite rows as physical or asymptotic evidence; or
 - extend the deterministic terminal-lag sequence by reparameterization alone.
 
@@ -3120,7 +3269,7 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-390. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-391. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
 declared periodic/typical/distance-two capacity audit, RH-373 closes the
 declared fixed composite-clock phase-selector floor route, and RH-374 closes
@@ -3189,33 +3338,32 @@ RH-390 closes the simultaneous growing-rank exact-retention filtration and
 the fixed-rank `P/J/I` necessity hierarchy.  It does not prove moving-rank
 necessity, arbitrary-surrogate obstruction, factorial convergence, a
 complex channel, active `c_11`, growing-clock uniformity, adaptive capacity,
-or any Gate.  For RH-391 and later, the shortest exact candidates are:
+or any Gate.  RH-391 closes same-rank pairwise necessity throughout the
+linear moving-rank regime.  It does not prove a one-vertex schedule,
+different endpoint ranks, an arbitrary-surrogate obstruction, a superlinear
+rank theorem, active `c_11`, growing-clock uniformity, adaptive capacity, or
+any Gate.  No RH-392 is assigned.  The next breadth audit should distinguish:
 
-1. A genuine ordinary-Cesaro or growing-clock phase-weighted shift-two
-   theorem, or a higher-order correlation theorem controlling the RH-377
-   envelope or a larger memory-dependent transducer class.  RH-389's
-   fixed-clock terminal logarithmic theorem is not such an input.
-2. A nonadaptive geometrically selected measure theorem.  The 2026-08-07
-   source lock is `STOP_SCOPED`: RH-369's non-Parry `P_t` is externally
-   selected, while the weighted-Hénon and cyclic-Ulam sources do not prove a
-   fixed non-Parry equilibrium state with the required mixing theorem.
-3. A new fractional/tower-adapted strong-space projector/resolvent theorem
-   that genuinely connects the RH-367 finite-Ulam family to a declared
-   continuum operator.  The 2026-08-07 source lock is `STOP_SCOPED` until a
-   fixed mesh-independent norm, uniform projection/lift estimate, and common
-   contour around `-1` are explicitly proved.
-4. A genuine composite-order primitive-divisor upgrade, such as an eventual
-   Zsigmondy theorem or a `p`-adic lifting bound strong enough to force new
-   primes. No such theorem is present in the locked source.
-5. A sharp return-rank multiplicity theorem strong enough to determine the
-   exact origin radius or a genuine boundary law for `Z_0`. RH-365 supplies
-   only the bracket `[2^(-1/2),1]`.
-6. A quantitative finite-entropy-data theorem that certifies or excludes a
-   finite prime/rank prefix without promoting numerical conditioning to exact
-   infinite recovery.
-7. An intrinsic pressure/transfer/groupoid operator producing the entropy
-   tower without inserting every modulus by hand.
-8. One of the original physical triggers 1--4.
+1. A fixed finite-lag terminal-log quadratic-memory theorem.  TPC-137's
+   determinant-two argument can be re-audited for each fixed nonzero lag,
+   but the scope remains degree at most two, fixed periodic masks, and
+   terminal logarithmic averaging.  This is the strongest source-visible
+   positive candidate; it must not be promoted to arbitrary tables.
+2. A prescribed growing-clock active-`c_11` theorem.  This is
+   `STOP_SCOPED`: TPC-137 is pointwise for fixed periodic data and supplies
+   no clock-dependent rate, so it cannot justify an unbounded-clock
+   maximum before the limit.  Ordinary Cesaro is already blocked at `q=1`
+   by the open shift-two Chowla correlation.
+3. The exact RH-365 bouquet origin radius or a boundary law.  This is
+   `STOP_SCOPED`: the current upper coefficient bound and sparse odd-prime
+   anchors do not supply the required exponential multiplicity lower bound
+   or composite-order primitive divisors.
+4. A continuum `-1` Riesz projector derived from RH-367 Ulam data.  This is
+   `NOT_TESTABLE` until one mesh-independent Banach pair, consistent
+   projection/lift maps, and a common resolvent contour are declared and
+   proved.  RH-370's BV spike is an obstruction in the natural strong norm.
+5. One of the original physical triggers 1--4, backed by its missing typed
+   theorem rather than a finite diagnostic.
 
 RH-364 closes the declared weighted-H\'enon prime-copy audit. It must still be
 called a prime lift or copy, not a finite-field reduction, Hasse--Weil local
@@ -4766,6 +4914,76 @@ Routes A and B are `GO`; all enlargements are `STOP_SCOPED`.  RH-390 proves
 no growing-rank necessity, arbitrary-surrogate obstruction, factorial-series
 convergence, complex channel, active `c_11`, growing clock, `K_N`, operator,
 trace, zero model, RH statement, or Gate A--E conclusion.
+
+### 6.30 RH-391 linear-scale moving-rank necessity and release (2026-08-10)
+
+The post-RH-390 breadth audit compared moving-rank retention necessity,
+growing-clock active-memory uniformity, return-bouquet primitive-divisor
+routes, and continuum-Ulam projector routes.  The selected theorem uses one
+fixed bounded consecutive-prime gap and the same exact moving rank at both
+endpoints.  It extends the fixed-rank RH-390 obstruction through every
+linear regime `r->infinity`, `r<=Cx`, without using a linear-rank PNT
+asymptotic.
+
+The proof pays exact succession, the `I/J` smooth intervals, the all-rank
+direction lower bound, elementary integer tails, the common-head Taylor
+ledger, and the unequal natural endpoint scales.  The exact payments are
+`4/2/4/14` for the integer tails and head, and `18816/2240` after the
+gamma-normalized Taylor transfer.  The pairwise quantifier is essential:
+the same rank occurs at the two endpoints, and Maynard does not select a
+preferred endpoint.
+
+The executable certificate has
+
+```text
+60=10+12+12+12+8+6
+```
+
+semantic rows, is `10062` canonical bytes, and has SHA-256
+`cc2874435e62205a3e969e841d80d37243d95826855bd242f0eff3478dccf367`.
+It rejects `24/24` genuine semantic mutations, and its independent false
+verification path invokes no row or certificate builder.  Its role is
+`finite_exact_algebra_not_analytic_proof`.
+
+The proof-minimal closure contains `97` Git blobs from RH-390 release
+`a3aa5977e9b3338e4c3035c6c42b60d50bc3ac3b`, grouped `87/8/2`.  The three
+ordered group digests are
+
+```text
+098fdd54388471145bb2ffa8647c23b2f07e995a34e247c4e9a60ae45cd2435d
+e9a95e0c52d6063b56a0fa19479efbf419ba91f486f1697a4128c238d3312c93
+335f7b279a604eaf2259f826770d066173eab66f0fbfcd3a171770ee5ec4c460
+```
+
+and their aggregate digest is
+`1250b73311e3fef4b2e7139db887043164f3f20a527cd45c0d5f2fad7f69bd96`.
+The ordered Johnston--Yang and Maynard remote locks bring the closure to
+`99` logical inputs with digest
+`760d1e8babf789588a4238e179193f03319de04d276d7180dd4c85b6359bccbb`.
+Maynard supplies the consecutive-gap input; Johnston--Yang is inherited
+provenance only and is not used at linear rank.  Both verifiers are offline
+by default and make zero requests.  The four external payload hashes are
+absent from the publication members and the entire RH-391 tree.
+
+The final official suite is `84/84` in both normal and optimized modes.
+Result, recursively closed Draft 2020-12 schema, manifest, and verification
+report regenerate byte-exactly.  The archive has `34` publication members,
+`97` Git inputs, two remote locks, and zero failures.  Manifest and report
+bring the integration set to exactly `36` RH-391 files in commit
+`997c824829adbfc5e69b132fc907de2e56d81811`.
+
+The main and semantic PDFs are byte-identical, `341924` bytes, and eight A4
+pages; all `21` font rows are embedded, subsetted, and Unicode-mapped.
+Ghostscript, text extraction, LaTeX/BibTeX scans, and all `8/8` rendered
+pages pass.  A final mechanical reseal removed only four terminal blank
+lines; the theorem, manuscript, PDF, result, and schema bytes did not move.
+Two independent final audits returned zero blocker and zero minor.
+
+Routes A and B are `GO`; all enlargements are `STOP_SCOPED`.  RH-391 proves
+no arbitrary vertexwise rank schedule, different endpoint ranks, arbitrary
+surrogate, superlinear-rank theorem, linear-rank PNT asymptotic, complex
+channel, active `c_11`, growing clock, `K_N`, operator, trace, zero model, RH
+statement, or Gate A--E conclusion.
 
 ## 7. Reproduction and publication audit
 
@@ -6413,12 +6631,93 @@ remote-source audit
 e6f48a452bd13d8d75ae77a09198d59f8861225f935f4fac440a3427dc14b9b2
 ```
 
+Final RH-391 audit:
+
+- Tests: normal `84/84` and optimized `84/84`; fresh
+  result/schema/manifest/report regeneration, independent semantic
+  validation, official Draft 2020-12 schema, source rebinding, and archive
+  mutations all pass or fail closed as declared.
+- The canonical certificate is `10062` bytes with SHA-256
+  `cc2874435e62205a3e969e841d80d37243d95826855bd242f0eff3478dccf367`.
+  It contains `60=10+12+12+12+8+6` semantic rows and rejects `24/24`
+  genuine mutations; its role is exact finite algebra, not analytic proof.
+- Source closure: `97` immutable Git blobs grouped `87/8/2`, plus the
+  ordered Johnston--Yang and Maynard remote logical locks.  The logical
+  input count is `99`; both default verifiers make zero requests.  All four
+  external payload hashes are absent from the release members and tree.
+- Individual archive: `34` publication members, `97` Git inputs, two remote
+  locks, and zero failures.  Integration commit
+  `997c824829adbfc5e69b132fc907de2e56d81811` contains exactly `36`
+  RH-391 files: the `34` members plus manifest and verification report.
+- PDF: `8` A4 pages and `341924` bytes, with all `21` font rows embedded,
+  subsetted, and Unicode-mapped.  Ghostscript, text extraction, complete
+  LaTeX/BibTeX scans, semantic-PDF byte identity, and all `8/8` rendered
+  pages pass.
+- Two independent final audits report zero blocker and zero minor.  The
+  same-rank pair, `r<=Cx`, frozen-`P/J/I`, no-linear-PNT, no-arbitrary-
+  surrogate, and all Gate firewalls remain intact.
+
+RH-391 final hashes:
+
+```text
+main.tex
+27d58b4745fe0ce8e61ed788d67f76f47ac72774e5e808d952bb51cc9cb83061
+
+references.bib
+63cd8b8859b46fc10b9364557f64220c63f62b1f308bdcecd7ab52cf37abdd5a
+
+PDF
+90275847d4e07c9c6fb8a7fdf8ea291abf1b044bb74c70cd59740c2baef0d9d1
+
+main.log
+4df66e0d74de6b8b5950b26d93a4ceb372ee5bfa9a436ebfda6128fbafe8b16d
+
+result
+023aa55c4a4e3795994eed866cc9d1412aef90bc0df9b27831f3718c069c1046
+
+schema
+f5fd98019eefdf600432ca59c6546a6c6d5c7c832a4f8da0603512d20ee40f54
+
+manifest
+4e2a30067dc08d55e579e9b225c5250b84305b4f99091e446864758781b6e407
+
+verification
+cf97649ca9c358637f25ea0c6d36f4b7c2fd4467d7473e55b35a3b4853f87de2
+
+core
+82eb4d132d73daca7b136e3f5568513ee915d35d2a1e1513ac4ee014192faf40
+
+Johnston--Yang external source lock
+d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058
+
+Maynard external source lock
+9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba
+
+integrity audit
+9ddd7f9783ebef5535148328dad39cf7791a73dacf8a28f17086901eb3d91034
+
+review audit
+eb08147d0c344582a0bb3d6c836e10f4a0edff88011b2cb2519d7eb0808fde01
+
+format audit
+de7a18557c5fc76dc759ac359c54159aaeffddf1ff79f35e290d8fc92715e118
+
+replay audit
+1d2e01adf675746a30e940e9383f5d689724953752600add54e0b72a390e2e04
+
+visual audit
+21ba28539a14252fd22b32e4f8376bec4a6ca1811ce796b3d56853966e21ae84
+
+remote-source audit
+8060b7f46d30a564d33764e1feb1223e7f302fdec730a58138139e349388fb11
+```
+
 ## 8. Continuation prompt
 
 ````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-390 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-391 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -6442,6 +6741,7 @@ uniformization input, RH-387 as the all-order prime-tail integral-resummation
 input, RH-388 as the rank-one `P_2`-scale resummation and bounded-gap
 necessity input, RH-389 as the active-`c_11` fixed-clock terminal-log capacity
 input, RH-390 as the growing-rank prime-tail filtration and fixed-rank
+retention-necessity input, RH-391 as the linear-scale same-rank pairwise
 retention-necessity input, RH-MVP2 as the corpus umbrella, and RH-361 as the
 physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
@@ -6453,7 +6753,54 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-390 is the current independent trigger-5 theorem edge and does not close
+RH-391 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  Maynard's theorem and finite pigeonhole extraction give
+one fixed `h_* in {1,...,600}` on infinitely many consecutive-prime edges
+
+```text
+x=p_y, q=p_(y+1)=x+h_*.
+```
+
+For each fixed `C>0`, use the same exact integer rank at both endpoints and
+assume `r->infinity`, `r<=Cx`.  Put
+
+```text
+E^I_r=P_r-I_(2r), E^J_r=P_r-J_r,
+Delta^I_r=pi^2(GapP-GapI_(<r)),
+Delta^J_r=pi^2(GapP-GapJ_(<r)),
+a=(x^2/(q^2-1))^r, rho=(x/q)^(2r).
+```
+
+Retain the four edge jumps
+
+```text
+x^(2r)(E^I_r(y)-E^I_r(y+1))=a+o(1),
+x^(2r)(E^J_r(y)-E^J_r(y+1))=a+o(1),
+x^(2r)(Delta^I_r(y)-Delta^I_r(y+1))/gamma_r=a+o(1),
+x^(2r)(Delta^J_r(y)-Delta^J_r(y+1))/gamma_r=a+o(1),
+gamma_r>=kappa_gamma 7^r/r,
+kappa_gamma=4u8_lower/7>0.0347017856545.
+```
+
+For any of the four scalar or gamma-normalized endpoint errors `Q_r`,
+
+```text
+liminf ((1+rho)/a)
+ max{x^(2r)abs(Q_r(y)),q^(2r)abs(Q_r(y+1))}>=1.
+```
+
+If `r/x->lambda<infinity`, the pair lower profile is
+`exp(-2lambda h_*)/[1+exp(-2lambda h_*)]`.  The coarse linear lower bound
+is `exp(-1200C)/2`, and the sublinear lower bound is `1/2`.  The raw pair
+errors dominate `P_(r+1)` by an unbounded factor.  Keep the same exact rank
+at the two endpoints, and do not invoke a linear-rank PNT asymptotic.
+
+Do not infer an arbitrary one-vertex schedule, different endpoint ranks,
+an arbitrary-surrogate obstruction, `r/x->infinity`, complex channels,
+active `c_11`, growing clocks, `K_N`, operators, traces, zeros, RH, or Gate
+conclusions.  Routes A and B are `GO`; enlargements are `STOP_SCOPED`.
+
+RH-390 remains the preceding growing-rank filtration edge and does not close
 any physical Gate.  Put `x=p_y`, `L=log x>=512`, fix `0<delta<1`, and define
 
 ```text
@@ -6807,13 +7154,19 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-RH-390 is complete; do not rewrite it as the next candidate.  Its exact
-growing-rank filtration, complete factorial window, all-rank positivity,
-fixed-rank `P/J/I` necessity theorem, two remote logical locks, release
-archive, and two independent final audits are closed.  No post-RH-390
-breadth audit has yet assigned RH-391.  Run that audit before creating
-another number, and require a genuinely new source-backed theorem rather
-than repackaging the RH-390 filtration or changing its quantifiers.
+RH-391 is complete; do not rewrite it as the next candidate.  Its exact
+same-rank linear moving-rank edge jumps, pair profile, all-rank direction
+lower bound, next-rank separation, two remote logical locks, release archive,
+and two independent final audits are closed.  No post-RH-391 breadth audit
+has yet assigned RH-392.  Run that audit before creating another number,
+and require a genuinely new source-backed theorem rather than repackaging
+the pair profile or changing its endpoint quantifiers.
+
+RH-390 remains complete as the preceding growing-rank filtration theorem.
+Its exact positive filtration, complete factorial window, all-rank
+positivity, fixed-rank `P/J/I` necessity theorem, two remote logical locks,
+release archive, and two independent final audits are closed.  Do not erase
+the fixed-rank boundary that RH-391 separately overcomes in pairwise form.
 
 RH-389 remains complete as the preceding active-memory theorem.  Its
 fixed-period terminal-log limit, `512 -> 8` projection, every-fixed-clock
@@ -6847,6 +7200,16 @@ non-effective diagonal with a stepwise exponent tending to infinity is a
 direct RH-385 corollary, not a new edge.  Preserve the immutable four-volume
 foundation and Gates A--E while these ordinary-`c_11` and growing-clock
 routes remain stopped.
+
+No RH-392 is assigned.  The first source-visible breadth candidate is a
+fixed finite-lag terminal-log quadratic-memory theorem, restricted to fixed
+periodic masks and degree at most two.  A growing-period active-`c_11`
+maximum is `STOP_SCOPED` for lack of a clock-dependent correlation rate;
+the exact RH-365 bouquet radius is `STOP_SCOPED` for lack of exponential
+multiplicity or composite-order primitive divisors; and a continuum `-1`
+Riesz projector is `NOT_TESTABLE` without a declared Banach pair,
+projection/lift maps, and common resolvent contour.  Run a new breadth audit
+before assigning a number.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
 factor, or full H_p zeta. Do not promote the entropy tower, weighted Euler
