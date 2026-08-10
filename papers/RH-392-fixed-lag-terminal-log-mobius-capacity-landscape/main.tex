@@ -1,0 +1,619 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\T}{\{-1,0,+1\}}
+\newcommand{\mob}{\mu}
+\newcommand{\liou}{\lambda}
+\newcommand{\dd}{\delta}
+\newcommand{\thh}{\vartheta}
+\newcommand{\kap}{\kappa}
+\newcommand{\Glog}{G_{\log}}
+\newcommand{\Zq}{\mathbb Z/q\mathbb Z}
+\newcommand{\ind}{\mathbf 1}
+\DeclareMathOperator{\lcm}{lcm}
+
+\hypersetup{
+  pdftitle={Fixed-Lag Terminal-Log Möbius Diagonalization and the Square-Divisor Capacity Landscape},
+  pdfauthor={RH research program},
+  pdfsubject={Fixed-lag terminal logarithmic Mobius diagonalization and exact safe-table capacity},
+  pdfkeywords={Mobius function, logarithmic Chowla, squarefree pairs, finite-state capacity}
+}
+
+\title{Fixed-Lag Terminal-Log M\"obius Diagonalization and the Square-Divisor Capacity Landscape}
+\author{RH research program}
+\date{August 10, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study terminal logarithmic averages along fixed periodic phases.  First,
+for any two fixed positive-leading affine forms with arbitrary nonzero
+determinant, we prove full-M\"obius cancellation with a fixed periodic mask.
+The proof inserts finite squarefree cutoffs, combines congruences with an
+\(\lcm\) modulus without assuming the cutoff divisors coprime, extracts
+contents, and applies Tao's fixed nonparallel Liouville theorem.  A
+determinant-free tail estimate completes the limits in the order: cutoff,
+terminal limit, then cutoff removal.
+
+This cancellation diagonalizes every fixed finite collection of distinct
+M\"obius shifts for polynomials of total degree at most two.  Separately,
+for each fixed lag \(h\ge1\), it diagonalizes coordinatewise-biquadratic
+polynomials in \((\mob_0(n-h),\mob(n))\).  A local finite-CRT argument gives
+the exact two-site density \(\thh^{(h)}_{q,r}\), including collisions modulo
+\(p\) and \(p^2\).  Projecting \(512\) truth tables to eight actions and
+charging every plus phase to its forced-empty predecessor yields, for all
+fixed \(q,h\ge1\),
+\[
+ \Glog(q,h)=\frac6{\pi^2}-\frac{\kap_h}{2},\qquad
+ \kap_h=\prod_{p^2\mid h}(1-p^{-2})
+          \prod_{p^2\nmid h}(1-2p^{-2}).
+\]
+Thus squarefree lags are exactly the maximizers.  The range is
+\(3/\pi^2<\Glog(q,h)\le6/\pi^2-\kap_\star/2\), where
+\(\kap_\star=\prod_p(1-2p^{-2})\), and its infimum is not attained.  Every
+limit is formed for fixed data before the finite table maximum; no growing
+period, growing lag, ordinary Ces\`aro, or multi-lag degree-three claim is
+made.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius function; terminal logarithmic
+average; affine two-point cancellation; squarefree pairs; finite-state
+capacity.
+
+\section{Definitions and results}
+
+Write \(\mob_0(m)=\mob(m)\) for \(m\ge1\) and \(\mob_0(m)=0\) for
+\(m\le0\).  A terminal clock is a function satisfying
+\begin{equation}
+ 1\le \omega(X)\le X,\qquad \omega(X)\longrightarrow\infty.
+ \label{eq:clock}
+\end{equation}
+All periods, shifts, affine forms, coefficients, and tables below are fixed
+before \(X\to\infty\).
+
+For \(q\ge1\) and \(r\in\Zq\), define the one-site and lag-\(h\) two-site
+densities
+\begin{align}
+ \dd_{q,r}&=\lim_{N\to\infty}\frac1N
+  \sum_{\substack{n\le N\\n\equiv r\ (q)}}\mob(n)^2,
+ \label{eq:delta-def}\\
+ \thh^{(h)}_{q,r}&=\lim_{N\to\infty}\frac1N
+  \sum_{\substack{n\le N\\n\equiv r\ (q)}}
+  \mob_0(n-h)^2\mob(n)^2.
+ \label{eq:theta-def}
+\end{align}
+Their local formulas will be proved in Section~\ref{sec:density}.
+
+\begin{theorem}[Finite-shift total-degree-two diagonalization]
+\label{thm:finite-shift}
+Fix \(q\), distinct integers \(a_1,\ldots,a_m\), and phase polynomials
+\[
+ P_r(x_1,\ldots,x_m)=c_\varnothing(r)+
+ \sum_i c_i(r)x_i+\sum_i c_{ii}(r)x_i^2+
+ \sum_{i<j}c_{ij}(r)x_ix_j
+\]
+of total degree at most two.  For every clock \eqref{eq:clock},
+\begin{align}
+ &\frac1{\log\omega(X)}\sum_{X/\omega(X)<n\le X}
+ \frac{P_{n\bmod q}(\mob_0(n-a_1),\ldots,\mob_0(n-a_m))}{n}
+ \notag\\
+ &\hspace{35mm}\longrightarrow
+ \sum_{r\bmod q}\left\{\frac{c_\varnothing(r)}q+
+ \sum_i c_{ii}(r)\dd_{q,r-a_i}\right\}.
+ \label{eq:finite-shift}
+\end{align}
+Every linear and off-diagonal quadratic channel vanishes.
+\end{theorem}
+
+The next statement is deliberately separate: \(x^2z^2\) has total degree
+four but coordinatewise degree two.
+
+\begin{theorem}[Fixed-lag coordinatewise-biquadratic compiler]
+\label{thm:biquadratic}
+Fix integers \(q,h\ge1\) and
+\(P_r(x,z)=\sum_{0\le i,j\le2}c_{ij}(r)x^iz^j\).  Then
+\begin{align}
+ &\frac1{\log\omega(X)}\sum_{X/\omega(X)<n\le X}
+ \frac{P_{n\bmod q}(\mob_0(n-h),\mob(n))}{n}
+ \notag\\
+ &\quad\longrightarrow\sum_{r\bmod q}\left\{
+ \frac{c_{00}(r)}q+c_{20}(r)\dd_{q,r-h}
+ +c_{02}(r)\dd_{q,r}+c_{22}(r)\thh^{(h)}_{q,r}\right\}.
+ \label{eq:biquadratic}
+\end{align}
+The other five coefficient channels vanish.
+\end{theorem}
+
+For a truth-table specialization, let \(f_r:\T^2\to\{-1,+1\}\), put
+\(E_r=\{(x,z):f_r(x,z)=+1\}\), and call the phase tuple \emph{lag-\(h\)
+safe} if no \((x,z)\in E_r\) and \((z,w)\in E_{r+h}\) coexist.  Denote the
+finite set of safe tuples by \(\mathcal A_{q,h}\), and set
+\begin{equation}
+ L_{q,h}(f;\omega)=\lim_{X\to\infty}\frac1{\log\omega(X)}
+ \sum_{X/\omega(X)<n\le X}
+ \frac{\mob(n)f_{n\bmod q}(\mob_0(n-h),\mob(n))}{n}.
+ \label{eq:score}
+\end{equation}
+Theorem~\ref{thm:biquadratic} will show that this limit exists and is
+independent of \(\omega\).  Only after these fixed-table limits are formed,
+define
+\begin{equation}
+ \Glog(q,h)=\max_{f\in\mathcal A_{q,h}}|L_{q,h}(f;\omega)|.
+ \label{eq:capacity-def}
+\end{equation}
+
+\begin{theorem}[Capacity and lag spectrum]
+\label{thm:capacity}
+For every pair of fixed integers \(q,h\ge1\),
+\begin{equation}
+ \boxed{\Glog(q,h)=\frac6{\pi^2}-\frac{\kap_h}{2}},\qquad
+ \kap_h=\prod_{p^2\mid h}(1-p^{-2})
+          \prod_{p^2\nmid h}(1-2p^{-2}).
+ \label{eq:capacity}
+\end{equation}
+The value does not depend on \(q\).  Constant table \(36\) attains the
+positive sign and its input reflection, table \(72\), attains the negative
+sign.  With \(\kap_\star=\prod_p(1-2p^{-2})\),
+\begin{equation}
+ \frac3{\pi^2}<\Glog(q,h)\le
+ \frac6{\pi^2}-\frac{\kap_\star}{2}.
+ \label{eq:range}
+\end{equation}
+Equality on the right holds exactly for squarefree \(h\); the left endpoint
+is the unattained infimum over \(h\ge1\).
+\end{theorem}
+
+\section{Terminal analytic tools}
+
+\begin{lemma}[Terminal Abel transfer]
+\label{lem:abel}
+Let \((a_n)\) be bounded and
+\(A(t)=\sum_{n\le t}a_n=\alpha t+o(t)\).  Then every clock
+\eqref{eq:clock} satisfies
+\begin{equation}
+ \frac1{\log\omega(X)}\sum_{X/\omega(X)<n\le X}\frac{a_n}{n}
+ \longrightarrow\alpha.
+ \label{eq:abel}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put \(Y=X/\omega(X)\) and \(B(t)=A(t)-\alpha t\).  Partial summation gives
+\[
+ \sum_{Y<n\le X}\frac{a_n}{n}
+ =\alpha\log(X/Y)+\frac{B(X)}X-\frac{B(Y)}Y
+   +\int_Y^X\frac{B(t)}{t^2}\,dt+O(1).
+\]
+For any \(\varepsilon>0\), choose \(T\) with
+\(|B(t)|\le\varepsilon t\) for \(t\ge T\).  If \(Y\ge T\), the normalized
+error is at most \(\varepsilon+o(1)\).  If \(Y<T\), the part below \(T\)
+is bounded and \(\log X/\log\omega(X)\to1\).  The same bound follows.
+Let \(\varepsilon\downarrow0\).
+\end{proof}
+
+\begin{theorem}[Terminal full-M\"obius cancellation]
+\label{thm:full-mu}
+Let
+\[
+ D(n)=a_1n+b_1,\qquad V(n)=a_2n+b_2,
+ \quad a_1,a_2\in\mathbb N,\quad b_1,b_2\in\mathbb Z,
+\]
+and suppose \(\Delta=a_1b_2-a_2b_1\ne0\).  For every fixed bounded
+periodic \(\rho\) and every clock \eqref{eq:clock},
+\begin{equation}
+ \sum_{X/\omega(X)<n\le X}
+ \frac{\mob(D(n))\mob(V(n))\rho(n)}n=o(\log\omega(X)).
+ \label{eq:full-mu}
+\end{equation}
+Values before both forms become positive are omitted, changing the sum by
+\(O(1)\).
+\end{theorem}
+
+\begin{proof}
+Let \(P\) be fixed, larger than every prime divisor of \(a_1a_2\), and
+\[
+ S_P(m)=\prod_{p\le P}(1-\ind_{p^2\mid m})
+ =\sum_{k\mid P\#}\mob(k)\ind_{k^2\mid m}.
+\]
+Since \(\mob(m)=\liou(m)\ind_{m\ \mathrm{squarefree}}\), first replace the
+two M\"obius factors by
+\(\liou(D)\liou(V)S_P(D)S_P(V)\).  Let \(M\) be a period of \(\rho\).
+Expanding both cutoffs and the fixed periodic mask leaves finitely many systems
+\[
+ n\equiv s\pmod M,\qquad k^2\mid D(n),\qquad \ell^2\mid V(n).
+\]
+Each compatible system is a finite disjoint union of residue classes
+\(n=r+Lt\) modulo \(L\), where
+\begin{equation}
+ L=\lcm(M,k^2,\ell^2)\le M(P\#)^2.
+ \label{eq:lcm}
+\end{equation}
+No assumption \((k,\ell)=1\) is used.
+
+On such a class, set
+\[
+ c_D=(a_1L,a_1r+b_1),\qquad c_V=(a_2L,a_2r+b_2).
+\]
+After removing these fixed contents, the two affine forms in \(t\) have
+positive leading coefficients and determinant
+\begin{equation}
+ \frac{L\Delta}{c_Dc_V}\ne0.
+ \label{eq:reduced-det}
+\end{equation}
+Complete multiplicativity gives
+\[
+ \liou(D)\liou(V)=\liou(c_Dc_V)
+ \liou(D/c_D)\liou(V/c_V).
+\]
+Tao's Theorem~2, equation~(3), printed and PDF page~3, now gives terminal
+logarithmic cancellation for the reduced fixed nonparallel forms
+\cite{Tao2016LogChowla}.  Treat the finitely many nonempty classes
+separately.  Replacing \(r+Lt\) by \(Lt\) changes each weighted sum by
+\(O(1)\).  If \(X/\omega(X)\to\infty\), the affine endpoint change produces
+an admissible clock with logarithm \(\log\omega(X)+O(1)\).  If that lower
+endpoint stays bounded, apply Tao's theorem with the full-prefix clock
+\(\omega'(X')=X'\) after removing finitely many \(t\); then
+\(\log X'\sim\log\omega(X)\).  Every subsequence has a further subsequence
+of one of these two types.  Hence the fixed-\(P\) approximant is
+\(o(\log\omega(X))\).
+
+It remains to remove \(P\).  For either fixed affine form \(F\), a Boolean
+union bound and the substitution \(F(n)=p^2m\) give
+\begin{equation}
+ \sum_{X/\omega(X)<n\le X}
+ \frac{|\ind_{F(n)\ \mathrm{squarefree}}-S_P(F(n))|}{n}
+ \ll_F \frac{\log\omega(X)}P+1.
+ \label{eq:tail}
+\end{equation}
+Indeed, beyond finitely many \(n\), one has
+\(n^{-1}\ll_F(p^2m)^{-1}\); the relevant harmonic \(m\)-interval has
+length in logarithmic scale at most \(\log\omega(X)+O_F(1)\), and
+\(\sum_{p>P}p^{-2}\ll P^{-1}\).  The two-coordinate inequality
+\(|uv-UV|\le|u-U|+|v-V|\) for Boolean values makes this estimate
+determinant-free.  Divide by \(\log\omega(X)\), first let \(X\to\infty\)
+with \(P\) fixed, and then let \(P\to\infty\).  This proves
+\eqref{eq:full-mu}.
+\end{proof}
+
+The Boolean-cutoff and content-extraction architecture follows the
+TPC-137 template, which treated a frozen determinant-two setting
+\cite{TPC137}.  The argument above proves the arbitrary-nonzero-determinant
+form needed here, without claiming historical priority for that level of
+generality.  RH-389 used TPC-137 only at determinant two
+\cite{RH389}; it is not being cited as an all-\(h\) theorem.
+
+\section{One-site and two-site local densities}
+\label{sec:density}
+
+For each prime \(p\), let
+\[
+ A_p^{(h)}=\{0,h\pmod {p^2}\},\qquad
+ \nu_p^{(h)}=|A_p^{(h)}|,\qquad
+ \tau_{p,r}^{(h)}=|\{a\in A_p^{(h)}:a\equiv r\pmod p\}|.
+\]
+The braces denote a set of distinct residues modulo \(p^2\).  Thus a
+collision modulo \(p^2\) is counted once, whereas two distinct residues
+that collide only modulo \(p\) both contribute to \(\tau_{p,r}^{(h)}\).
+
+\begin{proposition}[Exact phase densities]
+\label{prop:density}
+For fixed \(q,h\ge1\),
+\begin{align}
+ \dd_{q,r}={}&\frac1q
+ \prod_{p\nmid q}(1-p^{-2})
+ \prod_{p\parallel q}\left(1-\frac{\ind_{p\mid r}}p\right)
+ \prod_{p^2\mid q}\ind_{p^2\nmid r},
+ \label{eq:delta-local}\\
+ \thh^{(h)}_{q,r}={}&\frac1q
+ \prod_{p\nmid q}\left(1-\frac{\nu_p^{(h)}}{p^2}\right)
+ \prod_{p\parallel q}\left(1-\frac{\tau_{p,r}^{(h)}}p\right)
+ \prod_{p^2\mid q}\ind_{r\bmod p^2\notin A_p^{(h)}}.
+ \label{eq:theta-local}
+\end{align}
+Moreover,
+\begin{gather}
+ 0\le\thh^{(h)}_{q,r}\le\dd_{q,r},\qquad
+ \thh^{(h)}_{q,r}\le\dd_{q,r-h},
+ \label{eq:cone}\\
+ \sum_{r\bmod q}\dd_{q,r}=\frac6{\pi^2},\qquad
+ \sum_{r\bmod q}\thh^{(h)}_{q,r}=\kap_h.
+ \label{eq:totals}
+\end{gather}
+\end{proposition}
+
+\begin{proof}
+Impose squarefreeness only at primes \(p\le R\), with \(R\) containing
+the prime divisors of \(q\).  The Chinese remainder theorem gives an exact
+finite density.  If \(p\nmid q\), it removes \(\nu_p^{(h)}\) residues
+modulo \(p^2\).  If \(p\parallel q\), the fixed residue modulo \(p\) has
+\(p\) lifts, of which \(\tau_{p,r}^{(h)}\) are forbidden.  If
+\(p^2\mid q\), the phase already fixes the residue modulo \(p^2\), giving
+the last indicator.  This proves the finite truncation of
+\eqref{eq:theta-local}; the one-site computation is identical with the
+single forbidden residue \(0\).
+
+The omitted-prime error is bounded by the density of integers for which
+\(p^2\mid n\) or \(p^2\mid n-h\) for some \(p>R\).  The union bound is
+\(O(\sum_{p>R}p^{-2})+o_N(1)\).  First \(N\to\infty\), then
+\(R\to\infty\), proving both infinite products.  This is a direct
+finite-CRT-plus-tail proof; Mirsky's squarefree-pattern work is historical
+context, not a black-box source for the phase formula \cite{Mirsky1948}.
+
+The cone follows by set inclusion of squarefree pairs into each one-site
+event.  Summing phases removes the congruence.  At \(p\), the two forbidden
+residues coincide precisely when \(p^2\mid h\); hence the total pair
+density is the product \(\kap_h\) in \eqref{eq:capacity}.
+\end{proof}
+
+The collision convention is visible in small cases.  For
+\((h,q,r)=(2,2,0)\), the residues \(0,2\pmod4\) are distinct but both are
+\(0\pmod2\), so \(\tau_{2,0}^{(2)}=2\) and the \(p\parallel q\) factor is
+zero.  For \((6,3,0)\), the analogous factor is \(1-2/3=1/3\).  In
+contrast, \((h,q,r)=(4,2,0)\) gives the singleton
+\(A_2^{(4)}=\{0\}\) and factor \(1/2\), while \((9,3,0)\) gives factor
+\(2/3\).  These examples rule out
+both loss of a modulo-\(p\) collision and double counting of a genuine
+modulo-\(p^2\) collision.
+
+\section{Diagonalization proofs}
+
+For any fixed periodic \(\rho\), Davenport cancellation in fixed
+arithmetic progressions gives
+\begin{equation}
+ \sum_{n\le N}\mob(n-a)\rho(n)=o(N).
+ \label{eq:one-form}
+\end{equation}
+It also gives the masked estimates
+\begin{equation}
+ \sum_{n\le N}\mob(n-h)\mob(n)^2\rho(n)=o(N),\qquad
+ \sum_{n\le N}\mob(n-h)^2\mob(n)\rho(n)=o(N).
+ \label{eq:masked}
+\end{equation}
+Indeed, insert \(\mob(m)^2=\sum_{d^2\mid m}\mob(d)\), keep
+\(d\le R\), and apply \eqref{eq:one-form} on the resulting finitely many
+progressions.  The absolute tail is \(O(N/R+\sqrt N)\); take \(N\) and
+then \(R\) to infinity \cite{Davenport1937}.  Lemma~\ref{lem:abel}
+transfers \eqref{eq:one-form}, \eqref{eq:masked}, and
+Proposition~\ref{prop:density} to every terminal clock.
+
+\begin{proof}[Proof of Theorem~\ref{thm:finite-shift}]
+Expand each phase polynomial.  The constant has phase density \(1/q\),
+linear monomials vanish by \eqref{eq:one-form}, and diagonal squares give
+\(\dd_{q,r-a_i}\).  For \(i\ne j\), apply
+Theorem~\ref{thm:full-mu} to \(n-a_i,n-a_j\); their determinant is
+\(a_i-a_j\ne0\).  The finite phase sum gives \eqref{eq:finite-shift}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:biquadratic}]
+The constant, \(x^2\), \(z^2\), and \(x^2z^2\) channels give respectively
+\(1/q,\dd_{q,r-h},\dd_{q,r}\), and \(\thh^{(h)}_{q,r}\).
+The \(x,z\) channels vanish by \eqref{eq:one-form}; \(xz^2,x^2z\) vanish
+by \eqref{eq:masked}; and \(xz\) vanishes by
+Theorem~\ref{thm:full-mu}, whose determinant is \(h\ne0\).  Summing phases
+proves \eqref{eq:biquadratic}.
+\end{proof}
+
+\section{Truth-table projection and the all-\texorpdfstring{$q,h$}{q,h} charge}
+
+For a phase table, let \(Q_r\) be the unique coordinatewise-biquadratic
+interpolant of \(zf_r(x,z)\) on \(\T^2\).  Since \(Q_r(x,0)=0\), its
+\(c_{00},c_{10},c_{20}\) coefficients vanish; the compiler coordinates are
+\((c_{01},c_{02},c_{11},c_{12},c_{21},c_{22})\).  Theorem
+\ref{thm:biquadratic} therefore gives
+\begin{equation}
+ L_{q,h}(f;\omega)=\sum_{r\bmod q}
+ \{c_{02}(r)\dd_{q,r}+c_{22}(r)\thh^{(h)}_{q,r}\},
+ \label{eq:table-limit}
+\end{equation}
+which is independent of \(\omega\).
+
+Replace \(E_r\) pointwise by
+\(E_r^+=E_r\cap(\T\times\{+1\})\).  At \(z=+1\) the score \(zf_r\) is
+unchanged, at \(z=0\) it is zero, and at \(z=-1\) deleting a plus edge
+changes the score from \(-1\) to \(+1\).  Projection therefore never
+decreases a finite signed score and cannot create a composable pair.  It
+maps the \(512\) tables onto the eight actions
+\[
+ A_r=\{x:(x,+1)\in E_r\}\subseteq\T,
+\]
+with \(64\) preimages per action.  Two phases \(r,r+h\) are compatible
+exactly when
+\begin{equation}
+ A_r=\varnothing\quad\hbox{or}\quad +1\notin A_{r+h}.
+ \label{eq:compatibility}
+\end{equation}
+
+Write \(\dd_r=\dd_{q,r}\) and \(\thh_r=\thh^{(h)}_{q,r}\).  Exact
+interpolation gives the eight limiting weights:
+\begin{center}
+\small
+\begin{tabular}{@{}c@{\qquad}c@{\qquad}c@{\qquad}c@{}}
+\toprule
+Action \(A\)&\(c_{02}\)&\(c_{22}\)&\(w_r(A)\)\\
+\midrule
+\(\varnothing\)&0&0&0\\
+\(\{-1\}\)&0&\(1/2\)&\(\thh_r/2\)\\
+\(\{0\}\)&1&\(-1\)&\(\dd_r-\thh_r\)\\
+\(\{-1,0\}\)&1&\(-1/2\)&\(\dd_r-\thh_r/2\)\\
+\(\{+1\}\)&0&\(1/2\)&\(\thh_r/2\)\\
+\(\{-1,+1\}\)&0&1&\(\thh_r\)\\
+\(\{0,+1\}\)&1&\(-1/2\)&\(\dd_r-\thh_r/2\)\\
+\(\{-1,0,+1\}\)&1&0&\(\dd_r\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+The \(512\)-table lag-two setting originates in RH-378; the positive-current
+projection and eight-action table are inherited from RH-389
+\cite{RH378,RH389}.  All-\(h\) compatibility, density, and charge are proved
+here.
+
+Use the baseline \(B_0=\{-1,0\}\) and
+\(H_r=\dd_r-\thh_r/2\).  An action without \(+1\) has weight at most
+\(H_r\), while an action containing \(+1\) gains at most \(\thh_r/2\)
+above \(H_r\).  If \(+1\in A_r\), compatibility forces
+\(A_{r-h}=\varnothing\).  The loss at that predecessor pays the gain since
+\begin{equation}
+ H_{r-h}-\frac{\thh_r}{2}
+ =\frac{\dd_{r-h}-\thh_{r-h}}2+
+  \frac{\dd_{r-h}-\thh_r}2\ge0.
+ \label{eq:charge}
+\end{equation}
+Translation \(r\mapsto r-h\) is a permutation of \(\Zq\), so distinct
+plus phases have distinct charged predecessors.  It has \((q,h)\) cycles,
+each of length \(q/(q,h)\).  If \(q\mid h\), every cycle is a self-loop
+and \eqref{eq:compatibility} forces the plus-phase set empty.  For example,
+\((q,h)=(6,4)\) has two cycles of length three; no coprimality of \(q,h\)
+is needed.  Summing \eqref{eq:charge} and using \eqref{eq:totals} yields
+\begin{equation}
+ \sum_{r\bmod q}w_r(A_r)\le
+ \sum_{r\bmod q}H_r=\frac6{\pi^2}-\frac{\kap_h}{2}.
+ \label{eq:signed-bound}
+\end{equation}
+The constant baseline attains equality.
+
+Finally reflect inputs by \(f^\rho(x,z)=f(-x,-z)\).  Safety is preserved,
+and the six compiler coefficients transform with signs
+\((+,-,-,+,+,-)\).  The surviving \(c_{02},c_{22}\) channels therefore
+change sign.  Baseline table \(36\) attains the positive value in
+\eqref{eq:signed-bound}; its reflection is table \(72\) and attains the
+negative value.  This proves the absolute maximum in
+Theorem~\ref{thm:capacity}.
+
+\section{Square-divisor landscape}
+
+If \(h\) is squarefree, no local factor in \(\kap_h\) is replaced, so
+\(\kap_h=\kap_\star\).  If \(p^2\mid h\), the factor
+\(1-2p^{-2}\) is replaced by the strictly larger \(1-p^{-2}\).  Hence
+\(\kap_h=\kap_\star\) exactly for squarefree \(h\), proving the maximum
+claim in \eqref{eq:range}.
+
+For every finite \(h\), at least one prime-square factor remains strict,
+and comparison with \(\prod_p(1-p^{-2})=6/\pi^2\) gives
+\(\kap_h<6/\pi^2\).  Thus \(\Glog(q,h)>3/\pi^2\).  On the other hand,
+for
+\[
+ h_y=\left(\prod_{p\le y}p\right)^2,
+\]
+the factors through \(y\) equal those of \(6/\pi^2\), while the tail ratio
+tends to one.  Consequently \(\kap_{h_y}\to6/\pi^2\) and
+\(\Glog(q,h_y)\to3/\pi^2\).  The infimum is therefore not attained.
+
+\section{Executable artifact and source boundary}
+
+The Stage-1 certificate contains \(640\) exact rows,
+\[
+ 640=512+8+64+8+9+7+12+8+6+6,
+\]
+covering truth tables, actions, compatibility, charge, monomials,
+determinant completion, local densities, the lag spectrum, finite shifts,
+and firewalls.  It exhausts all \(512^2\) ordered table pairs, finding
+\(3375\) compatible pairs and zero projection, reflection, involution,
+parity, or interpolation failures.  It also rejects \(24\) semantic
+mutations under a builder-independent verifier.  The canonical certificate
+has \(220832\) bytes and SHA-256
+\begin{center}\small\ttfamily
+614297795d4d4dfeadfb5667d3e0d405\allowbreak
+d04fbe8e07e9d87a743faed9cb267a96.
+\end{center}
+These checks reproduce finite algebra; they do not prove
+Theorem~\ref{thm:full-mu} or Proposition~\ref{prop:density}.
+
+The immutable closure is rebound to RH-389 release commit
+\begin{center}\small\ttfamily
+8b1a875b4bbefd955a419593951ce2d09987ac6f.
+\end{center}
+Its Git groups have sizes \(95,8,3\), with ordered group digests
+\begin{center}\small\ttfamily
+8a674e5d60237b4463e1f68ef79965633ed11a4d098957e5be44e05f471174cb,\\
+87bbdb455fa5217404d863d1054b4ae408de69da6701ff42ac439ec9bfe1605c,\\
+a03e4ba7d8b5b054acc95288c70e753bf22b82bb1957f635891b28682c67840e.
+\end{center}
+The all-\(106\) Git digest is
+\begin{center}\small\ttfamily
+3b32865a14618a605915beb8eab6432b048fca49718b69519697ef861cbe650f,
+\end{center}
+and adding three remote logical locks gives \(109\) objects with digest
+\begin{center}\small\ttfamily
+39bf8e9030b511e85fdf26a7c71722c3e4be5bc74bc738aa253bbc29c94517f9.
+\end{center}
+
+Among the three remote locks, only Tao is an analytic proof input.  Its
+official Cambridge version of record locates Theorem~2, equation~(3), on
+printed/PDF page~3 and is licensed CC BY~4.0; project policy nevertheless
+does not vendor the PDF.  The inherited Johnston--Yang and Maynard locks
+are closure-only and are not used in the proof.  No article-specific
+redistribution grant is established for either of those two payloads, so
+both remain remote and unvendored.  All three offline verifiers default to
+zero network requests.  The publication tree excludes all five external
+payload identities (the Johnston--Yang PDF, source archive, and extracted
+source, the Maynard PDF, and the Tao PDF).  No new remote source was added.
+
+Relative to the RH-378/RH-389/TPC-137 templates, the two local proof
+completions are the arbitrary-nonzero-determinant Boolean cutoff argument
+and the all-\(h\) phasewise CRT formula.  This is a package-level provenance
+statement, not a global priority claim.
+
+\section{Limitations and declarations}
+
+The quantifiers are fixed-data quantifiers.  There is no uniform theorem
+for \(q=q(X)\), \(h=h(X)\), a growing shift family, or an effective rate.
+The paper proves terminal logarithmic averages, not ordinary Ces\`aro
+averages.  The finite-shift theorem stops at total degree two.  The
+coordinatewise-biquadratic compiler concerns one fixed lag and does not
+assert degree-three multi-coordinate or interacting-multiple-lag truth-table
+laws.  The maximum in \eqref{eq:capacity-def} is taken only after each
+fixed-table limit; no maximum-before-limit or adaptive selector is present.
+Nothing here constructs an operator, trace formula, zero model, or proof of
+the Riemann Hypothesis, and all five physical gates remain open.
+
+\paragraph{Data availability.}
+No new empirical data were created or analyzed.  The exact certificate,
+result, recursively closed JSON Schema, source-lock records, and tests are
+included in the paper package.  External PDFs and source archives are not
+vendored.
+
+\paragraph{Ethics declaration.}
+This theoretical and computational study involved no human participants,
+animals, personal data, or clinical intervention.  Institutional ethics
+approval was not applicable.
+
+\paragraph{Author contributions.}
+RH research program: Conceptualization, Methodology, Formal analysis,
+Software, Validation, Writing--original draft, and Writing--review and
+editing.
+
+\paragraph{Conflict of interest.}
+The author declares no conflict of interest.
+
+\paragraph{Funding.}
+No external funding was received for this work.
+
+\paragraph{AI-use disclosure.}
+AI-assisted research tools were used for symbolic enumeration, proof and
+source-audit orchestration, manuscript drafting, and formatting.  The
+theorem statements, computations, citations, and claim boundaries were
+checked against the frozen sources and executable artifacts.  The author
+takes responsibility for the accuracy and integrity of the work.
+
+\begingroup
+\small
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}
