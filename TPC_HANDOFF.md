@@ -1,7 +1,78 @@
 # TPC HANDOFF
 
 更新时间：2026-08-10
-交接状态：`BOLD_CHANNEL_V43_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V44_SEALED_FOR_NEW_SESSION`
+
+第 91 节仍位于“解析消去岛 / Bridge A / Gates A--B”。V44 选择 V43 剩余三窗中的
+transition `H/(4Q)<d<=U`，在任何 outer absolute 之前写
+
+~~~text
+g=(|m|,d), d=gs, m=gn,
+e_d(m*u*inverse(q))=e_s(n*u*inverse(q)),
+psi(Hm/(dq))=psi(Hn/(sq)).                           (V44.1)
+~~~
+
+因此 common gcd 不再是 phase conductor。active reduced modulus 与 numerator 为
+
+~~~text
+Q^(31/32+o(1))<=s<=Q^(399/400+o(1)),
+0<|n|<=x^(23/2400+o(1)).                             (V44.2)
+~~~
+
+令 `C_s(r)` 为短整数 `n` 与 prime inverse `q^(-1)` 的 unit-residue occupancy，
+`F_s(r)` 为 physical `w(u)/log u` 的 additive transform。对 `C_s` 作 exact
+mean--centered split后，transition primary alias成为
+
+~~~text
+A_transition=M_transition+V_transition
+  +O(x^(319/192+o(1))+x^(7171/4800+o(1))).           (V44.3)
+~~~
+
+其中 `M_transition` 是 principal Ramanujan mean，`V_transition` 是由
+nonprincipal character Parseval 给出的 reciprocal variance。generic large sieve与
+principal absolute ceiling都停在 `x^(5/3+o(1))`，比 strict numerator endpoint
+`x^(1997/1200)` 恰差 `1/400`。transition 的两个明确 theorem gates 为
+
+~~~text
+V_rec<<P^2*x^(-kappa+o(1)), P=x^(1/96), kappa>1/200,
+|M_transition|<<x^(5/3-delta_M+o(1)), delta_M>1/400. (V44.4)
+~~~
+
+理想 diagonal variance `P` 给 `x^(319/192+o(1))` 与 `13/4800` margin；physical
+`q|u` correction也已付到该指数。background 保留 reduced denominator中的 `q`，
+已付到 `x^(7171/4800+o(1))`。两门同时成立即条件闭合完整 transition，但 balanced
+`d>U,k>U`、reverse-Type-I `d>U,k<=U` 与 V42 Gate B 仍开放；V43 exact zero-axis
+transference仍是最终 A+B AND compiler。primary source screen没有找到直接支付任一
+fixed-power gate 的 theorem。
+
+~~~text
+V44_ROUTE_ADVANCE = YES
+V44_CONDITIONAL_BRIDGE_ADVANCE = YES
+V44_GCD_REDUCTION = PROVED_EXACT_D_EQUALS_GS_M_EQUALS_GN
+V44_MEAN_CENTERED_SPLIT = PROVED_EXACT_BEFORE_OUTER_ABSOLUTE
+V44_RECIPROCAL_VARIANCE_GATE = OPEN_P_SQUARED_X_MINUS_KAPPA_WITH_KAPPA_GREATER_THAN_1_OVER_200
+V44_PRINCIPAL_MEAN_GATE = OPEN_X_POWER_5_OVER_3_MINUS_DELTA_M_WITH_DELTA_M_GREATER_THAN_1_OVER_400
+V44_PHYSICAL_Q_DIVIDES_U_CORRECTION = PROVED_ADDITIVE_LARGE_SIEVE_X_POWER_319_OVER_192_PLUS_O1
+V44_BACKGROUND_OUTPUT = PROVED_X_POWER_7171_OVER_4800_PLUS_O1
+V44_FIRST_FATAL = NO_LITERAL_THEOREM_GIVES_FIXED_POWER_FOR_THE_PRINCIPAL_RAMANUJAN_MEAN_OR_CENTERED_PRIME_SHORT_INTEGER_RECIPROCAL_VARIANCE_AT_REDUCED_MODULI_Q_POWER_31_OVER_32_TO_Q_POWER_399_OVER_400
+V44_ARITHMETIC_ADVANCE = NO
+V44_FIXED_ATOM_CREDIT = 0
+V44_STRICT_1_OVER_400 = UNPAID
+V44_L2 = NONE
+TPC_207_TRIGGER = false                                (V44.5)
+~~~
+
+完整 56-row canonical registry 位于 Handoff 第 24、91 节、Compass 第 45 节、
+big-road README 第 44 节、V44 proof 第 10 节与 checker。proof 为
+`research/tpc-big-road/bridge_b_transition_reciprocal_variance_and_ramanujan_mean.md`，
+checker 为
+`research/tpc-big-road/tpc_bridge_b_transition_reciprocal_variance_checker.py`。
+文字路线图同步标出“transition split into mean + variance gates；corrections paid；
+long-Möbius open”。V44 仍是不编号 big-road checkpoint；不创建 TPC-207、paper、
+PDF 或 build output。
+
+以下 V43 及更早页首块作为已封存历史上游保留；V43 的完整事实位于第 90 节，
+current truth 由上面的 V44 摘要、第 24 节与第 91 节控制。
 
 第 90 节仍位于“解析消去岛 / Bridge A / Gates A--B”。V43 不再继续堆 fixed
 dyadic cells，而对 V35 proper-factor direction 在任何 outer absolute 之前作完整
@@ -67,7 +138,8 @@ long-Möbius span open”。V43 仍是不编号 big-road checkpoint；不创建 
 paper、PDF 或 build output。
 
 以下 V42 及更早页首块作为已封存历史上游保留；V42 的完整事实位于第 89 节，
-current truth 由上面的 V43 摘要、第 24 节与第 90 节控制。
+V43 historical truth由上面的 V43 摘要与第 90 节冻结；current truth由页首 V44、
+第 24 节与第 91 节控制。
 
 第 89 节仍位于“解析消去岛 / Bridge A / Gate B”。V41 已把 q-local model row
 支付到 `x^(37/16+o(1))`，留下 residual energy
@@ -150,7 +222,7 @@ big-road README 第 42 节、V42 proof 第 10 节与 checker。proof 为
 paper、PDF 或 build output。
 
 以下 V41 及更早页首块作为已封存历史上游保留；V41 的完整事实位于第 88 节，
-V42 历史 truth由本块与第 89 节冻结；current truth由页首 V43、第 24 节与第 90 节控制。
+V42 历史 truth由本块与第 89 节冻结；current truth由页首 V44、第 24 节与第 91 节控制。
 
 第 86 节仍位于“解析消去岛 / Bridge A / Gate B”，但 V39 对 V38 的 K lane
 作了真正的 macro reroute，而不是再加一个 local cell。V38 canonical emitter 与 scalar
@@ -2682,13 +2754,18 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V43_20260810_PROPER_FACTOR_POISSON_TRANSFERENCE_ZERO_AXIS_RETURN_AND_LONG_MOBIUS_FRONTIER_NO_ARITHMETIC_TRIGGER`
+`TPC_BIG_ROAD_V44_20260810_TRANSITION_RECIPROCAL_VARIANCE_RAMANUJAN_MEAN_AND_LONG_MOBIUS_FRONTIER_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V43_LONG_MOBIUS_TRANSITION_TYPE_II_REVERSE_TYPE_I_INVERSE_RESIDUE_ALIAS`；
+`V44_TRANSITION_MEAN_VARIANCE_THEN_LONG_MOBIUS_TYPE_II_REVERSE_TYPE_I_ALIAS`；
 当前 first subgates：
-`V43_TRANSITION_RANGE`、`V43_TYPE_II_RANGE`、`V43_REVERSE_TYPE_I_RANGE`、
+`V44_RECIPROCAL_VARIANCE_GATE`、`V44_PRINCIPAL_MEAN_GATE`、
+`V44_LONG_BALANCED_WINDOW`、`V44_LONG_REVERSE_TYPE_I_WINDOW`、
 `V42_CELLWISE_MOBIUS_PRIME_DIRECTIONAL_GATE`；
-已支付并可复用的 exact subgate 为 `V43_ORDERED_WEIGHT_FREEZE`、
+已支付并可复用的 exact subgate 为 `V44_GCD_REDUCTION`、
+`V44_GCD_PHASE_CANCELLATION`、`V44_MEAN_CENTERED_SPLIT`、
+`V44_PRINCIPAL_TERM`、`V44_CENTERED_CHARACTER_PARSEVAL`、
+`V44_PHYSICAL_Q_DIVIDES_U_CORRECTION`、`V44_BACKGROUND_Q_RETENTION`、
+`V44_BACKGROUND_OUTPUT`、`V43_ORDERED_WEIGHT_FREEZE`、
 `V43_WEIGHT_FREEZE_DIAGONAL`、`V43_COMPLETE_POISSON_ALIAS`、
 `V43_SMALL_D_NONZERO_ALIAS`、`V43_CORE_SCALAR_TRANSFERENCE`、
 `V43_DIRECT_NUMERATOR_TRANSFERENCE`、`V42_RESIDUAL_PROPER_FACTOR_LIFT`、
@@ -2703,9 +2780,9 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 `V34_LOCAL_CARRIER_E_PAYMENT`、`V34_LOCAL_CARRIER_J_PAYMENT` 与
 `V33_BAZIN_BETA_MARGINAL`；已支付的 exact q-local major model为
 `V30_QLOCAL_MODEL_BOUND`
-（第 90 节控制；既有 local source只有在第 32.6 节或
+（第 91 节控制；V43 transference由第 90 节冻结；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--90 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--91 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -2717,6 +2794,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_transition_reciprocal_variance_and_ramanujan_mean.md`、
+`research/tpc-big-road/tpc_bridge_b_transition_reciprocal_variance_checker.py`、
 `research/tpc-big-road/bridge_b_proper_factor_poisson_transference.md`、
 `research/tpc-big-road/tpc_bridge_b_proper_factor_poisson_transference_checker.py`、
 `research/tpc-big-road/bridge_b_mobius_directional_dispersion_compiler.md`、
@@ -2768,7 +2847,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--90 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--91 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2829,11 +2908,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V43 gate及其 V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；四十二次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V44 gate及其 V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；四十四次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
+python -B research/tpc-big-road/tpc_bridge_b_transition_reciprocal_variance_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_transition_reciprocal_variance_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_proper_factor_poisson_transference_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_proper_factor_poisson_transference_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_mobius_directional_dispersion_checker.py --check
@@ -5021,6 +5102,27 @@ V43_BAZIN_DIRECT_ATTACHMENT
 `V43_REVERSE_TYPE_I_RANGE`。Pascadi horizontal Kuznetsov保留为 strongest
 alternative compiler candidate，不是 STOP。当前 arithmetic advance仍为 `NO`；
 精确 proof、checker与 release boundary见第 90 节。
+
+2026-08-10 的 Bridge A / Gates A--B V44 transition mean--variance compiler新增且仅新增
+以下四个 scoped STOP cells：
+
+~~~text
+V44_BFI_BDH_TO_FIXED_POWER
+  = STOP_SCOPED_LOG_SAVING_DOES_NOT_PAY_1_OVER_400
+V44_MAYNARD_LARGE_MODULI_DIRECT_ATTACHMENT
+  = STOP_SCOPED_FIXED_RESIDUE_FACTORIZED_MODULI_MAX_RELATIVE_EXPONENT_11_OVER_21_NOT_ALL_RESIDUE_VARIANCE_AT_31_OVER_32_TO_399_OVER_400
+V44_DONG_ROBLES_ZEINDLER_DIRECT_ATTACHMENT
+  = STOP_SCOPED_FIXED_A_B_TWO_ARRAY_FORM_NOT_MOVING_NU_OR_RECIPROCAL_FOURTH_MOMENT
+V44_PASCADI_HORIZONTAL_DIRECT_ATTACHMENT
+  = STOP_SCOPED_POST_EMITTER_LOCAL_FORM_NOT_TRANSITION_MEAN_OR_VARIANCE_COMPILER
+~~~
+
+这些 cells只停止把相应 primary theorem直接改名为 V44 transition whole-object
+fixed-power theorem。`V44_GCD_REDUCTION`、`V44_MEAN_CENTERED_SPLIT`、
+`V44_PHYSICAL_Q_DIVIDES_U_CORRECTION` 与 `V44_BACKGROUND_OUTPUT` 已支付；它们不支付
+`V44_RECIPROCAL_VARIANCE_GATE`、`V44_PRINCIPAL_MEAN_GATE`、
+`V44_LONG_BALANCED_WINDOW` 或 `V44_LONG_REVERSE_TYPE_I_WINDOW`。当前 arithmetic
+advance仍为 `NO`；精确 proof、checker与 release boundary见第 91 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -8689,7 +8791,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V43 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V44 current）
 
 ```text
 进入仓库：
@@ -8697,6 +8799,8 @@ TPC-127 --check = PASS
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_transition_reciprocal_variance_and_ramanujan_mean.md、
+research/tpc-big-road/tpc_bridge_b_transition_reciprocal_variance_checker.py、
 research/tpc-big-road/bridge_b_proper_factor_poisson_transference.md、
 research/tpc-big-road/tpc_bridge_b_proper_factor_poisson_transference_checker.py、
 research/tpc-big-road/bridge_b_mobius_directional_dispersion_compiler.md、
@@ -8751,7 +8855,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--90 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--91 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -8968,6 +9072,62 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V44_MAXIMUM_CLAIM = EXACT_TRANSITION_GCD_REDUCTION_SPLITS_THE_PRIMARY_ALIAS_INTO_PRINCIPAL_RAMANUJAN_MEAN_CENTERED_RECIPROCAL_VARIANCE_PAID_UNIT_CORRECTION_AND_PAID_BACKGROUND_WITH_THE_STRICT_ENDPOINT_CLOCK
+V44_ROUTE_ADVANCE = YES
+V44_CONDITIONAL_BRIDGE_ADVANCE = YES
+V44_ARITHMETIC_ADVANCE = NO
+V44_FIXED_ATOM_CREDIT = 0
+V44_STRICT_1_OVER_400 = UNPAID
+V44_L2 = NONE
+V44_TPC_207_TRIGGER = false
+V44_NUMBERED_RELEASE = NO
+V44_DERIVATION_STATUS = COHERENT_AFTER_TRANSITION_EXTRACTION_GCD_REDUCTION_MEAN_VARIANCE_SPLIT_AND_TWO_CORRECTION_PAYMENTS
+V44_ASSUMPTION_POLICY = PRINCIPAL_MEAN_AND_RECIPROCAL_VARIANCE_REMAIN_TWO_EXPLICIT_OPEN_ENDPOINT_THEOREMS
+V44_SELECTED_RESEARCH_ROUTE = TRANSITION_MEAN_AND_VARIANCE_FIRST__BALANCED_AND_REVERSE_TYPE_I_SECOND__V42_GATE_B_PARALLEL__V43_A_B_JOIN__C_RESERVE
+V44_V43_TRANSITION_ALIAS = RETAINED_EXACT_BEFORE_FIRST_OUTER_ABSOLUTE
+V44_Q_NONUNIT_IN_D = ABSENT_EXACT_BECAUSE_D_LE_U_LT_Q
+V44_Q_NONUNIT_IN_M = ABSENT_EXACT_BECAUSE_ABS_M_LE_2UQ_OVER_H_LT_Q
+V44_GCD_REDUCTION = PROVED_EXACT_D_EQUALS_GS_M_EQUALS_GN
+V44_GCD_PHASE_CANCELLATION = PROVED_E_D_MU_QBAR_EQUALS_E_S_NU_QBAR
+V44_GCD_CUTOFF_CANCELLATION = PROVED_PSI_HM_OVER_DQ_EQUALS_PSI_HN_OVER_SQ
+V44_REDUCED_MODULUS_RANGE = Q_POWER_31_OVER_32_TO_Q_POWER_399_OVER_400
+V44_REDUCED_DUAL_LENGTH = X_POWER_23_OVER_2400_PLUS_O1
+V44_LAMBDA_S_ENVELOPE = X_O1_OVER_S
+V44_RECIPROCAL_OCCUPANCY = PROVED_EXACT_R_EQUALS_N_Q_INVERSE_MOD_S
+V44_MEAN_CENTERED_SPLIT = PROVED_EXACT_BEFORE_OUTER_ABSOLUTE
+V44_PRINCIPAL_TERM = PROVED_EXACT_RAMANUJAN_SUM_PAIRING
+V44_CENTERED_CHARACTER_PARSEVAL = PROVED_EXACT_NONPRINCIPAL_CHARACTER_ENERGY
+V44_RECIPROCAL_VARIANCE_GENERIC = PROVED_LARGE_SIEVE_P_SQUARED_X_O1
+V44_RECIPROCAL_VARIANCE_GENERIC_EXPONENT = 1_OVER_48
+V44_CENTERED_GENERIC_OUTPUT = X_POWER_5_OVER_3_PLUS_O1
+V44_CENTERED_GENERIC_ENDPOINT_DEFICIT = 1_OVER_400
+V44_RECIPROCAL_VARIANCE_GATE = OPEN_P_SQUARED_X_MINUS_KAPPA_WITH_KAPPA_GREATER_THAN_1_OVER_200
+V44_RECIPROCAL_VARIANCE_IDEAL = P_X_O1
+V44_RECIPROCAL_VARIANCE_IDEAL_OUTPUT = X_POWER_319_OVER_192_PLUS_O1
+V44_RECIPROCAL_VARIANCE_IDEAL_MARGIN = 13_OVER_4800
+V44_PHYSICAL_Q_DIVIDES_U_CORRECTION = PROVED_ADDITIVE_LARGE_SIEVE_X_POWER_319_OVER_192_PLUS_O1
+V44_BACKGROUND_Q_RETENTION = PROVED_EXACT_REDUCED_DENOMINATOR_STILL_CONTAINS_Q
+V44_BACKGROUND_COEFFICIENT_ENERGY = H_INVERSE_X_O1
+V44_BACKGROUND_OUTPUT = PROVED_X_POWER_7171_OVER_4800_PLUS_O1
+V44_BACKGROUND_MARGIN = 817_OVER_4800
+V44_PRINCIPAL_MEAN_AP_FORM = PROVED_EXACT_C_S_DIVISOR_EXPANSION
+V44_PRINCIPAL_MEAN_ABSOLUTE_CEILING = X_POWER_5_OVER_3_PLUS_O1
+V44_PRINCIPAL_MEAN_ENDPOINT_DEFICIT = 1_OVER_400
+V44_PRINCIPAL_MEAN_GATE = OPEN_X_POWER_5_OVER_3_MINUS_DELTA_M_WITH_DELTA_M_GREATER_THAN_1_OVER_400
+V44_TRANSITION_CONDITIONAL_COMPILER = PROVED_MEAN_AND_VARIANCE_GATES_PAY_FULL_TRANSITION
+V44_LONG_BALANCED_WINDOW = OPEN_D_GT_U_AND_K_GT_U
+V44_LONG_REVERSE_TYPE_I_WINDOW = OPEN_D_GT_U_AND_K_LE_U
+V44_V42_GATE_B = RETAINED_PARALLEL_OPEN_POSITIVE_GRAM_MPD_ROUTE
+V44_BFI_GENERIC_LARGE_SIEVE = SOURCE_BACKED_GENERIC_P_SQUARED_CEILING_ONLY
+V44_BFI_BDH_TO_FIXED_POWER = STOP_SCOPED_LOG_SAVING_DOES_NOT_PAY_1_OVER_400
+V44_MAYNARD_LARGE_MODULI_DIRECT_ATTACHMENT = STOP_SCOPED_FIXED_RESIDUE_FACTORIZED_MODULI_MAX_RELATIVE_EXPONENT_11_OVER_21_NOT_ALL_RESIDUE_VARIANCE_AT_31_OVER_32_TO_399_OVER_400
+V44_DONG_ROBLES_ZEINDLER_DIRECT_ATTACHMENT = STOP_SCOPED_FIXED_A_B_TWO_ARRAY_FORM_NOT_MOVING_NU_OR_RECIPROCAL_FOURTH_MOMENT
+V44_PASCADI_HORIZONTAL_DIRECT_ATTACHMENT = STOP_SCOPED_POST_EMITTER_LOCAL_FORM_NOT_TRANSITION_MEAN_OR_VARIANCE_COMPILER
+V44_DIRECT_PRIMARY_SOURCE_FOR_TWO_TRANSITION_GATES = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_10
+V44_FIRST_FATAL = NO_LITERAL_THEOREM_GIVES_FIXED_POWER_FOR_THE_PRINCIPAL_RAMANUJAN_MEAN_OR_CENTERED_PRIME_SHORT_INTEGER_RECIPROCAL_VARIANCE_AT_REDUCED_MODULI_Q_POWER_31_OVER_32_TO_Q_POWER_399_OVER_400
+V44_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATES_A_B_TRANSITION_SPLIT_INTO_TWO_ENDPOINT_GATES_LONG_MOBIUS_SPAN_OPEN
+V44_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V44_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATES_A_B
 V43_MAXIMUM_CLAIM = EXACT_PROPER_FACTOR_POISSON_TRANSFERENCE_DELETES_ALL_SMALL_D_NONZERO_ALIASES_AND_IDENTIFIES_THE_D_GT_H_OVER_4Q_INVERSE_RESIDUE_GATE_A_FRONTIER_WITH_ZERO_AXIS_RETURN
 V43_ROUTE_ADVANCE = YES
 V43_CONDITIONAL_BRIDGE_ADVANCE = YES
@@ -14271,6 +14431,295 @@ V34_STRICT_1_OVER_400 = UNPAID
 V34_L2 = NONE
 V34_TPC_207_TRIGGER = false
 V34_SEALED_FOR_NEW_SESSION = true
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+~~~
+
+## 91. 2026-08-10 V44：transition reciprocal variance、principal Ramanujan mean 与 long-Möbius next span
+
+V44 从 V43 exact alias 中只取第一段 transition
+
+~~~text
+H=x^(21/32), Q=x^(1/3), U=x^(133/400),
+Y0=H/(4Q)=x^(31/96+o(1)), Y0<d<=U.                 (91.1)
+~~~
+
+spike 与 background 在第一次 outer absolute 前分别保留；hard-shell、ordered
+coefficient freeze 与 V43 zero-axis errors不重开。
+
+### 91.1 Exact gcd reduction 与 reduced support
+
+因为 `mu(d)!=0`，唯一写
+
+~~~text
+g=(|m|,d), d=gs, m=gn, (g,s)=(n,s)=1.              (91.2)
+~~~
+
+则
+
+~~~text
+psi(Hm/(dq))=psi(Hn/(sq)),
+e_d(m*u*inverse(q))=e_s(n*u*inverse(q)),
+e_(dq)(m*u)=e_(sq)(n*u).                            (91.3)
+~~~
+
+定义
+
+~~~text
+lambda_s=-sum_(g,(g,s)=1,Y0<gs<=U) mu(gs)log(gs)/(gs),
+|lambda_s|<<x^o(1)/s.                               (91.4)
+~~~
+
+active support 强制
+
+~~~text
+Q^(31/32+o(1))<=s<=Q^(399/400+o(1)),
+0<|n|<=s*q/H<=x^(23/2400+o(1)).                     (91.5)
+~~~
+
+由于 `d<=U<Q<q` 且 `|m|<q`，这里没有隐藏 `q|d` 或 `q|m` rows。
+
+### 91.2 Reciprocal occupancy、principal mean 与 centered variance
+
+对 `r` 属于 `(Z/sZ)^*` 定义
+
+~~~text
+C_s(r)=lambda_s sum_q sum_n psi(Hn/(sq))
+  1_(r=n*inverse(q) mod s),
+F_s(r)=sum_(u in I_x) w(u)/log(u) * e_s(r*u).        (91.6)
+~~~
+
+令 `Cbar_s=phi(s)^(-1)sum_r C_s(r)` 与 `C_s^o=C_s-Cbar_s`。则 primary
+transition精确拆为
+
+~~~text
+T_common=M_transition+V_transition,
+M_transition=H sum_s Cbar_s sum_u b(u)c_s(u),
+V_transition=H sum_s sum_(r*) C_s^o(r)F_s(r).       (91.7)
+~~~
+
+principal term 是 literal Ramanujan pairing；nonprincipal character Parseval 给
+reciprocal-ratio variance。令 `P=Q^2/H=x^(1/96)`。generic multiplicative large
+sieve只给
+
+~~~text
+V_rec=sum_(s,r*) |C_s^o(r)|^2 << P^2*x^o(1)
+      =x^(1/48+o(1)),                               (91.8)
+sum_(s,r*) |F_s(r)|^2 << x^(2+o(1)).                (91.9)
+~~~
+
+所以 centered output为 `x^(5/3+o(1))`，比 target numerator
+`x^(1997/1200)` 多 `1/400`。第一 gate必须是
+
+~~~text
+V_rec<<P^2*x^(-kappa+o(1)), kappa>1/200.            (91.10)
+~~~
+
+ideal diagonal/random benchmark `V_rec<<P*x^o(1)` 给
+`x^(319/192+o(1))` 与 `13/4800` margin。
+
+### 91.3 两个无条件 correction payments
+
+把 `q|u` 从 common physical family补回，用每个 `u` 最多被常数个 shell primes整除
+与 additive large sieve，得到
+
+~~~text
+physical q|u correction <<x^(319/192+o(1)).         (91.11)
+~~~
+
+background gcd reduction后 denominator仍为 `sq`；不能删去 `q`。其 coefficient
+energy为 `H^(-1)x^o(1)`，最大 additive modulus为 `QU`，故
+
+~~~text
+background<<x^(7171/4800+o(1)),                    (91.12)
+~~~
+
+距 target有 `817/4800`。于是
+
+~~~text
+A_transition=M_transition+V_transition
+ +O(x^(319/192+o(1))+x^(7171/4800+o(1))).           (91.13)
+~~~
+
+### 91.4 Principal Ramanujan mean gate
+
+由
+
+~~~text
+c_s(u)=sum_(r|(s,u)) r*mu(s/r)                      (91.14)
+~~~
+
+可把 principal term精确写成 composite-divisor AP residual。其 absolute ceiling为
+
+~~~text
+|M_transition|<<H*P*x^(1+o(1))=x^(5/3+o(1)).       (91.15)
+~~~
+
+V13 只冻结 prime-shell finite-AP compiler；这里仍需 composite divisors的
+Euler/CRT extension。即便给出该合法 extension，现有 BV/sieve inputs仍是 log saving，
+不能支付固定 `1/400`。第二 gate为
+
+~~~text
+|M_transition|<<x^(5/3-delta_M+o(1)),
+delta_M>1/400.                                      (91.16)
+~~~
+
+### 91.5 Conditional compiler、source boundary 与 first fatal
+
+若 (91.10)、(91.16) 同时成立，则任意
+
+~~~text
+eta_transition<min(kappa/2-1/400,
+ delta_M-1/400,13/4800,817/4800)                    (91.17)
+~~~
+
+都给完整 transition `x^(1997/1200-eta_transition+o(1))`。balanced
+`d>U,k>U`、reverse-Type-I `d>U,k<=U` 与 V42 positive-Gram Gate B 不在本付款内。
+
+primary-source-only screen锁定：BFI generic large sieve只给 `P^2` ceiling；其 AP
+BDH interface不识别本 reciprocal-ratio fourth moment，也不给 fixed power。Maynard
+large-moduli theorem处理 fixed residue 与 conveniently factorized moduli，relative
+range最大 `11/21`，不是 `31/32` 到 `399/400` 的 all-residue variance。
+Dong--Robles--Zeindler 的 two-array Kloosterman fraction保留 fixed `a,b`，不接受 moving
+`nu`、reciprocal fourth moment或 principal mean。Pascadi horizontal theorem仍是
+post-emitter local engine，不是 transition mean/variance compiler。
+
+因此 first fatal已从“一个 transition 四变量 alias”缩成两个明确 endpoint gates，但
+仍无 direct primary theorem，不能登记 arithmetic credit。
+
+### 91.6 Canonical status registry
+
+~~~text
+V44_MAXIMUM_CLAIM = EXACT_TRANSITION_GCD_REDUCTION_SPLITS_THE_PRIMARY_ALIAS_INTO_PRINCIPAL_RAMANUJAN_MEAN_CENTERED_RECIPROCAL_VARIANCE_PAID_UNIT_CORRECTION_AND_PAID_BACKGROUND_WITH_THE_STRICT_ENDPOINT_CLOCK
+V44_ROUTE_ADVANCE = YES
+V44_CONDITIONAL_BRIDGE_ADVANCE = YES
+V44_ARITHMETIC_ADVANCE = NO
+V44_FIXED_ATOM_CREDIT = 0
+V44_STRICT_1_OVER_400 = UNPAID
+V44_L2 = NONE
+V44_TPC_207_TRIGGER = false
+V44_NUMBERED_RELEASE = NO
+V44_DERIVATION_STATUS = COHERENT_AFTER_TRANSITION_EXTRACTION_GCD_REDUCTION_MEAN_VARIANCE_SPLIT_AND_TWO_CORRECTION_PAYMENTS
+V44_ASSUMPTION_POLICY = PRINCIPAL_MEAN_AND_RECIPROCAL_VARIANCE_REMAIN_TWO_EXPLICIT_OPEN_ENDPOINT_THEOREMS
+V44_SELECTED_RESEARCH_ROUTE = TRANSITION_MEAN_AND_VARIANCE_FIRST__BALANCED_AND_REVERSE_TYPE_I_SECOND__V42_GATE_B_PARALLEL__V43_A_B_JOIN__C_RESERVE
+V44_V43_TRANSITION_ALIAS = RETAINED_EXACT_BEFORE_FIRST_OUTER_ABSOLUTE
+V44_Q_NONUNIT_IN_D = ABSENT_EXACT_BECAUSE_D_LE_U_LT_Q
+V44_Q_NONUNIT_IN_M = ABSENT_EXACT_BECAUSE_ABS_M_LE_2UQ_OVER_H_LT_Q
+V44_GCD_REDUCTION = PROVED_EXACT_D_EQUALS_GS_M_EQUALS_GN
+V44_GCD_PHASE_CANCELLATION = PROVED_E_D_MU_QBAR_EQUALS_E_S_NU_QBAR
+V44_GCD_CUTOFF_CANCELLATION = PROVED_PSI_HM_OVER_DQ_EQUALS_PSI_HN_OVER_SQ
+V44_REDUCED_MODULUS_RANGE = Q_POWER_31_OVER_32_TO_Q_POWER_399_OVER_400
+V44_REDUCED_DUAL_LENGTH = X_POWER_23_OVER_2400_PLUS_O1
+V44_LAMBDA_S_ENVELOPE = X_O1_OVER_S
+V44_RECIPROCAL_OCCUPANCY = PROVED_EXACT_R_EQUALS_N_Q_INVERSE_MOD_S
+V44_MEAN_CENTERED_SPLIT = PROVED_EXACT_BEFORE_OUTER_ABSOLUTE
+V44_PRINCIPAL_TERM = PROVED_EXACT_RAMANUJAN_SUM_PAIRING
+V44_CENTERED_CHARACTER_PARSEVAL = PROVED_EXACT_NONPRINCIPAL_CHARACTER_ENERGY
+V44_RECIPROCAL_VARIANCE_GENERIC = PROVED_LARGE_SIEVE_P_SQUARED_X_O1
+V44_RECIPROCAL_VARIANCE_GENERIC_EXPONENT = 1_OVER_48
+V44_CENTERED_GENERIC_OUTPUT = X_POWER_5_OVER_3_PLUS_O1
+V44_CENTERED_GENERIC_ENDPOINT_DEFICIT = 1_OVER_400
+V44_RECIPROCAL_VARIANCE_GATE = OPEN_P_SQUARED_X_MINUS_KAPPA_WITH_KAPPA_GREATER_THAN_1_OVER_200
+V44_RECIPROCAL_VARIANCE_IDEAL = P_X_O1
+V44_RECIPROCAL_VARIANCE_IDEAL_OUTPUT = X_POWER_319_OVER_192_PLUS_O1
+V44_RECIPROCAL_VARIANCE_IDEAL_MARGIN = 13_OVER_4800
+V44_PHYSICAL_Q_DIVIDES_U_CORRECTION = PROVED_ADDITIVE_LARGE_SIEVE_X_POWER_319_OVER_192_PLUS_O1
+V44_BACKGROUND_Q_RETENTION = PROVED_EXACT_REDUCED_DENOMINATOR_STILL_CONTAINS_Q
+V44_BACKGROUND_COEFFICIENT_ENERGY = H_INVERSE_X_O1
+V44_BACKGROUND_OUTPUT = PROVED_X_POWER_7171_OVER_4800_PLUS_O1
+V44_BACKGROUND_MARGIN = 817_OVER_4800
+V44_PRINCIPAL_MEAN_AP_FORM = PROVED_EXACT_C_S_DIVISOR_EXPANSION
+V44_PRINCIPAL_MEAN_ABSOLUTE_CEILING = X_POWER_5_OVER_3_PLUS_O1
+V44_PRINCIPAL_MEAN_ENDPOINT_DEFICIT = 1_OVER_400
+V44_PRINCIPAL_MEAN_GATE = OPEN_X_POWER_5_OVER_3_MINUS_DELTA_M_WITH_DELTA_M_GREATER_THAN_1_OVER_400
+V44_TRANSITION_CONDITIONAL_COMPILER = PROVED_MEAN_AND_VARIANCE_GATES_PAY_FULL_TRANSITION
+V44_LONG_BALANCED_WINDOW = OPEN_D_GT_U_AND_K_GT_U
+V44_LONG_REVERSE_TYPE_I_WINDOW = OPEN_D_GT_U_AND_K_LE_U
+V44_V42_GATE_B = RETAINED_PARALLEL_OPEN_POSITIVE_GRAM_MPD_ROUTE
+V44_BFI_GENERIC_LARGE_SIEVE = SOURCE_BACKED_GENERIC_P_SQUARED_CEILING_ONLY
+V44_BFI_BDH_TO_FIXED_POWER = STOP_SCOPED_LOG_SAVING_DOES_NOT_PAY_1_OVER_400
+V44_MAYNARD_LARGE_MODULI_DIRECT_ATTACHMENT = STOP_SCOPED_FIXED_RESIDUE_FACTORIZED_MODULI_MAX_RELATIVE_EXPONENT_11_OVER_21_NOT_ALL_RESIDUE_VARIANCE_AT_31_OVER_32_TO_399_OVER_400
+V44_DONG_ROBLES_ZEINDLER_DIRECT_ATTACHMENT = STOP_SCOPED_FIXED_A_B_TWO_ARRAY_FORM_NOT_MOVING_NU_OR_RECIPROCAL_FOURTH_MOMENT
+V44_PASCADI_HORIZONTAL_DIRECT_ATTACHMENT = STOP_SCOPED_POST_EMITTER_LOCAL_FORM_NOT_TRANSITION_MEAN_OR_VARIANCE_COMPILER
+V44_DIRECT_PRIMARY_SOURCE_FOR_TWO_TRANSITION_GATES = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_10
+V44_FIRST_FATAL = NO_LITERAL_THEOREM_GIVES_FIXED_POWER_FOR_THE_PRINCIPAL_RAMANUJAN_MEAN_OR_CENTERED_PRIME_SHORT_INTEGER_RECIPROCAL_VARIANCE_AT_REDUCED_MODULI_Q_POWER_31_OVER_32_TO_Q_POWER_399_OVER_400
+V44_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATES_A_B_TRANSITION_SPLIT_INTO_TWO_ENDPOINT_GATES_LONG_MOBIUS_SPAN_OPEN
+V44_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V44_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATES_A_B
+~~~
+
+### 91.7 Artifact、checker 与 pending release gate
+
+~~~text
+research/tpc-big-road/bridge_b_transition_reciprocal_variance_and_ramanujan_mean.md
+research/tpc-big-road/tpc_bridge_b_transition_reciprocal_variance_checker.py
+~~~
+
+checker冻结 transition gcd/phase、occupancy mean--variance、background conductor、
+Ramanujan vector与完整 exponent ledger。V44 不创建 TPC-207、paper、PDF 或 build
+output。
+
+~~~text
+V44_FINAL_RELEASE_QA = PASS_WITH_SCOPED_EXTERNAL_TPC126_ONE_ULP_PLATFORM_DIAGNOSTIC
+V44_MATH_SOURCE_FORMULA_QA = PASS
+V44_CHECKER_ADVERSARIAL_QA = PASS
+V44_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V44_PRECLOSURE_HANDOFF_RAW_LF_SHA256 = 9b13155ca67513396a9347cf810ad779c495671602b63b560b9addeea4a671e7
+V44_COMPASS_RAW_LF_SHA256 = ceb71febf95d498bb55930838abeda43a6760e2b03209deedd7c4e001e9aed56
+V44_BIG_ROAD_README_RAW_LF_SHA256 = 3b3cdbccb8e0e1eeec64e9404bff7c746c870c439cf9c76a880dce8c8a4956cc
+V44_ROUTE_MAP_RAW_LF_SHA256 = eaf722703ebd04fff19c4ece6445fcfd66d213a1d5b79a676c7d7891b130524c
+V44_PROOF_RAW_LF_SHA256 = 053ae6a18740a2e81d754c4ecce7af1a00ecfe331f7d5d4991945889f14c9920
+V44_CHECKER_RAW_LF_SHA256 = 8c928b26ecfd904069366bbfbf003367f3adae7638f0de0c669000da820b0af1
+V44_CHECKER_STDOUT_BYTES = 1660
+V44_CHECKER_STDOUT_RAW_LF_SHA256 = 5dcf586aada384242967ca0286cf3b6a543a81fda8f1c06484a5d347f93832dc
+V44_CHECKER_PAYLOAD_BYTES = 1659
+V44_CHECKER_PAYLOAD_SHA256 = 753c21bb31c692f2a2a4460c73e4698e60c0b5292207d1313beb406e61626865
+V44_CHECKER_CONTRACT_FIELDS = 29
+V44_CHECKER_RESULT_FIELDS = 48
+V44_CHECKER_REGISTRY_ROWS = 56
+V44_CHECKER_SOURCE_LOCKS = 6
+V44_CHECKER_DEPENDENCY_LOCKS = 5
+V44_CHECKER_MUTATIONS = 59_113_13_11_145_TOTAL_341
+V44_CHECKER_REGISTRY_SHA256 = d6330cda90981b374d594c0d4b1dc209a5599b7d4cbf5caac6ec753c5adbe503
+V44_CHECKER_NORMAL_OPTIMIZED = PASS_BYTE_IDENTICAL_STDERR_EMPTY
+V44_CHECKER_NOFLAG_EXTRAFLAG = FAIL_CLOSED_EXPLICIT_CHECK_REQUIRED
+V44_CHECKER_GLOBAL_PROVIDER_RESULT_STDOUT_ATTACKS = PASS_NO_FALSE_PROMOTION
+V44_REGISTRY_MIRRORS = HANDOFF_24_HANDOFF_91_COMPASS_45_README_44_PROOF_10_CHECKER_EXACT_56_OF_56
+V44_REGISTRY_MIRROR_BLOCKS = 6
+V44_STOP_SCOPED_REGISTRY = HANDOFF_6_V44_4_EXACT
+V44_FORMULA_LEDGER = PASS_31_OVER_96_31_OVER_32_399_OVER_400_23_OVER_2400_1_OVER_96_1_OVER_48_5_OVER_3_1_OVER_400_1_OVER_200_319_OVER_192_13_OVER_4800_7171_OVER_4800_817_OVER_4800_85_OVER_64
+V44_PRIMARY_SOURCE_SCREEN = PASS_BFI_MAYNARD_DONG_ROBLES_ZEINDLER_PASCADI_NO_DIRECT_TWO_GATE_THEOREM
+V44_PROOF_EQUATION_TAGS = 55_OF_55_UNIQUE__32_REFERENCES_RESOLVED
+V44_MARKDOWN_FENCES = HANDOFF_2922_526__COMPASS_268_88__README_428_86__ROUTE_MAP_8_0__PROOF_2_2
+V44_UTF8_C0_DEL_TRAILING_FINAL_LF = PASS
+V44_STARTUP_REGRESSION = 22_OF_22_PASS_STDERR_EMPTY
+V44_SUPPLEMENTAL_ATTEMPTED = 4_OF_4
+V44_SUPPLEMENTAL_BYTE_EXACT = 3_OF_4
+V44_TPC126_SEMANTIC_CERTIFICATE = PASS_ONE_ULP_PLATFORM_SERIALIZATION_ONLY
+V44_TPC126_FROZEN_DIRECT_REAL = 40.17369814909115
+V44_TPC126_LINUX_DIRECT_REAL = 40.17369814909116
+V44_BIG_ROAD_PROCESSES = 44_OF_44_PASS_STDERR_EMPTY
+V44_BIG_ROAD_STDOUT_IDENTITIES = 22_OF_22
+V44_RELEASE_ALLOWLIST = EXACT_SIX_PATHS
+V44_CACHED_DIFF = EMPTY
+V44_DIFF_CHECK = PASS
+V44_UNTRACKED_RELEASE_PATHS = EXACT_TWO
+V44_PROTECTED_UNTRACKED_COUNT = 0
+V44_PROTECTED_UNTRACKED_MANIFEST_SHA256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+V44_PYC_COUNT = 0
+V44_INITIAL_BASELINE_HEAD_ORIGIN_REMOTE = be9d783536eeec36ab1c5a95525523f762c1d4d3
+V44_FETCHED_REMOTE_PARENT = d355325e5a287af1cef69509825799c9c6a0b5d5
+V44_FETCHED_REMOTE_SCOPE = RH392_41_PATHS_RH_ONLY_NO_TPC_OVERLAP
+V44_FILES_CHANGED = EXACT_SIX_RELEASE_PATHS
+V44_GENERATED_OUTPUTS = NONE
+V44_ROUTE_ADVANCE = YES
+V44_CONDITIONAL_BRIDGE_ADVANCE = YES
+V44_ARITHMETIC_ADVANCE = NO
+V44_FIXED_ATOM_CREDIT = 0
+V44_STRICT_1_OVER_400 = UNPAID
+V44_L2 = NONE
+V44_TPC_207_TRIGGER = false
+V44_SEALED_FOR_NEW_SESSION = true
 NUMBERED_RELEASE = NO
 TPC_207_TRIGGER = false
 ~~~

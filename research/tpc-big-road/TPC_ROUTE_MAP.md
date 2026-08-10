@@ -2,7 +2,7 @@
 
 更新时间：2026-08-10
 
-当前地图版本：V43
+当前地图版本：V44
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,9 +46,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +------------------------------------------+
-        | YOU ARE HERE — V43                      |
-        | small-d nonzero aliases DELETED;        |
-        | zero axis RETURNED; long-Möbius OPEN    |
+        | YOU ARE HERE — V44                      |
+        | transition = mean + variance gates;     |
+        | corrections PAID; long-Möbius OPEN      |
         +------------------------------------------+
                 |
                 v
@@ -72,8 +72,11 @@ proper-factor identity将 preferred implementation变成 dyadic Möbius--prime d
 cells。V43 又在 outer absolute 之前完成 centered Poisson：`d<=H/(4Q)` 的非零 alias
 全部精确消失，但物理 `u=dk` 删除会把 zero axis 原样返回。由此得到
 `C=A-L_pr*S+paid errors`，首次把 Gate B 与 terminal Gate A 写成同一 literal scalar
-bridge。当前红叉已缩为 `d>H/(4Q)` 的 transition、balanced Type II 与 long-Möbius
-reverse Type I inverse-residue alias；核心算术 saving 尚未证明。**
+bridge。V44 再把第一段 transition exact gcd-reduce 为 reduced modulus
+`Q^(31/32)` 到 `Q^(399/400)` 上的 principal Ramanujan mean 与 centered reciprocal
+variance；physical nonunit correction 与 background 都已付。当前 transition 红叉已从
+一个四变量 alias 缩成两个各差固定幂的 endpoint gates；balanced Type II 与
+long-Möbius reverse Type I 仍是下一段主跨。核心算术 saving 尚未证明。**
 
 ## 2. 图例与状态语言
 
@@ -158,9 +161,12 @@ endpoint 的主桥。
 transference scalar精确相连；它们仍需分别给 saving：
 
 1. `B`：V42 positive physical Gram / MPD仍是 Gate-B 的平行充分实现；
-2. `A`：V43 alias scalar只含 `d>H/(4Q)`，按 transition、balanced Type II、
-   long-Möbius reverse Type I 三窗施工；
-3. `A+B`：`D=A_alias-L_pr*S+paid errors` 是 exact AND compiler，不是 OR shortcut。
+2. `A/transition`：V44 已把 `H/(4Q)<d<=U` 精确拆成 principal Ramanujan mean 与
+   centered reciprocal variance；两门分别要求 `delta_M>1/400` 与
+   `kappa>1/200`；
+3. `A/long`：balanced Type II 与 long-Möbius reverse Type I 仍按同一 signed
+   whole-object alias施工；
+4. `A+B`：`D=A_alias-L_pr*S+paid errors` 是 exact AND compiler，不是 OR shortcut。
 
 Bridge A 当前状态：`OPEN`。
 
@@ -173,7 +179,7 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 当前精确位置：V43
+## 5. 当前精确位置：V44
 
 V43 把 V35 proper-factor direction 在第一次 outer absolute 之前送进 complete
 centered Poisson。冻结 ordered weight 后仍有 exact diagonal
@@ -208,9 +214,45 @@ J(r_x)=\frac{\mathfrak A_x}{L_{\rm pr}}
 \]
 
 这使 Gate B numerator 与 Gate A major scalar第一次成为同一 literal AND compiler。
-当前 alias只剩 transition `Y0<d<=U`（dual 长度 `x^(23/2400+o(1))`）、balanced
-Type II `d>U,k>U` 与 long-Möbius reverse Type I `d>U,k<=U`。下述 V40--V42
-row/energy历史仍是 Gate B 的平行实现与损失账。
+V44 对第一段 transition `Y0<d<=U` 进一步写
+
+\[
+g=(|m|,d),\qquad d=gs,\qquad m=gn,
+\]
+
+从而精确消去 phase 与 cutoff 里的 `g`。reduced modulus 与 numerator 满足
+
+\[
+Q^{31/32+o(1)}\le s\le Q^{399/400+o(1)},\qquad
+0<|n|\le x^{23/2400+o(1)}.
+\]
+
+在 unit residues 上，prime inverse occupancy `C_s(r)` 的 mean--centered split 给
+
+\[
+\mathfrak A_x^{\rm tr}=\mathfrak M_x^{\rm tr}+\mathfrak V_x^{\rm tr}
++O\!\left(x^{319/192+o(1)}+x^{7171/4800+o(1)}\right).
+\]
+
+两个 open endpoint gates 是
+
+\[
+\mathcal V_{\rm rec}\ll P^2x^{-\kappa+o(1)},\quad
+P=x^{1/96},\quad\kappa>1/200,
+\]
+
+以及
+
+\[
+|\mathfrak M_x^{\rm tr}|\ll x^{5/3-\delta_M+o(1)},
+\quad\delta_M>1/400.
+\]
+
+generic large sieve 与 principal absolute ceiling 都停在 `x^(5/3+o(1))`，恰差
+`1/400`；ideal diagonal variance 给 `x^(319/192+o(1))` 与 `13/4800` margin。
+因此 transition 已经结构闭合但尚未算术闭合。balanced Type II `d>U,k>U` 与
+long-Möbius reverse Type I `d>U,k<=U` 仍开放。下述 V40--V42 row/energy历史仍是
+Gate B 的平行实现与损失账。
 
 V40 已把 packet 压到每个模数的一条 scalar row
 
@@ -304,17 +346,18 @@ Kloosterman engine只到单 cell，未付 block atomic budget和跨 `q` 的 L2 r
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
 
-| 图像语言 | 仓库 V43 语言 | 关系 |
+| 图像语言 | 仓库 V44 语言 | 关系 |
 |---|---|---|
 | Bridge A：解析 collective saving | `B(positive Gram / MPD / P2 / K / E / X)` 与 `A(alias)` 的 zero-axis transference | 图像的一座大桥被拆成多车道 B、terminal A 及 exact AND compiler |
 | Bridge B：distinguished-seed genericity | `C` symmetry-breaking reserve | 都是动力学/指定 seed 后备线 |
-| 核心算术估计 | `d>H/(4Q)` transition/Type-II/reverse-Type-I alias + Gate-B numerator | 当前 red-X 的优先施工方案 |
+| 核心算术估计 | transition mean/variance + long Type-II/reverse-Type-I alias + Gate-B numerator | 当前 red-X 的优先施工方案 |
 
 仓库选择路线为：
 
 ```text
 PROPER_FACTOR_CENTERED_POISSON_TRANSFERENCE
-THEN_LONG_MOBIUS_TRANSITION_TYPE_II_REVERSE_TYPE_I_ALIAS
+THEN_TRANSITION_GCD_REDUCTION_TO_RAMANUJAN_MEAN_AND_RECIPROCAL_VARIANCE
+THEN_LONG_MOBIUS_TYPE_II_REVERSE_TYPE_I_ALIAS
 AND_PHYSICAL_POSITIVE_GRAM_COLLISION_VIA_PROPER_FACTOR_DYADIC_MPD
 OR_P2_DIRECT_Q_DEPENDENT_PACKET_ENERGY
 OR_K_SPECIALIZED_BLOCK_SCHATTEN_COMPRESSION
@@ -326,7 +369,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V43：
+截至 V44：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -351,26 +394,29 @@ NUMBERED_RELEASE = NO
 
 优先级更新为：
 
-1. **A/transition：先攻 `H/(4Q)<d<=U` 的短 alias**。dual 长度只有
-   `x^(23/2400+o(1))`，但必须保持 moving cutoff、background phase、physical
-   `w(u)` 与唯一 outer scalar，不能按 alias triangle过付；
-2. **A/Type-II + reverse-Type-I：证明同一个 long-Möbius inverse-residue
+1. **A/transition-variance：先攻 reciprocal occupancy 的 centered fourth
+   moment**。目标是从 generic `P^2` 赢 `x^(-kappa)`，`kappa>1/200`；理想
+   diagonal `P` 已显示 endpoint clock有真实余量；
+2. **A/transition-mean：并行攻 principal Ramanujan/AP mean**。目标是从 absolute
+   `x^(5/3)` 赢 `x^(-delta_M)`，`delta_M>1/400`；必须先补 composite divisor 的
+   Euler/CRT compiler，再寻找超越 log-saving 的 signed mean theorem；
+3. **A/Type-II + reverse-Type-I：证明同一个 long-Möbius inverse-residue
    whole-object theorem**。balanced `d,k>U` 与 `d>U,k<=U` 两个 orientation必须在
    signed fold后重组；Pascadi horizontal theorem是最强备选 compiler，尚无 literal
    attachment；
-3. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
+4. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
    preferred sufficient gate；P2/K 是 stronger norms，E/X
    分别是 `sigma<13/4800` whole residual energy和
    `kappa>403/1200` joint character theorem，不与 MPD lane叠加 theorem credit；
-4. **A+B：只通过 V43 exact transference做最终 reassembly**，不能把 small-(d)
+5. **A+B：只通过 V43 exact transference做最终 reassembly**，不能把 small-(d)
    full-lattice zero误写成 physical diagonal payment，也不能用任一门循环支付另一门；
-5. **C：只在前四条路线真实阻断或新 source 出现时，重开 distinguished-seed
+6. **C：只在前五条路线真实阻断或新 source 出现时，重开 distinguished-seed
    symmetry-breaking/dynamics reserve。**
 
 最窄 first fatal：
 
 ```text
-NO_LITERAL_THEOREM_BOUNDS_THE_FULL_CENTERED_TRANSITION_OR_LONG_MOBIUS_REVERSE_TYPE_I_AND_BALANCED_FOUR_VARIABLE_INVERSE_RESIDUE_ALIAS_WITH_PHYSICAL_W_AT_THE_STRICT_NUMERATOR_POWER
+NO_LITERAL_THEOREM_GIVES_FIXED_POWER_FOR_THE_PRINCIPAL_RAMANUJAN_MEAN_OR_CENTERED_PRIME_SHORT_INTEGER_RECIPROCAL_VARIANCE_AT_REDUCED_MODULI_Q_POWER_31_OVER_32_TO_Q_POWER_399_OVER_400
 ```
 
 ## 9. 后续更新协议
@@ -389,6 +435,7 @@ NO_LITERAL_THEOREM_BOUNDS_THE_FULL_CENTERED_TRANSITION_OR_LONG_MOBIUS_REVERSE_TY
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-10 | V44 | Bridge A / Gates A--B：transition split into principal mean and reciprocal variance; long-Möbius span open | rebased parent `d355325e5a287af1cef69509825799c9c6a0b5d5`; initial research baseline `be9d783536eeec36ab1c5a95525523f762c1d4d3` | exact gcd reduction删除 common phase conductor；transition拆成两项 endpoint gate；physical nonunit correction与background分别付到 `319/192`、`7171/4800`；arithmetic仍为 NO |
 | 2026-08-10 | V43 | Bridge A / Gates A--B：small-factor alias deleted, zero axis returned, long-Möbius span open | parent `1f17878cfa62c40afab9620ee73536c7b5c9ea1e`; V43=current working release | complete centered Poisson删除 `d<=H/(4Q)` 非零 alias；对角返回给出 `D=A-L_pr*S+paid errors`；transition dual `23/2400`，Type II/reverse Type I whole-object theorem仍 OPEN；arithmetic仍为 NO |
 | 2026-08-10 | V42 | Bridge A / Gate B：positive Gram gate exposed, proper-factor directional span open | parent `48b7bca985f35ccd4295b9ce44b55177488eef32`; V42=current working release | exact residual Gram与 spike/background cross term；V35 proper-factor lift、`95/48` occurrence diagonal与 dyadic MPD compiler；generic operator certificate需要 support `<=x^(273/400)`，full-active loss `2/3`；arithmetic仍为 NO |
 | 2026-08-10 | V41 | Bridge A / Gate B：q-local model pier paid, residual row-Bessel span open | parent `fa68a37a73fe543983fb9c369498e53321bff080`; V41=current working release | exact split `s_q=m_q+rho_q`；三剩余类模型能量初等支付到 `37/16`、输出 `53/32`；主红叉缩为 residual row energy / row-Bessel，zero-axis A 仍独立；arithmetic 仍为 NO |
