@@ -1,76 +1,90 @@
 # TPC HANDOFF
 
 更新时间：2026-08-10
-交接状态：`BOLD_CHANNEL_V41_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V42_SEALED_FOR_NEW_SESSION`
 
-第 88 节仍位于“解析消去岛 / Bridge A / Gate B”，但已跨过 V40 row-Bessel
-桥头的第一个实质桥墩。V40 的 exact row
-
-~~~text
-s_q=sum_(t!=u,q does not divide tu) beta(t)w(u)K_H(u-t)
-    [1_(q divides u-t)-1/(q-1)]                       (V41.1)
-~~~
-
-现在用 V30 的三剩余类 q-local profile `Gamma_q(u)` 精确拆成
+第 89 节仍位于“解析消去岛 / Bridge A / Gate B”。V41 已把 q-local model row
+支付到 `x^(37/16+o(1))`，留下 residual energy
+`E_res=sum_q|rho_q|^2`。V42 不再把它误写成任意矩阵的 row-Bessel 问题，而先锁住
+唯一 physical input direction。对
 
 ~~~text
-s_q=m_q+rho_q,
-m_q: w(u) replaced by Gamma_q(u),
-rho_q: w(u) replaced by w(u)-Gamma_q(u).              (V41.2)
+a_(q,t)=beta_raw(t) G_res(q,t)
 ~~~
 
-三类逐项计数给每个模数
+有 exact Gram identity
 
 ~~~text
-|m_q|<<x^(1+o(1))H/q^2,
-sum_q|m_q|^2<<x^(2+o(1))H^2/Q^3=x^(37/16+o(1)).      (V41.3)
+E_res=D_res+O_res,
+O_res=sum_q sum_(t1!=t2) a_(q,t1) conjugate(a_(q,t2)). (V42.1)
 ~~~
 
-所以 V40 的 `rowwise local carrier unpaid` 已在 preferred `tau=1/3` benchmark
-上完整支付；其 scalar contribution为 `x^(53/32+o(1))`，保留 strict margin
-`19/2400`。新的唯一 Gate-B 主定理缩为
+`O_res` 为实数但不定号；最窄 benchmark 只要求
 
 ~~~text
-E_res=sum_q|rho_q|^2,
-H_QR2(kappa): E_res<<x^(7/3-kappa+o(1)), kappa>1/200. (V41.4)
+(O_res)_+ << x^(37/16+o(1)).                           (V42.2)
 ~~~
 
-或者相对已付 residual diagonal `D_res<<x^(95/48+o(1))` 证明
+V42 随后把 V35 的 proper-factor identity
 
 ~~~text
-E_res<<x^(tau+o(1))D_res, tau<419/1200.               (V41.5)
+beta_raw(t)=sum_(dk=t,d,k>=2) mu(d) omega_x(d,k)       (V42.3)
 ~~~
 
-该 residual gate 有精确 one-outer-absolute Hilbert dual与 same-index character
-normal form；单边 AP/marginal theorem仍不能替代 product covariance。所有 row 都删去
-`h=0`，故 `e(h)=T 1_(h=0)` 使全部 residual rows为零但 physical atom任意；terminal
-q-local Gate A仍是独立 theorem，不能从本轮的 off-zero payment偷渡。
+在任何外层绝对值之前逐字 lift 到 `rho_q`。新的 occurrence diagonal
 
 ~~~text
-V41_ROUTE_ADVANCE = YES
-V41_CONDITIONAL_BRIDGE_ADVANCE = YES
-V41_EXACT_ROW_SPLIT = S_Q_EQUALS_M_Q_PLUS_RHO_Q
-V41_MODEL_ROW_ENERGY = PROVED_X_POWER_37_OVER_16
-V41_V40_LOCAL_CARRIER_ROWWISE_STATUS = PAID_AT_ROW_BENCHMARK
-V41_RESIDUAL_ROW_ENERGY_GATE = OPEN_CONJECTURE_X_POWER_7_OVER_3_MINUS_KAPPA
-V41_RESTRICTED_RESIDUAL_ROW_BESSEL_TAU_THRESHOLD = TAU_STRICTLY_LESS_THAN_419_OVER_1200
-V41_OFFZERO_RESIDUAL_TO_ZERO_AXIS = STOP_SCOPED_DELTA_ZERO_FIXTURE
-V41_ARITHMETIC_ADVANCE = NO
-V41_FIXED_ATOM_CREDIT = 0
-V41_STRICT_1_OVER_400 = UNPAID
-V41_L2 = NONE
-TPC_207_TRIGGER = false                               (V41.6)
+D_pf=sum_(q,dk)|mu(d)omega_x(d,k)G_res(q,dk)|^2
+    <<x^(95/48+o(1))                                  (V42.4)
 ~~~
 
-完整 53-row canonical registry 位于 Handoff 第 24、88 节、Compass 第 42 节、
-big-road README 第 41 节、V41 proof 第 10 节与 checker。proof 为
-`research/tpc-big-road/bridge_b_qlocal_residual_row_bessel_compiler.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_qlocal_residual_row_bessel_checker.py`。文字路线图
-同步标出“q-local model pier paid、residual row-Bessel span open”。V41 仍是不编号
-big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
+已经支付。把 `d` 分成互不相交的 dyadic cells 后，唯一主桥缩成同一个 physical
+Möbius--prime directional theorem
 
-以下 V39 及更早页首块作为已封存历史上游保留；V40 的完整事实位于第 87 节，
-current truth 由上面的 V41 摘要、第 24 节与第 88 节控制。
+~~~text
+sum_q|rho_(q,j)|^2 << Q x^o(1) D_j                    (V42.5)
+~~~
+
+并由一次 `l2(Q)` triangle 与 cell Cauchy 编译为
+`E_res<<x^(37/16+o(1))`、scalar output `x^(53/32+o(1))`，strict margin
+`19/2400`。spike/background decomposition 的 signed cross term原样保留；prime
+row 的 `beta_raw(p)=0` 仍由 empty proper-factor sum精确实现。
+
+纯 operator norm、stable rank 或 Schatten certificate无法单独认证这道门：它们最多
+给 `N_active/#Q` loss。endpoint 要求先把 active support压到
+`x^(273/400-o(1))`；full-active loss为 `x^(2/3)`，超出阈值
+`127/400`。这是 certificate-level no-go，不是 physical lower bound。当前 strongest
+source-backed local engine仍是 V38 emitter之后的 Blomer--Pascadi balanced cell
+`q^(-1/32)`；block atomic budget与 collective `l2(q)` reassembly尚未支付。
+
+~~~text
+V42_ROUTE_ADVANCE = YES
+V42_CONDITIONAL_BRIDGE_ADVANCE = YES
+V42_PRIMARY_POSITIVE_GRAM_GATE = OPEN_CONJECTURE_POSITIVE_O_RES_LE_X_POWER_37_OVER_16
+V42_RESIDUAL_PROPER_FACTOR_LIFT = PROVED_EXACT_BEFORE_ANY_OUTER_ABSOLUTE
+V42_PROPER_FACTOR_OCCURRENCE_DIAGONAL = PROVED_X_POWER_95_OVER_48
+V42_CELLWISE_MOBIUS_PRIME_DIRECTIONAL_GATE = OPEN_CONJECTURE_E_J_LE_Q_X_O1_D_J
+V42_CONDITIONAL_RESIDUAL_ENERGY = X_POWER_37_OVER_16
+V42_CONDITIONAL_SCALAR_OUTPUT = X_POWER_53_OVER_32
+V42_OPERATOR_ONLY_THRESHOLD_SUPPORT_CEILING = X_POWER_273_OVER_400
+V42_BLOMER_PASCADI_BALANCED_CELL = SOURCE_BACKED_LOCAL_ENGINE_Q_MINUS_1_OVER_32_AFTER_V38_EXACT_EMITTER
+V42_ARITHMETIC_ADVANCE = NO
+V42_FIXED_ATOM_CREDIT = 0
+V42_STRICT_1_OVER_400 = UNPAID
+V42_L2 = NONE
+TPC_207_TRIGGER = false                               (V42.6)
+~~~
+
+完整 59-row canonical registry 位于 Handoff 第 24、89 节、Compass 第 43 节、
+big-road README 第 42 节、V42 proof 第 10 节与 checker。proof 为
+`research/tpc-big-road/bridge_b_mobius_directional_dispersion_compiler.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_mobius_directional_dispersion_checker.py`。文字路线图
+同步标出“q-local model 与 diagonal paid、proper-factor directional span open”。V42
+仍是不编号 big-road checkpoint；terminal zero-axis Gate A独立 OPEN，不创建 TPC-207、
+paper、PDF 或 build output。
+
+以下 V41 及更早页首块作为已封存历史上游保留；V41 的完整事实位于第 88 节，
+current truth 由上面的 V42 摘要、第 24 节与第 89 节控制。
 
 第 86 节仍位于“解析消去岛 / Bridge A / Gate B”，但 V39 对 V38 的 K lane
 作了真正的 macro reroute，而不是再加一个 local cell。V38 canonical emitter 与 scalar
@@ -2602,24 +2616,27 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 当前仓库事实终点：TPC-206
 当前编号论文裁决：`SELECTED_SOURCE_LOCKED_13_OF_42_PAIR_REGISTRY_PROJECTION_CERTIFIED_NOT_REOPENED`
 最新不编号审计裁决：
-`TPC_BIG_ROAD_V41_20260810_QLOCAL_MODEL_ROW_PAID_AND_RESIDUAL_ROW_BESSEL_BRIDGE_NO_ARITHMETIC_TRIGGER`
+`TPC_BIG_ROAD_V42_20260810_PROPER_FACTOR_DIRECTIONAL_DISPERSION_BRIDGE_AND_OPERATOR_ONLY_CERTIFICATE_NO_GO_NO_ARITHMETIC_TRIGGER`
 下一篇：`null`；下一项不编号大动作：
-`V41_LITERAL_QLOCAL_RESIDUAL_ROW_BESSEL_TAU_1_OVER_3_BENCHMARK`；
+`V42_LITERAL_CELLWISE_MOBIUS_PRIME_DIRECTIONAL_DISPERSION`；
 当前 first subgates：
-`V41_RESIDUAL_ROW_ENERGY_GATE`、`V41_RESTRICTED_RESIDUAL_ROW_BESSEL_GATE`、
-`V41_TERMINAL_QLOCAL_GATE_A`；
-已支付并可复用的 exact subgate 为 `V41_EXACT_ROW_SPLIT`、
+`V42_PRIMARY_POSITIVE_GRAM_GATE`、`V42_CELLWISE_MOBIUS_PRIME_DIRECTIONAL_GATE`、
+`V42_TERMINAL_QLOCAL_GATE_A`；
+已支付并可复用的 exact subgate 为 `V42_RESIDUAL_PROPER_FACTOR_LIFT`、
+`V42_PROPER_FACTOR_OCCURRENCE_DIAGONAL`、`V42_RESIDUAL_GRAM_IDENTITY`、
+`V42_CELLWISE_TO_GLOBAL_COMPILER`、`V41_EXACT_ROW_SPLIT`、
 `V41_MODEL_ROW_ENERGY`、`V41_RESIDUAL_L2_DUAL`、
 `V40_CONSTANT_RESIDUE_ROW_SCALAR`、
 `V40_ROW_COLLISION_IDENTITY`、`V40_UNIT_FREE_SHIFT_ROW`、
 `V39_BLOCK_PROJECTIVE_DUALITY` 与 `V38_CANONICAL_SCALAR_EMITTER`；
-已支付并可复用的 source-backed local subgate 为 `V38_BLOMER_PASCADI_CELL_ENGINE`、
+已支付并可复用的 source-backed local subgate 为
+`V42_BLOMER_PASCADI_BALANCED_CELL`、`V38_BLOMER_PASCADI_CELL_ENGINE`、
 `V34_LOCAL_CARRIER_E_PAYMENT`、`V34_LOCAL_CARRIER_J_PAYMENT` 与
 `V33_BAZIN_BETA_MARGINAL`；已支付的 exact q-local major model为
 `V30_QLOCAL_MODEL_BOUND`
-（第 88 节控制；既有 local source只有在第 32.6 节或
+（第 89 节控制；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--88 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--89 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -2631,6 +2648,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
+`research/tpc-big-road/bridge_b_mobius_directional_dispersion_compiler.md`、
+`research/tpc-big-road/tpc_bridge_b_mobius_directional_dispersion_checker.py`、
 `research/tpc-big-road/bridge_b_qlocal_residual_row_bessel_compiler.md`、
 `research/tpc-big-road/tpc_bridge_b_qlocal_residual_row_bessel_checker.py`、
 `research/tpc-big-road/bridge_b_row_energy_and_packet_route_atlas.md`、
@@ -2678,7 +2697,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--88 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--89 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2739,11 +2758,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V41 gate及其 V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；三十八次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V42 gate及其 V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；四十次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
+python -B research/tpc-big-road/tpc_bridge_b_mobius_directional_dispersion_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_mobius_directional_dispersion_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_qlocal_residual_row_bessel_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_qlocal_residual_row_bessel_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_row_energy_route_atlas_checker.py --check
@@ -4833,6 +4854,79 @@ local admissibility自动推出 prime mass。surviving primary为
 `V30_B_CELL_LINF_CROSS_FLATNESS` 与 `V30_B_MLOC_PLUS_A_ATTACHMENT`；terminal
 analytic gate为 `V30_TAGGED_QLOCAL_RESIDUAL_MAJOR_COVARIANCE`。完整 theorem出现前，
 arithmetic advance仍为 `NO`。精确 proof、checker与 release boundary见第 77 节。
+
+2026-08-10 的 Bridge A / Gate B V40--V42 row/Gram/directional sequence新增以下
+二十八个 scoped STOP cells。V40、V41 是现有接口的历史 no-go；V42 十项是当前
+formal boundary：
+
+~~~text
+V40_ROW_ENERGY_IMPLIES_PACKET_ENERGY
+  = STOP_SCOPED_Q5_ALTERNATING_TRANSVERSE_PACKET
+V40_ROW_OFFDIAGONAL_POSITIVITY
+  = STOP_SCOPED_SIGN_INDEFINITE_FINITE_FIXTURE
+V40_V36_RESIDUAL_TO_FULL_SHIFT_ATTACHMENT
+  = STOP_SCOPED_LOCAL_CARRIER_ROWWISE_REASSEMBLY_UNPAID
+V40_SEPARATE_MARGINAL_CHARACTER_LARGE_SIEVE
+  = STOP_SCOPED_DOES_NOT_CONTROL_SAME_INDEX_PRODUCT_COVARIANCE
+V40_HARPER_GENERAL_BDH_DIRECT_ATTACHMENT
+  = STOP_SCOPED_FIXED_SEQUENCE_LARGE_MODULUS_AND_DISTRIBUTION_HYPOTHESES_MISMATCH
+V40_ZHENG_SIMULTANEOUS_AP_DIRECT_ATTACHMENT
+  = STOP_SCOPED_SOURCE_ARRAYS_MODULUS_RANGE_AND_LITERAL_ROW_MISMATCH
+V40_PASCADI_SMOOTH_AP_DIRECT_ATTACHMENT
+  = STOP_SCOPED_SMOOTH_TRIPLE_CONVOLUTION_NOT_ORDERED_MASTER_HYBRID_ROW
+V40_BFKMM_SHIFTED_CONVOLUTION_DIRECT_ATTACHMENT
+  = STOP_SCOPED_AUTOMORPHIC_COEFFICIENT_AND_SHIFT_FAMILY_MISMATCH
+V40_BLOMER_PASCADI_DIRECT_ATTACHMENT
+  = STOP_SCOPED_POST_EMITTER_SEPARABLE_FIXED_MODULUS_ENGINE_NOT_ROW_ENERGY
+
+V41_SEPARATE_MARGINAL_LARGE_SIEVE
+  = STOP_SCOPED_DOES_NOT_CONTROL_SAME_INDEX_RESIDUAL_PRODUCT
+V41_OFFZERO_RESIDUAL_TO_ZERO_AXIS
+  = STOP_SCOPED_DELTA_ZERO_FIXTURE
+V41_MRT_DIRECT_ATTACHMENT
+  = STOP_SCOPED_SOURCE_COEFFICIENTS_LOG_SAVING_AND_Q_DEPENDENT_RESIDUAL_MISMATCH
+V41_MERIKOSKI_DIRECT_ATTACHMENT
+  = STOP_SCOPED_UNWEIGHTED_FIRST_SHIFT_AVERAGE_NOT_CENTERED_ROW_SQUARE
+V41_LICHTMAN_TERAVAINEN_DIRECT_ATTACHMENT
+  = STOP_SCOPED_QUALITATIVE_EXCEPTIONAL_SET_CAN_CONTAIN_SPARSE_QK_SUPPORT_AND_COEFFICIENTS_MISMATCH
+V41_EVANS_DIRECT_ATTACHMENT
+  = STOP_SCOPED_E2_FACTOR_WINDOWS_AND_ALMOST_ALL_SHIFT_OUTPUT_MISMATCH
+V41_KOUKOULOPOULOS_SHORT_AP_ATTACHMENT
+  = STOP_SCOPED_Q_SQUARED_EXCEEDS_H_AND_ONE_SEQUENCE_MARGINAL
+V41_HARPER_GENERAL_BDH_ATTACHMENT
+  = STOP_SCOPED_FIXED_SEQUENCE_LARGE_MODULUS_AND_DISTRIBUTION_HYPOTHESES_MISMATCH
+V41_BAZIN_BETA_MARGINAL_TO_RESIDUAL_ROW
+  = STOP_SCOPED_ONE_SIDED_MARGINAL_AND_H_QUARTER_LOSS
+
+V42_GENERIC_CENTERED_KERNEL_Q_LOSS
+  = STOP_SCOPED_Q5_M3_COUNTEREXAMPLE_RATIO_75_OVER_7
+V42_COEFFICIENT_BLIND_ROW_BESSEL
+  = STOP_SCOPED_PHYSICAL_DIRECTION_REQUIRED
+V42_SPLIT_BETA_CHANNELS_BEFORE_OUTER_ABSOLUTE
+  = STOP_SCOPED_PRIME_ROW_EXACT_CANCELLATION_DESTROYED
+V42_OFFZERO_DIRECTIONAL_GATE_TO_ZERO_AXIS
+  = STOP_SCOPED_DELTA_ZERO_FIREWALL_RETAINED
+V42_MRT_DIRECT_ATTACHMENT
+  = STOP_SCOPED_SOURCE_COEFFICIENTS_AND_Q_DEPENDENT_RESIDUAL_MISMATCH
+V42_HARPER_BDH_DIRECT_ATTACHMENT
+  = STOP_SCOPED_ONE_FIXED_SEQUENCE_AND_MODULUS_HYPOTHESES_MISMATCH
+V42_BAZIN_DIRECT_ATTACHMENT
+  = STOP_SCOPED_ONE_SIDED_BETA_MARGINAL_NOT_JOINT_ROW_SQUARE
+V42_RUNBO_LI_DIRECT_ATTACHMENT
+  = STOP_SCOPED_FACTORED_MODULUS_PRIME_DISTRIBUTION_NOT_PROPER_FACTOR_RESIDUAL_DIRECTION
+V42_LOCAL_KLOOSTERMAN_ENGINE_TO_MPD
+  = STOP_SCOPED_BLOCK_ATOMIC_BUDGET_AND_Q_L2_REASSEMBLY_UNPAID
+V42_MILICEVIC_QIN_WU_DIRECT_ATTACHMENT
+  = STOP_SCOPED_POST_TRANSFORM_FIXED_MODULUS_KLOOSTERMAN_ARRAYS_ONLY
+~~~
+
+V40 cells只停止从 packet/global marginal直接跳到 q-row；V41 cells只停止把
+off-zero residual或现有 shift/AP sources改名为 physical residual theorem。V42 前四项
+要求保留 actual input direction、prime-row cancellation与 zero-axis firewall；后六项
+冻结已核 primary source的 literal attachment boundary。它们不停止
+`V42_PRIMARY_POSITIVE_GRAM_GATE`、`V42_CELLWISE_MOBIUS_PRIME_DIRECTIONAL_GATE`、
+source-native Type-I/II/Kloosterman transform compiler或 terminal q-local Gate A。
+当前 arithmetic advance仍为 `NO`；精确 proof、checker与 release boundary见第 89 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -8501,7 +8595,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V41 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V42 current）
 
 ```text
 进入仓库：
@@ -8509,6 +8603,8 @@ TPC-127 --check = PASS
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_mobius_directional_dispersion_compiler.md、
+research/tpc-big-road/tpc_bridge_b_mobius_directional_dispersion_checker.py、
 research/tpc-big-road/bridge_b_qlocal_residual_row_bessel_compiler.md、
 research/tpc-big-road/tpc_bridge_b_qlocal_residual_row_bessel_checker.py、
 research/tpc-big-road/bridge_b_row_energy_and_packet_route_atlas.md、
@@ -8559,7 +8655,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--88 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--89 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -8776,6 +8872,65 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V42_MAXIMUM_CLAIM = EXACT_QLOCAL_POSITIVE_GRAM_GATE_PROPER_FACTOR_LIFT_PAID_OCCURRENCE_DIAGONAL_DYADIC_DIRECTIONAL_COMPILER_AND_OPERATOR_ONLY_CERTIFICATE_NO_GO
+V42_ROUTE_ADVANCE = YES
+V42_CONDITIONAL_BRIDGE_ADVANCE = YES
+V42_ARITHMETIC_ADVANCE = NO
+V42_FIXED_ATOM_CREDIT = 0
+V42_STRICT_1_OVER_400 = UNPAID
+V42_L2 = NONE
+V42_TPC_207_TRIGGER = false
+V42_NUMBERED_RELEASE = NO
+V42_DERIVATION_STATUS = COHERENT_AFTER_EXACT_PROPER_FACTOR_LIFT_OCCURRENCE_DIAGONAL_DYADIC_REASSEMBLY_DIRECTIONAL_AND_ZERO_AXIS_FIREWALLS
+V42_ASSUMPTION_POLICY = CELLWISE_PHYSICAL_MOBIUS_PRIME_DIRECTIONAL_DISPERSION_REMAINS_EXPLICIT_OPEN_THEOREM
+V42_SELECTED_RESEARCH_ROUTE = PROPER_FACTOR_DIRECTIONAL_DISPERSION_FIRST__SOURCE_NATIVE_TYPE_I_II_TRANSFORM_SECOND__GENERIC_OPERATOR_AND_MARGINAL_ROADS_STOP__A_TERMINAL__C_RESERVE
+V42_V41_QLOCAL_SPLIT = RETAINED_EXACT_MODEL_PAID_RESIDUAL_OPEN
+V42_V35_PROPER_FACTOR_IDENTITY = RETAINED_EXACT_BETA_EQUALS_SUM_MU_TIMES_OMEGA
+V42_PROPER_FACTOR_SUPPORT = PROVED_EXACT_D_AND_K_AT_LEAST_2
+V42_PRIME_ROW_CANCELLATION = PROVED_EXACT_EMPTY_PROPER_FACTOR_SUM
+V42_RESIDUAL_PROPER_FACTOR_LIFT = PROVED_EXACT_BEFORE_ANY_OUTER_ABSOLUTE
+V42_PROPER_FACTOR_OCCURRENCE_DIAGONAL = PROVED_X_POWER_95_OVER_48
+V42_COLLAPSED_TO_OCCURRENCE_DIAGONAL = PROVED_WITH_DIVISOR_X_O1_LOSS
+V42_RESIDUAL_GRAM_IDENTITY = PROVED_EXACT_E_RES_EQUALS_D_RES_PLUS_REAL_SIGNED_O_RES
+V42_PRIMARY_POSITIVE_GRAM_GATE = OPEN_CONJECTURE_POSITIVE_O_RES_LE_X_POWER_37_OVER_16
+V42_SPIKE_BACKGROUND_ENERGY = PROVED_EXACT_WITH_SIGNED_CROSS_TERM_RETAINED
+V42_DYADIC_D_CELLS = PROVED_EXACT_DISJOINT_O_LOG_X_PARTITION
+V42_DYADIC_RESIDUAL_REASSEMBLY = PROVED_EXACT_RHO_EQUALS_SUM_J_RHO_J
+V42_CELLWISE_MOBIUS_PRIME_DIRECTIONAL_GATE = OPEN_CONJECTURE_E_J_LE_Q_X_O1_D_J
+V42_CELLWISE_DIRECTIONAL_LOSS = Q_EQUALS_X_POWER_1_OVER_3
+V42_CELLWISE_TO_GLOBAL_COMPILER = PROVED_BY_L2_TRIANGLE_AND_CELL_CAUCHY
+V42_CONDITIONAL_RESIDUAL_ENERGY = X_POWER_37_OVER_16
+V42_CONDITIONAL_RESIDUAL_DUAL_NORM = X_POWER_37_OVER_32
+V42_CONDITIONAL_SCALAR_OUTPUT = X_POWER_53_OVER_32
+V42_CONDITIONAL_ENDPOINT_MARGIN = 19_OVER_2400
+V42_CONDITIONAL_KAPPA = 1_OVER_48
+V42_CELLWISE_L2_DUAL = PROVED_ONE_OUTER_ABSOLUTE_MODULUS_FAMILY
+V42_OMEGA_TWO_BRANCH_FORM = PROVED_EXACT_MU_LOG_D_OR_MU_LOG_K_OVER_LOG_DK
+V42_LOG_DENOMINATOR_ABEL_COMPILER = PROVED_EXACT_UNIFORM_PRODUCT_CUTOFF_INTERFACE
+V42_OPERATOR_MATRIX_IDENTITY = PROVED_E_RES_EQUALS_NORM_A_ONE_ACTIVE_SQUARED_AND_D_RES_EQUALS_HS_SQUARED
+V42_STABLE_RANK_CEILING = PROVED_AT_MOST_NUMBER_OF_Q_ROWS_X_POWER_1_OVER_3
+V42_OPERATOR_ONLY_CERTIFICATE_LOSS_FLOOR = N_ACTIVE_OVER_X_POWER_1_OVER_3
+V42_OPERATOR_ONLY_THRESHOLD_SUPPORT_CEILING = X_POWER_273_OVER_400
+V42_OPERATOR_ONLY_FULL_ACTIVE_LOSS = X_POWER_2_OVER_3
+V42_OPERATOR_ONLY_ENDPOINT_EXCESS = 127_OVER_400
+V42_MAXIMAL_STABLE_RANK_FIXTURE = PROVED_2_BY_8_HADAMARD_ROWS_RATIO_4
+V42_GENERIC_CENTERED_KERNEL_Q_LOSS = STOP_SCOPED_Q5_M3_COUNTEREXAMPLE_RATIO_75_OVER_7
+V42_COEFFICIENT_BLIND_ROW_BESSEL = STOP_SCOPED_PHYSICAL_DIRECTION_REQUIRED
+V42_SPLIT_BETA_CHANNELS_BEFORE_OUTER_ABSOLUTE = STOP_SCOPED_PRIME_ROW_EXACT_CANCELLATION_DESTROYED
+V42_OFFZERO_DIRECTIONAL_GATE_TO_ZERO_AXIS = STOP_SCOPED_DELTA_ZERO_FIREWALL_RETAINED
+V42_TERMINAL_QLOCAL_GATE_A = OPEN_INDEPENDENT_SIGNED_COVARIANCE
+V42_MRT_DIRECT_ATTACHMENT = STOP_SCOPED_SOURCE_COEFFICIENTS_AND_Q_DEPENDENT_RESIDUAL_MISMATCH
+V42_HARPER_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_FIXED_SEQUENCE_AND_MODULUS_HYPOTHESES_MISMATCH
+V42_BAZIN_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_SIDED_BETA_MARGINAL_NOT_JOINT_ROW_SQUARE
+V42_RUNBO_LI_DIRECT_ATTACHMENT = STOP_SCOPED_FACTORED_MODULUS_PRIME_DISTRIBUTION_NOT_PROPER_FACTOR_RESIDUAL_DIRECTION
+V42_BLOMER_PASCADI_BALANCED_CELL = SOURCE_BACKED_LOCAL_ENGINE_Q_MINUS_1_OVER_32_AFTER_V38_EXACT_EMITTER
+V42_LOCAL_KLOOSTERMAN_ENGINE_TO_MPD = STOP_SCOPED_BLOCK_ATOMIC_BUDGET_AND_Q_L2_REASSEMBLY_UNPAID
+V42_MILICEVIC_QIN_WU_DIRECT_ATTACHMENT = STOP_SCOPED_POST_TRANSFORM_FIXED_MODULUS_KLOOSTERMAN_ARRAYS_ONLY
+V42_DIRECT_PRIMARY_SOURCE_FOR_MPD_CELL_GATE = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_10
+V42_FIRST_FATAL = NO_LITERAL_THEOREM_BOUNDS_POSITIVE_PHYSICAL_OFFDIAGONAL_GRAM_COLLISION_AT_X_POWER_37_OVER_16_WHILE_RETAINING_CENTERED_SPIKE_BACKGROUND_CROSS_TERM
+V42_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B_QLOCAL_MODEL_PIER_PAID_PROPER_FACTOR_DIRECTIONAL_SPAN_OPEN
+V42_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V42_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
 V41_MAXIMUM_CLAIM = EXACT_QLOCAL_ROW_SPLIT_AND_ELEMENTARY_MODEL_ENERGY_PAYMENT_REDUCE_GATE_B_TO_RESIDUAL_ROW_BESSEL_WITH_ZERO_AXIS_FIREWALL
 V41_ROUTE_ADVANCE = YES
 V41_CONDITIONAL_BRIDGE_ADVANCE = YES
@@ -13958,6 +14113,329 @@ V34_STRICT_1_OVER_400 = UNPAID
 V34_L2 = NONE
 V34_TPC_207_TRIGGER = false
 V34_SEALED_FOR_NEW_SESSION = true
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+~~~
+
+## 89. 2026-08-10 V42：positive Gram gate、proper-factor lift 与 Möbius--prime directional bridge
+
+V42 完整保留 V41 的 q-local split。令
+
+~~~text
+rho_q=sum_(t,u in I_x,t!=u,q does not divide tu)
+  beta_raw(t)[w(u)-Gamma_q(u)]K_H(u-t)c'_q(u-t),
+E_res=sum_q|rho_q|^2.                                 (89.1)
+~~~
+
+V41 已证明 model row energy与 residual diagonal分别满足
+
+~~~text
+E_model<<x^(37/16+o(1)),
+D_res=sum_(q,t)|beta_raw(t)G_res(q,t)|^2
+     <<x^(95/48+o(1)).                               (89.2)
+~~~
+
+V42 的任务不是重新打开 model，而是识别 residual中真正需要的方向。
+
+### 89.1 Exact positive Gram gate
+
+置
+
+~~~text
+a_(q,t)=beta_raw(t)G_res(q,t).
+~~~
+
+逐项展开给
+
+~~~text
+E_res=D_res+O_res,
+O_res=sum_q sum_(t1!=t2)a_(q,t1)conjugate(a_(q,t2)).  (89.3)
+~~~
+
+`O_res` 为实数但可以有任意符号。因此最窄 benchmark 只控制 actual physical
+direction 的 positive collision：
+
+~~~text
+(O_res)_+<<x^(37/16+o(1)).                            (89.4)
+~~~
+
+这比任意 coefficient row-Bessel theorem弱，也比对每个 off-diagonal collision取绝对值
+弱。另一 exact 表示为
+
+~~~text
+rho_q=S_q-B_q,
+E_res=sum_q|S_q|^2+sum_q|B_q|^2
+      -2 Re sum_q S_q conjugate(B_q).                 (89.5)
+~~~
+
+所以 centered spike/background 的 signed cross term必须保留。q=5 finite fixture给
+`S=8,B=2,cross=-32,rho=6,D=6,E=36`；分别平方会得到 `68`，不是 physical
+`36`。
+
+### 89.2 Exact proper-factor lift 与 occurrence diagonal
+
+V35 的 identity为
+
+~~~text
+beta_raw(t)=sum_(dk=t,d,k>=2)mu(d)omega_x(d,k),
+omega_x(d,k)=
+  -log(d)/log(dk), d^400<=x^133;
+   log(k)/log(dk), d^400>x^133.                       (89.6)
+~~~
+
+在任何外层绝对值之前代入 (89.1)，得到
+
+~~~text
+rho_q=sum_(dk,u,d,k>=2,u!=dk,q does not divide dku)
+  mu(d)omega_x(d,k)[w(u)-Gamma_q(u)]
+  K_H(u-dk)c'_q(u-dk).                                (89.7)
+~~~
+
+这保留 common prime shell、ordered `+2,-1` collapse、Möbius/log、hybrid、
+hard shell、unit masks与 off-diagonal deletion。特别地，prime `t=p` 的 proper-factor
+sum为空，故 `beta_raw(p)=0` 仍精确成立。
+
+定义 occurrence diagonal
+
+~~~text
+D_pf=sum_(q,dk)|mu(d)omega_x(d,k)G_res(q,dk)|^2.
+~~~
+
+由 centered kernel absolute mass `<<H/q` 与 divisor count，
+
+~~~text
+D_pf<<Q x^(1+o(1))(H/Q)^2
+    =xH^2/Q=x^(95/48+o(1)),                           (89.8)
+D_res<=x^o(1)D_pf.
+~~~
+
+反向不声称成立；V42 有意不借用同一 `t` 的 divisor cancellation。
+
+### 89.3 Disjoint dyadic directional compiler
+
+令 `C_j={(d,k):2^j<=d<2^(j+1),dk in I_x,d,k>=2}`。这些 cells互不相交且
+`J_x=O(log x)`。逐 cell定义 `rho_(q,j)` 与 `D_j`，则
+
+~~~text
+rho_q=sum_j rho_(q,j),  sum_j D_j=D_pf.               (89.9)
+~~~
+
+当前 source-facing 主定理为
+
+~~~text
+H_MPD(j): sum_q|rho_(q,j)|^2
+          <<Q x^o(1) D_j                              (89.10)
+~~~
+
+uniformly in every active cell。它只沿 literal
+`mu(d)omega_x(d,k)[w-Gamma_q]` direction陈述，不接受任意 arrays。
+Hilbert-space triangle 与 cell Cauchy给
+
+~~~text
+E_res^(1/2)
+ <=sum_j(sum_q|rho_(q,j)|^2)^(1/2)
+ <<Q^(1/2)x^o(1)D_pf^(1/2),                           (89.11)
+~~~
+
+故
+
+~~~text
+E_res<<x^(37/16+o(1)),
+E_res^(1/2)<<x^(37/32+o(1)),
+|C_x|<<x^(53/32+o(1)),
+1997/1200-53/32=19/2400.                              (89.12)
+~~~
+
+这对应 V41 sample `tau=1/3` 与 `kappa=1/48`。对 `1/log(dk)` 的 exact
+Stieltjes/Abel partial summation只要求 theorem uniform in product cutoff；它暴露
+`mu(d)log d` 或 `mu(d)log k`，但本身不证明 (89.10)。
+
+### 89.4 Operator-only no-go 与两道 firewall
+
+把 zero columns删除后，令 `N_active` 为 active t-columns数，`R=#Q=x^(1/3+o(1))`。
+任意只读 operator norm、Hilbert--Schmidt norm、stable rank 或 Schatten spectrum而
+不读取 physical all-ones input direction的 certificate，最好的 universal loss仍为
+
+~~~text
+N_active/R.                                           (89.13)
+~~~
+
+要小于 V41 threshold `419/1200`，必须先有
+
+~~~text
+N_active<=x^(273/400-o(1)).                           (89.14)
+~~~
+
+full-active regime给 `x^(2/3)` loss，超出 endpoint `127/400`。一个
+`2 by 8` constant/alternating Hadamard-row fixture有
+`HS^2=16,E=64,stable-rank=2,E/HS^2=4=N/R`。这只是 certificate-level
+no-go：它不证明 literal matrix full-active，也不证明 physical lower bound。
+
+第二个 q=5、M=3 centered-kernel fixture给
+`E/D=75/7>5`，所以 coefficient-blind `Q`-loss命题在通用矩阵类上为假。
+它同样只是 typing counterexample。最后，若把 V35 channels在 outer absolute之前
+分开，prime row的 exact `1-1=0` cancellation会被破坏；分别估计两支可以成为更强的
+充分条件，但不能领取 exact directional credit。
+
+所有上述 rows删除 `h=0`。故 delta-zero fixture仍使 directional row energy为零而
+physical atom任意；terminal q-local Gate A继续独立 OPEN。
+
+### 89.5 Primary-source boundary
+
+逐 primary theorem text审核：
+
+- MRT v3处理 source-native prime/divisor shift energy与 abstract minor-arc reduction，
+  不接受 q-dependent residual proper-factor row；
+- Harper v1是一个 fixed q-independent sequence的 general BDH theorem，并附加
+  distribution/non-concentration hypotheses；即使反事实免费满足，natural ceiling也只有
+  `kappa=0`；
+- Bazin v1提供一个 fixed convolution sequence的 one-sided marginal，不是 same-index
+  residual row square；
+- Runbo Li v6处理 factored moduli中的 prime distribution，不接受 moving
+  `u=dk mod q`、`mu(d)omega(d,k)` 与 `w-Gamma_q`；
+- Blomer--Pascadi v1 Theorem 1.1在 V38 balanced Kloosterman cell上给
+  `q^(-1/32)` local saving；但 V38 block atomic budget与 collective
+  `l2(q)` reassembly未支付；
+- Milicevic--Qin--Wu v1 Theorem 1.1给 fixed-modulus Kloosterman arrays的 local
+  saving；它同样不是 (89.10)。
+
+截至 2026-08-10，没有 checked primary theorem直接证明 physical MPD cell gate。
+
+### 89.6 Canonical status registry
+
+~~~text
+V42_MAXIMUM_CLAIM = EXACT_QLOCAL_POSITIVE_GRAM_GATE_PROPER_FACTOR_LIFT_PAID_OCCURRENCE_DIAGONAL_DYADIC_DIRECTIONAL_COMPILER_AND_OPERATOR_ONLY_CERTIFICATE_NO_GO
+V42_ROUTE_ADVANCE = YES
+V42_CONDITIONAL_BRIDGE_ADVANCE = YES
+V42_ARITHMETIC_ADVANCE = NO
+V42_FIXED_ATOM_CREDIT = 0
+V42_STRICT_1_OVER_400 = UNPAID
+V42_L2 = NONE
+V42_TPC_207_TRIGGER = false
+V42_NUMBERED_RELEASE = NO
+V42_DERIVATION_STATUS = COHERENT_AFTER_EXACT_PROPER_FACTOR_LIFT_OCCURRENCE_DIAGONAL_DYADIC_REASSEMBLY_DIRECTIONAL_AND_ZERO_AXIS_FIREWALLS
+V42_ASSUMPTION_POLICY = CELLWISE_PHYSICAL_MOBIUS_PRIME_DIRECTIONAL_DISPERSION_REMAINS_EXPLICIT_OPEN_THEOREM
+V42_SELECTED_RESEARCH_ROUTE = PROPER_FACTOR_DIRECTIONAL_DISPERSION_FIRST__SOURCE_NATIVE_TYPE_I_II_TRANSFORM_SECOND__GENERIC_OPERATOR_AND_MARGINAL_ROADS_STOP__A_TERMINAL__C_RESERVE
+V42_V41_QLOCAL_SPLIT = RETAINED_EXACT_MODEL_PAID_RESIDUAL_OPEN
+V42_V35_PROPER_FACTOR_IDENTITY = RETAINED_EXACT_BETA_EQUALS_SUM_MU_TIMES_OMEGA
+V42_PROPER_FACTOR_SUPPORT = PROVED_EXACT_D_AND_K_AT_LEAST_2
+V42_PRIME_ROW_CANCELLATION = PROVED_EXACT_EMPTY_PROPER_FACTOR_SUM
+V42_RESIDUAL_PROPER_FACTOR_LIFT = PROVED_EXACT_BEFORE_ANY_OUTER_ABSOLUTE
+V42_PROPER_FACTOR_OCCURRENCE_DIAGONAL = PROVED_X_POWER_95_OVER_48
+V42_COLLAPSED_TO_OCCURRENCE_DIAGONAL = PROVED_WITH_DIVISOR_X_O1_LOSS
+V42_RESIDUAL_GRAM_IDENTITY = PROVED_EXACT_E_RES_EQUALS_D_RES_PLUS_REAL_SIGNED_O_RES
+V42_PRIMARY_POSITIVE_GRAM_GATE = OPEN_CONJECTURE_POSITIVE_O_RES_LE_X_POWER_37_OVER_16
+V42_SPIKE_BACKGROUND_ENERGY = PROVED_EXACT_WITH_SIGNED_CROSS_TERM_RETAINED
+V42_DYADIC_D_CELLS = PROVED_EXACT_DISJOINT_O_LOG_X_PARTITION
+V42_DYADIC_RESIDUAL_REASSEMBLY = PROVED_EXACT_RHO_EQUALS_SUM_J_RHO_J
+V42_CELLWISE_MOBIUS_PRIME_DIRECTIONAL_GATE = OPEN_CONJECTURE_E_J_LE_Q_X_O1_D_J
+V42_CELLWISE_DIRECTIONAL_LOSS = Q_EQUALS_X_POWER_1_OVER_3
+V42_CELLWISE_TO_GLOBAL_COMPILER = PROVED_BY_L2_TRIANGLE_AND_CELL_CAUCHY
+V42_CONDITIONAL_RESIDUAL_ENERGY = X_POWER_37_OVER_16
+V42_CONDITIONAL_RESIDUAL_DUAL_NORM = X_POWER_37_OVER_32
+V42_CONDITIONAL_SCALAR_OUTPUT = X_POWER_53_OVER_32
+V42_CONDITIONAL_ENDPOINT_MARGIN = 19_OVER_2400
+V42_CONDITIONAL_KAPPA = 1_OVER_48
+V42_CELLWISE_L2_DUAL = PROVED_ONE_OUTER_ABSOLUTE_MODULUS_FAMILY
+V42_OMEGA_TWO_BRANCH_FORM = PROVED_EXACT_MU_LOG_D_OR_MU_LOG_K_OVER_LOG_DK
+V42_LOG_DENOMINATOR_ABEL_COMPILER = PROVED_EXACT_UNIFORM_PRODUCT_CUTOFF_INTERFACE
+V42_OPERATOR_MATRIX_IDENTITY = PROVED_E_RES_EQUALS_NORM_A_ONE_ACTIVE_SQUARED_AND_D_RES_EQUALS_HS_SQUARED
+V42_STABLE_RANK_CEILING = PROVED_AT_MOST_NUMBER_OF_Q_ROWS_X_POWER_1_OVER_3
+V42_OPERATOR_ONLY_CERTIFICATE_LOSS_FLOOR = N_ACTIVE_OVER_X_POWER_1_OVER_3
+V42_OPERATOR_ONLY_THRESHOLD_SUPPORT_CEILING = X_POWER_273_OVER_400
+V42_OPERATOR_ONLY_FULL_ACTIVE_LOSS = X_POWER_2_OVER_3
+V42_OPERATOR_ONLY_ENDPOINT_EXCESS = 127_OVER_400
+V42_MAXIMAL_STABLE_RANK_FIXTURE = PROVED_2_BY_8_HADAMARD_ROWS_RATIO_4
+V42_GENERIC_CENTERED_KERNEL_Q_LOSS = STOP_SCOPED_Q5_M3_COUNTEREXAMPLE_RATIO_75_OVER_7
+V42_COEFFICIENT_BLIND_ROW_BESSEL = STOP_SCOPED_PHYSICAL_DIRECTION_REQUIRED
+V42_SPLIT_BETA_CHANNELS_BEFORE_OUTER_ABSOLUTE = STOP_SCOPED_PRIME_ROW_EXACT_CANCELLATION_DESTROYED
+V42_OFFZERO_DIRECTIONAL_GATE_TO_ZERO_AXIS = STOP_SCOPED_DELTA_ZERO_FIREWALL_RETAINED
+V42_TERMINAL_QLOCAL_GATE_A = OPEN_INDEPENDENT_SIGNED_COVARIANCE
+V42_MRT_DIRECT_ATTACHMENT = STOP_SCOPED_SOURCE_COEFFICIENTS_AND_Q_DEPENDENT_RESIDUAL_MISMATCH
+V42_HARPER_BDH_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_FIXED_SEQUENCE_AND_MODULUS_HYPOTHESES_MISMATCH
+V42_BAZIN_DIRECT_ATTACHMENT = STOP_SCOPED_ONE_SIDED_BETA_MARGINAL_NOT_JOINT_ROW_SQUARE
+V42_RUNBO_LI_DIRECT_ATTACHMENT = STOP_SCOPED_FACTORED_MODULUS_PRIME_DISTRIBUTION_NOT_PROPER_FACTOR_RESIDUAL_DIRECTION
+V42_BLOMER_PASCADI_BALANCED_CELL = SOURCE_BACKED_LOCAL_ENGINE_Q_MINUS_1_OVER_32_AFTER_V38_EXACT_EMITTER
+V42_LOCAL_KLOOSTERMAN_ENGINE_TO_MPD = STOP_SCOPED_BLOCK_ATOMIC_BUDGET_AND_Q_L2_REASSEMBLY_UNPAID
+V42_MILICEVIC_QIN_WU_DIRECT_ATTACHMENT = STOP_SCOPED_POST_TRANSFORM_FIXED_MODULUS_KLOOSTERMAN_ARRAYS_ONLY
+V42_DIRECT_PRIMARY_SOURCE_FOR_MPD_CELL_GATE = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_10
+V42_FIRST_FATAL = NO_LITERAL_THEOREM_BOUNDS_POSITIVE_PHYSICAL_OFFDIAGONAL_GRAM_COLLISION_AT_X_POWER_37_OVER_16_WHILE_RETAINING_CENTERED_SPIKE_BACKGROUND_CROSS_TERM
+V42_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B_QLOCAL_MODEL_PIER_PAID_PROPER_FACTOR_DIRECTIONAL_SPAN_OPEN
+V42_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V42_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATE_B
+~~~
+
+### 89.7 Artifact、checker 与 pending release gate
+
+~~~text
+research/tpc-big-road/bridge_b_mobius_directional_dispersion_compiler.md
+research/tpc-big-road/tpc_bridge_b_mobius_directional_dispersion_checker.py
+~~~
+
+checker冻结 50-field contract、59-row registry、6 source locks、4 dependency locks；
+registry SHA-256为
+`d1d3ec9094a2df4d96dc315fa332b45b6a955ce464e860bc40485efa9d66d4d7`；
+152/121/14/10/182 mutations，共 479 个 unique actions。V42 不创建 TPC-207、
+paper、PDF 或 build output。
+
+~~~text
+V42_FINAL_RELEASE_QA = PASS_AFTER_LATE_REMOTE_RH391_DELTA_AUDIT
+V42_MATH_SOURCE_FORMULA_QA = PASS
+V42_CHECKER_ADVERSARIAL_QA = PASS
+V42_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V42_PRECLOSURE_HANDOFF_RAW_SHA256 = 3427eb4ffe95c5f04fd7844c63f9afa2a2ef385af3890e367ed2f849333c693f
+V42_PRECLOSURE_HANDOFF_LF_SHA256 = 3427eb4ffe95c5f04fd7844c63f9afa2a2ef385af3890e367ed2f849333c693f
+V42_COMPASS_RAW_LF_SHA256 = 8249acc928be0a0eea57ca1febe14aca07f39ff2ffafad041cf74165fa0b3fbd
+V42_BIG_ROAD_README_RAW_LF_SHA256 = 57c987e165e05eb2942cb9a5eaabfdf7a2b3f09454cc6cae3095c760b087c94b
+V42_ROUTE_MAP_RAW_LF_SHA256 = fa1c855def4cb0f9a88dc105a9bf6f2b28948800b199e527ad1effd4b89df26f
+V42_PROOF_RAW_LF_SHA256 = 7888146d36445289520b7f20b9fc99f5ccf39c41d9ed5aec7da47b9e25cb859f
+V42_CHECKER_RAW_LF_SHA256 = 0bb4bd2133851060737060ebd958fc0cd3caa99ed4da130d1463cf29af369c5b
+V42_CHECKER_STDOUT_BYTES = 2188
+V42_CHECKER_STDOUT_RAW_LF_SHA256 = 34ee1053d840aaaa1d3f59582f204ad7e2d40db14fefd32ed5b09f512aff8909
+V42_CHECKER_PAYLOAD_BYTES = 2187
+V42_CHECKER_PAYLOAD_SHA256 = 0e87037f6c02bfa267f83663facbd1b6f7752937456f0369683fa011b6604477
+V42_CHECKER_CONTRACT_FIELDS = 50
+V42_CHECKER_RESULT_FIELDS = 60
+V42_CHECKER_REGISTRY_ROWS = 59
+V42_CHECKER_SOURCE_LOCKS = 6
+V42_CHECKER_DEPENDENCY_LOCKS = 4
+V42_CHECKER_MUTATIONS = 152_121_14_10_182_TOTAL_479
+V42_CHECKER_REGISTRY_SHA256 = d1d3ec9094a2df4d96dc315fa332b45b6a955ce464e860bc40485efa9d66d4d7
+V42_CHECKER_NORMAL_OPTIMIZED = PASS_BYTE_IDENTICAL_STDERR_EMPTY
+V42_CHECKER_NOFLAG_EXTRAFLAG = FAIL_CLOSED_EXPLICIT_CHECK_REQUIRED
+V42_CHECKER_GLOBAL_PROVIDER_DEFAULT_CLOSURE_ATTACKS = PASS_NO_FALSE_PROMOTION
+V42_REGISTRY_MIRRORS = HANDOFF_24_HANDOFF_89_COMPASS_43_README_42_PROOF_10_CHECKER_EXACT_59_OF_59
+V42_REGISTRY_MIRROR_BLOCKS = 6
+V42_STOP_SCOPED_REGISTRY = HANDOFF_6_V40_9_V41_9_V42_10_EXACT
+V42_FORMULA_LEDGER = PASS_95_OVER_48_37_OVER_16_37_OVER_32_53_OVER_32_19_OVER_2400_1_OVER_48_273_OVER_400_127_OVER_400
+V42_FINITE_FIXTURES = PASS_PROPER_FACTOR_DYADIC_HADAMARD_Q5_SPIKE_BACKGROUND_ZERO_AXIS
+V42_PRIMARY_SOURCE_SCREEN = PASS_SIX_LOCKS_NO_DIRECT_MPD_OR_POSITIVE_GRAM_THEOREM
+V42_PROOF_EQUATION_TAGS = 53_OF_53_UNIQUE
+V42_MARKDOWN_FENCES = HANDOFF_2922_426__COMPASS_258_86__README_420_84__ROUTE_MAP_8_0__PROOF_4_0
+V42_UTF8_C0_DEL_TRAILING_FINAL_LF = PASS
+V42_STARTUP_REGRESSION = 22_OF_22_PASS_STDERR_EMPTY
+V42_SUPPLEMENTAL_ATTEMPTED = 4_OF_4
+V42_SUPPLEMENTAL_BYTE_EXACT = 3_OF_4
+V42_TPC126_SEMANTIC_CERTIFICATE = PASS_ONE_ULP_PLATFORM_SERIALIZATION_ONLY
+V42_TPC126_FROZEN_DIRECT_REAL = 40.17369814909115
+V42_TPC126_LINUX_DIRECT_REAL = 40.17369814909116
+V42_BIG_ROAD_PROCESSES = 40_OF_40_PASS_STDERR_EMPTY
+V42_BIG_ROAD_STDOUT_IDENTITIES = 20_OF_20
+V42_RELEASE_ALLOWLIST = EXACT_SIX_PATHS
+V42_CACHED_DIFF = EMPTY
+V42_DIFF_CHECK = PASS
+V42_UNTRACKED_RELEASE_PATHS = EXACT_TWO
+V42_PROTECTED_UNTRACKED_COUNT = 0
+V42_PYC_COUNT = 0
+V42_BASELINE_HEAD__LATE_REMOTE_AUDIT = HEAD_48b7bca985f35ccd4295b9ce44b55177488eef32__ORIGIN_REMOTE_997c824829adbfc5e69b132fc907de2e56d81811__DELTA_RH391_ONLY_36_PATHS_ZERO_SIX_PATH_OVERLAP
+V42_ROUTE_ADVANCE = YES
+V42_CONDITIONAL_BRIDGE_ADVANCE = YES
+V42_ARITHMETIC_ADVANCE = NO
+V42_FIXED_ATOM_CREDIT = 0
+V42_STRICT_1_OVER_400 = UNPAID
+V42_L2 = NONE
+V42_TPC_207_TRIGGER = false
+V42_SEALED_FOR_NEW_SESSION = true
 NUMBERED_RELEASE = NO
 TPC_207_TRIGGER = false
 ~~~

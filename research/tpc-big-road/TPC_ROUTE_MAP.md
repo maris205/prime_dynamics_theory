@@ -1,8 +1,8 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-09
+更新时间：2026-08-10
 
-当前地图版本：V41
+当前地图版本：V42
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,9 +46,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +------------------------------------------+
-        | YOU ARE HERE — V41                      |
-        | q-local model pier PAID;                |
-        | residual row-Bessel span OPEN           |
+        | YOU ARE HERE — V42                      |
+        | q-local model + diagonal PAID;          |
+        | Möbius directional span OPEN            |
         +------------------------------------------+
                 |
                 v
@@ -67,10 +67,12 @@ Bridge A 的 terminal 桥墩
 当前站在岛 2 通往岛 6 的 Bridge A / Gate B 桥面；V38 已完成 canonical
 Fourier--Kloosterman emitter，V39 看清 nuclear/Schatten toll，V40 把 scalar 压到
 `q`-row，V41 又把每个 row 精确拆成已付的三剩余类模型 `m_q` 与 residual `rho_q`。
-模型能量已付到 `x^(37/16+o(1))`，模型输出为 `x^(53/32+o(1))`；主红叉进一步缩成
-literal residual row energy `sum_q|rho_q|^2<<x^(7/3-kappa)`、
-`kappa>1/200`，preferred implementation 是相对 residual diagonal 的 row-Bessel
-`tau<419/1200`。terminal zero-axis Gate A仍独立开放；核心算术 saving 尚未证明。**
+V42 再把 residual的最窄目标识别为 positive physical Gram collision，并用 V35
+proper-factor identity将 preferred implementation变成 dyadic Möbius--prime directional
+cells。模型与 occurrence diagonal均已付；generic operator/Schatten certificate若不先把
+active support压到 `x^(273/400)` 以下就过不了 endpoint。当前红叉是保留 actual
+`mu(d)omega_x(d,k)` 与 `w-Gamma_q` 的 directional dispersion，而不是任意系数
+row-Bessel。terminal zero-axis Gate A仍独立开放；核心算术 saving 尚未证明。**
 
 ## 2. 图例与状态语言
 
@@ -153,9 +155,10 @@ endpoint 的主桥。
 而是不断删除过付、修正 Fourier convention、保持 literal coefficients，并把红叉处的
 困难压缩到当前两个明确桥墩；第一个桥墩又保留三条条件车道：
 
-1. `B`：QLR residual q-row energy优先，RBR restricted residual row-Bessel为首选
-   施工接口；raw-row R2 已被 exact q-local split升级，P2 full packet、K specialized
-   Schatten、E residual energy与 X character route备用；
+1. `B`：positive physical Gram collision为最窄 gate；V42 proper-factor dyadic MPD
+   cells为首选施工接口。QLR q-local split已付 model，generic RBR/operator/Schatten
+   certificate因 active-support维数墙停止；P2 full packet、K local Kloosterman engine、
+   E residual energy与 X character route备用；
 2. `A`：terminal q-local signed covariance。
 
 Bridge A 当前状态：`OPEN`。
@@ -169,7 +172,7 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 当前精确位置：V41
+## 5. 当前精确位置：V42
 
 V40 已把 packet 压到每个模数的一条 scalar row
 
@@ -224,24 +227,54 @@ q/(q-1)^2,&\text{otherwise}
 \]
 
 benchmark `tau=1/3` 仍给 `37/16` 能量和 `53/32` 输出。V41 已冻结 one-outer-
-absolute L2 dual与 same-index character row，供未来 theorem施工；现有 marginal
-large-sieve/AP结果不控制这个 residual product。所有 row 都删除 `h=0`，所以即使
-Gate B闭合，terminal q-local Gate A 仍必须独立支付。
+absolute L2 dual与 same-index character row。
+
+V42 进一步展开
+
+\[
+\mathcal E_{\rm res}=\mathcal D_{\rm res}+\mathcal O_{\rm res},
+\]
+
+所以最窄 primary theorem只是
+
+\[
+(\mathcal O_{\rm res})_+\ll x^{37/16+o(1)}.
+\]
+
+把 V35 identity
+
+\[
+\beta(t)=\sum_{dk=t,\ d,k\ge2}\mu(d)\omega_x(d,k)
+\]
+
+插入同一 residual后，proper-factor occurrence diagonal仍为
+`x^(95/48+o(1))`。对 `O(log x)` 个 disjoint dyadic `d`-cells，若证明
+
+\[
+\sum_q|\rho_{q,j}|^2\ll Qx^{o(1)}\mathcal D_j,
+\]
+
+则 exact cell reassembly给 benchmark输出和 `19/2400` margin。另一方面，
+orientation-blind operator certificate只能给 loss `N_active/#Q`；进入 endpoint要求
+`N_active<=x^(273/400-o(1))`。full-active时该 loss为 `x^(2/3)`，比阈值多
+`127/400`。因此当前主路必须证明 actual Möbius--prime方向的 collision；现有 local
+Kloosterman engine只到单 cell，未付 block atomic budget和跨 `q` 的 L2 reassembly。
+所有 row仍删除 `h=0`，所以即使 Gate B闭合，terminal q-local Gate A也必须独立支付。
 
 ## 6. 图像名称与仓库名称的对应
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
 
-| 图像语言 | 仓库 V41 语言 | 关系 |
+| 图像语言 | 仓库 V42 语言 | 关系 |
 |---|---|---|
-| Bridge A：解析 collective saving | `B(QLR/RBR/P2/K/E/X)` 后接 `A` | 图像的一座大桥被拆成多车道 B 与 terminal A |
+| Bridge A：解析 collective saving | `B(positive Gram / MPD / P2 / K / E / X)` 后接 `A` | 图像的一座大桥被拆成多车道 B 与 terminal A |
 | Bridge B：distinguished-seed genericity | `C` symmetry-breaking reserve | 都是动力学/指定 seed 后备线 |
-| 核心算术估计 | residual row energy / RBR `tau<419/1200` + terminal covariance | 当前 red-X 的优先施工方案 |
+| 核心算术估计 | positive physical Gram / dyadic MPD `Q`-loss + terminal covariance | 当前 red-X 的优先施工方案 |
 
 仓库选择路线为：
 
 ```text
-QLR_RESIDUAL_Q_ROW_ENERGY_VIA_RESTRICTED_RESIDUAL_ROW_BESSEL
+PHYSICAL_POSITIVE_GRAM_COLLISION_VIA_PROPER_FACTOR_DYADIC_MPD
 OR_P2_DIRECT_Q_DEPENDENT_PACKET_ENERGY
 OR_K_SPECIALIZED_BLOCK_SCHATTEN_COMPRESSION
 OR_E_WHOLE_RESIDUAL_ENERGY
@@ -252,7 +285,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V41：
+截至 V42：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -277,20 +310,25 @@ NUMBERED_RELEASE = NO
 
 优先级更新为：
 
-1. **B/QLR--RBR：证明 literal residual q-row restricted Bessel theorem**，目标
-   `E_res<<x^tau D_res`、`tau<419/1200`；首个 benchmark 为 `tau=1/3`；
-2. **B/P2、B/K、B/E 与 B/X：保留并行后备**，P2/K 是 stronger norms，K 必须是 non-generic physical
-   block-Schatten compression；E/X 分别是 `sigma<13/4800` whole residual energy和
-   `kappa>403/1200` joint character theorem，不与 K lane叠加 theorem credit；
-3. **A：证明 terminal q-local signed covariance**，不能用 off-zero norm 循环支付
+1. **B/PG--MPD：先证 positive physical Gram gate，再走 proper-factor dyadic
+   Möbius--prime directional dispersion**。当前 source-facing theorem为
+   `sum_q|rho_(q,j)|^2<<Q*x^o*D_j`；V41 QLR/RBR只保留为上游历史接口；
+2. **B/Type-I/II：把同一个 physical MPD cell编译到 coefficient-native
+   Type-I/II 或 balanced Kloosterman arrays**。Blomer--Pascadi local
+   `q^(-1/32)` engine可复用，但 block atomic budget与 collective `l2(q)`
+   reassembly必须同一 theorem支付；
+3. **B/P2、B/K、B/E 与 B/X：保留并行后备**。P2/K 是 stronger norms；E/X
+   分别是 `sigma<13/4800` whole residual energy和
+   `kappa>403/1200` joint character theorem，不与 MPD lane叠加 theorem credit；
+4. **A：证明 terminal q-local signed covariance**，不能用 off-zero norm 循环支付
    physical scalar；
-4. **C：只在前三条路线真实阻断或新 source 出现时，重开 distinguished-seed
+5. **C：只在前四条路线真实阻断或新 source 出现时，重开 distinguished-seed
    symmetry-breaking/dynamics reserve。**
 
 最窄 first fatal：
 
 ```text
-NO_LITERAL_THEOREM_BOUNDS_SUM_Q_ABS_RHO_Q_SQUARED_AT_X_POWER_7_OVER_3_MINUS_KAPPA_FOR_KAPPA_GREATER_THAN_1_OVER_200
+NO_LITERAL_THEOREM_BOUNDS_POSITIVE_PHYSICAL_OFFDIAGONAL_GRAM_COLLISION_AT_X_POWER_37_OVER_16_WHILE_RETAINING_CENTERED_SPIKE_BACKGROUND_CROSS_TERM
 ```
 
 ## 9. 后续更新协议
@@ -309,6 +347,7 @@ NO_LITERAL_THEOREM_BOUNDS_SUM_Q_ABS_RHO_Q_SQUARED_AT_X_POWER_7_OVER_3_MINUS_KAPP
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-10 | V42 | Bridge A / Gate B：positive Gram gate exposed, proper-factor directional span open | parent `48b7bca985f35ccd4295b9ce44b55177488eef32`; V42=current working release | exact residual Gram与 spike/background cross term；V35 proper-factor lift、`95/48` occurrence diagonal与 dyadic MPD compiler；generic operator certificate需要 support `<=x^(273/400)`，full-active loss `2/3`；arithmetic仍为 NO |
 | 2026-08-10 | V41 | Bridge A / Gate B：q-local model pier paid, residual row-Bessel span open | parent `fa68a37a73fe543983fb9c369498e53321bff080`; V41=current working release | exact split `s_q=m_q+rho_q`；三剩余类模型能量初等支付到 `37/16`、输出 `53/32`；主红叉缩为 residual row energy / row-Bessel，zero-axis A 仍独立；arithmetic 仍为 NO |
 | 2026-08-09 | V40 | Bridge A / Gate B：constant-residue direction selected, row-Bessel pier open | parent `d6566e42ef1f5717de4dea5e80a0d4293fb3c712`; V40=current working release | scalar只读取 `s_q=sum_r d_q(r)`；primary norm从 full packet降为 q-row energy，diagonal付至 `95/48`，restricted row-Bessel阈值放宽到 `419/1200`；arithmetic 仍为 NO |
 | 2026-08-09 | V39 | Bridge A / Gate B：packet-energy pier selected, Schatten toll exposed | parent `44a681ae29f1c13064fd672073eb7a7cd28694fd`; V39 historical release | exact block duality与absolute-mass barrier揭示 nuclear overpayment；generic/optimistic Schatten continuum均选择 `p=2`，主红叉改为 `kappa>1/200` packet energy；arithmetic 仍为 NO |
