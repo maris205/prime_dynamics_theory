@@ -1,7 +1,82 @@
 # TPC HANDOFF
 
 更新时间：2026-08-10
-交接状态：`BOLD_CHANNEL_V44_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V45_SEALED_FOR_NEW_SESSION`
+
+第 92 节仍位于“解析消去岛 / Bridge A / Gates A--B”。V45 对 V44 reciprocal
+variance 作 primitive-conductor audit。V44 的 aggregate `P^2` ceiling仍正确，但
+“imprimitive characters只花 `x^o(1)`”不能作为 uniform endpoint ledger：同一小导子
+character会诱导到许多 reduced moduli `s`。令
+
+~~~text
+P=Q^2/H=x^(1/96),  D0=P^(1/2)=x^(1/192).             (V45.1)
+~~~
+
+对 `s~S`、primitive conductor `d~D`、`N~SQ/H`，correct induction weight及
+primitive multiplicative large sieve给
+
+~~~text
+V_D^(2) << P^2(D/Q+1/D)x^o,
+V_D^(4) << P^2/N  if D>N,
+V_D^(4) << P^2/D  if D<=N.                           (V45.2)
+~~~
+
+在 `D>=D0` 上逐块取两界最小值，严格得到
+
+~~~text
+V_high << P^(3/2)x^o=x^(1/64+o(1)),
+|T_high| << x^(213/128+o(1)),
+1997/1200-213/128=1/9600.                            (V45.3)
+~~~
+
+所以 high-conductor transition spectrum已经 source-backed 支付。低导子不能靠
+centering删除。若 `s=de` 且 character由 primitive `chi* mod d`诱导，则 physical
+transform精确为
+
+~~~text
+tau(chi*) chi*(e) sum_u b(u) conjugate(chi*(u)) c_e(u),
+mu(e)c_e(u)=mu(gcd(e,u))phi(gcd(e,u)).               (V45.4)
+~~~
+
+principal `d=1` 与 `1<d<D0` 因而组成一个 explicit Gauss--Ramanujan structured
+major spectrum。V44 的两道 transition gates收缩为唯一一门
+
+~~~text
+|M_low| << x^(1997/1200-eta_low+o(1)), eta_low>0.    (V45.5)
+~~~
+
+该门成立即条件闭合完整 transition；可保留的 saving为
+`min(eta_low,1/9600,13/4800,817/4800)`。balanced `d>U,k>U`、
+reverse-Type-I `d>U,k<=U`、V42 Gate B及最终 V43 A+B AND compiler仍开放。
+BFI low-conductor lane只有 logarithmic Siegel--Walfisz saving；现有 asymptotic
+large sieve与 products-of-primes dense model均不直接接受 literal physical low
+spectrum。
+
+~~~text
+V45_ROUTE_ADVANCE = YES
+V45_CONDITIONAL_BRIDGE_ADVANCE = YES
+V45_CONDUCTOR_SPLIT = PROVED_EXACT_AT_D0_EQUALS_P_POWER_1_OVER_2
+V45_HIGH_CONDUCTOR_VARIANCE = PROVED_SOURCE_BACKED_P_POWER_3_OVER_2_X_O1
+V45_HIGH_CONDUCTOR_OUTPUT = PROVED_X_POWER_213_OVER_128_PLUS_O1
+V45_HIGH_CONDUCTOR_ENDPOINT_MARGIN = 1_OVER_9600
+V45_LOW_STRUCTURED_MAJOR_GATE = OPEN_X_POWER_1997_OVER_1200_MINUS_ETA_LOW_WITH_ETA_LOW_POSITIVE
+V45_FIRST_FATAL = NO_LITERAL_THEOREM_BOUNDS_THE_PRINCIPAL_PLUS_LOW_CONDUCTOR_INDUCED_CHARACTER_GAUSS_RAMANUJAN_SPECTRUM_WITH_PHYSICAL_LAMBDA_MINUS_B_AT_THE_STRICT_TRANSITION_POWER
+V45_ARITHMETIC_ADVANCE = NO
+V45_FIXED_ATOM_CREDIT = 0
+V45_STRICT_1_OVER_400 = UNPAID
+V45_L2 = NONE
+TPC_207_TRIGGER = false                                (V45.6)
+~~~
+
+完整 56-row canonical registry 位于 Handoff 第 24、92 节、Compass 第 46 节、
+big-road README 第 45 节、V45 proof 第 10 节与 checker。proof 为
+`research/tpc-big-road/bridge_b_conductor_stratified_transition_spectrum.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_conductor_stratified_transition_checker.py`。文字路线图
+同步标出“high conductor paid；low structured major 与 long-Mobius open”。V45 仍是
+不编号 big-road checkpoint；不创建 TPC-207、paper、PDF 或 build output。
+
+以下 V44 及更早页首块作为已封存历史上游保留；V44 的完整事实位于第 91 节，
+current truth 由上面的 V45 摘要、第 24 节与第 92 节控制。
 
 第 91 节仍位于“解析消去岛 / Bridge A / Gates A--B”。V44 选择 V43 剩余三窗中的
 transition `H/(4Q)<d<=U`，在任何 outer absolute 之前写
@@ -72,7 +147,7 @@ long-Möbius open”。V44 仍是不编号 big-road checkpoint；不创建 TPC-2
 PDF 或 build output。
 
 以下 V43 及更早页首块作为已封存历史上游保留；V43 的完整事实位于第 90 节，
-current truth 由上面的 V44 摘要、第 24 节与第 91 节控制。
+current truth 由页首 V45 摘要、第 24 节与第 92 节控制。
 
 第 90 节仍位于“解析消去岛 / Bridge A / Gates A--B”。V43 不再继续堆 fixed
 dyadic cells，而对 V35 proper-factor direction 在任何 outer absolute 之前作完整
@@ -138,8 +213,8 @@ long-Möbius span open”。V43 仍是不编号 big-road checkpoint；不创建 
 paper、PDF 或 build output。
 
 以下 V42 及更早页首块作为已封存历史上游保留；V42 的完整事实位于第 89 节，
-V43 historical truth由上面的 V43 摘要与第 90 节冻结；current truth由页首 V44、
-第 24 节与第 91 节控制。
+V43 historical truth由上面的 V43 摘要与第 90 节冻结；current truth由页首 V45、
+第 24 节与第 92 节控制。
 
 第 89 节仍位于“解析消去岛 / Bridge A / Gate B”。V41 已把 q-local model row
 支付到 `x^(37/16+o(1))`，留下 residual energy
@@ -222,7 +297,7 @@ big-road README 第 42 节、V42 proof 第 10 节与 checker。proof 为
 paper、PDF 或 build output。
 
 以下 V41 及更早页首块作为已封存历史上游保留；V41 的完整事实位于第 88 节，
-V42 历史 truth由本块与第 89 节冻结；current truth由页首 V44、第 24 节与第 91 节控制。
+V42 历史 truth由本块与第 89 节冻结；current truth由页首 V45、第 24 节与第 92 节控制。
 
 第 86 节仍位于“解析消去岛 / Bridge A / Gate B”，但 V39 对 V38 的 K lane
 作了真正的 macro reroute，而不是再加一个 local cell。V38 canonical emitter 与 scalar
@@ -2782,7 +2857,7 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 `V30_QLOCAL_MODEL_BOUND`
 （第 91 节控制；V43 transference由第 90 节冻结；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--91 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--92 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -2847,7 +2922,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--91 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--92 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -2908,11 +2983,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V44 gate及其 V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；四十四次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V45 gate及其 V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；四十六次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
+python -B research/tpc-big-road/tpc_bridge_b_conductor_stratified_transition_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_conductor_stratified_transition_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_transition_reciprocal_variance_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_transition_reciprocal_variance_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_proper_factor_poisson_transference_checker.py --check
@@ -3230,6 +3307,22 @@ TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1 = STOP_SCOPED
 FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT = STOP_SCOPED
 ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ = STOP_SCOPED
 ```
+
+V45 对 conductor-stratified transition spectrum 新增且仅新增三个 source-specific
+scoped stops：
+
+```text
+V45_BFI_LOW_CONDUCTOR_TO_FIXED_POWER = STOP_SCOPED_LOG_SAVING_DOES_NOT_PAY_1_OVER_400
+V45_CIS_ASYMPTOTIC_LARGE_SIEVE_DIRECT_ATTACHMENT = STOP_SCOPED_PRIMITIVE_ASYMPTOTIC_FORM_DOES_NOT_IDENTIFY_LITERAL_PHYSICAL_LOW_SPECTRUM
+V45_PRODUCTS_OF_PRIMES_DENSE_MODEL_DIRECT_ATTACHMENT = STOP_SCOPED_TERNARY_PRODUCT_AND_BURGESS_LENGTH_WRONG_PHYSICAL_OBJECT
+```
+
+第一项只停止把 BFI proof 中 low-conductor Siegel--Walfisz lane 的 logarithmic
+saving 宣称为 strict fixed power；后两项只停止把 primitive asymptotic large sieve或
+ternary products-of-primes dense model直接改名为 literal V45 physical low-spectrum
+theorem。它们不停止新的 principal-plus-induced-low-conductor Gauss--Ramanujan
+structured-major theorem、balanced/reverse-Type-I long-Möbius span、V42 Gate B、
+terminal A或 dynamics C。
 
 V34 在同一 Bridge A / Gate B object上新增且仅新增五个 scoped stops：
 
@@ -5123,6 +5216,25 @@ fixed-power theorem。`V44_GCD_REDUCTION`、`V44_MEAN_CENTERED_SPLIT`、
 `V44_RECIPROCAL_VARIANCE_GATE`、`V44_PRINCIPAL_MEAN_GATE`、
 `V44_LONG_BALANCED_WINDOW` 或 `V44_LONG_REVERSE_TYPE_I_WINDOW`。当前 arithmetic
 advance仍为 `NO`；精确 proof、checker与 release boundary见第 91 节。
+
+2026-08-10 的 Bridge A / Gates A--B V45 conductor-stratified transition compiler
+新增且仅新增以下三个 scoped STOP cells：
+
+~~~text
+V45_BFI_LOW_CONDUCTOR_TO_FIXED_POWER
+  = STOP_SCOPED_LOG_SAVING_DOES_NOT_PAY_1_OVER_400
+V45_CIS_ASYMPTOTIC_LARGE_SIEVE_DIRECT_ATTACHMENT
+  = STOP_SCOPED_PRIMITIVE_ASYMPTOTIC_FORM_DOES_NOT_IDENTIFY_LITERAL_PHYSICAL_LOW_SPECTRUM
+V45_PRODUCTS_OF_PRIMES_DENSE_MODEL_DIRECT_ATTACHMENT
+  = STOP_SCOPED_TERNARY_PRODUCT_AND_BURGESS_LENGTH_WRONG_PHYSICAL_OBJECT
+~~~
+
+这些 cells只停止把相应 source直接改名为 principal plus low-conductor physical
+Gauss--Ramanujan theorem。`V45_HIGH_CONDUCTOR_VARIANCE` 与
+`V45_HIGH_CONDUCTOR_OUTPUT` 已 source-backed 支付；它们不支付
+`V45_LOW_STRUCTURED_MAJOR_GATE`、`V45_LONG_BALANCED_WINDOW`、
+`V45_LONG_REVERSE_TYPE_I_WINDOW` 或 V42 Gate B。当前 arithmetic advance仍为 `NO`；
+精确 proof、checker与 release boundary见第 92 节。
 
 2026-08-05 的 `TPC_review3` big-road V2再新增且仅新增一个 broad crosslink cell：
 
@@ -8791,7 +8903,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V44 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V45 current）
 
 ```text
 进入仓库：
@@ -8799,6 +8911,8 @@ TPC-127 --check = PASS
 
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
+research/tpc-big-road/bridge_b_conductor_stratified_transition_spectrum.md、
+research/tpc-big-road/tpc_bridge_b_conductor_stratified_transition_checker.py、
 research/tpc-big-road/bridge_b_transition_reciprocal_variance_and_ramanujan_mean.md、
 research/tpc-big-road/tpc_bridge_b_transition_reciprocal_variance_checker.py、
 research/tpc-big-road/bridge_b_proper_factor_poisson_transference.md、
@@ -8855,7 +8969,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--91 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--92 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -9072,6 +9186,62 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V45_MAXIMUM_CLAIM = EXACT_CONDUCTOR_STRATIFICATION_REPLACES_THE_V44_CENTERED_VARIANCE_GATE_BY_A_SOURCE_BACKED_HIGH_CONDUCTOR_PAYMENT_AND_ONE_STRUCTURED_LOW_CONDUCTOR_MAJOR_SPECTRUM_GATE
+V45_ROUTE_ADVANCE = YES
+V45_CONDITIONAL_BRIDGE_ADVANCE = YES
+V45_ARITHMETIC_ADVANCE = NO
+V45_FIXED_ATOM_CREDIT = 0
+V45_STRICT_1_OVER_400 = UNPAID
+V45_L2 = NONE
+V45_TPC_207_TRIGGER = false
+V45_NUMBERED_RELEASE = NO
+V45_DERIVATION_STATUS = COHERENT_AFTER_EXACT_CONDUCTOR_SPLIT_GAUSS_RAMANUJAN_RETYPE_AND_HIGH_CONDUCTOR_PAYMENT
+V45_ASSUMPTION_POLICY = ONLY_THE_PRINCIPAL_PLUS_LOW_CONDUCTOR_STRUCTURED_MAJOR_SPECTRUM_REMAINS_OPEN_IN_THE_TRANSITION_WINDOW
+V45_SELECTED_RESEARCH_ROUTE = LOW_CONDUCTOR_STRUCTURED_MAJOR_FIRST__BALANCED_AND_REVERSE_TYPE_I_SECOND__V42_GATE_B_PARALLEL__V43_A_B_JOIN__C_RESERVE
+V45_V44_COMMON_TRANSITION = RETAINED_EXACT_BEFORE_FIRST_OUTER_ABSOLUTE
+V45_V44_IMPRIMITIVE_X_O1_SHORTCUT = RETYPED_AS_FALSE_UNIFORM_LEDGER_FOR_LOW_CONDUCTORS
+V45_SQUAREFREE_REDUCED_MODULUS = PROVED_EXACT_FROM_LAMBDA_S_SUPPORT
+V45_CHARACTER_INVERSION = PROVED_EXACT_ALL_CHARACTERS_BEFORE_OUTER_ABSOLUTE
+V45_CONDUCTOR_SPLIT = PROVED_EXACT_AT_D0_EQUALS_P_POWER_1_OVER_2
+V45_CONDUCTOR_THRESHOLD = D0_EQUALS_P_POWER_1_OVER_2_EQUALS_X_POWER_1_OVER_192
+V45_PRINCIPAL_MODE_LOCATION = PROVED_EXACT_INSIDE_LOW_CONDUCTOR_SPECTRUM_D_EQUALS_1
+V45_LOW_NONPRINCIPAL_TOWER = PROVED_EXACT_INDUCED_PRIMITIVE_CONDUCTORS_1_LT_D_LT_D0
+V45_HIGH_SPECTRUM = PROVED_EXACT_PRIMITIVE_CONDUCTORS_D_GE_D0
+V45_GAUSS_RAMANUJAN_TRANSFORM = PROVED_EXACT_TAU_CHI_TIMES_CHI_E_TIMES_PHYSICAL_CHIBAR_U_C_E_U
+V45_GAUSS_RAMANUJAN_PHASE = PROVED_CHI_STAR_E_NOT_ITS_CONJUGATE
+V45_RAMANUJAN_LOCAL_DENSITY = PROVED_MU_E_C_E_U_EQUALS_MU_GCD_TIMES_PHI_GCD
+V45_RECIPROCAL_COLLISION = PROVED_N1_Q2_MINUS_N2_Q1_EQUALS_ELL_S_WITH_ABS_ELL_LE_P_X_O1
+V45_DYADIC_SHORT_LENGTH = N_ASYMPTOTIC_S_Q_OVER_H
+V45_INDUCED_EXTENSION_WEIGHT = PROVED_X_O1_OVER_D_S_SQUARED
+V45_PRIMITIVE_SECOND_MOMENT = SOURCE_BACKED_P_SQUARED_TIMES_D_OVER_Q_PLUS_1_OVER_D
+V45_PRIMITIVE_FOURTH_MOMENT_D_GT_N = SOURCE_BACKED_P_SQUARED_OVER_N
+V45_PRIMITIVE_FOURTH_MOMENT_D_LE_N = SOURCE_BACKED_P_SQUARED_OVER_D
+V45_HIGH_CONDUCTOR_LOW_D_REGION = PROVED_SECOND_MOMENT_LE_P_POWER_3_OVER_2
+V45_HIGH_CONDUCTOR_HIGH_D_REGION = PROVED_FOURTH_MOMENT_LE_P_POWER_3_OVER_2
+V45_HIGH_CONDUCTOR_VARIANCE = PROVED_SOURCE_BACKED_P_POWER_3_OVER_2_X_O1
+V45_HIGH_CONDUCTOR_VARIANCE_EXPONENT = 1_OVER_64
+V45_HIGH_CONDUCTOR_OUTPUT = PROVED_X_POWER_213_OVER_128_PLUS_O1
+V45_HIGH_CONDUCTOR_ENDPOINT_MARGIN = 1_OVER_9600
+V45_LOW_STRUCTURED_ABSOLUTE_CEILING = X_POWER_5_OVER_3_PLUS_O1
+V45_LOW_STRUCTURED_MAJOR_GATE = OPEN_X_POWER_1997_OVER_1200_MINUS_ETA_LOW_WITH_ETA_LOW_POSITIVE
+V45_TRANSITION_CONDITIONAL_COMPILER = PROVED_LOW_STRUCTURED_GATE_PAYS_FULL_TRANSITION_WITH_HIGH_SPECTRUM_AND_CORRECTIONS
+V45_TRANSITION_CONDITIONAL_MARGIN = MIN_ETA_LOW_1_OVER_9600_13_OVER_4800_817_OVER_4800
+V45_PHYSICAL_Q_DIVIDES_U_CORRECTION = RETAINED_PAID_X_POWER_319_OVER_192_PLUS_O1
+V45_BACKGROUND_OUTPUT = RETAINED_PAID_X_POWER_7171_OVER_4800_PLUS_O1
+V45_LONG_BALANCED_WINDOW = OPEN_D_GT_U_AND_K_GT_U
+V45_LONG_REVERSE_TYPE_I_WINDOW = OPEN_D_GT_U_AND_K_LE_U
+V45_V42_GATE_B = RETAINED_PARALLEL_OPEN_POSITIVE_GRAM_MPD_ROUTE
+V45_BFI_PRIMITIVE_LARGE_SIEVE = SOURCE_BACKED_HIGH_CONDUCTOR_SECOND_AND_FOURTH_MOMENTS
+V45_BFI_INDUCED_CHARACTER_SPLIT = SOURCE_BACKED_ARCHITECTURE_LOW_SIEGEL_WALFISZ_HIGH_LARGE_SIEVE
+V45_BFI_LOW_CONDUCTOR_TO_FIXED_POWER = STOP_SCOPED_LOG_SAVING_DOES_NOT_PAY_1_OVER_400
+V45_CIS_ASYMPTOTIC_LARGE_SIEVE_DIRECT_ATTACHMENT = STOP_SCOPED_PRIMITIVE_ASYMPTOTIC_FORM_DOES_NOT_IDENTIFY_LITERAL_PHYSICAL_LOW_SPECTRUM
+V45_PRODUCTS_OF_PRIMES_DENSE_MODEL_DIRECT_ATTACHMENT = STOP_SCOPED_TERNARY_PRODUCT_AND_BURGESS_LENGTH_WRONG_PHYSICAL_OBJECT
+V45_LOW_EXCEPTIONAL_CHARACTER_FIREWALL = RETAIN_STRUCTURED_MODE_NO_UNIFORM_POWER_BORROWED
+V45_DIRECT_PRIMARY_SOURCE_FOR_LOW_STRUCTURED_GATE = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_10
+V45_FIRST_FATAL = NO_LITERAL_THEOREM_BOUNDS_THE_PRINCIPAL_PLUS_LOW_CONDUCTOR_INDUCED_CHARACTER_GAUSS_RAMANUJAN_SPECTRUM_WITH_PHYSICAL_LAMBDA_MINUS_B_AT_THE_STRICT_TRANSITION_POWER
+V45_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_TRANSITION_HIGH_CONDUCTOR_PAID_LOW_STRUCTURED_MAJOR_OPEN_LONG_MOBIUS_SPAN_OPEN
+V45_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V45_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATES_A_B
 V44_MAXIMUM_CLAIM = EXACT_TRANSITION_GCD_REDUCTION_SPLITS_THE_PRIMARY_ALIAS_INTO_PRINCIPAL_RAMANUJAN_MEAN_CENTERED_RECIPROCAL_VARIANCE_PAID_UNIT_CORRECTION_AND_PAID_BACKGROUND_WITH_THE_STRICT_ENDPOINT_CLOCK
 V44_ROUTE_ADVANCE = YES
 V44_CONDITIONAL_BRIDGE_ADVANCE = YES
@@ -14125,6 +14295,295 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
+## 92. 2026-08-10 V45：conductor-stratified transition spectrum
+
+V45 保留 V44 的 exact transition common spike、physical `q|u` correction与
+background payment，只修正 character variance的 conductor ledger。V44 aggregate
+ceiling `V_rec<<P^2x^o`仍可成立，但“inducing imprimitive characters costs `x^o`”
+不能作为 uniform endpoint argument：一个 primitive low-conductor character会诱导到
+约 `S/D` 个 reduced moduli。
+
+### 92.1 Exact conductor split
+
+取
+
+\[
+P=Q^2/H=x^{1/96},\qquad D_0=P^{1/2}=x^{1/192}.
+\]
+
+对 `G_s=(Z/sZ)^*`，令
+
+\[
+\widehat C_s(\chi)=\sum_{r\in G_s}C_s(r)\overline{\chi(r)},
+\qquad
+\check F_s(\chi)=\sum_{r\in G_s}F_s(r)\chi(r).
+\]
+
+finite character inversion逐字给
+
+\[
+\mathfrak T_x^{\rm com}
+=H\sum_s\frac1{\varphi(s)}\sum_{\chi\pmod s}
+\widehat C_s(\chi)\check F_s(\chi).
+\]
+
+由于 `lambda_s` 只支撑 square-free `s`，每个 character由唯一 primitive
+`chi* mod d`诱导。按 `d<D0` 与 `d>=D0` 切分，得到 exact
+
+\[
+\mathfrak T_x^{\rm com}
+=\mathfrak M_{<D_0}^{\rm tr}+\mathfrak V_{\ge D_0}^{\rm tr}.
+\]
+
+conductor `d=1` 项正是 V44 principal Ramanujan mean；`1<d<D0` 是不会被
+principal centering删除的 induced low-character tower。
+
+### 92.2 Low spectrum is explicit, not discarded
+
+写 `s=de`、`(d,e)=1`。若 `chi mod s`由 primitive `chi* mod d`诱导，则 CRT 与
+primitive Gauss identity给
+
+\[
+\check F_{de}(\chi)=\tau(\chi^*)\chi^*(e)
+\sum_{u\in I_x}b(u)\overline{\chi^*(u)}c_e(u).
+\]
+
+这里相位是 `chi*(e)`，不是其 conjugate。对 square-free `e` 还有 exact
+
+\[
+\mu(e)c_e(u)=\mu((e,u))\varphi((e,u)).
+\]
+
+所以 low spectrum 是带 prime character、short-integer character与 physical
+character--Ramanujan polynomial 的 structured Euler tower。V45 不把它称为 random
+error，也不借异常实字符的 cancellation。
+
+### 92.3 Correct induced weight and two large-sieve estimates
+
+在 `s~S`、`d~D` 上，令 `N~SQ/H`。固定 primitive conductor后，所有 induced
+extensions 的总权满足
+
+\[
+\sum_{s\asymp S,d\mid s}\frac{|\lambda_s|^2}{\varphi(s)}
+\ll\frac{x^{o(1)}}{DS^2}.
+\]
+
+Mellin-separate smooth cutoff，并以 Möbius inversion恢复 `(n,e)=1`，只花
+`x^o(1)`。这里先固定 induced cofactor `e~S/D`，uniformly 应用 primitive
+estimate，再对 `O(S/D)` 个 `e` 求和；不把 moving `e` 偷并进一个 coefficient
+array。BFI primitive multiplicative large sieve分别给
+
+\[
+\mathcal V_D^{(2)}(S)
+\ll P^2(D/Q+1/D)x^{o(1)},
+\]
+
+及把两条 polynomial平方后再用同一 large sieve所得
+
+\[
+\mathcal V_D^{(4)}(S)
+\ll
+\begin{cases}
+P^2/N,&D>N,\\
+P^2/D,&D\le N.
+\end{cases}
+\]
+
+### 92.4 High conductor payment
+
+若 `D0<=D<=Q/P^(1/2)`，second moment至多 `P^(3/2)`。若
+`D>Q/P^(1/2)`，由 `D<=S=NQ/P` 得 `N>P^(1/2)`，fourth moment的两支也都至多
+`P^(3/2)`。因此
+
+\[
+\mathcal V_{\ge D_0}\ll P^{3/2}x^{o(1)}=x^{1/64+o(1)}.
+\]
+
+结合 V44 physical additive energy `x^(2+o(1))`，得到
+
+\[
+|\mathfrak V_{\ge D_0}^{\rm tr}|
+\ll HxP^{3/4}x^{o(1)}=x^{213/128+o(1)}.
+\]
+
+严格 margin为
+
+\[
+1997/1200-213/128=1/9600.
+\]
+
+这是 source-backed strict subcomponent payment，不是 full Gate A，也不是 fixed-atom
+credit。
+
+### 92.5 One remaining transition theorem
+
+唯一 transition gate更新为
+
+\[
+\mathsf H_{<D_0}(\eta_<):\quad
+|\mathfrak M_{<D_0}^{\rm tr}|
+\ll x^{1997/1200-\eta_<+o(1)},\qquad\eta_<>0.
+\]
+
+若该门成立，则完整 transition saving可取任意
+
+\[
+0<\eta_{\rm tr}<
+\min\{\eta_<,1/9600,13/4800,817/4800\}.
+\]
+
+balanced `d>U,k>U`、reverse-Type-I `d>U,k<=U` 与 V42 positive-Gram Gate B仍独立
+OPEN；V43 zero-axis transference仍是最终 A+B AND compiler。
+
+### 92.6 Primary-source boundary
+
+1. BFI (1.6)是 primitive multiplicative large sieve；Theorem 0的 proof明确先按
+   induced primitive conductor切分，small conductor用 Siegel--Walfisz、large
+   conductor用 large sieve。它支持 V45 high payment；small lane只有 log saving。
+2. Conrey--Iwaniec--Soundararajan asymptotic large sieve组织 primitive characters，
+   但不识别上述 physical low spectrum。
+3. Matomaki--Teravainen products-of-primes dense model明确保留 quadratic-character
+   obstruction；其 ternary/Burgess-length object不等于 V45 short-`n` × physical
+   `b(u)c_e(u)` polynomial。
+
+截至 2026-08-10，没有 primary theorem直接支付 low structured gate。
+
+### 92.7 Canonical status registry
+
+~~~text
+V45_MAXIMUM_CLAIM = EXACT_CONDUCTOR_STRATIFICATION_REPLACES_THE_V44_CENTERED_VARIANCE_GATE_BY_A_SOURCE_BACKED_HIGH_CONDUCTOR_PAYMENT_AND_ONE_STRUCTURED_LOW_CONDUCTOR_MAJOR_SPECTRUM_GATE
+V45_ROUTE_ADVANCE = YES
+V45_CONDITIONAL_BRIDGE_ADVANCE = YES
+V45_ARITHMETIC_ADVANCE = NO
+V45_FIXED_ATOM_CREDIT = 0
+V45_STRICT_1_OVER_400 = UNPAID
+V45_L2 = NONE
+V45_TPC_207_TRIGGER = false
+V45_NUMBERED_RELEASE = NO
+V45_DERIVATION_STATUS = COHERENT_AFTER_EXACT_CONDUCTOR_SPLIT_GAUSS_RAMANUJAN_RETYPE_AND_HIGH_CONDUCTOR_PAYMENT
+V45_ASSUMPTION_POLICY = ONLY_THE_PRINCIPAL_PLUS_LOW_CONDUCTOR_STRUCTURED_MAJOR_SPECTRUM_REMAINS_OPEN_IN_THE_TRANSITION_WINDOW
+V45_SELECTED_RESEARCH_ROUTE = LOW_CONDUCTOR_STRUCTURED_MAJOR_FIRST__BALANCED_AND_REVERSE_TYPE_I_SECOND__V42_GATE_B_PARALLEL__V43_A_B_JOIN__C_RESERVE
+V45_V44_COMMON_TRANSITION = RETAINED_EXACT_BEFORE_FIRST_OUTER_ABSOLUTE
+V45_V44_IMPRIMITIVE_X_O1_SHORTCUT = RETYPED_AS_FALSE_UNIFORM_LEDGER_FOR_LOW_CONDUCTORS
+V45_SQUAREFREE_REDUCED_MODULUS = PROVED_EXACT_FROM_LAMBDA_S_SUPPORT
+V45_CHARACTER_INVERSION = PROVED_EXACT_ALL_CHARACTERS_BEFORE_OUTER_ABSOLUTE
+V45_CONDUCTOR_SPLIT = PROVED_EXACT_AT_D0_EQUALS_P_POWER_1_OVER_2
+V45_CONDUCTOR_THRESHOLD = D0_EQUALS_P_POWER_1_OVER_2_EQUALS_X_POWER_1_OVER_192
+V45_PRINCIPAL_MODE_LOCATION = PROVED_EXACT_INSIDE_LOW_CONDUCTOR_SPECTRUM_D_EQUALS_1
+V45_LOW_NONPRINCIPAL_TOWER = PROVED_EXACT_INDUCED_PRIMITIVE_CONDUCTORS_1_LT_D_LT_D0
+V45_HIGH_SPECTRUM = PROVED_EXACT_PRIMITIVE_CONDUCTORS_D_GE_D0
+V45_GAUSS_RAMANUJAN_TRANSFORM = PROVED_EXACT_TAU_CHI_TIMES_CHI_E_TIMES_PHYSICAL_CHIBAR_U_C_E_U
+V45_GAUSS_RAMANUJAN_PHASE = PROVED_CHI_STAR_E_NOT_ITS_CONJUGATE
+V45_RAMANUJAN_LOCAL_DENSITY = PROVED_MU_E_C_E_U_EQUALS_MU_GCD_TIMES_PHI_GCD
+V45_RECIPROCAL_COLLISION = PROVED_N1_Q2_MINUS_N2_Q1_EQUALS_ELL_S_WITH_ABS_ELL_LE_P_X_O1
+V45_DYADIC_SHORT_LENGTH = N_ASYMPTOTIC_S_Q_OVER_H
+V45_INDUCED_EXTENSION_WEIGHT = PROVED_X_O1_OVER_D_S_SQUARED
+V45_PRIMITIVE_SECOND_MOMENT = SOURCE_BACKED_P_SQUARED_TIMES_D_OVER_Q_PLUS_1_OVER_D
+V45_PRIMITIVE_FOURTH_MOMENT_D_GT_N = SOURCE_BACKED_P_SQUARED_OVER_N
+V45_PRIMITIVE_FOURTH_MOMENT_D_LE_N = SOURCE_BACKED_P_SQUARED_OVER_D
+V45_HIGH_CONDUCTOR_LOW_D_REGION = PROVED_SECOND_MOMENT_LE_P_POWER_3_OVER_2
+V45_HIGH_CONDUCTOR_HIGH_D_REGION = PROVED_FOURTH_MOMENT_LE_P_POWER_3_OVER_2
+V45_HIGH_CONDUCTOR_VARIANCE = PROVED_SOURCE_BACKED_P_POWER_3_OVER_2_X_O1
+V45_HIGH_CONDUCTOR_VARIANCE_EXPONENT = 1_OVER_64
+V45_HIGH_CONDUCTOR_OUTPUT = PROVED_X_POWER_213_OVER_128_PLUS_O1
+V45_HIGH_CONDUCTOR_ENDPOINT_MARGIN = 1_OVER_9600
+V45_LOW_STRUCTURED_ABSOLUTE_CEILING = X_POWER_5_OVER_3_PLUS_O1
+V45_LOW_STRUCTURED_MAJOR_GATE = OPEN_X_POWER_1997_OVER_1200_MINUS_ETA_LOW_WITH_ETA_LOW_POSITIVE
+V45_TRANSITION_CONDITIONAL_COMPILER = PROVED_LOW_STRUCTURED_GATE_PAYS_FULL_TRANSITION_WITH_HIGH_SPECTRUM_AND_CORRECTIONS
+V45_TRANSITION_CONDITIONAL_MARGIN = MIN_ETA_LOW_1_OVER_9600_13_OVER_4800_817_OVER_4800
+V45_PHYSICAL_Q_DIVIDES_U_CORRECTION = RETAINED_PAID_X_POWER_319_OVER_192_PLUS_O1
+V45_BACKGROUND_OUTPUT = RETAINED_PAID_X_POWER_7171_OVER_4800_PLUS_O1
+V45_LONG_BALANCED_WINDOW = OPEN_D_GT_U_AND_K_GT_U
+V45_LONG_REVERSE_TYPE_I_WINDOW = OPEN_D_GT_U_AND_K_LE_U
+V45_V42_GATE_B = RETAINED_PARALLEL_OPEN_POSITIVE_GRAM_MPD_ROUTE
+V45_BFI_PRIMITIVE_LARGE_SIEVE = SOURCE_BACKED_HIGH_CONDUCTOR_SECOND_AND_FOURTH_MOMENTS
+V45_BFI_INDUCED_CHARACTER_SPLIT = SOURCE_BACKED_ARCHITECTURE_LOW_SIEGEL_WALFISZ_HIGH_LARGE_SIEVE
+V45_BFI_LOW_CONDUCTOR_TO_FIXED_POWER = STOP_SCOPED_LOG_SAVING_DOES_NOT_PAY_1_OVER_400
+V45_CIS_ASYMPTOTIC_LARGE_SIEVE_DIRECT_ATTACHMENT = STOP_SCOPED_PRIMITIVE_ASYMPTOTIC_FORM_DOES_NOT_IDENTIFY_LITERAL_PHYSICAL_LOW_SPECTRUM
+V45_PRODUCTS_OF_PRIMES_DENSE_MODEL_DIRECT_ATTACHMENT = STOP_SCOPED_TERNARY_PRODUCT_AND_BURGESS_LENGTH_WRONG_PHYSICAL_OBJECT
+V45_LOW_EXCEPTIONAL_CHARACTER_FIREWALL = RETAIN_STRUCTURED_MODE_NO_UNIFORM_POWER_BORROWED
+V45_DIRECT_PRIMARY_SOURCE_FOR_LOW_STRUCTURED_GATE = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_10
+V45_FIRST_FATAL = NO_LITERAL_THEOREM_BOUNDS_THE_PRINCIPAL_PLUS_LOW_CONDUCTOR_INDUCED_CHARACTER_GAUSS_RAMANUJAN_SPECTRUM_WITH_PHYSICAL_LAMBDA_MINUS_B_AT_THE_STRICT_TRANSITION_POWER
+V45_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_TRANSITION_HIGH_CONDUCTOR_PAID_LOW_STRUCTURED_MAJOR_OPEN_LONG_MOBIUS_SPAN_OPEN
+V45_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V45_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATES_A_B
+~~~
+
+### 92.8 Finite checker and release boundary
+
+checker冻结 collision determinant、conductor-three induced Gauss identity、low mode在
+principal centering后仍非零、square-free Ramanujan local-density identity、两区间
+large-sieve interpolation与完整 exponent clock。它只能证明 finite algebra、schema与
+fail-closed state，不能证明 low structured theorem。
+
+本轮不创建 TPC-207、paper、PDF或 build。正式状态保持
+`ARITHMETIC_ADVANCE=NO`、`FIXED_ATOM_CREDIT=0`、
+`STRICT_1_OVER_400=UNPAID`、`L2=NONE`、`TPC_207_TRIGGER=false`。
+
+~~~text
+V45_FINAL_RELEASE_QA = PASS_WITH_SCOPED_EXTERNAL_TPC126_ONE_ULP_PLATFORM_DIAGNOSTIC
+V45_MATH_SOURCE_FORMULA_QA = PASS
+V45_CHECKER_ADVERSARIAL_QA = PASS
+V45_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+V45_PRECLOSURE_HANDOFF_RAW_LF_SHA256 = dca30fe25a8ccc1429d139f821dba7c3d7cb04022cb71ad1f754fe290be199c9
+V45_COMPASS_RAW_LF_SHA256 = e45083f9e7a73b0626ca1874f1925732502157ca2404a3d998ba244e2d1afa42
+V45_BIG_ROAD_README_RAW_LF_SHA256 = 97c1bfeaf9ff7f96824fc9150cf282c920b0ad60adfb58f88ae50ad30cb14799
+V45_ROUTE_MAP_RAW_LF_SHA256 = e665372859d8dab1c81d90b1c3cd27385e61e7a9062225b21e0542fec1b3b13a
+V45_PROOF_RAW_LF_SHA256 = 0a797eb4e3791319624fb5dd7a597d6d6bb217b46759739a51854312df6f4ec9
+V45_CHECKER_RAW_LF_SHA256 = 6b726a75674587ce9ec8450f4b462b90d685ac267519f68c732b8794962b51b6
+V45_CHECKER_STDOUT_BYTES = 1439
+V45_CHECKER_STDOUT_RAW_LF_SHA256 = d914a80297bfd4a33d474a48315d3c903e6c97a1321effd8f36b3bf018cde8af
+V45_CHECKER_PAYLOAD_BYTES = 1438
+V45_CHECKER_PAYLOAD_SHA256 = cbe534bf474507cba5d84f13402b332a6f5f55e4ec37a19fe87cb463b09343e9
+V45_CHECKER_CONTRACT_FIELDS = 26
+V45_CHECKER_RESULT_FIELDS = 41
+V45_CHECKER_REGISTRY_ROWS = 56
+V45_CHECKER_SOURCE_LOCKS = 3
+V45_CHECKER_DEPENDENCY_LOCKS = 5
+V45_CHECKER_MUTATIONS = 81_171_12_18_124_TOTAL_406
+V45_CHECKER_MUTATION_ACTIONS_EXECUTED = 406_OF_406_UNIQUE
+V45_CHECKER_REGISTRY_SHA256 = 04b9d12a0ddc549da1ecb9cfa1598de1c16a0fffc56d0fbc7e6229ca0d9ada28
+V45_CHECKER_NORMAL_OPTIMIZED = PASS_BYTE_IDENTICAL_STDERR_EMPTY
+V45_CHECKER_NOFLAG_EXTRAFLAG = FAIL_CLOSED_EXPLICIT_CHECK_REQUIRED
+V45_CHECKER_GLOBAL_PROVIDER_RESULT_STDOUT_ATTACKS = PASS_NO_FALSE_PROMOTION
+V45_REGISTRY_MIRRORS = HANDOFF_24_HANDOFF_92_COMPASS_46_README_45_PROOF_10_CHECKER_EXACT_56_OF_56
+V45_REGISTRY_MIRROR_BLOCKS = 6
+V45_STOP_SCOPED_REGISTRY = HANDOFF_6_V45_3_EXACT
+V45_FORMULA_LEDGER = PASS_P_1_OVER_96_D0_1_OVER_192_VARIANCE_1_OVER_64_OUTPUT_213_OVER_128_HIGH_MARGIN_1_OVER_9600_UNIT_319_OVER_192_UNIT_MARGIN_13_OVER_4800_BACKGROUND_7171_OVER_4800_BACKGROUND_MARGIN_817_OVER_4800_TARGET_1997_OVER_1200_LOW_CEILING_5_OVER_3
+V45_PRIMARY_SOURCE_SCREEN = PASS_BFI_CIS_MATOMAKI_TERAVAINEN_NO_DIRECT_LOW_STRUCTURED_THEOREM
+V45_PROOF_EQUATION_TAGS = 38_OF_38_UNIQUE__18_DISTINCT_REFERENCES_RESOLVED
+V45_MARKDOWN_FENCES = HANDOFF_2924_544__COMPASS_268_90__README_440_88__ROUTE_MAP_8_0__PROOF_2_2
+V45_UTF8_C0_DEL_TRAILING_FINAL_LF = PASS
+V45_STARTUP_REGRESSION = 22_OF_22_PASS_STDERR_EMPTY
+V45_SUPPLEMENTAL_ATTEMPTED = 4_OF_4
+V45_SUPPLEMENTAL_BYTE_EXACT = 3_OF_4
+V45_TPC126_SEMANTIC_CERTIFICATE = PASS_ONE_ULP_PLATFORM_SERIALIZATION_ONLY
+V45_TPC126_FROZEN_DIRECT_REAL = 40.17369814909115
+V45_TPC126_LINUX_DIRECT_REAL = 40.17369814909116
+V45_BIG_ROAD_PROCESSES = 46_OF_46_PASS_STDERR_EMPTY
+V45_BIG_ROAD_STDOUT_IDENTITIES = 23_OF_23
+V45_RELEASE_ALLOWLIST = EXACT_SIX_PATHS
+V45_CACHED_DIFF = EMPTY
+V45_DIFF_CHECK = PASS
+V45_UNTRACKED_RELEASE_PATHS = EXACT_TWO
+V45_PROTECTED_UNTRACKED_COUNT = 0
+V45_PROTECTED_UNTRACKED_MANIFEST_SHA256 = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+V45_PYC_COUNT = 0
+V45_INITIAL_BASELINE_HEAD_ORIGIN_REMOTE = 1e19b2d4c8a27db94a9f3798e123017e9df37d28
+V45_FILES_CHANGED = EXACT_SIX_RELEASE_PATHS
+V45_GENERATED_OUTPUTS = NONE
+V45_ROUTE_ADVANCE = YES
+V45_CONDITIONAL_BRIDGE_ADVANCE = YES
+V45_ARITHMETIC_ADVANCE = NO
+V45_FIXED_ATOM_CREDIT = 0
+V45_STRICT_1_OVER_400 = UNPAID
+V45_L2 = NONE
+V45_TPC_207_TRIGGER = false
+V45_SEALED_FOR_NEW_SESSION = true
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+~~~
 
 ## 81. 2026-08-08 V34：paid local carrier 与 compensated prime frame
 

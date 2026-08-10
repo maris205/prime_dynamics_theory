@@ -2,7 +2,7 @@
 
 更新时间：2026-08-10
 
-当前地图版本：V44
+当前地图版本：V45
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,9 +46,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +------------------------------------------+
-        | YOU ARE HERE — V44                      |
-        | transition = mean + variance gates;     |
-        | corrections PAID; long-Möbius OPEN      |
+        | YOU ARE HERE — V45                      |
+        | high-conductor transition spectrum PAID;|
+        | low structured major + long-Mobius OPEN |
         +------------------------------------------+
                 |
                 v
@@ -74,9 +74,15 @@ cells。V43 又在 outer absolute 之前完成 centered Poisson：`d<=H/(4Q)` �
 `C=A-L_pr*S+paid errors`，首次把 Gate B 与 terminal Gate A 写成同一 literal scalar
 bridge。V44 再把第一段 transition exact gcd-reduce 为 reduced modulus
 `Q^(31/32)` 到 `Q^(399/400)` 上的 principal Ramanujan mean 与 centered reciprocal
-variance；physical nonunit correction 与 background 都已付。当前 transition 红叉已从
-一个四变量 alias 缩成两个各差固定幂的 endpoint gates；balanced Type II 与
-long-Möbius reverse Type I 仍是下一段主跨。核心算术 saving 尚未证明。**
+variance；physical nonunit correction 与 background 都已付。V45 修正了把
+imprimitive characters 一概视为 `x^o(1)` 的过粗步骤，按 primitive conductor
+`d` 分层。在 `D0=P^(1/2)=x^(1/192)` 以上，second/fourth multiplicative-large-sieve
+两界插值严格给 coefficient variance `P^(3/2)`，physical output
+`x^(213/128+o(1))`，比 endpoint 留 `1/9600` margin。principal 与
+`1<d<D0` 的 induced modes被保留成一个 explicit Gauss--Ramanujan structured major
+spectrum。当前 transition 红叉因此从两个 endpoint gates 缩成一个低导子结构化
+major gate；balanced Type II 与 long-Möbius reverse Type I 仍是下一段主跨。核心
+算术 saving 尚未证明。**
 
 ## 2. 图例与状态语言
 
@@ -161,9 +167,9 @@ endpoint 的主桥。
 transference scalar精确相连；它们仍需分别给 saving：
 
 1. `B`：V42 positive physical Gram / MPD仍是 Gate-B 的平行充分实现；
-2. `A/transition`：V44 已把 `H/(4Q)<d<=U` 精确拆成 principal Ramanujan mean 与
-   centered reciprocal variance；两门分别要求 `delta_M>1/400` 与
-   `kappa>1/200`；
+2. `A/transition`：V45 已把 `H/(4Q)<d<=U` 按 primitive conductor 分层；
+   `d>=P^(1/2)` 的 high spectrum 已 source-backed 严格支付，只剩 principal 加
+   `1<d<P^(1/2)` 的 explicit Gauss--Ramanujan structured major gate；
 3. `A/long`：balanced Type II 与 long-Möbius reverse Type I 仍按同一 signed
    whole-object alias施工；
 4. `A+B`：`D=A_alias-L_pr*S+paid errors` 是 exact AND compiler，不是 OR shortcut。
@@ -179,7 +185,7 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 当前精确位置：V44
+## 5. 当前精确位置：V45
 
 V43 把 V35 proper-factor direction 在第一次 outer absolute 之前送进 complete
 centered Poisson。冻结 ordered weight 后仍有 exact diagonal
@@ -234,7 +240,7 @@ Q^{31/32+o(1)}\le s\le Q^{399/400+o(1)},\qquad
 +O\!\left(x^{319/192+o(1)}+x^{7171/4800+o(1)}\right).
 \]
 
-两个 open endpoint gates 是
+V44 的两个 open endpoint gates 是
 
 \[
 \mathcal V_{\rm rec}\ll P^2x^{-\kappa+o(1)},\quad
@@ -250,9 +256,47 @@ P=x^{1/96},\quad\kappa>1/200,
 
 generic large sieve 与 principal absolute ceiling 都停在 `x^(5/3+o(1))`，恰差
 `1/400`；ideal diagonal variance 给 `x^(319/192+o(1))` 与 `13/4800` margin。
-因此 transition 已经结构闭合但尚未算术闭合。balanced Type II `d>U,k>U` 与
-long-Möbius reverse Type I `d>U,k<=U` 仍开放。下述 V40--V42 row/energy历史仍是
-Gate B 的平行实现与损失账。
+V45 进一步把 character Parseval 按 primitive conductor 分层。令
+`D0=P^(1/2)=x^(1/192)`。对 conductor block `d~D`，primitive second moment 与
+fourth moment分别给
+
+\[
+ \mathcal V_D^{(2)}\ll P^2(D/Q+1/D)x^{o(1)},
+\]
+
+\[
+ \mathcal V_D^{(4)}\ll
+ \begin{cases}P^2/N,&D>N,\\P^2/D,&D\le N,
+ \end{cases}
+ \qquad N\asymp SQ/H.
+\]
+
+在 `D>=D0` 上取两界最小值得
+
+\[
+ \mathcal V_{\ge D_0}\ll P^{3/2}x^{o(1)},\qquad
+ |\mathfrak V_{\ge D_0}^{\rm tr}|\ll x^{213/128+o(1)},
+\]
+
+其 endpoint margin 精确为 `1/9600`。低谱不是丢弃项：若 `s=de` 且 character由
+primitive `chi* mod d`诱导，则 physical transform精确含
+
+\[
+ \tau(\chi^*)\chi^*(e)
+ \sum_u b(u)\overline{\chi^*(u)}c_e(u),
+\]
+
+且 `mu(e)c_e(u)=mu((e,u))phi((e,u))`。所以 principal `d=1` 与
+`1<d<D0` 共同形成 explicit structured major spectrum。transition 现在只剩一个门：
+
+\[
+ |\mathfrak M_{<D_0}^{\rm tr}|
+ \ll x^{1997/1200-\eta_<+o(1)},\qquad \eta_<>0.
+\]
+
+因此 transition 已经从两门缩成一门，但尚未算术闭合。balanced Type II
+`d>U,k>U` 与 long-Möbius reverse Type I `d>U,k<=U` 仍开放。下述 V40--V42
+row/energy历史仍是 Gate B 的平行实现与损失账。
 
 V40 已把 packet 压到每个模数的一条 scalar row
 
