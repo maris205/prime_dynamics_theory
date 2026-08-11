@@ -1,8 +1,8 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-10
+更新时间：2026-08-11
 
-当前地图版本：V46
+当前地图版本：V47
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,9 +46,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +------------------------------------------+
-        | YOU ARE HERE — V46                      |
-        | proper-factor local Euler carrier PAID; |
-        | AP--BDH residual + long-Mobius OPEN     |
+        | YOU ARE HERE — V47                       |
+        | additive zero mode DELETED EXACTLY;      |
+        | centered prime--hybrid covariance OPEN   |
         +------------------------------------------+
                 |
                 v
@@ -86,7 +86,11 @@ Bettin--Chandee compiler支付到 normalized exponent `1891/1920`；全部 princ
 low conductor 与 possible exceptional modes统一进入一个 all-residue AP--BDH
 variance。reciprocal occupancy energy已初等支付为 `P^2=x^(1/48)`，因此只要
 `E_AP^tr << x U^2 x^(rho+o(1))`、`rho<33/100`，完整 transition就条件闭合。
-当前红叉由“低导子 character cloud”改名且实体化为这一项 whole-object AP theorem；
+V47 进一步证明 reciprocal occupancy 的 additive zero coordinate精确为空，故 full
+all-residue AP energy严格降为 centered residue covariance；再以同一 local profile
+逐项拆出 prime error与 hybrid error，首选门成为二者之差的 signed centered
+covariance。当前红叉由“低导子 character cloud”最终实体化为这一项 centered
+whole-object AP theorem；
 balanced Type II 与 long-Möbius reverse Type I 仍是下一段主跨。核心算术 saving
 尚未证明。**
 
@@ -173,9 +177,10 @@ endpoint 的主桥。
 transference scalar精确相连；它们仍需分别给 saving：
 
 1. `B`：V42 positive physical Gram / MPD仍是 Gate-B 的平行充分实现；
-2. `A/transition`：V46 已把 V45 low-character cloud重组为 proper-factor local
-   Euler component加 one all-residue AP residual；local component已付，唯一新门为
-   `sum_d d sum_a |R_d(a)|^2 << x U^2 x^(rho+o(1))`、`rho<33/100`；
+2. `A/transition`：V46 已付 proper-factor local Euler component；V47 又精确删除
+   occupancy 的 additive zero mode，唯一新门缩为
+   `sum_d d sum_a |P_d^circ(a)-H_d^circ(a)|^2 << x U^2 x^(rho+o(1))`、
+   `rho<33/100`；
 3. `A/long`：balanced Type II 与 long-Möbius reverse Type I 仍按同一 signed
    whole-object alias施工；
 4. `A+B`：`D=A_alias-L_pr*S+paid errors` 是 exact AND compiler，不是 OR shortcut。
@@ -191,7 +196,7 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 当前精确位置：V46
+## 5. 当前精确位置：V47
 
 V43 把 V35 proper-factor direction 在第一次 outer absolute 之前送进 complete
 centered Poisson。冻结 ordered weight 后仍有 exact diagonal
@@ -321,7 +326,7 @@ V46 不再把这唯一门留成抽象 low-character sum。定义 proper-factor l
 \sum_{d,r}|A_d(r)|^2\ll P^2x^{o(1)}.
 \]
 
-因此当前 transition 的单一 theorem gate精确为
+V46 因此把 transition 的单一 theorem gate写为
 
 \[
 \sum_{\substack{Y_0<d\le U\\\mu^2(d)=1}}
@@ -329,8 +334,29 @@ d\sum_{a\bmod d}|\mathcal R_d(a)|^2
 \ll xU^2x^{\rho+o(1)},\qquad 0\le\rho<33/100.
 \]
 
-这是比 V45 low-conductor gate更强但更整洁的 sufficient whole-object theorem，
-不是现有 BDH theorem的直接 corollary。
+V47 观察到 \(q/H<1\)，所以 active nonzero \(m\) 总满足 \(0<|m|<d\)；由此
+\(A_d(0)=0\) 精确成立。令 \(\mathcal R_d^\circ\) 为 residue-centered residual，则
+
+\[
+\mathfrak R_x^{\rm AP}=-H\sum_d\sum_{r\ne0}
+A_d(r)\widehat{\mathcal R_d^\circ}(r),\qquad
+\sum_{r\ne0}|\widehat{\mathcal R}_d(r)|^2
+=d\sum_a|\mathcal R_d^\circ(a)|^2.
+\]
+
+再以 exact local profiles定义 prime error \(\mathcal P_d\) 与 hybrid error
+\(\mathcal H_d\)，有
+\(\mathcal R_d^\circ=\mathcal P_d^\circ-\mathcal H_d^\circ\)。因此 current gate严格缩为
+
+\[
+\sum_{\substack{Y_0<d\le U\\\mu^2(d)=1}}d\sum_{a\bmod d}
+|\mathcal P_d^\circ(a)-\mathcal H_d^\circ(a)|^2
+\ll xU^2x^{\rho+o(1)},\qquad 0\le\rho<33/100.
+\]
+
+它是比 V46 full all-residue gate更弱而仍充分的 whole-object theorem，不是现有
+BDH theorem的直接 corollary。分别估计两个 marginals是更强 fallback；V45
+high-conductor lane保留为独立 fallback，未证明 projection splice前不重复计费。
 
 V40 已把 packet 压到每个模数的一条 scalar row
 
@@ -424,7 +450,7 @@ Kloosterman engine只到单 cell，未付 block atomic budget和跨 `q` 的 L2 r
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
 
-| 图像语言 | 仓库 V44 语言 | 关系 |
+| 图像语言 | 仓库 V47 语言 | 关系 |
 |---|---|---|
 | Bridge A：解析 collective saving | `B(positive Gram / MPD / P2 / K / E / X)` 与 `A(alias)` 的 zero-axis transference | 图像的一座大桥被拆成多车道 B、terminal A 及 exact AND compiler |
 | Bridge B：distinguished-seed genericity | `C` symmetry-breaking reserve | 都是动力学/指定 seed 后备线 |
@@ -435,6 +461,7 @@ Kloosterman engine只到单 cell，未付 block atomic budget和跨 `q` 的 L2 r
 ```text
 PROPER_FACTOR_CENTERED_POISSON_TRANSFERENCE
 THEN_TRANSITION_GCD_REDUCTION_TO_RAMANUJAN_MEAN_AND_RECIPROCAL_VARIANCE
+THEN_ADDITIVE_ZERO_MODE_EXCISION_AND_CENTERED_PRIME_HYBRID_COVARIANCE
 THEN_LONG_MOBIUS_TYPE_II_REVERSE_TYPE_I_ALIAS
 AND_PHYSICAL_POSITIVE_GRAM_COLLISION_VIA_PROPER_FACTOR_DYADIC_MPD
 OR_P2_DIRECT_Q_DEPENDENT_PACKET_ENERGY
@@ -447,7 +474,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V44：
+截至 V47：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -472,12 +499,13 @@ NUMBERED_RELEASE = NO
 
 优先级更新为：
 
-1. **A/transition AP--BDH：攻一个 all-residue whole-object variance theorem**。
-   目标是 `E_AP^tr << x U^2 x^(rho+o(1))`、`rho<33/100`；proper-factor
-   local Euler main、reciprocal occupancy与 Parseval compiler均已付；
-2. **A/transition conductor fallback：保留 V45 high-conductor lane**。若 AP
-   whole-object theorem只能覆盖部分 modulus/characters，则复用已付
-   `x^(213/128)` high spectrum，不重复记账；
+1. **A/transition centered covariance：攻一个 signed prime--hybrid theorem**。
+   目标是 `sum_d d sum_a |P_d^circ-H_d^circ|^2 << x U^2 x^(rho+o(1))`、
+   `rho<33/100`；proper-factor local Euler main、reciprocal occupancy、additive
+   zero-mode deletion与 centered Parseval均已付；
+2. **A/transition fallbacks：分别控制两个 marginals，或保留 V45 conductor lane**。
+   前者严格更强；后者已付 high spectrum `x^(213/128)`，但必须先有 exact projection
+   splice并避免重复记账；
 3. **A/Type-II + reverse-Type-I：证明同一个 long-Möbius inverse-residue
    whole-object theorem**。balanced `d,k>U` 与 `d>U,k<=U` 两个 orientation必须在
    signed fold后重组；Pascadi horizontal theorem是最强备选 compiler，尚无 literal
@@ -494,7 +522,7 @@ NUMBERED_RELEASE = NO
 最窄 first fatal：
 
 ```text
-NO_LITERAL_THEOREM_PROVES_THE_NATURAL_SCALE_ALL_RESIDUE_AP_VARIANCE_FOR_LAMBDA_U_PLUS_2_MINUS_B_Z_U_MINUS_THE_PROPER_FACTOR_LOCAL_PROFILE_UNIFORMLY_FOR_X_POWER_31_OVER_96_LT_D_LE_X_POWER_133_OVER_400
+NO_LITERAL_THEOREM_PROVES_NATURAL_SCALE_CENTERED_SIGNED_PRIME_HYBRID_AP_COVARIANCE_UNIFORMLY_FOR_X_POWER_31_OVER_96_LT_D_LE_X_POWER_133_OVER_400
 ```
 
 ## 9. 后续更新协议
@@ -513,6 +541,7 @@ NO_LITERAL_THEOREM_PROVES_THE_NATURAL_SCALE_ALL_RESIDUE_AP_VARIANCE_FOR_LAMBDA_U
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-11 | V47 | Bridge A / Gates A--B：local Euler paid；additive zero mode deleted；centered prime--hybrid covariance与 long-Mobius open | parent `10ad608f5487af3d2497adfbe226ded4f37e64a3`; V47=current working release | exact `A_d(0)=0`；full AP energy降为 centered covariance；prime/hybrid signed split与三车道 atlas；arithmetic仍为 NO |
 | 2026-08-10 | V46 | Bridge A / Gates A--B：proper-factor local Euler carrier paid；all-residue AP--BDH residual与 long-Mobius open | parent `9737b62421770ed5f96c08f197488460833550d3`; V46=current working release | exact local-profile split；V29/BC支付 local component到 `1891/1920`；reciprocal occupancy energy `P^2`；新 whole-object AP variance gate `rho<33/100`；arithmetic仍为 NO |
 | 2026-08-10 | V45 | Bridge A / Gates A--B：high conductor paid；low structured major与 long-Mobius open | release `9737b62421770ed5f96c08f197488460833550d3`; parent `1e19b2d` | primitive-conductor split；high spectrum `x^(213/128)`、margin `1/9600`；low principal/induced tower保留；arithmetic仍为 NO |
 | 2026-08-10 | V44 | Bridge A / Gates A--B：transition split into principal mean and reciprocal variance; long-Möbius span open | rebased parent `d355325e5a287af1cef69509825799c9c6a0b5d5`; initial research baseline `be9d783536eeec36ab1c5a95525523f762c1d4d3` | exact gcd reduction删除 common phase conductor；transition拆成两项 endpoint gate；physical nonunit correction与background分别付到 `319/192`、`7171/4800`；arithmetic仍为 NO |
