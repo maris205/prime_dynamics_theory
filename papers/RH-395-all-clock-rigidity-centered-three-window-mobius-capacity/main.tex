@@ -1,0 +1,744 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools,microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\mob}{\mu}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\T}{\{-1,0,+1\}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Target}{\operatorname{Target}}
+\newcommand{\Source}{\operatorname{Source}}
+
+\hypersetup{
+  pdftitle={All-Clock Rigidity for Centered Three-Window Mobius Capacity},
+  pdfauthor={RH research program},
+  pdfsubject={Centered noncausal three-window Mobius capacity and its all-clock endpoint},
+  pdfkeywords={Mobius function, terminal logarithmic average,
+  finite-state optimization, max-plus algebra, squarefree density}
+}
+
+\title{All-Clock Rigidity for Centered Three-Window M\"obius Capacity}
+\author{RH research program}
+\date{August 11, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We introduce a centered, deliberately noncausal local-table model for the
+distance-two M\"obius capacity problem.  At phase \(r\), a sign table reads
+\(\mob_0(n-1),\mob(n),\mob(n+1)\), and universal safety forbids two
+\(+1\) outputs two steps apart for every ternary input word.  The complete
+three-shift terminal-log table law reduces every fixed-clock limit to
+nonnegative exact-support densities.
+
+Positive projection turns the \(2^{27}\) local tables into 512 relations.
+Relation saturation then gives an exact tropical trace on the eight subsets
+of \(\{-1,0,+1\}\) for every clock.  For \(q\geq3\) a multi-affine argument
+reduces an optimizer to four antipodally symmetric states; the self-loop
+clock \(q=2\) is a genuine exception and needs a one-sign state.  Writing
+\(K_j=\prod_p(1-j/p^2)\), we obtain
+\[
+ C(1)=K_2-K_3,\quad C(2)=\frac{3K_2-K_3}{4},\quad
+ C(3)=\frac{3K_1}{8},\quad C(4)=\frac{2K_1}{3},
+\]
+and \(C(6)=K_1/8+K_2/2\), strictly above the corresponding one-site
+value \(3K_1/8\).
+
+Despite these finite-clock memory gains, the all-clock endpoint is rigid.
+A phasewise marginal identity on square-support clocks charges every
+adjacent pair by one common center weight, recovering exactly the one-site
+path-MWIS value.  Divisibility lifting then proves
+\[
+ \sup_{q<\infty}C(q)=B_\infty,\qquad C(q)<B_\infty
+ \quad\text{for every finite }q.
+\]
+The maximum is formed only after each fixed-table terminal limit.  No
+growing clock, ordinary Ces\`aro, causal-transducer, adaptive-capacity, or
+higher even-correlation conclusion is asserted.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius function; terminal logarithmic average;
+centered local rule; max-plus optimization; squarefree density; nonattained
+supremum.
+
+\section{Model, densities, and principal theorem}
+
+Write \(\mob_0(t)=\mob(t)\) for integers \(t\geq1\), and
+\(\mob_0(t)=0\) for \(t\leq0\).  A \emph{terminal clock} is any function
+\begin{equation}
+  1\leq\omega(X)\leq X,\qquad \omega(X)\longrightarrow\infty.
+  \label{eq:clock}
+\end{equation}
+Fix a positive integer \(q\).  A centered \(q\)-phase table family is
+\[
+ F_r:\T^3\longrightarrow\{-1,+1\},\qquad r\in\Z/q\Z.
+\]
+Its output at \(n\) reads one future coordinate:
+\begin{equation}
+ \varepsilon_n
+ =F_{n\bmod q}\bigl(\mob_0(n-1),\mob(n),\mob(n+1)\bigr).
+ \label{eq:output}
+\end{equation}
+Thus centered is a new noncausal data type, not an online transducer.
+The family is \emph{universally distance-two safe} when
+\begin{equation}
+ \neg\bigl(F_r(a,b,c)=+1\ \text{and}\
+ F_{r+2}(c,d,e)=+1\bigr)
+ \label{eq:safety}
+\end{equation}
+for every \(r\) and every \(a,b,c,d,e\in\T\).  The shared letter \(c\)
+is the only coupling between the two windows.
+
+For fixed \(q,F,\omega\), put
+\begin{equation}
+ L_{q,X}(F)=\frac1{\log\omega(X)}
+ \sum_{X/\omega(X)<n\leq X}
+ \frac{\mob(n)F_{n\bmod q}
+  (\mob_0(n-1),\mob(n),\mob(n+1))}{n}.
+ \label{eq:functional}
+\end{equation}
+The complete three-shift law recalled below proves that the limit
+\(L_q(F)=\lim_{X\to\infty}L_{q,X}(F)\) exists for every clock
+\eqref{eq:clock}.  Only after these fixed-table limits are formed do we set
+\begin{equation}
+ C(q)=\max_{\substack{F\text{ fixed and}\\\text{universally safe}}}
+ |L_q(F)|.
+ \label{eq:capacity}
+\end{equation}
+
+Let \(\mathcal I=\{L,C,R\}\) with shifts
+\begin{equation}
+ a_L=+1,\qquad a_C=0,\qquad a_R=-1,
+ \label{eq:shifts}
+\end{equation}
+so that \(\mob_0(n-a_L),\mob_0(n-a_C),\mob_0(n-a_R)\) are the entries
+in \eqref{eq:output}.  For \(S\subseteq\mathcal I\), set
+\[
+ B_{p,S}=\{a_i\bmod p^2:i\in S\},\qquad
+ \nu_{p,S}=|B_{p,S}|,
+\]
+where the set is deduplicated modulo \(p^2\), and
+\[
+ \tau_{p,S}(r)=
+ \#\{b\in B_{p,S}:b\bmod p=r\bmod p\}.
+\]
+The squarefree phase density is
+\begin{equation}
+ \Theta_{q,r}(S)=\frac1q
+ \prod_{p\nmid q}\left(1-\frac{\nu_{p,S}}{p^2}\right)
+ \prod_{p\parallel q}\left(1-\frac{\tau_{p,S}(r)}p\right)
+ \prod_{p^2\mid q}\ind_{\{r\bmod p^2\notin B_{p,S}\}}.
+ \label{eq:theta}
+\end{equation}
+In particular \(\Theta_{q,r}(\varnothing)=1/q\), and
+\begin{equation}
+ \sum_{r\bmod q}\Theta_{q,r}(S)=K_{|S|},\qquad
+ K_j=\prod_p\left(1-\frac{j}{p^2}\right),\quad K_0=1.
+ \label{eq:Kj}
+\end{equation}
+The exact-support density is
+\begin{equation}
+ \Pi_{q,r}(U)=
+ \sum_{W\subseteq\mathcal I\setminus U}
+ (-1)^{|W|}\Theta_{q,r}(U\cup W).
+ \label{eq:Pi}
+\end{equation}
+It is nonnegative and \(\sum_{U\subseteq\mathcal I}\Pi_{q,r}(U)=1/q\).
+
+\begin{theorem}[Centered capacity and all-clock rigidity]
+\label{thm:main}
+For every fixed \(q\), every safe table family has the terminal limit
+\eqref{eq:functional} for every clock \eqref{eq:clock}.  For \(x,y\in\T\),
+let \(S(x,y)\subseteq\{L,C,R\}\) contain \(C\), contain \(L\) exactly
+when \(x\ne0\), and contain \(R\) exactly when \(y\ne0\).  Define
+\begin{equation}
+ \lambda_r(x,y)=
+ 2^{-\ind_{\{x\ne0\}}-\ind_{\{y\ne0\}}}
+ \Pi_{q,r}\bigl(S(x,y)\bigr)
+ \label{eq:lambda}
+\end{equation}
+for \(x,y\in\T\), and, for \(U,V\subseteq\T\),
+\begin{equation}
+ \mathcal K_r(U,V)=
+ \sum_{\substack{x\notin U\\y\in V}}\lambda_r(x,y).
+ \label{eq:transition}
+\end{equation}
+Then the exact all-\(q\) capacity is
+\begin{equation}
+ \boxed{\displaystyle
+ C(q)=\sum_{\gamma}
+ \max_{\substack{Y_r\subseteq\T\\r\in\gamma\text{ cyclic}}}
+ \sum_{r\in\gamma}\mathcal K_r(Y_{r-2},Y_r),}
+ \label{eq:eight-state}
+\end{equation}
+where \(\gamma\) runs over the \(\gcd(q,2)\) cycles of \(r\mapsto r+2\).
+Equivalently, each summand is the tropical trace of a cyclic product of
+exact \(8\times8\) transition matrices.
+
+For \(q\geq3\), some optimizer in \eqref{eq:eight-state} uses only the
+four antipodally symmetric subsets.  With
+\[
+ u(Y)=\left(\ind_{\{0\in Y\}},
+ \frac{|Y\cap\{-1,+1\}|}{2}\right)\in\{0,1\}^2
+\]
+and
+\[
+ (a_r,b_r,c_r,d_r)=
+ \bigl(\Pi_{q,r}(\{C\}),\Pi_{q,r}(\{L,C\}),
+ \Pi_{q,r}(\{C,R\}),\Pi_{q,r}(\{L,C,R\})\bigr),
+\]
+the compressed transition is
+\begin{equation}
+ a_r(1-u_0)v_0+b_r(1-u_1)v_0+
+ c_r(1-u_0)v_1+d_r(1-u_1)v_1.
+ \label{eq:four-state}
+\end{equation}
+This compression is not a proof for \(q=1,2\); their self-loops retain all
+eight states.  The first exact values are
+\begin{align}
+ C(1)&=K_2-K_3,&
+ C(2)&=\frac{3K_2-K_3}{4},\label{eq:C12}\\
+ C(3)&=\frac{3K_1}{8}=\frac9{4\pi^2},&
+ C(4)&=\frac{2K_1}{3}=\frac4{\pi^2},\label{eq:C34}\\
+ C(6)&=\frac{K_1}{8}+\frac{K_2}{2}.&&
+ \label{eq:C6}
+\end{align}
+At \(q=6\), this strictly exceeds the embedded one-site value
+\(3K_1/8\).
+
+Let \(B_\infty\) be the RH-375 one-site square-clock endpoint, recalled in
+\eqref{eq:Binfinity} below.  Then
+\begin{equation}
+ \boxed{\displaystyle\sup_{q<\infty}C(q)=B_\infty,\qquad
+ C(q)<B_\infty\quad(q<\infty).}
+ \label{eq:all-clock}
+\end{equation}
+Both signs of every nonzero optimum are attained.
+\end{theorem}
+
+\section{The analytic reduction to nonnegative relations}
+
+RH-394, Theorem~1.1, equation~(8), Theorem~1.2,
+equations~(11)--(12), and Corollary~1.3 (printed/PDF pages 2--3) prove the
+complete fixed three-shift table law for every terminal clock
+\cite{RH394}.  Applied to
+\[
+ H_r(x,z,y)=zF_r(x,z,y),
+\]
+that law says that the limit in \eqref{eq:functional} is the sum, over
+exact support strata \(U\), of \(\Pi_{q,r}(U)\) times the uniform sign
+average of \(H_r\) on that stratum.  Equations
+\eqref{eq:theta}--\eqref{eq:Pi} are its phase-resolved densities.  Its
+proof inherits the odd-correlation input of Tao--Ter\"av\"ainen and the
+two-point input of Tao \cite{TaoTeravainen2019,Tao2016LogChowla}; we do
+not re-invoke those remote theorems with new quantifiers.
+
+\begin{lemma}[Positive projection]
+\label{lem:projection}
+From a safe family \(F\), change every \(+1\) output at a cell with
+center \(z\ne+1\) to \(-1\), leaving all other cells unchanged.  The
+resulting family \(F^+\) is safe and
+\[
+ L_q(F^+)\geq L_q(F).
+\]
+Put
+\begin{equation}
+ A_r=\{(x,y)\in\T^2:F^+_r(x,+1,y)=+1\}.
+ \label{eq:relation}
+\end{equation}
+Then
+\begin{equation}
+ L_q(F^+)=\sum_{r\bmod q}\sum_{(x,y)\in A_r}\lambda_r(x,y).
+ \label{eq:projected-limit}
+\end{equation}
+Every one of the 512 relations occurs, with \(2^{18}\) full sign-table
+preimages before projection.
+\end{lemma}
+
+\begin{proof}
+If \(z=-1\), changing the output from \(+1\) to \(-1\) changes the score
+\(zF\) from \(-1\) to \(+1\); if \(z=0\), the score is unchanged.
+Deleting \(+1\) outputs cannot create a forbidden pair, proving the first
+claim pointwise before taking any limit.
+
+The all-minus table contributes \(H=-z\), whose sign average is zero on
+every stratum with nonzero center and which vanishes when the center is
+zero.  Turning a center-\(+1\) cell \((x,+1,y)\) from minus to plus changes
+the score by two.  On its exact support stratum, the specified nonzero
+signs have density \(2^{-|U|}\Pi_{q,r}(U)\).  Multiplication by two leaves
+exactly \eqref{eq:lambda}, proving \eqref{eq:projected-limit}.  The nine
+center-\(+1\) cells determine \(A_r\), while the other 18 sign-table cells
+are free.
+\end{proof}
+
+\long\def\DeferredSquareSection{
+\section{Square-support marginal charge}
+
+We isolate the finite combinatorial input inherited from RH-375.  Define
+\begin{equation}
+ M(q)=\max_{\substack{I\subseteq\Z/q\Z\\I\cap(I+2)=\varnothing}}
+ \sum_{r\in I}\Theta_{q,r}(\{C\}).
+ \label{eq:one-site-MWIS}
+\end{equation}
+Choosing \(A_r=\T^2\) on \(I\) and \(A_r=\varnothing\) off \(I\)
+embeds this one-site relation family into the centered model, so
+\begin{equation}
+ M(q)\leq C(q).
+ \label{eq:one-site-embed}
+\end{equation}
+RH-375, Theorem~2.2, equation~(7) (printed/PDF page 2), identifies
+\eqref{eq:one-site-MWIS} as the weighted phase-MWIS; only this finite
+formula, not its ordinary-Ces\`aro analytic formula, is used here
+\cite{RH375}.
+
+Let \(3=p_1<p_2<\cdots\) be the odd primes and set
+\begin{equation}
+ q_y=4\prod_{i\leq y}p_i^2,\qquad
+ A_y=\prod_{i\leq y}(p_i^2-1),\qquad q_1=36.
+ \label{eq:square-clock}
+\end{equation}
+Let \(O_y\) be the RH-375 count of odd positive runs on the odd
+\(+2\)-cycle.  Its exact square-clock value and limit are
+\begin{align}
+ B_y&=M(q_y)=\frac{4+2O_y/A_y}{\pi^2},\label{eq:By}\\
+ B_\infty&=\lim_{y\to\infty}B_y
+ =\frac{4+2\mathcal C}{\pi^2},\label{eq:Binfinity}\\
+ \mathcal C&=\frac1{e_1}
+ \sum_{j\in\{1,3,5,7\}}(e_j-2e_{j+1}+e_{j+2}),
+ \qquad e_m=\prod_{p\ {\rm odd}}\left(1-\frac m{p^2}\right).
+ \notag
+\end{align}
+RH-375, equations~(10)--(12), Proposition~4.1, equation~(13), and
+Theorem~5.1, equations~(16)--(17) (printed/PDF pages 3--5), prove that
+\(B_y\) is strictly increasing to \(B_\infty\).  Its Lemma~3.1 and
+Proposition~3.2, equations~(8)--(9) (page 3), supply the finite density
+aggregation and period-lift precedents.
+
+\begin{lemma}[Clock divisibility]
+\label{lem:divisibility}
+If \(q\mid Q\), then \(C(q)\leq C(Q)\).
+\end{lemma}
+
+\begin{proof}
+Regard every \(q\)-phase table as a \(Q\)-phase table by literal
+repetition.  It produces exactly the same output word, so universal safety
+and every fixed-table terminal limit are unchanged.  The declared period
+need not be minimal.  Maximizing only after the fixed limits gives the
+claim.  No estimate uniform in \(q\) is used.
+\end{proof}
+
+\begin{lemma}[Shared-coordinate marginal identity]
+\label{lem:marginal}
+Suppose \(q_y\mid Q\) and \(Q\) has exactly the same prime divisors as
+\(q_y\).  Every phase \(r\) with
+\(\Theta_{Q,r}(\{C\})>0\) has one common weight
+\[
+ \delta_Q=\Theta_{Q,r}(\{C\}).
+\]
+For two adjacent positive center phases \(r,r+2\), define
+\[
+ m_r(t)=\sum_{x\in\T}\lambda_r(x,t),\qquad
+ m'_{r+2}(t)=\sum_{z\in\T}\lambda_{r+2}(t,z).
+\]
+Then
+\begin{equation}
+ m_r(t)=m'_{r+2}(t)\quad(t\in\T),\qquad
+ \sum_{t\in\T}m_r(t)=\delta_Q.
+ \label{eq:marginal}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Every prime dividing \(Q\) occurs in \(Q\) to exponent at least two.
+Consequently a supported prime square either forces the shared integer
+\(n+1\) to be nonsquarefree in both descriptions or permits it in both.
+For primes outside the support, the local squarefree pair conditions for
+\((n,n+1)\) and \((n+1,n+2)\) are translates of one another.  Thus their
+Euler factors coincide for each of the three exact states
+\(\mob_0(n+1)=t\).  Uniform sign splitting on nonzero exact-support strata
+gives the first identity in \eqref{eq:marginal}.
+
+Summing over \(t\), and also over the unused outer coordinate, counts every
+center-squarefree event with center sign \(+1\).  Its sign density is one
+half of \(\delta_Q\), while the positive projection changes the score by
+two.  Hence the total \(\lambda\)-mass is \(\delta_Q\), proving the second
+identity.
+\end{proof}
+
+\begin{proposition}[Square-support saturation]
+\label{prop:square-saturation}
+Under the hypotheses of Lemma~\ref{lem:marginal},
+\begin{equation}
+ \boxed{C(Q)=M(Q)=M(q_y)=B_y.}
+ \label{eq:centered-saturation}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For a saturated selector profile put
+\[
+ W_r=\mathcal K_r(Y_{r-2},Y_r).
+\]
+If the center phase has zero density then \(W_r=0\).  For two adjacent
+positive phases, Lemma~\ref{lem:marginal} and the safety split at the
+shared state \(t\) give
+\begin{align*}
+ W_r+W_{r+2}
+ &\leq\sum_{t\in Y_r}m_r(t)
+ +\sum_{t\notin Y_r}m'_{r+2}(t)\\
+ &=\sum_{t\in\T}m_r(t)=\delta_Q.
+\end{align*}
+Also \(W_r\leq\delta_Q\).  The phases forced to zero modulo \(4\) and
+\(9\) split the two \(+2\)-cycles into finite positive runs.  Pairing
+successive sites in a run of length \(\ell\) shows that its total
+contribution is at most
+\(\lceil\ell/2\rceil\delta_Q\), exactly the MWIS value of that path.
+Summing the runs proves \(C(Q)\leq M(Q)\).  The reverse inequality is the
+one-site embedding \eqref{eq:one-site-embed}.
+
+Write \(Q=Rq_y\).  The positive support word is \(R\) literal repetitions
+of the \(q_y\) word, and \(\delta_Q=\delta_{q_y}/R\).  Forced \(4\)- and
+\(9\)-zero phases prevent runs from joining across a repetition boundary.
+Thus the path-MWIS count scales by \(R\) while its weight scales by
+\(1/R\), so \(M(Q)=M(q_y)=B_y\).  This is the special same-prime-support
+saturation of RH-375, now reached through the centered marginal charge;
+it is not a general cyclic-cover law.
+\end{proof}
+
+\section{All-clock rigidity and strict nonattainment}
+
+\begin{proof}[Proof of the all-clock statement in Theorem~\ref{thm:main}]
+Fix any finite \(q\).  Choose \(y\) so that every odd prime divisor of
+\(q\) is among \(p_1,\ldots,p_y\), and put
+\[
+ Q=\operatorname{lcm}(q,q_y).
+\]
+Then \(q\mid Q\), \(q_y\mid Q\), and \(Q\) has exactly the prime support
+of \(q_y\).  Lemma~\ref{lem:divisibility},
+Proposition~\ref{prop:square-saturation}, and the strict increase of the
+RH-375 endpoints give
+\[
+ C(q)\leq C(Q)=B_y<B_\infty.
+\]
+This proves the all-clock upper bound and strict nonattainment at every
+finite clock.
+
+Conversely, the embedded one-site relations at the square clocks satisfy
+\[
+ C(q_y)\geq M(q_y)=B_y.
+\]
+Letting \(y\to\infty\) gives
+\(\sup_{q<\infty}C(q)\geq B_\infty\), and the preceding upper bound gives
+the reverse inequality.  The order of operations is essential: \(q\) and
+the table family are fixed, then \(X\to\infty\), then the finite safe
+maximum is formed, and only afterward is the scalar supremum over finite
+clocks taken.
+\end{proof}
+
+\begin{remark}[Where memory helps and where it does not]
+The \(q=2\) one-sign self-loop and the strict \(q=6\) gap
+\eqref{eq:q6-gap} show that the centered relation class is genuinely
+larger than the one-site class at a fixed clock.  Proposition
+\ref{prop:square-saturation} shows, by a coordinatewise marginal charge
+rather than a flat one-site argument, that this gain disappears on the
+cofinal square-support family.  The endpoint rigidity is therefore not a
+rephrasing of RH-375.
+\end{remark}
+
+}
+\long\def\DeferredFinalSection{
+\section{Source roles, executable audit, and limitations}
+
+The sole terminal-log analytic input is the complete fixed three-shift
+table law of RH-394 \cite{RH394}.  RH-375 contributes only finite
+squarefree phase densities, the one-site MWIS, clock lift, square-clock
+values \(B_y\), same-prime-support combinatorics, and the endpoint
+\(B_\infty\) \cite{RH375}.  In particular, its ordinary-Ces\`aro formula
+is not used as a terminal-clock theorem.  Tao's two-point theorem and the
+odd-correlation theorem of Tao--Ter\"av\"ainen are inherited provenance
+inside RH-394, not newly strengthened here
+\cite{Tao2016LogChowla,TaoTeravainen2019}.
+The two frozen repository identities are
+\url{6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7} for RH-394 and
+\url{071fed1b2a5d8488b9d2e35a99a753953b233584} for RH-375.
+
+The companion certificate performs exact relation-composition,
+positive-projection, reflection, phase-density, full eight-state,
+four-state, self-loop, small-clock, marginal, run-charge, lift, and
+firewall checks.  It uses rigorous rational enclosures for the Euler
+products and rejects unresolved comparisons.  This is a finite
+reproduction and regression artifact, not a substitute for the analytic
+table law or for the proofs above.
+
+The immutable source closure has 148 Git objects and four ordered remote
+logical objects, hence 152 logical objects.  The four external roles are,
+in order, Johnston--Yang closure-only, Maynard closure-only, Tao's
+inherited two-point input, and Tao--Ter\"av\"ainen's inherited
+odd-correlation input.  Their recorded release-redistribution flags are
+no, no, yes, and no.  All external PDFs remain nonvendored, source replay
+is offline by default, and all six sealed payload identities are excluded
+from the release tree.
+
+The centered rule \eqref{eq:output} explicitly reads \(\mob(n+1)\).  It
+is not the causal window-end model or a physical online controller; the
+causal specialization is a separate, already bounded route.  The theorem
+keeps \(q,F,\omega\) fixed before the terminal limit.  It gives no
+ordinary Ces\`aro limit, effective rate, growing \(q=q(X)\), growing table
+family, maximum before the limit, adaptive finite-prefix capacity, generic
+graph-coupled capacity, or even odd-support correlation of order at least
+four.  It makes no operator, trace-formula, zero-identification,
+Riemann-hypothesis, or Gates A--E claim.
+
+\section*{Declarations}
+
+\noindent\textbf{Data availability.}
+The finite certificate, exact result and schema, source-lock metadata, and
+offline verification code are included in the accompanying RH-395
+package.  No new empirical data were generated and no external source PDF
+is redistributed.
+
+\noindent\textbf{Ethics declaration.}
+This mathematical study involved no human participants, animals, personal
+data, or sensitive datasets; institutional ethics approval was not
+applicable.
+
+\noindent\textbf{Author contributions (CRediT).}
+The RH research program performed conceptualization, formal analysis,
+methodology, software, validation, and writing (original draft, review,
+and editing).
+
+\noindent\textbf{Conflict of interest.}
+The author declares no conflict of interest.
+
+\noindent\textbf{Funding.}
+No external funding was received for this work.
+
+\noindent\textbf{AI-use statement.}
+AI-assisted tools supported drafting, finite-certificate implementation,
+formatting, and consistency checks.  The research program directed and
+reviewed the mathematical arguments, source roles, and release artifacts
+and retains responsibility for the content.
+
+\begingroup
+\sloppy
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+}
+For a relation \(A\subseteq\T^2\), write
+\[
+ \Source(A)=\{x:(x,y)\in A\text{ for some }y\},\qquad
+ \Target(A)=\{y:(x,y)\in A\text{ for some }x\}.
+\]
+
+\begin{lemma}[Safety and saturation]
+\label{lem:saturation}
+The projected family is safe if and only if
+\begin{equation}
+ \Target(A_r)\cap\Source(A_{r+2})=\varnothing
+ \quad(r\bmod q).
+ \label{eq:relation-safety}
+\end{equation}
+If \(Y_r=\Target(A_r)\), replacing every relation by
+\begin{equation}
+ \widetilde A_r=(\T\setminus Y_{r-2})\times Y_r
+ \label{eq:saturated-relation}
+\end{equation}
+preserves safety and weakly increases \eqref{eq:projected-limit}.
+Conversely, every subset profile \((Y_r)\) in
+\eqref{eq:saturated-relation} gives a safe relation family.
+\end{lemma}
+
+\begin{proof}
+Two positive outputs at phases \(r,r+2\) are composable precisely when the
+right coordinate of an edge in \(A_r\) equals the left coordinate of an
+edge in \(A_{r+2}\), which is \eqref{eq:relation-safety}.  Hence every
+source of \(A_r\) lies outside \(Y_{r-2}\), while every target lies in
+\(Y_r\).  Thus \(A_r\subseteq\widetilde A_r\).  The weights
+\(\lambda_r\) are nonnegative, so adding the missing edges cannot lower the
+score.  Finally, any edge of \(\widetilde A_r\) ends in \(Y_r\), and any
+edge of \(\widetilde A_{r+2}\) begins outside \(Y_r\); therefore the
+saturated family is safe.
+\end{proof}
+
+\begin{lemma}[Reflection and absolute value]
+\label{lem:reflection}
+Define \(F^\rho_r(x,z,y)=F_r(-x,-z,-y)\).  Reflection preserves universal
+safety and
+\[
+ L_q(F^\rho)=-L_q(F).
+\]
+Consequently \(\max_{\rm safe}|L_q|=\max_{\rm safe}L_q\), with both
+orientations attained.
+\end{lemma}
+
+\begin{proof}
+Negation is a bijection of all ternary biwords, so it preserves
+\eqref{eq:safety}.  For \(H=zF\),
+\[
+ zF^\rho(x,z,y)=-H(-x,-z,-y).
+\]
+Every exact-support sign stratum is invariant under simultaneous
+negation, and its uniform average therefore changes sign.  The RH-394
+table law gives the displayed identity.
+\end{proof}
+
+\section{The tropical optimizer and the self-loop exception}
+
+\begin{proposition}[Exact all-\(q\) tropical formula]
+\label{prop:tropical}
+Formula \eqref{eq:eight-state} holds for every finite \(q\), including the
+self-loop clocks \(q=1,2\).
+\end{proposition}
+
+\begin{proof}
+By Lemmas~\ref{lem:projection}--\ref{lem:saturation}, a positive optimum
+is obtained by choosing \(Y_r\subseteq\T\), and its phase contribution is
+exactly
+\[
+ \sum_{x\notin Y_{r-2}}\sum_{y\in Y_r}\lambda_r(x,y)
+ =\mathcal K_r(Y_{r-2},Y_r).
+\]
+Addition by two decomposes the phases into \(\gcd(q,2)\) disjoint cycles.
+The choices on distinct cycles do not interact, so maximizing their sums
+separately proves \eqref{eq:eight-state}.  Keeping all subsets of \(\T\)
+gives eight states, and cyclic closure is the tropical trace.
+Lemma~\ref{lem:reflection} converts the positive optimum to the absolute
+capacity.
+\end{proof}
+
+\begin{proposition}[Four-state compression for \(q\geq3\)]
+\label{prop:compression}
+If \(q\geq3\), an optimizer can be chosen so that every \(Y_r\) contains
+either both nonzero signs or neither.  On these four states the transition
+is \eqref{eq:four-state}.
+\end{proposition}
+
+\begin{proof}
+The density \(\lambda_r(x,y)\) depends only on whether each coordinate is
+zero.  Hold fixed the membership of zero in every \(Y_r\), and put
+\(k_r=|Y_r\cap\{-1,+1\}|\in\{0,1,2\}\).  When \(q\geq3\), the two
+occurrences of \(Y_r\) are in distinct transition terms: it is the target
+of the \(r\)-term and the excluded source of the \(r+2\)-term.  Holding
+all other variables fixed, the objective is affine in \(k_r\).  Replacing
+an interior value \(k_r=1\) by one of the endpoints \(0,2\) therefore
+does not lower the objective.  Repeating this finitely many times yields
+an antipodally symmetric optimizer.
+
+For such a set write \(u_0=\ind_{\{0\in Y\}}\) and
+\(u_1=k/2\).  Splitting \eqref{eq:transition} according to the four
+zero/nonzero support patterns gives the four terms in
+\eqref{eq:four-state}.  For \(q=1,2\), the same variable occurs as both
+source and target in a self-loop and produces \(k_r(2-k_r)\); the affine
+argument is therefore unavailable.
+\end{proof}
+
+\begin{proposition}[Small clocks and genuine memory gain]
+\label{prop:small}
+The values in \eqref{eq:C12}--\eqref{eq:C6} hold, and
+\[
+ C(6)-F_{\rm one}(6)=\frac{2K_2-K_1}{4}>0,
+ \qquad F_{\rm one}(6)=\frac{3K_1}{8}.
+ \label{eq:q6-gap}
+\]
+\end{proposition}
+
+\begin{proof}
+For \(q=1,2\), substitute \eqref{eq:theta}--\eqref{eq:lambda} into
+\(\mathcal K_r(Y,Y)\) and check the eight subsets.  At \(q=1\), the
+zero-only state is optimal and gives \(K_2-K_3\).  At \(q=2\), the even
+phase is optimized by a one-sign state, contributing
+\((K_2-K_3)/4\), while the odd phase is optimized by the zero-only state,
+contributing \(K_2/2\).  Hence
+\[
+ C(2)=\frac{K_2-K_3}{4}+\frac{K_2}{2}
+ =\frac{3K_2-K_3}{4}.
+\]
+The antipodally symmetric four-state restriction would instead give
+\(K_2-K_3\), so the \(q=2\) exception is strict.
+
+For \(q=3,4,6\), Proposition~\ref{prop:compression} reduces the exact
+calculation to the following four-state max-plus products.  Each row lists
+the resulting coefficient vector in the basis \((K_1,K_2,K_3)\):
+\begin{center}
+\begin{tabular}{ccl}
+\toprule
+\(q\) & coefficient vector & value\\
+\midrule
+3 & \((3/8,0,0)\) & \(3K_1/8\)\\
+4 & \((2/3,0,0)\) & \(2K_1/3\)\\
+6 & \((1/8,1/2,0)\) & \(K_1/8+K_2/2\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+These are finite products of four-by-four matrices with entries
+\eqref{eq:four-state}; comparing the four possible successor states at
+each step gives the displayed maxima.  The full eight-state calculation
+agrees for \(q\geq3\).  Explicit maximizing profiles, listed in \(+2\)
+cycle order, are
+\[
+\begin{array}{c|c}
+q&\text{selector states}\\ \hline
+3&(Y_0,Y_2,Y_1)=(\varnothing,\T,\varnothing),\\
+4&(Y_0,Y_2)=(\varnothing,\T),\quad
+  (Y_1,Y_3)=(\T,\varnothing),\\
+6&(Y_0,Y_2,Y_4)=(\varnothing,\T,\varnothing),\quad
+  Y_1=Y_3=Y_5=\{0\}.
+\end{array}
+\]
+Substitution into \eqref{eq:four-state} gives the table entries.  The
+other successor states are dominated using only the comparisons below,
+so no numerical approximation enters the finite maximum.
+
+For completeness, the only Euler-product comparisons needed to order the
+finite candidates are
+\begin{equation}
+ \frac13<\frac{K_3}{K_2}<\frac12,\qquad
+ \frac{K_2}{K_1}>\frac12.
+ \label{eq:ratios}
+\end{equation}
+The upper bound in the first inequality follows from the \(p=2\) factor
+\[
+ \frac{K_3}{K_2}
+ =\frac12\prod_{p\geq3}\left(1-\frac1{p^2-2}\right).
+\]
+For the lower bound, use
+\(\prod(1-x_i)\geq1-\sum x_i\) and
+\[
+ \sum_{p\geq3}\frac1{p^2-2}
+ <\sum_{\substack{n\geq3\\n\ {\rm odd}}}\frac1{n(n-1)}
+ =1-\log2<\frac13.
+\]
+Likewise
+\[
+ \frac{K_2}{K_1}
+ =\frac23\prod_{p\geq3}\left(1-\frac1{p^2-1}\right)
+ >\frac23\left(1-\sum_{\substack{n\geq3\\n\ {\rm odd}}}
+ \frac1{n^2-1}\right)=\frac12,
+\]
+where the prime sum is a strict sub-sum and the odd-integer sum is \(1/4\).
+This last inequality proves \eqref{eq:q6-gap}.  The one-site value follows
+from the phase-MWIS formula recalled next.
+\end{proof}
+
+\DeferredSquareSection
+\DeferredFinalSection
+
+\end{document}

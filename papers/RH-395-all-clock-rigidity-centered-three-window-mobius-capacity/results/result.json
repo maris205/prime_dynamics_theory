@@ -1,0 +1,4355 @@
+{
+  "all_pass": true,
+  "certificate": {
+    "all_pass": true,
+    "density_contract": {
+      "B_definition": "B_(p,S)={a_i mod p^2:i in S}, with duplicate residues removed",
+      "K_definition": "K_j=product_p(1-j/p^2) for j=0,1,2,3; K_0=1",
+      "coordinates": [
+        "L",
+        "C",
+        "R"
+      ],
+      "lambda": "2^(-1_(x!=0)-1_(y!=0))*Pi_(q,r)({C} union ({L}:x!=0) union ({R}:y!=0))",
+      "nu_definition": "nu_(p,S)=|B_(p,S)|",
+      "pi": "Pi_(q,r)(U)=sum_(W subset {L,C,R}\\U)(-1)^|W| Theta_(q,r)(U union W)",
+      "pi_phase_mass": "sum_(U subset {L,C,R}) Pi_(q,r)(U)=1/q",
+      "pi_role": "nonnegative exact-support density",
+      "shift_tuple": [
+        1,
+        0,
+        -1
+      ],
+      "tau_definition": "tau_(p,S)(r)=#{b in B_(p,S):b mod p=r mod p}",
+      "theta": "Theta_(q,r)(S)=q^-1 product_(p not|q)(1-nu_(p,S)/p^2) product_(p||q)(1-tau_(p,S)(r)/p) product_(p^2|q)1_(r mod p^2 notin B_(p,S))",
+      "theta_empty": "Theta_(q,r)(empty)=1/q",
+      "theta_phase_mass": "sum_(r mod q) Theta_(q,r)(S)=K_|S|",
+      "transition": "K_r(U,V)=sum_(x notin U,y in V) lambda_r(x,y)"
+    },
+    "endpoint_contract": {
+      "all_clock_statement": "C(q)<B_infinity for every finite q and sup_(q finite) C(q)=B_infinity",
+      "finite_endpoint": "B_y=F_RH375(q_y)",
+      "limiting_endpoint": "B_infinity=lim_(y->infinity) B_y",
+      "one_site_capacity": "F_RH375(q)=max_(I subset Z/qZ, I intersect (I+2)=empty) sum_(r in I) Theta_(q,r)({C})",
+      "same_support_identity": "if q_y|Q and Q has the same prime support, C(Q)=F_RH375(Q)=B_y",
+      "square_clock": "q_y=4 product_(3<=p<=p_y, p prime) p^2, with q_1=36"
+    },
+    "epistemic_role": "finite_exact_reproduction_not_analytic_proof",
+    "finite_reproduction_not_analytic_proof": true,
+    "model": {
+      "all_clock_order": "fixed q and F; X->infinity; finite maximum over safe F; then sup over finite q",
+      "alphabet": [
+        -1,
+        0,
+        1
+      ],
+      "capacity_definition": "C(q)=max_(universally safe fixed q-phase F) |L_q(F)| after each fixed-table limit exists",
+      "centered_noncausal": true,
+      "fixed_table_limit": "L_q(F)=limit_(X->infinity) of the terminal functional for every admissible terminal clock",
+      "mobius_extension": "mu_0(k)=mu(k) for integer k>=1 and mu_0(k)=0 for k<=0",
+      "phase_table_type": "F_r:T^3->{-1,+1} for r in Z/qZ",
+      "score": "mu(n)*F_(n mod q)(mu_0(n-1),mu(n),mu(n+1))",
+      "shifts": {
+        "C": 0,
+        "L": 1,
+        "R": -1
+      },
+      "terminal_clock": "as X->infinity, 1<=omega(X)<=X and omega(X)->infinity (so omega(X)>1 eventually)",
+      "terminal_functional": "(log omega(X))^-1 sum_(X/omega(X)<n<=X) mu(n)*F_(n mod q)(mu_0(n-1),mu(n),mu(n+1))/n",
+      "universal_distance_two_safety": true,
+      "universal_safety_condition": "not(F_r(a,b,c)=+1 and F_(r+2)(c,d,e)=+1) for every r and a,b,c,d,e in T",
+      "window_coordinates": [
+        "L",
+        "C",
+        "R"
+      ]
+    },
+    "multi_affinity_audit": {
+      "affine_endpoint_dominance": "f(1)=(f(0)+f(2))/2, so max(f(0),f(2))>=f(1)",
+      "compression_scope": "q>=3_only",
+      "context_count": 72,
+      "pass": true,
+      "second_difference_failure_count": 0,
+      "self_identification_iff_q_divides_2": true,
+      "state_variable_self_identification_q_1_to_10": {
+        "1": true,
+        "10": false,
+        "2": true,
+        "3": false,
+        "4": false,
+        "5": false,
+        "6": false,
+        "7": false,
+        "8": false,
+        "9": false
+      },
+      "symbolic_basis": [
+        "a_r",
+        "b_r",
+        "c_r",
+        "d_r",
+        "a_(r+2)",
+        "b_(r+2)",
+        "c_(r+2)",
+        "d_(r+2)"
+      ]
+    },
+    "mutation_names": [
+      "shift_swap",
+      "lambda_divisor",
+      "all_q_trace_4x4",
+      "q2_old_value",
+      "q2_even_witness",
+      "q2_odd_witness",
+      "q2_selfloop_deleted",
+      "q1_affinity_claim",
+      "capacity_q1",
+      "capacity_q2",
+      "capacity_q3",
+      "capacity_q4",
+      "capacity_q6",
+      "one_site_q6",
+      "q1_ratio_direction",
+      "q2_ratio_direction",
+      "projection_point_case",
+      "projection_deleted_count",
+      "relation_safe_count",
+      "saturation_changed_count",
+      "multi_affinity_failure",
+      "self_identification_q2",
+      "marginal_left",
+      "marginal_right",
+      "marginal_only_sum",
+      "marginal_omit_t0",
+      "path_ceil_to_floor",
+      "forced_reset_4",
+      "forced_reset_9",
+      "same_support_scale",
+      "square_q36",
+      "square_q900",
+      "q_lift_direction",
+      "q_lift_safety",
+      "finite_attainment",
+      "rh375_terminal_misrole",
+      "growing_q",
+      "prelimit_max",
+      "causal_claim",
+      "ordinary_cesaro",
+      "generic_capacity",
+      "source_stop",
+      "reflection_sign_identity",
+      "reflection_both_signs",
+      "mu0_definition",
+      "terminal_normalization",
+      "phase_table_type",
+      "safety_condition",
+      "capacity_definition",
+      "theta_formula",
+      "pi_formula",
+      "pi_mass",
+      "endpoint_definition",
+      "row_extra",
+      "float_injection",
+      "interval_cutoff",
+      "interval_policy"
+    ],
+    "projection_audit": {
+      "deleted_coordinate_count": 18,
+      "deleted_input_count": 18,
+      "deleted_plus_case_count": 18,
+      "full_sign_table_count": 134217728,
+      "full_table_input_count": 27,
+      "plus_set_inclusion_failure_count": 0,
+      "pointwise_case_count": 54,
+      "pointwise_projection_pass": true,
+      "positive_center_input_count": 9,
+      "preimages_per_relation": 262144,
+      "relation_count": 512,
+      "safety_preservation_failure_count": 0,
+      "score_monotonicity_failure_count": 0,
+      "uniform_fiber_identity_pass": true,
+      "zero_score_equality_failure_count": 0
+    },
+    "quantifiers": {
+      "every_admissible_terminal_clock": true,
+      "fixed_phase_tables": true,
+      "fixed_q": true,
+      "limit_before_maximum": true
+    },
+    "reflection_audit": {
+      "absolute_capacity_identity": "max_safe |L_q|=max_safe L_q",
+      "both_signs_attained": true,
+      "full_table_reflection": "F^rho(x,z,y)=F(-x,-z,-y)",
+      "lambda_sign_cell_case_count": 495,
+      "lambda_sign_cell_invariance_failure_count": 0,
+      "ordered_safe_pair_count": 3375,
+      "pass": true,
+      "pointwise_score_sign_case_count": 54,
+      "pointwise_score_sign_failure_count": 0,
+      "relation_involution_failure_count": 0,
+      "relation_map": "A -> {(-x,-y):(x,y) in A}",
+      "relation_state_compatibility_failure_count": 0,
+      "safety_preservation_failure_count": 0,
+      "saturation_commutation_case_count": 64,
+      "saturation_commutation_failure_count": 0,
+      "state_map": "Y -> {-t:t in Y}",
+      "terminal_sign_identity": "L_q(F^rho)=-L_q(F)",
+      "terminal_sign_source": "RH394_three_shift_table_law_and_sign_cell_change_of_variables"
+    },
+    "relation_contract": {
+      "all_q_tropical_trace": "8x8",
+      "compressed_state_count": 4,
+      "compression_scope": "q>=3_only",
+      "full_state_count": 8,
+      "projection": "A_r={(x,y):F_r(x,+1,y)=+1}",
+      "safety": "Target(A_r) intersect Source(A_(r+2)) is empty",
+      "saturation": "A_r=(T\\Y_(r-2)) cross Y_r"
+    },
+    "relation_pair_audit": {
+      "criterion_failure_count": 0,
+      "inclusion_failure_count": 0,
+      "ordered_relation_pair_count": 262144,
+      "pass": true,
+      "relation_count": 512,
+      "safe_pair_count": 3375,
+      "saturation_changed_pair_count": 1680,
+      "saturation_failure_count": 0
+    },
+    "rigorous_interval_audit": {
+      "basis_intervals": [
+        {
+          "bounds_sha256": "f5e9e9fd2701b22febe8c19fbc51e40520cdb23e425d8881fa610d1940c7f61f",
+          "lower_bits": [
+            22954,
+            22954
+          ],
+          "lower_positive": true,
+          "order": 1,
+          "upper_bits": [
+            22954,
+            22954
+          ],
+          "width_positive": true
+        },
+        {
+          "bounds_sha256": "30ae0c2a8d061966c2af5963b181322e521a1acb95cd5338f38c86c49ff84bea",
+          "lower_bits": [
+            23458,
+            23459
+          ],
+          "lower_positive": true,
+          "order": 2,
+          "upper_bits": [
+            23458,
+            23459
+          ],
+          "width_positive": true
+        },
+        {
+          "bounds_sha256": "ecf41812eedee26902df0869c381a72e82810c2f2130304166c736c2e6a81b5e",
+          "lower_bits": [
+            23665,
+            23668
+          ],
+          "lower_positive": true,
+          "order": 3,
+          "upper_bits": [
+            23656,
+            23659
+          ],
+          "width_positive": true
+        }
+      ],
+      "cutoff": 10000,
+      "nonidentical_overlap_policy": "raise",
+      "pass": true,
+      "separations": [
+        {
+          "coefficients": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "interval_sha256": "ec3df08bb132fb5c5a68be432ae5b5d323271ab51ccfa15e0db27f0593b8662e",
+          "label": "K2_minus_K3",
+          "lower_bits": [
+            27027,
+            27029
+          ],
+          "lower_positive": true,
+          "upper_positive": true
+        },
+        {
+          "coefficients": [
+            "0",
+            "-1",
+            "3"
+          ],
+          "interval_sha256": "ba724d122a0be292ac14f284c6c09044c3dd00d15216db5bec1b9393247b5f22",
+          "label": "three_K3_minus_K2",
+          "lower_bits": [
+            27022,
+            27026
+          ],
+          "lower_positive": true,
+          "upper_positive": true
+        },
+        {
+          "coefficients": [
+            "-1",
+            "2",
+            "0"
+          ],
+          "interval_sha256": "50f561fb32075557718a694309cc4ff65d6334ab1922ad60056d6ee7f8ae5fdb",
+          "label": "two_K2_minus_K1",
+          "lower_bits": [
+            26164,
+            26168
+          ],
+          "lower_positive": true,
+          "upper_positive": true
+        },
+        {
+          "coefficients": [
+            "0",
+            "1",
+            "-2"
+          ],
+          "interval_sha256": "826f50808c364124545e883d2c26ff456c752fe0744301591b9f00b030951097",
+          "label": "K2_minus_two_K3",
+          "lower_bits": [
+            27025,
+            27029
+          ],
+          "lower_positive": true,
+          "upper_positive": true
+        }
+      ],
+      "tail_bound": "sum_(p>P) p^-2 < 1/P"
+    },
+    "row_count": 72,
+    "row_partition": {
+      "marginal_charge": 12,
+      "q2_selfloop": 16,
+      "small_clock": 12,
+      "square_saturation": 8,
+      "subset_state": 8,
+      "theorem_firewall": 6,
+      "transfer_compression": 10
+    },
+    "rows": [
+      {
+        "data": {
+          "compressed_state": true,
+          "contains_zero": false,
+          "mask": 0,
+          "members": [],
+          "nonzero_count": 0,
+          "reflection_mask": 0
+        },
+        "id": "mask_0",
+        "kind": "subset_state",
+        "pass": true
+      },
+      {
+        "data": {
+          "compressed_state": false,
+          "contains_zero": false,
+          "mask": 1,
+          "members": [
+            -1
+          ],
+          "nonzero_count": 1,
+          "reflection_mask": 4
+        },
+        "id": "mask_1",
+        "kind": "subset_state",
+        "pass": true
+      },
+      {
+        "data": {
+          "compressed_state": true,
+          "contains_zero": true,
+          "mask": 2,
+          "members": [
+            0
+          ],
+          "nonzero_count": 0,
+          "reflection_mask": 2
+        },
+        "id": "mask_2",
+        "kind": "subset_state",
+        "pass": true
+      },
+      {
+        "data": {
+          "compressed_state": false,
+          "contains_zero": true,
+          "mask": 3,
+          "members": [
+            -1,
+            0
+          ],
+          "nonzero_count": 1,
+          "reflection_mask": 6
+        },
+        "id": "mask_3",
+        "kind": "subset_state",
+        "pass": true
+      },
+      {
+        "data": {
+          "compressed_state": false,
+          "contains_zero": false,
+          "mask": 4,
+          "members": [
+            1
+          ],
+          "nonzero_count": 1,
+          "reflection_mask": 1
+        },
+        "id": "mask_4",
+        "kind": "subset_state",
+        "pass": true
+      },
+      {
+        "data": {
+          "compressed_state": true,
+          "contains_zero": false,
+          "mask": 5,
+          "members": [
+            -1,
+            1
+          ],
+          "nonzero_count": 2,
+          "reflection_mask": 5
+        },
+        "id": "mask_5",
+        "kind": "subset_state",
+        "pass": true
+      },
+      {
+        "data": {
+          "compressed_state": false,
+          "contains_zero": true,
+          "mask": 6,
+          "members": [
+            0,
+            1
+          ],
+          "nonzero_count": 1,
+          "reflection_mask": 3
+        },
+        "id": "mask_6",
+        "kind": "subset_state",
+        "pass": true
+      },
+      {
+        "data": {
+          "compressed_state": true,
+          "contains_zero": true,
+          "mask": 7,
+          "members": [
+            -1,
+            0,
+            1
+          ],
+          "nonzero_count": 2,
+          "reflection_mask": 7
+        },
+        "id": "mask_7",
+        "kind": "subset_state",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 0,
+          "members": [],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 0,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "0",
+            "0"
+          ],
+          "state_class": "empty",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_0_mask_0",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 1,
+          "members": [
+            -1
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 0,
+          "selected_full8_witness": true,
+          "selfloop_coefficients": [
+            "0",
+            "1/4",
+            "-1/4"
+          ],
+          "state_class": "one_sign",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_0_mask_1",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 2,
+          "members": [
+            0
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 0,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "1/2",
+            "-1"
+          ],
+          "state_class": "zero_endpoint",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_0_mask_2",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 3,
+          "members": [
+            -1,
+            0
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 0,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "1/4",
+            "-1/4"
+          ],
+          "state_class": "mixed",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_0_mask_3",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 4,
+          "members": [
+            1
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 0,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "1/4",
+            "-1/4"
+          ],
+          "state_class": "one_sign",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_0_mask_4",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 5,
+          "members": [
+            -1,
+            1
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 0,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "1/2",
+            "-1"
+          ],
+          "state_class": "both_signs",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_0_mask_5",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 6,
+          "members": [
+            0,
+            1
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 0,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "1/4",
+            "-1/4"
+          ],
+          "state_class": "mixed",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_0_mask_6",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 7,
+          "members": [
+            -1,
+            0,
+            1
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 0,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "0",
+            "0"
+          ],
+          "state_class": "all",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_0_mask_7",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 0,
+          "members": [],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 1,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "0",
+            "0"
+          ],
+          "state_class": "empty",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_1_mask_0",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 1,
+          "members": [
+            -1
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 1,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "1/4",
+            "0"
+          ],
+          "state_class": "one_sign",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_1_mask_1",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 2,
+          "members": [
+            0
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 1,
+          "selected_full8_witness": true,
+          "selfloop_coefficients": [
+            "0",
+            "1/2",
+            "0"
+          ],
+          "state_class": "zero_endpoint",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_1_mask_2",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 3,
+          "members": [
+            -1,
+            0
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 1,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "1/4",
+            "0"
+          ],
+          "state_class": "mixed",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_1_mask_3",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 4,
+          "members": [
+            1
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 1,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "1/4",
+            "0"
+          ],
+          "state_class": "one_sign",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_1_mask_4",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 5,
+          "members": [
+            -1,
+            1
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 1,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "1/2",
+            "0"
+          ],
+          "state_class": "both_signs",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_1_mask_5",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 6,
+          "members": [
+            0,
+            1
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 1,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "1/4",
+            "0"
+          ],
+          "state_class": "mixed",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_1_mask_6",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_value": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_capacity": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "mask": 7,
+          "members": [
+            -1,
+            0,
+            1
+          ],
+          "old_four_state_all_q_value_forbidden": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "phase": 1,
+          "selected_full8_witness": false,
+          "selfloop_coefficients": [
+            "0",
+            "0",
+            "0"
+          ],
+          "state_class": "all",
+          "strict_gap_coefficients": [
+            "0",
+            "-1/4",
+            "3/4"
+          ]
+        },
+        "id": "phase_1_mask_7",
+        "kind": "q2_selfloop",
+        "pass": true
+      },
+      {
+        "data": {
+          "cycle_count": 1,
+          "four_state_coefficients": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_coefficients": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_equals_four_state": true,
+          "proof_mode": "q1_full8_selfloop_lemma",
+          "q": 1
+        },
+        "id": "clock_1",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "cycle_count": 2,
+          "four_state_coefficients": [
+            "0",
+            "1",
+            "-1"
+          ],
+          "full8_coefficients": [
+            "0",
+            "3/4",
+            "-1/4"
+          ],
+          "full8_equals_four_state": false,
+          "proof_mode": "q2_full8_exception",
+          "q": 2
+        },
+        "id": "clock_2",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "cycle_count": 1,
+          "four_state_coefficients": [
+            "3/8",
+            "0",
+            "0"
+          ],
+          "full8_coefficients": [
+            "3/8",
+            "0",
+            "0"
+          ],
+          "full8_equals_four_state": true,
+          "proof_mode": "q_ge_3_multi_affine_compression",
+          "q": 3
+        },
+        "id": "clock_3",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "cycle_count": 2,
+          "four_state_coefficients": [
+            "2/3",
+            "0",
+            "0"
+          ],
+          "full8_coefficients": [
+            "2/3",
+            "0",
+            "0"
+          ],
+          "full8_equals_four_state": true,
+          "proof_mode": "q_ge_3_multi_affine_compression",
+          "q": 4
+        },
+        "id": "clock_4",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "cycle_count": 1,
+          "four_state_coefficients": [
+            "5/12",
+            "0",
+            "0"
+          ],
+          "full8_coefficients": [
+            "5/12",
+            "0",
+            "0"
+          ],
+          "full8_equals_four_state": true,
+          "proof_mode": "q_ge_3_multi_affine_compression",
+          "q": 5
+        },
+        "id": "clock_5",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "cycle_count": 2,
+          "four_state_coefficients": [
+            "1/8",
+            "1/2",
+            "0"
+          ],
+          "full8_coefficients": [
+            "1/8",
+            "1/2",
+            "0"
+          ],
+          "full8_equals_four_state": true,
+          "proof_mode": "q_ge_3_multi_affine_compression",
+          "q": 6
+        },
+        "id": "clock_6",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "coefficients": [
+            "3/8",
+            "0",
+            "0"
+          ],
+          "q": 6,
+          "source_role": "RH375_MWIS_embedding"
+        },
+        "id": "one_site_q6",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "difference_coefficients": [
+            "-1/4",
+            "1/2",
+            "0"
+          ],
+          "positive_inequality": "2K2-K1>0"
+        },
+        "id": "q6_strict_gain",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "certifying_difference": [
+            "0",
+            "1",
+            "-2"
+          ],
+          "inequality": "K3/K2<1/2"
+        },
+        "id": "q1_ratio",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "certifying_difference": [
+            "0",
+            "-1",
+            "3"
+          ],
+          "inequality": "K3/K2>1/3"
+        },
+        "id": "q2_ratio",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "affinity_argument_used": false,
+          "one_sign_mask": 1,
+          "selected_class": "zero_endpoint",
+          "selected_mask": 2
+        },
+        "id": "q1_witness",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "even_contribution": [
+            "0",
+            "1/4",
+            "-1/4"
+          ],
+          "even_phase_mask": 1,
+          "odd_contribution": [
+            "0",
+            "1/2",
+            "0"
+          ],
+          "odd_phase_mask": 2,
+          "selfloops_retained": true
+        },
+        "id": "q2_witness_summary",
+        "kind": "small_clock",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_coefficients": [
+            "3/8",
+            "0",
+            "0"
+          ],
+          "full8_coefficients": [
+            "3/8",
+            "0",
+            "0"
+          ],
+          "generic_symbolic_second_difference_pass": true,
+          "multi_affinity_scope": "q>=3_only",
+          "q": 3,
+          "state_variable_self_identified": false,
+          "transition_formula_pass": true
+        },
+        "id": "q_3",
+        "kind": "transfer_compression",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_coefficients": [
+            "2/3",
+            "0",
+            "0"
+          ],
+          "full8_coefficients": [
+            "2/3",
+            "0",
+            "0"
+          ],
+          "generic_symbolic_second_difference_pass": true,
+          "multi_affinity_scope": "q>=3_only",
+          "q": 4,
+          "state_variable_self_identified": false,
+          "transition_formula_pass": true
+        },
+        "id": "q_4",
+        "kind": "transfer_compression",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_coefficients": [
+            "5/12",
+            "0",
+            "0"
+          ],
+          "full8_coefficients": [
+            "5/12",
+            "0",
+            "0"
+          ],
+          "generic_symbolic_second_difference_pass": true,
+          "multi_affinity_scope": "q>=3_only",
+          "q": 5,
+          "state_variable_self_identified": false,
+          "transition_formula_pass": true
+        },
+        "id": "q_5",
+        "kind": "transfer_compression",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_coefficients": [
+            "1/8",
+            "1/2",
+            "0"
+          ],
+          "full8_coefficients": [
+            "1/8",
+            "1/2",
+            "0"
+          ],
+          "generic_symbolic_second_difference_pass": true,
+          "multi_affinity_scope": "q>=3_only",
+          "q": 6,
+          "state_variable_self_identified": false,
+          "transition_formula_pass": true
+        },
+        "id": "q_6",
+        "kind": "transfer_compression",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_coefficients": [
+            "7/16",
+            "0",
+            "0"
+          ],
+          "full8_coefficients": [
+            "7/16",
+            "0",
+            "0"
+          ],
+          "generic_symbolic_second_difference_pass": true,
+          "multi_affinity_scope": "q>=3_only",
+          "q": 7,
+          "state_variable_self_identified": false,
+          "transition_formula_pass": true
+        },
+        "id": "q_7",
+        "kind": "transfer_compression",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_coefficients": [
+            "2/3",
+            "0",
+            "0"
+          ],
+          "full8_coefficients": [
+            "2/3",
+            "0",
+            "0"
+          ],
+          "generic_symbolic_second_difference_pass": true,
+          "multi_affinity_scope": "q>=3_only",
+          "q": 8,
+          "state_variable_self_identified": false,
+          "transition_formula_pass": true
+        },
+        "id": "q_8",
+        "kind": "transfer_compression",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_coefficients": [
+            "1/2",
+            "0",
+            "0"
+          ],
+          "full8_coefficients": [
+            "1/2",
+            "0",
+            "0"
+          ],
+          "generic_symbolic_second_difference_pass": true,
+          "multi_affinity_scope": "q>=3_only",
+          "q": 9,
+          "state_variable_self_identified": false,
+          "transition_formula_pass": true
+        },
+        "id": "q_9",
+        "kind": "transfer_compression",
+        "pass": true
+      },
+      {
+        "data": {
+          "four_state_coefficients": [
+            "5/12",
+            "0",
+            "0"
+          ],
+          "full8_coefficients": [
+            "5/12",
+            "0",
+            "0"
+          ],
+          "generic_symbolic_second_difference_pass": true,
+          "multi_affinity_scope": "q>=3_only",
+          "q": 10,
+          "state_variable_self_identified": false,
+          "transition_formula_pass": true
+        },
+        "id": "q_10",
+        "kind": "transfer_compression",
+        "pass": true
+      },
+      {
+        "data": {
+          "cycle_count": 1,
+          "cycle_lengths": [
+            5
+          ],
+          "gcd_q_2": 1,
+          "q": 5,
+          "structure": "odd_single_cycle"
+        },
+        "id": "cycle_structure_5",
+        "kind": "transfer_compression",
+        "pass": true
+      },
+      {
+        "data": {
+          "cycle_count": 2,
+          "cycle_lengths": [
+            3,
+            3
+          ],
+          "gcd_q_2": 2,
+          "q": 6,
+          "structure": "even_two_cycles"
+        },
+        "id": "cycle_structure_6",
+        "kind": "transfer_compression",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P0",
+          "raw_pattern": [
+            0,
+            0,
+            0
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": null,
+          "reflection_quotient_count": 4,
+          "representative_phase": 17,
+          "right_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": false,
+          "shared_value": -1
+        },
+        "id": "P0_t_-1",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P0",
+          "raw_pattern": [
+            0,
+            0,
+            0
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": null,
+          "reflection_quotient_count": 4,
+          "representative_phase": 17,
+          "right_marginal": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": false,
+          "shared_value": 0
+        },
+        "id": "P0_t_0",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P0",
+          "raw_pattern": [
+            0,
+            0,
+            0
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": null,
+          "reflection_quotient_count": 4,
+          "representative_phase": 17,
+          "right_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": false,
+          "shared_value": 1
+        },
+        "id": "P0_t_1",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P1",
+          "raw_pattern": [
+            0,
+            0,
+            1
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": 15,
+          "reflection_quotient_count": 4,
+          "representative_phase": 19,
+          "right_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": false,
+          "shared_value": -1
+        },
+        "id": "P1_t_-1",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P1",
+          "raw_pattern": [
+            0,
+            0,
+            1
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": 15,
+          "reflection_quotient_count": 4,
+          "representative_phase": 19,
+          "right_marginal": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": false,
+          "shared_value": 0
+        },
+        "id": "P1_t_0",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P1",
+          "raw_pattern": [
+            0,
+            0,
+            1
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": 15,
+          "reflection_quotient_count": 4,
+          "representative_phase": 19,
+          "right_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": false,
+          "shared_value": 1
+        },
+        "id": "P1_t_1",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P2",
+          "raw_pattern": [
+            1,
+            0,
+            1
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": null,
+          "reflection_quotient_count": 4,
+          "representative_phase": 3,
+          "right_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": false,
+          "shared_value": -1
+        },
+        "id": "P2_t_-1",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P2",
+          "raw_pattern": [
+            1,
+            0,
+            1
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": null,
+          "reflection_quotient_count": 4,
+          "representative_phase": 3,
+          "right_marginal": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": false,
+          "shared_value": 0
+        },
+        "id": "P2_t_0",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P2",
+          "raw_pattern": [
+            1,
+            0,
+            1
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": null,
+          "reflection_quotient_count": 4,
+          "representative_phase": 3,
+          "right_marginal": [
+            "0",
+            "0",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": false,
+          "shared_value": 1
+        },
+        "id": "P2_t_1",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "0",
+            "1/28",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P3",
+          "raw_pattern": [
+            0,
+            1,
+            0
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": null,
+          "reflection_quotient_count": 4,
+          "representative_phase": 1,
+          "right_marginal": [
+            "0",
+            "1/28",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": true,
+          "shared_value": -1
+        },
+        "id": "P3_t_-1",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "1/24",
+            "-1/14",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P3",
+          "raw_pattern": [
+            0,
+            1,
+            0
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": null,
+          "reflection_quotient_count": 4,
+          "representative_phase": 1,
+          "right_marginal": [
+            "1/24",
+            "-1/14",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": true,
+          "shared_value": 0
+        },
+        "id": "P3_t_0",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "centers_positive": true,
+          "forced_resets": [
+            4,
+            9
+          ],
+          "generic_square_support_interface_pass": true,
+          "left_marginal": [
+            "0",
+            "1/28",
+            "0"
+          ],
+          "pair_charge_coefficients": [
+            "1/24",
+            "0",
+            "0"
+          ],
+          "pair_charge_sum_pass": true,
+          "pattern_id": "P3",
+          "raw_pattern": [
+            0,
+            1,
+            0
+          ],
+          "raw_pattern_count": 5,
+          "reflection_partner_phase": null,
+          "reflection_quotient_count": 4,
+          "representative_phase": 1,
+          "right_marginal": [
+            "0",
+            "1/28",
+            "0"
+          ],
+          "run_charge": "ceil(L/2)*delta",
+          "shared_allowed": true,
+          "shared_value": 1
+        },
+        "id": "P3_t_1",
+        "kind": "marginal_charge",
+        "pass": true
+      },
+      {
+        "data": {
+          "base_divides_q": true,
+          "base_square_clock": 36,
+          "capacity_coefficients": [
+            "2/3",
+            "0",
+            "0"
+          ],
+          "endpoint_label": "B1",
+          "forced_four_and_nine_resets": true,
+          "generic_square_support_interface_pass": true,
+          "marginal_pair_charge": true,
+          "optimizer": "full8",
+          "q": 36,
+          "same_prime_support": true
+        },
+        "id": "q36_B1",
+        "kind": "square_saturation",
+        "pass": true
+      },
+      {
+        "data": {
+          "base_divides_q": true,
+          "base_square_clock": 36,
+          "capacity_coefficients": [
+            "2/3",
+            "0",
+            "0"
+          ],
+          "endpoint_label": "B1",
+          "forced_four_and_nine_resets": true,
+          "generic_square_support_interface_pass": true,
+          "marginal_pair_charge": true,
+          "optimizer": "four_state",
+          "q": 72,
+          "same_prime_support": true
+        },
+        "id": "Q72_B1",
+        "kind": "square_saturation",
+        "pass": true
+      },
+      {
+        "data": {
+          "base_divides_q": true,
+          "base_square_clock": 36,
+          "capacity_coefficients": [
+            "2/3",
+            "0",
+            "0"
+          ],
+          "endpoint_label": "B1",
+          "forced_four_and_nine_resets": true,
+          "generic_square_support_interface_pass": true,
+          "marginal_pair_charge": true,
+          "optimizer": "four_state",
+          "q": 108,
+          "same_prime_support": true
+        },
+        "id": "Q108_B1",
+        "kind": "square_saturation",
+        "pass": true
+      },
+      {
+        "data": {
+          "base_divides_q": true,
+          "base_square_clock": 36,
+          "capacity_coefficients": [
+            "2/3",
+            "0",
+            "0"
+          ],
+          "endpoint_label": "B1",
+          "forced_four_and_nine_resets": true,
+          "generic_square_support_interface_pass": true,
+          "marginal_pair_charge": true,
+          "optimizer": "four_state",
+          "q": 324,
+          "same_prime_support": true
+        },
+        "id": "Q324_B1",
+        "kind": "square_saturation",
+        "pass": true
+      },
+      {
+        "data": {
+          "base_divides_q": true,
+          "base_square_clock": 900,
+          "capacity_coefficients": [
+            "49/72",
+            "0",
+            "0"
+          ],
+          "endpoint_label": "B2",
+          "forced_four_and_nine_resets": true,
+          "generic_square_support_interface_pass": true,
+          "marginal_pair_charge": true,
+          "optimizer": "four_state",
+          "q": 900,
+          "same_prime_support": true
+        },
+        "id": "q900_B2",
+        "kind": "square_saturation",
+        "pass": true
+      },
+      {
+        "data": {
+          "base_divides_q": true,
+          "base_square_clock": 900,
+          "capacity_coefficients": [
+            "49/72",
+            "0",
+            "0"
+          ],
+          "endpoint_label": "B2",
+          "forced_four_and_nine_resets": true,
+          "generic_square_support_interface_pass": true,
+          "marginal_pair_charge": true,
+          "optimizer": "four_state",
+          "q": 1800,
+          "same_prime_support": true
+        },
+        "id": "Q1800_B2",
+        "kind": "square_saturation",
+        "pass": true
+      },
+      {
+        "data": {
+          "B1_coefficients": [
+            "2/3",
+            "0",
+            "0"
+          ],
+          "B2_coefficients": [
+            "49/72",
+            "0",
+            "0"
+          ],
+          "difference_coefficients": [
+            "1/72",
+            "0",
+            "0"
+          ],
+          "strict": true
+        },
+        "id": "B1_strictly_below_B2",
+        "kind": "square_saturation",
+        "pass": true
+      },
+      {
+        "data": {
+          "Q": 44100,
+          "cutoff_index": 3,
+          "pass": true,
+          "q": 70,
+          "q_divides_Q": true,
+          "q_y": 44100,
+          "q_y_divides_Q": true,
+          "same_prime_support": true,
+          "strict_endpoint_chain": "C(q)<=C(Q)=B_y<B_infinity",
+          "universal_interface": "choose y covering every prime divisor of fixed q"
+        },
+        "id": "arbitrary_clock_cutoff_bridge",
+        "kind": "square_saturation",
+        "pass": true
+      },
+      {
+        "data": {
+          "direction": "C(q)<=C(Q)",
+          "fixtures": [
+            {
+              "Q": 3,
+              "base_coefficients": [
+                "0",
+                "1",
+                "-1"
+              ],
+              "density_aggregation_pass": true,
+              "lifted_coefficients": [
+                "0",
+                "1",
+                "-1"
+              ],
+              "lifted_relation_count": 3,
+              "lifted_relation_safety_pass": true,
+              "pass": true,
+              "q": 1,
+              "score_identity_pass": true,
+              "transition_aggregation_pass": true
+            },
+            {
+              "Q": 6,
+              "base_coefficients": [
+                "0",
+                "3/4",
+                "-1/4"
+              ],
+              "density_aggregation_pass": true,
+              "lifted_coefficients": [
+                "0",
+                "3/4",
+                "-1/4"
+              ],
+              "lifted_relation_count": 6,
+              "lifted_relation_safety_pass": true,
+              "pass": true,
+              "q": 2,
+              "score_identity_pass": true,
+              "transition_aggregation_pass": true
+            },
+            {
+              "Q": 6,
+              "base_coefficients": [
+                "3/8",
+                "0",
+                "0"
+              ],
+              "density_aggregation_pass": true,
+              "lifted_coefficients": [
+                "3/8",
+                "0",
+                "0"
+              ],
+              "lifted_relation_count": 6,
+              "lifted_relation_safety_pass": true,
+              "pass": true,
+              "q": 3,
+              "score_identity_pass": true,
+              "transition_aggregation_pass": true
+            },
+            {
+              "Q": 8,
+              "base_coefficients": [
+                "2/3",
+                "0",
+                "0"
+              ],
+              "density_aggregation_pass": true,
+              "lifted_coefficients": [
+                "2/3",
+                "0",
+                "0"
+              ],
+              "lifted_relation_count": 8,
+              "lifted_relation_safety_pass": true,
+              "pass": true,
+              "q": 4,
+              "score_identity_pass": true,
+              "transition_aggregation_pass": true
+            }
+          ],
+          "nonminimal_period_lift": true,
+          "uniform_q_analytic_claim": false
+        },
+        "id": "q_divides_Q_lift",
+        "kind": "theorem_firewall",
+        "pass": true
+      },
+      {
+        "data": {
+          "attained_at_finite_q": false,
+          "statement": "sup_(fixed finite q) C(q)=B_infinity",
+          "witness": "embedded one-site relations at q_y"
+        },
+        "id": "all_clock_supremum",
+        "kind": "theorem_firewall",
+        "pass": true
+      },
+      {
+        "data": {
+          "bridge": "C(q)<=C(lcm(q,q_y))=B_y<B_infinity",
+          "finite_attainment": false,
+          "statement": "C(q)<B_infinity for every fixed finite q"
+        },
+        "id": "finite_nonattainment",
+        "kind": "theorem_firewall",
+        "pass": true
+      },
+      {
+        "data": {
+          "RH375": "finite_clock_MWIS_square_density_and_same_support_combinatorics_only",
+          "RH375_terminal_clock_analytic_input": false,
+          "RH394": "terminal_log_table_Pi_lambda_limit"
+        },
+        "id": "source_role_split",
+        "kind": "theorem_firewall",
+        "pass": true
+      },
+      {
+        "data": {
+          "RH378_window_end_model": "STOP_direct",
+          "causal_or_online": false,
+          "future_coordinate_used": true,
+          "window": [
+            "mu_0(n-1)",
+            "mu(n)",
+            "mu(n+1)"
+          ]
+        },
+        "id": "centered_noncausal_type",
+        "kind": "theorem_firewall",
+        "pass": true
+      },
+      {
+        "data": {
+          "even_odd_support_at_least_four": false,
+          "fixed_q_and_tables_only": true,
+          "generic_graph_capacity": false,
+          "growing_q": false,
+          "operator_trace_zero_RH_or_Gates": false,
+          "ordinary_Cesaro": false,
+          "prelimit_or_adaptive_max": false,
+          "rate": false
+        },
+        "id": "claim_ceiling",
+        "kind": "theorem_firewall",
+        "pass": true
+      }
+    ],
+    "schema_version": 1,
+    "square_marginal_interface_audit": {
+      "forced_reset_moduli": [
+        4,
+        9
+      ],
+      "hypotheses": {
+        "adjacent_centers_allowed": true,
+        "common_positive_center_weight": true,
+        "outside_prime_pair_factors_are_residue_translates": true,
+        "supported_prime_exponents_at_least_two": true
+      },
+      "local_branches": [
+        {
+          "branch": "shared_forced_zero",
+          "left_marginals": {
+            "-1": [
+              "0",
+              "0"
+            ],
+            "0": [
+              "1",
+              "0"
+            ],
+            "1": [
+              "0",
+              "0"
+            ]
+          },
+          "left_right_per_t_equal": true,
+          "outside_prime_pair_factors_are_translates": true,
+          "pass": true,
+          "right_marginals": {
+            "-1": [
+              "0",
+              "0"
+            ],
+            "0": [
+              "1",
+              "0"
+            ],
+            "1": [
+              "0",
+              "0"
+            ]
+          },
+          "sum_coefficients": [
+            "1",
+            "0"
+          ]
+        },
+        {
+          "branch": "shared_allowed",
+          "left_marginals": {
+            "-1": [
+              "0",
+              "1/2"
+            ],
+            "0": [
+              "1",
+              "-1"
+            ],
+            "1": [
+              "0",
+              "1/2"
+            ]
+          },
+          "left_right_per_t_equal": true,
+          "outside_prime_pair_factors_are_translates": true,
+          "pass": true,
+          "right_marginals": {
+            "-1": [
+              "0",
+              "1/2"
+            ],
+            "0": [
+              "1",
+              "-1"
+            ],
+            "1": [
+              "0",
+              "1/2"
+            ]
+          },
+          "sum_coefficients": [
+            "1",
+            "0"
+          ]
+        }
+      ],
+      "pass": true,
+      "path_bound": {
+        "adjacent_pair_bound": "W_i+W_(i+1)<=delta",
+        "charges_L_0_to_12": [
+          0,
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4,
+          4,
+          5,
+          5,
+          6,
+          6
+        ],
+        "closed_form": "ceil(L/2)*delta",
+        "failure_count": 0,
+        "individual_bound": "W_i<=delta",
+        "recurrence": "R_L=max(R_(L-1),1+R_(L-2))"
+      },
+      "q36_plus_two_cycles": [
+        {
+          "phases": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            22,
+            24,
+            26,
+            28,
+            30,
+            32,
+            34
+          ],
+          "positive_run_lengths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "run_charge_units": 8,
+          "zero_phases": [
+            0,
+            4,
+            8,
+            12,
+            16,
+            18,
+            20,
+            24,
+            28,
+            32
+          ]
+        },
+        {
+          "phases": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            21,
+            23,
+            25,
+            27,
+            29,
+            31,
+            33,
+            35
+          ],
+          "positive_run_lengths": [
+            8,
+            8
+          ],
+          "run_charge_units": 8,
+          "zero_phases": [
+            9,
+            27
+          ]
+        }
+      ],
+      "reset_failure_count": 0,
+      "same_support_repetition": {
+        "fixtures": [
+          {
+            "base": 36,
+            "delta_repetition_identity": true,
+            "multiple": 72,
+            "ratio": 2,
+            "same_prime_support": true
+          },
+          {
+            "base": 36,
+            "delta_repetition_identity": true,
+            "multiple": 108,
+            "ratio": 3,
+            "same_prime_support": true
+          },
+          {
+            "base": 36,
+            "delta_repetition_identity": true,
+            "multiple": 324,
+            "ratio": 9,
+            "same_prime_support": true
+          },
+          {
+            "base": 900,
+            "delta_repetition_identity": true,
+            "multiple": 1800,
+            "ratio": 2,
+            "same_prime_support": true
+          }
+        ],
+        "formula": "delta_Q=delta_q/(Q/q)"
+      }
+    },
+    "status": "RH-395_centered_three_window_core_certified",
+    "title": "All-Clock Rigidity for Centered Three-Window Möbius Capacity"
+  },
+  "core_mutation_audit": [
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "shift_swap"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "lambda_divisor"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "all_q_trace_4x4"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "q2_old_value"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "q2_even_witness"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "q2_odd_witness"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "q2_selfloop_deleted"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "q1_affinity_claim"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "capacity_q1"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "capacity_q2"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "capacity_q3"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "capacity_q4"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "capacity_q6"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "one_site_q6"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "q1_ratio_direction"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "q2_ratio_direction"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "projection_point_case"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "projection_deleted_count"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "relation_safe_count"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "saturation_changed_count"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "multi_affinity_failure"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "self_identification_q2"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "marginal_left"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "marginal_right"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "marginal_only_sum"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "marginal_omit_t0"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "path_ceil_to_floor"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "forced_reset_4"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "forced_reset_9"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "same_support_scale"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "square_q36"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "square_q900"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "q_lift_direction"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "q_lift_safety"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "finite_attainment"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "rh375_terminal_misrole"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "growing_q"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "prelimit_max"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "causal_claim"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "ordinary_cesaro"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "generic_capacity"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "source_stop"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "reflection_sign_identity"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "reflection_both_signs"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "mu0_definition"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "terminal_normalization"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "phase_table_type"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "safety_condition"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "capacity_definition"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "theta_formula"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "pi_formula"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "pi_mass"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "endpoint_definition"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "row_extra"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "float_injection"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "interval_cutoff"
+    },
+    {
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true,
+      "name": "interval_policy"
+    }
+  ],
+  "declarations": {
+    "external_payload_hash_hits": [],
+    "external_payload_vendored": false,
+    "finite_reproduction_not_analytic_proof": true,
+    "fixed_q_only": true,
+    "limit_before_maximum": true,
+    "network_opt_in": false,
+    "remote_redistributable_in_release": [
+      false,
+      false,
+      true,
+      false
+    ],
+    "requests_made": 0
+  },
+  "epistemic_role": "finite_exact_reproduction_plus_frozen_analytic_interfaces",
+  "forbidden": {
+    "Gate_A": false,
+    "Gate_B": false,
+    "Gate_C": false,
+    "Gate_D": false,
+    "Gate_E": false,
+    "RH375_used_as_terminal_clock_analytic_input": false,
+    "RH378_window_end_model_used": false,
+    "adaptive_or_prelimit_capacity": false,
+    "causal_or_online_centered_rule": false,
+    "effective_uniform_rate": false,
+    "even_odd_support_at_least_four": false,
+    "finite_certificate_is_analytic_proof": false,
+    "finite_endpoint_attained": false,
+    "four_state_compression_used_for_q_1": false,
+    "four_state_compression_used_for_q_2": false,
+    "generic_graph_capacity": false,
+    "growing_or_X_dependent_tables": false,
+    "growing_q": false,
+    "maximum_before_terminal_limit": false,
+    "network_fetch_required": false,
+    "operator_model": false,
+    "ordinary_Cesaro_average": false,
+    "proof_of_Riemann_Hypothesis": false,
+    "q_depending_on_X": false,
+    "trace_formula": false,
+    "vendored_external_payload": false,
+    "zero_model": false
+  },
+  "gates": {
+    "A_intrinsic_determinant": false,
+    "B_scattering_completion": false,
+    "C_self_adjoint_generator": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "identities": {
+    "certificate": {
+      "canonical_bytes": 32983,
+      "canonical_sha256": "31afb062208af97fddb5192bc4d6f1f4f030ad69b5a3f9b6ed1d1d9b2b1128a9",
+      "rows": 72
+    },
+    "core_file": {
+      "bytes": 127045,
+      "sha256": "4abb5e4c61a9b71370d2e02c36a474655719740b91fdd247f64ed0af0b90509e"
+    },
+    "core_test": {
+      "bytes": 8934,
+      "sha256": "f8d51247f10ff9ce29103c7c8f76a7c21066c174711fad0ac61bbae2084cdf97"
+    },
+    "source_builder": {
+      "bytes": 28680,
+      "sha256": "db36343bae5589dd59a125b89d48ec82200d6625d3db8b65d5fb2065f7463a52"
+    },
+    "source_closure": {
+      "canonical_bytes": 53906,
+      "canonical_sha256": "f1efeeb0d0de94ced87438a5261f69c8f5e0408935374cbadfc7b8f0c84f3fcc",
+      "git": 148,
+      "logical": 152,
+      "logical_sha256": "5c4b81ea2f7bdd661fe4374d1174ef3a1909a8327d5982aa01510e4201340bd3",
+      "remote": 4
+    },
+    "source_role_sha256": "72403cb9257faa742a03ffb4d6aa048ebab3932d1710c100d3899524c2dc825f",
+    "theorem_contract_sha256": "4c1db06dd7c29ccd88669402415ca5cc1ace0f19883d2285de1929178799a67e"
+  },
+  "paper": "RH-395",
+  "result_mutation_names": [
+    "all_pass",
+    "schema_version_float",
+    "paper",
+    "title",
+    "status",
+    "role",
+    "core_bytes",
+    "core_hash",
+    "core_test_hash",
+    "certificate_bytes",
+    "certificate_hash",
+    "source_builder_hash",
+    "source_closure_bytes",
+    "source_closure_hash",
+    "network",
+    "vendor",
+    "analytic_proof",
+    "git_count",
+    "remote_count",
+    "logical_count",
+    "logical_digest",
+    "rights",
+    "payload_hit",
+    "theorem_clock",
+    "theorem_safety",
+    "theorem_theta",
+    "theorem_pi",
+    "theorem_projected_limit",
+    "theorem_square_charge",
+    "theorem_ratio",
+    "theorem_trace",
+    "theorem_q2",
+    "theorem_reflection",
+    "theorem_lift",
+    "theorem_endpoint",
+    "source_RH375_role",
+    "source_RH394_role",
+    "forbidden_true",
+    "forbidden_missing",
+    "gate_true",
+    "core_mutation_name",
+    "core_mutation_rejected",
+    "summary_q2",
+    "summary_rows",
+    "extra_key"
+  ],
+  "schema_version": 1,
+  "source_closure": {
+    "direct_predecessors": {
+      "rh375_one_site_endpoint": {
+        "commit": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+        "directory": "papers/RH-375-all-clock-one-site-mobius-capacity-supremum",
+        "result_sha256": "81d905c2476abc36fdd1ab0e468ad33d85f4df9db35afbd3bc79bf0771fe0a08",
+        "role": "direct_squarefree_phase_density_MWIS_all_finite_clock_lift_square_clock_divisibility_same_prime_support_saturation_combinatorics_only",
+        "terminal_clock_analytic_input": false
+      },
+      "rh394_terminal_log": {
+        "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+        "directory": "papers/RH-394-odd-parity-terminal-log-mobius-compiler",
+        "result_sha256": "935de4967e504e5c32f6d27980ec044c3cffccfbab534440730470de8b1ae610",
+        "role": "direct_terminal_log_three_shift_table_law_and_phase_densities"
+      }
+    },
+    "git": {
+      "all_git_source_digest": "9b5e0c04bb3189ddcb802ccb65d5f6b3cc8aa081000acd9fa781fd9f81e50ec9",
+      "count": 148,
+      "digest_contract_pass": true,
+      "entries": [
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/README.md",
+          "sha256": "dbc0041d012d6316ef6a8ffab6f05d510a1cc68414eae30c3744a7c411925c4c"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/THEOREM_LEDGER.md",
+          "sha256": "9451ee6faf1f523a62a10c85ba494b8617011dab7b8d7bc517e7c0c26aabb4ee"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/UPDATED_ROADMAP.md",
+          "sha256": "c6857ef5bc9cd88074108254fc39a93e985daae7fa545e26badbfdfc086bf28c"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/main.tex",
+          "sha256": "2129075ec4bae1c5f0f25fcd09cec273fe322d44116d51e5191e3cade4fb9f6d"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/references.bib",
+          "sha256": "ce1e5123ff7edc05c6436f2534044e7058b4a3857bf0f084971954ced3e7c184"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/results/result.json",
+          "sha256": "ca492e96bd557b966d7924ee7acca7eceb9248dafe513a674f36f78891438bdd"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/src/square_clock/core.py",
+          "sha256": "79afe7d583c3db30f876c62605a42f2ee77819028a40d01a3ec24d3259a40615"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/README.md",
+          "sha256": "8beb603782f40db86031515d3a70d82e4f76cdf10d60561062d88ff581daffe5"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/THEOREM_LEDGER.md",
+          "sha256": "7229a3969c48463724ed573b4dde1da3e8a48790ebe7663af68b1139a033c2bb"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/UPDATED_ROADMAP.md",
+          "sha256": "75c243a5ae12fbe71cdb2ce3cb3c46a8e7a61d016dd6c8dba2b98b6b9dac3464"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/main.tex",
+          "sha256": "c5d97a227398a4f1d46a39fdec73ffb86aeb9bfc0f16296be7023b187b497090"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/references.bib",
+          "sha256": "d728ca8571bfcc96e78be3b5231db83c3bb61140d0dfabb3be0b4848738673c6"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.json",
+          "sha256": "a209b922ad6235263bb5213d090a2fb0ad0bcfdd0168788e64115b33d95a4ca8"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.schema.json",
+          "sha256": "0af712350369e3f7e4a51ce5a8ee1179928e9397372b7b1040183dc3668406df"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/src/phasewise_memory/core.py",
+          "sha256": "cd3949cc0a1ece1dadab59c049c8a4d3fc170a9c7b6332b93ad62567277fd582"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/README.md",
+          "sha256": "eb241b1fd954ba689750d47dd51ae7cd5980c2bb7706165e3fcbab2e2375bc23"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/THEOREM_LEDGER.md",
+          "sha256": "c274c2a5685ba6d472d392c5097149742e432e938aeb61fd3f5b7f001a382c7a"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/UPDATED_ROADMAP.md",
+          "sha256": "8a82e86bf66248d5dda44ca806fd2c5d974530b5b7e85baac25c0aa98f41ce1d"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/main.tex",
+          "sha256": "6110b876e1b31fe79e7ff72e5058d97179575cf1dccce86e8c7c0a049d57451f"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/references.bib",
+          "sha256": "5ea4b95e74c63e47b5eb6a92564941748fb02fc7e7729efe05f52932bb657604"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.json",
+          "sha256": "e7e6bc2acc46b9346e2fdd90306e9f8c5fb18c193ed0601466bbf4e01a92be33"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.schema.json",
+          "sha256": "62bb03f0e61043bdeda0bf49afcbc0877d95115ca677e7cda20a73d955c5a57f"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/src/finite_clock_gap/core.py",
+          "sha256": "ed88dd657fcf4c3fa4ae1c2cd2d0a434770433e7cffd0b52297faab1d5459074"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/README.md",
+          "sha256": "891ebd30acfbffd90cddda3bd96719f01d7cae13eec399894b08c0c20435dae3"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/THEOREM_LEDGER.md",
+          "sha256": "a7a79197bba2a423cff77f6f74e63c8621a40c2bcef368e5ce6ce954857edcda"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/UPDATED_ROADMAP.md",
+          "sha256": "f2ea88b81441c78171a2a54d85ddc7f2a405ae78b94cac43ca6f6ae46048d703"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/main.tex",
+          "sha256": "b1025502880530602f134ea5bdc6dcde34e2cdfd18fb364cb104343d456b643a"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/references.bib",
+          "sha256": "bb61978aebc465b05e3ffda154926ad20bb15e4a475e12304cc6147903d40625"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.json",
+          "sha256": "a7a869f40af0a17656b28a07fe58e337d9b8e619d13de8bc671326912f875ffd"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.schema.json",
+          "sha256": "ed1788580270f03bdcbb43172edf149f086b76564697dd93e1556282855aad5b"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/src/prime_square_tail/core.py",
+          "sha256": "acc1e11ff57b634ec702996526f4ddd12ac58d372236a8d77202b529faca9322"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/README.md",
+          "sha256": "5f818841bb7db7c8b27e75d892a2fa6f3de549edb7456f65fb2275b82356203a"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/THEOREM_LEDGER.md",
+          "sha256": "1c835ef614fd9381c08019f0cb5358c829bafdb2e7502861649566508b4ea586"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/UPDATED_ROADMAP.md",
+          "sha256": "793e27292d6f99fc1c23a550e66b247bbc1aa1b5c0bfef266339697bf3b9e66e"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/main.tex",
+          "sha256": "929b4304390036843c5e4f0d165f3be45d683e36f2a7537a3a5d14ed197b5d0c"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/references.bib",
+          "sha256": "c8ea97c3b3626d27fc6a3ec0dca69aa87c4eb2b248ec410bc989aff0aa4f11dc"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.json",
+          "sha256": "960ef6ce017ad62b6c552ed30a41b9f0c3e41a9a217ef103c4a3f812c80a71d2"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.schema.json",
+          "sha256": "573b631820edd3b911b9792f9587fee07a03cf13ecefd03a6247d115cfa42394"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/src/two_scale_tail/core.py",
+          "sha256": "3fd8bd0233385aeb440d0703769ea6b624792aef4460ec5b887116fe3554b56e"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/README.md",
+          "sha256": "a666c7d396bb54062b761f06d95d35a3b27ddceec7ed7a6519cbfc61e7d590f3"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/THEOREM_LEDGER.md",
+          "sha256": "eb117b3e731cfc2bb9b6df0368f475d25ec0b1646f4ac7e616dd29e1d7ddd896"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/UPDATED_ROADMAP.md",
+          "sha256": "9d9e36e923e1430aeee6715684b3039ccca576360e3c5528d85fe355a088ae51"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/main.tex",
+          "sha256": "b1030a1203685121ddc99504d0d8a5b389611b41e47a1009fea70a0215ab3bb3"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/references.bib",
+          "sha256": "0cd86c21c7b65399043ec4994baecb3501b8e7e61294b211131488a9fe9e0dad"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/results/result.json",
+          "sha256": "519f585f4cf867c0d41ae674c3fb16bc0fbcf529af32131ad1afbba6692355ab"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/results/result.schema.json",
+          "sha256": "8985f41cd7043b58d3b2fa9ee387bd6da4cb9d6156d3e5226acf57123674c118"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/src/euler_tail_normal_form/core.py",
+          "sha256": "7f976ebb09374d0df339a71947e4c4dd7d49c7bc226ab05ac7de481f1e26defb"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json",
+          "sha256": "3cf3261c0c2c6fbe7511b16615f032edfcbd6b6b1e0c73f5e2ef932a1e6a694c"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json",
+          "sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-2-exact-prime-kneading-spectral-stability/main.tex",
+          "sha256": "5f2538e648c2ed850b94a03c072a3526f31bcc0c70c90639f65601507f52e532"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-2-exact-prime-kneading-spectral-stability/references.bib",
+          "sha256": "bd86702192cd4bc6d1c2975c7da4b305541e0c5943f13c5edf044686f0faf2ab"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/README.md",
+          "sha256": "ee5198cd9bbcd72713922942be4313bab973cb3d7c289c614a08088fae7a6a99"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/THEOREM_LEDGER.md",
+          "sha256": "7f823d243b2a9d02687c4460ad389f6fca7b2c6a01bae1ddeb4a5c78dbca969a"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/UPDATED_ROADMAP.md",
+          "sha256": "23acf4d082ad4e16728544533ec1f99ec38a47f8e3cc6b10713a3db72d154f33"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/main.tex",
+          "sha256": "f38a39739ec472c3d0c846638739e9e5cb57b6679f60f8f90ba1e2a6188186ef"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/references.bib",
+          "sha256": "7eb930f1717888b500e6c8a26ba391261ba302c9b259fec4a94178cfafe69f48"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/results/result.json",
+          "sha256": "4365c693461cdc4d5d986c97e7dcf4bbfcac6ff2136e1a20779d4b4e46078c69"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/results/result.schema.json",
+          "sha256": "04cac47501a66e6c82640517cc980e0efc8f5142e682dd1c1216bd6cd13cefbf"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/src/prime_tail_scales/core.py",
+          "sha256": "ea3473d63e25351d7bd6737eeb0bc8309dcf5f19746a89c4ced7c0d1f1713ebc"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/README.md",
+          "sha256": "69453c490bb38b7a599bd868d3d3372ea36bcc0df2e01babba808f0d35872d83"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/THEOREM_LEDGER.md",
+          "sha256": "1a91c9349ee058be524f234371665e33d36fbdd9f75b2533274b44040cfe6d88"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/UPDATED_ROADMAP.md",
+          "sha256": "e37c32b8f9bbab7e28ab26cf8e158f299b6a2f2e2f161e8a8519c54a578dca7c"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/main.tex",
+          "sha256": "d4dcd69877b04c382ba5cdc27918f841a40709c8064908c5063fecd222552269"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/references.bib",
+          "sha256": "377cd0e840ee9d66cb321bbf7852b8ada4a5a78d738f159e1ce5a81f2920caf1"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/results/result.json",
+          "sha256": "b59fc7921ef89d556fbc81a409ada9304fafc92424b0f4a79f97aa4d57f25ff4"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/results/result.schema.json",
+          "sha256": "a5f679c5ceccbb485dc526512994e0c2fa66dd94c69c8aed479599bdfb386330"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/src/vk_prime_tail/core.py",
+          "sha256": "c09dc16518730f88c88ed7a382c43ff5c87e76ad8f4eb3c76929ddf2438edbcf"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/README.md",
+          "sha256": "5c6dcc5e80b5c3deb161b59d6c59ccae498ac756b2917614a27eb6d402262795"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/THEOREM_LEDGER.md",
+          "sha256": "879c4007bf8227d40d94ba04adeefb133e1f1b5800fceb2d0a225fd92fae8331"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/UPDATED_ROADMAP.md",
+          "sha256": "c40d5f835ba17049b2d5c06fd6d78255cc44decdc2a9b6d33dc89d796ff16aad"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/main.tex",
+          "sha256": "f03d935192e9cfd122de3e85569062e836f15ef6375e9772fd114b160d0b184b"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/references.bib",
+          "sha256": "9809bffd7986cf8159157067cf3563004e02d38dff589966e6aee4fbd02997d8"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/results/result.json",
+          "sha256": "d71c69de7e5d05c5ac558a17d2a6089815334d19b43a74ecfde219affcc1e16c"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/results/result.schema.json",
+          "sha256": "c90e39f473234e5e0e103dba171cc9cdfdaff9be9b88fbb9ea75059ee9429d6e"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/src/integral_resummation/core.py",
+          "sha256": "136ecd57027966ee8d5cad9d428c941228baf5824e5cd11e1f43b94cdc51b85e"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/README.md",
+          "sha256": "dd29d08608282cfffb7366c950dea45053356558a776e76cb59dadce2fbb108b"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/THEOREM_LEDGER.md",
+          "sha256": "a83d0ebbd8261dd0510cfe9e2c7d0121b53d68f39cb6cec8547bfc2d81c04c15"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/UPDATED_ROADMAP.md",
+          "sha256": "6cf89e3c2497066c99c7a98f03f5d128c862289ba5088212150713764ef67388"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/main.tex",
+          "sha256": "e2b04590643db06266649551f92942a1d3a261af4a8270aede017787e3392dca"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/references.bib",
+          "sha256": "10d7ef89df233a8f8b516466d324fcd048c20053903045f26a2e867faeba04f3"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/results/result.json",
+          "sha256": "b80e29174e6616bc7f4c2de999069ba9d745d80d7c46f88ae8046bf2b5b41665"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/results/result.schema.json",
+          "sha256": "283182d019009b282f4e653efe1dbbc4ab48510046e65ddd77ca4e9db968cbb5"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/src/rank_one_p2/core.py",
+          "sha256": "96d85b44d905d35015450f8d196a52a6ecbe0a79857dce49d4a188ca74c43432"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/.gitattributes",
+          "sha256": "2a15a3d2f20d97ade4ef318ca9b44afe2966e992ddfc737db0071aae57c140c7"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/.gitignore",
+          "sha256": "ddaa36857770769c1a399843d3dbf9c08a913081fc7d75a83a619a8bbb21cb8c"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/README.md",
+          "sha256": "7ea3bb0541e0bed600a83e6493dae123fbfae006748b88b884851230295ce92e"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/experiments/tpc137_prime_square_log_audit.json",
+          "sha256": "a913f74fa6a67ede7af65999f7d864e086981132e3b0608537a712abf86bccad"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/experiments/tpc137_prime_square_log_audit.py",
+          "sha256": "2a847b609f7d3dd36688d1615249aa85d7cc280cb9b4592627e582d5d060910b"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/main.tex",
+          "sha256": "5ee5f9d61a1d550eff858866d60094b889229f28d52e2749ed9d34321b0a44d4"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/references.bib",
+          "sha256": "d935f3d84cb777b16297acbe35e144a759a7335ae4ed57007fc716cafc242b25"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/tpc-137-prime-square-fixed-two-log-closure.pdf",
+          "sha256": "e6600308e33cc7c22152c5f86ca56b89e00adb7bf284a15b5d21e148b9c69d76"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/README.md",
+          "sha256": "d5f0dbc9784ac054c9abac7f623b4a903f8ad06d820bf881a3d7a25ea385ad83"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/THEOREM_LEDGER.md",
+          "sha256": "27c995e66cb5b70aa4afa7ef6c192ff48462ca480854cb29c09efd6aa5456acf"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/UPDATED_ROADMAP.md",
+          "sha256": "81df1931f8b549992260287e763211c42f54a76189db2a940fe8e5edaab2b118"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/main.tex",
+          "sha256": "6ab94513dfa12067e397b991485e67b76af3ea96ad6eb766fced35a8c7f1edc8"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/references.bib",
+          "sha256": "8fe32f3e0bd5c69a29d6af400fdb7209da30c932c4c2c28a0a4a17607302e8fd"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/results/result.json",
+          "sha256": "3c551568aab4e0965b2b0236d9f684e1f953dc36ecbc575e6e007c5f15bfd310"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/results/result.schema.json",
+          "sha256": "763d25bae19d35b36578619bd50aa79cc8121a73c543f8b051e54200e16445ec"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/src/terminal_log_capacity/core.py",
+          "sha256": "9d25ea10bf8961b42b1efc7f2bbf573dd575bf76e6295e5e26c643b5a59a3089"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/results/tao_external_source_lock.json",
+          "sha256": "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/README.md",
+          "sha256": "33763cf46011607374a4f21084fbbf32c870a2b3622a38ac09060308d33ac889"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/THEOREM_LEDGER.md",
+          "sha256": "81075e359a86ba1217255e34fd6c88ebf0a7febde29e986e1f107279eac7f52a"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/UPDATED_ROADMAP.md",
+          "sha256": "d346e634b9e271e8be4a223add0895e26ca1d8ec22f15c4cff031fe8c15887d6"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/main.tex",
+          "sha256": "693f38a69b7f6c35d3a89e98191d0dd27789fd9d14e4057684c942f14bf18112"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/references.bib",
+          "sha256": "5b3073a8381da87a30615e18f0b4ae09f1165acb28ed01bf457058489d9a8bb7"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/results/result.json",
+          "sha256": "83bab4eb57f1d4d2d31c646946df16203b155d49d78942f74a40df239e404bc0"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/results/result.schema.json",
+          "sha256": "606d0ae74b4da9e4a97e6a951e89dfd4237108028c9b2436030e2d6861ec8f5d"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/src/fixed_lag_capacity/core.py",
+          "sha256": "a4e297f4c324ba1fce1829e5c1caf1b8a7e451a9b90c1f78be5f00d44cd97397"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/results/tao_external_source_lock.json",
+          "sha256": "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/README.md",
+          "sha256": "a0a092fde92bc474fab3c131fba6efcb1c0a5b3a0804bd6c8aec89b30d95603c"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/THEOREM_LEDGER.md",
+          "sha256": "cf451267e9215135fb731b9c05fe9f5374f4bcf188de705b9eaba9c3b88039db"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/UPDATED_ROADMAP.md",
+          "sha256": "bc4299ae7ac3c8bd8a150d7b615bcf7eeafffc6625ab8e36142c4516fb9cdbdc"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/main.tex",
+          "sha256": "d153d9b9597142d42c0d59905534eb57c81b503883ff3a3085d2b32823a1002c"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/references.bib",
+          "sha256": "b6a458f6d3a31beb78a9a997d2aa0cfe511527079ad1478d898d8b7c58d67040"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/results/result.json",
+          "sha256": "69ebe2e157f5152d52aac5a478d1dd2ee2abde1dc672ad20941505d7e3a48aea"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/results/result.schema.json",
+          "sha256": "88195a22d2d1ebecff8e8d4cdf860be2b2ef984b93aa94b86861a619369a4790"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/src/two_odd_compiler/core.py",
+          "sha256": "f92c4f21cd487bff84f40cdc20ca3605d986acfe132fd7e493b126936024a342"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_immutable_closure",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/results/tao_external_source_lock.json",
+          "sha256": "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_standard8",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/README.md",
+          "sha256": "4029074ea624a358e657e9dc384df5511fb8ec7dad0de5b7e62f93189af69ad7"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_standard8",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/THEOREM_LEDGER.md",
+          "sha256": "89f54173b9a57d99892bceb96ddfcc73c434ae6c22e4aaced756649c4f3d9683"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_standard8",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/UPDATED_ROADMAP.md",
+          "sha256": "632099b80391a1624e5ec59d792087b084dca4a41d48e05c60a694ac8cf5bff1"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_standard8",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/main.tex",
+          "sha256": "1cc35282bb225b47248a07115fbcbaf32ec5bf8857f386809f6d2ca661b52354"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_standard8",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/references.bib",
+          "sha256": "8a638ad7a5322cbedae5a6528462963bd79bdd79536f09affa7486f3f13de766"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_standard8",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/result.json",
+          "sha256": "935de4967e504e5c32f6d27980ec044c3cffccfbab534440730470de8b1ae610"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_standard8",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/result.schema.json",
+          "sha256": "8129ae146b30ca617e8536c15101eee6e12965ac9a87a6c41be9eb472cf16cb3"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_standard8",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/src/odd_parity_compiler/core.py",
+          "sha256": "3b24da1f1c54e69f98b2e1d07209d24928dbb3493a3fcc386c0bcf751dde4c85"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_prior_external_locks",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_prior_external_locks",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_prior_external_locks",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/tao_external_source_lock.json",
+          "sha256": "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f"
+        },
+        {
+          "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+          "group": "rh394_prior_external_locks",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/tao_teravainen_external_source_lock.json",
+          "sha256": "52ade551d8bef9aa35e850d03cefede1239cb9611b9211fdcda522f02fb501ec"
+        },
+        {
+          "commit": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+          "group": "rh375_direct_all_clock_release8",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/README.md",
+          "sha256": "4949823c38e81dce9b04d46405a7a1d1bbd156375d2332f9a9ea90a7b8927c11"
+        },
+        {
+          "commit": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+          "group": "rh375_direct_all_clock_release8",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/THEOREM_LEDGER.md",
+          "sha256": "93afb2db541ca58cf563d4ba7bed06634f5d3be77e9059c11498d6e83c417ec8"
+        },
+        {
+          "commit": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+          "group": "rh375_direct_all_clock_release8",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/UPDATED_ROADMAP.md",
+          "sha256": "678ffa5ed6ca5a44070e0cf4e3c0634e1507154c0a9410d68599ab7d5b934432"
+        },
+        {
+          "commit": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+          "group": "rh375_direct_all_clock_release8",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/main.tex",
+          "sha256": "7d96987b0236d2788a781565bc03195c59ad2b72d07f1ff8988f8a3fef4a5117"
+        },
+        {
+          "commit": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+          "group": "rh375_direct_all_clock_release8",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/references.bib",
+          "sha256": "67939f140d06425e110258cc982dc8d5af0888899bd9d29a5dc8bfbaef7505be"
+        },
+        {
+          "commit": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+          "group": "rh375_direct_all_clock_release8",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/results/result.json",
+          "sha256": "81d905c2476abc36fdd1ab0e468ad33d85f4df9db35afbd3bc79bf0771fe0a08"
+        },
+        {
+          "commit": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+          "group": "rh375_direct_all_clock_release8",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/results/result.schema.json",
+          "sha256": "5d570cfc9515de8953e18eaf78176934c81bf479d741172e5a602a2d1839ba02"
+        },
+        {
+          "commit": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+          "group": "rh375_direct_all_clock_release8",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/src/all_clock_capacity/core.py",
+          "sha256": "575a5d2371f1bc0d29b33bc15e983f3e41c9b5b9ceb60d97369a1ef73f51a694"
+        }
+      ],
+      "group_digests": {
+        "rh375_direct_all_clock_release8": "14ef15bf6df11e32a05925e5a103c8e2d16ed26abb62620153f9387d84c840ce",
+        "rh394_immutable_closure": "0a44007f1e5888ed9b1cc6eae380b25fec38e17fe7e4329594625538d36c579b",
+        "rh394_prior_external_locks": "e9d259e020d0bef964630388a58487efcdc0a48ee895a6c335f35d0269f6d7e2",
+        "rh394_standard8": "cab0bfbc807eb5ed2e8c85435a3348fb48d823327a77c740dc281c195fed9e47"
+      },
+      "group_sizes": {
+        "rh375_direct_all_clock_release8": 8,
+        "rh394_immutable_closure": 128,
+        "rh394_prior_external_locks": 4,
+        "rh394_standard8": 8
+      },
+      "live_identity_pass": true,
+      "pass": true,
+      "path_unique_count": 148,
+      "release_identity_pass": true
+    },
+    "git_count": 148,
+    "logical_count": 152,
+    "logical_digest_pass": true,
+    "logical_source_digest": "5c4b81ea2f7bdd661fe4374d1174ef3a1909a8327d5982aa01510e4201340bd3",
+    "pass": true,
+    "remote": {
+      "all_lock_literals_sealed_pass": true,
+      "canonical_digests": [
+        "d53b93212b7c5b5b6b3f7e890099c48ce8e35f2bff9bdd49f9c330a9b5039786",
+        "bd4aad4b7042218e5733bb07db2a513770710628a8ac52d5bcc9881fcb0b5d2e",
+        "d2ca5eb4c860090981411a587a58da191df0afba8d65158bc0a44a6db4009e84",
+        "a1448fb540b6f8fcf17cace1ff7d7218a6126cb3265699bbd43c444fcc558058"
+      ],
+      "count": 4,
+      "external_payload_exclusion_pass": true,
+      "external_payload_hash_hits": [],
+      "local_lock_blob_digests": [
+        "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058",
+        "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba",
+        "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f",
+        "52ade551d8bef9aa35e850d03cefede1239cb9611b9211fdcda522f02fb501ec"
+      ],
+      "local_lock_objects_exact_pass": true,
+      "local_release_copies_byte_exact_pass": true,
+      "network_fetch_performed": false,
+      "objects": [
+        {
+          "article_number": "127460",
+          "artifact_role": "audited_arxiv_author_manuscript",
+          "arxiv_id_version": "2204.01980v2",
+          "bytes": 278380,
+          "issue": 2,
+          "journal": "Journal of Mathematical Analysis and Applications",
+          "known_out_of_scope_typos": [
+            {
+              "arxiv_v2_text": "Corollary 1.5",
+              "intended_reference": "Corollary 1.2 / equation (1.5)",
+              "location": "Section 5.2",
+              "used_by_RH386": false
+            },
+            {
+              "arxiv_v2_text": "absolute value of pi(x)-x",
+              "location": "Theorem 1.4 equation (1.9)",
+              "used_by_RH386": false,
+              "version_of_record_text": "absolute value of pi(x)-li(x)"
+            }
+          ],
+          "license": {
+            "scope": "non-exclusive distribution permission granted to arXiv; no third-party republication grant",
+            "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+            "version_of_record_copyright": "Copyright 2023 Elsevier Inc. All rights reserved."
+          },
+          "locators": [
+            {
+              "equation": "(1.5)",
+              "label": "Corollary 1.2",
+              "printed_page": 2,
+              "role": "global explicit theta bound",
+              "section": "1.2"
+            },
+            {
+              "label": "Table 1",
+              "printed_page": 3,
+              "role": "A=9.39, B=1.515, C=0.8274",
+              "row": "X=log 2",
+              "section": "1.2"
+            },
+            {
+              "equation": "(1.8)",
+              "label": "Theorem 1.4",
+              "printed_page": 2,
+              "role": "global explicit Vinogradov--Korobov theta bound for x>=23",
+              "section": "1.2"
+            }
+          ],
+          "mime": "application/pdf",
+          "network_verification": {
+            "checks": [
+              "HTTP status 200",
+              "exact allowlisted final URLs; every other redirect rejected",
+              "PDF Content-Type application/pdf",
+              "PDF byte count 278380",
+              "PDF SHA-256",
+              "PDF page count 22 via pdfinfo",
+              "source tar byte count 21523",
+              "source tar SHA-256",
+              "source tar main.tex SHA-256"
+            ],
+            "default": "disabled",
+            "fixed_url_only": true,
+            "offline_build_claim": "lock-object verification only; no claim of refetching",
+            "opt_in_flag": "--network"
+          },
+          "pages": 22,
+          "pdf_vendored": false,
+          "redistributable_in_release": false,
+          "sha256": "565993a6def48b237a68a92acba604f2c42f99165e0e71e390f8e21a313b74b2",
+          "source_key": "johnston-yang-arxiv-2204.01980v2",
+          "source_main_tex_sha256": "2a79d56dbd6da46d46c6ddd8852d9fa763c716110ebf08b7b029e52346f92602",
+          "source_tar_bytes": 21523,
+          "source_tar_final_url": "https://arxiv.org/src/2204.01980v2",
+          "source_tar_sha256": "572d5739936ad3f5e867a142eccb0193b001dd2ee9b27b1d7183124071ec7edd",
+          "source_tar_url": "https://arxiv.org/src/2204.01980v2",
+          "source_tar_vendored": false,
+          "version_of_record_doi": "10.1016/j.jmaa.2023.127460",
+          "versioned_url": "https://arxiv.org/pdf/2204.01980v2",
+          "volume": 527
+        },
+        {
+          "artifact_role": "official_publisher_version_of_record",
+          "author": "James Maynard",
+          "bytes": 528115,
+          "copyright": "Copyright 2015 Department of Mathematics, Princeton University",
+          "doi": "10.4007/annals.2015.181.1.7",
+          "issue": 1,
+          "journal": "Annals of Mathematics",
+          "license": {
+            "applicability_to_2015_article": "not_established",
+            "article_specific_redistribution_grant_established": false,
+            "current_copyright_agreement_date": 2022,
+            "current_copyright_agreement_url": "https://annals.math.princeton.edu/wp-content/uploads/AoM_Copyright_Agreement.pdf",
+            "evidence_retrieved": "2026-08-08",
+            "evidence_scope": "current official policy materials support a conservative non-CC-BY, nonredistributable release boundary; they are not treated as evidence of the agreement signed for this 2015 article",
+            "published_version_cc_by": false,
+            "publisher_policy_url": "https://annals.math.princeton.edu/submission-guidelines",
+            "scope": "publisher version; no article-specific third-party redistribution grant established"
+          },
+          "locators": [
+            {
+              "label": "Theorem 1.3",
+              "pdf_page": 3,
+              "pdf_page_base": 1,
+              "printed_page": 385,
+              "role": "unconditional bounded-consecutive-prime-gap input only",
+              "statement": "liminf_{n->infinity}(p_{n+1}-p_n)<=600"
+            }
+          ],
+          "mime": "application/pdf",
+          "network_verification": {
+            "checks": [
+              "HTTP status 200",
+              "exact allowlisted final URL; every redirect target change rejected",
+              "Content-Type application/pdf",
+              "byte count 528115",
+              "SHA-256",
+              "page count 31 via pdfinfo"
+            ],
+            "default": "disabled",
+            "fixed_url_only": true,
+            "offline_build_claim": "lock-object verification only; no claim of refetching",
+            "opt_in_flag": "--network"
+          },
+          "pages": 31,
+          "pages_range": "383-413",
+          "pdf_final_url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v181-n1-p07-p.pdf",
+          "pdf_url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v181-n1-p07-p.pdf",
+          "pdf_vendored": false,
+          "publisher_article_url": "https://annals.math.princeton.edu/2015/181-1/p07",
+          "redistributable_in_release": false,
+          "sha256": "3c24d010f00d1212418351b6f6baed9c94251a3ce958c36f56ebbc450ade9349",
+          "source_key": "maynard-annals-2015-small-gaps",
+          "title": "Small gaps between primes",
+          "version_of_record_doi_url": "https://doi.org/10.4007/annals.2015.181.1.7",
+          "volume": 181,
+          "year": 2015
+        },
+        {
+          "article_number": "e8",
+          "artifact_role": "official_publisher_open_access_version_of_record",
+          "author": "Terence Tao",
+          "bytes": 534086,
+          "doi": "10.1017/fmp.2016.6",
+          "journal": "Forum of Mathematics, Pi",
+          "known_source_typos": [
+            {
+              "location": "immediately after Theorem 2, equation (3), printed/PDF page 3",
+              "printed_text": "as n tends to infinity",
+              "resolution": "read as x tends to infinity, consistently with the theorem variable, abstract, and surrounding context",
+              "scope": "typographical only; no mathematical strengthening or changed hypothesis"
+            }
+          ],
+          "license": {
+            "copyright": "Copyright The Author 2016",
+            "evidence_retrieved": "2026-08-09",
+            "license_name": "Creative Commons Attribution 4.0 International",
+            "license_url": "https://creativecommons.org/licenses/by/4.0/",
+            "published_version_cc_by": true,
+            "publisher_evidence_url": "https://www.cambridge.org/core/journals/forum-of-mathematics-pi/article/logarithmically-averaged-chowla-and-elliott-conjectures-for-twopoint-correlations/48514F53D73B2C1277BD7232630F0694",
+            "scope": "official publisher version; reuse is permitted with attribution under CC BY 4.0"
+          },
+          "locators": [
+            {
+              "equation": "(3)",
+              "label": "Theorem 2",
+              "pdf_page": 3,
+              "pdf_page_base": 1,
+              "printed_page": 3,
+              "role": "fixed nonparallel affine two-point logarithmic Liouville cancellation",
+              "statement": "for fixed natural a1,a2 and integer b1,b2 with a1*b2-a2*b1!=0, and every 1<=omega(x)<=x with omega(x)->infinity, sum_(x/omega(x)<n<=x) lambda(a1*n+b1)*lambda(a2*n+b2)/n=o(log omega(x)) as x->infinity"
+            }
+          ],
+          "mime": "application/pdf",
+          "network_verification": {
+            "checks": [
+              "HTTP status 200",
+              "exact allowlisted final URL; every redirect target change rejected",
+              "Content-Type application/pdf",
+              "byte count 534086",
+              "SHA-256",
+              "page count 36 via pdfinfo"
+            ],
+            "default": "disabled",
+            "fixed_url_only": true,
+            "offline_build_claim": "lock-object verification only; article metadata and DOI are sealed but not live-refetched",
+            "opt_in_flag": "--network"
+          },
+          "pages": 36,
+          "pdf_final_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/48514F53D73B2C1277BD7232630F0694/S2050508616000068a.pdf/the-logarithmically-averaged-chowla-and-elliott-conjectures-for-two-point-correlations.pdf",
+          "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/48514F53D73B2C1277BD7232630F0694/S2050508616000068a.pdf/the-logarithmically-averaged-chowla-and-elliott-conjectures-for-two-point-correlations.pdf",
+          "pdf_vendored": false,
+          "publisher_article_url": "https://www.cambridge.org/core/journals/forum-of-mathematics-pi/article/logarithmically-averaged-chowla-and-elliott-conjectures-for-twopoint-correlations/48514F53D73B2C1277BD7232630F0694",
+          "redistributable_in_release": true,
+          "sha256": "a5563f3a85b9c8cfd37be6f1df6bdae8377ce1762e4cb6a8b7856329ef7b30a2",
+          "source_key": "tao-cambridge-2016-logarithmic-chowla",
+          "title": "The logarithmically averaged Chowla and Elliott conjectures for two-point correlations",
+          "version_of_record_doi_url": "https://doi.org/10.1017/fmp.2016.6",
+          "volume": 4,
+          "year": 2016
+        },
+        {
+          "artifact_role": "audited_arxiv_author_manuscript",
+          "arxiv_id_version": "1708.02610v2",
+          "author": "Terence Tao and Joni Teräväinen",
+          "bytes": 398251,
+          "doi": "10.1215/00127094-2019-0002",
+          "issue": 11,
+          "journal": "Duke Mathematical Journal",
+          "known_out_of_scope_source_issues": [
+            {
+              "location": "Corollary 1.8, PDF page 7",
+              "scope": "RH-394 instantiates only positive exponents c_i in {1,2}; it neither uses nor interprets negative powers at zeros of the Mobius function",
+              "source_text": "non-zero integers"
+            }
+          ],
+          "license": {
+            "evidence_retrieved": "2026-08-11",
+            "scope": "non-exclusive distribution permission granted to arXiv; no third-party republication grant",
+            "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+            "version_of_record_reuse_grant_established": false
+          },
+          "locators": [
+            {
+              "label": "Corollary 1.8",
+              "pdf_page": 7,
+              "pdf_page_base": 1,
+              "role": "fixed distinct-shift terminal-log odd-total-power Mobius and Liouville cancellation",
+              "statement": "for fixed nonzero integer exponents c_0,...,c_k of odd sum, distinct integer shifts h_0,...,h_k, and arbitrary real sequences 1<=omega_m<=x_m with both tending to infinity, the normalized terminal logarithmic Mobius and Liouville correlations tend to zero"
+            },
+            {
+              "label": "Remark 1.5",
+              "pdf_page": 7,
+              "pdf_page_base": 1,
+              "role": "fixed affine-dilation extension pointer",
+              "statement": "Theorem 1.2 extends to fixed affine forms g_i(q_i*n+a*h_i), with the proof supplied in Appendix A"
+            },
+            {
+              "label": "Theorem A.1",
+              "pdf_page": 38,
+              "pdf_page_base": 1,
+              "role": "fixed affine-weight correlation structure and vanishing bridge",
+              "statement": "for fixed positive integer dilation parameters and arbitrary terminal windows, the correlation sequence on the fixed affine forms has the same periodic-structure and nonpretentious-product vanishing alternatives as Theorem 1.2"
+            }
+          ],
+          "mime": "application/pdf",
+          "network_verification": {
+            "checks": [
+              "HTTP status 200",
+              "exact allowlisted final URL; every redirect target change rejected",
+              "Content-Type application/pdf",
+              "byte count 398251",
+              "SHA-256",
+              "page count 41 via pdfinfo"
+            ],
+            "default": "disabled",
+            "fixed_url_only": true,
+            "offline_build_claim": "lock-object verification only; article metadata and DOI are sealed but not live-refetched",
+            "opt_in_flag": "--network"
+          },
+          "pages": 41,
+          "pdf_final_url": "https://arxiv.org/pdf/1708.02610v2",
+          "pdf_url": "https://arxiv.org/pdf/1708.02610v2",
+          "pdf_vendored": false,
+          "publisher_article_url": "https://projecteuclid.org/journals/duke-mathematical-journal/volume-168/issue-11/The-structure-of-logarithmically-averaged-correlations-of-multiplicative-functions-with/10.1215/00127094-2019-0002.full",
+          "redistributable_in_release": false,
+          "sha256": "232bdb1ad6e46789bfc124a589d6c3afda803eaf3ba2f93278fc31be3aa276ad",
+          "source_key": "tao-teravainen-arxiv-1708.02610v2",
+          "title": "The structure of logarithmically averaged correlations of multiplicative functions, with applications to the Chowla and Elliott conjectures",
+          "version_of_record_doi_url": "https://doi.org/10.1215/00127094-2019-0002",
+          "version_of_record_pages_range": "1977-2027",
+          "versioned_url": "https://arxiv.org/pdf/1708.02610v2",
+          "volume": 168,
+          "year": 2019
+        }
+      ],
+      "offline_configuration_pass": true,
+      "pass": true,
+      "redistributable_in_release": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "source_keys": [
+        "johnston-yang-arxiv-2204.01980v2",
+        "maynard-annals-2015-small-gaps",
+        "tao-cambridge-2016-logarithmic-chowla",
+        "tao-teravainen-arxiv-1708.02610v2"
+      ],
+      "source_roles": {
+        "johnston-yang-arxiv-2204.01980v2": "inherited_closure_only_via_RH394",
+        "maynard-annals-2015-small-gaps": "inherited_closure_only_via_RH394",
+        "tao-cambridge-2016-logarithmic-chowla": "inherited_two_point_provenance_via_RH394",
+        "tao-teravainen-arxiv-1708.02610v2": "inherited_odd_parity_input_via_RH394"
+      }
+    },
+    "remote_count": 4
+  },
+  "source_roles": {
+    "RH375": "direct frozen predecessor supplying finite-clock one-site MWIS, square endpoints, q|Q lift, and same-prime-support combinatorics only; no terminal-log analytic role",
+    "RH394": "direct frozen predecessor supplying the terminal-log three-shift table law and phase densities",
+    "finite_certificate": "finite exact reproduction, not analytic proof",
+    "johnston-yang-arxiv-2204.01980v2": "inherited closure-only via RH394",
+    "maynard-annals-2015-small-gaps": "inherited closure-only via RH394",
+    "tao-cambridge-2016-logarithmic-chowla": "inherited two-point provenance via RH394",
+    "tao-teravainen-arxiv-1708.02610v2": "inherited odd-parity analytic input via RH394, not newly invoked directly"
+  },
+  "status": "RH-395_STAGE1_CERTIFIED",
+  "summary": {
+    "C1": "K2-K3",
+    "C2": "(3K2-K3)/4",
+    "C3": "3K1/8",
+    "C4": "2K1/3",
+    "C6": "K1/8+K2/2",
+    "all_clock_supremum": "B_infinity",
+    "certificate_rows": 72,
+    "core_mutations": 57,
+    "core_mutations_rejected": 57,
+    "finite_nonattainment": true,
+    "one_site_F6": "3K1/8",
+    "q36": "B1=2K1/3",
+    "q900": "B2=49K1/72",
+    "relation_pairs_scanned": 262144,
+    "safe_relation_pairs": 3375
+  },
+  "theorem_contracts": {
+    "all_clock_rigidity": {
+      "cofinal_lcm_bridge": "for finite q choose y covering all prime divisors and Q=lcm(q,q_y), so C(q)<=C(Q)=B_y<B_infinity",
+      "conclusion": "sup_(q finite)C(q)=B_infinity and the supremum is not attained at finite q",
+      "lower_witness": "embedded one-site relations at q_y give sup_(q finite)C(q)>=B_infinity",
+      "strict_nonattainment": "C(q)<B_infinity for every finite q"
+    },
+    "analytic_and_finite_roles": {
+      "RH375": "squarefree phase densities, one-site MWIS values, square-clock endpoints, divisibility and same-support finite combinatorics only",
+      "RH375_terminal_clock_analytic_input": false,
+      "RH394": "sole terminal-log analytic input: complete fixed three-shift table law and Pi densities for every admissible terminal clock",
+      "certificate": "finite exact reproduction of relation algebra and optimizers, not an analytic proof"
+    },
+    "divisibility_and_square_support": {
+      "common_center_weight": "delta_Q:=Theta_(Q,r)({C}) for any positive-center phase r; it is constant over such phases for square support",
+      "finite_endpoint": "B_y=F_RH375(q_y)",
+      "lift": "q|Q implies C(q)<=C(Q) by literal nonminimal-period repetition",
+      "limiting_endpoint": "B_infinity=lim_(y->infinity)B_y",
+      "marginal_identity": "for adjacent positive-center phases and every t in T, sum_x lambda_r(x,t)=sum_z lambda_(r+2)(t,z)",
+      "one_site_capacity": "F_RH375(q)=max_(I subset Z/qZ, I intersect (I+2)=empty)sum_(r in I)Theta_(q,r)({C})",
+      "pair_charge": "W_r+W_(r+2)<=delta_Q and a positive run of length L costs at most ceil(L/2)delta_Q",
+      "phase_contribution": "W_r:=K_r(Y_(r-2),Y_r)",
+      "resets": "forced zero phases modulo 4 and 9 split both +2 cycles into positive runs",
+      "same_support": "if q_y|Q and Q has the same prime support then C(Q)=F_RH375(Q)=B_y",
+      "square_clock": "p_y is the y-th odd prime and q_y=4 product_(3<=p<=p_y, p prime)p^2, with q_1=36"
+    },
+    "model_and_quantifiers": {
+      "all_clock_order": "fixed q,F; X->infinity; finite maximum over safe F; then supremum over finite q",
+      "alphabet": "T={-1,0,+1}",
+      "capacity": "C(q)=max_(universally safe fixed q-phase F)|L_q(F)|, with the finite maximum taken only after every fixed-table limit",
+      "centered_type": "noncausal because the future coordinate mu(n+1) is read",
+      "clock": "as X->infinity, 1<=omega(X)<=X and omega(X)->infinity, hence omega(X)>1 eventually",
+      "fixed_data": "q and every phase table F_r are fixed before X->infinity",
+      "limit": "L_q(F)=lim_(X->infinity)L_(q,X)(F) for every admissible terminal clock",
+      "mobius_extension": "mu_0(k)=mu(k) for integer k>=1 and mu_0(k)=0 for k<=0",
+      "phase_table_type": "F_r:T^3->{-1,+1}, r in Z/qZ",
+      "safety": "not(F_r(a,b,c)=+1 and F_(r+2)(c,d,e)=+1) for every r and a,b,c,d,e in T",
+      "terminal_functional": "L_(q,X)(F)=(log omega(X))^-1 sum_(X/omega(X)<n<=X) mu(n)F_(n mod q)(mu_0(n-1),mu(n),mu(n+1))/n",
+      "window": "F_(n mod q)(mu_0(n-1),mu(n),mu(n+1))"
+    },
+    "phase_densities": {
+      "B": "B_(p,S)={a_i mod p^2:i in S}, with duplicate residues removed",
+      "K": "K_j=product_p(1-j/p^2), j=0,1,2,3, and K_0=1",
+      "Pi": "Pi_(q,r)(U)=sum_(W subset {L,C,R}\\U)(-1)^|W|Theta_(q,r)(U union W)",
+      "Pi_mass": "sum_(U subset {L,C,R})Pi_(q,r)(U)=1/q",
+      "Pi_role": "nonnegative exact-support density",
+      "Theta": "Theta_(q,r)(S)=q^-1 product_(p not|q)(1-nu_(p,S)/p^2) product_(p||q)(1-tau_(p,S)(r)/p) product_(p^2|q)1_(r mod p^2 notin B_(p,S))",
+      "coordinate_shifts": "a_L=+1, a_C=0, a_R=-1",
+      "empty": "Theta_(q,r)(empty)=1/q",
+      "lambda": "lambda_r(x,y)=2^(-1_(x!=0)-1_(y!=0))Pi_(q,r)({C} union ({L}:x!=0) union ({R}:y!=0))",
+      "nu": "nu_(p,S)=|B_(p,S)|",
+      "phase_sum": "sum_(r mod q)Theta_(q,r)(S)=K_|S|",
+      "tau": "tau_(p,S)(r)=#{b in B_(p,S):b mod p=r mod p}"
+    },
+    "positive_projection_and_relation": {
+      "fiber": "2^27 full sign tables map uniformly onto 512 relations with 2^18 preimages each",
+      "projected_terminal_limit": "L_q(F_proj)=sum_(r mod q)sum_((x,y) in A_r)lambda_r(x,y), because the all-minus baseline sign cells cancel",
+      "projection": "delete +1 outputs at center z!=+1; this weakly increases zF and preserves safety",
+      "relation": "A_r={(x,y):F_r(x,+1,y)=+1}",
+      "safety": "Target(A_r) intersect Source(A_(r+2))=empty",
+      "saturation": "with Y_r=Target(A_r), A_r=(T\\Y_(r-2)) cross Y_r",
+      "transition": "K_r(U,V)=sum_(x notin U,y in V)lambda_r(x,y)"
+    },
+    "reflection_and_absolute_value": {
+      "attainment": "both signs are attained whenever a nonzero optimum is attained",
+      "capacity_identity": "max_safe |L_q|=max_safe L_q",
+      "full_table_reflection": "F^rho(x,z,y)=F(-x,-z,-y)",
+      "safety": "input reflection preserves universal safety",
+      "terminal_sign": "L_q(F^rho)=-L_q(F)"
+    },
+    "small_clocks": {
+      "C1": "K2-K3",
+      "C2": "(3K2-K3)/4",
+      "C3": "3K1/8=9/(4pi^2)",
+      "C4": "2K1/3=4/pi^2",
+      "C6": "K1/8+K2/2",
+      "one_site_F6": "3K1/8",
+      "q2_even_phase": "one-sign self-loop contributes (K2-K3)/4",
+      "q2_forbidden_old_four_state_value": "K2-K3",
+      "q2_odd_phase": "zero endpoint contributes K2/2",
+      "ratio_inequalities": "K3/K2<1/2, K3/K2>1/3 in the respective q1 and q2 comparisons, and K2/K1>1/2 for the strict q6 gain",
+      "strict_q6_gain": "C6-F_RH375(6)=(2K2-K1)/4>0"
+    },
+    "tropical_capacity": {
+      "all_q_formula": "C(q)=sum_(+2 cycles gamma) max_(cyclic Y_i subset T) sum_i K_(r_i)(Y_(i-1),Y_i)",
+      "all_q_state_count": 8,
+      "compressed_coefficients": "(a_r,b_r,c_r,d_r)=(Pi_r({C}),Pi_r({L,C}),Pi_r({C,R}),Pi_r({L,C,R}))",
+      "compressed_state": "u=(1_(0 in Y), |Y intersect {-1,+1}|/2) in {0,1}^2",
+      "compressed_transition": "a(1-u0)v0+b(1-u1)v0+c(1-u0)v1+d(1-u1)v1",
+      "cycles": "the +2 map on Z/qZ has gcd(q,2) cycles",
+      "matrix_description": "exact tropical trace of 8x8 transition matrices",
+      "q_1_q_2": "self-loops are retained and require the full eight subset states",
+      "q_ge_3": "multi-affinity makes some optimum antipodally symmetric, reducing to four states only for q>=3"
+    }
+  },
+  "title": "All-Clock Rigidity for Centered Three-Window Möbius Capacity"
+}
