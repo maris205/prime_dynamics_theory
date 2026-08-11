@@ -2,7 +2,7 @@
 
 更新时间：2026-08-11
 
-当前地图版本：V50
+当前地图版本：V51
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,9 +46,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +------------------------------------------+
-        | YOU ARE HERE — V50                       |
-        | moving cut SELF-FINANCING;               |
-        | bounded-quality signed core OPEN         |
+        | YOU ARE HERE — V51                       |
+        | FOLD FIRST: mixed + balanced pair        |
+        | one signed Gate-A theorem OPEN           |
         +------------------------------------------+
                 |
                 v
@@ -105,9 +105,13 @@ V50 将这一固定 midpoint 推广为
 都精确付到 `x^(1997/1200-delta+o(1))`。global Siegel quality又穷尽分成
 两世界：unbounded world 由 Matomaki--Merikoski 条件性直达无限多 twin primes；
 bounded world只留下一个可依赖固定全局界 `B` 的 endpoint-matched signed core
-theorem。当前世界未知，bounded core仍无 literal source theorem；
-balanced Type II 与 long-Möbius reverse Type I 仍是下一段主跨。核心算术 saving
-尚未证明。**
+theorem。当前世界未知，bounded core仍无 literal source theorem。
+V51 随后把 transition short orientation、long-Möbius reverse Type I 与 balanced
+Type II 重新放回同一个无序因子对：mixed 与 balanced logarithmic numerator均至多
+rank two，`1/log(s ell)` 由一维 Abel compiler exact移除；补回物理对角后的
+pair row又与 V43 Gate-A numerator只差已付款误差。orientation-first Poisson会破坏
+exact folded zeros，所以当前首选大跨改成一个 fold-first mixed-plus-balanced
+signed theorem。这个 theorem与 Gate B都仍未证明，核心算术 saving 尚未取得。**
 
 ## 2. 图例与状态语言
 
@@ -192,12 +196,13 @@ endpoint 的主桥。
 transference scalar精确相连；它们仍需分别给 saving：
 
 1. `B`：V42 positive physical Gram / MPD仍是 Gate-B 的平行充分实现；
-2. `A/transition`：V50 对每个 `0<delta<1/9600` 取
+2. `A/sequential transition`：V50 对每个 `0<delta<1/9600` 取
    `D_delta=x^(1/200+2delta)`，并支付全部 `c>=D_delta` 到
    `x^(1997/1200-delta+o(1))`；unbounded Siegel quality已有 conditional
-   TPC exit，bounded world的唯一首选门是 `B`-dependent direct signed core；
-3. `A/long`：balanced Type II 与 long-Möbius reverse Type I 仍按同一 signed
-   whole-object alias施工；
+   TPC exit，bounded world保留 `B`-dependent direct signed core；
+3. `A/fold-first bypass`：V51 把 mixed transition/reverse-Type-I 与 balanced
+   two-long在无序因子对层先折叠，当前只需一个
+   `|F_mix+F_bal|<<x^(1997/1200-eta_L+o(1))` whole-object theorem；
 4. `A+B`：`D=A_alias-L_pr*S+paid errors` 是 exact AND compiler，不是 OR shortcut。
 
 Bridge A 当前状态：`OPEN`。
@@ -211,7 +216,7 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 当前精确位置：V50
+## 5. 当前精确位置：V51
 
 V43 把 V35 proper-factor direction 在第一次 outer absolute 之前送进 complete
 centered Poisson。冻结 ordered weight 后仍有 exact diagonal
@@ -420,7 +425,37 @@ Siegel-zero quality无界，Matomaki--Merikoski Corollary 1.1(i) 对 `h=2` 直�
 无限多 twin primes；若 qualities由一个有限 `B` 控制，则 Bridge A只要求一族
 `forall B exists delta_B` 的 direct signed core theorems，constants允许依赖 `B`。
 per-scale empty/singleton Landau--Page set不决定全局世界。bounded theorem仍 OPEN，
-所以这里仍是当前 `YOU ARE HERE`，没有 arithmetic credit。
+但它现在是 sequential route，而不是唯一入口。
+
+V51 对 V43 ordered proper-factor atlas 作 fold-first 重编译。若
+`t=s ell`、`s<ell`，两 orientations exact合成
+
+\[
+\Omega_U(s,\ell)=
+\begin{cases}
+(\mu(\ell)-\mu(s))\log s/\log(s\ell),&s\le U,\\
+(\mu(s)\log\ell+\mu(\ell)\log s)/\log(s\ell),&s>U.
+\end{cases}
+\]
+
+第一支正好把 transition short orientation 与 reverse-Type-I long orientation放回
+同一个 mixed pair；第二支是 balanced two-long。numerator在每个 product-cut cell
+至多 rank two，而 product log denominator由 exact Abel summation处理。补回
+`u=t` 对角后的 pair row `F_q` 满足
+
+\[
+\mathcal F_q=s_q+c'_q(0)S_q,
+\qquad
+\mathfrak F_x=\mathfrak A_x+\text{paid errors}.
+\]
+
+非主 Dirichlet character projector再给一个保留 common prime shell、physical
+`w=Lambda(.+2)-b`、hard shell和 one outer sign的 exact character--Fourier emitter。
+当前首选 Gate-A theorem因此是同一个
+`F_mix+F_bal` signed aggregate；square row已付到 `x^(143/96+o(1))`。
+generic character large sieve只到 `x^(2+o(1))`，距 numerator target缺
+`403/1200`。这里是当前 `YOU ARE HERE`；fold theorem与独立 Gate B仍 OPEN，
+没有 arithmetic credit。
 
 V40 已把 packet 压到每个模数的一条 scalar row
 
@@ -514,11 +549,11 @@ Kloosterman engine只到单 cell，未付 block atomic budget和跨 `q` 的 L2 r
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
 
-| 图像语言 | 仓库 V50 语言 | 关系 |
+| 图像语言 | 仓库 V51 语言 | 关系 |
 |---|---|---|
 | Bridge A：解析 collective saving | `B(positive Gram / MPD / P2 / K / E / X)` 与 `A(alias)` 的 zero-axis transference | 图像的一座大桥被拆成多车道 B、terminal A 及 exact AND compiler |
 | Bridge B：distinguished-seed genericity | `C` symmetry-breaking reserve | 都是动力学/指定 seed 后备线 |
-| 核心算术估计 | transition mean/variance + long Type-II/reverse-Type-I alias + Gate-B numerator | 当前 red-X 的优先施工方案 |
+| 核心算术估计 | fold-first mixed+balanced Gate-A aggregate + Gate-B numerator | 当前 red-X 的优先施工方案 |
 
 仓库选择路线为：
 
@@ -531,8 +566,9 @@ THEN_PAY_CRITICAL_CONDUCTOR_COLLAR_TO_D1
 THEN_PROMOTE_TO_SELF_FINANCING_D_DELTA_FOR_0_LT_DELTA_LT_1_OVER_9600
 THEN_GLOBAL_SIEGEL_QUALITY_DICHOTOMY
 IF_UNBOUNDED_THEN_SOURCE_BACKED_DIRECT_TPC_EXIT
-IF_BOUNDED_THEN_B_DEPENDENT_ENDPOINT_MATCHED_SIGNED_CORE
-THEN_LONG_MOBIUS_TYPE_II_REVERSE_TYPE_I_ALIAS
+IF_BOUNDED_SEQUENTIAL_ROUTE_THEN_B_DEPENDENT_ENDPOINT_MATCHED_SIGNED_CORE
+OR_FOLD_FIRST_UNORDERED_PAIR_GATE_A_BYPASS
+THEN_ONE_MIXED_PLUS_BALANCED_LONG_MOBIUS_SIGNED_AGGREGATE
 AND_PHYSICAL_POSITIVE_GRAM_COLLISION_VIA_PROPER_FACTOR_DYADIC_MPD
 OR_P2_DIRECT_Q_DEPENDENT_PACKET_ENERGY
 OR_K_SPECIALIZED_BLOCK_SCHATTEN_COMPRESSION
@@ -544,7 +580,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V50：
+截至 V51：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -572,30 +608,28 @@ NUMBERED_RELEASE = NO
 1. **先按全局 Siegel quality 分流**。unbounded world 直接调用已锁定的
    Matomaki--Merikoski `h=2` correlation exit；不得把单尺度 singleton误判为
    unbounded sequence；
-2. **bounded world 攻 endpoint-matched direct core**。对每个 fixed `B`，固定
-   一个 `0<delta_B<1/9600`，目标为
-   `|C_delta_B| <<_B x^(1997/1200-delta_B+o(1))`；complement已由 V45 自动付款；
-3. **A/transition 三引擎 heuristic fallback**。分别尝试 principal/local
-   cancellation、generic averaged character engine与 exceptional-compatible
-   comparator；三者必须在同一 frozen ensemble上重组，不能删除 exceptional row，
-   也不能把 primitive rank one误写成 one summand；
-4. **A/Type-II + reverse-Type-I：证明同一个 long-Möbius inverse-residue
-   whole-object theorem**。balanced `d,k>U` 与 `d>U,k<=U` 两个 orientation必须在
-   signed fold后重组；Pascadi horizontal theorem是最强备选 compiler，尚无 literal
-   attachment；
+2. **A/fold-first pair-native whole object**。优先证明
+   `|F_mix+F_bal|<<x^(1997/1200-eta_L+o(1))`；必须先折叠 orientations，再作
+   product-cell separation、character/Kloosterman transform与一次 outer absolute；
+3. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
+   endpoint-matched direct core与三引擎 heuristic fallback，但不再强迫它先于
+   reverse-Type-I/balanced lane；
+4. **A/source attachment**。尝试把 rank-two/Abel character emitter exact编译成
+   Blomer--Pascadi fixed-modulus cells或 Pascadi horizontal arrays；必须同时给
+   physical coefficient norms、moving support、nonunits与 signed reassembly；
 5. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
    preferred sufficient gate；P2/K 是 stronger norms，E/X
    分别是 `sigma<13/4800` whole residual energy和
    `kappa>403/1200` joint character theorem，不与 MPD lane叠加 theorem credit；
-6. **A+B：只通过 V43 exact transference做最终 reassembly**，不能把 small-(d)
-   full-lattice zero误写成 physical diagonal payment，也不能用任一门循环支付另一门；
+6. **A+B：只通过 V43 exact transference做最终 reassembly**，不能把 small-`d`
+   complete-Poisson zero误写成 physical diagonal payment，也不能用任一门循环支付另一门；
 7. **C：只在前六条路线真实阻断或新 source 出现时，重开 distinguished-seed
    symmetry-breaking/dynamics reserve。**
 
 最窄 first fatal：
 
 ```text
-NO_LITERAL_THEOREM_PROVES_THE_B_DEPENDENT_ENDPOINT_MATCHED_LOCAL_CENTERED_PRINCIPAL_GENERIC_EXCEPTIONAL_SIGNED_CORE_WITH_FIXED_POWER
+NO_LITERAL_THEOREM_BOUNDS_THE_FOLD_FIRST_MIXED_PLUS_BALANCED_PAIR_NATIVE_GATE_A_AGGREGATE_WITH_PHYSICAL_W_AND_ONE_OUTER_SIGN_AT_FIXED_POWER
 ```
 
 ## 9. 后续更新协议
@@ -608,12 +642,14 @@ NO_LITERAL_THEOREM_PROVES_THE_B_DEPENDENT_ENDPOINT_MATCHED_LOCAL_CENTERED_PRINCI
 4. 将“结构完成”“条件完成”“算术完成”分开登记；
 5. 保留旧路线的 `STOP_SCOPED` 原因，不把改名当成 reopen；
 6. 若只是图片美化、文字澄清或 checker 加固，不改变 arithmetic status；
-7. 更新后核对本文件、big-road README 与 Handoff 不冲突。
+7. 更新后核对本文件、big-road README、Compass、Handoff 与
+   `PAPER_CANDIDATE_LEDGER.md` 不冲突；paper ledger中的 claim class不得因路线图措辞升级。
 
 ## 10. 版本记录
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-11 | V51 | Bridge A / Gates A--B：无序因子对 fold-first pair-native Gate A 已编译；mixed+balanced whole-object saving 与 Gate B open | parent `6d94e300fb646872ff5fb7fa73a770f89180c3ba`; V51=current working release | exact two-orientation fold、rank-two numerator、Abel denominator compiler、diagonal-completed crosswalk与 character/Fourier emitter；orientation-first Poisson NO-GO；阶段性 paper ledger 建立；arithmetic仍为 NO |
 | 2026-08-11 | V50 | Bridge A / Gates A--B：self-financing moving cut；unbounded-quality conditional TPC exit；bounded-quality signed core与 long-Mobius open | parent `d26f0ae41fe998431dffeabfc6808bc57e122d19`; V50=current working release | every `0<delta<1/9600` pays its complement at target-minus-delta；global Siegel-quality two-world compiler；arithmetic仍为 NO |
 | 2026-08-11 | V49 | Bridge A / Gates A--B：critical conductor collar paid；ultra-low principal/generic/exceptional signed scalar与 long-Mobius open | parent `11643bd5a0f6f5259c5e04f6976cc59fc9e316be`; V49=current working release | paid cut推进到 `D1=x^(49/9600)`，margin `1/19200`；exact three-lane compiler；arithmetic仍为 NO |
 | 2026-08-11 | V48 | Bridge A / Gates A--B：high conductor与 local Euler paid；exact scalar splice done；low signed prime--hybrid与 long-Mobius open | parent `30c41d8efee5d4d63cd100f6ec1050826c90051c`; V48=current working release | exact gcd crosswalk与 `R_AP=M_low+V_high-L_pf`；direct low scalar首选；`delta>1/200` signed character energy为更强充分门；arithmetic仍为 NO |
