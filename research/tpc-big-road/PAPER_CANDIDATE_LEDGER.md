@@ -55,6 +55,18 @@
     `eta_PAD=kappa+(delta_B+delta_W)/2-1/400`。
 11. **PROVED** — V52 reverse-Chen semiprime slice及 equal-norm parallel/orthogonal
     marginal-only obstruction。
+12. **PROVED** — V53 completed pair-row compression：先在每个 prime modulus内保留
+    physical diagonal、unit principal mean与 signed off-diagonal，再只对 prime shell
+    使用 Cauchy。
+13. **PROVED** — V53 pair collision diagonal
+    `D_A^row<<x^(95/48+o(1))` 与 endpoint law
+    `|F_circle|<<x^(143/96+tau_A/2+o(1))`。
+14. **PROVED** — V53 selected one-`Q` benchmark：`tau_A=1/3` 给
+    row energy `x^(37/16+o(1))`、numerator `x^(53/32+o(1))` 与
+    strict margin `19/2400`。
+15. **PROVED** — V53 symmetric two-gate compiler：同一 restricted row-Bessel
+    theorem species分别作用于 diagonal-completed pair row和 V40 diagonal-deleted
+    physical row；若两边 `tau=1/3`，V43 条件性给 physical exponent `95/96`。
 
 ### 2.2 可写成条件命题的局部引擎
 
@@ -71,8 +83,7 @@
    和 aggregate norm 已证明后调用。
 4. **SOURCE_BACKED_CONDITIONAL** —
    Zheng arXiv:2512.22798v1：simultaneous progression architecture；其 fixed
-   residues、`theta<=7/36` 或 `2/23` 与 coefficient hypotheses尚未覆盖 V52。
-
+   residues、`theta<=7/36` 或 `2/23` 与 coefficient hypotheses尚未覆盖 V53。
 这些 source 均未直接证明当前 whole-object theorem。
 
 ### 2.3 主猜想
@@ -101,6 +112,20 @@ V52 将它升级成更可审计的 packet package
 dispersion；zero-angle fallback要求 `delta_B+delta_W>1/200`。这是当前第一篇候选
 最接近 standalone main conjecture 的版本，但仍没有 primary-source proof。
 
+V53 给出当前首选、更加 dispersion-native 的条件主猜想：对两个明确的 literal
+row species证明
+
+\[
+ \mathsf H_{2RB}(1/3,1/3):\quad
+ \mathcal E_A^{\rm row}\ll x^{1/3+o(1)}\mathcal D_A^{\rm row},
+ \qquad
+ \mathcal E_B^{\rm row}\ll x^{1/3+o(1)}\mathcal D_B^{\rm row}.
+\]
+
+两边 diagonal均已付到 `x^(95/48+o(1))`。该猜想条件性闭合 Bridge A 的 A、B
+两桥墩，但它不对 arbitrary divisor-bounded arrays作断言，也不从有限 fixture取得
+算术 credit。V52 PAD保留为独立猜想，不与 V53 假设叠加计算 saving。
+
 ### 2.4 必须保留的 NO-GO 结果
 
 1. **NO_GO** — orientation-first absolute reassembly destroys exact folded zeros。
@@ -115,6 +140,13 @@ dispersion；zero-angle fallback要求 `delta_B+delta_W>1/200`。这是当前第
    允许完全平行与完全正交。
 7. **NO_GO** — Zheng/Drappeau/Wright 的 fixed-residue/product interfaces不能直接
    代替 V52 moving compensated product covariance。
+8. **NO_GO** — ordinary polarized marginal BDH 会把未知 physical cross-diagonal
+   原样作为 main term返回；除非同时证明其与 off-diagonal covariance的 signed
+   cancellation，否则不能替代 completed pair-row theorem。
+9. **NO_GO** — 小 global scalar或有利 PAD angle不能推出小 row energy；跨模数
+   cancellation已被 V53 interface有意舍弃。
+10. **NO_GO** — separate character second moments不能推出 V53 所需 joint product
+    fourth moment。
 
 ## 3. 第二篇候选：endpoint-matched exceptional spectrum compiler
 
@@ -192,12 +224,15 @@ handoff。
 | 2026-08-11 | V50 | saving-matched moving cut 与 Siegel-quality dichotomy | **PROVED + CONDITIONAL + CONJECTURAL** |
 | 2026-08-11 | V51 | fold-first pair emitter、rank-two/Abel compiler、orientation NO-GO | **PROVED + CONJECTURAL** |
 | 2026-08-11 | V52 | compensated pair dilation、reverse-Chen slice、endpoint simplex、marginal-only angle obstruction | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
+| 2026-08-11 | V53 | completed pair rows、paid collision diagonal、one-`Q` endpoint与 symmetric two-gate schema | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 
 下一次更新应优先回答：
 
-1. 能否对 exact compensated pair dilation证明 diagonal-scale two-marginal BDH；
-2. 能否对同一 pair/physical packet取得 `kappa>1/400` 的 genuine joint angle；
-3. 若 angular route失败，是否有总 saving `>1/200` 的 one/two-sided super-BDH；
-4. BP/Pascadi local cells能否在不拆 compensation与 fold的前提下合法 reassemble；
-5. 能否先得到一个 standalone average theorem，即使暂时弱于 $1997/1200$ endpoint；
-6. 哪个候选最先满足“成稿门槛 A”。
+1. 能否对 diagonal-completed pair row证明 one-`Q` restricted Bessel bound；
+2. 能否对 V40 diagonal-deleted physical row证明同一 theorem species；
+3. 能否从 joint character fourth moment或 dispersion identity导出上述两条 row bound；
+4. BP/Pascadi local cells能否在不拆 compensation与 within-row cancellation的前提下
+   合法 reassemble；
+5. 若 row route失败，能否回到 V52 PAD取得 `kappa>1/400` 或总 saving `>1/200`；
+6. 能否先得到一个 standalone row-energy average theorem，即使暂时弱于 endpoint；
+7. 哪个候选最先满足“成稿门槛 A”。
