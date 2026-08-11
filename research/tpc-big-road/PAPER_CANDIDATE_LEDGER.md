@@ -67,6 +67,18 @@
 15. **PROVED** — V53 symmetric two-gate compiler：同一 restricted row-Bessel
     theorem species分别作用于 diagonal-completed pair row和 V40 diagonal-deleted
     physical row；若两边 `tau=1/3`，V43 条件性给 physical exponent `95/96`。
+16. **PROVED** — V54 paired-row difference identity：
+    `P_q-C_q=kappa_q*S_physical-E_q`，其中 full-beta square row与 unit omission均
+    逐项保留。
+17. **PROVED** — V54 difference error payment：
+    `sum_q|E_q|^2<<x^(95/48+o(1))`，unit omission单独只到 `x^(5/3+o(1))`。
+18. **PROVED** — V54 longitudinal extractor：沿 `kappa_q=(q-2)/(q-1)` 投影以
+    `x^(79/96+o(1))` 误差直接恢复 physical residual。
+19. **PROVED** — V54 transverse identity：`Pi_perp P-Pi_perp C=-Pi_perp E`，故
+    pair/physical rows共享一个 transverse theorem species。
+20. **PROVED** — V54 two-out-of-three terminal compiler：pair row、physical row与
+    physical scalar三者任意两个同尺度 bounds推出第三个；V53 symmetric package因此
+    是 terminal package而非更容易的双 preliminary gate。
 
 ### 2.2 可写成条件命题的局部引擎
 
@@ -112,8 +124,7 @@ V52 将它升级成更可审计的 packet package
 dispersion；zero-angle fallback要求 `delta_B+delta_W>1/200`。这是当前第一篇候选
 最接近 standalone main conjecture 的版本，但仍没有 primary-source proof。
 
-V53 给出当前首选、更加 dispersion-native 的条件主猜想：对两个明确的 literal
-row species证明
+V53 给出一个 dispersion-native 的条件主猜想：对两个明确的 literal row species证明
 
 \[
  \mathsf H_{2RB}(1/3,1/3):\quad
@@ -122,9 +133,11 @@ row species证明
  \mathcal E_B^{\rm row}\ll x^{1/3+o(1)}\mathcal D_B^{\rm row}.
 \]
 
-两边 diagonal均已付到 `x^(95/48+o(1))`。该猜想条件性闭合 Bridge A 的 A、B
-两桥墩，但它不对 arbitrary divisor-bounded arrays作断言，也不从有限 fixture取得
-算术 credit。V52 PAD保留为独立猜想，不与 V53 假设叠加计算 saving。
+两边 diagonal均已付到 `x^(95/48+o(1))`。V54 证明这个 symmetric package已经
+隐含终端 physical scalar，因此它不再被推荐为两个独立 preliminary conjectures。
+当前主猜想拆成正交的两项：一个 common transverse row-variance theorem，以及一个
+沿 `kappa` 的 direct signed longitudinal theorem；后者在 paid error后与 physical
+endpoint等价。V52 PAD与 V51 direct scalar保留为独立猜想，不叠加计算 saving。
 
 ### 2.4 必须保留的 NO-GO 结果
 
@@ -147,6 +160,13 @@ row species证明
    cancellation已被 V53 interface有意舍弃。
 10. **NO_GO** — separate character second moments不能推出 V53 所需 joint product
     fourth moment。
+11. **NO_GO** — centered-modulus BDH会删除 `kappa` longitudinal mode；它至多
+    控制 V54 transverse deck，不能支付 physical residual。
+12. **NO_GO** — special Dirichlet-L fourth-moment theorems使用 approximate-functional-
+    equation coefficients与自己的 diagonal cancellation，不能直接替代 literal
+    folded pair / prime-hybrid packets。
+13. **NO_GO** — symmetric two-row Bessel不是“先证明两个容易 row theorem、再到终点”
+    的 shortcut；V54 two-out-of-three compiler说明其纵向部分已包含终点本身。
 
 ## 3. 第二篇候选：endpoint-matched exceptional spectrum compiler
 
@@ -225,14 +245,17 @@ handoff。
 | 2026-08-11 | V51 | fold-first pair emitter、rank-two/Abel compiler、orientation NO-GO | **PROVED + CONJECTURAL** |
 | 2026-08-11 | V52 | compensated pair dilation、reverse-Chen slice、endpoint simplex、marginal-only angle obstruction | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 | 2026-08-11 | V53 | completed pair rows、paid collision diagonal、one-`Q` endpoint与 symmetric two-gate schema | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
+| 2026-08-11 | V54 | paired-row mode diagonalization、paid transverse difference、terminal longitudinal firewall | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 
 下一次更新应优先回答：
 
-1. 能否对 diagonal-completed pair row证明 one-`Q` restricted Bessel bound；
-2. 能否对 V40 diagonal-deleted physical row证明同一 theorem species；
-3. 能否从 joint character fourth moment或 dispersion identity导出上述两条 row bound；
-4. BP/Pascadi local cells能否在不拆 compensation与 within-row cancellation的前提下
-   合法 reassemble；
-5. 若 row route失败，能否回到 V52 PAD取得 `kappa>1/400` 或总 saving `>1/200`；
-6. 能否先得到一个 standalone row-energy average theorem，即使暂时弱于 endpoint；
+1. 能否直接控制 `kappa` longitudinal paired-row scalar，而不先证明两个完整 row norms；
+2. 能否对任一 literal row的 transverse projection证明 one-`Q` variance，并由 V54
+   paid difference传给另一 row；
+3. BP/Pascadi local cells能否在不拆 compensation与 within-row cancellation的前提下
+   合法 reassemble成 transverse theorem；
+4. TT-star determinant congruence的 non-ratio rays能否与 exact physical ratio ray分离；
+5. 若 row route失败，能否回到 V51 direct scalar或 V52 PAD取得 strict saving；
+6. 能否把 V54 exact diagonalization抽象成一个不依赖 TPC 终点的 standalone
+   paired-row theorem；
 7. 哪个候选最先满足“成稿门槛 A”。

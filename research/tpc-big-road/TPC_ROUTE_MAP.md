@@ -2,7 +2,7 @@
 
 更新时间：2026-08-11
 
-当前地图版本：V53
+当前地图版本：V54
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,9 +46,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +------------------------------------------+
-        | YOU ARE HERE — V53                       |
-        | SYMMETRIC q-ROW BESSEL PIERS             |
-        | one-Q loss for Gates A and B = OPEN      |
+        | YOU ARE HERE — V54                       |
+        | PAIRED-ROW TRANSVERSE DECK IDENTIFIED    |
+        | terminal longitudinal cable = OPEN       |
         +------------------------------------------+
                 |
                 v
@@ -121,7 +121,12 @@ V53 再把同一个 compensated scalar按素模数压成 completed pair rows
 `x^(53/32+o(1))`。V40 Gate B有同尺度 diagonal，于是当前首选大跨成为一个
 对两种 literal rows同时成立的 symmetric two-species row-Bessel theorem；它条件性
 给 physical output `x^(95/96+o(1))`，到目标剩 `19/2400`。这个 theorem仍未证明，
-PAD与MPD保留为独立后备，核心算术 saving 尚未取得。**
+PAD与MPD保留为独立后备。V54 随后在估计前证明
+`P_q-C_q=kappa_q*S_physical-E_q`，且 `sum_q|E_q|^2<<x^(95/48+o(1))`。
+因此两种 rows 的 transverse projection只差 paid error，而唯一不同的 longitudinal
+coordinate以 `x^(79/96+o(1))` 误差直接抽取 physical residual。当前施工点不再是
+“两座独立 Bessel 桥墩”，而是一块 common transverse deck 与一根 terminal
+longitudinal cable；后者已经与终点等价，核心算术 saving 尚未取得。**
 
 ## 2. 图例与状态语言
 
@@ -210,12 +215,13 @@ transference scalar精确相连；它们仍需分别给 saving：
    `D_delta=x^(1/200+2delta)`，并支付全部 `c>=D_delta` 到
    `x^(1997/1200-delta+o(1))`；unbounded Siegel quality已有 conditional
    TPC exit，bounded world保留 `B`-dependent direct signed core；
-3. `A/pair-row pier`：V51 先折叠 mixed transition/reverse-Type-I 与 balanced
-   two-long，V52 写成 compensated prime dilation，V53 再先完成每个 `q`-row的
-   signed cancellation。当前首选条件包是 pair row与 V40 physical row都满足
-   one-`Q` restricted Bessel loss；V52 PAD仍为独立后备；
-4. `A+B`：symmetric two-species row theorem加
-   `D=A_alias-L_pr*S+paid errors` 才是 exact AND compiler，不是 OR shortcut。
+3. `A/pair-row deck`：V51 先折叠 mixed transition/reverse-Type-I 与 balanced
+   two-long，V52 写成 compensated prime dilation，V53 再完成每个 `q`-row的
+   signed cancellation；V54 证明 pair row与 V40 physical row的 transverse
+   projections只差已付款误差，所以一个 common transverse theorem足够覆盖两者；
+4. `terminal longitudinal cable`：两 row沿 `kappa_q=(q-2)/(q-1)` 的差直接等于
+   physical residual加已付款误差。它必须由 direct signed scalar支付，不能被 centered
+   modulus-BDH删除；V53 symmetric two-row theorem是 terminal package而非较易前置门。
 
 Bridge A 当前状态：`OPEN`。
 
@@ -228,7 +234,7 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 当前精确位置：V53
+## 5. 当前精确位置：V54
 
 V43 把 V35 proper-factor direction 在第一次 outer absolute 之前送进 complete
 centered Poisson。冻结 ordered weight 后仍有 exact diagonal
@@ -518,7 +524,26 @@ A_q^\circ=\sum_{q\nmid t}\beta^\circ(t)\mathcal R_q(t),\qquad
 diagonal-deleted row有同一个 paid diagonal与同一 endpoint law，所以新的首选大桥是
 `H_2RB(1/3,1/3)`：对 pair row和 physical row同时证明 one-`Q` Bessel bound。
 V43 reassembly随后条件性给 `|S_physical|<<x^(95/96+o(1))`，严格余量
-`19/2400`。这是当前 `YOU ARE HERE`；桥墩形式已统一，算术 row theorem仍 OPEN。
+`19/2400`。V54 进一步定义 `P=(P_q)_q`、`C=(C_q)_q` 与
+`kappa_q=(q-2)/(q-1)`，并 exact得到
+
+\[
+P_q-C_q=\kappa_qS_x-E_q,
+\qquad \sum_q|E_q|^2\ll x^{95/48+o(1)}.
+\]
+
+所以
+
+\[
+\frac{\langle P-C,\kappa\rangle}{\|\kappa\|_2^2}
+=S_x+O(x^{79/96+o(1)}),
+\qquad
+\Pi_\perp P-\Pi_\perp C=-\Pi_\perp E.
+\]
+
+这才是当前 `YOU ARE HERE`：横向桥面已经识别为一个 common row-variance species，
+纵向钢缆则是 terminal physical scalar本身。两个方向都仍 OPEN，但不再误作两套
+独立 row-Bessel preliminary problems。
 
 V40 已把 packet 压到每个模数的一条 scalar row
 
@@ -612,11 +637,11 @@ Kloosterman engine只到单 cell，未付 block atomic budget和跨 `q` 的 L2 r
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
 
-| 图像语言 | 仓库 V53 语言 | 关系 |
+| 图像语言 | 仓库 V54 语言 | 关系 |
 |---|---|---|
 | Bridge A：解析 collective saving | `B(positive Gram / MPD / P2 / K / E / X)` 与 `A(alias)` 的 zero-axis transference | 图像的一座大桥被拆成多车道 B、terminal A 及 exact AND compiler |
 | Bridge B：distinguished-seed genericity | `C` symmetry-breaking reserve | 都是动力学/指定 seed 后备线 |
-| 核心算术估计 | symmetric pair/physical `q`-row Bessel theorem；PAD/MPD为独立后备 | 当前 red-X 的优先施工方案 |
+| 核心算术估计 | common transverse `q`-row variance + terminal `kappa` longitudinal scalar；PAD/MPD为独立后备 | 当前 red-X 的两种正交施工方向 |
 
 仓库选择路线为：
 
@@ -634,7 +659,9 @@ OR_FOLD_FIRST_UNORDERED_PAIR_GATE_A_BYPASS
 THEN_ONE_MIXED_PLUS_BALANCED_LONG_MOBIUS_SIGNED_AGGREGATE
 THEN_COMPENSATED_PRIME_DILATION_AND_PAIR_ANGULAR_ENDPOINT_GATE
 THEN_COMPLETE_EACH_PRIME_ROW_BEFORE_THE_Q_SHELL_ABSOLUTE
-THEN_SYMMETRIC_ONE_Q_ROW_BESSEL_FOR_PAIR_AND_PHYSICAL_SPECIES
+THEN_EXACT_PAIRED_ROW_MODE_DIAGONALIZATION
+THEN_ONE_COMMON_TRANSVERSE_ROW_VARIANCE
+AND_ONE_TERMINAL_SIGNED_LONGITUDINAL_SCALAR
 AND_PHYSICAL_POSITIVE_GRAM_COLLISION_VIA_PROPER_FACTOR_DYADIC_MPD
 OR_P2_DIRECT_Q_DEPENDENT_PACKET_ENERGY
 OR_K_SPECIALIZED_BLOCK_SCHATTEN_COMPRESSION
@@ -646,7 +673,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V53：
+截至 V54：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -674,30 +701,29 @@ NUMBERED_RELEASE = NO
 1. **先按全局 Siegel quality 分流**。unbounded world 直接调用已锁定的
    Matomaki--Merikoski `h=2` correlation exit；不得把单尺度 singleton误判为
    unbounded sequence；
-2. **A+B/symmetric `q`-row Bessel大跨**。先保留 exact fold与 compensated
-   dilation，在每个 `q` 内完成 diagonal与 off-diagonal signed cancellation，再对
-   prime shell取平方平均；目标是 pair row与 V40 physical row都只损失一个
-   `Q=x^(1/3)`，不得删除 physical diagonal或跨 `q` 借 cancellation；
-3. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
+2. **terminal longitudinal steel cable**。优先寻找对
+   `sum_q kappa_q(P_q-C_q)` 的 direct signed theorem；它在 paid error后就是 physical
+   endpoint，不能用 centered BDH、separate character moments或 finite fixture替代；
+3. **common transverse deck**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
+   row species证明 one-`Q` variance，另一种由 paid difference自动继承；不得先把
+   longitudinal mode删掉后声称完整 theorem；
+4. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
    endpoint-matched direct core与三引擎 heuristic fallback，但不再强迫它先于
    reverse-Type-I/balanced lane；
-4. **A/source attachment**。尝试把 two-species completed rows exact编译成
-   dispersion/BDH或 Blomer--Pascadi/Pascadi local arrays；必须同时给 literal
-   pair/physical coefficients、moving support、nonunits、within-row signed collision
-   与 prime-shell reassembly；
-5. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
+5. **source attachment**。尝试把 transverse completed row exact编译成
+   dispersion/BDH或 Blomer--Pascadi/Pascadi local arrays；必须给 literal coefficients、
+   moving support、nonunits、within-row signed collision与 prime-shell reassembly；
+6. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
    preferred sufficient gate；P2/K 是 stronger norms，E/X
    分别是 `sigma<13/4800` whole residual energy和
    `kappa>403/1200` joint character theorem，不与 MPD lane叠加 theorem credit；
-6. **A+B：只通过 V43 exact transference做最终 reassembly**，不能把 small-`d`
-   complete-Poisson zero误写成 physical diagonal payment，也不能用任一门循环支付另一门；
 7. **C：只在前六条路线真实阻断或新 source 出现时，重开 distinguished-seed
    symmetry-breaking/dynamics reserve。**
 
 最窄 first fatal：
 
 ```text
-NO_LITERAL_THEOREM_PROVES_THE_ONE_Q_RESTRICTED_ROW_BESSEL_BOUND_FOR_THE_DIAGONAL_COMPLETED_FOLDED_PAIR_ROW__AND_THE_MATCHING_GATE_B_ROW_BOUND_REMAINS_INDEPENDENTLY_OPEN
+NO_LITERAL_THEOREM_BOUNDS_THE_KAPPA_LONGITUDINAL_PAIRED_ROW_MODE_EQUIVALENT_UP_TO_PAID_ERROR_TO_THE_PHYSICAL_TWIN_PRIME_RESIDUAL__AND_THE_COMMON_TRANSVERSE_ROW_VARIANCE_REMAINS_INDEPENDENTLY_OPEN
 ```
 
 ## 9. 后续更新协议
@@ -717,6 +743,7 @@ NO_LITERAL_THEOREM_PROVES_THE_ONE_Q_RESTRICTED_ROW_BESSEL_BOUND_FOR_THE_DIAGONAL
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-11 | V54 | Bridge A：paired rows 的 transverse deck 已识别；terminal longitudinal cable open | target parent `6ac39743d196bafd575014fe0a1cfe4373d723ee`; V54=current working release | exact `P-C=kappa*S-E`、paid difference energy、longitudinal extraction、transverse projection与 two-out-of-three terminal compiler；arithmetic仍为 NO |
 | 2026-08-11 | V53 | Bridge A / Gates A--B：pair与physical两种 completed `q`-row桥墩已统一；one-`Q` Bessel theorem open | target parent `6f776d76ee4a1c3948cfd2332056d65dfae0c558`; V53=current working release | exact pair-row compression、`x^(95/48)` collision diagonal、`tau<419/1200` endpoint、symmetric `H_2RB(1/3,1/3)` compiler与 polarized-BDH diagonal-return NO-GO；arithmetic仍为 NO |
 | 2026-08-11 | V52 | Bridge A / Gates A--B：compensated pair dilation与 angular endpoint已编译；PAD saving与 Gate B open | target parent `f2ab63730b04b386b2e3e44ad93bf551a2954388`; V52=current working release | dual pair/sieve coefficient、one compensated prime-dilation scalar、Hilbert packet endpoint simplex、marginal-only angle NO-GO与 paper ledger推进；arithmetic仍为 NO |
 | 2026-08-11 | V51 | Bridge A / Gates A--B：无序因子对 fold-first pair-native Gate A 已编译；mixed+balanced whole-object saving 与 Gate B open | parent `6d94e300fb646872ff5fb7fa73a770f89180c3ba`; V51=current working release | exact two-orientation fold、rank-two numerator、Abel denominator compiler、diagonal-completed crosswalk与 character/Fourier emitter；orientation-first Poisson NO-GO；阶段性 paper ledger 建立；arithmetic仍为 NO |
