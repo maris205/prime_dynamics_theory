@@ -1,17 +1,17 @@
 # RH Research Handoff
 
-Status date: 2026-08-10
+Status date: 2026-08-11
 
-Current completed endpoint: RH-393
+Current completed endpoint: RH-394
 
-Completed research batch: RH-352 through RH-393
+Completed research batch: RH-352 through RH-394
 
-Post-four-volume independent theorem edges: RH-362 through RH-393
+Post-four-volume independent theorem edges: RH-362 through RH-394
 
-Latest completed-paper verdict: RH-393 Routes A and B `GO`; remaining routes
+Latest completed-paper verdict: RH-394 Routes A and B `GO`; remaining routes
 `STOP_SCOPED`
 
-Post-RH-393 breadth audit: pending; no RH-394 assigned
+Post-RH-394 breadth audit: pending; no RH-395 assigned
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -99,6 +99,9 @@ RH-392 integration commit:
 
 RH-393 integration commit:
 `6fed36f44183a2794a3a814493ff602c5dc9314b`.
+
+RH-394 integration commit:
+`6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -249,6 +252,11 @@ Read completely:
 - `papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/THEOREM_LEDGER.md`
 - `papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/results/result.json`
 - `papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/main.pdf`
+- `papers/RH-394-odd-parity-terminal-log-mobius-compiler/README.md`
+- `papers/RH-394-odd-parity-terminal-log-mobius-compiler/UPDATED_ROADMAP.md`
+- `papers/RH-394-odd-parity-terminal-log-mobius-compiler/THEOREM_LEDGER.md`
+- `papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/result.json`
+- `papers/RH-394-odd-parity-terminal-log-mobius-compiler/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -291,8 +299,9 @@ retention-necessity input, RH-391 as the linear-scale moving-rank pairwise
 retention-necessity input, RH-392 as the fixed-lag terminal-log
 diagonalization and square-divisor capacity-landscape input, RH-393 as the
 two-odd-factor multi-shift terminal compiler and squarefree-landscape input,
-and RH-361 as the immediate endpoint of the still-open original physical
-branch.
+RH-394 as the odd-parity terminal compiler and complete three-shift table-law
+input, and RH-361 as the immediate endpoint of the still-open original
+physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -302,8 +311,82 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-393 is now integrated.  Fix `m>=1`, `q>=1`, pairwise-distinct integer
+RH-394 is now integrated.  Fix `m>=1`, `q>=1`, pairwise-distinct integer
 shifts `a_1,...,a_m`, fixed `q`-periodic coefficients, and every admissible
+terminal clock.  For `alpha in {0,1,2}^m`, put
+
+```text
+O(alpha)={i:alpha_i=1}, E(alpha)={i:alpha_i=2}.
+```
+
+Admit exactly the channels satisfying
+
+```text
+abs(O(alpha)) in {0,2} union {positive odd integers}.
+```
+
+Then every admitted nonempty odd channel vanishes, and
+
+```text
+T_X(P;omega)
+ ->sum_(r mod q)sum_(alpha in {0,2}^m)c_alpha(r)Theta_(q,r)(E(alpha)).
+```
+
+Odd support zero is the local finite-CRT and union-tail argument.  Odd
+support two is the frozen RH-393 square-mask compiler.  Every positive odd
+support is paid directly by Tao--Teravainen Corollary 1.8, with the fixed
+phase split and affine extension supplied by Remark 1.5 and Theorem A.1.
+The phase reduction preserves the terminal clock normalization; all shifts,
+coefficients, and periods remain fixed before the limit.
+
+The exact support density is obtained from the RH-393 phase densities by
+
+```text
+Pi_(q,r)(U)=sum_(W subset [m] backslash U)(-1)^abs(W)
+             Theta_(q,r)(U union W).
+```
+
+It is nonnegative and sums over `U` to `1/q`.  If `bar f_(r,U)` is the sign
+average of a table on exact support `U`, every compiler-admissible table has
+limit
+
+```text
+sum_(r mod q)sum_(U subset [m])Pi_(q,r)(U)bar f_(r,U).
+```
+
+The admitted polynomial dimension is
+
+```text
+D'_m=2^m+binom(m,2)2^(m-2)+(3^m-1)/2.
+```
+
+Thus `m=3` has all `27/27` monomials and all `2^(27q)` phase-table families.
+At `m=4`, `80/81` monomials survive; only `c_1111` is excluded, and exactly
+`binom(16,8)2^65` sign tables per phase satisfy that boundary.  Every
+distinguished-current score `z f(x,y)` is admissible, so all `512^q` fixed
+phase families cancel.
+
+On every nonzero-support stratum, full-table admissibility is equivalent to
+the even part having Boolean Fourier degree at most two.  For a
+distinguished-current table, it is equivalent to the odd part having degree
+at most one.  The exact one-stratum counts are
+
+```text
+M_0=2, M_1=4,
+M_k=2^(2^(k-1))+2k+4binom(k,2)2^(2^(k-2))  (k>=2),
+B_d=product_(k=0)^d M_k^binom(d,k).
+```
+
+No even odd-support at least four, unrestricted four-coordinate theorem,
+growing `m`, period, shifts, masks, or coefficients, effective rate,
+ordinary Cesaro average, pre-limit maximum, graph-coupled capacity,
+operator, trace, zero model, RH statement, or Gate A--E conclusion follows.
+Routes A and B are `GO` at the typed compiler and table-law scopes; all
+enlargements are `STOP_SCOPED`.
+
+RH-393 remains the direct predecessor.  Fix `m>=1`, `q>=1`,
+pairwise-distinct integer shifts `a_1,...,a_m`, fixed `q`-periodic
+coefficients, and every admissible
 terminal clock `1<=omega(X)<=X` with `omega(X)->infinity`.  For
 `alpha in {0,1,2}^m`, put
 
@@ -773,7 +856,10 @@ terminal-log scale, including the exact safe-table capacity and
 square-divisor landscape.  RH-393 then closed all fixed multi-shift
 coordinatewise-quadratic channels with at most two odd exponents, including
 the signed-cube boundary, 192-table class, and squarefree-density landscape.
-No post-RH-393 breadth audit has assigned RH-394.
+RH-394 then closed every positive-odd channel, the complete fixed
+three-shift table law, the four-shift signed-cube boundary, and the intrinsic
+support-stratum table classification.  No post-RH-394 breadth audit has
+assigned RH-395.
 The geometrically selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
@@ -3093,7 +3179,78 @@ maximum-before-limit, generic multishift capacity, operator, trace, zero,
 RH statement, or Gate A--E conclusion follows.  Routes A and B are `GO` at
 the stated typed scope; all enlargements are `STOP_SCOPED`.
 
-## 4. Compact conclusions from RH-352 through RH-393
+### 3.33 RH-394 odd-parity terminal compiler and complete three-shift law
+
+Fix `m>=1`, `q>=1`, pairwise-distinct integer shifts, fixed `q`-periodic
+coefficients, and every admissible terminal clock.  For
+`alpha in {0,1,2}^m`, retain exactly the monomials satisfying
+
+```text
+abs(O(alpha)) in {0,2} union {positive odd integers},
+O(alpha)={i:alpha_i=1}, E(alpha)={i:alpha_i=2}.
+```
+
+The terminal-log limit is
+
+```text
+sum_(r mod q)sum_(alpha in {0,2}^m)c_alpha(r)Theta_(q,r)(E(alpha)).
+```
+
+All admitted nonempty odd channels vanish.  Odd support zero is paid by the
+local finite-CRT density and union tail.  Odd support two uses the frozen
+RH-393 square-mask compiler.  Every positive odd support is paid by
+Tao--Teravainen Corollary 1.8, followed by the fixed phase reduction and the
+affine extension in Remark 1.5 and Theorem A.1.  The phase proof preserves
+the terminal ratio and the factor `1/q`; it introduces no rate or growing
+parameter.
+
+For exact nonzero support `U`, define
+
+```text
+Pi_(q,r)(U)=sum_(W subset [m] backslash U)(-1)^abs(W)
+             Theta_(q,r)(U union W).
+```
+
+Then `Pi_(q,r)(U)>=0`, its sum over `U` is `1/q`, and an admissible fixed
+table has the exact limit
+
+```text
+sum_(r mod q)sum_(U subset [m])Pi_(q,r)(U)bar f_(r,U).
+```
+
+The polynomial dimension is
+
+```text
+D'_m=2^m+binom(m,2)2^(m-2)+(3^m-1)/2.
+```
+
+Consequently `D'_3=27`: every coordinatewise-quadratic three-shift table is
+covered.  At four shifts, `D'_4=80`; the only missing monomial is
+`z_1z_2z_3z_4`, and a sign table is covered exactly when its signed
+four-cube coefficient vanishes.  There are `binom(16,8)2^65` such tables per
+phase.  Every two-input distinguished-current score is covered, so all
+`512^q` fixed phase families have terminal limit zero.
+
+The intrinsic table criterion is support-stratum local.  On each nonzero
+support stratum, the even part of the Boolean function must have Fourier
+degree at most two.  For distinguished-current tables, the odd part must
+have degree at most one.  The exact odd-part counts are
+
+```text
+M_0=2, M_1=4,
+M_k=2^(2^(k-1))+2k+4binom(k,2)2^(2^(k-2))  (k>=2),
+B_d=product_(k=0)^d M_k^binom(d,k).
+```
+
+The theorem fixes all data before the terminal limit.  It does not cancel
+even odd-support at least four, cover unrestricted four-coordinate tables,
+provide growing-data uniformity or a rate, prove ordinary Cesaro
+cancellation, optimize a pre-limit or graph-coupled capacity, construct an
+operator or trace, identify zeros, prove RH, or close Gates A--E.  Routes A
+and B are `GO` at the declared typed scopes; every enlargement is
+`STOP_SCOPED`.
+
+## 4. Compact conclusions from RH-352 through RH-394
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -3322,6 +3479,13 @@ the stated typed scope; all enlargements are `STOP_SCOPED`.
   table class, and the sharp global squarefree-density landscape.  No third
   odd factor, growing data, generic multishift capacity, rate, ordinary
   Cesaro theorem, or Gate follows.
+- **RH-394:** Fixed-data cancellation for all positive-odd channels, exact
+  support densities, and the complete three-shift table law.  It proves the
+  `80/81` four-shift signed-cube boundary, the exact support-stratum
+  Fourier-degree criteria, the `M_k/B_d` census, and cancellation of all
+  `512^q` two-input distinguished-current families.  No even odd-support at
+  least four, unrestricted four-coordinate theorem, growing data, rate,
+  graph-coupled capacity, ordinary Cesaro theorem, or Gate follows.
 
 ## 5. Route firewall and reopening triggers
 
@@ -3565,7 +3729,7 @@ The admissible reopening triggers before RH-362 were:
 5. Another independent source-backed theorem edge.
 
 Trigger 5 is satisfied by the independent theorem edges RH-362 through
-RH-391. Triggers 1--4 remain untouched. RH-365 closes the natural
+RH-394. Triggers 1--4 remain untouched. RH-365 closes the natural
 return-bouquet height/radius route at its declared scope, RH-366 closes the
 declared periodic/typical/distance-two capacity audit, RH-373 closes the
 declared fixed composite-clock phase-selector floor route, and RH-374 closes
@@ -3647,17 +3811,24 @@ fixed multi-shift coordinatewise-quadratic compiler only for monomials with
 at most two odd exponents, together with the exact density landscape and
 typed 192-table corollary.  It does not prove a third odd channel,
 unrestricted three-coordinate table theorem, growing family, effective rate,
-generic multishift capacity, or any Gate.  No RH-394 is assigned.
+generic multishift capacity, or any Gate.  RH-394 closes every positive-odd
+channel, the complete three-shift table law, the four-shift signed-cube
+boundary, and the intrinsic support-stratum table classification.  It does
+not prove an even four-odd-factor channel, an unrestricted four-coordinate
+table theorem, growing family, effective rate, graph-coupled capacity, or any
+Gate.  No RH-395 is assigned.
 The next breadth audit should distinguish:
 
-1. A third-odd-factor or unrestricted three-coordinate theorem.  This is
-   `STOP_SCOPED`: it requires an immutable higher-point terminal correlation
-   theorem beyond the locked two-point input.
-2. A graph-coupled multishift safe-table capacity.  This is `STOP_SCOPED`:
-   shared vertices create both higher correlations and a missing global
-   compatibility/charge problem.
+1. A graph-coupled three-window safe-table capacity.  The RH-394 analytic
+   table law now supplies the fixed three-coordinate limits, but the RH-392
+   predecessor charge is false in this larger action space and no all-clock
+   weighted compatibility optimizer is locked.  The general route remains
+   `STOP_SCOPED` at that optimizer.
+2. An even four-odd-factor channel or unrestricted four-coordinate table
+   theorem.  This is `STOP_SCOPED`: Tao--Teravainen pays positive odd total
+   exponent, not the unsquared even four-point correlation.
 3. A growing-parameter compiler.  This is `STOP_SCOPED`: the fixed-data
-   square-mask proof has no rate uniform in `m`, period, shifts, masks, or
+   analytic inputs have no rate uniform in `m`, period, shifts, masks, or
    coefficients.
 4. The exact RH-365 bouquet origin radius or a boundary law.  This is
    `STOP_SCOPED`: the current upper coefficient bound and sparse odd-prime
@@ -5429,6 +5600,84 @@ enlargements are `STOP_SCOPED`.  RH-393 proves no odd-support-three channel,
 unrestricted three-coordinate table theorem, growing parameter family,
 effective rate, ordinary-Cesaro theorem, pre-limit maximum, generic
 multishift capacity, operator, trace, zero model, RH statement, or Gate A--E
+conclusion.
+
+### 6.33 RH-394 odd-parity compiler release (2026-08-11)
+
+The post-RH-393 breadth audit compared the intrinsic local-cube
+classification, a higher-coordinate table subclass, graph-coupled
+capacities, the RH-365 bouquet radius, and a continuum Ulam projector.  It
+also located and locked Tao--Teravainen Corollary 1.8, which cancels every
+fixed positive-odd Mobius channel on every admissible terminal sequence.
+Remark 1.5 and Theorem A.1 pay the fixed affine phase reduction.  This adds
+one nonvendored remote source and does not supply an even four-point theorem.
+
+The proof retains the RH-393 local CRT argument for odd support zero and its
+masked two-form theorem for odd support two.  Every positive odd support is
+sent directly to the new source theorem.  Exact-support densities follow by
+finite inclusion--exclusion from the phase densities.  Stratum zeta
+relations and Boolean Mobius inversion give the intrinsic table criterion;
+the linear-form classification gives the exact `M_k/B_d` census.  These are
+analytic arguments in the manuscript, not deductions from the finite
+certificate.
+
+The executable certificate has
+
+```text
+658=81+17+512+8+8+8+8+8+8
+```
+
+semantic rows, is `108636` canonical bytes, and has SHA-256
+`3c72e7fbb74a35e8b84a1e75ed56b05ea04892a522d8b4a89c51ba21cedf8998`.
+It rejects `32/32` genuine semantic mutations.  Its independent false path
+survives builder, helper, product, and validator rebinding attacks.  It
+audits all `81` four-shift monomials, the exact dimension rows, all `512`
+two-input current tables, the `M_k/B_d` census, phase inversion, table-law
+counts, analytic contracts, source roles, and firewalls.  Its role is finite
+reproduction, not analytic proof.
+
+The proof-minimal closure contains `128` Git blobs from RH-393 release
+`6fed36f44183a2794a3a814493ff602c5dc9314b`, grouped `117/8/3`.  The
+ordered group digests are
+
+```text
+bdf6c835c5871a9ed9b62cb32ff5b02c0c0a4dd72a0728ae13939144c5e0560d
+588f23297c3bd3f6efd707acd112e70be652e86f4ea007da3f9704e8820795ac
+e379426b2ac1167a49e7014f133cd701c73b6be60889b807efdd20b43db08439
+```
+
+and their aggregate digest is
+`90f427889b714a7544e4eb68e6df565e32dab4114e656d99f7a24074a7a56951`.
+The Johnston--Yang, Maynard, Tao, and Tao--Teravainen locks bring the closure
+to `132` logical inputs with digest
+`07c9ed6c0c79d77098e19d8102b4267ea4af637ae2d72148c412cc626af738ac`.
+Tao--Teravainen is the new direct analytic input; Tao is inherited two-point
+provenance, and Johnston--Yang and Maynard are closure-only.  Redistribution
+flags are `false,false,true,false`; all four PDFs remain nonvendored.  The
+four default verifiers make zero requests, and all six external payload
+hashes are absent from release members and the whole RH-394 tree.
+
+The final official normal and optimized suites are each `76/76`.  Result,
+recursively closed Draft 2020-12 schema, manifest, and verification report
+regenerate byte-exactly.  The archive has `39` publication members, `128`
+Git inputs, four remote locks, and zero failures.  Manifest and report bring
+the integration set to exactly `41` RH-394 files in commit
+`6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7`.
+
+The main and semantic PDFs are byte-identical, `364403` bytes, and eight A4
+pages; all `23` font rows are embedded, subsetted, and Unicode-mapped.
+Ghostscript, text extraction, LaTeX/BibTeX scans, and all `8/8` rendered
+pages pass.  The release gate also rejects caches, bytecode, symlinks,
+special and unlisted paths, filename and literal sentinels, carriage
+returns, malformed EOFs, and external payload inclusion.  Independent proof
+and source/release final audits returned zero blocker and zero minor.
+
+Routes A and B are `GO` at the odd-parity compiler, complete three-shift
+table-law, four-shift boundary, and intrinsic census scopes.  Every
+enlargement is `STOP_SCOPED`.  RH-394 proves no even odd-support at least
+four, unrestricted four-coordinate table law, growing parameter theorem,
+effective rate, ordinary-Cesaro theorem, pre-limit or graph-coupled
+capacity, operator, trace, zero model, RH statement, or Gate A--E
 conclusion.
 
 ## 7. Reproduction and publication audit
@@ -7328,12 +7577,101 @@ remote-source audit
 6012ede470d4466de3af6eb5ba4992ee0b8d64e8594165df1ed6c94bc1309dd5
 ```
 
+Final RH-394 audit:
+
+- Tests: official normal and optimized `76/76`; fresh
+  result/schema/manifest/report regeneration, independent semantic
+  validation, official Draft 2020-12 schema, coordinated source rebinding,
+  runtime `-OO` sentinels, symlink and literal-sentinel attacks, and archive
+  mutations all pass or fail closed as declared.
+- The canonical certificate is `108636` bytes with SHA-256
+  `3c72e7fbb74a35e8b84a1e75ed56b05ea04892a522d8b4a89c51ba21cedf8998`.
+  It contains `658=81+17+512+8+8+8+8+8+8` semantic rows, rejects `32/32`
+  genuine mutations, and has an independent false-verification path.
+- Source closure: `128` immutable Git blobs grouped `117/8/3`, plus ordered
+  Johnston--Yang, Maynard, Tao, and Tao--Teravainen remote logical locks.
+  The logical input count is `132`; all four default verifiers make zero
+  requests.  All six external payload hashes are absent from release members
+  and the whole tree.
+- Individual archive: `39` publication members, `128` Git inputs, four
+  remote locks, and zero failures.  Integration commit
+  `6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7` contains exactly `41`
+  RH-394 files: the `39` members plus manifest and verification report.
+- PDF: `8` A4 pages and `364403` bytes, with all `23` font rows embedded,
+  subsetted, and Unicode-mapped.  Ghostscript, text extraction, complete
+  LaTeX/BibTeX scans, semantic-PDF byte identity, and all `8/8` rendered
+  pages pass.
+- Independent final proof and source/release audits report zero blocker and
+  zero minor.  The fixed-data, positive-odd/two-odd, no-even-four-point,
+  no-rate, no-Cesaro, no-graph-capacity, and all Gate firewalls remain intact.
+
+RH-394 final hashes:
+
+```text
+main.tex
+1cc35282bb225b47248a07115fbcbaf32ec5bf8857f386809f6d2ca661b52354
+
+references.bib
+8a638ad7a5322cbedae5a6528462963bd79bdd79536f09affa7486f3f13de766
+
+PDF
+061eeed7808c9ecb80ca660d1f3977f582dd9cbd4ef4f741c2fe4c97014e229c
+
+main.log
+75a6efb8b745a2c16d1bece1b6043efef35ff90171070ac0558d3949653d14aa
+
+result
+935de4967e504e5c32f6d27980ec044c3cffccfbab534440730470de8b1ae610
+
+schema
+8129ae146b30ca617e8536c15101eee6e12965ac9a87a6c41be9eb472cf16cb3
+
+manifest
+faab3c1c84c8e7438e758fdfdf76ed8e616548851efbe21ee00193cb1cbf635a
+
+verification
+1e120097c6097f7f7dd4ce51d4f38f7ca0cbfc139205fdee47fd1d2c04e9da1e
+
+core
+3b24da1f1c54e69f98b2e1d07209d24928dbb3493a3fcc386c0bcf751dde4c85
+
+Johnston--Yang external source lock
+d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058
+
+Maynard external source lock
+9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba
+
+Tao external source lock
+825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f
+
+Tao--Teravainen external source lock
+52ade551d8bef9aa35e850d03cefede1239cb9611b9211fdcda522f02fb501ec
+
+integrity audit
+63997f26a41edf81c301483f78a419c08b0d64a35d4bb03d329c3a7229351045
+
+review audit
+23985160fac64ce5a129cdf17b22204cf39cdc2b4a2ec49fe043beaba9a9f5c5
+
+format audit
+c533a27a59130919f20c13895669c3973b378b9115c1e53699c30ea4f44a0202
+
+replay audit
+9b58cfec599c07115c562c85ca1278aa2d0e323a7524125767449e93b0a925ec
+
+visual audit
+d7e5af20369a58698dd7bc77e16a3c26c98872814f67122e720b62538bf3c461
+
+remote-source audit
+e3f0347ee6d1b8817ff3ff6fd9101b2e6074e3468d9bf25fe5ae1d2f6902a193
+```
+
 ## 8. Continuation prompt
 
 ````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-393 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-394 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -7361,7 +7699,8 @@ retention-necessity input, RH-391 as the linear-scale same-rank pairwise
 retention-necessity input, RH-392 as the fixed-lag terminal-log
 diagonalization and square-divisor capacity-landscape input, RH-393 as the
 two-odd-factor multi-shift terminal compiler and squarefree-landscape input,
-RH-MVP2 as the corpus umbrella, and RH-361 as the physical endpoint.
+RH-394 as the odd-parity terminal compiler and complete three-shift table-law
+input, RH-MVP2 as the corpus umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -7371,7 +7710,7 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-393 is the current independent trigger-5 theorem edge and does not close
+RH-394 is the current independent trigger-5 theorem edge and does not close
 any physical Gate.  Fix `m>=1`, `q>=1`, pairwise-distinct integer shifts,
 fixed periodic coefficients, and every terminal clock satisfying
 
@@ -7379,8 +7718,14 @@ fixed periodic coefficients, and every terminal clock satisfying
 1<=omega(X)<=X, omega(X)->infinity.
 ```
 
-For each monomial `alpha in {0,1,2}^m`, require
-`abs({i:alpha_i=1})<=2`.  Then
+For each monomial `alpha in {0,1,2}^m`, put
+
+```text
+O(alpha)={i:alpha_i=1}, E(alpha)={i:alpha_i=2},
+```
+
+and require `abs(O(alpha))` to be zero, two, or a positive odd integer.
+Then
 
 ```text
 T_X(P;omega)
@@ -7400,31 +7745,59 @@ Theta_(q,r)(E)
 
 Deduplicate modulo `p^2` before counting collisions modulo `p`.  The phase
 sum is `product_p(1-nu_p(E)/p^2)`.  Odd support zero is local CRT; support
-one uses RH-392 equation (19) plus Abel; support two uses RH-392 Theorem 2.2.
-Fix the cutoff `P`, take `X->infinity`, then `P->infinity`.
+two is the frozen RH-393 compiler; every positive odd support uses
+Tao--Teravainen Corollary 1.8 and its fixed affine extension.  Keep every
+phase, shift, and coefficient fixed, and preserve the terminal-clock
+normalization.
+
+For exact support `U`, retain
+
+```text
+Pi_(q,r)(U)=sum_(W subset [m] backslash U)(-1)^abs(W)
+             Theta_(q,r)(U union W),
+sum_(U subset [m])Pi_(q,r)(U)=1/q.
+```
+
+An admissible fixed table has limit
+
+```text
+sum_(r mod q)sum_(U subset [m])Pi_(q,r)(U)bar f_(r,U).
+```
 
 Retain
 
 ```text
-D_m=2^m+m2^(m-1)+binom(m,2)2^(m-2).
+D'_m=2^m+binom(m,2)2^(m-2)+(3^m-1)/2.
 ```
 
-At `m=3`, this is `26/27`, with the signed-cube coefficient as the sole
-missing channel.  For `z f(x,y)`, the alternating-corner criterion selects
-exactly `192/512` tables; make no claim about the other `320`.
+At `m=3`, this is `27/27`, so every fixed three-shift table is covered.  At
+`m=4`, it is `80/81`; only the signed four-cube coefficient is missing, and
+exactly `binom(16,8)2^65` sign tables per phase satisfy that boundary.  Every
+two-input distinguished-current table is covered, giving all `512^q` fixed
+phase families.
 
-For at most three shifts, the global density has the sharp positive lower
-product `product_p(1-m/p^2)`, with equality exactly for squarefree nonzero
-pairwise differences.  From four shifts onward, zero is attained exactly by
-a complete residue cover modulo some `p^2`.  For fixed `m>=2`, the supremum
-is `6/pi^2`, is not attained, and is approached by primorial-square
-configurations.
+For a full table, every nonzero-support stratum must have even Boolean part
+of degree at most two.  For a distinguished-current table, every stratum's
+odd part must have degree at most one.  Retain
 
-Do not infer odd support at least three, unrestricted three-coordinate truth
-tables, growing `m`, `q`, shifts, masks, or coefficients, an effective rate,
-ordinary Cesaro cancellation, a pre-limit maximum, generic multishift
+```text
+M_0=2, M_1=4,
+M_k=2^(2^(k-1))+2k+4binom(k,2)2^(2^(k-2))  (k>=2),
+B_d=product_(k=0)^d M_k^binom(d,k).
+```
+
+Do not infer even odd-support at least four, unrestricted four-coordinate
+truth tables, growing `m`, `q`, shifts, masks, or coefficients, an effective
+rate, ordinary Cesaro cancellation, a pre-limit maximum, graph-coupled
 capacity, operators, traces, zeros, RH, or Gates A--E.  Routes A and B are
-`GO` at the typed scope; all enlargements are `STOP_SCOPED`.
+`GO` at the typed scopes; all enlargements are `STOP_SCOPED`.
+
+RH-393 remains the preceding two-odd compiler.  It proves the fixed
+multi-shift channels with at most two odd exponents, the exact phase
+densities, the `26/27` three-shift boundary, the `192/512`
+distinguished-current subclass, and the squarefree-density landscape.  Do
+not erase its cutoff order or promote it to growing data or generic
+multishift capacity.
 
 RH-392 remains the preceding fixed-lag theorem.  Its exact post-limit law is
 
@@ -7838,13 +8211,19 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-RH-393 is complete; do not rewrite it as the next candidate.  Its fixed
-multi-shift at-most-two-odd-factor compiler, exact phase densities, density
-landscape, `26/27` signed-cube boundary, `192/512` table corollary, three
-remote logical locks, release archive, and three independent final audits are
-closed.  No post-RH-393 breadth audit has assigned RH-394.  Run that audit
+RH-394 is complete; do not rewrite it as the next candidate.  Its
+positive-odd terminal compiler, exact support densities, complete
+three-shift law, `80/81` four-shift boundary, intrinsic `M_k/B_d` census,
+four remote logical locks, release archive, and independent final audits are
+closed.  No post-RH-394 breadth audit has assigned RH-395.  Run that audit
 before creating another number, and require a genuinely new source-backed
 theorem rather than a growing-parameter restatement without a uniform rate.
+
+RH-393 remains complete as the preceding two-odd theorem.  Its fixed
+multi-shift at-most-two-odd-factor compiler, exact phase densities, density
+landscape, `26/27` signed-cube boundary, and `192/512` table corollary are
+closed.  Do not repackage them or erase the source boundary that RH-394
+separately crosses only for positive odd support.
 
 RH-392 remains complete as the preceding fixed-lag theorem.  Its
 arbitrary-determinant local proof, exact pair densities, `512 -> 8`
@@ -7897,15 +8276,16 @@ direct RH-385 corollary, not a new edge.  Preserve the immutable four-volume
 foundation and Gates A--E while these ordinary-`c_11` and growing-clock
 routes remain stopped.
 
-No RH-394 is assigned.  The next breadth audit must compare at least:
+No RH-395 is assigned.  The next breadth audit must compare at least:
 
-1. odd-support-three or higher channels, currently `STOP_SCOPED` because no
-   immutable matching higher-point terminal correlation theorem is locked;
-2. unrestricted multi-shift truth tables or a graph-coupled safe capacity,
-   currently `STOP_SCOPED` for lack of both higher correlations and a global
-   compatibility/charge optimizer;
+1. graph-coupled three-window safe capacity, currently `STOP_SCOPED` because
+   the larger action space defeats the predecessor charge and no all-clock
+   weighted compatibility optimizer is locked;
+2. even odd-support at least four or unrestricted four-coordinate tables,
+   currently `STOP_SCOPED` because the new source pays positive odd total
+   exponent, not an unsquared even four-point correlation;
 3. growing `m`, period, shifts, coefficients, or masks, currently
-   `STOP_SCOPED` because the frozen cancellation inputs have no uniform rate;
+   `STOP_SCOPED` because the frozen analytic inputs have no uniform rate;
 4. the exact RH-365 bouquet radius, currently `STOP_SCOPED` for lack of
    exponential multiplicity or composite-order primitive divisors;
 5. a continuum `-1` Riesz projector, currently `NOT_TESTABLE` without a
