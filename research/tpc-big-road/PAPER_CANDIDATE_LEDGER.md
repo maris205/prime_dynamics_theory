@@ -26,7 +26,7 @@
 
 暂定题目：
 
-> **Fold-first transference for a signed Möbius pair emitter**
+> **Fold-first transference and compensated dilation for a signed Möbius pair emitter**
 
 候选类型：结构性解析数论短文 / research note。
 
@@ -47,6 +47,14 @@
 6. **PROVED** — V51 nonprincipal-character/Fourier one-aggregate emitter。
 7. **PROVED** — finite orientation-support mismatch，证明“先逐方向 Poisson、后折叠”
    不是合法保持 cancellation 的 compiler。
+8. **PROVED** — V52 dual coefficient interface：同一 non-square folded coefficient
+   同时等于 pair-native `Omega_U` sum与 truncated-sieve residual减 square row。
+9. **PROVED** — V52 compensated prime-dilation identity：divisibility row、physical
+   diagonal与 unit principal mean进入一个 signed bracket，自然 length为 `H/q`。
+10. **PROVED** — V52 character-packet Hilbert identity与 endpoint simplex
+    `eta_PAD=kappa+(delta_B+delta_W)/2-1/400`。
+11. **PROVED** — V52 reverse-Chen semiprime slice及 equal-norm parallel/orthogonal
+    marginal-only obstruction。
 
 ### 2.2 可写成条件命题的局部引擎
 
@@ -61,12 +69,15 @@
    Bettin--Chandee arXiv:1502.00769v1：
    exact separated reciprocal-fraction cell；只在 literal coefficient compiler
    和 aggregate norm 已证明后调用。
+4. **SOURCE_BACKED_CONDITIONAL** —
+   Zheng arXiv:2512.22798v1：simultaneous progression architecture；其 fixed
+   residues、`theta<=7/36` 或 `2/23` 与 coefficient hypotheses尚未覆盖 V52。
 
 这些 source 均未直接证明当前 whole-object theorem。
 
 ### 2.3 主猜想
 
-**CONJECTURAL**：
+V51 scalar form仍为 **CONJECTURAL**：
 
 \[
  \left|\mathfrak F_x^{\rm mix}+\mathfrak F_x^{\rm bal}\right|
@@ -78,6 +89,18 @@
 hybrid comparator 和 single outer sign 绑定。它不是把目标 scalar 换名；source-facing
 emitter、fold order、Abel compiler 与 paid square row 已全部明确。
 
+V52 将它升级成更可审计的 packet package
+
+\[
+ \mathsf H_{\rm PAD}(\delta_B,\delta_W,\kappa),
+ \qquad
+ \kappa+\frac{\delta_B+\delta_W}{2}>\frac1{400}.
+\]
+
+首选 heuristic 是 diagonal-scale marginals加 `kappa>1/400` 的 joint angular
+dispersion；zero-angle fallback要求 `delta_B+delta_W>1/200`。这是当前第一篇候选
+最接近 standalone main conjecture 的版本，但仍没有 primary-source proof。
+
 ### 2.4 必须保留的 NO-GO 结果
 
 1. **NO_GO** — orientation-first absolute reassembly destroys exact folded zeros。
@@ -87,6 +110,11 @@ emitter、fold order、Abel compiler 与 paid square row 已全部明确。
    polynomial conductor，不自动产生 fixed $x$-power。
 4. **NO_GO** — Dong--Robles--Zeindler arXiv:2601.00292v2 已撤回；作者记录
    equation (2.53) 漏掉 $L^2$，不能使用 claimed improvement。
+5. **NO_GO** — diagonal-scale marginal BDH 加 ordinary Cauchy恰差 `1/400`。
+6. **NO_GO** — marginal energies不决定 packet angle；equal-norm finite fixture同时
+   允许完全平行与完全正交。
+7. **NO_GO** — Zheng/Drappeau/Wright 的 fixed-residue/product interfaces不能直接
+   代替 V52 moving compensated product covariance。
 
 ## 3. 第二篇候选：endpoint-matched exceptional spectrum compiler
 
@@ -163,10 +191,13 @@ handoff。
 | 2026-08-10 | V43 | proper-factor Poisson transference 与 zero-axis return | **PROVED** |
 | 2026-08-11 | V50 | saving-matched moving cut 与 Siegel-quality dichotomy | **PROVED + CONDITIONAL + CONJECTURAL** |
 | 2026-08-11 | V51 | fold-first pair emitter、rank-two/Abel compiler、orientation NO-GO | **PROVED + CONJECTURAL** |
+| 2026-08-11 | V52 | compensated pair dilation、reverse-Chen slice、endpoint simplex、marginal-only angle obstruction | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 
 下一次更新应优先回答：
 
-1. pair-native character emitter能否 exact 编译成 BP/Pascadi 接受的 Kloosterman arrays；
-2. mixed 与 balanced 是否必须共同估计，还是 source theorem允许无损 block orthogonality；
-3. 能否先得到一个 standalone average theorem，即使暂时弱于 $1997/1200$ endpoint；
-4. 哪个候选最先满足“成稿门槛 A”。
+1. 能否对 exact compensated pair dilation证明 diagonal-scale two-marginal BDH；
+2. 能否对同一 pair/physical packet取得 `kappa>1/400` 的 genuine joint angle；
+3. 若 angular route失败，是否有总 saving `>1/200` 的 one/two-sided super-BDH；
+4. BP/Pascadi local cells能否在不拆 compensation与 fold的前提下合法 reassemble；
+5. 能否先得到一个 standalone average theorem，即使暂时弱于 $1997/1200$ endpoint；
+6. 哪个候选最先满足“成稿门槛 A”。

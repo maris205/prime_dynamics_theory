@@ -1,7 +1,83 @@
 # TPC HANDOFF
 
 更新时间：2026-08-11
-交接状态：`BOLD_CHANNEL_V51_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V52_SEALED_FOR_NEW_SESSION`
+
+第 99 节仍位于“解析消去岛 / Bridge A / Gates A--B”。V52 保留 V51 的
+fold-first 无序因子对，并把 mixed+balanced 非平方 aggregate 压成一个 compensated
+prime-dilation covariance。对
+
+~~~text
+beta_circle(t)=sum_{s<l,sl=t} Omega_U(s,l),
+R_q(t)=sum_{t+qk in I} w(t+qk)K_H(qk)
+       -(q-1)^(-1) sum_{u in I,q does not divide u} w(u)K_H(u-t),
+~~~
+
+有 exact whole-object identity
+
+~~~text
+F_circle=sum_{q in Q} q sum_{t in I,q does not divide t} beta_circle(t)R_q(t)
+        =sum_q q sum_{s<l,q does not divide sl} Omega_U(s,l)R_q(sl).   (V52.1)
+~~~
+
+这里第一项含 physical diagonal `k=0`，第二项是 unit principal mean；两项不得
+拆开后 triangle。自然 smooth dilation length 为 `H/q=x^(31/96+o(1))`。
+`beta_circle` 同时保留 pair-native 与 truncated-sieve 两个 exact interface；其中
+`beta(pr)=0` 对 `p<=U<r`，`beta(pr)=-1` 对 `U<p<r`，故 balanced lane 暴露一个
+reverse-Chen semiprime--prime subchannel，但所有 Möbius parity、hybrid comparator 与
+square payment仍留在同一 literal scalar。
+
+character/Fourier separation把 (V52.1) 写成一个 Hilbert inner product：
+
+~~~text
+F_circle=<X,Y>,
+E_W=||X||^2, E_B=||Y||^2,
+rho_BW=|<X,Y>|/(E_W E_B)^(1/2).                           (V52.2)
+~~~
+
+若同一 literal packets满足
+
+~~~text
+E_B << x^(5/3-delta_B+o(1)),
+E_W << x^(5/3-delta_W+o(1)),
+rho_BW << x^(-kappa+o(1)),
+~~~
+
+则 V51 whole-object saving 可取任意
+
+~~~text
+0<eta_PAD<kappa+(delta_B+delta_W)/2-1/400.                 (V52.3)
+~~~
+
+因此两边只到 diagonal-scale BDH 再作普通 Cauchy，恰好缺 `1/400`；要么证明
+`kappa>1/400` 的 joint angular saving，要么两边 super-BDH saving总和超过
+`1/200`，或两者混合。equal-norm parallel/orthogonal finite fixture exact证明
+marginal norms本身不能制造 angle。Zheng、Drappeau、Wright、Blomer--Pascadi 与
+Pascadi只提供 architecture analogues或 conditional local engines；截至
+2026-08-11 没有 screened primary theorem直接证明该 literal PAD package。
+
+~~~text
+V52_ROUTE_ADVANCE = YES
+V52_CONDITIONAL_BRIDGE_ADVANCE = YES
+V52_PAIR_ANGULAR_DISPERSION_GATE = CONJECTURAL_H_PAD_DELTA_B_DELTA_W_KAPPA
+V52_MARGINAL_BDH_PLUS_CAUCHY = NO_GO_MISSES_TARGET_BY_EXACT_1_OVER_400
+V52_FIRST_FATAL = NO_LITERAL_THEOREM_PROVES_A_POWER_SAVING_PAIR_ENDPOINT_ANGLE_OR_TOTAL_SUPER_BDH_SAVING_ABOVE_1_OVER_200_FOR_THE_COMPENSATED_MOVING_PRODUCT_PRIME_DILATION
+V52_ARITHMETIC_ADVANCE = NO
+V52_FIXED_ATOM_CREDIT = 0
+V52_STRICT_1_OVER_400 = UNPAID
+V52_L2 = NONE
+TPC_207_TRIGGER = false                                     (V52.4)
+~~~
+
+完整 65-row canonical registry 位于 Handoff 第 24、99 节、Compass 第 53 节、
+big-road README 第 52 节、V52 proof 第 10 节与 checker。proof 为
+`research/tpc-big-road/bridge_b_compensated_pair_dilation_and_angular_dispersion.md`，
+checker 为
+`research/tpc-big-road/tpc_bridge_b_compensated_pair_dilation_checker.py`。阶段性成果继续
+登记在 `research/tpc-big-road/PAPER_CANDIDATE_LEDGER.md`；仍不是 numbered paper。
+
+以下 V51 及更早页首块作为已封存历史上游保留；V51 的完整事实位于第 98 节，
+current truth 由上面的 V52 摘要、第 24 节与第 99 节控制。
 
 第 98 节仍位于“解析消去岛 / Bridge A / Gates A--B”。V51 不改变 V43 的
 literal Gate-A numerator、V42 Gate B 或 V50 的 global Siegel-quality dichotomy；
@@ -3202,7 +3278,7 @@ source-specific wrong-object verdict、full-`J` absence及全部 STOP/OPEN状态
 `V30_QLOCAL_MODEL_BOUND`
 （第 98 节控制；V50 two-world compiler由第 97 节冻结，V49 three-lane compiler由第 96 节冻结，V48 scalar splice由第 95 节冻结，V47 centered reduction由第 94 节冻结，V46 local payment由第 93 节冻结，V43 transference由第 90 节冻结；既有 local source只有在第 32.6 节或
 第 33.5、34.6、35.6、36.6、37.6、38.5、39.5、40.7、41.6、42.7、43.7、44.7、
-45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--98 节列出的 source-backed reopen trigger，
+45.6、46.6、47.5、48.6、49.6、50.6、51.6、52.6、53.8、54.6、54.8--54.19、55--99 节列出的 source-backed reopen trigger，
 或其他既有独立 trigger真实出现时重开）
 TPC-204 授权并完成：`true`
 TPC-205 授权并完成：`true`
@@ -3215,6 +3291,8 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
 `research/tpc-big-road/TPC_ROUTE_MAP.md`、
+`research/tpc-big-road/bridge_b_compensated_pair_dilation_and_angular_dispersion.md`、
+`research/tpc-big-road/tpc_bridge_b_compensated_pair_dilation_checker.py`、
 `research/tpc-big-road/bridge_b_fold_first_long_mobius_compiler.md`、
 `research/tpc-big-road/tpc_bridge_b_fold_first_long_mobius_checker.py`、
 `research/tpc-big-road/PAPER_CANDIDATE_LEDGER.md`、
@@ -3283,7 +3361,7 @@ TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
 `research/tpc-big-road/bridge_b_shbd2_innovation.md`与
 `research/tpc-big-road/tpc_bridge_b_shbd2_innovation_checker.py`与
 `research/tpc-big-road/fm_local_comparison_compiler.md`，再读本页页首及第
-1、6、22、24、54.18--54.19、55--98 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
+1、6、22、24、54.18--54.19、55--99 节；第 29--53 节与第 54.1--54.17 节只在上述入口明确引用时展开，第 23、27、28 节仍只在后续
 审计明确引用时展开。第 22 节的
 `TRUNCATED_ENTRY_ABSENT`
 仍只指 `delta=1/20` exact family；第 23 节审核的是另一条 theorem-valid
@@ -3344,11 +3422,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V51 gate及其 V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；五十八次必须都为零，且每一对 stdout
+22项启动回归之后，当前不编号 V52 gate及其 V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；六十次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
+python -B research/tpc-big-road/tpc_bridge_b_compensated_pair_dilation_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_compensated_pair_dilation_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_fold_first_long_mobius_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_fold_first_long_mobius_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_endpoint_matched_siegel_world_checker.py --check
@@ -3680,6 +3760,24 @@ TPC193_DECLARED_CANDIDATE_MECHANISM_CORPUS_V1 = STOP_SCOPED
 FACTORWISE_SINGLE_MOBIUS_FOURIER_TO_LITERAL_PRODUCT = STOP_SCOPED
 ONE_FUNCTION_PRETENTIOUSNESS_DIRECT_APPLICATION_TO_CZ = STOP_SCOPED
 ```
+
+V52 对 compensated pair dilation 与 pair-angular endpoint compiler 新增且仅新增
+五个 scoped no-go：
+
+```text
+V52_MARGINAL_BDH_PLUS_CAUCHY = NO_GO_MISSES_TARGET_BY_EXACT_1_OVER_400
+V52_MARGINAL_NORMS_DETERMINE_ANGLE = NO_GO_PARALLEL_ORTHOGONAL_EQUAL_NORM_FIXTURE
+V52_ZHENG_SIMULTANEOUS_AP = NO_GO_DIRECT_THETA_FIXED_RESIDUE_SIEGEL_WALFISZ_AND_MOVING_PRODUCT_MISMATCH
+V52_DRAPPEAU_DISPERSION = NO_GO_DIRECT_FIXED_PRODUCT_AND_MODULUS_INDEPENDENT_ARRAY_MISMATCH
+V52_WRIGHT_UNBALANCED_CONVOLUTION = NO_GO_DIRECT_FIXED_RESIDUE_AND_SHORT_SIEGEL_WALFISZ_SEQUENCE_MISMATCH
+```
+
+它们分别只停止用 diagonal-scale marginal BDH 加普通 Cauchy冒充 endpoint saving、
+从两个 marginal norms 推出 packet angle，以及把 fixed-residue/fixed-product/
+short-Siegel--Walfisz source直接改名为 V52 moving-product theorem。它们不停止新的
+joint angular dispersion theorem、总 saving 大于 `1/200` 的 super-BDH package、
+合法 pair-native transform 后使用 Blomer--Pascadi/Pascadi local engines、V42 Gate B
+或 dynamics reserve。
 
 V51 对 fold-first long-Möbius pair compiler新增且仅新增六个 scoped no-go：
 
@@ -9358,7 +9456,7 @@ TPC-127 --check = PASS
 未执行。没有创建论文、PDF 或构建日志；既有 TPC-105 `__pycache__`、TPC-63
 构建产物与 `tmp/` 均保持原样。
 
-## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V51 current）
+## 24. 下一会话可直接粘贴（BOLD_CHANNEL_V52 current）
 
 ```text
 进入仓库：
@@ -9367,6 +9465,8 @@ TPC-127 --check = PASS
 以仓库文件和 committed artifacts 为事实来源，不依赖旧聊天记录。先读
 TPC_COMPASS.md、research/tpc-big-road/README.md、
 research/tpc-big-road/TPC_ROUTE_MAP.md、
+research/tpc-big-road/bridge_b_compensated_pair_dilation_and_angular_dispersion.md、
+research/tpc-big-road/tpc_bridge_b_compensated_pair_dilation_checker.py、
 research/tpc-big-road/bridge_b_fold_first_long_mobius_compiler.md、
 research/tpc-big-road/tpc_bridge_b_fold_first_long_mobius_checker.py、
 research/tpc-big-road/PAPER_CANDIDATE_LEDGER.md、
@@ -9438,7 +9538,7 @@ research/tpc-big-road/bridge_b_backward_hull.md、
 research/tpc-big-road/bridge_b_observable_rank.md、
 research/tpc-big-road/bridge_b_physical_intertwiner.md、
 research/tpc-big-road/fm_local_comparison_compiler.md、TPC_HANDOFF.md 页首及
-第 1、6、22、24、54.18--54.19、55--98 节；其他历史块只在这些入口明确引用时展开。
+第 1、6、22、24、54.18--54.19、55--99 节；其他历史块只在这些入口明确引用时展开。
 
 先执行：
 
@@ -9655,6 +9755,71 @@ V29_TARGET_CALIBRATED_SINGLE_BLOCK_KERNEL = STOP_SCOPED_EXACT_CIRCULAR_ONE_VECTO
 V29_STAGE_TAG_SKEW_PRODUCT_NORM_GAIN = STOP_SCOPED_EXACT_KAPPA_DIVIDED_BY_FIBER_MASS
 V29_ACTUAL_WHOLE_SHELL_LOW_CHRISTOFFEL_QUOTIENT = SELECTED_DYNAMICS_OPEN_NEW_THEOREM
 V29_INDEPENDENT_POSITIVE_KERNEL_MAIN = OPEN_ATTACHMENT_NOT_SAME_OUTPUT_MEAN
+V52_MAXIMUM_CLAIM = EXACT_COMPENSATED_PAIR_DILATION_AND_PACKET_ENDPOINT_COMPILER_IDENTIFIES_THE_FOLDED_GATE_A_AS_A_REVERSE_CHEN_PARITY_RESIDUAL_AND_PROVES_THE_MARGINAL_BDH_PLUS_CAUCHY_COMPILER_MISSES_BY_1_OVER_400
+V52_ROUTE_ADVANCE = YES
+V52_CONDITIONAL_BRIDGE_ADVANCE = YES
+V52_ARITHMETIC_ADVANCE = NO
+V52_FIXED_ATOM_CREDIT = 0
+V52_STRICT_1_OVER_400 = UNPAID
+V52_L2 = NONE
+V52_TPC_207_TRIGGER = false
+V52_NUMBERED_RELEASE = NO
+V52_DERIVATION_STATUS = COHERENT_AFTER_DUAL_PAIR_SIEVE_IDENTITY_COMPENSATED_DILATION_HILBERT_PACKET_AND_ENDPOINT_SIMPLEX
+V52_ASSUMPTION_POLICY = PAIR_ANGULAR_DISPERSION_IS_CONJECTURAL__MARGINAL_AND_LOCAL_SOURCE_RESULTS_RECEIVE_NO_JOINT_CREDIT
+V52_SELECTED_RESEARCH_ROUTE = UNBOUNDED_SIEGEL_QUALITY_CONDITIONAL_EXIT__OTHERWISE_PAIR_ANGULAR_GATE_A__V42_GATE_B__V43_JOIN__DYNAMICS_RESERVE
+V52_CLAIM_CLASS_POLICY = PROVED__SOURCE_BACKED_CONDITIONAL__CONJECTURAL__NO_GO
+V52_FROZEN_SCALES = H_21_OVER_32__Q_1_OVER_3__U_133_OVER_400__DILATION_31_OVER_96
+V52_FOLDED_PAIR_INTERFACE = RETAINED_EXACT_MIXED_PLUS_BALANCED_OMEGA_U
+V52_TRUNCATED_SIEVE_INTERFACE = RETAINED_EXACT_LAMBDA_OVER_LOG_MINUS_MU_LE_U_CONVOLUTION
+V52_DUAL_COEFFICIENT_INTERFACE = PROVED_EXACT_SAME_BETA_AFTER_SQUARE_ROW_SUBTRACTION
+V52_PRIME_ROW_CANCELLATION = PROVED_EXACT_ONE_MINUS_ONE_EQUALS_ZERO
+V52_MIXED_SEMIPRIME_SLICE = PROVED_EXACT_ZERO_FOR_P_LE_U_LT_R
+V52_BALANCED_SEMIPRIME_SLICE = PROVED_EXACT_MINUS_ONE_FOR_U_LT_P_LT_R
+V52_SQUARE_PRIME_SLICE = PROVED_EXACT_MINUS_ONE_HALF
+V52_REVERSE_CHEN_INTERPRETATION = PROVED_EXACT_SUBCHANNEL_NOT_A_STANDALONE_ESTIMATE
+V52_MULTI_PAIR_T12_FIXTURE = PROVED_FORMAL_LOG_COLLAPSE_TO_ONE
+V52_COMPENSATED_PAIR_DILATION_ROW = PROVED_EXACT_DIVISIBILITY_MINUS_UNIT_PRINCIPAL_MEAN
+V52_COMPENSATED_PAIR_DILATION_SCALAR = PROVED_EXACT_ONE_COMMON_PRIME_SHELL_AND_ONE_SIGNED_AGGREGATE
+V52_DILATION_NATURAL_LENGTH = H_OVER_Q_EQUALS_X_31_OVER_96
+V52_DILATION_HARD_SUPPORT_POLICY = EXACT_T_PLUS_QK_IN_I_WITH_SCHWARTZ_NOT_COMPACT_K_TAIL
+V52_DILATION_SPLIT_ABSOLUTE_CEILING = X_191_OVER_96_PLUS_O1
+V52_DILATION_SPLIT_DEFICIT = 781_OVER_2400
+V52_Q5_DILATION_FIXTURE = PROVED_EXACT_20_MINUS_10_EQUALS_10
+V52_PAIR_CHARACTER_PACKET = RETAINED_EXACT_NONPRINCIPAL_CHARACTER_FOURIER_AGGREGATE
+V52_HILBERT_PACKET_IDENTITY = PROVED_EXACT_F_CIRCLE_EQUALS_INNER_PRODUCT_X_Y
+V52_PACKET_COHERENCE = DEFINED_EXACT_ZERO_TO_ONE_NO_ARITHMETIC_CREDIT
+V52_CHARACTER_DIAGONAL_FORMULA = PROVED_EXACT_Q_Q_MINUS_2_OVER_Q_MINUS_1_WEIGHT
+V52_DIAGONAL_SCALE = X_5_OVER_3_PLUS_O1_UPPER_BENCHMARK
+V52_DIAGONAL_SCALE_LOWER_BOUND = NOT_ASSERTED_OFFDIAGONAL_CAN_HAVE_EITHER_SIGN
+V52_MARGINAL_BDH_BASELINE = CONJECTURAL_E_B_AND_E_W_LE_X_5_OVER_3_PLUS_O1
+V52_MARGINAL_BDH_PLUS_CAUCHY = NO_GO_MISSES_TARGET_BY_EXACT_1_OVER_400
+V52_PACKET_ENDPOINT_LAW = PROVED_CONDITIONAL_KAPPA_PLUS_HALF_DELTA_SUM_MINUS_1_OVER_400
+V52_BASELINE_MARGINAL_ANGULAR_THRESHOLD = KAPPA_GT_1_OVER_400
+V52_ZERO_ANGLE_TOTAL_SUPER_BDH_THRESHOLD = DELTA_B_PLUS_DELTA_W_GT_1_OVER_200
+V52_ONE_SIDED_SUPER_BDH_THRESHOLD = DELTA_GT_1_OVER_200
+V52_ONE_GENERIC_ONE_BDH_DEFICIT = 203_OVER_1200
+V52_TWO_GENERIC_CHARACTER_DEFICIT = 403_OVER_1200
+V52_MARGINAL_NORMS_DETERMINE_ANGLE = NO_GO_PARALLEL_ORTHOGONAL_EQUAL_NORM_FIXTURE
+V52_PAIR_ANGULAR_DISPERSION_GATE = CONJECTURAL_H_PAD_DELTA_B_DELTA_W_KAPPA
+V52_PREFERRED_PAD_REGIME = DIAGONAL_SCALE_MARGINALS_AND_KAPPA_GT_1_OVER_400
+V52_SUPER_BDH_REGIME = RETAINED_LEGAL_ALTERNATIVE_IF_TOTAL_SAVING_GT_1_OVER_200
+V52_PAD_TO_V51_H_FOLD = PROVED_CONDITIONAL_WITH_ETA_PAD_POSITIVE
+V52_PAD_TO_PHYSICAL_ENDPOINT = PROVED_CONDITIONAL_AFTER_INDEPENDENT_V42_GATE_B_AND_V43_JOIN
+V52_TWO_GATE_MARGIN = MIN_ETA_PAD_ETA_B_419_OVER_2400_19_OVER_2400_AND_11_OVER_600_MINUS_EPSILON
+V52_ZHENG_SIMULTANEOUS_AP = NO_GO_DIRECT_THETA_FIXED_RESIDUE_SIEGEL_WALFISZ_AND_MOVING_PRODUCT_MISMATCH
+V52_DRAPPEAU_DISPERSION = NO_GO_DIRECT_FIXED_PRODUCT_AND_MODULUS_INDEPENDENT_ARRAY_MISMATCH
+V52_WRIGHT_UNBALANCED_CONVOLUTION = NO_GO_DIRECT_FIXED_RESIDUE_AND_SHORT_SIEGEL_WALFISZ_SEQUENCE_MISMATCH
+V52_BLOMER_PASCADI_FIXED_MODULUS = SOURCE_BACKED_CONDITIONAL_LOCAL_CELL_ONLY
+V52_PASCADI_EXCEPTIONAL_SIEVE = SOURCE_BACKED_CONDITIONAL_AFTER_LITERAL_TRANSFORM_AND_NORM
+V52_DIRECT_PRIMARY_SOURCE_FOR_H_PAD = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_11
+V52_FIRST_FATAL = NO_LITERAL_THEOREM_PROVES_A_POWER_SAVING_PAIR_ENDPOINT_ANGLE_OR_TOTAL_SUPER_BDH_SAVING_ABOVE_1_OVER_200_FOR_THE_COMPENSATED_MOVING_PRODUCT_PRIME_DILATION
+V52_V42_GATE_B = RETAINED_PARALLEL_OPEN_POSITIVE_GRAM_MPD_ROUTE
+V52_V50_BOUNDED_CORE = RETAINED_SEQUENTIAL_CONJECTURAL_ALTERNATIVE
+V52_PAPER_CANDIDATE_LEDGER = UPDATED_WITH_COMPENSATED_DILATION_REVERSE_CHEN_SLICE_ENDPOINT_SIMPLEX_AND_MARGINAL_NO_GO
+V52_SMALL_PAPER_STATUS = UNNUMBERED_OUTLINE_ONLY_NO_STANDALONE_ASYMPTOTIC_THEOREM
+V52_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_PAIR_ANGULAR_GATE_A_MAPPED_ARITHMETIC_BOUND_OPEN
+V52_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V52_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATES_A_B
 V51_MAXIMUM_CLAIM = EXACT_FOLD_FIRST_UNORDERED_PAIR_DIAGONAL_COMPLETED_EMITTER_REPRESENTS_THE_V43_GATE_A_NUMERATOR_UP_TO_PAID_ERRORS_AND_REDUCES_MIXED_PLUS_BALANCED_LONG_MOBIUS_TO_ONE_CONJECTURAL_SIGNED_THEOREM
 V51_ROUTE_ADVANCE = YES
 V51_CONDITIONAL_BRIDGE_ADVANCE = YES
@@ -15143,6 +15308,290 @@ TPC122_WRITER_EXECUTED = NO
 正式写入后必须重跑第 1 节全部 22 项只读回归、TPC-111/124/126/127 四项
 supplemental checks与 protected manifest。只 stage本 handoff；commit/push后必须
 验证 local `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
+
++## 99. 2026-08-11 V52：compensated pair dilation 与 angular-dispersion endpoint law
+
+本节冻结 V52 不编号 big-road checkpoint。它保留 V51 fold-first 无序因子对，
+不恢复两个 orientations，也不逐 lane 取 absolute value。所有 PROVED、
+SOURCE_BACKED_CONDITIONAL、CONJECTURAL 与 NO_GO 继续严格分层。
+
+### 99.1 双 coefficient interface
+
+令
+\[
+ \beta^\circ(t)=\sum_{s<\ell,\,s\ell=t}\Omega_U(s,\ell),\qquad
+ \beta^\square(t)=\mathbf 1_{t=r^2}\frac{\mu(r)}2.
+\]
+V51 给
+\[
+ \beta(t)=\beta^\circ(t)+\beta^\square(t),
+\]
+而 V33 的 root-one MASTER marginal identity给
+\[
+ \beta(t)=\frac{\Lambda(t)}{\log t}
+ -\sum_{d\mid t,\,d\le U}\mu(d).
+\]
+所以
+\[
+ \beta^\circ(t)=\frac{\Lambda(t)}{\log t}
+ -\sum_{d\mid t,\,d\le U}\mu(d)
+ -\mathbf1_{t=r^2}\frac{\mu(r)}2.                       \tag{99.1}
+\]
+pair-native 与 truncated-sieve 因而是同一 frozen coefficient 的两个 exact
+interface。对 primes $p<r$，
+\[
+ \beta(pr)=0\quad(p\le U<r),\qquad
+ \beta(pr)=-1\quad(U<p<r),\qquad
+ \beta(p^2)=-\frac12.
+\]
+这暴露 reverse-Chen semiprime--prime subchannel，但不允许删除其余 Möbius parity、
+hybrid comparator 或 square row。有限 fixture $U=4,t=12$ 的两对 $(2,6),(3,4)$
+formal logarithmic numerators exact合为 $\log12$。
+
+### 99.2 compensated prime-dilation normal form
+
+对 $q\in\mathcal Q$、$q\nmid t$，定义
+\[
+ \mathcal R_q(t)=
+ \sum_{t+qk\in I_x}w(t+qk)K_H(qk)
+ -\frac1{q-1}\sum_{u\in I_x,\,q\nmid u}w(u)K_H(u-t).   \tag{99.2}
+\]
+第一项就是 divisibility row，包含 $k=0$ physical diagonal；第二项是 unit
+principal mean。于是
+\[
+ \mathfrak F_x^\circ
+ =\sum_q q\sum_{q\nmid t}\beta^\circ(t)\mathcal R_q(t)
+ =\sum_q q\sum_{s<\ell,\,q\nmid s\ell}
+   \Omega_U(s,\ell)\mathcal R_q(s\ell).                \tag{99.3}
+\]
+自然 smooth dilation length 为
+\[
+ H/q=x^{31/96+o(1)}.
+\]
+$K_H$ 是 Schwartz 而不是 hard support；exact support仍是 $t+qk\in I_x$。
+拆开 (99.2) 并 triangle 只给 $x^{191/96+o(1)}$，比 numerator target差
+$781/2400$。有限 $q=5,t=6$ fixture 给 '20-10=10'，并拒绝
+'1/(q-1)' 改成 '1/q'、删除 diagonal 或删除 unit mask。
+
+### 99.3 Hilbert packet 与 endpoint simplex
+
+nonprincipal-character/Fourier emitter exact写成
+\[
+ \mathfrak F_x^\circ=\langle X,Y\rangle_{\mathscr H_x}.
+\]
+令
+\[
+ \mathcal E_W=\|X\|^2,\qquad
+ \mathcal E_B=\|Y\|^2,\qquad
+ \varrho_{BW}=\frac{|\langle X,Y\rangle|}
+ {\sqrt{\mathcal E_W\mathcal E_B}}.
+\]
+character diagonal benchmark为 $xQ^2=x^{5/3+o(1)}$。这是 upper benchmark，
+不是 full energy lower bound。若
+\[
+ \mathcal E_B\ll x^{5/3-\delta_B+o(1)},\quad
+ \mathcal E_W\ll x^{5/3-\delta_W+o(1)},\quad
+ \varrho_{BW}\ll x^{-\kappa+o(1)},
+\]
+则
+\[
+ |\mathfrak F_x^\circ|
+ \ll x^{5/3-\kappa-(\delta_B+\delta_W)/2+o(1)}
+\]
+且 V51 saving可取
+\[
+ 0<\eta_{\rm PAD}<
+ \kappa+\frac{\delta_B+\delta_W}{2}-\frac1{400}.       \tag{99.4}
+\]
+所以 diagonal-scale marginals需要 $\kappa>1/400$；zero-angle package需要
+$\delta_B+\delta_W>1/200$；one-sided super-BDH需要 saving $>1/200$。
+一个 generic exponent $2$ 与一个 diagonal exponent $5/3$ 给 $11/6$，仍差
+$203/1200$；两边 generic仍差 $403/1200$。
+
+equal-norm parallel/orthogonal fixture
+\[
+ X=(3,4),\quad Y_+=(3,4),\quad Y_0=(-4,3)
+\]
+具有同样 norm square $25$，但 inner products分别为 $25,0$。因此 marginal-only
+theorem package不能制造 angular saving。它只否定 marginal-only compiler，不否定
+special super-BDH 或 genuine joint dispersion。
+
+### 99.4 选定条件包与两门 reassembly
+
+定义 $\mathsf H_{\rm PAD}(\delta_B,\delta_W,\kappa)$ 为上述三界对同一 literal
+packets同时成立，并要求
+\[
+ \kappa+\frac{\delta_B+\delta_W}{2}>\frac1{400}.
+\]
+首选启发式 regime 是 diagonal-scale marginals 加 $\kappa>1/400$；总
+super-BDH saving $>1/200$ 是合法 fallback。若 independent V42 Gate B 以 saving
+$\eta_B>0$ 成立，则 V43 physical endpoint可取任意
+\[
+ 0<\eta<\min\left\{
+ \eta_{\rm PAD},\eta_B,\frac{419}{2400},
+ \frac{19}{2400},\frac{11}{600}-\varepsilon
+ \right\}.                                               \tag{99.5}
+\]
+这仍是 conditional compiler；Gate A、Gate B 和 zero-axis reassembly均不能循环
+互相支付。
+
+### 99.5 primary-source boundary
+
+截至 2026-08-11 的 primary-source screen 为：
+
+1. Zheng arXiv:2512.22798v1 Theorems 1.1--1.2 是最接近的 simultaneous-AP
+   architecture，但只到 $\theta\le7/36$ 或 $2/23$，并要求 fixed residues、
+   well-factorable/Siegel--Walfisz/rough-factor hypotheses；V52 是
+   $\theta=1/3$ 的 moving $s\ell+2$ 与 literal $\Lambda-b_x^{(z)}$；
+2. Drappeau arXiv:1504.05549v4 Theorem 5.1 接受 fixed product congruence 与
+   modulus-independent arrays，不接受 folded moving product；
+3. Wright arXiv:2604.25177v2 是 fixed residue 与 short Siegel--Walfisz sequence；
+4. Blomer--Pascadi arXiv:2607.24311v1 Theorem 1.1 是 fixed-modulus
+   $c^{-1/32+o(1)}$ local cell，只作 SOURCE_BACKED_CONDITIONAL engine；
+5. Pascadi arXiv:2404.04239v3 只在 literal sparse-Fourier transform与 norm 已建后
+   提供 horizontal exceptional-spectrum engine。
+
+没有 source直接证明 (99.4) 的 PAD package；direct attachment=NONE。
+
+### 99.6 路线结论
+
+V52 把 V51 的 “one folded scalar” 推进为 source-facing compensated prime
+dilation与 exact endpoint simplex。当前 YOU ARE HERE 是解析消去岛 Bridge A 的
+pair-angular Gate A：对象、补偿、自然长度与 saving threshold已经锁定；真正的
+arithmetic cross-dispersion仍 open。V42 Gate B并行开放，V50 two-world route与
+dynamics reserve保留。
+
+### 99.7 Canonical V52 registry
+
+~~~text
+V52_MAXIMUM_CLAIM = EXACT_COMPENSATED_PAIR_DILATION_AND_PACKET_ENDPOINT_COMPILER_IDENTIFIES_THE_FOLDED_GATE_A_AS_A_REVERSE_CHEN_PARITY_RESIDUAL_AND_PROVES_THE_MARGINAL_BDH_PLUS_CAUCHY_COMPILER_MISSES_BY_1_OVER_400
+V52_ROUTE_ADVANCE = YES
+V52_CONDITIONAL_BRIDGE_ADVANCE = YES
+V52_ARITHMETIC_ADVANCE = NO
+V52_FIXED_ATOM_CREDIT = 0
+V52_STRICT_1_OVER_400 = UNPAID
+V52_L2 = NONE
+V52_TPC_207_TRIGGER = false
+V52_NUMBERED_RELEASE = NO
+V52_DERIVATION_STATUS = COHERENT_AFTER_DUAL_PAIR_SIEVE_IDENTITY_COMPENSATED_DILATION_HILBERT_PACKET_AND_ENDPOINT_SIMPLEX
+V52_ASSUMPTION_POLICY = PAIR_ANGULAR_DISPERSION_IS_CONJECTURAL__MARGINAL_AND_LOCAL_SOURCE_RESULTS_RECEIVE_NO_JOINT_CREDIT
+V52_SELECTED_RESEARCH_ROUTE = UNBOUNDED_SIEGEL_QUALITY_CONDITIONAL_EXIT__OTHERWISE_PAIR_ANGULAR_GATE_A__V42_GATE_B__V43_JOIN__DYNAMICS_RESERVE
+V52_CLAIM_CLASS_POLICY = PROVED__SOURCE_BACKED_CONDITIONAL__CONJECTURAL__NO_GO
+V52_FROZEN_SCALES = H_21_OVER_32__Q_1_OVER_3__U_133_OVER_400__DILATION_31_OVER_96
+V52_FOLDED_PAIR_INTERFACE = RETAINED_EXACT_MIXED_PLUS_BALANCED_OMEGA_U
+V52_TRUNCATED_SIEVE_INTERFACE = RETAINED_EXACT_LAMBDA_OVER_LOG_MINUS_MU_LE_U_CONVOLUTION
+V52_DUAL_COEFFICIENT_INTERFACE = PROVED_EXACT_SAME_BETA_AFTER_SQUARE_ROW_SUBTRACTION
+V52_PRIME_ROW_CANCELLATION = PROVED_EXACT_ONE_MINUS_ONE_EQUALS_ZERO
+V52_MIXED_SEMIPRIME_SLICE = PROVED_EXACT_ZERO_FOR_P_LE_U_LT_R
+V52_BALANCED_SEMIPRIME_SLICE = PROVED_EXACT_MINUS_ONE_FOR_U_LT_P_LT_R
+V52_SQUARE_PRIME_SLICE = PROVED_EXACT_MINUS_ONE_HALF
+V52_REVERSE_CHEN_INTERPRETATION = PROVED_EXACT_SUBCHANNEL_NOT_A_STANDALONE_ESTIMATE
+V52_MULTI_PAIR_T12_FIXTURE = PROVED_FORMAL_LOG_COLLAPSE_TO_ONE
+V52_COMPENSATED_PAIR_DILATION_ROW = PROVED_EXACT_DIVISIBILITY_MINUS_UNIT_PRINCIPAL_MEAN
+V52_COMPENSATED_PAIR_DILATION_SCALAR = PROVED_EXACT_ONE_COMMON_PRIME_SHELL_AND_ONE_SIGNED_AGGREGATE
+V52_DILATION_NATURAL_LENGTH = H_OVER_Q_EQUALS_X_31_OVER_96
+V52_DILATION_HARD_SUPPORT_POLICY = EXACT_T_PLUS_QK_IN_I_WITH_SCHWARTZ_NOT_COMPACT_K_TAIL
+V52_DILATION_SPLIT_ABSOLUTE_CEILING = X_191_OVER_96_PLUS_O1
+V52_DILATION_SPLIT_DEFICIT = 781_OVER_2400
+V52_Q5_DILATION_FIXTURE = PROVED_EXACT_20_MINUS_10_EQUALS_10
+V52_PAIR_CHARACTER_PACKET = RETAINED_EXACT_NONPRINCIPAL_CHARACTER_FOURIER_AGGREGATE
+V52_HILBERT_PACKET_IDENTITY = PROVED_EXACT_F_CIRCLE_EQUALS_INNER_PRODUCT_X_Y
+V52_PACKET_COHERENCE = DEFINED_EXACT_ZERO_TO_ONE_NO_ARITHMETIC_CREDIT
+V52_CHARACTER_DIAGONAL_FORMULA = PROVED_EXACT_Q_Q_MINUS_2_OVER_Q_MINUS_1_WEIGHT
+V52_DIAGONAL_SCALE = X_5_OVER_3_PLUS_O1_UPPER_BENCHMARK
+V52_DIAGONAL_SCALE_LOWER_BOUND = NOT_ASSERTED_OFFDIAGONAL_CAN_HAVE_EITHER_SIGN
+V52_MARGINAL_BDH_BASELINE = CONJECTURAL_E_B_AND_E_W_LE_X_5_OVER_3_PLUS_O1
+V52_MARGINAL_BDH_PLUS_CAUCHY = NO_GO_MISSES_TARGET_BY_EXACT_1_OVER_400
+V52_PACKET_ENDPOINT_LAW = PROVED_CONDITIONAL_KAPPA_PLUS_HALF_DELTA_SUM_MINUS_1_OVER_400
+V52_BASELINE_MARGINAL_ANGULAR_THRESHOLD = KAPPA_GT_1_OVER_400
+V52_ZERO_ANGLE_TOTAL_SUPER_BDH_THRESHOLD = DELTA_B_PLUS_DELTA_W_GT_1_OVER_200
+V52_ONE_SIDED_SUPER_BDH_THRESHOLD = DELTA_GT_1_OVER_200
+V52_ONE_GENERIC_ONE_BDH_DEFICIT = 203_OVER_1200
+V52_TWO_GENERIC_CHARACTER_DEFICIT = 403_OVER_1200
+V52_MARGINAL_NORMS_DETERMINE_ANGLE = NO_GO_PARALLEL_ORTHOGONAL_EQUAL_NORM_FIXTURE
+V52_PAIR_ANGULAR_DISPERSION_GATE = CONJECTURAL_H_PAD_DELTA_B_DELTA_W_KAPPA
+V52_PREFERRED_PAD_REGIME = DIAGONAL_SCALE_MARGINALS_AND_KAPPA_GT_1_OVER_400
+V52_SUPER_BDH_REGIME = RETAINED_LEGAL_ALTERNATIVE_IF_TOTAL_SAVING_GT_1_OVER_200
+V52_PAD_TO_V51_H_FOLD = PROVED_CONDITIONAL_WITH_ETA_PAD_POSITIVE
+V52_PAD_TO_PHYSICAL_ENDPOINT = PROVED_CONDITIONAL_AFTER_INDEPENDENT_V42_GATE_B_AND_V43_JOIN
+V52_TWO_GATE_MARGIN = MIN_ETA_PAD_ETA_B_419_OVER_2400_19_OVER_2400_AND_11_OVER_600_MINUS_EPSILON
+V52_ZHENG_SIMULTANEOUS_AP = NO_GO_DIRECT_THETA_FIXED_RESIDUE_SIEGEL_WALFISZ_AND_MOVING_PRODUCT_MISMATCH
+V52_DRAPPEAU_DISPERSION = NO_GO_DIRECT_FIXED_PRODUCT_AND_MODULUS_INDEPENDENT_ARRAY_MISMATCH
+V52_WRIGHT_UNBALANCED_CONVOLUTION = NO_GO_DIRECT_FIXED_RESIDUE_AND_SHORT_SIEGEL_WALFISZ_SEQUENCE_MISMATCH
+V52_BLOMER_PASCADI_FIXED_MODULUS = SOURCE_BACKED_CONDITIONAL_LOCAL_CELL_ONLY
+V52_PASCADI_EXCEPTIONAL_SIEVE = SOURCE_BACKED_CONDITIONAL_AFTER_LITERAL_TRANSFORM_AND_NORM
+V52_DIRECT_PRIMARY_SOURCE_FOR_H_PAD = NONE_FOUND_FAIL_CLOSED_AS_OF_2026_08_11
+V52_FIRST_FATAL = NO_LITERAL_THEOREM_PROVES_A_POWER_SAVING_PAIR_ENDPOINT_ANGLE_OR_TOTAL_SUPER_BDH_SAVING_ABOVE_1_OVER_200_FOR_THE_COMPENSATED_MOVING_PRODUCT_PRIME_DILATION
+V52_V42_GATE_B = RETAINED_PARALLEL_OPEN_POSITIVE_GRAM_MPD_ROUTE
+V52_V50_BOUNDED_CORE = RETAINED_SEQUENTIAL_CONJECTURAL_ALTERNATIVE
+V52_PAPER_CANDIDATE_LEDGER = UPDATED_WITH_COMPENSATED_DILATION_REVERSE_CHEN_SLICE_ENDPOINT_SIMPLEX_AND_MARGINAL_NO_GO
+V52_SMALL_PAPER_STATUS = UNNUMBERED_OUTLINE_ONLY_NO_STANDALONE_ASYMPTOTIC_THEOREM
+V52_ROUTE_POSITION = ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_PAIR_ANGULAR_GATE_A_MAPPED_ARITHMETIC_BOUND_OPEN
+V52_SOURCE_LOCK_POLICY = PRIMARY_THEOREM_TEXTS_ONLY_FAIL_CLOSED
+V52_ROUTE_MAP_REFERENCE = TPC_ROUTE_MAP_MD_ANALYTIC_ELIMINATION_ISLAND_BRIDGE_A_GATES_A_B
+~~~
+
+### 99.8 Release gate
+
+~~~text
+V52_FINAL_RELEASE_QA = PASS
+V52_MATH_SOURCE_FORMULA_QA = PASS
+V52_CHECKER_ADVERSARIAL_QA = PASS
+V52_CROSS_DOCUMENT_RELEASE_SCOPE_QA = PASS
+PRE_CLOSURE_HANDOFF_RAW_SHA256 = 5a8242778988bdfec3a14beefd1bec340016f9098a1cf680c13eda1aec3390e9
+PRE_CLOSURE_HANDOFF_LF_SHA256 = 5a8242778988bdfec3a14beefd1bec340016f9098a1cf680c13eda1aec3390e9
+TPC_COMPASS_RAW_SHA256 = f791985b1b26a47f851062c174f75ddf1bc2902755b6e15a10016496e7df1549
+BIG_ROAD_README_RAW_SHA256 = d07d449e8f49c0784f67f5cbc4aa30a0fadbfc70b16f7bd0298000ec219141fb
+ROUTE_MAP_RAW_SHA256 = fc0d10442b146b2162881555a0c5ba6eed68e8aaff549d69a3569d1324ba8948
+PAPER_CANDIDATE_LEDGER_RAW_SHA256 = 8c7f8a2db9d52922f3a51ba4c27edb46e7b2337912d7989d8a19b5c95c651984
+V52_PROOF_RAW_SHA256 = b45ef249175c84758f6052a647f54f74c227351d317034766c5988c7c98f7c5e
+V52_CHECKER_RAW_SHA256 = 04213a4e9e2eadeaebdf9980b278147cb48e58f82e5c1ac73957eb44861ec82f
+V51_CHECKER_DEPENDENCY_RELOCK_RAW_SHA256 = 60e97e706ffc45fd02017131e28d3919f88154f8d55fc5ff328d5dcab7b776ab
+V52_CHECKER_STDOUT_SHA256 = 08bdb429d7a90b078acfdb67ee94cd7c45bc7285ce8efb123966c16d5de73765
+V52_CHECKER_STDOUT_BYTES = 2032
+V52_CHECKER_NORMAL = PASS_EXIT_0_STDERR_EMPTY
+V52_CHECKER_OPTIMIZED = PASS_EXIT_0_STDERR_EMPTY_BYTE_IDENTICAL
+V52_CHECKER_NO_FLAG = PASS_EXIT_1_EXPLICIT_CHECK_REQUIRED
+V52_CHECKER_EXTRA_FLAG = PASS_EXIT_1_EXPLICIT_CHECK_REQUIRED
+V52_CHECKER_NO_FLAG_STDOUT_BYTES = 0
+V52_CONTRACT_FIELDS = 31
+V52_RESULT_FIELDS = 63
+V52_REGISTRY_ROWS = 65
+V52_SOURCE_LOCKS = 5
+V52_DEPENDENCY_LOCKS = 5
+V52_CONTRACT_MUTATIONS = 95
+V52_REGISTRY_MUTATIONS = 134
+V52_SOURCE_MUTATIONS = 13
+V52_DEPENDENCY_MUTATIONS = 13
+V52_SEMANTIC_MUTATIONS = 190
+V52_MUTATION_ACTIONS = 445
+V52_MUTATION_LABELS_UNIQUE = 445/445
+STARTUP_REGRESSION = 22/22_PASS_STDERR_EMPTY
+TPC111_124_126_127_SUPPLEMENTAL = 4/4_PASS_STDERR_EMPTY
+FULL_BIG_ROAD_REGRESSION = 60/60_PASS_STDERR_EMPTY
+FULL_BIG_ROAD_NORMAL_OPTIMIZED_IDENTITIES = 30/30
+V52_RELEASE_PATHS = 8_EXACT
+V52_DEPENDENCY_RELOCK = V51_CHECKER_LEDGER_PIN_ONLY_OUTPUT_UNCHANGED
+CACHED_DIFF = 0
+GIT_DIFF_CHECK = PASS
+MARKDOWN_FENCES = BACKTICK_2936_TILDE_642_BALANCED
+HANDOFF_DISPLAY_MATH = 260_OPEN_260_CLOSE
+V52_PROOF_TAGS = 52/52_UNIQUE
+PROTECTED_UNTRACKED = 1_CHECKPOINT_UNCHANGED
+PROTECTED_CHECKPOINT_BYTES = 18752
+PROTECTED_CHECKPOINT_SHA256 = 0a797eb4e3791319624fb5dd7a597d6d6bb217b46759739a51854312df6f4ec9
+INITIAL_LOCAL_HEAD = 47e17e53012e4332045c197f0a5a6c005d4362ef
+FINAL_SYNC_ORIGIN_MAIN = f2ab63730b04b386b2e3e44ad93bf551a2954388
+REMOTE_DELTA = RH395_ONLY_TPC_OVERLAP_0
+V52_ARITHMETIC_ADVANCE = NO
+V52_FIXED_ATOM_CREDIT = 0
+V52_STRICT_1_OVER_400 = UNPAID
+V52_L2 = NONE
+V52_SEALED_FOR_NEW_SESSION = true
+NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = false
+~~~
+
 
 ## 98. 2026-08-11 V51：fold-first long-Möbius pair-native Gate-A compiler
 
