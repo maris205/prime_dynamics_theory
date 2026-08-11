@@ -2,7 +2,7 @@
 
 更新时间：2026-08-11
 
-当前地图版本：V48
+当前地图版本：V49
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,9 +46,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +------------------------------------------+
-        | YOU ARE HERE — V48                       |
-        | conductor--Euler scalar splice DONE;     |
-        | low signed prime--hybrid gate OPEN       |
+        | YOU ARE HERE — V49                       |
+        | critical conductor collar PAID;          |
+        | ultra-low three-lane scalar OPEN         |
         +------------------------------------------+
                 |
                 v
@@ -94,7 +94,12 @@ transition scalar的两种 decomposition，并得到
 `R_AP=M_low+V_high-L_pf`。high conductor与 local Euler都已付款，故当前红叉进一步
 缩成 direct low-conductor signed scalar；更强的 source-native版本是对完整
 prime--hybrid character--Ramanujan tower证明 `delta>1/200` 的 energy saving。scalar
-splice不允许把两种 energy作正交相减；
+splice不允许把两种 energy作正交相减。V49 又选择
+`D1=x^(49/9600)`，用 V45 block estimate支付 `D1<=c<D0` 的 critical
+collar；全部 `c>=D1` 输出到 `31951/19200`，留出严格
+`1/19200` margin。当前唯一 transition 红叉成为 local-centered ultra-low
+principal/generic/possible-exceptional 三车道 signed scalar；exceptional primitive
+type至多一个，但其 induced cofactor tower不能删除；
 balanced Type II 与 long-Möbius reverse Type I 仍是下一段主跨。核心算术 saving
 尚未证明。**
 
@@ -181,10 +186,10 @@ endpoint 的主桥。
 transference scalar精确相连；它们仍需分别给 saving：
 
 1. `B`：V42 positive physical Gram / MPD仍是 Gate-B 的平行充分实现；
-2. `A/transition`：V45 high conductor与 V46 proper-factor local Euler均已付；
-   V48 exact scalar splice后，唯一首选门缩为
-   `|M_low| << x^(1997/1200-eta_low+o(1))`、`eta_low>0`；更强充分门为 signed
-   low-character energy `x^(2-delta+o(1))`、`delta>1/200`；
+2. `A/transition`：V49 已把 V45 paid conductor range推进到
+   `c>=D1=x^(49/9600)`，输出 `31951/19200` 与 margin `1/19200`；
+   唯一首选门缩为 local-centered ultra-low
+   `|C_pr+C_gen+C_exc| << x^(1997/1200-eta_ul+o(1))`；
 3. `A/long`：balanced Type II 与 long-Möbius reverse Type I 仍按同一 signed
    whole-object alias施工；
 4. `A+B`：`D=A_alias-L_pr*S+paid errors` 是 exact AND compiler，不是 OR shortcut。
@@ -200,7 +205,7 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 当前精确位置：V48
+## 5. 当前精确位置：V49
 
 V43 把 V35 proper-factor direction 在第一次 outer absolute 之前送进 complete
 centered Poisson。冻结 ordered weight 后仍有 exact diagonal
@@ -375,6 +380,29 @@ high conductor与 local Euler给 paid remainder `x^(213/128+o(1))`，margin
 `x^(1997/1200-eta_low+o(1))`；更强充分门对同一 signed character tower要求
 `delta>1/200`。V45/V47 energies不能相减，因为 gcd aggregation与 squaring不交换。
 
+V49 将 V45 dyadic block bound推到更低 cut
+\(D_1=x^{49/9600}\)。critical collar \(D_1\le c<D_0\) 的 coefficient energy为
+\(x^{151/9600+o(1)}\)，与 old high range合并后
+
+\[
+|\mathfrak V_{\ge D_1}^{\rm tr}|
+\ll x^{31951/19200+o(1)},
+\qquad
+\frac{1997}{1200}-\frac{31951}{19200}=\frac1{19200}.
+\]
+
+剩余 scalar为
+
+\[
+\mathfrak C_{<D_1}^{\rm ul}
+=\mathfrak M_{<D_1}^{\rm tr}-\mathfrak L_x^{\rm pf}
+=\mathfrak C_{\rm pr}+\mathfrak C_{\rm gen}+\mathfrak C_{\rm exc}.
+\]
+
+Landau--Page只把 exceptional primitive type限制为空或一个 quadratic character；
+全部 induced cofactors仍在同一 lane。当前首选门是直接控制三个 lane的 signed sum，
+separate marginal bounds只是更强 heuristic fallback。此处就是当前 `YOU ARE HERE`。
+
 V40 已把 packet 压到每个模数的一条 scalar row
 
 \[
@@ -467,7 +495,7 @@ Kloosterman engine只到单 cell，未付 block atomic budget和跨 `q` 的 L2 r
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
 
-| 图像语言 | 仓库 V48 语言 | 关系 |
+| 图像语言 | 仓库 V49 语言 | 关系 |
 |---|---|---|
 | Bridge A：解析 collective saving | `B(positive Gram / MPD / P2 / K / E / X)` 与 `A(alias)` 的 zero-axis transference | 图像的一座大桥被拆成多车道 B、terminal A 及 exact AND compiler |
 | Bridge B：distinguished-seed genericity | `C` symmetry-breaking reserve | 都是动力学/指定 seed 后备线 |
@@ -480,7 +508,8 @@ PROPER_FACTOR_CENTERED_POISSON_TRANSFERENCE
 THEN_TRANSITION_GCD_REDUCTION_TO_RAMANUJAN_MEAN_AND_RECIPROCAL_VARIANCE
 THEN_ADDITIVE_ZERO_MODE_EXCISION_AND_CENTERED_PRIME_HYBRID_COVARIANCE
 THEN_EXACT_CONDUCTOR_EULER_SCALAR_SPLICE
-THEN_DIRECT_LOW_CONDUCTOR_SIGNED_SCALAR_OR_STRONGER_CHARACTER_ENERGY
+THEN_PAY_CRITICAL_CONDUCTOR_COLLAR_TO_D1
+THEN_DIRECT_LOCAL_CENTERED_ULTRALOW_THREE_LANE_SCALAR
 THEN_LONG_MOBIUS_TYPE_II_REVERSE_TYPE_I_ALIAS
 AND_PHYSICAL_POSITIVE_GRAM_COLLISION_VIA_PROPER_FACTOR_DYADIC_MPD
 OR_P2_DIRECT_Q_DEPENDENT_PACKET_ENERGY
@@ -493,7 +522,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V48：
+截至 V49：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -518,13 +547,14 @@ NUMBERED_RELEASE = NO
 
 优先级更新为：
 
-1. **A/transition direct low scalar：攻一个 signed prime--hybrid theorem**。
-   目标是 `|M_low| << x^(1997/1200-eta_low+o(1))`、`eta_low>0`；V45 high
-   conductor、V46 local Euler、V47 additive centering与 V48 scalar splice均已付；
-2. **A/transition source-native sufficient gate：signed character energy**。
-   目标是完整 low-conductor prime--hybrid Ramanujan tower
-   `W_low<<x^(2-delta+o(1))`、`delta>1/200`。它比 direct scalar更强；principal与
-   possible exceptional row必须保留，不能借 Siegel--Walfisz logarithmic saving；
+1. **A/transition direct ultra-low scalar：攻一个 exceptional-aware signed
+   theorem**。目标是
+   `|C_pr+C_gen+C_exc| << x^(1997/1200-eta_ul+o(1))`；V49 已把
+   `c>=D1` 全部支付；
+2. **A/transition 三引擎 heuristic fallback**。分别尝试 principal/local
+   cancellation、generic averaged character engine与 exceptional-compatible
+   comparator；三者必须在同一 frozen ensemble上重组，不能删除 exceptional row，
+   也不能把 primitive rank one误写成 one summand；
 3. **A/Type-II + reverse-Type-I：证明同一个 long-Möbius inverse-residue
    whole-object theorem**。balanced `d,k>U` 与 `d>U,k<=U` 两个 orientation必须在
    signed fold后重组；Pascadi horizontal theorem是最强备选 compiler，尚无 literal
@@ -541,7 +571,7 @@ NUMBERED_RELEASE = NO
 最窄 first fatal：
 
 ```text
-NO_LITERAL_THEOREM_PROVES_NATURAL_SCALE_CENTERED_SIGNED_PRIME_HYBRID_AP_COVARIANCE_UNIFORMLY_FOR_X_POWER_31_OVER_96_LT_D_LE_X_POWER_133_OVER_400
+NO_LITERAL_THEOREM_PROVES_THE_LOCAL_CENTERED_ULTRALOW_PRINCIPAL_GENERIC_EXCEPTIONAL_SIGNED_SCALAR_WITH_FIXED_POWER
 ```
 
 ## 9. 后续更新协议
@@ -560,6 +590,7 @@ NO_LITERAL_THEOREM_PROVES_NATURAL_SCALE_CENTERED_SIGNED_PRIME_HYBRID_AP_COVARIAN
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-11 | V49 | Bridge A / Gates A--B：critical conductor collar paid；ultra-low principal/generic/exceptional signed scalar与 long-Mobius open | parent `11643bd5a0f6f5259c5e04f6976cc59fc9e316be`; V49=current working release | paid cut推进到 `D1=x^(49/9600)`，margin `1/19200`；exact three-lane compiler；arithmetic仍为 NO |
 | 2026-08-11 | V48 | Bridge A / Gates A--B：high conductor与 local Euler paid；exact scalar splice done；low signed prime--hybrid与 long-Mobius open | parent `30c41d8efee5d4d63cd100f6ec1050826c90051c`; V48=current working release | exact gcd crosswalk与 `R_AP=M_low+V_high-L_pf`；direct low scalar首选；`delta>1/200` signed character energy为更强充分门；arithmetic仍为 NO |
 | 2026-08-11 | V47 | Bridge A / Gates A--B：local Euler paid；additive zero mode deleted；centered prime--hybrid covariance与 long-Mobius open | parent `10ad608f5487af3d2497adfbe226ded4f37e64a3`; V47=current working release | exact `A_d(0)=0`；full AP energy降为 centered covariance；prime/hybrid signed split与三车道 atlas；arithmetic仍为 NO |
 | 2026-08-10 | V46 | Bridge A / Gates A--B：proper-factor local Euler carrier paid；all-residue AP--BDH residual与 long-Mobius open | parent `9737b62421770ed5f96c08f197488460833550d3`; V46=current working release | exact local-profile split；V29/BC支付 local component到 `1891/1920`；reciprocal occupancy energy `P^2`；新 whole-object AP variance gate `rho<33/100`；arithmetic仍为 NO |
