@@ -27,7 +27,9 @@ def phase(t: float) -> complex:
 
 
 def ttstar(values: list[complex], alpha: float) -> tuple[complex, complex, float]:
-    direct = abs(sum(a * phase(-alpha * z) for z, a in enumerate(values))) ** 2
+    direct_sum = sum(a * phase(-alpha * z) for z, a in enumerate(values))
+    # Avoid a platform-dependent sqrt-then-square ULP in abs(z) ** 2.
+    direct = (direct_sum * direct_sum.conjugate()).real
     lag = 0j
     symmetry_defect = 0.0
     n = len(values)
