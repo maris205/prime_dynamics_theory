@@ -111,6 +111,25 @@
 31. **PROVED** — tree operations始终作用于完整 folded compensated row；只有在
     whole-node theorem之后才允许 `O(log Q)` triangle，因此不重犯 V51
     orientation-first absolute reassembly。
+32. **PROVED** — V57 longitudinal root-anchor identity：对共同带 `q` 权的
+    `A(Y),C(Y),E(Y),K(Y)`，令 `r_Y=K(Y)/K_*`，则
+    `A(Y)-r_Y A_* = C(Y)-r_Y C_* - E(Y)+r_Y E_*`；physical mode逐 prefix exact取消。
+33. **PROVED** — V57 prefix error payment：unit omission贡献 `x^(4/3+o(1))`，
+    square row贡献并控制到 `x^(143/96+o(1))`，到 numerator target余量
+    `419/2400`。
+34. **PROVED** — Gate-B row-Bessel自动 maximalization：若
+    `sum_q|C_q|^2<<x^(95/48+tau_B+o(1))`，则统一于全部 endpoints，
+    `sup_Y|sum_(q<=Y)qC_q|<<x^(143/96+tau_B/2+o(1))`。
+35. **PROVED** — V57 root-plus-transverse conditional compiler：一个 V51 full-shell
+    `H_fold(eta_L)` 与一个 `tau_B<419/1200` 的 Gate-B row-Bessel同时推出全部
+    Gate-A prefixes与 physical endpoint；saving可取
+    `min(eta_L,419/2400-tau_B/2)` 以下任意固定值。
+36. **PROVED** — selected benchmark `tau_B=1/3` 给 Gate-B maximum
+    `x^(53/32+o(1))` 与 physical output `x^(95/96+o(1))`，strict margin
+    `19/2400`；Gate B只使用一次，兼付 full-shell与 prefix。
+37. **PROVED / ROUTE RETYPE** — V56 all-node tree仍为合法 Gate-A fallback，但在
+    selected root-plus-row package中不再需要；V53 symmetric two-row Bessel在 Gate-A
+    轴也比 V57 所需 root scalar更强。三种 sufficient packages不作 exponent拼接。
 
 ### 2.2 可写成条件命题的局部引擎
 
@@ -216,6 +235,20 @@ Gate-A 猜想是存在 fixed `eta_D>0`，uniformly in all such `B`,
 这不是比 full shell theorem自动更容易的声明，而是精确标识 moving endpoint额外要求的
 全部 arithmetic content。V42 common transverse Gate B仍须独立证明；V52 PAD保持平行
 后备，三条 route不得拼接 exponent credit。
+
+V57 将 selected package再次收窄。它不再把每个 Gate-A large node当作独立猜想，
+而只保留两个 whole-object piers：
+
+1. **CONJECTURAL** — V51 full-shell signed root
+   `H_fold(eta_L)`，即 mixed-plus-balanced nonsquare fold有一个 fixed power saving；
+2. **CONJECTURAL** — V53 full-beta diagonal-deleted Gate-B restricted row-Bessel
+   `H_B-RB(tau_B)`，其中 `tau_B<419/1200`。
+
+V57 exact root anchor证明这两项已足以控制所有 Gate-A prefixes，并由
+`S=(A_*-C_*+E_*)/K_*` 直接读出 physical scalar。标准 `tau_B=1/3` 留
+`19/2400`。这是真正的 theorem-burden reduction，但两项猜想本身仍未被证明，故
+不改变 arithmetic status。V56 tree、V52 PAD与 V53 symmetric two-row package均保留为
+平行较强 sufficient formulations。
 
 ### 2.4 必须保留的 NO-GO 结果
 
