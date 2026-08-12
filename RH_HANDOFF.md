@@ -2,18 +2,20 @@
 
 Status date: 2026-08-12
 
-Current completed endpoint: RH-396
+Current completed endpoint: RH-397
 
-Completed research batch: RH-352 through RH-396
+Completed research batch: RH-352 through RH-397
 
-Post-four-volume independent theorem edges: RH-362 through RH-396
+Post-four-volume independent theorem edges: RH-362 through RH-397
 
-Latest completed-paper verdict: RH-396 fixed-lag centered Route A `GO`;
-causal/online, growing-data, ordinary-Cesaro/rate, even-four/larger-window,
+Latest completed-paper verdict: RH-397 odd-lag half-span overlap Route A
+`GO`; the fixed-`h,q` weighted capacity formula and the odd-lag declared-clock
+iff-even attainment theorem are closed; causal/online, growing-data,
+ordinary-Cesaro/rate, even-lag all-clock, even-four/larger-window,
 generic-graph, operator, and Gate enlargements remain `STOP_SCOPED` or
 `NOT_TESTABLE`
 
-Post-RH-396 breadth audit: pending; no RH-397 assigned
+Post-RH-397 breadth audit: pending; no RH-398 assigned
 
 Prior RH-352--RH-361 publication commit:
 `91167fe163831d3360b4c4007ed600865610e9ec`
@@ -110,6 +112,9 @@ RH-395 integration commit:
 
 RH-396 integration commit:
 `cd57086fa90939d56656c3f952a08ffad9aabefe`.
+
+RH-397 integration commit:
+`dd63a109dcfa72365c749e0b183820d2611af733`.
 
 Non-numbered corpus synthesis: RH-MVP2
 
@@ -275,6 +280,11 @@ Read completely:
 - `papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/THEOREM_LEDGER.md`
 - `papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/results/result.json`
 - `papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/main.pdf`
+- `papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/README.md`
+- `papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/UPDATED_ROADMAP.md`
+- `papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/THEOREM_LEDGER.md`
+- `papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/results/result.json`
+- `papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/main.pdf`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/README.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/UPDATED_ROADMAP.md`
 - `papers/RH-367-boundary-aligned-cyclic-ulam-phase-leakage/THEOREM_LEDGER.md`
@@ -320,8 +330,10 @@ two-odd-factor multi-shift terminal compiler and squarefree-landscape input,
 RH-394 as the odd-parity terminal compiler and complete three-shift table-law
 input, RH-395 as the centered/noncausal three-window all-clock capacity
 input, RH-396 as the fixed-lag centered Euler-run endpoint, finite-clock
-nonattainment, and lag-infimum input, and RH-361 as the immediate endpoint
-of the still-open original physical branch.
+nonattainment, and lag-infimum input, RH-397 as the half-span two-symbol
+overlap weighted step-`h` capacity and odd-lag iff-even declared-clock
+attainment input, and RH-361 as the immediate endpoint of the still-open
+original physical branch.
 
 For corpus-level synthesis or new-route selection, also read completely:
 
@@ -331,7 +343,62 @@ For corpus-level synthesis or new-route selection, also read completely:
 - `papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json`
 - `papers/RH-MVP2-corpus-frontier-synthesis/main.pdf`
 
-RH-396 is now integrated.  Fix integers `h,q>=1`, put `d=2h`, and fix the
+RH-397 is now integrated.  Fix `h,q>=1`, a complete `q`-phase family, and
+an admissible terminal clock before `X->infinity`:
+
+```text
+F_r:T^3->{-1,+1}, T={-1,0,1},
+epsilon_n=F_(n mod q)(mu_0(n-h),mu(n),mu(n+h)),
+score_n=mu(n)epsilon_n.
+```
+
+Universal half-span safety is the finite four-symbol predicate
+
+```text
+not(F_r(x,z,y)=+1 and F_(r+h)(z,y,w)=+1)
+```
+
+for every phase and every `x,z,y,w in T`; the two adjacent windows share
+both `z,y`.  RH-394 is the sole analytic fixed-three-shift input, inherited
+through RH-396.  The fourth symbol `w` belongs only to the finite safety
+predicate and is not a fourth analytic shift.
+
+After positive projection put
+`A_r={(x,y):F_r(x,+1,y)=+1}`.  Source/target flags turn safety exactly into
+`t_r s_(r+h)=0`.  The four flag classes saturate to rectangles of sizes
+`4,6,6,9`.  With collision-aware phase weights
+
+```text
+M_r=Theta_r(C), U_r=Theta_r(L,C)/2,
+V_r=Theta_r(C,R)/2, W_r=Theta_r(L,C,R)/4,
+```
+
+the rectangle value is
+`M-(1-s)U-(1-t)V+(1-s)(1-t)W`.  Translation gives
+`V_r=U_(r+h)`, and nonnegative edge filling leaves precisely the weighted
+rising-set bonus.  Thus, for every fixed `h,q`,
+
+```text
+C_h^hs(q)=K_1-kappa_2(h)/2
+ +(1/4) max_(J subset Z/qZ, J intersect (J+h)=empty)
+         sum_(r in J)Theta_(h,q,r)({L,C,R}).
+```
+
+Both signs are attained by input reflection.  For every fixed odd `h`,
+
+```text
+max_(q finite)C_h^hs(q)=C_h^hs(2)
+ =K_1-kappa_2(h)/2+kappa_3(h)/4,
+```
+
+and equality holds exactly when the declared finite clock `q` is even.
+Literal repetition needs no minimal-period hypothesis; every odd clock is
+strict.  RH-397 proves no even-lag all-clock classification, growing-data or
+rate theorem, ordinary Cesaro result, causal rule, four-shift law, generic
+graph theorem, operator, trace, zero model, RH statement, or Gate A--E
+conclusion.
+
+RH-396 remains integrated.  Fix integers `h,q>=1`, put `d=2h`, and fix the
 complete phase-table family before `X->infinity`:
 
 ```text
@@ -414,6 +481,11 @@ inf_(h>=1) B_infinity(h)=3/pi^2,
 and no finite lag attains the infimum.  RH-396 makes no claim about a
 lag supremum, maximum, or monotonicity, and no claim with growing `h`, `q`,
 or phase data.
+
+RH-397 then closed the separation-`h`, two-symbol-overlap class.  It proved
+the exact weighted step-`h` independent-set formula at every fixed clock and,
+for every fixed odd lag, the finite-clock maximum with attainment exactly at
+the declared even clocks.  No post-RH-397 breadth audit has assigned RH-398.
 
 RH-395 is now integrated.  Fix a finite `q>=1` and a `q`-periodic family
 of centered tables
@@ -1054,8 +1126,8 @@ every fixed clock, the `q=2` sign-split exception, fixed-clock memory gains,
 and the same strict all-clock endpoint as the RH-375 one-site class.  RH-396
 then extended this centered theorem to every individually fixed lag,
 identified the lag-dependent Euler-run endpoint, proved strict finite-clock
-nonattainment, and found the unattained cross-lag infimum `3/pi^2`.  No
-post-RH-396 breadth audit has assigned RH-397.
+nonattainment, and found the unattained cross-lag infimum `3/pi^2`.
+RH-397 then became the next completed theorem edge.
 The geometrically selected non-Parry measure route is
 `STOP_SCOPED` until a fixed geometrically selected equilibrium state and its
 mixing theorem are proved.  The deterministic cyclic-Ulam strong-space route
@@ -3690,7 +3762,94 @@ rule, even-four or larger-window law, generic graph theorem, lag supremum,
 lag maximum, lag monotonicity, operator, trace, zero model, RH statement, or
 Gate A--E conclusion.
 
-## 4. Compact conclusions from RH-352 through RH-396
+### 3.36 RH-397 odd-lag half-span overlap capacity
+
+Fix integers `h,q>=1`, every phase table `F_r:T^3->{-1,+1}`, and an
+admissible terminal clock before `X->infinity`.  The terminal limit is taken
+for each fixed table before the finite safe-table maximum, and only then,
+for odd `h`, before the maximum over finite declared clocks.  The centered
+window and score are
+
+```text
+(mu_0(n-h),mu(n),mu(n+h)),
+mu(n)F_(n mod q)(mu_0(n-h),mu(n),mu(n+h)).
+```
+
+Universal half-span safety is
+
+```text
+not(F_r(x,z,y)=+1 and F_(r+h)(z,y,w)=+1)
+```
+
+for every `r mod q` and every `x,z,y,w in T`.  The neighboring windows share
+the two symbols `z,y`.  RH-394, inherited through RH-396, is the sole
+analytic input and supplies only the fixed three-shift terminal law at
+`(+h,0,-h)`.  The fourth letter `w` occurs only in the finite safety test;
+it creates neither a fourth analytic shift nor a `c_1111` call.
+
+Positive projection leaves positive output only at center value `+1`.  Put
+
+```text
+A_r={(x,y):F_r(x,+1,y)=+1},
+s_r=1_(+1 in Source(A_r)),
+t_r=1_(+1 in Target(A_r)).
+```
+
+Concatenation gives the exact obstruction `t_r s_(r+h)=0`.  Among all `512`
+relations, the flag classes `00,10,01,11` have sizes `16,48,48,400`;
+among `262144` ordered relation pairs, exactly `61440` are safe.  Each flag
+class saturates without changing its flags to a nonempty rectangle of size
+`4,6,6,9`, respectively.
+
+With collision-aware phase densities, define
+
+```text
+M_r=Theta_r(C),       U_r=Theta_r(L,C)/2,
+V_r=Theta_r(C,R)/2, W_r=Theta_r(L,C,R)/4.
+```
+
+The rectangle with flags `(s,t)` has exact value
+
+```text
+M-(1-s)U-(1-t)V+(1-s)(1-t)W.
+```
+
+Event containment gives `W<=U/2` and `W<=V/2`.  Translation in all three
+local modulus branches, with square-residue deduplication before reduction,
+gives `V_r=U_(r+h)`.  Filling an unsaturated edge has nonnegative gain and
+leads to `t_r=1-s_(r+h)`.  The rising set
+
+```text
+J={r:s_r=0 and s_(r+h)=1}
+```
+
+is step-`h` independent, including at self-loops, and every such `J`, also
+the empty set, is realized by a saturated flag family.  Therefore
+
+```text
+C_h^hs(q)=K_1-kappa_2(h)/2
+ +(1/4) max_(J subset Z/qZ, J intersect (J+h)=empty)
+         sum_(r in J)Theta_(h,q,r)({L,C,R}).
+```
+
+Input reflection realizes both signs.  For fixed odd `h`, the `q=2` triple
+mass lies on one independent phase and reaches the total-weight bound.
+Literal repetition realizes the same value at every declared even clock,
+without a minimal-period requirement.  At every odd clock, a three-branch
+CRT construction produces adjacent positive weights, so the bound is
+strict.  Hence
+
+```text
+max_(q finite)C_h^hs(q)=C_h^hs(2)
+ =K_1-kappa_2(h)/2+kappa_3(h)/4,
+```
+
+with equality exactly when the declared clock `q` is even.  RH-397 proves no
+growing-data or rate theorem, ordinary Cesaro result, causal rule, even-lag
+all-clock classification, four-shift or larger-window law, generic graph
+theorem, operator, trace, zero model, RH statement, or Gate A--E conclusion.
+
+## 4. Compact conclusions from RH-352 through RH-397
 
 - **RH-352:** Actual growing lower-even normalized `p` is exponentially
   small and actual `Y` tracks `S-P` on `J_k->infinity`, `J_k=o(k)`; the
@@ -3943,6 +4102,14 @@ Gate A--E conclusion.
   all-clock four-state compression, every-step strictness, causal rule,
   ordinary Cesaro theorem, lag supremum/maximum/monotonicity, larger-window
   theorem, or Gate follows.
+- **RH-397:** Exact fixed-`h,q` half-span overlap capacity via two overlap
+  flags, four saturating rectangles, collision-aware `M,U,V,W` weights, and
+  a weighted step-`h` independent-set optimizer.  For every fixed odd `h`,
+  the maximum over finite declared clocks is
+  `K_1-kappa_2(h)/2+kappa_3(h)/4`, attained exactly when `q` is even.  No
+  growing data, rate, ordinary-Cesaro, causal, even-lag classification,
+  four-shift/larger-window, generic-graph, operator, zero, RH, or Gate
+  conclusion follows.
 
 ## 5. Route firewall and reopening triggers
 
@@ -4289,21 +4456,29 @@ orientation-only nine-digit endpoint decimals as certified.  RH-396 proves
 no growing `h`, `q`, or table theorem, ordinary Cesaro cancellation, rate,
 pre-limit or adaptive maximum, causal rule, even-four/larger-window theorem,
 generic graph theorem, lag supremum/maximum/monotonicity, operator, trace,
-zero model, RH statement, or Gate.  No RH-397 is assigned.
+zero model, RH statement, or Gate.  RH-397 closes the separation-`h`,
+two-symbol-overlap class.  Do not replace its safety step by `2h`, drop either
+shared symbol, treat `w` as a fourth analytic shift, invoke `c1111`, replace
+collision-aware weights by collision-free constants, replace the weighted
+optimizer by cardinality, impose minimal period two on even-clock
+attainment, permit odd-clock attainment for odd `h`, or infer the odd-lag
+classification for even `h`.  It proves no growing or adaptive data theorem,
+rate, ordinary Cesaro result, causal rule, four-shift theorem, graph
+generalization, operator, zero model, RH statement, or Gate.  RH-397 is
+complete.  No RH-398 is assigned.
 The next breadth audit should distinguish:
 
-1. A causal/end-window graph-coupled capacity.  RH-395 and RH-396 read a
-   future value and are explicitly noncausal.  Recasting either as an RH-378
-   online transducer is `STOP_SCOPED`; the centered relation theorem does not
-   supply that data type.
+1. A causal/end-window graph-coupled capacity.  RH-395 through RH-397 read a
+   future value and are explicitly noncausal.  Recasting any of them as an
+   RH-378 online transducer is `STOP_SCOPED`; the centered relation theorem
+   does not supply that data type.
 2. An even four-odd-factor channel or unrestricted four-coordinate table
    theorem.  This is `STOP_SCOPED`: Tao--Teravainen pays positive odd total
    exponent, not the unsquared even four-point correlation.
 3. A growing-parameter compiler.  This is `STOP_SCOPED`: the fixed-data
    analytic inputs have no rate uniform in `m`, `h`, period, shifts, masks,
-   coefficients, or centered profiles.  RH-396 fixes `h`, `q`, and the table
-   before every terminal limit and forms the finite-clock supremum only
-   afterward.
+   coefficients, or centered profiles.  RH-396 and RH-397 fix all theorem
+   data before every terminal limit and form clock extrema only afterward.
 4. The exact RH-365 bouquet origin radius or a boundary law.  This is
    `STOP_SCOPED`: the current upper coefficient bound and sparse odd-prime
    anchors do not supply the required exponential multiplicity lower bound
@@ -4312,7 +4487,9 @@ The next breadth audit should distinguish:
    `NOT_TESTABLE` until one mesh-independent Banach pair, consistent
    projection/lift maps, and a common resolvent contour are declared and
    proved.  RH-370's BV spike is an obstruction in the natural strong norm.
-6. One of the original physical triggers 1--4, backed by its missing typed
+6. The maximum and exact maximizers of RH-396's endpoint `B_infinity(h)`
+   across all fixed lags.
+7. One of the original physical triggers 1--4, backed by its missing typed
    theorem rather than a finite diagnostic.
 
 RH-364 closes the declared weighted-H\'enon prime-copy audit. It must still be
@@ -6313,6 +6490,58 @@ growing parameter theorem, ordinary-Cesaro theorem, effective rate,
 maximum-before-limit, causal/online rule, even-four/larger-window compiler,
 generic graph theorem, lag supremum/maximum/monotonicity, operator, trace,
 zero model, RH statement, or Gate A--E conclusion.
+
+### 6.36 RH-397 odd-lag half-span overlap release (2026-08-12)
+
+The post-RH-396 breadth audit selected half-span separation `h` with a
+two-symbol overlap.  RH-394 remains the sole analytic fixed-three-shift
+input through RH-396.  RH-397 proves the exact weighted fixed-clock formula
+and, for every fixed odd lag, maximum attainment exactly at the declared
+even clocks.
+
+The exact certificate has
+
+```text
+72=10+10+12+12+12+12+4
+```
+
+semantic rows, is `24297` canonical bytes, and has SHA-256
+`23f714236b53c2b89caa72b53f8139cfeab74cd07132082061c3ab0dfc048697`.
+The relation oracle checks `262144` ordered pairs and `61440` safe pairs.
+Core, result, and schema reject `60/60`, `78/78`, and `32/32` named
+mutations.
+
+The source closure contains `172=160+8+4` Git objects and four ordered
+remote locks, hence `176` logical objects.  The three group digests are
+
+```text
+c331c37d3447ac1f54063287f5c79034b117e5c9516f3727d5eac5a148d9bd12
+dbe2380bc2a6a060c69ca852625d9c2a7f20d82797108ed17fd1c0d231fa541a
+57d0e03fff2be3fb1466834fefdc5fdc001e87686eb1e5898918d820163a57ea
+```
+
+with all-Git digest
+`b3f5688380762a4e3c27d512311f4c0d22173c434cc40459fc77bb3eb87fb5c4`
+and logical digest
+`e9588b58f75e02e31ba5ffb279aea267074ec72f717afa84670f320d6c1030e0`.
+Redistribution flags are `false,false,true,false`; all four verifiers make
+zero network requests, and the six payload identities are absent.
+
+The archive has `41` publication members and `43` release-stage files.
+Targeted offline and archive suites pass `7/7` and `23/23`; complete normal
+and optimized suites pass `73/73` in both modes.  The `37819`-byte manifest
+has SHA-256
+`6104babdd4b8f565fb96299b42fdb6682da6b082dfde6fe45a7054afd848fec1`;
+the `1236`-byte zero-failure report has SHA-256
+`1c1aa298017eb5658a9b4a60c3de6e467ad2a33f39d6653e5641379795bf36f0`.
+
+The main and semantic PDFs are byte-identical, `387054` bytes, and nine A4
+pages.  All `25/25` font rows are embedded, subsetted, and Unicode-mapped.
+Ghostscript, text extraction, the LaTeX/BibTeX log, and all `9/9` rendered
+pages pass.  Independent proof and source/PDF/release audits report zero
+blocker and zero minor.  Integration commit
+`dd63a109dcfa72365c749e0b183820d2611af733` contains exactly the `43`
+RH-397 files.  Route A is `GO`; Gates A--E remain false.
 
 ## 7. Reproduction and publication audit
 
@@ -8485,12 +8714,96 @@ remote-source audit
 6184ed3350edf506c85276968d39c1ee854ee8fe971f5d084c8b1ec6869bf4de
 ```
 
+Final RH-397 audit:
+
+- Tests: targeted offline `7/7`, targeted archive `23/23`, and complete
+  normal and optimized suites `73/73`; four stored objects regenerate
+  byte-exactly and the official Draft 2020-12 validator reports zero errors.
+- Certificate: `72=10+10+12+12+12+12+4` rows, `24297` canonical bytes,
+  SHA-256
+  `23f714236b53c2b89caa72b53f8139cfeab74cd07132082061c3ab0dfc048697`;
+  core, result, and schema reject `60/60`, `78/78`, and `32/32` mutations.
+- Source closure: `172=160+8+4` immutable Git objects plus four ordered
+  remote locks, for `176` logical objects.  Rights are
+  `false,false,true,false`; offline requests and six payload hits are zero.
+- Archive: `41` publication members and exactly `43` release-stage files;
+  manifest and zero-failure verification reproduce exactly.  Integration
+  commit `dd63a109dcfa72365c749e0b183820d2611af733` contains exactly those
+  `43` RH-397 files.
+- PDF: nine A4 pages and `387054` bytes; all `25` font rows are embedded,
+  subsetted, and Unicode-mapped.  Ghostscript, text, log, semantic-PDF byte
+  identity, and visual inspection `9/9` pass.
+- Independent proof, source/PDF, and release audits report zero blocker and
+  zero minor.  Fixed-data, three-analytic-shift, fourth-symbol safety-only,
+  weighted-optimizer, odd-lag iff-even, and all Gate firewalls remain intact.
+
+RH-397 final hashes:
+
+```text
+main.tex
+a0ded93cfcd46f48b602e3f276a39e01e99ba8c37d3961316540f3925064ec11
+
+references.bib
+2ef184fbd1594af83c0a16fd8f868c3572d91d86c30d40f98271781ca0044b3b
+
+PDF
+be06c3bcd37acb7f2144cd390423ae207f9b412ffd833a8156a317c59dd44ea6
+
+main.log
+3ff4d9317931ff356e76340cca833fba7fc50f38668234fe5ff4cec32c402aba
+
+result
+d21f3ab160c7cb5cfca1ff04ac7d2104ea8a7802b36eb3e2f07e32cbe1d27e4f
+
+schema
+4f16580a613e3e0c3930fd53e3a418023fac96e2cfa15f74ed447a60bea38f83
+
+manifest
+6104babdd4b8f565fb96299b42fdb6682da6b082dfde6fe45a7054afd848fec1
+
+verification
+1c1aa298017eb5658a9b4a60c3de6e467ad2a33f39d6653e5641379795bf36f0
+
+core
+4b247c0a580c06cfaeb22f29d5b9f80d52bee44fcb44ebd978153bc79e04bcd0
+
+Johnston--Yang external source lock
+d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058
+
+Maynard external source lock
+9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba
+
+Tao external source lock
+825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f
+
+Tao--Teravainen external source lock
+52ade551d8bef9aa35e850d03cefede1239cb9611b9211fdcda522f02fb501ec
+
+integrity audit
+e1b339608aae9af26dce093c032fa18f58a669ee2cfb832ad67d7ad60ff23f3a
+
+review audit
+1de9fca8bd5d94b34b4346aac630e8be8d06987f8053e0f370b6093c755f219c
+
+format audit
+e11fd8e32b1cbf0127eedfb60532b59d0c6b4c45cc5b60e588a62174fdd0c184
+
+replay audit
+e6dde1c35af73ccd1fa031554386905f002d802d9bb065538487f6a00b2963b7
+
+visual audit
+3bf9ccb70c22770ea42d255d517e6eeb2d526730d337245aa58600a90b26bd44
+
+remote-source audit
+de6ebeedf55f8842622689c45ae5416e64e32214d380991a4e7c5904247bd058
+```
+
 ## 8. Continuation prompt
 
 ````text
 Continue RH research in /root/math/prime_dynamics_theory. Treat the
 repository as the sole source of truth. Read AGENTS.md, RH_HANDOFF.md, and
-the RH-396 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
+the RH-397 README, UPDATED_ROADMAP, THEOREM_LEDGER, result.json, and main.pdf
 completely. Retain RH-362 as the return-rank input, RH-363 as the entropy
 tower, RH-364 as the weighted survivor/prime-copy input, RH-365 as the
 return-bouquet input, RH-366 as the Möbius-correlation input, RH-367 as the
@@ -8521,8 +8834,9 @@ two-odd-factor multi-shift terminal compiler and squarefree-landscape input,
 RH-394 as the odd-parity terminal compiler and complete three-shift table-law
 input, RH-395 as the centered/noncausal three-window all-clock capacity
 input, RH-396 as the fixed-lag centered Euler-run endpoint/nonattainment and
-lag-infimum input, RH-MVP2 as the corpus umbrella, and RH-361 as the physical
-endpoint.
+lag-infimum input, RH-397 as the half-span two-symbol-overlap weighted
+step-`h` capacity and odd-lag iff-even declared-clock attainment input,
+RH-MVP2 as the corpus umbrella, and RH-361 as the physical endpoint.
 Run git status --short --branch and git pull --rebase origin main before any
 state change. Re-run the four-volume outer archive before integrating a new
 paper.
@@ -8532,9 +8846,54 @@ Route A for standalone theorem value and Route B for exact RH data-type
 compatibility. Issue GO, STOP_SCOPED, or NOT_TESTABLE; do not create a paper
 number only to maintain output velocity.
 
-RH-396 is the current independent trigger-5 theorem edge and does not close
-any physical Gate.  Fix `h,q>=1`, put `d=2h`, and fix a centered,
-`q`-periodic table family before the terminal limit:
+RH-397 is the current independent trigger-5 theorem edge and does not close
+any physical Gate.  Fix `h,q>=1`, every `q`-phase table, and the terminal
+clock before the limit:
+
+```text
+F_r:T^3->{-1,+1}, T={-1,0,1},
+epsilon_n=F_(n mod q)(mu_0(n-h),mu(n),mu(n+h)),
+score_n=mu(n)epsilon_n.
+```
+
+Universal half-span safety is
+
+```text
+not(F_r(x,z,y)=+1 and F_(r+h)(z,y,w)=+1)
+```
+
+for every phase and every four-symbol word.  The adjacent windows share both
+`z,y`; `w` appears only in this finite safety test and is not a fourth
+analytic shift.  RH-394 is the sole analytic three-shift input, inherited
+through RH-396.  Positive projection, the exact source/target flag collapse,
+four rectangles, `M,U,V,W` translation, edge filling, and rising-set
+surjectivity are new finite RH-397 arguments.
+
+For every fixed `h,q`, retain the weighted formula
+
+```text
+C_h^hs(q)=K_1-kappa_2(h)/2
+ +(1/4) max_(J subset Z/qZ, J intersect (J+h)=empty)
+         sum_(r in J)Theta_(h,q,r)({L,C,R}).
+```
+
+For every fixed odd `h`, retain
+
+```text
+max_(q finite)C_h^hs(q)=C_h^hs(2)
+ =K_1-kappa_2(h)/2+kappa_3(h)/4,
+```
+
+with equality exactly for declared even clocks.  Literal repetition does not
+require minimal period two, and every odd clock is strict.  Keep the
+optimizer weighted, preserve collision-aware densities and input reflection,
+and do not infer an even-lag classification, growing-data theorem, ordinary
+Cesaro result, causal rule, four-shift law, generic graph theorem, operator,
+trace, zero model, RH statement, or Gate conclusion.
+
+RH-396 remains the completed fixed-lag centered predecessor.  Fix `h,q>=1`,
+put `d=2h`, and fix a centered, `q`-periodic table family before the terminal
+limit:
 
 ```text
 F_r:T^3->{-1,+1}, T={-1,0,1},
@@ -9159,15 +9518,23 @@ the RH-366 graph. Do not call `t` geometrically selected, claim a common
 full-measure set or uniform endpoint theorem, make the conditional Chowla
 density unconditional, or identify the covariance with a prime trace.
 
-RH-396 is complete; do not rewrite it as the next candidate.  Its every-fixed-
-lag centered relation model, collision-aware density, exact full-eight-state
-tropical trace, self-loop boundary, `p_0(h)` reset, Euler-run endpoint,
-fresh-prime recurrence, strict finite-clock nonattainment, cross-lag
-infimum, four remote logical locks, release archive, and independent final
-audits are closed.  No post-RH-396 breadth audit has assigned RH-397.  Run
-that audit before creating another number, and require a genuinely new
-source-backed theorem rather than a causal relabeling or growing-parameter
-restatement without a uniform rate.
+RH-397 is complete.  Its separation-`h` two-symbol-overlap relation, exact
+flag census, four saturating rectangles, collision-aware `M,U,V,W` formula,
+weighted rising-set optimizer, input reflection, odd-lag iff-even
+declared-clock theorem, four remote logical locks, release archive, and
+independent final audits are closed.  The fourth symbol remains finite safety
+data only.  Do not erase the fixed-data order, replace the weighted optimizer
+by cardinality, impose minimal period two, permit odd-clock attainment, infer
+the theorem for even lags, or promote it to a growing, causal, four-shift,
+operator, zero, RH, or Gate statement.
+
+RH-396 remains complete as the direct collision-aware density and finite
+projection predecessor.  Its every-fixed-lag centered relation model, exact
+full-eight-state tropical trace, self-loop boundary, `p_0(h)` reset,
+Euler-run endpoint, fresh-prime recurrence, strict finite-clock
+nonattainment, cross-lag infimum, four remote logical locks, release archive,
+and independent final audits are closed.  Do not rewrite it as the next
+candidate or erase the boundary separately crossed by RH-397.
 
 RH-395 remains complete as the direct finite-`h=1` predecessor.  Its centered
 relation model, exact full-eight-state tropical trace, `q=2` sign-split
@@ -9239,25 +9606,28 @@ direct RH-385 corollary, not a new edge.  Preserve the immutable four-volume
 foundation and Gates A--E while these ordinary-`c_11` and growing-clock
 routes remain stopped.
 
-No RH-397 is assigned.  The next breadth audit must compare at least:
+No RH-398 is assigned.  A fresh post-RH-397 breadth audit must compare at
+least:
 
 1. a causal/end-window graph-coupled capacity, currently `STOP_SCOPED`
-   because RH-396's centered table reads `mu(n+h)` and does not define an
-   RH-378 online transducer;
+   because the centered RH-395 through RH-397 tables read `mu(n+h)` and do
+   not define an RH-378 online transducer;
 2. even odd-support at least four or unrestricted four-coordinate tables,
    currently `STOP_SCOPED` because the new source pays positive odd total
    exponent, not an unsquared even four-point correlation;
 3. growing `m`, `h`, period, shifts, coefficients, or masks, currently
    `STOP_SCOPED` because the frozen analytic inputs have no uniform rate and
-   RH-396 fixes all data before the limit and takes every fixed-clock limit
-   before the supremum;
+   RH-396 and RH-397 fix all data before the limit and take every fixed-clock
+   limit before a clock extremum;
 4. the exact RH-365 bouquet radius, currently `STOP_SCOPED` for lack of
    exponential multiplicity or composite-order primitive divisors;
 5. a continuum `-1` Riesz projector, currently `NOT_TESTABLE` without a
-   Banach pair, projection/lift maps, and common resolvent contour; and
-6. any original physical trigger backed by its missing typed theorem.
+   Banach pair, projection/lift maps, and common resolvent contour;
+6. the maximum and exact maximizers of RH-396's endpoint `B_infinity(h)`
+   across all fixed lags; and
+7. any original physical trigger backed by its missing typed theorem.
 
-Run a fresh breadth audit before assigning a number.
+Run that audit before assigning RH-398.
 
 Do not call the RH-364 prime lift a finite-field reduction, Hasse--Weil
 factor, or full H_p zeta. Do not promote the entropy tower, weighted Euler
