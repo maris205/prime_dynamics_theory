@@ -1,0 +1,743 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem,mathtools,microtype,array}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\mob}{\mu}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\T}{\{-1,0,+1\}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Source}{\operatorname{Source}}
+\newcommand{\Target}{\operatorname{Target}}
+\newcommand{\hcap}{C^{\mathrm{hs}}}
+\newcommand{\rect}{\mathcal R}
+\newcommand{\artifacthash}[1]{\begingroup\Urlmuskip=0mu plus 1mu\relax\nolinkurl{#1}\endgroup}
+
+\hypersetup{
+  pdftitle={Odd-Lag Half-Span Overlap Mobius Capacity},
+  pdfauthor={RH research program},
+  pdfsubject={Exact fixed-clock half-span overlap capacity and odd-lag clock attainment},
+  pdfkeywords={Mobius function, terminal logarithmic average, centered local rule,
+  overlap safety, weighted independent set, odd lag}
+}
+
+\title{Odd-Lag Half-Span Overlap M\"obius Capacity}
+\author{RH research program}
+\date{August 12, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Fix a lag \(h\geq1\).  A phase table reads the centered triple
+\(\mob_0(n-h),\mob(n),\mob(n+h)\), and half-span overlap safety forbids
+two positive outputs at separation \(h\) whenever their two shared
+symbols agree.  We determine the exact terminal-log capacity for every
+finite declared phase clock.  The complete three-shift table law first
+reduces the analytic limit to nonnegative exact-support cell densities.
+A positive projection then turns universal four-symbol safety into the
+single binary obstruction \(t_rs_{r+h}=0\) on source and target flags.
+Every flag class saturates to a rectangle.  Its value has four terms,
+and a collision-aware translation identity telescopes the phase costs.
+The remaining bonus is precisely a maximum-weight independent set on
+the step-\(h\) phase graph:
+\[
+ \hcap_h(q)=K_1-\frac{\kappa_2(h)}2+
+ \frac14\max_{J\cap(J+h)=\varnothing}
+ \sum_{r\in J}\Theta_{h,q,r}(LCR).
+\]
+For every fixed odd \(h\), the maximum over all finite declared clocks is
+attained, equals
+\(K_1-\kappa_2(h)/2+\kappa_3(h)/4\), and is attained exactly when the
+declared clock \(q\) is even.  The word ``declared'' is essential:
+minimal period is not required.  The fourth safety symbol is used only
+in a finite compatibility predicate; no four-shift analytic correlation
+enters the proof.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius function; terminal logarithmic
+average; centered local rule; overlap safety; phase clock; weighted
+independent set; exact attainment.
+
+\section{Definitions and principal results}
+
+Write \(\mob_0(k)=\mob(k)\) for integers \(k\geq1\), and
+\(\mob_0(k)=0\) for \(k\leq0\).  A \emph{terminal clock} is a function
+\begin{equation}
+ 1\leq\omega(X)\leq X,
+ \qquad \omega(X)\longrightarrow\infty.
+ \label{eq:terminal-clock}
+\end{equation}
+Fix integers \(h,q\geq1\), fix one table
+\[
+ F_r:\T^3\longrightarrow\{-1,+1\}
+ \qquad(r\in\Z/q\Z),
+\]
+and fix the clock \(\omega\), all before \(X\to\infty\).  The visible
+input order and the scored output are
+\begin{align}
+ \varepsilon_F(n)
+ &=F_{n\bmod q}\bigl(\mob_0(n-h),\mob(n),\mob(n+h)\bigr),
+ \label{eq:centered-output}\\
+ L_{h,q,X}(F;\omega)
+ &=\frac1{\log\omega(X)}
+ \sum_{X/\omega(X)<n\leq X}
+ \frac{\mob(n)\varepsilon_F(n)}n.
+ \label{eq:terminal-functional}
+\end{align}
+The table value \(\varepsilon_F(n)\) is the output; multiplication by
+the center \(\mob(n)\) produces the score.
+
+The family is \emph{universally half-span safe} when
+\begin{equation}
+ \neg\bigl(F_r(x,z,y)=+1\ \text{and}\
+ F_{r+h}(z,y,w)=+1\bigr)
+ \label{eq:half-span-safety}
+\end{equation}
+for every \(r\in\Z/q\Z\) and every \(x,z,y,w\in\T\), with phases read
+modulo \(q\).  Both symbols \(z,y\) are shared:
+\[
+\begin{array}{c@{\quad}c@{\quad}c}
+ x & z\ (\text{center}) & y\\[-2pt]
+   & \multicolumn{2}{c}{\underbrace{\hspace{4.6em}}_{\text{overlap}}}\\[-2pt]
+   & z & y\ (\text{center})\quad w .
+\end{array}
+\]
+The second center is the first right symbol, so the separation is \(h\),
+not \(2h\).
+
+The analytic density notation follows the ordered shifts
+\begin{equation}
+ a_L=h,\qquad a_C=0,\qquad a_R=-h.
+ \label{eq:coordinate-shifts}
+\end{equation}
+For \(S\subseteq\{L,C,R\}\), deduplicate modulo \(p^2\) before any
+count and set
+\begin{equation}
+ B_{p,S}=\{a_i\bmod p^2:i\in S\},\qquad
+ \nu_{p,S}=|B_{p,S}|,
+ \qquad
+ \tau_{p,S}(r)=\#\{b\in B_{p,S}:b\equiv r\pmod p\}.
+ \label{eq:local-data}
+\end{equation}
+Define
+\begin{align}
+ \Theta_{h,q,r}(S)
+ &=\frac1q
+ \prod_{p\nmid q}\left(1-\frac{\nu_{p,S}}{p^2}\right)
+ \prod_{p\parallel q}\left(1-\frac{\tau_{p,S}(r)}p\right)
+ \prod_{p^2\mid q}\ind_{\{r\bmod p^2\notin B_{p,S}\}},
+ \label{eq:phase-density}\\
+ \kappa_h(S)
+ &=\prod_p\left(1-\frac{\nu_{p,S}}{p^2}\right).
+ \label{eq:kappa-density}
+\end{align}
+Then \(\Theta_{h,q,r}(\varnothing)=1/q\) and
+\begin{equation}
+ \sum_{r\bmod q}\Theta_{h,q,r}(S)=\kappa_h(S).
+ \label{eq:phase-sum}
+\end{equation}
+We shall use
+\begin{equation}
+ K_1=\prod_p(1-p^{-2})=\frac6{\pi^2},\qquad
+ \kappa_2(h)=\kappa_h(LC)=\kappa_h(CR),\qquad
+ \kappa_3(h)=\kappa_h(LCR).
+ \label{eq:kappa23}
+\end{equation}
+These are collision-aware products.  They must not be replaced
+unconditionally by the collision-free products
+\(\prod_p(1-2p^{-2})\) and \(\prod_p(1-3p^{-2})\).
+
+The fixed-table limit below exists for every admissible clock and is
+clock-independent; write it as \(L_{h,q}(F)\).  The half-span capacity is
+formed only afterward:
+\begin{equation}
+ \hcap_h(q)=
+ \max_{F\ \mathrm{universally\ half\text{-}span\ safe}}
+ |L_{h,q}(F)|.
+ \label{eq:half-span-capacity}
+\end{equation}
+
+\begin{theorem}[Fixed-clock half-span capacity]
+\label{thm:fixed-clock-half-span}
+For every fixed integer \(h\geq1\), every finite integer \(q\geq1\),
+every phase family \(F\), and every terminal clock
+\eqref{eq:terminal-clock}, the limit
+\[
+ L_{h,q}(F)=\lim_{X\to\infty}L_{h,q,X}(F;\omega)
+\]
+exists and has the same value for all such \(\omega\).  Moreover,
+\begin{equation}
+ \boxed{
+ \hcap_h(q)=K_1-\frac{\kappa_2(h)}2
+ +\frac14
+ \max_{\substack{J\subseteq\Z/q\Z\\J\cap(J+h)=\varnothing}}
+ \sum_{r\in J}\Theta_{h,q,r}(LCR).}
+ \label{eq:fixed-clock-formula}
+\end{equation}
+The maximum is a weighted step-\(h\) independent-set problem.  If
+\(q\mid h\), every vertex has a self-loop and only \(J=\varnothing\) is
+admissible.  Both signs of every nonzero optimal value are attained by
+safe tables.
+\end{theorem}
+
+\begin{theorem}[Odd-lag clock maximum and exact attainment]
+\label{thm:odd-lag-clock-maximum}
+For every fixed odd integer \(h\geq1\),
+\begin{equation}
+ \boxed{
+ \max_{q\geq1}\hcap_h(q)=\hcap_h(2)
+ =K_1-\frac{\kappa_2(h)}2+\frac{\kappa_3(h)}4.}
+ \label{eq:odd-clock-maximum}
+\end{equation}
+For a declared finite clock \(q\), equality with the right side holds
+if and only if \(q\) is even:
+\begin{equation}
+ \hcap_h(q)=K_1-\frac{\kappa_2(h)}2+\frac{\kappa_3(h)}4
+ \quad\Longleftrightarrow\quad 2\mid q.
+ \label{eq:attainment-parity}
+\end{equation}
+The declared period need not be the minimal period of an optimizing
+table.  Every odd \(q\), including \(q=1\), is strictly suboptimal.
+\end{theorem}
+
+Theorem~\ref{thm:fixed-clock-half-span} holds for even and odd \(h\).
+Parity enters only in Theorem~\ref{thm:odd-lag-clock-maximum}; no
+all-clock classification for even \(h\) is asserted.
+
+The first input to the proof is analytic: the complete fixed three-shift
+terminal table law.  Everything after that input is finite.  The new finite
+geometry differs from the distance-\(2h\) relation geometry of RH-396:
+two adjacent radius-\(h\) windows now share two symbols, and this overlap
+collapses an arbitrary ternary relation to two Boolean flags.  The collapse,
+the exact rectangle value, and the odd-clock attainment classification are
+the new steps of this paper.
+
+\section{The fixed three-shift bridge and its boundary}
+
+Let \(I=\{L,C,R\}\).  Inclusion--exclusion turns the phase masses into
+exact-support masses
+\begin{equation}
+ \Pi_{h,q,r}(U)=
+ \sum_{W\subseteq I\setminus U}(-1)^{|W|}
+ \Theta_{h,q,r}(U\cup W),
+ \qquad U\subseteq I.
+ \label{eq:pi-definition}
+\end{equation}
+For a table \(G_r:\T^3\to\mathbb R\), write
+\begin{equation}
+ \overline G_{r,U}=2^{-|U|}
+ \sum_{\sigma\in\{-1,+1\}^{U}}
+ G_r(\sigma_U,0_{I\setminus U}).
+ \label{eq:stratum-average}
+\end{equation}
+The RH-394 compiler gives, for every fixed phase family and every terminal
+clock,
+\begin{equation}
+ \frac1{\log\omega(X)}
+ \sum_{X/\omega(X)<n\leq X}
+ \frac{G_{n\bmod q}
+ (\mob_0(n-h),\mob(n),\mob(n+h))}{n}
+ \longrightarrow
+ \sum_{r\bmod q}\sum_{U\subseteq I}
+ \Pi_{h,q,r}(U)\overline G_{r,U}.
+ \label{eq:three-shift-bridge}
+\end{equation}
+Moreover,
+\begin{equation}
+ \Pi_{h,q,r}(U)\geq0,\qquad
+ \sum_{U\subseteq I}\Pi_{h,q,r}(U)=\frac1q.
+ \label{eq:pi-mass}
+\end{equation}
+These statements are Theorem~1.1, equations (8)--(9), Theorem~1.2,
+equations (11)--(14), and Corollary~1.3, equation (15), of the frozen
+RH-394 release, on printed and PDF pages 2--3 \cite{RH394}.  They also
+give \eqref{eq:phase-density}--\eqref{eq:phase-sum}.  The result is
+qualitative and fixed-data; it supplies no rate uniform in \(h\) or \(q\).
+
+For our score use the single table
+\begin{equation}
+ H_r(x,z,y)=zF_r(x,z,y).
+ \label{eq:score-table}
+\end{equation}
+Then \eqref{eq:three-shift-bridge} is exactly the limit in
+\eqref{eq:terminal-functional}.
+
+\begin{lemma}[Three-shift analytic firewall]
+\label{lem:three-shift-firewall}
+The safety condition \eqref{eq:half-span-safety} does not require a
+four-shift table law or the four-odd coefficient \(c_{1111}\).
+\end{lemma}
+
+\begin{proof}
+For each fixed \(F\), the averaged summand is the one three-variable table
+\(H_{n\bmod q}(\mob_0(n-h),\mob(n),\mob(n+h))\).  The letter \(w\)
+appears only when the finite set of phase tables is tested for universal
+safety, before any average is formed.  The safe family is finite, so we first
+take the limit of each fixed table and only then maximize those existing
+limits.  We never average a product of two outputs, form a four-variable
+table, or exchange a maximum with the limit.  Thus the sole missing
+four-shift channel identified in RH-394 is untouched.
+\end{proof}
+
+RH-396 supplies useful finite precedents for positive projection, input
+reflection, collision-aware phase densities, and literal repetition of a
+declared phase table \cite{RH396}.  Its safety step is \(2h\), however, and
+its optimizer is a full relation-composition problem.  It does not imply the
+step-\(h\) flag collapse proved below.
+
+\section{Positive projection, exact cells, and reflection}
+
+For \(x,y\in\T\), set
+\begin{align}
+ S(x,y)&=\{C\}\cup(\{L\}:x\ne0)\cup(\{R\}:y\ne0),
+ \label{eq:cell-support}\\
+ \lambda_{h,q,r}(x,y)
+ &=2^{-\ind_{\{x\ne0\}}-\ind_{\{y\ne0\}}}
+ \Pi_{h,q,r}(S(x,y)).
+ \label{eq:lambda}
+\end{align}
+By \eqref{eq:pi-mass}, every \(\lambda_{h,q,r}(x,y)\) is nonnegative.
+It is an event density; no claim is made that its coordinates in a signed
+Euler-product basis are nonnegative.
+
+\begin{lemma}[Positive projection and the cell bridge]
+\label{lem:positive-projection}
+Given a safe family \(F\), replace every \(+1\) output at a cell whose
+center \(z\) is not \(+1\) by \(-1\), leaving all other cells unchanged.
+Call the result \(F^+\).  Then \(F^+\) is safe and
+\(L_{h,q}(F^+)\geq L_{h,q}(F)\).  If
+\begin{equation}
+ A_r=\{(x,y)\in\T^2:F^+_r(x,+1,y)=+1\},
+ \label{eq:positive-relation}
+\end{equation}
+then
+\begin{equation}
+ L_{h,q}(F^+)=
+ \sum_{r\bmod q}\sum_{(x,y)\in A_r}
+ \lambda_{h,q,r}(x,y).
+ \label{eq:projected-cell-sum}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+At \(z=-1\), changing the output from plus to minus changes the score
+\(zF\) from \(-1\) to \(+1\); at \(z=0\), the score stays zero.
+Deleting positive outputs cannot create a forbidden pair, so the comparison
+is pointwise and safety is preserved.
+
+Start from the all-minus table, whose score is \(-z\).  Its average on every
+exact-support sign stratum is zero.  Flipping the center-\(+1\) cell
+\((x,+1,y)\) changes the score by two.  The density of that specified sign
+cell is
+\[
+ 2^{-1-\ind_{\{x\ne0\}}-\ind_{\{y\ne0\}}}
+ \Pi_{h,q,r}(S(x,y)).
+\]
+The factor two cancels the center-sign half and gives exactly
+\eqref{eq:lambda}.  Summing the flipped cells proves
+\eqref{eq:projected-cell-sum}.
+\end{proof}
+
+\begin{lemma}[Input reflection]
+\label{lem:input-reflection}
+Define
+\[
+ F^\rho_r(x,z,y)=F_r(-x,-z,-y).
+\]
+This map preserves universal half-span safety and satisfies
+\begin{equation}
+ L_{h,q}(F^\rho)=-L_{h,q}(F).
+ \label{eq:reflection-sign}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Simultaneous negation is a bijection of the four-letter words in
+\eqref{eq:half-span-safety}.  For the scored table,
+\[
+ zF^\rho_r(x,z,y)=-H_r(-x,-z,-y).
+\]
+Every exact-support stratum in \eqref{eq:three-shift-bridge} is invariant
+under simultaneous sign negation, so its uniform average changes sign.
+This proves \eqref{eq:reflection-sign}.  Consequently the positive maximum
+equals the absolute capacity and both signs are attained whenever the value
+is nonzero.
+\end{proof}
+
+\section{The overlap flags and their exact rectangles}
+
+For a relation \(A\subseteq\T^2\), define
+\[
+ \Source(A)=\{x:(x,y)\in A\text{ for some }y\},\qquad
+ \Target(A)=\{y:(x,y)\in A\text{ for some }x\}.
+\]
+For the relation \eqref{eq:positive-relation}, put
+\begin{equation}
+ s_r=\ind_{\{+1\in\Source(A_r)\}},\qquad
+ t_r=\ind_{\{+1\in\Target(A_r)\}}.
+ \label{eq:source-target-flags}
+\end{equation}
+
+\begin{lemma}[Exact flag obstruction]
+\label{lem:flag-obstruction}
+The projected family is safe if and only if
+\begin{equation}
+ t_rs_{r+h}=0\qquad(r\bmod q).
+ \label{eq:flag-safety}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If \(t_r=s_{r+h}=1\), choose \((x,+1)\in A_r\) and
+\((+1,w)\in A_{r+h}\).  The concrete word \((x,+1,+1,w)\) violates
+\eqref{eq:half-span-safety}.  Conversely, every forbidden projected pair
+has precisely these two relation cells, so it forces the two flags to be one.
+\end{proof}
+
+There are \(2^9=512\) ternary relations.  A source-zero relation omits the
+three cells with first coordinate \(+1\), so there are \(2^6=64\); the same
+count holds for target zero, and their intersection has \(2^4=16\) members.
+Thus the four flag classes have counts \(16,48,48,400\) in the order
+\(00,10,01,11\).  Of all \(512^2=262144\) ordered relation pairs, exactly
+\(448^2=200704\) violate \eqref{eq:flag-safety}; hence \(61440\) are safe.
+
+Set
+\[
+ X_0=Y_0=\T\setminus\{+1\},\qquad X_1=Y_1=\T,
+ \qquad \rect(s,t)=X_s\times Y_t.
+\]
+The four rectangles are summarized below.
+\begin{center}
+\begin{tabular}{c@{\qquad}c@{\qquad}c}
+\toprule
+flags \((s,t)\)&rectangle&size\\
+\midrule
+\(00\)&\(X_0\times Y_0\)&4\\
+\(10\)&\(X_1\times Y_0\)&6\\
+\(01\)&\(X_0\times Y_1\)&6\\
+\(11\)&\(X_1\times Y_1\)&9\\
+\bottomrule
+\end{tabular}
+\label{tab:flag-rectangles}
+\end{center}
+
+\begin{lemma}[Flag-rectangle saturation]
+\label{lem:flag-rectangle-saturation}
+Every relation with flags \((s,t)\) is contained in \(\rect(s,t)\), and
+that rectangle has exactly the same flags.  Replacing each \(A_r\) by its
+flag rectangle preserves safety and weakly increases
+\eqref{eq:projected-cell-sum}.
+\end{lemma}
+
+\begin{proof}
+If \(s=0\), no cell has first coordinate \(+1\); if \(t=0\), no cell has
+second coordinate \(+1\).  This proves containment.  Each of the four
+rectangles is nonempty and visibly has the stated flags.  Lemma
+\ref{lem:flag-obstruction} depends only on those flags, while every newly
+added cell has nonnegative weight \(\lambda\).
+\end{proof}
+
+\section{Rectangle weights and collision-aware translation}
+
+For each phase abbreviate
+\begin{equation}
+ M_r=\Theta_{h,q,r}(C),\quad
+ U_r=\frac12\Theta_{h,q,r}(LC),\quad
+ V_r=\frac12\Theta_{h,q,r}(CR),\quad
+ W_r=\frac14\Theta_{h,q,r}(LCR).
+ \label{eq:MUVW}
+\end{equation}
+Row--column inclusion--exclusion gives the rectangle value
+\begin{equation}
+ R_r(s,t)=M_r-(1-s)U_r-(1-t)V_r+(1-s)(1-t)W_r.
+ \label{eq:rectangle-value}
+\end{equation}
+In particular the corner sign is plus.  Event containment gives
+\begin{equation}
+ 0\leq W_r\leq\frac{U_r}{2},\qquad
+ 0\leq W_r\leq\frac{V_r}{2}.
+ \label{eq:weight-bounds}
+\end{equation}
+
+\begin{lemma}[All-branch phase translation]
+\label{lem:phase-translation}
+For every fixed \(h,q,r\), including every collision branch,
+\begin{equation}
+ V_r=U_{r+h}.
+ \label{eq:phase-translation}
+\end{equation}
+Moreover,
+\begin{equation}
+ \sum_rM_r=K_1,\qquad
+ \sum_rU_r=\sum_rV_r=\frac{\kappa_2(h)}2,\qquad
+ \sum_rW_r=\frac{\kappa_3(h)}4.
+ \label{eq:phase-weight-sums}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The residue sets for \(CR\) and \(LC\) are respectively
+\(\{0,-h\}\) and \(\{h,0\}\), after deduplication modulo \(p^2\).
+Translation by \(h\) carries the first set to the second.  If \(p\nmid q\),
+their \(\nu\)-counts agree.  If \(p\parallel q\), deduplication is performed
+modulo \(p^2\) before reduction modulo \(p\), and
+\(\tau_{p,CR}(r)=\tau_{p,LC}(r+h)\).  If \(p^2\mid q\), the indicators
+\(\ind_{\{r\notin B_{p,CR}\}}\) and
+\(\ind_{\{r+h\notin B_{p,LC}\}}\) agree.  All local factors and the common
+\(1/q\) therefore agree, proving \eqref{eq:phase-translation}.  The sums
+follow from \eqref{eq:phase-sum} and \eqref{eq:MUVW}.
+\end{proof}
+
+\section{Edge filling and the rising-set optimizer}
+
+By Lemma~\ref{lem:flag-obstruction}, the flag constraint is
+\begin{equation}
+ t_r+s_{r+h}\leq1.
+ \label{eq:binary-edge-safety}
+\end{equation}
+Suppose an edge is unsaturated: \((t_r,s_{r+h})=(0,0)\).  Change only
+\(s_{r+h}\) to one.  No other safety edge uses that source flag, and the
+gain at phase \(r+h\) is exactly
+\begin{equation}
+ \Delta=U_{r+h}-(1-t_{r+h})W_{r+h}
+ \geq U_{r+h}-W_{r+h}\geq0.
+ \label{eq:edge-gain}
+\end{equation}
+Repeated filling terminates with
+\begin{equation}
+ t_r=1-s_{r+h}\qquad(r\bmod q).
+ \label{eq:edge-saturation}
+\end{equation}
+The gain need not be strict.
+
+Substitute \eqref{eq:edge-saturation} in \eqref{eq:rectangle-value} and
+use \eqref{eq:phase-translation}.  The two linear costs telescope:
+\[
+ -\sum_r(1-s_r)U_r-\sum_rs_{r+h}V_r=-\sum_rU_r.
+\]
+The surviving corner bonus is
+\begin{equation}
+ \sum_r(1-s_r)s_{r+h}W_r.
+ \label{eq:rising-bonus}
+\end{equation}
+Define the rising set
+\begin{equation}
+ J=\{r:s_r=0,\ s_{r+h}=1\}.
+ \label{eq:rising-set}
+\end{equation}
+Then \(J\cap(J+h)=\varnothing\), including when addition by \(h\) is a
+self-loop.
+
+\begin{lemma}[Every independent set is realized]
+\label{lem:rising-set-realization}
+For every \(J\subseteq\Z/q\Z\) satisfying
+\(J\cap(J+h)=\varnothing\), there is a saturated flag profile whose rising
+set is exactly \(J\).  The empty set and self-loop clocks are included.
+\end{lemma}
+
+\begin{proof}
+Define \(s_{r+h}=\ind_{\{r\in J\}}\), equivalently
+\(s_u=\ind_{\{u-h\in J\}}\), and put \(t_r=1-s_{r+h}\).  If \(r\in J\),
+independence implies \(r-h\notin J\); hence
+\((1-s_r)s_{r+h}=1\).  If \(r\notin J\), that product is zero.  Thus the
+rising set is exactly \(J\), and the saturated rectangles realize it.
+When addition by \(h\) is a self-loop, independence forces \(J\) empty.
+\end{proof}
+
+Combining \eqref{eq:phase-weight-sums}, \eqref{eq:rising-bonus}, and
+Lemma~\ref{lem:rising-set-realization} gives
+\[
+ K_1-\frac{\kappa_2(h)}2+\max_J\sum_{r\in J}W_r,
+\]
+which is exactly \eqref{eq:fixed-clock-formula}.  The fixed-table limits
+come from \eqref{eq:three-shift-bridge}, while Lemma
+\ref{lem:input-reflection} turns the positive maximum into the absolute
+capacity and supplies both signs.  This proves Theorem
+\ref{thm:fixed-clock-half-span}.
+
+\section{Odd lags: exact finite-clock attainment}
+
+Since \(W_r\geq0\), every independent-set bonus is at most
+\begin{equation}
+ \sum_rW_r=\frac{\kappa_3(h)}4.
+ \label{eq:odd-upper-bound}
+\end{equation}
+
+\begin{lemma}[The two-phase clock]
+\label{lem:q-two-attainment}
+If \(h\) is odd, clock \(q=2\) attains \eqref{eq:odd-upper-bound}.
+\end{lemma}
+
+\begin{proof}
+Modulo four,
+\(B_{2,LCR}=\{h,0,-h\}=\{1,0,3\}\).  In the \(2\parallel q\) branch,
+\(\tau\) is one on the even phase and two on the odd phase.  The odd
+triple mass is therefore zero, while the even phase carries the entire
+phase sum \(\kappa_3(h)\).  The singleton even phase is step-\(h\)
+independent, so it captures all weight.
+\end{proof}
+
+If \(q\) is any declared even clock, literally repeat the two-phase
+optimizing table modulo \(q\).  Because odd \(h\) reverses parity, the same
+safety pattern holds and the output word, hence the terminal value, is
+unchanged.  No minimal-period hypothesis is imposed.
+
+\begin{lemma}[Strictness of every odd clock]
+\label{lem:odd-clock-strictness}
+For fixed odd \(h\) and odd \(q\), there is a phase \(r\) for which both
+\(\Theta_{h,q,r}(LCR)\) and \(\Theta_{h,q,r+h}(LCR)\) are positive.
+Consequently the bound \eqref{eq:odd-upper-bound} is strict.
+\end{lemma}
+
+\begin{proof}
+We choose \(r\) locally at each prime power dividing \(q\).  If
+\(p\parallel q\) and \(p\geq5\), every \(\tau\)-count is at most three,
+so both local factors are positive for every class.  For \(p=3\), there
+are exactly three cases after deduplication modulo nine.  If \(3\nmid h\),
+the three residues occupy the three classes modulo three and each
+\(\tau\)-count is one.  If \(3\mid h\) but \(9\nmid h\), the set is
+\(\{0,3,6\}\) modulo nine; choose either nonzero class modulo three, which
+is preserved by adding \(h\).  If \(9\mid h\), the residue set deduplicates
+to \(\{0\}\), so every \(\tau\)-count is at most one.
+
+If \(p^2\mid q\), choose \(r\bmod p^2\) outside
+\begin{equation}
+ B_{p,LCR}\cup(B_{p,LCR}-h)=\{h,0,-h,-2h\}.
+ \label{eq:four-class-avoidance}
+\end{equation}
+There are at most four forbidden classes and \(p^2\geq9\), since \(q\) is
+odd.  Lift the choice to the full power of \(p\) in \(q\).  The Chinese
+remainder theorem combines all choices.
+
+For primes outside \(q\), every Euler factor is positive: for odd primes,
+\(\nu\leq3<p^2\); at \(p=2\), odd \(h\) gives exactly three distinct
+classes modulo four.  Thus both adjacent weights are positive.  A step-
+\(h\) independent set cannot contain both; if they are the same vertex,
+the self-loop excludes it.  Hence at least one positive weight is omitted,
+and the upper bound is strict.
+\end{proof}
+
+Lemma~\ref{lem:q-two-attainment}, literal even-clock repetition, and
+Lemma~\ref{lem:odd-clock-strictness} prove both
+\eqref{eq:odd-clock-maximum} and \eqref{eq:attainment-parity}, hence
+Theorem~\ref{thm:odd-lag-clock-maximum}.
+
+\section{Exact finite reproduction}
+
+The executable certificate reproduces finite identities and attacks
+implementation drift; it is not an analytic proof.  Its 72 rows are divided
+as follows: 10 domain/source rows, 10 terminal-bridge/projection/reflection
+rows, 12 flag/rectangle rows, 12 weight/translation rows, 12 saturation and
+rising-set rows, 12 odd-clock rows, and 4 claim-firewall rows.  Dynamic
+checks enumerate all 512 relations and all 262144 ordered pairs, recover the
+61440 safe pairs, verify all four rectangle classes, exercise all three
+translation branches, and compare the flag optimizer with an independent
+weighted-set dynamic program.
+
+The formal \((K_0,K_1,K_2,K_3)\)-coefficient controls are
+\begin{center}
+\begin{tabular}{c@{\quad}c}
+\toprule
+\((h,q)\)&capacity vector\\
+\midrule
+\((1,1)\)&\((0,1,-1/2,0)\)\\
+\((1,2)\)&\((0,1,-1/2,1/4)\)\\
+\((1,3)\)&\((0,1,-1/2,1/12)\)\\
+\((4,4)\)&\((0,1,-3/4,0)\)\\
+\((9,2)\)&\((0,1,-4/7,1/3)\)\\
+\bottomrule
+\end{tabular}
+\label{tab:exact-controls}
+\end{center}
+The \(h=4\) row is an even-lag negative control, not an extension of the
+odd-lag theorem; \(h=9\) tests collisions.
+
+The frozen core has 75206 bytes and SHA-256
+\artifacthash{4b247c0a580c06cfaeb22f29d5b9f80d52bee44fcb44ebd978153bc79e04bcd0}.
+Its canonical certificate has 24297 bytes, 72 rows, and SHA-256
+\artifacthash{23f714236b53c2b89caa72b53f8139cfeab74cd07132082061c3ab0dfc048697}.
+All 60 named core mutations, 78 result mutations, and 32 schema mutations
+are distinct and rejected.  The stored result has canonical SHA-256
+\artifacthash{d2445cc883371ccfd96eeb09f908d62d232fcb5cde5ea9170aa2029956047c2a};
+the recursively closed schema has canonical SHA-256
+\artifacthash{c3a5b2a02b027cc18b67e63b32f0a238990a4754fe4f2f2ce3c8d1acf756b910}.
+The latter contains 568 object nodes, 140 array nodes, and 3484 nodes in
+total and passes the official Draft 2020--12 validator.
+
+\section{Source roles, limitations, and declarations}
+
+The sole analytic input is the complete fixed three-shift terminal table law
+of RH-394 \cite{RH394}.  RH-396 is the direct finite predecessor
+\cite{RH396}.  Its Section 2, Lemmas 2.1 and 2.3 (PDF pages 4--5), provide
+the projection and reflection templates, while Lemma 4.1 (PDF page 7)
+provides literal declared-clock repetition.  RH-396 also supplies the
+collision-aware density notation.  The new
+step-\(h\) flag theorem, four rectangles, MUVW identity, edge filling,
+rising-set surjection, and parity attainment theorem are proved locally.
+RH-375, RH-392, RH-395, and four remote source records remain transitive
+comparison or provenance entries, not strengthened analytic inputs.
+
+The exact source closure freezes 172 Git blobs in groups of 160, 8, and 4,
+plus four ordered remote logical records, for 176 logical inputs.  Its
+all-Git digest is
+\artifacthash{b3f5688380762a4e3c27d512311f4c0d22173c434cc40459fc77bb3eb87fb5c4};
+its logical digest is
+\artifacthash{e9588b58f75e02e31ba5ffb279aea267074ec72f717afa84670f320d6c1030e0}.
+All remote verification is offline; no remote PDF is vendored, and the
+redistribution flags are false, false, true, false in their frozen order.
+
+The claims are deliberately fixed-data.  We do not treat \(h,q\), the
+phase tables, or the terminal clock as growing or adaptive data; provide an
+effective rate uniform in those objects; address ordinary Ces\`aro averages;
+move the maximum before the limit; or claim a causal rule, since the centered
+table reads \(\mob(n+h)\).  We prove no four-shift or even-four correlation,
+no larger-window compiler, and no generic graph-capacity theorem.  No
+operator, trace formula, zero model, Riemann Hypothesis statement, or Gate
+A--E upgrade follows.
+
+\paragraph{Data and code availability.}
+The finite certificate, strict result, recursively closed schema, source
+locks, tests, and release-verification scripts accompany this manuscript.
+No external payload is included, and reproduction requires no network
+request.
+
+\paragraph{Author contributions.}
+The RH research program directed the question, proof architecture, source
+roles, adversarial checks, manuscript review, and release decision.  The
+program also retains responsibility for all mathematical and archival claims.
+
+\paragraph{Use of AI-assisted tools.}
+AI-assisted tools supported drafting, finite-certificate implementation,
+formatting, and consistency checks.  The research program directed and
+reviewed the arguments, source assignments, and release artifacts and retains
+responsibility for the final work.
+
+\paragraph{Competing interests, funding, and ethics.}
+The authors declare no competing interests and no external funding.  This
+theoretical and computational work used no human participants, animals, or
+personal data, so institutional ethics approval and informed consent were not
+applicable.
+
+\begingroup
+\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+
+\end{document}
