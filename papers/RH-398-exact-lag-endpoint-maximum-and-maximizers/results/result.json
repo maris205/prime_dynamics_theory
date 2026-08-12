@@ -1,0 +1,5761 @@
+{
+  "all_pass": true,
+  "certificate": {
+    "schema_version": 1,
+    "status": "RH-398_exact_lag_endpoint_extrema_core_certified",
+    "title": "Exact Lag Endpoint Maximum and Maximizers",
+    "package": "lag_endpoint_extrema",
+    "epistemic_role": "finite_exact_reproduction_not_analytic_proof",
+    "formal_oracle": "integers_and_Fractions_only",
+    "theorem_contract": {
+      "global_maximum": "B_infinity(h)<=B_infinity(1)",
+      "exact_maximizers": "mu^2(h)=1 and gcd(h,210)=1",
+      "complement_supremum": "B_infinity(1)_unattained",
+      "joint_supremum": "sup_(h>=1,q_finite)C_h(q)=B_infinity(1)_unattained",
+      "uniform_p0_ge5_gap": "B_infinity(1)-B_infinity(h)>2/1334025"
+    },
+    "row_partition": {
+      "loss_formula": 12,
+      "local_order": 12,
+      "telescope": 12,
+      "strictness": 12,
+      "maximizers": 8,
+      "complement_gap": 8,
+      "joint_endpoint": 4,
+      "firewalls": 4
+    },
+    "row_ids": {
+      "loss_formula": [
+        "LF01_oddT_oddL",
+        "LF02_oddT_evenL",
+        "LF03_evenT_oddL",
+        "LF04_evenT_evenL",
+        "LF05_T1_edge",
+        "LF06_T2_edge",
+        "LF07_L1_edge",
+        "LF08_L2_edge",
+        "LF09_preperiod_L_lt_T",
+        "LF10_threshold_L_eq_T",
+        "LF11_postthreshold_L_gt_T",
+        "LF12_enumerator_grid"
+      ],
+      "local_order": [
+        "LO01_t_exponent_map",
+        "LO02_oddprime_e0_ge_e1",
+        "LO03_oddprime_e1_ge_e2",
+        "LO04_oddL_threeway_equal",
+        "LO05_evenL_e0_eq_e1_below_p",
+        "LO06_first_e0e1_strict",
+        "LO07_evenL_e1e2_strict",
+        "LO08_two_prime_allowed_order",
+        "LO09_p2_L2_strict",
+        "LO10_p3_L4_strict",
+        "LO11_p5_L6_strict",
+        "LO12_p7_L8_strict"
+      ],
+      "telescope": [
+        "TS01_t_p_gcd_formula",
+        "TS02_A_product",
+        "TS03_p0_definition",
+        "TS04_A_cutoff",
+        "TS05_R_second_difference",
+        "TS06_R_nonnegative_event",
+        "TS07_alternating_sum_start",
+        "TS08_alternating_sum_terminal",
+        "TS09_B_telescope_identity",
+        "TS10_odd_forward_run_event",
+        "TS11_finite_CRT_oracle",
+        "TS12_collision_exponent_oracle"
+      ],
+      "strictness": [
+        "ST01_square_p2",
+        "ST02_square_p3",
+        "ST03_square_p5",
+        "ST04_square_generic",
+        "ST05_single_p3",
+        "ST06_single_p5",
+        "ST07_single_p7",
+        "ST08_boundary_CRT_L2",
+        "ST09_boundary_CRT_L4",
+        "ST10_boundary_CRT_L6",
+        "ST11_boundary_CRT_L8",
+        "ST12_nonmax_partition"
+      ],
+      "maximizers": [
+        "MX01_base_h1",
+        "MX02_largeprime_invisibility",
+        "MX03_multiprime_invisibility",
+        "MX04_true_examples",
+        "MX05_false_smallprime_examples",
+        "MX06_false_square_examples",
+        "MX07_exhaustive_predicate_grid",
+        "MX08_exact_iff"
+      ],
+      "complement_gap": [
+        "CG01_square_sequence",
+        "CG02_sequence_strict",
+        "CG03_sequence_upper_bound",
+        "CG04_sequence_limit",
+        "CG05_complement_sup",
+        "CG06_complement_unattained",
+        "CG07_p0_ge5_reduction",
+        "CG08_uniform_gap_chain"
+      ],
+      "joint_endpoint": [
+        "JE01_fixed_pair_strict",
+        "JE02_h1_cofinal_lower",
+        "JE03_joint_supremum",
+        "JE04_joint_nonattainment"
+      ],
+      "firewalls": [
+        "FW01_quantifier_order",
+        "FW02_data_scope",
+        "FW03_source_roles",
+        "FW04_claim_ceiling"
+      ]
+    },
+    "row_count": 72,
+    "rows": [
+      {
+        "group": "loss_formula",
+        "id": "LF01_oddT_oddL",
+        "data": {
+          "alpha_formula": "a(L)=(L+1)//2",
+          "enumerator": "Lambda_T(L)=T*a(L)-sum_(0<=r<T)alpha(P_L minus indices congruent r mod T)",
+          "formula": "Lambda_T(L)=a(L)",
+          "fixture": {
+            "period": 5,
+            "length": 7,
+            "enumerated": 4,
+            "formula_value": 4,
+            "equal": true
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "loss_formula",
+        "id": "LF02_oddT_evenL",
+        "data": {
+          "alpha_formula": "a(L)=(L+1)//2",
+          "formula": "Lambda_T(L)=max(0,L/2-(T-1)/2)",
+          "fixture": {
+            "period": 5,
+            "length": 10,
+            "enumerated": 3,
+            "formula_value": 3,
+            "equal": true
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "loss_formula",
+        "id": "LF03_evenT_oddL",
+        "data": {
+          "alpha_formula": "a(L)=(L+1)//2",
+          "formula": "Lambda_T(L)=min(a(L),T/2)",
+          "fixture": {
+            "period": 4,
+            "length": 7,
+            "enumerated": 2,
+            "formula_value": 2,
+            "equal": true
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "loss_formula",
+        "id": "LF04_evenT_evenL",
+        "data": {
+          "alpha_formula": "a(L)=(L+1)//2",
+          "formula": "Lambda_T(L)=0",
+          "fixture": {
+            "period": 4,
+            "length": 8,
+            "enumerated": 0,
+            "formula_value": 0,
+            "equal": true
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "loss_formula",
+        "id": "LF05_T1_edge",
+        "data": {
+          "period": 1,
+          "fixtures": [
+            {
+              "period": 1,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 1,
+              "length": 2,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 1,
+              "length": 3,
+              "enumerated": 2,
+              "formula_value": 2,
+              "equal": true
+            },
+            {
+              "period": 1,
+              "length": 4,
+              "enumerated": 2,
+              "formula_value": 2,
+              "equal": true
+            },
+            {
+              "period": 1,
+              "length": 5,
+              "enumerated": 3,
+              "formula_value": 3,
+              "equal": true
+            },
+            {
+              "period": 1,
+              "length": 6,
+              "enumerated": 3,
+              "formula_value": 3,
+              "equal": true
+            },
+            {
+              "period": 1,
+              "length": 7,
+              "enumerated": 4,
+              "formula_value": 4,
+              "equal": true
+            },
+            {
+              "period": 1,
+              "length": 8,
+              "enumerated": 4,
+              "formula_value": 4,
+              "equal": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "loss_formula",
+        "id": "LF06_T2_edge",
+        "data": {
+          "period": 2,
+          "fixtures": [
+            {
+              "period": 2,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 2,
+              "length": 2,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 2,
+              "length": 3,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 2,
+              "length": 4,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 2,
+              "length": 5,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 2,
+              "length": 6,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 2,
+              "length": 7,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 2,
+              "length": 8,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "loss_formula",
+        "id": "LF07_L1_edge",
+        "data": {
+          "length": 1,
+          "fixtures": [
+            {
+              "period": 1,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 2,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 3,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 4,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 5,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 6,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 7,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 8,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "loss_formula",
+        "id": "LF08_L2_edge",
+        "data": {
+          "length": 2,
+          "fixtures": [
+            {
+              "period": 1,
+              "length": 2,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 2,
+              "length": 2,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 3,
+              "length": 2,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 4,
+              "length": 2,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 5,
+              "length": 2,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 6,
+              "length": 2,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 7,
+              "length": 2,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 8,
+              "length": 2,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "loss_formula",
+        "id": "LF09_preperiod_L_lt_T",
+        "data": {
+          "condition": "L<T",
+          "fixtures": [
+            {
+              "period": 2,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 3,
+              "length": 2,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 4,
+              "length": 3,
+              "enumerated": 2,
+              "formula_value": 2,
+              "equal": true
+            },
+            {
+              "period": 5,
+              "length": 4,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 6,
+              "length": 5,
+              "enumerated": 3,
+              "formula_value": 3,
+              "equal": true
+            },
+            {
+              "period": 7,
+              "length": 6,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 8,
+              "length": 7,
+              "enumerated": 4,
+              "formula_value": 4,
+              "equal": true
+            },
+            {
+              "period": 9,
+              "length": 8,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "loss_formula",
+        "id": "LF10_threshold_L_eq_T",
+        "data": {
+          "condition": "L=T",
+          "fixtures": [
+            {
+              "period": 1,
+              "length": 1,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 2,
+              "length": 2,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 3,
+              "length": 3,
+              "enumerated": 2,
+              "formula_value": 2,
+              "equal": true
+            },
+            {
+              "period": 4,
+              "length": 4,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 5,
+              "length": 5,
+              "enumerated": 3,
+              "formula_value": 3,
+              "equal": true
+            },
+            {
+              "period": 6,
+              "length": 6,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 7,
+              "length": 7,
+              "enumerated": 4,
+              "formula_value": 4,
+              "equal": true
+            },
+            {
+              "period": 8,
+              "length": 8,
+              "enumerated": 0,
+              "formula_value": 0,
+              "equal": true
+            },
+            {
+              "period": 9,
+              "length": 9,
+              "enumerated": 5,
+              "formula_value": 5,
+              "equal": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "loss_formula",
+        "id": "LF11_postthreshold_L_gt_T",
+        "data": {
+          "condition": "L>T",
+          "fixtures": [
+            {
+              "period": 1,
+              "length": 2,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 2,
+              "length": 3,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 3,
+              "length": 4,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 4,
+              "length": 5,
+              "enumerated": 2,
+              "formula_value": 2,
+              "equal": true
+            },
+            {
+              "period": 5,
+              "length": 6,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 6,
+              "length": 7,
+              "enumerated": 3,
+              "formula_value": 3,
+              "equal": true
+            },
+            {
+              "period": 7,
+              "length": 8,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            },
+            {
+              "period": 8,
+              "length": 9,
+              "enumerated": 4,
+              "formula_value": 4,
+              "equal": true
+            },
+            {
+              "period": 9,
+              "length": 10,
+              "enumerated": 1,
+              "formula_value": 1,
+              "equal": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "loss_formula",
+        "id": "LF12_enumerator_grid",
+        "data": {
+          "residue_range": "0<=r<T",
+          "period_range": [
+            1,
+            31
+          ],
+          "length_range": [
+            1,
+            127
+          ],
+          "cases": 3937,
+          "branch_counts": {
+            "odd_T_odd_L": 1024,
+            "odd_T_even_L": 1008,
+            "even_T_odd_L": 960,
+            "even_T_even_L": 945
+          },
+          "failures": []
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO01_t_exponent_map",
+        "data": {
+          "exponent_map": "t_p=p^(2-min(v_p(d),2))",
+          "values": [
+            "p^2",
+            "p",
+            "1"
+          ],
+          "fixtures": [
+            {
+              "prime": 2,
+              "exponent": 0,
+              "t": 4
+            },
+            {
+              "prime": 2,
+              "exponent": 1,
+              "t": 2
+            },
+            {
+              "prime": 2,
+              "exponent": 2,
+              "t": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 0,
+              "t": 9
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "t": 3
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "t": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 0,
+              "t": 25
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "t": 5
+            },
+            {
+              "prime": 5,
+              "exponent": 2,
+              "t": 1
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO02_oddprime_e0_ge_e1",
+        "data": {
+          "formula": "V_(p,e)=a-Lambda_(p^(2-e))/p^2",
+          "order": "V_(p,0)>=V_(p,1)",
+          "grid_cases": 1397,
+          "failures": []
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO03_oddprime_e1_ge_e2",
+        "data": {
+          "level2_formula": "V_(p,2)=a(L)*(1-p^-2)",
+          "order": "V_(p,1)>=V_(p,2)",
+          "denominator_for_e1": "p^2",
+          "grid_cases": 1397
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO04_oddL_threeway_equal",
+        "data": {
+          "odd_L_equal_only": true,
+          "meaning": "V_(p,0)=V_(p,1)=V_(p,2) for odd path lengths",
+          "fixtures": [
+            {
+              "prime": 3,
+              "length": 1,
+              "equal": true
+            },
+            {
+              "prime": 3,
+              "length": 3,
+              "equal": true
+            },
+            {
+              "prime": 3,
+              "length": 5,
+              "equal": true
+            },
+            {
+              "prime": 3,
+              "length": 7,
+              "equal": true
+            },
+            {
+              "prime": 3,
+              "length": 9,
+              "equal": true
+            },
+            {
+              "prime": 3,
+              "length": 11,
+              "equal": true
+            },
+            {
+              "prime": 3,
+              "length": 13,
+              "equal": true
+            },
+            {
+              "prime": 3,
+              "length": 15,
+              "equal": true
+            },
+            {
+              "prime": 5,
+              "length": 1,
+              "equal": true
+            },
+            {
+              "prime": 5,
+              "length": 3,
+              "equal": true
+            },
+            {
+              "prime": 5,
+              "length": 5,
+              "equal": true
+            },
+            {
+              "prime": 5,
+              "length": 7,
+              "equal": true
+            },
+            {
+              "prime": 5,
+              "length": 9,
+              "equal": true
+            },
+            {
+              "prime": 5,
+              "length": 11,
+              "equal": true
+            },
+            {
+              "prime": 5,
+              "length": 13,
+              "equal": true
+            },
+            {
+              "prime": 5,
+              "length": 15,
+              "equal": true
+            },
+            {
+              "prime": 7,
+              "length": 1,
+              "equal": true
+            },
+            {
+              "prime": 7,
+              "length": 3,
+              "equal": true
+            },
+            {
+              "prime": 7,
+              "length": 5,
+              "equal": true
+            },
+            {
+              "prime": 7,
+              "length": 7,
+              "equal": true
+            },
+            {
+              "prime": 7,
+              "length": 9,
+              "equal": true
+            },
+            {
+              "prime": 7,
+              "length": 11,
+              "equal": true
+            },
+            {
+              "prime": 7,
+              "length": 13,
+              "equal": true
+            },
+            {
+              "prime": 7,
+              "length": 15,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 1,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 3,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 5,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 7,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 9,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 11,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 13,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 15,
+              "equal": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO05_evenL_e0_eq_e1_below_p",
+        "data": {
+          "condition": "even L<p",
+          "fixtures": [
+            {
+              "prime": 3,
+              "length": 2,
+              "equal": true
+            },
+            {
+              "prime": 5,
+              "length": 2,
+              "equal": true
+            },
+            {
+              "prime": 5,
+              "length": 4,
+              "equal": true
+            },
+            {
+              "prime": 7,
+              "length": 2,
+              "equal": true
+            },
+            {
+              "prime": 7,
+              "length": 4,
+              "equal": true
+            },
+            {
+              "prime": 7,
+              "length": 6,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 2,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 4,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 6,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 8,
+              "equal": true
+            },
+            {
+              "prime": 11,
+              "length": 10,
+              "equal": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO06_first_e0e1_strict",
+        "data": {
+          "first_even_length": "L=p+1",
+          "fixtures": [
+            {
+              "prime": 3,
+              "length": 4,
+              "levels": [
+                "2",
+                "17/9",
+                "16/9"
+              ],
+              "gap_e0_e1": "1/9",
+              "gap_e1_e2": "1/9",
+              "gap_e0_e2": "2/9"
+            },
+            {
+              "prime": 5,
+              "length": 6,
+              "levels": [
+                "3",
+                "74/25",
+                "72/25"
+              ],
+              "gap_e0_e1": "1/25",
+              "gap_e1_e2": "2/25",
+              "gap_e0_e2": "3/25"
+            },
+            {
+              "prime": 7,
+              "length": 8,
+              "levels": [
+                "4",
+                "195/49",
+                "192/49"
+              ],
+              "gap_e0_e1": "1/49",
+              "gap_e1_e2": "3/49",
+              "gap_e0_e2": "4/49"
+            },
+            {
+              "prime": 11,
+              "length": 12,
+              "levels": [
+                "6",
+                "725/121",
+                "720/121"
+              ],
+              "gap_e0_e1": "1/121",
+              "gap_e1_e2": "5/121",
+              "gap_e0_e2": "6/121"
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO07_evenL_e1e2_strict",
+        "data": {
+          "condition": "even L",
+          "fixtures": [
+            {
+              "prime": 3,
+              "length": 2,
+              "levels": [
+                "1",
+                "1",
+                "8/9"
+              ],
+              "gap_e0_e1": "0",
+              "gap_e1_e2": "1/9",
+              "gap_e0_e2": "1/9"
+            },
+            {
+              "prime": 5,
+              "length": 2,
+              "levels": [
+                "1",
+                "1",
+                "24/25"
+              ],
+              "gap_e0_e1": "0",
+              "gap_e1_e2": "1/25",
+              "gap_e0_e2": "1/25"
+            },
+            {
+              "prime": 7,
+              "length": 2,
+              "levels": [
+                "1",
+                "1",
+                "48/49"
+              ],
+              "gap_e0_e1": "0",
+              "gap_e1_e2": "1/49",
+              "gap_e0_e2": "1/49"
+            },
+            {
+              "prime": 11,
+              "length": 2,
+              "levels": [
+                "1",
+                "1",
+                "120/121"
+              ],
+              "gap_e0_e1": "0",
+              "gap_e1_e2": "1/121",
+              "gap_e0_e2": "1/121"
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO08_two_prime_allowed_order",
+        "data": {
+          "allowed_levels_for_d_equals_2h": [
+            1,
+            2
+          ],
+          "counterfactual_level0_not_used": true,
+          "fixture": {
+            "prime": 2,
+            "length": 2,
+            "levels": [
+              "1",
+              "1",
+              "3/4"
+            ],
+            "gap_e0_e1": "0",
+            "gap_e1_e2": "1/4",
+            "gap_e0_e2": "1/4"
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO09_p2_L2_strict",
+        "data": {
+          "prime": 2,
+          "length": 2,
+          "allowed_transfer": "e1_to_e2",
+          "gap": "1/4"
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO10_p3_L4_strict",
+        "data": {
+          "prime": 3,
+          "length": 4,
+          "gap_e0_e1": "1/9",
+          "fixture": {
+            "prime": 3,
+            "length": 4,
+            "levels": [
+              "2",
+              "17/9",
+              "16/9"
+            ],
+            "gap_e0_e1": "1/9",
+            "gap_e1_e2": "1/9",
+            "gap_e0_e2": "2/9"
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO11_p5_L6_strict",
+        "data": {
+          "prime": 5,
+          "length": 6,
+          "gap_e0_e1": "1/25",
+          "fixture": {
+            "prime": 5,
+            "length": 6,
+            "levels": [
+              "3",
+              "74/25",
+              "72/25"
+            ],
+            "gap_e0_e1": "1/25",
+            "gap_e1_e2": "2/25",
+            "gap_e0_e2": "3/25"
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "local_order",
+        "id": "LO12_p7_L8_strict",
+        "data": {
+          "prime": 7,
+          "length": 8,
+          "gap_e0_e1": "1/49",
+          "fixture": {
+            "prime": 7,
+            "length": 8,
+            "levels": [
+              "4",
+              "195/49",
+              "192/49"
+            ],
+            "gap_e0_e1": "1/49",
+            "gap_e1_e2": "3/49",
+            "gap_e0_e2": "4/49"
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS01_t_p_gcd_formula",
+        "data": {
+          "formula": "t_p(d)=p^2/gcd(d,p^2)",
+          "range": [
+            "1",
+            "p",
+            "p^2"
+          ],
+          "fixtures": [
+            {
+              "prime": 2,
+              "exponent": 0,
+              "t": 4
+            },
+            {
+              "prime": 2,
+              "exponent": 1,
+              "t": 2
+            },
+            {
+              "prime": 2,
+              "exponent": 2,
+              "t": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 0,
+              "t": 9
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "t": 3
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "t": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 0,
+              "t": 25
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "t": 5
+            },
+            {
+              "prime": 5,
+              "exponent": 2,
+              "t": 1
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS02_A_product",
+        "data": {
+          "formula": "A_m=prod_p(1-min(m,t_p)/p^2)",
+          "finite_grid_cases": 68,
+          "failures": []
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS03_p0_definition",
+        "data": {
+          "definition": "p0=min prime p with p not dividing d",
+          "fixtures": [
+            {
+              "d": 2,
+              "p0": 3
+            },
+            {
+              "d": 6,
+              "p0": 5
+            },
+            {
+              "d": 10,
+              "p0": 3
+            },
+            {
+              "d": 14,
+              "p0": 3
+            },
+            {
+              "d": 30,
+              "p0": 7
+            },
+            {
+              "d": 210,
+              "p0": 11
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS04_A_cutoff",
+        "data": {
+          "zero_for_m_at_least_p0_squared": true,
+          "fixtures": [
+            {
+              "d": 2,
+              "cutoff": 9,
+              "A_cutoff": "0"
+            },
+            {
+              "d": 6,
+              "cutoff": 25,
+              "A_cutoff": "0"
+            },
+            {
+              "d": 10,
+              "cutoff": 9,
+              "A_cutoff": "0"
+            },
+            {
+              "d": 14,
+              "cutoff": 9,
+              "A_cutoff": "0"
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS05_R_second_difference",
+        "data": {
+          "formula": "R_l=A_l-2A_(l+1)+A_(l+2)",
+          "right_index": "l+2",
+          "fixtures": [
+            {
+              "d": 2,
+              "failures": []
+            },
+            {
+              "d": 6,
+              "failures": []
+            },
+            {
+              "d": 10,
+              "failures": []
+            },
+            {
+              "d": 14,
+              "failures": []
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS06_R_nonnegative_event",
+        "data": {
+          "event": "exact_bracketed_positive_run",
+          "fixtures": [
+            {
+              "d": 2,
+              "length": 1,
+              "value": "2381/11025"
+            },
+            {
+              "d": 2,
+              "length": 2,
+              "value": "74/11025"
+            },
+            {
+              "d": 2,
+              "length": 3,
+              "value": "71/11025"
+            },
+            {
+              "d": 2,
+              "length": 4,
+              "value": "68/11025"
+            },
+            {
+              "d": 2,
+              "length": 5,
+              "value": "13/2205"
+            },
+            {
+              "d": 2,
+              "length": 6,
+              "value": "62/11025"
+            },
+            {
+              "d": 2,
+              "length": 7,
+              "value": "59/11025"
+            },
+            {
+              "d": 2,
+              "length": 8,
+              "value": "697/22050"
+            },
+            {
+              "d": 6,
+              "length": 1,
+              "value": "2381/11025"
+            },
+            {
+              "d": 6,
+              "length": 2,
+              "value": "1093/22050"
+            },
+            {
+              "d": 6,
+              "length": 3,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 4,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 5,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 6,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 7,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 8,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 9,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 10,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 11,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 12,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 13,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 14,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 15,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 16,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 17,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 18,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 19,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 20,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 21,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 22,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 23,
+              "value": "2/3675"
+            },
+            {
+              "d": 6,
+              "length": 24,
+              "value": "1/147"
+            },
+            {
+              "d": 10,
+              "length": 1,
+              "value": "2381/11025"
+            },
+            {
+              "d": 10,
+              "length": 2,
+              "value": "74/11025"
+            },
+            {
+              "d": 10,
+              "length": 3,
+              "value": "71/11025"
+            },
+            {
+              "d": 10,
+              "length": 4,
+              "value": "53/4410"
+            },
+            {
+              "d": 10,
+              "length": 5,
+              "value": "4/2205"
+            },
+            {
+              "d": 10,
+              "length": 6,
+              "value": "4/2205"
+            },
+            {
+              "d": 10,
+              "length": 7,
+              "value": "4/2205"
+            },
+            {
+              "d": 10,
+              "length": 8,
+              "value": "82/2205"
+            },
+            {
+              "d": 14,
+              "length": 1,
+              "value": "2381/11025"
+            },
+            {
+              "d": 14,
+              "length": 2,
+              "value": "74/11025"
+            },
+            {
+              "d": 14,
+              "length": 3,
+              "value": "71/11025"
+            },
+            {
+              "d": 14,
+              "length": 4,
+              "value": "68/11025"
+            },
+            {
+              "d": 14,
+              "length": 5,
+              "value": "13/2205"
+            },
+            {
+              "d": 14,
+              "length": 6,
+              "value": "47/7350"
+            },
+            {
+              "d": 14,
+              "length": 7,
+              "value": "2/525"
+            },
+            {
+              "d": 14,
+              "length": 8,
+              "value": "17/525"
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS07_alternating_sum_start",
+        "data": {
+          "first_index": 1,
+          "first_sign": "+",
+          "sign": "(-1)^(m+1)"
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS08_alternating_sum_terminal",
+        "data": {
+          "last_index": "p0^2-1",
+          "A_at_p0_squared": "0",
+          "p0_is_odd": true
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS09_B_telescope_identity",
+        "data": {
+          "formula": "B=sum_(m=1)^(p0^2-1)(-1)^(m+1)A_m",
+          "fixtures": [
+            {
+              "d": 2,
+              "alternating": "4744/11025",
+              "run_endpoint": "4744/11025"
+            },
+            {
+              "d": 6,
+              "alternating": "191/450",
+              "run_endpoint": "191/450"
+            },
+            {
+              "d": 10,
+              "alternating": "4702/11025",
+              "run_endpoint": "4702/11025"
+            },
+            {
+              "d": 14,
+              "alternating": "451/1050",
+              "run_endpoint": "451/1050"
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS10_odd_forward_run_event",
+        "data": {
+          "event": "forward_positive_run_length_is_odd",
+          "phase_space": "finite_CRT_square_divisibility_phase_space_not_random_Mobius",
+          "fixtures": [
+            {
+              "d": 2,
+              "endpoint": "4744/11025",
+              "probability": "4744/11025"
+            },
+            {
+              "d": 6,
+              "endpoint": "191/450",
+              "probability": "191/450"
+            },
+            {
+              "d": 10,
+              "endpoint": "4702/11025",
+              "probability": "4702/11025"
+            },
+            {
+              "d": 14,
+              "endpoint": "451/1050",
+              "probability": "451/1050"
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS11_finite_CRT_oracle",
+        "data": {
+          "prime_support": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "residue_enumeration": "exact_mod_product_p_squared",
+          "fixtures": [
+            {
+              "d": 2,
+              "support": [
+                2,
+                3,
+                5,
+                7
+              ],
+              "p0": 3,
+              "cutoff": 9,
+              "A_cutoff": "0",
+              "R_second_difference_failures": [],
+              "alternating": "4744/11025",
+              "run_endpoint": "4744/11025",
+              "odd_forward_run_probability": "4744/11025",
+              "pass": true
+            },
+            {
+              "d": 6,
+              "support": [
+                2,
+                3,
+                5,
+                7
+              ],
+              "p0": 5,
+              "cutoff": 25,
+              "A_cutoff": "0",
+              "R_second_difference_failures": [],
+              "alternating": "191/450",
+              "run_endpoint": "191/450",
+              "odd_forward_run_probability": "191/450",
+              "pass": true
+            },
+            {
+              "d": 10,
+              "support": [
+                2,
+                3,
+                5,
+                7
+              ],
+              "p0": 3,
+              "cutoff": 9,
+              "A_cutoff": "0",
+              "R_second_difference_failures": [],
+              "alternating": "4702/11025",
+              "run_endpoint": "4702/11025",
+              "odd_forward_run_probability": "4702/11025",
+              "pass": true
+            },
+            {
+              "d": 14,
+              "support": [
+                2,
+                3,
+                5,
+                7
+              ],
+              "p0": 3,
+              "cutoff": 9,
+              "A_cutoff": "0",
+              "R_second_difference_failures": [],
+              "alternating": "451/1050",
+              "run_endpoint": "451/1050",
+              "odd_forward_run_probability": "451/1050",
+              "pass": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "telescope",
+        "id": "TS12_collision_exponent_oracle",
+        "data": {
+          "deduplicate_mod_p2": true,
+          "fixtures": [
+            {
+              "d": 2,
+              "prime": 2,
+              "level": 1,
+              "orbit": 2
+            },
+            {
+              "d": 2,
+              "prime": 3,
+              "level": 0,
+              "orbit": 9
+            },
+            {
+              "d": 2,
+              "prime": 5,
+              "level": 0,
+              "orbit": 25
+            },
+            {
+              "d": 2,
+              "prime": 7,
+              "level": 0,
+              "orbit": 49
+            },
+            {
+              "d": 4,
+              "prime": 2,
+              "level": 2,
+              "orbit": 1
+            },
+            {
+              "d": 4,
+              "prime": 3,
+              "level": 0,
+              "orbit": 9
+            },
+            {
+              "d": 4,
+              "prime": 5,
+              "level": 0,
+              "orbit": 25
+            },
+            {
+              "d": 4,
+              "prime": 7,
+              "level": 0,
+              "orbit": 49
+            },
+            {
+              "d": 6,
+              "prime": 2,
+              "level": 1,
+              "orbit": 2
+            },
+            {
+              "d": 6,
+              "prime": 3,
+              "level": 1,
+              "orbit": 3
+            },
+            {
+              "d": 6,
+              "prime": 5,
+              "level": 0,
+              "orbit": 25
+            },
+            {
+              "d": 6,
+              "prime": 7,
+              "level": 0,
+              "orbit": 49
+            },
+            {
+              "d": 18,
+              "prime": 2,
+              "level": 1,
+              "orbit": 2
+            },
+            {
+              "d": 18,
+              "prime": 3,
+              "level": 2,
+              "orbit": 1
+            },
+            {
+              "d": 18,
+              "prime": 5,
+              "level": 0,
+              "orbit": 25
+            },
+            {
+              "d": 18,
+              "prime": 7,
+              "level": 0,
+              "orbit": 49
+            },
+            {
+              "d": 50,
+              "prime": 2,
+              "level": 1,
+              "orbit": 2
+            },
+            {
+              "d": 50,
+              "prime": 3,
+              "level": 0,
+              "orbit": 9
+            },
+            {
+              "d": 50,
+              "prime": 5,
+              "level": 2,
+              "orbit": 1
+            },
+            {
+              "d": 50,
+              "prime": 7,
+              "level": 0,
+              "orbit": 49
+            },
+            {
+              "d": 98,
+              "prime": 2,
+              "level": 1,
+              "orbit": 2
+            },
+            {
+              "d": 98,
+              "prime": 3,
+              "level": 0,
+              "orbit": 9
+            },
+            {
+              "d": 98,
+              "prime": 5,
+              "level": 0,
+              "orbit": 25
+            },
+            {
+              "d": 98,
+              "prime": 7,
+              "level": 2,
+              "orbit": 1
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST01_square_p2",
+        "data": {
+          "condition": "2 divides h equivalently 4 divides d",
+          "not_called_square_factor_of_h": true,
+          "prime": 2,
+          "length": 2,
+          "strict": true,
+          "gap": "1/4"
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST02_square_p3",
+        "data": {
+          "condition": "3^2 divides h",
+          "prime": 3,
+          "length": 2,
+          "strict": true,
+          "gap_e0_e2": "1/9"
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST03_square_p5",
+        "data": {
+          "condition": "5^2 divides h",
+          "prime": 5,
+          "length": 2,
+          "strict": true,
+          "gap_e0_e2": "1/25"
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST04_square_generic",
+        "data": {
+          "odd_square_divisor": true,
+          "fixtures": [
+            {
+              "prime": 3,
+              "length": 2,
+              "gap": "1/9",
+              "strict": true
+            },
+            {
+              "prime": 5,
+              "length": 2,
+              "gap": "1/25",
+              "strict": true
+            },
+            {
+              "prime": 7,
+              "length": 2,
+              "gap": "1/49",
+              "strict": true
+            },
+            {
+              "prime": 11,
+              "length": 2,
+              "gap": "1/121",
+              "strict": true
+            },
+            {
+              "prime": 13,
+              "length": 2,
+              "gap": "1/169",
+              "strict": true
+            },
+            {
+              "prime": 17,
+              "length": 2,
+              "gap": "1/289",
+              "strict": true
+            },
+            {
+              "prime": 19,
+              "length": 2,
+              "gap": "1/361",
+              "strict": true
+            },
+            {
+              "prime": 23,
+              "length": 2,
+              "gap": "1/529",
+              "strict": true
+            },
+            {
+              "prime": 29,
+              "length": 2,
+              "gap": "1/841",
+              "strict": true
+            },
+            {
+              "prime": 31,
+              "length": 2,
+              "gap": "1/961",
+              "strict": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST05_single_p3",
+        "data": {
+          "condition": "3 exactly divides d",
+          "prime": 3,
+          "length": 4,
+          "strict": true,
+          "gap_e0_e1": "1/9"
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST06_single_p5",
+        "data": {
+          "condition": "5 exactly divides d",
+          "prime": 5,
+          "length": 6,
+          "strict": true,
+          "gap_e0_e1": "1/25"
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST07_single_p7",
+        "data": {
+          "condition": "7 exactly divides d",
+          "prime": 7,
+          "length": 8,
+          "strict": true,
+          "gap_e0_e1": "1/49"
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST08_boundary_CRT_L2",
+        "data": {
+          "length": 2,
+          "finite_square_support_first": true,
+          "positive_density_exact_run_cylinder": true,
+          "cofinal_union_tail_after_finite_transfer": true,
+          "relevant_gap": "gap_e1_e2",
+          "fixture": {
+            "prime": 2,
+            "length": 2,
+            "levels": [
+              "1",
+              "1",
+              "3/4"
+            ],
+            "gap_e0_e1": "0",
+            "gap_e1_e2": "1/4",
+            "gap_e0_e2": "1/4"
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST09_boundary_CRT_L4",
+        "data": {
+          "length": 4,
+          "finite_square_support_first": true,
+          "positive_density_exact_run_cylinder": true,
+          "cofinal_union_tail_after_finite_transfer": true,
+          "relevant_gap": "gap_e0_e1",
+          "fixture": {
+            "prime": 3,
+            "length": 4,
+            "levels": [
+              "2",
+              "17/9",
+              "16/9"
+            ],
+            "gap_e0_e1": "1/9",
+            "gap_e1_e2": "1/9",
+            "gap_e0_e2": "2/9"
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST10_boundary_CRT_L6",
+        "data": {
+          "length": 6,
+          "finite_square_support_first": true,
+          "positive_density_exact_run_cylinder": true,
+          "cofinal_union_tail_after_finite_transfer": true,
+          "relevant_gap": "gap_e0_e1",
+          "fixture": {
+            "prime": 5,
+            "length": 6,
+            "levels": [
+              "3",
+              "74/25",
+              "72/25"
+            ],
+            "gap_e0_e1": "1/25",
+            "gap_e1_e2": "2/25",
+            "gap_e0_e2": "3/25"
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST11_boundary_CRT_L8",
+        "data": {
+          "length": 8,
+          "finite_square_support_first": true,
+          "positive_density_exact_run_cylinder": true,
+          "cofinal_union_tail_after_finite_transfer": true,
+          "relevant_gap": "gap_e0_e1",
+          "fixture": {
+            "prime": 7,
+            "length": 8,
+            "levels": [
+              "4",
+              "195/49",
+              "192/49"
+            ],
+            "gap_e0_e1": "1/49",
+            "gap_e1_e2": "3/49",
+            "gap_e0_e2": "4/49"
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "strictness",
+        "id": "ST12_nonmax_partition",
+        "data": {
+          "criterion": "mu^2(h)=1 and gcd(h,210)=1",
+          "branches": [
+            "2 divides h",
+            "odd p^2 divides h",
+            "after squarefree reduction one of 3,5,7 divides h"
+          ],
+          "grid": {
+            "h_min": 1,
+            "h_max": 1000,
+            "cases": 1000,
+            "maximizers": 221,
+            "nonmaximizers": 779,
+            "failures": [],
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "maximizers",
+        "id": "MX01_base_h1",
+        "data": {
+          "h": 1,
+          "d": 2,
+          "p0": 3,
+          "cutoff_last_index": 8,
+          "maximizer": true
+        },
+        "pass": true
+      },
+      {
+        "group": "maximizers",
+        "id": "MX02_largeprime_invisibility",
+        "data": {
+          "prime_at_least": 11,
+          "length_range": [
+            1,
+            8
+          ],
+          "identity": "Lambda_p(L)=Lambda_(p^2)(L)",
+          "cases": 168,
+          "failures": []
+        },
+        "pass": true
+      },
+      {
+        "group": "maximizers",
+        "id": "MX03_multiprime_invisibility",
+        "data": {
+          "fixtures": [
+            {
+              "h": 11,
+              "factors": [
+                [
+                  11,
+                  1
+                ]
+              ],
+              "all_invisible": true,
+              "maximizer": true
+            },
+            {
+              "h": 13,
+              "factors": [
+                [
+                  13,
+                  1
+                ]
+              ],
+              "all_invisible": true,
+              "maximizer": true
+            },
+            {
+              "h": 143,
+              "factors": [
+                [
+                  11,
+                  1
+                ],
+                [
+                  13,
+                  1
+                ]
+              ],
+              "all_invisible": true,
+              "maximizer": true
+            },
+            {
+              "h": 187,
+              "factors": [
+                [
+                  11,
+                  1
+                ],
+                [
+                  17,
+                  1
+                ]
+              ],
+              "all_invisible": true,
+              "maximizer": true
+            },
+            {
+              "h": 2431,
+              "factors": [
+                [
+                  11,
+                  1
+                ],
+                [
+                  13,
+                  1
+                ],
+                [
+                  17,
+                  1
+                ]
+              ],
+              "all_invisible": true,
+              "maximizer": true
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "maximizers",
+        "id": "MX04_true_examples",
+        "data": {
+          "examples": [
+            1,
+            11,
+            13,
+            143,
+            187
+          ],
+          "values": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "maximizers",
+        "id": "MX05_false_smallprime_examples",
+        "data": {
+          "examples": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "values": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "maximizers",
+        "id": "MX06_false_square_examples",
+        "data": {
+          "examples": [
+            25,
+            49,
+            121,
+            169
+          ],
+          "values": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "maximizers",
+        "id": "MX07_exhaustive_predicate_grid",
+        "data": {
+          "h_range": [
+            1,
+            1000
+          ],
+          "grid": {
+            "h_min": 1,
+            "h_max": 1000,
+            "cases": 1000,
+            "maximizers": 221,
+            "nonmaximizers": 779,
+            "failures": [],
+            "pass": true
+          }
+        },
+        "pass": true
+      },
+      {
+        "group": "maximizers",
+        "id": "MX08_exact_iff",
+        "data": {
+          "literal": "mu^2(h)=1 and gcd(h,210)=1",
+          "logical_connector": "and",
+          "small_prime_product": 210,
+          "equivalence": "B_infinity(h)=B_infinity(1) iff criterion",
+          "maximizers_infinite": true
+        },
+        "pass": true
+      },
+      {
+        "group": "complement_gap",
+        "id": "CG01_square_sequence",
+        "data": {
+          "sequence": "h=p^2 for prime p>=11",
+          "rows": [
+            {
+              "prime": 11,
+              "h": 121,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/121"
+            },
+            {
+              "prime": 13,
+              "h": 169,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/169"
+            },
+            {
+              "prime": 17,
+              "h": 289,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/289"
+            },
+            {
+              "prime": 19,
+              "h": 361,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/361"
+            },
+            {
+              "prime": 23,
+              "h": 529,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/529"
+            },
+            {
+              "prime": 29,
+              "h": 841,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/841"
+            },
+            {
+              "prime": 31,
+              "h": 961,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/961"
+            },
+            {
+              "prime": 37,
+              "h": 1369,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/1369"
+            },
+            {
+              "prime": 41,
+              "h": 1681,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/1681"
+            },
+            {
+              "prime": 43,
+              "h": 1849,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/1849"
+            },
+            {
+              "prime": 47,
+              "h": 2209,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/2209"
+            },
+            {
+              "prime": 53,
+              "h": 2809,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/2809"
+            },
+            {
+              "prime": 59,
+              "h": 3481,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/3481"
+            },
+            {
+              "prime": 61,
+              "h": 3721,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/3721"
+            },
+            {
+              "prime": 67,
+              "h": 4489,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/4489"
+            },
+            {
+              "prime": 71,
+              "h": 5041,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/5041"
+            },
+            {
+              "prime": 73,
+              "h": 5329,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/5329"
+            },
+            {
+              "prime": 79,
+              "h": 6241,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/6241"
+            },
+            {
+              "prime": 83,
+              "h": 6889,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/6889"
+            },
+            {
+              "prime": 89,
+              "h": 7921,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/7921"
+            },
+            {
+              "prime": 97,
+              "h": 9409,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/9409"
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "complement_gap",
+        "id": "CG02_sequence_strict",
+        "data": {
+          "strict_lower": "0<B1-B_(p^2)",
+          "L2_exact_run_cylinder_positive": true,
+          "local_facts": [
+            {
+              "prime": 11,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/121"
+            },
+            {
+              "prime": 13,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/169"
+            },
+            {
+              "prime": 17,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/289"
+            },
+            {
+              "prime": 19,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/361"
+            },
+            {
+              "prime": 23,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/529"
+            },
+            {
+              "prime": 29,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/841"
+            },
+            {
+              "prime": 31,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/961"
+            },
+            {
+              "prime": 37,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/1369"
+            },
+            {
+              "prime": 41,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/1681"
+            },
+            {
+              "prime": 43,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/1849"
+            },
+            {
+              "prime": 47,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/2209"
+            },
+            {
+              "prime": 53,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/2809"
+            },
+            {
+              "prime": 59,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/3481"
+            },
+            {
+              "prime": 61,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/3721"
+            },
+            {
+              "prime": 67,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/4489"
+            },
+            {
+              "prime": 71,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/5041"
+            },
+            {
+              "prime": 73,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/5329"
+            },
+            {
+              "prime": 79,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/6241"
+            },
+            {
+              "prime": 83,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/6889"
+            },
+            {
+              "prime": 89,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/7921"
+            },
+            {
+              "prime": 97,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/9409"
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "complement_gap",
+        "id": "CG03_sequence_upper_bound",
+        "data": {
+          "upper": "B1-B_(p^2)<=1/p^2",
+          "local_facts": [
+            {
+              "prime": 11,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/121"
+            },
+            {
+              "prime": 13,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/169"
+            },
+            {
+              "prime": 17,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/289"
+            },
+            {
+              "prime": 19,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/361"
+            },
+            {
+              "prime": 23,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/529"
+            },
+            {
+              "prime": 29,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/841"
+            },
+            {
+              "prime": 31,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/961"
+            },
+            {
+              "prime": 37,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/1369"
+            },
+            {
+              "prime": 41,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/1681"
+            },
+            {
+              "prime": 43,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/1849"
+            },
+            {
+              "prime": 47,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/2209"
+            },
+            {
+              "prime": 53,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/2809"
+            },
+            {
+              "prime": 59,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/3481"
+            },
+            {
+              "prime": 61,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/3721"
+            },
+            {
+              "prime": 67,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/4489"
+            },
+            {
+              "prime": 71,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/5041"
+            },
+            {
+              "prime": 73,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/5329"
+            },
+            {
+              "prime": 79,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/6241"
+            },
+            {
+              "prime": 83,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/6889"
+            },
+            {
+              "prime": 89,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/7921"
+            },
+            {
+              "prime": 97,
+              "odd_gaps": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "even_scaled_gaps": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "L2_gap": "1/9409"
+            }
+          ],
+          "run_density_weight_bound": "sum_(even L<=8)rho_L*a(L)<=1",
+          "rows": [
+            {
+              "prime": 11,
+              "h": 121,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/121"
+            },
+            {
+              "prime": 13,
+              "h": 169,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/169"
+            },
+            {
+              "prime": 17,
+              "h": 289,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/289"
+            },
+            {
+              "prime": 19,
+              "h": 361,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/361"
+            },
+            {
+              "prime": 23,
+              "h": 529,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/529"
+            },
+            {
+              "prime": 29,
+              "h": 841,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/841"
+            },
+            {
+              "prime": 31,
+              "h": 961,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/961"
+            },
+            {
+              "prime": 37,
+              "h": 1369,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/1369"
+            },
+            {
+              "prime": 41,
+              "h": 1681,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/1681"
+            },
+            {
+              "prime": 43,
+              "h": 1849,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/1849"
+            },
+            {
+              "prime": 47,
+              "h": 2209,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/2209"
+            },
+            {
+              "prime": 53,
+              "h": 2809,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/2809"
+            },
+            {
+              "prime": 59,
+              "h": 3481,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/3481"
+            },
+            {
+              "prime": 61,
+              "h": 3721,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/3721"
+            },
+            {
+              "prime": 67,
+              "h": 4489,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/4489"
+            },
+            {
+              "prime": 71,
+              "h": 5041,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/5041"
+            },
+            {
+              "prime": 73,
+              "h": 5329,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/5329"
+            },
+            {
+              "prime": 79,
+              "h": 6241,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/6241"
+            },
+            {
+              "prime": 83,
+              "h": 6889,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/6889"
+            },
+            {
+              "prime": 89,
+              "h": 7921,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/7921"
+            },
+            {
+              "prime": 97,
+              "h": 9409,
+              "fixed_lag": true,
+              "maximizer": false,
+              "gap_upper": "1/9409"
+            }
+          ]
+        },
+        "pass": true
+      },
+      {
+        "group": "complement_gap",
+        "id": "CG04_sequence_limit",
+        "data": {
+          "fixed_lags_one_at_a_time": true,
+          "prime_tends_to_infinity": true,
+          "upper_bound_tends_to_zero": true,
+          "no_varying_h_terminal_limit": true
+        },
+        "pass": true
+      },
+      {
+        "group": "complement_gap",
+        "id": "CG05_complement_sup",
+        "data": {
+          "domain": "positive_lags_not_in_maximizer_set",
+          "extremum": "supremum",
+          "value": "B_infinity(1)"
+        },
+        "pass": true
+      },
+      {
+        "group": "complement_gap",
+        "id": "CG06_complement_unattained",
+        "data": {
+          "attained": false,
+          "reason": "exact equality iff maximizer criterion"
+        },
+        "pass": true
+      },
+      {
+        "group": "complement_gap",
+        "id": "CG07_p0_ge5_reduction",
+        "data": {
+          "condition": "p0(h)>=5",
+          "three_divides_d": true,
+          "comparison": "B_h<=B_3"
+        },
+        "pass": true
+      },
+      {
+        "group": "complement_gap",
+        "id": "CG08_uniform_gap_chain",
+        "data": {
+          "factors": [
+            "1/2",
+            "1/25",
+            "1/49",
+            "tail>3/5",
+            "local_loss=1/9"
+          ],
+          "tail_lower": "3/5",
+          "cylinder_density_lower": "3/12250",
+          "local_loss": "1/9",
+          "strong_gap": "1/36750",
+          "theorem_gap": "2/1334025",
+          "chain": "B1-Bh>=B1-B3>1/36750>2/1334025"
+        },
+        "pass": true
+      },
+      {
+        "group": "joint_endpoint",
+        "id": "JE01_fixed_pair_strict",
+        "data": {
+          "statement": "C_h(q)<B_infinity(h)<=B_infinity(1)",
+          "finite_pair_strict": true,
+          "h_fixed": true,
+          "q_finite": true
+        },
+        "pass": true
+      },
+      {
+        "group": "joint_endpoint",
+        "id": "JE02_h1_cofinal_lower",
+        "data": {
+          "statement": "sup_(q finite)C_1(q)=B_infinity(1)",
+          "finite_q_attains": false,
+          "source": "RH396_Theorem_1_3_equation_22"
+        },
+        "pass": true
+      },
+      {
+        "group": "joint_endpoint",
+        "id": "JE03_joint_supremum",
+        "data": {
+          "extremum": "supremum",
+          "domain": "h>=1 and q finite",
+          "value": "B_infinity(1)"
+        },
+        "pass": true
+      },
+      {
+        "group": "joint_endpoint",
+        "id": "JE04_joint_nonattainment",
+        "data": {
+          "no_finite_pair_attains": true,
+          "retained_infimum": "inf_h B_infinity(h)=3/pi^2",
+          "infimum_attained": false
+        },
+        "pass": true
+      },
+      {
+        "group": "firewalls",
+        "id": "FW01_quantifier_order",
+        "data": {
+          "order": [
+            "fix h,q,F,omega",
+            "X_to_infinity",
+            "finite_safe_maximum",
+            "scalar_supremum_over_finite_q",
+            "scalar_supremum_over_fixed_h"
+          ],
+          "prelimit_maximum": false
+        },
+        "pass": true
+      },
+      {
+        "group": "firewalls",
+        "id": "FW02_data_scope",
+        "data": {
+          "growing_h": false,
+          "growing_q": false,
+          "growing_table": false,
+          "moving_order": false,
+          "uniform_rate": false,
+          "fixed_scalar_endpoint_comparison_only": true
+        },
+        "pass": true
+      },
+      {
+        "group": "firewalls",
+        "id": "FW03_source_roles",
+        "data": {
+          "RH396": "sole_load_bearing_theorem_and_analytic_endpoint_input_equations_18_21_Theorem_1_3_equation_22_Corollary_1_4_equation_23",
+          "RH397": "direct_release_and_provenance_predecessor_only",
+          "RH397_analytic_input": false,
+          "new_remote_source": false
+        },
+        "pass": true
+      },
+      {
+        "group": "firewalls",
+        "id": "FW04_claim_ceiling",
+        "data": {
+          "ordinary_Cesaro": false,
+          "causal_online": false,
+          "four_shift": false,
+          "generic_graph": false,
+          "monotonicity_in_h": false,
+          "operator": false,
+          "trace": false,
+          "zeros": false,
+          "RH_or_Gates_A_E": false,
+          "finite_certificate_replaces_analytic_proof": false
+        },
+        "pass": true
+      }
+    ],
+    "mutation_names": [
+      "loss_ceil_to_floor",
+      "loss_enumerator_omits_residue_zero",
+      "oddT_oddL_wrong_branch",
+      "oddT_evenL_drops_max",
+      "evenT_oddL_drops_min",
+      "evenT_evenL_nonzero",
+      "preperiod_threshold_shift",
+      "loss_grid_hides_failure",
+      "t_map_min_to_max",
+      "t_map_omit_gcd",
+      "t_map_all_p2",
+      "local_score_denominator_p",
+      "local_order_swap_e0_e1",
+      "local_order_swap_e1_e2",
+      "odd_even_equality_promoted",
+      "p2_gap_wrong",
+      "p3_gap_wrong",
+      "p5_gap_wrong",
+      "p7_gap_wrong",
+      "A_product_min_to_max",
+      "A_cutoff_missing",
+      "R_left_sign_flip",
+      "R_right_index_shift",
+      "alternating_start_negative",
+      "alternating_terminal_included",
+      "odd_run_to_even_run",
+      "CRT_support_drops_7",
+      "collision_exponent_ignored",
+      "omit_square_strict",
+      "drop_single_p3",
+      "drop_single_p5",
+      "drop_single_p7",
+      "partition_squarefree_only",
+      "partition_gcd_only",
+      "maximizer_210_to_30",
+      "maximizer_210_to_42",
+      "maximizer_210_to_70",
+      "maximizer_210_to_105",
+      "invisible_prime_threshold_7",
+      "exact_iff_or",
+      "square_sequence_p2_to_p",
+      "sequence_gap_zero_allowed",
+      "sequence_bound_sign_flip",
+      "complement_max_attained",
+      "complement_sup_to_max",
+      "p0_reduction_drops_3",
+      "cylinder_omit_2",
+      "cylinder_omit_5",
+      "cylinder_omit_7",
+      "cylinder_omit_tail",
+      "cylinder_omit_local_loss",
+      "gap_constant_wrong",
+      "gap_direction_flip",
+      "finite_pair_attained",
+      "joint_sup_to_max",
+      "q_max_before_limit",
+      "claim_growing_h",
+      "RH397_promoted_analytic",
+      "claim_monotonic_h",
+      "claim_ordinary_Cesaro",
+      "claim_causal",
+      "claim_operator",
+      "claim_RH_Gates",
+      "lag_infimum_attained",
+      "lag_infimum_value_wrong",
+      "RH396_endpoint_input_omitted"
+    ],
+    "all_pass": true
+  },
+  "core_mutation_audit": [
+    {
+      "name": "loss_ceil_to_floor",
+      "target_id": "LF01_oddT_oddL",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "loss_enumerator_omits_residue_zero",
+      "target_id": "LF12_enumerator_grid",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "oddT_oddL_wrong_branch",
+      "target_id": "LF01_oddT_oddL",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "oddT_evenL_drops_max",
+      "target_id": "LF02_oddT_evenL",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "evenT_oddL_drops_min",
+      "target_id": "LF03_evenT_oddL",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "evenT_evenL_nonzero",
+      "target_id": "LF04_evenT_evenL",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "preperiod_threshold_shift",
+      "target_id": "LF09_preperiod_L_lt_T",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "loss_grid_hides_failure",
+      "target_id": "LF12_enumerator_grid",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "t_map_min_to_max",
+      "target_id": "LO01_t_exponent_map",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "t_map_omit_gcd",
+      "target_id": "TS01_t_p_gcd_formula",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "t_map_all_p2",
+      "target_id": "LO01_t_exponent_map",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "local_score_denominator_p",
+      "target_id": "LO02_oddprime_e0_ge_e1",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "local_order_swap_e0_e1",
+      "target_id": "LO02_oddprime_e0_ge_e1",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "local_order_swap_e1_e2",
+      "target_id": "LO03_oddprime_e1_ge_e2",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "odd_even_equality_promoted",
+      "target_id": "LO04_oddL_threeway_equal",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "p2_gap_wrong",
+      "target_id": "LO09_p2_L2_strict",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "p3_gap_wrong",
+      "target_id": "LO10_p3_L4_strict",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "p5_gap_wrong",
+      "target_id": "LO11_p5_L6_strict",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "p7_gap_wrong",
+      "target_id": "LO12_p7_L8_strict",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "A_product_min_to_max",
+      "target_id": "TS02_A_product",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "A_cutoff_missing",
+      "target_id": "TS04_A_cutoff",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "R_left_sign_flip",
+      "target_id": "TS05_R_second_difference",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "R_right_index_shift",
+      "target_id": "TS05_R_second_difference",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "alternating_start_negative",
+      "target_id": "TS07_alternating_sum_start",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "alternating_terminal_included",
+      "target_id": "TS08_alternating_sum_terminal",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "odd_run_to_even_run",
+      "target_id": "TS10_odd_forward_run_event",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "CRT_support_drops_7",
+      "target_id": "TS11_finite_CRT_oracle",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "collision_exponent_ignored",
+      "target_id": "TS12_collision_exponent_oracle",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "omit_square_strict",
+      "target_id": "ST01_square_p2",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "drop_single_p3",
+      "target_id": "ST05_single_p3",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "drop_single_p5",
+      "target_id": "ST06_single_p5",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "drop_single_p7",
+      "target_id": "ST07_single_p7",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "partition_squarefree_only",
+      "target_id": "ST12_nonmax_partition",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "partition_gcd_only",
+      "target_id": "ST12_nonmax_partition",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "maximizer_210_to_30",
+      "target_id": "MX08_exact_iff",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "maximizer_210_to_42",
+      "target_id": "MX08_exact_iff",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "maximizer_210_to_70",
+      "target_id": "MX08_exact_iff",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "maximizer_210_to_105",
+      "target_id": "MX08_exact_iff",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "invisible_prime_threshold_7",
+      "target_id": "MX02_largeprime_invisibility",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "exact_iff_or",
+      "target_id": "MX08_exact_iff",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "square_sequence_p2_to_p",
+      "target_id": "CG01_square_sequence",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "sequence_gap_zero_allowed",
+      "target_id": "CG02_sequence_strict",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "sequence_bound_sign_flip",
+      "target_id": "CG03_sequence_upper_bound",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "complement_max_attained",
+      "target_id": "CG06_complement_unattained",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "complement_sup_to_max",
+      "target_id": "CG05_complement_sup",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "p0_reduction_drops_3",
+      "target_id": "CG07_p0_ge5_reduction",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "cylinder_omit_2",
+      "target_id": "CG08_uniform_gap_chain",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "cylinder_omit_5",
+      "target_id": "CG08_uniform_gap_chain",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "cylinder_omit_7",
+      "target_id": "CG08_uniform_gap_chain",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "cylinder_omit_tail",
+      "target_id": "CG08_uniform_gap_chain",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "cylinder_omit_local_loss",
+      "target_id": "CG08_uniform_gap_chain",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "gap_constant_wrong",
+      "target_id": "CG08_uniform_gap_chain",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "gap_direction_flip",
+      "target_id": "CG08_uniform_gap_chain",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "finite_pair_attained",
+      "target_id": "JE01_fixed_pair_strict",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "joint_sup_to_max",
+      "target_id": "JE03_joint_supremum",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "q_max_before_limit",
+      "target_id": "FW01_quantifier_order",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "claim_growing_h",
+      "target_id": "FW02_data_scope",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "RH397_promoted_analytic",
+      "target_id": "FW03_source_roles",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "claim_monotonic_h",
+      "target_id": "FW04_claim_ceiling",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "claim_ordinary_Cesaro",
+      "target_id": "FW04_claim_ceiling",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "claim_causal",
+      "target_id": "FW04_claim_ceiling",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "claim_operator",
+      "target_id": "FW04_claim_ceiling",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "claim_RH_Gates",
+      "target_id": "FW04_claim_ceiling",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "lag_infimum_attained",
+      "target_id": "JE04_joint_nonattainment",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "lag_infimum_value_wrong",
+      "target_id": "JE04_joint_nonattainment",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    },
+    {
+      "name": "RH396_endpoint_input_omitted",
+      "target_id": "FW03_source_roles",
+      "existing_leaf_changed": true,
+      "false_validator_rejected": true
+    }
+  ],
+  "declarations": {
+    "network_opt_in": false,
+    "requests_made": 0,
+    "external_payload_vendored": false,
+    "external_payload_hash_hits": [],
+    "remote_redistributable_in_release": [
+      false,
+      false,
+      true,
+      false
+    ],
+    "finite_reproduction_not_analytic_proof": true,
+    "fixed_scalar_endpoints_only": true,
+    "limit_before_finite_maximum": true,
+    "outer_theorem_contract_closed": true
+  },
+  "epistemic_role": "finite_exact_reproduction_plus_frozen_analytic_interfaces",
+  "forbidden": {
+    "growing_h": false,
+    "h_depending_on_X": false,
+    "growing_q": false,
+    "q_depending_on_X": false,
+    "prelimit_maximum": false,
+    "ordinary_Cesaro_average": false,
+    "causal_or_online_rule": false,
+    "monotonicity_in_h": false,
+    "finite_certificate_is_analytic_proof": false,
+    "network_fetch_required": false,
+    "external_payload_vendored": false,
+    "operator_model": false,
+    "zero_model": false,
+    "proof_of_Riemann_Hypothesis": false
+  },
+  "gates": {
+    "A_intrinsic_determinant": false,
+    "B_scattering_completion": false,
+    "C_self_adjoint_generator": false,
+    "D_von_mangoldt_weighted_prime_power_traces": false,
+    "E_completed_zeta_divisor_equality": false
+  },
+  "identities": {
+    "core_file": {
+      "bytes": 61751,
+      "sha256": "ce728df064b2538e49a1f47de5db0ee7e6eabee3d99283be5dc3eb3c122df9da"
+    },
+    "core_test": {
+      "bytes": 9451,
+      "sha256": "bd2599e3d312088798c128e17f9b7f1dc8904c63f65319c7e46dd30faf603f18"
+    },
+    "certificate": {
+      "canonical_bytes": 36635,
+      "canonical_sha256": "d47de091a8fe5a134ba4bbf8ac4689f53b54786d45dc3bfc7061c99b46bea741",
+      "rows": 72,
+      "mutations": 66
+    },
+    "source_builder": {
+      "bytes": 30176,
+      "sha256": "65a1a1e4a038c1166b033565bbfd18fb2c3f188593341945dbc83db9a223df6b"
+    },
+    "source_test": {
+      "bytes": 21551,
+      "sha256": "4bc4db756727ad6b7df819d08b3c402ab9a399e49c0e27dd12cf78d4bb8a9227"
+    },
+    "source_closure": {
+      "canonical_bytes": 64997,
+      "canonical_sha256": "5cb3a2f4339ba0b2f11654092496bf7caf255d0d0e7ccf23524355d9f3fa97d7",
+      "git": 184,
+      "remote": 4,
+      "logical": 188,
+      "group_sizes": {
+        "rh397_immutable_closure": 172,
+        "rh397_standard8": 8,
+        "rh397_prior_external_locks": 4
+      },
+      "group_digests": {
+        "rh397_immutable_closure": "fd2d749a09316b9c412780e61882e5f1ac050af609cd0a96c0d1aea79ac4c82d",
+        "rh397_standard8": "eb7355565e8429765cb967192c00e261998147abb68fb0307517695621bdfd62",
+        "rh397_prior_external_locks": "e044509ee377c35cea8642b67a75ca5dc4ba861f455228bde7341418791bce20"
+      },
+      "all_git_sha256": "e7341caa25f0787a2e48a4d9c156e0d785b6c2a5516172bdfb25c2ac45377ea8",
+      "logical_sha256": "4cc752fb7baae977bb15a9420101c5ed37727b1f3f7eecf72afce9dec3c73b13"
+    },
+    "theorem_contract_sha256": "cedc5c59a7476ecef897b99d3fa9cc5ee004c8840da5f127a967fa4e3276edbe",
+    "source_role_sha256": "76f8d79f7fed8052c5caf0858d6fa1916a88a26a55eac3278b93369d663b0a9b"
+  },
+  "paper": "RH-398",
+  "result_mutation_names": [
+    "all_pass",
+    "schema_float",
+    "schema_bool",
+    "paper",
+    "status",
+    "core_hash",
+    "certificate_hash",
+    "source_hash",
+    "rights",
+    "network",
+    "fixed_scope",
+    "h_domain",
+    "q_domain",
+    "r_domain",
+    "alphabet",
+    "phase_table",
+    "mobius_extension",
+    "omega",
+    "fixed_data",
+    "centered_output",
+    "terminal_functional",
+    "safety",
+    "limit",
+    "capacity",
+    "d_to_h",
+    "p0",
+    "A_product",
+    "R_difference",
+    "telescope",
+    "maximum",
+    "maximizers",
+    "complement_attained",
+    "gap",
+    "joint_attained",
+    "infimum",
+    "source_role",
+    "RH396_locator",
+    "forbidden",
+    "gate",
+    "mutation_leaf",
+    "outer_contract",
+    "result_mutation_count",
+    "summary",
+    "extra"
+  ],
+  "schema_version": 1,
+  "source_closure": {
+    "direct_predecessor": {
+      "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+      "directory": "papers/RH-397-odd-lag-half-span-overlap-mobius-capacity",
+      "result_sha256": "d21f3ab160c7cb5cfca1ff04ac7d2104ea8a7802b36eb3e2f07e32cbe1d27e4f",
+      "role": "direct_release_and_provenance_predecessor_only"
+    },
+    "source_roles": {
+      "RH397": {
+        "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+        "directory": "papers/RH-397-odd-lag-half-span-overlap-mobius-capacity",
+        "role": "direct_release_and_provenance_predecessor_only",
+        "analytic_input": false
+      },
+      "RH396": {
+        "commit": "cd57086fa90939d56656c3f952a08ffad9aabefe",
+        "directory": "papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity",
+        "role": "sole_load_bearing_theorem_and_analytic_endpoint_input_equations_18_21_Theorem_1_3_equation_22_Corollary_1_4_equation_23",
+        "analytic_input": true
+      },
+      "RH394": {
+        "commit": "6b3d616851cd2d7cba66371d0aa9f25b8e8bf2f7",
+        "directory": "papers/RH-394-odd-parity-terminal-log-mobius-compiler",
+        "role": "transitive_fixed_distinct_three_shift_provenance_only_via_RH396",
+        "analytic_input": false
+      },
+      "RH392": {
+        "commit": "9768c1cb5f56d959406c19119315afd542b6c30f",
+        "directory": "papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape",
+        "role": "transitive_fixed_lag_comparison_only",
+        "analytic_input": false
+      },
+      "RH395": {
+        "commit": "20de7202518f4488cbd9c7d63bf94aaa3dc94476",
+        "directory": "papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity",
+        "role": "transitive_relation_saturation_and_tropical_comparison_only",
+        "analytic_input": false
+      },
+      "RH375": {
+        "commit": "071fed1b2a5d8488b9d2e35a99a753953b233584",
+        "directory": "papers/RH-375-all-clock-one-site-mobius-capacity-supremum",
+        "role": "transitive_one_site_MWIS_and_square_clock_comparison_only",
+        "analytic_input": false
+      }
+    },
+    "git": {
+      "all_git_source_digest": "e7341caa25f0787a2e48a4d9c156e0d785b6c2a5516172bdfb25c2ac45377ea8",
+      "count": 184,
+      "digest_contract_pass": true,
+      "entries": [
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/README.md",
+          "sha256": "dbc0041d012d6316ef6a8ffab6f05d510a1cc68414eae30c3744a7c411925c4c"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/THEOREM_LEDGER.md",
+          "sha256": "9451ee6faf1f523a62a10c85ba494b8617011dab7b8d7bc517e7c0c26aabb4ee"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/UPDATED_ROADMAP.md",
+          "sha256": "c6857ef5bc9cd88074108254fc39a93e985daae7fa545e26badbfdfc086bf28c"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/main.tex",
+          "sha256": "2129075ec4bae1c5f0f25fcd09cec273fe322d44116d51e5191e3cade4fb9f6d"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/references.bib",
+          "sha256": "ce1e5123ff7edc05c6436f2534044e7058b4a3857bf0f084971954ced3e7c184"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/results/result.json",
+          "sha256": "ca492e96bd557b966d7924ee7acca7eceb9248dafe513a674f36f78891438bdd"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-374-square-clock-euler-product-capacity-floor/src/square_clock/core.py",
+          "sha256": "79afe7d583c3db30f876c62605a42f2ee77819028a40d01a3ec24d3259a40615"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/README.md",
+          "sha256": "8beb603782f40db86031515d3a70d82e4f76cdf10d60561062d88ff581daffe5"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/THEOREM_LEDGER.md",
+          "sha256": "7229a3969c48463724ed573b4dde1da3e8a48790ebe7663af68b1139a033c2bb"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/UPDATED_ROADMAP.md",
+          "sha256": "75c243a5ae12fbe71cdb2ce3cb3c46a8e7a61d016dd6c8dba2b98b6b9dac3464"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/main.tex",
+          "sha256": "c5d97a227398a4f1d46a39fdec73ffb86aeb9bfc0f16296be7023b187b497090"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/references.bib",
+          "sha256": "d728ca8571bfcc96e78be3b5231db83c3bb61140d0dfabb3be0b4848738673c6"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.json",
+          "sha256": "a209b922ad6235263bb5213d090a2fb0ad0bcfdd0168788e64115b33d95a4ca8"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/results/result.schema.json",
+          "sha256": "0af712350369e3f7e4a51ce5a8ee1179928e9397372b7b1040183dc3668406df"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-379-phasewise-chowla-free-memory-supremum/src/phasewise_memory/core.py",
+          "sha256": "cd3949cc0a1ece1dadab59c049c8a4d3fc170a9c7b6332b93ad62567277fd582"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/README.md",
+          "sha256": "eb241b1fd954ba689750d47dd51ae7cd5980c2bb7706165e3fcbab2e2375bc23"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/THEOREM_LEDGER.md",
+          "sha256": "c274c2a5685ba6d472d392c5097149742e432e938aeb61fd3f5b7f001a382c7a"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/UPDATED_ROADMAP.md",
+          "sha256": "8a82e86bf66248d5dda44ca806fd2c5d974530b5b7e85baac25c0aa98f41ce1d"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/main.tex",
+          "sha256": "6110b876e1b31fe79e7ff72e5058d97179575cf1dccce86e8c7c0a049d57451f"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/references.bib",
+          "sha256": "5ea4b95e74c63e47b5eb6a92564941748fb02fc7e7729efe05f52932bb657604"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.json",
+          "sha256": "e7e6bc2acc46b9346e2fdd90306e9f8c5fb18c193ed0601466bbf4e01a92be33"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/results/result.schema.json",
+          "sha256": "62bb03f0e61043bdeda0bf49afcbc0877d95115ca677e7cda20a73d955c5a57f"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-380-square-clock-monotonicity-and-finite-clock-nonattainment/src/finite_clock_gap/core.py",
+          "sha256": "ed88dd657fcf4c3fa4ae1c2cd2d0a434770433e7cffd0b52297faab1d5459074"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/README.md",
+          "sha256": "891ebd30acfbffd90cddda3bd96719f01d7cae13eec399894b08c0c20435dae3"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/THEOREM_LEDGER.md",
+          "sha256": "a7a79197bba2a423cff77f6f74e63c8621a40c2bcef368e5ce6ce954857edcda"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/UPDATED_ROADMAP.md",
+          "sha256": "f2ea88b81441c78171a2a54d85ddc7f2a405ae78b94cac43ca6f6ae46048d703"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/main.tex",
+          "sha256": "b1025502880530602f134ea5bdc6dcde34e2cdfd18fb364cb104343d456b643a"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/references.bib",
+          "sha256": "bb61978aebc465b05e3ffda154926ad20bb15e4a475e12304cc6147903d40625"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.json",
+          "sha256": "a7a869f40af0a17656b28a07fe58e337d9b8e619d13de8bc671326912f875ffd"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/results/result.schema.json",
+          "sha256": "ed1788580270f03bdcbb43172edf149f086b76564697dd93e1556282855aad5b"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-381-prime-square-tail-rate-and-quadratic-memory-remainder/src/prime_square_tail/core.py",
+          "sha256": "acc1e11ff57b634ec702996526f4ddd12ac58d372236a8d77202b529faca9322"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/README.md",
+          "sha256": "5f818841bb7db7c8b27e75d892a2fa6f3de549edb7456f65fb2275b82356203a"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/THEOREM_LEDGER.md",
+          "sha256": "1c835ef614fd9381c08019f0cb5358c829bafdb2e7502861649566508b4ea586"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/UPDATED_ROADMAP.md",
+          "sha256": "793e27292d6f99fc1c23a550e66b247bbc1aa1b5c0bfef266339697bf3b9e66e"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/main.tex",
+          "sha256": "929b4304390036843c5e4f0d165f3be45d683e36f2a7537a3a5d14ed197b5d0c"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/references.bib",
+          "sha256": "c8ea97c3b3626d27fc6a3ec0dca69aa87c4eb2b248ec410bc989aff0aa4f11dc"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.json",
+          "sha256": "960ef6ce017ad62b6c552ed30a41b9f0c3e41a9a217ef103c4a3f812c80a71d2"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/results/result.schema.json",
+          "sha256": "573b631820edd3b911b9792f9587fee07a03cf13ecefd03a6247d115cfa42394"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-382-two-scale-prime-square-tail-expansion/src/two_scale_tail/core.py",
+          "sha256": "3fd8bd0233385aeb440d0703769ea6b624792aef4460ec5b887116fe3554b56e"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/README.md",
+          "sha256": "a666c7d396bb54062b761f06d95d35a3b27ddceec7ed7a6519cbfc61e7d590f3"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/THEOREM_LEDGER.md",
+          "sha256": "eb117b3e731cfc2bb9b6df0368f475d25ec0b1646f4ac7e616dd29e1d7ddd896"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/UPDATED_ROADMAP.md",
+          "sha256": "9d9e36e923e1430aeee6715684b3039ccca576360e3c5528d85fe355a088ae51"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/main.tex",
+          "sha256": "b1030a1203685121ddc99504d0d8a5b389611b41e47a1009fea70a0215ab3bb3"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/references.bib",
+          "sha256": "0cd86c21c7b65399043ec4994baecb3501b8e7e61294b211131488a9fe9e0dad"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/results/result.json",
+          "sha256": "519f585f4cf867c0d41ae674c3fb16bc0fbcf529af32131ad1afbba6692355ab"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/results/result.schema.json",
+          "sha256": "8985f41cd7043b58d3b2fa9ee387bd6da4cb9d6156d3e5226acf57123674c118"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-383-exact-euler-tail-partition-normal-form/src/euler_tail_normal_form/core.py",
+          "sha256": "7f976ebb09374d0df339a71947e4c4dd7d49c7bc226ab05ac7de481f1e26defb"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/summary.json",
+          "sha256": "3cf3261c0c2c6fbe7511b16615f032edfcbd6b6b1e0c73f5e2ef932a1e6a694c"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-MVP2-corpus-frontier-synthesis/results/four_volume_archive_verification.json",
+          "sha256": "b27f120f77c4bbf3afd3a4486fd800a8de93a2db52236c835809aa488d113751"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-2-exact-prime-kneading-spectral-stability/main.tex",
+          "sha256": "5f2538e648c2ed850b94a03c072a3526f31bcc0c70c90639f65601507f52e532"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-2-exact-prime-kneading-spectral-stability/references.bib",
+          "sha256": "bd86702192cd4bc6d1c2975c7da4b305541e0c5943f13c5edf044686f0faf2ab"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/README.md",
+          "sha256": "ee5198cd9bbcd72713922942be4313bab973cb3d7c289c614a08088fae7a6a99"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/THEOREM_LEDGER.md",
+          "sha256": "7f823d243b2a9d02687c4460ad389f6fca7b2c6a01bae1ddeb4a5c78dbca969a"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/UPDATED_ROADMAP.md",
+          "sha256": "23acf4d082ad4e16728544533ec1f99ec38a47f8e3cc6b10713a3db72d154f33"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/main.tex",
+          "sha256": "f38a39739ec472c3d0c846638739e9e5cb57b6679f60f8f90ba1e2a6188186ef"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/references.bib",
+          "sha256": "7eb930f1717888b500e6c8a26ba391261ba302c9b259fec4a94178cfafe69f48"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/results/result.json",
+          "sha256": "4365c693461cdc4d5d986c97e7dcf4bbfcac6ff2136e1a20779d4b4e46078c69"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/results/result.schema.json",
+          "sha256": "04cac47501a66e6c82640517cc980e0efc8f5142e682dd1c1216bd6cd13cefbf"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-384-prime-tail-scale-separation/src/prime_tail_scales/core.py",
+          "sha256": "ea3473d63e25351d7bd6737eeb0bc8309dcf5f19746a89c4ced7c0d1f1713ebc"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/README.md",
+          "sha256": "69453c490bb38b7a599bd868d3d3372ea36bcc0df2e01babba808f0d35872d83"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/THEOREM_LEDGER.md",
+          "sha256": "1a91c9349ee058be524f234371665e33d36fbdd9f75b2533274b44040cfe6d88"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/UPDATED_ROADMAP.md",
+          "sha256": "e37c32b8f9bbab7e28ab26cf8e158f299b6a2f2e2f161e8a8519c54a578dca7c"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/main.tex",
+          "sha256": "d4dcd69877b04c382ba5cdc27918f841a40709c8064908c5063fecd222552269"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/references.bib",
+          "sha256": "377cd0e840ee9d66cb321bbf7852b8ada4a5a78d738f159e1ce5a81f2920caf1"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/results/result.json",
+          "sha256": "b59fc7921ef89d556fbc81a409ada9304fafc92424b0f4a79f97aa4d57f25ff4"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/results/result.schema.json",
+          "sha256": "a5f679c5ceccbb485dc526512994e0c2fa66dd94c69c8aed479599bdfb386330"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/src/vk_prime_tail/core.py",
+          "sha256": "c09dc16518730f88c88ed7a382c43ff5c87e76ad8f4eb3c76929ddf2438edbcf"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-386-vinogradov-korobov-growing-order-prime-tail-uniformization/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/README.md",
+          "sha256": "5c6dcc5e80b5c3deb161b59d6c59ccae498ac756b2917614a27eb6d402262795"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/THEOREM_LEDGER.md",
+          "sha256": "879c4007bf8227d40d94ba04adeefb133e1f1b5800fceb2d0a225fd92fae8331"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/UPDATED_ROADMAP.md",
+          "sha256": "c40d5f835ba17049b2d5c06fd6d78255cc44decdc2a9b6d33dc89d796ff16aad"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/main.tex",
+          "sha256": "f03d935192e9cfd122de3e85569062e836f15ef6375e9772fd114b160d0b184b"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/references.bib",
+          "sha256": "9809bffd7986cf8159157067cf3563004e02d38dff589966e6aee4fbd02997d8"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/results/result.json",
+          "sha256": "d71c69de7e5d05c5ac558a17d2a6089815334d19b43a74ecfde219affcc1e16c"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/results/result.schema.json",
+          "sha256": "c90e39f473234e5e0e103dba171cc9cdfdaff9be9b88fbb9ea75059ee9429d6e"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/src/integral_resummation/core.py",
+          "sha256": "136ecd57027966ee8d5cad9d428c941228baf5824e5cd11e1f43b94cdc51b85e"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-387-all-order-prime-tail-integral-resummation/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/README.md",
+          "sha256": "dd29d08608282cfffb7366c950dea45053356558a776e76cb59dadce2fbb108b"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/THEOREM_LEDGER.md",
+          "sha256": "a83d0ebbd8261dd0510cfe9e2c7d0121b53d68f39cb6cec8547bfc2d81c04c15"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/UPDATED_ROADMAP.md",
+          "sha256": "6cf89e3c2497066c99c7a98f03f5d128c862289ba5088212150713764ef67388"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/main.tex",
+          "sha256": "e2b04590643db06266649551f92942a1d3a261af4a8270aede017787e3392dca"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/references.bib",
+          "sha256": "10d7ef89df233a8f8b516466d324fcd048c20053903045f26a2e867faeba04f3"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/results/result.json",
+          "sha256": "b80e29174e6616bc7f4c2de999069ba9d745d80d7c46f88ae8046bf2b5b41665"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/results/result.schema.json",
+          "sha256": "283182d019009b282f4e653efe1dbbc4ab48510046e65ddd77ca4e9db968cbb5"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/src/rank_one_p2/core.py",
+          "sha256": "96d85b44d905d35015450f8d196a52a6ecbe0a79857dce49d4a188ca74c43432"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-388-rank-one-p2-tail-resummation/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/.gitattributes",
+          "sha256": "2a15a3d2f20d97ade4ef318ca9b44afe2966e992ddfc737db0071aae57c140c7"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/.gitignore",
+          "sha256": "ddaa36857770769c1a399843d3dbf9c08a913081fc7d75a83a619a8bbb21cb8c"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/README.md",
+          "sha256": "7ea3bb0541e0bed600a83e6493dae123fbfae006748b88b884851230295ce92e"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/experiments/tpc137_prime_square_log_audit.json",
+          "sha256": "a913f74fa6a67ede7af65999f7d864e086981132e3b0608537a712abf86bccad"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/experiments/tpc137_prime_square_log_audit.py",
+          "sha256": "2a847b609f7d3dd36688d1615249aa85d7cc280cb9b4592627e582d5d060910b"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/main.tex",
+          "sha256": "5ee5f9d61a1d550eff858866d60094b889229f28d52e2749ed9d34321b0a44d4"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/references.bib",
+          "sha256": "d935f3d84cb777b16297acbe35e144a759a7335ae4ed57007fc716cafc242b25"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/tpc-137-prime-square-fixed-two-log-closure/tpc-137-prime-square-fixed-two-log-closure.pdf",
+          "sha256": "e6600308e33cc7c22152c5f86ca56b89e00adb7bf284a15b5d21e148b9c69d76"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/README.md",
+          "sha256": "d5f0dbc9784ac054c9abac7f623b4a903f8ad06d820bf881a3d7a25ea385ad83"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/THEOREM_LEDGER.md",
+          "sha256": "27c995e66cb5b70aa4afa7ef6c192ff48462ca480854cb29c09efd6aa5456acf"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/UPDATED_ROADMAP.md",
+          "sha256": "81df1931f8b549992260287e763211c42f54a76189db2a940fe8e5edaab2b118"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/main.tex",
+          "sha256": "6ab94513dfa12067e397b991485e67b76af3ea96ad6eb766fced35a8c7f1edc8"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/references.bib",
+          "sha256": "8fe32f3e0bd5c69a29d6af400fdb7209da30c932c4c2c28a0a4a17607302e8fd"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/results/result.json",
+          "sha256": "3c551568aab4e0965b2b0236d9f684e1f953dc36ecbc575e6e007c5f15bfd310"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/results/result.schema.json",
+          "sha256": "763d25bae19d35b36578619bd50aa79cc8121a73c543f8b051e54200e16445ec"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/src/terminal_log_capacity/core.py",
+          "sha256": "9d25ea10bf8961b42b1efc7f2bbf573dd575bf76e6295e5e26c643b5a59a3089"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-389-active-c11-terminal-log-all-clock-capacity/results/tao_external_source_lock.json",
+          "sha256": "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/README.md",
+          "sha256": "33763cf46011607374a4f21084fbbf32c870a2b3622a38ac09060308d33ac889"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/THEOREM_LEDGER.md",
+          "sha256": "81075e359a86ba1217255e34fd6c88ebf0a7febde29e986e1f107279eac7f52a"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/UPDATED_ROADMAP.md",
+          "sha256": "d346e634b9e271e8be4a223add0895e26ca1d8ec22f15c4cff031fe8c15887d6"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/main.tex",
+          "sha256": "693f38a69b7f6c35d3a89e98191d0dd27789fd9d14e4057684c942f14bf18112"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/references.bib",
+          "sha256": "5b3073a8381da87a30615e18f0b4ae09f1165acb28ed01bf457058489d9a8bb7"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/results/result.json",
+          "sha256": "83bab4eb57f1d4d2d31c646946df16203b155d49d78942f74a40df239e404bc0"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/results/result.schema.json",
+          "sha256": "606d0ae74b4da9e4a97e6a951e89dfd4237108028c9b2436030e2d6861ec8f5d"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/src/fixed_lag_capacity/core.py",
+          "sha256": "a4e297f4c324ba1fce1829e5c1caf1b8a7e451a9b90c1f78be5f00d44cd97397"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-392-fixed-lag-terminal-log-mobius-capacity-landscape/results/tao_external_source_lock.json",
+          "sha256": "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/README.md",
+          "sha256": "a0a092fde92bc474fab3c131fba6efcb1c0a5b3a0804bd6c8aec89b30d95603c"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/THEOREM_LEDGER.md",
+          "sha256": "cf451267e9215135fb731b9c05fe9f5374f4bcf188de705b9eaba9c3b88039db"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/UPDATED_ROADMAP.md",
+          "sha256": "bc4299ae7ac3c8bd8a150d7b615bcf7eeafffc6625ab8e36142c4516fb9cdbdc"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/main.tex",
+          "sha256": "d153d9b9597142d42c0d59905534eb57c81b503883ff3a3085d2b32823a1002c"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/references.bib",
+          "sha256": "b6a458f6d3a31beb78a9a997d2aa0cfe511527079ad1478d898d8b7c58d67040"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/results/result.json",
+          "sha256": "69ebe2e157f5152d52aac5a478d1dd2ee2abde1dc672ad20941505d7e3a48aea"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/results/result.schema.json",
+          "sha256": "88195a22d2d1ebecff8e8d4cdf860be2b2ef984b93aa94b86861a619369a4790"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/src/two_odd_compiler/core.py",
+          "sha256": "f92c4f21cd487bff84f40cdc20ca3605d986acfe132fd7e493b126936024a342"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-393-two-odd-factor-terminal-log-mobius-compiler/results/tao_external_source_lock.json",
+          "sha256": "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/README.md",
+          "sha256": "4029074ea624a358e657e9dc384df5511fb8ec7dad0de5b7e62f93189af69ad7"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/THEOREM_LEDGER.md",
+          "sha256": "89f54173b9a57d99892bceb96ddfcc73c434ae6c22e4aaced756649c4f3d9683"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/UPDATED_ROADMAP.md",
+          "sha256": "632099b80391a1624e5ec59d792087b084dca4a41d48e05c60a694ac8cf5bff1"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/main.tex",
+          "sha256": "1cc35282bb225b47248a07115fbcbaf32ec5bf8857f386809f6d2ca661b52354"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/references.bib",
+          "sha256": "8a638ad7a5322cbedae5a6528462963bd79bdd79536f09affa7486f3f13de766"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/result.json",
+          "sha256": "935de4967e504e5c32f6d27980ec044c3cffccfbab534440730470de8b1ae610"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/result.schema.json",
+          "sha256": "8129ae146b30ca617e8536c15101eee6e12965ac9a87a6c41be9eb472cf16cb3"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/src/odd_parity_compiler/core.py",
+          "sha256": "3b24da1f1c54e69f98b2e1d07209d24928dbb3493a3fcc386c0bcf751dde4c85"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/tao_external_source_lock.json",
+          "sha256": "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-394-odd-parity-terminal-log-mobius-compiler/results/tao_teravainen_external_source_lock.json",
+          "sha256": "52ade551d8bef9aa35e850d03cefede1239cb9611b9211fdcda522f02fb501ec"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/README.md",
+          "sha256": "4949823c38e81dce9b04d46405a7a1d1bbd156375d2332f9a9ea90a7b8927c11"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/THEOREM_LEDGER.md",
+          "sha256": "93afb2db541ca58cf563d4ba7bed06634f5d3be77e9059c11498d6e83c417ec8"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/UPDATED_ROADMAP.md",
+          "sha256": "678ffa5ed6ca5a44070e0cf4e3c0634e1507154c0a9410d68599ab7d5b934432"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/main.tex",
+          "sha256": "7d96987b0236d2788a781565bc03195c59ad2b72d07f1ff8988f8a3fef4a5117"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/references.bib",
+          "sha256": "67939f140d06425e110258cc982dc8d5af0888899bd9d29a5dc8bfbaef7505be"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/results/result.json",
+          "sha256": "81d905c2476abc36fdd1ab0e468ad33d85f4df9db35afbd3bc79bf0771fe0a08"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/results/result.schema.json",
+          "sha256": "5d570cfc9515de8953e18eaf78176934c81bf479d741172e5a602a2d1839ba02"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-375-all-clock-one-site-mobius-capacity-supremum/src/all_clock_capacity/core.py",
+          "sha256": "575a5d2371f1bc0d29b33bc15e983f3e41c9b5b9ceb60d97369a1ef73f51a694"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/README.md",
+          "sha256": "1abf954a2b3f1b9dd40539ceb07709b5774889a35a7f2a6f28aff6ba0a25babf"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/THEOREM_LEDGER.md",
+          "sha256": "1348445bed6640518800d895e26e59ddfd4ea366350074faa9cc00208a3af263"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/UPDATED_ROADMAP.md",
+          "sha256": "603bde348535c886d3635d3f905c7a282c3958dd732ff26ebfc49eddb337cc32"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/main.tex",
+          "sha256": "8e3d65418d229bd5b990e2c528d2c3c8774b16ef3450d0a8a57f2be4291a30fe"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/references.bib",
+          "sha256": "e14fa2e2eea417bd2649f852478b212f8cfdb382dff69310b332527ff4f512f3"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/results/result.json",
+          "sha256": "7557bcc78811b29d7ac9f155fd8553c75d70b659748a37cf2fef427af4958f27"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/results/result.schema.json",
+          "sha256": "2eb368a88cc7e3363a3c4f216ea7d3efd423b4faf9bcdec003d36316b2bfe643"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/src/centered_three_window_capacity/core.py",
+          "sha256": "4abb5e4c61a9b71370d2e02c36a474655719740b91fdd247f64ed0af0b90509e"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/results/tao_external_source_lock.json",
+          "sha256": "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-395-all-clock-rigidity-centered-three-window-mobius-capacity/results/tao_teravainen_external_source_lock.json",
+          "sha256": "52ade551d8bef9aa35e850d03cefede1239cb9611b9211fdcda522f02fb501ec"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/README.md",
+          "sha256": "251bf8a516204941ea65a210e1f9fec955226c3751d3637c8b5b6dfb0fdfab78"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/THEOREM_LEDGER.md",
+          "sha256": "1a885510340c18cb5f206cd8f650fb881200a6a010797318131e267f3679c91b"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/UPDATED_ROADMAP.md",
+          "sha256": "b28916175f9849d1bdf4c5479248004f5bff9c341eef10361752a9711e236b0e"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/main.tex",
+          "sha256": "5d9a8c6c9a39436d07a94e082fffc003cfba91ece1d3859c11e2facbd5ffe99d"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/references.bib",
+          "sha256": "2a5f201d51355bf0eb930484b4c9d3ad3d02bc145eed11809b0ab533956c599f"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/results/result.json",
+          "sha256": "a7ea39793a255a9b51f2e1b8523293bf4f4a9fdd0934263f9950417ca28371d4"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/results/result.schema.json",
+          "sha256": "b78f958c60b1651446a3e0ac2af7a2e696cba2642a6414237877d997ff51691a"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/src/fixed_lag_centered_capacity/core.py",
+          "sha256": "728546daa86fac7b51ab06facff2fccc771ad5128a9f7324f2db36d400a3bf0d"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/results/tao_external_source_lock.json",
+          "sha256": "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f"
+        },
+        {
+          "group": "rh397_immutable_closure",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-396-euler-run-spectrum-fixed-lag-centered-mobius-capacity/results/tao_teravainen_external_source_lock.json",
+          "sha256": "52ade551d8bef9aa35e850d03cefede1239cb9611b9211fdcda522f02fb501ec"
+        },
+        {
+          "group": "rh397_standard8",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/README.md",
+          "sha256": "18ad513bb327e0c6460c105159fab2c2954cf52023706387c3f6402e95c4a763"
+        },
+        {
+          "group": "rh397_standard8",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/THEOREM_LEDGER.md",
+          "sha256": "210263daa48fee1876e7632db9864dfa4b99422a78f1f2166057cd0d3dff1096"
+        },
+        {
+          "group": "rh397_standard8",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/UPDATED_ROADMAP.md",
+          "sha256": "e68115ccbe8953828df78d3fd31f46eacd1fe1141abde7bbb2c243f14fd7b243"
+        },
+        {
+          "group": "rh397_standard8",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/main.tex",
+          "sha256": "a0ded93cfcd46f48b602e3f276a39e01e99ba8c37d3961316540f3925064ec11"
+        },
+        {
+          "group": "rh397_standard8",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/references.bib",
+          "sha256": "2ef184fbd1594af83c0a16fd8f868c3572d91d86c30d40f98271781ca0044b3b"
+        },
+        {
+          "group": "rh397_standard8",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/results/result.json",
+          "sha256": "d21f3ab160c7cb5cfca1ff04ac7d2104ea8a7802b36eb3e2f07e32cbe1d27e4f"
+        },
+        {
+          "group": "rh397_standard8",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/results/result.schema.json",
+          "sha256": "4f16580a613e3e0c3930fd53e3a418023fac96e2cfa15f74ed447a60bea38f83"
+        },
+        {
+          "group": "rh397_standard8",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/src/odd_lag_half_span_capacity/core.py",
+          "sha256": "4b247c0a580c06cfaeb22f29d5b9f80d52bee44fcb44ebd978153bc79e04bcd0"
+        },
+        {
+          "group": "rh397_prior_external_locks",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/results/external_source_lock.json",
+          "sha256": "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058"
+        },
+        {
+          "group": "rh397_prior_external_locks",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/results/maynard_external_source_lock.json",
+          "sha256": "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba"
+        },
+        {
+          "group": "rh397_prior_external_locks",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/results/tao_external_source_lock.json",
+          "sha256": "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f"
+        },
+        {
+          "group": "rh397_prior_external_locks",
+          "commit": "dd63a109dcfa72365c749e0b183820d2611af733",
+          "path": "prime_dynamics_theory/papers/RH-397-odd-lag-half-span-overlap-mobius-capacity/results/tao_teravainen_external_source_lock.json",
+          "sha256": "52ade551d8bef9aa35e850d03cefede1239cb9611b9211fdcda522f02fb501ec"
+        }
+      ],
+      "group_digests": {
+        "rh397_immutable_closure": "fd2d749a09316b9c412780e61882e5f1ac050af609cd0a96c0d1aea79ac4c82d",
+        "rh397_standard8": "eb7355565e8429765cb967192c00e261998147abb68fb0307517695621bdfd62",
+        "rh397_prior_external_locks": "e044509ee377c35cea8642b67a75ca5dc4ba861f455228bde7341418791bce20"
+      },
+      "group_sizes": {
+        "rh397_immutable_closure": 172,
+        "rh397_standard8": 8,
+        "rh397_prior_external_locks": 4
+      },
+      "live_identity_pass": true,
+      "path_unique_count": 184,
+      "pass": true,
+      "release_identity_pass": true
+    },
+    "git_count": 184,
+    "logical_count": 188,
+    "logical_digest_pass": true,
+    "logical_source_digest": "4cc752fb7baae977bb15a9420101c5ed37727b1f3f7eecf72afce9dec3c73b13",
+    "pass": true,
+    "remote": {
+      "canonical_digests": [
+        "d53b93212b7c5b5b6b3f7e890099c48ce8e35f2bff9bdd49f9c330a9b5039786",
+        "bd4aad4b7042218e5733bb07db2a513770710628a8ac52d5bcc9881fcb0b5d2e",
+        "d2ca5eb4c860090981411a587a58da191df0afba8d65158bc0a44a6db4009e84",
+        "a1448fb540b6f8fcf17cace1ff7d7218a6126cb3265699bbd43c444fcc558058"
+      ],
+      "count": 4,
+      "all_lock_literals_sealed_pass": true,
+      "external_payload_exclusion_pass": true,
+      "external_payload_hash_hits": [],
+      "local_lock_blob_digests": [
+        "d6ba2d91aef2e851a24c9f17393602042a3da75142185557f245c1f0c701c058",
+        "9a2e1ea8604f767c3538c2d6ad432a9d2ee2ffde50b2b362b4d457c6ac68cdba",
+        "825b3455be5eac151b7478f537fa6c503ae8eb02004cd8da821ca802d4ebdd8f",
+        "52ade551d8bef9aa35e850d03cefede1239cb9611b9211fdcda522f02fb501ec"
+      ],
+      "local_lock_objects_exact_pass": true,
+      "local_release_copies_byte_exact_pass": true,
+      "network_fetch_performed": false,
+      "objects": [
+        {
+          "article_number": "127460",
+          "artifact_role": "audited_arxiv_author_manuscript",
+          "arxiv_id_version": "2204.01980v2",
+          "bytes": 278380,
+          "issue": 2,
+          "journal": "Journal of Mathematical Analysis and Applications",
+          "known_out_of_scope_typos": [
+            {
+              "arxiv_v2_text": "Corollary 1.5",
+              "intended_reference": "Corollary 1.2 / equation (1.5)",
+              "location": "Section 5.2",
+              "used_by_RH386": false
+            },
+            {
+              "arxiv_v2_text": "absolute value of pi(x)-x",
+              "location": "Theorem 1.4 equation (1.9)",
+              "used_by_RH386": false,
+              "version_of_record_text": "absolute value of pi(x)-li(x)"
+            }
+          ],
+          "license": {
+            "scope": "non-exclusive distribution permission granted to arXiv; no third-party republication grant",
+            "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+            "version_of_record_copyright": "Copyright 2023 Elsevier Inc. All rights reserved."
+          },
+          "locators": [
+            {
+              "equation": "(1.5)",
+              "label": "Corollary 1.2",
+              "printed_page": 2,
+              "role": "global explicit theta bound",
+              "section": "1.2"
+            },
+            {
+              "label": "Table 1",
+              "printed_page": 3,
+              "role": "A=9.39, B=1.515, C=0.8274",
+              "row": "X=log 2",
+              "section": "1.2"
+            },
+            {
+              "equation": "(1.8)",
+              "label": "Theorem 1.4",
+              "printed_page": 2,
+              "role": "global explicit Vinogradov--Korobov theta bound for x>=23",
+              "section": "1.2"
+            }
+          ],
+          "mime": "application/pdf",
+          "network_verification": {
+            "checks": [
+              "HTTP status 200",
+              "exact allowlisted final URLs; every other redirect rejected",
+              "PDF Content-Type application/pdf",
+              "PDF byte count 278380",
+              "PDF SHA-256",
+              "PDF page count 22 via pdfinfo",
+              "source tar byte count 21523",
+              "source tar SHA-256",
+              "source tar main.tex SHA-256"
+            ],
+            "default": "disabled",
+            "fixed_url_only": true,
+            "offline_build_claim": "lock-object verification only; no claim of refetching",
+            "opt_in_flag": "--network"
+          },
+          "pages": 22,
+          "pdf_vendored": false,
+          "redistributable_in_release": false,
+          "sha256": "565993a6def48b237a68a92acba604f2c42f99165e0e71e390f8e21a313b74b2",
+          "source_key": "johnston-yang-arxiv-2204.01980v2",
+          "source_main_tex_sha256": "2a79d56dbd6da46d46c6ddd8852d9fa763c716110ebf08b7b029e52346f92602",
+          "source_tar_bytes": 21523,
+          "source_tar_final_url": "https://arxiv.org/src/2204.01980v2",
+          "source_tar_sha256": "572d5739936ad3f5e867a142eccb0193b001dd2ee9b27b1d7183124071ec7edd",
+          "source_tar_url": "https://arxiv.org/src/2204.01980v2",
+          "source_tar_vendored": false,
+          "version_of_record_doi": "10.1016/j.jmaa.2023.127460",
+          "versioned_url": "https://arxiv.org/pdf/2204.01980v2",
+          "volume": 527
+        },
+        {
+          "artifact_role": "official_publisher_version_of_record",
+          "author": "James Maynard",
+          "bytes": 528115,
+          "copyright": "Copyright 2015 Department of Mathematics, Princeton University",
+          "doi": "10.4007/annals.2015.181.1.7",
+          "issue": 1,
+          "journal": "Annals of Mathematics",
+          "license": {
+            "applicability_to_2015_article": "not_established",
+            "article_specific_redistribution_grant_established": false,
+            "current_copyright_agreement_date": 2022,
+            "current_copyright_agreement_url": "https://annals.math.princeton.edu/wp-content/uploads/AoM_Copyright_Agreement.pdf",
+            "evidence_retrieved": "2026-08-08",
+            "evidence_scope": "current official policy materials support a conservative non-CC-BY, nonredistributable release boundary; they are not treated as evidence of the agreement signed for this 2015 article",
+            "published_version_cc_by": false,
+            "publisher_policy_url": "https://annals.math.princeton.edu/submission-guidelines",
+            "scope": "publisher version; no article-specific third-party redistribution grant established"
+          },
+          "locators": [
+            {
+              "label": "Theorem 1.3",
+              "pdf_page": 3,
+              "pdf_page_base": 1,
+              "printed_page": 385,
+              "role": "unconditional bounded-consecutive-prime-gap input only",
+              "statement": "liminf_{n->infinity}(p_{n+1}-p_n)<=600"
+            }
+          ],
+          "mime": "application/pdf",
+          "network_verification": {
+            "checks": [
+              "HTTP status 200",
+              "exact allowlisted final URL; every redirect target change rejected",
+              "Content-Type application/pdf",
+              "byte count 528115",
+              "SHA-256",
+              "page count 31 via pdfinfo"
+            ],
+            "default": "disabled",
+            "fixed_url_only": true,
+            "offline_build_claim": "lock-object verification only; no claim of refetching",
+            "opt_in_flag": "--network"
+          },
+          "pages": 31,
+          "pages_range": "383-413",
+          "pdf_final_url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v181-n1-p07-p.pdf",
+          "pdf_url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v181-n1-p07-p.pdf",
+          "pdf_vendored": false,
+          "publisher_article_url": "https://annals.math.princeton.edu/2015/181-1/p07",
+          "redistributable_in_release": false,
+          "sha256": "3c24d010f00d1212418351b6f6baed9c94251a3ce958c36f56ebbc450ade9349",
+          "source_key": "maynard-annals-2015-small-gaps",
+          "title": "Small gaps between primes",
+          "version_of_record_doi_url": "https://doi.org/10.4007/annals.2015.181.1.7",
+          "volume": 181,
+          "year": 2015
+        },
+        {
+          "article_number": "e8",
+          "artifact_role": "official_publisher_open_access_version_of_record",
+          "author": "Terence Tao",
+          "bytes": 534086,
+          "doi": "10.1017/fmp.2016.6",
+          "journal": "Forum of Mathematics, Pi",
+          "known_source_typos": [
+            {
+              "location": "immediately after Theorem 2, equation (3), printed/PDF page 3",
+              "printed_text": "as n tends to infinity",
+              "resolution": "read as x tends to infinity, consistently with the theorem variable, abstract, and surrounding context",
+              "scope": "typographical only; no mathematical strengthening or changed hypothesis"
+            }
+          ],
+          "license": {
+            "copyright": "Copyright The Author 2016",
+            "evidence_retrieved": "2026-08-09",
+            "license_name": "Creative Commons Attribution 4.0 International",
+            "license_url": "https://creativecommons.org/licenses/by/4.0/",
+            "published_version_cc_by": true,
+            "publisher_evidence_url": "https://www.cambridge.org/core/journals/forum-of-mathematics-pi/article/logarithmically-averaged-chowla-and-elliott-conjectures-for-twopoint-correlations/48514F53D73B2C1277BD7232630F0694",
+            "scope": "official publisher version; reuse is permitted with attribution under CC BY 4.0"
+          },
+          "locators": [
+            {
+              "equation": "(3)",
+              "label": "Theorem 2",
+              "pdf_page": 3,
+              "pdf_page_base": 1,
+              "printed_page": 3,
+              "role": "fixed nonparallel affine two-point logarithmic Liouville cancellation",
+              "statement": "for fixed natural a1,a2 and integer b1,b2 with a1*b2-a2*b1!=0, and every 1<=omega(x)<=x with omega(x)->infinity, sum_(x/omega(x)<n<=x) lambda(a1*n+b1)*lambda(a2*n+b2)/n=o(log omega(x)) as x->infinity"
+            }
+          ],
+          "mime": "application/pdf",
+          "network_verification": {
+            "checks": [
+              "HTTP status 200",
+              "exact allowlisted final URL; every redirect target change rejected",
+              "Content-Type application/pdf",
+              "byte count 534086",
+              "SHA-256",
+              "page count 36 via pdfinfo"
+            ],
+            "default": "disabled",
+            "fixed_url_only": true,
+            "offline_build_claim": "lock-object verification only; article metadata and DOI are sealed but not live-refetched",
+            "opt_in_flag": "--network"
+          },
+          "pages": 36,
+          "pdf_final_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/48514F53D73B2C1277BD7232630F0694/S2050508616000068a.pdf/the-logarithmically-averaged-chowla-and-elliott-conjectures-for-two-point-correlations.pdf",
+          "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/48514F53D73B2C1277BD7232630F0694/S2050508616000068a.pdf/the-logarithmically-averaged-chowla-and-elliott-conjectures-for-two-point-correlations.pdf",
+          "pdf_vendored": false,
+          "publisher_article_url": "https://www.cambridge.org/core/journals/forum-of-mathematics-pi/article/logarithmically-averaged-chowla-and-elliott-conjectures-for-twopoint-correlations/48514F53D73B2C1277BD7232630F0694",
+          "redistributable_in_release": true,
+          "sha256": "a5563f3a85b9c8cfd37be6f1df6bdae8377ce1762e4cb6a8b7856329ef7b30a2",
+          "source_key": "tao-cambridge-2016-logarithmic-chowla",
+          "title": "The logarithmically averaged Chowla and Elliott conjectures for two-point correlations",
+          "version_of_record_doi_url": "https://doi.org/10.1017/fmp.2016.6",
+          "volume": 4,
+          "year": 2016
+        },
+        {
+          "artifact_role": "audited_arxiv_author_manuscript",
+          "arxiv_id_version": "1708.02610v2",
+          "author": "Terence Tao and Joni Teräväinen",
+          "bytes": 398251,
+          "doi": "10.1215/00127094-2019-0002",
+          "issue": 11,
+          "journal": "Duke Mathematical Journal",
+          "known_out_of_scope_source_issues": [
+            {
+              "location": "Corollary 1.8, PDF page 7",
+              "scope": "RH-394 instantiates only positive exponents c_i in {1,2}; it neither uses nor interprets negative powers at zeros of the Mobius function",
+              "source_text": "non-zero integers"
+            }
+          ],
+          "license": {
+            "evidence_retrieved": "2026-08-11",
+            "scope": "non-exclusive distribution permission granted to arXiv; no third-party republication grant",
+            "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+            "version_of_record_reuse_grant_established": false
+          },
+          "locators": [
+            {
+              "label": "Corollary 1.8",
+              "pdf_page": 7,
+              "pdf_page_base": 1,
+              "role": "fixed distinct-shift terminal-log odd-total-power Mobius and Liouville cancellation",
+              "statement": "for fixed nonzero integer exponents c_0,...,c_k of odd sum, distinct integer shifts h_0,...,h_k, and arbitrary real sequences 1<=omega_m<=x_m with both tending to infinity, the normalized terminal logarithmic Mobius and Liouville correlations tend to zero"
+            },
+            {
+              "label": "Remark 1.5",
+              "pdf_page": 7,
+              "pdf_page_base": 1,
+              "role": "fixed affine-dilation extension pointer",
+              "statement": "Theorem 1.2 extends to fixed affine forms g_i(q_i*n+a*h_i), with the proof supplied in Appendix A"
+            },
+            {
+              "label": "Theorem A.1",
+              "pdf_page": 38,
+              "pdf_page_base": 1,
+              "role": "fixed affine-weight correlation structure and vanishing bridge",
+              "statement": "for fixed positive integer dilation parameters and arbitrary terminal windows, the correlation sequence on the fixed affine forms has the same periodic-structure and nonpretentious-product vanishing alternatives as Theorem 1.2"
+            }
+          ],
+          "mime": "application/pdf",
+          "network_verification": {
+            "checks": [
+              "HTTP status 200",
+              "exact allowlisted final URL; every redirect target change rejected",
+              "Content-Type application/pdf",
+              "byte count 398251",
+              "SHA-256",
+              "page count 41 via pdfinfo"
+            ],
+            "default": "disabled",
+            "fixed_url_only": true,
+            "offline_build_claim": "lock-object verification only; article metadata and DOI are sealed but not live-refetched",
+            "opt_in_flag": "--network"
+          },
+          "pages": 41,
+          "pdf_final_url": "https://arxiv.org/pdf/1708.02610v2",
+          "pdf_url": "https://arxiv.org/pdf/1708.02610v2",
+          "pdf_vendored": false,
+          "publisher_article_url": "https://projecteuclid.org/journals/duke-mathematical-journal/volume-168/issue-11/The-structure-of-logarithmically-averaged-correlations-of-multiplicative-functions-with/10.1215/00127094-2019-0002.full",
+          "redistributable_in_release": false,
+          "sha256": "232bdb1ad6e46789bfc124a589d6c3afda803eaf3ba2f93278fc31be3aa276ad",
+          "source_key": "tao-teravainen-arxiv-1708.02610v2",
+          "title": "The structure of logarithmically averaged correlations of multiplicative functions, with applications to the Chowla and Elliott conjectures",
+          "version_of_record_doi_url": "https://doi.org/10.1215/00127094-2019-0002",
+          "version_of_record_pages_range": "1977-2027",
+          "versioned_url": "https://arxiv.org/pdf/1708.02610v2",
+          "volume": 168,
+          "year": 2019
+        }
+      ],
+      "offline_configuration_pass": true,
+      "pass": true,
+      "redistributable_in_release": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "source_keys": [
+        "johnston-yang-arxiv-2204.01980v2",
+        "maynard-annals-2015-small-gaps",
+        "tao-cambridge-2016-logarithmic-chowla",
+        "tao-teravainen-arxiv-1708.02610v2"
+      ],
+      "source_roles": {
+        "johnston-yang-arxiv-2204.01980v2": "inherited_closure_only_via_RH394",
+        "maynard-annals-2015-small-gaps": "inherited_closure_only_via_RH394",
+        "tao-cambridge-2016-logarithmic-chowla": "inherited_two_point_provenance_via_RH394",
+        "tao-teravainen-arxiv-1708.02610v2": "inherited_odd_parity_input_via_RH394"
+      }
+    },
+    "remote_count": 4
+  },
+  "source_roles": {
+    "RH396": {
+      "analytic_input": true,
+      "role": "sole_load_bearing_theorem_and_analytic_endpoint_input"
+    },
+    "RH397": {
+      "analytic_input": false,
+      "role": "direct_release_and_provenance_predecessor_only"
+    },
+    "RH394": {
+      "analytic_input": false,
+      "role": "transitive_three_shift_provenance_only_via_RH396"
+    },
+    "external_sources": "inherited_closure_only; no live fetch and no vendored payload"
+  },
+  "status": "RH-398_STAGE1_CERTIFIED",
+  "summary": {
+    "certificate_rows": 72,
+    "core_mutations": 66,
+    "core_mutations_rejected": 66,
+    "result_mutations": 44,
+    "source_git": 184,
+    "source_remote": 4,
+    "source_logical": 188,
+    "maximum": "B_infinity(1)",
+    "maximizers": "mu^2(h)=1 and gcd(h,210)=1",
+    "complement": "same supremum, not attained",
+    "joint": "same supremum, no finite pair",
+    "retained_infimum": "3/pi^2, not attained"
+  },
+  "theorem_contracts": {
+    "scope_and_order": {
+      "h_domain": "h in Z_{>=1}",
+      "q_domain": "q in Z_{>=1}",
+      "residue_domain": "r in Z/qZ",
+      "alphabet": "T={-1,0,+1}",
+      "phase_table": "F_r:T^3->{-1,+1}",
+      "mobius_extension": "mu_0(k)=mu(k) for integer k>=1 and mu_0(k)=0 for k<=0",
+      "clock": "omega is admissible: 1<=omega(X)<=X and omega(X)->infinity",
+      "centered_output": "epsilon_F(n)=F_(n mod q)(mu_0(n-h),mu(n),mu(n+h))",
+      "terminal_functional": "L_(h,q,X)(F)=(log omega(X))^-1 sum_(X/omega(X)<n<=X) mu(n)epsilon_F(n)/n",
+      "safety": "not(F_r(a,b,c)=+1 and F_(r+d)(c,e,f)=+1) for every r in Z/qZ and a,b,c,e,f in T",
+      "limit": "L_(h,q)(F)=lim_(X->infinity)L_(h,q,X)(F), with the same value for every admissible omega",
+      "capacity": "C_h(q)=max_(universally distance-d safe fixed q-phase F)|L_(h,q)(F)| after every fixed-table terminal-log limit",
+      "fixed_data": "h,q,F,omega are fixed before X->infinity",
+      "order": [
+        "fix_h_q_F_omega",
+        "X_to_infinity",
+        "finite_safe_table_maximum",
+        "scalar_q_supremum",
+        "fixed_scalar_h_comparison"
+      ],
+      "fixed_scalar_endpoints_only": true,
+      "growing_h_or_q_claim": false
+    },
+    "product_second_difference_telescope": {
+      "d": "d=2h",
+      "p0": "p0=min prime p with p not dividing d",
+      "t_p": "t_p(d)=p^2/gcd(d,p^2)",
+      "A_m": "A_m=prod_p(1-min(m,t_p)/p^2)",
+      "cutoff": "A_m=0 for m>=p0^2",
+      "R_l": "R_l=A_l-2A_(l+1)+A_(l+2)",
+      "R_nonnegative": true,
+      "telescope": "B_infinity(h)=sum_(m=1)^(p0^2-1)(-1)^(m+1)A_m",
+      "event": "odd_forward_positive_run_probability"
+    },
+    "maximum_and_maximizers": {
+      "maximum": "max_(h>=1)B_infinity(h)=B_infinity(1)",
+      "exact_set": "{h>=1:mu^2(h)=1 and gcd(h,210)=1}",
+      "iff": "B_infinity(h)=B_infinity(1) iff mu^2(h)=1 and gcd(h,210)=1",
+      "small_prime_product": 210
+    },
+    "complement_and_gap": {
+      "domain": "h>=1 outside the exact maximizer set",
+      "supremum": "B_infinity(1)",
+      "attained": false,
+      "cofinal_sequence": "h=p^2 for primes p>=11",
+      "sequence_bound": "0<B_infinity(1)-B_infinity(p^2)<=1/p^2",
+      "p0_ge5_gap": "B_infinity(1)-B_infinity(h)>2/1334025",
+      "proved_stronger_chain": "B_infinity(1)-B_infinity(h)>=B_infinity(1)-B_infinity(3)>1/36750>2/1334025"
+    },
+    "joint_and_retained_endpoints": {
+      "finite_pair": "C_h(q)<B_infinity(h)<=B_infinity(1)",
+      "joint_supremum": "sup_(h>=1,q finite)C_h(q)=B_infinity(1)",
+      "finite_pair_attains": false,
+      "retained_infimum": "inf_(h>=1)B_infinity(h)=3/pi^2",
+      "infimum_attained": false
+    },
+    "source_and_claim_ceiling": {
+      "RH396": "sole_load_bearing_theorem_and_analytic_endpoint_input",
+      "RH396_locator": "definitions equations (18)-(21), Theorem 1.3 equation (22), and Corollary 1.4 equation (23), PDF page 3",
+      "RH397": "direct_release_and_provenance_predecessor_only",
+      "certificate": "finite_exact_reproduction_not_analytic_proof",
+      "RH_or_Gates_A_E": false
+    }
+  },
+  "title": "Exact Lag Endpoint Maximum and Maximizers"
+}

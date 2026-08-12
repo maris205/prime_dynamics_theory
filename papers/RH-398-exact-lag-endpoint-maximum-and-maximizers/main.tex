@@ -1,0 +1,745 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper,margin=30mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\hypersetup{
+ pdfauthor={Prime Dynamics Theory Project},
+ pdftitle={Exact Lag Endpoint Maximum and Maximizers},
+ colorlinks=true,
+ linkcolor=blue,
+ citecolor=blue,
+ urlcolor=blue
+}
+\setlist{itemsep=2pt,topsep=4pt}
+\emergencystretch=3em
+\hbadness=10000
+\vbadness=10000
+\hfuzz=1pt
+\AtBeginEnvironment{thebibliography}{\raggedright}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\mob}{\mu}
+\newcommand{\mobzero}{\mu_0}
+\newcommand{\T}{\mathcal T}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Pp}{\mathcal P}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\Bin}{B_\infty}
+
+\title{Exact Lag Endpoint Maximum and Maximizers}
+\author{Prime Dynamics Theory Project}
+\date{August 13, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For the fixed-lag centered M\"obius capacity of RH-396, let
+\(B_\infty(h)\) be the nonattained endpoint over finite declared phase
+clocks at a fixed positive integer lag \(h\).  We determine its exact maximum
+across fixed lags.  Put \(d=2h\), let \(p_0(h)\) be the least prime not
+dividing \(d\), and set
+\[
+ t_p(d)=\frac{p^2}{\gcd(d,p^2)},\qquad
+ A_m(d)=\prod_p\left(1-\frac{\min(m,t_p(d))}{p^2}\right).
+\]
+The RH-396 Euler--run formula telescopes to
+\[
+ \Bin(h)=\sum_{m=1}^{p_0(h)^2-1}(-1)^{m+1}A_m(d).
+\]
+A finite-prime CRT transfer compares the three local valuation levels at each
+prime.  After a common cofinal passage it gives
+\begin{align*}
+ \max_{h\geq1}\Bin(h)&=\Bin(1),\\
+ \Bin(h)=\Bin(1)
+ &\Longleftrightarrow
+ \mob^2(h)=1\ \text{and}\ \gcd(h,210)=1.
+\end{align*}
+On the complement of this equality class the same value is a supremum but is
+not attained; the fixed lags \(h=p^2\), for primes \(p\geq11\), approach it
+with gap in \((0,p^{-2}]\).  If \(p_0(h)\geq5\), the gap from the maximum is
+larger than \(2/1334025\).  Consequently
+\(\sup_{h\geq1,\,q<\infty}C_h(q)=\Bin(1)\), with no finite pair attaining it.
+The previously established infimum \(3/\pi^2\) remains unattained.  Every
+analytic limit is a fixed-data terminal logarithmic limit; the finite CRT
+phase space used in the comparison is bookkeeping, not a random-M\"obius
+model.
+\end{abstract}
+
+\noindent\textbf{Keywords:} M\"obius function; terminal logarithmic average;
+fixed lag; squarefree run; Euler product; exact maximizer; nonattainment.
+
+\section{Fixed-data interface and main results}
+
+We first reproduce the interface whose endpoint will be compared.  Write
+\(\T=\{-1,0,+1\}\), and extend the M\"obius function by
+\(\mobzero(k)=\mob(k)\) for \(k\geq1\) and \(\mobzero(k)=0\) for \(k\leq0\).
+An admissible terminal clock satisfies
+\begin{equation}
+ 1\leq\omega(X)\leq X,
+ \qquad \omega(X)\longrightarrow\infty.
+ \label{eq:terminal-clock}
+\end{equation}
+Fix \(h,q\geq1\), the function \(\omega\), and an entire family of phase
+tables
+\[
+ F_r:\T^3\longrightarrow\{-1,+1\},\qquad r\in\Z/q\Z,
+\]
+before \(X\to\infty\).  Put \(d=2h\).  The centered output and scored
+terminal functional are
+\begin{align}
+ \varepsilon_F(n)
+ &=F_{n\bmod q}\bigl(\mobzero(n-h),\mob(n),\mob(n+h)\bigr),
+ \label{eq:centered-output}\\
+ L_{h,q,X}(F)
+ &=\frac1{\log\omega(X)}
+ \sum_{X/\omega(X)<n\leq X}\frac{\mob(n)\varepsilon_F(n)}n.
+ \label{eq:terminal-functional}
+\end{align}
+The table is universally distance-\(d\) safe when
+\begin{equation}
+ \neg\bigl(F_r(a,b,c)=+1\ \text{and}\
+ F_{r+d}(c,e,f)=+1\bigr)
+ \label{eq:distance-safety}
+\end{equation}
+for every \(r\in\Z/q\Z\) and every \(a,b,c,e,f\in\T\).  RH-396 proves that
+the limit \(L_{h,q}(F)=\lim_{X\to\infty}L_{h,q,X}(F)\) exists and is
+independent of the admissible clock.  Only after all fixed-table limits are
+formed does one take the finite maximum
+\begin{equation}
+ C_h(q)=\max_{F\ \mathrm{universally\ distance}\text{-}d\ \mathrm{safe}}
+ |L_{h,q}(F)|.
+ \label{eq:capacity}
+\end{equation}
+Thus \(q\) is a finite declared phase clock and \(\omega\) is a terminal
+clock; neither is an endpoint cutoff or an orientation variable.
+
+For a finite set \(J\subset\Z\), define
+\begin{equation}
+ D_h(J)=\prod_p\left(
+ 1-\frac{|\{dj\bmod p^2:j\in J\}|}{p^2}\right).
+ \label{eq:Dh}
+\end{equation}
+For \(\ell\geq1\), put
+\begin{align}
+ R_{\ell,h}
+ &=D_h([0,\ell-1])-D_h(\{-1\}\cup[0,\ell-1])
+ \notag\\
+ &\quad-D_h([0,\ell])+D_h([-1,\ell]).
+ \label{eq:R-def}
+\end{align}
+This is the density of an exact bracketed positive step-\(d\) run, so it is
+nonnegative.  If
+\begin{equation}
+ p_0(h)=\min\{p\text{ prime}:p\nmid d\},
+ \label{eq:p0}
+\end{equation}
+RH-396 defines
+\begin{equation}
+ \Bin(h)=\frac3{\pi^2}
+ +\frac12\sum_{\substack{1\leq\ell<p_0(h)^2\\\ell\ \mathrm{odd}}}
+ R_{\ell,h}.
+ \label{eq:B-run}
+\end{equation}
+Its endpoint theorem and lag-infimum corollary are
+\begin{equation}
+ \sup_{q<\infty}C_h(q)=\Bin(h),\qquad
+ C_h(q)<\Bin(h)\quad(q<\infty),
+ \label{eq:RH396-endpoint}
+\end{equation}
+and
+\begin{equation}
+ \inf_{h\geq1}\Bin(h)=\frac3{\pi^2},
+ \qquad \Bin(h)>\frac3{\pi^2}\quad(h\geq1).
+ \label{eq:RH396-infimum}
+\end{equation}
+These are definitions (18)--(21), Theorem 1.3, equation (22), and
+Corollary 1.4, equation (23), on PDF page 3 of the frozen RH-396 release
+\cite{RH396}.
+
+Our new result supplies the upper landscape that RH-396 explicitly left open.
+
+\begin{theorem}[Exact maximum and maximizers]
+\label{thm:maximum}
+For every fixed positive integer \(h\),
+\begin{equation}
+ \Bin(h)\leq\Bin(1).
+ \label{eq:maximum-bound}
+\end{equation}
+Equality holds exactly when
+\begin{equation}
+ \mob^2(h)=1\qquad\text{and}\qquad\gcd(h,210)=1.
+ \label{eq:maximizer-criterion}
+\end{equation}
+In particular, \(\max_{h\geq1}\Bin(h)=\Bin(1)\), and the maximum is attained
+at infinitely many fixed lags.
+\end{theorem}
+
+\begin{theorem}[Complement and quantitative separation]
+\label{thm:complement}
+Let \(\mathcal N\) be the complement in \(\Z_{\geq1}\) of the set in
+\eqref{eq:maximizer-criterion}.  Then
+\[
+ \sup_{h\in\mathcal N}\Bin(h)=\Bin(1),
+\]
+and the supremum is not attained on \(\mathcal N\).  For every prime
+\(p\geq11\),
+\begin{equation}
+ 0<\Bin(1)-\Bin(p^2)\leq\frac1{p^2}.
+ \label{eq:prime-square-gap}
+\end{equation}
+If \(p_0(h)\geq5\), then
+\begin{equation}
+ \Bin(1)-\Bin(h)\geq\Bin(1)-\Bin(3)
+ >\frac1{36750}>\frac2{1334025}.
+ \label{eq:p0-gap}
+\end{equation}
+\end{theorem}
+
+\begin{corollary}[Joint endpoint and retained infimum]
+\label{cor:joint}
+One has
+\begin{equation}
+ \sup_{\substack{h\geq1\\q<\infty}}C_h(q)=\Bin(1),
+ \label{eq:joint-supremum}
+\end{equation}
+and no finite pair \((h,q)\) attains this value.  The lower endpoint
+\eqref{eq:RH396-infimum} remains an unattained infimum.
+\end{corollary}
+
+\section{Product and telescope}
+
+Put
+\begin{equation}
+ t_p(d)=\frac{p^2}{\gcd(d,p^2)},\qquad
+ A_m(d)=D_h([0,m-1])
+ =\prod_p\left(1-\frac{\min(m,t_p(d))}{p^2}\right).
+ \label{eq:A-product}
+\end{equation}
+The first equality in the product follows because the step \(d\) has orbit
+length \(t_p(d)\) modulo \(p^2\).  Translation of the four sets in
+\eqref{eq:R-def} gives
+\begin{equation}
+ R_{\ell,h}=A_\ell(d)-2A_{\ell+1}(d)+A_{\ell+2}(d).
+ \label{eq:R-second-difference}
+\end{equation}
+Since \(p_0\nmid d\), the \(p_0\)-orbit has length \(p_0^2\).  Consequently
+\begin{equation}
+ A_m(d)=0\qquad(m\geq p_0^2).
+ \label{eq:A-cutoff}
+\end{equation}
+
+\begin{proposition}[Alternating endpoint]
+\label{prop:telescope}
+For every fixed \(h\geq1\),
+\begin{equation}
+ \boxed{\displaystyle
+ \Bin(h)=\sum_{m=1}^{p_0(h)^2-1}(-1)^{m+1}A_m(2h).}
+ \label{eq:B-alternating}
+\end{equation}
+This is the density, in the square-divisibility phase space, that the positive
+forward step-\(d\) run beginning at a uniformly selected phase has odd length.
+\end{proposition}
+
+\begin{proof}
+The singleton density is
+\(A_1=\prod_p(1-p^{-2})=6/\pi^2\), so the first term of
+\eqref{eq:B-run} is \(A_1/2\).  Write \(T=p_0^2\), which is odd.  Substituting
+\eqref{eq:R-second-difference} into \eqref{eq:B-run} and collecting terms gives
+\[
+ \frac{A_1}{2}
+ +\frac12\sum_{\substack{1\leq\ell\leq T-2\\\ell\ \mathrm{odd}}}
+ (A_\ell-2A_{\ell+1}+A_{\ell+2})
+ =A_1-A_2+A_3-\cdots-A_{T-1}+\frac{A_T}{2}.
+\]
+The last term vanishes by \eqref{eq:A-cutoff}, proving
+\eqref{eq:B-alternating}.
+
+For the event interpretation, first restrict to any finite prime set
+containing \(p_0\).  A phase is positive at index \(j\) if none of those
+prime squares divides the corresponding residue plus \(dj\).  The probability
+that its first \(m\) indices are positive is the finite version of \(A_m\).
+If \(L\) denotes the forward positive-run length, then
+\[
+ \Pr(L\text{ is odd})
+ =\sum_{m\geq1}(-1)^{m+1}\Pr(L\geq m).
+\]
+The reset prime \(p_0\) forces \(L<T\), so the sum is finite.  Finite CRT
+counting followed by the square-divisor union bound gives the infinite product
+in \eqref{eq:A-product}.  This auxiliary phase probability is not an
+independence assertion about values of the M\"obius function.
+\end{proof}
+
+\section{Finite CRT transfer}
+
+The comparison of two lags is made at finite prime support and only then
+passed to a common cofinal limit.  For a finite set \(\Pp\) of primes, let
+\[
+ \Omega_{\Pp}=\prod_{p\in\Pp}\Z/p^2\Z
+\]
+with uniform counting measure.  For \(u=(u_p)\), declare the index \(j\)
+positive when \(u_p+dj\not\equiv0\pmod{p^2}\) for every \(p\in\Pp\).
+Multiplication by the unit part of \(d\) is a bijection in each local
+coordinate.  Hence the law depends only on
+\begin{equation}
+ e_p(d)=\min(v_p(d),2),\qquad
+ t_p(d)=p^{2-e_p(d)}\in\{p^2,p,1\}.
+ \label{eq:local-level}
+\end{equation}
+
+Delete one prime coordinate \(p\) temporarily.  A positive component in the
+remaining binary cycle is a finite path \(P_L\).  Its maximum independent-set
+cardinality, equivalently the number of starting positions with an odd
+remaining forward run, is
+\begin{equation}
+ \alpha(L)=\left\lceil\frac L2\right\rceil.
+ \label{eq:alpha}
+\end{equation}
+At square support, RH-396 identifies the finite endpoint with this total MWIS
+cardinality, normalized by the number of positive vertices and multiplied by
+\(K_1=6/\pi^2\).  The positive-vertex density \(K_1\) is independent of
+\(d\).  Thus the expected sums of \(\alpha(L)\) below all have the same
+positive normalization and compare the endpoint in the same direction.
+For an integer period \(T\geq1\), define the total deletion loss
+\begin{equation}
+ \Lambda_T(L)=T\alpha(L)-
+ \sum_{r=0}^{T-1}
+ \alpha\bigl(P_L\setminus\{j:j\equiv r\pmod T\}\bigr),
+ \label{eq:Lambda-definition}
+\end{equation}
+where \(\alpha\) is summed over the path components remaining after deletion.
+
+\begin{lemma}[Four deletion branches]
+\label{lem:Lambda}
+The loss in \eqref{eq:Lambda-definition} is
+\begin{equation}
+\begin{array}{c|c|c}
+ &L\text{ odd}&L\text{ even}\\ \hline
+T\text{ odd}&
+ \alpha(L)&
+ \max\{0,L/2-(T-1)/2\}\\[2pt]
+T\text{ even}&
+ \min\{\alpha(L),T/2\}&0.
+\end{array}
+\label{eq:Lambda-branches}
+\end{equation}
+The formulas include \(T=1,2\) and the thresholds \(L<T\), \(L=T\), and
+\(L>T\).
+\end{lemma}
+
+\begin{proof}
+Number the vertices \(1,\ldots,L\).  Let \(f\in\{1,\ldots,T\}\) be the
+first possible deleted vertex for a residue class.  If \(f>L\), no vertex is
+deleted and the resulting value is \(\alpha(L)\).  If \(f\leq L\), put
+\[
+ n_f=1+\left\lfloor\frac{L-f}{T}\right\rfloor,
+ \qquad b_f=L-f-(n_f-1)T,
+ \qquad 0\leq b_f<T.
+\]
+The surviving component lengths are exactly
+\[
+ f-1,\quad
+ \underbrace{T-1,\ldots,T-1}_{n_f-1\ \mathrm{times}},\quad b_f.
+\]
+Consequently, with \(\beta_f=\alpha(L)\) for \(f>L\),
+\begin{equation}
+ \beta_f=
+ \left\lceil\frac{f-1}{2}\right\rceil
+ +(n_f-1)\left\lceil\frac{T-1}{2}\right\rceil
+ +\left\lceil\frac{b_f}{2}\right\rceil,
+ \qquad
+ \Lambda_T(L)=\sum_{f=1}^{T}\bigl(\alpha(L)-\beta_f\bigr).
+ \label{eq:Lambda-count}
+\end{equation}
+Write \(L=kT+s\), \(0\leq s<T\), and split the sum at \(f=s\), with the
+evident empty part when \(k=0\).  Substitution in
+\eqref{eq:Lambda-count}, using
+\[
+ \sum_{j=0}^{n-1}\left\lceil\frac j2\right\rceil
+ =\left\lfloor\frac{n^2}{4}\right\rfloor,
+\]
+gives, for odd \(T\),
+\[
+ \Lambda_T(L)=
+ \begin{cases}
+  \alpha(L),&L\text{ odd},\\
+  \max\{0,L/2-(T-1)/2\},&L\text{ even},
+ \end{cases}
+\]
+and, for even \(T\),
+\[
+ \Lambda_T(L)=
+ \begin{cases}
+  \min\{\alpha(L),T/2\},&L\text{ odd},\\
+  0,&L\text{ even}.
+ \end{cases}
+\]
+This proves all four branches, including \(T=1,2\) and the cases
+\(L<T,L=T,L>T\).
+\end{proof}
+
+For a prime \(p\) at local level \(e\in\{0,1,2\}\), averaging its phase over
+\(\Z/p^2\Z\) changes the contribution of a base path to
+\begin{equation}
+ V_{p,e}(L)=\alpha(L)-
+ \frac{\Lambda_{p^{2-e}}(L)}{p^2}.
+ \label{eq:local-V}
+\end{equation}
+Indeed, \(p^2-p^{2-e}\) phases delete no vertex of the orbit, while the
+remaining \(p^{2-e}\) phases realize once each of the residue deletions in
+\eqref{eq:Lambda-definition}.
+
+\begin{lemma}[Local order]
+\label{lem:local-order}
+For every odd prime \(p\),
+\begin{equation}
+ V_{p,0}(L)\geq V_{p,1}(L)\geq V_{p,2}(L).
+ \label{eq:odd-local-order}
+\end{equation}
+The three quantities are equal for odd \(L\).  For even \(L<p\),
+\(V_{p,0}=V_{p,1}\), while the first strict \(0\)-to-\(1\) comparison occurs
+at \(L=p+1\), with loss \(p^{-2}\).  The \(1\)-to-\(2\) comparison is strict
+for every even \(L\).  At \(p=2\), the identity \(d=2h\) permits only levels
+\(1\) and \(2\), and
+\[
+ V_{2,1}(L)\geq V_{2,2}(L),
+ \qquad V_{2,1}(2)-V_{2,2}(2)=\frac14.
+\]
+\end{lemma}
+
+\begin{proof}
+For odd \(p\), all three periods \(p^2,p,1\) are odd.  Insert their values in
+the odd-\(T\) rows of \eqref{eq:Lambda-branches}.  For odd \(L\), all three
+losses equal \(\alpha(L)\).  For even \(L\), the loss is nondecreasing as the
+period falls from \(p^2\) to \(p\) to \(1\), which proves
+\eqref{eq:odd-local-order}.  When \(L<p\), both of the first two losses vanish;
+at \(L=p+1\), they are zero and one.  The period-one loss is
+\(\alpha(L)=L/2\), strictly exceeding the period-\(p\) loss for even \(L\).
+At \(p=2\), use the even-period row for \(T=2\) and the odd-period row for
+\(T=1\).  Level zero would require \(2\nmid d\) and is therefore
+counterfactual; it is never used.
+\end{proof}
+
+\begin{proposition}[Finite-support transfer]
+\label{prop:transfer}
+Fix all local coordinates except a prime \(p\), and suppose a reset prime
+other than \(p\) makes every positive component a path.  Increasing the local
+level \(e_p\) weakly decreases the finite endpoint.  Strict local loss on any
+positive-density exact-run cylinder makes the decrease strict.  The comparison
+survives along one common prime-initial cofinal family.
+\end{proposition}
+
+\begin{proof}
+Condition on the other finite coordinates and decompose their positive cycle
+into paths.  The endpoint numerator is the sum of \(\alpha(L)\) over those
+paths.  Averaging the \(p\)-coordinate replaces each summand by
+\(V_{p,e_p}(L)\).  The inequalities in \cref{lem:local-order} may therefore be
+summed path by path.  This proves the finite comparison.
+
+For strictness, fix an exact path of a length at which the relevant local
+inequality is strict.  Supply its two zero boundaries by two auxiliary prime
+squares, and require its interior to avoid every other square class.  Finite
+CRT gives a nonempty cylinder.  After the finitely many small coordinates are
+fixed, its remaining density contains a tail
+\(\prod_{r>Y}(1-L/r^2)>0\).  Thus the strict loss has positive density.
+
+Finally take the same increasing prime-initial supports on both sides.  For
+each fixed finite set of path indices, the omitted square-divisor density is at
+most a fixed multiple of \(\sum_{r>Y}r^{-2}\), which tends to zero.  Hence the
+finite inequalities pass to the products \(D_h\), the run densities, and the
+finite telescope \eqref{eq:B-alternating}.  No infinite-prime random mask and
+no varying-lag terminal limit is introduced.
+\end{proof}
+
+\section{Maximum and equality cases}
+
+For the base lag \(h=1\), the local level is \(1\) at \(p=2\) and \(0\) at
+every odd prime.  For an arbitrary \(h\), every local level is at least this
+canonical level.  Fix the reset prime \(s=p_0(h)\).  Every coordinate that
+must be changed is \(2\) or a prime divisor of \(h\), so it is different from
+\(s\); moreover \(e_s=0\) at both endpoints of every comparison.  Include
+\(s\) in every common prime-initial support.  It then cuts all positive
+components into paths throughout the transfer sequence.  Applying
+\cref{prop:transfer} one prime at a time and passing along that common cofinal
+support proves \(\Bin(h)\leq\Bin(1)\).  It remains to determine exactly when
+all transfers are invisible.
+
+\begin{lemma}[Strict witnesses]
+\label{lem:strict-witnesses}
+Every lag outside \eqref{eq:maximizer-criterion} has one of the following
+strict local witnesses.
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+defect & prime & exact path length & local loss \\ \midrule
+\(2\mid h\), equivalently \(4\mid d\) & \(2\) & \(2\) & \(1/4\)\\
+odd \(p^2\mid h\) & \(p\) & \(2\) & positive\\
+\(3\mid h\) after squarefree reduction & \(3\) & \(4\) & \(1/9\)\\
+\(5\mid h\) after squarefree reduction & \(5\) & \(6\) & \(1/25\)\\
+\(7\mid h\) after squarefree reduction & \(7\) & \(8\) & \(1/49\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+Each witness occurs on a positive-density exact-run cylinder after all other
+local transfers have been made.
+\end{lemma}
+
+\begin{proof}
+The losses are the special cases of \cref{lem:local-order}.  For an odd square
+factor, level \(0\) is replaced by level \(2\), and the length-two loss is
+positive.  For a single factor \(p=3,5,7\), the first strict level
+\(0\)-to-\(1\) length is \(p+1\).
+
+Order all nonwitness transfers first and the displayed witness last.  For each
+witness of length \(L\), choose two fresh auxiliary primes
+\(a,b\nmid 2hp\) with \(a,b>L+1\).  Their step-\(d\) orbit lengths are
+\(a^2,b^2>L+1\).  Use the \(a^2\)-coordinate to force a zero at the left
+boundary and the \(b^2\)-coordinate to force a zero at the right boundary;
+neither class can repeat in the \(L\)-site interior.  CRT chooses these two
+boundary classes and avoids all interior classes at the remaining finitely
+many primes.  The outside-prime product is positive because
+\(\sum_p p^{-2}<\infty\).  Hence the strict finite loss cannot disappear in
+the cofinal limit.
+\end{proof}
+
+\begin{lemma}[Large-prime invisibility]
+\label{lem:invisibility}
+If \(h\) is squarefree and \(\gcd(h,210)=1\), then \(\Bin(h)=\Bin(1)\).
+\end{lemma}
+
+\begin{proof}
+Now \(p_0(h)=3\), so every positive run has length at most eight.  Every odd
+prime divisor of \(h\) is at least eleven and occurs once, changing its local
+level from \(0\) to \(1\).  For odd path lengths the two levels are equal; for
+even \(L\leq8<p\), they are again equal by \cref{lem:local-order}.  Thus every
+such transfer is invisible on every possible path.  There are only finitely
+many prime divisors, so the finite endpoints and then their common cofinal
+limits agree exactly.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:maximum}]
+The local transfer order proves the upper bound.  The forward implication in
+the equality statement is the contrapositive of
+\cref{lem:strict-witnesses}; the reverse implication is
+\cref{lem:invisibility}.  The connector in
+\eqref{eq:maximizer-criterion} is therefore ``and'', and
+\(210=2\cdot3\cdot5\cdot7\).  The equality class is infinite, for example it
+contains \(1,11,13,143\), and \(187\).
+\end{proof}
+
+\section{Complement and the uniform gap}
+
+\begin{proof}[Proof of the complementary supremum]
+Let \(p\geq11\) be prime and take \(h=p^2\).  The reset prime is still three,
+so only path lengths \(1,\ldots,8\) occur.  Relative to \(h=1\), only the
+\(p\)-coordinate changes, from level \(0\) to level \(2\).  Odd path lengths
+have zero loss.  At even length \(L\), the loss is
+\(\alpha(L)/p^2\) in the phase average.  On a finite common support
+\(\Pp_Y\), remove the \(p\)-coordinate, let \(N_Y\) be the number of positive
+vertices in one period of the remaining graph, and define
+\[
+ \rho_{L,Y}=\frac1{N_Y}
+ \#\{\text{positive path components of length }L\}.
+\]
+The count is taken over the complete CRT period, so it already averages all
+remaining phase coordinates.  Exact-run densities and the square-divisor tail
+show that \(\rho_{L,Y}\) has a common cofinal limit \(\rho_L\).  Summing the
+local loss over all \(p^2\) phases removes the factor \(p^{-2}\); the full
+positive-vertex count gains the common factor \(p^2-1\).  The square-clock
+normalization therefore gives
+\[
+ 0<\Bin(1)-\Bin(p^2)
+ =\frac{K_1}{p^2-1}
+ \sum_{\substack{2\leq L\leq8\\L\ \mathrm{even}}}
+ \rho_L\alpha(L)
+ \leq\frac1{p^2}.
+\]
+The normalization is by component count, not by the density of vertices lying
+inside a component.  In particular,
+\[
+ \sum_L\rho_L\alpha(L)\leq
+ \sum_L\rho_LL\leq1,
+\]
+because the positive path components are disjoint.  Strictness follows from the
+length-two cylinder in \cref{lem:strict-witnesses}.  The last displayed upper
+bound also uses \(K_1=6/\pi^2<2/3\), hence
+\(K_1/(p^2-1)<1/p^2\) for \(p\geq11\).  Each \(p^2\) is an
+individually fixed lag; only after its endpoint has been formed do we let the
+external scalar prime parameter tend to infinity.  This proves
+\eqref{eq:prime-square-gap}, the complementary supremum, and its
+nonattainment by \cref{thm:maximum}.
+\end{proof}
+
+\begin{lemma}[The \(p_0\geq5\) sector]
+\label{lem:uniform-gap}
+If \(p_0(h)\geq5\), then \eqref{eq:p0-gap} holds.
+\end{lemma}
+
+\begin{proof}
+The hypothesis says \(3\mid d\), equivalently \(3\mid h\).  At every odd
+prime other than \(3\), reduce the local level all the way to the canonical
+level zero, using the two steps \(2\to1\to0\) when necessary.  At \(2\),
+reduce to the canonical level one and use only the permitted comparison
+\(V_{2,1}\geq V_{2,2}\).  At \(3\), reduce level two to the level one of
+the lag \(h=3\) when necessary, using \(V_{3,1}\geq V_{3,2}\).
+The local transfer order gives
+\[
+ \Bin(h)\leq\Bin(3).
+\]
+
+To compare \(h=1\) and \(h=3\), leave the \(3\)-coordinate until last and
+force an exact base path of length four in the other coordinates.  Choose the
+inactive \(2\)-coset with factor \(1/2\), the left boundary from a class
+modulo \(5^2\), and the right boundary from a class modulo \(7^2\).  At every
+prime \(r\geq11\), avoid the four interior classes.  The resulting cylinder
+has density larger than
+\[
+ \frac12\cdot\frac1{25}\cdot\frac1{49}
+ \prod_{r\geq11}\left(1-\frac4{r^2}\right)
+ >\frac12\cdot\frac1{25}\cdot\frac1{49}\cdot\frac35
+ =\frac3{12250}.
+\]
+Here
+\(\prod_{r\geq11}(1-4/r^2)>1-4\sum_{n\geq11}n^{-2}>3/5\).
+The final level \(0\)-to-\(1\) transfer at \(p=3\) has local loss \(1/9\).
+Therefore
+\[
+ \Bin(1)-\Bin(h)\geq\Bin(1)-\Bin(3)
+ >\frac3{12250}\cdot\frac19
+ =\frac1{36750}>\frac2{1334025},
+\]
+which is the claimed chain.
+\end{proof}
+
+The two parts of \cref{thm:complement} have now been proved.
+
+\section{Joint finite-clock endpoint}
+
+\begin{proof}[Proof of \cref{cor:joint}]
+For each fixed \(h\) and each finite declared phase clock \(q\), RH-396 gives
+the strict pointwise inequality
+\[
+ C_h(q)<\Bin(h)\leq\Bin(1).
+\]
+Hence every finite pair lies strictly below \(\Bin(1)\).  Conversely, the
+cofinal square clocks constructed in RH-396 at the single fixed lag \(h=1\)
+have capacities tending to \(\Bin(1)\).  This proves
+\eqref{eq:joint-supremum} and rules out finite-pair attainment.  The retained
+infimum and its nonattainment are exactly RH-396 Corollary 1.4,
+\eqref{eq:RH396-infimum}; we import that theorem rather than replacing its
+proof by an orientation or random-model argument.
+\end{proof}
+
+\section{Exact finite reproduction and source roles}
+
+The companion certificate reproduces finite identities and attacks
+implementation drift; it is not an analytic proof.  Its immutable partition
+contains 72 rows:
+\begin{center}
+\begin{tabular}{@{}lr@{}}
+\toprule
+group & rows\\ \midrule
+deletion-loss formula & 12\\
+local order & 12\\
+product and telescope & 12\\
+strictness cylinders & 12\\
+maximizers & 8\\
+complement and gap & 8\\
+joint endpoint & 4\\
+firewalls & 4\\ \bottomrule
+\end{tabular}
+\end{center}
+The canonical certificate has 36,635 bytes and SHA-256
+\begin{center}
+\scriptsize\ttfamily
+d47de091a8fe5a134ba4bbf8ac4689f53b54786d45dc3bfc7061c99b46bea741
+\end{center}
+66 named semantic mutations are rejected.  The core has 61,751 bytes and
+SHA-256
+\begin{center}
+\scriptsize\ttfamily
+ce728df064b2538e49a1f47de5db0ee7e6eabee3d99283be5dc3eb3c122df9da
+\end{center}
+
+The frozen source closure has 184 Git members and four ordered remote logical
+locks, for 188 logical inputs.  Its canonical serialization has 64,997 bytes
+and SHA-256
+\begin{center}
+\scriptsize\ttfamily
+5cb3a2f4339ba0b2f11654092496bf7caf255d0d0e7ccf23524355d9f3fa97d7
+\end{center}
+RH-396 at commit
+\texttt{cd57086fa90939d56656c3f952a08ffad9aabefe} is the sole load-bearing
+theorem and analytic endpoint input.  RH-397 at commit
+\texttt{dd63a109dcfa72365c749e0b183820d2611af733} is the direct release and
+source-closure predecessor only \cite{RH397}.  Earlier sources and all four
+remote records are inherited transitively; none pays a fresh claim here.
+
+The pretty result has 187,434 bytes and SHA-256
+\begin{center}
+\scriptsize\ttfamily
+b22bd32fd515cbe98ee1fc946cef7e695273fdffd002cb5e29281ceba7e263f7
+\end{center}
+its 44 result mutations are rejected.  The exact Draft 2020-12 schema has
+961,955 pretty bytes, SHA-256
+\begin{center}
+\scriptsize\ttfamily
+5852ea6e0718185cd063ec56fd5ace000464f95741a2299e15dcd5405d447e8e
+\end{center}
+and 4,768 recursively closed nodes; 32 schema mutations are rejected.  The
+four Stage-1 test layers pass 45 tests in both normal and \texttt{-OO} modes.
+
+\section{Limitations and declarations}
+
+The order of operations is permanent:
+\begin{align*}
+ \text{fix }h,q,F,\omega
+ &\longrightarrow X\to\infty
+ \longrightarrow \text{finite safe-table maximum}\\
+ &\longrightarrow \sup_{q<\infty}
+ \longrightarrow \text{fixed-scalar comparison in }h.
+\end{align*}
+There is no \(h=h(X)\), \(q=q(X)\), growing or adaptive table, moving order,
+uniform effective rate, prelimit maximum, or ordinary Ces\`aro assertion.  The
+centered rule reads \(\mob(n+h)\), so it is not causal or online.  We prove no
+four-shift or larger-window law, generic-graph theorem, monotonicity in \(h\),
+operator or trace formula, statement about zeros, Riemann hypothesis, or Gates
+A--E.  The finite CRT probability is exact square-divisibility bookkeeping and
+must not be read as a stochastic law for M\"obius values.
+
+\paragraph{Data and code availability.}
+All deterministic certificate, result, schema, source-lock, and release files
+belong to the frozen repository package.  Verification is offline; no remote
+PDF is redistributed and no network fetch is required.
+
+\paragraph{Ethics.}
+The work uses no human participants, animals, personal data, or intervention.
+
+\paragraph{Author contributions and AI use.}
+The Prime Dynamics Theory Project directed the research, reconstructed and
+checked the arguments, assigned source roles, and retains responsibility for
+all claims.  AI-assisted tools supported drafting, finite-certificate
+implementation, formatting, and consistency checks.
+
+\paragraph{Competing interests and funding.}
+The project declares no competing interests and received no external funding.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
