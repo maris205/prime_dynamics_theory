@@ -94,6 +94,23 @@
 25. **PROVED** — V55 maximal-shell Abel transfer：若 V51 folded partial prime-shell
     `F(Y)=sum_{Q<q<=Y}qP_q` 对所有 `Y` 有 fixed-power maximal bound，则 Abel summation
     精确转移到最终 longitudinal scalar；只控制 full-shell endpoint不足，有限反例已锁定。
+26. **PROVED** — V56 one-modulus absolute envelope：对同一 literal folded row，
+    `q|P_q|<<x^(53/32+o(1))`，到 Gate-A numerator target 的精确余量为 `19/2400`。
+27. **PROVED** — V56 pruned dyadic maximal compiler：预声明连续 leaves、aligned
+    power-of-two nodes后，每个 prime-shell prefix精确分解为 `O(log Q)` 个完整 nodes
+    加至多一个 full leaf与一个 partial leaf。
+28. **PROVED** — 短 leaf absolute payment：若 `0<lambda<19/2400`，每个含至多
+    `x^lambda` 个素模数的 leaf保留 saving `19/2400-lambda`；标准选择
+    `lambda=19/4800` 留 `19/4800`。
+29. **PROVED** — tree-to-maximal transfer：一个对全部 predeclared large nodes统一的
+    signed block theorem只损失 `O(log Q)=x^o(1)`；反向每个 node是两个 prefixes之差，
+    故二者在付清短 leaves后 power-equivalent，常数二是 sharp。
+30. **PROVED** — V56 endpoint ledger：若 block saving为 `eta_D`，则 maximal saving可取
+    `eta_M<min(eta_D,19/2400-lambda)`；再与 square row、boundary strip及 Gate B合并时
+    全部 strict margins均显式保留。
+31. **PROVED** — tree operations始终作用于完整 folded compensated row；只有在
+    whole-node theorem之后才允许 `O(log Q)` triangle，因此不重犯 V51
+    orientation-first absolute reassembly。
 
 ### 2.2 可写成条件命题的局部引擎
 
@@ -118,6 +135,14 @@
 6. **SOURCE_BACKED_CONDITIONAL** —
    Kerr--Shparlinski--Wu--Xi arXiv:2204.05038v5：fixed-modulus Kloosterman arrays的
    bilinear bounds；同样只可作 post-emitter局部引擎，不能支付 V55 whole-object bridge。
+7. **SOURCE_BACKED_CONDITIONAL / ARCHITECTURE ONLY** —
+   Lewko--Lewko arXiv:1111.6190v2, Lemmas 16 and 23--24：dyadic interval
+   decomposition与 variational maximal large sieve说明 endpoint motion可只付对数；
+   其 maximal axis是 inner coefficient index，不是 literal outer-`q` folded row。
+8. **SOURCE_BACKED_CONDITIONAL / ARCHITECTURE ONLY** —
+   Ramaré arXiv:2303.04409v2, Lemmas 3.1--3.2：inner-index maximal large sieve及
+   smooth nonnegative modulus average；没有 V51 signed pair coefficient、physical
+   hybrid factor或 canonical outer-`q` block reassembly。
 这些 source 均未直接证明当前 whole-object theorem。
 
 ### 2.3 主猜想
@@ -176,6 +201,22 @@ V55 把这条判断推进为一般 operator theorem：所有 post-`q` modulus en
 这三项是路线接口，不是新增算术结论；global Siegel-quality unbounded world仍保留为
 独立条件出口。
 
+V56 进一步把第 1 项压成单一、可量词化的 **CONJECTURAL** block theorem。令
+`lambda in (0,19/2400)`，把按大小排序的 prime shell预先分成至多 `x^lambda`
+个模数的 leaves，并令 `B` 遍历至少两个 leaves组成的 aligned dyadic nodes。当前最窄
+Gate-A 猜想是存在 fixed `eta_D>0`，uniformly in all such `B`,
+
+\[
+ \left|\sum_{q\in B}qP_q\right|
+ \ll x^{1997/1200-\eta_D+o(1)}.
+\]
+
+它条件性推出 maximal V51 theorem，saving可取
+`eta_M<min(eta_D,19/2400-lambda)`；反向 maximal theorem以 factor two控制每个 node。
+这不是比 full shell theorem自动更容易的声明，而是精确标识 moving endpoint额外要求的
+全部 arithmetic content。V42 common transverse Gate B仍须独立证明；V52 PAD保持平行
+后备，三条 route不得拼接 exponent credit。
+
 ### 2.4 必须保留的 NO-GO 结果
 
 1. **NO_GO** — orientation-first absolute reassembly destroys exact folded zeros。
@@ -214,6 +255,11 @@ V55 把这条判断推进为一般 operator theorem：所有 post-`q` modulus en
     wrong object或删掉 longitudinal mode，不能作为 V55 direct attachment。
 18. **NO_GO** — Dong--Robles--Zeindler arXiv:2601.00292v2 已由作者撤回；其说明明确
     指出 equation (2.53) 缺失 `L^2` 因子，claimed improvement失效，不计 theorem credit。
+19. **NO_GO** — V51 full-shell theorem不能推出 maximal theorem；`q=(5,7)`,
+    `P=(7,-5)` 给 `sum qP_q=0`，但 earlier prefix为 `35` 且 longitudinal sum为 `13/12`。
+20. **NO_GO** — dyadic decomposition本身不制造 cancellation；若各模数同号，单模数
+    envelope在整 shell累积到 `x^(191/96+o(1))`，远高于目标。large-node theorem必须
+    使用 literal arithmetic signs与完整 within-row compensation。
 
 ## 3. 第二篇候选：endpoint-matched exceptional spectrum compiler
 
@@ -294,11 +340,12 @@ handoff。
 | 2026-08-11 | V53 | completed pair rows、paid collision diagonal、one-`Q` endpoint与 symmetric two-gate schema | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 | 2026-08-11 | V54 | paired-row mode diagonalization、paid transverse difference、terminal longitudinal firewall | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 | 2026-08-12 | V55 | every-modulus replicas、一般 operator/minimax/PSD dichotomy、maximal-shell transfer与 pre-`q` route pivot | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
+| 2026-08-12 | V56 | one-modulus envelope、pruned dyadic maximalization、leaf margin、reverse interval equivalence与 canonical-block conjecture | **PROVED + SOURCE_BACKED_ARCHITECTURE + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 
 下一次更新应优先回答：
 
-1. 能否证明 V51 folded emitter的 maximal partial prime-shell bound，而不先压成
-   terminal `q`-coordinate；
+1. 能否对 V56 预声明的全部 large dyadic nodes证明同一个 uniform literal block
+   theorem；这是当前 Gate A 的第一大门；
 2. 能否在 V52 packet层直接证明
    `(delta_B+delta_W)/2+kappa>1/400` 的 joint angular dispersion；
 3. 能否对任一 literal row的 transverse projection证明 one-`Q` variance，并由 V54
@@ -308,4 +355,6 @@ handoff。
 5. unbounded Siegel-quality world能否沿既有 source-backed fixed-`h=2` 通道直接退出；
 6. 能否把 V54--V55 exact diagonalization、minimax extractor与 maximal Abel transfer
    抽象成一篇不依赖 TPC终点的 standalone structural note；
-7. 哪个候选最先满足“成稿门槛 A”。
+7. 能否把 V56 maximalization与一个非 TPC-specific weighted endpoint application组合，
+   使其达到 standalone structural note 的“成稿门槛 A”；
+8. 哪个候选最先满足“成稿门槛 A”。

@@ -2,7 +2,7 @@
 
 更新时间：2026-08-12
 
-当前地图版本：V55
+当前地图版本：V56
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,14 +46,14 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +-----------------------------------------------+
-        | YOU ARE HERE — V55                            |
-        | LONGITUDINAL = TERMINAL READOUT CLASSIFIED    |
-        | pre-q Gate A + common transverse piers = OPEN |
+        | YOU ARE HERE — V56                            |
+        | MAXIMAL ENDPOINT MOTION = COMPILED            |
+        | large dyadic blocks + transverse pier = OPEN  |
         +-----------------------------------------------+
                 |
                 v
 Bridge A 的 pre-compression 桥墩
-  maximal fold-first / PAD + common transverse = OPEN
+  uniform canonical dyadic blocks / PAD + common transverse = OPEN
                 |
                 v
 岛 6：TPC 终点岛
@@ -130,7 +130,13 @@ coordinate以 `x^(79/96+o(1))` 误差直接抽取 physical residual。V55 又逐
 terminal estimator。`kappa/N_kappa` 在 L2 error-ball model内唯一 minimax，
 PSD/TT-star也无第三种 preliminary case。当前施工点因此前移到 q-compression之前：
 V51 maximal partial-shell或 V52 PAD作为 Gate A，V42/common transverse作为 Gate B；
-longitudinal cable只作为终点读出。核心算术 saving 尚未取得。**
+longitudinal cable只作为终点读出。V56 又把 maximal endpoint motion编译成一棵
+预声明 pruned dyadic tree：每个短 leaf由 `q|P_q|<<x^(53/32+o(1))` 绝对支付，
+`lambda=19/4800` 时仍留 `19/4800` margin；每个 prefix只需 `O(log Q)` 个 aligned
+large nodes加一个 partial leaf。于是 maximal Gate A 与一个 uniform canonical-block
+theorem在 power scale上等价。当前真正未跨过的是这些 large nodes上的 literal
+fold-first signed cancellation，以及独立的 common transverse Gate B。核心算术 saving
+尚未取得。**
 
 ## 2. 图例与状态语言
 
@@ -223,6 +229,8 @@ transference scalar精确相连；它们仍需分别给 saving：
    two-long，V52 写成 compensated prime dilation，V53 再完成每个 `q`-row的
    signed cancellation；V54 证明 pair row与 V40 physical row的 transverse
    projections只差已付款误差，所以一个 common transverse theorem足够覆盖两者；
+   V56 再把 V51 moving endpoint精确缩成 large aligned dyadic nodes；短 leaves不需要
+   cancellation，所有 node必须保留完整 folded compensated row；
 4. `terminal longitudinal cable`：两 row沿 `kappa_q=(q-2)/(q-1)` 的差直接等于
    physical residual加已付款误差。它必须由 direct signed scalar支付，不能被 centered
    modulus-BDH删除；V53 symmetric two-row theorem是 terminal package而非较易前置门。
@@ -238,7 +246,33 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 当前精确位置：V55
+## 5. 当前精确位置：V56
+
+V56 不再把 `sup_Y` 当作一个额外黑箱。对 prime shell按大小排序，预先分成至多
+`M=floor(x^lambda)` 个模数的连续 leaves，其中 `0<lambda<19/2400`。单模数 envelope
+
+\[
+ q|P_q|\ll x^{53/32+o(1)}
+\]
+
+使每个 leaf自动保留 saving `19/2400-lambda`。完整 leaves再组成 aligned
+power-of-two dyadic nodes。任一 prefix精确分解成 `O(log Q)` 个 nodes、至多一个
+singleton full leaf和一个 partial leaf。因此，只要对每个至少含两个 leaves的 node
+`B` 统一证明
+
+\[
+ \left|\sum_{q\in B}qP_q\right|
+ \ll x^{1997/1200-\eta_D+o(1)},
+\]
+
+就得到任意
+`eta_M<min(eta_D,19/2400-lambda)` 的 maximal Gate-A saving。反向每个 node是两个
+prefixes之差，所以在短 leaf付款后，两种 theorem在 power scale上等价。这个 compiler
+没有证明 node estimate；Lewko--Lewko 与 Ramaré只提供 inner-index maximal/dyadic
+architecture，现有 fixed-modulus Kloosterman engines也没有完成 outer-`q` block
+reassembly。
+
+下面的 V43--V55 细节继续说明到达这个位置的完整上游链。
 
 V43 把 V35 proper-factor direction 在第一次 outer absolute 之前送进 complete
 centered Poisson。冻结 ordered weight 后仍有 exact diagonal
@@ -656,7 +690,7 @@ Kloosterman engine只到单 cell，未付 block atomic budget和跨 `q` 的 L2 r
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
 
-| 图像语言 | 仓库 V55 语言 | 关系 |
+| 图像语言 | 仓库 V56 语言 | 关系 |
 |---|---|---|
 | Bridge A：解析 collective saving | `B(positive Gram / MPD / P2 / K / E / X)` 与 `A(alias)` 的 zero-axis transference | 图像的一座大桥被拆成多车道 B、terminal A 及 exact AND compiler |
 | Bridge B：distinguished-seed genericity | `C` symmetry-breaking reserve | 都是动力学/指定 seed 后备线 |
@@ -695,7 +729,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V55：
+截至 V56：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -723,9 +757,9 @@ NUMBERED_RELEASE = NO
 1. **先按全局 Siegel quality 分流**。unbounded world 直接调用已锁定的
    Matomaki--Merikoski `h=2` correlation exit；不得把单尺度 singleton误判为
    unbounded sequence；
-2. **V51 maximal fold-first Gate A**。优先证明所有 partial prime shells上
-   `sup_Y |sum_(q<=Y) qP_q|` 的 whole-object fixed-power bound；只证明最终
-   full shell不够；
+2. **V56 canonical dyadic block Gate A**。对预声明 pruned tree中每个 large node
+   证明同一个 literal fixed-power bound；`lambda=19/4800` 是当前标准 leaf cut。
+   tree theorem与 V51 maximal theorem power-equivalent，而只证明 full shell仍不够；
 3. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
    signed diagonal/off-diagonal，并支付
    `(delta_B+delta_W)/2+rho>1/400`；fixed-modulus local engine只作条件工具；
@@ -745,7 +779,7 @@ NUMBERED_RELEASE = NO
 最窄 first fatal：
 
 ```text
-NO_PRIMARY_THEOREM_CONTROLS_THE_LITERAL_PRE_Q_PROJECTION_SIGNED_DIAGONAL_OFFDIAGONAL_PACKET_OR_THE_V51_MAXIMAL_PARTIAL_PRIME_SHELL__ANY_POST_Q_OPERATOR_RETAINING_KAPPA_IS_TERMINAL_EQUIVALENT_AND_THE_COMMON_TRANSVERSE_THEOREM_REMAINS_OPEN
+NO_PRIMARY_THEOREM_PROVES_THE_UNIFORM_CANONICAL_DYADIC_BLOCK_BOUND_FOR_THE_LITERAL_V51_FOLD_FIRST_DIAGONAL_COMPLETED_COMPENSATED_PAIR_PRIME_HYBRID_ROW__AND_V42_COMMON_TRANSVERSE_GATE_B_REMAINS_OPEN
 ```
 
 ## 9. 后续更新协议
@@ -765,6 +799,7 @@ NO_PRIMARY_THEOREM_CONTROLS_THE_LITERAL_PRE_Q_PROJECTION_SIGNED_DIAGONAL_OFFDIAG
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-12 | V56 | Bridge A：maximal endpoint motion已压成 pruned dyadic large-node theorem；common transverse Gate B仍 open | target parent `4019d48b09ea8f1181953a9480ae66e55c4b10dc`; V56=current working release | one-modulus `53/32` envelope、`19/2400` leaf budget、binary prefix decomposition、tree/maximal power equivalence与 source firewall；arithmetic仍为 NO |
 | 2026-08-12 | V55 | Bridge A：longitudinal modulus cable 已分类为 terminal readout；施工点前移到 pre-\(q\) Gate A 与 common transverse Gate B | target parent `7164a9a19fc9e938ee00344f908e369e7b759e13`; V55=current working release | every-modulus replica、一般 modulus-operator dichotomy、minimax extractor、PSD/TT-star firewall 与 V51 maximal-shell transfer；arithmetic仍为 NO |
 | 2026-08-11 | V54 | Bridge A：paired rows 的 transverse deck 已识别；terminal longitudinal cable open | target parent `6ac39743d196bafd575014fe0a1cfe4373d723ee`; V54=current working release | exact `P-C=kappa*S-E`、paid difference energy、longitudinal extraction、transverse projection与 two-out-of-three terminal compiler；arithmetic仍为 NO |
 | 2026-08-11 | V53 | Bridge A / Gates A--B：pair与physical两种 completed `q`-row桥墩已统一；one-`Q` Bessel theorem open | target parent `6f776d76ee4a1c3948cfd2332056d65dfae0c558`; V53=current working release | exact pair-row compression、`x^(95/48)` collision diagonal、`tau<419/1200` endpoint、symmetric `H_2RB(1/3,1/3)` compiler与 polarized-BDH diagonal-return NO-GO；arithmetic仍为 NO |
