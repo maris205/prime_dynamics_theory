@@ -1,6 +1,6 @@
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-11
+更新时间：2026-08-12
 
 状态：**LIVING_PREPUBLICATION_LEDGER / NON_AUTHORITATIVE**
 
@@ -30,7 +30,7 @@
 
 候选类型：结构性解析数论短文 / research note。
 
-当前成熟度：**OUTLINE_ONLY**。
+当前成熟度：**STRUCTURAL_LEMMA_PACKAGE_READY / MAIN_ARITHMETIC_THEOREM_OPEN**。
 
 ### 2.1 可直接进入正文的已证骨架
 
@@ -79,6 +79,21 @@
 20. **PROVED** — V54 two-out-of-three terminal compiler：pair row、physical row与
     physical scalar三者任意两个同尺度 bounds推出第三个；V53 symmetric package因此
     是 terminal package而非更容易的双 preliminary gate。
+21. **PROVED** — V55 every-modulus replica：对 prime shell内每个预声明模数，
+    `S_q^rep=(P_q-C_q)/kappa_q=S_physical+O(x^(79/96+o(1)))`；这是逐模数
+    pointwise identity，不借跨模数平均。
+22. **PROVED** — V55 general modulus-operator dichotomy：任意线性算子 `T` 满足
+    `T(P-C)=S_physical*T(kappa)-T(E)`；`T(kappa)=0` 时只看 transverse paid error，
+    `T(kappa)!=0` 时其 longitudinal estimator 已直接估计终点。
+23. **PROVED** — V55 minimax linear extraction：在 `l^2` error ball内，约束
+    `<a,kappa>=1` 的唯一最优线性权为 `a*=kappa/||kappa||_2^2`，V54 extractor不是
+    任意选择，而是当前 information model的 minimax readout。
+24. **PROVED** — V55 PSD/TT-star firewall：正半定二次型若 annihilate `kappa`，只控制
+    transverse deck；若保留正的 `kappa` energy，其 longitudinal部分与 physical scalar
+    terminal-equivalent，不存在第三类 post-`q` preliminary gate。
+25. **PROVED** — V55 maximal-shell Abel transfer：若 V51 folded partial prime-shell
+    `F(Y)=sum_{Q<q<=Y}qP_q` 对所有 `Y` 有 fixed-power maximal bound，则 Abel summation
+    精确转移到最终 longitudinal scalar；只控制 full-shell endpoint不足，有限反例已锁定。
 
 ### 2.2 可写成条件命题的局部引擎
 
@@ -96,6 +111,13 @@
 4. **SOURCE_BACKED_CONDITIONAL** —
    Zheng arXiv:2512.22798v1：simultaneous progression architecture；其 fixed
    residues、`theta<=7/36` 或 `2/23` 与 coefficient hypotheses尚未覆盖 V53。
+5. **SOURCE_BACKED_CONDITIONAL** —
+   Milićević--Qin--Wu arXiv:2511.07550v1, Theorem 1.1：fixed-`q` separable bilinear
+   `Kl_2` cell允许任意局部系数，但尚无 literal pre-`q` fold/packet compiler和 maximal
+   prime-shell reassembly。
+6. **SOURCE_BACKED_CONDITIONAL** —
+   Kerr--Shparlinski--Wu--Xi arXiv:2204.05038v5：fixed-modulus Kloosterman arrays的
+   bilinear bounds；同样只可作 post-emitter局部引擎，不能支付 V55 whole-object bridge。
 这些 source 均未直接证明当前 whole-object theorem。
 
 ### 2.3 主猜想
@@ -139,6 +161,21 @@ V53 给出一个 dispersion-native 的条件主猜想：对两个明确的 liter
 沿 `kappa` 的 direct signed longitudinal theorem；后者在 paid error后与 physical
 endpoint等价。V52 PAD与 V51 direct scalar保留为独立猜想，不叠加计算 saving。
 
+V55 把这条判断推进为一般 operator theorem：所有 post-`q` modulus engineering只有
+`T(kappa)=0` 与 `T(kappa)!=0` 两类。前者至多支付 common transverse Gate B；后者已经
+是 terminal readout。因此当前首选主猜想不再表述为一个新的 `q`-space norm，而是前移为
+以下两个 pre-compression 大桥墩之一：
+
+1. **CONJECTURAL** — V51 maximal fold-first theorem：对同一个 signed folded emitter，
+   uniformly in `Q<Y<=2Q` 控制 partial prime shell；
+2. **CONJECTURAL** — V52 pre-`q` PAD theorem：在压成 modulus coordinate之前证明
+   packet angular dispersion，并满足
+   `(delta_B+delta_W)/2+kappa>1/400`；
+3. **CONJECTURAL** — 与上面任一路共用的 common transverse theorem。
+
+这三项是路线接口，不是新增算术结论；global Siegel-quality unbounded world仍保留为
+独立条件出口。
+
 ### 2.4 必须保留的 NO-GO 结果
 
 1. **NO_GO** — orientation-first absolute reassembly destroys exact folded zeros。
@@ -167,6 +204,16 @@ endpoint等价。V52 PAD与 V51 direct scalar保留为独立猜想，不叠加�
     folded pair / prime-hybrid packets。
 13. **NO_GO** — symmetric two-row Bessel不是“先证明两个容易 row theorem、再到终点”
     的 shortcut；V54 two-out-of-three compiler说明其纵向部分已包含终点本身。
+14. **NO_GO** — 任何 annihilate `kappa` 的 centered/BDH/PSD modulus operator都会
+    精确删除 terminal mode；它不能从 transverse estimate恢复 physical scalar。
+15. **NO_GO** — 任何保留 `kappa` 的 bounded linear/PSD/TT-star modulus operator都没有
+    免费 condition-number优势：`||T||/||T(kappa)||>=1/||kappa||`，其估计已是终点等价。
+16. **NO_GO** — 只证明 V51 full prime shell的总和小，不能推出 weighted longitudinal
+    Abel scalar小；有限 partial-sum反例给出 exact separation。
+17. **NO_GO** — Harper centered BDH、Runbo Li prime-AP以及 Zheng simultaneous-AP均是
+    wrong object或删掉 longitudinal mode，不能作为 V55 direct attachment。
+18. **NO_GO** — Dong--Robles--Zeindler arXiv:2601.00292v2 已由作者撤回；其说明明确
+    指出 equation (2.53) 缺失 `L^2` 因子，claimed improvement失效，不计 theorem credit。
 
 ## 3. 第二篇候选：endpoint-matched exceptional spectrum compiler
 
@@ -246,16 +293,19 @@ handoff。
 | 2026-08-11 | V52 | compensated pair dilation、reverse-Chen slice、endpoint simplex、marginal-only angle obstruction | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 | 2026-08-11 | V53 | completed pair rows、paid collision diagonal、one-`Q` endpoint与 symmetric two-gate schema | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 | 2026-08-11 | V54 | paired-row mode diagonalization、paid transverse difference、terminal longitudinal firewall | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
+| 2026-08-12 | V55 | every-modulus replicas、一般 operator/minimax/PSD dichotomy、maximal-shell transfer与 pre-`q` route pivot | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 
 下一次更新应优先回答：
 
-1. 能否直接控制 `kappa` longitudinal paired-row scalar，而不先证明两个完整 row norms；
-2. 能否对任一 literal row的 transverse projection证明 one-`Q` variance，并由 V54
+1. 能否证明 V51 folded emitter的 maximal partial prime-shell bound，而不先压成
+   terminal `q`-coordinate；
+2. 能否在 V52 packet层直接证明
+   `(delta_B+delta_W)/2+kappa>1/400` 的 joint angular dispersion；
+3. 能否对任一 literal row的 transverse projection证明 one-`Q` variance，并由 V54
    paid difference传给另一 row；
-3. BP/Pascadi local cells能否在不拆 compensation与 within-row cancellation的前提下
-   合法 reassemble成 transverse theorem；
-4. TT-star determinant congruence的 non-ratio rays能否与 exact physical ratio ray分离；
-5. 若 row route失败，能否回到 V51 direct scalar或 V52 PAD取得 strict saving；
-6. 能否把 V54 exact diagonalization抽象成一个不依赖 TPC 终点的 standalone
-   paired-row theorem；
+4. BP/MQW/KSWX local cells能否在不拆 compensation与 within-row cancellation的前提下
+   合法 reassemble成上述 pre-`q` theorem；
+5. unbounded Siegel-quality world能否沿既有 source-backed fixed-`h=2` 通道直接退出；
+6. 能否把 V54--V55 exact diagonalization、minimax extractor与 maximal Abel transfer
+   抽象成一篇不依赖 TPC终点的 standalone structural note；
 7. 哪个候选最先满足“成稿门槛 A”。
