@@ -130,6 +130,27 @@
 37. **PROVED / ROUTE RETYPE** — V56 all-node tree仍为合法 Gate-A fallback，但在
     selected root-plus-row package中不再需要；V53 symmetric two-row Bessel在 Gate-A
     轴也比 V57 所需 root scalar更强。三种 sufficient packages不作 exponent拼接。
+38. **PROVED** — V58 V35--V57 scalar crosswalk：展开 diagonal-deleted
+    `G_q(t)` 并代入 exact proper-factor identity后，full-shell
+    `C_*=sum_q qC_q` 逐项等于 V35 surviving centered ratio core
+    `mathfrak C_x`；principal/nonunit remainders属于更大的 compensated numerator，
+    不属于已 centered 的 `C_*`。
+39. **PROVED** — q-weight orthogonal split：对 `v=(q)_q`、`V_*=sum q^2` 与
+    `C_perp=C-(C_*/V_*)v`，exact有
+    `sum|C_q|^2=|C_*|^2/V_*+||Cperp||^2`。这是 terminal scalar direction与
+    maximal-prefix transverse variance的正交直和。
+40. **PROVED** — exponent crosswalk：V35 scalar saving `delta`对应纵向绝对
+    row-loss `tau_parallel=17/48-2delta`，故
+    `delta>1/400 <=> tau_parallel<419/1200`；benchmark
+    `delta=1/96 <=> tau_parallel=1/3`。
+41. **PROVED** — V58 two-scalar conditional endpoint compiler：V51 full-shell
+    Gate-A root与 V35 Gate-B scalar core已足以通过
+    `S=(A_*-C_*+E_*)/K_*` 支付 physical endpoint；saving可取
+    `min(eta_A,delta-1/400,419/2400)` 以下任意固定值，完全不使用
+    `Cperp`。
+42. **PROVED / ROUTE RETYPE** — Gate-B transverse row theorem只在追求全部 V57
+    moving prefixes时追加。V53/V57 full row-Bessel仍是合法、更强的 maximal package，
+    但不再列为 selected TPC endpoint 的必需桥墩。
 
 ### 2.2 可写成条件命题的局部引擎
 
@@ -249,6 +270,18 @@ V57 exact root anchor证明这两项已足以控制所有 Gate-A prefixes，并�
 `19/2400`。这是真正的 theorem-burden reduction，但两项猜想本身仍未被证明，故
 不改变 arithmetic status。V56 tree、V52 PAD与 V53 symmetric two-row package均保留为
 平行较强 sufficient formulations。
+
+V58 再把第二项拆成 endpoint 与 maximal 两个逻辑层。selected terminal package现在只
+保留：
+
+1. **CONJECTURAL** — V51 full-shell signed Gate-A root
+   `H_A,*(eta_A)`；
+2. **CONJECTURAL** — 与 `C_*` exact相同的 V35 proper-factor centered scalar
+   `|mathfrak C_x|<<x^(5/3-delta+o(1))`，其中 `delta>1/400`。
+
+`q`-transverse variance改为追求全部 prefixes时才增加的第三项 optional theorem。
+这把当前终点 burden从“一 scalar + 一 whole row”收窄为“两个 signed scalars”，但
+两项仍都没有 source theorem，故没有 arithmetic credit或 numbered paper trigger。
 
 ### 2.4 必须保留的 NO-GO 结果
 
@@ -374,20 +407,27 @@ handoff。
 | 2026-08-11 | V54 | paired-row mode diagonalization、paid transverse difference、terminal longitudinal firewall | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 | 2026-08-12 | V55 | every-modulus replicas、一般 operator/minimax/PSD dichotomy、maximal-shell transfer与 pre-`q` route pivot | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 | 2026-08-12 | V56 | one-modulus envelope、pruned dyadic maximalization、leaf margin、reverse interval equivalence与 canonical-block conjecture | **PROVED + SOURCE_BACKED_ARCHITECTURE + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
+| 2026-08-12 | V57 | longitudinal root anchor、uniform prefix-error payment、Gate-B row maximalization与 root-plus-transverse package | **PROVED + SOURCE_BACKED_ARCHITECTURE + CONJECTURAL + NO_GO** |
+| 2026-08-13 | V58 | V35--V57 scalar crosswalk、q-weight direct sum、delta/tau translation与 two-scalar endpoint compiler | **PROVED + SOURCE_BACKED_ARCHITECTURE + CONJECTURAL + NO_GO** |
 
 下一次更新应优先回答：
 
-1. 能否对 V56 预声明的全部 large dyadic nodes证明同一个 uniform literal block
-   theorem；这是当前 Gate A 的第一大门；
-2. 能否在 V52 packet层直接证明
+1. 能否对 V51 full-shell mixed-plus-balanced signed root证明一个 fixed-power saving；
+2. 能否对 exact相同的 V35/V58 proper-factor centered scalar证明
+   `delta>1/400`，优先瞄准 benchmark `delta=1/96`；
+3. 若需要 maximal Gate-A，能否只对 `Cperp` 证明 one-`Q` transverse variance，
+   而不重新要求完整 Gate-B row；
+4. 能否对 V56 预声明的全部 large dyadic nodes证明同一个 uniform literal block
+   theorem，作为 Gate-A maximal fallback；
+5. 能否在 V52 packet层直接证明
    `(delta_B+delta_W)/2+kappa>1/400` 的 joint angular dispersion；
-3. 能否对任一 literal row的 transverse projection证明 one-`Q` variance，并由 V54
+6. 能否对任一 literal row的 transverse projection证明 one-`Q` variance，并由 V54
    paid difference传给另一 row；
-4. BP/MQW/KSWX local cells能否在不拆 compensation与 within-row cancellation的前提下
+7. BP/MQW/KSWX local cells能否在不拆 compensation与 within-row cancellation的前提下
    合法 reassemble成上述 pre-`q` theorem；
-5. unbounded Siegel-quality world能否沿既有 source-backed fixed-`h=2` 通道直接退出；
-6. 能否把 V54--V55 exact diagonalization、minimax extractor与 maximal Abel transfer
+8. unbounded Siegel-quality world能否沿既有 source-backed fixed-`h=2` 通道直接退出；
+9. 能否把 V54--V58 exact diagonalization、scalar crosswalk与 maximal transfer
    抽象成一篇不依赖 TPC终点的 standalone structural note；
-7. 能否把 V56 maximalization与一个非 TPC-specific weighted endpoint application组合，
+10. 能否把 V56 maximalization与一个非 TPC-specific weighted endpoint application组合，
    使其达到 standalone structural note 的“成稿门槛 A”；
-8. 哪个候选最先满足“成稿门槛 A”。
+11. 哪个候选最先满足“成稿门槛 A”。
