@@ -2,7 +2,7 @@
 
 更新时间：2026-08-13
 
-当前地图版本：V58
+当前地图版本：V59
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,14 +46,14 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +-----------------------------------------------+
-        | YOU ARE HERE — V58                            |
-        | TERMINAL TWO-SCALAR ROUTE = IDENTIFIED        |
-        | Gate-A root + Gate-B scalar core = OPEN       |
+        | YOU ARE HERE — V59                            |
+        | GATE-B POLARIZED PRIME-BDH ZONE               |
+        | collective compiler + Gate-A root = OPEN      |
         +-----------------------------------------------+
                 |
                 v
 Bridge A 的两个主桥墩
-  one full-shell signed fold + one proper-factor signed scalar = OPEN
+  one full-shell signed fold + one polarized prime-BDH compiler = OPEN
   q-transverse row variance = optional maximal-prefix railing
                 |
                 v
@@ -138,8 +138,17 @@ large nodes加一个 partial leaf。于是 maximal Gate A 与一个 uniform cano
 theorem在 power scale上等价。V57 再以 full-shell `K(Y)/K_*` root anchor exact
 消去每个 prefix的 physical mode；只要 Gate-B row-Bessel成立，全部 endpoint motion
 自动支付。于是 selected route只剩一个 V51 full-shell signed fold与一个 V53 Gate-B
-row energy，而 V56 tree降为更强 fallback。当前真正未跨过的是这两个 literal
-whole-object estimates。核心算术 saving
+row energy，而 V56 tree降为更强 fallback。V58 随后把 Gate-B row的 terminal
+方向 exact识别为 V35 proper-factor centered scalar，selected endpoint burden收窄为
+两个 signed scalars。V59 再对 Gate-B scalar作 complex polarization：它精确等于
+四个 literal sequences `beta+i^j w` 的 prime-weighted、kernel-localized、
+diagonal-corrected reduced-residue BDH余项的 signed组合。mesoscopic block数为
+`x/H=x^(11/32)`，每块自然尺度为 `Q^2H=x^(127/96)`，全局尺度恢复
+`xQ^2=x^(5/3)`；关键 gap `Q^2/H=x^(1/96)` 与 Blomer--Pascadi fixed-cell
+`q^(-1/32)=x^(-1/96)` 的临界时钟 exact对齐。但现有 theorem只估计已发射的
+fixed-modulus cells，没有把四个 literal polarized blocks集体编译、保留 prime-only
+modulus与 signed reassembly。当前真正未跨过的是 V51 Gate-A root 与这个 V59
+collective prime-BDH compiler。核心算术 saving
 尚未取得。**
 
 ## 2. 图例与状态语言
@@ -251,7 +260,43 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 当前精确位置：V58
+## 5. 当前精确位置：V59
+
+V59 保留 V58 的 two-scalar terminal compiler，但把第二座桥墩进一步 source-facing
+地正规化。对 V35/V58 Gate-B scalar写
+
+\[
+ \mathfrak C_x=
+ \sum_{q\in\mathcal Q}q
+ \sum_{\substack{t\ne u\\q\nmid tu}}
+ \beta_x(t)w_x^{(z)}(u)K_H(u-t)u_1(u\bar t;q).
+\]
+
+令 `a^(j)=beta+i^j w`，并令 `V_Q,H^circ(a)` 表示 nonprincipal character
+energy减去精确的 `(q-2)` reduced-residue diagonal。complex polarization逐项给
+
+\[
+ \mathfrak C_x=
+ \frac14\sum_{j=0}^3 i^j\mathcal V_{\mathcal Q,H}^{\circ}(a^{(j)}).
+\]
+
+因此 Gate B 不再是一个含糊的“双序列相关”口号，而是四个同类型 one-sequence
+prime-BDH remainders 的 signed direct sum。这个 exact retype同时锁定三条防火墙：
+
+1. diagonal系数必须是 `q-2`，不能改成 `q-1`，也不能删掉；
+2. reduced residues依赖 literal zero class，所以 ordinary translated blocks并不自动
+   保持同一个 Harper-type variance；
+3. all-moduli BDH cancellation不能推出 prime-only signed remainder，有限
+   `R_5=1,R_6=-1` fixture精确否定这种抽取。
+
+在 `H=x^(21/32)`、`Q=x^(1/3)` 下，block count、local scale、global scale分别是
+`x^(11/32)`、`x^(127/96)`、`x^(5/3)`，而 `Q^2/H=x^(1/96)`。这恰与
+Blomer--Pascadi critical cell saving `q^(-1/32)=x^(-1/96)` 对齐，形成真实的
+conditional local engine；但 collective block-to-cell compiler、prime-shell signed
+reassembly以及四 packet共同的 hard-shell/tail账本尚无一手定理。故 V59 是
+`ROUTE_ADVANCE=YES`，不是 arithmetic advance。
+
+### 5.1 V58 two-scalar endpoint reduction
 
 V58 把 V57 的第二个“整排桥墩”拆开。展开 diagonal-deleted row并代入 V35
 proper-factor identity，逐项 exact得到
@@ -285,7 +330,7 @@ route因此是：
 prefixes，才追加 `q`-transverse variance。V57 full row-Bessel仍是合法但更强的
 maximal package。两个 scalar piers均未被现有一手来源证明，arithmetic status不变。
 
-### 5.1 V56 fallback：pruned dyadic tree
+### 5.2 V56 fallback：pruned dyadic tree
 
 V56 不再把 `sup_Y` 当作一个额外黑箱。对 prime shell按大小排序，预先分成至多
 `M=floor(x^lambda)` 个模数的连续 leaves，其中 `0<lambda<19/2400`。单模数 envelope
@@ -729,11 +774,11 @@ Kloosterman engine只到单 cell，未付 block atomic budget和跨 `q` 的 L2 r
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
 
-| 图像语言 | 仓库 V58 语言 | 关系 |
+| 图像语言 | 仓库 V59 语言 | 关系 |
 |---|---|---|
 | Bridge A：解析 collective saving | `B(positive Gram / MPD / P2 / K / E / X)` 与 `A(alias)` 的 zero-axis transference | 图像的一座大桥被拆成多车道 B、terminal A 及 exact AND compiler |
 | Bridge B：distinguished-seed genericity | `C` symmetry-breaking reserve | 都是动力学/指定 seed 后备线 |
-| 核心算术估计 | one full-shell fold root + Gate-B row-Bessel；V56 tree/PAD为 fallback；`kappa` root anchor作 exact transfer | 当前 red-X 的两座真实桥墩与一根已安装锚索 |
+| 核心算术估计 | one full-shell fold root + four-packet polarized prime-BDH compiler；V56 tree/PAD为 fallback；`kappa` root anchor作 exact transfer | 当前 red-X 的两座真实桥墩与一根已安装锚索 |
 
 仓库选择路线为：
 
@@ -757,6 +802,10 @@ THEN_STOP_LONGITUDINAL_QSPACE_PRELIMINARY_ENGINEERING
 THEN_RETURN_TO_PRE_Q_MAXIMAL_FOLD_FIRST_OR_PAIR_ANGULAR_GATE_A
 THEN_ONE_COMMON_TRANSVERSE_ROW_VARIANCE
 AND_USE_LONGITUDINAL_REPLICA_ONLY_AS_TERMINAL_READOUT
+THEN_IDENTIFY_THE_GATE_B_TERMINAL_DIRECTION_WITH_THE_V35_CENTERED_SCALAR
+THEN_POLARIZE_GATE_B_INTO_FOUR_ONE_SEQUENCE_PRIME_BDH_REMAINDERS
+THEN_COMPILE_MESOSCOPIC_BLOCKS_COLLECTIVELY_TO_CRITICAL_KLOOSTERMAN_CELLS
+THEN_REASSEMBLE_THE_PRIME_ONLY_SIGNED_PACKET_BEFORE_ANY_OUTER_ABSOLUTE
 AND_PHYSICAL_POSITIVE_GRAM_COLLISION_VIA_PROPER_FACTOR_DYADIC_MPD
 OR_P2_DIRECT_Q_DEPENDENT_PACKET_ENERGY
 OR_K_SPECIALIZED_BLOCK_SCHATTEN_COMPRESSION
@@ -768,7 +817,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V58：
+截至 V59：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -793,37 +842,43 @@ NUMBERED_RELEASE = NO
 
 优先级更新为：
 
-1. **先按全局 Siegel quality 分流**。unbounded world 直接调用已锁定的
-   Matomaki--Merikoski `h=2` correlation exit；不得把单尺度 singleton误判为
-   unbounded sequence；
+1. **V59 polarized prime-BDH Gate-B compiler**。对四个
+   `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
+   diagonal-corrected reduced-residue remainder证明集体 fixed-power saving；不得把
+   Harper all-moduli variance或 Blomer--Pascadi fixed cell直接当成 global theorem；
 2. **V58 full-shell Gate-A root**。直接证明同一个 literal V51
    mixed-plus-balanced fold的 full-shell fixed-power saving；
-3. **V58 Gate-B scalar root**。直接对已经 exact识别的 V35 proper-factor centered
-   core证明 `|mathfrak C_x|<<x^(5/3-delta+o(1))`、`delta>1/400`；
-4. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
+3. **按全局 Siegel quality 保留条件分流**。unbounded world可调用已锁定的
+   Matomaki--Merikoski `h=2` correlation exit；不得把单尺度 singleton误判为
+   unbounded sequence；
+4. **V58 Gate-B scalar root（等价终端表述）**。直接对已经 exact识别的 V35
+   proper-factor centered core证明
+   `|mathfrak C_x|<<x^(5/3-delta+o(1))`、`delta>1/400`；V59只重写对象，
+   没有降低这个 terminal burden；
+5. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
    才证明 `C_perp` 的 one-`Q` variance；不得再把它列为 physical endpoint必需门；
-5. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
+6. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
    package，仍可对 pruned tree的 large nodes统一估计；
-6. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
+7. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
    signed diagonal/off-diagonal，并支付
    `(delta_B+delta_W)/2+rho>1/400`；fixed-modulus local engine只作条件工具；
-7. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
+8. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
    row species证明 one-`Q` variance，另一种由 paid difference自动继承；不得先把
    longitudinal mode删掉后声称完整 theorem；
-8. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
+9. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
    endpoint-matched direct core与三引擎 heuristic fallback，但不再强迫它先于
    reverse-Type-I/balanced lane；
-9. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
+10. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
    preferred sufficient gate；P2/K 是 stronger norms，E/X
    分别是 `sigma<13/4800` whole residual energy和
    `kappa>403/1200` joint character theorem，不与 MPD lane叠加 theorem credit；
-10. **C：只在前九条路线真实阻断或新 source 出现时，重开 distinguished-seed
+11. **C：只在前十条路线真实阻断或新 source 出现时，重开 distinguished-seed
    symmetry-breaking/dynamics reserve。**
 
 最窄 first fatal：
 
 ```text
-NO_PRIMARY_THEOREM_PROVES_EITHER_THE_LITERAL_V51_FULL_SHELL_SIGNED_FOLD_OR_THE_IDENTICAL_V35_V57_PROPER_FACTOR_CENTERED_GATE_B_SCALAR_CORE
+NO_PRIMARY_THEOREM_PROVES_A_POWER_SAVING_PRIME_MODULUS_KERNEL_LOCALIZED_OFFDIAGONAL_BDH_REMAINDER_FOR_THE_FOUR_LITERAL_POLARIZED_SEQUENCES_OR_COMPILES_THEIR_BLOCKS_COLLECTIVELY_TO_THE_BLOMER_PASCADI_CELLS
 ```
 
 ## 9. 后续更新协议
@@ -843,6 +898,7 @@ NO_PRIMARY_THEOREM_PROVES_EITHER_THE_LITERAL_V51_FULL_SHELL_SIGNED_FOLD_OR_THE_I
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-13 | V59 | Bridge A / Gate B：V35 terminal scalar已极化成四个 one-sequence prime-BDH remainders；collective block-to-cell compiler open | parent `f1ac29aed20e0ab7fbf8eaba3ae6339d9fca946a`; V59=current working release | exact complex polarization、`q-2` diagonal、reduced-residue variance、`Q^2/H=x^(1/96)` clock与 source/interface NO-GO；arithmetic仍为 NO |
 | 2026-08-13 | V58 | Bridge A：physical endpoint收窄为 Gate-A root 与 V35 Gate-B scalar 两个 open piers；q-transverse row降为 optional maximal railing | target parent `c80d26e327ef2a979536c0f7dd3f69fe022befac`; V58=current working release | exact V35--V57 scalar crosswalk、q-weight Pythagoras、`tau_parallel=17/48-2delta`、two-scalar endpoint compiler；arithmetic仍为 NO |
 | 2026-08-12 | V57 | Bridge A：longitudinal root anchor已安装；full-shell fold与 transverse Gate-B row为两个 open piers | target parent `0771f61e9175c5248d576bb8d42f510492d55209`; V57=current working release | exact prefix anchor、`143/96` error maximum、Gate-B row-Bessel maximalization、root-plus-transverse endpoint compiler；arithmetic仍为 NO |
 | 2026-08-12 | V56 | Bridge A：maximal endpoint motion已压成 pruned dyadic large-node theorem；common transverse Gate B仍 open | target parent `4019d48b09ea8f1181953a9480ae66e55c4b10dc`; V56=current working release | one-modulus `53/32` envelope、`19/2400` leaf budget、binary prefix decomposition、tree/maximal power equivalence与 source firewall；arithmetic仍为 NO |

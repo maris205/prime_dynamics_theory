@@ -1,6 +1,6 @@
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-12
+更新时间：2026-08-13
 
 状态：**LIVING_PREPUBLICATION_LEDGER / NON_AUTHORITATIVE**
 
@@ -151,6 +151,23 @@
 42. **PROVED / ROUTE RETYPE** — Gate-B transverse row theorem只在追求全部 V57
     moving prefixes时追加。V53/V57 full row-Bessel仍是合法、更强的 maximal package，
     但不再列为 selected TPC endpoint 的必需桥墩。
+43. **PROVED** — V59 complex polarization compiler：对任意 complex `x,y`，
+    `x*conj(y)=(1/4)sum_(j=0)^3 i^j|x+i^j y|^2`。应用于 V36 character form后，
+    V35/V58 Gate-B scalar逐项等于四个 literal sequences
+    `a^(j)=beta+i^j w` 的 signed one-sequence remainders。
+44. **PROVED** — V59 reduced-residue offdiagonal BDH normal form：每个 packet的
+    nonprincipal character energy必须减去精确的 `(q-2)` diagonal；于是
+    `mathfrak C_x=(1/4)sum_j i^j V_Q,H^circ(a^(j))`，没有 free principal、diagonal
+    或 nonunit deletion。
+45. **PROVED** — mesoscopic block ledger：block count `x/H=x^(11/32)`、每块
+    q-weighted natural scale `Q^2H=x^(127/96)`、全局 natural scale
+    `xQ^2=x^(5/3)`，并且 exact conductor gap `Q^2/H=x^(1/96)`。
+46. **PROVED / SOURCE-INTERFACE CROSSWALK** — Blomer--Pascadi critical local saving
+    `q^(-1/32)=x^(-1/96)` 与 V59 block gap exact对齐；这是可信的 post-emitter
+    engine时钟，不是 collective theorem credit。
+47. **PROVED / ROUTE RETYPE** — Gate-B当前主猜想可等价表述为四 packet的
+    prime-only、kernel-localized、diagonal-corrected BDH signed remainder theorem；
+    它仍须与 V51 full-shell Gate-A root共同闭合 physical endpoint。
 
 ### 2.2 可写成条件命题的局部引擎
 
@@ -183,6 +200,17 @@
    Ramaré arXiv:2303.04409v2, Lemmas 3.1--3.2：inner-index maximal large sieve及
    smooth nonnegative modulus average；没有 V51 signed pair coefficient、physical
    hybrid factor或 canonical outer-`q` block reassembly。
+9. **SOURCE_BACKED_CONDITIONAL / ARCHITECTURE ONLY** —
+   Harper arXiv:2412.19644v1, Theorems 1--2：对 general complex sequences给
+   reduced-residue progressions/non-concentration框架，但要求 `sqrt(2X)<Q`、使用完整
+   dyadic modulus family，并带额外结构假设。把 `X` 形式上取成 `H` 暴露
+   `Q^2/H=x^(1/96)`，却不提供 literal translated-block、prime-only signed remainder
+   或四 packet reassembly。
+10. **SOURCE_BACKED_CONDITIONAL** —
+    Blomer--Pascadi arXiv:2607.24311v1, Theorem 1.1 与 Pascadi
+    arXiv:2404.04239v3, Corollaries 17--18：已发射 fixed-modulus
+    Kloosterman cells上存在临界 power saving；尚无从 V59 occurrence blocks到这些
+    cells的 collective compiler。
 这些 source 均未直接证明当前 whole-object theorem。
 
 ### 2.3 主猜想
@@ -283,6 +311,22 @@ V58 再把第二项拆成 endpoint 与 maximal 两个逻辑层。selected termin
 这把当前终点 burden从“一 scalar + 一 whole row”收窄为“两个 signed scalars”，但
 两项仍都没有 source theorem，故没有 arithmetic credit或 numbered paper trigger。
 
+V59 把第 2 项进一步改写成一个统一的 **CONJECTURAL** polarized local-BDH theorem。
+令 `a^(j)=beta+i^j w`，并令 `V_Q,H^circ(a)` 为 V59 proof中冻结的 prime-weighted、
+kernel-localized、reduced-residue offdiagonal remainder。当前 Gate-B conjecture可写成
+
+\[
+ \left|\frac14\sum_{j=0}^3 i^j
+ \mathcal V_{\mathcal Q,H}^{\circ}(a^{(j)})\right|
+ \ll x^{5/3-\delta+o(1)},
+ \qquad \delta>\frac1{400}.
+\]
+
+benchmark `delta=1/96` 与 critical fixed-cell clock对齐。真正缺少的不是第五个局部
+Kloosterman bound，而是一个保留四个 literal packets、prime-only modulus shell、
+`q-2` diagonal、hard kernel与 single signed reassembly的 collective block-to-cell
+compiler。这个 conjecture与 V58 scalar完全相同，不叠加两份 theorem credit。
+
 ### 2.4 必须保留的 NO-GO 结果
 
 1. **NO_GO** — orientation-first absolute reassembly destroys exact folded zeros。
@@ -326,6 +370,18 @@ V58 再把第二项拆成 endpoint 与 maximal 两个逻辑层。selected termin
 20. **NO_GO** — dyadic decomposition本身不制造 cancellation；若各模数同号，单模数
     envelope在整 shell累积到 `x^(191/96+o(1))`，远高于目标。large-node theorem必须
     使用 literal arithmetic signs与完整 within-row compensation。
+21. **NO_GO** — 将 reduced-residue diagonal从 `q-2` 改成 `q-1`，或直接删除
+    diagonal，会改变 polarized cross term；`q=5` finite fixture分别给 `-12` 与
+    `-24`，而 literal值为 `-15`。
+22. **NO_GO** — ordinary block translation不保持 distinguished zero residue。
+    模 5 质量 `(10,1,0,0,0)` 在排除 residue 0 与 residue 1 时的 variance分别为
+    `3/4` 与 `75`，故 Harper型 reduced-residue theorem不能无 compiler搬到每个
+    physical translated block。
+23. **NO_GO** — all-moduli signed cancellation不能抽取 prime-only remainder：有限 rows
+    `R_5=1,R_6=-1` 的 all-moduli sum为 0，而 prime subset sum为 1。
+24. **NO_GO** — Blomer--Pascadi/Pascadi fixed-cell saving只在 coefficients与
+    Kloosterman arrays已经发射后生效；它不自动生成 V59 occurrence-to-cell compiler、
+    block norms、tails或 collective signed reassembly。
 
 ## 3. 第二篇候选：endpoint-matched exceptional spectrum compiler
 
@@ -409,25 +465,28 @@ handoff。
 | 2026-08-12 | V56 | one-modulus envelope、pruned dyadic maximalization、leaf margin、reverse interval equivalence与 canonical-block conjecture | **PROVED + SOURCE_BACKED_ARCHITECTURE + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 | 2026-08-12 | V57 | longitudinal root anchor、uniform prefix-error payment、Gate-B row maximalization与 root-plus-transverse package | **PROVED + SOURCE_BACKED_ARCHITECTURE + CONJECTURAL + NO_GO** |
 | 2026-08-13 | V58 | V35--V57 scalar crosswalk、q-weight direct sum、delta/tau translation与 two-scalar endpoint compiler | **PROVED + SOURCE_BACKED_ARCHITECTURE + CONJECTURAL + NO_GO** |
+| 2026-08-13 | V59 | four-packet complex polarization、reduced-residue BDH normal form、mesoscopic `1/96` clock与 collective compiler obstruction | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 
 下一次更新应优先回答：
 
-1. 能否对 V51 full-shell mixed-plus-balanced signed root证明一个 fixed-power saving；
-2. 能否对 exact相同的 V35/V58 proper-factor centered scalar证明
+1. 能否把四个 V59 literal polarized packets的 mesoscopic blocks集体编译到同一批
+   Blomer--Pascadi/Pascadi cells，并在 single outer sign前完成 prime-shell reassembly；
+2. 能否对 V51 full-shell mixed-plus-balanced signed root证明一个 fixed-power saving；
+3. 能否对 exact相同的 V35/V58/V59 proper-factor centered scalar证明
    `delta>1/400`，优先瞄准 benchmark `delta=1/96`；
-3. 若需要 maximal Gate-A，能否只对 `Cperp` 证明 one-`Q` transverse variance，
+4. 若需要 maximal Gate-A，能否只对 `Cperp` 证明 one-`Q` transverse variance，
    而不重新要求完整 Gate-B row；
-4. 能否对 V56 预声明的全部 large dyadic nodes证明同一个 uniform literal block
+5. 能否对 V56 预声明的全部 large dyadic nodes证明同一个 uniform literal block
    theorem，作为 Gate-A maximal fallback；
-5. 能否在 V52 packet层直接证明
+6. 能否在 V52 packet层直接证明
    `(delta_B+delta_W)/2+kappa>1/400` 的 joint angular dispersion；
-6. 能否对任一 literal row的 transverse projection证明 one-`Q` variance，并由 V54
+7. 能否对任一 literal row的 transverse projection证明 one-`Q` variance，并由 V54
    paid difference传给另一 row；
-7. BP/MQW/KSWX local cells能否在不拆 compensation与 within-row cancellation的前提下
+8. BP/MQW/KSWX local cells能否在不拆 compensation与 within-row cancellation的前提下
    合法 reassemble成上述 pre-`q` theorem；
-8. unbounded Siegel-quality world能否沿既有 source-backed fixed-`h=2` 通道直接退出；
-9. 能否把 V54--V58 exact diagonalization、scalar crosswalk与 maximal transfer
+9. unbounded Siegel-quality world能否沿既有 source-backed fixed-`h=2` 通道直接退出；
+10. 能否把 V54--V59 exact diagonalization、polarization、scalar crosswalk与 maximal transfer
    抽象成一篇不依赖 TPC终点的 standalone structural note；
-10. 能否把 V56 maximalization与一个非 TPC-specific weighted endpoint application组合，
+11. 能否把 V56 maximalization与一个非 TPC-specific weighted endpoint application组合，
    使其达到 standalone structural note 的“成稿门槛 A”；
-11. 哪个候选最先满足“成稿门槛 A”。
+12. 哪个候选最先满足“成稿门槛 A”。
