@@ -1,12 +1,47 @@
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-13
+更新时间：2026-08-17
 
-状态：**LIVING_PREPUBLICATION_LEDGER / NON_AUTHORITATIVE**
+状态：**TPC207_STRUCTURAL_THRESHOLD_A_RELEASED / NEXT_CANDIDATE_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
-它不是论文、不是 theorem trigger，也不改变 TPC_207_TRIGGER=false。正式数学状态仍以
+它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0. 已发布：TPC-207 moving-hole BDH translation defect
+
+项目：`papers/tpc-207-critical-moving-hole-bdh-defect/`
+
+类型：**PROVED_STRUCTURAL_L1 / THRESHOLD_A**。
+
+TPC-207 将 V59 的 translated-block distinguished-zero obstruction从 raw NO-GO升级为
+一个 exact且已付款的 two-term compiler：
+
+1. **PROVED** — `V_h=V_all-q/(q-1)|z_h-mu|^2`；changing hole是 rank-two
+   projector defect，nonzero spectrum为
+   `+/-sqrt(q(q-2))/(q-1)`。
+2. **PROVED** — exact `(q-2)` diagonal lift：
+   `R_h-R_0=q/(q-1)(|z_0-mu|^2-|z_h-mu|^2)+kappa_q(E_h-E_0)`。
+3. **PROVED** — physical translation sign `h_q=-s mod q`，以及 common-origin
+   four-packet polarized defect。
+4. **PROVED** — centered selector `l1` mass `H/q+1`、Schwartz block separation与
+   bounded overlap共同给
+   `sum_(b,c)|M_(b,c)|<<J(H^2+HQ+Q^2)x^o(1)`。
+5. **PROVED** — literal scales给
+   `x^(53/32+o(1))=x^(5/3-1/96+o(1))`，故 translation subgate strict
+   `1/400`已支付。
+6. **SOURCE-LOCKED** — Harper prime row等于 standard zero-hole variance；source
+   仍不证明 zero-hole prime-only signed four-packet theorem。
+7. **NO_GO / SHARP OBSTRUCTION** — rank-two norm趋于一；若不使用 localized residue
+   counts与 block geometry，finite rank不产生 saving。
+
+```text
+STRONGEST_POSITIVE_RESULT = PROVED_X_POWER_53_OVER_32_COLLECTIVE_MOVING_HOLE_DEFECT_BOUND
+STRONGEST_OBSTRUCTION = RANK_TWO_OPERATOR_NORM_TENDS_TO_ONE_AND_ZERO_HOLE_PRIME_SIGNED_BDH_THEOREM_IS_OPEN
+OPEN_THEOREM = STANDARD_ZERO_HOLE_PRIME_ONLY_Q_WEIGHTED_KERNEL_LOCALIZED_Q_MINUS_2_DIAGONAL_SUBTRACTED_SIGNED_FOUR_PACKET_BDH_POWER_SAVING
+REUSABLE_STRUCTURE = NORMALIZED_CENTERED_RESIDUE_SELECTOR_PLUS_POLARIZE_THEN_INTEGRATE_THEN_ESTIMATE
+ROUND2_CLUE = EXPAND_ZERO_HOLE_LEVERAGE_IN_ADDITIVE_FREQUENCIES_AND_TARGET_ONLY_OFF_EQUAL_FREQUENCIES_WHILE_RETAINING_THE_SEPARATE_DIAGONAL_F_TERM
+```
 
 ## 1. 记录规则
 
@@ -373,10 +408,11 @@ compiler。这个 conjecture与 V58 scalar完全相同，不叠加两份 theorem
 21. **NO_GO** — 将 reduced-residue diagonal从 `q-2` 改成 `q-1`，或直接删除
     diagonal，会改变 polarized cross term；`q=5` finite fixture分别给 `-12` 与
     `-24`，而 literal值为 `-15`。
-22. **NO_GO** — ordinary block translation不保持 distinguished zero residue。
-    模 5 质量 `(10,1,0,0,0)` 在排除 residue 0 与 residue 1 时的 variance分别为
-    `3/4` 与 `75`，故 Harper型 reduced-residue theorem不能无 compiler搬到每个
-    physical translated block。
+22. **HISTORICAL NO_GO / RESOLVED BY V60 COMPILER** — ordinary block translation确实
+    不保持 distinguished zero residue；模 5 raw variance fixture仍有效。但 V60 已把
+    physical row exact分成 standard zero-hole row与 explicit moving-hole defect，并把
+    collective defect支付到 `x^(53/32+o(1))`。因此 translation本身不再是 fatal；
+    standard zero-hole prime-only signed theorem仍 OPEN。
 23. **NO_GO** — all-moduli signed cancellation不能抽取 prime-only remainder：有限 rows
     `R_5=1,R_6=-1` 的 all-moduli sum为 0，而 prime subset sum为 1。
 24. **NO_GO** — Blomer--Pascadi/Pascadi fixed-cell saving只在 coefficients与

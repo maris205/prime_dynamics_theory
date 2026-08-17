@@ -1,13 +1,31 @@
-# TPC big road V58: two signed scalar piers and optional q-transverse railing
+# TPC big road V60: moving-hole translation paid, zero-hole BDH gate open
 
-更新时间：2026-08-13
+更新时间：2026-08-17
 
-状态：`UNNUMBERED_WORKING_ARTIFACT / EXACT_V35_V57_SCALAR_CROSSWALK_PLUS_TWO_SCALAR_ENDPOINT_COMPILER`
+状态：`TPC207_STRUCTURAL_THRESHOLD_A / EXACT_MOVING_HOLE_COMPILER_PLUS_CRITICAL_DEFECT_BOUND`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前主路线见第 58 节及
+当前 V60 proof 为
+`bridge_b_moving_hole_bdh_translation_compiler.md`，checker 为
+`tpc_bridge_b_moving_hole_bdh_translation_checker.py`，编号论文为
+`../../papers/tpc-207-critical-moving-hole-bdh-defect/`。核心进展是
+
+```text
+physical moving-hole remainder
+  = standard zero-hole remainder + explicit rank-two defect,
+
+sum_(b,c)|defect_(b,c)|
+  << x^(53/32+o(1))
+   = x^(5/3-1/96+o(1)).
+```
+
+因此 V59 的 translation subgate已支付；standard-zero-hole prime-only signed
+four-packet BDH theorem仍 OPEN。完整 Gate B、arithmetic `L2`、fixed-atom credit和
+twin-prime endpoint均未升级。
+
+V60 当前入口如上；其冻结上游主路线见第 58 节及
 `bridge_b_terminal_scalar_root_and_q_transverse_split.md`；checker为
 `tpc_bridge_b_terminal_scalar_root_checker.py`。第 57 节及
 `bridge_b_longitudinal_anchor_transverse_maximal_transfer.md`；checker为
@@ -2267,6 +2285,60 @@ checker冻结 33-field contract、48-row registry，registry SHA-256为
 `15e40e8c20050549c3e244be59747019f115ebb8ccb9356f95fd449250073b07`；
 102/151 adversarial mutations必须全部拒绝。V23 arithmetic advance=`NO`、fixed
 atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false；没有编号 paper/PDF/build。
+
+## 60. V60 Bridge A / Gate B：moving-hole translation compiler
+
+V59 的 source-facing block route曾停在一个明确 typing wall：physical block平移到
+source origin后，被删除的 residue由 `0` 变成 `h_q=-s mod q`。V60 将其 exact化为
+
+\[
+ V_h=V_{\rm all}-\frac q{q-1}|z_h-\mu|^2,
+\]
+
+所以 changing hole是两个 normalized rank-one projectors之差。其 nonzero spectrum为
+
+\[
+ \pm\frac{\sqrt{q(q-2)}}{q-1},
+\]
+
+norm趋于一，说明 rank two本身不小。保留 V59 `(q-2)` diagonal后，
+
+\[
+ R_h-R_0=\frac q{q-1}(|z_0-\mu|^2-|z_h-\mu|^2)
+ +\frac{q-2}{q-1}(E_h-E_0).
+\]
+
+关键 quantitative theorem先完成 four-packet signed polarization，再用 all-row centered
+selector `lambda_(q,r)=1_(m=r)-1/q`。其 block `l1` mass为 `H/q+1`；先积分恢复
+Schwartz kernel使 leverage block pairs只积累 `J`，而 diagonal bounded overlap同样只
+积累 `J`。因此
+
+\[
+ \sum_{b,c}|\mathcal M_{b,c}|
+ \ll x^{o(1)}J(H^2+HQ+Q^2)
+ \ll x^{53/32+o(1)}.
+\]
+
+相对 `xQ^2=x^(5/3)` 正好 saving `1/96`。translation defect 对任意 fixed
+`1/400<delta'<1/96` 已支付；zero-hole prime-only signed BDH theorem仍 OPEN。
+
+```text
+V60_ROUTE_ADVANCE = YES
+V60_STRUCTURAL_THRESHOLD_A = PASS
+V60_TRANSLATION_SUBGATE_DELTA = 1_OVER_96_PROVED
+V60_TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
+V60_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+V60_ARITHMETIC_ADVANCE = NO
+V60_FIXED_ATOM_CREDIT = 0
+V60_L2 = NONE
+V60_TPC_207_TRIGGER = true
+V60_FIRST_FATAL = NO_THEOREM_CONTROLS_THE_STANDARD_ZERO_HOLE_PRIME_ONLY_Q_WEIGHTED_KERNEL_LOCALIZED_EXACT_DIAGONAL_SUBTRACTED_SIGNED_REMAINDER_FOR_THE_FOUR_LITERAL_PACKETS_OR_PERFORMS_ITS_COLLECTIVE_REASSEMBLY
+```
+
+完整 proof/checker与 TPC-207 paper分别位于
+`bridge_b_moving_hole_bdh_translation_compiler.md`、
+`tpc_bridge_b_moving_hole_bdh_translation_checker.py`、
+`../../papers/tpc-207-critical-moving-hole-bdh-defect/`。
 
 ## 59. V59 Bridge A / Gate B：polarized local BDH scalar compiler
 

@@ -1,7 +1,73 @@
 # TPC HANDOFF
 
-更新时间：2026-08-13
-交接状态：`BOLD_CHANNEL_V59_SEALED_FOR_NEW_SESSION`
+更新时间：2026-08-17
+交接状态：`BOLD_CHANNEL_V60_TPC207_SEALED_FOR_NEW_SESSION`
+
+第 107 节仍位于“解析消去岛 / Bridge A / Gate B”。V60 对 V59 的
+translated-block distinguished-zero wall作 exact moving-hole分解。若 physical block
+统一写成 `n=s+m`，则被删除的 residue是
+
+~~~text
+h_q=-s (mod q),
+~~~
+
+而不是 `+s`，也不是 block label。对任意 complex residue row，leave-one-out variance
+exact为
+
+~~~text
+V_h(z)=V_all(z)-q/(q-1)*|z_h-mu|^2.                    (V60.1)
+~~~
+
+因此 changing hole是两个 rank-one projectors之差；当 `q>2,h!=0` 时其非零谱为
+
+~~~text
++/-sqrt(q(q-2))/(q-1),
+~~~
+
+operator norm趋于 1，所以 finite rank本身不制造 saving。保留 V59 强制的 `(q-2)`
+diagonal后，normalized remainder满足
+
+~~~text
+R_h-R_0=q/(q-1)(|z_0-mu|^2-|z_h-mu|^2)
+        +(q-2)/(q-1)(E_h-E_0).                        (V60.2)
+~~~
+
+先完成 `a^(j)=beta+i^j w` 的 signed polarization，再对完整 ordered block-pair
+translation defect估计。centered selector的 `l1` mass为 `H/q+1`；先积分恢复 Schwartz
+kernel后，leverage block pairs只累积一个 effective block count `J`，diagonal又因
+bounded overlap只出现 `O(J)` 次。于是
+
+~~~text
+sum_(b,c)|M_(b,c)| << x^o(1) J(H^2+HQ+Q^2)
+                   << x^(53/32+o(1))
+                    = x^(5/3-1/96+o(1)).              (V60.3)
+~~~
+
+translation subgate因此在 benchmark `1/96` 处严格支付；但 standard-zero-hole、
+prime-only、q-weighted、kernel-localized、exact-diagonal-subtracted signed four-packet
+BDH theorem仍完全 OPEN。Harper hypotheses、prime subset与 collective reassembly均未
+由此得到。该 theorem通过 structural threshold A，触发 TPC-207；不构成 global
+arithmetic advance、`L2`、fixed-atom credit或 twin-prime theorem。
+
+~~~text
+V60_ROUTE_ADVANCE = YES
+V60_STRUCTURAL_THRESHOLD_A = PASS
+V60_TRANSLATION_SUBGATE_DELTA = 1_OVER_96_PROVED
+V60_TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
+V60_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+V60_ARITHMETIC_ADVANCE = NO
+V60_GLOBAL_GATE_B_ADVANCE = NO
+V60_FIXED_ATOM_CREDIT = 0
+V60_L2 = NONE
+V60_FIRST_FATAL = NO_THEOREM_CONTROLS_THE_STANDARD_ZERO_HOLE_PRIME_ONLY_Q_WEIGHTED_KERNEL_LOCALIZED_EXACT_DIAGONAL_SUBTRACTED_SIGNED_REMAINDER_FOR_THE_FOUR_LITERAL_PACKETS_OR_PERFORMS_ITS_COLLECTIVE_REASSEMBLY
+TPC_207_TRIGGER = true                                      (V60.4)
+~~~
+
+完整 proof 与 canonical registry位于
+`research/tpc-big-road/bridge_b_moving_hole_bdh_translation_compiler.md`，checker为
+`research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py`。编号论文目录为
+`papers/tpc-207-critical-moving-hole-bdh-defect/`。以下 V59 页首块作为封存历史上游
+保留。
 
 第 106 节仍位于“解析消去岛 / Bridge A / Gate B”。V59 对 V58 已锁定的
 `C_*=mathfrak C_x^(V35)` 作 exact complex polarization。令
@@ -3687,12 +3753,14 @@ TPC-205 授权并完成：`true`
 TPC-206 授权并完成：`true`
 后续同类有限审计与编号工作流授权：`true`
 自动通过数学门槛或自动编号：`false`
-TPC-207 数学 trigger：`false`；TPC-207 已创建：`false`
+TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 下一篇编号论文发布前完整 provenance cascade：`REQUIRED`
 
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
 `research/tpc-big-road/TPC_ROUTE_MAP.md`、
+`research/tpc-big-road/bridge_b_moving_hole_bdh_translation_compiler.md`、
+`research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py`、
 `research/tpc-big-road/bridge_b_polarized_local_bdh_scalar_compiler.md`、
 `research/tpc-big-road/tpc_bridge_b_polarized_local_bdh_checker.py`、
 `research/tpc-big-road/bridge_b_terminal_scalar_root_and_q_transverse_split.md`、
@@ -3838,11 +3906,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前不编号 V59 gate及其 V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；七十四次必须都为零，且每一对 stdout
+22项启动回归之后，当前 V60 gate及其 V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；七十六次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
+python -B research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_polarized_local_bdh_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_polarized_local_bdh_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_terminal_scalar_root_checker.py --check
@@ -16086,6 +16156,162 @@ allowlist：Handoff、Compass、big-road README、route map、paper ledger、V51
 dependency-relocked checker，以及 V59 proof/checker；commit/push后必须验证 local
 `HEAD`、`origin/main`、remote `refs/heads/main` 三个 hash完全一致。
 
+
+## 107. 2026-08-17 V60：moving-hole BDH translation compiler
+
+### 107.1 Exact moving-hole theorem
+
+对 `q>=2` 与 complex row `z=(z_r)`，令 `mu=q^(-1)sum_r z_r`，并令 `V_h`
+为删除 residue `h` 后、以剩余 `q-1` 行均值中心化的 variance。V60 证明
+
+\[
+ V_h=V_{\rm all}-\frac q{q-1}|z_h-\mu|^2,
+ \qquad
+ V_h-V_0=\frac q{q-1}
+ (|z_0-\mu|^2-|z_h-\mu|^2).
+ \tag{107.1}
+\]
+
+令
+
+\[
+ v_h=\sqrt{\frac q{q-1}}(e_h-q^{-1}{\bf1}).
+\]
+
+则 `V_h=V_all-|<z,v_h>|^2`。当 `q>2,h!=0` 时，
+`P_(v_0)-P_(v_h)` 的 nonzero spectrum exact为
+
+\[
+ \pm\frac{\sqrt{q(q-2)}}{q-1}.
+ \tag{107.2}
+\]
+
+其 norm趋于 1，故 rank two只是 compiler structure，不是自动小量。
+
+### 107.2 `(q-2)` diagonal、translation sign与 polarization
+
+继承 `kappa_q=(q-2)/(q-1)`，
+
+\[
+ R_h=V_h-\kappa_q\sum_{r\ne h}E_r
+\]
+
+满足
+
+\[
+ R_h-R_0=\frac q{q-1}
+ (|z_0-\mu|^2-|z_h-\mu|^2)+\kappa_q(E_h-E_0).
+ \tag{107.3}
+\]
+
+V59 外层仍须乘 `q`。若 `n=s+m`，physical unit deletion对应
+`h_q=-s mod q`。对 ordered block pair `(b,c)`，`b,c` 只作 block labels；residue
+始终记为 `h_q`。`beta_b,w_c` 必须在同一个 physical origin中构造。先作
+`(1/4)sum_j i^j` polarization后，self energies逐项消失，完整 defect为 V60 proof
+(5.6)。
+
+### 107.3 Collective deterministic payment
+
+centered selector
+
+\[
+ \lambda_{q,r}^s(n)={\bf1}_{n-s\equiv r(q)}-q^{-1}
+\]
+
+在 length `O(H)` block上的 `l1` mass为 `O(H/q+1)`。先作 `v` 积分恢复
+`K_H(u-t)`，Schwartz separation给
+`sum_(b,c)omega_(b,c)<<J`；cross diagonal因 bounded overlap也只有 `O(J)` 个
+有效 ordered pairs。对任意 `(Q,2Q]` modulus subset，无需 PNT，
+
+\[
+ \sum_{b,c}|\mathcal M_{b,c}|
+ \ll x^{o(1)}J(H^2+HQ+Q^2).
+ \tag{107.4}
+\]
+
+代入 `H=x^(21/32),Q=x^(1/3),J=x/H*x^o(1)` 得
+
+\[
+ x^{53/32+o(1)}=x^{5/3-1/96+o(1)}.
+ \tag{107.5}
+\]
+
+所以 translation component 对任意 fixed
+`1/400<delta'<1/96` 都已支付。standard-zero-hole component仍无 theorem。
+
+### 107.4 Source boundary与 numbered release
+
+Harper arXiv:2412.19644v1 的 prime row exact等于 zero-hole variance；V60 现在把
+physical row分成该 zero-hole row与一个已支付 defect。但 Harper 的 input conditions、
+all-moduli-to-prime-only extraction、outer `q`、exact `(q-2)` diagonal与 one signed
+four-packet reassembly仍未附着。Blomer--Pascadi仍只是 fixed-cell post-emitter engine。
+
+TPC-207 以 structural threshold A 发布：main theorem是 exact projector/diagonal
+compiler加 deterministic critical block bound，不宣称完整 Gate B或 TPC。
+
+~~~text
+V60_MAXIMUM_CLAIM = EXACT_MOVING_HOLE_PROJECTOR_AND_Q_MINUS_2_DIAGONAL_COMPILER_PLUS_DETERMINISTIC_X_POWER_53_OVER_32_COLLECTIVE_TRANSLATION_DEFECT_BOUND
+V60_ROUTE_ADVANCE = YES
+V60_STRUCTURAL_THRESHOLD_A = PASS
+V60_TRANSLATION_SUBGATE_DELTA = 1_OVER_96_PROVED
+V60_TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
+V60_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+V60_ARITHMETIC_ADVANCE = NO
+V60_GLOBAL_GATE_B_ADVANCE = NO
+V60_FIXED_ATOM_CREDIT = 0
+V60_L2 = NONE
+V60_TPC_207_TRIGGER = true
+V60_MOVING_HOLE_IDENTITY = PROVED_EXACT
+V60_TRANSLATION_DEFECT_SPECTRUM = PROVED_EXACT_PLUS_MINUS_SQRT_Q_Q_MINUS_2_OVER_Q_MINUS_1
+V60_Q_MINUS_2_DIAGONAL_LIFT = PROVED_EXACT
+V60_PHYSICAL_TRANSLATION_SIGN = PROVED_H_Q_EQUALS_MINUS_S_MOD_Q
+V60_FOUR_PACKET_DEFECT = PROVED_EXACT_AFTER_SIGNED_POLARIZATION
+V60_CENTERED_SELECTOR_L1 = PROVED_H_OVER_Q_PLUS_ONE
+V60_BLOCK_SEPARATION_SUM = PROVED_J_NOT_J_SQUARED
+V60_GENERAL_DEFECT_BOUND = PROVED_J_TIMES_H_SQUARED_PLUS_H_Q_PLUS_Q_SQUARED
+V60_LITERAL_DEFECT_BOUND = PROVED_X_POWER_53_OVER_32_PLUS_O1
+V60_HARPER_TRANSLATION_MISMATCH = RESOLVED_EXACTLY_AND_DEFECT_PAID
+V60_ZERO_HOLE_POWER_THEOREM = OPEN
+V60_FIRST_FATAL = NO_THEOREM_CONTROLS_THE_STANDARD_ZERO_HOLE_PRIME_ONLY_Q_WEIGHTED_KERNEL_LOCALIZED_EXACT_DIAGONAL_SUBTRACTED_SIGNED_REMAINDER_FOR_THE_FOUR_LITERAL_PACKETS_OR_PERFORMS_ITS_COLLECTIVE_REASSEMBLY
+V60_NUMBERED_RELEASE = TPC_207_STRUCTURAL_THRESHOLD_A
+V60_ROUND2_CLUE = EXPAND_THE_ZERO_HOLE_CENTERED_SELECTOR_IN_ADDITIVE_FREQUENCIES_AND_COMPILE_ONLY_THE_OFF_EQUAL_FREQUENCY_LEVERAGE_PART_WHILE_RETAINING_THE_SEPARATE_DIAGONAL_F_TERM
+~~~
+
+proof为
+`research/tpc-big-road/bridge_b_moving_hole_bdh_translation_compiler.md`，checker为
+`research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py`，paper为
+`papers/tpc-207-critical-moving-hole-bdh-defect/`。
+
+### 107.5 Release QA 与 preservation
+
+TPC-207 release QA 独立完成以下只读验证：
+
+~~~text
+TPC207_PRODUCER_NORMAL_OPTIMIZED = 2/2 PASS_BYTE_IDENTICAL
+TPC207_INDEPENDENT_CHECKER_NORMAL_OPTIMIZED = 2/2 PASS_BYTE_IDENTICAL
+V60_CHECKER_NORMAL_OPTIMIZED = 2/2 PASS_BYTE_IDENTICAL
+STRICT_JSON_RFC8259_AND_BOOL_INT_FIREWALL = PASS
+INDEPENDENT_CHECKER_IMPORT_SEPARATION = PASS
+POST_WRITE_STARTUP_REGRESSION = 22/22 PASS_STDERR_EMPTY
+POST_WRITE_BIG_ROAD_REGRESSION = 76/76 PASS_STDERR_EMPTY
+POST_WRITE_NORMAL_OPTIMIZED_IDENTITIES = 38/38 PASS
+LATEX_BUILD = PASS_NO_WARNING_NO_OVERFULL
+PDF_PAGES = 9
+PDF_SHA256 = cfa6fe55c3a36ff1bb12274001dd6060bf0e611b74bbcc0dae1f2eaacaaaa58e
+PDF_TEXT_REBUILD_IDENTITY = PASS
+PDF_FONTS = ALL_EMBEDDED_AND_SUBSETTED
+PDF_VISUAL_QA = PAGES_1_TO_9_PASS_NO_CLIPPING_OVERLAP_BROKEN_GLYPHS_OR_MISSING_REFERENCES
+RELEASE_QA_VERDICT = GO_PROVED_STRUCTURAL_L1
+~~~
+
+九页逐页 verdict均为 `PASS`；第 9 页仅含两条 references，留白为正常版式而非
+缺页。最大 claim仍为 exact moving-hole/projector/diagonal compiler加
+`x^(53/32+o(1))` translation-defect payment。第一 fatal仍是 standard-zero-hole、
+prime-only、`q`-weighted、kernel-localized、exact-diagonal-subtracted signed
+four-packet BDH power theorem及 collective reassembly。
+
+发布前保留的既有 untracked paths为 `codex_prompt.md` 与
+`research/tpc-big-road/.ipynb_checkpoints/`；二者不属于 TPC-207，禁止 stage。
 
 ## 106. 2026-08-13 V59：polarized local BDH scalar compiler
 

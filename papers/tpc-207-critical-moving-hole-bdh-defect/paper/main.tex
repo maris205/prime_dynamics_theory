@@ -1,0 +1,511 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Moving-Hole Defects in Translated Reduced-Residue BDH Variances},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact moving-hole compiler and deterministic critical block bound}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\Fq}{\mathbb Z/q\mathbb Z}
+\newcommand{\e}{\mathrm e}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\avg}{\operatorname{Av}}
+
+\title{\textbf{Moving-Hole Defects in Translated Reduced-Residue BDH Variances:}\\
+A Rank-Two Formula and Critical Block Bound}
+\author{Liang Wang\\
+Huazhong University of Science and Technology\\
+Wuhan 430074, P.R. China}
+\date{August 2026}
+
+\begin{document}
+\emergencystretch=2em
+\maketitle
+
+\begin{abstract}
+Reduced-residue Barban--Davenport--Halberstam (BDH) variances distinguish the
+zero residue.  Translating a physical interval therefore replaces the deleted
+zero residue by a modulus-dependent moving hole.  We isolate and prove the
+exact correction.  Deleting a residue is an orthogonal rank-one loss from the
+all-residue variance; changing the deleted residue is consequently rank two,
+with exact nonzero spectrum
+$\pm\sqrt{q(q-2)}/(q-1)$.  We lift the identity through the mandatory
+$(q-2)/(q-1)$ diagonal subtraction and through four-packet complex
+polarization.  For length-$O(H)$ bounded-overlap blocks, moduli
+$q\in(Q,2Q]$, and a Schwartz localized kernel, we then prove the deterministic
+bound
+\[
+ \sum_{b,c}|M_{bc}|\ll A_\beta A_w J(H^2+HQ+Q^2).
+\]
+At the frozen scales $H=x^{21/32}$, $Q=x^{1/3}$ and
+$J=x/H\,x^{o(1)}$, this is $x^{53/32+o(1)}=
+x^{5/3-1/96+o(1)}$.  Thus the translation subgate, and only that subgate,
+pays the critical $1/96$ clock and the required strict margin for every fixed
+$1/400<\delta'<1/96$.  The claim is structural L1: we do not prove the
+prime-only, $q$-weighted, kernel-localized signed zero-hole BDH theorem, a
+full Gate-B estimate, an arithmetic advance, an $L^2$ estimate, fixed-atom
+credit, or a twin-prime theorem.
+\end{abstract}
+
+\section{Introduction and claim firewall}
+
+The V59 prime-dynamics reduction expresses one signed endpoint scalar as a
+four-packet polarization of reduced-residue BDH remainders
+\cite{V59Artifact}.  A direct comparison with general-sequence BDH results is
+not translation invariant: after writing a physical variable as $n=s+m$,
+the condition $q\nmid n$ deletes the local residue $m\equiv-s\pmod q$, not
+the local zero residue.  The purpose of this paper is to remove that
+translation mismatch exactly and to determine its full deterministic cost.
+
+The answer has two parts.  First, a finite-dimensional projector identity
+shows that the variance correction is rank two.  The exact diagonal-subtracted
+remainder additionally requires a two-residue energy correction.  Second,
+kernel localization and block geometry, rather than finite rank, yield the
+needed power: the correction reassembles with $J$ effective blocks, not
+$J^2$.
+
+The status language throughout is
+\begin{align*}
+ \texttt{V60\_ROUTE\_ADVANCE}&=\texttt{YES},\\
+ \texttt{V60\_TRANSLATION\_SUBGATE\_DELTA}&=\texttt{1\_OVER\_96\_PROVED},\\
+ \texttt{V60\_TRANSLATION\_SUBGATE\_STRICT\_1\_OVER\_400}&=\texttt{PAID},\\
+ \texttt{V60\_FULL\_GATE\_B\_STRICT\_1\_OVER\_400}&=\texttt{UNPAID},\\
+ \texttt{V60\_ARITHMETIC\_ADVANCE}&=\texttt{NO},\\
+ \texttt{V60\_FIXED\_ATOM\_CREDIT}&=0,\\
+ \texttt{V60\_L2}&=\texttt{NONE},\qquad
+ \texttt{TPC\_207\_TRIGGER}=\texttt{true}.
+\end{align*}
+No statement below is a twin-prime theorem.  We use ``prove'' for the exact
+algebra and deterministic estimates established here; source comparisons are
+explicitly separated.
+
+\section{Reduced-residue BDH rows}
+
+Fix $q\ge2$ and a complex row $z=(z_r)_{r\in\Fq}$.  Put
+\[
+ \mu=\frac1q\sum_{r\in\Fq}z_r,
+ \qquad
+ V_{\rm all}(z)=\sum_{r\in\Fq}|z_r-\mu|^2.
+\]
+For a deleted residue, or \emph{hole}, $h\in\Fq$, define
+\[
+ \mu_h=\frac1{q-1}\sum_{r\ne h}z_r,
+ \qquad
+ V_h(z)=\sum_{r\ne h}|z_r-\mu_h|^2.
+\]
+For a prime modulus, the gcd-grouped variance used by Harper
+\cite{Harper2024} has a singleton non-unit class and hence zero contribution
+from that class.  Its prime row is therefore exactly $V_0$.  The translated
+physical row will instead be $V_{h_q}$ for a modulus-dependent $h_q$.
+
+We also require a diagonal ledger.  Let $E_r\ge0$ denote the coefficient
+energy in residue $r$, and set
+\begin{equation}\label{eq:remainder}
+ \kappa_q=\frac{q-2}{q-1},
+ \qquad
+ R_h(z,E)=V_h(z)-\kappa_q\sum_{r\ne h}E_r.
+\end{equation}
+The factor $q-2$ records the exact number of nonprincipal characters after
+the reduced-residue character expansion; replacing it by $q-1$ changes the
+scalar.
+
+\section{The moving-hole projector theorem}
+
+\begin{theorem}[Moving-hole identity]\label{thm:moving-hole}
+For every $q\ge2$, $z\in\mathbb C^q$, and $h\in\Fq$,
+\begin{equation}\label{eq:main-identity}
+ \boxed{V_h(z)=V_{\rm all}(z)-\frac q{q-1}|z_h-\mu|^2.}
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:hole-difference}
+ V_h(z)-V_0(z)=\frac q{q-1}
+ \left(|z_0-\mu|^2-|z_h-\mu|^2\right).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Write $u_r=z_r-\mu$.  Then $\sum_r u_r=0$ and
+\[
+ \mu_h=\mu-\frac{u_h}{q-1}.
+\]
+For $r\ne h$ we have $z_r-\mu_h=u_r+u_h/(q-1)$.  Since
+$\sum_{r\ne h}u_r=-u_h$,
+\begin{align*}
+ V_h(z)
+ &=\sum_{r\ne h}\left|u_r+\frac{u_h}{q-1}\right|^2\\
+ &=\sum_{r\ne h}|u_r|^2
+   -\frac{2}{q-1}|u_h|^2+\frac1{q-1}|u_h|^2\\
+ &=V_{\rm all}(z)-\frac q{q-1}|u_h|^2.
+\end{align*}
+Subtracting the cases $h$ and $0$ gives \eqref{eq:hole-difference}.
+\end{proof}
+
+Let $P=I-q^{-1}\one\one^*$ be the all-row centering projector and define
+\[
+ v_h=\sqrt{\frac q{q-1}}\left(e_h-\frac1q\one\right).
+\]
+Then $\|v_h\|=1$, $v_h\perp\one$, and Theorem
+\ref{thm:moving-hole} becomes
+\begin{equation}\label{eq:projector-form}
+ V_h(z)=\langle z,Pz\rangle-|\langle z,v_h\rangle|^2.
+\end{equation}
+
+\section{Sharp rank-two spectrum and obstruction}
+
+\begin{proposition}[Exact spectrum]\label{prop:spectrum}
+Suppose $h\ne0$ and $q>2$.  The self-adjoint translation-defect operator
+\[
+ T_h=P_{v_0}-P_{v_h},\qquad P_v=vv^*,
+\]
+has rank two and nonzero spectrum
+\begin{equation}\label{eq:spectrum}
+ \boxed{\operatorname{spec}_{\ne0}(T_h)=
+ \left\{\frac{\sqrt{q(q-2)}}{q-1},
+ -\frac{\sqrt{q(q-2)}}{q-1}\right\}.}
+\end{equation}
+For $h=0$ or $q=2$, the defect is zero.
+\end{proposition}
+
+\begin{proof}
+For $h\ne0$,
+\[
+ \langle v_0,v_h\rangle=-\frac1{q-1}.
+\]
+The difference of two rank-one orthogonal projectors has trace zero and is
+supported on $\operatorname{span}(v_0,v_h)$.  Its two eigenvalues are
+$\pm\sqrt{1-|\langle v_0,v_h\rangle|^2}$, which gives
+\eqref{eq:spectrum}.  If $q=2$, the two centered unit vectors differ only by
+sign, hence their projectors coincide.
+\end{proof}
+
+In particular,
+\[
+ \|T_h\|=\frac{\sqrt{q(q-2)}}{q-1}\longrightarrow1.
+\]
+Thus finite rank gives no asymptotic saving.  This is a sharp obstruction to
+an argument that merely calls the correction ``low rank.''  A related
+coefficient-level obstruction is obtained by placing $L$ equal coefficients
+$A$ in a single residue: when the hole is moved across that residue, the
+diagonal-subtracted defect can have size
+\[
+ \frac{q-2}{q-1}L(L-1)|A|^2.
+\]
+The block theorem below must therefore use residue counts, kernel decay, and
+collective geometry.
+
+\section{Exact diagonal-subtracted lift}
+
+\begin{theorem}[Mandatory energy correction]\label{thm:diagonal}
+For the remainder \eqref{eq:remainder},
+\begin{equation}\label{eq:diagonal-lift}
+ \boxed{
+ R_h-R_0=\frac q{q-1}
+ \left(|z_0-\mu|^2-|z_h-\mu|^2\right)
+ +\frac{q-2}{q-1}(E_h-E_0).}
+\end{equation}
+If the ambient BDH row carries outer weight $q$, then every term on the
+right of \eqref{eq:diagonal-lift} must also be multiplied by $q$.
+\end{theorem}
+
+\begin{proof}
+The variance difference is \eqref{eq:hole-difference}.  The diagonal
+difference is
+\[
+ -\kappa_q\sum_{r\ne h}E_r+\kappa_q\sum_{r\ne0}E_r
+ =\kappa_q(E_h-E_0).
+\]
+Adding the two identities proves the claim.
+\end{proof}
+
+The energy correction is essential.  For $q=5$, take residue-$0$
+coefficients $5,5$, residue-$1$ coefficient $1$, and no others.  Then
+\[
+ z=(10,1,0,0,0),\qquad E=(50,1,0,0,0),
+\]
+and exact calculation gives
+\begin{equation}\label{eq:q5-fixture}
+ R_0=0,\qquad R_1=\frac{75}{2}.
+\end{equation}
+By contrast, the one-coefficient realization $E=(100,1,0,0,0)$ has
+$R_0=R_1=0$; the row $z$ alone cannot certify a remainder mismatch.
+
+\section{Translation and four-packet polarization}
+
+Fix the physical convention
+\begin{equation}\label{eq:translation}
+ n=s+m.
+\end{equation}
+Then $q\mid n$ if and only if $m\equiv-s\pmod q$.  Hence the moving hole is
+\begin{equation}\label{eq:moving-hole-sign}
+ \boxed{h_q=-s\pmod q.}
+\end{equation}
+For a local packet $a_s(m)=a(s+m)$ and frequency $v$, write
+\[
+ z^{a,s}_{q,r}(v)=\sum_{m\equiv r\,(q)}a_s(m)\e(vm/H).
+\]
+The physical row differs by the common unit phase $\e(vs/H)$, which cancels
+in every variance and absolute square.  If the two polarized packets were
+first written at own origins $s_\beta,s_w$, with $d=s_w-s_\beta$, then the
+common-origin conversion is
+\begin{equation}\label{eq:common-origin}
+ W_r^{\rm common}(v)=\e(vd/H)W_{r-d}^{\rm own}(v).
+\end{equation}
+Both the relative residue shift and the phase are mandatory.
+
+Let $B_r,W_r$ be the common-origin residue rows for an ordered block pair
+$(b,c)$, and put
+\[
+ \bar B=\frac1q\sum_rB_r,\qquad
+ \bar W=\frac1q\sum_rW_r,\qquad
+ F_r=\sum_{m\equiv r\,(q)}\beta_b(m)\overline{w_c(m)}.
+\]
+Define $a^{(j)}=\beta+i^jw$, $j=0,1,2,3$.  The elementary complex
+polarization identity in the required orientation is
+\[
+ X\overline Y=\frac14\sum_{j=0}^3i^j|X+i^jY|^2.
+\]
+Applying it before any triangle inequality to Theorem \ref{thm:diagonal}
+gives the exact ordered-pair moving-hole defect
+\begin{align}
+ M_{bc}=\int\psi(v)\sum_{q\in\cQ}q\Bigg\{&
+ \frac q{q-1}\Big[(B_0-\bar B)\overline{(W_0-\bar W)}
+ \notag\\[-2mm]
+ &\hspace{31mm}-(B_{h_q}-\bar B)
+ \overline{(W_{h_q}-\bar W)}\Big]
+ \notag\\
+ &+\frac{q-2}{q-1}(F_{h_q}-F_0)\Bigg\}\,dv.
+ \label{eq:Mbc}
+\end{align}
+Equivalently, \eqref{eq:Mbc} is one quarter of the signed $i^j$-sum of the
+four scalar remainder defects.  It is not obtained by four absolute-value
+estimates.
+
+For later use, with
+$\widehat B(k)=\sum_rB_r\e_q(-kr)$, define
+$L_r=(B_r-\bar B)\overline{(W_r-\bar W)}$.  Before the prefactor
+$q/(q-1)$ in \eqref{eq:Mbc}, the bare leverage difference is
+\begin{equation}\label{eq:dft-selector}
+ L_0-L_{h_q}=\frac1{q^2}\sum_{k,l\ne0}\widehat B(k)
+ \overline{\widehat W(l)}\bigl(1-\e_q((k-l)h_q)\bigr).
+\end{equation}
+Consequently the complete leverage correction inside the braces of
+\eqref{eq:Mbc} has coefficient $1/[q(q-1)]$ in front of the double sum.
+After the outer BDH weight $q$ is included, its coefficient in $M_{bc}$ is
+$1/(q-1)$.  The selector vanishes when $k=l$.  This off-equal-frequency
+cancellation belongs to the leverage term; the separate diagonal term
+$F_{h_q}-F_0$ does not disappear from \eqref{eq:Mbc}.
+
+\section{Critical deterministic block bound}
+
+We now state a self-contained deterministic form of the block estimate.  Let
+$\{I_b\}_{b\in\mathcal B}$ and $\{I_c\}_{c\in\mathcal B}$ be intervals of
+length at most $C_0H$, with bounded overlap and ordered centers separated on
+the $H$ scale.  There are $J=|\mathcal B|$ effective blocks after discarding
+a Schwartz tail.  Assume
+\[
+ |\beta_b(m)|\le A_\beta\one_{I_b}(m),\qquad
+ |w_c(n)|\le A_w\one_{I_c}(n).
+\]
+The frequency integral is assumed to produce a kernel $K_H(m-n)$ satisfying,
+for every fixed $A>2$,
+\begin{equation}\label{eq:kernel}
+ |K_H(m-n)|\le C_A(1+|b-c|)^{-A}
+\end{equation}
+whenever $m\in I_b,n\in I_c$.  This normalization absorbs the fixed smooth
+cutoffs and is the one used in the V59 local scalar.  For the cross-diagonal
+term we assume the usual bounded-overlap property: $I_b\cap I_c$ is empty
+unless $|b-c|\le C_1$.
+
+\begin{theorem}[Moving-hole block payment]\label{thm:block}
+Let $2\le Q\le H$, and let $\cQ$ be any set of integer moduli in $(Q,2Q]$.
+Under the preceding hypotheses, the defects \eqref{eq:Mbc} satisfy
+\begin{equation}\label{eq:block-bound}
+ \boxed{
+ \sum_{b,c\in\mathcal B}|M_{bc}|
+ \ll A_\beta A_w J(H^2+HQ+Q^2),}
+\end{equation}
+where the implied constant depends only on the support, overlap and Schwartz
+constants, not on the locations of the holes $h_q$.
+\end{theorem}
+
+\begin{proof}
+For $r\in\Fq$ introduce the centered residue selector
+\[
+ \lambda_{q,r}(m)=\one_{m\equiv r\,(q)}-\frac1q.
+\]
+On any interval of length at most $C_0H$,
+\begin{equation}\label{eq:l1-selector}
+ \sum_m|\lambda_{q,r}(m)|\ll \frac Hq+1,
+\end{equation}
+uniformly in $r$.  Indeed, the residue class occurs $O(H/q+1)$ times and the
+constant part has total mass $O(H/q)$.
+
+Integrate in $v$ first.  A leverage coordinate such as
+$(B_r-\bar B)\overline{(W_r-\bar W)}$ becomes a double coefficient sum with
+two centered selectors and kernel $K_H(m-n)$.  Equations
+\eqref{eq:kernel} and \eqref{eq:l1-selector} therefore give, uniformly in the
+selected residue $r$,
+\[
+ \left|\int\psi(v)(B_r-\bar B)
+ \overline{(W_r-\bar W)}\,dv\right|
+ \ll A_\beta A_w(1+|b-c|)^{-A}\left(\frac Hq+1\right)^2.
+\]
+The two leverage coordinates in \eqref{eq:Mbc} obey the same estimate.  The
+outer $q$ is retained.  Summing the Schwartz separation first yields
+\[
+ \sum_{b,c}(1+|b-c|)^{-A}\ll J,
+\]
+not $J^2$.  Hence the total leverage contribution is
+\begin{align*}
+ &\ll A_\beta A_w J
+ \sum_{q\in\cQ}q\left(\frac Hq+1\right)^2\\
+ &\ll A_\beta A_w J
+ \left(H^2\sum_{Q<q\le2Q}\frac1q
+ +H\#\cQ+\sum_{q\in\cQ}q\right)\\
+ &\ll A_\beta A_w J(H^2+HQ+Q^2).
+\end{align*}
+No prime number theorem is used; $\#\cQ\le Q$ suffices.
+
+For the cross-diagonal, only $O(J)$ block pairs overlap.  In each such pair,
+the residue support has size $O(H/q+1)$, so its total contribution is
+\[
+ \ll A_\beta A_wJ\sum_{q\in\cQ}q\left(\frac Hq+1\right)
+ \ll A_\beta A_wJ(HQ+Q^2),
+\]
+which is already contained in \eqref{eq:block-bound}.
+\end{proof}
+
+\begin{remark}
+The proof uses absolute values only after the exact four-packet polarization
+has produced the complete ordered-pair defect $M_{bc}$.  It does not apply
+triangle inequalities separately to the four packets or destroy their
+algebraic cancellation.
+\end{remark}
+
+\section{The V59 critical scale}
+
+At the frozen V59 scales
+\[
+ H=x^{21/32},\qquad Q=x^{1/3},\qquad
+ J=\frac{x}{H}x^{o(1)},
+\]
+we have $Q\le H$ and
+\begin{align*}
+ JH^2&=xH\,x^{o(1)}=x^{53/32+o(1)},\\
+ JHQ&=xQ\,x^{o(1)}=x^{4/3+o(1)},\\
+ JQ^2&=x^{97/96+o(1)}.
+\end{align*}
+The first term dominates, and
+\begin{equation}\label{eq:critical-clock}
+ \frac{53}{32}=\frac53-\frac1{96}.
+\end{equation}
+Therefore Theorem \ref{thm:block} pays the moving-hole translation defect at
+the exact $1/96$ clock.  The harmless $x^{o(1)}$ factor leaves the required
+strict margin for every fixed
+\begin{equation}\label{eq:strict-saving}
+ \frac1{400}<\delta'<\frac1{96}.
+\end{equation}
+
+This payment is local to the translation correction.  It does not estimate
+the standard zero-hole remainder $R_0$, and so it cannot be transferred to
+the full Gate-B scalar by itself.
+
+\section{Source boundary}
+
+Harper defines a gcd-grouped variance for general sequences and proves BDH
+asymptotics under explicit progressions, non-concentration, sparsity or
+integer-resemblance hypotheses \cite{Harper2024}.  For a prime modulus, the
+gcd-$q$ group is the singleton zero class and has zero variance; thus the
+prime row is exactly the zero-hole variance $V_0$.  Theorem
+\ref{thm:moving-hole} supplies the exact crosswalk from this row to the
+translated physical row.
+
+The source does not, however, prove the object still required by V59:
+\begin{itemize}[leftmargin=2em]
+ \item the modulus subset is prime-only and carries outer weight $q$;
+ \item the variance is kernel-localized and has the exact $q-2$ diagonal
+       removed;
+ \item four literal complex packets occur in one signed polarization;
+ \item the required input hypotheses must hold uniformly in block and
+       frequency; and
+ \item the local estimates must be reassembled collectively without an
+       internal modulus, packet, or block triangle loss.
+\end{itemize}
+Moreover, after exact diagonal subtraction the signed remainder is not
+positive, so an all-moduli estimate cannot simply be restricted to primes.
+We therefore source-lock the conclusion as follows: the Harper translation
+mismatch is no longer a fatal obstruction, but Harper is not a direct theorem
+attachment for the full Gate-B object.
+
+\section{Executable exact certificate}
+
+The accompanying standard-library artifact represents complex numbers as
+pairs of rational numbers and checks, without floating-point tolerances:
+\begin{itemize}[leftmargin=2em]
+ \item all-hole identities for $q=2,3,5,7$;
+ \item the exact diagonal lift and translation sign;
+ \item four-packet polarization with weights $i^j/4$;
+ \item the squared spectrum $q(q-2)/(q-1)^2$ and degeneracies;
+ \item the corrected fixture \eqref{eq:q5-fixture};
+ \item the rational exponent identity \eqref{eq:critical-clock}; and
+ \item the explicit claim firewall.
+\end{itemize}
+An independent checker reimplements the arithmetic without importing the
+main implementation.  Both normal and optimized Python modes are required to
+produce identical output.  These finite checks are quality assurance and
+falsifiers for signs, factors, and fixtures; they are not evidence for the
+general theorems, whose proofs appear above.
+
+\section{Limitations and open theorem}
+
+The strongest positive result is the exact decomposition
+\begin{align*}
+ \text{physical moving-hole remainder}
+ ={}&\text{standard zero-hole remainder}\\
+ &+\text{selected leverage defect}\\
+ &+\text{selected energy defect},
+\end{align*}
+together with a deterministic $x^{53/32+o(1)}$ payment for the complete
+translation defect.  The strongest obstruction is equally explicit: the
+rank-two operator norm tends to one, so no saving is available from finite
+rank alone.
+
+The first fatal remaining theorem is:
+\begin{quote}
+Prove a power-saving estimate for the standard zero-hole, prime-only,
+$q$-weighted, kernel-localized, exact-diagonal-subtracted signed remainder of
+the four literal V59 packets, uniformly over blocks and frequencies, and
+compile the block family collectively at a fixed saving greater than
+$1/400$.
+\end{quote}
+The DFT selector $1-\e_q((k-l)h_q)$ in
+\eqref{eq:dft-selector} is a reusable clue: it removes equal frequencies from
+the translation leverage term and may expose a post-dispersion or
+Kloosterman-cell interface.  That arithmetic step remains open.
+
+To conclude, TPC-207 is a proved structural L1 route advance.  It proves the
+exact moving-hole projector and $q-2$ diagonal compiler and pays the
+translation subgate for every fixed $1/400<\delta'<1/96$.  It proves no full
+Gate-B theorem, no global arithmetic advance, no $L^2$ estimate, no
+fixed-atom credit, and no twin-prime theorem.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

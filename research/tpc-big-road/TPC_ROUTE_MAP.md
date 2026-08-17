@@ -1,8 +1,8 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-13
+更新时间：2026-08-17
 
-当前地图版本：V59
+当前地图版本：V60
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
@@ -46,14 +46,14 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +-----------------------------------------------+
-        | YOU ARE HERE — V59                            |
-        | GATE-B POLARIZED PRIME-BDH ZONE               |
-        | collective compiler + Gate-A root = OPEN      |
+        | YOU ARE HERE — V60                            |
+        | GATE-B ZERO-HOLE PRIME-BDH ZONE               |
+        | translation paid; zero-hole theorem = OPEN    |
         +-----------------------------------------------+
                 |
                 v
 Bridge A 的两个主桥墩
-  one full-shell signed fold + one polarized prime-BDH compiler = OPEN
+  one full-shell signed fold + one zero-hole prime-BDH compiler = OPEN
   q-transverse row variance = optional maximal-prefix railing
                 |
                 v
@@ -63,6 +63,20 @@ Bridge A 的两个主桥墩
 后备线：岛 5 非自治动力学 -> Bridge B distinguished-seed genericity
 辅助线：岛 7 Hénon / 几何提升
 ```
+
+V60 的位置变化只支付一个真实子门：对 `n=s+m`，moving hole为
+`h_q=-s mod q`；leave-one-out variance是 all-residue variance减一个 normalized
+rank-one leverage，changing hole因此为 rank-two defect。保留 `(q-2)` diagonal并在
+four-packet signed polarization之后估计，完整 block-pair defect满足
+
+```text
+sum_(b,c)|M_(b,c)| << x^(53/32+o(1))
+                   = x^(5/3-1/96+o(1)).
+```
+
+所以地图上的 translation wall已通过。下一块桥面不再是“如何平移 Harper row”，而是
+“如何控制 standard-zero-hole、prime-only、q-weighted、kernel-localized、
+exact-diagonal-subtracted signed four-packet remainder”。
 
 一句话定位：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical

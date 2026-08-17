@@ -1,11 +1,28 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-13
-状态：`BOLD_CHANNEL_V58 / TWO_SIGNED_SCALAR_PIERS_SELECTED_WITH_Q_TRANSVERSE_RAILING_OPTIONAL`
-claim level：`EXACT_SCALAR_CROSSWALK_AND_ORTHOGONAL_ROUTE_RETYPE_WITHOUT_ARITHMETIC_PROMOTION`
-编号事实终点：TPC-206；TPC-207 trigger：`false`
+更新时间：2026-08-17
+状态：`BOLD_CHANNEL_V60 / MOVING_HOLE_TRANSLATION_SUBGATE_PAID_ZERO_HOLE_BDH_GATE_OPEN`
+claim level：`EXACT_RANK_TWO_TRANSLATION_COMPILER_PLUS_X_POWER_53_OVER_32_DEFECT_PAYMENT_WITHOUT_GLOBAL_GATE_B_PROMOTION`
+编号事实终点：TPC-207；TPC-208 trigger：`false`
 
-本文件把 TPC-1--206 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
+V60 当前入口：proof 为
+`research/tpc-big-road/bridge_b_moving_hole_bdh_translation_compiler.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py`，编号论文为
+`papers/tpc-207-critical-moving-hole-bdh-defect/`。V60 把 V59 的 translated-block
+distinguished-zero wall exact拆成 standard zero-hole remainder与 rank-two moving-hole
+defect，并保留强制的 `(q-2)` diagonal correction。对完整 ordered block-pair defect先
+polarization、再积分、最后估计，得到
+
+```text
+sum_(b,c)|M_(b,c)| << x^(53/32+o(1))
+                   = x^(5/3-1/96+o(1)).
+```
+
+translation subgate因此在 `1/96` 时钟付款；remaining first fatal是 standard-zero-hole、
+prime-only、q-weighted、kernel-localized、exact-diagonal-subtracted signed four-packet
+BDH theorem。完整 Gate B、`L2`、fixed-atom credit与 TPC仍 OPEN。
+
+本文件把 TPC-1--207 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
 传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V58 的完整
 proof、scope与独立 checker位于
 `research/tpc-big-road/bridge_b_terminal_scalar_root_and_q_transverse_split.md`及
