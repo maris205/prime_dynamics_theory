@@ -1,7 +1,82 @@
 # TPC HANDOFF
 
 更新时间：2026-08-17
-交接状态：`BOLD_CHANNEL_V60_TPC207_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V61_TPC208_SEALED_FOR_NEW_SESSION`
+
+第 108 节仍位于“解析消去岛 / Bridge A / Gate B”。V61 攻击 V60 留下的
+standard-zero-hole、prime-only、`q`-weighted、kernel-localized、exact-diagonal-
+subtracted signed four-packet remainder。V60 `ROUND2_CLUE`建议分开处理 additive DFT
+equal/off-equal frequencies；residue-zero spike证明该估计顺序不稳定：true zero-hole
+variance为零，而两项分别为
+
+~~~text
++(q-1)|L|^2/q,    -(q-1)|L|^2/q.                       (V61.1)
+~~~
+
+正确 invariant object是 nonzero additive frequencies上的 complete-graph Laplacian。
+令 `y=(A_hat(k))_(k!=0)`、`P=I-11*/(q-1)`，并令
+`Delta_(k,l)(n)=e_q(-kn)-e_q(-ln)`，则 exact有
+
+~~~text
+V_0(a;v)=q^-1 y*Py
+        =1/[q(q-1)] sum_{{k,l} in E(K_(q-1))} |T_(k,l)[a](v)|^2.   (V61.2)
+~~~
+
+projection rank为 `q-2`，edge count为 `(q-1)(q-2)/2`。更关键的是
+
+~~~text
+sum_e |Delta_e(n)|^2=q(q-2)1_(q does not divide n),    (V61.3)
+~~~
+
+所以 V59 mandatory `(q-2)/(q-1)` coefficient diagonal exact分配到同一 edge
+cells。每个 `E_e^circ`只含 coefficient pairs `t!=u`，保留 physical outer `q` 后
+
+~~~text
+qR_0(a;v)=1/(q-1) sum_e E_e^circ[a](v).                (V61.4)
+~~~
+
+four-packet polarization逐 edge成立。contracted residue kernel在任一 nonunit coordinate
+为 `0`、equal units为 `q(q-2)`、distinct units为 `-q`；除以 `q-1` 后 exact返回
+V59 `q u_1(s inverse(r);q)` coefficient。按 `l=k+d` oriented后，
+
+~~~text
+Delta_(k,k+d)(n)=e_q(-kn)(1-e_q(-dn)),
+weight=1/[2(q-1)], d!=0, k!=0,-d.                     (V61.5)
+~~~
+
+V61 还证明 literal two-frequency no-sparsification：若
+`P=sum_(k<l)w_(k,l)(e_k-e_l)(e_k-e_l)*`，每个 off-diagonal `(k,l)` entry只由
+对应唯一 edge贡献，强制 `w_(k,l)=1/(q-1)`。因此 strict edge subset不可能表示
+zero-hole projection；dense basis、higher-rank cells与 whole-frame joint theorem未被
+停止。
+
+~~~text
+V61_ROUTE_ADVANCE = YES
+V61_STRUCTURAL_THRESHOLD_A = PASS
+V61_ZERO_HOLE_ADDITIVE_EDGE_FRAME = PROVED_EXACT
+V61_CELLWISE_Q_MINUS_2_DIAGONAL_CANCELLATION = PROVED_EXACT
+V61_PHYSICAL_KERNEL_CROSSWALK = PROVED_EXACT
+V61_ORIENTED_DIFFERENCE_FIBER = PROVED_EXACT_WITH_FACTOR_ONE_HALF
+V61_TWO_FREQUENCY_NO_SPARSIFICATION = PROVED_EXACT_IN_LITERAL_EDGE_CLASS
+V61_EQUAL_OFF_EQUAL_SEPARATE_ESTIMATION = REFUTED
+V61_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+V61_ARITHMETIC_ADVANCE = NO
+V61_GLOBAL_GATE_B_ADVANCE = NO
+V61_FIXED_ATOM_CREDIT = 0
+V61_L2 = NONE
+V61_FIRST_FATAL = NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE_LITERAL_BLOCK_PACKETS_INTO_SOURCE_VALID_KLOOSTERMAN_CELLS_AND_REASSEMBLES_ALL_BLOCKS_FOUR_PACKET_SIGNS_AND_PRIME_MODULI_WITH_A_FIXED_SAVING
+V61_ROUND2_CLUE = APPLY_MOBIUS_AND_POISSON_TRANSFORMS_TO_THE_WHOLE_D_K_TIGHT_FRAME_BEFORE_ANY_EDGE_OR_FIBER_TRIANGLE_AND_TEST_WHETHER_ONE_DUAL_VARIABLE_IS_SHARED_ACROSS_THE_FRAME
+TPC_208_TRIGGER = true                                      (V61.6)
+TPC_209_TRIGGER = false
+~~~
+
+完整 proof 与 canonical registry位于
+`research/tpc-big-road/bridge_b_zero_hole_additive_edge_frame.md`，checker为
+`research/tpc-big-road/tpc_bridge_b_zero_hole_additive_edge_checker.py`。编号论文目录为
+`papers/tpc-208-zero-hole-additive-edge-frame/`。该 theorem通过 structural threshold A，
+不构成 Kloosterman attachment、prime-shell power saving、global arithmetic advance、
+`L2`、fixed-atom credit或 twin-prime theorem。下一篇只有在 whole-frame compiler产生
+真实 theorem或 precise obstruction后才可触发。以下 V60 页首块作为封存历史上游保留。
 
 第 107 节仍位于“解析消去岛 / Bridge A / Gate B”。V60 对 V59 的
 translated-block distinguished-zero wall作 exact moving-hole分解。若 physical block
@@ -3906,11 +3981,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V60 gate及其 V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；七十六次必须都为零，且每一对 stdout
+22项启动回归之后，当前 V61 gate及其 V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；七十八次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
+python -B research/tpc-big-road/tpc_bridge_b_zero_hole_additive_edge_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_zero_hole_additive_edge_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_polarized_local_bdh_checker.py --check
@@ -3991,16 +4068,16 @@ python -O -B research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py --check
 
 随后优先读取：
 
-1. `papers/tpc-206-selected-lineage-pair-registry-projection/README.md`
-2. `papers/tpc-206-selected-lineage-pair-registry-projection/experiments/tpc206_selected_lineage_pair_registry.json`
-3. `papers/tpc-206-selected-lineage-pair-registry-projection/experiments/tpc206_selected_lineage_pair_registry_audit.json`
-4. `papers/tpc-206-selected-lineage-pair-registry-projection/experiments/tpc206_independent_checker.py`
-5. `papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments/tpc205_pair_native_registry_interface.json`
-6. `papers/tpc-194-maximal-source-backed-direct-prefix/experiments/tpc194_maximal_source_backed_direct_prefix.json`
-7. `papers/tpc-193-literal-fixed-atom-candidate-mechanism-gate/experiments/tpc193_literal_fixed_atom_candidate_mechanism_gate.json`
+1. `papers/tpc-208-zero-hole-additive-edge-frame/README.md`
+2. `papers/tpc-208-zero-hole-additive-edge-frame/notes/theorem_ledger.md`
+3. `research/tpc-big-road/bridge_b_zero_hole_additive_edge_frame.md`
+4. `papers/tpc-207-critical-moving-hole-bdh-defect/README.md`
+5. `papers/tpc-206-selected-lineage-pair-registry-projection/README.md`
+6. `papers/tpc-206-selected-lineage-pair-registry-projection/experiments/tpc206_selected_lineage_pair_registry.json`
+7. `papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments/tpc205_pair_native_registry_interface.json`
 
 不得因打开新会话、用户说“继续”、checker 通过或工作流已持续授权而
-自动创建 TPC-207。持续授权只移除了重复的人为许可步骤；只有新的
+自动创建 TPC-209。持续授权只移除了重复的人为许可步骤；只有新的
 theorem-backed edge 使定理状态发生真实变化时，才可编号。证书通过只说明
 当前有限 selected-lineage 边界被可靠冻结，不解除数学门槛。
 
@@ -4095,6 +4172,40 @@ TPC-206 的 source theorem/archive 审计快照固定于
 `git pull --rebase origin main` 仅引入 RH-322 路径并把基线推进到
 `b3dc7e5`；没有改动 TPC 路径。因而 29 个 source locks 继续有意针对
 审计启动快照，而不是把无关的晚到提交偷换进冻结 census。
+
+TPC-207 论文提交：
+
+```text
+19c57a320c9e572401b8eddd46ba16a4ff7c09d9
+```
+
+TPC-207 稳定 PDF：
+
+```text
+papers/tpc-207-critical-moving-hole-bdh-defect/paper/paper.pdf
+sha256 = cfa6fe55c3a36ff1bb12274001dd6060bf0e611b74bbcc0dae1f2eaacaaaa58e
+pages = 9
+page size = letter
+```
+
+TPC-208 稳定 PDF：
+
+```text
+papers/tpc-208-zero-hole-additive-edge-frame/paper/paper.pdf
+sha256 = 7ea43717febeed23c9fd0089390830b0a2038d12a25223f15bd2784704d5819d
+pages = 10
+page size = letter
+```
+
+TPC-208 active release：
+
+```text
+release files = 14
+producer/independent exact schemas = 1 canonical JSON + 2 implementations
+exact finite QA rows = 431
+source locks = 3 external + frozen V59/V60 internal lineage
+claim level = PROVED_STRUCTURAL_L1
+```
 
 ## 3. TPC-204 的精确有限结论
 

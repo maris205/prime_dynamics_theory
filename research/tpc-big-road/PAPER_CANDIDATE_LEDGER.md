@@ -2,13 +2,50 @@
 
 更新时间：2026-08-17
 
-状态：**TPC207_STRUCTURAL_THRESHOLD_A_RELEASED / NEXT_CANDIDATE_OPEN**
+状态：**TPC208_STRUCTURAL_THRESHOLD_A_RELEASED / WHOLE_FRAME_COMPILER_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
 
-## 0. 已发布：TPC-207 moving-hole BDH translation defect
+## 0.1 已发布：TPC-208 zero-hole additive edge frame
+
+项目：`papers/tpc-208-zero-hole-additive-edge-frame/`
+
+类型：**PROVED_STRUCTURAL_L1 / THRESHOLD_A**。
+
+TPC-208 攻击 V60 留下的 standard-zero-hole remainder。原候选把 additive DFT拆成
+equal/off-equal frequency pieces后分别估计；residue-zero spike证明这种估计顺序会把
+exact zero制造成两个大项。修正后的 invariant object是 nonzero additive frequencies
+上的 complete-graph Laplacian：
+
+1. **PROVED** — `V_0=q^-1 y*P_(q-1)y`，projection rank为 `q-2`；
+2. **PROVED** — complete graph给 `(q-1)(q-2)/2` 个 literal edge transforms，
+   `V_0=1/[q(q-1)] sum_e |T_e|^2`；
+3. **PROVED** — `sum_e|Delta_e(n)|^2=q(q-2)1_(q does not divide n)`，所以
+   mandatory `(q-2)/(q-1)` coefficient diagonal在每个 edge cell内 exact删除；
+4. **PROVED** — four-packet polarization逐 edge成立，contracted physical kernel为
+   `0 / q(q-2) / -q`，exact返回 V59 literal scalar；
+5. **PROVED** — oriented fiber
+   `Delta_(k,k+d)(n)=e_q(-kn)(1-e_q(-dn))`，带 mandatory factor `1/2`；
+6. **PROVED / SCOPED OBSTRUCTION** — 任意 scalar-weighted literal
+   `(e_k-e_l)` decomposition中每个 edge weight都被 off-diagonal matrix entry强制为
+   `1/(q-1)`，strict edge subset不可能表示 projector；
+7. **REFUTED** — equal/off-equal pieces分别作 absolute estimate；residue-zero spike给
+   `+(q-1)|L|^2/q` 与 `-(q-1)|L|^2/q`，总和为零；
+8. **OPEN** — complete oriented `(d,k)` frame到 source-valid Kloosterman cells的
+   collective transform，以及 blocks、four-packet signs与 prime shell的 fixed-saving
+   reassembly。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_COMPLETE_GRAPH_TIGHT_FRAME_WITH_EDGEWISE_Q_MINUS_2_DIAGONAL_DELETION_AND_LITERAL_PHYSICAL_KERNEL_CROSSWALK
+STRONGEST_OBSTRUCTION = EVERY_LITERAL_TWO_FREQUENCY_EDGE_IS_FORCED_SO_STRICT_EDGE_SUBSET_SPARSIFICATION_IS_IMPOSSIBLE
+OPEN_THEOREM = JOINT_WHOLE_FRAME_POISSON_KLOOSTERMAN_COMPILER_WITH_FIXED_SAVING_AND_PRIME_SHELL_REASSEMBLY
+REUSABLE_STRUCTURE = ZERO_HOLE_PROJECTOR_AS_COMPLETE_GRAPH_LAPLACIAN_PLUS_UNIT_ANNIHILATING_ORIENTED_DIFFERENCE_FIBERS
+ROUND2_CLUE = TRANSFORM_THE_WHOLE_D_K_FRAME_BEFORE_ANY_EDGE_TRIANGLE_AND_TEST_FOR_ONE_SHARED_DUAL_VARIABLE
+```
+
+## 0.2 已发布：TPC-207 moving-hole BDH translation defect
 
 项目：`papers/tpc-207-critical-moving-hole-bdh-defect/`
 
@@ -418,6 +455,12 @@ compiler。这个 conjecture与 V58 scalar完全相同，不叠加两份 theorem
 24. **NO_GO** — Blomer--Pascadi/Pascadi fixed-cell saving只在 coefficients与
     Kloosterman arrays已经发射后生效；它不自动生成 V59 occurrence-to-cell compiler、
     block norms、tails或 collective signed reassembly。
+25. **NO_GO** — zero-hole DFT的 equal/off-equal pieces不能分别作 absolute estimate；
+    residue-zero spike的两项分别为 `+(q-1)|L|^2/q` 与
+    `-(q-1)|L|^2/q`，而 true variance exact为零。
+26. **NO_GO / SCOPED** — literal two-frequency edge family不能用 strict subset
+    sparsify。projection的每个 off-diagonal entry只由对应唯一 edge贡献，强制全部
+    weights为 `1/(q-1)`。dense basis或 whole-frame theorem未被排除。
 
 ## 3. 第二篇候选：endpoint-matched exceptional spectrum compiler
 
@@ -502,11 +545,14 @@ handoff。
 | 2026-08-12 | V57 | longitudinal root anchor、uniform prefix-error payment、Gate-B row maximalization与 root-plus-transverse package | **PROVED + SOURCE_BACKED_ARCHITECTURE + CONJECTURAL + NO_GO** |
 | 2026-08-13 | V58 | V35--V57 scalar crosswalk、q-weight direct sum、delta/tau translation与 two-scalar endpoint compiler | **PROVED + SOURCE_BACKED_ARCHITECTURE + CONJECTURAL + NO_GO** |
 | 2026-08-13 | V59 | four-packet complex polarization、reduced-residue BDH normal form、mesoscopic `1/96` clock与 collective compiler obstruction | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
+| 2026-08-17 | V60 | moving-hole projector、exact diagonal lift与 `x^(53/32+o(1))` collective translation payment | **PROVED_STRUCTURAL_L1 / TPC-207** |
+| 2026-08-17 | V61 | complete-graph zero-hole additive edge frame、edgewise diagonal deletion与 literal-edge no-sparsification | **PROVED_STRUCTURAL_L1 / TPC-208** |
 
 下一次更新应优先回答：
 
-1. 能否把四个 V59 literal polarized packets的 mesoscopic blocks集体编译到同一批
-   Blomer--Pascadi/Pascadi cells，并在 single outer sign前完成 prime-shell reassembly；
+1. 能否对完整 oriented `(d,k)` tight frame统一作 Möbius/Poisson transform，并在任何
+   edge/fiber triangle之前暴露一个 shared dual variable，从而集体编译到同一批
+   Blomer--Pascadi/Pascadi cells并完成 prime-shell signed reassembly；
 2. 能否对 V51 full-shell mixed-plus-balanced signed root证明一个 fixed-power saving；
 3. 能否对 exact相同的 V35/V58/V59 proper-factor centered scalar证明
    `delta>1/400`，优先瞄准 benchmark `delta=1/96`；

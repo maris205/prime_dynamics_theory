@@ -1,31 +1,29 @@
-# TPC big road V60: moving-hole translation paid, zero-hole BDH gate open
+# TPC big road V61: zero-hole additive edge frame built, collective compiler open
 
 更新时间：2026-08-17
 
-状态：`TPC207_STRUCTURAL_THRESHOLD_A / EXACT_MOVING_HOLE_COMPILER_PLUS_CRITICAL_DEFECT_BOUND`
+状态：`TPC208_STRUCTURAL_THRESHOLD_A / EXACT_ZERO_HOLE_COMPLETE_GRAPH_EDGE_FRAME`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 V60 proof 为
-`bridge_b_moving_hole_bdh_translation_compiler.md`，checker 为
-`tpc_bridge_b_moving_hole_bdh_translation_checker.py`，编号论文为
-`../../papers/tpc-207-critical-moving-hole-bdh-defect/`。核心进展是
+当前 V61 proof 为
+`bridge_b_zero_hole_additive_edge_frame.md`，checker 为
+`tpc_bridge_b_zero_hole_additive_edge_checker.py`，编号论文为
+`../../papers/tpc-208-zero-hole-additive-edge-frame/`。核心进展是
 
 ```text
-physical moving-hole remainder
-  = standard zero-hole remainder + explicit rank-two defect,
-
-sum_(b,c)|defect_(b,c)|
-  << x^(53/32+o(1))
-   = x^(5/3-1/96+o(1)).
+V_0 = 1/[q(q-1)] sum_(e in E(K_(q-1))) |T_e|^2,
+q R_0 = 1/(q-1) sum_e E_e^circ,
+Delta_(k,k+d)(n)=e_q(-kn)(1-e_q(-dn)).
 ```
 
-因此 V59 的 translation subgate已支付；standard-zero-hole prime-only signed
-four-packet BDH theorem仍 OPEN。完整 Gate B、arithmetic `L2`、fixed-atom credit和
-twin-prime endpoint均未升级。
+complete graph同时保留 zero-hole constant-direction cancellation并逐 edge删除 mandatory
+`(q-2)` coefficient diagonal。literal two-frequency decomposition不能 strict sparsify；
+whole-frame Poisson/Kloosterman compiler与 fixed-saving prime-shell reassembly仍 OPEN。
+完整 Gate B、arithmetic `L2`、fixed-atom credit和 twin-prime endpoint均未升级。
 
-V60 当前入口如上；其冻结上游主路线见第 58 节及
+V61 当前入口如上；其直接上游 V60 见第 60 节。冻结上游主路线见第 58 节及
 `bridge_b_terminal_scalar_root_and_q_transverse_split.md`；checker为
 `tpc_bridge_b_terminal_scalar_root_checker.py`。第 57 节及
 `bridge_b_longitudinal_anchor_transverse_maximal_transfer.md`；checker为
@@ -2285,6 +2283,68 @@ checker冻结 33-field contract、48-row registry，registry SHA-256为
 `15e40e8c20050549c3e244be59747019f115ebb8ccb9356f95fd449250073b07`；
 102/151 adversarial mutations必须全部拒绝。V23 arithmetic advance=`NO`、fixed
 atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false；没有编号 paper/PDF/build。
+
+## 61. V61 Bridge A / Gate B：zero-hole additive edge-frame compiler
+
+V60 支付 moving-hole translation后，剩余对象是 standard-zero-hole、prime-only、
+`q`-weighted、kernel-localized、exact-diagonal-subtracted signed four-packet remainder。
+将其 DFT frequency diagonal与 off-diagonal分别估计会失败：residue-zero spike的两项
+为 equal nonzero opposite pieces，而 true variance为零。V61 改用 nonzero additive
+frequencies上的 complete-graph Laplacian。若
+
+\[
+ \Delta_{k,l}(n)=e_q(-kn)-e_q(-ln),
+\]
+
+则 exact有
+
+\[
+ V_0(a;v)=\frac1{q(q-1)}\sum_{\{k,l\}\in E(K_{q-1})}
+ \left|\sum_n a_ne(vn/H)\Delta_{k,l}(n)\right|^2.
+\]
+
+edge mass满足
+
+\[
+ \sum_e|\Delta_e(n)|^2=q(q-2)\mathbf1_{q\nmid n},
+\]
+
+所以 mandatory `(q-2)/(q-1)` coefficient diagonal exact分配到同一 edge cells，
+每个 `E_e^circ`都只含 `t!=u`。保留 outer `q` 后，
+
+\[
+ qR_0=\frac1{q-1}\sum_e\mathcal E_e^\circ.
+\]
+
+four-packet polarization逐 edge成立，contracted residue kernel exact回到 V59
+`q u_1(s\bar r;q)`。oriented difference fibers为
+
+\[
+ \Delta_{k,k+d}(n)=e_q(-kn)(1-e_q(-dn)),
+\]
+
+并带 mandatory factor `1/2`。此外，任何 scalar-weighted literal
+`(e_k-e_l)` decomposition中，projection的 `(k,l)` entry强制
+`w_(k,l)=1/(q-1)`；因此 strict edge subset不能表示 zero-hole projector。
+
+```text
+V61_ROUTE_ADVANCE = YES
+V61_STRUCTURAL_THRESHOLD_A = PASS
+V61_ZERO_HOLE_ADDITIVE_EDGE_FRAME = PROVED_EXACT
+V61_CELLWISE_Q_MINUS_2_DIAGONAL_CANCELLATION = PROVED_EXACT
+V61_TWO_FREQUENCY_NO_SPARSIFICATION = PROVED_EXACT_IN_LITERAL_EDGE_CLASS
+V61_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+V61_ARITHMETIC_ADVANCE = NO
+V61_FIXED_ATOM_CREDIT = 0
+V61_L2 = NONE
+V61_TPC_208_TRIGGER = true
+V61_FIRST_FATAL = NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_INTO_SOURCE_VALID_KLOOSTERMAN_CELLS_AND_REASSEMBLES_BLOCKS_PACKET_SIGNS_AND_PRIME_MODULI_WITH_A_FIXED_SAVING
+```
+
+完整 proof/checker与 TPC-208 paper分别位于
+`bridge_b_zero_hole_additive_edge_frame.md`、
+`tpc_bridge_b_zero_hole_additive_edge_checker.py`、
+`../../papers/tpc-208-zero-hole-additive-edge-frame/`。
 
 ## 60. V60 Bridge A / Gate B：moving-hole translation compiler
 

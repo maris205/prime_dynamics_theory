@@ -2,13 +2,13 @@
 
 更新时间：2026-08-17
 
-当前地图版本：V60
+当前地图版本：V61
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-207`（`PROVED_STRUCTURAL_L1`）；对应论文目录为
-`papers/tpc-207-critical-moving-hole-bdh-defect/`。V60 已支付 translated-block
-moving-hole translation subgate，但没有关闭完整 Gate B。
+当前编号锚点：`TPC-208`（`PROVED_STRUCTURAL_L1`）；对应论文目录为
+`papers/tpc-208-zero-hole-additive-edge-frame/`。V61 已把 standard-zero-hole
+remainder exact编译为 complete-graph additive edge frame，但没有关闭完整 Gate B。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -50,9 +50,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +-----------------------------------------------+
-        | YOU ARE HERE — V60                            |
-        | GATE-B ZERO-HOLE PRIME-BDH ZONE               |
-        | translation paid; zero-hole theorem = OPEN    |
+        | YOU ARE HERE — V61                            |
+        | GATE-B WHOLE ADDITIVE EDGE-FRAME ZONE         |
+        | pre-emitter built; collective theorem = OPEN  |
         +-----------------------------------------------+
                 |
                 v
@@ -68,19 +68,20 @@ Bridge A 的两个主桥墩
 辅助线：岛 7 Hénon / 几何提升
 ```
 
-V60 的位置变化只支付一个真实子门：对 `n=s+m`，moving hole为
-`h_q=-s mod q`；leave-one-out variance是 all-residue variance减一个 normalized
-rank-one leverage，changing hole因此为 rank-two defect。保留 `(q-2)` diagonal并在
-four-packet signed polarization之后估计，完整 block-pair defect满足
+V61 的位置变化建立一个真实 structural pier：zero-hole variance在 nonzero additive
+frequencies上是 complete-graph tight frame；同一 edge mass exact删除 `(q-2)`
+coefficient diagonal，保留 outer `q` 后
 
 ```text
-sum_(b,c)|M_(b,c)| << x^(53/32+o(1))
-                   = x^(5/3-1/96+o(1)).
+V_0 = 1/[q(q-1)] sum_e |T_e|^2,
+qR_0 = 1/(q-1) sum_e E_e^circ,
+Delta_(k,k+d)(n)=e_q(-kn)(1-e_q(-dn)).
 ```
 
-所以地图上的 translation wall已通过。下一块桥面不再是“如何平移 Harper row”，而是
-“如何控制 standard-zero-hole、prime-only、q-weighted、kernel-localized、
-exact-diagonal-subtracted signed four-packet remainder”。
+literal two-frequency edges不能 strict sparsify；每个 weight都被强制为 `1/(q-1)`。
+所以下一块桥面不再是“如何分开估计 equal/off-equal frequencies”，而是“如何在任何
+edge/fiber triangle之前，把完整 oriented `(d,k)` frame集体变换成 source-valid
+Kloosterman cells并保留 prime-shell signed reassembly”。
 
 一句话定位：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -835,7 +836,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V60：
+截至 V61：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -844,8 +845,9 @@ FIXED_ATOM_CREDIT = 0
 TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
 FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 L2 = NONE
-TPC_207_TRIGGER = true
-NUMBERED_RELEASE = TPC-207
+TPC_208_TRIGGER = true
+TPC_209_TRIGGER = false
+NUMBERED_RELEASE = TPC-208
 ```
 
 以下事实不得从路线图中推断：
@@ -855,19 +857,18 @@ NUMBERED_RELEASE = TPC-207
 - averaged/a.e. phase 不等于 named fixed atom；
 - source-backed local engine 不等于 whole-object reassembly；
 - off-zero control 不等于 physical zero-axis payment；
-- route advance 不自动创建下一篇编号；TPC-207 已由 V60 的真实 theorem-backed
-  structural edge触发，`TPC-208` 仍未触发。
+- route advance 不自动创建下一篇编号；TPC-208 已由 V61 的真实 theorem-backed
+  structural edge触发，`TPC-209` 仍未触发。
 
 ## 8. 下一步大路
 
 优先级更新为：
 
-1. **TPC-208 候选：zero-hole equal-frequency / off-equal-frequency 分解**。以 V60
-   的 DFT 因子 `1-e_q((k-l)h_q)` 为入口，把 standard zero-hole remainder 与
-   moving-hole leverage defect 分成两个同步 emitter；先证明 equal-frequency 项的
-   exact diagonal bookkeeping，再测试 off-equal-frequency 项能否进入
-   Kloosterman/dispersion cell。只做有限检查和明确的 theorem/obstruction，不提前
-   宣称 prime-BDH saving。
+1. **TPC-209 候选：whole-frame Möbius/Poisson compiler**。对 V61 完整 oriented
+   `(d,k)` tight frame先作 transform，禁止 edge/fiber triangle；测试是否出现一个
+   shared dual variable。若能输出 source-valid coefficient arrays，则记录 exact
+   attachment与 norm ledger；若 multiplicity不可避免，则形成 precise obstruction，
+   不提前宣称 prime-BDH saving。
 2. **V59 polarized prime-BDH Gate-B compiler**。若第 1 步给出可用的 cell interface，
    对四个 `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
    diagonal-corrected reduced-residue remainder证明集体 fixed-power saving；不得把
@@ -907,13 +908,15 @@ NUMBERED_RELEASE = TPC-207
 ```text
 TPC-207 moving-hole payment                         DONE (structural L1)
         |
-        +--> TPC-208 zero-hole DFT/emitter attack   NEXT CANDIDATE
+        +--> TPC-208 zero-hole additive edge frame  DONE (structural L1)
         |          |
-        |          +--> positive cell interface
+        |          +--> TPC-209 whole-frame transform NEXT CANDIDATE
+        |          |       |
+        |          |       +--> positive cell interface
         |          |       -> collective four-packet prime-BDH compiler
         |          |       -> Gate-B scalar saving > 1/400
         |          |
-        |          +--> explicit obstruction
+        |          +------> explicit obstruction
         |                  -> smallest repaired zero-hole theorem
         |
         +--> parallel: V51 full-shell signed Gate-A root
@@ -931,7 +934,7 @@ TPC-207 moving-hole payment                         DONE (structural L1)
 最窄 first fatal：
 
 ```text
-NO_PRIMARY_THEOREM_PROVES_A_POWER_SAVING_PRIME_MODULUS_KERNEL_LOCALIZED_OFFDIAGONAL_BDH_REMAINDER_FOR_THE_FOUR_LITERAL_POLARIZED_SEQUENCES_OR_COMPILES_THEIR_BLOCKS_COLLECTIVELY_TO_THE_BLOMER_PASCADI_CELLS
+NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE_LITERAL_BLOCK_PACKETS_INTO_SOURCE_VALID_KLOOSTERMAN_CELLS_AND_REASSEMBLES_ALL_BLOCKS_FOUR_PACKET_SIGNS_AND_PRIME_MODULI_WITH_A_FIXED_SAVING
 ```
 
 ## 9. 后续更新协议
@@ -951,6 +954,7 @@ NO_PRIMARY_THEOREM_PROVES_A_POWER_SAVING_PRIME_MODULUS_KERNEL_LOCALIZED_OFFDIAGO
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-17 | V61 | Bridge A / Gate B：zero-hole complete-graph pre-emitter built；whole-frame Kloosterman compiler open | working release；TPC-208 | exact additive projection、edgewise `(q-2)` diagonal deletion、physical-kernel crosswalk、oriented fibers与 literal-edge no-sparsification；arithmetic仍为 NO |
 | 2026-08-17 | V60 | Bridge A / Gate B：translation subgate已支付；zero-hole prime-BDH仍 open | `19c57a320c9e572401b8eddd46ba16a4ff7c09d9`；TPC-207 | exact moving-hole projector、`q-2` diagonal lift、four-packet translation compiler与 `x^(53/32+o(1))` defect payment；full Gate B仍未关闭 |
 | 2026-08-13 | V59 | Bridge A / Gate B：V35 terminal scalar已极化成四个 one-sequence prime-BDH remainders；collective block-to-cell compiler open | parent `f1ac29aed20e0ab7fbf8eaba3ae6339d9fca946a`; V59=current working release | exact complex polarization、`q-2` diagonal、reduced-residue variance、`Q^2/H=x^(1/96)` clock与 source/interface NO-GO；arithmetic仍为 NO |
 | 2026-08-13 | V58 | Bridge A：physical endpoint收窄为 Gate-A root 与 V35 Gate-B scalar 两个 open piers；q-transverse row降为 optional maximal railing | target parent `c80d26e327ef2a979536c0f7dd3f69fe022befac`; V58=current working release | exact V35--V57 scalar crosswalk、q-weight Pythagoras、`tau_parallel=17/48-2delta`、two-scalar endpoint compiler；arithmetic仍为 NO |

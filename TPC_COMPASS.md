@@ -1,29 +1,34 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-17
-状态：`BOLD_CHANNEL_V60 / MOVING_HOLE_TRANSLATION_SUBGATE_PAID_ZERO_HOLE_BDH_GATE_OPEN`
-claim level：`EXACT_RANK_TWO_TRANSLATION_COMPILER_PLUS_X_POWER_53_OVER_32_DEFECT_PAYMENT_WITHOUT_GLOBAL_GATE_B_PROMOTION`
-编号事实终点：TPC-207；TPC-208 trigger：`false`
+状态：`BOLD_CHANNEL_V61 / ZERO_HOLE_COMPLETE_GRAPH_EDGE_FRAME_BUILT_COLLECTIVE_COMPILER_OPEN`
+claim level：`EXACT_ZERO_HOLE_ADDITIVE_TIGHT_FRAME_PLUS_EDGEWISE_DIAGONAL_DELETION_AND_SCOPED_NO_SPARSIFICATION_WITHOUT_ARITHMETIC_PROMOTION`
+编号事实终点：TPC-208；TPC-209 trigger：`false`
 
-V60 当前入口：proof 为
-`research/tpc-big-road/bridge_b_moving_hole_bdh_translation_compiler.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py`，编号论文为
-`papers/tpc-207-critical-moving-hole-bdh-defect/`。V60 把 V59 的 translated-block
-distinguished-zero wall exact拆成 standard zero-hole remainder与 rank-two moving-hole
-defect，并保留强制的 `(q-2)` diagonal correction。对完整 ordered block-pair defect先
-polarization、再积分、最后估计，得到
+V61 当前入口：proof 为
+`research/tpc-big-road/bridge_b_zero_hole_additive_edge_frame.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_zero_hole_additive_edge_checker.py`，编号论文为
+`papers/tpc-208-zero-hole-additive-edge-frame/`。V61 证明 standard-zero-hole variance
+是 nonzero additive frequencies上的 complete-graph tight frame，并把强制的 `(q-2)`
+coefficient diagonal exact分配到同一 edge cells：
 
 ```text
-sum_(b,c)|M_(b,c)| << x^(53/32+o(1))
-                   = x^(5/3-1/96+o(1)).
+V_0 = 1/[q(q-1)] sum_e |T_e|^2,
+q R_0 = 1/(q-1) sum_e E_e^circ,
+Delta_(k,k+d)(n)=e_q(-kn)(1-e_q(-dn)).
 ```
 
-translation subgate因此在 `1/96` 时钟付款；remaining first fatal是 standard-zero-hole、
-prime-only、q-weighted、kernel-localized、exact-diagonal-subtracted signed four-packet
-BDH theorem。完整 Gate B、`L2`、fixed-atom credit与 TPC仍 OPEN。
+任意 scalar-weighted literal `(e_k-e_l)` representation又被每个 off-diagonal entry
+强制使用全部 edges、weight `1/(q-1)`，所以 strict edge-subset sparsification停止。
+remaining first fatal是把 complete oriented `(d,k)` frame集体变换为 source-valid
+Kloosterman cells，并保留 blocks、four-packet signs与 prime shell的 fixed-saving
+reassembly。完整 Gate B、`L2`、fixed-atom credit与 TPC仍 OPEN。
 
-本文件把 TPC-1--207 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
-传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V58 的完整
+本文件把 TPC-1--208 看成 200 多个可审计研究节点，而不是 200 多篇彼此独立的
+传统论文。它只做三件事：压缩旧地图、选一条主干、集中管理大胆假设。V60 的完整
+proof、scope与独立 checker位于
+`research/tpc-big-road/bridge_b_moving_hole_bdh_translation_compiler.md`及
+`research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py`；V58 的完整
 proof、scope与独立 checker位于
 `research/tpc-big-road/bridge_b_terminal_scalar_root_and_q_transverse_split.md`及
 `research/tpc-big-road/tpc_bridge_b_terminal_scalar_root_checker.py`；V57 位于
@@ -1141,6 +1146,66 @@ genericity：不是把遍历性直接改写成孪生素数，而是看动力学�
 prescribed-phase genericity。A1、A2与 Bridge B仍不拼接 theorem credit；这里改变的
 只是探索优先级。全局状态仍为 fixed atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、
 TPC-207=`false`。
+
+## 61. V60 后的罗盘：zero-hole complete-graph edge frame替代不稳定 DFT split
+
+V60 已把 physical moving-hole defect支付到 `x^(53/32+o(1))`，所以 Gate-B剩余对象是
+standard-zero-hole、prime-only、`q`-weighted、kernel-localized、exact-diagonal-
+subtracted signed four-packet remainder。V60 `ROUND2_CLUE`建议分别处理 additive DFT
+equal/off-equal frequencies；V61 的 residue-zero spike反例证明该估计顺序不稳定：
+
+```text
+equal piece     = +(q-1)|L|^2/q,
+off-equal piece = -(q-1)|L|^2/q,
+true V_0        = 0.
+```
+
+正确 invariant object是 nonzero frequencies上的 complete-graph Laplacian。令
+`y=(A_hat(k))_(k!=0)`、`P=I-11*/(q-1)`，则
+
+```text
+V_0 = q^-1 y*Py
+    = 1/[q(q-1)] sum_{{k,l} in E(K_(q-1))} |T_(k,l)|^2.
+```
+
+edge mass exact为 `q(q-2)1_(q does not divide n)`，所以 V59 mandatory
+`(q-2)/(q-1)` diagonal逐 edge删除，保留 outer `q` 后
+
+```text
+qR_0 = 1/(q-1) sum_e E_e^circ.
+```
+
+four-packet polarization逐 cell成立；contracted physical kernel在 nonunit为 `0`、
+equal units为 `q(q-2)`、distinct units为 `-q`，除以 `q-1` 后 exact返回 V59
+`q u_1` coefficient。oriented fibers满足
+
+```text
+Delta_(k,k+d)(n)=e_q(-kn)(1-e_q(-dn)),
+weight = 1/[2(q-1)], d!=0, k!=0,-d.
+```
+
+V61 又证明 literal edge no-sparsification：projection的 `(k,l)` entry只由 edge
+`{k,l}`贡献，故每个 weight都强制为 `1/(q-1)`。这只停止 strict literal edge subset；
+dense basis与 whole-frame joint theorem仍 OPEN。
+
+```text
+V61_ROUTE_ADVANCE = YES
+V61_STRUCTURAL_THRESHOLD_A = PASS
+V61_ZERO_HOLE_ADDITIVE_EDGE_FRAME = PROVED_EXACT
+V61_CELLWISE_Q_MINUS_2_DIAGONAL_CANCELLATION = PROVED_EXACT
+V61_LITERAL_EDGE_SPARSIFICATION = REFUTED
+V61_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+V61_ARITHMETIC_ADVANCE = NO
+V61_FIXED_ATOM_CREDIT = 0
+V61_L2 = NONE
+V61_TPC_208_TRIGGER = true
+```
+
+当前最窄施工命令是：对完整 `(d,k)` tight frame先作 Möbius/Poisson transform，禁止
+在 edge或 fiber层提前 triangle；测试 transformed cells是否共享一个 dual variable。
+若 shared variable成立，才接 Blomer--Pascadi/Pascadi post-emitter engine；若不成立，
+把 multiplicity loss写成 precise obstruction。TPC-208是 structural L1 release，不是
+arithmetic advance；TPC-209尚未触发。
 
 ## 60. V59 后的罗盘：Gate-B joint product 极化为四个 prime-BDH packets
 

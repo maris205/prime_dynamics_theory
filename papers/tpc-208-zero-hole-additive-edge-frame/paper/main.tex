@@ -1,0 +1,649 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={A Canonical Additive Edge Frame for Zero-Hole Reduced-Residue BDH Remainders},
+  pdfauthor={Liang Wang},
+  pdfsubject={Complete-graph tight frame, exact diagonal deletion, and literal-edge no-sparsification}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\Fq}{\mathbb F_q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\e}{\mathrm e}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\diag}{\operatorname{diag}}
+
+\title{\textbf{A Canonical Additive Edge Frame for Zero-Hole\\
+Reduced-Residue BDH Remainders}}
+\author{Liang Wang\\
+Huazhong University of Science and Technology\\
+Wuhan 430074, P.R. China}
+\date{August 2026}
+
+\begin{document}
+\emergencystretch=2em
+\maketitle
+
+\begin{abstract}
+We identify the exact additive-frequency geometry of the standard-zero-hole
+reduced-residue Barban--Davenport--Halberstam remainder.  For a prime modulus
+$q$, the zero-hole variance is $q^{-1}y^*P_{q-1}y$, where $y$ contains the
+$q-1$ nonzero additive Fourier coefficients and $P_{q-1}$ projects off their
+constant direction.  The complete-graph Laplacian turns this projection into
+a tight frame of $(q-1)(q-2)/2$ literal two-frequency differences.  The same
+edge cells distribute the mandatory $(q-2)/(q-1)$ coefficient diagonal
+exactly, leaving a pure coefficient-off-diagonal remainder in every cell.
+Four-packet complex polarization is then edgewise, and contraction of the
+frame recovers the original physical residue kernel with no normalization
+change.  We also prove a scoped uniqueness theorem: every scalar-weighted
+representation by literal vectors $e_k-e_l$ must use every edge with weight
+$1/(q-1)$, so no strict edge subset represents the projection.  A
+residue-zero spike refutes separate absolute estimates of equal and unequal
+frequencies: the two pieces are nonzero, opposite, and sum to zero.  An
+independent exact certificate checks 431 finite identities for
+$q=2,3,5,7,11$.  The result is structural: it creates an additive
+pre-emitter, not a Kloosterman attachment or a prime-shell power saving.
+\end{abstract}
+
+\section{Introduction and claim firewall}
+
+The prime-dynamics Gate-B reduction studied in the preceding stages produces
+a signed, prime-modulus, kernel-localized reduced-residue variance.  Complex
+polarization converts its two-sequence scalar into four one-sequence
+remainders, but the coefficient diagonal must be subtracted with the exact
+factor $q-2$ before the packet signs are reassembled
+\cite{Wang2026V59}.  Translating a physical block changes the distinguished
+deleted residue; the moving-hole correction has already been isolated and
+paid at the critical $1/96$ clock \cite{Wang2026TPC207}.  The remaining
+arithmetic object is therefore the standard-zero-hole remainder itself.
+
+A first additive-Fourier attempt would split that remainder into equal- and
+unequal-frequency terms and estimate them separately.  This order is invalid.
+For a row supported only at residue zero, the true zero-hole variance is zero,
+whereas the two proposed pieces have equal nonzero magnitude and opposite
+sign.  Taking absolute values before their cancellation manufactures a large
+term from an exact zero.
+
+The stable object is the complete-graph Laplacian on the nonzero additive
+frequencies.  It retains the constant-direction cancellation internally and
+simultaneously distributes the mandatory coefficient diagonal.  The paper's
+contributions are the following.
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item We prove that the zero-hole variance is $q^{-1}y^*P_{q-1}y$ and give
+  its exact complete-graph tight-frame expansion.  The frame has rank $q-2$,
+  $(q-1)(q-2)/2$ edge vectors, and redundancy $(q-1)/2$ for $q>2$.
+  \item We prove the edge-mass identity
+  $\sum_e|\Delta_e(n)|^2=q(q-2)\mathbf 1_{q\nmid n}$.  It places the
+  $(q-2)/(q-1)$ coefficient diagonal inside the same edge cells, so every
+  emitted cell is coefficient-off-diagonal before any estimate.
+  \item We lift the four-packet polarization edge by edge, recover the frozen
+  physical residue kernel exactly, and expose an oriented $(d,k)$ difference
+  fiber with the unit-annihilating factor $1-\e_q(-dn)$.
+  \item We prove that a scalar-weighted decomposition by literal
+  two-frequency differences is unique.  Every edge is forced, which rules out
+  edge-subset sparsification and identifies the collective source theorem
+  that is still missing.
+\end{enumerate}
+
+All four items are finite-dimensional identities proved for every prime
+$q$ and every finitely supported complex sequence.  They do not estimate the
+edge cells.  In particular, the paper does not prove a prime-only
+Barban--Davenport--Halberstam asymptotic, attach the cells to a Kloosterman
+theorem, pay the full strict $1/400$ Gate-B margin, establish an arithmetic
+$L^2$ statement, earn fixed-atom credit, or prove a twin-prime theorem.
+
+\section{The frozen zero-hole row}
+
+Let $q$ be prime and put
+\[
+ \e_q(t)=\exp(2\pi i t/q),\qquad \e(t)=\exp(2\pi i t).
+\]
+Let $a=(a_n)$ be a finitely supported complex sequence, let $H>0$, and let
+$v\in\mathbb R$.  Write
+\begin{equation}\label{eq:residue-row}
+ x_n(v)=a_n\e(vn/H),\qquad
+ A_r(a;v)=\sum_{n\equiv r\; (\mathrm{mod}\ q)}x_n(v).
+\end{equation}
+The mean over the $q-1$ retained residues and the standard-zero-hole variance
+are
+\begin{equation}\label{eq:zero-hole-variance}
+ \overline A^{\times}=\frac1{q-1}\sum_{r\ne0}A_r,
+ \qquad
+ V_0(a;v)=\sum_{r\ne0}|A_r-\overline A^{\times}|^2.
+\end{equation}
+The mandatory coefficient diagonal and its remainder are
+\begin{equation}\label{eq:diagonal-remainder}
+ D_0(a)=\frac{q-2}{q-1}\sum_{q\nmid n}|a_n|^2,
+ \qquad R_0(a;v)=V_0(a;v)-D_0(a).
+\end{equation}
+The physical Gate-B row carries the outer factor $qR_0$, not merely $R_0$.
+
+We use the additive transform
+\begin{equation}\label{eq:dft}
+ \widehat A(k)=\sum_{r\bmod q}A_r\e_q(-kr)
+ =\sum_n a_n\e(vn/H)\e_q(-kn).
+\end{equation}
+This convention is fixed throughout.  No multiplicative character, inverse
+residue, or asymptotic estimate enters the frame construction.
+
+\section{Zero-hole projection in additive frequency}
+
+Set $d=q-1$, enumerate the nonzero frequencies, and define
+\begin{equation}\label{eq:projection}
+ y=(\widehat A(k))_{k\in\Fq^\times}\in\C^d,
+ \qquad P_d=I_d-\frac1d\one\one^*.
+\end{equation}
+
+\begin{theorem}[zero-hole frequency projection]\label{thm:projection}
+For every prime $q$, every finitely supported complex sequence $a$, and every
+real $v$,
+\begin{equation}\label{eq:projection-identity}
+ \boxed{V_0(a;v)=\frac1q\,y^*P_dy.}
+\end{equation}
+Moreover, $P_d$ is an orthogonal projection of rank $q-2$.  For $q=2$ both
+sides of \eqref{eq:projection-identity} vanish.
+\end{theorem}
+
+\begin{proof}
+For a general row $z=(z_r)_{r\bmod q}$, let
+$\mu=q^{-1}\sum_rz_r$ and let $V_{\rm all}=\sum_r|z_r-\mu|^2$.
+Deleting coordinate zero and recentering the retained coordinates gives the
+elementary leave-one-out identity
+\begin{equation}\label{eq:leave-one-out}
+ \sum_{r\ne0}\left|z_r-\frac1{q-1}\sum_{s\ne0}z_s\right|^2
+ =V_{\rm all}-\frac q{q-1}|z_0-\mu|^2.
+\end{equation}
+Indeed, the retained mean equals
+$\mu-(z_0-\mu)/(q-1)$; expanding around $\mu$ proves
+\eqref{eq:leave-one-out}.
+
+Apply this identity to $z_r=A_r$.  Parseval and Fourier inversion yield
+\begin{equation}\label{eq:parseval-inversion}
+ V_{\rm all}=\frac1q\sum_{k\ne0}|\widehat A(k)|^2,
+ \qquad
+ A_0-\mu=\frac1q\sum_{k\ne0}\widehat A(k).
+\end{equation}
+Substitution gives
+\begin{equation}\label{eq:projection-expanded}
+ V_0=\frac1q\sum_{k\ne0}|\widehat A(k)|^2
+ -\frac1{q(q-1)}\left|\sum_{k\ne0}\widehat A(k)\right|^2,
+\end{equation}
+which is \eqref{eq:projection-identity}.  The matrix $P_d$ projects onto
+$\one^\perp$, so its rank is $d-1=q-2$.  When $q=2$, $d=1$ and $P_d=0$.
+\end{proof}
+
+The null direction in Theorem~\ref{thm:projection} is essential.  A vector
+whose nonzero Fourier coordinates are all equal contributes no zero-hole
+variance, even if its Euclidean norm is large.
+
+\section{The complete-graph tight frame}
+
+Let $K_d$ be the complete graph on the nonzero-frequency vertices.  For an
+unordered edge $e=\{k,l\}$ define
+\begin{equation}\label{eq:edge-vector}
+ g_e=e_k-e_l,
+ \qquad
+ \Delta_{k,l}(n)=\e_q(-kn)-\e_q(-ln).
+\end{equation}
+The graph Laplacian is
+\begin{equation}\label{eq:laplacian}
+ \sum_{e\in E(K_d)}g_eg_e^*=dI_d-\one\one^*=dP_d.
+\end{equation}
+
+\begin{theorem}[canonical additive edge frame]\label{thm:edge-frame}
+For every object in Theorem~\ref{thm:projection},
+\begin{equation}\label{eq:edge-frame}
+ \boxed{
+ V_0(a;v)=\frac1{q(q-1)}
+ \sum_{\{k,l\}\in E(K_{q-1})}
+ \left|\sum_n a_n\e(vn/H)\Delta_{k,l}(n)\right|^2.}
+\end{equation}
+The edge family contains $(q-1)(q-2)/2$ vectors and spans a space of
+dimension $q-2$.  For $q>2$ its frame redundancy is $(q-1)/2$.
+\end{theorem}
+
+\begin{proof}
+The edge transform is
+\begin{equation}\label{eq:edge-transform}
+ T_e[a](v)=\langle g_e,y\rangle
+ =\widehat A(k)-\widehat A(l)
+ =\sum_na_n\e(vn/H)\Delta_{k,l}(n).
+\end{equation}
+Contracting \eqref{eq:laplacian} with $y$ gives
+$\sum_e|T_e[a](v)|^2=d\,y^*P_dy$.  Theorem~\ref{thm:projection} and
+$d=q-1$ prove \eqref{eq:edge-frame}.  The count and redundancy follow from
+the complete graph and the rank of $P_d$.  For $q=2$ the edge set is empty.
+\end{proof}
+
+The redundancy in Theorem~\ref{thm:edge-frame} is exact bookkeeping.  It is
+not a power saving and does not permit a triangle inequality over the edge
+set.  Section~\ref{sec:uniqueness} will show that every literal edge is forced
+in a scalar-weighted representation of this projection.
+
+\section{Exact edgewise diagonal deletion}
+
+Each edge difference annihilates the excluded residue:
+\begin{equation}\label{eq:zero-residue-annihilation}
+ q\mid n\quad\Longrightarrow\quad \Delta_{k,l}(n)=0.
+\end{equation}
+The total edge mass on a unit residue is also exact.
+
+\begin{lemma}[edge mass]\label{lem:edge-mass}
+For every integer $n$,
+\begin{equation}\label{eq:edge-mass}
+ \boxed{
+ \sum_{e\in E(K_{q-1})}|\Delta_e(n)|^2
+ =q(q-2)\mathbf 1_{q\nmid n}.}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If $q\mid n$, \eqref{eq:zero-residue-annihilation} proves the claim.  Suppose
+$q\nmid n$ and put
+$u(n)=(\e_q(-kn))_{k\ne0}$.  Then
+$\|u(n)\|_2^2=q-1$ and
+$\langle\one,u(n)\rangle=\sum_{k\ne0}\e_q(-kn)=-1$.  Therefore
+\begin{align*}
+ \sum_e|\langle g_e,u(n)\rangle|^2
+ &=u(n)^*\bigl((q-1)I-\one\one^*\bigr)u(n)\\
+ &=(q-1)^2-1=q(q-2).
+\end{align*}
+\end{proof}
+
+Define the edge diagonal and edge remainder by
+\begin{equation}\label{eq:edge-diagonal}
+ D_e[a]=\sum_n|a_n|^2|\Delta_e(n)|^2,
+ \qquad
+ \cE_e^\circ[a](v)=|T_e[a](v)|^2-D_e[a].
+\end{equation}
+Expanding the square removes the coefficient diagonal inside each cell:
+\begin{equation}\label{eq:pure-off-diagonal}
+ \boxed{
+ \cE_e^\circ[a](v)=
+ \sum_{t\ne u}a_t\overline{a_u}\e(v(t-u)/H)
+ \Delta_e(t)\overline{\Delta_e(u)}.}
+\end{equation}
+
+\begin{corollary}[zero-hole off-diagonal edge compiler]
+\label{cor:edge-compiler}
+The diagonal in \eqref{eq:diagonal-remainder} distributes over the edge frame
+without an error:
+\begin{equation}\label{eq:diagonal-distribution}
+ \frac1{q(q-1)}\sum_eD_e[a]
+ =\frac{q-2}{q-1}\sum_{q\nmid n}|a_n|^2=D_0(a).
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:edge-remainder}
+ \boxed{
+ R_0(a;v)=\frac1{q(q-1)}\sum_e\cE_e^\circ[a](v),
+ \qquad
+ qR_0(a;v)=\frac1{q-1}\sum_e\cE_e^\circ[a](v).}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Sum \eqref{eq:edge-diagonal} over edges and apply
+Lemma~\ref{lem:edge-mass}.  Subtract the result from
+Theorem~\ref{thm:edge-frame}.  The second identity retains the mandatory
+physical outer factor $q$.
+\end{proof}
+
+Corollary~\ref{cor:edge-compiler} is the main local improvement over a bare
+Fourier decomposition.  The frame geometry and coefficient-diagonal
+cancellation now occupy the same cell; neither has to be recovered after an
+absolute estimate.
+
+\section{Polarization and the physical kernel}
+
+For two finitely supported sequences $\beta,w$, define the bilinear edge cell
+\begin{equation}\label{eq:bilinear-edge-cell}
+ \cE_e^\circ(\beta,w;v)
+ =T_e[\beta](v)\overline{T_e[w](v)}
+ -\sum_n\beta(n)\overline{w(n)}|\Delta_e(n)|^2.
+\end{equation}
+It has the pure off-diagonal expansion
+\begin{equation}\label{eq:bilinear-off-diagonal}
+ \cE_e^\circ(\beta,w;v)
+ =\sum_{t\ne u}\beta(t)\overline{w(u)}\e(v(t-u)/H)
+ \Delta_e(t)\overline{\Delta_e(u)}.
+\end{equation}
+
+\begin{proposition}[edgewise four-packet polarization]
+\label{prop:polarization}
+Let $a^{(j)}=\beta+i^jw$ for $j=0,1,2,3$.  Then, for every edge,
+\begin{equation}\label{eq:edge-polarization}
+ \boxed{
+ \frac14\sum_{j=0}^3i^j\cE_e^\circ[a^{(j)}](v)
+ =\cE_e^\circ(\beta,w;v).}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For complex $x,y$,
+$x\overline y=\frac14\sum_{j=0}^3i^j|x+i^jy|^2$.
+Apply this identity first to $T_e[\beta],T_e[w]$ and then pointwise to
+$\beta(n),w(n)$.  Subtracting the two polarized identities gives
+\eqref{eq:edge-polarization}.
+\end{proof}
+
+Let $\psi_+$, the prime shell $\cQ$, and the literal sequences $\beta,w$ be
+the frozen V59 objects.  Corollary~\ref{cor:edge-compiler}, summed before any
+outer absolute value, gives the exact physical normal form
+\begin{equation}\label{eq:physical-scalar}
+ \boxed{
+ \mathfrak C_x=
+ \int_{\mathbb R}\psi_+(v)
+ \sum_{q\in\cQ}\frac1{q-1}
+ \sum_{e\in E(K_{q-1})}\cE_e^\circ(\beta,w;v)\,dv.}
+\end{equation}
+The ordered block decomposition also commutes with
+\eqref{eq:physical-scalar}: replace $\beta,w$ by each ordered pair
+$\beta_b,w_c$ and sum over $(b,c)$ before applying an absolute value.  If the
+$v$-integral is evaluated first, its kernel $K_H$ produces the additive
+pre-emitter
+\begin{equation}\label{eq:pre-emitter}
+ \sum_{t\ne u}\beta_b(t)\overline{w_c(u)}K_H(u-t)
+ \Delta_e(t)\overline{\Delta_e(u)}.
+\end{equation}
+Equation~\eqref{eq:pre-emitter} is not yet a Kloosterman cell.
+
+The following contraction verifies every residue coefficient in
+\eqref{eq:physical-scalar}.  For $r,s\bmod q$, put
+\begin{equation}\label{eq:physical-kernel-definition}
+ \cK_q(r,s)=\sum_e
+ (\e_q(-kr)-\e_q(-lr))(\e_q(ks)-\e_q(ls)).
+\end{equation}
+
+\begin{proposition}[physical-kernel crosswalk]\label{prop:physical-kernel}
+The edge contraction is
+\begin{equation}\label{eq:physical-kernel}
+ \boxed{
+ \cK_q(r,s)=
+ \begin{cases}
+ 0,&rs\equiv0\pmod q,\\
+ q(q-2),&r=s\ne0,\\
+ -q,&r,s\ne0,\ r\ne s.
+ \end{cases}}
+\end{equation}
+Hence, on unit residues,
+\begin{equation}\label{eq:literal-crosswalk}
+ \frac{\cK_q(r,s)}{q-1}
+ =q\left(\mathbf1_{r=s}-\frac1{q-1}\right),
+\end{equation}
+which is the original V59 coefficient.
+\end{proposition}
+
+\begin{proof}
+If either residue is zero, every edge difference on that coordinate vanishes.
+For nonzero $r,s$, use \eqref{eq:laplacian} with
+$u(r)=(\e_q(-kr))_{k\ne0}$.  The diagonal case is
+$(q-1)^2-1=q(q-2)$ as in Lemma~\ref{lem:edge-mass}.  If $r\ne s$, additive
+orthogonality gives $\langle u(s),u(r)\rangle=-1$, while both coordinate sums
+equal $-1$; contraction with $(q-1)I-\one\one^*$ therefore gives
+$(q-1)(-1)-1=-q$.  Dividing by $q-1$ proves
+\eqref{eq:literal-crosswalk}.
+\end{proof}
+
+\section{Oriented difference fibers and uniqueness}
+\label{sec:uniqueness}
+
+Write $l=k+d$ in $\Fq$.  Counting each unordered edge in both orientations
+gives
+\begin{equation}\label{eq:oriented-sum}
+ \sum_{e\in E(K_{q-1})}\cE_e^\circ
+ =\frac12\sum_{d\in\Fq^\times}
+ \sum_{\substack{k\in\Fq^\times\\k\ne-d}}
+ \cE_{k,k+d}^\circ.
+\end{equation}
+The edge factor separates as
+\begin{equation}\label{eq:difference-fiber}
+ \boxed{
+ \Delta_{k,k+d}(n)=\e_q(-kn)\bigl(1-\e_q(-dn)\bigr).}
+\end{equation}
+Thus \eqref{eq:physical-scalar} is equivalently
+\begin{equation}\label{eq:oriented-physical-scalar}
+ \mathfrak C_x=
+ \int\psi_+(v)\sum_{q\in\cQ}\frac1{2(q-1)}
+ \sum_{d\ne0}\sum_{k\ne0,-d}
+ \cE_{k,k+d}^\circ(\beta,w;v)\,dv.
+\end{equation}
+The base twist $k$ and the unit-annihilating difference factor in
+\eqref{eq:difference-fiber} are the preferred interface for a future
+Poisson/Kloosterman compiler.  The factor $1/2$ and the exclusion
+$k=-d$ are mandatory.
+
+The complete edge family cannot be reduced within its literal class.
+
+\begin{theorem}[literal-edge no-sparsification]\label{thm:no-sparsification}
+Let $d\ge1$.  Suppose scalar weights $w_{k,l}\in\C$ satisfy
+\begin{equation}\label{eq:weighted-edge-decomposition}
+ P_d=\sum_{1\le k<l\le d}
+ w_{k,l}(e_k-e_l)(e_k-e_l)^*.
+\end{equation}
+Then
+\begin{equation}\label{eq:forced-edge-weight}
+ \boxed{w_{k,l}=\frac1d=\frac1{q-1}}
+\end{equation}
+for every edge.  In particular, no strict subset of literal
+two-frequency differences represents $P_d$ with scalar edge weights.
+\end{theorem}
+
+\begin{proof}
+For $k\ne l$, the $(k,l)$ entry of $P_d$ is $-1/d$.  On the right side of
+\eqref{eq:weighted-edge-decomposition}, only the outer product belonging to
+$\{k,l\}$ has a nonzero $(k,l)$ entry, and that entry is $-w_{k,l}$.  Hence
+$w_{k,l}=1/d$ for every pair.  With these weights the diagonal entries agree
+automatically by the complete-graph identity.
+\end{proof}
+
+The scope in Theorem~\ref{thm:no-sparsification} matters.  It excludes neither
+a dense orthonormal basis of $\one^\perp$, a signed higher-rank cell system,
+nor an arithmetic theorem that estimates the full redundant frame jointly.
+It says that deleting literal edges and repairing their weights cannot be the
+next compiler.
+
+\section{Sharp falsifiers and mutation boundaries}
+
+\subsection{Equal/off-equal estimation is unstable}
+
+Take $A_0=L$ and $A_r=0$ for every $r\ne0$.  The retained row is zero, so
+$V_0=0$.  On the other hand, $\widehat A(k)=L$ for every $k\ne0$, and the two
+terms in \eqref{eq:projection-expanded} are
+\begin{equation}\label{eq:spike-equal}
+ \frac1q\sum_{k\ne0}|\widehat A(k)|^2
+ =\frac{q-1}{q}|L|^2,
+\end{equation}
+\begin{equation}\label{eq:spike-off-equal}
+ -\frac1{q(q-1)}\left|\sum_{k\ne0}\widehat A(k)\right|^2
+ =-\frac{q-1}{q}|L|^2.
+\end{equation}
+Separate absolute estimates lose their exact cancellation.  Every edge
+difference in Theorem~\ref{thm:edge-frame} instead vanishes before an estimate
+is taken.  This fixture refutes the proposed estimate order, not the valid
+algebraic split in \eqref{eq:projection-expanded}.
+
+\subsection{One coefficient cancels cellwise}
+
+If $a$ has one nonzero coefficient at a unit residue, then
+$|T_e[a]|^2=D_e[a]$ for every edge.  Thus
+$\cE_e^\circ[a]=0$ edge by edge.  A global diagonal subtraction that leaves
+nonzero individual cells would fail this local test.
+
+\subsection{Mandatory factors}
+
+Several nearby formulas describe different objects.
+\begin{itemize}[leftmargin=2em]
+  \item Summing oriented edges without the factor $1/2$ doubles the scalar.
+  \item Including frequency zero replaces $K_{q-1}$ by $K_q$ and produces an
+  all-residue projection rather than the zero-hole row.
+  \item Replacing $q-1$ by $q$ changes every off-diagonal projection entry and
+  violates Theorem~\ref{thm:no-sparsification}.
+  \item Omitting $D_e[a]$ returns a positive variance, not the signed
+  coefficient-off-diagonal remainder.
+  \item Dropping one literal edge changes exactly one pair of off-diagonal
+  matrix entries and cannot be repaired by reweighting other edges.
+\end{itemize}
+
+These mutations are included in the exact checker.  Their rejection protects
+the physical signs and normalization; it does not supply arithmetic evidence.
+
+\section{Source boundary and related analytic engines}
+
+The additive edge frame is an upstream representation theorem.  Three nearby
+analytic sources clarify what remains to be proved.
+
+\paragraph{General-sequence BDH architecture.}
+Harper proves simple Barban--Davenport--Halberstam type asymptotics for broad
+classes of general sequences under explicit Progressions,
+Non-concentration, and further structural hypotheses
+\cite{Harper2024}.  For prime moduli, grouping reduced residues naturally
+leads to a zero-hole variance.  The source does not state
+\eqref{eq:physical-scalar}, verify its hypotheses uniformly for the four
+literal prime-dynamics packets, select the prime subset after the signed
+diagonal subtraction, or perform the ordered block reassembly.  The present
+paper neither invokes nor disproves Harper's theorem; it gives an exact local
+normal form for testing a future attachment.
+
+\paragraph{Post-emitter Kloosterman bounds.}
+Blomer and Pascadi obtain strong bounds for bilinear forms with Kloosterman
+sums, including the critical fixed-modulus saving used in the route ledger
+\cite{BlomerPascadi2026}.  Their theorem accepts an already emitted form with
+source-valid coefficient arrays.  The additive expression
+\eqref{eq:pre-emitter} has not been transformed into those arrays.  In
+particular, the complete $(d,k)$ frame, four packet signs, prime shell, block
+norms, and one final reassembly cannot be supplied by renaming
+\eqref{eq:pre-emitter} a Kloosterman cell.
+
+\paragraph{Exceptional-spectrum and sparse-Fourier machinery.}
+Pascadi's large-sieve framework for exceptional Maass forms supplies powerful
+sparse-Fourier and incomplete-Kloosterman tools after the relevant transform
+and norm hypotheses have been established \cite{Pascadi2026LargeSieve}.
+Here those hypotheses are precisely part of the open compiler.  The source is
+a plausible downstream engine, not evidence that the edge pre-emitter already
+meets its input contract.
+
+\paragraph{Bounded novelty claim.}
+The complete-graph Laplacian identity is standard finite-dimensional linear
+algebra.  A bounded arXiv metadata search on 17 August 2026 found no direct
+match for the combinations ``reduced residue and graph Laplacian,'' ``BDH and
+additive Fourier,'' or ``leave-one-out variance and Fourier.''  Such a query
+does not prove literature-wide novelty.  The claim made here is narrower: the
+exact attachment to the frozen zero-hole remainder, edgewise distribution of
+its mandatory diagonal, physical-kernel crosswalk, and scoped uniqueness of
+its literal two-frequency representation.
+
+\section{Exact computational certificate}
+
+The accompanying producer works with Gaussian rationals and prime
+cyclotomic coefficient vectors.  For $q=2,3,5,7,11$, it checks the
+complete-graph Laplacian entrywise, reduces every physical-kernel entry
+exactly, compares direct and emitted variances on deterministic complex rows,
+verifies complex polarization, and exercises the spike and edge-weight
+falsifiers.  The independent checker imports neither the producer nor its
+mathematical module; it reconstructs the projection and closed physical
+kernel from separate formulas.
+
+The canonical certificate contains 431 exact mathematical rows:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Check family & Exact rows\\
+\midrule
+Laplacian entries, edge counts, and ranks & 167\\
+Physical residue kernel & 208\\
+Row variance and diagonal normalization & 20\\
+Complex polarization & 2\\
+Falsifiers and literal-edge uniqueness & 20\\
+Explicit mutation checks & 14\\
+\midrule
+Total & 431\\
+\bottomrule
+\end{tabular}
+\end{center}
+Both programs use explicit failures rather than optimization-sensitive
+assertions, reject duplicate JSON keys and nonfinite values at their trust
+boundaries, and reproduce byte-identical output in normal and optimized
+Python modes.  These computations detect transcription and normalization
+mutations.  The proofs in Sections 3--7, not the finite table, establish the
+general identities.
+
+\section{Route consequence and open theorem}
+
+Table~\ref{tab:status} separates the completed structural layer from the
+unpaid arithmetic layer.
+
+\begin{table}[ht]
+\centering
+\caption{Claim status for the zero-hole additive edge route.}
+\label{tab:status}
+\begin{tabular}{p{0.53\textwidth}p{0.32\textwidth}}
+\toprule
+Statement & Status\\
+\midrule
+Zero-hole projection and complete-graph frame & \texttt{PROVED}\\
+Edgewise $(q-2)$ diagonal deletion & \texttt{PROVED}\\
+Physical-kernel and four-packet crosswalk & \texttt{PROVED}\\
+No strict literal-edge subset representation & \texttt{PROVED}, scoped\\
+Separate absolute equal/off-equal estimates & \texttt{REFUTED}\\
+Whole-frame Poisson/Kloosterman emission & \texttt{OPEN}\\
+Prime-shell fixed saving greater than $1/400$ & \texttt{OPEN / UNPAID}\\
+Arithmetic advance, fixed atom, or $L^2$ theorem & \texttt{NONE}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The smallest next theorem is now explicit.
+
+\begin{quote}
+\textbf{Open collective compiler.}
+Apply Möbius and Poisson or Voronoi transformations to the complete oriented
+$(d,k)$ frame in \eqref{eq:oriented-physical-scalar} before any edge or fiber
+triangle inequality.  Produce source-valid Kloosterman cells and retain a
+fixed saving after the ordered blocks, four packet signs, and prime moduli are
+reassembled once.
+\end{quote}
+
+The most concrete heuristic is to look for a dual variable shared across the
+entire tight frame.  A shared variable could preserve the complete-graph
+orthogonality through the transform.  If each edge or each $d$-fiber acquires
+an independent absolute loss instead, Theorem~\ref{thm:no-sparsification}
+predicts a prohibitive multiplicity and the proposed compiler should be
+recorded as obstructed rather than promoted conditionally.
+
+\section{Conclusion}
+
+The standard-zero-hole remainder has a canonical additive representation:
+the complete-graph Laplacian on nonzero frequencies, with the coefficient
+diagonal deleted inside each edge cell.  This representation preserves the
+outer $q$ normalization, the four-packet signs, and the original physical
+residue kernel.  It also explains why the earlier equal/off-equal estimate
+order fails and why literal edge-subset sparsification cannot repair it.
+
+The resulting object is a precise pre-emitter.  The arithmetic burden has not
+shrunk into a local bound: it has become a joint whole-frame transformation
+and reassembly theorem.  Future progress requires that theorem, or a rigorous
+obstruction showing that the complete frame cannot share enough dual
+structure under the available Poisson/Kloosterman engines.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
