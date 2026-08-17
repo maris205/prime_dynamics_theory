@@ -6,6 +6,10 @@
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
+当前编号锚点：`TPC-207`（`PROVED_STRUCTURAL_L1`）；对应论文目录为
+`papers/tpc-207-critical-moving-hole-bdh-defect/`。V60 已支付 translated-block
+moving-hole translation subgate，但没有关闭完整 Gate B。
+
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
 配套原图（同样仅作高层导航参考）：
@@ -831,16 +835,17 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V59：
+截至 V60：
 
 ```text
 ROUTE_ADVANCE = YES
 ARITHMETIC_ADVANCE = NO
 FIXED_ATOM_CREDIT = 0
-STRICT_1_OVER_400 = UNPAID
+TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
+FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 L2 = NONE
-TPC_207_TRIGGER = false
-NUMBERED_RELEASE = NO
+TPC_207_TRIGGER = true
+NUMBERED_RELEASE = TPC-207
 ```
 
 以下事实不得从路线图中推断：
@@ -850,44 +855,78 @@ NUMBERED_RELEASE = NO
 - averaged/a.e. phase 不等于 named fixed atom；
 - source-backed local engine 不等于 whole-object reassembly；
 - off-zero control 不等于 physical zero-axis payment；
-- route advance 不自动创建 TPC-207。
+- route advance 不自动创建下一篇编号；TPC-207 已由 V60 的真实 theorem-backed
+  structural edge触发，`TPC-208` 仍未触发。
 
 ## 8. 下一步大路
 
 优先级更新为：
 
-1. **V59 polarized prime-BDH Gate-B compiler**。对四个
-   `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
+1. **TPC-208 候选：zero-hole equal-frequency / off-equal-frequency 分解**。以 V60
+   的 DFT 因子 `1-e_q((k-l)h_q)` 为入口，把 standard zero-hole remainder 与
+   moving-hole leverage defect 分成两个同步 emitter；先证明 equal-frequency 项的
+   exact diagonal bookkeeping，再测试 off-equal-frequency 项能否进入
+   Kloosterman/dispersion cell。只做有限检查和明确的 theorem/obstruction，不提前
+   宣称 prime-BDH saving。
+2. **V59 polarized prime-BDH Gate-B compiler**。若第 1 步给出可用的 cell interface，
+   对四个 `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
    diagonal-corrected reduced-residue remainder证明集体 fixed-power saving；不得把
    Harper all-moduli variance或 Blomer--Pascadi fixed cell直接当成 global theorem；
-2. **V58 full-shell Gate-A root**。直接证明同一个 literal V51
-   mixed-plus-balanced fold的 full-shell fixed-power saving；
-3. **按全局 Siegel quality 保留条件分流**。unbounded world可调用已锁定的
+3. **V58 full-shell Gate-A root**。直接证明同一个 literal V51
+   mixed-plus-balanced fold的 full-shell fixed-power saving；这是与 Gate-B 并行的主
+   桥墩，不是 V60 translation payment的自动后果；
+4. **按全局 Siegel quality 保留条件分流**。unbounded world可调用已锁定的
    Matomaki--Merikoski `h=2` correlation exit；不得把单尺度 singleton误判为
    unbounded sequence；
-4. **V58 Gate-B scalar root（等价终端表述）**。直接对已经 exact识别的 V35
+5. **V58 Gate-B scalar root（等价终端表述）**。直接对已经 exact识别的 V35
    proper-factor centered core证明
    `|mathfrak C_x|<<x^(5/3-delta+o(1))`、`delta>1/400`；V59只重写对象，
    没有降低这个 terminal burden；
-5. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
+6. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
    才证明 `C_perp` 的 one-`Q` variance；不得再把它列为 physical endpoint必需门；
-6. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
+7. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
    package，仍可对 pruned tree的 large nodes统一估计；
-7. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
+8. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
    signed diagonal/off-diagonal，并支付
    `(delta_B+delta_W)/2+rho>1/400`；fixed-modulus local engine只作条件工具；
-8. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
+9. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
    row species证明 one-`Q` variance，另一种由 paid difference自动继承；不得先把
    longitudinal mode删掉后声称完整 theorem；
-9. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
+10. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
    endpoint-matched direct core与三引擎 heuristic fallback，但不再强迫它先于
    reverse-Type-I/balanced lane；
-10. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
+11. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
    preferred sufficient gate；P2/K 是 stronger norms，E/X
    分别是 `sigma<13/4800` whole residual energy和
    `kappa>403/1200` joint character theorem，不与 MPD lane叠加 theorem credit；
-11. **C：只在前十条路线真实阻断或新 source 出现时，重开 distinguished-seed
+12. **C：只在前十一条路线真实阻断或新 source 出现时，重开 distinguished-seed
    symmetry-breaking/dynamics reserve。**
+
+### 8.1 地图式施工顺序
+
+```text
+TPC-207 moving-hole payment                         DONE (structural L1)
+        |
+        +--> TPC-208 zero-hole DFT/emitter attack   NEXT CANDIDATE
+        |          |
+        |          +--> positive cell interface
+        |          |       -> collective four-packet prime-BDH compiler
+        |          |       -> Gate-B scalar saving > 1/400
+        |          |
+        |          +--> explicit obstruction
+        |                  -> smallest repaired zero-hole theorem
+        |
+        +--> parallel: V51 full-shell signed Gate-A root
+                   -> endpoint matching / loss ledger
+                   -> common Bridge-A crossing
+                                   |
+                                   v
+                              TPC endpoint
+```
+
+这里的“并行”只表示路线保留，不表示同时创建互相依赖的论文；每篇新论文必须对应
+一个真实 theorem、obstruction、反例或可复现 numerical certificate。岛 5/Bridge B
+和岛 7 继续作为辅助支路，不与当前 prime-dynamics 主线拼接 claim credit。
 
 最窄 first fatal：
 
@@ -912,6 +951,7 @@ NO_PRIMARY_THEOREM_PROVES_A_POWER_SAVING_PRIME_MODULUS_KERNEL_LOCALIZED_OFFDIAGO
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-17 | V60 | Bridge A / Gate B：translation subgate已支付；zero-hole prime-BDH仍 open | `19c57a320c9e572401b8eddd46ba16a4ff7c09d9`；TPC-207 | exact moving-hole projector、`q-2` diagonal lift、four-packet translation compiler与 `x^(53/32+o(1))` defect payment；full Gate B仍未关闭 |
 | 2026-08-13 | V59 | Bridge A / Gate B：V35 terminal scalar已极化成四个 one-sequence prime-BDH remainders；collective block-to-cell compiler open | parent `f1ac29aed20e0ab7fbf8eaba3ae6339d9fca946a`; V59=current working release | exact complex polarization、`q-2` diagonal、reduced-residue variance、`Q^2/H=x^(1/96)` clock与 source/interface NO-GO；arithmetic仍为 NO |
 | 2026-08-13 | V58 | Bridge A：physical endpoint收窄为 Gate-A root 与 V35 Gate-B scalar 两个 open piers；q-transverse row降为 optional maximal railing | target parent `c80d26e327ef2a979536c0f7dd3f69fe022befac`; V58=current working release | exact V35--V57 scalar crosswalk、q-weight Pythagoras、`tau_parallel=17/48-2delta`、two-scalar endpoint compiler；arithmetic仍为 NO |
 | 2026-08-12 | V57 | Bridge A：longitudinal root anchor已安装；full-shell fold与 transverse Gate-B row为两个 open piers | target parent `0771f61e9175c5248d576bb8d42f510492d55209`; V57=current working release | exact prefix anchor、`143/96` error maximum、Gate-B row-Bessel maximalization、root-plus-transverse endpoint compiler；arithmetic仍为 NO |
