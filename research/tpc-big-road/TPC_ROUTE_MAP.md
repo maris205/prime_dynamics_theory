@@ -2,15 +2,15 @@
 
 更新时间：2026-08-18
 
-当前地图版本：V63 / TPC-210
+当前地图版本：V64 / TPC-211
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-210`（`PROVED_STRUCTURAL_L1 / STOP_SCOPED_PROFILE_CLASS`）；对应
-论文目录为 `papers/tpc-210-poisson-profile-realizability/`。TPC-210 已证明有限
-Schwartz/Poisson residue-profile map 的满射性，并把 TPC-209 的 alignment obstruction
-提升为 admissible independent profile class 内的 exact obstruction；但没有关闭 literal
-coupled physical profile bound 或完整 Gate B。
+当前编号锚点：`TPC-211`（`PROVED_STRUCTURAL_L1 / STOP_SCOPED_PHYSICAL_COUPLING`）；对应
+论文目录为 `papers/tpc-211-product-coupled-euler-gram/`。TPC-211 已证明 literal
+product-coupled Euler profiles 的 full divisor rank、完整 packet 的 logarithmic Mobius
+derivative 与 finite shared-endpoint obstruction；但没有关闭 truncated transition
+boundary、reciprocal emitter 或完整 Gate B。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -52,9 +52,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +-----------------------------------------------+
-        | YOU ARE HERE — V63 / TPC-210                  |
+        | YOU ARE HERE — V64 / TPC-211                  |
         | GATE-B CROSS-DIVISOR COUPLING ZONE            |
-        | profile class obstruction proved; physical bound OPEN |
+        | product packet proved; boundary/emitter OPEN  |
         +-----------------------------------------------+
                 |
                 v
@@ -883,6 +883,49 @@ TPC210_L2 = NONE
 literal physical cross-divisor coupling/Gram bound，之后才回到 prime-only collective
 Kloosterman reassembly。**
 
+## 5.5 V64 / TPC-211：product-coupled profiles and the truncated-boundary handoff
+
+TPC-211 直接把 TPC-210 的 independent profile-class question 换成 V46 literal
+product-coupled profiles。对 active primes `p>z`，令
+
+```text
+P_S = product_(p in S) F_p
+B_S = product_(p in S) G_(p,z)
+Delta_S = P_S - B_S
+```
+
+共同 CRT lift 后，product cocycle、zero-axis、zero-mean 与 full rank `2^s-1` 都是
+exact。完整 Boolean packet 的 `mu(d) log(d)` sum 精确压缩为 marked-prime Euler
+derivative，且 active prime 数至少为 2 时 product-frozen common endpoint 取消。
+
+但 finite Gram duality 同时给出 `<w,Delta_S>=mu(d_S)` 的 shared endpoint，因此
+product coupling、finite rank、common endpoint 不能单独支付 saving。这不是 actual
+`Lambda(u+2)-b_x^(z)(u)` 的 arithmetic counterexample。
+
+实际 transition 使用
+
+```text
+A_(Y,U)(t) = {d : d|t, Y0<d<=U, mu^2(d)=1}
+```
+
+并让每个 divisor 带有不同的 reciprocal emitter `A_d(r)`。所以完整 packet derivative
+与实际 scalar 之间存在一个真实的 boundary-plus-emitter operator；TPC-212 的最小
+问题是先精确构造并攻击这个 operator，再决定是否回到 prime-only collective BDH。
+
+```text
+TPC211_ROUTE_ADVANCE = YES
+TPC211_STRUCTURAL_THRESHOLD_A = PASS
+TPC211_PRODUCT_COUPLING_UNIVERSAL_SAVING = REFUTED_SCOPED
+TPC211_TRANSITION_BOUNDARY_CONTROL = OPEN
+TPC211_PHYSICAL_CROSS_DIVISOR_GRAM_BOUND = OPEN
+TPC211_ARITHMETIC_ADVANCE = NO
+TPC211_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V64 / TPC-211 已完成 literal product-coupled structural audit；当前桥面
+是 truncated divisor-band boundary 与 reciprocal-emitter coupling，之后才回到
+prime-only collective Kloosterman reassembly。**
+
 ## 6. 图像名称与仓库名称的对应
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
@@ -930,7 +973,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V63 / TPC-210：
+截至 V64 / TPC-211：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -942,7 +985,8 @@ L2 = NONE
 TPC_208_TRIGGER = true
 TPC_209_TRIGGER = true
 TPC_210_TRIGGER = true
-NUMBERED_RELEASE = TPC-210
+TPC_211_TRIGGER = true
+NUMBERED_RELEASE = TPC-211
 ```
 
 以下事实不得从路线图中推断：
@@ -952,7 +996,7 @@ NUMBERED_RELEASE = TPC-210
 - averaged/a.e. phase 不等于 named fixed atom；
 - source-backed local engine 不等于 whole-object reassembly；
 - off-zero control 不等于 physical zero-axis payment；
-- route advance 不自动创建下一篇编号；TPC-208、TPC-209 与 `TPC-210` 都是由各自
+- route advance 不自动创建下一篇编号；TPC-208、TPC-209、TPC-210 与 `TPC-211` 都是由各自
   exact theorem-backed structural edge 或 scoped obstruction 触发，下一编号仍须重新
   检查 theorem edge，不得由本地图箭头自动生成。
 
@@ -960,14 +1004,16 @@ NUMBERED_RELEASE = TPC-210
 
 优先级更新为：
 
-1. **TPC-210 已完成：admissible Poisson profile-class obstruction**。有限 profile map
-   的满射、literal Mobius-weighted aligned family与 cross-divisor PSD Gram reduction
-   已证明；independent profile class 的 universal saving 已 `REFUTED_SCOPED`，但
-   actual coupled physical profile bound仍 OPEN。
-2. **literal physical cross-divisor coupling theorem**。必须从 actual TPC coefficient
-   family中导出 profiles之间的 relation、Gram cancellation或 source-valid replacement；
-   不得把 independent aligned family当作 literal physical counterexample，也不得以
-   individual profile norms替代 cross-divisor estimate。
+1. **TPC-211 已完成：literal product-coupled Euler structural audit**。完整 packet 的
+   marked-prime derivative与 common-endpoint cancellation已证明，product coupling alone
+   的 universal saving 已 `REFUTED_SCOPED`，但 transition boundary 与 physical emitter
+   仍 OPEN。
+2. **TPC-212 boundary-weighted divisor-band operator**。对 `Y0<d<=U` 的 cut lattice
+   精确提取 endpoint leakage、missing-subset boundary 与 `A_d(r)` emitter coupling；
+   必须在 outer absolute 之前完成，不能把 complete packet identity直接替代实际 bound。
+3. **literal physical cross-divisor coupling theorem**。TPC-212 若留下可支付的 operator
+   interface，才从 actual TPC coefficient family中寻找 Gram cancellation或 source-valid
+   replacement；不得把 independent aligned family当作 literal physical counterexample。
 3. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
    对四个 `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
    diagonal-corrected reduced-residue remainder证明集体 fixed-power saving；不得把
@@ -1013,7 +1059,9 @@ TPC-207 moving-hole payment                         DONE (structural L1)
         |          |       |
         |          |       +--> TPC-210 profile realizability DONE (profile-class obstruction)
         |          |               |
-        |          |               +--> physical cross-divisor coupling / Gram bound OPEN
+        |          |               +--> TPC-211 product-coupled packet DONE (full rank / derivative)
+        |          |                       |
+        |          |                       +--> TPC-212 cut boundary + A_d(r) operator OPEN
         |          |               -> collective four-packet prime-BDH compiler
         |          |       -> Gate-B scalar saving > 1/400
         |          |
@@ -1055,6 +1103,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-18 | V64 / TPC-211 | Bridge A / Gate B：literal product-coupled profile full-rank and complete-packet derivative；truncated boundary/emitter open | `TPC-211` | product cocycle、full divisor rank、log-Mobius marked-prime derivative、common-endpoint cancellation、finite Gram alignment obstruction；arithmetic仍为 NO |
 | 2026-08-18 | V63 / TPC-210 | Bridge A / Gate B：admissible Poisson profile-class obstruction；physical cross-divisor coupling open | `TPC-210` | finite Schwartz/Poisson profile surjectivity、literal Mobius alignment、cross-divisor PSD Gram reduction；arithmetic仍为 NO |
 | 2026-08-18 | V62 / TPC-209 | Bridge A / Gate B：whole-frame Poisson profile interface；frame-only route scoped stop | `TPC-209` | fixed-divisor shared dual、whole-frame covariance、character profile normal form、V59 Gauss crosswalk、sharp alignment obstruction；arithmetic仍为 NO |
 | 2026-08-17 | V61 | Bridge A / Gate B：zero-hole complete-graph pre-emitter built；whole-frame Kloosterman compiler open | working release；TPC-208 | exact additive projection、edgewise `(q-2)` diagonal deletion、physical-kernel crosswalk、oriented fibers与 literal-edge no-sparsification；arithmetic仍为 NO |

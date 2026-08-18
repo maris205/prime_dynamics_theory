@@ -1,7 +1,87 @@
 # TPC HANDOFF
 
 更新时间：2026-08-18
-交接状态：`BOLD_CHANNEL_V63_TPC210_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V64_TPC211_SEALED_FOR_NEW_SESSION`
+
+TPC-211 当前 section：product-coupled Euler profiles and the truncated-boundary handoff
+------------------------------------------------------------------------------------------
+
+TPC-211 是 V63/TPC-210 的直接结构性后续。它冻结 V46 的 literal local Euler
+profiles
+
+~~~text
+P_S(a)=product_(p in S) F_p(a)
+B_S(a)=product_(p in S) G_(p,z)(a)
+Delta_S=P_S-B_S
+~~~
+
+在共同 CRT 空间中，TPC-211 exact 证明 product cocycle、zero-axis、zero-mean 和
+full divisor rank `2^s-1`。完整 squarefree packet 的 `mu(d) log(d)` 加权和精确
+压缩为 marked-prime Euler derivative；当 active primes 至少为两个时，
+product-frozen common endpoint 精确取消。另一方面，positive-definite Gram duality
+可构造一个 finite shared endpoint，实现
+
+~~~text
+<w, Delta_S> = mu(d_S)
+~~~
+
+对所有非空 divisor。这给出一个 scoped obstruction：product coupling、finite rank
+和 common endpoint alone 不能推出 universal cross-divisor saving。
+
+真实 physical transition 不是 complete packet，而是
+
+~~~text
+A_(Y,U)(t) = { d : d | t, Y0 < d <= U, mu^2(d)=1 }
+~~~
+
+并且每个 divisor 携带不同的 reciprocal emitter `A_d(r)`。因此完整 packet derivative
+不能直接代替实际 transition bound；下一篇最小问题是对 truncated divisor band
+构造 boundary-weighted operator，并在 outer absolute 之前保留 emitter coupling。
+
+TPC-211 claim firewall：
+
+~~~text
+TPC211_ROUTE_ADVANCE = YES
+TPC211_STRUCTURAL_THRESHOLD_A = PASS
+TPC211_PRODUCT_COUPLING_COCYCLE = PROVED_EXACT
+TPC211_LITERAL_PRODUCT_PROFILE_FULL_RANK = PROVED_EXACT
+TPC211_LOG_MOBIUS_PACKET_DERIVATIVE = PROVED_EXACT
+TPC211_COMPLETE_PACKET_ENDPOINT_CANCELLATION = PROVED_EXACT
+TPC211_SHARED_ENDPOINT_ALIGNMENT = PROVED_STRUCTURAL_FINITE
+TPC211_PRODUCT_COUPLING_UNIVERSAL_SAVING = REFUTED_SCOPED
+TPC211_TRANSITION_BOUNDARY_CONTROL = OPEN
+TPC211_PHYSICAL_CROSS_DIVISOR_GRAM_BOUND = OPEN
+TPC211_ARITHMETIC_ADVANCE = NO
+TPC211_FIXED_ATOM_CREDIT = 0
+TPC211_L2 = NONE
+TPC211_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC211_TPC_TRIGGER = true
+~~~
+
+编号论文目录：`papers/tpc-211-product-coupled-euler-gram/`
+
+~~~text
+papers/tpc-211-product-coupled-euler-gram/README.md
+papers/tpc-211-product-coupled-euler-gram/PAPER_PLAN.md
+papers/tpc-211-product-coupled-euler-gram/paper/main.tex
+papers/tpc-211-product-coupled-euler-gram/paper/references.bib
+papers/tpc-211-product-coupled-euler-gram/paper/paper.pdf
+papers/tpc-211-product-coupled-euler-gram/code/product_coupled.py
+papers/tpc-211-product-coupled-euler-gram/experiments/run_certificate.py
+papers/tpc-211-product-coupled-euler-gram/experiments/independent_checker.py
+papers/tpc-211-product-coupled-euler-gram/experiments/product_rank_sanity.py
+papers/tpc-211-product-coupled-euler-gram/results/certificate.json
+papers/tpc-211-product-coupled-euler-gram/notes/theorem_ledger.md
+papers/tpc-211-product-coupled-euler-gram/notes/source_lock.md
+papers/tpc-211-product-coupled-euler-gram/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_product_coupled_physical_profiles.md
+research/tpc-big-road/tpc_bridge_b_product_coupled_checker.py
+~~~
+
+TPC-211 PDF 已完成手动 LaTeX 编译、字体嵌入、逐页渲染和正文/log QA。有限 certificate
+覆盖 25 个 profile rows、77,875 个 CRT residue coordinates 和 9 个 derivative rows；
+normal/independent/optimized checker 均通过。旧版 22 项启动回归仍在历史缺失的
+TPC-206 路径处停止，属于仓库快照协议限制，不是 TPC-211 数学失败。
 
 TPC-210 当前 section：Poisson profile realizability and the Mobius alignment obstruction
 ----------------------------------------------------------------

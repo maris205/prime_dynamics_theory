@@ -167,6 +167,57 @@ The alignment construction is not claimed to be the literal coupled TPC coeffici
 it is an interface obstruction for independent admissible profiles. Finite certificate rows
 remain QA only and do not create arithmetic `L2` progress.
 
+## 0.5 已发布：TPC-211 product-coupled Euler profiles and the truncated-boundary handoff
+
+项目：`papers/tpc-211-product-coupled-euler-gram/`
+
+类型：**PROVED_STRUCTURAL_L1 / STOP_SCOPED_PHYSICAL_COUPLING**。
+
+TPC-211 把 TPC-210 的 independent profile obstruction 推进到 V46 literal product
+coupling。对共同 CRT lift 的 Euler profiles，已 exact 证明：
+
+1. **PROVED** — product cocycle、zero-axis 和 zero-mean；
+2. **PROVED** — 非空 squarefree divisor family 的 rank 恰为 `2^s-1`；
+3. **PROVED** — 完整 packet 的 `mu(d) log(d)` 权重压缩为 marked-prime Euler derivative；
+4. **PROVED** — active prime 数至少为 2 时 common endpoint 完整取消；
+5. **PROVED_STRUCTURAL_FINITE** — Gram duality 可构造 shared endpoint 实现
+   `\langle w,Delta_S\rangle=mu(d_S)`；
+6. **REFUTED_SCOPED** — product coupling、finite rank 和 common endpoint alone 不保证
+   cross-divisor saving；
+7. **OPEN** — actual transition band `Y0<d<=U` 的 boundary 与 divisor-dependent
+   reciprocal emitter `A_d(r)` 的 joint Gram bound。
+
+```text
+TPC211_ROUTE_ADVANCE = YES
+TPC211_STRUCTURAL_THRESHOLD_A = PASS
+TPC211_PRODUCT_COUPLING_COCYCLE = PROVED_EXACT
+TPC211_LITERAL_PRODUCT_PROFILE_FULL_RANK = PROVED_EXACT
+TPC211_LOG_MOBIUS_PACKET_DERIVATIVE = PROVED_EXACT
+TPC211_COMPLETE_PACKET_ENDPOINT_CANCELLATION = PROVED_EXACT
+TPC211_SHARED_ENDPOINT_ALIGNMENT = PROVED_STRUCTURAL_FINITE
+TPC211_PRODUCT_COUPLING_UNIVERSAL_SAVING = REFUTED_SCOPED
+TPC211_TRANSITION_BOUNDARY_CONTROL = OPEN
+TPC211_PHYSICAL_CROSS_DIVISOR_GRAM_BOUND = OPEN
+TPC211_ARITHMETIC_ADVANCE = NO
+TPC211_FIXED_ATOM_CREDIT = 0
+TPC211_L2 = NONE
+TPC211_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC211_TPC_TRIGGER = true
+```
+
+```text
+STRONGEST_POSITIVE_RESULT = COMPLETE_PACKET_LOG_MOBIUS_DERIVATIVE_WITH_EXACT_COMMON_ENDPOINT_CANCELLATION
+STRONGEST_OBSTRUCTION = LITERAL_PRODUCT_DEFECTS_HAVE_FULL_DIVISOR_RANK_AND_GRAM_DUALITY_REALIZES_MOBIUS_ALIGNMENT
+OPEN_THEOREM = BOUND_THE_TRUNCATED_DIVISOR_BAND_AFTER_RETAINING_THE_RECIPROCAL_EMITTER_A_D
+REUSABLE_STRUCTURE = BOOLEAN_PACKET_DERIVATIVE_PLUS_CUT_INCidence_PLUS_PHYSICAL_EMITTER_HANDOFF
+ROUND2_CLUE = BUILD_A_BOUNDARY_WEIGHTED_DIVISOR_BAND_OPERATOR_BEFORE_ANY_NEW_PRIME_BDH_ATTACHMENT
+```
+
+完整 Bridge-B proof/checker 为
+`research/tpc-big-road/bridge_b_product_coupled_physical_profiles.md` 与
+`research/tpc-big-road/tpc_bridge_b_product_coupled_checker.py`。certificate 仅作有限
+structural QA；不构成 arithmetic `L2`、Gate B 或 twin-prime progress。
+
 ## 1. 记录规则
 
 每一项只允许落入以下四类之一：
