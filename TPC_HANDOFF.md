@@ -1,7 +1,81 @@
 # TPC HANDOFF
 
 更新时间：2026-08-18
-交接状态：`BOLD_CHANNEL_V64_TPC211_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V65_TPC212_SEALED_FOR_NEW_SESSION`
+
+TPC-212 当前 section：truncated divisor bands and the reciprocal-emitter boundary operator
+---------------------------------------------------------------------------------------------
+
+TPC-212 是 V64/TPC-211 的直接后续。它不再把完整 packet derivative 当作实际
+transition bound，而是精确拆出实际 cut 与 emitter：对 active prime set `P`、selected
+subset family `A`，定义
+
+~~~text
+eta_p(A) = sum_(S in A, p in S) (-1)^|S|
+L(A)     = sum_(S in A) (-1)^|S| log(d_S)
+         = sum_p eta_p(A) log(p)
+~~~
+
+complete Boolean packet 在至少两个 active primes 时 `eta_p=0`。任意 selected packet
+的 common endpoint coefficient 恰为 `L(A)`；若 `M` 是 missing family，selected packet
+是 complete packet 减去 `M` 的 exact boundary。最小 literal witness 是
+`t=35, Y0=5, U=35`，active divisors `{7,35}`，`eta=(1,0)`，endpoint leakage
+`log(5)`。
+
+TPC-212 又定义 finite reciprocal occupancy operator
+
+~~~text
+(E_d a)(r) = sum_(q,m) a(q,m) 1_(r = m q^(-1) mod d)
+~~~
+
+并 exact 证明 squared norm 等于 collision condition
+`d | m1*q2-m2*q1` 的 weighted pair sum。不同 divisor block 的自然 direct sum Gram
+是 block diagonal；非零 emitter rows 因而 full rank，normalized residual 可以使每个
+block contribution 同号。该 obstruction scope 只针对 cut/emitter interface，不是
+literal physical residual 的 arithmetic counterexample。
+
+TPC-212 claim firewall：
+
+~~~text
+TPC212_ROUTE_ADVANCE = YES
+TPC212_STRUCTURAL_THRESHOLD_A = PASS
+TPC212_CUT_ENDPOINT_LEAKAGE = PROVED_EXACT
+TPC212_BOUNDARY_DECOMPOSITION = PROVED_EXACT
+TPC212_RECIPROCAL_COLLISION = PROVED_EXACT_FINITE
+TPC212_EMITTER_GRAM = PROVED_EXACT_BLOCK_DIAGONAL
+TPC212_EMITTER_ONLY_UNIVERSAL_SAVING = REFUTED_SCOPED
+TPC212_LITERAL_PHYSICAL_BOUNDARY_BOUND = OPEN
+TPC212_PHYSICAL_CROSS_DIVISOR_GRAM_BOUND = OPEN
+TPC212_ARITHMETIC_ADVANCE = NO
+TPC212_FIXED_ATOM_CREDIT = 0
+TPC212_L2 = NONE
+TPC212_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC212_TPC_TRIGGER = true
+~~~
+
+编号论文目录：`papers/tpc-212-truncated-boundary-emitter/`
+
+~~~text
+papers/tpc-212-truncated-boundary-emitter/README.md
+papers/tpc-212-truncated-boundary-emitter/PAPER_PLAN.md
+papers/tpc-212-truncated-boundary-emitter/paper/main.tex
+papers/tpc-212-truncated-boundary-emitter/paper/references.bib
+papers/tpc-212-truncated-boundary-emitter/paper/paper.pdf
+papers/tpc-212-truncated-boundary-emitter/code/boundary_emitter.py
+papers/tpc-212-truncated-boundary-emitter/experiments/run_certificate.py
+papers/tpc-212-truncated-boundary-emitter/experiments/independent_checker.py
+papers/tpc-212-truncated-boundary-emitter/experiments/boundary_sanity.py
+papers/tpc-212-truncated-boundary-emitter/results/certificate.json
+papers/tpc-212-truncated-boundary-emitter/notes/theorem_ledger.md
+papers/tpc-212-truncated-boundary-emitter/notes/source_lock.md
+papers/tpc-212-truncated-boundary-emitter/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_truncated_boundary_emitter.md
+research/tpc-big-road/tpc_bridge_b_truncated_boundary_emitter_checker.py
+~~~
+
+TPC-212 PDF 已完成手动 LaTeX 编译、BibTeX、逐页渲染和正文/log QA：8 页，字体全部
+嵌入，最终日志无 warning/undefined reference/citation。finite certificate 使用
+`psi=1` unit-weight emitter fixture，明确标注为 modeling choice。
 
 TPC-211 当前 section：product-coupled Euler profiles and the truncated-boundary handoff
 ------------------------------------------------------------------------------------------
@@ -4201,8 +4275,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V63/TPC-210 gate及其 V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；八十二次必须都为零，且每一对 stdout
+22项启动回归之后，当前 V65/TPC-212 gate及其 V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；八十六次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -4288,6 +4362,10 @@ python -B research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_ramanujan_energy_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_product_coupled_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_product_coupled_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_truncated_boundary_emitter_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_truncated_boundary_emitter_checker.py --check
 ```
 
 随后优先读取：

@@ -2,7 +2,7 @@
 
 更新时间：2026-08-18
 
-状态：**TPC210_STRUCTURAL_THRESHOLD_A_RELEASED / PROFILE_CLASS_STOP_SCOPED / PHYSICAL_PROFILE_BOUND_OPEN**
+状态：**TPC212_STRUCTURAL_THRESHOLD_A_RELEASED / BOUNDARY_EMITTER_STOP_SCOPED / PHYSICAL_CROSS_DIVISOR_BOUND_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
@@ -217,6 +217,58 @@ ROUND2_CLUE = BUILD_A_BOUNDARY_WEIGHTED_DIVISOR_BAND_OPERATOR_BEFORE_ANY_NEW_PRI
 `research/tpc-big-road/bridge_b_product_coupled_physical_profiles.md` 与
 `research/tpc-big-road/tpc_bridge_b_product_coupled_checker.py`。certificate 仅作有限
 structural QA；不构成 arithmetic `L2`、Gate B 或 twin-prime progress。
+
+## 0.6 已发布：TPC-212 truncated divisor bands and the reciprocal-emitter boundary operator
+
+项目：`papers/tpc-212-truncated-boundary-emitter/`
+
+类型：**PROVED_STRUCTURAL_L1 / STOP_SCOPED_BOUNDARY_EMITTER**。
+
+TPC-212 把 TPC-211 留下的 actual transition band 与 divisor-dependent reciprocal emitter
+拆成两个可审计的 exact interface：
+
+1. **PROVED** — selected squarefree divisor bands 的 endpoint coefficient 是 signed
+   Boolean incidence `eta_p(A)`，完整 packet 的 incidence 在至少两个 active primes 时为零；
+2. **PROVED** — selected packet 等于 complete packet minus the missing-subset boundary，
+   且 `t=35`, `5<d<=35` 给出 active divisors `{7,35}`、incidence `(1,0)` 与 endpoint
+   leakage `log(5)`；
+3. **PROVED_FINITE** — reciprocal occupancy 的平方范数等于
+   `d | m1*q2-m2*q1` 的 collision sum；
+4. **PROVED_STRUCTURAL_FINITE** — natural direct-sum emitter Gram 是 block diagonal，
+   非零 rows full rank；
+5. **REFUTED_SCOPED** — cut 与 reciprocal emitter interface alone 不产生 universal
+   cross-divisor saving；unit-weight fixtures 的 coherent-to-diagonal ratios 为 `2,4,3`；
+6. **OPEN** — literal physical profile coupling、smooth `psi`、prime shell 与 Gate-B
+   reassembly 的共同 Gram bound。
+
+```text
+TPC212_ROUTE_ADVANCE = YES
+TPC212_STRUCTURAL_THRESHOLD_A = PASS
+TPC212_CUT_ENDPOINT_LEAKAGE = PROVED_EXACT
+TPC212_BOUNDARY_DECOMPOSITION = PROVED_EXACT
+TPC212_RECIPROCAL_COLLISION = PROVED_EXACT_FINITE
+TPC212_EMITTER_GRAM = PROVED_EXACT_BLOCK_DIAGONAL
+TPC212_EMITTER_ONLY_UNIVERSAL_SAVING = REFUTED_SCOPED
+TPC212_LITERAL_PHYSICAL_BOUNDARY_BOUND = OPEN
+TPC212_PHYSICAL_CROSS_DIVISOR_GRAM_BOUND = OPEN
+TPC212_ARITHMETIC_ADVANCE = NO
+TPC212_FIXED_ATOM_CREDIT = 0
+TPC212_L2 = NONE
+TPC212_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC212_TPC_TRIGGER = true
+```
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_SIGNED_BOOLEAN_BOUNDARY_AND_RECIPROCAL_COLLISION_GRAM
+STRONGEST_OBSTRUCTION = CROSS_DIVISOR_GRAM_IS_BLOCK_DIAGONAL_WITH_UNIT_WEIGHT_ALIGNMENT
+OPEN_THEOREM = LITERAL_PHYSICAL_BOUNDARY_EMITTER_CROSS_DIVISOR_GRAM_BOUND
+REUSABLE_STRUCTURE = CUT_BOUNDARY_OPERATOR_PLUS_RECIPROCAL_OCCUPANCY_COLLISION_GRAM
+ROUND2_CLUE = COUPLE_THE_LITERAL_V46_PROFILE_AT_DIVISOR_d_TO_THE_EMITTER_BLOCK_BEFORE_CAUCHY
+```
+
+The finite certificate covers four boundary cuts, 5,810 profile coordinates, three emitter
+fixtures, and nine divisor rows.  The `psi=1` emitter fixture is a modeling choice; none of
+these finite rows is arithmetic `L2` evidence.
 
 ## 1. 记录规则
 
@@ -685,18 +737,22 @@ handoff。
 | 2026-08-13 | V59 | four-packet complex polarization、reduced-residue BDH normal form、mesoscopic `1/96` clock与 collective compiler obstruction | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
 | 2026-08-17 | V60 | moving-hole projector、exact diagonal lift与 `x^(53/32+o(1))` collective translation payment | **PROVED_STRUCTURAL_L1 / TPC-207** |
 | 2026-08-17 | V61 | complete-graph zero-hole additive edge frame、edgewise diagonal deletion与 literal-edge no-sparsification | **PROVED_STRUCTURAL_L1 / TPC-208** |
+| 2026-08-18 | V65 | truncated divisor-band Boolean boundary、reciprocal occupancy collision Gram 与 scoped emitter-only obstruction | **PROVED_STRUCTURAL_L1 / TPC-212** |
 
 下一次更新应优先回答：
 
-1. 能否对完整 oriented `(d,k)` tight frame统一作 Möbius/Poisson transform，并在任何
+1. 能否把 literal V46 product-coupled profile、truncated boundary 与 smooth reciprocal
+   emitter编成一个真实的 cross-divisor Gram theorem；必须先于 direct-sum Cauchy与任何
+   outer absolute，并保留 prime shell、four-packet signs与zero-axis normalization；
+2. 在上述 coupling theorem 成立后，能否对完整 oriented `(d,k)` tight frame统一作 Möbius/Poisson transform，并在任何
    edge/fiber triangle之前暴露一个 shared dual variable，从而集体编译到同一批
    Blomer--Pascadi/Pascadi cells并完成 prime-shell signed reassembly；
-2. 能否对 V51 full-shell mixed-plus-balanced signed root证明一个 fixed-power saving；
-3. 能否对 exact相同的 V35/V58/V59 proper-factor centered scalar证明
+3. 能否对 V51 full-shell mixed-plus-balanced signed root证明一个 fixed-power saving；
+4. 能否对 exact相同的 V35/V58/V59 proper-factor centered scalar证明
    `delta>1/400`，优先瞄准 benchmark `delta=1/96`；
-4. 若需要 maximal Gate-A，能否只对 `Cperp` 证明 one-`Q` transverse variance，
+5. 若需要 maximal Gate-A，能否只对 `Cperp` 证明 one-`Q` transverse variance，
    而不重新要求完整 Gate-B row；
-5. 能否对 V56 预声明的全部 large dyadic nodes证明同一个 uniform literal block
+6. 能否对 V56 预声明的全部 large dyadic nodes证明同一个 uniform literal block
    theorem，作为 Gate-A maximal fallback；
 6. 能否在 V52 packet层直接证明
    `(delta_B+delta_W)/2+kappa>1/400` 的 joint angular dispersion；

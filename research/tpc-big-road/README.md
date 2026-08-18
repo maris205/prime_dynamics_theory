@@ -1,11 +1,31 @@
-# TPC big road V64 / TPC-211: product-coupled Euler profiles and boundary handoff
+# TPC big road V65 / TPC-212: truncated boundary and reciprocal-emitter obstruction
 
 更新时间：2026-08-18
 
-状态：`TPC211_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / STOP_SCOPED_PHYSICAL_COUPLING`
+状态：`TPC212_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / STOP_SCOPED_BOUNDARY_EMITTER`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-212 proof 为
+`bridge_b_truncated_boundary_emitter.md`，checker 为
+`tpc_bridge_b_truncated_boundary_emitter_checker.py`，编号论文为
+`../../papers/tpc-212-truncated-boundary-emitter/`。
+
+TPC-212 把 TPC-211 留下的 transition boundary 具体化为两个 exact operator：
+divisor band 的 endpoint leakage 是 signed Boolean incidence，selected packet 是
+complete packet minus missing packet；reciprocal occupancy 的平方范数是
+`d | m1*q2-m2*q1` 的 collision count。在自然 direct-sum residual space 中，emitter
+Gram block diagonal 且 full rank，unit-weight fixture 可实现 block-count alignment。
+因此 cut 与 reciprocal map alone 仍不能支付 cross-divisor saving；literal physical
+profile coupling、smooth `psi`、prime shell 和 Gate B 继续 OPEN。
+
+TPC-212 的可复核文件为 `bridge_b_truncated_boundary_emitter.md`、
+`tpc_bridge_b_truncated_boundary_emitter_checker.py` 与
+`../../papers/tpc-212-truncated-boundary-emitter/`。独立 certificate 覆盖 4 个
+boundary cases、5,810 个 profile coordinates、3 个 emitter cases 和 9 个 divisor rows；
+unit-weight alignment ratios 为 `2, 4, 3`。这些是 structural/finite QA，不是渐近
+arithmetic evidence。
 
 当前 TPC-211 proof 为
 `bridge_b_product_coupled_physical_profiles.md`，checker 为

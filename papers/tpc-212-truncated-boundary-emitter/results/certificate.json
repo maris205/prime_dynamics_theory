@@ -1,0 +1,710 @@
+{
+  "audit_counts": {
+    "boundary_cases": 4,
+    "boundary_profile_coordinate_rows": 5810,
+    "emitter_cases": 3,
+    "emitter_divisor_rows": 9
+  },
+  "boundary_cases": [
+    {
+      "active_divisors": [
+        7,
+        35
+      ],
+      "active_endpoint_incidence": [
+        1,
+        0
+      ],
+      "active_masks": [
+        2,
+        3
+      ],
+      "boundary_identity": true,
+      "full_endpoint_incidence": [
+        0,
+        0
+      ],
+      "lower": 5,
+      "missing_divisors": [
+        5
+      ],
+      "missing_endpoint_incidence": [
+        -1,
+        0
+      ],
+      "missing_masks": [
+        1
+      ],
+      "primes": [
+        5,
+        7
+      ],
+      "profile_coordinate_count": 35,
+      "upper": 35
+    },
+    {
+      "active_divisors": [
+        7,
+        35,
+        11
+      ],
+      "active_endpoint_incidence": [
+        1,
+        0,
+        -1
+      ],
+      "active_masks": [
+        2,
+        3,
+        4
+      ],
+      "boundary_identity": true,
+      "full_endpoint_incidence": [
+        0,
+        0,
+        0
+      ],
+      "lower": 5,
+      "missing_divisors": [
+        5,
+        55,
+        77,
+        385
+      ],
+      "missing_endpoint_incidence": [
+        -1,
+        0,
+        1
+      ],
+      "missing_masks": [
+        1,
+        5,
+        6,
+        7
+      ],
+      "primes": [
+        5,
+        7,
+        11
+      ],
+      "profile_coordinate_count": 385,
+      "upper": 35
+    },
+    {
+      "active_divisors": [
+        35,
+        11,
+        55,
+        77
+      ],
+      "active_endpoint_incidence": [
+        2,
+        2,
+        1
+      ],
+      "active_masks": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "boundary_identity": true,
+      "full_endpoint_incidence": [
+        0,
+        0,
+        0
+      ],
+      "lower": 10,
+      "missing_divisors": [
+        5,
+        7,
+        385
+      ],
+      "missing_endpoint_incidence": [
+        -2,
+        -2,
+        -1
+      ],
+      "missing_masks": [
+        1,
+        2,
+        7
+      ],
+      "primes": [
+        5,
+        7,
+        11
+      ],
+      "profile_coordinate_count": 385,
+      "upper": 77
+    },
+    {
+      "active_divisors": [
+        35,
+        55,
+        77,
+        65,
+        91
+      ],
+      "active_endpoint_incidence": [
+        3,
+        3,
+        2,
+        2
+      ],
+      "active_masks": [
+        3,
+        5,
+        6,
+        9,
+        10
+      ],
+      "boundary_identity": true,
+      "full_endpoint_incidence": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lower": 30,
+      "missing_divisors": [
+        5,
+        7,
+        11,
+        385,
+        13,
+        455,
+        143,
+        715,
+        1001,
+        5005
+      ],
+      "missing_endpoint_incidence": [
+        -3,
+        -3,
+        -2,
+        -2
+      ],
+      "missing_masks": [
+        1,
+        2,
+        4,
+        7,
+        8,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "primes": [
+        5,
+        7,
+        11,
+        13
+      ],
+      "profile_coordinate_count": 5005,
+      "upper": 100
+    }
+  ],
+  "claim_firewall": {
+    "arithmetic_advance": "NO",
+    "boundary_decomposition": "PROVED_EXACT",
+    "cut_endpoint_leakage": "PROVED_EXACT",
+    "emitter_gram": "PROVED_EXACT_BLOCK_DIAGONAL",
+    "emitter_only_universal_saving": "REFUTED_SCOPED",
+    "fixed_atom_credit": 0,
+    "full_gate_b_strict_1_over_400": "UNPAID",
+    "l2": "NONE",
+    "literal_physical_boundary_bound": "OPEN",
+    "physical_cross_divisor_gram_bound": "OPEN",
+    "reciprocal_collision": "PROVED_EXACT_FINITE",
+    "route_advance": "YES",
+    "structural_threshold_a": "PASS"
+  },
+  "classification": "PROVED_STRUCTURAL_L1_STOP_SCOPED_BOUNDARY_EMITTER",
+  "emitter_cases": [
+    {
+      "H": 10,
+      "aligned_contributions": [
+        1,
+        1
+      ],
+      "coefficient_signs_fixture": [
+        -1,
+        1
+      ],
+      "coherent_energy": 4,
+      "coherent_to_diagonal_ratio": "2",
+      "collision_counts": [
+        86,
+        470
+      ],
+      "diagonal_energy": 2,
+      "direct_sum_gram_diagonal": [
+        86,
+        470
+      ],
+      "direct_sum_gram_rank": 2,
+      "divisors": [
+        7,
+        35
+      ],
+      "emitter_norm_squared": [
+        86,
+        470
+      ],
+      "occupancy_rows": [
+        [
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        [
+          2,
+          4,
+          5,
+          5,
+          2,
+          3,
+          3,
+          2,
+          3,
+          3,
+          4,
+          4,
+          3,
+          4,
+          5,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          5,
+          4,
+          3,
+          4,
+          4,
+          3,
+          3,
+          2,
+          3,
+          3,
+          2,
+          5,
+          5,
+          4
+        ]
+      ],
+      "q_values": [
+        2,
+        3,
+        13
+      ],
+      "unit_weight_alignment": true
+    },
+    {
+      "H": 10,
+      "aligned_contributions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "coefficient_signs_fixture": [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "coherent_energy": 16,
+      "coherent_to_diagonal_ratio": "4",
+      "collision_counts": [
+        86,
+        144,
+        470,
+        750
+      ],
+      "diagonal_energy": 4,
+      "direct_sum_gram_diagonal": [
+        86,
+        144,
+        470,
+        750
+      ],
+      "direct_sum_gram_rank": 4,
+      "divisors": [
+        7,
+        11,
+        35,
+        55
+      ],
+      "emitter_norm_squared": [
+        86,
+        144,
+        470,
+        750
+      ],
+      "occupancy_rows": [
+        [
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          3
+        ],
+        [
+          2,
+          5,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          3,
+          2,
+          5
+        ],
+        [
+          2,
+          4,
+          5,
+          5,
+          2,
+          3,
+          3,
+          2,
+          3,
+          3,
+          4,
+          4,
+          3,
+          4,
+          5,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          5,
+          4,
+          3,
+          4,
+          4,
+          3,
+          3,
+          2,
+          3,
+          3,
+          2,
+          5,
+          5,
+          4
+        ],
+        [
+          2,
+          5,
+          4,
+          5,
+          5,
+          5,
+          2,
+          2,
+          3,
+          3,
+          2,
+          2,
+          3,
+          4,
+          3,
+          3,
+          4,
+          4,
+          4,
+          3,
+          4,
+          4,
+          5,
+          4,
+          3,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          3,
+          4,
+          5,
+          4,
+          4,
+          3,
+          4,
+          4,
+          4,
+          3,
+          3,
+          4,
+          3,
+          2,
+          2,
+          3,
+          3,
+          2,
+          2,
+          5,
+          5,
+          5,
+          4,
+          5
+        ]
+      ],
+      "q_values": [
+        2,
+        3,
+        13
+      ],
+      "unit_weight_alignment": true
+    },
+    {
+      "H": 10,
+      "aligned_contributions": [
+        1,
+        1,
+        1
+      ],
+      "coefficient_signs_fixture": [
+        1,
+        1,
+        1
+      ],
+      "coherent_energy": 9,
+      "coherent_to_diagonal_ratio": "3",
+      "collision_counts": [
+        470,
+        750,
+        1050
+      ],
+      "diagonal_energy": 3,
+      "direct_sum_gram_diagonal": [
+        470,
+        750,
+        1050
+      ],
+      "direct_sum_gram_rank": 3,
+      "divisors": [
+        35,
+        55,
+        77
+      ],
+      "emitter_norm_squared": [
+        470,
+        750,
+        1050
+      ],
+      "occupancy_rows": [
+        [
+          2,
+          4,
+          5,
+          5,
+          2,
+          3,
+          3,
+          2,
+          3,
+          3,
+          4,
+          4,
+          3,
+          4,
+          5,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          5,
+          4,
+          3,
+          4,
+          4,
+          3,
+          3,
+          2,
+          3,
+          3,
+          2,
+          5,
+          5,
+          4
+        ],
+        [
+          2,
+          5,
+          4,
+          5,
+          5,
+          5,
+          2,
+          2,
+          3,
+          3,
+          2,
+          2,
+          3,
+          4,
+          3,
+          3,
+          4,
+          4,
+          4,
+          3,
+          4,
+          4,
+          5,
+          4,
+          3,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          3,
+          4,
+          5,
+          4,
+          4,
+          3,
+          4,
+          4,
+          4,
+          3,
+          3,
+          4,
+          3,
+          2,
+          2,
+          3,
+          3,
+          2,
+          2,
+          5,
+          5,
+          5,
+          4,
+          5
+        ],
+        [
+          2,
+          5,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          2,
+          2,
+          3,
+          3,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          4,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          3,
+          3,
+          2,
+          2,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          5,
+          5,
+          5,
+          4,
+          4,
+          4,
+          5
+        ]
+      ],
+      "q_values": [
+        2,
+        3,
+        13
+      ],
+      "unit_weight_alignment": true
+    }
+  ],
+  "modeling_choice": "UNIT_RECIPROCAL_WEIGHTS_PSI_EQUALS_ONE_FINITE_FIXTURE",
+  "open_theorem": "CONTROL_THE_LITERAL_PHYSICAL_BOUNDARY_AFTER_A_D_R_WITHOUT_REPLACING_THE_COUPLED_RESIDUAL_FAMILY_BY_AN_INDEPENDENT_DIRECT_SUM",
+  "schema": "TPC212_TRUNCATED_BOUNDARY_EMITTER_CERTIFICATE_V1",
+  "theorem_contract": {
+    "cut_endpoint_leakage": "PROVED_EXACT_SIGNED_BOOLEAN_INCIDENCE",
+    "direct_sum_emitter_gram": "PROVED_EXACT_BLOCK_DIAGONAL",
+    "emitter_only_universal_saving": "REFUTED_SCOPED",
+    "full_minus_missing_boundary_decomposition": "PROVED_EXACT",
+    "literal_physical_boundary_bound": "OPEN",
+    "prime_shell_reassembly": "OPEN",
+    "reciprocal_collision_identity": "PROVED_EXACT_FINITE"
+  }
+}

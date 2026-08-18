@@ -1,0 +1,537 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\PP}{\mathcal P}
+\newcommand{\Aset}{\mathcal A}
+\newcommand{\MM}{\mathcal M}
+\newcommand{\Dd}{\mathcal D}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\muM}{\mu}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\e}{\mathrm e}
+
+\title{\textbf{Truncated Divisor Bands and the Reciprocal-Emitter Boundary Operator}}
+\author{Liang Wang\\
+Huazhong University of Science and Technology\\
+Wuhan 430074, P.R. China}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding TPC-211 analysis gives an exact logarithmic M\"obius derivative for a
+complete squarefree divisor packet of the literal product-coupled Euler profiles.
+The physical transition, however, uses the non-Boolean band $Y_0<d\leq U$ and a
+divisor-dependent reciprocal emitter.  This paper isolates that boundary interface.
+For any selected divisor family we prove that its common-endpoint leakage is the
+signed incidence vector of the selected Boolean faces, with coefficients in the
+independent basis $(\log p)_{p\in\PP}$.  The selected packet is exactly the complete
+packet minus the missing-subset boundary.  We then define a finite reciprocal
+occupancy operator and prove its exact collision Gram identity.  In the natural
+direct sum over divisor residue spaces the emitter Gram is block diagonal and full
+rank; normalized residuals attain coherent-to-diagonal ratios equal to the number
+of divisor blocks.  Thus a divisor cut and reciprocal occupancy, without a theorem
+coupling the literal residual profiles across divisors, do not force a saving.  The
+finite checks use exact rational arithmetic and a unit-weight reciprocal fixture
+($\psi=1$); they are structural certificates, not asymptotic prime-distribution
+evidence.  The physical smooth emitter, prime shell, cross-divisor profile theorem,
+Gate B, and the twin-prime endpoint remain open.
+\end{abstract}
+
+\paragraph{Claim level.}
+\texttt{PROVED\_STRUCTURAL\_L1 / STOP\_SCOPED}\\
+\texttt{BOUNDARY\_EMITTER}.
+No arithmetic $L^2$ credit or fixed-atom credit is claimed.
+
+\section{Introduction}
+
+The working twin-prime route in this repository studies a fixed gap through a
+literal transition carrier.  Its central difficulty is not a missing formal
+Fourier identity but the simultaneous preservation of the divisor signs, the
+physical zero axis, the prime shell, and the cross-divisor Gram structure.  The
+local V46 compiler writes the transition residual in the form
+\begin{equation}
+ \mathfrak R^{\mathrm{AP}}_x
+ =-H\sum_{Y_0<d\leq U}\sum_{r\bmod d}
+ A_d(r)\widehat{\mathcal R}_d(r),
+ \label{eq:physical-residual}
+\end{equation}
+where, schematically, as in the V46 transition artifact \cite{WangV46},
+\begin{equation}
+ A_d(r)=\frac{\muM(d)\log d}{d}
+ \sum_{q\in\mathcal Q}\sum_{0<|m|\leq dq/H}
+ \psi\!\left(\frac{Hm}{dq}\right)
+ \mathbf 1_{r\equiv m\overline q\pmod d}.
+ \label{eq:emitter}
+\end{equation}
+The residue vector $\mathcal R_d$ is the literal physical profile at divisor $d$.
+
+TPC-209 showed that a whole-frame Poisson transform leaves divisor-dependent
+multiplicative permutations.  TPC-210 showed that independent admissible Poisson
+profiles can realize a M\"obius-aligned Gram obstruction \cite{WangTPC210}.  TPC-211 then moved to the
+literal product-coupled Euler profiles.  It proved a product cocycle, full divisor
+rank, and the exact complete-packet identity \cite{WangTPC211}.
+\begin{equation}
+ \sum_{\varnothing\ne S\subseteq\PP}
+ \muM(d_S)\log(d_S)\Delta_S
+ =-\sum_{p\in\PP}\log p\,\mathcal D_p,
+ \label{eq:tpc211-derivative}
+\end{equation}
+where $d_S=\prod_{p\in S}p$ and $\Delta_S$ is the product-profile defect.
+The common endpoint cancels on the complete packet when $|\PP|\geq 2$.
+
+The identity in \eqref{eq:tpc211-derivative} does not apply directly to
+\eqref{eq:physical-residual}.  The active divisor set is a band in the divisor
+lattice, not a complete packet, and $A_d$ changes with $d$.  The precise question
+of this paper is therefore:
+
+\begin{quote}
+Does the actual divisor cut together with the reciprocal map force a
+cross-divisor cancellation before one proves a new theorem for the literal
+physical profiles?
+\end{quote}
+
+We answer the algebraic question negatively, but in a controlled way.  The answer
+has two parts.  First, the cut produces an exact endpoint leakage vector.  Second,
+the reciprocal map has an exact collision Gram, but its natural direct-sum geometry
+has no cross-divisor entries.  This does not disprove a future estimate on the
+coupled physical family.  It identifies the missing input: a coupling theorem must
+relate $\mathcal R_d$ across divisors after the boundary and emitter are retained.
+
+Our contributions are:
+\begin{enumerate}[leftmargin=2em]
+ \item an exact signed-incidence formula for any divisor selector and an exact
+       complete-minus-missing decomposition;
+ \item an exact reciprocal occupancy collision identity and a block-diagonal
+       direct-sum Gram theorem;
+ \item a sharp finite alignment construction showing that emitter geometry alone
+       cannot supply a universal cross-divisor saving;
+ \item exact finite certificates covering four cuts, 5,810 profile coordinates,
+       and nine emitter divisor rows.
+\end{enumerate}
+
+\paragraph{Scope firewall.}
+The proof is finite and algebraic.  We do not estimate the shifted-prime sequence,
+the hybrid profile, the smooth weight $\psi$, the prime shell, the four-packet
+reassembly, or any asymptotic twin-prime count.  The unit-weight emitter used in
+the certificate is explicitly a modeling fixture.
+
+\section{The divisor band as a signed Boolean boundary}
+
+\subsection{Notation}
+
+Let
+\[
+ \PP=\{p_1,\ldots,p_s\},\qquad p_i>2,
+\]
+be a finite set of distinct active primes.  For a nonempty subset
+$S\subseteq\PP$, put
+\[
+ d_S=\prod_{p\in S}p,\qquad \varepsilon_S=(-1)^{|S|}.
+\]
+The squarefree divisors of $t=\prod_{p\in\PP}p$ are indexed by the nonempty
+faces of the Boolean cube.  A divisor band is represented by a selector
+\[
+ \Aset\subseteq 2^{\PP}\setminus\{\varnothing\}.
+\]
+For the physical interval, the selector is
+\begin{equation}
+ \Aset_{Y,U}(t)=\{S:Y_0<d_S\leq U\}.
+ \label{eq:band-selector}
+\end{equation}
+The complement within the nonempty Boolean lattice is denoted by
+\[
+ \MM=(2^{\PP}\setminus\{\varnothing\})\setminus\Aset.
+\]
+
+For every active prime define the signed incidence
+\begin{equation}
+ \eta_p(\Aset)=\sum_{\substack{S\in\Aset\\p\in S}}\varepsilon_S.
+ \label{eq:incidence}
+\end{equation}
+The corresponding logarithmic endpoint coefficient is
+\begin{equation}
+ L(\Aset)=\sum_{S\in\Aset}\varepsilon_S\log d_S
+       =\sum_{p\in\PP}\eta_p(\Aset)\log p.
+ \label{eq:log-leakage}
+\end{equation}
+
+\begin{lemma}[complete-packet incidence cancellation]
+\label{lem:full-incidence}
+If $s\geq 2$, then
+\[
+ \eta_p(2^{\PP}\setminus\{\varnothing\})=0
+ \qquad(p\in\PP).
+\]
+Consequently, the complete packet has $L=0$.
+\end{lemma}
+
+\begin{proof}
+Fix $p$.  Pair each subset $S$ containing $p$ with the subset obtained by
+adding or removing one fixed prime $r\ne p$.  The two signs are opposite.
+Equivalently,
+\[
+ \eta_p=(-1)\sum_{T\subseteq\PP\setminus\{p\}}(-1)^{|T|}
+       =-(1-1)^{s-1}=0.
+\]
+The logarithmic statement follows from \eqref{eq:log-leakage}.
+\end{proof}
+
+\begin{theorem}[exact endpoint leakage]
+\label{thm:leakage}
+For every selector $\Aset$, the common endpoint contribution of the weighted
+packet is exactly $L(\Aset)$ times that endpoint.  If $\Aset$ is not complete and
+$\eta_p(\Aset)\ne0$ for some $p$, then the endpoint contribution cannot vanish
+uniformly over endpoint values.  More precisely, for a scalar endpoint $w$,
+\[
+ \sum_{S\in\Aset}\varepsilon_S\log(d_S)w=L(\Aset)w.
+ \label{eq:endpoint-term}
+\]
+Moreover, $L(\Aset)=0$ if and only if $\eta_p(\Aset)=0$ for every $p$.
+\end{theorem}
+
+\begin{proof}
+The first identity is linearity and \eqref{eq:log-leakage}.  Suppose
+$L(\Aset)=0$.  Then
+\[
+ \prod_{p\in\PP}p^{\eta_p(\Aset)}=1
+\]
+after exponentiating the logarithmic relation.  The exponents are integers,
+so unique factorization gives $\eta_p(\Aset)=0$ for all $p$.  The converse is
+immediate from \eqref{eq:log-leakage}.  If some incidence is nonzero then the
+logarithmic coefficient is nonzero, and choosing $w\ne0$ gives nonzero leakage.
+\end{proof}
+
+\begin{example}[the smallest physical band witness]
+\label{ex:35-band}
+Take $t=5\cdot7=35$ and $Y_0=5$, $U=35$.  Then
+\[
+ \Aset_{5,35}(35)=\{\{7\},\{5,7\}\}.
+\]
+The signs are $-1,+1$, so
+\[
+ \eta_5=1,\qquad \eta_7=0,
+ \qquad L(\Aset)= -\log7+\log35=\log5.
+ \label{eq:35-leak}
+\]
+Thus the first proper divisor cut already restores a common endpoint term.
+This is an exact witness, not a numerical approximation to a logarithm.
+\end{example}
+
+\subsection{Complete minus missing is an operator identity}
+
+Let $\Delta_S$ be any family of vectors in a common real or complex vector
+space and let $w$ be a common endpoint vector.  Write
+\[
+ R_S=w-\Delta_S,
+ \qquad
+ \mathcal T_\Aset=\sum_{S\in\Aset}\varepsilon_S\log(d_S)R_S.
+ \label{eq:packet-functional}
+\]
+The next statement does not assume the product formula for $\Delta_S$.
+
+\begin{proposition}[boundary decomposition]
+\label{prop:boundary-decomp}
+With $\MM$ the missing subset family,
+\[
+ \mathcal T_\Aset=\mathcal T_{\mathrm{full}}-\mathcal T_\MM.
+ \label{eq:boundary-decomp}
+\]
+If the complete packet is a TPC-211 product packet with at least two active
+primes, then its endpoint-free part is the marked-prime derivative, while the
+missing packet contributes the exact boundary
+\[
+ \mathcal T_\MM
+ =L(\MM)w-\sum_{S\in\MM}\varepsilon_S\log(d_S)\Delta_S.
+ \label{eq:missing-boundary}
+\]
+The endpoint coefficient of the selected packet is $L(\Aset)=-L(\MM)$.
+\end{proposition}
+
+\begin{proof}
+The first identity is the partition of the complete nonempty subset family
+into $\Aset$ and $\MM$.  Expanding $R_S=w-\Delta_S$ gives
+\[
+ \mathcal T_\MM=L(\MM)w-
+ \sum_{S\in\MM}\varepsilon_S\log(d_S)\Delta_S.
+\]
+Lemma~\ref{lem:full-incidence} gives $L(\Aset)+L(\MM)=0$ when the full packet
+has at least two active primes.  No estimate or limiting argument is used.
+\end{proof}
+
+\begin{remark}
+The boundary in \eqref{eq:missing-boundary} has two distinct pieces: endpoint
+leakage and missing profile mass.  Treating the first complete-packet identity
+as if it bounded both pieces silently changes the divisor set.  The physical
+emitter adds a third issue because its row also changes with $d$.
+\end{remark}
+
+\section{The reciprocal occupancy operator}
+
+\subsection{Finite emitter model}
+
+Fix a positive integer $H$, a divisor $d\geq2$, and a finite set $\mathcal Q$
+of integers coprime to $d$.  Define the finite index set
+\[
+ I_d=\left\{(q,m):q\in\mathcal Q,
+ 0<|m|\leq\left\lfloor\frac{dq}{H}\right\rfloor\right\}.
+\]
+For unit weights, define the occupancy operator
+\[
+ E_d:\CC^{I_d}\longrightarrow\CC^{\ZZ/d\ZZ},
+ \qquad
+ (E_d a)(r)=\sum_{(q,m)\in I_d}
+ a(q,m)\mathbf 1_{r\equiv m\overline q\pmod d}.
+ \label{eq:occupancy-operator}
+\]
+The physical emitter is the same pushforward with
+\[
+ a(q,m)=\psi\!\left(\frac{Hm}{dq}\right),
+\]
+followed by the nonzero scalar $\muM(d)\log(d)/d$.  We first isolate the
+pushforward algebra.
+
+\begin{lemma}[reciprocal collision identity]
+\label{lem:collision}
+Let $a\equiv1$ on $I_d$ and write $N_d=E_d a$.  Then
+\begin{equation}
+ \norm{N_d}_2^2
+ =\sum_{(q_1,m_1),(q_2,m_2)\in I_d}
+ \mathbf 1_{d\mid m_1q_2-m_2q_1}.
+ \label{eq:collision}
+\end{equation}
+More generally, for arbitrary weights $a$,
+\begin{equation}
+ \norm{E_da}_2^2
+ =\sum_{I_d\times I_d}a(q_1,m_1)\overline{a(q_2,m_2)}
+ \mathbf 1_{d\mid m_1q_2-m_2q_1}.
+ \label{eq:weighted-collision}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Expand the squared norm and use
+\[
+ m_1\overline q_1\equiv m_2\overline q_2\pmod d.
+\]
+Multiplication by $q_1q_2$, which is invertible modulo $d$, converts this
+condition exactly into $m_1q_2\equiv m_2q_1\pmod d$.  The unit-weight case
+is the specialization $a=1$.
+\end{proof}
+
+\begin{proposition}[direct-sum emitter Gram]
+\label{prop:direct-sum}
+Let $\mathcal B$ be a finite divisor family and set
+\[
+ \mathcal H_\mathcal B=\bigoplus_{d\in\mathcal B}\CC^{\ZZ/d\ZZ}.
+\]
+Let $v_d$ be the unit-weight occupancy vector in the $d$-block, embedded in
+this direct sum.  Then
+\[
+ \ip{v_d}{v_e}=0\quad(d\ne e),
+ \qquad
+ \ip{v_d}{v_d}=\norm{v_d}_2^2.
+ \label{eq:block-gram}
+\]
+If every $v_d$ is nonzero, the Gram matrix of the family has rank
+$|\mathcal B|$.  For any signs $\sigma_d\in\{\pm1\}$ the residuals
+\[
+ r_d=\sigma_d\frac{v_d}{\norm{v_d}_2^2}
+ \label{eq:aligned-residual}
+\]
+satisfy
+\[
+ \sigma_d\ip{v_d}{r_d}=1.
+ \label{eq:aligned-contribution}
+\]
+Consequently the coherent-to-diagonal ratio of these unit contributions is
+$|\mathcal B|$.
+\end{proposition}
+
+\begin{proof}
+Different direct-sum blocks are orthogonal, proving \eqref{eq:block-gram}.
+Nonzero diagonal entries give full rank.  Equation \eqref{eq:aligned-residual}
+gives $\ip{v_d}{r_d}=\sigma_d$, hence \eqref{eq:aligned-contribution}.  The
+coherent energy is $|\mathcal B|^2$ and the diagonal energy is
+$|\mathcal B|$.
+\end{proof}
+
+\begin{remark}
+Proposition~\ref{prop:direct-sum} is deliberately a negative interface result.
+It does not say that the literal residual family can choose the aligned
+residuals independently.  It says that the reciprocal pushforward itself has
+not supplied the missing coupling.  A saving theorem must use extra structure
+of $\mathcal R_d$, not only the congruence defining $E_d$.
+\end{remark}
+
+\section{Exact finite certificates}
+
+\subsection{Protocol}
+
+The certificate in the project directory is generated by exact rational code.
+The boundary test uses deterministic rational profiles on the common CRT
+coordinate set of size $\prod p$.  This makes the equality in
+\eqref{eq:boundary-decomp} a coefficientwise finite identity rather than a
+floating-point regression.  The emitter test uses the finite unit-weight
+fixture $\psi=1$.  For each divisor the code records the occupancy vector,
+its squared norm, and the independent ordered collision count in
+\eqref{eq:collision}.
+
+The independent checker reimplements the Boolean and reciprocal arithmetic;
+it does not import the producer module.  The optimized Python run is included
+as a second execution mode, not as an independent mathematical proof.
+
+\begin{table}[t]
+\centering
+\caption{Boundary-band certificate cases.  Incidence is ordered by the active
+prime list.}
+\label{tab:boundary-cases}
+\begin{tabular}{@{}c c c c c c@{}}
+\toprule
+$\PP$ & $Y_0$ & $U$ & active divisors & $\eta(\Aset)$ & coordinates\\
+\midrule
+$(5,7)$ & 5 & 35 & $7,35$ & $(1,0)$ & 35\\
+$(5,7,11)$ & 5 & 35 & $7,35,11$ & $(1,0,-1)$ & 385\\
+$(5,7,11)$ & 10 & 77 & $35,11,55,77$ & $(2,2,1)$ & 385\\
+$(5,7,11,13)$ & 30 & 100 & $35,55,77,65,91$ & $(3,3,2,2)$ & 5005\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The first row is the exact witness in Example~\ref{ex:35-band}.  The other
+rows show that a divisor band can leave several nonzero incidence coordinates;
+the effect is not peculiar to a two-prime packet.  In all four rows the full
+incidence vector is zero and the selected plus missing incidence vectors add
+to it exactly.
+
+\begin{table}[t]
+\centering
+\caption{Unit-weight reciprocal-emitter fixtures.  The displayed Gram rank is
+the rank in the natural direct sum over the listed divisor blocks.}
+\label{tab:emitter-cases}
+\begin{tabular}{@{}c c c c c c@{}}
+\toprule
+divisors & $\mathcal Q$ & $H$ & $\norm{v_d}_2^2$ & rank & ratio\\
+\midrule
+$(7,35)$ & $(2,3,13)$ & 10 & $(86,470)$ & 2 & 2\\
+$(7,11,35,55)$ & $(2,3,13)$ & 10 & $(86,158,470,710)$ & 4 & 4\\
+$(35,55,77)$ & $(2,3,13)$ & 10 & $(470,710,1014)$ & 3 & 3\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The collision counts equal the squared norms entry by entry.  The residuals in
+\eqref{eq:aligned-residual}, with the literal M\"obius signs of the displayed
+divisors, make all weighted contributions equal to one.  This is a sharp
+finite alignment statement for the emitter interface.
+
+\subsection{Certificate status}
+
+The exact certificate covers four boundary cases, 5,810 profile coordinates,
+three emitter cases, and nine divisor rows.  The producer, independent checker,
+and optimized independent checker all pass.  The following status is part of
+the release contract:
+\begin{verbatim}
+TPC212_ROUTE_ADVANCE = YES
+TPC212_STRUCTURAL_THRESHOLD_A = PASS
+TPC212_CUT_ENDPOINT_LEAKAGE = PROVED_EXACT
+TPC212_BOUNDARY_DECOMPOSITION = PROVED_EXACT
+TPC212_RECIPROCAL_COLLISION = PROVED_EXACT_FINITE
+TPC212_EMITTER_GRAM = PROVED_EXACT_BLOCK_DIAGONAL
+TPC212_EMITTER_ONLY_UNIVERSAL_SAVING = REFUTED_SCOPED
+TPC212_LITERAL_PHYSICAL_BOUNDARY_BOUND = OPEN
+TPC212_PHYSICAL_CROSS_DIVISOR_GRAM_BOUND = OPEN
+TPC212_ARITHMETIC_ADVANCE = NO
+TPC212_FIXED_ATOM_CREDIT = 0
+TPC212_L2 = NONE
+TPC212_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+\end{verbatim}
+
+\section{What the obstruction does and does not say}
+
+\subsection{The missing physical coupling}
+
+The direct sum in Proposition~\ref{prop:direct-sum} is the correct ambient
+space for an arbitrary family of residue vectors $(\mathcal R_d)_{d\in\mathcal
+B}$.  It is also exactly the space in which a separate Cauchy estimate sees
+one emitter row per divisor.  The proposition shows why that estimate cannot
+be upgraded by rhetoric about ``the same reciprocal variable'': after the
+residue pushforward, different divisor blocks are still independent unless a
+new map identifies them.
+
+For the literal TPC object, such an identifying map might come from the
+product-coupled Euler factors, the common endpoint, or the common underlying
+integer $u$.  TPC-211 proved that product rank and a shared endpoint do not
+provide it automatically.  TPC-212 adds that the cut and reciprocal occupancy
+do not provide it either.  The remaining theorem must therefore be of the
+form
+\begin{equation}
+ \left|\sum_{d\in\Aset_{Y,U}(t)}
+ \frac{\muM(d)\log d}{d}
+ \ip{E_d\psi_d}{\widehat{\mathcal R}_d}\right|
+ \leq \text{a saving bound for the coupled family},
+ \label{eq:needed-physical-theorem}
+\end{equation}
+where the right side must use a relation between the different
+$\widehat{\mathcal R}_d$.  Applying Cauchy in the direct sum, replacing
+$\widehat{\mathcal R}_d$ by arbitrary unit vectors, or replacing the smooth
+$\psi_d$ by independent unit weights cannot prove such a relation.
+
+\subsection{Why the finite fixture is not an arithmetic result}
+
+The finite emitter certificate sets $\psi=1$ on a finite set of $(q,m)$ pairs.
+It is useful because the congruence collision is then an integer identity and
+because every nonzero block can be aligned explicitly.  It is not the physical
+smooth emitter, does not include the prime shell, and does not control the
+relative phases of the literal residuals.  Therefore the correct label is
+\texttt{NUMERICALLY\_CERTIFIED} for the finite rows and
+\texttt{MODELING\_CHOICE} for the unit-weight fixture, not an arithmetic
+theorem.
+
+The endpoint incidence theorem is stronger in a different direction: it uses
+the exact logarithmic basis and unique factorization, so it is a general finite
+identity for every cut selector.  Still, it only identifies the term that a
+future physical estimate must pay; it does not bound that term in the asymptotic
+transition range.
+
+\section{Conclusion and next route}
+
+TPC-212 converts the open phrase ``truncated boundary plus reciprocal emitter''
+into two explicit operators.  The divisor cut has a signed Boolean incidence
+vector, and the reciprocal map has a collision Gram.  The complete packet
+annihilates the first vector, while a proper band generally does not.  The
+natural emitter Gram is block diagonal and admits sharp finite alignment.
+
+The strongest positive result is the exact boundary/operator decomposition.  The
+strongest obstruction is the scoped failure of emitter-only universal saving.
+The next theorem is now sharply specified: construct and bound the coupling map
+that takes the literal V46 profile family into these divisor blocks, retaining
+the smooth weights and the prime shell before any outer absolute value.  Until
+that theorem is proved, Gate B remains open and no twin-prime conclusion follows.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
