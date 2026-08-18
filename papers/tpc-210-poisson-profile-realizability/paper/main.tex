@@ -1,0 +1,375 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Poisson Profile Realizability and the Mobius Alignment Obstruction},
+  pdfauthor={Liang Wang},
+  pdfsubject={Finite profile interpolation, Mobius alignment, and the TPC-210 scoped obstruction}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\Fq}{\mathbb F_q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\e}{\mathrm e}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Gq}{G_q}
+\newcommand{\M}{\mathcal M}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+
+\title{\textbf{Poisson Profile Realizability\\
+and the M\"obius Alignment Obstruction}}
+\author{Liang Wang\\
+Huazhong University of Science and Technology\\
+Wuhan 430074, P.R. China}
+\date{August 2026}
+
+\begin{document}
+\emergencystretch=2em
+\maketitle
+
+\begin{abstract}
+The preceding TPC-209 stage identified a profile-aware nonprincipal-character
+problem after whole-frame Poisson reindexing.  Its obstruction used arbitrary
+finite residue profiles, leaving open whether Schwartz regularity and the
+Poisson origin of those profiles might already force useful cross-divisor
+structure.  We prove that they do not at finite modulus.  For every prime
+$q>2$, every vector in $\C^{\Fq^\times}$ is exactly the residue profile of a
+compactly supported smooth Fourier packet.  The construction uses separated
+dual nodes and a single compactly supported smooth bump.  We then insert the
+literal Mobius weights and realize the aligned family
+$B_D=\mu(D)U_D^*z$, obtaining an exact coherent-to-diagonal energy ratio equal
+to the number of squarefree unit divisors.  Finally, we write the complete
+profile-aware energy as a positive-semidefinite cross-divisor Gram quadratic
+form.  The result is a genuine admissible-profile obstruction: individual
+profile norms and Mobius signs cannot supply a saving.  It is deliberately
+scoped; the independently chosen packets are not asserted to be the fully
+coupled physical twin-prime coefficients, so the actual physical profile bound,
+the strict $1/400$ gate, and the twin-prime endpoint remain open.
+\end{abstract}
+
+\section{Introduction and claim ceiling}
+
+The current prime-dynamics route studies a fixed-gap prime-pair remainder in a
+standard-zero-hole, prime-modulus, reduced-residue variance.  TPC-208 built the
+complete additive edge frame, and TPC-209 applied Poisson before any edge
+triangle.  For one divisor $D$, the dual index
+\[
+ n=qr+kD
+\]
+is shared by all additive vertices.  Across divisors, however, the resulting
+residue packets are permuted by $U_D$.  Multiplicative Fourier analysis gives a
+common character coordinate but leaves one profile per divisor
+\cite{Wang2026TPC209}.
+
+The next natural question is narrower and more demanding:
+\begin{quote}
+Does the fact that each profile comes from a Schwartz function through the
+Poisson map, together with the literal Mobius coefficient $\mu(D)$, already
+prevent the alignment obstruction?
+\end{quote}
+
+This paper answers the interface-level question negatively.  The word
+``interface'' is essential.  The construction below allows a separate smooth
+Fourier packet for each divisor.  It therefore proves that no theorem stated
+only in terms of the individual Schwartz/Poisson admissibility conditions and
+the Mobius coefficient envelope can force cross-divisor cancellation.  It does
+not prove that the literal, coupled TPC coefficient family realizes the same
+profiles.
+
+The maximum justified claim is
+\[
+\boxed{\texttt{PROVED\_STRUCTURAL\_L1 / STOP\_SCOPED\_PROFILE\_CLASS}.}
+\]
+More explicitly:
+\begin{itemize}[leftmargin=2em]
+  \item finite residue-profile interpolation is proved exactly;
+  \item a Mobius-weighted aligned family is proved exactly;
+  \item the missing arithmetic input is identified as a cross-divisor Gram
+        bound on the literal physical packets;
+  \item no prime-only BDH estimate, Kloosterman attachment, arithmetic $L^2$
+        advance, fixed-atom credit, or twin-prime theorem is claimed.
+\end{itemize}
+
+\section{The profile interface}
+
+Let $q>2$ be prime and write
+\[
+ \Gq=\Fq^\times,\qquad N=q-1,qquad
+ P_q=I_N-\frac1N\one\one^*.
+ \tag{2.1}
+\]
+For a Schwartz function $F_D$ on $\mathbb R$ and a unit divisor $D$ modulo
+$q$, define the Poisson residue profile
+\[
+ B_{q,D}(s)=
+ \sum_{\substack{n\in\Z\\ n\equiv s\pmod q}}
+ \widehat F_D(n/q),
+ \qquad s\in\Gq.
+ \tag{2.2}
+\]
+This is the dual packet appearing after the exact TPC-209 reindexing.  The
+corresponding additive vector is $U_DB_{q,D}$, where
+\[
+ (U_D b)(k)=b(kD),\qquad k\in\Gq.
+ \tag{2.3}
+\]
+
+The TPC frame removes the constant direction.  Thus the relevant profile
+energy is
+\[
+ \norm{P_qY}^2,
+ \qquad Y=\sum_{D\in\cD}c_DU_DB_{q,D}.
+ \tag{2.4}
+\]
+The question is whether the range of (2.2) is sufficiently small to prevent
+coherent choices of the $B_{q,D}$.
+
+\section{Exact finite profile interpolation}
+
+Choose, for each $s\in\Gq$, the dual integer
+\[
+ n_s=s+10qs=s(10q+1),
+ \qquad \rho_q=\frac1{4q}.
+ \tag{3.1}
+\]
+The points $n_s/q$ are separated from one another by more than $10$, while
+two distinct points in the same residue class are separated by exactly one.
+Let $\eta\in C_c^\infty((-1,1))$ satisfy $\eta(0)=1$.
+
+\begin{theorem}[finite profile interpolation]
+\label{thm:interpolation}
+For every target vector $b=(b(s))_{s\in\Gq}\in\C^{\Gq}$, define
+\[
+ \widehat F_b(\xi)=
+ \sum_{s\in\Gq} b(s)\,
+ \eta\!\left(\frac{\xi-n_s/q}{\rho_q}\right).
+ \tag{3.2}
+\]
+Then $\widehat F_b\in C_c^\infty(\mathbb R)$, its inverse Fourier transform
+$F_b$ is Schwartz, and
+\[
+ \sum_{\substack{n\in\Z\\ n\equiv t\pmod q}}
+ \widehat F_b(n/q)=b(t)
+ \qquad (t\in\Gq).
+ \tag{3.3}
+\]
+Consequently, the profile map $F\mapsto B_q$ in (2.2) is onto
+$\C^{\Gq}$, and any finite family of target profiles is realized by choosing
+the functions independently.
+\end{theorem}
+
+\begin{proof}
+The support of the $s$-th summand in (3.2) is contained in
+$(n_s/q-\rho_q,n_s/q+\rho_q)$.  Since $2\rho_q<1$ and the points $n_s/q$
+are separated by more than $10$, these intervals are disjoint and no interval
+contains any other point of the lattice $\{n/q:n\in\Z\}$.  At the lattice
+point $n_t/q$, the $t$-th summand has value $b(t)$ and all other summands
+vanish.  Every other point $n/q$ in the same residue class is outside the
+support of every summand.  Therefore the residue sum in (3.3) has exactly one
+nonzero term, equal to $b(t)$.  A compactly supported smooth function has a
+Schwartz inverse Fourier transform, completing the proof.
+\end{proof}
+
+\begin{remark}
+The theorem is finite and exact.  It does not say that a single physical
+coefficient array can independently choose all divisor components.  It says
+that smoothness and the Poisson residue map, by themselves, impose no such
+coupling.
+\end{remark}
+
+\section{Mobius-weighted aligned profiles}
+
+Let $\cD$ be a finite set of squarefree integers coprime to $q$, and put
+\[
+ c_D=\mu(D),\qquad m=\lvert\cD\rvert.
+ \tag{4.1}
+\]
+Take any centered vector $z\in\one^\perp$ and define
+\[
+ B_D=\mu(D)U_D^*z.
+ \tag{4.2}
+\]
+Theorem~\ref{thm:interpolation} realizes every $B_D$ by a valid Schwartz
+packet.
+
+\begin{proposition}[exact Mobius alignment]
+\label{prop:alignment}
+For the profiles (4.2),
+\[
+ P_q\sum_{D\in\cD}c_DU_DB_D=mz.
+ \tag{4.3}
+\]
+Moreover,
+\[
+ \sum_{D\in\cD}|c_D|^2\norm{P_qU_DB_D}^2
+   =m\norm z^2,
+ \qquad
+ \norm{P_q\sum_{D\in\cD}c_DU_DB_D}^2
+   =m^2\norm z^2.
+ \tag{4.4}
+\]
+Thus the coherent-to-diagonal energy ratio is exactly $m$.
+\end{proposition}
+
+\begin{proof}
+Since $U_DU_D^*=I$ and $\mu(D)^2=1$ on $\cD$,
+\[
+ c_DU_DB_D=\mu(D)U_D\bigl(\mu(D)U_D^*z\bigr)=z.
+\]
+Summing gives (4.3), and $z$ is already in the range of $P_q$.  Each
+individual output has squared norm $\norm z^2$, which gives (4.4).
+\end{proof}
+
+For the smallest nontrivial fixture, take $q=5$, $\cD=\{2,3\}$, and
+$z=(1/2,-1/2,0,0)$.  Both weights are $-1$, yet the two weighted outputs are
+identical.  The ratio in (4.4) is $2$.  This is the TPC-209 resonance with the
+additional fact that both profiles come from explicit compactly supported
+smooth Fourier packets.
+
+\section{The exact missing object: a cross-divisor Gram theorem}
+
+For arbitrary profiles define the output vectors
+\[
+ V_D=P_qU_DB_D,
+ \qquad
+ G_{D,E}=\ip{V_D}{V_E}.
+ \tag{5.1}
+\]
+
+\begin{proposition}[Gram reduction]
+\label{prop:gram}
+The matrix $G=(G_{D,E})_{D,E\in\cD}$ is Hermitian positive semidefinite and
+the whole-frame energy is exactly
+\[
+ \norm{P_q\sum_Dc_DU_DB_D}^2
+ =\sum_{D,E}c_D\overline{c_E}\,G_{D,E}.
+ \tag{5.2}
+\]
+Its diagonal is
+\[
+ G_{D,D}=\norm{P_qB_D}^2,
+ \tag{5.3}
+\]
+because $U_D$ is unitary and commutes with $P_q$.
+\end{proposition}
+
+\begin{proof}
+Equation (5.2) is the expansion of the squared norm.  Any Gram matrix is
+Hermitian positive semidefinite.  Finally, $U_D^*P_qU_D=P_q$, so (5.3)
+follows.
+\end{proof}
+
+The diagonal data alone cannot imply cancellation.  In the aligned family,
+$V_D=\mu(D)z$, so
+\[
+ G_{D,E}=\mu(D)\mu(E)\norm z^2.
+ \tag{5.4}
+\]
+The matrix is rank one on the divisor index set, and the Mobius quadratic form
+in (5.2) adds every cross term constructively.  Therefore the next legitimate
+arithmetic target is not a profile-norm estimate.  It is a theorem that uses
+the literal physical coupling of the $F_D$ to control the off-diagonal entries
+of $G$ after all TPC normalizations are restored.
+
+The same point can be expressed in multiplicative Fourier coordinates.  If
+$A_D(\chi)=(\M B_D)(\chi)$, then
+\[
+ G_{D,E}=\sum_{\chi\ne\chi_0}
+ \chi(D)\overline{\chi(E)}A_D(\chi)\overline{A_E(\chi)}.
+ \tag{5.5}
+\]
+Thus (5.5) is exactly the profile-aware nonprincipal-character interface
+identified in TPC-209, now with the admissible profile range made explicit.
+
+\section{Finite certificate}
+
+The project certificate replays the interpolation geometry and the aligned
+family at $q=3,5,7,11,13$.  It uses exact rational arithmetic.  The producer
+and independent checker agree on the residue nodes, support radius, Mobius
+weights, Gram matrices, and energy ratios.
+
+\begin{table}[t]
+\centering
+\caption{TPC-210 finite certificate.}
+\label{tab:certificate}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+quantity & value & status \\
+\midrule
+prime moduli & $3,5,7,11,13$ & exact \\
+realized divisor-profile rows & $20$ & exact \\
+residue-coordinate rows & $178$ & exact \\
+support-geometry rows & $34$ & exact \\
+$q=5$ Mobius divisors & $2,3$ & exact \\
+$q=5$ coherent-to-diagonal ratio & $2$ & exact \\
+continuous asymptotic estimate & none & not claimed \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The exact checks can be reproduced from the repository root with
+\begin{verbatim}
+cd papers/tpc-210-poisson-profile-realizability
+PYTHONDONTWRITEBYTECODE=1 python -B experiments/run_certificate.py --check
+PYTHONDONTWRITEBYTECODE=1 python -B experiments/independent_checker.py --check
+PYTHONDONTWRITEBYTECODE=1 python -O -B experiments/independent_checker.py --check
+PYTHONDONTWRITEBYTECODE=1 python -B experiments/profile_interpolation_sanity.py
+\end{verbatim}
+
+The certificate is a finite QA artifact.  It verifies the exact construction;
+it is not numerical evidence for an asymptotic prime correlation estimate.
+
+\section{Source boundary and route decision}
+
+TPC-209 left open a profile-aware prime-only estimate after the exact return to
+the V59 nonprincipal-character interface \cite{Wang2026V59}.  TPC-210 proves
+that the basic Schwartz/Poisson profile class is too large for a universal
+saving: it contains an exact Mobius-aligned family.  Consequently, any future
+positive theorem must use additional physical information, such as a coupling
+between the divisor components, a common underlying coefficient array, or a
+source-backed cross-divisor Gram estimate.
+
+The conclusion is a scoped stop:
+\[
+\begin{gathered}
+\texttt{PROFILE\_CLASS\_UNIVERSAL\_SAVING=REFUTED\_SCOPED},\\
+\texttt{ACTUAL\_PHYSICAL\_PROFILE\_BOUND=OPEN},\\
+\texttt{FULL\_GATE\_B=OPEN},\quad
+\texttt{STRICT\_1/400=UNPAID},\\
+\texttt{ARITHMETIC\_ADVANCE=NO},\quad
+\texttt{L2=NONE}.
+\end{gathered}
+\]
+
+\section{Conclusion}
+
+The TPC-210 advance is a class-level separation theorem.  Smooth Poisson
+packets can interpolate arbitrary finite residue profiles, and literal Mobius
+signs can be absorbed into adjoint dilations so that all whole-frame outputs
+align.  The only route-compatible replacement is therefore a physical
+cross-divisor theorem controlling the Gram matrix (5.1), with the exact
+zero-hole diagonal and all downstream prime-shell and block data retained.
+
+This does not settle the twin-prime problem and does not negate the possibility
+that the actual coupled TPC packet has additional structure.  It does remove a
+specific shortcut: profile regularity and Mobius signs alone are not that
+structure.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

@@ -1,16 +1,23 @@
-# TPC big road V61: zero-hole additive edge frame built, collective compiler open
+# TPC big road V63 / TPC-210: Poisson profile realizability obstruction
 
-更新时间：2026-08-17
+更新时间：2026-08-18
 
-状态：`TPC208_STRUCTURAL_THRESHOLD_A / EXACT_ZERO_HOLE_COMPLETE_GRAPH_EDGE_FRAME`
+状态：`TPC210_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / STOP_SCOPED_PROFILE_CLASS`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 V61 proof 为
-`bridge_b_zero_hole_additive_edge_frame.md`，checker 为
-`tpc_bridge_b_zero_hole_additive_edge_checker.py`，编号论文为
-`../../papers/tpc-208-zero-hole-additive-edge-frame/`。核心进展是
+当前 TPC-210 proof 为
+`bridge_b_poisson_profile_realizability_obstruction.md`，checker 为
+`tpc_bridge_b_poisson_profile_realizability_checker.py`，编号论文为
+`../../papers/tpc-210-poisson-profile-realizability/`。
+
+TPC-210 证明有限 residue profile 的 Schwartz/Poisson interpolation 是满射，并把
+literal Mobius weights放回 exact aligned family。因而 TPC-209 的 alignment obstruction
+不是任意向量的假设，而是 admissible Poisson profile class 内的真实 obstruction；
+cross-divisor Gram bound 仍然是 actual physical open theorem，没有产生 arithmetic saving。
+
+TPC-209 的 V62 proof 仍作为直接上游保留：
 
 ```text
 V_0 = 1/[q(q-1)] sum_(e in E(K_(q-1))) |T_e|^2,
@@ -20,10 +27,17 @@ Delta_(k,k+d)(n)=e_q(-kn)(1-e_q(-dn)).
 
 complete graph同时保留 zero-hole constant-direction cancellation并逐 edge删除 mandatory
 `(q-2)` coefficient diagonal。literal two-frequency decomposition不能 strict sparsify；
-whole-frame Poisson/Kloosterman compiler与 fixed-saving prime-shell reassembly仍 OPEN。
+frame-only Poisson compiler 已完成，但 profile-aware nonprincipal-character bound、fixed-saving prime-shell reassembly仍 OPEN。
 完整 Gate B、arithmetic `L2`、fixed-atom credit和 twin-prime endpoint均未升级。
 
-V61 当前入口如上；其直接上游 V60 见第 60 节。冻结上游主路线见第 58 节及
+TPC-210 的可复核文件为 `bridge_b_poisson_profile_realizability_obstruction.md`、
+`tpc_bridge_b_poisson_profile_realizability_checker.py` 与
+`../../papers/tpc-210-poisson-profile-realizability/`。独立 checker
+normal/optimized 输出逐字一致，覆盖 5 个模数、20 个 divisor-profile rows、178 个
+residue-coordinate rows 和 34 个 support-geometry rows；q=5 的 Mobius aligned ratio
+精确为 2。
+
+TPC-210 当前入口如上；其直接上游 V62/TPC-209 见第 62 节。冻结上游主路线见第 58 节及
 `bridge_b_terminal_scalar_root_and_q_transverse_split.md`；checker为
 `tpc_bridge_b_terminal_scalar_root_checker.py`。第 57 节及
 `bridge_b_longitudinal_anchor_transverse_maximal_transfer.md`；checker为
@@ -2283,6 +2297,67 @@ checker冻结 33-field contract、48-row registry，registry SHA-256为
 `15e40e8c20050549c3e244be59747019f115ebb8ccb9356f95fd449250073b07`；
 102/151 adversarial mutations必须全部拒绝。V23 arithmetic advance=`NO`、fixed
 atom=`0`、strict `1/400=UNPAID`、`L2=NONE`、TPC-207=false；没有编号 paper/PDF/build。
+
+## 62. V62 / TPC-209 Bridge A / Gate B：whole-frame Poisson 与 Möbius-dilation obstruction
+
+TPC-209 直接承接 V61 的 `ROUND2_CLUE`。对每个固定 unit divisor `D`，Schwartz
+component 的 Poisson 变换精确给出
+
+```text
+Y_D(k) = sum_(r in Z) Fhat_D(r+kD/q)
+       = sum_(n = kD mod q) Fhat_D(n/q),
+(k,r) -> n = q r + k D.
+```
+
+因此同一个 `D` 的全部 edge vertices 确实共享一个 dual integer lattice。跨 divisor
+后，dual residue packet 变成
+
+```text
+Y = sum_D c_D U_D B_D,       (U_D b)(k)=b(kD).
+```
+
+complete edge frame 的 exact covariance 保留所有 `D,E` cross terms；multiplicative
+Fourier 只把 `U_D` 对角化为 `chi(D)`，得到带 divisor-dependent profile 的 shared-
+character normal form。对 physical additive vector，Gauss sum 又 exact 返回 V59
+nonprincipal-character interface。
+
+TPC-209 的 sharp obstruction 是 operator-level 的：
+
+```text
+|| P sum_D c_D U_D B_D || <= ||c||_2 (sum_D ||B_D||_2^2)^(1/2),
+```
+
+且 aligned profiles 达到等号。`q=5, D=2,3, c_2=c_3=-1` 的 common-profile
+fixture 有 exact energy ratio `2`，quadratic character multiplier 等于完整
+`ell^1` coefficient mass。因此 frame-only transform 不能自动形成一个 scalar dual
+packet，也不能产生 power saving；最小自然替代是 profile-aware character theorem。
+
+```text
+TPC209_ROUTE_ADVANCE = YES
+TPC209_STRUCTURAL_THRESHOLD_A = PASS
+TPC209_SHARED_DUAL_PER_FIXED_DIVISOR = PROVED_EXACT
+TPC209_WHOLE_FRAME_VECTOR_COVARIANCE = PROVED_EXACT
+TPC209_MULTIPLICATIVE_CHARACTER_DIAGONALIZATION = PROVED_EXACT
+TPC209_RETURN_TO_V59_CHARACTER_INTERFACE = PROVED_EXACT
+TPC209_SCALAR_COMMON_DUAL_COLLAPSE = REFUTED_SCOPED
+TPC209_FRAME_ONLY_POWER_SAVING = STOP_SCOPED
+TPC209_SOURCE_VALID_KLOOSTERMAN_ATTACHMENT = OPEN
+TPC209_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC209_ARITHMETIC_ADVANCE = NO
+TPC209_FIXED_ATOM_CREDIT = 0
+TPC209_L2 = NONE
+TPC209_TPC_TRIGGER = true
+```
+
+完整 proof、独立 checker 与 numbered paper 分别为
+`bridge_b_whole_frame_poisson_mobius_obstruction.md`、
+`tpc_bridge_b_whole_frame_poisson_checker.py` 与
+`../../papers/tpc-209-whole-frame-poisson-mobius-obstruction/`。
+finite certificate 与 Gaussian sanity 只作 QA，不升级为渐近证据。
+
+当前位置已从 V61 的 zero-hole edge pre-emitter 推进到 profile-aware interface：
+frame-only route `STOP_SCOPED`，实际 Möbius/Poisson dual profiles 的 nonprincipal
+character bound仍是下一篇 TPC-210 的 open theorem。
 
 ## 61. V61 Bridge A / Gate B：zero-hole additive edge-frame compiler
 

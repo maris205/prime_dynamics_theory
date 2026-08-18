@@ -1,8 +1,8 @@
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-17
+更新时间：2026-08-18
 
-状态：**TPC208_STRUCTURAL_THRESHOLD_A_RELEASED / WHOLE_FRAME_COMPILER_OPEN**
+状态：**TPC210_STRUCTURAL_THRESHOLD_A_RELEASED / PROFILE_CLASS_STOP_SCOPED / PHYSICAL_PROFILE_BOUND_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
@@ -79,6 +79,93 @@ OPEN_THEOREM = STANDARD_ZERO_HOLE_PRIME_ONLY_Q_WEIGHTED_KERNEL_LOCALIZED_Q_MINUS
 REUSABLE_STRUCTURE = NORMALIZED_CENTERED_RESIDUE_SELECTOR_PLUS_POLARIZE_THEN_INTEGRATE_THEN_ESTIMATE
 ROUND2_CLUE = EXPAND_ZERO_HOLE_LEVERAGE_IN_ADDITIVE_FREQUENCIES_AND_TARGET_ONLY_OFF_EQUAL_FREQUENCIES_WHILE_RETAINING_THE_SEPARATE_DIAGONAL_F_TERM
 ```
+
+## 0.3 已发布：TPC-209 whole-frame Poisson Möbius-dilation obstruction
+
+项目：`papers/tpc-209-whole-frame-poisson-mobius-obstruction/`
+
+类型：**PROVED_STRUCTURAL_L1 / STOP_SCOPED_FRAME_ONLY_SAVING**。
+
+TPC-209 对 V61 的 complete additive edge frame 先做 fixed-divisor Poisson，再恢复
+Möbius divisor sum。主要结果为：
+
+1. **PROVED** — `(k,r) -> n=qr+kD` 是 fixed unit divisor 下的 exact whole-frame
+   dual reindex；
+2. **PROVED** — 跨 divisor 的完整 frame covariance 保留 `D,E` cross terms，并由
+   multiplicative permutation `U_D` 精确描述；
+3. **PROVED** — multiplicative Fourier 给出 shared-character、divisor-dependent
+   profile normal form；Gauss sum exact 返回 V59 nonprincipal-character interface；
+4. **PROVED / SHARP OBSTRUCTION** — `L_c` 的 operator norm 为 `||c||_2`，aligned
+   profiles 达到等号；`q=5` resonance 达到 coefficient `ell^1` mass；
+5. **REFUTED_SCOPED** — frame-only Poisson algebra 不推出 scalar common dual packet
+   或 power saving；
+6. **OPEN** — actual Möbius/Poisson profiles 的 prime-only、diagonal-corrected、
+   block-reassembled nonprincipal-character bound。
+
+```text
+TPC209_ROUTE_ADVANCE = YES
+TPC209_ARITHMETIC_ADVANCE = NO
+TPC209_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC209_FIXED_ATOM_CREDIT = 0
+TPC209_L2 = NONE
+TPC209_TPC_TRIGGER = true
+```
+
+完整 proof/checker/PDF 已生成；finite QA 不是渐近证据。下一自然候选是 TPC-210
+profile-aware nonprincipal-character theorem，不假设公共 scalar dual packet。
+
+## 0.4 已发布：TPC-210 Poisson profile realizability and Mobius alignment obstruction
+
+项目：`papers/tpc-210-poisson-profile-realizability/`
+
+类型：**PROVED_STRUCTURAL_L1 / STOP_SCOPED_PROFILE_CLASS**。
+
+TPC-210 检验 TPC-209 的 profile-aware 窄门：Schwartz regularity、有限 Poisson
+reindexing 和 literal Mobius signs 是否已经足以排除跨 divisor 的 coherent alignment。
+答案是否定的，但结论严格限定在 independent admissible profile class：
+
+1. **PROVED** — 对每个 prime `q>2`，任意 `C^(F_q^*)` target profile 都可由 compactly
+   supported smooth Fourier packet 精确实现；isolated dual nodes 与 `C_c^infty` bump
+   给出有限族同时插值。
+2. **PROVED** — 对 squarefree unit divisors 取 `c_D=mu(D)`、
+   `B_D=mu(D)U_D^*z`，得到 exact aligned family，所有 coherent outputs 都等于同一
+   centered witness `z`。
+3. **PROVED** — coherent whole-frame energy 与 weighted diagonal energy 的比值恰为
+   divisor component 数；`q=5` 的 two-divisor witness 精确达到 ratio `2`。
+4. **PROVED** — profile-aware energy 精确化为 cross-divisor PSD Gram quadratic form
+   `sum_(D,E)c_D conjugate(c_E) G_(D,E)`。
+5. **REFUTED_SCOPED** — 仅凭 Schwartz/Poisson/Mobius profile admissibility，不能推出
+   universal profile-level power saving。
+6. **OPEN** — literal coupled TPC physical profiles 的 cross-divisor Gram bound，仍须
+   保留 `(q-2)` diagonal、prime shell、kernel localization、four-packet signs 与 block
+   reassembly。
+
+```text
+TPC210_ROUTE_ADVANCE = YES
+TPC210_STRUCTURAL_THRESHOLD_A = PASS
+TPC210_FINITE_PROFILE_INTERPOLATION = PROVED_EXACT
+TPC210_MOBIUS_WEIGHTED_ALIGNED_FAMILY = PROVED_EXACT
+TPC210_CROSS_DIVISOR_GRAM_REDUCTION = PROVED_EXACT
+TPC210_PROFILE_CLASS_UNIVERSAL_SAVING = REFUTED_SCOPED
+TPC210_ACTUAL_PHYSICAL_PROFILE_BOUND = OPEN
+TPC210_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC210_ARITHMETIC_ADVANCE = NO
+TPC210_FIXED_ATOM_CREDIT = 0
+TPC210_L2 = NONE
+TPC210_TPC_TRIGGER = true
+```
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_FINITE_SCHWARTZ_POISSON_PROFILE_SURJECTIVITY_WITH_LITERAL_MOBIUS_ALIGNED_REALIZABLE_FAMILY
+STRONGEST_OBSTRUCTION = CROSS_DIVISOR_GRAM_RATIO_EQUALS_DIVISOR_COUNT_ON_AN_ADMISSIBLE_PROFILE_CLASS
+OPEN_THEOREM = ACTUAL_COUPLED_PHYSICAL_MOBIUS_POISSON_CROSS_DIVISOR_GRAM_BOUND_WITH_EXACT_DIAGONAL_AND_PRIME_SHELL_REASSEMBLY
+REUSABLE_STRUCTURE = ISOLATED_FOURIER_NODE_INTERPOLATION_PLUS_MOBIUS_ADJOINT_ALIGNMENT_PLUS_PSD_CROSS_DIVISOR_GRAM
+ROUND2_CLUE = FIND_A_LITERAL_PHYSICAL_CROSS_DIVISOR_COUPLING_BEFORE_ANY_NEW_PRIME_BDH_ATTACHMENT
+```
+
+The alignment construction is not claimed to be the literal coupled TPC coefficient family;
+it is an interface obstruction for independent admissible profiles. Finite certificate rows
+remain QA only and do not create arithmetic `L2` progress.
 
 ## 1. 记录规则
 

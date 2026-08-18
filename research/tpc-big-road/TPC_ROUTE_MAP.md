@@ -1,14 +1,16 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-17
+更新时间：2026-08-18
 
-当前地图版本：V61
+当前地图版本：V63 / TPC-210
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-208`（`PROVED_STRUCTURAL_L1`）；对应论文目录为
-`papers/tpc-208-zero-hole-additive-edge-frame/`。V61 已把 standard-zero-hole
-remainder exact编译为 complete-graph additive edge frame，但没有关闭完整 Gate B。
+当前编号锚点：`TPC-210`（`PROVED_STRUCTURAL_L1 / STOP_SCOPED_PROFILE_CLASS`）；对应
+论文目录为 `papers/tpc-210-poisson-profile-realizability/`。TPC-210 已证明有限
+Schwartz/Poisson residue-profile map 的满射性，并把 TPC-209 的 alignment obstruction
+提升为 admissible independent profile class 内的 exact obstruction；但没有关闭 literal
+coupled physical profile bound 或完整 Gate B。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -50,9 +52,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +-----------------------------------------------+
-        | YOU ARE HERE — V61                            |
-        | GATE-B WHOLE ADDITIVE EDGE-FRAME ZONE         |
-        | pre-emitter built; collective theorem = OPEN  |
+        | YOU ARE HERE — V63 / TPC-210                  |
+        | GATE-B CROSS-DIVISOR COUPLING ZONE            |
+        | profile class obstruction proved; physical bound OPEN |
         +-----------------------------------------------+
                 |
                 v
@@ -83,7 +85,25 @@ literal two-frequency edges不能 strict sparsify；每个 weight都被强制为
 edge/fiber triangle之前，把完整 oriented `(d,k)` frame集体变换成 source-valid
 Kloosterman cells并保留 prime-shell signed reassembly”。
 
-一句话定位：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
+TPC-209 证实了 fixed divisor 内的 shared dual lattice：`n=qr+kD` 对同一
+`D` 的 entire edge frame 是 exact bijection。它也精确暴露了跨 divisor 的残余：
+`Y=sum_D c_D U_D B_D`，而不是一个公共 scalar packet。multiplicative Fourier
+把 `U_D` 对角化为 character multiplier，却通过 Gauss crosswalk 返回 V59
+nonprincipal-character interface。sharp alignment (`||L_c||=||c||_2`) 和
+`q=5` resonance 说明 frame geometry 本身不给 divisor cancellation。
+
+TPC-210 随后证明 isolated dual nodes 与 `C_c^infty` bumps 可以精确实现任意有限
+residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-diagonal
+ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
+这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
+
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝，但当前位置已从 TPC-209 的
+frame-only obstruction 前移到 TPC-210 的 physical cross-divisor coupling zone。
+V63 是 structural advance 与 profile-class scoped obstruction，不是 arithmetic
+saving；FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom credit 全部保持
+OPEN/UNPAID/NO。**
+
+一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
 Fourier--Kloosterman emitter，V39 看清 nuclear/Schatten toll，V40 把 scalar 压到
 `q`-row，V41 又把每个 row 精确拆成已付的三剩余类模型 `m_q` 与 residual `rho_q`。
@@ -789,6 +809,80 @@ Kloosterman engine只到单 cell，未付 block atomic budget和跨 `q` 的 L2 r
 所有 row仍删除 `h=0`，所以 Gate B闭合本身不支付 terminal Gate A；V43 只证明两门
 由 `D=A_alias-L_pr*S+paid errors` 精确相连，最终仍须同时给 saving。
 
+## 5.3 V62 / TPC-209：whole-frame Poisson profile obstruction
+
+TPC-209 是 V61 complete-graph edge frame 的直接下一站。固定 unit divisor `D` 时，
+Poisson 给出 exact reindex `(k,r)->n=qr+kD`，所以同一 `D` 的所有 edge terms 共用
+一个 dual lattice。恢复 divisor sum 后，dual packet 被 `U_D:b(k)->b(kD)` 置换。
+完整 frame 的 cross terms 必须保留；multiplicative Fourier 只给出带
+divisor-dependent profile 的 shared-character form，并由 Gauss sum exact 回到 V59。
+
+frame-only route 的 strongest obstruction 是 sharp alignment theorem：
+`||P sum_D c_D U_D B_D||` 的 direct-sum operator norm为 `||c||_2`，aligned
+profiles 达到等号。`q=5, D=2,3, c_2=c_3=-1` 的 quadratic character multiplier
+等于 coefficient `ell^1` mass，故不能从 frame algebra 推出 scalar collapse 或 power
+saving。
+
+```text
+TPC209_ROUTE_ADVANCE = YES
+TPC209_STRUCTURAL_THRESHOLD_A = PASS
+TPC209_SHARED_DUAL_PER_FIXED_DIVISOR = PROVED_EXACT
+TPC209_WHOLE_FRAME_VECTOR_COVARIANCE = PROVED_EXACT
+TPC209_MULTIPLICATIVE_CHARACTER_DIAGONALIZATION = PROVED_EXACT
+TPC209_RETURN_TO_V59_CHARACTER_INTERFACE = PROVED_EXACT
+TPC209_SCALAR_COMMON_DUAL_COLLAPSE = REFUTED_SCOPED
+TPC209_FRAME_ONLY_POWER_SAVING = STOP_SCOPED
+TPC209_SOURCE_VALID_KLOOSTERMAN_ATTACHMENT = OPEN
+TPC209_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC209_ARITHMETIC_ADVANCE = NO
+TPC209_FIXED_ATOM_CREDIT = 0
+TPC209_L2 = NONE
+TPC209_TPC_TRIGGER = true
+```
+
+地图位置：**V62 / TPC-209 已完成 frame-only structural pier；下一块桥面是
+actual Möbius/Poisson dual profiles 的 profile-aware nonprincipal-character bound，
+即 TPC-210 候选。**
+
+## 5.4 V63 / TPC-210：Poisson profile realizability and physical coupling obstruction
+
+TPC-210 直接检验上节的最小候选。对每个 prime `q>2`，取 isolated dual nodes
+`n_s=s+10qs` 与半径 `rho=1/(4q)` 的 compactly supported smooth bumps；每个 residue
+class 的 dual lattice 只命中一个 node，因此有限 Schwartz/Poisson profile map 是满射。
+这一步把 TPC-209 的 abstract aligned vector fixture 变成了一个 admissible profile-class
+construction。
+
+对 squarefree unit divisor family 取 `c_D=mu(D)`、`B_D=mu(D)U_D^*z`，其中 `z` 为
+centered witness，则每个 output 都等于 `z`，coherent whole-frame energy 与 weighted
+diagonal energy 的比值恰为 divisor count。因而 profile-aware energy 的自然对象是
+
+```text
+G_(D,E) = <P U_D B_D, P U_E B_E>,
+sum_(D,E) c_D conjugate(c_E) G_(D,E).
+```
+
+这是一个真实的 `PROVED_STRUCTURAL_L1` obstruction，但 scope 必须保持在 independent
+admissible profiles：TPC-210 没有证明 literal coupled TPC physical coefficient family
+能实现 aligned profiles，也没有反驳该 physical family 可能存在的 cross-divisor
+coupling。下一座桥不再是新的 profile norm inequality，而是对 actual coupled profiles
+证明 Gram cancellation 或给出 source-valid replacement；在此之前不能宣称
+prime-only fixed-saving、Gate B、`L2` 或 twin-prime progress。
+
+```text
+TPC210_ROUTE_ADVANCE = YES
+TPC210_STRUCTURAL_THRESHOLD_A = PASS
+TPC210_PROFILE_CLASS_UNIVERSAL_SAVING = REFUTED_SCOPED
+TPC210_ACTUAL_PHYSICAL_PROFILE_BOUND = OPEN
+TPC210_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC210_ARITHMETIC_ADVANCE = NO
+TPC210_FIXED_ATOM_CREDIT = 0
+TPC210_L2 = NONE
+```
+
+地图位置：**V63 / TPC-210 已完成 admissible profile-class obstruction；当前桥面是
+literal physical cross-divisor coupling/Gram bound，之后才回到 prime-only collective
+Kloosterman reassembly。**
+
 ## 6. 图像名称与仓库名称的对应
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
@@ -836,7 +930,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V61：
+截至 V63 / TPC-210：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -846,8 +940,9 @@ TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
 FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 L2 = NONE
 TPC_208_TRIGGER = true
-TPC_209_TRIGGER = false
-NUMBERED_RELEASE = TPC-208
+TPC_209_TRIGGER = true
+TPC_210_TRIGGER = true
+NUMBERED_RELEASE = TPC-210
 ```
 
 以下事实不得从路线图中推断：
@@ -857,50 +952,54 @@ NUMBERED_RELEASE = TPC-208
 - averaged/a.e. phase 不等于 named fixed atom；
 - source-backed local engine 不等于 whole-object reassembly；
 - off-zero control 不等于 physical zero-axis payment；
-- route advance 不自动创建下一篇编号；TPC-208 已由 V61 的真实 theorem-backed
-  structural edge触发，`TPC-209` 仍未触发。
+- route advance 不自动创建下一篇编号；TPC-208、TPC-209 与 `TPC-210` 都是由各自
+  exact theorem-backed structural edge 或 scoped obstruction 触发，下一编号仍须重新
+  检查 theorem edge，不得由本地图箭头自动生成。
 
 ## 8. 下一步大路
 
 优先级更新为：
 
-1. **TPC-209 候选：whole-frame Möbius/Poisson compiler**。对 V61 完整 oriented
-   `(d,k)` tight frame先作 transform，禁止 edge/fiber triangle；测试是否出现一个
-   shared dual variable。若能输出 source-valid coefficient arrays，则记录 exact
-   attachment与 norm ledger；若 multiplicity不可避免，则形成 precise obstruction，
-   不提前宣称 prime-BDH saving。
-2. **V59 polarized prime-BDH Gate-B compiler**。若第 1 步给出可用的 cell interface，
+1. **TPC-210 已完成：admissible Poisson profile-class obstruction**。有限 profile map
+   的满射、literal Mobius-weighted aligned family与 cross-divisor PSD Gram reduction
+   已证明；independent profile class 的 universal saving 已 `REFUTED_SCOPED`，但
+   actual coupled physical profile bound仍 OPEN。
+2. **literal physical cross-divisor coupling theorem**。必须从 actual TPC coefficient
+   family中导出 profiles之间的 relation、Gram cancellation或 source-valid replacement；
+   不得把 independent aligned family当作 literal physical counterexample，也不得以
+   individual profile norms替代 cross-divisor estimate。
+3. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
    对四个 `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
    diagonal-corrected reduced-residue remainder证明集体 fixed-power saving；不得把
    Harper all-moduli variance或 Blomer--Pascadi fixed cell直接当成 global theorem；
-3. **V58 full-shell Gate-A root**。直接证明同一个 literal V51
+4. **V58 full-shell Gate-A root**。直接证明同一个 literal V51
    mixed-plus-balanced fold的 full-shell fixed-power saving；这是与 Gate-B 并行的主
    桥墩，不是 V60 translation payment的自动后果；
-4. **按全局 Siegel quality 保留条件分流**。unbounded world可调用已锁定的
+5. **按全局 Siegel quality 保留条件分流**。unbounded world可调用已锁定的
    Matomaki--Merikoski `h=2` correlation exit；不得把单尺度 singleton误判为
    unbounded sequence；
-5. **V58 Gate-B scalar root（等价终端表述）**。直接对已经 exact识别的 V35
+6. **V58 Gate-B scalar root（等价终端表述）**。直接对已经 exact识别的 V35
    proper-factor centered core证明
    `|mathfrak C_x|<<x^(5/3-delta+o(1))`、`delta>1/400`；V59只重写对象，
    没有降低这个 terminal burden；
-6. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
+7. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
    才证明 `C_perp` 的 one-`Q` variance；不得再把它列为 physical endpoint必需门；
-7. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
+8. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
    package，仍可对 pruned tree的 large nodes统一估计；
-8. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
+9. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
    signed diagonal/off-diagonal，并支付
    `(delta_B+delta_W)/2+rho>1/400`；fixed-modulus local engine只作条件工具；
-9. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
+10. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
    row species证明 one-`Q` variance，另一种由 paid difference自动继承；不得先把
    longitudinal mode删掉后声称完整 theorem；
-10. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
+11. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
    endpoint-matched direct core与三引擎 heuristic fallback，但不再强迫它先于
    reverse-Type-I/balanced lane；
-11. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
+12. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
    preferred sufficient gate；P2/K 是 stronger norms，E/X
    分别是 `sigma<13/4800` whole residual energy和
    `kappa>403/1200` joint character theorem，不与 MPD lane叠加 theorem credit；
-12. **C：只在前十一条路线真实阻断或新 source 出现时，重开 distinguished-seed
+13. **C：只在前十二条路线真实阻断或新 source 出现时，重开 distinguished-seed
    symmetry-breaking/dynamics reserve。**
 
 ### 8.1 地图式施工顺序
@@ -910,14 +1009,16 @@ TPC-207 moving-hole payment                         DONE (structural L1)
         |
         +--> TPC-208 zero-hole additive edge frame  DONE (structural L1)
         |          |
-        |          +--> TPC-209 whole-frame transform NEXT CANDIDATE
+        |          +--> TPC-209 whole-frame transform DONE (frame-only obstruction)
         |          |       |
-        |          |       +--> positive cell interface
-        |          |       -> collective four-packet prime-BDH compiler
+        |          |       +--> TPC-210 profile realizability DONE (profile-class obstruction)
+        |          |               |
+        |          |               +--> physical cross-divisor coupling / Gram bound OPEN
+        |          |               -> collective four-packet prime-BDH compiler
         |          |       -> Gate-B scalar saving > 1/400
         |          |
-        |          +------> explicit obstruction
-        |                  -> smallest repaired zero-hole theorem
+        |          +------> explicit obstruction recorded
+        |                  -> smallest repaired zero-hole theorem = physical-coupled profile route
         |
         +--> parallel: V51 full-shell signed Gate-A root
                    -> endpoint matching / loss ledger
@@ -954,6 +1055,8 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-18 | V63 / TPC-210 | Bridge A / Gate B：admissible Poisson profile-class obstruction；physical cross-divisor coupling open | `TPC-210` | finite Schwartz/Poisson profile surjectivity、literal Mobius alignment、cross-divisor PSD Gram reduction；arithmetic仍为 NO |
+| 2026-08-18 | V62 / TPC-209 | Bridge A / Gate B：whole-frame Poisson profile interface；frame-only route scoped stop | `TPC-209` | fixed-divisor shared dual、whole-frame covariance、character profile normal form、V59 Gauss crosswalk、sharp alignment obstruction；arithmetic仍为 NO |
 | 2026-08-17 | V61 | Bridge A / Gate B：zero-hole complete-graph pre-emitter built；whole-frame Kloosterman compiler open | working release；TPC-208 | exact additive projection、edgewise `(q-2)` diagonal deletion、physical-kernel crosswalk、oriented fibers与 literal-edge no-sparsification；arithmetic仍为 NO |
 | 2026-08-17 | V60 | Bridge A / Gate B：translation subgate已支付；zero-hole prime-BDH仍 open | `19c57a320c9e572401b8eddd46ba16a4ff7c09d9`；TPC-207 | exact moving-hole projector、`q-2` diagonal lift、four-packet translation compiler与 `x^(53/32+o(1))` defect payment；full Gate B仍未关闭 |
 | 2026-08-13 | V59 | Bridge A / Gate B：V35 terminal scalar已极化成四个 one-sequence prime-BDH remainders；collective block-to-cell compiler open | parent `f1ac29aed20e0ab7fbf8eaba3ae6339d9fca946a`; V59=current working release | exact complex polarization、`q-2` diagonal、reduced-residue variance、`Q^2/H=x^(1/96)` clock与 source/interface NO-GO；arithmetic仍为 NO |

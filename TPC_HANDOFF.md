@@ -1,7 +1,147 @@
 # TPC HANDOFF
 
-更新时间：2026-08-17
-交接状态：`BOLD_CHANNEL_V61_TPC208_SEALED_FOR_NEW_SESSION`
+更新时间：2026-08-18
+交接状态：`BOLD_CHANNEL_V63_TPC210_SEALED_FOR_NEW_SESSION`
+
+TPC-210 当前 section：Poisson profile realizability and the Mobius alignment obstruction
+----------------------------------------------------------------
+
+TPC-210 是 V62/TPC-209 的直接结构性后续。它先回答一个必要的接口问题：Schwartz
+regularity、有限 Poisson reindexing 和 literal Mobius signs 是否已经限制了每个 divisor
+的 dual residue profile，使 TPC-209 的 alignment obstruction失效。答案是否定的，且
+否定是 exact、但明确 scoped 的：对每个 prime `q>2`，有限 profile map
+
+~~~text
+F_D in Schwartz(R) -> B_D(s)=sum_(n congruent s mod q) Fhat_D(n/q)
+~~~
+
+是满射到 `C^(F_q^*)`。使用 isolated dual nodes `n_s=s+10qs` 与半径
+`rho=1/(4q)` 的 `C_c^infty` bumps，可同时精确实现任意有限 target profile。
+
+对 squarefree unit divisor family，取
+
+~~~text
+c_D = mu(D),       B_D = mu(D) U_D^* z,
+~~~
+
+其中 `z` 是 centered witness。于是每个 coherent output 都等于 `z`，whole-frame
+energy 与 weighted diagonal energy 的 ratio 恰为 divisor component 数；`q=5` 的
+two-divisor witness exact ratio 为 `2`。profile-aware energy 的自然对象是
+
+~~~text
+G_(D,E)=<P U_D B_D, P U_E B_E>,
+sum_(D,E)c_D conjugate(c_E)G_(D,E).
+~~~
+
+这证明：仅凭 independent admissible Poisson profiles，不能推出 universal profile-level
+power saving。它不是 literal coupled TPC physical coefficient family 的反例；TPC-210
+没有证明 physical profiles 可以任意独立，也没有证明它们不能通过实际 coupling 获得
+Gram cancellation。因此当前第一缺口已经从“profile class 是否可实现”转为
+**actual physical cross-divisor coupling / Gram bound**，之后才可回到 prime-only
+collective Kloosterman reassembly。
+
+~~~text
+TPC210_MAXIMUM_CLAIM = EXACT_FINITE_POISSON_PROFILE_INTERPOLATION_PLUS_MOBIUS_WEIGHTED_ALIGNED_GRAM_OBSTRUCTION
+TPC210_ROUTE_ADVANCE = YES
+TPC210_STRUCTURAL_THRESHOLD_A = PASS
+TPC210_FINITE_PROFILE_INTERPOLATION = PROVED_EXACT
+TPC210_MOBIUS_WEIGHTED_ALIGNED_FAMILY = PROVED_EXACT
+TPC210_CROSS_DIVISOR_GRAM_REDUCTION = PROVED_EXACT
+TPC210_PROFILE_CLASS_UNIVERSAL_SAVING = REFUTED_SCOPED
+TPC210_ACTUAL_PHYSICAL_PROFILE_BOUND = OPEN
+TPC210_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC210_ARITHMETIC_ADVANCE = NO
+TPC210_GLOBAL_GATE_B_ADVANCE = NO
+TPC210_FIXED_ATOM_CREDIT = 0
+TPC210_L2 = NONE
+TPC210_FIRST_FATAL = NO_CROSS_DIVISOR_PHYSICAL_COUPLING_FROM_SCHWARTZ_POISSON_MOBIUS_INTERFACE_ALONE
+TPC210_ROUND2_CLUE = FIND_A_LITERAL_PHYSICAL_CROSS_DIVISOR_COUPLING_OR_GRAM_BOUND_BEFORE_ANY_NEW_PRIME_BDH_ATTACHMENT
+TPC210_REUSABLE_STRUCTURE = ISOLATED_FOURIER_NODE_PROFILE_INTERPOLATION_PLUS_MOBIUS_ADJOINT_ALIGNMENT_PLUS_PSD_GRAM
+TPC210_TPC_TRIGGER = true
+TPC_210_TRIGGER = true
+~~~
+
+论文目录：`papers/tpc-210-poisson-profile-realizability/`
+
+~~~text
+papers/tpc-210-poisson-profile-realizability/README.md
+papers/tpc-210-poisson-profile-realizability/PAPER_PLAN.md
+papers/tpc-210-poisson-profile-realizability/paper/main.tex
+papers/tpc-210-poisson-profile-realizability/paper/references.bib
+papers/tpc-210-poisson-profile-realizability/paper/paper.pdf
+papers/tpc-210-poisson-profile-realizability/code/profile_realization.py
+papers/tpc-210-poisson-profile-realizability/experiments/run_certificate.py
+papers/tpc-210-poisson-profile-realizability/experiments/independent_checker.py
+papers/tpc-210-poisson-profile-realizability/experiments/profile_interpolation_sanity.py
+papers/tpc-210-poisson-profile-realizability/results/certificate.json
+papers/tpc-210-poisson-profile-realizability/notes/theorem_ledger.md
+papers/tpc-210-poisson-profile-realizability/notes/source_lock.md
+papers/tpc-210-poisson-profile-realizability/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_poisson_profile_realizability_obstruction.md
+research/tpc-big-road/tpc_bridge_b_poisson_profile_realizability_checker.py
+~~~
+
+TPC-210 PDF 为 6 页，已完成字体嵌入、逐页渲染和正文/log QA。finite certificate
+覆盖 `q=3,5,7,11,13`、20 个 realized profile rows、178 个 residue-coordinate rows
+和 34 个 support-geometry rows；这些是有限 QA，不是渐近算术证据。
+
+第 109 节仍位于“解析消去岛 / Bridge A / Gate B”。TPC-209 直接测试 V61 的
+ROUND2_CLUE：在 complete additive edge frame 上先作 Möbius/Poisson，而不是先对 edge
+或 fiber 取 triangle。对每个 fixed unit divisor `D`，Schwartz component 满足 exact
+
+~~~text
+Y_D(k)=sum_r Fhat_D(r+kD/q)
+     =sum_(n congruent kD mod q) Fhat_D(n/q),
+(k,r) -> n=qr+kD.
+~~~
+
+所以同一 `D` 的全部 edge vertices 共享一个 dual integer lattice。跨 divisor 恢复后
+dual packet 变成 `Y=sum_D c_D U_D B_D`，其中 `(U_D b)(k)=b(kD)`。完整 frame
+covariance 精确保留 `D,E` cross terms；multiplicative Fourier 将 `U_D` 对角化为
+character multiplier `chi(D)`，但 profile `M B_D(chi)` 仍依赖 `D`。对 physical
+additive vector，Gauss sum exact 返回 V59 nonprincipal-character interface。
+
+TPC-209 的 sharp obstruction 是
+
+~~~text
+||L_c|| = (sum_D |c_D|^2)^(1/2),
+L_c((B_D))=P sum_D c_D U_D B_D.
+~~~
+
+aligned profiles 达到等号；common-profile 的 `q=5,D=2,3,c_2=c_3=-1` fixture
+有 energy ratio `2`，quadratic character multiplier 等于完整 coefficient `ell^1`
+mass。因此 frame-only transform 不能自动 collapse 为 scalar dual packet，也不能
+支付 power saving。最小自然后续是 TPC-210 的 actual profile-aware nonprincipal-
+character bound。
+
+~~~text
+TPC209_MAXIMUM_CLAIM = EXACT_FIXED_DIVISOR_WHOLE_FRAME_POISSON_REINDEXING_PLUS_MULTIPLICATIVE_SPECTRAL_NORMAL_FORM_AND_SHARP_VECTOR_ALIGNMENT_OBSTRUCTION
+TPC209_ROUTE_ADVANCE = YES
+TPC209_STRUCTURAL_THRESHOLD_A = PASS
+TPC209_SHARED_DUAL_PER_FIXED_DIVISOR = PROVED_EXACT
+TPC209_WHOLE_FRAME_VECTOR_COVARIANCE = PROVED_EXACT
+TPC209_MULTIPLICATIVE_CHARACTER_DIAGONALIZATION = PROVED_EXACT
+TPC209_RETURN_TO_V59_CHARACTER_INTERFACE = PROVED_EXACT
+TPC209_SCALAR_COMMON_DUAL_COLLAPSE = REFUTED_SCOPED
+TPC209_FRAME_ONLY_POWER_SAVING = STOP_SCOPED
+TPC209_SOURCE_VALID_KLOOSTERMAN_ATTACHMENT = OPEN
+TPC209_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC209_ARITHMETIC_ADVANCE = NO
+TPC209_GLOBAL_GATE_B_ADVANCE = NO
+TPC209_FIXED_ATOM_CREDIT = 0
+TPC209_L2 = NONE
+TPC209_FIRST_FATAL = NO_FRAME_ONLY_SCALAR_EMITTER_DILATION_PERMUTATIONS_SURVIVE_AND_CHARACTER_DIAGONALIZATION_RETURNS_TO_V59
+TPC209_ROUND2_CLUE = PROVE_OR_REFUTE_A_PROFILE_AWARE_NONPRINCIPAL_CHARACTER_BOUND_FOR_THE_ACTUAL_MOBIUS_POISSON_DUAL_PACKETS_BEFORE_ANY_PRIME_OR_BLOCK_TRIANGLE
+TPC209_REUSABLE_STRUCTURE = WHOLE_FRAME_POISSON_VECTOR_COMPILER_PLUS_MULTIPLICATIVE_CHARACTER_PROFILE_NORMAL_FORM
+TPC209_TPC_TRIGGER = true
+TPC_209_TRIGGER = true
+~~~
+
+完整 proof 为 `research/tpc-big-road/bridge_b_whole_frame_poisson_mobius_obstruction.md`，
+独立 checker 为 `research/tpc-big-road/tpc_bridge_b_whole_frame_poisson_checker.py`，
+编号论文目录为 `papers/tpc-209-whole-frame-poisson-mobius-obstruction/`。TPC-209
+通过结构性阈值 A，但没有 arithmetic `L2`、fixed-atom credit、strict `1/400` 或
+twin-prime theorem。
 
 第 108 节仍位于“解析消去岛 / Bridge A / Gate B”。V61 攻击 V60 留下的
 standard-zero-hole、prime-only、`q`-weighted、kernel-localized、exact-diagonal-
@@ -3981,13 +4121,17 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V61 gate及其 V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；七十八次必须都为零，且每一对 stdout
+22项启动回归之后，当前 V63/TPC-210 gate及其 V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；八十二次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
+python -B research/tpc-big-road/tpc_bridge_b_poisson_profile_realizability_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_poisson_profile_realizability_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_zero_hole_additive_edge_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_zero_hole_additive_edge_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_whole_frame_poisson_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_whole_frame_poisson_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_polarized_local_bdh_checker.py --check
@@ -4068,16 +4212,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_euler_kernel_checker.py --check
 
 随后优先读取：
 
-1. `papers/tpc-208-zero-hole-additive-edge-frame/README.md`
-2. `papers/tpc-208-zero-hole-additive-edge-frame/notes/theorem_ledger.md`
-3. `research/tpc-big-road/bridge_b_zero_hole_additive_edge_frame.md`
-4. `papers/tpc-207-critical-moving-hole-bdh-defect/README.md`
-5. `papers/tpc-206-selected-lineage-pair-registry-projection/README.md`
-6. `papers/tpc-206-selected-lineage-pair-registry-projection/experiments/tpc206_selected_lineage_pair_registry.json`
-7. `papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments/tpc205_pair_native_registry_interface.json`
+0. `papers/tpc-210-poisson-profile-realizability/README.md`
+1. `papers/tpc-210-poisson-profile-realizability/notes/route_evaluation.md`
+2. `research/tpc-big-road/bridge_b_poisson_profile_realizability_obstruction.md`
+3. `research/tpc-big-road/tpc_bridge_b_poisson_profile_realizability_checker.py`
+
+4. `papers/tpc-209-whole-frame-poisson-mobius-obstruction/README.md`
+5. `research/tpc-big-road/bridge_b_whole_frame_poisson_mobius_obstruction.md`
+6. `research/tpc-big-road/tpc_bridge_b_whole_frame_poisson_checker.py`
+7. `papers/tpc-209-whole-frame-poisson-mobius-obstruction/notes/route_evaluation.md`
+
+8. `papers/tpc-208-zero-hole-additive-edge-frame/README.md`
+9. `papers/tpc-208-zero-hole-additive-edge-frame/notes/theorem_ledger.md`
+10. `research/tpc-big-road/bridge_b_zero_hole_additive_edge_frame.md`
+11. `papers/tpc-207-critical-moving-hole-bdh-defect/README.md`
+12. `papers/tpc-206-selected-lineage-pair-registry-projection/README.md`
+13. `papers/tpc-206-selected-lineage-pair-registry-projection/experiments/tpc206_selected_lineage_pair_registry.json`
+14. `papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments/tpc205_pair_native_registry_interface.json`
 
 不得因打开新会话、用户说“继续”、checker 通过或工作流已持续授权而
-自动创建 TPC-209。持续授权只移除了重复的人为许可步骤；只有新的
+自动创建下一编号论文。持续授权只移除了重复的人为许可步骤；只有新的
 theorem-backed edge 使定理状态发生真实变化时，才可编号。证书通过只说明
 当前有限 selected-lineage 边界被可靠冻结，不解除数学门槛。
 
