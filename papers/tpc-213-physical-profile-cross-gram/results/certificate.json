@@ -1,0 +1,364 @@
+{
+  "audit_counts": {
+    "cross_gram_cases": 3,
+    "delta_profile_coordinates": 47,
+    "delta_profile_rows": 3,
+    "emitter_cases": 3,
+    "lift_cases": 3
+  },
+  "claim_firewall": {
+    "arithmetic_advance": "NO",
+    "cross_divisor_frequency_gram": "PROVED_EXACT_FINITE",
+    "fixed_atom_credit": 0,
+    "full_gate_b_strict_1_over_400": "UNPAID",
+    "l2": "NONE",
+    "literal_v46_asymptotic_gram_bound": "OPEN",
+    "physical_direct_sum_replacement": "REFUTED_SCOPED",
+    "physical_profile_emitter_pullback": "PROVED_EXACT",
+    "prime_shell_reassembly": "OPEN",
+    "residue_lift_gcd_aliasing": "PROVED_EXACT",
+    "route_advance": "YES",
+    "structural_threshold_a": "PASS"
+  },
+  "classification": "PROVED_STRUCTURAL_L1_CROSS_DIVISOR_COUPLING",
+  "cross_gram_cases": [
+    {
+      "cross_gram": 0,
+      "cross_gram_nonzero": false,
+      "frequency_intersection_weight": 0,
+      "frequency_intersections": [],
+      "left": 5,
+      "left_diagonal_gram": 560,
+      "normalized_cross_gram_squared": "0",
+      "period": 35,
+      "right": 7,
+      "right_diagonal_gram": 770
+    },
+    {
+      "cross_gram": 560,
+      "cross_gram_nonzero": true,
+      "frequency_intersection_weight": 16,
+      "frequency_intersections": [
+        [
+          1,
+          7,
+          2,
+          2
+        ],
+        [
+          2,
+          14,
+          2,
+          2
+        ],
+        [
+          3,
+          21,
+          2,
+          2
+        ],
+        [
+          4,
+          28,
+          2,
+          2
+        ]
+      ],
+      "left": 5,
+      "left_diagonal_gram": 560,
+      "normalized_cross_gram_squared": "4/39",
+      "period": 35,
+      "right": 35,
+      "right_diagonal_gram": 5460
+    },
+    {
+      "cross_gram": 770,
+      "cross_gram_nonzero": true,
+      "frequency_intersection_weight": 22,
+      "frequency_intersections": [
+        [
+          1,
+          5,
+          1,
+          1
+        ],
+        [
+          2,
+          10,
+          3,
+          3
+        ],
+        [
+          3,
+          15,
+          1,
+          1
+        ],
+        [
+          4,
+          20,
+          1,
+          1
+        ],
+        [
+          5,
+          25,
+          3,
+          3
+        ],
+        [
+          6,
+          30,
+          1,
+          1
+        ]
+      ],
+      "left": 7,
+      "left_diagonal_gram": 770,
+      "normalized_cross_gram_squared": "11/78",
+      "period": 35,
+      "right": 35,
+      "right_diagonal_gram": 5460
+    }
+  ],
+  "delta_profiles": [
+    {
+      "divisor": 5,
+      "l2_squared": "75/64",
+      "mean": "0",
+      "profile": [
+        "0",
+        "5/16",
+        "5/16",
+        "-15/16",
+        "5/16"
+      ],
+      "zero_axis": "0"
+    },
+    {
+      "divisor": 7,
+      "l2_squared": "245/216",
+      "mean": "0",
+      "profile": [
+        "0",
+        "7/36",
+        "7/36",
+        "7/36",
+        "7/36",
+        "-35/36",
+        "7/36"
+      ],
+      "zero_axis": "0"
+    },
+    {
+      "divisor": 35,
+      "l2_squared": "211925/13824",
+      "mean": "0",
+      "profile": [
+        "0",
+        "35/64",
+        "35/64",
+        "-175/192",
+        "35/64",
+        "-175/144",
+        "35/64",
+        "35/96",
+        "-175/192",
+        "35/64",
+        "35/144",
+        "35/64",
+        "-175/192",
+        "-175/192",
+        "35/96",
+        "35/144",
+        "35/64",
+        "35/64",
+        "-175/192",
+        "-175/192",
+        "35/144",
+        "35/96",
+        "35/64",
+        "-175/192",
+        "35/64",
+        "35/144",
+        "-175/192",
+        "35/64",
+        "-35/32",
+        "35/64",
+        "35/144",
+        "35/64",
+        "35/64",
+        "-175/192",
+        "35/64"
+      ],
+      "zero_axis": "0"
+    }
+  ],
+  "emitter_cases": [
+    {
+      "H": 40,
+      "divisor": 5,
+      "maximum_abs_m": 2,
+      "norm_squared": 16,
+      "occupancy": [
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      "q_values": [
+        11,
+        13,
+        17
+      ],
+      "reciprocal_pair_count": 8,
+      "two_m_less_than_d": true,
+      "zero_frequency_occupancy": 0
+    },
+    {
+      "H": 40,
+      "divisor": 7,
+      "maximum_abs_m": 2,
+      "norm_squared": 22,
+      "occupancy": [
+        0,
+        1,
+        3,
+        1,
+        1,
+        3,
+        1
+      ],
+      "q_values": [
+        11,
+        13,
+        17
+      ],
+      "reciprocal_pair_count": 10,
+      "two_m_less_than_d": true,
+      "zero_frequency_occupancy": 0
+    },
+    {
+      "H": 40,
+      "divisor": 35,
+      "maximum_abs_m": 14,
+      "norm_squared": 156,
+      "occupancy": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        1,
+        3,
+        2,
+        2,
+        2,
+        3,
+        2,
+        2,
+        3,
+        2,
+        1,
+        3,
+        2,
+        2,
+        3,
+        1,
+        2,
+        3,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        3,
+        1,
+        2,
+        2,
+        2,
+        0
+      ],
+      "q_values": [
+        11,
+        13,
+        17
+      ],
+      "reciprocal_pair_count": 68,
+      "two_m_less_than_d": true,
+      "zero_frequency_occupancy": 0
+    }
+  ],
+  "fixture": {
+    "H": 40,
+    "complete_period": 35,
+    "cutoff_z": 3,
+    "divisors": [
+      5,
+      7,
+      35
+    ],
+    "q_values": [
+      11,
+      13,
+      17
+    ],
+    "support": [
+      0,
+      34,
+      35
+    ]
+  },
+  "joint_lift": {
+    "codomain_dependency_dimension": 12,
+    "column_count": 35,
+    "domain_kernel_dimension": 0,
+    "rank": 35,
+    "row_count": 47
+  },
+  "lift_cases": [
+    {
+      "compatibility_identity": true,
+      "gcd": 1,
+      "lcm": 35,
+      "left": 5,
+      "nonzero_entries": 35,
+      "rank": 1,
+      "right": 7,
+      "support_size": 35
+    },
+    {
+      "compatibility_identity": true,
+      "gcd": 5,
+      "lcm": 35,
+      "left": 5,
+      "nonzero_entries": 35,
+      "rank": 5,
+      "right": 35,
+      "support_size": 35
+    },
+    {
+      "compatibility_identity": true,
+      "gcd": 7,
+      "lcm": 35,
+      "left": 7,
+      "nonzero_entries": 35,
+      "rank": 7,
+      "right": 35,
+      "support_size": 35
+    }
+  ],
+  "modeling_choice": "UNIT_RECIPROCAL_WEIGHTS_PSI_EQUALS_ONE_NO_LOG_PREFactor",
+  "open_theorem": "BOUND_THE_JOINT_PULLBACK_KERNEL_FOR_THE_LITERAL_V46_RANGE_WITH_SMOOTH_PSI_FOUR_PACKET_SIGNS_ZERO_AXIS_AND_PRIME_SHELL_REASSEMBLY",
+  "schema": "TPC213_PHYSICAL_PROFILE_CROSS_GRAM_CERTIFICATE_V1",
+  "theorem_contract": {
+    "cross_divisor_frequency_gram": "PROVED_EXACT_FINITE",
+    "literal_v46_asymptotic_gram_bound": "OPEN",
+    "physical_direct_sum_replacement": "REFUTED_SCOPED",
+    "physical_profile_emitter_pullback": "PROVED_EXACT_OPERATOR_IDENTITY",
+    "residue_lift_gcd_aliasing": "PROVED_EXACT_FINITE",
+    "smooth_psi_prime_shell_reassembly": "OPEN"
+  }
+}

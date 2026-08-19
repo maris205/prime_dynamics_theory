@@ -1,16 +1,15 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-18
+更新时间：2026-08-19
 
-当前地图版本：V65 / TPC-212
+当前地图版本：V66 / TPC-213
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-212`（`PROVED_STRUCTURAL_L1 / STOP_SCOPED_BOUNDARY_EMITTER`）；对应
-论文目录为 `papers/tpc-212-truncated-boundary-emitter/`。TPC-212 已精确拆出 truncated
-divisor-band 的 signed Boolean boundary、reciprocal occupancy collision Gram 与
-emitter-only alignment obstruction；但没有关闭 literal physical coupling、prime-shell
-reassembly 或完整 Gate B。
+当前编号锚点：`TPC-213`（`PROVED_STRUCTURAL_L1 / CROSS_DIVISOR_COUPLING`）；对应
+论文目录为 `papers/tpc-213-physical-profile-cross-gram/`。TPC-213 已将 common-source
+physical profile pullback、gcd/lcm residue aliasing 与 shared-frequency cross-Gram 精确
+写出；但没有关闭 literal V46 asymptotic Gram、prime-shell reassembly 或完整 Gate B。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -52,9 +51,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +-----------------------------------------------+
-        | YOU ARE HERE — V65 / TPC-212                  |
-        | GATE-B BOUNDARY / EMITTER ZONE                |
-        | boundary exact; physical Gram still OPEN     |
+        | YOU ARE HERE — V66 / TPC-213                  |
+        | GATE-B PHYSICAL COUPLING / GRAM ZONE          |
+        | pullback exact; asymptotic Gram still OPEN   |
         +-----------------------------------------------+
                 |
                 v
@@ -97,11 +96,11 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V65 / TPC-212 的
-truncated boundary 与 reciprocal-emitter interface。signed Boolean leakage、complete-minus-
-missing decomposition 和 finite block-diagonal Gram 已完成，但 literal physical
-cross-divisor coupling仍 OPEN；这是 structural advance 与 scoped obstruction，不是
-arithmetic saving。FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom credit 全部保持
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V66 / TPC-213 的
+common-source physical pullback 与 cross-divisor Gram。gcd/lcm residue aliasing、shared-
+frequency Gram 和 nonzero nested-divisor coupling 已完成，但 literal V46 asymptotic
+Gram、prime-shell reassembly 仍 OPEN；这是 structural advance 与 scoped obstruction，
+不是 arithmetic saving。FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom credit 全部保持
 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
@@ -975,6 +974,49 @@ TPC212_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 literal V46 profile coupling 映射到 emitter blocks，并在任何 direct-sum Cauchy 或 outer
 absolute 之前证明 physical cross-divisor Gram bound。**
 
+## 5.7 V66 / TPC-213：physical profile pullback and the cross-divisor Gram
+
+TPC-213 把上节留下的 coupling question 变成一个 exact common-source operator。对有限
+physical support `U`、residue lift `C_d`、divisor correction `b_d` 与 emitter pullback
+`K_d`，有
+
+```text
+R_d = C_d(v-b_d),
+sum_d sum_r A_d(r) F_d R_d(r)
+  = sum_u v(u) K(u) - sum_d sum_u b_d(u) K_d(u),
+K(u)=sum_d K_d(u).
+```
+
+在 complete `lcm(d,e)` period 上，CRT 给出
+
+```text
+(C_d C_e^*)(a,b) = (L/lcm(d,e)) 1_(a=b mod gcd(d,e)),
+```
+
+而 emitter pullback 的 Hermitian Gram 精确等于 shared rational frequencies
+`r/d = s/e (mod 1)` 的加权交叠。fixture `d={5,7,35}`、`q={11,13,17}`、`H=40`、
+`U={0,...,34}` 的 joint lift rank 为 `35`，cross-Gram 为 `0,560,770`。
+
+```text
+TPC213_ROUTE_ADVANCE = YES
+TPC213_STRUCTURAL_THRESHOLD_A = PASS
+TPC213_PHYSICAL_PROFILE_EMITTER_PULLBACK = PROVED_EXACT
+TPC213_RESIDUE_LIFT_GCD_ALIASING = PROVED_EXACT
+TPC213_CROSS_DIVISOR_FREQUENCY_GRAM = PROVED_EXACT_FINITE
+TPC213_PHYSICAL_DIRECT_SUM_REPLACEMENT = REFUTED_SCOPED
+TPC213_LITERAL_V46_ASYMPTOTIC_GRAM_BOUND = OPEN
+TPC213_PRIME_SHELL_REASSEMBLY = OPEN
+TPC213_ARITHMETIC_ADVANCE = NO
+TPC213_FIXED_ATOM_CREDIT = 0
+TPC213_L2 = NONE
+TPC213_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V66 / TPC-213 已完成 common-source physical coupling construction；下一座
+桥是对 shared rational-frequency clusters 保留 smooth `psi`、`mu(d)log(d)/d`、
+four-packet signs、zero-axis 与 prime shell，证明 signed cancellation 或更强的
+positive-Gram obstruction。**
+
 ## 6. 图像名称与仓库名称的对应
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
@@ -1022,7 +1064,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V65 / TPC-212：
+截至 V66 / TPC-213：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1036,9 +1078,12 @@ TPC_209_TRIGGER = true
 TPC_210_TRIGGER = true
 TPC_211_TRIGGER = true
 TPC_212_TRIGGER = true
+TPC_213_TRIGGER = true
 TPC212_EMITTER_ONLY_UNIVERSAL_SAVING = REFUTED_SCOPED
-TPC212_PHYSICAL_CROSS_DIVISOR_GRAM_BOUND = OPEN
-NUMBERED_RELEASE = TPC-212
+TPC212_PHYSICAL_CROSS_DIVISOR_GRAM_BOUND = REPLACED_BY_TPC213_OPERATOR
+TPC213_PHYSICAL_DIRECT_SUM_REPLACEMENT = REFUTED_SCOPED
+TPC213_LITERAL_V46_ASYMPTOTIC_GRAM_BOUND = OPEN
+NUMBERED_RELEASE = TPC-213
 ```
 
 以下事实不得从路线图中推断：
@@ -1056,13 +1101,12 @@ NUMBERED_RELEASE = TPC-212
 
 优先级更新为：
 
-1. **TPC-212 已完成：truncated boundary/emitter structural audit**。endpoint leakage、
-   complete-minus-missing decomposition、reciprocal collision Gram 与 scoped block-diagonal
-   obstruction 已封存；literal physical boundary bound仍 OPEN。
-2. **literal physical cross-divisor coupling theorem**。把 V46 product-coupled profile映射
-   到 `A_d(r)` emitter blocks，在 outer absolute 前保留 smooth `psi`、prime shell、four
-   packet signs与zero-axis normalization；不得把 independent aligned family当作 physical
-   counterexample。
+1. **TPC-213 已完成：physical profile/emitter pullback与 cross-divisor Gram**。common-source
+   identity、gcd/lcm aliasing 和 shared-frequency cross terms 已封存；literal smooth
+   asymptotic Gram bound仍 OPEN。
+2. **shared rational-frequency cluster theorem**。在 `mu(d)log(d)/d`、smooth `psi`、
+   four-packet signs、zero-axis 与 prime shell均保留时，证明 signed cancellation 或
+   更强的 positive-Gram obstruction；不得把 unit-weight finite fixture当作 saving。
 3. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
    对四个 `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
    diagonal-corrected reduced-residue remainder证明集体 fixed-power saving；不得把

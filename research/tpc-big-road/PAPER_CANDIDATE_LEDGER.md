@@ -1,8 +1,8 @@
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-18
+更新时间：2026-08-19
 
-状态：**TPC212_STRUCTURAL_THRESHOLD_A_RELEASED / BOUNDARY_EMITTER_STOP_SCOPED / PHYSICAL_CROSS_DIVISOR_BOUND_OPEN**
+状态：**TPC213_STRUCTURAL_THRESHOLD_A_RELEASED / CROSS_DIVISOR_COUPLING / LITERAL_ASYMPTOTIC_GRAM_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
@@ -269,6 +269,58 @@ ROUND2_CLUE = COUPLE_THE_LITERAL_V46_PROFILE_AT_DIVISOR_d_TO_THE_EMITTER_BLOCK_B
 The finite certificate covers four boundary cuts, 5,810 profile coordinates, three emitter
 fixtures, and nine divisor rows.  The `psi=1` emitter fixture is a modeling choice; none of
 these finite rows is arithmetic `L2` evidence.
+
+## 0.7 已发布：TPC-213 physical profile pullback and the cross-divisor Gram
+
+项目：`papers/tpc-213-physical-profile-cross-gram/`
+
+类型：**PROVED_STRUCTURAL_L1 / THRESHOLD_A / CROSS_DIVISOR_COUPLING**。
+
+TPC-213 直接回答 TPC-212 的 `ROUND2_CLUE`：在 direct-sum Cauchy 或 outer absolute
+之前，把 literal V46 profile 视为一个 common physical source，经 residue lift `C_d`
+送入每个 divisor residue space，再由 reciprocal emitter pull back 到同一个 physical
+support。主要结果为：
+
+1. **PROVED** — `R_d=C_d(v-b_d)` 时，所有 divisor scalar 的 exact affine pullback
+   identity 保留共同 source term `K=sum_d K_d` 与 divisor-dependent profile correction；
+2. **PROVED** — complete lcm period 上，`C_d C_e^*` 恰为
+   `(L/lcm(d,e)) 1_(a=b mod gcd(d,e))`；
+3. **PROVED_FINITE** — emitter pullback Gram 恰为 shared rational frequency 的
+   intersection sum；
+4. **PROVED_FINITE** — fixture `d={5,7,35}`, `q={11,13,17}`, `H=40` 有 joint lift
+   rank `35`、codomain dependency `12`，cross-Gram 分别为 `0,560,770`；
+5. **REFUTED_SCOPED** — 将 literal common-source family 替换为 orthogonal direct sum
+   不是恒等式；非零 nested-divisor cross terms 在 exact fixture 中出现；
+6. **OPEN** — smooth `psi`、`mu(d)log(d)/d`、four-packet signs、zero-axis、prime shell
+   和 actual V46 range 下的 joint asymptotic Gram bound。
+
+```text
+TPC213_ROUTE_ADVANCE = YES
+TPC213_STRUCTURAL_THRESHOLD_A = PASS
+TPC213_PHYSICAL_PROFILE_EMITTER_PULLBACK = PROVED_EXACT
+TPC213_RESIDUE_LIFT_GCD_ALIASING = PROVED_EXACT
+TPC213_CROSS_DIVISOR_FREQUENCY_GRAM = PROVED_EXACT_FINITE
+TPC213_PHYSICAL_DIRECT_SUM_REPLACEMENT = REFUTED_SCOPED
+TPC213_LITERAL_V46_ASYMPTOTIC_GRAM_BOUND = OPEN
+TPC213_PRIME_SHELL_REASSEMBLY = OPEN
+TPC213_ARITHMETIC_ADVANCE = NO
+TPC213_FIXED_ATOM_CREDIT = 0
+TPC213_L2 = NONE
+TPC213_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC213_TPC_TRIGGER = true
+```
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_COMMON_SOURCE_PULLBACK_AND_SHARED_FREQUENCY_GRAM
+STRONGEST_OBSTRUCTION = NONZERO_NESTED_DIVISOR_CROSS_TERMS_REFUTE_PHYSICAL_DIRECT_SUM_REPLACEMENT
+OPEN_THEOREM = JOINT_LITERAL_V46_PULLBACK_KERNEL_BOUND_WITH_SMOOTH_PSI_AND_PRIME_SHELL
+REUSABLE_STRUCTURE = COMMON_SOURCE -> RESIDUE LIFT -> EMITTER PULLBACK -> GCD/LCM ALIASING -> FREQUENCY GRAM
+ROUND2_CLUE = GROUP_LITERAL_V46_KERNEL_BY_SHARED_RATIONAL_FREQUENCY_BEFORE_D_OR_Q_TRIANGLE_AND_TEST_SIGNED_CLUSTER_CANCELLATION
+```
+
+The certificate covers 47 Euler-profile coordinates, 3 lift cases, 3 emitter rows and 3
+cross-Gram cases.  Unit reciprocal weights and the omitted logarithmic scalar are explicit
+finite modeling choices; they are not arithmetic evidence.
 
 ## 1. 记录规则
 
@@ -738,12 +790,13 @@ handoff。
 | 2026-08-17 | V60 | moving-hole projector、exact diagonal lift与 `x^(53/32+o(1))` collective translation payment | **PROVED_STRUCTURAL_L1 / TPC-207** |
 | 2026-08-17 | V61 | complete-graph zero-hole additive edge frame、edgewise diagonal deletion与 literal-edge no-sparsification | **PROVED_STRUCTURAL_L1 / TPC-208** |
 | 2026-08-18 | V65 | truncated divisor-band Boolean boundary、reciprocal occupancy collision Gram 与 scoped emitter-only obstruction | **PROVED_STRUCTURAL_L1 / TPC-212** |
+| 2026-08-19 | V66 | common-source physical profile pullback、gcd/lcm residue aliasing 与 shared-frequency cross-divisor Gram | **PROVED_STRUCTURAL_L1 / TPC-213** |
 
 下一次更新应优先回答：
 
-1. 能否把 literal V46 product-coupled profile、truncated boundary 与 smooth reciprocal
-   emitter编成一个真实的 cross-divisor Gram theorem；必须先于 direct-sum Cauchy与任何
-   outer absolute，并保留 prime shell、four-packet signs与zero-axis normalization；
+1. 能否对 TPC-213 的 shared rational-frequency clusters，在保留 `mu(d)log(d)/d`、smooth
+   `psi`、four-packet signs、zero-axis 与 prime shell 的前提下证明 signed cancellation
+   或给出更强的 positive-Gram obstruction；
 2. 在上述 coupling theorem 成立后，能否对完整 oriented `(d,k)` tight frame统一作 Möbius/Poisson transform，并在任何
    edge/fiber triangle之前暴露一个 shared dual variable，从而集体编译到同一批
    Blomer--Pascadi/Pascadi cells并完成 prime-shell signed reassembly；

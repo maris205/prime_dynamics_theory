@@ -1,7 +1,105 @@
 # TPC HANDOFF
 
-更新时间：2026-08-18
-交接状态：`BOLD_CHANNEL_V65_TPC212_SEALED_FOR_NEW_SESSION`
+更新时间：2026-08-19
+交接状态：`BOLD_CHANNEL_V66_TPC213_SEALED_FOR_NEW_SESSION`
+
+TPC-213 当前 section：physical profile pullback and the cross-divisor Gram
+----------------------------------------------------------------------------
+
+TPC-213 是 V65/TPC-212 的直接后续。它把 literal V46 residual 的 divisor profiles
+从 independent direct-sum interface 拉回一个 common physical support。对 residue lift
+`C_d`、divisor-dependent correction `b_d`、emitter row `A_d` 与 pullback kernel `K_d`，
+有限展开精确给出
+
+~~~text
+R_d = C_d(v-b_d)
+sum_d sum_r A_d(r) F_d R_d(r)
+  = sum_u v(u) K(u) - sum_d sum_u b_d(u) K_d(u)
+K(u) = sum_d K_d(u)
+~~~
+
+因此 common source term 是 joint kernel `K`，不能被替换成 orthogonal direct sum。对
+complete `lcm(d,e)` period，CRT cross-block 与 emitter pullback Gram 分别为
+
+~~~text
+(C_d C_e^*)(a,b) = (L/lcm(d,e)) 1_(a=b mod gcd(d,e))
+sum_(u mod lcm(d,e)) K_d(u) conjugate(K_e(u))
+  = lcm(d,e) sum_(r/d=s/e mod 1) A_d(r) conjugate(A_e(s))
+~~~
+
+TPC-213 finite fixture 冻结 `d={5,7,35}`、`U={0,...,34}`、`z=3`、`q={11,13,17}`、
+`H=40`。joint lift 有 `47` rows、rank `35`、codomain dependency `12`；cross-Gram 为
+`0,560,770`，对应 `(5,7)`, `(5,35)`, `(7,35)`。producer、independent checker 与
+optimized checker 全部通过；PDF 为 6 页，最终 pass 无 warning/undefined，6 页已渲染且
+字体全部嵌入。
+
+TPC-213 claim firewall：
+
+~~~text
+TPC213_ROUTE_ADVANCE = YES
+TPC213_STRUCTURAL_THRESHOLD_A = PASS
+TPC213_PHYSICAL_PROFILE_EMITTER_PULLBACK = PROVED_EXACT
+TPC213_RESIDUE_LIFT_GCD_ALIASING = PROVED_EXACT
+TPC213_CROSS_DIVISOR_FREQUENCY_GRAM = PROVED_EXACT_FINITE
+TPC213_PHYSICAL_DIRECT_SUM_REPLACEMENT = REFUTED_SCOPED
+TPC213_LITERAL_V46_ASYMPTOTIC_GRAM_BOUND = OPEN
+TPC213_PRIME_SHELL_REASSEMBLY = OPEN
+TPC213_ARITHMETIC_ADVANCE = NO
+TPC213_FIXED_ATOM_CREDIT = 0
+TPC213_L2 = NONE
+TPC213_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC213_TPC_TRIGGER = true
+~~~
+
+编号论文目录：`papers/tpc-213-physical-profile-cross-gram/`
+
+~~~text
+papers/tpc-213-physical-profile-cross-gram/README.md
+papers/tpc-213-physical-profile-cross-gram/PAPER_PLAN.md
+papers/tpc-213-physical-profile-cross-gram/PROOF_PACKAGE.md
+papers/tpc-213-physical-profile-cross-gram/paper/main.tex
+papers/tpc-213-physical-profile-cross-gram/paper/references.bib
+papers/tpc-213-physical-profile-cross-gram/paper/paper.pdf
+papers/tpc-213-physical-profile-cross-gram/code/profile_cross_gram.py
+papers/tpc-213-physical-profile-cross-gram/experiments/run_certificate.py
+papers/tpc-213-physical-profile-cross-gram/experiments/independent_checker.py
+papers/tpc-213-physical-profile-cross-gram/experiments/coupling_sanity.py
+papers/tpc-213-physical-profile-cross-gram/results/certificate.json
+papers/tpc-213-physical-profile-cross-gram/notes/theorem_ledger.md
+papers/tpc-213-physical-profile-cross-gram/notes/source_lock.md
+papers/tpc-213-physical-profile-cross-gram/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_physical_profile_cross_gram.md
+research/tpc-big-road/tpc_bridge_b_physical_profile_cross_gram_checker.py
+~~~
+
+TPC-213 claim ceiling 是 finite structural operator identity；unit reciprocal weights与
+omitted logarithmic scalar是 modeling choice。smooth `psi`、`mu(d)log(d)/d`、four-packet
+signs、zero-axis、prime shell、literal asymptotic Gram、full Gate B、strict `1/400`、
+arithmetic `L2` 与 fixed-atom credit均未支付。
+
+TPC-213 strongest positive result：common-source pullback与 shared rational-frequency
+cross-Gram exact。strongest obstruction：nested-divisor cross terms 可为正，故 coupling
+alone 不给 saving，physical direct-sum replacement 是 `REFUTED_SCOPED`。
+
+TPC-213 open theorem：对 shared rational-frequency clusters 证明 literal V46 joint
+pullback bound，保留 smooth `psi`、coefficient signs、four-packet reassembly、zero axis
+与 prime shell。
+
+TPC-213 reusable structure：
+
+~~~text
+common source -> residue lift -> emitter pullback -> gcd/lcm aliasing
+             -> shared-frequency Gram -> signed cluster theorem
+~~~
+
+TPC-213 ROUND2_CLUE：先按 shared rational frequency 聚类，再测试 `mu(d)log(d)/d` 与
+smooth `psi` 是否在 cluster 内产生 signed cancellation；若不产生，则记录更强的
+positive-Gram obstruction，再转入 prime-only reassembly。
+
+TPC-213 Route A / Route B evaluator：Route A 不适用；Route B structural threshold A=
+PASS，operator pullback/CRT/frequency identities PROVED，physical direct-sum replacement
+REFUTED_SCOPED，literal asymptotic Gram OPEN，arithmetic advance NO。
+
 
 TPC-212 当前 section：truncated divisor bands and the reciprocal-emitter boundary operator
 ---------------------------------------------------------------------------------------------

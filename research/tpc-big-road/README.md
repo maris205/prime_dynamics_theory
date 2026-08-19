@@ -1,8 +1,8 @@
-# TPC big road V65 / TPC-212: truncated boundary and reciprocal-emitter obstruction
+# TPC big road V66 / TPC-213: physical profile pullback and the cross-divisor Gram
 
-更新时间：2026-08-18
+更新时间：2026-08-19
 
-状态：`TPC212_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / STOP_SCOPED_BOUNDARY_EMITTER`
+状态：`TPC213_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / CROSS_DIVISOR_COUPLING`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
@@ -26,6 +26,29 @@ TPC-212 的可复核文件为 `bridge_b_truncated_boundary_emitter.md`、
 boundary cases、5,810 个 profile coordinates、3 个 emitter cases 和 9 个 divisor rows；
 unit-weight alignment ratios 为 `2, 4, 3`。这些是 structural/finite QA，不是渐近
 arithmetic evidence。
+
+当前 TPC-213 proof 为
+`bridge_b_physical_profile_cross_gram.md`，checker 为
+`tpc_bridge_b_physical_profile_cross_gram_checker.py`，编号论文为
+`../../papers/tpc-213-physical-profile-cross-gram/`。
+
+TPC-213 把 V46 literal residual 的 common physical source 显式拉回到同一个有限支撑：
+residue lift `C_d`、emitter pullback `K_d` 与 affine profile correction 组成 exact
+operator identity；complete `lcm(d,e)` periods 上，residue cross-block 由
+`gcd(d,e)` compatibility 决定，emitter pullback Gram 由 shared rational frequencies
+决定。fixture `d={5,7,35}`, `q={11,13,17}`, `H=40` 给出 joint lift rank `35`，并产生
+cross-Gram `560` 与 `770`（`5,35` 与 `7,35`），而 `5,7` 为 `0`。
+
+这完成了 TPC-212 留下的 operator-level physical coupling construction，但不自动给
+saving：unit-weight cross terms 为正，smooth `psi`、`mu(d)log(d)/d`、four-packet
+signs、prime shell 与 literal asymptotic Gram bound 仍 OPEN；`ARITHMETIC_ADVANCE=NO`、
+`L2=NONE`、fixed-atom credit=`0`、strict `1/400=UNPAID`。
+
+TPC-213 的可复核文件为 `bridge_b_physical_profile_cross_gram.md`、
+`tpc_bridge_b_physical_profile_cross_gram_checker.py` 与
+`../../papers/tpc-213-physical-profile-cross-gram/`。finite certificate 覆盖 47 个
+Euler profile coordinates、3 个 CRT/lcm lift cases、3 个 emitter rows 和 3 个 cross-Gram
+cases；这些仍是 structural/finite QA，不是渐近 arithmetic evidence。
 
 当前 TPC-211 proof 为
 `bridge_b_product_coupled_physical_profiles.md`，checker 为
