@@ -1,0 +1,566 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Dd}{\mathcal D}
+\newcommand{\QQ}{\mathcal Q}
+\newcommand{\ee}{\mathrm e}
+\newcommand{\Harm}{\mathsf H}
+\newcommand{\Ecl}{\mathcal E_{\mathrm{cl}}}
+\newcommand{\Edir}{\mathcal E_{\mathrm{dir}}}
+
+\title{\textbf{Short-Quotient M\"obius Tails and a No-Power-Loss\\
+Majorant for the Physical Cluster Gram}}
+\author{Liang Wang\\
+Huazhong University of Science and Technology\\
+Wuhan 430074, P.R. China}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The transition-native twin-prime program contains a squarefree divisor band
+and, after complete-period frequency clustering, the M\"obius-log tails
+\(
+C_h=\sum_{h\mid d}\mu(d)\log(d)/d.
+\)
+This paper estimates those tails on the literal V46 scales.  The nonzero
+integer cutoff in the reciprocal emitter forces every active reduced
+denominator to satisfy
+\(h\ge H/q_{\max}\ge H/(2Q)=2Y_0\).
+Thus $h$ itself lies in the full transition band.  Writing $d=hk$ gives an
+exact quotient M\"obius sum whose length is at most
+\(2UQ/H=2x^{23/2400+o(1)}\).  The $k=1$ term anchors the direct coefficient
+mass, while an elementary harmonic estimate bounds every cluster coefficient.
+Together with an exact reduced-denominator decomposition of the emitter row
+norm, this proves that the complete-period cluster Gram is at most
+\(O((\log x)^2)=x^{o(1)}\) times the divisor direct-sum energy.  Hence
+frequency clustering creates no fixed-power amplification.  The comparison
+is not a saving theorem: every active denominator in $U/2<h\le U$ has
+cluster-to-direct coefficient ratio exactly one.  The direct-sum arithmetic
+energy, finite-window off-frequency Gram, prime-shell reassembly, arithmetic
+$L^2$, and twin-prime endpoint remain open.
+\end{abstract}
+
+\paragraph{Claim level.}
+\texttt{PROVED\_STRUCTURAL\_L1 / SHORT\_QUOTIENT\_CLUSTER\_MAJORANT}.\\
+The $O((\log x)^2)$ comparison is proved on the source-locked asymptotic
+scales.  Finite decimal ratios are numerical observations only.  No
+arithmetic saving or twin-prime conclusion is claimed.
+
+\section{Introduction}
+
+The V46 transition scalar in the analytic twin-prime route contains one
+reciprocal emitter for each squarefree divisor $d$ in a short proper-factor
+range.  Its literal coefficient is
+\begin{equation}
+ c_d=\frac{\mu(d)\log d}{d}.
+ \label{eq:coefficient}
+\end{equation}
+TPC-213 showed that these rows are pulled back from one common physical source,
+so different divisor blocks are not an orthogonal direct sum
+\cite{WangTPC213}.  TPC-214 then identified the exact complete-period
+frequency clusters \cite{WangTPC214}.  If $h\mid d$, the row at a frequency
+with reduced denominator $h$ equals the row at $h$ itself.  Consequently all
+multiples of $h$ combine before the Hermitian square, with coefficient
+\begin{equation}
+ C_h=\sum_{\substack{d\in\Dd_x\\h\mid d}}c_d.
+ \label{eq:cluster-coefficient}
+\end{equation}
+
+The remaining issue is quantitative.  A completely arbitrary family of
+multiples could make the ratio between $|C_h|^2$ and
+\(\sum_{h\mid d}|c_d|^2\) as large as the family size.  The literal V46
+emitter, however, has an integer activation threshold.  A reduced row cannot
+appear until its denominator is large enough to admit a nonzero reciprocal
+frequency.  That threshold places $h$ back inside the original divisor band
+and makes the quotient $k=d/h$ very short.
+
+This observation leads to four exact steps:
+\begin{enumerate}[leftmargin=2em]
+ \item every active denominator satisfies $h\ge H/q_{\max}\ge2Y_0$;
+ \item its cluster coefficient is a quotient M\"obius sum with
+       $k\le2x^{23/2400+o(1)}$;
+ \item the $k=1$ coefficient anchors a harmonic comparison with the direct
+       coefficient mass;
+ \item reduced fractions partition every divisor row, converting the
+       coefficient comparison into a complete-period energy comparison.
+\end{enumerate}
+
+The resulting bound is subpower, and in fact $O((\log x)^2)$.  This is a real
+structural advance over leaving the cluster tails unbounded, but it deliberately
+stops before arithmetic promotion.  A top-shell identity also shows why the
+argument cannot by itself produce a fixed-power saving.
+
+\section{Literal source lock and the emitter}
+
+We use the V46 parameters exactly as frozen in the transition-native Euler
+artifact \cite{WangV46}:
+\begin{equation}
+ H=x^{21/32},\qquad Q=x^{1/3},\qquad
+ Y_0=\frac{H}{4Q}=x^{31/96+o(1)},\qquad
+ U=x^{133/400}.
+ \label{eq:scales}
+\end{equation}
+Let
+\begin{equation}
+ \QQ_x=\{q\text{ prime}:Q<q\le2Q\},
+ \qquad q_{\max}=\max\QQ_x,
+ \label{eq:prime-shell}
+\end{equation}
+and let the full squarefree transition band be
+\begin{equation}
+ \Dd_x=\{d\in\ZZ:Y_0<d\le U,\ \mu(d)^2=1\}.
+ \label{eq:divisor-band}
+\end{equation}
+For sufficiently large $x$, the source inequalities give $d<U<Q<q$.  Thus
+every $q\in\QQ_x$ is invertible modulo every $d\in\Dd_x$.
+
+For an arbitrary profile $\psi$ on the arguments below, define the
+coefficient-free reciprocal row
+\begin{equation}
+ B_d(r)=\sum_{q\in\QQ_x}
+ \sum_{0<|m|\le dq/H}
+ \psi\!\left(\frac{Hm}{dq}\right)
+ \one_{m\overline q\equiv r\pmod d},
+ \qquad r\in\ZZ/d\ZZ.
+ \label{eq:emitter}
+\end{equation}
+The cutoff is interpreted in the integer sense:
+\(|m|\le\lfloor dq/H\rfloor\).
+
+TPC-214 proves the exact dilation covariance
+\begin{equation}
+ B_d\!\left(\frac dh a\right)=B_h(a),
+ \qquad h\mid d,
+ \label{eq:dilation}
+\end{equation}
+and the complete-period cluster factorization.  We use those two identities
+as the parent theorem; no continuous cutoff or independent-profile
+substitution is introduced here.
+
+\begin{remark}[the full-band hypothesis]
+The family in \eqref{eq:divisor-band} contains every squarefree integer in the
+stated interval.  This is essential below.  For an arbitrary subfamily, an
+active reduced denominator can divide a selected $d$ without the diagonal
+member $d=h$ being selected.
+\end{remark}
+
+\section{Activation and the short quotient}
+
+\begin{lemma}[activation floor]
+\label{lem:activation}
+Suppose $h$ divides a member of $\Dd_x$ and $B_h$ is not the zero row.  Then
+\begin{equation}
+ h\ge\frac{H}{q_{\max}}
+ \ge\frac{H}{2Q}=2Y_0.
+ \label{eq:activation}
+\end{equation}
+In particular, $h\in\Dd_x$.
+\end{lemma}
+
+\begin{proof}
+If $B_h$ is nonzero, then at least one contributing term in
+\eqref{eq:emitter} has a nonzero integer $m$.  For the associated $q$,
+\[
+ 1\le |m|\le\frac{hq}{H}\le\frac{hq_{\max}}{H}.
+\]
+This proves the first inequality in \eqref{eq:activation}; the second follows
+from $q_{\max}\le2Q$ and the definition of $Y_0$.  Since $h$ divides a
+squarefree $d\in\Dd_x$, it is squarefree and $h\le d\le U$.  Equation
+\eqref{eq:activation} gives $h>Y_0$, so $h$ belongs to the full band.
+\end{proof}
+
+\begin{lemma}[short-quotient normal form]
+\label{lem:normal-form}
+For every active reduced denominator $h$,
+\begin{equation}
+ C_h=\frac{\mu(h)}{h}
+ \sum_{\substack{Y_0/h<k\le U/h\\(k,h)=1}}
+ \frac{\mu(k)}{k}\bigl(\log h+\log k\bigr).
+ \label{eq:normal-form}
+\end{equation}
+The term $k=1$ occurs, and every nonzero summand satisfies
+\begin{equation}
+ k\le\frac{Uq_{\max}}{H}
+ \le\frac{2UQ}{H}
+ =2x^{23/2400+o(1)}.
+ \label{eq:quotient-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write each multiple of $h$ as $d=hk$.  Since $d$ is squarefree,
+$(h,k)=1$ and $\mu(hk)=\mu(h)\mu(k)$.  Substitution into
+\eqref{eq:cluster-coefficient} gives \eqref{eq:normal-form}; allowing
+nonsquarefree $k$ is harmless because their M\"obius coefficient is zero.
+Lemma~\ref{lem:activation} shows that $d=h$ belongs to $\Dd_x$, so $k=1$
+is present.  It also gives
+\[
+ k\le\frac Uh\le\frac{Uq_{\max}}H\le\frac{2UQ}H.
+\]
+Finally,
+\[
+ \frac{133}{400}+\frac13-\frac{21}{32}
+ =\frac{798+800-1575}{2400}
+ =\frac{23}{2400},
+\]
+which proves the last equality in \eqref{eq:quotient-bound}.
+\end{proof}
+
+\begin{remark}[scale of the reduction]
+The active divisor itself can be as large as $x^{133/400}$, but after fixing
+an emitter-visible reduced denominator, all cluster multiples are indexed by
+a quotient of length only $x^{23/2400+o(1)}$.  This is a deterministic support
+reduction, not M\"obius cancellation.
+\end{remark}
+
+\section{A deterministic coefficient majorant}
+
+For every active $h$, define the direct coefficient mass
+\begin{equation}
+ D_h=\sum_{\substack{d\in\Dd_x\\h\mid d}}|c_d|^2.
+ \label{eq:direct-mass}
+\end{equation}
+Let $\Harm_n=\sum_{k=1}^n1/k$ denote the $n$th harmonic number, with
+$\Harm_0=0$.
+
+\begin{lemma}[anchored harmonic comparison]
+\label{lem:harmonic}
+For every active $h$,
+\begin{equation}
+ |C_h|^2\le
+ \left(\frac{\log U}{\log h}\right)^2
+ \Harm_{\lfloor U/h\rfloor}^{,2}D_h.
+ \label{eq:row-majorant}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The $d=h$ term supplied by Lemma~\ref{lem:activation} gives
+\begin{equation}
+ D_h\ge |c_h|^2=\left(\frac{\log h}{h}\right)^2.
+ \label{eq:anchor}
+\end{equation}
+On the other hand, the triangle inequality and $d=hk\le U$ give
+\begin{align}
+ |C_h|
+ &\le \sum_{\substack{k\le U/h\\(k,h)=1}}
+       \frac{|\mu(k)|\log(hk)}{hk} \\
+ &\le \frac{\log U}{h}
+       \sum_{k\le U/h}\frac1k
+ =\frac{\log U}{h}\Harm_{\lfloor U/h\rfloor}.
+ \label{eq:triangle}
+\end{align}
+Squaring \eqref{eq:triangle} and using \eqref{eq:anchor} proves
+\eqref{eq:row-majorant}.
+\end{proof}
+
+Define the source-locked uniform factor
+\begin{equation}
+ A_x=\left(\frac{\log U}{\log(H/q_{\max})}\right)^2
+ \Harm_{\lfloor Uq_{\max}/H\rfloor}^{\,2}.
+ \label{eq:Ax}
+\end{equation}
+
+\begin{corollary}[subpower coefficient comparison]
+\label{cor:subpower}
+Uniformly over all active reduced denominators,
+\begin{equation}
+ |C_h|^2\le A_xD_h,
+ \qquad A_x=O((\log x)^2)=x^{o(1)}.
+ \label{eq:subpower-coefficient}
+\end{equation}
+More explicitly,
+\begin{equation}
+ A_x\le
+ \left(\frac{\log U}{\log(H/(2Q))}\right)^2
+ \Harm_{\lfloor2UQ/H\rfloor}^{,2}.
+ \label{eq:explicit-Ax}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Both factors on the right of \eqref{eq:row-majorant} are nonincreasing as $h$
+increases.  Apply Lemma~\ref{lem:activation} to obtain
+\eqref{eq:subpower-coefficient}.  Since $q_{\max}\le2Q$, enlarging the
+harmonic index and decreasing the logarithmic denominator gives
+\eqref{eq:explicit-Ax}.  The logarithm ratio is bounded on the scales
+\eqref{eq:scales}, while
+\[
+ \Harm_n\le1+\log n,
+ \qquad n\le2x^{23/2400+o(1)}.
+\]
+Thus $A_x=O((\log x)^2)$, which is $x^{o(1)}$.
+\end{proof}
+
+\section{From rows to the complete-period Gram}
+
+For $h\ge2$, set
+\begin{equation}
+ N_h=\sum_{\substack{a\bmod h\\(a,h)=1}}|B_h(a)|^2.
+ \label{eq:primitive-norm}
+\end{equation}
+For completeness, let $N_1=|B_1(0)|^2$.  In the source range $q<H$, so the
+additive zero axis vanishes and $N_1=0$ \cite{WangTPC214}.
+
+\begin{lemma}[row-norm divisor decomposition]
+\label{lem:row-decomposition}
+For every $d\in\Dd_x$,
+\begin{equation}
+ \sum_{r\bmod d}|B_d(r)|^2=\sum_{h\mid d}N_h.
+ \label{eq:row-decomposition}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Each residue $r\bmod d$ determines a unique reduced fraction
+\[
+ \frac rd=\frac ah,
+ \qquad h\mid d,\quad (a,h)=1,
+\]
+where the zero fraction is represented by $a=0,h=1$.  Conversely, each pair
+on the right represents the residue $r=(d/h)a$.  The classes indexed by $h$
+therefore partition the complete residue row.  Dilation covariance
+\eqref{eq:dilation} gives $B_d(r)=B_h(a)$ in each class, proving
+\eqref{eq:row-decomposition}.
+\end{proof}
+
+Let
+\begin{equation}
+ L=\operatorname{lcm}\{d:d\in\Dd_x\}
+ \label{eq:period}
+\end{equation}
+for a finite realization of the transition band, and define
+\begin{align}
+ \Ecl
+ &=\sum_{u\bmod L}\left|
+   \sum_{d\in\Dd_x}c_d\sum_{r\bmod d}
+   B_d(r)\ee^{2\pi iru/d}\right|^2,
+ \label{eq:cluster-energy}\\
+ \Edir
+ &=L\sum_{d\in\Dd_x}|c_d|^2
+   \sum_{r\bmod d}|B_d(r)|^2.
+ \label{eq:direct-energy}
+\end{align}
+
+\begin{theorem}[no-power-loss cluster majorant]
+\label{thm:main}
+On the literal V46 squarefree transition band,
+\begin{equation}
+ \boxed{\Ecl\le A_x\Edir},
+ \qquad A_x=O((\log x)^2)=x^{o(1)},
+ \label{eq:main}
+\end{equation}
+where $A_x$ is given explicitly by \eqref{eq:Ax} and
+\eqref{eq:explicit-Ax}.
+\end{theorem}
+
+\begin{proof}
+The TPC-214 complete-period factorization gives
+\begin{equation}
+ \frac{\Ecl}{L}=\sum_hN_h|C_h|^2.
+ \label{eq:tpc214-factor}
+\end{equation}
+Corollary~\ref{cor:subpower} and a finite rearrangement of nonnegative terms
+give
+\begin{align}
+ \frac{\Ecl}{L}
+ &\le A_x\sum_hN_hD_h \\
+ &=A_x\sum_{d\in\Dd_x}|c_d|^2\sum_{h\mid d}N_h \\
+ &=A_x\sum_{d\in\Dd_x}|c_d|^2
+       \sum_{r\bmod d}|B_d(r)|^2
+ =A_x\frac{\Edir}{L},
+\end{align}
+where the penultimate equality is Lemma~\ref{lem:row-decomposition}.
+Multiplication by $L$ proves \eqref{eq:main}.
+\end{proof}
+
+\begin{remark}[what the theorem does and does not remove]
+The theorem proves that the complete-period shared-frequency Gram has no
+additional fixed-power cost beyond the divisor direct sum.  It does not bound
+\(\Edir\) at the natural arithmetic scale.  It also does not replace the
+finite physical interval by a complete period: off-frequency terms that
+vanish in \eqref{eq:tpc214-factor} must be revisited in the actual window.
+\end{remark}
+
+\section{A sharp top-shell obstruction}
+
+\begin{proposition}[exact ratio one in the top shell]
+\label{prop:top-shell}
+If an active reduced denominator satisfies $U/2<h\le U$, then
+\begin{equation}
+ C_h=c_h,\qquad D_h=|c_h|^2,
+ \qquad \frac{|C_h|^2}{D_h}=1.
+ \label{eq:top-shell}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Lemma~\ref{lem:activation} places $h$ itself in $\Dd_x$.  Any distinct
+positive multiple of $h$ is at least $2h>U$, so no other member of the band is
+divisible by $h$.  The definitions \eqref{eq:cluster-coefficient} and
+\eqref{eq:direct-mass} reduce to the single term $d=h$.
+\end{proof}
+
+Proposition~\ref{prop:top-shell} is a sharp scoped obstruction.  It refutes a
+uniform rowwise estimate of the form
+\begin{equation}
+ |C_h|^2\le x^{-\delta}D_h
+ \qquad(\delta>0)
+ \label{eq:forbidden-saving}
+\end{equation}
+based only on cluster coefficients.  It does not refute a global saving that
+uses the size or distribution of $N_h$, finite-window oscillation, prime-shell
+averaging, or the signed four-packet scalar.  Those inputs are absent from the
+coefficient identity \eqref{eq:top-shell}.
+
+\section{Finite exact certificate}
+
+The release fixture retains the TPC-214 rational profile but enlarges the
+divisor family to a full finite band:
+\begin{equation}
+ \QQ=\{11,13,17\},\quad H=40,\quad Y_0=2,\quad U=35,
+ \quad \psi(t)=\frac1{(1+t^2)^2}.
+ \label{eq:fixture}
+\end{equation}
+The finite band consists of all squarefree $2<d\le35$ coprime to the three
+fixture primes.  This coprimality, rather than the asymptotic inequality
+$U<Q$, makes every finite inverse legal.  All emitter entries and row-norm
+identities are exact rational numbers.
+
+The activation floor is
+\(
+\lceil40/17\rceil=3
+\), and the active denominators are
+\begin{equation}
+ 3,5,6,7,10,14,15,19,21,23,29,30,31,35.
+ \label{eq:active-fixture}
+\end{equation}
+The largest realized quotient is $10$, below the uniform integer bound
+\(\lfloor35\cdot17/40\rfloor=14\).  Selected coefficient ratios are shown in
+Table~\ref{tab:fixture}.  They use real logarithms and are therefore labeled
+\texttt{NUMERICAL\_OBSERVATION}; the top-shell membership and ratio-one
+statements are exact.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rllrr@{}}
+\toprule
+$h$ & band multiples & quotients & $|C_h|^2/D_h$ & harmonic majorant \\
+\midrule
+3  & $3,6,15,21,30$ & $1,2,5,7,10$ & $0.0721263$ & $95.5111$ \\
+5  & $5,10,15,30,35$ & $1,2,3,6,7$ & $0.0279988$ & $32.8075$ \\
+6  & $6,30$ & $1,5$ & $0.3363555$ & $20.5278$ \\
+7  & $7,14,21,35$ & $1,2,3,5$ & $0.1711627$ & $17.4043$ \\
+15 & $15,30$ & $1,2$ & $0.0992569$ & $3.8782$ \\
+19 & $19$ & $1$ & $1$ & $1.4580$ \\
+35 & $35$ & $1$ & $1$ & $1$ \\
+\bottomrule
+\end{tabular}
+\caption{Finite coefficient diagnostics.  The majorant is deliberately
+cancellation-free.  Rows $h=19,21,23,29,30,31,35$ lie in the top shell and
+have exact ratio one.}
+\label{tab:fixture}
+\end{table}
+
+Exact dilation covariance and the row decomposition are checked for every
+divisor and every reduced residue.  With the exact rational row norms followed
+by real-logarithm evaluation, the whole finite cluster and direct energies are
+\begin{equation}
+ \Ecl/L\approx5.5554404644,qquad
+ \Edir/L\approx9.3063240426,qquad
+ \Ecl/\Edir\approx0.5969532588.
+ \label{eq:finite-ratio}
+\end{equation}
+Equation \eqref{eq:finite-ratio} is a reproduction diagnostic, not evidence
+for asymptotic cancellation.  An independent implementation reconstructs the
+rows, formal log polynomials, harmonic factors, and top-shell list without
+importing the producer.  Normal and optimized interpreter modes are required
+to give byte-identical output.  A separate adversarial checker covers 53
+active rows across three finite configurations and verifies that deleting the
+$d=h$ member invalidates the diagonal-anchor hypothesis.
+
+\section{Route evaluation and open arithmetic}
+
+The main theorem changes the structural state in one precise way:
+\begin{equation}
+ \text{complete-period cluster energy}
+ \ \le\ x^{o(1)}\times
+ \text{divisor direct-sum row energy}.
+ \label{eq:route-change}
+\end{equation}
+Thus a future proof no longer needs to budget a fixed power for coherent
+reduced-frequency collisions.  The next arithmetic object is the right-hand
+side of \eqref{eq:route-change}, not the unestimated coefficient tail.
+
+Three independent gaps remain:
+\begin{enumerate}[leftmargin=2em]
+ \item \textbf{Direct-sum arithmetic energy.}  The current argument gives no
+       natural-scale estimate for the physical residual rows weighted by
+       $|c_d|^2$.
+ \item \textbf{Finite physical interval.}  Complete-period orthogonality
+       removes unequal rational frequencies.  The actual interval produces an
+       off-frequency Gram that needs its own bound.
+ \item \textbf{Prime-shell and four-packet reassembly.}  The prime-only shell,
+       block localization, exact diagonal subtraction, and signed
+       polarization must be retained in one theorem with the strict
+       $1/400$ loss ledger.
+\end{enumerate}
+
+Accordingly, the formal Route-B status is
+\begin{equation*}
+\begin{array}{ll}
+\texttt{STRUCTURAL\_THRESHOLD\_A} &= \texttt{PASS},\\
+\texttt{CLUSTER\_TO\_DIRECT\_MAJORANT} &=
+  \texttt{PROVED\_O\_LOG\_X\_SQUARED},\\
+\texttt{UNIFORM\_ROWWISE\_POWER\_SAVING} &=
+  \texttt{REFUTED\_SCOPED},\\
+\texttt{ARITHMETIC\_ADVANCE} &= \texttt{NO},\\
+\texttt{L2} &= \texttt{NONE},\\
+\texttt{FULL\_GATE\_B\_STRICT\_1\_OVER\_400} &= \texttt{UNPAID}.
+\end{array}
+\end{equation*}
+Route A is not applicable to this analytic twin-prime session.  No fixed-atom
+credit or twin-prime conclusion follows from a complete-period comparison.
+
+\section{Conclusion}
+
+The literal reciprocal cutoff turns every emitter-visible M\"obius cluster
+into a short quotient sum.  Because activation places the reduced denominator
+itself back in the full divisor band, the diagonal term anchors a deterministic
+harmonic comparison.  Reduced-fraction row decomposition then upgrades this
+coefficient estimate to an $O((\log x)^2)$ complete-period Gram majorant.
+
+This closes the fixed-power amplification question at the cluster stage.  The
+top shell simultaneously proves that no uniform rowwise saving can come from
+cluster algebra alone.  The next useful step is therefore to estimate the
+physical direct-sum row energy before reintroducing finite-window cross
+frequencies and the prime-shell four-packet assembly.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

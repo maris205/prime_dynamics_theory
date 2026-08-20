@@ -2,11 +2,69 @@
 
 更新时间：2026-08-20
 
-状态：**TPC214_STRUCTURAL_THRESHOLD_A_RELEASED / MOBIUS_CLUSTER_REDUCTION / LITERAL_ASYMPTOTIC_CLUSTER_OPEN**
+状态：**TPC215_STRUCTURAL_THRESHOLD_A_RELEASED / SHORT_QUOTIENT_CLUSTER_MAJORANT / DIRECT_PHYSICAL_ENERGY_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.9 已发布：TPC-215 short-quotient Möbius tails and the no-power-loss majorant
+
+项目：`papers/tpc-215-short-quotient-mobius-majorant/`
+
+类型：**PROVED_STRUCTURAL_L1 / SHORT_QUOTIENT_CLUSTER_MAJORANT**。
+
+TPC-215 直接推进 TPC-214 的 literal cluster tail。对 V46 的完整 squarefree band
+`Y0<d<=U`，非零 emitter cutoff 强制每个 active reduced denominator 满足
+`h>=H/q_max>=H/(2Q)=2Y0`，故 `h` 自身属于 band。写 `d=hk` 得到 exact
+short-quotient normal form，且 `k<=2UQ/H=2x^(23/2400+o(1))`。`d=h` 项给出
+direct coefficient mass 的 diagonal anchor；harmonic triangle 和 row-norm divisor
+decomposition 从而证明
+
+```text
+E_cluster <= A_x E_direct,
+A_x=O((log x)^2)=x^(o(1)).
+```
+
+该 theorem 排除了 cluster algebra 的 fixed-power amplification，但不提供 saving。
+对每个 active `U/2<h<=U`，唯一 band multiple 是 `d=h`，所以 coefficient ratio
+`|C_h|^2/D_h=1` exact，形成 sharp scoped obstruction。有限 fixture 有 14 个 active
+rows 与 7 个 top-shell rows；global ratio `0.5969532588` 是 numerical observation。
+
+```text
+TPC215_ROUTE_ADVANCE = YES
+TPC215_STRUCTURAL_THRESHOLD_A = PASS
+TPC215_ACTIVATION_FLOOR = PROVED_EXACT
+TPC215_SHORT_QUOTIENT_NORMAL_FORM = PROVED_EXACT
+TPC215_QUOTIENT_LENGTH_EXPONENT = PROVED_23_OVER_2400
+TPC215_ROW_NORM_DIVISOR_DECOMPOSITION = PROVED_EXACT
+TPC215_CLUSTER_TO_DIRECT_MAJORANT = PROVED_O_LOG_X_SQUARED
+TPC215_FIXED_POWER_CLUSTER_AMPLIFICATION = EXCLUDED
+TPC215_TOP_SHELL_RATIO_ONE = PROVED_EXACT
+TPC215_UNIFORM_ROWWISE_POWER_SAVING = REFUTED_SCOPED
+TPC215_FINITE_RATIOS = NUMERICAL_OBSERVATION
+TPC215_DIRECT_SUM_ARITHMETIC_ENERGY_BOUND = OPEN
+TPC215_FINITE_WINDOW_OFF_FREQUENCY_GRAM = OPEN
+TPC215_PRIME_SHELL_REASSEMBLY = OPEN
+TPC215_ARITHMETIC_ADVANCE = NO
+TPC215_FIXED_ATOM_CREDIT = 0
+TPC215_L2 = NONE
+TPC215_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+```text
+STRONGEST_POSITIVE_RESULT = SOURCE_LOCKED_COMPLETE_PERIOD_CLUSTER_GRAM_IS_AT_MOST_O_LOG_X_SQUARED_TIMES_DIVISOR_DIRECT_SUM_ENERGY
+STRONGEST_OBSTRUCTION = EVERY_ACTIVE_TOP_SHELL_DENOMINATOR_HAS_EXACT_CLUSTER_TO_DIRECT_COEFFICIENT_RATIO_ONE
+OPEN_THEOREM = PHYSICAL_INTERVAL_DIRECT_SUM_ROW_ENERGY_BOUND_WITH_FINITE_WINDOW_AND_PRIME_SHELL_REASSEMBLY
+REUSABLE_STRUCTURE = ACTIVATION_FLOOR_PLUS_SHORT_QUOTIENT_TAIL_PLUS_DIAGONAL_ANCHOR_PLUS_ROW_NORM_DIVISOR_DECOMPOSITION
+ROUND2_CLUE = BOUND_THE_DIRECT_SUM_PHYSICAL_ROW_ENERGY_BEFORE_REINTRODUCING_CROSS_FREQUENCIES
+```
+
+Bridge proof/checker：`research/tpc-big-road/bridge_b_short_quotient_mobius_majorant.md`
+与 `research/tpc-big-road/tpc_bridge_b_short_quotient_mobius_majorant_checker.py`。
+证书使用 exact rational emitter rows；normal/optimized independent checker 和
+adversarial sanity 均通过。没有 arithmetic `L2`、fixed-atom credit、strict `1/400`
+或 twin-prime conclusion。
 
 ## 0.1 已发布：TPC-208 zero-hole additive edge frame
 

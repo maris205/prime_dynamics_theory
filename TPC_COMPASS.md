@@ -1,9 +1,18 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-17
-状态：`BOLD_CHANNEL_V61 / ZERO_HOLE_COMPLETE_GRAPH_EDGE_FRAME_BUILT_COLLECTIVE_COMPILER_OPEN`
-claim level：`EXACT_ZERO_HOLE_ADDITIVE_TIGHT_FRAME_PLUS_EDGEWISE_DIAGONAL_DELETION_AND_SCOPED_NO_SPARSIFICATION_WITHOUT_ARITHMETIC_PROMOTION`
-编号事实终点：TPC-208；TPC-209 trigger：`false`
+更新时间：2026-08-20
+状态：`BOLD_CHANNEL_V68 / SHORT_QUOTIENT_CLUSTER_MAJORANT_BUILT_DIRECT_PHYSICAL_ENERGY_OPEN`
+claim level：`PROVED_STRUCTURAL_L1_SHORT_QUOTIENT_CLUSTER_MAJORANT_WITH_TOP_SHELL_NO_SAVING_OBSTRUCTION`
+编号事实终点：TPC-215；TPC-216 trigger：`false`
+
+当前 TPC-215 入口：proof 为
+`research/tpc-big-road/bridge_b_short_quotient_mobius_majorant.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_short_quotient_mobius_majorant_checker.py`，编号论文为
+`papers/tpc-215-short-quotient-mobius-majorant/`。V46 activation floor、short-quotient
+normal form、exact row-norm divisor decomposition 与 `O((log x)^2)=x^(o(1))`
+complete-period cluster-to-direct majorant 已证明；top-shell ratio one 是 scoped
+obstruction。direct-sum physical row energy、finite-window Gram、prime-shell/four-packet
+reassembly、full Gate B、`L2`、fixed-atom credit 与 TPC endpoint 仍 OPEN。
 
 V61 当前入口：proof 为
 `research/tpc-big-road/bridge_b_zero_hole_additive_edge_frame.md`，checker 为

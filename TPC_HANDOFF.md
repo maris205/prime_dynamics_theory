@@ -1,7 +1,118 @@
 # TPC HANDOFF
 
 更新时间：2026-08-20
-交接状态：`BOLD_CHANNEL_V67_TPC214_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V68_TPC215_SEALED_FOR_NEW_SESSION`
+
+TPC-215 当前 section：short-quotient Möbius tails and the no-power-loss cluster majorant
+---------------------------------------------------------------------------------------
+
+TPC-215 是 TPC-214 的直接后续。它回答了 cluster tail 的第一个 source-locked
+quantitative question，而不改变 literal V46 object。保持
+
+~~~text
+H=x^(21/32), Q=x^(1/3), Y0=H/(4Q), U=x^(133/400), Q<q<=2Q,
+D_x={Y0<d<=U: mu(d)^2=1}, c_d=mu(d)log(d)/d.
+~~~
+
+若 coefficient-free emitter row `B_h` 非零，则实际整数 cutoff 给出
+
+~~~text
+h >= H/q_max >= H/(2Q) = 2Y0.
+~~~
+
+因此 `h` 自身属于完整 squarefree transition band。写 `d=hk` 后，literal cluster tail
+有 exact normal form
+
+~~~text
+C_h = mu(h)/h sum_(Y0/h<k<=U/h,(k,h)=1)
+      mu(k)(log(h)+log(k))/k,
+k <= Uq_max/H <= 2UQ/H = 2x^(23/2400+o(1)).
+~~~
+
+`d=h` 是 direct coefficient mass 的 exact diagonal anchor。若
+`D_h=sum_(d:h|d)|c_d|^2`，则 harmonic comparison 给出
+
+~~~text
+|C_h|^2 <= A_x D_h,
+A_x=[log(U)/log(H/q_max)]^2 H_floor(Uq_max/H)^2
+    = O((log x)^2)=x^(o(1)).
+~~~
+
+TPC-214 的 complete-period factorization 与 exact reduced-fraction row partition 又给
+
+~~~text
+E_cluster <= A_x E_direct,
+E_direct=L sum_d |c_d|^2 sum_(r mod d)|B_d(r)|^2.
+~~~
+
+这排除了 shared-frequency cluster 的 fixed-power amplification，但不是 arithmetic
+saving。对每个 active `U/2<h<=U`，只有 `d=h` 是 band multiple，所以
+`C_h=c_h`, `D_h=|c_h|^2`，ratio 精确为 `1`；uniform rowwise cluster saving 被
+`REFUTED_SCOPED`。
+
+TPC-215 finite fixture 使用 `Q={11,13,17}`, `H=40`, `Y0=2`, `U=35`，有 14 个
+active denominators、7 个 top-shell rows；producer、independent normal/optimized、
+adversarial sanity 与 release checker 全部通过。global ratio
+`0.59695325876572969` 只作 `NUMERICAL_OBSERVATION`。
+
+TPC-215 claim firewall：
+
+~~~text
+TPC215_ROUTE_ADVANCE = YES
+TPC215_STRUCTURAL_THRESHOLD_A = PASS
+TPC215_ACTIVATION_FLOOR = PROVED_EXACT
+TPC215_ACTIVE_DENOMINATOR_IN_FULL_BAND = PROVED_EXACT
+TPC215_SHORT_QUOTIENT_NORMAL_FORM = PROVED_EXACT
+TPC215_QUOTIENT_LENGTH_EXPONENT = PROVED_23_OVER_2400
+TPC215_ROW_NORM_DIVISOR_DECOMPOSITION = PROVED_EXACT
+TPC215_CLUSTER_TO_DIRECT_MAJORANT = PROVED_O_LOG_X_SQUARED
+TPC215_FIXED_POWER_CLUSTER_AMPLIFICATION = EXCLUDED
+TPC215_TOP_SHELL_RATIO_ONE = PROVED_EXACT
+TPC215_UNIFORM_ROWWISE_POWER_SAVING = REFUTED_SCOPED
+TPC215_FINITE_RATIOS = NUMERICAL_OBSERVATION
+TPC215_DIRECT_SUM_ARITHMETIC_ENERGY_BOUND = OPEN
+TPC215_FINITE_WINDOW_OFF_FREQUENCY_GRAM = OPEN
+TPC215_PRIME_SHELL_REASSEMBLY = OPEN
+TPC215_ARITHMETIC_ADVANCE = NO
+TPC215_FIXED_ATOM_CREDIT = 0
+TPC215_L2 = NONE
+TPC215_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC215_TPC_TRIGGER = true
+~~~
+
+编号论文目录：`papers/tpc-215-short-quotient-mobius-majorant/`
+
+~~~text
+papers/tpc-215-short-quotient-mobius-majorant/README.md
+papers/tpc-215-short-quotient-mobius-majorant/PAPER_PLAN.md
+papers/tpc-215-short-quotient-mobius-majorant/PROOF_PACKAGE.md
+papers/tpc-215-short-quotient-mobius-majorant/paper/main.tex
+papers/tpc-215-short-quotient-mobius-majorant/paper/references.bib
+papers/tpc-215-short-quotient-mobius-majorant/paper/paper.pdf
+papers/tpc-215-short-quotient-mobius-majorant/code/short_quotient_majorant.py
+papers/tpc-215-short-quotient-mobius-majorant/experiments/run_certificate.py
+papers/tpc-215-short-quotient-mobius-majorant/experiments/independent_checker.py
+papers/tpc-215-short-quotient-mobius-majorant/experiments/majorant_sanity.py
+papers/tpc-215-short-quotient-mobius-majorant/results/certificate.json
+papers/tpc-215-short-quotient-mobius-majorant/notes/theorem_ledger.md
+papers/tpc-215-short-quotient-mobius-majorant/notes/source_lock.md
+papers/tpc-215-short-quotient-mobius-majorant/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_short_quotient_mobius_majorant.md
+research/tpc-big-road/tpc_bridge_b_short_quotient_mobius_majorant_checker.py
+~~~
+
+TPC-215 strongest positive result is the source-locked complete-period
+`O((log x)^2)=x^(o(1))` cluster-to-direct majorant.  Strongest obstruction is exact
+top-shell ratio one.  Open theorem is a physical-interval bound for the direct-sum row
+energy with finite-window off-frequency and prime-shell/four-packet reassembly.  The
+next clue is:
+
+~~~text
+BOUND_THE_DIRECT_SUM_PHYSICAL_ROW_ENERGY_BEFORE_REINTRODUCING_CROSS_FREQUENCIES
+~~~
+
+Route-B structural threshold A passes; Route A is not applicable; arithmetic `L2`,
+fixed-atom credit, strict `1/400`, full Gate B and the twin-prime endpoint remain open.
 
 TPC-214 当前 section：Möbius-weighted shared-frequency clusters
 ---------------------------------------------------------------

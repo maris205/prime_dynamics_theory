@@ -1,11 +1,34 @@
-# TPC big road V67 / TPC-214: Möbius-weighted shared-frequency clusters
+# TPC big road V68 / TPC-215: short-quotient Möbius tails and the no-power-loss majorant
 
 更新时间：2026-08-20
 
-状态：`TPC214_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / MOBIUS_CLUSTER_REDUCTION`
+状态：`TPC215_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / SHORT_QUOTIENT_CLUSTER_MAJORANT`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-215 proof 为
+`bridge_b_short_quotient_mobius_majorant.md`，checker 为
+`tpc_bridge_b_short_quotient_mobius_majorant_checker.py`，编号论文为
+`../../papers/tpc-215-short-quotient-mobius-majorant/`。
+
+TPC-215 直接承接 TPC-214 的 Möbius-log cluster tail。对实际 V46 transition band
+`Y0<d<=U`，非零整数 cutoff 强制每个 emitter-active reduced denominator 满足
+`h>=H/q_max>=H/(2Q)=2Y0`，所以 `d=h` 一定存在。写 `d=hk` 后，cluster tail
+成为精确的 short-quotient sum，且 `k<=2UQ/H=2x^(23/2400+o(1))`。`k=1`
+提供系数对角锚点，harmonic majorant 给出
+`|C_h|^2 <= A_x D_h`，其中 `A_x=O((log x)^2)=x^(o(1))`。
+
+结合 TPC-214 的 reduced-frequency factorization 与 exact row-norm divisor
+decomposition，TPC-215 得到 complete-period cluster energy 不超过
+`O((log x)^2)` 倍的 divisor direct-sum row energy。它排除了 shared-frequency
+cluster 的 fixed-power amplification，但不是 arithmetic saving。对每个 active
+`U/2<h<=U`，band 中唯一 multiple 是 `d=h`，故 coefficient ratio 精确为 1；
+因此 cluster algebra alone 不能支付 uniform rowwise power saving。
+
+TPC-215 claim firewall 保持 `ARITHMETIC_ADVANCE=NO`、`L2=NONE`、fixed-atom
+credit=`0`、strict `1/400=UNPAID`；direct-sum physical row energy、finite-window
+off-frequency Gram、prime-shell/four-packet reassembly 与完整 Gate B 仍 OPEN。
 
 当前 TPC-212 proof 为
 `bridge_b_truncated_boundary_emitter.md`，checker 为
