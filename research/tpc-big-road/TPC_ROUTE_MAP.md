@@ -1,15 +1,16 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-19
+更新时间：2026-08-20
 
-当前地图版本：V66 / TPC-213
+当前地图版本：V67 / TPC-214
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-213`（`PROVED_STRUCTURAL_L1 / CROSS_DIVISOR_COUPLING`）；对应
-论文目录为 `papers/tpc-213-physical-profile-cross-gram/`。TPC-213 已将 common-source
-physical profile pullback、gcd/lcm residue aliasing 与 shared-frequency cross-Gram 精确
-写出；但没有关闭 literal V46 asymptotic Gram、prime-shell reassembly 或完整 Gate B。
+当前编号锚点：`TPC-214`（`PROVED_STRUCTURAL_L1 / MOBIUS_CLUSTER_REDUCTION`）；对应
+论文目录为 `papers/tpc-214-mobius-frequency-clusters/`。TPC-214 已将 literal
+Möbius-log coefficient 放回 shared-frequency Gram，证明 dilation covariance、
+reduced-denominator cluster factorization、zero-axis scope 与 four-packet compatibility；
+但没有关闭 literal V46 asymptotic cluster bound、prime-shell reassembly 或完整 Gate B。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -51,9 +52,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +-----------------------------------------------+
-        | YOU ARE HERE — V66 / TPC-213                  |
-        | GATE-B PHYSICAL COUPLING / GRAM ZONE          |
-        | pullback exact; asymptotic Gram still OPEN   |
+        | YOU ARE HERE — V67 / TPC-214                  |
+        | GATE-B MOBIUS CLUSTER / GRAM ZONE             |
+        | exact tail factor; asymptotic bound OPEN      |
         +-----------------------------------------------+
                 |
                 v
@@ -96,12 +97,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V66 / TPC-213 的
-common-source physical pullback 与 cross-divisor Gram。gcd/lcm residue aliasing、shared-
-frequency Gram 和 nonzero nested-divisor coupling 已完成，但 literal V46 asymptotic
-Gram、prime-shell reassembly 仍 OPEN；这是 structural advance 与 scoped obstruction，
-不是 arithmetic saving。FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom credit 全部保持
-OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V67 / TPC-214 的
+Möbius-weighted reduced-frequency cluster theorem。dilation covariance、cluster tail
+factorization、zero-axis scope 与 four-packet linear extension 已完成；相反符号的
+finite fixtures 又证明 cluster coupling 没有普遍 favorable sign。literal V46 asymptotic
+cluster-tail bound、prime-shell reassembly 仍 OPEN；这是 structural advance 与 scoped
+obstruction，不是 arithmetic saving。FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom
+credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1017,6 +1019,51 @@ TPC213_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 four-packet signs、zero-axis 与 prime shell，证明 signed cancellation 或更强的
 positive-Gram obstruction。**
 
+## 5.8 V67 / TPC-214：Möbius-weighted shared-frequency clusters
+
+TPC-214 完成了上节指定的最小 structural theorem。对
+
+```text
+B_d(r) = sum_(q,m) psi(Hm/(dq)) 1_(m q^(-1)=r mod d),
+c_d = mu(d) log(d)/d,
+```
+
+保留 literal integer cutoff 后，`h|d` 给出 exact
+`B_d((d/h)a)=B_h(a)`。因此在 `L=lcm(D)` 的完整 physical period 上，所有相同
+reduced rational frequencies 先合并为
+`C_h=sum_(d in D:h|d)c_d`，再由 complete-period orthogonality 得到 exact
+reduced-denominator cluster factorization。`max(Q)<H` 时 additive zero axis exact
+消失；four-packet polarization 在 cluster reduction 后仍保持 exact linearity。
+
+有限 certificate 使用 `Q={11,13,17}`、`H=40`、
+`psi(t)=(1+t^2)^(-2)`。`{5,7,35}` 的 exact cross-energy sign 为负，
+`{3,5,7,105}` 的 exact sign 为正；对应物理/直和数值比约为
+`0.5963435557` 与 `1.2119952513`。因此下一步不能预设 cluster saving sign，
+而应直接估计实际 V46 transition band 中的 Möbius-log tails。
+
+```text
+TPC214_ROUTE_ADVANCE = YES
+TPC214_STRUCTURAL_THRESHOLD_A = PASS
+TPC214_EMITTER_DILATION_COVARIANCE = PROVED_EXACT
+TPC214_REDUCED_DENOMINATOR_CLUSTER_FACTOR = PROVED_EXACT
+TPC214_ZERO_AXIS_SCOPE = PROVED_EXACT
+TPC214_FOUR_PACKET_POLARIZATION = PROVED_EXACT_LINEAR_EXTENSION
+TPC214_NESTED_CLUSTER_CANCELLATION = PROVED_EXACT_FINITE_SIGN
+TPC214_COMPOSITE_QUOTIENT_ENHANCEMENT = PROVED_EXACT_FINITE_SIGN
+TPC214_FINITE_ENERGY_RATIOS = NUMERICAL_OBSERVATION
+TPC214_UNIVERSAL_CLUSTER_SAVING_SIGN = REFUTED_SCOPED
+TPC214_LITERAL_V46_ASYMPTOTIC_CLUSTER_BOUND = OPEN
+TPC214_PRIME_SHELL_REASSEMBLY = OPEN
+TPC214_ARITHMETIC_ADVANCE = NO
+TPC214_FIXED_ATOM_CREDIT = 0
+TPC214_L2 = NONE
+TPC214_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V67 / TPC-214 已把 shared-frequency coupling 压缩为 Möbius-log
+reduced-denominator tails；下一座桥是对这些 tails 做 literal V46 uniform bound，
+然后再进行 prime-shell 与 four-packet reassembly。**
+
 ## 6. 图像名称与仓库名称的对应
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
@@ -1064,7 +1111,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V66 / TPC-213：
+截至 V67 / TPC-214：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1083,7 +1130,16 @@ TPC212_EMITTER_ONLY_UNIVERSAL_SAVING = REFUTED_SCOPED
 TPC212_PHYSICAL_CROSS_DIVISOR_GRAM_BOUND = REPLACED_BY_TPC213_OPERATOR
 TPC213_PHYSICAL_DIRECT_SUM_REPLACEMENT = REFUTED_SCOPED
 TPC213_LITERAL_V46_ASYMPTOTIC_GRAM_BOUND = OPEN
-NUMBERED_RELEASE = TPC-213
+TPC214_EMITTER_DILATION_COVARIANCE = PROVED_EXACT
+TPC214_REDUCED_DENOMINATOR_CLUSTER_FACTOR = PROVED_EXACT
+TPC214_UNIVERSAL_CLUSTER_SAVING_SIGN = REFUTED_SCOPED
+TPC214_LITERAL_V46_ASYMPTOTIC_CLUSTER_BOUND = OPEN
+TPC214_PRIME_SHELL_REASSEMBLY = OPEN
+TPC214_ARITHMETIC_ADVANCE = NO
+TPC214_FIXED_ATOM_CREDIT = 0
+TPC214_L2 = NONE
+TPC214_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-214
 ```
 
 以下事实不得从路线图中推断：
@@ -1101,12 +1157,12 @@ NUMBERED_RELEASE = TPC-213
 
 优先级更新为：
 
-1. **TPC-213 已完成：physical profile/emitter pullback与 cross-divisor Gram**。common-source
-   identity、gcd/lcm aliasing 和 shared-frequency cross terms 已封存；literal smooth
-   asymptotic Gram bound仍 OPEN。
-2. **shared rational-frequency cluster theorem**。在 `mu(d)log(d)/d`、smooth `psi`、
-   four-packet signs、zero-axis 与 prime shell均保留时，证明 signed cancellation 或
-   更强的 positive-Gram obstruction；不得把 unit-weight finite fixture当作 saving。
+1. **TPC-214 已完成：Möbius-weighted shared-frequency clusters**。dilation covariance、
+   reduced-denominator factorization、zero-axis 与 four-packet compatibility 已封存；
+   finite cancellation/enhancement signs 同时 refute universal favorable cluster sign。
+2. **literal V46 cluster-tail theorem**。保留 `mu(d)log(d)/d`、smooth `psi`、
+   four-packet signs、zero-axis 与 prime shell，对 transition band 中的 `C_h` 做 uniform
+   bound；不得把两个 finite ratios 当作渐近 saving。
 3. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
    对四个 `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
    diagonal-corrected reduced-residue remainder证明集体 fixed-power saving；不得把
@@ -1196,6 +1252,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-20 | V67 / TPC-214 | Bridge A / Gate B：Möbius-log reduced-frequency cluster tails；literal asymptotic bound open | `TPC-214` | exact dilation covariance、reduced-denominator factorization、zero-axis/four-packet compatibility、finite opposite-sign obstruction；arithmetic仍为 NO |
 | 2026-08-18 | V65 / TPC-212 | Bridge A / Gate B：truncated boundary/emitter interface；literal physical cross-divisor Gram open | `TPC-212` | exact signed Boolean endpoint incidence、complete-minus-missing boundary、reciprocal collision Gram、block-diagonal alignment obstruction；arithmetic仍为 NO |
 | 2026-08-18 | V64 / TPC-211 | Bridge A / Gate B：literal product-coupled profile full-rank and complete-packet derivative；truncated boundary/emitter open | `TPC-211` | product cocycle、full divisor rank、log-Mobius marked-prime derivative、common-endpoint cancellation、finite Gram alignment obstruction；arithmetic仍为 NO |
 | 2026-08-18 | V63 / TPC-210 | Bridge A / Gate B：admissible Poisson profile-class obstruction；physical cross-divisor coupling open | `TPC-210` | finite Schwartz/Poisson profile surjectivity、literal Mobius alignment、cross-divisor PSD Gram reduction；arithmetic仍为 NO |

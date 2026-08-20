@@ -1,8 +1,8 @@
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-19
+更新时间：2026-08-20
 
-状态：**TPC213_STRUCTURAL_THRESHOLD_A_RELEASED / CROSS_DIVISOR_COUPLING / LITERAL_ASYMPTOTIC_GRAM_OPEN**
+状态：**TPC214_STRUCTURAL_THRESHOLD_A_RELEASED / MOBIUS_CLUSTER_REDUCTION / LITERAL_ASYMPTOTIC_CLUSTER_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
@@ -321,6 +321,61 @@ ROUND2_CLUE = GROUP_LITERAL_V46_KERNEL_BY_SHARED_RATIONAL_FREQUENCY_BEFORE_D_OR_
 The certificate covers 47 Euler-profile coordinates, 3 lift cases, 3 emitter rows and 3
 cross-Gram cases.  Unit reciprocal weights and the omitted logarithmic scalar are explicit
 finite modeling choices; they are not arithmetic evidence.
+
+## 0.8 已发布：TPC-214 Möbius-weighted shared-frequency clusters
+
+项目：`papers/tpc-214-mobius-frequency-clusters/`
+
+类型：**PROVED_STRUCTURAL_L1 / THRESHOLD_A / MOBIUS_CLUSTER_REDUCTION**。
+
+TPC-214 恢复 TPC-213 暂时剥离的 literal coefficient
+`c_d=mu(d)log(d)/d`，并证明了两个相互锁定的 exact 结果：
+
+1. **PROVED_EXACT** — 对 `h|d`，实际整数 cutoff 下的 coefficient-free emitter
+   满足 `B_d((d/h)r)=B_h(r)`；
+2. **PROVED_EXACT** — 在完整 `L=lcm(D)` 周期上，common-source Gram 按 reduced
+   rational denominator factor，系数是 `C_h=sum_(d:h|d)c_d`；
+3. **PROVED_EXACT** — `max(Q)<H` 时 additive zero axis 消失；四包复极化在线性
+   cluster reduction 后仍保持 exact；
+4. **PROVED_EXACT_FINITE_SIGN** — `{5,7,35}` 的总 cross-energy sign 为负，
+   `{3,5,7,105}` 的总 sign 为正；
+5. **REFUTED_SCOPED** — shared-frequency coupling 本身没有普遍 favorable saving
+   sign。两个物理/直和 energy ratios (`0.59634355565371822` 与
+   `1.2119952512624363`) 是 numerical observations。
+
+```text
+TPC214_ROUTE_ADVANCE = YES
+TPC214_STRUCTURAL_THRESHOLD_A = PASS
+TPC214_EMITTER_DILATION_COVARIANCE = PROVED_EXACT
+TPC214_REDUCED_DENOMINATOR_CLUSTER_FACTOR = PROVED_EXACT
+TPC214_ZERO_AXIS_SCOPE = PROVED_EXACT
+TPC214_FOUR_PACKET_POLARIZATION = PROVED_EXACT_LINEAR_EXTENSION
+TPC214_NESTED_CLUSTER_CANCELLATION = PROVED_EXACT_FINITE_SIGN
+TPC214_COMPOSITE_QUOTIENT_ENHANCEMENT = PROVED_EXACT_FINITE_SIGN
+TPC214_FINITE_ENERGY_RATIOS = NUMERICAL_OBSERVATION
+TPC214_UNIVERSAL_CLUSTER_SAVING_SIGN = REFUTED_SCOPED
+TPC214_LITERAL_V46_ASYMPTOTIC_CLUSTER_BOUND = OPEN
+TPC214_PRIME_SHELL_REASSEMBLY = OPEN
+TPC214_ARITHMETIC_ADVANCE = NO
+TPC214_FIXED_ATOM_CREDIT = 0
+TPC214_L2 = NONE
+TPC214_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_REDUCED_DENOMINATOR_CLUSTER_FACTOR_OF_THE_COMMON_SOURCE_GRAM
+STRONGEST_OBSTRUCTION = FINITE_COMPOSITE_QUOTIENT_ENHANCEMENT_REFUTES_UNIVERSAL_CLUSTER_SAVING_SIGN
+OPEN_THEOREM = UNIFORM_LITERAL_V46_MOBIUS_LOG_CLUSTER_BOUND_WITH_PRIME_SHELL_REASSEMBLY
+REUSABLE_STRUCTURE = DILATION_COVARIANCE_PLUS_REDUCED_FREQUENCY_CLUSTER_TAIL
+ROUND2_CLUE = ESTIMATE_THE_MOBIUS_LOG_TAILS_C_h_BEFORE_ANY_PRIME_SHELL_OR_Q_TRIANGLE
+```
+
+The bridge proof is `research/tpc-big-road/bridge_b_mobius_frequency_clusters.md` and
+the independent release checker is
+`research/tpc-big-road/tpc_bridge_b_mobius_frequency_clusters_checker.py`.  The
+certificate covers two fixture families, 12 reduced-denominator rows, 22 dilation pairs,
+and five nonzero cross-pair rows.  It supplies no arithmetic `L2`, fixed-atom credit,
+strict `1/400` payment, or twin-prime conclusion.
 
 ## 1. 记录规则
 

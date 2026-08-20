@@ -1,7 +1,99 @@
 # TPC HANDOFF
 
-更新时间：2026-08-19
-交接状态：`BOLD_CHANNEL_V66_TPC213_SEALED_FOR_NEW_SESSION`
+更新时间：2026-08-20
+交接状态：`BOLD_CHANNEL_V67_TPC214_SEALED_FOR_NEW_SESSION`
+
+TPC-214 当前 section：Möbius-weighted shared-frequency clusters
+---------------------------------------------------------------
+
+TPC-214 是 V66/TPC-213 的直接后续。它把 literal V46 coefficient
+`c_d=mu(d)log(d)/d` 放回 common-source frequency Gram，并证明：若 `h|d`，
+实际整数 cutoff 下的 coefficient-free emitter 满足
+
+~~~text
+B_d((d/h)r) = B_h(r)
+~~~
+
+因此在完整 `L=lcm(D)` physical period 上，所有相同 reduced rational frequencies
+先合并为
+
+~~~text
+C_h = sum_(d in D, h|d) mu(d)log(d)/d,
+sum_(u mod L)|sum_d K_d(u)|^2
+  = L sum_h |C_h|^2 sum_(a mod h, (a,h)=1)|B_h(a)|^2.
+~~~
+
+这是真正的 reduced-denominator cluster factorization；pairwise
+frequency-intersection Gram 是它在 common period 上的展开。若 `max(Q)<H`，
+additive zero axis exact 消失；four-packet polarization 在线性 cluster reduction
+后仍 exact，但其结果仍是 signed scalar。
+
+TPC-214 finite fixture 锁定 `Q={11,13,17}`、`H=40`、
+`psi(t)=(1+t^2)^(-2)`。`D={5,7,35}` 的 exact cross-energy sign 为
+`NEGATIVE_EXACT`，物理/直和 ratio 为 `0.59634355565371822`；
+`D={3,5,7,105}` 的 exact sign 为 `POSITIVE_EXACT`，ratio 为
+`1.2119952512624363`。后两个小数只是 `NUMERICAL_OBSERVATION`；相反的 exact
+sign 才是有限 obstruction，说明 universal favorable cluster-saving sign 已在此
+scope `REFUTED_SCOPED`。
+
+TPC-214 claim firewall：
+
+~~~text
+TPC214_ROUTE_ADVANCE = YES
+TPC214_STRUCTURAL_THRESHOLD_A = PASS
+TPC214_EMITTER_DILATION_COVARIANCE = PROVED_EXACT
+TPC214_REDUCED_DENOMINATOR_CLUSTER_FACTOR = PROVED_EXACT
+TPC214_ZERO_AXIS_SCOPE = PROVED_EXACT
+TPC214_FOUR_PACKET_POLARIZATION = PROVED_EXACT_LINEAR_EXTENSION
+TPC214_NESTED_CLUSTER_CANCELLATION = PROVED_EXACT_FINITE_SIGN
+TPC214_COMPOSITE_QUOTIENT_ENHANCEMENT = PROVED_EXACT_FINITE_SIGN
+TPC214_FINITE_ENERGY_RATIOS = NUMERICAL_OBSERVATION
+TPC214_UNIVERSAL_CLUSTER_SAVING_SIGN = REFUTED_SCOPED
+TPC214_LITERAL_V46_ASYMPTOTIC_CLUSTER_BOUND = OPEN
+TPC214_PRIME_SHELL_REASSEMBLY = OPEN
+TPC214_ARITHMETIC_ADVANCE = NO
+TPC214_FIXED_ATOM_CREDIT = 0
+TPC214_L2 = NONE
+TPC214_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC214_TPC_TRIGGER = true
+~~~
+
+编号论文目录：`papers/tpc-214-mobius-frequency-clusters/`
+
+~~~text
+papers/tpc-214-mobius-frequency-clusters/README.md
+papers/tpc-214-mobius-frequency-clusters/PAPER_PLAN.md
+papers/tpc-214-mobius-frequency-clusters/PROOF_PACKAGE.md
+papers/tpc-214-mobius-frequency-clusters/paper/main.tex
+papers/tpc-214-mobius-frequency-clusters/paper/references.bib
+papers/tpc-214-mobius-frequency-clusters/paper/paper.pdf
+papers/tpc-214-mobius-frequency-clusters/code/shared_frequency_clusters.py
+papers/tpc-214-mobius-frequency-clusters/experiments/run_certificate.py
+papers/tpc-214-mobius-frequency-clusters/experiments/independent_checker.py
+papers/tpc-214-mobius-frequency-clusters/experiments/packet_sanity.py
+papers/tpc-214-mobius-frequency-clusters/results/certificate.json
+papers/tpc-214-mobius-frequency-clusters/notes/theorem_ledger.md
+papers/tpc-214-mobius-frequency-clusters/notes/source_lock.md
+papers/tpc-214-mobius-frequency-clusters/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_mobius_frequency_clusters.md
+research/tpc-big-road/tpc_bridge_b_mobius_frequency_clusters_checker.py
+~~~
+
+TPC-214 的 strongest positive result 是 exact reduced-denominator cluster theorem；
+strongest obstruction 是 composite quotient 可使 finite cross-energy 为正，因此
+不能预设 saving sign。open theorem 是在 `Y0<d<=U` 的 literal V46 transition band
+uniform 控制这些 Möbius-log tails，并完成 prime-shell/four-packet reassembly。
+Route-B structural threshold A 为 PASS；Route A 不适用；arithmetic `L2`、fixed-atom
+credit、strict `1/400` 与 twin-prime endpoint 均未改变。
+
+TPC-214 ROUND2_CLUE：
+
+~~~text
+ESTIMATE_THE_MOBIUS_LOG_TAILS_C_h_BEFORE_ANY_PRIME_SHELL_OR_Q_TRIANGLE
+~~~
+
+完整 proof/checker 为 `research/tpc-big-road/bridge_b_mobius_frequency_clusters.md`
+与 `research/tpc-big-road/tpc_bridge_b_mobius_frequency_clusters_checker.py`。
 
 TPC-213 当前 section：physical profile pullback and the cross-divisor Gram
 ----------------------------------------------------------------------------

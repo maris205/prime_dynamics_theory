@@ -1,8 +1,8 @@
-# TPC big road V66 / TPC-213: physical profile pullback and the cross-divisor Gram
+# TPC big road V67 / TPC-214: Möbius-weighted shared-frequency clusters
 
-更新时间：2026-08-19
+更新时间：2026-08-20
 
-状态：`TPC213_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / CROSS_DIVISOR_COUPLING`
+状态：`TPC214_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / MOBIUS_CLUSTER_REDUCTION`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
@@ -49,6 +49,31 @@ TPC-213 的可复核文件为 `bridge_b_physical_profile_cross_gram.md`、
 `../../papers/tpc-213-physical-profile-cross-gram/`。finite certificate 覆盖 47 个
 Euler profile coordinates、3 个 CRT/lcm lift cases、3 个 emitter rows 和 3 个 cross-Gram
 cases；这些仍是 structural/finite QA，不是渐近 arithmetic evidence。
+
+当前 TPC-214 proof 为
+`bridge_b_mobius_frequency_clusters.md`，checker 为
+`tpc_bridge_b_mobius_frequency_clusters_checker.py`，编号论文为
+`../../papers/tpc-214-mobius-frequency-clusters/`。
+
+TPC-214 直接承接 TPC-213 的 `ROUND2_CLUE`：恢复 literal
+`c_d=mu(d)log(d)/d` 后，若 `h|d`，系数自由 emitter 满足 exact dilation
+covariance `B_d((d/h)r)=B_h(r)`。因此在完整 `lcm(D)` 周期上，physical
+frequency-intersection Gram 精确按 reduced denominator 聚类，权重是
+`C_h=sum_(d in D:h|d)c_d` 的 Möbius-log tail；`max(Q)<H` 时 additive zero
+axis exact 消失，four-packet polarization 与聚类线性地相容。
+
+TPC-214 的两个 finite fixtures 给出相反方向：`{5,7,35}` 的 exact cross-energy
+sign 为 `NEGATIVE_EXACT`、物理/直和比为约 `0.5963435557`；
+`{3,5,7,105}` 的 exact sign 为 `POSITIVE_EXACT`、比为约 `1.2119952513`。
+这证明共享频率耦合的符号不是普遍有利的；两个比值仅为
+`NUMERICAL_OBSERVATION`，不是渐近 saving。
+
+TPC-214 的可复核文件为 `bridge_b_mobius_frequency_clusters.md`、
+`tpc_bridge_b_mobius_frequency_clusters_checker.py` 与
+`../../papers/tpc-214-mobius-frequency-clusters/`。其 claim firewall 保持
+`ARITHMETIC_ADVANCE=NO`、`L2=NONE`、fixed-atom credit=`0`、strict
+`1/400=UNPAID`；literal V46 asymptotic cluster-tail bound 与 prime-shell
+reassembly 仍 OPEN。
 
 当前 TPC-211 proof 为
 `bridge_b_product_coupled_physical_profiles.md`，checker 为
