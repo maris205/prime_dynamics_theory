@@ -1,11 +1,22 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-20
-状态：`BOLD_CHANNEL_V68 / SHORT_QUOTIENT_CLUSTER_MAJORANT_BUILT_DIRECT_PHYSICAL_ENERGY_OPEN`
-claim level：`PROVED_STRUCTURAL_L1_SHORT_QUOTIENT_CLUSTER_MAJORANT_WITH_TOP_SHELL_NO_SAVING_OBSTRUCTION`
-编号事实终点：TPC-215；TPC-216 trigger：`false`
+更新时间：2026-08-21
+状态：`BOLD_CHANNEL_V69 / DIRECT_SUM_ROW_ENERGY_ENVELOPE_BUILT_FINITE_WINDOW_OPEN`
+claim level：`PROVED_STRUCTURAL_L1_DIRECT_SUM_ROW_ENERGY_ENVELOPE_WITH_ALIGNED_SHELL_OBSTRUCTION`
+编号事实终点：TPC-216；TPC-217 trigger：`false`
 
-当前 TPC-215 入口：proof 为
+当前 TPC-216 入口：proof 为
+`research/tpc-big-road/bridge_b_direct_sum_row_energy_envelope.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_direct_sum_row_energy_envelope_checker.py`，编号论文为
+`papers/tpc-216-direct-sum-row-energy-envelope/`。source inequality `4Q<H` 使 fixed-q
+integer atoms 在模 `d` 下 exact 不碰撞；shell Cauchy、`P<=2Q` 与 Mobius-log divisor
+sum 给出 complete-period normalized envelope
+`L^(-1)E_direct <<_psi x^(11/32)(log x)^3`。exact rational fixture 中四个 prime rows
+全部支撑在 `{1,4} mod 5`，所以 free q-orthogonality 被 `REFUTED_SCOPED`。finite-window
+off-frequency Gram、prime-shell/four-packet reassembly、full Gate B、`L2`、fixed-atom
+credit 与 TPC endpoint 仍 OPEN。
+
+TPC-215 直接上游入口：proof 为
 `research/tpc-big-road/bridge_b_short_quotient_mobius_majorant.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_short_quotient_mobius_majorant_checker.py`，编号论文为
 `papers/tpc-215-short-quotient-mobius-majorant/`。V46 activation floor、short-quotient

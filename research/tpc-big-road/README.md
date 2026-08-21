@@ -1,13 +1,34 @@
-# TPC big road V68 / TPC-215: short-quotient Möbius tails and the no-power-loss majorant
+# TPC big road V69 / TPC-216: direct-sum row-energy envelope and the Cauchy bottleneck
 
-更新时间：2026-08-20
+更新时间：2026-08-21
 
-状态：`TPC215_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / SHORT_QUOTIENT_CLUSTER_MAJORANT`
+状态：`TPC216_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / DIRECT_SUM_ROW_ENERGY_ENVELOPE`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-215 proof 为
+当前 TPC-216 proof 为
+`bridge_b_direct_sum_row_energy_envelope.md`，checker 为
+`tpc_bridge_b_direct_sum_row_energy_envelope_checker.py`，编号论文为
+`../../papers/tpc-216-direct-sum-row-energy-envelope/`。
+
+TPC-216 直接执行 TPC-215 的 `ROUND2_CLUE`。在同一个 literal V46 emitter 上，
+`4Q<H` 使 fixed-q integer cutoff 在模 `d` 下不碰撞，故固定 prime row energy exact
+等于 atom-square sum。一次 shell Cauchy、elementary `P<=2Q` 与
+`sum_(d<=U)(log d)^2/d=O((log U)^3)` 给出
+
+```text
+L^(-1)E_direct <<_psi (Q^3/H)(log U)^3
+                    = x^(11/32)(log x)^3.
+```
+
+这是真正的 complete-period direct-sum envelope，但不是 arithmetic saving。
+exact rational adversary 取 `d=5`, `H=500`, `q={101,131,151,181}`，所有 fixed-q rows
+支撑在 `{1,4}`；combined/direct norm ratio 约 `3.70568607565`，所以 free shell
+orthogonality 被 `REFUTED_SCOPED`。finite-window off-frequency Gram、prime-shell/
+four-packet reassembly、full Gate B、`L2`、fixed-atom credit 与 strict `1/400` 仍 OPEN。
+
+TPC-215 直接上游 proof 为
 `bridge_b_short_quotient_mobius_majorant.md`，checker 为
 `tpc_bridge_b_short_quotient_mobius_majorant_checker.py`，编号论文为
 `../../papers/tpc-215-short-quotient-mobius-majorant/`。

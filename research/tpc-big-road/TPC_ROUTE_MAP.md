@@ -1,18 +1,17 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-20
+更新时间：2026-08-21
 
-当前地图版本：V68 / TPC-215
+当前地图版本：V69 / TPC-216
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-215`（`PROVED_STRUCTURAL_L1 / SHORT_QUOTIENT_CLUSTER_MAJORANT`）；对应
-论文目录为 `papers/tpc-215-short-quotient-mobius-majorant/`。TPC-215 承接 TPC-214 的
-Möbius-log cluster tail，证明 V46 activation floor、short-quotient normal form、exact
-row-norm divisor decomposition，以及 `O((log x)^2)=x^(o(1))` complete-period
-cluster-to-direct majorant；top-shell coefficient ratio 精确为 1，因此没有 uniform
-rowwise cluster saving。direct-sum physical energy、finite-window off-frequency Gram、
-prime-shell reassembly 与完整 Gate B 仍 OPEN。
+当前编号锚点：`TPC-216`（`PROVED_STRUCTURAL_L1 / DIRECT_SUM_ROW_ENERGY_ENVELOPE`）；对应
+论文目录为 `papers/tpc-216-direct-sum-row-energy-envelope/`。TPC-216 承接 TPC-215 的
+direct-sum open quantity：`4Q<H` 给 fixed-q cutoff injectivity，shell Cauchy 与
+`P<=2Q` 给 `L^(-1)E_direct <<_psi x^(11/32)(log x)^3`。exact aligned-support fixture
+refute free q-orthogonality；finite-window off-frequency Gram、prime-shell/four-packet
+reassembly、arithmetic cancellation 与完整 Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -54,9 +53,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +-----------------------------------------------+
-        | YOU ARE HERE — V68 / TPC-215                  |
-        | GATE-B SHORT-QUOTIENT / GRAM ZONE             |
-        | x^o(1) majorant; arithmetic energy OPEN       |
+        | YOU ARE HERE — V69 / TPC-216                  |
+        | GATE-B DIRECT ENERGY / FINITE-WINDOW ZONE     |
+        | x^(11/32+o(1)) envelope; reassembly OPEN      |
         +-----------------------------------------------+
                 |
                 v
@@ -99,14 +98,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V68 / TPC-215 的
-source-locked short-quotient tail theorem。V46 的整数 activation floor 把 emitter-active
-reduced denominator 放回完整 divisor band，`k=1` 锚点与 harmonic comparison 将
-complete-period cluster Gram 压到 direct-sum row energy 的 `O((log x)^2)=x^(o(1))`
-倍；top shell 又给出精确 ratio-one obstruction。这个结果排除了 cluster 阶段的固定幂
-放大，但不是 arithmetic saving；direct physical energy、finite-window Gram、
-prime-shell/four-packet reassembly、FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom
-credit 继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V69 / TPC-216 的
+source-locked direct-sum row-energy theorem。fixed-q integer atoms exact 不碰撞，shell
+Cauchy 将 complete-period normalized direct energy 控制到
+`x^(11/32)(log x)^3`；aligned-support adversary 又证明 q-orthogonality不能免费使用。
+这个结果仍不是 arithmetic saving；finite-window Gram、prime-shell/four-packet
+reassembly、FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom credit 继续
+OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1123,6 +1121,70 @@ TPC215_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 physical row energy，并在 finite window 中重新支付 off-frequency 与 prime-shell/
 four-packet reassembly。**
 
+## 5.10 V69 / TPC-216：direct-sum row-energy envelope and the Cauchy bottleneck
+
+TPC-216 完成了上节指定的 direct-sum envelope。保持同一个 literal V46 emitter，令
+`B_d=sum_q B_(d,q)`。source exponents 给出
+
+```text
+H/(4Q)=x^(31/96)/4 -> infinity,
+U/Q=x^(-1/1200) -> 0,
+```
+
+所以充分大 `x` 时 `4Q<H` 与 `U<Q` 同时成立。对 fixed `d,q`，cutoff integers
+在模 `d` 下不碰撞，故
+
+```text
+||B_(d,q)||_2^2 <= 2||psi||_infty^2*dq/H.
+```
+
+一次 shell Cauchy 与 elementary `P<=2Q` 给出
+
+```text
+||B_d||_2^2 <= 4||psi||_infty^2*P^2*dQ/H
+             <= 16||psi||_infty^2*dQ^3/H.
+```
+
+加上 `|c_d|^2=mu(d)^2(log d)^2/d^2` 的 divisor sum，得到
+
+```text
+L^(-1)E_direct <<_psi (Q^3/H)(log U)^3
+                    = x^(11/32)(log x)^3.
+```
+
+这是真正的 complete-period normalized direct-sum envelope，但没有使用 Möbius
+cancellation、PNT 或 prime-shell cancellation。exact rational adversary 取
+`d=5`, `H=500`, `q={101,131,151,181}` 与 `psi(t)=(1+t^2)^(-2)`；四个 fixed-q
+rows 都支撑在 `{1,4}`，combined/direct norm ratio 约为 `3.70568607565`。因此
+free q-orthogonality 被 `REFUTED_SCOPED`，但该 fixture 不是 V46 asymptotic lower
+bound。
+
+```text
+TPC216_ROUTE_ADVANCE = YES
+TPC216_STRUCTURAL_THRESHOLD_A = PASS
+TPC216_FIXED_Q_NO_COLLISION = PROVED_EXACT
+TPC216_FIXED_Q_ROW_ENERGY = PROVED_EXACT
+TPC216_SHELL_CAUCHY_ENVELOPE = PROVED_EXACT
+TPC216_PRIME_SHELL_CARDINALITY = PROVED_P_LE_2Q
+TPC216_NORMALIZED_EXPONENT = PROVED_11_OVER_32
+TPC216_DIRECT_SUM_ROW_ENERGY_ENVELOPE = PROVED_X_11_OVER_32_LOG_CUBED
+TPC216_ARITHMETIC_CANCELLATION = NONE
+TPC216_ALIGNED_SUPPORT_ADVERSARY = NUMERICALLY_CERTIFIED_EXACT_RATIONAL
+TPC216_FREE_Q_ORTHOGONALITY = REFUTED_SCOPED
+TPC216_FINITE_WINDOW_OFF_FREQUENCY_GRAM = OPEN
+TPC216_PRIME_SHELL_REASSEMBLY = OPEN
+TPC216_FULL_GATE_B = OPEN
+TPC216_ARITHMETIC_ADVANCE = NO
+TPC216_FIXED_ATOM_CREDIT = 0
+TPC216_L2 = NONE
+TPC216_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V69 / TPC-216 已把 source-locked complete-period direct-sum row energy
+压到 `x^(11/32)(log x)^3` 的结构性 envelope；下一座桥是把这个 envelope 接到
+literal finite window，并保留 shell alignment、Möbius signs 与 four-packet
+reassembly。**
+
 ## 6. 图像名称与仓库名称的对应
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
@@ -1170,7 +1232,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V68 / TPC-215：
+截至 V69 / TPC-216：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1210,7 +1272,22 @@ TPC215_ARITHMETIC_ADVANCE = NO
 TPC215_FIXED_ATOM_CREDIT = 0
 TPC215_L2 = NONE
 TPC215_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-215
+TPC216_FIXED_Q_NO_COLLISION = PROVED_EXACT
+TPC216_FIXED_Q_ROW_ENERGY = PROVED_EXACT
+TPC216_SHELL_CAUCHY_ENVELOPE = PROVED_EXACT
+TPC216_PRIME_SHELL_CARDINALITY = PROVED_P_LE_2Q
+TPC216_NORMALIZED_EXPONENT = PROVED_11_OVER_32
+TPC216_DIRECT_SUM_ROW_ENERGY_ENVELOPE = PROVED_X_11_OVER_32_LOG_CUBED
+TPC216_ARITHMETIC_CANCELLATION = NONE
+TPC216_ALIGNED_SUPPORT_ADVERSARY = NUMERICALLY_CERTIFIED_EXACT_RATIONAL
+TPC216_FREE_Q_ORTHOGONALITY = REFUTED_SCOPED
+TPC216_FINITE_WINDOW_OFF_FREQUENCY_GRAM = OPEN
+TPC216_PRIME_SHELL_REASSEMBLY = OPEN
+TPC216_ARITHMETIC_ADVANCE = NO
+TPC216_FIXED_ATOM_CREDIT = 0
+TPC216_L2 = NONE
+TPC216_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-216
 ```
 
 以下事实不得从路线图中推断：
@@ -1228,13 +1305,16 @@ NUMBERED_RELEASE = TPC-215
 
 优先级更新为：
 
-1. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
+1. **TPC-216 已完成：direct-sum row-energy envelope**。fixed-q no-collision、shell Cauchy、
+   `P<=2Q` 与 `11/32` exponent ledger 已封存；aligned-support adversary 证明 free
+   q-orthogonality 不能结构性删除。
+2. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-2. **source-locked direct-sum physical energy theorem**。控制
-   `sum_d |c_d|^2 sum_r |B_d(r)|^2` 的 actual physical scale；不得把 complete-period
-   majorant误称为 arithmetic saving。
-3. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
+3. **TPC-216 的 finite-window attachment**。把 complete-period direct-sum envelope 接到
+   actual physical interval，控制 off-frequency Gram；不得把 complete-period envelope
+   误称为 arithmetic saving，也不得假设 q-shell orthogonality。
+4. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
    对四个 `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
    diagonal-corrected reduced-residue remainder证明集体 fixed-power saving；不得把
    Harper all-moduli variance或 Blomer--Pascadi fixed cell直接当成 global theorem；
@@ -1323,6 +1403,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-21 | V69 / TPC-216 | Bridge A / Gate B：direct-sum row-energy envelope `x^(11/32)(log x)^3`；finite-window attachment open | `TPC-216` | fixed-q no-collision、shell Cauchy、`P<=2Q`、aligned-support adversary；arithmetic仍为 NO |
 | 2026-08-20 | V68 / TPC-215 | Bridge A / Gate B：short-quotient Möbius tails；cluster-to-direct majorant `O((log x)^2)`；direct physical energy open | `TPC-215` | activation floor、`23/2400` quotient bound、exact row-norm decomposition、top-shell ratio-one obstruction；arithmetic仍为 NO |
 | 2026-08-20 | V67 / TPC-214 | Bridge A / Gate B：Möbius-log reduced-frequency cluster tails；literal asymptotic bound open | `TPC-214` | exact dilation covariance、reduced-denominator factorization、zero-axis/four-packet compatibility、finite opposite-sign obstruction；arithmetic仍为 NO |
 | 2026-08-18 | V65 / TPC-212 | Bridge A / Gate B：truncated boundary/emitter interface；literal physical cross-divisor Gram open | `TPC-212` | exact signed Boolean endpoint incidence、complete-minus-missing boundary、reciprocal collision Gram、block-diagonal alignment obstruction；arithmetic仍为 NO |

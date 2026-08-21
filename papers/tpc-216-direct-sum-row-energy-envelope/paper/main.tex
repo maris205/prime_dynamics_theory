@@ -1,0 +1,315 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Qx}{\mathcal Q_x}
+\newcommand{\Dx}{\mathcal D_x}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\ee}{\mathrm e}
+\newcommand{\Edir}{\mathcal E_{\mathrm{dir}}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+
+\title{\textbf{Direct-Sum Row-Energy Envelope and the Cauchy Bottleneck}}
+\author{Liang Wang\\
+Huazhong University of Science and Technology\\
+Wuhan 430074, P.R. China}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The transition-native twin-prime program contains a complete-period direct-sum
+row energy which remains after TPC-215 controls reduced-frequency clustering.
+This paper gives a deterministic bound for that quantity on the literal V46
+scales.  Writing the emitter as a sum over primes, the condition
+\(4Q<H\) makes the integer cutoff injective modulo each divisor for every fixed
+prime.  The fixed-prime row norm is therefore exact, and one Cauchy inequality
+across the prime shell yields
+\[
+ L^{-1}\Edir \ll_{\psi} (Q^3/H)(\log U)^3
+ = x^{11/32+o(1)}.
+\]
+No prime-number theorem and no Mobius cancellation are used.  An exact rational
+fixture with all prime rows supported on the same two residues shows that the
+shell Cauchy factor cannot be replaced by free orthogonality.  The result is a
+complete-period structural envelope only: the finite physical-window Gram,
+prime-shell reassembly, arithmetic \(L^2\), and the twin-prime endpoint remain
+open.
+\end{abstract}
+
+\paragraph{Claim level.}
+\texttt{PROVED\_STRUCTURAL\_L1 / DIRECT\_SUM\_ROW\_ENERGY\_ENVELOPE}.\\
+The exponent \(11/32\) is an unconditional source-locked envelope.  The finite
+fixture is exact rational structural QA.  No arithmetic saving is claimed.
+
+\section{Introduction}
+
+The V46 transition scalar uses the literal coefficient
+\begin{equation}
+ c_d=\frac{\mu(d)\log d}{d}
+ \label{eq:coefficient}
+\end{equation}
+on a squarefree divisor band.  Its reciprocal emitter is coupled across
+divisors through common rational frequencies.  TPC-213 identified this common
+physical source, and TPC-214 reduced the complete-period Gram to
+reduced-denominator clusters \cite{WangTPC214}.  TPC-215 then proved that the
+cluster Gram is at most an \(O((\log x)^2)\) multiple of the divisor
+direct-sum energy \cite{WangTPC215}.
+
+The next question is a narrower one: how large can that direct-sum row energy
+be before finite-window cross frequencies are restored?  The answer here is a
+source-locked envelope, not a cancellation theorem.  The fixed-prime integer
+cutoff has a useful exact feature.  Since the shell is contained in \((Q,2Q]\)
+and \(4Q<H\) for large \(x\), distinct admissible integers cannot occupy the
+same residue modulo a fixed divisor.  This removes cross terms within one
+prime row.  Cauchy is used only once, across the prime shell, and the resulting
+divisor sum is elementary.
+
+There is also a sharp warning.  The prime rows need not be orthogonal to one
+another.  A finite exact fixture with primes congruent to one modulo five makes
+all rows occupy the same two residues.  Thus the shell Cauchy step is a genuine
+bottleneck of this structural proof.
+
+\section{Literal source lock}
+
+We retain the V46 scales exactly as frozen in the transition compiler
+\cite{WangV46}:
+\begin{equation}
+ H=x^{21/32},\qquad Q=x^{1/3},\qquad
+ Y_0=\frac{H}{4Q},\qquad U=x^{133/400}.
+ \label{eq:scales}
+\end{equation}
+Let
+\begin{equation}
+ \Qx=\{q\text{ prime}:Q<q\le 2Q\},\qquad P=|\Qx|,
+ \label{eq:shell}
+\end{equation}
+and
+\begin{equation}
+ \Dx=\{d\in\ZZ:Y_0<d\le U,\ \mu(d)^2=1\}.
+ \label{eq:band}
+\end{equation}
+For sufficiently large \(x\), the source inequalities give \(U<Q\), so
+every shell prime is invertible modulo every \(d\in\Dx\).  For a bounded
+profile \(\psi\), set
+\begin{equation}
+ B_d(r)=\sum_{q\in\Qx}\sum_{0<|m|\le\lfloor dq/H\rfloor}
+ \psi\!\left(\frac{Hm}{dq}\right)
+ \one_{m\overline q\equiv r\pmod d}.
+ \label{eq:emitter}
+\end{equation}
+Write \(M_\psi=\sup_t|\psi(t)|\) and let
+\(\norm{v}_{2,d}^2=\sum_{r\bmod d}|v(r)|^2\).
+
+The exact exponent ledger is
+\begin{equation}
+ \frac{H}{4Q}=\frac14x^{31/96}\longrightarrow\infty,
+ \qquad \frac{U}{Q}=x^{-1/1200}\longrightarrow0.
+ \label{eq:source-inequalities}
+\end{equation}
+Consequently, the proof below works in the asymptotic source range where
+\(4Q<H\).  The factor four is important: the shell extends to \(2Q\), and
+fixed-prime injectivity requires \(2q<H\), not merely \(2Q<H\).
+
+\section{Fixed-prime injectivity}
+
+For one prime define
+\begin{equation}
+ B_{d,q}(r)=\sum_{0<|m|\le n_{d,q}}
+ \psi\!\left(\frac{Hm}{dq}\right)
+ \one_{m\overline q\equiv r\pmod d},
+ \qquad n_{d,q}=\left\lfloor\frac{dq}{H}\right\rfloor.
+ \label{eq:fixed-row}
+\end{equation}
+
+\begin{theorem}[fixed-q no-collision]
+\label{thm:no-collision}
+For \(d\in\Dx\) and \(q\in\Qx\), distinct admissible integers \(m\) in
+\eqref{eq:fixed-row} give distinct residues modulo \(d\).  Hence
+\begin{equation}
+ \norm{B_{d,q}}_{2,d}^2
+ =\sum_{0<|m|\le n_{d,q}}
+ \left|\psi\!\left(\frac{Hm}{dq}\right)\right|^2
+ \le 2M_\psi^2\frac{dq}{H}.
+ \label{eq:fixed-energy}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Suppose \(m_1\ne m_2\) collide.  Since \(q\) is a unit modulo \(d\),
+\(d\mid(m_1-m_2)\).  On the other hand, \(q\le2Q\) and \eqref{eq:source-inequalities}
+give
+\[
+0<|m_1-m_2|\le2\left\lfloor\frac{dq}{H}\right\rfloor
+ \le\frac{2dq}{H}<d.
+\]
+This is impossible.  Thus the atom supports are distinct, so the squared
+norm is the sum of squared atom weights.  There are at most
+\(2\lfloor dq/H\rfloor\le2dq/H\) atoms, proving \eqref{eq:fixed-energy}.
+\end{proof}
+
+\section{The direct-sum envelope}
+
+\begin{theorem}[direct-sum row-energy envelope]
+\label{thm:envelope}
+Let
+\begin{equation}
+ \Edir=L\sum_{d\in\Dx}|c_d|^2\norm{B_d}_{2,d}^2,
+ \label{eq:direct-energy}
+\end{equation}
+where \(L\) is a complete common period.  Then
+\begin{equation}
+ \frac{\Edir}{L}
+ \le 16M_\psi^2\frac{Q^3}{H}
+ \sum_{Y_0<d\le U}\frac{\mu(d)^2(\log d)^2}{d}
+ \ll_{\psi}\frac{Q^3}{H}(\log U)^3.
+ \label{eq:envelope}
+\end{equation}
+In particular,
+\begin{equation}
+ \frac{\Edir}{L}\ll_{\psi}x^{11/32}(\log x)^3,
+ \label{eq:exponent}
+\end{equation}
+The right-hand scale is \(x^{11/32+o(1)}\), but no matching lower bound is
+claimed.
+\end{theorem}
+
+\begin{proof}
+Since \(B_d=\sum_{q\in\Qx}B_{d,q}\), Cauchy in the \(P\) shell coordinates
+and Theorem~\ref{thm:no-collision} give
+\begin{align}
+ \norm{B_d}_{2,d}^2
+ &\le P\sum_{q\in\Qx}\norm{B_{d,q}}_{2,d}^2 \\
+ &\le \frac{2M_\psi^2Pd}{H}\sum_{q\in\Qx}q
+ \le \frac{4M_\psi^2P^2dQ}{H}.
+ \label{eq:shell-cauchy}
+\end{align}
+The interval \((Q,2Q]\) contains at most \(2Q\) integers for \(Q\ge1\),
+so \(P\le2Q\).  Therefore
+\[
+ \norm{B_d}_{2,d}^2\le16M_\psi^2\frac{dQ^3}{H}.
+\]
+Using \(|c_d|^2=\mu(d)^2(\log d)^2/d^2\) in \eqref{eq:direct-energy}
+proves the first inequality in \eqref{eq:envelope}.  Finally,
+comparison with the integral of \((\log t)^2/t\) gives
+\[
+ \sum_{1\le d\le U}\frac{(\log d)^2}{d}\ll(\log(2U))^3.
+\]
+Since \(Q^3/H=x^{1-21/32}=x^{11/32}\) and \(\log(2U)=O(\log x)\),
+the result follows.
+\end{proof}
+
+\begin{remark}[claim boundary]
+The proof uses absolute values in both the fixed-row bound and shell Cauchy.
+It does not use the signs of \(\mu(d)\), any prime cancellation, or the
+four-packet signed reassembly.  Also, \(\Edir\) is a complete-period quantity.
+The finite physical interval has an off-frequency Gram that is not controlled
+by Theorem~\ref{thm:envelope}.
+\end{remark}
+
+\section{Exact aligned-shell adversary}
+
+The shell Cauchy step cannot be replaced by a direct orthogonal sum.  Consider
+the finite rational fixture
+\begin{equation}
+ d=5,\qquad H=500,\qquad Q_{\mathrm{scale}}=100,
+ \qquad \{q\} = \{101,131,151,181\},
+ \qquad \psi(t)=\frac{1}{(1+t^2)^2}.
+ \label{eq:adversary}
+\end{equation}
+Each displayed \(q\) is prime and congruent to one modulo five.  Moreover,
+\(\lfloor5q/500\rfloor=1\), so the only nonzero integers are \(m=\pm1\).
+Since \(q^{-1}=1\pmod5\), every fixed-q row has support exactly
+\(\{1,4\}\).  The exact rational certificate in the accompanying repository
+records the individual rows, the combined row, and all norms without floating
+point arithmetic.
+
+For orientation, the exact values have decimal displays
+\begin{center}
+\begin{tabular}{@{}lr@{}}
+\toprule
+quantity & decimal display \\
+\midrule
+sum of individual row norms & 1.604830605122346 \\
+combined row norm & 5.946998427183525 \\
+combined/direct ratio & 3.705686075652919 \\
+\bottomrule
+\end{tabular}
+\end{center}
+The decimal values are only presentations of exact rationals.  The ratio is
+strictly larger than one, so positive cross terms occur.  The fixture is a
+finite structural adversary, not a model for an asymptotic prime shell.
+
+\begin{proposition}[aligned-shell obstruction]
+\label{prop:adversary}
+No proof that uses only the individual fixed-q row norms may replace
+\(\norm{\sum_qB_{d,q}}_2^2\) by \(\sum_q\norm{B_{d,q}}_2^2\) for the literal row
+family.  In particular, free shell orthogonality is refuted in this scoped
+structural sense.
+\end{proposition}
+
+\begin{proof}
+The fixture \eqref{eq:adversary} has common support and an exact combined norm
+strictly larger than the individual norm sum.  Therefore the proposed
+orthogonal replacement fails on an admissible finite reciprocal-emitter
+configuration.  The statement is scoped to the replacement rule; it does not
+assert an asymptotic lower bound for the V46 object.
+\end{proof}
+
+\section{Route evaluation and open gates}
+
+Theorem~\ref{thm:envelope} is the next quantitative envelope after TPC-215:
+\begin{equation}
+ \text{complete-period direct row energy}
+ \le x^{11/32+o(1)}.
+ \label{eq:route-advance}
+\end{equation}
+It removes the need to leave this direct-sum object completely unbounded, but
+it does not provide a saving relative to a required target scale.  The exact
+remaining gates are:
+\begin{enumerate}[leftmargin=2em]
+ \item attach the normalized complete-period envelope to the literal finite
+       physical window and its off-frequency Gram;
+ \item preserve the Mobius signs, prime-only shell, block tails, and four-packet
+       reassembly in one theorem;
+ \item pay the arithmetic \(L^2\), fixed-atom, and strict \(1/400\) ledgers.
+\end{enumerate}
+Route A is not applicable to this analytic twin-prime session.  The current
+Route-B structural threshold passes, while arithmetic advance is
+\texttt{NO}, \(L^2=\texttt{NONE}\), fixed-atom credit is zero, and full Gate B
+is open.
+
+\section{Conclusion}
+
+The source inequality \(4Q<H\) turns each fixed-prime reciprocal emitter row
+into an exact sum of distinct integer atoms.  Shell Cauchy and the elementary
+Mobius-log divisor sum then give the complete-period envelope
+\(L^{-1}\Edir\ll_\psi x^{11/32}(\log x)^3\).  The aligned rational fixture
+shows why the shell Cauchy factor is a real bottleneck rather than a notation
+artifact.  The next research step is a finite-window attachment that keeps this
+alignment issue and the literal signed reassembly visible.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

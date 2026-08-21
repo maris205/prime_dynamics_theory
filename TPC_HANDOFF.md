@@ -1,7 +1,114 @@
 # TPC HANDOFF
 
-更新时间：2026-08-20
-交接状态：`BOLD_CHANNEL_V68_TPC215_SEALED_FOR_NEW_SESSION`
+更新时间：2026-08-21
+交接状态：`BOLD_CHANNEL_V69_TPC216_SEALED_FOR_NEW_SESSION`
+
+TPC-216 当前 section：direct-sum row-energy envelope and the Cauchy bottleneck
+-------------------------------------------------------------------------------
+
+TPC-216 直接执行 TPC-215 的
+`BOUND_THE_DIRECT_SUM_PHYSICAL_ROW_ENERGY_BEFORE_REINTRODUCING_CROSS_FREQUENCIES`
+线索，并保持同一个 literal V46 object：
+
+~~~text
+H=x^(21/32), Q=x^(1/3), Y0=H/(4Q), U=x^(133/400), Q<q<=2Q,
+D_x={Y0<d<=U: mu(d)^2=1}, c_d=mu(d)log(d)/d.
+~~~
+
+source exponents 给 `H/(4Q)->infinity` 与 `U/Q->0`。因此充分大 `x` 时 `4Q<H`
+且 `U<Q`。对 fixed `d,q`，若两个 cutoff integers 产生相同 residue，则
+
+~~~text
+d | m1-m2,
+0<|m1-m2|<=2 floor(dq/H)<d,
+~~~
+
+矛盾。故 fixed-q row atoms exact 不碰撞，并有
+
+~~~text
+||B_(d,q)||_2^2
+ = sum_(0<|m|<=floor(dq/H)) |psi(Hm/(dq))|^2
+ <= 2||psi||_infty^2 d q/H.
+~~~
+
+令 `P=# {q prime:Q<q<=2Q}`。shell Cauchy、`q<=2Q` 与 elementary `P<=2Q`
+给出
+
+~~~text
+||B_d||_2^2 <= 4||psi||_infty^2 P^2 dQ/H
+             <= 16||psi||_infty^2 dQ^3/H.
+~~~
+
+因此 TPC-215 留下的 complete-period direct energy 满足
+
+~~~text
+L^(-1)E_direct
+ <= C_psi (Q^3/H) sum_(Y0<d<=U)mu(d)^2(log d)^2/d
+ <= C_psi (Q^3/H)(log U)^3
+ <<_psi x^(11/32)(log x)^3.
+~~~
+
+没有使用 PNT、Mobius cancellation 或 prime-shell cancellation。finite exact adversary
+取 `d=5`, `H=500`, `q={101,131,151,181}`, `psi(t)=(1+t^2)^(-2)`；四个 rows
+都精确支撑在 `{1,4}`，combined/direct norm ratio 约 `3.70568607565`。这只证明
+free q-orthogonality 在此 scope 被 refute，不是 V46 asymptotic lower bound。
+
+TPC-216 claim firewall：
+
+~~~text
+TPC216_ROUTE_ADVANCE = YES
+TPC216_STRUCTURAL_THRESHOLD_A = PASS
+TPC216_FIXED_Q_NO_COLLISION = PROVED_EXACT
+TPC216_FIXED_Q_ROW_ENERGY = PROVED_EXACT
+TPC216_SHELL_CAUCHY_ENVELOPE = PROVED_EXACT
+TPC216_PRIME_SHELL_CARDINALITY = PROVED_P_LE_2Q
+TPC216_NORMALIZED_EXPONENT = PROVED_11_OVER_32
+TPC216_DIRECT_SUM_ROW_ENERGY_ENVELOPE = PROVED_X_11_OVER_32_LOG_CUBED
+TPC216_ARITHMETIC_CANCELLATION = NONE
+TPC216_ALIGNED_SUPPORT_ADVERSARY = NUMERICALLY_CERTIFIED_EXACT_RATIONAL
+TPC216_FREE_Q_ORTHOGONALITY = REFUTED_SCOPED
+TPC216_FINITE_WINDOW_OFF_FREQUENCY_GRAM = OPEN
+TPC216_PRIME_SHELL_REASSEMBLY = OPEN
+TPC216_FULL_GATE_B = OPEN
+TPC216_ARITHMETIC_ADVANCE = NO
+TPC216_FIXED_ATOM_CREDIT = 0
+TPC216_L2 = NONE
+TPC216_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC216_TPC_TRIGGER = true
+~~~
+
+编号论文目录：`papers/tpc-216-direct-sum-row-energy-envelope/`
+
+~~~text
+papers/tpc-216-direct-sum-row-energy-envelope/README.md
+papers/tpc-216-direct-sum-row-energy-envelope/PAPER_PLAN.md
+papers/tpc-216-direct-sum-row-energy-envelope/PROOF_PACKAGE.md
+papers/tpc-216-direct-sum-row-energy-envelope/paper/main.tex
+papers/tpc-216-direct-sum-row-energy-envelope/paper/references.bib
+papers/tpc-216-direct-sum-row-energy-envelope/paper/paper.pdf
+papers/tpc-216-direct-sum-row-energy-envelope/code/direct_sum_row_energy.py
+papers/tpc-216-direct-sum-row-energy-envelope/experiments/run_certificate.py
+papers/tpc-216-direct-sum-row-energy-envelope/experiments/independent_checker.py
+papers/tpc-216-direct-sum-row-energy-envelope/experiments/adversarial_shell_alignment.py
+papers/tpc-216-direct-sum-row-energy-envelope/results/certificate.json
+papers/tpc-216-direct-sum-row-energy-envelope/notes/theorem_ledger.md
+papers/tpc-216-direct-sum-row-energy-envelope/notes/source_lock.md
+papers/tpc-216-direct-sum-row-energy-envelope/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_direct_sum_row_energy_envelope.md
+research/tpc-big-road/tpc_bridge_b_direct_sum_row_energy_envelope_checker.py
+~~~
+
+TPC-216 strongest positive result is the source-locked complete-period envelope
+`L^(-1)E_direct <<_psi x^(11/32)(log x)^3`.  Strongest obstruction is exact aligned
+shell support.  Open theorem is the finite physical-window attachment with literal Mobius
+signs and prime-shell/four-packet reassembly.  The next clue is:
+
+~~~text
+ATTACH_THE_COMPLETE_PERIOD_DIRECT_SUM_ENVELOPE_TO_THE_LITERAL_FINITE_WINDOW_WITHOUT_FREE_SHELL_ORTHOGONALITY
+~~~
+
+Route-B structural threshold A passes; Route A is not applicable; arithmetic `L2`,
+fixed-atom credit, strict `1/400`, full Gate B and the twin-prime endpoint remain open.
 
 TPC-215 当前 section：short-quotient Möbius tails and the no-power-loss cluster majorant
 ---------------------------------------------------------------------------------------
@@ -4576,8 +4683,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V65/TPC-212 gate及其 V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；八十六次必须都为零，且每一对 stdout
+22项启动回归之后，当前 V69/TPC-216 gate及其 V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；九十四次必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -4667,6 +4774,14 @@ python -B research/tpc-big-road/tpc_bridge_b_product_coupled_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_product_coupled_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_truncated_boundary_emitter_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_truncated_boundary_emitter_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_physical_profile_cross_gram_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_physical_profile_cross_gram_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_mobius_frequency_clusters_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_mobius_frequency_clusters_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_short_quotient_mobius_majorant_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_short_quotient_mobius_majorant_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_direct_sum_row_energy_envelope_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_direct_sum_row_energy_envelope_checker.py --check
 ```
 
 随后优先读取：

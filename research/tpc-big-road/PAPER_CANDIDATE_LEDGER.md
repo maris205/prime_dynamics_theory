@@ -1,12 +1,64 @@
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-20
+更新时间：2026-08-21
 
-状态：**TPC215_STRUCTURAL_THRESHOLD_A_RELEASED / SHORT_QUOTIENT_CLUSTER_MAJORANT / DIRECT_PHYSICAL_ENERGY_OPEN**
+状态：**TPC216_STRUCTURAL_THRESHOLD_A_RELEASED / DIRECT_SUM_ROW_ENERGY_ENVELOPE / FINITE_WINDOW_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.10 已发布：TPC-216 direct-sum row-energy envelope and the Cauchy bottleneck
+
+项目：`papers/tpc-216-direct-sum-row-energy-envelope/`
+
+类型：**PROVED_STRUCTURAL_L1 / DIRECT_SUM_ROW_ENERGY_ENVELOPE**。
+
+TPC-216 直接推进 TPC-215 留下的 direct-sum quantity。source inequality `4Q<H`
+使每个 fixed-q cutoff 的 integer atoms 在模 `d` 下 exact 不碰撞；一次 shell Cauchy、
+`P<=2Q` 与 elementary divisor harmonic sum 证明
+
+```text
+L^(-1)E_direct <<_psi (Q^3/H)(log U)^3
+                    = x^(11/32)(log x)^3.
+```
+
+finite exact adversary 中 `d=5`, `H=500`, `q={101,131,151,181}` 的四个 rows 全部
+支撑在 `{1,4}`，coherence ratio 约为 `3.70568607565`，因此 shell Cauchy 不能靠
+structural orthogonality 免费删除。
+
+```text
+TPC216_ROUTE_ADVANCE = YES
+TPC216_STRUCTURAL_THRESHOLD_A = PASS
+TPC216_FIXED_Q_NO_COLLISION = PROVED_EXACT
+TPC216_FIXED_Q_ROW_ENERGY = PROVED_EXACT
+TPC216_SHELL_CAUCHY_ENVELOPE = PROVED_EXACT
+TPC216_PRIME_SHELL_CARDINALITY = PROVED_P_LE_2Q
+TPC216_NORMALIZED_EXPONENT = PROVED_11_OVER_32
+TPC216_DIRECT_SUM_ROW_ENERGY_ENVELOPE = PROVED_X_11_OVER_32_LOG_CUBED
+TPC216_ARITHMETIC_CANCELLATION = NONE
+TPC216_ALIGNED_SUPPORT_ADVERSARY = NUMERICALLY_CERTIFIED_EXACT_RATIONAL
+TPC216_FREE_Q_ORTHOGONALITY = REFUTED_SCOPED
+TPC216_FINITE_WINDOW_OFF_FREQUENCY_GRAM = OPEN
+TPC216_PRIME_SHELL_REASSEMBLY = OPEN
+TPC216_FULL_GATE_B = OPEN
+TPC216_ARITHMETIC_ADVANCE = NO
+TPC216_FIXED_ATOM_CREDIT = 0
+TPC216_L2 = NONE
+TPC216_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+```text
+STRONGEST_POSITIVE_RESULT = SOURCE_LOCKED_COMPLETE_PERIOD_DIRECT_SUM_ROW_ENERGY_IS_AT_MOST_X_11_OVER_32_LOG_CUBED
+STRONGEST_OBSTRUCTION = FINITE_PRIME_SHELL_ROWS_CAN_HAVE_EXACTLY_ALIGNED_RESIDUE_SUPPORT
+OPEN_THEOREM = ATTACH_COMPLETE_PERIOD_DIRECT_SUM_ENVELOPE_TO_LITERAL_FINITE_WINDOW
+REUSABLE_STRUCTURE = FIXED_Q_INJECTIVE_ATOMS_PLUS_SHELL_CAUCHY_PLUS_MOBIUS_LOG_DIVISOR_SUM
+ROUND2_CLUE = ATTACH_THE_COMPLETE_PERIOD_DIRECT_SUM_ENVELOPE_TO_THE_LITERAL_FINITE_WINDOW_WITHOUT_FREE_SHELL_ORTHOGONALITY
+```
+
+Bridge proof/checker：`research/tpc-big-road/bridge_b_direct_sum_row_energy_envelope.md`
+与 `research/tpc-big-road/tpc_bridge_b_direct_sum_row_energy_envelope_checker.py`。
+没有 arithmetic `L2`、fixed-atom credit、strict `1/400` 或 twin-prime conclusion。
 
 ## 0.9 已发布：TPC-215 short-quotient Möbius tails and the no-power-loss majorant
 
