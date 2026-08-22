@@ -2,23 +2,25 @@
 
 更新时间：2026-08-22
 
-当前地图版本：V77 / TPC-224
+当前地图版本：V78 / TPC-225
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-224`（`PROVED_STRUCTURAL_L1 / LITERAL_TWO_CHANNEL_COMPATIBILITY`）；对应
-论文目录为 `papers/tpc-224-literal-two-channel-compatibility-audit/`。TPC-224 对同一组
-literal prime-label/packet-label vectors 证明共同 interface：
+当前编号锚点：`TPC-225`（`PROVED_STRUCTURAL_L1 / CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION`）；
+对应论文目录为 `papers/tpc-225-cutoff-one-shared-clock-obstruction/`。TPC-225
+对 TPC-224 named source clock `x=Q^3,H=4Q^2,h=4Q` 证明 cutoff one 与
+distinct prime-row support disjointness，从而 exact
 
 ```text
-E_all <= min(J E_AP, P E_pol)
-      <= PJ/(P+J) (E_AP+E_pol).
+E_AP = E_diag
+E_all = E_pol.
 ```
 
-`PJ/(P+J)` 是 exact sharp；五个独立 congruence-aligned actual-prime stress scales
-scoped-refute unit-factor shortcut。AP dispersion、polarized cross-correlation、V46
-source-clock transfer、arithmetic cancellation 和 complete Gate B 仍 OPEN；这是
-structural L1，不是 arithmetic advance。
+因此 strict AP marginal saving 在该 named clock 上被 scoped-refute；9 个 affine
+scales、14 个 adversarial profile records 与 `Q=3..99` boundary replay
+通过 exact rational checks。nontrivial-cutoff clock、polarized signed correlation、
+V46 transfer、arithmetic cancellation 和 complete Gate B 仍 OPEN；这是 structural
+L1，不是 arithmetic advance。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -60,9 +62,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V77 / TPC-224                     |
-        | LITERAL TWO-CHANNEL COMPATIBILITY AUDIT        |
-        | sharp structural interface; arithmetic OPEN    |
+        | YOU ARE HERE — V78 / TPC-225                     |
+        | CUTOFF-ONE SHARED-CLOCK OBSTRUCTION              |
+        | AP saving scoped-refuted; arithmetic OPEN        |
         +--------------------------------------------------+
                 |
                 v
@@ -105,11 +107,12 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V77 / TPC-224 的
-literal two-channel compatibility audit。共同 prime-label/packet-label vector family
-已经给出 exact sharp `PJ/(P+J)` reassembly envelope，并以 actual-prime stress family
-封住 unit-factor 捷径；AP/polarized arithmetic marginals、V46 transfer、FULL_GATE_B、
-strict `1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V78 / TPC-225 的
+cutoff-one shared-clock obstruction。TPC-224 named source clock 的 prime supports
+两两不交，故 exact `E_AP=E_diag`、`E_all=E_pol`，strict AP saving
+在该 clock 上被 scoped-refute；nontrivial-cutoff clock、polarized arithmetic marginal、
+V46 transfer、FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom credit
+继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1239,6 +1242,53 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.19 V78 / TPC-225：cutoff-one shared-clock obstruction
+
+TPC-225 审计 TPC-224 source-surrogate clock
+`x=Q^3,H=4Q^2,h=4Q,Q<q<=2Q`。对 TPC-220 literal row rule，
+
+```text
+floor(hq/H)=floor(q/Q)=1,
+support(W_(q,j)) subset {q^(-1),-q^(-1)} mod 4Q.
+```
+
+若 distinct active primes 的 supports 相交，则
+`q_2=+/-q_1 mod 4Q`。正号由 shell width 强迫 prime equality；负号由
+`2Q<q_1+q_2<=4Q` 强迫 `q_1=q_2=2Q`，与 primality 矛盾。
+所以 active Hilbert support 是 prime-labelled orthogonal direct sum，且对任意 finite
+profile values exact
+
+```text
+E_AP  = E_diag
+E_all = E_pol.
+```
+
+因此当 diagonal energy 非零时，`E_AP<=(1-delta)E_diag` 的任何
+`delta>0` 都失败。aligned profile 给 `E_pol/E_diag=4`；
+balanced profile 给 `E_pol=E_all=0` 但 `E_AP=E_diag>0`，
+说明 packet direction 可变化而 AP direction 在 cutoff-one regime 中刚性不变。
+
+```text
+TPC225_CUTOFF_ONE = PROVED_EXACT
+TPC225_SUPPORT_DISJOINTNESS = PROVED_EXACT
+TPC225_AP_EQUALS_DIAGONAL = PROVED_EXACT
+TPC225_ALL_EQUALS_POLARIZED = PROVED_EXACT
+TPC225_AP_SAVING_ON_NAMED_CLOCK = REFUTED_SCOPED
+TPC225_POLARIZED_SAVING = PROFILE_DEPENDENT_OPEN
+TPC225_V46_CLOCK_TRANSFER = OPEN
+TPC225_ARITHMETIC_ADVANCE = NO
+TPC225_FIXED_ATOM_CREDIT = 0
+TPC225_L2 = NONE
+TPC225_FULL_GATE_B = OPEN
+TPC225_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC225_ROUND2_CLUE = MOVE_TO_NONTRIVIAL_CUTOFF_CLOCK_BEFORE_CLAIMING_AP_DISPERSION
+```
+
+地图位置：**V78 / TPC-225 把 TPC-224 的 shared-clock marginal question 精确分叉：
+当前 named cutoff-one clock 的 AP lane 已 theorem-level stop-scoped；下一条最短大路是
+source-locked nontrivial-cutoff clock 的 collision audit，而不是把 finite block
+orthogonality 误称为 arithmetic cancellation。**
+
 ## 5.18 V77 / TPC-224：literal two-channel compatibility audit
 
 TPC-224 直接审计 TPC-223 的共同 literal interface。对同一组 prime-label/packet-label
@@ -1561,7 +1611,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V77 / TPC-224：
+截至 V78 / TPC-225：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1711,7 +1761,19 @@ TPC224_FIXED_ATOM_CREDIT = 0
 TPC224_L2 = NONE
 TPC224_FULL_GATE_B = OPEN
 TPC224_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-224
+TPC225_CUTOFF_ONE = PROVED_EXACT
+TPC225_SUPPORT_DISJOINTNESS = PROVED_EXACT
+TPC225_AP_EQUALS_DIAGONAL = PROVED_EXACT
+TPC225_ALL_EQUALS_POLARIZED = PROVED_EXACT
+TPC225_AP_SAVING_ON_NAMED_CLOCK = REFUTED_SCOPED
+TPC225_POLARIZED_SAVING = PROFILE_DEPENDENT_OPEN
+TPC225_V46_CLOCK_TRANSFER = OPEN
+TPC225_ARITHMETIC_ADVANCE = NO
+TPC225_FIXED_ATOM_CREDIT = 0
+TPC225_L2 = NONE
+TPC225_FULL_GATE_B = OPEN
+TPC225_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-225
 ```
 
 以下事实不得从路线图中推断：
@@ -1729,11 +1791,12 @@ NUMBERED_RELEASE = TPC-224
 
 优先级更新为：
 
-1. **TPC-224 已完成：literal two-channel compatibility audit**。对同一组
-   prime-label/packet-label vectors 证明
-   `E_all<=min(J E_AP,P E_pol)<=PJ/(P+J)(E_AP+E_pol)`，并用五个 exact-rational
-   congruence-aligned stress scales scoped-refute unit-factor shortcut；这只是一项
-   structural L1，不支付 AP/polarized arithmetic marginals。
+1. **TPC-225 已完成：cutoff-one shared-clock obstruction**。在 TPC-224 named
+   source-surrogate clock 上证明 `E_AP=E_diag`、`E_all=E_pol` 与
+   prime-support disjointness，strict AP saving 在该 clock 上 scoped-refuted；这是一项
+   structural L1，不支付 arithmetic marginal。其直接上游 TPC-224 已完成共同 literal
+   interface `E_all<=min(J E_AP,P E_pol)<=PJ/(P+J)(E_AP+E_pol)` 并用
+   congruence-aligned stress scales scoped-refute unit-factor shortcut。
 2. **TPC-223 已完成：conditional signed-reassembly compiler**。在共同 literal interface
    假设下，two-channel exponent exact 编译为
    `sigma=min(delta_AP,kappa_pol)-lambda_struct`；canonical ledger 给出 effective
@@ -1766,10 +1829,10 @@ NUMBERED_RELEASE = TPC-224
 10. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-11. **TPC-224 的下一步：shared-clock marginal savings**。在共同 literal vectors 上，
-    将 AP/collision 与 polarized cross-correlation 的 arithmetic estimates 放回同一
-    source clock、normalization 与 prime shell；不能把 finite structural factor当作
-    arithmetic credit。
+11. **TPC-225 的下一步：nontrivial-cutoff shared-clock audit**。在 source-locked
+    clock 上让第二个 `m`-layer 真正进入 literal rows，先求 collision graph
+    与 exact support identities，再判断是否存在 legitimate AP overlap；不能把
+    cutoff-one block orthogonality 外推为所有 V46 clocks 的 obstruction。
 12. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -1868,6 +1931,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-22 | V78 / TPC-225 | Bridge A / Gate B：cutoff-one shared-clock obstruction；named source clock 的 prime blocks exact orthogonal，strict AP saving scoped-refuted；nontrivial-cutoff overlap与arithmetic仍 open | `TPC-225` | exact cutoff-one theorem、`E_AP=E_diag`、`E_all=E_pol`、9+14 exact-rational audits、`Q=3..99` boundary replay；arithmetic仍为 NO |
 | 2026-08-22 | V77 / TPC-224 | Bridge A / Gate B：literal two-channel compatibility；共同 Hilbert interface exact，unit-factor shortcut scoped-refuted；arithmetic marginals open | `TPC-224` | exact `E_all<=min(J E_AP,P E_pol)<=PJ/(P+J)(E_AP+E_pol)`、9+5 exact-rational finite audits、actual-prime congruence stress；arithmetic仍为 NO |
 | 2026-08-22 | V76 / TPC-223 | Bridge A / Gate B：conditional two-channel signed-reassembly compiler；literal AP/polarized/reassembly inputs open | `TPC-223` | exact `min(delta_AP,kappa_pol)-lambda_struct` ledger、strict `1/400` criterion、`11/1200` effective saving fixture与 boundary adversaries；arithmetic仍为 NO |
 | 2026-08-22 | V75 / TPC-222 | Bridge A / Gate B：four-packet PSD Gram、四点极化与 trace envelope；signed cross-term identifiability scoped-refuted；literal polarized reassembly open | `TPC-222` | exact four-phase compiler、sharp trace bound、same-diagonal/trace `16/0` rank-one obstruction；arithmetic仍为 NO |

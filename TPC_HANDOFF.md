@@ -1,10 +1,71 @@
 # TPC HANDOFF
 
 更新时间：2026-08-22
-交接状态：`BOLD_CHANNEL_V77_TPC224_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V78_TPC225_SEALED_FOR_NEW_SESSION`
 
-TPC-224 当前 section：literal two-channel compatibility audit
+TPC-225 当前 section：cutoff-one shared-clock obstruction
 -----------------------------------------------------------------
+
+TPC-225 是 TPC-224 shared-clock question 的最小 obstruction follow-up。它冻结
+TPC-224 使用的 source-surrogate clock
+`x=Q^3, H=4Q^2, h=4Q, Q<q<=2Q prime`，并证明
+```text
+floor(hq/H)=1
+support(W_(q,j)) subset {q^(-1),-q^(-1)} mod 4Q
+E_AP = E_diag
+E_all = E_pol
+```
+
+不同 active prime rows 的 two-point supports pairwise disjoint；所以只要
+`E_diag>0`，named clock 上不存在严格 AP saving
+`E_AP<=(1-delta)E_diag` with `delta>0`。这是 theorem-level
+`REFUTED_SCOPED`，不是 universal V46 obstruction；nontrivial-cutoff clock
+与 physical synthesis transfer 仍 open。
+
+TPC-225 claim firewall：
+
+```text
+TPC225_ROUTE_ADVANCE = YES
+TPC225_CUTOFF_ONE = PROVED_EXACT
+TPC225_SUPPORT_DISJOINTNESS = PROVED_EXACT
+TPC225_AP_EQUALS_DIAGONAL = PROVED_EXACT
+TPC225_ALL_EQUALS_POLARIZED = PROVED_EXACT
+TPC225_AP_SAVING_ON_NAMED_CLOCK = REFUTED_SCOPED
+TPC225_POLARIZED_SAVING = PROFILE_DEPENDENT_OPEN
+TPC225_V46_CLOCK_TRANSFER = OPEN
+TPC225_ARITHMETIC_CANCELLATION = NONE
+TPC225_ARITHMETIC_ADVANCE = NO
+TPC225_FIXED_ATOM_CREDIT = 0
+TPC225_L2 = NONE
+TPC225_FULL_GATE_B = OPEN
+TPC225_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC225_TPC_TRIGGER = true
+TPC225_NUMBERED_RELEASE = YES
+TPC225_STATUS = PROVED_STRUCTURAL_L1
+TPC225_ROUND2_CLUE = MOVE_TO_NONTRIVIAL_CUTOFF_CLOCK_BEFORE_CLAIMING_AP_DISPERSION
+```
+
+TPC-225 strongest positive result 是 exact prime-block orthogonal decomposition；
+strongest obstruction 是 AP marginal 恒等于 diagonal energy；open theorem 是
+source-locked nontrivial-cutoff clock 的 legitimate cross-prime overlap 与 polarized
+signed correlation；reusable structure 是 cutoff-one support lemma、block decomposition
+和 `E_AP=E_diag` / `E_all=E_pol` identities。9 个 affine scales、
+14 个 aligned/balanced profile records 与完整 `Q=3..99` boundary replay
+均由 exact rational producer、independent normal/optimized checker 和 adversary 通过。
+
+编号论文目录：papers/tpc-225-cutoff-one-shared-clock-obstruction/
+
+```text
+papers/tpc-225-cutoff-one-shared-clock-obstruction/README.md
+papers/tpc-225-cutoff-one-shared-clock-obstruction/PAPER_PLAN.md
+papers/tpc-225-cutoff-one-shared-clock-obstruction/PROOF_PACKAGE.md
+papers/tpc-225-cutoff-one-shared-clock-obstruction/paper/paper.pdf
+papers/tpc-225-cutoff-one-shared-clock-obstruction/results/certificate.json
+papers/tpc-225-cutoff-one-shared-clock-obstruction/notes/theorem_ledger.md
+papers/tpc-225-cutoff-one-shared-clock-obstruction/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_cutoff_one_shared_clock_obstruction.md
+research/tpc-big-road/tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py
+```
 
 TPC-224 是 TPC-223 的最小结构性后续：它不再把共同 literal interface 当作未展开的
 黑箱，而是对同一组 prime-label/packet-label Hilbert vectors `W_(q,j)` 定义
@@ -5216,8 +5277,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V77/TPC-224 gate、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百一十次（55 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V78/TPC-225 gate、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百一十二次（56 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -5331,11 +5392,23 @@ python -B research/tpc-big-road/tpc_bridge_b_conditional_signed_reassembly_compi
 python -O -B research/tpc-big-road/tpc_bridge_b_conditional_signed_reassembly_compiler_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-224 入口：
+最新 TPC-225 入口：
+
+```text
+papers/tpc-225-cutoff-one-shared-clock-obstruction/README.md
+papers/tpc-225-cutoff-one-shared-clock-obstruction/notes/theorem_ledger.md
+papers/tpc-225-cutoff-one-shared-clock-obstruction/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_cutoff_one_shared_clock_obstruction.md
+research/tpc-big-road/tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py
+```
+
+TPC-224 上游入口：
 
 ```text
 papers/tpc-224-literal-two-channel-compatibility-audit/README.md

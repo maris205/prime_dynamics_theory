@@ -1,16 +1,64 @@
-# TPC big road V77 / TPC-224: literal two-channel compatibility audit
+# TPC big road V78 / TPC-225: cutoff-one shared-clock obstruction
 
 更新时间：2026-08-22
 
-状态：`TPC224_PROVED_STRUCTURAL_L1 / LITERAL_TWO_CHANNEL_COMPATIBILITY / FULL_GATE_B_OPEN`
+状态：`TPC225_PROVED_STRUCTURAL_L1 / CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-224 proof 为
-`bridge_b_literal_two_channel_compatibility_audit.md`，checker 为
-`tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py`，编号论文为
-`../../papers/tpc-224-literal-two-channel-compatibility-audit/`。
+当前 TPC-225 proof 为
+`bridge_b_cutoff_one_shared_clock_obstruction.md`，checker 为
+`tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py`，编号论文为
+`../../papers/tpc-225-cutoff-one-shared-clock-obstruction/`。
+
+TPC-225 审计 TPC-224 named source-surrogate clock：
+
+```text
+x=Q^3, H=4Q^2, h=4Q, Q<q<=2Q prime
+floor(hq/H)=1
+```
+
+每个 literal prime row 只有两个 residue coordinates
+`{q^(-1),-q^(-1)}`；不同 active prime rows 的 supports 两两不交，因而 exact
+
+```text
+E_AP  = E_diag
+E_all = E_pol
+```
+
+成立。于是只要 diagonal energy 非零，该 named clock 上不存在严格的 prime-label AP
+saving。producer、independent checker、boundary adversary 使用 exact rational arithmetic，
+覆盖 9 个 affine scales、14 个 profile records 与完整 Q=3..99 geometry replay；这是
+scoped structural obstruction，不是对所有 V46 clocks 的 transfer。
+
+TPC-225 claim firewall：
+
+```text
+TPC225_ROUTE_ADVANCE = YES
+TPC225_CUTOFF_ONE = PROVED_EXACT
+TPC225_SUPPORT_DISJOINTNESS = PROVED_EXACT
+TPC225_AP_EQUALS_DIAGONAL = PROVED_EXACT
+TPC225_ALL_EQUALS_POLARIZED = PROVED_EXACT
+TPC225_AP_SAVING_ON_NAMED_CLOCK = REFUTED_SCOPED
+TPC225_POLARIZED_SAVING = PROFILE_DEPENDENT_OPEN
+TPC225_V46_CLOCK_TRANSFER = OPEN
+TPC225_ARITHMETIC_ADVANCE = NO
+TPC225_FIXED_ATOM_CREDIT = 0
+TPC225_L2 = NONE
+TPC225_FULL_GATE_B = OPEN
+TPC225_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC225_STATUS = PROVED_STRUCTURAL_L1
+TPC225_ROUND2_CLUE = MOVE_TO_NONTRIVIAL_CUTOFF_CLOCK_BEFORE_CLAIMING_AP_DISPERSION
+```
+
+strongest positive result：cutoff-one source clock 诱导 prime-label 的 block-orthogonal
+Hilbert decomposition；strongest obstruction：AP marginal 恒等于 diagonal energy；
+open theorem：source-locked nontrivial-cutoff clock 的真实 cross-prime overlap 与
+polarized signed correlation；reusable structure：E_AP=E_diag、E_all=E_pol；
+ROUND2_CLUE：
+
+`MOVE_TO_NONTRIVIAL_CUTOFF_CLOCK_BEFORE_CLAIMING_AP_DISPERSION`
 
 TPC-224 对同一组 literal vectors `W_(q,j)` 定义
 

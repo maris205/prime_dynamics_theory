@@ -1,11 +1,47 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-22
-状态：`BOLD_CHANNEL_V77 / LITERAL_TWO_CHANNEL_COMPATIBILITY_AUDIT`
-claim level：`PROVED_STRUCTURAL_L1_LITERAL_TWO_CHANNEL_COMPATIBILITY`
-编号事实终点：TPC-224；TPC-224 trigger：`true`
+状态：`BOLD_CHANNEL_V78 / CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION`
+claim level：`PROVED_STRUCTURAL_L1_CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION`
+编号事实终点：TPC-225；TPC-225 trigger：`true`
 
-当前 TPC-224 入口：proof 为
+当前 TPC-225 入口：proof 为
+`research/tpc-big-road/bridge_b_cutoff_one_shared_clock_obstruction.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py`，编号论文为
+`papers/tpc-225-cutoff-one-shared-clock-obstruction/`。在 TPC-224 的
+named source-surrogate clock `x=Q^3,H=4Q^2,h=4Q` 上，literal rows 的 cutoff
+严格为 one，distinct prime supports `{q^(-1),-q^(-1)}` 两两不交，因此本篇证明
+
+```text
+E_AP = E_diag
+E_all = E_pol
+```
+
+named clock 上的 strict AP saving 被 scoped-refute。9 个 affine scales、14 个 profile
+records 和完整 `Q=3..99` boundary replay 均通过 exact rational checker；这是
+structural L1 obstruction，不是 arithmetic advance 或对所有 V46 clocks 的 transfer。
+
+TPC-225 claim firewall：
+
+```text
+TPC225_ROUTE_ADVANCE = YES
+TPC225_CUTOFF_ONE = PROVED_EXACT
+TPC225_SUPPORT_DISJOINTNESS = PROVED_EXACT
+TPC225_AP_EQUALS_DIAGONAL = PROVED_EXACT
+TPC225_ALL_EQUALS_POLARIZED = PROVED_EXACT
+TPC225_AP_SAVING_ON_NAMED_CLOCK = REFUTED_SCOPED
+TPC225_POLARIZED_SAVING = PROFILE_DEPENDENT_OPEN
+TPC225_V46_CLOCK_TRANSFER = OPEN
+TPC225_ARITHMETIC_ADVANCE = NO
+TPC225_FIXED_ATOM_CREDIT = 0
+TPC225_L2 = NONE
+TPC225_FULL_GATE_B = OPEN
+TPC225_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC225_STATUS = PROVED_STRUCTURAL_L1
+TPC225_ROUND2_CLUE = MOVE_TO_NONTRIVIAL_CUTOFF_CLOCK_BEFORE_CLAIMING_AP_DISPERSION
+```
+
+当前 TPC-224 上游入口：proof 为
 `research/tpc-big-road/bridge_b_literal_two_channel_compatibility_audit.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py`，编号论文为
 `papers/tpc-224-literal-two-channel-compatibility-audit/`。对同一组 literal

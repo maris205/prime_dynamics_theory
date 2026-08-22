@@ -9,12 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-224 将 TPC-223 留下的共同 literal interface 写成一个 exact
-Hilbert-vector theorem：对同一组 prime-label/packet-label vectors，
-`E_all <= PJ/(P+J) (E_AP+E_pol)`，且常数 sharp；独立的 congruence-aligned
-finite stress clock refutes 朴素 unit-factor interface。AP dispersion、polarized
-cross-correlation、V46 source-clock transfer 与完整 Gate B 仍 OPEN；这是
-`PROVED_STRUCTURAL_L1`，不是 arithmetic `L2` 或 twin-prime endpoint。
+当前主线状态：TPC-225 对 TPC-224 命名的 source-surrogate clock
+x=Q^3, H=4Q^2, h=4Q, Q<q<=2Q 作了 cutoff-one 精确审计。由于每个 literal
+prime row 只有 m=+1,-1 两个 residue coordinates，且不同 prime rows 的
+{q^(-1),-q^(-1)} 支持两两不交，得到 E_AP=E_diag 与 E_all=E_pol。
+因此该 named clock 上的严格 AP marginal saving 被 scoped-refute；这是
+PROVED_STRUCTURAL_L1，不是 arithmetic L2 或 twin-prime endpoint。下一步应
+转向 source-locked nontrivial-cutoff clock，不能把该 obstruction 外推到所有 V46 clocks。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -28,6 +29,8 @@ cross-correlation、V46 source-clock transfer 与完整 Gate B 仍 OPEN；这是
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-225-cutoff-one-shared-clock-obstruction` - `PROVED_STRUCTURAL_L1 / CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION` - 证明 TPC-224 named source clock 的 cutoff-one prime rows 具有 pairwise disjoint support，精确得到 E_AP=E_diag、E_all=E_pol，从而在该 clock 上 refute strict AP saving；完成 9 个 affine scales、14 个 adversarial profile records 与 Q=3..99 boundary replay，算术 L2、V46 transfer、Gate B 仍开放。
 
 `tpc-224-literal-two-channel-compatibility-audit` - `PROVED_STRUCTURAL_L1 / LITERAL_TWO_CHANNEL_COMPATIBILITY` - 证明共同 literal Hilbert-vector interface 与 sharp constant `PJ/(P+J)`，并用五个 exact-rational collision-stress scales scoped-refute unit-factor shortcut；算术 marginal savings 与 V46 transfer 仍开放。
 

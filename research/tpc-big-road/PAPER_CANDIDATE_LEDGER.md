@@ -2,11 +2,77 @@
 
 更新时间：2026-08-22
 
-状态：**TPC224_PROVED_STRUCTURAL_L1_RELEASED / LITERAL_TWO_CHANNEL_COMPATIBILITY / ARITHMETIC_INPUTS_OPEN**
+状态：**TPC225_PROVED_STRUCTURAL_L1_RELEASED / CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION / ARITHMETIC_INPUTS_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.19 已发布：TPC-225 cutoff-one shared-clock obstruction
+
+项目：`papers/tpc-225-cutoff-one-shared-clock-obstruction/`
+
+类型：**PROVED_STRUCTURAL_L1 / CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION**。
+
+TPC-225 直接审计 TPC-224 命名的 source-surrogate clock：
+
+```text
+x=Q^3, H=4Q^2, h=4Q, Q<q<=2Q prime
+floor(hq/H)=floor(q/Q)=1.
+```
+
+每个 literal row 只包含 `m=+1,-1`，支持为
+`{q^(-1),-q^(-1)} mod 4Q`。若 distinct prime supports 相交，则
+`q_2=+/-q_1 mod 4Q`；shell interval 分别把两种情形压成 prime equality 或
+`q_1+q_2=4Q`，后者又强迫两者都是非素数 `2Q`。因此 prime blocks
+pairwise orthogonal，并精确得到
+
+```text
+E_AP  = E_diag
+E_all = E_pol.
+```
+
+只要 `E_diag>0`，任何 `delta>0` 的
+`E_AP<=(1-delta)E_diag` 都在该 named clock 上失败。该 obstruction
+严格 scoped：本篇没有证明所有 V46 clocks 都是 cutoff one，也没有把 finite modulus
+`h=4Q` 等同于 physical fixed atom。
+
+```text
+TPC225_ROUTE_ADVANCE = YES
+TPC225_CUTOFF_ONE = PROVED_EXACT
+TPC225_SUPPORT_DISJOINTNESS = PROVED_EXACT
+TPC225_AP_EQUALS_DIAGONAL = PROVED_EXACT
+TPC225_ALL_EQUALS_POLARIZED = PROVED_EXACT
+TPC225_AP_SAVING_ON_NAMED_CLOCK = REFUTED_SCOPED
+TPC225_POLARIZED_SAVING = PROFILE_DEPENDENT_OPEN
+TPC225_V46_CLOCK_TRANSFER = OPEN
+TPC225_ARITHMETIC_CANCELLATION = NONE
+TPC225_ARITHMETIC_ADVANCE = NO
+TPC225_FIXED_ATOM_CREDIT = 0
+TPC225_L2 = NONE
+TPC225_FULL_GATE_B = OPEN
+TPC225_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC225_STATUS = PROVED_STRUCTURAL_L1
+TPC225_ROUND2_CLUE = MOVE_TO_NONTRIVIAL_CUTOFF_CLOCK_BEFORE_CLAIMING_AP_DISPERSION
+```
+
+strongest positive result：named cutoff-one clock 诱导 exact prime-block orthogonal
+decomposition，且 `E_AP=E_diag`、`E_all=E_pol` 对任意 finite
+profile values 成立；strongest obstruction：strict AP marginal saving 在该 clock 上
+被 theorem-level scoped-refute；open theorem：找到 source-locked nontrivial-cutoff
+clock 并证明其 legitimate cross-prime overlap 的 dispersion，或证明相应 obstruction；
+reusable structure：cutoff-one support lemma 与 block decomposition；
+`ROUND2_CLUE`：
+
+```text
+MOVE_TO_NONTRIVIAL_CUTOFF_CLOCK_BEFORE_CLAIMING_AP_DISPERSION
+```
+
+证据包包含 9 个 exact-rational affine scales、7 个 aligned 与 7 个 balanced profile
+records、完整 `Q=3..99` boundary geometry replay、normal/optimized
+byte-identical independent checker 与 5 页嵌入字体 PDF。Bridge proof/checker 为
+`research/tpc-big-road/bridge_b_cutoff_one_shared_clock_obstruction.md` 与
+`research/tpc-big-road/tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py`。
 
 ## 0.18 已发布：TPC-224 literal two-channel compatibility audit
 
