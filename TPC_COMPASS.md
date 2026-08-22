@@ -1,9 +1,42 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-22
-状态：`BOLD_CHANNEL_V73 / PRIME_AP_COLLISION_CROSSWALK_SCHUR_OPEN`
-claim level：`PROVED_STRUCTURAL_L1_EXACT_PRIME_AP_MULTIPLICATIVE_CROSSWALK`
-编号事实终点：TPC-220；TPC-220 trigger：`true`
+状态：`BOLD_CHANNEL_V74 / COLLISION_GRAPH_SCHUR_SATURATION_OPEN`
+claim level：`PROVED_STRUCTURAL_L1_COLLISION_GRAPH_SCHUR_ENVELOPE`
+编号事实终点：TPC-221；TPC-221 trigger：`true`
+
+当前 TPC-221 入口：proof 为
+`research/tpc-big-road/bridge_b_collision_graph_schur_envelope.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_collision_graph_schur_envelope_checker.py`，编号论文为
+`papers/tpc-221-collision-graph-schur-envelope/`。TPC-220 的 collision Gram 现在被
+组织成 PSD quadratic form，并对任意 q-weights 证明 weighted Schur envelope：
+
+```text
+E(lambda) = lambda^* Gamma lambda
+  <= max_q p_q^(-1) sum_q' |Gamma(q,q')| p_q' * ||lambda||_2^2.
+```
+
+literal saturation fixture 取 `h=5`, `H=500`, constant profile 与
+`q={101,151,181,191}`；所有 rows 都是 `e_1+e_4`，所以 `Gamma=2J_4`，Schur radius
+和 top Rayleigh quotient 都是 `8`，coherent/diagonal ratio 精确为 `P=4`。这证明
+absolute collision-degree control 是结构性上包络，但不能单独击破 q-collapse。
+
+TPC-221 claim firewall：
+
+```text
+TPC221_ROUTE_ADVANCE = YES
+TPC221_COLLISION_GRAM_PSD = PROVED_EXACT
+TPC221_SCHUR_ENVELOPE = PROVED_EXACT
+TPC221_WEIGHTED_SCHUR_ENVELOPE = PROVED_EXACT
+TPC221_LITERAL_SATURATION = PROVED_EXACT_FINITE
+TPC221_ABSOLUTE_SCHUR_SUBP_SAVING = REFUTED_SCOPED
+TPC221_ARITHMETIC_ADVANCE = NO
+TPC221_FIXED_ATOM_CREDIT = 0
+TPC221_L2 = NONE
+TPC221_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC221_FULL_GATE_B = OPEN
+TPC221_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-220 入口：proof 为
 `research/tpc-big-road/bridge_b_prime_ap_collision_crosswalk.md`，checker 为

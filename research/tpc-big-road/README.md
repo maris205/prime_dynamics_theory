@@ -1,11 +1,48 @@
-# TPC big road V73 / TPC-220: prime-AP collision crosswalk
+# TPC big road V74 / TPC-221: collision-graph Schur envelope and literal saturation
 
 更新时间：2026-08-22
 
-状态：`TPC220_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / EXACT_PRIME_AP_MULTIPLICATIVE_CROSSWALK`
+状态：`TPC221_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / COLLISION_GRAPH_SCHUR_ENVELOPE`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-221 proof 为
+`bridge_b_collision_graph_schur_envelope.md`，checker 为
+`tpc_bridge_b_collision_graph_schur_envelope_checker.py`，编号论文为
+`../../papers/tpc-221-collision-graph-schur-envelope/`。
+
+TPC-221 将 TPC-220 的 collision Gram 组织成一个 PSD operator。对 literal rows
+`B_q` 与 q-weight vector `lambda`，
+
+```text
+E(lambda) = lambda^* Gamma lambda
+  <= max_q p_q^(-1) sum_q' |Gamma(q,q')| p_q' * ||lambda||_2^2.
+```
+
+这是 exact weighted Schur envelope，保留了 TPC-220 的 collision entries，但不制造
+sign/phase cancellation。更重要的是，literal finite fixture
+`h=5`, `H=500`, constant profile, `q={101,151,181,191}` 中每个 row 都是
+`e_1+e_4`，从而 `Gamma=2J_4`、Schur radius `8`、coherent/diagonal ratio `4=P`。
+所以 absolute collision-degree bound 在该 scope 内不能自动产生 sub-`P` saving。
+
+TPC-221 claim firewall：
+
+```text
+TPC221_ROUTE_ADVANCE = YES
+TPC221_STRUCTURAL_THRESHOLD_A = PASS
+TPC221_COLLISION_GRAM_PSD = PROVED_EXACT
+TPC221_SCHUR_ENVELOPE = PROVED_EXACT
+TPC221_WEIGHTED_SCHUR_ENVELOPE = PROVED_EXACT
+TPC221_LITERAL_SATURATION = PROVED_EXACT_FINITE
+TPC221_ABSOLUTE_SCHUR_SUBP_SAVING = REFUTED_SCOPED
+TPC221_ARITHMETIC_ADVANCE = NO
+TPC221_FIXED_ATOM_CREDIT = 0
+TPC221_L2 = NONE
+TPC221_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC221_FULL_GATE_B = OPEN
+TPC221_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-220 proof 为
 `bridge_b_prime_ap_collision_crosswalk.md`，checker 为

@@ -2,11 +2,61 @@
 
 更新时间：2026-08-22
 
-状态：**TPC220_STRUCTURAL_THRESHOLD_A_RELEASED / PRIME_AP_COLLISION_CROSSWALK / SCHUR_QUANTIFICATION_OPEN**
+状态：**TPC221_STRUCTURAL_THRESHOLD_A_RELEASED / COLLISION_GRAPH_SCHUR_ENVELOPE / SIGNED_DISPERSION_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.15 已发布：TPC-221 collision-graph Schur envelope and literal saturation
+
+项目：`papers/tpc-221-collision-graph-schur-envelope/`
+
+类型：**PROVED_STRUCTURAL_L1 / COLLISION_GRAPH_SCHUR_ENVELOPE**。
+
+TPC-221 将 TPC-220 的 exact multiplicative collision Gram 变成可复用的 operator
+interface。若 `B_q` 是 primitive-residue row vector、`Gamma(q,q')=<B_q,B_q'>`，则
+
+```text
+E(lambda) = lambda^* Gamma lambda,
+E(lambda) <= max_q p_q^(-1) sum_q' |Gamma(q,q')|p_q' * ||lambda||_2^2.
+```
+
+第一式是 PSD Gram identity，第二式是 exact weighted Schur envelope。它给出了 collision
+degree 的结构性上界，但绝对值操作没有算术 cancellation。literal saturation fixture
+取 `h=5`, `H=500`, constant profile 与 `q={101,151,181,191}`；四个 rows 都为
+`e_1+e_4`，因此 `Gamma=2J_4`，Schur radius/top Rayleigh quotient 为 `8`，equal
+weights 的 coherent-to-diagonal ratio 恰为 `4=P`。
+
+```text
+TPC221_ROUTE_ADVANCE = YES
+TPC221_STRUCTURAL_THRESHOLD_A = PASS
+TPC221_COLLISION_GRAM_PSD = PROVED_EXACT
+TPC221_SCHUR_ENVELOPE = PROVED_EXACT
+TPC221_WEIGHTED_SCHUR_ENVELOPE = PROVED_EXACT
+TPC221_LITERAL_SATURATION = PROVED_EXACT_FINITE
+TPC221_ABSOLUTE_SCHUR_SUBP_SAVING = REFUTED_SCOPED
+TPC221_ARITHMETIC_CANCELLATION = NONE
+TPC221_ARITHMETIC_ADVANCE = NO
+TPC221_FIXED_ATOM_CREDIT = 0
+TPC221_L2 = NONE
+TPC221_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC221_FULL_GATE_B = OPEN
+TPC221_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+strongest positive result：exact PSD/weighted-Schur collision envelope；strongest obstruction：
+literal aligned rows saturate the absolute envelope and the `P` factor；open theorem：
+growing-scale signed/phase-sensitive collision dispersion；reusable structure：weighted
+collision-degree operator interface；`ROUND2_CLUE`：
+
+```text
+SEEK_SIGNED_PHASE_DISPERSION_BEYOND_ABSOLUTE_COLLISION_DEGREES
+```
+
+Bridge proof/checker：`research/tpc-big-road/bridge_b_collision_graph_schur_envelope.md`
+与 `research/tpc-big-road/tpc_bridge_b_collision_graph_schur_envelope_checker.py`。
+无 arithmetic `L2`、fixed-atom credit、strict `1/400` 或 twin-prime conclusion。
 
 ## 0.14 已发布：TPC-220 prime-AP collision crosswalk
 

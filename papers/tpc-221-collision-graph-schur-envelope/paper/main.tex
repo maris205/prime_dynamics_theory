@@ -1,0 +1,207 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Qx}{\mathcal Q_x}
+\newcommand{\M}{\mathcal M}
+\newcommand{\G}{\Gamma}
+
+\title{Collision-Graph Schur Envelope for the Literal Prime Shell}
+\author{Liang Wang\\Huazhong University of Science and Technology\\Wuhan 430074, P.R. China}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-220 rewrites the q-transverse term of the literal prime shell as a multiplicative
+collision Gram, but leaves open how much an absolute collision estimate can save.  This
+paper supplies the next exact layer.  The row Gram is positive semidefinite, its weighted
+shell energy has an exact quadratic-form representation, and a weighted Schur test gives a
+reusable operator envelope in terms of collision degrees.  We then construct a literal
+finite saturation: with $h=5$, $H=500$, constant profile, and primes
+$101,151,181,191$, every row is $e_1+e_4$.  The Gram is therefore $2J_4$ and the
+coherent-to-diagonal ratio is exactly $P=4$.  Thus absolute Schur control is a valid
+structural envelope but cannot, by itself, yield a sub-$P$ saving.  No prime-distribution
+estimate or arithmetic $L^2$ advance is claimed.
+\end{abstract}
+
+\paragraph{Claim level.}
+\texttt{PROVED\_STRUCTURAL\_L1 / COLLISION\_GRAPH\_SCHUR\_ENVELOPE}.
+
+\section{The collision object}
+
+TPC-219 identified the exact condition for improving the scalar q-shell collapse:
+transverse q-energy must be large.  TPC-220 put that condition back in arithmetic
+coordinates.  We continue with the same literal rows, but suppress the packet superscript
+for readability.  Fix an active denominator $h$, a prime $q$ coprime to $h$, and write
+\[
+ L_{h,q}=\left\lfloor\frac{hq}{H}\right\rfloor,
+ \qquad
+ \M_{h,q}^{*}=\{m\in\mathbb Z:0<|m|\leq L_{h,q},\ (m,h)=1\}.
+\]
+For a profile $\psi$, the row on primitive residues is
+\[
+ B_{h,q}(a)=\sum_{m\in\M_{h,q}^{*}}
+ \psi\!\left(\frac{Hm}{hq}\right)\mathbf 1_{m q^{-1}\equiv a\ (h)}.
+ \tag{1}
+\]
+Let $\mathcal Q$ be a finite active prime set and regard $B_q$ as a vector indexed by
+$a\pmod h$ with $(a,h)=1$.  Define
+\[
+ \G_h(q,q')=\sum_{\substack{a\pmod h\\(a,h)=1}}
+ B_{h,q}(a)\overline{B_{h,q'}(a)}.
+ \tag{2}
+\]
+The TPC-220 crosswalk gives the literal expansion
+\[
+ \G_h(q,q')=
+ \sum_{m\in\M_{h,q}^{*}}
+ \sum_{m'\in\M_{h,q'}^{*}}
+ w_{h,m,q}\overline{w_{h,m',q'}}
+ \mathbf 1_{m q'\equiv m'q\ (h)},
+ \tag{3}
+\]
+where $w_{h,m,q}=\psi(Hm/(hq))$.  Thus the matrix is not an abstract covariance
+surrogate: its off-diagonal entries are precisely the multiplicative collision edges.
+
+\section{Exact PSD energy and Schur control}
+
+\begin{theorem}[PSD identity]
+The matrix $\G_h=(\G_h(q,q'))_{q,q'\in\mathcal Q}$ is Hermitian positive semidefinite.
+For every complex weight vector $\lambda=(\lambda_q)_{q\in\mathcal Q}$,
+\[
+ \sum_{\substack{a\pmod h\\(a,h)=1}}
+ \left|\sum_{q\in\mathcal Q}\lambda_q B_{h,q}(a)\right|^2
+ =\lambda^{*}\G_h\lambda .
+ \tag{4}
+\]
+\end{theorem}
+
+\begin{proof}
+Let $A$ be the matrix whose row indexed by $q$ is $B_q$.  Then the definition (2) is
+$\G_h=AA^{*}$, up to the harmless choice of whether vectors are written as rows or columns.
+Expanding the left side of (4) gives the stated quadratic form.  A matrix of the form
+$AA^{*}$ is Hermitian positive semidefinite.
+\end{proof}
+
+\begin{theorem}[Weighted Schur envelope]
+Let $p_q>0$ be arbitrary.  Then
+\[
+ \lambda^{*}\G_h\lambda
+ \leq \rho_h(p)\,\|\lambda\|_2^2,
+ \qquad
+ \rho_h(p)=\max_{q\in\mathcal Q}
+ \frac{1}{p_q}\sum_{q'\in\mathcal Q}|\G_h(q,q')|p_{q'}.
+ \tag{5}
+\]
+In particular, for $p_q=1$,
+\[
+ \lambda^{*}\G_h\lambda
+ \leq \left(\max_q\sum_{q'}|\G_h(q,q')|\right)\|\lambda\|_2^2.
+ \tag{6}
+\]
+\end{theorem}
+
+\begin{proof}
+By (4), take absolute values termwise and use
+\[
+ 2|\lambda_q\lambda_{q'}|
+ \leq \frac{p_{q'}}{p_q}|\lambda_q|^2
+      +\frac{p_q}{p_{q'}}|\lambda_{q'}|^2.
+\]
+After summing over the two orientations of $(q,q')$, the coefficient of
+$|\lambda_q|^2$ is at most
+\[
+ p_q^{-1}\sum_{q'}|\G_h(q,q')|p_{q'}.
+\]
+Taking the maximum proves (5), and (6) is the choice $p_q=1$.
+\end{proof}
+
+The quantity in parentheses in (6) is the absolute collision degree.  Formula (5) is useful
+when the q-family has an inhomogeneous cutoff or when a prospective estimate naturally
+assigns different weights to different prime labels.  Neither formula introduces a sign or
+phase cancellation: all off-diagonal entries are replaced by their absolute values.
+
+\section{A literal saturation of the absolute envelope}
+
+\begin{theorem}[Finite aligned obstruction]
+Take $h=5$, $H=500$, the constant profile $\psi\equiv1$, and
+\[
+ \mathcal Q_{\rm sat}=\{101,151,181,191\}.
+\]
+Then $L_{h,q}=1$ for every $q\in\mathcal Q_{\rm sat}$ and
+\[
+ B_{h,q}=e_1+e_4,\qquad
+ \G_h=2J_4.
+\]
+Consequently the Schur radius and top Rayleigh quotient are both $8$, while equal
+weights have energy $32$ and the total diagonal is $8$.  Their ratio is exactly
+$4=|\mathcal Q_{\rm sat}|$.
+\end{theorem}
+
+\begin{proof}
+All four displayed numbers are primes congruent to $1\pmod 5$.  Moreover
+\ $\lfloor5q/500\rfloor=1$, so the only nonzero atoms are $m=1$ and $m=-1$.
+Since $q^{-1}=1\pmod5$, both atoms land at the primitive residues $1$ and $4$.
+Thus every row is $e_1+e_4$.  The inner product of any two rows is $2$, so
+$\G_h=2J_4$.  Its row sum and its top eigenvalue are $8$.  For the all-one weight vector,
+the two occupied coordinates each have amplitude $4$, hence the energy is $2\cdot4^2=32$.
+The four diagonal entries sum to $8$, giving the ratio $4$.
+\end{proof}
+
+This is a literal finite saturation, not an arbitrary PSD counterexample.  It proves a
+scoped methodological obstruction: a theorem that only bounds absolute collision degrees
+cannot guarantee a saving below the q-cardinality factor uniformly over the literal class.
+It does not say that the same alignment survives in a growing prime window.
+
+\section{Certificate and route position}
+
+The release certificate checks (3)--(6) on the TPC-220 rational fixtures, replays the
+weighted test with an independent implementation, and separately checks the saturated
+fixture.  The exact finite summary is:
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lll}
+\toprule
+object & scope & status\\
+\midrule
+PSD/collision Gram & 3 moduli, 2 profiles & exact\\
+Schur envelope & 6 rational records & exact\\
+weighted Schur & positive test weights & exact\\
+literal saturation & $h=5$, 4 primes & ratio $P=4$\\
+\bottomrule
+\end{tabular}
+\caption{TPC-221 certificate scope and claim boundary.}
+\end{table}
+
+The strongest positive result is a portable operator envelope for the exact collision graph.
+The strongest obstruction is the literal saturation above.  The next theorem must use
+signed or phase-sensitive structure of the off-diagonal graph; an absolute Schur argument
+cannot pay the missing transverse lower bound.
+
+\[
+ \texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+ \texttt{L2=NONE},\qquad
+ \texttt{FULL\_GATE\_B=OPEN}.
+\]
+
+\section{Conclusion}
+
+TPC-221 turns the TPC-220 collision object into a precise PSD/Schur interface and closes a
+natural false shortcut.  The envelope is proved and reusable, but its literal aligned
+saturation shows why the next step must control signs, phases, or genuine dispersion rather
+than merely count collision edges.  Twin-prime reassembly remains open.
+
+\begin{thebibliography}{1}
+\bibitem{tpc220}
+TPC-220 repository proof record, ``Prime-AP collision crosswalk for the literal prime
+shell,'' 2026.  Internal source lock; no external asymptotic theorem is invoked.
+\end{thebibliography}
+\end{document}

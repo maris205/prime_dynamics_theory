@@ -9,12 +9,12 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-220 在 TPC-219 的 transverse ledger 上完成了 literal
-prime-AP / multiplicative collision crosswalk。对原始 q-labelled rows，weighted
-reassembly 精确变成带 q-dependent cutoff/profile 的 prime-AP packet，row Gram 精确
-变成碰撞条件 `m q'=m' q (mod h)`；这是 `PROVED_STRUCTURAL_L1`，不是 arithmetic
-`L2` 或 twin-prime endpoint。下一座桥是量化该 off-diagonal collision graph，超越
-绝对 Schur 控制。
+当前主线状态：TPC-221 在 TPC-220 的 collision Gram 上证明了 PSD identity 与
+weighted Schur envelope，并构造 literal aligned rows 使 absolute Schur 精确饱和
+`P` factor。它把“碰撞度上包络”变成可复用结构，同时严格证明绝对值控制本身不能
+提供 sub-`P` saving；这是 `PROVED_STRUCTURAL_L1`，不是 arithmetic `L2` 或
+twin-prime endpoint。下一座桥是 signed/phase-sensitive dispersion beyond absolute
+collision degrees。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -28,6 +28,8 @@ reassembly 精确变成带 q-dependent cutoff/profile 的 prime-AP packet，row 
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-221-collision-graph-schur-envelope` - `PROVED_STRUCTURAL_L1 / COLLISION_GRAPH_SCHUR_ENVELOPE` - 将 TPC-220 collision Gram 组织成 PSD quadratic form，证明 weighted Schur row-sum envelope，并用 `h=5`, `q={101,151,181,191}` 的 literal fixture 得到 `Gamma=2J_4` 与 exact ratio `P=4`；绝对 Schur 不能单独产生 sub-`P` saving。
 
 `tpc-220-prime-ap-collision-crosswalk` - `PROVED_STRUCTURAL_L1 / EXACT_PRIME_AP_MULTIPLICATIVE_CROSSWALK` - 将 TPC-219 的 q-transverse target 精确改写为 literal weighted prime-AP operator 与 multiplicative collision Gram；diagonal 在 cutoff injectivity 下还原为 fixed-q atom energy，off-diagonal collision graph 被明确保留，算术 `L2` 仍开放。
 
