@@ -1,11 +1,53 @@
-# TPC big road V75 / TPC-222: four-packet polarization and the PSD cross-term obstruction
+# TPC big road V76 / TPC-223: conditional signed-reassembly compiler
 
 更新时间：2026-08-22
 
-状态：`TPC222_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / FOUR_PACKET_CROSS_TERM_OBSTRUCTION`
+状态：`TPC223_CONDITIONAL_THEOREM / CONDITIONAL_SIGNED_REASSEMBLY_COMPILER / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-223 proof 为
+`bridge_b_conditional_signed_reassembly_compiler.md`，checker 为
+`tpc_bridge_b_conditional_signed_reassembly_compiler_checker.py`，编号论文为
+`../../papers/tpc-223-conditional-signed-reassembly-compiler/`。
+
+TPC-223 将 TPC-220 的 prime-AP/collision channel 与 TPC-222 的 polarized four-packet
+channel 放进同一个 conditional exponent interface：
+
+```text
+A_x << x^(E0-delta_AP+o(1))
+P_x << x^(E0-kappa_pol+o(1))
+S_x << x^lambda_struct (A_x+P_x)
+```
+
+并证明 exact compiler
+
+```text
+sigma = min(delta_AP,kappa_pol) - lambda_struct.
+```
+
+严格门槛是 `sigma>1/400`。canonical `E0=5/3` fixture 给出 effective saving
+`11/1200`、margin `1/150` 与 compiled exponent `663/400`。AP dispersion、polarized
+cross-correlation 和 literal reassembly interface 都明确保持为 conditional open
+inputs；本篇没有 arithmetic `L2` advance。
+
+TPC-223 claim firewall：
+
+```text
+TPC223_ROUTE_ADVANCE = YES
+TPC223_TWO_CHANNEL_COMPILER = PROVED_CONDITIONAL_ALGEBRA
+TPC223_AP_DISPERSION = OPEN_CONDITIONAL_INPUT
+TPC223_POLARIZED_CROSS_CORRELATION = OPEN_CONDITIONAL_INPUT
+TPC223_LITERAL_REASSEMBLY_INTERFACE = OPEN_CONDITIONAL_INPUT
+TPC223_EFFECTIVE_SAVING = CERTIFIED_EXACT_MIN_MINUS_LOSS
+TPC223_STRICT_1_OVER_400 = CONDITIONAL_ONLY
+TPC223_ARITHMETIC_ADVANCE = NO
+TPC223_FIXED_ATOM_CREDIT = 0
+TPC223_L2 = NONE
+TPC223_FULL_GATE_B = OPEN
+TPC223_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-222 proof 为
 `bridge_b_four_packet_cross_term_obstruction.md`，checker 为

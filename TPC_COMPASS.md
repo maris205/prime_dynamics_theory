@@ -1,9 +1,49 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-22
-状态：`BOLD_CHANNEL_V75 / FOUR_PACKET_CROSS_TERM_OBSTRUCTION_OPEN`
-claim level：`PROVED_STRUCTURAL_L1_FOUR_PACKET_CROSS_TERM_OBSTRUCTION`
-编号事实终点：TPC-222；TPC-222 trigger：`true`
+状态：`BOLD_CHANNEL_V76 / CONDITIONAL_SIGNED_REASSEMBLY_COMPILER_OPEN`
+claim level：`CONDITIONAL_THEOREM_TWO_CHANNEL_SIGNED_REASSEMBLY_COMPILER`
+编号事实终点：TPC-223；TPC-223 trigger：`true`
+
+当前 TPC-223 入口：proof 为
+`research/tpc-big-road/bridge_b_conditional_signed_reassembly_compiler.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_conditional_signed_reassembly_compiler_checker.py`，编号论文为
+`papers/tpc-223-conditional-signed-reassembly-compiler/`。在共同 literal interface
+假设
+
+```text
+A_x << x^(E0-delta_AP+o(1))
+P_x << x^(E0-kappa_pol+o(1))
+S_x << x^lambda_struct (A_x+P_x)
+```
+
+下，exact compiler 给出
+
+```text
+sigma = min(delta_AP,kappa_pol) - lambda_struct.
+```
+
+严格 endpoint 条件是 `sigma>1/400`。`E0=5/3` 的 canonical rational fixture
+取 `delta_AP=1/100`, `kappa_pol=1/80`, `lambda_struct=1/1200`，得到 effective
+saving `11/1200`、strict margin `1/150`、compiled exponent `663/400`；这只是
+conditional ledger，三个输入均未被证明。
+
+TPC-223 claim firewall：
+
+```text
+TPC223_ROUTE_ADVANCE = YES
+TPC223_TWO_CHANNEL_COMPILER = PROVED_CONDITIONAL_ALGEBRA
+TPC223_AP_DISPERSION = OPEN_CONDITIONAL_INPUT
+TPC223_POLARIZED_CROSS_CORRELATION = OPEN_CONDITIONAL_INPUT
+TPC223_LITERAL_REASSEMBLY_INTERFACE = OPEN_CONDITIONAL_INPUT
+TPC223_EFFECTIVE_SAVING = CERTIFIED_EXACT_MIN_MINUS_LOSS
+TPC223_STRICT_1_OVER_400 = CONDITIONAL_ONLY
+TPC223_ARITHMETIC_ADVANCE = NO
+TPC223_FIXED_ATOM_CREDIT = 0
+TPC223_L2 = NONE
+TPC223_FULL_GATE_B = OPEN
+TPC223_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-222 入口：proof 为
 `research/tpc-big-road/bridge_b_four_packet_cross_term_obstruction.md`，checker 为

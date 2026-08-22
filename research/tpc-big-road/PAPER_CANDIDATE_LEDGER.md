@@ -2,11 +2,70 @@
 
 更新时间：2026-08-22
 
-状态：**TPC222_STRUCTURAL_THRESHOLD_A_RELEASED / FOUR_PACKET_CROSS_TERM_OBSTRUCTION / POLARIZED_REASSEMBLY_OPEN**
+状态：**TPC223_CONDITIONAL_THEOREM_RELEASED / TWO_CHANNEL_SIGNED_REASSEMBLY_COMPILER / LITERAL_INPUTS_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.17 已发布：TPC-223 conditional signed-reassembly compiler
+
+项目：`papers/tpc-223-conditional-signed-reassembly-compiler/`
+
+类型：**CONDITIONAL_THEOREM / TWO_CHANNEL_SIGNED_REASSEMBLY_COMPILER**。
+
+TPC-223 将 TPC-220 的 literal prime-AP/collision channel 与 TPC-222 的 phase-labelled
+four-packet channel 接入同一个 conditional interface：
+
+```text
+A_x << x^(E0-delta_AP+o(1))
+P_x << x^(E0-kappa_pol+o(1))
+S_x << x^lambda_struct (A_x+P_x)
+```
+
+在此接口下，exact exponent compiler 给出
+
+```text
+sigma = min(delta_AP,kappa_pol)-lambda_struct.
+```
+
+所以 strict endpoint margin 的充分且精确的 ledger 条件是
+`sigma>1/400`。canonical `E0=5/3` fixture 取
+`delta_AP=1/100`, `kappa_pol=1/80`, `lambda_struct=1/1200`，得到 effective saving
+`11/1200`、strict margin `1/150`、compiled exponent `663/400`，目标 exponent 为
+`1997/1200`。certificate 同时包含 exact borderline、failed、zero-channel 与
+loss-dominated cases，并把 equality 明确标为 `BORDERLINE`。
+
+```text
+TPC223_ROUTE_ADVANCE = YES
+TPC223_TWO_CHANNEL_COMPILER = PROVED_CONDITIONAL_ALGEBRA
+TPC223_AP_DISPERSION = OPEN_CONDITIONAL_INPUT
+TPC223_POLARIZED_CROSS_CORRELATION = OPEN_CONDITIONAL_INPUT
+TPC223_LITERAL_REASSEMBLY_INTERFACE = OPEN_CONDITIONAL_INPUT
+TPC223_EFFECTIVE_SAVING = CERTIFIED_EXACT_MIN_MINUS_LOSS
+TPC223_STRICT_1_OVER_400 = CONDITIONAL_ONLY
+TPC223_ARITHMETIC_CANCELLATION = NONE
+TPC223_ARITHMETIC_ADVANCE = NO
+TPC223_FIXED_ATOM_CREDIT = 0
+TPC223_L2 = NONE
+TPC223_FULL_GATE_B = OPEN
+TPC223_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+strongest positive result：两个独立 channel 的 saving 以 exact minimum 合并，并显式
+扣除 structural loss；strongest obstruction：任一 channel 为零、loss 主导或刚好
+落在 `1/400` 都不能 strict pass；open theorem：在同一个 literal prime shell、clock
+与 normalization 上证明三条 conditional inputs；reusable structure：two-channel
+minimum-minus-loss exponent compiler；`ROUND2_CLUE`：
+
+```text
+PROVE_OR_REFUTE_THE_COMMON_LITERAL_TWO_CHANNEL_INTERFACE
+```
+
+Bridge proof/checker：`research/tpc-big-road/bridge_b_conditional_signed_reassembly_compiler.md`
+与 `research/tpc-big-road/tpc_bridge_b_conditional_signed_reassembly_compiler_checker.py`。
+这是 conditional theorem，不产生 arithmetic `L2`、fixed-atom credit、strict Gate-B
+或 twin-prime conclusion。
 
 ## 0.16 已发布：TPC-222 four-packet polarization and the PSD cross-term obstruction
 
