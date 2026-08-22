@@ -9,11 +9,12 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-219 在 TPC-218 的 label-preserving lift 上证明了 exact
-longitudinal/transverse ledger：`E_shell=P(E_diag-E_perp)`，因此任何 sub-`P`
-scalar recovery 都等价于对 literal q-family 证明 transverse lower bound；这是
-`PROVED_STRUCTURAL_L1`，不是 arithmetic `L2` 或 twin-prime endpoint。下一座桥是把
-`E_perp` 精确改写成 literal prime-AP / multiplicative collision data。
+当前主线状态：TPC-220 在 TPC-219 的 transverse ledger 上完成了 literal
+prime-AP / multiplicative collision crosswalk。对原始 q-labelled rows，weighted
+reassembly 精确变成带 q-dependent cutoff/profile 的 prime-AP packet，row Gram 精确
+变成碰撞条件 `m q'=m' q (mod h)`；这是 `PROVED_STRUCTURAL_L1`，不是 arithmetic
+`L2` 或 twin-prime endpoint。下一座桥是量化该 off-diagonal collision graph，超越
+绝对 Schur 控制。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -27,6 +28,8 @@ scalar recovery 都等价于对 literal q-family 证明 transverse lower bound�
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-220-prime-ap-collision-crosswalk` - `PROVED_STRUCTURAL_L1 / EXACT_PRIME_AP_MULTIPLICATIVE_CROSSWALK` - 将 TPC-219 的 q-transverse target 精确改写为 literal weighted prime-AP operator 与 multiplicative collision Gram；diagonal 在 cutoff injectivity 下还原为 fixed-q atom energy，off-diagonal collision graph 被明确保留，算术 `L2` 仍开放。
 
 `tpc-219-prime-shell-longitudinal-ledger` - `PROVED_STRUCTURAL_L1 / EXACT_LONGITUDINAL_TRANSVERSE_LEDGER` - The exact identity `E_shell=P(E_diag-E_perp)` converts the scalar `P` collapse into an iff transverse-energy condition; aligned and balanced rational fixtures attain the two endpoints, while literal prime-shell cancellation remains open.
 

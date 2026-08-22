@@ -1,7 +1,73 @@
 # TPC HANDOFF
 
 更新时间：2026-08-22
-交接状态：`BOLD_CHANNEL_V72_TPC219_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V73_TPC220_SEALED_FOR_NEW_SESSION`
+
+TPC-220 当前 section：prime-AP collision crosswalk and the multiplicative collision Gram
+-----------------------------------------------------------------------------------------
+
+TPC-220 是 TPC-219 的直接算术坐标后续：保留同一个 literal q-labelled row family，
+对 primitive residue `a mod h` 定义 weighted prime-AP packet
+
+~~~text
+sum_q lambda_q B_(h,q)^(j)(a)
+  = sum_(m != 0) Pi_(h,m)^(j)(a^(-1)m; lambda).
+~~~
+
+并把 two-row primitive Gram 精确展开为
+
+~~~text
+Gamma_h^(j,l)(q,q')
+ = sum_(m,m') w_(h,m,q)^(j) conjugate(w_(h,m',q')^(l))
+     1_(m q'=m' q mod h).
+~~~
+
+当 `q=q'` 且 cutoff injective 时，碰撞条件退化为 fixed-q diagonal atom energy；当
+`q!=q'` 时，off-diagonal multiplicative collision graph 被完整保留。有限 rational
+certificate 对 3 个模数、4 个 primes、2 个 profiles 验证 crosswalk、Gram 与 diagonal
+residual 全为零，并由 adversarial fixture 确认碰撞边非空。TPC-220 是
+`PROVED_STRUCTURAL_L1` 的 exact object theorem，不是 prime AP asymptotic、arithmetic
+`L2` 或 twin-prime result。
+
+TPC-220 claim firewall：
+
+~~~text
+TPC220_ROUTE_ADVANCE = YES
+TPC220_STRUCTURAL_THRESHOLD_A = PASS
+TPC220_PRIME_AP_CROSSWALK = PROVED_EXACT
+TPC220_MULTIPLICATIVE_COLLISION_GRAM = PROVED_EXACT
+TPC220_DIAGONAL_REDUCTION = PROVED_EXACT
+TPC220_ARITHMETIC_CANCELLATION = NONE
+TPC220_ARITHMETIC_ADVANCE = NO
+TPC220_FIXED_ATOM_CREDIT = 0
+TPC220_L2 = NONE
+TPC220_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC220_FULL_GATE_B = OPEN
+TPC220_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC220_TPC_TRIGGER = true
+TPC220_NUMBERED_RELEASE = YES
+TPC220_STATUS = PROVED_STRUCTURAL_L1
+TPC220_ROUND2_CLUE = QUANTIFY_THE_OFF_DIAGONAL_COLLISION_GRAPH_BEYOND_SCHUR
+~~~
+
+TPC-220 strongest positive result 是 literal q reassembly 的 exact prime-AP/collision
+crosswalk；strongest obstruction 是 off-diagonal collision graph 非空且不能形式上
+删除；open theorem 是 Schur/absolute 控制之外的 collision dispersion；没有 arithmetic
+`L2`、fixed-atom credit、strict `1/400` 或 twin-prime conclusion。
+
+编号论文目录：papers/tpc-220-prime-ap-collision-crosswalk/
+
+~~~text
+papers/tpc-220-prime-ap-collision-crosswalk/README.md
+papers/tpc-220-prime-ap-collision-crosswalk/PAPER_PLAN.md
+papers/tpc-220-prime-ap-collision-crosswalk/PROOF_PACKAGE.md
+papers/tpc-220-prime-ap-collision-crosswalk/paper/paper.pdf
+papers/tpc-220-prime-ap-collision-crosswalk/results/certificate.json
+papers/tpc-220-prime-ap-collision-crosswalk/notes/theorem_ledger.md
+papers/tpc-220-prime-ap-collision-crosswalk/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_prime_ap_collision_crosswalk.md
+research/tpc-big-road/tpc_bridge_b_prime_ap_collision_crosswalk_checker.py
+~~~
 
 TPC-219 当前 section：prime-shell longitudinal ledger and the exact P collapse
 --------------------------------------------------------------------------------
@@ -4893,8 +4959,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V72/TPC-219 gate及其 V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百次（50 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V73/TPC-220 gate及其 V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百零二次（51 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -4998,43 +5064,50 @@ python -B research/tpc-big-road/tpc_bridge_b_prime_shell_longitudinal_transverse
 python -O -B research/tpc-big-road/tpc_bridge_b_prime_shell_longitudinal_transverse_ledger_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_prime_shell_packet_lift_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_prime_shell_packet_lift_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_prime_ap_collision_crosswalk_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_prime_ap_collision_crosswalk_checker.py --check
 ```
 
 随后优先读取：
 
-0. `papers/tpc-219-prime-shell-longitudinal-ledger/README.md`
-1. `papers/tpc-219-prime-shell-longitudinal-ledger/notes/theorem_ledger.md`
-2. `papers/tpc-219-prime-shell-longitudinal-ledger/notes/route_evaluation.md`
-3. `research/tpc-big-road/bridge_b_prime_shell_longitudinal_transverse_ledger.md`
-4. `research/tpc-big-road/tpc_bridge_b_prime_shell_longitudinal_transverse_ledger_checker.py`
-5. `papers/tpc-218-prime-shell-packet-lift/README.md`
-6. `papers/tpc-218-prime-shell-packet-lift/notes/theorem_ledger.md`
-7. `papers/tpc-218-prime-shell-packet-lift/notes/route_evaluation.md`
-8. `research/tpc-big-road/bridge_b_prime_shell_packet_lift.md`
-9. `research/tpc-big-road/tpc_bridge_b_prime_shell_packet_lift_checker.py`
-10. `papers/tpc-217-finite-window-rational-large-sieve/README.md`
-11. `papers/tpc-217-finite-window-rational-large-sieve/notes/theorem_ledger.md`
-12. `papers/tpc-217-finite-window-rational-large-sieve/notes/route_evaluation.md`
-13. `research/tpc-big-road/bridge_b_finite_window_rational_large_sieve.md`
-14. `research/tpc-big-road/tpc_bridge_b_finite_window_rational_large_sieve_checker.py`
+0. `papers/tpc-220-prime-ap-collision-crosswalk/README.md`
+1. `papers/tpc-220-prime-ap-collision-crosswalk/notes/theorem_ledger.md`
+2. `papers/tpc-220-prime-ap-collision-crosswalk/notes/route_evaluation.md`
+3. `research/tpc-big-road/bridge_b_prime_ap_collision_crosswalk.md`
+4. `research/tpc-big-road/tpc_bridge_b_prime_ap_collision_crosswalk_checker.py`
+5. `papers/tpc-219-prime-shell-longitudinal-ledger/README.md`
+6. `papers/tpc-219-prime-shell-longitudinal-ledger/notes/theorem_ledger.md`
+7. `papers/tpc-219-prime-shell-longitudinal-ledger/notes/route_evaluation.md`
+8. `research/tpc-big-road/bridge_b_prime_shell_longitudinal_transverse_ledger.md`
+9. `research/tpc-big-road/tpc_bridge_b_prime_shell_longitudinal_transverse_ledger_checker.py`
+10. `papers/tpc-218-prime-shell-packet-lift/README.md`
+11. `papers/tpc-218-prime-shell-packet-lift/notes/theorem_ledger.md`
+12. `papers/tpc-218-prime-shell-packet-lift/notes/route_evaluation.md`
+13. `research/tpc-big-road/bridge_b_prime_shell_packet_lift.md`
+14. `research/tpc-big-road/tpc_bridge_b_prime_shell_packet_lift_checker.py`
+15. `papers/tpc-217-finite-window-rational-large-sieve/README.md`
+16. `papers/tpc-217-finite-window-rational-large-sieve/notes/theorem_ledger.md`
+17. `papers/tpc-217-finite-window-rational-large-sieve/notes/route_evaluation.md`
+18. `research/tpc-big-road/bridge_b_finite_window_rational_large_sieve.md`
+19. `research/tpc-big-road/tpc_bridge_b_finite_window_rational_large_sieve_checker.py`
 
-15. `papers/tpc-210-poisson-profile-realizability/README.md`
-16. `papers/tpc-210-poisson-profile-realizability/notes/route_evaluation.md`
-17. `research/tpc-big-road/bridge_b_poisson_profile_realizability_obstruction.md`
-18. `research/tpc-big-road/tpc_bridge_b_poisson_profile_realizability_checker.py`
+20. `papers/tpc-210-poisson-profile-realizability/README.md`
+21. `papers/tpc-210-poisson-profile-realizability/notes/route_evaluation.md`
+22. `research/tpc-big-road/bridge_b_poisson_profile_realizability_obstruction.md`
+23. `research/tpc-big-road/tpc_bridge_b_poisson_profile_realizability_checker.py`
 
-19. `papers/tpc-209-whole-frame-poisson-mobius-obstruction/README.md`
-20. `research/tpc-big-road/bridge_b_whole_frame_poisson_mobius_obstruction.md`
-21. `research/tpc-big-road/tpc_bridge_b_whole_frame_poisson_checker.py`
-22. `papers/tpc-209-whole-frame-poisson-mobius-obstruction/notes/route_evaluation.md`
+24. `papers/tpc-209-whole-frame-poisson-mobius-obstruction/README.md`
+25. `research/tpc-big-road/bridge_b_whole_frame_poisson_mobius_obstruction.md`
+26. `research/tpc-big-road/tpc_bridge_b_whole_frame_poisson_checker.py`
+27. `papers/tpc-209-whole-frame-poisson-mobius-obstruction/notes/route_evaluation.md`
 
-23. `papers/tpc-208-zero-hole-additive-edge-frame/README.md`
-24. `papers/tpc-208-zero-hole-additive-edge-frame/notes/theorem_ledger.md`
-25. `research/tpc-big-road/bridge_b_zero_hole_additive_edge_frame.md`
-26. `papers/tpc-207-critical-moving-hole-bdh-defect/README.md`
-27. `papers/tpc-206-selected-lineage-pair-registry-projection/README.md`
-28. `papers/tpc-206-selected-lineage-pair-registry-projection/experiments/tpc206_selected_lineage_pair_registry.json`
-29. `papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments/tpc205_pair_native_registry_interface.json`
+28. `papers/tpc-208-zero-hole-additive-edge-frame/README.md`
+29. `papers/tpc-208-zero-hole-additive-edge-frame/notes/theorem_ledger.md`
+30. `research/tpc-big-road/bridge_b_zero_hole_additive_edge_frame.md`
+31. `papers/tpc-207-critical-moving-hole-bdh-defect/README.md`
+32. `papers/tpc-206-selected-lineage-pair-registry-projection/README.md`
+33. `papers/tpc-206-selected-lineage-pair-registry-projection/experiments/tpc206_selected_lineage_pair_registry.json`
+34. `papers/tpc-205-pair-native-post-ttstar-registry-interface/experiments/tpc205_pair_native_registry_interface.json`
 
 不得因打开新会话、用户说“继续”、checker 通过或工作流已持续授权而
 自动创建下一编号论文。持续授权只移除了重复的人为许可步骤；只有新的

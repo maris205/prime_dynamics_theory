@@ -2,11 +2,65 @@
 
 更新时间：2026-08-22
 
-状态：**TPC219_STRUCTURAL_THRESHOLD_A_RELEASED / LONGITUDINAL_TRANSVERSE_LEDGER / PRIME_AP_COLLISION_OPEN**
+状态：**TPC220_STRUCTURAL_THRESHOLD_A_RELEASED / PRIME_AP_COLLISION_CROSSWALK / SCHUR_QUANTIFICATION_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.14 已发布：TPC-220 prime-AP collision crosswalk
+
+项目：`papers/tpc-220-prime-ap-collision-crosswalk/`
+
+类型：**PROVED_STRUCTURAL_L1 / EXACT_PRIME_AP_MULTIPLICATIVE_CROSSWALK**。
+
+TPC-220 沿 TPC-219 的 `E_perp` 线索回到原始 q-labelled rows。对 primitive residue
+`a mod h`，单位条件给出 exact weighted prime-AP crosswalk：
+
+```text
+sum_q lambda_q B_(h,q)^(j)(a)
+  = sum_(m != 0) Pi_(h,m)^(j)(a^(-1)m; lambda),
+```
+
+其中 `Pi` 保留 q-dependent cutoff 与 profile。两行 Gram 的 exact expansion 为
+
+```text
+Gamma_h^(j,l)(q,q')
+ = sum_(m,m') w_(h,m,q)^(j) conjugate(w_(h,m',q')^(l))
+     1_(m q'=m' q mod h).
+```
+
+`q=q'` 且 `2L_(h,q)<h` 时还原 fixed-q atom energy；off-diagonal 项组成真实的
+multiplicative collision graph。3 个 modulus、4 个 prime、constant/affine 两种 profile
+的 exact certificate residual 全为零，并确认 off-diagonal collision 非空。
+
+```text
+TPC220_ROUTE_ADVANCE = YES
+TPC220_STRUCTURAL_THRESHOLD_A = PASS
+TPC220_PRIME_AP_CROSSWALK = PROVED_EXACT
+TPC220_MULTIPLICATIVE_COLLISION_GRAM = PROVED_EXACT
+TPC220_DIAGONAL_REDUCTION = PROVED_EXACT
+TPC220_ARITHMETIC_CANCELLATION = NONE
+TPC220_ARITHMETIC_ADVANCE = NO
+TPC220_FIXED_ATOM_CREDIT = 0
+TPC220_L2 = NONE
+TPC220_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC220_FULL_GATE_B = OPEN
+TPC220_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+strongest positive result：literal q reassembly 已成为 exact weighted prime-AP operator
+与 collision Gram；strongest obstruction：off-diagonal multiplicative collisions 不能
+被形式上删去；open theorem：在 Schur/absolute 控制之外量化 collision graph；reusable
+structure：primitive AP crosswalk plus diagonal/off-diagonal Gram split；`ROUND2_CLUE`：
+
+```text
+QUANTIFY_THE_OFF_DIAGONAL_COLLISION_GRAPH_BEYOND_SCHUR
+```
+
+Bridge proof/checker：`research/tpc-big-road/bridge_b_prime_ap_collision_crosswalk.md`
+与 `research/tpc-big-road/tpc_bridge_b_prime_ap_collision_crosswalk_checker.py`。
+无 arithmetic `L2`、fixed-atom credit、strict `1/400` 或 twin-prime conclusion。
 
 ## 0.13 已发布：TPC-219 prime-shell longitudinal ledger and the exact P collapse
 

@@ -1,11 +1,53 @@
-# TPC big road V72 / TPC-219: prime-shell longitudinal ledger and the exact P collapse
+# TPC big road V73 / TPC-220: prime-AP collision crosswalk
 
 更新时间：2026-08-22
 
-状态：`TPC219_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / EXACT_LONGITUDINAL_TRANSVERSE_LEDGER`
+状态：`TPC220_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / EXACT_PRIME_AP_MULTIPLICATIVE_CROSSWALK`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-220 proof 为
+`bridge_b_prime_ap_collision_crosswalk.md`，checker 为
+`tpc_bridge_b_prime_ap_collision_crosswalk_checker.py`，编号论文为
+`../../papers/tpc-220-prime-ap-collision-crosswalk/`。
+
+TPC-220 将 TPC-219 的 q-transverse quantity 接回 literal rows。对 primitive residue
+`a mod h`，row congruence 的 exact crosswalk 是
+
+```text
+sum_q lambda_q B_(h,q)^(j)(a)
+  = sum_(m != 0) Pi_(h,m)^(j)(a^(-1)m; lambda).
+```
+
+同时，two-row Gram 变成保留原 cutoff/profile 的 multiplicative collision sum：
+
+```text
+Gamma_h^(j,l)(q,q')
+  = sum_(m,m') w_(h,m,q)^(j) conjugate(w_(h,m',q')^(l))
+      1_(m q' = m' q mod h).
+```
+
+`q=q'` 在 cutoff injectivity 下精确还原 diagonal atom energy；off-diagonal collision
+edges 则是下一步必须估计的真实算术对象。有限 certificate 对两种 rational profiles
+验证全部 residual 为零，并确认碰撞图非空；没有声称 PNT、prime AP estimate 或
+arithmetic `L2`。
+
+TPC-220 claim firewall：
+
+```text
+TPC220_ROUTE_ADVANCE = YES
+TPC220_STRUCTURAL_THRESHOLD_A = PASS
+TPC220_PRIME_AP_CROSSWALK = PROVED_EXACT
+TPC220_MULTIPLICATIVE_COLLISION_GRAM = PROVED_EXACT
+TPC220_DIAGONAL_REDUCTION = PROVED_EXACT
+TPC220_ARITHMETIC_ADVANCE = NO
+TPC220_FIXED_ATOM_CREDIT = 0
+TPC220_L2 = NONE
+TPC220_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC220_FULL_GATE_B = OPEN
+TPC220_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-219 proof 为
 `bridge_b_prime_shell_longitudinal_transverse_ledger.md`，checker 为

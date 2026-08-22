@@ -1,9 +1,48 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-22
-状态：`BOLD_CHANNEL_V72 / LONGITUDINAL_TRANSVERSE_LEDGER_PRIME_AP_COLLISION_OPEN`
-claim level：`PROVED_STRUCTURAL_L1_EXACT_LONGITUDINAL_TRANSVERSE_LEDGER`
-编号事实终点：TPC-219；TPC-219 trigger：`true`
+状态：`BOLD_CHANNEL_V73 / PRIME_AP_COLLISION_CROSSWALK_SCHUR_OPEN`
+claim level：`PROVED_STRUCTURAL_L1_EXACT_PRIME_AP_MULTIPLICATIVE_CROSSWALK`
+编号事实终点：TPC-220；TPC-220 trigger：`true`
+
+当前 TPC-220 入口：proof 为
+`research/tpc-big-road/bridge_b_prime_ap_collision_crosswalk.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_prime_ap_collision_crosswalk_checker.py`，编号论文为
+`papers/tpc-220-prime-ap-collision-crosswalk/`。TPC-219 的 q-transverse target 现在被
+精确写成 literal weighted prime-AP packet：
+
+```text
+sum_q lambda_q B_(h,q)^(j)(a)
+  = sum_(m != 0) Pi_(h,m)^(j)(a^(-1)m; lambda).
+```
+
+同一 literal row family 的 Gram 精确为
+
+```text
+Gamma_h^(j,l)(q,q')
+  = sum_(m,m') w_(h,m,q)^(j) conjugate(w_(h,m',q')^(l))
+      1_(m q' = m' q mod h).
+```
+
+在 `q=q'` 且 cutoff injective 时还原 fixed-q atom energy；`q!=q'` 的碰撞边没有被
+假设消失。TPC-220 的 exact rational certificate 覆盖 3 个模数、4 个 primes、2 个
+profiles，并明确观察到 off-diagonal collision。下一座桥是对该 collision graph 做
+Schur 之外的定量控制。
+
+TPC-220 claim firewall：
+
+```text
+TPC220_ROUTE_ADVANCE = YES
+TPC220_PRIME_AP_CROSSWALK = PROVED_EXACT
+TPC220_MULTIPLICATIVE_COLLISION_GRAM = PROVED_EXACT
+TPC220_DIAGONAL_REDUCTION = PROVED_EXACT
+TPC220_ARITHMETIC_ADVANCE = NO
+TPC220_FIXED_ATOM_CREDIT = 0
+TPC220_L2 = NONE
+TPC220_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC220_FULL_GATE_B = OPEN
+TPC220_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-219 入口：proof 为
 `research/tpc-big-road/bridge_b_prime_shell_longitudinal_transverse_ledger.md`，checker 为

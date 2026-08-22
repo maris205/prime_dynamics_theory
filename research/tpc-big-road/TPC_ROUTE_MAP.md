@@ -2,17 +2,26 @@
 
 更新时间：2026-08-22
 
-当前地图版本：V72 / TPC-219
+当前地图版本：V73 / TPC-220
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-219`（`PROVED_STRUCTURAL_L1 / EXACT_LONGITUDINAL_TRANSVERSE_LEDGER`）；对应
-论文目录为 `papers/tpc-219-prime-shell-longitudinal-ledger/`。TPC-219 在 TPC-218 的
-label-preserving object 上证明
-`E_shell=P(E_diag-E_perp)`，并把任何 sub-`P` scalar recovery 精确等价为
-`E_perp>=(1-eta)E_diag`。aligned fixture 饱和 `P`，balanced fixture 到达 zero shell；
-literal prime-AP collision control、signed reassembly、arithmetic cancellation 与完整
-Gate B 仍 OPEN。
+当前编号锚点：`TPC-220`（`PROVED_STRUCTURAL_L1 / EXACT_PRIME_AP_MULTIPLICATIVE_CROSSWALK`）；对应
+论文目录为 `papers/tpc-220-prime-ap-collision-crosswalk/`。TPC-220 将 TPC-219 的
+q-transverse target 精确改写为 literal weighted prime-AP packet 与 multiplicative
+collision Gram：
+
+```text
+sum_q lambda_q B_(h,q)^(j)(a)
+  = sum_(m != 0) Pi_(h,m)^(j)(a^(-1)m; lambda),
+Gamma_h^(j,l)(q,q')
+  = sum_(m,m') w_(h,m,q)^(j) conjugate(w_(h,m',q')^(l))
+      1_(m q'=m' q mod h).
+```
+
+diagonal 在 cutoff injectivity 下还原为 fixed-q atom energy，off-diagonal collision
+edges 被明确保留；Schur 之外的渐近 collision control、signed reassembly、arithmetic
+cancellation 与完整 Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -54,9 +63,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V72 / TPC-219                     |
-        | LONGITUDINAL / TRANSVERSE PRIME-SHELL LEDGER    |
-        | P collapse iff transverse lower bound; AP OPEN   |
+        | YOU ARE HERE — V73 / TPC-220                     |
+        | PRIME-AP / MULTIPLICATIVE COLLISION CROSSWALK   |
+        | exact Gram; Schur-beyond collision control OPEN  |
         +--------------------------------------------------+
                 |
                 v
@@ -99,12 +108,11 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V72 / TPC-219 的
-exact longitudinal/transverse prime-shell ledger。TPC-218 的 `P` collapse 现在满足
-`E_shell=P(E_diag-E_perp)`，任何 sub-`P` saving 都等价于 literal q-transverse lower
-bound；aligned/balanced endpoints 说明 geometry 不自动提供该 bound。下一座桥是把
-`E_perp` 改写成 prime-AP/multiplicative collision data。FULL_GATE_B、strict `1/400`,
-`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V73 / TPC-220 的
+exact prime-AP / multiplicative collision crosswalk。TPC-219 的 `P` collapse 已被接回
+literal rows，diagonal 在 cutoff injectivity 下精确还原，off-diagonal collision graph
+被明确保留。下一座桥是 Schur 之外的 collision dispersion/cancellation theorem；
+FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1234,6 +1242,45 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.14 V73 / TPC-220：prime-AP collision crosswalk
+
+TPC-220 沿 TPC-219 的 transverse ledger 回到同一个 literal q-labelled row family。
+对 primitive residue `a mod h`，row congruence 精确给出 weighted prime-AP packet：
+
+```text
+sum_q lambda_q B_(h,q)^(j)(a)
+  = sum_(m != 0) Pi_(h,m)^(j)(a^(-1)m; lambda).
+```
+
+对两个 q rows 展开 primitive Gram，得到
+
+```text
+Gamma_h^(j,l)(q,q')
+ = sum_(m,m') w_(h,m,q)^(j) conjugate(w_(h,m',q')^(l))
+     1_(m q'=m' q mod h).
+```
+
+当 `q=q'` 且 `2L_(h,q)<h` 时，cutoff injectivity 强制 diagonal atom energy；当
+`q!=q'` 时，碰撞 congruence 形成非空 off-diagonal graph。exact rational certificate
+覆盖 3 个 modulus、4 个 primes、2 个 profiles，所有 crosswalk/Gram/diagonal residual
+均为零，并由 adversarial fixture 确认 collision edge 存在。
+
+```text
+TPC220_PRIME_AP_CROSSWALK = PROVED_EXACT
+TPC220_MULTIPLICATIVE_COLLISION_GRAM = PROVED_EXACT
+TPC220_DIAGONAL_REDUCTION = PROVED_EXACT
+TPC220_ARITHMETIC_ADVANCE = NO
+TPC220_FIXED_ATOM_CREDIT = 0
+TPC220_L2 = NONE
+TPC220_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC220_FULL_GATE_B = OPEN
+TPC220_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V73 / TPC-220 已把 abstract q-transverse target 接回 literal prime-AP
+and collision coordinates；下一座桥必须量化 off-diagonal collision graph beyond
+absolute Schur，不能把 exact crosswalk 误报成 arithmetic saving。**
+
 ## 5.13 V72 / TPC-219：prime-shell longitudinal ledger and the exact P collapse
 
 TPC-219 对 TPC-218 的 q-labelled packet vectors
@@ -1360,7 +1407,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V72 / TPC-219：
+截至 V73 / TPC-220：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1456,7 +1503,16 @@ TPC219_L2 = NONE
 TPC219_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
 TPC219_FULL_GATE_B = OPEN
 TPC219_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-219
+TPC220_PRIME_AP_CROSSWALK = PROVED_EXACT
+TPC220_MULTIPLICATIVE_COLLISION_GRAM = PROVED_EXACT
+TPC220_DIAGONAL_REDUCTION = PROVED_EXACT
+TPC220_ARITHMETIC_ADVANCE = NO
+TPC220_FIXED_ATOM_CREDIT = 0
+TPC220_L2 = NONE
+TPC220_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC220_FULL_GATE_B = OPEN
+TPC220_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-220
 ```
 
 以下事实不得从路线图中推断：
@@ -1474,26 +1530,30 @@ NUMBERED_RELEASE = TPC-219
 
 优先级更新为：
 
-1. **TPC-219 已完成：exact longitudinal/transverse prime-shell ledger**。`P` collapse
+1. **TPC-220 已完成：exact prime-AP / multiplicative collision crosswalk**。literal
+   q-row reassembly 已写成带原 cutoff/profile 的 weighted prime-AP packet，two-row Gram
+   已写成 `m q'=m' q (mod h)` collision graph；diagonal 在 cutoff injectivity 下精确
+   还原，但 off-diagonal 的 Schur-beyond control 仍是开放桥。
+2. **TPC-219 已完成：exact longitudinal/transverse prime-shell ledger**。`P` collapse
    满足 `E_shell=P(E_diag-E_perp)`，任何 sub-`P` saving 都等价于 literal q-transverse
    lower bound；aligned/balanced endpoint fixtures 已通过 exact rational certificate。
-2. **TPC-218 已完成：prime-shell/packet-preserving Hilbert lift**。split vector envelope
+3. **TPC-218 已完成：prime-shell/packet-preserving Hilbert lift**。split vector envelope
    达到 `x^(1/96)(log x)^5`，scalar recovery 的 `P<=2Q` 成本被显式隔离；q-alignment
    ratio `P=4` 与 packet projection ratio `1` 是 scoped adversarial controls。
-3. **TPC-217 已完成：finite-window large-sieve attachment**。reduced rational regrouping、
+4. **TPC-217 已完成：finite-window large-sieve attachment**。reduced rational regrouping、
    Farey spacing 与 standard additive large sieve 将 TPC-216 envelope 接到 actual
    physical interval，得到 `x^(11/32)(log x)^5` normalized bound；ratio-two adversary
    证明短窗不能免费使用 orthogonality。
-4. **TPC-216 已完成：direct-sum row-energy envelope**。fixed-q no-collision、shell Cauchy、
+5. **TPC-216 已完成：direct-sum row-energy envelope**。fixed-q no-collision、shell Cauchy、
    `P<=2Q` 与 `11/32` exponent ledger 已封存；aligned-support adversary 证明 free
    q-orthogonality 不能结构性删除。
-5. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
+6. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-6. **TPC-219 的下一步：literal prime-AP/multiplicative collision crosswalk**。把
-   `E_perp` 写成同一 literal row family 的 congruence collision data；不得把 abstract
-   residual vector 的 lower bound 当成 prime cancellation。
-7. **TPC-218 的下一步：literal signed prime-shell/four-packet reassembly**。保持 finite-window
+7. **TPC-220 的下一步：collision graph beyond Schur**。量化 off-diagonal multiplicative
+   collisions，寻找真实的 dispersion/cancellation hypothesis；exact crosswalk 本身
+   不产生 arithmetic `L2`。
+8. **TPC-219/218 的下一步：literal signed prime-shell/four-packet reassembly**。保持 finite-window
    large-sieve attachment，同时重新引入 literal prime rows、Möbius signs、zero/nonunit
    ledgers；不得把 structural `L1` bound误称为 arithmetic saving。
 8. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
@@ -1585,6 +1645,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-22 | V73 / TPC-220 | Bridge A / Gate B：exact prime-AP / multiplicative collision crosswalk；Schur-beyond collision control open | `TPC-220` | weighted prime-AP reassembly、exact collision Gram、cutoff diagonal reduction、nonempty off-diagonal adversary；arithmetic仍为 NO |
 | 2026-08-22 | V72 / TPC-219 | Bridge A / Gate B：exact longitudinal/transverse prime-shell ledger；`P` collapse iff q-transverse lower bound；prime-AP collision open | `TPC-219` | exact `E_shell=P(E_diag-E_perp)` identity、aligned/balanced endpoints、literal arithmetic仍为 NO |
 | 2026-08-22 | V71 / TPC-218 | Bridge A / Gate B：prime-label/packet-preserving Hilbert lift；split `x^(1/96)`，scalar `P` collapse explicit；signed reassembly open | `TPC-218` | tensor large sieve、PSD packet Gram、exact `P=4` q-alignment 与 projection-ratio-one packet obstruction；arithmetic仍为 NO |
 | 2026-08-22 | V70 / TPC-217 | Bridge A / Gate B：finite-window reduced-frequency large-sieve attachment `x^(11/32)(log x)^5`；prime-shell/four-packet reassembly open | `TPC-217` | exact regrouping、Farey spacing、standard additive large sieve、one-point ratio-two obstruction；arithmetic仍为 NO |
