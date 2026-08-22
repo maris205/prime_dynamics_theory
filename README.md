@@ -9,10 +9,11 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-217 已把 TPC-216 的 complete-period direct-sum envelope 以 reduced
-rational-frequency large sieve 接到 literal finite window；这是 `PROVED_STRUCTURAL_L1`，
-不是 arithmetic `L2` 或 twin-prime endpoint。下一座桥是保留该 finite-window 控制并完成
-literal prime-shell / four-packet signed reassembly。
+当前主线状态：TPC-218 在 TPC-217 的 finite-window large-sieve attachment 上保留了
+literal prime label 与 four-packet label，证明 split Hilbert envelope
+`x^(1/96)(log x)^5`，并精确暴露 scalar prime-shell collapse 的 `P<=2Q` 成本；这是
+`PROVED_STRUCTURAL_L1`，不是 arithmetic `L2` 或 twin-prime endpoint。下一座桥是击破
+这个已付款的 `P` collapse 并完成 literal signed prime-shell / four-packet reassembly。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -26,6 +27,8 @@ literal prime-shell / four-packet signed reassembly。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-218-prime-shell-packet-lift` - `PROVED_STRUCTURAL_L1 / PRIME_LABEL_AND_PACKET_PRESERVING_LIFT` - Retaining prime and packet labels in a Hilbert-valued finite-window lift gives normalized split envelope `x^(1/96)(log x)^5`; scalar recovery pays the explicit `P<=2Q` factor and returns `x^(11/32)(log x)^5`; an exact q-aligned fixture saturates `P=4` and packet alignment has projection ratio `1`, while arithmetic signed reassembly remains open.
 
 `tpc-217-finite-window-rational-large-sieve` - `PROVED_STRUCTURAL_L1 / FINITE_WINDOW_ATTACHMENT` - Exact reduced-frequency regrouping, Farey spacing, and the standard additive large sieve attach the TPC-216 direct-sum envelope to `I_x=(x/2,x]` with normalized bound `x^(11/32)(log x)^5` and unnormalized exponent `43/32`; a one-point aligned fixture gives exact coherent-to-diagonal ratio `2`, while prime-shell reassembly and arithmetic cancellation remain open.
 

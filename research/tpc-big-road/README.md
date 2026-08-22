@@ -1,11 +1,49 @@
-# TPC big road V70 / TPC-217: finite-window attachment by reduced rational-frequency large sieve
+# TPC big road V71 / TPC-218: prime-shell Hilbert lift and the sharp collapse barrier
 
 更新时间：2026-08-22
 
-状态：`TPC217_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / FINITE_WINDOW_ATTACHMENT`
+状态：`TPC218_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / PRIME_LABEL_PACKET_LIFT`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-218 proof 为
+`bridge_b_prime_shell_packet_lift.md`，checker 为
+`tpc_bridge_b_prime_shell_packet_lift_checker.py`，编号论文为
+`../../papers/tpc-218-prime-shell-packet-lift/`。
+
+TPC-218 在 TPC-217 finite-window attachment 中保留 prime label `q` 与 four-packet
+label `j`。Hilbert-valued additive large sieve、fixed-q injectivity 与 active-cluster
+harmonic bound 给出
+
+```text
+N^(-1) sum_(n in I_x)||K_vec(n)||_2^2
+  << J M^2 x^(1/96)(log x)^5.
+```
+
+scalar packet shell 只在最后付出 `P=#Q_x<=2Q`，恢复 `x^(11/32)(log x)^5`。exact
+q-alignment ratio 为 `4=P`，parallel four-packet projection ratio 为 `1`；故
+prime-shell signed reassembly、four-packet arithmetic cancellation、`L2`、fixed-atom
+credit、strict `1/400` 与完整 Gate B 仍 OPEN/UNPAID。
+
+TPC-218 claim firewall：
+
+```text
+TPC218_ROUTE_ADVANCE = YES
+TPC218_STRUCTURAL_THRESHOLD_A = PASS
+TPC218_SPLIT_NORMALIZED_EXPONENT = PROVED_1_OVER_96_LOG_FIVE
+TPC218_SCALAR_COLLAPSE_RECOVERY = PROVED_X_11_OVER_32_LOG_FIVE
+TPC218_Q_COLLAPSE_COST = PROVED_P_FACTOR
+TPC218_Q_ORTHOGONALITY = REFUTED_SCOPED
+TPC218_PACKET_ALIGNMENT = REFUTED_SCOPED
+TPC218_ARITHMETIC_ADVANCE = NO
+TPC218_FIXED_ATOM_CREDIT = 0
+TPC218_L2 = NONE
+TPC218_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC218_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC218_FULL_GATE_B = OPEN
+TPC218_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-217 proof 为
 `bridge_b_finite_window_rational_large_sieve.md`，checker 为

@@ -1,9 +1,48 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-22
-状态：`BOLD_CHANNEL_V70 / FINITE_WINDOW_ATTACHMENT_BUILT_PRIME_REASSEMBLY_OPEN`
-claim level：`PROVED_STRUCTURAL_L1_FINITE_WINDOW_ATTACHMENT_WITH_ALIGNED_WINDOW_OBSTRUCTION`
-编号事实终点：TPC-217；TPC-218 trigger：`false`
+状态：`BOLD_CHANNEL_V71 / PRIME_LABEL_PACKET_LIFT_BUILT_SIGNED_REASSEMBLY_OPEN`
+claim level：`PROVED_STRUCTURAL_L1_PRIME_LABEL_AND_PACKET_PRESERVING_LIFT`
+编号事实终点：TPC-218；TPC-218 trigger：`true`
+
+当前 TPC-218 入口：proof 为
+`research/tpc-big-road/bridge_b_prime_shell_packet_lift.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_prime_shell_packet_lift_checker.py`，编号论文为
+`papers/tpc-218-prime-shell-packet-lift/`。在 TPC-217 的 literal finite-window object
+上保留 prime label `q` 与 four-packet label `j`，coordinatewise large sieve 给出
+
+```text
+N^(-1) sum_(n in I_x)||K_vec(n)||_2^2
+  << J M^2 x^(1/96)(log x)^5.
+```
+
+逐点合并 q labels 只用 `P<=2Q` 的 Cauchy，恢复
+`N^(-1)sum_(n in I_x)sum_j|K_j(n)|^2 << J M^2 x^(11/32)(log x)^5`。
+四个 q 的 exact aligned fixture 给出 coherent/diagonal ratio `4=P`；平行 packet
+fixture 的 unit-projection ratio 为 `1`。因此 TPC-218 的真实新信息是“split exponent
+`1/96` 与 scalar `P` bottleneck 被分离并可审计”，不是 arithmetic saving。
+
+TPC-218 claim firewall：
+
+```text
+TPC218_ROUTE_ADVANCE = YES
+TPC218_STRUCTURAL_THRESHOLD_A = PASS
+TPC218_HILBERT_VALUED_LARGE_SIEVE = PROVED_STANDARD_TENSOR_LIFT
+TPC218_PRIME_LABEL_PRESERVATION = PROVED_EXACT
+TPC218_PACKET_MATRIX_BOUND = PROVED_EXACT
+TPC218_SPLIT_NORMALIZED_EXPONENT = PROVED_1_OVER_96_LOG_FIVE
+TPC218_SCALAR_COLLAPSE_RECOVERY = PROVED_X_11_OVER_32_LOG_FIVE
+TPC218_Q_COLLAPSE_COST = PROVED_P_FACTOR
+TPC218_Q_ORTHOGONALITY = REFUTED_SCOPED
+TPC218_PACKET_ALIGNMENT = REFUTED_SCOPED
+TPC218_ARITHMETIC_ADVANCE = NO
+TPC218_FIXED_ATOM_CREDIT = 0
+TPC218_L2 = NONE
+TPC218_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC218_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC218_FULL_GATE_B = OPEN
+TPC218_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-217 入口：proof 为
 `research/tpc-big-road/bridge_b_finite_window_rational_large_sieve.md`，checker 为

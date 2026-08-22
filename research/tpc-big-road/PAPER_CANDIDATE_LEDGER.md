@@ -2,11 +2,67 @@
 
 更新时间：2026-08-22
 
-状态：**TPC217_STRUCTURAL_THRESHOLD_A_RELEASED / FINITE_WINDOW_ATTACHMENT / PRIME_REASSEMBLY_OPEN**
+状态：**TPC218_STRUCTURAL_THRESHOLD_A_RELEASED / PRIME_LABEL_PACKET_LIFT / SIGNED_REASSEMBLY_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.12 已发布：TPC-218 prime-shell Hilbert lift and the sharp collapse barrier
+
+项目：`papers/tpc-218-prime-shell-packet-lift/`
+
+类型：**PROVED_STRUCTURAL_L1 / PRIME_LABEL_AND_PACKET_PRESERVING_LIFT**。
+
+TPC-218 是 TPC-217 的自然后续：不在 finite-window large sieve 前合并 prime shell，
+而是把 `(q,j)` 保留为 Hilbert coordinates。对 literal V46 common-source rows，固定-q
+cutoff injectivity、active-cluster harmonic bound 与 coordinatewise additive large sieve
+证明
+
+```text
+N^(-1) sum_(n in I_x)||K_vec(n)||_2^2
+  << J M^2 x^(1/96)(log x)^5.
+```
+
+最后用 `P=#Q_x<=2Q` 的 pointwise Cauchy 合并 q labels，恢复 scalar packet envelope
+`x^(11/32)(log x)^5`。因此本篇的明确进展是：split scale `Q^2/H=x^(1/96)` 与
+scalar shell 的 `P` cost 被严格分离；这不是 arithmetic saving。
+
+```text
+TPC218_ROUTE_ADVANCE = YES
+TPC218_STRUCTURAL_THRESHOLD_A = PASS
+TPC218_HILBERT_VALUED_LARGE_SIEVE = PROVED_STANDARD_TENSOR_LIFT
+TPC218_PRIME_LABEL_PRESERVATION = PROVED_EXACT
+TPC218_PACKET_MATRIX_BOUND = PROVED_EXACT
+TPC218_SPLIT_NORMALIZED_EXPONENT = PROVED_1_OVER_96_LOG_FIVE
+TPC218_SCALAR_COLLAPSE_RECOVERY = PROVED_X_11_OVER_32_LOG_FIVE
+TPC218_Q_COLLAPSE_COST = PROVED_P_FACTOR
+TPC218_Q_ORTHOGONALITY = REFUTED_SCOPED
+TPC218_PACKET_ALIGNMENT = REFUTED_SCOPED
+TPC218_ARITHMETIC_CANCELLATION = NONE
+TPC218_ARITHMETIC_ADVANCE = NO
+TPC218_FIXED_ATOM_CREDIT = 0
+TPC218_L2 = NONE
+TPC218_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC218_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC218_FULL_GATE_B = OPEN
+TPC218_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+strongest positive result：labels survive a finite-window lift and the exact `P` collapse
+is exposed. strongest obstruction：the exact q-aligned fixture attains ratio `P=4`, while
+parallel packet geometry has projection ratio `1`. open theorem：prove literal signed
+prime-shell/four-packet reassembly beating `P` while retaining zero/nonunit and normalization
+interfaces. reusable structure：Hilbert-valued large sieve + PSD packet Gram + four-point
+polarization. `ROUND2_CLUE`：
+
+```text
+PROVE_A_SIGNED_PRIME_SHELL_REASSEMBLY_BEYOND_THE_EXACT_P_COLLAPSE
+```
+
+Bridge proof/checker：`research/tpc-big-road/bridge_b_prime_shell_packet_lift.md` 与
+`research/tpc-big-road/tpc_bridge_b_prime_shell_packet_lift_checker.py`。无 arithmetic
+`L2`、fixed-atom credit、strict `1/400` 或 twin-prime conclusion。
 
 ## 0.11 已发布：TPC-217 finite-window attachment by reduced rational-frequency large sieve
 
