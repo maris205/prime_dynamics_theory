@@ -1,12 +1,69 @@
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-21
+更新时间：2026-08-22
 
-状态：**TPC216_STRUCTURAL_THRESHOLD_A_RELEASED / DIRECT_SUM_ROW_ENERGY_ENVELOPE / FINITE_WINDOW_OPEN**
+状态：**TPC217_STRUCTURAL_THRESHOLD_A_RELEASED / FINITE_WINDOW_ATTACHMENT / PRIME_REASSEMBLY_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.11 已发布：TPC-217 finite-window attachment by reduced rational-frequency large sieve
+
+项目：`papers/tpc-217-finite-window-rational-large-sieve/`
+
+类型：**PROVED_STRUCTURAL_L1 / FINITE_WINDOW_ATTACHMENT**。
+
+TPC-217 直接执行 TPC-216 的 finite-window `ROUND2_CLUE`。保持同一个 literal
+common-source kernel，先按 reduced rational frequencies 精确重组，再用分母不超过
+`U` 的 Farey spacing `delta>=U^(-2)` 与 standard additive large sieve，将
+complete-period direct-sum envelope 接到 `I_x=(x/2,x]`。由 TPC-214/215 的 exact
+cluster regrouping/majorant 与 TPC-216 的 direct envelope 得到
+
+```text
+N^(-1) sum_(n in I_x)|K(n)|^2
+  <<_psi x^(11/32)(log x)^5,
+U^2/x=x^(-67/200),
+```
+
+对应的 unnormalized finite-window exponent 是 `43/32+o(1)`。有限 certificate 覆盖
+14 个 active divisors、16 个 reduced denominators 与 3 个 translated windows；独立
+aligned one-point fixture 的 exact coherent-to-diagonal ratio 为 `2`，因此 free
+finite-window orthogonality 只在该 scope 被 `REFUTED_SCOPED`。
+
+```text
+TPC217_ROUTE_ADVANCE = YES
+TPC217_STRUCTURAL_THRESHOLD_A = PASS
+TPC217_REDUCED_FREQUENCY_REGROUPING = PROVED_EXACT
+TPC217_FAREY_SPACING = PROVED_EXACT
+TPC217_ADDITIVE_LARGE_SIEVE = PROVED_STANDARD
+TPC217_FINITE_WINDOW_ATTACHMENT = PROVED_X_11_OVER_32_LOG_FIVE_NORMALIZED
+TPC217_UNNORMALIZED_WINDOW_EXPONENT = PROVED_43_OVER_32
+TPC217_WINDOW_LOSS = PROVED_1_PLUS_U2_OVER_N
+TPC217_FINITE_WINDOW_OFF_FREQUENCY_GRAM = CONTROLLED_BY_LARGE_SIEVE
+TPC217_ALIGNED_ONE_POINT_ORTHOGONALITY = REFUTED_SCOPED
+TPC217_PRIME_SHELL_REASSEMBLY = OPEN
+TPC217_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC217_ARITHMETIC_CANCELLATION = NONE
+TPC217_ARITHMETIC_ADVANCE = NO
+TPC217_FIXED_ATOM_CREDIT = 0
+TPC217_L2 = NONE
+TPC217_FULL_GATE_B = OPEN
+TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+```text
+STRONGEST_POSITIVE_RESULT = LITERAL_COMMON_SOURCE_FINITE_WINDOW_BOUND_AT_X_11_OVER_32_LOG_FIVE_NORMALIZED
+STRONGEST_OBSTRUCTION = ONE_POINT_ALIGNED_SHELL_HAS_EXACT_COHERENT_TO_DIAGONAL_RATIO_TWO
+OPEN_THEOREM = REASSEMBLE_THE_FINITE_WINDOW_BOUND_INTO_THE_LITERAL_SIGNED_PRIME_SHELL_AND_FOUR_PACKET_GATE_B_SCALAR
+REUSABLE_STRUCTURE = EXACT_REDUCED_REGROUPING_PLUS_FAREY_SPACING_PLUS_ADDITIVE_LARGE_SIEVE_PLUS_TPC215_TPC216_ENVELOPES
+ROUND2_CLUE = PRESERVE_THE_FINITE_WINDOW_LARGE_SIEVE_ATTACHMENT_WHILE_REINTRODUCING_LITERAL_PRIME_SHELL_AND_FOUR_PACKET_REASSEMBLY
+```
+
+Route A remains not applicable; Route-B structural threshold A passes. The paper PDF,
+certificate, independent checker and frequency-crowding adversary are released under
+the same author lock. There is still no arithmetic `L2`, fixed-atom credit, strict
+`1/400`, full Gate B, or twin-prime conclusion.
 
 ## 0.10 已发布：TPC-216 direct-sum row-energy envelope and the Cauchy bottleneck
 
@@ -952,6 +1009,7 @@ handoff。
 | 2026-08-12 | V57 | longitudinal root anchor、uniform prefix-error payment、Gate-B row maximalization与 root-plus-transverse package | **PROVED + SOURCE_BACKED_ARCHITECTURE + CONJECTURAL + NO_GO** |
 | 2026-08-13 | V58 | V35--V57 scalar crosswalk、q-weight direct sum、delta/tau translation与 two-scalar endpoint compiler | **PROVED + SOURCE_BACKED_ARCHITECTURE + CONJECTURAL + NO_GO** |
 | 2026-08-13 | V59 | four-packet complex polarization、reduced-residue BDH normal form、mesoscopic `1/96` clock与 collective compiler obstruction | **PROVED + SOURCE_BACKED_CONDITIONAL + CONJECTURAL + NO_GO** |
+| 2026-08-22 | V70 | reduced rational-frequency regrouping、Farey spacing、finite-window additive large-sieve attachment；aligned one-point ratio-two obstruction | **PROVED_STRUCTURAL_L1 / FINITE_WINDOW_ATTACHMENT** |
 | 2026-08-17 | V60 | moving-hole projector、exact diagonal lift与 `x^(53/32+o(1))` collective translation payment | **PROVED_STRUCTURAL_L1 / TPC-207** |
 | 2026-08-17 | V61 | complete-graph zero-hole additive edge frame、edgewise diagonal deletion与 literal-edge no-sparsification | **PROVED_STRUCTURAL_L1 / TPC-208** |
 | 2026-08-18 | V65 | truncated divisor-band Boolean boundary、reciprocal occupancy collision Gram 与 scoped emitter-only obstruction | **PROVED_STRUCTURAL_L1 / TPC-212** |

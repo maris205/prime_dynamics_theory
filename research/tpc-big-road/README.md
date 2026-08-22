@@ -1,13 +1,54 @@
-# TPC big road V69 / TPC-216: direct-sum row-energy envelope and the Cauchy bottleneck
+# TPC big road V70 / TPC-217: finite-window attachment by reduced rational-frequency large sieve
 
-更新时间：2026-08-21
+更新时间：2026-08-22
 
-状态：`TPC216_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / DIRECT_SUM_ROW_ENERGY_ENVELOPE`
+状态：`TPC217_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / FINITE_WINDOW_ATTACHMENT`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-216 proof 为
+当前 TPC-217 proof 为
+`bridge_b_finite_window_rational_large_sieve.md`，checker 为
+`tpc_bridge_b_finite_window_rational_large_sieve_checker.py`，编号论文为
+`../../papers/tpc-217-finite-window-rational-large-sieve/`。
+
+TPC-217 直接执行 TPC-216 的 finite-window `ROUND2_CLUE`。对同一个 literal common-source
+kernel，divisor dilation 将所有 rows exact regroup 成 reduced rational frequencies；分母不
+超过 `U` 的 Farey fractions 以 `U^(-2)` 分离，故 standard additive large sieve 给出
+
+```text
+N^(-1) sum_(n in I_x)|K(n)|^2
+  <<_psi x^(11/32)(log x)^5,
+I_x=(x/2,x] intersect Z,
+U^2/x=x^(-67/200),
+```
+
+unnormalized exponent 为 `43/32+o(1)`。有限 certificate 覆盖 14 个 active divisors、16 个
+reduced denominators 与 3 个 translated windows；aligned one-point fixture 的精确
+coherent-to-diagonal ratio 为 `2`，所以 free finite-window orthogonality 被
+`REFUTED_SCOPED`。这仍是结构性 finite-window attachment，不是 arithmetic saving；
+prime-shell/four-packet reassembly、arithmetic `L2`、full Gate B、fixed-atom credit 与
+strict `1/400` 继续 OPEN/UNPAID。
+
+TPC-217 claim firewall：
+
+```text
+TPC217_ROUTE_ADVANCE = YES
+TPC217_STRUCTURAL_THRESHOLD_A = PASS
+TPC217_REDUCED_FREQUENCY_REGROUPING = PROVED_EXACT
+TPC217_FAREY_SPACING = PROVED_EXACT
+TPC217_ADDITIVE_LARGE_SIEVE = PROVED_STANDARD
+TPC217_FINITE_WINDOW_ATTACHMENT = PROVED_X_11_OVER_32_LOG_FIVE_NORMALIZED
+TPC217_PRIME_SHELL_REASSEMBLY = OPEN
+TPC217_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC217_ARITHMETIC_ADVANCE = NO
+TPC217_FIXED_ATOM_CREDIT = 0
+TPC217_L2 = NONE
+TPC217_FULL_GATE_B = OPEN
+TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+上游 TPC-216 proof 为
 `bridge_b_direct_sum_row_energy_envelope.md`，checker 为
 `tpc_bridge_b_direct_sum_row_energy_envelope_checker.py`，编号论文为
 `../../papers/tpc-216-direct-sum-row-energy-envelope/`。
@@ -26,7 +67,8 @@ L^(-1)E_direct <<_psi (Q^3/H)(log U)^3
 exact rational adversary 取 `d=5`, `H=500`, `q={101,131,151,181}`，所有 fixed-q rows
 支撑在 `{1,4}`；combined/direct norm ratio 约 `3.70568607565`，所以 free shell
 orthogonality 被 `REFUTED_SCOPED`。finite-window off-frequency Gram、prime-shell/
-four-packet reassembly、full Gate B、`L2`、fixed-atom credit 与 strict `1/400` 仍 OPEN。
+four-packet reassembly、full Gate B、`L2`、fixed-atom credit 与 strict `1/400` 仍 OPEN；
+TPC-217 已控制其 finite-window off-frequency Gram。
 
 TPC-215 直接上游 proof 为
 `bridge_b_short_quotient_mobius_majorant.md`，checker 为

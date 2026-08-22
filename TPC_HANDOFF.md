@@ -1,9 +1,78 @@
 # TPC HANDOFF
 
-更新时间：2026-08-21
-交接状态：`BOLD_CHANNEL_V69_TPC216_SEALED_FOR_NEW_SESSION`
+更新时间：2026-08-22
+交接状态：`BOLD_CHANNEL_V70_TPC217_SEALED_FOR_NEW_SESSION`
 
-TPC-216 当前 section：direct-sum row-energy envelope and the Cauchy bottleneck
+TPC-217 当前 section：finite-window attachment by reduced rational-frequency large sieve
+-----------------------------------------------------------------------------------------
+
+TPC-217 直接执行 TPC-216 的
+`ATTACH_THE_COMPLETE_PERIOD_DIRECT_SUM_ENVELOPE_TO_THE_LITERAL_FINITE_WINDOW_WITHOUT_FREE_SHELL_ORTHOGONALITY`
+线索，并保持同一个 literal V46 common-source kernel。对 `r/d` 按 reduced rational
+frequency 精确重组；分母不超过 `U` 的 distinct reduced fractions 有 Farey spacing
+`delta>=U^(-2)`，所以 standard additive large sieve 在
+`I_x=(x/2,x]`、`N=|I_x|` 上给出
+
+~~~text
+sum_(n in I_x)|K(n)|^2 <= (N+U^2) S_cluster,
+S_cluster <= O((log x)^2) E_direct/L,
+N^(-1)sum_(n in I_x)|K(n)|^2 <<_psi x^(11/32)(log x)^5.
+~~~
+
+其中 `U^2/x=x^(-67/200)`，unnormalized finite-window exponent 为 `43/32+o(1)`。
+这只把 TPC-216 的 structural complete-period envelope 接到 physical interval，不使用
+PNT、Möbius cancellation、prime-shell cancellation 或 four-packet arithmetic
+cancellation。
+
+TPC-217 claim firewall：
+
+~~~text
+TPC217_ROUTE_ADVANCE = YES
+TPC217_STRUCTURAL_THRESHOLD_A = PASS
+TPC217_REDUCED_FREQUENCY_REGROUPING = PROVED_EXACT
+TPC217_FAREY_SPACING = PROVED_EXACT
+TPC217_ADDITIVE_LARGE_SIEVE = PROVED_STANDARD
+TPC217_FINITE_WINDOW_ATTACHMENT = PROVED_X_11_OVER_32_LOG_FIVE_NORMALIZED
+TPC217_UNNORMALIZED_WINDOW_EXPONENT = PROVED_43_OVER_32
+TPC217_WINDOW_LOSS = PROVED_1_PLUS_U2_OVER_N
+TPC217_FINITE_WINDOW_OFF_FREQUENCY_GRAM = CONTROLLED_BY_LARGE_SIEVE
+TPC217_ALIGNED_ONE_POINT_ORTHOGONALITY = REFUTED_SCOPED
+TPC217_PRIME_SHELL_REASSEMBLY = OPEN
+TPC217_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC217_ARITHMETIC_CANCELLATION = NONE
+TPC217_ARITHMETIC_ADVANCE = NO
+TPC217_FIXED_ATOM_CREDIT = 0
+TPC217_L2 = NONE
+TPC217_FULL_GATE_B = OPEN
+TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC217_TPC_TRIGGER = true
+~~~
+
+有限 release certificate 覆盖 14 个 active divisors、16 个 reduced denominators 与 3 个
+translated windows；aligned one-point fixture 的 exact coherent-to-diagonal ratio 为
+`2`，因此 free finite-window orthogonality 只在该 scope 被 `REFUTED_SCOPED`。
+
+TPC-217 strongest positive result 是 source-locked common-source finite-window bound
+`x^(11/32)(log x)^5`；strongest obstruction 是 ratio-two aligned short window；open
+theorem 是在保留该 attachment 的同时重新组装 literal signed prime shell 与 four-packet
+Gate-B scalar。Route-B structural threshold A passes，Route A 不适用；没有 arithmetic
+`L2`、fixed-atom credit、strict `1/400` 或 twin-prime conclusion。
+
+编号论文目录：`papers/tpc-217-finite-window-rational-large-sieve/`
+
+~~~text
+papers/tpc-217-finite-window-rational-large-sieve/README.md
+papers/tpc-217-finite-window-rational-large-sieve/PAPER_PLAN.md
+papers/tpc-217-finite-window-rational-large-sieve/PROOF_PACKAGE.md
+papers/tpc-217-finite-window-rational-large-sieve/paper/paper.pdf
+papers/tpc-217-finite-window-rational-large-sieve/results/certificate.json
+papers/tpc-217-finite-window-rational-large-sieve/notes/theorem_ledger.md
+papers/tpc-217-finite-window-rational-large-sieve/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_finite_window_rational_large_sieve.md
+research/tpc-big-road/tpc_bridge_b_finite_window_rational_large_sieve_checker.py
+~~~
+
+TPC-216 上游 section：direct-sum row-energy envelope and the Cauchy bottleneck
 -------------------------------------------------------------------------------
 
 TPC-216 直接执行 TPC-215 的
@@ -4536,6 +4605,11 @@ TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
 `research/tpc-big-road/TPC_ROUTE_MAP.md`、
+`papers/tpc-217-finite-window-rational-large-sieve/README.md`、
+`papers/tpc-217-finite-window-rational-large-sieve/notes/theorem_ledger.md`、
+`papers/tpc-217-finite-window-rational-large-sieve/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_finite_window_rational_large_sieve.md`、
+`research/tpc-big-road/tpc_bridge_b_finite_window_rational_large_sieve_checker.py`、
 `research/tpc-big-road/bridge_b_moving_hole_bdh_translation_compiler.md`、
 `research/tpc-big-road/tpc_bridge_b_moving_hole_bdh_translation_checker.py`、
 `research/tpc-big-road/bridge_b_polarized_local_bdh_scalar_compiler.md`、
@@ -4683,8 +4757,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V69/TPC-216 gate及其 V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；九十四次必须都为零，且每一对 stdout
+22项启动回归之后，当前 V70/TPC-217 gate及其 V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；九十六次（48 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -4782,6 +4856,8 @@ python -B research/tpc-big-road/tpc_bridge_b_short_quotient_mobius_majorant_chec
 python -O -B research/tpc-big-road/tpc_bridge_b_short_quotient_mobius_majorant_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_direct_sum_row_energy_envelope_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_direct_sum_row_energy_envelope_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_finite_window_rational_large_sieve_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_finite_window_rational_large_sieve_checker.py --check
 ```
 
 随后优先读取：

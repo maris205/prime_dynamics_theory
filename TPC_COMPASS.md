@@ -1,9 +1,22 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-21
-状态：`BOLD_CHANNEL_V69 / DIRECT_SUM_ROW_ENERGY_ENVELOPE_BUILT_FINITE_WINDOW_OPEN`
-claim level：`PROVED_STRUCTURAL_L1_DIRECT_SUM_ROW_ENERGY_ENVELOPE_WITH_ALIGNED_SHELL_OBSTRUCTION`
-编号事实终点：TPC-216；TPC-217 trigger：`false`
+更新时间：2026-08-22
+状态：`BOLD_CHANNEL_V70 / FINITE_WINDOW_ATTACHMENT_BUILT_PRIME_REASSEMBLY_OPEN`
+claim level：`PROVED_STRUCTURAL_L1_FINITE_WINDOW_ATTACHMENT_WITH_ALIGNED_WINDOW_OBSTRUCTION`
+编号事实终点：TPC-217；TPC-218 trigger：`false`
+
+当前 TPC-217 入口：proof 为
+`research/tpc-big-road/bridge_b_finite_window_rational_large_sieve.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_finite_window_rational_large_sieve_checker.py`，编号论文为
+`papers/tpc-217-finite-window-rational-large-sieve/`。在同一个 literal V46 common-source
+kernel 上，TPC-217 exact regrouping by reduced rational frequencies、Farey spacing 与
+standard additive large sieve 将 TPC-216 的 complete-period envelope 接到
+`I_x=(x/2,x]`：
+`N^(-1)sum_(n in I_x)|K(n)|^2 <<_psi x^(11/32)(log x)^5`，且
+`U^2/x=x^(-67/200)` 为 lower-order window term。finite aligned one-point fixture 的
+coherent-to-diagonal ratio 恰为 `2`，所以 free finite-window orthogonality 仍为
+`REFUTED_SCOPED`。prime-shell/four-packet signed reassembly、arithmetic `L2`、full Gate B、
+fixed-atom credit、strict `1/400` 与 TPC endpoint 仍 OPEN/UNPAID/NO。
 
 当前 TPC-216 入口：proof 为
 `research/tpc-big-road/bridge_b_direct_sum_row_energy_envelope.md`，checker 为
@@ -13,8 +26,8 @@ integer atoms 在模 `d` 下 exact 不碰撞；shell Cauchy、`P<=2Q` 与 Mobius
 sum 给出 complete-period normalized envelope
 `L^(-1)E_direct <<_psi x^(11/32)(log x)^3`。exact rational fixture 中四个 prime rows
 全部支撑在 `{1,4} mod 5`，所以 free q-orthogonality 被 `REFUTED_SCOPED`。finite-window
-off-frequency Gram、prime-shell/four-packet reassembly、full Gate B、`L2`、fixed-atom
-credit 与 TPC endpoint 仍 OPEN。
+off-frequency Gram 已由 TPC-217 以 large sieve 控制；prime-shell/four-packet reassembly、
+full Gate B、`L2`、fixed-atom credit 与 TPC endpoint 仍 OPEN。
 
 TPC-215 直接上游入口：proof 为
 `research/tpc-big-road/bridge_b_short_quotient_mobius_majorant.md`，checker 为

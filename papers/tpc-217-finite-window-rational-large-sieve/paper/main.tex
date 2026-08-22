@@ -1,0 +1,356 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Qx}{\mathcal Q_x}
+\newcommand{\Dx}{\mathcal D_x}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\ee}{\mathrm e}
+\newcommand{\Kphys}{\mathcal K}
+\newcommand{\Edir}{\mathcal E_{\mathrm{dir}}}
+\newcommand{\Ecl}{\mathcal E_{\mathrm{cl}}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\dist}{\|\!\|\!\|}
+
+\title{\textbf{Finite-Window Attachment by Reduced Rational-Frequency Large Sieve}}
+\author{Liang Wang\\
+Huazhong University of Science and Technology\\
+Wuhan 430074, P.R. China}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-216 proved a complete-period direct-sum envelope for the literal V46
+reciprocal emitter but left the physical interval open.  This paper attaches
+that result to the interval $I_x=(x/2,x]\cap\mathbb Z$.  The common-source
+kernel is first regrouped exactly by reduced rational frequencies: divisor rows
+with denominator $d$ contribute to the same frequency $a/h$ through the single
+coefficient $C_h=\sum_{h\mid d}\mu(d)\log(d)/d$.  Distinct reduced fractions with
+denominators at most $U$ have circular spacing at least $U^{-2}$, so the
+additive large sieve gives a finite-window factor $N+U^2$, where
+$N=|I_x|$.  TPC-215 and TPC-216 then yield
+\[
+ N^{-1}\sum_{n\in I_x}|\Kphys(n)|^2
+ \ll_{\psi} x^{11/32}(\log x)^5.
+\]
+The $U^2$ term is lower order since $U^2/x=x^{-67/200}$, giving an
+unnormalized exponent $43/32+o(1)$.  A finite aligned-shell fixture has exact
+one-point coherent-to-diagonal ratio $2$, so the attachment cannot be replaced
+by free finite-window orthogonality.  This is a structural result only: prime-
+shell reassembly, arithmetic $L^2$, the strict $1/400$ budget, and the
+twin-prime endpoint remain open.
+\end{abstract}
+
+\paragraph{Claim level.}
+\texttt{PROVED\_STRUCTURAL\_L1 / FINITE\_WINDOW\_ATTACHMENT}.\\
+The exact regrouping and exponent ledger are proved.  The additive large sieve
+is a standard named input.  Finite fixtures are reproducibility checks, not
+asymptotic arithmetic evidence.
+
+\section{Introduction}
+
+The transition-native twin-prime route has reached a useful intermediate
+object.  Its physical reciprocal emitter is coupled across a squarefree divisor
+band, so a divisor-by-divisor orthogonal decomposition is not literal.  TPC-213
+constructed the common physical source and its cross-divisor Gram
+\cite{WangV46,WangTPC214}.  TPC-214 then showed that on a complete period the
+correct coordinates are reduced rational frequencies.  If $h$ is the reduced
+denominator, all rows with $h\mid d$ share one emitter row $B_h$ and their
+coefficients add to
+\[
+ C_h=\sum_{\substack{d\in\Dx\\h\mid d}} c_d,
+ \qquad c_d=\frac{\mu(d)\log d}{d}.
+\]
+
+TPC-215 bounded the resulting cluster coefficient energy by an
+$O((\log x)^2)$ multiple of the divisor direct-sum energy, and TPC-216 bounded
+that direct-sum energy by
+\[
+ L^{-1}\Edir\ll_{\psi}x^{11/32}(\log x)^3
+ \cite{WangTPC215,WangTPC216}.
+\]
+Those results still used a complete common period.  The next question is
+whether the same object can be evaluated on the actual interval $I_x$ without
+silently restoring orthogonality.
+
+The answer is a clean structural attachment.  Reduced fractions with
+denominator at most $U$ form a $U^{-2}$-separated set modulo one.  The additive
+large sieve therefore controls the physical Gram by $(N+U^2)$ times the
+reduced-frequency coefficient energy.  Since $U^2=o(x)$, the power exponent is
+unchanged.  The result does not exploit signs of $\mu$, cancellation among
+primes, or the four-packet polarization.  It establishes the finite-window
+interface and leaves the arithmetic bridge visible.
+
+Our contributions are:
+\begin{enumerate}[leftmargin=2em]
+  \item an exact finite-window regrouping of the literal common-source kernel;
+  \item a source-locked large-sieve attachment with normalized exponent
+        $11/32$ and logarithmic cost $(\log x)^5$;
+  \item an independent finite certificate and a one-point aligned-shell
+        adversary showing why free finite-window orthogonality is invalid.
+\end{enumerate}
+
+\section{Literal source and inherited complete-period bounds}
+
+We retain the V46 parameters
+\begin{equation}
+ H=x^{21/32},\qquad Q=x^{1/3},\qquad
+ Y_0=\frac{H}{4Q},\qquad U=x^{133/400},
+ \label{eq:scales}
+\end{equation}
+and the prime shell and squarefree band
+\begin{equation}
+ \Qx=\{q\text{ prime}:Q<q\le2Q\},\qquad
+ \Dx=\{d\in\ZZ:Y_0<d\le U,\ \mu(d)^2=1\}.
+ \label{eq:band}
+\end{equation}
+For a bounded profile $\psi$, define
+\begin{equation}
+ B_d(r)=\sum_{q\in\Qx}\sum_{0<|m|\le\lfloor dq/H\rfloor}
+ \psi\!\left(\frac{Hm}{dq}\right)
+ \one_{m\overline q\equiv r\pmod d}.
+ \label{eq:emitter}
+\end{equation}
+For sufficiently large $x$,
+\begin{equation}
+ \frac{H}{4Q}=\frac14x^{31/96}\to\infty,
+ \qquad \frac{U}{Q}=x^{-1/1200}\to0,
+ \label{eq:source}
+\end{equation}
+so $4Q<H$ and $U<Q$.
+
+The complete-period direct energy from TPC-216 is
+\begin{equation}
+ \Edir=L\sum_{d\in\Dx}|c_d|^2\sum_{r\bmod d}|B_d(r)|^2,
+ \qquad c_d=\frac{\mu(d)\log d}{d},
+ \label{eq:direct}
+\end{equation}
+with
+\begin{equation}
+ L^{-1}\Edir\ll_{\psi}\frac{Q^3}{H}(\log U)^3
+ =x^{11/32}(\log x)^3.
+ \label{eq:tpc216}
+\end{equation}
+TPC-215 supplies the complete-period coefficient comparison
+\begin{equation}
+ \sum_{h}\sum_{\substack{a\bmod h\\(a,h)=1}}
+ |C_hB_h(a)|^2
+ \le A_x\frac{\Edir}{L},
+ \qquad A_x=O((\log x)^2),
+ \label{eq:tpc215}
+\end{equation}
+where
+\begin{equation}
+ C_h=\sum_{\substack{d\in\Dx\\h\mid d}}c_d.
+ \label{eq:Ch}
+\end{equation}
+The sum includes only nonzero reduced-frequency rows; the additive zero row
+vanishes because $q<H$.
+
+\section{Exact reduced-frequency representation}
+
+\begin{lemma}[divisor dilation]
+\label{lem:dilation}
+If $h\mid d$, $d=kh$, and $(a,h)=1$, then
+\[
+ B_d(ka)=B_h(a).
+\]
+\end{lemma}
+
+\begin{proof}
+The congruence in \eqref{eq:emitter} becomes
+\[
+ m\overline q\equiv ka\pmod{kh}.
+\]
+It forces $m=kn$ because $q$ is a unit modulo $kh$.  The cutoff becomes
+$|n|\le\lfloor hq/H\rfloor$, and the profile argument satisfies
+$Hm/(dq)=Hn/(hq)$.  The summands are therefore identical.
+\end{proof}
+
+\begin{theorem}[exact reduced-frequency regrouping]
+\label{thm:regroup}
+Define the common-source kernel
+\begin{equation}
+ \Kphys(n)=\sum_{d\in\Dx}c_d\sum_{r\bmod d}B_d(r)\ee(nr/d).
+ \label{eq:kernel}
+\end{equation}
+Then, for every integer $n$,
+\begin{equation}
+ \Kphys(n)=
+ \sum_{h\le U}\sum_{\substack{a\bmod h\\(a,h)=1}}
+ C_hB_h(a)\ee(na/h).
+ \label{eq:regroup}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For a residue $r\bmod d$, let $g=(r,d)$ and put $h=d/g$, $a=r/g$.
+Then $r/d=a/h$ in lowest terms.  If $r=0$, use $h=1$ and $a=0$.
+For nonzero $r$, the reduced numerator is coprime to $h$.  The map from
+residues $r\bmod d$ to their reduced fractions partitions every row.  Lemma
+\ref{lem:dilation} identifies the row value in each divisor $d$ with $B_h(a)$,
+so the coefficients of the same reduced frequency add to $C_h$.  The zero row
+is absent because $\lfloor q/H\rfloor=0$ for $q<H$.
+\end{proof}
+
+\section{Finite-window large-sieve theorem}
+
+We use the standard additive large-sieve inequality in the following form
+\cite{MontgomeryVaughan1973}.  If $\alpha_j$ are separated modulo one by
+\(\delta>0\), then for every consecutive interval $I$ of $N$ integers,
+\begin{equation}
+ \sum_{n\in I}\left|\sum_j z_j\ee(n\alpha_j)\right|^2
+ \le (N-1+\delta^{-1})\sum_j|z_j|^2.
+ \label{eq:large-sieve}
+\end{equation}
+The inequality follows from the dual Hilbert-inequality proof of the additive
+large sieve; no arithmetic property of the coefficients is required here.
+
+\begin{lemma}[Farey spacing]
+\label{lem:spacing}
+Distinct reduced fractions $a/h$ and $a'/h'$ with $h,h'\le U$ satisfy
+\[
+ \dist(a/h,a'/h')\ge U^{-2},
+\]
+where the distance is taken modulo one.
+\end{lemma}
+
+\begin{proof}
+The difference, or its complement modulo one, is a nonzero rational with
+denominator dividing $hh'$.  Its numerator is a nonzero integer, so its
+absolute value is at least $(hh')^{-1}\ge U^{-2}$.
+\end{proof}
+
+\begin{theorem}[finite-window attachment]
+\label{thm:finite}
+Let $I_x=(x/2,x]\cap\ZZ$ and $N=|I_x|$.  Then
+\begin{equation}
+ \sum_{n\in I_x}|\Kphys(n)|^2
+ \ll_{\psi}(N+U^2)x^{11/32}(\log x)^5.
+ \label{eq:finite-bound}
+\end{equation}
+In particular,
+\begin{equation}
+ \frac1N\sum_{n\in I_x}|\Kphys(n)|^2
+ \ll_{\psi}x^{11/32}(\log x)^5,
+ \label{eq:normalized-bound}
+\end{equation}
+and the unnormalized exponent is $43/32+o(1)$.
+\end{theorem}
+
+\begin{proof}
+Insert the exact representation \eqref{eq:regroup} into \eqref{eq:large-sieve}.
+Lemma~\ref{lem:spacing} permits $\delta=U^{-2}$, giving
+\begin{align}
+ \sum_{n\in I_x}|\Kphys(n)|^2
+ &\le (N+U^2)
+ \sum_h\sum_{(a,h)=1}|C_hB_h(a)|^2\\
+ &\le (N+U^2)A_x\frac{\Edir}{L}.
+ \label{eq:chain}
+\end{align}
+Use $A_x=O((\log x)^2)$ from \eqref{eq:tpc215} and
+\eqref{eq:tpc216} to obtain \eqref{eq:finite-bound}.  Finally,
+\(U^2/x=x^{-67/200}\) and $N\asymp x$, so division by $N$ gives
+\eqref{eq:normalized-bound}.  The unnormalized power is
+\(1+11/32=43/32\).
+\end{proof}
+
+\begin{remark}[scope]
+The proof controls the finite-window off-frequency Gram by spacing.  It does
+not use cancellation in $\mu(d)$, cancellation among primes, or the signed
+four-packet reassembly.  The result is consequently structural and does not
+pay the arithmetic Gate-B ledger.
+\end{remark}
+
+\section{Finite certificates and the crowding obstruction}
+
+The reproducible finite fixture uses $Q=\{11,13,17\}$, $H=40$, the full
+squarefree family in $(2,35]$, and $\psi(t)=(1+t^2)^{-2}$.  It contains 14
+active divisors and 16 reduced denominators.  The direct divisor expansion and
+the reduced-frequency expansion agree pointwise to floating-point rounding in
+three translated windows of lengths 1, 17, and 60.  The finite checks use exact
+rational row values before the final logarithmic evaluation.
+
+\begin{table}[h]
+\centering
+\caption{Finite-window certificate.  The right column is the coarse
+large-sieve envelope $(N+U^2)S_{\mathrm{cluster}}$.}
+\label{tab:certificate}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+start & length & window energy & large-sieve envelope\\
+\midrule
+0 & 1 & 28.1221 & 6810.9700\\
+0 & 17 & 38.8455 & 6899.8571\\
+123 & 60 & 396.8373 & 7138.7410\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The gap in Table~\ref{tab:certificate} is expected: this release proves a
+uniform envelope, not a sharp finite fixture estimate.  The separate
+aligned-shell adversary takes
+\[
+ d=5,\quad H=500,\quad q\in\{101,131,151,181\},
+ \quad \psi(t)=(1+t^2)^{-2}.
+\]
+Every row has cutoff one and support $\{1,4\}\pmod 5$.  At a one-point window,
+the coherent energy is exactly twice the diagonal row-energy sum.  Thus the
+finite-window Gram is not freely diagonal even in this small admissible model.
+The statement is scoped: it does not contradict the long-interval large sieve
+and is not an asymptotic lower bound for the V46 prime shell.
+
+\section{Route evaluation and open gates}
+
+TPC-217 advances the route from a complete-period envelope to a physical-window
+attachment.  The state is
+\begin{align*}
+ &\texttt{TPC217\_STRUCTURAL\_THRESHOLD\_A = PASS},\\
+ &\texttt{TPC217\_FINITE\_WINDOW\_ATTACHMENT
+   = PROVED\_X\_11\_OVER\_32\_LOG\_FIVE\_NORMALIZED},\\
+ &\texttt{TPC217\_ARITHMETIC\_ADVANCE = NO},\\
+ &\texttt{TPC217\_PRIME\_SHELL\_REASSEMBLY = OPEN},\\
+ &\texttt{TPC217\_FULL\_GATE\_B = OPEN}.
+\end{align*}
+The next theorem must preserve this finite-window control while restoring the
+literal prime-only shell, four-packet signs, and the remaining Euler and
+zero/nonunit interfaces.  No fixed-atom credit or strict $1/400$ payment is
+claimed here.
+
+\section{Conclusion}
+
+The common-source V46 kernel admits an exact reduced-frequency representation
+on every integer, not only on a complete period.  Farey spacing and the
+additive large sieve then attach the TPC-216 direct-energy envelope to the
+physical interval with normalized exponent $11/32$ and five logarithmic
+factors.  The $U^2$ spacing term is lower order at the frozen source scales.
+The one-point aligned-shell fixture shows why this attachment must use a
+length-dependent large-sieve argument rather than free orthogonality.  The
+remaining work is arithmetic: reassemble the prime shell and four-packet
+signed scalar without losing the literal Gate-B interface.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

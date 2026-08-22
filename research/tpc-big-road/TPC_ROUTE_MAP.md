@@ -1,17 +1,19 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-21
+更新时间：2026-08-22
 
-当前地图版本：V69 / TPC-216
+当前地图版本：V70 / TPC-217
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-216`（`PROVED_STRUCTURAL_L1 / DIRECT_SUM_ROW_ENERGY_ENVELOPE`）；对应
-论文目录为 `papers/tpc-216-direct-sum-row-energy-envelope/`。TPC-216 承接 TPC-215 的
-direct-sum open quantity：`4Q<H` 给 fixed-q cutoff injectivity，shell Cauchy 与
-`P<=2Q` 给 `L^(-1)E_direct <<_psi x^(11/32)(log x)^3`。exact aligned-support fixture
-refute free q-orthogonality；finite-window off-frequency Gram、prime-shell/four-packet
-reassembly、arithmetic cancellation 与完整 Gate B 仍 OPEN。
+当前编号锚点：`TPC-217`（`PROVED_STRUCTURAL_L1 / FINITE_WINDOW_ATTACHMENT`）；对应
+论文目录为 `papers/tpc-217-finite-window-rational-large-sieve/`。TPC-217 保留 TPC-216
+的 complete-period direct-sum envelope，按 reduced rational frequencies 精确重组，并用
+Farey spacing 与 standard additive large sieve 接到 `I_x=(x/2,x]`：
+`N^(-1)sum_(n in I_x)|K(n)|^2 <<_psi x^(11/32)(log x)^5`，且
+`U^2/x=x^(-67/200)`。aligned one-point fixture 的 exact coherent-to-diagonal ratio
+为 `2`；prime-shell/four-packet signed reassembly、arithmetic cancellation 与完整
+Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -53,9 +55,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +-----------------------------------------------+
-        | YOU ARE HERE — V69 / TPC-216                  |
-        | GATE-B DIRECT ENERGY / FINITE-WINDOW ZONE     |
-        | x^(11/32+o(1)) envelope; reassembly OPEN      |
+        | YOU ARE HERE — V70 / TPC-217                  |
+        | GATE-B FINITE-WINDOW LARGE-SIEVE ZONE         |
+        | x^(11/32+o(1)) log^5 attachment; reassembly OPEN |
         +-----------------------------------------------+
                 |
                 v
@@ -98,13 +100,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V69 / TPC-216 的
-source-locked direct-sum row-energy theorem。fixed-q integer atoms exact 不碰撞，shell
-Cauchy 将 complete-period normalized direct energy 控制到
-`x^(11/32)(log x)^3`；aligned-support adversary 又证明 q-orthogonality不能免费使用。
-这个结果仍不是 arithmetic saving；finite-window Gram、prime-shell/four-packet
-reassembly、FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom credit 继续
-OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V70 / TPC-217 的
+source-locked finite-window large-sieve attachment。reduced rational regrouping、Farey
+spacing 与 standard additive large sieve 将 TPC-216 的 complete-period envelope 接到
+physical interval，得到 `x^(11/32)(log x)^5` normalized bound；aligned one-point
+adversary 又证明短窗不能免费使用 orthogonality。这个结果仍不是 arithmetic saving；
+prime-shell/four-packet reassembly、FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom
+credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1185,6 +1187,55 @@ TPC216_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 literal finite window，并保留 shell alignment、Möbius signs 与 four-packet
 reassembly。**
 
+## 5.11 V70 / TPC-217：finite-window attachment by reduced rational-frequency large sieve
+
+TPC-217 完成了上节指定的 finite-window attachment。对同一个 literal common-source
+kernel，按 `r/d` 的 reduced rational frequency 精确重组；不同分母不超过 `U` 的
+reduced fractions 具有 Farey spacing `delta>=U^(-2)`。因此 standard additive large
+sieve 在 `I_x=(x/2,x]` 上给出
+
+```text
+sum_(n in I_x)|K(n)|^2
+  <= (N+U^2) S_cluster,
+S_cluster <= O((log x)^2) E_direct/L,
+E_direct/L <<_psi x^(11/32)(log x)^3.
+```
+
+由于 `U^2/x=x^(-67/200)`，得到 normalized finite-window bound
+`N^(-1)sum_(n in I_x)|K(n)|^2 <<_psi x^(11/32)(log x)^5`，unnormalized exponent
+为 `43/32+o(1)`。这控制了 physical interval 的 off-frequency Gram，但不替换
+literal prime rows，不使用 PNT、Möbius cancellation 或 four-packet arithmetic
+cancellation。
+
+有限 certificate 覆盖 14 个 active divisors、16 个 reduced denominators 与 3 个
+translated windows；aligned one-point fixture 的 exact coherent-to-diagonal ratio
+为 `2`，所以 free finite-window orthogonality 仍被 `REFUTED_SCOPED`。
+
+```text
+TPC217_ROUTE_ADVANCE = YES
+TPC217_STRUCTURAL_THRESHOLD_A = PASS
+TPC217_REDUCED_FREQUENCY_REGROUPING = PROVED_EXACT
+TPC217_FAREY_SPACING = PROVED_EXACT
+TPC217_ADDITIVE_LARGE_SIEVE = PROVED_STANDARD
+TPC217_FINITE_WINDOW_ATTACHMENT = PROVED_X_11_OVER_32_LOG_FIVE_NORMALIZED
+TPC217_UNNORMALIZED_WINDOW_EXPONENT = PROVED_43_OVER_32
+TPC217_WINDOW_LOSS = PROVED_1_PLUS_U2_OVER_N
+TPC217_FINITE_WINDOW_OFF_FREQUENCY_GRAM = CONTROLLED_BY_LARGE_SIEVE
+TPC217_ALIGNED_ONE_POINT_ORTHOGONALITY = REFUTED_SCOPED
+TPC217_PRIME_SHELL_REASSEMBLY = OPEN
+TPC217_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC217_ARITHMETIC_CANCELLATION = NONE
+TPC217_ARITHMETIC_ADVANCE = NO
+TPC217_FIXED_ATOM_CREDIT = 0
+TPC217_L2 = NONE
+TPC217_FULL_GATE_B = OPEN
+TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
+finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
+prime-shell 与 four-packet signed reassembly。**
+
 ## 6. 图像名称与仓库名称的对应
 
 这里最容易出现的误解，是把图像 Bridge A/B 与仓库内部 A/B/C gate 当成同一套编号。
@@ -1232,7 +1283,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V69 / TPC-216：
+截至 V70 / TPC-217：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1281,13 +1332,29 @@ TPC216_DIRECT_SUM_ROW_ENERGY_ENVELOPE = PROVED_X_11_OVER_32_LOG_CUBED
 TPC216_ARITHMETIC_CANCELLATION = NONE
 TPC216_ALIGNED_SUPPORT_ADVERSARY = NUMERICALLY_CERTIFIED_EXACT_RATIONAL
 TPC216_FREE_Q_ORTHOGONALITY = REFUTED_SCOPED
-TPC216_FINITE_WINDOW_OFF_FREQUENCY_GRAM = OPEN
+TPC216_FINITE_WINDOW_OFF_FREQUENCY_GRAM = CONTROLLED_BY_TPC217_LARGE_SIEVE
 TPC216_PRIME_SHELL_REASSEMBLY = OPEN
 TPC216_ARITHMETIC_ADVANCE = NO
 TPC216_FIXED_ATOM_CREDIT = 0
 TPC216_L2 = NONE
 TPC216_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-216
+TPC217_REDUCED_FREQUENCY_REGROUPING = PROVED_EXACT
+TPC217_FAREY_SPACING = PROVED_EXACT
+TPC217_ADDITIVE_LARGE_SIEVE = PROVED_STANDARD
+TPC217_FINITE_WINDOW_ATTACHMENT = PROVED_X_11_OVER_32_LOG_FIVE_NORMALIZED
+TPC217_UNNORMALIZED_WINDOW_EXPONENT = PROVED_43_OVER_32
+TPC217_WINDOW_LOSS = PROVED_1_PLUS_U2_OVER_N
+TPC217_FINITE_WINDOW_OFF_FREQUENCY_GRAM = CONTROLLED_BY_LARGE_SIEVE
+TPC217_ALIGNED_ONE_POINT_ORTHOGONALITY = REFUTED_SCOPED
+TPC217_PRIME_SHELL_REASSEMBLY = OPEN
+TPC217_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC217_ARITHMETIC_CANCELLATION = NONE
+TPC217_ARITHMETIC_ADVANCE = NO
+TPC217_FIXED_ATOM_CREDIT = 0
+TPC217_L2 = NONE
+TPC217_FULL_GATE_B = OPEN
+TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-217
 ```
 
 以下事实不得从路线图中推断：
@@ -1305,47 +1372,51 @@ NUMBERED_RELEASE = TPC-216
 
 优先级更新为：
 
-1. **TPC-216 已完成：direct-sum row-energy envelope**。fixed-q no-collision、shell Cauchy、
+1. **TPC-217 已完成：finite-window large-sieve attachment**。reduced rational regrouping、
+   Farey spacing 与 standard additive large sieve 将 TPC-216 envelope 接到 actual
+   physical interval，得到 `x^(11/32)(log x)^5` normalized bound；ratio-two adversary
+   证明短窗不能免费使用 orthogonality。
+2. **TPC-216 已完成：direct-sum row-energy envelope**。fixed-q no-collision、shell Cauchy、
    `P<=2Q` 与 `11/32` exponent ledger 已封存；aligned-support adversary 证明 free
    q-orthogonality 不能结构性删除。
-2. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
+3. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-3. **TPC-216 的 finite-window attachment**。把 complete-period direct-sum envelope 接到
-   actual physical interval，控制 off-frequency Gram；不得把 complete-period envelope
-   误称为 arithmetic saving，也不得假设 q-shell orthogonality。
-4. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
+4. **TPC-217 的下一步：literal prime-shell/four-packet reassembly**。保持 finite-window
+   large-sieve attachment，同时重新引入 literal prime rows、Möbius signs、zero/nonunit
+   ledgers；不得把 structural `L1` bound误称为 arithmetic saving。
+5. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
    对四个 `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
    diagonal-corrected reduced-residue remainder证明集体 fixed-power saving；不得把
    Harper all-moduli variance或 Blomer--Pascadi fixed cell直接当成 global theorem；
-4. **V58 full-shell Gate-A root**。直接证明同一个 literal V51
+6. **V58 full-shell Gate-A root**。直接证明同一个 literal V51
    mixed-plus-balanced fold的 full-shell fixed-power saving；这是与 Gate-B 并行的主
    桥墩，不是 V60 translation payment的自动后果；
-5. **按全局 Siegel quality 保留条件分流**。unbounded world可调用已锁定的
+7. **按全局 Siegel quality 保留条件分流**。unbounded world可调用已锁定的
    Matomaki--Merikoski `h=2` correlation exit；不得把单尺度 singleton误判为
    unbounded sequence；
-6. **V58 Gate-B scalar root（等价终端表述）**。直接对已经 exact识别的 V35
+8. **V58 Gate-B scalar root（等价终端表述）**。直接对已经 exact识别的 V35
    proper-factor centered core证明
    `|mathfrak C_x|<<x^(5/3-delta+o(1))`、`delta>1/400`；V59只重写对象，
    没有降低这个 terminal burden；
-7. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
+9. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
    才证明 `C_perp` 的 one-`Q` variance；不得再把它列为 physical endpoint必需门；
-8. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
+10. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
    package，仍可对 pruned tree的 large nodes统一估计；
-9. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
+11. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
    signed diagonal/off-diagonal，并支付
    `(delta_B+delta_W)/2+rho>1/400`；fixed-modulus local engine只作条件工具；
-10. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
+12. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
    row species证明 one-`Q` variance，另一种由 paid difference自动继承；不得先把
    longitudinal mode删掉后声称完整 theorem；
-11. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
+13. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
    endpoint-matched direct core与三引擎 heuristic fallback，但不再强迫它先于
    reverse-Type-I/balanced lane；
-12. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
+14. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
    preferred sufficient gate；P2/K 是 stronger norms，E/X
    分别是 `sigma<13/4800` whole residual energy和
    `kappa>403/1200` joint character theorem，不与 MPD lane叠加 theorem credit；
-13. **C：只在前十二条路线真实阻断或新 source 出现时，重开 distinguished-seed
+15. **C：只在前十四条路线真实阻断或新 source 出现时，重开 distinguished-seed
    symmetry-breaking/dynamics reserve。**
 
 ### 8.1 地图式施工顺序
@@ -1403,6 +1474,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-22 | V70 / TPC-217 | Bridge A / Gate B：finite-window reduced-frequency large-sieve attachment `x^(11/32)(log x)^5`；prime-shell/four-packet reassembly open | `TPC-217` | exact regrouping、Farey spacing、standard additive large sieve、one-point ratio-two obstruction；arithmetic仍为 NO |
 | 2026-08-21 | V69 / TPC-216 | Bridge A / Gate B：direct-sum row-energy envelope `x^(11/32)(log x)^3`；finite-window attachment open | `TPC-216` | fixed-q no-collision、shell Cauchy、`P<=2Q`、aligned-support adversary；arithmetic仍为 NO |
 | 2026-08-20 | V68 / TPC-215 | Bridge A / Gate B：short-quotient Möbius tails；cluster-to-direct majorant `O((log x)^2)`；direct physical energy open | `TPC-215` | activation floor、`23/2400` quotient bound、exact row-norm decomposition、top-shell ratio-one obstruction；arithmetic仍为 NO |
 | 2026-08-20 | V67 / TPC-214 | Bridge A / Gate B：Möbius-log reduced-frequency cluster tails；literal asymptotic bound open | `TPC-214` | exact dilation covariance、reduced-denominator factorization、zero-axis/four-packet compatibility、finite opposite-sign obstruction；arithmetic仍为 NO |
