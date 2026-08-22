@@ -2,11 +2,62 @@
 
 更新时间：2026-08-22
 
-状态：**TPC221_STRUCTURAL_THRESHOLD_A_RELEASED / COLLISION_GRAPH_SCHUR_ENVELOPE / SIGNED_DISPERSION_OPEN**
+状态：**TPC222_STRUCTURAL_THRESHOLD_A_RELEASED / FOUR_PACKET_CROSS_TERM_OBSTRUCTION / POLARIZED_REASSEMBLY_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.16 已发布：TPC-222 four-packet polarization and the PSD cross-term obstruction
+
+项目：`papers/tpc-222-four-packet-cross-term-obstruction/`
+
+类型：**PROVED_STRUCTURAL_L1 / FOUR_PACKET_CROSS_TERM_OBSTRUCTION**。
+
+TPC-222 将 TPC-218--221 反复出现的 four-packet signed interface 单独封装。令
+`G_(j,l)=<V_j,V_l>`，`V(c)=sum_j c_j V_j`，则
+
+```text
+||V(c)||^2 = c^* G c,
+<x,y> = 1/4 sum_(r=0)^3 i^(-r) ||x+i^r y||^2,
+0 <= c^* G c <= tr(G)||c||_2^2.
+```
+
+四点极化是 exact cross-term compiler；trace envelope 是 sharp 的 unsigned majorant。
+更关键的是，`V_j^+=u` 与 `V_j^-=(-1)^j u` 两个 rank-one families 具有相同
+diagonal `(1,1,1,1)` 与 trace `4`，但对 all-one coefficient vector 的 signed energies
+分别为 `16` 与 `0`。因此 diagonal、trace 或 unsigned PSD envelope 在这个有限 scope
+内不能识别 signed reassembly。这是 scoped obstruction，不是对所有 growing literal
+prime shells 的反例。
+
+```text
+TPC222_ROUTE_ADVANCE = YES
+TPC222_PSD_PACKET_GRAM = PROVED_EXACT
+TPC222_FOUR_POINT_POLARIZATION = PROVED_EXACT
+TPC222_TRACE_RAYLEIGH_ENVELOPE = PROVED_EXACT
+TPC222_SIGNED_CROSS_TERM_IDENTIFIABILITY = REFUTED_SCOPED
+TPC222_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC222_ARITHMETIC_CANCELLATION = NONE
+TPC222_ARITHMETIC_ADVANCE = NO
+TPC222_FIXED_ATOM_CREDIT = 0
+TPC222_L2 = NONE
+TPC222_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC222_FULL_GATE_B = OPEN
+TPC222_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+strongest positive result：四点极化精确恢复每个 signed cross-term；strongest obstruction：
+相同 diagonal/trace 可产生 `16` 与 `0` 两个目标能量；open theorem：把 phase-labelled
+cross-correlation 控制在 growing literal prime shell 上；reusable structure：四相位
+energy ledger 与 trace/Rayleigh firewall；`ROUND2_CLUE`：
+
+```text
+CONTROL_POLARIZED_LITERAL_PACKET_ENERGIES_WITH_SIGNED_CROSS_CORRELATION
+```
+
+Bridge proof/checker：`research/tpc-big-road/bridge_b_four_packet_cross_term_obstruction.md`
+与 `research/tpc-big-road/tpc_bridge_b_four_packet_cross_term_obstruction_checker.py`。
+无 arithmetic `L2`、fixed-atom credit、strict `1/400` 或 twin-prime conclusion。
 
 ## 0.15 已发布：TPC-221 collision-graph Schur envelope and literal saturation
 

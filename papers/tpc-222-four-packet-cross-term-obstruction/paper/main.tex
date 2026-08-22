@@ -1,0 +1,181 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\G}{\mathsf G}
+
+\title{Four-Packet Polarization and the PSD Cross-Term Obstruction}
+\author{Liang Wang\\Huazhong University of Science and Technology\\Wuhan 430074, P.R. China}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The prime-shell route carries four packet coordinates whose signed reassembly is not
+determined by their separate energies.  We isolate this interface in exact Hilbert-space
+form.  The four-packet Gram is positive semidefinite, its coefficient energy is a Rayleigh
+quotient, and a four-point polarization identity reconstructs every cross-term from four
+phase-labelled energies.  A trace bound gives a sharp universal envelope.  We then give two
+rank-one packet fixtures with identical diagonal and trace data but target signed energies
+$16$ and $0$.  Thus PSD and trace information alone cannot certify signed reassembly.  The
+result is a structural obstruction and a precise specification of the missing polarized
+cross-correlation theorem; no arithmetic $L^2$ advance is claimed.
+\end{abstract}
+
+\paragraph{Claim level.}
+\texttt{PROVED\_STRUCTURAL\_L1 / FOUR\_PACKET\_CROSS\_TERM\_OBSTRUCTION}.
+
+\section{Four packet interface}
+
+Let $V_0,V_1,V_2,V_3$ be vectors in a complex Hilbert space.  We use the convention
+\[
+ \langle x,y\rangle=\sum_k\overline{x_k}y_k,
+ \qquad
+ \G_{j\ell}=\langle V_j,V_\ell\rangle.
+ \tag{1}
+\]
+The packet index is the four-sign interface inherited from the prime-shell lift.  For a
+coefficient vector $c=(c_0,c_1,c_2,c_3)$, define the reassembled vector
+\[
+ V(c)=\sum_{j=0}^3c_jV_j.
+\]
+The desired signed estimate concerns $\|V(c)\|^2$, not just the four diagonal masses
+$\|V_j\|^2$.
+
+\begin{theorem}[PSD packet Gram]
+The matrix $\G$ is Hermitian positive semidefinite and
+\[
+ \|V(c)\|^2=c^*\G c\geq0.
+ \tag{2}
+\]
+\end{theorem}
+
+\begin{proof}
+Hermitian symmetry follows from conjugate symmetry of the inner product.  Expanding the
+norm of $V(c)$ gives (2), and positivity is immediate from the norm square.
+\end{proof}
+
+The diagonal of $\G$ records the four individual packet energies, while the off-diagonal
+entries are the signed cross-terms.  TPC-221's Schur result controls an absolute collision
+envelope, but does not determine these phases.
+
+\section{Exact four-point polarization}
+
+\begin{theorem}[Four-point polarization]
+For all vectors $x,y$,
+\[
+ \langle x,y\rangle
+ =\frac14\sum_{r=0}^3 i^{-r}\,\|x+i^r y\|^2.
+ \tag{3}
+\]
+\end{theorem}
+
+\begin{proof}
+Expand
+\[
+ \|x+i^r y\|^2=\|x\|^2+\|y\|^2
+ +i^r\langle x,y\rangle+i^{-r}\langle y,x\rangle.
+\]
+Multiplication by $i^{-r}$ and summation over $r=0,1,2,3$ kills the diagonal terms and
+the $\langle y,x\rangle$ term, because $\sum_r i^{-r}=\sum_r i^{-2r}=0$.  The remaining
+term is $4\langle x,y\rangle$.
+\end{proof}
+
+Identity (3) is an exact compiler, but it carries four phase-labelled energies.  Replacing
+those energies by one unsigned majorant discards precisely the information needed for the
+cross-term.
+
+\begin{corollary}[Trace envelope]
+For every coefficient vector $c$,
+\[
+ 0\leq c^*\G c\leq \operatorname{tr}(\G)\,\|c\|_2^2.
+ \tag{4}
+\]
+The constant is sharp.
+\end{corollary}
+
+\begin{proof}
+The eigenvalues of a PSD matrix are nonnegative and their maximum is at most their sum.
+Apply the Rayleigh quotient bound to (2).  A rank-one Gram with one nonzero eigenvalue
+attains equality.
+\end{proof}
+
+\section{Same trace, different signed reassembly}
+
+\begin{theorem}[Scoped cross-term obstruction]
+Let $u=(1,0)$ and define two four-packet families by
+\[
+ V_j^+=u,\qquad V_j^-=(-1)^j u,\qquad 0\leq j\leq3.
+\]
+Their Gram matrices are PSD and have the same diagonal $(1,1,1,1)$ and trace $4$.  For
+$c=(1,1,1,1)$, however,
+\[
+ \|V^+(c)\|^2=16,\qquad \|V^-(c)\|^2=0.
+ \tag{5}
+\]
+\end{theorem}
+
+\begin{proof}
+Both families are rank one, so their Gram matrices are respectively
+$J_4$ and $s s^*$ with $s=(1,-1,1,-1)$.  Each diagonal entry is one.  The plus sum is
+$4u$, while the minus sum is zero, proving (5).  Formula (3) holds exactly for every
+pair in both families, so the difference is genuine signed phase information rather than
+an algebraic inconsistency.
+\end{proof}
+
+The plus fixture saturates (4): $\operatorname{tr}(\G)\|c\|^2=4\cdot4=16$.  The minus
+fixture has the same trace but complete cancellation.  Therefore no theorem whose inputs
+are only packet diagonals, trace, or an unsigned PSD envelope can identify the signed
+reassembly.  This is a finite scoped obstruction; it is not an assertion that these two
+abstract phase patterns are both generated by every growing literal prime shell.
+
+\section{Certificate and route position}
+
+The exact certificate uses Gaussian-rational pairs, checks all sixteen polarization
+residuals for each fixture, verifies rank-one PSD Gram structure, and independently replays
+the trace and signed-energy contrast.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lll}
+\toprule
+object & finite scope & status\\
+\midrule
+packet Gram & 4 coordinates, two rank-one fixtures & PSD exact\\
+polarization & 16 pair identities per fixture & exact\\
+trace envelope & $\operatorname{tr}(\G)=4$ & sharp\\
+signed target & energies $16$ and $0$ & non-identifiable\\
+\bottomrule
+\end{tabular}
+\caption{TPC-222 certificate scope and claim boundary.}
+\end{table}
+
+The strongest positive result is the exact four-energy polarization compiler.  The strongest
+obstruction is same diagonal/trace with different signed cross-term behavior.  The next
+theorem must control polarized literal packet energies or their signed cross-correlations.
+
+\[
+ \texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+ \texttt{L2=NONE},\qquad
+ \texttt{FULL\_GATE\_B=OPEN}.
+\]
+
+\section{Conclusion}
+
+TPC-222 closes the PSD-only shortcut at the four-packet interface.  Polarization tells us
+exactly what data would recover a cross-term, while the paired rank-one fixtures show why
+trace and diagonal control are insufficient.  A literal growing-scale signed
+cross-correlation estimate remains the open bridge to the prime shell.
+
+\begin{thebibliography}{1}
+\bibitem{tpc218}
+TPC-218 repository proof record, ``Prime-shell Hilbert lift and the sharp collapse barrier,''
+2026.  Internal source lock; no external arithmetic estimate is invoked.
+\end{thebibliography}
+\end{document}

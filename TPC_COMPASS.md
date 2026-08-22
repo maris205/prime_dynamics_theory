@@ -1,9 +1,43 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-22
-状态：`BOLD_CHANNEL_V74 / COLLISION_GRAPH_SCHUR_SATURATION_OPEN`
-claim level：`PROVED_STRUCTURAL_L1_COLLISION_GRAPH_SCHUR_ENVELOPE`
-编号事实终点：TPC-221；TPC-221 trigger：`true`
+状态：`BOLD_CHANNEL_V75 / FOUR_PACKET_CROSS_TERM_OBSTRUCTION_OPEN`
+claim level：`PROVED_STRUCTURAL_L1_FOUR_PACKET_CROSS_TERM_OBSTRUCTION`
+编号事实终点：TPC-222；TPC-222 trigger：`true`
+
+当前 TPC-222 入口：proof 为
+`research/tpc-big-road/bridge_b_four_packet_cross_term_obstruction.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_four_packet_cross_term_obstruction_checker.py`，编号论文为
+`papers/tpc-222-four-packet-cross-term-obstruction/`。对四个 packet vectors `V_j` 与
+Gram matrix `G_(j,l)=<V_j,V_l>`，证明
+
+```text
+||sum_j c_j V_j||^2 = c^* G c,
+<x,y> = 1/4 sum_(r=0)^3 i^(-r) ||x+i^r y||^2,
+0 <= c^* G c <= tr(G) ||c||_2^2.
+```
+
+两组 rank-one fixtures `V_j^+=u` 与 `V_j^-=(-1)^j u` 具有相同 diagonal
+`(1,1,1,1)` 和 trace `4`，但对 `c=(1,1,1,1)` 的 signed energies 分别为 `16` 与
+`0`。因此无符号 diagonal/trace/PSD envelope 在此有限 scope 内不能识别 signed
+reassembly；四点极化精确指出缺失的数据是 phase-labelled cross-correlation。
+
+TPC-222 claim firewall：
+
+```text
+TPC222_ROUTE_ADVANCE = YES
+TPC222_PSD_PACKET_GRAM = PROVED_EXACT
+TPC222_FOUR_POINT_POLARIZATION = PROVED_EXACT
+TPC222_TRACE_RAYLEIGH_ENVELOPE = PROVED_EXACT
+TPC222_SIGNED_CROSS_TERM_IDENTIFIABILITY = REFUTED_SCOPED
+TPC222_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC222_ARITHMETIC_ADVANCE = NO
+TPC222_FIXED_ATOM_CREDIT = 0
+TPC222_L2 = NONE
+TPC222_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC222_FULL_GATE_B = OPEN
+TPC222_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-221 入口：proof 为
 `research/tpc-big-road/bridge_b_collision_graph_schur_envelope.md`，checker 为

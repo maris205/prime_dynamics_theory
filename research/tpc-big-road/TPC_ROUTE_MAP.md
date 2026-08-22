@@ -2,23 +2,23 @@
 
 更新时间：2026-08-22
 
-当前地图版本：V74 / TPC-221
+当前地图版本：V75 / TPC-222
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-221`（`PROVED_STRUCTURAL_L1 / COLLISION_GRAPH_SCHUR_ENVELOPE`）；对应
-论文目录为 `papers/tpc-221-collision-graph-schur-envelope/`。TPC-221 将 TPC-220 的
-collision Gram 组织成 PSD quadratic form 与 weighted Schur envelope：
+当前编号锚点：`TPC-222`（`PROVED_STRUCTURAL_L1 / FOUR_PACKET_CROSS_TERM_OBSTRUCTION`）；对应
+论文目录为 `papers/tpc-222-four-packet-cross-term-obstruction/`。TPC-222 在四 packet
+接口上证明 PSD Gram、四点极化与 trace envelope：
 
 ```text
-E(lambda) = lambda^* Gamma lambda
-  <= max_q p_q^(-1) sum_q' |Gamma(q,q')| p_q' * ||lambda||_2^2.
+||sum_j c_j V_j||^2 = c^* G c,
+<x,y> = 1/4 sum_(r=0)^3 i^(-r) ||x+i^r y||^2,
+0 <= c^* G c <= tr(G) ||c||_2^2.
 ```
 
-literal saturation fixture `h=5`, `H=500`, `q={101,151,181,191}` has `Gamma=2J_4`
-and exact coherent-to-diagonal ratio `P=4`; absolute collision-degree control therefore
-cannot by itself produce a sub-`P` saving. Signed/phase-sensitive dispersion, arithmetic
-cancellation and complete Gate B remain OPEN.
+两组 rank-one fixtures 具有相同 diagonal/trace，但 all-one signed energies 分别为 `16`
+和 `0`；因此无符号 PSD/trace 数据不能识别 signed reassembly。需要的
+phase-labelled cross-correlation、arithmetic cancellation 和 complete Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -60,9 +60,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V74 / TPC-221                     |
-        | COLLISION-GRAPH SCHUR ENVELOPE                  |
-        | absolute envelope saturates; signed dispersion OPEN |
+        | YOU ARE HERE — V75 / TPC-222                     |
+        | FOUR-PACKET CROSS-TERM OBSTRUCTION              |
+        | polarization exact; signed reassembly OPEN      |
         +--------------------------------------------------+
                 |
                 v
@@ -105,11 +105,11 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V73 / TPC-220 的
-exact prime-AP / multiplicative collision crosswalk。TPC-219 的 `P` collapse 已被接回
-literal rows，diagonal 在 cutoff injectivity 下精确还原，off-diagonal collision graph
-被明确保留。下一座桥是 Schur 之外的 collision dispersion/cancellation theorem；
-FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V75 / TPC-222 的
+four-packet polarization interface。PSD、trace 与四点极化已经 exact，但相同
+diagonal/trace 仍可对应 `16/0` 两种 signed reassembly；下一座桥是把 phase-labelled
+cross-correlation 编译成可检验的条件 theorem。FULL_GATE_B、strict `1/400`、`L2` 和
+fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1239,6 +1239,43 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.16 V75 / TPC-222：four-packet polarization and the PSD cross-term obstruction
+
+TPC-222 把 TPC-218--221 的 four-packet signed interface 提炼成一个独立的 exact
+Hilbert-space theorem。对 `G_(j,l)=<V_j,V_l>` 与 `V(c)=sum_j c_jV_j`，有
+
+```text
+||V(c)||^2 = c^*Gc,
+<x,y> = 1/4 sum_(r=0)^3 i^(-r)||x+i^r y||^2,
+0 <= c^*Gc <= tr(G)||c||_2^2.
+```
+
+四点极化说明 cross-term 只有在保留四个 phase-labelled energies 时才能 exact 恢复。
+两组 rank-one fixtures `V_j^+=u` 与 `V_j^-=(-1)^j u` 具有相同 diagonal
+`(1,1,1,1)`、相同 trace `4`，但 all-one coefficients 的 signed energies 分别为
+`16` 与 `0`。所以 PSD/trace/diagonal 的 unsigned envelope 在该有限 scope 内不能
+识别 signed reassembly；这是一项 scoped obstruction，不是 growing prime shell 的
+渐近反例。
+
+```text
+TPC222_PSD_PACKET_GRAM = PROVED_EXACT
+TPC222_FOUR_POINT_POLARIZATION = PROVED_EXACT
+TPC222_TRACE_RAYLEIGH_ENVELOPE = PROVED_EXACT
+TPC222_SIGNED_CROSS_TERM_IDENTIFIABILITY = REFUTED_SCOPED
+TPC222_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC222_ARITHMETIC_ADVANCE = NO
+TPC222_FIXED_ATOM_CREDIT = 0
+TPC222_L2 = NONE
+TPC222_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC222_FULL_GATE_B = OPEN
+TPC222_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V75 / TPC-222 已证明 exact polarized compiler，并封住只使用无符号
+diagonal/trace/PSD envelope 的捷径；下一篇应把 polarized cross-correlation 假设
+组织成条件化 signed-reassembly compiler，同时明确不把条件假设冒充 arithmetic
+theorem。**
+
 ## 5.15 V74 / TPC-221：collision-graph Schur envelope and literal saturation
 
 TPC-221 把 TPC-220 的 collision Gram 变成 exact PSD operator。对任意 positive q-weights
@@ -1438,7 +1475,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V74 / TPC-221：
+截至 V75 / TPC-222：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1554,7 +1591,18 @@ TPC221_L2 = NONE
 TPC221_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
 TPC221_FULL_GATE_B = OPEN
 TPC221_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-221
+TPC222_PSD_PACKET_GRAM = PROVED_EXACT
+TPC222_FOUR_POINT_POLARIZATION = PROVED_EXACT
+TPC222_TRACE_RAYLEIGH_ENVELOPE = PROVED_EXACT
+TPC222_SIGNED_CROSS_TERM_IDENTIFIABILITY = REFUTED_SCOPED
+TPC222_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
+TPC222_ARITHMETIC_ADVANCE = NO
+TPC222_FIXED_ATOM_CREDIT = 0
+TPC222_L2 = NONE
+TPC222_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC222_FULL_GATE_B = OPEN
+TPC222_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-222
 ```
 
 以下事实不得从路线图中推断：
@@ -1572,37 +1620,41 @@ NUMBERED_RELEASE = TPC-221
 
 优先级更新为：
 
-1. **TPC-221 已完成：collision-graph Schur envelope and literal saturation**。PSD Gram
+1. **TPC-222 已完成：four-packet polarization and PSD cross-term obstruction**。四点极化
+   exact 恢复 signed cross-term；相同 diagonal/trace 的 rank-one fixtures 给出目标能量
+   `16/0`，因此 unsigned PSD/trace envelope 不能识别 signed reassembly。下一步是把
+   phase-labelled cross-correlation 写成条件化、可审计的 reassembly compiler。
+2. **TPC-221 已完成：collision-graph Schur envelope and literal saturation**。PSD Gram
    identity 与 weighted Schur envelope 已严格证明；`h=5` literal aligned fixture 达到
    `Gamma=2J_4` 与 exact ratio `P=4`，因此 absolute collision-degree control 不能
    单独产生 sub-`P` saving。下一步必须是 signed/phase-sensitive dispersion。
-2. **TPC-220 已完成：exact prime-AP / multiplicative collision crosswalk**。literal
+3. **TPC-220 已完成：exact prime-AP / multiplicative collision crosswalk**。literal
    q-row reassembly 已写成带原 cutoff/profile 的 weighted prime-AP packet，two-row Gram
    已写成 `m q'=m' q (mod h)` collision graph；diagonal 在 cutoff injectivity 下精确
    还原，但 off-diagonal 的 Schur-beyond control 仍是开放桥。
-3. **TPC-219 已完成：exact longitudinal/transverse prime-shell ledger**。`P` collapse
+4. **TPC-219 已完成：exact longitudinal/transverse prime-shell ledger**。`P` collapse
    满足 `E_shell=P(E_diag-E_perp)`，任何 sub-`P` saving 都等价于 literal q-transverse
    lower bound；aligned/balanced endpoint fixtures 已通过 exact rational certificate。
-4. **TPC-218 已完成：prime-shell/packet-preserving Hilbert lift**。split vector envelope
+5. **TPC-218 已完成：prime-shell/packet-preserving Hilbert lift**。split vector envelope
    达到 `x^(1/96)(log x)^5`，scalar recovery 的 `P<=2Q` 成本被显式隔离；q-alignment
    ratio `P=4` 与 packet projection ratio `1` 是 scoped adversarial controls。
-5. **TPC-217 已完成：finite-window large-sieve attachment**。reduced rational regrouping、
+6. **TPC-217 已完成：finite-window large-sieve attachment**。reduced rational regrouping、
    Farey spacing 与 standard additive large sieve 将 TPC-216 envelope 接到 actual
    physical interval，得到 `x^(11/32)(log x)^5` normalized bound；ratio-two adversary
    证明短窗不能免费使用 orthogonality。
-6. **TPC-216 已完成：direct-sum row-energy envelope**。fixed-q no-collision、shell Cauchy、
+7. **TPC-216 已完成：direct-sum row-energy envelope**。fixed-q no-collision、shell Cauchy、
    `P<=2Q` 与 `11/32` exponent ledger 已封存；aligned-support adversary 证明 free
    q-orthogonality 不能结构性删除。
-7. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
+8. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-8. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
+9. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
-9. **TPC-220 的下一步：collision graph beyond Schur**。量化 off-diagonal multiplicative
+10. **TPC-220 的下一步：collision graph beyond Schur**。量化 off-diagonal multiplicative
    collisions，寻找真实的 dispersion/cancellation hypothesis；exact crosswalk 本身
    不产生 arithmetic `L2`。
-10. **TPC-219/218 的下一步：literal signed prime-shell/four-packet reassembly**。保持 finite-window
+11. **TPC-219/218 的下一步：literal signed prime-shell/four-packet reassembly**。保持 finite-window
    large-sieve attachment，同时重新引入 literal prime rows、Möbius signs、zero/nonunit
    ledgers；不得把 structural `L1` bound误称为 arithmetic saving。
 11. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
@@ -1694,6 +1746,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-22 | V75 / TPC-222 | Bridge A / Gate B：four-packet PSD Gram、四点极化与 trace envelope；signed cross-term identifiability scoped-refuted；literal polarized reassembly open | `TPC-222` | exact four-phase compiler、sharp trace bound、same-diagonal/trace `16/0` rank-one obstruction；arithmetic仍为 NO |
 | 2026-08-22 | V74 / TPC-221 | Bridge A / Gate B：collision-graph PSD/weighted-Schur envelope；literal absolute saturation；signed dispersion open | `TPC-221` | exact PSD identity、weighted Schur bound、`h=5` aligned `Gamma=2J_4` fixture with ratio `P=4`；arithmetic仍为 NO |
 | 2026-08-22 | V73 / TPC-220 | Bridge A / Gate B：exact prime-AP / multiplicative collision crosswalk；Schur-beyond collision control open | `TPC-220` | weighted prime-AP reassembly、exact collision Gram、cutoff diagonal reduction、nonempty off-diagonal adversary；arithmetic仍为 NO |
 | 2026-08-22 | V72 / TPC-219 | Bridge A / Gate B：exact longitudinal/transverse prime-shell ledger；`P` collapse iff q-transverse lower bound；prime-AP collision open | `TPC-219` | exact `E_shell=P(E_diag-E_perp)` identity、aligned/balanced endpoints、literal arithmetic仍为 NO |

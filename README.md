@@ -9,12 +9,11 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-221 在 TPC-220 的 collision Gram 上证明了 PSD identity 与
-weighted Schur envelope，并构造 literal aligned rows 使 absolute Schur 精确饱和
-`P` factor。它把“碰撞度上包络”变成可复用结构，同时严格证明绝对值控制本身不能
-提供 sub-`P` saving；这是 `PROVED_STRUCTURAL_L1`，不是 arithmetic `L2` 或
-twin-prime endpoint。下一座桥是 signed/phase-sensitive dispersion beyond absolute
-collision degrees。
+当前主线状态：TPC-222 在四 packet 接口上证明了 PSD Gram、精确四点极化公式与 sharp
+trace envelope，并用两组相同 diagonal/trace 但 signed energy 分别为 `16` 和 `0` 的
+rank-one fixtures，严格否定“仅靠无符号能量识别 signed reassembly”。这是
+`PROVED_STRUCTURAL_L1` 与 scoped obstruction，不是 arithmetic `L2` 或 twin-prime
+endpoint。下一座桥是把所需的 polarized cross-correlation 假设编译成可审计的条件定理。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -28,6 +27,8 @@ collision degrees。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-222-four-packet-cross-term-obstruction` - `PROVED_STRUCTURAL_L1 / FOUR_PACKET_CROSS_TERM_OBSTRUCTION` - 证明四点极化精确恢复 signed cross-term，并以相同 diagonal/trace、目标 energy `16/0` 的 rank-one fixtures 说明 PSD/trace 无符号包络不能识别 signed reassembly；算术 `L2` 仍开放。
 
 `tpc-221-collision-graph-schur-envelope` - `PROVED_STRUCTURAL_L1 / COLLISION_GRAPH_SCHUR_ENVELOPE` - 将 TPC-220 collision Gram 组织成 PSD quadratic form，证明 weighted Schur row-sum envelope，并用 `h=5`, `q={101,151,181,191}` 的 literal fixture 得到 `Gamma=2J_4` 与 exact ratio `P=4`；绝对 Schur 不能单独产生 sub-`P` saving。
 
