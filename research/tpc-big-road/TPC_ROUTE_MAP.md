@@ -2,17 +2,17 @@
 
 更新时间：2026-08-22
 
-当前地图版本：V71 / TPC-218
+当前地图版本：V72 / TPC-219
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-218`（`PROVED_STRUCTURAL_L1 / PRIME_LABEL_PACKET_LIFT`）；对应
-论文目录为 `papers/tpc-218-prime-shell-packet-lift/`。TPC-218 保留 TPC-217 的 literal
-finite-window attachment，同时把 prime label 与 four-packet label 留在 Hilbert coordinates，
-得到 split normalized envelope `x^(1/96)(log x)^5`；合并 prime shell 的 scalar recovery
-精确付出 `P<=2Q` 并返回 `x^(11/32)(log x)^5`。aligned q fixture 饱和 ratio `P=4`，
-packet alignment ratio 为 `1`；signed reassembly、arithmetic cancellation 与完整 Gate B
-仍 OPEN。
+当前编号锚点：`TPC-219`（`PROVED_STRUCTURAL_L1 / EXACT_LONGITUDINAL_TRANSVERSE_LEDGER`）；对应
+论文目录为 `papers/tpc-219-prime-shell-longitudinal-ledger/`。TPC-219 在 TPC-218 的
+label-preserving object 上证明
+`E_shell=P(E_diag-E_perp)`，并把任何 sub-`P` scalar recovery 精确等价为
+`E_perp>=(1-eta)E_diag`。aligned fixture 饱和 `P`，balanced fixture 到达 zero shell；
+literal prime-AP collision control、signed reassembly、arithmetic cancellation 与完整
+Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -54,9 +54,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V71 / TPC-218                     |
-        | PRIME-LABEL / PACKET-PRESERVING LIFT ZONE        |
-        | split x^(1/96), scalar P-cost; signed bridge OPEN |
+        | YOU ARE HERE — V72 / TPC-219                     |
+        | LONGITUDINAL / TRANSVERSE PRIME-SHELL LEDGER    |
+        | P collapse iff transverse lower bound; AP OPEN   |
         +--------------------------------------------------+
                 |
                 v
@@ -99,12 +99,12 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V71 / TPC-218 的
-prime-label / packet-preserving finite-window lift。split vector object 已严格控制到
-`x^(1/96)(log x)^5`，而 scalar prime-shell 恰付 `P<=2Q` 后返回
-`x^(11/32)(log x)^5`；ratio-`P` 与 packet-alignment adversaries 证明 geometry 本身
-不给 signed saving。FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom credit 继续
-OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V72 / TPC-219 的
+exact longitudinal/transverse prime-shell ledger。TPC-218 的 `P` collapse 现在满足
+`E_shell=P(E_diag-E_perp)`，任何 sub-`P` saving 都等价于 literal q-transverse lower
+bound；aligned/balanced endpoints 说明 geometry 不自动提供该 bound。下一座桥是把
+`E_perp` 改写成 prime-AP/multiplicative collision data。FULL_GATE_B、strict `1/400`,
+`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1234,6 +1234,41 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.13 V72 / TPC-219：prime-shell longitudinal ledger and the exact P collapse
+
+TPC-219 对 TPC-218 的 q-labelled packet vectors
+`Z_q(n)=(K_(j,q)(n))_j` 做 exact constant-mode projection。令
+`Zbar=P^(-1)sum_q Z_q`、`R_q=Z_q-Zbar`，并在同一个 interval 上定义
+`E_shell`、`E_diag`、`E_perp`，则
+
+```text
+E_shell = P(E_diag-E_perp),
+0 <= E_perp <= E_diag,
+E_shell <= eta P E_diag  <=>  E_perp >= (1-eta)E_diag.
+```
+
+这不是另一个 unsigned Cauchy envelope，而是 `P` collapse 的 exact iff ledger。四个
+完全 aligned 的 q rows 有 `E_perp=0` 并饱和 `P`；balanced rows 的 shell 能量为零。
+这些 fixtures 只说明 abstract Hilbert geometry不能提供 transverse lower bound，不是
+literal growing prime shell 的 asymptotic statement。
+
+```text
+TPC219_LONGITUDINAL_TRANSVERSE_IDENTITY = PROVED_EXACT
+TPC219_P_COLLAPSE_EQUIVALENCE = PROVED_EXACT
+TPC219_ALIGNED_ENDPOINT = PROVED_EXACT_FINITE
+TPC219_BALANCED_ENDPOINT = PROVED_EXACT_FINITE
+TPC219_ARITHMETIC_ADVANCE = NO
+TPC219_FIXED_ATOM_CREDIT = 0
+TPC219_L2 = NONE
+TPC219_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC219_FULL_GATE_B = OPEN
+TPC219_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V72 / TPC-219 把 scalar `P` toll 精确转换成 literal q-transverse
+energy theorem；下一篇必须沿 congruence collisions 建立 prime-AP/multiplicative
+incidence crosswalk，不能把 abstract residual vectors 当成算术 cancellation。**
+
 ## 5.12 V71 / TPC-218：prime-shell Hilbert lift and the sharp collapse barrier
 
 TPC-218 执行 TPC-217 的 label-preserving reassembly clue，但只推进可严格证明的
@@ -1325,7 +1360,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V71 / TPC-218：
+截至 V72 / TPC-219：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1411,7 +1446,17 @@ TPC218_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
 TPC218_FOUR_PACKET_SIGNED_REASSEMBLY = OPEN
 TPC218_FULL_GATE_B = OPEN
 TPC218_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-218
+TPC219_LONGITUDINAL_TRANSVERSE_IDENTITY = PROVED_EXACT
+TPC219_P_COLLAPSE_EQUIVALENCE = PROVED_EXACT
+TPC219_ALIGNED_ENDPOINT = PROVED_EXACT_FINITE
+TPC219_BALANCED_ENDPOINT = PROVED_EXACT_FINITE
+TPC219_ARITHMETIC_ADVANCE = NO
+TPC219_FIXED_ATOM_CREDIT = 0
+TPC219_L2 = NONE
+TPC219_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC219_FULL_GATE_B = OPEN
+TPC219_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-219
 ```
 
 以下事实不得从路线图中推断：
@@ -1429,54 +1474,60 @@ NUMBERED_RELEASE = TPC-218
 
 优先级更新为：
 
-1. **TPC-218 已完成：prime-shell/packet-preserving Hilbert lift**。split vector envelope
+1. **TPC-219 已完成：exact longitudinal/transverse prime-shell ledger**。`P` collapse
+   满足 `E_shell=P(E_diag-E_perp)`，任何 sub-`P` saving 都等价于 literal q-transverse
+   lower bound；aligned/balanced endpoint fixtures 已通过 exact rational certificate。
+2. **TPC-218 已完成：prime-shell/packet-preserving Hilbert lift**。split vector envelope
    达到 `x^(1/96)(log x)^5`，scalar recovery 的 `P<=2Q` 成本被显式隔离；q-alignment
    ratio `P=4` 与 packet projection ratio `1` 是 scoped adversarial controls。
-2. **TPC-217 已完成：finite-window large-sieve attachment**。reduced rational regrouping、
+3. **TPC-217 已完成：finite-window large-sieve attachment**。reduced rational regrouping、
    Farey spacing 与 standard additive large sieve 将 TPC-216 envelope 接到 actual
    physical interval，得到 `x^(11/32)(log x)^5` normalized bound；ratio-two adversary
    证明短窗不能免费使用 orthogonality。
-3. **TPC-216 已完成：direct-sum row-energy envelope**。fixed-q no-collision、shell Cauchy、
+4. **TPC-216 已完成：direct-sum row-energy envelope**。fixed-q no-collision、shell Cauchy、
    `P<=2Q` 与 `11/32` exponent ledger 已封存；aligned-support adversary 证明 free
    q-orthogonality 不能结构性删除。
-4. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
+5. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-5. **TPC-218 的下一步：literal signed prime-shell/four-packet reassembly**。保持 finite-window
+6. **TPC-219 的下一步：literal prime-AP/multiplicative collision crosswalk**。把
+   `E_perp` 写成同一 literal row family 的 congruence collision data；不得把 abstract
+   residual vector 的 lower bound 当成 prime cancellation。
+7. **TPC-218 的下一步：literal signed prime-shell/four-packet reassembly**。保持 finite-window
    large-sieve attachment，同时重新引入 literal prime rows、Möbius signs、zero/nonunit
    ledgers；不得把 structural `L1` bound误称为 arithmetic saving。
-6. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
+8. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
    对四个 `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
    diagonal-corrected reduced-residue remainder证明集体 fixed-power saving；不得把
    Harper all-moduli variance或 Blomer--Pascadi fixed cell直接当成 global theorem；
-7. **V58 full-shell Gate-A root**。直接证明同一个 literal V51
+9. **V58 full-shell Gate-A root**。直接证明同一个 literal V51
    mixed-plus-balanced fold的 full-shell fixed-power saving；这是与 Gate-B 并行的主
    桥墩，不是 V60 translation payment的自动后果；
-8. **按全局 Siegel quality 保留条件分流**。unbounded world可调用已锁定的
+10. **按全局 Siegel quality 保留条件分流**。unbounded world可调用已锁定的
    Matomaki--Merikoski `h=2` correlation exit；不得把单尺度 singleton误判为
    unbounded sequence；
-9. **V58 Gate-B scalar root（等价终端表述）**。直接对已经 exact识别的 V35
+11. **V58 Gate-B scalar root（等价终端表述）**。直接对已经 exact识别的 V35
    proper-factor centered core证明
    `|mathfrak C_x|<<x^(5/3-delta+o(1))`、`delta>1/400`；V59只重写对象，
    没有降低这个 terminal burden；
-10. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
+12. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
    才证明 `C_perp` 的 one-`Q` variance；不得再把它列为 physical endpoint必需门；
-11. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
+13. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
    package，仍可对 pruned tree的 large nodes统一估计；
-12. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
+14. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
    signed diagonal/off-diagonal，并支付
    `(delta_B+delta_W)/2+rho>1/400`；fixed-modulus local engine只作条件工具；
-13. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
+15. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
    row species证明 one-`Q` variance，另一种由 paid difference自动继承；不得先把
    longitudinal mode删掉后声称完整 theorem；
-14. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
+16. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
    endpoint-matched direct core与三引擎 heuristic fallback，但不再强迫它先于
    reverse-Type-I/balanced lane；
-15. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
+17. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
    preferred sufficient gate；P2/K 是 stronger norms，E/X
    分别是 `sigma<13/4800` whole residual energy和
    `kappa>403/1200` joint character theorem，不与 MPD lane叠加 theorem credit；
-16. **C：只在前十五条路线真实阻断或新 source 出现时，重开 distinguished-seed
+18. **C：只在前十七条路线真实阻断或新 source 出现时，重开 distinguished-seed
    symmetry-breaking/dynamics reserve。**
 
 ### 8.1 地图式施工顺序
@@ -1534,6 +1585,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-22 | V72 / TPC-219 | Bridge A / Gate B：exact longitudinal/transverse prime-shell ledger；`P` collapse iff q-transverse lower bound；prime-AP collision open | `TPC-219` | exact `E_shell=P(E_diag-E_perp)` identity、aligned/balanced endpoints、literal arithmetic仍为 NO |
 | 2026-08-22 | V71 / TPC-218 | Bridge A / Gate B：prime-label/packet-preserving Hilbert lift；split `x^(1/96)`，scalar `P` collapse explicit；signed reassembly open | `TPC-218` | tensor large sieve、PSD packet Gram、exact `P=4` q-alignment 与 projection-ratio-one packet obstruction；arithmetic仍为 NO |
 | 2026-08-22 | V70 / TPC-217 | Bridge A / Gate B：finite-window reduced-frequency large-sieve attachment `x^(11/32)(log x)^5`；prime-shell/four-packet reassembly open | `TPC-217` | exact regrouping、Farey spacing、standard additive large sieve、one-point ratio-two obstruction；arithmetic仍为 NO |
 | 2026-08-21 | V69 / TPC-216 | Bridge A / Gate B：direct-sum row-energy envelope `x^(11/32)(log x)^3`；finite-window attachment open | `TPC-216` | fixed-q no-collision、shell Cauchy、`P<=2Q`、aligned-support adversary；arithmetic仍为 NO |

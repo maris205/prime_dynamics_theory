@@ -9,11 +9,11 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-218 在 TPC-217 的 finite-window large-sieve attachment 上保留了
-literal prime label 与 four-packet label，证明 split Hilbert envelope
-`x^(1/96)(log x)^5`，并精确暴露 scalar prime-shell collapse 的 `P<=2Q` 成本；这是
-`PROVED_STRUCTURAL_L1`，不是 arithmetic `L2` 或 twin-prime endpoint。下一座桥是击破
-这个已付款的 `P` collapse 并完成 literal signed prime-shell / four-packet reassembly。
+当前主线状态：TPC-219 在 TPC-218 的 label-preserving lift 上证明了 exact
+longitudinal/transverse ledger：`E_shell=P(E_diag-E_perp)`，因此任何 sub-`P`
+scalar recovery 都等价于对 literal q-family 证明 transverse lower bound；这是
+`PROVED_STRUCTURAL_L1`，不是 arithmetic `L2` 或 twin-prime endpoint。下一座桥是把
+`E_perp` 精确改写成 literal prime-AP / multiplicative collision data。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -27,6 +27,8 @@ literal prime label 与 four-packet label，证明 split Hilbert envelope
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-219-prime-shell-longitudinal-ledger` - `PROVED_STRUCTURAL_L1 / EXACT_LONGITUDINAL_TRANSVERSE_LEDGER` - The exact identity `E_shell=P(E_diag-E_perp)` converts the scalar `P` collapse into an iff transverse-energy condition; aligned and balanced rational fixtures attain the two endpoints, while literal prime-shell cancellation remains open.
 
 `tpc-218-prime-shell-packet-lift` - `PROVED_STRUCTURAL_L1 / PRIME_LABEL_AND_PACKET_PRESERVING_LIFT` - Retaining prime and packet labels in a Hilbert-valued finite-window lift gives normalized split envelope `x^(1/96)(log x)^5`; scalar recovery pays the explicit `P<=2Q` factor and returns `x^(11/32)(log x)^5`; an exact q-aligned fixture saturates `P=4` and packet alignment has projection ratio `1`, while arithmetic signed reassembly remains open.
 

@@ -1,9 +1,41 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-22
-状态：`BOLD_CHANNEL_V71 / PRIME_LABEL_PACKET_LIFT_BUILT_SIGNED_REASSEMBLY_OPEN`
-claim level：`PROVED_STRUCTURAL_L1_PRIME_LABEL_AND_PACKET_PRESERVING_LIFT`
-编号事实终点：TPC-218；TPC-218 trigger：`true`
+状态：`BOLD_CHANNEL_V72 / LONGITUDINAL_TRANSVERSE_LEDGER_PRIME_AP_COLLISION_OPEN`
+claim level：`PROVED_STRUCTURAL_L1_EXACT_LONGITUDINAL_TRANSVERSE_LEDGER`
+编号事实终点：TPC-219；TPC-219 trigger：`true`
+
+当前 TPC-219 入口：proof 为
+`research/tpc-big-road/bridge_b_prime_shell_longitudinal_transverse_ledger.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_prime_shell_longitudinal_transverse_ledger_checker.py`，编号论文为
+`papers/tpc-219-prime-shell-longitudinal-ledger/`。对 TPC-218 的 packet vectors
+`Z_q(n)=(K_(j,q)(n))_j` 定义 q-mean 与 residual `R_q=Z_q-Zbar`，得到 exact ledger
+
+```text
+E_shell = P (E_diag - E_perp).
+```
+
+所以要把 `P` collapse 改善到 `eta P`，充要条件是
+`E_perp >= (1-eta)E_diag`。aligned fixture 使 `E_perp=0` 并饱和 `P`；balanced
+fixture 使 `E_shell=0`。本篇把下一条算术问题精确收窄为 literal prime-AP collision
+data 的 transverse lower bound，不把 abstract Hilbert geometry当成 cancellation。
+
+TPC-219 claim firewall：
+
+```text
+TPC219_ROUTE_ADVANCE = YES
+TPC219_STRUCTURAL_THRESHOLD_A = PASS
+TPC219_LONGITUDINAL_TRANSVERSE_IDENTITY = PROVED_EXACT
+TPC219_P_COLLAPSE_EQUIVALENCE = PROVED_EXACT
+TPC219_ALIGNED_ENDPOINT = PROVED_EXACT_FINITE
+TPC219_BALANCED_ENDPOINT = PROVED_EXACT_FINITE
+TPC219_ARITHMETIC_ADVANCE = NO
+TPC219_FIXED_ATOM_CREDIT = 0
+TPC219_L2 = NONE
+TPC219_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC219_FULL_GATE_B = OPEN
+TPC219_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-218 入口：proof 为
 `research/tpc-big-road/bridge_b_prime_shell_packet_lift.md`，checker 为

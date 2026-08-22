@@ -2,11 +2,58 @@
 
 更新时间：2026-08-22
 
-状态：**TPC218_STRUCTURAL_THRESHOLD_A_RELEASED / PRIME_LABEL_PACKET_LIFT / SIGNED_REASSEMBLY_OPEN**
+状态：**TPC219_STRUCTURAL_THRESHOLD_A_RELEASED / LONGITUDINAL_TRANSVERSE_LEDGER / PRIME_AP_COLLISION_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.13 已发布：TPC-219 prime-shell longitudinal ledger and the exact P collapse
+
+项目：`papers/tpc-219-prime-shell-longitudinal-ledger/`
+
+类型：**PROVED_STRUCTURAL_L1 / EXACT_LONGITUDINAL_TRANSVERSE_LEDGER**。
+
+TPC-219 对 TPC-218 保留的 q-labelled packet vectors 做 exact constant-mode projection。
+若 `Z_q(n)=(K_(j,q)(n))_j`、`P=#Q_x`、`R_q=Z_q-Zbar`，则任意同一 interval 上
+
+```text
+E_shell = P(E_diag-E_perp),
+E_shell <= eta P E_diag  <=>  E_perp >= (1-eta)E_diag.
+```
+
+因此本篇的明确进展不是另一个 Cauchy upper bound，而是把 scalar `P` collapse 的
+必要且充分条件精确化为 literal q-transverse lower bound。aligned exact fixture
+有 `E_perp=0` 并饱和 `P`；balanced fixture 有 `E_shell=0`。
+
+```text
+TPC219_ROUTE_ADVANCE = YES
+TPC219_STRUCTURAL_THRESHOLD_A = PASS
+TPC219_LONGITUDINAL_TRANSVERSE_IDENTITY = PROVED_EXACT
+TPC219_P_COLLAPSE_EQUIVALENCE = PROVED_EXACT
+TPC219_ALIGNED_ENDPOINT = PROVED_EXACT_FINITE
+TPC219_BALANCED_ENDPOINT = PROVED_EXACT_FINITE
+TPC219_ARITHMETIC_CANCELLATION = NONE
+TPC219_ARITHMETIC_ADVANCE = NO
+TPC219_FIXED_ATOM_CREDIT = 0
+TPC219_L2 = NONE
+TPC219_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC219_FULL_GATE_B = OPEN
+TPC219_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+strongest positive result：`P` collapse 的 exact iff transverse criterion；strongest
+obstruction：aligned q labels have zero transverse energy；open theorem：把 `E_perp`
+改写并控制为 literal prime-AP/multiplicative collision data；reusable structure：
+constant-mode orthogonal projection and integrated Pythagorean ledger；`ROUND2_CLUE`：
+
+```text
+REEXPRESS_TRANSVERSE_ENERGY_AS_LITERAL_PRIME_AP_COLLISION_DATA
+```
+
+Bridge proof/checker：`research/tpc-big-road/bridge_b_prime_shell_longitudinal_transverse_ledger.md`
+与 `research/tpc-big-road/tpc_bridge_b_prime_shell_longitudinal_transverse_ledger_checker.py`。
+无 arithmetic `L2`、fixed-atom credit、strict `1/400` 或 twin-prime conclusion。
 
 ## 0.12 已发布：TPC-218 prime-shell Hilbert lift and the sharp collapse barrier
 

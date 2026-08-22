@@ -1,11 +1,45 @@
-# TPC big road V71 / TPC-218: prime-shell Hilbert lift and the sharp collapse barrier
+# TPC big road V72 / TPC-219: prime-shell longitudinal ledger and the exact P collapse
 
 更新时间：2026-08-22
 
-状态：`TPC218_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / PRIME_LABEL_PACKET_LIFT`
+状态：`TPC219_STRUCTURAL_THRESHOLD_A / PROVED_STRUCTURAL_L1 / EXACT_LONGITUDINAL_TRANSVERSE_LEDGER`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-219 proof 为
+`bridge_b_prime_shell_longitudinal_transverse_ledger.md`，checker 为
+`tpc_bridge_b_prime_shell_longitudinal_transverse_ledger_checker.py`，编号论文为
+`../../papers/tpc-219-prime-shell-longitudinal-ledger/`。
+
+TPC-219 对 TPC-218 的 q-labelled packet object 做 exact mean/residual decomposition：
+
+```text
+E_shell = P(E_diag-E_perp),
+E_shell <= eta P E_diag  <=>  E_perp >= (1-eta)E_diag.
+```
+
+这一步没有使用 PNT、Möbius cancellation 或 prime cancellation。aligned 与 balanced
+exact rational fixtures 分别展示 `E_perp=0` 的 `P` saturation 和 `E_shell=0` 的另一端点。
+因此 prime-shell signed reassembly、literal prime-AP collision control、`L2`、fixed-atom
+credit、strict `1/400` 与完整 Gate B 仍 OPEN/UNPAID/NO。
+
+TPC-219 claim firewall：
+
+```text
+TPC219_ROUTE_ADVANCE = YES
+TPC219_STRUCTURAL_THRESHOLD_A = PASS
+TPC219_LONGITUDINAL_TRANSVERSE_IDENTITY = PROVED_EXACT
+TPC219_P_COLLAPSE_EQUIVALENCE = PROVED_EXACT
+TPC219_ALIGNED_ENDPOINT = PROVED_EXACT_FINITE
+TPC219_BALANCED_ENDPOINT = PROVED_EXACT_FINITE
+TPC219_ARITHMETIC_ADVANCE = NO
+TPC219_FIXED_ATOM_CREDIT = 0
+TPC219_L2 = NONE
+TPC219_PRIME_SHELL_SIGNED_REASSEMBLY = OPEN
+TPC219_FULL_GATE_B = OPEN
+TPC219_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-218 proof 为
 `bridge_b_prime_shell_packet_lift.md`，checker 为
