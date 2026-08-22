@@ -2,11 +2,74 @@
 
 更新时间：2026-08-22
 
-状态：**TPC223_CONDITIONAL_THEOREM_RELEASED / TWO_CHANNEL_SIGNED_REASSEMBLY_COMPILER / LITERAL_INPUTS_OPEN**
+状态：**TPC224_PROVED_STRUCTURAL_L1_RELEASED / LITERAL_TWO_CHANNEL_COMPATIBILITY / ARITHMETIC_INPUTS_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.18 已发布：TPC-224 literal two-channel compatibility audit
+
+项目：`papers/tpc-224-literal-two-channel-compatibility-audit/`
+
+类型：**PROVED_STRUCTURAL_L1 / LITERAL_TWO_CHANNEL_COMPATIBILITY**。
+
+TPC-223 的共同 literal interface 在本篇中被具体化为同一组 finite Hilbert vectors
+`W_(q,j)`。定义
+
+```text
+E_AP  = sum_j ||sum_q W_(q,j)||^2
+E_pol = sum_q ||sum_j W_(q,j)||^2
+E_all = ||sum_(q,j) W_(q,j)||^2.
+```
+
+逐方向 Cauchy 与 exact scalar minimization 给出
+
+```text
+E_all <= min(J E_AP, P E_pol)
+      <= PJ/(P+J) (E_AP+E_pol).
+```
+
+系数 `PJ/(P+J)` sharp，所有 `W_(q,j)=u` 时达到等号。对 literal TPC-220 row
+rule、共同 `C_h=1/h` normalization 与 actual prime labels，本篇另外冻结两个不作
+渐近拼接的 finite clocks：九个 source-surrogate scales 与五个
+`H=5Q, h=5, q=1 (mod 5)` collision-stress scales。后者五个尺度均 exact-refute
+unit-factor shortcut，说明 cross-label alignment 不能被记号层面的“两个 channel”自动
+删除。
+
+```text
+TPC224_ROUTE_ADVANCE = YES
+TPC224_COMMON_LITERAL_HILBERT_INTERFACE = PROVED_EXACT
+TPC224_SHARP_ADDITIVE_CONSTANT = PROVED_EXACT
+TPC224_UNIT_INTERFACE = REFUTED_SCOPED
+TPC224_SOURCE_CLOCK_AUDIT = NUMERICALLY_CERTIFIED_EXACT_RATIONAL
+TPC224_AP_DISPERSION = OPEN
+TPC224_POLARIZED_CROSS_CORRELATION = OPEN
+TPC224_LITERAL_V46_TRANSFER = OPEN
+TPC224_ARITHMETIC_CANCELLATION = NONE
+TPC224_ARITHMETIC_ADVANCE = NO
+TPC224_FIXED_ATOM_CREDIT = 0
+TPC224_L2 = NONE
+TPC224_FULL_GATE_B = OPEN
+TPC224_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC224_STATUS = PROVED_STRUCTURAL_L1
+TPC224_ROUND2_CLUE = PROVE_SHARED_CLOCK_AP_AND_POLARIZED_MARGINAL_SAVINGS
+```
+
+strongest positive result：两个 channel 确实可以从同一个 literal vector family 得到，且
+兼容性只引入 sharp `O(1)` additive factor；strongest obstruction：unit-factor interface
+被 congruence-aligned actual-prime stress family scoped-refute；open theorem：在同一
+V46 clock 上把 AP 与 polarized marginals 的 arithmetic savings 接到这组 vectors；
+reusable structure：`E_all <= min(J E_AP,P E_pol) <= PJ/(P+J)(E_AP+E_pol)`；
+`ROUND2_CLUE`：
+
+```text
+PROVE_SHARED_CLOCK_AP_AND_POLARIZED_MARGINAL_SAVINGS
+```
+
+Bridge proof/checker：`research/tpc-big-road/bridge_b_literal_two_channel_compatibility_audit.md`
+与 `research/tpc-big-road/tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py`。
+本篇没有 arithmetic `L2`、fixed-atom credit、strict `1/400` 或 twin-prime conclusion。
 
 ## 0.17 已发布：TPC-223 conditional signed-reassembly compiler
 

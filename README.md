@@ -9,12 +9,12 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-223 将 TPC-220 的 prime-AP/collision channel 与 TPC-222 的
-polarized four-packet channel 编译成一个 exact conditional exponent ledger：有效 saving
-为 `min(delta_AP,kappa_pol)-lambda_struct`，严格 `1/400` 门要求它大于 `1/400`。
-canonical rational fixture 给出 effective saving `11/1200`、margin `1/150`，但三个
-输入仍是 `OPEN_CONDITIONAL_INPUT`；这是 `CONDITIONAL_THEOREM`，不是 arithmetic `L2`
-或 twin-prime endpoint。
+当前主线状态：TPC-224 将 TPC-223 留下的共同 literal interface 写成一个 exact
+Hilbert-vector theorem：对同一组 prime-label/packet-label vectors，
+`E_all <= PJ/(P+J) (E_AP+E_pol)`，且常数 sharp；独立的 congruence-aligned
+finite stress clock refutes 朴素 unit-factor interface。AP dispersion、polarized
+cross-correlation、V46 source-clock transfer 与完整 Gate B 仍 OPEN；这是
+`PROVED_STRUCTURAL_L1`，不是 arithmetic `L2` 或 twin-prime endpoint。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -28,6 +28,8 @@ canonical rational fixture 给出 effective saving `11/1200`、margin `1/150`，
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-224-literal-two-channel-compatibility-audit` - `PROVED_STRUCTURAL_L1 / LITERAL_TWO_CHANNEL_COMPATIBILITY` - 证明共同 literal Hilbert-vector interface 与 sharp constant `PJ/(P+J)`，并用五个 exact-rational collision-stress scales scoped-refute unit-factor shortcut；算术 marginal savings 与 V46 transfer 仍开放。
 
 `tpc-223-conditional-signed-reassembly-compiler` - `CONDITIONAL_THEOREM / TWO_CHANNEL_SIGNED_REASSEMBLY_COMPILER` - 在共同 literal interface 假设下证明 `sigma=min(delta_AP,kappa_pol)-lambda_struct`，exact rational certificate 区分 strict/borderline/fail/missing-channel/loss-dominated cases；AP dispersion、polarized cross-correlation 与 literal reassembly 仍开放。
 

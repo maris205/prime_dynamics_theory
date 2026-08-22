@@ -1,16 +1,55 @@
-# TPC big road V76 / TPC-223: conditional signed-reassembly compiler
+# TPC big road V77 / TPC-224: literal two-channel compatibility audit
 
 更新时间：2026-08-22
 
-状态：`TPC223_CONDITIONAL_THEOREM / CONDITIONAL_SIGNED_REASSEMBLY_COMPILER / FULL_GATE_B_OPEN`
+状态：`TPC224_PROVED_STRUCTURAL_L1 / LITERAL_TWO_CHANNEL_COMPATIBILITY / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-223 proof 为
-`bridge_b_conditional_signed_reassembly_compiler.md`，checker 为
-`tpc_bridge_b_conditional_signed_reassembly_compiler_checker.py`，编号论文为
-`../../papers/tpc-223-conditional-signed-reassembly-compiler/`。
+当前 TPC-224 proof 为
+`bridge_b_literal_two_channel_compatibility_audit.md`，checker 为
+`tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py`，编号论文为
+`../../papers/tpc-224-literal-two-channel-compatibility-audit/`。
+
+TPC-224 对同一组 literal vectors `W_(q,j)` 定义
+
+```text
+E_AP  = sum_j ||sum_q W_(q,j)||^2
+E_pol = sum_q ||sum_j W_(q,j)||^2
+E_all = ||sum_(q,j) W_(q,j)||^2
+```
+
+并证明 exact sharp interface
+
+```text
+E_all <= min(J E_AP, P E_pol)
+      <= PJ/(P+J) (E_AP+E_pol).
+```
+
+`PJ/(P+J)` 由全对齐向量达到；五个独立的 `H=5Q, h=5, q=1 (mod 5)` actual-prime
+stress scales 精确 refute unit-factor shortcut。source-surrogate clock 另有九个
+exact-rational scales，但两个 clock 不作渐近拼接，均只用于 finite audit。
+
+TPC-224 claim firewall：
+
+```text
+TPC224_ROUTE_ADVANCE = YES
+TPC224_COMMON_LITERAL_HILBERT_INTERFACE = PROVED_EXACT
+TPC224_SHARP_ADDITIVE_CONSTANT = PROVED_EXACT
+TPC224_UNIT_INTERFACE = REFUTED_SCOPED
+TPC224_SOURCE_CLOCK_AUDIT = NUMERICALLY_CERTIFIED_EXACT_RATIONAL
+TPC224_AP_DISPERSION = OPEN
+TPC224_POLARIZED_CROSS_CORRELATION = OPEN
+TPC224_LITERAL_V46_TRANSFER = OPEN
+TPC224_ARITHMETIC_ADVANCE = NO
+TPC224_FIXED_ATOM_CREDIT = 0
+TPC224_L2 = NONE
+TPC224_FULL_GATE_B = OPEN
+TPC224_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+TPC-223 的 conditional compiler 仍作为直接上游保留：
 
 TPC-223 将 TPC-220 的 prime-AP/collision channel 与 TPC-222 的 polarized four-packet
 channel 放进同一个 conditional exponent interface：

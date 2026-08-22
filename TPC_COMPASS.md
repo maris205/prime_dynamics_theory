@@ -1,9 +1,42 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-22
-状态：`BOLD_CHANNEL_V76 / CONDITIONAL_SIGNED_REASSEMBLY_COMPILER_OPEN`
-claim level：`CONDITIONAL_THEOREM_TWO_CHANNEL_SIGNED_REASSEMBLY_COMPILER`
-编号事实终点：TPC-223；TPC-223 trigger：`true`
+状态：`BOLD_CHANNEL_V77 / LITERAL_TWO_CHANNEL_COMPATIBILITY_AUDIT`
+claim level：`PROVED_STRUCTURAL_L1_LITERAL_TWO_CHANNEL_COMPATIBILITY`
+编号事实终点：TPC-224；TPC-224 trigger：`true`
+
+当前 TPC-224 入口：proof 为
+`research/tpc-big-road/bridge_b_literal_two_channel_compatibility_audit.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py`，编号论文为
+`papers/tpc-224-literal-two-channel-compatibility-audit/`。对同一组 literal
+prime-label/packet-label vectors，定义 `E_AP`、`E_pol` 与 `E_all`，本篇证明
+
+```text
+E_all <= min(J E_AP, P E_pol)
+      <= PJ/(P+J) (E_AP+E_pol).
+```
+
+`PJ/(P+J)` exact sharp；五个独立 collision-stress scales 以 actual primes 与
+exact rational rows refute 朴素 unit-factor interface。这个结果只支付 `O(1)` 的
+结构兼容性，不支付 AP dispersion、polarized cross-correlation 或 arithmetic `L2`。
+
+TPC-224 claim firewall：
+
+```text
+TPC224_ROUTE_ADVANCE = YES
+TPC224_COMMON_LITERAL_HILBERT_INTERFACE = PROVED_EXACT
+TPC224_SHARP_ADDITIVE_CONSTANT = PROVED_EXACT
+TPC224_UNIT_INTERFACE = REFUTED_SCOPED
+TPC224_SOURCE_CLOCK_AUDIT = NUMERICALLY_CERTIFIED_EXACT_RATIONAL
+TPC224_AP_DISPERSION = OPEN
+TPC224_POLARIZED_CROSS_CORRELATION = OPEN
+TPC224_LITERAL_V46_TRANSFER = OPEN
+TPC224_ARITHMETIC_ADVANCE = NO
+TPC224_FIXED_ATOM_CREDIT = 0
+TPC224_L2 = NONE
+TPC224_FULL_GATE_B = OPEN
+TPC224_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
 
 当前 TPC-223 入口：proof 为
 `research/tpc-big-road/bridge_b_conditional_signed_reassembly_compiler.md`，checker 为

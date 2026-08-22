@@ -1,7 +1,76 @@
 # TPC HANDOFF
 
 更新时间：2026-08-22
-交接状态：`BOLD_CHANNEL_V76_TPC223_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V77_TPC224_SEALED_FOR_NEW_SESSION`
+
+TPC-224 当前 section：literal two-channel compatibility audit
+-----------------------------------------------------------------
+
+TPC-224 是 TPC-223 的最小结构性后续：它不再把共同 literal interface 当作未展开的
+黑箱，而是对同一组 prime-label/packet-label Hilbert vectors `W_(q,j)` 定义
+
+~~~text
+E_AP  = sum_j ||sum_q W_(q,j)||^2
+E_pol = sum_q ||sum_j W_(q,j)||^2
+E_all = ||sum_(q,j) W_(q,j)||^2
+~~~
+
+并证明 exact sharp reassembly envelope
+
+~~~text
+E_all <= min(J E_AP, P E_pol)
+      <= PJ/(P+J) (E_AP+E_pol).
+~~~
+
+`PJ/(P+J)` 由全对齐 family 达到。把 vectors 写回 TPC-220 literal row rule、共同
+`C_h=1/h` normalization 与 actual prime labels 后，九个 source-surrogate scales 和
+五个独立 collision-stress scales 均以 exact rational arithmetic 通过；后者在
+`H=5Q, h=5, q=1 (mod 5)` 下五个尺度均达到 sharp factor，scoped-refute 朴素
+unit-factor interface。两个 finite clocks 是分别命名的 audit，不作渐近拼接。
+
+TPC-224 claim firewall：
+
+~~~text
+TPC224_ROUTE_ADVANCE = YES
+TPC224_COMMON_LITERAL_HILBERT_INTERFACE = PROVED_EXACT
+TPC224_SHARP_ADDITIVE_CONSTANT = PROVED_EXACT
+TPC224_UNIT_INTERFACE = REFUTED_SCOPED
+TPC224_SOURCE_CLOCK_AUDIT = NUMERICALLY_CERTIFIED_EXACT_RATIONAL
+TPC224_AP_DISPERSION = OPEN
+TPC224_POLARIZED_CROSS_CORRELATION = OPEN
+TPC224_LITERAL_V46_TRANSFER = OPEN
+TPC224_ARITHMETIC_CANCELLATION = NONE
+TPC224_ARITHMETIC_ADVANCE = NO
+TPC224_FIXED_ATOM_CREDIT = 0
+TPC224_L2 = NONE
+TPC224_FULL_GATE_B = OPEN
+TPC224_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC224_TPC_TRIGGER = true
+TPC224_NUMBERED_RELEASE = YES
+TPC224_STATUS = PROVED_STRUCTURAL_L1
+TPC224_ROUND2_CLUE = PROVE_SHARED_CLOCK_AP_AND_POLARIZED_MARGINAL_SAVINGS
+~~~
+
+TPC-224 strongest positive result 是共同 literal vector family 与 sharp
+`PJ/(P+J)` structural envelope；strongest obstruction 是 congruence-aligned
+actual-prime stress family 对 unit-factor shortcut 的 scoped refutation；open theorem
+是把 AP dispersion 与 polarized cross-correlation 在同一 V46 clock 上同时接入这些
+marginals。没有 arithmetic `L2`、fixed-atom credit、strict `1/400` 或 twin-prime
+conclusion。
+
+编号论文目录：papers/tpc-224-literal-two-channel-compatibility-audit/
+
+~~~text
+papers/tpc-224-literal-two-channel-compatibility-audit/README.md
+papers/tpc-224-literal-two-channel-compatibility-audit/PAPER_PLAN.md
+papers/tpc-224-literal-two-channel-compatibility-audit/PROOF_PACKAGE.md
+papers/tpc-224-literal-two-channel-compatibility-audit/paper/paper.pdf
+papers/tpc-224-literal-two-channel-compatibility-audit/results/certificate.json
+papers/tpc-224-literal-two-channel-compatibility-audit/notes/theorem_ledger.md
+papers/tpc-224-literal-two-channel-compatibility-audit/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_literal_two_channel_compatibility_audit.md
+research/tpc-big-road/tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py
+~~~
 
 TPC-223 当前 section：conditional signed-reassembly compiler
 --------------------------------------------------------------
@@ -5147,8 +5216,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V76/TPC-223 gate及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百零八次（54 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V77/TPC-224 gate、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百一十次（55 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -5260,9 +5329,21 @@ python -B research/tpc-big-road/tpc_bridge_b_four_packet_cross_term_obstruction_
 python -O -B research/tpc-big-road/tpc_bridge_b_four_packet_cross_term_obstruction_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_conditional_signed_reassembly_compiler_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_conditional_signed_reassembly_compiler_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py --check
 ```
 
 随后优先读取：
+
+最新 TPC-224 入口：
+
+```text
+papers/tpc-224-literal-two-channel-compatibility-audit/README.md
+papers/tpc-224-literal-two-channel-compatibility-audit/notes/theorem_ledger.md
+papers/tpc-224-literal-two-channel-compatibility-audit/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_literal_two_channel_compatibility_audit.md
+research/tpc-big-road/tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py
+```
 
 0. `papers/tpc-223-conditional-signed-reassembly-compiler/README.md`
 1. `papers/tpc-223-conditional-signed-reassembly-compiler/notes/theorem_ledger.md`

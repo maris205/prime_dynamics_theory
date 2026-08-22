@@ -2,23 +2,23 @@
 
 更新时间：2026-08-22
 
-当前地图版本：V76 / TPC-223
+当前地图版本：V77 / TPC-224
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-223`（`CONDITIONAL_THEOREM / TWO_CHANNEL_SIGNED_REASSEMBLY_COMPILER`）；对应
-论文目录为 `papers/tpc-223-conditional-signed-reassembly-compiler/`。TPC-223 在共同
-literal interface 假设下证明 two-channel exponent compiler：
+当前编号锚点：`TPC-224`（`PROVED_STRUCTURAL_L1 / LITERAL_TWO_CHANNEL_COMPATIBILITY`）；对应
+论文目录为 `papers/tpc-224-literal-two-channel-compatibility-audit/`。TPC-224 对同一组
+literal prime-label/packet-label vectors 证明共同 interface：
 
 ```text
-sigma = min(delta_AP,kappa_pol) - lambda_struct,
-strict endpoint iff sigma > 1/400.
+E_all <= min(J E_AP, P E_pol)
+      <= PJ/(P+J) (E_AP+E_pol).
 ```
 
-canonical rational fixture 给出 effective saving `11/1200` 与 strict margin `1/150`，
-但 AP dispersion、polarized cross-correlation、literal reassembly interface、arithmetic
-cancellation 和 complete Gate B 仍 OPEN；这是 conditional theorem，不是 arithmetic
-advance。
+`PJ/(P+J)` 是 exact sharp；五个独立 congruence-aligned actual-prime stress scales
+scoped-refute unit-factor shortcut。AP dispersion、polarized cross-correlation、V46
+source-clock transfer、arithmetic cancellation 和 complete Gate B 仍 OPEN；这是
+structural L1，不是 arithmetic advance。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -60,9 +60,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V76 / TPC-223                     |
-        | CONDITIONAL SIGNED-REASSEMBLY COMPILER          |
-        | exact ledger; literal inputs OPEN               |
+        | YOU ARE HERE — V77 / TPC-224                     |
+        | LITERAL TWO-CHANNEL COMPATIBILITY AUDIT        |
+        | sharp structural interface; arithmetic OPEN    |
         +--------------------------------------------------+
                 |
                 v
@@ -105,11 +105,11 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V76 / TPC-223 的
-conditional signed-reassembly compiler。它把 TPC-220 的 AP/collision saving 与 TPC-222
-的 polarized saving 编译为 `min-minus-loss` ledger，并严格保留三条 literal inputs 为
-OPEN_CONDITIONAL_INPUT。FULL_GATE_B、strict `1/400`、`L2` 和 fixed-atom credit 继续
-OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V77 / TPC-224 的
+literal two-channel compatibility audit。共同 prime-label/packet-label vector family
+已经给出 exact sharp `PJ/(P+J)` reassembly envelope，并以 actual-prime stress family
+封住 unit-factor 捷径；AP/polarized arithmetic marginals、V46 transfer、FULL_GATE_B、
+strict `1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1239,6 +1239,51 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.18 V77 / TPC-224：literal two-channel compatibility audit
+
+TPC-224 直接审计 TPC-223 的共同 literal interface。对同一组 prime-label/packet-label
+vectors `W_(q,j)`，定义
+
+```text
+E_AP  = sum_j ||sum_q W_(q,j)||^2
+E_pol = sum_q ||sum_j W_(q,j)||^2
+E_all = ||sum_(q,j) W_(q,j)||^2.
+```
+
+逐方向 Cauchy 与 exact scalar minimization 给出
+
+```text
+E_all <= min(J E_AP, P E_pol)
+      <= PJ/(P+J) (E_AP+E_pol).
+```
+
+`PJ/(P+J)` exact sharp，所有 vectors 对齐时达到。更重要的是，本篇把这个接口写回
+TPC-220 的 literal row rule、共同 `C_h=1/h` normalization 与 actual prime labels，
+而不是引入两个互不相干的 surrogate objects。九个 source-surrogate scales 和五个
+独立 collision-stress scales 都用 exact rational arithmetic；后者在
+`H=5Q, h=5, q=1 (mod 5)` 下五个尺度均达到 sharp factor，因而 scoped-refute
+unit-factor shortcut。两个 finite clocks 是分别命名的 audit，不作渐近拼接。
+
+```text
+TPC224_COMMON_LITERAL_HILBERT_INTERFACE = PROVED_EXACT
+TPC224_SHARP_ADDITIVE_CONSTANT = PROVED_EXACT
+TPC224_UNIT_INTERFACE = REFUTED_SCOPED
+TPC224_SOURCE_CLOCK_AUDIT = NUMERICALLY_CERTIFIED_EXACT_RATIONAL
+TPC224_AP_DISPERSION = OPEN
+TPC224_POLARIZED_CROSS_CORRELATION = OPEN
+TPC224_LITERAL_V46_TRANSFER = OPEN
+TPC224_ARITHMETIC_ADVANCE = NO
+TPC224_FIXED_ATOM_CREDIT = 0
+TPC224_L2 = NONE
+TPC224_FULL_GATE_B = OPEN
+TPC224_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V77 / TPC-224 已把“共同 literal interface”从 TPC-223 的条件输入提升为
+exact structural theorem，同时用 congruence-aligned stress family 否定 unit-factor
+捷径；下一座真正的桥是把 AP dispersion 与 polarized cross-correlation 在同一 V46
+clock 上同时证明或反驳。**
+
 ## 5.17 V76 / TPC-223：conditional signed-reassembly compiler
 
 TPC-223 把 TPC-220 的 prime-AP/collision channel 与 TPC-222 的 polarized four-packet
@@ -1516,7 +1561,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V76 / TPC-223：
+截至 V77 / TPC-224：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1654,7 +1699,19 @@ TPC223_FIXED_ATOM_CREDIT = 0
 TPC223_L2 = NONE
 TPC223_FULL_GATE_B = OPEN
 TPC223_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-223
+TPC224_COMMON_LITERAL_HILBERT_INTERFACE = PROVED_EXACT
+TPC224_SHARP_ADDITIVE_CONSTANT = PROVED_EXACT
+TPC224_UNIT_INTERFACE = REFUTED_SCOPED
+TPC224_SOURCE_CLOCK_AUDIT = NUMERICALLY_CERTIFIED_EXACT_RATIONAL
+TPC224_AP_DISPERSION = OPEN
+TPC224_POLARIZED_CROSS_CORRELATION = OPEN
+TPC224_LITERAL_V46_TRANSFER = OPEN
+TPC224_ARITHMETIC_ADVANCE = NO
+TPC224_FIXED_ATOM_CREDIT = 0
+TPC224_L2 = NONE
+TPC224_FULL_GATE_B = OPEN
+TPC224_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-224
 ```
 
 以下事实不得从路线图中推断：
@@ -1672,79 +1729,88 @@ NUMBERED_RELEASE = TPC-223
 
 优先级更新为：
 
-1. **TPC-223 已完成：conditional signed-reassembly compiler**。在共同 literal interface
+1. **TPC-224 已完成：literal two-channel compatibility audit**。对同一组
+   prime-label/packet-label vectors 证明
+   `E_all<=min(J E_AP,P E_pol)<=PJ/(P+J)(E_AP+E_pol)`，并用五个 exact-rational
+   congruence-aligned stress scales scoped-refute unit-factor shortcut；这只是一项
+   structural L1，不支付 AP/polarized arithmetic marginals。
+2. **TPC-223 已完成：conditional signed-reassembly compiler**。在共同 literal interface
    假设下，two-channel exponent exact 编译为
    `sigma=min(delta_AP,kappa_pol)-lambda_struct`；canonical ledger 给出 effective
    saving `11/1200` 与 strict margin `1/150`，但三条输入仍为 conditional open。
-2. **TPC-222 已完成：four-packet polarization and PSD cross-term obstruction**。四点极化
+3. **TPC-222 已完成：four-packet polarization and PSD cross-term obstruction**。四点极化
    exact 恢复 signed cross-term；相同 diagonal/trace 的 rank-one fixtures 给出目标能量
    `16/0`，因此 unsigned PSD/trace envelope 不能识别 signed reassembly。下一步是把
    phase-labelled cross-correlation 写成条件化、可审计的 reassembly compiler。
-3. **TPC-221 已完成：collision-graph Schur envelope and literal saturation**。PSD Gram
+4. **TPC-221 已完成：collision-graph Schur envelope and literal saturation**。PSD Gram
    identity 与 weighted Schur envelope 已严格证明；`h=5` literal aligned fixture 达到
    `Gamma=2J_4` 与 exact ratio `P=4`，因此 absolute collision-degree control 不能
    单独产生 sub-`P` saving。下一步必须是 signed/phase-sensitive dispersion。
-4. **TPC-220 已完成：exact prime-AP / multiplicative collision crosswalk**。literal
+5. **TPC-220 已完成：exact prime-AP / multiplicative collision crosswalk**。literal
    q-row reassembly 已写成带原 cutoff/profile 的 weighted prime-AP packet，two-row Gram
    已写成 `m q'=m' q (mod h)` collision graph；diagonal 在 cutoff injectivity 下精确
    还原，但 off-diagonal 的 Schur-beyond control 仍是开放桥。
-5. **TPC-219 已完成：exact longitudinal/transverse prime-shell ledger**。`P` collapse
+6. **TPC-219 已完成：exact longitudinal/transverse prime-shell ledger**。`P` collapse
    满足 `E_shell=P(E_diag-E_perp)`，任何 sub-`P` saving 都等价于 literal q-transverse
    lower bound；aligned/balanced endpoint fixtures 已通过 exact rational certificate。
-6. **TPC-218 已完成：prime-shell/packet-preserving Hilbert lift**。split vector envelope
+7. **TPC-218 已完成：prime-shell/packet-preserving Hilbert lift**。split vector envelope
    达到 `x^(1/96)(log x)^5`，scalar recovery 的 `P<=2Q` 成本被显式隔离；q-alignment
    ratio `P=4` 与 packet projection ratio `1` 是 scoped adversarial controls。
-7. **TPC-217 已完成：finite-window large-sieve attachment**。reduced rational regrouping、
+8. **TPC-217 已完成：finite-window large-sieve attachment**。reduced rational regrouping、
    Farey spacing 与 standard additive large sieve 将 TPC-216 envelope 接到 actual
    physical interval，得到 `x^(11/32)(log x)^5` normalized bound；ratio-two adversary
    证明短窗不能免费使用 orthogonality。
-8. **TPC-216 已完成：direct-sum row-energy envelope**。fixed-q no-collision、shell Cauchy、
+9. **TPC-216 已完成：direct-sum row-energy envelope**。fixed-q no-collision、shell Cauchy、
    `P<=2Q` 与 `11/32` exponent ledger 已封存；aligned-support adversary 证明 free
    q-orthogonality 不能结构性删除。
-9. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
+10. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-10. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
+11. **TPC-224 的下一步：shared-clock marginal savings**。在共同 literal vectors 上，
+    将 AP/collision 与 polarized cross-correlation 的 arithmetic estimates 放回同一
+    source clock、normalization 与 prime shell；不能把 finite structural factor当作
+    arithmetic credit。
+12. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
-11. **TPC-220 的下一步：collision graph beyond Schur**。量化 off-diagonal multiplicative
+13. **TPC-220 的下一步：collision graph beyond Schur**。量化 off-diagonal multiplicative
    collisions，寻找真实的 dispersion/cancellation hypothesis；exact crosswalk 本身
    不产生 arithmetic `L2`。
-12. **TPC-219/218 的下一步：literal signed prime-shell/four-packet reassembly**。保持 finite-window
+14. **TPC-219/218 的下一步：literal signed prime-shell/four-packet reassembly**。保持 finite-window
    large-sieve attachment，同时重新引入 literal prime rows、Möbius signs、zero/nonunit
    ledgers；不得把 structural `L1` bound误称为 arithmetic saving。
-11. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
+15. **V59 polarized prime-BDH Gate-B compiler**。若 physical coupling给出可用的 cell interface，
    对四个 `a^(j)=beta+i^j w` 的同一个 prime-only、kernel-localized、
    diagonal-corrected reduced-residue remainder证明集体 fixed-power saving；不得把
    Harper all-moduli variance或 Blomer--Pascadi fixed cell直接当成 global theorem；
-12. **V58 full-shell Gate-A root**。直接证明同一个 literal V51
+16. **V58 full-shell Gate-A root**。直接证明同一个 literal V51
    mixed-plus-balanced fold的 full-shell fixed-power saving；这是与 Gate-B 并行的主
    桥墩，不是 V60 translation payment的自动后果；
-13. **按全局 Siegel quality 保留条件分流**。unbounded world可调用已锁定的
+17. **按全局 Siegel quality 保留条件分流**。unbounded world可调用已锁定的
    Matomaki--Merikoski `h=2` correlation exit；不得把单尺度 singleton误判为
    unbounded sequence；
-14. **V58 Gate-B scalar root（等价终端表述）**。直接对已经 exact识别的 V35
+18. **V58 Gate-B scalar root（等价终端表述）**。直接对已经 exact识别的 V35
    proper-factor centered core证明
    `|mathfrak C_x|<<x^(5/3-delta+o(1))`、`delta>1/400`；V59只重写对象，
    没有降低这个 terminal burden；
-15. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
+19. **optional q-transverse railing**。只有在同时追求全部 V57 Gate-A prefixes时，
    才证明 `C_perp` 的 one-`Q` variance；不得再把它列为 physical endpoint必需门；
-16. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
+20. **V56 canonical dyadic block Gate A fallback**。若无法得到 selected two-pier
    package，仍可对 pruned tree的 large nodes统一估计；
-17. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
+21. **V52 pre-q PAD Gate A**。在 exact diagonal-completed character packet中同时保留
    signed diagonal/off-diagonal，并支付
    `(delta_B+delta_W)/2+rho>1/400`；fixed-modulus local engine只作条件工具；
-18. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
+22. **common transverse deck fallback**。只需对 `Pi_perp P` 或 `Pi_perp C` 的一种 literal
    row species证明 one-`Q` variance，另一种由 paid difference自动继承；不得先把
    longitudinal mode删掉后声称完整 theorem；
-19. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
+23. **A/sequential bounded-world alternative**。保留 `forall B exists delta_B` 的
    endpoint-matched direct core与三引擎 heuristic fallback，但不再强迫它先于
    reverse-Type-I/balanced lane；
-20. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
+24. **B/PG--MPD 与 B/P2/K/E/X：保留并行 Gate-B 施工**。V42 cellwise MPD仍是
    preferred sufficient gate；P2/K 是 stronger norms，E/X
    分别是 `sigma<13/4800` whole residual energy和
    `kappa>403/1200` joint character theorem，不与 MPD lane叠加 theorem credit；
-21. **C：只在前二十条路线真实阻断或新 source 出现时，重开 distinguished-seed
+25. **C：只在前二十四条路线真实阻断或新 source 出现时，重开 distinguished-seed
    symmetry-breaking/dynamics reserve。**
 
 ### 8.1 地图式施工顺序
@@ -1802,6 +1868,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-22 | V77 / TPC-224 | Bridge A / Gate B：literal two-channel compatibility；共同 Hilbert interface exact，unit-factor shortcut scoped-refuted；arithmetic marginals open | `TPC-224` | exact `E_all<=min(J E_AP,P E_pol)<=PJ/(P+J)(E_AP+E_pol)`、9+5 exact-rational finite audits、actual-prime congruence stress；arithmetic仍为 NO |
 | 2026-08-22 | V76 / TPC-223 | Bridge A / Gate B：conditional two-channel signed-reassembly compiler；literal AP/polarized/reassembly inputs open | `TPC-223` | exact `min(delta_AP,kappa_pol)-lambda_struct` ledger、strict `1/400` criterion、`11/1200` effective saving fixture与 boundary adversaries；arithmetic仍为 NO |
 | 2026-08-22 | V75 / TPC-222 | Bridge A / Gate B：four-packet PSD Gram、四点极化与 trace envelope；signed cross-term identifiability scoped-refuted；literal polarized reassembly open | `TPC-222` | exact four-phase compiler、sharp trace bound、same-diagonal/trace `16/0` rank-one obstruction；arithmetic仍为 NO |
 | 2026-08-22 | V74 / TPC-221 | Bridge A / Gate B：collision-graph PSD/weighted-Schur envelope；literal absolute saturation；signed dispersion open | `TPC-221` | exact PSD identity、weighted Schur bound、`h=5` aligned `Gamma=2J_4` fixture with ratio `P=4`；arithmetic仍为 NO |
