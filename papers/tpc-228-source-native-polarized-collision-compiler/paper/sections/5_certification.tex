@@ -1,0 +1,15 @@
+\section{Certification and boundary}
+
+The certificate implements Gaussian-rational vectors and checks
+Theorem~\ref{thm:compiler} without floating point.  Five Q25 fixtures cover both signs,
+zero, one orientation and one collision coordinate.  A separate three-row graph checks
+that the identity is not special to one matching edge, and a disjoint-support control
+checks exact vanishing.  An independent script rederives all Q25 values directly from
+$h^2=160000$; normal and optimized modes are byte-identical.  Eight semantic mutations
+of the source/profile axes, theorem level and signed controls are rejected.
+
+The actual map from the V59 coefficient index $n$ to primitive multiplier amplitudes
+in \eqref{eq:q25} has not been constructed.  Nor has any average of
+\eqref{eq:q25} over growing scales been bounded.  Consequently the certificate is
+structural evidence only: arithmetic cancellation, fixed-atom credit and the strict
+$1/400$ endpoint are absent.

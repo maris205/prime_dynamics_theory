@@ -1,0 +1,21 @@
+\section{Introduction}
+
+Four-phase polarization in the V59 compiler places the phases in the literal source
+sequences $\beta+\ii^jw$ and uses one common Fourier--Poisson profile
+\cite{tpc59}.  TPC-227 proved that a packet-dependent transform preserves this compiler
+for all sources only when its Gram equals the physical common Gram \cite{tpc227}.
+That theorem removes a typing ambiguity but leaves a constructive question: what exact
+collision scalar results when the source phase is kept in the right place?
+
+We answer that question at the finite Hilbert level.  Prime-labelled row transforms of
+$\beta$ and $w$ are denoted $U_q$ and $V_q$.  The natural packet row is
+$U_q+\ii^jV_q$.  Instead of taking an unsigned envelope, we first subtract the
+same-prime quadratic diagonal and then polarize.  The result is exactly the ordered
+off-diagonal source correlation
+\[
+ \sum_{q\ne r}\langle U_q,V_r\rangle.
+\]
+
+The first primitive collision classified in TPC-226 \cite{tpc226} then supplies a
+minimal four-term block.  This does not determine an arithmetic sign, but it replaces
+the former free-profile sign question by a literal source-labelled target.

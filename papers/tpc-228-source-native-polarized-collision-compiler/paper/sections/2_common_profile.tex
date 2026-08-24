@@ -1,0 +1,25 @@
+\section{Common-profile packet rows}
+
+Let $\mathcal Q$ be a finite set of prime labels and let $\mathcal H$ be a complex
+Hilbert space with inner product linear in the first argument.  For each $q$, let
+$T_q$ denote a fixed row transform.  The transform may depend on the prime row, but not
+on the packet label.  Put
+\[
+ U_q=T_q\beta,\qquad V_q=T_q w,
+\]
+and define four packet rows
+\begin{equation}
+ W_q^{(j)}=U_q+\ii^jV_q,\qquad 0\le j\le3.
+ \label{eq:packet-row}
+\end{equation}
+For each packet define
+\begin{equation}
+ \EAP^{(j)}=\left\|\sum_qW_q^{(j)}\right\|^2,
+ \qquad
+ \Ediag^{(j)}=\sum_q\|W_q^{(j)}\|^2.
+ \label{eq:energies}
+\end{equation}
+
+The subtraction in \eqref{eq:energies} removes all $q=r$ terms before the outer
+four-phase sum.  This order mirrors the diagonal-corrected V59 quadratic functional;
+moving the subtraction after an absolute-value estimate would lose the signed identity.

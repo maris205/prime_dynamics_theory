@@ -1,9 +1,61 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V80_TPC227_SEALED_FOR_NEXT_BATCH_PAPER`
+交接状态：`BOLD_CHANNEL_V81_TPC228_SEALED_FOR_NEXT_BATCH_PAPER`
 
-TPC-227 当前 section：packet/profile axis separation
+TPC-228 当前 section：source-native polarized collision compiler
+-----------------------------------------------------------------
+
+TPC-228 保持 TPC-227 的 source/profile axis separation。对 common-profile rows
+`W_q^(j)=U_q+i^jV_q`，exact theorem 证明
+
+```text
+1/4 sum_j i^j(E_AP^(j)-E_diag^(j)) = sum_(q!=r)<U_q,V_r>.
+```
+
+same-prime diagonal 在 polarization 前被删除。Q25 first `3--7` resonance 因而成为
+residues `119,281` 上的 explicit four-term beta-w block。五个 exact fixtures 分别给
+`1/40000,-1/40000,0,1/80000,1/160000`，另有 three-row 与 no-collision controls。
+
+```text
+TPC228_ROUTE_ADVANCE = YES
+TPC228_COMMON_PROFILE_PACKET_RULE = PROVED_EXACT
+TPC228_POLARIZED_AP_MINUS_DIAGONAL_COMPILER = PROVED_EXACT
+TPC228_SOURCE_LABELLED_COLLISION_SUM = PROVED_EXACT
+TPC228_Q25_3_7_SOURCE_BLOCK = PROVED_EXACT_FINITE
+TPC228_ACTUAL_V59_TO_PRIMITIVE_ATOM_CROSSWALK = OPEN
+TPC228_ARITHMETIC_SIGN_THEOREM = OPEN
+TPC228_ARITHMETIC_CANCELLATION = NONE
+TPC228_ARITHMETIC_ADVANCE = NO
+TPC228_FIXED_ATOM_CREDIT = 0
+TPC228_L2 = NONE
+TPC228_FULL_GATE_B = OPEN
+TPC228_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC228_TPC_TRIGGER = true
+TPC228_NUMBERED_RELEASE = YES
+TPC228_STATUS = PROVED_STRUCTURAL_L1
+TPC228_ROUND2_CLUE = ANALYZE_THE_SOURCE_NATIVE_3_7_COLLISION_GRAPH_AS_EXACT_TWO_BY_TWO_BLOCKS
+```
+
+strongest positive result：packet AP-minus-diagonal 到 source collision scalar 的 exact
+compiler；strongest obstruction：同一 collision block 的 source value 可正、负或零；
+open theorem：actual V59-to-primitive-atom crosswalk 与 growing-scale signed bound；
+reusable structure：ordered collision bilinear form、diagonal-first deletion、Q25 block。
+
+编号论文目录：papers/tpc-228-source-native-polarized-collision-compiler/
+
+```text
+papers/tpc-228-source-native-polarized-collision-compiler/README.md
+papers/tpc-228-source-native-polarized-collision-compiler/PROOF_PACKAGE.md
+papers/tpc-228-source-native-polarized-collision-compiler/paper/paper.pdf
+papers/tpc-228-source-native-polarized-collision-compiler/results/certificate.json
+papers/tpc-228-source-native-polarized-collision-compiler/notes/theorem_ledger.md
+papers/tpc-228-source-native-polarized-collision-compiler/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_source_native_polarized_collision_compiler.md
+research/tpc-big-road/tpc_bridge_b_source_native_polarized_collision_compiler_checker.py
+```
+
+TPC-227 上游 section：packet/profile axis separation
 -------------------------------------------------------
 
 TPC-227 回到 V59 literal source compiler 的 typing：四相位属于 source sequences
@@ -5548,11 +5600,23 @@ python -B research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transitio
 python -O -B research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transition_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_packet_profile_axis_separation_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_packet_profile_axis_separation_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_source_native_polarized_collision_compiler_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_source_native_polarized_collision_compiler_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-227 入口：
+最新 TPC-228 入口：
+
+```text
+papers/tpc-228-source-native-polarized-collision-compiler/README.md
+papers/tpc-228-source-native-polarized-collision-compiler/notes/theorem_ledger.md
+papers/tpc-228-source-native-polarized-collision-compiler/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_source_native_polarized_collision_compiler.md
+research/tpc-big-road/tpc_bridge_b_source_native_polarized_collision_compiler_checker.py
+```
+
+TPC-227 上游入口：
 
 ```text
 papers/tpc-227-packet-profile-axis-separation/README.md

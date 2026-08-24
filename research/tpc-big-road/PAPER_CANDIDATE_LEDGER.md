@@ -2,11 +2,49 @@
 
 更新时间：2026-08-24
 
-状态：**TPC227_PROVED_STRUCTURAL_L1_RELEASED / PACKET_PROFILE_AXIS_SEPARATION / ARITHMETIC_INPUTS_OPEN**
+状态：**TPC228_PROVED_STRUCTURAL_L1_RELEASED / SOURCE_NATIVE_POLARIZED_COLLISION_COMPILER / ARITHMETIC_INPUTS_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.22 已发布：TPC-228 source-native polarized collision compiler
+
+项目：`papers/tpc-228-source-native-polarized-collision-compiler/`
+
+类型：**PROVED_STRUCTURAL_L1 / SOURCE_NATIVE_POLARIZED_COLLISION_COMPILER**。
+
+TPC-228 保持 TPC-227 source/profile axis separation，对 common-profile rows
+`W_q^(j)=U_q+i^jV_q` 证明 exact identity
+
+```text
+1/4 sum_j i^j(E_AP^(j)-E_diag^(j)) = sum_(q!=r)<U_q,V_r>.
+```
+
+Q25 first `3--7` resonance 精确成为两个 shared residues 上的四项 beta-w source block。
+五个 exact-rational fixtures 给出 `1/40000,-1/40000,0,1/80000,1/160000`，另有
+three-row 与 no-collision controls。
+
+```text
+TPC228_COMMON_PROFILE_PACKET_RULE = PROVED_EXACT
+TPC228_POLARIZED_AP_MINUS_DIAGONAL_COMPILER = PROVED_EXACT
+TPC228_SOURCE_LABELLED_COLLISION_SUM = PROVED_EXACT
+TPC228_Q25_3_7_SOURCE_BLOCK = PROVED_EXACT_FINITE
+TPC228_ACTUAL_V59_TO_PRIMITIVE_ATOM_CROSSWALK = OPEN
+TPC228_ARITHMETIC_SIGN_THEOREM = OPEN
+TPC228_ARITHMETIC_ADVANCE = NO
+TPC228_FIXED_ATOM_CREDIT = 0
+TPC228_L2 = NONE
+TPC228_FULL_GATE_B = OPEN
+TPC228_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC228_ROUND2_CLUE = ANALYZE_THE_SOURCE_NATIVE_3_7_COLLISION_GRAPH_AS_EXACT_TWO_BY_TWO_BLOCKS
+```
+
+strongest positive result：正确 typing 下的 exact source collision compiler；strongest
+obstruction：同一 geometry 的 source block 可正、负或零；open theorem：actual V59
+atom crosswalk 与 arithmetic sign bound；reusable structure：ordered collision bilinear
+form、diagonal-first deletion。证据含 5+2 exact controls、8 mutations、独立 checker 与
+3 页嵌入字体 PDF。
 
 ## 0.21 已发布：TPC-227 packet/profile axis separation
 

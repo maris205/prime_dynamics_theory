@@ -2,18 +2,15 @@
 
 更新时间：2026-08-24
 
-当前地图版本：V80 / TPC-227
+当前地图版本：V81 / TPC-228
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-227`（`PROVED_STRUCTURAL_L1 / PACKET_PROFILE_AXIS_SEPARATION`）；
-对应论文目录为 `papers/tpc-227-packet-profile-axis-separation/`。TPC-227 回到 V59
-literal source typing，证明 packet phase 留在 `a^(j)=beta+i^j w`，四包共用一个
-Poisson profile。packet-dependent transforms 精确恢复 physical bilinear form 当且仅当
-四个 packet Gram 都等于 physical Gram。TPC-226 Q25 row-odd witness 的 off-diagonal
-Gram mismatch 为 `-1/80000`，因此 profile sign 不能自动冒充 source phase。TPC-226
-finite profile theorem 保留；source-native common-profile compiler、arithmetic sign
-theorem 与 complete Gate B 仍 OPEN。这是 structural L1，不是 arithmetic advance。
+当前编号锚点：`TPC-228`（`PROVED_STRUCTURAL_L1 / SOURCE_NATIVE_POLARIZED_COLLISION_COMPILER`）；
+对应论文目录为 `papers/tpc-228-source-native-polarized-collision-compiler/`。TPC-228
+证明 common-profile four-packet AP-minus-diagonal 精确等于 source-labelled off-diagonal
+collision sum，并把 Q25 first `3--7` resonance 写成四项 beta-w block。source sign
+可正、负或零；actual V59 atom crosswalk、arithmetic theorem 与 Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -55,9 +52,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V80 / TPC-227                     |
-        | PACKET/PROFILE AXIS SEPARATION                   |
-        | common-profile source compiler; arithmetic OPEN |
+        | YOU ARE HERE — V81 / TPC-228                     |
+        | SOURCE-NATIVE COLLISION COMPILER                 |
+        | exact blocks; atom crosswalk/arithmetic OPEN     |
         +--------------------------------------------------+
                 |
                 v
@@ -100,11 +97,10 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V80 / TPC-227 的
-packet/profile axis separation。第一 `3--7` collision geometry 已走通，现在又严格证明
-V59 packet phase 位于 source sequence、Poisson profile 对四包共同；row-dependent sign
-改变 Gram，不能作 automatic source transfer。下一步是 common-profile source-native
-collision compiler。FULL_GATE_B、strict
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V81 / TPC-228 的
+source-native collision compiler。packet/profile typing 与第一 `3--7` geometry 已走通，
+现在 exact target 是 `sum_(q!=r)<U_q,V_r>`，Q25 block 已 source-labelled。下一步分析
+resonance graph 的 sharp 2x2 blocks 并隔离 arithmetic sign input。FULL_GATE_B、strict
 `1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
@@ -1235,6 +1231,35 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.22 V81 / TPC-228：source-native polarized collision compiler
+
+For common-profile rows `W_q^(j)=U_q+i^jV_q`, TPC-228 proves
+
+```text
+1/4 sum_j i^j(E_AP^(j)-E_diag^(j))=sum_(q!=r)<U_q,V_r>.
+```
+
+Q25 first `3--7` resonance is the explicit four-term beta-w block over residues
+`119,281 mod 400`. Exact controls realize positive, negative, zero, directed and
+single-coordinate values. Hence geometry does not choose the source sign, but the
+missing arithmetic scalar is now literal and labelled.
+
+```text
+TPC228_POLARIZED_AP_MINUS_DIAGONAL_COMPILER = PROVED_EXACT
+TPC228_SOURCE_LABELLED_COLLISION_SUM = PROVED_EXACT
+TPC228_Q25_3_7_SOURCE_BLOCK = PROVED_EXACT_FINITE
+TPC228_ACTUAL_V59_TO_PRIMITIVE_ATOM_CROSSWALK = OPEN
+TPC228_ARITHMETIC_SIGN_THEOREM = OPEN
+TPC228_ARITHMETIC_ADVANCE = NO
+TPC228_FIXED_ATOM_CREDIT = 0
+TPC228_L2 = NONE
+TPC228_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V81 / TPC-228 已完成正确 source axis 上的 collision compiler；下一条最短
+大路是证明 `3--7` resonance graph 的 exact block decomposition，并把 signed source
+correlation 缩成 sharp local criterion。**
+
 ## 5.21 V80 / TPC-227：packet/profile axis separation
 
 TPC-227 source-lock V59 exact polarization：四相位在 source packets
@@ -1688,7 +1713,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V80 / TPC-227：
+截至 V81 / TPC-228：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1873,7 +1898,16 @@ TPC227_FIXED_ATOM_CREDIT = 0
 TPC227_L2 = NONE
 TPC227_FULL_GATE_B = OPEN
 TPC227_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-227
+TPC228_POLARIZED_AP_MINUS_DIAGONAL_COMPILER = PROVED_EXACT
+TPC228_SOURCE_LABELLED_COLLISION_SUM = PROVED_EXACT
+TPC228_Q25_3_7_SOURCE_BLOCK = PROVED_EXACT_FINITE
+TPC228_ACTUAL_V59_TO_PRIMITIVE_ATOM_CROSSWALK = OPEN
+TPC228_ARITHMETIC_ADVANCE = NO
+TPC228_FIXED_ATOM_CREDIT = 0
+TPC228_L2 = NONE
+TPC228_FULL_GATE_B = OPEN
+TPC228_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-228
 ```
 
 以下事实不得从路线图中推断：
@@ -1891,7 +1925,10 @@ NUMBERED_RELEASE = TPC-227
 
 优先级更新为：
 
-1. **TPC-227 已完成：packet/profile axis separation**。V59 packet phase 被锁在
+1. **TPC-228 已完成：source-native polarized collision compiler**。common-profile
+   packet AP-minus-diagonal exact 编译成 `sum_(q!=r)<U_q,V_r>`，Q25 first resonance
+   成为 explicit four-term beta-w block；下一步做 resonance graph 的 exact 2x2 blocks。
+2. **TPC-227 已完成：packet/profile axis separation**。V59 packet phase 被锁在
    `a^(j)=beta+i^j w`，Poisson profile 对四包共同；four-Gram iff criterion 与 Q25
    `-1/80000` mismatch 封住 automatic profile-to-source transfer。下一步是 source-native
    common-profile collision compiler。
@@ -1939,10 +1976,9 @@ NUMBERED_RELEASE = TPC-227
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-227 的下一步：source-native common-profile collision compiler**。保持
-    `a^(j)=beta+i^j w` 的 packet phase 与共同 `psi_+`，把 literal coefficient packets
-    直接接到 primitive `3--7` collision formula；不能把 row-dependent profile sign
-    当作 physical packet theorem。
+12. **TPC-228 的下一步：exact resonance-block decomposition**。把 source-native
+    `3--7` graph 分解成 sharp two-prime blocks，给出 signed saving 的必要充分 local
+    criterion；actual V59 atom attachment 继续单列为 open。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2041,6 +2077,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-24 | V81 / TPC-228 | Bridge A / Gate B：source-native polarized collision compiler；exact source block，atom crosswalk/arithmetic open | `TPC-228` | AP-minus-diagonal four-phase identity、Q25 four-term beta-w block、positive/negative/zero controls；arithmetic仍为 NO |
 | 2026-08-24 | V80 / TPC-227 | Bridge A / Gate B：packet/profile axis separation；source phase 与 common profile exact typed，source-native collision compiler open | `TPC-227` | four-Gram iff theorem、Q25 `-1/80000` row-sign mismatch、automatic profile-to-source transfer scoped-refuted；arithmetic仍为 NO |
 | 2026-08-24 | V79 / TPC-226 | Bridge A / Gate B：first primitive-collision transition；`L<=3` disjoint，`L=4` 唯一 `3--7` resonance；source sign 与 arithmetic open | `TPC-226` | exact collision classification、Q25 witness、505-scale census、aligned/affine amplification 与 balanced-sign cancellation；arithmetic仍为 NO |
 | 2026-08-22 | V78 / TPC-225 | Bridge A / Gate B：cutoff-one shared-clock obstruction；named source clock 的 prime blocks exact orthogonal，strict AP saving scoped-refuted；nontrivial-cutoff overlap与arithmetic仍 open | `TPC-225` | exact cutoff-one theorem、`E_AP=E_diag`、`E_all=E_pol`、9+14 exact-rational audits、`Q=3..99` boundary replay；arithmetic仍为 NO |

@@ -1,0 +1,37 @@
+\section{Exact polarized collision identity}
+
+\begin{theorem}[Source-native collision compiler]
+\label{thm:compiler}
+For the rows in \eqref{eq:packet-row},
+\begin{equation}
+ \boxed{
+ \frac14\sum_{j=0}^3\ii^j
+ \bigl(\EAP^{(j)}-\Ediag^{(j)}\bigr)
+ =\sum_{q\ne r}\langle U_q,V_r\rangle.}
+ \label{eq:compiler}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Expanding the two energies gives
+\[
+ \EAP^{(j)}-\Ediag^{(j)}
+ =\sum_{q\ne r}
+ \langle U_q+\ii^jV_q,U_r+\ii^jV_r\rangle.
+\]
+For one ordered pair, multiplication by $\ii^j$ makes the coefficient of
+$\langle U_q,V_r\rangle$ equal to one.  The $U$--$U$ and $V$--$V$ coefficients sum
+to $\sum_j\ii^j=0$, while the conjugate cross coefficient sums to
+$\sum_j\ii^{2j}=0$.  The desired coefficient sums to four.  Interchanging the finite
+sums proves \eqref{eq:compiler}.
+\end{proof}
+
+\begin{corollary}
+If distinct prime rows have disjoint output support, the polarized AP-minus-diagonal
+scalar vanishes exactly.  Every nonzero contribution is supported on a cross-prime
+collision coordinate.
+\end{corollary}
+
+The theorem is indifferent to how the common row maps are represented.  Its source
+content comes from the fixed identification of $U$ with the $\beta$ channel and $V$
+with the $w$ channel, rather than from a chosen packet profile.

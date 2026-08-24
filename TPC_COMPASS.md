@@ -1,11 +1,42 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V80 / PACKET_PROFILE_AXIS_SEPARATION`
-claim level：`PROVED_STRUCTURAL_L1_PACKET_PROFILE_AXIS_SEPARATION`
-编号事实终点：TPC-227；TPC-227 trigger：`true`
+状态：`BOLD_CHANNEL_V81 / SOURCE_NATIVE_POLARIZED_COLLISION_COMPILER`
+claim level：`PROVED_STRUCTURAL_L1_SOURCE_NATIVE_COLLISION_COMPILER`
+编号事实终点：TPC-228；TPC-228 trigger：`true`
 
-当前 TPC-227 入口：proof 为
+当前 TPC-228 入口：proof 为
+`research/tpc-big-road/bridge_b_source_native_polarized_collision_compiler.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_source_native_polarized_collision_compiler_checker.py`，
+编号论文为 `papers/tpc-228-source-native-polarized-collision-compiler/`。对 common-profile
+source rows `W_q^(j)=U_q+i^jV_q`，exact theorem 给出
+
+```text
+1/4 sum_j i^j(E_AP^(j)-E_diag^(j)) = sum_(q!=r)<U_q,V_r>.
+```
+
+Q25 first `3--7` resonance 被编译成两个 shared residues 上的四项 beta-w source block；
+五个 exact controls 实现正、负、零、单向与单 coordinate，故 geometry 不决定 sign，
+但 missing arithmetic object 已被 source-label。
+
+```text
+TPC228_ROUTE_ADVANCE = YES
+TPC228_COMMON_PROFILE_PACKET_RULE = PROVED_EXACT
+TPC228_POLARIZED_AP_MINUS_DIAGONAL_COMPILER = PROVED_EXACT
+TPC228_SOURCE_LABELLED_COLLISION_SUM = PROVED_EXACT
+TPC228_Q25_3_7_SOURCE_BLOCK = PROVED_EXACT_FINITE
+TPC228_ACTUAL_V59_TO_PRIMITIVE_ATOM_CROSSWALK = OPEN
+TPC228_ARITHMETIC_SIGN_THEOREM = OPEN
+TPC228_ARITHMETIC_ADVANCE = NO
+TPC228_FIXED_ATOM_CREDIT = 0
+TPC228_L2 = NONE
+TPC228_FULL_GATE_B = OPEN
+TPC228_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC228_STATUS = PROVED_STRUCTURAL_L1
+TPC228_ROUND2_CLUE = ANALYZE_THE_SOURCE_NATIVE_3_7_COLLISION_GRAPH_AS_EXACT_TWO_BY_TWO_BLOCKS
+```
+
+TPC-227 上游入口：proof 为
 `research/tpc-big-road/bridge_b_packet_profile_axis_separation.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_packet_profile_axis_separation_checker.py`，编号论文为
 `papers/tpc-227-packet-profile-axis-separation/`。V59 literal compiler 把四相位放在

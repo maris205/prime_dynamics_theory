@@ -1,0 +1,27 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=0.88in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs}
+\usepackage{xcolor,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\EAP}{E_{\rm AP}}
+\newcommand{\Ediag}{E_{\rm diag}}
+\title{A Source-Native Polarized Collision Compiler}
+\author{Liang Wang\\Huazhong University of Science and Technology}
+\date{August 24, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}\input{sections/0_abstract}\end{abstract}
+\input{sections/1_introduction}
+\input{sections/2_common_profile}
+\input{sections/3_compiler}
+\input{sections/4_q25_block}
+\input{sections/5_certification}
+\input{sections/6_conclusion}
+\bibliographystyle{plain}\bibliography{references}
+\end{document}

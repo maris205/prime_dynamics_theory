@@ -9,13 +9,12 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-227 回到 V59 literal source typing，证明 four-packet phase 必须留在
-`a^(j)=beta+i^j w` 的 coefficient axis，而 Poisson profile 对四包共同。若把共同物理
-transform `T` 换成 packet-dependent `T_j`，四相位恒等式对所有 source pairs 成立当且仅当
-`T_j^*T_j=T^*T`（四个 `j` 全部成立）。TPC-226 的 Q25 row-dependent odd sign 在第一
-`3--7` collision block 上把 off-diagonal Gram entry exact 改变 `-1/80000`，因此自动
-V59 source transfer 被 scoped-refute；有限 profile saving 本身仍成立。状态仍是
-`PROVED_STRUCTURAL_L1`；source-native common-profile compiler、arithmetic L2 与 Gate B 开放。
+当前主线状态：TPC-228 在 TPC-227 的正确 source/profile typing 上构造 exact compiler。
+对共同 profile rows `W_q^(j)=U_q+i^jV_q`，证明四相位 AP-minus-diagonal 精确等于
+`sum_(q!=r)<U_q,V_r>`；Q25 first `3--7` resonance 因而成为两个 shared residues 上
+四项 `beta_p w_r+beta_r w_p` source block。正、负、零、单向、单 coordinate fixtures
+全部 exact 通过。状态仍是 `PROVED_STRUCTURAL_L1`；actual V59-to-primitive-atom
+crosswalk、arithmetic sign theorem、L2 与 Gate B 开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +28,8 @@ V59 source transfer 被 scoped-refute；有限 profile saving 本身仍成立。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-228-source-native-polarized-collision-compiler` - `PROVED_STRUCTURAL_L1 / SOURCE_NATIVE_POLARIZED_COLLISION_COMPILER` - 证明共同 profile 下四相位 `E_AP-E_diag` 精确编译为 source-labelled off-diagonal collision sum，并把 Q25 `3--7` resonance 写成四项 `beta-w` block；五类 exact sign controls 与两个 graph controls 通过，actual V59 atom crosswalk 和 arithmetic sign 仍开放。
 
 `tpc-227-packet-profile-axis-separation` - `PROVED_STRUCTURAL_L1 / PACKET_PROFILE_AXIS_SEPARATION` - 证明 four-phase packet-dependent transforms 精确恢复 V59 physical bilinear form当且仅当四个 packet Gram 全等于 physical Gram；Q25 first-collision block 的 row-dependent odd sign 给出 `-1/80000` off-diagonal mismatch，封住 profile sign 自动冒充 source phase 的捷径，common-profile source compiler 与 arithmetic L2 仍开放。
 

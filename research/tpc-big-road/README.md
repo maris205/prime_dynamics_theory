@@ -1,13 +1,50 @@
-# TPC big road V80 / TPC-227: packet/profile axis separation
+# TPC big road V81 / TPC-228: source-native polarized collision compiler
 
 更新时间：2026-08-24
 
-状态：`TPC227_PROVED_STRUCTURAL_L1 / PACKET_PROFILE_AXIS_SEPARATION / FULL_GATE_B_OPEN`
+状态：`TPC228_PROVED_STRUCTURAL_L1 / SOURCE_NATIVE_POLARIZED_COLLISION_COMPILER / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-227 proof 为
+当前 TPC-228 proof 为
+`bridge_b_source_native_polarized_collision_compiler.md`，checker 为
+`tpc_bridge_b_source_native_polarized_collision_compiler_checker.py`，编号论文为
+`../../papers/tpc-228-source-native-polarized-collision-compiler/`。
+
+对 common-profile rows `W_q^(j)=U_q+i^jV_q`，TPC-228 exact 证明
+
+```text
+1/4 sum_j i^j(E_AP^(j)-E_diag^(j)) = sum_(q!=r)<U_q,V_r>.
+```
+
+这保持 phase 在 source axis、profile 在 common transform，并在 polarization 前删除
+same-prime diagonal。Q25 first `3--7` resonance 变成 explicit four-term beta-w block；
+五类 rational fixtures 给正、负、零、directed 和 single-coordinate outputs。
+
+```text
+TPC228_ROUTE_ADVANCE = YES
+TPC228_COMMON_PROFILE_PACKET_RULE = PROVED_EXACT
+TPC228_POLARIZED_AP_MINUS_DIAGONAL_COMPILER = PROVED_EXACT
+TPC228_SOURCE_LABELLED_COLLISION_SUM = PROVED_EXACT
+TPC228_Q25_3_7_SOURCE_BLOCK = PROVED_EXACT_FINITE
+TPC228_ACTUAL_V59_TO_PRIMITIVE_ATOM_CROSSWALK = OPEN
+TPC228_ARITHMETIC_SIGN_THEOREM = OPEN
+TPC228_ARITHMETIC_ADVANCE = NO
+TPC228_FIXED_ATOM_CREDIT = 0
+TPC228_L2 = NONE
+TPC228_FULL_GATE_B = OPEN
+TPC228_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC228_STATUS = PROVED_STRUCTURAL_L1
+TPC228_ROUND2_CLUE = ANALYZE_THE_SOURCE_NATIVE_3_7_COLLISION_GRAPH_AS_EXACT_TWO_BY_TWO_BLOCKS
+```
+
+strongest positive result：packet AP-minus-diagonal 到 source collision sum 的 exact
+compiler；strongest obstruction：同一 block 允许 source sign 正、负或零；open theorem：
+actual V59-to-primitive-atom crosswalk 与 growing-scale signed bound；reusable structure：
+ordered collision bilinear form 与 diagonal-first compiler。
+
+TPC-227 上游 proof 为
 `bridge_b_packet_profile_axis_separation.md`，checker 为
 `tpc_bridge_b_packet_profile_axis_separation_checker.py`，编号论文为
 `../../papers/tpc-227-packet-profile-axis-separation/`。
