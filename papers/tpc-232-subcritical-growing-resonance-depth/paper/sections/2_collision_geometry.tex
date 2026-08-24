@@ -1,0 +1,39 @@
+\section{Growing-depth collision geometry}
+
+Let \(\PP_Q\) be the primes in \((Q,2Q)\), put \(h=4LQ\), and assume
+\(L<Q/4\).  Every \(q\in\PP_Q\) is a unit modulo \(h\), and every active
+multiplier has magnitude below \(2L<q\).  Thus each row is internally
+injective.
+
+\begin{lemma}[One-wrap normal form]
+If distinct rows \(q_1,q_2\in\PP_Q\) share a residue, then their multipliers
+have opposite signs and, for positive \(a,b<2L\),
+\[
+ a q_2+b q_1=4LQ. \tag{1}
+\]
+Moreover \((a,b)=1\), at most two rows occupy one residue, and every channel
+has exactly two residues related by global sign.
+\end{lemma}
+
+\begin{proof}
+A shared residue gives
+\[
+ m_1q_2-m_2q_1\equiv0\pmod h. \tag{2}
+\]
+For equal signs, the magnitude in (2) is below \(h\).  Equality to zero would
+force an active prime to divide a nonzero multiplier shorter than that prime.
+Hence the signs are opposite.  The resulting positive sum is below \(2h\),
+so its only possible positive multiple of \(h\) is \(h\), proving (1).
+
+Primitivity gives \((a,h)=(b,h)=1\).  A common divisor of \(a,b\) would divide
+the right side of (1), and is therefore one.  If three rows occupied a
+residue, two multipliers would have the same sign, contradicting the first
+part.  Finally, changing both multiplier signs gives a second residue.  The
+two cannot coincide because that would make \(h\) divide a nonzero integer
+of magnitude below \(4L\).  No third residue is possible by the same
+classification.
+\end{proof}
+
+This lemma upgrades the first \(3\)--\(7\) collision into a complete
+growing-depth channel compiler.  It does not assert that any particular
+channel contains prime solutions.

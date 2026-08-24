@@ -2,11 +2,64 @@
 
 更新时间：2026-08-24
 
-状态：**TPC231_PROVED_ARITHMETIC_OBSTRUCTION_L1_RELEASED / FIXED_FINITE_RESONANCE_STOP_SCOPED / GROWING_DEPTH_AND_ACTUAL_SOURCE_OPEN**
+状态：**TPC232_PROVED_ARITHMETIC_OBSTRUCTION_L1_RELEASED / SUBCRITICAL_GROWING_DEPTH_STOP_SCOPED / CRITICAL_DEPTH_AND_ACTUAL_SOURCE_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.26 已发布：TPC-232 subcritical growing resonance depth
+
+项目：`papers/tpc-232-subcritical-growing-resonance-depth/`
+
+类型：**PROVED_ARITHMETIC_OBSTRUCTION_L1 / SUBCRITICAL_GROWING_DEPTH_STOP_SCOPED**。
+
+For the TPC-226 modeled clock `h=4LQ`, prime rows `Q<q<2Q`, and primitive
+multipliers `|m|<=floor(Lq/Q)`, every collision in the range `L<Q/4` is an
+opposite-sign one-wrap channel
+
+```text
+ar+bp=4LQ,  1<=a,b<2L,  gcd(a,b)=1.
+```
+
+Each coefficient pair has determinant `4LQ`; separating short grazing parameter
+intervals from the Selberg branch gives a coefficient-uniform sieve estimate.  Since
+`sum_(a,b<2L) 1/max(a,b)<4L`, uniformly for `L<=(log Q)^A`,
+
+```text
+C_L(Q) <<_A LQ loglog(3LQ)/(log Q)^2,
+C_L(Q)/P(Q) <<_A L loglog(3LQ)/log Q.
+```
+
+Thus `L=o(log Q/loglog Q)` implies zero collision incidence density.  TPC-230's
+unmatched-mass floor then rules out every fixed saving under fixed row-mass
+comparability throughout this subcritical regime.  The result is an upper-bound
+obstruction, not a critical-depth lower bound and not a V59 source attachment.
+
+```text
+TPC232_GROWING_COLLISION_NORMAL_FORM = PROVED_EXACT
+TPC232_UNIFORM_POLYLOG_DEPTH_SIEVE = PROVED_SOURCE_BACKED
+TPC232_COLLISION_INCIDENCE_BOUND = PROVED_ASYMPTOTIC
+TPC232_SUBCRITICAL_DEPTH_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC232_SUBCRITICAL_FIXED_SAVING = STOP_SCOPED
+TPC232_CRITICAL_DEPTH_SUFFICIENCY = OPEN
+TPC232_DILATED_CLOCK = MODELING_CHOICE
+TPC232_ACTUAL_V59_CLOCK_ATTACHMENT = OPEN
+TPC232_ARITHMETIC_ADVANCE = NO
+TPC232_ARITHMETIC_OBSTRUCTION = PROVED_SOURCE_BACKED
+TPC232_FIXED_ATOM_CREDIT = 0
+TPC232_L2 = NONE
+TPC232_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC232_STATUS = PROVED_ARITHMETIC_OBSTRUCTION_L1
+TPC232_ROUND2_CLUE = TEST_CRITICAL_DEPTH_CLOCK_MASS_AND_DEGREE_BEFORE_V59_ATTACHMENT
+```
+
+strongest positive result：uniform growing-channel sieve theorem；strongest
+obstruction：all `o(log Q/loglog Q)` depths have zero incident-row density；open theorem：
+critical-depth mass/degree and actual V59 attachment；reusable structure：one-wrap normal
+form、coefficient-uniform interval sieve、weighted channel summation；`ROUND2_CLUE`：
+`TEST_CRITICAL_DEPTH_CLOCK_MASS_AND_DEGREE_BEFORE_V59_ATTACHMENT`。19-scale independent
+scan；4-page embedded-font PDF。
 
 ## 0.25 已发布：TPC-231 finite-resonance sieve obstruction
 

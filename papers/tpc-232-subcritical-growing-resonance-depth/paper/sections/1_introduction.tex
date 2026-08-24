@@ -1,0 +1,38 @@
+\section{Introduction}
+
+A fixed collection of two-prime resonance equations is too sparse to control a
+fixed fraction of a dyadic prime shell: a two-dimensional upper-bound sieve
+gives \(O(Q\log\log Q/\log^2Q)\) edges, whereas the shell contains
+asymptotically \(Q/\log Q\) primes.  The natural escape is to let the number of
+resonance channels grow with the scale.  The unresolved quantitative question
+is how quickly this depth must grow before the support obstruction disappears.
+
+We answer the necessary half of that question for the primitive dilated-clock
+family.  At depth \(L\), row \(q\) occupies residues
+\[
+ S_{q,L}=\{mq^{-1}\pmod{4LQ}:0<|m|\le\lfloor Lq/Q\rfloor,
+ (m,4LQ)=1\}.
+\]
+This is an exact finite family, but the dilation parameter is a modeling
+choice.  Our argument therefore separates the internal arithmetic theorem from
+any later source-identification claim.
+
+The main contributions are:
+\begin{enumerate}
+\item We classify every collision for \(L<Q/4\) by one equation
+      \(ar+bp=4LQ\), and prove that no residue contains three prime rows.
+\item We retain the interval remainder in the Selberg sieve and obtain a bound
+      uniform for all \(L\le(\log Q)^A\), rather than summing a theorem whose
+      implied constant was proved only for fixed coefficients.
+\item We show that the apparent \(O(L^2)\) coefficient family has only
+      \(O(L)\) aggregate parameter length.  This yields the threshold
+      \(L=o(\log Q/\log\log Q)\) below which normalized incidence vanishes.
+\item We transfer support sparsity to a fixed-saving obstruction under an
+      explicit row-mass comparability hypothesis.
+\end{enumerate}
+
+The analytic input is the classical Selberg upper-bound sieve
+\cite{HalberstamRichert1974,IwaniecKowalski2004}.  The two-form mechanism and
+its determinant correction may also be compared with the expositions in
+\cite{GreenAdditive,Rudnick2015}.  We derive all coefficient and clock
+dependence needed here.

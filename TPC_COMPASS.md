@@ -1,11 +1,38 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V84 / FINITE_RESONANCE_SIEVE_OBSTRUCTION`
-claim level：`PROVED_ARITHMETIC_OBSTRUCTION_L1_FIXED_FINITE_RESONANCE_STOP_SCOPED`
-编号事实终点：TPC-231；TPC-231 trigger：`true`
+状态：`BOLD_CHANNEL_V85 / SUBCRITICAL_GROWING_RESONANCE_DEPTH_OBSTRUCTION`
+claim level：`PROVED_ARITHMETIC_OBSTRUCTION_L1_SUBCRITICAL_DEPTH_STOP_SCOPED`
+编号事实终点：TPC-232；TPC-232 trigger：`true`
 
-当前 TPC-231 入口：proof 为
+当前 TPC-232 入口：proof 为
+`research/tpc-big-road/bridge_b_subcritical_growing_resonance_depth.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_subcritical_growing_resonance_depth_checker.py`，编号论文为
+`papers/tpc-232-subcritical-growing-resonance-depth/`。modeled clock `h=4LQ` 的 exact
+collision normal form 为 `ar+bp=4LQ`。coefficient-uniform Selberg sieve 与
+`sum 1/max(a,b)<4L` 给出
+`C_L(Q)<<_A LQ log log(3LQ)/(log Q)^2`；故
+`L=o(log Q/log log Q)` 时 `C_L/P->0`，fixed-comparability rows 不能支付 fixed saving。
+
+```text
+TPC232_GROWING_COLLISION_NORMAL_FORM = PROVED_EXACT
+TPC232_UNIFORM_POLYLOG_DEPTH_SIEVE = PROVED_SOURCE_BACKED
+TPC232_COLLISION_INCIDENCE_BOUND = PROVED_ASYMPTOTIC
+TPC232_SUBCRITICAL_DEPTH_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC232_SUBCRITICAL_FIXED_SAVING = STOP_SCOPED
+TPC232_CRITICAL_DEPTH_SUFFICIENCY = OPEN
+TPC232_DILATED_CLOCK = MODELING_CHOICE
+TPC232_ACTUAL_V59_CLOCK_ATTACHMENT = OPEN
+TPC232_ARITHMETIC_ADVANCE = NO
+TPC232_ARITHMETIC_OBSTRUCTION = PROVED_SOURCE_BACKED
+TPC232_FIXED_ATOM_CREDIT = 0
+TPC232_L2 = NONE
+TPC232_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC232_STATUS = PROVED_ARITHMETIC_OBSTRUCTION_L1
+TPC232_ROUND2_CLUE = TEST_CRITICAL_DEPTH_CLOCK_MASS_AND_DEGREE_BEFORE_V59_ATTACHMENT
+```
+
+TPC-231 上游入口：proof 为
 `research/tpc-big-road/bridge_b_finite_resonance_sieve_obstruction.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py`，编号论文为
 `papers/tpc-231-finite-resonance-sieve-obstruction/`。first `3--7` resonance 的 exact

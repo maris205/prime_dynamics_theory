@@ -1,0 +1,47 @@
+\section{The subcritical depth threshold}
+
+The coefficient family has \(O(L^2)\) members, but its total parameter length
+is only linear in \(L\).
+\begin{lemma}
+For \(M=2L-1\),
+\[
+ \sum_{1\le a,b\le M}\frac1{\max(a,b)}
+ =\sum_{m\le M}\frac{2m-1}{m}<4L. \tag{9}
+\]
+\end{lemma}
+\begin{proof}
+Exactly \(2m-1\) ordered pairs have maximum \(m\).  Summing their weights
+gives \(2M-\sum_{m\le M}1/m<2M<4L\).
+\end{proof}
+
+\begin{theorem}[Growing-depth incidence bound]
+For fixed \(A>0\), uniformly over \(1\le L\le(\log Q)^A\),
+\[
+ C_L(Q)\ll_A
+ \frac{LQ\log\log(3LQ)}{(\log Q)^2}. \tag{10}
+\]
+\end{theorem}
+\begin{proof}
+Sum (8) over \(a,b<2L\) and apply (9).  The summed constant and remainder
+terms are \(o_A(LQ/\log^2Q)\), because \(L\) is polylogarithmic.
+\end{proof}
+
+\begin{corollary}[Subcritical obstruction]
+If \(L=o(\log Q/\log\log Q)\), then
+\[
+ \frac{C_L(Q)}{|\PP_Q|}\longrightarrow0. \tag{11}
+\]
+If positive row masses have a fixed maximum-to-minimum ratio \(\kappa\), the
+maximum saving supported only on these collisions is also \(o(1)\).
+\end{corollary}
+\begin{proof}
+The prime number theorem gives \(|\PP_Q|\sim Q/\log Q\), which proves (11).
+At most \(2C_L(Q)\) rows are incident to a collision, so their mass fraction
+is at most \(2\kappa C_L(Q)/|\PP_Q|\).  All nonincident rows remain
+orthogonal to every other row and retain their diagonal energy.  Hence the
+possible saving is bounded by the incident mass fraction.
+\end{proof}
+
+In particular, no fixed \(\delta>0\), including \(\delta=1/400\), can be paid
+at subcritical depth.  The corollary is only a necessary condition:
+\(L\asymp\log Q/\log\log Q\) is not proved sufficient.

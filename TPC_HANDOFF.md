@@ -1,9 +1,74 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V84_TPC231_BATCH_OF_FIVE_COMPLETE`
+交接状态：`BOLD_CHANNEL_V85_TPC232_SUBCRITICAL_DEPTH_RELEASED`
 
-TPC-231 当前 section：finite-resonance sieve obstruction
+TPC-232 当前 section：subcritical growing resonance depth
+------------------------------------------------------------
+
+For the modeled clock `h=4LQ`, prime shell `Q<q<2Q`, and primitive cutoff
+`|m|<=floor(Lq/Q)`, every collision for `L<Q/4` has exact one-wrap form
+
+```text
+ar+bp=4LQ,  1<=a,b<2L,  gcd(a,b)=1.
+```
+
+For fixed `a,b`, prime solutions are two affine forms of determinant `4LQ` on an
+interval of length `O(Q/max(a,b)+1)`.  A coefficient-uniform Selberg upper-bound
+sieve, with short grazing intervals split off explicitly, and
+`sum_(a,b<2L)1/max(a,b)<4L` prove uniformly for `L<=(log Q)^A` that
+
+```text
+C_L(Q) <<_A LQ loglog(3LQ)/(log Q)^2,
+C_L(Q)/P(Q) <<_A L loglog(3LQ)/log Q.
+```
+
+Consequently `L=o(log Q/loglog Q)` gives zero incident-row density.  Under a fixed
+row-mass comparability constant, TPC-230 then rules out every fixed saving, including
+`1/400`, throughout this subcritical range.  The theorem does not prove critical-depth
+sufficiency and does not attach the modeled clock to the actual V59 source.
+
+```text
+TPC232_ROUTE_ADVANCE = YES
+TPC232_GROWING_COLLISION_NORMAL_FORM = PROVED_EXACT
+TPC232_UNIFORM_POLYLOG_DEPTH_SIEVE = PROVED_SOURCE_BACKED
+TPC232_COLLISION_INCIDENCE_BOUND = PROVED_ASYMPTOTIC
+TPC232_SUBCRITICAL_DEPTH_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC232_SUBCRITICAL_FIXED_SAVING = STOP_SCOPED
+TPC232_CRITICAL_DEPTH_SUFFICIENCY = OPEN
+TPC232_DILATED_CLOCK = MODELING_CHOICE
+TPC232_ACTUAL_V59_CLOCK_ATTACHMENT = OPEN
+TPC232_ARITHMETIC_ADVANCE = NO
+TPC232_ARITHMETIC_OBSTRUCTION = PROVED_SOURCE_BACKED
+TPC232_ARITHMETIC_CANCELLATION = NONE
+TPC232_FIXED_ATOM_CREDIT = 0
+TPC232_L2 = NONE
+TPC232_FULL_GATE_B = OPEN
+TPC232_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC232_TPC_TRIGGER = true
+TPC232_NUMBERED_RELEASE = YES
+TPC232_STATUS = PROVED_ARITHMETIC_OBSTRUCTION_L1
+TPC232_ROUND2_CLUE = TEST_CRITICAL_DEPTH_CLOCK_MASS_AND_DEGREE_BEFORE_V59_ATTACHMENT
+```
+
+strongest positive result：uniform growing-channel sieve theorem；strongest
+obstruction：every subcritical depth has zero incident density；open theorem：critical-
+depth mass/degree and actual V59 attachment；reusable structure：one-wrap normal form、
+coefficient-uniform interval sieve、weighted channel summation。
+
+编号论文目录：papers/tpc-232-subcritical-growing-resonance-depth/
+
+```text
+papers/tpc-232-subcritical-growing-resonance-depth/README.md
+papers/tpc-232-subcritical-growing-resonance-depth/PROOF_PACKAGE.md
+papers/tpc-232-subcritical-growing-resonance-depth/paper/paper.pdf
+papers/tpc-232-subcritical-growing-resonance-depth/results/certificate.json
+papers/tpc-232-subcritical-growing-resonance-depth/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_subcritical_growing_resonance_depth.md
+research/tpc-big-road/tpc_bridge_b_subcritical_growing_resonance_depth_checker.py
+```
+
+TPC-231 上游 section：finite-resonance sieve obstruction
 ----------------------------------------------------------
 
 For `Q=3t+a`, the primitive equation `7p+3r=16Q` is exactly parameterized by
@@ -5649,8 +5714,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V84/TPC-231 gate、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百二十四次（62 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V85/TPC-232 gate、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百二十六次（63 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -5778,11 +5843,23 @@ python -B research/tpc-big-road/tpc_bridge_b_matched_resonance_mass_ceiling_chec
 python -O -B research/tpc-big-road/tpc_bridge_b_matched_resonance_mass_ceiling_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_subcritical_growing_resonance_depth_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_subcritical_growing_resonance_depth_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-231 入口：
+最新 TPC-232 入口：
+
+```text
+papers/tpc-232-subcritical-growing-resonance-depth/README.md
+papers/tpc-232-subcritical-growing-resonance-depth/notes/theorem_ledger.md
+papers/tpc-232-subcritical-growing-resonance-depth/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_subcritical_growing_resonance_depth.md
+research/tpc-big-road/tpc_bridge_b_subcritical_growing_resonance_depth_checker.py
+```
+
+TPC-231 上游入口：
 
 ```text
 papers/tpc-231-finite-resonance-sieve-obstruction/README.md

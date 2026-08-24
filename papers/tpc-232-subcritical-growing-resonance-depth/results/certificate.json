@@ -1,0 +1,341 @@
+{
+  "checks": {
+    "coefficient_weight_sum_le_4L": true,
+    "one_wrap_equation": true,
+    "opposite_sign_reduction": true,
+    "short_multiplier_regime": true,
+    "subcritical_density_transfer": true,
+    "two_sign_residues_per_channel": true
+  },
+  "claim_level": "PROVED_ARITHMETIC_OBSTRUCTION_L1",
+  "coefficient_weight_checks": [
+    {
+      "L": 1,
+      "denominator": 1,
+      "numerator": 1
+    },
+    {
+      "L": 2,
+      "denominator": 6,
+      "numerator": 25
+    },
+    {
+      "L": 4,
+      "denominator": 140,
+      "numerator": 1597
+    },
+    {
+      "L": 8,
+      "denominator": 360360,
+      "numerator": 9615043
+    },
+    {
+      "L": 16,
+      "denominator": 72201776446800,
+      "numerator": 4185735882404243
+    },
+    {
+      "L": 32,
+      "denominator": 65681493561267903750631200,
+      "numerator": 7965308622209542838089788143
+    },
+    {
+      "L": 64,
+      "denominator": 6676878045498705789701874602220118271269436344024536000,
+      "numerator": 1659702726125927960064534742042332318869144629759381531337
+    }
+  ],
+  "finite_scan": {
+    "interpretation": "finite reproduction only, not asymptotic evidence",
+    "record_count": 19,
+    "records": [
+      {
+        "L": 4,
+        "Q": 25,
+        "atoms": 26,
+        "channel_sha256": "23b62d65d77351bab68e04120922e28902908d271312a110879452aea3d8269d",
+        "clock": 400,
+        "collision_coordinates": 2,
+        "incident_rows": 2,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 1,
+        "prime_rows": 6,
+        "resonance_channels": 1,
+        "unique_edges": 1
+      },
+      {
+        "L": 4,
+        "Q": 101,
+        "atoms": 124,
+        "channel_sha256": "8de926fbcf5a4f79a8efd4630c2078e98c7a718c6a2f843b61bf2be034b946ee",
+        "clock": 1616,
+        "collision_coordinates": 2,
+        "incident_rows": 2,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 1,
+        "prime_rows": 20,
+        "resonance_channels": 1,
+        "unique_edges": 1
+      },
+      {
+        "L": 8,
+        "Q": 101,
+        "atoms": 242,
+        "channel_sha256": "0373cf60706792f5cb876f27c51f838a641cf6c15204ca4fbd485e72e0e50720",
+        "clock": 3232,
+        "collision_coordinates": 6,
+        "incident_rows": 5,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 2,
+        "prime_rows": 20,
+        "resonance_channels": 3,
+        "unique_edges": 3
+      },
+      {
+        "L": 16,
+        "Q": 101,
+        "atoms": 484,
+        "channel_sha256": "43969587c683c226be4586f5e0a893333b0fb48fb36134af9842e1fee8047d46",
+        "clock": 6464,
+        "collision_coordinates": 10,
+        "incident_rows": 7,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 2,
+        "prime_rows": 20,
+        "resonance_channels": 5,
+        "unique_edges": 5
+      },
+      {
+        "L": 8,
+        "Q": 211,
+        "atoms": 422,
+        "channel_sha256": "276e7532dcc2a8526e3d4040360828efe2a5d33e59a279fcaa7ff718ebf9e388",
+        "clock": 6752,
+        "collision_coordinates": 6,
+        "incident_rows": 6,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 1,
+        "prime_rows": 35,
+        "resonance_channels": 3,
+        "unique_edges": 3
+      },
+      {
+        "L": 16,
+        "Q": 211,
+        "atoms": 848,
+        "channel_sha256": "2acc6d3c0472606c47122267c42a79ed09a890ec804f525d1fb2bd2d1051f26d",
+        "clock": 13504,
+        "collision_coordinates": 14,
+        "incident_rows": 11,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 2,
+        "prime_rows": 35,
+        "resonance_channels": 7,
+        "unique_edges": 7
+      },
+      {
+        "L": 32,
+        "Q": 211,
+        "atoms": 1678,
+        "channel_sha256": "c8606d04c15b59a8e349d38a9d19015be3922e553f46d1c1113c2f01b405a767",
+        "clock": 27008,
+        "collision_coordinates": 20,
+        "incident_rows": 16,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 3,
+        "prime_rows": 35,
+        "resonance_channels": 10,
+        "unique_edges": 10
+      },
+      {
+        "L": 16,
+        "Q": 401,
+        "atoms": 1428,
+        "channel_sha256": "8666713118fd12cc0a1583aa2475da8e53aa2503f6a6be40aeb53b7c3d1b5d85",
+        "clock": 25664,
+        "collision_coordinates": 10,
+        "incident_rows": 9,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 2,
+        "prime_rows": 60,
+        "resonance_channels": 5,
+        "unique_edges": 5
+      },
+      {
+        "L": 32,
+        "Q": 401,
+        "atoms": 2856,
+        "channel_sha256": "5652d6845fdfea3463534207931b99be5fc6aca89a7d6e1a3f7781c9caaed492",
+        "clock": 51328,
+        "collision_coordinates": 18,
+        "incident_rows": 16,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 2,
+        "prime_rows": 60,
+        "resonance_channels": 9,
+        "unique_edges": 9
+      },
+      {
+        "L": 64,
+        "Q": 401,
+        "atoms": 5712,
+        "channel_sha256": "131904b531b6323b4b6698d74364b6ba39e3412e74909ec9bff4bbe738bfa617",
+        "clock": 102656,
+        "collision_coordinates": 78,
+        "incident_rows": 38,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 6,
+        "prime_rows": 60,
+        "resonance_channels": 39,
+        "unique_edges": 39
+      },
+      {
+        "L": 32,
+        "Q": 809,
+        "atoms": 5504,
+        "channel_sha256": "fd4127eebffcda35bb499ec36d90b8da726fdc288632fe4df43a2cb68ed70dc4",
+        "clock": 103552,
+        "collision_coordinates": 70,
+        "incident_rows": 44,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 4,
+        "prime_rows": 115,
+        "resonance_channels": 35,
+        "unique_edges": 35
+      },
+      {
+        "L": 64,
+        "Q": 809,
+        "atoms": 11016,
+        "channel_sha256": "e9f7e11fed22ada403b424d63f52aab78abc21b1ba543a18ec0fdecdb64db017",
+        "clock": 207104,
+        "collision_coordinates": 138,
+        "incident_rows": 68,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 5,
+        "prime_rows": 115,
+        "resonance_channels": 69,
+        "unique_edges": 69
+      },
+      {
+        "L": 128,
+        "Q": 809,
+        "atoms": 22024,
+        "channel_sha256": "6d832bc9e9e15c5e9f1f594dc69bf6587fbddfb48744ebd2145acf650b215550",
+        "clock": 414208,
+        "collision_coordinates": 300,
+        "incident_rows": 84,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 13,
+        "prime_rows": 115,
+        "resonance_channels": 150,
+        "unique_edges": 150
+      },
+      {
+        "L": 64,
+        "Q": 1601,
+        "atoms": 19066,
+        "channel_sha256": "fb3ce75a3bdf5488d95acd6678a624641328bac305632e8658016f0aaae25a87",
+        "clock": 409856,
+        "collision_coordinates": 218,
+        "incident_rows": 113,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 7,
+        "prime_rows": 200,
+        "resonance_channels": 109,
+        "unique_edges": 109
+      },
+      {
+        "L": 128,
+        "Q": 1601,
+        "atoms": 38098,
+        "channel_sha256": "4c521b0c73680275f5280070961eabb135977a0fa9eab4284106c9a1b5cd2c5e",
+        "clock": 819712,
+        "collision_coordinates": 402,
+        "incident_rows": 137,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 8,
+        "prime_rows": 200,
+        "resonance_channels": 201,
+        "unique_edges": 201
+      },
+      {
+        "L": 256,
+        "Q": 1601,
+        "atoms": 76216,
+        "channel_sha256": "236225f7db11424a0ccbc3f042b1593c606fd3bcc2e8534d79abb8a75089e840",
+        "clock": 1639424,
+        "collision_coordinates": 744,
+        "incident_rows": 159,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 15,
+        "prime_rows": 200,
+        "resonance_channels": 372,
+        "unique_edges": 372
+      },
+      {
+        "L": 128,
+        "Q": 3203,
+        "atoms": 72988,
+        "channel_sha256": "2b9213e2d71e5bb8f14962479ebce53b930798805a1cfe8145de867bebe5f60d",
+        "clock": 1639936,
+        "collision_coordinates": 730,
+        "incident_rows": 269,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 10,
+        "prime_rows": 381,
+        "resonance_channels": 365,
+        "unique_edges": 365
+      },
+      {
+        "L": 256,
+        "Q": 3203,
+        "atoms": 145986,
+        "channel_sha256": "37af8c5e09c2dd1fefa68fc560c1cae8953b29621b77256bcff5e898926179be",
+        "clock": 3279872,
+        "collision_coordinates": 1554,
+        "incident_rows": 309,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 15,
+        "prime_rows": 381,
+        "resonance_channels": 777,
+        "unique_edges": 777
+      },
+      {
+        "L": 512,
+        "Q": 3203,
+        "atoms": 291934,
+        "channel_sha256": "61a9619080375748beaf637f7ac987d5f4b75f58c89f5f49b21d4c93337b9cbb",
+        "clock": 6559744,
+        "collision_coordinates": 3246,
+        "incident_rows": 338,
+        "max_bucket_multiplicity": 2,
+        "max_degree": 28,
+        "prime_rows": 381,
+        "resonance_channels": 1623,
+        "unique_edges": 1623
+      }
+    ],
+    "scan_sha256": "fd4023281dc31c15c23d15ad66e49629565a9918ea36962a7705492bcff8dd5c"
+  },
+  "firewall": {
+    "L2": "NONE",
+    "actual_v59_clock_attachment": "OPEN",
+    "arithmetic_advance": "NO",
+    "arithmetic_cancellation": "NONE",
+    "critical_depth_sufficiency": "OPEN",
+    "dilated_clock": "MODELING_CHOICE",
+    "fixed_atom_credit": 0,
+    "full_gate_b": "OPEN",
+    "growing_depth_arithmetic_obstruction": "PROVED_SOURCE_BACKED"
+  },
+  "schema": "tpc232-subcritical-growing-resonance-depth-v1",
+  "status": "PASS",
+  "theorem": {
+    "clock_capacity": "the surrogate clock is exact for L<Q/4; V59 attachment is OPEN",
+    "incidence_bound": "C_L(Q) <<_A L Q loglog(3LQ)/(log Q)^2",
+    "normalized_bound": "C_L(Q)/P(Q) <<_A L loglog(3LQ)/log Q",
+    "subcritical_stop": "L=o(log Q/loglog Q) implies C_L(Q)/P(Q)->0",
+    "uniform_range": "1 <= L <= (log Q)^A for fixed A"
+  }
+}

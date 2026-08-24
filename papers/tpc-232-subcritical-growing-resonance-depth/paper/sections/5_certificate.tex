@@ -1,0 +1,24 @@
+\section{Finite reproduction and adversarial checks}
+
+The certificate evaluates 19 pairs \((Q,L)\), from the anchor
+\((25,4)\) through \((3203,512)\).  One implementation constructs every
+primitive row support and intersects residue buckets.  A separate
+implementation starts from (1), solves for the second coefficient, and never
+uses modular support intersections.  The implementations agree on every
+channel count and unique edge count in normal and optimized Python modes.
+
+At \((25,4)\), both recover the single \(3\)--\(7\) channel and its two
+coordinates.  At \((3203,512)\), the scan contains 381 prime rows, 291934
+primitive atoms, 1623 channel occurrences, 338 incident rows, and maximum
+simple-graph degree 28.  These larger finite densities illustrate why a
+growing-depth theorem is distinct from a fixed-family theorem; they do not
+establish a limiting density.
+
+The adversarial suite rejects Boolean values as integers, unsafe depths,
+and the nonprimitive multiplier \(m=4\).  It verifies the exact identity
+behind (9) for \(1\le L\le79\).  The complete scan digest is
+\begin{center}
+\texttt{fd4023281dc31c15c23d15ad66e49629565a9918ea36962a7705492bcff8dd5c}.
+\end{center}
+All finite records are reproducibility checks.  The asymptotic conclusion
+comes only from the sieve proof.

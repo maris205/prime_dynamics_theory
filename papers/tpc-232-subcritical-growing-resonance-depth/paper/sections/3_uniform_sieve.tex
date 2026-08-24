@@ -1,0 +1,55 @@
+\section{A coefficient-uniform upper-bound sieve}
+
+Fix a coefficient pair \(a,b\).  If (1) is soluble, \((a,b)=1\) and all
+integer solutions have the form
+\[
+ q_1=p_0+ak,\qquad q_2=r_0-bk. \tag{3}
+\]
+The two shell conditions restrict \(k\) to an interval \(I_{a,b}\) of length
+\[
+ K_{a,b}\ll Q/\max(a,b)+1. \tag{4}
+\]
+The determinant of the forms in (3) is
+\[
+ ar_0+bp_0=4LQ. \tag{5}
+\]
+
+Let \(\nu(\ell)\) count the roots of their product modulo a prime \(\ell\).
+There are two roots when \(\ell\nmid ab(4LQ)\).  At an exceptional prime the
+two roots coalesce, or one form becomes a nonzero constant, so there is at
+most one root.  The resulting correction is bounded by
+\[
+ \prod_{\substack{\ell\mid ab(4LQ)\\\ell\ge3}}
+ \frac{\ell-1}{\ell-2}
+ \ll \log\log(3LQ). \tag{6}
+\]
+The final estimate follows by comparing with the product over the smallest
+primes and using \(ab(4LQ)\ll L^3Q\).
+
+For squarefree \(d\), the Chinese remainder theorem gives the explicit
+remainder formula
+\[
+ \#\{k\in I_{a,b}:d\mid(p_0+ak)(r_0-bk)\}
+ =K_{a,b}\frac{\nu(d)}d+O(\nu(d)). \tag{7}
+\]
+This formula controls the uniformity in \(a,b\).  Apply Selberg weights with
+\(z=K_{a,b}^{1/10}\).  The main term is (4) times (6), divided by
+\(\log^2z\).  The double-divisor remainder has moduli below \(z^2\); using
+\(\nu(d)\le2^{\omega(d)}\), it is
+\(O(z^2(\log z)^C)\) for an absolute \(C\).
+
+There is one short-interval boundary.  If \(K_{a,b}<Q^{1/2}\), trivial
+counting gives \(O(Q^{1/2})\).  Otherwise \(\log z\asymp\log Q\), and the
+sieve remainder is also \(O_A(Q^{1/2})\).  Thus, for
+\(L\le(\log Q)^A\), the two branches give
+\[
+\begin{split}
+ C_{a,b}(Q)\ll_A&
+ \left(\frac{Q}{\max(a,b)}+1\right)
+ \frac{\log\log(3LQ)}{(\log Q)^2}\\
+ &+O_A\!\left(Q^{1/2}\right).
+\end{split}
+\tag{8}
+\]
+Thus (8) is a genuinely uniform growing-coefficient estimate, not a formal
+sum of fixed-form asymptotics.

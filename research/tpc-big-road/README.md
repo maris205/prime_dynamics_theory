@@ -1,13 +1,51 @@
-# TPC big road V84 / TPC-231: finite-resonance sieve obstruction
+# TPC big road V85 / TPC-232: subcritical growing-resonance-depth obstruction
 
 更新时间：2026-08-24
 
-状态：`TPC231_PROVED_ARITHMETIC_OBSTRUCTION_L1 / FIXED_FINITE_RESONANCE_STOP_SCOPED / FULL_GATE_B_OPEN`
+状态：`TPC232_PROVED_ARITHMETIC_OBSTRUCTION_L1 / SUBCRITICAL_GROWING_DEPTH_STOP_SCOPED / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-231 proof 为
+当前 TPC-232 proof 为
+`bridge_b_subcritical_growing_resonance_depth.md`，checker 为
+`tpc_bridge_b_subcritical_growing_resonance_depth_checker.py`，编号论文为
+`../../papers/tpc-232-subcritical-growing-resonance-depth/`。
+
+For the modeled clock `h=4LQ`, every collision has exact one-wrap form
+`ar+bp=4LQ`.  A coefficient-uniform upper-bound sieve gives
+
+```text
+C_L(Q) <<_A LQ loglog(3LQ)/(log Q)^2,
+C_L(Q)/P(Q) <<_A L loglog(3LQ)/log Q.
+```
+
+Consequently every `L=o(log Q/loglog Q)` remains too sparse to support a fixed
+saving under fixed row-mass comparability.  This is a necessary-depth theorem;
+critical-depth sufficiency and attachment to the actual V59 source remain open.
+
+```text
+TPC232_GROWING_COLLISION_NORMAL_FORM = PROVED_EXACT
+TPC232_UNIFORM_POLYLOG_DEPTH_SIEVE = PROVED_SOURCE_BACKED
+TPC232_COLLISION_INCIDENCE_BOUND = PROVED_ASYMPTOTIC
+TPC232_SUBCRITICAL_DEPTH_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC232_SUBCRITICAL_FIXED_SAVING = STOP_SCOPED
+TPC232_CRITICAL_DEPTH_SUFFICIENCY = OPEN
+TPC232_DILATED_CLOCK = MODELING_CHOICE
+TPC232_ACTUAL_V59_CLOCK_ATTACHMENT = OPEN
+TPC232_ARITHMETIC_ADVANCE = NO
+TPC232_ARITHMETIC_OBSTRUCTION = PROVED_SOURCE_BACKED
+TPC232_FIXED_ATOM_CREDIT = 0
+TPC232_L2 = NONE
+TPC232_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC232_ROUND2_CLUE = TEST_CRITICAL_DEPTH_CLOCK_MASS_AND_DEGREE_BEFORE_V59_ATTACHMENT
+```
+
+strongest positive result：uniform growing-channel sieve bound；strongest obstruction：
+all subcritical depths remain density zero；open theorem：critical-depth mass/degree or
+actual V59 attachment；reusable structure：one-wrap coefficient-channel compiler。
+
+TPC-231 上游 proof 为
 `bridge_b_finite_resonance_sieve_obstruction.md`，checker 为
 `tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py`，编号论文为
 `../../papers/tpc-231-finite-resonance-sieve-obstruction/`。
