@@ -1,11 +1,54 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-22
-状态：`BOLD_CHANNEL_V78 / CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION`
-claim level：`PROVED_STRUCTURAL_L1_CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION`
-编号事实终点：TPC-225；TPC-225 trigger：`true`
+更新时间：2026-08-24
+状态：`BOLD_CHANNEL_V79 / FIRST_PRIMITIVE_COLLISION_TRANSITION`
+claim level：`PROVED_STRUCTURAL_L1_FIRST_PRIMITIVE_COLLISION_TRANSITION`
+编号事实终点：TPC-226；TPC-226 trigger：`true`
 
-当前 TPC-225 入口：proof 为
+当前 TPC-226 入口：proof 为
+`research/tpc-big-road/bridge_b_first_primitive_collision_transition.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transition_checker.py`，编号论文为
+`papers/tpc-226-first-primitive-collision-transition/`。在 finite modeling family
+`x=Q^3,H=4Q^2,h_L=4LQ` 上保留 primitive multipliers 后，本篇证明
+
+```text
+L=1,2,3: distinct prime rows are pairwise disjoint
+L=4: every collision is 7p+3r=16Q with multipliers +/-3 and -/+7.
+```
+
+`Q=25`, `(p,r)=(37,47)` 给出 residues `{119,281} mod 400`。aligned 与 inherited
+affine profiles 在每个 resonance 上放大 AP energy；balanced odd-sign profiles 则
+严格降低 AP energy，并 exact 给出 `E_pol=E_all=0`。505 个尺度的完整分类与 30 个
+exact-rational profile records 通过 producer、independent normal/optimized checker 和
+primitive-source adversary。dilated clock 是 `MODELING_CHOICE`，V46 transfer 与
+arithmetic sign theorem 尚未建立。
+
+TPC-226 claim firewall：
+
+```text
+TPC226_ROUTE_ADVANCE = YES
+TPC226_DILATED_CLOCK_FAMILY = MODELING_CHOICE
+TPC226_PRIMITIVE_SOURCE_ROW = PROVED_EXACT
+TPC226_L_LE_3_DISJOINTNESS = PROVED_EXACT
+TPC226_FIRST_PRIMITIVE_COLLISION_DILATION = 4
+TPC226_L4_RESONANCE_CLASSIFICATION = PROVED_EXACT
+TPC226_Q25_RESONANCE = PROVED_EXACT
+TPC226_ALIGNED_AP_SAVING = REFUTED_SCOPED
+TPC226_AFFINE_AP_SAVING = REFUTED_SCOPED
+TPC226_BALANCED_SIGN_AP_SAVING = PROVED_EXACT_FINITE_PROFILE
+TPC226_BALANCED_SIGN_POLARIZED_CANCELLATION = PROVED_EXACT_FINITE_PROFILE
+TPC226_UNIFORM_PROFILE_INDEPENDENT_SAVING = REFUTED_SCOPED
+TPC226_V46_PROFILE_TRANSFER = OPEN
+TPC226_ARITHMETIC_ADVANCE = NO
+TPC226_FIXED_ATOM_CREDIT = 0
+TPC226_L2 = NONE
+TPC226_FULL_GATE_B = OPEN
+TPC226_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC226_STATUS = PROVED_STRUCTURAL_L1
+TPC226_ROUND2_CLUE = SOURCE_LOCK_THE_SIGN_OF_THE_3_7_RESONANCE_BEFORE_ANY_UNIFORM_AP_SAVING
+```
+
+TPC-225 上游入口：proof 为
 `research/tpc-big-road/bridge_b_cutoff_one_shared_clock_obstruction.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py`，编号论文为
 `papers/tpc-225-cutoff-one-shared-clock-obstruction/`。在 TPC-224 的

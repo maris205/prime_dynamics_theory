@@ -1,0 +1,63 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=0.88in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Qshell}{\mathcal Q_Q}
+\newcommand{\Mset}{\mathcal M}
+\newcommand{\Rset}{\mathcal R_Q}
+\newcommand{\Ediag}{E_{\mathrm{diag}}}
+\newcommand{\EAP}{E_{\mathrm{AP}}}
+\newcommand{\Epol}{E_{\mathrm{pol}}}
+\newcommand{\Eall}{E_{\mathrm{all}}}
+\newcommand{\1}{\mathbf 1}
+
+\title{First Primitive-Collision Transition in Dilated Shared Clocks}
+\author{Liang Wang\\
+Huazhong University of Science and Technology}
+\date{August 24, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+\input{sections/1_introduction}
+\input{sections/2_setup}
+\input{sections/3_collision_transition}
+\input{sections/4_signed_energy}
+\input{sections/5_certification}
+\input{sections/6_conclusion}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\appendix
+\input{sections/A_case_table}
+
+\end{document}

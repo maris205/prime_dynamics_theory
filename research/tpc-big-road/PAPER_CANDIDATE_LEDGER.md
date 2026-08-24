@@ -1,12 +1,81 @@
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-22
+更新时间：2026-08-24
 
-状态：**TPC225_PROVED_STRUCTURAL_L1_RELEASED / CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION / ARITHMETIC_INPUTS_OPEN**
+状态：**TPC226_PROVED_STRUCTURAL_L1_RELEASED / FIRST_PRIMITIVE_COLLISION_TRANSITION / ARITHMETIC_INPUTS_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.20 已发布：TPC-226 first primitive-collision transition
+
+项目：`papers/tpc-226-first-primitive-collision-transition/`
+
+类型：**PROVED_STRUCTURAL_L1 / FIRST_PRIMITIVE_COLLISION_TRANSITION**。
+
+TPC-226 沿 TPC-225 的最小下一步，把 finite clock dilation 到
+
+```text
+x=Q^3, H=4Q^2, h_L=4LQ, L in {1,2,3,4}, Q>=8,
+```
+
+并严格保留 literal primitive condition `gcd(m,h_L)=1`。collision congruence 与
+cutoff/parity sieve 证明：`L=1,2,3` 的 distinct prime rows 仍 pairwise disjoint；
+`L=4` 首次出现 legitimate overlap，且所有 collision 都是（差 exchange 与 global sign）
+
+```text
+7p+3r=16Q, m_p=3, m_r=-7.
+```
+
+`Q=25`, `(p,r)=(37,47)` 是第一个 exact census witness，共享 residues 为
+`119,281 mod 400`。同一 resonance geometry 的 signed correction 对 aligned 与 inherited
+affine profiles 为正，对 balanced odd-sign profiles 为负；后者还 exact 给出
+`E_pol=E_all=0`。所以 legitimate overlap 是 cancellation interface，而非 cancellation
+theorem。
+
+```text
+TPC226_ROUTE_ADVANCE = YES
+TPC226_DILATED_CLOCK_FAMILY = MODELING_CHOICE
+TPC226_PRIMITIVE_SOURCE_ROW = PROVED_EXACT
+TPC226_L_LE_3_DISJOINTNESS = PROVED_EXACT
+TPC226_FIRST_PRIMITIVE_COLLISION_DILATION = 4
+TPC226_L4_RESONANCE_CLASSIFICATION = PROVED_EXACT
+TPC226_Q25_RESONANCE = PROVED_EXACT
+TPC226_ALIGNED_AP_SAVING = REFUTED_SCOPED
+TPC226_AFFINE_AP_SAVING = REFUTED_SCOPED
+TPC226_BALANCED_SIGN_AP_SAVING = PROVED_EXACT_FINITE_PROFILE
+TPC226_BALANCED_SIGN_POLARIZED_CANCELLATION = PROVED_EXACT_FINITE_PROFILE
+TPC226_UNIFORM_PROFILE_INDEPENDENT_SAVING = REFUTED_SCOPED
+TPC226_V46_PROFILE_TRANSFER = OPEN
+TPC226_ARITHMETIC_CANCELLATION = NONE
+TPC226_ARITHMETIC_ADVANCE = NO
+TPC226_FIXED_ATOM_CREDIT = 0
+TPC226_L2 = NONE
+TPC226_FULL_GATE_B = OPEN
+TPC226_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC226_STATUS = PROVED_STRUCTURAL_L1
+TPC226_ROUND2_CLUE = SOURCE_LOCK_THE_SIGN_OF_THE_3_7_RESONANCE_BEFORE_ANY_UNIFORM_AP_SAVING
+```
+
+strongest positive result：first legitimate primitive overlap 与完整 `3--7` resonance
+classification 已 theorem-level closed，balanced signed profile 在非空 resonance graph 上
+严格节省 AP energy；strongest obstruction：相同 geometry 对 aligned/affine profiles
+严格放大，uniform profile-independent saving 被 scoped-refute；open theorem：source-lock
+真实 V46 profiles 并证明 `3--7` signed correlation 的 arithmetic saving；reusable
+structure：primitive multiplier sieve、collision graph 与 exact signed cross-term formula；
+`ROUND2_CLUE`：
+
+```text
+SOURCE_LOCK_THE_SIGN_OF_THE_3_7_RESONANCE_BEFORE_ANY_UNIFORM_AP_SAVING
+```
+
+证据包包括 `Q=8..512` 的 505-scale complete classification、182 个 L4
+collision-bearing scales、235 个 resonances、30 个 exact-rational profile records、
+normal/optimized byte-identical independent checker、primitive-source adversary 与 5 页
+嵌入字体 PDF。Bridge proof/checker 为
+`research/tpc-big-road/bridge_b_first_primitive_collision_transition.md` 与
+`research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transition_checker.py`。
 
 ## 0.19 已发布：TPC-225 cutoff-one shared-clock obstruction
 

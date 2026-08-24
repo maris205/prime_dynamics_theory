@@ -1,0 +1,42 @@
+\section{Literal primitive rows and claim boundary}
+
+Fix an integer $Q\ge8$ and let $\Qshell$ be the primes in $(Q,2Q)$.  For
+$L\in\{1,2,3,4\}$ define
+\[
+ x=Q^3,\qquad H=4Q^2,\qquad h_L=4LQ,
+\]
+and
+\[
+ \Mset_L(q)=\left\{m\in\mathbb Z:
+ 0<|m|\le \left\lfloor\frac{Lq}{Q}\right\rfloor,
+ (m,h_L)=1\right\}.
+\]
+Every $q\in\Qshell$ is a unit modulo $h_L$.  The literal row is
+\begin{equation}
+ W_{q,j}^{(L)}(a)=\frac1{h_L}
+ \sum_{m\in\Mset_L(q)}
+ \psi_j\!\left(\frac{mQ}{Lq}\right)
+ \1_{m q^{-1}\equiv a\pmod{h_L}}.
+ \label{eq:literal-row}
+\end{equation}
+The primitive restriction in $\Mset_L(q)$ is inherited from the exact prime-AP
+crosswalk \cite{tpc220}; it is not an optional simplification.
+
+All four energies use the same rows:
+\begin{align}
+ \Ediag&=\sum_{q,j}\|W_{q,j}^{(L)}\|_2^2,\nonumber\\
+ \EAP&=\sum_j\left\|\sum_qW_{q,j}^{(L)}\right\|_2^2,
+ &
+ \Epol&=\sum_q\left\|\sum_jW_{q,j}^{(L)}\right\|_2^2,\nonumber\\
+ \Eall&=\left\|\sum_{q,j}W_{q,j}^{(L)}\right\|_2^2.
+ \label{eq:energies}
+\end{align}
+The preceding compatibility theorem controls $\Eall$ through the two marginals
+$\EAP$ and $\Epol$ \cite{tpc224}.  Here we determine the first clock at which the AP
+marginal contains any off-diagonal prime term.
+
+The dilation parameter $L$ is a finite modeling choice.  Equation
+\eqref{eq:literal-row} preserves the source row, but no theorem identifies $h_L$ with
+the physical V46 clock.  Consequently all conclusions below are structural level-one
+statements.  No arithmetic $L^2$ estimate, fixed-atom credit, or twin-prime conclusion
+is asserted.

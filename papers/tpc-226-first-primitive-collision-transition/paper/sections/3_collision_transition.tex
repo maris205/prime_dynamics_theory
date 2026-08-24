@@ -1,0 +1,81 @@
+\section{The first primitive-collision transition}
+
+Write
+\[
+ S_{q,L}=\{m q^{-1}\bmod h_L:m\in\Mset_L(q)\}.
+\]
+Since $L\le4$, the cutoff lies between $L$ and $2L-1$, so every allowed multiplier
+has magnitude at most seven.  The stable assumption $Q\ge8$ therefore gives
+$|m|<q$ for every active prime.
+
+\begin{theorem}[Primitive transition]
+\label{thm:transition}
+For distinct primes $q_1,q_2\in\Qshell$, the supports $S_{q_1,L}$ and
+$S_{q_2,L}$ are disjoint for $L=1,2,3$.  For $L=4$, every collision is, up to
+exchanging the primes and changing both signs,
+\begin{equation}
+ 7p+3r=16Q,\qquad m_p=3,\qquad m_r=-7.
+ \label{eq:resonance}
+\end{equation}
+Conversely, a prime pair satisfying \eqref{eq:resonance}, the literal cutoff
+conditions, and $(21,16Q)=1$ produces exactly two shared coordinates.
+\end{theorem}
+
+\begin{proof}
+A shared coordinate is equivalent to
+\[
+ m_1q_2-m_2q_1\equiv0\pmod{4LQ}.
+\]
+Equal signs give a difference of magnitude less than $(4L-3)Q<4LQ$.  Zero
+difference would force one active prime to divide a nonzero multiplier of magnitude at
+most seven.  Thus the signs are opposite, and a collision reduces to
+\begin{equation}
+ a q_2+b q_1=4LQ,
+ \qquad a,b>0.
+ \label{eq:positive-collision}
+\end{equation}
+Primitivity makes $a$ and $b$ odd, while the prime-shell inequalities imply
+$2L<a+b<4L$.
+
+For $L=1$ no pair remains.  At $L=2$, only $(3,3)$ remains, but both cutoff
+conditions force $q_i\ge3Q/2$, making the left side of
+\eqref{eq:positive-collision} at least $9Q>8Q$.  At $L=3$, multiplier $3$ is
+nonprimitive modulo $12Q$; the only remaining pair is $(5,5)$, whose cutoffs force
+at least $50Q/3>12Q$.
+
+At $L=4$, the possible positive primitive multipliers are $1,3,5,7$.  The size and
+cutoff constraints reduce the table to $(3,7)$, $(5,5)$, $(5,7)$, and $(7,7)$.
+The last two exceed $16Q$ after their own cutoff bounds are imposed.  The pair
+$(5,5)$ would imply $5(q_1+q_2)=16Q$, but using multiplier five primitively requires
+$5\nmid Q$.  Only $(3,7)$ and its exchange survive.  The two global sign choices give
+the two coordinates, which cannot coincide because $16Q\nmid6$.
+\end{proof}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{ccl}
+\toprule
+$L$ & primitive collision? & first obstruction or surviving type \\
+\midrule
+1 & no & cutoff-one block orthogonality \\
+2 & no & $(3,3)$ violates its cutoff lower bound \\
+3 & no & $m=4$ is nonprimitive; $(5,5)$ is too large \\
+4 & yes & only $7p+3r=16Q$ with $(3,-7)$ \\
+\bottomrule
+\end{tabular}
+\caption{The first nontrivial cutoff is not the first primitive collision.  The
+integer-dilation transition occurs at $L=4$.}
+\label{tab:transition}
+\end{table}
+
+At $Q=25$, the active pair $(p,r)=(37,47)$ satisfies
+$7\cdot37+3\cdot47=400$.  The inverses are $37^{-1}=173$ and
+$47^{-1}=383$ modulo $400$, so the shared coordinates are
+\[
+ 3\cdot173\equiv-7\cdot383\equiv119,
+ \qquad
+ -3\cdot173\equiv7\cdot383\equiv281\pmod{400}.
+\]
+This is the first stable collision found by the exact boundary census, and the theorem
+shows that its type is the only possible one.

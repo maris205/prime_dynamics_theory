@@ -1,10 +1,90 @@
 # TPC HANDOFF
 
-更新时间：2026-08-22
-交接状态：`BOLD_CHANNEL_V78_TPC225_SEALED_FOR_NEW_SESSION`
+更新时间：2026-08-24
+交接状态：`BOLD_CHANNEL_V79_TPC226_SEALED_FOR_NEW_SESSION`
 
-TPC-225 当前 section：cutoff-one shared-clock obstruction
------------------------------------------------------------------
+TPC-226 当前 section：first primitive-collision transition
+-------------------------------------------------------------
+
+TPC-226 是 TPC-225 cutoff-one obstruction 的最小 nontrivial-cutoff follow-up。它在
+有限 modeling family
+
+```text
+x=Q^3, H=4Q^2, h_L=4LQ, L in {1,2,3,4}, Q<q<2Q prime
+```
+
+中保留 TPC-220 literal primitive multiplier condition `gcd(m,h_L)=1`。exact
+collision classification 证明：`L=1,2,3` 的 distinct prime rows 仍 pairwise
+disjoint；`L=4` 首次出现 legitimate collision，且所有 collision 都是（差 exchange
+与 simultaneous sign change）
+
+```text
+7p+3r=16Q, m_p=3, m_r=-7.
+```
+
+`Q=25`, `(p,r)=(37,47)` 是 first exact census witness，共享 residues 是
+`119,281 mod 400`。同一 resonance geometry 对 aligned 与 inherited affine profiles
+给 positive AP correction，对 balanced odd-sign profiles 给 negative correction，并且
+后者 exact 给出 `E_pol=E_all=0`。因此 legitimate overlap 只建立 cancellation
+interface；geometry 本身不决定 arithmetic sign。
+
+TPC-226 claim firewall：
+
+```text
+TPC226_ROUTE_ADVANCE = YES
+TPC226_DILATED_CLOCK_FAMILY = MODELING_CHOICE
+TPC226_PRIMITIVE_SOURCE_ROW = PROVED_EXACT
+TPC226_L_LE_3_DISJOINTNESS = PROVED_EXACT
+TPC226_FIRST_PRIMITIVE_COLLISION_DILATION = 4
+TPC226_L4_RESONANCE_CLASSIFICATION = PROVED_EXACT
+TPC226_Q25_RESONANCE = PROVED_EXACT
+TPC226_ALIGNED_AP_SAVING = REFUTED_SCOPED
+TPC226_AFFINE_AP_SAVING = REFUTED_SCOPED
+TPC226_BALANCED_SIGN_AP_SAVING = PROVED_EXACT_FINITE_PROFILE
+TPC226_BALANCED_SIGN_POLARIZED_CANCELLATION = PROVED_EXACT_FINITE_PROFILE
+TPC226_UNIFORM_PROFILE_INDEPENDENT_SAVING = REFUTED_SCOPED
+TPC226_V46_PROFILE_TRANSFER = OPEN
+TPC226_ARITHMETIC_CANCELLATION = NONE
+TPC226_ARITHMETIC_ADVANCE = NO
+TPC226_FIXED_ATOM_CREDIT = 0
+TPC226_L2 = NONE
+TPC226_FULL_GATE_B = OPEN
+TPC226_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC226_TPC_TRIGGER = true
+TPC226_NUMBERED_RELEASE = YES
+TPC226_STATUS = PROVED_STRUCTURAL_L1
+TPC226_ROUND2_CLUE = SOURCE_LOCK_THE_SIGN_OF_THE_3_7_RESONANCE_BEFORE_ANY_UNIFORM_AP_SAVING
+```
+
+TPC-226 strongest positive result 是 first legitimate primitive overlap 与全部 `3--7`
+resonance type 已 theorem-level classified，且 balanced signed profile 在任何非空
+resonance graph 上给 strict finite AP saving；strongest obstruction 是相同 exact graph
+对 aligned/affine profiles 严格放大，故 uniform profile-independent saving 被
+scoped-refute；open theorem 是把 actual V46 packet source 接入并证明 `3--7` signed
+correlation 的 arithmetic saving；reusable structure 是 primitive multiplier sieve、
+collision equation、resonance graph 与 signed cross-term formula。
+
+证据包覆盖完整 `Q=8..512` 的 505-scale classification、182 个 L4
+collision-bearing scales、235 个 resonances 与 30 个 exact-rational profile records；
+producer、independent normal/optimized checker、primitive adversary 与 5 页嵌入字体
+PDF 均通过。
+
+编号论文目录：papers/tpc-226-first-primitive-collision-transition/
+
+```text
+papers/tpc-226-first-primitive-collision-transition/README.md
+papers/tpc-226-first-primitive-collision-transition/PAPER_PLAN.md
+papers/tpc-226-first-primitive-collision-transition/PROOF_PACKAGE.md
+papers/tpc-226-first-primitive-collision-transition/paper/paper.pdf
+papers/tpc-226-first-primitive-collision-transition/results/certificate.json
+papers/tpc-226-first-primitive-collision-transition/notes/theorem_ledger.md
+papers/tpc-226-first-primitive-collision-transition/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_first_primitive_collision_transition.md
+research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transition_checker.py
+```
+
+TPC-225 上游 section：cutoff-one shared-clock obstruction
+----------------------------------------------------------
 
 TPC-225 是 TPC-224 shared-clock question 的最小 obstruction follow-up。它冻结
 TPC-224 使用的 source-surrogate clock
@@ -5125,6 +5205,11 @@ TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
 `research/tpc-big-road/TPC_ROUTE_MAP.md`、
+`papers/tpc-226-first-primitive-collision-transition/README.md`、
+`papers/tpc-226-first-primitive-collision-transition/notes/theorem_ledger.md`、
+`papers/tpc-226-first-primitive-collision-transition/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_first_primitive_collision_transition.md`、
+`research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transition_checker.py`、
 `papers/tpc-217-finite-window-rational-large-sieve/README.md`、
 `papers/tpc-217-finite-window-rational-large-sieve/notes/theorem_ledger.md`、
 `papers/tpc-217-finite-window-rational-large-sieve/notes/route_evaluation.md`、
@@ -5394,11 +5479,23 @@ python -B research/tpc-big-road/tpc_bridge_b_literal_two_channel_compatibility_a
 python -O -B research/tpc-big-road/tpc_bridge_b_literal_two_channel_compatibility_audit_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transition_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transition_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-225 入口：
+最新 TPC-226 入口：
+
+```text
+papers/tpc-226-first-primitive-collision-transition/README.md
+papers/tpc-226-first-primitive-collision-transition/notes/theorem_ledger.md
+papers/tpc-226-first-primitive-collision-transition/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_first_primitive_collision_transition.md
+research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transition_checker.py
+```
+
+TPC-225 上游入口：
 
 ```text
 papers/tpc-225-cutoff-one-shared-clock-obstruction/README.md

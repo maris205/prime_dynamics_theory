@@ -1,0 +1,67 @@
+\section{Signed energy on the resonance graph}
+
+The transition theorem determines where cross terms occur.  Their sign still depends on
+the profiles.  For a resonance $(p,r)$ define
+\[
+ u_p=\frac{3Q}{4p},\qquad v_r=\frac{7Q}{4r}.
+\]
+The two shared coordinates contribute exactly
+\begin{equation}
+ \frac{2}{h^2}\Re\sum_j\left[
+ \psi_j(u_p)\overline{\psi_j(-v_r)}+
+ \psi_j(-u_p)\overline{\psi_j(v_r)}
+ \right]
+ \label{eq:signed-correction}
+\end{equation}
+to $\EAP-\Ediag$.  Summing \eqref{eq:signed-correction} over all prime resonance
+pairs gives the complete off-diagonal correction.
+
+\begin{proposition}[Profile sign trichotomy]
+\label{prop:trichotomy}
+Suppose the $L=4$ resonance set is nonempty.
+\begin{enumerate}[leftmargin=2em]
+  \item For aligned profiles $\psi_j(t)=1$, one has $\EAP>\Ediag$.
+  \item For the inherited affine profiles $\psi_j(t)=1+s_jt$, with
+  $s=(0,1,-1,2)/10$, one has $\EAP>\Ediag$.
+  \item Let $\chi$ be a smooth compactly supported odd function equal to
+  $\operatorname{sgn}(t)$ for $1/8\le|t|\le1$, and set
+  $\psi_j(t)=\alpha_j\chi(t)$ with $\alpha=(1,-1,1,-1)$.  Then
+  $\EAP<\Ediag$ and $\Epol=\Eall=0$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For aligned profiles, every resonance contributes $4J/h^2>0$.  For affine
+profiles, the contribution is
+\[
+ \frac4{h^2}\left(J-S_2u_pv_r\right),
+ \qquad S_2=\sum_js_j^2=\frac3{50},
+\]
+which is positive because $0<u_p,v_r\le1$.  Every sampled nonzero argument for the
+$L=4$ row lies in $1/8<|t|\le1$.  The balanced sign profile therefore assigns
+opposite values to the two colliding multipliers, and each resonance contributes
+$-4(\sum_j\alpha_j^2)/h^2<0$.  Finally $\sum_j\alpha_j=0$, so each prime-polarized
+row vanishes pointwise.
+\end{proof}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+profile on the full $Q=25$ shell & sign of $\EAP-\Ediag$ & $\EAP/\Ediag$ \\
+\midrule
+aligned & positive & $15/13$ \\
+inherited affine & positive & $>1$ \\
+balanced sign & negative & $11/13$ \\
+\bottomrule
+\end{tabular}
+\caption{One collision geometry supports amplification or cancellation.  For the
+affine row, the exact positive correction is $221017/2225920000$.  The certificate
+retains the full exact rational ratio.}
+\label{tab:profiles}
+\end{table}
+
+Proposition~\ref{prop:trichotomy} is the main route decision.  The collision graph is
+no longer empty, but a profile-independent saving is false on the same clock.  The
+next theorem must control the signed correlation attached to the literal packet source.

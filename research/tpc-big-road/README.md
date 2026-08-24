@@ -1,13 +1,72 @@
-# TPC big road V78 / TPC-225: cutoff-one shared-clock obstruction
+# TPC big road V79 / TPC-226: first primitive-collision transition
 
-更新时间：2026-08-22
+更新时间：2026-08-24
 
-状态：`TPC225_PROVED_STRUCTURAL_L1 / CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION / FULL_GATE_B_OPEN`
+状态：`TPC226_PROVED_STRUCTURAL_L1 / FIRST_PRIMITIVE_COLLISION_TRANSITION / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-225 proof 为
+当前 TPC-226 proof 为
+`bridge_b_first_primitive_collision_transition.md`，checker 为
+`tpc_bridge_b_first_primitive_collision_transition_checker.py`，编号论文为
+`../../papers/tpc-226-first-primitive-collision-transition/`。
+
+TPC-226 对 finite dilated clocks
+
+```text
+x=Q^3, H=4Q^2, h_L=4LQ, L in {1,2,3,4}
+```
+
+保留 TPC-220 literal primitive support。exact classification 证明 `L<=3` 无合法
+cross-prime collision；`L=4` 首次出现，且唯一 type 为
+
+```text
+7p+3r=16Q, multipliers (3,-7),
+```
+
+连同 exchange 与 simultaneous sign change。`Q=25`, `(37,47)` 给出 residues
+`{119,281} mod 400`。同一 resonance graph 对 aligned/affine profiles 放大 AP energy，
+对 balanced odd-sign profiles 则降低 AP energy 并给出 `E_pol=E_all=0`。因此 collision
+geometry 建立了 cancellation interface，却不能决定 arithmetic sign。
+
+TPC-226 claim firewall：
+
+```text
+TPC226_ROUTE_ADVANCE = YES
+TPC226_DILATED_CLOCK_FAMILY = MODELING_CHOICE
+TPC226_PRIMITIVE_SOURCE_ROW = PROVED_EXACT
+TPC226_L_LE_3_DISJOINTNESS = PROVED_EXACT
+TPC226_FIRST_PRIMITIVE_COLLISION_DILATION = 4
+TPC226_L4_RESONANCE_CLASSIFICATION = PROVED_EXACT
+TPC226_Q25_RESONANCE = PROVED_EXACT
+TPC226_ALIGNED_AP_SAVING = REFUTED_SCOPED
+TPC226_AFFINE_AP_SAVING = REFUTED_SCOPED
+TPC226_BALANCED_SIGN_AP_SAVING = PROVED_EXACT_FINITE_PROFILE
+TPC226_BALANCED_SIGN_POLARIZED_CANCELLATION = PROVED_EXACT_FINITE_PROFILE
+TPC226_UNIFORM_PROFILE_INDEPENDENT_SAVING = REFUTED_SCOPED
+TPC226_V46_PROFILE_TRANSFER = OPEN
+TPC226_ARITHMETIC_CANCELLATION = NONE
+TPC226_ARITHMETIC_ADVANCE = NO
+TPC226_FIXED_ATOM_CREDIT = 0
+TPC226_L2 = NONE
+TPC226_FULL_GATE_B = OPEN
+TPC226_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC226_STATUS = PROVED_STRUCTURAL_L1
+TPC226_ROUND2_CLUE = SOURCE_LOCK_THE_SIGN_OF_THE_3_7_RESONANCE_BEFORE_ANY_UNIFORM_AP_SAVING
+```
+
+strongest positive result：合法 primitive overlap 的第一 transition 与全部 resonance
+type 已 exact classified，balanced signed profile 在任意非空 resonance graph 上给 strict
+finite AP saving；strongest obstruction：aligned 与 inherited affine profiles 在同一
+geometry 上严格放大，故 profile-independent saving 被 scoped-refute；open theorem：
+把真实 V46 source profile 接入 nontrivial-cutoff clock，并控制 `3--7` resonance 的 signed
+correlation；reusable structure：primitive multiplier sieve、collision equation 与 signed
+cross-term formula；ROUND2_CLUE：
+
+`SOURCE_LOCK_THE_SIGN_OF_THE_3_7_RESONANCE_BEFORE_ANY_UNIFORM_AP_SAVING`
+
+TPC-225 上游 proof 为
 `bridge_b_cutoff_one_shared_clock_obstruction.md`，checker 为
 `tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py`，编号论文为
 `../../papers/tpc-225-cutoff-one-shared-clock-obstruction/`。

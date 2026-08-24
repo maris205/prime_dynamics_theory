@@ -1,0 +1,43 @@
+\section{Introduction}
+
+A prime-row collision is useful only when it belongs to the literal source support.
+This distinction becomes decisive immediately after the cutoff-one regime.  The
+preceding audit proved that the clock $H=4Q^2$, $h=4Q$ has pairwise disjoint prime
+supports, so its AP energy equals its diagonal energy exactly \cite{tpc225}.  A natural
+response is to enlarge the modulus and admit more multiplier layers.  The first apparent
+overlap, however, uses a nonprimitive multiplier and disappears once the TPC row is
+restored.
+
+The broader analytic motivation comes from the role of primes in arithmetic progressions
+and large-sieve estimates in sieve bounds related to twin primes
+\cite{lichtman2023primes}.  The present paper does not import such an estimate.  It asks
+a prior structural question: when does the exact finite row geometry first permit a
+cross-prime term, and what determines its sign?  The answer separates collision
+existence from cancellation.
+
+We study the integer-dilated family
+\[
+  H=4Q^2,\qquad h_L=4LQ,\qquad L=1,2,3,4,
+\]
+while retaining the primitive multiplier condition, the common normalization
+$C_h=1/h_L$, and the four-packet energy interface of TPC-220 and TPC-224
+\cite{tpc220,tpc224}.  The paper makes three falsifiable contributions.
+
+\begin{enumerate}[leftmargin=2em]
+  \item We prove pairwise disjointness for every $L\le3$ in the stable range
+  $Q\ge8$.  This rejects the tempting $L=3$, $m=4$ overlap as a nonprimitive
+  artifact.
+  \item We classify the first primitive transition.  At $L=4$, all collisions have
+  the form $7p+3r=16Q$ and use only the multiplier pair $(3,-7)$, together with its
+  global negative.
+  \item We prove that the first-transition Gram correction is sign-indefinite across
+  profile families.  Constant and inherited affine profiles amplify the AP energy,
+  whereas balanced sign profiles produce strict AP saving and complete packet
+  cancellation.
+\end{enumerate}
+
+The strongest finite witness occurs at $Q=25$.  The same full prime shell gives
+$\EAP/\Ediag=15/13$ for aligned profiles and $11/13$ for balanced sign profiles.
+Thus overlap is necessary for the correction, but overlap alone does not pay an AP
+saving.  The missing theorem must derive a negative sign from the physical packet
+source rather than select it as a finite profile.

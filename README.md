@@ -9,13 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-225 对 TPC-224 命名的 source-surrogate clock
-x=Q^3, H=4Q^2, h=4Q, Q<q<=2Q 作了 cutoff-one 精确审计。由于每个 literal
-prime row 只有 m=+1,-1 两个 residue coordinates，且不同 prime rows 的
-{q^(-1),-q^(-1)} 支持两两不交，得到 E_AP=E_diag 与 E_all=E_pol。
-因此该 named clock 上的严格 AP marginal saving 被 scoped-refute；这是
-PROVED_STRUCTURAL_L1，不是 arithmetic L2 或 twin-prime endpoint。下一步应
-转向 source-locked nontrivial-cutoff clock，不能把该 obstruction 外推到所有 V46 clocks。
+当前主线状态：TPC-226 在 TPC-225 cutoff-one obstruction 之后审计有限 dilation
+`h_L=4LQ`, `L=1,2,3,4`。保留 literal primitive support 后，`L<=3` 的 distinct
+prime rows 仍严格不相交；`L=4` 首次出现合法碰撞，且唯一 resonance type 是
+`7p+3r=16Q`、multipliers `(3,-7)`。同一 geometry 对 aligned/affine profiles 放大
+`E_AP`，对 balanced sign profile 则严格降低 `E_AP` 并给出 `E_pol=E_all=0`。
+因此 geometry 只建立 signed-cancellation interface，不能替代 arithmetic sign theorem。
+状态仍是 `PROVED_STRUCTURAL_L1`；V46 profile transfer、arithmetic L2 与 Gate B 均开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +29,8 @@ PROVED_STRUCTURAL_L1，不是 arithmetic L2 或 twin-prime endpoint。下一步�
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-226-first-primitive-collision-transition` - `PROVED_STRUCTURAL_L1 / FIRST_PRIMITIVE_COLLISION_TRANSITION` - 证明 primitive shared-clock rows 在 `L<=3` 两两不交、`L=4` 首次且仅出现 `7p+3r=16Q` 的 `(3,-7)` resonance；同一 collision 对 aligned/affine profiles 放大、对 balanced sign profile 抵消，505 个尺度分类与 30 个 exact-rational profile records 通过独立复现，V46 transfer 与 arithmetic L2 仍开放。
 
 `tpc-225-cutoff-one-shared-clock-obstruction` - `PROVED_STRUCTURAL_L1 / CUTOFF_ONE_SHARED_CLOCK_OBSTRUCTION` - 证明 TPC-224 named source clock 的 cutoff-one prime rows 具有 pairwise disjoint support，精确得到 E_AP=E_diag、E_all=E_pol，从而在该 clock 上 refute strict AP saving；完成 9 个 affine scales、14 个 adversarial profile records 与 Q=3..99 boundary replay，算术 L2、V46 transfer、Gate B 仍开放。
 

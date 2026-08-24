@@ -1,0 +1,25 @@
+\section{Exact certification and adversarial controls}
+
+The executable package uses rational arithmetic throughout.  The producer checks every
+$Q=8,\ldots,512$ and every $L=1,\ldots,4$.  Across these 505 scales, the first
+three dilations have no primitive collision.  The fourth dilation has 182
+collision-bearing scales and 235 resonance pairs; the first occurs at $Q=25$.
+These counts certify the finite census only.  They are not a density theorem for the
+linear prime relation $7p+3r=16Q$.
+
+Thirty additional records evaluate aligned, affine, and balanced sign profiles at ten
+collision-bearing scales through $Q=1000$.  Each record rebuilds the literal rows,
+their supports, all four energies, and the signed correction independently of any
+floating-point tolerance.  The independent checker does not import the producer and
+runs identically under normal and optimized Python modes.
+
+The adversarial test targets the most likely source error.  If primitivity is removed at
+$L=3$, $Q=8$, then the primes $11$ and $13$ appear to collide through multipliers
+$4$ and $-4$ at two coordinates.  Both multipliers have nontrivial gcd with $h=96$,
+so the literal primitive row contains neither point.  Restoring $(m,h)=1$ removes the
+entire false transition.  The same adversary then checks the valid $Q=25$ residues and
+the three energy signs from Table~\ref{tab:profiles}.
+
+The certificate and checker are trust boundaries, not theorem evidence.  The theorem is
+the integer classification in Section~3; the computation tests implementation,
+boundary, schema, and exact-energy consistency.
