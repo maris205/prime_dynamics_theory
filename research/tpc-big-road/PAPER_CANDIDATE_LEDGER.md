@@ -2,11 +2,68 @@
 
 更新时间：2026-08-24
 
-状态：**TPC235_PROVED_STRUCTURAL_L1_RELEASED / V59_PHYSICAL_DEPTH_CROSSWALK / WEIGHTED_H_FIBER_OPEN**
+状态：**TPC236_PROVED_STRUCTURAL_L1_RELEASED / PHYSICAL_MULTIWRAP_BESSEL_ENVELOPE / CROSS_H_REASSEMBLY_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.30 已发布：TPC-236 physical multi-wrap collision envelope
+
+项目：`papers/tpc-236-physical-multiwrap-collision-envelope/`
+
+类型：**PROVED_STRUCTURAL_L1 / SOURCE_VALID_PHYSICAL_FIBER_BESSEL_ENVELOPE**。
+
+For a physical residue `a mod h`, put `g=gcd(a,h)` and
+`M_h=floor(2hQ/H)`.  Exact gcd-fiber counting proves
+
+```text
+R_h(a) <= 2 floor(M_h/g) ceil(Qg/h)
+         <= 4Q^2/H+4hQ/(gH)
+         <= 8Q^2/H.
+```
+
+Pointwise Cauchy yields an unnormalized fixed-`h` Bessel theorem and an explicit-`C_h`
+orthogonal pre-reassembly direct sum.  At V59 the sharper source-uniform toll is
+`4x^(1/96)+4x^(23/2400)=(4+o(1))x^(1/96)`.
+
+The exact floor fixture `(Q,H,U,h)=(101,8830,99,80)` satisfies the V59-shaped integer
+power relations.  Rows `q=113,127,193` all have support `{17,63}`, so bucket
+multiplicity and equal-row Bessel ratio are both three.  Physical transfer of TPC-234
+multiplicity two is therefore `REFUTED_SCOPED`.  A second fixture proves that the
+reduced modulus `h/g`, rather than `h`, is required.
+
+```text
+TPC236_PHYSICAL_ROW_INTERNAL_INJECTIVITY = PROVED_FOR_H_GT_4Q
+TPC236_BUCKET_GCD_FIBER_BOUND = PROVED_EXACT
+TPC236_BUCKET_MULTIPLICITY = PROVED_LE_8Q_SQUARED_OVER_H
+TPC236_WEIGHTED_FIXED_H_BESSEL = PROVED_EXACT_WITHOUT_ROW_NORMALIZATION
+TPC236_WEIGHTED_PHYSICAL_H_DIRECT_SUM = PROVED_EXACT
+TPC236_COMMON_LINEAR_PACKET_TRANSFORM = PRESERVED_WITH_OPERATOR_NORM
+TPC236_DIVISOR_WEIGHT_C_H = PRESERVED_EXPLICITLY
+TPC236_V59_MULTIPLICITY_TOLL = PROVED_4X_1_OVER_96_PLUS_4X_23_OVER_2400
+TPC236_Q101_TRIPLE_COLLISION = PROVED_EXACT
+TPC236_Q101_EQUAL_ROW_RATIO = PROVED_EXACT_3
+TPC236_PHYSICAL_MULTIPLICITY_TWO_TRANSFER = REFUTED_SCOPED
+TPC236_GCD_FIBER_REDUCTION = REQUIRED
+TPC236_CROSS_H_RATIONAL_FREQUENCY_REASSEMBLY = OPEN
+TPC236_C_H_WEIGHTED_CANCELLATION = OPEN
+TPC236_ARITHMETIC_ADVANCE = NO
+TPC236_FIXED_ATOM_CREDIT = 0
+TPC236_L2 = NONE
+TPC236_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC236_STATUS = PROVED_STRUCTURAL_L1
+TPC236_ROUND2_CLUE = COMBINE_PHYSICAL_H_FIBER_ENVELOPE_WITH_REDUCED_FREQUENCY_LARGE_SIEVE_AND_TEST_C_H_WEIGHTED_CANCELLATION
+```
+
+strongest positive result：source-valid unnormalized physical-fiber Bessel envelope；
+strongest obstruction：exact triple collision refutes multiplicity two and the
+surviving loss has exponent `1/96`；open theorem：cross-`h` reduced-frequency
+reassembly with signed `C_h` cancellation；reusable structure：gcd-fiber reduction and
+coordinate Bessel compiler；`ROUND2_CLUE`：
+`COMBINE_PHYSICAL_H_FIBER_ENVELOPE_WITH_REDUCED_FREQUENCY_LARGE_SIEVE_AND_TEST_C_H_WEIGHTED_CANCELLATION`。
+Six finite scales, independent checker, adversarial gcd fixture, and 5-page
+embedded-font PDF。
 
 ## 0.29 已发布：TPC-235 V59 physical-depth crosswalk
 
@@ -1916,6 +1973,7 @@ handoff。
 
 | 日期 | 版本 | 新增可发表单元 | 状态 |
 |---|---|---|---|
+| 2026-08-24 | V89 | physical gcd-fiber multiplicity theorem、unnormalized weighted Bessel envelope 与 exact triple-collision obstruction | **PROVED_STRUCTURAL_L1 / TPC-236** |
 | 2026-08-24 | V88 | V59 physical-depth exact crosswalk、single-clock iff obstruction 与 packet-output normalization firewall | **PROVED_STRUCTURAL_L1 / TPC-235** |
 | 2026-08-10 | V43 | proper-factor Poisson transference 与 zero-axis return | **PROVED** |
 | 2026-08-11 | V50 | saving-matched moving cut 与 Siegel-quality dichotomy | **PROVED + CONDITIONAL + CONJECTURAL** |

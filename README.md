@@ -9,13 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-235 已完成 actual V59 row 的 exact physical-depth crosswalk。
-真实 depth 为 `lambda_h=hQ/H`，而 modeled single clock 同时匹配 modulus 与
-cutoff/profile 当且仅当 `H=4Q^2`；V59 实际相差 growing factor
-`4Q^2/H=4x^(1/96)`。TPC-234 的逐 output unit normalization 也不能直接回填 source，
-因为它把 four-phase signed polarization 恒等式抹成零。状态仍为
-`PROVED_STRUCTURAL_L1`：正确 weighted many-clock `h`-fiber 已识别；arithmetic
-cancellation、L2、strict `1/400` 与 full Gate B 仍开放。
+当前主线状态：TPC-236 已在 TPC-235 actual V59 crosswalk 上建立 source-valid physical
+`h`-fiber collision envelope。exact gcd-fiber count 给出
+`R_h(a)<=2 floor(M_h/g)ceil(Qg/h)<=8Q^2/H`，无需逐 row normalization；V59 的
+sharper toll 为 `(4+o(1))x^(1/96)`。exact Q101 floor fixture 出现三条 identical
+prime rows、Bessel ratio `3`，故 physical multiplicity-two transfer 已
+`REFUTED_SCOPED`。状态仍为 `PROVED_STRUCTURAL_L1`：固定 `h` 编译完成；cross-`h`
+rational-frequency reassembly、`C_h` cancellation、L2 与 full Gate B 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +29,8 @@ cancellation、L2、strict `1/400` 与 full Gate B 仍开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-236-physical-multiwrap-collision-envelope` - `PROVED_STRUCTURAL_L1 / SOURCE_VALID_PHYSICAL_FIBER_BESSEL_ENVELOPE` - 证明 physical residue bucket 的 exact gcd-fiber bound 与 unnormalized weighted Bessel envelope，V59 loss 为 `(4+o(1))x^(1/96)`；exact Q101 floor fixture 的三条 identical rows 给出 ratio `3`，严格否定 multiplicity-two 的 physical transfer，下一步是带 signed `C_h` 的 cross-`h` reduced-frequency reassembly。
 
 `tpc-235-v59-physical-depth-crosswalk` - `PROVED_STRUCTURAL_L1 / SINGLE_CLOCK_AND_OUTPUT_NORMALIZATION_REFUTED_SCOPED` - 精确证明 V59 physical depth 为 `lambda_h=hQ/H`，single-clock simultaneous attachment iff `H=4Q^2`，故 V59 存在 `4x^(1/96)` growing mismatch；同时证明逐 output unit normalization 会把 four-phase polarization 从非零值抹为零，下一合法对象是保留 `C_h` 与 common linear packet transform 的 weighted physical `h`-fiber。
 

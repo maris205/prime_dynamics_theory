@@ -1,0 +1,57 @@
+\section{The gcd-fiber collision theorem}
+
+For fixed $h$ and $q$, let $S_{h,q}$ be the residue support in
+\eqref{eq:physical-row}.  We first verify that atoms within one physical row remain
+distinct.
+
+\begin{lemma}[Internal injectivity]\label{lem:injectivity}
+Suppose $4Q<H$, $h\le Q$, and $Q<q\le2Q$.  Then
+$m\mapsto mq^{-1}\pmod h$ is injective for
+$0<|m|\le\lfloor hq/H\rfloor$.
+\end{lemma}
+
+\begin{proof}
+If two multipliers have the same residue, then $h\mid m-m'$.  On the other hand,
+\[
+ |m-m'|\le2\lfloor hq/H\rfloor\le4hQ/H<h.
+\]
+Thus $m=m'$.
+\end{proof}
+
+Let
+\[
+ R_h(a)=\#\{q:Q<q\le2Q\text{ prime},\ a\in S_{h,q}\}
+\]
+and $M_h=\lfloor2hQ/H\rfloor$.
+
+\begin{theorem}[Gcd-fiber multiplicity envelope]\label{thm:gcd-envelope}
+For $a\pmod h$, put $g=(a,h)$.  Under the hypotheses of
+Lemma~\ref{lem:injectivity},
+\begin{equation}
+ R_h(a)
+ \le2\left\lfloor\frac{M_h}{g}\right\rfloor
+       \left\lceil\frac{Qg}{h}\right\rceil
+ \le\frac{4Q^2}{H}+\frac{4hQ}{gH}
+ \le\frac{8Q^2}{H}.                                  \label{eq:multiplicity}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Every shell prime exceeds $h$ and is therefore a unit modulo $h$.  An atom in bucket
+$a$ satisfies $m\equiv aq\pmod h$, so
+$(m,h)=(a,h)=g$.  The global signed multiplier range contains at most
+$2\lfloor M_h/g\rfloor$ multiples of $g$.
+
+If $a=0$, then $g=h$ and $M_h<h$; no nonzero admissible multiplier is divisible by
+$h$, so the result is immediate.  Assume henceforth that $a\ne0$.
+For one such $m$, divide the congruence by $g$.  Since $a/g$ is a unit modulo $h/g$,
+the prime $q$ lies in exactly one residue class modulo $h/g$.  An interval of length
+$Q$ contains at most $\lceil Q/(h/g)\rceil$ integers in that class.  Multiplying the
+two counts proves the first inequality.
+
+Use $M_h\le2hQ/H$ and $\lceil Qg/h\rceil\le Qg/h+1$ for the second.  Finally
+$h\le Q\le gQ$ bounds the second summand by $4Q^2/H$.
+\end{proof}
+
+The reduced modulus $h/g$ is essential.  A finite counterexample to counting modulo
+$h$ instead is given in Section~\ref{sec:fixtures}.

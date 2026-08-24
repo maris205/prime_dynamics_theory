@@ -1,0 +1,30 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage[numbers]{natbib}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\title{A Multi-Wrap Collision Envelope\\
+for Physical V59 Denominator Fibers}
+\author{Liang Wang\\Huazhong University of Science and Technology}
+\date{August 24, 2026}
+
+\begin{document}
+\maketitle
+\input{sections/0_abstract}
+\input{sections/1_introduction}
+\input{sections/2_gcd_fiber}
+\input{sections/3_bessel}
+\input{sections/4_triple_collision}
+\input{sections/5_v59_ledger}
+\input{sections/6_certificate}
+\input{sections/7_conclusion}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

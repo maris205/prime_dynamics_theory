@@ -1,55 +1,61 @@
-# TPC big road V88 / TPC-235: V59 physical-depth crosswalk
+# TPC big road V89 / TPC-236: physical multi-wrap collision envelope
 
 更新时间：2026-08-24
 
-状态：`TPC235_PROVED_STRUCTURAL_L1 / PHYSICAL_DEPTH_CROSSWALK / FULL_GATE_B_OPEN`
+状态：`TPC236_PROVED_STRUCTURAL_L1 / SOURCE_VALID_PHYSICAL_FIBER_BESSEL / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-235 proof 为
+当前 TPC-236 proof 为
+`bridge_b_physical_multiwrap_collision_envelope.md`，checker 为
+`tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py`，编号论文为
+`../../papers/tpc-236-physical-multiwrap-collision-envelope/`。
+
+For a physical residue `a mod h`, put `g=gcd(a,h)` and `M_h=floor(2hQ/H)`.  Then
+
+```text
+R_h(a) <= 2 floor(M_h/g) ceil(Qg/h)
+         <= 4Q^2/H+4hQ/(gH)
+         <= 8Q^2/H.
+```
+
+Pointwise Cauchy gives an unnormalized fixed-`h` Bessel theorem and explicit-`C_h`
+pre-reassembly direct sum.  V59 pays `(4+o(1))x^(1/96)`.  The exact
+`(Q,H,U,h)=(101,8830,99,80)` floor fixture has three identical rows and ratio three,
+so multiplicity two does not transfer to the physical interface.
+
+```text
+TPC236_PHYSICAL_ROW_INTERNAL_INJECTIVITY = PROVED_FOR_H_GT_4Q
+TPC236_BUCKET_GCD_FIBER_BOUND = PROVED_EXACT
+TPC236_BUCKET_MULTIPLICITY = PROVED_LE_8Q_SQUARED_OVER_H
+TPC236_WEIGHTED_FIXED_H_BESSEL = PROVED_EXACT_WITHOUT_ROW_NORMALIZATION
+TPC236_WEIGHTED_PHYSICAL_H_DIRECT_SUM = PROVED_EXACT
+TPC236_COMMON_LINEAR_PACKET_TRANSFORM = PRESERVED_WITH_OPERATOR_NORM
+TPC236_DIVISOR_WEIGHT_C_H = PRESERVED_EXPLICITLY
+TPC236_V59_MULTIPLICITY_TOLL = PROVED_4X_1_OVER_96_PLUS_4X_23_OVER_2400
+TPC236_Q101_TRIPLE_COLLISION = PROVED_EXACT
+TPC236_Q101_EQUAL_ROW_RATIO = PROVED_EXACT_3
+TPC236_PHYSICAL_MULTIPLICITY_TWO_TRANSFER = REFUTED_SCOPED
+TPC236_CROSS_H_RATIONAL_FREQUENCY_REASSEMBLY = OPEN
+TPC236_C_H_WEIGHTED_CANCELLATION = OPEN
+TPC236_ARITHMETIC_ADVANCE = NO
+TPC236_FIXED_ATOM_CREDIT = 0
+TPC236_L2 = NONE
+TPC236_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC236_ROUND2_CLUE = COMBINE_PHYSICAL_H_FIBER_ENVELOPE_WITH_REDUCED_FREQUENCY_LARGE_SIEVE_AND_TEST_C_H_WEIGHTED_CANCELLATION
+```
+
+strongest positive result：source-valid unnormalized physical-fiber Bessel envelope；
+strongest obstruction：exact triple collision refutes multiplicity two and leaves the
+`1/96` toll；open theorem：signed `C_h` cross-`h` reduced-frequency reassembly；reusable
+structure：gcd-fiber reduction and coordinate Bessel compiler。
+
+TPC-235 上游 proof 为
 `bridge_b_v59_physical_depth_crosswalk.md`，checker 为
 `tpc_bridge_b_v59_physical_depth_crosswalk_checker.py`，编号论文为
-`../../papers/tpc-235-v59-physical-depth-crosswalk/`。
-
-For a physical V59 denominator `h`, the exact depth is
-
-```text
-lambda_h=hQ/H,
-cutoff=floor(lambda_h q/Q),
-profile argument=mQ/(lambda_h q),
-modulus=h.
-```
-
-The modeled single clock matches modulus and cutoff/profile simultaneously iff
-`H=4Q^2`; V59 instead has `4Q^2/H=4x^(1/96)`.  Independently normalizing each packet
-output also erases the four-phase polarization, so the next legal compiler must retain
-the weighted physical `h`-fiber and one common linear packet transform.
-
-```text
-TPC235_V59_PHYSICAL_DEPTH_VARIABLE = PROVED_EXACT_LAMBDA_H_EQ_HQ_OVER_H
-TPC235_PHYSICAL_ROW_REPARAMETERIZATION = PROVED_EXACT
-TPC235_SINGLE_CLOCK_COMPATIBILITY_IFF_H_EQ_4Q_SQUARED = PROVED_EXACT
-TPC235_V59_CLOCK_RATIO = PROVED_EXACT_4X_TO_1_OVER_96
-TPC235_TPC226_EXACT_SINGLE_CLOCK_ATTACHMENT = REFUTED_SCOPED
-TPC235_PHYSICAL_DEPTH_RANGE = PROVED_EXACT_HALF_TO_X_23_OVER_2400
-TPC235_PHYSICAL_DENOMINATOR_GRID_PER_DEPTH = PROVED_X_31_OVER_96
-TPC235_DIVISOR_WEIGHT_C_H = SOURCE_LOCKED_REQUIRED
-TPC235_COMMON_PACKET_TRANSFORM = SOURCE_LOCKED_REQUIRED
-TPC235_OUTPUT_UNIT_NORMALIZATION_POLARIZATION = REFUTED_SCOPED
-TPC235_SOURCE_VALID_NORMALIZATION = OPEN_WEIGHTED_LINEAR_ONLY
-TPC235_ARITHMETIC_ADVANCE = NO
-TPC235_FIXED_ATOM_CREDIT = 0
-TPC235_L2 = NONE
-TPC235_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC235_ROUND2_CLUE = BUILD_PHYSICAL_H_FIBER_DIRECT_SUM_WITH_COMMON_PACKET_TRANSFORM_AND_EXPLICIT_WEIGHTS
-```
-
-strongest positive result：exact V59 physical-depth crosswalk and compatibility iff；
-strongest obstruction：single-clock growing mismatch and packetwise normalization
-erases polarization；open theorem：weighted physical `h`-fiber collision compiler；
-reusable structure：clock/cutoff/profile compatibility triangle and normalization
-firewall。
+`../../papers/tpc-235-v59-physical-depth-crosswalk/`。It supplies the exact physical
+row used by TPC-236 and retains the single-clock and output-normalization firewalls.
 
 TPC-234 上游 proof 为
 `bridge_b_normalized_collision_bessel_stability.md`，checker 为

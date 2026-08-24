@@ -1,0 +1,37 @@
+\section{Exact adversarial fixtures}\label{sec:fixtures}
+
+Take
+\[
+ Q=101,\qquad H=8830,\qquad U=99,\qquad h=80.
+\]
+Exact integer comparisons certify
+\[
+ 8830^{32}\le101^{63}<8831^{32},\qquad
+ 99^{400}\le101^{399}<100^{400}.
+\]
+Thus $H=\lfloor Q^{63/32}\rfloor$, $U=\lfloor Q^{399/400}\rfloor$, and $h\le U$:
+this is a literal finite floor model of the V59 exponent relations.
+
+For the three shell primes $q=113,127,193$, the cutoff is one.  Their inverses modulo
+$80$ are $17,63,17$, respectively, so every row has support
+\[
+ S_{80,113}=S_{80,127}=S_{80,193}=\{17,63\}.
+\]
+In particular, residue $63$ is represented by multipliers $-1,1,-1$.  The physical
+bucket multiplicity is three.
+
+For uniform amplitudes let the three rows be $v_{113},v_{127},v_{193}$.  Each has
+squared norm two, whereas their equal-coefficient sum has squared norm eighteen.
+Hence
+\begin{equation}
+ \frac{\|v_{113}+v_{127}+v_{193}\|^2}
+      {\|v_{113}\|^2+\|v_{127}\|^2+\|v_{193}\|^2}=3. \label{eq:ratio-three}
+\end{equation}
+Equation~\eqref{eq:ratio-three} refutes both physical multiplicity two and a universal
+Bessel constant two in this class.  It is a finite structural obstruction, not an
+asymptotic lower bound for arithmetic source mass.
+
+A second fixture explains the gcd reduction.  For
+$(Q,H,h,a)=(16,65,8,6)$, one has $g=2$ and five rows in bucket $a=6$.  Counting each
+multiplier in a class modulo $h$ gives the false upper bound four.  The correct reduced
+modulus $h/g=4$ gives upper bound eight and contains all five rows.

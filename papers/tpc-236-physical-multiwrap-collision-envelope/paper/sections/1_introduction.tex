@@ -1,0 +1,34 @@
+\section{Introduction}
+
+The physical-depth crosswalk identifies the V59 residue row at denominator $h$ as
+\begin{equation}
+ B_{h,q}(a)=
+ \sum_{0<|m|\le\lfloor hq/H\rfloor}
+ \psi\!\left(\frac{Hm}{hq}\right)
+ \mathbf 1_{m q^{-1}\equiv a\pmod h},                 \label{eq:physical-row}
+\end{equation}
+where $Q<q\le2Q$ is prime.  The full source retains the divisor coefficient
+\[
+ C_h=\sum_{\substack{d\in\mathcal D_x\\h\mid d}}
+ \frac{\mu(d)\log d}{d}.
+\]
+The correct next question is therefore not how to normalize a surrogate clock, but how
+many physical prime rows can occupy one residue coordinate.
+
+The modeled one-wrap clock had coordinate multiplicity at most two.  Physical rows
+have a different modulus--depth relation, and products of multipliers with shell primes
+may wind around the modulus many times.  We quantify this effect directly.  The key
+reduction is arithmetic but elementary: fixing a residue also fixes the gcd of every
+admissible multiplier with $h$, and after division by this gcd each multiplier places
+$q$ in one class modulo a reduced modulus.
+
+The resulting multiplicity bound gives a Bessel estimate in the usual frame-theoretic
+sense \citep{christensen2016}, but no unit-row transform is used.  All amplitudes,
+explicit $C_h$ weights, and a common linear packet transform can therefore remain in
+the ledger.  The cost is a factor of order $Q^2/H=x^{1/96}$ at V59.  A three-row exact
+fixture proves that the previous constant two is genuinely unavailable on the
+physical interface.
+
+The direct sum below is pre-reassembly.  Frequencies belonging to different
+denominators are not declared orthogonal on the physical finite window, and no
+cancellation in $C_h$ is claimed.

@@ -2,15 +2,15 @@
 
 更新时间：2026-08-24
 
-当前地图版本：V88 / TPC-235
+当前地图版本：V89 / TPC-236
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-235`（`PROVED_STRUCTURAL_L1 / V59_PHYSICAL_DEPTH_CROSSWALK`）；
-对应论文目录为 `papers/tpc-235-v59-physical-depth-crosswalk/`。TPC-235 证明真实 depth
-为 `lambda_h=hQ/H`，single-clock simultaneous attachment iff `H=4Q^2`，而 V59
-相差 `4x^(1/96)`；逐 output unit normalization 还会抹去 four-phase polarization。
-weighted physical `h`-fiber collision compiler 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-236`（`PROVED_STRUCTURAL_L1 / PHYSICAL_MULTIWRAP_BESSEL_ENVELOPE`）；
+对应论文目录为 `papers/tpc-236-physical-multiwrap-collision-envelope/`。TPC-236 用
+gcd-fiber count 证明 physical bucket multiplicity `<=8Q^2/H` 与 unnormalized
+weighted Bessel bound；V59 toll 为 `(4+o(1))x^(1/96)`，Q101 exact triple ratio `3`
+封住 multiplicity-two transfer。cross-`h` signed reassembly 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -52,9 +52,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V88 / TPC-235                     |
-        | V59 PHYSICAL-DEPTH CROSSWALK                     |
-        | weighted physical h-fiber / collision OPEN       |
+        | YOU ARE HERE — V89 / TPC-236                     |
+        | PHYSICAL MULTI-WRAP BESSEL ENVELOPE              |
+        | signed cross-h reassembly / C_h cancellation OPEN|
         +--------------------------------------------------+
                 |
                 v
@@ -97,13 +97,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V88 / TPC-235 的
-V59 physical-depth crosswalk。actual depth/cutoff/profile/modulus 已逐因子锁定，旧
-single-clock attachment 因 `4x^(1/96)` growing mismatch 被 scoped-refute，packetwise
-unit normalization 也因抹除 polarization 被 scoped-refute。下一条大路是保留 `C_h`、
-完整 `h`-sum 和 common linear packet transform，直接编译 weighted physical
-`h`-fiber collisions。FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit
-继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V89 / TPC-236 的
+physical multi-wrap collision envelope。固定 physical `h`-fiber 已有不做 row
+normalization 的 source-valid Bessel compiler，显式保留 `C_h` 与 common packet
+transform；但代价是 `(4+o(1))x^(1/96)`，且 exact triple collision 证明 constant two
+不可转移。下一条大路是把该 envelope 与 reduced rational-frequency large sieve 接合，
+在 cross-`h` reassembly 中测试 signed `C_h` cancellation。FULL_GATE_B、global strict
+`1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1233,6 +1233,52 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.30 V89 / TPC-236：physical multi-wrap collision envelope
+
+For a physical residue `a mod h`, set `g=gcd(a,h)` and
+`M_h=floor(2hQ/H)`.  Internal row injectivity holds for `4Q<H`, while exact gcd-fiber
+counting gives
+
+```text
+R_h(a) <= 2 floor(M_h/g) ceil(Qg/h)
+         <= 4Q^2/H+4hQ/(gH)
+         <= 8Q^2/H.
+```
+
+Pointwise Cauchy turns this into an unnormalized fixed-`h` Bessel theorem and an
+explicit-`C_h` orthogonal pre-reassembly direct sum.  At V59 the sharper uniform factor
+is `4x^(1/96)+4x^(23/2400)=(4+o(1))x^(1/96)`.
+
+The exact floor fixture `(Q,H,U,h)=(101,8830,99,80)` has rows
+`q=113,127,193` all supported on `{17,63}`.  Its equal-row Bessel ratio is three, so
+physical multiplicity two is `REFUTED_SCOPED`.  The Q16 nonprimitive fixture further
+proves that reduction from `h` to `h/g` is necessary.
+
+```text
+TPC236_PHYSICAL_ROW_INTERNAL_INJECTIVITY = PROVED_FOR_H_GT_4Q
+TPC236_BUCKET_GCD_FIBER_BOUND = PROVED_EXACT
+TPC236_BUCKET_MULTIPLICITY = PROVED_LE_8Q_SQUARED_OVER_H
+TPC236_WEIGHTED_FIXED_H_BESSEL = PROVED_EXACT_WITHOUT_ROW_NORMALIZATION
+TPC236_WEIGHTED_PHYSICAL_H_DIRECT_SUM = PROVED_EXACT
+TPC236_COMMON_LINEAR_PACKET_TRANSFORM = PRESERVED_WITH_OPERATOR_NORM
+TPC236_DIVISOR_WEIGHT_C_H = PRESERVED_EXPLICITLY
+TPC236_V59_MULTIPLICITY_TOLL = PROVED_4X_1_OVER_96_PLUS_4X_23_OVER_2400
+TPC236_Q101_TRIPLE_COLLISION = PROVED_EXACT
+TPC236_Q101_EQUAL_ROW_RATIO = PROVED_EXACT_3
+TPC236_PHYSICAL_MULTIPLICITY_TWO_TRANSFER = REFUTED_SCOPED
+TPC236_GCD_FIBER_REDUCTION = REQUIRED
+TPC236_CROSS_H_RATIONAL_FREQUENCY_REASSEMBLY = OPEN
+TPC236_C_H_WEIGHTED_CANCELLATION = OPEN
+TPC236_ARITHMETIC_ADVANCE = NO
+TPC236_FIXED_ATOM_CREDIT = 0
+TPC236_L2 = NONE
+TPC236_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+```
+
+地图位置：**V89 / TPC-236 completes the source-valid physical single-fiber compiler.
+The shortest next move is cross-`h` reduced-frequency reassembly that keeps signed
+`C_h` and seeks a gain beyond the exact `1/96` multiplicity toll.**
+
 ## 5.29 V88 / TPC-235：V59 physical-depth crosswalk
 
 For the physical V59 denominator `h`, define
@@ -1990,7 +2036,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V88 / TPC-235：
+截至 V89 / TPC-236：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -2279,7 +2325,26 @@ TPC235_FIXED_ATOM_CREDIT = 0
 TPC235_L2 = NONE
 TPC235_FULL_GATE_B = OPEN
 TPC235_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-NUMBERED_RELEASE = TPC-235
+TPC236_PHYSICAL_ROW_INTERNAL_INJECTIVITY = PROVED_FOR_H_GT_4Q
+TPC236_BUCKET_GCD_FIBER_BOUND = PROVED_EXACT
+TPC236_BUCKET_MULTIPLICITY = PROVED_LE_8Q_SQUARED_OVER_H
+TPC236_WEIGHTED_FIXED_H_BESSEL = PROVED_EXACT_WITHOUT_ROW_NORMALIZATION
+TPC236_WEIGHTED_PHYSICAL_H_DIRECT_SUM = PROVED_EXACT
+TPC236_COMMON_LINEAR_PACKET_TRANSFORM = PRESERVED_WITH_OPERATOR_NORM
+TPC236_DIVISOR_WEIGHT_C_H = PRESERVED_EXPLICITLY
+TPC236_V59_MULTIPLICITY_TOLL = PROVED_4X_1_OVER_96_PLUS_4X_23_OVER_2400
+TPC236_Q101_TRIPLE_COLLISION = PROVED_EXACT
+TPC236_Q101_EQUAL_ROW_RATIO = PROVED_EXACT_3
+TPC236_PHYSICAL_MULTIPLICITY_TWO_TRANSFER = REFUTED_SCOPED
+TPC236_GCD_FIBER_REDUCTION = REQUIRED
+TPC236_CROSS_H_RATIONAL_FREQUENCY_REASSEMBLY = OPEN
+TPC236_C_H_WEIGHTED_CANCELLATION = OPEN
+TPC236_ARITHMETIC_ADVANCE = NO
+TPC236_FIXED_ATOM_CREDIT = 0
+TPC236_L2 = NONE
+TPC236_FULL_GATE_B = OPEN
+TPC236_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+NUMBERED_RELEASE = TPC-236
 ```
 
 以下事实不得从路线图中推断：
@@ -2297,11 +2362,14 @@ NUMBERED_RELEASE = TPC-235
 
 优先级更新为：
 
-1. **TPC-235 已完成：V59 physical-depth crosswalk**。真实 row 已精确写成
+1. **TPC-236 已完成：physical multi-wrap collision envelope**。exact gcd-fiber count
+   与 unnormalized weighted Bessel theorem 已完成固定 `h` 编译；Q101 ratio `3` 封住
+   multiplicity-two transfer，V59 保留 `(4+o(1))x^(1/96)` loss。下一步做 signed
+   `C_h` cross-`h` reduced-frequency reassembly，并测试能否超过这笔 toll。
+2. **TPC-235 已完成：V59 physical-depth crosswalk**。真实 row 已精确写成
    `lambda_h=hQ/H` 的 weighted many-clock family；旧 single-clock attachment 与
-   packet-output unit normalization 两条捷径均已 `REFUTED_SCOPED`。下一步直接编译
-   physical `h`-fiber collisions，保留 `C_h`、完整 `h`-sum 和 common linear packet
-   transform。
+   packet-output unit normalization 两条捷径均已 `REFUTED_SCOPED`。其 physical
+   fixed-fiber collision compiler 已由 TPC-236 完成。
 2. **TPC-234 已完成：normalized collision-Bessel stability**。unit-row Gram 满足
    `0<=G<=2I`、`||G-I||<=1`，depth-dependent conditioning 已消除；Q39 `4/3`
    amplification 证明 automatic saving 已 `REFUTED_SCOPED`。其 actual V59 source
@@ -2374,10 +2442,10 @@ NUMBERED_RELEASE = TPC-235
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-235 的下一步：weighted physical `h`-fiber compiler**。actual crosswalk 已完成，
-    现在必须对真实 cutoff `floor(hq/H)` 与 modulus `h` 的 multi-wrap collisions 建立
-    source-valid bound；`C_h`、packet phases 和 common linear transform 必须逐项保留，
-    不得再调用 one-clock multiplicity two 或 output-dependent normalization。
+12. **TPC-236 的下一步：signed cross-`h` reduced-frequency reassembly**。fixed-fiber
+    source-valid bound 已完成，但 orthogonal `h`-direct sum 还不是 physical finite-window
+    norm。必须结合 TPC-214/217 reduced-frequency regrouping 与 large sieve，显式保留
+    `C_h` signs，寻找超过 `(4+o(1))x^(1/96)` multiplicity toll 的 cancellation。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2476,6 +2544,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-24 | V89 / TPC-236 | Bridge A / Gate B：physical fixed-h multi-wrap compiler complete；signed cross-h reassembly open | `TPC-236` | exact gcd-fiber multiplicity、unnormalized explicit-C_h Bessel envelope、V59 `(4+o(1))x^(1/96)` toll、Q101 triple ratio 3；arithmetic cancellation仍为 NO |
 | 2026-08-24 | V88 / TPC-235 | Bridge A / Gate B：actual V59 physical-depth crosswalk；weighted physical h-fiber collision compiler open | `TPC-235` | exact `lambda_h=hQ/H`、single-clock iff `H=4Q^2`、V59 `4x^(1/96)` mismatch、packet-output normalization polarization obstruction；arithmetic cancellation仍为 NO |
 | 2026-08-24 | V87 / TPC-234 | Bridge A / Gate B：normalized collision-Bessel stability；source-valid normalization/V59 crosswalk open | `TPC-234` | multiplicity-two `0<=G<=2I`、`||G-I||<=1`、ambient sharpness、literal Q39 `4/3,2/3` ratios；arithmetic cancellation仍为 NO |
 | 2026-08-24 | V86 / TPC-233 | Bridge A / Gate B：critical raw row-mass obstruction；normalization/actual source open | `TPC-233` | critical primorial clock、endpoint prime rows、exact atom counts、`kappa_raw>>(L/logL)` divergence、fixed geometry comparability refuted-scoped；arithmetic cancellation仍为 NO |

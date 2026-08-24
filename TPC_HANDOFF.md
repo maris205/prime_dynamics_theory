@@ -1,9 +1,79 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V88_TPC235_V59_PHYSICAL_DEPTH_CROSSWALK_RELEASED`
+交接状态：`BOLD_CHANNEL_V89_TPC236_PHYSICAL_MULTIWRAP_BESSEL_RELEASED`
 
-TPC-235 当前 section：V59 physical-depth crosswalk
+TPC-236 当前 section：physical multi-wrap collision envelope
+------------------------------------------------------------
+
+For physical residue `a mod h`, put `g=gcd(a,h)` and
+`M_h=floor(2hQ/H)`.  Exact gcd-fiber counting gives
+
+```text
+R_h(a) <= 2 floor(M_h/g) ceil(Qg/h)
+         <= 4Q^2/H+4hQ/(gH)
+         <= 8Q^2/H.
+```
+
+Pointwise Cauchy yields an unnormalized fixed-`h` Bessel theorem and explicit-`C_h`
+orthogonal pre-reassembly direct sum.  At V59,
+
+```text
+B_phys <= 4x^(1/96)+4x^(23/2400)
+       = (4+o(1))x^(1/96).
+```
+
+The exact floor fixture `(Q,H,U,h)=(101,8830,99,80)` has rows
+`q=113,127,193` all supported on `{17,63}`.  Its equal-row energy ratio is three, so
+physical multiplicity two is refuted.  Cross-`h` rational-frequency reassembly and
+signed `C_h` cancellation remain open.
+
+```text
+TPC236_ROUTE_ADVANCE = YES
+TPC236_PHYSICAL_ROW_INTERNAL_INJECTIVITY = PROVED_FOR_H_GT_4Q
+TPC236_BUCKET_GCD_FIBER_BOUND = PROVED_EXACT
+TPC236_BUCKET_MULTIPLICITY = PROVED_LE_8Q_SQUARED_OVER_H
+TPC236_WEIGHTED_FIXED_H_BESSEL = PROVED_EXACT_WITHOUT_ROW_NORMALIZATION
+TPC236_WEIGHTED_PHYSICAL_H_DIRECT_SUM = PROVED_EXACT
+TPC236_COMMON_LINEAR_PACKET_TRANSFORM = PRESERVED_WITH_OPERATOR_NORM
+TPC236_DIVISOR_WEIGHT_C_H = PRESERVED_EXPLICITLY
+TPC236_V59_MULTIPLICITY_TOLL = PROVED_4X_1_OVER_96_PLUS_4X_23_OVER_2400
+TPC236_Q101_TRIPLE_COLLISION = PROVED_EXACT
+TPC236_Q101_EQUAL_ROW_RATIO = PROVED_EXACT_3
+TPC236_PHYSICAL_MULTIPLICITY_TWO_TRANSFER = REFUTED_SCOPED
+TPC236_GCD_FIBER_REDUCTION = REQUIRED
+TPC236_CROSS_H_RATIONAL_FREQUENCY_REASSEMBLY = OPEN
+TPC236_C_H_WEIGHTED_CANCELLATION = OPEN
+TPC236_ARITHMETIC_ADVANCE = NO
+TPC236_ARITHMETIC_CANCELLATION = NONE
+TPC236_FIXED_ATOM_CREDIT = 0
+TPC236_L2 = NONE
+TPC236_FULL_GATE_B = OPEN
+TPC236_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC236_TPC_TRIGGER = true
+TPC236_NUMBERED_RELEASE = YES
+TPC236_STATUS = PROVED_STRUCTURAL_L1
+TPC236_ROUND2_CLUE = COMBINE_PHYSICAL_H_FIBER_ENVELOPE_WITH_REDUCED_FREQUENCY_LARGE_SIEVE_AND_TEST_C_H_WEIGHTED_CANCELLATION
+```
+
+strongest positive result：source-valid unnormalized physical-fiber Bessel envelope；
+strongest obstruction：exact triple collision refutes multiplicity two and leaves the
+`1/96` toll；open theorem：signed `C_h` cross-`h` reduced-frequency reassembly；reusable
+structure：gcd-fiber reduction and coordinate Bessel compiler。
+
+编号论文目录：papers/tpc-236-physical-multiwrap-collision-envelope/
+
+```text
+papers/tpc-236-physical-multiwrap-collision-envelope/README.md
+papers/tpc-236-physical-multiwrap-collision-envelope/PROOF_PACKAGE.md
+papers/tpc-236-physical-multiwrap-collision-envelope/paper/paper.pdf
+papers/tpc-236-physical-multiwrap-collision-envelope/results/certificate.json
+papers/tpc-236-physical-multiwrap-collision-envelope/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_physical_multiwrap_collision_envelope.md
+research/tpc-big-road/tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py
+```
+
+TPC-235 上游 section：V59 physical-depth crosswalk
 --------------------------------------------------
 
 For every physical denominator `h`, put `lambda_h=hQ/H`.  The V59 row is exactly
@@ -5902,8 +5972,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V88/TPC-235 gate、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百三十二次（66 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V89/TPC-236 gate、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百三十四次（67 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -6039,11 +6109,23 @@ python -B research/tpc-big-road/tpc_bridge_b_normalized_collision_bessel_stabili
 python -O -B research/tpc-big-road/tpc_bridge_b_normalized_collision_bessel_stability_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_v59_physical_depth_crosswalk_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_v59_physical_depth_crosswalk_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-235 入口：
+最新 TPC-236 入口：
+
+```text
+papers/tpc-236-physical-multiwrap-collision-envelope/README.md
+papers/tpc-236-physical-multiwrap-collision-envelope/notes/theorem_ledger.md
+papers/tpc-236-physical-multiwrap-collision-envelope/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_physical_multiwrap_collision_envelope.md
+research/tpc-big-road/tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py
+```
+
+TPC-235 上游入口：
 
 ```text
 papers/tpc-235-v59-physical-depth-crosswalk/README.md
