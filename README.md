@@ -9,12 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-237 已把 TPC-236 physical `q`-collision Bessel compiler 接到
-TPC-217 reduced-frequency finite-window large sieve。先在 primitive `(h,a)` bucket
-内压缩 prime shell，再做 Farey reassembly，得到 normalized common-source packet trace
-`<< J M^2[x^(1/48)+x^(1/50)](log x)^5`，leading unnormalized exponent 为 `49/48`。
-状态仍为 `PROVED_STRUCTURAL_L1`：这是 unsigned trace envelope，不使用 signed `C_h`
-cancellation，也不等于 literal signed four-packet Gate-B scalar；L2 与 full Gate B 仍开放。
+当前主线状态：TPC-238 已对 TPC-237 `q`-collapsed primitive-frequency object 证明
+finite-window lower frame。任意长度 `N` 的连续窗口满足 normalized lower bound
+`[1/2-pi^2 U^4/(6N^2)]_+`；V59 defect 为 `x^(-67/100+o(1))`。因此 distinct
+reduced frequencies 之间的相消不能提供 fixed-power saving，研究位置被严格压缩到
+literal `C_h`-weighted same-frequency `q` buckets 内。状态为
+`PROVED_STRUCTURAL_OBSTRUCTION_L1`；arithmetic L2、signed four-packet Gate B 与 strict
+`1/400` 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -28,6 +29,8 @@ cancellation，也不等于 literal signed four-packet Gate-B scalar；L2 与 fu
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-238-finite-window-lower-frame-obstruction` - `PROVED_STRUCTURAL_OBSTRUCTION_L1 / CROSS_REDUCED_FREQUENCY_CANCELLATION_REFUTED_SCOPED` - 用 translated triangular minorant、Fejér kernel、primitive Farey spacing 与 circular inverse-square packing 证明 normalized lower frame `[1/2-pi^2 U^4/(6N^2)]_+`；V59 上为 `1/2-O(x^(-67/100))`，从而严格排除 `q`-collapse 后跨 reduced-frequency 的 fixed-power cancellation，下一步进入 literal `C_h`-weighted same-frequency prime buckets。
 
 `tpc-237-collision-compressed-finite-window-reassembly` - `PROVED_STRUCTURAL_L1 / COLLISION_COMPRESSED_FINITE_WINDOW_PACKET_TRACE` - 在 primitive reduced frequencies 上先使用 TPC-236 physical collision factor `4Q^2/H+4UQ/H` 合并 prime shell，再使用 TPC-217 finite-window large sieve，严格把旧 `P` collapse 改进为 normalized `x^(1/48)+x^(1/50)` envelope；`C_h` signs、signed four-packet scalar、arithmetic L2 与 Gate B 仍开放。
 

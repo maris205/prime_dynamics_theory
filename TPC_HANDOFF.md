@@ -1,10 +1,72 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V90_TPC237_COLLISION_COMPRESSED_FINITE_WINDOW_RELEASED`
+交接状态：`BOLD_CHANNEL_V91_TPC238_FINITE_WINDOW_LOWER_FRAME_OBSTRUCTION_RELEASED`
 
-TPC-237 当前 section：collision-compressed finite-window reassembly
----------------------------------------------------------------------
+TPC-238 当前 section：finite-window lower-frame obstruction
+-----------------------------------------------------------
+
+For any consecutive interval `I` of `N` integers, put
+`L=floor((N+1)/2)`.  For coefficients on distinct primitive fractions of
+height at most `U`, a translated triangular minorant, Fejér decay, primitive
+Farey spacing, and circular inverse-square packing prove
+
+```text
+E_I(z) >= [L-pi^2 U^4/(12L)]_+ sum|z|^2,
+E_I(z)/N >= [1/2-pi^2 U^4/(6N^2)]_+ sum|z|^2.
+```
+
+At V59, `U^4/N^2=x^(-67/100+o(1))`, so the lower frame is
+`1/2-o(1)`.  Consequently, after the `q` rows are collapsed into one
+coefficient at each primitive frequency, interference among distinct reduced
+frequencies cannot supply a fixed-power saving.  This theorem does not control
+the coefficient energy inside any one same-frequency `q` bucket.
+
+```text
+TPC238_ROUTE_ADVANCE = YES
+TPC238_TRIANGULAR_WINDOW_LOWER_FRAME = PROVED_EXACT
+TPC238_PRIMITIVE_FAREY_SPACING = PROVED_U_TO_MINUS_2
+TPC238_FEJER_OFFDIAGONAL = PROVED_LE_1_OVER_4L_DISTANCE_SQUARED
+TPC238_CIRCULAR_PACKING_ROW_SUM = PROVED_LE_PI_SQUARED_U_FOUR_OVER_3
+TPC238_LOWER_FRAME = PROVED_L_MINUS_PI_SQUARED_U_FOUR_OVER_12L_POSITIVE_PART
+TPC238_NORMALIZED_LOWER_FRAME = PROVED_HALF_MINUS_PI_SQUARED_U_FOUR_OVER_6N_SQUARED_POSITIVE_PART
+TPC238_V59_FRAME_DEFECT = PROVED_X_MINUS_67_OVER_100
+TPC238_CROSS_REDUCED_FREQUENCY_FIXED_POWER_SAVING = REFUTED_SCOPED_AFTER_Q_COLLAPSE
+TPC238_WITHIN_Q_BUCKET_CANCELLATION = OPEN
+TPC238_C_H_SIGNED_CANCELLATION = NONE
+TPC238_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC238_SHARPNESS = NOT_CLAIMED
+TPC238_ARITHMETIC_ADVANCE = NO
+TPC238_FIXED_ATOM_CREDIT = 0
+TPC238_L2 = NONE
+TPC238_FULL_GATE_B = OPEN
+TPC238_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC238_TPC_TRIGGER = true
+TPC238_NUMBERED_RELEASE = YES
+TPC238_STATUS = PROVED_STRUCTURAL_OBSTRUCTION_L1
+TPC238_ROUND2_CLUE = MOVE_THE_POWER_SAVING_SEARCH_INSIDE_THE_LITERAL_C_H_WEIGHTED_Q_COLLISION_BUCKETS
+```
+
+strongest positive result：V59 lower frame `1/2-O(x^(-67/100))`；strongest
+obstruction：cross-reduced-frequency cancellation cannot produce fixed-power
+saving after `q`-collapse；open theorem：literal `C_h`-weighted same-frequency
+prime-shell collision energy；reusable structure：triangular-window Fejér
+minorant plus circular inverse-square packing。
+
+编号论文目录：papers/tpc-238-finite-window-lower-frame-obstruction/
+
+```text
+papers/tpc-238-finite-window-lower-frame-obstruction/README.md
+papers/tpc-238-finite-window-lower-frame-obstruction/PROOF_PACKAGE.md
+papers/tpc-238-finite-window-lower-frame-obstruction/paper/paper.pdf
+papers/tpc-238-finite-window-lower-frame-obstruction/results/tpc238_certificate.json
+papers/tpc-238-finite-window-lower-frame-obstruction/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_finite_window_lower_frame_obstruction.md
+research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py
+```
+
+TPC-237 上游 section：collision-compressed finite-window reassembly
+--------------------------------------------------------------------
 
 Keep the exact TPC-218 primitive common-source kernel and first compress the
 prime-shell labels inside each physical frequency bucket.  Since `(a,h)=1`, the
@@ -5879,6 +5941,11 @@ TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
 `research/tpc-big-road/TPC_ROUTE_MAP.md`、
+`papers/tpc-238-finite-window-lower-frame-obstruction/README.md`、
+`papers/tpc-238-finite-window-lower-frame-obstruction/notes/theorem_ledger.md`、
+`papers/tpc-238-finite-window-lower-frame-obstruction/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_finite_window_lower_frame_obstruction.md`、
+`research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py`、
 `papers/tpc-237-collision-compressed-finite-window-reassembly/README.md`、
 `papers/tpc-237-collision-compressed-finite-window-reassembly/notes/theorem_ledger.md`、
 `papers/tpc-237-collision-compressed-finite-window-reassembly/notes/route_evaluation.md`、
@@ -6046,8 +6113,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V90/TPC-237 gate、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百三十六次（68 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V91/TPC-238 gate、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百三十八次（69 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -6187,11 +6254,23 @@ python -B research/tpc-big-road/tpc_bridge_b_physical_multiwrap_collision_envelo
 python -O -B research/tpc-big-road/tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-237 入口：
+最新 TPC-238 入口：
+
+```text
+papers/tpc-238-finite-window-lower-frame-obstruction/README.md
+papers/tpc-238-finite-window-lower-frame-obstruction/notes/theorem_ledger.md
+papers/tpc-238-finite-window-lower-frame-obstruction/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_finite_window_lower_frame_obstruction.md
+research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py
+```
+
+TPC-237 上游入口：
 
 ```text
 papers/tpc-237-collision-compressed-finite-window-reassembly/README.md

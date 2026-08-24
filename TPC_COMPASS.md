@@ -1,37 +1,44 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V90 / COLLISION_COMPRESSED_FINITE_WINDOW_REASSEMBLY`
-claim level：`PROVED_STRUCTURAL_L1_X_1_OVER_48_COMMON_SOURCE_PACKET_TRACE`
-编号事实终点：TPC-237；TPC-237 trigger：`true`
+状态：`BOLD_CHANNEL_V91 / FINITE_WINDOW_LOWER_FRAME_OBSTRUCTION`
+claim level：`PROVED_STRUCTURAL_OBSTRUCTION_L1_CROSS_REDUCED_FREQUENCY_CANCELLATION_EXCLUDED`
+编号事实终点：TPC-238；TPC-238 trigger：`true`
 
-当前 TPC-237 入口：proof 为
-`research/tpc-big-road/bridge_b_collision_compressed_finite_window_reassembly.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py`，编号论文为
-`papers/tpc-237-collision-compressed-finite-window-reassembly/`。它先在 primitive
-frequency bucket 内使用 TPC-236 physical collision factor，再做 TPC-217 finite-window
-large sieve，得到 normalized `x^(1/48)+x^(1/50)` common-source packet trace。
+当前 TPC-238 入口：proof 为
+`research/tpc-big-road/bridge_b_finite_window_lower_frame_obstruction.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py`，编号论文为
+`papers/tpc-238-finite-window-lower-frame-obstruction/`。translated triangular minorant、
+Fejér decay 与 primitive circular packing 给出
+`E_I/N >= [1/2-pi^2 U^4/(6N^2)]_+ sum|z|^2`；V59 defect 为
+`x^(-67/100+o(1))`，故 `q`-collapse 后 cross-reduced-frequency fixed-power saving 被
+`REFUTED_SCOPED`。
 
 ```text
-TPC237_PRIMITIVE_FREQUENCY_INDEX = REQUIRED_EXACT
-TPC237_Q_COLLISION_BEFORE_LARGE_SIEVE = PROVED_EXACT_COMPOSITION
-TPC237_PRIMITIVE_BUCKET_FACTOR = PROVED_LE_4Q_SQUARED_OVER_H_PLUS_4UQ_OVER_H
-TPC237_FINITE_WINDOW_PACKET_TRACE = PROVED_STRUCTURAL
-TPC237_NORMALIZED_MAIN_EXPONENT = PROVED_1_OVER_48
-TPC237_NORMALIZED_SECONDARY_EXPONENT = PROVED_1_OVER_50
-TPC237_UNNORMALIZED_MAIN_EXPONENT = PROVED_49_OVER_48
-TPC237_OLD_P_COLLAPSE = REPLACED_BY_PHYSICAL_COLLISION_FACTOR
-TPC237_SIMULTANEOUS_SATURATION = NOT_CLAIMED
-TPC237_C_H_SIGNED_CANCELLATION = NONE
-TPC237_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
-TPC237_ARITHMETIC_ADVANCE = NO
-TPC237_L2 = NONE
-TPC237_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC237_STATUS = PROVED_STRUCTURAL_L1
-TPC237_ROUND2_CLUE = TEST_THE_ACTUAL_WEIGHTED_COLLISION_ENERGY_BEFORE_SEEKING_CROSS_H_SIGN_CANCELLATION
+TPC238_TRIANGULAR_WINDOW_LOWER_FRAME = PROVED_EXACT
+TPC238_PRIMITIVE_FAREY_SPACING = PROVED_U_TO_MINUS_2
+TPC238_FEJER_OFFDIAGONAL = PROVED_LE_1_OVER_4L_DISTANCE_SQUARED
+TPC238_CIRCULAR_PACKING_ROW_SUM = PROVED_LE_PI_SQUARED_U_FOUR_OVER_3
+TPC238_LOWER_FRAME = PROVED_L_MINUS_PI_SQUARED_U_FOUR_OVER_12L_POSITIVE_PART
+TPC238_NORMALIZED_LOWER_FRAME = PROVED_HALF_MINUS_PI_SQUARED_U_FOUR_OVER_6N_SQUARED_POSITIVE_PART
+TPC238_V59_FRAME_DEFECT = PROVED_X_MINUS_67_OVER_100
+TPC238_CROSS_REDUCED_FREQUENCY_FIXED_POWER_SAVING = REFUTED_SCOPED_AFTER_Q_COLLAPSE
+TPC238_WITHIN_Q_BUCKET_CANCELLATION = OPEN
+TPC238_C_H_SIGNED_CANCELLATION = NONE
+TPC238_ARITHMETIC_ADVANCE = NO
+TPC238_L2 = NONE
+TPC238_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC238_STATUS = PROVED_STRUCTURAL_OBSTRUCTION_L1
+TPC238_ROUND2_CLUE = MOVE_THE_POWER_SAVING_SEARCH_INSIDE_THE_LITERAL_C_H_WEIGHTED_Q_COLLISION_BUCKETS
 ```
 
-TPC-236 上游入口：proof 为
+TPC-237 上游入口：proof 为
+`research/tpc-big-road/bridge_b_collision_compressed_finite_window_reassembly.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py`，编号论文为
+`papers/tpc-237-collision-compressed-finite-window-reassembly/`。它提供 TPC-238 所审计的
+collapsed primitive-frequency coefficient object 与 finite-window scale。
+
+TPC-236 更上游入口：proof 为
 `research/tpc-big-road/bridge_b_physical_multiwrap_collision_envelope.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py`，编号论文为
 `papers/tpc-236-physical-multiwrap-collision-envelope/`。它提供 TPC-237 使用的 fixed-`h`

@@ -1,61 +1,60 @@
-# TPC big road V90 / TPC-237: collision-compressed finite-window reassembly
+# TPC big road V91 / TPC-238: finite-window lower-frame obstruction
 
 更新时间：2026-08-24
 
-状态：`TPC237_PROVED_STRUCTURAL_L1 / X_1_OVER_48_PACKET_TRACE / FULL_GATE_B_OPEN`
+状态：`TPC238_PROVED_STRUCTURAL_OBSTRUCTION_L1 / CROSS_FREQUENCY_SAVING_REFUTED_SCOPED / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-237 proof 为
+当前 TPC-238 proof 为
+`bridge_b_finite_window_lower_frame_obstruction.md`，checker 为
+`tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py`，编号论文为
+`../../papers/tpc-238-finite-window-lower-frame-obstruction/`。
+
+For any coefficients on distinct primitive fractions of height at most `U`, put
+`L=floor((N+1)/2)`.  A translated triangular minorant, Fejér decay, and circular
+inverse-square packing prove
+
+```text
+E_I(z) >= [L-pi^2 U^4/(12L)]_+ sum|z|^2,
+E_I(z)/N >= [1/2-pi^2 U^4/(6N^2)]_+ sum|z|^2.
+```
+
+At V59, `U^4/N^2=x^(-67/100+o(1))`, so the frame constant is `1/2-o(1)`.
+After the `q` rows have been collapsed into one coefficient per primitive frequency,
+cross-frequency interference therefore cannot supply fixed-power saving.
+
+```text
+TPC238_TRIANGULAR_WINDOW_LOWER_FRAME = PROVED_EXACT
+TPC238_PRIMITIVE_FAREY_SPACING = PROVED_U_TO_MINUS_2
+TPC238_FEJER_OFFDIAGONAL = PROVED_LE_1_OVER_4L_DISTANCE_SQUARED
+TPC238_CIRCULAR_PACKING_ROW_SUM = PROVED_LE_PI_SQUARED_U_FOUR_OVER_3
+TPC238_LOWER_FRAME = PROVED_L_MINUS_PI_SQUARED_U_FOUR_OVER_12L_POSITIVE_PART
+TPC238_NORMALIZED_LOWER_FRAME = PROVED_HALF_MINUS_PI_SQUARED_U_FOUR_OVER_6N_SQUARED_POSITIVE_PART
+TPC238_V59_FRAME_DEFECT = PROVED_X_MINUS_67_OVER_100
+TPC238_CROSS_REDUCED_FREQUENCY_FIXED_POWER_SAVING = REFUTED_SCOPED_AFTER_Q_COLLAPSE
+TPC238_WITHIN_Q_BUCKET_CANCELLATION = OPEN
+TPC238_C_H_SIGNED_CANCELLATION = NONE
+TPC238_ARITHMETIC_ADVANCE = NO
+TPC238_FIXED_ATOM_CREDIT = 0
+TPC238_L2 = NONE
+TPC238_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC238_ROUND2_CLUE = MOVE_THE_POWER_SAVING_SEARCH_INSIDE_THE_LITERAL_C_H_WEIGHTED_Q_COLLISION_BUCKETS
+```
+
+strongest positive result：V59 lower frame `1/2-O(x^(-67/100))`；strongest
+obstruction：distinct reduced-frequency signs cannot produce fixed-power saving after
+`q`-collapse；open theorem：literal `C_h`-weighted same-frequency `q`-collision
+energy；reusable structure：triangular minorant + Fejér decay + circular packing。
+
+TPC-237 上游 proof 为
 `bridge_b_collision_compressed_finite_window_reassembly.md`，checker 为
 `tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py`，编号论文为
-`../../papers/tpc-237-collision-compressed-finite-window-reassembly/`。
+`../../papers/tpc-237-collision-compressed-finite-window-reassembly/`。It supplies the
+collapsed coefficient object and the V59 finite-window scale tested by TPC-238.
 
-For the exact TPC-218 common-source kernel, retain only primitive frequencies and first
-collapse the prime rows inside each `(h,a)` bucket.  TPC-236 gives
-
-```text
-R_h(a) <= 4Q^2/H+4hQ/H
-         <= 4Q^2/H+4UQ/H = R_*.
-```
-
-Then TPC-217 reduced-frequency large sieve gives
-
-```text
-N^(-1) sum_(n in I_x) sum_j |K_j(n)|^2
- << J M^2 [x^(1/48)+x^(1/50)](log x)^5.
-```
-
-The large-sieve index is always primitive `(a,h)=1`; unreduced residues would duplicate
-frequencies.  This is an unsigned packet trace, not signed Gate-B cancellation.
-
-```text
-TPC237_PRIMITIVE_FREQUENCY_INDEX = REQUIRED_EXACT
-TPC237_Q_COLLISION_BEFORE_LARGE_SIEVE = PROVED_EXACT_COMPOSITION
-TPC237_PRIMITIVE_BUCKET_FACTOR = PROVED_LE_4Q_SQUARED_OVER_H_PLUS_4UQ_OVER_H
-TPC237_FINITE_WINDOW_PACKET_TRACE = PROVED_STRUCTURAL
-TPC237_NORMALIZED_MAIN_EXPONENT = PROVED_1_OVER_48
-TPC237_NORMALIZED_SECONDARY_EXPONENT = PROVED_1_OVER_50
-TPC237_UNNORMALIZED_MAIN_EXPONENT = PROVED_49_OVER_48
-TPC237_OLD_P_COLLAPSE = REPLACED_BY_PHYSICAL_COLLISION_FACTOR
-TPC237_SIMULTANEOUS_SATURATION = NOT_CLAIMED
-TPC237_C_H_SIGNED_CANCELLATION = NONE
-TPC237_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
-TPC237_ARITHMETIC_ADVANCE = NO
-TPC237_FIXED_ATOM_CREDIT = 0
-TPC237_L2 = NONE
-TPC237_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC237_ROUND2_CLUE = TEST_THE_ACTUAL_WEIGHTED_COLLISION_ENERGY_BEFORE_SEEKING_CROSS_H_SIGN_CANCELLATION
-```
-
-strongest positive result：normalized `x^(1/48)+x^(1/50)` finite-window packet trace；
-strongest obstruction：the composition is unsigned and proves neither simultaneous
-saturation nor signed `C_h` cancellation；open theorem：literal weighted collision
-energy beyond the uniform `R_*` product；reusable structure：collision compression
-before primitive Farey reassembly。
-
-TPC-236 上游 proof 为
+TPC-236 更上游 proof 为
 `bridge_b_physical_multiwrap_collision_envelope.md`，checker 为
 `tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py`，编号论文为
 `../../papers/tpc-236-physical-multiwrap-collision-envelope/`。It supplies the

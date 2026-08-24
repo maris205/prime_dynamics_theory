@@ -1,0 +1,68 @@
+\section{Finite certificate and independent audit}
+\label{sec:audit}
+
+The analytic proof is independent of computation.  We nevertheless provide a
+deterministic finite certificate to test the identities, matrix directions,
+translation invariance, and claim firewall.
+
+\subsection{Exact fixture}
+
+The main fixture is
+\[
+(U,N,L)=(4,41,21)
+\]
+and uses all six primitive fractions of height at most \(4\):
+\[
+0,\quad\frac14,\quad\frac13,\quad\frac12,\quad\frac23,\quad\frac34.
+\]
+Their exact minimum circular spacing is \(1/12\), stronger than the theorem
+floor \(1/16\).  The triangular window has 41 positive coefficients and exact
+mass 21.  The exact symbolic lower bounds are
+\[
+21-\frac{64\pi^2}{63}
+\quad\text{and}\quad
+\frac12-\frac{128\pi^2}{5043}.
+\]
+
+\begin{table}[ht]
+\centering
+\caption{Finite checks on four translated \(41\)-point intervals.  The
+eigenvalues are numerical checks; they are not used to prove the theorem.}
+\label{tab:fixture}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+start & theorem lower & triangular \(\lambda_{\min}\) &
+hard-window \(\lambda_{\min}\)\\
+\midrule
+\(-20\) & \(10.973735\) & \(20.571429\) & \(36.000000\)\\
+\(0\)   & \(10.973735\) & \(20.571429\) & \(36.000000\)\\
+\(17\)  & \(10.973735\) & \(20.571429\) & \(36.000000\)\\
+\(103\) & \(10.973735\) & \(20.571429\) & \(36.000000\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The certificate separates three classes.  Rational identities and theorem
+strings are labeled \texttt{EXACT\_THEOREM\_LEDGER}.  Matrix checks are labeled
+\texttt{NUMERICALLY\_CERTIFIED\_FINITE\_CHECK}.  The observed excess over the
+universal theorem bound is labeled \texttt{NUMERICAL\_OBSERVATION}; it carries
+no sharpness conclusion.
+
+\subsection{Independent implementation and stress}
+
+The independent checker does not import the producer.  It separately
+enumerates primitive fractions, reconstructs triangular and hard Gram
+matrices entry by entry, verifies the certificate digest, and rejects three
+mutations: a denominator above \(U\), a duplicate frequency, and a
+nonprimitive fraction.
+
+The stress experiment covers
+\[
+(U,N)\in\{(2,9),(3,25),(4,41),(5,81)\}
+\]
+with four translations for each parameter pair.  Across 16 windows, the
+smallest triangular-minus-theorem margin is \(2.43189450696\), the smallest
+hard-minus-triangular margin is \(3.2\), and the largest translation spectral
+drift is \(1.24\times10^{-11}\).  Producer, independent checker, and stress
+test each produce byte-identical standard output under ordinary and optimized
+Python, with empty standard error.

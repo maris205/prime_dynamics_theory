@@ -2,11 +2,67 @@
 
 更新时间：2026-08-24
 
-状态：**TPC237_PROVED_STRUCTURAL_L1_RELEASED / COLLISION_COMPRESSED_FINITE_WINDOW_PACKET_TRACE / SIGNED_GATE_B_OPEN**
+状态：**TPC238_PROVED_STRUCTURAL_OBSTRUCTION_L1_RELEASED / CROSS_REDUCED_FREQUENCY_SAVING_REFUTED_SCOPED / WITHIN_BUCKET_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.32 已发布：TPC-238 finite-window lower-frame obstruction
+
+项目：`papers/tpc-238-finite-window-lower-frame-obstruction/`
+
+类型：**PROVED_STRUCTURAL_OBSTRUCTION_L1 / CROSS_REDUCED_FREQUENCY_CANCELLATION_EXCLUDED**。
+
+For any consecutive interval `I` of `N` integers, put
+`L=floor((N+1)/2)`.  For coefficients supported on distinct primitive fractions
+`a/h` with `h<=U`, TPC-238 proves
+
+```text
+E_I(z) >= [L-pi^2 U^4/(12L)]_+ sum|z|^2,
+E_I(z)/N >= [1/2-pi^2 U^4/(6N^2)]_+ sum|z|^2.
+```
+
+The proof uses a translated triangular minorant, the exact Fejér Gram matrix,
+primitive Farey spacing `U^(-2)`, and a circular inverse-square packing row sum.
+At V59,
+
+```text
+U^4/N^2=x^(-67/100+o(1)),
+E_(I_x)(z)/N >= [1/2-O(x^(-67/100+o(1)))]sum|z|^2.
+```
+
+Thus, after the prime rows have been collapsed into one coefficient at every
+primitive reduced frequency, interference among different frequencies cannot provide
+a fixed-power saving relative to the collapsed coefficient energy.  The theorem does
+not estimate that coefficient energy and leaves all same-frequency `q`-bucket
+cancellation open.
+
+```text
+TPC238_TRIANGULAR_WINDOW_LOWER_FRAME = PROVED_EXACT
+TPC238_PRIMITIVE_FAREY_SPACING = PROVED_U_TO_MINUS_2
+TPC238_FEJER_OFFDIAGONAL = PROVED_LE_1_OVER_4L_DISTANCE_SQUARED
+TPC238_CIRCULAR_PACKING_ROW_SUM = PROVED_LE_PI_SQUARED_U_FOUR_OVER_3
+TPC238_LOWER_FRAME = PROVED_L_MINUS_PI_SQUARED_U_FOUR_OVER_12L_POSITIVE_PART
+TPC238_NORMALIZED_LOWER_FRAME = PROVED_HALF_MINUS_PI_SQUARED_U_FOUR_OVER_6N_SQUARED_POSITIVE_PART
+TPC238_V59_FRAME_DEFECT = PROVED_X_MINUS_67_OVER_100
+TPC238_CROSS_REDUCED_FREQUENCY_FIXED_POWER_SAVING = REFUTED_SCOPED_AFTER_Q_COLLAPSE
+TPC238_WITHIN_Q_BUCKET_CANCELLATION = OPEN
+TPC238_C_H_SIGNED_CANCELLATION = NONE
+TPC238_ARITHMETIC_ADVANCE = NO
+TPC238_FIXED_ATOM_CREDIT = 0
+TPC238_L2 = NONE
+TPC238_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC238_STATUS = PROVED_STRUCTURAL_OBSTRUCTION_L1
+TPC238_ROUND2_CLUE = MOVE_THE_POWER_SAVING_SEARCH_INSIDE_THE_LITERAL_C_H_WEIGHTED_Q_COLLISION_BUCKETS
+```
+
+strongest positive result：V59 lower frame `1/2-O(x^(-67/100))`；strongest
+obstruction：cross-reduced-frequency signs cannot supply fixed-power saving after
+`q`-collapse；open theorem：literal `C_h`-weighted same-frequency collision energy；
+reusable structure：triangular-window Fejér minorant plus circular inverse-square
+packing；`ROUND2_CLUE`：
+`MOVE_THE_POWER_SAVING_SEARCH_INSIDE_THE_LITERAL_C_H_WEIGHTED_Q_COLLISION_BUCKETS`。
 
 ## 0.31 已发布：TPC-237 collision-compressed finite-window reassembly
 

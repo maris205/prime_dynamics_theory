@@ -1,0 +1,154 @@
+\section{Triangular-window proof}
+\label{sec:theorem}
+
+\subsection{The exact Fejér Gram matrix}
+
+\begin{lemma}[triangular minorant]
+\label{lem:triangle}
+Set \(c=M+L-1\) and
+\[
+w(c+k)=
+\begin{cases}
+1-|k|/L,& |k|<L,\\
+0,& |k|\geq L.
+\end{cases}
+\]
+Then \(0\leq w\leq1_I\), and
+\[
+\sum_n w(n)\e(n\theta)=\e(c\theta)F_L(\theta),
+\qquad
+F_L(\theta)=\frac1L\left|\sum_{r=0}^{L-1}\e(r\theta)\right|^2.
+\]
+In particular \(F_L(0)=L\).
+\end{lemma}
+
+\begin{proof}
+The support of \(w\) is
+\(\{M,\ldots,M+2L-2\}\).  Since \(2L-1\leq N\), it lies in \(I\).
+All weights lie in \([0,1]\).  Expanding the square and grouping pairs
+\((r,s)\) according to \(k=r-s\) gives
+\[
+\frac1L\left|\sum_{r=0}^{L-1}\e(r\theta)\right|^2
+=\sum_{|k|<L}\left(1-\frac{|k|}{L}\right)\e(k\theta).
+\]
+Translation supplies the factor \(\e(c\theta)\).
+\end{proof}
+
+The parity point in this lemma is useful.  For odd \(N\), the support has
+length \(N\); for even \(N\), it has length \(N-1\).  Both cases preserve the
+minorant inequality in the required direction.
+
+\subsection{Spacing and packing}
+
+\begin{lemma}[primitive spacing]
+\label{lem:spacing}
+If \(a/h\) and \(b/k\) are distinct modulo \(1\), primitive, and
+\(h,k\leq U\), then
+\[
+\dist{\frac ah-\frac bk}\geq U^{-2}.
+\]
+\end{lemma}
+
+\begin{proof}
+Choose \(m\in\mathbb Z\) that realizes the circular distance.  The integer
+\(ak-bh-mhk\) is nonzero, so
+\[
+\left|\frac ah-\frac bk-m\right|
+=\frac{|ak-bh-mhk|}{hk}\geq\frac1{hk}\geq U^{-2}.
+\]
+\end{proof}
+
+\begin{lemma}[Fejér off-diagonal decay]
+\label{lem:fejer}
+For \(\theta\notin\mathbb Z\),
+\[
+F_L(\theta)\leq\frac1{4L\dist{\theta}^{\,2}}.
+\]
+\end{lemma}
+
+\begin{proof}
+The sine representation of the geometric sum gives
+\[
+F_L(\theta)
+=\frac1L\left|\frac{\sin(\pi L\theta)}{\sin(\pi\theta)}\right|^2
+\leq\frac1{L|\sin(\pi\theta)|^2}.
+\]
+For \(t=\dist{\theta}\in(0,1/2]\), concavity on \([0,1/2]\) gives
+\(\sin(\pi t)\geq2t\).  Substitution proves the claim.
+\end{proof}
+
+\begin{lemma}[circular inverse-square packing]
+\label{lem:packing}
+If a finite subset \(\mathcal X\subset\T\) is
+\(\delta\)-separated, then for every \(x\in\mathcal X\),
+\[
+\sum_{\substack{y\in\mathcal X\\y\ne x}}
+\frac1{\dist{x-y}^{\,2}}\leq\frac{\pi^2}{3\delta^2}.
+\]
+\end{lemma}
+
+\begin{proof}
+Assign each \(y\ne x\) to a shortest clockwise or counterclockwise arc from
+\(x\), assigning an antipodal tie once.  In either direction the \(j\)-th
+distance is at least \(j\delta\); otherwise \(j+1\) points in an arc shorter
+than \(j\delta\) would force a neighboring gap below \(\delta\).  Therefore
+\[
+\sum_{y\ne x}\frac1{\dist{x-y}^{\,2}}
+\leq2\sum_{j\geq1}\frac1{(j\delta)^2}
+=\frac{\pi^2}{3\delta^2}.
+\]
+\end{proof}
+
+\subsection{Spectral conclusion}
+
+\begin{proof}[Proof of Theorem~\ref{thm:lower-frame}]
+Lemma~\ref{lem:triangle} and \(0\leq w\leq1_I\) give
+\[
+\Energy_I(z)\geq
+\sum_nw(n)\left|\sum_\alpha z_\alpha\e(n\alpha)\right|^2
+=z^\ast Gz,
+\]
+where
+\[
+G_{\alpha,\beta}
+=\e\!\left(c(\beta-\alpha)\right)F_L(\beta-\alpha).
+\]
+The order \(\beta-\alpha\) is forced by the expansion
+\(\overline{z_\alpha}z_\beta\e(n(\beta-\alpha))\); reversing it would
+conjugate the Gram form and is invalid for general complex coefficients.
+This Hermitian matrix has diagonal \(L\).  Lemmas
+\ref{lem:spacing}--\ref{lem:packing}, with \(\delta=U^{-2}\), give
+\[
+\sum_{\beta\ne\alpha}|G_{\alpha,\beta}|
+\leq\frac1{4L}
+\sum_{\beta\ne\alpha}\frac1{\dist{\alpha-\beta}^{\,2}}
+\leq\frac{\pi^2U^4}{12L}.
+\]
+Schur's test, equivalently the Hermitian Gershgorin bound, yields
+\[
+z^\ast Gz\geq
+\left(L-\frac{\pi^2U^4}{12L}\right)\normtwo{z}^{\,2}.
+\]
+Combining this inequality with \(\Energy_I(z)\geq0\) inserts the positive
+part and proves the theorem.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:normalized}]
+Because \(L\geq N/2\),
+\[
+\frac LN-\frac{\pi^2U^4}{12LN}
+\geq\frac12-\frac{\pi^2U^4}{6N^2}.
+\]
+The positive-part map is monotone, and division by \(N>0\) commutes with it.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:v59}]
+The exponent calculation is exact:
+\[
+4\cdot\frac{133}{400}-2
+=\frac{532}{400}-\frac{800}{400}
+=-\frac{67}{100}.
+\]
+The relation \(N\asymp x\) contributes only \(x^{o(1)}\) at the exponent
+ledger level.
+\end{proof}

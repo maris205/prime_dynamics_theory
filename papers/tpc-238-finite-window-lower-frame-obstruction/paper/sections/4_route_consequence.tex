@@ -1,0 +1,63 @@
+\section{Route consequence and claim firewall}
+\label{sec:route}
+
+Suppose a preceding arithmetic decomposition has already collapsed all
+\(q\)-variables contributing to the same primitive frequency into coefficients
+\[
+z_{h,a}=C_h\sum_{q\sim Q}B_{h,q}(a).
+\]
+Theorem~\ref{thm:lower-frame} applies to these coefficients without using
+their origin.  At V59 it gives
+\[
+\frac{\Energy_I(z)}{N\normtwo{z}^{\,2}}\geq\frac12-o(1)
+\]
+whenever \(z\ne0\).  Thus a proposed estimate of the form
+\[
+\frac{\Energy_I(z)}{N}\ll x^{-\eta}\normtwo{z}^{\,2},
+\qquad \eta>0,
+\]
+cannot be obtained from interference among the distinct reduced frequencies.
+The two inequalities are incompatible for sufficiently large \(x\).
+
+This is a structural obstruction, not an arithmetic estimate.  In particular,
+the norm
+\[
+\normtwo{z}^{\,2}
+=\sum_{\substack{h\leq U\\(a,h)=1}}
+\left|C_h\sum_{q\sim Q}B_{h,q}(a)\right|^2
+\]
+may still be substantially smaller than an unsigned or uncollapsed packet
+baseline.  Such a reduction would occur inside the coefficient bucket and is
+not constrained by the lower frame.
+
+\begin{proposition}[scoped refutation]
+At the V59 scale, a fixed-power saving relative to the collapsed coefficient
+energy cannot be attributed solely to cancellation between distinct primitive
+frequencies.  Cancellation inside the \(q\)-bucket, inside the literal signed
+construction of \(C_h\), and after the signed four-packet projection remains
+open.
+\end{proposition}
+
+\begin{proof}
+The first statement follows from Corollary~\ref{cor:v59}.  The three open
+mechanisms occur before or after the coefficient vector to which the theorem
+is applied, so the theorem contains no implication about them.
+\end{proof}
+
+Accordingly, this paper records
+\[
+\begin{gathered}
+\texttt{ARITHMETIC\_ADVANCE=NO},\qquad
+\texttt{C\_H\_SIGNED\_CANCELLATION=NONE},\\
+\texttt{L2=NONE},\qquad
+\texttt{FULL\_GATE\_B=OPEN},\\
+\texttt{STRICT\_1\_OVER\_400=UNPAID\_GLOBAL},\qquad
+\texttt{FIXED\_ATOM=0}.
+\end{gathered}
+\]
+Every Route-A component \(A0,\ldots,A4\) remains false.  No sharpness claim is
+made for \(\pi^2/12\) or \(1/2\).
+
+The next theorem should therefore control the literal same-frequency
+\(C_h\)-weighted \(q\)-collision energy.  This target is smaller and more
+arithmetic than any further optimization of cross-frequency signs.

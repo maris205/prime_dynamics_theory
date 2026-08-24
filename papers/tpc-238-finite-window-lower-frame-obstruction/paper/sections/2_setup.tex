@@ -1,0 +1,59 @@
+\section{Finite-window setup}
+\label{sec:setup}
+
+Write \(\e(t)=\exp(2\pi i t)\), and let
+\(\dist{\theta}=\min_{m\in\mathbb Z}|\theta-m|\) be circular distance to the
+nearest integer.  A fraction \(a/h\pmod1\) is \emph{primitive} when
+\(\gcd(a,h)=1\).  We use a finite set
+\[
+\FU=\left\{\frac ah\pmod1:\ 1\leq h\leq U,\ \gcd(a,h)=1\right\},
+\]
+or any subset consisting of distinct points of \(\T\).  The theorem also
+applies to finitely supported coefficient families without taking the full
+set.
+
+Let
+\[
+I=\{M,M+1,\ldots,M+N-1\},\qquad
+L=\left\lfloor\frac{N+1}{2}\right\rfloor,
+\]
+and define
+\[
+\Energy_I(z)=
+\sum_{n\in I}\left|\sum_{\alpha\in\FU}z_\alpha\e(n\alpha)\right|^2.
+\]
+The norm \(\normtwo{z}^{\,2}\) means
+\(\sum_{\alpha\in\FU}|z_\alpha|^2\).
+
+\begin{theorem}[finite-window lower frame]
+\label{thm:lower-frame}
+For every \(N\geq1\), \(U\geq1\), interval \(I\) as above, and finite
+coefficient vector on distinct primitive fractions of height at most \(U\),
+\[
+\Energy_I(z)\geq
+\pos{L-\frac{\pi^2U^4}{12L}}\normtwo{z}^{\,2}.
+\]
+\end{theorem}
+
+\begin{corollary}[normalized lower frame]
+\label{cor:normalized}
+Under the hypotheses of Theorem~\ref{thm:lower-frame},
+\[
+\frac{\Energy_I(z)}{N}\geq
+\pos{\frac12-\frac{\pi^2U^4}{6N^2}}\normtwo{z}^{\,2}.
+\]
+\end{corollary}
+
+\begin{corollary}[V59 specialization]
+\label{cor:v59}
+If \(U=x^{133/400}\) and \(N\asymp x\), then
+\[
+\frac{U^4}{N^2}=x^{-67/100+o(1)}.
+\]
+The normalized lower-frame constant in
+Corollary~\ref{cor:normalized} is therefore \(1/2-o(1)\).
+\end{corollary}
+
+No sharpness assertion is attached to either constant.  The role of the
+explicit constants is to separate a vanishing defect from a fixed-power
+saving at the V59 scale.

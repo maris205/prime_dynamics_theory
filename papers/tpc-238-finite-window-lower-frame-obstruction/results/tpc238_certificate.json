@@ -1,0 +1,144 @@
+{
+  "artifact": "TPC-238 finite-window lower-frame certificate",
+  "date": "2026-08-24",
+  "exact_theorem_ledger": {
+    "classification": "EXACT_THEOREM_LEDGER",
+    "fejer_offdiagonal": "F_L(theta) <= 1/(4*L*||theta||^2)",
+    "lower_frame": "E_I(z) >= [L - pi^2*U^4/(12*L)]_+ * sum_alpha |z_alpha|^2",
+    "normalized_lower_frame": "E_I(z)/N >= [1/2 - pi^2*U^4/(6*N^2)]_+ * sum_alpha |z_alpha|^2",
+    "packing_row_sum": "sum_{beta!=alpha} ||alpha-beta||^-2 <= pi^2/(3*delta^2)",
+    "primitive_spacing": "delta >= U^-2",
+    "triangular_order": "L=floor((N+1)/2)",
+    "v59_exponent_identity": "4*(133/400)-2=-67/100"
+  },
+  "fixture": {
+    "L": 21,
+    "N": 41,
+    "U": 4,
+    "classification": "MODELING_CHOICE",
+    "fractions": [
+      {
+        "a": 0,
+        "h": 1
+      },
+      {
+        "a": 1,
+        "h": 4
+      },
+      {
+        "a": 1,
+        "h": 3
+      },
+      {
+        "a": 1,
+        "h": 2
+      },
+      {
+        "a": 2,
+        "h": 3
+      },
+      {
+        "a": 3,
+        "h": 4
+      }
+    ],
+    "minimum_circular_spacing_exact": "1/12",
+    "normalized_lower_bound_symbolic": "1/2 - 128*pi^2/5043",
+    "theorem_lower_bound_symbolic": "21 - 64*pi^2/63",
+    "theorem_spacing_floor_exact": "1/16",
+    "triangular_support_size": 41,
+    "triangular_weight_sum_exact": "21",
+    "window_starts": [
+      -20,
+      0,
+      17,
+      103
+    ]
+  },
+  "markers": {
+    "TPC238_CIRCULAR_PACKING_ROW_SUM": "PROVED_LE_PI_SQUARED_U_FOUR_OVER_3",
+    "TPC238_CROSS_REDUCED_FREQUENCY_FIXED_POWER_SAVING": "REFUTED_SCOPED_AFTER_Q_COLLAPSE",
+    "TPC238_FEJER_OFFDIAGONAL": "PROVED_LE_1_OVER_4L_DISTANCE_SQUARED",
+    "TPC238_LOWER_FRAME": "PROVED_L_MINUS_PI_SQUARED_U_FOUR_OVER_12L_POSITIVE_PART",
+    "TPC238_NORMALIZED_LOWER_FRAME": "PROVED_HALF_MINUS_PI_SQUARED_U_FOUR_OVER_6N_SQUARED_POSITIVE_PART",
+    "TPC238_PRIMITIVE_FAREY_SPACING": "PROVED_U_TO_MINUS_2",
+    "TPC238_ROUND2_CLUE": "MOVE_THE_POWER_SAVING_SEARCH_INSIDE_THE_LITERAL_C_H_WEIGHTED_Q_COLLISION_BUCKETS",
+    "TPC238_ROUTE_ADVANCE": "YES",
+    "TPC238_STATUS": "PROVED_STRUCTURAL_OBSTRUCTION_L1",
+    "TPC238_TRIANGULAR_WINDOW_LOWER_FRAME": "PROVED_EXACT",
+    "TPC238_V59_FRAME_DEFECT": "PROVED_X_MINUS_67_OVER_100",
+    "TPC238_WITHIN_Q_BUCKET_CANCELLATION": "OPEN"
+  },
+  "mutation_firewalls": {
+    "classification": "NUMERICALLY_CERTIFIED_FINITE_CHECK",
+    "rejected": [
+      "denominator_above_U",
+      "duplicate_frequency",
+      "nonprimitive_fraction"
+    ],
+    "rejected_count": 3
+  },
+  "numerical_checks": {
+    "analytic_lower_bound_approx": 10.973735211592,
+    "classification": "NUMERICALLY_CERTIFIED_FINITE_CHECK",
+    "direct_test_vector_min_energy_ratio": 38.363568080061,
+    "fejer_offdiagonal_max_bound_ratio": 1.0,
+    "max_inverse_square_row_sum": 203.76,
+    "normalized_theorem_lower_bound_approx": 0.249492491902,
+    "packing_row_sum_cap_approx": 842.206242226292,
+    "translation_spectrum_tolerance": 1e-09,
+    "windows": [
+      {
+        "hard_gram_min_eigenvalue": 36.0,
+        "hard_normalized_min_eigenvalue": 0.878048780488,
+        "start": -20,
+        "triangular_gram_min_eigenvalue": 20.571428571429,
+        "triangular_normalized_min_eigenvalue": 0.501742160279
+      },
+      {
+        "hard_gram_min_eigenvalue": 36.0,
+        "hard_normalized_min_eigenvalue": 0.878048780488,
+        "start": 0,
+        "triangular_gram_min_eigenvalue": 20.571428571429,
+        "triangular_normalized_min_eigenvalue": 0.501742160279
+      },
+      {
+        "hard_gram_min_eigenvalue": 36.0,
+        "hard_normalized_min_eigenvalue": 0.878048780488,
+        "start": 17,
+        "triangular_gram_min_eigenvalue": 20.571428571429,
+        "triangular_normalized_min_eigenvalue": 0.501742160279
+      },
+      {
+        "hard_gram_min_eigenvalue": 36.0,
+        "hard_normalized_min_eigenvalue": 0.878048780488,
+        "start": 103,
+        "triangular_gram_min_eigenvalue": 20.571428571429,
+        "triangular_normalized_min_eigenvalue": 0.501742160279
+      }
+    ]
+  },
+  "numerical_observation": {
+    "classification": "NUMERICAL_OBSERVATION",
+    "statement": "For the finite fixture, the actual Gram minima exceed the universal theorem constants; no sharpness inference is made."
+  },
+  "payload_sha256": "8af87fa72672eff8b9b5553d620fdbfe4127fdb5ee0fdc7c6b32ef604ec0fe26",
+  "schema_version": 1,
+  "scope_firewall": {
+    "ARITHMETIC_ADVANCE": "NO",
+    "C_H_SIGNED_CANCELLATION": "NONE",
+    "FIXED_ATOM": 0,
+    "FULL_GATE_B": "OPEN",
+    "L2": "NONE",
+    "ROUTE_A": {
+      "A0": false,
+      "A1": false,
+      "A2": false,
+      "A3": false,
+      "A4": false
+    },
+    "SHARPNESS": "NOT_CLAIMED",
+    "SIGNED_FOUR_PACKET_PROJECTION": "OPEN",
+    "STRICT_1_OVER_400": "UNPAID_GLOBAL"
+  }
+}
