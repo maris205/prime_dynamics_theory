@@ -1,0 +1,23 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+Primitive physical buckets carry more arithmetic structure than an integer
+row census records.  The congruence defining a bucket sends every admissible
+unit multiplier to a reduced prime residue class, and Brun--Titchmarsh then
+gives the explicit factor-$16$ row envelope.  At V59 this changes the
+primitive collision factor from a power-scale census to
+$x^{1/96}\log\log x/\log x$.
+
+Inserted at the unchanged pre-large-sieve interface, the envelope proves the
+finite-window trace bound
+
+\[
+ \frac1N\sum_{n\in\Ix}\sum_j|K_j(n)|^2
+ \ll JM^2x^{1/48}(\log x)^4\log\log x.
+\]
+
+The improvement over the preceding result is the genuine logarithmic factor
+$\log x/\log\log x$.  The fixed-power exponent and leading unnormalized
+exponent remain $1/48$ and $49/48+o(1)$, respectively.  Further progress
+requires information that a coefficient-blind prime count cannot see: weighted
+or signed cancellation inside the literal top-band buckets.

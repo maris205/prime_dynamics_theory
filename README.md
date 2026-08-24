@@ -9,13 +9,12 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-238 已对 TPC-237 `q`-collapsed primitive-frequency object 证明
-finite-window lower frame。任意长度 `N` 的连续窗口满足 normalized lower bound
-`[1/2-pi^2 U^4/(6N^2)]_+`；V59 defect 为 `x^(-67/100+o(1))`。因此 distinct
-reduced frequencies 之间的相消不能提供 fixed-power saving，研究位置被严格压缩到
-literal `C_h`-weighted same-frequency `q` buckets 内。状态为
-`PROVED_STRUCTURAL_OBSTRUCTION_L1`；arithmetic L2、signed four-packet Gate B 与 strict
-`1/400` 仍开放。
+当前主线状态：TPC-239 已把 TPC-238 指向的 same-frequency `q` bucket 改写成
+primitive prime progressions，并用 Brun--Titchmarsh 将 TPC-237 finite-window packet
+trace 从 `x^(1/48)(log x)^5` 改进为
+`x^(1/48)(log x)^4 loglog x`。这是 source-backed 的对数节省，但 fixed-power exponent
+仍为 `1/48`；literal `C_h` signed cancellation、arithmetic L2、signed four-packet
+Gate B 与 strict `1/400` 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +28,8 @@ literal `C_h`-weighted same-frequency `q` buckets 内。状态为
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-239-brun-titchmarsh-primitive-bucket-envelope` - `PROVED_SOURCE_BACKED_PRIME_DENSITY_L1 / LOGARITHMIC_ONLY` - 将每个 primitive physical frequency bucket 的 shell-prime incidence 上界为 reduced residue classes 中的 prime counts，并以 Brun--Titchmarsh 证明 `R_h(a)<<x^(1/96)loglog x/log x`；代入 TPC-237 composition 得 normalized `x^(1/48)(log x)^4loglog x`，但没有 fixed-power、signed `C_h` 或 Gate-B advance。
 
 `tpc-238-finite-window-lower-frame-obstruction` - `PROVED_STRUCTURAL_OBSTRUCTION_L1 / CROSS_REDUCED_FREQUENCY_CANCELLATION_REFUTED_SCOPED` - 用 translated triangular minorant、Fejér kernel、primitive Farey spacing 与 circular inverse-square packing 证明 normalized lower frame `[1/2-pi^2 U^4/(6N^2)]_+`；V59 上为 `1/2-O(x^(-67/100))`，从而严格排除 `q`-collapse 后跨 reduced-frequency 的 fixed-power cancellation，下一步进入 literal `C_h`-weighted same-frequency prime buckets。
 

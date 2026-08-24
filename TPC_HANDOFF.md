@@ -1,9 +1,83 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V91_TPC238_FINITE_WINDOW_LOWER_FRAME_OBSTRUCTION_RELEASED`
+交接状态：`BOLD_CHANNEL_V92_TPC239_BRUN_TITCHMARSH_PRIMITIVE_BUCKET_ENVELOPE_RELEASED`
 
-TPC-238 当前 section：finite-window lower-frame obstruction
+TPC-239 当前 section：Brun--Titchmarsh primitive-bucket envelope
+----------------------------------------------------------------
+
+For primitive `a mod h`, an atom in the physical row satisfies
+`q=a^(-1)m (mod h)` in a reduced residue class.  Put
+`M_h=floor(2hQ/H)`.  Dropping only the `q`-dependent cutoff and applying the
+standard Brun--Titchmarsh theorem gives
+
+```text
+R_h(a)
+ <= sum_(0<|m|<=M_h,(m,h)=1)
+      [pi(2Q;h,a^(-1)m)-pi(Q;h,a^(-1)m)]
+ <= 16(Q^2/H)(h/phi(h))/log(2Q/h).
+```
+
+At V59, `Q/U=x^(1/1200)` and `h/phi(h)<<loglog(3h)`, hence
+
+```text
+max R_h(a) << x^(1/96)loglog x/log x.
+```
+
+Substituting this source-backed prime-density envelope into the unchanged
+TPC-237 collision-before-large-sieve composition proves
+
+```text
+N^(-1) sum_(n in I_x) sum_j |K_j(n)|^2
+ << J M^2 x^(1/48)(log x)^4loglog x.
+```
+
+The improvement over TPC-237 is the factor `log x/loglog x`.  The leading
+unnormalized fixed-power exponent remains `49/48+o(1)`.
+
+```text
+TPC239_ROUTE_ADVANCE = YES_LOGARITHMIC_ONLY
+TPC239_PRIMITIVE_AP_REDUCTION = PROVED_EXACT_UPPER_COMPILER
+TPC239_BRUN_TITCHMARSH_INPUT = SOURCE_BACKED
+TPC239_BUCKET_MULTIPLICITY = PROVED_LE_16_Q_SQUARED_OVER_H_TIMES_H_OVER_PHI_H_OVER_LOG_2Q_OVER_H
+TPC239_V59_BUCKET_MULTIPLICITY = PROVED_X_1_OVER_96_LOGLOG_X_OVER_LOG_X
+TPC239_FINITE_WINDOW_PACKET_TRACE = PROVED_X_1_OVER_48_LOG_FOUR_LOGLOG
+TPC239_UNNORMALIZED_FIXED_POWER_EXPONENT = PROVED_49_OVER_48
+TPC239_IMPROVEMENT_OVER_TPC237 = PROVED_FACTOR_LOG_X_OVER_LOGLOG_X
+TPC239_FIXED_POWER_IMPROVEMENT = NONE
+TPC239_C_H_SIGNED_CANCELLATION = NONE
+TPC239_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC239_ARITHMETIC_ADVANCE = NO
+TPC239_FIXED_ATOM_CREDIT = 0
+TPC239_L2 = NONE
+TPC239_FULL_GATE_B = OPEN
+TPC239_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC239_TPC_TRIGGER = true
+TPC239_NUMBERED_RELEASE = YES
+TPC239_STATUS = PROVED_SOURCE_BACKED_PRIME_DENSITY_L1
+TPC239_ROUND2_CLUE = TEST_THE_EXACT_TOP_BAND_C_H_BEFORE_SEEKING_FURTHER_UNIFORM_BUCKET_SAVINGS
+```
+
+strongest positive result：normalized
+`x^(1/48)(log x)^4loglog x` finite-window common-source packet trace；strongest
+obstruction：prime density saves only a logarithm and leaves fixed-power `1/48`；
+open theorem：literal weighted or signed within-bucket cancellation beyond
+coefficient-blind prime counting；reusable structure：primitive residue to reduced
+prime-AP compiler。
+
+编号论文目录：papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/
+
+```text
+papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/README.md
+papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/PROOF_PACKAGE.md
+papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/paper/paper.pdf
+papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/results/tpc239_certificate.json
+papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_brun_titchmarsh_primitive_bucket_envelope.md
+research/tpc-big-road/tpc_bridge_b_brun_titchmarsh_primitive_bucket_envelope_checker.py
+```
+
+TPC-238 上游 section：finite-window lower-frame obstruction
 -----------------------------------------------------------
 
 For any consecutive interval `I` of `N` integers, put
@@ -6113,8 +6187,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V91/TPC-238 gate、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百三十八次（69 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V92/TPC-239 gate、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百四十次（70 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -6256,11 +6330,23 @@ python -B research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_
 python -O -B research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_brun_titchmarsh_primitive_bucket_envelope_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_brun_titchmarsh_primitive_bucket_envelope_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-238 入口：
+最新 TPC-239 入口：
+
+```text
+papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/README.md
+papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/notes/theorem_ledger.md
+papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_brun_titchmarsh_primitive_bucket_envelope.md
+research/tpc-big-road/tpc_bridge_b_brun_titchmarsh_primitive_bucket_envelope_checker.py
+```
+
+TPC-238 上游入口：
 
 ```text
 papers/tpc-238-finite-window-lower-frame-obstruction/README.md

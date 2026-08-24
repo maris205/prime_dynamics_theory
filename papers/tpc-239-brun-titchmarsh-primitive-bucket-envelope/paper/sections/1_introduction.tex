@@ -1,0 +1,76 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The prime-shell labels in the finite-window kernel collide before distinct
+rational frequencies can be separated by the large sieve.  A previous
+collision argument controlled each primitive bucket by an integer row census,
+which retained the correct fixed-power scale but ignored that the row label is
+prime.  The present note uses that omitted arithmetic fact at the same
+pre-large-sieve interface.
+
+The key observation is exact.  A physical atom in a primitive bucket satisfies
+$mq^{-1}\equiv a\pmod h$.  Because $a$ and the shell prime $q$ are units
+modulo $h$, the multiplier $m$ is also a unit, and the prime lies in the
+reduced class $q\equiv a^{-1}m\pmod h$.  This turns the physical bucket into
+a finite collection of reduced prime progressions without changing the packet
+profiles, the shell weights, or the signed source coefficient $C_h$.
+
+Our contributions are the following.
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item We prove the explicit primitive-bucket envelope
+\[
+ R_h(a)\leq
+ 16\frac{Q^2}{H}\frac{h}{\ph(h)\log(2Q/h)},
+\]
+including the empty $h=1$ branch and the reduced-class check required by
+Brun--Titchmarsh.
+\item We specialize the envelope at the V59 scales and obtain
+$R_h(a)\ll x^{1/96}\log\log x/\log x$, uniformly over active primitive
+buckets.
+\item We insert the new row factor into the frozen common-source composition
+and prove
+
+\[
+ \frac1N\sum_{n\in\Ix}\sum_{j=1}^{J}|K_j(n)|^2
+ \ll JM^2x^{1/48}(\log x)^4\log\log x.
+\]
+\item We give a deterministic finite certificate with an independent
+reconstruction and mutation tests.  Its numerical rows illustrate the finite
+inequalities and are not used as evidence for the analytic theorem.
+\end{enumerate}
+
+The gain is deliberately stated at its proper size.  Table~\ref{tab:comparison}
+shows that prime density removes one logarithm, up to a $\log\log x$ factor,
+but does not alter the fixed-power ledger.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Loss comparison at the same frozen common-source interface.  The
+TPC-239 advance is logarithmic only.}
+\label{tab:comparison}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Quantity & Previous collision census & This paper \\
+\midrule
+Maximum primitive row
+ & $4Q^2/H+4UQ/H$
+ & $\ll (Q^2/H)\log\log x/\log x$ \\
+Normalized trace
+ & $\ll JM^2x^{1/48}(\log x)^5$
+ & $\ll JM^2x^{1/48}(\log x)^4\log\log x$ \\
+Fixed-power exponent & $1/48$ & $1/48$ \\
+Leading unnormalized exponent & $49/48+o(1)$ & $49/48+o(1)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This limitation is structural to the argument used here.  The proof counts
+prime rows without their signs or $C_h$-weighted interaction, and the direct
+coefficient estimate still uses $|C_h|^2$.  Consequently, no signed
+four-packet projection, arithmetic $L^2$, strict $1/400$, Gate-B passage,
+or twin-prime conclusion follows.  Section~\ref{sec:source} fixes the inherited
+interfaces, Section~\ref{sec:compiler} proves the AP compiler,
+Section~\ref{sec:composition} performs the V59 substitution, and the remaining
+sections document the finite audit and route boundary.

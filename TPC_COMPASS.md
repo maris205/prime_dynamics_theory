@@ -1,38 +1,42 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V91 / FINITE_WINDOW_LOWER_FRAME_OBSTRUCTION`
-claim level：`PROVED_STRUCTURAL_OBSTRUCTION_L1_CROSS_REDUCED_FREQUENCY_CANCELLATION_EXCLUDED`
-编号事实终点：TPC-238；TPC-238 trigger：`true`
+状态：`BOLD_CHANNEL_V92 / BRUN_TITCHMARSH_PRIMITIVE_BUCKET_ENVELOPE`
+claim level：`PROVED_SOURCE_BACKED_PRIME_DENSITY_L1_LOGARITHMIC_ONLY`
+编号事实终点：TPC-239；TPC-239 trigger：`true`
 
-当前 TPC-238 入口：proof 为
-`research/tpc-big-road/bridge_b_finite_window_lower_frame_obstruction.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py`，编号论文为
-`papers/tpc-238-finite-window-lower-frame-obstruction/`。translated triangular minorant、
-Fejér decay 与 primitive circular packing 给出
-`E_I/N >= [1/2-pi^2 U^4/(6N^2)]_+ sum|z|^2`；V59 defect 为
-`x^(-67/100+o(1))`，故 `q`-collapse 后 cross-reduced-frequency fixed-power saving 被
-`REFUTED_SCOPED`。
+当前 TPC-239 入口：proof 为
+`research/tpc-big-road/bridge_b_brun_titchmarsh_primitive_bucket_envelope.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_brun_titchmarsh_primitive_bucket_envelope_checker.py`，编号论文为
+`papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/`。primitive residue congruence
+把每个 physical bucket 编译成 reduced prime progressions，Brun--Titchmarsh 给出
+`R_h(a)<<x^(1/96)loglog x/log x`。与 TPC-237 finite-window composition 合并后得到
+`x^(1/48)(log x)^4loglog x`；这是 logarithmic-only improvement。
 
 ```text
-TPC238_TRIANGULAR_WINDOW_LOWER_FRAME = PROVED_EXACT
-TPC238_PRIMITIVE_FAREY_SPACING = PROVED_U_TO_MINUS_2
-TPC238_FEJER_OFFDIAGONAL = PROVED_LE_1_OVER_4L_DISTANCE_SQUARED
-TPC238_CIRCULAR_PACKING_ROW_SUM = PROVED_LE_PI_SQUARED_U_FOUR_OVER_3
-TPC238_LOWER_FRAME = PROVED_L_MINUS_PI_SQUARED_U_FOUR_OVER_12L_POSITIVE_PART
-TPC238_NORMALIZED_LOWER_FRAME = PROVED_HALF_MINUS_PI_SQUARED_U_FOUR_OVER_6N_SQUARED_POSITIVE_PART
-TPC238_V59_FRAME_DEFECT = PROVED_X_MINUS_67_OVER_100
-TPC238_CROSS_REDUCED_FREQUENCY_FIXED_POWER_SAVING = REFUTED_SCOPED_AFTER_Q_COLLAPSE
-TPC238_WITHIN_Q_BUCKET_CANCELLATION = OPEN
-TPC238_C_H_SIGNED_CANCELLATION = NONE
-TPC238_ARITHMETIC_ADVANCE = NO
-TPC238_L2 = NONE
-TPC238_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC238_STATUS = PROVED_STRUCTURAL_OBSTRUCTION_L1
-TPC238_ROUND2_CLUE = MOVE_THE_POWER_SAVING_SEARCH_INSIDE_THE_LITERAL_C_H_WEIGHTED_Q_COLLISION_BUCKETS
+TPC239_PRIMITIVE_AP_REDUCTION = PROVED_EXACT_UPPER_COMPILER
+TPC239_BRUN_TITCHMARSH_INPUT = SOURCE_BACKED
+TPC239_BUCKET_MULTIPLICITY = PROVED_LE_16_Q_SQUARED_OVER_H_TIMES_H_OVER_PHI_H_OVER_LOG_2Q_OVER_H
+TPC239_V59_BUCKET_MULTIPLICITY = PROVED_X_1_OVER_96_LOGLOG_X_OVER_LOG_X
+TPC239_FINITE_WINDOW_PACKET_TRACE = PROVED_X_1_OVER_48_LOG_FOUR_LOGLOG
+TPC239_IMPROVEMENT_OVER_TPC237 = PROVED_FACTOR_LOG_X_OVER_LOGLOG_X
+TPC239_FIXED_POWER_IMPROVEMENT = NONE
+TPC239_C_H_SIGNED_CANCELLATION = NONE
+TPC239_ARITHMETIC_ADVANCE = NO
+TPC239_L2 = NONE
+TPC239_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC239_STATUS = PROVED_SOURCE_BACKED_PRIME_DENSITY_L1
+TPC239_ROUND2_CLUE = TEST_THE_EXACT_TOP_BAND_C_H_BEFORE_SEEKING_FURTHER_UNIFORM_BUCKET_SAVINGS
 ```
 
-TPC-237 上游入口：proof 为
+TPC-238 上游入口：proof 为
+`research/tpc-big-road/bridge_b_finite_window_lower_frame_obstruction.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py`，编号论文为
+`papers/tpc-238-finite-window-lower-frame-obstruction/`。它排除了 collapsed
+cross-frequency fixed-power cancellation，并把 TPC-239 的搜索位置锁到 same-frequency
+prime buckets。
+
+TPC-237 更上游入口：proof 为
 `research/tpc-big-road/bridge_b_collision_compressed_finite_window_reassembly.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py`，编号论文为
 `papers/tpc-237-collision-compressed-finite-window-reassembly/`。它提供 TPC-238 所审计的

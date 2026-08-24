@@ -1,0 +1,78 @@
+\section{Deterministic finite certificate}
+\label{sec:certificate}
+
+The computational artifact tests whether the physical support, AP compiler,
+constant ledger, and status firewall have been encoded as stated.  Its primary
+fixture is
+
+\begin{equation}
+ (Q,H,h)=(101,8830,82),\qquad M_h=1.
+ \label{eq:fixture}
+\end{equation}
+
+The modulus is squarefree, $4Q<H$, and $h<Q$.  The program enumerates all
+twenty primes in $(101,202]$, every $q$-dependent physical row, both unit
+multipliers $m=-1,1$, and all forty primitive residues modulo $82$.  For
+each bucket it reconstructs the actual row count and the AP rows in
+\eqref{eq:ap-census}.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Primary finite-fixture summary.  The real upper bounds are numerical
+evaluations of the analytic formulas, not estimates inferred from the data.}
+\label{tab:fixture}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Quantity & Value \\
+\midrule
+Shell primes & $20$ \\
+Primitive buckets & $40$ \\
+Maximum actual $R_h(a)$ & $3$ \\
+Maximum AP census & $3$ \\
+Per-class Brun--Titchmarsh RHS & $11.202947549259$ \\
+Factor-$16$ RHS & $42.030718732939$ \\
+Rejected producer mutations & $11$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The buckets $a=3$ and $a=79$ each contain the three documented physical
+rows associated with $q=109,137,191$.  Other buckets demonstrate a strict
+gap between the physical count and the AP census because primes below the
+row-activation threshold survive after the cutoff is dropped.  Every encoded
+bucket satisfies
+
+\[
+ \text{actual }R_h(a)
+ \leq\text{AP pair census}
+ \leq\text{factor-16 real RHS}.
+\]
+
+The producer validates exact runtime types, emits sorted JSON, and attaches a
+SHA-256 digest to the canonical payload.  It constructs every exponent with
+\texttt{Fraction}; in particular it checks
+
+\[
+ \frac13-\frac{133}{400}=\frac1{1200},\qquad
+ \frac23-\frac{21}{32}=\frac1{96},\qquad
+ \frac1{96}+\frac1{96}=\frac1{48}.
+\]
+
+The independent checker imports no producer module.  It uses a separate prime
+sieve, a multiplicative totient calculation, and the congruence
+$m\equiv aq\pmod h$ to rebuild the certificate.  A stress checker repeats
+the direct-row, AP-census, classwise real Brun--Titchmarsh, and factor-$16$
+comparisons for five parameter sets and 104 primitive buckets.  It observes 26
+buckets where dropping the physical cutoff makes the first inequality strict.
+
+Eleven mutations test strict-type confusion, shell primality and endpoints,
+the $q$-dependent cutoff, the constant $16$, strict range hypotheses,
+primitivity, unit multipliers, and the direction
+$R_h(a)\leq\text{AP census}$.  Both ordinary and optimized Python execution
+follow the same explicit checks; no validation relies on \texttt{assert}.
+
+All statements in this section have the evidence class
+\texttt{NUMERICAL\_FINITE\_ILLUSTRATION\_ONLY}.  The general bucket theorem is
+proved in Section~\ref{sec:compiler} from the source-backed arithmetic input,
+not from this fixture.

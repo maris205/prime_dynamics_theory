@@ -2,16 +2,16 @@
 
 更新时间：2026-08-24
 
-当前地图版本：V91 / TPC-238
+当前地图版本：V92 / TPC-239
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-238`（`PROVED_STRUCTURAL_OBSTRUCTION_L1 / FINITE_WINDOW_LOWER_FRAME`）；
-对应论文目录为 `papers/tpc-238-finite-window-lower-frame-obstruction/`。
-TPC-238 对 `q`-collapsed primitive rational frequencies 证明 normalized lower frame
-`[1/2-pi^2 U^4/(6N^2)]_+`；V59 defect 为 `x^(-67/100+o(1))`。因此跨
-reduced-frequency fixed-power cancellation 已 `REFUTED_SCOPED`，同频 `q` bucket、
-signed `C_h` 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-239`（`PROVED_SOURCE_BACKED_PRIME_DENSITY_L1 / LOGARITHMIC_ONLY`）；
+对应论文目录为 `papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/`。
+TPC-239 将 primitive physical bucket 编译成 reduced prime progressions，并由
+Brun--Titchmarsh 证明 `R_h(a)<<x^(1/96)loglog x/log x`。TPC-237 packet trace 因而
+改进为 `x^(1/48)(log x)^4loglog x`，但 fixed-power exponent、signed `C_h` 与 full
+Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -53,9 +53,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V91 / TPC-238                     |
-        | FINITE-WINDOW LOWER-FRAME OBSTRUCTION            |
-        | same-frequency q-bucket arithmetic / Gate B OPEN |
+        | YOU ARE HERE — V92 / TPC-239                     |
+        | BRUN--TITCHMARSH PRIMITIVE-BUCKET ENVELOPE       |
+        | logarithm saved; signed C_h / Gate B still OPEN  |
         +--------------------------------------------------+
                 |
                 v
@@ -98,12 +98,11 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V91 / TPC-238 的
-finite-window lower-frame obstruction。V59 上 primitive reduced-frequency synthesis
-保留 `1/2-O(x^(-67/100))` 的 coefficient energy，所以 cross-frequency signs 已不可能
-提供 fixed-power saving；施工点现已严格收窄到 literal `C_h`-weighted same-frequency
-`q` collision buckets。FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit
-继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V92 / TPC-239 的
+Brun--Titchmarsh primitive-bucket envelope。prime density 已把 packet trace 的对数从
+`(log x)^5` 降为 `(log x)^4loglog x`，但 fixed-power `1/48` 没有移动；下一施工点是
+literal top-band `C_h` 的 exact coefficient audit。FULL_GATE_B、global strict `1/400`、
+`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1233,6 +1232,50 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.33 V92 / TPC-239：Brun--Titchmarsh primitive-bucket envelope
+
+For primitive `a mod h`, every physical shell incidence satisfies
+`q=a^(-1)m (mod h)` in a reduced residue class.  With
+`M_h=floor(2hQ/H)`, dropping only the `q`-dependent cutoff and applying the
+standard Brun--Titchmarsh theorem gives
+
+```text
+R_h(a)
+ <=16(Q^2/H)(h/phi(h))/log(2Q/h)
+ <<x^(1/96)loglog x/log x.
+```
+
+The exact V59 separation `Q/U=x^(1/1200)` supplies the logarithmic denominator
+uniformly for all active `h<=U`.  Substitution into TPC-237 before the same
+reduced-frequency large sieve proves
+
+```text
+N^(-1) sum_(n in I_x) sum_j |K_j(n)|^2
+ << J M^2 x^(1/48)(log x)^4loglog x.
+```
+
+This is a genuine `log x/loglog x` gain over TPC-237, but it neither changes the
+fixed-power exponent nor uses the signs of `C_h`.
+
+```text
+TPC239_PRIMITIVE_AP_REDUCTION = PROVED_EXACT_UPPER_COMPILER
+TPC239_BRUN_TITCHMARSH_INPUT = SOURCE_BACKED
+TPC239_V59_BUCKET_MULTIPLICITY = PROVED_X_1_OVER_96_LOGLOG_X_OVER_LOG_X
+TPC239_FINITE_WINDOW_PACKET_TRACE = PROVED_X_1_OVER_48_LOG_FOUR_LOGLOG
+TPC239_IMPROVEMENT_OVER_TPC237 = PROVED_FACTOR_LOG_X_OVER_LOGLOG_X
+TPC239_FIXED_POWER_IMPROVEMENT = NONE
+TPC239_C_H_SIGNED_CANCELLATION = NONE
+TPC239_ARITHMETIC_ADVANCE = NO
+TPC239_L2 = NONE
+TPC239_FULL_GATE_B = OPEN
+TPC239_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+```
+
+地图位置：**V92 / TPC-239 installs the first source-backed arithmetic input inside a
+primitive same-frequency bucket.  It saves one logarithm but proves that the next
+meaningful attack must inspect the literal `C_h` coefficient rather than repeat a
+uniform prime-density census.**
+
 ## 5.32 V91 / TPC-238：finite-window lower-frame obstruction
 
 For coefficients on distinct primitive fractions of height at most `U`, let `I` be
@@ -2125,7 +2168,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V91 / TPC-238：
+截至 V92 / TPC-239：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -2447,20 +2490,18 @@ TPC237_FIXED_ATOM_CREDIT = 0
 TPC237_L2 = NONE
 TPC237_FULL_GATE_B = OPEN
 TPC237_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC238_TRIANGULAR_WINDOW_LOWER_FRAME = PROVED_EXACT
-TPC238_PRIMITIVE_FAREY_SPACING = PROVED_U_TO_MINUS_2
-TPC238_LOWER_FRAME = PROVED_L_MINUS_PI_SQUARED_U_FOUR_OVER_12L_POSITIVE_PART
-TPC238_NORMALIZED_LOWER_FRAME = PROVED_HALF_MINUS_PI_SQUARED_U_FOUR_OVER_6N_SQUARED_POSITIVE_PART
-TPC238_V59_FRAME_DEFECT = PROVED_X_MINUS_67_OVER_100
-TPC238_CROSS_REDUCED_FREQUENCY_FIXED_POWER_SAVING = REFUTED_SCOPED_AFTER_Q_COLLAPSE
-TPC238_WITHIN_Q_BUCKET_CANCELLATION = OPEN
-TPC238_C_H_SIGNED_CANCELLATION = NONE
-TPC238_ARITHMETIC_ADVANCE = NO
-TPC238_FIXED_ATOM_CREDIT = 0
-TPC238_L2 = NONE
-TPC238_FULL_GATE_B = OPEN
-TPC238_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-NUMBERED_RELEASE = TPC-238
+TPC239_PRIMITIVE_AP_REDUCTION = PROVED_EXACT_UPPER_COMPILER
+TPC239_BRUN_TITCHMARSH_INPUT = SOURCE_BACKED
+TPC239_V59_BUCKET_MULTIPLICITY = PROVED_X_1_OVER_96_LOGLOG_X_OVER_LOG_X
+TPC239_FINITE_WINDOW_PACKET_TRACE = PROVED_X_1_OVER_48_LOG_FOUR_LOGLOG
+TPC239_FIXED_POWER_IMPROVEMENT = NONE
+TPC239_C_H_SIGNED_CANCELLATION = NONE
+TPC239_ARITHMETIC_ADVANCE = NO
+TPC239_FIXED_ATOM_CREDIT = 0
+TPC239_L2 = NONE
+TPC239_FULL_GATE_B = OPEN
+TPC239_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+NUMBERED_RELEASE = TPC-239
 ```
 
 以下事实不得从路线图中推断：
@@ -2478,12 +2519,16 @@ NUMBERED_RELEASE = TPC-238
 
 优先级更新为：
 
-1. **TPC-238 已完成：finite-window lower-frame obstruction**。normalized frame 为
+1. **TPC-239 已完成：Brun--Titchmarsh primitive-bucket envelope**。primitive bucket
+   incidence 已编译到 reduced prime progressions，normalized packet trace 改进为
+   `x^(1/48)(log x)^4loglog x`。prime density 只节省 logarithm；下一步审计 literal
+   top-band `C_h` 是否可能提供 uniform cancellation。
+2. **TPC-238 已完成：finite-window lower-frame obstruction**。normalized frame 为
    `[1/2-pi^2 U^4/(6N^2)]_+`，V59 defect 是 `x^(-67/100)`；因此
    cross-reduced-frequency fixed-power cancellation 已 `REFUTED_SCOPED`。下一步进入
    primitive same-frequency `q` bucket，先使用 source-valid prime-AP counting，再审计
    literal `C_h`-weighted energy。
-2. **TPC-237 已完成：collision-compressed finite-window reassembly**。primitive
+3. **TPC-237 已完成：collision-compressed finite-window reassembly**。primitive
    frequency bucket 先用 physical collision factor 压缩 `q`，再用 Farey large sieve
    接到 `I_x`，normalized trace 达到 `x^(1/48)+x^(1/50)`。其 cross-frequency
    cancellation question 已由 TPC-238 以 lower frame 封口。
@@ -2567,10 +2612,10 @@ NUMBERED_RELEASE = TPC-238
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-238 的下一步：within-bucket prime arithmetic**。long-window lower frame 已
-    排除 cross-frequency fixed-power saving；真正剩余 burden 是
-    `sum |C_h|^2|sum_q B_(h,q)(a)|^2`。先量化每个 primitive residue bucket 的 prime
-    occupancy，再测试 `C_h` endpoint clusters；不得把对数筛改进误称 fixed-power L2。
+12. **TPC-239 的下一步：literal top-band `C_h` audit**。Brun--Titchmarsh 已完成
+    coefficient-blind prime occupancy 的自然对数改进；现在必须检查 active top band 上
+    `C_h` 的 exact Möbius/divisor structure，尤其是 prime denominators，防止把不存在的
+    uniform coefficient cancellation 当作下一 fixed-power source。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2669,6 +2714,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-24 | V92 / TPC-239 | Bridge A / Gate B：primitive-bucket Brun--Titchmarsh；logarithmic saving proved，signed coefficient arithmetic open | `TPC-239` | reduced prime-AP compiler 给 `R_h(a)<<x^(1/96)loglog x/log x`；packet trace 改进为 `x^(1/48)(log x)^4loglog x`，fixed-power 不变 |
 | 2026-08-24 | V91 / TPC-238 | Bridge A / Gate B：finite-window lower frame；cross-reduced-frequency saving refuted scoped，within-bucket arithmetic open | `TPC-238` | triangular Fejér minorant 与 circular packing 给 normalized frame `1/2-O(x^(-67/100))`；施工点锁到 same-frequency `q` buckets |
 | 2026-08-24 | V90 / TPC-237 | Bridge A / Gate B：collision-compressed finite-window packet trace；within-bucket signed arithmetic open | `TPC-237` | primitive bucket collision before Farey large sieve，normalized `x^(1/48)+x^(1/50)`、unnormalized `49/48`；signed `C_h` cancellation仍为 NONE |
 | 2026-08-24 | V89 / TPC-236 | Bridge A / Gate B：physical fixed-h multi-wrap compiler complete；signed cross-h reassembly open | `TPC-236` | exact gcd-fiber multiplicity、unnormalized explicit-C_h Bessel envelope、V59 `(4+o(1))x^(1/96)` toll、Q101 triple ratio 3；arithmetic cancellation仍为 NO |

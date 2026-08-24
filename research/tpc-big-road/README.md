@@ -1,58 +1,69 @@
-# TPC big road V91 / TPC-238: finite-window lower-frame obstruction
+# TPC big road V92 / TPC-239: Brun--Titchmarsh primitive-bucket envelope
 
 更新时间：2026-08-24
 
-状态：`TPC238_PROVED_STRUCTURAL_OBSTRUCTION_L1 / CROSS_FREQUENCY_SAVING_REFUTED_SCOPED / FULL_GATE_B_OPEN`
+状态：`TPC239_PROVED_SOURCE_BACKED_PRIME_DENSITY_L1 / LOGARITHMIC_ONLY / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-238 proof 为
+当前 TPC-239 proof 为
+`bridge_b_brun_titchmarsh_primitive_bucket_envelope.md`，checker 为
+`tpc_bridge_b_brun_titchmarsh_primitive_bucket_envelope_checker.py`，编号论文为
+`../../papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/`。
+
+For primitive `a mod h`, the physical incidence `m q^(-1)=a (mod h)` places
+every shell prime in a reduced residue class `q=a^(-1)m (mod h)`.  Dropping only
+the `q`-dependent cutoff and using Brun--Titchmarsh gives
+
+```text
+R_h(a)
+ <= 16 (Q^2/H)(h/phi(h))/log(2Q/h)
+ << x^(1/96)loglog x/log x.
+```
+
+Inserting this into the TPC-237 collision-before-large-sieve composition proves
+
+```text
+N^(-1) sum_(n in I_x) sum_j |K_j(n)|^2
+ << J M^2 x^(1/48)(log x)^4 loglog x.
+```
+
+The gain over TPC-237 is `log x/loglog x`; the fixed-power exponent remains `1/48`.
+
+```text
+TPC239_PRIMITIVE_AP_REDUCTION = PROVED_EXACT_UPPER_COMPILER
+TPC239_BRUN_TITCHMARSH_INPUT = SOURCE_BACKED
+TPC239_BUCKET_MULTIPLICITY = PROVED_LE_16_Q_SQUARED_OVER_H_TIMES_H_OVER_PHI_H_OVER_LOG_2Q_OVER_H
+TPC239_V59_BUCKET_MULTIPLICITY = PROVED_X_1_OVER_96_LOGLOG_X_OVER_LOG_X
+TPC239_FINITE_WINDOW_PACKET_TRACE = PROVED_X_1_OVER_48_LOG_FOUR_LOGLOG
+TPC239_IMPROVEMENT_OVER_TPC237 = PROVED_FACTOR_LOG_X_OVER_LOGLOG_X
+TPC239_FIXED_POWER_IMPROVEMENT = NONE
+TPC239_C_H_SIGNED_CANCELLATION = NONE
+TPC239_ARITHMETIC_ADVANCE = NO
+TPC239_FIXED_ATOM_CREDIT = 0
+TPC239_L2 = NONE
+TPC239_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC239_ROUND2_CLUE = TEST_THE_EXACT_TOP_BAND_C_H_BEFORE_SEEKING_FURTHER_UNIFORM_BUCKET_SAVINGS
+```
+
+strongest positive result：normalized
+`x^(1/48)(log x)^4loglog x` finite-window packet trace；strongest obstruction：prime
+density saves only a logarithm；open theorem：literal weighted or signed within-bucket
+cancellation；reusable structure：primitive residue to reduced prime-AP compiler。
+
+TPC-238 上游 proof 为
 `bridge_b_finite_window_lower_frame_obstruction.md`，checker 为
 `tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py`，编号论文为
-`../../papers/tpc-238-finite-window-lower-frame-obstruction/`。
+`../../papers/tpc-238-finite-window-lower-frame-obstruction/`。It rules out
+cross-frequency fixed-power cancellation after `q`-collapse and forces the TPC-239
+search into same-frequency prime buckets.
 
-For any coefficients on distinct primitive fractions of height at most `U`, put
-`L=floor((N+1)/2)`.  A translated triangular minorant, Fejér decay, and circular
-inverse-square packing prove
-
-```text
-E_I(z) >= [L-pi^2 U^4/(12L)]_+ sum|z|^2,
-E_I(z)/N >= [1/2-pi^2 U^4/(6N^2)]_+ sum|z|^2.
-```
-
-At V59, `U^4/N^2=x^(-67/100+o(1))`, so the frame constant is `1/2-o(1)`.
-After the `q` rows have been collapsed into one coefficient per primitive frequency,
-cross-frequency interference therefore cannot supply fixed-power saving.
-
-```text
-TPC238_TRIANGULAR_WINDOW_LOWER_FRAME = PROVED_EXACT
-TPC238_PRIMITIVE_FAREY_SPACING = PROVED_U_TO_MINUS_2
-TPC238_FEJER_OFFDIAGONAL = PROVED_LE_1_OVER_4L_DISTANCE_SQUARED
-TPC238_CIRCULAR_PACKING_ROW_SUM = PROVED_LE_PI_SQUARED_U_FOUR_OVER_3
-TPC238_LOWER_FRAME = PROVED_L_MINUS_PI_SQUARED_U_FOUR_OVER_12L_POSITIVE_PART
-TPC238_NORMALIZED_LOWER_FRAME = PROVED_HALF_MINUS_PI_SQUARED_U_FOUR_OVER_6N_SQUARED_POSITIVE_PART
-TPC238_V59_FRAME_DEFECT = PROVED_X_MINUS_67_OVER_100
-TPC238_CROSS_REDUCED_FREQUENCY_FIXED_POWER_SAVING = REFUTED_SCOPED_AFTER_Q_COLLAPSE
-TPC238_WITHIN_Q_BUCKET_CANCELLATION = OPEN
-TPC238_C_H_SIGNED_CANCELLATION = NONE
-TPC238_ARITHMETIC_ADVANCE = NO
-TPC238_FIXED_ATOM_CREDIT = 0
-TPC238_L2 = NONE
-TPC238_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC238_ROUND2_CLUE = MOVE_THE_POWER_SAVING_SEARCH_INSIDE_THE_LITERAL_C_H_WEIGHTED_Q_COLLISION_BUCKETS
-```
-
-strongest positive result：V59 lower frame `1/2-O(x^(-67/100))`；strongest
-obstruction：distinct reduced-frequency signs cannot produce fixed-power saving after
-`q`-collapse；open theorem：literal `C_h`-weighted same-frequency `q`-collision
-energy；reusable structure：triangular minorant + Fejér decay + circular packing。
-
-TPC-237 上游 proof 为
+TPC-237 更上游 proof 为
 `bridge_b_collision_compressed_finite_window_reassembly.md`，checker 为
 `tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py`，编号论文为
 `../../papers/tpc-237-collision-compressed-finite-window-reassembly/`。It supplies the
-collapsed coefficient object and the V59 finite-window scale tested by TPC-238.
+common-source composition and direct coefficient-energy estimate used by TPC-239.
 
 TPC-236 更上游 proof 为
 `bridge_b_physical_multiwrap_collision_envelope.md`，checker 为

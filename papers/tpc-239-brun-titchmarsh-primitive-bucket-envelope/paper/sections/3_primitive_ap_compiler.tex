@@ -1,0 +1,100 @@
+\section{The primitive-residue to reduced-prime-AP compiler}
+\label{sec:compiler}
+
+For $h\geq2$, define
+
+\begin{equation}
+ M_h=\left\lfloor\frac{2hQ}{H}\right\rfloor,
+ \qquad
+ \Mh=\{m\in\ZZ:0<|m|\leq M_h,\ (m,h)=1\}.
+ \label{eq:Mh}
+\end{equation}
+
+We first dispose of the modulus-one branch, where a prime-progression bound is
+unnecessary.
+
+\begin{lemma}[Empty modulus-one row]
+\label{lem:h-one}
+If $2Q<H$, then $S_{1,q}$ is empty for every $q\in\Qx$.
+\end{lemma}
+
+\begin{proof}
+Every shell prime satisfies $q\leq2Q<H$, and therefore
+$\lfloor q/H\rfloor=0$.  The defining multiplier range is empty.
+\end{proof}
+
+\begin{theorem}[Brun--Titchmarsh primitive-bucket envelope]
+\label{thm:bucket}
+Assume $4Q<H$ and $2\leq h\leq U<Q$.  For every
+$a\pmod h$ with $(a,h)=1$,
+
+\begin{align}
+ R_h(a)
+ &\leq\sum_{m\in\Mh}
+ \bigl\{\pi(2Q;h,a^{-1}m)-\pi(Q;h,a^{-1}m)\bigr\}
+ \label{eq:ap-census}\\
+ &\leq16\frac{Q^2}{H}\frac{h}{\ph(h)}
+ \frac{1}{\log(2Q/h)}.
+ \label{eq:factor16}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Suppose that a physical row $q\in\Qx$ contains $a$.  Then some multiplier
+$m$ obeys
+
+\[
+ 0<|m|\leq\lfloor hq/H\rfloor
+ \leq\lfloor2hQ/H\rfloor=M_h,
+ \qquad mq^{-1}\equiv a\pmod h.
+\]
+
+Since $q>Q>h$, the prime $q$ is invertible modulo $h$.  Multiplication by
+$q$ gives $m\equiv aq\pmod h$, and hence
+
+\[
+ (m,h)=(aq,h)=1.
+\]
+
+Thus $m\in\Mh$.  Multiplication by $a^{-1}$ instead gives
+
+\begin{equation}
+ q\equiv a^{-1}m\pmod h.
+ \label{eq:compiled-class}
+\end{equation}
+
+Every actual row is therefore represented by a pair counted on the right side
+of \eqref{eq:ap-census}.  Internal row injectivity shows that the physical row
+does not hide two copies of $a$ for the same $q$.  We do not invoke
+disjointness among different multiplier rows: the displayed sum remains a pair
+census and is allowed, as an upper-bound device, to overcount across $m$.
+The support enlargement used in forming that census is the deletion of the
+$q$-dependent condition $|m|\leq\lfloor hq/H\rfloor$.
+
+Both $a$ and $m$ are units modulo $h$, so every class
+$a^{-1}m\pmod h$ in \eqref{eq:ap-census} is reduced.  We may therefore bound
+each shell difference by \eqref{eq:BT-standard}.  The multiplier set satisfies
+
+\begin{equation}
+ \#\Mh\leq2M_h\leq\frac{4hQ}{H}.
+ \label{eq:m-count}
+\end{equation}
+
+Combining \eqref{eq:BT-standard} and \eqref{eq:m-count} gives
+
+\[
+ \frac{4hQ}{H}\cdot
+ \frac{4Q}{\ph(h)\log(2Q/h)}
+ =16\frac{Q^2}{H}\frac{h}{\ph(h)\log(2Q/h)},
+\]
+
+which proves \eqref{eq:factor16}.  The two visible factors $4$ account for
+the constant $16$; no hidden weakening is used.
+\end{proof}
+
+\begin{remark}[What the AP sum forgets]
+Theorem~\ref{thm:bucket} remembers the shell interval, modulus, and primitive
+bucket, but forgets the physical cutoff after compiling the congruence.  It
+also ignores packet values, the sign of $C_h$, and interaction among
+multiplier rows.  The result is therefore a coefficient-blind prime census.
+\end{remark}

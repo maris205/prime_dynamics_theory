@@ -1,0 +1,35 @@
+We prove a source-backed prime-density envelope for the primitive collision
+buckets in a finite-window prime-shell kernel.  If $4Q<H$,
+$2\leq h\leq U<Q$, and $a$ is a unit modulo $h$, then the physical row
+multiplicity $R_h(a)$ is bounded by a sum of prime counts in reduced residue
+classes.  The standard Brun--Titchmarsh inequality and the exact signed
+multiplier count give
+
+\[
+ R_h(a)
+ \leq 16\frac{Q^2}{H}\frac{h}{\ph(h)}
+       \frac{1}{\log(2Q/h)}.
+\]
+
+The modulus-one row is empty because $2Q<H$.  At the frozen scales
+$H=x^{21/32}$, $Q=x^{1/3}$, and $U=x^{133/400}$, the scale gap
+$Q/U=x^{1/1200}$ yields
+
+\[
+ \max_{h\leq U,\,(a,h)=1}R_h(a)
+ \ll x^{1/96}\frac{\log\log x}{\log x}.
+\]
+
+Substituting this row envelope into the unchanged common-source composition,
+before the reduced-frequency large sieve, gives the normalized packet trace
+
+\[
+ \frac1N\sum_{n\in(x/2,x]\cap\ZZ}\sum_{j=1}^{J}|K_j(n)|^2
+ \ll J M^2x^{1/48}(\log x)^4\log\log x.
+\]
+
+This improves the preceding estimate by the factor
+$\log x/\log\log x$, but it leaves the fixed-power exponent $1/48$
+unchanged.  The result is an unsigned $L^1$-level prime-density advance; it
+does not prove signed cancellation, arithmetic $L^2$, Gate B, or a
+twin-prime statement.

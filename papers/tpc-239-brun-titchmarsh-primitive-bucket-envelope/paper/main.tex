@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[numbers]{natbib}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!45!black,
+  citecolor=blue!45!black,
+  urlcolor=blue!45!black,
+  pdftitle={A Brun--Titchmarsh Primitive-Bucket Envelope for Finite-Window Prime-Shell Reassembly},
+  pdfauthor={Liang Wang}
+}
+
+\input{math_commands}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{\textbf{A Brun--Titchmarsh Primitive-Bucket Envelope\\
+for Finite-Window Prime-Shell Reassembly}}
+\author{Liang Wang\\
+\small Huazhong University of Science and Technology\\
+\small Wuhan 430074, P.R. China\\
+\small \href{mailto:liang.wang@hust.edu.cn}{\texttt{liang.wang@hust.edu.cn}}}
+\date{August 24, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+\input{sections/1_introduction}
+\input{sections/2_source_setup}
+\input{sections/3_primitive_ap_compiler}
+\input{sections/4_v59_composition}
+\input{sections/5_finite_certificate}
+\input{sections/6_route_boundary}
+\input{sections/7_conclusion}
+\input{sections/A_status_ledger}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
