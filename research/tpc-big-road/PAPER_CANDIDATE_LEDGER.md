@@ -2,11 +2,90 @@
 
 更新时间：2026-08-24
 
-状态：**TPC239_PROVED_SOURCE_BACKED_PRIME_DENSITY_L1_RELEASED / LOGARITHMIC_ONLY / SIGNED_BUCKET_OPEN**
+状态：**TPC240_PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR / Q_COLLAPSED_COLLISION_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.34 已发布：TPC-240 top-prime direct-energy floor
+
+项目：`papers/tpc-240-top-prime-direct-energy-floor/`
+
+类型：**PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR**。
+
+Fix a literal frozen profile
+
+```text
+psi in C_c^infinity(R), 0<=psi<=1,
+support(psi) subset [-1,1], integral psi=1,
+kappa_psi=integral |psi|^2.
+```
+
+For prime denominators `U/2<p<=U`, TPC-215 gives
+`C_p=-log(p)/p`.  Since `p<q`, `4Q<H`, and
+`2floor(pq/H)<p`, the signed multipliers in one fixed q-row map injectively to
+primitive residues.  Therefore
+
+```text
+sum_((a,p)=1)|B_(p,q)^psi(a)|^2
+ = sum_(0<|m|<=floor(pq/H))|psi(Hm/(pq))|^2
+ = kappa_psi pq/H+O_psi(1).
+```
+
+The row depth is uniformly large on the top shell because
+`pq/H>=(1/2)x^(23/2400)`.  Aggregating with
+
+```text
+sum_(Q<q<=2Q)q=(3/2+o(1))Q^2/log Q,
+sum_(U/2<p<=U)(log p)^2/p=(log 2+o(1))log U
+```
+
+and `log U/log Q=399/400` proves
+
+```text
+D_top^psi
+ = [1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H
+ = x^(1/96+o_psi(1)),
+1/2<=kappa_psi<=1.
+```
+
+The aggregate Riemann error is relatively
+`O_psi(H/(UQ))=O_psi(x^(-23/2400))`.  The quantifier is for every fixed
+admissible profile; no class-uniform threshold is claimed.  Hence this exact
+q-split unsigned direct object is not `o(Q^2/H)`, and every fixed-power saving
+on it is refuted.  The theorem does not estimate q-collapsed collision excess
+and does not use the sign of `C_p` after squaring.
+
+```text
+TPC240_ROUTE_ADVANCE = YES_OBSTRUCTION
+TPC240_TOP_PRIME_COEFFICIENT = PROVED_C_P_EQUALS_MINUS_LOG_P_OVER_P
+TPC240_FIXED_Q_PRIMITIVE_ROW_NORM = PROVED_EXACT
+TPC240_RIEMANN_ROW_ASYMPTOTIC = PROVED_UNIFORM_ON_TOP_PRIME_SHELL_FOR_EACH_FIXED_PROFILE
+TPC240_KAPPA_RANGE = PROVED_ONE_HALF_LE_KAPPA_LE_ONE
+TPC240_DIRECT_ENERGY_CONSTANT = PROVED_1197_KAPPA_LOG_2_OVER_800
+TPC240_DIRECT_ENERGY_POWER = PROVED_X_1_OVER_96
+TPC240_DIRECT_FIXED_POWER_SAVING = REFUTED_ON_EXACT_Q_SPLIT_UNSIGNED_OBJECT
+TPC240_OPTIONAL_FINITE_WINDOW_FLOOR = PROVED_AT_ONE_HALF_TIMES_DIRECT_ENERGY
+TPC240_X_1_OVER_48_SHARPNESS = NOT_CLAIMED
+TPC240_CLASS_UNIFORM_PROFILE_THRESHOLD = NOT_CLAIMED
+TPC240_PLATEAU_PROFILE_SUBSTITUTION = FORBIDDEN
+TPC240_C_H_SIGNED_CANCELLATION = NONE
+TPC240_ARITHMETIC_ADVANCE = NO
+TPC240_FIXED_ATOM_CREDIT = 0
+TPC240_L2 = NONE
+TPC240_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC240_STATUS = PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR
+TPC240_ROUND2_CLUE = TEST_THE_TOP_PRIME_Q_COLLAPSED_COLLISION_EXCESS_OVER_THE_EXACT_DIRECT_FLOOR_BEFORE_CLAIMING_X_1_OVER_48_SHARPNESS
+```
+
+strongest positive result：exact top-prime q-split direct-energy asymptotic with
+constant `1197 kappa_psi log(2)/800`；strongest obstruction：this exact unsigned direct
+factor has no `o(Q^2/H)` or fixed-power saving；open theorem：top-prime q-collapsed
+collision energy and its excess over the direct floor；reusable structure：top-prime
+singleton coefficient + primitive fixed-q row + endpoint-safe Riemann sum + factorized
+weighted PNT；`ROUND2_CLUE`：
+`TEST_THE_TOP_PRIME_Q_COLLAPSED_COLLISION_EXCESS_OVER_THE_EXACT_DIRECT_FLOOR_BEFORE_CLAIMING_X_1_OVER_48_SHARPNESS`。
 
 ## 0.33 已发布：TPC-239 Brun--Titchmarsh primitive-bucket envelope
 
@@ -2141,6 +2220,7 @@ handoff。
 
 | 日期 | 版本 | 新增可发表单元 | 状态 |
 |---|---|---|---|
+| 2026-08-24 | V93 | fixed frozen profile 的 top-prime q-split direct-energy exact asymptotic、explicit `1197 kappa_psi log2/800` constant 与 no-fixed-power-saving obstruction | **PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR / TPC-240** |
 | 2026-08-24 | V89 | physical gcd-fiber multiplicity theorem、unnormalized weighted Bessel envelope 与 exact triple-collision obstruction | **PROVED_STRUCTURAL_L1 / TPC-236** |
 | 2026-08-24 | V88 | V59 physical-depth exact crosswalk、single-clock iff obstruction 与 packet-output normalization firewall | **PROVED_STRUCTURAL_L1 / TPC-235** |
 | 2026-08-10 | V43 | proper-factor Poisson transference 与 zero-axis return | **PROVED** |

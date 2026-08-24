@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\hypersetup{
+  pdftitle={A Top-Prime Direct-Energy Floor for the Frozen Common Profile},
+  pdfauthor={Liang Wang}
+}
+
+\input{math_commands}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{\textbf{A Top-Prime Direct-Energy Floor\\
+for the Frozen Common Profile}}
+\author{Liang Wang\\
+\small Huazhong University of Science and Technology\\
+\small Wuhan 430074, P.R. China\\
+\small \texttt{liang.wang@hust.edu.cn}}
+\date{August 24, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+\input{sections/1_introduction}
+\input{sections/2_frozen_setup}
+\input{sections/3_exact_row_riemann}
+\input{sections/4_weighted_pnt_aggregation}
+\input{sections/5_certificate}
+\input{sections/6_route_boundary}
+\input{sections/7_conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\appendix
+\input{sections/A_status_ledger}
+
+\end{document}

@@ -1,10 +1,101 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V92_TPC239_BRUN_TITCHMARSH_PRIMITIVE_BUCKET_ENVELOPE_RELEASED`
+交接状态：`BOLD_CHANNEL_V93_TPC240_TOP_PRIME_DIRECT_ENERGY_FLOOR_RELEASED`
 
-TPC-239 当前 section：Brun--Titchmarsh primitive-bucket envelope
-----------------------------------------------------------------
+TPC-240 当前 section：top-prime direct-energy floor
+---------------------------------------------------
+
+Keep the literal V59 scales and fix one frozen common profile independently of
+`x`:
+
+```text
+H=x^(21/32), Q=x^(1/3), U=x^(133/400),
+psi in C_c^infinity(R), 0<=psi<=1,
+support(psi) subset [-1,1], integral psi=1,
+kappa_psi=integral |psi|^2.
+```
+
+On top-prime denominators `U/2<p<=U`, TPC-215 gives the exact singleton
+coefficient `C_p=-log(p)/p`.  For shell primes `Q<q<=2Q`, eventually `p<q`,
+`4Q<H`, and `2floor(pq/H)<p`; hence the signed multiplier map is injective and
+occupies only primitive residues.  The endpoint-safe Riemann sum is
+
+```text
+sum_((a,p)=1)|B_(p,q)^psi(a)|^2
+ = sum_(0<|m|<=floor(pq/H))|psi(Hm/(pq))|^2
+ = kappa_psi pq/H+O_psi(1).
+```
+
+Uniformity follows from `pq/H>=(1/2)x^(23/2400)`.  Weighted PNT gives
+
+```text
+sum_(Q<q<=2Q)q=(3/2+o(1))Q^2/logQ,
+sum_(U/2<p<=U)(logp)^2/p=(log2+o(1))logU.
+```
+
+Since `logU/logQ=399/400`, the exact q-split top-prime direct energy satisfies
+
+```text
+D_top^psi
+ = [1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H
+ = x^(1/96+o_psi(1)),
+1/2<=kappa_psi<=1.
+```
+
+The aggregate relative error is `O_psi(x^(-23/2400))`.  Quantifiers are for
+each fixed admissible profile; no class-uniform `x_0` and no plateau-profile
+substitution is asserted.  Consequently the exact unsigned direct factor is
+not `o(Q^2/H)` and has no fixed-power saving.  q-collapsed collision excess
+and every signed Gate-B object remain open.
+
+```text
+TPC240_ROUTE_ADVANCE = YES_OBSTRUCTION
+TPC240_TOP_PRIME_COEFFICIENT = PROVED_C_P_EQUALS_MINUS_LOG_P_OVER_P
+TPC240_FIXED_Q_PRIMITIVE_ROW_NORM = PROVED_EXACT
+TPC240_RIEMANN_ROW_ASYMPTOTIC = PROVED_UNIFORM_ON_TOP_PRIME_SHELL_FOR_EACH_FIXED_PROFILE
+TPC240_KAPPA_RANGE = PROVED_ONE_HALF_LE_KAPPA_LE_ONE
+TPC240_DIRECT_ENERGY_CONSTANT = PROVED_1197_KAPPA_LOG_2_OVER_800
+TPC240_DIRECT_ENERGY_POWER = PROVED_X_1_OVER_96
+TPC240_DIRECT_FIXED_POWER_SAVING = REFUTED_ON_EXACT_Q_SPLIT_UNSIGNED_OBJECT
+TPC240_OPTIONAL_FINITE_WINDOW_FLOOR = PROVED_AT_ONE_HALF_TIMES_DIRECT_ENERGY
+TPC240_X_1_OVER_48_SHARPNESS = NOT_CLAIMED
+TPC240_CLASS_UNIFORM_PROFILE_THRESHOLD = NOT_CLAIMED
+TPC240_PLATEAU_PROFILE_SUBSTITUTION = FORBIDDEN
+TPC240_C_H_SIGNED_CANCELLATION = NONE
+TPC240_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC240_ARITHMETIC_ADVANCE = NO
+TPC240_FIXED_ATOM_CREDIT = 0
+TPC240_L2 = NONE
+TPC240_FULL_GATE_B = OPEN
+TPC240_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC240_TPC_TRIGGER = true
+TPC240_NUMBERED_RELEASE = YES
+TPC240_STATUS = PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR
+TPC240_ROUND2_CLUE = TEST_THE_TOP_PRIME_Q_COLLAPSED_COLLISION_EXCESS_OVER_THE_EXACT_DIRECT_FLOOR_BEFORE_CLAIMING_X_1_OVER_48_SHARPNESS
+```
+
+strongest positive result：exact fixed-profile top-prime q-split direct-energy
+asymptotic with constant `1197 kappa_psi log(2)/800`；strongest obstruction：the
+exact unsigned direct factor has no `o(Q^2/H)` or fixed-power saving；open theorem：
+top-prime q-collapsed collision energy and its excess over the direct floor；reusable
+structure：top-prime singleton + primitive fixed-q row + endpoint-safe Riemann sum +
+factorized weighted PNT。
+
+编号论文目录：papers/tpc-240-top-prime-direct-energy-floor/
+
+```text
+papers/tpc-240-top-prime-direct-energy-floor/README.md
+papers/tpc-240-top-prime-direct-energy-floor/PROOF_PACKAGE.md
+papers/tpc-240-top-prime-direct-energy-floor/paper/paper.pdf
+papers/tpc-240-top-prime-direct-energy-floor/results/tpc240_certificate.json
+papers/tpc-240-top-prime-direct-energy-floor/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_top_prime_direct_energy_floor.md
+research/tpc-big-road/tpc_bridge_b_top_prime_direct_energy_floor_checker.py
+```
+
+TPC-239 上游 section：Brun--Titchmarsh primitive-bucket envelope
+---------------------------------------------------------------
 
 For primitive `a mod h`, an atom in the physical row satisfies
 `q=a^(-1)m (mod h)` in a reduced residue class.  Put
@@ -6187,8 +6278,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V92/TPC-239 gate、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百四十次（70 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V93/TPC-240 gate、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百四十二次（71 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -6332,11 +6423,23 @@ python -B research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstructi
 python -O -B research/tpc-big-road/tpc_bridge_b_finite_window_lower_frame_obstruction_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_brun_titchmarsh_primitive_bucket_envelope_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_brun_titchmarsh_primitive_bucket_envelope_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_top_prime_direct_energy_floor_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_top_prime_direct_energy_floor_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-239 入口：
+最新 TPC-240 入口：
+
+```text
+papers/tpc-240-top-prime-direct-energy-floor/README.md
+papers/tpc-240-top-prime-direct-energy-floor/notes/theorem_ledger.md
+papers/tpc-240-top-prime-direct-energy-floor/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_top_prime_direct_energy_floor.md
+research/tpc-big-road/tpc_bridge_b_top_prime_direct_energy_floor_checker.py
+```
+
+TPC-239 上游入口：
 
 ```text
 papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/README.md

@@ -1,0 +1,50 @@
+\section{Finite-window consequence and route boundary}
+\label{sec:boundary}
+
+The fixed profile is nonnegative.  Define the q-collapsed residue row
+\[
+ B_p^\psi(a)=\sum_{q\in\Qshell}B_{p,q}^\psi(a).
+\]
+Every summand is nonnegative, so pointwise expansion of the square gives
+\begin{equation}
+ \sum_{\substack{a\bmod p\\(a,p)=1}}|B_p^\psi(a)|^2
+ \geq
+ \sum_{q\in\Qshell}
+ \sum_{\substack{a\bmod p\\(a,p)=1}}|B_{p,q}^\psi(a)|^2.
+ \label{eq:nonnegative-collapse}
+\end{equation}
+This inequality sees the direct floor but does not quantify the positive
+cross-$q$ collision terms.
+
+Let $I$ be an interval of $N$ consecutive integers and put
+\[
+ z_{p,a}=C_pB_p^\psi(a),\qquad
+ K_\psi(n)=\sum_{p\in\Ptop}
+ \sum_{\substack{a\bmod p\\(a,p)=1}}z_{p,a}\e^{2\pi ina/p}.
+\]
+The primitive fractions $a/p$ are distinct and have height at most $U$.
+The TPC-238 normalized lower frame \cite{WangTPC238}, followed by
+\eqref{eq:nonnegative-collapse}, therefore gives
+\begin{corollary}[firewalled finite-window lower bound]
+\label{cor:window}
+For every such interval,
+\begin{equation}
+ \frac1N\sum_{n\in I}|K_\psi(n)|^2
+ \geq
+ \pos{\frac12-\frac{\pi^2U^4}{6N^2}}\Dtop.
+ \label{eq:window-lower}
+\end{equation}
+If $N\asymp x$, the bracket is $1/2-o(1)$ because
+$U^4/N^2=x^{-67/100+o(1)}$.
+\end{corollary}
+
+Corollary~\ref{cor:window} remains at scale $x^{1/96+o(1)}$.  It neither
+proves that the q-collision excess contributes another $x^{1/96}$ nor shows
+that the $x^{1/48}$ upper exponent from the collision-compressed assembly is
+sharp.  That is the next theorem to test.
+
+The claim firewall is otherwise strict.  Although $C_p$ is negative before
+squaring, only $|C_p|^2$ appears here, so no M\"obius sign cancellation is
+available.  The paper supplies no signed four-packet projection, no arithmetic
+$L2$ estimate, no fixed-atom credit, and no strict $1/400$ payment.  Full Gate
+B and the twin-prime endpoint remain open.

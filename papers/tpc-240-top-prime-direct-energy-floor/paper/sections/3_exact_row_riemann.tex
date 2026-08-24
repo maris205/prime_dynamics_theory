@@ -1,0 +1,86 @@
+\section{Primitive row identity and lattice asymptotic}
+\label{sec:rows}
+
+The norm interval for the profile is immediate but will make the final
+constant strictly positive.
+
+\begin{lemma}[profile norm interval]
+\label{lem:kappa}
+Under \eqref{eq:profile}, one has $1/2\leq\kappa_\psi\leq1$.
+\end{lemma}
+
+\begin{proof}
+Cauchy--Schwarz on an interval of length two gives
+\[
+ 1=\left(\int_{-1}^{1}\psi(t)\,dt\right)^2
+ \leq2\int_{-1}^{1}\psi(t)^2\,dt=2\kappa_\psi.
+\]
+The pointwise bounds $0\leq\psi\leq1$ also give
+$\psi^2\leq\psi$.  Integration proves the upper bound.
+\end{proof}
+
+\begin{lemma}[exact primitive fixed-$q$ row]
+\label{lem:row}
+For all sufficiently large $x$, every $p\in\Ptop$ and $q\in\Qshell$
+satisfy
+\begin{equation}
+ \sum_{\substack{a\bmod p\\(a,p)=1}}|B_{p,q}^{\psi}(a)|^2
+ =\sum_{0<|m|\leq\lfloor pq/H\rfloor}
+ \left|\psi\!\left(\frac{Hm}{pq}\right)\right|^2.
+ \label{eq:row-identity}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put $M=\lfloor pq/H\rfloor$.  Equations~\eqref{eq:separation} imply that
+$p<q$, hence $q$ is invertible modulo the prime $p$.  They also give
+\[
+ 2M\leq\frac{2pq}{H}\leq\frac{4pQ}{H}<p.
+\]
+If two distinct admissible integers $m_1,m_2$ produce the same residue in
+\eqref{eq:row}, then $p\mid(m_1-m_2)$, while
+$0<|m_1-m_2|\leq2M<p$, which is impossible.  Each occupied residue is
+nonzero because $0<|m|\leq M<p$.  Thus the signed integer atoms map
+injectively into the primitive residues, and the squared norm has no cross
+terms.  This proves \eqref{eq:row-identity}.
+\end{proof}
+
+The preceding identity is inherited from the fixed-row mechanism of
+TPC-216.  The new step is its asymptotic evaluation for the literal common
+profile, uniformly across the two prime shells.
+
+\begin{lemma}[endpoint-safe lattice Riemann estimate]
+\label{lem:riemann}
+For every fixed admissible $\psi$, uniformly for
+$p\in\Ptop$ and $q\in\Qshell$,
+\begin{equation}
+ \sum_{\substack{a\bmod p\\(a,p)=1}}|B_{p,q}^{\psi}(a)|^2
+ =\kappa_\psi\frac{pq}{H}+O_\psi(1).
+ \label{eq:row-asymptotic}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $f=\psi^2$ and $T=pq/H$.  For each integer $m$, the fundamental theorem
+of calculus gives
+\begin{align*}
+ \left|f(m/T)-T\int_{m/T}^{(m+1)/T}f(t)\,dt\right|
+ &\leq T\int_{m/T}^{(m+1)/T}|f(m/T)-f(t)|\,dt\\
+ &\leq\int_{m/T}^{(m+1)/T}|f'(s)|\,ds.
+\end{align*}
+Summing in $m$ yields
+\begin{equation}
+ \sum_{m\in\Z}f(m/T)=T\int_{\R}f(t)\,dt+O(\|f'\|_1).
+ \label{eq:riemann}
+\end{equation}
+Because $f$ is compactly supported in $[-1,1]$ and vanishes at the endpoints,
+the support restriction in \eqref{eq:riemann} is exactly
+$|m|\leq\lfloor T\rfloor$.  Omitting $m=0$ subtracts $f(0)$, which is
+absorbed by $O_\psi(1)$.  Lemma~\ref{lem:row} now proves
+\eqref{eq:row-asymptotic}.
+
+Finally, \eqref{eq:depth} gives
+$T\geq UQ/(2H)=\tfrac12x^{23/2400}\to\infty$.  The same fixed-profile
+error therefore applies uniformly over both shells.  Its dependence on
+$\|f'\|_1$ and $f(0)$ explains why the result is not uniform over all profiles.
+\end{proof}

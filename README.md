@@ -9,12 +9,12 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-239 已把 TPC-238 指向的 same-frequency `q` bucket 改写成
-primitive prime progressions，并用 Brun--Titchmarsh 将 TPC-237 finite-window packet
-trace 从 `x^(1/48)(log x)^5` 改进为
-`x^(1/48)(log x)^4 loglog x`。这是 source-backed 的对数节省，但 fixed-power exponent
-仍为 `1/48`；literal `C_h` signed cancellation、arithmetic L2、signed four-packet
-Gate B 与 strict `1/400` 仍开放。
+当前主线状态：TPC-240 已完成 TPC-239 指向的 literal top-band audit。对每个固定的
+冻结非负归一化 common profile，top-prime q-split unsigned direct energy 具有精确渐近
+`[1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H=x^(1/96+o(1))`，从而严格排除该 direct
+factor 的 `o(Q^2/H)` 或 fixed-power saving。same-frequency q-collapse 的碰撞增益、
+literal signed `C_h` cancellation、arithmetic L2、signed four-packet Gate B 与 strict
+`1/400` 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -28,6 +28,8 @@ Gate B 与 strict `1/400` 仍开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-240-top-prime-direct-energy-floor` - `PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR` - 在 literal frozen common profile 下，将 TPC-215 的 top-prime singleton coefficient 与 TPC-216 的 fixed-q primitive row identity 通过 endpoint-safe Riemann sum 和两条 weighted PNT 精确聚合，得到 `D_top^psi=[1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H=x^(1/96+o(1))`；因此 q-split unsigned direct factor 不可能提供 fixed-power saving，但 q-collapsed collision excess 与 signed Gate-B scalar 仍开放。
 
 `tpc-239-brun-titchmarsh-primitive-bucket-envelope` - `PROVED_SOURCE_BACKED_PRIME_DENSITY_L1 / LOGARITHMIC_ONLY` - 将每个 primitive physical frequency bucket 的 shell-prime incidence 上界为 reduced residue classes 中的 prime counts，并以 Brun--Titchmarsh 证明 `R_h(a)<<x^(1/96)loglog x/log x`；代入 TPC-237 composition 得 normalized `x^(1/48)(log x)^4loglog x`，但没有 fixed-power、signed `C_h` 或 Gate-B advance。
 

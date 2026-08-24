@@ -1,56 +1,65 @@
-# TPC big road V92 / TPC-239: Brun--Titchmarsh primitive-bucket envelope
+# TPC big road V93 / TPC-240: top-prime direct-energy floor
 
 更新时间：2026-08-24
 
-状态：`TPC239_PROVED_SOURCE_BACKED_PRIME_DENSITY_L1 / LOGARITHMIC_ONLY / FULL_GATE_B_OPEN`
+状态：`TPC240_PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-239 proof 为
+当前 TPC-240 proof 为
+`bridge_b_top_prime_direct_energy_floor.md`，checker 为
+`tpc_bridge_b_top_prime_direct_energy_floor_checker.py`，编号论文为
+`../../papers/tpc-240-top-prime-direct-energy-floor/`。
+
+For every fixed literal frozen profile `psi`, put
+`kappa_psi=integral |psi|^2`.  On top-prime denominators `U/2<p<=U`, the source
+coefficient is exactly `C_p=-log(p)/p`; fixed-q primitive injectivity and an
+endpoint-safe lattice Riemann sum give
+
+```text
+sum_((a,p)=1)|B_(p,q)^psi(a)|^2
+ = kappa_psi pq/H+O_psi(1).
+```
+
+Two weighted-prime averages then prove the exact q-split direct-energy asymptotic
+
+```text
+D_top^psi
+ = [1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H
+ = x^(1/96+o_psi(1)).
+```
+
+Thus this exact unsigned direct factor is not `o(Q^2/H)` and cannot supply a
+fixed-power saving.  It does not yet measure q-collapsed same-frequency collisions.
+
+```text
+TPC240_TOP_PRIME_COEFFICIENT = PROVED_C_P_EQUALS_MINUS_LOG_P_OVER_P
+TPC240_FIXED_Q_PRIMITIVE_ROW_NORM = PROVED_EXACT
+TPC240_RIEMANN_ROW_ASYMPTOTIC = PROVED_UNIFORM_ON_TOP_PRIME_SHELL_FOR_EACH_FIXED_PROFILE
+TPC240_KAPPA_RANGE = PROVED_ONE_HALF_LE_KAPPA_LE_ONE
+TPC240_DIRECT_ENERGY_CONSTANT = PROVED_1197_KAPPA_LOG_2_OVER_800
+TPC240_DIRECT_ENERGY_POWER = PROVED_X_1_OVER_96
+TPC240_DIRECT_FIXED_POWER_SAVING = REFUTED_ON_EXACT_Q_SPLIT_UNSIGNED_OBJECT
+TPC240_X_1_OVER_48_SHARPNESS = NOT_CLAIMED
+TPC240_C_H_SIGNED_CANCELLATION = NONE
+TPC240_ARITHMETIC_ADVANCE = NO
+TPC240_FIXED_ATOM_CREDIT = 0
+TPC240_L2 = NONE
+TPC240_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC240_ROUND2_CLUE = TEST_THE_TOP_PRIME_Q_COLLAPSED_COLLISION_EXCESS_OVER_THE_EXACT_DIRECT_FLOOR_BEFORE_CLAIMING_X_1_OVER_48_SHARPNESS
+```
+
+strongest positive result：exact `x^(1/96)` direct-energy asymptotic with explicit
+constant；strongest obstruction：the q-split unsigned direct factor has no fixed-power
+saving；open theorem：top-prime q-collapsed collision excess；reusable structure：
+top-prime singleton plus primitive-row Riemann sum plus factorized weighted PNT。
+
+TPC-239 上游 proof 为
 `bridge_b_brun_titchmarsh_primitive_bucket_envelope.md`，checker 为
 `tpc_bridge_b_brun_titchmarsh_primitive_bucket_envelope_checker.py`，编号论文为
-`../../papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/`。
-
-For primitive `a mod h`, the physical incidence `m q^(-1)=a (mod h)` places
-every shell prime in a reduced residue class `q=a^(-1)m (mod h)`.  Dropping only
-the `q`-dependent cutoff and using Brun--Titchmarsh gives
-
-```text
-R_h(a)
- <= 16 (Q^2/H)(h/phi(h))/log(2Q/h)
- << x^(1/96)loglog x/log x.
-```
-
-Inserting this into the TPC-237 collision-before-large-sieve composition proves
-
-```text
-N^(-1) sum_(n in I_x) sum_j |K_j(n)|^2
- << J M^2 x^(1/48)(log x)^4 loglog x.
-```
-
-The gain over TPC-237 is `log x/loglog x`; the fixed-power exponent remains `1/48`.
-
-```text
-TPC239_PRIMITIVE_AP_REDUCTION = PROVED_EXACT_UPPER_COMPILER
-TPC239_BRUN_TITCHMARSH_INPUT = SOURCE_BACKED
-TPC239_BUCKET_MULTIPLICITY = PROVED_LE_16_Q_SQUARED_OVER_H_TIMES_H_OVER_PHI_H_OVER_LOG_2Q_OVER_H
-TPC239_V59_BUCKET_MULTIPLICITY = PROVED_X_1_OVER_96_LOGLOG_X_OVER_LOG_X
-TPC239_FINITE_WINDOW_PACKET_TRACE = PROVED_X_1_OVER_48_LOG_FOUR_LOGLOG
-TPC239_IMPROVEMENT_OVER_TPC237 = PROVED_FACTOR_LOG_X_OVER_LOGLOG_X
-TPC239_FIXED_POWER_IMPROVEMENT = NONE
-TPC239_C_H_SIGNED_CANCELLATION = NONE
-TPC239_ARITHMETIC_ADVANCE = NO
-TPC239_FIXED_ATOM_CREDIT = 0
-TPC239_L2 = NONE
-TPC239_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC239_ROUND2_CLUE = TEST_THE_EXACT_TOP_BAND_C_H_BEFORE_SEEKING_FURTHER_UNIFORM_BUCKET_SAVINGS
-```
-
-strongest positive result：normalized
-`x^(1/48)(log x)^4loglog x` finite-window packet trace；strongest obstruction：prime
-density saves only a logarithm；open theorem：literal weighted or signed within-bucket
-cancellation；reusable structure：primitive residue to reduced prime-AP compiler。
+`../../papers/tpc-239-brun-titchmarsh-primitive-bucket-envelope/`。It supplies the
+logarithmic prime-density upper envelope whose direct factor TPC-240 now audits.
 
 TPC-238 上游 proof 为
 `bridge_b_finite_window_lower_frame_obstruction.md`，checker 为

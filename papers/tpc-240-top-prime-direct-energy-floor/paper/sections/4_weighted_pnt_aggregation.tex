@@ -1,0 +1,74 @@
+\section{Weighted-prime aggregation}
+\label{sec:aggregation}
+
+Substitute Lemma~\ref{lem:riemann} into \eqref{eq:direct-energy}.  Since
+$|C_p|^2=(\log p)^2/p^2$, define
+\[
+ A_U=\sum_{p\in\Ptop}\frac{(\log p)^2}{p},\qquad
+ E_U=\sum_{p\in\Ptop}\frac{(\log p)^2}{p^2},\qquad
+ S_Q=\sum_{q\in\Qshell}q,
+\]
+and write $P=|\Qshell|$.  Then
+\begin{equation}
+ \Dtop=\frac{\kappa_\psi}{H}A_US_Q+O_\psi(PE_U).
+ \label{eq:aggregate}
+\end{equation}
+
+The accumulated row error is genuinely lower order.  On the top shell,
+$p>U/2$, so $E_U\leq2A_U/U$.  Every $q\in\Qshell$ exceeds $Q$, hence
+$P\leq S_Q/Q$.  Relative to the positive main product in
+\eqref{eq:aggregate}, these inequalities give
+\begin{equation}
+ \frac{HPE_U}{A_US_Q}
+ \leq\frac{2H}{UQ}
+ =O\!\left(x^{-23/2400}\right).
+ \label{eq:relative-error}
+\end{equation}
+The fixed factor $\kappa_\psi^{-1}\leq2$ can be absorbed into the implied
+constant.
+
+We next evaluate the two positive weighted sums.  Partial summation from the
+prime number theorem gives \cite{MontgomeryVaughan2007}
+\begin{align}
+ S_Q&=\left(\frac32+o(1)\right)\frac{Q^2}{\log Q},
+ \label{eq:q-pnt}\\
+ A_U&=(\log2+o(1))\log U.
+ \label{eq:p-pnt}
+\end{align}
+For completeness, the main integral in \eqref{eq:q-pnt} is
+\[
+ \int_Q^{2Q}\frac{t}{\log t}\,dt
+ =\left(\frac32+o(1)\right)\frac{Q^2}{\log Q}.
+\]
+The main integral in \eqref{eq:p-pnt} is
+\[
+ \int_{U/2}^{U}\frac{\log t}{t}\,dt
+ =\log2\,\log U-\frac{(\log2)^2}{2}.
+\]
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Lemma~\ref{lem:kappa} proves \eqref{eq:kappa-range}.  Combining
+\eqref{eq:aggregate}--\eqref{eq:p-pnt} with
+\eqref{eq:relative-error} gives
+\[
+ \Dtop=\left(
+ \frac32\,\kappa_\psi\log2\,
+ \frac{\log U}{\log Q}+o_\psi(1)\right)\frac{Q^2}{H}.
+\]
+The frozen scales satisfy
+\[
+ \frac{\log U}{\log Q}=\frac{133/400}{1/3}=\frac{399}{400}.
+\]
+Thus the rational multiplier is
+$(3/2)(399/400)=1197/800$.  Finally,
+\[
+ \frac{Q^2}{H}=x^{2/3-21/32}=x^{1/96}.
+\]
+This proves \eqref{eq:main-asymptotic}, with the fixed-profile quantifier
+stated in Theorem~\ref{thm:main}.
+\end{proof}
+
+Because the leading constant is positive, Theorem~\ref{thm:main} immediately
+rules out $\Dtop=o(Q^2/H)$.  More strongly, for this exact object no estimate
+of the form $\Dtop\ll_\psi x^{-\delta}Q^2/H$ can hold with fixed
+$\delta>0$.

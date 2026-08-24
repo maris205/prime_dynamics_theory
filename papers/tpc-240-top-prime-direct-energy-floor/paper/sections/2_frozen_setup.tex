@@ -1,0 +1,79 @@
+\section{Frozen source and exact object}
+\label{sec:setup}
+
+Retain the literal V59 scales
+\begin{equation}
+ H=x^{21/32},\qquad Q=x^{1/3},\qquad U=x^{133/400}.
+ \label{eq:scales}
+\end{equation}
+Write
+\[
+ \Ptop=\{p\ \text{prime}:U/2<p\leq U\},\qquad
+ \Qshell=\{q\ \text{prime}:Q<q\leq2Q\}.
+\]
+The exponent ledger contains
+\begin{align}
+ \frac{U}{Q}&=x^{-1/1200}, &
+ \frac{H}{4Q}&=\frac14x^{31/96}, \label{eq:separation}\\
+ \frac{UQ}{2H}&=\frac12x^{23/2400}, &
+ \frac{H}{UQ}&=x^{-23/2400}.       \label{eq:depth}
+\end{align}
+In particular, for all sufficiently large $x$, one has $U<Q$ and $4Q<H$.
+
+Fix a function $\psi$ independently of $x$ such that
+\begin{equation}
+ \psi\in C_c^\infty(\R),\qquad 0\leq\psi\leq1,\qquad
+ \supp\psi\subseteq[-1,1],\qquad
+ \int_{-1}^{1}\psi(t)\,dt=1.
+ \label{eq:profile}
+\end{equation}
+Set
+\begin{equation}
+ \kappa_\psi=\int_{-1}^{1}\psi(t)^2\,dt.
+ \label{eq:kappa}
+\end{equation}
+For $p\in\Ptop$, $q\in\Qshell$, and $a\pmod p$, define
+\begin{equation}
+ B_{p,q}^{\psi}(a)=
+ \sum_{0<|m|\leq\lfloor pq/H\rfloor}
+ \psi\!\left(\frac{Hm}{pq}\right)
+ \one_{m q^{-1}\equiv a\pmod p},
+ \qquad C_p=-\frac{\log p}{p}.
+ \label{eq:row}
+\end{equation}
+The inverse is legal because $p<q$.  Our main object is
+\begin{equation}
+ \Dtop=
+ \sum_{p\in\Ptop}|C_p|^2
+ \sum_{q\in\Qshell}
+ \sum_{\substack{a\bmod p\\(a,p)=1}}
+ |B_{p,q}^{\psi}(a)|^2.
+ \label{eq:direct-energy}
+\end{equation}
+It is unsigned and q-split.  There is no complete-period multiplier and no
+finite-window normalization in \eqref{eq:direct-energy}.
+
+\begin{theorem}[top-prime direct-energy asymptotic]
+\label{thm:main}
+For every fixed profile satisfying \eqref{eq:profile},
+\begin{equation}
+ \frac12\leq\kappa_\psi\leq1
+ \label{eq:kappa-range}
+\end{equation}
+and
+\begin{equation}
+ \Dtop=
+ \left(\frac{1197\,\kappa_\psi\log2}{800}+o_\psi(1)\right)
+ \frac{Q^2}{H}
+ =x^{1/96+o_\psi(1)}.
+ \label{eq:main-asymptotic}
+\end{equation}
+The quantifier is profilewise: for every fixed admissible $\psi$ and every
+$\varepsilon>0$, there exists $x_0(\psi,\varepsilon)$ such that the
+asymptotic estimate holds for all $x\geq x_0(\psi,\varepsilon)$.  No threshold
+uniform over the whole profile class is asserted.
+\end{theorem}
+
+Theorem~\ref{thm:main} will follow from the row calculation in
+Section~\ref{sec:rows} and the prime averages in
+Section~\ref{sec:aggregation}.
