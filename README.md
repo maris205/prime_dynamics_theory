@@ -9,13 +9,12 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-236 已在 TPC-235 actual V59 crosswalk 上建立 source-valid physical
-`h`-fiber collision envelope。exact gcd-fiber count 给出
-`R_h(a)<=2 floor(M_h/g)ceil(Qg/h)<=8Q^2/H`，无需逐 row normalization；V59 的
-sharper toll 为 `(4+o(1))x^(1/96)`。exact Q101 floor fixture 出现三条 identical
-prime rows、Bessel ratio `3`，故 physical multiplicity-two transfer 已
-`REFUTED_SCOPED`。状态仍为 `PROVED_STRUCTURAL_L1`：固定 `h` 编译完成；cross-`h`
-rational-frequency reassembly、`C_h` cancellation、L2 与 full Gate B 仍开放。
+当前主线状态：TPC-237 已把 TPC-236 physical `q`-collision Bessel compiler 接到
+TPC-217 reduced-frequency finite-window large sieve。先在 primitive `(h,a)` bucket
+内压缩 prime shell，再做 Farey reassembly，得到 normalized common-source packet trace
+`<< J M^2[x^(1/48)+x^(1/50)](log x)^5`，leading unnormalized exponent 为 `49/48`。
+状态仍为 `PROVED_STRUCTURAL_L1`：这是 unsigned trace envelope，不使用 signed `C_h`
+cancellation，也不等于 literal signed four-packet Gate-B scalar；L2 与 full Gate B 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +28,8 @@ rational-frequency reassembly、`C_h` cancellation、L2 与 full Gate B 仍开�
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-237-collision-compressed-finite-window-reassembly` - `PROVED_STRUCTURAL_L1 / COLLISION_COMPRESSED_FINITE_WINDOW_PACKET_TRACE` - 在 primitive reduced frequencies 上先使用 TPC-236 physical collision factor `4Q^2/H+4UQ/H` 合并 prime shell，再使用 TPC-217 finite-window large sieve，严格把旧 `P` collapse 改进为 normalized `x^(1/48)+x^(1/50)` envelope；`C_h` signs、signed four-packet scalar、arithmetic L2 与 Gate B 仍开放。
 
 `tpc-236-physical-multiwrap-collision-envelope` - `PROVED_STRUCTURAL_L1 / SOURCE_VALID_PHYSICAL_FIBER_BESSEL_ENVELOPE` - 证明 physical residue bucket 的 exact gcd-fiber bound 与 unnormalized weighted Bessel envelope，V59 loss 为 `(4+o(1))x^(1/96)`；exact Q101 floor fixture 的三条 identical rows 给出 ratio `3`，严格否定 multiplicity-two 的 physical transfer，下一步是带 signed `C_h` 的 cross-`h` reduced-frequency reassembly。
 

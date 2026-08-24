@@ -2,15 +2,16 @@
 
 更新时间：2026-08-24
 
-当前地图版本：V89 / TPC-236
+当前地图版本：V90 / TPC-237
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-236`（`PROVED_STRUCTURAL_L1 / PHYSICAL_MULTIWRAP_BESSEL_ENVELOPE`）；
-对应论文目录为 `papers/tpc-236-physical-multiwrap-collision-envelope/`。TPC-236 用
-gcd-fiber count 证明 physical bucket multiplicity `<=8Q^2/H` 与 unnormalized
-weighted Bessel bound；V59 toll 为 `(4+o(1))x^(1/96)`，Q101 exact triple ratio `3`
-封住 multiplicity-two transfer。cross-`h` signed reassembly 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-237`（`PROVED_STRUCTURAL_L1 / COLLISION_COMPRESSED_FINITE_WINDOW_PACKET_TRACE`）；
+对应论文目录为 `papers/tpc-237-collision-compressed-finite-window-reassembly/`。
+TPC-237 在 primitive `(h,a)` bucket 内先用 TPC-236 压缩 prime shell，再用 TPC-217
+Farey large sieve 完成 finite-window reassembly，得到 normalized
+`x^(1/48)+x^(1/50)` trace。signed `C_h` cancellation、four-packet Gate-B scalar 与
+full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -52,9 +53,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V89 / TPC-236                     |
-        | PHYSICAL MULTI-WRAP BESSEL ENVELOPE              |
-        | signed cross-h reassembly / C_h cancellation OPEN|
+        | YOU ARE HERE — V90 / TPC-237                     |
+        | COLLISION-COMPRESSED FINITE-WINDOW TRACE         |
+        | within-bucket signed arithmetic / Gate B OPEN    |
         +--------------------------------------------------+
                 |
                 v
@@ -97,13 +98,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V89 / TPC-236 的
-physical multi-wrap collision envelope。固定 physical `h`-fiber 已有不做 row
-normalization 的 source-valid Bessel compiler，显式保留 `C_h` 与 common packet
-transform；但代价是 `(4+o(1))x^(1/96)`，且 exact triple collision 证明 constant two
-不可转移。下一条大路是把该 envelope 与 reduced rational-frequency large sieve 接合，
-在 cross-`h` reassembly 中测试 signed `C_h` cancellation。FULL_GATE_B、global strict
-`1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V90 / TPC-237 的
+collision-compressed finite-window packet trace。TPC-236 fixed-`h` compiler 已与
+TPC-217 primitive Farey large sieve 接合，normalized upper envelope 为
+`x^(1/48)+x^(1/50)`；下一条大路是判定 long-window cross-frequency signs 是否可能
+产生 fixed-power saving，并据此把施工点收窄到 literal `C_h`-weighted same-frequency
+`q` collision energy。FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit
+继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1233,6 +1234,55 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.31 V90 / TPC-237：collision-compressed finite-window reassembly
+
+On the exact TPC-218 common-source kernel, retain primitive frequencies and first
+collapse the prime shell inside each `(h,a)` bucket.  Since `(a,h)=1`, TPC-236 gives
+
+```text
+R_h(a) <= 4Q^2/H+4hQ/H
+         <= 4Q^2/H+4UQ/H = R_*.
+```
+
+Coordinate Cauchy therefore replaces the old coarse `P=#Q_x` scalar-collapse factor by
+`R_*` before any finite-window estimate.  TPC-218 direct coefficient energy and
+TPC-217 reduced-frequency large sieve then give
+
+```text
+N^(-1) sum_(n in I_x) sum_j |K_j(n)|^2
+ << J M^2 (1+U^2/N)
+    [(Q^2/H)^2+(UQ/H)(Q^2/H)](log x)^5
+ << J M^2 [x^(1/48)+x^(1/50)](log x)^5.
+```
+
+The leading unnormalized exponent is `49/48`.  Primitive indexing is mandatory:
+unreduced residues would duplicate rational frequencies.  The proof retains literal
+`C_h` but uses `|C_h|^2`; it is an unsigned packet trace and neither proves sharpness
+nor the signed four-packet Gate-B scalar.
+
+```text
+TPC237_PRIMITIVE_FREQUENCY_INDEX = REQUIRED_EXACT
+TPC237_Q_COLLISION_BEFORE_LARGE_SIEVE = PROVED_EXACT_COMPOSITION
+TPC237_PRIMITIVE_BUCKET_FACTOR = PROVED_LE_4Q_SQUARED_OVER_H_PLUS_4UQ_OVER_H
+TPC237_FINITE_WINDOW_PACKET_TRACE = PROVED_STRUCTURAL
+TPC237_NORMALIZED_MAIN_EXPONENT = PROVED_1_OVER_48
+TPC237_NORMALIZED_SECONDARY_EXPONENT = PROVED_1_OVER_50
+TPC237_UNNORMALIZED_MAIN_EXPONENT = PROVED_49_OVER_48
+TPC237_OLD_P_COLLAPSE = REPLACED_BY_PHYSICAL_COLLISION_FACTOR
+TPC237_SIMULTANEOUS_SATURATION = NOT_CLAIMED
+TPC237_C_H_SIGNED_CANCELLATION = NONE
+TPC237_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC237_ARITHMETIC_ADVANCE = NO
+TPC237_FIXED_ATOM_CREDIT = 0
+TPC237_L2 = NONE
+TPC237_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+```
+
+地图位置：**V90 / TPC-237 completes the cross-`h` finite-window upper reassembly at
+the `x^(1/48)` packet-trace scale.  The shortest next move is to test whether long-window
+reduced-frequency signs can give any power saving; if not, all effort must move inside
+the literal `C_h`-weighted same-frequency `q` collision energy.**
+
 ## 5.30 V89 / TPC-236：physical multi-wrap collision envelope
 
 For a physical residue `a mod h`, set `g=gcd(a,h)` and
@@ -2036,7 +2086,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V89 / TPC-236：
+截至 V90 / TPC-237：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -2344,7 +2394,21 @@ TPC236_FIXED_ATOM_CREDIT = 0
 TPC236_L2 = NONE
 TPC236_FULL_GATE_B = OPEN
 TPC236_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-NUMBERED_RELEASE = TPC-236
+TPC237_PRIMITIVE_FREQUENCY_INDEX = REQUIRED_EXACT
+TPC237_Q_COLLISION_BEFORE_LARGE_SIEVE = PROVED_EXACT_COMPOSITION
+TPC237_PRIMITIVE_BUCKET_FACTOR = PROVED_LE_4Q_SQUARED_OVER_H_PLUS_4UQ_OVER_H
+TPC237_FINITE_WINDOW_PACKET_TRACE = PROVED_STRUCTURAL
+TPC237_NORMALIZED_MAIN_EXPONENT = PROVED_1_OVER_48
+TPC237_NORMALIZED_SECONDARY_EXPONENT = PROVED_1_OVER_50
+TPC237_UNNORMALIZED_MAIN_EXPONENT = PROVED_49_OVER_48
+TPC237_C_H_SIGNED_CANCELLATION = NONE
+TPC237_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC237_ARITHMETIC_ADVANCE = NO
+TPC237_FIXED_ATOM_CREDIT = 0
+TPC237_L2 = NONE
+TPC237_FULL_GATE_B = OPEN
+TPC237_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+NUMBERED_RELEASE = TPC-237
 ```
 
 以下事实不得从路线图中推断：
@@ -2362,10 +2426,15 @@ NUMBERED_RELEASE = TPC-236
 
 优先级更新为：
 
-1. **TPC-236 已完成：physical multi-wrap collision envelope**。exact gcd-fiber count
+1. **TPC-237 已完成：collision-compressed finite-window reassembly**。primitive
+   frequency bucket 先用 physical collision factor 压缩 `q`，再用 Farey large sieve
+   接到 `I_x`，normalized trace 达到 `x^(1/48)+x^(1/50)`。下一步先证明或否定
+   cross-frequency signs 的 fixed-power saving；随后转向 literal weighted same-frequency
+   `q` collision energy。
+2. **TPC-236 已完成：physical multi-wrap collision envelope**。exact gcd-fiber count
    与 unnormalized weighted Bessel theorem 已完成固定 `h` 编译；Q101 ratio `3` 封住
-   multiplicity-two transfer，V59 保留 `(4+o(1))x^(1/96)` loss。下一步做 signed
-   `C_h` cross-`h` reduced-frequency reassembly，并测试能否超过这笔 toll。
+   multiplicity-two transfer，V59 保留 `(4+o(1))x^(1/96)` loss；其 cross-`h` upper
+   reassembly 已由 TPC-237 完成。
 2. **TPC-235 已完成：V59 physical-depth crosswalk**。真实 row 已精确写成
    `lambda_h=hQ/H` 的 weighted many-clock family；旧 single-clock attachment 与
    packet-output unit normalization 两条捷径均已 `REFUTED_SCOPED`。其 physical
@@ -2442,10 +2511,10 @@ NUMBERED_RELEASE = TPC-236
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-236 的下一步：signed cross-`h` reduced-frequency reassembly**。fixed-fiber
-    source-valid bound 已完成，但 orthogonal `h`-direct sum 还不是 physical finite-window
-    norm。必须结合 TPC-214/217 reduced-frequency regrouping 与 large sieve，显式保留
-    `C_h` signs，寻找超过 `(4+o(1))x^(1/96)` multiplicity toll 的 cancellation。
+12. **TPC-237 的下一步：long-window lower frame 与 within-bucket arithmetic**。
+    cross-`h` upper reassembly 已完成；先证明或否定 distinct reduced frequencies 的
+    signed fixed-power saving，再把真正剩余的 burden 锁到
+    `sum |C_h|^2|sum_q B_(h,q)(a)|^2`。不得把 unsigned trace 改名为 signed Gate B。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2544,6 +2613,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-24 | V90 / TPC-237 | Bridge A / Gate B：collision-compressed finite-window packet trace；within-bucket signed arithmetic open | `TPC-237` | primitive bucket collision before Farey large sieve，normalized `x^(1/48)+x^(1/50)`、unnormalized `49/48`；signed `C_h` cancellation仍为 NONE |
 | 2026-08-24 | V89 / TPC-236 | Bridge A / Gate B：physical fixed-h multi-wrap compiler complete；signed cross-h reassembly open | `TPC-236` | exact gcd-fiber multiplicity、unnormalized explicit-C_h Bessel envelope、V59 `(4+o(1))x^(1/96)` toll、Q101 triple ratio 3；arithmetic cancellation仍为 NO |
 | 2026-08-24 | V88 / TPC-235 | Bridge A / Gate B：actual V59 physical-depth crosswalk；weighted physical h-fiber collision compiler open | `TPC-235` | exact `lambda_h=hQ/H`、single-clock iff `H=4Q^2`、V59 `4x^(1/96)` mismatch、packet-output normalization polarization obstruction；arithmetic cancellation仍为 NO |
 | 2026-08-24 | V87 / TPC-234 | Bridge A / Gate B：normalized collision-Bessel stability；source-valid normalization/V59 crosswalk open | `TPC-234` | multiplicity-two `0<=G<=2I`、`||G-I||<=1`、ambient sharpness、literal Q39 `4/3,2/3` ratios；arithmetic cancellation仍为 NO |

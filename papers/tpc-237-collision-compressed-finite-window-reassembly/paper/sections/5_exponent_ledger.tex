@@ -1,0 +1,42 @@
+\section{V59 exponent ledger and method boundary}
+
+Take $I=I_x=(x/2,x]\cap\ZZ$ and $N=|I_x|$.  The exact exponent identities are
+\begin{align}
+ \frac{Q^2}{H}&=x^{1/96}, &
+ \frac{UQ}{H}&=x^{23/2400},\label{eq:factor-exponents}\\
+ \left(\frac{Q^2}{H}\right)^2&=x^{1/48}, &
+ \frac{UQ}{H}\frac{Q^2}{H}&=x^{1/50},\label{eq:product-exponents}\\
+ \frac{U^2}{N}&=x^{-67/200+o(1)}.                     \label{eq:window-exponent}
+\end{align}
+Dividing \eqref{eq:source-chain} by $N$ therefore yields
+\begin{equation}
+ \frac1N\sum_{n\in I_x}\sum_j|K_j(n)|^2
+ \ll JM^2\bigl(x^{1/48}+x^{1/50}\bigr)(\log x)^5
+ \ll JM^2x^{1/48}(\log x)^5.                         \label{eq:main-result}
+\end{equation}
+The leading unnormalized exponent is $1+1/48=49/48$.
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Interface & Normalized power & Information retained \\
+\midrule
+TPC-218 split packet array & $1/96$ & separate $q,j$ labels \\
+TPC-218 scalar recovery & $11/32$ & unsigned scalar trace \\
+Theorem~\ref{thm:finite-window} & $1/48$ (main) & primitive physical occupancy \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The comparison records a structural upper bound, not a sharp asymptotic.  The proof
+sequentially composes a collision Bessel inequality, an absolute $C_h$ harmonic
+majorant, and the additive large sieve.  Valid upper bounds need not be simultaneously
+saturated by one physical source.  Conversely, no step uses the signs in $C_h$.
+
+The terminal firewall is therefore strict:
+\[
+ \text{unsigned packet trace}
+ \ne \text{signed four-packet Gate-B scalar}.
+\]
+No arithmetic $L^2$, fixed-atom credit, strict $1/400$ payment, full Gate B, or
+twin-prime conclusion follows from \eqref{eq:main-result}.

@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage[numbers]{natbib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Qx}{\mathcal Q_x}
+\newcommand{\Dx}{\mathcal D_x}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\ee}{\mathrm e}
+\newcommand{\Rstar}{R_{\!*}}
+
+\title{\textbf{Collision-Compressed Prime-Shell Reassembly on Finite Windows}}
+\author{Liang Wang\\
+Huazhong University of Science and Technology\\
+Wuhan 430074, P.R. China}
+\date{August 24, 2026}
+
+\begin{document}
+\maketitle
+\input{sections/0_abstract}
+\input{sections/1_introduction}
+\input{sections/2_source}
+\input{sections/3_collision_compression}
+\input{sections/4_finite_window}
+\input{sections/5_exponent_ledger}
+\input{sections/6_certificate}
+\input{sections/7_conclusion}
+\input{sections/8_declarations}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

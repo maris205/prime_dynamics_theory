@@ -1,0 +1,37 @@
+\section{Introduction}
+
+The common-source finite-window kernel retains two outer labels that should not be
+discarded casually: the prime-shell row $q$ and the packet profile $j$.  TPC-218 kept
+both labels through a Hilbert-valued large-sieve estimate, but recovering the scalar
+prime-shell sum by pointwise Cauchy cost $P=\#\Qx$ and returned the normalized power
+$x^{11/32}$ \citep{WangTPC218}.  The resulting bound was source-valid but ignored the
+fact that only a small number of physical prime rows can meet one residue coordinate.
+
+TPC-236 supplied the missing local geometry.  At a fixed denominator $h$, a residue
+$a$ belongs to at most
+\[
+ \frac{4Q^2}{H}+\frac{4hQ}{(a,h)H}
+\]
+prime rows \citep{WangTPC236}.  The finite-window kernel already uses reduced
+primitive frequencies.  Thus $(a,h)=1$, and the collision theorem can be inserted
+exactly at the scalar-recovery step.  This insertion is made before, rather than
+after, the additive large sieve.
+
+The changed order replaces the coarse factor $P$ by
+$\Rstar=4Q^2/H+4UQ/H$.  Combining this factor with the inherited direct coefficient
+energy produces powers $x^{1/48}$ and $x^{1/50}$, a substantial structural reduction
+from $x^{11/32}$.  The same primitive coordinates remain separated by $U^{-2}$, so
+the finite-window attachment of TPC-217 applies without changing the physical object
+\citep{WangTPC217}.
+
+The paper establishes three precise points:
+\begin{enumerate}[leftmargin=2em]
+  \item a collision Bessel inequality for the literal $q$ sum on primitive
+        coordinates;
+  \item its composition with the reduced-frequency large sieve and the explicit
+        $C_h$ coefficient energy;
+  \item an exact exponent ledger and an independently checked source-active finite
+        fixture.
+\end{enumerate}
+Every step is unsigned.  In particular, the theorem does not convert the packet trace
+into the signed four-packet Gate-B scalar and does not exploit signs of $C_h$.

@@ -1,0 +1,46 @@
+\section{Finite-window theorem}
+
+The remaining analytic input is the additive large sieve in its standard separated-
+frequency form \citep{MontgomeryVaughan1973}.  If the frequencies are separated
+modulo one by $\delta$, then on any consecutive interval $I$ of $N$ integers,
+\begin{equation}
+ \sum_{n\in I}\left|\sum_\ell z_\ell\ee^{2\pi i n\alpha_\ell}\right|^2
+ \le (N-1+\delta^{-1})\sum_\ell|z_\ell|^2.           \label{eq:large-sieve}
+\end{equation}
+
+\begin{lemma}[Primitive spacing]\label{lem:spacing}
+Distinct primitive fractions $a/h$ and $a'/h'$ with $h,h'\le U$ have circular
+distance at least $U^{-2}$.
+\end{lemma}
+
+\begin{proof}
+Their difference, or its complement modulo one, is a nonzero rational whose
+denominator divides $hh'$.  Its numerator is a nonzero integer, so the distance is
+at least $(hh')^{-1}\ge U^{-2}$.
+\end{proof}
+
+\begin{theorem}[Collision-compressed finite-window reassembly]
+\label{thm:finite-window}
+For every consecutive interval $I$ of $N$ integers,
+\begin{align}
+ \sum_{n\in I}\sum_{j=1}^J|K_j(n)|^2
+ &\le (N-1+U^2)\Rstar
+ \sum_{h,a,j,q}|C_hB_{h,q}^{(j)}(a)|^2,              \label{eq:exact-chain}\\
+ &\ll (N+U^2)JM^2\Rstar\frac{Q^2}{H}(\log x)^5.
+                                                                    \label{eq:source-chain}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Apply \eqref{eq:large-sieve} for each packet $j$ to the coefficients
+\[
+ z_{h,a}^{(j)}=C_h\sum_{q\in\Qx}B_{h,q}^{(j)}(a).
+\]
+Lemma~\ref{lem:spacing} permits $\delta^{-1}\le U^2$.  Summing in $j$ and applying
+Lemma~\ref{lem:collision} proves \eqref{eq:exact-chain}.  Lemma~\ref{lem:direct}
+then gives \eqref{eq:source-chain}.
+\end{proof}
+
+The order of the proof is load-bearing.  Collapsing $q$ by the unconditional bound
+$|\sum_qz_q|^2\le P\sum_q|z_q|^2$ would restore the TPC-218 exponent.  Here physical
+occupancy replaces $P$ before the finite-window Gram is diagonalized.

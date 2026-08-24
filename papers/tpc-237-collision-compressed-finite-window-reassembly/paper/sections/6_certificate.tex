@@ -1,0 +1,40 @@
+\section{Independent finite reproduction}
+
+The certificate uses
+\[
+ (Q,H,U,h)=(101,8830,99,82).
+\]
+Exact integer-power comparisons give
+\[
+ 8830^{32}\le101^{63}<8831^{32},\qquad
+ 99^{400}\le101^{399}<100^{400}.
+\]
+Thus the fixture reproduces the V59 floor exponents.  Unlike the earlier $h=80$
+collision adversary, $h=82=2\cdot41$ is squarefree and source-active.  In the band
+$H/(4Q)<d\le U$, its rational marked-divisor reproduction has the single term
+\[
+ C_{82}^{\mathrm{rat}}=\frac{\mu(82)}{82}=\frac1{82}.
+\]
+The replacement of $\log d$ by $1$ makes the finite ledger rational; it is not used in
+the asymptotic theorem.
+
+For $q=109,137,191$, every row has primitive support $\{3,79\}$.  With the constant
+packet and the signed-multiplier packet, the direct energy and collapsed trace are
+\[
+ E_{\mathrm{dir}}=\frac3{1681},\qquad
+ E_{\mathrm{col}}=\frac5{1681},\qquad
+ \frac{E_{\mathrm{col}}}{E_{\mathrm{dir}}}=\frac53.
+\]
+The constant packet alone has collision ratio three.  On the complete $82$-point
+window, orthogonality of $3/82$ and $79/82$ gives exact trace energy $10/41$, hence
+normalized energy $5/1681$.
+
+The producer and a separately implemented checker reconstruct the floor relations,
+M\"obius band, modular rows, primitive frequencies, energies, collision factor, and
+large-sieve composition.  A third program tests 21 shifted intervals, including
+lengths $82$ and $164$.  Normal and optimized Python runs have identical output.  The
+certificate record digest is
+\begin{center}
+\texttt{41acb31d49f21e305e97941038b96ef0f6c938474e1e02cb0085f9ae01044848}.
+\end{center}
+Finite agreement certifies the implementation and displayed algebra only.

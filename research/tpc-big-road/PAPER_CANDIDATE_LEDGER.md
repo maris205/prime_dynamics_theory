@@ -2,11 +2,63 @@
 
 更新时间：2026-08-24
 
-状态：**TPC236_PROVED_STRUCTURAL_L1_RELEASED / PHYSICAL_MULTIWRAP_BESSEL_ENVELOPE / CROSS_H_REASSEMBLY_OPEN**
+状态：**TPC237_PROVED_STRUCTURAL_L1_RELEASED / COLLISION_COMPRESSED_FINITE_WINDOW_PACKET_TRACE / SIGNED_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.31 已发布：TPC-237 collision-compressed finite-window reassembly
+
+项目：`papers/tpc-237-collision-compressed-finite-window-reassembly/`
+
+类型：**PROVED_STRUCTURAL_L1 / COMMON_SOURCE_PACKET_TRACE_AT_X_1_OVER_48**。
+
+On the exact TPC-218 common-source kernel, TPC-237 first collapses the prime shell
+inside each primitive `(h,a)` frequency bucket.  TPC-236 gives
+
+```text
+R_h(a)<=4Q^2/H+4hQ/H<=4Q^2/H+4UQ/H.
+```
+
+TPC-217 reduced-frequency large sieve then yields
+
+```text
+N^(-1) sum_(n in I_x) sum_j |K_j(n)|^2
+ << J M^2 [x^(1/48)+x^(1/50)](log x)^5.
+```
+
+The leading unnormalized exponent is `49/48`.  The index passed to the large sieve is
+always primitive `(a,h)=1`; unreduced frequencies are not legal.  Literal `C_h` is
+retained but then appears through `|C_h|^2`, so no signed cancellation or sharpness is
+claimed.
+
+```text
+TPC237_PRIMITIVE_FREQUENCY_INDEX = REQUIRED_EXACT
+TPC237_Q_COLLISION_BEFORE_LARGE_SIEVE = PROVED_EXACT_COMPOSITION
+TPC237_PRIMITIVE_BUCKET_FACTOR = PROVED_LE_4Q_SQUARED_OVER_H_PLUS_4UQ_OVER_H
+TPC237_FINITE_WINDOW_PACKET_TRACE = PROVED_STRUCTURAL
+TPC237_NORMALIZED_MAIN_EXPONENT = PROVED_1_OVER_48
+TPC237_NORMALIZED_SECONDARY_EXPONENT = PROVED_1_OVER_50
+TPC237_UNNORMALIZED_MAIN_EXPONENT = PROVED_49_OVER_48
+TPC237_OLD_P_COLLAPSE = REPLACED_BY_PHYSICAL_COLLISION_FACTOR
+TPC237_SIMULTANEOUS_SATURATION = NOT_CLAIMED
+TPC237_C_H_SIGNED_CANCELLATION = NONE
+TPC237_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC237_ARITHMETIC_ADVANCE = NO
+TPC237_FIXED_ATOM_CREDIT = 0
+TPC237_L2 = NONE
+TPC237_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC237_STATUS = PROVED_STRUCTURAL_L1
+TPC237_ROUND2_CLUE = TEST_THE_ACTUAL_WEIGHTED_COLLISION_ENERGY_BEFORE_SEEKING_CROSS_H_SIGN_CANCELLATION
+```
+
+strongest positive result：normalized `x^(1/48)+x^(1/50)` finite-window trace；
+strongest obstruction：the proof is unsigned and gives no simultaneous saturation or
+`C_h` cancellation；open theorem：actual weighted collision energy beyond the uniform
+`R_*` product；reusable structure：primitive bucket collision compression before Farey
+large sieve；`ROUND2_CLUE`：
+`TEST_THE_ACTUAL_WEIGHTED_COLLISION_ENERGY_BEFORE_SEEKING_CROSS_H_SIGN_CANCELLATION`。
 
 ## 0.30 已发布：TPC-236 physical multi-wrap collision envelope
 

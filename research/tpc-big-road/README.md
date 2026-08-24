@@ -1,55 +1,65 @@
-# TPC big road V89 / TPC-236: physical multi-wrap collision envelope
+# TPC big road V90 / TPC-237: collision-compressed finite-window reassembly
 
 更新时间：2026-08-24
 
-状态：`TPC236_PROVED_STRUCTURAL_L1 / SOURCE_VALID_PHYSICAL_FIBER_BESSEL / FULL_GATE_B_OPEN`
+状态：`TPC237_PROVED_STRUCTURAL_L1 / X_1_OVER_48_PACKET_TRACE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-236 proof 为
+当前 TPC-237 proof 为
+`bridge_b_collision_compressed_finite_window_reassembly.md`，checker 为
+`tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py`，编号论文为
+`../../papers/tpc-237-collision-compressed-finite-window-reassembly/`。
+
+For the exact TPC-218 common-source kernel, retain only primitive frequencies and first
+collapse the prime rows inside each `(h,a)` bucket.  TPC-236 gives
+
+```text
+R_h(a) <= 4Q^2/H+4hQ/H
+         <= 4Q^2/H+4UQ/H = R_*.
+```
+
+Then TPC-217 reduced-frequency large sieve gives
+
+```text
+N^(-1) sum_(n in I_x) sum_j |K_j(n)|^2
+ << J M^2 [x^(1/48)+x^(1/50)](log x)^5.
+```
+
+The large-sieve index is always primitive `(a,h)=1`; unreduced residues would duplicate
+frequencies.  This is an unsigned packet trace, not signed Gate-B cancellation.
+
+```text
+TPC237_PRIMITIVE_FREQUENCY_INDEX = REQUIRED_EXACT
+TPC237_Q_COLLISION_BEFORE_LARGE_SIEVE = PROVED_EXACT_COMPOSITION
+TPC237_PRIMITIVE_BUCKET_FACTOR = PROVED_LE_4Q_SQUARED_OVER_H_PLUS_4UQ_OVER_H
+TPC237_FINITE_WINDOW_PACKET_TRACE = PROVED_STRUCTURAL
+TPC237_NORMALIZED_MAIN_EXPONENT = PROVED_1_OVER_48
+TPC237_NORMALIZED_SECONDARY_EXPONENT = PROVED_1_OVER_50
+TPC237_UNNORMALIZED_MAIN_EXPONENT = PROVED_49_OVER_48
+TPC237_OLD_P_COLLAPSE = REPLACED_BY_PHYSICAL_COLLISION_FACTOR
+TPC237_SIMULTANEOUS_SATURATION = NOT_CLAIMED
+TPC237_C_H_SIGNED_CANCELLATION = NONE
+TPC237_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC237_ARITHMETIC_ADVANCE = NO
+TPC237_FIXED_ATOM_CREDIT = 0
+TPC237_L2 = NONE
+TPC237_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC237_ROUND2_CLUE = TEST_THE_ACTUAL_WEIGHTED_COLLISION_ENERGY_BEFORE_SEEKING_CROSS_H_SIGN_CANCELLATION
+```
+
+strongest positive result：normalized `x^(1/48)+x^(1/50)` finite-window packet trace；
+strongest obstruction：the composition is unsigned and proves neither simultaneous
+saturation nor signed `C_h` cancellation；open theorem：literal weighted collision
+energy beyond the uniform `R_*` product；reusable structure：collision compression
+before primitive Farey reassembly。
+
+TPC-236 上游 proof 为
 `bridge_b_physical_multiwrap_collision_envelope.md`，checker 为
 `tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py`，编号论文为
-`../../papers/tpc-236-physical-multiwrap-collision-envelope/`。
-
-For a physical residue `a mod h`, put `g=gcd(a,h)` and `M_h=floor(2hQ/H)`.  Then
-
-```text
-R_h(a) <= 2 floor(M_h/g) ceil(Qg/h)
-         <= 4Q^2/H+4hQ/(gH)
-         <= 8Q^2/H.
-```
-
-Pointwise Cauchy gives an unnormalized fixed-`h` Bessel theorem and explicit-`C_h`
-pre-reassembly direct sum.  V59 pays `(4+o(1))x^(1/96)`.  The exact
-`(Q,H,U,h)=(101,8830,99,80)` floor fixture has three identical rows and ratio three,
-so multiplicity two does not transfer to the physical interface.
-
-```text
-TPC236_PHYSICAL_ROW_INTERNAL_INJECTIVITY = PROVED_FOR_H_GT_4Q
-TPC236_BUCKET_GCD_FIBER_BOUND = PROVED_EXACT
-TPC236_BUCKET_MULTIPLICITY = PROVED_LE_8Q_SQUARED_OVER_H
-TPC236_WEIGHTED_FIXED_H_BESSEL = PROVED_EXACT_WITHOUT_ROW_NORMALIZATION
-TPC236_WEIGHTED_PHYSICAL_H_DIRECT_SUM = PROVED_EXACT
-TPC236_COMMON_LINEAR_PACKET_TRANSFORM = PRESERVED_WITH_OPERATOR_NORM
-TPC236_DIVISOR_WEIGHT_C_H = PRESERVED_EXPLICITLY
-TPC236_V59_MULTIPLICITY_TOLL = PROVED_4X_1_OVER_96_PLUS_4X_23_OVER_2400
-TPC236_Q101_TRIPLE_COLLISION = PROVED_EXACT
-TPC236_Q101_EQUAL_ROW_RATIO = PROVED_EXACT_3
-TPC236_PHYSICAL_MULTIPLICITY_TWO_TRANSFER = REFUTED_SCOPED
-TPC236_CROSS_H_RATIONAL_FREQUENCY_REASSEMBLY = OPEN
-TPC236_C_H_WEIGHTED_CANCELLATION = OPEN
-TPC236_ARITHMETIC_ADVANCE = NO
-TPC236_FIXED_ATOM_CREDIT = 0
-TPC236_L2 = NONE
-TPC236_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC236_ROUND2_CLUE = COMBINE_PHYSICAL_H_FIBER_ENVELOPE_WITH_REDUCED_FREQUENCY_LARGE_SIEVE_AND_TEST_C_H_WEIGHTED_CANCELLATION
-```
-
-strongest positive result：source-valid unnormalized physical-fiber Bessel envelope；
-strongest obstruction：exact triple collision refutes multiplicity two and leaves the
-`1/96` toll；open theorem：signed `C_h` cross-`h` reduced-frequency reassembly；reusable
-structure：gcd-fiber reduction and coordinate Bessel compiler。
+`../../papers/tpc-236-physical-multiwrap-collision-envelope/`。It supplies the
+source-valid fixed-`h` physical collision factor used above.
 
 TPC-235 上游 proof 为
 `bridge_b_v59_physical_depth_crosswalk.md`，checker 为

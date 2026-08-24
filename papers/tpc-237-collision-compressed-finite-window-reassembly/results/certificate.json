@@ -1,0 +1,123 @@
+{
+  "claim_level": "PROVED_STRUCTURAL_L1_COMMON_SOURCE_COLLISION_COMPRESSED_FINITE_WINDOW_PACKET_TRACE",
+  "finite_reproduction": {
+    "digest": "41acb31d49f21e305e97941038b96ef0f6c938474e1e02cb0085f9ae01044848",
+    "records": {
+      "exponents": {
+        "H": "21/32",
+        "Q": "1/3",
+        "Q2_over_H": "1/96",
+        "U": "133/400",
+        "UQ_over_H": "23/2400",
+        "main_product": "1/48",
+        "secondary_product": "1/50",
+        "unnormalized_main": "49/48",
+        "window_U2_over_x": "-67/200"
+      },
+      "physical_window_fixture": {
+        "H": 8830,
+        "Q": 101,
+        "R_star": "8080/883",
+        "U": 99,
+        "collapsed_packet_trace": "5/1681",
+        "collision_composed_rhs": "239539680/1484323",
+        "constant_packet_collapsed_energy": "9/3362",
+        "constant_packet_collision_ratio": "3",
+        "direct_packet_energy": "3/1681",
+        "divisor_terms": [
+          [
+            82,
+            1
+          ]
+        ],
+        "exact_window_energy": "10/41",
+        "h": 82,
+        "large_sieve_factor": 9882,
+        "large_sieve_rhs": "49410/1681",
+        "maximum_bucket_multiplicity": 3,
+        "nonprimitive_frequency_mutation": "REJECTED",
+        "normalized_window_energy": "5/1681",
+        "packet_trace_collision_ratio": "5/3",
+        "primitive_frequencies": [
+          [
+            82,
+            3
+          ],
+          [
+            82,
+            79
+          ]
+        ],
+        "rational_C_h": "1/82",
+        "rows": {
+          "constant": {
+            "109": {
+              "3": 1,
+              "79": 1
+            },
+            "137": {
+              "3": 1,
+              "79": 1
+            },
+            "191": {
+              "3": 1,
+              "79": 1
+            }
+          },
+          "signed_multiplier": {
+            "109": {
+              "3": -1,
+              "79": 1
+            },
+            "137": {
+              "3": 1,
+              "79": -1
+            },
+            "191": {
+              "3": -1,
+              "79": 1
+            }
+          }
+        },
+        "selected_q": [
+          109,
+          137,
+          191
+        ],
+        "shell_prime_count": 20,
+        "signed_packet_collapsed_energy": "1/3362",
+        "window_length": 82,
+        "window_start": 0
+      }
+    }
+  },
+  "firewall": {
+    "C_h_signed_cancellation": "NONE",
+    "L2": "NONE",
+    "arithmetic_advance": "NO",
+    "fixed_atom_credit": 0,
+    "full_gate_b": "OPEN",
+    "sharpness": "NOT_CLAIMED",
+    "signed_four_packet_gate_b_scalar": "OPEN",
+    "strict_1_over_400": "UNPAID_GLOBAL",
+    "unsigned_packet_trace": "PROVED_STRUCTURAL"
+  },
+  "normalization_loss_ledger": {
+    "frequency_representatives": "PRIMITIVE_ONLY",
+    "hidden_P_factor": "NONE",
+    "outer_coefficient": "LITERAL_SIGNED_C_h_IN_THEOREM",
+    "output_normalization": "N^(-1)",
+    "packet_dependent_transform": "NONE",
+    "q_weight": 1,
+    "row_dependent_normalization": "NONE"
+  },
+  "schema": "tpc237-collision-compressed-finite-window-reassembly-v1",
+  "status": "PASS",
+  "theorem": {
+    "direct_coefficient_energy": "O(JM^2(Q^2/H)(log x)^5)",
+    "finite_window_factor": "N-1+U^2",
+    "normalized_envelope": "O(JM^2(x^(1/48)+x^(1/50))(log x)^5)",
+    "primitive_bucket_factor": "R_*<=4Q^2/H+4UQ/H",
+    "unnormalized_main_exponent": "49/48"
+  }
+}

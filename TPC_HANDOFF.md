@@ -1,10 +1,79 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V89_TPC236_PHYSICAL_MULTIWRAP_BESSEL_RELEASED`
+交接状态：`BOLD_CHANNEL_V90_TPC237_COLLISION_COMPRESSED_FINITE_WINDOW_RELEASED`
 
-TPC-236 当前 section：physical multi-wrap collision envelope
-------------------------------------------------------------
+TPC-237 当前 section：collision-compressed finite-window reassembly
+---------------------------------------------------------------------
+
+Keep the exact TPC-218 primitive common-source kernel and first compress the
+prime-shell labels inside each physical frequency bucket.  Since `(a,h)=1`, the
+TPC-236 gcd fiber has `g=1`, so
+
+```text
+R_h(a) <= 4Q^2/H+4hQ/H
+       <= 4Q^2/H+4UQ/H = R_*.
+```
+
+Combining this pointwise collision factor with the TPC-218 direct coefficient
+energy and then the TPC-217 reduced-frequency large sieve gives
+
+```text
+N^(-1) sum_(n in I_x) sum_j |K_j(n)|^2
+  << J M^2 [x^(1/48)+x^(1/50)](log x)^5.
+```
+
+The leading unnormalized exponent is `49/48+o(1)`, while
+`U^2/N=x^(-67/200+o(1))` is lower order.  This removes the older coarse
+`P=#Q_x` scalar collapse but still leaves a growing unsigned packet trace.  It
+does not prove signed `C_h` cancellation or the signed four-packet Gate-B scalar.
+
+```text
+TPC237_ROUTE_ADVANCE = YES
+TPC237_PRIMITIVE_FREQUENCY_INDEX = REQUIRED_EXACT
+TPC237_Q_COLLISION_BEFORE_LARGE_SIEVE = PROVED_EXACT_COMPOSITION
+TPC237_PRIMITIVE_BUCKET_FACTOR = PROVED_LE_4Q_SQUARED_OVER_H_PLUS_4UQ_OVER_H
+TPC237_DIRECT_COEFFICIENT_ENERGY = PROVED_X_1_OVER_96_LOG_FIVE
+TPC237_FINITE_WINDOW_PACKET_TRACE = PROVED_STRUCTURAL
+TPC237_NORMALIZED_MAIN_EXPONENT = PROVED_1_OVER_48
+TPC237_NORMALIZED_SECONDARY_EXPONENT = PROVED_1_OVER_50
+TPC237_UNNORMALIZED_MAIN_EXPONENT = PROVED_49_OVER_48
+TPC237_WINDOW_FACTOR = PROVED_1_PLUS_U_SQUARED_OVER_N
+TPC237_OLD_P_COLLAPSE = REPLACED_BY_PHYSICAL_COLLISION_FACTOR
+TPC237_SIMULTANEOUS_SATURATION = NOT_CLAIMED
+TPC237_C_H_SIGNED_CANCELLATION = NONE
+TPC237_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC237_ARITHMETIC_ADVANCE = NO
+TPC237_FIXED_ATOM_CREDIT = 0
+TPC237_L2 = NONE
+TPC237_FULL_GATE_B = OPEN
+TPC237_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC237_TPC_TRIGGER = true
+TPC237_NUMBERED_RELEASE = YES
+TPC237_STATUS = PROVED_STRUCTURAL_L1
+TPC237_ROUND2_CLUE = TEST_THE_ACTUAL_WEIGHTED_COLLISION_ENERGY_BEFORE_SEEKING_CROSS_H_SIGN_CANCELLATION
+```
+
+strongest positive result：common-source normalized packet trace improves from
+`x^(11/32)` to `x^(1/48)+x^(1/50)`；strongest obstruction：the entire estimate is
+unsigned and still grows；open theorem：strict control of literal
+`|C_h|^2`-weighted same-frequency collision energy；reusable structure：primitive
+bucket compression followed by reduced-frequency finite-window large sieve。
+
+编号论文目录：papers/tpc-237-collision-compressed-finite-window-reassembly/
+
+```text
+papers/tpc-237-collision-compressed-finite-window-reassembly/README.md
+papers/tpc-237-collision-compressed-finite-window-reassembly/PROOF_PACKAGE.md
+papers/tpc-237-collision-compressed-finite-window-reassembly/paper/paper.pdf
+papers/tpc-237-collision-compressed-finite-window-reassembly/results/certificate.json
+papers/tpc-237-collision-compressed-finite-window-reassembly/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_collision_compressed_finite_window_reassembly.md
+research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py
+```
+
+TPC-236 上游 section：physical multi-wrap collision envelope
+-------------------------------------------------------------
 
 For physical residue `a mod h`, put `g=gcd(a,h)` and
 `M_h=floor(2hQ/H)`.  Exact gcd-fiber counting gives
@@ -5810,6 +5879,11 @@ TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
 `research/tpc-big-road/TPC_ROUTE_MAP.md`、
+`papers/tpc-237-collision-compressed-finite-window-reassembly/README.md`、
+`papers/tpc-237-collision-compressed-finite-window-reassembly/notes/theorem_ledger.md`、
+`papers/tpc-237-collision-compressed-finite-window-reassembly/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_collision_compressed_finite_window_reassembly.md`、
+`research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py`、
 `papers/tpc-231-finite-resonance-sieve-obstruction/README.md`、
 `papers/tpc-231-finite-resonance-sieve-obstruction/notes/theorem_ledger.md`、
 `papers/tpc-231-finite-resonance-sieve-obstruction/notes/route_evaluation.md`、
@@ -5972,8 +6046,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V89/TPC-236 gate、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百三十四次（67 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V90/TPC-237 gate、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百三十六次（68 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -6111,11 +6185,23 @@ python -B research/tpc-big-road/tpc_bridge_b_v59_physical_depth_crosswalk_checke
 python -O -B research/tpc-big-road/tpc_bridge_b_v59_physical_depth_crosswalk_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-236 入口：
+最新 TPC-237 入口：
+
+```text
+papers/tpc-237-collision-compressed-finite-window-reassembly/README.md
+papers/tpc-237-collision-compressed-finite-window-reassembly/notes/theorem_ledger.md
+papers/tpc-237-collision-compressed-finite-window-reassembly/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_collision_compressed_finite_window_reassembly.md
+research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py
+```
+
+TPC-236 上游入口：
 
 ```text
 papers/tpc-236-physical-multiwrap-collision-envelope/README.md

@@ -1,0 +1,39 @@
+\section{Frozen common-source object}
+
+Set
+\begin{equation}
+ H=x^{21/32},\qquad Q=x^{1/3},\qquad
+ U=x^{133/400},                                      \label{eq:scales}
+\end{equation}
+and define
+\begin{align}
+ \Qx&=\{q\text{ prime}:Q<q\le2Q\},\\
+ \Dx&=\{d:H/(4Q)<d\le U,\ \mu(d)^2=1\},\\
+ C_h&=\sum_{\substack{d\in\Dx\\h\mid d}}
+       \frac{\mu(d)\log d}{d}.                       \label{eq:Ch}
+\end{align}
+Let $J$ be fixed.  For bounded profiles $\psi_j$, write
+$M=\max_j\|\psi_j\|_\infty$ and
+\begin{equation}
+ B_{h,q}^{(j)}(a)=
+ \sum_{0<|m|\le\lfloor hq/H\rfloor}
+ \psi_j\!\left(\frac{Hm}{hq}\right)
+ \one_{m q^{-1}\equiv a\pmod h}.                    \label{eq:row}
+\end{equation}
+The object studied here is
+\begin{equation}
+ K_j(n)=
+ \sum_{h\le U}\ \sum_{\substack{a\bmod h\\(a,h)=1}}
+ C_h\left(\sum_{q\in\Qx}B_{h,q}^{(j)}(a)\right)
+ \ee^{2\pi i n a/h}.                                 \label{eq:kernel}
+\end{equation}
+
+Equation~\eqref{eq:kernel} freezes all interfaces used below.  The outer $q$ weight
+is one, $C_h$ is the literal signed divisor coefficient, and no row-dependent
+normalization or packet-dependent transform is inserted.  The pairs $(h,a)$ are
+primitive at the point where they enter the large sieve.  Passing all residues to
+that step would duplicate rational frequencies and is therefore forbidden.
+
+For sufficiently large $x$, $U<Q$ and $4Q<H$.  Hence every shell prime is invertible
+modulo every $h\le U$.  The frequency $0/1$ contributes no atom because
+$\lfloor q/H\rfloor=0$ for $q\le2Q$.

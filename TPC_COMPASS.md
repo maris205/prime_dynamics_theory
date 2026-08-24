@@ -1,37 +1,41 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V89 / PHYSICAL_MULTIWRAP_COLLISION_ENVELOPE`
-claim level：`PROVED_STRUCTURAL_L1_SOURCE_VALID_PHYSICAL_FIBER_BESSEL`
-编号事实终点：TPC-236；TPC-236 trigger：`true`
+状态：`BOLD_CHANNEL_V90 / COLLISION_COMPRESSED_FINITE_WINDOW_REASSEMBLY`
+claim level：`PROVED_STRUCTURAL_L1_X_1_OVER_48_COMMON_SOURCE_PACKET_TRACE`
+编号事实终点：TPC-237；TPC-237 trigger：`true`
 
-当前 TPC-236 入口：proof 为
-`research/tpc-big-road/bridge_b_physical_multiwrap_collision_envelope.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py`，编号论文为
-`papers/tpc-236-physical-multiwrap-collision-envelope/`。exact gcd-fiber count 给出
-physical bucket multiplicity `<=8Q^2/H` 与 unnormalized weighted Bessel bound；V59
-toll 为 `(4+o(1))x^(1/96)`，Q101 exact triple collision 的 ratio 为 `3`。
+当前 TPC-237 入口：proof 为
+`research/tpc-big-road/bridge_b_collision_compressed_finite_window_reassembly.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_collision_compressed_finite_window_reassembly_checker.py`，编号论文为
+`papers/tpc-237-collision-compressed-finite-window-reassembly/`。它先在 primitive
+frequency bucket 内使用 TPC-236 physical collision factor，再做 TPC-217 finite-window
+large sieve，得到 normalized `x^(1/48)+x^(1/50)` common-source packet trace。
 
 ```text
-TPC236_PHYSICAL_ROW_INTERNAL_INJECTIVITY = PROVED_FOR_H_GT_4Q
-TPC236_BUCKET_GCD_FIBER_BOUND = PROVED_EXACT
-TPC236_BUCKET_MULTIPLICITY = PROVED_LE_8Q_SQUARED_OVER_H
-TPC236_WEIGHTED_FIXED_H_BESSEL = PROVED_EXACT_WITHOUT_ROW_NORMALIZATION
-TPC236_WEIGHTED_PHYSICAL_H_DIRECT_SUM = PROVED_EXACT
-TPC236_COMMON_LINEAR_PACKET_TRANSFORM = PRESERVED_WITH_OPERATOR_NORM
-TPC236_DIVISOR_WEIGHT_C_H = PRESERVED_EXPLICITLY
-TPC236_V59_MULTIPLICITY_TOLL = PROVED_4X_1_OVER_96_PLUS_4X_23_OVER_2400
-TPC236_Q101_TRIPLE_COLLISION = PROVED_EXACT
-TPC236_Q101_EQUAL_ROW_RATIO = PROVED_EXACT_3
-TPC236_PHYSICAL_MULTIPLICITY_TWO_TRANSFER = REFUTED_SCOPED
-TPC236_CROSS_H_RATIONAL_FREQUENCY_REASSEMBLY = OPEN
-TPC236_C_H_WEIGHTED_CANCELLATION = OPEN
-TPC236_ARITHMETIC_ADVANCE = NO
-TPC236_L2 = NONE
-TPC236_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC236_STATUS = PROVED_STRUCTURAL_L1
-TPC236_ROUND2_CLUE = COMBINE_PHYSICAL_H_FIBER_ENVELOPE_WITH_REDUCED_FREQUENCY_LARGE_SIEVE_AND_TEST_C_H_WEIGHTED_CANCELLATION
+TPC237_PRIMITIVE_FREQUENCY_INDEX = REQUIRED_EXACT
+TPC237_Q_COLLISION_BEFORE_LARGE_SIEVE = PROVED_EXACT_COMPOSITION
+TPC237_PRIMITIVE_BUCKET_FACTOR = PROVED_LE_4Q_SQUARED_OVER_H_PLUS_4UQ_OVER_H
+TPC237_FINITE_WINDOW_PACKET_TRACE = PROVED_STRUCTURAL
+TPC237_NORMALIZED_MAIN_EXPONENT = PROVED_1_OVER_48
+TPC237_NORMALIZED_SECONDARY_EXPONENT = PROVED_1_OVER_50
+TPC237_UNNORMALIZED_MAIN_EXPONENT = PROVED_49_OVER_48
+TPC237_OLD_P_COLLAPSE = REPLACED_BY_PHYSICAL_COLLISION_FACTOR
+TPC237_SIMULTANEOUS_SATURATION = NOT_CLAIMED
+TPC237_C_H_SIGNED_CANCELLATION = NONE
+TPC237_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC237_ARITHMETIC_ADVANCE = NO
+TPC237_L2 = NONE
+TPC237_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC237_STATUS = PROVED_STRUCTURAL_L1
+TPC237_ROUND2_CLUE = TEST_THE_ACTUAL_WEIGHTED_COLLISION_ENERGY_BEFORE_SEEKING_CROSS_H_SIGN_CANCELLATION
 ```
+
+TPC-236 上游入口：proof 为
+`research/tpc-big-road/bridge_b_physical_multiwrap_collision_envelope.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_physical_multiwrap_collision_envelope_checker.py`，编号论文为
+`papers/tpc-236-physical-multiwrap-collision-envelope/`。它提供 TPC-237 使用的 fixed-`h`
+physical collision factor，并保留 Q101 ratio-three obstruction。
 
 TPC-235 上游入口：proof 为
 `research/tpc-big-road/bridge_b_v59_physical_depth_crosswalk.md`，checker 为

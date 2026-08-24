@@ -1,0 +1,63 @@
+\section{Prime-shell collision compression}
+
+Let $R_h(a)$ count the shell rows for which
+$B_{h,q}^{(j)}(a)$ can be nonzero.  TPC-236 proves its gcd-fiber bound uniformly in
+the row amplitudes.  Restricting that incidence matrix to primitive coordinates gives
+the following consequence.
+
+\begin{lemma}[Primitive collision factor]\label{lem:collision}
+For every frequency in \eqref{eq:kernel},
+\begin{equation}
+ R_h(a)\le \frac{4Q^2}{H}+\frac{4hQ}{H}
+          \le \frac{4Q^2}{H}+\frac{4UQ}{H}=:\Rstar.  \label{eq:Rstar}
+\end{equation}
+Consequently,
+\begin{equation}
+ \sum_{h,a,j}|C_h|^2
+ \left|\sum_{q\in\Qx}B_{h,q}^{(j)}(a)\right|^2
+ \le \Rstar
+ \sum_{h,a,j,q}|C_hB_{h,q}^{(j)}(a)|^2.              \label{eq:collision-bessel}
+\end{equation}
+All $a$-sums in this paper are over $(a,h)=1$.
+\end{lemma}
+
+\begin{proof}
+The physical multiplicity theorem has second term $4hQ/(gH)$ with $g=(a,h)$.
+Here $g=1$, which proves \eqref{eq:Rstar}.  At one fixed $(h,a,j)$, at most
+$R_h(a)$ values of $q$ contribute.  Cauchy--Schwarz therefore bounds the squared
+$q$ sum by $R_h(a)$ times the sum of the individual squares.  Multiplication by
+$|C_h|^2$ and summation prove \eqref{eq:collision-bessel}.
+\end{proof}
+
+The right side of \eqref{eq:collision-bessel} is already controlled by the source.
+
+\begin{lemma}[Direct coefficient energy]\label{lem:direct}
+Under the scales \eqref{eq:scales},
+\begin{equation}
+ \sum_{h,a,j,q}|C_hB_{h,q}^{(j)}(a)|^2
+ \ll JM^2\frac{Q^2}{H}(\log x)^5.                    \label{eq:direct-energy}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The condition $4Q<H$ makes $m\mapsto mq^{-1}\pmod h$ injective on the range in
+\eqref{eq:row}.  Thus
+\[
+ \sum_{(a,h)=1}|B_{h,q}^{(j)}(a)|^2
+ \le 2M^2\frac{hq}{H}.
+\]
+If this row is active, then $h\ge H/(2Q)$.  Writing $d=hk$ in \eqref{eq:Ch} and
+discarding the lower band and squarefree restrictions gives
+\[
+ |C_h|\le\frac{\log U}{h}\sum_{k\le U/h}\frac1k
+ \ll\frac{(\log x)^2}{h}.
+\]
+It follows that
+\[
+ \sum_{h\text{ active}}h|C_h|^2
+ \ll(\log x)^4\sum_{H/(2Q)\le h\le U}\frac1h
+ \ll(\log x)^5.
+\]
+Finally $q\le2Q$ and $\#\Qx\le2Q$.  Summing the row estimate over $j,q,h$ proves
+\eqref{eq:direct-energy}.
+\end{proof}
