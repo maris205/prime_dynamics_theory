@@ -2,11 +2,67 @@
 
 更新时间：2026-08-24
 
-状态：**TPC234_PROVED_STRUCTURAL_L1_RELEASED / DEPTH_UNIFORM_NORMALIZED_BESSEL_BOUND / SOURCE_VALIDITY_OPEN**
+状态：**TPC235_PROVED_STRUCTURAL_L1_RELEASED / V59_PHYSICAL_DEPTH_CROSSWALK / WEIGHTED_H_FIBER_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.29 已发布：TPC-235 V59 physical-depth crosswalk
+
+项目：`papers/tpc-235-v59-physical-depth-crosswalk/`
+
+类型：**PROVED_STRUCTURAL_L1 / SINGLE_CLOCK_AND_OUTPUT_NORMALIZATION_REFUTED_SCOPED**。
+
+For every physical denominator `h`, define `lambda_h=hQ/H`.  Then the V59 row is
+exactly parameterized by
+
+```text
+cutoff=floor(lambda_h q/Q),
+profile argument=mQ/(lambda_h q),
+modulus=h=(H/Q)lambda_h.
+```
+
+The TPC-226 modeled clock matches both modulus and cutoff/profile if and only if
+`h=4LQ` and `H=4Q^2`.  At V59, `4Q^2/H=4x^(1/96)`, so exact single-clock attachment
+is refuted by a growing mismatch.  The active physical depths obey
+`1/2<=lambda_h<=x^(23/2400)`; each unit depth has `x^(31/96+o(1))` available integer
+denominator-grid points, without claiming that all corresponding `C_h` are nonzero.
+
+The source four-phase identity requires one common linear transform.  Independently
+unit-normalizing each output makes all four squared norms one and their signed sum
+zero; the scalar fixture `(beta,w)=(1,2)` changes from `2` to `0`.  Thus TPC-234
+output normalization is not automatically source-valid.
+
+```text
+TPC235_V59_PHYSICAL_DEPTH_VARIABLE = PROVED_EXACT_LAMBDA_H_EQ_HQ_OVER_H
+TPC235_PHYSICAL_ROW_REPARAMETERIZATION = PROVED_EXACT
+TPC235_SINGLE_CLOCK_COMPATIBILITY_IFF_H_EQ_4Q_SQUARED = PROVED_EXACT
+TPC235_V59_CLOCK_RATIO = PROVED_EXACT_4X_TO_1_OVER_96
+TPC235_TPC226_EXACT_SINGLE_CLOCK_ATTACHMENT = REFUTED_SCOPED
+TPC235_PHYSICAL_DEPTH_RANGE = PROVED_EXACT_HALF_TO_X_23_OVER_2400
+TPC235_PHYSICAL_DENOMINATOR_GRID_PER_DEPTH = PROVED_X_31_OVER_96
+TPC235_DIVISOR_WEIGHT_C_H = SOURCE_LOCKED_REQUIRED
+TPC235_FULL_H_SUM = SOURCE_LOCKED_REQUIRED
+TPC235_COMMON_PACKET_TRANSFORM = SOURCE_LOCKED_REQUIRED
+TPC235_OUTPUT_UNIT_NORMALIZATION_POLARIZATION = REFUTED_SCOPED
+TPC235_SOURCE_VALID_NORMALIZATION = OPEN_WEIGHTED_LINEAR_ONLY
+TPC235_ARITHMETIC_ADVANCE = NO
+TPC235_FIXED_ATOM_CREDIT = 0
+TPC235_L2 = NONE
+TPC235_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC235_STATUS = PROVED_STRUCTURAL_L1
+TPC235_ROUND2_CLUE = BUILD_PHYSICAL_H_FIBER_DIRECT_SUM_WITH_COMMON_PACKET_TRANSFORM_AND_EXPLICIT_WEIGHTS
+```
+
+strongest positive result：exact physical-depth row and compatibility iff theorem；
+strongest obstruction：single-clock mismatch and packet-output normalization erase the
+source polarization；open theorem：weighted physical `h`-fiber direct sum with common
+packet transform；reusable structure：clock/cutoff/profile compatibility triangle and
+packet normalization firewall；`ROUND2_CLUE`：
+`BUILD_PHYSICAL_H_FIBER_DIRECT_SUM_WITH_COMMON_PACKET_TRANSFORM_AND_EXPLICIT_WEIGHTS`。
+Three exact finite reproducers and bridge checker pass in normal and optimized modes；
+4-page embedded-font PDF。
 
 ## 0.28 已发布：TPC-234 normalized collision-Bessel stability
 
@@ -1860,6 +1916,7 @@ handoff。
 
 | 日期 | 版本 | 新增可发表单元 | 状态 |
 |---|---|---|---|
+| 2026-08-24 | V88 | V59 physical-depth exact crosswalk、single-clock iff obstruction 与 packet-output normalization firewall | **PROVED_STRUCTURAL_L1 / TPC-235** |
 | 2026-08-10 | V43 | proper-factor Poisson transference 与 zero-axis return | **PROVED** |
 | 2026-08-11 | V50 | saving-matched moving cut 与 Siegel-quality dichotomy | **PROVED + CONDITIONAL + CONJECTURAL** |
 | 2026-08-11 | V51 | fold-first pair emitter、rank-two/Abel compiler、orientation NO-GO | **PROVED + CONJECTURAL** |

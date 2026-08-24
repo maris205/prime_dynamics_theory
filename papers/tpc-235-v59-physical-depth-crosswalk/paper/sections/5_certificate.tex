@@ -1,0 +1,27 @@
+\section{Exact reproduction and the next compiler}
+
+The finite certificate evaluates a rational fixture with
+$H=21$, $Q=5$, $h=14$, and $q=10$.  It independently verifies
+\[
+ \lambda_h=\frac{10}{3},\qquad
+ \left\lfloor\frac{hq}{H}\right\rfloor
+ =\left\lfloor\frac{\lambda_hq}{Q}\right\rfloor,
+\]
+and checks every profile argument and residue bucket in the two parameterizations.
+The same fixture shows that matching the modeled modulus can produce cutoff zero
+where the physical row has cutoff five.  The polarization fixture reproduces the
+transition $2\mapsto0$ exactly.
+
+Three independent programs rebuild the record and reject mutated exponents, cutoffs,
+profile scales, and packet rules.  Its exact finite-record digest is
+\begin{center}
+\texttt{f2c12f8cfc21d0cfe6ce95c68462d04da646fd06ee61b5b661ecd39c3be4c4b4}.
+\end{center}
+
+The corrected physical object is now unambiguous.  It is the weighted direct family
+\[
+ \bigl\{C_hB_{h,q}: H/(2Q)\le h\le U,\ Q<q\le2Q\bigr\},
+\]
+organized into bands of $\lambda_h=hQ/H$, while retaining one common transform for
+all four packet labels.  Any future Bessel or large-sieve estimate must be proved for
+this family, not imported from the incompatible single-clock relation.

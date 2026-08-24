@@ -1,9 +1,79 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V87_TPC234_NORMALIZED_BESSEL_RELEASED`
+交接状态：`BOLD_CHANNEL_V88_TPC235_V59_PHYSICAL_DEPTH_CROSSWALK_RELEASED`
 
-TPC-234 当前 section：normalized collision-Bessel stability
+TPC-235 当前 section：V59 physical-depth crosswalk
+--------------------------------------------------
+
+For every physical denominator `h`, put `lambda_h=hQ/H`.  The V59 row is exactly
+
+```text
+cutoff=floor(lambda_h q/Q),
+profile argument=mQ/(lambda_h q),
+modulus=h=(H/Q)lambda_h.
+```
+
+The modeled TPC-226 clock agrees simultaneously in modulus and cutoff/profile iff
+`h=4LQ` and `H=4Q^2`.  At V59,
+
+```text
+4Q^2/H=4x^(1/96),
+1/2<=lambda_h<=x^(23/2400),
+available denominator grid per unit depth=x^(31/96+o(1)).
+```
+
+The grid statement does not claim every corresponding `C_h` is nonzero.  Independently
+unit-normalizing each of the four packet outputs makes their signed polarization sum
+zero; the exact scalar fixture `(beta,w)=(1,2)` changes from `2` to `0`.  Therefore the
+next legal compiler is a weighted physical `h`-fiber with explicit `C_h`, complete
+`h`-sum, and one common linear packet transform.
+
+```text
+TPC235_ROUTE_ADVANCE = YES
+TPC235_V59_PHYSICAL_DEPTH_VARIABLE = PROVED_EXACT_LAMBDA_H_EQ_HQ_OVER_H
+TPC235_PHYSICAL_ROW_REPARAMETERIZATION = PROVED_EXACT
+TPC235_SINGLE_CLOCK_COMPATIBILITY_IFF_H_EQ_4Q_SQUARED = PROVED_EXACT
+TPC235_V59_CLOCK_RATIO = PROVED_EXACT_4X_TO_1_OVER_96
+TPC235_TPC226_EXACT_SINGLE_CLOCK_ATTACHMENT = REFUTED_SCOPED
+TPC235_PHYSICAL_DEPTH_RANGE = PROVED_EXACT_HALF_TO_X_23_OVER_2400
+TPC235_PHYSICAL_DENOMINATOR_GRID_PER_DEPTH = PROVED_X_31_OVER_96
+TPC235_DIVISOR_WEIGHT_C_H = SOURCE_LOCKED_REQUIRED
+TPC235_FULL_H_SUM = SOURCE_LOCKED_REQUIRED
+TPC235_COMMON_PACKET_TRANSFORM = SOURCE_LOCKED_REQUIRED
+TPC235_OUTPUT_UNIT_NORMALIZATION_POLARIZATION = REFUTED_SCOPED
+TPC235_SOURCE_VALID_NORMALIZATION = OPEN_WEIGHTED_LINEAR_ONLY
+TPC235_ARITHMETIC_ADVANCE = NO
+TPC235_ARITHMETIC_CANCELLATION = NONE
+TPC235_FIXED_ATOM_CREDIT = 0
+TPC235_L2 = NONE
+TPC235_FULL_GATE_B = OPEN
+TPC235_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC235_TPC_TRIGGER = true
+TPC235_NUMBERED_RELEASE = YES
+TPC235_STATUS = PROVED_STRUCTURAL_L1
+TPC235_ROUND2_CLUE = BUILD_PHYSICAL_H_FIBER_DIRECT_SUM_WITH_COMMON_PACKET_TRANSFORM_AND_EXPLICIT_WEIGHTS
+```
+
+strongest positive result：exact physical-depth row and compatibility iff theorem；
+strongest obstruction：single-clock mismatch and packet-output normalization erase the
+source polarization；open theorem：weighted physical `h`-fiber collision compiler；
+reusable structure：clock/cutoff/profile compatibility triangle and packet
+normalization firewall。
+
+编号论文目录：papers/tpc-235-v59-physical-depth-crosswalk/
+
+```text
+papers/tpc-235-v59-physical-depth-crosswalk/README.md
+papers/tpc-235-v59-physical-depth-crosswalk/PROOF_PACKAGE.md
+papers/tpc-235-v59-physical-depth-crosswalk/paper/paper.pdf
+papers/tpc-235-v59-physical-depth-crosswalk/results/certificate.json
+papers/tpc-235-v59-physical-depth-crosswalk/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_v59_physical_depth_crosswalk.md
+research/tpc-big-road/tpc_bridge_b_v59_physical_depth_crosswalk_checker.py
+```
+
+TPC-234 上游 section：normalized collision-Bessel stability
 -------------------------------------------------------------
 
 Normalize every nonzero modeled row to unit norm.  TPC-232 residue multiplicity two
@@ -5832,8 +5902,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V87/TPC-234 gate、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百三十次（65 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V88/TPC-235 gate、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百三十二次（66 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -5967,11 +6037,23 @@ python -B research/tpc-big-road/tpc_bridge_b_critical_depth_row_mass_obstruction
 python -O -B research/tpc-big-road/tpc_bridge_b_critical_depth_row_mass_obstruction_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_normalized_collision_bessel_stability_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_normalized_collision_bessel_stability_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_v59_physical_depth_crosswalk_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_v59_physical_depth_crosswalk_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-234 入口：
+最新 TPC-235 入口：
+
+```text
+papers/tpc-235-v59-physical-depth-crosswalk/README.md
+papers/tpc-235-v59-physical-depth-crosswalk/notes/theorem_ledger.md
+papers/tpc-235-v59-physical-depth-crosswalk/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_v59_physical_depth_crosswalk.md
+research/tpc-big-road/tpc_bridge_b_v59_physical_depth_crosswalk_checker.py
+```
+
+TPC-234 上游入口：
 
 ```text
 papers/tpc-234-normalized-collision-bessel-stability/README.md

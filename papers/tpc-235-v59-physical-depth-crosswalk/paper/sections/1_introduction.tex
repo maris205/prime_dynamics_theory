@@ -1,0 +1,26 @@
+\section{Introduction}
+
+Finite model clocks are useful only when their parameters can be traced back to the
+physical arithmetic source.  The preceding prime-shell analysis used a clock of
+modulus $4LQ$, with multiplier depth approximately $L$.  It produced exact support
+theorems and a depth-uniform Bessel estimate after row normalization.  Those results
+are internally correct, but two transfer questions remained open: whether one modeled
+clock represents one physical denominator, and whether row normalization respects the
+four-packet source identity.
+
+This note resolves both questions at the structural level.  The physical row has two
+linked scales, not one: its depth is $\lambda_h=hQ/H$, while its modulus is the
+denominator $h$.  The earlier clock imposes a different modulus--depth relation.
+Matching both relations is possible exactly at the exceptional scale $H=4Q^2$; V59
+has $Q^2/H=x^{1/96}$ and therefore lies on the growing-mismatch side.
+
+The normalization issue is independent.  A Bessel theorem for normalized vectors is
+a legitimate frame-theoretic statement \citep{christensen2016}, but the physical
+source is recovered by a signed four-phase polarization formula.  Normalizing each
+output separately is nonlinear and makes that formula identically zero.  Any legal
+conditioning transform must instead be common and linear across packet labels, with
+all compensating weights retained explicitly.
+
+The conclusions are deliberately scoped.  We prove an exact parameter crosswalk and
+two incompatibility statements.  We do not prove cancellation in the divisor weights,
+an $L^2$ saving, or the full Gate-B estimate.

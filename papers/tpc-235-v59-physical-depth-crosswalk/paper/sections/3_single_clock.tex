@@ -1,0 +1,34 @@
+\section{The single-clock compatibility obstruction}
+
+The modeled clock used modulus $4LQ$, cutoff $\lfloor Lq/Q\rfloor$, and profile
+argument $mQ/(Lq)$.  The next theorem characterizes exact transfer without an
+asymptotic approximation.
+
+\begin{theorem}[Compatibility if and only if]\label{thm:compatibility}
+For a nonzero depth $L$, the physical row \eqref{eq:physical-row} and the modeled row agree in modulus and
+in cutoff/profile scale for every multiplier and shell prime if and only if
+\begin{equation}
+ h=4LQ,\qquad H=4Q^2.                                  \label{eq:compatibility}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equality of moduli gives $h=4LQ$.  Equality of the profile arguments for a nonzero
+multiplier gives $H/h=Q/L$.  Substitution yields $H=4Q^2$.  Conversely, the two
+identities in \eqref{eq:compatibility} make the modulus, cutoff, profile argument, and residue condition
+identical.
+\end{proof}
+
+At the V59 scales,
+\begin{equation}
+ \frac{4Q^2}{H}=4x^{2/3-21/32}=4x^{1/96}\longrightarrow\infty. \label{eq:clock-gap}
+\end{equation}
+Thus exact attachment to the single-clock family is refuted in this scope.  Matching
+the physical depth makes the modeled modulus too large by \eqref{eq:clock-gap}; matching the modulus
+makes its multiplier depth too small by the same factor.  This is not a constant-loss
+bookkeeping discrepancy: the mismatch grows on precisely the conductor-gap scale
+$Q^2/H$.
+
+Theorem~\ref{thm:compatibility} does not invalidate the modeled clock as an abstract
+collision problem.  It invalidates only the automatic identification of one such
+clock with one physical V59 row.

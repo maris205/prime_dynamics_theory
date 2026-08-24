@@ -2,15 +2,15 @@
 
 更新时间：2026-08-24
 
-当前地图版本：V87 / TPC-234
+当前地图版本：V88 / TPC-235
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-234`（`PROVED_STRUCTURAL_L1 / DEPTH_UNIFORM_NORMALIZED_BESSEL_BOUND`）；
-对应论文目录为 `papers/tpc-234-normalized-collision-bessel-stability/`。TPC-234 用
-bucket multiplicity two 证明 unit-row Gram 满足 `0<=G<=2I`、`||G-I||<=1`，修复
-depth-dependent conditioning；Q39 的 `4/3,2/3` block 封住 automatic saving。
-source-valid normalization、actual V59 crosswalk 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-235`（`PROVED_STRUCTURAL_L1 / V59_PHYSICAL_DEPTH_CROSSWALK`）；
+对应论文目录为 `papers/tpc-235-v59-physical-depth-crosswalk/`。TPC-235 证明真实 depth
+为 `lambda_h=hQ/H`，single-clock simultaneous attachment iff `H=4Q^2`，而 V59
+相差 `4x^(1/96)`；逐 output unit normalization 还会抹去 four-phase polarization。
+weighted physical `h`-fiber collision compiler 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -52,9 +52,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V87 / TPC-234                     |
-        | NORMALIZED COLLISION-BESSEL STABILITY            |
-        | source-valid normalization / V59 OPEN            |
+        | YOU ARE HERE — V88 / TPC-235                     |
+        | V59 PHYSICAL-DEPTH CROSSWALK                     |
+        | weighted physical h-fiber / collision OPEN       |
         +--------------------------------------------------+
                 |
                 v
@@ -97,12 +97,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V87 / TPC-234 的
-normalized collision-Bessel stability。unit rows 的 Gram spectrum depth-uniform 位于
-`[0,2]`，TPC-233 conditioning 已修复；literal `4/3` amplification 说明 geometry 仍不
-选择 saving sign。下一条大路是 trace actual V59 row weights and test source-valid
-normalization。FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit 继续
-OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V88 / TPC-235 的
+V59 physical-depth crosswalk。actual depth/cutoff/profile/modulus 已逐因子锁定，旧
+single-clock attachment 因 `4x^(1/96)` growing mismatch 被 scoped-refute，packetwise
+unit normalization 也因抹除 polarization 被 scoped-refute。下一条大路是保留 `C_h`、
+完整 `h`-sum 和 common linear packet transform，直接编译 weighted physical
+`h`-fiber collisions。FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit
+继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1232,6 +1233,55 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.29 V88 / TPC-235：V59 physical-depth crosswalk
+
+For the physical V59 denominator `h`, define
+
+```text
+lambda_h=hQ/H.
+```
+
+Then the literal row has cutoff `floor(lambda_h q/Q)`, profile argument
+`mQ/(lambda_h q)`, and modulus `h=(H/Q)lambda_h`.  Its active depth range is
+`1/2<=lambda_h<=x^(23/2400)`.  One unit of depth contains
+`x^(31/96+o(1))` available integer-denominator grid points; this does not assert
+nonzero `C_h` support at every point.
+
+The TPC-226 single clock agrees simultaneously in modulus and cutoff/profile iff
+
+```text
+h=4LQ,
+H=4Q^2.
+```
+
+At V59, `4Q^2/H=4x^(1/96)`, so exact single-clock attachment is
+`REFUTED_SCOPED`.  Independently unit-normalizing each of the four packet outputs also
+makes the signed polarization sum zero; the raw scalar fixture `(beta,w)=(1,2)` has
+value `2` and normalized value `0`.
+
+```text
+TPC235_V59_PHYSICAL_DEPTH_VARIABLE = PROVED_EXACT_LAMBDA_H_EQ_HQ_OVER_H
+TPC235_PHYSICAL_ROW_REPARAMETERIZATION = PROVED_EXACT
+TPC235_SINGLE_CLOCK_COMPATIBILITY_IFF_H_EQ_4Q_SQUARED = PROVED_EXACT
+TPC235_V59_CLOCK_RATIO = PROVED_EXACT_4X_TO_1_OVER_96
+TPC235_TPC226_EXACT_SINGLE_CLOCK_ATTACHMENT = REFUTED_SCOPED
+TPC235_PHYSICAL_DEPTH_RANGE = PROVED_EXACT_HALF_TO_X_23_OVER_2400
+TPC235_PHYSICAL_DENOMINATOR_GRID_PER_DEPTH = PROVED_X_31_OVER_96
+TPC235_DIVISOR_WEIGHT_C_H = SOURCE_LOCKED_REQUIRED
+TPC235_FULL_H_SUM = SOURCE_LOCKED_REQUIRED
+TPC235_COMMON_PACKET_TRANSFORM = SOURCE_LOCKED_REQUIRED
+TPC235_OUTPUT_UNIT_NORMALIZATION_POLARIZATION = REFUTED_SCOPED
+TPC235_SOURCE_VALID_NORMALIZATION = OPEN_WEIGHTED_LINEAR_ONLY
+TPC235_ARITHMETIC_ADVANCE = NO
+TPC235_FIXED_ATOM_CREDIT = 0
+TPC235_L2 = NONE
+TPC235_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+```
+
+地图位置：**V88 / TPC-235 has reached the actual V59 parameter interface and removed
+two invalid shortcuts.  The shortest next move is a weighted physical `h`-fiber
+collision compiler with explicit `C_h` and one common packet transform.**
+
 ## 5.28 V87 / TPC-234：normalized collision-Bessel stability
 
 Normalize every nonzero modeled row to unit norm.  Since each residue belongs to at
@@ -1940,7 +1990,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V87 / TPC-234：
+截至 V88 / TPC-235：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -2212,7 +2262,24 @@ TPC234_FIXED_ATOM_CREDIT = 0
 TPC234_L2 = NONE
 TPC234_FULL_GATE_B = OPEN
 TPC234_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-NUMBERED_RELEASE = TPC-234
+TPC235_V59_PHYSICAL_DEPTH_VARIABLE = PROVED_EXACT_LAMBDA_H_EQ_HQ_OVER_H
+TPC235_PHYSICAL_ROW_REPARAMETERIZATION = PROVED_EXACT
+TPC235_SINGLE_CLOCK_COMPATIBILITY_IFF_H_EQ_4Q_SQUARED = PROVED_EXACT
+TPC235_V59_CLOCK_RATIO = PROVED_EXACT_4X_TO_1_OVER_96
+TPC235_TPC226_EXACT_SINGLE_CLOCK_ATTACHMENT = REFUTED_SCOPED
+TPC235_PHYSICAL_DEPTH_RANGE = PROVED_EXACT_HALF_TO_X_23_OVER_2400
+TPC235_PHYSICAL_DENOMINATOR_GRID_PER_DEPTH = PROVED_X_31_OVER_96
+TPC235_DIVISOR_WEIGHT_C_H = SOURCE_LOCKED_REQUIRED
+TPC235_FULL_H_SUM = SOURCE_LOCKED_REQUIRED
+TPC235_COMMON_PACKET_TRANSFORM = SOURCE_LOCKED_REQUIRED
+TPC235_OUTPUT_UNIT_NORMALIZATION_POLARIZATION = REFUTED_SCOPED
+TPC235_SOURCE_VALID_NORMALIZATION = OPEN_WEIGHTED_LINEAR_ONLY
+TPC235_ARITHMETIC_ADVANCE = NO
+TPC235_FIXED_ATOM_CREDIT = 0
+TPC235_L2 = NONE
+TPC235_FULL_GATE_B = OPEN
+TPC235_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+NUMBERED_RELEASE = TPC-235
 ```
 
 以下事实不得从路线图中推断：
@@ -2230,10 +2297,15 @@ NUMBERED_RELEASE = TPC-234
 
 优先级更新为：
 
-1. **TPC-234 已完成：normalized collision-Bessel stability**。unit-row Gram 满足
+1. **TPC-235 已完成：V59 physical-depth crosswalk**。真实 row 已精确写成
+   `lambda_h=hQ/H` 的 weighted many-clock family；旧 single-clock attachment 与
+   packet-output unit normalization 两条捷径均已 `REFUTED_SCOPED`。下一步直接编译
+   physical `h`-fiber collisions，保留 `C_h`、完整 `h`-sum 和 common linear packet
+   transform。
+2. **TPC-234 已完成：normalized collision-Bessel stability**。unit-row Gram 满足
    `0<=G<=2I`、`||G-I||<=1`，depth-dependent conditioning 已消除；Q39 `4/3`
-   amplification 证明 automatic saving 已 `REFUTED_SCOPED`。下一步 trace actual V59
-   row weights and normalization factors。
+   amplification 证明 automatic saving 已 `REFUTED_SCOPED`。其 actual V59 source
+   validity 已由 TPC-235 解析为 weighted-linear-only open problem。
 2. **TPC-233 已完成：critical-depth row-mass obstruction**。critical primorial clocks
    上 raw comparability 至少 `(1+o(1))L/log L` 并发散，fixed comparability from
    geometry 已 `REFUTED_SCOPED`；其 normalization repair 已由 TPC-234 完成 structural
@@ -2302,10 +2374,10 @@ NUMBERED_RELEASE = TPC-234
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-234 的下一步：actual source crosswalk**。normalized operator 已 depth-uniform，
-    但 rescaling 仍是 modeling transform。逐项 trace V59 coefficients、packet phases、
-    clock/cutoff 与 row norms，判定 normalization 是否 source-valid；任何缺失 factor
-    必须登记为 obstruction，不能自动吸收。
+12. **TPC-235 的下一步：weighted physical `h`-fiber compiler**。actual crosswalk 已完成，
+    现在必须对真实 cutoff `floor(hq/H)` 与 modulus `h` 的 multi-wrap collisions 建立
+    source-valid bound；`C_h`、packet phases 和 common linear transform 必须逐项保留，
+    不得再调用 one-clock multiplicity two 或 output-dependent normalization。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2404,6 +2476,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-24 | V88 / TPC-235 | Bridge A / Gate B：actual V59 physical-depth crosswalk；weighted physical h-fiber collision compiler open | `TPC-235` | exact `lambda_h=hQ/H`、single-clock iff `H=4Q^2`、V59 `4x^(1/96)` mismatch、packet-output normalization polarization obstruction；arithmetic cancellation仍为 NO |
 | 2026-08-24 | V87 / TPC-234 | Bridge A / Gate B：normalized collision-Bessel stability；source-valid normalization/V59 crosswalk open | `TPC-234` | multiplicity-two `0<=G<=2I`、`||G-I||<=1`、ambient sharpness、literal Q39 `4/3,2/3` ratios；arithmetic cancellation仍为 NO |
 | 2026-08-24 | V86 / TPC-233 | Bridge A / Gate B：critical raw row-mass obstruction；normalization/actual source open | `TPC-233` | critical primorial clock、endpoint prime rows、exact atom counts、`kappa_raw>>(L/logL)` divergence、fixed geometry comparability refuted-scoped；arithmetic cancellation仍为 NO |
 | 2026-08-24 | V85 / TPC-232 | Bridge A / Gate B：subcritical growing-depth obstruction；critical mass/degree 与 actual source open | `TPC-232` | exact one-wrap compiler、coefficient-uniform Selberg sieve、`C_L<<LQ loglog(3LQ)/log^2Q`、subcritical fixed saving stop-scoped；arithmetic cancellation仍为 NO |

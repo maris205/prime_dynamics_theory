@@ -9,13 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-234 修复 TPC-233 的 raw mass conditioning。TPC-232 bucket
-multiplicity two 推出任意 unit rows 的 normalized synthesis operator 满足
-`0<=G<=2I`、`||G-I||<=1`，常数与 depth 和 raw mass 无关。literal
-`Q=39,L=7` block 的 symmetric/antisymmetric ratios exact 为 `4/3` 与 `2/3`，故
-normalization repair 不自动给 saving。状态为 `PROVED_STRUCTURAL_L1`：depth-uniform
-conditioning 已完成；source-valid normalization、actual V59 crosswalk、arithmetic
-cancellation、L2 与 full Gate B 仍开放。
+当前主线状态：TPC-235 已完成 actual V59 row 的 exact physical-depth crosswalk。
+真实 depth 为 `lambda_h=hQ/H`，而 modeled single clock 同时匹配 modulus 与
+cutoff/profile 当且仅当 `H=4Q^2`；V59 实际相差 growing factor
+`4Q^2/H=4x^(1/96)`。TPC-234 的逐 output unit normalization 也不能直接回填 source，
+因为它把 four-phase signed polarization 恒等式抹成零。状态仍为
+`PROVED_STRUCTURAL_L1`：正确 weighted many-clock `h`-fiber 已识别；arithmetic
+cancellation、L2、strict `1/400` 与 full Gate B 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +29,8 @@ cancellation、L2 与 full Gate B 仍开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-235-v59-physical-depth-crosswalk` - `PROVED_STRUCTURAL_L1 / SINGLE_CLOCK_AND_OUTPUT_NORMALIZATION_REFUTED_SCOPED` - 精确证明 V59 physical depth 为 `lambda_h=hQ/H`，single-clock simultaneous attachment iff `H=4Q^2`，故 V59 存在 `4x^(1/96)` growing mismatch；同时证明逐 output unit normalization 会把 four-phase polarization 从非零值抹为零，下一合法对象是保留 `C_h` 与 common linear packet transform 的 weighted physical `h`-fiber。
 
 `tpc-234-normalized-collision-bessel-stability` - `PROVED_STRUCTURAL_L1 / DEPTH_UNIFORM_NORMALIZED_BESSEL_BOUND` - 利用 residue multiplicity two 证明任意 unit rows 的 `0<=T*T<=2I` 与 `||T*T-I||<=1`，彻底移除 depth-dependent conditioning；literal Q39 block 的 `4/3,2/3` ratios 证明 normalization 不自动产生 saving，actual V59 source validity 仍开放。
 

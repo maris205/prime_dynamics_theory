@@ -1,0 +1,60 @@
+\section{The exact physical-depth crosswalk}
+
+Freeze the V59 scales
+\[
+ H=x^{21/32},\qquad Q=x^{1/3},\qquad U=x^{133/400},
+\]
+and let $Q<q\le 2Q$ be prime.  For a physical denominator $h$, the residue row is
+\begin{equation}
+ B_{h,q}(a)=
+ \sum_{0<|m|\le\lfloor hq/H\rfloor}
+ \psi\!\left(\frac{Hm}{hq}\right)
+ \mathbf 1_{m q^{-1}\equiv a\pmod h}.                 \label{eq:physical-row}
+\end{equation}
+The full source additionally contains
+\begin{equation}
+ C_h=\sum_{\substack{d\in\mathcal D_x\\h\mid d}}
+ \frac{\mu(d)\log d}{d},\qquad
+ K_q(n)=\sum_{h,a}C_hB_{h,q}(a)\ee(na/h).             \label{eq:full-source}
+\end{equation}
+where $\ee(t)=e^{2\pi it}$.  In particular, deleting $C_h$ or collapsing the $h$-sum
+is not an innocent change of coordinates.
+
+\begin{theorem}[Physical-depth reparametrization]\label{thm:crosswalk}
+Define
+\[
+ \lambda_h=\frac{hQ}{H}.
+\]
+Then (1) is exactly
+\begin{equation}
+ B_{h,q}(a)=
+ \sum_{0<|m|\le\lfloor\lambda_hq/Q\rfloor}
+ \psi\!\left(\frac{mQ}{\lambda_hq}\right)
+ \mathbf 1_{m q^{-1}\equiv a\pmod h},                \label{eq:depth-row}
+\end{equation}
+and its modulus satisfies $h=(H/Q)\lambda_h$.
+\end{theorem}
+
+\begin{proof}
+The cutoff identity is
+$hq/H=(hQ/H)(q/Q)=\lambda_hq/Q$.  Likewise
+$Hm/(hq)=mQ/(\lambda_hq)$.  Neither substitution changes the residue condition or
+the modulus.
+\end{proof}
+
+\begin{corollary}[Depth range and denominator grid]\label{cor:range}
+If a row is active for some $q\le2Q$ and $h\le U$, then
+\[
+ \frac12\le\lambda_h\le\frac{UQ}{H}=x^{23/2400}.
+\]
+Consecutive integer denominators are separated by $Q/H$ in depth, so a unit depth
+interval contains $H/Q+O(1)=x^{31/96+o(1)}$ available denominator-grid points.
+\end{corollary}
+
+\begin{proof}
+Activity implies $hq/H\ge1$, hence $h\ge H/(2Q)$.  The upper bound follows from
+$h\le U$.  Finally, $\lambda_{h+1}-\lambda_h=Q/H$.
+\end{proof}
+
+The final count is a geometric grid count only.  It does not assert that every
+corresponding coefficient $C_h$ in (2) is nonzero.

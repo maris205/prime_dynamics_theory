@@ -1,0 +1,98 @@
+{
+  "claim_level": "PROVED_STRUCTURAL_L1",
+  "finite_reproduction": {
+    "digest": "f2c12f8cfc21d0cfe6ce95c68462d04da646fd06ee61b5b661ecd39c3be4c4b4",
+    "records": {
+      "exponents": {
+        "H": "21/32",
+        "H_over_Q": "31/96",
+        "Q": "1/3",
+        "Q2_over_H": "1/96",
+        "U": "133/400",
+        "UQ_over_H": "23/2400"
+      },
+      "floor_profile": {
+        "H": 63,
+        "Q": 10,
+        "depth_cutoff": 5,
+        "h": 21,
+        "lambda": "10/3",
+        "m": 5,
+        "modulus_matched_model_cutoff": 0,
+        "modulus_matched_model_depth": "21/40",
+        "physical_cutoff": 5,
+        "profile_argument": "15/17",
+        "q": 17
+      },
+      "polarization": {
+        "beta": 1,
+        "raw_packet_squared_norms": [
+          9,
+          5,
+          1,
+          5
+        ],
+        "raw_polarized_value": [
+          "2",
+          "0"
+        ],
+        "target_cross_term": [
+          "2",
+          "0"
+        ],
+        "unit_output_polarized_value": [
+          "0",
+          "0"
+        ],
+        "unit_output_squared_norms": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "w": 2
+      },
+      "surrogate": {
+        "H": 2500,
+        "L": 4,
+        "Q": 25,
+        "compatible": true,
+        "h": 400,
+        "rows": [
+          {
+            "cutoff": 5,
+            "q": 37
+          },
+          {
+            "cutoff": 7,
+            "q": 47
+          }
+        ]
+      }
+    }
+  },
+  "firewall": {
+    "L2": "NONE",
+    "arithmetic_advance": "NO",
+    "arithmetic_cancellation": "NONE",
+    "fixed_atom_credit": 0,
+    "full_gate_b": "OPEN",
+    "source_valid_normalization": "OPEN_WEIGHTED_LINEAR_ONLY",
+    "tpc226_exact_single_clock_attachment": "REFUTED_SCOPED"
+  },
+  "schema": "tpc235-v59-physical-depth-crosswalk-v1",
+  "source_lock": {
+    "common_packet_transform": "REQUIRED",
+    "divisor_weight_C_h": "REQUIRED",
+    "full_h_sum": "REQUIRED",
+    "physical_h_fiber": "REQUIRED"
+  },
+  "status": "PASS",
+  "theorem": {
+    "output_normalization": "REFUTED_SCOPED_FOR_V59_POLARIZATION",
+    "physical_depth": "lambda_h=hQ/H",
+    "physical_row": "modulus h, cutoff floor(lambda_h q/Q), profile mQ/(lambda_h q)",
+    "single_clock_iff": "exact TPC226 compatibility iff H=4Q^2 and h=4LQ",
+    "v59_mismatch": "4Q^2/H=4x^(1/96)"
+  }
+}

@@ -1,0 +1,30 @@
+\section{Packet normalization and polarization}
+
+Let $T$ be the common linear transform used to assemble the source packets.  With the
+project's inner-product convention, the four-phase identity has the form
+\begin{equation}
+ \langle T\beta,Tw\rangle
+ =\frac14\sum_{j=0}^3 i^j\|T(\beta+i^jw)\|^2.          \label{eq:polarization}
+\end{equation}
+The key word is \emph{common}: the same linear map acts on all four inputs.
+
+\begin{proposition}[Output normalization erases polarization]
+Suppose all four vectors $T(\beta+i^jw)$ are nonzero.  If each output in
+\eqref{eq:polarization} is
+replaced by its own unit normalization, then the resulting right-hand side equals
+zero.  It therefore cannot reproduce (6) in general.
+\end{proposition}
+
+\begin{proof}
+Every normalized squared norm equals one, while
+$\sum_{j=0}^3i^j=0$.  For a concrete counterexample take the one-dimensional map
+$T=1$, $\beta=1$, and $w=2$.  The four raw squared norms are $9,5,1,5$ and \eqref{eq:polarization} equals
+$2$, whereas their independently normalized replacements are $1,1,1,1$ and give
+zero.
+\end{proof}
+
+Consequently, the normalized-row Bessel theorem from the model clock is not
+automatically source-valid.  A fixed linear rescaling common to every packet may be
+legal, but its inverse or compensating weight must remain visible in the physical
+reassembly.  Output-dependent unit normalization cannot be hidden inside
+\eqref{eq:full-source}.
