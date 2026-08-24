@@ -1,9 +1,68 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V86_TPC233_CRITICAL_ROW_MASS_RELEASED`
+交接状态：`BOLD_CHANNEL_V87_TPC234_NORMALIZED_BESSEL_RELEASED`
 
-TPC-233 当前 section：critical-depth row-mass obstruction
+TPC-234 当前 section：normalized collision-Bessel stability
+-------------------------------------------------------------
+
+Normalize every nonzero modeled row to unit norm.  TPC-232 residue multiplicity two
+then gives, for `Tc=sum_q c_q u_q`,
+
+```text
+0<=G=T*T<=2I,
+-I<=G-I<=I,
+||G-I||<=1.
+```
+
+The result is independent of depth, raw row masses, and profile amplitudes.  The
+constant two is sharp in the ambient multiplicity-two class.  Literal `Q=39,L=7`
+rows `67,71` have exact symmetric/antisymmetric ratios `4/3` and `2/3`, so
+normalization repairs conditioning but does not imply saving.
+
+```text
+TPC234_ROUTE_ADVANCE = YES
+TPC234_BUCKET_MULTIPLICITY_TWO = INHERITED_PROVED_EXACT
+TPC234_UNIT_ROW_NORMALIZATION = MODELING_TRANSFORM
+TPC234_NORMALIZED_SYNTHESIS_BESSEL_BOUND = PROVED_EXACT_2
+TPC234_NORMALIZED_GRAM_SPECTRUM = PROVED_EXACT_IN_0_2
+TPC234_OFFDIAGONAL_GRAM_NORM = PROVED_EXACT_LE_1
+TPC234_DEPTH_UNIFORM_CONDITIONING = PROVED_EXACT
+TPC234_AMBIENT_CONSTANT_TWO = PROVED_EXACT_SHARP
+TPC234_Q39_LITERAL_NORMALIZED_RATIOS = PROVED_EXACT_4_OVER_3_AND_2_OVER_3
+TPC234_NORMALIZATION_AUTOMATIC_SAVING = REFUTED_SCOPED
+TPC234_SOURCE_VALID_NORMALIZATION = OPEN
+TPC234_ACTUAL_V59_CROSSWALK = OPEN
+TPC234_ARITHMETIC_ADVANCE = NO
+TPC234_ARITHMETIC_CANCELLATION = NONE
+TPC234_FIXED_ATOM_CREDIT = 0
+TPC234_L2 = NONE
+TPC234_FULL_GATE_B = OPEN
+TPC234_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC234_TPC_TRIGGER = true
+TPC234_NUMBERED_RELEASE = YES
+TPC234_STATUS = PROVED_STRUCTURAL_L1
+TPC234_ROUND2_CLUE = TRACE_ACTUAL_V59_ROW_WEIGHTS_AND_TEST_SOURCE_VALID_NORMALIZATION
+```
+
+strongest positive result：depth-uniform normalized Bessel theorem；strongest
+obstruction：literal normalized rows can amplify by `4/3`；open theorem：actual V59
+crosswalk and source-valid normalization；reusable structure：multiplicity-to-Bessel
+compiler and exact residual identity。
+
+编号论文目录：papers/tpc-234-normalized-collision-bessel-stability/
+
+```text
+papers/tpc-234-normalized-collision-bessel-stability/README.md
+papers/tpc-234-normalized-collision-bessel-stability/PROOF_PACKAGE.md
+papers/tpc-234-normalized-collision-bessel-stability/paper/paper.pdf
+papers/tpc-234-normalized-collision-bessel-stability/results/certificate.json
+papers/tpc-234-normalized-collision-bessel-stability/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_normalized_collision_bessel_stability.md
+research/tpc-big-road/tpc_bridge_b_normalized_collision_bessel_stability_checker.py
+```
+
+TPC-233 上游 section：critical-depth row-mass obstruction
 -----------------------------------------------------------
 
 Let `Q_L=2^j product_(prime ell<=L)ell` with `log Q_L=L log L+O(1)`, so
@@ -5773,8 +5832,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V86/TPC-233 gate、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百二十八次（64 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V87/TPC-234 gate、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百三十次（65 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -5906,11 +5965,23 @@ python -B research/tpc-big-road/tpc_bridge_b_subcritical_growing_resonance_depth
 python -O -B research/tpc-big-road/tpc_bridge_b_subcritical_growing_resonance_depth_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_critical_depth_row_mass_obstruction_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_critical_depth_row_mass_obstruction_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_normalized_collision_bessel_stability_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_normalized_collision_bessel_stability_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-233 入口：
+最新 TPC-234 入口：
+
+```text
+papers/tpc-234-normalized-collision-bessel-stability/README.md
+papers/tpc-234-normalized-collision-bessel-stability/notes/theorem_ledger.md
+papers/tpc-234-normalized-collision-bessel-stability/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_normalized_collision_bessel_stability.md
+research/tpc-big-road/tpc_bridge_b_normalized_collision_bessel_stability_checker.py
+```
+
+TPC-233 上游入口：
 
 ```text
 papers/tpc-233-critical-depth-row-mass-obstruction/README.md

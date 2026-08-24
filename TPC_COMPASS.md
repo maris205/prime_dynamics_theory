@@ -1,11 +1,34 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V86 / CRITICAL_DEPTH_ROW_MASS_OBSTRUCTION`
-claim level：`PROVED_ARITHMETIC_OBSTRUCTION_L1_RAW_COMPARABILITY_REFUTED_SCOPED`
-编号事实终点：TPC-233；TPC-233 trigger：`true`
+状态：`BOLD_CHANNEL_V87 / NORMALIZED_COLLISION_BESSEL_STABILITY`
+claim level：`PROVED_STRUCTURAL_L1_DEPTH_UNIFORM_NORMALIZED_BESSEL_BOUND`
+编号事实终点：TPC-234；TPC-234 trigger：`true`
 
-当前 TPC-233 入口：proof 为
+当前 TPC-234 入口：proof 为
+`research/tpc-big-road/bridge_b_normalized_collision_bessel_stability.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_normalized_collision_bessel_stability_checker.py`，编号论文为
+`papers/tpc-234-normalized-collision-bessel-stability/`。bucket multiplicity two 对任意
+unit rows 给出 `0<=G<=2I` 与 `||G-I||<=1`；literal Q39 block 的 ratios 为
+`4/3,2/3`，所以 normalization 提供 depth-uniform conditioning 而非 automatic saving。
+
+```text
+TPC234_NORMALIZED_SYNTHESIS_BESSEL_BOUND = PROVED_EXACT_2
+TPC234_NORMALIZED_GRAM_SPECTRUM = PROVED_EXACT_IN_0_2
+TPC234_OFFDIAGONAL_GRAM_NORM = PROVED_EXACT_LE_1
+TPC234_DEPTH_UNIFORM_CONDITIONING = PROVED_EXACT
+TPC234_Q39_LITERAL_NORMALIZED_RATIOS = PROVED_EXACT_4_OVER_3_AND_2_OVER_3
+TPC234_NORMALIZATION_AUTOMATIC_SAVING = REFUTED_SCOPED
+TPC234_SOURCE_VALID_NORMALIZATION = OPEN
+TPC234_ACTUAL_V59_CROSSWALK = OPEN
+TPC234_ARITHMETIC_ADVANCE = NO
+TPC234_L2 = NONE
+TPC234_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC234_STATUS = PROVED_STRUCTURAL_L1
+TPC234_ROUND2_CLUE = TRACE_ACTUAL_V59_ROW_WEIGHTS_AND_TEST_SOURCE_VALID_NORMALIZATION
+```
+
+TPC-233 上游入口：proof 为
 `research/tpc-big-road/bridge_b_critical_depth_row_mass_obstruction.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_critical_depth_row_mass_obstruction_checker.py`，编号论文为
 `papers/tpc-233-critical-depth-row-mass-obstruction/`。critical primorial clock 满足

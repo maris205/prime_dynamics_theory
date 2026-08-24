@@ -1,0 +1,119 @@
+{
+  "adversarial_controls": {
+    "ambient_ratio_two": "PROVED_EXACT",
+    "literal_antisymmetric_ratio": "2/3",
+    "literal_symmetric_ratio": "4/3",
+    "triple_bucket_ratio_three": "REJECTED_OUT_OF_SCOPE"
+  },
+  "claim_level": "PROVED_STRUCTURAL_L1",
+  "finite_reproduction": {
+    "digest": "d6c3c62ea5698c5941c14fab872b8951dd1939e6f45484651a13e7ccc473bed9",
+    "exact_residual": {
+      "diagonal": "1693155949/901800900",
+      "energy": "633337189/901800900",
+      "pointwise_decomposition": "2752974709/901800900",
+      "two_diagonal_minus_energy": "2752974709/901800900"
+    },
+    "literal_q39": {
+      "L": 7,
+      "Q": 39,
+      "antisymmetric_energy": 8,
+      "antisymmetric_ratio": "2/3",
+      "atoms_per_row": 6,
+      "clock": 1092,
+      "normalized_inner_product": "1/3",
+      "rows": [
+        67,
+        71
+      ],
+      "shared_coordinates": [
+        277,
+        815
+      ],
+      "shared_multipliers": [
+        [
+          -5,
+          11
+        ],
+        [
+          5,
+          -11
+        ]
+      ],
+      "symmetric_diagonal": 12,
+      "symmetric_energy": 16,
+      "symmetric_ratio": "4/3"
+    },
+    "records": [
+      {
+        "L": 4,
+        "Q": 25,
+        "atoms": 26,
+        "clock": 400,
+        "double_buckets": 2,
+        "max_bucket_multiplicity": 2,
+        "prime_rows": 6,
+        "singleton_buckets": 22
+      },
+      {
+        "L": 7,
+        "Q": 39,
+        "atoms": 42,
+        "clock": 1092,
+        "double_buckets": 2,
+        "max_bucket_multiplicity": 2,
+        "prime_rows": 9,
+        "singleton_buckets": 38
+      },
+      {
+        "L": 16,
+        "Q": 101,
+        "atoms": 484,
+        "clock": 6464,
+        "double_buckets": 10,
+        "max_bucket_multiplicity": 2,
+        "prime_rows": 20,
+        "singleton_buckets": 464
+      },
+      {
+        "L": 32,
+        "Q": 211,
+        "atoms": 1678,
+        "clock": 27008,
+        "double_buckets": 20,
+        "max_bucket_multiplicity": 2,
+        "prime_rows": 35,
+        "singleton_buckets": 1638
+      },
+      {
+        "L": 64,
+        "Q": 401,
+        "atoms": 5712,
+        "clock": 102656,
+        "double_buckets": 78,
+        "max_bucket_multiplicity": 2,
+        "prime_rows": 60,
+        "singleton_buckets": 5556
+      }
+    ]
+  },
+  "firewall": {
+    "L2": "NONE",
+    "actual_v59_crosswalk": "OPEN",
+    "arithmetic_advance": "NO",
+    "arithmetic_cancellation": "NONE",
+    "fixed_atom_credit": 0,
+    "full_gate_b": "OPEN",
+    "source_valid_normalization": "OPEN",
+    "unit_row_normalization": "MODELING_TRANSFORM"
+  },
+  "schema": "tpc234-normalized-collision-bessel-stability-v1",
+  "status": "PASS",
+  "theorem": {
+    "ambient_sharpness": "two identical singleton unit rows attain ratio 2",
+    "depth_dependence": "NONE",
+    "normalized_gram": "0 <= G <= 2I",
+    "offdiagonal_gram": "-I <= G-I <= I and ||G-I|| <= 1",
+    "saving_status": "normalization alone does not imply ratio below one"
+  }
+}

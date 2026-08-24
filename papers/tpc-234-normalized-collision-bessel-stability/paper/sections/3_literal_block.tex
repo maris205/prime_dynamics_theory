@@ -1,0 +1,33 @@
+\section{A literal normalized block}
+
+The smallest convenient equal-mass witness occurs at
+\[
+ Q=39,\qquad L=7,\qquad h=1092,
+ \qquad (p,r)=(67,71).
+\]
+Both rows have positive primitive multipliers $(1,5,11)$ and therefore six signed
+atoms.  Their supports intersect exactly at
+\[
+ \begin{array}{c|cc}
+ \text{residue}&m_p&m_r\\ \hline
+ 277&-5&11\\
+ 815&5&-11
+ \end{array}
+\]
+because $5\cdot71+11\cdot67=1092$.  Uniform unit rows have inner product $2/6=1/3$.
+Thus
+\[
+ \frac{\|u_p+u_r\|^2}{\|u_p\|^2+\|u_r\|^2}=\frac43,
+ \qquad
+ \frac{\|u_p-u_r\|^2}{\|u_p\|^2+\|u_r\|^2}=\frac23. \tag{4}
+\]
+
+Equation (4) gives both directions with the same geometry.  Unit normalization removes
+the raw mass ratio, but symmetric coefficients amplify and antisymmetric coefficients
+save.  Therefore the operator upper bound cannot be reinterpreted as a strict estimate
+$G\le(1-\delta)I$ for any positive $\delta$.
+
+The ambient sharpness example in Theorem~\ref{thm:bessel} is intentionally not claimed
+to be a literal prime clock.  The Q39 block is the source-model witness needed for the
+scoped no-saving statement; it establishes ratio above one without claiming that the
+global constant two is attained arithmetically.

@@ -9,13 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-233 审计 TPC-232 energy transfer 的 fixed row-mass comparability。
-对临界 primorial clock `log Q=L log L+O(1)`，靠近 `Q` 的 prime row 只有两个原子，
-靠近 `2Q` 的 row 有 `2(1+pi(2L-1)-pi(L))` 个原子，因此
-`kappa_raw >= (1+o(1))L/log L -> infinity`；universal cap 为 `2L-1`。状态为
-`PROVED_ARITHMETIC_OBSTRUCTION_L1`：fixed raw comparability from geometry 已
-`REFUTED_SCOPED`，row normalization、normalized collision conditioning、actual V59
-weights、arithmetic cancellation、L2 与 full Gate B 仍开放。
+当前主线状态：TPC-234 修复 TPC-233 的 raw mass conditioning。TPC-232 bucket
+multiplicity two 推出任意 unit rows 的 normalized synthesis operator 满足
+`0<=G<=2I`、`||G-I||<=1`，常数与 depth 和 raw mass 无关。literal
+`Q=39,L=7` block 的 symmetric/antisymmetric ratios exact 为 `4/3` 与 `2/3`，故
+normalization repair 不自动给 saving。状态为 `PROVED_STRUCTURAL_L1`：depth-uniform
+conditioning 已完成；source-valid normalization、actual V59 crosswalk、arithmetic
+cancellation、L2 与 full Gate B 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +29,8 @@ weights、arithmetic cancellation、L2 与 full Gate B 仍开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-234-normalized-collision-bessel-stability` - `PROVED_STRUCTURAL_L1 / DEPTH_UNIFORM_NORMALIZED_BESSEL_BOUND` - 利用 residue multiplicity two 证明任意 unit rows 的 `0<=T*T<=2I` 与 `||T*T-I||<=1`，彻底移除 depth-dependent conditioning；literal Q39 block 的 `4/3,2/3` ratios 证明 normalization 不自动产生 saving，actual V59 source validity 仍开放。
 
 `tpc-233-critical-depth-row-mass-obstruction` - `PROVED_ARITHMETIC_OBSTRUCTION_L1 / RAW_ROW_COMPARABILITY_REFUTED_SCOPED` - 构造 `L~log Q/loglog Q` 的 primorial-saturated clocks，证明 low/high prime rows 的 raw atom ratio 至少 `(1+o(1))L/log L` 并发散，从而否定 fixed comparability 是 clock geometry 自动结论；row normalization 与 actual V59 weights 仍开放。
 

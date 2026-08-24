@@ -1,13 +1,51 @@
-# TPC big road V86 / TPC-233: critical-depth row-mass obstruction
+# TPC big road V87 / TPC-234: normalized collision-Bessel stability
 
 更新时间：2026-08-24
 
-状态：`TPC233_PROVED_ARITHMETIC_OBSTRUCTION_L1 / RAW_COMPARABILITY_REFUTED_SCOPED / FULL_GATE_B_OPEN`
+状态：`TPC234_PROVED_STRUCTURAL_L1 / DEPTH_UNIFORM_NORMALIZED_BESSEL_BOUND / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-233 proof 为
+当前 TPC-234 proof 为
+`bridge_b_normalized_collision_bessel_stability.md`，checker 为
+`tpc_bridge_b_normalized_collision_bessel_stability_checker.py`，编号论文为
+`../../papers/tpc-234-normalized-collision-bessel-stability/`。
+
+For arbitrary nonzero rows normalized to unit norm, residue multiplicity two gives
+
+```text
+0<=G=T*T<=2I,
+||G-I||<=1,
+normalized AP ratio in [0,2].
+```
+
+The bound is independent of depth and raw row masses.  Literal `Q=39,L=7` rows have
+exact ratios `4/3` and `2/3`, so normalization repairs conditioning but does not choose
+a saving sign.
+
+```text
+TPC234_NORMALIZED_SYNTHESIS_BESSEL_BOUND = PROVED_EXACT_2
+TPC234_NORMALIZED_GRAM_SPECTRUM = PROVED_EXACT_IN_0_2
+TPC234_OFFDIAGONAL_GRAM_NORM = PROVED_EXACT_LE_1
+TPC234_DEPTH_UNIFORM_CONDITIONING = PROVED_EXACT
+TPC234_Q39_LITERAL_NORMALIZED_RATIOS = PROVED_EXACT_4_OVER_3_AND_2_OVER_3
+TPC234_NORMALIZATION_AUTOMATIC_SAVING = REFUTED_SCOPED
+TPC234_SOURCE_VALID_NORMALIZATION = OPEN
+TPC234_ACTUAL_V59_CROSSWALK = OPEN
+TPC234_ARITHMETIC_ADVANCE = NO
+TPC234_FIXED_ATOM_CREDIT = 0
+TPC234_L2 = NONE
+TPC234_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC234_ROUND2_CLUE = TRACE_ACTUAL_V59_ROW_WEIGHTS_AND_TEST_SOURCE_VALID_NORMALIZATION
+```
+
+strongest positive result：depth-uniform normalized Bessel theorem；strongest
+obstruction：literal normalized rows can amplify by `4/3`；open theorem：actual V59
+crosswalk and source-valid normalization；reusable structure：multiplicity-to-Bessel
+compiler。
+
+TPC-233 上游 proof 为
 `bridge_b_critical_depth_row_mass_obstruction.md`，checker 为
 `tpc_bridge_b_critical_depth_row_mass_obstruction_checker.py`，编号论文为
 `../../papers/tpc-233-critical-depth-row-mass-obstruction/`。

@@ -2,11 +2,58 @@
 
 更新时间：2026-08-24
 
-状态：**TPC233_PROVED_ARITHMETIC_OBSTRUCTION_L1_RELEASED / RAW_COMPARABILITY_REFUTED_SCOPED / NORMALIZATION_AND_ACTUAL_SOURCE_OPEN**
+状态：**TPC234_PROVED_STRUCTURAL_L1_RELEASED / DEPTH_UNIFORM_NORMALIZED_BESSEL_BOUND / SOURCE_VALIDITY_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.28 已发布：TPC-234 normalized collision-Bessel stability
+
+项目：`papers/tpc-234-normalized-collision-bessel-stability/`
+
+类型：**PROVED_STRUCTURAL_L1 / DEPTH_UNIFORM_NORMALIZED_BESSEL_BOUND**。
+
+TPC-232 residue multiplicity two implies that arbitrary nonzero rows, after unit-norm
+normalization, have synthesis Gram operator
+
+```text
+0<=G=T*T<=2I,
+-I<=G-I<=I,
+||G-I||<=1.
+```
+
+The constant is independent of depth, raw mass, and profile amplitudes, and is sharp
+in the ambient multiplicity-two class.  A literal `Q=39,L=7` block has normalized
+symmetric/antisymmetric ratios `4/3` and `2/3`, proving that normalization repairs
+conditioning but does not imply strict saving.
+
+```text
+TPC234_BUCKET_MULTIPLICITY_TWO = INHERITED_PROVED_EXACT
+TPC234_UNIT_ROW_NORMALIZATION = MODELING_TRANSFORM
+TPC234_NORMALIZED_SYNTHESIS_BESSEL_BOUND = PROVED_EXACT_2
+TPC234_NORMALIZED_GRAM_SPECTRUM = PROVED_EXACT_IN_0_2
+TPC234_OFFDIAGONAL_GRAM_NORM = PROVED_EXACT_LE_1
+TPC234_DEPTH_UNIFORM_CONDITIONING = PROVED_EXACT
+TPC234_AMBIENT_CONSTANT_TWO = PROVED_EXACT_SHARP
+TPC234_Q39_LITERAL_NORMALIZED_RATIOS = PROVED_EXACT_4_OVER_3_AND_2_OVER_3
+TPC234_NORMALIZATION_AUTOMATIC_SAVING = REFUTED_SCOPED
+TPC234_SOURCE_VALID_NORMALIZATION = OPEN
+TPC234_ACTUAL_V59_CROSSWALK = OPEN
+TPC234_ARITHMETIC_ADVANCE = NO
+TPC234_FIXED_ATOM_CREDIT = 0
+TPC234_L2 = NONE
+TPC234_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC234_STATUS = PROVED_STRUCTURAL_L1
+TPC234_ROUND2_CLUE = TRACE_ACTUAL_V59_ROW_WEIGHTS_AND_TEST_SOURCE_VALID_NORMALIZATION
+```
+
+strongest positive result：depth-uniform `0<=G<=2I`；strongest obstruction：literal
+normalized rows still amplify by `4/3`；open theorem：actual V59 crosswalk and
+source-valid normalization；reusable structure：multiplicity-to-Bessel compiler、exact
+sum-of-squares residual；`ROUND2_CLUE`：
+`TRACE_ACTUAL_V59_ROW_WEIGHTS_AND_TEST_SOURCE_VALID_NORMALIZATION`。5 scales、Q39 exact
+block、independent checker；3-page embedded-font PDF。
 
 ## 0.27 已发布：TPC-233 critical-depth row-mass obstruction
 

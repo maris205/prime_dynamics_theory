@@ -1,0 +1,24 @@
+\section{Introduction}
+
+Growing-depth resonance models face two different conditioning problems.  The first is
+raw row imbalance: different cutoffs can carry very different numbers of primitive
+atoms.  The second is collision accumulation after those rows are assembled in one
+coordinate space.  Unit-row normalization removes the first problem by definition,
+but it could in principle amplify the second if collision degree grew with depth.
+
+We show that this does not happen in the short-multiplier dilated clock.  The decisive
+invariant is not graph degree but coordinate multiplicity.  Exact one-wrap geometry
+ensures that no residue bucket contains three prime rows.  Pointwise Cauchy--Schwarz
+then gives a Bessel bound of two for the entire normalized family.  The terminology is
+standard in frame theory \citep{christensen2016,casazzakutyniok2013}, although the
+argument here is a direct one-line coordinate estimate.
+
+The theorem separates two statements that are easy to conflate.  Normalization makes
+the operator uniformly bounded as $L$ grows, but it does not force the assembled energy
+below its diagonal.  A literal two-row block has ratio $4/3$ in its symmetric mode and
+$2/3$ in its antisymmetric mode.  Thus the sign or phase of source coefficients remains
+essential.
+
+Finally, normalization changes each row by its norm.  We treat this as a modeling
+transform.  Whether the physical arithmetic source admits the same rescaling is a
+separate crosswalk theorem, not a consequence of the Bessel estimate.

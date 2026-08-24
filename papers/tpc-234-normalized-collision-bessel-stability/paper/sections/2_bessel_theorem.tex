@@ -1,0 +1,50 @@
+\section{The multiplicity-two Bessel theorem}
+
+Let $X$ be a finite coordinate set and $\Hcal$ a Hilbert space.  For each prime-row
+label $q$, let $v_q\in\ell^2(X;\Hcal)$ be nonzero and supported on $S_q$.  Put
+\[
+ u_q=\frac{v_q}{\|v_q\|},
+ \qquad Tc=\sum_qc_qu_q,
+ \qquad G=T^*T.
+\]
+No common profile or equal support size is assumed.
+
+\begin{theorem}[Normalized collision stability]\label{thm:bessel}
+Suppose every $x\in X$ lies in at most two supports $S_q$.  Then
+\[
+ \|Tc\|^2\le2\sum_q|c_q|^2, \tag{1}
+\]
+and consequently
+\[
+ 0\le G\le2I,
+ \qquad \sigma(G)\subset[0,2],
+ \qquad \|G-I\|\le1. \tag{2}
+\]
+The constant two is sharp under the stated hypothesis.
+\end{theorem}
+
+\begin{proof}
+At a fixed coordinate, at most two Hilbert vectors occur, so
+\[
+ \left\|\sum_{q:x\in S_q}c_qu_q(x)\right\|^2
+ \le2\sum_{q:x\in S_q}|c_q|^2\|u_q(x)\|^2.
+\]
+Summing over $x$ and using $\|u_q\|=1$ proves (1).  Positivity of $G$ is automatic
+and (1) gives $G\le2I$.  Its diagonal is one, hence $K=G-I$ is self-adjoint with
+$-I\le K\le I$, proving (2).
+
+For sharpness, take two copies of the same singleton unit row.  Coefficients $(1,1)$
+give output energy four and diagonal coefficient energy two.
+\end{proof}
+
+For scalar rows the estimate has an exact sum-of-squares residual.  If the one or two
+contributions at $x$ are denoted $a_x,b_x$, with $b_x=0$ at singleton buckets, then
+\[
+ 2\sum_x(|a_x|^2+|b_x|^2)-\sum_x|a_x+b_x|^2
+ =\sum_{|B_x|=1}|a_x|^2+\sum_{|B_x|=2}|a_x-b_x|^2. \tag{3}
+\]
+This identity is useful for exact rational certification.
+
+In the dilated prime-shell clock $h=4LQ$, $L<Q/4$, the one-wrap collision theorem
+supplies the multiplicity-two hypothesis.  Theorem~\ref{thm:bessel} is therefore
+uniform in $Q,L$ and in all nonzero row amplitudes.
