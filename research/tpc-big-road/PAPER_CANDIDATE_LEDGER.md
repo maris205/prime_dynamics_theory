@@ -2,11 +2,58 @@
 
 更新时间：2026-08-24
 
-状态：**TPC230_PROVED_STRUCTURAL_L1_RELEASED / MATCHED_RESONANCE_MASS_CEILING / ARITHMETIC_INPUTS_OPEN**
+状态：**TPC231_PROVED_ARITHMETIC_OBSTRUCTION_L1_RELEASED / FIXED_FINITE_RESONANCE_STOP_SCOPED / GROWING_DEPTH_AND_ACTUAL_SOURCE_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.25 已发布：TPC-231 finite-resonance sieve obstruction
+
+项目：`papers/tpc-231-finite-resonance-sieve-obstruction/`
+
+类型：**PROVED_ARITHMETIC_OBSTRUCTION_L1 / FIXED_FINITE_RESONANCE_STOP_SCOPED**。
+
+For `Q=3t+a`, the primitive `7p+3r=16Q` edge has exact two-form parameterization
+`p=3k+a`, `r=16t+3a-7k` and determinant `16Q`. Its local bad-residue count is one at
+`2,3,7` and primes dividing `Q`, and two otherwise. The classical dimension-two
+Selberg upper-bound sieve therefore gives
+
+```text
+E_3716(Q) << S_3716(Q) Q/(log Q)^2,
+S_3716(Q) << log log(3Q),
+E_3716(Q)/P(Q) -> 0.
+```
+
+The determinant argument extends to every fixed finite primitive nondegenerate linear
+resonance family. A bounded-degree Cauchy--Schwarz transfer then converts `o(P)` edges
+into `o(D)` possible saving for bounded coefficients and comparable row masses. With
+TPC-230, the literal first-resonance matched mass tends to zero, so any fixed positive
+saving, including `1/400`, is impossible on this scoped branch.
+
+```text
+TPC231_3716_PARAMETERIZATION = PROVED_EXACT
+TPC231_3716_LOCAL_ROOT_LAW = PROVED_EXACT
+TPC231_3716_SELBERG_UPPER_BOUND = PROVED_SOURCE_BACKED
+TPC231_3716_EDGE_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_FIXED_FINITE_RESONANCE_SUPPORT_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_FIRST_PRIMITIVE_3_7_FIXED_SAVING = STOP_SCOPED
+TPC231_FIXED_FINITE_RESONANCE_COMPARABLE_ROW_ROUTE = STOP_SCOPED
+TPC231_GROWING_RESONANCE_DEPTH = OPEN
+TPC231_ACTUAL_V59_SOURCE_MASS_CROSSWALK = OPEN
+TPC231_ARITHMETIC_ADVANCE = NO
+TPC231_ARITHMETIC_OBSTRUCTION = PROVED_SOURCE_BACKED
+TPC231_FIXED_ATOM_CREDIT = 0
+TPC231_L2 = NONE
+TPC231_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC231_ROUND2_CLUE = TEST_GROWING_RESONANCE_DEPTH_OR_RETURN_TO_THE_ACTUAL_V59_SOURCE_MASS_CROSSWALK
+```
+
+strongest positive result：uniform two-form sieve theorem and fixed-finite-family
+extension；strongest obstruction：fixed finite comparable-row resonance supports have
+zero capacity for fixed global saving；open theorem：growing resonance depth or the
+actual V59 source-mass crosswalk；reusable structure：determinant/local-density/singular-
+series/support/energy compiler。32,761-scale independent scan；4-page embedded-font PDF。
 
 ## 0.24 已发布：TPC-230 matched-resonance mass ceiling
 

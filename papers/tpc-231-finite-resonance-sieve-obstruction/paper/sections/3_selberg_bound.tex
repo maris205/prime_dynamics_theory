@@ -1,0 +1,37 @@
+\section{The sieve density theorem}
+
+\begin{theorem}\label{thm:3716}
+Uniformly for $Q\ge8$,
+\[
+ E_{3,7}(Q)\ll \SSer_{3,7}(Q)\frac{Q}{(\log Q)^2}
+ \ll \frac{Q\log\log(3Q)}{(\log Q)^2}.
+\]
+Consequently $E_{3,7}(Q)/|\PP_Q|\to0$.
+\end{theorem}
+
+\begin{proof}
+If $(Q,21)>1$, the primitive edge set is empty.  Otherwise, for squarefree $d$ the
+Chinese remainder theorem and interval counting give
+\[
+ \#\{k\in I_Q:d\mid L_1(k)L_2(k)\}
+ =\frac{|I_Q|\nu_Q(d)}d+O(\nu_Q(d)).                 \tag{7}
+\]
+Apply the standard Selberg upper-bound sieve of dimension two to (7), choosing a
+fixed small power of $Q$ as sieve level.  The remainder is the standard
+$O(2^{\omega(d)})$ interval remainder, and Lemma~\ref{lem:roots} gives
+\eqref{eq:series}.  This proves the first estimate.
+
+For each variable exceptional prime,
+\[
+ \frac{\ell-1}{\ell-2}
+ =\frac{\ell}{\ell-1}
+  \left(1+\frac{1}{\ell(\ell-2)}\right).
+\]
+The product of the second factors converges absolutely, while the first product is
+at most $Q/\varphi(Q)\ll\log\log(3Q)$.  This proves the second estimate.  Finally,
+the prime number theorem gives $|\PP_Q|=\pi(2Q)-\pi(Q)\sim Q/\log Q$.
+\end{proof}
+
+The theorem is one-sided.  It neither predicts how often a resonance occurs nor
+supplies signed cancellation; it only proves that its maximum possible shell density
+tends to zero.

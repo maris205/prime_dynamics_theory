@@ -1,0 +1,62 @@
+\section{Finite families and the matched-mass consequence}
+
+The determinant argument is not special to coefficients $3$ and $7$.
+
+\begin{theorem}[fixed finite resonance families]\label{thm:family}
+Fix a finite set $\mathcal R$ of triples $(a,b,c)$ with $a,b>0$, $(a,b)=1$, and
+$c\ne0$.  The total number of prime-shell solutions to
+\[
+ ap+br=cQ,\qquad p,r\in\PP_Q,
+\]
+over $(a,b,c)\in\mathcal R$ is
+\[
+ O_{\mathcal R}\!\left(\frac{Q\log\log(3Q)}{(\log Q)^2}\right)
+ =o(|\PP_Q|).
+\]
+Hence the union of all incident prime rows has density $o(1)$.
+\end{theorem}
+
+\begin{proof}
+For one triple, either there is no integral solution or all solutions have the form
+$p=p_0+bk$, $r=r_0-ak$.  The determinant of these forms is
+$br_0+ap_0=cQ$.  Away from the fixed primes dividing the coefficients, the two local
+roots coalesce only at primes dividing $cQ$.  The proof of
+Theorem~\ref{thm:3716} therefore applies with a triple-dependent constant.  A local
+inadmissibility yields no large prime pair.  Sum the bounds over the fixed set
+$\mathcal R$; at most twice as many vertices as edges are incident.
+\end{proof}
+
+For completeness, the support statement has a deterministic energy transfer.  Suppose
+the collision energy is
+\[
+ E_G=D+2\Re\sum_{\{p,r\}\in E(G_Q)}c_{p,r}\langle u_p,u_r\rangle,
+\]
+where $|c_{p,r}|\le C$, the graph degree is at most $\Delta$, and positive row
+masses have ratio at most $\kappa$.  If $M_{\rm inc}$ is the mass on incident rows,
+then Cauchy--Schwarz gives
+\begin{equation}
+ \frac{(D-E_G)_+}{D}
+ \le C\Delta\frac{M_{\rm inc}}D
+ \le 2C\Delta\kappa\frac{|E(G_Q)|}{|\PP_Q|}.          \label{eq:graphtransfer}
+\end{equation}
+Indeed, $2|\langle u_p,u_r\rangle|\le\|u_p\|^2+\|u_r\|^2$, and every incident
+mass is charged at most $\Delta$ times.  Each fixed linear equation has degree at most
+two, so Theorem~\ref{thm:family} makes \eqref{eq:graphtransfer} tend to zero for a
+fixed finite family.
+
+Let $D(Q)$ denote total literal aligned row mass and $M(Q)$ the mass on the first
+$3$--$7$ matching.  The previous sharp mass theorem gives
+\[
+ \frac{M(Q)}{D(Q)}\le 8\frac{E_{3,7}(Q)}{|\PP_Q|}.
+\]
+
+\begin{corollary}[fixed-saving obstruction]
+In the literal aligned first-resonance model, $M(Q)/D(Q)\to0$.  Even if every edge is
+perfectly anti-aligned, the mechanism cannot produce any fixed positive proportional
+saving at all sufficiently large scales.  In particular, strict $1/400$ is impossible
+on this scoped branch.
+\end{corollary}
+
+Theorem~\ref{thm:family} also shows why merely adding a fixed number of similar
+resonance channels cannot repair the density deficit under comparable row masses.
+It does not address a number of channels growing with $Q$.

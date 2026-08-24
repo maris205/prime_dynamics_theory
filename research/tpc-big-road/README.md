@@ -1,13 +1,58 @@
-# TPC big road V83 / TPC-230: matched-resonance mass ceiling
+# TPC big road V84 / TPC-231: finite-resonance sieve obstruction
 
 更新时间：2026-08-24
 
-状态：`TPC230_PROVED_STRUCTURAL_L1 / MATCHED_RESONANCE_MASS_CEILING / FULL_GATE_B_OPEN`
+状态：`TPC231_PROVED_ARITHMETIC_OBSTRUCTION_L1 / FIXED_FINITE_RESONANCE_STOP_SCOPED / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-230 proof 为
+当前 TPC-231 proof 为
+`bridge_b_finite_resonance_sieve_obstruction.md`，checker 为
+`tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py`，编号论文为
+`../../papers/tpc-231-finite-resonance-sieve-obstruction/`。
+
+Exact parameterization and local arithmetic give
+
+```text
+p=3k+a, r=16t+3a-7k, determinant=16Q,
+nu_Q(ell)=1 for ell in {2,3,7} or ell|Q, otherwise 2.
+```
+
+The source-backed dimension-two Selberg upper-bound sieve proves
+
+```text
+E_3716(Q) << Q log log(3Q)/(log Q)^2,
+E_3716(Q)/P(Q) -> 0.
+```
+
+Combining this with TPC-230 gives literal matched mass `M/D->0`. A bounded-degree
+Cauchy--Schwarz transfer proves that every fixed finite primitive linear resonance
+family with bounded coefficients and comparable row masses has only `o(D)` possible
+saving.
+
+```text
+TPC231_3716_SELBERG_UPPER_BOUND = PROVED_SOURCE_BACKED
+TPC231_3716_EDGE_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_FIXED_FINITE_RESONANCE_SUPPORT_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_FIRST_PRIMITIVE_3_7_FIXED_SAVING = STOP_SCOPED
+TPC231_FIXED_FINITE_RESONANCE_COMPARABLE_ROW_ROUTE = STOP_SCOPED
+TPC231_GROWING_RESONANCE_DEPTH = OPEN
+TPC231_ACTUAL_V59_SOURCE_MASS_CROSSWALK = OPEN
+TPC231_ARITHMETIC_ADVANCE = NO
+TPC231_ARITHMETIC_OBSTRUCTION = PROVED_SOURCE_BACKED
+TPC231_FIXED_ATOM_CREDIT = 0
+TPC231_L2 = NONE
+TPC231_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC231_ROUND2_CLUE = TEST_GROWING_RESONANCE_DEPTH_OR_RETURN_TO_THE_ACTUAL_V59_SOURCE_MASS_CROSSWALK
+```
+
+strongest positive result：exact determinant/local-density sieve theorem 与 fixed-finite
+family extension；strongest obstruction：fixed finite comparable-row resonance support
+无法携带 fixed saving；open theorem：growing depth 或 actual V59 source crosswalk；
+reusable structure：determinant-to-density-to-energy compiler。
+
+TPC-230 上游 proof 为
 `bridge_b_matched_resonance_mass_ceiling.md`，checker 为
 `tpc_bridge_b_matched_resonance_mass_ceiling_checker.py`，编号论文为
 `../../papers/tpc-230-matched-resonance-mass-ceiling/`。
@@ -26,7 +71,7 @@ TPC230_MATCHED_MASS_SAVING_CEILING = PROVED_EXACT_SHARP
 TPC230_COMPARABLE_ROW_DENSITY_TOLL = PROVED_EXACT
 TPC230_LITERAL_ALIGNED_KAPPA_LE_4 = PROVED_EXACT
 TPC230_STRICT_1_OVER_400_EDGE_DENSITY_TOLL = 1/3200
-TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = OPEN
+TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = RESOLVED_BY_TPC231_ZERO
 TPC230_ACTUAL_V59_SOURCE_MASS_COMPARABILITY = OPEN
 TPC230_ARITHMETIC_ADVANCE = NO
 TPC230_FIXED_ATOM_CREDIT = 0

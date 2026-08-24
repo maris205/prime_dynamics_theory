@@ -9,12 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-230 证明 sharp matched-mass ceiling：若总 diagonal mass 为 `D`、
-matching vertices 上的 mass 为 `M`，则 `E_AP>=D-M`，global saving 至多 `M`，且逐边
-anti-alignment 达到等号。row-mass comparability `kappa` 下，fixed `delta` saving 必须
-满足 `E/P>=delta/(2kappa)`；literal aligned rows 有 `kappa<=4`，所以 strict `1/400`
-必须支付 edge-density toll `1/3200`。状态为 `PROVED_STRUCTURAL_L1`；asymptotic
-resonance density、actual source comparability、L2 与 Gate B 开放。
+当前主线状态：TPC-231 将 TPC-230 的 matched-mass toll 接到 classical Selberg
+upper-bound sieve。first primitive `3--7` resonance 精确参数化为 determinant `16Q` 的
+two-linear-form family，并证明 `E(Q)<<Q log log(3Q)/(log Q)^2`，故 `E/P->0`、literal
+matched mass fraction `M/D->0`。任意 fixed finite primitive linear resonance family
+同样只有 `o(P)` edges；有界度、有界系数、comparable-row 版本不能支付任何 fixed saving。
+状态为 `PROVED_ARITHMETIC_OBSTRUCTION_L1`：fixed-finite resonance route 已
+`STOP_SCOPED`，但 arithmetic cancellation、actual V59 crosswalk、growing depth、L2 与
+full Gate B 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,7 +31,9 @@ resonance density、actual source comparability、L2 与 Gate B 开放。
 
 ## 3. Latest Paper
 
-`tpc-230-matched-resonance-mass-ceiling` - `PROVED_STRUCTURAL_L1 / MATCHED_RESONANCE_MASS_CEILING` - 证明 global AP saving 不超过 matched diagonal mass，给出 sharp anti-aligned extremizer、`M/D<=2*kappa*E/P` 与 literal `kappa<=4`，从而提取 strict `1/400` 所需 `E/P>=1/3200` density toll；asymptotic resonance count 与 actual source concentration 仍开放。
+`tpc-231-finite-resonance-sieve-obstruction` - `PROVED_ARITHMETIC_OBSTRUCTION_L1 / FIXED_FINITE_RESONANCE_STOP_SCOPED` - 计算 first `3--7` resonance 的 exact local root law 与 moving-determinant singular series，用 Selberg upper-bound sieve 证明 `E/P->0`，并经有界度能量引理推出 fixed finite comparable-row resonance families 不能支付任何 fixed saving；growing depth 与 actual V59 source mass crosswalk 仍开放。
+
+`tpc-230-matched-resonance-mass-ceiling` - `PROVED_STRUCTURAL_L1 / MATCHED_RESONANCE_MASS_CEILING` - 证明 global AP saving 不超过 matched diagonal mass，给出 sharp anti-aligned extremizer、`M/D<=2*kappa*E/P` 与 literal `kappa<=4`，从而提取 strict `1/400` 所需 `E/P>=1/3200` density toll；该 asymptotic density toll 已由 TPC-231 证明失败，actual source concentration 仍开放。
 
 `tpc-229-primitive-resonance-matching-spectrum` - `PROVED_STRUCTURAL_L1 / PRIMITIVE_RESONANCE_MATCHING_SPECTRUM` - 证明所有 primitive `3--7` resonance graphs 都是 matching，给出 `(-1,-1,+1,+1)` sharp edge spectrum、`0..2` AP ratio 与 exact antisymmetric saving criterion；4089-scale census 通过，matched source mass 与 arithmetic dominance 仍开放。
 

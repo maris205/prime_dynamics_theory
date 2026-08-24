@@ -1,11 +1,39 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V83 / MATCHED_RESONANCE_MASS_CEILING`
-claim level：`PROVED_STRUCTURAL_L1_MATCHED_MASS_CEILING`
-编号事实终点：TPC-230；TPC-230 trigger：`true`
+状态：`BOLD_CHANNEL_V84 / FINITE_RESONANCE_SIEVE_OBSTRUCTION`
+claim level：`PROVED_ARITHMETIC_OBSTRUCTION_L1_FIXED_FINITE_RESONANCE_STOP_SCOPED`
+编号事实终点：TPC-231；TPC-231 trigger：`true`
 
-当前 TPC-230 入口：proof 为
+当前 TPC-231 入口：proof 为
+`research/tpc-big-road/bridge_b_finite_resonance_sieve_obstruction.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py`，编号论文为
+`papers/tpc-231-finite-resonance-sieve-obstruction/`。first `3--7` resonance 的 exact
+two-form determinant 为 `16Q`，complete local root law 给出 Selberg upper bound
+`E(Q)<<Q log log(3Q)/(log Q)^2`，故 `E/P->0`。TPC-230 transfer 随即给出 literal
+matched mass `M/D->0`；bounded-degree comparable-row energy lemma 把同一 stop 推广到
+任意 fixed finite primitive linear resonance family。
+
+```text
+TPC231_3716_PARAMETERIZATION = PROVED_EXACT
+TPC231_3716_LOCAL_ROOT_LAW = PROVED_EXACT
+TPC231_3716_SELBERG_UPPER_BOUND = PROVED_SOURCE_BACKED
+TPC231_3716_EDGE_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_FIXED_FINITE_RESONANCE_SUPPORT_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_FIRST_PRIMITIVE_3_7_FIXED_SAVING = STOP_SCOPED
+TPC231_FIXED_FINITE_RESONANCE_COMPARABLE_ROW_ROUTE = STOP_SCOPED
+TPC231_GROWING_RESONANCE_DEPTH = OPEN
+TPC231_ACTUAL_V59_SOURCE_MASS_CROSSWALK = OPEN
+TPC231_ARITHMETIC_ADVANCE = NO
+TPC231_ARITHMETIC_OBSTRUCTION = PROVED_SOURCE_BACKED
+TPC231_FIXED_ATOM_CREDIT = 0
+TPC231_L2 = NONE
+TPC231_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC231_STATUS = PROVED_ARITHMETIC_OBSTRUCTION_L1
+TPC231_ROUND2_CLUE = TEST_GROWING_RESONANCE_DEPTH_OR_RETURN_TO_THE_ACTUAL_V59_SOURCE_MASS_CROSSWALK
+```
+
+TPC-230 上游入口：proof 为
 `research/tpc-big-road/bridge_b_matched_resonance_mass_ceiling.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_matched_resonance_mass_ceiling_checker.py`，编号论文为
 `papers/tpc-230-matched-resonance-mass-ceiling/`。If `D` is total diagonal mass and `M`
@@ -20,7 +48,7 @@ TPC230_NECESSARY_MASS_FRACTION = PROVED_EXACT
 TPC230_COMPARABLE_ROW_DENSITY_TOLL = PROVED_EXACT
 TPC230_LITERAL_ALIGNED_KAPPA_LE_4 = PROVED_EXACT
 TPC230_STRICT_1_OVER_400_EDGE_DENSITY_TOLL = 1/3200
-TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = OPEN
+TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = RESOLVED_BY_TPC231_ZERO
 TPC230_ARITHMETIC_ADVANCE = NO
 TPC230_FIXED_ATOM_CREDIT = 0
 TPC230_L2 = NONE

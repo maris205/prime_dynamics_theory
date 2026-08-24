@@ -1,0 +1,1215 @@
+{
+  "affiliation": "Huazhong University of Science and Technology",
+  "author": "Liang Wang",
+  "checks": {
+    "bounded_degree_energy_transfer": true,
+    "determinant_equals_16Q": true,
+    "exact_parameterization": true,
+    "finite_family_union_bound": true,
+    "local_root_law": true,
+    "selberg_dimension_two": true,
+    "singular_correction_identity": true,
+    "tpc230_mass_transfer": true
+  },
+  "claim_level": "PROVED_ARITHMETIC_OBSTRUCTION_L1",
+  "finite_scan": {
+    "Q_max": 32768,
+    "Q_min": 8,
+    "aggregate_edge_to_row_ratio": "568308/52199509",
+    "edge_bearing_scales": 18652,
+    "scales_checked": 32761,
+    "scan_sha256": "b6ca54f2d09c0403fe0f44371f8c600c67f7f9709062a22c120503e0277836e0",
+    "total_edges": 568308,
+    "total_prime_rows": 52199509,
+    "windows": [
+      {
+        "Q_max": 31,
+        "Q_min": 8,
+        "aggregate_edge_to_row_ratio": "3/115",
+        "edge_bearing_scales": 3,
+        "first_maximum_Q": 11,
+        "maximum_edge_to_row_ratio": "1/3",
+        "scales": 24,
+        "total_edges": 3,
+        "total_prime_rows": 115
+      },
+      {
+        "Q_max": 127,
+        "Q_min": 32,
+        "aggregate_edge_to_row_ratio": "1/46",
+        "edge_bearing_scales": 29,
+        "first_maximum_Q": 68,
+        "maximum_edge_to_row_ratio": "2/13",
+        "scales": 96,
+        "total_edges": 32,
+        "total_prime_rows": 1472
+      },
+      {
+        "Q_max": 511,
+        "Q_min": 128,
+        "aggregate_edge_to_row_ratio": "338/19171",
+        "edge_bearing_scales": 191,
+        "first_maximum_Q": 235,
+        "maximum_edge_to_row_ratio": "1/10",
+        "scales": 384,
+        "total_edges": 338,
+        "total_prime_rows": 19171
+      },
+      {
+        "Q_max": 2047,
+        "Q_min": 512,
+        "aggregate_edge_to_row_ratio": "409/28369",
+        "edge_bearing_scales": 874,
+        "first_maximum_Q": 520,
+        "maximum_edge_to_row_ratio": "5/78",
+        "scales": 1536,
+        "total_edges": 3681,
+        "total_prime_rows": 255321
+      },
+      {
+        "Q_max": 8191,
+        "Q_min": 2048,
+        "aggregate_edge_to_row_ratio": "21469/1741353",
+        "edge_bearing_scales": 3511,
+        "first_maximum_Q": 3025,
+        "maximum_edge_to_row_ratio": "16/355",
+        "scales": 6144,
+        "total_edges": 42938,
+        "total_prime_rows": 3482706
+      },
+      {
+        "Q_max": 32768,
+        "Q_min": 8192,
+        "aggregate_edge_to_row_ratio": "43443/4036727",
+        "edge_bearing_scales": 14044,
+        "first_maximum_Q": 13585,
+        "maximum_edge_to_row_ratio": "51/1370",
+        "scales": 24577,
+        "total_edges": 521316,
+        "total_prime_rows": 48440724
+      }
+    ]
+  },
+  "firewall": {
+    "L2": "NONE",
+    "actual_V59_source_mass_crosswalk": "OPEN",
+    "arithmetic_advance": "NO",
+    "arithmetic_cancellation": "NONE",
+    "arithmetic_obstruction": "PROVED_SOURCE_BACKED",
+    "first_primitive_3_7_fixed_saving": "STOP_SCOPED",
+    "fixed_atom_credit": 0,
+    "fixed_finite_resonance_support": "STOP_SCOPED_FOR_COMPARABLE_ROWS",
+    "full_gate_b": "OPEN",
+    "growing_resonance_depth": "OPEN",
+    "strict_1_over_400": "UNPAID_GLOBAL_STOP_SCOPED_FOR_FIRST_RESONANCE"
+  },
+  "local_density": {
+    "formula": "nu_Q(ell)=1 for ell in {2,3,7} or ell|Q; otherwise nu_Q(ell)=2",
+    "q25": {
+      "Q": 25,
+      "determinant": 400,
+      "roots": [
+        {
+          "direct_roots": 1,
+          "divides_determinant": true,
+          "local_factor": "2",
+          "predicted_roots": 1,
+          "prime": 2
+        },
+        {
+          "direct_roots": 1,
+          "divides_determinant": false,
+          "local_factor": "3/2",
+          "predicted_roots": 1,
+          "prime": 3
+        },
+        {
+          "direct_roots": 1,
+          "divides_determinant": true,
+          "local_factor": "5/4",
+          "predicted_roots": 1,
+          "prime": 5
+        },
+        {
+          "direct_roots": 1,
+          "divides_determinant": false,
+          "local_factor": "7/6",
+          "predicted_roots": 1,
+          "prime": 7
+        },
+        {
+          "direct_roots": 2,
+          "divides_determinant": false,
+          "local_factor": "99/100",
+          "predicted_roots": 2,
+          "prime": 11
+        },
+        {
+          "direct_roots": 2,
+          "divides_determinant": false,
+          "local_factor": "143/144",
+          "predicted_roots": 2,
+          "prime": 13
+        },
+        {
+          "direct_roots": 2,
+          "divides_determinant": false,
+          "local_factor": "255/256",
+          "predicted_roots": 2,
+          "prime": 17
+        },
+        {
+          "direct_roots": 2,
+          "divides_determinant": false,
+          "local_factor": "323/324",
+          "predicted_roots": 2,
+          "prime": 19
+        },
+        {
+          "direct_roots": 2,
+          "divides_determinant": false,
+          "local_factor": "483/484",
+          "predicted_roots": 2,
+          "prime": 23
+        },
+        {
+          "direct_roots": 2,
+          "divides_determinant": false,
+          "local_factor": "783/784",
+          "predicted_roots": 2,
+          "prime": 29
+        },
+        {
+          "direct_roots": 2,
+          "divides_determinant": false,
+          "local_factor": "899/900",
+          "predicted_roots": 2,
+          "prime": 31
+        }
+      ]
+    },
+    "q25_exceptional_correction": "4/3",
+    "q25_totient_comparison": {
+      "Q_over_phi_without_fixed_primes": "5/4",
+      "convergent_multiplier": "16/15",
+      "correction": "4/3"
+    },
+    "scales": [
+      {
+        "Q": 10,
+        "determinant": 160,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "5/4",
+            "predicted_roots": 1,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "99/100",
+            "predicted_roots": 2,
+            "prime": 11
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "143/144",
+            "predicted_roots": 2,
+            "prime": 13
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "255/256",
+            "predicted_roots": 2,
+            "prime": 17
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "323/324",
+            "predicted_roots": 2,
+            "prime": 19
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "483/484",
+            "predicted_roots": 2,
+            "prime": 23
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "783/784",
+            "predicted_roots": 2,
+            "prime": 29
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "899/900",
+            "predicted_roots": 2,
+            "prime": 31
+          }
+        ]
+      },
+      {
+        "Q": 11,
+        "determinant": 176,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "15/16",
+            "predicted_roots": 2,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "11/10",
+            "predicted_roots": 1,
+            "prime": 11
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "143/144",
+            "predicted_roots": 2,
+            "prime": 13
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "255/256",
+            "predicted_roots": 2,
+            "prime": 17
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "323/324",
+            "predicted_roots": 2,
+            "prime": 19
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "483/484",
+            "predicted_roots": 2,
+            "prime": 23
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "783/784",
+            "predicted_roots": 2,
+            "prime": 29
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "899/900",
+            "predicted_roots": 2,
+            "prime": 31
+          }
+        ]
+      },
+      {
+        "Q": 13,
+        "determinant": 208,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "15/16",
+            "predicted_roots": 2,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "99/100",
+            "predicted_roots": 2,
+            "prime": 11
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "13/12",
+            "predicted_roots": 1,
+            "prime": 13
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "255/256",
+            "predicted_roots": 2,
+            "prime": 17
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "323/324",
+            "predicted_roots": 2,
+            "prime": 19
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "483/484",
+            "predicted_roots": 2,
+            "prime": 23
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "783/784",
+            "predicted_roots": 2,
+            "prime": 29
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "899/900",
+            "predicted_roots": 2,
+            "prime": 31
+          }
+        ]
+      },
+      {
+        "Q": 17,
+        "determinant": 272,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "15/16",
+            "predicted_roots": 2,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "99/100",
+            "predicted_roots": 2,
+            "prime": 11
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "143/144",
+            "predicted_roots": 2,
+            "prime": 13
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "17/16",
+            "predicted_roots": 1,
+            "prime": 17
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "323/324",
+            "predicted_roots": 2,
+            "prime": 19
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "483/484",
+            "predicted_roots": 2,
+            "prime": 23
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "783/784",
+            "predicted_roots": 2,
+            "prime": 29
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "899/900",
+            "predicted_roots": 2,
+            "prime": 31
+          }
+        ]
+      },
+      {
+        "Q": 19,
+        "determinant": 304,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "15/16",
+            "predicted_roots": 2,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "99/100",
+            "predicted_roots": 2,
+            "prime": 11
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "143/144",
+            "predicted_roots": 2,
+            "prime": 13
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "255/256",
+            "predicted_roots": 2,
+            "prime": 17
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "19/18",
+            "predicted_roots": 1,
+            "prime": 19
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "483/484",
+            "predicted_roots": 2,
+            "prime": 23
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "783/784",
+            "predicted_roots": 2,
+            "prime": 29
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "899/900",
+            "predicted_roots": 2,
+            "prime": 31
+          }
+        ]
+      },
+      {
+        "Q": 23,
+        "determinant": 368,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "15/16",
+            "predicted_roots": 2,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "99/100",
+            "predicted_roots": 2,
+            "prime": 11
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "143/144",
+            "predicted_roots": 2,
+            "prime": 13
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "255/256",
+            "predicted_roots": 2,
+            "prime": 17
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "323/324",
+            "predicted_roots": 2,
+            "prime": 19
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "23/22",
+            "predicted_roots": 1,
+            "prime": 23
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "783/784",
+            "predicted_roots": 2,
+            "prime": 29
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "899/900",
+            "predicted_roots": 2,
+            "prime": 31
+          }
+        ]
+      },
+      {
+        "Q": 25,
+        "determinant": 400,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "5/4",
+            "predicted_roots": 1,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "99/100",
+            "predicted_roots": 2,
+            "prime": 11
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "143/144",
+            "predicted_roots": 2,
+            "prime": 13
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "255/256",
+            "predicted_roots": 2,
+            "prime": 17
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "323/324",
+            "predicted_roots": 2,
+            "prime": 19
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "483/484",
+            "predicted_roots": 2,
+            "prime": 23
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "783/784",
+            "predicted_roots": 2,
+            "prime": 29
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "899/900",
+            "predicted_roots": 2,
+            "prime": 31
+          }
+        ]
+      },
+      {
+        "Q": 29,
+        "determinant": 464,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "15/16",
+            "predicted_roots": 2,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "99/100",
+            "predicted_roots": 2,
+            "prime": 11
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "143/144",
+            "predicted_roots": 2,
+            "prime": 13
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "255/256",
+            "predicted_roots": 2,
+            "prime": 17
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "323/324",
+            "predicted_roots": 2,
+            "prime": 19
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "483/484",
+            "predicted_roots": 2,
+            "prime": 23
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "29/28",
+            "predicted_roots": 1,
+            "prime": 29
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "899/900",
+            "predicted_roots": 2,
+            "prime": 31
+          }
+        ]
+      },
+      {
+        "Q": 31,
+        "determinant": 496,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "15/16",
+            "predicted_roots": 2,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "99/100",
+            "predicted_roots": 2,
+            "prime": 11
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "143/144",
+            "predicted_roots": 2,
+            "prime": 13
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "255/256",
+            "predicted_roots": 2,
+            "prime": 17
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "323/324",
+            "predicted_roots": 2,
+            "prime": 19
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "483/484",
+            "predicted_roots": 2,
+            "prime": 23
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "783/784",
+            "predicted_roots": 2,
+            "prime": 29
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "31/30",
+            "predicted_roots": 1,
+            "prime": 31
+          }
+        ]
+      },
+      {
+        "Q": 32,
+        "determinant": 512,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "15/16",
+            "predicted_roots": 2,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "99/100",
+            "predicted_roots": 2,
+            "prime": 11
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "143/144",
+            "predicted_roots": 2,
+            "prime": 13
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "255/256",
+            "predicted_roots": 2,
+            "prime": 17
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "323/324",
+            "predicted_roots": 2,
+            "prime": 19
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "483/484",
+            "predicted_roots": 2,
+            "prime": 23
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "783/784",
+            "predicted_roots": 2,
+            "prime": 29
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "899/900",
+            "predicted_roots": 2,
+            "prime": 31
+          }
+        ]
+      },
+      {
+        "Q": 37,
+        "determinant": 592,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "15/16",
+            "predicted_roots": 2,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "99/100",
+            "predicted_roots": 2,
+            "prime": 11
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "143/144",
+            "predicted_roots": 2,
+            "prime": 13
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "255/256",
+            "predicted_roots": 2,
+            "prime": 17
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "323/324",
+            "predicted_roots": 2,
+            "prime": 19
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "483/484",
+            "predicted_roots": 2,
+            "prime": 23
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "783/784",
+            "predicted_roots": 2,
+            "prime": 29
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "899/900",
+            "predicted_roots": 2,
+            "prime": 31
+          }
+        ]
+      },
+      {
+        "Q": 41,
+        "determinant": 656,
+        "roots": [
+          {
+            "direct_roots": 1,
+            "divides_determinant": true,
+            "local_factor": "2",
+            "predicted_roots": 1,
+            "prime": 2
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "3/2",
+            "predicted_roots": 1,
+            "prime": 3
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "15/16",
+            "predicted_roots": 2,
+            "prime": 5
+          },
+          {
+            "direct_roots": 1,
+            "divides_determinant": false,
+            "local_factor": "7/6",
+            "predicted_roots": 1,
+            "prime": 7
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "99/100",
+            "predicted_roots": 2,
+            "prime": 11
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "143/144",
+            "predicted_roots": 2,
+            "prime": 13
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "255/256",
+            "predicted_roots": 2,
+            "prime": 17
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "323/324",
+            "predicted_roots": 2,
+            "prime": 19
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "483/484",
+            "predicted_roots": 2,
+            "prime": 23
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "783/784",
+            "predicted_roots": 2,
+            "prime": 29
+          },
+          {
+            "direct_roots": 2,
+            "divides_determinant": false,
+            "local_factor": "899/900",
+            "predicted_roots": 2,
+            "prime": 31
+          }
+        ]
+      }
+    ]
+  },
+  "q25_edges": [
+    [
+      37,
+      47
+    ]
+  ],
+  "round2_clue": "TEST_GROWING_RESONANCE_DEPTH_OR_RETURN_TO_THE_ACTUAL_V59_SOURCE_MASS_CROSSWALK",
+  "schema": "tpc231-finite-resonance-sieve-obstruction-v1",
+  "status": "PASS",
+  "theorem": {
+    "3716_edge_bound": "E_3716(Q) << S_3716(Q) Q/(log Q)^2",
+    "3716_singular_series": "S_3716(Q)=C_3716 prod_{ell|Q,ell>=5}(ell-1)/(ell-2) when gcd(Q,21)=1",
+    "finite_family_comparable_row_saving": "bounded-degree bounded-coefficient collision saving is o(D) for every fixed finite family",
+    "finite_family_extension": "every fixed finite primitive nondegenerate linear resonance family has o(P(Q)) incident edges",
+    "fixed_saving_verdict": "the first primitive 3--7 literal aligned mechanism cannot pay any fixed delta>0 for all large Q",
+    "literal_matched_mass": "M_literal(Q)/D_literal(Q) <= 8E_3716(Q)/P(Q) -> 0",
+    "prime_shell_density": "E_3716(Q)/P(Q) << log log(3Q)/log Q -> 0",
+    "singular_growth": "S_3716(Q) << log log(3Q)"
+  }
+}

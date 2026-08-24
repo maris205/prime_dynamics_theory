@@ -2,14 +2,15 @@
 
 更新时间：2026-08-24
 
-当前地图版本：V83 / TPC-230
+当前地图版本：V84 / TPC-231
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-230`（`PROVED_STRUCTURAL_L1 / MATCHED_RESONANCE_MASS_CEILING`）；
-对应论文目录为 `papers/tpc-230-matched-resonance-mass-ceiling/`。TPC-230 证明 global
-saving is at most matched diagonal mass；literal comparable rows 为 strict `1/400`
-提取 necessary edge-density toll `E/P>=1/3200`。asymptotic edge density 仍 OPEN。
+当前编号锚点：`TPC-231`（`PROVED_ARITHMETIC_OBSTRUCTION_L1 / FIXED_FINITE_RESONANCE_STOP_SCOPED`）；
+对应论文目录为 `papers/tpc-231-finite-resonance-sieve-obstruction/`。TPC-231 用 exact
+determinant/local-density compiler 与 Selberg upper-bound sieve 证明 first `3--7`
+resonance `E/P->0`，并把 fixed finite comparable-row resonance route 渐近封口。
+growing depth、actual V59 source crosswalk 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -51,9 +52,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V83 / TPC-230                     |
-        | MATCHED-RESONANCE MASS CEILING                   |
-        | two-linear-form edge density OPEN                |
+        | YOU ARE HERE — V84 / TPC-231                     |
+        | FINITE-RESONANCE SIEVE OBSTRUCTION               |
+        | growing depth / actual source OPEN               |
         +--------------------------------------------------+
                 |
                 v
@@ -96,11 +97,12 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V83 / TPC-230 的
-matched-resonance mass ceiling。完美逐边抵消最多删除 matched mass；literal rows 支付
-`1/400` 必须有 `E/P>=1/3200`。下一步用 two-linear-form upper-bound sieve 判断该 density
-能否 asymptotically persist。FULL_GATE_B、strict
-`1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V84 / TPC-231 的
+finite-resonance sieve obstruction。two-linear-form Selberg sieve 已证明 first `3--7`
+及任意 fixed finite primitive resonance family 的 edge support 为 `o(P)`；有界度、
+有界系数、comparable-row 模型不能支付 fixed saving，故该支路 `STOP_SCOPED`。下一条
+大路只剩 growing resonance depth 或 actual V59 source-mass crosswalk。FULL_GATE_B、
+global strict `1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1230,6 +1232,54 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.25 V84 / TPC-231：finite-resonance sieve obstruction
+
+For `Q=3t+a`, the first primitive resonance has exact parameterization
+
+```text
+p=3k+a, r=16t+3a-7k, determinant=16Q.
+```
+
+The local bad-residue count is one at `2,3,7` and primes dividing `Q`, and two
+otherwise. The classical dimension-two Selberg upper-bound sieve therefore proves
+
+```text
+E_3716(Q) << Q log log(3Q)/(log Q)^2,
+E_3716(Q)/P(Q) -> 0.
+```
+
+The determinant argument applies to every fixed finite primitive nondegenerate linear
+resonance family. Such a family has bounded graph degree; for bounded collision
+coefficients and row-mass ratio `kappa`, Cauchy--Schwarz gives
+
+```text
+(D-E_AP)_+/D <= 2 C Delta kappa E_total/P = o(1).
+```
+
+Together with TPC-230, literal first-resonance matched mass also has `M/D->0`.
+
+```text
+TPC231_3716_PARAMETERIZATION = PROVED_EXACT
+TPC231_3716_LOCAL_ROOT_LAW = PROVED_EXACT
+TPC231_3716_SELBERG_UPPER_BOUND = PROVED_SOURCE_BACKED
+TPC231_3716_EDGE_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_FIXED_FINITE_RESONANCE_SUPPORT_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_FIRST_PRIMITIVE_3_7_FIXED_SAVING = STOP_SCOPED
+TPC231_FIXED_FINITE_RESONANCE_COMPARABLE_ROW_ROUTE = STOP_SCOPED
+TPC231_GROWING_RESONANCE_DEPTH = OPEN
+TPC231_ACTUAL_V59_SOURCE_MASS_CROSSWALK = OPEN
+TPC231_ARITHMETIC_ADVANCE = NO
+TPC231_ARITHMETIC_OBSTRUCTION = PROVED_SOURCE_BACKED
+TPC231_FIXED_ATOM_CREDIT = 0
+TPC231_L2 = NONE
+TPC231_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+```
+
+地图位置：**V84 / TPC-231 has asymptotically closed the first-resonance and fixed-finite
+comparable-row branches. 下一条最短大路是 test growing resonance depth, or return to the
+actual V59 source-mass crosswalk；不能把 finite-family obstruction 外推成 full Gate-B
+no-go。**
+
 ## 5.24 V83 / TPC-230：matched-resonance mass ceiling
 
 For total diagonal mass `D` and matched mass `M`, exact matching decomposition gives
@@ -1247,7 +1297,7 @@ TPC230_MATCHED_MASS_SAVING_CEILING = PROVED_EXACT_SHARP
 TPC230_COMPARABLE_ROW_DENSITY_TOLL = PROVED_EXACT
 TPC230_LITERAL_ALIGNED_KAPPA_LE_4 = PROVED_EXACT
 TPC230_STRICT_1_OVER_400_EDGE_DENSITY_TOLL = 1/3200
-TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = OPEN
+TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = RESOLVED_BY_TPC231_ZERO
 TPC230_ARITHMETIC_ADVANCE = NO
 TPC230_FIXED_ATOM_CREDIT = 0
 TPC230_L2 = NONE
@@ -1769,7 +1819,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V83 / TPC-230：
+截至 V84 / TPC-231：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1983,7 +2033,22 @@ TPC230_FIXED_ATOM_CREDIT = 0
 TPC230_L2 = NONE
 TPC230_FULL_GATE_B = OPEN
 TPC230_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-230
+TPC231_3716_PARAMETERIZATION = PROVED_EXACT
+TPC231_3716_LOCAL_ROOT_LAW = PROVED_EXACT
+TPC231_3716_SELBERG_UPPER_BOUND = PROVED_SOURCE_BACKED
+TPC231_3716_EDGE_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_FIXED_FINITE_RESONANCE_SUPPORT_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_FIRST_PRIMITIVE_3_7_FIXED_SAVING = STOP_SCOPED
+TPC231_FIXED_FINITE_RESONANCE_COMPARABLE_ROW_ROUTE = STOP_SCOPED
+TPC231_GROWING_RESONANCE_DEPTH = OPEN
+TPC231_ACTUAL_V59_SOURCE_MASS_CROSSWALK = OPEN
+TPC231_ARITHMETIC_ADVANCE = NO
+TPC231_ARITHMETIC_OBSTRUCTION = PROVED_SOURCE_BACKED
+TPC231_FIXED_ATOM_CREDIT = 0
+TPC231_L2 = NONE
+TPC231_FULL_GATE_B = OPEN
+TPC231_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+NUMBERED_RELEASE = TPC-231
 ```
 
 以下事实不得从路线图中推断：
@@ -2001,8 +2066,12 @@ NUMBERED_RELEASE = TPC-230
 
 优先级更新为：
 
-1. **TPC-230 已完成：matched-resonance mass ceiling**。global saving capacity 与
-   `1/3200` density toll 已 exact；下一步 apply a two-linear-form upper-bound sieve。
+1. **TPC-231 已完成：finite-resonance sieve obstruction**。first `3--7` 与任意 fixed
+   finite primitive resonance family 的 `o(P)` edge density 已 proved；bounded-degree
+   comparable-row fixed-saving route 已 `STOP_SCOPED`。下一步只测试 growing resonance
+   depth，或返回 actual V59 source-mass crosswalk。
+2. **TPC-230 已完成：matched-resonance mass ceiling**。global saving capacity 与
+   `1/3200` density toll 已 exact；其 asymptotic density question 已由 TPC-231 回答为零。
 2. **TPC-229 已完成：primitive resonance matching spectrum**。all-scale matching、sharp
    edge spectrum 与 exact antisymmetric saving criterion 已证明；下一步 quantify matched
    resonance source mass。
@@ -2057,9 +2126,10 @@ NUMBERED_RELEASE = TPC-230
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-230 的下一步：two-linear-form resonance sieve**。对 `7p+3r=16Q` 给 uniform
-    upper bound，比较 `E(Q)` 与 prime-shell size `P(Q)`；保持 singular-series dependence
-    与 scope firewall。
+12. **TPC-231 的下一步：growing depth / actual source fork**。先量化随 `Q` 增长的
+    resonance-channel count 是否足以抵消 `1/log Q` density loss；若缺少 literal clock
+    或 source attachment，则返回 actual V59 source-to-row mass crosswalk，不把 fixed-family
+    sieve stop 重命名后重复探索。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2158,6 +2228,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-24 | V84 / TPC-231 | Bridge A / Gate B：finite-resonance sieve obstruction；fixed finite comparable-row route stop-scoped，growing depth/actual source open | `TPC-231` | exact determinant/local-root law、Selberg `E/P->0`、fixed-finite-family extension、bounded-degree energy transfer；arithmetic cancellation仍为 NO |
 | 2026-08-24 | V83 / TPC-230 | Bridge A / Gate B：matched-resonance mass ceiling；two-linear-form density open | `TPC-230` | sharp `E_AP>=D-M`、comparability density toll、literal `kappa<=4`、strict endpoint needs `1/3200`；arithmetic仍为 NO |
 | 2026-08-24 | V82 / TPC-229 | Bridge A / Gate B：primitive resonance matching spectrum；matched mass/arithmetic dominance open | `TPC-229` | all-scale matching、`(-1,-1,+1,+1)` blocks、sharp AP ratio/delta criterion、4089-scale replay；arithmetic仍为 NO |
 | 2026-08-24 | V81 / TPC-228 | Bridge A / Gate B：source-native polarized collision compiler；exact source block，atom crosswalk/arithmetic open | `TPC-228` | AP-minus-diagonal four-phase identity、Q25 four-term beta-w block、positive/negative/zero controls；arithmetic仍为 NO |

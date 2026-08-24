@@ -1,0 +1,47 @@
+\section{Exact local arithmetic}
+
+Assume $(Q,21)=1$ and write $Q=3t+a$, where $a\in\{1,2\}$.  Reducing
+\eqref{eq:resonance} modulo three gives $p\equiv a\pmod 3$.  Thus every solution has
+the unique parameterization
+\begin{equation}
+ L_1(k)=3k+a,\qquad L_2(k)=16t+3a-7k.               \label{eq:forms}
+\end{equation}
+Its determinant is
+\begin{equation}
+ 3(16t+3a)+7a=16Q.                                  \label{eq:determinant}
+\end{equation}
+The shell inequalities imply
+$10Q/7<L_1(k)<8Q/5<L_2(k)<2Q$, so the parameter interval has length
+$2Q/35+O(1)$.
+
+For a prime $\ell$, let $\nu_Q(\ell)$ be the number of residues $k\pmod\ell$ for
+which $L_1(k)L_2(k)\equiv0\pmod\ell$.
+
+\begin{lemma}[local root law]\label{lem:roots}
+For $(Q,21)=1$,
+\[
+ \nu_Q(\ell)=
+ \begin{cases}
+ 1,&\ell\in\{2,3,7\}\text{ or }\ell\mid Q,\\
+ 2,&\text{otherwise}.
+ \end{cases}
+\]
+In particular, the pair of forms is admissible.
+\end{lemma}
+
+\begin{proof}
+Modulo two, both forms in \eqref{eq:forms} equal $k+a$.  Modulo three, $L_1=a$
+is nonzero and $L_2$ has one root.  Modulo seven, $L_2$ is constant and nonzero:
+three times that constant is $2Q\pmod7$; meanwhile $L_1$ has one root.  Outside
+$\{2,3,7\}$, both forms have one root, and the two roots coincide exactly when the
+determinant \eqref{eq:determinant} vanishes modulo $\ell$.
+\end{proof}
+
+Consequently the singular series has the exact shape
+\begin{equation}
+ \SSer_{3,7}(Q)=C_{3,7}
+ \prod_{\substack{\ell\mid Q\\ \ell\ge5}}
+ \frac{\ell-1}{\ell-2},                              \label{eq:series}
+\end{equation}
+where $C_{3,7}>0$ contains the fixed factors and the convergent generic Euler
+product.

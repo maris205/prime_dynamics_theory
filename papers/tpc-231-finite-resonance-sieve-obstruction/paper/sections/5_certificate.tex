@@ -1,0 +1,35 @@
+\section{Finite certification and adversarial controls}
+
+The executable certificate checks the determinant and local root law directly at
+multiple scales and primes.  At $Q=25$, the determinant is $400$, the exceptional
+prime $5$ has one root rather than two, the singular correction is exactly $4/3$, and
+the unique edge is $(37,47)$.
+
+A separate implementation scans every $8\le Q\le32768$.  It reproduces 568,308 edges
+among 52,199,509 prime rows.  Table~\ref{tab:scan} records exact window statistics.
+They are diagnostics, not evidence for the asymptotic theorem.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{rrrr}
+\toprule
+$Q$ window & edges & rows & aggregate $E/P$ \\
+\midrule
+$8$--$31$ & 3 & 115 & $3/115$ \\
+$32$--$127$ & 32 & 1,472 & $1/46$ \\
+$128$--$511$ & 338 & 19,171 & $338/19171$ \\
+$512$--$2047$ & 3,681 & 255,321 & $409/28369$ \\
+$2048$--$8191$ & 42,938 & 3,482,706 & $21469/1741353$ \\
+$8192$--$32768$ & 521,316 & 48,440,724 & $43443/4036727$ \\
+\bottomrule
+\end{tabular}
+\caption{Exact finite reproduction scan.}
+\label{tab:scan}
+\end{table}
+
+The independent checker uses parameter-index enumeration rather than the producer's
+prime-list enumeration.  Adversarial tests perturb the determinant by one, replace an
+exceptional one-root prime by a generic two-root prime, and corrupt the Euler factor;
+all three mutations are detected.  Normal and optimized Python modes are required to
+produce identical output.

@@ -1,9 +1,73 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V83_TPC230_SEALED_FOR_NEXT_BATCH_PAPER`
+交接状态：`BOLD_CHANNEL_V84_TPC231_BATCH_OF_FIVE_COMPLETE`
 
-TPC-230 当前 section：matched-resonance mass ceiling
+TPC-231 当前 section：finite-resonance sieve obstruction
+----------------------------------------------------------
+
+For `Q=3t+a`, the primitive equation `7p+3r=16Q` is exactly parameterized by
+`p=3k+a`, `r=16t+3a-7k`, with determinant `16Q`. The complete local root law has one
+bad class at `2,3,7` and primes dividing `Q`, and two otherwise. The classical
+dimension-two Selberg upper-bound sieve gives
+
+```text
+E_3716(Q) << Q log log(3Q)/(log Q)^2,
+E_3716(Q)/P(Q) -> 0.
+```
+
+The same argument applies to any fixed finite primitive nondegenerate linear resonance
+family. Each fixed channel has bounded degree; a Cauchy--Schwarz energy transfer gives
+`(D-E_AP)_+/D=o(1)` for bounded coefficients and comparable row masses. Combined with
+TPC-230, literal first-resonance matched mass tends to zero, so no fixed positive saving
+including `1/400` survives on that scoped branch.
+
+```text
+TPC231_ROUTE_ADVANCE = YES
+TPC231_3716_PARAMETERIZATION = PROVED_EXACT
+TPC231_3716_DETERMINANT = PROVED_EXACT_16Q
+TPC231_3716_LOCAL_ROOT_LAW = PROVED_EXACT
+TPC231_3716_SELBERG_UPPER_BOUND = PROVED_SOURCE_BACKED
+TPC231_3716_SINGULAR_SERIES_GROWTH = PROVED_LOG_LOG_3Q
+TPC231_3716_EDGE_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_FIXED_FINITE_RESONANCE_SUPPORT_DENSITY_ZERO = PROVED_ASYMPTOTIC
+TPC231_LITERAL_MATCHED_MASS_DENSITY_ZERO = PROVED_IN_LITERAL_ALIGNED_MODEL
+TPC231_FIRST_PRIMITIVE_3_7_FIXED_SAVING = STOP_SCOPED
+TPC231_FIXED_FINITE_RESONANCE_COMPARABLE_ROW_ROUTE = STOP_SCOPED
+TPC231_GROWING_RESONANCE_DEPTH = OPEN
+TPC231_ACTUAL_V59_SOURCE_MASS_CROSSWALK = OPEN
+TPC231_ARITHMETIC_ADVANCE = NO
+TPC231_ARITHMETIC_OBSTRUCTION = PROVED_SOURCE_BACKED
+TPC231_ARITHMETIC_CANCELLATION = NONE
+TPC231_FIXED_ATOM_CREDIT = 0
+TPC231_L2 = NONE
+TPC231_FULL_GATE_B = OPEN
+TPC231_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC231_TPC_TRIGGER = true
+TPC231_NUMBERED_RELEASE = YES
+TPC231_STATUS = PROVED_ARITHMETIC_OBSTRUCTION_L1
+TPC231_ROUND2_CLUE = TEST_GROWING_RESONANCE_DEPTH_OR_RETURN_TO_THE_ACTUAL_V59_SOURCE_MASS_CROSSWALK
+```
+
+strongest positive result：uniform two-form sieve theorem and fixed-finite-family
+extension；strongest obstruction：fixed finite comparable-row resonance supports cannot
+carry fixed global saving；open theorem：growing resonance depth or actual V59 source
+mass crosswalk；reusable structure：determinant/local-density/singular-series/support/
+energy compiler。
+
+编号论文目录：papers/tpc-231-finite-resonance-sieve-obstruction/
+
+```text
+papers/tpc-231-finite-resonance-sieve-obstruction/README.md
+papers/tpc-231-finite-resonance-sieve-obstruction/PROOF_PACKAGE.md
+papers/tpc-231-finite-resonance-sieve-obstruction/paper/paper.pdf
+papers/tpc-231-finite-resonance-sieve-obstruction/results/certificate.json
+papers/tpc-231-finite-resonance-sieve-obstruction/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_finite_resonance_sieve_obstruction.md
+research/tpc-big-road/tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py
+```
+
+TPC-230 上游 section：matched-resonance mass ceiling
 ------------------------------------------------------
 
 For total diagonal mass `D` and matched mass `M`, exact matching decomposition gives
@@ -19,7 +83,7 @@ TPC230_NECESSARY_MASS_FRACTION = PROVED_EXACT
 TPC230_COMPARABLE_ROW_DENSITY_TOLL = PROVED_EXACT
 TPC230_LITERAL_ALIGNED_KAPPA_LE_4 = PROVED_EXACT
 TPC230_STRICT_1_OVER_400_EDGE_DENSITY_TOLL = 1/3200
-TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = OPEN
+TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = RESOLVED_BY_TPC231_ZERO
 TPC230_ACTUAL_V59_SOURCE_MASS_COMPARABILITY = OPEN
 TPC230_ARITHMETIC_ADVANCE = NO
 TPC230_FIXED_ATOM_CREDIT = 0
@@ -5423,6 +5487,11 @@ TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
 `research/tpc-big-road/TPC_ROUTE_MAP.md`、
+`papers/tpc-231-finite-resonance-sieve-obstruction/README.md`、
+`papers/tpc-231-finite-resonance-sieve-obstruction/notes/theorem_ledger.md`、
+`papers/tpc-231-finite-resonance-sieve-obstruction/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_finite_resonance_sieve_obstruction.md`、
+`research/tpc-big-road/tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py`、
 `papers/tpc-226-first-primitive-collision-transition/README.md`、
 `papers/tpc-226-first-primitive-collision-transition/notes/theorem_ledger.md`、
 `papers/tpc-226-first-primitive-collision-transition/notes/route_evaluation.md`、
@@ -5580,8 +5649,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V83/TPC-230 gate、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百二十二次（61 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V84/TPC-231 gate、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百二十四次（62 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -5707,11 +5776,23 @@ python -B research/tpc-big-road/tpc_bridge_b_primitive_resonance_matching_spectr
 python -O -B research/tpc-big-road/tpc_bridge_b_primitive_resonance_matching_spectrum_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_matched_resonance_mass_ceiling_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_matched_resonance_mass_ceiling_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-230 入口：
+最新 TPC-231 入口：
+
+```text
+papers/tpc-231-finite-resonance-sieve-obstruction/README.md
+papers/tpc-231-finite-resonance-sieve-obstruction/notes/theorem_ledger.md
+papers/tpc-231-finite-resonance-sieve-obstruction/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_finite_resonance_sieve_obstruction.md
+research/tpc-big-road/tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py
+```
+
+TPC-230 上游入口：
 
 ```text
 papers/tpc-230-matched-resonance-mass-ceiling/README.md
