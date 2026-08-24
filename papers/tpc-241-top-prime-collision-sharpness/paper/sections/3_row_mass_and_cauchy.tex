@@ -1,0 +1,76 @@
+\section{Uniform row mass and residue collision}\label{sec:row}
+
+We begin with a fixed-profile lattice estimate.
+
+\begin{lemma}[First-moment lattice sum]\label{lem:lattice}
+As $T\to\infty$,
+\[
+ \sum_{0<|m|\leq\lfloor T\rfloor}\psi(m/T)=T+O_\psi(1).
+\]
+\end{lemma}
+
+\begin{proof}
+The standard Riemann-sum estimate for a fixed smooth compactly supported
+function gives
+\[
+ \sum_{m\in\mathbb Z}\psi(m/T)
+ =T\int_{\mathbb R}\psi(t)\,dt+O_\psi(1)=T+O_\psi(1).
+\]
+Removing the $m=0$ term changes the sum by at most one.  The support condition
+accounts for the displayed truncation.  Notice that the integral over both
+signs is already one; no extra factor two occurs.
+\end{proof}
+
+\begin{lemma}[Uniform top-prime row mass]\label{lem:rowmass}
+Uniformly for primes $U/2<p\leq U$,
+\begin{equation}\label{eq:rowmass}
+ S_p=\left(\frac32+o_\psi(1)\right)
+ \frac{pQ^2}{H\log Q}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Eventually $p<q$, $4Q<H$, and
+$2\lfloor pq/H\rfloor<p$.  Thus every active nonzero multiplier has
+$0<|m|<p$ and maps to a primitive residue modulo the prime $p$.  Summing
+\eqref{eq:B_hq} over all primitive residues therefore gives
+\[
+ S_p=\sum_{q\in\Qx}
+ \sum_{0<|m|\leq\lfloor pq/H\rfloor}
+ \psi\!\left(\frac{Hm}{pq}\right).
+\]
+On the top shells, $pq/H\geq \tfrac12 UQ/H\to\infty$.  Lemma~\ref{lem:lattice}
+is consequently uniform and yields
+\[
+ S_p=\frac{p}{H}\sum_{q\in\Qx}q+O_\psi(\#\Qx).
+\]
+The prime number theorem with partial summation gives
+\begin{equation}\label{eq:qfirstmoment}
+ \sum_{Q<q\leq2Q}q
+ =\left(\frac32+o(1)\right)\frac{Q^2}{\log Q};
+\end{equation}
+see, for example, \cite[Chapters 1--2]{MontgomeryVaughan2006}.  The relative
+lattice error is
+\[
+ O_\psi\!\left(\frac{H}{pQ}\right)
+ =O_\psi\!\left(x^{-23/2400}\right),
+\]
+uniformly for $p>U/2$.  This proves \eqref{eq:rowmass}.
+\end{proof}
+
+\begin{lemma}[Post-collapse residue Cauchy]\label{lem:cauchy}
+For every top prime $p$,
+\begin{equation}\label{eq:cauchy}
+ \sum_{a\in(\mathbb Z/p\mathbb Z)^\times}|B_p^\psi(a)|^2
+ \geq\frac{|S_p|^2}{p-1}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+There are exactly $p-1$ primitive residues.  Apply Cauchy's inequality to the
+vector $(B_p^\psi(a))_a$ and use \eqref{eq:Sp}.
+\end{proof}
+
+The placement of Lemma~\ref{lem:cauchy} is the new structural edge.  It is
+applied after all $q$-rows have been summed.  A separate fixed-$q$ application
+would see only the direct energy and would miss the collision amplification.

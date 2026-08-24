@@ -9,12 +9,12 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-240 已完成 TPC-239 指向的 literal top-band audit。对每个固定的
-冻结非负归一化 common profile，top-prime q-split unsigned direct energy 具有精确渐近
-`[1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H=x^(1/96+o(1))`，从而严格排除该 direct
-factor 的 `o(Q^2/H)` 或 fixed-power saving。same-frequency q-collapse 的碰撞增益、
-literal signed `C_h` cancellation、arithmetic L2、signed four-packet Gate B 与 strict
-`1/400` 仍开放。
+当前主线状态：TPC-241 已在每个固定冻结非负归一化 common profile 上证明 top-prime
+q-collapsed coefficient energy 与 normalized finite-window kernel 都有
+`x^(1/48)/log x` 级 liminf，显式常数分别为 `10773log(2)/1600` 与
+`10773log(2)/3200`。因此 TPC-239 的 fixed-power `1/48` 在 exact unsigned
+common-profile 对象上仅差对数即尖锐；下一步必须在平方前保留 literal `C_h` signs 或
+four-packet polarization。arithmetic L2、signed Gate B 与 strict `1/400` 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,7 +29,9 @@ literal signed `C_h` cancellation、arithmetic L2、signed four-packet Gate B �
 
 ## 3. Latest Paper
 
-`tpc-240-top-prime-direct-energy-floor` - `PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR` - 在 literal frozen common profile 下，将 TPC-215 的 top-prime singleton coefficient 与 TPC-216 的 fixed-q primitive row identity 通过 endpoint-safe Riemann sum 和两条 weighted PNT 精确聚合，得到 `D_top^psi=[1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H=x^(1/96+o(1))`；因此 q-split unsigned direct factor 不可能提供 fixed-power saving，但 q-collapsed collision excess 与 signed Gate-B scalar 仍开放。
+`tpc-241-top-prime-collision-sharpness` - `PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS` - 利用冻结 profile 的 normalized first moment、top-prime primitive-residue Cauchy、weighted PNT 与 TPC-238 full-vector lower frame，证明 coefficient/finite-window liminf 常数 `10773log(2)/1600`、`10773log(2)/3200` 及 `x^(1/48)/log x` 下界；从而严格否定 unsigned common-profile kernel 的任何 fixed-power 改进，但 signed four-packet Gate-B scalar 仍开放。
+
+`tpc-240-top-prime-direct-energy-floor` - `PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR` - 在 literal frozen common profile 下，将 TPC-215 的 top-prime singleton coefficient 与 TPC-216 的 fixed-q primitive row identity 通过 endpoint-safe Riemann sum 和两条 weighted PNT 精确聚合，得到 `D_top^psi=[1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H=x^(1/96+o(1))`；因此 q-split unsigned direct factor 不可能提供 fixed-power saving；其 q-collapsed unsigned sharpness 已由 TPC-241 解决，signed Gate-B scalar 仍开放。
 
 `tpc-239-brun-titchmarsh-primitive-bucket-envelope` - `PROVED_SOURCE_BACKED_PRIME_DENSITY_L1 / LOGARITHMIC_ONLY` - 将每个 primitive physical frequency bucket 的 shell-prime incidence 上界为 reduced residue classes 中的 prime counts，并以 Brun--Titchmarsh 证明 `R_h(a)<<x^(1/96)loglog x/log x`；代入 TPC-237 composition 得 normalized `x^(1/48)(log x)^4loglog x`，但没有 fixed-power、signed `C_h` 或 Gate-B advance。
 

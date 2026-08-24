@@ -1,34 +1,40 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V93 / TOP_PRIME_DIRECT_ENERGY_FLOOR`
-claim level：`PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR`
-编号事实终点：TPC-240；TPC-240 trigger：`true`
+状态：`BOLD_CHANNEL_V94 / TOP_PRIME_COLLISION_FIXED_POWER_SHARPNESS`
+claim level：`PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS`
+编号事实终点：TPC-241；TPC-241 trigger：`true`
 
-当前 TPC-240 入口：proof 为
-`research/tpc-big-road/bridge_b_top_prime_direct_energy_floor.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_top_prime_direct_energy_floor_checker.py`，编号论文为
-`papers/tpc-240-top-prime-direct-energy-floor/`。对每个固定 literal frozen common
-profile，top-prime q-split unsigned direct energy 满足
-`D_top^psi=[1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H=x^(1/96+o(1))`；这严格
-排除该 direct factor 的 fixed-power saving，但尚未测量 q-collapsed collision excess。
+当前 TPC-241 入口：proof 为
+`research/tpc-big-road/bridge_b_top_prime_collision_sharpness.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_checker.py`，编号论文为
+`papers/tpc-241-top-prime-collision-sharpness/`。对每个固定 literal frozen common
+profile，top-prime q-collapsed coefficient energy 与 normalized finite-window kernel
+分别满足 liminf 常数 `10773log(2)/1600` 与 `10773log(2)/3200`，共同达到
+`x^(1/48)/log x`；unsigned fixed-power `1/48` 因而 sharp up to logarithms。
 
 ```text
-TPC240_TOP_PRIME_COEFFICIENT = PROVED_C_P_EQUALS_MINUS_LOG_P_OVER_P
-TPC240_FIXED_Q_PRIMITIVE_ROW_NORM = PROVED_EXACT
-TPC240_RIEMANN_ROW_ASYMPTOTIC = PROVED_UNIFORM_ON_TOP_PRIME_SHELL_FOR_EACH_FIXED_PROFILE
-TPC240_KAPPA_RANGE = PROVED_ONE_HALF_LE_KAPPA_LE_ONE
-TPC240_DIRECT_ENERGY_CONSTANT = PROVED_1197_KAPPA_LOG_2_OVER_800
-TPC240_DIRECT_ENERGY_POWER = PROVED_X_1_OVER_96
-TPC240_DIRECT_FIXED_POWER_SAVING = REFUTED_ON_EXACT_Q_SPLIT_UNSIGNED_OBJECT
-TPC240_X_1_OVER_48_SHARPNESS = NOT_CLAIMED
-TPC240_C_H_SIGNED_CANCELLATION = NONE
-TPC240_ARITHMETIC_ADVANCE = NO
-TPC240_L2 = NONE
-TPC240_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC240_STATUS = PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR
-TPC240_ROUND2_CLUE = TEST_THE_TOP_PRIME_Q_COLLAPSED_COLLISION_EXCESS_OVER_THE_EXACT_DIRECT_FLOOR_BEFORE_CLAIMING_X_1_OVER_48_SHARPNESS
+TPC241_TOP_PRIME_ROW_MASS = PROVED_UNIFORM_THREE_OVER_TWO
+TPC241_PRIMITIVE_RESIDUE_CAUCHY = PROVED_EXACT
+TPC241_COEFFICIENT_LIMINF = PROVED_10773_LOG_2_OVER_1600
+TPC241_FINITE_WINDOW_LIMINF = PROVED_10773_LOG_2_OVER_3200
+TPC241_NORMALIZED_FIXED_POWER = PROVED_1_OVER_48_SHARP_UP_TO_LOGARITHMS
+TPC241_UNSIGNED_FIXED_POWER_IMPROVEMENT = REFUTED_ON_EXACT_FIXED_PROFILE_COMMON_SOURCE_KERNEL
+TPC241_FULL_VECTOR_FRAME_BEFORE_TOP_PRIME_RESTRICTION = REQUIRED_EXACT
+TPC241_C_H_SIGNED_CANCELLATION = NONE
+TPC241_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC241_ARITHMETIC_ADVANCE = NO
+TPC241_L2 = NONE
+TPC241_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC241_STATUS = PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS
+TPC241_ROUND2_CLUE = FORCE_THE_NEXT_ARGUMENT_TO_RETAIN_FOUR_PACKET_POLARIZATION_OR_C_H_SIGNS_BEFORE_SQUARING_BECAUSE_THE_UNSIGNED_TOP_PRIME_COLLISION_CHANNEL_IS_FIXED_POWER_SHARP
 ```
+
+TPC-240 上游入口：proof 为
+`research/tpc-big-road/bridge_b_top_prime_direct_energy_floor.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_top_prime_direct_energy_floor_checker.py`，编号论文为
+`papers/tpc-240-top-prime-direct-energy-floor/`。它提供 q-split `x^(1/96)` exact floor；
+TPC-241 的 first-moment collision theorem 产生第二个 `x^(1/96)` factor。
 
 TPC-239 上游入口：proof 为
 `research/tpc-big-road/bridge_b_brun_titchmarsh_primitive_bucket_envelope.md`，checker 为

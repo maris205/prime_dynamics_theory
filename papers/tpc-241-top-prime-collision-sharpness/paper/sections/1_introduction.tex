@@ -1,0 +1,58 @@
+\section{Introduction}
+
+A recurring danger in analytic reassembly arguments is to spend substantial
+effort sharpening an upper envelope whose power is already attained by a
+positive collision mode.  The purpose of this paper is to locate such a mode
+inside the exact common-profile kernel of the present twin-prime program.
+
+The immediate upstream papers separate three mechanisms.  First, q-labels are
+collapsed inside each primitive frequency bucket before a finite-window large
+sieve is applied.  Second, a lower frame shows that distinct reduced
+frequencies cannot cancel by a fixed power after this collapse
+\cite{WangTPC238}.  Third, on top-prime denominator rows the q-split direct
+energy has an exact positive asymptotic of order $x^{1/96}$
+\cite{WangTPC240}.  What remained undecided was whether q-collapse supplies a
+second factor of this size or whether the collision excess is power-smaller.
+
+We answer that question without estimating individual collision patterns.  A
+fixed nonnegative profile has a positive normalized first moment.  After all
+shell primes are collapsed, the total mass in a top-prime row is asymptotic to
+\[
+ \frac{3}{2}\frac{pQ^2}{H\log Q}.
+\]
+There are only $p-1$ primitive residue boxes.  Cauchy's inequality therefore
+forces a coefficient energy of at least the square of this mass divided by
+$p-1$.  Summation against the exact top-prime coefficient
+$|C_p|^2=(\log p)^2/p^2$ creates the power
+\[
+ \frac{Q^4}{H^2}=x^{1/48}.
+\]
+The weighted prime average also supplies an explicit logarithmic coefficient.
+
+The order of operations in the finite-window step matters.  It is not legal to
+discard cross terms in the physical window and then keep only top-prime
+frequencies.  We instead apply the existing lower frame to the complete
+primitive-frequency vector.  The resulting coefficient norm is nonnegative,
+so only at that stage may it be restricted to top primes.  This produces half
+of the coefficient liminf constant and preserves the literal full kernel.
+
+Our conclusion is sharp only in the fixed-power sense.  The lower bound is
+$x^{1/48}/\log x$, whereas available structural upper envelopes carry positive
+logarithmic losses.  Thus logarithmic optimization remains possible, but no
+argument that forgets signs and polarization before squaring can gain
+$x^{-\delta}$ for a fixed $\delta>0$.
+
+This distinction is decisive for the route map.  The top-prime coefficient
+$C_p=-\log p/p$ has a fixed sign, but that sign disappears in $|C_p|^2$.
+Likewise, the four literal polarized packets are absent from the unsigned
+energy.  The theorem therefore neither proves nor refutes cancellation in the
+signed Gate-B scalar.  It says that any successful next argument must expose
+that signed or polarized structure before taking absolute squares.
+
+The paper is organized as follows.  Section~\ref{sec:setup} freezes the source
+object.  Section~\ref{sec:row} proves the uniform row mass and the collision
+inequality.  Section~\ref{sec:coefficient} derives the explicit coefficient
+liminf.  Section~\ref{sec:window} performs the legal lower-frame transfer.
+Section~\ref{sec:sharpness} gives the fixed-power obstruction and its route
+boundary.  Section~\ref{sec:certificate} describes reproducible finite checks,
+which are deliberately separated from theorem evidence.

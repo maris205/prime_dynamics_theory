@@ -1,9 +1,116 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V93_TPC240_TOP_PRIME_DIRECT_ENERGY_FLOOR_RELEASED`
+交接状态：`BOLD_CHANNEL_V94_TPC241_TOP_PRIME_COLLISION_SHARPNESS_RELEASED`
 
-TPC-240 当前 section：top-prime direct-energy floor
+TPC-241 当前 section：top-prime collision sharpness
+--------------------------------------------------
+
+Keep the literal V59 scales and fix one common profile independently of `x`:
+
+```text
+H=x^(21/32), Q=x^(1/3), U=x^(133/400),
+psi in C_c^infinity(R), 0<=psi<=1,
+support(psi) subset [-1,1], integral psi=1.
+```
+
+For top primes `U/2<p<=U`, let
+
+```text
+B_p^psi(a)=sum_(Q<q<=2Q)B_(p,q)^psi(a),
+S_p=sum_((a,p)=1)B_p^psi(a),
+E_top^psi=sum_(U/2<p<=U)|C_p|^2
+            sum_((a,p)=1)|B_p^psi(a)|^2.
+```
+
+The fixed-profile first-moment lattice sum, shell-prime weighted first moment,
+and `pq/H>=(1/2)x^(23/2400)` prove uniformly
+
+```text
+S_p=(3/2+o_psi(1))pQ^2/(H log Q).
+```
+
+There are `p-1` primitive residues, so Cauchy after q-collapse gives
+
+```text
+sum_((a,p)=1)|B_p^psi(a)|^2 >= S_p^2/(p-1).
+```
+
+Using `C_p=-log(p)/p`, weighted PNT,
+`log U/log Q=399/400`, `1/log Q=3/log x`, and
+`Q^4/H^2=x^(1/48)` yields the source-locked liminf
+
+```text
+liminf_(x->infinity) [(log x)/x^(1/48)]E_top^psi
+ >=10773log(2)/1600.
+```
+
+For the finite window, first apply the TPC-238 lower frame to the complete
+primitive-frequency coefficient vector of the full common-profile kernel.  Only
+afterward restrict its nonnegative coefficient norm to the top-prime subenergy.
+Since `U^4/N^2=x^(-67/100+o(1))`, this proves
+
+```text
+liminf_(x->infinity) [(log x)/x^(1/48)]
+ [N^(-1)sum_(n in I_x)|K_psi(n)|^2]
+ >=10773log(2)/3200.
+```
+
+Consequently, for every fixed admissible `psi`, every fixed `delta>0`, and every
+real `A`, no eventual upper bound
+`O_(psi,delta,A)(x^(1/48-delta)(log x)^A)` can hold.  The exact unsigned
+fixed-profile common-source kernel therefore attains power `1/48` up to logarithms.
+This is a structural obstruction: no signed `C_h` cancellation or four-packet
+arithmetic theorem is claimed.
+
+```text
+TPC241_MAXIMUM_CLAIM = FIXED_PROFILE_UNSIGNED_TOP_PRIME_Q_COLLAPSED_COLLISION_AND_FINITE_WINDOW_LIMINF
+TPC241_ROUTE_ADVANCE = YES_OBSTRUCTION
+TPC241_FROZEN_COMMON_PROFILE = REQUIRED_FIXED_NONNEGATIVE_NORMALIZED_C_INFINITY
+TPC241_TOP_PRIME_ROW_MASS = PROVED_UNIFORM_THREE_OVER_TWO
+TPC241_PRIMITIVE_RESIDUE_CAUCHY = PROVED_EXACT
+TPC241_COEFFICIENT_LIMINF = PROVED_10773_LOG_2_OVER_1600
+TPC241_FINITE_WINDOW_LIMINF = PROVED_10773_LOG_2_OVER_3200
+TPC241_NORMALIZED_FIXED_POWER = PROVED_1_OVER_48_SHARP_UP_TO_LOGARITHMS
+TPC241_UNSIGNED_FIXED_POWER_IMPROVEMENT = REFUTED_ON_EXACT_FIXED_PROFILE_COMMON_SOURCE_KERNEL
+TPC241_FULL_VECTOR_FRAME_BEFORE_TOP_PRIME_RESTRICTION = REQUIRED_EXACT
+TPC241_CLASS_UNIFORM_PROFILE_THRESHOLD = NOT_CLAIMED
+TPC241_PLATEAU_PROFILE_SUBSTITUTION = FORBIDDEN
+TPC241_C_H_SIGNED_CANCELLATION = NONE
+TPC241_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC241_ARITHMETIC_ADVANCE = NO
+TPC241_FIXED_ATOM_CREDIT = 0
+TPC241_L2 = NONE
+TPC241_FULL_GATE_B = OPEN
+TPC241_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC241_TPC_TRIGGER = true
+TPC241_NUMBERED_RELEASE = YES
+TPC241_TWIN_PRIME_RESULT = NONE
+TPC241_STATUS = PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS
+TPC241_ROUND2_CLUE = FORCE_THE_NEXT_ARGUMENT_TO_RETAIN_FOUR_PACKET_POLARIZATION_OR_C_H_SIGNS_BEFORE_SQUARING_BECAUSE_THE_UNSIGNED_TOP_PRIME_COLLISION_CHANNEL_IS_FIXED_POWER_SHARP
+```
+
+strongest positive result：source-locked coefficient and finite-window
+`x^(1/48)/log x` liminfs with explicit constants；strongest obstruction：the exact
+unsigned common-profile channel attains the full fixed-power `1/48` scale up to
+logarithms；open theorem：whether the literal signed four-packet projection cancels or
+annihilates this top-prime collision mode before squaring；reusable structure：fixed
+profile first moment + primitive-residue Cauchy + weighted PNT + full-vector
+finite-window lower frame。
+
+编号论文目录：papers/tpc-241-top-prime-collision-sharpness/
+
+```text
+papers/tpc-241-top-prime-collision-sharpness/README.md
+papers/tpc-241-top-prime-collision-sharpness/PROOF_PACKAGE.md
+papers/tpc-241-top-prime-collision-sharpness/paper/paper.pdf
+papers/tpc-241-top-prime-collision-sharpness/results/tpc241_certificate.json
+papers/tpc-241-top-prime-collision-sharpness/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_top_prime_collision_sharpness.md
+research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_checker.py
+```
+
+TPC-240 上游 section：top-prime direct-energy floor
 ---------------------------------------------------
 
 Keep the literal V59 scales and fix one frozen common profile independently of
@@ -46,8 +153,9 @@ D_top^psi
 The aggregate relative error is `O_psi(x^(-23/2400))`.  Quantifiers are for
 each fixed admissible profile; no class-uniform `x_0` and no plateau-profile
 substitution is asserted.  Consequently the exact unsigned direct factor is
-not `o(Q^2/H)` and has no fixed-power saving.  q-collapsed collision excess
-and every signed Gate-B object remain open.
+not `o(Q^2/H)` and has no fixed-power saving.  TPC-240 itself left q-collapsed
+collision excess open; TPC-241 now resolves its unsigned fixed-power sharpness,
+while every signed Gate-B object remains open.
 
 ```text
 TPC240_ROUTE_ADVANCE = YES_OBSTRUCTION
@@ -6106,6 +6214,16 @@ TPC-207 数学 trigger：`true`；TPC-207 已创建：`true`
 上下文节省入口：新会话先读 `TPC_COMPASS.md`、
 `research/tpc-big-road/README.md`、
 `research/tpc-big-road/TPC_ROUTE_MAP.md`、
+`papers/tpc-241-top-prime-collision-sharpness/README.md`、
+`papers/tpc-241-top-prime-collision-sharpness/notes/theorem_ledger.md`、
+`papers/tpc-241-top-prime-collision-sharpness/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_top_prime_collision_sharpness.md`、
+`research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_checker.py`、
+`papers/tpc-240-top-prime-direct-energy-floor/README.md`、
+`papers/tpc-240-top-prime-direct-energy-floor/notes/theorem_ledger.md`、
+`papers/tpc-240-top-prime-direct-energy-floor/notes/route_evaluation.md`、
+`research/tpc-big-road/bridge_b_top_prime_direct_energy_floor.md`、
+`research/tpc-big-road/tpc_bridge_b_top_prime_direct_energy_floor_checker.py`、
 `papers/tpc-238-finite-window-lower-frame-obstruction/README.md`、
 `papers/tpc-238-finite-window-lower-frame-obstruction/notes/theorem_ledger.md`、
 `papers/tpc-238-finite-window-lower-frame-obstruction/notes/route_evaluation.md`、
@@ -6278,8 +6396,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V93/TPC-240 gate、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百四十二次（71 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V94/TPC-241 gate、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百四十四次（72 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -6425,11 +6543,23 @@ python -B research/tpc-big-road/tpc_bridge_b_brun_titchmarsh_primitive_bucket_en
 python -O -B research/tpc-big-road/tpc_bridge_b_brun_titchmarsh_primitive_bucket_envelope_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_top_prime_direct_energy_floor_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_top_prime_direct_energy_floor_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-240 入口：
+最新 TPC-241 入口：
+
+```text
+papers/tpc-241-top-prime-collision-sharpness/README.md
+papers/tpc-241-top-prime-collision-sharpness/notes/theorem_ledger.md
+papers/tpc-241-top-prime-collision-sharpness/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_top_prime_collision_sharpness.md
+research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_checker.py
+```
+
+TPC-240 上游入口：
 
 ```text
 papers/tpc-240-top-prime-direct-energy-floor/README.md

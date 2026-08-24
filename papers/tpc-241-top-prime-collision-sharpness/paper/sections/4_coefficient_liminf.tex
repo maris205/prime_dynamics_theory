@@ -1,0 +1,53 @@
+\section{The coefficient liminf}\label{sec:coefficient}
+
+\begin{theorem}[Top-prime collision lower bound]\label{thm:coefficient}
+For every fixed profile satisfying \eqref{eq:profile},
+\begin{equation}\label{eq:coefficient_liminf}
+ \liminf_{x\to\infty}\frac{\log x}{x^{1/48}}\Etop
+ \geq \frac{10773\log 2}{1600}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Insert Lemma~\ref{lem:rowmass} into Lemma~\ref{lem:cauchy}, multiply by
+$|C_p|^2=(\log p)^2/p^2$, and sum over $U/2<p\leq U$.  Since
+$p/(p-1)=1+o(1)$ uniformly on the top shell, we obtain
+\begin{align}
+ \Etop
+ &\geq \left(\frac94+o_\psi(1)\right)
+ \frac{Q^4}{H^2(\log Q)^2}
+ \sum_{U/2<p\leq U}\frac{(\log p)^2}{p}.\label{eq:pre_pnt}
+\end{align}
+Another standard partial-summation consequence of the prime number theorem is
+\begin{equation}\label{eq:weighted_pnt}
+ \sum_{U/2<p\leq U}\frac{(\log p)^2}{p}
+ =(\log2+o(1))\log U.
+\end{equation}
+Hence
+\begin{equation}\label{eq:coefficient_preconstant}
+ \Etop\geq
+ \left(\frac{9\log2}{4}+o_\psi(1)\right)
+ \frac{Q^4}{H^2}\frac{\log U}{(\log Q)^2}.
+\end{equation}
+
+It remains to record the constant without hiding a logarithmic conversion.
+From \eqref{eq:scales},
+\[
+ \frac{\log U}{\log Q}=\frac{399}{400},
+ \qquad \frac{1}{\log Q}=\frac{3}{\log x},
+ \qquad \frac{Q^4}{H^2}=x^{1/48}.
+\]
+Therefore
+\[
+ \frac94\cdot\frac{399}{400}\cdot3
+ =\frac{10773}{1600},
+\]
+and \eqref{eq:coefficient_liminf} follows.
+\end{proof}
+
+\begin{remark}
+The lower bound is profilewise.  The leading constant is independent of the
+shape of the fixed admissible profile because it uses the normalized first
+moment $\int\psi=1$, rather than the second moment appearing in the q-split
+direct energy.
+\end{remark}

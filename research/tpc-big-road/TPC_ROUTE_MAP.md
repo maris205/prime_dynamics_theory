@@ -2,16 +2,16 @@
 
 更新时间：2026-08-24
 
-当前地图版本：V93 / TPC-240
+当前地图版本：V94 / TPC-241
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-240`（`PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR`）；
-对应论文目录为 `papers/tpc-240-top-prime-direct-energy-floor/`。TPC-240 对每个固定
-literal frozen common profile 证明 top-prime q-split direct energy 的精确渐近
-`[1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H=x^(1/96+o(1))`。direct factor 的
-fixed-power saving 已排除；q-collapsed collision excess、signed `C_h` 与 full Gate B
-仍 OPEN。
+当前编号锚点：`TPC-241`（`PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS`）；
+对应论文目录为 `papers/tpc-241-top-prime-collision-sharpness/`。TPC-241 对每个固定
+literal frozen common profile 证明 top-prime q-collapsed coefficient energy 与
+normalized finite-window kernel 的 explicit `x^(1/48)/log x` liminf。故 unsigned
+fixed-power `1/48` sharp up to logarithms；signed `C_h`、four-packet polarization、
+arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -53,9 +53,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V93 / TPC-240                     |
-        | TOP-PRIME DIRECT-ENERGY FLOOR                    |
-        | direct power saturated; q-collision still OPEN  |
+        | YOU ARE HERE — V94 / TPC-241                     |
+        | TOP-PRIME COLLISION SHARPNESS                    |
+        | unsigned 1/48 sharp; signed projection OPEN     |
         +--------------------------------------------------+
                 |
                 v
@@ -98,11 +98,12 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V93 / TPC-240 的
-top-prime direct-energy floor。literal top band 已给出 explicit `x^(1/96)` direct
-floor，证明 direct factor 不能支付 fixed-power saving；下一施工点是保持同一冻结
-profile，测量 q-collapse 后的 same-frequency collision excess。FULL_GATE_B、global
-strict `1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V94 / TPC-241 的
+top-prime collision sharpness obstruction。literal top band 已给出 coefficient 与
+finite-window explicit `x^(1/48)/log x` liminf，证明 unsigned common-profile lane 在
+fixed-power scale 已封口；下一施工点必须在平方前保留 four-packet polarization 或
+literal `C_h` signs。FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit
+继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1232,6 +1233,61 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.35 V94 / TPC-241：top-prime collision sharpness
+
+Fix a literal frozen nonnegative normalized common profile `psi`, independently of
+`x`, and collapse all shell-prime rows at every primitive residue.  For top primes
+`U/2<p<=U`, the normalized first-moment Riemann sum and the shell-prime weighted
+first moment give uniformly
+
+```text
+S_p=sum_((a,p)=1)sum_(Q<q<=2Q)B_(p,q)^psi(a)
+   =(3/2+o_psi(1))pQ^2/(H log Q).
+```
+
+Cauchy on the `p-1` primitive residues, `C_p=-log(p)/p`, and weighted PNT
+then prove
+
+```text
+liminf_(x->infinity) [(log x)/x^(1/48)]E_top^psi
+ >=10773log(2)/1600.
+```
+
+Apply the TPC-238 lower frame first to the complete primitive-frequency coefficient
+vector and only afterward restrict its nonnegative norm to top primes.  Since
+`U^4/N^2=x^(-67/100+o(1))`, the exact finite-window consequence is
+
+```text
+liminf_(x->infinity) [(log x)/x^(1/48)]
+ [N^(-1)sum_(n in I_x)|K_psi(n)|^2]
+ >=10773log(2)/3200.
+```
+
+Thus every eventual `x^(1/48-delta)(log x)^A` upper bound is false for every
+fixed admissible profile, every fixed `delta>0`, and every real `A`.  This is an
+unsigned fixed-profile obstruction.  It does not estimate the literal signed
+four-packet scalar.
+
+```text
+TPC241_TOP_PRIME_ROW_MASS = PROVED_UNIFORM_THREE_OVER_TWO
+TPC241_PRIMITIVE_RESIDUE_CAUCHY = PROVED_EXACT
+TPC241_COEFFICIENT_LIMINF = PROVED_10773_LOG_2_OVER_1600
+TPC241_FINITE_WINDOW_LIMINF = PROVED_10773_LOG_2_OVER_3200
+TPC241_NORMALIZED_FIXED_POWER = PROVED_1_OVER_48_SHARP_UP_TO_LOGARITHMS
+TPC241_UNSIGNED_FIXED_POWER_IMPROVEMENT = REFUTED_ON_EXACT_FIXED_PROFILE_COMMON_SOURCE_KERNEL
+TPC241_FULL_VECTOR_FRAME_BEFORE_TOP_PRIME_RESTRICTION = REQUIRED_EXACT
+TPC241_C_H_SIGNED_CANCELLATION = NONE
+TPC241_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC241_ARITHMETIC_ADVANCE = NO
+TPC241_L2 = NONE
+TPC241_FULL_GATE_B = OPEN
+TPC241_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+```
+
+地图位置：**V94 / TPC-241 closes the unsigned common-profile fixed-power lane.  The
+next bridge must project the top-prime collision mode through the actual four-packet
+polarization or retain literal `C_h` signs before any absolute square.**
+
 ## 5.34 V93 / TPC-240：top-prime direct-energy floor
 
 Fix a literal frozen profile `psi`, independently of `x`, with
@@ -2218,7 +2274,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V93 / TPC-240：
+截至 V94 / TPC-241：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -2568,7 +2624,23 @@ TPC240_FIXED_ATOM_CREDIT = 0
 TPC240_L2 = NONE
 TPC240_FULL_GATE_B = OPEN
 TPC240_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-NUMBERED_RELEASE = TPC-240
+TPC241_TOP_PRIME_ROW_MASS = PROVED_UNIFORM_THREE_OVER_TWO
+TPC241_PRIMITIVE_RESIDUE_CAUCHY = PROVED_EXACT
+TPC241_COEFFICIENT_LIMINF = PROVED_10773_LOG_2_OVER_1600
+TPC241_FINITE_WINDOW_LIMINF = PROVED_10773_LOG_2_OVER_3200
+TPC241_NORMALIZED_FIXED_POWER = PROVED_1_OVER_48_SHARP_UP_TO_LOGARITHMS
+TPC241_UNSIGNED_FIXED_POWER_IMPROVEMENT = REFUTED_ON_EXACT_FIXED_PROFILE_COMMON_SOURCE_KERNEL
+TPC241_FULL_VECTOR_FRAME_BEFORE_TOP_PRIME_RESTRICTION = REQUIRED_EXACT
+TPC241_CLASS_UNIFORM_PROFILE_THRESHOLD = NOT_CLAIMED
+TPC241_PLATEAU_PROFILE_SUBSTITUTION = FORBIDDEN
+TPC241_C_H_SIGNED_CANCELLATION = NONE
+TPC241_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC241_ARITHMETIC_ADVANCE = NO
+TPC241_FIXED_ATOM_CREDIT = 0
+TPC241_L2 = NONE
+TPC241_FULL_GATE_B = OPEN
+TPC241_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+NUMBERED_RELEASE = TPC-241
 ```
 
 以下事实不得从路线图中推断：
@@ -2586,20 +2658,23 @@ NUMBERED_RELEASE = TPC-240
 
 优先级更新为：
 
-1. **TPC-240 已完成：top-prime direct-energy floor**。对每个 fixed frozen profile，
-   q-split unsigned top-prime energy 精确为
-   `[1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H`；direct factor 的 fixed-power saving
-   已 `REFUTED_SCOPED`。下一步测量 q-collapsed top-prime collision excess。
-2. **TPC-239 已完成：Brun--Titchmarsh primitive-bucket envelope**。primitive bucket
+1. **TPC-241 已完成：top-prime collision sharpness**。对每个 fixed frozen profile，
+   q-collapsed coefficient energy 与 normalized finite-window kernel 均有 explicit
+   `x^(1/48)/log x` liminf；unsigned fixed-power `1/48` sharp up to logarithms。下一步
+   必须把这一 collision mode 投影到 actual four-packet polarization，或在平方前保留
+   literal `C_h` signs。
+2. **TPC-240 已完成：top-prime direct-energy floor**。q-split unsigned energy 精确为
+   `[1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H`；其 q-collapsed amplification 与
+   finite-window sharpness已由 TPC-241 完成。
+3. **TPC-239 已完成：Brun--Titchmarsh primitive-bucket envelope**。primitive bucket
    incidence 已编译到 reduced prime progressions，normalized packet trace 改进为
    `x^(1/48)(log x)^4loglog x`。prime density 只节省 logarithm；其 literal top-band
-   direct-factor audit 已由 TPC-240 完成。
-3. **TPC-238 已完成：finite-window lower-frame obstruction**。normalized frame 为
+   unsigned sharpness audit 已由 TPC-240/241 完成。
+4. **TPC-238 已完成：finite-window lower-frame obstruction**。normalized frame 为
    `[1/2-pi^2 U^4/(6N^2)]_+`，V59 defect 是 `x^(-67/100)`；因此
-   cross-reduced-frequency fixed-power cancellation 已 `REFUTED_SCOPED`。下一步进入
-   primitive same-frequency `q` bucket，先使用 source-valid prime-AP counting，再审计
-   literal `C_h`-weighted energy。
-4. **TPC-237 已完成：collision-compressed finite-window reassembly**。primitive
+   cross-reduced-frequency fixed-power cancellation 已 `REFUTED_SCOPED`；TPC-241 进一步
+   证明 same-frequency unsigned collision 也达到 full fixed-power scale。
+5. **TPC-237 已完成：collision-compressed finite-window reassembly**。primitive
    frequency bucket 先用 physical collision factor 压缩 `q`，再用 Farey large sieve
    接到 `I_x`，normalized trace 达到 `x^(1/48)+x^(1/50)`。其 cross-frequency
    cancellation question 已由 TPC-238 以 lower frame 封口。
@@ -2683,11 +2758,10 @@ NUMBERED_RELEASE = TPC-240
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-240 的下一步：top-prime q-collapsed collision sharpness audit**。top-prime
-    singleton coefficient 与 q-split direct floor 已精确锁定；现在保持同一 literal
-    nonnegative normalized profile，计算 same-frequency q-collapse 的 first-moment
-    occupancy，并测试它是否真实产生第二个 `x^(1/96)` factor。不得提前推广到 signed
-    four-packet Gate-B scalar。
+12. **TPC-241 的下一步：signed projection of the sharp collision mode**。将已证明尖锐的
+    top-prime q-collapsed mode 放回 actual four-packet polarization 或 literal signed
+    `C_h` weighted scalar，并在任何 absolute square 之前测试 annihilation/cancellation；
+    不再继续寻找 coefficient-blind unsigned fixed-power upper improvement。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2786,6 +2860,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-24 | V94 / TPC-241 | Bridge A / Gate B：unsigned top-prime q-collapsed exponent sharp；signed four-packet projection open | `TPC-241` | fixed frozen profile 下 first moment、primitive-residue Cauchy、weighted PNT 与 full-vector lower frame 给 coefficient/finite-window `x^(1/48)/log x` explicit liminf；unsigned fixed-power improvement refuted scoped |
 | 2026-08-24 | V93 / TPC-240 | Bridge A / Gate B：top-prime q-split direct floor exact；q-collapsed collision/signed arithmetic open | `TPC-240` | fixed frozen profile 下 exact row Riemann sum 与 weighted PNT 给 `[1197 kappa_psi log2/800+o(1)]x^(1/96)`；direct-factor fixed-power saving refuted scoped |
 | 2026-08-24 | V92 / TPC-239 | Bridge A / Gate B：primitive-bucket Brun--Titchmarsh；logarithmic saving proved，signed coefficient arithmetic open | `TPC-239` | reduced prime-AP compiler 给 `R_h(a)<<x^(1/96)loglog x/log x`；packet trace 改进为 `x^(1/48)(log x)^4loglog x`，fixed-power 不变 |
 | 2026-08-24 | V91 / TPC-238 | Bridge A / Gate B：finite-window lower frame；cross-reduced-frequency saving refuted scoped，within-bucket arithmetic open | `TPC-238` | triangular Fejér minorant 与 circular packing 给 normalized frame `1/2-O(x^(-67/100))`；施工点锁到 same-frequency `q` buckets |

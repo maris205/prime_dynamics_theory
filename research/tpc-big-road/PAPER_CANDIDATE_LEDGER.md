@@ -2,11 +2,96 @@
 
 更新时间：2026-08-24
 
-状态：**TPC240_PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR / Q_COLLAPSED_COLLISION_OPEN**
+状态：**TPC241_PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS / SIGNED_FOUR_PACKET_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.35 已发布：TPC-241 top-prime collision sharpness
+
+项目：`papers/tpc-241-top-prime-collision-sharpness/`
+
+类型：**PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS**。
+
+Fix independently of `x` a literal frozen common profile
+
+```text
+psi in C_c^infinity(R), 0<=psi<=1,
+support(psi) subset [-1,1], integral psi=1.
+```
+
+For top primes `U/2<p<=U`, let `B_p(a)=sum_q B_(p,q)^psi(a)` and let
+`S_p=sum_((a,p)=1)B_p(a)`.  The normalized profile first moment and weighted
+prime first moment give, uniformly on the top shell,
+
+```text
+S_p=(3/2+o_psi(1))pQ^2/(H log Q).
+```
+
+Since there are `p-1` primitive residues, Cauchy after q-collapse yields
+
+```text
+sum_((a,p)=1)|B_p(a)|^2 >= S_p^2/(p-1).
+```
+
+With `C_p=-log(p)/p`, weighted PNT and
+`Q^4/H^2=x^(1/48)`, this proves
+
+```text
+liminf_(x->infinity) [(log x)/x^(1/48)] E_top^psi
+ >= 10773 log(2)/1600.
+```
+
+The TPC-238 lower frame must first be applied to the complete primitive-frequency
+coefficient vector.  Only then is its nonnegative norm restricted to the top-prime
+subenergy.  This legal order gives
+
+```text
+liminf_(x->infinity) [(log x)/x^(1/48)]
+  [N^(-1)sum_(n in I_x)|K_psi(n)|^2]
+ >= 10773 log(2)/3200.
+```
+
+For every fixed admissible `psi`, fixed `delta>0`, and real `A`, the latter
+liminf refutes every eventual upper bound of the form
+`O_(psi,delta,A)(x^(1/48-delta)(log x)^A)`.  Thus the TPC-239 unsigned
+fixed-power exponent is sharp up to logarithms on the exact common-profile kernel.
+No signed `C_h`, four-packet polarization, arithmetic `L2`, or Gate-B saving is
+obtained.
+
+```text
+TPC241_MAXIMUM_CLAIM = FIXED_PROFILE_UNSIGNED_TOP_PRIME_Q_COLLAPSED_COLLISION_AND_FINITE_WINDOW_LIMINF
+TPC241_ROUTE_ADVANCE = YES_OBSTRUCTION
+TPC241_FROZEN_COMMON_PROFILE = REQUIRED_FIXED_NONNEGATIVE_NORMALIZED_C_INFINITY
+TPC241_TOP_PRIME_ROW_MASS = PROVED_UNIFORM_THREE_OVER_TWO
+TPC241_PRIMITIVE_RESIDUE_CAUCHY = PROVED_EXACT
+TPC241_COEFFICIENT_LIMINF = PROVED_10773_LOG_2_OVER_1600
+TPC241_FINITE_WINDOW_LIMINF = PROVED_10773_LOG_2_OVER_3200
+TPC241_NORMALIZED_FIXED_POWER = PROVED_1_OVER_48_SHARP_UP_TO_LOGARITHMS
+TPC241_UNSIGNED_FIXED_POWER_IMPROVEMENT = REFUTED_ON_EXACT_FIXED_PROFILE_COMMON_SOURCE_KERNEL
+TPC241_FULL_VECTOR_FRAME_BEFORE_TOP_PRIME_RESTRICTION = REQUIRED_EXACT
+TPC241_CLASS_UNIFORM_PROFILE_THRESHOLD = NOT_CLAIMED
+TPC241_PLATEAU_PROFILE_SUBSTITUTION = FORBIDDEN
+TPC241_C_H_SIGNED_CANCELLATION = NONE
+TPC241_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC241_ARITHMETIC_ADVANCE = NO
+TPC241_FIXED_ATOM_CREDIT = 0
+TPC241_L2 = NONE
+TPC241_FULL_GATE_B = OPEN
+TPC241_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC241_STATUS = PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS
+TPC241_ROUND2_CLUE = FORCE_THE_NEXT_ARGUMENT_TO_RETAIN_FOUR_PACKET_POLARIZATION_OR_C_H_SIGNS_BEFORE_SQUARING_BECAUSE_THE_UNSIGNED_TOP_PRIME_COLLISION_CHANNEL_IS_FIXED_POWER_SHARP
+```
+
+strongest positive result：explicit source-locked coefficient and finite-window
+`x^(1/48)/log x` liminfs；strongest obstruction：the exact unsigned common-profile
+channel attains the full fixed-power `1/48` scale up to logarithms；open theorem：
+whether literal four-packet polarization or signed `C_h` cancels the top-prime
+collision mode before absolute squaring；reusable structure：normalized profile first
+moment + primitive-residue Cauchy + weighted PNT + full-vector finite-window lower
+frame；`ROUND2_CLUE`：
+`FORCE_THE_NEXT_ARGUMENT_TO_RETAIN_FOUR_PACKET_POLARIZATION_OR_C_H_SIGNS_BEFORE_SQUARING_BECAUSE_THE_UNSIGNED_TOP_PRIME_COLLISION_CHANNEL_IS_FIXED_POWER_SHARP`。
 
 ## 0.34 已发布：TPC-240 top-prime direct-energy floor
 
@@ -2220,6 +2305,7 @@ handoff。
 
 | 日期 | 版本 | 新增可发表单元 | 状态 |
 |---|---|---|---|
+| 2026-08-24 | V94 | fixed frozen common profile 的 top-prime q-collapsed coefficient与 finite-window explicit liminf，证明 unsigned `1/48` fixed-power sharp up to logarithms | **PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS / TPC-241** |
 | 2026-08-24 | V93 | fixed frozen profile 的 top-prime q-split direct-energy exact asymptotic、explicit `1197 kappa_psi log2/800` constant 与 no-fixed-power-saving obstruction | **PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR / TPC-240** |
 | 2026-08-24 | V89 | physical gcd-fiber multiplicity theorem、unnormalized weighted Bessel envelope 与 exact triple-collision obstruction | **PROVED_STRUCTURAL_L1 / TPC-236** |
 | 2026-08-24 | V88 | V59 physical-depth exact crosswalk、single-clock iff obstruction 与 packet-output normalization firewall | **PROVED_STRUCTURAL_L1 / TPC-235** |

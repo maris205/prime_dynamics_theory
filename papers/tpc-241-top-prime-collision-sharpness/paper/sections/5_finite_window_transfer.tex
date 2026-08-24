@@ -1,0 +1,46 @@
+\section{Finite-window transfer without deleting cross terms}\label{sec:window}
+
+The coefficient lower bound concerns the full primitive-frequency expansion
+underlying \eqref{eq:full_kernel}.  We now transfer it to the literal physical
+window.
+
+\begin{theorem}[Finite-window liminf]\label{thm:window}
+For every fixed profile satisfying \eqref{eq:profile},
+\begin{equation}\label{eq:window_liminf}
+ \liminf_{x\to\infty}\frac{\log x}{x^{1/48}}
+ \meanIx |K_\psi(n)|^2
+ \geq \frac{10773\log 2}{3200}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The finite-window lower frame of \cite{WangTPC238}, applied to the complete
+coefficient vector indexed by distinct primitive fractions $a/h$, gives
+\begin{align}
+ \meanIx |K_\psi(n)|^2
+ &\geq
+ \left[\frac12-\frac{\pi^2U^4}{6N^2}\right]_+
+ \sum_{h\leq U}\ \sum_{\substack{a\, (\mathrm{mod}\,h)\\(a,h)=1}}
+ \left|C_h\sum_{q\in\Qx}B_{h,q}^\psi(a)\right|^2.
+ \label{eq:full_lower_frame}
+\end{align}
+Every term in the coefficient norm on the right is nonnegative.  We may now,
+and only now, restrict it to prime denominators $U/2<p\leq U$.  The restricted
+sum is exactly $\Etop$.  Thus
+\begin{equation}\label{eq:window_top_restriction}
+ \meanIx |K_\psi(n)|^2
+ \geq
+ \left[\frac12-\frac{\pi^2U^4}{6N^2}\right]_+\Etop.
+\end{equation}
+By \eqref{eq:scale_arithmetic}, the bracket is $1/2-o(1)$.  Combining
+\eqref{eq:window_top_restriction} with Theorem~\ref{thm:coefficient} proves
+\eqref{eq:window_liminf}.
+\end{proof}
+
+\begin{remark}[Why the order is necessary]
+The quadratic form on the left of \eqref{eq:full_lower_frame} contains
+cross-frequency terms that need not be nonnegative.  Deleting them before
+applying the lower frame would be invalid.  Our restriction occurs only after
+the complete quadratic form has been bounded below by a diagonal coefficient
+norm.
+\end{remark}

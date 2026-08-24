@@ -1,0 +1,49 @@
+\section{Fixed-power sharpness and route closure}\label{sec:sharpness}
+
+\begin{corollary}[No fixed-power improvement]\label{cor:no_power}
+Fix an admissible profile $\psi$, a number $\delta>0$, and a real number $A$.
+There is no constant $C_{\psi,\delta,A}$ for which
+\begin{equation}\label{eq:false_upper}
+ \meanIx |K_\psi(n)|^2
+ \leq C_{\psi,\delta,A}
+ x^{1/48-\delta}(\log x)^A
+\end{equation}
+holds for all sufficiently large $x$.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:window} has a positive liminf constant.  Dividing its lower
+scale by the right side of \eqref{eq:false_upper} produces, up to a positive
+constant,
+\[
+ \frac{x^\delta}{(\log x)^{A+1}},
+\]
+which tends to infinity for every fixed real $A$.  This contradicts
+\eqref{eq:false_upper}.
+\end{proof}
+
+Corollary~\ref{cor:no_power} closes a specific route, not the whole twin-prime
+program.  It excludes further fixed-power progress from a coefficient-blind
+unsigned envelope on the same fixed-profile common-source kernel.  Three
+features remain outside the theorem:
+
+\begin{enumerate}
+\item The sign of $C_h$ is erased by the absolute square.  Even on top primes,
+      the identity $C_p=-\log p/p$ contributes only $|C_p|^2$.
+\item The four literal polarized packets are not projected before the square.
+      Their signed combination could cancel, attenuate, or annihilate the
+      positive collision mode proved here.
+\item The theorem supplies no arithmetic $L^2$ saving, no strict $1/400$
+      payment, and no fixed-atom credit.
+\end{enumerate}
+
+The most economical next question is therefore sign-sensitive: project the
+top-prime collision mode through the actual four-packet polarization before any
+absolute square, or retain the literal $C_h$ signs across denominator bands.
+Continuing to optimize unsigned bucket multiplicities cannot change the
+fixed-power exponent.
+
+The phrase ``sharp up to logarithms'' is used only in this fixed-power sense.
+The present lower bound has one negative logarithm, while known structural
+upper bounds have positive logarithmic factors.  Matching those logarithms is
+an open refinement and is not needed for Corollary~\ref{cor:no_power}.

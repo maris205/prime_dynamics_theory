@@ -1,0 +1,34 @@
+\section{Exact finite certificate and adversarial controls}\label{sec:certificate}
+
+The release contains three executable checks.  Their purpose is reproducibility
+of the algebraic ledger and software interface; none is used as evidence for an
+asymptotic theorem.
+
+The producer records every exponent and leading rational as an exact fraction.
+In particular it recomputes
+\[
+ \frac{Q^4}{H^2}=x^{1/48},\qquad
+ \frac94\frac{399}{400}3=\frac{10773}{1600},\qquad
+ \frac12\frac{10773}{1600}=\frac{10773}{3200}.
+\]
+It also freezes the object type, profile class, shell domains, and the legal
+full-vector-frame-before-restriction order.  Mutations that promote the status,
+change the profile to a signed class, replace q-collapse by a q-split object, or
+reverse the frame order are required to fail.
+
+The finite fixture uses $Q=101$, $H=509$, $U=97$, three top primes, and all
+twenty primes in $(Q,2Q]$.  Rational compact-support weights are collapsed at
+primitive residues.  For each row, the program verifies
+\[
+ \sum_a\left|\sum_q B_{p,q}(a)\right|^2
+ \geq \frac{\left|\sum_{a,q}B_{p,q}(a)\right|^2}{p-1}
+\]
+and finds strictly positive collision excess over the q-split direct energy.
+These weights are finite algebraic illustrations, not substitutions for the
+fixed smooth theorem profile.
+
+An independent checker does not import the producer.  It rejects duplicate JSON
+keys and nonfinite constants, recomputes every rational row, and verifies strict
+JSON types.  A separate stress program repeats the collision test for four
+prime-shell scales and two rational bump shapes.  Normal and optimized Python
+modes must have empty standard error and byte-identical standard output.

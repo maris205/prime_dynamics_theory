@@ -1,59 +1,67 @@
-# TPC big road V93 / TPC-240: top-prime direct-energy floor
+# TPC big road V94 / TPC-241: top-prime collision sharpness
 
 更新时间：2026-08-24
 
-状态：`TPC240_PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR / FULL_GATE_B_OPEN`
+状态：`TPC241_PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-240 proof 为
+当前 TPC-241 proof 为
+`bridge_b_top_prime_collision_sharpness.md`，checker 为
+`tpc_bridge_b_top_prime_collision_sharpness_checker.py`，编号论文为
+`../../papers/tpc-241-top-prime-collision-sharpness/`。
+
+For every fixed literal frozen nonnegative normalized profile `psi`, collapse all
+shell-prime rows at each primitive residue before taking the coefficient norm.  A
+uniform first-moment Riemann sum, Cauchy over the `p-1` primitive residues, weighted
+PNT, and then the TPC-238 full-vector lower frame prove
+
+```text
+liminf_(x->infinity) [(log x)/x^(1/48)] E_top^psi
+ >= 10773 log(2)/1600,
+
+liminf_(x->infinity) [(log x)/x^(1/48)]
+  [N^(-1) sum_(n in I_x)|K_psi(n)|^2]
+ >= 10773 log(2)/3200.
+```
+
+The lower frame is applied to the complete primitive-frequency vector before its
+nonnegative norm is restricted to the top-prime shell.  Hence no finite-window cross
+term is illegally deleted.  These bounds refute every fixed-power improvement below
+`x^(1/48)` on the exact fixed-profile unsigned common-source kernel.  They do not
+control the signed four-packet projection.
+
+```text
+TPC241_TOP_PRIME_ROW_MASS = PROVED_UNIFORM_THREE_OVER_TWO
+TPC241_PRIMITIVE_RESIDUE_CAUCHY = PROVED_EXACT
+TPC241_COEFFICIENT_LIMINF = PROVED_10773_LOG_2_OVER_1600
+TPC241_FINITE_WINDOW_LIMINF = PROVED_10773_LOG_2_OVER_3200
+TPC241_NORMALIZED_FIXED_POWER = PROVED_1_OVER_48_SHARP_UP_TO_LOGARITHMS
+TPC241_UNSIGNED_FIXED_POWER_IMPROVEMENT = REFUTED_ON_EXACT_FIXED_PROFILE_COMMON_SOURCE_KERNEL
+TPC241_FULL_VECTOR_FRAME_BEFORE_TOP_PRIME_RESTRICTION = REQUIRED_EXACT
+TPC241_C_H_SIGNED_CANCELLATION = NONE
+TPC241_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
+TPC241_ARITHMETIC_ADVANCE = NO
+TPC241_FIXED_ATOM_CREDIT = 0
+TPC241_L2 = NONE
+TPC241_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC241_ROUND2_CLUE = FORCE_THE_NEXT_ARGUMENT_TO_RETAIN_FOUR_PACKET_POLARIZATION_OR_C_H_SIGNS_BEFORE_SQUARING_BECAUSE_THE_UNSIGNED_TOP_PRIME_COLLISION_CHANNEL_IS_FIXED_POWER_SHARP
+```
+
+strongest positive result：source-locked `x^(1/48)/log x` coefficient and
+finite-window liminf；strongest obstruction：the exact unsigned common-profile channel
+attains fixed-power `1/48` up to logarithms；open theorem：whether literal four-packet
+polarization or signed `C_h` annihilates this collision mode before squaring；reusable
+structure：profile first moment + primitive-residue Cauchy + weighted PNT +
+finite-window lower frame。
+
+TPC-240 上游 proof 为
 `bridge_b_top_prime_direct_energy_floor.md`，checker 为
 `tpc_bridge_b_top_prime_direct_energy_floor_checker.py`，编号论文为
-`../../papers/tpc-240-top-prime-direct-energy-floor/`。
-
-For every fixed literal frozen profile `psi`, put
-`kappa_psi=integral |psi|^2`.  On top-prime denominators `U/2<p<=U`, the source
-coefficient is exactly `C_p=-log(p)/p`; fixed-q primitive injectivity and an
-endpoint-safe lattice Riemann sum give
-
-```text
-sum_((a,p)=1)|B_(p,q)^psi(a)|^2
- = kappa_psi pq/H+O_psi(1).
-```
-
-Two weighted-prime averages then prove the exact q-split direct-energy asymptotic
-
-```text
-D_top^psi
- = [1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H
- = x^(1/96+o_psi(1)).
-```
-
-Thus this exact unsigned direct factor is not `o(Q^2/H)` and cannot supply a
-fixed-power saving.  It does not yet measure q-collapsed same-frequency collisions.
-
-```text
-TPC240_TOP_PRIME_COEFFICIENT = PROVED_C_P_EQUALS_MINUS_LOG_P_OVER_P
-TPC240_FIXED_Q_PRIMITIVE_ROW_NORM = PROVED_EXACT
-TPC240_RIEMANN_ROW_ASYMPTOTIC = PROVED_UNIFORM_ON_TOP_PRIME_SHELL_FOR_EACH_FIXED_PROFILE
-TPC240_KAPPA_RANGE = PROVED_ONE_HALF_LE_KAPPA_LE_ONE
-TPC240_DIRECT_ENERGY_CONSTANT = PROVED_1197_KAPPA_LOG_2_OVER_800
-TPC240_DIRECT_ENERGY_POWER = PROVED_X_1_OVER_96
-TPC240_DIRECT_FIXED_POWER_SAVING = REFUTED_ON_EXACT_Q_SPLIT_UNSIGNED_OBJECT
-TPC240_X_1_OVER_48_SHARPNESS = NOT_CLAIMED
-TPC240_C_H_SIGNED_CANCELLATION = NONE
-TPC240_ARITHMETIC_ADVANCE = NO
-TPC240_FIXED_ATOM_CREDIT = 0
-TPC240_L2 = NONE
-TPC240_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC240_ROUND2_CLUE = TEST_THE_TOP_PRIME_Q_COLLAPSED_COLLISION_EXCESS_OVER_THE_EXACT_DIRECT_FLOOR_BEFORE_CLAIMING_X_1_OVER_48_SHARPNESS
-```
-
-strongest positive result：exact `x^(1/96)` direct-energy asymptotic with explicit
-constant；strongest obstruction：the q-split unsigned direct factor has no fixed-power
-saving；open theorem：top-prime q-collapsed collision excess；reusable structure：
-top-prime singleton plus primitive-row Riemann sum plus factorized weighted PNT。
+`../../papers/tpc-240-top-prime-direct-energy-floor/`。It gives the exact q-split
+`x^(1/96)` direct floor whose q-collapsed collision amplification TPC-241 proves to
+reach another `x^(1/96)` factor up to logarithms.
 
 TPC-239 上游 proof 为
 `bridge_b_brun_titchmarsh_primitive_bucket_envelope.md`，checker 为

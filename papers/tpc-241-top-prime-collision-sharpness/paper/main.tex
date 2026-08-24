@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\input{math_commands}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+
+\hypersetup{
+  pdftitle={A Top-Prime Collision Lower Bound at the One-over-Forty-Eight Barrier},
+  pdfauthor={Liang Wang},
+  pdfsubject={Twin-prime analytic bridge; fixed-profile collision sharpness},
+  pdfkeywords={twin primes, large sieve, prime number theorem, collision energy, sharpness}
+}
+
+\title{A Top-Prime Collision Lower Bound at the
+$1/48$ Barrier}
+\author{Liang Wang\\
+Huazhong University of Science and Technology\\
+Wuhan 430074, P.R. China\\
+\texttt{liang.wang@hust.edu.cn}}
+\date{August 24, 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/0_abstract}
+\input{sections/1_introduction}
+\input{sections/2_frozen_setup}
+\input{sections/3_row_mass_and_cauchy}
+\input{sections/4_coefficient_liminf}
+\input{sections/5_finite_window_transfer}
+\input{sections/6_sharpness_and_route}
+\input{sections/7_certificate}
+\input{sections/8_conclusion}
+
+\bibliographystyle{alpha}
+\bibliography{references}
+
+\appendix
+\input{sections/A_status_ledger}
+
+\end{document}

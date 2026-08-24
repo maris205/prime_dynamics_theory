@@ -1,0 +1,62 @@
+\section{Frozen source object}\label{sec:setup}
+
+Let $x\to\infty$ and freeze
+\begin{equation}\label{eq:scales}
+ H=x^{21/32},\qquad Q=x^{1/3},\qquad U=x^{133/400}.
+\end{equation}
+Let
+\[
+ \Qx=\{q\text{ prime}:Q<q\leq 2Q\},
+ \qquad \Ix=(x/2,x]\cap\mathbb Z,
+ \qquad N=\#\Ix.
+\]
+Fix once and for all a real function $\psi\in C_c^\infty(\mathbb R)$ such that
+\begin{equation}\label{eq:profile}
+ 0\leq\psi\leq1,\qquad \supp\psi\subseteq[-1,1],
+ \qquad \int_{\mathbb R}\psi(t)\,dt=1.
+\end{equation}
+All asymptotic constants may depend on this fixed profile.  We do not assert a
+threshold uniform over the whole profile class.
+
+For an active denominator $h\leq U$, a shell prime $q\in\Qx$, and a primitive
+residue $a\pmod h$, define
+\begin{equation}\label{eq:B_hq}
+ B_{h,q}^{\psi}(a)
+ =\sum_{0<|m|\leq\lfloor hq/H\rfloor}
+ \psi\!\left(\frac{Hm}{hq}\right)
+ \one_{m q^{-1}\equiv a\, (\mathrm{mod}\,h)}.
+\end{equation}
+Because $h\leq U<q$ eventually, the inverse $q^{-1}\pmod h$ exists whenever
+$h$ belongs to the squarefree source support.  More precisely, let
+\[
+ \Dx=\{d:H/(4Q)<d\leq U,\ \mu(d)^2=1\},\qquad
+ C_h=\sum_{\substack{d\in\Dx\\h\mid d}}\frac{\mu(d)\log d}{d},
+\]
+and put
+\begin{equation}\label{eq:full_kernel}
+ K_\psi(n)=\sum_{h\leq U}\ \sum_{\substack{a\, (\mathrm{mod}\,h)\\(a,h)=1}}
+ C_h\left(\sum_{q\in\Qx}B_{h,q}^{\psi}(a)\right)
+ \e^{2\pi i n a/h}.
+\end{equation}
+
+We use only the top-prime part of its coefficient norm.  For primes
+$U/2<p\leq U$, eventually $p>H/(4Q)$, and the only multiple of $p$ not
+exceeding $U$ is $d=p$.  The exact source identity is therefore
+\begin{equation}\label{eq:Cp}
+ C_p=-\frac{\log p}{p}.
+\end{equation}
+Define
+\begin{align}
+ B_p^\psi(a)&=\sum_{q\in\Qx}B_{p,q}^\psi(a),\label{eq:Bp}\\
+ S_p&=\sum_{a\in(\mathbb Z/p\mathbb Z)^\times}B_p^\psi(a),\label{eq:Sp}\\
+ \Etop&=\sum_{U/2<p\leq U}|C_p|^2
+ \sum_{a\in(\mathbb Z/p\mathbb Z)^\times}|B_p^\psi(a)|^2.
+ \label{eq:Etop}
+\end{align}
+
+The scale arithmetic needed below is
+\begin{equation}\label{eq:scale_arithmetic}
+ \frac{UQ}{H}=x^{23/2400},\qquad
+ \frac{Q^4}{H^2}=x^{1/48},\qquad
+ \frac{U^4}{N^2}=x^{-67/100+o(1)}.
+\end{equation}
