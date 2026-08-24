@@ -1,13 +1,45 @@
-# TPC big road V82 / TPC-229: primitive resonance matching spectrum
+# TPC big road V83 / TPC-230: matched-resonance mass ceiling
 
 更新时间：2026-08-24
 
-状态：`TPC229_PROVED_STRUCTURAL_L1 / PRIMITIVE_RESONANCE_MATCHING_SPECTRUM / FULL_GATE_B_OPEN`
+状态：`TPC230_PROVED_STRUCTURAL_L1 / MATCHED_RESONANCE_MASS_CEILING / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-229 proof 为
+当前 TPC-230 proof 为
+`bridge_b_matched_resonance_mass_ceiling.md`，checker 为
+`tpc_bridge_b_matched_resonance_mass_ceiling_checker.py`，编号论文为
+`../../papers/tpc-230-matched-resonance-mass-ceiling/`。
+
+Matching blocks imply exact sharp ceiling
+
+```text
+E_AP>=D-M, saving<=matched mass M.
+```
+
+Under row-mass ratio `kappa`, `M/D<=2*kappa*E/P`; literal aligned rows have atom counts
+`2..8`, so `kappa<=4` and strict `1/400` requires `E/P>=1/3200`.
+
+```text
+TPC230_MATCHED_MASS_SAVING_CEILING = PROVED_EXACT_SHARP
+TPC230_COMPARABLE_ROW_DENSITY_TOLL = PROVED_EXACT
+TPC230_LITERAL_ALIGNED_KAPPA_LE_4 = PROVED_EXACT
+TPC230_STRICT_1_OVER_400_EDGE_DENSITY_TOLL = 1/3200
+TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = OPEN
+TPC230_ACTUAL_V59_SOURCE_MASS_COMPARABILITY = OPEN
+TPC230_ARITHMETIC_ADVANCE = NO
+TPC230_FIXED_ATOM_CREDIT = 0
+TPC230_L2 = NONE
+TPC230_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC230_ROUND2_CLUE = APPLY_A_TWO_LINEAR_FORM_UPPER_BOUND_SIEVE_TO_THE_3_7_RESONANCE_COUNT
+```
+
+strongest positive result：sharp global capacity bound 与 explicit density toll；strongest
+obstruction：unmatched mass 完全不可触碰；open theorem：two-linear-form resonance density
+与 actual source comparability；reusable structure：matched/unmatched mass ledger。
+
+TPC-229 上游 proof 为
 `bridge_b_primitive_resonance_matching_spectrum.md`，checker 为
 `tpc_bridge_b_primitive_resonance_matching_spectrum_checker.py`，编号论文为
 `../../papers/tpc-229-primitive-resonance-matching-spectrum/`。

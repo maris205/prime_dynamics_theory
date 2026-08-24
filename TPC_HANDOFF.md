@@ -1,9 +1,55 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V82_TPC229_SEALED_FOR_NEXT_BATCH_PAPER`
+交接状态：`BOLD_CHANNEL_V83_TPC230_SEALED_FOR_NEXT_BATCH_PAPER`
 
-TPC-229 当前 section：primitive resonance matching spectrum
+TPC-230 当前 section：matched-resonance mass ceiling
+------------------------------------------------------
+
+For total diagonal mass `D` and matched mass `M`, exact matching decomposition gives
+`E_AP>=D-M`; saving is at most `M`, sharply. Under row-mass ratio `kappa`,
+`M/D<=2*kappa*E/P`. Literal aligned rows have `2..8` primitive atoms, so `kappa<=4` and
+strict `1/400` requires `E/P>=1/3200`.
+
+```text
+TPC230_ROUTE_ADVANCE = YES
+TPC230_UNMATCHED_ENERGY_FLOOR = PROVED_EXACT
+TPC230_MATCHED_MASS_SAVING_CEILING = PROVED_EXACT_SHARP
+TPC230_NECESSARY_MASS_FRACTION = PROVED_EXACT
+TPC230_COMPARABLE_ROW_DENSITY_TOLL = PROVED_EXACT
+TPC230_LITERAL_ALIGNED_KAPPA_LE_4 = PROVED_EXACT
+TPC230_STRICT_1_OVER_400_EDGE_DENSITY_TOLL = 1/3200
+TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = OPEN
+TPC230_ACTUAL_V59_SOURCE_MASS_COMPARABILITY = OPEN
+TPC230_ARITHMETIC_ADVANCE = NO
+TPC230_FIXED_ATOM_CREDIT = 0
+TPC230_L2 = NONE
+TPC230_FULL_GATE_B = OPEN
+TPC230_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC230_TPC_TRIGGER = true
+TPC230_NUMBERED_RELEASE = YES
+TPC230_STATUS = PROVED_STRUCTURAL_L1
+TPC230_ROUND2_CLUE = APPLY_A_TWO_LINEAR_FORM_UPPER_BOUND_SIEVE_TO_THE_3_7_RESONANCE_COUNT
+```
+
+strongest positive result：sharp global capacity ceiling and explicit endpoint density
+toll；strongest obstruction：unmatched mass cannot be touched；open theorem：uniform
+two-linear-form resonance count and actual source comparability；reusable structure：
+matched/unmatched mass ledger。
+
+编号论文目录：papers/tpc-230-matched-resonance-mass-ceiling/
+
+```text
+papers/tpc-230-matched-resonance-mass-ceiling/README.md
+papers/tpc-230-matched-resonance-mass-ceiling/PROOF_PACKAGE.md
+papers/tpc-230-matched-resonance-mass-ceiling/paper/paper.pdf
+papers/tpc-230-matched-resonance-mass-ceiling/results/certificate.json
+papers/tpc-230-matched-resonance-mass-ceiling/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_matched_resonance_mass_ceiling.md
+research/tpc-big-road/tpc_bridge_b_matched_resonance_mass_ceiling_checker.py
+```
+
+TPC-229 上游 section：primitive resonance matching spectrum
 --------------------------------------------------------------
 
 Every primitive edge satisfies `10Q/7<p<8Q/5<r<2Q`; low/high endpoints are disjoint
@@ -5534,8 +5580,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V78/TPC-225 gate、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百一十二次（56 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V83/TPC-230 gate、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百二十二次（61 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -5659,11 +5705,23 @@ python -B research/tpc-big-road/tpc_bridge_b_source_native_polarized_collision_c
 python -O -B research/tpc-big-road/tpc_bridge_b_source_native_polarized_collision_compiler_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_primitive_resonance_matching_spectrum_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_primitive_resonance_matching_spectrum_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_matched_resonance_mass_ceiling_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_matched_resonance_mass_ceiling_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-229 入口：
+最新 TPC-230 入口：
+
+```text
+papers/tpc-230-matched-resonance-mass-ceiling/README.md
+papers/tpc-230-matched-resonance-mass-ceiling/notes/theorem_ledger.md
+papers/tpc-230-matched-resonance-mass-ceiling/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_matched_resonance_mass_ceiling.md
+research/tpc-big-road/tpc_bridge_b_matched_resonance_mass_ceiling_checker.py
+```
+
+TPC-229 上游入口：
 
 ```text
 papers/tpc-229-primitive-resonance-matching-spectrum/README.md

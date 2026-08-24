@@ -2,15 +2,14 @@
 
 更新时间：2026-08-24
 
-当前地图版本：V82 / TPC-229
+当前地图版本：V83 / TPC-230
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-229`（`PROVED_STRUCTURAL_L1 / PRIMITIVE_RESONANCE_MATCHING_SPECTRUM`）；
-对应论文目录为 `papers/tpc-229-primitive-resonance-matching-spectrum/`。TPC-229 证明
-primitive `3--7` graph 对所有 scales 都是 matching，global operator 分解为 spectrum
-`(-1,-1,+1,+1)` 的 sharp edge blocks。matched mass、antisymmetric arithmetic dominance
-与 actual V59 crosswalk 仍 OPEN。
+当前编号锚点：`TPC-230`（`PROVED_STRUCTURAL_L1 / MATCHED_RESONANCE_MASS_CEILING`）；
+对应论文目录为 `papers/tpc-230-matched-resonance-mass-ceiling/`。TPC-230 证明 global
+saving is at most matched diagonal mass；literal comparable rows 为 strict `1/400`
+提取 necessary edge-density toll `E/P>=1/3200`。asymptotic edge density 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -52,9 +51,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V82 / TPC-229                     |
-        | PRIMITIVE RESONANCE MATCHING SPECTRUM            |
-        | matched mass / arithmetic dominance OPEN         |
+        | YOU ARE HERE — V83 / TPC-230                     |
+        | MATCHED-RESONANCE MASS CEILING                   |
+        | two-linear-form edge density OPEN                |
         +--------------------------------------------------+
                 |
                 v
@@ -97,10 +96,10 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V82 / TPC-229 的
-primitive resonance matching spectrum。graph complexity 已完全消成 independent 2x2
-blocks，saving iff antisymmetric dominance。下一步先量化 matched resonance mass，避免
-即使逐边完美抵消也只影响稀疏 diagonal mass。FULL_GATE_B、strict
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V83 / TPC-230 的
+matched-resonance mass ceiling。完美逐边抵消最多删除 matched mass；literal rows 支付
+`1/400` 必须有 `E/P>=1/3200`。下一步用 two-linear-form upper-bound sieve 判断该 density
+能否 asymptotically persist。FULL_GATE_B、strict
 `1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
@@ -1231,6 +1230,34 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.24 V83 / TPC-230：matched-resonance mass ceiling
+
+For total diagonal mass `D` and matched mass `M`, exact matching decomposition gives
+
+```text
+E_AP>=D-M, global saving<=M.
+```
+
+This is sharp under edgewise anti-alignment. With row-mass ratio `kappa`,
+`M/D<=2*kappa*E/P`; literal aligned rows have `kappa<=4`, so strict `1/400` requires
+`E/P>=1/3200`.
+
+```text
+TPC230_MATCHED_MASS_SAVING_CEILING = PROVED_EXACT_SHARP
+TPC230_COMPARABLE_ROW_DENSITY_TOLL = PROVED_EXACT
+TPC230_LITERAL_ALIGNED_KAPPA_LE_4 = PROVED_EXACT
+TPC230_STRICT_1_OVER_400_EDGE_DENSITY_TOLL = 1/3200
+TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = OPEN
+TPC230_ARITHMETIC_ADVANCE = NO
+TPC230_FIXED_ATOM_CREDIT = 0
+TPC230_L2 = NONE
+TPC230_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V83 / TPC-230 has converted fixed saving into a concrete resonance-density
+toll. 下一条最短大路是 two-linear-form upper-bound sieve；若 `E/P->0`，first-resonance
+mechanism 在 comparable rows 上将被 asymptotically stop-scoped。**
+
 ## 5.23 V82 / TPC-229：primitive resonance matching spectrum
 
 Every resonance edge satisfies `10Q/7<p<8Q/5<r<2Q`, so low/high endpoint sets are
@@ -1742,7 +1769,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V82 / TPC-229：
+截至 V83 / TPC-230：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1946,7 +1973,17 @@ TPC229_FIXED_ATOM_CREDIT = 0
 TPC229_L2 = NONE
 TPC229_FULL_GATE_B = OPEN
 TPC229_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-229
+TPC230_MATCHED_MASS_SAVING_CEILING = PROVED_EXACT_SHARP
+TPC230_COMPARABLE_ROW_DENSITY_TOLL = PROVED_EXACT
+TPC230_LITERAL_ALIGNED_KAPPA_LE_4 = PROVED_EXACT
+TPC230_STRICT_1_OVER_400_EDGE_DENSITY_TOLL = 1/3200
+TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = OPEN
+TPC230_ARITHMETIC_ADVANCE = NO
+TPC230_FIXED_ATOM_CREDIT = 0
+TPC230_L2 = NONE
+TPC230_FULL_GATE_B = OPEN
+TPC230_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-230
 ```
 
 以下事实不得从路线图中推断：
@@ -1964,7 +2001,9 @@ NUMBERED_RELEASE = TPC-229
 
 优先级更新为：
 
-1. **TPC-229 已完成：primitive resonance matching spectrum**。all-scale matching、sharp
+1. **TPC-230 已完成：matched-resonance mass ceiling**。global saving capacity 与
+   `1/3200` density toll 已 exact；下一步 apply a two-linear-form upper-bound sieve。
+2. **TPC-229 已完成：primitive resonance matching spectrum**。all-scale matching、sharp
    edge spectrum 与 exact antisymmetric saving criterion 已证明；下一步 quantify matched
    resonance source mass。
 2. **TPC-228 已完成：source-native polarized collision compiler**。common-profile
@@ -2018,9 +2057,9 @@ NUMBERED_RELEASE = TPC-229
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-229 的下一步：matched-mass obstruction/criterion**。量化 matching vertices
-    承载的 diagonal/source mass；在此之前不能由逐 edge cancellation 推 fixed global
-    saving。actual V59 atom attachment 继续单列为 open。
+12. **TPC-230 的下一步：two-linear-form resonance sieve**。对 `7p+3r=16Q` 给 uniform
+    upper bound，比较 `E(Q)` 与 prime-shell size `P(Q)`；保持 singular-series dependence
+    与 scope firewall。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2119,6 +2158,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-24 | V83 / TPC-230 | Bridge A / Gate B：matched-resonance mass ceiling；two-linear-form density open | `TPC-230` | sharp `E_AP>=D-M`、comparability density toll、literal `kappa<=4`、strict endpoint needs `1/3200`；arithmetic仍为 NO |
 | 2026-08-24 | V82 / TPC-229 | Bridge A / Gate B：primitive resonance matching spectrum；matched mass/arithmetic dominance open | `TPC-229` | all-scale matching、`(-1,-1,+1,+1)` blocks、sharp AP ratio/delta criterion、4089-scale replay；arithmetic仍为 NO |
 | 2026-08-24 | V81 / TPC-228 | Bridge A / Gate B：source-native polarized collision compiler；exact source block，atom crosswalk/arithmetic open | `TPC-228` | AP-minus-diagonal four-phase identity、Q25 four-term beta-w block、positive/negative/zero controls；arithmetic仍为 NO |
 | 2026-08-24 | V80 / TPC-227 | Bridge A / Gate B：packet/profile axis separation；source phase 与 common profile exact typed，source-native collision compiler open | `TPC-227` | four-Gram iff theorem、Q25 `-1/80000` row-sign mismatch、automatic profile-to-source transfer scoped-refuted；arithmetic仍为 NO |

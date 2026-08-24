@@ -1,0 +1,75 @@
+{
+  "affiliation": "Huazhong University of Science and Technology",
+  "author": "Liang Wang",
+  "boundary_scan": {
+    "Q_max": 4096,
+    "Q_min": 8,
+    "edge_bearing_scales": 2268,
+    "first_maximum_literal_Q": 11,
+    "first_maximum_uniform_Q": 11,
+    "literal_fraction_at_least_1_over_400_scales": 2268,
+    "maximum_literal_mass_fraction": "3/4",
+    "maximum_uniform_mass_fraction": "2/3",
+    "scales_checked": 4089,
+    "scan_sha256": "7c1d867a278ce6ac222589b9d5c6a6d0ee4f5298af64522e799d3c403c777935",
+    "zero_edge_scales": 1821
+  },
+  "checks": {
+    "kappa_four_ceiling_exact": true,
+    "literal_row_weights_between_2_and_8": true,
+    "mass_ceiling_exact": true,
+    "sharpness_fixture_exact": true,
+    "uniform_mass_formula_exact": true,
+    "unmatched_floor_exact": true
+  },
+  "claim_level": "PROVED_STRUCTURAL_L1",
+  "firewall": {
+    "L2": "NONE",
+    "actual_V59_source_mass_comparability": "OPEN",
+    "arithmetic_advance": "NO",
+    "arithmetic_cancellation": "NONE",
+    "asymptotic_resonance_edge_density": "OPEN",
+    "fixed_atom_credit": 0,
+    "full_gate_b": "OPEN",
+    "strict_1_over_400": "UNPAID"
+  },
+  "nonsharp_fixture": {
+    "AP": "6",
+    "diagonal": "6",
+    "matched_mass": "2",
+    "saving": "0",
+    "unmatched_mass": "4"
+  },
+  "q25": {
+    "Q": 25,
+    "edge_count": 1,
+    "literal_aligned_mass_fraction": "5/13",
+    "literal_matched_row_weight": 10,
+    "literal_total_row_weight": 26,
+    "matched_vertices": 2,
+    "prime_count": 6,
+    "row_weight_max": 6,
+    "row_weight_min": 4,
+    "uniform_mass_fraction": "1/3"
+  },
+  "round2_clue": "APPLY_A_TWO_LINEAR_FORM_UPPER_BOUND_SIEVE_TO_THE_3_7_RESONANCE_COUNT",
+  "schema": "tpc230-matched-resonance-mass-ceiling-v1",
+  "sharp_fixture": {
+    "AP": "25",
+    "diagonal": "45",
+    "matched_mass": "20",
+    "saving": "20",
+    "unmatched_mass": "25"
+  },
+  "status": "PASS",
+  "theorem": {
+    "kappa_comparability_ceiling": "M/D<=2*kappa*E/P",
+    "literal_aligned_kappa_bound": 4,
+    "necessary_mass_condition": "E_AP<=(1-delta)D implies M/D>=delta",
+    "saving_ceiling": "D-E_AP<=M",
+    "sharpness": "perfect anti-alignment on every matched edge",
+    "strict_1_over_400_edge_density_toll": "E/P>=1/3200 is necessary under literal kappa<=4",
+    "uniform_row_mass_fraction": "M/D=2E/P",
+    "unmatched_floor": "E_AP>=D_unmatched=D-M"
+  }
+}

@@ -9,12 +9,12 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-229 证明 primitive `3--7` resonance graph 对每个 `Q>=8` 都是
-matching：每条 edge 满足 `10Q/7<p<8Q/5<r<2Q`，端点区间分离且 counterpart 唯一。
-每条 two-coordinate block spectrum 为 `(-1,-1,+1,+1)`；AP saving 精确等价于
-antisymmetric-mode dominance。4089 个尺度、13,754 条 edges 的 replay 始终 maximum
-degree one。状态为 `PROVED_STRUCTURAL_L1`；matched source mass、arithmetic dominance、
-actual V59 atom crosswalk、L2 与 Gate B 开放。
+当前主线状态：TPC-230 证明 sharp matched-mass ceiling：若总 diagonal mass 为 `D`、
+matching vertices 上的 mass 为 `M`，则 `E_AP>=D-M`，global saving 至多 `M`，且逐边
+anti-alignment 达到等号。row-mass comparability `kappa` 下，fixed `delta` saving 必须
+满足 `E/P>=delta/(2kappa)`；literal aligned rows 有 `kappa<=4`，所以 strict `1/400`
+必须支付 edge-density toll `1/3200`。状态为 `PROVED_STRUCTURAL_L1`；asymptotic
+resonance density、actual source comparability、L2 与 Gate B 开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -28,6 +28,8 @@ actual V59 atom crosswalk、L2 与 Gate B 开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-230-matched-resonance-mass-ceiling` - `PROVED_STRUCTURAL_L1 / MATCHED_RESONANCE_MASS_CEILING` - 证明 global AP saving 不超过 matched diagonal mass，给出 sharp anti-aligned extremizer、`M/D<=2*kappa*E/P` 与 literal `kappa<=4`，从而提取 strict `1/400` 所需 `E/P>=1/3200` density toll；asymptotic resonance count 与 actual source concentration 仍开放。
 
 `tpc-229-primitive-resonance-matching-spectrum` - `PROVED_STRUCTURAL_L1 / PRIMITIVE_RESONANCE_MATCHING_SPECTRUM` - 证明所有 primitive `3--7` resonance graphs 都是 matching，给出 `(-1,-1,+1,+1)` sharp edge spectrum、`0..2` AP ratio 与 exact antisymmetric saving criterion；4089-scale census 通过，matched source mass 与 arithmetic dominance 仍开放。
 

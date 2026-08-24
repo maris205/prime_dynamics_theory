@@ -2,11 +2,41 @@
 
 更新时间：2026-08-24
 
-状态：**TPC229_PROVED_STRUCTURAL_L1_RELEASED / PRIMITIVE_RESONANCE_MATCHING_SPECTRUM / ARITHMETIC_INPUTS_OPEN**
+状态：**TPC230_PROVED_STRUCTURAL_L1_RELEASED / MATCHED_RESONANCE_MASS_CEILING / ARITHMETIC_INPUTS_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.24 已发布：TPC-230 matched-resonance mass ceiling
+
+项目：`papers/tpc-230-matched-resonance-mass-ceiling/`
+
+类型：**PROVED_STRUCTURAL_L1 / MATCHED_RESONANCE_MASS_CEILING**。
+
+For total diagonal mass `D` and matched mass `M`, matching decomposition gives the
+sharp ceiling `E_AP>=D-M`. Thus `delta` saving requires `M/D>=delta`. If row masses have
+ratio `kappa`, then `M/D<=2*kappa*E/P`. Literal aligned rows satisfy `kappa<=4`, yielding
+the necessary strict-endpoint density toll `E/P>=1/3200`.
+
+```text
+TPC230_MATCHED_MASS_SAVING_CEILING = PROVED_EXACT_SHARP
+TPC230_NECESSARY_MASS_FRACTION = PROVED_EXACT
+TPC230_COMPARABLE_ROW_DENSITY_TOLL = PROVED_EXACT
+TPC230_LITERAL_ALIGNED_KAPPA_LE_4 = PROVED_EXACT
+TPC230_STRICT_1_OVER_400_EDGE_DENSITY_TOLL = 1/3200
+TPC230_ASYMPTOTIC_RESONANCE_EDGE_DENSITY = OPEN
+TPC230_ARITHMETIC_ADVANCE = NO
+TPC230_FIXED_ATOM_CREDIT = 0
+TPC230_L2 = NONE
+TPC230_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC230_ROUND2_CLUE = APPLY_A_TWO_LINEAR_FORM_UPPER_BOUND_SIEVE_TO_THE_3_7_RESONANCE_COUNT
+```
+
+strongest positive result：sharp matched-mass capacity theorem；strongest obstruction：
+unmatched rows cannot be improved even with perfect edge signs；open theorem：asymptotic
+edge density and actual source concentration；reusable structure：mass ceiling and
+comparability-to-density compiler。Q25 literal fraction `5/13`; 4089-scale replay；PDF 3 pages。
 
 ## 0.23 已发布：TPC-229 primitive resonance matching spectrum
 
