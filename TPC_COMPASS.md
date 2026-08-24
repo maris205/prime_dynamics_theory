@@ -1,11 +1,34 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V85 / SUBCRITICAL_GROWING_RESONANCE_DEPTH_OBSTRUCTION`
-claim level：`PROVED_ARITHMETIC_OBSTRUCTION_L1_SUBCRITICAL_DEPTH_STOP_SCOPED`
-编号事实终点：TPC-232；TPC-232 trigger：`true`
+状态：`BOLD_CHANNEL_V86 / CRITICAL_DEPTH_ROW_MASS_OBSTRUCTION`
+claim level：`PROVED_ARITHMETIC_OBSTRUCTION_L1_RAW_COMPARABILITY_REFUTED_SCOPED`
+编号事实终点：TPC-233；TPC-233 trigger：`true`
 
-当前 TPC-232 入口：proof 为
+当前 TPC-233 入口：proof 为
+`research/tpc-big-road/bridge_b_critical_depth_row_mass_obstruction.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_critical_depth_row_mass_obstruction_checker.py`，编号论文为
+`papers/tpc-233-critical-depth-row-mass-obstruction/`。critical primorial clock 满足
+`L~log Q/loglog Q`；endpoint prime rows 的 atom counts exact 是 `2` 与
+`2(1+pi(2L-1)-pi(L))`，故 `kappa_raw>>(L/log L)->infinity`。fixed raw
+comparability 不是 clock geometry theorem；normalization repair 仍开放。
+
+```text
+TPC233_CRITICAL_PRIMORIAL_CLOCK = PROVED_EXACT
+TPC233_LOW_HIGH_PRIME_ROWS = PROVED_SOURCE_BACKED
+TPC233_RAW_COMPARABILITY_DIVERGES = PROVED_ASYMPTOTIC
+TPC233_UNIVERSAL_KAPPA_UPPER_BOUND = PROVED_EXACT_2L_MINUS_1
+TPC233_FIXED_COMPARABILITY_FROM_GEOMETRY = REFUTED_SCOPED
+TPC233_ROW_NORMALIZATION_REPAIR = OPEN
+TPC233_ACTUAL_V59_ROW_WEIGHTS = OPEN
+TPC233_ARITHMETIC_ADVANCE = NO
+TPC233_L2 = NONE
+TPC233_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC233_STATUS = PROVED_ARITHMETIC_OBSTRUCTION_L1
+TPC233_ROUND2_CLUE = NORMALIZE_ROWS_THEN_TEST_COLLISION_OPERATOR_BEFORE_V59_ATTACHMENT
+```
+
+TPC-232 上游入口：proof 为
 `research/tpc-big-road/bridge_b_subcritical_growing_resonance_depth.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_subcritical_growing_resonance_depth_checker.py`，编号论文为
 `papers/tpc-232-subcritical-growing-resonance-depth/`。modeled clock `h=4LQ` 的 exact

@@ -9,14 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-232 将 TPC-231 的 fixed-family sieve 推广到增长深度。对 modeled
-dilated clock `h=4LQ`，完整 collision normal form 为 `ar+bp=4LQ`，且在
-`L<=(log Q)^A` 上证明 uniform bound
-`C_L(Q)<<_A LQ log log(3LQ)/(log Q)^2`。因此每个
-`L=o(log Q/log log Q)` 都只有 `o(P)` incident rows；在 fixed-comparability row model
-中不能支付任何 fixed saving。状态为 `PROVED_ARITHMETIC_OBSTRUCTION_L1`：subcritical
-growing-depth route 已 `STOP_SCOPED`，critical-depth sufficiency、actual V59 clock
-attachment、arithmetic cancellation、L2 与 full Gate B 仍开放。
+当前主线状态：TPC-233 审计 TPC-232 energy transfer 的 fixed row-mass comparability。
+对临界 primorial clock `log Q=L log L+O(1)`，靠近 `Q` 的 prime row 只有两个原子，
+靠近 `2Q` 的 row 有 `2(1+pi(2L-1)-pi(L))` 个原子，因此
+`kappa_raw >= (1+o(1))L/log L -> infinity`；universal cap 为 `2L-1`。状态为
+`PROVED_ARITHMETIC_OBSTRUCTION_L1`：fixed raw comparability from geometry 已
+`REFUTED_SCOPED`，row normalization、normalized collision conditioning、actual V59
+weights、arithmetic cancellation、L2 与 full Gate B 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -30,6 +29,8 @@ attachment、arithmetic cancellation、L2 与 full Gate B 仍开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-233-critical-depth-row-mass-obstruction` - `PROVED_ARITHMETIC_OBSTRUCTION_L1 / RAW_ROW_COMPARABILITY_REFUTED_SCOPED` - 构造 `L~log Q/loglog Q` 的 primorial-saturated clocks，证明 low/high prime rows 的 raw atom ratio 至少 `(1+o(1))L/log L` 并发散，从而否定 fixed comparability 是 clock geometry 自动结论；row normalization 与 actual V59 weights 仍开放。
 
 `tpc-232-subcritical-growing-resonance-depth` - `PROVED_ARITHMETIC_OBSTRUCTION_L1 / SUBCRITICAL_GROWING_DEPTH_STOP_SCOPED` - 对 `h=4LQ` 建立 exact one-wrap collision compiler 与 coefficient-uniform Selberg sieve，证明 `C_L/P->0` whenever `L=o(log Q/log log Q)`；首次给出增长 resonance 深度的严格必要门槛，critical depth 与 actual V59 attachment 仍开放。
 

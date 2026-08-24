@@ -1,0 +1,74 @@
+\section{A critical primorial clock}
+
+Let
+\[
+ P_L=\prod_{\substack{\ell\le L\\ \ell\ \mathrm{prime}}}\ell,
+ \qquad
+ j_L=\left\lfloor\frac{L\log L-\log P_L}{\log2}\right\rfloor,
+ \qquad Q_L=2^{j_L}P_L . \tag{1}
+\]
+The prime number theorem in the form $\log P_L\sim L$ makes $j_L$ nonnegative for all
+large $L$.  The floor in (1) gives
+\[
+ \log Q_L=L\log L+O(1),
+ \qquad
+ L\sim\frac{\log Q_L}{\log\log Q_L}. \tag{2}
+\]
+Every prime divisor of $Q_L$ is at most $L$.
+
+\begin{lemma}[Endpoint shell rows]\label{lem:endpoints}
+For all sufficiently large $L$, there are primes $p_L,r_L$ satisfying
+\[
+ Q_L<p_L<Q_L+\frac{Q_L}{2L},
+ \qquad
+ 2Q_L-\frac{Q_L}{2L}<r_L<2Q_L. \tag{3}
+\]
+Consequently $R_{p_L}=L$ and $R_{r_L}=2L-1$.
+\end{lemma}
+
+\begin{proof}
+The classical zero-free-region remainder gives, for some $c>0$,
+\[
+ \pi(x)=\operatorname{Li}(x)+O\!\left(xe^{-c\sqrt{\log x}}\right);
+\]
+see, for example, \citet{davenport2000,montgomeryvaughan2007} and
+\citet{iwanieckowalski2004}.  Set $x=Q_L$ and $y=Q_L/(2L)$.  The main term in
+$\pi(x+y)-\pi(x)$ is asymptotic to $y/\log x$, whereas the error-to-main ratio is
+\[
+ O\!\left(L\log Q_L\,e^{-c\sqrt{\log Q_L}}\right)=o(1)
+\]
+by (2).  This gives the first prime in (3); the interval immediately below $2Q_L$ is
+identical.  Multiplying (3) by $L/Q_L$ yields values strictly between $L$ and
+$L+1/2$, and between $2L-1/2$ and $2L$, respectively.  Taking floors proves the
+cutoff identities.
+\end{proof}
+
+\begin{theorem}[Critical raw-mass separation]\label{thm:main}
+Along the clocks (1),
+\[
+ N_{p_L}=2,
+ \qquad
+ N_{r_L}=2\{1+\pi(2L-1)-\pi(L)\}, \tag{4}
+\]
+and therefore
+\[
+ \kappa_{\raw}(Q_L,L)
+ \ge1+\pi(2L-1)-\pi(L)
+ \sim\frac{L}{\log L}\longrightarrow\infty. \tag{5}
+\]
+\end{theorem}
+
+\begin{proof}
+Put $h_L=4LQ_L$.  Every $2\le m\le L$ has a prime divisor at most $L$, hence a
+divisor of $Q_L$.  Thus $A_{h_L}(L)=1$.
+
+If $L<m<2L$ is composite, it has a prime divisor at most
+$\sqrt m<\sqrt{2L}<L$ for $L\ge3$, so it is not primitive modulo $h_L$.  If $m$ is
+prime, then $m>L$ and it divides neither $Q_L$ nor $4L$, so it is primitive.  Hence
+the positive primitive multipliers up to $2L-1$ are exactly $1$ and the primes in
+$(L,2L)$.  Lemma~\ref{lem:endpoints} now gives (4).  The PNT on $(L,2L)$ gives (5).
+\end{proof}
+
+Theorem~\ref{thm:main} refutes a scale-independent raw comparability constant as a
+theorem of the modeled support.  It does not refute comparability for a particular
+source after nonuniform weighting or normalization.

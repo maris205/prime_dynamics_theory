@@ -1,0 +1,102 @@
+{
+  "checks": {
+    "high_atom_identity": true,
+    "high_cutoff_exact": true,
+    "low_atom_identity": true,
+    "low_cutoff_exact": true,
+    "primorial_saturation": true,
+    "universal_comparability_cap": true
+  },
+  "claim_level": "PROVED_ARITHMETIC_OBSTRUCTION_L1",
+  "finite_reproduction": {
+    "interpretation": "exact finite reproduction only; shrinking-window existence is proved analytically",
+    "record_count": 4,
+    "records": [
+      {
+        "L": 5,
+        "Q": 3840,
+        "clock": 76800,
+        "high_atoms": 4,
+        "high_cutoff": 9,
+        "high_prime": 7297,
+        "low_atoms": 2,
+        "low_cutoff": 5,
+        "low_prime": 3847,
+        "prime_interval_count": 1,
+        "primorial": 30,
+        "row_mass_ratio": 2,
+        "two_power": 7,
+        "universal_kappa_cap": 9
+      },
+      {
+        "L": 7,
+        "Q": 860160,
+        "clock": 24084480,
+        "high_atoms": 6,
+        "high_cutoff": 13,
+        "high_prime": 1658893,
+        "low_atoms": 2,
+        "low_cutoff": 7,
+        "low_prime": 860239,
+        "prime_interval_count": 2,
+        "primorial": 210,
+        "row_mass_ratio": 3,
+        "two_power": 12,
+        "universal_kappa_cap": 13
+      },
+      {
+        "L": 11,
+        "Q": 310042951680,
+        "clock": 13641889873920,
+        "high_atoms": 8,
+        "high_cutoff": 21,
+        "high_prime": 605993041937,
+        "low_atoms": 2,
+        "low_cutoff": 11,
+        "low_prime": 310042951741,
+        "prime_interval_count": 3,
+        "primorial": 2310,
+        "row_mass_ratio": 4,
+        "two_power": 27,
+        "universal_kappa_cap": 21
+      },
+      {
+        "L": 13,
+        "Q": 257955735797760,
+        "clock": 13413698261483520,
+        "high_atoms": 8,
+        "high_cutoff": 25,
+        "high_prime": 505990097141761,
+        "low_atoms": 2,
+        "low_cutoff": 13,
+        "low_prime": 257955735797867,
+        "prime_interval_count": 3,
+        "primorial": 30030,
+        "row_mass_ratio": 4,
+        "two_power": 33,
+        "universal_kappa_cap": 25
+      }
+    ],
+    "records_sha256": "93fec725ce67b017dffcf4b04ecb4125dd67b241d6e5cd12f18015fb0ee0f15c"
+  },
+  "firewall": {
+    "L2": "NONE",
+    "actual_v59_row_weights": "OPEN",
+    "arithmetic_advance": "NO",
+    "arithmetic_cancellation": "NONE",
+    "fixed_atom_credit": 0,
+    "fixed_comparability_from_geometry": "REFUTED_SCOPED",
+    "full_gate_b": "OPEN",
+    "row_normalization_repair": "OPEN"
+  },
+  "schema": "tpc233-critical-depth-row-mass-obstruction-v1",
+  "status": "PASS",
+  "theorem": {
+    "critical_clock": "Q_L=2^j product_{prime ell<=L} ell with log Q_L=L log L+O(1)",
+    "critical_relation": "L~log Q_L/loglog Q_L",
+    "divergence": "kappa_raw >= (1+o(1))L/log L -> infinity",
+    "high_atoms": "2(1+pi(2L-1)-pi(L))",
+    "low_atoms": "2",
+    "universal_cap": "kappa_raw <= 2L-1"
+  }
+}

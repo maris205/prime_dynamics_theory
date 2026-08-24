@@ -1,0 +1,36 @@
+\section{Finite reproduction and route consequence}
+
+The certificate evaluates four clocks with $L=5,7,11,13$.  In each case
+$Q=2^jP_L$ is chosen so that $\log Q$ is already close to $L\log L$.  It locates the
+first prime in each endpoint interval, verifies the two cutoff identities, enumerates
+coprime multipliers, and checks
+\[
+ A_{4LQ}(L)=1,
+ \qquad
+ A_{4LQ}(2L-1)=1+\pi(2L-1)-\pi(L).
+\]
+The largest certified scale is
+\[
+ Q=257955735797760,\qquad
+ p=257955735797867,\qquad
+ r=505990097141761.
+\]
+The four exact raw mass ratios are
+$2,3,4,4$.  These small values are finite reproduction only; divergence is supplied
+by Theorem~\ref{thm:main}.
+
+One implementation uses the deterministic unsigned-64-bit Miller--Rabin basis set and
+constructs the primorial clock.  A separate implementation uses a different
+deterministic basis theorem and rebuilds every record from the serialized scale data.
+Normal and optimized Python modes agree.  An adversarial script removes one required
+primorial factor from each clock and verifies that the low-row identity fails, while
+the cutoff and universal-envelope boundary checks remain exact.  The record digest is
+\begin{center}
+\texttt{93fec725ce67b017dffcf4b04ecb4125dd67b241d6e5cd12f18015fb0ee0f15c}.
+\end{center}
+
+The route implication is narrow but decisive.  A collision-incidence estimate may be
+converted to an incident-mass estimate only after row weights are controlled.  At
+critical depth, raw support count does not supply that control.  The next minimal
+question is therefore whether unit-row normalization yields a uniformly stable
+collision operator, and only afterward whether such normalization is source-valid.

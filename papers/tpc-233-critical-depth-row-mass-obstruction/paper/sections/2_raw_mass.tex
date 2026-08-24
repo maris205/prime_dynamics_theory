@@ -1,0 +1,40 @@
+\section{Raw row mass and a universal envelope}
+
+Fix integers $Q\ge8$ and $3\le L<Q/4$, put $h=4LQ$, and let $Q<q<2Q$ be prime.
+The modeled support is
+\[
+ S_{q,L}=\left\{mq^{-1}\pmod h:
+ 0<|m|\le R_q,\ (m,h)=1\right\},
+ \qquad R_q=\left\lfloor\frac{Lq}{Q}\right\rfloor .
+\]
+Since $R_q<2L<q$, the support is internally injective.  Write
+\[
+ A_h(R)=\#\{1\le m\le R:(m,h)=1\},
+ \qquad N_q=|S_{q,L}|=2A_h(R_q).
+\]
+For a common uniform atom amplitude, diagonal row mass is a common scalar times
+$N_q$.  We call $N_q$ the raw row mass, without identifying it with a physical source
+weight.
+
+\begin{lemma}[Universal comparability envelope]\label{lem:envelope}
+For every admissible clock,
+\[
+ 2\le N_q\le2(2L-1),
+ \qquad
+ 1\le \kappa_{\raw}(Q,L):=
+ \frac{\max_{q\in\Pcal_Q}N_q}{\min_{q\in\Pcal_Q}N_q}\le2L-1,
+\]
+whenever the prime shell $\Pcal_Q$ is nonempty.
+\end{lemma}
+
+\begin{proof}
+The shell inequalities give $L\le R_q\le2L-1$.  The multiplier $1$ is always
+primitive, so $A_h(R_q)\ge1$, while trivially $A_h(R_q)\le R_q\le2L-1$.
+Taking the largest possible numerator and smallest possible denominator proves the
+claim.
+\end{proof}
+
+The lemma already shows that fixed comparability is not a formal consequence of the
+cutoff range: its best structure-only upper bound grows linearly in $L$.  The next
+section constructs genuine active rows whose ratio diverges nearly linearly, up to one
+logarithm.

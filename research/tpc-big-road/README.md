@@ -1,13 +1,51 @@
-# TPC big road V85 / TPC-232: subcritical growing-resonance-depth obstruction
+# TPC big road V86 / TPC-233: critical-depth row-mass obstruction
 
 更新时间：2026-08-24
 
-状态：`TPC232_PROVED_ARITHMETIC_OBSTRUCTION_L1 / SUBCRITICAL_GROWING_DEPTH_STOP_SCOPED / FULL_GATE_B_OPEN`
+状态：`TPC233_PROVED_ARITHMETIC_OBSTRUCTION_L1 / RAW_COMPARABILITY_REFUTED_SCOPED / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-232 proof 为
+当前 TPC-233 proof 为
+`bridge_b_critical_depth_row_mass_obstruction.md`，checker 为
+`tpc_bridge_b_critical_depth_row_mass_obstruction_checker.py`，编号论文为
+`../../papers/tpc-233-critical-depth-row-mass-obstruction/`。
+
+At critical depth, a primorial-saturated clock has endpoint prime rows with exact raw
+atom counts
+
+```text
+N_low=2,
+N_high=2(1+pi(2L-1)-pi(L)),
+kappa_raw >= (1+o(1))L/log L -> infinity.
+```
+
+Thus fixed row-mass comparability is not implied by clock geometry.  The universal
+cap is `2L-1`; row normalization remains an open repair and must be checked before
+actual V59 attachment.
+
+```text
+TPC233_CRITICAL_PRIMORIAL_CLOCK = PROVED_EXACT
+TPC233_LOW_HIGH_PRIME_ROWS = PROVED_SOURCE_BACKED
+TPC233_RAW_COMPARABILITY_DIVERGES = PROVED_ASYMPTOTIC
+TPC233_UNIVERSAL_KAPPA_UPPER_BOUND = PROVED_EXACT_2L_MINUS_1
+TPC233_FIXED_COMPARABILITY_FROM_GEOMETRY = REFUTED_SCOPED
+TPC233_ROW_NORMALIZATION_REPAIR = OPEN
+TPC233_ACTUAL_V59_ROW_WEIGHTS = OPEN
+TPC233_ARITHMETIC_ADVANCE = NO
+TPC233_FIXED_ATOM_CREDIT = 0
+TPC233_L2 = NONE
+TPC233_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC233_ROUND2_CLUE = NORMALIZE_ROWS_THEN_TEST_COLLISION_OPERATOR_BEFORE_V59_ATTACHMENT
+```
+
+strongest positive result：exact critical clock and endpoint row masses；strongest
+obstruction：raw comparability diverges；open theorem：normalized collision operator and
+source-valid normalization；reusable structure：primorial saturation plus endpoint shell
+placement。
+
+TPC-232 上游 proof 为
 `bridge_b_subcritical_growing_resonance_depth.md`，checker 为
 `tpc_bridge_b_subcritical_growing_resonance_depth_checker.py`，编号论文为
 `../../papers/tpc-232-subcritical-growing-resonance-depth/`。

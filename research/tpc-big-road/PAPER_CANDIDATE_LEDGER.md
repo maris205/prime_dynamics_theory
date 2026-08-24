@@ -2,11 +2,57 @@
 
 更新时间：2026-08-24
 
-状态：**TPC232_PROVED_ARITHMETIC_OBSTRUCTION_L1_RELEASED / SUBCRITICAL_GROWING_DEPTH_STOP_SCOPED / CRITICAL_DEPTH_AND_ACTUAL_SOURCE_OPEN**
+状态：**TPC233_PROVED_ARITHMETIC_OBSTRUCTION_L1_RELEASED / RAW_COMPARABILITY_REFUTED_SCOPED / NORMALIZATION_AND_ACTUAL_SOURCE_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.27 已发布：TPC-233 critical-depth row-mass obstruction
+
+项目：`papers/tpc-233-critical-depth-row-mass-obstruction/`
+
+类型：**PROVED_ARITHMETIC_OBSTRUCTION_L1 / RAW_ROW_COMPARABILITY_REFUTED_SCOPED**。
+
+Choose `Q_L=2^j product_(prime ell<=L)ell` with `log Q_L=L log L+O(1)`, so
+`L~log Q_L/loglog Q_L`.  The classical PNT error term places low/high endpoint
+prime rows with cutoffs `L` and `2L-1`.  Their exact uniform-atom support sizes are
+
+```text
+N_low=2,
+N_high=2(1+pi(2L-1)-pi(L)),
+kappa_raw >= (1+o(1))L/log L -> infinity.
+```
+
+Every admissible clock has the universal cap `kappa_raw<=2L-1`.  Therefore fixed raw
+row-mass comparability is not a theorem of the modeled support.  Row normalization
+remains a possible repair, but its collision conditioning and source validity are open.
+
+```text
+TPC233_CRITICAL_PRIMORIAL_CLOCK = PROVED_EXACT
+TPC233_CRITICAL_SCALE_RELATION = PROVED_ASYMPTOTIC
+TPC233_LOW_HIGH_PRIME_ROWS = PROVED_SOURCE_BACKED
+TPC233_LOW_ROW_ATOMS = PROVED_EXACT_2
+TPC233_HIGH_ROW_ATOMS = PROVED_EXACT_PRIME_INTERVAL_COUNT
+TPC233_RAW_COMPARABILITY_DIVERGES = PROVED_ASYMPTOTIC
+TPC233_UNIVERSAL_KAPPA_UPPER_BOUND = PROVED_EXACT_2L_MINUS_1
+TPC233_FIXED_COMPARABILITY_FROM_GEOMETRY = REFUTED_SCOPED
+TPC233_ROW_NORMALIZATION_REPAIR = OPEN
+TPC233_ACTUAL_V59_ROW_WEIGHTS = OPEN
+TPC233_ARITHMETIC_ADVANCE = NO
+TPC233_FIXED_ATOM_CREDIT = 0
+TPC233_L2 = NONE
+TPC233_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC233_STATUS = PROVED_ARITHMETIC_OBSTRUCTION_L1
+TPC233_ROUND2_CLUE = NORMALIZE_ROWS_THEN_TEST_COLLISION_OPERATOR_BEFORE_V59_ATTACHMENT
+```
+
+strongest positive result：exact critical primorial clock and low/high mass identities；
+strongest obstruction：fixed raw comparability diverges；open theorem：source-valid row
+normalization and normalized collision conditioning；reusable structure：primorial
+saturation、shrinking endpoint windows、exact coprime-count compiler；`ROUND2_CLUE`：
+`NORMALIZE_ROWS_THEN_TEST_COLLISION_OPERATOR_BEFORE_V59_ATTACHMENT`。4 exact clocks，
+independent deterministic primality reconstructions；4-page embedded-font PDF。
 
 ## 0.26 已发布：TPC-232 subcritical growing resonance depth
 

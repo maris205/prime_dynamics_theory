@@ -1,9 +1,68 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V85_TPC232_SUBCRITICAL_DEPTH_RELEASED`
+交接状态：`BOLD_CHANNEL_V86_TPC233_CRITICAL_ROW_MASS_RELEASED`
 
-TPC-232 当前 section：subcritical growing resonance depth
+TPC-233 当前 section：critical-depth row-mass obstruction
+-----------------------------------------------------------
+
+Let `Q_L=2^j product_(prime ell<=L)ell` with `log Q_L=L log L+O(1)`, so
+`L~log Q_L/loglog Q_L`.  The classical PNT error term places endpoint shell primes
+with cutoffs `L` and `2L-1`.  Their exact uniform-atom raw masses are
+
+```text
+N_low=2,
+N_high=2(1+pi(2L-1)-pi(L)),
+kappa_raw >= (1+o(1))L/log L -> infinity.
+```
+
+Every admissible clock has `kappa_raw<=2L-1`.  Thus fixed raw row-mass comparability
+is not implied by clock geometry.  Row normalization remains an open repair and must
+be tested before attachment to actual V59 weights.
+
+```text
+TPC233_ROUTE_ADVANCE = YES
+TPC233_CRITICAL_PRIMORIAL_CLOCK = PROVED_EXACT
+TPC233_CRITICAL_SCALE_RELATION = PROVED_ASYMPTOTIC
+TPC233_LOW_HIGH_PRIME_ROWS = PROVED_SOURCE_BACKED
+TPC233_LOW_ROW_ATOMS = PROVED_EXACT_2
+TPC233_HIGH_ROW_ATOMS = PROVED_EXACT_PRIME_INTERVAL_COUNT
+TPC233_RAW_COMPARABILITY_DIVERGES = PROVED_ASYMPTOTIC
+TPC233_UNIVERSAL_KAPPA_UPPER_BOUND = PROVED_EXACT_2L_MINUS_1
+TPC233_FIXED_COMPARABILITY_FROM_GEOMETRY = REFUTED_SCOPED
+TPC233_ROW_NORMALIZATION_REPAIR = OPEN
+TPC233_ACTUAL_V59_ROW_WEIGHTS = OPEN
+TPC233_ARITHMETIC_ADVANCE = NO
+TPC233_ARITHMETIC_OBSTRUCTION = PROVED_SOURCE_BACKED
+TPC233_ARITHMETIC_CANCELLATION = NONE
+TPC233_FIXED_ATOM_CREDIT = 0
+TPC233_L2 = NONE
+TPC233_FULL_GATE_B = OPEN
+TPC233_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC233_TPC_TRIGGER = true
+TPC233_NUMBERED_RELEASE = YES
+TPC233_STATUS = PROVED_ARITHMETIC_OBSTRUCTION_L1
+TPC233_ROUND2_CLUE = NORMALIZE_ROWS_THEN_TEST_COLLISION_OPERATOR_BEFORE_V59_ATTACHMENT
+```
+
+strongest positive result：exact critical primorial clock and endpoint row masses；
+strongest obstruction：raw comparability diverges；open theorem：source-valid row
+normalization and normalized collision conditioning；reusable structure：primorial
+saturation plus shrinking endpoint shell placement。
+
+编号论文目录：papers/tpc-233-critical-depth-row-mass-obstruction/
+
+```text
+papers/tpc-233-critical-depth-row-mass-obstruction/README.md
+papers/tpc-233-critical-depth-row-mass-obstruction/PROOF_PACKAGE.md
+papers/tpc-233-critical-depth-row-mass-obstruction/paper/paper.pdf
+papers/tpc-233-critical-depth-row-mass-obstruction/results/certificate.json
+papers/tpc-233-critical-depth-row-mass-obstruction/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_critical_depth_row_mass_obstruction.md
+research/tpc-big-road/tpc_bridge_b_critical_depth_row_mass_obstruction_checker.py
+```
+
+TPC-232 上游 section：subcritical growing resonance depth
 ------------------------------------------------------------
 
 For the modeled clock `h=4LQ`, prime shell `Q<q<2Q`, and primitive cutoff
@@ -5714,8 +5773,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V85/TPC-232 gate、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百二十六次（63 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V86/TPC-233 gate、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百二十八次（64 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -5845,11 +5904,23 @@ python -B research/tpc-big-road/tpc_bridge_b_finite_resonance_sieve_obstruction_
 python -O -B research/tpc-big-road/tpc_bridge_b_finite_resonance_sieve_obstruction_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_subcritical_growing_resonance_depth_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_subcritical_growing_resonance_depth_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_critical_depth_row_mass_obstruction_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_critical_depth_row_mass_obstruction_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-232 入口：
+最新 TPC-233 入口：
+
+```text
+papers/tpc-233-critical-depth-row-mass-obstruction/README.md
+papers/tpc-233-critical-depth-row-mass-obstruction/notes/theorem_ledger.md
+papers/tpc-233-critical-depth-row-mass-obstruction/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_critical_depth_row_mass_obstruction.md
+research/tpc-big-road/tpc_bridge_b_critical_depth_row_mass_obstruction_checker.py
+```
+
+TPC-232 上游入口：
 
 ```text
 papers/tpc-232-subcritical-growing-resonance-depth/README.md
