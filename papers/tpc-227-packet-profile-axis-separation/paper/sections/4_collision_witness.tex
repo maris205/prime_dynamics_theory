@@ -1,0 +1,37 @@
+\section{The first-collision obstruction}
+
+TPC-226 identifies the first stable primitive collision at
+\[
+ Q=25,\qquad h=400,\qquad (p,r)=(37,47),
+\]
+with multipliers $3$ and $-7$.  Restrict the synthesis map to one shared output
+coordinate and to the two colliding source atoms.  The aligned map and the row-odd map
+are respectively
+\[
+ T=\frac1{400}(1,1),\qquad S=\frac1{400}(1,-1).
+\]
+Their Gram matrices are
+\begin{equation}
+ T^*T=\frac1{160000}\begin{pmatrix}1&1\\1&1\end{pmatrix},\qquad
+ S^*S=\frac1{160000}\begin{pmatrix}1&-1\\-1&1\end{pmatrix}.
+ \label{eq:witness-grams}
+\end{equation}
+Thus
+\begin{equation}
+ S^*S-T^*T=\frac1{160000}\begin{pmatrix}0&-2\\-2&0\end{pmatrix}.
+ \label{eq:witness-difference}
+\end{equation}
+The exact off-diagonal difference is $-1/80000$.  This is precisely the local sign
+reversal seen in the AP collision correction.  By Theorem~\ref{thm:gram}, the odd row
+map cannot replace the aligned physical target for every source pair.
+
+This conclusion is scoped.  It does not invalidate the finite odd-profile theorem:
+\eqref{eq:witness-difference} explains it.  Nor does it say that the physical source
+correlation is positive.  It says only that its sign must be derived with the packet
+phase on the source sequence and the Poisson profile kept common.
+
+\begin{corollary}
+An arbitrary choice of packet profiles in the structural row lift cannot be promoted to
+the source-native four-packet compiler from boundedness and common support alone.
+Exact target-Gram equality is necessary.
+\end{corollary}

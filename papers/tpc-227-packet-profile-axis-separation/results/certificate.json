@@ -1,0 +1,455 @@
+{
+  "affiliation": "Huazhong University of Science and Technology",
+  "author": "Liang Wang",
+  "checks": {
+    "common_physical_transform_passes": true,
+    "global_packet_signs_are_gram_invisible": true,
+    "operator_dft_inversion_exact": true,
+    "packet_dependent_scale_contamination_detected": true,
+    "q25_resonance_off_diagonal_mismatch_exact": true,
+    "row_dependent_odd_sign_fails_physical_gram": true
+  },
+  "claim_level": "PROVED_STRUCTURAL_L1",
+  "firewall": {
+    "L2": "NONE",
+    "TPC226_balanced_profile_AP_saving": "PROVED_EXACT_FINITE_PROFILE",
+    "TPC226_balanced_profile_V59_source_transfer": "REFUTED_SCOPED_AS_AUTOMATIC_INFERENCE",
+    "V59_source_native_common_profile_compiler": "OPEN",
+    "arithmetic_advance": "NO",
+    "arithmetic_cancellation": "NONE",
+    "fixed_atom_credit": 0,
+    "full_gate_b": "OPEN",
+    "strict_1_over_400": "UNPAID"
+  },
+  "fixture_digest": "8cc8c49e0641404b9bf0bd37ed55bebafda40442f2f2bcd9e945573f156c0ab9",
+  "fixtures": {
+    "alternating_scale": {
+      "A0_minus_target": [
+        [
+          "3/320000",
+          "3/320000"
+        ],
+        [
+          "3/320000",
+          "3/320000"
+        ]
+      ],
+      "A1_imag": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A1_real": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A2": [
+        [
+          "-3/320000",
+          "-3/320000"
+        ],
+        [
+          "-3/320000",
+          "-3/320000"
+        ]
+      ],
+      "all_packet_grams_equal_target": false,
+      "compatible_with_target": false,
+      "name": "alternating_scale",
+      "packet_gram_equalities": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "packet_grams_all_equal_each_other": false,
+      "target_gram": [
+        [
+          "1/160000",
+          "1/160000"
+        ],
+        [
+          "1/160000",
+          "1/160000"
+        ]
+      ]
+    },
+    "common_physical": {
+      "A0_minus_target": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A1_imag": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A1_real": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A2": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "all_packet_grams_equal_target": true,
+      "compatible_with_target": true,
+      "name": "common_physical",
+      "packet_gram_equalities": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "packet_grams_all_equal_each_other": true,
+      "target_gram": [
+        [
+          "1/160000",
+          "1/160000"
+        ],
+        [
+          "1/160000",
+          "1/160000"
+        ]
+      ]
+    },
+    "fully_unequal_scale": {
+      "A0_minus_target": [
+        [
+          "13/320000",
+          "13/320000"
+        ],
+        [
+          "13/320000",
+          "13/320000"
+        ]
+      ],
+      "A1_imag": [
+        [
+          "-3/160000",
+          "-3/160000"
+        ],
+        [
+          "-3/160000",
+          "-3/160000"
+        ]
+      ],
+      "A1_real": [
+        [
+          "-1/80000",
+          "-1/80000"
+        ],
+        [
+          "-1/80000",
+          "-1/80000"
+        ]
+      ],
+      "A2": [
+        [
+          "-1/64000",
+          "-1/64000"
+        ],
+        [
+          "-1/64000",
+          "-1/64000"
+        ]
+      ],
+      "all_packet_grams_equal_target": false,
+      "compatible_with_target": false,
+      "name": "fully_unequal_scale",
+      "packet_gram_equalities": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "packet_grams_all_equal_each_other": false,
+      "target_gram": [
+        [
+          "1/160000",
+          "1/160000"
+        ],
+        [
+          "1/160000",
+          "1/160000"
+        ]
+      ]
+    },
+    "mixed_row_profile": {
+      "A0_minus_target": [
+        [
+          "0",
+          "-1/160000"
+        ],
+        [
+          "-1/160000",
+          "0"
+        ]
+      ],
+      "A1_imag": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A1_real": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A2": [
+        [
+          "0",
+          "1/160000"
+        ],
+        [
+          "1/160000",
+          "0"
+        ]
+      ],
+      "all_packet_grams_equal_target": false,
+      "compatible_with_target": false,
+      "name": "mixed_row_profile",
+      "packet_gram_equalities": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "packet_grams_all_equal_each_other": false,
+      "target_gram": [
+        [
+          "1/160000",
+          "1/160000"
+        ],
+        [
+          "1/160000",
+          "1/160000"
+        ]
+      ]
+    },
+    "packet_global_signs": {
+      "A0_minus_target": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A1_imag": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A1_real": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A2": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "all_packet_grams_equal_target": true,
+      "compatible_with_target": true,
+      "name": "packet_global_signs",
+      "packet_gram_equalities": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "packet_grams_all_equal_each_other": true,
+      "target_gram": [
+        [
+          "1/160000",
+          "1/160000"
+        ],
+        [
+          "1/160000",
+          "1/160000"
+        ]
+      ]
+    },
+    "row_dependent_odd_sign": {
+      "A0_minus_target": [
+        [
+          "0",
+          "-1/80000"
+        ],
+        [
+          "-1/80000",
+          "0"
+        ]
+      ],
+      "A1_imag": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A1_real": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "A2": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "all_packet_grams_equal_target": false,
+      "compatible_with_target": false,
+      "name": "row_dependent_odd_sign",
+      "packet_gram_equalities": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "packet_grams_all_equal_each_other": true,
+      "target_gram": [
+        [
+          "1/160000",
+          "1/160000"
+        ],
+        [
+          "1/160000",
+          "1/160000"
+        ]
+      ]
+    }
+  },
+  "q25_resonance_block": {
+    "gram_difference": [
+      [
+        "0",
+        "-1/80000"
+      ],
+      [
+        "-1/80000",
+        "0"
+      ]
+    ],
+    "h": 400,
+    "odd_row_gram": [
+      [
+        "1/160000",
+        "-1/160000"
+      ],
+      [
+        "-1/160000",
+        "1/160000"
+      ]
+    ],
+    "odd_row_operator": [
+      [
+        "1/400",
+        "-1/400"
+      ]
+    ],
+    "off_diagonal_difference": "-1/80000",
+    "physical_gram": [
+      [
+        "1/160000",
+        "1/160000"
+      ],
+      [
+        "1/160000",
+        "1/160000"
+      ]
+    ],
+    "physical_operator": [
+      [
+        "1/400",
+        "1/400"
+      ]
+    ]
+  },
+  "round2_clue": "KEEP_THE_V59_PACKET_PHASE_ON_THE_SOURCE_SEQUENCE_AND_THE_POISSON_PROFILE_COMMON",
+  "schema": "tpc227-packet-profile-axis-separation-v1",
+  "status": "PASS",
+  "theorem": {
+    "criterion": "four-phase compatibility iff T_j^*T_j=T^*T for j=0,1,2,3",
+    "global_packet_phase": "GRAM_INVISIBLE",
+    "physical_V59_packet_axis": "a^(j)=beta+i^j w",
+    "physical_V59_profile_axis": "one common psi_+(v)",
+    "row_dependent_profile_sign": "NOT_SOURCE_TRANSFERABLE_WITHOUT_GRAM_EQUALITY"
+  }
+}

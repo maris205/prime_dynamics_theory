@@ -1,13 +1,62 @@
-# TPC big road V79 / TPC-226: first primitive-collision transition
+# TPC big road V80 / TPC-227: packet/profile axis separation
 
 更新时间：2026-08-24
 
-状态：`TPC226_PROVED_STRUCTURAL_L1 / FIRST_PRIMITIVE_COLLISION_TRANSITION / FULL_GATE_B_OPEN`
+状态：`TPC227_PROVED_STRUCTURAL_L1 / PACKET_PROFILE_AXIS_SEPARATION / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-226 proof 为
+当前 TPC-227 proof 为
+`bridge_b_packet_profile_axis_separation.md`，checker 为
+`tpc_bridge_b_packet_profile_axis_separation_checker.py`，编号论文为
+`../../papers/tpc-227-packet-profile-axis-separation/`。
+
+TPC-227 source-lock V59 的两个独立坐标轴：packet phase 属于
+`a^(j)=beta+i^j w`，四包共同使用一个 Poisson profile `psi_+`。对 physical transform
+`T` 与 proposed packet transforms `T_j`，本篇证明
+
+```text
+1/4 sum_j i^j ||T_j(x+i^j y)||^2 = <Tx,Ty> for every x,y
+iff T_j^*T_j=T^*T for j=0,1,2,3.
+```
+
+TPC-226 Q25 first-resonance block 把 aligned row `(1,1)/400` 与 row-odd
+`(1,-1)/400` 做 exact Gram comparison，off-diagonal difference 是 `-1/80000`。
+因此 global packet signs 虽然 Gram-invisible，row-dependent profile sign 却不能自动
+冒充 V59 source phase。finite balanced-profile theorem 保留，但 automatic source transfer
+被 scoped-refute。
+
+TPC-227 claim firewall：
+
+```text
+TPC227_ROUTE_ADVANCE = YES
+TPC227_V59_PACKET_AXIS = SOURCE_LOCKED
+TPC227_V59_PROFILE_AXIS = SOURCE_LOCKED_COMMON
+TPC227_FOUR_GRAM_CRITERION = PROVED_EXACT
+TPC227_GLOBAL_PACKET_PHASE_VISIBILITY = GRAM_INVISIBLE
+TPC227_Q25_ROW_SIGN_GRAM_MISMATCH = PROVED_EXACT
+TPC227_TPC226_AUTOMATIC_SOURCE_TRANSFER = REFUTED_SCOPED
+TPC227_SOURCE_NATIVE_COMMON_PROFILE_COMPILER = OPEN
+TPC227_ARITHMETIC_CANCELLATION = NONE
+TPC227_ARITHMETIC_ADVANCE = NO
+TPC227_FIXED_ATOM_CREDIT = 0
+TPC227_L2 = NONE
+TPC227_FULL_GATE_B = OPEN
+TPC227_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC227_STATUS = PROVED_STRUCTURAL_L1
+TPC227_ROUND2_CLUE = KEEP_THE_V59_PACKET_PHASE_ON_THE_SOURCE_SEQUENCE_AND_THE_POISSON_PROFILE_COMMON
+```
+
+strongest positive result：exact four-Gram iff criterion 与 Q25 executable witness；
+strongest obstruction：row-dependent sign 改变 cross-row Gram，不能由 packet relabeling
+合法转入 V59；open theorem：保持 common `psi_+`，把 literal coefficient packets 直接
+接入 prime/AP collision compiler；reusable structure：four-point Gram DFT、target-Gram
+compatibility 与 collision block；ROUND2_CLUE：
+
+`KEEP_THE_V59_PACKET_PHASE_ON_THE_SOURCE_SEQUENCE_AND_THE_POISSON_PROFILE_COMMON`
+
+TPC-226 上游 proof 为
 `bridge_b_first_primitive_collision_transition.md`，checker 为
 `tpc_bridge_b_first_primitive_collision_transition_checker.py`，编号论文为
 `../../papers/tpc-226-first-primitive-collision-transition/`。

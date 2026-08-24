@@ -9,13 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-226 在 TPC-225 cutoff-one obstruction 之后审计有限 dilation
-`h_L=4LQ`, `L=1,2,3,4`。保留 literal primitive support 后，`L<=3` 的 distinct
-prime rows 仍严格不相交；`L=4` 首次出现合法碰撞，且唯一 resonance type 是
-`7p+3r=16Q`、multipliers `(3,-7)`。同一 geometry 对 aligned/affine profiles 放大
-`E_AP`，对 balanced sign profile 则严格降低 `E_AP` 并给出 `E_pol=E_all=0`。
-因此 geometry 只建立 signed-cancellation interface，不能替代 arithmetic sign theorem。
-状态仍是 `PROVED_STRUCTURAL_L1`；V46 profile transfer、arithmetic L2 与 Gate B 均开放。
+当前主线状态：TPC-227 回到 V59 literal source typing，证明 four-packet phase 必须留在
+`a^(j)=beta+i^j w` 的 coefficient axis，而 Poisson profile 对四包共同。若把共同物理
+transform `T` 换成 packet-dependent `T_j`，四相位恒等式对所有 source pairs 成立当且仅当
+`T_j^*T_j=T^*T`（四个 `j` 全部成立）。TPC-226 的 Q25 row-dependent odd sign 在第一
+`3--7` collision block 上把 off-diagonal Gram entry exact 改变 `-1/80000`，因此自动
+V59 source transfer 被 scoped-refute；有限 profile saving 本身仍成立。状态仍是
+`PROVED_STRUCTURAL_L1`；source-native common-profile compiler、arithmetic L2 与 Gate B 开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +29,8 @@ prime rows 仍严格不相交；`L=4` 首次出现合法碰撞，且唯一 reson
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-227-packet-profile-axis-separation` - `PROVED_STRUCTURAL_L1 / PACKET_PROFILE_AXIS_SEPARATION` - 证明 four-phase packet-dependent transforms 精确恢复 V59 physical bilinear form当且仅当四个 packet Gram 全等于 physical Gram；Q25 first-collision block 的 row-dependent odd sign 给出 `-1/80000` off-diagonal mismatch，封住 profile sign 自动冒充 source phase 的捷径，common-profile source compiler 与 arithmetic L2 仍开放。
 
 `tpc-226-first-primitive-collision-transition` - `PROVED_STRUCTURAL_L1 / FIRST_PRIMITIVE_COLLISION_TRANSITION` - 证明 primitive shared-clock rows 在 `L<=3` 两两不交、`L=4` 首次且仅出现 `7p+3r=16Q` 的 `(3,-7)` resonance；同一 collision 对 aligned/affine profiles 放大、对 balanced sign profile 抵消，505 个尺度分类与 30 个 exact-rational profile records 通过独立复现，V46 transfer 与 arithmetic L2 仍开放。
 

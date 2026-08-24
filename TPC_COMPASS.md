@@ -1,11 +1,48 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V79 / FIRST_PRIMITIVE_COLLISION_TRANSITION`
-claim level：`PROVED_STRUCTURAL_L1_FIRST_PRIMITIVE_COLLISION_TRANSITION`
-编号事实终点：TPC-226；TPC-226 trigger：`true`
+状态：`BOLD_CHANNEL_V80 / PACKET_PROFILE_AXIS_SEPARATION`
+claim level：`PROVED_STRUCTURAL_L1_PACKET_PROFILE_AXIS_SEPARATION`
+编号事实终点：TPC-227；TPC-227 trigger：`true`
 
-当前 TPC-226 入口：proof 为
+当前 TPC-227 入口：proof 为
+`research/tpc-big-road/bridge_b_packet_profile_axis_separation.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_packet_profile_axis_separation_checker.py`，编号论文为
+`papers/tpc-227-packet-profile-axis-separation/`。V59 literal compiler 把四相位放在
+`a^(j)=beta+i^j w` 的 source sequence 上，四包共享一个 `psi_+` profile。TPC-227 对
+任意 proposed packet transforms `T_j` 证明 exact iff criterion
+
+```text
+1/4 sum_j i^j ||T_j(x+i^j y)||^2 = <Tx,Ty> for every x,y
+iff T_j^*T_j=T^*T for all j.
+```
+
+global packet signs 是 Gram-invisible；row-dependent signs 可以改变 collision Gram。
+TPC-226 Q25 first-resonance block 的 aligned/odd off-diagonal mismatch exact 为
+`-1/80000`，所以 finite balanced profile sign 不能自动解释为 V59 source phase。
+
+TPC-227 claim firewall：
+
+```text
+TPC227_ROUTE_ADVANCE = YES
+TPC227_V59_PACKET_AXIS = SOURCE_LOCKED
+TPC227_V59_PROFILE_AXIS = SOURCE_LOCKED_COMMON
+TPC227_FOUR_GRAM_CRITERION = PROVED_EXACT
+TPC227_GLOBAL_PACKET_PHASE_VISIBILITY = GRAM_INVISIBLE
+TPC227_Q25_ROW_SIGN_GRAM_MISMATCH = PROVED_EXACT
+TPC227_TPC226_AUTOMATIC_SOURCE_TRANSFER = REFUTED_SCOPED
+TPC227_SOURCE_NATIVE_COMMON_PROFILE_COMPILER = OPEN
+TPC227_ARITHMETIC_CANCELLATION = NONE
+TPC227_ARITHMETIC_ADVANCE = NO
+TPC227_FIXED_ATOM_CREDIT = 0
+TPC227_L2 = NONE
+TPC227_FULL_GATE_B = OPEN
+TPC227_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC227_STATUS = PROVED_STRUCTURAL_L1
+TPC227_ROUND2_CLUE = KEEP_THE_V59_PACKET_PHASE_ON_THE_SOURCE_SEQUENCE_AND_THE_POISSON_PROFILE_COMMON
+```
+
+TPC-226 上游入口：proof 为
 `research/tpc-big-road/bridge_b_first_primitive_collision_transition.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transition_checker.py`，编号论文为
 `papers/tpc-226-first-primitive-collision-transition/`。在 finite modeling family

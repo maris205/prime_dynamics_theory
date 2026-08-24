@@ -1,0 +1,29 @@
+\section{The two axes in the source compiler}
+
+Let $\Hsrc$ contain source coefficient vectors and let $\Hout$ contain the localized
+character/Fourier output.  The physical transform $T:\Hsrc\to\Hout$ includes the
+common kernel and profile.  Four-phase polarization is the scalar identity
+\begin{equation}
+ \langle Tx,Ty\rangle
+ =\frac14\sum_{j=0}^3\ii^j\|T(x+\ii^jy)\|^2.
+ \label{eq:common-transform}
+\end{equation}
+The packet label $j$ changes the input $x+\ii^j y$; it does not change $T$.
+
+Suppose instead that a structural model uses $T_j$ in packet $j$ and forms
+\begin{equation}
+ F_{\boldsymbol T}(x,y)
+ :=\frac14\sum_{j=0}^3\ii^j\|T_j(x+\ii^jy)\|^2.
+ \label{eq:packet-transform}
+\end{equation}
+Equation \eqref{eq:packet-transform} is well-defined for arbitrary bounded operators,
+but it need not equal the physical target \eqref{eq:common-transform}.  In particular,
+a uniform norm bound on $T_j$ controls size but not the phase moments that remove the
+self and conjugate-cross terms.
+
+\begin{remark}
+If $T_j=\zeta_jT$ with $|\zeta_j|=1$, then every squared norm in
+\eqref{eq:packet-transform} is unchanged.  Such an output phase cannot create a signed
+energy effect.  A row-dependent sign is different: after two input rows meet at one
+output coordinate, it changes their mutual Gram entry.
+\end{remark}

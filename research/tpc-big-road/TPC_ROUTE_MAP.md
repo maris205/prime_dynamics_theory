@@ -2,23 +2,18 @@
 
 更新时间：2026-08-24
 
-当前地图版本：V79 / TPC-226
+当前地图版本：V80 / TPC-227
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-226`（`PROVED_STRUCTURAL_L1 / FIRST_PRIMITIVE_COLLISION_TRANSITION`）；
-对应论文目录为 `papers/tpc-226-first-primitive-collision-transition/`。TPC-226
-在 finite dilation family `x=Q^3,H=4Q^2,h_L=4LQ` 中保留 primitive multipliers，
-证明 `L<=3` distinct prime rows 两两不交，而 `L=4` 首次且仅出现
-
-```text
-7p+3r=16Q, multipliers (3,-7)
-```
-
-的 primitive resonance。相同 geometry 对 aligned/affine profiles 放大 AP energy，
-对 balanced odd-sign profile 则严格降低 AP energy 并给出 `E_pol=E_all=0`。因此 overlap
-只建立 signed-cancellation interface；真实 V46 profile transfer、arithmetic sign theorem
-和 complete Gate B 仍 OPEN。这是 structural L1，不是 arithmetic advance。
+当前编号锚点：`TPC-227`（`PROVED_STRUCTURAL_L1 / PACKET_PROFILE_AXIS_SEPARATION`）；
+对应论文目录为 `papers/tpc-227-packet-profile-axis-separation/`。TPC-227 回到 V59
+literal source typing，证明 packet phase 留在 `a^(j)=beta+i^j w`，四包共用一个
+Poisson profile。packet-dependent transforms 精确恢复 physical bilinear form 当且仅当
+四个 packet Gram 都等于 physical Gram。TPC-226 Q25 row-odd witness 的 off-diagonal
+Gram mismatch 为 `-1/80000`，因此 profile sign 不能自动冒充 source phase。TPC-226
+finite profile theorem 保留；source-native common-profile compiler、arithmetic sign
+theorem 与 complete Gate B 仍 OPEN。这是 structural L1，不是 arithmetic advance。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -60,9 +55,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V79 / TPC-226                     |
-        | FIRST PRIMITIVE-COLLISION TRANSITION             |
-        | 3--7 sign source-lock; arithmetic OPEN           |
+        | YOU ARE HERE — V80 / TPC-227                     |
+        | PACKET/PROFILE AXIS SEPARATION                   |
+        | common-profile source compiler; arithmetic OPEN |
         +--------------------------------------------------+
                 |
                 v
@@ -105,10 +100,11 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V79 / TPC-226 的
-first primitive-collision transition。`L<=3` 仍 block-orthogonal，`L=4` 唯一出现
-`7p+3r=16Q` 的 `3--7` resonance；geometry 已经走通，但相同 collision 可放大或抵消，
-所以下一步是 source-lock 真实 packet sign。V46 transfer、FULL_GATE_B、strict
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V80 / TPC-227 的
+packet/profile axis separation。第一 `3--7` collision geometry 已走通，现在又严格证明
+V59 packet phase 位于 source sequence、Poisson profile 对四包共同；row-dependent sign
+改变 Gram，不能作 automatic source transfer。下一步是 common-profile source-native
+collision compiler。FULL_GATE_B、strict
 `1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
@@ -1239,6 +1235,42 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.21 V80 / TPC-227：packet/profile axis separation
+
+TPC-227 source-lock V59 exact polarization：四相位在 source packets
+`a^(j)=beta+i^j w` 上，四个 quadratic functionals 共享一个 `psi_+` transform。对 physical
+`T` 与 proposed packet-dependent `T_j`，four-point operator DFT 证明
+
+```text
+1/4 sum_j i^j ||T_j(x+i^j y)||^2 = <Tx,Ty> for every x,y
+iff T_j^*T_j=T^*T for j=0,1,2,3.
+```
+
+global packet signs 不改变 Gram，因而不能制造 squared-energy sign；row-dependent
+profile signs 则可改变 collision cross-Gram。TPC-226 `Q=25`, `(37,47)` first-resonance
+block 的 aligned/odd maps 为 `(1,1)/400` 与 `(1,-1)/400`，off-diagonal Gram mismatch
+exact 是 `-1/80000`。
+
+```text
+TPC227_V59_PACKET_AXIS = SOURCE_LOCKED
+TPC227_V59_PROFILE_AXIS = SOURCE_LOCKED_COMMON
+TPC227_FOUR_GRAM_CRITERION = PROVED_EXACT
+TPC227_GLOBAL_PACKET_PHASE_VISIBILITY = GRAM_INVISIBLE
+TPC227_Q25_ROW_SIGN_GRAM_MISMATCH = PROVED_EXACT
+TPC227_TPC226_AUTOMATIC_SOURCE_TRANSFER = REFUTED_SCOPED
+TPC227_SOURCE_NATIVE_COMMON_PROFILE_COMPILER = OPEN
+TPC227_ARITHMETIC_ADVANCE = NO
+TPC227_FIXED_ATOM_CREDIT = 0
+TPC227_L2 = NONE
+TPC227_FULL_GATE_B = OPEN
+TPC227_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC227_ROUND2_CLUE = KEEP_THE_V59_PACKET_PHASE_ON_THE_SOURCE_SEQUENCE_AND_THE_POISSON_PROFILE_COMMON
+```
+
+地图位置：**V80 / TPC-227 已封住“把 finite profile sign 自动改名为 V59 packet phase”
+的 typed shortcut。下一条最短大路是保持 common `psi_+`，把 literal coefficient packets
+直接穿过 prime/AP collision representation，并识别真实 `3--7` source correlation。**
+
 ## 5.20 V79 / TPC-226：first primitive-collision transition
 
 TPC-226 沿 TPC-225 的最小大路测试 finite dilations
@@ -1656,7 +1688,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V79 / TPC-226：
+截至 V80 / TPC-227：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1830,7 +1862,18 @@ TPC226_FIXED_ATOM_CREDIT = 0
 TPC226_L2 = NONE
 TPC226_FULL_GATE_B = OPEN
 TPC226_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-226
+TPC227_V59_PACKET_AXIS = SOURCE_LOCKED
+TPC227_V59_PROFILE_AXIS = SOURCE_LOCKED_COMMON
+TPC227_FOUR_GRAM_CRITERION = PROVED_EXACT
+TPC227_Q25_ROW_SIGN_GRAM_MISMATCH = PROVED_EXACT
+TPC227_TPC226_AUTOMATIC_SOURCE_TRANSFER = REFUTED_SCOPED
+TPC227_SOURCE_NATIVE_COMMON_PROFILE_COMPILER = OPEN
+TPC227_ARITHMETIC_ADVANCE = NO
+TPC227_FIXED_ATOM_CREDIT = 0
+TPC227_L2 = NONE
+TPC227_FULL_GATE_B = OPEN
+TPC227_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-227
 ```
 
 以下事实不得从路线图中推断：
@@ -1848,27 +1891,31 @@ NUMBERED_RELEASE = TPC-226
 
 优先级更新为：
 
-1. **TPC-226 已完成：first primitive-collision transition**。`L<=3` 的 primitive
+1. **TPC-227 已完成：packet/profile axis separation**。V59 packet phase 被锁在
+   `a^(j)=beta+i^j w`，Poisson profile 对四包共同；four-Gram iff criterion 与 Q25
+   `-1/80000` mismatch 封住 automatic profile-to-source transfer。下一步是 source-native
+   common-profile collision compiler。
+2. **TPC-226 已完成：first primitive-collision transition**。`L<=3` 的 primitive
    prime rows 仍 disjoint；`L=4` 的全部 overlap 被 exact classified 为
    `7p+3r=16Q` 的 `3--7` resonance。aligned/affine amplification 与 balanced-sign
    cancellation 同时证明 geometry 不决定符号；下一步必须 source-lock actual V46
    profiles。TPC-225 的 cutoff-one obstruction 与 TPC-224 common interface 作为直接
    上游保留。
-2. **TPC-225 已完成：cutoff-one shared-clock obstruction**。在 TPC-224 named
+3. **TPC-225 已完成：cutoff-one shared-clock obstruction**。在 TPC-224 named
    source-surrogate clock 上证明 `E_AP=E_diag`、`E_all=E_pol` 与
    prime-support disjointness，strict AP saving 在该 clock 上 scoped-refuted；这是一项
    structural L1，不支付 arithmetic marginal。其直接上游 TPC-224 已完成共同 literal
    interface `E_all<=min(J E_AP,P E_pol)<=PJ/(P+J)(E_AP+E_pol)` 并用
    congruence-aligned stress scales scoped-refute unit-factor shortcut。
-3. **TPC-223 已完成：conditional signed-reassembly compiler**。在共同 literal interface
+4. **TPC-223 已完成：conditional signed-reassembly compiler**。在共同 literal interface
    假设下，two-channel exponent exact 编译为
    `sigma=min(delta_AP,kappa_pol)-lambda_struct`；canonical ledger 给出 effective
    saving `11/1200` 与 strict margin `1/150`，但三条输入仍为 conditional open。
-4. **TPC-222 已完成：four-packet polarization and PSD cross-term obstruction**。四点极化
+5. **TPC-222 已完成：four-packet polarization and PSD cross-term obstruction**。四点极化
    exact 恢复 signed cross-term；相同 diagonal/trace 的 rank-one fixtures 给出目标能量
    `16/0`，因此 unsigned PSD/trace envelope 不能识别 signed reassembly。下一步是把
    phase-labelled cross-correlation 写成条件化、可审计的 reassembly compiler。
-5. **TPC-221 已完成：collision-graph Schur envelope and literal saturation**。PSD Gram
+6. **TPC-221 已完成：collision-graph Schur envelope and literal saturation**。PSD Gram
    identity 与 weighted Schur envelope 已严格证明；`h=5` literal aligned fixture 达到
    `Gamma=2J_4` 与 exact ratio `P=4`，因此 absolute collision-degree control 不能
    单独产生 sub-`P` saving。下一步必须是 signed/phase-sensitive dispersion。
@@ -1892,9 +1939,9 @@ NUMBERED_RELEASE = TPC-226
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-226 的下一步：source-lock the signed `3--7` resonance**。把 actual V46
-    source profile 拉回本篇的 primitive resonance formula，先判定单条 collision 的
-    sign/correlation law，再尝试 growing-scale aggregate saving；不能把 balanced fixture
+12. **TPC-227 的下一步：source-native common-profile collision compiler**。保持
+    `a^(j)=beta+i^j w` 的 packet phase 与共同 `psi_+`，把 literal coefficient packets
+    直接接到 primitive `3--7` collision formula；不能把 row-dependent profile sign
     当作 physical packet theorem。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
@@ -1994,6 +2041,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-24 | V80 / TPC-227 | Bridge A / Gate B：packet/profile axis separation；source phase 与 common profile exact typed，source-native collision compiler open | `TPC-227` | four-Gram iff theorem、Q25 `-1/80000` row-sign mismatch、automatic profile-to-source transfer scoped-refuted；arithmetic仍为 NO |
 | 2026-08-24 | V79 / TPC-226 | Bridge A / Gate B：first primitive-collision transition；`L<=3` disjoint，`L=4` 唯一 `3--7` resonance；source sign 与 arithmetic open | `TPC-226` | exact collision classification、Q25 witness、505-scale census、aligned/affine amplification 与 balanced-sign cancellation；arithmetic仍为 NO |
 | 2026-08-22 | V78 / TPC-225 | Bridge A / Gate B：cutoff-one shared-clock obstruction；named source clock 的 prime blocks exact orthogonal，strict AP saving scoped-refuted；nontrivial-cutoff overlap与arithmetic仍 open | `TPC-225` | exact cutoff-one theorem、`E_AP=E_diag`、`E_all=E_pol`、9+14 exact-rational audits、`Q=3..99` boundary replay；arithmetic仍为 NO |
 | 2026-08-22 | V77 / TPC-224 | Bridge A / Gate B：literal two-channel compatibility；共同 Hilbert interface exact，unit-factor shortcut scoped-refuted；arithmetic marginals open | `TPC-224` | exact `E_all<=min(J E_AP,P E_pol)<=PJ/(P+J)(E_AP+E_pol)`、9+5 exact-rational finite audits、actual-prime congruence stress；arithmetic仍为 NO |

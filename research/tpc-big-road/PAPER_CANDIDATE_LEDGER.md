@@ -2,11 +2,66 @@
 
 更新时间：2026-08-24
 
-状态：**TPC226_PROVED_STRUCTURAL_L1_RELEASED / FIRST_PRIMITIVE_COLLISION_TRANSITION / ARITHMETIC_INPUTS_OPEN**
+状态：**TPC227_PROVED_STRUCTURAL_L1_RELEASED / PACKET_PROFILE_AXIS_SEPARATION / ARITHMETIC_INPUTS_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.21 已发布：TPC-227 packet/profile axis separation
+
+项目：`papers/tpc-227-packet-profile-axis-separation/`
+
+类型：**PROVED_STRUCTURAL_L1 / PACKET_PROFILE_AXIS_SEPARATION**。
+
+TPC-227 对 TPC-226 的 signed-profile clue 做 literal source audit。V59 的四相位属于
+source sequences `a^(j)=beta+i^j w`，Poisson profile `psi_+` 对四包共同。若 `T` 是
+physical transform、`T_j` 是 packet-dependent replacements，则 exact theorem 给出
+
+```text
+1/4 sum_j i^j ||T_j(x+i^j y)||^2 = <Tx,Ty> for all x,y
+iff T_j^*T_j=T^*T for all j.
+```
+
+证明使用四点 operator DFT。TPC-226 的 Q25 collision block 上，aligned map
+`(1,1)/400` 与 row-odd map `(1,-1)/400` 的 off-diagonal Gram difference exact 是
+`-1/80000`。所以 global packet phase 虽 Gram-invisible，row-dependent profile sign
+却改变 cross-row Gram；把 finite balanced profile 自动解释成 V59 source phase 的推理
+被 scoped-refute。
+
+```text
+TPC227_ROUTE_ADVANCE = YES
+TPC227_V59_PACKET_AXIS = SOURCE_LOCKED
+TPC227_V59_PROFILE_AXIS = SOURCE_LOCKED_COMMON
+TPC227_FOUR_GRAM_CRITERION = PROVED_EXACT
+TPC227_GLOBAL_PACKET_PHASE_VISIBILITY = GRAM_INVISIBLE
+TPC227_Q25_ROW_SIGN_GRAM_MISMATCH = PROVED_EXACT
+TPC227_TPC226_AUTOMATIC_SOURCE_TRANSFER = REFUTED_SCOPED
+TPC227_SOURCE_NATIVE_COMMON_PROFILE_COMPILER = OPEN
+TPC227_ARITHMETIC_CANCELLATION = NONE
+TPC227_ARITHMETIC_ADVANCE = NO
+TPC227_FIXED_ATOM_CREDIT = 0
+TPC227_L2 = NONE
+TPC227_FULL_GATE_B = OPEN
+TPC227_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC227_STATUS = PROVED_STRUCTURAL_L1
+TPC227_ROUND2_CLUE = KEEP_THE_V59_PACKET_PHASE_ON_THE_SOURCE_SEQUENCE_AND_THE_POISSON_PROFILE_COMMON
+```
+
+strongest positive result：四包 source compatibility 被压成 exact iff Gram criterion，
+并由 Q25 rational block 执行验证；strongest obstruction：row-dependent profile sign
+不是 packet phase，自动 source transfer 不合法；open theorem：构造 common-profile
+source-native collision compiler并估计 literal `3--7` correlation；reusable structure：
+four-point Gram DFT、target-Gram test、collision block；`ROUND2_CLUE`：
+
+```text
+KEEP_THE_V59_PACKET_PHASE_ON_THE_SOURCE_SEQUENCE_AND_THE_POISSON_PROFILE_COMMON
+```
+
+证据包包含 6 个 exact-rational operator fixtures、独立 normal/optimized checker、6 个
+mutation adversaries 与 4 页嵌入字体 PDF。Bridge proof/checker 为
+`research/tpc-big-road/bridge_b_packet_profile_axis_separation.md` 与
+`research/tpc-big-road/tpc_bridge_b_packet_profile_axis_separation_checker.py`。
 
 ## 0.20 已发布：TPC-226 first primitive-collision transition
 

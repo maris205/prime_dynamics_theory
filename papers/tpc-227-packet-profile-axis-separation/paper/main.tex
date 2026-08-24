@@ -1,0 +1,45 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=0.88in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Hsrc}{\mathcal H_{\rm src}}
+\newcommand{\Hout}{\mathcal H_{\rm out}}
+\newcommand{\ii}{\mathrm i}
+
+\title{Packet/Profile Axis Separation for Source-Native\\Four-Phase Polarization}
+\author{Liang Wang\\Huazhong University of Science and Technology}
+\date{August 24, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+\input{sections/1_introduction}
+\input{sections/2_source_typing}
+\input{sections/3_gram_criterion}
+\input{sections/4_collision_witness}
+\input{sections/5_certification}
+\input{sections/6_conclusion}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

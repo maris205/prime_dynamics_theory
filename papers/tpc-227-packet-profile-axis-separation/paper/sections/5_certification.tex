@@ -1,0 +1,31 @@
+\section{Exact certification}
+
+The executable certificate uses rational matrices and four-point Fourier moments.  It
+contains six fixtures summarized in Table~\ref{tab:fixtures}.  The first two are
+positive controls.  The remaining four independently expose target mismatch, conjugate
+cross contamination, or a nonzero first Fourier moment.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lll}
+\toprule
+Fixture & Criterion & Verdict\\
+\midrule
+Common physical transform & all four Grams equal target & pass\\
+Global packet signs & signs cancel in each Gram & pass\\
+Row-dependent odd sign & collision off diagonal flips & fail\\
+Alternating scales & nonzero zeroth/second residual & fail\\
+Four unequal scales & nonzero first moment & fail\\
+Mixed aligned/odd profiles & packet Gram mismatch & fail\\
+\bottomrule
+\end{tabular}
+\caption{Exact-rational compatibility fixtures.}
+\label{tab:fixtures}
+\end{table}
+
+The producer rebuilds the committed JSON certificate.  A separate checker rederives
+the two $2\times2$ Gram matrices and audits the six verdicts without importing the
+producer module.  Normal and optimized Python modes emit byte-identical output.  An
+adversarial script rejects mutations of the schema, theorem criterion, positive and
+negative controls, and witness check.  These tests certify the finite algebra and claim
+boundary; they are not numerical evidence for an asymptotic prime estimate.

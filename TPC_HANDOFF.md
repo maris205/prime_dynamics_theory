@@ -1,9 +1,74 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V79_TPC226_SEALED_FOR_NEW_SESSION`
+交接状态：`BOLD_CHANNEL_V80_TPC227_SEALED_FOR_NEXT_BATCH_PAPER`
 
-TPC-226 当前 section：first primitive-collision transition
+TPC-227 当前 section：packet/profile axis separation
+-------------------------------------------------------
+
+TPC-227 回到 V59 literal source compiler 的 typing：四相位属于 source sequences
+`a^(j)=beta+i^j w`，四个 quadratic packets 共享同一个 Poisson profile `psi_+`。
+对 physical transform `T` 与任意 proposed packet transforms `T_j`，exact operator
+DFT 证明
+
+```text
+1/4 sum_j i^j ||T_j(x+i^j y)||^2 = <Tx,Ty> for every x,y
+iff T_j^*T_j=T^*T for j=0,1,2,3.
+```
+
+global packet signs 是 Gram-invisible；row-dependent signs 可以改变 collision Gram。
+在 TPC-226 `Q=25`, `(37,47)`, `h=400` first-resonance block 上，aligned map
+`(1,1)/400` 与 row-odd map `(1,-1)/400` 的 off-diagonal Gram difference exact 是
+`-1/80000`。因此 TPC-226 finite balanced-profile saving 保留，但把该 profile sign
+自动解释成 V59 source packet phase 的推理被 scoped-refute。
+
+TPC-227 claim firewall：
+
+```text
+TPC227_ROUTE_ADVANCE = YES
+TPC227_V59_PACKET_AXIS = SOURCE_LOCKED
+TPC227_V59_PROFILE_AXIS = SOURCE_LOCKED_COMMON
+TPC227_FOUR_GRAM_CRITERION = PROVED_EXACT
+TPC227_GLOBAL_PACKET_PHASE_VISIBILITY = GRAM_INVISIBLE
+TPC227_Q25_ROW_SIGN_GRAM_MISMATCH = PROVED_EXACT
+TPC227_TPC226_AUTOMATIC_SOURCE_TRANSFER = REFUTED_SCOPED
+TPC227_SOURCE_NATIVE_COMMON_PROFILE_COMPILER = OPEN
+TPC227_ARITHMETIC_CANCELLATION = NONE
+TPC227_ARITHMETIC_ADVANCE = NO
+TPC227_FIXED_ATOM_CREDIT = 0
+TPC227_L2 = NONE
+TPC227_FULL_GATE_B = OPEN
+TPC227_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC227_TPC_TRIGGER = true
+TPC227_NUMBERED_RELEASE = YES
+TPC227_STATUS = PROVED_STRUCTURAL_L1
+TPC227_ROUND2_CLUE = KEEP_THE_V59_PACKET_PHASE_ON_THE_SOURCE_SEQUENCE_AND_THE_POISSON_PROFILE_COMMON
+```
+
+TPC-227 strongest positive result 是 four-packet compatibility 的 exact iff Gram theorem
+与 executable Q25 witness；strongest obstruction 是 row-dependent profile sign 改变
+cross-row Gram，不能由 packet relabeling 自动转入 V59；open theorem 是保持 common
+`psi_+`、把 literal coefficient packets 接入 prime/AP collision representation；reusable
+structure 是 four-point Gram DFT、target-Gram test 与 first-collision block。
+
+证据包包含 6 个 exact-rational operator fixtures、normal/optimized byte-identical
+independent checker、6 个 adversarial mutations 与 4 页嵌入字体 PDF。
+
+编号论文目录：papers/tpc-227-packet-profile-axis-separation/
+
+```text
+papers/tpc-227-packet-profile-axis-separation/README.md
+papers/tpc-227-packet-profile-axis-separation/PAPER_PLAN.md
+papers/tpc-227-packet-profile-axis-separation/PROOF_PACKAGE.md
+papers/tpc-227-packet-profile-axis-separation/paper/paper.pdf
+papers/tpc-227-packet-profile-axis-separation/results/certificate.json
+papers/tpc-227-packet-profile-axis-separation/notes/theorem_ledger.md
+papers/tpc-227-packet-profile-axis-separation/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_packet_profile_axis_separation.md
+research/tpc-big-road/tpc_bridge_b_packet_profile_axis_separation_checker.py
+```
+
+TPC-226 上游 section：first primitive-collision transition
 -------------------------------------------------------------
 
 TPC-226 是 TPC-225 cutoff-one obstruction 的最小 nontrivial-cutoff follow-up。它在
@@ -5481,11 +5546,23 @@ python -B research/tpc-big-road/tpc_bridge_b_cutoff_one_shared_clock_obstruction
 python -O -B research/tpc-big-road/tpc_bridge_b_cutoff_one_shared_clock_obstruction_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transition_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_first_primitive_collision_transition_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_packet_profile_axis_separation_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_packet_profile_axis_separation_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-226 入口：
+最新 TPC-227 入口：
+
+```text
+papers/tpc-227-packet-profile-axis-separation/README.md
+papers/tpc-227-packet-profile-axis-separation/notes/theorem_ledger.md
+papers/tpc-227-packet-profile-axis-separation/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_packet_profile_axis_separation.md
+research/tpc-big-road/tpc_bridge_b_packet_profile_axis_separation_checker.py
+```
+
+TPC-226 上游入口：
 
 ```text
 papers/tpc-226-first-primitive-collision-transition/README.md
