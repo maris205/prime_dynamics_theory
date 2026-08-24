@@ -1,0 +1,147 @@
+{
+  "affiliation": "Huazhong University of Science and Technology",
+  "author": "Liang Wang",
+  "boundary_scan": {
+    "Q_max": 4096,
+    "Q_min": 8,
+    "edge_bearing_scales": 2268,
+    "first_maximum_Q": 3440,
+    "maximum_degree": 1,
+    "maximum_edges": 18,
+    "scales_checked": 4089,
+    "scan_sha256": "2f8a95639abd83482af156797c262c5fe97dad417c21038a9c6f1562984614f5",
+    "total_edges": 13754
+  },
+  "checks": {
+    "bilinear_source_bound_sharp": true,
+    "delta_saving_criterion_exact": true,
+    "low_high_endpoint_intervals_exact": true,
+    "matching_degree_at_most_one": true,
+    "symmetric_antisymmetric_decomposition_exact": true,
+    "two_coordinate_block_spectrum_exact": true
+  },
+  "claim_level": "PROVED_STRUCTURAL_L1",
+  "firewall": {
+    "L2": "NONE",
+    "actual_V59_atom_crosswalk": "OPEN",
+    "arithmetic_advance": "NO",
+    "arithmetic_antisymmetric_dominance": "OPEN",
+    "arithmetic_cancellation": "NONE",
+    "fixed_atom_credit": 0,
+    "full_gate_b": "OPEN",
+    "strict_1_over_400": "UNPAID"
+  },
+  "q25": {
+    "Q": 25,
+    "edge_count": 1,
+    "matched_vertices": 2,
+    "maximum_degree": 1,
+    "pairs": [
+      [
+        37,
+        47
+      ]
+    ],
+    "prime_count": 6
+  },
+  "round2_clue": "QUANTIFY_MATCHED_RESONANCE_MASS_BEFORE_SEEKING_A_FIXED_PROPORTIONAL_SAVING",
+  "schema": "tpc229-primitive-resonance-matching-spectrum-v1",
+  "sharp_bilinear_fixture": {
+    "bound": "30",
+    "ratio_to_bound": "1",
+    "source_mass": "60",
+    "value": "30"
+  },
+  "status": "PASS",
+  "symmetric_fixtures": {
+    "aligned": {
+      "AP": "20",
+      "AP_over_diagonal": "2",
+      "antisymmetric_energy": "0",
+      "collision": "10",
+      "delta": "0",
+      "delta_saving_criterion": false,
+      "diagonal": "10",
+      "name": "aligned",
+      "symmetric_energy": "10",
+      "u": [
+        "1",
+        "2"
+      ],
+      "v": [
+        "1",
+        "2"
+      ]
+    },
+    "anti_aligned": {
+      "AP": "0",
+      "AP_over_diagonal": "0",
+      "antisymmetric_energy": "10",
+      "collision": "-10",
+      "delta": "1/10",
+      "delta_saving_criterion": true,
+      "diagonal": "10",
+      "name": "anti_aligned",
+      "symmetric_energy": "0",
+      "u": [
+        "1",
+        "2"
+      ],
+      "v": [
+        "-1",
+        "-2"
+      ]
+    },
+    "orthogonal": {
+      "AP": "2",
+      "AP_over_diagonal": "1",
+      "antisymmetric_energy": "1",
+      "collision": "0",
+      "delta": "0",
+      "delta_saving_criterion": true,
+      "diagonal": "2",
+      "name": "orthogonal",
+      "symmetric_energy": "1",
+      "u": [
+        "1",
+        "0"
+      ],
+      "v": [
+        "0",
+        "1"
+      ]
+    },
+    "partial_negative": {
+      "AP": "4",
+      "AP_over_diagonal": "2/3",
+      "antisymmetric_energy": "4",
+      "collision": "-2",
+      "delta": "1/5",
+      "delta_saving_criterion": true,
+      "diagonal": "6",
+      "name": "partial_negative",
+      "symmetric_energy": "2",
+      "u": [
+        "1",
+        "2"
+      ],
+      "v": [
+        "-1",
+        "0"
+      ]
+    }
+  },
+  "theorem": {
+    "bilinear_block_bound": "|<beta_p,w_r>+<beta_r,w_p>|<=source_mass/2",
+    "delta_saving_criterion": "(1+delta)E_sym<=(1-delta)E_anti",
+    "edge_operator_spectrum": [
+      -1,
+      -1,
+      1,
+      1
+    ],
+    "endpoint_ranges": "10Q/7<p<8Q/5<r<2Q",
+    "graph": "the primitive 3--7 resonance graph is a matching for every Q>=8",
+    "symmetric_AP_ratio_range": "0<=E_AP/E_diag<=2"
+  }
+}

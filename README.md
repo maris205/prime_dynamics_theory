@@ -9,12 +9,12 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-228 在 TPC-227 的正确 source/profile typing 上构造 exact compiler。
-对共同 profile rows `W_q^(j)=U_q+i^jV_q`，证明四相位 AP-minus-diagonal 精确等于
-`sum_(q!=r)<U_q,V_r>`；Q25 first `3--7` resonance 因而成为两个 shared residues 上
-四项 `beta_p w_r+beta_r w_p` source block。正、负、零、单向、单 coordinate fixtures
-全部 exact 通过。状态仍是 `PROVED_STRUCTURAL_L1`；actual V59-to-primitive-atom
-crosswalk、arithmetic sign theorem、L2 与 Gate B 开放。
+当前主线状态：TPC-229 证明 primitive `3--7` resonance graph 对每个 `Q>=8` 都是
+matching：每条 edge 满足 `10Q/7<p<8Q/5<r<2Q`，端点区间分离且 counterpart 唯一。
+每条 two-coordinate block spectrum 为 `(-1,-1,+1,+1)`；AP saving 精确等价于
+antisymmetric-mode dominance。4089 个尺度、13,754 条 edges 的 replay 始终 maximum
+degree one。状态为 `PROVED_STRUCTURAL_L1`；matched source mass、arithmetic dominance、
+actual V59 atom crosswalk、L2 与 Gate B 开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -28,6 +28,8 @@ crosswalk、arithmetic sign theorem、L2 与 Gate B 开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-229-primitive-resonance-matching-spectrum` - `PROVED_STRUCTURAL_L1 / PRIMITIVE_RESONANCE_MATCHING_SPECTRUM` - 证明所有 primitive `3--7` resonance graphs 都是 matching，给出 `(-1,-1,+1,+1)` sharp edge spectrum、`0..2` AP ratio 与 exact antisymmetric saving criterion；4089-scale census 通过，matched source mass 与 arithmetic dominance 仍开放。
 
 `tpc-228-source-native-polarized-collision-compiler` - `PROVED_STRUCTURAL_L1 / SOURCE_NATIVE_POLARIZED_COLLISION_COMPILER` - 证明共同 profile 下四相位 `E_AP-E_diag` 精确编译为 source-labelled off-diagonal collision sum，并把 Q25 `3--7` resonance 写成四项 `beta-w` block；五类 exact sign controls 与两个 graph controls 通过，actual V59 atom crosswalk 和 arithmetic sign 仍开放。
 

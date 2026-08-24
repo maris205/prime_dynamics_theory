@@ -1,0 +1,20 @@
+\section{Sharp source-bilinear block bound}
+
+TPC-228 gives on one edge
+\[
+ B_e=\langle\beta_p,w_r\rangle+\langle\beta_r,w_p\rangle.
+\]
+By the elementary Hilbert inequality $2|\langle x,y\rangle|\le
+\|x\|^2+\|y\|^2$,
+\begin{equation}
+ |B_e|\le\frac12\left(
+ \|\beta_p\|^2+\|\beta_r\|^2+\|w_p\|^2+\|w_r\|^2
+ \right).
+ \label{eq:bilinear-bound}
+\end{equation}
+The constant is sharp: choose $w_r=\beta_p$ and $w_p=\beta_r$.
+
+Matching means that summing \eqref{eq:bilinear-bound} introduces no graph-degree loss.
+This is stronger than a general Schur envelope, but it remains an absolute bound.  A
+negative arithmetic contribution requires signed information about the exchanged source
+pairs.

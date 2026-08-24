@@ -1,0 +1,15 @@
+\section{Exact certification}
+
+The all-scale proof above is symbolic.  The certificate independently replays the
+literal prime-shell equation for every $8\le Q\le4096$.  Across 4089 scales it finds
+2268 edge-bearing scales and 13,754 edges.  The largest count is 18, first at $Q=3440$;
+the maximum vertex degree is one throughout.
+
+Four exact-rational spectral fixtures attain AP ratios $2,0,1,$ and $2/3$, covering
+aligned, anti-aligned, orthogonal and partially negative blocks.  A source-bilinear
+fixture attains equality in \eqref{eq:bilinear-bound}.  A separate checker rederives the
+spectrum and fixture ratios, with byte-identical normal and optimized output.  Seven
+semantic mutations are rejected.
+
+The scan is a regression for the implementation, not the reason the matching theorem is
+true.  It contains no estimate for resonance density or source amplitudes.

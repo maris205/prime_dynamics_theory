@@ -1,0 +1,40 @@
+\section{Sharp two-coordinate spectrum}
+
+Order the two shared coordinates on one edge and write its two row vectors as
+$u,v\in\mathbb R^2$.  The collision adjacency on their direct sum is
+\begin{equation}
+ J=\begin{pmatrix}0&I_2\\I_2&0\end{pmatrix}.
+ \label{eq:swap}
+\end{equation}
+Its symmetric and antisymmetric subspaces have eigenvalues $+1$ and $-1$, each twice.
+
+Put $s=(u+v)/\sqrt2$ and $d=(u-v)/\sqrt2$.  Then
+\begin{align}
+ \Ediag&=\|s\|^2+\|d\|^2,\\
+ E_{\rm collision}&=2\langle u,v\rangle=\|s\|^2-\|d\|^2,\\
+ \EAP&=\|u+v\|^2=2\|s\|^2.
+ \label{eq:energies}
+\end{align}
+It follows immediately that
+\begin{equation}
+ 0\le \frac{\EAP}{\Ediag}\le2,
+ \label{eq:ratio}
+\end{equation}
+with equality at $v=-u$ and $v=u$ respectively.
+
+\begin{theorem}[Exact saving criterion]
+For $0\le\delta<1$,
+\begin{equation}
+ \EAP\le(1-\delta)\Ediag
+ \quad\Longleftrightarrow\quad
+ (1+\delta)\|s\|^2\le(1-\delta)\|d\|^2.
+ \label{eq:criterion}
+\end{equation}
+The same equivalence holds globally after summing symmetric and antisymmetric energies
+over the matching blocks.
+\end{theorem}
+
+\begin{proof}
+Substitute \eqref{eq:energies} and rearrange.  Orthogonality between matching blocks
+permits summation without cross terms.
+\end{proof}

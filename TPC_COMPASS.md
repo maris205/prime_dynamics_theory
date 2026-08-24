@@ -1,11 +1,36 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V81 / SOURCE_NATIVE_POLARIZED_COLLISION_COMPILER`
-claim level：`PROVED_STRUCTURAL_L1_SOURCE_NATIVE_COLLISION_COMPILER`
-编号事实终点：TPC-228；TPC-228 trigger：`true`
+状态：`BOLD_CHANNEL_V82 / PRIMITIVE_RESONANCE_MATCHING_SPECTRUM`
+claim level：`PROVED_STRUCTURAL_L1_RESONANCE_MATCHING_SPECTRUM`
+编号事实终点：TPC-229；TPC-229 trigger：`true`
 
-当前 TPC-228 入口：proof 为
+当前 TPC-229 入口：proof 为
+`research/tpc-big-road/bridge_b_primitive_resonance_matching_spectrum.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_primitive_resonance_matching_spectrum_checker.py`，编号
+论文为 `papers/tpc-229-primitive-resonance-matching-spectrum/`。每条 resonance edge 满足
+`10Q/7<p<8Q/5<r<2Q`，故 graph 是 matching；edge spectrum 为
+`(-1,-1,+1,+1)`，AP saving iff antisymmetric-mode dominance。
+
+```text
+TPC229_RESONANCE_GRAPH_MATCHING = PROVED_EXACT
+TPC229_LOW_HIGH_ENDPOINT_SEPARATION = PROVED_EXACT
+TPC229_EDGE_SPECTRUM = PROVED_EXACT
+TPC229_GLOBAL_BLOCK_DIRECT_SUM = PROVED_EXACT
+TPC229_SHARP_AP_RATIO_RANGE = PROVED_EXACT
+TPC229_DELTA_SAVING_CRITERION = PROVED_EXACT
+TPC229_SOURCE_BILINEAR_BLOCK_BOUND = PROVED_EXACT_SHARP
+TPC229_ARITHMETIC_ANTISYMMETRIC_DOMINANCE = OPEN
+TPC229_ARITHMETIC_ADVANCE = NO
+TPC229_FIXED_ATOM_CREDIT = 0
+TPC229_L2 = NONE
+TPC229_FULL_GATE_B = OPEN
+TPC229_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC229_STATUS = PROVED_STRUCTURAL_L1
+TPC229_ROUND2_CLUE = QUANTIFY_MATCHED_RESONANCE_MASS_BEFORE_SEEKING_A_FIXED_PROPORTIONAL_SAVING
+```
+
+TPC-228 上游入口：proof 为
 `research/tpc-big-road/bridge_b_source_native_polarized_collision_compiler.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_source_native_polarized_collision_compiler_checker.py`，
 编号论文为 `papers/tpc-228-source-native-polarized-collision-compiler/`。对 common-profile

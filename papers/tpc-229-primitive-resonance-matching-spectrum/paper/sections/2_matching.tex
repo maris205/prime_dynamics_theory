@@ -1,0 +1,31 @@
+\section{The resonance graph is a matching}
+
+Let $G_Q$ have as vertices the primes in $(Q,2Q)$, with an edge $p<r$ when
+\eqref{eq:resonance} holds and the primitive multiplier conditions from TPC-226 are
+satisfied.
+
+\begin{theorem}[Endpoint separation and matching]
+\label{thm:matching}
+Every edge of $G_Q$ satisfies
+\begin{equation}
+ \frac{10Q}{7}<p<\frac{8Q}{5}<r<2Q.
+ \label{eq:ranges}
+\end{equation}
+Moreover, every vertex has degree at most one.
+\end{theorem}
+
+\begin{proof}
+The shell inequality $r<2Q$ and \eqref{eq:resonance} imply
+$7p=16Q-3r>10Q$.  Since $p<r$, we also have
+$10p<7p+3r=16Q<7r+3r$, which gives $p<8Q/5<r$.  This proves
+\eqref{eq:ranges}.
+
+The low and high endpoint intervals in \eqref{eq:ranges} are disjoint.  A low endpoint
+$p$ determines $r=(16Q-7p)/3$, and a high endpoint $r$ determines
+$p=(16Q-3r)/7$.  Thus no vertex belongs to two edges.
+\end{proof}
+
+\begin{corollary}
+Collision coordinates from different resonance edges have disjoint prime-row support.
+Consequently every collision quadratic or bilinear form is a direct sum over edges.
+\end{corollary}

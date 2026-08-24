@@ -1,9 +1,64 @@
 # TPC HANDOFF
 
 更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V81_TPC228_SEALED_FOR_NEXT_BATCH_PAPER`
+交接状态：`BOLD_CHANNEL_V82_TPC229_SEALED_FOR_NEXT_BATCH_PAPER`
 
-TPC-228 当前 section：source-native polarized collision compiler
+TPC-229 当前 section：primitive resonance matching spectrum
+--------------------------------------------------------------
+
+Every primitive edge satisfies `10Q/7<p<8Q/5<r<2Q`; low/high endpoints are disjoint
+and each endpoint uniquely determines its counterpart. Thus every `3--7` graph is a
+matching. The two-coordinate edge spectrum is `(-1,-1,+1,+1)`, and
+
+```text
+E_diag=E_sym+E_anti
+E_collision=E_sym-E_anti
+E_AP=2E_sym
+E_AP<=(1-delta)E_diag iff (1+delta)E_sym<=(1-delta)E_anti.
+```
+
+4089-scale replay covers 13,754 edges with maximum degree one.
+
+```text
+TPC229_ROUTE_ADVANCE = YES
+TPC229_RESONANCE_GRAPH_MATCHING = PROVED_EXACT
+TPC229_LOW_HIGH_ENDPOINT_SEPARATION = PROVED_EXACT
+TPC229_EDGE_SPECTRUM = PROVED_EXACT
+TPC229_GLOBAL_BLOCK_DIRECT_SUM = PROVED_EXACT
+TPC229_SHARP_AP_RATIO_RANGE = PROVED_EXACT
+TPC229_DELTA_SAVING_CRITERION = PROVED_EXACT
+TPC229_SOURCE_BILINEAR_BLOCK_BOUND = PROVED_EXACT_SHARP
+TPC229_ARITHMETIC_ANTISYMMETRIC_DOMINANCE = OPEN
+TPC229_ACTUAL_V59_ATOM_CROSSWALK = OPEN
+TPC229_ARITHMETIC_ADVANCE = NO
+TPC229_FIXED_ATOM_CREDIT = 0
+TPC229_L2 = NONE
+TPC229_FULL_GATE_B = OPEN
+TPC229_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC229_TPC_TRIGGER = true
+TPC229_NUMBERED_RELEASE = YES
+TPC229_STATUS = PROVED_STRUCTURAL_L1
+TPC229_ROUND2_CLUE = QUANTIFY_MATCHED_RESONANCE_MASS_BEFORE_SEEKING_A_FIXED_PROPORTIONAL_SAVING
+```
+
+strongest positive result：global graph exact direct-sum into sharp edge blocks；strongest
+obstruction：geometry supplies neither matched source mass nor antisymmetric dominance；
+open theorem：quantify matched resonance mass；reusable structure：endpoint separation、
+matching、sym/anti ledger。
+
+编号论文目录：papers/tpc-229-primitive-resonance-matching-spectrum/
+
+```text
+papers/tpc-229-primitive-resonance-matching-spectrum/README.md
+papers/tpc-229-primitive-resonance-matching-spectrum/PROOF_PACKAGE.md
+papers/tpc-229-primitive-resonance-matching-spectrum/paper/paper.pdf
+papers/tpc-229-primitive-resonance-matching-spectrum/results/certificate.json
+papers/tpc-229-primitive-resonance-matching-spectrum/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_primitive_resonance_matching_spectrum.md
+research/tpc-big-road/tpc_bridge_b_primitive_resonance_matching_spectrum_checker.py
+```
+
+TPC-228 上游 section：source-native polarized collision compiler
 -----------------------------------------------------------------
 
 TPC-228 保持 TPC-227 的 source/profile axis separation。对 common-profile rows
@@ -5602,11 +5657,23 @@ python -B research/tpc-big-road/tpc_bridge_b_packet_profile_axis_separation_chec
 python -O -B research/tpc-big-road/tpc_bridge_b_packet_profile_axis_separation_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_source_native_polarized_collision_compiler_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_source_native_polarized_collision_compiler_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_primitive_resonance_matching_spectrum_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_primitive_resonance_matching_spectrum_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-228 入口：
+最新 TPC-229 入口：
+
+```text
+papers/tpc-229-primitive-resonance-matching-spectrum/README.md
+papers/tpc-229-primitive-resonance-matching-spectrum/notes/theorem_ledger.md
+papers/tpc-229-primitive-resonance-matching-spectrum/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_primitive_resonance_matching_spectrum.md
+research/tpc-big-road/tpc_bridge_b_primitive_resonance_matching_spectrum_checker.py
+```
+
+TPC-228 上游入口：
 
 ```text
 papers/tpc-228-source-native-polarized-collision-compiler/README.md

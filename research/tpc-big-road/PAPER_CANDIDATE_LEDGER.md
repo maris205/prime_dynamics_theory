@@ -2,11 +2,42 @@
 
 更新时间：2026-08-24
 
-状态：**TPC228_PROVED_STRUCTURAL_L1_RELEASED / SOURCE_NATIVE_POLARIZED_COLLISION_COMPILER / ARITHMETIC_INPUTS_OPEN**
+状态：**TPC229_PROVED_STRUCTURAL_L1_RELEASED / PRIMITIVE_RESONANCE_MATCHING_SPECTRUM / ARITHMETIC_INPUTS_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.23 已发布：TPC-229 primitive resonance matching spectrum
+
+项目：`papers/tpc-229-primitive-resonance-matching-spectrum/`
+
+类型：**PROVED_STRUCTURAL_L1 / PRIMITIVE_RESONANCE_MATCHING_SPECTRUM**。
+
+Every edge satisfies `10Q/7<p<8Q/5<r<2Q`; endpoint separation and uniqueness prove
+the graph is a matching for all `Q>=8`. Every two-coordinate block has spectrum
+`(-1,-1,+1,+1)`, with exact symmetric/antisymmetric decomposition and sharp AP ratio
+range `[0,2]`. A `delta` saving is equivalent to
+`(1+delta)E_sym<=(1-delta)E_anti`.
+
+```text
+TPC229_RESONANCE_GRAPH_MATCHING = PROVED_EXACT
+TPC229_EDGE_SPECTRUM = PROVED_EXACT
+TPC229_GLOBAL_BLOCK_DIRECT_SUM = PROVED_EXACT
+TPC229_DELTA_SAVING_CRITERION = PROVED_EXACT
+TPC229_SOURCE_BILINEAR_BLOCK_BOUND = PROVED_EXACT_SHARP
+TPC229_ARITHMETIC_ANTISYMMETRIC_DOMINANCE = OPEN
+TPC229_ARITHMETIC_ADVANCE = NO
+TPC229_FIXED_ATOM_CREDIT = 0
+TPC229_L2 = NONE
+TPC229_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+TPC229_ROUND2_CLUE = QUANTIFY_MATCHED_RESONANCE_MASS_BEFORE_SEEKING_A_FIXED_PROPORTIONAL_SAVING
+```
+
+strongest positive result：graph exact collapses to independent edge blocks；strongest
+obstruction：matched mass 与 antisymmetric source dominance 都不是 geometry consequence；
+open theorem：quantify matched resonance mass；reusable structure：endpoint separation、
+matching、sym/anti ledger。4089-scale replay covers 13,754 edges；PDF 3 pages。
 
 ## 0.22 已发布：TPC-228 source-native polarized collision compiler
 

@@ -2,15 +2,15 @@
 
 更新时间：2026-08-24
 
-当前地图版本：V81 / TPC-228
+当前地图版本：V82 / TPC-229
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-228`（`PROVED_STRUCTURAL_L1 / SOURCE_NATIVE_POLARIZED_COLLISION_COMPILER`）；
-对应论文目录为 `papers/tpc-228-source-native-polarized-collision-compiler/`。TPC-228
-证明 common-profile four-packet AP-minus-diagonal 精确等于 source-labelled off-diagonal
-collision sum，并把 Q25 first `3--7` resonance 写成四项 beta-w block。source sign
-可正、负或零；actual V59 atom crosswalk、arithmetic theorem 与 Gate B 仍 OPEN。
+当前编号锚点：`TPC-229`（`PROVED_STRUCTURAL_L1 / PRIMITIVE_RESONANCE_MATCHING_SPECTRUM`）；
+对应论文目录为 `papers/tpc-229-primitive-resonance-matching-spectrum/`。TPC-229 证明
+primitive `3--7` graph 对所有 scales 都是 matching，global operator 分解为 spectrum
+`(-1,-1,+1,+1)` 的 sharp edge blocks。matched mass、antisymmetric arithmetic dominance
+与 actual V59 crosswalk 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -52,9 +52,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V81 / TPC-228                     |
-        | SOURCE-NATIVE COLLISION COMPILER                 |
-        | exact blocks; atom crosswalk/arithmetic OPEN     |
+        | YOU ARE HERE — V82 / TPC-229                     |
+        | PRIMITIVE RESONANCE MATCHING SPECTRUM            |
+        | matched mass / arithmetic dominance OPEN         |
         +--------------------------------------------------+
                 |
                 v
@@ -97,10 +97,10 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V81 / TPC-228 的
-source-native collision compiler。packet/profile typing 与第一 `3--7` geometry 已走通，
-现在 exact target 是 `sum_(q!=r)<U_q,V_r>`，Q25 block 已 source-labelled。下一步分析
-resonance graph 的 sharp 2x2 blocks 并隔离 arithmetic sign input。FULL_GATE_B、strict
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V82 / TPC-229 的
+primitive resonance matching spectrum。graph complexity 已完全消成 independent 2x2
+blocks，saving iff antisymmetric dominance。下一步先量化 matched resonance mass，避免
+即使逐边完美抵消也只影响稀疏 diagonal mass。FULL_GATE_B、strict
 `1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
@@ -1231,6 +1231,35 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.23 V82 / TPC-229：primitive resonance matching spectrum
+
+Every resonance edge satisfies `10Q/7<p<8Q/5<r<2Q`, so low/high endpoint sets are
+disjoint and each endpoint has a unique partner. Hence every graph is a matching. Each
+edge swap block has spectrum `(-1,-1,+1,+1)` and exact ledger
+
+```text
+E_diag=E_sym+E_anti, E_collision=E_sym-E_anti, E_AP=2E_sym.
+```
+
+Thus `delta` saving iff `(1+delta)E_sym<=(1-delta)E_anti`. The source bilinear block has
+a sharp half-mass bound. 4089-scale replay checks 13,754 edges and degree one.
+
+```text
+TPC229_RESONANCE_GRAPH_MATCHING = PROVED_EXACT
+TPC229_EDGE_SPECTRUM = PROVED_EXACT
+TPC229_GLOBAL_BLOCK_DIRECT_SUM = PROVED_EXACT
+TPC229_DELTA_SAVING_CRITERION = PROVED_EXACT
+TPC229_ARITHMETIC_ANTISYMMETRIC_DOMINANCE = OPEN
+TPC229_ARITHMETIC_ADVANCE = NO
+TPC229_FIXED_ATOM_CREDIT = 0
+TPC229_L2 = NONE
+TPC229_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+```
+
+地图位置：**V82 / TPC-229 已删除 graph complexity；下一条最短大路是 quantify matched
+source mass。若 matching 只承载 vanishing diagonal fraction，逐边完美 cancellation
+也不能给 fixed global saving。**
+
 ## 5.22 V81 / TPC-228：source-native polarized collision compiler
 
 For common-profile rows `W_q^(j)=U_q+i^jV_q`, TPC-228 proves
@@ -1713,7 +1742,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V81 / TPC-228：
+截至 V82 / TPC-229：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -1907,7 +1936,17 @@ TPC228_FIXED_ATOM_CREDIT = 0
 TPC228_L2 = NONE
 TPC228_FULL_GATE_B = OPEN
 TPC228_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-NUMBERED_RELEASE = TPC-228
+TPC229_RESONANCE_GRAPH_MATCHING = PROVED_EXACT
+TPC229_EDGE_SPECTRUM = PROVED_EXACT
+TPC229_GLOBAL_BLOCK_DIRECT_SUM = PROVED_EXACT
+TPC229_DELTA_SAVING_CRITERION = PROVED_EXACT
+TPC229_ARITHMETIC_ANTISYMMETRIC_DOMINANCE = OPEN
+TPC229_ARITHMETIC_ADVANCE = NO
+TPC229_FIXED_ATOM_CREDIT = 0
+TPC229_L2 = NONE
+TPC229_FULL_GATE_B = OPEN
+TPC229_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+NUMBERED_RELEASE = TPC-229
 ```
 
 以下事实不得从路线图中推断：
@@ -1925,7 +1964,10 @@ NUMBERED_RELEASE = TPC-228
 
 优先级更新为：
 
-1. **TPC-228 已完成：source-native polarized collision compiler**。common-profile
+1. **TPC-229 已完成：primitive resonance matching spectrum**。all-scale matching、sharp
+   edge spectrum 与 exact antisymmetric saving criterion 已证明；下一步 quantify matched
+   resonance source mass。
+2. **TPC-228 已完成：source-native polarized collision compiler**。common-profile
    packet AP-minus-diagonal exact 编译成 `sum_(q!=r)<U_q,V_r>`，Q25 first resonance
    成为 explicit four-term beta-w block；下一步做 resonance graph 的 exact 2x2 blocks。
 2. **TPC-227 已完成：packet/profile axis separation**。V59 packet phase 被锁在
@@ -1976,9 +2018,9 @@ NUMBERED_RELEASE = TPC-228
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-228 的下一步：exact resonance-block decomposition**。把 source-native
-    `3--7` graph 分解成 sharp two-prime blocks，给出 signed saving 的必要充分 local
-    criterion；actual V59 atom attachment 继续单列为 open。
+12. **TPC-229 的下一步：matched-mass obstruction/criterion**。量化 matching vertices
+    承载的 diagonal/source mass；在此之前不能由逐 edge cancellation 推 fixed global
+    saving。actual V59 atom attachment 继续单列为 open。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2077,6 +2119,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-24 | V82 / TPC-229 | Bridge A / Gate B：primitive resonance matching spectrum；matched mass/arithmetic dominance open | `TPC-229` | all-scale matching、`(-1,-1,+1,+1)` blocks、sharp AP ratio/delta criterion、4089-scale replay；arithmetic仍为 NO |
 | 2026-08-24 | V81 / TPC-228 | Bridge A / Gate B：source-native polarized collision compiler；exact source block，atom crosswalk/arithmetic open | `TPC-228` | AP-minus-diagonal four-phase identity、Q25 four-term beta-w block、positive/negative/zero controls；arithmetic仍为 NO |
 | 2026-08-24 | V80 / TPC-227 | Bridge A / Gate B：packet/profile axis separation；source phase 与 common profile exact typed，source-native collision compiler open | `TPC-227` | four-Gram iff theorem、Q25 `-1/80000` row-sign mismatch、automatic profile-to-source transfer scoped-refuted；arithmetic仍为 NO |
 | 2026-08-24 | V79 / TPC-226 | Bridge A / Gate B：first primitive-collision transition；`L<=3` disjoint，`L=4` 唯一 `3--7` resonance；source sign 与 arithmetic open | `TPC-226` | exact collision classification、Q25 witness、505-scale census、aligned/affine amplification 与 balanced-sign cancellation；arithmetic仍为 NO |
