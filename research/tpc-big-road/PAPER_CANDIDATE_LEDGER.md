@@ -2,11 +2,46 @@
 
 更新时间：2026-08-25
 
-状态：**TPC249_PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION / ACTUAL_GRAM_ESTIMATE_OPEN**
+状态：**TPC250_PROVED_STRUCTURAL_L1_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS / ACTUAL_V59_COHERENCE_ASYMPTOTIC_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.44 已发布：TPC-250 coherence-controlled Gram quadratic sharpness
+
+项目：`papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/`
+
+类型：**PROVED_STRUCTURAL_L1_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS**。
+
+For `g=sum_i lambda_iv_i`, let
+
+```text
+D=sum_i |lambda_i|^2||v_i||^2,
+L=sum_i |lambda_i|||v_i||.
+```
+
+With total active-coherence convention `mu=0` for fewer than two active
+terms, TPC-250 proves
+
+```text
+| ||g||^2-D |<=mu(L^2-D),
+[D-mu(L^2-D)]_+<=||g||^2<=D+mu(L^2-D).
+```
+
+For `D>0`, `mu(L^2/D-1)<1` is a strict noncancellation certificate.
+Independent/global TPC-249 radii inherit the envelope.  Equicorrelated,
+anti-correlated, simplex, negative-raw-floor and same-marginal PSD examples
+prove the universal constants and floor sharp and rule out a marginal-only
+improvement.
+
+```text
+STRONGEST_POSITIVE_RESULT = SHARP_TOTAL_COHERENCE_ENVELOPE_AND_STRICT_FINITE_NONCANCELLATION_CERTIFICATE_FOR_THE_EXACT_GRAM_QUADRATIC
+STRONGEST_OBSTRUCTION = IDENTICAL_MARGINAL_NORMS_AND_WEIGHTS_PERMIT_FULL_ALIGNMENT_OR_EXACT_CANCELLATION
+OPEN_THEOREM = FAVORABLE_ASYMPTOTICS_FOR_LITERAL_V59_PROJECTED_OR_UNPROJECTED_DIAGONAL_MASS_AND_COHERENCE
+REUSABLE_STRUCTURE = DIAGONAL_ENERGY_PLUS_WEIGHTED_ONE_NORM_PLUS_ACTIVE_COHERENCE_TO_RADIUS_INHERITANCE
+ROUND2_CLUE = PROJECT_THE_LITERAL_LAMBDA_EQUALS_ONE_PROBES_ONTO_A_DECLARED_BLOCK_LONGITUDINAL_DIRECTION_AND_TEST_THE_STRICT_MARGIN
+```
 
 ## 0.43 已发布：TPC-249 sharp weighted shared-lane contraction
 

@@ -1,0 +1,372 @@
+% !TeX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\A}{\mathcal A}
+\newcommand{\Rind}{R_{\mathrm{ind}}}
+\newcommand{\Rglob}{R_{\mathrm{glob}}}
+\DeclareMathOperator{\RePart}{Re}
+
+\hypersetup{
+ pdftitle={Coherence-Controlled Gram Quadratic Bounds and Sharpness},
+ pdfauthor={Liang Wang},
+ pdfsubject={Sharp finite Hilbert-space bounds for weighted Gram quadratics},
+ pdfkeywords={Gram matrix, coherence, quadratic form, cancellation, sharpness}
+}
+
+\title{Coherence-Controlled Gram Quadratic Bounds and Sharpness}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology\\
+Wuhan, China\\
+\texttt{liang.wang@hust.edu.cn}}
+\date{August 25, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove a sharp structural envelope for a weighted Gram quadratic in a
+complex Hilbert space.  Given $g=\sum_i\lambda_i v_i$, put
+$a_i=|\lambda_i|\|v_i\|$, $D=\sum_i a_i^2$, and $L=\sum_i a_i$.  If $\mu$ is
+the maximum normalized absolute inner product over distinct active vectors,
+with $\mu=0$ when there is at most one, then
+\[
+ \bigl|\|g\|^2-D\bigr|\leq\mu(L^2-D).
+\]
+This gives a nonnegative two-sided bound.  When $D>0$, the normalized form uses
+$\kappa=L^2/D$, where $1\leq\kappa\leq|\A|$, and
+$\mu(\kappa-1)<1$ certifies noncancellation.  The exact independent and global
+support radii of TPC-249 inherit the bounds after square roots and budget
+factors.  Positive equicorrelation and negative two-vector correlation show
+that the upper and signed-lower coefficients are universally sharp.  Simplex
+and rational collinear cancellation show that the nonnegative floor is
+necessary.  Identical marginal norms and weights can yield squared norm four
+or zero, so marginals alone cannot improve the $L^2$ upper endpoint or force a
+positive lower bound.  These conclusions are finite structural geometry; no
+actual V59 coherence asymptotic or arithmetic saving is proved.
+\end{abstract}
+
+\section{Introduction and source lock}
+
+Weighted sums in a shared Hilbert-space lane retain cancellation that is
+invisible after the summands are replaced by separate marginal copies.  The
+exact object is the Gram quadratic, but its off-diagonal entries may be hard to
+evaluate on an arithmetic source.  This note isolates what follows from one
+coarse statistic---the active coherence---without changing the shared-lane
+model.
+
+TPC-249 supplies the literal contraction and its exact quadratic identity
+\cite{tpc249}:
+\begin{equation}\label{eq:source}
+ g_c=\sum_b\lambda_{cb}v_{cb},\qquad
+ \|g_c\|^2=\lambda_c^*G_c\lambda_c,\qquad
+ (G_c)_{bb'}=\langle v_{cb},v_{cb'}\rangle.
+\end{equation}
+The inner product is conjugate-linear in the first slot and linear in the
+second.  Thus the weights in $g_c$ are not conjugated.  We import no bound for
+the entries of the literal V59 matrices $G_c$.
+
+Our contribution has four parts.  First, we bound the difference between the
+Gram quadratic and its diagonal using coherence and weighted $\ell^1$ mass.
+Second, we normalize the result by the diagonal energy and identify a strict
+noncancellation criterion.  Third, we transfer the estimate to both exact
+TPC-249 budget geometries.  Fourth, we audit every universal constant and the
+zero floor with positive-semidefinite Gram matrices.  The last step is
+essential: marginal data permit both full alignment and exact cancellation.
+
+\section{Definitions and edge cases}
+
+Let $\cH$ be a complex Hilbert space, let $I$ be finite, and choose
+$\lambda_i\in\mathbb C$ and $v_i\in\cH$.  Define
+\begin{equation}\label{eq:def}
+ g:=\sum_{i\in I}\lambda_i v_i,\qquad
+ a_i:=|\lambda_i|\,\|v_i\|,\qquad
+ \A:=\{i\in I:a_i>0\},
+\end{equation}
+and
+\begin{equation}\label{eq:DL}
+ D:=\sum_{i\in I}a_i^2,\qquad L:=\sum_{i\in I}a_i.
+\end{equation}
+The coherence definition must cover the empty-pair cases.  We set
+\begin{equation}\label{eq:mu}
+ \mu:=
+ \begin{cases}
+  0,& |\A|\leq1,\\[2mm]
+  \displaystyle\max_{\substack{i,j\in\A\\i\neq j}}
+  \frac{|\langle v_i,v_j\rangle|}{\|v_i\|\,\|v_j\|},& |\A|\geq2.
+ \end{cases}
+\end{equation}
+Every denominator in the second line is positive.  Cauchy's inequality gives
+$0\leq\mu\leq1$.
+
+If $D=0$, every $a_i$ vanishes.  Hence every vector $\lambda_i v_i$ vanishes,
+$g=0$, $L=0$, and the unnormalized bounds below reduce to equality.  We do not
+define $\kappa$ in this case.  Only when $D>0$ do we put
+\begin{equation}\label{eq:kappa}
+ \kappa:=\frac{L^2}{D}.
+\end{equation}
+This separation prevents a hidden division by zero and makes the singleton
+case automatic: if $|\A|=1$, then $\mu=0$ and $\kappa=1$.
+
+\section{The coherence envelope}
+
+\begin{theorem}[coherence-controlled Gram quadratic]\label{thm:main}
+With the definitions above,
+\begin{equation}\label{eq:deviation}
+ \left|\|g\|^2-D\right|\leq\mu(L^2-D).
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:bounds}
+ \max\{D-\mu(L^2-D),0\}
+ \leq\|g\|^2
+ \leq D+\mu(L^2-D).
+\end{equation}
+If $D>0$, then
+\begin{equation}\label{eq:normalized}
+ D\,[1-\mu(\kappa-1)]_+
+ \leq\|g\|^2
+ \leq D\,[1+\mu(\kappa-1)],
+ \qquad 1\leq\kappa\leq|\A|.
+\end{equation}
+In particular, $\mu(\kappa-1)<1$ implies $g\neq0$.
+\end{theorem}
+
+\begin{proof}
+Conjugate linearity in the first slot gives
+\begin{align}
+ \|g\|^2
+ &=\sum_{i,j\in I}\overline{\lambda_i}\lambda_j
+   \langle v_i,v_j\rangle,\label{eq:expand}\\
+ \|g\|^2-D
+ &=\sum_{\substack{i,j\in I\\i\neq j}}
+   \overline{\lambda_i}\lambda_j\langle v_i,v_j\rangle.
+ \label{eq:offdiag}
+\end{align}
+Terms with an inactive index vanish.  For distinct active indices,
+\[
+ \left|\overline{\lambda_i}\lambda_j
+ \langle v_i,v_j\rangle\right|
+ \leq\mu a_i a_j.
+\]
+The triangle inequality therefore yields
+\[
+ \left|\|g\|^2-D\right|
+ \leq\mu\sum_{i\neq j}a_i a_j
+ =\mu\left[\left(\sum_i a_i\right)^2-\sum_i a_i^2\right],
+\]
+which is \eqref{eq:deviation}.  The signed lower estimate from
+\eqref{eq:deviation}, intersected with $\|g\|^2\geq0$, gives
+\eqref{eq:bounds}.
+
+Suppose $D>0$.  Dividing \eqref{eq:bounds} by $D$ gives the first part of
+\eqref{eq:normalized}.  Since the active $a_i$ are positive,
+\[
+ D\leq L^2\leq|\A|D.
+\]
+The first inequality follows by retaining the diagonal terms in $L^2$; the
+second is Cauchy--Schwarz on the active coordinates.  Thus
+$1\leq\kappa\leq|\A|$.  Finally, $\mu(\kappa-1)<1$ makes the normalized lower
+endpoint strictly positive, so $\|g\|^2>0$.
+\end{proof}
+
+\begin{remark}[What the parameters record]
+The factor $\kappa-1=(L^2-D)/D$ measures how much weighted off-diagonal mass is
+available relative to diagonal energy.  Coherence alone does not determine
+the phases of the cross terms; it controls their combined magnitude.  The
+product $\mu(\kappa-1)$ is therefore the natural dimensionless cancellation
+budget in this argument.
+\end{remark}
+
+\section{Inheritance by the TPC-249 support radii}
+
+For each shared lane $c$, apply the preceding definitions to the family
+$(\lambda_{cb},v_{cb})_b$ and write
+\begin{equation}\label{eq:Bpm}
+ B_c^-:=\bigl[D_c-\mu_c(L_c^2-D_c)\bigr]_+,
+ \qquad
+ B_c^+:=D_c+\mu_c(L_c^2-D_c).
+\end{equation}
+These quantities remain defined when $D_c=0$; no $\kappa_c$ is then formed.
+
+\begin{corollary}[independent and global budget envelopes]\label{cor:radii}
+For independent lane radii $\rho_c\geq0$, the exact TPC-249 radius obeys
+\begin{equation}\label{eq:ind}
+ \sum_c\rho_c\sqrt{B_c^-}
+ \leq \Rind:=\sum_c\rho_c\|g_c\|
+ \leq\sum_c\rho_c\sqrt{B_c^+}.
+\end{equation}
+For one global direct-sum budget $\rho\geq0$, its exact radius obeys
+\begin{equation}\label{eq:glob}
+ \rho\sqrt{\sum_c B_c^-}
+ \leq \Rglob:=\rho\sqrt{\sum_c\|g_c\|^2}
+ \leq\rho\sqrt{\sum_c B_c^+}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:main} gives $B_c^-\leq\|g_c\|^2\leq B_c^+$ lane by lane.
+For \eqref{eq:ind}, take square roots, multiply by $\rho_c$, and sum.  For
+\eqref{eq:glob}, first sum the squared-norm bounds and then apply the increasing
+square-root function and the factor $\rho$.
+\end{proof}
+
+The two formulas reflect different uncertainty domains and are not
+interchangeable.  More importantly, they are conditional structural
+envelopes: using them arithmetically requires source-specific control of
+$D_c$, $L_c$, and $\mu_c$.  This paper provides no such V59 asymptotic.
+
+\section{Sharpness and the marginal obstruction}
+
+The next propositions concern universal constants and the nonnegative floor.
+They do not claim that every arbitrary tuple $(\mu,\kappa,|\A|)$ admits a
+saturating family.
+
+\begin{proposition}[upper coefficient one is sharp]\label{prop:upper}
+No universal constant smaller than one can replace the coefficient of
+$\mu(L^2-D)$ in the upper bound.
+\end{proposition}
+
+\begin{proof}
+Fix $m\geq2$ and $0\leq\mu\leq1$.  Let $G$ have diagonal entries one and every
+off-diagonal entry $\mu$.  Its eigenvalues are $1-\mu$ with multiplicity
+$m-1$ and $1+(m-1)\mu$ once.  Hence $G$ is positive semidefinite and is the
+Gram matrix of unit vectors.  With every weight equal to one,
+\[
+ \lambda^*G\lambda=m+\mu(m^2-m)=D+\mu(L^2-D).
+\]
+Thus the displayed coefficient is attained.
+\end{proof}
+
+\begin{proposition}[signed-lower coefficient one is sharp]\label{prop:lower}
+No universal constant smaller than one can replace the coefficient of
+$\mu(L^2-D)$ in the signed lower estimate.
+\end{proposition}
+
+\begin{proof}
+For $0\leq\mu\leq1$, consider
+\[
+ G=\begin{pmatrix}1&-\mu\\-\mu&1\end{pmatrix}.
+\]
+Its eigenvalues are $1-\mu$ and $1+\mu$, so it is positive semidefinite.  With
+weights $(1,1)$,
+\[
+ \lambda^*G\lambda=2-2\mu=D-\mu(L^2-D).
+\]
+The signed lower coefficient is attained.
+\end{proof}
+
+\begin{proposition}[the nonnegative floor is necessary]\label{prop:floor}
+The signed lower endpoint can be zero or negative while the Gram quadratic is
+exactly zero.
+\end{proposition}
+
+\begin{proof}
+For the zero endpoint, take the Gram matrix of a regular simplex of $m$ unit
+vectors.  Its off-diagonal entries are $-1/(m-1)$, it is positive
+semidefinite, and the vectors sum to zero.  With unit weights,
+$\mu=1/(m-1)$, $D=m$, $L=m$, and the signed lower endpoint is zero.
+
+For a negative raw endpoint, let $u$ be a unit vector, take
+$(v_1,v_2,v_3)=(u,u,-u)$, and use weights $(1,1,2)$.  The Gram matrix
+\[
+ \begin{pmatrix}1&1&-1\\1&1&-1\\-1&-1&1\end{pmatrix}
+\]
+is rank-one and positive semidefinite.  Here $\mu=1$, $D=6$, $L=4$, and
+\[
+ D-\mu(L^2-D)=-4,\qquad
+ g=u+u-2u=0.
+\]
+Thus a valid nonnegative lower bound must apply the floor at zero.
+\end{proof}
+
+\begin{proposition}[marginals do not control cancellation]\label{prop:marginal}
+Fixed weights and marginal norms alone cannot improve the universal upper
+endpoint $L^2$ and cannot imply a positive universal lower bound.
+\end{proposition}
+
+\begin{proof}
+Use weights $(1,1)$ and two unit vectors.  If the vectors are $(u,u)$, their
+Gram matrix is
+$\left(\begin{smallmatrix}1&1\\1&1\end{smallmatrix}\right)$ and the squared
+norm of the weighted sum is four, equal to $L^2$.  If they are $(u,-u)$, their
+Gram matrix is
+$\left(\begin{smallmatrix}1&-1\\-1&1\end{smallmatrix}\right)$ and the squared
+norm is zero.  Both Gram matrices are positive semidefinite, and the two
+families have identical weights and marginal norms.
+\end{proof}
+
+\section{Exact finite verification}
+
+The machine-readable certificate contains eight exact rational fixtures.  It
+checks upper saturation at $\mu=1/3$, signed-lower saturation at $\mu=2/5$,
+simplex cancellation, negative-raw-floor collinear cancellation, the aligned
+and anti-aligned same-marginal pair, $D=0$, and a singleton active set.  Every
+fixture uses a positive-semidefinite rational Gram matrix.
+
+An independent checker imports no producer code.  It parses only canonical
+rational strings, recomputes all principal minors and theorem quantities, and
+checks the fixed source hash and claim firewall.  Its mutation suite rejects a
+type change, a semantic value change, a digest-rebound arithmetic promotion,
+and a stale digest.  Both ordinary and optimized Python modes execute the same
+release logic; no optimization-sensitive assertion is used.
+
+A separate deterministic stress program checks 128 weighted families of
+rational unit vectors, as well as the zero-data and singleton edge cases.  All
+comparisons use exact rational arithmetic.  The stress collection is labeled
+\texttt{NUMERICAL\_FINITE\_ILLUSTRATION\_ONLY}: finite examples illustrate the
+theorem and detect implementation errors, but they are not asymptotic evidence.
+
+\section{Limitations and conclusion}
+
+The coherence envelope is useful only to the extent that the literal source
+provides favorable values of its inputs.  TPC-250 does not estimate actual V59
+coherence, does not prove a V59 Gram asymptotic, and does not turn the
+structural inequality into an arithmetic saving.  In particular, no marginal
+replacement can supply the missing information, by
+Proposition~\ref{prop:marginal}.
+
+Within its finite scope, the result is complete.  The diagonal Gram energy
+$D$, weighted mass $L$, and active coherence $\mu$ give a two-sided quadratic
+envelope; for $D>0$, $\mu(\kappa-1)<1$ gives a strict noncancellation
+certificate.  TPC-249's independent and global radii inherit the envelope,
+and positive-semidefinite examples establish the universal sharpness of both
+coefficients and the necessity of the zero floor.
+
+\medskip
+\noindent\textbf{Claim firewall.}
+\begin{align*}
+ \texttt{TPC250\_ACTUAL\_V59\_COHERENCE\_ASYMPTOTIC}&=\texttt{OPEN},\\
+ \texttt{TPC250\_ARITHMETIC\_ADVANCE}&=\texttt{NO},\\
+ \texttt{TPC250\_FIXED\_ATOM\_CREDIT}&=0,\\
+ \texttt{TPC250\_L2}&=\texttt{NONE},\\
+ \texttt{TPC250\_FULL\_GATE\_B}&=\texttt{OPEN},\\
+ \texttt{TPC250\_FULL\_GATE\_B\_STRICT\_1\_OVER\_400}
+ &=\texttt{UNPAID\_GLOBAL},\\
+ \texttt{TPC250\_TWIN\_PRIME\_RESULT}&=\texttt{NONE}.
+\end{align*}
+No Route A claim is made.
+
+\medskip
+\noindent\textbf{Maximum supported claim.}
+\begin{center}
+\small\nolinkurl{PROVED_STRUCTURAL_L1_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS}
+\end{center}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

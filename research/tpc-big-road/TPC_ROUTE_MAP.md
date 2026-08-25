@@ -2,16 +2,16 @@
 
 更新时间：2026-08-25
 
-当前地图版本：V102 / TPC-249
+当前地图版本：V103 / TPC-250
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-249`（`PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION`）；
-对应论文目录为 `papers/tpc-249-sharp-weighted-shared-lane-contraction/`。TPC-249 在
-每个 physical shared lane 内将 weights 收缩到 `g_c=sum_b lambda_cbv_cb`，证明
-independent/global budgets 的 exact Gram support radius、reverse realization 与 tagged
-triangle equality law。repeated-probe opposite weights 可精确恢复 tagged copies 丢失的
-cancellation。actual V59 Gram asymptotic、arithmetic `L2` 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-250`（`PROVED_STRUCTURAL_L1_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS`）；
+对应论文目录为 `papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/`。TPC-250
+从 diagonal energy `D`、weighted mass `L` 与 active coherence `mu` 导出 exact
+Gram quadratic 的 sharp two-sided envelope，并继承到 TPC-249 independent/global
+radii。PSD adversaries 证明上下系数与 zero floor sharp；actual V59 coherence
+asymptotic、arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -53,9 +53,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V102 / TPC-249                    |
-        | SHARP WEIGHTED SHARED-LANE CONTRACTION            |
-        | exact radius; literal Gram estimate OPEN          |
+        | YOU ARE HERE — V103 / TPC-250                    |
+        | COHERENCE-CONTROLLED GRAM QUADRATIC SHARPNESS     |
+        | sharp envelope; V59 coherence estimate OPEN       |
         +--------------------------------------------------+
                 |
                 v
@@ -98,13 +98,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V102 / TPC-249 的
-sharp weighted shared-lane contraction。joint 椭球已在每个 physical lane 内压成
-`rho_c sqrt(lambda_c*G_c lambda_c)` exact scalar radius；independent/global budget、
-reverse realization 和 tagged equality criterion 全部闭合。下一施工点是只使用
-literal diagonal/coherence data 给 Gram quadratic 可计算且 adversarially sharp 的上下界。
-FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit 继续
-OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V103 / TPC-250 的
+coherence-controlled Gram quadratic sharpness。exact shared-lane scalar 现在已有
+`[D-mu(L^2-D)]_+` 到 `D+mu(L^2-D)` 的 total two-sided envelope，
+`mu(kappa-1)<1` 是严格 finite noncancellation certificate，且 universal constants
+已由 PSD adversaries 锁死。下一施工点是对 literal `lambda=1` probes 做 declared-block
+longitudinal/transverse 投影并测试真实 strict margin。FULL_GATE_B、global strict
+`1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1235,6 +1235,55 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.44 V103 / TPC-250：coherence-controlled Gram quadratic sharpness
+
+For `g=sum_i lambda_iv_i`, define
+
+```text
+D=sum_i |lambda_i|^2||v_i||^2,
+L=sum_i |lambda_i|||v_i||.
+```
+
+TPC-250 uses active coherence `mu`, with `mu=0` when fewer than two terms
+are active, to prove
+
+```text
+| ||g||^2-D |<=mu(L^2-D),
+[D-mu(L^2-D)]_+<=||g||^2<=D+mu(L^2-D).
+```
+
+For `D>0`, `kappa=L^2/D` lies in `[1,|A|]`; hence
+`mu(kappa-1)<1` certifies noncancellation.  The exact TPC-249
+independent/global support radii inherit these lane-wise bounds.  Positive
+equicorrelation and two-vector anti-correlation attain the two universal
+coefficients; simplex and rank-one cancellation make the zero floor necessary.
+Aligned/anti-aligned pairs with identical marginals give squared norms `4/0`,
+so marginal-only improvement is scoped-refuted.
+
+```text
+TPC250_GRAM_DEVIATION_BOUND = PROVED_EXACT
+TPC250_TWO_SIDED_COHERENCE_ENVELOPE = PROVED_EXACT
+TPC250_EMPTY_PAIR_COHERENCE = PROVED_TOTAL_MU_ZERO
+TPC250_KAPPA_DOMAIN = PROVED_ONLY_FOR_D_POSITIVE
+TPC250_NONCANCELLATION_CONDITION = PROVED_IF_MU_TIMES_KAPPA_MINUS_ONE_LT_ONE
+TPC250_INDEPENDENT_RADIUS_ENVELOPE = PROVED_EXACT_INHERITANCE
+TPC250_GLOBAL_RADIUS_ENVELOPE = PROVED_EXACT_INHERITANCE
+TPC250_UPPER_CONSTANT_SHARPNESS = PROVED_PSD_EQUICORRELATED
+TPC250_SIGNED_LOWER_CONSTANT_SHARPNESS = PROVED_PSD_TWO_VECTOR
+TPC250_NONNEGATIVE_FLOOR = PROVED_NECESSARY
+TPC250_MARGINAL_ONLY_IMPROVEMENT = REFUTED_SCOPED
+TPC250_ACTUAL_V59_COHERENCE_ASYMPTOTIC = OPEN
+TPC250_ARITHMETIC_ADVANCE = NO
+TPC250_L2 = NONE
+TPC250_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC250_STATUS = PROVED_STRUCTURAL_L1_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS
+```
+
+地图位置：**Gram quadratic 已有 computable sharp structural envelope；下一步必须
+在 exhaustive declared hard blocks 上把 actual `lambda=1` probes 投影到 block-flat
+longitudinal 与 transverse lanes，并证明 longitudinal center 严格压过 projected
+coherence radius 与任何独立认证的 window leakage。**
 
 ## 5.43 V102 / TPC-249：sharp weighted shared-lane contraction
 
@@ -3094,6 +3143,11 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
+1. **TPC-250 已完成：coherence-controlled Gram quadratic sharpness**。
+   `D,L,mu` 已给出 exact two-sided envelope、strict finite noncancellation criterion
+   与 independent/global radius inheritance；PSD adversaries 证明常数与 floor sharp。
+   下一步回接 literal `lambda=1` output blocks，并只在 projected transverse probes 上
+   计算 coherence。
 1. **TPC-249 已完成：sharp weighted shared-lane contraction**。每个 lane 的
    weighted probe、Gram radius、reverse realization、independent/global budget 与 tagged
    equality law 已 exact；repeated-probe cancellation 证明 shared contraction 可严格优于
@@ -3222,13 +3276,13 @@ NUMBERED_RELEASE = TPC-244
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-249 的下一步：coherence bounds 与 adversarial sharpness**。
-    从 `||v_cb||` 与 normalized pairwise coherence 导出
-    `lambda_c*G_c lambda_c` 的 computable two-sided bounds，定位何时改进 tagged
-    radius；再回接 literal V59
-    longitudinal/transverse decomposition，目标是支付真实的
-    `|C_long|>R_trans+leakage`，不得把 structural ellipsoid 当成 arithmetic
-    nonvanishing。
+12. **TPC-250 的下一步：literal declared-block longitudinal/transverse margin**。
+    对 exhaustive nonempty hard partition 使用 actual `lambda_cb=1`，令
+    `g_c=P_cA_x beta`；在 block-flat declared direction 上 exact 分解
+    `C_x=C_long+Q_trans`，并只从 projected probes 的新 Gram/coherence 得到
+    `R_trans` 上界。目标条件是
+    `|C_long|>R_coh+E_external`；partition、direction 与 TPC-243 leakage 均不得冒充
+    source-canonical 或已支付 arithmetic input。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -3327,6 +3381,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-25 | V103 / TPC-250 | Bridge A / Gate B：exact Gram quadratic 有 sharp coherence envelope；literal projected coherence/payable margin open | `TPC-250` | total empty-pair convention、two-sided `D/L/mu` bound、strict finite noncancellation、budget inheritance、PSD sharpness 与 marginal-only obstruction；arithmetic unchanged |
 | 2026-08-25 | V102 / TPC-249 | Bridge A / Gate B：weighted shared-lane scalar and radius exact；literal Gram estimate/payable margin open | `TPC-249` | within-lane contraction、Gram support、reverse realization、global budget、tagged equality 与 exact-cancellation adversary；arithmetic unchanged |
 | 2026-08-25 | V101 / TPC-248 | Bridge A / Gate B：shared-lane joint set exact Gram ellipsoid；weighted group contraction/payable margin open | `TPC-248` | range-restricted pseudoinverse energy、sphere/slack dichotomy、physical conjugation、global-budget coupling 与 polydisk obstruction；arithmetic unchanged |
 | 2026-08-25 | V100 / TPC-247 | Bridge A / Gate B：literal V59 source operator 与 tagged two-lane covariance exact；shared-lane joint geometry/payable margin open | `TPC-247` | exact physical operator、hard-block exactly-once sum、tagged covariance、`sqrt(m)` duplication toll 与 cancellation-loss counterexample；arithmetic unchanged |

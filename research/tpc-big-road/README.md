@@ -1,48 +1,58 @@
-# TPC big road V102 / TPC-249: sharp weighted shared-lane contraction
+# TPC big road V103 / TPC-250: coherence-controlled Gram quadratic sharpness
 
 更新时间：2026-08-25
 
-状态：`TPC249_PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION / FULL_GATE_B_OPEN`
+状态：`TPC250_PROVED_STRUCTURAL_L1_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-249 proof 为
-`bridge_b_sharp_weighted_shared_lane_contraction.md`，checker 为
-`tpc_bridge_b_sharp_weighted_shared_lane_contraction_checker.py`，编号论文为
-`../../papers/tpc-249-sharp-weighted-shared-lane-contraction/`。
+当前 TPC-250 proof 为
+`bridge_b_coherence_controlled_gram_quadratic_sharpness.md`，checker 为
+`tpc_bridge_b_coherence_controlled_gram_quadratic_sharpness_checker.py`，编号论文为
+`../../papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/`。
 
-TPC-249 contracts the TPC-248 probes inside each shared lane,
-
-```text
-g_c=sum_b lambda_cb v_cb,
-```
-
-and proves that independent centered lane balls have the exact aggregate disk
+TPC-250 starts from the exact TPC-249 weighted probe
 
 ```text
-R Dbar,
-R=sum_c rho_c sqrt(lambda_c*G_c lambda_c).
+g=sum_i lambda_i v_i
 ```
 
-The global-budget radius is the direct-sum square root.  The exact radius is at
-most the tagged marginal triangle radius, with equality iff every active group
-has common nonnegative-ray alignment.  Repeated probes with opposite weights
-give exact cancellation that tagged copies erase.
+and proves the exact deviation and two-sided envelopes
 
 ```text
-TPC249_LITERAL_WEIGHTED_PROBE_CONTRACTION = PROVED_EXACT
-TPC249_GRAM_RADIUS = PROVED_EXACT
-TPC249_EXPLICIT_REVERSE_REALIZATION = PROVED_EXACT
-TPC249_GLOBAL_BUDGET_RADIUS = PROVED_EXACT_DIRECT_SUM_SUPPORT
-TPC249_TAGGED_RADIUS_DOMINANCE = PROVED_EXACT
-TPC249_REPEATED_PROBE_CANCELLATION = PROVED_EXACT
-TPC249_ACTUAL_GRAM_ASYMPTOTIC = OPEN
-TPC249_ARITHMETIC_ADVANCE = NO
-TPC249_L2 = NONE
-TPC249_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC249_ROUND2_CLUE = ESTIMATE_LITERAL_GRAM_QUADRATIC_FORMS_OR_BOUND_THEM_FROM_COMPUTABLE_COHERENCE_DATA
+| ||g||^2-D |<=mu(L^2-D),
+[D-mu(L^2-D)]_+<=||g||^2<=D+mu(L^2-D).
 ```
+
+Here `D=sum_i |lambda_i|^2||v_i||^2`, `L=sum_i|lambda_i|||v_i||`, and
+`mu` is active coherence, defined as zero when fewer than two terms are
+active.  For `D>0`, `mu(L^2/D-1)<1` certifies noncancellation.  The bound
+inherits to both exact TPC-249 budget radii.  PSD equicorrelation,
+anti-correlation, simplex and same-marginal controls prove the universal
+constants and zero floor sharp.
+
+```text
+TPC250_GRAM_DEVIATION_BOUND = PROVED_EXACT
+TPC250_TWO_SIDED_COHERENCE_ENVELOPE = PROVED_EXACT
+TPC250_NONCANCELLATION_CONDITION = PROVED_IF_MU_TIMES_KAPPA_MINUS_ONE_LT_ONE
+TPC250_INDEPENDENT_RADIUS_ENVELOPE = PROVED_EXACT_INHERITANCE
+TPC250_GLOBAL_RADIUS_ENVELOPE = PROVED_EXACT_INHERITANCE
+TPC250_UPPER_CONSTANT_SHARPNESS = PROVED_PSD_EQUICORRELATED
+TPC250_SIGNED_LOWER_CONSTANT_SHARPNESS = PROVED_PSD_TWO_VECTOR
+TPC250_NONNEGATIVE_FLOOR = PROVED_NECESSARY
+TPC250_MARGINAL_ONLY_IMPROVEMENT = REFUTED_SCOPED
+TPC250_ACTUAL_V59_COHERENCE_ASYMPTOTIC = OPEN
+TPC250_ARITHMETIC_ADVANCE = NO
+TPC250_L2 = NONE
+TPC250_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC250_ROUND2_CLUE = PROJECT_THE_LITERAL_LAMBDA_EQUALS_ONE_PROBES_ONTO_A_DECLARED_BLOCK_LONGITUDINAL_DIRECTION_AND_TEST_THE_STRICT_MARGIN
+```
+
+## V102 upstream: TPC-249 sharp weighted shared-lane contraction
+
+TPC-249 supplies the exact weighted shared-lane Gram support radius and the
+independent/global budget geometries bounded above.
 
 ## V101 upstream: TPC-248 shared-lane Gram-ellipsoid feasible set
 

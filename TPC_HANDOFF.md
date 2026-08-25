@@ -1,9 +1,85 @@
 # TPC HANDOFF
 
 更新时间：2026-08-25
-交接状态：`BOLD_CHANNEL_V102_TPC249_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION_RELEASED`
+交接状态：`BOLD_CHANNEL_V103_TPC250_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS_RELEASED`
 
-TPC-249 当前 section：sharp weighted shared-lane contraction
+TPC-250 当前 section：coherence-controlled Gram quadratic sharpness
+------------------------------------------------------------------
+
+For a TPC-249 weighted shared-lane probe, put
+
+```text
+g=sum_i lambda_i v_i,
+D=sum_i |lambda_i|^2||v_i||^2,
+L=sum_i |lambda_i|||v_i||.
+```
+
+Define active coherence `mu=0` when fewer than two terms are active;
+otherwise use the maximum normalized off-diagonal Gram modulus.  TPC-250
+proves
+
+```text
+| ||g||^2-D |<=mu(L^2-D),
+[D-mu(L^2-D)]_+<=||g||^2<=D+mu(L^2-D).
+```
+
+Only for `D>0`, set `kappa=L^2/D`; then `1<=kappa<=|A|` and
+`mu(kappa-1)<1` is a strict finite noncancellation certificate.  The exact
+TPC-249 independent/global support radii inherit these bounds lane by lane.
+
+Positive equicorrelated PSD matrices attain the upper coefficient; a
+two-vector negative-correlation PSD matrix attains the signed-lower
+coefficient.  Simplex and rank-one zero sums prove the nonnegative floor
+necessary.  Aligned and anti-aligned unit pairs with identical marginal data
+give squared norms `4` and `0`, so a marginal-only improvement is
+scoped-refuted.  No actual V59 coherence asymptotic is supplied.
+
+```text
+TPC250_MAXIMUM_CLAIM = SHARP_TOTAL_COHERENCE_CONTROLLED_TWO_SIDED_GRAM_QUADRATIC_ENVELOPE_WITH_BUDGET_INHERITANCE_AND_PSD_ADVERSARIAL_OPTIMALITY
+TPC250_ROUTE_ADVANCE = YES_STRUCTURAL_COHERENCE_ENVELOPE
+TPC250_GRAM_DEVIATION_BOUND = PROVED_EXACT
+TPC250_TWO_SIDED_COHERENCE_ENVELOPE = PROVED_EXACT
+TPC250_EMPTY_PAIR_COHERENCE = PROVED_TOTAL_MU_ZERO
+TPC250_KAPPA_DOMAIN = PROVED_ONLY_FOR_D_POSITIVE
+TPC250_NONCANCELLATION_CONDITION = PROVED_IF_MU_TIMES_KAPPA_MINUS_ONE_LT_ONE
+TPC250_INDEPENDENT_RADIUS_ENVELOPE = PROVED_EXACT_INHERITANCE
+TPC250_GLOBAL_RADIUS_ENVELOPE = PROVED_EXACT_INHERITANCE
+TPC250_UPPER_CONSTANT_SHARPNESS = PROVED_PSD_EQUICORRELATED
+TPC250_SIGNED_LOWER_CONSTANT_SHARPNESS = PROVED_PSD_TWO_VECTOR
+TPC250_NONNEGATIVE_FLOOR = PROVED_NECESSARY
+TPC250_MARGINAL_ONLY_IMPROVEMENT = REFUTED_SCOPED
+TPC250_ACTUAL_V59_COHERENCE_ASYMPTOTIC = OPEN
+TPC250_PROJECTED_TRANSVERSE_COHERENCE = OPEN
+TPC250_PAYABLE_LONGITUDINAL_DOMINANCE = OPEN
+TPC250_ARITHMETIC_ADVANCE = NO
+TPC250_FIXED_ATOM_CREDIT = 0
+TPC250_L2 = NONE
+TPC250_FULL_GATE_B = OPEN
+TPC250_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC250_TWIN_PRIME_RESULT = NONE
+TPC250_STATUS = PROVED_STRUCTURAL_L1_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS
+TPC250_ROUND2_CLUE = PROJECT_THE_LITERAL_LAMBDA_EQUALS_ONE_PROBES_ONTO_A_DECLARED_BLOCK_LONGITUDINAL_DIRECTION_AND_TEST_THE_STRICT_MARGIN
+```
+
+strongest positive result：total sharp coherence envelope、strict finite
+noncancellation 与 exact budget inheritance；strongest obstruction：相同 marginal
+data 可同时支持 full alignment 与 exact cancellation；open theorem：literal projected
+V59 coherence 与 payable longitudinal surplus；reusable structure：diagonal energy ->
+weighted mass/coherence -> Gram envelope -> support-radius margin。
+
+编号论文目录：papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/
+
+```text
+papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/README.md
+papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/PROOF_PACKAGE.md
+papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/paper/paper.pdf
+papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/results/tpc250_certificate.json
+papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_coherence_controlled_gram_quadratic_sharpness.md
+research/tpc-big-road/tpc_bridge_b_coherence_controlled_gram_quadratic_sharpness_checker.py
+```
+
+TPC-249 上游 section：sharp weighted shared-lane contraction
 ---------------------------------------------------------
 
 For each literal TPC-248 output lane, put
@@ -7118,8 +7194,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V102/TPC-249 gate、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百六十次（80 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V103/TPC-250 gate、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百六十二次（81 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -7283,11 +7359,23 @@ python -B research/tpc-big-road/tpc_bridge_b_shared_lane_gram_ellipsoid_feasible
 python -O -B research/tpc-big-road/tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_sharp_weighted_shared_lane_contraction_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_sharp_weighted_shared_lane_contraction_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_coherence_controlled_gram_quadratic_sharpness_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_coherence_controlled_gram_quadratic_sharpness_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-249 入口：
+最新 TPC-250 入口：
+
+```text
+papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/README.md
+papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/notes/theorem_ledger.md
+papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_coherence_controlled_gram_quadratic_sharpness.md
+research/tpc-big-road/tpc_bridge_b_coherence_controlled_gram_quadratic_sharpness_checker.py
+```
+
+TPC-249 上游入口：
 
 ```text
 papers/tpc-249-sharp-weighted-shared-lane-contraction/README.md
