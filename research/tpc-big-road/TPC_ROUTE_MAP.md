@@ -2,17 +2,17 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V107 / TPC-254
+当前地图版本：V108 / TPC-255
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-254`（`PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_WITH_ADJOINT_LANE_SOURCE_GAP`）；
+当前编号锚点：`TPC-255`（`PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER`）；
 对应论文目录为
-`papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/`。
-TPC-254 从 source-backed hybrid maximal Type-I theorem 的非负和抽取 `m=1`，对两个
-ordered-rank children 证明任意固定 log-power control，并得到 literal
-`|<z_mid,w>|<<x^(1/2)(log x)^(-M)`。adjoint `beta` lane 仍只有 sharp Cauchy；
-arithmetic `L2` 与 full Gate B 仍 OPEN。
+`papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/`。
+TPC-255 将 ordered-rank Haar vector 穿过 literal V59 adjoint。complete unit-centered
+alias 由 V43 Poisson 精确删除，但 deleted diagonal 返回 `B_Q`-weighted beta midpoint，
+hard window、child jump 和 unit masks 留下三条 explicit correction lanes；尚无定量
+estimate，arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -54,9 +54,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V107 / TPC-254                    |
-        | SOURCE-BACKED HYBRID MIDPOINT MEAN               |
-        | w lane log-flat; adjoint beta lane OPEN           |
+        | YOU ARE HERE — V108 / TPC-255                    |
+        | EXACT LITERAL ADJOINT NORMAL FORM                |
+        | Poisson zero; diagonal/boundaries survive        |
         +--------------------------------------------------+
                 |
                 v
@@ -99,13 +99,12 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V107 / TPC-254。
-TPC-253 冻结的 rank midpoint 已接到 source-backed hybrid maximal Type-I theorem：
-非负 `m=1` extraction 现在支付 literal `<z_mid,w>` 到任意固定 log power，因此这是
-首个 scoped midpoint arithmetic advance。另一条 `<z_mid,A_x beta>` 已精确重写为
-`<A_x^*z_mid,beta>`，但 locked corpus 仍无 fixed-test estimate，且 norm-only Cauchy
-sharp。下一施工点是展开该 literal adjoint row 而不丢 prime shell、masks、diagonal 或
-hard-window leakage。FULL_GATE_B、global strict
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V108 / TPC-255。
+TPC-254 已支付 literal `<z_mid,w>` 到任意固定 log power；TPC-255 又把第二条
+`<z_mid,A_x beta>` 精确展开成 `B_Q`-weighted beta midpoint、input-unit correction、
+hard-window leakage 与 child-jump leakage。complete-lattice Poisson zero 只删掉 centered
+alias，不能支付这些 physical survivors。下一施工点是同一 prime shell 上对四条 lane
+做 collective arithmetic estimate，不能分别 triangle。FULL_GATE_B、global strict
 `1/400`、arithmetic `L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NONE。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
@@ -1237,6 +1236,58 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.49 V108 / TPC-255：exact adjoint diagonal and hard-boundary compiler
+
+For each shell prime `q` and input `t` with `q` not dividing `t`, TPC-255
+keeps the literal output-unit-centered row
+
+```text
+v_(q,t)(u)=1_(q does not divide u)
+            [1_(u=t mod q)-1/(q-1)].
+```
+
+The row is centered only as a whole.  V43 band-limited Poisson applied to the
+reflected-conjugate profile gives a zero complete-lattice adjoint row whenever
+`H>2Q`, without assuming that `K_H` is even or self-adjoint.  Deleting the
+physical diagonal and restoring both boundaries then proves
+
+```text
+<z_mid,A_x beta>
+ =-B_Q<z_mid,beta> + input-unit correction
+  -hard-window leakage + child-jump leakage,
+B_Q=sum_(q in Q_x)q(q-2)/(q-1).
+```
+
+For inputs in the left and right rank children, the jump lane is respectively
+`-rho^(-1)` times the kernel row across to the right child and `+rho^(-1)`
+times the row across to the left child.  The deleted-diagonal value
+`K_H(0)=integral psi_+=1` is kept distinct from the Poisson zero-mode
+normalization `H psi_+(0)/q`.  No surviving lane is estimated.
+
+```text
+TPC255_COMPLETE_UNIT_CENTERED_ALIAS = PROVED_SOURCE_BACKED_ZERO_FOR_H_GREATER_THAN_2Q
+TPC255_KERNEL_EVENNESS_OR_SELF_ADJOINTNESS = NOT_ASSUMED
+TPC255_LITERAL_ADJOINT_COORDINATE_EXPANSION = PROVED_EXACT
+TPC255_DELETED_DIAGONAL_BQ_RETURN = PROVED_EXACT
+TPC255_INPUT_UNIT_CORRECTION = PROVED_EXACT_RETAINED
+TPC255_OUTPUT_UNIT_CORRECTION = PROVED_EXACT_JOINTLY_CENTERED_ONLY
+TPC255_HARD_WINDOW_AND_CHILD_JUMP = PROVED_EXACT_RETAINED
+TPC255_ROUTE_ADVANCE = YES_EXACT_LITERAL_STRUCTURE
+TPC255_LITERAL_ARITHMETIC_STRUCTURE_ADVANCE = YES
+TPC255_ARITHMETIC_ADVANCE = NO
+TPC255_FIXED_ATOM_CREDIT = 0
+TPC255_L2 = NONE
+TPC255_FULL_GATE_B = OPEN
+TPC255_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC255_TWIN_PRIME_RESULT = NONE
+TPC255_STATUS = PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER
+```
+
+地图位置：**TPC-255 已把未知 adjoint lane 从一个 norm-only scalar 细化成四条 literal
+survivor lanes。最强 obstruction 是 shell-scale `B_Q` diagonal return；下一篇应首先寻找
+actual beta midpoint estimate，并同时保留 input-unit、hard-window 与 child-jump correction，
+不能把 Poisson zero 或逐 `q`/逐 lane triangle 当作 Gate payment。**
 
 ## 5.48 V107 / TPC-254：source-backed rank-midpoint hybrid-mean closure
 
@@ -2936,11 +2987,11 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V107 / TPC-254：
+截至 V108 / TPC-255：
 
 ```text
 ROUTE_ADVANCE = YES
-ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_LANE
+ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_LANE_CUMULATIVE_FROM_TPC254
 FIXED_ATOM_CREDIT = 0
 TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
 FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
@@ -2954,6 +3005,21 @@ TPC_213_TRIGGER = true
 TPC_252_TRIGGER = true
 TPC_253_TRIGGER = true
 TPC_254_TRIGGER = true
+TPC_255_TRIGGER = true
+TPC255_COMPLETE_UNIT_CENTERED_ALIAS = PROVED_SOURCE_BACKED_ZERO_FOR_H_GREATER_THAN_2Q
+TPC255_LITERAL_ADJOINT_COORDINATE_EXPANSION = PROVED_EXACT
+TPC255_DELETED_DIAGONAL_BQ_RETURN = PROVED_EXACT
+TPC255_INPUT_UNIT_CORRECTION = PROVED_EXACT_RETAINED
+TPC255_OUTPUT_UNIT_CORRECTION = PROVED_EXACT_JOINTLY_CENTERED_ONLY
+TPC255_HARD_WINDOW_AND_CHILD_JUMP = PROVED_EXACT_RETAINED
+TPC255_ROUTE_ADVANCE = YES_EXACT_LITERAL_STRUCTURE
+TPC255_LITERAL_ARITHMETIC_STRUCTURE_ADVANCE = YES
+TPC255_ARITHMETIC_ADVANCE = NO
+TPC255_FIXED_ATOM_CREDIT = 0
+TPC255_L2 = NONE
+TPC255_FULL_GATE_B = OPEN
+TPC255_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC255_TWIN_PRIME_RESULT = NONE
 TPC254_MAXIMAL_TYPE_I_M1_EXTRACTION = PROVED_SOURCE_BACKED
 TPC254_CHILD_SUM_HYBRID_MEAN = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
 TPC254_W_MIDPOINT_HAAR_MOMENT = PROVED_SOURCE_BACKED_X_ONE_HALF_TIMES_ARBITRARY_FIXED_LOG_SAVING
@@ -3389,6 +3455,10 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
+1. **TPC-255 已完成：exact adjoint diagonal and hard-boundary compiler**。
+   complete unit-centered alias 已由 V43 Poisson 精确删除；deleted diagonal、input-unit、
+   hard-window 与 child-jump 被 exact 返回到一个 literal beta linear form。该篇是结构推进，
+   不含 lane estimate；下一步必须 collective estimate 四条 survivor lanes。
 1. **TPC-254 已完成：source-backed rank-midpoint hybrid-mean closure**。
    maximal Type-I nonnegative sum 的 `m=1` row 已支付两个 deterministic rank children，
    得到 actual `<z_mid,w>` 的 `x^(1/2)(log x)^(-M)` bound；这是 scoped arithmetic
@@ -3537,11 +3607,11 @@ NUMBERED_RELEASE = TPC-244
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-254 的下一步：literal adjoint diagonal/boundary compiler**。
-    逐坐标展开 `A_x^*z_mid`，先在完整格使用 source-backed bandlimited Poisson，再把
-    deleted diagonal、hard-window leakage、rank-child jump 与输入/输出 unit-mask corrections
-    全部原样返回。不得把完整格 alias 的零误报为整个 adjoint form 的 payment，也不得以
-    full-shell mean、AP average、synthetic matrix 或 norm-only Cauchy 冒充 fixed-test saving。
+12. **TPC-255 的下一步：collective beta-midpoint/boundary estimate**。
+    首先 source-lock actual beta rank-midpoint theorem；若没有直接 theorem，则寻找能把
+    `B_Q` diagonal return、input-unit correction、hard-window 与 child-jump 在同一 shell
+    上共同重组的最小解析 normal form。不得逐 lane 或逐 prime triangle，也不得把
+    complete-lattice Poisson zero 计作 arithmetic saving。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -3640,6 +3710,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V108 / TPC-255 | Bridge A / Gate B：literal adjoint normal form exact；`B_Q` beta midpoint plus unit/boundary lanes unestimated | `TPC-255` | complete centered Poisson zero、deleted-diagonal return、joint output-mask centering、input-unit correction、hard-window 与 child-jump compiler；exact literal structure advance, arithmetic unchanged in this paper |
 | 2026-08-26 | V107 / TPC-254 | Bridge A / Gate B：literal hybrid `w` midpoint has arbitrary fixed log-power control；adjoint `beta` lane open | `TPC-254` | source-backed maximal Type-I `m=1` extraction、real-clock child intervals、`x^(1/2)(log x)^(-M)` Haar bound、quantifier firewall 与 sharp norm-only adjoint obstruction；scoped arithmetic advance |
 | 2026-08-26 | V106 / TPC-253 | Bridge A / Gate B：source-frozen rank midpoint exact；two actual Haar moments and payable margin open | `TPC-253` | coefficient-independent ordered split、normalized Haar projector、integer crosswalk、partial-sum covariance transfer、literal kernel expansion 与 safe adjoint；arithmetic unchanged |
 | 2026-08-25 | V105 / TPC-252 | Bridge A / Gate B：unrestricted declared-partition optimization exact closed；source-frozen nontrivial contrast open | `TPC-252` | binary rank-one covariance transfer、true-radius monotonicity、fixed-probe Gram firewall、singleton collapse 与 all-partition margin identity；arithmetic unchanged |

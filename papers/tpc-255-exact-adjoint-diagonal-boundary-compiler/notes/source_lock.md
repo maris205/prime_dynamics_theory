@@ -1,0 +1,20 @@
+# Source lock
+
+Baseline commit: `aa26b3b5a53d71035b337b430fd9b4a261b25233`.
+
+Frozen hashes:
+
+```text
+AGENTS.md = c86859130ddcf77082f17ffd3477f32e5bf216a43be73a19901fd5e6efa741c1
+TPC_HANDOFF.md = e3d31a130e97b00bad13f36a97447902259e89170fb8b7df82a0ac32cf11371e
+bridge_b_polarized_local_bdh_scalar_compiler.md = 74e42689e17efad75e9718a9d6ac3d8f3ec9c16239204a4915b0b7bdc17ae218
+bridge_b_literal_v59_source_operator_attachment.md = 54bb956ad55245970a7d5d8852f1472d6a9dae68e940d1f9ced0b4c243271eed
+bridge_b_source_frozen_rank_midpoint_contrast_compiler.md = 31333053692ca404b6de9a5463cdc803f6b784bbdcc4ca3af36c9ebe16431b16
+bridge_b_source_backed_rank_midpoint_hybrid_mean_closure.md = 6e5cb92642bf8fc8f0a3a56a29c4c061359f3794e24345d76a62d2fccf5a21ee
+bridge_b_proper_factor_poisson_transference.md = fd02eaf5504b7a7c2182a8a045b9ec03488ef72ef7b88e750ba781163c10525a
+bridge_b_exact_adjoint_diagonal_boundary_compiler.md = cd57bf302938946489a509991a50c3945b793371914e1fd7c99c5ace57ca1e97
+```
+
+The source ceiling is exact structure.  V43 supplies the complete-lattice
+Poisson zero after profile reflection/conjugation; no frozen theorem estimates
+the returned diagonal or either boundary lane in this paper.

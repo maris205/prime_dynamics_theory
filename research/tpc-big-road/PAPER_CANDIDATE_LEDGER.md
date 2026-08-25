@@ -2,11 +2,50 @@
 
 更新时间：2026-08-26
 
-状态：**TPC254_PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE / ADJOINT_BETA_LANE_OPEN**
+状态：**TPC255_PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER / QUANTITATIVE_BETA_LANE_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.49 已发布：TPC-255 exact adjoint diagonal and hard-boundary compiler
+
+项目：`papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/`
+
+类型：**PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER**。
+
+For `q` in the literal shell and `q` not dividing `t`, let
+
+```text
+v_(q,t)(u)=1_(q does not divide u)
+            [1_(u=t mod q)-1/(q-1)].
+```
+
+V43 band-limited Poisson applied to the reflected-conjugate profile proves
+that its complete-lattice adjoint row is zero when `H>2Q`; no kernel evenness
+or self-adjointness is assumed.  Exact diagonal deletion and boundary
+bookkeeping then give
+
+```text
+<z_mid,A_x beta>
+ = -B_Q<z_mid,beta> + input-unit correction
+   - hard-window leakage + child-jump leakage.
+```
+
+All outer `q` weights, both unit masks, the deleted diagonal, kernel
+conjugations and the real-clock ordered-rank split remain literal.  The output
+mask may not be split before Poisson: its two pieces have opposite nonzero
+means and are centered only jointly.  This is an exact arithmetic-structure
+advance, not an estimate; no surviving lane has a proved sign, nonzero value,
+logarithmic saving or power saving.
+
+```text
+STRONGEST_POSITIVE_RESULT = THE_LITERAL_V59_ADJOINT_HAAR_SCALAR_IS_EXACTLY_ONE_BQ_WEIGHTED_BETA_MIDPOINT_PLUS_INPUT_UNIT_HARD_WINDOW_AND_CHILD_JUMP_CORRECTIONS_AFTER_THE_COMPLETE_CENTERED_ALIAS_VANISHES
+STRONGEST_OBSTRUCTION = COMPLETE_LATTICE_POISSON_REMOVES_ONLY_THE_CENTERED_ALIAS_WHILE_DIAGONAL_DELETION_RETURNS_SHELL_SCALE_BQ_AND_NO_LOCKED_THEOREM_CONTROLS_IT_COLLECTIVELY_WITH_THE_BOUNDARIES
+OPEN_THEOREM = ESTIMATE_THE_SIGNED_SUM_OF_THE_BQ_BETA_MIDPOINT_INPUT_UNIT_HARD_WINDOW_AND_CHILD_JUMP_LANES_ON_ONE_V59_CLOCK_WITHOUT_PRIME_SHELL_OR_MASK_TRIANGLE
+REUSABLE_STRUCTURE = LITERAL_ADJOINT_TEST_TO_COMPLETE_UNIT_CENTERED_LATTICE_TO_POISSON_ZERO_TO_DIAGONAL_RETURN_TO_OUTER_HARD_WINDOW_TO_INNER_CHILD_JUMP_TO_ONE_LITERAL_BETA_LINEAR_FORM
+ROUND2_CLUE = ATTACK_THE_BQ_WEIGHTED_LITERAL_BETA_RANK_MIDPOINT_TOGETHER_WITH_THE_HARD_WINDOW_AND_CHILD_JUMP_CORRECTIONS__DO_NOT_DECLARE_THE_POISSON_ZERO_A_PAYMENT_AND_DO_NOT_SEPARATE_THE_UNIT_MASK_OR_PRIME_SHELL
+```
 
 ## 0.48 已发布：TPC-254 source-backed rank-midpoint hybrid-mean closure
 

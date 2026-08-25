@@ -9,13 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-254 已把 TPC-253 的 coefficient-independent rank midpoint 接到
-source-backed hybrid maximal Type-I theorem。对每个固定有限 admissible `K` 与每个固定
-`M>0`，非负 maximal sum 的 unit-weight `m=1` row 给两个 consecutive rank children
-`O_(M,K)(x(log x)^(-M))`，从而证明 literal hybrid moment
-`|<z_mid,w>|<<_(M,K)x^(1/2)(log x)^(-M)`。这是 scoped arithmetic advance，但任意固定
-log saving 不是 fixed-power saving。第二条 literal lane `<z_mid,A_x beta>` 仍只有 sharp
-adjoint Cauchy control；arithmetic `L2`、full Gate B 与 strict `1/400` 仍开放。
+当前主线状态：TPC-255 已把 TPC-254 留下的 literal adjoint `beta` lane 逐坐标展开。
+V43 band-limited Poisson 在 `H>2Q` 时精确删除 complete-lattice unit-centered alias，
+但 deleted diagonal 返回 shell coefficient `B_Q`，physical hard window、ordered-rank
+child jump 及两侧 unit masks 产生三个必须保留的 correction lanes。因此
+`<z_mid,A_x beta>` 已被编译成一个 exact literal beta linear form，却尚无定量算术估计。
+TPC-254 的 `w` midpoint 任意固定 log-power bound 继续有效；本篇为结构推进，
+`ARITHMETIC_ADVANCE=NO`，arithmetic `L2`、full Gate B 与 strict `1/400` 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +29,8 @@ adjoint Cauchy control；arithmetic `L2`、full Gate B 与 strict `1/400` 仍开
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-255-exact-adjoint-diagonal-boundary-compiler` - `PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER` - 将 ordered-rank Haar vector 穿过 literal V59 adjoint，证明 complete unit-centered lattice alias 在 `H>2Q` 时由 Poisson 精确消失，并把 deleted diagonal、input/output unit masks、hard-window leakage 与 child-jump leakage 全部原样返回；最终得到 `-B_Q<z_mid,beta>` 加三个 explicit correction lanes，但无 lane estimate、arithmetic `L2` 或 Gate-B credit。
 
 `tpc-254-source-backed-rank-midpoint-hybrid-mean-closure` - `PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_WITH_ADJOINT_LANE_SOURCE_GAP` - 从冻结 hybrid maximal Type-I theorem 的非负和中合法抽取 `m=1`，对每个实数 clock 的两个 rank children 证明任意固定 log-power mean control，并得到 literal `w` midpoint Haar moment `x^(1/2)(log x)^(-M)`；adjoint `beta` lane 仍无 source estimate，zero-diagonal derangement 证明 norm-only Cauchy sharp，full Gate B 仍开放。
 

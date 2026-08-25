@@ -1,7 +1,98 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V107_TPC254_SOURCE_BACKED_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_RELEASED`
+交接状态：`BOLD_CHANNEL_V108_TPC255_EXACT_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER_RELEASED`
+
+TPC-255 当前 section：exact adjoint diagonal and hard-boundary compiler
+-----------------------------------------------------------------------
+
+TPC-255 pushes TPC-253's ordered-rank Haar vector through the literal V59
+operator adjoint.  For each shell prime `q` and `q`-unit input `t`, the
+complete-lattice output-unit-centered row
+
+```text
+v_(q,t)(u)=1_(q does not divide u)
+            [1_(u=t mod q)-1/(q-1)]
+```
+
+has mean zero.  The V43 `d=1` band-limited Poisson theorem, applied to the
+reflected-conjugate profile, gives `P*_(q,t)=0` once `H>2Q`; kernel evenness or
+self-adjointness is neither needed nor assumed.
+
+Deleting the physical diagonal and restoring the two hard boundaries gives
+the exact coordinate identity
+
+```text
+(A_x^*z)(t)
+ =sum_q q 1_(q does not divide t)
+   [-z(t)E*_(q,t)+J*_(q,t)
+    -(q-2)/(q-1)z(t)].
+```
+
+For `z=z_mid`, the internal boundary is explicit:
+
+```text
+t in L: J*_(q,t)=-rho^(-1)sum_(u in R)conjugate(K_H(u-t))v_(q,t)(u),
+t in R: J*_(q,t)=+rho^(-1)sum_(u in L)conjugate(K_H(u-t))v_(q,t)(u).
+```
+
+Pairing with the real literal `beta` coefficient yields
+
+```text
+<z_mid,A_x beta>
+ =-B_Q<z_mid,beta> + input-unit correction
+  -hard-window leakage + child-jump leakage,
+B_Q=sum_(q in Q_x)q(q-2)/(q-1).
+```
+
+The output unit mask is essential.  Its raw-centered and `q|u` pieces have
+means `-1/(q-1)` and `+1/(q-1)` and cancel only jointly.  The value
+`K_H(0)=integral psi_+=1` belongs to diagonal deletion, whereas the Poisson
+zero mode carries `H psi_+(0)/q`; they are not interchangeable.
+
+```text
+TPC255_MAXIMUM_CLAIM = EXACT_LITERAL_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER_WITH_SOURCE_BACKED_COMPLETE_ALIAS_ZERO
+TPC255_COMPLETE_UNIT_CENTERED_ALIAS = PROVED_SOURCE_BACKED_ZERO_FOR_H_GREATER_THAN_2Q
+TPC255_KERNEL_EVENNESS_OR_SELF_ADJOINTNESS = NOT_ASSUMED
+TPC255_LITERAL_ADJOINT_COORDINATE_EXPANSION = PROVED_EXACT
+TPC255_DELETED_DIAGONAL_BQ_RETURN = PROVED_EXACT
+TPC255_INPUT_UNIT_CORRECTION = PROVED_EXACT_RETAINED
+TPC255_OUTPUT_UNIT_CORRECTION = PROVED_EXACT_JOINTLY_CENTERED_ONLY
+TPC255_HARD_WINDOW_AND_CHILD_JUMP = PROVED_EXACT_RETAINED
+TPC255_ADJOINT_HAAR_SAVING = OPEN
+TPC255_SIGN_OR_NONZERO = OPEN
+TPC255_ROUTE_ADVANCE = YES_EXACT_LITERAL_STRUCTURE
+TPC255_LITERAL_ARITHMETIC_STRUCTURE_ADVANCE = YES
+TPC255_ARITHMETIC_ADVANCE = NO
+TPC255_FIXED_ATOM_CREDIT = 0
+TPC255_L2 = NONE
+TPC255_FULL_GATE_B = OPEN
+TPC255_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC255_TWIN_PRIME_RESULT = NONE
+TPC255_STATUS = PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER
+TPC255_ROUND2_CLUE = ATTACK_THE_BQ_WEIGHTED_LITERAL_BETA_RANK_MIDPOINT_TOGETHER_WITH_THE_HARD_WINDOW_AND_CHILD_JUMP_CORRECTIONS__DO_NOT_DECLARE_THE_POISSON_ZERO_A_PAYMENT_AND_DO_NOT_SEPARATE_THE_UNIT_MASK_OR_PRIME_SHELL
+```
+
+strongest positive result：the literal V59 adjoint Haar scalar is exactly one
+`B_Q`-weighted beta midpoint plus explicit input-unit, hard-window and
+child-jump corrections after the complete centered alias vanishes；strongest
+obstruction：diagonal deletion returns shell-scale `B_Q`, and no locked theorem
+controls that lane collectively with both boundaries；open theorem：estimate
+the signed sum of all four survivors without triangulating the prime shell or
+unit masks；reusable structure：literal adjoint test -> complete centered row ->
+Poisson zero -> diagonal return -> outer boundary -> child jump -> one beta form。
+
+编号论文目录：papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/
+
+```text
+papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/README.md
+papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/PROOF_PACKAGE.md
+papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/paper/paper.pdf
+papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/results/tpc255_certificate.json
+papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_exact_adjoint_diagonal_boundary_compiler.md
+research/tpc-big-road/tpc_bridge_b_exact_adjoint_diagonal_boundary_compiler_checker.py
+```
 
 TPC-254 当前 section：source-backed rank-midpoint hybrid-mean closure
 ---------------------------------------------------------------------
@@ -7562,8 +7653,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V107/TPC-254 gate、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百七十次（85 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V108/TPC-255 gate、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百七十二次（86 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -7737,11 +7828,23 @@ python -B research/tpc-big-road/tpc_bridge_b_source_frozen_rank_midpoint_contras
 python -O -B research/tpc-big-road/tpc_bridge_b_source_frozen_rank_midpoint_contrast_compiler_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_source_backed_rank_midpoint_hybrid_mean_closure_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_source_backed_rank_midpoint_hybrid_mean_closure_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_exact_adjoint_diagonal_boundary_compiler_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_exact_adjoint_diagonal_boundary_compiler_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-254 入口：
+最新 TPC-255 入口：
+
+```text
+papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/README.md
+papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/notes/theorem_ledger.md
+papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_exact_adjoint_diagonal_boundary_compiler.md
+research/tpc-big-road/tpc_bridge_b_exact_adjoint_diagonal_boundary_compiler_checker.py
+```
+
+TPC-254 上游入口：
 
 ```text
 papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/README.md

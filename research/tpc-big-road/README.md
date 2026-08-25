@@ -1,51 +1,60 @@
-# TPC big road V107 / TPC-254: source-backed rank-midpoint hybrid-mean closure
+# TPC big road V108 / TPC-255: exact adjoint diagonal and hard-boundary compiler
 
 更新时间：2026-08-26
 
-状态：`TPC254_PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_WITH_ADJOINT_LANE_SOURCE_GAP / FULL_GATE_B_OPEN`
+状态：`TPC255_PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-254 proof 为
-`bridge_b_source_backed_rank_midpoint_hybrid_mean_closure.md`，checker 为
-`tpc_bridge_b_source_backed_rank_midpoint_hybrid_mean_closure_checker.py`，编号论文为
-`../../papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/`。
+当前 TPC-255 proof 为
+`bridge_b_exact_adjoint_diagonal_boundary_compiler.md`，checker 为
+`tpc_bridge_b_exact_adjoint_diagonal_boundary_compiler_checker.py`，编号论文为
+`../../papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/`。
 
-TPC-254 retains TPC-253's ordered rank split and fixes finite admissible `K`:
-
-```text
-Z_x=(log x)^K,
-w(u)=Lambda(u+2)-b_x^(Z_x)(u).
-```
-
-The source-backed hybrid maximal Type-I theorem is a nonnegative sum.  After
-freezing `gamma_0=1/4`, its unit-weight `m=1` row controls every consecutive
-active interval, hence both rank children.  For every fixed `M>0`,
+TPC-255 pushes TPC-253's ordered-rank Haar vector through the literal V59
+adjoint.  With `H>2Q`, V43 Poisson proves that the complete-lattice
+unit-centered row vanishes.  The physical row does not vanish: deleting its
+diagonal returns a `B_Q`-weighted beta midpoint, and the hard endpoints plus
+the rank-child jump return two distinct boundary lanes.  Exact input/output
+unit-mask corrections remain attached.
 
 ```text
-max(|W_L|,|W_R|)<<_(M,K)x(log x)^(-M),
-|<z_mid,w>|<<_(M,K)x^(1/2)(log x)^(-M).
+<z_mid,A_x beta>
+ = -B_Q<z_mid,beta> + input-unit correction
+   - hard-window leakage + child-jump leakage.
 ```
 
-This is a scoped arithmetic advance for the literal `w` lane.  Quantifiers are
-not uniform in `K`, and arbitrary fixed logarithmic saving is not fixed-power
-saving.  The second lane remains the literal form `<A_x^*z_mid,beta>`; only
-Cauchy is source-backed here, and a zero-diagonal derangement shows that
-norm-only constant one is sharp even over real matrices.
+This is an exact literal arithmetic-structure advance, not an arithmetic
+estimate.  Poisson deletes only the complete centered alias; it does not pay
+the diagonal return or either boundary lane.  TPC-254's source-backed `w`
+midpoint log-power bound remains cumulative upstream progress.
 
 ```text
-TPC254_MAXIMAL_TYPE_I_M1_EXTRACTION = PROVED_SOURCE_BACKED
-TPC254_CHILD_SUM_HYBRID_MEAN = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
-TPC254_W_MIDPOINT_HAAR_MOMENT = PROVED_SOURCE_BACKED_X_ONE_HALF_TIMES_ARBITRARY_FIXED_LOG_SAVING
-TPC254_SAFE_ADJOINT_CAUCHY_TRANSFER = PROVED_EXACT
-TPC254_G_MIDPOINT_HAAR_ESTIMATE = OPEN_NO_FROZEN_SOURCE_ATTACHMENT
-TPC254_CAUCHY_CONSTANT_ONE_SHARPNESS = PROVED_EXACT_N2_SYNTHETIC
-TPC254_ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_LANE
-TPC254_L2 = NONE
-TPC254_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC254_ROUND2_CLUE = PUSH_THE_FIXED_RANK_MIDPOINT_HAAR_TEST_THROUGH_A_X_STAR_AND_ESTIMATE_THE_LITERAL_BETA_LINEAR_FORM_ON_THE_SAME_CLOCK_BEFORE_ANY_COVARIANCE_OR_MARGIN_PROMOTION__DO_NOT_REUSE_WHOLE_SHELL_OR_AP_AVERAGES
+TPC255_COMPLETE_UNIT_CENTERED_ALIAS = PROVED_SOURCE_BACKED_ZERO_FOR_H_GREATER_THAN_2Q
+TPC255_LITERAL_ADJOINT_COORDINATE_EXPANSION = PROVED_EXACT
+TPC255_DELETED_DIAGONAL_BQ_RETURN = PROVED_EXACT
+TPC255_INPUT_UNIT_CORRECTION = PROVED_EXACT_RETAINED
+TPC255_OUTPUT_UNIT_CORRECTION = PROVED_EXACT_JOINTLY_CENTERED_ONLY
+TPC255_HARD_WINDOW_AND_CHILD_JUMP = PROVED_EXACT_RETAINED
+TPC255_ROUTE_ADVANCE = YES_EXACT_LITERAL_STRUCTURE
+TPC255_LITERAL_ARITHMETIC_STRUCTURE_ADVANCE = YES
+TPC255_ARITHMETIC_ADVANCE = NO
+TPC255_FIXED_ATOM_CREDIT = 0
+TPC255_L2 = NONE
+TPC255_FULL_GATE_B = OPEN
+TPC255_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC255_TWIN_PRIME_RESULT = NONE
+TPC255_ROUND2_CLUE = ATTACK_THE_BQ_WEIGHTED_LITERAL_BETA_RANK_MIDPOINT_TOGETHER_WITH_THE_HARD_WINDOW_AND_CHILD_JUMP_CORRECTIONS__DO_NOT_DECLARE_THE_POISSON_ZERO_A_PAYMENT_AND_DO_NOT_SEPARATE_THE_UNIT_MASK_OR_PRIME_SHELL
 ```
+
+## V107 upstream: TPC-254 source-backed rank-midpoint hybrid-mean closure
+
+TPC-254 extracts the unit-weight `m=1` row of a source-backed hybrid maximal
+Type-I theorem and proves
+`|<z_mid,w>|<<_(M,K)x^(1/2)(log x)^(-M)` for every fixed finite `K` and fixed
+`M>0`.  It is a scoped arithmetic advance for the `w` lane, not a fixed-power
+saving.
 
 ## V106 upstream: TPC-253 source-frozen rank-midpoint contrast compiler
 

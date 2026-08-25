@@ -1,34 +1,43 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V107 / SOURCE_BACKED_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE`
-claim level：`PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_WITH_ADJOINT_LANE_SOURCE_GAP`
-编号事实终点：TPC-254；TPC-254 trigger：`true`
+状态：`BOLD_CHANNEL_V108 / EXACT_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER`
+claim level：`PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER`
+编号事实终点：TPC-255；TPC-255 trigger：`true`
 
-当前 TPC-254 入口：proof 为
-`research/tpc-big-road/bridge_b_source_backed_rank_midpoint_hybrid_mean_closure.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_source_backed_rank_midpoint_hybrid_mean_closure_checker.py`，编号论文为
-`papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/`。它从 source-backed
-hybrid maximal Type-I theorem 的 nonnegative sum 抽取 unit-weight `m=1` row，支付两个
-ordered-rank children，并证明 literal `w` Haar moment 的任意固定 log-power saving；
-adjoint `beta` lane 仍无 source estimate。
+当前 TPC-255 入口：proof 为
+`research/tpc-big-road/bridge_b_exact_adjoint_diagonal_boundary_compiler.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_exact_adjoint_diagonal_boundary_compiler_checker.py`，编号论文为
+`papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/`。它将 ordered-rank Haar vector
+穿过 literal V59 adjoint：complete unit-centered alias 由 V43 Poisson 精确删除，
+deleted diagonal 返回 `B_Q`-weighted beta midpoint，hard window 与 child jump 返回两条
+boundary lanes，input/output unit-mask corrections 全部保留。本篇不给定量估计。
 
 ```text
-TPC254_HYBRID_CUTOFF = SOURCE_LOCKED_FIXED_FINITE_K_NO_K_UNIFORMITY
-TPC254_RANK_CHILD_INTERVAL_ADMISSIBILITY = PROVED_EXACT_FOR_REAL_X
-TPC254_MAXIMAL_TYPE_I_M1_EXTRACTION = PROVED_SOURCE_BACKED
-TPC254_CHILD_SUM_HYBRID_MEAN = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
-TPC254_W_MIDPOINT_HAAR_MOMENT = PROVED_SOURCE_BACKED_X_ONE_HALF_TIMES_ARBITRARY_FIXED_LOG_SAVING
-TPC254_SAFE_ADJOINT_CAUCHY_TRANSFER = PROVED_EXACT
-TPC254_G_MIDPOINT_HAAR_ESTIMATE = OPEN_NO_FROZEN_SOURCE_ATTACHMENT
-TPC254_ZERO_DIAGONAL_DERANGEMENT_OBSTRUCTION = PROVED_SYNTHETIC_NOT_LITERAL_V59
-TPC254_ARBITRARY_LOG_TO_FIXED_POWER_PROMOTION = NOT_CLAIMED
-TPC254_ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_LANE
-TPC254_L2 = NONE
-TPC254_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC254_STATUS = PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_WITH_ADJOINT_LANE_SOURCE_GAP
-TPC254_ROUND2_CLUE = PUSH_THE_FIXED_RANK_MIDPOINT_HAAR_TEST_THROUGH_A_X_STAR_AND_ESTIMATE_THE_LITERAL_BETA_LINEAR_FORM_ON_THE_SAME_CLOCK_BEFORE_ANY_COVARIANCE_OR_MARGIN_PROMOTION__DO_NOT_REUSE_WHOLE_SHELL_OR_AP_AVERAGES
+TPC255_COMPLETE_UNIT_CENTERED_ALIAS = PROVED_SOURCE_BACKED_ZERO_FOR_H_GREATER_THAN_2Q
+TPC255_LITERAL_ADJOINT_COORDINATE_EXPANSION = PROVED_EXACT
+TPC255_DELETED_DIAGONAL_BQ_RETURN = PROVED_EXACT
+TPC255_INPUT_UNIT_CORRECTION = PROVED_EXACT_RETAINED
+TPC255_OUTPUT_UNIT_CORRECTION = PROVED_EXACT_JOINTLY_CENTERED_ONLY
+TPC255_HARD_WINDOW_AND_CHILD_JUMP = PROVED_EXACT_RETAINED
+TPC255_ROUTE_ADVANCE = YES_EXACT_LITERAL_STRUCTURE
+TPC255_LITERAL_ARITHMETIC_STRUCTURE_ADVANCE = YES
+TPC255_ARITHMETIC_ADVANCE = NO
+TPC255_FIXED_ATOM_CREDIT = 0
+TPC255_L2 = NONE
+TPC255_FULL_GATE_B = OPEN
+TPC255_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC255_TWIN_PRIME_RESULT = NONE
+TPC255_STATUS = PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER
+TPC255_ROUND2_CLUE = ATTACK_THE_BQ_WEIGHTED_LITERAL_BETA_RANK_MIDPOINT_TOGETHER_WITH_THE_HARD_WINDOW_AND_CHILD_JUMP_CORRECTIONS__DO_NOT_DECLARE_THE_POISSON_ZERO_A_PAYMENT_AND_DO_NOT_SEPARATE_THE_UNIT_MASK_OR_PRIME_SHELL
 ```
+
+TPC-254 上游入口：proof 为
+`research/tpc-big-road/bridge_b_source_backed_rank_midpoint_hybrid_mean_closure.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_source_backed_rank_midpoint_hybrid_mean_closure_checker.py`，编号论文为
+`papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/`。它支付 literal `w`
+rank-midpoint moment 到 `x^(1/2)(log x)^(-M)`，并把第二 lane 定位为 TPC-255 已展开的
+literal adjoint test。
 
 TPC-253 上游入口：proof 为
 `research/tpc-big-road/bridge_b_source_frozen_rank_midpoint_contrast_compiler.md`，checker 为
