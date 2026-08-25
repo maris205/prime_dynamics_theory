@@ -1,0 +1,21 @@
+We prove a direct hard-window near-isometry for exponential synthesis over any
+finite separated subset of the circle.  If the frequencies are
+$\delta$-separated and the window contains $N$ consecutive integers, the
+hard rectangular Gram matrix has diagonal $N$ and absolute off-diagonal row
+mass at most
+$R_\delta=\delta^{-1}H_{\lfloor1/(2\delta)\rfloor}$.  Hence its normalized
+distance from the identity is at most $\varepsilon=R_\delta/N$.  The same
+operator estimate yields both a two-sided frame bound and the signed bilinear
+transfer
+\[
+\abs{N^{-1}\ip{Tz}{Tw}-\ip{z}{w}}
+\leq\varepsilon\norm{z}_2\norm{w}_2.
+\]
+For distinct primitive rational frequencies of height at most $U$, this gives
+$R_U=U^2H_{\lfloor U^2/2\rfloor}$.  At the V59 scale
+$U=x^{133/400}$ and $N=x/2+O(1)$, the exact error is
+$(133/100+o(1))x^{-67/200}\log x$.  This improves the repository's direct
+hard-window lower baseline from $1/2-O(U^4/N^2)$ to
+$1-O(U^2\log U/N)$ and supplies the bilinear interface needed by the TPC-242
+phase-selected mode.  The result is structural: it proves neither physical
+coefficient attachment nor arithmetic cancellation.

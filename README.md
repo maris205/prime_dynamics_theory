@@ -9,13 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-242 已把 literal V59 四相位能量完整分解为
-`F_0=||X||^2+||Y||^2`、`F_1=<Y,X>`、`F_2=0`、`F_3=<X,Y>`，并证明固定
-`F_0=S` 时 `F_1` 的可行集恰为闭圆盘 `|F_1|<=S/2`，相位缺陷精确分解为 norm
-imbalance 与 Gram determinant。TPC-241 的 unsigned common-profile floor 因缺少
-phase-by-phase physical attachment，对 signed `F_1` 没有直接定量信用；这不等于物理
-top-prime mode 消失。下一步是 hard-window near-isometry/bilinear transfer，再攻击
-literal `C_h` signed bucket。arithmetic L2、signed Gate B 与 strict `1/400` 仍开放。
+当前主线状态：TPC-243 已对任意有限 `delta`-separated 圆频率族证明 hard-window
+Gram 的 off-diagonal row bound
+`R_delta=delta^(-1)H_floor(1/(2delta))`，由此得到 normalized synthesis 的双边
+`1+-epsilon` near-isometry 与 signed bilinear transfer。V59 primitive-height 尺度上
+`epsilon=(133/100+o(1))x^(-67/200)log x`；TPC-242 selected mode 因而可从
+coefficient covariance 稳定传到物理窗口。它仍不提供 literal phase-lane attachment、
+coefficient cancellation 或 arithmetic `L2`。下一步审计 common physical
+multiplier `C_h` 在两条 polarized lanes 中究竟保留还是擦除符号。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +30,8 @@ literal `C_h` signed bucket。arithmetic L2、signed Gate B 与 strict `1/400` �
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-243-hard-window-near-isometry-bilinear-transfer` - `PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER` - 对有限 separated circle frequencies 证明 hard rectangular synthesis 的双边 near-isometry 与 oriented signed bilinear transfer；在 V59 尺度误差为 `(133/100+o(1))x^(-67/200)log x`，但 literal top-prime coefficient attachment、signed `C_h` theorem 与 arithmetic L2 仍开放。
 
 `tpc-242-phase-fourier-collision-separation` - `PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER` - 证明 literal `i^j` convention 下完整 `C_4` 能量谱、固定总能量的 sharp cross-term closed disk 与 imbalance/Gram exact defect；并 source-type 地证明 TPC-241 unsigned floor 对 V59 signed `F_1` 无直接定量转移，但不宣称物理 top-prime mode 消失。
 

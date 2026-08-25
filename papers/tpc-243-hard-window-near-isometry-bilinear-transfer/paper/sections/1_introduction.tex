@@ -1,0 +1,44 @@
+\section{Introduction}
+
+Hard finite intervals do not automatically preserve coefficient geometry.
+Even when distinct frequencies are separated modulo one, the rectangular
+Gram matrix contains signed off-diagonal geometric sums.  A lower frame bound
+must control those sums without replacing the physical window by a different
+object, while a polarization argument also needs the orientation of a complex
+cross term to survive.
+
+The repository contains two complementary ingredients.  TPC-217 applies the
+standard additive large sieve to obtain an upper finite-window estimate at the
+primitive-rational spacing scale~\cite{WangTPC217}.  TPC-238 minorizes the hard
+window by a triangular weight and proves a normalized lower baseline
+$1/2-O(U^4/N^2)$~\cite{WangTPC238}.  TPC-242 then shows that the literal
+four-phase convention selects an oriented coefficient
+$F_1=\ip{Y}{X}$~\cite{WangTPC242}.  What remains between these results is a
+direct rectangular operator estimate that is two-sided and strong enough to
+transport an oriented bilinear form.
+
+This paper supplies that analytic interface.  Its contributions are:
+\begin{enumerate}
+  \item We prove that every off-diagonal row of the hard-window Gram matrix has
+  absolute mass at most
+  $\delta^{-1}H_{\lfloor1/(2\delta)\rfloor}$.  The proof treats empty and
+  singleton sets, $N=1$, and the antipodal tie explicitly.
+  \item Hermitian Schur/Gershgorin converts the row estimate into a two-sided
+  near-isometry and a signed bilinear estimate with the same error.
+  \item For primitive frequencies at the V59 scale, we compute the leading
+  coefficient $133/100$ and the power $-67/200$ exactly.
+  \item We match the TPC-242 orientation:
+  $F_1=N^{-1}\ip{Tw}{Tz}$ approximates $\ip{w}{z}$, not $\ip{z}{w}$.
+\end{enumerate}
+
+The theorem is an $L1$ structural advance in the program's terminology.  It
+does not bound the literal physical coefficient norms, identify the top-prime
+lanes, establish a signed $C_h$ theorem, or produce arithmetic $L2$
+cancellation.  These exclusions are part of the theorem contract rather than
+informal caveats.
+
+Section~\ref{sec:setup} fixes conventions and repository provenance.
+Sections~\ref{sec:row} and~\ref{sec:operator} prove the row and operator
+estimates.  Section~\ref{sec:primitive} specializes the result, and
+Section~\ref{sec:transport} gives the phase-selected transfer.  The final
+sections separate finite reproduction checks from the remaining route gates.

@@ -1,9 +1,97 @@
 # TPC HANDOFF
 
 更新时间：2026-08-25
-交接状态：`BOLD_CHANNEL_V95_TPC242_PHASE_FOURIER_COLLISION_SEPARATION_RELEASED`
+交接状态：`BOLD_CHANNEL_V96_TPC243_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER_RELEASED`
 
-TPC-242 当前 section：phase-Fourier collision separation
+TPC-243 当前 section：hard-window near-isometry and signed bilinear transfer
+--------------------------------------------------------------------------
+
+Let `F` be a finite `delta`-separated subset of `R/Z`, let
+`I={M,...,M+N-1}`, and define
+
+```text
+Tz(n)=sum_(alpha in F) z_alpha e(n alpha),
+K=floor(1/(2delta)),
+R_delta=delta^(-1)H_K,
+epsilon=R_delta/N.
+```
+
+The translated Dirichlet Gram has diagonal exactly `N`.  The entry bound
+`|D_I(theta)|<=1/(2||theta||)` and two-sided circular packing give every absolute
+off-diagonal row sum at most `R_delta`.  Hermitian Schur/Gershgorin therefore proves
+
+```text
+[1-epsilon]_+||z||_2^2
+ <=N^(-1)||Tz||_2^2
+ <=(1+epsilon)||z||_2^2,
+
+|N^(-1)<Tz,Tw>-<z,w>|
+ <=epsilon||z||_2||w||_2.
+```
+
+For distinct reduced rational frequencies of height at most `U>=2`, take
+`delta=U^(-2)`, so `R_U=U^2H_floor(U^2/2)`.  On the literal V59 interval
+`N=x/2+O(1)` with `U=x^(133/400)`,
+
+```text
+epsilon_U
+ =(133/100+o(1))x^(-67/200)log x
+ =x^(-67/200+o(1)).
+```
+
+With `X=N^(-1/2)Tz` and `Y=N^(-1/2)Tw`, TPC-242 selects
+`F_1=<Y,X>=N^(-1)<Tw,Tz>`, which differs from `<w,z>` by at most
+`epsilon_U||w||||z||`.  This preserves signed complex orientation.  It does not
+identify the literal V59 coefficient lanes, bound their norms, or create arithmetic
+cancellation.
+
+```text
+TPC243_MAXIMUM_CLAIM = HARD_RECTANGULAR_WINDOW_TWO_SIDED_NEAR_ISOMETRY_AND_SIGNED_BILINEAR_TRANSFER
+TPC243_ROUTE_ADVANCE = YES_STRUCTURAL_INTERFACE
+TPC243_HARD_WINDOW_DIRICHLET_GRAM = PROVED_EXACT
+TPC243_GEOMETRIC_SUM_BOUND = PROVED_ONE_OVER_TWO_CIRCULAR_DISTANCE
+TPC243_HARMONIC_CIRCLE_PACKING = PROVED_DELTA_INVERSE_H_K
+TPC243_TWO_SIDED_NEAR_ISOMETRY = PROVED_ONE_PLUS_MINUS_EPSILON
+TPC243_SIGNED_BILINEAR_TRANSFER = PROVED_WITH_ERROR_EPSILON_NORM_PRODUCT
+TPC243_PRIMITIVE_HEIGHT_SPECIALIZATION = PROVED_R_U_EQUALS_U_SQUARED_H_FLOOR_U_SQUARED_OVER_TWO
+TPC243_V59_EPSILON = PROVED_133_OVER_100_PLUS_O_ONE_TIMES_X_MINUS_67_OVER_200_LOG_X
+TPC243_TPC242_SELECTED_MODE_TRANSFER = PROVED_CONDITIONAL_ON_COEFFICIENT_LANE_ATTACHMENT
+TPC243_TPC217_UPPER_SCALE_NOVELTY = NOT_CLAIMED
+TPC243_LITERAL_TOP_PRIME_ATTACHMENT = OPEN
+TPC243_LITERAL_C_H_SIGNED_CANCELLATION = NONE
+TPC243_ARITHMETIC_ADVANCE = NO
+TPC243_FIXED_ATOM_CREDIT = 0
+TPC243_L2 = NONE
+TPC243_FULL_GATE_B = OPEN
+TPC243_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC243_TPC_TRIGGER = true
+TPC243_NUMBERED_RELEASE = YES
+TPC243_TWIN_PRIME_RESULT = NONE
+TPC243_STATUS = PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER
+TPC243_ROUND2_CLUE = COMMON_MULTIPLIER_SIGN_AUDIT_FOR_LITERAL_C_H_IN_THE_TWO_POLARIZED_LANES
+```
+
+strongest positive result：hard rectangular primitive-frequency synthesis is a
+two-sided `1+o(1)` near-isometry and transports oriented signed inner products；
+strongest obstruction：the theorem only preserves coefficient covariance up to
+`epsilon||z||||w||` and cannot manufacture arithmetic cancellation；open theorem：
+source-backed literal top-prime two-lane coefficient attachment and covariance bound；
+reusable structure：Dirichlet Gram + harmonic circle packing + TPC-242 selected-mode
+transport。
+
+编号论文目录：papers/tpc-243-hard-window-near-isometry-bilinear-transfer/
+
+```text
+papers/tpc-243-hard-window-near-isometry-bilinear-transfer/README.md
+papers/tpc-243-hard-window-near-isometry-bilinear-transfer/PROOF_PACKAGE.md
+papers/tpc-243-hard-window-near-isometry-bilinear-transfer/paper/paper.pdf
+papers/tpc-243-hard-window-near-isometry-bilinear-transfer/results/tpc243_certificate.json
+papers/tpc-243-hard-window-near-isometry-bilinear-transfer/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_hard_window_near_isometry_bilinear_transfer.md
+research/tpc-big-road/tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py
+```
+
+TPC-242 上游 section：phase-Fourier collision separation
 --------------------------------------------------------
 
 Use a complex Hilbert space whose inner product is conjugate-linear in the first
@@ -6479,8 +6567,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V95/TPC-242 gate、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百四十六次（73 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V96/TPC-243 gate、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百四十八次（74 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -6630,11 +6718,23 @@ python -B research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_check
 python -O -B research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_phase_fourier_collision_separation_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_phase_fourier_collision_separation_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-242 入口：
+最新 TPC-243 入口：
+
+```text
+papers/tpc-243-hard-window-near-isometry-bilinear-transfer/README.md
+papers/tpc-243-hard-window-near-isometry-bilinear-transfer/notes/theorem_ledger.md
+papers/tpc-243-hard-window-near-isometry-bilinear-transfer/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_hard_window_near_isometry_bilinear_transfer.md
+research/tpc-big-road/tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py
+```
+
+TPC-242 上游入口：
 
 ```text
 papers/tpc-242-phase-fourier-collision-separation/README.md

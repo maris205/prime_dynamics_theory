@@ -1,58 +1,65 @@
-# TPC big road V95 / TPC-242: phase-Fourier collision separation
+# TPC big road V96 / TPC-243: hard-window near-isometry and bilinear transfer
 
 更新时间：2026-08-25
 
-状态：`TPC242_PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER / FULL_GATE_B_OPEN`
+状态：`TPC243_PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-242 proof 为
+当前 TPC-243 proof 为
+`bridge_b_hard_window_near_isometry_bilinear_transfer.md`，checker 为
+`tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py`，编号论文为
+`../../papers/tpc-243-hard-window-near-isometry-bilinear-transfer/`。
+
+For a finite `delta`-separated frequency set and hard interval of `N` consecutive
+integers, put
+
+```text
+R_delta=delta^(-1)H_floor(1/(2delta)), epsilon=R_delta/N.
+```
+
+The hard-window Gram has diagonal `N` and every absolute off-diagonal row sum at
+most `R_delta`.  Hence the normalized synthesis map satisfies the direct two-sided
+frame `1+-epsilon`, and
+
+```text
+|N^(-1)<Tz,Tw>-<z,w>| <= epsilon ||z||_2||w||_2.
+```
+
+For primitive frequencies of height `U=x^(133/400)` on `I_x`,
+`epsilon=(133/100+o(1))x^(-67/200)log x`.  This transports the TPC-242 selected mode
+with its complex orientation, but does not supply literal arithmetic coefficient
+attachment or cancellation.
+
+```text
+TPC243_HARD_WINDOW_DIRICHLET_GRAM = PROVED_EXACT
+TPC243_HARMONIC_CIRCLE_PACKING = PROVED_DELTA_INVERSE_H_K
+TPC243_TWO_SIDED_NEAR_ISOMETRY = PROVED_ONE_PLUS_MINUS_EPSILON
+TPC243_SIGNED_BILINEAR_TRANSFER = PROVED_WITH_ERROR_EPSILON_NORM_PRODUCT
+TPC243_PRIMITIVE_HEIGHT_SPECIALIZATION = PROVED_R_U_EQUALS_U_SQUARED_H_FLOOR_U_SQUARED_OVER_TWO
+TPC243_V59_EPSILON = PROVED_133_OVER_100_PLUS_O_ONE_TIMES_X_MINUS_67_OVER_200_LOG_X
+TPC243_TPC242_SELECTED_MODE_TRANSFER = PROVED_CONDITIONAL_ON_COEFFICIENT_LANE_ATTACHMENT
+TPC243_LITERAL_TOP_PRIME_ATTACHMENT = OPEN
+TPC243_LITERAL_C_H_SIGNED_CANCELLATION = NONE
+TPC243_ARITHMETIC_ADVANCE = NO
+TPC243_FIXED_ATOM_CREDIT = 0
+TPC243_L2 = NONE
+TPC243_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC243_ROUND2_CLUE = COMMON_MULTIPLIER_SIGN_AUDIT_FOR_LITERAL_C_H_IN_THE_TWO_POLARIZED_LANES
+```
+
+strongest positive result：hard rectangular coefficient synthesis is a two-sided
+`1+o(1)` near-isometry and transports signed inner products；strongest obstruction：
+geometry only preserves coefficient covariance and cannot create arithmetic cancellation；
+open theorem：literal two-lane coefficient attachment and covariance bound；reusable
+structure：Dirichlet Gram + harmonic circle packing + oriented bilinear transport。
+
+TPC-242 上游 proof 为
 `bridge_b_phase_fourier_collision_separation.md`，checker 为
 `tpc_bridge_b_phase_fourier_collision_separation_checker.py`，编号论文为
-`../../papers/tpc-242-phase-fourier-collision-separation/`。
-
-For `E_j=||X+i^jY||^2` and
-`F_k=(1/4)sum_j i^(kj)E_j`, the literal convention gives
-
-```text
-F_0=||X||^2+||Y||^2, F_1=<Y,X>, F_2=0, F_3=<X,Y>.
-```
-
-A scalar proved common to all four phase energies lies only in `F_0`.  At fixed
-`S=F_0`, however, the selected coefficient fills the exact disk `|F_1|<=S/2`, and
-
-```text
-S^2-4|F_1|^2
- = (||X||^2-||Y||^2)^2
-   +4(||X||^2||Y||^2-|<Y,X>|^2).
-```
-
-TPC-241 supplies no source-backed identification of its standalone unsigned kernel
-with either V59 marginal or with a common additive phase term.  Therefore it gives
-zero direct quantitative implication for `F_1`; this is not a theorem that the
-physical top-prime mode vanishes.
-
-```text
-TPC242_COMPLETE_PHASE_SPECTRUM = PROVED_F0_TOTAL_F1_ORIENTED_CROSS_F2_ZERO_F3_CONJUGATE_CROSS
-TPC242_PHASE_BLIND_ADDITIVE_TERM = PROVED_TRIVIAL_CHARACTER_ONLY
-TPC242_FIXED_F0_FEASIBLE_SET = PROVED_CLOSED_DISK_RADIUS_F0_OVER_TWO
-TPC242_PHASE_DEFECT_IDENTITY = PROVED_IMBALANCE_SQUARED_PLUS_FOUR_GRAM_DETERMINANT
-TPC242_TPC241_DIRECT_SIGNED_CREDIT = ZERO
-TPC242_TPC241_TO_V59_IDENTIFICATION = OPEN
-TPC242_PHYSICAL_TOP_PRIME_ANNIHILATION = NOT_CLAIMED
-TPC242_LITERAL_C_H_SIGNED_CANCELLATION = NONE
-TPC242_ARITHMETIC_ADVANCE = NO
-TPC242_FIXED_ATOM_CREDIT = 0
-TPC242_L2 = NONE
-TPC242_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC242_ROUND2_CLUE = EXPRESS_THE_LITERAL_TOP_PRIME_CONTRIBUTION_PHASE_BY_PHASE_BEFORE_SQUARING_AND_COMPUTE_ITS_ACTUAL_K_EQUALS_ONE_COEFFICIENT
-```
-
-strongest positive result：complete `C_4` spectrum、sharp fixed-total-energy disk 与 exact
-phase-defect decomposition；strongest obstruction：trivial-character energy cannot identify
-the signed mode；open theorem：source-backed phase-by-phase physical attachment；reusable
-structure：phase-energy DFT + imbalance/Gram defect ledger。
+`../../papers/tpc-242-phase-fourier-collision-separation/`。Its complete phase spectrum
+identifies the selected mode transported by TPC-243.
 
 TPC-241 上游 proof 为
 `bridge_b_top_prime_collision_sharpness.md`，checker 为

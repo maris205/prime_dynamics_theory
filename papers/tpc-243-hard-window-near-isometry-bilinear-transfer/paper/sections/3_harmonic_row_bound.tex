@@ -1,0 +1,73 @@
+\section{The hard-window harmonic row bound}\label{sec:row}
+
+The proof uses the rectangular window itself.  Translation of the interval
+changes only phases and therefore does not affect entry magnitudes.
+
+\begin{lemma}[Geometric-sum bound]\label{lem:geometric}
+For $\theta\notin\mathbb Z$,
+\[
+\abs{\sum_{n=M}^{M+N-1}\ee^{2\pi\ii n\theta}}
+\leq\frac1{2\dist{\theta}}.
+\]
+\end{lemma}
+
+\begin{proof}
+After removing the unit factor $\ee^{2\pi\ii M\theta}$, the geometric-sum
+identity gives
+\[
+\abs{\sum_{r=0}^{N-1}\ee^{2\pi\ii r\theta}}
+=\frac{\abs{\sin(\pi N\theta)}}{\abs{\sin(\pi\theta)}}
+\leq\frac1{\abs{\sin(\pi\theta)}}.
+\]
+For $t=\dist{\theta}\in(0,1/2]$, concavity on $[0,1/2]$ gives
+$\sin(\pi t)\geq2t$.  Since
+$\abs{\sin(\pi\theta)}=\sin(\pi t)$, the estimate follows.
+\end{proof}
+
+\begin{lemma}[Two-sided harmonic packing]\label{lem:packing}
+For every fixed $\alpha\in\cF$,
+\[
+\sum_{\substack{\beta\in\cF\\\beta\neq\alpha}}
+\frac1{2\dist{\beta-\alpha}}
+\leq\delta^{-1}\Harm_K.
+\]
+\end{lemma}
+
+\begin{proof}
+Represent each difference $\beta-\alpha$ in $(-1/2,1/2]$.  Assign positive
+representatives to one oriented side and negative representatives to the
+other.  An antipodal point has representative $1/2$ and is assigned to the
+positive side only, so it cannot be counted twice.
+
+On either side, list the distances as $d_1<\cdots<d_m$.  Separation between
+successive points on that half-circle, including $\alpha$ at distance zero,
+implies $d_j\geq j\delta$.  Since $d_j\leq1/2$, one also has
+$m\leq\lfloor1/(2\delta)\rfloor=K$.  One side therefore contributes at most
+\[
+  \sum_{j=1}^{m}\frac1{2d_j}
+  \leq\frac1{2\delta}\sum_{j=1}^{K}\frac1j
+  =\frac{\Harm_K}{2\delta}.
+\]
+Adding the two side bounds proves the claim.  When $\delta=1/2$, there is at
+most one off-diagonal point and it is antipodal; the same one-side rule applies.
+\end{proof}
+
+\begin{proposition}[Rectangular Gram rows]\label{prop:rows}
+Let $G=T^*T$.  Then $G_{\alpha\alpha}=N$, and every absolute
+off-diagonal row sum is at most $\Rdel$.
+\end{proposition}
+
+\begin{proof}
+The Gram entries are
+\[
+G_{\alpha\beta}
+=\sum_{n\in\cI}\ee^{2\pi\ii n(\beta-\alpha)}.
+\]
+The diagonal equals $N$.  For $\beta\neq\alpha$, separation makes
+$\beta-\alpha$ nonintegral.  Lemma~\ref{lem:geometric} bounds the entry by
+$(2\dist{\beta-\alpha})^{-1}$, and Lemma~\ref{lem:packing} sums these bounds.
+\end{proof}
+
+If $\cF$ is empty, Proposition~\ref{prop:rows} is vacuous.  If it is a
+singleton, $G=[N]$ and the row mass is zero.  Lemma~\ref{lem:geometric} also
+allows $N=1$, so no hidden lower bound on the window length has entered.

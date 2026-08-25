@@ -2,11 +2,75 @@
 
 更新时间：2026-08-25
 
-状态：**TPC242_PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER / PHYSICAL_PHASE_ATTACHMENT_OPEN**
+状态：**TPC243_PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER / LITERAL_COEFFICIENT_ATTACHMENT_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.37 已发布：TPC-243 hard-window near-isometry and signed bilinear transfer
+
+项目：`papers/tpc-243-hard-window-near-isometry-bilinear-transfer/`
+
+类型：**PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER**。
+
+Let `F` be a finite `delta`-separated subset of the circle, let `I` contain `N`
+consecutive integers, and set `Tz(n)=sum_alpha z_alpha e(n alpha)`.  With
+
+```text
+K=floor(1/(2delta)),
+R_delta=delta^(-1)H_K,
+epsilon=R_delta/N,
+```
+
+the hard-window Gram has diagonal `N` and every absolute off-diagonal row sum at
+most `R_delta`.  Hermitian Schur/Gershgorin therefore proves
+
+```text
+[1-epsilon]_+||z||_2^2 <= N^(-1)||Tz||_2^2 <= (1+epsilon)||z||_2^2,
+|N^(-1)<Tz,Tw>-<z,w>| <= epsilon||z||_2||w||_2.
+```
+
+For distinct primitive frequencies of height at most `U`, take `delta=U^(-2)`.
+At the literal V59 scales `N=x/2+O(1)` and `U=x^(133/400)`,
+
+```text
+epsilon=(133/100+o(1))x^(-67/200)log x=x^(-67/200+o(1)).
+```
+
+With `X=N^(-1/2)Tz`, `Y=N^(-1/2)Tw`, the TPC-242 selected mode
+`F_1=<Y,X>` approximates `<w,z>` with this oriented error.  The result transports
+signed coefficient information but neither identifies the literal physical lanes nor
+creates arithmetic cancellation.
+
+```text
+TPC243_HARD_WINDOW_DIRICHLET_GRAM = PROVED_EXACT
+TPC243_GEOMETRIC_SUM_BOUND = PROVED_ONE_OVER_TWO_CIRCULAR_DISTANCE
+TPC243_HARMONIC_CIRCLE_PACKING = PROVED_DELTA_INVERSE_H_K
+TPC243_TWO_SIDED_NEAR_ISOMETRY = PROVED_ONE_PLUS_MINUS_EPSILON
+TPC243_SIGNED_BILINEAR_TRANSFER = PROVED_WITH_ERROR_EPSILON_NORM_PRODUCT
+TPC243_PRIMITIVE_HEIGHT_SPECIALIZATION = PROVED_R_U_EQUALS_U_SQUARED_H_FLOOR_U_SQUARED_OVER_TWO
+TPC243_V59_EPSILON = PROVED_133_OVER_100_PLUS_O_ONE_TIMES_X_MINUS_67_OVER_200_LOG_X
+TPC243_TPC242_SELECTED_MODE_TRANSFER = PROVED_CONDITIONAL_ON_COEFFICIENT_LANE_ATTACHMENT
+TPC243_LITERAL_TOP_PRIME_ATTACHMENT = OPEN
+TPC243_LITERAL_C_H_SIGNED_CANCELLATION = NONE
+TPC243_ARITHMETIC_ADVANCE = NO
+TPC243_FIXED_ATOM_CREDIT = 0
+TPC243_L2 = NONE
+TPC243_FULL_GATE_B = OPEN
+TPC243_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC243_STATUS = PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER
+TPC243_ROUND2_CLUE = COMMON_MULTIPLIER_SIGN_AUDIT_FOR_LITERAL_C_H_IN_THE_TWO_POLARIZED_LANES
+```
+
+strongest positive result：hard rectangular primitive-frequency synthesis is a
+two-sided `1+o(1)` near-isometry and preserves signed coefficient covariance；
+strongest obstruction：window geometry cannot manufacture cancellation beyond the
+coefficient covariance and its `epsilon||z||||w||` error；open theorem：source-backed
+literal two-lane attachment and signed covariance bound；reusable structure：Dirichlet
+Gram、harmonic circular packing、Hermitian perturbation and oriented TPC-242 mode
+transport；`ROUND2_CLUE`：
+`COMMON_MULTIPLIER_SIGN_AUDIT_FOR_LITERAL_C_H_IN_THE_TWO_POLARIZED_LANES`。
 
 ## 0.36 已发布：TPC-242 phase-Fourier collision separation
 
@@ -2370,6 +2434,7 @@ handoff。
 
 | 日期 | 版本 | 新增可发表单元 | 状态 |
 |---|---|---|---|
+| 2026-08-25 | V96 | hard rectangular window 的 harmonic Gram row bound、双边 `1+-epsilon` near-isometry、signed bilinear transfer 与 V59 `x^(-67/200)log x` error | **PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER / TPC-243** |
 | 2026-08-25 | V95 | literal `C_4` phase-energy complete spectrum、sharp fixed-total-energy cross disk、imbalance/Gram defect 与 TPC-241-to-V59 typed no-transfer | **PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER / TPC-242** |
 | 2026-08-24 | V94 | fixed frozen common profile 的 top-prime q-collapsed coefficient与 finite-window explicit liminf，证明 unsigned `1/48` fixed-power sharp up to logarithms | **PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS / TPC-241** |
 | 2026-08-24 | V93 | fixed frozen profile 的 top-prime q-split direct-energy exact asymptotic、explicit `1197 kappa_psi log2/800` constant 与 no-fixed-power-saving obstruction | **PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR / TPC-240** |

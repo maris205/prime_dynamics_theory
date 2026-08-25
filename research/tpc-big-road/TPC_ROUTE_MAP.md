@@ -2,16 +2,16 @@
 
 更新时间：2026-08-25
 
-当前地图版本：V95 / TPC-242
+当前地图版本：V96 / TPC-243
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-242`（`PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER`）；
-对应论文目录为 `papers/tpc-242-phase-fourier-collision-separation/`。TPC-242 证明
-literal `C_4` phase-energy complete spectrum、固定总能量的 sharp selected-mode disk
-与 imbalance/Gram exact defect，并证明 TPC-241 unsigned floor 因缺少 physical
-phase attachment 而对 signed `F_1` 无直接定量转移。physical top-prime annihilation、
-signed `C_h`、arithmetic `L2` 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-243`（`PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER`）；
+对应论文目录为 `papers/tpc-243-hard-window-near-isometry-bilinear-transfer/`。TPC-243
+对 separated primitive frequencies 证明 hard-window synthesis 的双边 near-isometry
+和 oriented signed bilinear transfer；V59 error 为
+`(133/100+o(1))x^(-67/200)log x`。literal phase-lane attachment、signed `C_h`、
+arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -53,9 +53,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V95 / TPC-242                     |
-        | PHASE-FOURIER COLLISION SEPARATION               |
-        | unsigned/signed characters split; attachment OPEN|
+        | YOU ARE HERE — V96 / TPC-243                     |
+        | HARD-WINDOW SIGNED BILINEAR TRANSFER              |
+        | coefficient transport proved; attachment OPEN    |
         +--------------------------------------------------+
                 |
                 v
@@ -98,15 +98,15 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V94 / TPC-241 的
-top-prime collision sharpness obstruction。literal top band 已给出 coefficient 与
-finite-window explicit `x^(1/48)/log x` liminf，证明 unsigned common-profile lane 在
-fixed-power scale 已封口；下一施工点必须在平方前保留 four-packet polarization 或
-literal `C_h` signs。FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V96 / TPC-243 的
+hard-window signed bilinear transfer。separated primitive-frequency coefficient covariance
+已经以 `x^(-67/200+o(1))` error 稳定送入 physical window；下一施工点是 source-lock
+literal polarized coefficient lanes，并审计共同 `C_h` multiplier 在 same-`h` covariance
+中是否只留下 `|C_h|^2`。FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit
 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
-当前站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
+当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
 Fourier--Kloosterman emitter，V39 看清 nuclear/Schatten toll，V40 把 scalar 压到
 `q`-row，V41 又把每个 row 精确拆成已付的三剩余类模型 `m_q` 与 residual `rho_q`。
 V42 再把 residual的最窄目标识别为 positive physical Gram collision，并用 V35
@@ -301,7 +301,7 @@ attachment。现有来源没有支付该 attachment。
 
 Bridge B 当前状态：`RESERVE / OPEN_NEW_THEOREM`，不是当前第一优先级。
 
-## 5. 上游精确路线与当前位置：V65 / TPC-212
+## 5. 上游精确路线的历史施工序列：从 V65 / TPC-212 起
 
 V59 保留 V58 的 two-scalar terminal compiler，但把第二座桥墩进一步 source-facing
 地正规化。对 V35/V58 Gate-B scalar写
@@ -592,8 +592,9 @@ V49 将 V45 dyadic block bound推到更低 cut
 \]
 
 Landau--Page只把 exceptional primitive type限制为空或一个 quadratic character；
-全部 induced cofactors仍在同一 lane。当前首选门是直接控制三个 lane的 signed sum，
-separate marginal bounds只是更强 heuristic fallback。此处就是当前 `YOU ARE HERE`。
+全部 induced cofactors仍在同一 lane。V49 当时的首选门是直接控制三个 lane的 signed
+sum，separate marginal bounds只是更强 heuristic fallback。此处是 V49 的历史
+`YOU ARE HERE`，不是页首 V96 当前锚点。
 
 V50 不再固定只用 `D1`。对任意预先选择的
 `0<delta<1/9600`，令 `D_delta=x^(1/200+2delta)`，则 coefficient energy为
@@ -659,8 +660,9 @@ V52 保留该 fold 并定义 compensated row
 \eta_{\rm PAD}=\kappa+\frac{\delta_B+\delta_W}{2}-\frac1{400}.
 \]
 
-这里是当前 `YOU ARE HERE`：fold、compensation、natural length与 endpoint simplex
-均已 exact；V52 pair-angular theorem仍作为独立 fallback，没有 arithmetic credit。
+这里是 V52 的历史 `YOU ARE HERE`：fold、compensation、natural length与 endpoint
+simplex 均已 exact；V52 pair-angular theorem仍作为独立 fallback，没有 arithmetic
+credit。
 
 V53 定义 completed pair row
 
@@ -719,9 +721,9 @@ V55 进一步逐模数证明
 physical scalar。V54 extractor \(\kappa/N_\kappa\) 在当前 L2 information model内
 唯一 minimax，PSD/TT-star同样无第三种 case。
 
-这才是当前 `YOU ARE HERE`：longitudinal cable已经分类为 terminal readout，不再是
-待造 preliminary pier。真正桥墩前移到 q-compression之前的 V51 maximal fold-first
-或 V52 PAD Gate A，以及 V42/common transverse Gate B。
+这是 V55 的历史 `YOU ARE HERE`：longitudinal cable已经分类为 terminal readout，
+不再是待造 preliminary pier。当时真正桥墩前移到 q-compression之前的 V51 maximal
+fold-first 或 V52 PAD Gate A，以及 V42/common transverse Gate B。
 
 V40 已把 packet 压到每个模数的一条 scalar row
 
@@ -1232,6 +1234,56 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.37 V96 / TPC-243：hard-window near-isometry and signed bilinear transfer
+
+For a finite `delta`-separated subset of `R/Z`, define on an interval of `N`
+consecutive integers
+
+```text
+Tz(n)=sum_alpha z_alpha e(n alpha),
+R_delta=delta^(-1)H_floor(1/(2delta)),
+epsilon=R_delta/N.
+```
+
+The hard-window Dirichlet Gram has diagonal `N`.  A two-sided circular packing
+argument gives every absolute off-diagonal row sum at most `R_delta`; Hermitian
+Schur/Gershgorin therefore yields
+
+```text
+[1-epsilon]_+||z||_2^2 <= N^(-1)||Tz||_2^2 <= (1+epsilon)||z||_2^2,
+|N^(-1)<Tz,Tw>-<z,w>| <= epsilon||z||_2||w||_2.
+```
+
+For primitive rational frequencies of height at most `U`, one may take
+`delta=U^(-2)`.  At the V59 scales `U=x^(133/400)` and `N=x/2+O(1)`,
+
+```text
+epsilon=(133/100+o(1))x^(-67/200)log x.
+```
+
+With `X=N^(-1/2)Tz` and `Y=N^(-1/2)Tw`, the TPC-242 selected mode
+`F_1=<Y,X>` is within `epsilon||w||||z||` of `<w,z>`.  This is a signed structural
+transport theorem, not a source attachment or arithmetic cancellation theorem.
+
+```text
+TPC243_HARD_WINDOW_DIRICHLET_GRAM = PROVED_EXACT
+TPC243_HARMONIC_CIRCLE_PACKING = PROVED_DELTA_INVERSE_H_K
+TPC243_TWO_SIDED_NEAR_ISOMETRY = PROVED_ONE_PLUS_MINUS_EPSILON
+TPC243_SIGNED_BILINEAR_TRANSFER = PROVED_WITH_ERROR_EPSILON_NORM_PRODUCT
+TPC243_V59_EPSILON = PROVED_133_OVER_100_PLUS_O_ONE_TIMES_X_MINUS_67_OVER_200_LOG_X
+TPC243_TPC242_SELECTED_MODE_TRANSFER = PROVED_CONDITIONAL_ON_COEFFICIENT_LANE_ATTACHMENT
+TPC243_LITERAL_TOP_PRIME_ATTACHMENT = OPEN
+TPC243_LITERAL_C_H_SIGNED_CANCELLATION = NONE
+TPC243_ARITHMETIC_ADVANCE = NO
+TPC243_L2 = NONE
+TPC243_FULL_GATE_B = OPEN
+TPC243_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+```
+
+地图位置：**V96 / TPC-243 已把 coefficient-level signed covariance 稳定送入 hard
+physical window。下一块桥面必须 source-lock literal V59 两条 polarized coefficient
+lanes，并先审计共同 `C_h` multiplier 是否在 same-`h` covariance 中退化为 `|C_h|^2`。**
 
 ## 5.36 V95 / TPC-242：phase-Fourier collision separation
 
@@ -2327,7 +2379,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V95 / TPC-242：
+截至 V96 / TPC-243：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -2705,7 +2757,19 @@ TPC242_FIXED_ATOM_CREDIT = 0
 TPC242_L2 = NONE
 TPC242_FULL_GATE_B = OPEN
 TPC242_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-NUMBERED_RELEASE = TPC-242
+TPC243_HARD_WINDOW_DIRICHLET_GRAM = PROVED_EXACT
+TPC243_HARMONIC_CIRCLE_PACKING = PROVED_DELTA_INVERSE_H_K
+TPC243_TWO_SIDED_NEAR_ISOMETRY = PROVED_ONE_PLUS_MINUS_EPSILON
+TPC243_SIGNED_BILINEAR_TRANSFER = PROVED_WITH_ERROR_EPSILON_NORM_PRODUCT
+TPC243_V59_EPSILON = PROVED_133_OVER_100_PLUS_O_ONE_TIMES_X_MINUS_67_OVER_200_LOG_X
+TPC243_LITERAL_TOP_PRIME_ATTACHMENT = OPEN
+TPC243_LITERAL_C_H_SIGNED_CANCELLATION = NONE
+TPC243_ARITHMETIC_ADVANCE = NO
+TPC243_FIXED_ATOM_CREDIT = 0
+TPC243_L2 = NONE
+TPC243_FULL_GATE_B = OPEN
+TPC243_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+NUMBERED_RELEASE = TPC-243
 ```
 
 以下事实不得从路线图中推断：
@@ -2723,11 +2787,13 @@ NUMBERED_RELEASE = TPC-242
 
 优先级更新为：
 
-1. **TPC-242 已完成：phase-Fourier collision separation**。完整 `C_4` spectrum、
-   fixed-total-energy sharp disk 与 imbalance/Gram defect 均 exact；TPC-241 unsigned
-   floor 对 literal signed `F_1` 无直接 credit。下一步先证明 hard-window coefficient
-   map 的 two-sided near-isometry 与 bilinear transfer，再接入 phase-labelled physical
-   top-prime coefficients；不得把 no-transfer 误写成 physical annihilation。
+1. **TPC-243 已完成：hard-window near-isometry and signed bilinear transfer**。
+   hard rectangular coefficient map 已有双边 `1+-epsilon` frame 与 oriented bilinear
+   transport，V59 error 为 `x^(-67/200+o(1))`。下一步 source-lock literal phasewise
+   coefficient lanes，并审计 common `C_h` multiplier；window geometry本身不产生算术抵消。
+2. **TPC-242 已完成：phase-Fourier collision separation**。完整 `C_4` spectrum、
+   fixed-total-energy sharp disk 与 imbalance/Gram defect 均 exact；TPC-243 已将 selected
+   coefficient接到 hard-window interface，但 physical lane attachment仍开放。
 2. **TPC-241 已完成：top-prime collision sharpness**。对每个 fixed frozen profile，
    q-collapsed coefficient energy 与 normalized finite-window kernel 均有 explicit
    `x^(1/48)/log x` liminf；unsigned fixed-power `1/48` sharp up to logarithms。TPC-242
@@ -2827,10 +2893,10 @@ NUMBERED_RELEASE = TPC-242
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-242 的下一步：hard-window bilinear transfer then physical attachment**。
-    先把 separated primitive-frequency coefficient inner product无损地送入 actual
-    hard window，再将 top-prime contribution逐 packet、逐 phase 写出；之后才测试
-    literal `C_h` weighted cancellation，不再从 coefficient-blind energy 猜 signed mode。
+12. **TPC-243 的下一步：literal common-multiplier sign audit**。逐 `h`、逐 phase
+    source-lock two-lane primitive coefficients，判定共同 real `C_h` 在 selected covariance
+    中是否只留下 `|C_h|^2`；若是，则把真正 signed 目标下沉到 within-`h` lane covariance，
+    并用 TPC-243 控制 physical-window leakage。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2929,6 +2995,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-25 | V96 / TPC-243 | Bridge A / Gate B：hard-window signed coefficient transport proved；literal lane attachment and arithmetic covariance open | `TPC-243` | harmonic circle packing给 direct rectangular `1+-epsilon` frame 与 bilinear transfer；V59 `epsilon=(133/100+o(1))x^(-67/200)log x` |
 | 2026-08-25 | V95 / TPC-242 | Bridge A / Gate B：unsigned/signed phase characters exact separated；physical phase attachment open | `TPC-242` | complete `C_4` spectrum、sharp fixed-`F_0` disk、imbalance/Gram defect 与 TPC-241 typed no-transfer；physical annihilation not claimed |
 | 2026-08-24 | V94 / TPC-241 | Bridge A / Gate B：unsigned top-prime q-collapsed exponent sharp；signed four-packet projection open | `TPC-241` | fixed frozen profile 下 first moment、primitive-residue Cauchy、weighted PNT 与 full-vector lower frame 给 coefficient/finite-window `x^(1/48)/log x` explicit liminf；unsigned fixed-power improvement refuted scoped |
 | 2026-08-24 | V93 / TPC-240 | Bridge A / Gate B：top-prime q-split direct floor exact；q-collapsed collision/signed arithmetic open | `TPC-240` | fixed frozen profile 下 exact row Riemann sum 与 weighted PNT 给 `[1197 kappa_psi log2/800+o(1)]x^(1/96)`；direct-factor fixed-power saving refuted scoped |

@@ -1,0 +1,60 @@
+\section{Primitive rational specialization and V59 scale}\label{sec:primitive}
+
+\begin{corollary}[Primitive height]\label{cor:primitive}
+Let the frequencies be distinct reduced fractions modulo one with
+denominators at most $U$, where $U\geq2$.  Theorem~\ref{thm:main} applies with
+\[
+\delta=U^{-2},\qquad
+K_U=\left\lfloor\frac{U^2}{2}\right\rfloor,
+\qquad
+R_U=U^2\Harm_{K_U}.
+\]
+\end{corollary}
+
+\begin{proof}
+For two distinct reduced fractions $a/h$ and $b/k$, choose an integer $m$
+realizing their circular distance.  The integer $ak-bh-mhk$ is nonzero, and
+therefore
+\[
+\dist{\frac ah-\frac bk}
+=\frac{\abs{ak-bh-mhk}}{hk}
+\geq\frac1{hk}\geq U^{-2}.
+\]
+Since $U\geq2$, the chosen separation lies in $(0,1/2]$.  Substitution in the
+definitions of $K$ and $\Rdel$ proves the formulas.
+\end{proof}
+
+For V59, the source interval and height are
+\[
+\cI_x=(x/2,x]\cap\mathbb Z,\qquad
+N=\abs{\cI_x}=\frac{x}{2}+O(1),\qquad
+U=x^{133/400}.
+\]
+Thus $U^2=x^{133/200}$ and
+\BeginAccSupp{method=escape,ActualText={H at floor U squared over two equals log of floor U squared over two plus O of one, equals two log U plus O of one, equals one hundred thirty three over two hundred times log x plus O of one.}}
+\[
+\Harm_{\lfloor U^2/2\rfloor}
+=\log\!\left(\left\lfloor\frac{U^2}{2}\right\rfloor\right)+O(1)
+=2\log U+O(1)
+=\frac{133}{200}\log x+O(1).
+\]
+\EndAccSupp{}
+It follows that
+\BeginAccSupp{method=escape,ActualText={epsilon U equals U squared times H at floor U squared over two divided by N, equals x to the one hundred thirty three over two hundred times the quantity one hundred thirty three over two hundred log x plus O of one divided by x over two plus O of one, equals the quantity one hundred thirty three over one hundred plus o of one times x to minus sixty seven over two hundred times log x, equals x to minus sixty seven over two hundred plus o of one.}}
+\[
+\begin{aligned}
+\eps_U
+&=\frac{U^2\Harm_{\lfloor U^2/2\rfloor}}{N}\\
+&=\frac{x^{133/200}\bigl((133/200)\log x+O(1)\bigr)}{x/2+O(1)}\\
+&=\left(\frac{133}{100}+o(1)\right)x^{-67/200}\log x
+=x^{-67/200+o(1)}.
+\end{aligned}
+\]
+\EndAccSupp{}
+The coefficient $133/100$ is exact: the harmonic logarithm contributes
+$133/200$, and the interval density contributes the reciprocal factor $2$.
+
+TPC-217 already records the upper large-sieve estimate and this primitive
+spacing scale~\cite{WangTPC217}.  The new statement here is the direct
+rectangular two-sided operator estimate and its bilinear consequence, not the
+existence of the upper exponent.

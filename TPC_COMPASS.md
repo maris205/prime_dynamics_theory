@@ -1,34 +1,41 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-25
-状态：`BOLD_CHANNEL_V95 / PHASE_FOURIER_COLLISION_SEPARATION`
-claim level：`PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER`
-编号事实终点：TPC-242；TPC-242 trigger：`true`
+状态：`BOLD_CHANNEL_V96 / HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER`
+claim level：`PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER`
+编号事实终点：TPC-243；TPC-243 trigger：`true`
 
-当前 TPC-242 入口：proof 为
-`research/tpc-big-road/bridge_b_phase_fourier_collision_separation.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_phase_fourier_collision_separation_checker.py`，编号论文为
-`papers/tpc-242-phase-fourier-collision-separation/`。literal `i^j` phase transform 的
-完整谱为 `F_0=S`、`F_1=<Y,X>`、`F_2=0`、`F_3=<X,Y>`；固定 `S` 的 selected
-coefficient 恰填满 `|F_1|<=S/2`，缺陷由 norm imbalance 与 Gram determinant
-精确组成。TPC-241 unsigned floor 因无 physical phase attachment 而没有直接 signed
-`F_1` credit，但物理 top-prime annihilation 仍未证明。
+当前 TPC-243 入口：proof 为
+`research/tpc-big-road/bridge_b_hard_window_near_isometry_bilinear_transfer.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py`，编号论文为
+`papers/tpc-243-hard-window-near-isometry-bilinear-transfer/`。对任意有限
+`delta`-separated circle frequencies，hard-window Gram 的 absolute off-diagonal row
+mass 至多 `R_delta=delta^(-1)H_floor(1/(2delta))`。因此 normalized synthesis 同时满足
+双边 near-isometry 与 oriented signed bilinear transfer；V59 primitive-height 尺度的
+relative error 为 `(133/100+o(1))x^(-67/200)log x`。
 
 ```text
-TPC242_COMPLETE_PHASE_SPECTRUM = PROVED_F0_TOTAL_F1_ORIENTED_CROSS_F2_ZERO_F3_CONJUGATE_CROSS
-TPC242_PHASE_BLIND_ADDITIVE_TERM = PROVED_TRIVIAL_CHARACTER_ONLY
-TPC242_FIXED_F0_FEASIBLE_SET = PROVED_CLOSED_DISK_RADIUS_F0_OVER_TWO
-TPC242_PHASE_DEFECT_IDENTITY = PROVED_IMBALANCE_SQUARED_PLUS_FOUR_GRAM_DETERMINANT
-TPC242_TPC241_DIRECT_SIGNED_CREDIT = ZERO
-TPC242_TPC241_TO_V59_IDENTIFICATION = OPEN
-TPC242_PHYSICAL_TOP_PRIME_ANNIHILATION = NOT_CLAIMED
-TPC242_LITERAL_C_H_SIGNED_CANCELLATION = NONE
-TPC242_ARITHMETIC_ADVANCE = NO
-TPC242_L2 = NONE
-TPC242_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC242_STATUS = PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER
-TPC242_ROUND2_CLUE = EXPRESS_THE_LITERAL_TOP_PRIME_CONTRIBUTION_PHASE_BY_PHASE_BEFORE_SQUARING_AND_COMPUTE_ITS_ACTUAL_K_EQUALS_ONE_COEFFICIENT
+TPC243_HARD_WINDOW_DIRICHLET_GRAM = PROVED_EXACT
+TPC243_HARMONIC_CIRCLE_PACKING = PROVED_DELTA_INVERSE_H_K
+TPC243_TWO_SIDED_NEAR_ISOMETRY = PROVED_ONE_PLUS_MINUS_EPSILON
+TPC243_SIGNED_BILINEAR_TRANSFER = PROVED_WITH_ERROR_EPSILON_NORM_PRODUCT
+TPC243_V59_EPSILON = PROVED_133_OVER_100_PLUS_O_ONE_TIMES_X_MINUS_67_OVER_200_LOG_X
+TPC243_TPC242_SELECTED_MODE_TRANSFER = PROVED_CONDITIONAL_ON_COEFFICIENT_LANE_ATTACHMENT
+TPC243_LITERAL_TOP_PRIME_ATTACHMENT = OPEN
+TPC243_LITERAL_C_H_SIGNED_CANCELLATION = NONE
+TPC243_ARITHMETIC_ADVANCE = NO
+TPC243_L2 = NONE
+TPC243_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC243_STATUS = PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER
+TPC243_ROUND2_CLUE = COMMON_MULTIPLIER_SIGN_AUDIT_FOR_LITERAL_C_H_IN_THE_TWO_POLARIZED_LANES
 ```
+
+TPC-242 上游入口：proof 为
+`research/tpc-big-road/bridge_b_phase_fourier_collision_separation.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_phase_fourier_collision_separation_checker.py`，编号论文为
+`papers/tpc-242-phase-fourier-collision-separation/`。它提供 complete `C_4` spectrum、
+sharp fixed-energy disk 与 TPC-241 typed no-transfer；TPC-243 把其 selected coefficient
+接到 hard-window bilinear interface。
 
 TPC-241 上游入口：proof 为
 `research/tpc-big-road/bridge_b_top_prime_collision_sharpness.md`，checker 为

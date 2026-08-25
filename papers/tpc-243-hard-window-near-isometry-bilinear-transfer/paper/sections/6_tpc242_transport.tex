@@ -1,0 +1,32 @@
+\section{Transport of the TPC-242 selected mode}\label{sec:transport}
+
+TPC-242 fixes a convention that cannot be suppressed in a complex argument.
+For phase energies $E_j=\norm{X+\ii^jY}^2$ and Fourier weights $\ii^{kj}$,
+the selected mode is $F_1=\ip{Y}{X}$ under the conjugate-linear-first inner
+product~\cite{WangTPC242}.
+
+Set
+\[
+X=N^{-1/2}Tz,\qquad Y=N^{-1/2}Tw.
+\]
+Then
+\[
+F_1=\ip{Y}{X}=N^{-1}\ip{Tw}{Tz}.
+\]
+Apply Theorem~\ref{thm:main} with the ordered coefficient pair $(w,z)$ rather
+than $(z,w)$.  The result is
+\begin{equation}\label{eq:selected-transfer}
+\abs{F_1-\ip{w}{z}}
+\leq\eps\norm{w}_2\norm{z}_2.
+\end{equation}
+The target $\ip{w}{z}$ is generally the complex conjugate of
+$\ip{z}{w}$.  Reversing the target would therefore change the theorem, not
+merely its notation.
+
+Equation~\eqref{eq:selected-transfer} is a signed bilinear interface.  It says
+that a coefficient-space phase and sign survive the hard-window map up to an
+explicit norm-weighted error.  It does not show that $F_1$ is small, large,
+nonzero, or of a prescribed sign.  More importantly, the repository does not
+yet identify the two literal V59 top-prime lanes with $z$ and $w$ in this one
+common synthesis map.  Such an attachment theorem and a coefficient norm
+bound are separate arithmetic requirements.

@@ -1,0 +1,55 @@
+\section{Setup and source lock}\label{sec:setup}
+
+Let $\cF\subset\Torus$ be finite.  Circular distance is denoted by
+$\dist{\theta}$.  The set is $\delta$-separated when
+$\dist{\alpha-\beta}\geq\delta$ for every distinct
+$\alpha,\beta\in\cF$, where $0<\delta\leq1/2$.  Let
+$\cI=\{M,\ldots,M+N-1\}$ with $N\geq1$, and define
+\[
+  Tz(n)=\sum_{\alpha\in\cF}z_\alpha\ee^{2\pi\ii n\alpha}.
+\]
+All complex inner products are conjugate-linear in the first slot.  Thus
+\[
+  \ip{Tz}{Tw}
+  =\sum_{\alpha,\beta\in\cF}
+  \overline{z_\alpha}w_\beta
+  \sum_{n\in\cI}\ee^{2\pi\ii n(\beta-\alpha)}.
+\]
+The order $\beta-\alpha$ fixes the Gram orientation used throughout.
+
+Put
+\BeginAccSupp{method=escape,ActualText={K equals floor of one over two delta; H K equals the sum from j equals one to K of one over j; R delta equals delta inverse times H K; epsilon equals R delta over N.}}
+\[
+K=\left\lfloor\frac1{2\delta}\right\rfloor,
+\qquad
+\Harm_K=\sum_{j=1}^{K}\frac1j,
+\qquad
+\Rdel=\delta^{-1}\Harm_K,
+\qquad
+\eps=\frac{\Rdel}{N}.
+\]
+\EndAccSupp{}
+The range of $\delta$ implies $K\geq1$.  We retain the convention
+$\Harm_0=0$ for completeness.
+
+\subsection{Repository-relative position}
+
+The three source proof packages are locked by normalized-LF SHA-256 in the
+project certificate.  Their roles are deliberately disjoint:
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Source & Existing result & TPC-243 use and boundary \\
+\midrule
+TPC-217 & Standard upper large-sieve scale and V59 exponent ledger & Supplies provenance; the upper scale is not claimed as new \\
+TPC-238 & Triangular-minorant lower baseline $1/2-O(U^4/N^2)$ & Comparison with the direct rectangular lower baseline \\
+TPC-242 & $F_1=\ip{Y}{X}$ for the literal $i^j$ phase convention & Fixes the selected orientation, not a physical attachment \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The exact source locators and hashes appear in the reproducibility ledger.
+No external citation is used, and no source type is promoted across these
+boundaries.

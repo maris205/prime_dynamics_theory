@@ -1,0 +1,57 @@
+\section{Near-isometry and signed bilinear transfer}\label{sec:operator}
+
+\begin{theorem}[Hard-window operator estimate]\label{thm:main}
+For every $z,w\in\ell^2(\cF)$,
+\[
+\pos{1-\eps}\norm{z}_2^2
+\leq N^{-1}\norm{Tz}_2^2
+\leq(1+\eps)\norm{z}_2^2,
+\]
+and
+\[
+\abs{N^{-1}\ip{Tz}{Tw}-\ip{z}{w}}
+\leq\eps\norm{z}_2\norm{w}_2.
+\]
+\end{theorem}
+
+\begin{proof}
+Set $A=G-NI$.  Since $G=T^*T$, both $G$ and $A$ are Hermitian.
+Proposition~\ref{prop:rows} gives
+$\norm{A}_\infty\leq\Rdel$.  Hermitian symmetry gives the same bound for the
+absolute column norm.  Schur's estimate yields
+\[
+\norm{A}_{2\to2}
+\leq\sqrt{\norm{A}_1\norm{A}_\infty}
+\leq\Rdel.
+\]
+Equivalently, Hermitian Gershgorin places the spectrum of $A$ in
+$[-\Rdel,\Rdel]$.
+
+The identity $\norm{Tz}_2^2=\ip{z}{Gz}$ now gives the upper bound and the
+lower bound $(N-\Rdel)\norm{z}_2^2$.  Independently, $G$ is positive
+semidefinite.  Taking the stronger of this lower estimate and zero, then
+dividing by $N$, produces the positive part in the theorem.
+
+For the bilinear statement, the orientation fixed in
+Section~\ref{sec:setup} gives $\ip{Tz}{Tw}=\ip{z}{Gw}$.  Hence
+\[
+\begin{aligned}
+\abs{N^{-1}\ip{Tz}{Tw}-\ip{z}{w}}
+&=\abs{\ip{z}{(N^{-1}G-I)w}}\\
+&\leq\norm{N^{-1}G-I}_{2\to2}\norm{z}_2\norm{w}_2\\
+&\leq\eps\norm{z}_2\norm{w}_2.
+\end{aligned}
+\]
+The argument controls the complex bilinear quantity directly; it does not
+recover it from two separate unsigned estimates.
+\end{proof}
+
+\begin{remark}[Comparison of lower regimes]
+TPC-238 obtains a hard-window lower estimate by inserting a triangular
+minorant.  The normalized baseline is
+$1/2-O(U^4/N^2)$.  Theorem~\ref{thm:main} works with the rectangular Gram
+matrix and gives $1-O(U^2\log U/N)$ after primitive specialization.  The
+former can become nontrivial with a smaller logarithmic requirement; the
+latter converges to the identity and also controls bilinear forms.  These are
+different guarantees rather than contradictory bounds.
+\end{remark}
