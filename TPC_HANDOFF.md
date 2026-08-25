@@ -1,9 +1,106 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V106_TPC253_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER_RELEASED`
+交接状态：`BOLD_CHANNEL_V107_TPC254_SOURCE_BACKED_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_RELEASED`
 
-TPC-253 当前 section：source-frozen rank-midpoint contrast compiler
+TPC-254 当前 section：source-backed rank-midpoint hybrid-mean closure
+---------------------------------------------------------------------
+
+Fix one finite admissible `K` and retain the TPC-253 ordered-rank midpoint:
+
+```text
+Z_x=(log x)^K,
+w(u)=Lambda(u+2)-b_x^(Z_x)(u),
+ell=floor(N/2), r=N-ell,
+z_mid=sqrt(ell*r/N)(1_L/ell-1_R/r).
+```
+
+The frozen hybrid maximal Type-I theorem is a sum of nonnegative rows.  Freeze
+`gamma_0=1/4`; for sufficiently large `x`, its `m=1` row is present with
+`tau(1)^B=1`.  Since both rank children are consecutive active integer
+intervals for every real `x`, for every fixed target `M>0`,
+
+```text
+max(|W_L|,|W_R|)<<_(M,K)x/(log x)^M,
+|W_L/ell-W_R/r|<<_(M,K)(log x)^(-M),
+|<z_mid,w>|<<_(M,K)x^(1/2)(log x)^(-M).
+```
+
+This is a source-backed scoped arithmetic advance for the literal `w` lane.
+The quantifier order fixes finite `K`, then `gamma_0`, then the requested
+`M` and the stronger upstream saving parameters.  Constants are not uniform
+as `K` grows or `gamma` approaches `1/2`.  Since
+`x^eta/(log x)^M -> infinity`, arbitrary fixed logarithmic saving is not a
+fixed-power saving.
+
+The second literal midpoint lane remains
+
+```text
+<z_mid,A_x beta>=<A_x^*z_mid,beta>,
+|<z_mid,A_x beta>|<=||A_x^*z_mid||_2||beta||_2.
+```
+
+Hence the only supported joint transfer is
+
+```text
+|conjugate(<z_mid,w>)<z_mid,A_x beta>|
+ <<_(M,K)x^(1/2)(log x)^(-M)||A_x^*z_mid||_2||beta||_2.
+```
+
+No frozen source estimates the fixed adjoint Haar test.  A real zero-diagonal
+derangement can realize arbitrary signed scale, and at `N=2` the Cauchy
+constant one is exact.  These controls are synthetic norm obstructions, not
+literal V59 counterexamples.
+
+```text
+TPC254_MAXIMUM_CLAIM = SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER_CONTROL_OF_THE_LITERAL_V59_RANK_MIDPOINT_W_CONTRAST_WITH_ONLY_EXACT_ADJOINT_CAUCHY_TRANSFER
+TPC254_HYBRID_CUTOFF = SOURCE_LOCKED_FIXED_FINITE_K_NO_K_UNIFORMITY
+TPC254_RANK_CHILD_INTERVAL_ADMISSIBILITY = PROVED_EXACT_FOR_REAL_X
+TPC254_MAXIMAL_TYPE_I_M1_EXTRACTION = PROVED_SOURCE_BACKED
+TPC254_CHILD_SUM_HYBRID_MEAN = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC254_CHILD_MEAN_DIFFERENCE = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC254_W_MIDPOINT_HAAR_MOMENT = PROVED_SOURCE_BACKED_X_ONE_HALF_TIMES_ARBITRARY_FIXED_LOG_SAVING
+TPC254_SAFE_ADJOINT_CAUCHY_TRANSFER = PROVED_EXACT
+TPC254_G_MIDPOINT_HAAR_ESTIMATE = OPEN_NO_FROZEN_SOURCE_ATTACHMENT
+TPC254_G_LANE_SOURCE_ATTACHMENT = STOP_SCOPED_DECLARED_CORPUS_NO_FIXED_HAAR_ADJOINT_ESTIMATE
+TPC254_ZERO_DIAGONAL_DERANGEMENT_OBSTRUCTION = PROVED_SYNTHETIC_NOT_LITERAL_V59
+TPC254_CAUCHY_CONSTANT_ONE_SHARPNESS = PROVED_EXACT_N2_SYNTHETIC
+TPC254_ARBITRARY_LOG_TO_FIXED_POWER_PROMOTION = NOT_CLAIMED
+TPC254_W_CONTRAST_SIGN_OR_NONZERO = NOT_CLAIMED
+TPC254_G_CONTRAST_SIGN_OR_NONZERO = OPEN
+TPC254_JOINT_TRANSFER_LOWER_BOUND = OPEN
+TPC254_V21_CHILD_OR_ADJOINT_SUBSTITUTION = NOT_CLAIMED
+TPC254_ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_LANE
+TPC254_FIXED_ATOM_CREDIT = 0
+TPC254_L2 = NONE
+TPC254_FULL_GATE_B = OPEN
+TPC254_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC254_TWIN_PRIME_RESULT = NONE
+TPC254_STATUS = PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_WITH_ADJOINT_LANE_SOURCE_GAP
+TPC254_ROUND2_CLUE = PUSH_THE_FIXED_RANK_MIDPOINT_HAAR_TEST_THROUGH_A_X_STAR_AND_ESTIMATE_THE_LITERAL_BETA_LINEAR_FORM_ON_THE_SAME_CLOCK_BEFORE_ANY_COVARIANCE_OR_MARGIN_PROMOTION__DO_NOT_REUSE_WHOLE_SHELL_OR_AP_AVERAGES
+```
+
+strongest positive result：the literal `w` rank-midpoint Haar moment now has
+source-backed `x^(1/2)` times arbitrary fixed log-power control；strongest
+obstruction：the adjoint `beta` lane remains unestimated and norm-only Cauchy
+is sharp；open theorem：estimate `<A_x^*z_mid,beta>` on the same V59 clock
+while preserving the prime shell, `q` weight, both masks, deleted diagonal
+and `K_H`；reusable structure：maximal interval Type I -> nonnegative `m=1`
+extraction -> rank-child means -> Haar moment -> literal adjoint test。
+
+编号论文目录：papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/
+
+```text
+papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/README.md
+papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/PROOF_PACKAGE.md
+papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/paper/paper.pdf
+papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/results/tpc254_certificate.json
+papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_source_backed_rank_midpoint_hybrid_mean_closure.md
+research/tpc-big-road/tpc_bridge_b_source_backed_rank_midpoint_hybrid_mean_closure_checker.py
+```
+
+TPC-253 上游 section：source-frozen rank-midpoint contrast compiler
 ------------------------------------------------------------------
 
 Keep the literal TPC-247 scalar `C_x=<w,A_x beta>` on
@@ -7465,8 +7562,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V106/TPC-253 gate、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百六十八次（84 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V107/TPC-254 gate、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百七十次（85 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -7638,11 +7735,23 @@ python -B research/tpc-big-road/tpc_bridge_b_declared_partition_refinement_degen
 python -O -B research/tpc-big-road/tpc_bridge_b_declared_partition_refinement_degeneracy_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_source_frozen_rank_midpoint_contrast_compiler_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_source_frozen_rank_midpoint_contrast_compiler_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_source_backed_rank_midpoint_hybrid_mean_closure_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_source_backed_rank_midpoint_hybrid_mean_closure_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-253 入口：
+最新 TPC-254 入口：
+
+```text
+papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/README.md
+papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/notes/theorem_ledger.md
+papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_source_backed_rank_midpoint_hybrid_mean_closure.md
+research/tpc-big-road/tpc_bridge_b_source_backed_rank_midpoint_hybrid_mean_closure_checker.py
+```
+
+TPC-253 上游入口：
 
 ```text
 papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/README.md

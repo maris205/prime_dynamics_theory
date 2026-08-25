@@ -1,0 +1,275 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.76in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\zm}{z_{\mathrm{mid}}}
+\newcommand{\Ax}{A_x}
+\newcommand{\WL}{W_L}
+\newcommand{\WR}{W_R}
+\setlength{\emergencystretch}{3em}
+
+\title{Source-Backed Rank-Midpoint Hybrid-Mean Closure\\
+and the Adjoint-Lane Source Gap}
+\author{Liang Wang\\
+\small School of Electronic Information and Communications, Huazhong University of Science and Technology (HUST),\\
+\small Wuhan, China}
+\date{August 26, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For the literal V59 hybrid residual
+$w(u)=\Lambda(u+2)-b_x^{(Z_x)}(u)$ with fixed finite cutoff
+$Z_x=(\log x)^K$, we attach the source-backed maximal Type-I theorem to the
+coefficient-independent rank midpoint isolated in TPC-253.  Freezing
+$\gamma_0=1/4$, nonnegativity of the maximal Type-I sum allows its
+unit-weight $m=1$ row to be extracted.  The two rank children are active
+integer intervals for every real $x$, so for each fixed $M>0$ their sums are
+$O_{M,K}(x(\log x)^{-M})$.  Exact cardinalities and Haar normalization then
+give
+\[
+ |\ip{\zm}w|\ll_{M,K}x^{1/2}(\log x)^{-M}.
+\]
+This is an arithmetic advance for the literal $w$ lane, but arbitrary fixed
+logarithmic saving is not a fixed power saving.  The second moment remains
+the unestimated form $\ip{\Ax^*\zm}\beta$; only Cauchy is supported.  A real
+zero-diagonal derangement construction permits arbitrary signed scale, and
+at dimension two the Cauchy constant one is exact.  These obstructions are
+synthetic, not literal V59 counterexamples.  A canonical exact certificate,
+82 rejected mutations, and 192 rational stress families reproduce only the
+finite algebra, endpoint rules, and source-contract typing.
+\end{abstract}
+
+\section{Frozen objects and typed source input}
+
+Fix a finite admissible $K$ and write
+\begin{equation}
+ Z_x=(\log x)^K,\qquad
+ w(u)=\Lambda(u+2)-b_x^{(Z_x)}(u).                    \label{eq:residual}
+\end{equation}
+The cutoff $Z_x$ is not the Haar vector below.  On the real clock $x$, let
+\begin{equation}
+ I_x=(x/2,x]\cap\Z=\{n_1<\cdots<n_N\},\qquad
+ N=\lfloor x\rfloor-\lfloor x/2\rfloor\geq2.          \label{eq:clock}
+\end{equation}
+Put $\ell=\lfloor N/2\rfloor$, $r=N-\ell$,
+$L=\{n_1,\ldots,n_\ell\}$, $R=I_x\setminus L$, and
+\begin{equation}
+ \rho^2=\frac{\ell r}{N},\qquad
+ \zm=\rho\left(\frac{\one_L}{\ell}-\frac{\one_R}{r}\right).       \label{eq:haar}
+\end{equation}
+This split is fixed before $w$, $\beta$, a coefficient, or a sign is
+inspected.  It is the source-frozen TPC-253 choice, not a claim of V59
+canonicality \cite{tpc253}.
+
+The analytic input is the hybrid H2 theorem frozen in the local comparison
+compiler \cite{compiler}.  For each fixed $\gamma<1/2$ and each requested
+fixed logarithmic strength, it supplies
+\begin{equation}
+ \sum_{m\leq x^\gamma}\tau(m)^B\max_J
+ \left|\sum_{\substack{x/2<ms\leq x\\s\in J}}w(ms)\right|
+ \ll_{B,K,\gamma}\frac{x}{(\log x)^B},                \label{eq:h2}
+\end{equation}
+where $J$ ranges over active integer intervals.  The compiler obtains its
+prime-progression side from maximal Bombieri--Vinogradov/large-sieve inputs
+\cite{Bombieri1965,MontgomeryVaughan1973}, and its hybrid comparison side
+from Rosser--Iwaniec fundamental-lemma weights \cite{Iwaniec1980Rosser}.
+TPC-254 is a deterministic corollary attachment to \eqref{eq:h2}; it does not
+reprove those inputs.  Ford--Maynard supplies the upstream prime-producing
+sieve architecture and parameter order \cite{FordMaynard2024}.  Vaughan's
+identity belongs to the upstream Type-I/Type-II extraction context
+\cite{Vaughan1977}; it is not used here to strengthen the resulting scale.
+
+\section{Rank children and the literal \texorpdfstring{$w$}{w} moment}
+
+The endpoint issue is small but decisive.  If
+$a=\lfloor x/2\rfloor$ and $b=\lfloor x\rfloor$, then
+\begin{equation}
+ I_x=\{a+1,\ldots,b\},\quad
+ L=\{a+1,\ldots,a+\ell\},\quad
+ R=\{a+\ell+1,\ldots,b\}.                            \label{eq:endpoints}
+\end{equation}
+Thus both children are consecutive active integer intervals for every real
+$x$.  The integer crosswalk $\lfloor3x/4\rfloor$ is not used for nonintegral
+$x$; for example, $x=27/2$ gives $L=\{7,8,9\}$ although
+$\lfloor3x/4\rfloor=10$.
+
+Write $W_J=\sum_{u\in J}w(u)$.  We now state the arithmetic conclusion.
+
+\begin{theorem}[Rank-midpoint hybrid-mean closure]\label{thm:main}
+Fix a finite admissible $K$.  For every fixed $M>0$ and all sufficiently
+large real $x$,
+\begin{align}
+ \max(|\WL|,|\WR|)&\ll_{M,K}\frac{x}{(\log x)^M},                    \label{eq:child}\\
+ \left|\frac{\WL}{\ell}-\frac{\WR}{r}\right|
+   &\ll_{M,K}(\log x)^{-M},                                         \label{eq:means}\\
+ |\ip{\zm}w|&\ll_{M,K}x^{1/2}(\log x)^{-M}.                         \label{eq:moment}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Freeze $\gamma_0=1/4$ in \eqref{eq:h2} and choose its integer log-saving
+parameter sufficiently strongly for the target $M$.  Every summand on the
+left of \eqref{eq:h2} is nonnegative.  For sufficiently large $x$, the row
+$m=1$ is present and has weight $\tau(1)^B=1$.  Hence its maximum over
+consecutive $J\subset I_x$ is bounded by the full sum.  Applying this to the
+two intervals in \eqref{eq:endpoints} proves \eqref{eq:child}.
+
+The exact cardinalities satisfy
+\[
+ N=x/2+O(1),\qquad \ell=x/4+O(1),\qquad r=x/4+O(1).
+\]
+Dividing the two child bounds and using the triangle inequality proves
+\eqref{eq:means}.  Finally, TPC-253's exact partial-sum identity is
+\begin{equation}
+ \ip{\zm}w=\rho\left(\frac{\WL}{\ell}-\frac{\WR}{r}\right).         \label{eq:partial}
+\end{equation}
+Since $\ell r\leq N^2/4$, we have $\rho\leq\sqrt N/2\ll\sqrt x$.
+Equations \eqref{eq:means} and \eqref{eq:partial} yield
+\eqref{eq:moment}.
+\end{proof}
+
+The normalization has the parity-exact form
+\begin{equation}
+ \rho^2=\begin{cases}
+ N/4,&N\text{ even},\\[2pt]
+ N/4-1/(4N),&N\text{ odd},
+ \end{cases}
+ \qquad
+ \rho^2=x/8+O(1).                                      \label{eq:rho}
+\end{equation}
+Consequently $\rho=x^{1/2}/(2\sqrt2)+O(x^{-1/2})$.
+
+\section{Quantifier and scale firewalls}
+
+The isolated corollary uses the order
+\begin{equation}
+ \boxed{K\text{ fixed}}\ \longrightarrow\ \gamma_0=\tfrac14
+ \longrightarrow M\longrightarrow B_{\mathrm{H2}}
+ \longrightarrow \delta<1-\gamma_0
+ \longrightarrow x\geq x_0(M,K).                     \label{eq:quantifiers}
+\end{equation}
+The omitted middle choices are the divisor-tail cutoff and stronger
+Bombieri--Vinogradov/fundamental-lemma savings.  Constants are not uniform as
+$K\to\infty$ or $\gamma\to1/2$.  In the full upstream compiler the separate
+order is target $(A,\varpi)$, then Ford--Maynard $B_{\mathrm{FM}}$, then a
+fixed $K=K(B_{\mathrm{FM}})$, and only then $x\geq x_0$.
+
+Arbitrary fixed logarithmic saving is not a fixed power saving.  Indeed, for
+fixed $\eta,M>0$,
+\begin{equation}
+ \frac{x^{1/2}(\log x)^{-M}}{x^{1/2-\eta}}
+ =\frac{x^\eta}{(\log x)^M}\longrightarrow\infty.       \label{eq:logpower}
+\end{equation}
+Neither \eqref{eq:moment} nor its proof gives a sign or a nonzero value.
+
+\section{The open adjoint lane}
+
+Keep the literal TPC-247 operator orientation and put $g=\Ax\beta$.  The
+exact identity is
+\begin{equation}
+ \ip{\zm}{\Ax\beta}=\ip{\Ax^*\zm}\beta,\qquad
+ (\Ax^*\zm)(t)=\sum_{u\in I_x}\conj{\Ax(u,t)}\zm(u).     \label{eq:adjoint}
+\end{equation}
+Cauchy and Theorem~\ref{thm:main} give only
+\begin{align}
+ |\ip{\zm}{\Ax\beta}|&\leq\|\Ax^*\zm\|_2\|\beta\|_2,             \label{eq:cauchy}\\
+ |\conj{\ip{\zm}w}\ip{\zm}{\Ax\beta}|
+ &\ll_{M,K}x^{1/2}(\log x)^{-M}\|\Ax^*\zm\|_2\|\beta\|_2.        \label{eq:transfer}
+\end{align}
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.29\linewidth}
+                >{\raggedright\arraybackslash}p{0.36\linewidth}
+                >{\raggedright\arraybackslash}p{0.25\linewidth}}
+\toprule
+Locked result & Test object & TPC-254 role \\
+\midrule
+hybrid maximal Type I & every active integer interval & pays $w$ children by $m=1$ \\
+V21 AP errors & full-shell residue fibers averaged in $q$ & no hard-child adjoint test \\
+V21 paid mean & complete prime-modulus average with raw $\beta$ & not $\Ax^*\zm$ \\
+whole-shell mean & one total sum & cannot control a Haar moment \\
+TPC-247/TPC-253 & exact operator and adjoint identities & algebra only, no estimate \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For the whole-shell warning, $f=\lambda\zm$ has total sum zero but
+$\ip{\zm}f=\lambda$.  The source-gap conclusion is restricted to this frozen
+corpus; it is not a universal literature-absence claim.
+
+\begin{proposition}[Sharp norm-only obstruction]\label{prop:sharp}
+For every $N\geq2$, every real unit vector $z$, every real $\lambda$, and any
+derangement $\sigma$, there is a real zero-diagonal matrix $A$ with
+$\beta=\one$ such that $A\beta=\lambda z$ and $\ip z{A\beta}=\lambda$.
+At $N=2$, equality holds in \eqref{eq:cauchy}.
+\end{proposition}
+
+\begin{proof}
+Set $A_{i,\sigma(i)}=\lambda z_i$ and all other entries to zero.  The
+derangement deletes the diagonal, while the $i$th row sum is $\lambda z_i$.
+Thus $A\one=\lambda z$ and the moment is $\lambda\|z\|_2^2=\lambda$.
+
+For $N=2$, take
+\[
+ z=\frac1{\sqrt2}(1,-1),\qquad
+ A=\begin{pmatrix}0&\lambda/\sqrt2\\-\lambda/\sqrt2&0\end{pmatrix},
+ \qquad \beta=(1,1).
+\]
+Then $A^*z=(\lambda/2,\lambda/2)$, so
+$\|A^*z\|_2^2=\lambda^2/2$, $\|\beta\|_2^2=2$, and
+$|\ip z{A\beta}|^2=\lambda^2$.
+\end{proof}
+
+Proposition~\ref{prop:sharp} is synthetic.  It does not assert that this
+matrix is the literal V59 operator, but it proves that reality, a deleted
+diagonal, and norm geometry alone cannot improve Cauchy.
+
+\section{Executable scope and route verdict}
+
+The released certificate uses canonical rational and Gaussian-rational data.
+It checks a nonintegral rank split, the rational projector products
+$\rho^2h_ih_j$, nonnegative $m=1$ logic, a whole-shell counterexample,
+adjoint orientation, derangement scale, and the squared $N=2$ equality.  The
+independent checker imports no producer, rejects bool-as-int fields, and
+rejects 82 mutations.  The stress suite checks 192 exact families, including
+96 nonintegral clocks, balanced rank parity, and both derangement signs.
+Normal and optimized Python runs agree.  None of these finite tests is
+evidence for \eqref{eq:h2} or any asymptotic theorem.
+
+The exact release status is
+\begin{center}
+\footnotesize\nolinkurl{PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_WITH_ADJOINT_LANE_SOURCE_GAP}.
+\end{center}
+The strongest positive result is the literal $w$-lane estimate
+\eqref{eq:moment}.  The strongest obstruction is the unestimated literal
+form $\ip{\Ax^*\zm}\beta$, with norm-only control sharp.  The next theorem is
+therefore a same-clock estimate of this exact $\beta$-linear form retaining
+the prime shell, outer $q$ weight, both unit masks, deleted diagonal,
+$K_H$, centered residue bracket, and hard rank midpoint.
+
+The claim ledger remains
+\[
+ \text{arithmetic advance: scoped $w$ lane};\quad
+ \text{fixed-atom credit: }0;\quad L2:\text{ none};\quad
+ \text{Gate B: open}.
+\]
+The global strict $1/400$ budget is unpaid, and no twin-prime result follows.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

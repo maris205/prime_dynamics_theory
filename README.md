@@ -9,14 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-253 已从 ordered physical interval 预先冻结 coefficient-independent
-rank midpoint。其 normalized Haar contrast `z` 满足
-`M_mid=M_coarse+z tensor z`，并把 coarse/midpoint longitudinal 差精确写成
-`conjugate(<z,w>)<z,A_x beta>`，transverse covariance 作相反更新；integer clock
-与 `floor(3x/4)` threshold 精确对应。literal TPC-247 kernel 的 prime weight、unit
-masks、deleted diagonal、`K_H(u-t)` 与安全 adjoint orientation 全部保留。该 split
-只是 source-only modeling choice；两个实际 midpoint moments 尚无共同算术估计，
-arithmetic `L2`、full Gate B 与 strict `1/400` 仍开放。
+当前主线状态：TPC-254 已把 TPC-253 的 coefficient-independent rank midpoint 接到
+source-backed hybrid maximal Type-I theorem。对每个固定有限 admissible `K` 与每个固定
+`M>0`，非负 maximal sum 的 unit-weight `m=1` row 给两个 consecutive rank children
+`O_(M,K)(x(log x)^(-M))`，从而证明 literal hybrid moment
+`|<z_mid,w>|<<_(M,K)x^(1/2)(log x)^(-M)`。这是 scoped arithmetic advance，但任意固定
+log saving 不是 fixed-power saving。第二条 literal lane `<z_mid,A_x beta>` 仍只有 sharp
+adjoint Cauchy control；arithmetic `L2`、full Gate B 与 strict `1/400` 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -30,6 +29,8 @@ arithmetic `L2`、full Gate B 与 strict `1/400` 仍开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-254-source-backed-rank-midpoint-hybrid-mean-closure` - `PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_WITH_ADJOINT_LANE_SOURCE_GAP` - 从冻结 hybrid maximal Type-I theorem 的非负和中合法抽取 `m=1`，对每个实数 clock 的两个 rank children 证明任意固定 log-power mean control，并得到 literal `w` midpoint Haar moment `x^(1/2)(log x)^(-M)`；adjoint `beta` lane 仍无 source estimate，zero-diagonal derangement 证明 norm-only Cauchy sharp，full Gate B 仍开放。
 
 `tpc-253-source-frozen-rank-midpoint-contrast-compiler` - `PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER` - 从 ordered physical interval 在观察任何 coefficient/margin/sign 前冻结 rank midpoint，证明 normalized Haar projector、integer `floor(3x/4)` crosswalk、partial-sum longitudinal/transverse covariance transfer、within-child remainder、literal TPC-247 kernel expansion 与安全 adjoint identity；midpoint 的实际符号、非零性、算术尺度与 Gate-B margin 仍开放。
 

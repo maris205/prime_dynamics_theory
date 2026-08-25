@@ -2,11 +2,48 @@
 
 更新时间：2026-08-26
 
-状态：**TPC253_PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER / TWO_LITERAL_MIDPOINT_IMBALANCES_OPEN**
+状态：**TPC254_PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE / ADJOINT_BETA_LANE_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.48 已发布：TPC-254 source-backed rank-midpoint hybrid-mean closure
+
+项目：`papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/`
+
+类型：**PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_WITH_ADJOINT_LANE_SOURCE_GAP**。
+
+Fix finite admissible `K` and retain TPC-253's ordered-rank midpoint.  The
+locked hybrid maximal Type-I theorem is a sum of nonnegative rows.  Freezing
+`gamma_0=1/4` and extracting the unit-weight `m=1` row gives, for every fixed
+`M>0`,
+
+```text
+max(|W_L|,|W_R|)<<_(M,K)x(log x)^(-M),
+|W_L/ell-W_R/r|<<_(M,K)(log x)^(-M),
+|<z_mid,w>|<<_(M,K)x^(1/2)(log x)^(-M).
+```
+
+Both rank children are consecutive integer intervals for every real `x`.
+The quantifier order fixes `K` and `gamma_0` before the requested log strength;
+no uniformity as `K` grows is claimed.  Since
+`x^eta/(log x)^M -> infinity`, the result is not a fixed-power saving.
+
+The second midpoint moment remains exactly
+`<z_mid,A_x beta>=<A_x^*z_mid,beta>`.  Cauchy gives the safe upper transfer,
+but no frozen source estimates the literal adjoint test.  A real zero-diagonal
+derangement realizes arbitrary signed scale, and at `N=2` the Cauchy constant
+one is exact.  These controls are synthetic and do not refute the literal V59
+operator.
+
+```text
+STRONGEST_POSITIVE_RESULT = THE_LITERAL_V59_W_RANK_MIDPOINT_MOMENT_HAS_SOURCE_BACKED_X_ONE_HALF_TIMES_ARBITRARY_FIXED_LOG_POWER_CONTROL
+STRONGEST_OBSTRUCTION = THE_SECOND_LITERAL_MIDPOINT_MOMENT_IS_THE_UNESTIMATED_ADJOINT_FORM_A_X_STAR_Z_MID_AGAINST_BETA_AND_NORM_ONLY_CAUCHY_IS_SHARP
+OPEN_THEOREM = ESTIMATE_THE_LITERAL_A_X_STAR_Z_MID_BETA_LINEAR_FORM_ON_THE_SAME_V59_CLOCK_WITH_PRIME_SHELL_Q_WEIGHT_BOTH_UNIT_MASKS_DELETED_DIAGONAL_AND_K_H_RETAINED
+REUSABLE_STRUCTURE = MAXIMAL_INTERVAL_TYPE_I_TO_NONNEGATIVE_M1_EXTRACTION_TO_RANK_CHILD_MEANS_TO_NORMALIZED_HAAR_MOMENT_TO_LITERAL_ADJOINT_TEST
+ROUND2_CLUE = PUSH_THE_FIXED_RANK_MIDPOINT_HAAR_TEST_THROUGH_A_X_STAR_AND_ESTIMATE_THE_LITERAL_BETA_LINEAR_FORM_ON_THE_SAME_CLOCK_BEFORE_ANY_COVARIANCE_OR_MARGIN_PROMOTION__DO_NOT_REUSE_WHOLE_SHELL_OR_AP_AVERAGES
+```
 
 ## 0.47 已发布：TPC-253 source-frozen rank-midpoint contrast compiler
 

@@ -1,56 +1,57 @@
-# TPC big road V106 / TPC-253: source-frozen rank-midpoint contrast compiler
+# TPC big road V107 / TPC-254: source-backed rank-midpoint hybrid-mean closure
 
 更新时间：2026-08-26
 
-状态：`TPC253_PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER / FULL_GATE_B_OPEN`
+状态：`TPC254_PROVED_SOURCE_BACKED_L1_RANK_MIDPOINT_HYBRID_MEAN_CLOSURE_WITH_ADJOINT_LANE_SOURCE_GAP / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-253 proof 为
-`bridge_b_source_frozen_rank_midpoint_contrast_compiler.md`，checker 为
-`tpc_bridge_b_source_frozen_rank_midpoint_contrast_compiler_checker.py`，编号论文为
-`../../papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/`。
+当前 TPC-254 proof 为
+`bridge_b_source_backed_rank_midpoint_hybrid_mean_closure.md`，checker 为
+`tpc_bridge_b_source_backed_rank_midpoint_hybrid_mean_closure_checker.py`，编号论文为
+`../../papers/tpc-254-source-backed-rank-midpoint-hybrid-mean-closure/`。
 
-TPC-253 orders `I_x=(x/2,x] intersect Z={n_1<...<n_N}`, freezes its first
-`ell=floor(N/2)` coordinates against the remaining `r=N-ell`, and defines
-
-```text
-rho^2=ell*r/N,
-z=rho(1_L/ell-1_R/r).
-```
-
-Before any coefficient, margin or sign is inspected, this gives
+TPC-254 retains TPC-253's ordered rank split and fixes finite admissible `K`:
 
 ```text
-M_mid=M_coarse+z tensor z,
-C_long(mid)-C_long(coarse)=conjugate(<z,w>)<z,A_x beta>,
-Q_trans(mid)-Q_trans(coarse)=-conjugate(<z,w>)<z,A_x beta>.
+Z_x=(log x)^K,
+w(u)=Lambda(u+2)-b_x^(Z_x)(u).
 ```
 
-The two longitudinal terms and the within-child transverse covariance have
-exact partial-sum formulas.  For integral `x=k`, `L` ends at `floor(3k/4)`.
-Substitution of the literal TPC-247 operator keeps the prime weight, both unit
-masks, deleted diagonal, physical kernel, centered residue bracket and literal
-`beta`; the safe orientation is `<z,A_x beta>=<A_x^*z,beta>`.  No kernel
-symmetry or self-adjointness is used.
+The source-backed hybrid maximal Type-I theorem is a nonnegative sum.  After
+freezing `gamma_0=1/4`, its unit-weight `m=1` row controls every consecutive
+active interval, hence both rank children.  For every fixed `M>0`,
 
 ```text
-TPC253_RANK_MIDPOINT_PARTITION = PROVED_SOURCE_ONLY_DETERMINISTIC
-TPC253_INTEGER_THREE_QUARTER_CROSSWALK = PROVED_EXACT
-TPC253_MIDPOINT_CONTRAST_NORMALIZATION = PROVED_EXACT
-TPC253_PARTIAL_SUM_MOMENT_COMPILER = PROVED_EXACT
-TPC253_LITERAL_V59_G_MOMENT_EXPANSION = PROVED_EXACT
-TPC253_COARSE_TO_MIDPOINT_COVARIANCE_TRANSFER = PROVED_EXACT
-TPC253_WITHIN_CHILD_COVARIANCE_DECOMPOSITION = PROVED_EXACT
-TPC253_SAFE_ADJOINT_CROSSWALK = PROVED_EXACT
-TPC253_MIDPOINT_V59_CANONICALITY = NOT_CLAIMED_SOURCE_ONLY_MODELING_CHOICE
-TPC253_MIDPOINT_CONTRAST_SIGN_OR_NONZERO = OPEN
-TPC253_ARITHMETIC_ADVANCE = NO
-TPC253_L2 = NONE
-TPC253_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC253_ROUND2_CLUE = AUDIT_THE_TWO_LITERAL_RANK_MIDPOINT_IMBALANCES_WITH_EXISTING_PRIME_AND_HYBRID_MEAN_THEOREMS_BEFORE_ANY_DYADIC_EXTENSION
+max(|W_L|,|W_R|)<<_(M,K)x(log x)^(-M),
+|<z_mid,w>|<<_(M,K)x^(1/2)(log x)^(-M).
 ```
+
+This is a scoped arithmetic advance for the literal `w` lane.  Quantifiers are
+not uniform in `K`, and arbitrary fixed logarithmic saving is not fixed-power
+saving.  The second lane remains the literal form `<A_x^*z_mid,beta>`; only
+Cauchy is source-backed here, and a zero-diagonal derangement shows that
+norm-only constant one is sharp even over real matrices.
+
+```text
+TPC254_MAXIMAL_TYPE_I_M1_EXTRACTION = PROVED_SOURCE_BACKED
+TPC254_CHILD_SUM_HYBRID_MEAN = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC254_W_MIDPOINT_HAAR_MOMENT = PROVED_SOURCE_BACKED_X_ONE_HALF_TIMES_ARBITRARY_FIXED_LOG_SAVING
+TPC254_SAFE_ADJOINT_CAUCHY_TRANSFER = PROVED_EXACT
+TPC254_G_MIDPOINT_HAAR_ESTIMATE = OPEN_NO_FROZEN_SOURCE_ATTACHMENT
+TPC254_CAUCHY_CONSTANT_ONE_SHARPNESS = PROVED_EXACT_N2_SYNTHETIC
+TPC254_ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_LANE
+TPC254_L2 = NONE
+TPC254_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC254_ROUND2_CLUE = PUSH_THE_FIXED_RANK_MIDPOINT_HAAR_TEST_THROUGH_A_X_STAR_AND_ESTIMATE_THE_LITERAL_BETA_LINEAR_FORM_ON_THE_SAME_CLOCK_BEFORE_ANY_COVARIANCE_OR_MARGIN_PROMOTION__DO_NOT_REUSE_WHOLE_SHELL_OR_AP_AVERAGES
+```
+
+## V106 upstream: TPC-253 source-frozen rank-midpoint contrast compiler
+
+TPC-253 supplies the coefficient-independent ordered-rank midpoint, normalized
+Haar projector, exact partial-sum covariance transfer, literal kernel expansion,
+and safe adjoint orientation used by TPC-254.
 
 ## V105 upstream: TPC-252 declared-partition refinement degeneracy
 
