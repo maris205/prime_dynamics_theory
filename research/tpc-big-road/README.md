@@ -1,52 +1,58 @@
-# TPC big road V100 / TPC-247: literal V59 source-operator attachment
+# TPC big road V101 / TPC-248: shared-lane Gram-ellipsoid feasible set
 
 更新时间：2026-08-25
 
-状态：`TPC247_PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION / FULL_GATE_B_OPEN`
+状态：`TPC248_PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-247 proof 为
-`bridge_b_literal_v59_source_operator_attachment.md`，checker 为
-`tpc_bridge_b_literal_v59_source_operator_attachment_checker.py`，编号论文为
-`../../papers/tpc-247-literal-v59-source-operator-attachment/`。
+当前 TPC-248 proof 为
+`bridge_b_shared_lane_gram_ellipsoid_feasible_set.md`，checker 为
+`tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py`，编号论文为
+`../../papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/`。
 
-TPC-247 freezes the complete V59 physical kernel into one finite source operator:
-
-```text
-C_x=<w,A_x beta>.
-```
-
-For disjoint source support projections,
+TPC-248 takes the fixed-`c` source probes exposed by TPC-247,
 
 ```text
-C_x=sum_(b,c)<w_c,A_cb beta_b>,
+v_cb=A_cb beta_b,
 ```
 
-with every admissible `(q,t,u)` triple exactly once.  Tagged external copies give
-one exact covariance but also the exact toll
+and classifies the joint image against the one shared output lane.  If
+`G_c=(<v_cb,v_cb'>)` and `y=V_c*W_c`, then
 
 ```text
-||W_ext||^2=m||w||^2,
-||B_ext||^2=sum_(b,c)||A_cb beta_b||^2.
+image(||W_c||<=rho_c)
+ = {y in ran(G_c):y*G_c^dagger y<=rho_c^2}.
 ```
 
-The second norm need not equal `||A_x beta||^2`; hence no automatic TPC-243
-payment or TPC-246 Cartesian-product promotion follows.
+The exact sphere fills this solid ellipsoid iff `ker(V_c*)` supplies orthogonal
+slack; otherwise it is the equality shell.  A global budget couples output
+groups through a sum of Gram energies, and repeated probes give a diagonal disk
+rather than the product of their local disk marginals.
 
 ```text
-TPC247_LITERAL_V59_SOURCE_INDEX_OPERATOR = PROVED_EXACT
-TPC247_HARD_SUPPORT_BLOCK_DECOMPOSITION = PROVED_EXACT
-TPC247_TAGGED_EXTERNAL_TWO_LANE_COVARIANCE = PROVED_EXACT
-TPC247_W_LANE_NORM_INFLATION = PROVED_EXACT_SQRT_BLOCK_COUNT
-TPC247_B_LANE_NORM_PRESERVATION = REFUTED_SCOPED
-TPC247_PRIMITIVE_FREQUENCY_ATTACHMENT = OPEN
-TPC247_ARITHMETIC_ADVANCE = NO
-TPC247_L2 = NONE
-TPC247_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC247_ROUND2_CLUE = CHARACTERIZE_THE_SHARED_OUTPUT_LANE_JOINT_FEASIBLE_SET_BEFORE_ANY_CARTESIAN_PRODUCT_PROMOTION
+TPC248_SHARED_LANE_SOURCE_LOCK = PROVED_EXACT_FROM_TPC247
+TPC248_BALL_IMAGE = PROVED_EXACT_GRAM_ELLIPSOID
+TPC248_MINIMUM_NORM_PREIMAGE = PROVED_EXACT
+TPC248_SPHERE_IMAGE_WITH_SLACK = PROVED_EXACT_SOLID_ELLIPSOID
+TPC248_SPHERE_IMAGE_WITHOUT_SLACK = PROVED_EXACT_BOUNDARY_SHELL
+TPC248_PHYSICAL_CONJUGATE_ORIENTATION = PROVED_EXACT
+TPC248_GLOBAL_NORM_BUDGET = PROVED_EXACT_COUPLED_ELLIPSOID
+TPC248_POLYDISK_PROMOTION = REFUTED_SCOPED
+TPC248_ARITHMETIC_ADVANCE = NO
+TPC248_L2 = NONE
+TPC248_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC248_ROUND2_CLUE = CONTRACT_WEIGHTED_PROBES_INSIDE_EACH_SHARED_OUTPUT_LANE_BEFORE_SUMMING_ACROSS_OUTPUT_BLOCKS
 ```
+
+## V100 upstream: TPC-247 literal V59 source-operator attachment
+
+TPC-247 supplies the exact source-index operator, disjoint hard-block
+decomposition, and the shared-lane probes used above.  Its tagged direct-sum
+representation repeats output lanes and does not preserve input-block
+cancellation; TPC-248 replaces that product surrogate by the actual Gram
+geometry.
 
 ## V99 upstream: TPC-246 weighted covariance-disk reassembly
 

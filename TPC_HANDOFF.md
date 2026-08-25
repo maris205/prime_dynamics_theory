@@ -1,9 +1,87 @@
 # TPC HANDOFF
 
 更新时间：2026-08-25
-交接状态：`BOLD_CHANNEL_V100_TPC247_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_RELEASED`
+交接状态：`BOLD_CHANNEL_V101_TPC248_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET_RELEASED`
 
-TPC-247 当前 section：literal V59 source-operator attachment
+TPC-248 当前 section：shared-lane Gram-ellipsoid feasible set
+----------------------------------------------------------
+
+TPC-247 exposes, for every fixed output block `c`, the literal probes
+
+```text
+v_cb:=A_cb beta_b in P_c H_x
+```
+
+against the one physical lane `w_c=P_cw`.  Let `V_c` synthesize the ordered
+probe family and put `G_c=V_c*V_c`.  TPC-248 proves the exact ball image
+
+```text
+V_c*{W_c:||W_c||<=rho_c}
+ = {y in ran(G_c):y*G_c^dagger y<=rho_c^2},
+```
+
+with unique minimum-norm preimage `V_cG_c^dagger y`.  For the exact sphere,
+the image is the same solid ellipsoid iff `ker(V_c*)` is nonzero; without
+orthogonal slack it is the equality shell.  Physical covariances
+`(<W_c,v_cb>)_b` use the entrywise-conjugate Gram ellipsoid.
+
+Across output groups, a product is proved only for an explicitly Cartesian
+product of independent lane balls.  One global direct-sum budget instead has
+the exact coupled condition
+
+```text
+sum_c y_c*G_c^dagger y_c<=rho^2.
+```
+
+The repeated-probe fixture `v_1=v_2` has two unit-disk marginals but joint image
+`{(t,t):|t|<=1}`; thus marginal-to-polydisk promotion is refuted.  This closes
+the shared-lane geometry, not the arithmetic size of the literal Gram matrices.
+
+```text
+TPC248_MAXIMUM_CLAIM = EXACT_SHARED_LANE_RANGE_RESTRICTED_GRAM_ELLIPSOID_WITH_BALL_SPHERE_PHYSICAL_ORIENTATION_AND_GROUP_BUDGET_CLASSIFICATION
+TPC248_ROUTE_ADVANCE = YES_STRUCTURAL_JOINT_GEOMETRY
+TPC248_SHARED_LANE_SOURCE_LOCK = PROVED_EXACT_FROM_TPC247
+TPC248_BALL_IMAGE = PROVED_EXACT_GRAM_ELLIPSOID
+TPC248_MINIMUM_NORM_PREIMAGE = PROVED_EXACT
+TPC248_SPHERE_IMAGE_WITH_SLACK = PROVED_EXACT_SOLID_ELLIPSOID
+TPC248_SPHERE_IMAGE_WITHOUT_SLACK = PROVED_EXACT_BOUNDARY_SHELL
+TPC248_PHYSICAL_CONJUGATE_ORIENTATION = PROVED_EXACT
+TPC248_CARTESIAN_GROUP_PRODUCT = PROVED_FOR_DECLARED_PRODUCT_DOMAIN
+TPC248_CARTESIAN_PRODUCT_FROM_MARGINALS = UNJUSTIFIED
+TPC248_GLOBAL_NORM_BUDGET = PROVED_EXACT_COUPLED_ELLIPSOID
+TPC248_POLYDISK_PROMOTION = REFUTED_SCOPED
+TPC248_PRIMITIVE_FREQUENCY_ATTACHMENT = OPEN
+TPC248_WEIGHTED_GROUP_CONTRACTION = OPEN
+TPC248_PAYABLE_LONGITUDINAL_DOMINANCE = OPEN
+TPC248_ARITHMETIC_ADVANCE = NO
+TPC248_FIXED_ATOM_CREDIT = 0
+TPC248_L2 = NONE
+TPC248_FULL_GATE_B = OPEN
+TPC248_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC248_TWIN_PRIME_RESULT = NONE
+TPC248_STATUS = PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET
+TPC248_ROUND2_CLUE = CONTRACT_WEIGHTED_PROBES_INSIDE_EACH_SHARED_OUTPUT_LANE_BEFORE_SUMMING_ACROSS_OUTPUT_BLOCKS
+```
+
+strongest positive result：actual shared-lane joint covariance 像的 exact Gram
+椭球、minimum preimage 与 sphere/slack/global-budget 分类；strongest obstruction：
+local disk marginals 可在真实 joint set 中收缩成 diagonal disk；open theorem：
+literal probes 的 sharp weighted group radius；reusable structure：analysis operator ->
+Gram range -> pseudoinverse energy -> orthogonal slack -> grouped budget。
+
+编号论文目录：papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/
+
+```text
+papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/README.md
+papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/PROOF_PACKAGE.md
+papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/paper/paper.pdf
+papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/results/tpc248_certificate.json
+papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_shared_lane_gram_ellipsoid_feasible_set.md
+research/tpc-big-road/tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py
+```
+
+TPC-247 上游 section：literal V59 source-operator attachment
 -----------------------------------------------------------
 
 On the finite physical source space `H_x=C^(I_x)`, freeze the exact V59
@@ -6962,8 +7040,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V100/TPC-247 gate、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百五十六次（78 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V101/TPC-248 gate、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百五十八次（79 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -7123,11 +7201,23 @@ python -B research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly
 python -O -B research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachment_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachment_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-247 入口：
+最新 TPC-248 入口：
+
+```text
+papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/README.md
+papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/notes/theorem_ledger.md
+papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_shared_lane_gram_ellipsoid_feasible_set.md
+research/tpc-big-road/tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py
+```
+
+TPC-247 上游入口：
 
 ```text
 papers/tpc-247-literal-v59-source-operator-attachment/README.md

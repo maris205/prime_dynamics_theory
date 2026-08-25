@@ -9,13 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-247 已把 literal V59 Gate-B scalar 精确写成 physical
-source-index operator covariance `C_x=<w,A_x beta>`，并以 disjoint support
-projections 得到 admissible `(q,t,u)` triples exactly-once 的 block sum。tagged
-external copies 给出真实 two-lane covariance，但 output lane 被每个 input block
-重复，精确支付 `||W_ext||^2=m||w||^2`；`B`-lane block norm 也不保留
-`A_x beta` 的 cross-block cancellation。primitive-frequency attachment、joint
-feasible set、payable norm、arithmetic `L2` 与 full Gate B 仍开放。
+当前主线状态：TPC-248 已精确分类 TPC-247 暴露的 shared-output-lane
+joint feasible set。对 `v_cb=A_cb beta_b`、`G_c=(<v_cb,v_cb'>)`，半径
+`rho_c` 的 physical lane ball 精确映到 `ran(G_c)` 上的
+`y*G_c^dagger y<=rho_c^2` Gram 椭球；exact sphere 是 solid 还是 shell
+由 `ker(V_c*)` 是否提供 orthogonal slack 决定。local marginals 不能推出
+Cartesian product，global norm budget 会把各组再耦合成 sum-energy 椭球。
+weighted aggregate radius、primitive-frequency attachment、arithmetic `L2` 与 full
+Gate B 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +30,8 @@ feasible set、payable norm、arithmetic `L2` 与 full Gate B 仍开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-248-shared-lane-gram-ellipsoid-feasible-set` - `PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET` - 将 TPC-247 固定 output block 上的多 probe/单 shared lane 联合像精确分类为 range-restricted pseudoinverse Gram 椭球，证明 sphere/slack 二分、physical conjugate orientation 与 global-budget sum-energy law，并以 diagonal-disk 反例严格否定 marginal-to-polydisk promotion；arithmetic L2 仍开放。
 
 `tpc-247-literal-v59-source-operator-attachment` - `PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION` - 将完整 V59 prime weight、unit masks、deleted diagonal 与 `K_H(u-t)` 锁入 source operator，证明 hard source blocks exactly-once 与 tagged two-lane covariance；同时精确证明 `sqrt(m)` output-copy toll 并反例否定 `B`-norm preservation，primitive-frequency attachment 与 arithmetic L2 仍开放。
 

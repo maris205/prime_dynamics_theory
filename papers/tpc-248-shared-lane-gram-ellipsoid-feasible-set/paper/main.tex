@@ -1,0 +1,275 @@
+% !TeX program = pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs,tabularx}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\cH}{\mathcal H}
+\newcommand{\Ran}{\operatorname{ran}}
+\newcommand{\Ker}{\operatorname{ker}}
+\newcommand{\D}{\mathbb D}
+
+\hypersetup{
+  pdftitle={Shared-Lane Gram Ellipsoids and Exact Joint Covariance Geometry},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact feasible sets for shared Hilbert-space covariance lanes},
+  pdfkeywords={Gram matrix, Moore--Penrose inverse, covariance, ellipsoid}
+}
+
+\title{Shared-Lane Gram Ellipsoids\
+and Exact Joint Covariance Geometry}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology\\
+Wuhan, China\\
+\texttt{liang.wang@hust.edu.cn}}
+\date{August 25, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A source-index decomposition of the finite V59 twin-prime Gate-B scalar exposes,
+inside each fixed output block, several probe vectors paired with one shared
+physical output lane.  Independent marginal disks therefore do not describe
+the source-valid joint family.  We determine that family exactly.  For the
+analysis operator $V^*W=(\langle v_i,W\rangle)_i$ and Gram matrix $G=V^*V$,
+the radius-$\rho$ ball maps onto
+\[
+ \{y\in\Ran G:y^*G^\dagger y\leq \rho^2\}.
+\]
+We classify the exact-sphere image by the orthogonal slack $\Ker V^*$, give the
+entrywise-conjugate physical covariance form, and distinguish independent
+group budgets from one global Hilbert budget.  Repeated probes collapse two
+unit-disk marginals to a diagonal disk, while orthogonal probes give a Euclidean
+ball rather than a bidisk.  These are exact structural results; they provide no
+arithmetic cancellation, strict $1/400$ payment, full Gate B, or twin-prime
+conclusion.
+\end{abstract}
+
+\section{The source-native joint object}
+
+TPC-247 writes the physical scalar as a finite source covariance and, for a
+declared disjoint hard partition, obtains
+\[
+ A_{cb}=P_cA_xP_b,\qquad \beta_b=P_b\beta,\qquad w_c=P_cw,
+ \qquad
+ C_x=\sum_{c,b}\langle w_c,A_{cb}\beta_b\rangle.
+\]
+For fixed $c$, set
+\[
+ v_{cb}:=A_{cb}\beta_b\in P_c\cH_x.
+\]
+The vectors $(v_{cb})_b$ are all observed by the same $w_c$; no independently
+variable lane $w_{cb}$ appears in the physical source.  Tagged direct-sum
+copies reproduce the scalar but repeat $w_c$ once for every $b$, which is why
+their Cartesian geometry is not automatically source-valid
+\cite{tpc247,tpc246}.
+
+We therefore solve the following finite-dimensional problem before applying
+any weighted reassembly.  Throughout, complex Hilbert inner products are
+conjugate-linear in the first slot.
+
+\section{Exact analysis-map ellipsoid}
+
+Let $v_1,\ldots,v_m$ be ordered vectors in a finite-dimensional complex Hilbert
+space $\cH$.  Define
+\[
+ V:\mathbb C^m\longrightarrow\cH,\qquad Va=\sum_{i=1}^m a_iv_i,
+ \qquad G=V^*V,
+\]
+so $G_{ij}=\langle v_i,v_j\rangle$.  The Moore--Penrose inverse is denoted by
+$G^\dagger$.
+
+\begin{theorem}[ball image and minimum preimage]\label{thm:ball}
+For every $\rho\geq0$,
+\[
+ V^*\{W\in\cH:\|W\|\leq\rho\}
+ =\left\{y\in\Ran G:y^*G^\dagger y\leq\rho^2\right\}.
+\]
+For each $y\in\Ran G$, the vector
+\[
+ W_0=VG^\dagger y
+\]
+is the unique minimum-norm preimage and
+\[
+ \min_{V^*W=y}\|W\|^2=\|W_0\|^2=y^*G^\dagger y.
+\]
+\end{theorem}
+
+\begin{proof}
+In finite dimension, $\Ran V^*=\Ran(V^*V)=\Ran G$.  If $y\in\Ran G$, the
+Moore--Penrose identities give
+\[
+ V^*W_0=GG^\dagger y=y.
+\]
+Furthermore,
+\begin{align*}
+ \|W_0\|^2
+ &=\langle VG^\dagger y,VG^\dagger y\rangle\\
+ &=(G^\dagger y)^*G(G^\dagger y)
+ =y^*G^\dagger y.
+\end{align*}
+Here we used that $G$ and $G^\dagger$ are Hermitian and that
+$GG^\dagger y=y$.  Every other preimage is uniquely $W_0+k$ with
+$k\in\Ker V^*$.  Since $W_0\in\Ran V=(\Ker V^*)^\perp$,
+\[
+ \|W_0+k\|^2=\|W_0\|^2+\|k\|^2.
+\]
+The minimum formula and both inclusions in the ball identity follow.  The same
+argument includes rank-zero $G$ and $\rho=0$.
+\end{proof}
+
+The range condition is essential when the probes are linearly dependent: the
+quadratic inequality by itself must not be interpreted on all of
+$\mathbb C^m$.
+
+\section{Exact spheres and physical orientation}
+
+\begin{theorem}[orthogonal-slack dichotomy]\label{thm:sphere}
+Let $S_\rho=\{W:\|W\|=\rho\}$.  If $\Ker V^*\neq\{0\}$, then
+\[
+ V^*S_\rho=\{y\in\Ran G:y^*G^\dagger y\leq\rho^2\}.
+\]
+If $\Ker V^*=\{0\}$, then
+\[
+ V^*S_\rho=\{y\in\Ran G:y^*G^\dagger y=\rho^2\}.
+\]
+Both formulas remain valid for $\rho=0$.
+\end{theorem}
+
+\begin{proof}
+For a point of minimum energy $e=y^*G^\dagger y\leq\rho^2$, choose a unit
+$k\in\Ker V^*$ and replace $W_0$ by
+$W_0+\sqrt{\rho^2-e}\,k$.  This reaches the sphere without changing $y$.
+If the kernel is zero, $W_0$ is the only preimage, so sphere membership is
+equivalent to $e=\rho^2$.
+\end{proof}
+
+The V59 physical scalar uses the opposite orientation
+\[
+ z_i=\langle W,v_i\rangle=\overline{\langle v_i,W\rangle}
+ =\overline{y_i}.
+\]
+
+\begin{corollary}[physical covariance ellipsoid]\label{cor:physical}
+The physical ball image is
+\[
+ \left\{z\in\Ran\overline G:
+ z^*(\overline G)^\dagger z\leq\rho^2\right\}.
+\]
+The sphere classification is Theorem~\ref{thm:sphere} with $G$ replaced by
+$\overline G$.
+\end{corollary}
+
+\begin{proof}
+Entrywise conjugation carries $\Ran G$ onto $\Ran\overline G$, commutes with
+the Moore--Penrose inverse, and conjugates the real nonnegative energy
+$y^*G^\dagger y$ to the displayed expression.
+\end{proof}
+
+\section{Grouped budgets are not interchangeable}
+
+For output groups $c$, let $V_c^*W_c=y_c$ and $G_c=V_c^*V_c$.
+
+\begin{theorem}[product and global budgets]\label{thm:groups}
+For explicitly independent constraints $\|W_c\|\leq\rho_c$, the joint image is
+the Cartesian product
+\[
+ \prod_c\{y_c\in\Ran G_c:y_c^*G_c^\dagger y_c\leq\rho_c^2\}.
+\]
+For one global direct-sum constraint
+$\sum_c\|W_c\|^2\leq\rho^2$, the exact image is instead
+\[
+ \left\{(y_c)_c: y_c\in\Ran G_c,\quad
+ \sum_c y_c^*G_c^\dagger y_c\leq\rho^2\right\}.
+\]
+\end{theorem}
+
+\begin{proof}
+The first domain is a Cartesian product and the map acts coordinatewise.  For
+the second domain, Theorem~\ref{thm:ball} supplies the minimum squared norm for
+each group; direct-sum orthogonality adds these minima.  Independent minimum
+preimages realize every point satisfying the summed inequality.
+\end{proof}
+
+Thus ``local ellipsoid'' does not by itself determine a cross-group feasible
+set.  The budget domain is part of the theorem.
+
+\section{Sharp adversarial fixtures}
+
+First take $v_1=v_2=e_1$ and $\rho=1$.  Then
+\[
+ G=\begin{pmatrix}1&1\\1&1\end{pmatrix},\qquad
+ G^\dagger=\frac14\begin{pmatrix}1&1\\1&1\end{pmatrix},
+\]
+and the exact image is
+\[
+ \{(t,t):|t|\leq1\}.
+\]
+Each coordinate marginal is the unit disk, but $(1,0)$ is not jointly
+feasible.  This refutes the bidisk promotion at rank one.
+
+Second take $v_1=e_1,v_2=e_2$.  The image is
+$\{(y_1,y_2):|y_1|^2+|y_2|^2\leq1\}$, again strictly smaller than the bidisk.
+If the ambient space contains an unused $e_3$, the exact unit sphere maps onto
+that whole solid ball; without $e_3$, it maps only onto its boundary.
+
+Finally, two scalar groups with a global unit budget have local unit-disk
+marginals, but $(1,1)$ has minimum global energy $2$ and is forbidden.  These
+examples isolate three different errors: ignoring Gram range, ignoring joint
+energy, and ignoring orthogonal sphere slack.
+
+\section{Certificate and route boundary}
+
+The exact certificate freezes a rank-one Gram pair, two full-rank Gram pairs,
+the sphere dichotomy, a global-budget obstruction, a zero-radius boundary, and
+a Gaussian-rational orientation fixture.  An independent implementation
+reconstructs the Moore--Penrose identities and rejects typed, semantic, and
+digest-rebound mutations.  A separate stress program checks seven integer
+probe matrices and $87$ exact minimum-energy samples.
+
+For TPC-247, Theorem~\ref{thm:ball} now classifies the vector
+$(\langle v_{cb},W_c\rangle)_b$ for each fixed $c$.  It does not estimate the
+actual Gram matrices, attach primitive rational frequencies, or prove that a
+longitudinal center dominates any transverse radius.  Consequently
+\[
+ \texttt{ARITHMETIC\_L2=NONE},\qquad
+ \texttt{FULL\_GATE\_B=OPEN},\qquad
+ \texttt{STRICT\_1\_OVER\_400=UNPAID}.
+\]
+
+The next exact contraction is now forced: combine weighted probes inside each
+shared output lane, compute the sharp group support radius from its Gram
+matrix, and only then sum across output blocks.
+
+\section{Conclusion}
+
+The joint shared-lane geometry is an ellipsoid, not a product of marginal
+disks.  Its range, energy, sphere filling, complex orientation, and grouped
+budget are all exact, including degenerate ranks and zero radius.  This removes
+TPC-247's first structural ambiguity while preserving its arithmetic firewall.
+
+\medskip
+\noindent\textbf{Maximum claim.}
+\texttt{PROVED\_STRUCTURAL\_L1\_SHARED\_LANE\_GRAM\_ELLIPSOID\_FEASIBLE\_SET}.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

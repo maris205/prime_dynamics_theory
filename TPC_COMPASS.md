@@ -1,35 +1,42 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-25
-状态：`BOLD_CHANNEL_V100 / LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT`
-claim level：`PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION`
-编号事实终点：TPC-247；TPC-247 trigger：`true`
+状态：`BOLD_CHANNEL_V101 / SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET`
+claim level：`PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET`
+编号事实终点：TPC-248；TPC-248 trigger：`true`
 
-当前 TPC-247 入口：proof 为
-`research/tpc-big-road/bridge_b_literal_v59_source_operator_attachment.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachment_checker.py`，编号论文为
-`papers/tpc-247-literal-v59-source-operator-attachment/`。literal scalar exact 写为
-`C_x=<w,A_x beta>`；hard source support projections 保留全部 physical labels 并使每个
-admissible `(q,t,u)` triple exactly once。tagged external covariance exact，但
-`||W_ext||^2=m||w||^2`，且 separated `B` norm 不保留 `A_x beta` cancellation。
+当前 TPC-248 入口：proof 为
+`research/tpc-big-road/bridge_b_shared_lane_gram_ellipsoid_feasible_set.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py`，编号论文为
+`papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/`。对固定 output block
+`c` 的 probes `v_cb=A_cb beta_b`，单一 shared lane 的 joint covariance 像精确为
+`ran(G_c)` 上的 pseudoinverse Gram 椭球；sphere/slack、physical conjugate
+orientation 与 global norm budget 均已 exact 分类。
 
 ```text
-TPC247_LITERAL_V59_SOURCE_INDEX_OPERATOR = PROVED_EXACT
-TPC247_HARD_SUPPORT_BLOCK_DECOMPOSITION = PROVED_EXACT
-TPC247_ADMISSIBLE_TRIPLE_EXACTLY_ONCE = PROVED_EXACT
-TPC247_TAGGED_EXTERNAL_TWO_LANE_COVARIANCE = PROVED_EXACT
-TPC247_W_LANE_NORM_INFLATION = PROVED_EXACT_SQRT_BLOCK_COUNT
-TPC247_B_LANE_NORM_PRESERVATION = REFUTED_SCOPED
-TPC247_PRIMITIVE_FREQUENCY_ATTACHMENT = OPEN
-TPC247_TPC243_NEAR_ISOMETRY_ATTACHMENT = OPEN
-TPC247_ARITHMETIC_ADVANCE = NO
-TPC247_L2 = NONE
-TPC247_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC247_STATUS = PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION
-TPC247_ROUND2_CLUE = CHARACTERIZE_THE_SHARED_OUTPUT_LANE_JOINT_FEASIBLE_SET_BEFORE_ANY_CARTESIAN_PRODUCT_PROMOTION
+TPC248_SHARED_LANE_SOURCE_LOCK = PROVED_EXACT_FROM_TPC247
+TPC248_BALL_IMAGE = PROVED_EXACT_GRAM_ELLIPSOID
+TPC248_MINIMUM_NORM_PREIMAGE = PROVED_EXACT
+TPC248_SPHERE_IMAGE_WITH_SLACK = PROVED_EXACT_SOLID_ELLIPSOID
+TPC248_SPHERE_IMAGE_WITHOUT_SLACK = PROVED_EXACT_BOUNDARY_SHELL
+TPC248_PHYSICAL_CONJUGATE_ORIENTATION = PROVED_EXACT
+TPC248_GLOBAL_NORM_BUDGET = PROVED_EXACT_COUPLED_ELLIPSOID
+TPC248_POLYDISK_PROMOTION = REFUTED_SCOPED
+TPC248_ARITHMETIC_ADVANCE = NO
+TPC248_L2 = NONE
+TPC248_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC248_STATUS = PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET
+TPC248_ROUND2_CLUE = CONTRACT_WEIGHTED_PROBES_INSIDE_EACH_SHARED_OUTPUT_LANE_BEFORE_SUMMING_ACROSS_OUTPUT_BLOCKS
 ```
 
-TPC-246 上游入口：proof 为
+TPC-247 上游入口：proof 为
+`research/tpc-big-road/bridge_b_literal_v59_source_operator_attachment.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachment_checker.py`，编号论文为
+`papers/tpc-247-literal-v59-source-operator-attachment/`。它提供 literal source operator、
+hard-block exactly-once sum 和 `v_cb=A_cb beta_b`/单一 `w_c` source object；
+TPC-248 闭合其 shared-lane joint feasible set。
+
+TPC-246 更上游入口：proof 为
 `research/tpc-big-road/bridge_b_weighted_covariance_disk_reassembly.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py`，编号论文为
 `papers/tpc-246-weighted-covariance-disk-reassembly/`。它给出 complete-product weighted

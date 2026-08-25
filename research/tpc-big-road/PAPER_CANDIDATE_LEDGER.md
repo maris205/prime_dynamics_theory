@@ -2,11 +2,38 @@
 
 更新时间：2026-08-25
 
-状态：**TPC247_PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION / SHARED_LANE_JOINT_SET_OPEN**
+状态：**TPC248_PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET / WEIGHTED_GROUP_CONTRACTION_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.42 已发布：TPC-248 shared-lane Gram-ellipsoid feasible set
+
+项目：`papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/`
+
+类型：**PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET**。
+
+For every fixed TPC-247 output block, the probes `v_cb=A_cb beta_b` share one
+physical lane.  Their radius-ball joint covariance image is exactly
+
+```text
+{y in ran(G_c): y*G_c^dagger y<=rho_c^2}.
+```
+
+The Moore--Penrose energy is the exact minimum preimage norm.  Exact spheres
+fill the solid ellipsoid iff an orthogonal kernel direction exists; otherwise
+they give the equality shell.  A global norm budget produces one coupled
+sum-energy ellipsoid, and repeated probes refute promotion from local disk
+marginals to a polydisk.
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_SHARED_LANE_GRAM_ELLIPSOID_WITH_BALL_SPHERE_AND_GLOBAL_BUDGET_CLASSIFICATION
+STRONGEST_OBSTRUCTION = LOCAL_DISK_MARGINALS_CAN_COLLAPSE_TO_A_DIAGONAL_DISK_AND_DO_NOT_CERTIFY_CARTESIAN_REALIZABILITY
+OPEN_THEOREM = SHARP_WEIGHTED_GROUP_SUPPORT_RADIUS_FOR_THE_LITERAL_TPC247_PROBES
+REUSABLE_STRUCTURE = ANALYSIS_OPERATOR_PLUS_GRAM_RANGE_PLUS_PSEUDOINVERSE_ENERGY_PLUS_ORTHOGONAL_SLACK
+ROUND2_CLUE = CONTRACT_WEIGHTED_PROBES_INSIDE_EACH_SHARED_OUTPUT_LANE_BEFORE_SUMMING_ACROSS_OUTPUT_BLOCKS
+```
 
 ## 0.41 已发布：TPC-247 literal V59 source-operator attachment
 

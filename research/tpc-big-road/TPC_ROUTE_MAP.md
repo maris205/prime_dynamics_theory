@@ -2,17 +2,17 @@
 
 更新时间：2026-08-25
 
-当前地图版本：V100 / TPC-247
+当前地图版本：V101 / TPC-248
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-247`（`PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION`）；
-对应论文目录为 `papers/tpc-247-literal-v59-source-operator-attachment/`。TPC-247 把
-literal V59 scalar 精确写成 source-index covariance，证明 hard support blocks 的
-admissible triples exactly-once，并给 tagged external two-lane representation。其 exact
-代价是 output lane `sqrt(m)` duplication，且 separated input-block norm 不保留
-`A_x beta` cancellation。shared-lane joint feasible set、nonduplicating primitive
-attachment、payable margin、arithmetic `L2` 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-248`（`PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET`）；
+对应论文目录为 `papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/`。TPC-248 对
+TPC-247 固定 output block 上的多 probe/单一 physical lane 联合像给出 exact
+range-restricted pseudoinverse Gram 椭球，闭合 ball/sphere slack 二分、physical
+conjugate orientation 与 global-budget sum-energy law。local marginals 到 polydisk 的自动
+promotion 已 `REFUTED_SCOPED`；weighted group contraction、primitive attachment、
+arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -54,9 +54,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V100 / TPC-247                    |
-        | LITERAL V59 SOURCE-OPERATOR ATTACHMENT            |
-        | scalar attached; shared-lane joint set OPEN       |
+        | YOU ARE HERE — V101 / TPC-248                    |
+        | SHARED-LANE GRAM ELLIPSOID EXACT                  |
+        | joint set closed; weighted contraction OPEN       |
         +--------------------------------------------------+
                 |
                 v
@@ -99,12 +99,12 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V100 / TPC-247 的
-literal V59 source-operator attachment。physical scalar、hard support block decomposition、
-admissible-triple exactly-once ledger 与 tagged two-lane covariance 已 exact 闭合；但
-external copy 会付出 output-lane `sqrt(m)` duplication toll，且 input-block cancellation
-不保存 external norm。下一施工点是不假设 Cartesian product 的
-shared-output-lane joint feasible set，再提取 payable weighted longitudinal dominance。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V101 / TPC-248 的
+shared-lane Gram-ellipsoid feasible set。TPC-247 physical probes 的 actual joint image、
+minimum preimage energy、sphere/slack 二分、physical conjugate orientation 和 global-budget
+coupling 已 exact 闭合；local marginal polydisk shortcut 已被 diagonal-disk 反例否定。
+下一施工点是先在每个 shared lane 内收缩 weighted probes，提取 sharp
+group support radius，再做 cross-output reassembly。
 FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit 继续
 OPEN/UNPAID/NO。**
 
@@ -1237,6 +1237,49 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.42 V101 / TPC-248：shared-lane Gram-ellipsoid feasible set
+
+For each fixed output block, TPC-247 supplies the probes
+`v_cb=A_cb beta_b` against one shared lane.  If `V_c` synthesizes these probes
+and `G_c=V_c*V_c`, TPC-248 proves the exact ball image
+
+```text
+{y in ran(G_c):y*G_c^dagger y<=rho_c^2},
+```
+
+with minimum preimage `V_cG_c^dagger y`.  Exact spheres fill the solid
+ellipsoid iff `ker(V_c*)` contains orthogonal slack; otherwise they give the
+equality shell.  Physical covariances use the conjugate Gram ellipsoid.
+
+A declared product of independent lane balls maps to a product of local
+ellipsoids, while one global direct-sum budget maps to
+
+```text
+sum_c y_c*G_c^dagger y_c<=rho^2.
+```
+
+Repeated probes have two unit-disk marginals but joint image
+`{(t,t):|t|<=1}`, so automatic marginal-to-polydisk promotion is strictly
+refuted.
+
+```text
+TPC248_SHARED_LANE_SOURCE_LOCK = PROVED_EXACT_FROM_TPC247
+TPC248_BALL_IMAGE = PROVED_EXACT_GRAM_ELLIPSOID
+TPC248_MINIMUM_NORM_PREIMAGE = PROVED_EXACT
+TPC248_SPHERE_IMAGE_WITH_SLACK = PROVED_EXACT_SOLID_ELLIPSOID
+TPC248_SPHERE_IMAGE_WITHOUT_SLACK = PROVED_EXACT_BOUNDARY_SHELL
+TPC248_PHYSICAL_CONJUGATE_ORIENTATION = PROVED_EXACT
+TPC248_GLOBAL_NORM_BUDGET = PROVED_EXACT_COUPLED_ELLIPSOID
+TPC248_POLYDISK_PROMOTION = REFUTED_SCOPED
+TPC248_ARITHMETIC_ADVANCE = NO
+TPC248_L2 = NONE
+TPC248_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC248_STATUS = PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET
+```
+
+地图位置：**actual shared-lane joint set 已经闭合；下一步是以 weighted
+probe contraction 把 Gram 椭球压成每个 output block 的 sharp scalar radius。**
 
 ## 5.41 V100 / TPC-247：literal V59 source-operator attachment
 
@@ -3014,11 +3057,13 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
-1. **TPC-247 已完成：literal V59 source-operator attachment**。physical scalar、
-   hard-block exactly-once decomposition 与 tagged two-lane covariance 已 exact；同时
-   `sqrt(m)` output duplication 和 input-block cancellation-loss 已以 exact counterexample
-   封存。下一步必须在 shared physical output lane 上分类 actual joint
-   feasible set，不能回退为独立 Cartesian-product marginals。
+1. **TPC-248 已完成：shared-lane Gram-ellipsoid feasible set**。actual fixed-`c`
+   joint image、minimum preimage、sphere/slack、physical orientation 与 global budget 已 exact；
+   diagonal-disk 和 Euclidean-ball 反例封住 marginal polydisk shortcut。下一步在每个
+   output lane 内收缩 weighted probes，提取 sharp aggregate radius。
+2. **TPC-247 已完成：literal V59 source-operator attachment**。physical scalar、
+   hard-block exactly-once decomposition 与 tagged two-lane covariance 已 exact；其 shared-lane
+   joint set现已由 TPC-248 闭合，primitive-frequency/payment 仍 OPEN。
 2. **TPC-246 已完成：weighted covariance-disk reassembly**。coupled family 有
    unconditional aggregate containment；complete Cartesian product 有 exact disk、
    explicit inverse 与 zero/margin dichotomy；TPC-247 已证明 literal source blocks 存在，
@@ -3137,9 +3182,9 @@ NUMBERED_RELEASE = TPC-244
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-247 的下一步：shared-lane Gram ellipsoid 与 weighted dominance**。
-    对同一 output block 上的 probes `A_cb beta_b` 精确分类 joint feasible set，
-    然后以 Gram pseudoinverse 提取 sharp aggregate radius；再回接 literal V59
+12. **TPC-248 的下一步：sharp weighted group contraction 与 dominance**。
+    对同一 output block 上的 probes `A_cb beta_b` 先形成 weighted vector
+    `g_c=sum_b lambda_cb v_cb`，以 `lambda_c*G_c lambda_c` 提取 exact support radius；再回接 literal V59
     longitudinal/transverse decomposition，目标是支付真实的
     `|C_long|>R_trans+leakage`，不得把 structural ellipsoid 当成 arithmetic
     nonvanishing。
@@ -3241,6 +3286,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-25 | V101 / TPC-248 | Bridge A / Gate B：shared-lane joint set exact Gram ellipsoid；weighted group contraction/payable margin open | `TPC-248` | range-restricted pseudoinverse energy、sphere/slack dichotomy、physical conjugation、global-budget coupling 与 polydisk obstruction；arithmetic unchanged |
 | 2026-08-25 | V100 / TPC-247 | Bridge A / Gate B：literal V59 source operator 与 tagged two-lane covariance exact；shared-lane joint geometry/payable margin open | `TPC-247` | exact physical operator、hard-block exactly-once sum、tagged covariance、`sqrt(m)` duplication toll 与 cancellation-loss counterexample；arithmetic unchanged |
 | 2026-08-25 | V99 / TPC-246 | Bridge A / Gate B：weighted aggregate geometry exact for complete products；source product attachment and payable margin open | `TPC-246` | coupled-family containment、exact Cartesian-product disk、explicit inverse、zero/margin dichotomy 与 one-transfer window enclosure；arithmetic unchanged |
 | 2026-08-25 | V98 / TPC-245 | Bridge A / Gate B：local covariance feasible set exact classified；canonical block direction and literal attachment open | `TPC-245` | transverse dimension `>=2` closed disk、dimension `1` circle/singleton、dimension `0` singleton/unrealizable；sharp zero margin and phase cone |
