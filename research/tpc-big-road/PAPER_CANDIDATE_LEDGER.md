@@ -2,11 +2,43 @@
 
 更新时间：2026-08-25
 
-状态：**TPC246_PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY / SOURCE_PRODUCT_ATTACHMENT_OPEN**
+状态：**TPC247_PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION / SHARED_LANE_JOINT_SET_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.41 已发布：TPC-247 literal V59 source-operator attachment
+
+项目：`papers/tpc-247-literal-v59-source-operator-attachment/`
+
+类型：**PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION**。
+
+The complete V59 scalar is exactly `C_x=<w,A_x beta>` on physical integer
+coordinates.  Disjoint support projections give `A_cb=P_cA_xP_b` and
+
+```text
+C_x=sum_(b,c)<w_c,A_cb beta_b>,
+```
+
+with every admissible `(q,t,u)` triple exactly once.  Tagged external copies
+turn this into one covariance, but repeat each output lane over all input
+blocks:
+
+```text
+||W_ext||^2=m||w||^2.
+```
+
+The separated `B` norm can remain positive when `A_x beta=0`, so it is not a
+payable primitive-frequency attachment by itself.
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_LITERAL_V59_SOURCE_OPERATOR_AND_TAGGED_TWO_LANE_BLOCK_COVARIANCE
+STRONGEST_OBSTRUCTION = OUTPUT_LANE_SQRT_M_DUPLICATION_AND_LOSS_OF_INPUT_BLOCK_CANCELLATION_IN_THE_EXTERNAL_NORM
+OPEN_THEOREM = EXACT_SHARED_OUTPUT_LANE_JOINT_FEASIBLE_SET_AND_SHARP_WEIGHTED_AGGREGATE_RADIUS
+REUSABLE_STRUCTURE = SOURCE_OPERATOR_PLUS_HARD_SUPPORT_PROJECTIONS_PLUS_TAGGED_COVARIANCE_LOSS_LEDGER
+ROUND2_CLUE = CHARACTERIZE_THE_SHARED_OUTPUT_LANE_JOINT_FEASIBLE_SET_BEFORE_ANY_CARTESIAN_PRODUCT_PROMOTION
+```
 
 ## 0.40 已发布：TPC-246 weighted covariance-disk reassembly
 

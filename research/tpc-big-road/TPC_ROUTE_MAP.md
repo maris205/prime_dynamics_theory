@@ -2,18 +2,17 @@
 
 更新时间：2026-08-25
 
-当前地图版本：V99 / TPC-246
+当前地图版本：V100 / TPC-247
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-246`（`PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY`）；
-对应论文目录为 `papers/tpc-246-weighted-covariance-disk-reassembly/`。TPC-246 证明
-arbitrary jointly feasible local families 的 weighted disk containment，并在 complete
-Cartesian-product realizability 下证明 exact weighted Minkowski disk identity 与
-explicit reverse realization。TPC-244 common multiplier 特化使用 `|C_h|^2` weights；
-TPC-243 single-transfer error 作为 additive radius，给 conditional robust margin。
-literal V59 two-lane attachment、canonical block directions、source product
-realizability、payable positive margin、arithmetic `L2` 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-247`（`PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION`）；
+对应论文目录为 `papers/tpc-247-literal-v59-source-operator-attachment/`。TPC-247 把
+literal V59 scalar 精确写成 source-index covariance，证明 hard support blocks 的
+admissible triples exactly-once，并给 tagged external two-lane representation。其 exact
+代价是 output lane `sqrt(m)` duplication，且 separated input-block norm 不保留
+`A_x beta` cancellation。shared-lane joint feasible set、nonduplicating primitive
+attachment、payable margin、arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -55,9 +54,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V99 / TPC-246                     |
-        | WEIGHTED COVARIANCE-DISK REASSEMBLY              |
-        | aggregate geometry closed; source margin OPEN    |
+        | YOU ARE HERE — V100 / TPC-247                    |
+        | LITERAL V59 SOURCE-OPERATOR ATTACHMENT            |
+        | scalar attached; shared-lane joint set OPEN       |
         +--------------------------------------------------+
                 |
                 v
@@ -100,14 +99,14 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V99 / TPC-246 的
-weighted covariance-disk reassembly。coupled family containment、complete-product exact
-disk、zero/margin dichotomy 与 TPC-243 window-inflated enclosure 已闭合；但 local
-marginals 不自动给 source product realizability，physical chain 仍没有 canonical
-block directions 或 literal V59 two-lane attachment，也未支付
-`|C_agg|-R_agg-epsilon||W||||B||>0`。下一施工点是 source-native block attachment 与
-weighted longitudinal dominance。FULL_GATE_B、global strict `1/400`、`L2` 和
-fixed-atom credit 继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V100 / TPC-247 的
+literal V59 source-operator attachment。physical scalar、hard support block decomposition、
+admissible-triple exactly-once ledger 与 tagged two-lane covariance 已 exact 闭合；但
+external copy 会付出 output-lane `sqrt(m)` duplication toll，且 input-block cancellation
+不保存 external norm。下一施工点是不假设 Cartesian product 的
+shared-output-lane joint feasible set，再提取 payable weighted longitudinal dominance。
+FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit 继续
+OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1238,6 +1237,55 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.41 V100 / TPC-247：literal V59 source-operator attachment
+
+On the finite physical source space, TPC-247 freezes the exact V59 kernel as
+an operator `A_x` and proves
+
+```text
+C_x=<w,A_x beta>.
+```
+
+For every explicitly declared disjoint support partition with projections
+`P_b`, the blocks `A_cb=P_cA_xP_b` satisfy
+
+```text
+A_x=sum_(b,c) A_cb,
+C_x=sum_(b,c)<P_cw,A_cbP_b beta>,
+```
+
+with every admissible `(q,t,u)` triple represented exactly once.  Tagged
+external copies therefore give a literal two-lane covariance, but not a free
+near-isometry:
+
+```text
+||W_ext||^2=m||w||^2,
+||B_ext||^2=sum_(b,c)||A_cb beta_b||^2.
+```
+
+The second norm need not equal `||A_x beta||^2`; an exact three-coordinate
+counterexample has `A beta=0` while the tagged block norm squared is `2`.
+Thus source attachment is now literal, whereas primitive-frequency attachment,
+TPC-243 transport, a nonduplicating joint model, and every arithmetic saving
+remain open.
+
+```text
+TPC247_LITERAL_V59_SOURCE_INDEX_OPERATOR = PROVED_EXACT
+TPC247_HARD_SUPPORT_BLOCK_DECOMPOSITION = PROVED_EXACT
+TPC247_ADMISSIBLE_TRIPLE_EXACTLY_ONCE = PROVED_EXACT
+TPC247_TAGGED_EXTERNAL_TWO_LANE_COVARIANCE = PROVED_EXACT
+TPC247_W_LANE_NORM_INFLATION = PROVED_EXACT_SQRT_BLOCK_COUNT
+TPC247_B_LANE_NORM_PRESERVATION = REFUTED_SCOPED
+TPC247_SHARED_OUTPUT_LANE_JOINT_FEASIBLE_SET = OPEN
+TPC247_ARITHMETIC_ADVANCE = NO
+TPC247_L2 = NONE
+TPC247_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC247_STATUS = PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION
+```
+
+地图位置：**literal source operator 已经接上；下一步不再复制 output lane，
+而是精确分类 shared-lane probes 的 Gram ellipsoid joint feasible set。**
 
 ## 5.40 V99 / TPC-246：weighted covariance-disk reassembly
 
@@ -2966,11 +3014,15 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
-1. **TPC-246 已完成：weighted covariance-disk reassembly**。coupled family 有
+1. **TPC-247 已完成：literal V59 source-operator attachment**。physical scalar、
+   hard-block exactly-once decomposition 与 tagged two-lane covariance 已 exact；同时
+   `sqrt(m)` output duplication 和 input-block cancellation-loss 已以 exact counterexample
+   封存。下一步必须在 shared physical output lane 上分类 actual joint
+   feasible set，不能回退为独立 Cartesian-product marginals。
+2. **TPC-246 已完成：weighted covariance-disk reassembly**。coupled family 有
    unconditional aggregate containment；complete Cartesian product 有 exact disk、
-   explicit inverse 与 zero/margin dichotomy；TPC-243 leakage 只支付一次 additive
-   radius。下一步必须 source-lock actual joint family、two-lane attachment 与 payable
-   weighted longitudinal dominance，不能把 abstract product 当成 arithmetic source。
+   explicit inverse 与 zero/margin dichotomy；TPC-247 已证明 literal source blocks 存在，
+   但也证明独立 product promotion 会遗失 shared-lane cancellation。
 2. **TPC-245 已完成：sharp local covariance disks**。dimension-sensitive
    disk/circle/singleton/empty classification 与 sharp phase cone 已封存；其 local disks
    已由 TPC-246 exact reassemble，但 canonical directions 与 physical moments 仍开放。
@@ -3085,11 +3137,11 @@ NUMBERED_RELEASE = TPC-244
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-246 的下一步：source-native weighted longitudinal dominance**。构造 literal
-    V59 two-lane coefficient blocks 与 canonical projections，先确定 actual joint
-    feasible family 是否为 product 或严格耦合子集，再支付 local moments、transverse
-    radii、coefficient norms 与 hard-window leakage；目标是严格证明
-    `|C_agg|>R_agg+epsilon||W||||B||`，不得把 structural disk enclosure当成 arithmetic
+12. **TPC-247 的下一步：shared-lane Gram ellipsoid 与 weighted dominance**。
+    对同一 output block 上的 probes `A_cb beta_b` 精确分类 joint feasible set，
+    然后以 Gram pseudoinverse 提取 sharp aggregate radius；再回接 literal V59
+    longitudinal/transverse decomposition，目标是支付真实的
+    `|C_long|>R_trans+leakage`，不得把 structural ellipsoid 当成 arithmetic
     nonvanishing。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
@@ -3189,6 +3241,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-25 | V100 / TPC-247 | Bridge A / Gate B：literal V59 source operator 与 tagged two-lane covariance exact；shared-lane joint geometry/payable margin open | `TPC-247` | exact physical operator、hard-block exactly-once sum、tagged covariance、`sqrt(m)` duplication toll 与 cancellation-loss counterexample；arithmetic unchanged |
 | 2026-08-25 | V99 / TPC-246 | Bridge A / Gate B：weighted aggregate geometry exact for complete products；source product attachment and payable margin open | `TPC-246` | coupled-family containment、exact Cartesian-product disk、explicit inverse、zero/margin dichotomy 与 one-transfer window enclosure；arithmetic unchanged |
 | 2026-08-25 | V98 / TPC-245 | Bridge A / Gate B：local covariance feasible set exact classified；canonical block direction and literal attachment open | `TPC-245` | transverse dimension `>=2` closed disk、dimension `1` circle/singleton、dimension `0` singleton/unrealizable；sharp zero margin and phase cone |
 | 2026-08-25 | V97 / TPC-244 | Bridge A / Gate B：common outer multiplier sign localized；within-block covariance and literal attachment open | `TPC-244` | orthogonal main covariance exact `|C_h|^2<w_h,b_h>`；nonorthogonal sign-cut iff；TPC-243 pairwise leakage `2epsilon||W||||B||` |

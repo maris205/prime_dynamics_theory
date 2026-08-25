@@ -1,39 +1,40 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-25
-状态：`BOLD_CHANNEL_V99 / WEIGHTED_COVARIANCE_DISK_REASSEMBLY`
-claim level：`PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY`
-编号事实终点：TPC-246；TPC-246 trigger：`true`
+状态：`BOLD_CHANNEL_V100 / LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT`
+claim level：`PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION`
+编号事实终点：TPC-247；TPC-247 trigger：`true`
 
-当前 TPC-246 入口：proof 为
-`research/tpc-big-road/bridge_b_weighted_covariance_disk_reassembly.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py`，编号论文为
-`papers/tpc-246-weighted-covariance-disk-reassembly/`。对任意 jointly feasible local
-family，weighted aggregate contained in center `C=sum_h lambda_hc_h`、radius
-`R=sum_h|lambda_h|r_h` 的 disk；若 joint family 是 complete Cartesian product，则
-该 disk exact，且每个点有 explicit reverse realization。TPC-244 source-compatible
-weights 是 `|C_h|^2`。支付一次 TPC-243 transfer 后，robust sufficient margin 是
-`|C|-R-epsilon||W||||B||>0`；inflated physical disk 只作 containment。
+当前 TPC-247 入口：proof 为
+`research/tpc-big-road/bridge_b_literal_v59_source_operator_attachment.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachment_checker.py`，编号论文为
+`papers/tpc-247-literal-v59-source-operator-attachment/`。literal scalar exact 写为
+`C_x=<w,A_x beta>`；hard source support projections 保留全部 physical labels 并使每个
+admissible `(q,t,u)` triple exactly once。tagged external covariance exact，但
+`||W_ext||^2=m||w||^2`，且 separated `B` norm 不保留 `A_x beta` cancellation。
 
 ```text
-TPC246_COUPLED_FAMILY_CONTAINMENT = PROVED
-TPC246_WEIGHTED_DISK_IDENTITY = PROVED_EXACT
-TPC246_REVERSE_REALIZATION = PROVED_EXPLICIT
-TPC246_AGGREGATE_ZERO_CRITERION = PROVED_EXACT
-TPC246_COMMON_MULTIPLIER_SPECIALIZATION = PROVED_STRUCTURAL
-TPC246_HARD_WINDOW_RADIUS_INFLATION = PROVED_CONDITIONAL_ON_ATTACHMENT
-TPC246_HARD_WINDOW_IMAGE_EXACTNESS = NOT_CLAIMED
-TPC246_POSITIVE_RADIUS_CIRCLE_AS_DISK = FORBIDDEN
-TPC246_ARBITRARY_COMPLEX_WEIGHT_AS_COMMON_MULTIPLIER = FORBIDDEN
-TPC246_INDEPENDENT_SOURCE_REALIZABILITY = OPEN
-TPC246_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
-TPC246_PAYABLE_ARITHMETIC_MARGIN = OPEN
-TPC246_ARITHMETIC_ADVANCE = NO
-TPC246_L2 = NONE
-TPC246_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC246_STATUS = PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY
-TPC246_ROUND2_CLUE = SOURCE_NATIVE_WEIGHTED_LONGITUDINAL_DOMINANCE_BEYOND_TRANSVERSE_RADIUS_AND_WINDOW_LEAKAGE
+TPC247_LITERAL_V59_SOURCE_INDEX_OPERATOR = PROVED_EXACT
+TPC247_HARD_SUPPORT_BLOCK_DECOMPOSITION = PROVED_EXACT
+TPC247_ADMISSIBLE_TRIPLE_EXACTLY_ONCE = PROVED_EXACT
+TPC247_TAGGED_EXTERNAL_TWO_LANE_COVARIANCE = PROVED_EXACT
+TPC247_W_LANE_NORM_INFLATION = PROVED_EXACT_SQRT_BLOCK_COUNT
+TPC247_B_LANE_NORM_PRESERVATION = REFUTED_SCOPED
+TPC247_PRIMITIVE_FREQUENCY_ATTACHMENT = OPEN
+TPC247_TPC243_NEAR_ISOMETRY_ATTACHMENT = OPEN
+TPC247_ARITHMETIC_ADVANCE = NO
+TPC247_L2 = NONE
+TPC247_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC247_STATUS = PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION
+TPC247_ROUND2_CLUE = CHARACTERIZE_THE_SHARED_OUTPUT_LANE_JOINT_FEASIBLE_SET_BEFORE_ANY_CARTESIAN_PRODUCT_PROMOTION
 ```
+
+TPC-246 上游入口：proof 为
+`research/tpc-big-road/bridge_b_weighted_covariance_disk_reassembly.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py`，编号论文为
+`papers/tpc-246-weighted-covariance-disk-reassembly/`。它给出 complete-product weighted
+disk 与 margin calculus；TPC-247 现在说明 actual source block pairs 在同一 output block
+共享一个 lane，不能未经 audit 直接套用 pairwise Cartesian product。
 
 TPC-245 上游入口：proof 为
 `research/tpc-big-road/bridge_b_sharp_longitudinal_transverse_covariance_disks.md`，checker 为

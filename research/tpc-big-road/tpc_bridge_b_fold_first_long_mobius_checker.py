@@ -137,7 +137,7 @@ DEPENDENCIES = (
     ),
     (
         "research/tpc-big-road/PAPER_CANDIDATE_LEDGER.md",
-        "0f3a0d0add2c95abecf5ba9def8172a4a71505b50fdc84a17874ee5e2fcf5c63",
+        "d34d409fc53f2b19a9f645a04c47081586d353ac8a1125633fe0530a8acfac07",
     ),
 )
 

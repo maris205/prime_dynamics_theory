@@ -9,14 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-246 已完成 local covariance disks 的 weighted aggregate calculus。
-任意 jointly feasible family 都落在 center `sum_h lambda_h c_h`、radius
-`sum_h|lambda_h|r_h` 的 containing disk；在 complete Cartesian-product
-realizability 下该 disk exact，且有 explicit reverse construction、zero criterion 与
-minimum modulus。对 TPC-244 common multipliers，weights 精确为 `|C_h|^2`；支付
-TPC-243 single-transfer error 后，strict robust margin 是
-`|C_agg|-R_agg-epsilon||W||||B||>0`。literal V59 two-lane attachment、canonical
-block directions、product source realizability、payable margin 与 arithmetic `L2` 仍开放。
+当前主线状态：TPC-247 已把 literal V59 Gate-B scalar 精确写成 physical
+source-index operator covariance `C_x=<w,A_x beta>`，并以 disjoint support
+projections 得到 admissible `(q,t,u)` triples exactly-once 的 block sum。tagged
+external copies 给出真实 two-lane covariance，但 output lane 被每个 input block
+重复，精确支付 `||W_ext||^2=m||w||^2`；`B`-lane block norm 也不保留
+`A_x beta` 的 cross-block cancellation。primitive-frequency attachment、joint
+feasible set、payable norm、arithmetic `L2` 与 full Gate B 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -30,6 +29,8 @@ block directions、product source realizability、payable margin 与 arithmetic 
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-247-literal-v59-source-operator-attachment` - `PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION` - 将完整 V59 prime weight、unit masks、deleted diagonal 与 `K_H(u-t)` 锁入 source operator，证明 hard source blocks exactly-once 与 tagged two-lane covariance；同时精确证明 `sqrt(m)` output-copy toll 并反例否定 `B`-norm preservation，primitive-frequency attachment 与 arithmetic L2 仍开放。
 
 `tpc-246-weighted-covariance-disk-reassembly` - `PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY` - 证明任意复权重下 coupled local families 的 aggregate disk containment 与 complete Cartesian disk product 的 exact Minkowski identity，给出 explicit reverse realization、sharp zero/margin criterion，并把 TPC-243 hard-window leakage 作为单次 additive radius；literal source attachment、product realizability 与 arithmetic L2 仍开放。
 

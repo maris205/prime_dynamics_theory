@@ -1,9 +1,93 @@
 # TPC HANDOFF
 
 更新时间：2026-08-25
-交接状态：`BOLD_CHANNEL_V99_TPC246_WEIGHTED_COVARIANCE_DISK_REASSEMBLY_RELEASED`
+交接状态：`BOLD_CHANNEL_V100_TPC247_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_RELEASED`
 
-TPC-246 当前 section：weighted covariance-disk reassembly
+TPC-247 当前 section：literal V59 source-operator attachment
+-----------------------------------------------------------
+
+On the finite physical source space `H_x=C^(I_x)`, freeze the exact V59
+kernel in the operator
+
+```text
+A_x(u,t)=1_(u!=t) sum_(q in Q_x)
+ q 1_(q does not divide u)1_(q does not divide t)
+ K_H(u-t)[1_(u=t mod q)-1/(q-1)].
+```
+
+Since the physical `beta,w` are real and the inner product is conjugate-linear
+in the first slot,
+
+```text
+C_x=<w,A_x beta>.
+```
+
+For any explicitly declared disjoint source partition with support projections
+`P_b`, put `A_cb=P_cA_xP_b`, `beta_b=P_b beta`, and `w_c=P_cw`.  TPC-247 proves
+
+```text
+A_x=sum_(b,c)A_cb,
+C_x=sum_(b,c)<w_c,A_cb beta_b>,
+```
+
+and every admissible `(q,t,u)` triple occurs exactly once.  In tagged external
+copies this is one exact two-lane covariance.  It is not norm preserving:
+
+```text
+||W_ext||^2=m||w||^2,
+||B_ext||^2=sum_(b,c)||A_cb beta_b||^2.
+```
+
+The second quantity need not equal `||A_x beta||^2`; a three-coordinate
+fixture has `A beta=0` but external squared norm `2`.  Thus literal physical
+two-lane existence is now proved, while a nonduplicating/payable
+primitive-frequency attachment remains open.  The hard disjoint partition is
+not identified with V59's smooth bounded-overlap partition, and `A_x` is not
+promoted to a PSD Gram.
+
+```text
+TPC247_MAXIMUM_CLAIM = EXACT_LITERAL_V59_SOURCE_OPERATOR_BLOCK_DECOMPOSITION_AND_TAGGED_TWO_LANE_COVARIANCE_WITH_NORM_OBSTRUCTION
+TPC247_ROUTE_ADVANCE = YES_STRUCTURAL_SOURCE_ATTACHMENT
+TPC247_LITERAL_V59_SOURCE_INDEX_OPERATOR = PROVED_EXACT
+TPC247_HARD_SUPPORT_BLOCK_DECOMPOSITION = PROVED_EXACT
+TPC247_ADMISSIBLE_TRIPLE_EXACTLY_ONCE = PROVED_EXACT
+TPC247_TAGGED_EXTERNAL_TWO_LANE_COVARIANCE = PROVED_EXACT
+TPC247_W_LANE_NORM_INFLATION = PROVED_EXACT_SQRT_BLOCK_COUNT
+TPC247_B_LANE_NORM_PRESERVATION = REFUTED_SCOPED
+TPC247_SMOOTH_PARTITION_IDENTIFICATION = NOT_CLAIMED
+TPC247_PRIMITIVE_FREQUENCY_ATTACHMENT = OPEN
+TPC247_TPC243_NEAR_ISOMETRY_ATTACHMENT = OPEN
+TPC247_TPC244_COMMON_MULTIPLIER = OPEN
+TPC247_PSD_GRAM = NOT_CLAIMED
+TPC247_ARITHMETIC_ADVANCE = NO
+TPC247_FIXED_ATOM_CREDIT = 0
+TPC247_L2 = NONE
+TPC247_FULL_GATE_B = OPEN
+TPC247_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC247_TWIN_PRIME_RESULT = NONE
+TPC247_STATUS = PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION
+TPC247_ROUND2_CLUE = CHARACTERIZE_THE_SHARED_OUTPUT_LANE_JOINT_FEASIBLE_SET_BEFORE_ANY_CARTESIAN_PRODUCT_PROMOTION
+```
+
+strongest positive result：literal V59 scalar 的 exact source operator、hard-block
+exactly-once decomposition 与 tagged two-lane covariance；strongest obstruction：
+output lane 的 `sqrt(m)` duplication toll 与 input-block cancellation 在 external norm
+中消失；open theorem：shared-output-lane joint feasible set；reusable structure：
+physical kernel -> support projections -> tagged covariance -> norm ledger。
+
+编号论文目录：papers/tpc-247-literal-v59-source-operator-attachment/
+
+```text
+papers/tpc-247-literal-v59-source-operator-attachment/README.md
+papers/tpc-247-literal-v59-source-operator-attachment/PROOF_PACKAGE.md
+papers/tpc-247-literal-v59-source-operator-attachment/paper/paper.pdf
+papers/tpc-247-literal-v59-source-operator-attachment/results/tpc247_certificate.json
+papers/tpc-247-literal-v59-source-operator-attachment/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_literal_v59_source_operator_attachment.md
+research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachment_checker.py
+```
+
+TPC-246 上游 section：weighted covariance-disk reassembly
 ----------------------------------------------------------
 
 Let `A` be finite, let local covariance marginals lie in
@@ -6878,8 +6962,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V99/TPC-246 gate、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百五十四次（77 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V100/TPC-247 gate、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百五十六次（78 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -7037,11 +7121,23 @@ python -B research/tpc-big-road/tpc_bridge_b_sharp_longitudinal_transverse_covar
 python -O -B research/tpc-big-road/tpc_bridge_b_sharp_longitudinal_transverse_covariance_disks_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachment_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachment_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-246 入口：
+最新 TPC-247 入口：
+
+```text
+papers/tpc-247-literal-v59-source-operator-attachment/README.md
+papers/tpc-247-literal-v59-source-operator-attachment/notes/theorem_ledger.md
+papers/tpc-247-literal-v59-source-operator-attachment/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_literal_v59_source_operator_attachment.md
+research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachment_checker.py
+```
+
+TPC-246 上游入口：
 
 ```text
 papers/tpc-246-weighted-covariance-disk-reassembly/README.md

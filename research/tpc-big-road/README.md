@@ -1,16 +1,56 @@
-# TPC big road V99 / TPC-246: weighted covariance-disk reassembly
+# TPC big road V100 / TPC-247: literal V59 source-operator attachment
 
 更新时间：2026-08-25
 
-状态：`TPC246_PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY / FULL_GATE_B_OPEN`
+状态：`TPC247_PROVED_STRUCTURAL_L1_LITERAL_V59_SOURCE_OPERATOR_ATTACHMENT_WITH_NORM_OBSTRUCTION / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-246 proof 为
-`bridge_b_weighted_covariance_disk_reassembly.md`，checker 为
-`tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py`，编号论文为
-`../../papers/tpc-246-weighted-covariance-disk-reassembly/`。
+当前 TPC-247 proof 为
+`bridge_b_literal_v59_source_operator_attachment.md`，checker 为
+`tpc_bridge_b_literal_v59_source_operator_attachment_checker.py`，编号论文为
+`../../papers/tpc-247-literal-v59-source-operator-attachment/`。
+
+TPC-247 freezes the complete V59 physical kernel into one finite source operator:
+
+```text
+C_x=<w,A_x beta>.
+```
+
+For disjoint source support projections,
+
+```text
+C_x=sum_(b,c)<w_c,A_cb beta_b>,
+```
+
+with every admissible `(q,t,u)` triple exactly once.  Tagged external copies give
+one exact covariance but also the exact toll
+
+```text
+||W_ext||^2=m||w||^2,
+||B_ext||^2=sum_(b,c)||A_cb beta_b||^2.
+```
+
+The second norm need not equal `||A_x beta||^2`; hence no automatic TPC-243
+payment or TPC-246 Cartesian-product promotion follows.
+
+```text
+TPC247_LITERAL_V59_SOURCE_INDEX_OPERATOR = PROVED_EXACT
+TPC247_HARD_SUPPORT_BLOCK_DECOMPOSITION = PROVED_EXACT
+TPC247_TAGGED_EXTERNAL_TWO_LANE_COVARIANCE = PROVED_EXACT
+TPC247_W_LANE_NORM_INFLATION = PROVED_EXACT_SQRT_BLOCK_COUNT
+TPC247_B_LANE_NORM_PRESERVATION = REFUTED_SCOPED
+TPC247_PRIMITIVE_FREQUENCY_ATTACHMENT = OPEN
+TPC247_ARITHMETIC_ADVANCE = NO
+TPC247_L2 = NONE
+TPC247_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC247_ROUND2_CLUE = CHARACTERIZE_THE_SHARED_OUTPUT_LANE_JOINT_FEASIBLE_SET_BEFORE_ANY_CARTESIAN_PRODUCT_PROMOTION
+```
+
+## V99 upstream: TPC-246 weighted covariance-disk reassembly
+
+The previous current section follows for provenance.
 
 For local disks `S_h=c_h+r_h Dbar` and complex scalar covariance weights,
 
