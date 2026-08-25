@@ -9,13 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-251 已把 literal TPC-247/TPC-249 的 `lambda_cb=1` source
-scalar 接到 exhaustive declared hard blocks。对 block-flat direction，精确得到
-`C_x=C_long+Q_trans`，并在 projected probes 上使用 TPC-250 给出
-`|C_x-C_long|<=R_trans<=R_coh`。任何独立认证的 `|F-C_x|<=E` 都满足
-`|F|>=[|C_long|-R_coh-E]_+`；等号 cancellation 反例证明 strict margin 必不可少。
-partition/direction、actual V59 projected asymptotic、external `E`、arithmetic `L2`
-与 full Gate B 仍开放或仅为 modeling/conditional input。
+当前主线状态：TPC-252 已精确审计 TPC-251 declared partition 的全部 refinement
+自由度。一次 binary split 是 rank-one covariance transfer，且
+`R_trans(P')<=R_trans(P)`；singleton partition 令全部 projected probes、Gram、
+`R_trans/R_coh` 消失并使 `C_long=C_x`。因此
+`max_P[|C_long(P)|-R_coh(P)-E]_+=[|C_x|-E]_+`：自由优化 partition 只会退化为
+direct reverse-triangle bound，不能获得 arithmetic credit。下一步必须预先冻结一个
+由 physical interval 单独决定的非平凡 partition，并测试 literal V59 contrast；
+arithmetic `L2`、full Gate B 与 strict `1/400` 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +30,8 @@ partition/direction、actual V59 projected asymptotic、external `E`、arithmeti
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-252-declared-partition-refinement-degeneracy` - `PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY` - 证明 binary refinement 的 exact rank-one covariance transfer、true transverse radius monotonicity、fixed-probe Gram subtraction 与 universal singleton collapse，并严格给出 all-partition margin optimization 等于 direct external bound；自由 partition 优化因而被封口，actual V59 非零 contrast 与算术 saving 仍开放。
 
 `tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler` - `PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER` - 将 actual `lambda_cb=1` probes 在 exhaustive declared blocks 内精确收缩并作 block-flat longitudinal/transverse 分解，证明 projected Gram rank-one subtraction、TPC-250 coherence radius、conditional external lower margin 与 strict-endpoint obstruction；partition/direction 与 external error 均未冒充 source-canonical arithmetic input。
 

@@ -2,11 +2,49 @@
 
 更新时间：2026-08-25
 
-状态：**TPC251_PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER / PAYABLE_LONGITUDINAL_DOMINANCE_OPEN**
+状态：**TPC252_PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY / SOURCE_FROZEN_NONTRIVIAL_CONTRAST_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.46 已发布：TPC-252 declared-partition refinement degeneracy
+
+项目：`papers/tpc-252-declared-partition-refinement-degeneracy/`
+
+类型：**PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY**。
+
+For every binary split of one declared block, the normalized child contrast
+`z` gives the exact rank-one update
+
+```text
+M_P'=M_P+z tensor z,
+C_long(P')-C_long(P)=conjugate(<z,w>)<z,g>,
+Q_trans(P')-Q_trans(P)=-conjugate(<z,w>)<z,g>.
+```
+
+The exact transverse radius is nonincreasing.  A fixed auxiliary probe family
+has the corresponding rank-one projected-Gram subtraction, while native
+common input/output repartition is excluded because its probe indexing changes.
+At the singleton partition every projected probe, Gram and coherence quantity
+vanishes, so for fixed `E>=0`,
+
+```text
+max_P [|C_long(P)|-R_coh(P)-E]_+=[|C_x|-E]_+.
+```
+
+Thus adaptive optimization over every legal declared partition adds exactly
+zero strength over the direct external bound.  One fixed synthetic source
+shows existential partition dependence; a stable fixed source refutes the
+every-source version.  Neither fixture is literal numerical V59 arithmetic.
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_BINARY_RANK_ONE_COVARIANCE_TRANSFER_TRUE_RADIUS_MONOTONICITY_SINGLETON_COLLAPSE_AND_ALL_PARTITION_MARGIN_OPTIMALITY
+STRONGEST_OBSTRUCTION = FREE_PARTITION_OPTIMIZATION_CAN_MOVE_THE_FULL_KNOWN_SCALAR_INTO_C_LONG_AND_ERASE_THE_PROJECTED_RADIUS_SO_THE_OPTIMUM_IS_TAUTOLOGICAL
+OPEN_THEOREM = FREEZE_ONE_NONTRIVIAL_SOURCE_ONLY_PARTITION_AND_ESTIMATE_ITS_LITERAL_V59_CONTRAST_AND_PROJECTED_RADIUS_ON_A_COMMON_CLOCK
+REUSABLE_STRUCTURE = BLOCK_AVERAGING_TO_BINARY_CONTRAST_TO_RANK_ONE_COVARIANCE_TRANSFER_TO_SINGLETON_OPTIMIZATION_FIREWALL
+ROUND2_CLUE = FREEZE_A_NONTRIVIAL_SOURCE_ONLY_PARTITION_TREE_AND_TEST_ONE_LITERAL_V59_BINARY_CONTRAST_BEFORE_ANY_MARGIN_OPTIMIZATION
+```
 
 ## 0.45 已发布：TPC-251 literal V59 declared-block longitudinal/transverse margin compiler
 

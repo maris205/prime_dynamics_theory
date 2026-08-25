@@ -1,54 +1,57 @@
-# TPC big road V104 / TPC-251: literal V59 declared-block margin compiler
+# TPC big road V105 / TPC-252: declared-partition refinement degeneracy
 
 更新时间：2026-08-25
 
-状态：`TPC251_PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER / FULL_GATE_B_OPEN`
+状态：`TPC252_PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-251 proof 为
-`bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler.md`，checker 为
-`tpc_bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler_checker.py`，编号论文为
-`../../papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/`。
+当前 TPC-252 proof 为
+`bridge_b_declared_partition_refinement_degeneracy.md`，checker 为
+`tpc_bridge_b_declared_partition_refinement_degeneracy_checker.py`，编号论文为
+`../../papers/tpc-252-declared-partition-refinement-degeneracy/`。
 
-TPC-251 specializes the literal TPC-247/TPC-249 weights to one:
-
-```text
-g_c=sum_b v_cb=P_cA_x beta,
-C_x=sum_c<w_c,g_c>.
-```
-
-On each exhaustive declared block it proves
+For a binary split `P -> P'`, TPC-252 introduces the unique normalized child
+contrast `z` and proves
 
 ```text
-C_x=C_long+Q_trans,
-|C_x-C_long|<=R_trans<=R_coh,
+M_P'=M_P+z tensor z,
+C_long(P')=C_long(P)+conjugate(<z,w>)<z,g>,
+Q_trans(P')=Q_trans(P)-conjugate(<z,w>)<z,g>,
+R_trans(P')<=R_trans(P).
 ```
 
-where `R_coh` uses TPC-250 only on the projected transverse probes.  For any
-independently certified `|F-C_x|<=E`,
-`|F|>=[|C_long|-R_coh-E]_+`.  Equality can cancel exactly, so the endpoint
-must be strict.  The partition and block-flat direction are declared modeling
-choices, and TPC-243 does not automatically supply `E`.
+At the singleton partition all projected probes, Gram entries and coherence
+quantities vanish, `C_long=C_x`, and for every fixed external `E>=0`,
 
 ```text
-TPC251_LITERAL_LAMBDA_ONE_CONTRACTION = PROVED_EXACT
-TPC251_LONGITUDINAL_TRANSVERSE_IDENTITY = PROVED_EXACT
-TPC251_PROJECTED_GRAM_SUBTRACTION = PROVED_EXACT
-TPC251_PROJECTED_COHERENCE_UPPER = PROVED_EXACT_TPC250_INHERITANCE
-TPC251_TRANSVERSE_RADIUS_CHAIN = PROVED_EXACT
-TPC251_EXTERNAL_MARGIN_COMPILER = CONDITIONAL_THEOREM_ON_CERTIFIED_E
-TPC251_STRICT_NONVANISHING = CONDITIONAL_THEOREM_ON_STRICT_MARGIN
-TPC251_EQUALITY_NONVANISHING = REFUTED_SCOPED
-TPC251_TPC243_EXTERNAL_ERROR = CONDITIONAL_INPUT_NOT_AUTOMATIC
-TPC251_ACTUAL_V59_PROJECTED_COHERENCE_ASYMPTOTIC = OPEN
-TPC251_PAYABLE_LONGITUDINAL_DOMINANCE = OPEN
-TPC251_ARITHMETIC_ADVANCE = NO
-TPC251_L2 = NONE
-TPC251_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC251_ROUND2_CLUE = ESTIMATE_THE_LITERAL_BLOCK_LONGITUDINAL_CENTER_AND_PROJECTED_COHERENCE_RADIUS_ON_ONE_V59_CLOCK_OR_BUILD_A_SOURCE_LEVEL_MARGIN_OBSTRUCTION
+max_P [|C_long(P)|-R_coh(P)-E]_+=[|C_x|-E]_+.
 ```
+
+Thus unrestricted adaptive partition search cannot improve the direct external
+bound.  The next legal test must freeze a nontrivial partition from the source
+clock before inspecting its realized margin.
+
+```text
+TPC252_BINARY_REFINEMENT_PROJECTION = PROVED_EXACT_RANK_ONE
+TPC252_BINARY_REFINEMENT_COVARIANCE_TRANSFER = PROVED_EXACT
+TPC252_TRANSVERSE_RADIUS_REFINEMENT = PROVED_NONINCREASING
+TPC252_SINGLETON_PROJECTED_GRAM_AND_RADIUS = PROVED_ZERO
+TPC252_PARTITION_MARGIN_OPTIMIZATION = PROVED_EQUAL_TO_DIRECT_BOUND
+TPC252_EVERY_SOURCE_PARTITION_INSTABILITY = REFUTED_SCOPED
+TPC252_ACTUAL_V59_ARITHMETIC_INSTABILITY = OPEN
+TPC252_ARITHMETIC_ADVANCE = NO
+TPC252_L2 = NONE
+TPC252_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC252_ROUND2_CLUE = FREEZE_A_NONTRIVIAL_SOURCE_ONLY_PARTITION_TREE_AND_TEST_ONE_LITERAL_V59_BINARY_CONTRAST_BEFORE_ANY_MARGIN_OPTIMIZATION
+```
+
+## V104 upstream: TPC-251 literal V59 declared-block margin compiler
+
+TPC-251 supplies the exact `C_x=C_long+Q_trans` decomposition, projected Gram
+subtraction, coherence radius and conditional external strict margin audited
+by TPC-252.
 
 ## V103 upstream: TPC-250 coherence-controlled Gram quadratic sharpness
 

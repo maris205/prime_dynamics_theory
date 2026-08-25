@@ -1,9 +1,90 @@
 # TPC HANDOFF
 
 更新时间：2026-08-25
-交接状态：`BOLD_CHANNEL_V104_TPC251_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER_RELEASED`
+交接状态：`BOLD_CHANNEL_V105_TPC252_DECLARED_PARTITION_REFINEMENT_DEGENERACY_RELEASED`
 
-TPC-251 当前 section：literal V59 declared-block longitudinal/transverse margin compiler
+TPC-252 当前 section：declared-partition refinement degeneracy
+--------------------------------------------------------------
+
+Keep the finite literal TPC-247 scalar fixed:
+
+```text
+g=A_x beta,
+C_x=<w,g>.
+```
+
+For an exhaustive nonempty coordinate partition `P`, let `M_P` be block
+averaging.  If `P'` splits one block into two nonempty children and `z` is the
+normalized child contrast, TPC-252 proves
+
+```text
+M_P'=M_P+z tensor z,
+C_long(P')=C_long(P)+conj(<z,w>)<z,g>,
+Q_trans(P')=Q_trans(P)-conj(<z,w>)<z,g>,
+R_trans(P')<=R_trans(P).
+```
+
+For a fixed auxiliary probe family, its projected Gram has the same rank-one
+subtraction.  This is not a native common input/output repartition update:
+that operation changes probe labels, cardinality and vectors.
+
+At the singleton partition, block averaging is the identity.  Every projected
+probe and Gram entry vanishes, as do `D,L,mu,U,Q_trans,R_trans,R_coh`; `kappa`
+is undefined because `D=0`, while `C_long=C_x`.  Hence, for every fixed
+independently certified `E>=0`,
+
+```text
+max_P [|C_long(P)|-R_coh(P)-E]_+=[|C_x|-E]_+.
+```
+
+Unrestricted adaptive partition search therefore adds no strength over the
+direct external bound.  A fixed two-coordinate synthetic source proves
+existential partition dependence, while another fixed source refutes
+every-source instability.  Neither is a literal numerical V59 instance.
+
+```text
+TPC252_LITERAL_V59_SINGLETON_IDENTITY = PROVED_EXACT_FINITE
+TPC252_BINARY_REFINEMENT_PROJECTION = PROVED_EXACT_RANK_ONE
+TPC252_BINARY_REFINEMENT_COVARIANCE_TRANSFER = PROVED_EXACT
+TPC252_FIXED_PROBE_PROJECTED_GRAM_UPDATE = PROVED_EXACT_WITH_FIXED_PROBE_FIREWALL
+TPC252_TRANSVERSE_RADIUS_REFINEMENT = PROVED_NONINCREASING
+TPC252_SINGLETON_PROJECTED_GRAM_AND_RADIUS = PROVED_ZERO
+TPC252_PARTITION_MARGIN_OPTIMIZATION = PROVED_EQUAL_TO_DIRECT_BOUND
+TPC252_SAME_SOURCE_SYNTHETIC_NONINVARIANCE = PROVED_EXACT
+TPC252_EVERY_SOURCE_PARTITION_INSTABILITY = REFUTED_SCOPED
+TPC252_ACTUAL_V59_ARITHMETIC_INSTABILITY = OPEN
+TPC252_CANONICAL_PARTITION = NOT_CLAIMED
+TPC252_ARITHMETIC_ADVANCE = NO
+TPC252_FIXED_ATOM_CREDIT = 0
+TPC252_L2 = NONE
+TPC252_FULL_GATE_B = OPEN
+TPC252_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC252_TWIN_PRIME_RESULT = NONE
+TPC252_STATUS = PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY
+TPC252_ROUND2_CLUE = FREEZE_A_NONTRIVIAL_SOURCE_ONLY_PARTITION_TREE_AND_TEST_ONE_LITERAL_V59_BINARY_CONTRAST_BEFORE_ANY_MARGIN_OPTIMIZATION
+```
+
+strongest positive result：binary rank-one covariance transfer、true transverse
+radius monotonicity、singleton collapse 与 exact all-partition margin optimum；
+strongest obstruction：free partition search can tautologically move the full
+known scalar into `C_long` and erase every projected radius；open theorem：freeze
+one source-only nontrivial split and estimate its actual V59 contrast；reusable
+structure：block averaging -> binary contrast -> covariance transfer -> singleton
+optimization firewall。
+
+编号论文目录：papers/tpc-252-declared-partition-refinement-degeneracy/
+
+```text
+papers/tpc-252-declared-partition-refinement-degeneracy/README.md
+papers/tpc-252-declared-partition-refinement-degeneracy/PROOF_PACKAGE.md
+papers/tpc-252-declared-partition-refinement-degeneracy/paper/paper.pdf
+papers/tpc-252-declared-partition-refinement-degeneracy/results/tpc252_certificate.json
+papers/tpc-252-declared-partition-refinement-degeneracy/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_declared_partition_refinement_degeneracy.md
+research/tpc-big-road/tpc_bridge_b_declared_partition_refinement_degeneracy_checker.py
+```
+
+TPC-251 上游 section：literal V59 declared-block longitudinal/transverse margin compiler
 -----------------------------------------------------------------------------------------
 
 Let `I` be the literal finite V59 source interval and let
@@ -7293,8 +7374,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V104/TPC-251 gate、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百六十四次（82 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V105/TPC-252 gate、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百六十六次（83 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -7462,11 +7543,23 @@ python -B research/tpc-big-road/tpc_bridge_b_coherence_controlled_gram_quadratic
 python -O -B research/tpc-big-road/tpc_bridge_b_coherence_controlled_gram_quadratic_sharpness_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_declared_partition_refinement_degeneracy_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_declared_partition_refinement_degeneracy_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-251 入口：
+最新 TPC-252 入口：
+
+```text
+papers/tpc-252-declared-partition-refinement-degeneracy/README.md
+papers/tpc-252-declared-partition-refinement-degeneracy/notes/theorem_ledger.md
+papers/tpc-252-declared-partition-refinement-degeneracy/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_declared_partition_refinement_degeneracy.md
+research/tpc-big-road/tpc_bridge_b_declared_partition_refinement_degeneracy_checker.py
+```
+
+TPC-251 上游入口：
 
 ```text
 papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/README.md

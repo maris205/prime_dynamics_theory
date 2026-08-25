@@ -2,18 +2,18 @@
 
 更新时间：2026-08-25
 
-当前地图版本：V104 / TPC-251
+当前地图版本：V105 / TPC-252
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-251`（`PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER`）；
+当前编号锚点：`TPC-252`（`PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY`）；
 对应论文目录为
-`papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/`。
-TPC-251 在 exhaustive declared blocks 上把 literal `lambda=1` scalar exact 分解为
-longitudinal center 与 transverse remainder，以 rank-one-subtracted projected Gram 和
-TPC-250 coherence envelope 编译出 conditional strict margin。actual V59 longitudinal
-surplus、projected coherence asymptotic、external error、arithmetic `L2` 与 full Gate B
-仍 OPEN。
+`papers/tpc-252-declared-partition-refinement-degeneracy/`。
+TPC-252 证明 declared partition 的 binary refinement 是 exact rank-one covariance
+transfer，`R_trans` 非增，singleton endpoint 令所有 projected quantities 消失；因此
+unrestricted partition-margin optimization 恰等于 direct external bound。下一步必须
+冻结 source-only nontrivial partition 后测试 literal V59 contrast；arithmetic `L2` 与
+full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -55,9 +55,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V104 / TPC-251                    |
-        | LITERAL DECLARED-BLOCK MARGIN COMPILER            |
-        | exact split; payable strict surplus OPEN          |
+        | YOU ARE HERE — V105 / TPC-252                    |
+        | PARTITION REFINEMENT DEGENERACY                   |
+        | free optimization closed; frozen contrast OPEN    |
         +--------------------------------------------------+
                 |
                 v
@@ -100,14 +100,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V104 / TPC-251 的
-literal declared-block longitudinal/transverse margin compiler。现在已有 exact
-`C_x=C_long+Q_trans`、projected Gram rank-one subtraction 与
-`|C_x-C_long|<=R_trans<=R_coh`；独立认证 `|F-C_x|<=E` 后，
-`|C_long|>R_coh+E` 严格推出 `F!=0`。等号可精确抵消，partition/direction 只是 declared
-modeling choices，且 actual V59 的 center、coherence 与 `E` 均未支付。下一施工点必须转向
-source-level quantitative margin 或 source-level obstruction。FULL_GATE_B、global strict
-`1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V105 / TPC-252。
+TPC-251 的 exact margin compiler 已经经过完整 refinement 审计：binary split 只转移一个
+contrast covariance，singleton 会令 transverse/coherence radius 退化为零，故自由搜索
+partition 的最佳 margin 与 direct reverse-triangle bound 完全相同。这封住了几何调参
+捷径；下一施工点是从 physical interval 预先冻结一个非平凡 split（首选 midpoint），
+然后对同一个 literal V59 `w,A_x beta` 估计 contrast product。FULL_GATE_B、global strict
+`1/400`、arithmetic `L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NONE。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1238,6 +1237,50 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.46 V105 / TPC-252：declared-partition refinement degeneracy
+
+For a binary split of one block, let `z` be the normalized child contrast.
+TPC-252 proves the exact source-preserving calculus
+
+```text
+M_P'=M_P+z tensor z,
+C_long(P')=C_long(P)+conj(<z,w>)<z,g>,
+Q_trans(P')=Q_trans(P)-conj(<z,w>)<z,g>,
+R_trans(P')<=R_trans(P).
+```
+
+The projected-Gram rank-one subtraction is valid for a fixed probe family;
+native common input/output repartition changes the probes and is not identified
+with that update.  Repeated refinement reaches singleton coordinates, where
+all projected probes, Gram data, `D/L/mu/U`, `Q_trans`, `R_trans` and `R_coh`
+vanish while `C_long=C_x`.  Therefore, for every fixed independently certified
+`E>=0`,
+
+```text
+max_P [|C_long(P)|-R_coh(P)-E]_+=[|C_x|-E]_+.
+```
+
+```text
+TPC252_BINARY_REFINEMENT_PROJECTION = PROVED_EXACT_RANK_ONE
+TPC252_BINARY_REFINEMENT_COVARIANCE_TRANSFER = PROVED_EXACT
+TPC252_FIXED_PROBE_PROJECTED_GRAM_UPDATE = PROVED_EXACT_WITH_FIXED_PROBE_FIREWALL
+TPC252_TRANSVERSE_RADIUS_REFINEMENT = PROVED_NONINCREASING
+TPC252_SINGLETON_PROJECTED_GRAM_AND_RADIUS = PROVED_ZERO
+TPC252_PARTITION_MARGIN_OPTIMIZATION = PROVED_EQUAL_TO_DIRECT_BOUND
+TPC252_SAME_SOURCE_SYNTHETIC_NONINVARIANCE = PROVED_EXACT
+TPC252_EVERY_SOURCE_PARTITION_INSTABILITY = REFUTED_SCOPED
+TPC252_ACTUAL_V59_ARITHMETIC_INSTABILITY = OPEN
+TPC252_CANONICAL_PARTITION = NOT_CLAIMED
+TPC252_ARITHMETIC_ADVANCE = NO
+TPC252_L2 = NONE
+TPC252_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC252_STATUS = PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY
+```
+
+地图位置：**unrestricted declared-partition optimization 已精确封口；singleton
+attainment 说明任何仅靠观察 margin 后再选 partition 的 gain 都是 tautological。
+下一关必须从 `I_x` 本身预声明 nontrivial split，并直接编译 one literal V59 contrast。**
 
 ## 5.45 V104 / TPC-251：literal V59 declared-block longitudinal/transverse margin compiler
 
@@ -2788,7 +2831,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V97 / TPC-244：
+截至 V105 / TPC-252：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -2803,6 +2846,16 @@ TPC_210_TRIGGER = true
 TPC_211_TRIGGER = true
 TPC_212_TRIGGER = true
 TPC_213_TRIGGER = true
+TPC_252_TRIGGER = true
+TPC252_BINARY_REFINEMENT_COVARIANCE_TRANSFER = PROVED_EXACT
+TPC252_TRANSVERSE_RADIUS_REFINEMENT = PROVED_NONINCREASING
+TPC252_SINGLETON_PROJECTED_GRAM_AND_RADIUS = PROVED_ZERO
+TPC252_PARTITION_MARGIN_OPTIMIZATION = PROVED_EQUAL_TO_DIRECT_BOUND
+TPC252_CANONICAL_PARTITION = NOT_CLAIMED
+TPC252_ACTUAL_V59_ARITHMETIC_INSTABILITY = OPEN
+TPC252_ARITHMETIC_ADVANCE = NO
+TPC252_L2 = NONE
+TPC252_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
 TPC212_EMITTER_ONLY_UNIVERSAL_SAVING = REFUTED_SCOPED
 TPC212_PHYSICAL_CROSS_DIVISOR_GRAM_BOUND = REPLACED_BY_TPC213_OPERATOR
 TPC213_PHYSICAL_DIRECT_SUM_REPLACEMENT = REFUTED_SCOPED
@@ -3210,11 +3263,14 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
+1. **TPC-252 已完成：declared-partition refinement degeneracy**。
+   binary split 的 rank-one covariance transfer、true-radius monotonicity、singleton
+   collapse 与 all-partition margin optimum 已 exact；unrestricted adaptive partition
+   search 被证明只等于 direct bound。下一步冻结 coefficient-independent midpoint split，
+   编译并测试一个 literal V59 contrast，不再自由优化 partition。
 1. **TPC-251 已完成：literal V59 declared-block margin compiler**。
-   literal `lambda=1` scalar 已 exact 分解为 longitudinal center 与 projected transverse
-   remainder，rank-one-subtracted Gram、coherence radius 和 external-error strict margin
-   已闭合；equality cancellation 证明 endpoint 必须严格。下一步只做 actual V59
-   source-level quantitative margin 或 source-level obstruction。
+   literal `lambda=1` scalar 的 exact longitudinal/transverse split、projected Gram、
+   coherence radius 与 conditional strict margin 已由 TPC-252 完成 refinement audit。
 1. **TPC-250 已完成：coherence-controlled Gram quadratic sharpness**。
    `D,L,mu` 已给出 exact two-sided envelope、strict finite noncancellation criterion
    与 independent/global radius inheritance；PSD adversaries 证明常数与 floor sharp。
@@ -3348,12 +3404,11 @@ NUMBERED_RELEASE = TPC-244
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-251 的下一步：actual V59 source-level margin audit**。
-    在一个 literal V59 clock 上计算或渐近估计 declared block-flat moments、projected
-    diagonal mass/coherence 与 independently certified `E_external`，检验
-    `|C_long|>R_coh+E_external`。若自然 partitions 均失败，则把 partition-stability
-    failure 写成 source-level obstruction；不得把 synthetic fixture 或自由选方向冒充
-    arithmetic nonvanishing。
+12. **TPC-252 的下一步：source-frozen midpoint contrast audit**。
+    仅由 `I_x` 的次序与中点预声明左右两块，写出 normalized contrast 对 literal
+    `w` 与 `A_x beta` 的 exact partial-sum/kernel formulas，再判断可由现有 source
+    theorem 支付哪些项。不得把 synthetic fixture、singleton endpoint 或观察结果后
+    调整 split 冒充 arithmetic nonvanishing。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -3452,6 +3507,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-25 | V105 / TPC-252 | Bridge A / Gate B：unrestricted declared-partition optimization exact closed；source-frozen nontrivial contrast open | `TPC-252` | binary rank-one covariance transfer、true-radius monotonicity、fixed-probe Gram firewall、singleton collapse 与 all-partition margin identity；arithmetic unchanged |
 | 2026-08-25 | V104 / TPC-251 | Bridge A / Gate B：literal declared-block longitudinal/transverse margin compiler exact；actual payable surplus open | `TPC-251` | `lambda=1` source contraction、exact projection split、rank-one Gram subtraction、projected coherence radius、conditional external-error margin 与 equality-cancellation obstruction；arithmetic unchanged |
 | 2026-08-25 | V103 / TPC-250 | Bridge A / Gate B：exact Gram quadratic 有 sharp coherence envelope；literal projected coherence/payable margin open | `TPC-250` | total empty-pair convention、two-sided `D/L/mu` bound、strict finite noncancellation、budget inheritance、PSD sharpness 与 marginal-only obstruction；arithmetic unchanged |
 | 2026-08-25 | V102 / TPC-249 | Bridge A / Gate B：weighted shared-lane scalar and radius exact；literal Gram estimate/payable margin open | `TPC-249` | within-lane contraction、Gram support、reverse realization、global budget、tagged equality 与 exact-cancellation adversary；arithmetic unchanged |
