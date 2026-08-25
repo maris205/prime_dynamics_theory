@@ -2,16 +2,18 @@
 
 更新时间：2026-08-25
 
-当前地图版本：V103 / TPC-250
+当前地图版本：V104 / TPC-251
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-250`（`PROVED_STRUCTURAL_L1_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS`）；
-对应论文目录为 `papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/`。TPC-250
-从 diagonal energy `D`、weighted mass `L` 与 active coherence `mu` 导出 exact
-Gram quadratic 的 sharp two-sided envelope，并继承到 TPC-249 independent/global
-radii。PSD adversaries 证明上下系数与 zero floor sharp；actual V59 coherence
-asymptotic、arithmetic `L2` 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-251`（`PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER`）；
+对应论文目录为
+`papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/`。
+TPC-251 在 exhaustive declared blocks 上把 literal `lambda=1` scalar exact 分解为
+longitudinal center 与 transverse remainder，以 rank-one-subtracted projected Gram 和
+TPC-250 coherence envelope 编译出 conditional strict margin。actual V59 longitudinal
+surplus、projected coherence asymptotic、external error、arithmetic `L2` 与 full Gate B
+仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -53,9 +55,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V103 / TPC-250                    |
-        | COHERENCE-CONTROLLED GRAM QUADRATIC SHARPNESS     |
-        | sharp envelope; V59 coherence estimate OPEN       |
+        | YOU ARE HERE — V104 / TPC-251                    |
+        | LITERAL DECLARED-BLOCK MARGIN COMPILER            |
+        | exact split; payable strict surplus OPEN          |
         +--------------------------------------------------+
                 |
                 v
@@ -98,12 +100,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V103 / TPC-250 的
-coherence-controlled Gram quadratic sharpness。exact shared-lane scalar 现在已有
-`[D-mu(L^2-D)]_+` 到 `D+mu(L^2-D)` 的 total two-sided envelope，
-`mu(kappa-1)<1` 是严格 finite noncancellation certificate，且 universal constants
-已由 PSD adversaries 锁死。下一施工点是对 literal `lambda=1` probes 做 declared-block
-longitudinal/transverse 投影并测试真实 strict margin。FULL_GATE_B、global strict
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V104 / TPC-251 的
+literal declared-block longitudinal/transverse margin compiler。现在已有 exact
+`C_x=C_long+Q_trans`、projected Gram rank-one subtraction 与
+`|C_x-C_long|<=R_trans<=R_coh`；独立认证 `|F-C_x|<=E` 后，
+`|C_long|>R_coh+E` 严格推出 `F!=0`。等号可精确抵消，partition/direction 只是 declared
+modeling choices，且 actual V59 的 center、coherence 与 `E` 均未支付。下一施工点必须转向
+source-level quantitative margin 或 source-level obstruction。FULL_GATE_B、global strict
 `1/400`、`L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
@@ -1235,6 +1238,70 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.45 V104 / TPC-251：literal V59 declared-block longitudinal/transverse margin compiler
+
+On an exhaustive declared partition `I=disjoint_union_c J_c`, specialize the
+TPC-247/TPC-249 weights to one:
+
+```text
+g_c=sum_b v_cb=P_cA_x beta,
+C_x=sum_c <w_c,g_c>.
+```
+
+For the declared block-flat unit `u_c=|J_c|^(-1/2)1_{J_c}`, write
+`a_c=<u_c,w_c>`, `b_c=<u_c,g_c>` and project both vectors orthogonally to
+`u_c`.  TPC-251 proves
+
+```text
+C_x=C_long+Q_trans,
+C_long=sum_c conj(a_c)b_c,
+G_c^perp(b,b')=G_c(b,b')-conj(m_cb)m_cb'.
+```
+
+The TPC-250 upper envelope applied only to the projected probes gives a
+computable `U_c` and
+
+```text
+|C_x-C_long|<=R_trans<=R_coh,
+R_coh=sum_c ||w_c^perp||U_c.
+```
+
+Consequently, if an independent theorem certifies `|F-C_x|<=E`, then
+
+```text
+|F|>=[|C_long|-R_coh-E]_+.
+```
+
+The strict positive margin certifies `F!=0`.  Equality is sharp: a block-flat
+fixture has `C_long=1`, `Q_trans=-1`, and total scalar zero.  The exhaustive
+partition and block-flat direction are declared modeling choices rather than
+V59-canonical data, and TPC-243 does not automatically supply the external
+error `E`.
+
+```text
+TPC251_LITERAL_LAMBDA_ONE_CONTRACTION = PROVED_EXACT
+TPC251_EXHAUSTIVE_HARD_PARTITION = PROVED_FOR_DECLARED_MODELING_CHOICE
+TPC251_BLOCK_FLAT_DIRECTION = PROVED_FOR_DECLARED_MODELING_CHOICE
+TPC251_LONGITUDINAL_TRANSVERSE_IDENTITY = PROVED_EXACT
+TPC251_PROJECTED_GRAM_SUBTRACTION = PROVED_EXACT
+TPC251_PROJECTED_COHERENCE_UPPER = PROVED_EXACT_TPC250_INHERITANCE
+TPC251_TRANSVERSE_RADIUS_CHAIN = PROVED_EXACT
+TPC251_EXTERNAL_MARGIN_COMPILER = CONDITIONAL_THEOREM_ON_CERTIFIED_E
+TPC251_STRICT_NONVANISHING = CONDITIONAL_THEOREM_ON_STRICT_MARGIN
+TPC251_EQUALITY_NONVANISHING = REFUTED_SCOPED
+TPC251_TPC243_EXTERNAL_ERROR = CONDITIONAL_INPUT_NOT_AUTOMATIC
+TPC251_ACTUAL_V59_PROJECTED_COHERENCE_ASYMPTOTIC = OPEN
+TPC251_PAYABLE_LONGITUDINAL_DOMINANCE = OPEN
+TPC251_ARITHMETIC_ADVANCE = NO
+TPC251_L2 = NONE
+TPC251_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC251_STATUS = PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER
+```
+
+地图位置：**从 literal source operator 到 strict-margin statement 的结构链已经接通；
+下一步不能再增加纯几何外壳，而必须在一个 actual V59 clock 上估计 `C_long`、projected
+`D/L/mu` 与独立 external `E`，或证明任何自然 declared partition 都无法产生正 margin。**
 
 ## 5.44 V103 / TPC-250：coherence-controlled Gram quadratic sharpness
 
@@ -3143,6 +3210,11 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
+1. **TPC-251 已完成：literal V59 declared-block margin compiler**。
+   literal `lambda=1` scalar 已 exact 分解为 longitudinal center 与 projected transverse
+   remainder，rank-one-subtracted Gram、coherence radius 和 external-error strict margin
+   已闭合；equality cancellation 证明 endpoint 必须严格。下一步只做 actual V59
+   source-level quantitative margin 或 source-level obstruction。
 1. **TPC-250 已完成：coherence-controlled Gram quadratic sharpness**。
    `D,L,mu` 已给出 exact two-sided envelope、strict finite noncancellation criterion
    与 independent/global radius inheritance；PSD adversaries 证明常数与 floor sharp。
@@ -3276,13 +3348,12 @@ NUMBERED_RELEASE = TPC-244
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-250 的下一步：literal declared-block longitudinal/transverse margin**。
-    对 exhaustive nonempty hard partition 使用 actual `lambda_cb=1`，令
-    `g_c=P_cA_x beta`；在 block-flat declared direction 上 exact 分解
-    `C_x=C_long+Q_trans`，并只从 projected probes 的新 Gram/coherence 得到
-    `R_trans` 上界。目标条件是
-    `|C_long|>R_coh+E_external`；partition、direction 与 TPC-243 leakage 均不得冒充
-    source-canonical 或已支付 arithmetic input。
+12. **TPC-251 的下一步：actual V59 source-level margin audit**。
+    在一个 literal V59 clock 上计算或渐近估计 declared block-flat moments、projected
+    diagonal mass/coherence 与 independently certified `E_external`，检验
+    `|C_long|>R_coh+E_external`。若自然 partitions 均失败，则把 partition-stability
+    failure 写成 source-level obstruction；不得把 synthetic fixture 或自由选方向冒充
+    arithmetic nonvanishing。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -3381,6 +3452,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-25 | V104 / TPC-251 | Bridge A / Gate B：literal declared-block longitudinal/transverse margin compiler exact；actual payable surplus open | `TPC-251` | `lambda=1` source contraction、exact projection split、rank-one Gram subtraction、projected coherence radius、conditional external-error margin 与 equality-cancellation obstruction；arithmetic unchanged |
 | 2026-08-25 | V103 / TPC-250 | Bridge A / Gate B：exact Gram quadratic 有 sharp coherence envelope；literal projected coherence/payable margin open | `TPC-250` | total empty-pair convention、two-sided `D/L/mu` bound、strict finite noncancellation、budget inheritance、PSD sharpness 与 marginal-only obstruction；arithmetic unchanged |
 | 2026-08-25 | V102 / TPC-249 | Bridge A / Gate B：weighted shared-lane scalar and radius exact；literal Gram estimate/payable margin open | `TPC-249` | within-lane contraction、Gram support、reverse realization、global budget、tagged equality 与 exact-cancellation adversary；arithmetic unchanged |
 | 2026-08-25 | V101 / TPC-248 | Bridge A / Gate B：shared-lane joint set exact Gram ellipsoid；weighted group contraction/payable margin open | `TPC-248` | range-restricted pseudoinverse energy、sphere/slack dichotomy、physical conjugation、global-budget coupling 与 polydisk obstruction；arithmetic unchanged |

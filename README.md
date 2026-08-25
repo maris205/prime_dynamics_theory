@@ -9,13 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-250 已为 TPC-249 的 exact shared-lane Gram quadratic 建立
-coherence-controlled sharp envelope。若 `D=sum_i |lambda_i|^2||v_i||^2`、
-`L=sum_i |lambda_i|||v_i||`，active coherence 为 `mu`，则
-`| ||g||^2-D |<=mu(L^2-D)`；`D>0` 时
-`mu(L^2/D-1)<1` 给出严格 noncancellation certificate。上下界系数与 zero floor
-均由 PSD adversaries 证明 sharp；相同 marginals 仍允许 squared norm 从 `4` 到 `0`。
-actual V59 coherence asymptotic、arithmetic `L2` 与 full Gate B 仍开放。
+当前主线状态：TPC-251 已把 literal TPC-247/TPC-249 的 `lambda_cb=1` source
+scalar 接到 exhaustive declared hard blocks。对 block-flat direction，精确得到
+`C_x=C_long+Q_trans`，并在 projected probes 上使用 TPC-250 给出
+`|C_x-C_long|<=R_trans<=R_coh`。任何独立认证的 `|F-C_x|<=E` 都满足
+`|F|>=[|C_long|-R_coh-E]_+`；等号 cancellation 反例证明 strict margin 必不可少。
+partition/direction、actual V59 projected asymptotic、external `E`、arithmetic `L2`
+与 full Gate B 仍开放或仅为 modeling/conditional input。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +29,8 @@ actual V59 coherence asymptotic、arithmetic `L2` 与 full Gate B 仍开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler` - `PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER` - 将 actual `lambda_cb=1` probes 在 exhaustive declared blocks 内精确收缩并作 block-flat longitudinal/transverse 分解，证明 projected Gram rank-one subtraction、TPC-250 coherence radius、conditional external lower margin 与 strict-endpoint obstruction；partition/direction 与 external error 均未冒充 source-canonical arithmetic input。
 
 `tpc-250-coherence-controlled-gram-quadratic-sharpness` - `PROVED_STRUCTURAL_L1_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS` - 从 diagonal weighted energy、weighted one-norm 与 active coherence 导出 exact Gram quadratic 的 sharp two-sided envelope，并继承到 independent/global TPC-249 radii；PSD equicorrelation、anti-correlation、simplex 与同 marginal 对抗样例证明常数、zero floor 与 marginal-only obstruction 全部 sharp，actual V59 coherence arithmetic 仍开放。
 

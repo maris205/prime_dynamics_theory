@@ -2,11 +2,53 @@
 
 更新时间：2026-08-25
 
-状态：**TPC250_PROVED_STRUCTURAL_L1_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS / ACTUAL_V59_COHERENCE_ASYMPTOTIC_OPEN**
+状态：**TPC251_PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER / PAYABLE_LONGITUDINAL_DOMINANCE_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.45 已发布：TPC-251 literal V59 declared-block longitudinal/transverse margin compiler
+
+项目：`papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/`
+
+类型：**PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER**。
+
+On an exhaustive declared hard partition, specialize the literal TPC-247
+weights to one and choose the declared block-flat unit vector `u_c`.  With
+
+```text
+g_c=P_cA_x beta,
+C_x=sum_c <w_c,g_c>,
+```
+
+TPC-251 proves the exact split and projected Gram identity
+
+```text
+C_x=C_long+Q_trans,
+G_c^perp(b,b')=G_c(b,b')-conj(m_cb)m_cb'.
+```
+
+Applying TPC-250 only to the projected probes gives
+
+```text
+|C_x-C_long|<=R_trans<=R_coh.
+```
+
+Thus every independently certified `|F-C_x|<=E` satisfies
+`|F|>=[|C_long|-R_coh-E]_+`, and the strict positive margin certifies
+nonvanishing.  A block-flat equality fixture has `C_long=1`, transverse term
+`-1`, and total scalar zero, proving that the endpoint cannot be weakened.
+The partition and block-flat direction remain declared modeling choices, and
+TPC-243 does not automatically provide `E`.
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_LITERAL_LAMBDA_ONE_LONGITUDINAL_TRANSVERSE_SPLIT_WITH_PROJECTED_GRAM_COHERENCE_RADIUS_AND_CONDITIONAL_STRICT_MARGIN_COMPILER
+STRONGEST_OBSTRUCTION = EQUALITY_CAN_CANCEL_EXACTLY_AND_NO_SOURCE_THEOREM_YET_PAYS_THE_ACTUAL_V59_LONGITUDINAL_SURPLUS_PROJECTED_COHERENCE_OR_EXTERNAL_ERROR
+OPEN_THEOREM = PROVE_ON_ONE_LITERAL_V59_CLOCK_THAT_ABS_C_LONG_EXCEEDS_R_COH_PLUS_A_SEPARATELY_CERTIFIED_E
+REUSABLE_STRUCTURE = SOURCE_OPERATOR_TO_DECLARED_PROJECTION_TO_RANK_ONE_GRAM_SUBTRACTION_TO_COHERENCE_RADIUS_TO_EXTERNAL_ERROR_MARGIN
+ROUND2_CLUE = ESTIMATE_THE_LITERAL_BLOCK_LONGITUDINAL_CENTER_AND_PROJECTED_COHERENCE_RADIUS_ON_ONE_V59_CLOCK_OR_BUILD_A_SOURCE_LEVEL_MARGIN_OBSTRUCTION
+```
 
 ## 0.44 已发布：TPC-250 coherence-controlled Gram quadratic sharpness
 

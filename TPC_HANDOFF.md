@@ -1,9 +1,108 @@
 # TPC HANDOFF
 
 更新时间：2026-08-25
-交接状态：`BOLD_CHANNEL_V103_TPC250_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS_RELEASED`
+交接状态：`BOLD_CHANNEL_V104_TPC251_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER_RELEASED`
 
-TPC-250 当前 section：coherence-controlled Gram quadratic sharpness
+TPC-251 当前 section：literal V59 declared-block longitudinal/transverse margin compiler
+-----------------------------------------------------------------------------------------
+
+Let `I` be the literal finite V59 source interval and let
+`I=disjoint_union_c J_c` be an exhaustive declared nonempty hard partition.
+Specialize the TPC-247/TPC-249 weights to one:
+
+```text
+v_cb=P_cA_xP_b beta,
+g_c=sum_b v_cb=P_cA_x beta,
+C_x=sum_c <w_c,g_c>.
+```
+
+For the declared block-flat unit `u_c=|J_c|^(-1/2)1_{J_c}`, define
+
+```text
+a_c=<u_c,w_c>,
+b_c=<u_c,g_c>,
+m_cb=<u_c,v_cb>.
+```
+
+Orthogonal projection gives the exact longitudinal/transverse split and the
+rank-one-subtracted projected Gram matrix:
+
+```text
+C_x=C_long+Q_trans,
+C_long=sum_c conj(a_c)b_c,
+G_c^perp(b,b')=G_c(b,b')-conj(m_cb)m_cb'.
+```
+
+Apply TPC-250 only to the projected probes.  Its lane-wise upper envelope
+defines `U_c`, whence
+
+```text
+R_trans=sum_c ||w_c^perp||||g_c^perp||,
+R_coh=sum_c ||w_c^perp||U_c,
+|C_x-C_long|<=R_trans<=R_coh.
+```
+
+For every independently certified scalar `F` and `E>=0` satisfying
+`|F-C_x|<=E`, TPC-251 proves
+
+```text
+|F-C_long|<=R_coh+E,
+|F|>=[|C_long|-R_coh-E]_+.
+```
+
+Thus the strict margin `|C_long|>R_coh+E` certifies `F!=0`.  Equality cannot
+be accepted: a block-flat two-direction fixture has `C_long=1`,
+`Q_trans=-1`, `R_trans=1`, and total scalar zero.  The exhaustive partition
+and block-flat direction are declared modeling choices, not V59-canonical
+objects, and TPC-243 does not automatically supply the external error `E`.
+
+```text
+TPC251_MAXIMUM_CLAIM = EXACT_LITERAL_LAMBDA_ONE_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_SPLIT_WITH_PROJECTED_GRAM_COHERENCE_RADIUS_CONDITIONAL_EXTERNAL_ERROR_MARGIN_AND_EQUALITY_OBSTRUCTION
+TPC251_ROUTE_ADVANCE = YES_STRUCTURAL_LITERAL_MARGIN_COMPILER
+TPC251_LITERAL_LAMBDA_ONE_CONTRACTION = PROVED_EXACT
+TPC251_EXHAUSTIVE_HARD_PARTITION = PROVED_FOR_DECLARED_MODELING_CHOICE
+TPC251_BLOCK_FLAT_DIRECTION = PROVED_FOR_DECLARED_MODELING_CHOICE
+TPC251_LONGITUDINAL_TRANSVERSE_IDENTITY = PROVED_EXACT
+TPC251_PROJECTED_GRAM_SUBTRACTION = PROVED_EXACT
+TPC251_PROJECTED_COHERENCE_UPPER = PROVED_EXACT_TPC250_INHERITANCE
+TPC251_TRANSVERSE_RADIUS_CHAIN = PROVED_EXACT
+TPC251_EXTERNAL_MARGIN_COMPILER = CONDITIONAL_THEOREM_ON_CERTIFIED_E
+TPC251_STRICT_NONVANISHING = CONDITIONAL_THEOREM_ON_STRICT_MARGIN
+TPC251_EQUALITY_NONVANISHING = REFUTED_SCOPED
+TPC251_FIXED_SOURCE_DISK_IMAGE = NOT_CLAIMED
+TPC251_TPC243_EXTERNAL_ERROR = CONDITIONAL_INPUT_NOT_AUTOMATIC
+TPC251_ACTUAL_V59_PROJECTED_COHERENCE_ASYMPTOTIC = OPEN
+TPC251_PAYABLE_LONGITUDINAL_DOMINANCE = OPEN
+TPC251_ARITHMETIC_ADVANCE = NO
+TPC251_FIXED_ATOM_CREDIT = 0
+TPC251_L2 = NONE
+TPC251_FULL_GATE_B = OPEN
+TPC251_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC251_TWIN_PRIME_RESULT = NONE
+TPC251_STATUS = PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER
+TPC251_ROUND2_CLUE = ESTIMATE_THE_LITERAL_BLOCK_LONGITUDINAL_CENTER_AND_PROJECTED_COHERENCE_RADIUS_ON_ONE_V59_CLOCK_OR_BUILD_A_SOURCE_LEVEL_MARGIN_OBSTRUCTION
+```
+
+strongest positive result：literal `lambda=1` exact projection split、projected
+coherence radius 与 independently certified external error 的 strict-margin compiler；
+strongest obstruction：equality 可精确抵消，且 actual V59 center/coherence/`E` 尚无
+source theorem 支付；open theorem：在一个 literal V59 clock 上证明
+`|C_long|>R_coh+E`；reusable structure：source operator -> declared projection ->
+rank-one Gram subtraction -> coherence radius -> external-error margin。
+
+编号论文目录：papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/
+
+```text
+papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/README.md
+papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/PROOF_PACKAGE.md
+papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/paper/paper.pdf
+papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/results/tpc251_certificate.json
+papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler.md
+research/tpc-big-road/tpc_bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler_checker.py
+```
+
+TPC-250 上游 section：coherence-controlled Gram quadratic sharpness
 ------------------------------------------------------------------
 
 For a TPC-249 weighted shared-lane probe, put
@@ -7194,8 +7293,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V103/TPC-250 gate、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百六十二次（81 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V104/TPC-251 gate、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百六十四次（82 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -7361,11 +7460,23 @@ python -B research/tpc-big-road/tpc_bridge_b_sharp_weighted_shared_lane_contract
 python -O -B research/tpc-big-road/tpc_bridge_b_sharp_weighted_shared_lane_contraction_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_coherence_controlled_gram_quadratic_sharpness_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_coherence_controlled_gram_quadratic_sharpness_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-250 入口：
+最新 TPC-251 入口：
+
+```text
+papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/README.md
+papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/notes/theorem_ledger.md
+papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler.md
+research/tpc-big-road/tpc_bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler_checker.py
+```
+
+TPC-250 上游入口：
 
 ```text
 papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/README.md

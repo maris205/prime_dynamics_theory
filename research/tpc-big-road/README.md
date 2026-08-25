@@ -1,53 +1,59 @@
-# TPC big road V103 / TPC-250: coherence-controlled Gram quadratic sharpness
+# TPC big road V104 / TPC-251: literal V59 declared-block margin compiler
 
 更新时间：2026-08-25
 
-状态：`TPC250_PROVED_STRUCTURAL_L1_COHERENCE_CONTROLLED_GRAM_QUADRATIC_SHARPNESS / FULL_GATE_B_OPEN`
+状态：`TPC251_PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-250 proof 为
-`bridge_b_coherence_controlled_gram_quadratic_sharpness.md`，checker 为
-`tpc_bridge_b_coherence_controlled_gram_quadratic_sharpness_checker.py`，编号论文为
-`../../papers/tpc-250-coherence-controlled-gram-quadratic-sharpness/`。
+当前 TPC-251 proof 为
+`bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler.md`，checker 为
+`tpc_bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler_checker.py`，编号论文为
+`../../papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/`。
 
-TPC-250 starts from the exact TPC-249 weighted probe
-
-```text
-g=sum_i lambda_i v_i
-```
-
-and proves the exact deviation and two-sided envelopes
+TPC-251 specializes the literal TPC-247/TPC-249 weights to one:
 
 ```text
-| ||g||^2-D |<=mu(L^2-D),
-[D-mu(L^2-D)]_+<=||g||^2<=D+mu(L^2-D).
+g_c=sum_b v_cb=P_cA_x beta,
+C_x=sum_c<w_c,g_c>.
 ```
 
-Here `D=sum_i |lambda_i|^2||v_i||^2`, `L=sum_i|lambda_i|||v_i||`, and
-`mu` is active coherence, defined as zero when fewer than two terms are
-active.  For `D>0`, `mu(L^2/D-1)<1` certifies noncancellation.  The bound
-inherits to both exact TPC-249 budget radii.  PSD equicorrelation,
-anti-correlation, simplex and same-marginal controls prove the universal
-constants and zero floor sharp.
+On each exhaustive declared block it proves
 
 ```text
-TPC250_GRAM_DEVIATION_BOUND = PROVED_EXACT
-TPC250_TWO_SIDED_COHERENCE_ENVELOPE = PROVED_EXACT
-TPC250_NONCANCELLATION_CONDITION = PROVED_IF_MU_TIMES_KAPPA_MINUS_ONE_LT_ONE
-TPC250_INDEPENDENT_RADIUS_ENVELOPE = PROVED_EXACT_INHERITANCE
-TPC250_GLOBAL_RADIUS_ENVELOPE = PROVED_EXACT_INHERITANCE
-TPC250_UPPER_CONSTANT_SHARPNESS = PROVED_PSD_EQUICORRELATED
-TPC250_SIGNED_LOWER_CONSTANT_SHARPNESS = PROVED_PSD_TWO_VECTOR
-TPC250_NONNEGATIVE_FLOOR = PROVED_NECESSARY
-TPC250_MARGINAL_ONLY_IMPROVEMENT = REFUTED_SCOPED
-TPC250_ACTUAL_V59_COHERENCE_ASYMPTOTIC = OPEN
-TPC250_ARITHMETIC_ADVANCE = NO
-TPC250_L2 = NONE
-TPC250_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC250_ROUND2_CLUE = PROJECT_THE_LITERAL_LAMBDA_EQUALS_ONE_PROBES_ONTO_A_DECLARED_BLOCK_LONGITUDINAL_DIRECTION_AND_TEST_THE_STRICT_MARGIN
+C_x=C_long+Q_trans,
+|C_x-C_long|<=R_trans<=R_coh,
 ```
+
+where `R_coh` uses TPC-250 only on the projected transverse probes.  For any
+independently certified `|F-C_x|<=E`,
+`|F|>=[|C_long|-R_coh-E]_+`.  Equality can cancel exactly, so the endpoint
+must be strict.  The partition and block-flat direction are declared modeling
+choices, and TPC-243 does not automatically supply `E`.
+
+```text
+TPC251_LITERAL_LAMBDA_ONE_CONTRACTION = PROVED_EXACT
+TPC251_LONGITUDINAL_TRANSVERSE_IDENTITY = PROVED_EXACT
+TPC251_PROJECTED_GRAM_SUBTRACTION = PROVED_EXACT
+TPC251_PROJECTED_COHERENCE_UPPER = PROVED_EXACT_TPC250_INHERITANCE
+TPC251_TRANSVERSE_RADIUS_CHAIN = PROVED_EXACT
+TPC251_EXTERNAL_MARGIN_COMPILER = CONDITIONAL_THEOREM_ON_CERTIFIED_E
+TPC251_STRICT_NONVANISHING = CONDITIONAL_THEOREM_ON_STRICT_MARGIN
+TPC251_EQUALITY_NONVANISHING = REFUTED_SCOPED
+TPC251_TPC243_EXTERNAL_ERROR = CONDITIONAL_INPUT_NOT_AUTOMATIC
+TPC251_ACTUAL_V59_PROJECTED_COHERENCE_ASYMPTOTIC = OPEN
+TPC251_PAYABLE_LONGITUDINAL_DOMINANCE = OPEN
+TPC251_ARITHMETIC_ADVANCE = NO
+TPC251_L2 = NONE
+TPC251_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC251_ROUND2_CLUE = ESTIMATE_THE_LITERAL_BLOCK_LONGITUDINAL_CENTER_AND_PROJECTED_COHERENCE_RADIUS_ON_ONE_V59_CLOCK_OR_BUILD_A_SOURCE_LEVEL_MARGIN_OBSTRUCTION
+```
+
+## V103 upstream: TPC-250 coherence-controlled Gram quadratic sharpness
+
+TPC-250 supplies the projected-probe `D,L,mu` upper bound and total
+empty-pair convention used above.
 
 ## V102 upstream: TPC-249 sharp weighted shared-lane contraction
 

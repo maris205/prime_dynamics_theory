@@ -1,0 +1,517 @@
+{
+  "digest": "6889ad170412bc2b0c4add41338ab1b1f3819d7b0e4ebbe3db9d05c264500023",
+  "payload": {
+    "claim": "PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER",
+    "complex_orientation": {
+      "encoding": "each scalar is [real,imag] with canonical rational strings",
+      "expected": {
+        "C_long": [
+          "1",
+          "-1"
+        ],
+        "G12": [
+          "1",
+          "-2"
+        ],
+        "Gperp12": [
+          "0",
+          "1"
+        ],
+        "a": [
+          "0",
+          "1"
+        ],
+        "b": [
+          "1",
+          "1"
+        ],
+        "m1": [
+          "1",
+          "1"
+        ],
+        "m2": [
+          "2",
+          "-1"
+        ]
+      },
+      "g": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "u": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "v1": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "v2": [
+        [
+          "2",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "w": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ]
+    },
+    "counts": {
+      "complex_orientation_fixtures": 1,
+      "edge_cases": 2,
+      "equality_obstructions": 1,
+      "operator_replays": 1
+    },
+    "definitions": {
+      "R_coh": "sum_c ||w_c_perp|| U_c",
+      "R_trans": "sum_c ||w_c_perp|| ||g_c_perp||",
+      "external_error": "independently certified conditional input",
+      "inner_product": "conjugate-linear first",
+      "mu_empty_pair_rule": "mu=0 when fewer than two projected probes are active",
+      "projected_gram": "Gperp_c(bb')=G_c(bb')-conjugate(m_cb)m_cb'"
+    },
+    "edge_cases": [
+      {
+        "D": "0",
+        "L": "0",
+        "U": "0",
+        "block_size": 1,
+        "mu": "0",
+        "name": "singleton_declared_block",
+        "projected_probe_norms": [
+          "0"
+        ],
+        "reason": "the transverse space is zero"
+      },
+      {
+        "D": "9/25",
+        "L": "3/5",
+        "U": "3/5",
+        "block_size": 4,
+        "mu": "0",
+        "name": "one_active_projected_probe",
+        "projected_probe_norms": [
+          "3/5",
+          "0"
+        ],
+        "reason": "TPC-250 empty-pair convention"
+      }
+    ],
+    "equality_obstruction": {
+      "expected": {
+        "C": "0",
+        "C_long": "1",
+        "Q_trans": "-1",
+        "R_trans": "1"
+      },
+      "g": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "label": "EXACT_EQUALITY_OBSTRUCTION_NOT_NONVANISHING",
+      "t": [
+        "1/2",
+        "-1/2",
+        "1/2",
+        "-1/2"
+      ],
+      "u": [
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2"
+      ],
+      "w": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ]
+    },
+    "evidence_label": "EXACT_RATIONAL_STRUCTURAL_CERTIFICATE",
+    "firewall": {
+      "TPC251_ACTUAL_V59_PROJECTED_COHERENCE_ASYMPTOTIC": "OPEN",
+      "TPC251_ARITHMETIC_ADVANCE": "NO",
+      "TPC251_BLOCK_FLAT_DIRECTION": "MODELING_CHOICE_RELATIVE_TO_DECLARED_BLOCK",
+      "TPC251_FIXED_ATOM_CREDIT": "0",
+      "TPC251_FULL_GATE_B": "OPEN",
+      "TPC251_FULL_GATE_B_STRICT_1_OVER_400": "UNPAID_GLOBAL",
+      "TPC251_HARD_PARTITION": "MODELING_CHOICE_EXHAUSTIVE_NONEMPTY",
+      "TPC251_L2": "NONE",
+      "TPC251_PAYABLE_LONGITUDINAL_DOMINANCE": "OPEN",
+      "TPC251_TPC243_EXTERNAL_ERROR": "CONDITIONAL_INPUT_NOT_AUTOMATIC",
+      "TPC251_TWIN_PRIME_RESULT": "NONE"
+    },
+    "operator_replay": {
+      "A": [
+        [
+          "4/5",
+          "0",
+          "0",
+          "0",
+          "13/20",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/5",
+          "0",
+          "0",
+          "0",
+          "13/20",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "4/5",
+          "0",
+          "0",
+          "0",
+          "-3/20",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/5",
+          "0",
+          "0",
+          "0",
+          "-3/20",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "5/6",
+          "0",
+          "0",
+          "0",
+          "1/6",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-1/6",
+          "0",
+          "0",
+          "0",
+          "7/6",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "5/6",
+          "0",
+          "0",
+          "0",
+          "1/6",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-1/6",
+          "0",
+          "0",
+          "0",
+          "7/6",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "beta": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "blocks": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      "derived": {
+        "C_long": "11/2",
+        "C_x": "9/2",
+        "Q_trans": "-1",
+        "R_coh": "1",
+        "R_trans": "1",
+        "external_distance": "3/2",
+        "external_upper": "3/2",
+        "groups": [
+          {
+            "D": "1",
+            "L": "7/5",
+            "U": "1",
+            "a": "1",
+            "b_long": "3/2",
+            "c": 0,
+            "g": [
+              "29/20",
+              "17/20",
+              "13/20",
+              "1/20"
+            ],
+            "g_perp": [
+              "7/10",
+              "1/10",
+              "-1/10",
+              "-7/10"
+            ],
+            "gram": [
+              [
+                "34/25",
+                "1/2"
+              ],
+              [
+                "1/2",
+                "89/100"
+              ]
+            ],
+            "gram_perp": [
+              [
+                "9/25",
+                "0"
+              ],
+              [
+                "0",
+                "16/25"
+              ]
+            ],
+            "mu": "0",
+            "transverse_norm": "1",
+            "u": [
+              "1/2",
+              "1/2",
+              "1/2",
+              "1/2"
+            ],
+            "w": [
+              "-1/5",
+              "2/5",
+              "3/5",
+              "6/5"
+            ],
+            "w_perp": [
+              "-7/10",
+              "-1/10",
+              "1/10",
+              "7/10"
+            ],
+            "w_perp_norm": "1"
+          },
+          {
+            "D": "2",
+            "L": "2",
+            "U": "2",
+            "a": "2",
+            "b_long": "2",
+            "c": 1,
+            "g": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "g_perp": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "gram": [
+              [
+                "13/9",
+                "-1/9"
+              ],
+              [
+                "-1/9",
+                "25/9"
+              ]
+            ],
+            "gram_perp": [
+              [
+                "1",
+                "-1"
+              ],
+              [
+                "-1",
+                "1"
+              ]
+            ],
+            "mu": "1",
+            "transverse_norm": "0",
+            "u": [
+              "1/2",
+              "1/2",
+              "1/2",
+              "1/2"
+            ],
+            "w": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "w_perp": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "w_perp_norm": "0"
+          }
+        ],
+        "lower_margin": "4",
+        "probes": [
+          {
+            "b": 0,
+            "c": 0,
+            "d": "3/5",
+            "m": "1",
+            "v": [
+              "4/5",
+              "1/5",
+              "4/5",
+              "1/5"
+            ],
+            "v_perp": [
+              "3/10",
+              "-3/10",
+              "3/10",
+              "-3/10"
+            ]
+          },
+          {
+            "b": 1,
+            "c": 0,
+            "d": "4/5",
+            "m": "1/2",
+            "v": [
+              "13/20",
+              "13/20",
+              "-3/20",
+              "-3/20"
+            ],
+            "v_perp": [
+              "2/5",
+              "2/5",
+              "-2/5",
+              "-2/5"
+            ]
+          },
+          {
+            "b": 0,
+            "c": 1,
+            "d": "1",
+            "m": "2/3",
+            "v": [
+              "5/6",
+              "-1/6",
+              "5/6",
+              "-1/6"
+            ],
+            "v_perp": [
+              "1/2",
+              "-1/2",
+              "1/2",
+              "-1/2"
+            ]
+          },
+          {
+            "b": 1,
+            "c": 1,
+            "d": "1",
+            "m": "4/3",
+            "v": [
+              "1/6",
+              "7/6",
+              "1/6",
+              "7/6"
+            ],
+            "v_perp": [
+              "-1/2",
+              "1/2",
+              "-1/2",
+              "1/2"
+            ]
+          }
+        ],
+        "strict_nonzero": true
+      },
+      "dimension": 8,
+      "external": {
+        "E": "1/2",
+        "F": "4"
+      },
+      "label": "SYNTHETIC_EXACT_FINITE_OPERATOR_REPLAY_NOT_A_LITERAL_V59_ARITHMETIC_INSTANCE",
+      "w": [
+        "-1/5",
+        "2/5",
+        "3/5",
+        "6/5",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    "source_lock": {
+      "fixed_source_disk_image": "NOT_CLAIMED",
+      "handoff_sha256": "c0460de36fb09655078b6040f501539a63515eebe4667b65e666995b7810912f",
+      "literal_weight": "lambda_cb=1",
+      "partition_status": "declared exhaustive nonempty modeling choice"
+    }
+  },
+  "schema": "TPC251_MARGIN_CERTIFICATE_V1"
+}

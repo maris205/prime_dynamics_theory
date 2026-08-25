@@ -1,0 +1,295 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\pos}[1]{\left(#1\right)_{+}}
+
+\title{A Declared-Block Longitudinal--Transverse Margin Compiler\\
+for the Literal V59 Scalar}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology, Wuhan, China\\
+\texttt{liang.wang@hust.edu.cn}}
+\date{August 25, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give an exact longitudinal--transverse margin compiler for the literal V59
+source scalar after an exhaustive nonempty coordinate partition has been
+declared.  The literal block weights are one, so the probes contract inside
+each physical output lane before projection.  Projection onto the flat unit
+of each declared block yields an exact scalar decomposition; the transverse
+remainder is bounded first by its true block norms and then by a projected
+coherence envelope inherited from TPC-250.  Any independently certified
+external scalar therefore obeys a computable lower margin, and strict
+longitudinal dominance implies nonvanishing.  An exact rational
+$8$-coordinate operator replay gives
+$C_{\rm long}=11/2$, $Q_{\rm trans}=-1$, $C_x=9/2$, and
+$R_{\rm trans}=R_{\rm coh}=1$; with $(F,E)=(4,1/2)$, the external bound and
+the lower margin $4$ are attained.  Equality is insufficient for
+nonvanishing.  The partition and flat direction are modeling choices, and no
+actual V59 coherence asymptotic or arithmetic advance is claimed.
+\end{abstract}
+
+\section{Source lock and scope}
+
+Let $H=\C^I$, where $I$ is finite and nonempty, with inner product
+conjugate-linear in the first argument.  Declare an exhaustive disjoint
+partition
+\[
+ I=\bigsqcup_d J_d, \qquad J_d\ne\varnothing,
+\]
+and let $P_d$ be its coordinate projections.  The same complete partition
+indexes source blocks $b$ and output blocks $c$.  From the literal TPC-247
+source operator we import only \cite{tpc247}
+\[
+ \beta_b=P_b\beta,\quad A_{cb}=P_cA_xP_b,\quad
+ v_{cb}=A_{cb}\beta_b,\quad w_c=P_cw.
+\]
+The actual scalar has $\lambda_{cb}=1$.  Hence
+\begin{equation}\label{eq:literal}
+ g_c:=\sum_bv_{cb}=P_cA_x\beta,
+ \qquad C_x=\ip{w}{A_x\beta}=\sum_c\ip{w_c}{g_c}.
+\end{equation}
+
+The hard partition is a modeling choice.  Once it is declared, define the
+block-flat unit
+\[
+ u_c=|J_c|^{-1/2}{\bf 1}_{J_c}.
+\]
+This unit is canonical only relative to $J_c$.  It is not a V59-canonical
+direction, and it is not the TPC-219 longitudinal object \cite{tpc219}.
+These distinctions prevent the finite decomposition below from acquiring an
+unproved arithmetic interpretation.
+
+\section{The declared-block compiler}
+
+Set
+\[
+ a_c=\ip{u_c}{w_c},\quad b_c=\ip{u_c}{g_c},\quad
+ w_c^\perp=w_c-a_cu_c,
+\]
+and, probe by probe,
+\[
+ m_{cb}=\ip{u_c}{v_{cb}},\qquad
+ v_{cb}^\perp=v_{cb}-m_{cb}u_c,\qquad
+ g_c^\perp=\sum_bv_{cb}^\perp.
+\]
+Let $G_c(bb')=\ip{v_{cb}}{v_{cb'}}$.  For
+$d_{cb}=\norm{v_{cb}^\perp}$ define
+\[
+ D_c=\sum_bd_{cb}^2,\qquad L_c=\sum_bd_{cb}.
+\]
+If fewer than two $d_{cb}$ are nonzero, set $\mu_c=0$.  Otherwise set
+\[
+ \mu_c=\max_{\substack{b\ne b'\\d_{cb}d_{cb'}>0}}
+ \frac{|\ip{v_{cb}^\perp}{v_{cb'}^\perp}|}{d_{cb}d_{cb'}}.
+\]
+This is exactly the total empty-pair convention needed to apply TPC-250 to
+the projected family \cite{tpc250}.  Finally put
+\begin{equation}\label{eq:upper}
+ U_c=\sqrt{D_c+\mu_c(L_c^2-D_c)}\ge0.
+\end{equation}
+
+\begin{theorem}[Literal declared-block margin compiler]\label{thm:compiler}
+Define
+\begin{align*}
+ C_{\rm long}&=\sum_c\conj{a_c}b_c,&
+ Q_{\rm trans}&=\sum_c\ip{w_c^\perp}{g_c^\perp},\\
+ R_{\rm trans}&=\sum_c\norm{w_c^\perp}\norm{g_c^\perp},&
+ R_{\rm coh}&=\sum_c\norm{w_c^\perp}U_c.
+\end{align*}
+Then
+\begin{equation}\label{eq:chain}
+ C_x=C_{\rm long}+Q_{\rm trans},\qquad
+ |C_x-C_{\rm long}|\le R_{\rm trans}\le R_{\rm coh}.
+\end{equation}
+Moreover, the projected Gram matrix is exactly
+\begin{equation}\label{eq:gram}
+ G_c^\perp(bb')=G_c(bb')-\conj{m_{cb}}m_{cb'}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Exhaustiveness gives $\sum_bP_b=\sum_cP_c=I$, so
+\eqref{eq:literal} follows without tagged copies.  Both $w_c^\perp$ and every
+$v_{cb}^\perp$ are orthogonal to $u_c$.  Therefore
+\[
+ \ip{w_c}{g_c}=\conj{a_c}b_c+\ip{w_c^\perp}{g_c^\perp},
+\]
+where the conjugation of $a_c$ is forced by the first-slot convention.
+Summation proves the identity in \eqref{eq:chain}.
+
+Expanding the two orthogonal projections and using
+$\ip{v_{cb}}{u_c}=\conj{m_{cb}}$ gives \eqref{eq:gram}.  Applying the TPC-250
+upper Gram bound to the projected probes with all weights one gives
+$\norm{g_c^\perp}^2\le U_c^2$.  Equation \eqref{eq:upper} chooses the
+nonnegative root, hence $\norm{g_c^\perp}\le U_c$.  Cauchy--Schwarz followed
+by the triangle inequality now proves both inequalities in
+\eqref{eq:chain}.
+\end{proof}
+
+The theorem is a pointwise enclosure for fixed source data.  It does not
+claim that varying an undeclared source parameter fills a disk, much less an
+exact disk image.
+
+\section{External margins and the strict endpoint}
+
+\begin{corollary}[Conditional external compiler]\label{cor:external}
+Let $F$ be any independently certified scalar, and let $E\ge0$ satisfy
+$|F-C_x|\le E$.  Then
+\begin{equation}\label{eq:external}
+ |F-C_{\rm long}|\le R_{\rm coh}+E,\qquad
+ |F|\ge\pos{|C_{\rm long}|-R_{\rm coh}-E}.
+\end{equation}
+Consequently, $|C_{\rm long}|>R_{\rm coh}+E$ implies $F\ne0$.
+\end{corollary}
+
+\begin{proof}
+The first estimate follows from
+$F-C_{\rm long}=(F-C_x)+(C_x-C_{\rm long})$ and
+Theorem~\ref{thm:compiler}.  Reverse triangle gives the second estimate after
+intersection with zero.  A strict positive lower endpoint proves the final
+claim.
+\end{proof}
+
+The hypothesis $|F-C_x|\le E$ is an independent input.  In particular, this
+paper does not obtain it automatically from the conditional synthesis
+interface of TPC-243 \cite{tpc243}.
+
+\begin{proposition}[Equality obstruction]\label{prop:equality}
+In $\mathbb R^4$, let
+\[
+ u=\tfrac12(1,1,1,1),\qquad
+ t=\tfrac12(1,-1,1,-1),\qquad w=u+t,\quad g=u-t.
+\]
+Then $u,t$ are orthonormal and
+\[
+ C_{\rm long}=1,\qquad Q_{\rm trans}=-1,\qquad
+ R_{\rm trans}=1,\qquad \ip{w}{g}=0.
+\]
+Thus equality $|C_{\rm long}|=R_{\rm trans}$ cannot imply nonvanishing.
+\end{proposition}
+
+\begin{proof}
+The two longitudinal coefficients equal one, while the transverse vectors are
+$t$ and $-t$.  Their covariance is $-1$ and their norm product is one, so the
+two scalar contributions cancel exactly.
+\end{proof}
+
+\section{Exact finite operator replay}
+
+The release certificate realizes a rational $8\times8$ operator.  There are
+two blocks of size four; $\beta$ is supported at the first coordinate of each
+block.  In each block use
+\[
+ u=\tfrac12(1,1,1,1),\quad
+ t_1=\tfrac12(1,-1,1,-1),\quad
+ t_2=\tfrac12(1,1,-1,-1).
+\]
+The two selected columns of $A$ are assembled from
+\begin{align*}
+ v_{00}&=\tfrac12(1,1,1,1)+\tfrac35t_1,&
+ v_{01}&=\tfrac14(1,1,1,1)+\tfrac45t_2,\\
+ v_{10}&=\tfrac13(1,1,1,1)+t_1,&
+ v_{11}&=\tfrac23(1,1,1,1)-t_1.
+\end{align*}
+Take
+\[
+ w_0=\tfrac12(1,1,1,1)-\tfrac35t_1-\tfrac45t_2,\qquad
+ w_1=(1,1,1,1).
+\]
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{c@{\qquad}cccccc}
+\toprule
+$c$ & $D_c$ & $L_c$ & $\mu_c$ & $U_c$ & $\norm{g_c^\perp}$ & $\norm{w_c^\perp}$\\
+\midrule
+$0$ & $1$ & $7/5$ & $0$ & $1$ & $1$ & $1$\\
+$1$ & $2$ & $2$ & $1$ & $2$ & $0$ & $0$\\
+\bottomrule
+\end{tabular}
+\caption{Exact projected data for the synthetic finite operator replay.  The
+second block has the largest coherence upper but contributes no transverse
+radius because both physical transverse vectors vanish after contraction or
+lane projection.}
+\label{tab:fixture}
+\end{table}
+
+Direct rational calculation gives
+\[
+ C_{\rm long}=\frac{11}{2},\quad Q_{\rm trans}=-1,\quad
+ C_x=\frac92,\quad R_{\rm trans}=R_{\rm coh}=1.
+\]
+For $F=4$ and $E=1/2$, both sides of the first estimate in
+\eqref{eq:external} equal $3/2$, and the strict lower margin is $4$.
+The replay is explicitly labeled
+\emph{synthetic exact finite operator replay, not a literal V59 arithmetic
+instance}.  It verifies the compiler and supplies no asymptotic evidence.
+
+The real replay cannot detect a missing complex conjugation.  The certificate
+therefore adds a Gaussian-rational two-coordinate fixture.  It independently
+checks that $\conj a b=1-i$ rather than $ab=-1+i$, and that one off-diagonal
+projected Gram entry is $i$ only when
+$G_{12}-\conj{m_1}m_2$ is used.  Singleton and one-active-probe fixtures also
+verify $U=0$ and the $\mu=0$ empty-pair convention.
+
+\section{Computational trust boundary and limitations}
+
+The JSON producer uses exact rational arithmetic.  The checker imports no
+producer code: it reparses canonical rationals, rejects duplicate keys,
+audits exact integer types and exhaustive blocks, recomputes the full operator
+replay, and rejects fifteen typed, semantic, stale-digest, duplicate-key, and
+digest-rebound mutations.  A deterministic stress program checks $160$
+exact-rational declared partitions and probe families in normal and optimized
+Python modes.  None of these finite checks proves an asymptotic statement.
+
+The remaining mathematical gap is source-specific.  The theorem neither
+controls the actual V59 projected coherences nor proves that the declared
+longitudinal term dominates every transverse and external loss.  In
+particular, full Gate B and its global strict $1/400$ endpoint remain unpaid.
+
+\medskip
+\noindent\textbf{Claim firewall.}
+The hard partition is an exhaustive-nonempty modeling choice, and the flat
+direction is relative only to its declared block.  The TPC-243 external error
+is conditional, not automatic.  Actual projected V59 coherence and payable
+longitudinal dominance are open.  Arithmetic advance is no; fixed-atom credit
+is zero; L2 and the twin-prime result are none.  Full Gate B is open, and its
+global strict $1/400$ endpoint is unpaid.
+
+\medskip
+\noindent\textbf{Maximum supported claim.}
+\begin{center}
+\small\nolinkurl{PROVED_STRUCTURAL_L1_LITERAL_V59_DECLARED_BLOCK_LONGITUDINAL_TRANSVERSE_MARGIN_COMPILER}
+\end{center}
+
+\section{Conclusion}
+
+The literal V59 source scalar admits an exact longitudinal--transverse split
+relative to every declared exhaustive nonempty coordinate partition.  The
+projected Gram subtraction and TPC-250 coherence bound turn that split into a
+total, computable conditional margin, while the equality fixture identifies
+the necessary strict endpoint.  The result is structural L1 progress only:
+the block-flat direction remains a modeling choice, the external error remains
+conditional, and the actual arithmetic margin remains open.  There is no
+Route A claim, arithmetic advance, fixed-atom credit, L2 result, Gate-B
+closure, or twin-prime conclusion.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
