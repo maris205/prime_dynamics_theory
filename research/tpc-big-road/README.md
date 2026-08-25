@@ -1,52 +1,63 @@
-# TPC big road V108 / TPC-255: exact adjoint diagonal and hard-boundary compiler
+# TPC big road V109 / TPC-256: literal beta Haar and diagonal-dominant adjoint asymptotic
 
 更新时间：2026-08-26
 
-状态：`TPC255_PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER / FULL_GATE_B_OPEN`
+状态：`TPC256_PROVED_SOURCE_BACKED_L1_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-255 proof 为
-`bridge_b_exact_adjoint_diagonal_boundary_compiler.md`，checker 为
-`tpc_bridge_b_exact_adjoint_diagonal_boundary_compiler_checker.py`，编号论文为
-`../../papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/`。
+当前 TPC-256 proof 为
+`bridge_b_literal_beta_haar_adjoint_asymptotic.md`，checker 为
+`tpc_bridge_b_literal_beta_haar_adjoint_asymptotic_checker.py`，编号论文为
+`../../papers/tpc-256-literal-beta-haar-adjoint-asymptotic/`。
 
-TPC-255 pushes TPC-253's ordered-rank Haar vector through the literal V59
-adjoint.  With `H>2Q`, V43 Poisson proves that the complete-lattice
-unit-centered row vanishes.  The physical row does not vanish: deleting its
-diagonal returns a `B_Q`-weighted beta midpoint, and the hard endpoints plus
-the rank-child jump return two distinct boundary lanes.  Exact input/output
-unit-mask corrections remain attached.
+TPC-256 estimates the literal lane exposed by TPC-255.  Consecutive-interval
+divisor densities cancel layer by layer up to `O(U/rho)`, while the second
+order of the strong PNT gives
+
+```text
+<z_mid,beta>
+ =[log(32/27)/sqrt(2)+O(1/log x)]sqrt(x)/log^2 x.
+```
+
+The returned diagonal has
+`B_Q=(9/2+o(1))x^(2/3)/log x`.  The hard-window and child-jump lanes are
+`O(x^(55/48+epsilon))`, one fixed `1/48` exponent below the main term.  Hence
 
 ```text
 <z_mid,A_x beta>
- = -B_Q<z_mid,beta> + input-unit correction
-   - hard-window leakage + child-jump leakage.
+ =-[9log(32/27)/(2sqrt(2))+o(1)]x^(7/6)/log^3 x.
 ```
 
-This is an exact literal arithmetic-structure advance, not an arithmetic
-estimate.  Poisson deletes only the complete centered alias; it does not pay
-the diagonal return or either boundary lane.  TPC-254's source-backed `w`
-midpoint log-power bound remains cumulative upstream progress.
+The scalar is complex in general; its real part is eventually negative, it is
+eventually nonzero, and its normalized phase tends to `-1`.  Reality and an
+unqualified principal-argument limit are not claimed.  This is a scoped
+arithmetic advance for one Haar projection, not full Gate B.
 
 ```text
-TPC255_COMPLETE_UNIT_CENTERED_ALIAS = PROVED_SOURCE_BACKED_ZERO_FOR_H_GREATER_THAN_2Q
-TPC255_LITERAL_ADJOINT_COORDINATE_EXPANSION = PROVED_EXACT
-TPC255_DELETED_DIAGONAL_BQ_RETURN = PROVED_EXACT
-TPC255_INPUT_UNIT_CORRECTION = PROVED_EXACT_RETAINED
-TPC255_OUTPUT_UNIT_CORRECTION = PROVED_EXACT_JOINTLY_CENTERED_ONLY
-TPC255_HARD_WINDOW_AND_CHILD_JUMP = PROVED_EXACT_RETAINED
-TPC255_ROUTE_ADVANCE = YES_EXACT_LITERAL_STRUCTURE
-TPC255_LITERAL_ARITHMETIC_STRUCTURE_ADVANCE = YES
-TPC255_ARITHMETIC_ADVANCE = NO
-TPC255_FIXED_ATOM_CREDIT = 0
-TPC255_L2 = NONE
-TPC255_FULL_GATE_B = OPEN
-TPC255_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC255_TWIN_PRIME_RESULT = NONE
-TPC255_ROUND2_CLUE = ATTACK_THE_BQ_WEIGHTED_LITERAL_BETA_RANK_MIDPOINT_TOGETHER_WITH_THE_HARD_WINDOW_AND_CHILD_JUMP_CORRECTIONS__DO_NOT_DECLARE_THE_POISSON_ZERO_A_PAYMENT_AND_DO_NOT_SEPARATE_THE_UNIT_MASK_OR_PRIME_SHELL
+TPC256_LITERAL_BETA_HAAR_ASYMPTOTIC = PROVED_SOURCE_BACKED
+TPC256_BOUNDARY_POWER_SEPARATION = PROVED_EXACT_ONE_OVER_48
+TPC256_ADJOINT_NORMALIZED_COMPLEX_ASYMPTOTIC = PROVED_SOURCE_BACKED
+TPC256_REAL_PART_EVENTUALLY_NEGATIVE = PROVED
+TPC256_SCALAR_EVENTUALLY_NONZERO = PROVED
+TPC256_NORMALIZED_PHASE_TO_MINUS_ONE = PROVED
+TPC256_SCALAR_IS_REAL = NOT_CLAIMED
+TPC256_UNQUALIFIED_PRINCIPAL_ARGUMENT_TO_PLUS_PI = NOT_CLAIMED
+TPC256_ROUTE_ADVANCE = YES_LITERAL_ARITHMETIC
+TPC256_ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_BETA_ADJOINT_HAAR_LANE
+TPC256_FIXED_ATOM_CREDIT = 0
+TPC256_L2 = NONE
+TPC256_FULL_GATE_B = OPEN
+TPC256_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC256_TWIN_PRIME_RESULT = NONE
+TPC256_ROUND2_CLUE = EXPLOIT_EXACT_DIVISOR_DENSITY_CANCELLATION_BEFORE_ANY_TRIANGLE__THEN_USE_THE_BQ_DIAGONAL_MAIN_AND_H2_OVER_Q_BOUNDARY_MOMENT_TO_ISOLATE_THE_TRANSVERSE_FULL_GATE_B_REMAINDER
 ```
+
+## V108 upstream: TPC-255 exact adjoint diagonal and hard-boundary compiler
+
+TPC-255 supplies the complete-row Poisson zero and exact diagonal, unit-mask,
+hard-window and child-jump normal form estimated by TPC-256.
 
 ## V107 upstream: TPC-254 source-backed rank-midpoint hybrid-mean closure
 

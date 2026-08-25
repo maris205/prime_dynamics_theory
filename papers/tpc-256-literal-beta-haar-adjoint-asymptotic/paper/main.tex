@@ -1,0 +1,448 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.76in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\zm}{z_{\mathrm{mid}}}
+\newcommand{\Ax}{A_x}
+\newcommand{\Qx}{\mathcal Q_x}
+\newcommand{\Li}{\operatorname{Li}}
+\newcommand{\e}{\varepsilon}
+\setlength{\emergencystretch}{3em}
+
+\title{Literal Beta Rank-Midpoint Asymptotics and\
+Diagonal-Dominant Adjoint Phase}
+\author{Liang Wang\\
+\small School of Mathematics and Statistics, Huazhong University of Science and Technology (HUST),\\
+\small Wuhan, China}
+\date{August 26, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For the literal V59 coefficient on $(x/2,x]\cap\mathbb Z$, we evaluate its
+coefficient-independent ordered-rank midpoint Haar moment.  Exact
+layer-by-layer divisor-density cancellation removes the truncated M\"obius
+lane with error $O(x^{-67/400})$, while the second-order curvature of
+$\Li$ gives
+\[
+ \ip{\zm}{\beta}
+ =\frac{\log(32/27)}{\sqrt2}\frac{\sqrt{x}}{\log^2x}
+  +O\!\left(\frac{\sqrt{x}}{\log^3x}\right)>0.
+\]
+Substitution into the exact TPC-255 adjoint decomposition shows that the
+returned diagonal dominates the input-unit, hard-window, and child-jump
+lanes.  The two boundary terms have exponent $55/48$, strictly below the
+diagonal exponent $56/48$ by $1/48$.  Consequently the generally complex
+scalar $\ip{\zm}{\Ax\beta}$ has an explicit negative-real leading
+asymptotic, is eventually nonzero, and has normalized phase tending to
+$-1$.  We do not claim that the scalar is real, that its unqualified
+principal argument tends to $+\pi$, or that one Haar projection closes full
+Gate B.
+\end{abstract}
+
+\section{Literal clock and ordered-rank geometry}
+
+Let $x$ tend to infinity through real values and put
+\begin{equation}
+ a=\lfloor x/2\rfloor,\quad b=\lfloor x\rfloor,
+ \quad I_x=\{a+1,\ldots,b\},\quad N=b-a.             \label{eq:clock}
+\end{equation}
+The primary split is by ordered rank \cite{tpc253}:
+\begin{equation}
+ \ell=\lfloor N/2\rfloor,\quad r=N-\ell,\quad m=a+\ell,
+ \quad L=\{a+1,\ldots,m\},\quad R=\{m+1,\ldots,b\}, \label{eq:rank}
+\end{equation}
+\begin{equation}
+ \rho^2=\frac{\ell r}{N},\qquad
+ \zm=\rho\left(\frac{\one_L}{\ell}-\frac{\one_R}{r}\right). \label{eq:haar}
+\end{equation}
+The counting inner product is conjugate-linear in its first slot:
+$\ip fg=\sum_{n\in I_x}\overline{f(n)}g(n)$.  Thus $\|\zm\|_2=1$ and
+\begin{equation}
+ \ip{\zm}{f}=\rho\left(\frac1\ell\sum_{n\in L}f(n)
+                 -\frac1r\sum_{n\in R}f(n)\right)              \label{eq:contrast}
+\end{equation}
+for every real-valued $f$.
+
+\begin{lemma}[Real-clock endpoints]\label{lem:endpoints}
+Uniformly for real $x$,
+\[
+ N=\frac x2+O(1),\quad \ell,r=\frac x4+O(1),\quad
+ m=\frac{3x}{4}+O(1),\quad
+ \rho=\frac{\sqrt{x}}{2\sqrt2}+O(x^{-1/2}).
+\]
+Moreover
+\begin{equation}
+ \rho\left(\frac1\ell+\frac1r\right)=\frac1\rho,
+ \qquad |\zm(n)|\leq\rho^{-1}.                     \label{eq:rhoidentities}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The endpoint assertions follow directly from the floor errors in
+\eqref{eq:clock} and the rank rounding in \eqref{eq:rank}.  Expanding
+$\rho^2=\ell r/N=x/8+O(1)$ proves the displayed asymptotic.  Finally,
+$\rho(1/\ell+1/r)=\rho N/(\ell r)=1/\rho$.  On $L$, for example,
+$(\rho/\ell)/(1/\rho)=r/N\leq1$; the $R$ case is symmetric.
+\end{proof}
+
+Retain the literal V59 scales and coefficient \cite{v35,v51}:
+\begin{equation}
+ H=x^{21/32},\quad Q=x^{1/3},\quad U=x^{133/400},
+ \quad \Qx=\{q\text{ prime}:Q<q\leq2Q\},             \label{eq:scales}
+\end{equation}
+\begin{equation}
+ \beta(t)=\frac{\Lambda(t)}{\log t}
+       -\sum_{\substack{d\mid t\\d\leq U}}\mu(d),
+ \qquad t\in I_x.                                   \label{eq:beta}
+\end{equation}
+
+\section{The literal beta Haar asymptotic}
+
+Write $P(t)=\Lambda(t)/\log t$ and
+$D_U(t)=\sum_{d\mid t,\,d\leq U}\mu(d)$, so that $\beta=P-D_U$.
+The divisor lane requires no cancellation estimate for $\mu$.
+
+\begin{lemma}[Exact layerwise density cancellation]\label{lem:divisor}
+One has
+\begin{equation}
+ \left|\ip{\zm}{D_U}\right|
+ \leq \rho U\left(\frac1\ell+\frac1r\right)
+ =\frac{U}{\rho}=O(x^{-67/400}).                    \label{eq:divisorbound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If $J$ is any interval of $s$ consecutive integers, then
+$\#\{n\in J:d\mid n\}=s/d+\theta_{J,d}$ with
+$|\theta_{J,d}|\leq1$.  Inserting this separately on $L$ and $R$ into
+\eqref{eq:contrast}, the two $1/d$ densities cancel for every individual
+$d$ before any triangle inequality.  Hence
+\[
+ |\ip{\zm}{D_U}|
+ \leq\rho\sum_{d\leq U}|\mu(d)|
+       \left(\frac1\ell+\frac1r\right)
+ \leq \rho U\left(\frac1\ell+\frac1r\right).
+\]
+Lemma~\ref{lem:endpoints} and $133/400-1/2=-67/400$ finish the proof.
+\end{proof}
+
+For the prime-power lane define
+\[
+ F(y)=\sum_{2\leq n\leq y}\frac{\Lambda(n)}{\log n}.
+\]
+The classical de la Vall\'ee Poussin prime number theorem
+\cite{davenport,montgomery-vaughan,ik}, source-locked for this program in
+\cite{tpc233}, states
+\begin{equation}
+ \pi(y)=\Li(y)+O\!\left(y e^{-c\sqrt{\log y}}\right).          \label{eq:pnt}
+\end{equation}
+Since
+\[
+ F(y)=\pi(y)+\sum_{k\geq2}\frac1k\pi(y^{1/k})
+      =\pi(y)+O(\sqrt y\log y),
+\]
+the prime-power tail is absorbed by a possibly smaller constant in
+\eqref{eq:pnt}:
+\begin{equation}
+ F(y)=\Li(y)+O\!\left(y e^{-c_1\sqrt{\log y}}\right).          \label{eq:F}
+\end{equation}
+
+\begin{lemma}[Second-order $\Li$ curvature]\label{lem:li}
+The ordered children satisfy
+\begin{equation}
+ \frac{F(m)-F(a)}{\ell}-\frac{F(b)-F(m)}r
+ =\frac{2\log(32/27)}{\log^2x}+O\!\left(\frac1{\log^3x}\right). \label{eq:curvature}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The error in \eqref{eq:F}, divided by a child length comparable to $x$,
+is $O(e^{-c_2\sqrt{\log x}})$.  Replacing the integer endpoints by
+$x/2,3x/4,x$ changes each normalized $\Li$ difference by
+$O(1/(x\log x))$.  Uniformly for $y\in[1/2,1]$,
+\[
+ \frac1{\log(xy)}=\frac1{\log x}-\frac{\log y}{\log^2x}
+                  +O\!\left(\frac1{\log^3x}\right).
+\]
+Both children have scaled length $1/4$, so their $1/\log x$ terms cancel.
+The coefficient of $1/\log^2x$ in the lower-minus-upper difference is
+\begin{align*}
+ 4\left(\int_{3/4}^{1}\log y\,dy
+       -\int_{1/2}^{3/4}\log y\,dy\right)
+ &=2\log\frac{32}{27}.
+\end{align*}
+The endpoint, normalization, and PNT errors are all absorbed in the stated
+remainder.
+\end{proof}
+
+\begin{theorem}[Literal beta rank-midpoint asymptotic]\label{thm:beta}
+For all sufficiently large real $x$,
+\begin{equation}
+ \boxed{\displaystyle
+ \ip{\zm}{\beta}
+ =\frac{\log(32/27)}{\sqrt2}\frac{\sqrt{x}}{\log^2x}
+  +O\!\left(\frac{\sqrt{x}}{\log^3x}\right)>0.}      \label{eq:betamain}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Multiply \eqref{eq:curvature} by
+$\rho=\sqrt{x}/(2\sqrt2)+O(x^{-1/2})$ and subtract the divisor contribution
+from Lemma~\ref{lem:divisor}.  Since
+$x^{-67/400}=o(\sqrt{x}/\log^3x)$, this gives \eqref{eq:betamain}.
+Its main constant is positive.
+\end{proof}
+
+\section{Exact adjoint lanes and their estimates}
+
+Fix a smooth profile $\psi_+$ supported in $[-1,1]$, normalized by
+$\int\psi_+=1$, and set $K_H(h)=\widehat\psi_+(h/H)$.  No reality or
+evenness is assumed.  The literal operator is \cite{v59,tpc255}
+\begin{equation}
+ \Ax(u,t)=\one_{u\ne t}\sum_{q\in\Qx}q\one_{q\nmid u}\one_{q\nmid t}
+ K_H(u-t)\left(\one_{u\equiv t\,(q)}-\frac1{q-1}\right).      \label{eq:operator}
+\end{equation}
+For $q\nmid t$ define the complete combined unit row
+\begin{equation}
+ v_{q,t}(u)=\one_{q\nmid u}
+ \left(\one_{u\equiv t\,(q)}-\frac1{q-1}\right).             \label{eq:unitrow}
+\end{equation}
+It is centered over a complete period.  The TPC-255 adjoint compiler, using
+the band-limited complete-lattice Poisson zero from V43 \cite{v43,tpc255},
+gives for all sufficiently large $x$ (hence $H>2Q$)
+\begin{equation}
+ S_x:=\ip{\zm}{\Ax\beta}
+ =-B_Q\ip{\zm}{\beta}+R_{\rm unit}+R_{\rm hard}+R_{\rm jump}, \label{eq:decomp}
+\end{equation}
+where
+\begin{align}
+ B_Q&=\sum_{q\in\Qx}\frac{q(q-2)}{q-1},                       \label{eq:BQ}\\
+ R_{\rm unit}&=\sum_{q\in\Qx}\frac{q(q-2)}{q-1}
+       \sum_{\substack{t\in I_x\\q\mid t}}\zm(t)\beta(t), \label{eq:Runit}\\
+ R_{\rm hard}&=-\sum_{q\in\Qx}q
+       \sum_{\substack{t\in I_x\\q\nmid t}}\beta(t)\zm(t)
+       \sum_{u\notin I_x}K_H(u-t)v_{q,t}(u),                  \label{eq:Rhard}\\
+ R_{\rm jump}&=\sum_{q\in\Qx}q
+       \sum_{\substack{t\in I_x\\q\nmid t}}\beta(t)
+       \sum_{u\in I_x}K_H(u-t)v_{q,t}(u)(\zm(u)-\zm(t)).     \label{eq:Rjump}
+\end{align}
+The adjoint identity behind \eqref{eq:decomp} is
+$\ip{\zm}{\Ax\beta}=\ip{\Ax^*\zm}{\beta}$ because the first slot is
+conjugate-linear.  Conjugating $\Ax^*\zm$ restores $K_H$ in
+\eqref{eq:Rhard}--\eqref{eq:Rjump}; no self-adjointness is used.
+
+\begin{lemma}[Weighted diagonal coefficient]\label{lem:BQ}
+\begin{equation}
+ B_Q=\left(\frac92+o(1)\right)\frac{x^{2/3}}{\log x}.          \label{eq:BQasymp}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The exact identity $q(q-2)/(q-1)=q-1-1/(q-1)$ and weighted PNT give
+\[
+ B_Q=\sum_{Q<q\leq2Q}q+o(Q^2/\log Q)
+    =\left(\frac32+o(1)\right)\frac{Q^2}{\log Q}.
+\]
+This frozen weighted-prime input is also recorded in \cite{vtop}.
+Since $Q=x^{1/3}$, \eqref{eq:BQasymp} follows.
+\end{proof}
+
+\begin{lemma}[Combined unit-mask first moment]\label{lem:firstmoment}
+For $q\in\Qx$, $q\nmid t$, and $h\in\Z$,
+\begin{equation}
+ |v_{q,t}(t+h)|\leq\one_{q\mid h}+\frac2q.                    \label{eq:maskbound}
+\end{equation}
+Moreover, uniformly for $q\leq2Q<H$,
+\begin{equation}
+ \sum_{h\in\Z}|hK_H(h)|\left(\one_{q\mid h}+\frac2q\right)
+ \ll_{\psi}\frac{H^2}{q}.                                  \label{eq:firstmoment}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+If $q\mid(t+h)$, the left side of \eqref{eq:maskbound} is zero.  Otherwise,
+if $q\mid h$ it is $(q-2)/(q-1)\leq1$, and if $q\nmid h$ it is
+$1/(q-1)\leq2/q$.  This proves the pointwise bound while retaining the full
+output-unit mask.
+
+For any fixed $A>3$, Schwartz decay gives
+$|K_H(h)|\ll_{A,\psi}(1+|h|/H)^{-A}$.  Therefore
+\[
+ \sum_{q\mid h}|hK_H(h)|
+ =q\sum_{k\in\Z}|kK_H(qk)|\ll_\psi H^2/q,
+\]
+because $H/q>1$; also
+$q^{-1}\sum_h|hK_H(h)|\ll_\psi H^2/q$.  Combining the two estimates proves
+\eqref{eq:firstmoment}.  This is the same source-backed centered first-moment
+mechanism as in \cite{v43}.
+\end{proof}
+
+\begin{proposition}[Boundary power separation]\label{prop:remainders}
+For every fixed $\e>0$,
+\begin{align}
+ R_{\rm unit}&=O_\e(x^{5/6+\e}),                              \label{eq:unitbound}\\
+ R_{\rm hard},R_{\rm jump}&=O_{\psi,\e}(x^{55/48+\e}).      \label{eq:boundarybound}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+The divisor bound gives $|\beta(t)|\leq1+\tau(t)\ll_\e x^\e$ on $I_x$.
+Using $|\zm(t)|\leq\rho^{-1}$ and at most $x/q+1$ multiples of $q$,
+\[
+ |R_{\rm unit}|\ll\frac{x^\e}{\rho}
+   \sum_{q\in\Qx}q\left(\frac{x}{q}+1\right)
+ \ll \frac{x^{1+\e}Q}{\rho}=O(x^{5/6+\e}).
+\]
+
+For each fixed displacement $h$, at most $|h|$ values of $t\in I_x$ have
+$t+h\notin I_x$.  Apply \eqref{eq:maskbound} and
+\eqref{eq:firstmoment} directly to the combined row, without splitting its
+zero modes.  This gives
+\[
+ |R_{\rm hard}|\ll_{\psi,\e}
+ \frac{x^\e}{\rho}\sum_{q\in\Qx}q\frac{H^2}{q}
+ \ll_{\psi,\e}\frac{QH^2}{\rho}x^\e.
+\]
+For $R_{\rm jump}$, the difference $\zm(u)-\zm(t)$ vanishes inside either
+child and has absolute value $1/\rho$ across the midpoint by
+\eqref{eq:rhoidentities}.  At a fixed $h$, the number of pairs crossing that
+single boundary is again at most $|h|$.  The identical first-moment estimate
+therefore applies.  Finally
+\[
+ \frac{QH^2}{\rho}
+ =x^{,1/3+2(21/32)-1/2+o(1)}=x^{55/48+o(1)},
+\]
+which proves \eqref{eq:boundarybound} after absorbing the harmless divisor
+envelope into $x^\e$.
+\end{proof}
+
+The combined row in \eqref{eq:unitrow} is essential.  If it is written as
+\[
+ c_{q,t}(u)=\one_{u\equiv t\,(q)}-\frac1{q-1},\qquad
+ d_q(u)=\frac{\one_{q\mid u}}{q-1},
+\]
+then $v_{q,t}=c_{q,t}+d_q$, but their period sums are respectively
+$-1/(q-1)$ and $+1/(q-1)$.  Only the sum is centered.  Thus applying Poisson
+to either piece separately is refuted; Proposition~\ref{prop:remainders}
+uses the combined mask throughout.
+
+\begin{theorem}[Diagonal-dominant adjoint phase]\label{thm:adjoint}
+As real $x\to\infty$,
+\begin{equation}
+ \boxed{\displaystyle
+ \ip{\zm}{\Ax\beta}
+ =-\left(\frac{9\log(32/27)}{2\sqrt2}+o(1)\right)
+       \frac{x^{7/6}}{\log^3x}}\qquad\text{in }\mathbb C.     \label{eq:adjointmain}
+\end{equation}
+Consequently, for all sufficiently large $x$,
+\begin{equation}
+ \Re\ip{\zm}{\Ax\beta}<0,\qquad \ip{\zm}{\Ax\beta}\ne0,
+ \qquad
+ \frac{\ip{\zm}{\Ax\beta}}{|\ip{\zm}{\Ax\beta}|}\longrightarrow-1. \label{eq:phase}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Combine Theorem~\ref{thm:beta}, Lemma~\ref{lem:BQ}, and the exact identity
+\eqref{eq:decomp}.  The diagonal has exponent
+$2/3+1/2=7/6=56/48$.  Choose any fixed $0<\e<1/48$ in
+Proposition~\ref{prop:remainders}; the boundary exponent is $55/48+\e$, so
+the gap is
+\[
+ \frac{56}{48}-\frac{55}{48}=\frac1{48},
+\]
+and even the factor $\log^3x$ is absorbed by this fixed power.  The input-unit
+term is smaller still.  This proves \eqref{eq:adjointmain} as a complex
+asymptotic.  Division by its positive real scale gives a strictly negative
+real limit, which implies all three statements in \eqref{eq:phase}.
+\end{proof}
+
+\begin{remark}[Phase firewall]
+The remainder in \eqref{eq:adjointmain} may be nonreal because $K_H$ need not
+be real or even.  The theorem does not say that the scalar itself is real.
+It also does not force the unqualified principal argument to approach
+$+\pi$: approach from opposite half-planes may select opposite endpoints of
+the principal branch.  The invariant statement is the normalized phase in
+\eqref{eq:phase}, equivalently convergence to $\pi$ modulo $2\pi$.
+\end{remark}
+
+\section{Validation, status, and remaining gate}
+
+The executable artifact verifies source hashes at the frozen TPC-255 release,
+64 exact rank clocks, 1,536 divisor layers, 8,814 full unit-mask terms, and
+both boundary-counting rules.  An independent implementation imports no
+producer code and rejects 112 deterministic semantic mutations in 14
+classes.  A separate suite checks 192 exact families, evenly split between
+integer and noninteger clocks.  The finite values
+\[
+ 0.126722052900396\quad(x=10^5),\qquad
+ 0.119396549784227\quad(x=10^6)
+\]
+are scaled beta-Haar \emph{numerical observations}; they receive no proof
+credit.  The proved target constant is
+$\log(32/27)/\sqrt2=0.120136761035088\ldots$.
+
+The exact route classification is a scoped arithmetic advance:
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}p{0.58\linewidth}p{0.36\linewidth}@{}}
+\toprule
+Marker & Value\\
+\midrule
+\path{TPC256_ROUTE_ADVANCE} & \path{YES_LITERAL_ARITHMETIC}\\
+\path{TPC256_ARITHMETIC_ADVANCE} & \path{YES_SCOPED_LITERAL_BETA_ADJOINT_HAAR_LANE}\\
+\path{TPC256_LITERAL_BETA_HAAR_ASYMPTOTIC} & \path{PROVED_SOURCE_BACKED}\\
+\path{TPC256_ADJOINT_NORMALIZED_COMPLEX_ASYMPTOTIC} & \path{PROVED_SOURCE_BACKED}\\
+\path{TPC256_REAL_PART_EVENTUALLY_NEGATIVE} & \path{PROVED}\\
+\path{TPC256_SCALAR_EVENTUALLY_NONZERO} & \path{PROVED}\\
+\path{TPC256_NORMALIZED_PHASE_TO_MINUS_ONE} & \path{PROVED}\\
+\path{TPC256_SCALAR_IS_REAL} & \path{NOT_CLAIMED}\\
+\path{TPC256_UNQUALIFIED_PRINCIPAL_ARGUMENT_TO_PLUS_PI} & \path{NOT_CLAIMED}\\
+\path{TPC256_FIXED_ATOM_CREDIT} & \path{0}\\
+\path{TPC256_L2} & \path{NONE}\\
+\path{TPC256_FULL_GATE_B} & \path{OPEN}\\
+\path{TPC256_FULL_GATE_B_STRICT_1_OVER_400} & \path{UNPAID_GLOBAL}\\
+\path{TPC256_TWIN_PRIME_RESULT} & \path{NONE}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Strongest result and obstruction.}
+The literal $\beta$ midpoint moment has an explicit positive asymptotic, and
+the deleted-diagonal $B_Q$ return forces an explicit negative-real leading
+asymptotic for the literal adjoint Haar scalar.  The corresponding
+obstruction is structural: the Poisson zero does not make this lane small;
+diagonal deletion returns the asymptotically dominant term.  Moreover, the
+two output-unit pieces cannot be separated before exact recentering.
+
+\paragraph{Open theorem and reusable structure.}
+One ordered-rank Haar projection does not control the transverse/full-output
+component of $\Ax\beta$, couple it to the physical $w$ lane, prove an $L^2$
+estimate, or pay full Gate B.  The reusable chain is
+\begin{align*}
+ &\text{layerwise divisor density cancellation}
+ \longrightarrow \text{second-order PNT curvature}\\
+ &\qquad\longrightarrow \text{literal beta Haar main term}
+ \longrightarrow B_Q\text{ amplification}\\
+ &\qquad\longrightarrow \text{first-moment boundary separation}.
+\end{align*}
+The retained next clue is
+\begin{center}
+\small\path{EXPLOIT_EXACT_DIVISOR_DENSITY_CANCELLATION_BEFORE_ANY_TRIANGLE__THEN_USE_THE_BQ_DIAGONAL_MAIN_AND_H2_OVER_Q_BOUNDARY_MOMENT_TO_ISOLATE_THE_TRANSVERSE_FULL_GATE_B_REMAINDER}.
+\end{center}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

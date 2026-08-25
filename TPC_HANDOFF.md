@@ -1,7 +1,136 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V108_TPC255_EXACT_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER_RELEASED`
+交接状态：`BOLD_CHANNEL_V109_TPC256_LITERAL_BETA_HAAR_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC_RELEASED`
+
+TPC-256 当前 section：literal beta Haar and diagonal-dominant adjoint asymptotic
+--------------------------------------------------------------------------------
+
+For every sufficiently large real `x`, retain TPC-253's ordered-rank children
+and literal V35 coefficient
+
+```text
+a=floor(x/2), b=floor(x), N=b-a,
+ell=floor(N/2), r=N-ell, rho^2=ell*r/N,
+z=z_mid=rho(1_L/ell-1_R/r),
+U=x^(133/400),
+beta(t)=Lambda(t)/log(t)-sum_(d|t,d<=U)mu(d).
+```
+
+Every divisor layer has the same density `1/d` on the two consecutive
+children up to one endpoint count.  The common density cancels exactly and
+
+```text
+|<z,sum_(d|dot,d<=U)mu(d)>|<=U/rho=O(x^(-67/400)).
+```
+
+No Möbius cancellation theorem is used.  The de la Vallée Poussin PNT and the
+second-order expansion of `Li` give
+
+```text
+<z,beta>
+ =[log(32/27)/sqrt(2)]sqrt(x)/log^2 x
+  +O(sqrt(x)/log^3 x).                               (H256.1)
+```
+
+This moment is real, positive and nonzero for every sufficiently large real
+`x`.  The constant is the exact curvature integral
+
+```text
+4[integral_(3/4)^1 log y dy-integral_(1/2)^(3/4) log y dy]
+ =2log(32/27).
+```
+
+TPC-255's exact normal form is
+
+```text
+<z,A_x beta>=-B_Q<z,beta>+R_unit+R_hard+R_jump,
+B_Q=sum_(Q<q<=2Q,q prime)q(q-2)/(q-1).
+```
+
+Weighted PNT gives
+
+```text
+B_Q=(9/2+o(1))x^(2/3)/log x.
+```
+
+For the complete output-unit row and `h=u-t`,
+
+```text
+|v_(q,t)(t+h)|<=1_(q|h)+2/q,
+sum_h |hK_H(h)|[1_(q|h)+2/q]<<_psi H^2/q.
+```
+
+At most `|h|` inputs cross either an outer endpoint or the rank midpoint.
+Together with `|beta(t)|<=1+tau(t)` this yields, for every fixed
+`epsilon>0`,
+
+```text
+R_unit=O_epsilon(x^(5/6+epsilon)),
+R_hard,R_jump=O_(psi,epsilon)(x^(55/48+epsilon)).
+```
+
+The diagonal exponent is `7/6=56/48`; the two boundary lanes therefore have
+the exact fixed-power separation `1/48`.  Choosing `0<epsilon<1/48` proves in
+the complex plane
+
+```text
+<z,A_x beta>
+ =-[9log(32/27)/(2sqrt(2))+o(1)]x^(7/6)/log^3 x.     (H256.2)
+```
+
+The exact scalar need not be real.  Its real part is eventually negative, it
+is eventually nonzero, and its normalized phase tends to `-1`.  An
+unqualified principal-argument limit to `+pi` is forbidden because the error
+may approach the negative axis from either side.
+
+```text
+TPC256_MAXIMUM_CLAIM = SOURCE_BACKED_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_COMPLEX_ADJOINT_HAAR_ASYMPTOTIC
+TPC256_LITERAL_BETA_DIVISOR_DENSITY_CANCELLATION = PROVED_EXACT_ENDPOINT_BOUND
+TPC256_LITERAL_BETA_HAAR_ASYMPTOTIC = PROVED_SOURCE_BACKED
+TPC256_BQ_WEIGHTED_PRIME_ASYMPTOTIC = PROVED_SOURCE_BACKED
+TPC256_COMBINED_UNIT_ROW_FIRST_MOMENT = PROVED_SOURCE_BACKED
+TPC256_INPUT_UNIT_BOUND = PROVED_SOURCE_BACKED
+TPC256_HARD_WINDOW_BOUND = PROVED_SOURCE_BACKED
+TPC256_CHILD_JUMP_BOUND = PROVED_SOURCE_BACKED
+TPC256_BOUNDARY_POWER_SEPARATION = PROVED_EXACT_ONE_OVER_48
+TPC256_ADJOINT_NORMALIZED_COMPLEX_ASYMPTOTIC = PROVED_SOURCE_BACKED
+TPC256_REAL_PART_EVENTUALLY_NEGATIVE = PROVED
+TPC256_SCALAR_EVENTUALLY_NONZERO = PROVED
+TPC256_NORMALIZED_PHASE_TO_MINUS_ONE = PROVED
+TPC256_SCALAR_IS_REAL = NOT_CLAIMED
+TPC256_UNQUALIFIED_PRINCIPAL_ARGUMENT_TO_PLUS_PI = NOT_CLAIMED
+TPC256_ROUTE_ADVANCE = YES_LITERAL_ARITHMETIC
+TPC256_ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_BETA_ADJOINT_HAAR_LANE
+TPC256_FIXED_ATOM_CREDIT = 0
+TPC256_L2 = NONE
+TPC256_FULL_GATE_B = OPEN
+TPC256_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC256_TWIN_PRIME_RESULT = NONE
+TPC256_STATUS = PROVED_SOURCE_BACKED_L1_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC
+TPC256_ROUND2_CLUE = EXPLOIT_EXACT_DIVISOR_DENSITY_CANCELLATION_BEFORE_ANY_TRIANGLE__THEN_USE_THE_BQ_DIAGONAL_MAIN_AND_H2_OVER_Q_BOUNDARY_MOMENT_TO_ISOLATE_THE_TRANSVERSE_FULL_GATE_B_REMAINDER
+```
+
+strongest positive result：literal beta rank-midpoint has an explicit positive
+asymptotic and the returned diagonal forces a nonzero negative-real leading
+adjoint Haar asymptotic；strongest obstruction：one fixed Haar projection does
+not control the transverse/full-output component；open theorem：control that
+component and couple it to the physical `w` lane on the same V59 clock；
+reusable structure：divisor-density endpoint cancellation -> second-order PNT
+curvature -> beta Haar main -> `B_Q` amplification -> first-moment boundaries
+-> `1/48` separation。
+
+编号论文目录：papers/tpc-256-literal-beta-haar-adjoint-asymptotic/
+
+```text
+papers/tpc-256-literal-beta-haar-adjoint-asymptotic/README.md
+papers/tpc-256-literal-beta-haar-adjoint-asymptotic/PROOF_PACKAGE.md
+papers/tpc-256-literal-beta-haar-adjoint-asymptotic/paper/paper.pdf
+papers/tpc-256-literal-beta-haar-adjoint-asymptotic/results/tpc256_certificate.json
+papers/tpc-256-literal-beta-haar-adjoint-asymptotic/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_literal_beta_haar_adjoint_asymptotic.md
+research/tpc-big-road/tpc_bridge_b_literal_beta_haar_adjoint_asymptotic_checker.py
+```
 
 TPC-255 当前 section：exact adjoint diagonal and hard-boundary compiler
 -----------------------------------------------------------------------
@@ -7653,8 +7782,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V108/TPC-255 gate、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百七十二次（86 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V109/TPC-256 gate、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百七十四次（87 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -7830,11 +7959,23 @@ python -B research/tpc-big-road/tpc_bridge_b_source_backed_rank_midpoint_hybrid_
 python -O -B research/tpc-big-road/tpc_bridge_b_source_backed_rank_midpoint_hybrid_mean_closure_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_exact_adjoint_diagonal_boundary_compiler_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_exact_adjoint_diagonal_boundary_compiler_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_literal_beta_haar_adjoint_asymptotic_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_literal_beta_haar_adjoint_asymptotic_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-255 入口：
+最新 TPC-256 入口：
+
+```text
+papers/tpc-256-literal-beta-haar-adjoint-asymptotic/README.md
+papers/tpc-256-literal-beta-haar-adjoint-asymptotic/notes/theorem_ledger.md
+papers/tpc-256-literal-beta-haar-adjoint-asymptotic/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_literal_beta_haar_adjoint_asymptotic.md
+research/tpc-big-road/tpc_bridge_b_literal_beta_haar_adjoint_asymptotic_checker.py
+```
+
+TPC-255 上游入口：
 
 ```text
 papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/README.md

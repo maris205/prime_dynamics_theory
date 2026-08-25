@@ -2,17 +2,16 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V108 / TPC-255
+当前地图版本：V109 / TPC-256
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-255`（`PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER`）；
+当前编号锚点：`TPC-256`（`PROVED_SOURCE_BACKED_L1_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC`）；
 对应论文目录为
-`papers/tpc-255-exact-adjoint-diagonal-boundary-compiler/`。
-TPC-255 将 ordered-rank Haar vector 穿过 literal V59 adjoint。complete unit-centered
-alias 由 V43 Poisson 精确删除，但 deleted diagonal 返回 `B_Q`-weighted beta midpoint，
-hard window、child jump 和 unit masks 留下三条 explicit correction lanes；尚无定量
-estimate，arithmetic `L2` 与 full Gate B 仍 OPEN。
+`papers/tpc-256-literal-beta-haar-adjoint-asymptotic/`。
+TPC-256 证明 literal beta rank-midpoint 的显式正渐近式，并由 TPC-255 returned
+diagonal 得到 adjoint Haar scalar 的显式 complex asymptotic；hard-window 与 child-jump
+比主项小 `1/48` fixed power。full output、arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -54,9 +53,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V108 / TPC-255                    |
-        | EXACT LITERAL ADJOINT NORMAL FORM                |
-        | Poisson zero; diagonal/boundaries survive        |
+        | YOU ARE HERE — V109 / TPC-256                    |
+        | BETA HAAR + DIAGONAL ASYMPTOTIC PAID             |
+        | one projection paid; transverse output OPEN      |
         +--------------------------------------------------+
                 |
                 v
@@ -99,13 +98,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V108 / TPC-255。
-TPC-254 已支付 literal `<z_mid,w>` 到任意固定 log power；TPC-255 又把第二条
-`<z_mid,A_x beta>` 精确展开成 `B_Q`-weighted beta midpoint、input-unit correction、
-hard-window leakage 与 child-jump leakage。complete-lattice Poisson zero 只删掉 centered
-alias，不能支付这些 physical survivors。下一施工点是同一 prime shell 上对四条 lane
-做 collective arithmetic estimate，不能分别 triangle。FULL_GATE_B、global strict
-`1/400`、arithmetic `L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NONE。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V109 / TPC-256。
+TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 现在又支付 literal
+`beta` midpoint 及其 TPC-255 adjoint image：divisor-density endpoint cancellation 与 PNT
+curvature 给正主项，`B_Q` diagonal 给 `x^(7/6)/log^3 x` 的负实 leading asymptotic，
+boundary 有 `1/48` gap。两条 fixed Haar lanes 已各自有 arithmetic information，但尚未
+控制 transverse/full-output component，也未完成 signed coupling。FULL_GATE_B、global
+strict `1/400`、arithmetic `L2` 和 fixed-atom credit 继续 OPEN/UNPAID/NONE。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1236,6 +1235,69 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.50 V109 / TPC-256：literal beta Haar and diagonal-dominant adjoint asymptotic
+
+The truncated Möbius divisor layer has the same `1/d` density on both
+consecutive rank children.  Exact endpoint counting gives
+
+```text
+|<z_mid,sum_(d|dot,d<=U)mu(d)>|<=U/rho=O(x^(-67/400)).
+```
+
+The strong PNT and second-order `Li` curvature then prove
+
+```text
+<z_mid,beta>
+ =[log(32/27)/sqrt(2)]sqrt(x)/log^2 x
+  +O(sqrt(x)/log^3 x)>0.
+```
+
+TPC-255's exact four-lane identity, weighted PNT and the combined-unit-row
+first moment give
+
+```text
+B_Q=(9/2+o(1))x^(2/3)/log x,
+R_unit=O(x^(5/6+epsilon)),
+R_hard,R_jump=O_psi(x^(55/48+epsilon)),
+
+<z_mid,A_x beta>
+ =-[9log(32/27)/(2sqrt(2))+o(1)]x^(7/6)/log^3 x.
+```
+
+The boundary gap is exactly `1/48`.  The scalar is complex in general: its
+real part is eventually negative, it is eventually nonzero, and its normalized
+phase tends to `-1`; reality and an unqualified principal-argument limit are
+not claimed.
+
+```text
+TPC256_LITERAL_BETA_DIVISOR_DENSITY_CANCELLATION = PROVED_EXACT_ENDPOINT_BOUND
+TPC256_LITERAL_BETA_HAAR_ASYMPTOTIC = PROVED_SOURCE_BACKED
+TPC256_BQ_WEIGHTED_PRIME_ASYMPTOTIC = PROVED_SOURCE_BACKED
+TPC256_INPUT_UNIT_BOUND = PROVED_SOURCE_BACKED
+TPC256_HARD_WINDOW_BOUND = PROVED_SOURCE_BACKED
+TPC256_CHILD_JUMP_BOUND = PROVED_SOURCE_BACKED
+TPC256_BOUNDARY_POWER_SEPARATION = PROVED_EXACT_ONE_OVER_48
+TPC256_ADJOINT_NORMALIZED_COMPLEX_ASYMPTOTIC = PROVED_SOURCE_BACKED
+TPC256_REAL_PART_EVENTUALLY_NEGATIVE = PROVED
+TPC256_SCALAR_EVENTUALLY_NONZERO = PROVED
+TPC256_NORMALIZED_PHASE_TO_MINUS_ONE = PROVED
+TPC256_SCALAR_IS_REAL = NOT_CLAIMED
+TPC256_UNQUALIFIED_PRINCIPAL_ARGUMENT_TO_PLUS_PI = NOT_CLAIMED
+TPC256_ROUTE_ADVANCE = YES_LITERAL_ARITHMETIC
+TPC256_ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_BETA_ADJOINT_HAAR_LANE
+TPC256_FIXED_ATOM_CREDIT = 0
+TPC256_L2 = NONE
+TPC256_FULL_GATE_B = OPEN
+TPC256_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC256_TWIN_PRIME_RESULT = NONE
+TPC256_STATUS = PROVED_SOURCE_BACKED_L1_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC
+```
+
+地图位置：**TPC-256 支付了第二条 fixed Haar lane，并首次给出 literal adjoint scalar
+的显式非零 complex asymptotic。下一座大桥不是再估计同一 projection，而是控制
+`A_x beta` 的 transverse/full-output component，并与 TPC-254 的 physical `w` lane 在
+同一 prime shell 上 signed couple；one-coordinate result 不得提升为 `L2` 或 Gate B。**
 
 ## 5.49 V108 / TPC-255：exact adjoint diagonal and hard-boundary compiler
 
@@ -2987,11 +3049,11 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V108 / TPC-255：
+截至 V109 / TPC-256：
 
 ```text
 ROUTE_ADVANCE = YES
-ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_LANE_CUMULATIVE_FROM_TPC254
+ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_AND_BETA_ADJOINT_HAAR_LANES
 FIXED_ATOM_CREDIT = 0
 TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
 FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
@@ -3006,6 +3068,27 @@ TPC_252_TRIGGER = true
 TPC_253_TRIGGER = true
 TPC_254_TRIGGER = true
 TPC_255_TRIGGER = true
+TPC_256_TRIGGER = true
+TPC256_LITERAL_BETA_DIVISOR_DENSITY_CANCELLATION = PROVED_EXACT_ENDPOINT_BOUND
+TPC256_LITERAL_BETA_HAAR_ASYMPTOTIC = PROVED_SOURCE_BACKED
+TPC256_BQ_WEIGHTED_PRIME_ASYMPTOTIC = PROVED_SOURCE_BACKED
+TPC256_INPUT_UNIT_BOUND = PROVED_SOURCE_BACKED
+TPC256_HARD_WINDOW_BOUND = PROVED_SOURCE_BACKED
+TPC256_CHILD_JUMP_BOUND = PROVED_SOURCE_BACKED
+TPC256_BOUNDARY_POWER_SEPARATION = PROVED_EXACT_ONE_OVER_48
+TPC256_ADJOINT_NORMALIZED_COMPLEX_ASYMPTOTIC = PROVED_SOURCE_BACKED
+TPC256_REAL_PART_EVENTUALLY_NEGATIVE = PROVED
+TPC256_SCALAR_EVENTUALLY_NONZERO = PROVED
+TPC256_NORMALIZED_PHASE_TO_MINUS_ONE = PROVED
+TPC256_SCALAR_IS_REAL = NOT_CLAIMED
+TPC256_UNQUALIFIED_PRINCIPAL_ARGUMENT_TO_PLUS_PI = NOT_CLAIMED
+TPC256_ROUTE_ADVANCE = YES_LITERAL_ARITHMETIC
+TPC256_ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_BETA_ADJOINT_HAAR_LANE
+TPC256_FIXED_ATOM_CREDIT = 0
+TPC256_L2 = NONE
+TPC256_FULL_GATE_B = OPEN
+TPC256_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC256_TWIN_PRIME_RESULT = NONE
 TPC255_COMPLETE_UNIT_CENTERED_ALIAS = PROVED_SOURCE_BACKED_ZERO_FOR_H_GREATER_THAN_2Q
 TPC255_LITERAL_ADJOINT_COORDINATE_EXPANSION = PROVED_EXACT
 TPC255_DELETED_DIAGONAL_BQ_RETURN = PROVED_EXACT
@@ -3455,6 +3538,10 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
+1. **TPC-256 已完成：literal beta Haar and diagonal-dominant adjoint asymptotic**。
+   beta midpoint 的显式正主项、adjoint scalar 的 negative-real leading asymptotic、
+   eventual nonzero/phase 与 `1/48` boundary gap 已 source-backed proved。这是 scoped
+   arithmetic advance；下一步是 transverse/full-output control，不是重复一维 projection。
 1. **TPC-255 已完成：exact adjoint diagonal and hard-boundary compiler**。
    complete unit-centered alias 已由 V43 Poisson 精确删除；deleted diagonal、input-unit、
    hard-window 与 child-jump 被 exact 返回到一个 literal beta linear form。该篇是结构推进，
@@ -3607,11 +3694,11 @@ NUMBERED_RELEASE = TPC-244
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-255 的下一步：collective beta-midpoint/boundary estimate**。
-    首先 source-lock actual beta rank-midpoint theorem；若没有直接 theorem，则寻找能把
-    `B_Q` diagonal return、input-unit correction、hard-window 与 child-jump 在同一 shell
-    上共同重组的最小解析 normal form。不得逐 lane 或逐 prime triangle，也不得把
-    complete-lattice Poisson zero 计作 arithmetic saving。
+12. **TPC-256 之后：transverse/full-output adjoint control**。
+    在 same V59 clock 上把 `A_x beta` 分解为已支付 midpoint Haar coordinate 与其正交
+    complement，寻找 source-backed full-output energy or multiscale Haar theorem；随后才与
+    TPC-254 的 `w` lane signed couple。不得由 one-coordinate asymptotic 推断 `L2`、
+    full Gate B 或 strict `1/400`。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -3710,6 +3797,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V109 / TPC-256 | Bridge A / Gate B：literal beta and adjoint midpoint Haar asymptotics paid；transverse/full output open | `TPC-256` | divisor-density endpoint cancellation、second-order PNT curvature、explicit `log(32/27)` main、`B_Q` amplification、`H^2/q` boundary moment、`1/48` separation 与 normalized phase；scoped arithmetic advance |
 | 2026-08-26 | V108 / TPC-255 | Bridge A / Gate B：literal adjoint normal form exact；`B_Q` beta midpoint plus unit/boundary lanes unestimated | `TPC-255` | complete centered Poisson zero、deleted-diagonal return、joint output-mask centering、input-unit correction、hard-window 与 child-jump compiler；exact literal structure advance, arithmetic unchanged in this paper |
 | 2026-08-26 | V107 / TPC-254 | Bridge A / Gate B：literal hybrid `w` midpoint has arbitrary fixed log-power control；adjoint `beta` lane open | `TPC-254` | source-backed maximal Type-I `m=1` extraction、real-clock child intervals、`x^(1/2)(log x)^(-M)` Haar bound、quantifier firewall 与 sharp norm-only adjoint obstruction；scoped arithmetic advance |
 | 2026-08-26 | V106 / TPC-253 | Bridge A / Gate B：source-frozen rank midpoint exact；two actual Haar moments and payable margin open | `TPC-253` | coefficient-independent ordered split、normalized Haar projector、integer crosswalk、partial-sum covariance transfer、literal kernel expansion 与 safe adjoint；arithmetic unchanged |

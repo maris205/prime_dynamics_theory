@@ -9,13 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-255 已把 TPC-254 留下的 literal adjoint `beta` lane 逐坐标展开。
-V43 band-limited Poisson 在 `H>2Q` 时精确删除 complete-lattice unit-centered alias，
-但 deleted diagonal 返回 shell coefficient `B_Q`，physical hard window、ordered-rank
-child jump 及两侧 unit masks 产生三个必须保留的 correction lanes。因此
-`<z_mid,A_x beta>` 已被编译成一个 exact literal beta linear form，却尚无定量算术估计。
-TPC-254 的 `w` midpoint 任意固定 log-power bound 继续有效；本篇为结构推进，
-`ARITHMETIC_ADVANCE=NO`，arithmetic `L2`、full Gate B 与 strict `1/400` 仍开放。
+当前主线状态：TPC-256 已支付 TPC-255 留下的 literal adjoint Haar lane。两个 consecutive
+rank children 的 truncated Möbius divisor densities 逐层相消到 endpoint error，强 PNT 的
+二阶 prime-density curvature 给出
+`<z_mid,beta>~[log(32/27)/sqrt(2)]sqrt(x)/log^2(x)>0`。TPC-255 返回的 `B_Q`
+diagonal 因而主导，证明 complex scalar
+`<z_mid,A_x beta>~-[9log(32/27)/(2sqrt(2))]x^(7/6)/log^3(x)`；hard-window 与
+child-jump 小 `1/48` 个 fixed power。该结果是第二条 literal Haar lane 的 scoped arithmetic
+advance；full output、arithmetic `L2`、full Gate B 与 strict `1/400` 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +30,8 @@ TPC-254 的 `w` midpoint 任意固定 log-power bound 继续有效；本篇为�
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-256-literal-beta-haar-adjoint-asymptotic` - `PROVED_SOURCE_BACKED_L1_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC` - 以 consecutive-interval divisor-density cancellation 和强 PNT 二阶曲率证明 literal `beta` rank-midpoint 的显式正渐近式，再用 TPC-255 的 `B_Q` deleted-diagonal return 与 `H^2/q` boundary first moment 得到 adjoint Haar scalar 的显式负实主项、eventual nonzero 与 normalized phase `->-1`；boundary 有 `1/48` power separation，但仅为一条 Haar 投影，`L2` 与 full Gate B 未支付。
 
 `tpc-255-exact-adjoint-diagonal-boundary-compiler` - `PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER` - 将 ordered-rank Haar vector 穿过 literal V59 adjoint，证明 complete unit-centered lattice alias 在 `H>2Q` 时由 Poisson 精确消失，并把 deleted diagonal、input/output unit masks、hard-window leakage 与 child-jump leakage 全部原样返回；最终得到 `-B_Q<z_mid,beta>` 加三个 explicit correction lanes，但无 lane estimate、arithmetic `L2` 或 Gate-B credit。
 

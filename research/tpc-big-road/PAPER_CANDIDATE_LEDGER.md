@@ -2,11 +2,57 @@
 
 更新时间：2026-08-26
 
-状态：**TPC255_PROVED_EXACT_SOURCE_BACKED_L1_ADJOINT_DIAGONAL_HARD_WINDOW_CHILD_JUMP_COMPILER / QUANTITATIVE_BETA_LANE_OPEN**
+状态：**TPC256_PROVED_SOURCE_BACKED_L1_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC / TRANSVERSE_FULL_OUTPUT_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.50 已发布：TPC-256 literal beta Haar and diagonal-dominant adjoint asymptotic
+
+项目：`papers/tpc-256-literal-beta-haar-adjoint-asymptotic/`
+
+类型：**PROVED_SOURCE_BACKED_L1_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC**。
+
+On TPC-253's ordered-rank children, every truncated divisor layer has the same
+`1/d` density and differs only by an endpoint error.  Thus
+
+```text
+|<z_mid,sum_(d|dot,d<=U)mu(d)>|<=U/rho=O(x^(-67/400)).
+```
+
+The second-order curvature of the de la Vallée Poussin PNT then gives
+
+```text
+<z_mid,beta>
+ =[log(32/27)/sqrt(2)]sqrt(x)/log^2 x
+  +O(sqrt(x)/log^3 x)>0.
+```
+
+TPC-255's exact diagonal/boundary ledger, weighted PNT, combined-unit-row
+first moment and crossing counts give
+
+```text
+B_Q=(9/2+o(1))x^(2/3)/log x,
+R_unit=O(x^(5/6+epsilon)),
+R_hard,R_jump=O_psi(x^(55/48+epsilon)),
+
+<z_mid,A_x beta>
+ =-[9log(32/27)/(2sqrt(2))+o(1)]x^(7/6)/log^3 x.
+```
+
+The boundary exponent gap is `1/48`.  The asymptotic is complex: eventual
+negative real part, nonzero scalar and normalized phase `->-1` are proved;
+reality and an unqualified principal `Arg -> +pi` are not claimed.  One Haar
+projection is not a full-output, `L2`, Gate-B or twin-prime theorem.
+
+```text
+STRONGEST_POSITIVE_RESULT = THE_LITERAL_BETA_RANK_MIDPOINT_HAS_AN_EXPLICIT_POSITIVE_ASYMPTOTIC_AND_THE_RETURNED_BQ_DIAGONAL_FORCES_A_NONZERO_NEGATIVE_REAL_LEADING_ADJOINT_HAAR_ASYMPTOTIC
+STRONGEST_OBSTRUCTION = ONE_FIXED_HAAR_PROJECTION_DOES_NOT_CONTROL_THE_TRANSVERSE_OR_FULL_OUTPUT_COMPONENT_AND_OUTPUT_UNIT_PIECES_CANNOT_BE_POISSON_SPLIT_BEFORE_EXACT_RECENTERING
+OPEN_THEOREM = CONTROL_THE_TRANSVERSE_FULL_OUTPUT_COMPONENT_OF_A_X_BETA_AND_COUPLE_IT_TO_THE_PHYSICAL_W_LANE_ON_THE_SAME_V59_CLOCK_WITH_THE_SHELL_MASKS_DIAGONAL_AND_WINDOW_RETAINED
+REUSABLE_STRUCTURE = CONSECUTIVE_INTERVAL_DIVISOR_DENSITY_CANCELLATION_TO_SECOND_ORDER_PNT_CURVATURE_TO_EXPLICIT_BETA_HAAR_MAIN_TO_BQ_DIAGONAL_AMPLIFICATION_TO_FIRST_MOMENT_BOUNDARY_LOCALIZATION_TO_ONE_OVER_48_SEPARATION
+ROUND2_CLUE = EXPLOIT_EXACT_DIVISOR_DENSITY_CANCELLATION_BEFORE_ANY_TRIANGLE__THEN_USE_THE_BQ_DIAGONAL_MAIN_AND_H2_OVER_Q_BOUNDARY_MOMENT_TO_ISOLATE_THE_TRANSVERSE_FULL_GATE_B_REMAINDER
+```
 
 ## 0.49 已发布：TPC-255 exact adjoint diagonal and hard-boundary compiler
 
