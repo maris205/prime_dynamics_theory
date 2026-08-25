@@ -9,13 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-252 已精确审计 TPC-251 declared partition 的全部 refinement
-自由度。一次 binary split 是 rank-one covariance transfer，且
-`R_trans(P')<=R_trans(P)`；singleton partition 令全部 projected probes、Gram、
-`R_trans/R_coh` 消失并使 `C_long=C_x`。因此
-`max_P[|C_long(P)|-R_coh(P)-E]_+=[|C_x|-E]_+`：自由优化 partition 只会退化为
-direct reverse-triangle bound，不能获得 arithmetic credit。下一步必须预先冻结一个
-由 physical interval 单独决定的非平凡 partition，并测试 literal V59 contrast；
+当前主线状态：TPC-253 已从 ordered physical interval 预先冻结 coefficient-independent
+rank midpoint。其 normalized Haar contrast `z` 满足
+`M_mid=M_coarse+z tensor z`，并把 coarse/midpoint longitudinal 差精确写成
+`conjugate(<z,w>)<z,A_x beta>`，transverse covariance 作相反更新；integer clock
+与 `floor(3x/4)` threshold 精确对应。literal TPC-247 kernel 的 prime weight、unit
+masks、deleted diagonal、`K_H(u-t)` 与安全 adjoint orientation 全部保留。该 split
+只是 source-only modeling choice；两个实际 midpoint moments 尚无共同算术估计，
 arithmetic `L2`、full Gate B 与 strict `1/400` 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
@@ -30,6 +30,8 @@ arithmetic `L2`、full Gate B 与 strict `1/400` 仍开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-253-source-frozen-rank-midpoint-contrast-compiler` - `PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER` - 从 ordered physical interval 在观察任何 coefficient/margin/sign 前冻结 rank midpoint，证明 normalized Haar projector、integer `floor(3x/4)` crosswalk、partial-sum longitudinal/transverse covariance transfer、within-child remainder、literal TPC-247 kernel expansion 与安全 adjoint identity；midpoint 的实际符号、非零性、算术尺度与 Gate-B margin 仍开放。
 
 `tpc-252-declared-partition-refinement-degeneracy` - `PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY` - 证明 binary refinement 的 exact rank-one covariance transfer、true transverse radius monotonicity、fixed-probe Gram subtraction 与 universal singleton collapse，并严格给出 all-partition margin optimization 等于 direct external bound；自由 partition 优化因而被封口，actual V59 非零 contrast 与算术 saving 仍开放。
 

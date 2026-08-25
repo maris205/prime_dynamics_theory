@@ -1,12 +1,44 @@
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-25
+更新时间：2026-08-26
 
-状态：**TPC252_PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY / SOURCE_FROZEN_NONTRIVIAL_CONTRAST_OPEN**
+状态：**TPC253_PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER / TWO_LITERAL_MIDPOINT_IMBALANCES_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.47 已发布：TPC-253 source-frozen rank-midpoint contrast compiler
+
+项目：`papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/`
+
+类型：**PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER**。
+
+TPC-253 fixes `L` as the first `floor(N/2)` coordinates of the ordered physical
+interval and `R` as the remainder before inspecting any coefficient, margin or
+sign.  Its normalized Haar contrast satisfies
+
+```text
+M_mid=M_coarse+z tensor z,
+C_long(mid)-C_long(coarse)=conjugate(<z,w>)<z,A_x beta>,
+Q_trans(mid)-Q_trans(coarse)=-conjugate(<z,w>)<z,A_x beta>.
+```
+
+The exact partial-sum compiler includes both longitudinal terms and the
+within-child covariance.  Integral clocks crosswalk to `floor(3x/4)`, while the
+rank definition remains primary for nonintegral `x`.  Literal substitution
+retains the complete TPC-247 kernel and the safe identity
+`<z,A_x beta>=<A_x^*z,beta>` without self-adjointness.  Constant and signed
+synthetic controls prove that source-free geometry cannot decide sign, nonzero
+value or scale; they are not actual V59 replay.
+
+```text
+STRONGEST_POSITIVE_RESULT = ONE_COEFFICIENT_INDEPENDENT_PHYSICAL_RANK_MIDPOINT_WITH_EXACT_HAAR_PROJECTOR_PARTIAL_SUM_COVARIANCE_TRANSFER_LITERAL_KERNEL_AND_SAFE_ADJOINT_COMPILER
+STRONGEST_OBSTRUCTION = NO_LOCKED_THEOREM_ESTIMATES_EITHER_ACTUAL_MIDPOINT_IMBALANCE_ON_ONE_COMMON_GROWING_V59_CLOCK
+OPEN_THEOREM = ESTIMATE_THE_LITERAL_RANK_MIDPOINT_W_AND_A_X_BETA_MOMENTS_OR_THEIR_PRODUCT_WITH_THE_REQUIRED_PROJECTED_RADIUS_ON_ONE_CLOCK
+REUSABLE_STRUCTURE = ORDERED_PHYSICAL_INTERVAL_TO_RANK_MIDPOINT_TO_NORMALIZED_HAAR_CONTRAST_TO_PARTIAL_SUM_IMBALANCE_TO_LITERAL_ADJOINT_FORM
+ROUND2_CLUE = AUDIT_THE_TWO_LITERAL_RANK_MIDPOINT_IMBALANCES_WITH_EXISTING_PRIME_AND_HYBRID_MEAN_THEOREMS_BEFORE_ANY_DYADIC_EXTENSION
+```
 
 ## 0.46 已发布：TPC-252 declared-partition refinement degeneracy
 

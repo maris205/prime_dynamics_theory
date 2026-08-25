@@ -1,0 +1,313 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Mc}{M_{\mathrm c}}
+\newcommand{\Mm}{M_{\mathrm m}}
+\newcommand{\Clc}{C_{\mathrm{long}}(\mathrm c)}
+\newcommand{\Clm}{C_{\mathrm{long}}(\mathrm m)}
+\newcommand{\Qtc}{Q_{\mathrm{trans}}(\mathrm c)}
+\newcommand{\Qtm}{Q_{\mathrm{trans}}(\mathrm m)}
+\setlength{\emergencystretch}{2em}
+
+\title{Source-Frozen Rank-Midpoint Contrasts for the Literal V59 Scalar}
+\author{Liang Wang\\
+\small School of Electronic Information and Communications, Huazhong University of Science and Technology (HUST),\\
+\small Wuhan, China}
+\date{August 25, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We freeze a nontrivial two-block direction from the ordered physical interval
+of the literal V59 scalar before inspecting any coefficient, margin, or sign.
+The first $\lfloor N/2\rfloor$ coordinates and the remaining coordinates
+define a normalized Haar contrast $z$.  Its rank-one projector admits the
+exact rational representation $\rho^2h_i h_j$, even when $\rho$ is
+irrational.  We derive exact partial-sum formulas for both coarse and midpoint
+longitudinal terms.  Their difference is
+$\conj{\ip zw}\ip z{A_x\beta}$, with the first-slot conjugation explicit,
+and the transverse covariance changes by its negative; the remainder is the
+sum of the two within-child covariances.  For integral $x$, the rank split is
+exactly the threshold $\lfloor3x/4\rfloor$.  Substitution of the literal
+TPC-247 kernel retains its prime weight, two unit masks, deleted diagonal,
+orientation, physical kernel, centered residue bracket, and $\beta$.  The
+valid transfer is $\ip z{A_x\beta}=\ip{A_x^*z}\beta$; self-adjointness is not
+used.  A canonical exact certificate, 59 rejected mutations, and 192
+exact-rational stress families reproduce these identities.  Constant and
+signed controls show that the compiler alone proves no sign, nonzero value,
+or arithmetic scale.
+\end{abstract}
+
+\section{Frozen source choice and scope}
+
+Keep the finite literal TPC-247 source object
+\begin{equation}
+ g=A_x\beta,\qquad C_x=\ip wg,                         \label{eq:source}
+\end{equation}
+on $I_x=(x/2,x]\cap\Z$, with the inner product conjugate-linear in its
+first slot \cite{tpc247}.  TPC-252 shows that a declared binary refinement
+adds one orthogonal contrast direction and transfers its covariance from the
+transverse to the longitudinal term \cite{tpc252}.  Unrestricted partition
+optimization ends at the degenerate singleton partition.  The narrow next
+question is therefore different: can the physical coordinates themselves
+freeze one nontrivial split before any coefficient is observed?
+
+Let
+\begin{equation}
+ I_x=\{n_1<\cdots<n_N\},\quad N\geq2,\qquad
+ \ell=\lfloor N/2\rfloor,\quad r=N-\ell,               \label{eq:ranks}
+\end{equation}
+and set $L=\{n_1,\ldots,n_\ell\}$ and
+$R=\{n_{\ell+1},\ldots,n_N\}$.  This choice uses only $x$ and the ordered
+coordinate set.  It is declared before $\beta,w,A_x\beta$, any margin, or any
+sign.  It is a source-frozen modeling choice, not a unique V59-canonical
+partition and not V59's smooth bounded-overlap mesoscopic partition.
+
+The exact release status is
+\begin{center}
+\small\nolinkurl{PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER}.
+\end{center}
+
+\section{Rank-midpoint geometry}
+
+Put
+\begin{equation}
+ h=\frac{\one_L}{\ell}-\frac{\one_R}{r},\qquad
+ \rho^2=\frac{\ell r}{N},\qquad z=\rho h.              \label{eq:contrast}
+\end{equation}
+
+\begin{proposition}[Normalization and projector]\label{prop:projector}
+The vector $z$ is the unique unit child-flat zero-sum contrast whose sign is
+positive on $L$.  If $u_J=|J|^{-1/2}\one_J$, then
+\begin{equation}
+ \Mc=u_{I_x}\otimes u_{I_x},\qquad
+ \Mm=u_L\otimes u_L+u_R\otimes u_R
+      =\Mc+z\otimes z.                                 \label{eq:projector}
+\end{equation}
+Every entry of the added projector is the rational number
+$(z\otimes z)_{ij}=\rho^2h_i h_j$.
+\end{proposition}
+
+\begin{proof}
+The cardinalities give
+\[
+ \sum_{n\in I_x}h(n)=1-1=0,
+ \qquad
+ \|z\|^2=\frac{\ell r}{N}\left(\frac1\ell+\frac1r\right)=1.
+\]
+If a child-flat zero-sum unit vector equals $a>0$ on $L$ and $b<0$ on $R$,
+then $b=-\ell a/r$ and unit norm forces
+$a=\sqrt{r/(\ell N)}=\rho/\ell$; hence $b=-\rho/r$.
+Thus the sign convention fixes $z$ uniquely.  The orthonormal pair
+$u_{I_x},z$ spans the same child-flat plane as $u_L,u_R$, proving
+\eqref{eq:projector}.  Finally $z_i\conj{z_j}=\rho^2h_i h_j$ because $h$ is
+real.
+\end{proof}
+
+The rational projector representation is the executable normalization: no
+floating approximation to $\rho$ is needed when $N$ is odd.
+
+\begin{proposition}[Integer crosswalk]\label{prop:crosswalk}
+For integral $x=k\geq3$, the last coordinate of $L$ is
+$\lfloor3k/4\rfloor$.  Equivalently,
+\[
+ L=(k/2,\lfloor3k/4\rfloor]\cap\Z,\qquad
+ R=(\lfloor3k/4\rfloor,k]\cap\Z.
+\]
+\end{proposition}
+
+\begin{proof}
+Here $I_k=\{\lfloor k/2\rfloor+1,\ldots,k\}$ and
+$N=k-\lfloor k/2\rfloor$.  Write $k=4m+s$.  The four exact cases are
+\begin{center}
+\begin{tabular}{c@{\quad}c@{\quad}c@{\quad}c@{\quad}c}
+\toprule
+$s$ & $\lfloor k/2\rfloor$ & $N$ & $\ell$ & left endpoint \\
+\midrule
+$0$ & $2m$   & $2m$   & $m$   & $3m$ \\
+$1$ & $2m$   & $2m+1$ & $m$   & $3m$ \\
+$2$ & $2m+1$ & $2m+1$ & $m$   & $3m+1$ \\
+$3$ & $2m+1$ & $2m+2$ & $m+1$ & $3m+2$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The last column is $\lfloor3k/4\rfloor$ in each row.
+\end{proof}
+
+Proposition~\ref{prop:crosswalk} is only an integer crosswalk.  Definition
+\eqref{eq:ranks}, rather than a threshold formula, remains primary for
+arbitrary real $x$.
+
+\section{Partial-sum covariance compiler}
+
+For $J\subset I_x$, write $S_f(J)=\sum_{n\in J}f(n)$ and
+$\mu_f(J)=S_f(J)/|J|$.  Put $W_J=S_w(J)$ and $G_J=S_g(J)$.
+
+\begin{theorem}[Exact midpoint compiler]\label{thm:compiler}
+The contrast moment, two longitudinal terms, covariance transfer, and
+transverse terms satisfy
+\begin{align}
+ \ip zf
+ &=\rho\left(\frac{S_f(L)}\ell-\frac{S_f(R)}r\right),                 \label{eq:moment}\\
+ \Clm
+ &=\frac{\conj{W_L}G_L}{\ell}+\frac{\conj{W_R}G_R}{r},               \label{eq:midlong}\\
+ \Clc
+ &=\frac{\conj{W_L+W_R}(G_L+G_R)}N,                                  \label{eq:coarselong}\\
+ \Clm-\Clc
+ &=\conj{\ip zw}\ip zg                                               \notag\\
+ &=\frac{\ell r}{N}
+ \conj{\left(\frac{W_L}{\ell}-\frac{W_R}{r}\right)}
+ \left(\frac{G_L}{\ell}-\frac{G_R}{r}\right),                      \label{eq:transfer}\\
+ \Qtm-\Qtc
+ &=-\conj{\ip zw}\ip zg.                                             \label{eq:qchange}
+\end{align}
+Moreover,
+\begin{equation}
+ \Qtm=\sum_{J\in\{L,R\}}\sum_{n\in J}
+ \conj{w(n)-\mu_w(J)}\,[g(n)-\mu_g(J)],                              \label{eq:within}
+\end{equation}
+and
+\begin{equation}
+ C_x=\Clm+\Qtm,\qquad
+ \Qtc=\conj{\ip zw}\ip zg+\Qtm.                                    \label{eq:decomp}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equation~\eqref{eq:moment} follows by summing the two constant values of
+$z$.  Orthogonal block averaging gives \eqref{eq:midlong} and
+\eqref{eq:coarselong}.  Proposition~\ref{prop:projector} and orthogonality of
+the coarse range with $z$ give
+\[
+ \ip{\Mm w}{\Mm g}=\ip{\Mc w}{\Mc g}
+ +\conj{\ip zw}\ip zg,
+\]
+where the conjugation is forced by the first-slot convention.  Substituting
+\eqref{eq:moment} gives \eqref{eq:transfer}.  The fixed scalar $C_x$ has the
+orthogonal decompositions $\Clc+\Qtc$ and $\Clm+\Qtm$, so subtraction gives
+\eqref{eq:qchange}.  Finally $(I-\Mm)w$ and $(I-\Mm)g$ are the childwise
+centered vectors, yielding \eqref{eq:within} and \eqref{eq:decomp}.
+\end{proof}
+
+The theorem is a complex covariance identity.  Neither longitudinal term nor
+their difference acquires a sign or monotonicity property.
+
+\section{Literal kernel expansion and safe adjoint}
+
+Retain the TPC-247 data
+\begin{gather}
+ H=x^{21/32},\quad Q=x^{1/3},\quad
+ \mathcal Q_x=\{q\ \text{prime}:Q<q\leq2Q\},\quad
+ K_H(h)=\widehat{\psi_+}(h/H),                                       \label{eq:scales}\\
+ \beta(t)=\frac{\Lambda(t)}{\log t}
+ -\sum_{\substack{d\mid t\\d^{400}\leq x^{133}}}\mu(d),\qquad
+ w(u)=\Lambda(u+2)-b_x^{(z)}(u).                                    \label{eq:weights}
+\end{gather}
+The inherited superscript in $b_x^{(z)}$ is source notation and does not
+identify the rank contrast.  The literal operator is
+\begin{equation}
+ A_x(u,t)=\one_{u\ne t}\sum_{q\in\mathcal Q_x}q
+ \one_{q\nmid u}\one_{q\nmid t}K_H(u-t)
+ \left(\one_{u\equiv t\pmod q}-\frac1{q-1}\right).                 \label{eq:operator}
+\end{equation}
+
+\begin{proposition}[Literal expansion and adjoint]\label{prop:literal}
+The midpoint $g$-moment is
+\begin{align}
+ \ip z{A_x\beta}
+ ={}&\rho\sum_{q\in\mathcal Q_x}q\sum_{u,t\in I_x}
+ \left(\frac{\one_L(u)}\ell-\frac{\one_R(u)}r\right)
+ \one_{u\ne t}\one_{q\nmid u}\one_{q\nmid t}                    \notag\\[-2pt]
+ &\qquad\times\beta(t)K_H(u-t)
+ \left(\one_{u\equiv t\pmod q}-\frac1{q-1}\right).               \label{eq:literal}
+\end{align}
+Also,
+\begin{equation}
+ \ip z{A_x\beta}=\ip{A_x^*z}\beta,\qquad
+ (A_x^*z)(t)=\sum_{u\in I_x}\conj{A_x(u,t)}z(u).                    \label{eq:adjoint}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert \eqref{eq:operator} into \eqref{eq:moment} to obtain
+\eqref{eq:literal}.  No factor is rearranged or dropped.  For
+\eqref{eq:adjoint}, expand the finite sums:
+\[
+ \ip{A_x^*z}\beta
+ =\sum_t\conj{\sum_u\conj{A_x(u,t)}z(u)}\,\beta(t)
+ =\sum_{u,t}\conj{z(u)}A_x(u,t)\beta(t).
+\]
+This is $\ip z{A_x\beta}$.  The argument uses only the adjoint definition.
+\end{proof}
+
+In particular, output $u$, input $t$, the outer weight $q$, both unit masks,
+the deleted diagonal, $K_H(u-t)$, the centered residue bracket, and literal
+$\beta(t)$ all remain visible.  No symmetry of $K_H$, equality $A_x^*=A_x$,
+or self-adjointness is source-locked.
+
+\section{Sharp controls, exact audit, and limitations}
+
+\begin{proposition}[Nonliteral sharp controls]\label{prop:controls}
+If $w$ is constant or $g$ is constant, the transfer in
+\eqref{eq:transfer} is zero.  The synthetic choices $(w,g)=(z,z)$ and
+$(z,-z)$ give transfer $+1$ and $-1$, respectively.
+\end{proposition}
+
+\begin{proof}
+A constant factor has zero $z$-moment because $\sum z=0$.  For the signed
+controls, $\ip zz=1$, so the two products are $1$ and $-1$.
+\end{proof}
+
+These are exact finite Hilbert-space controls, not literal numerical V59
+instances.  They show that source-free geometry cannot decide sign,
+nonvanishing, or scale.
+
+\paragraph{Executable audit.}
+The certificate stores rational and Gaussian-rational data as canonical
+strings and uses only $\rho^2h_i h_j$ for projector products.  An odd-rank,
+nonintegral-clock fixture checks all formulas.  A separately labeled
+nonliteral exact-kernel sample substitution checks every factor in
+\eqref{eq:operator}; its deliberately non-self-adjoint matrix verifies that
+\eqref{eq:adjoint}, rather than an $A_x^*=A_x$ shortcut, is used.  The
+independent checker imports no producer, enforces exact integer types, and
+rejects 59 typed, semantic, digest, duplicate-key, nonfinite, and
+noncanonical mutations.  The stress program verifies 192 deterministic
+families: 96 integer clocks, including 24 in each class modulo four, and 96
+nonintegral rational clocks.  Optimized and normal Python modes produce
+identical output.  These computations reproduce finite algebra only.
+
+\paragraph{Claim firewall.}
+The rank midpoint is not V59-canonical and is not identified with a smooth
+V59 partition.  The exact-sample kernel fixture is not an actual V59
+numerical replay.  We claim no $A_x$ self-adjointness, contrast sign,
+nonzero value, asymptotic scale, arithmetic saving, L2 theorem, fixed-atom
+credit, Gate-B closure, strict $1/400$, or twin-prime result.  The open theorem
+is a source-backed joint estimate for $\ip zw$ and $\ip z{A_x\beta}$ on one
+common growing V59 clock.
+
+\section{Conclusion}
+
+The ordered physical interval now supplies one reproducible nontrivial
+contrast before the source coefficients are observed.  Its projector,
+partial sums, covariance transfer, within-child remainder, literal kernel
+expansion, and adjoint orientation are exact.  The compiler isolates the two
+literal imbalances that a future arithmetic theorem must estimate; it does
+not estimate them itself.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

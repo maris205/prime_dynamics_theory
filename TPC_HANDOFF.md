@@ -1,9 +1,100 @@
 # TPC HANDOFF
 
-更新时间：2026-08-25
-交接状态：`BOLD_CHANNEL_V105_TPC252_DECLARED_PARTITION_REFINEMENT_DEGENERACY_RELEASED`
+更新时间：2026-08-26
+交接状态：`BOLD_CHANNEL_V106_TPC253_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER_RELEASED`
 
-TPC-252 当前 section：declared-partition refinement degeneracy
+TPC-253 当前 section：source-frozen rank-midpoint contrast compiler
+------------------------------------------------------------------
+
+Keep the literal TPC-247 scalar `C_x=<w,A_x beta>` on
+
+```text
+I_x=(x/2,x] intersect Z={n_1<...<n_N},  N>=2.
+```
+
+Before inspecting `beta`, `w`, `A_x beta`, any margin or any sign, define
+
+```text
+ell=floor(N/2), r=N-ell,
+L={n_1,...,n_ell}, R={n_(ell+1),...,n_N},
+rho^2=ell*r/N,
+z=rho(1_L/ell-1_R/r).
+```
+
+Then `z` is the positive-on-`L` unit child-flat zero-sum contrast and
+
+```text
+M_mid=M_coarse+z tensor z,
+<z,f>=rho[S_f(L)/ell-S_f(R)/r],
+C_long(mid)-C_long(coarse)=conj(<z,w>)<z,A_x beta>,
+Q_trans(mid)-Q_trans(coarse)=-conj(<z,w>)<z,A_x beta>.
+```
+
+The midpoint transverse remainder is the sum of the two within-child
+covariances.  For integral `x=k>=3`, the last coordinate of `L` is exactly
+`floor(3k/4)`; for real nonintegral `x`, the ordered rank definition remains
+primary.
+
+Substitution of the literal TPC-247 operator retains output `u`, input `t`,
+the outer prime `q` weight, both unit masks, deleted diagonal, `K_H(u-t)`,
+centered residue bracket and literal `beta(t)`.  The safe transfer is
+
+```text
+<z,A_x beta>=<A_x^*z,beta>,
+(A_x^*z)(t)=sum_u conjugate(A_x(u,t))z(u).
+```
+
+No kernel symmetry or self-adjointness is imported.  Constant factors kill
+the contrast, while the nonliteral controls `(w,g)=(z,z)` and `(z,-z)` give
+transfers `+1` and `-1`; hence source-free geometry gives no arithmetic sign,
+nonzero value or scale.
+
+```text
+TPC253_RANK_MIDPOINT_PARTITION = PROVED_SOURCE_ONLY_DETERMINISTIC
+TPC253_INTEGER_THREE_QUARTER_CROSSWALK = PROVED_EXACT
+TPC253_MIDPOINT_CONTRAST_NORMALIZATION = PROVED_EXACT
+TPC253_PARTIAL_SUM_MOMENT_COMPILER = PROVED_EXACT
+TPC253_LITERAL_V59_G_MOMENT_EXPANSION = PROVED_EXACT
+TPC253_MIDPOINT_LONGITUDINAL_FORMULA = PROVED_EXACT
+TPC253_COARSE_TO_MIDPOINT_COVARIANCE_TRANSFER = PROVED_EXACT
+TPC253_WITHIN_CHILD_COVARIANCE_DECOMPOSITION = PROVED_EXACT
+TPC253_SAFE_ADJOINT_CROSSWALK = PROVED_EXACT
+TPC253_A_X_SELF_ADJOINTNESS = NOT_CLAIMED
+TPC253_MIDPOINT_V59_CANONICALITY = NOT_CLAIMED_SOURCE_ONLY_MODELING_CHOICE
+TPC253_SMOOTH_V59_PARTITION_IDENTIFICATION = NOT_CLAIMED
+TPC253_ACTUAL_V59_NUMERICAL_REPLAY = NOT_TESTABLE_FROM_LOCKED_MATERIAL
+TPC253_MIDPOINT_CONTRAST_SIGN_OR_NONZERO = OPEN
+TPC253_ARITHMETIC_ADVANCE = NO
+TPC253_FIXED_ATOM_CREDIT = 0
+TPC253_L2 = NONE
+TPC253_FULL_GATE_B = OPEN
+TPC253_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC253_TWIN_PRIME_RESULT = NONE
+TPC253_STATUS = PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER
+TPC253_ROUND2_CLUE = AUDIT_THE_TWO_LITERAL_RANK_MIDPOINT_IMBALANCES_WITH_EXISTING_PRIME_AND_HYBRID_MEAN_THEOREMS_BEFORE_ANY_DYADIC_EXTENSION
+```
+
+strongest positive result：ordered physical interval now supplies one exact,
+coefficient-independent normalized Haar direction with literal kernel and safe
+adjoint compilers；strongest obstruction：neither actual midpoint imbalance has
+a common-clock arithmetic estimate；open theorem：estimate `<z,w>` and
+`<z,A_x beta>` or their product together with the required projected radius；
+reusable structure：ordered interval -> rank midpoint -> Haar partial sums ->
+rank-one covariance transfer -> literal adjoint form。
+
+编号论文目录：papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/
+
+```text
+papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/README.md
+papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/PROOF_PACKAGE.md
+papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/paper/paper.pdf
+papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/results/tpc253_certificate.json
+papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_source_frozen_rank_midpoint_contrast_compiler.md
+research/tpc-big-road/tpc_bridge_b_source_frozen_rank_midpoint_contrast_compiler_checker.py
+```
+
+TPC-252 上游 section：declared-partition refinement degeneracy
 --------------------------------------------------------------
 
 Keep the finite literal TPC-247 scalar fixed:
@@ -7374,8 +7465,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V105/TPC-252 gate、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百六十六次（83 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V106/TPC-253 gate、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百六十八次（84 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -7545,11 +7636,23 @@ python -B research/tpc-big-road/tpc_bridge_b_literal_v59_declared_block_longitud
 python -O -B research/tpc-big-road/tpc_bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_declared_partition_refinement_degeneracy_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_declared_partition_refinement_degeneracy_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_source_frozen_rank_midpoint_contrast_compiler_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_source_frozen_rank_midpoint_contrast_compiler_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-252 入口：
+最新 TPC-253 入口：
+
+```text
+papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/README.md
+papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/notes/theorem_ledger.md
+papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_source_frozen_rank_midpoint_contrast_compiler.md
+research/tpc-big-road/tpc_bridge_b_source_frozen_rank_midpoint_contrast_compiler_checker.py
+```
+
+TPC-252 上游入口：
 
 ```text
 papers/tpc-252-declared-partition-refinement-degeneracy/README.md

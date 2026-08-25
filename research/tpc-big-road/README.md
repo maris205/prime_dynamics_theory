@@ -1,51 +1,62 @@
-# TPC big road V105 / TPC-252: declared-partition refinement degeneracy
+# TPC big road V106 / TPC-253: source-frozen rank-midpoint contrast compiler
 
-更新时间：2026-08-25
+更新时间：2026-08-26
 
-状态：`TPC252_PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY / FULL_GATE_B_OPEN`
+状态：`TPC253_PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-252 proof 为
-`bridge_b_declared_partition_refinement_degeneracy.md`，checker 为
-`tpc_bridge_b_declared_partition_refinement_degeneracy_checker.py`，编号论文为
-`../../papers/tpc-252-declared-partition-refinement-degeneracy/`。
+当前 TPC-253 proof 为
+`bridge_b_source_frozen_rank_midpoint_contrast_compiler.md`，checker 为
+`tpc_bridge_b_source_frozen_rank_midpoint_contrast_compiler_checker.py`，编号论文为
+`../../papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/`。
 
-For a binary split `P -> P'`, TPC-252 introduces the unique normalized child
-contrast `z` and proves
-
-```text
-M_P'=M_P+z tensor z,
-C_long(P')=C_long(P)+conjugate(<z,w>)<z,g>,
-Q_trans(P')=Q_trans(P)-conjugate(<z,w>)<z,g>,
-R_trans(P')<=R_trans(P).
-```
-
-At the singleton partition all projected probes, Gram entries and coherence
-quantities vanish, `C_long=C_x`, and for every fixed external `E>=0`,
+TPC-253 orders `I_x=(x/2,x] intersect Z={n_1<...<n_N}`, freezes its first
+`ell=floor(N/2)` coordinates against the remaining `r=N-ell`, and defines
 
 ```text
-max_P [|C_long(P)|-R_coh(P)-E]_+=[|C_x|-E]_+.
+rho^2=ell*r/N,
+z=rho(1_L/ell-1_R/r).
 ```
 
-Thus unrestricted adaptive partition search cannot improve the direct external
-bound.  The next legal test must freeze a nontrivial partition from the source
-clock before inspecting its realized margin.
+Before any coefficient, margin or sign is inspected, this gives
 
 ```text
-TPC252_BINARY_REFINEMENT_PROJECTION = PROVED_EXACT_RANK_ONE
-TPC252_BINARY_REFINEMENT_COVARIANCE_TRANSFER = PROVED_EXACT
-TPC252_TRANSVERSE_RADIUS_REFINEMENT = PROVED_NONINCREASING
-TPC252_SINGLETON_PROJECTED_GRAM_AND_RADIUS = PROVED_ZERO
-TPC252_PARTITION_MARGIN_OPTIMIZATION = PROVED_EQUAL_TO_DIRECT_BOUND
-TPC252_EVERY_SOURCE_PARTITION_INSTABILITY = REFUTED_SCOPED
-TPC252_ACTUAL_V59_ARITHMETIC_INSTABILITY = OPEN
-TPC252_ARITHMETIC_ADVANCE = NO
-TPC252_L2 = NONE
-TPC252_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC252_ROUND2_CLUE = FREEZE_A_NONTRIVIAL_SOURCE_ONLY_PARTITION_TREE_AND_TEST_ONE_LITERAL_V59_BINARY_CONTRAST_BEFORE_ANY_MARGIN_OPTIMIZATION
+M_mid=M_coarse+z tensor z,
+C_long(mid)-C_long(coarse)=conjugate(<z,w>)<z,A_x beta>,
+Q_trans(mid)-Q_trans(coarse)=-conjugate(<z,w>)<z,A_x beta>.
 ```
+
+The two longitudinal terms and the within-child transverse covariance have
+exact partial-sum formulas.  For integral `x=k`, `L` ends at `floor(3k/4)`.
+Substitution of the literal TPC-247 operator keeps the prime weight, both unit
+masks, deleted diagonal, physical kernel, centered residue bracket and literal
+`beta`; the safe orientation is `<z,A_x beta>=<A_x^*z,beta>`.  No kernel
+symmetry or self-adjointness is used.
+
+```text
+TPC253_RANK_MIDPOINT_PARTITION = PROVED_SOURCE_ONLY_DETERMINISTIC
+TPC253_INTEGER_THREE_QUARTER_CROSSWALK = PROVED_EXACT
+TPC253_MIDPOINT_CONTRAST_NORMALIZATION = PROVED_EXACT
+TPC253_PARTIAL_SUM_MOMENT_COMPILER = PROVED_EXACT
+TPC253_LITERAL_V59_G_MOMENT_EXPANSION = PROVED_EXACT
+TPC253_COARSE_TO_MIDPOINT_COVARIANCE_TRANSFER = PROVED_EXACT
+TPC253_WITHIN_CHILD_COVARIANCE_DECOMPOSITION = PROVED_EXACT
+TPC253_SAFE_ADJOINT_CROSSWALK = PROVED_EXACT
+TPC253_MIDPOINT_V59_CANONICALITY = NOT_CLAIMED_SOURCE_ONLY_MODELING_CHOICE
+TPC253_MIDPOINT_CONTRAST_SIGN_OR_NONZERO = OPEN
+TPC253_ARITHMETIC_ADVANCE = NO
+TPC253_L2 = NONE
+TPC253_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC253_ROUND2_CLUE = AUDIT_THE_TWO_LITERAL_RANK_MIDPOINT_IMBALANCES_WITH_EXISTING_PRIME_AND_HYBRID_MEAN_THEOREMS_BEFORE_ANY_DYADIC_EXTENSION
+```
+
+## V105 upstream: TPC-252 declared-partition refinement degeneracy
+
+TPC-252 proves binary rank-one covariance transfer and the singleton-collapse
+identity showing that unrestricted partition optimization is exactly the direct
+bound.  TPC-253 supplies the required source-frozen nontrivial split.
 
 ## V104 upstream: TPC-251 literal V59 declared-block margin compiler
 

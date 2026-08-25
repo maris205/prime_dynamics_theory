@@ -1,0 +1,53 @@
+# Claim Firewall
+
+Claim status:
+
+```text
+PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER
+```
+
+Maximum supported claim:
+
+```text
+EXACT_SOURCE_FROZEN_RANK_MIDPOINT_PROJECTOR_PARTIAL_SUM_LONGITUDINAL_TRANSVERSE_LITERAL_TPC247_KERNEL_AND_SAFE_ADJOINT_COMPILER_WITH_NONLITERAL_SHARP_SIGN_CONTROLS
+```
+
+Mandatory firewall:
+
+```text
+TPC253_RANK_MIDPOINT_PARTITION=PROVED_SOURCE_ONLY_DETERMINISTIC
+TPC253_INTEGER_THREE_QUARTER_CROSSWALK=PROVED_EXACT
+TPC253_MIDPOINT_CONTRAST_NORMALIZATION=PROVED_EXACT
+TPC253_PARTIAL_SUM_MOMENT_COMPILER=PROVED_EXACT
+TPC253_LITERAL_V59_G_MOMENT_EXPANSION=PROVED_EXACT
+TPC253_MIDPOINT_LONGITUDINAL_FORMULA=PROVED_EXACT
+TPC253_COARSE_TO_MIDPOINT_COVARIANCE_TRANSFER=PROVED_EXACT
+TPC253_WITHIN_CHILD_COVARIANCE_DECOMPOSITION=PROVED_EXACT
+TPC253_SAFE_ADJOINT_CROSSWALK=PROVED_EXACT
+TPC253_A_X_SELF_ADJOINTNESS=NOT_CLAIMED
+TPC253_MIDPOINT_V59_CANONICALITY=NOT_CLAIMED_SOURCE_ONLY_MODELING_CHOICE
+TPC253_SMOOTH_V59_PARTITION_IDENTIFICATION=NOT_CLAIMED
+TPC253_ACTUAL_V59_NUMERICAL_REPLAY=NOT_TESTABLE_FROM_LOCKED_MATERIAL
+TPC253_MIDPOINT_CONTRAST_SIGN_OR_NONZERO=OPEN
+TPC253_ASYMPTOTIC_ADVANCE=NO
+TPC253_ARITHMETIC_ADVANCE=NO
+TPC253_FIXED_ATOM_CREDIT=0
+TPC253_L2=NONE
+TPC253_FULL_GATE_B=OPEN
+TPC253_FULL_GATE_B_STRICT_1_OVER_400=UNPAID_GLOBAL
+TPC253_TWIN_PRIME_RESULT=NONE
+```
+
+Allowed claims are the ordered coefficient-independent rank midpoint, exact
+integer crosswalk, normalized Haar contrast, rational projector, partial-sum
+moments, coarse/mid longitudinal formulas, conjugate-first covariance
+transfer, opposite transverse update, within-child covariance, literal
+TPC-247 kernel expansion, safe adjoint identity, and nonliteral sharp
+controls.
+
+Forbidden promotions include $A_x$ self-adjointness, kernel symmetry,
+identification with a smooth V59 partition, V59 canonicality, an actual
+numerical V59 replay, any sign or nonzero contrast, scale or power saving,
+asymptotic or arithmetic progress, L2, fixed-atom credit, Gate-B closure,
+strict `1/400`, and a twin-prime conclusion. Exact finite tests are structural
+reproduction only.

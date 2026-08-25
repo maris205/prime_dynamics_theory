@@ -1,35 +1,42 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-25
-状态：`BOLD_CHANNEL_V105 / DECLARED_PARTITION_REFINEMENT_DEGENERACY`
-claim level：`PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY`
-编号事实终点：TPC-252；TPC-252 trigger：`true`
+更新时间：2026-08-26
+状态：`BOLD_CHANNEL_V106 / SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER`
+claim level：`PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER`
+编号事实终点：TPC-253；TPC-253 trigger：`true`
 
-当前 TPC-252 入口：proof 为
-`research/tpc-big-road/bridge_b_declared_partition_refinement_degeneracy.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_declared_partition_refinement_degeneracy_checker.py`，编号论文为
-`papers/tpc-252-declared-partition-refinement-degeneracy/`。它证明 binary refinement 的
-rank-one covariance transfer、`R_trans` monotonicity 与 singleton collapse，并封口
-unrestricted partition optimization。
+当前 TPC-253 入口：proof 为
+`research/tpc-big-road/bridge_b_source_frozen_rank_midpoint_contrast_compiler.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_source_frozen_rank_midpoint_contrast_compiler_checker.py`，编号论文为
+`papers/tpc-253-source-frozen-rank-midpoint-contrast-compiler/`。它从 ordered physical
+interval 在观察 coefficients 前冻结 rank midpoint，并精确编译两个 literal V59
+Haar moments、covariance transfer 与 safe adjoint。
 
 ```text
-TPC252_BINARY_REFINEMENT_PROJECTION = PROVED_EXACT_RANK_ONE
-TPC252_BINARY_REFINEMENT_COVARIANCE_TRANSFER = PROVED_EXACT
-TPC252_TRANSVERSE_RADIUS_REFINEMENT = PROVED_NONINCREASING
-TPC252_SINGLETON_PROJECTED_GRAM_AND_RADIUS = PROVED_ZERO
-TPC252_PARTITION_MARGIN_OPTIMIZATION = PROVED_EQUAL_TO_DIRECT_BOUND
-TPC252_SAME_SOURCE_SYNTHETIC_NONINVARIANCE = PROVED_EXACT
-TPC252_EVERY_SOURCE_PARTITION_INSTABILITY = REFUTED_SCOPED
-TPC252_ACTUAL_V59_ARITHMETIC_INSTABILITY = OPEN
-TPC252_CANONICAL_PARTITION = NOT_CLAIMED
-TPC252_ARITHMETIC_ADVANCE = NO
-TPC252_L2 = NONE
-TPC252_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC252_STATUS = PROVED_STRUCTURAL_L1_DECLARED_PARTITION_REFINEMENT_DEGENERACY
-TPC252_ROUND2_CLUE = FREEZE_A_NONTRIVIAL_SOURCE_ONLY_PARTITION_TREE_AND_TEST_ONE_LITERAL_V59_BINARY_CONTRAST_BEFORE_ANY_MARGIN_OPTIMIZATION
+TPC253_RANK_MIDPOINT_PARTITION = PROVED_SOURCE_ONLY_DETERMINISTIC
+TPC253_INTEGER_THREE_QUARTER_CROSSWALK = PROVED_EXACT
+TPC253_MIDPOINT_CONTRAST_NORMALIZATION = PROVED_EXACT
+TPC253_PARTIAL_SUM_MOMENT_COMPILER = PROVED_EXACT
+TPC253_LITERAL_V59_G_MOMENT_EXPANSION = PROVED_EXACT
+TPC253_COARSE_TO_MIDPOINT_COVARIANCE_TRANSFER = PROVED_EXACT
+TPC253_WITHIN_CHILD_COVARIANCE_DECOMPOSITION = PROVED_EXACT
+TPC253_SAFE_ADJOINT_CROSSWALK = PROVED_EXACT
+TPC253_MIDPOINT_V59_CANONICALITY = NOT_CLAIMED_SOURCE_ONLY_MODELING_CHOICE
+TPC253_MIDPOINT_CONTRAST_SIGN_OR_NONZERO = OPEN
+TPC253_ARITHMETIC_ADVANCE = NO
+TPC253_L2 = NONE
+TPC253_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC253_STATUS = PROVED_STRUCTURAL_L1_SOURCE_FROZEN_RANK_MIDPOINT_CONTRAST_COMPILER
+TPC253_ROUND2_CLUE = AUDIT_THE_TWO_LITERAL_RANK_MIDPOINT_IMBALANCES_WITH_EXISTING_PRIME_AND_HYBRID_MEAN_THEOREMS_BEFORE_ANY_DYADIC_EXTENSION
 ```
 
-TPC-251 上游入口：proof 为
+TPC-252 上游入口：proof 为
+`research/tpc-big-road/bridge_b_declared_partition_refinement_degeneracy.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_declared_partition_refinement_degeneracy_checker.py`，编号论文为
+`papers/tpc-252-declared-partition-refinement-degeneracy/`。它封口 unrestricted partition
+optimization，并要求 TPC-253 的 source-frozen nontrivial split。
+
+TPC-251 更上游入口：proof 为
 `research/tpc-big-road/bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_literal_v59_declared_block_longitudinal_transverse_margin_compiler_checker.py`，编号论文为
 `papers/tpc-251-literal-v59-declared-block-longitudinal-transverse-margin-compiler/`。它提供
