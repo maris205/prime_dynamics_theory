@@ -1,9 +1,104 @@
 # TPC HANDOFF
 
 更新时间：2026-08-25
-交接状态：`BOLD_CHANNEL_V97_TPC244_COMMON_MULTIPLIER_SIGN_LOCALIZATION_RELEASED`
+交接状态：`BOLD_CHANNEL_V98_TPC245_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS_RELEASED`
 
-TPC-244 当前 section：common-multiplier sign localization
+TPC-245 当前 section：sharp longitudinal--transverse covariance disks
+---------------------------------------------------------------------
+
+Let `H` be a complex Hilbert space with inner product conjugate-linear in the
+first slot.  Fix a unit vector `u`, put `K=u^perp`, and define
+
+```text
+b=<u,B>, w=<u,W>,
+B_perp=B-bu, W_perp=W-wu,
+E_B=||B_perp||^2, E_W=||W_perp||^2,
+c=conjugate(w)b, r=sqrt(E_B E_W).
+```
+
+Then
+
+```text
+<W,B>=c+<W_perp,B_perp>,
+|<W_perp,B_perp>|<=r.
+```
+
+At fixed `(b,w,E_B,E_W)`, the exact feasible set of `<W,B>` is
+
+```text
+dim_C K >= 2:  {z:|z-c|<=r};
+dim_C K = 1, r>0: {z:|z-c|=r};
+dim_C K = 1, r=0: {c};
+dim_C K = 0, E_B=E_W=0: {c};
+dim_C K = 0, E_B+E_W>0: empty (unrealizable data).
+```
+
+The disk branch is exact because two orthogonal transverse directions realize
+every interior point.  One transverse direction forces equality in Cauchy and
+therefore only the circle.  Consequently, for `dim_C K>=2`,
+
+```text
+min |<W,B>|=max(|c|-r,0),
+0 is feasible iff |c|<=r.
+```
+
+For dimension one and `r>0`, the minimum is `||c|-r|` and zero is feasible iff
+`|c|=r`.  If `r<|c|`, every feasible covariance lies in the sharp phase cone
+with half-angle `arcsin(r/|c|)`.
+
+Source audit shows that TPC-219's longitudinal object is the constant-prime-label
+subspace of `V^P`, generally not one-dimensional.  It is projection lineage only,
+not a literal block-direction identity.  No committed source defines a canonical
+one-dimensional `u_h` inside the TPC-244 primitive block, and the literal V59
+two-lane coefficient attachment is still absent.  Thus the theorem is exact
+structural Hilbert geometry, not an arithmetic cancellation statement.
+
+```text
+TPC245_MAXIMUM_CLAIM = EXACT_DIMENSION_SENSITIVE_LONGITUDINAL_TRANSVERSE_COVARIANCE_FEASIBLE_SET_AND_SHARP_PHASE_SECTOR
+TPC245_ROUTE_ADVANCE = YES_STRUCTURAL_CLASSIFICATION
+TPC245_EXACT_DECOMPOSITION = PROVED_CENTER_PLUS_TRANSVERSE_COVARIANCE
+TPC245_DIM_GE_2_FEASIBLE_SET = PROVED_CLOSED_DISK
+TPC245_DIM_EQ_1_FEASIBLE_SET = PROVED_CIRCLE_OR_SINGLETON
+TPC245_DIM_EQ_0_FEASIBLE_SET = PROVED_SINGLETON_OR_UNREALIZABLE
+TPC245_ZERO_FEASIBILITY = PROVED_DIMENSION_SENSITIVE
+TPC245_MINIMUM_MODULUS = PROVED_EXACT
+TPC245_PHASE_SECTOR = PROVED_SHARP_WHEN_RADIUS_LT_CENTER
+TPC245_TPC219_RELATION = PROJECTION_LINEAGE_ONLY_NOT_LITERAL_OBJECT_IDENTITY
+TPC245_CANONICAL_BLOCK_DIRECTION = OPEN
+TPC245_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
+TPC245_PAYABLE_MOMENTS_AND_ENERGIES = OPEN
+TPC245_SIGNED_ARITHMETIC_MARGIN = NONE
+TPC245_ARITHMETIC_ADVANCE = NO
+TPC245_FIXED_ATOM_CREDIT = 0
+TPC245_L2 = NONE
+TPC245_FULL_GATE_B = OPEN
+TPC245_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC245_TPC_TRIGGER = true
+TPC245_NUMBERED_RELEASE = YES
+TPC245_TWIN_PRIME_RESULT = NONE
+TPC245_STATUS = PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS
+TPC245_ROUND2_CLUE = WEIGHTED_MINKOWSKI_REASSEMBLY_OF_INDEPENDENT_LOCAL_DISKS_WITH_HARD_WINDOW_ERROR
+```
+
+strongest positive result：complete sharp disk/circle/singleton classification、exact
+zero margin 与 phase cone；strongest obstruction：one transverse direction cannot fill
+disk interior，且 source chain 没有 canonical `u_h`；open theorem：source-native block
+projection、literal V59 two-lane attachment 与 payable moments/energies；reusable
+structure：center-radius feasible set + exact margin + phase cone。
+
+编号论文目录：papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/
+
+```text
+papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/README.md
+papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/PROOF_PACKAGE.md
+papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/paper/paper.pdf
+papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/results/tpc245_certificate.json
+papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_sharp_longitudinal_transverse_covariance_disks.md
+research/tpc-big-road/tpc_bridge_b_sharp_longitudinal_transverse_covariance_disks_checker.py
+```
+
+TPC-244 上游 section：common-multiplier sign localization
 ---------------------------------------------------------
 
 Let `H_coeff=direct_sum_h H_h` be an orthogonal coefficient space and use the
@@ -6684,8 +6779,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V97/TPC-244 gate、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百五十次（75 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V98/TPC-245 gate、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百五十二次（76 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -6839,11 +6934,23 @@ python -B research/tpc-big-road/tpc_bridge_b_hard_window_near_isometry_bilinear_
 python -O -B research/tpc-big-road/tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_common_multiplier_sign_localization_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_common_multiplier_sign_localization_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_sharp_longitudinal_transverse_covariance_disks_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_sharp_longitudinal_transverse_covariance_disks_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-244 入口：
+最新 TPC-245 入口：
+
+```text
+papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/README.md
+papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/notes/theorem_ledger.md
+papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_sharp_longitudinal_transverse_covariance_disks.md
+research/tpc-big-road/tpc_bridge_b_sharp_longitudinal_transverse_covariance_disks_checker.py
+```
+
+TPC-244 上游入口：
 
 ```text
 papers/tpc-244-common-multiplier-sign-localization/README.md

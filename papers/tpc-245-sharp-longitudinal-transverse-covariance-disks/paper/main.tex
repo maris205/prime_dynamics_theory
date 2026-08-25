@@ -1,0 +1,60 @@
+% !TeX program = pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage{accsupp}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs,tabularx}
+\usepackage[hidelinks]{hyperref}
+
+\input{math_commands}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\hypersetup{
+  pdftitle={Sharp Longitudinal--Transverse Covariance Disks},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact dimension-sensitive feasible sets for a Hilbert covariance},
+  pdfkeywords={Hilbert space, covariance, transverse energy, sharp disk, phase sector}
+}
+
+\title{Sharp Longitudinal--Transverse Covariance Disks}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology\\
+Wuhan, China\\
+\texttt{liang.wang@hust.edu.cn}}
+\date{August 25, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+\input{sections/1_introduction}
+\input{sections/2_source_lock}
+\input{sections/3_classification}
+\input{sections/4_proof}
+\input{sections/5_sharp_corollaries}
+\input{sections/6_certificate}
+\input{sections/7_route_boundary}
+\input{sections/8_conclusion}
+
+\appendix
+\input{sections/A_status_ledger}
+
+\end{document}

@@ -9,15 +9,15 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-244 已证明 common clustered multiplier 的精确符号定位定理。
-在 orthogonal primitive-denominator coefficient blocks 中，
-`<W,B>=sum_h |C_h|^2<w_h,b_h>`，所以同时作用于两条 lanes 的 aggregate outer
-`C_h` sign/phase 对主协方差和两条 norm 完全不可见；nonorthogonal reassembly 的全部
-sign dependence 则精确落在 symmetrized cross-block cut edges。接入 TPC-243 后任意
-两种 common sign patterns 的 hard-window covariance 差至多
-`2epsilon||W||||B||`。literal V59 phasewise primitive two-lane attachment、coefficient
-norm payment 与 arithmetic `L2` 仍开放。下一步分析 within-block
-`<w_h,b_h>` 的 longitudinal/transverse feasible disk。
+当前主线状态：TPC-245 已完成 within-block longitudinal/transverse covariance 的
+sharp dimension classification。固定 abstract unit direction、两条 moments 与 transverse
+energies 后，`dim(u^perp)>=2` 的 exact feasible set 是 center
+`conjugate(w)b`、radius `sqrt(E_B E_W)` 的 closed disk；dimension one 是 circle 或
+singleton，dimension zero 是 singleton 或 unrealizable。zero-feasibility、minimum
+modulus 与 sharp phase cone 已严格证明。TPC-219 的 constant-prime-label subspace 只提供
+projection lineage，不是 literal block direction；canonical `u_h`、V59 two-lane
+attachment、payable moments/energies 与 arithmetic `L2` 仍开放。下一步做
+`|C_h|^2`-weighted local-disk Minkowski reassembly 并支付 TPC-243 window error。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -31,6 +31,8 @@ norm payment 与 arithmetic `L2` 仍开放。下一步分析 within-block
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-245-sharp-longitudinal-transverse-covariance-disks` - `PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS` - 对固定一维 longitudinal moments 与 transverse energies 给出 dimension-sensitive exact covariance feasible set：维数至少二为 closed disk、维数一为 circle/singleton、维数零为 singleton/unrealizable，并证明 sharp zero margin 与 phase cone；canonical block direction、literal V59 attachment 与 arithmetic L2 仍开放。
 
 `tpc-244-common-multiplier-sign-localization` - `PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION` - 证明共同 block multiplier 的外层 sign/phase 在正交 coefficient covariance 中精确退化为 `|C_h|^2`，给出 nonorthogonal sign-cut polynomial 与 all-sign iff criterion，并由 TPC-243 得到 `2epsilon||W||||B||` hard-window leakage；literal V59 two-lane attachment 与 arithmetic L2 仍开放。
 

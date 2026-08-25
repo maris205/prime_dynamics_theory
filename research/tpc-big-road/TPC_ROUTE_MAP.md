@@ -2,16 +2,18 @@
 
 更新时间：2026-08-25
 
-当前地图版本：V97 / TPC-244
+当前地图版本：V98 / TPC-245
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-244`（`PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION`）；
-对应论文目录为 `papers/tpc-244-common-multiplier-sign-localization/`。TPC-244
-证明 common outer `C_h` phase 在 orthogonal two-lane coefficient covariance 中
-精确退化为 `|C_h|^2`，并把 nonorthogonal sign dependence 完全定位为 cut edges；
-TPC-243 transfer 给 pairwise `2epsilon||W||||B||` leakage。literal V59 two-lane
-attachment、coefficient norm payment、arithmetic `L2` 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-245`（`PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS`）；
+对应论文目录为 `papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/`。
+TPC-245 完整分类 fixed longitudinal moments 与 transverse energies 的 local covariance
+feasible set：transverse dimension 至少二为 closed disk、dimension one 为
+circle/singleton、dimension zero 为 singleton/unrealizable，并给 exact zero margin 与
+sharp phase cone。TPC-219 只提供 projection lineage，不是 literal block-direction
+identity。canonical `u_h`、literal V59 two-lane attachment、payable moments/energies、
+arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -53,9 +55,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V97 / TPC-244                     |
-        | COMMON-MULTIPLIER SIGN LOCALIZATION              |
-        | outer sign blocked; within-block target OPEN     |
+        | YOU ARE HERE — V98 / TPC-245                     |
+        | SHARP LOCAL COVARIANCE DISKS                     |
+        | local geometry closed; physical attachment OPEN  |
         +--------------------------------------------------+
                 |
                 v
@@ -98,13 +100,14 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V97 / TPC-244 的
-common-multiplier sign localization。same-`h` principal covariance 已严格证明只读取
-`|C_h|^2<w_h,b_h>`，outer `C_h` sign 路线在主项上封口；cross-`h` sign dependence
-只存在于 explicit cut edges，hard window variation 至多
-`2x^(-67/200+o(1))||W||||B||`。下一施工点是 within-block
-longitudinal/transverse covariance disk。FULL_GATE_B、global strict `1/400`、`L2` 和
-fixed-atom credit 继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V98 / TPC-245 的
+sharp local covariance disk。same-`h` local covariance 在 supplied one-direction
+moments/energies 下已被 exact classified，dimension-two cancellation disk、dimension-one
+circle obstruction、zero margin 与 phase cone 全部闭合；但物理链没有 canonical `u_h`，
+也没有 literal V59 two-lane attachment。下一施工点是 independently realizable local
+disks 的 `|C_h|^2`-weighted Minkowski reassembly，并在物理层支付 TPC-243 hard-window
+error。FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit 继续
+OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1235,6 +1238,55 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.39 V98 / TPC-245：sharp longitudinal--transverse covariance disks
+
+Fix a unit vector `u` in a complex Hilbert space with conjugate-linear first
+slot and write
+
+```text
+b=<u,B>, w=<u,W>,
+B_perp=B-bu, W_perp=W-wu,
+c=conjugate(w)b,
+r=sqrt(E_B E_W).
+```
+
+TPC-245 proves
+
+```text
+<W,B>=c+<W_perp,B_perp>,
+|<W_perp,B_perp>|<=r.
+```
+
+This upper disk is exact when `dim_C(u^perp)>=2`; an explicit two-direction
+construction realizes every interior point.  With exactly one transverse
+direction, fixed nonzero energies force the boundary circle; with no transverse
+direction, positive energy is unrealizable.  Therefore the zero-feasibility,
+minimum-modulus, and phase-sector formulas are exact and sharp.
+
+```text
+TPC245_DIM_GE_2_FEASIBLE_SET = PROVED_CLOSED_DISK
+TPC245_DIM_EQ_1_FEASIBLE_SET = PROVED_CIRCLE_OR_SINGLETON
+TPC245_DIM_EQ_0_FEASIBLE_SET = PROVED_SINGLETON_OR_UNREALIZABLE
+TPC245_ZERO_FEASIBILITY = PROVED_DIMENSION_SENSITIVE
+TPC245_MINIMUM_MODULUS = PROVED_EXACT
+TPC245_PHASE_SECTOR = PROVED_SHARP_WHEN_RADIUS_LT_CENTER
+TPC245_TPC219_RELATION = PROJECTION_LINEAGE_ONLY_NOT_LITERAL_OBJECT_IDENTITY
+TPC245_CANONICAL_BLOCK_DIRECTION = OPEN
+TPC245_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
+TPC245_PAYABLE_MOMENTS_AND_ENERGIES = OPEN
+TPC245_ARITHMETIC_ADVANCE = NO
+TPC245_FIXED_ATOM_CREDIT = 0
+TPC245_L2 = NONE
+TPC245_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC245_STATUS = PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS
+```
+
+Source audit 还证明 TPC-219 的 longitudinal object 是 constant-prime-label
+subspace of `V^P`，通常不是一维；它只提供 projection lineage，不能冒充 literal
+`u_h`。地图位置：**local Hilbert geometry 已闭合，physical attachment 仍断开；下一步
+把 independently realizable local disks 按 `|C_h|^2` 作 exact Minkowski reassembly，
+并把 resulting margin 与 TPC-243 hard-window error 比较。**
 
 ## 5.38 V97 / TPC-244：common-multiplier sign localization
 
@@ -2960,10 +3012,11 @@ NUMBERED_RELEASE = TPC-244
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-244 的下一步：within-block longitudinal/transverse covariance disk**。
-    固定 canonical block direction，使用两条 longitudinal moments 与 transverse energies
-    给 `<w_h,b_h>` 的 exact center、sharp radius、zero-feasibility 与 nonvanishing
-    criterion；不得把 outer `C_h` sign重新当作 main-term mechanism。
+12. **TPC-245 的下一步：weighted local-disk Minkowski reassembly**。在明确的
+    independent-block realizability 假设下，把 local disks 按 `|C_h|^2` 作 exact
+    Minkowski sum，提取 aggregate center/radius、zero criterion 与 robust margin，再与
+    TPC-243 hard-window error 比较；不得把 abstract independent realizability冒充
+    literal V59 source attachment。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -3062,6 +3115,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-25 | V98 / TPC-245 | Bridge A / Gate B：local covariance feasible set exact classified；canonical block direction and literal attachment open | `TPC-245` | transverse dimension `>=2` closed disk、dimension `1` circle/singleton、dimension `0` singleton/unrealizable；sharp zero margin and phase cone |
 | 2026-08-25 | V97 / TPC-244 | Bridge A / Gate B：common outer multiplier sign localized；within-block covariance and literal attachment open | `TPC-244` | orthogonal main covariance exact `|C_h|^2<w_h,b_h>`；nonorthogonal sign-cut iff；TPC-243 pairwise leakage `2epsilon||W||||B||` |
 | 2026-08-25 | V96 / TPC-243 | Bridge A / Gate B：hard-window signed coefficient transport proved；literal lane attachment and arithmetic covariance open | `TPC-243` | harmonic circle packing给 direct rectangular `1+-epsilon` frame 与 bilinear transfer；V59 `epsilon=(133/100+o(1))x^(-67/200)log x` |
 | 2026-08-25 | V95 / TPC-242 | Bridge A / Gate B：unsigned/signed phase characters exact separated；physical phase attachment open | `TPC-242` | complete `C_4` spectrum、sharp fixed-`F_0` disk、imbalance/Gram defect 与 TPC-241 typed no-transfer；physical annihilation not claimed |

@@ -1,0 +1,36 @@
+\section{Cancellation margin and phase sector}
+
+\begin{corollary}[Exact cancellation criteria]\label{cor:zero}
+If $m\ge2$, then
+\[
+ \min_{z\in\mathcal S}|z|=\max\{|c|-r,0\},
+ \qquad 0\in\mathcal S\iff |c|\le r.
+\]
+If $m=1$ and $r>0$, the minimum is $\bigl||c|-r\bigr|$ and zero is feasible
+if and only if $|c|=r$.  Every realizable branch obeys
+$|\ip{W}{B}|\ge\max\{|c|-r,0\}$.
+\end{corollary}
+
+This is the exact distance from the origin to the translated disk, circle, or
+singleton.  It separates ``cancellation is permitted by the moment data'' from
+``cancellation occurs for the physical vectors.''  Only the first statement is
+part of the present theorem.
+
+\begin{corollary}[Sharp phase cone]\label{cor:phase}
+Suppose $0\le r<|c|$.  Every feasible nonzero covariance $z$ satisfies
+\[
+ \left|\operatorname{Arg}(z\overline c)\right|
+ \le \arcsin(r/|c|).
+\]
+The bound is sharp for the disk and for the nondegenerate one-dimensional
+circle.
+\end{corollary}
+
+To prove the claim, rotate so that $c=a>0$ and write
+$z=\rho e^{i\theta}$.  The disk inequality becomes
+\[
+ |z-a|^2=(\rho-a\cos\theta)^2+a^2\sin^2\theta\le r^2.
+\]
+Because the disk misses zero, the principal angle is acute, and hence
+$|\theta|\le\arcsin(r/a)$.  Equality occurs at either tangent point from the
+origin; those points lie on the boundary circle.

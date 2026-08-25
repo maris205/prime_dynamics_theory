@@ -2,11 +2,62 @@
 
 更新时间：2026-08-25
 
-状态：**TPC244_PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION / LITERAL_TWO_LANE_ATTACHMENT_OPEN**
+状态：**TPC245_PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS / CANONICAL_BLOCK_DIRECTION_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.39 已发布：TPC-245 sharp longitudinal--transverse covariance disks
+
+项目：`papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/`
+
+类型：**PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS**。
+
+For a complex Hilbert space with conjugate-linear first slot, fix a unit vector
+and write
+
+```text
+b=<u,B>, w=<u,W>,
+c=conjugate(w)b,
+r=sqrt(E_B E_W).
+```
+
+The exact feasible set of `<W,B>` at fixed moments and transverse energies is
+`c+r Dbar` when `dim_C(u^perp)>=2`; it is `c+r T` for one nondegenerate
+transverse direction, a singleton when the radius vanishes, and empty in
+dimension zero if positive transverse energy is prescribed.  Hence the zero
+criterion, exact minimum modulus, and phase cone are all sharp.
+
+```text
+TPC245_EXACT_DECOMPOSITION = PROVED_CENTER_PLUS_TRANSVERSE_COVARIANCE
+TPC245_DIM_GE_2_FEASIBLE_SET = PROVED_CLOSED_DISK
+TPC245_DIM_EQ_1_FEASIBLE_SET = PROVED_CIRCLE_OR_SINGLETON
+TPC245_DIM_EQ_0_FEASIBLE_SET = PROVED_SINGLETON_OR_UNREALIZABLE
+TPC245_ZERO_FEASIBILITY = PROVED_DIMENSION_SENSITIVE
+TPC245_MINIMUM_MODULUS = PROVED_EXACT
+TPC245_PHASE_SECTOR = PROVED_SHARP_WHEN_RADIUS_LT_CENTER
+TPC245_TPC219_RELATION = PROJECTION_LINEAGE_ONLY_NOT_LITERAL_OBJECT_IDENTITY
+TPC245_CANONICAL_BLOCK_DIRECTION = OPEN
+TPC245_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
+TPC245_PAYABLE_MOMENTS_AND_ENERGIES = OPEN
+TPC245_SIGNED_ARITHMETIC_MARGIN = NONE
+TPC245_ARITHMETIC_ADVANCE = NO
+TPC245_FIXED_ATOM_CREDIT = 0
+TPC245_L2 = NONE
+TPC245_FULL_GATE_B = OPEN
+TPC245_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC245_STATUS = PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS
+TPC245_ROUND2_CLUE = WEIGHTED_MINKOWSKI_REASSEMBLY_OF_INDEPENDENT_LOCAL_DISKS_WITH_HARD_WINDOW_ERROR
+```
+
+strongest positive result：complete disk/circle/singleton classification、exact
+minimum modulus 与 sharp phase cone；strongest obstruction：one transverse direction
+cannot fill disk interior，且 source chain 没有 canonical one-dimensional `u_h`；
+open theorem：source-native block projection、literal V59 two-lane attachment 与
+payable moments/energies；reusable structure：center-radius feasible set、zero margin、
+phase cone；`ROUND2_CLUE`：
+`WEIGHTED_MINKOWSKI_REASSEMBLY_OF_INDEPENDENT_LOCAL_DISKS_WITH_HARD_WINDOW_ERROR`。
 
 ## 0.38 已发布：TPC-244 common-multiplier sign localization
 

@@ -1,0 +1,47 @@
+\section{Proof of Theorem~\ref{thm:classification}}
+
+Define the orthogonal residuals
+\[
+ \Bperp=B-bu,
+ \qquad
+ \Wperp=W-wu.
+\]
+They lie in $K$, and Pythagoras gives
+$\norm{\Bperp}^2=\EB$ and $\norm{\Wperp}^2=\EW$.  Orthogonality and the
+chosen sesquilinear convention give the exact identity
+\begin{equation}\label{eq:split}
+ \ip{W}{B}=\overline w b+\ip{\Wperp}{\Bperp}.
+\end{equation}
+Cauchy--Schwarz yields
+\begin{equation}\label{eq:cauchy}
+ \abs{\ip{\Wperp}{\Bperp}}\le \sqrt{\EB\EW}=r,
+\end{equation}
+so every feasible value lies in $c+r\Disk$.
+
+Assume first that $m\ge2$.  If $r=0$, one transverse vector vanishes and the
+claim is immediate.  Otherwise choose orthonormal $e_1,e_2\in K$.  For any
+$q\in\C$ with $|q|\le r$, set
+\[
+ \Wperp=\sqrt{\EW}\,e_1,
+ \qquad
+ \Bperp=\sqrt{\EB}\left(
+       \frac{q}{r}e_1+
+       \sqrt{1-\frac{|q|^2}{r^2}}e_2\right).
+\]
+These vectors have the prescribed norms, and because the coefficient $q/r$
+occurs in the linear second slot,
+$\ip{\Wperp}{\Bperp}=q$.  Adding $bu$ and $wu$ realizes $c+q$ and fills the
+disk.
+
+If $m=1$, choose a unit vector $e$ spanning $K$.  For positive energies every
+admissible pair has the form
+\[
+ \Wperp=\sqrt{\EW}\,\xi e,
+ \qquad
+ \Bperp=\sqrt{\EB}\,\eta e,
+ \qquad |\xi|=|\eta|=1.
+\]
+The transverse covariance is $r\overline\xi\eta$, which fills exactly the
+circle.  If one energy is zero, it is zero.  Finally, $m=0$ means $K=\{0\}$,
+so positive transverse energy is impossible and the zero-energy covariance is
+the center.  This proves every branch.

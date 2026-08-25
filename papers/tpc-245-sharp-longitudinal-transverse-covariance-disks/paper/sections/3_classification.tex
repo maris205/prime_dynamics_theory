@@ -1,0 +1,33 @@
+\section{Exact covariance classification}
+
+Let $\Hh$ be a complex Hilbert space, let $u\in\Hh$ be a unit vector, and set
+$K=u^\perp$ and $m=\dim_{\C}K$.  Fix $b,w\in\C$ and
+$\EB,\EW\ge0$.  Let $\mathcal S$ contain every value $\ip{W}{B}$ for vectors
+satisfying
+\[
+ \ip{u}{B}=b,\qquad \ip{u}{W}=w,
+ \qquad \norm{B}^2-|b|^2=\EB,
+ \qquad \norm{W}^2-|w|^2=\EW.
+\]
+Put
+\[
+ c=\overline w b,\qquad r=\sqrt{\EB\EW}.
+\]
+
+\begin{theorem}[Sharp feasible set]\label{thm:classification}
+The feasible set is classified as follows.
+\begin{enumerate}
+\item If $m\ge2$, then $\mathcal S=c+r\Disk$.
+\item If $m=1$ and $r>0$, then $\mathcal S=c+r\Torus$.
+\item If $m=1$ and $r=0$, then $\mathcal S=\{c\}$.
+\item If $m=0$ and $\EB=\EW=0$, then $\mathcal S=\{c\}$.  If
+      $m=0$ and $\EB+\EW>0$, the data are unrealizable and
+      $\mathcal S=\varnothing$.
+\end{enumerate}
+No finite-dimensionality or separability hypothesis is required.
+\end{theorem}
+
+The first branch includes $r=0$, when the displayed disk is a singleton.  The
+one-dimensional branch is genuinely different: when both transverse energies
+are positive, fixed norms force equality in Cauchy--Schwarz and exclude every
+interior point.

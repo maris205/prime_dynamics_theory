@@ -1,59 +1,65 @@
-# TPC big road V97 / TPC-244: common-multiplier sign localization
+# TPC big road V98 / TPC-245: sharp longitudinal--transverse covariance disks
 
 更新时间：2026-08-25
 
-状态：`TPC244_PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION / FULL_GATE_B_OPEN`
+状态：`TPC245_PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-244 proof 为
+当前 TPC-245 proof 为
+`bridge_b_sharp_longitudinal_transverse_covariance_disks.md`，checker 为
+`tpc_bridge_b_sharp_longitudinal_transverse_covariance_disks_checker.py`，编号论文为
+`../../papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/`。
+
+For one abstract unit direction,
+
+```text
+<W,B>=conjugate(w)b+<W_perp,B_perp>,
+r=sqrt(E_B E_W).
+```
+
+The exact feasible set is a closed disk for transverse dimension at least two,
+a circle or singleton for dimension one, and a singleton or empty realizability
+branch for dimension zero.  The minimum modulus, zero criterion, and phase cone
+are exact and sharp.
+
+```text
+TPC245_DIM_GE_2_FEASIBLE_SET = PROVED_CLOSED_DISK
+TPC245_DIM_EQ_1_FEASIBLE_SET = PROVED_CIRCLE_OR_SINGLETON
+TPC245_DIM_EQ_0_FEASIBLE_SET = PROVED_SINGLETON_OR_UNREALIZABLE
+TPC245_ZERO_FEASIBILITY = PROVED_DIMENSION_SENSITIVE
+TPC245_MINIMUM_MODULUS = PROVED_EXACT
+TPC245_PHASE_SECTOR = PROVED_SHARP_WHEN_RADIUS_LT_CENTER
+TPC245_TPC219_RELATION = PROJECTION_LINEAGE_ONLY_NOT_LITERAL_OBJECT_IDENTITY
+TPC245_CANONICAL_BLOCK_DIRECTION = OPEN
+TPC245_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
+TPC245_ARITHMETIC_ADVANCE = NO
+TPC245_FIXED_ATOM_CREDIT = 0
+TPC245_L2 = NONE
+TPC245_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC245_ROUND2_CLUE = WEIGHTED_MINKOWSKI_REASSEMBLY_OF_INDEPENDENT_LOCAL_DISKS_WITH_HARD_WINDOW_ERROR
+```
+
+strongest positive result：完整 sharp disk/circle/singleton classification、exact zero
+margin 与 phase cone；strongest obstruction：dimension one 无法填充 disk interior，且
+physical chain 没有 canonical one-dimensional `u_h`；open theorem：source-native block
+projection、literal V59 two-lane attachment 与 payable moments/energies；reusable
+structure：center-radius feasible set + exact margin + phase cone。
+
+TPC-244 上游 proof 为
 `bridge_b_common_multiplier_sign_localization.md`，checker 为
 `tpc_bridge_b_common_multiplier_sign_localization_checker.py`，编号论文为
-`../../papers/tpc-244-common-multiplier-sign-localization/`。
-
-For orthogonal coefficient blocks and the same multiplier on both lanes,
-
-```text
-<W,B>=sum_h |C_h|^2<w_h,b_h>.
-```
-
-Thus the aggregate outer `C_h` sign/phase is exactly invisible in the principal
-covariance and both norms, while internal Möbius cancellation inside `|C_h|` remains
-active.  Under nonorthogonal reassembly the full sign dependence is an exact
-symmetrized-edge cut polynomial.  Combining with TPC-243 gives
-
-```text
-|Q_I(s)-Q_I(t)|<=2epsilon||W||||B||.
-```
-
-```text
-TPC244_COMMON_MULTIPLIER_COVARIANCE = PROVED_SUM_ABS_C_H_SQUARED_LOCAL_COVARIANCE
-TPC244_COMMON_UNIT_PHASE_INVARIANCE = PROVED_EXACT_COVARIANCE_AND_BOTH_NORMS
-TPC244_INTERNAL_MOBIUS_CANCELLATION = PRESERVED_NOT_ESTIMATED
-TPC244_NONORTHOGONAL_SIGN_CUT = PROVED_EXACT
-TPC244_ALL_SIGN_INVARIANCE = PROVED_IFF_EVERY_SYMMETRIZED_EDGE_ZERO
-TPC244_HARD_WINDOW_PAIRWISE_VARIATION = PROVED_AT_MOST_TWO_EPSILON_COEFFICIENT_NORM_PRODUCT
-TPC244_LITERAL_V59_PHASEWISE_PRIMITIVE_TWO_LANE_ATTACHMENT = OPEN
-TPC244_ARITHMETIC_ADVANCE = NO
-TPC244_FIXED_ATOM_CREDIT = 0
-TPC244_L2 = NONE
-TPC244_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC244_ROUND2_CLUE = WITHIN_BLOCK_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISK_BEFORE_ANY_OUTER_SIGN_ARGUMENT
-```
-
-strongest positive result：common outer phase blindness、exact sign-cut localization
-与 TPC-243 factor-two leakage；strongest obstruction：outer `C_h` sign cannot control
-same-block main covariance；open theorem：literal V59 phasewise primitive two-lane
-attachment with payable norms；reusable structure：common multiplier diagonal +
-Walsh cut edges + hard-window transfer。
+`../../papers/tpc-244-common-multiplier-sign-localization/`。It supplies the
+`|C_h|^2<w_h,b_h>` common-multiplier diagonal and the local covariance object
+classified by TPC-245.
 
 TPC-243 上游 proof 为
 `bridge_b_hard_window_near_isometry_bilinear_transfer.md`，checker 为
 `tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py`，编号论文为
 `../../papers/tpc-243-hard-window-near-isometry-bilinear-transfer/`。It supplies the
-oriented hard-window bilinear interface and `x^(-67/200+o(1))` V59 leakage used by
-TPC-244.
+oriented hard-window bilinear interface and `x^(-67/200+o(1))` V59 leakage retained
+for the next weighted reassembly.
 
 TPC-242 上游 proof 为
 `bridge_b_phase_fourier_collision_separation.md`，checker 为
