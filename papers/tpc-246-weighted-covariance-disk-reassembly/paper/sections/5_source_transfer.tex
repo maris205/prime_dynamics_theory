@@ -1,0 +1,61 @@
+\section{Common multipliers and hard-window inflation}
+
+For each block, let TPC-245 supply a full local disk
+\[
+ \ip{w_h}{b_h}\in c_h+r_h\Disk,
+ \qquad
+ c_h=\overline{w_h^{\parallel}}b_h^{\parallel},
+ \quad r_h=\sqrt{E_{B,h}E_{W,h}},
+\]
+where every positive-radius active transverse space has complex dimension at
+least two.  If these choices have blockwise product realizability, then the
+TPC-244 common multipliers $\gamma_h$ give the exact coefficient disk with
+\[
+ \Cagg=\sum_h|\gamma_h|^2c_h,
+ \qquad
+ \Ragg=\sum_h|\gamma_h|^2r_h.
+\]
+
+Assume additionally that both coefficient lanes lie in one finite
+$\delta$-separated frequency space and are synthesized by the common TPC-243
+map $T$ on $N$ consecutive integers.  Write
+\[
+ \epsilon=\frac{\delta^{-1}H_{\lfloor1/(2\delta)\rfloor}}{N},
+ \qquad
+ Q_I=N^{-1}\ip{TW}{TB}.
+\]
+With fixed local moments and energies, the common-multiplier direct sum has
+fixed norm budgets
+\[
+ L_B^2=\sum_h|\gamma_h|^2
+       (|b_h^{\parallel}|^2+E_{B,h}),\qquad
+ L_W^2=\sum_h|\gamma_h|^2
+       (|w_h^{\parallel}|^2+E_{W,h}).
+\]
+
+\begin{theorem}[Window-inflated margin]\label{thm:window}
+Under the stated attachment, with $\Ewin=\epsilon L_WL_B$,
+\[
+ Q_I\in\Cagg+(\Ragg+\Ewin)\Disk
+\]
+and
+\[
+ |Q_I|\ge\max\{|\Cagg|-\Ragg-\Ewin,0\}.
+\]
+In particular, $|\Cagg|>\Ragg+\Ewin$ implies uniform nonvanishing.
+\end{theorem}
+
+\begin{proof}
+TPC-243 gives the correctly oriented one-transfer estimate
+\[
+ |Q_I-\ip{W}{B}|\le\epsilon\norm{W}\norm{B}=\Ewin.
+\]
+The coefficient covariance lies in $\Cagg+\Ragg\Disk$.  The triangle and
+reverse-triangle inequalities prove the claims.
+\end{proof}
+
+If the norms vary over admissible realizations, $L_WL_B$ must be replaced by a
+uniform supremum.  The displayed physical set is only contained in the
+inflated disk: the transfer theorem does not realize every error phase.  The
+strict margin is sufficient, not necessary, and only one factor of $\epsilon$
+is paid for this single coefficient-to-window comparison.

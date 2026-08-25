@@ -2,18 +2,18 @@
 
 更新时间：2026-08-25
 
-当前地图版本：V98 / TPC-245
+当前地图版本：V99 / TPC-246
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-245`（`PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS`）；
-对应论文目录为 `papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/`。
-TPC-245 完整分类 fixed longitudinal moments 与 transverse energies 的 local covariance
-feasible set：transverse dimension 至少二为 closed disk、dimension one 为
-circle/singleton、dimension zero 为 singleton/unrealizable，并给 exact zero margin 与
-sharp phase cone。TPC-219 只提供 projection lineage，不是 literal block-direction
-identity。canonical `u_h`、literal V59 two-lane attachment、payable moments/energies、
-arithmetic `L2` 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-246`（`PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY`）；
+对应论文目录为 `papers/tpc-246-weighted-covariance-disk-reassembly/`。TPC-246 证明
+arbitrary jointly feasible local families 的 weighted disk containment，并在 complete
+Cartesian-product realizability 下证明 exact weighted Minkowski disk identity 与
+explicit reverse realization。TPC-244 common multiplier 特化使用 `|C_h|^2` weights；
+TPC-243 single-transfer error 作为 additive radius，给 conditional robust margin。
+literal V59 two-lane attachment、canonical block directions、source product
+realizability、payable positive margin、arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -55,9 +55,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V98 / TPC-245                     |
-        | SHARP LOCAL COVARIANCE DISKS                     |
-        | local geometry closed; physical attachment OPEN  |
+        | YOU ARE HERE — V99 / TPC-246                     |
+        | WEIGHTED COVARIANCE-DISK REASSEMBLY              |
+        | aggregate geometry closed; source margin OPEN    |
         +--------------------------------------------------+
                 |
                 v
@@ -100,14 +100,14 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V98 / TPC-245 的
-sharp local covariance disk。same-`h` local covariance 在 supplied one-direction
-moments/energies 下已被 exact classified，dimension-two cancellation disk、dimension-one
-circle obstruction、zero margin 与 phase cone 全部闭合；但物理链没有 canonical `u_h`，
-也没有 literal V59 two-lane attachment。下一施工点是 independently realizable local
-disks 的 `|C_h|^2`-weighted Minkowski reassembly，并在物理层支付 TPC-243 hard-window
-error。FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit 继续
-OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V99 / TPC-246 的
+weighted covariance-disk reassembly。coupled family containment、complete-product exact
+disk、zero/margin dichotomy 与 TPC-243 window-inflated enclosure 已闭合；但 local
+marginals 不自动给 source product realizability，physical chain 仍没有 canonical
+block directions 或 literal V59 two-lane attachment，也未支付
+`|C_agg|-R_agg-epsilon||W||||B||>0`。下一施工点是 source-native block attachment 与
+weighted longitudinal dominance。FULL_GATE_B、global strict `1/400`、`L2` 和
+fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1238,6 +1238,71 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.40 V99 / TPC-246：weighted covariance-disk reassembly
+
+For any nonempty jointly feasible family with local marginals in
+`c_h+r_h Dbar`, arbitrary complex scalar covariance weights satisfy
+
+```text
+aggregate subset C+R Dbar,
+C=sum_h lambda_h c_h,
+R=sum_h |lambda_h|r_h.
+```
+
+TPC-246 proves that this containment becomes an exact identity under complete
+Cartesian-product realizability.  Every target deviation `d`, `|d|<=R`, has the
+explicit reverse realization
+
+```text
+e_h=(conjugate(lambda_h)/|lambda_h|)(r_h/R)d
+```
+
+on nonzero-weight blocks.  Therefore
+
+```text
+0 is feasible iff |C|<=R,
+min |Q|=max(|C|-R,0).
+```
+
+For TPC-244 common multipliers, the source-compatible weights are
+`lambda_h=|C_h|^2`; arbitrary complex weights remain abstract covariance
+scalars, not literal common multipliers.  Conditional on one common TPC-243
+synthesis attachment,
+
+```text
+Q_I in C_agg+(R_agg+epsilon||W||||B||)Dbar,
+|Q_I|>=max(|C_agg|-R_agg-epsilon||W||||B||,0).
+```
+
+The physical disk is only a containing disk, not an exact image.  Positive-radius
+one-dimensional circles cannot be promoted to disks, and exact local marginals do
+not imply complete joint product realizability.
+
+```text
+TPC246_COUPLED_FAMILY_CONTAINMENT = PROVED
+TPC246_WEIGHTED_DISK_IDENTITY = PROVED_EXACT
+TPC246_REVERSE_REALIZATION = PROVED_EXPLICIT
+TPC246_AGGREGATE_ZERO_CRITERION = PROVED_EXACT
+TPC246_COMMON_MULTIPLIER_SPECIALIZATION = PROVED_STRUCTURAL
+TPC246_HARD_WINDOW_RADIUS_INFLATION = PROVED_CONDITIONAL_ON_ATTACHMENT
+TPC246_HARD_WINDOW_IMAGE_EXACTNESS = NOT_CLAIMED
+TPC246_POSITIVE_RADIUS_CIRCLE_AS_DISK = FORBIDDEN
+TPC246_ARBITRARY_COMPLEX_WEIGHT_AS_COMMON_MULTIPLIER = FORBIDDEN
+TPC246_INDEPENDENT_SOURCE_REALIZABILITY = OPEN
+TPC246_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
+TPC246_PAYABLE_ARITHMETIC_MARGIN = OPEN
+TPC246_ARITHMETIC_ADVANCE = NO
+TPC246_FIXED_ATOM_CREDIT = 0
+TPC246_L2 = NONE
+TPC246_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC246_STATUS = PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY
+```
+
+地图位置：**aggregate disk geometry 已闭合，source interface 与 positive arithmetic
+margin 仍断开。下一步不再重复抽象 Minkowski geometry，而是构造 literal V59 two-lane
+blocks、source-native projections 与实际 joint feasible family，并证明 weighted
+longitudinal center 严格支配 transverse radius 和 hard-window leakage。**
 
 ## 5.39 V98 / TPC-245：sharp longitudinal--transverse covariance disks
 
@@ -2901,12 +2966,20 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
-1. **TPC-244 已完成：common-multiplier sign localization**。common outer
+1. **TPC-246 已完成：weighted covariance-disk reassembly**。coupled family 有
+   unconditional aggregate containment；complete Cartesian product 有 exact disk、
+   explicit inverse 与 zero/margin dichotomy；TPC-243 leakage 只支付一次 additive
+   radius。下一步必须 source-lock actual joint family、two-lane attachment 与 payable
+   weighted longitudinal dominance，不能把 abstract product 当成 arithmetic source。
+2. **TPC-245 已完成：sharp local covariance disks**。dimension-sensitive
+   disk/circle/singleton/empty classification 与 sharp phase cone 已封存；其 local disks
+   已由 TPC-246 exact reassemble，但 canonical directions 与 physical moments 仍开放。
+3. **TPC-244 已完成：common-multiplier sign localization**。common outer
    `C_h` phase 在 orthogonal coefficient covariance 中 exact invisible；
    nonorthogonal dependence 是 exact cut polynomial；TPC-243 给 factor-two
-   hard-window leakage。下一步分析 within-block longitudinal/transverse covariance disk，
-   literal V59 two-lane attachment继续独立 OPEN。
-2. **TPC-243 已完成：hard-window near-isometry and signed bilinear transfer**。
+   hard-window leakage。TPC-245/246 已完成 local and aggregate geometry，literal V59
+   two-lane attachment继续独立 OPEN。
+4. **TPC-243 已完成：hard-window near-isometry and signed bilinear transfer**。
    hard rectangular coefficient map 已有双边 `1+-epsilon` frame 与 oriented bilinear
    transport，V59 error 为 `x^(-67/200+o(1))`；TPC-244 已完成 common multiplier
    sign audit，literal coefficient attachment仍开放。
@@ -3012,11 +3085,12 @@ NUMBERED_RELEASE = TPC-244
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-245 的下一步：weighted local-disk Minkowski reassembly**。在明确的
-    independent-block realizability 假设下，把 local disks 按 `|C_h|^2` 作 exact
-    Minkowski sum，提取 aggregate center/radius、zero criterion 与 robust margin，再与
-    TPC-243 hard-window error 比较；不得把 abstract independent realizability冒充
-    literal V59 source attachment。
+12. **TPC-246 的下一步：source-native weighted longitudinal dominance**。构造 literal
+    V59 two-lane coefficient blocks 与 canonical projections，先确定 actual joint
+    feasible family 是否为 product 或严格耦合子集，再支付 local moments、transverse
+    radii、coefficient norms 与 hard-window leakage；目标是严格证明
+    `|C_agg|>R_agg+epsilon||W||||B||`，不得把 structural disk enclosure当成 arithmetic
+    nonvanishing。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -3115,6 +3189,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-25 | V99 / TPC-246 | Bridge A / Gate B：weighted aggregate geometry exact for complete products；source product attachment and payable margin open | `TPC-246` | coupled-family containment、exact Cartesian-product disk、explicit inverse、zero/margin dichotomy 与 one-transfer window enclosure；arithmetic unchanged |
 | 2026-08-25 | V98 / TPC-245 | Bridge A / Gate B：local covariance feasible set exact classified；canonical block direction and literal attachment open | `TPC-245` | transverse dimension `>=2` closed disk、dimension `1` circle/singleton、dimension `0` singleton/unrealizable；sharp zero margin and phase cone |
 | 2026-08-25 | V97 / TPC-244 | Bridge A / Gate B：common outer multiplier sign localized；within-block covariance and literal attachment open | `TPC-244` | orthogonal main covariance exact `|C_h|^2<w_h,b_h>`；nonorthogonal sign-cut iff；TPC-243 pairwise leakage `2epsilon||W||||B||` |
 | 2026-08-25 | V96 / TPC-243 | Bridge A / Gate B：hard-window signed coefficient transport proved；literal lane attachment and arithmetic covariance open | `TPC-243` | harmonic circle packing给 direct rectangular `1+-epsilon` frame 与 bilinear transfer；V59 `epsilon=(133/100+o(1))x^(-67/200)log x` |

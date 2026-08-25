@@ -9,15 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-245 已完成 within-block longitudinal/transverse covariance 的
-sharp dimension classification。固定 abstract unit direction、两条 moments 与 transverse
-energies 后，`dim(u^perp)>=2` 的 exact feasible set 是 center
-`conjugate(w)b`、radius `sqrt(E_B E_W)` 的 closed disk；dimension one 是 circle 或
-singleton，dimension zero 是 singleton 或 unrealizable。zero-feasibility、minimum
-modulus 与 sharp phase cone 已严格证明。TPC-219 的 constant-prime-label subspace 只提供
-projection lineage，不是 literal block direction；canonical `u_h`、V59 two-lane
-attachment、payable moments/energies 与 arithmetic `L2` 仍开放。下一步做
-`|C_h|^2`-weighted local-disk Minkowski reassembly 并支付 TPC-243 window error。
+当前主线状态：TPC-246 已完成 local covariance disks 的 weighted aggregate calculus。
+任意 jointly feasible family 都落在 center `sum_h lambda_h c_h`、radius
+`sum_h|lambda_h|r_h` 的 containing disk；在 complete Cartesian-product
+realizability 下该 disk exact，且有 explicit reverse construction、zero criterion 与
+minimum modulus。对 TPC-244 common multipliers，weights 精确为 `|C_h|^2`；支付
+TPC-243 single-transfer error 后，strict robust margin 是
+`|C_agg|-R_agg-epsilon||W||||B||>0`。literal V59 two-lane attachment、canonical
+block directions、product source realizability、payable margin 与 arithmetic `L2` 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -31,6 +30,8 @@ attachment、payable moments/energies 与 arithmetic `L2` 仍开放。下一步�
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-246-weighted-covariance-disk-reassembly` - `PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY` - 证明任意复权重下 coupled local families 的 aggregate disk containment 与 complete Cartesian disk product 的 exact Minkowski identity，给出 explicit reverse realization、sharp zero/margin criterion，并把 TPC-243 hard-window leakage 作为单次 additive radius；literal source attachment、product realizability 与 arithmetic L2 仍开放。
 
 `tpc-245-sharp-longitudinal-transverse-covariance-disks` - `PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS` - 对固定一维 longitudinal moments 与 transverse energies 给出 dimension-sensitive exact covariance feasible set：维数至少二为 closed disk、维数一为 circle/singleton、维数零为 singleton/unrealizable，并证明 sharp zero margin 与 phase cone；canonical block direction、literal V59 attachment 与 arithmetic L2 仍开放。
 

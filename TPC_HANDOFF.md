@@ -1,9 +1,108 @@
 # TPC HANDOFF
 
 更新时间：2026-08-25
-交接状态：`BOLD_CHANNEL_V98_TPC245_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS_RELEASED`
+交接状态：`BOLD_CHANNEL_V99_TPC246_WEIGHTED_COVARIANCE_DISK_REASSEMBLY_RELEASED`
 
-TPC-245 当前 section：sharp longitudinal--transverse covariance disks
+TPC-246 当前 section：weighted covariance-disk reassembly
+----------------------------------------------------------
+
+Let `A` be finite, let local covariance marginals lie in
+`S_h=c_h+r_h Dbar`, and let `lambda_h` be abstract complex scalar covariance
+weights.  Put
+
+```text
+C=sum_h lambda_h c_h,
+R=sum_h |lambda_h|r_h.
+```
+
+Every nonempty jointly feasible family is contained after aggregation in
+`C+R Dbar`.  If the joint feasible set is the complete Cartesian product of
+the local disks, TPC-246 proves the exact identity
+
+```text
+{sum_h lambda_h z_h : z_h in S_h for every h}=C+R Dbar.
+```
+
+For `R>0`, every target deviation `d`, `|d|<=R`, is realized explicitly by
+
+```text
+e_h=(conjugate(lambda_h)/|lambda_h|)(r_h/R)d
+```
+
+on nonzero-weight blocks, and by zero on zero-weight blocks.  Hence
+
+```text
+0 is feasible iff |C|<=R,
+min |Q|=max(|C|-R,0).
+```
+
+TPC-244 common multipliers give the source-compatible nonnegative weights
+`lambda_h=|C_h|^2`; arbitrary complex weights are abstract covariance scalars,
+not literal common multipliers.  Conditional on a common separated TPC-243
+synthesis attachment, with `E=epsilon||W||||B||`,
+
+```text
+Q_I in C_agg+(R_agg+E)Dbar,
+|Q_I|>=max(|C_agg|-R_agg-E,0).
+```
+
+Thus `|C_agg|>R_agg+E` is a strict sufficient nonvanishing criterion.  The
+hard-window set is only contained in the inflated disk; exact error-phase
+attainment is not proved.  Positive-radius one-dimensional circles cannot be
+promoted to disks, and exact marginal disks do not imply a Cartesian joint
+family.  No committed source yet supplies literal V59 two-lane blocks,
+canonical block directions, source product realizability, or a payable positive
+margin.
+
+```text
+TPC246_MAXIMUM_CLAIM = EXACT_WEIGHTED_CARTESIAN_DISK_REASSEMBLY_AND_CONDITIONAL_HARD_WINDOW_MARGIN
+TPC246_ROUTE_ADVANCE = YES_STRUCTURAL_AGGREGATE_THEOREM
+TPC246_COUPLED_FAMILY_CONTAINMENT = PROVED
+TPC246_WEIGHTED_DISK_IDENTITY = PROVED_EXACT
+TPC246_REVERSE_REALIZATION = PROVED_EXPLICIT
+TPC246_AGGREGATE_ZERO_CRITERION = PROVED_EXACT
+TPC246_COMMON_MULTIPLIER_SPECIALIZATION = PROVED_STRUCTURAL
+TPC246_HARD_WINDOW_RADIUS_INFLATION = PROVED_CONDITIONAL_ON_ATTACHMENT
+TPC246_HARD_WINDOW_IMAGE_EXACTNESS = NOT_CLAIMED
+TPC246_POSITIVE_RADIUS_CIRCLE_AS_DISK = FORBIDDEN
+TPC246_ARBITRARY_COMPLEX_WEIGHT_AS_COMMON_MULTIPLIER = FORBIDDEN
+TPC246_INDEPENDENT_SOURCE_REALIZABILITY = OPEN
+TPC246_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
+TPC246_CANONICAL_BLOCK_DIRECTIONS = OPEN
+TPC246_PAYABLE_ARITHMETIC_MARGIN = OPEN
+TPC246_ARITHMETIC_ADVANCE = NO
+TPC246_FIXED_ATOM_CREDIT = 0
+TPC246_L2 = NONE
+TPC246_FULL_GATE_B = OPEN
+TPC246_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC246_TPC_TRIGGER = true
+TPC246_NUMBERED_RELEASE = YES
+TPC246_TWIN_PRIME_RESULT = NONE
+TPC246_STATUS = PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY
+TPC246_ROUND2_CLUE = SOURCE_NATIVE_WEIGHTED_LONGITUDINAL_DOMINANCE_BEYOND_TRANSVERSE_RADIUS_AND_WINDOW_LEAKAGE
+```
+
+strongest positive result：exact complete-product weighted disk、explicit inverse、
+sharp aggregate zero/margin dichotomy 与 one-transfer window enclosure；strongest
+obstruction：`|C_agg|<=R_agg` 时 abstract product model exact cancels，且 marginal disks
+alone do not prove source product realizability；open theorem：literal V59 two-lane
+blocks、source-native projections 与 payable strict weighted margin；reusable structure：
+local disks + Cartesian product -> weighted disk -> zero/margin dichotomy -> window
+enclosure。
+
+编号论文目录：papers/tpc-246-weighted-covariance-disk-reassembly/
+
+```text
+papers/tpc-246-weighted-covariance-disk-reassembly/README.md
+papers/tpc-246-weighted-covariance-disk-reassembly/PROOF_PACKAGE.md
+papers/tpc-246-weighted-covariance-disk-reassembly/paper/paper.pdf
+papers/tpc-246-weighted-covariance-disk-reassembly/results/tpc246_certificate.json
+papers/tpc-246-weighted-covariance-disk-reassembly/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_weighted_covariance_disk_reassembly.md
+research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py
+```
+
+TPC-245 上游 section：sharp longitudinal--transverse covariance disks
 ---------------------------------------------------------------------
 
 Let `H` be a complex Hilbert space with inner product conjugate-linear in the
@@ -6779,8 +6878,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V98/TPC-245 gate、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百五十二次（76 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V99/TPC-246 gate、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百五十四次（77 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -6936,11 +7035,23 @@ python -B research/tpc-big-road/tpc_bridge_b_common_multiplier_sign_localization
 python -O -B research/tpc-big-road/tpc_bridge_b_common_multiplier_sign_localization_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_sharp_longitudinal_transverse_covariance_disks_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_sharp_longitudinal_transverse_covariance_disks_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-245 入口：
+最新 TPC-246 入口：
+
+```text
+papers/tpc-246-weighted-covariance-disk-reassembly/README.md
+papers/tpc-246-weighted-covariance-disk-reassembly/notes/theorem_ledger.md
+papers/tpc-246-weighted-covariance-disk-reassembly/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_weighted_covariance_disk_reassembly.md
+research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py
+```
+
+TPC-245 上游入口：
 
 ```text
 papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/README.md

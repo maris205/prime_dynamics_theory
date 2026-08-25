@@ -2,11 +2,75 @@
 
 更新时间：2026-08-25
 
-状态：**TPC245_PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS / CANONICAL_BLOCK_DIRECTION_OPEN**
+状态：**TPC246_PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY / SOURCE_PRODUCT_ATTACHMENT_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.40 已发布：TPC-246 weighted covariance-disk reassembly
+
+项目：`papers/tpc-246-weighted-covariance-disk-reassembly/`
+
+类型：**PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY**。
+
+For a finite joint family with local marginals in `c_h+r_h Dbar`, arbitrary
+complex covariance weights give the unconditional enclosure
+
+```text
+aggregate subset C+R Dbar,
+C=sum_h lambda_h c_h,
+R=sum_h |lambda_h|r_h.
+```
+
+If the joint family is the complete Cartesian product, this containment is an
+exact identity.  For `R>0`, every target deviation `d` is realized by
+
+```text
+e_h=(conjugate(lambda_h)/|lambda_h|)(r_h/R)d
+```
+
+on nonzero-weight blocks.  Hence zero is feasible iff `|C|<=R`, and the exact
+minimum modulus is `max(|C|-R,0)`.  For TPC-244 common multipliers the weights
+are `|C_h|^2`, not arbitrary complex scalars.  Conditional on the literal
+TPC-243 attachment, the hard-window image is contained in the radius-inflated
+disk and is uniformly nonzero when
+
+```text
+|C_agg| > R_agg + epsilon||W||||B||.
+```
+
+```text
+TPC246_COUPLED_FAMILY_CONTAINMENT = PROVED
+TPC246_WEIGHTED_DISK_IDENTITY = PROVED_EXACT
+TPC246_REVERSE_REALIZATION = PROVED_EXPLICIT
+TPC246_AGGREGATE_ZERO_CRITERION = PROVED_EXACT
+TPC246_COMMON_MULTIPLIER_SPECIALIZATION = PROVED_STRUCTURAL
+TPC246_HARD_WINDOW_RADIUS_INFLATION = PROVED_CONDITIONAL_ON_ATTACHMENT
+TPC246_HARD_WINDOW_IMAGE_EXACTNESS = NOT_CLAIMED
+TPC246_POSITIVE_RADIUS_CIRCLE_AS_DISK = FORBIDDEN
+TPC246_ARBITRARY_COMPLEX_WEIGHT_AS_COMMON_MULTIPLIER = FORBIDDEN
+TPC246_INDEPENDENT_SOURCE_REALIZABILITY = OPEN
+TPC246_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
+TPC246_CANONICAL_BLOCK_DIRECTIONS = OPEN
+TPC246_PAYABLE_ARITHMETIC_MARGIN = OPEN
+TPC246_ARITHMETIC_ADVANCE = NO
+TPC246_FIXED_ATOM_CREDIT = 0
+TPC246_L2 = NONE
+TPC246_FULL_GATE_B = OPEN
+TPC246_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC246_STATUS = PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY
+TPC246_ROUND2_CLUE = SOURCE_NATIVE_WEIGHTED_LONGITUDINAL_DOMINANCE_BEYOND_TRANSVERSE_RADIUS_AND_WINDOW_LEAKAGE
+```
+
+strongest positive result：exact weighted disk identity、explicit reverse realization、
+sharp zero/margin dichotomy 与 one-transfer window enclosure；strongest obstruction：
+`|C_agg|<=R_agg` 时 complete-product model exact cancels，且 local marginals alone do
+not imply source product realizability；open theorem：literal V59 two-lane blocks、
+source-native projections 与 payable strict aggregate margin；reusable structure：
+`local disks -> weighted exact disk -> zero/margin dichotomy -> window-inflated disk`；
+`ROUND2_CLUE`：
+`SOURCE_NATIVE_WEIGHTED_LONGITUDINAL_DOMINANCE_BEYOND_TRANSVERSE_RADIUS_AND_WINDOW_LEAKAGE`。
 
 ## 0.39 已发布：TPC-245 sharp longitudinal--transverse covariance disks
 

@@ -1,0 +1,44 @@
+\section{Exact weighted-disk reassembly}
+
+\begin{theorem}[Weighted Minkowski disk identity]\label{thm:disk}
+Assume blockwise product realizability,
+\[
+ \mathcal J=\prod_{h\in A}(c_h+r_h\Disk).
+\]
+Then
+\[
+ \mathcal A_\lambda(\mathcal J)=\Cagg+\Ragg\Disk.
+\]
+The identity includes an empty index set, zero weights, and zero radii.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:containment} gives one inclusion.  If $\Ragg=0$, every
+nonnegative summand $|\lambda_h|r_h$ vanishes, so every weighted deviation is
+zero and the aggregate is the singleton $\{\Cagg\}$.
+
+Suppose $\Ragg>0$ and fix $d\in\C$ with $|d|\le\Ragg$.  Define
+\[
+ e_h=
+ \begin{cases}
+ \displaystyle
+ \frac{\overline{\lambda_h}}{|\lambda_h|}
+ \frac{r_h}{\Ragg}\,d,&\lambda_h\ne0,\\[7pt]
+ 0,&\lambda_h=0.
+ \end{cases}
+\]
+Then $|e_h|=r_h|d|/\Ragg\le r_h$ whenever $\lambda_h\ne0$, while
+\[
+ \sum_h\lambda_he_h
+ =\frac d{\Ragg}\sum_h|\lambda_h|r_h=d.
+\]
+Thus $z_h=c_h+e_h$ is a jointly feasible product choice whose aggregate is
+$\Cagg+d$.  This proves the reverse inclusion.  For $A=\varnothing$, the
+empty product has one empty tuple and the empty sum gives $\{0\}$, agreeing
+with the formula.
+\end{proof}
+
+The formula uses arbitrary complex weights only as abstract covariance
+scalars.  A common multiplier in both Hilbert-space lanes gives the narrower
+weight $|\gamma_h|^2$.  Different lane multipliers $a_h,d_h$ would instead
+give $\overline{a_h}d_h$ and require separate norm budgets.

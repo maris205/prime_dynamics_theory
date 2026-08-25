@@ -1,0 +1,32 @@
+\section{Sharp cancellation and insufficiency}
+
+\begin{corollary}[Distance and phase]\label{cor:geometry}
+Under Theorem~\ref{thm:disk},
+\[
+ 0\in\mathcal A_\lambda(\mathcal J)\iff |\Cagg|\le\Ragg,
+ \qquad
+ \min_Q|Q|=\max\{|\Cagg|-\Ragg,0\}.
+\]
+If $\Ragg<|\Cagg|$, all aggregate values lie in the sharp sector about
+$\Cagg$ of half-angle $\arcsin(\Ragg/|\Cagg|)$.
+\end{corollary}
+
+\begin{proof}
+The first two statements are the distance from the origin to the exact disk.
+When the disk misses the origin, its two tangent rays make a right triangle
+with hypotenuse $|\Cagg|$ and opposite side $\Ragg$.  Tangency also proves
+sharpness.
+\end{proof}
+
+Consequently, if $|\Cagg|\le\Ragg$, fixed local centers and radii alone cannot
+prove a positive aggregate lower bound in the product model: the explicit
+construction in Theorem~\ref{thm:disk} realizes exact zero.  This is an
+insufficiency theorem about those data, not evidence that an unknown coupled
+arithmetic subfamily actually attains zero.
+
+The full-disk premise cannot be weakened silently.  A positive-radius
+one-dimensional TPC-245 branch is a circle.  For example, the sum of two
+centered circles of radii $2$ and $1$ is the annulus
+$\{z:1\le|z|\le3\}$, not the radius-$3$ disk.  Nor do exact marginal disks
+imply a product: if $\mathcal J=\{(z,-z):|z|\le1\}$ and both weights are one,
+the aggregate is always zero although each marginal is the unit disk.

@@ -1,0 +1,59 @@
+% !TeX program = pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs,tabularx}
+\usepackage[hidelinks]{hyperref}
+
+\input{math_commands}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\hypersetup{
+  pdftitle={Weighted Covariance-Disk Reassembly and Hard-Window Margins},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact weighted Minkowski geometry for local covariance disks},
+  pdfkeywords={Minkowski sum, covariance disk, hard window, robust nonvanishing}
+}
+
+\title{Weighted Covariance-Disk Reassembly\\
+and Hard-Window Margins}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology\\
+Wuhan, China\\
+\texttt{liang.wang@hust.edu.cn}}
+\date{August 25, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+\input{sections/1_introduction}
+\input{sections/2_joint_geometry}
+\input{sections/3_exact_reassembly}
+\input{sections/4_sharp_corollaries}
+\input{sections/5_source_transfer}
+\input{sections/6_certificate}
+\input{sections/7_route_boundary}
+\input{sections/8_conclusion}
+
+\appendix
+\input{sections/A_status_ledger}
+
+\end{document}

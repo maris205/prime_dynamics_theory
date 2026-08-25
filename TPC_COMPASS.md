@@ -1,44 +1,53 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-25
-状态：`BOLD_CHANNEL_V98 / SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS`
-claim level：`PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS`
-编号事实终点：TPC-245；TPC-245 trigger：`true`
+状态：`BOLD_CHANNEL_V99 / WEIGHTED_COVARIANCE_DISK_REASSEMBLY`
+claim level：`PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY`
+编号事实终点：TPC-246；TPC-246 trigger：`true`
 
-当前 TPC-245 入口：proof 为
-`research/tpc-big-road/bridge_b_sharp_longitudinal_transverse_covariance_disks.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_sharp_longitudinal_transverse_covariance_disks_checker.py`，编号论文为
-`papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/`。固定 abstract unit
-direction 后，local covariance 的 center 是 `conjugate(w)b`，radius 是
-`sqrt(E_B E_W)`；transverse dimension 至少二时 exact feasible set 是 closed disk，
-dimension one 是 circle/singleton，dimension zero 是 singleton/unrealizable。exact
-minimum modulus、zero test 与 sharp phase cone 均已证明。
+当前 TPC-246 入口：proof 为
+`research/tpc-big-road/bridge_b_weighted_covariance_disk_reassembly.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py`，编号论文为
+`papers/tpc-246-weighted-covariance-disk-reassembly/`。对任意 jointly feasible local
+family，weighted aggregate contained in center `C=sum_h lambda_hc_h`、radius
+`R=sum_h|lambda_h|r_h` 的 disk；若 joint family 是 complete Cartesian product，则
+该 disk exact，且每个点有 explicit reverse realization。TPC-244 source-compatible
+weights 是 `|C_h|^2`。支付一次 TPC-243 transfer 后，robust sufficient margin 是
+`|C|-R-epsilon||W||||B||>0`；inflated physical disk 只作 containment。
 
 ```text
-TPC245_EXACT_DECOMPOSITION = PROVED_CENTER_PLUS_TRANSVERSE_COVARIANCE
-TPC245_DIM_GE_2_FEASIBLE_SET = PROVED_CLOSED_DISK
-TPC245_DIM_EQ_1_FEASIBLE_SET = PROVED_CIRCLE_OR_SINGLETON
-TPC245_DIM_EQ_0_FEASIBLE_SET = PROVED_SINGLETON_OR_UNREALIZABLE
-TPC245_ZERO_FEASIBILITY = PROVED_DIMENSION_SENSITIVE
-TPC245_MINIMUM_MODULUS = PROVED_EXACT
-TPC245_PHASE_SECTOR = PROVED_SHARP_WHEN_RADIUS_LT_CENTER
-TPC245_TPC219_RELATION = PROJECTION_LINEAGE_ONLY_NOT_LITERAL_OBJECT_IDENTITY
-TPC245_CANONICAL_BLOCK_DIRECTION = OPEN
-TPC245_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
-TPC245_PAYABLE_MOMENTS_AND_ENERGIES = OPEN
-TPC245_ARITHMETIC_ADVANCE = NO
-TPC245_L2 = NONE
-TPC245_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC245_STATUS = PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS
-TPC245_ROUND2_CLUE = WEIGHTED_MINKOWSKI_REASSEMBLY_OF_INDEPENDENT_LOCAL_DISKS_WITH_HARD_WINDOW_ERROR
+TPC246_COUPLED_FAMILY_CONTAINMENT = PROVED
+TPC246_WEIGHTED_DISK_IDENTITY = PROVED_EXACT
+TPC246_REVERSE_REALIZATION = PROVED_EXPLICIT
+TPC246_AGGREGATE_ZERO_CRITERION = PROVED_EXACT
+TPC246_COMMON_MULTIPLIER_SPECIALIZATION = PROVED_STRUCTURAL
+TPC246_HARD_WINDOW_RADIUS_INFLATION = PROVED_CONDITIONAL_ON_ATTACHMENT
+TPC246_HARD_WINDOW_IMAGE_EXACTNESS = NOT_CLAIMED
+TPC246_POSITIVE_RADIUS_CIRCLE_AS_DISK = FORBIDDEN
+TPC246_ARBITRARY_COMPLEX_WEIGHT_AS_COMMON_MULTIPLIER = FORBIDDEN
+TPC246_INDEPENDENT_SOURCE_REALIZABILITY = OPEN
+TPC246_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
+TPC246_PAYABLE_ARITHMETIC_MARGIN = OPEN
+TPC246_ARITHMETIC_ADVANCE = NO
+TPC246_L2 = NONE
+TPC246_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC246_STATUS = PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY
+TPC246_ROUND2_CLUE = SOURCE_NATIVE_WEIGHTED_LONGITUDINAL_DOMINANCE_BEYOND_TRANSVERSE_RADIUS_AND_WINDOW_LEAKAGE
 ```
 
-TPC-244 上游入口：proof 为
+TPC-245 上游入口：proof 为
+`research/tpc-big-road/bridge_b_sharp_longitudinal_transverse_covariance_disks.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_sharp_longitudinal_transverse_covariance_disks_checker.py`，编号论文为
+`papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/`。它把 fixed local
+moments/energies 的 feasible set exact classified 为 disk/circle/singleton/empty，并给出
+TPC-246 使用的 local centers、radii 与 dimension firewall。
+
+TPC-244 更上游入口：proof 为
 `research/tpc-big-road/bridge_b_common_multiplier_sign_localization.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_common_multiplier_sign_localization_checker.py`，编号论文为
 `papers/tpc-244-common-multiplier-sign-localization/`。它把 orthogonal same-block main
 covariance 精确压成 `sum_h|C_h|^2<w_h,b_h>`，并把 nonorthogonal sign dependence
-定位到 cut edges；这给出 TPC-245 分析的 local object。
+定位到 cut edges；这给出 TPC-246 的 source-compatible weights。
 
 TPC-243 上游入口：proof 为
 `research/tpc-big-road/bridge_b_hard_window_near_isometry_bilinear_transfer.md`，checker 为

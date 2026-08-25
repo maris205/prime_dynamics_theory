@@ -1,53 +1,64 @@
-# TPC big road V98 / TPC-245: sharp longitudinal--transverse covariance disks
+# TPC big road V99 / TPC-246: weighted covariance-disk reassembly
 
 更新时间：2026-08-25
 
-状态：`TPC245_PROVED_STRUCTURAL_L1_SHARP_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISKS / FULL_GATE_B_OPEN`
+状态：`TPC246_PROVED_STRUCTURAL_L1_WEIGHTED_COVARIANCE_DISK_REASSEMBLY / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-245 proof 为
+当前 TPC-246 proof 为
+`bridge_b_weighted_covariance_disk_reassembly.md`，checker 为
+`tpc_bridge_b_weighted_covariance_disk_reassembly_checker.py`，编号论文为
+`../../papers/tpc-246-weighted-covariance-disk-reassembly/`。
+
+For local disks `S_h=c_h+r_h Dbar` and complex scalar covariance weights,
+
+```text
+C=sum_h lambda_h c_h,
+R=sum_h |lambda_h|r_h.
+```
+
+Every jointly feasible family is contained in `C+R Dbar`.  Under complete
+Cartesian-product realizability the aggregate set equals that disk exactly, with
+an explicit inverse construction.  Thus zero is feasible iff `|C|<=R`, and the
+minimum modulus is `max(|C|-R,0)`.  For the TPC-244 common multiplier,
+`lambda_h=|C_h|^2`; TPC-243 inflates the containing radius once by
+`epsilon||W||||B||`.
+
+```text
+TPC246_COUPLED_FAMILY_CONTAINMENT = PROVED
+TPC246_WEIGHTED_DISK_IDENTITY = PROVED_EXACT
+TPC246_REVERSE_REALIZATION = PROVED_EXPLICIT
+TPC246_AGGREGATE_ZERO_CRITERION = PROVED_EXACT
+TPC246_COMMON_MULTIPLIER_SPECIALIZATION = PROVED_STRUCTURAL
+TPC246_HARD_WINDOW_RADIUS_INFLATION = PROVED_CONDITIONAL_ON_ATTACHMENT
+TPC246_HARD_WINDOW_IMAGE_EXACTNESS = NOT_CLAIMED
+TPC246_POSITIVE_RADIUS_CIRCLE_AS_DISK = FORBIDDEN
+TPC246_ARBITRARY_COMPLEX_WEIGHT_AS_COMMON_MULTIPLIER = FORBIDDEN
+TPC246_INDEPENDENT_SOURCE_REALIZABILITY = OPEN
+TPC246_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
+TPC246_ARITHMETIC_ADVANCE = NO
+TPC246_FIXED_ATOM_CREDIT = 0
+TPC246_L2 = NONE
+TPC246_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC246_ROUND2_CLUE = SOURCE_NATIVE_WEIGHTED_LONGITUDINAL_DOMINANCE_BEYOND_TRANSVERSE_RADIUS_AND_WINDOW_LEAKAGE
+```
+
+strongest positive result：complete-product weighted disk identity、explicit inverse 与
+window-inflated strict margin；strongest obstruction：`|C|<=R` 时 product model exact
+cancels，且 source 未证明 blockwise product realizability；open theorem：source-native
+two-lane blocks with payable positive margin；reusable structure：local disks -> weighted
+disk -> zero/margin dichotomy -> window enclosure。
+
+TPC-245 上游 proof 为
 `bridge_b_sharp_longitudinal_transverse_covariance_disks.md`，checker 为
 `tpc_bridge_b_sharp_longitudinal_transverse_covariance_disks_checker.py`，编号论文为
-`../../papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/`。
+`../../papers/tpc-245-sharp-longitudinal-transverse-covariance-disks/`。It supplies the
+dimension-sensitive exact local disks/circles and center-radius data reassembled by
+TPC-246.
 
-For one abstract unit direction,
-
-```text
-<W,B>=conjugate(w)b+<W_perp,B_perp>,
-r=sqrt(E_B E_W).
-```
-
-The exact feasible set is a closed disk for transverse dimension at least two,
-a circle or singleton for dimension one, and a singleton or empty realizability
-branch for dimension zero.  The minimum modulus, zero criterion, and phase cone
-are exact and sharp.
-
-```text
-TPC245_DIM_GE_2_FEASIBLE_SET = PROVED_CLOSED_DISK
-TPC245_DIM_EQ_1_FEASIBLE_SET = PROVED_CIRCLE_OR_SINGLETON
-TPC245_DIM_EQ_0_FEASIBLE_SET = PROVED_SINGLETON_OR_UNREALIZABLE
-TPC245_ZERO_FEASIBILITY = PROVED_DIMENSION_SENSITIVE
-TPC245_MINIMUM_MODULUS = PROVED_EXACT
-TPC245_PHASE_SECTOR = PROVED_SHARP_WHEN_RADIUS_LT_CENTER
-TPC245_TPC219_RELATION = PROJECTION_LINEAGE_ONLY_NOT_LITERAL_OBJECT_IDENTITY
-TPC245_CANONICAL_BLOCK_DIRECTION = OPEN
-TPC245_LITERAL_V59_TWO_LANE_ATTACHMENT = OPEN
-TPC245_ARITHMETIC_ADVANCE = NO
-TPC245_FIXED_ATOM_CREDIT = 0
-TPC245_L2 = NONE
-TPC245_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC245_ROUND2_CLUE = WEIGHTED_MINKOWSKI_REASSEMBLY_OF_INDEPENDENT_LOCAL_DISKS_WITH_HARD_WINDOW_ERROR
-```
-
-strongest positive result：完整 sharp disk/circle/singleton classification、exact zero
-margin 与 phase cone；strongest obstruction：dimension one 无法填充 disk interior，且
-physical chain 没有 canonical one-dimensional `u_h`；open theorem：source-native block
-projection、literal V59 two-lane attachment 与 payable moments/energies；reusable
-structure：center-radius feasible set + exact margin + phase cone。
-
-TPC-244 上游 proof 为
+TPC-244 更上游 proof 为
 `bridge_b_common_multiplier_sign_localization.md`，checker 为
 `tpc_bridge_b_common_multiplier_sign_localization_checker.py`，编号论文为
 `../../papers/tpc-244-common-multiplier-sign-localization/`。It supplies the

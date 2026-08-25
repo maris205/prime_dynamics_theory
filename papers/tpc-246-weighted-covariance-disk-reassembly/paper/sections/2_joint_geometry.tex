@@ -1,0 +1,41 @@
+\section{Joint feasible sets and unconditional containment}
+
+Let $A$ be finite.  For $h\in A$, fix $c_h,\lambda_h\in\C$ and $r_h\ge0$.
+Let $\mathcal J$ be a nonempty set of jointly feasible tuples
+$z=(z_h)_{h\in A}$ satisfying
+\[
+ z_h\in c_h+r_h\Disk.
+\]
+Define
+\[
+ \Cagg=\sum_{h\in A}\lambda_hc_h,
+ \qquad
+ \Ragg=\sum_{h\in A}|\lambda_h|r_h,
+\]
+and
+\[
+ \mathcal A_\lambda(\mathcal J)
+ =\left\{\sum_{h\in A}\lambda_hz_h:z\in\mathcal J\right\}.
+\]
+
+\begin{proposition}[Coupled-family enclosure]\label{prop:containment}
+For every such joint family,
+\[
+ \mathcal A_\lambda(\mathcal J)
+ \subseteq \Cagg+\Ragg\Disk.
+\]
+No product-realizability assumption is needed.
+\end{proposition}
+
+\begin{proof}
+For $z\in\mathcal J$, write $z_h=c_h+e_h$ with $|e_h|\le r_h$.
+Then
+\[
+ \left|\sum_h\lambda_hz_h-\Cagg\right|
+ \le \sum_h|\lambda_h|\,|e_h|
+ \le \Ragg.
+\]
+\end{proof}
+
+The nonemptiness premise matters: an unrealizable local TPC-245 branch makes
+the full joint family empty, even when its scalar weight happens to vanish.
