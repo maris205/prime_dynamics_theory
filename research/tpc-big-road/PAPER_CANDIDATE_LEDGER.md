@@ -2,11 +2,38 @@
 
 更新时间：2026-08-25
 
-状态：**TPC248_PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET / WEIGHTED_GROUP_CONTRACTION_OPEN**
+状态：**TPC249_PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION / ACTUAL_GRAM_ESTIMATE_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.43 已发布：TPC-249 sharp weighted shared-lane contraction
+
+项目：`papers/tpc-249-sharp-weighted-shared-lane-contraction/`
+
+类型：**PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION**。
+
+Weights contract inside each physical shared lane to
+`g_c=sum_b lambda_cbv_cb`.  Independent centered lane balls have exact scalar
+radius
+
+```text
+R=sum_c rho_c sqrt(lambda_c*G_c lambda_c),
+```
+
+with explicit reverse realization; a global budget has the direct-sum square
+root radius.  The tagged triangle radius dominates exactly, with equality
+under common-ray alignment.  Repeated probes and opposite weights give zero
+exact radius but positive tagged radius.
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_SOURCE_ORIENTED_WEIGHTED_GRAM_SUPPORT_RADIUS_WITH_REVERSE_REALIZATION
+STRONGEST_OBSTRUCTION = FIXED_MARGINAL_NORMS_ALLOW_THE_TRUE_RADIUS_TO_RANGE_FROM_TAGGED_SATURATION_TO_ZERO
+OPEN_THEOREM = ASYMPTOTIC_BOUND_FOR_LITERAL_V59_GRAM_QUADRATIC_FORMS
+REUSABLE_STRUCTURE = WITHIN_LANE_WEIGHTED_VECTOR_PLUS_GRAM_SUPPORT_PLUS_BUDGET_LEDGER
+ROUND2_CLUE = ESTIMATE_LITERAL_GRAM_QUADRATIC_FORMS_OR_BOUND_THEM_FROM_COMPUTABLE_COHERENCE_DATA
+```
 
 ## 0.42 已发布：TPC-248 shared-lane Gram-ellipsoid feasible set
 

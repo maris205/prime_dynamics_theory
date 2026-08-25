@@ -1,58 +1,57 @@
-# TPC big road V101 / TPC-248: shared-lane Gram-ellipsoid feasible set
+# TPC big road V102 / TPC-249: sharp weighted shared-lane contraction
 
 更新时间：2026-08-25
 
-状态：`TPC248_PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET / FULL_GATE_B_OPEN`
+状态：`TPC249_PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-248 proof 为
-`bridge_b_shared_lane_gram_ellipsoid_feasible_set.md`，checker 为
-`tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py`，编号论文为
-`../../papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/`。
+当前 TPC-249 proof 为
+`bridge_b_sharp_weighted_shared_lane_contraction.md`，checker 为
+`tpc_bridge_b_sharp_weighted_shared_lane_contraction_checker.py`，编号论文为
+`../../papers/tpc-249-sharp-weighted-shared-lane-contraction/`。
 
-TPC-248 takes the fixed-`c` source probes exposed by TPC-247,
-
-```text
-v_cb=A_cb beta_b,
-```
-
-and classifies the joint image against the one shared output lane.  If
-`G_c=(<v_cb,v_cb'>)` and `y=V_c*W_c`, then
+TPC-249 contracts the TPC-248 probes inside each shared lane,
 
 ```text
-image(||W_c||<=rho_c)
- = {y in ran(G_c):y*G_c^dagger y<=rho_c^2}.
+g_c=sum_b lambda_cb v_cb,
 ```
 
-The exact sphere fills this solid ellipsoid iff `ker(V_c*)` supplies orthogonal
-slack; otherwise it is the equality shell.  A global budget couples output
-groups through a sum of Gram energies, and repeated probes give a diagonal disk
-rather than the product of their local disk marginals.
+and proves that independent centered lane balls have the exact aggregate disk
 
 ```text
-TPC248_SHARED_LANE_SOURCE_LOCK = PROVED_EXACT_FROM_TPC247
-TPC248_BALL_IMAGE = PROVED_EXACT_GRAM_ELLIPSOID
-TPC248_MINIMUM_NORM_PREIMAGE = PROVED_EXACT
-TPC248_SPHERE_IMAGE_WITH_SLACK = PROVED_EXACT_SOLID_ELLIPSOID
-TPC248_SPHERE_IMAGE_WITHOUT_SLACK = PROVED_EXACT_BOUNDARY_SHELL
-TPC248_PHYSICAL_CONJUGATE_ORIENTATION = PROVED_EXACT
-TPC248_GLOBAL_NORM_BUDGET = PROVED_EXACT_COUPLED_ELLIPSOID
-TPC248_POLYDISK_PROMOTION = REFUTED_SCOPED
-TPC248_ARITHMETIC_ADVANCE = NO
-TPC248_L2 = NONE
-TPC248_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC248_ROUND2_CLUE = CONTRACT_WEIGHTED_PROBES_INSIDE_EACH_SHARED_OUTPUT_LANE_BEFORE_SUMMING_ACROSS_OUTPUT_BLOCKS
+R Dbar,
+R=sum_c rho_c sqrt(lambda_c*G_c lambda_c).
 ```
+
+The global-budget radius is the direct-sum square root.  The exact radius is at
+most the tagged marginal triangle radius, with equality iff every active group
+has common nonnegative-ray alignment.  Repeated probes with opposite weights
+give exact cancellation that tagged copies erase.
+
+```text
+TPC249_LITERAL_WEIGHTED_PROBE_CONTRACTION = PROVED_EXACT
+TPC249_GRAM_RADIUS = PROVED_EXACT
+TPC249_EXPLICIT_REVERSE_REALIZATION = PROVED_EXACT
+TPC249_GLOBAL_BUDGET_RADIUS = PROVED_EXACT_DIRECT_SUM_SUPPORT
+TPC249_TAGGED_RADIUS_DOMINANCE = PROVED_EXACT
+TPC249_REPEATED_PROBE_CANCELLATION = PROVED_EXACT
+TPC249_ACTUAL_GRAM_ASYMPTOTIC = OPEN
+TPC249_ARITHMETIC_ADVANCE = NO
+TPC249_L2 = NONE
+TPC249_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC249_ROUND2_CLUE = ESTIMATE_LITERAL_GRAM_QUADRATIC_FORMS_OR_BOUND_THEM_FROM_COMPUTABLE_COHERENCE_DATA
+```
+
+## V101 upstream: TPC-248 shared-lane Gram-ellipsoid feasible set
+
+TPC-248 supplies the exact joint ellipsoid, minimum-preimage energy, and
+independent/global budget geometry contracted above.
 
 ## V100 upstream: TPC-247 literal V59 source-operator attachment
 
-TPC-247 supplies the exact source-index operator, disjoint hard-block
-decomposition, and the shared-lane probes used above.  Its tagged direct-sum
-representation repeats output lanes and does not preserve input-block
-cancellation; TPC-248 replaces that product surrogate by the actual Gram
-geometry.
+TPC-247 supplies the exact source-index operator and literal shared-lane probes.
 
 ## V99 upstream: TPC-246 weighted covariance-disk reassembly
 

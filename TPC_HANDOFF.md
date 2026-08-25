@@ -1,10 +1,88 @@
 # TPC HANDOFF
 
 更新时间：2026-08-25
-交接状态：`BOLD_CHANNEL_V101_TPC248_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET_RELEASED`
+交接状态：`BOLD_CHANNEL_V102_TPC249_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION_RELEASED`
 
-TPC-248 当前 section：shared-lane Gram-ellipsoid feasible set
-----------------------------------------------------------
+TPC-249 当前 section：sharp weighted shared-lane contraction
+---------------------------------------------------------
+
+For each literal TPC-248 output lane, put
+
+```text
+g_c=sum_b lambda_cb v_cb,
+v_cb=A_cb beta_b.
+```
+
+The physical inner-product orientation gives
+
+```text
+sum_b lambda_cb<W_c,v_cb>=<W_c,g_c>,
+||g_c||^2=lambda_c*G_c lambda_c.
+```
+
+TPC-249 proves that independent centered balls have the exact aggregate disk
+radius
+
+```text
+R=sum_c rho_c sqrt(lambda_c*G_c lambda_c),
+```
+
+and gives an explicit reverse realization for every point.  A declared affine
+model translates this disk by `C=sum_c<W_c^0,g_c>`; that affine domain is a
+`MODELING_CHOICE`, not source-forced.  One global direct-sum budget has exact
+radius `rho sqrt(sum_c lambda_c*G_c lambda_c)`.
+
+The tagged marginal triangle radius dominates `R`, with equality exactly when
+each active group has common nonnegative-ray alignment.  Repeated probes with
+weights `(1,-1)` give zero exact radius but positive tagged radius, recovering
+cancellation lost by tagged copies.  The actual V59 Gram quadratic forms are
+not estimated here.
+
+```text
+TPC249_MAXIMUM_CLAIM = EXACT_SOURCE_ORIENTED_WEIGHTED_SHARED_LANE_DISK_SUPPORT_WITH_REVERSE_REALIZATION_BUDGET_LEDGER_AND_TAGGED_EQUALITY_LAW
+TPC249_ROUTE_ADVANCE = YES_STRUCTURAL_WEIGHTED_CONTRACTION
+TPC249_LITERAL_WEIGHTED_PROBE_CONTRACTION = PROVED_EXACT
+TPC249_INDEPENDENT_BALL_AGGREGATE_IMAGE = PROVED_EXACT_DISK
+TPC249_GRAM_RADIUS = PROVED_EXACT
+TPC249_EXPLICIT_REVERSE_REALIZATION = PROVED_EXACT
+TPC249_AFFINE_CENTER_TRANSLATION = PROVED_FOR_DECLARED_MODELING_CHOICE
+TPC249_GLOBAL_BUDGET_RADIUS = PROVED_EXACT_DIRECT_SUM_SUPPORT
+TPC249_TAGGED_RADIUS_DOMINANCE = PROVED_EXACT
+TPC249_TAGGED_RADIUS_EQUALITY = PROVED_IFF_COMMON_NONNEGATIVE_RAY_PER_ACTIVE_GROUP
+TPC249_REPEATED_PROBE_CANCELLATION = PROVED_EXACT
+TPC249_ACTUAL_GRAM_ASYMPTOTIC = OPEN
+TPC249_PRIMITIVE_FREQUENCY_ATTACHMENT = OPEN
+TPC249_PAYABLE_LONGITUDINAL_DOMINANCE = OPEN
+TPC249_ARITHMETIC_ADVANCE = NO
+TPC249_FIXED_ATOM_CREDIT = 0
+TPC249_L2 = NONE
+TPC249_FULL_GATE_B = OPEN
+TPC249_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC249_TWIN_PRIME_RESULT = NONE
+TPC249_STATUS = PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION
+TPC249_ROUND2_CLUE = ESTIMATE_LITERAL_GRAM_QUADRATIC_FORMS_OR_BOUND_THEM_FROM_COMPUTABLE_COHERENCE_DATA
+```
+
+strongest positive result：exact source-oriented weighted Gram support radius 与
+reverse realization；strongest obstruction：固定 marginal norms 时真实半径可从 tagged
+saturation 一直降到 0；open theorem：literal V59 Gram quadratic asymptotic；
+reusable structure：within-lane vector contraction -> Gram support -> budget ledger ->
+tagged equality audit。
+
+编号论文目录：papers/tpc-249-sharp-weighted-shared-lane-contraction/
+
+```text
+papers/tpc-249-sharp-weighted-shared-lane-contraction/README.md
+papers/tpc-249-sharp-weighted-shared-lane-contraction/PROOF_PACKAGE.md
+papers/tpc-249-sharp-weighted-shared-lane-contraction/paper/paper.pdf
+papers/tpc-249-sharp-weighted-shared-lane-contraction/results/tpc249_certificate.json
+papers/tpc-249-sharp-weighted-shared-lane-contraction/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_sharp_weighted_shared_lane_contraction.md
+research/tpc-big-road/tpc_bridge_b_sharp_weighted_shared_lane_contraction_checker.py
+```
+
+TPC-248 上游 section：shared-lane Gram-ellipsoid feasible set
+---------------------------------------------------------
 
 TPC-247 exposes, for every fixed output block `c`, the literal probes
 
@@ -7040,8 +7118,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V101/TPC-248 gate、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百五十八次（79 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V102/TPC-249 gate、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百六十次（80 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -7203,11 +7281,23 @@ python -B research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachm
 python -O -B research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachment_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_sharp_weighted_shared_lane_contraction_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_sharp_weighted_shared_lane_contraction_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-248 入口：
+最新 TPC-249 入口：
+
+```text
+papers/tpc-249-sharp-weighted-shared-lane-contraction/README.md
+papers/tpc-249-sharp-weighted-shared-lane-contraction/notes/theorem_ledger.md
+papers/tpc-249-sharp-weighted-shared-lane-contraction/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_sharp_weighted_shared_lane_contraction.md
+research/tpc-big-road/tpc_bridge_b_sharp_weighted_shared_lane_contraction_checker.py
+```
+
+TPC-248 上游入口：
 
 ```text
 papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/README.md

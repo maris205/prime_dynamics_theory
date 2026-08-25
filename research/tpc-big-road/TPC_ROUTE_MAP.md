@@ -2,17 +2,16 @@
 
 更新时间：2026-08-25
 
-当前地图版本：V101 / TPC-248
+当前地图版本：V102 / TPC-249
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-248`（`PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET`）；
-对应论文目录为 `papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/`。TPC-248 对
-TPC-247 固定 output block 上的多 probe/单一 physical lane 联合像给出 exact
-range-restricted pseudoinverse Gram 椭球，闭合 ball/sphere slack 二分、physical
-conjugate orientation 与 global-budget sum-energy law。local marginals 到 polydisk 的自动
-promotion 已 `REFUTED_SCOPED`；weighted group contraction、primitive attachment、
-arithmetic `L2` 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-249`（`PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION`）；
+对应论文目录为 `papers/tpc-249-sharp-weighted-shared-lane-contraction/`。TPC-249 在
+每个 physical shared lane 内将 weights 收缩到 `g_c=sum_b lambda_cbv_cb`，证明
+independent/global budgets 的 exact Gram support radius、reverse realization 与 tagged
+triangle equality law。repeated-probe opposite weights 可精确恢复 tagged copies 丢失的
+cancellation。actual V59 Gram asymptotic、arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -54,9 +53,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V101 / TPC-248                    |
-        | SHARED-LANE GRAM ELLIPSOID EXACT                  |
-        | joint set closed; weighted contraction OPEN       |
+        | YOU ARE HERE — V102 / TPC-249                    |
+        | SHARP WEIGHTED SHARED-LANE CONTRACTION            |
+        | exact radius; literal Gram estimate OPEN          |
         +--------------------------------------------------+
                 |
                 v
@@ -99,12 +98,11 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V101 / TPC-248 的
-shared-lane Gram-ellipsoid feasible set。TPC-247 physical probes 的 actual joint image、
-minimum preimage energy、sphere/slack 二分、physical conjugate orientation 和 global-budget
-coupling 已 exact 闭合；local marginal polydisk shortcut 已被 diagonal-disk 反例否定。
-下一施工点是先在每个 shared lane 内收缩 weighted probes，提取 sharp
-group support radius，再做 cross-output reassembly。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V102 / TPC-249 的
+sharp weighted shared-lane contraction。joint 椭球已在每个 physical lane 内压成
+`rho_c sqrt(lambda_c*G_c lambda_c)` exact scalar radius；independent/global budget、
+reverse realization 和 tagged equality criterion 全部闭合。下一施工点是只使用
+literal diagonal/coherence data 给 Gram quadratic 可计算且 adversarially sharp 的上下界。
 FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit 继续
 OPEN/UNPAID/NO。**
 
@@ -1237,6 +1235,45 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.43 V102 / TPC-249：sharp weighted shared-lane contraction
+
+For each fixed output lane, define `g_c=sum_b lambda_cbv_cb`.  TPC-249 proves
+
+```text
+sum_b lambda_cb<W_c,v_cb>=<W_c,g_c>,
+||g_c||^2=lambda_c*G_c lambda_c.
+```
+
+Independent centered balls have exact aggregate disk radius
+
+```text
+R=sum_c rho_c sqrt(lambda_c*G_c lambda_c),
+```
+
+with an explicit preimage for every disk point.  One global budget has radius
+`rho sqrt(sum_c lambda_c*G_c lambda_c)`.  The tagged marginal radius dominates
+the exact radius, and equality holds exactly under common nonnegative-ray
+alignment in every active group.  Repeated probes with opposite weights have
+zero exact radius but positive tagged radius.
+
+```text
+TPC249_LITERAL_WEIGHTED_PROBE_CONTRACTION = PROVED_EXACT
+TPC249_INDEPENDENT_BALL_AGGREGATE_IMAGE = PROVED_EXACT_DISK
+TPC249_GRAM_RADIUS = PROVED_EXACT
+TPC249_EXPLICIT_REVERSE_REALIZATION = PROVED_EXACT
+TPC249_GLOBAL_BUDGET_RADIUS = PROVED_EXACT_DIRECT_SUM_SUPPORT
+TPC249_TAGGED_RADIUS_DOMINANCE = PROVED_EXACT
+TPC249_REPEATED_PROBE_CANCELLATION = PROVED_EXACT
+TPC249_ACTUAL_GRAM_ASYMPTOTIC = OPEN
+TPC249_ARITHMETIC_ADVANCE = NO
+TPC249_L2 = NONE
+TPC249_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC249_STATUS = PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION
+```
+
+地图位置：**weighted scalar 与 sharp radius 已经闭合；下一步是把 actual
+Gram form 用 diagonal/coherence 数据夹住，并用尖锐反例测试每一个改进。**
 
 ## 5.42 V101 / TPC-248：shared-lane Gram-ellipsoid feasible set
 
@@ -3057,10 +3094,13 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
-1. **TPC-248 已完成：shared-lane Gram-ellipsoid feasible set**。actual fixed-`c`
+1. **TPC-249 已完成：sharp weighted shared-lane contraction**。每个 lane 的
+   weighted probe、Gram radius、reverse realization、independent/global budget 与 tagged
+   equality law 已 exact；repeated-probe cancellation 证明 shared contraction 可严格优于
+   marginal triangle。下一步估计 actual Gram quadratic。
+2. **TPC-248 已完成：shared-lane Gram-ellipsoid feasible set**。actual fixed-`c`
    joint image、minimum preimage、sphere/slack、physical orientation 与 global budget 已 exact；
-   diagonal-disk 和 Euclidean-ball 反例封住 marginal polydisk shortcut。下一步在每个
-   output lane 内收缩 weighted probes，提取 sharp aggregate radius。
+   其 weighted scalar contraction 已由 TPC-249 闭合。
 2. **TPC-247 已完成：literal V59 source-operator attachment**。physical scalar、
    hard-block exactly-once decomposition 与 tagged two-lane covariance 已 exact；其 shared-lane
    joint set现已由 TPC-248 闭合，primitive-frequency/payment 仍 OPEN。
@@ -3182,9 +3222,10 @@ NUMBERED_RELEASE = TPC-244
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-248 的下一步：sharp weighted group contraction 与 dominance**。
-    对同一 output block 上的 probes `A_cb beta_b` 先形成 weighted vector
-    `g_c=sum_b lambda_cb v_cb`，以 `lambda_c*G_c lambda_c` 提取 exact support radius；再回接 literal V59
+12. **TPC-249 的下一步：coherence bounds 与 adversarial sharpness**。
+    从 `||v_cb||` 与 normalized pairwise coherence 导出
+    `lambda_c*G_c lambda_c` 的 computable two-sided bounds，定位何时改进 tagged
+    radius；再回接 literal V59
     longitudinal/transverse decomposition，目标是支付真实的
     `|C_long|>R_trans+leakage`，不得把 structural ellipsoid 当成 arithmetic
     nonvanishing。
@@ -3286,6 +3327,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-25 | V102 / TPC-249 | Bridge A / Gate B：weighted shared-lane scalar and radius exact；literal Gram estimate/payable margin open | `TPC-249` | within-lane contraction、Gram support、reverse realization、global budget、tagged equality 与 exact-cancellation adversary；arithmetic unchanged |
 | 2026-08-25 | V101 / TPC-248 | Bridge A / Gate B：shared-lane joint set exact Gram ellipsoid；weighted group contraction/payable margin open | `TPC-248` | range-restricted pseudoinverse energy、sphere/slack dichotomy、physical conjugation、global-budget coupling 与 polydisk obstruction；arithmetic unchanged |
 | 2026-08-25 | V100 / TPC-247 | Bridge A / Gate B：literal V59 source operator 与 tagged two-lane covariance exact；shared-lane joint geometry/payable margin open | `TPC-247` | exact physical operator、hard-block exactly-once sum、tagged covariance、`sqrt(m)` duplication toll 与 cancellation-loss counterexample；arithmetic unchanged |
 | 2026-08-25 | V99 / TPC-246 | Bridge A / Gate B：weighted aggregate geometry exact for complete products；source product attachment and payable margin open | `TPC-246` | coupled-family containment、exact Cartesian-product disk、explicit inverse、zero/margin dichotomy 与 one-transfer window enclosure；arithmetic unchanged |

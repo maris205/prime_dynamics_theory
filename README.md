@@ -9,14 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-248 已精确分类 TPC-247 暴露的 shared-output-lane
-joint feasible set。对 `v_cb=A_cb beta_b`、`G_c=(<v_cb,v_cb'>)`，半径
-`rho_c` 的 physical lane ball 精确映到 `ran(G_c)` 上的
-`y*G_c^dagger y<=rho_c^2` Gram 椭球；exact sphere 是 solid 还是 shell
-由 `ker(V_c*)` 是否提供 orthogonal slack 决定。local marginals 不能推出
-Cartesian product，global norm budget 会把各组再耦合成 sum-energy 椭球。
-weighted aggregate radius、primitive-frequency attachment、arithmetic `L2` 与 full
-Gate B 仍开放。
+当前主线状态：TPC-249 已将 TPC-248 的 shared-lane Gram 椭球精确收缩为
+source-oriented weighted scalar。对 `g_c=sum_b lambda_cb v_cb`，independent lane
+balls 的 aggregate image 是 exact disk，半径
+`sum_c rho_c sqrt(lambda_c*G_c lambda_c)`；global budget 也有 exact direct-sum
+半径。该半径总不超过 tagged marginal triangle radius，且只在每个 active
+group common-ray alignment 时取等；repeated probes/opposite weights 可使真实半径为 0。
+actual V59 Gram asymptotic、arithmetic `L2` 与 full Gate B 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -30,6 +29,8 @@ Gate B 仍开放。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-249-sharp-weighted-shared-lane-contraction` - `PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION` - 将 complex weights 在每个 physical shared lane 内精确收缩为 `g_c`，证明 independent/global budget 的 sharp Gram support radius、explicit reverse realization、tagged triangle dominance 与 common-ray equality criterion；repeated-probe opposite-weight fixture 精确恢复 tagged copies 丢失的 cancellation，actual Gram arithmetic 仍开放。
 
 `tpc-248-shared-lane-gram-ellipsoid-feasible-set` - `PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET` - 将 TPC-247 固定 output block 上的多 probe/单 shared lane 联合像精确分类为 range-restricted pseudoinverse Gram 椭球，证明 sphere/slack 二分、physical conjugate orientation 与 global-budget sum-energy law，并以 diagonal-disk 反例严格否定 marginal-to-polydisk promotion；arithmetic L2 仍开放。
 

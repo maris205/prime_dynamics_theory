@@ -1,35 +1,41 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-25
-状态：`BOLD_CHANNEL_V101 / SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET`
-claim level：`PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET`
-编号事实终点：TPC-248；TPC-248 trigger：`true`
+状态：`BOLD_CHANNEL_V102 / SHARP_WEIGHTED_SHARED_LANE_CONTRACTION`
+claim level：`PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION`
+编号事实终点：TPC-249；TPC-249 trigger：`true`
 
-当前 TPC-248 入口：proof 为
-`research/tpc-big-road/bridge_b_shared_lane_gram_ellipsoid_feasible_set.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py`，编号论文为
-`papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/`。对固定 output block
-`c` 的 probes `v_cb=A_cb beta_b`，单一 shared lane 的 joint covariance 像精确为
-`ran(G_c)` 上的 pseudoinverse Gram 椭球；sphere/slack、physical conjugate
-orientation 与 global norm budget 均已 exact 分类。
+当前 TPC-249 入口：proof 为
+`research/tpc-big-road/bridge_b_sharp_weighted_shared_lane_contraction.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_sharp_weighted_shared_lane_contraction_checker.py`，编号论文为
+`papers/tpc-249-sharp-weighted-shared-lane-contraction/`。它在每个 shared lane 内先形成
+`g_c=sum_b lambda_cbv_cb`，将 exact support radius 压成
+`rho_c sqrt(lambda_c*G_c lambda_c)`，再按 independent/global budget 精确重组。
 
 ```text
-TPC248_SHARED_LANE_SOURCE_LOCK = PROVED_EXACT_FROM_TPC247
-TPC248_BALL_IMAGE = PROVED_EXACT_GRAM_ELLIPSOID
-TPC248_MINIMUM_NORM_PREIMAGE = PROVED_EXACT
-TPC248_SPHERE_IMAGE_WITH_SLACK = PROVED_EXACT_SOLID_ELLIPSOID
-TPC248_SPHERE_IMAGE_WITHOUT_SLACK = PROVED_EXACT_BOUNDARY_SHELL
-TPC248_PHYSICAL_CONJUGATE_ORIENTATION = PROVED_EXACT
-TPC248_GLOBAL_NORM_BUDGET = PROVED_EXACT_COUPLED_ELLIPSOID
-TPC248_POLYDISK_PROMOTION = REFUTED_SCOPED
-TPC248_ARITHMETIC_ADVANCE = NO
-TPC248_L2 = NONE
-TPC248_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC248_STATUS = PROVED_STRUCTURAL_L1_SHARED_LANE_GRAM_ELLIPSOID_FEASIBLE_SET
-TPC248_ROUND2_CLUE = CONTRACT_WEIGHTED_PROBES_INSIDE_EACH_SHARED_OUTPUT_LANE_BEFORE_SUMMING_ACROSS_OUTPUT_BLOCKS
+TPC249_LITERAL_WEIGHTED_PROBE_CONTRACTION = PROVED_EXACT
+TPC249_INDEPENDENT_BALL_AGGREGATE_IMAGE = PROVED_EXACT_DISK
+TPC249_GRAM_RADIUS = PROVED_EXACT
+TPC249_EXPLICIT_REVERSE_REALIZATION = PROVED_EXACT
+TPC249_GLOBAL_BUDGET_RADIUS = PROVED_EXACT_DIRECT_SUM_SUPPORT
+TPC249_TAGGED_RADIUS_DOMINANCE = PROVED_EXACT
+TPC249_TAGGED_RADIUS_EQUALITY = PROVED_IFF_COMMON_NONNEGATIVE_RAY_PER_ACTIVE_GROUP
+TPC249_REPEATED_PROBE_CANCELLATION = PROVED_EXACT
+TPC249_ACTUAL_GRAM_ASYMPTOTIC = OPEN
+TPC249_ARITHMETIC_ADVANCE = NO
+TPC249_L2 = NONE
+TPC249_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC249_STATUS = PROVED_STRUCTURAL_L1_SHARP_WEIGHTED_SHARED_LANE_CONTRACTION
+TPC249_ROUND2_CLUE = ESTIMATE_LITERAL_GRAM_QUADRATIC_FORMS_OR_BOUND_THEM_FROM_COMPUTABLE_COHERENCE_DATA
 ```
 
-TPC-247 上游入口：proof 为
+TPC-248 上游入口：proof 为
+`research/tpc-big-road/bridge_b_shared_lane_gram_ellipsoid_feasible_set.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_shared_lane_gram_ellipsoid_feasible_set_checker.py`，编号论文为
+`papers/tpc-248-shared-lane-gram-ellipsoid-feasible-set/`。它提供 TPC-249 所收缩的 exact
+joint Gram 椭球、sphere/slack 和 group-budget 几何。
+
+TPC-247 更上游入口：proof 为
 `research/tpc-big-road/bridge_b_literal_v59_source_operator_attachment.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_literal_v59_source_operator_attachment_checker.py`，编号论文为
 `papers/tpc-247-literal-v59-source-operator-attachment/`。它提供 literal source operator、
