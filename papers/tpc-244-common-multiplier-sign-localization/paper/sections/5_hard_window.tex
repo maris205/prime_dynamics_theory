@@ -1,0 +1,51 @@
+\section{Hard-window leakage bound}
+
+Let $T$ be the common synthesis map on a finite $\delta$-separated frequency
+set and $N$ consecutive integers.  TPC-243 proves
+\[
+\left|N^{-1}\ip{Tu}{Tv}-\ip{u}{v}\right|
+\leq\eps\norm u\norm v,
+\qquad
+\eps=\frac{\delta^{-1}H_{\lfloor1/(2\delta)\rfloor}}{N}.
+\]
+
+For a common unit-phase pattern $\eta=(\eta_h)_h$, let $B(\eta),W(\eta)$
+denote the direct-sum vectors obtained by replacing $C_h$ with
+$\eta_hC_h$, and define
+\[
+Q_I(\eta)=N^{-1}\ip{TW(\eta)}{TB(\eta)}.
+\]
+
+\begin{corollary}[pairwise physical sign localization]
+For any two common unit-phase patterns $\eta,\xi$,
+\[
+|Q_I(\eta)-Q_I(\xi)|
+\leq2\eps\norm W\norm B.
+\]
+The norms on the right are coefficient-space norms.
+\end{corollary}
+
+\begin{proof}
+The orthogonal common-multiplier theorem makes the coefficient covariance and
+both coefficient norms independent of the phase pattern.  If their common
+covariance is $q_0$, the hard-window estimate gives
+\[
+|Q_I(\eta)-q_0|\leq\eps\norm W\norm B,
+\qquad
+|Q_I(\xi)-q_0|\leq\eps\norm W\norm B.
+\]
+The triangle inequality proves the claim.
+\end{proof}
+
+The orientation matches the selected TPC-242 mode: for
+$X=N^{-1/2}TB$ and $Y=N^{-1/2}TW$, one has
+$F_1=\ip{Y}{X}=Q_I$.  For primitive rational frequencies of height at most
+$U=x^{133/400}$ on the V59 interval,
+\BeginAccSupp{method=escape,ActualText={epsilon equals the quantity one hundred thirty three over one hundred plus o of one times x to minus sixty seven over two hundred times log x, equals x to minus sixty seven over two hundred plus o of one.}}
+\[
+\eps=\left(\frac{133}{100}+o(1)\right)
+x^{-67/200}\log x=x^{-67/200+o(1)}.
+\]
+\EndAccSupp{}
+This decay is not yet an arithmetic saving: literal two-lane attachment and a
+payable estimate for $\norm W\norm B$ remain open.

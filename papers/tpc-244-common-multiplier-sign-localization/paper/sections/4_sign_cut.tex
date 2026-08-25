@@ -1,0 +1,51 @@
+\section{Nonorthogonal reassembly as a sign cut}
+
+The direct-sum identity identifies the principal block term.  To locate every
+possible failure of phase blindness, let $J_h:\cH_h\to\cK$ be linear maps and,
+for real $C_h$ and $s_h\in\{-1,1\}$, define
+\[
+W(s)=\sum_hs_hC_hJ_hw_h,
+\qquad
+B(s)=\sum_hs_hC_hJ_hb_h,
+\qquad Q(s)=\ip{W(s)}{B(s)}.
+\]
+Put
+\[
+M_{hk}=\ip{J_hw_h}{J_kb_k},\qquad
+D=\sum_hC_h^2M_{hh},\qquad
+S_{hk}=C_hC_k(M_{hk}+M_{kh})\quad(h<k).
+\]
+
+\begin{theorem}[exact sign-cut localization]
+For every sign pattern $s$,
+\begin{align}
+Q(s)&=D+\sum_{h<k}s_hs_kS_{hk},\label{eq:walsh}\\
+Q(s)-Q(\one)&=-2\sum_{\substack{h<k\\s_h\ne s_k}}S_{hk}.\label{eq:cut}
+\end{align}
+Moreover, $Q$ is constant on the complete sign cube if and only if
+$S_{hk}=0$ for every unordered pair.
+\end{theorem}
+
+\begin{proof}
+Expand $Q(s)$ over ordered pairs.  The diagonal has $s_h^2=1$.  Pairing the
+two directed terms for $h<k$ yields \eqref{eq:walsh}.  Relative to the
+all-positive pattern, precisely the edges joining opposite signs reverse, so
+\eqref{eq:cut} follows.
+
+If all $S_{hk}$ vanish, \eqref{eq:walsh} is constant.  Conversely, fix
+$a<b$, multiply \eqref{eq:walsh} by the Walsh character $s_as_b$, and average
+over all $2^{|\cA|}$ patterns.  Orthogonality of distinct sign characters gives
+\[
+2^{-|\cA|}\sum_sQ(s)s_as_b=S_{ab}.
+\]
+The left side is zero when $Q$ is constant.  Hence every $S_{ab}$ vanishes.
+\end{proof}
+
+The edge coefficients may be complex; the theorem locates sensitivity and
+does not assign a real saving sign.  Vanishing of $S_{hk}$ only requires the
+two directed terms to cancel in their sum.  For complex baseline multipliers,
+the correct paired edge is
+\[
+\overline{C_h}C_kM_{hk}+\overline{C_k}C_hM_{kh},
+\]
+not $C_hC_k(M_{hk}+M_{kh})$.

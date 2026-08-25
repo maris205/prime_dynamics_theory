@@ -1,10 +1,127 @@
 # TPC HANDOFF
 
 更新时间：2026-08-25
-交接状态：`BOLD_CHANNEL_V96_TPC243_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER_RELEASED`
+交接状态：`BOLD_CHANNEL_V97_TPC244_COMMON_MULTIPLIER_SIGN_LOCALIZATION_RELEASED`
 
-TPC-243 当前 section：hard-window near-isometry and signed bilinear transfer
---------------------------------------------------------------------------
+TPC-244 当前 section：common-multiplier sign localization
+---------------------------------------------------------
+
+Let `H_coeff=direct_sum_h H_h` be an orthogonal coefficient space and use the
+inner product conjugate-linear in the first slot.  For local lane vectors
+`b_h,w_h` and the same multiplier `C_h` on both lanes, define
+
+```text
+B=direct_sum_h C_h b_h,
+W=direct_sum_h C_h w_h.
+```
+
+Then
+
+```text
+<W,B>=sum_h |C_h|^2<w_h,b_h>,
+||B||^2=sum_h |C_h|^2||b_h||^2,
+||W||^2=sum_h |C_h|^2||w_h||^2.
+```
+
+Every simultaneous outer unit phase `C_h->eta_hC_h` is therefore invisible in
+covariance and both norms.  This only erases the aggregate phase after `C_h` has
+been formed.  The internal Möbius signs in
+
+```text
+C_h=sum_(d in D_x,h|d)mu(d)log(d)/d
+```
+
+can still change `|C_h|` and are neither erased nor estimated.
+
+For arbitrary linear embeddings `J_h` into one ambient Hilbert space, real
+`C_h`, and sign patterns `s_h`, write
+
+```text
+W(s)=sum_h s_hC_hJ_hw_h,
+B(s)=sum_h s_hC_hJ_hb_h,
+M_hk=<J_hw_h,J_kb_k>,
+D=sum_h C_h^2M_hh,
+S_hk=C_hC_k(M_hk+M_kh).
+```
+
+Exact expansion and Walsh orthogonality give
+
+```text
+Q(s)=<W(s),B(s)>=D+sum_(h<k)s_hs_kS_hk,
+Q(s)-Q(1)=-2sum_(h<k,s_h!=s_k)S_hk,
+
+Q(s) constant for every sign pattern
+iff
+S_hk=0 for every unordered pair.
+```
+
+The `S_hk` may be complex and only their symmetrized sums are forced to vanish.
+For complex baseline multipliers the edge uses the conjugated coefficients.
+
+Conditional on a literal direct-sum two-lane attachment to the common TPC-243
+synthesis map, define
+
+```text
+Q_I(s)=N^(-1)<TW(s),TB(s)>.
+```
+
+TPC-243 and the coefficient invariance imply
+
+```text
+|Q_I(s)-Q_I(t)|<=2epsilon||W||||B||,
+epsilon=x^(-67/200+o(1))
+```
+
+at primitive V59 height.  The norms are coefficient-space norms.  The literal
+V59 phasewise primitive two-lane attachment and their payable norm product are
+not present in the current source chain, so this is not an arithmetic estimate.
+
+```text
+TPC244_MAXIMUM_CLAIM = EXACT_COMMON_MULTIPLIER_PHASE_BLINDNESS_SIGN_CUT_LOCALIZATION_AND_HARD_WINDOW_LEAKAGE
+TPC244_ROUTE_ADVANCE = YES_STRUCTURAL_OBSTRUCTION
+TPC244_COMMON_MULTIPLIER_COVARIANCE = PROVED_SUM_ABS_C_H_SQUARED_LOCAL_COVARIANCE
+TPC244_COMMON_UNIT_PHASE_INVARIANCE = PROVED_EXACT_COVARIANCE_AND_BOTH_NORMS
+TPC244_INTERNAL_MOBIUS_CANCELLATION = PRESERVED_NOT_ESTIMATED
+TPC244_NONORTHOGONAL_SIGN_CUT = PROVED_EXACT
+TPC244_ALL_SIGN_INVARIANCE = PROVED_IFF_EVERY_SYMMETRIZED_EDGE_ZERO
+TPC244_COMPLEX_MULTIPLIER_EDGE = PROVED_WITH_CONJUGATED_CROSS_FACTORS
+TPC244_HARD_WINDOW_PAIRWISE_VARIATION = PROVED_AT_MOST_TWO_EPSILON_COEFFICIENT_NORM_PRODUCT
+TPC244_V59_SPECIALIZATION = CONDITIONAL_ON_LITERAL_V59_PHASEWISE_PRIMITIVE_TWO_LANE_ATTACHMENT
+TPC244_LITERAL_V59_PHASEWISE_PRIMITIVE_TWO_LANE_ATTACHMENT = OPEN
+TPC244_COEFFICIENT_NORM_PAYMENT = OPEN
+TPC244_SIGNED_C_H_CANCELLATION = NONE
+TPC244_ARITHMETIC_ADVANCE = NO
+TPC244_FIXED_ATOM_CREDIT = 0
+TPC244_L2 = NONE
+TPC244_FULL_GATE_B = OPEN
+TPC244_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC244_TPC_TRIGGER = true
+TPC244_NUMBERED_RELEASE = YES
+TPC244_TWIN_PRIME_RESULT = NONE
+TPC244_STATUS = PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION
+TPC244_ROUND2_CLUE = WITHIN_BLOCK_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISK_BEFORE_ANY_OUTER_SIGN_ARGUMENT
+```
+
+strongest positive result：common outer phase exact invisible、all nonorthogonal sign
+sensitivity localized to cut edges、hard-window pairwise factor-two leakage；
+strongest obstruction：outer `C_h` sign cannot control same-block main covariance；
+open theorem：literal V59 phasewise primitive two-lane attachment with payable norms；
+reusable structure：common multiplier diagonal + Walsh cut expansion + TPC-243 transfer。
+
+编号论文目录：papers/tpc-244-common-multiplier-sign-localization/
+
+```text
+papers/tpc-244-common-multiplier-sign-localization/README.md
+papers/tpc-244-common-multiplier-sign-localization/PROOF_PACKAGE.md
+papers/tpc-244-common-multiplier-sign-localization/paper/paper.pdf
+papers/tpc-244-common-multiplier-sign-localization/results/tpc244_certificate.json
+papers/tpc-244-common-multiplier-sign-localization/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_common_multiplier_sign_localization.md
+research/tpc-big-road/tpc_bridge_b_common_multiplier_sign_localization_checker.py
+```
+
+TPC-243 上游 section：hard-window near-isometry and signed bilinear transfer
+---------------------------------------------------------------------------
 
 Let `F` be a finite `delta`-separated subset of `R/Z`, let
 `I={M,...,M+N-1}`, and define
@@ -6567,8 +6684,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V96/TPC-243 gate、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百四十八次（74 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V97/TPC-244 gate、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百五十次（75 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -6720,11 +6837,23 @@ python -B research/tpc-big-road/tpc_bridge_b_phase_fourier_collision_separation_
 python -O -B research/tpc-big-road/tpc_bridge_b_phase_fourier_collision_separation_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_common_multiplier_sign_localization_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_common_multiplier_sign_localization_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-243 入口：
+最新 TPC-244 入口：
+
+```text
+papers/tpc-244-common-multiplier-sign-localization/README.md
+papers/tpc-244-common-multiplier-sign-localization/notes/theorem_ledger.md
+papers/tpc-244-common-multiplier-sign-localization/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_common_multiplier_sign_localization.md
+research/tpc-big-road/tpc_bridge_b_common_multiplier_sign_localization_checker.py
+```
+
+TPC-243 上游入口：
 
 ```text
 papers/tpc-243-hard-window-near-isometry-bilinear-transfer/README.md

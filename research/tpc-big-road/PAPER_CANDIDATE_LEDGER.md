@@ -2,11 +2,71 @@
 
 更新时间：2026-08-25
 
-状态：**TPC243_PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER / LITERAL_COEFFICIENT_ATTACHMENT_OPEN**
+状态：**TPC244_PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION / LITERAL_TWO_LANE_ATTACHMENT_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.38 已发布：TPC-244 common-multiplier sign localization
+
+项目：`papers/tpc-244-common-multiplier-sign-localization/`
+
+类型：**PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION**。
+
+For `H=direct_sum_h H_h` and common block multipliers,
+
+```text
+B=direct_sum_h C_h b_h,
+W=direct_sum_h C_h w_h,
+<W,B>=sum_h |C_h|^2<w_h,b_h>.
+```
+
+Therefore a simultaneous outer unit phase on both lanes leaves covariance and
+both norms exactly invariant.  Internal Möbius signs inside the sum defining `C_h`
+still affect `|C_h|` and are not erased.
+
+For nonorthogonal embeddings and real signs,
+
+```text
+Q(s)=D+sum_(h<k)s_hs_kS_hk,
+Q(s)-Q(1)=-2sum_(h<k,s_h!=s_k)S_hk.
+```
+
+Walsh orthogonality proves that `Q` is invariant for all sign patterns iff every
+symmetrized edge `S_hk` vanishes.  Conditional on a literal common two-lane
+attachment, TPC-243 further yields
+
+```text
+|Q_I(s)-Q_I(t)|<=2epsilon||W||||B||.
+```
+
+```text
+TPC244_COMMON_MULTIPLIER_COVARIANCE = PROVED_SUM_ABS_C_H_SQUARED_LOCAL_COVARIANCE
+TPC244_COMMON_UNIT_PHASE_INVARIANCE = PROVED_EXACT_COVARIANCE_AND_BOTH_NORMS
+TPC244_INTERNAL_MOBIUS_CANCELLATION = PRESERVED_NOT_ESTIMATED
+TPC244_NONORTHOGONAL_SIGN_CUT = PROVED_EXACT
+TPC244_ALL_SIGN_INVARIANCE = PROVED_IFF_EVERY_SYMMETRIZED_EDGE_ZERO
+TPC244_HARD_WINDOW_PAIRWISE_VARIATION = PROVED_AT_MOST_TWO_EPSILON_COEFFICIENT_NORM_PRODUCT
+TPC244_V59_SPECIALIZATION = CONDITIONAL_ON_LITERAL_V59_PHASEWISE_PRIMITIVE_TWO_LANE_ATTACHMENT
+TPC244_LITERAL_V59_PHASEWISE_PRIMITIVE_TWO_LANE_ATTACHMENT = OPEN
+TPC244_COEFFICIENT_NORM_PAYMENT = OPEN
+TPC244_SIGNED_C_H_CANCELLATION = NONE
+TPC244_ARITHMETIC_ADVANCE = NO
+TPC244_FIXED_ATOM_CREDIT = 0
+TPC244_L2 = NONE
+TPC244_FULL_GATE_B = OPEN
+TPC244_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC244_STATUS = PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION
+TPC244_ROUND2_CLUE = WITHIN_BLOCK_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISK_BEFORE_ANY_OUTER_SIGN_ARGUMENT
+```
+
+strongest positive result：common outer phase exact invisible、nonorthogonal cut
+polynomial complete、hard-window factor-two leakage；strongest obstruction：outer
+`C_h` sign cannot control same-block main covariance；open theorem：literal V59
+phasewise primitive two-lane attachment with payable norms；reusable structure：
+common multiplier diagonal、Walsh cut coefficients、TPC-243 transfer；
+`ROUND2_CLUE`：`WITHIN_BLOCK_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISK`。
 
 ## 0.37 已发布：TPC-243 hard-window near-isometry and signed bilinear transfer
 

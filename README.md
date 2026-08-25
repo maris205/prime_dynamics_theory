@@ -9,14 +9,15 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-243 已对任意有限 `delta`-separated 圆频率族证明 hard-window
-Gram 的 off-diagonal row bound
-`R_delta=delta^(-1)H_floor(1/(2delta))`，由此得到 normalized synthesis 的双边
-`1+-epsilon` near-isometry 与 signed bilinear transfer。V59 primitive-height 尺度上
-`epsilon=(133/100+o(1))x^(-67/200)log x`；TPC-242 selected mode 因而可从
-coefficient covariance 稳定传到物理窗口。它仍不提供 literal phase-lane attachment、
-coefficient cancellation 或 arithmetic `L2`。下一步审计 common physical
-multiplier `C_h` 在两条 polarized lanes 中究竟保留还是擦除符号。
+当前主线状态：TPC-244 已证明 common clustered multiplier 的精确符号定位定理。
+在 orthogonal primitive-denominator coefficient blocks 中，
+`<W,B>=sum_h |C_h|^2<w_h,b_h>`，所以同时作用于两条 lanes 的 aggregate outer
+`C_h` sign/phase 对主协方差和两条 norm 完全不可见；nonorthogonal reassembly 的全部
+sign dependence 则精确落在 symmetrized cross-block cut edges。接入 TPC-243 后任意
+两种 common sign patterns 的 hard-window covariance 差至多
+`2epsilon||W||||B||`。literal V59 phasewise primitive two-lane attachment、coefficient
+norm payment 与 arithmetic `L2` 仍开放。下一步分析 within-block
+`<w_h,b_h>` 的 longitudinal/transverse feasible disk。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -30,6 +31,8 @@ multiplier `C_h` 在两条 polarized lanes 中究竟保留还是擦除符号。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-244-common-multiplier-sign-localization` - `PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION` - 证明共同 block multiplier 的外层 sign/phase 在正交 coefficient covariance 中精确退化为 `|C_h|^2`，给出 nonorthogonal sign-cut polynomial 与 all-sign iff criterion，并由 TPC-243 得到 `2epsilon||W||||B||` hard-window leakage；literal V59 two-lane attachment 与 arithmetic L2 仍开放。
 
 `tpc-243-hard-window-near-isometry-bilinear-transfer` - `PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER` - 对有限 separated circle frequencies 证明 hard rectangular synthesis 的双边 near-isometry 与 oriented signed bilinear transfer；在 V59 尺度误差为 `(133/100+o(1))x^(-67/200)log x`，但 literal top-prime coefficient attachment、signed `C_h` theorem 与 arithmetic L2 仍开放。
 

@@ -1,59 +1,59 @@
-# TPC big road V96 / TPC-243: hard-window near-isometry and bilinear transfer
+# TPC big road V97 / TPC-244: common-multiplier sign localization
 
 更新时间：2026-08-25
 
-状态：`TPC243_PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER / FULL_GATE_B_OPEN`
+状态：`TPC244_PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-243 proof 为
+当前 TPC-244 proof 为
+`bridge_b_common_multiplier_sign_localization.md`，checker 为
+`tpc_bridge_b_common_multiplier_sign_localization_checker.py`，编号论文为
+`../../papers/tpc-244-common-multiplier-sign-localization/`。
+
+For orthogonal coefficient blocks and the same multiplier on both lanes,
+
+```text
+<W,B>=sum_h |C_h|^2<w_h,b_h>.
+```
+
+Thus the aggregate outer `C_h` sign/phase is exactly invisible in the principal
+covariance and both norms, while internal Möbius cancellation inside `|C_h|` remains
+active.  Under nonorthogonal reassembly the full sign dependence is an exact
+symmetrized-edge cut polynomial.  Combining with TPC-243 gives
+
+```text
+|Q_I(s)-Q_I(t)|<=2epsilon||W||||B||.
+```
+
+```text
+TPC244_COMMON_MULTIPLIER_COVARIANCE = PROVED_SUM_ABS_C_H_SQUARED_LOCAL_COVARIANCE
+TPC244_COMMON_UNIT_PHASE_INVARIANCE = PROVED_EXACT_COVARIANCE_AND_BOTH_NORMS
+TPC244_INTERNAL_MOBIUS_CANCELLATION = PRESERVED_NOT_ESTIMATED
+TPC244_NONORTHOGONAL_SIGN_CUT = PROVED_EXACT
+TPC244_ALL_SIGN_INVARIANCE = PROVED_IFF_EVERY_SYMMETRIZED_EDGE_ZERO
+TPC244_HARD_WINDOW_PAIRWISE_VARIATION = PROVED_AT_MOST_TWO_EPSILON_COEFFICIENT_NORM_PRODUCT
+TPC244_LITERAL_V59_PHASEWISE_PRIMITIVE_TWO_LANE_ATTACHMENT = OPEN
+TPC244_ARITHMETIC_ADVANCE = NO
+TPC244_FIXED_ATOM_CREDIT = 0
+TPC244_L2 = NONE
+TPC244_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC244_ROUND2_CLUE = WITHIN_BLOCK_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISK_BEFORE_ANY_OUTER_SIGN_ARGUMENT
+```
+
+strongest positive result：common outer phase blindness、exact sign-cut localization
+与 TPC-243 factor-two leakage；strongest obstruction：outer `C_h` sign cannot control
+same-block main covariance；open theorem：literal V59 phasewise primitive two-lane
+attachment with payable norms；reusable structure：common multiplier diagonal +
+Walsh cut edges + hard-window transfer。
+
+TPC-243 上游 proof 为
 `bridge_b_hard_window_near_isometry_bilinear_transfer.md`，checker 为
 `tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py`，编号论文为
-`../../papers/tpc-243-hard-window-near-isometry-bilinear-transfer/`。
-
-For a finite `delta`-separated frequency set and hard interval of `N` consecutive
-integers, put
-
-```text
-R_delta=delta^(-1)H_floor(1/(2delta)), epsilon=R_delta/N.
-```
-
-The hard-window Gram has diagonal `N` and every absolute off-diagonal row sum at
-most `R_delta`.  Hence the normalized synthesis map satisfies the direct two-sided
-frame `1+-epsilon`, and
-
-```text
-|N^(-1)<Tz,Tw>-<z,w>| <= epsilon ||z||_2||w||_2.
-```
-
-For primitive frequencies of height `U=x^(133/400)` on `I_x`,
-`epsilon=(133/100+o(1))x^(-67/200)log x`.  This transports the TPC-242 selected mode
-with its complex orientation, but does not supply literal arithmetic coefficient
-attachment or cancellation.
-
-```text
-TPC243_HARD_WINDOW_DIRICHLET_GRAM = PROVED_EXACT
-TPC243_HARMONIC_CIRCLE_PACKING = PROVED_DELTA_INVERSE_H_K
-TPC243_TWO_SIDED_NEAR_ISOMETRY = PROVED_ONE_PLUS_MINUS_EPSILON
-TPC243_SIGNED_BILINEAR_TRANSFER = PROVED_WITH_ERROR_EPSILON_NORM_PRODUCT
-TPC243_PRIMITIVE_HEIGHT_SPECIALIZATION = PROVED_R_U_EQUALS_U_SQUARED_H_FLOOR_U_SQUARED_OVER_TWO
-TPC243_V59_EPSILON = PROVED_133_OVER_100_PLUS_O_ONE_TIMES_X_MINUS_67_OVER_200_LOG_X
-TPC243_TPC242_SELECTED_MODE_TRANSFER = PROVED_CONDITIONAL_ON_COEFFICIENT_LANE_ATTACHMENT
-TPC243_LITERAL_TOP_PRIME_ATTACHMENT = OPEN
-TPC243_LITERAL_C_H_SIGNED_CANCELLATION = NONE
-TPC243_ARITHMETIC_ADVANCE = NO
-TPC243_FIXED_ATOM_CREDIT = 0
-TPC243_L2 = NONE
-TPC243_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC243_ROUND2_CLUE = COMMON_MULTIPLIER_SIGN_AUDIT_FOR_LITERAL_C_H_IN_THE_TWO_POLARIZED_LANES
-```
-
-strongest positive result：hard rectangular coefficient synthesis is a two-sided
-`1+o(1)` near-isometry and transports signed inner products；strongest obstruction：
-geometry only preserves coefficient covariance and cannot create arithmetic cancellation；
-open theorem：literal two-lane coefficient attachment and covariance bound；reusable
-structure：Dirichlet Gram + harmonic circle packing + oriented bilinear transport。
+`../../papers/tpc-243-hard-window-near-isometry-bilinear-transfer/`。It supplies the
+oriented hard-window bilinear interface and `x^(-67/200+o(1))` V59 leakage used by
+TPC-244.
 
 TPC-242 上游 proof 为
 `bridge_b_phase_fourier_collision_separation.md`，checker 为

@@ -1,0 +1,40 @@
+\section{Common-multiplier phase blindness}
+
+\begin{theorem}[orthogonal common-multiplier identity]
+For $b_h,w_h\in\cH_h$ and $C_h\in\C$, put
+\[
+B=\bigoplus_{h\in\cA}C_hb_h,
+\qquad
+W=\bigoplus_{h\in\cA}C_hw_h.
+\]
+Then
+\begin{align}
+\ip{W}{B}&=\sum_{h\in\cA}|C_h|^2\ip{w_h}{b_h},\label{eq:cov}\\
+\norm{B}^2&=\sum_{h\in\cA}|C_h|^2\norm{b_h}^2,\qquad
+\norm{W}^2=\sum_{h\in\cA}|C_h|^2\norm{w_h}^2.\label{eq:norms}
+\end{align}
+Consequently, replacing $C_h$ by $\eta_hC_h$ simultaneously in both lanes,
+with $|\eta_h|=1$, changes none of these quantities.
+\end{theorem}
+
+\begin{proof}
+Distinct direct-sum blocks are orthogonal.  On one block,
+\[
+\ip{C_hw_h}{C_hb_h}
+=\overline{C_h}C_h\ip{w_h}{b_h}
+=|C_h|^2\ip{w_h}{b_h}.
+\]
+Summing proves \eqref{eq:cov}; taking equal lane vectors proves
+\eqref{eq:norms}.  A common unit phase has unit modulus and therefore leaves
+every factor $|C_h|^2$ unchanged.
+\end{proof}
+
+The empty family and one-block family are included.  Zero multipliers simply
+remove blocks.  The conclusion fails in general if the lanes carry different
+multipliers: if $A_h$ multiplies $w_h$ and $D_h$ multiplies $b_h$, the local
+factor is $\overline{A_h}D_h$ and its phase is visible.
+
+For the literal real $C_h$, a simultaneous external sign flip is therefore
+invisible.  By contrast, changing a Möbius sign inside the defining sum can
+change $|C_h|$, so the theorem does not erase or estimate internal arithmetic
+cancellation.

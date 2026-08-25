@@ -2,16 +2,16 @@
 
 更新时间：2026-08-25
 
-当前地图版本：V96 / TPC-243
+当前地图版本：V97 / TPC-244
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-243`（`PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER`）；
-对应论文目录为 `papers/tpc-243-hard-window-near-isometry-bilinear-transfer/`。TPC-243
-对 separated primitive frequencies 证明 hard-window synthesis 的双边 near-isometry
-和 oriented signed bilinear transfer；V59 error 为
-`(133/100+o(1))x^(-67/200)log x`。literal phase-lane attachment、signed `C_h`、
-arithmetic `L2` 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-244`（`PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION`）；
+对应论文目录为 `papers/tpc-244-common-multiplier-sign-localization/`。TPC-244
+证明 common outer `C_h` phase 在 orthogonal two-lane coefficient covariance 中
+精确退化为 `|C_h|^2`，并把 nonorthogonal sign dependence 完全定位为 cut edges；
+TPC-243 transfer 给 pairwise `2epsilon||W||||B||` leakage。literal V59 two-lane
+attachment、coefficient norm payment、arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -53,9 +53,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V96 / TPC-243                     |
-        | HARD-WINDOW SIGNED BILINEAR TRANSFER              |
-        | coefficient transport proved; attachment OPEN    |
+        | YOU ARE HERE — V97 / TPC-244                     |
+        | COMMON-MULTIPLIER SIGN LOCALIZATION              |
+        | outer sign blocked; within-block target OPEN     |
         +--------------------------------------------------+
                 |
                 v
@@ -98,12 +98,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V96 / TPC-243 的
-hard-window signed bilinear transfer。separated primitive-frequency coefficient covariance
-已经以 `x^(-67/200+o(1))` error 稳定送入 physical window；下一施工点是 source-lock
-literal polarized coefficient lanes，并审计共同 `C_h` multiplier 在 same-`h` covariance
-中是否只留下 `|C_h|^2`。FULL_GATE_B、global strict `1/400`、`L2` 和 fixed-atom credit
-继续 OPEN/UNPAID/NO。**
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V97 / TPC-244 的
+common-multiplier sign localization。same-`h` principal covariance 已严格证明只读取
+`|C_h|^2<w_h,b_h>`，outer `C_h` sign 路线在主项上封口；cross-`h` sign dependence
+只存在于 explicit cut edges，hard window variation 至多
+`2x^(-67/200+o(1))||W||||B||`。下一施工点是 within-block
+longitudinal/transverse covariance disk。FULL_GATE_B、global strict `1/400`、`L2` 和
+fixed-atom credit 继续 OPEN/UNPAID/NO。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -594,7 +595,7 @@ V49 将 V45 dyadic block bound推到更低 cut
 Landau--Page只把 exceptional primitive type限制为空或一个 quadratic character；
 全部 induced cofactors仍在同一 lane。V49 当时的首选门是直接控制三个 lane的 signed
 sum，separate marginal bounds只是更强 heuristic fallback。此处是 V49 的历史
-`YOU ARE HERE`，不是页首 V96 当前锚点。
+`YOU ARE HERE`，不是页首 V97 当前锚点。
 
 V50 不再固定只用 `D1`。对任意预先选择的
 `0<delta<1/9600`，令 `D_delta=x^(1/200+2delta)`，则 coefficient energy为
@@ -1234,6 +1235,53 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.38 V97 / TPC-244：common-multiplier sign localization
+
+For orthogonal coefficient blocks and the same multiplier on both polarized lanes,
+
+```text
+B=direct_sum_h C_h b_h,
+W=direct_sum_h C_h w_h,
+<W,B>=sum_h |C_h|^2<w_h,b_h>.
+```
+
+Thus every simultaneous outer unit phase is invisible in covariance and both norms.
+The Möbius signs inside the sum defining `C_h` still change `|C_h|` and are not
+erased.  For arbitrary nonorthogonal embeddings and real signs,
+
+```text
+Q(s)=D+sum_(h<k)s_hs_kS_hk,
+Q(s)-Q(1)=-2sum_(h<k,s_h!=s_k)S_hk.
+```
+
+Walsh orthogonality proves all-sign invariance iff every symmetrized edge vanishes.
+Conditional on one literal common two-lane attachment, TPC-243 gives
+
+```text
+|Q_I(s)-Q_I(t)|<=2epsilon||W||||B||,
+epsilon=x^(-67/200+o(1)).
+```
+
+```text
+TPC244_COMMON_MULTIPLIER_COVARIANCE = PROVED_SUM_ABS_C_H_SQUARED_LOCAL_COVARIANCE
+TPC244_COMMON_UNIT_PHASE_INVARIANCE = PROVED_EXACT_COVARIANCE_AND_BOTH_NORMS
+TPC244_INTERNAL_MOBIUS_CANCELLATION = PRESERVED_NOT_ESTIMATED
+TPC244_NONORTHOGONAL_SIGN_CUT = PROVED_EXACT
+TPC244_ALL_SIGN_INVARIANCE = PROVED_IFF_EVERY_SYMMETRIZED_EDGE_ZERO
+TPC244_HARD_WINDOW_PAIRWISE_VARIATION = PROVED_AT_MOST_TWO_EPSILON_COEFFICIENT_NORM_PRODUCT
+TPC244_LITERAL_V59_PHASEWISE_PRIMITIVE_TWO_LANE_ATTACHMENT = OPEN
+TPC244_COEFFICIENT_NORM_PAYMENT = OPEN
+TPC244_ARITHMETIC_ADVANCE = NO
+TPC244_L2 = NONE
+TPC244_FULL_GATE_B = OPEN
+TPC244_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+```
+
+地图位置：**V97 / TPC-244 已严格封住 aggregate outer `C_h` sign 作为 same-block
+main-covariance cancellation mechanism 的捷径。下一块桥面是对 local
+`<w_h,b_h>` 做 longitudinal/transverse center-radius 分解，并继续把 literal
+V59 attachment 标为独立 OPEN gate。**
 
 ## 5.37 V96 / TPC-243：hard-window near-isometry and signed bilinear transfer
 
@@ -2379,7 +2427,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V96 / TPC-243：
+截至 V97 / TPC-244：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -2769,7 +2817,21 @@ TPC243_FIXED_ATOM_CREDIT = 0
 TPC243_L2 = NONE
 TPC243_FULL_GATE_B = OPEN
 TPC243_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-NUMBERED_RELEASE = TPC-243
+TPC244_COMMON_MULTIPLIER_COVARIANCE = PROVED_SUM_ABS_C_H_SQUARED_LOCAL_COVARIANCE
+TPC244_COMMON_UNIT_PHASE_INVARIANCE = PROVED_EXACT_COVARIANCE_AND_BOTH_NORMS
+TPC244_INTERNAL_MOBIUS_CANCELLATION = PRESERVED_NOT_ESTIMATED
+TPC244_NONORTHOGONAL_SIGN_CUT = PROVED_EXACT
+TPC244_ALL_SIGN_INVARIANCE = PROVED_IFF_EVERY_SYMMETRIZED_EDGE_ZERO
+TPC244_HARD_WINDOW_PAIRWISE_VARIATION = PROVED_AT_MOST_TWO_EPSILON_COEFFICIENT_NORM_PRODUCT
+TPC244_LITERAL_V59_PHASEWISE_PRIMITIVE_TWO_LANE_ATTACHMENT = OPEN
+TPC244_COEFFICIENT_NORM_PAYMENT = OPEN
+TPC244_SIGNED_C_H_CANCELLATION = NONE
+TPC244_ARITHMETIC_ADVANCE = NO
+TPC244_FIXED_ATOM_CREDIT = 0
+TPC244_L2 = NONE
+TPC244_FULL_GATE_B = OPEN
+TPC244_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+NUMBERED_RELEASE = TPC-244
 ```
 
 以下事实不得从路线图中推断：
@@ -2787,11 +2849,16 @@ NUMBERED_RELEASE = TPC-243
 
 优先级更新为：
 
-1. **TPC-243 已完成：hard-window near-isometry and signed bilinear transfer**。
+1. **TPC-244 已完成：common-multiplier sign localization**。common outer
+   `C_h` phase 在 orthogonal coefficient covariance 中 exact invisible；
+   nonorthogonal dependence 是 exact cut polynomial；TPC-243 给 factor-two
+   hard-window leakage。下一步分析 within-block longitudinal/transverse covariance disk，
+   literal V59 two-lane attachment继续独立 OPEN。
+2. **TPC-243 已完成：hard-window near-isometry and signed bilinear transfer**。
    hard rectangular coefficient map 已有双边 `1+-epsilon` frame 与 oriented bilinear
-   transport，V59 error 为 `x^(-67/200+o(1))`。下一步 source-lock literal phasewise
-   coefficient lanes，并审计 common `C_h` multiplier；window geometry本身不产生算术抵消。
-2. **TPC-242 已完成：phase-Fourier collision separation**。完整 `C_4` spectrum、
+   transport，V59 error 为 `x^(-67/200+o(1))`；TPC-244 已完成 common multiplier
+   sign audit，literal coefficient attachment仍开放。
+3. **TPC-242 已完成：phase-Fourier collision separation**。完整 `C_4` spectrum、
    fixed-total-energy sharp disk 与 imbalance/Gram defect 均 exact；TPC-243 已将 selected
    coefficient接到 hard-window interface，但 physical lane attachment仍开放。
 2. **TPC-241 已完成：top-prime collision sharpness**。对每个 fixed frozen profile，
@@ -2893,10 +2960,10 @@ NUMBERED_RELEASE = TPC-243
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-243 的下一步：literal common-multiplier sign audit**。逐 `h`、逐 phase
-    source-lock two-lane primitive coefficients，判定共同 real `C_h` 在 selected covariance
-    中是否只留下 `|C_h|^2`；若是，则把真正 signed 目标下沉到 within-`h` lane covariance，
-    并用 TPC-243 控制 physical-window leakage。
+12. **TPC-244 的下一步：within-block longitudinal/transverse covariance disk**。
+    固定 canonical block direction，使用两条 longitudinal moments 与 transverse energies
+    给 `<w_h,b_h>` 的 exact center、sharp radius、zero-feasibility 与 nonvanishing
+    criterion；不得把 outer `C_h` sign重新当作 main-term mechanism。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2995,6 +3062,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-25 | V97 / TPC-244 | Bridge A / Gate B：common outer multiplier sign localized；within-block covariance and literal attachment open | `TPC-244` | orthogonal main covariance exact `|C_h|^2<w_h,b_h>`；nonorthogonal sign-cut iff；TPC-243 pairwise leakage `2epsilon||W||||B||` |
 | 2026-08-25 | V96 / TPC-243 | Bridge A / Gate B：hard-window signed coefficient transport proved；literal lane attachment and arithmetic covariance open | `TPC-243` | harmonic circle packing给 direct rectangular `1+-epsilon` frame 与 bilinear transfer；V59 `epsilon=(133/100+o(1))x^(-67/200)log x` |
 | 2026-08-25 | V95 / TPC-242 | Bridge A / Gate B：unsigned/signed phase characters exact separated；physical phase attachment open | `TPC-242` | complete `C_4` spectrum、sharp fixed-`F_0` disk、imbalance/Gram defect 与 TPC-241 typed no-transfer；physical annihilation not claimed |
 | 2026-08-24 | V94 / TPC-241 | Bridge A / Gate B：unsigned top-prime q-collapsed exponent sharp；signed four-packet projection open | `TPC-241` | fixed frozen profile 下 first moment、primitive-residue Cauchy、weighted PNT 与 full-vector lower frame 给 coefficient/finite-window `x^(1/48)/log x` explicit liminf；unsigned fixed-power improvement refuted scoped |

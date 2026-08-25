@@ -1,0 +1,31 @@
+\section{Source lock and conventions}
+
+All Hilbert-space inner products are conjugate-linear in the first slot.  The
+literal clustered coefficient inherited from the V59 source chain is
+\[
+C_h=\sum_{\substack{d\in\mathcal D_x\\h\mid d}}
+       \frac{\mu(d)\log d}{d},
+\qquad
+H=x^{21/32},\quad Q=x^{1/3},\quad U=x^{133/400}.
+\]
+It is real.  Reduced rational-frequency clustering produces one coefficient
+per primitive denominator block, and primitive representatives give canonical
+exactly-once coefficient coordinates.  The frozen packet kernels retain the
+same outer $C_h$ for every phase label.
+
+Those facts do not by themselves produce two source-native lanes.  In
+particular, the current source compiler leaves open a literal map from the V59
+$\beta,w$ sequences to primitive vectors $b_h,w_h$ in a common synthesis
+space.  We therefore separate the unconditional finite-dimensional theorems
+from their conditional V59 interpretation.
+
+For a finite index set $\cA$, write
+\[
+\cH=\bigoplus_{h\in\cA}\cH_h.
+\]
+The direct sum is orthogonal.  Later, $J_h:\cH_h\to\cK$ denotes an arbitrary
+linear embedding into one ambient Hilbert space; it is not assumed isometric.
+
+An ``outer phase change'' means $C_h\mapsto\eta_hC_h$ with
+$|\eta_h|=1$ after $C_h$ has been formed.  It is not a change of any individual
+Möbius summand inside $C_h$.

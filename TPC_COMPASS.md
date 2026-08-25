@@ -1,34 +1,43 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-25
-状态：`BOLD_CHANNEL_V96 / HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER`
-claim level：`PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER`
-编号事实终点：TPC-243；TPC-243 trigger：`true`
+状态：`BOLD_CHANNEL_V97 / COMMON_MULTIPLIER_SIGN_LOCALIZATION`
+claim level：`PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION`
+编号事实终点：TPC-244；TPC-244 trigger：`true`
 
-当前 TPC-243 入口：proof 为
-`research/tpc-big-road/bridge_b_hard_window_near_isometry_bilinear_transfer.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py`，编号论文为
-`papers/tpc-243-hard-window-near-isometry-bilinear-transfer/`。对任意有限
-`delta`-separated circle frequencies，hard-window Gram 的 absolute off-diagonal row
-mass 至多 `R_delta=delta^(-1)H_floor(1/(2delta))`。因此 normalized synthesis 同时满足
-双边 near-isometry 与 oriented signed bilinear transfer；V59 primitive-height 尺度的
-relative error 为 `(133/100+o(1))x^(-67/200)log x`。
+当前 TPC-244 入口：proof 为
+`research/tpc-big-road/bridge_b_common_multiplier_sign_localization.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_common_multiplier_sign_localization_checker.py`，编号论文为
+`papers/tpc-244-common-multiplier-sign-localization/`。在 orthogonal block direct sum 中，
+same `C_h` on both lanes gives
+`<W,B>=sum_h|C_h|^2<w_h,b_h>`；aggregate outer sign/phase exact invisible。
+Nonorthogonal sign dependence 是 exact cut polynomial，all-sign invariance iff every
+symmetrized edge vanishes。TPC-243 transfer 进一步给
+`|Q_I(s)-Q_I(t)|<=2epsilon||W||||B||`。
 
 ```text
-TPC243_HARD_WINDOW_DIRICHLET_GRAM = PROVED_EXACT
-TPC243_HARMONIC_CIRCLE_PACKING = PROVED_DELTA_INVERSE_H_K
-TPC243_TWO_SIDED_NEAR_ISOMETRY = PROVED_ONE_PLUS_MINUS_EPSILON
-TPC243_SIGNED_BILINEAR_TRANSFER = PROVED_WITH_ERROR_EPSILON_NORM_PRODUCT
-TPC243_V59_EPSILON = PROVED_133_OVER_100_PLUS_O_ONE_TIMES_X_MINUS_67_OVER_200_LOG_X
-TPC243_TPC242_SELECTED_MODE_TRANSFER = PROVED_CONDITIONAL_ON_COEFFICIENT_LANE_ATTACHMENT
-TPC243_LITERAL_TOP_PRIME_ATTACHMENT = OPEN
-TPC243_LITERAL_C_H_SIGNED_CANCELLATION = NONE
-TPC243_ARITHMETIC_ADVANCE = NO
-TPC243_L2 = NONE
-TPC243_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC243_STATUS = PROVED_STRUCTURAL_L1_HARD_WINDOW_NEAR_ISOMETRY_BILINEAR_TRANSFER
-TPC243_ROUND2_CLUE = COMMON_MULTIPLIER_SIGN_AUDIT_FOR_LITERAL_C_H_IN_THE_TWO_POLARIZED_LANES
+TPC244_COMMON_MULTIPLIER_COVARIANCE = PROVED_SUM_ABS_C_H_SQUARED_LOCAL_COVARIANCE
+TPC244_COMMON_UNIT_PHASE_INVARIANCE = PROVED_EXACT_COVARIANCE_AND_BOTH_NORMS
+TPC244_INTERNAL_MOBIUS_CANCELLATION = PRESERVED_NOT_ESTIMATED
+TPC244_NONORTHOGONAL_SIGN_CUT = PROVED_EXACT
+TPC244_ALL_SIGN_INVARIANCE = PROVED_IFF_EVERY_SYMMETRIZED_EDGE_ZERO
+TPC244_HARD_WINDOW_PAIRWISE_VARIATION = PROVED_AT_MOST_TWO_EPSILON_COEFFICIENT_NORM_PRODUCT
+TPC244_V59_SPECIALIZATION = CONDITIONAL_ON_LITERAL_V59_PHASEWISE_PRIMITIVE_TWO_LANE_ATTACHMENT
+TPC244_LITERAL_V59_PHASEWISE_PRIMITIVE_TWO_LANE_ATTACHMENT = OPEN
+TPC244_COEFFICIENT_NORM_PAYMENT = OPEN
+TPC244_SIGNED_C_H_CANCELLATION = NONE
+TPC244_ARITHMETIC_ADVANCE = NO
+TPC244_L2 = NONE
+TPC244_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC244_STATUS = PROVED_STRUCTURAL_L1_COMMON_MULTIPLIER_SIGN_LOCALIZATION
+TPC244_ROUND2_CLUE = WITHIN_BLOCK_LONGITUDINAL_TRANSVERSE_COVARIANCE_DISK_BEFORE_ANY_OUTER_SIGN_ARGUMENT
 ```
+
+TPC-243 上游入口：proof 为
+`research/tpc-big-road/bridge_b_hard_window_near_isometry_bilinear_transfer.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_hard_window_near_isometry_bilinear_transfer_checker.py`，编号论文为
+`papers/tpc-243-hard-window-near-isometry-bilinear-transfer/`。它提供 TPC-244 使用的
+hard-window oriented bilinear transfer 与 V59 `x^(-67/200+o(1))` leakage scale。
 
 TPC-242 上游入口：proof 为
 `research/tpc-big-road/bridge_b_phase_fourier_collision_separation.md`，checker 为
