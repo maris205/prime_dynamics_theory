@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\input{math_commands}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+
+\hypersetup{
+  pdftitle={Phase-Fourier Separation of Unsigned Collision Energy from the Signed Four-Packet Channel},
+  pdfauthor={Liang Wang},
+  pdfsubject={Exact C4 phase spectrum and source-typed no-transfer theorem},
+  pdfkeywords={polarization, Hilbert space, discrete Fourier transform, collision energy, phase defect}
+}
+
+\title{Phase-Fourier Separation of Unsigned Collision Energy\\
+from the Signed Four-Packet Channel}
+\author{Liang Wang\\
+Huazhong University of Science and Technology\\
+Wuhan 430074, P.R. China\\
+\texttt{liang.wang@hust.edu.cn}}
+\date{August 25, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+\input{sections/1_introduction}
+\input{sections/2_v59_source_lock}
+\input{sections/3_phase_fourier_theorem}
+\input{sections/4_feasible_disk}
+\input{sections/5_tpc241_no_transfer}
+\input{sections/6_certificate}
+\input{sections/7_route_boundary}
+\input{sections/8_conclusion}
+
+\bibliographystyle{alpha}
+\bibliography{references}
+
+\appendix
+\input{sections/A_status_ledger}
+
+\end{document}

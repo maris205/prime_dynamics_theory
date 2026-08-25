@@ -1,34 +1,40 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-24
-状态：`BOLD_CHANNEL_V94 / TOP_PRIME_COLLISION_FIXED_POWER_SHARPNESS`
-claim level：`PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS`
-编号事实终点：TPC-241；TPC-241 trigger：`true`
+更新时间：2026-08-25
+状态：`BOLD_CHANNEL_V95 / PHASE_FOURIER_COLLISION_SEPARATION`
+claim level：`PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER`
+编号事实终点：TPC-242；TPC-242 trigger：`true`
 
-当前 TPC-241 入口：proof 为
-`research/tpc-big-road/bridge_b_top_prime_collision_sharpness.md`，checker 为
-`research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_checker.py`，编号论文为
-`papers/tpc-241-top-prime-collision-sharpness/`。对每个固定 literal frozen common
-profile，top-prime q-collapsed coefficient energy 与 normalized finite-window kernel
-分别满足 liminf 常数 `10773log(2)/1600` 与 `10773log(2)/3200`，共同达到
-`x^(1/48)/log x`；unsigned fixed-power `1/48` 因而 sharp up to logarithms。
+当前 TPC-242 入口：proof 为
+`research/tpc-big-road/bridge_b_phase_fourier_collision_separation.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_phase_fourier_collision_separation_checker.py`，编号论文为
+`papers/tpc-242-phase-fourier-collision-separation/`。literal `i^j` phase transform 的
+完整谱为 `F_0=S`、`F_1=<Y,X>`、`F_2=0`、`F_3=<X,Y>`；固定 `S` 的 selected
+coefficient 恰填满 `|F_1|<=S/2`，缺陷由 norm imbalance 与 Gram determinant
+精确组成。TPC-241 unsigned floor 因无 physical phase attachment 而没有直接 signed
+`F_1` credit，但物理 top-prime annihilation 仍未证明。
 
 ```text
-TPC241_TOP_PRIME_ROW_MASS = PROVED_UNIFORM_THREE_OVER_TWO
-TPC241_PRIMITIVE_RESIDUE_CAUCHY = PROVED_EXACT
-TPC241_COEFFICIENT_LIMINF = PROVED_10773_LOG_2_OVER_1600
-TPC241_FINITE_WINDOW_LIMINF = PROVED_10773_LOG_2_OVER_3200
-TPC241_NORMALIZED_FIXED_POWER = PROVED_1_OVER_48_SHARP_UP_TO_LOGARITHMS
-TPC241_UNSIGNED_FIXED_POWER_IMPROVEMENT = REFUTED_ON_EXACT_FIXED_PROFILE_COMMON_SOURCE_KERNEL
-TPC241_FULL_VECTOR_FRAME_BEFORE_TOP_PRIME_RESTRICTION = REQUIRED_EXACT
-TPC241_C_H_SIGNED_CANCELLATION = NONE
-TPC241_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
-TPC241_ARITHMETIC_ADVANCE = NO
-TPC241_L2 = NONE
-TPC241_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC241_STATUS = PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS
-TPC241_ROUND2_CLUE = FORCE_THE_NEXT_ARGUMENT_TO_RETAIN_FOUR_PACKET_POLARIZATION_OR_C_H_SIGNS_BEFORE_SQUARING_BECAUSE_THE_UNSIGNED_TOP_PRIME_COLLISION_CHANNEL_IS_FIXED_POWER_SHARP
+TPC242_COMPLETE_PHASE_SPECTRUM = PROVED_F0_TOTAL_F1_ORIENTED_CROSS_F2_ZERO_F3_CONJUGATE_CROSS
+TPC242_PHASE_BLIND_ADDITIVE_TERM = PROVED_TRIVIAL_CHARACTER_ONLY
+TPC242_FIXED_F0_FEASIBLE_SET = PROVED_CLOSED_DISK_RADIUS_F0_OVER_TWO
+TPC242_PHASE_DEFECT_IDENTITY = PROVED_IMBALANCE_SQUARED_PLUS_FOUR_GRAM_DETERMINANT
+TPC242_TPC241_DIRECT_SIGNED_CREDIT = ZERO
+TPC242_TPC241_TO_V59_IDENTIFICATION = OPEN
+TPC242_PHYSICAL_TOP_PRIME_ANNIHILATION = NOT_CLAIMED
+TPC242_LITERAL_C_H_SIGNED_CANCELLATION = NONE
+TPC242_ARITHMETIC_ADVANCE = NO
+TPC242_L2 = NONE
+TPC242_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC242_STATUS = PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER
+TPC242_ROUND2_CLUE = EXPRESS_THE_LITERAL_TOP_PRIME_CONTRIBUTION_PHASE_BY_PHASE_BEFORE_SQUARING_AND_COMPUTE_ITS_ACTUAL_K_EQUALS_ONE_COEFFICIENT
 ```
+
+TPC-241 上游入口：proof 为
+`research/tpc-big-road/bridge_b_top_prime_collision_sharpness.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_checker.py`，编号论文为
+`papers/tpc-241-top-prime-collision-sharpness/`。它证明 unsigned fixed-profile channel
+达到 `x^(1/48)/log x`，TPC-242 则严格隔离该 trivial-character 信息与 signed mode。
 
 TPC-240 上游入口：proof 为
 `research/tpc-big-road/bridge_b_top_prime_direct_energy_floor.md`，checker 为

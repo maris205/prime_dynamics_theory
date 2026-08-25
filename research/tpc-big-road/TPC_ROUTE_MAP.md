@@ -1,17 +1,17 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-24
+更新时间：2026-08-25
 
-当前地图版本：V94 / TPC-241
+当前地图版本：V95 / TPC-242
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-241`（`PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS`）；
-对应论文目录为 `papers/tpc-241-top-prime-collision-sharpness/`。TPC-241 对每个固定
-literal frozen common profile 证明 top-prime q-collapsed coefficient energy 与
-normalized finite-window kernel 的 explicit `x^(1/48)/log x` liminf。故 unsigned
-fixed-power `1/48` sharp up to logarithms；signed `C_h`、four-packet polarization、
-arithmetic `L2` 与 full Gate B 仍 OPEN。
+当前编号锚点：`TPC-242`（`PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER`）；
+对应论文目录为 `papers/tpc-242-phase-fourier-collision-separation/`。TPC-242 证明
+literal `C_4` phase-energy complete spectrum、固定总能量的 sharp selected-mode disk
+与 imbalance/Gram exact defect，并证明 TPC-241 unsigned floor 因缺少 physical
+phase attachment 而对 signed `F_1` 无直接定量转移。physical top-prime annihilation、
+signed `C_h`、arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -53,9 +53,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V94 / TPC-241                     |
-        | TOP-PRIME COLLISION SHARPNESS                    |
-        | unsigned 1/48 sharp; signed projection OPEN     |
+        | YOU ARE HERE — V95 / TPC-242                     |
+        | PHASE-FOURIER COLLISION SEPARATION               |
+        | unsigned/signed characters split; attachment OPEN|
         +--------------------------------------------------+
                 |
                 v
@@ -1233,6 +1233,59 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
 
+## 5.36 V95 / TPC-242：phase-Fourier collision separation
+
+For a complex Hilbert space with conjugate-linear first slot, set
+
+```text
+E_j=||X+i^jY||^2,
+F_k=(1/4)sum_(j=0)^3 i^(kj)E_j.
+```
+
+The literal V59 sign convention has the complete spectrum
+
+```text
+F_0=||X||^2+||Y||^2,
+F_1=<Y,X>,
+F_2=0,
+F_3=<X,Y>.
+```
+
+A scalar proved identical in all four phase energies lies only in the trivial
+character.  At fixed `S=F_0`, however, the selected coefficient fills exactly the
+closed disk `|F_1|<=S/2`, including `S=0`, and
+
+```text
+S^2-4|F_1|^2
+ = (||X||^2-||Y||^2)^2
+   +4(||X||^2||Y||^2-|<Y,X>|^2).
+```
+
+Thus even exact unsigned total energy cannot determine nonvanishing, phase, sign, or
+a strict saving in the selected mode.  TPC-241's standalone unsigned common-profile
+kernel is not source-identified with either V59 marginal or a phase-independent
+additive term; it earns zero direct signed credit.  This is not a physical
+annihilation theorem.
+
+```text
+TPC242_COMPLETE_PHASE_SPECTRUM = PROVED_F0_TOTAL_F1_ORIENTED_CROSS_F2_ZERO_F3_CONJUGATE_CROSS
+TPC242_PHASE_BLIND_ADDITIVE_TERM = PROVED_TRIVIAL_CHARACTER_ONLY
+TPC242_FIXED_F0_FEASIBLE_SET = PROVED_CLOSED_DISK_RADIUS_F0_OVER_TWO
+TPC242_PHASE_DEFECT_IDENTITY = PROVED_IMBALANCE_SQUARED_PLUS_FOUR_GRAM_DETERMINANT
+TPC242_TPC241_DIRECT_SIGNED_CREDIT = ZERO
+TPC242_TPC241_TO_V59_IDENTIFICATION = OPEN
+TPC242_PHYSICAL_TOP_PRIME_ANNIHILATION = NOT_CLAIMED
+TPC242_LITERAL_C_H_SIGNED_CANCELLATION = NONE
+TPC242_ARITHMETIC_ADVANCE = NO
+TPC242_L2 = NONE
+TPC242_FULL_GATE_B = OPEN
+TPC242_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+```
+
+地图位置：**V95 / TPC-242 已把 unsigned trivial character 与 signed selected
+character 严格分离。下一块桥面先建立 hard-window coefficient near-isometry 与
+bilinear transfer，再把 literal phase-labelled physical coefficients接入该接口。**
+
 ## 5.35 V94 / TPC-241：top-prime collision sharpness
 
 Fix a literal frozen nonnegative normalized common profile `psi`, independently of
@@ -2274,7 +2327,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V94 / TPC-241：
+截至 V95 / TPC-242：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -2640,7 +2693,19 @@ TPC241_FIXED_ATOM_CREDIT = 0
 TPC241_L2 = NONE
 TPC241_FULL_GATE_B = OPEN
 TPC241_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-NUMBERED_RELEASE = TPC-241
+TPC242_COMPLETE_PHASE_SPECTRUM = PROVED_EXACT
+TPC242_FIXED_F0_FEASIBLE_SET = PROVED_CLOSED_DISK_RADIUS_F0_OVER_TWO
+TPC242_PHASE_DEFECT_IDENTITY = PROVED_EXACT
+TPC242_TPC241_DIRECT_SIGNED_CREDIT = ZERO
+TPC242_TPC241_TO_V59_IDENTIFICATION = OPEN
+TPC242_PHYSICAL_TOP_PRIME_ANNIHILATION = NOT_CLAIMED
+TPC242_C_H_SIGNED_CANCELLATION = NONE
+TPC242_ARITHMETIC_ADVANCE = NO
+TPC242_FIXED_ATOM_CREDIT = 0
+TPC242_L2 = NONE
+TPC242_FULL_GATE_B = OPEN
+TPC242_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+NUMBERED_RELEASE = TPC-242
 ```
 
 以下事实不得从路线图中推断：
@@ -2658,11 +2723,15 @@ NUMBERED_RELEASE = TPC-241
 
 优先级更新为：
 
-1. **TPC-241 已完成：top-prime collision sharpness**。对每个 fixed frozen profile，
+1. **TPC-242 已完成：phase-Fourier collision separation**。完整 `C_4` spectrum、
+   fixed-total-energy sharp disk 与 imbalance/Gram defect 均 exact；TPC-241 unsigned
+   floor 对 literal signed `F_1` 无直接 credit。下一步先证明 hard-window coefficient
+   map 的 two-sided near-isometry 与 bilinear transfer，再接入 phase-labelled physical
+   top-prime coefficients；不得把 no-transfer 误写成 physical annihilation。
+2. **TPC-241 已完成：top-prime collision sharpness**。对每个 fixed frozen profile，
    q-collapsed coefficient energy 与 normalized finite-window kernel 均有 explicit
-   `x^(1/48)/log x` liminf；unsigned fixed-power `1/48` sharp up to logarithms。下一步
-   必须把这一 collision mode 投影到 actual four-packet polarization，或在平方前保留
-   literal `C_h` signs。
+   `x^(1/48)/log x` liminf；unsigned fixed-power `1/48` sharp up to logarithms。TPC-242
+   已证明这份 trivial-character信息不能自动转移到 signed selected mode。
 2. **TPC-240 已完成：top-prime direct-energy floor**。q-split unsigned energy 精确为
    `[1197 kappa_psi log(2)/800+o_psi(1)]Q^2/H`；其 q-collapsed amplification 与
    finite-window sharpness已由 TPC-241 完成。
@@ -2758,10 +2827,10 @@ NUMBERED_RELEASE = TPC-241
 11. **TPC-215 已完成：short-quotient Möbius tails**。activation floor、`23/2400` quotient
    clock、harmonic diagonal anchor、row-norm decomposition 与 `O((log x)^2)` complete-
    period cluster-to-direct majorant 已封存；top-shell ratio-one 是精确 obstruction。
-12. **TPC-241 的下一步：signed projection of the sharp collision mode**。将已证明尖锐的
-    top-prime q-collapsed mode 放回 actual four-packet polarization 或 literal signed
-    `C_h` weighted scalar，并在任何 absolute square 之前测试 annihilation/cancellation；
-    不再继续寻找 coefficient-blind unsigned fixed-power upper improvement。
+12. **TPC-242 的下一步：hard-window bilinear transfer then physical attachment**。
+    先把 separated primitive-frequency coefficient inner product无损地送入 actual
+    hard window，再将 top-prime contribution逐 packet、逐 phase 写出；之后才测试
+    literal `C_h` weighted cancellation，不再从 coefficient-blind energy 猜 signed mode。
 13. **TPC-221 的下一步：signed/phase-sensitive collision dispersion**。在 exact Schur
    envelope 与 saturation obstruction 之后，寻找能使用 literal signs/phases 的
    growing-scale theorem；不能把 absolute row sums当作 arithmetic credit。
@@ -2860,6 +2929,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-25 | V95 / TPC-242 | Bridge A / Gate B：unsigned/signed phase characters exact separated；physical phase attachment open | `TPC-242` | complete `C_4` spectrum、sharp fixed-`F_0` disk、imbalance/Gram defect 与 TPC-241 typed no-transfer；physical annihilation not claimed |
 | 2026-08-24 | V94 / TPC-241 | Bridge A / Gate B：unsigned top-prime q-collapsed exponent sharp；signed four-packet projection open | `TPC-241` | fixed frozen profile 下 first moment、primitive-residue Cauchy、weighted PNT 与 full-vector lower frame 给 coefficient/finite-window `x^(1/48)/log x` explicit liminf；unsigned fixed-power improvement refuted scoped |
 | 2026-08-24 | V93 / TPC-240 | Bridge A / Gate B：top-prime q-split direct floor exact；q-collapsed collision/signed arithmetic open | `TPC-240` | fixed frozen profile 下 exact row Riemann sum 与 weighted PNT 给 `[1197 kappa_psi log2/800+o(1)]x^(1/96)`；direct-factor fixed-power saving refuted scoped |
 | 2026-08-24 | V92 / TPC-239 | Bridge A / Gate B：primitive-bucket Brun--Titchmarsh；logarithmic saving proved，signed coefficient arithmetic open | `TPC-239` | reduced prime-AP compiler 给 `R_h(a)<<x^(1/96)loglog x/log x`；packet trace 改进为 `x^(1/48)(log x)^4loglog x`，fixed-power 不变 |

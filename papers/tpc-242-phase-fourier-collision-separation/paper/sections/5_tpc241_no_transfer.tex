@@ -1,0 +1,46 @@
+\section{Typed no-transfer from TPC-241}\label{sec:no-transfer}
+
+TPC-241 proves a lower bound for an unsigned top-prime collision energy
+$E_{\mathrm{top}}^\psi$ and, after a full-vector lower-frame step, for the
+finite-window norm of a standalone common-profile synthesis $K_\psi$
+\cite{WangTPC241}.  The profile is fixed independently of the asymptotic
+parameter.  The result is sharp at its unsigned fixed-power scale, but its
+scope statement records that it does not use the sign after absolute
+squaring and does not project through the four literal packets.
+
+By contrast, Theorem~\ref{thm:spectrum} begins with four energies generated
+by one proved common pair $(X,Y)$ and their phase labels.  To substitute the
+TPC-241 result into this theorem, one would need a source-backed equality of
+at least one of the following forms:
+\begin{equation}\label{eq:missing-maps}
+ K_\psi=T\beta,\qquad K_\psi=Tw,\qquad
+ E_{\mathrm{top}}^\psi=F_0,\qquad
+ E_{\mathrm{top}}^\psi=A\ \text{inside every }E_j.
+\end{equation}
+No locked source proves any equality in~\eqref{eq:missing-maps}.  Similar
+notation, a shared profile, or an unsigned norm scale cannot replace an
+identification theorem.
+
+\begin{corollary}[Source-typed TPC-241 boundary]\label{cor:no-transfer}
+TPC-241's standalone unsigned common-profile norm floor supplies zero direct
+quantitative implication for the literal V59 coefficient $F_1$.  In
+particular, it directly proves none of a lower bound, upper bound,
+nonvanishing statement, phase restriction, sign statement, or power saving
+for that coefficient.
+\end{corollary}
+
+\begin{proof}
+The hypotheses needed to identify the TPC-241 object with either a V59
+marginal or a common additive term are absent.  Therefore neither
+Theorem~\ref{thm:disk} nor Corollary~\ref{cor:offset} can be instantiated with
+the TPC-241 floor.  This is a failure of a required source-type conversion,
+not a numerical loss that can be absorbed into an estimate.
+\end{proof}
+
+Corollary~\ref{cor:no-transfer} is deliberately scoped.  It does not say that
+the actual top-prime contribution has zero $k=1$ coefficient.  The physical
+mode may survive, attenuate, cancel, or vanish after phase projection.  Those
+possibilities remain open until the top-prime contribution is expressed in
+each literal packet before squaring and its actual Fourier coefficient is
+computed.  The phrase ``zero direct implication'' refers to logical credit
+from TPC-241, not to the value of the unknown physical mode.

@@ -1,12 +1,77 @@
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-24
+更新时间：2026-08-25
 
-状态：**TPC241_PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS / SIGNED_FOUR_PACKET_GATE_B_OPEN**
+状态：**TPC242_PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER / PHYSICAL_PHASE_ATTACHMENT_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.36 已发布：TPC-242 phase-Fourier collision separation
+
+项目：`papers/tpc-242-phase-fourier-collision-separation/`
+
+类型：**PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER**。
+
+For a complex Hilbert space with conjugate-linear first slot, define
+
+```text
+E_j=||X+i^jY||^2,
+F_k=(1/4)sum_(j=0)^3 i^(kj)E_j.
+```
+
+The complete literal-convention spectrum is
+
+```text
+F_0=||X||^2+||Y||^2,
+F_1=<Y,X>,
+F_2=0,
+F_3=<X,Y>.
+```
+
+A genuinely phase-independent additive scalar contributes only to `F_0`.  At fixed
+`S=F_0`, the exact feasible set of `F_1` is the closed disk `|F_1|<=S/2`, including
+`S=0`, and the exact defect identity is
+
+```text
+S^2-4|F_1|^2
+ = (||X||^2-||Y||^2)^2
+   +4(||X||^2||Y||^2-|<Y,X>|^2).
+```
+
+TPC-241 proves an unsigned norm floor for a standalone common-profile object but no
+source theorem identifies it with `T beta`, `T w`, `F_0`, or one common additive term
+inside all four physical V59 energies.  It therefore supplies zero direct quantitative
+implication for the signed `F_1` channel.  Physical top-prime annihilation is not
+claimed.
+
+```text
+TPC242_MAXIMUM_CLAIM = EXACT_C4_PHASE_FOURIER_SPECTRUM_SHARP_FIXED_ENERGY_CROSS_DISK_AND_TYPED_NO_TRANSFER
+TPC242_ROUTE_ADVANCE = YES_OBSTRUCTION
+TPC242_COMPLETE_PHASE_SPECTRUM = PROVED_F0_TOTAL_F1_ORIENTED_CROSS_F2_ZERO_F3_CONJUGATE_CROSS
+TPC242_PHASE_BLIND_ADDITIVE_TERM = PROVED_TRIVIAL_CHARACTER_ONLY
+TPC242_FIXED_F0_FEASIBLE_SET = PROVED_CLOSED_DISK_RADIUS_F0_OVER_TWO
+TPC242_PHASE_DEFECT_IDENTITY = PROVED_IMBALANCE_SQUARED_PLUS_FOUR_GRAM_DETERMINANT
+TPC242_TPC241_DIRECT_SIGNED_CREDIT = ZERO
+TPC242_TPC241_TO_V59_IDENTIFICATION = OPEN
+TPC242_PHYSICAL_TOP_PRIME_ANNIHILATION = NOT_CLAIMED
+TPC242_LITERAL_C_H_SIGNED_CANCELLATION = NONE
+TPC242_ARITHMETIC_ADVANCE = NO
+TPC242_FIXED_ATOM_CREDIT = 0
+TPC242_L2 = NONE
+TPC242_FULL_GATE_B = OPEN
+TPC242_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC242_STATUS = PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER
+TPC242_ROUND2_CLUE = EXPRESS_THE_LITERAL_TOP_PRIME_CONTRIBUTION_PHASE_BY_PHASE_BEFORE_SQUARING_AND_COMPUTE_ITS_ACTUAL_K_EQUALS_ONE_COEFFICIENT
+```
+
+strongest positive result：complete `C_4` spectrum、sharp fixed-energy disk 与 exact
+imbalance/Gram defect；strongest obstruction：even exact `F_0` leaves every
+`F_1` in the disk possible；open theorem：source-backed phase-by-phase top-prime
+attachment to the literal V59 remainder；reusable structure：phase-energy DFT plus
+two-component defect ledger；`ROUND2_CLUE`：
+`EXPRESS_THE_LITERAL_TOP_PRIME_CONTRIBUTION_PHASE_BY_PHASE_BEFORE_SQUARING_AND_COMPUTE_ITS_ACTUAL_K_EQUALS_ONE_COEFFICIENT`。
 
 ## 0.35 已发布：TPC-241 top-prime collision sharpness
 
@@ -2305,6 +2370,7 @@ handoff。
 
 | 日期 | 版本 | 新增可发表单元 | 状态 |
 |---|---|---|---|
+| 2026-08-25 | V95 | literal `C_4` phase-energy complete spectrum、sharp fixed-total-energy cross disk、imbalance/Gram defect 与 TPC-241-to-V59 typed no-transfer | **PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER / TPC-242** |
 | 2026-08-24 | V94 | fixed frozen common profile 的 top-prime q-collapsed coefficient与 finite-window explicit liminf，证明 unsigned `1/48` fixed-power sharp up to logarithms | **PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS / TPC-241** |
 | 2026-08-24 | V93 | fixed frozen profile 的 top-prime q-split direct-energy exact asymptotic、explicit `1197 kappa_psi log2/800` constant 与 no-fixed-power-saving obstruction | **PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_DIRECT_ENERGY_FLOOR / TPC-240** |
 | 2026-08-24 | V89 | physical gcd-fiber multiplicity theorem、unnormalized weighted Bessel envelope 与 exact triple-collision obstruction | **PROVED_STRUCTURAL_L1 / TPC-236** |

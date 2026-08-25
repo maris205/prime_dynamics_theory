@@ -1,9 +1,92 @@
 # TPC HANDOFF
 
-更新时间：2026-08-24
-交接状态：`BOLD_CHANNEL_V94_TPC241_TOP_PRIME_COLLISION_SHARPNESS_RELEASED`
+更新时间：2026-08-25
+交接状态：`BOLD_CHANNEL_V95_TPC242_PHASE_FOURIER_COLLISION_SEPARATION_RELEASED`
 
-TPC-241 当前 section：top-prime collision sharpness
+TPC-242 当前 section：phase-Fourier collision separation
+--------------------------------------------------------
+
+Use a complex Hilbert space whose inner product is conjugate-linear in the first
+slot.  For `X,Y` define
+
+```text
+E_j=||X+i^jY||^2,
+F_k=(1/4)sum_(j=0)^3 i^(kj)E_j.
+```
+
+Fourth-root orthogonality gives the complete literal-convention spectrum
+
+```text
+F_0=||X||^2+||Y||^2,
+F_1=<Y,X>,
+F_2=0,
+F_3=<X,Y>.
+```
+
+Therefore a scalar proved identical in all four phase-labelled energies contributes
+only to `F_0`.  At fixed `S=F_0`, the exact feasible set of `F_1` is the closed disk
+`|F_1|<=S/2`, including `S=0`, and
+
+```text
+S^2-4|F_1|^2
+ = (||X||^2-||Y||^2)^2
+   +4(||X||^2||Y||^2-|<Y,X>|^2).
+```
+
+The first defect term measures packet-energy imbalance and the second is four times
+the two-vector Gram determinant.  Exact knowledge of unsigned total energy therefore
+does not determine nonvanishing, phase, sign, or a strict saving in the selected
+cross coefficient.
+
+TPC-241 proves an unsigned floor for a standalone fixed common-profile kernel.  No
+locked source identifies that object with `T beta`, `T w`, `F_0`, or one common
+additive term inside all four literal V59 energies.  Hence TPC-241 supplies zero
+direct quantitative implication for `F_1`.  This is a source-typed no-transfer
+statement, not a theorem that the physical top-prime mode vanishes.
+
+```text
+TPC242_MAXIMUM_CLAIM = EXACT_C4_PHASE_FOURIER_SPECTRUM_SHARP_FIXED_ENERGY_CROSS_DISK_AND_TYPED_NO_TRANSFER
+TPC242_ROUTE_ADVANCE = YES_OBSTRUCTION
+TPC242_V59_PHASE_CONVENTION = PROVED_I_POWER_J_SELECTS_X_CONJUGATE_Y
+TPC242_COMPLETE_PHASE_SPECTRUM = PROVED_F0_TOTAL_F1_ORIENTED_CROSS_F2_ZERO_F3_CONJUGATE_CROSS
+TPC242_PHASE_BLIND_ADDITIVE_TERM = PROVED_TRIVIAL_CHARACTER_ONLY
+TPC242_FIXED_F0_FEASIBLE_SET = PROVED_CLOSED_DISK_RADIUS_F0_OVER_TWO
+TPC242_PHASE_DEFECT_IDENTITY = PROVED_IMBALANCE_SQUARED_PLUS_FOUR_GRAM_DETERMINANT
+TPC242_TPC241_DIRECT_SIGNED_CREDIT = ZERO
+TPC242_TPC241_TO_V59_IDENTIFICATION = OPEN
+TPC242_PHYSICAL_TOP_PRIME_ANNIHILATION = NOT_CLAIMED
+TPC242_LITERAL_C_H_SIGNED_CANCELLATION = NONE
+TPC242_ARITHMETIC_ADVANCE = NO
+TPC242_FIXED_ATOM_CREDIT = 0
+TPC242_L2 = NONE
+TPC242_FULL_GATE_B = OPEN
+TPC242_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC242_TPC_TRIGGER = true
+TPC242_NUMBERED_RELEASE = YES
+TPC242_TWIN_PRIME_RESULT = NONE
+TPC242_STATUS = PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER
+TPC242_ROUND2_CLUE = EXPRESS_THE_LITERAL_TOP_PRIME_CONTRIBUTION_PHASE_BY_PHASE_BEFORE_SQUARING_AND_COMPUTE_ITS_ACTUAL_K_EQUALS_ONE_COEFFICIENT
+```
+
+strongest positive result：complete `C_4` phase spectrum、sharp fixed-energy disk
+与 exact imbalance/Gram defect；strongest obstruction：even exact `F_0` permits every
+selected coefficient in `|F_1|<=F_0/2`；open theorem：source-backed phase-by-phase
+top-prime attachment to the literal V59 remainder；reusable structure：phase-energy
+DFT + two-component defect ledger。
+
+编号论文目录：papers/tpc-242-phase-fourier-collision-separation/
+
+```text
+papers/tpc-242-phase-fourier-collision-separation/README.md
+papers/tpc-242-phase-fourier-collision-separation/PROOF_PACKAGE.md
+papers/tpc-242-phase-fourier-collision-separation/paper/paper.pdf
+papers/tpc-242-phase-fourier-collision-separation/results/tpc242_certificate.json
+papers/tpc-242-phase-fourier-collision-separation/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_phase_fourier_collision_separation.md
+research/tpc-big-road/tpc_bridge_b_phase_fourier_collision_separation_checker.py
+```
+
+TPC-241 上游 section：top-prime collision sharpness
 --------------------------------------------------
 
 Keep the literal V59 scales and fix one common profile independently of `x`:
@@ -6396,8 +6479,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V94/TPC-241 gate、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百四十四次（72 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V95/TPC-242 gate、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百四十六次（73 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -6545,11 +6628,23 @@ python -B research/tpc-big-road/tpc_bridge_b_top_prime_direct_energy_floor_check
 python -O -B research/tpc-big-road/tpc_bridge_b_top_prime_direct_energy_floor_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_top_prime_collision_sharpness_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_phase_fourier_collision_separation_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_phase_fourier_collision_separation_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-241 入口：
+最新 TPC-242 入口：
+
+```text
+papers/tpc-242-phase-fourier-collision-separation/README.md
+papers/tpc-242-phase-fourier-collision-separation/notes/theorem_ledger.md
+papers/tpc-242-phase-fourier-collision-separation/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_phase_fourier_collision_separation.md
+research/tpc-big-road/tpc_bridge_b_phase_fourier_collision_separation_checker.py
+```
+
+TPC-241 上游入口：
 
 ```text
 papers/tpc-241-top-prime-collision-sharpness/README.md

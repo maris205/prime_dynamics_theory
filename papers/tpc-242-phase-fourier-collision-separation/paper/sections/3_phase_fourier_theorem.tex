@@ -1,0 +1,71 @@
+\section{The complete phase-Fourier theorem}\label{sec:spectrum}
+
+For $X,Y\in\Hc$, define
+\begin{equation}\label{eq:def-energy-dft}
+ \Ephase j=\norm{X+\ii^jY}^2,
+ \qquad
+ \Fmode k=\frac14\sum_{j=0}^3\ii^{kj}\Ephase j,
+ \qquad 0\leq k\leq3.
+\end{equation}
+
+\begin{theorem}[Complete $C_4$ spectrum]\label{thm:spectrum}
+With the conjugate-linear-first convention,
+\begin{equation}\label{eq:complete-spectrum}
+ \Fmode0=\norm X^2+\norm Y^2,
+ \qquad \Fmode1=\ip YX,
+ \qquad \Fmode2=0,
+ \qquad \Fmode3=\ip XY.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Put $S=\norm X^2+\norm Y^2$ and $c=\ip YX$.  Conjugate-linearity in the
+first variable gives
+\begin{align*}
+ \Ephase j
+ &=\ip{X+\ii^jY}{X+\ii^jY}\\
+ &=S+\ii^j\ip XY+\ii^{-j}\ip YX
+  =S+\ii^j\overline c+\ii^{-j}c.
+\end{align*}
+For every integer $m$, fourth-root orthogonality says
+\begin{equation}\label{eq:root-filter}
+ \frac14\sum_{j=0}^3\ii^{mj}
+ =\begin{cases}1,&4\mid m,\\0,&4\nmid m.\end{cases}
+\end{equation}
+Substitution into~\eqref{eq:def-energy-dft} yields
+\[
+ \Fmode k=S\mathbf1_{k=0}+c\mathbf1_{k=1}
+              +\overline c\mathbf1_{k=3}
+ \quad (0\leq k\leq3),
+\]
+which is~\eqref{eq:complete-spectrum}.
+\end{proof}
+
+The theorem contains the familiar polarization identity as its $k=1$
+coordinate, but it also displays the trivial mode, the identically zero
+second mode, and the conjugate third mode.  Since every $E_j$ is real,
+$F_3=\overline{F_1}$ is also the expected Fourier reality symmetry.
+
+\begin{corollary}[Common-offset projection]\label{cor:offset}
+Suppose a scalar $A$ is added independently of phase, so that
+$E'_j=E_j+A$ for all four $j$.  Then
+\[
+ F'_0-F_0=A,
+ \qquad
+ F'_1-F_1=F'_2-F_2=F'_3-F_3=0.
+\]
+In particular, every phase-independent additive scalar contributes exactly
+zero to the V59-selected mode $F_1$.
+\end{corollary}
+
+\begin{proof}
+The increment is $\frac A4\sum_j\ii^{kj}$, and
+equation~\eqref{eq:root-filter} applies.
+\end{proof}
+
+\begin{remark}[Type of the hypothesis]
+Corollary~\ref{cor:offset} assumes the same scalar is proved to occur inside
+each of the four labelled energies.  It does not license the replacement of
+an unsigned estimate on a separate kernel by such a common term.  Establishing
+that equality is part of the physical attachment problem.
+\end{remark}

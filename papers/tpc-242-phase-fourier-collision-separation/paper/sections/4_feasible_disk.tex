@@ -1,0 +1,79 @@
+\section{The sharp feasible disk and phase defect}\label{sec:disk}
+
+The trivial mode controls the selected mode only through a sharp disk.
+
+\begin{theorem}[Exact fixed-energy feasible set]\label{thm:disk}
+Let $\Hc$ be nonzero and fix $S\geq0$.  Over all pairs $X,Y\in\Hc$ satisfying
+$\norm X^2+\norm Y^2=S$, the set of possible values of
+$F_1=\ip YX$ is exactly
+\begin{equation}\label{eq:disk}
+ \left\{z\in\C:\abs z\leq\frac S2\right\}.
+\end{equation}
+For $S=0$, this disk is the singleton $\{0\}$.
+\end{theorem}
+
+\begin{proof}
+Cauchy--Schwarz followed by the arithmetic--geometric mean inequality gives
+\[
+ \abs{\ip YX}\leq\norm X\norm Y
+ \leq\frac{\norm X^2+\norm Y^2}{2}=\frac S2.
+\]
+This proves one inclusion.
+
+For the converse, suppose first that $S>0$ and choose any $z$ with
+$\rho:=\abs z\leq S/2$.  Put
+\[
+ D=\sqrt{S^2-4\rho^2},\qquad
+ a=\frac{S+D}{2},\qquad b=\frac{S-D}{2}.
+\]
+Then $a>0$, $a+b=S$, and $ab=\rho^2$.  Choose a unit vector $e\in\Hc$ and
+define
+\begin{equation}\label{eq:disk-witness}
+ X=\sqrt a\,e,\qquad
+ Y=\frac{\overline z}{\sqrt a}\,e.
+\end{equation}
+Consequently,
+\[
+ \norm X^2=a,\qquad
+ \norm Y^2=\frac{\abs z^2}{a}=b,
+ \qquad
+ \ip YX=z.
+\]
+Thus every point in~\eqref{eq:disk} is attained.  If $S=0$, both nonnegative
+squared norms vanish, so $X=Y=0$ and $F_1=0$.
+\end{proof}
+
+The construction realizes the center, every interior point, and every
+boundary phase.  Consequently even an exact value of $F_0$ gives no positive
+lower bound for $\abs{F_1}$ and no preferred argument of $F_1$.  For instance,
+at $S=2$, orthogonal unit vectors give $F_1=0$, whereas $X=(1,0)$ and
+$Y=(-\ii,0)$ give $F_1=\ii$ on the boundary.
+
+The distance from the boundary has a canonical two-part decomposition.
+
+\begin{theorem}[Exact phase-defect identity]\label{thm:defect}
+Let $S=\norm X^2+\norm Y^2$ and $F_1=\ip YX$.  Then
+\begin{equation}\label{eq:defect}
+ S^2-4\abs{F_1}^2
+ =\bigl(\norm X^2-\norm Y^2\bigr)^2
+  +4\left(\norm X^2\norm Y^2-\abs{\ip YX}^2\right).
+\end{equation}
+Both terms on the right are nonnegative.
+\end{theorem}
+
+\begin{proof}
+Set $a=\norm X^2$ and $b=\norm Y^2$.  Expanding and inserting $4ab$ gives
+\[
+ (a+b)^2-4\abs{\ip YX}^2
+ =(a-b)^2+4\left(ab-\abs{\ip YX}^2\right).
+\]
+The final parenthesis is the determinant of the Gram matrix of $X$ and $Y$,
+so Cauchy--Schwarz makes it nonnegative.
+\end{proof}
+
+Equality $\abs{F_1}=S/2$ holds precisely when the norms agree and the Gram
+determinant vanishes.  Away from the boundary, equation~\eqref{eq:defect}
+distinguishes two mechanisms: imbalance between packet energies and angular
+decorrelation between the packet vectors.  Any future strict signed saving
+must create a quantitative defect of one of these forms on the attached
+physical object.

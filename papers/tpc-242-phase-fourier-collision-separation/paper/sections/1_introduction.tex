@@ -1,0 +1,54 @@
+\section{Introduction}
+
+Squaring before retaining phase information can turn a signed target into an
+unsigned marginal.  The distinction is decisive in the four-packet part of
+the V59 route: the physical scalar is selected by a nontrivial character of
+the cyclic phase group, while the most accessible collision lower bounds are
+phase-blind.  Equal magnitudes in these two channels do not identify the
+underlying objects, and a strong estimate in one character need not transfer
+to another.
+
+The starting polarization identity is already known.  For complex scalars,
+the literal V59 convention reads
+\begin{equation}\label{eq:known-polarization}
+ x\overline y=\frac14\sum_{j=0}^3\ii^j
+ \abs{x+\ii^j y}^2.
+\end{equation}
+It was source-locked in the V59 compiler and used in earlier TPC obstruction
+and source-native compiler papers
+\cite{WangV59,WangTPC222,WangTPC228}.  We do not claim the four-point
+polarization formula itself as new.  The contribution of this paper within
+the TPC route is to retain all four characters simultaneously, determine
+exactly what the trivial character can and cannot say about the selected
+character, and enforce the resulting source-type boundary against the
+unsigned TPC-241 estimate.
+
+More precisely, the paper establishes four statements.
+\begin{enumerate}
+  \item We compute the complete $C_4$ spectrum of the four Hilbert energies in
+  the literal $\ii^j$ convention.  This fixes the orientation
+  $F_1=\ip YX$, proves $F_2=0$, and identifies $F_3$ as the conjugate mode.
+  \item We prove that a genuinely phase-independent additive scalar is
+  supported only at $F_0$.  The conclusion is an exact character projection,
+  not a heuristic assertion that an unrelated unsigned term is ``common.''
+  \item For every fixed total energy $S$, we identify the full feasible set of
+  $F_1$ as the disk of radius $S/2$ and prove a defect formula separating norm
+  imbalance from the two-vector Gram determinant.
+  \item We apply these facts with source types intact.  TPC-241 concerns a
+  standalone common-profile kernel and explicitly does not project the four
+  physical packets \cite{WangTPC241}; absent an attachment theorem, it earns
+  zero direct quantitative credit for the V59 $F_1$ channel.
+\end{enumerate}
+
+The disk theorem is sharp in both directions.  Thus even exact knowledge of
+$F_0$ cannot force nonvanishing, sign, phase, or a positive lower bound for
+$F_1$.  A lower bound on a separate unsigned object is weaker still.  This
+does not imply that the physical top-prime contribution vanishes: survival,
+attenuation, cancellation, and annihilation remain logically possible until
+the literal contribution is decomposed phase by phase before squaring.
+
+Section~\ref{sec:source-lock} fixes the V59 convention and source types.
+Sections~\ref{sec:spectrum} and~\ref{sec:disk} prove the complete spectrum,
+sharp disk, and defect identity.  Section~\ref{sec:no-transfer} states the
+typed consequence for TPC-241.  The certificate and claim boundary are
+recorded in Sections~\ref{sec:certificate} and~\ref{sec:boundary}.

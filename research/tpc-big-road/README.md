@@ -1,60 +1,64 @@
-# TPC big road V94 / TPC-241: top-prime collision sharpness
+# TPC big road V95 / TPC-242: phase-Fourier collision separation
 
-更新时间：2026-08-24
+更新时间：2026-08-25
 
-状态：`TPC241_PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS / FULL_GATE_B_OPEN`
+状态：`TPC242_PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-241 proof 为
+当前 TPC-242 proof 为
+`bridge_b_phase_fourier_collision_separation.md`，checker 为
+`tpc_bridge_b_phase_fourier_collision_separation_checker.py`，编号论文为
+`../../papers/tpc-242-phase-fourier-collision-separation/`。
+
+For `E_j=||X+i^jY||^2` and
+`F_k=(1/4)sum_j i^(kj)E_j`, the literal convention gives
+
+```text
+F_0=||X||^2+||Y||^2, F_1=<Y,X>, F_2=0, F_3=<X,Y>.
+```
+
+A scalar proved common to all four phase energies lies only in `F_0`.  At fixed
+`S=F_0`, however, the selected coefficient fills the exact disk `|F_1|<=S/2`, and
+
+```text
+S^2-4|F_1|^2
+ = (||X||^2-||Y||^2)^2
+   +4(||X||^2||Y||^2-|<Y,X>|^2).
+```
+
+TPC-241 supplies no source-backed identification of its standalone unsigned kernel
+with either V59 marginal or with a common additive phase term.  Therefore it gives
+zero direct quantitative implication for `F_1`; this is not a theorem that the
+physical top-prime mode vanishes.
+
+```text
+TPC242_COMPLETE_PHASE_SPECTRUM = PROVED_F0_TOTAL_F1_ORIENTED_CROSS_F2_ZERO_F3_CONJUGATE_CROSS
+TPC242_PHASE_BLIND_ADDITIVE_TERM = PROVED_TRIVIAL_CHARACTER_ONLY
+TPC242_FIXED_F0_FEASIBLE_SET = PROVED_CLOSED_DISK_RADIUS_F0_OVER_TWO
+TPC242_PHASE_DEFECT_IDENTITY = PROVED_IMBALANCE_SQUARED_PLUS_FOUR_GRAM_DETERMINANT
+TPC242_TPC241_DIRECT_SIGNED_CREDIT = ZERO
+TPC242_TPC241_TO_V59_IDENTIFICATION = OPEN
+TPC242_PHYSICAL_TOP_PRIME_ANNIHILATION = NOT_CLAIMED
+TPC242_LITERAL_C_H_SIGNED_CANCELLATION = NONE
+TPC242_ARITHMETIC_ADVANCE = NO
+TPC242_FIXED_ATOM_CREDIT = 0
+TPC242_L2 = NONE
+TPC242_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC242_ROUND2_CLUE = EXPRESS_THE_LITERAL_TOP_PRIME_CONTRIBUTION_PHASE_BY_PHASE_BEFORE_SQUARING_AND_COMPUTE_ITS_ACTUAL_K_EQUALS_ONE_COEFFICIENT
+```
+
+strongest positive result：complete `C_4` spectrum、sharp fixed-total-energy disk 与 exact
+phase-defect decomposition；strongest obstruction：trivial-character energy cannot identify
+the signed mode；open theorem：source-backed phase-by-phase physical attachment；reusable
+structure：phase-energy DFT + imbalance/Gram defect ledger。
+
+TPC-241 上游 proof 为
 `bridge_b_top_prime_collision_sharpness.md`，checker 为
 `tpc_bridge_b_top_prime_collision_sharpness_checker.py`，编号论文为
-`../../papers/tpc-241-top-prime-collision-sharpness/`。
-
-For every fixed literal frozen nonnegative normalized profile `psi`, collapse all
-shell-prime rows at each primitive residue before taking the coefficient norm.  A
-uniform first-moment Riemann sum, Cauchy over the `p-1` primitive residues, weighted
-PNT, and then the TPC-238 full-vector lower frame prove
-
-```text
-liminf_(x->infinity) [(log x)/x^(1/48)] E_top^psi
- >= 10773 log(2)/1600,
-
-liminf_(x->infinity) [(log x)/x^(1/48)]
-  [N^(-1) sum_(n in I_x)|K_psi(n)|^2]
- >= 10773 log(2)/3200.
-```
-
-The lower frame is applied to the complete primitive-frequency vector before its
-nonnegative norm is restricted to the top-prime shell.  Hence no finite-window cross
-term is illegally deleted.  These bounds refute every fixed-power improvement below
-`x^(1/48)` on the exact fixed-profile unsigned common-source kernel.  They do not
-control the signed four-packet projection.
-
-```text
-TPC241_TOP_PRIME_ROW_MASS = PROVED_UNIFORM_THREE_OVER_TWO
-TPC241_PRIMITIVE_RESIDUE_CAUCHY = PROVED_EXACT
-TPC241_COEFFICIENT_LIMINF = PROVED_10773_LOG_2_OVER_1600
-TPC241_FINITE_WINDOW_LIMINF = PROVED_10773_LOG_2_OVER_3200
-TPC241_NORMALIZED_FIXED_POWER = PROVED_1_OVER_48_SHARP_UP_TO_LOGARITHMS
-TPC241_UNSIGNED_FIXED_POWER_IMPROVEMENT = REFUTED_ON_EXACT_FIXED_PROFILE_COMMON_SOURCE_KERNEL
-TPC241_FULL_VECTOR_FRAME_BEFORE_TOP_PRIME_RESTRICTION = REQUIRED_EXACT
-TPC241_C_H_SIGNED_CANCELLATION = NONE
-TPC241_SIGNED_FOUR_PACKET_GATE_B_SCALAR = OPEN
-TPC241_ARITHMETIC_ADVANCE = NO
-TPC241_FIXED_ATOM_CREDIT = 0
-TPC241_L2 = NONE
-TPC241_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC241_ROUND2_CLUE = FORCE_THE_NEXT_ARGUMENT_TO_RETAIN_FOUR_PACKET_POLARIZATION_OR_C_H_SIGNS_BEFORE_SQUARING_BECAUSE_THE_UNSIGNED_TOP_PRIME_COLLISION_CHANNEL_IS_FIXED_POWER_SHARP
-```
-
-strongest positive result：source-locked `x^(1/48)/log x` coefficient and
-finite-window liminf；strongest obstruction：the exact unsigned common-profile channel
-attains fixed-power `1/48` up to logarithms；open theorem：whether literal four-packet
-polarization or signed `C_h` annihilates this collision mode before squaring；reusable
-structure：profile first moment + primitive-residue Cauchy + weighted PNT +
-finite-window lower frame。
+`../../papers/tpc-241-top-prime-collision-sharpness/`。Its unsigned fixed-profile
+`x^(1/48)/log x` sharpness is retained as an upstream obstruction.
 
 TPC-240 上游 proof 为
 `bridge_b_top_prime_direct_energy_floor.md`，checker 为

@@ -1,0 +1,50 @@
+\section{Literal V59 convention and source lock}\label{sec:source-lock}
+
+Let $\Hc$ be a complex Hilbert space.  Throughout,
+$\ip{\cdot}{\cdot}$ is conjugate-linear in its first slot and linear in its
+second.  Hence
+\[
+ \ip{\alpha u}{v}=\overline\alpha\ip uv,
+ \qquad
+ \ip u{\alpha v}=\alpha\ip uv.
+\]
+This convention must be declared because changing it changes which oriented
+cross coefficient is selected by a fixed Fourier sign.
+
+The V59 source freezes four literal packets of the form
+\[
+ a^{(j)}=\beta+\ii^j w,\qquad 0\leq j\leq3,
+\]
+and uses the multiplier $\frac14\sum_j\ii^j$ on the corresponding
+off-diagonal energy remainders \cite{WangV59}.  In the present convention the
+scalar identity~\eqref{eq:known-polarization} has orientation
+\[
+ x\overline y=\ip yx.
+\]
+Thus the source target is the $k=1$ mode defined below.  Replacing the phase
+multiplier by $(-\ii)^j$, or silently switching to a linear-first inner
+product, would select the conjugate orientation instead.
+
+Earlier papers establish two relevant boundaries.  TPC-222 records exact
+four-point polarization and shows that diagonal or trace information alone
+does not identify signed reassembly \cite{WangTPC222}.  TPC-228 performs the
+source-native off-prime polarization after deleting the same-label diagonal,
+but leaves the literal physical packet-to-primitive-atom crosswalk open
+\cite{WangTPC228}.  TPC-241 then proves a sharp unsigned lower bound for a
+fixed common-profile top-prime collision kernel; its scope statement says
+explicitly that no four-packet projection is taken \cite{WangTPC241}.
+
+These sources determine a strict type boundary:
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Object & Source type \\
+\midrule
+V59 target & $k=1$ coefficient of four literal packet energies \\
+TPC-241 output & unsigned norm floor for a standalone common-profile kernel \\
+Missing map & phase-by-phase physical attachment to the V59 remainder \\
+\bottomrule
+\end{tabular}
+\end{center}
+The structural theorem below applies whenever one common pair $(X,Y)$ really
+generates the four energies.  It does not manufacture the missing map.

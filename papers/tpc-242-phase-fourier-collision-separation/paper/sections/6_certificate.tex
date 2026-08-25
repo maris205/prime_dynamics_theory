@@ -1,0 +1,35 @@
+\section{Exact executable certificate}\label{sec:certificate}
+
+The accompanying executable artifact checks the convention-sensitive finite
+algebra using Gaussian numbers represented as pairs of
+\texttt{fractions.Fraction} values.  It evaluates the four energies, performs
+the $C_4$ transform, recomputes both sides of the defect identity, and checks
+exact witnesses at the center, interior, and boundary of the feasible disk.
+No floating-point comparison appears in a theorem-facing check.
+
+The producer has a required mutually exclusive interface: \texttt{--write}
+creates the canonical certificate, while \texttt{--check} is read-only.  The
+JSON representation uses sorted keys, compact separators, ASCII encoding,
+one terminal newline, reduced fractions with positive denominators, and a
+SHA-256 digest over the payload.  A separately implemented checker parses the
+document with duplicate-key and nonfinite-constant rejection and recomputes
+the exact fixtures without importing the producer.
+
+Both programs exercise semantic mutation firewalls.  They reject an
+inner-product orientation reversal, replacement of $\ii^j$ by $(-\ii)^j$,
+a nonzero $F_2$, leakage of a common offset into $F_1$, a fabricated physical
+attachment, a status promotion, and Python's boolean-as-integer ambiguity.
+The digest is recomputed on semantic mutations before validation, so mutation
+rejection cannot be credited merely to stale checksums.  Parser mutations
+also test duplicate keys and nonfinite constants.
+
+Finally, an independent stress program exhausts all ordered pairs of
+two-dimensional vectors whose component real and imaginary parts lie in
+$\{-1,0,1\}$.  This is $81^2=6561$ vector pairs and $26244$ phase-energy
+evaluations.  Every calculation is exact, but the census is labelled
+\begin{center}
+\texttt{NUMERICAL\_FINITE\_ILLUSTRATION\_ONLY}.
+\end{center}
+The executable artifacts test transcription, representation, and finite
+interfaces.  The symbolic proofs in Sections~\ref{sec:spectrum}
+and~\ref{sec:disk}, rather than the finite census, establish the theorem.

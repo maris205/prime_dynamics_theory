@@ -9,12 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-241 已在每个固定冻结非负归一化 common profile 上证明 top-prime
-q-collapsed coefficient energy 与 normalized finite-window kernel 都有
-`x^(1/48)/log x` 级 liminf，显式常数分别为 `10773log(2)/1600` 与
-`10773log(2)/3200`。因此 TPC-239 的 fixed-power `1/48` 在 exact unsigned
-common-profile 对象上仅差对数即尖锐；下一步必须在平方前保留 literal `C_h` signs 或
-four-packet polarization。arithmetic L2、signed Gate B 与 strict `1/400` 仍开放。
+当前主线状态：TPC-242 已把 literal V59 四相位能量完整分解为
+`F_0=||X||^2+||Y||^2`、`F_1=<Y,X>`、`F_2=0`、`F_3=<X,Y>`，并证明固定
+`F_0=S` 时 `F_1` 的可行集恰为闭圆盘 `|F_1|<=S/2`，相位缺陷精确分解为 norm
+imbalance 与 Gram determinant。TPC-241 的 unsigned common-profile floor 因缺少
+phase-by-phase physical attachment，对 signed `F_1` 没有直接定量信用；这不等于物理
+top-prime mode 消失。下一步是 hard-window near-isometry/bilinear transfer，再攻击
+literal `C_h` signed bucket。arithmetic L2、signed Gate B 与 strict `1/400` 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -28,6 +29,8 @@ four-packet polarization。arithmetic L2、signed Gate B 与 strict `1/400` 仍�
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-242-phase-fourier-collision-separation` - `PROVED_STRUCTURAL_L1_PHASE_FOURIER_NO_TRANSFER` - 证明 literal `i^j` convention 下完整 `C_4` 能量谱、固定总能量的 sharp cross-term closed disk 与 imbalance/Gram exact defect；并 source-type 地证明 TPC-241 unsigned floor 对 V59 signed `F_1` 无直接定量转移，但不宣称物理 top-prime mode 消失。
 
 `tpc-241-top-prime-collision-sharpness` - `PROVED_SOURCE_LOCKED_FIXED_PROFILE_UNSIGNED_TOP_PRIME_COLLISION_SHARPNESS` - 利用冻结 profile 的 normalized first moment、top-prime primitive-residue Cauchy、weighted PNT 与 TPC-238 full-vector lower frame，证明 coefficient/finite-window liminf 常数 `10773log(2)/1600`、`10773log(2)/3200` 及 `x^(1/48)/log x` 下界；从而严格否定 unsigned common-profile kernel 的任何 fixed-power 改进，但 signed four-packet Gate-B scalar 仍开放。
 
