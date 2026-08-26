@@ -1,13 +1,57 @@
-# TPC big road V118 / TPC-265: Schur radius to endpoint-budget compiler
+# TPC big road V119 / TPC-266: typed end-to-end claim firewall
 
 更新时间：2026-08-26
 
-状态：`TPC265_PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC266_PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-265 proof 为
+当前 TPC-266 proof 为
+`bridge_b_typed_end_to_end_claim_firewall.md`，checker 为
+`tpc_bridge_b_typed_end_to_end_claim_firewall_checker.py`，编号论文为
+`../../papers/tpc-266-end-to-end-claim-firewall/`。
+
+TPC-266 将 TPC-263 的 fixed-log center、TPC-264 的 Schur residual set 与
+TPC-265 的 radial endpoint envelope 接成一个 typed end-to-end compiler。
+只有 center/radius 两条 lane 都是有效的 `POWER` 或 `SIGNED_PHASE`，且各自
+effective saving 严格大于 `1/400`、residual retained，才允许 conditional closure。
+exact six-state hostile matrix 对 fixed-log promotion、missing radius、borderline、
+subcritical 和 residual deletion 全部 fail closed；actual V59 radius/phase、
+arithmetic `L2` 与 full Gate-B 仍 OPEN/NONE。
+
+```text
+TPC266_MAXIMUM_CLAIM = PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL
+TPC266_ROUTE_ADVANCE = YES_SCOPED_END_TO_END_CLAIM_FIREWALL
+TPC266_TYPED_COMPOSITION = PROVED_EXACT
+TPC266_FIXED_LOG_NONPROMOTION = PROVED_EXACT
+TPC266_RESIDUAL_RETENTION_FIREWALL = PROVED_EXACT
+TPC266_FAILURE_MATRIX = PROVED_EXACT_SIX_STATE
+TPC266_STRICT_PAYMENT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC266_CENTER_CURRENT_TYPE = FIXED_LOG
+TPC266_RESIDUAL_CURRENT_TYPE = SCHUR_SET_RADIUS_OPEN
+TPC266_ACTUAL_V59_RADIUS = OPEN
+TPC266_ACTUAL_V59_PHASE = OPEN
+TPC266_FIXED_POWER_CREDIT = 0
+TPC266_ARITHMETIC_ADVANCE = NO
+TPC266_L2 = NONE
+TPC266_FULL_GATE_B = OPEN
+TPC266_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC266_TWIN_PRIME_RESULT = NONE
+TPC266_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC266_STATUS = PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL
+TPC266_ROUND2_CLUE = PROVE_A_LITERAL_V59_RADIUS_OR_SIGNED_PHASE_BOUND_WITH_EFFECTIVE_SAVING_GREATER_THAN_1_OVER_400
+```
+
+TPC-265 remains the immediate upstream Schur endpoint-budget compiler:
+
+```text
+Schur radial support = |c|+R; center/radius strict payment threshold = 1/400.
+```
+
+## V118 upstream: TPC-265 Schur radius to endpoint-budget compiler
+
+TPC-265 proof 为
 `bridge_b_schur_endpoint_budget_compiler.md`，checker 为
 `tpc_bridge_b_schur_endpoint_budget_compiler_checker.py`，编号论文为
 `../../papers/tpc-265-schur-endpoint-budget-compiler/`。

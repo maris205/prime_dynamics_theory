@@ -1,0 +1,324 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\Pow}{\mathrm{POWER}}
+\newcommand{\LogType}{\mathrm{FIXED\mathchar`\_LOG}}
+\newcommand{\Phase}{\mathrm{SIGNED\mathchar`\_PHASE}}
+
+\title{TPC-266: A Typed End-to-End Claim Firewall\\
+for the Residual Budget Chain}
+\author{Liang Wang\\
+School of Mathematics and Statistics, Huazhong University of Science and Technology\\
+Wuhan, China}
+\date{August 26, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The recent Bridge-B sequence TPC-263--265 leaves a precise interface question:
+can a source-backed fixed-log center channel, an exact Schur residual set, and
+a radial endpoint envelope be composed without silently creating a
+fixed-power estimate?  We define a typed endpoint compiler and prove its
+soundness.  A lane is paid only when it is a genuine power or signed-phase
+bound whose effective saving exceeds the inherited gap
+$\Delta_*=1/400$.  We also prove two firewalls: fixed logarithmic decay cannot
+be promoted to a positive power saving, and deleting the Schur residual is
+unsound because the aligned endpoint has size $|c|+R$.  An exact six-state
+adversarial matrix (strict, log-only, missing, borderline, subcritical, and
+deleted-residual) is independently replayed with rational arithmetic.  This
+is a structural composition result; the literal V59 radius and phase,
+arithmetic $L^2$, and the twin-prime conjecture remain open.
+\end{abstract}
+
+\section{Question and scope}
+
+We work on the common V59 clock and use the conjugate-linear-first-slot
+convention
+\[
+ \ip{u}{v}=\sum_j\overline{u_j}v_j.
+\]
+TPC-263 established a source-backed rank-three channel of the form
+\[
+ \ip{w}{g_x}=C_3(x)+C_\perp(x), \qquad g_x=A_x\beta,
+\]
+with, for fixed $M$ and $K$,
+\[
+ |C_3(x)|\ll_{M,K}x^{5/3}(\log x)^{-M-3}.
+\]
+TPC-264 made the remaining orthogonal cross-Gram explicit: after the
+projected data and residual norms are fixed, its feasible set is a disk,
+circle, or singleton according to the dimension of the complement.  TPC-265
+then computed the sharp radial support of that set and translated it into an
+endpoint budget.
+
+The present paper is a hostile audit of the composition itself.  It records
+which type of evidence may flow from one stage to the next and which tempting
+shortcuts are invalid.  In particular, the paper does not treat an arbitrary
+small numerical slope as a theorem and does not remove an unestimated
+orthogonal component.
+
+Our contributions are:
+\begin{enumerate}
+ \item an exact typed compiler for the center and Schur-radius lanes;
+ \item a soundness theorem and an exact failure classification;
+ \item a fixed-log non-promotion and residual-retention firewall; and
+ \item a reproducible rational certificate with an independent hostile replay.
+\end{enumerate}
+
+\section{The three-stage interface}
+
+Let $P$ be the rank-three source projection.  With
+\[
+ p=Pw,\quad q=Pg_x,\quad u=(I-P)w,\quad v=(I-P)g_x,
+\]
+orthogonality gives the exact split
+\begin{equation}
+ \ip{w}{g_x}=\ip{p}{q}+\ip{u}{v}=:c_x+z_x.
+ \label{eq:split}
+\end{equation}
+If $a=\norm{u}$ and $b=\norm{v}$, the residual Gram matrix is positive
+semidefinite and hence $|z_x|\leq ab$.  In complement dimension at least two,
+all points of the disk $|z_x|\leq ab$ are realizable; in dimension one the
+boundary circle is realizable.  We denote the residual radius by
+\[
+ R_x=ab.
+\]
+
+The information types carried by the three stages are different:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Stage & Output type & What it certifies\\
+\midrule
+TPC-263 & $\LogType$ center & fixed $M$ logarithmic decay of $C_3$\\
+TPC-264 & Schur set & feasible residual geometry and radius symbol $R_x$\\
+TPC-265 & radial envelope & $\sup|c_x+z_x|=|c_x|+R_x$\\
+TPC-266 & budget decision & typed payment or fail-closed status\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}
+The word ``type'' is substantive.  A statement of type $\LogType$ has a
+quantifier with fixed $M$; a statement of type $\Pow$ has a positive power
+saving.  No conversion between the two is permitted without a new theorem.
+\end{remark}
+
+\section{Typed endpoint compiler}
+
+The common exponents are
+\[
+ E_0=\frac53, \qquad E_*=\frac{1997}{1200}, \qquad
+ \Delta_*=E_0-E_* = \frac1{400}.
+\]
+For a lane with saving $\delta$ and reassembly loss $\lambda$, set
+\[
+ \sigma=\delta-\lambda.
+\]
+
+\begin{definition}[paid lane]
+A lane is paid if its type is $\Pow$ or $\Phase$ and
+$\sigma>\Delta_*$.  A fixed-log, missing, or deleted lane is not paid.  The
+two-lane compiler returns \texttt{CLOSED\_CONDITIONAL} exactly when both the
+center and radius lanes are paid and the residual-retained flag is true.
+\end{definition}
+
+\begin{theorem}[sound composition]
+Suppose
+\[
+ T_x=c_x+z_x, \qquad |z_x|\leq R_x,
+\]
+and the residual is retained.  If, for every sufficiently small $\varepsilon>0$,
+\begin{align}
+ |c_x|&\leq C_c(\varepsilon)x^{E_0-\delta_c+\lambda_c+\varepsilon},\\
+ R_x&\leq C_r(\varepsilon)x^{E_0-\delta_r+\lambda_r+\varepsilon},
+ \label{eq:powerlanes}
+\end{align}
+with
+\[
+ \delta_c-\lambda_c>\Delta_*, \qquad
+ \delta_r-\lambda_r>\Delta_*,
+ \]
+then $T_x=o(x^{E_*})$.
+\end{theorem}
+
+\begin{proof}
+The radial envelope from TPC-265 gives
+\[
+ |T_x|\leq |c_x|+|z_x|\leq |c_x|+R_x.
+\]
+Let $\eta>0$ be smaller than half the two strict gaps
+$\delta_c-\lambda_c-\Delta_*$ and
+$\delta_r-\lambda_r-\Delta_*$.  Choose $\varepsilon<\eta$ in
+\eqref{eq:powerlanes}.  Both terms are then
+$O(x^{E_* -\eta})$, after possibly shrinking $\eta$, and their sum is
+$o(x^{E_*})$.  This is exactly the compiler's paid-lane decision.
+\end{proof}
+
+\begin{theorem}[strict threshold and failure side]
+If a lane has effective saving equal to $\Delta_*$, its exponent is only at
+the target power (up to $\varepsilon$).  If its effective saving is smaller,
+the exponent is at or above the target scale.  Therefore the typed compiler
+cannot return a strict target payment in either case without an additional
+rate factor.
+\end{theorem}
+
+\begin{proof}
+The lane exponent is $E_0-\sigma+\varepsilon=E_*+(\Delta_*-\sigma)+\varepsilon$.
+Substitution of $\sigma=\Delta_*$ gives the borderline case; substitution of
+$\sigma<\Delta_*$ gives a nonnegative power excess.
+\end{proof}
+
+\section{Two hostile firewalls}
+
+\begin{theorem}[fixed-log non-promotion]
+For fixed $M$ and every $\delta>0$,
+\[
+ \frac{x^{E_0}}{(\log x)^M}\not=O(x^{E_0-\delta}).
+\]
+Consequently a fixed-log center or radius estimate carries zero fixed-power
+credit.
+\end{theorem}
+
+\begin{proof}
+The ratio of the left-hand scale to the proposed power scale is
+$x^\delta/(\log x)^M$, which tends to infinity.  Thus the transition
+$\LogType\to\Pow(\delta)$ is not a valid interface transition.
+\end{proof}
+
+\begin{theorem}[residual-retention firewall]
+For every $R>0$ and $c\in\C$,
+\[
+ \sup_{|z|\leq R}|c+z|=|c|+R.
+\]
+Hence a certificate that retains $c$ but deletes the Schur residual is not
+sound: the admissible endpoint can exceed the deleted output by the full
+radius $R$.
+\end{theorem}
+
+\begin{proof}
+The triangle inequality gives the upper bound.  Equality is attained by
+$z=Rc/|c|$ when $c\neq0$, and by any point of modulus $R$ when $c=0$.
+The deleted output has size $|c|$, so the aligned endpoint creates a gap $R$.
+\end{proof}
+
+\section{Exact hostile matrix}
+
+The certificate uses $c=2$ and $R=3$.  The disk endpoints include the aligned
+value $5$, the opposite value $-1$, and the cancellation point $0$; the
+circle has upper edge $5$ and lower edge $1$.  Three independent residual
+lanes with radii $1,2,3$ have Minkowski radius $6$ and upper edge $8$ over the
+same center.  Every value is an exact rational identity.
+
+The six compiler states are shown below.  ``Strict'' uses saving $1/320$;
+the subcritical row uses $1/320-1/1200=11/4800$.
+\begin{table}[ht]
+\centering
+\begin{tabular}{lll}
+\toprule
+State & Typed input & Decision\\
+\midrule
+Strict pair & power center + signed-phase radius & \texttt{CLOSED\_CONDITIONAL}\\
+Fixed-log center & fixed-log center + power radius & \texttt{OPEN\_LOG\_CENTER}\\
+Missing radius & power center + missing radius & \texttt{OPEN\_RADIUS}\\
+Borderline lane & one lane has $\sigma=1/400$ & \texttt{BORDERLINE}\\
+Subcritical lane & one lane has $\sigma<1/400$ & \texttt{INSUFFICIENT}\\
+Deleted residual & retained flag is false & \texttt{UNSOUND\_RESIDUAL\_DELETION}\\
+\bottomrule
+\end{tabular}
+\caption{The exact six-state end-to-end firewall.}
+\label{tab:matrix}
+\end{table}
+
+\begin{theorem}[minimal interface classification]
+Relative to the declared lane interface, the six decisions in
+Table~\ref{tab:matrix} are exact.  In particular, no row other than the
+strict pair can be relabelled as a closed conditional endpoint proof.
+\end{theorem}
+
+\begin{proof}
+The strict row is Theorem~1.  The fixed-log row is rejected by the
+fixed-log non-promotion theorem, and the deleted row by the residual-retention
+theorem.  A missing radius supplies no bound for the second summand.  At
+equality the exponent is exactly the target power before the arbitrary
+$\varepsilon$ loss; below equality it is worse.  The rational fixture
+computations attain the displayed endpoint and exponent comparisons, so each
+failure label is witnessed rather than inferred from a parser convention.
+\end{proof}
+
+\section{Route consequence and limitations}
+
+The audited chain has the following current typed state:
+\[
+ \begin{aligned}
+ \text{center}&=\LogType,\\
+ \text{residual}&=\text{Schur set with radius OPEN},\\
+ \text{endpoint}&=\text{radial envelope}.
+ \end{aligned}
+\]
+It is therefore correctly open for the literal V59 endpoint.  TPC-266 pays no
+new arithmetic lane; it prevents invalid credit from being assigned to one.
+The next legitimate input is a literal residual-radius estimate or a signed
+phase theorem with effective saving strictly greater than $1/400$ after all
+losses.  Such an input must preserve the hard window, unit masks, signs, and
+the deleted diagonal inherited by the previous interfaces.
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Claim & Status\\
+\midrule
+Typed composition and six-state matrix & \texttt{PROVED\_EXACT}\\
+Fixed-log non-promotion & \texttt{PROVED\_EXACT}\\
+Residual retention & \texttt{PROVED\_EXACT}\\
+Strict endpoint threshold & $1/400$ (exact interface threshold)\\
+Literal V59 radius and phase & \texttt{OPEN}\\
+Arithmetic $L^2$ and full Gate B & \texttt{NONE / OPEN}\\
+Twin-prime conclusion & \texttt{NONE}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Conclusion}
+
+The TPC-263--265 interfaces compose into a typed, fail-closed endpoint
+compiler.  Its positive theorem is conditional and exact; its negative
+results are equally important: fixed logarithms do not buy power savings, and
+the Schur residual cannot be erased.  The hostile matrix makes these rules
+machine-checkable while leaving the actual arithmetic bottleneck visible.
+
+\begin{thebibliography}{9}
+\bibitem{TPC265}
+L.~Wang, ``Schur radius to endpoint-budget compiler,'' TPC-265 project,
+repository release, 2026.
+
+\bibitem{TPC264}
+L.~Wang, ``Orthogonal-residual Schur firewall,'' TPC-264 project,
+repository release, 2026.
+
+\bibitem{TPC263}
+L.~Wang, ``Rank-three physical cross-Gram channel,'' TPC-263 project,
+repository release, 2026.
+
+\bibitem{HornJohnson}
+R.~A. Horn and C.~R. Johnson, \emph{Matrix Analysis}, Cambridge University
+Press, 2012.
+\end{thebibliography}
+
+\end{document}

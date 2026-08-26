@@ -2,13 +2,17 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V118 / TPC-265
+当前地图版本：V119 / TPC-266
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-265`（`PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER`）；
+当前编号锚点：`TPC-266`（`PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL`）；
 对应论文目录为
-`papers/tpc-265-schur-endpoint-budget-compiler/`。
+`papers/tpc-266-end-to-end-claim-firewall/`。
+TPC-266 承接 TPC-263→TPC-264→TPC-265 的整条 typed chain，证明 fixed-log
+center 不能升级为 fixed-power、Schur residual 不能删除，且两条有效 lane 都须
+严格支付 `1/400` 才能返回 conditional closure；actual V59 radius/phase 仍 OPEN。
+
 TPC-265 承接 TPC-264 的 exact Schur residual set，证明 projected center 与
 residual radius 的 sharp endpoint 为 `|c|+R`，并将 center/radius 两 lane 接入
 严格 `1/400` budget compiler；actual V59 radius/phase 仍 OPEN。
@@ -59,9 +63,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V118 / TPC-265                    |
-        | SCHUR ENDPOINT-BUDGET COMPILER PAID         |
-        | |c|+R sharp; literal radius/phase still OPEN|
+        | YOU ARE HERE — V119 / TPC-266                    |
+        | END-TO-END CLAIM FIREWALL PAID              |
+        | typed chain audited; literal radius still OPEN|
         +--------------------------------------------------+
                 |
                 v
@@ -119,7 +123,9 @@ marginal-only residual identification。TPC-261 再把 baseline-to-target 的端
 suppression 不产生 fixed-power credit。TPC-264 精确分类 `C_perp` 的 Schur
 disk/circle/singleton；TPC-265 又证明该 residual geometry 的 sharp radial
 support 是 `|c|+R`，并把 center/radius 两 lane 编译回同一 strict `1/400`
-测试。FULL_GATE_B、global strict `1/400`、
+测试。TPC-266 再把这三层接口组成 typed end-to-end firewall，逐项拒绝
+fixed-log promotion、residual deletion、borderline equality 与 subcritical lane。
+FULL_GATE_B、global strict `1/400`、
 arithmetic `L2`、literal mode-zero estimate、full scalar 与 fixed-atom credit
 继续 OPEN/UNPAID/NONE。**
 
@@ -1252,6 +1258,51 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.60 V119 / TPC-266：typed end-to-end residual claim firewall
+
+TPC-266 对 TPC-263→TPC-264→TPC-265 做一次独立的 hostile composition audit。
+它把三篇论文的输出标成四个不可混淆的类型：`FIXED_LOG` center、`SCHUR_SET`
+residual、`RADIAL_ENVELOPE` endpoint 与 `BUDGET_DECISION`。定义
+`sigma=delta-lambda` 后，只有 `POWER` 或 `SIGNED_PHASE` 且
+`sigma>1/400` 的 lane 才能付款；residual-retained flag 是必要条件。
+
+exact six-state matrix 为：
+
+```text
+strict pair       -> CLOSED_CONDITIONAL
+fixed-log center  -> OPEN_LOG_CENTER
+missing radius    -> OPEN_RADIUS
+borderline lane   -> BORDERLINE
+subcritical lane  -> INSUFFICIENT
+deleted residual  -> UNSOUND_RESIDUAL_DELETION
+```
+
+```text
+TPC266_ROUTE_ADVANCE = YES_SCOPED_END_TO_END_CLAIM_FIREWALL
+TPC266_TYPED_COMPOSITION = PROVED_EXACT
+TPC266_FIXED_LOG_NONPROMOTION = PROVED_EXACT
+TPC266_RESIDUAL_RETENTION_FIREWALL = PROVED_EXACT
+TPC266_FAILURE_MATRIX = PROVED_EXACT_SIX_STATE
+TPC266_STRICT_PAYMENT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC266_CENTER_CURRENT_TYPE = FIXED_LOG
+TPC266_RESIDUAL_CURRENT_TYPE = SCHUR_SET_RADIUS_OPEN
+TPC266_ACTUAL_V59_RADIUS = OPEN
+TPC266_ACTUAL_V59_PHASE = OPEN
+TPC266_FIXED_POWER_CREDIT = 0
+TPC266_ARITHMETIC_ADVANCE = NO
+TPC266_L2 = NONE
+TPC266_FULL_GATE_B = OPEN
+TPC266_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC266_TWIN_PRIME_RESULT = NONE
+TPC266_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC266_STATUS = PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL
+TPC266_ROUND2_CLUE = PROVE_A_LITERAL_V59_RADIUS_OR_SIGNED_PHASE_BOUND_WITH_EFFECTIVE_SAVING_GREATER_THAN_1_OVER_400
+```
+
+这一步的 strongest positive result 是 typed soundness 与 exact hostile
+classification；strongest obstruction 是 fixed-log center 加 open radius
+无法 closure。它仍是 structural audit，不是 literal V59 arithmetic theorem。
 
 ## 5.59 V118 / TPC-265：Schur radius to endpoint-budget compiler
 
@@ -3487,7 +3538,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V118 / TPC-265：
+截至 V119 / TPC-266：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -3534,6 +3585,25 @@ TPC265_TWIN_PRIME_RESULT = NONE
 TPC265_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
 TPC265_STATUS = PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER
 TPC265_ROUND2_CLUE = TEST_LITERAL_RESIDUAL_RADIUS_OR_PHASE_AGAINST_THE_TWO_LANE_BUDGET
+TPC266_ROUTE_ADVANCE = YES_SCOPED_END_TO_END_CLAIM_FIREWALL
+TPC266_TYPED_COMPOSITION = PROVED_EXACT
+TPC266_FIXED_LOG_NONPROMOTION = PROVED_EXACT
+TPC266_RESIDUAL_RETENTION_FIREWALL = PROVED_EXACT
+TPC266_FAILURE_MATRIX = PROVED_EXACT_SIX_STATE
+TPC266_STRICT_PAYMENT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC266_CENTER_CURRENT_TYPE = FIXED_LOG
+TPC266_RESIDUAL_CURRENT_TYPE = SCHUR_SET_RADIUS_OPEN
+TPC266_ACTUAL_V59_RADIUS = OPEN
+TPC266_ACTUAL_V59_PHASE = OPEN
+TPC266_FIXED_POWER_CREDIT = 0
+TPC266_ARITHMETIC_ADVANCE = NO
+TPC266_L2 = NONE
+TPC266_FULL_GATE_B = OPEN
+TPC266_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC266_TWIN_PRIME_RESULT = NONE
+TPC266_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC266_STATUS = PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL
+TPC266_ROUND2_CLUE = PROVE_A_LITERAL_V59_RADIUS_OR_SIGNED_PHASE_BOUND_WITH_EFFECTIVE_SAVING_GREATER_THAN_1_OVER_400
 TPC263_ROUTE_ADVANCE = YES_SCOPED_RANK_THREE_LOG_CHANNEL
 TPC263_W_FRAME_MOMENTS = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
 TPC263_ADJOINT_FRAME_COEFFICIENTS = PROVED_SOURCE_BACKED_TPC257
@@ -4375,6 +4445,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V119 / TPC-266 | Bridge A / Gate B：TPC-263→265 typed end-to-end claim firewall 已完成；literal V59 radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-266` | 精确证明 fixed-log non-promotion、residual-retention firewall 与 strict `1/400` six-state hostile composition；无新 arithmetic credit |
 | 2026-08-26 | V118 / TPC-265 | Bridge A / Gate B：Schur residual 的 sharp endpoint-budget compiler 已完成；literal residual radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-265` | 证明 disk/circle 的 radial upper endpoint 恰为 `|c|+R`，并将 center/radius 两 lane 接入严格 `1/400` effective-saving 条件；fixed-log credit 为零 |
 | 2026-08-26 | V117 / TPC-264 | Bridge A / Gate B：orthogonal-residual Schur firewall 已完成；literal residual radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-264` | 对 TPC-263 的 `C_perp` 给出 exact disk/circle/singleton feasible-set theorem；二维补空间的 synthetic endpoint radius 为 `x^(5/3)`，无 fixed-power credit |
 | 2026-08-26 | V116 / TPC-263 | Bridge A / Gate B：rank-three physical cross-Gram channel 已完成；orthogonal residual、arithmetic `L2` 与 full Gate B open | `TPC-263` | 将 TPC-254 的四 block fixed-log hybrid control 与 TPC-257 三个 adjoint asymptotics 在同一 exact `P3` 上相乘，得到 `C_3=O(x^(5/3)/(log x)^(M+3))`；保留 `C_perp`，无 fixed-power credit |

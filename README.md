@@ -9,7 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-265 在 TPC-264 的 orthogonal-residual Schur firewall 之后，
+当前主线状态：TPC-266 在 TPC-265 的 Schur endpoint-budget compiler 之后，
+对 TPC-263→TPC-264→TPC-265 做了 typed end-to-end hostile audit，精确证明
+fixed-log center 不能升级为 fixed-power lane、Schur residual 不能删除，且只有
+center/radius 两条 effective saving 都严格大于 `1/400` 时才可返回 conditional
+closure。actual V59 radius/phase、arithmetic `L2`、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+TPC-265 在 TPC-264 的 orthogonal-residual Schur firewall 之后，
 把 residual disk 的 sharp worst-case `|c|+R` 接入 endpoint ledger，并证明中心 lane
 与 radius lane 各自都必须有严格大于 `1/400` 的 effective power saving；fixed-log
 control 仍是零 fixed-power credit。actual V59 radius/phase、arithmetic `L2`、full
@@ -58,6 +65,7 @@ OPEN/UNPAID/NONE。
 
 ## 3. Latest Paper
 
+tpc-266-end-to-end-claim-firewall - 当前阶段 - 对 TPC-263→TPC-264→TPC-265 建立 exact typed end-to-end claim firewall，完成 fixed-log non-promotion、residual-retention firewall 与 strict `1/400` 六状态 hostile matrix；literal V59 radius/phase 仍 OPEN。
 tpc-265-schur-endpoint-budget-compiler - 当前阶段 - 将 Schur residual radius 编译成 sharp `|c|+R` endpoint lane，给出严格 `1/400` 两 lane 支付条件并封住 norm-only cancellation credit；literal V59 radius/phase 仍 OPEN。
 tpc-264-orthogonal-residual-schur-firewall - 当前阶段 - 精确分类 `C_perp` 的 disk/circle/singleton Schur feasible set，量化 rank-three channel 之后仍缺少的 residual radius/phase；synthetic endpoint witness 不产生 arithmetic credit。
 tpc-263-rank-three-physical-cross-gram - 当前阶段 - 将四块 hybrid `w` 的 fixed-log 控制与 TPC-257 三个 adjoint asymptotic 在 exact `P3` 上相乘，支付 rank-three physical cross-Gram channel；正交残差仍 OPEN。

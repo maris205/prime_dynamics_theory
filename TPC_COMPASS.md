@@ -1,9 +1,46 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V118 / SCHUR_ENDPOINT_BUDGET_COMPILER`
-claim level：`PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER`
-编号事实终点：TPC-265；TPC-265 trigger：`true`
+状态：`BOLD_CHANNEL_V119 / END_TO_END_CLAIM_FIREWALL`
+claim level：`PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL`
+编号事实终点：TPC-266；TPC-266 trigger：`true`
+
+当前 TPC-266 入口：proof 为
+`research/tpc-big-road/bridge_b_typed_end_to_end_claim_firewall.md`，checker 为
+`tpc_bridge_b_typed_end_to_end_claim_firewall_checker.py`，编号论文为
+`papers/tpc-266-end-to-end-claim-firewall/`。它把 TPC-263 的 fixed-log center、
+TPC-264 的 Schur residual set 与 TPC-265 的 sharp radial endpoint 组成一个
+typed compiler，并以 exact six-state hostile matrix 封住 fixed-log promotion、
+residual deletion、borderline equality 与 subcritical lane 的非法 closure。
+actual V59 radius/phase、arithmetic `L2` 与 full Gate-B 仍 OPEN/NONE。
+
+```text
+TPC266_MAXIMUM_CLAIM = PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL
+TPC266_ROUTE_ADVANCE = YES_SCOPED_END_TO_END_CLAIM_FIREWALL
+TPC266_TYPED_COMPOSITION = PROVED_EXACT
+TPC266_FIXED_LOG_NONPROMOTION = PROVED_EXACT
+TPC266_RESIDUAL_RETENTION_FIREWALL = PROVED_EXACT
+TPC266_FAILURE_MATRIX = PROVED_EXACT_SIX_STATE
+TPC266_STRICT_PAYMENT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC266_CENTER_CURRENT_TYPE = FIXED_LOG
+TPC266_RESIDUAL_CURRENT_TYPE = SCHUR_SET_RADIUS_OPEN
+TPC266_ACTUAL_V59_RADIUS = OPEN
+TPC266_ACTUAL_V59_PHASE = OPEN
+TPC266_FIXED_POWER_CREDIT = 0
+TPC266_ARITHMETIC_ADVANCE = NO
+TPC266_L2 = NONE
+TPC266_FULL_GATE_B = OPEN
+TPC266_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC266_TWIN_PRIME_RESULT = NONE
+TPC266_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC266_STATUS = PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL
+TPC266_ROUND2_CLUE = PROVE_A_LITERAL_V59_RADIUS_OR_SIGNED_PHASE_BOUND_WITH_EFFECTIVE_SAVING_GREATER_THAN_1_OVER_400
+```
+
+strongest positive result：typed chain composition and exact six-state hostile
+classification；strongest obstruction：fixed-log center plus open Schur radius
+cannot close the endpoint；open theorem：literal V59 radius or signed-phase
+bound with effective saving strictly above `1/400`。
 
 当前 TPC-265 入口：proof 为
 `research/tpc-big-road/bridge_b_schur_endpoint_budget_compiler.md`，checker 为
