@@ -9,14 +9,18 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-269 在同一个 literal V59 finite physical operator 上，把 cutoff
-换成注册的 `z_N=floor(log N)` proxy，并沿
-`K_theta=(1-theta)K_1+theta K_2` 的 convex profile path 做 exact affine transfer。
-12 个 outward-certified rows 中 8 个 contraction、4 个 obstruction；固定 central
-clock 的 `theta=9/10` 与 `theta=24/25` 分别位于 `rho=1/4` 两侧。它证明了 finite
-profile sensitivity 仍存在，但不构成 source-level growing theorem；cross-scale radius
-normalization、actual V59 radius/phase、arithmetic `L2`、full Gate B 与 twin-prime
-conclusion 仍 OPEN/NONE。
+当前主线状态：TPC-270 在同一个 literal V59 finite physical operator 上，把 TPC-269
+留下的 residual radius 跨尺度问题写成 exact endpoint-normalized observable
+`Xi=(R_squared)^3/N^10=(R/N^(5/3))^6`。六个 base rows、四个 dyadic ratios、五个
+adjacent ratios 与三个 profile controls 均完成 outward interval 证书；dyadic pattern
+为 `DROP_RISE_RISE_DROP`，其中 `96->192` 超过 23 倍而 `64->128` 低于 `1/4`。
+这是 finite normalization audit，不是 source-level radius theorem；fixed-power credit、
+arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+TPC-269 是直接上游：它在同一对象上完成 registered `z_N=floor(log N)` proxy 与
+exact convex-profile transfer，12 行中 8 个 contraction、4 个 obstruction；中心
+`theta=9/10`/`24/25` 翻过 `rho=1/4`。TPC-270 说明即使 endpoint normalization
+固定，有限尺度仍出现强烈非稳定性，但不把有限比值升级为渐近结论。
 
 TPC-268 在 TPC-267 的有限 residual census 之后，固定同一个 literal V59 physical
 operator，只改变声明的有限 local cutoff、rounded clock 与 kernel exponent。16 个
@@ -78,6 +82,7 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-270-cross-scale-radius-normalization - 当前阶段 - 在同一 finite literal V59 operator 上建立 exact `Xi=(R_squared)^3/N^10` endpoint normalization，认证 4 个 dyadic 与 5 个 adjacent scale ratios，得到 `DROP_RISE_RISE_DROP`；profile controls 落在 `(1/2,3/4)`，source-level radius、arithmetic `L2` 与 full Gate B 仍 OPEN。
 tpc-269-growing-cutoff-profile-transfer - 当前阶段 - 在同一 finite literal V59 operator 上引入注册的 growing-cutoff proxy 与 exact convex-profile transfer；12 行中 8 个 contraction、4 个 obstruction，中心 `theta=9/10`/`24/25` 翻转表明 profile-uniform quarter bound 失败，cross-scale radius theorem 仍 OPEN。
 
 tpc-268-finite-cutoff-sensitivity-obstruction - 当前阶段 - 在同一 finite literal V59 operator 上完成 cutoff/clock/kernel sensitivity audit，16 行中 10 个 contraction、6 个 outward-certified obstruction；中心 `z=2`/`z=3` 翻转是 scoped finite result，渐近 theorem 与 full Gate B 仍 OPEN。

@@ -1,9 +1,55 @@
 # TPC HANDOFF
 
-更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V122_TPC269_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER_RELEASED`
+更新时间：2026-08-27
+交接状态：`BOLD_CHANNEL_V123_TPC270_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_RELEASED`
 
-TPC-269 当前 section：growing-cutoff and convex-profile transfer
+TPC-270 当前 section：cross-scale endpoint-normalized radius
+-----------------------------------------------------------------------------------------------
+
+TPC-270 is the controlled continuation of TPC-269. It freezes the same finite literal V59
+physical operator, registered `z_N=floor(log N)` cutoff, convex profile interface, and
+rank-three Haar projection, and introduces the exact endpoint-normalized observable
+
+```text
+Xi=(R_squared)^3/N^10=(R/N^(5/3))^6.
+```
+
+Six base rows, four dyadic ratios, five adjacent ratios, and three matched profile controls
+are certified by outward intervals, an independent reconstruction, and a normalization
+stress audit. The dyadic pattern is `DROP_RISE_RISE_DROP`; in particular `96->192` is
+above `23`, while `64->128` is below `1/4`. This is a finite normalization audit and a
+scoped stability obstruction, not a source-level radius theorem or asymptotic counterexample.
+
+```text
+TPC270_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
+TPC270_ROUTE_ADVANCE = YES_SCOPED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
+TPC270_ENDPOINT_NORMALIZATION = PROVED_EXACT_FINITE_IDENTITY
+TPC270_CROSS_SCALE_VARIATION = NUMERICALLY_CERTIFIED_FINITE
+TPC270_PROFILE_CONTROL = NUMERICALLY_CERTIFIED_FINITE
+TPC270_FINITE_STABILITY = REFUTED_SCOPED
+TPC270_SOURCE_LEVEL_RADIUS = OPEN_ASYMPTOTIC
+TPC270_SOURCE_LEVEL_PHASE = OPEN_ASYMPTOTIC
+TPC270_FIXED_POWER_CREDIT = 0
+TPC270_ARITHMETIC_ADVANCE = NO
+TPC270_L2 = NONE
+TPC270_FULL_GATE_B = OPEN
+TPC270_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC270_TWIN_PRIME_RESULT = NONE
+TPC270_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
+TPC270_ROUND2_CLUE = TEST_SOURCE_LEVEL_RADIUS_UPPER_BOUND_WITH_EXPLICIT_POWER_NORMALIZATION
+```
+
+Strongest positive result: exact sixth-power normalization with threshold-separated
+cross-scale ratios. Strongest obstruction: the same finite registry has both a greater-than-
+23-fold rise and a sub-quarter drop. The next theorem is a source-compatible radius upper
+bound with explicit power and uniformity; arithmetic `L2`, full Gate B, and the twin-prime
+conclusion remain open/none. The Session-named `propose.md` and route evaluator files are
+absent from this checkout; the local proof package, theorem ledger, certificate, bridge
+checker, and `AGENTS.md` remain the fail-closed fallback authority.
+
+-----------------------------------------------------------------------------------------------
+
+TPC-269 上游 section：growing-cutoff and convex-profile transfer
 -----------------------------------------------------------------------------------------------
 
 TPC-269 is the controlled continuation of TPC-268. It freezes the same finite literal V59
@@ -8472,12 +8518,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V122/TPC-269 是当前 release；其 normal/optimized bridge checker 已追加到下列
-curated cascade，故总数从 99 对更新为 100 对。下列长版本链以 V119/TPC-266 开头的
+V123/TPC-270 是当前 release；其 normal/optimized bridge checker 已追加到下列
+curated cascade，故总数从 100 对更新为 101 对。下列长版本链以 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
 
 22项启动回归之后，当前 V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；二百次（100 对）必须都为零，且每一对 stdout
+执行 normal与 optimized只读 checker；二百零二次（101 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -8705,7 +8751,31 @@ python -B research/tpc-big-road/tpc_bridge_b_growing_cutoff_profile_transfer_che
 python -O -B research/tpc-big-road/tpc_bridge_b_growing_cutoff_profile_transfer_checker.py --check
 ```
 
+TPC-270 的项目级 producer、independent replay、normalization stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-270-cross-scale-radius-normalization/code/tpc270_cross_scale_radius_certificate.py --check
+python -O -B papers/tpc-270-cross-scale-radius-normalization/code/tpc270_cross_scale_radius_certificate.py --check
+python -B papers/tpc-270-cross-scale-radius-normalization/experiments/tpc270_independent_checker.py --check
+python -O -B papers/tpc-270-cross-scale-radius-normalization/experiments/tpc270_independent_checker.py --check
+python -B papers/tpc-270-cross-scale-radius-normalization/experiments/tpc270_normalization_stress.py --check
+python -O -B papers/tpc-270-cross-scale-radius-normalization/experiments/tpc270_normalization_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_cross_scale_radius_normalization_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_cross_scale_radius_normalization_checker.py --check
+```
+
 随后优先读取：
+
+最新 TPC-270 入口：
+
+```text
+papers/tpc-270-cross-scale-radius-normalization/README.md
+papers/tpc-270-cross-scale-radius-normalization/PROOF_PACKAGE.md
+papers/tpc-270-cross-scale-radius-normalization/notes/theorem_ledger.md
+papers/tpc-270-cross-scale-radius-normalization/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_cross_scale_radius_normalization.md
+research/tpc-big-road/tpc_bridge_b_cross_scale_radius_normalization_checker.py
+```
 
 最新 TPC-269 入口：
 

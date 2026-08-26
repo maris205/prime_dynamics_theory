@@ -1,13 +1,53 @@
-# TPC big road V122 / TPC-269: growing-cutoff and convex-profile transfer
+# TPC big road V123 / TPC-270: cross-scale endpoint-normalized radius
 
-更新时间：2026-08-26
+更新时间：2026-08-27
 
-状态：`TPC269_NUMERICALLY_CERTIFIED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC270_NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-269 proof 为
+当前 TPC-270 proof 为
+`bridge_b_cross_scale_radius_normalization.md`，checker 为
+`tpc_bridge_b_cross_scale_radius_normalization_checker.py`，编号论文为
+`../../papers/tpc-270-cross-scale-radius-normalization/`。
+
+TPC-270 保持 TPC-269 的 finite literal V59 physical operator、registered
+`z_N=floor(log N)` cutoff 与 profile interface 不变，定义
+`Xi=(R_squared)^3/N^10=(R/N^(5/3))^6`。六个 base rows、四个 dyadic ratios、五个
+adjacent ratios 与三个 profile controls 经 outward interval、独立重算和 stress audit
+认证；dyadic pattern 为 `DROP_RISE_RISE_DROP`，其中 `96->192` 超过 23 倍而
+`64->128` 低于 `1/4`。这是 finite normalization audit，不是 source-level radius
+theorem；fixed-power payment、arithmetic `L2`、full Gate-B 与 twin-prime conclusion
+仍 OPEN/NONE。
+
+```text
+TPC270_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
+TPC270_ROUTE_ADVANCE = YES_SCOPED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
+TPC270_ENDPOINT_NORMALIZATION = PROVED_EXACT_FINITE_IDENTITY
+TPC270_CROSS_SCALE_VARIATION = NUMERICALLY_CERTIFIED_FINITE
+TPC270_PROFILE_CONTROL = NUMERICALLY_CERTIFIED_FINITE
+TPC270_FINITE_STABILITY = REFUTED_SCOPED
+TPC270_SOURCE_LEVEL_RADIUS = OPEN_ASYMPTOTIC
+TPC270_SOURCE_LEVEL_PHASE = OPEN_ASYMPTOTIC
+TPC270_FIXED_POWER_CREDIT = 0
+TPC270_ARITHMETIC_ADVANCE = NO
+TPC270_L2 = NONE
+TPC270_FULL_GATE_B = OPEN
+TPC270_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC270_TWIN_PRIME_RESULT = NONE
+TPC270_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
+TPC270_ROUND2_CLUE = TEST_SOURCE_LEVEL_RADIUS_UPPER_BOUND_WITH_EXPLICIT_POWER_NORMALIZATION
+```
+
+strongest positive result：exact endpoint normalization and threshold-separated
+finite cross-scale certificate；strongest obstruction：the normalized radius has both
+a greater-than-23-fold dyadic rise and a sub-quarter drop；open theorem：a
+source-compatible radius bound with explicit power and uniformity。
+
+## Upstream TPC-269
+
+TPC-269 proof 为
 `bridge_b_growing_cutoff_profile_transfer.md`，checker 为
 `tpc_bridge_b_growing_cutoff_profile_transfer_checker.py`，编号论文为
 `../../papers/tpc-269-growing-cutoff-profile-transfer/`。

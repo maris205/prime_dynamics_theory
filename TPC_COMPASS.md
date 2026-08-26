@@ -1,11 +1,47 @@
 # TPC distilled map and bold channel
 
-更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V122 / FINITE_GROWING_CUTOFF_PROFILE_TRANSFER`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER`
-编号事实终点：TPC-269；TPC-269 trigger：`true`
+更新时间：2026-08-27
+状态：`BOLD_CHANNEL_V123 / FINITE_CROSS_SCALE_RADIUS_NORMALIZATION`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT`
+编号事实终点：TPC-270；TPC-270 trigger：`true`
 
-当前 TPC-269 入口：proof 为
+当前 TPC-270 入口：proof 为
+`research/tpc-big-road/bridge_b_cross_scale_radius_normalization.md`，checker 为
+`tpc_bridge_b_cross_scale_radius_normalization_checker.py`，编号论文为
+`papers/tpc-270-cross-scale-radius-normalization/`。它保持 literal V59 finite
+physical operator 与 TPC-269 的 growing-cutoff registry 不变，定义
+`Xi=(R_squared)^3/N^10=(R/N^(5/3))^6`，并认证 6 个 base rows、4 个 dyadic
+ratios、5 个 adjacent ratios 与 3 个 profile controls。dyadic pattern 为
+`DROP_RISE_RISE_DROP`；这是 scoped finite normalization audit，不是 source-level
+radius theorem，fixed-power credit、arithmetic `L2` 与 full Gate-B 仍 OPEN/NONE。
+
+```text
+TPC270_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
+TPC270_ROUTE_ADVANCE = YES_SCOPED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
+TPC270_ENDPOINT_NORMALIZATION = PROVED_EXACT_FINITE_IDENTITY
+TPC270_CROSS_SCALE_VARIATION = NUMERICALLY_CERTIFIED_FINITE
+TPC270_PROFILE_CONTROL = NUMERICALLY_CERTIFIED_FINITE
+TPC270_FINITE_STABILITY = REFUTED_SCOPED
+TPC270_SOURCE_LEVEL_RADIUS = OPEN_ASYMPTOTIC
+TPC270_SOURCE_LEVEL_PHASE = OPEN_ASYMPTOTIC
+TPC270_FIXED_POWER_CREDIT = 0
+TPC270_ARITHMETIC_ADVANCE = NO
+TPC270_L2 = NONE
+TPC270_FULL_GATE_B = OPEN
+TPC270_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC270_TWIN_PRIME_RESULT = NONE
+TPC270_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
+TPC270_ROUND2_CLUE = TEST_SOURCE_LEVEL_RADIUS_UPPER_BOUND_WITH_EXPLICIT_POWER_NORMALIZATION
+```
+
+strongest positive result：exact sixth-power endpoint normalization and a
+threshold-separated finite dyadic certificate；strongest obstruction：the same
+registry has both a greater-than-23-fold rise and a drop below `1/4`；open theorem：
+source-compatible radius bound with explicit power and uniformity。
+
+## Upstream TPC-269
+
+TPC-269 入口：proof 为
 `research/tpc-big-road/bridge_b_growing_cutoff_profile_transfer.md`，checker 为
 `tpc_bridge_b_growing_cutoff_profile_transfer_checker.py`，编号论文为
 `papers/tpc-269-growing-cutoff-profile-transfer/`。它保持 literal V59 finite

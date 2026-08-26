@@ -1,15 +1,42 @@
 
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-26
+更新时间：2026-08-27
 
-状态：**TPC269_NUMERICALLY_CERTIFIED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC270_NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.63 当前：TPC-269 growing-cutoff and convex-profile transfer
+## 0.64 当前：TPC-270 cross-scale endpoint-normalized radius
+
+项目：`papers/tpc-270-cross-scale-radius-normalization/`
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT**。
+
+TPC-270 承接 TPC-269，冻结同一个 literal V59 finite physical operator、registered
+`z_N=floor(log N)` cutoff 与 convex profile interface，首次把 residual radius 写成
+可跨尺度比较的 exact observable
+`Xi=(R_squared)^3/N^10=(R/N^(5/3))^6`。六个 base rows、四个 dyadic ratios、五个
+adjacent ratios 与三个 profile controls 均由 outward interval、独立重算和 stress
+audit 认证。四个 dyadic intervals 的分类为
+`DROP_RISE_RISE_DROP`：`64->128<1/4`，`96->192>23`，`128->256>7`，而
+`192->384` 落在 `(3/4,1)`；profile controls 均落在 `(1/2,3/4)`。
+
+这给出一个新的 finite normalization audit 与 scoped stability obstruction，但不构成
+source-level radius bound、渐近反例或 fixed-power saving。arithmetic `L2`、full Gate B
+与 twin-prime conclusion 仍 open。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_ENDPOINT_NORMALIZATION_PLUS_4_DYADIC_RATIO_CERTIFICATES
+STRONGEST_OBSTRUCTION = NORMALIZED_RADIUS_HAS_GREATER_THAN_23_RISE_AND_SUBQUARTER_DROP
+OPEN_THEOREM = SOURCE_LEVEL_RADIUS_UPPER_BOUND_WITH_EXPLICIT_POWER_AND_UNIFORMITY
+REUSABLE_STRUCTURE = RADIUS_INTERVAL -> SIXTH_POWER NORMALIZATION -> POSITIVE SCALE RATIO
+ROUND2_CLUE = TEST_SOURCE_LEVEL_RADIUS_UPPER_BOUND_WITH_EXPLICIT_POWER_NORMALIZATION
+```
+
+## 0.63 已发布：TPC-269 growing-cutoff and convex-profile transfer
 
 项目：`papers/tpc-269-growing-cutoff-profile-transfer/`
 
