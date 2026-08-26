@@ -1,9 +1,35 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V110 / FOUR_BLOCK_HAAR_TRANSVERSE_NORM_FLOOR`
-claim level：`PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT`
-编号事实终点：TPC-257；TPC-257 trigger：`true`
+状态：`BOLD_CHANNEL_V111 / SOURCE_FROZEN_TRANSVERSE_NULL_CANCELLATION`
+claim level：`PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT`
+编号事实终点：TPC-258；TPC-258 trigger：`true`
+
+当前 TPC-258 入口：proof 为
+`research/tpc-big-road/bridge_b_source_frozen_transverse_null_direction.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_source_frozen_transverse_null_direction_checker.py`，编号论文为
+`papers/tpc-258-source-frozen-transverse-null-direction/`。它沿用 TPC-257 的 literal
+V59 四块 Haar frame，只用两个 source-frozen curvature constants 构造 unit null direction，
+并证明已知 `B_Q` transverse diagonal 的 leading term 精确抵消，得到
+`<z_null,A_x beta>=o(x^(7/6)/log^3(x))`。这是有限投影的 source-backed cancellation，
+不是 fixed-power estimate、arithmetic `L2` 上界或 full Gate B。
+
+```text
+TPC258_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT
+TPC258_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_NULL
+TPC258_ARITHMETIC_ADVANCE = YES_SCOPED_LOG_CANCELLATION
+TPC258_NULL_DIRECTION = PROVED_SOURCE_FROZEN_UNIT_VECTOR
+TPC258_LEADING_DIAGONAL_CANCELLATION = PROVED_SOURCE_BACKED
+TPC258_RATE_REFINEMENT = CONDITIONAL_THEOREM_LOG_ONE_OVER_X
+TPC258_FIXED_POWER_SAVING = NONE
+TPC258_L2 = NONE
+TPC258_FIXED_ATOM_CREDIT = 0
+TPC258_FULL_GATE_B = OPEN
+TPC258_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC258_TWIN_PRIME_RESULT = NONE
+TPC258_STATUS = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT
+TPC258_ROUND2_CLUE = TEST_THE_SOURCE_FROZEN_NULL_DIRECTION_AGAINST_THE_LITERAL_SIGNED_W_BETA_COUPLING_ON_THE_SAME_CLOCK_BEFORE_ANY_FULL_REASSEMBLY
+```
 
 当前 TPC-257 入口：proof 为
 `research/tpc-big-road/bridge_b_four_block_haar_transverse_norm_floor.md`，checker 为

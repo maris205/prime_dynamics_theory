@@ -1,16 +1,59 @@
-# TPC big road V110 / TPC-257: four-block Haar lift and transverse norm floor
+# TPC big road V111 / TPC-258: source-frozen transverse null direction
 
 更新时间：2026-08-26
 
-状态：`TPC257_PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT / FULL_GATE_B_OPEN`
+状态：`TPC258_PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-257 proof 为
-`bridge_b_four_block_haar_transverse_norm_floor.md`，checker 为
-`tpc_bridge_b_four_block_haar_transverse_norm_floor_checker.py`，编号论文为
-`../../papers/tpc-257-four-block-haar-transverse-norm-floor/`。
+当前 TPC-258 proof 为
+`bridge_b_source_frozen_transverse_null_direction.md`，checker 为
+`tpc_bridge_b_source_frozen_transverse_null_direction_checker.py`，编号论文为
+`../../papers/tpc-258-source-frozen-transverse-null-direction/`。
+
+TPC-258 keeps the literal V59 object and the exact four-block Haar frame from
+TPC-257.  From the two source-only curvature constants it forms
+
+```text
+L1=log(3456/3125), L2=log(884736/823543),
+z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2).
+```
+
+The vector is exactly unit and orthogonal to the old midpoint, and the
+TPC-257 leading diagonal cancels symbolically:
+
+```text
+<z_null,A_x beta>=o(x^(7/6)/log^3(x)).
+```
+
+The result is a finite projected cancellation with a conditional logarithmic
+rate refinement.  It does not claim a fixed-power saving, an arithmetic `L2`
+upper bound, or full Gate B.
+
+```text
+TPC258_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT
+TPC258_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_NULL
+TPC258_ARITHMETIC_ADVANCE = YES_SCOPED_LOG_CANCELLATION
+TPC258_NULL_DIRECTION = PROVED_SOURCE_FROZEN_UNIT_VECTOR
+TPC258_LEADING_DIAGONAL_CANCELLATION = PROVED_SOURCE_BACKED
+TPC258_RATE_REFINEMENT = CONDITIONAL_THEOREM_LOG_ONE_OVER_X
+TPC258_FIXED_POWER_SAVING = NONE
+TPC258_L2 = NONE
+TPC258_FIXED_ATOM_CREDIT = 0
+TPC258_FULL_GATE_B = OPEN
+TPC258_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC258_TWIN_PRIME_RESULT = NONE
+TPC258_STATUS = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT
+TPC258_ROUND2_CLUE = TEST_THE_SOURCE_FROZEN_NULL_DIRECTION_AGAINST_THE_LITERAL_SIGNED_W_BETA_COUPLING_ON_THE_SAME_CLOCK_BEFORE_ANY_FULL_REASSEMBLY
+```
+
+## V110 upstream: TPC-257 four-block Haar lift and transverse norm floor
+
+TPC-257 remains the direct upstream proof:
+`bridge_b_four_block_haar_transverse_norm_floor.md` with checker
+`tpc_bridge_b_four_block_haar_transverse_norm_floor_checker.py`, and project
+`../../papers/tpc-257-four-block-haar-transverse-norm-floor/`.
 
 TPC-257 keeps the literal V59 object and splits each ordered-rank child once
 more.  The resulting `z0,z1,z2` frame is exactly orthonormal.  Strong PNT

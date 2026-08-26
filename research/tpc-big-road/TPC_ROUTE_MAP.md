@@ -2,17 +2,19 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V110 / TPC-257
+当前地图版本：V111 / TPC-258
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-257`（`PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT`）；
+当前编号锚点：`TPC-258`（`PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT`）；
 对应论文目录为
-`papers/tpc-257-four-block-haar-transverse-norm-floor/`。
-TPC-257 在同一 literal V59 时钟上把两个 ordered-rank children 各 source-only 二分，
-证明三向 Haar frame exact orthonormal，并由二阶 PNT curvature 与 TPC-255 returned
-diagonal 得到 `span(z1,z2)` 的显式同阶 transverse norm floor；这是一项下界/obstruction，
-不是 full-output 上界。arithmetic `L2`、full Gate B 与 strict global `1/400` 仍 OPEN/UNPAID。
+`papers/tpc-258-source-frozen-transverse-null-direction/`。
+TPC-258 沿用 TPC-257 的 literal V59 四块 Haar frame，只由两个 source-only curvature
+constants 构造 unit `z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2)`，证明已知 `B_Q`
+transverse diagonal 的 leading term 精确抵消，得到
+`<z_null,A_x beta>=o(x^(7/6)/log^3(x))`。这是有限投影的 cancellation theorem，
+不是 fixed-power saving 或 full-output 上界；arithmetic `L2`、full Gate B 与 strict
+global `1/400` 仍 OPEN/UNPAID。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -54,9 +56,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V110 / TPC-257                    |
-        | FOUR-BLOCK HAAR TRANSVERSE FLOOR PAID           |
-        | lower floor proved; upper L2/full output OPEN   |
+        | YOU ARE HERE — V111 / TPC-258                    |
+        | SOURCE-FROZEN TRANSVERSE NULL CANCELLATION PAID|
+        | projected o(1) proved; fixed power/full L2 OPEN|
         +--------------------------------------------------+
                 |
                 v
@@ -99,12 +101,13 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V110 / TPC-257。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V111 / TPC-258。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
-因此“正交输出自动低阶”的捷径已被 scoped refute，但这仍不是 arithmetic `L2` 上界，
-也没有完成 signed coupling。FULL_GATE_B、global strict `1/400`、arithmetic `L2` 和
+TPC-258 再从这两个 descendant constants 构造 source-frozen null direction，证明该
+已知 diagonal main 在一个 transverse projection 上 `o(1)` 消失，但没有获得 fixed
+power。FULL_GATE_B、global strict `1/400`、arithmetic `L2`、signed `w` coupling 和
 fixed-atom credit 继续 OPEN/UNPAID/NONE。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
@@ -1236,6 +1239,52 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.52 V111 / TPC-258：source-frozen transverse null direction
+
+TPC-258 直接承接 TPC-257 的 three-mode Haar frame。令
+
+```text
+L1=log(3456/3125), L2=log(884736/823543),
+z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2).
+```
+
+这是在查看任何 coefficient、sign 或 finite sample 前由 source geometry 冻结的 unit
+vector；exact orthogonality 还保证它属于旧 midpoint 的 transverse complement。因为
+`kappa1=L1/2`、`kappa2=L2/2`，TPC-257 的显式 `B_Q` diagonal 在这里满足
+
+```text
+L2*kappa1-L1*kappa2=0,
+<z_null,A_x beta>=o(x^(7/6)/log^3(x)).
+```
+
+TPC-255 的 unit masks、deleted diagonal、hard window、child jumps 与 complex-kernel
+边界账本继续保留；`55/48` 对 `56/48` 的 gap 为 `1/48`。如果继承的 scalar remainder
+获得显式 `O(1/log x)` rate，则可条件性地编译成
+`O(x^(7/6)/log^4 x+x^(55/48+epsilon))`，但当前 release 不把 `o(1)` 改写成
+fixed-power saving。该结论是一个有限 projected cancellation，不是 arithmetic `L2`
+上界，也不关闭 signed `w` coupling 或 full Gate B。
+
+```text
+TPC258_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_NULL
+TPC258_ARITHMETIC_ADVANCE = YES_SCOPED_LOG_CANCELLATION
+TPC258_NULL_DIRECTION = PROVED_SOURCE_FROZEN_UNIT_VECTOR
+TPC258_LEADING_DIAGONAL_CANCELLATION = PROVED_SOURCE_BACKED
+TPC258_RATE_REFINEMENT = CONDITIONAL_THEOREM_LOG_ONE_OVER_X
+TPC258_FIXED_POWER_SAVING = NONE
+TPC258_L2 = NONE
+TPC258_FULL_GATE_B = OPEN
+TPC258_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC258_FIXED_ATOM_CREDIT = 0
+TPC258_TWIN_PRIME_RESULT = NONE
+TPC258_STATUS = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT
+TPC258_ROUND2_CLUE = TEST_THE_SOURCE_FROZEN_NULL_DIRECTION_AGAINST_THE_LITERAL_SIGNED_W_BETA_COUPLING_ON_THE_SAME_CLOCK_BEFORE_ANY_FULL_REASSEMBLY
+```
+
+地图位置：**V111 / TPC-258 已把 TPC-257 transverse floor 中的 leading diagonal
+方向精确消去一个 source-frozen projection；下一步是同一时钟上的 signed `w/beta`
+coupling 审计。当前只支付 `o(1)` cancellation，fixed-power、arithmetic `L2`、full
+Gate B 与 strict global `1/400` 仍 OPEN/UNPAID。**
 
 ## 5.51 V110 / TPC-257：four-block Haar lift and a transverse norm floor
 
@@ -3097,11 +3146,11 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V110 / TPC-257：
+截至 V111 / TPC-258：
 
 ```text
 ROUTE_ADVANCE = YES
-ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_AND_BETA_ADJOINT_HAAR_LANES
+ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_AND_BETA_ADJOINT_HAAR_LANES_PLUS_TRANSVERSE_NULL
 FIXED_ATOM_CREDIT = 0
 TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
 FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
@@ -3118,6 +3167,19 @@ TPC_254_TRIGGER = true
 TPC_255_TRIGGER = true
 TPC_256_TRIGGER = true
 TPC_257_TRIGGER = true
+TPC_258_TRIGGER = true
+TPC258_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_NULL
+TPC258_ARITHMETIC_ADVANCE = YES_SCOPED_LOG_CANCELLATION
+TPC258_NULL_DIRECTION = PROVED_SOURCE_FROZEN_UNIT_VECTOR
+TPC258_LEADING_DIAGONAL_CANCELLATION = PROVED_SOURCE_BACKED
+TPC258_RATE_REFINEMENT = CONDITIONAL_THEOREM_LOG_ONE_OVER_X
+TPC258_FIXED_POWER_SAVING = NONE
+TPC258_L2 = NONE
+TPC258_FULL_GATE_B = OPEN
+TPC258_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC258_FIXED_ATOM_CREDIT = 0
+TPC258_TWIN_PRIME_RESULT = NONE
+TPC258_STATUS = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT
 TPC256_LITERAL_BETA_DIVISOR_DENSITY_CANCELLATION = PROVED_EXACT_ENDPOINT_BOUND
 TPC256_LITERAL_BETA_HAAR_ASYMPTOTIC = PROVED_SOURCE_BACKED
 TPC256_BQ_WEIGHTED_PRIME_ASYMPTOTIC = PROVED_SOURCE_BACKED
@@ -3853,6 +3915,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V111 / TPC-258 | Bridge A / Gate B：source-frozen transverse null cancellation paid；fixed-power/upper `L2`/full output open | `TPC-258` | 从 TPC-257 two-dimensional transverse Haar floor 提取 source-only unit null direction、证明 `B_Q` leading diagonal exact cancellation、保留 `1/48` boundary gap 与 `o(1)` rate firewall；signed `w` coupling、full Gate B and strict global `1/400` remain open |
 | 2026-08-26 | V110 / TPC-257 | Bridge A / Gate B：four-block Haar transverse lower floor paid；upper `L2`/full output open | `TPC-257` | source-only four-block refinement、exact three-mode Haar frame、three explicit PNT curvature constants、`B_Q` diagonal amplification、bounded-variation extension、same-order transverse obstruction；full Gate B and strict global `1/400` remain open |
 | 2026-08-26 | V109 / TPC-256 | Bridge A / Gate B：literal beta and adjoint midpoint Haar asymptotics paid；transverse/full output open | `TPC-256` | divisor-density endpoint cancellation、second-order PNT curvature、explicit `log(32/27)` main、`B_Q` amplification、`H^2/q` boundary moment、`1/48` separation 与 normalized phase；scoped arithmetic advance |
 | 2026-08-26 | V108 / TPC-255 | Bridge A / Gate B：literal adjoint normal form exact；`B_Q` beta midpoint plus unit/boundary lanes unestimated | `TPC-255` | complete centered Poisson zero、deleted-diagonal return、joint output-mask centering、input-unit correction、hard-window 与 child-jump compiler；exact literal structure advance, arithmetic unchanged in this paper |

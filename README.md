@@ -9,13 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-257 将 TPC-256 的 ordered-rank midpoint 细分成四个 source-only
-consecutive blocks。全局 midpoint `z0` 与两个 within-child Haar directions `z1,z2`
-exact orthonormal；强 PNT 二阶曲率与同一个 `B_Q` diagonal 证明三个 adjoint
-coefficients 都是 `x^(7/6)/log^3(x)` 同阶，并得到 midpoint-transverse plane 的显式
-norm floor，主因子为 `(9/2)*0.061792126717520...`。这严格否定“一个 midpoint
-projection 后 orthogonal output 自动低阶”的捷径；但它只是 lower floor，不是 arithmetic
-`L2` 上界。full Gate B、strict global `1/400` 与 twin-prime conclusion 仍开放。
+当前主线状态：TPC-258 在 TPC-257 的 two-dimensional transverse Haar plane 中，
+只用 source geometry 的两个曲率常数构造
+`z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2)`，并证明显式 `B_Q` diagonal 在该方向上
+精确抵消：`<z_null,A_x beta>=o(x^(7/6)/log^3(x))`。这是一个真实的、有限投影的
+source-backed cancellation；但没有把 `o(1)` 偷换成 fixed-power saving，full arithmetic
+`L2`、signed `w` coupling、full Gate B、strict global `1/400` 与 twin-prime conclusion
+仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -29,6 +29,8 @@ projection 后 orthogonal output 自动低阶”的捷径；但它只是 lower f
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-258-source-frozen-transverse-null-direction` - `PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT` - 在 TPC-257 的四块 Haar frame 中以预先冻结的曲率向量构造单位 null direction，证明 transverse `B_Q` diagonal 的 `o(1)` cancellation；明确保留 boundary/rate firewall，未宣称 fixed-power、arithmetic `L2` 或 Gate B。
 
 `tpc-257-four-block-haar-transverse-norm-floor` - `PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT` - 将 TPC-256 的两个 rank children 各再 source-only 二分，证明三向 Haar frame exact orthonormal、三个 literal `beta` curvature constants 显式为正，并由 bounded-variation adjoint compiler 得到 `span(z1,z2)` 的同阶 transverse norm floor；这是下界/obstruction，不是 `L2` 上界或 full Gate-B payment。
 

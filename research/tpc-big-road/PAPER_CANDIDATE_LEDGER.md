@@ -2,11 +2,56 @@
 
 更新时间：2026-08-26
 
-状态：**TPC257_PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT / FULL_GATE_B_OPEN**
+状态：**TPC258_PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.52 已发布：TPC-258 source-frozen transverse null direction
+
+项目：`papers/tpc-258-source-frozen-transverse-null-direction/`
+
+类型：**PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT**。
+
+TPC-258 takes the exact four-block frame from TPC-257 and uses only the two
+limiting descendant curvature constants
+`L1=log(3456/3125)` and `L2=log(884736/823543)` to define the source-frozen
+unit vector
+`z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2)`.  Since
+`kappa1=L1/2` and `kappa2=L2/2`, the leading `B_Q` diagonal cancels exactly:
+
+```text
+<z_null,A_x beta>=o(x^(7/6)/log^3(x)).
+```
+
+The proof retains the literal masks, deleted diagonal, complex kernel,
+hard-window lane, and child-jump lane inherited from TPC-255.  An explicit
+`O(1/log x)` refinement is recorded only conditionally; an adversarial
+`1/sqrt(log x)` error shows why the released `o(1)` statement does not imply
+a fixed-power saving.
+
+```text
+STRONGEST_POSITIVE_RESULT = A_SOURCE_FROZEN_UNIT_VECTOR_IN_THE_TRANSVERSE_HAAR_PLANE_CANCELS_THE_EXPLICIT_TPC257_BQ_DIAGONAL_MAIN
+STRONGEST_OBSTRUCTION = THE_UNCONDITIONAL_NULL_RESULT_IS_ONLY_o_ONE_AND_DOES_NOT_PAY_ANY_FIXED_POWER_ENDPOINT
+OPEN_THEOREM = COUPLE_THE_NULL_DIRECTION_TO_THE_LITERAL_SIGNED_W_BETA_LANE_AND_CONTROL_THE_REMAINING_FULL_OUTPUT
+REUSABLE_STRUCTURE = CURVATURE_VECTOR_TO_EXACT_ORTHONORMAL_FRAME_TO_FIXED_NULL_COMBINATION_TO_BOUNDARY_GAP_TO_RATE_FIREWALL
+ROUND2_CLUE = TEST_THE_SOURCE_FROZEN_NULL_DIRECTION_AGAINST_THE_LITERAL_SIGNED_W_BETA_COUPLING_ON_THE_SAME_CLOCK_BEFORE_ANY_FULL_REASSEMBLY
+```
+
+```text
+TPC258_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_NULL
+TPC258_ARITHMETIC_ADVANCE = YES_SCOPED_LOG_CANCELLATION
+TPC258_NULL_DIRECTION = PROVED_SOURCE_FROZEN_UNIT_VECTOR
+TPC258_LEADING_DIAGONAL_CANCELLATION = PROVED_SOURCE_BACKED
+TPC258_RATE_REFINEMENT = CONDITIONAL_THEOREM_LOG_ONE_OVER_X
+TPC258_FIXED_POWER_SAVING = NONE
+TPC258_L2 = NONE
+TPC258_FULL_GATE_B = OPEN
+TPC258_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC258_FIXED_ATOM_CREDIT = 0
+TPC258_TWIN_PRIME_RESULT = NONE
+```
 
 ## 0.51 已发布：TPC-257 four-block Haar lift and a transverse norm floor
 

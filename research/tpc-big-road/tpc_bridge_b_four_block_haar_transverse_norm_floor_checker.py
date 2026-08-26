@@ -49,7 +49,7 @@ PROJECT_HASHES = {
     "DERIVATION_PACKAGE.md": "f3bc0a2fa4b99fee60d3596f52ab2ee0db9d213a28627f3e95f5a276b96fd8b1",
     "PAPER_PLAN.md": "a6d5dc24cfd71fbcaab241de8a6215c3b97e061a02ec517c6da9af8ba43f186f",
     "PROOF_PACKAGE.md": "06b6f2e9842f68fc6f3d882f95d3b9c161980ceb429dd24b52bd98322e6f397f",
-    "README.md": "d402b1658ade8f5716233deb4ea062338b873559a6b3f9a31c96aa13f44523be",
+    "README.md": "a865eec5b8c64212a9fbd47982ba57b961885730f8026a262803387c7a652d88",
     "code/tpc257_four_block_haar_certificate.py":
         "fc2dc515f7a10b1cf9589f530ca5a9dcf123335e389e0e747e6c7f2c25610038",
     "experiments/tpc257_four_block_haar_stress.py":
