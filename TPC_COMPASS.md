@@ -1,9 +1,41 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V115 / LITERAL_SIGNED_OPERATOR_PHASE_FIREWALL`
-claim level：`PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL`
-编号事实终点：TPC-262；TPC-262 trigger：`true`
+状态：`BOLD_CHANNEL_V116 / RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL`
+claim level：`PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL`
+编号事实终点：TPC-263；TPC-263 trigger：`true`
+
+当前 TPC-263 入口：proof 为
+`research/tpc-big-road/bridge_b_rank_three_physical_cross_gram.md`，checker 为
+`tpc_bridge_b_rank_three_physical_cross_gram_checker.py`，编号论文为
+`papers/tpc-263-rank-three-physical-cross-gram/`。它把 TPC-254 的四个物理
+block-sum fixed-log control 与 TPC-257 的三个 adjoint coefficients 在 exact
+rank-three projection `P3` 上相乘，得到
+`C_3=O(x^(5/3)/(log x)^(M+3))`。正交残差 `C_perp` 被精确保留但仍 OPEN；
+该结果不产生 fixed-power credit、arithmetic `L2` 或 full Gate B payment。
+
+```text
+TPC263_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL
+TPC263_ROUTE_ADVANCE = YES_SCOPED_RANK_THREE_LOG_CHANNEL
+TPC263_W_FRAME_MOMENTS = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC263_ADJOINT_FRAME_COEFFICIENTS = PROVED_SOURCE_BACKED_TPC257
+TPC263_PROJECTION_SPLIT = PROVED_EXACT
+TPC263_RANK_THREE_CHANNEL = PROVED_SOURCE_BACKED_X_5_OVER_3_LOG_M_PLUS_3
+TPC263_ORTHOGONAL_RESIDUAL = OPEN
+TPC263_FIXED_POWER_CREDIT = 0
+TPC263_ARITHMETIC_ADVANCE = YES_SCOPED_FIXED_LOG_ONLY
+TPC263_L2 = NONE
+TPC263_FULL_GATE_B = OPEN
+TPC263_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC263_TWIN_PRIME_RESULT = NONE
+TPC263_STATUS = PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL
+TPC263_ROUND2_CLUE = ATTACK_THE_ORTHOGONAL_COMPLEMENT_AFTER_PAYING_THE_RANK_THREE_LOG_CHANNEL
+```
+
+strongest positive result：rank-three physical cross-Gram channel has arbitrary
+fixed logarithmic suppression；strongest obstruction：the exact orthogonal
+complement remains unestimated；open theorem：residual cross-Gram estimate or
+natural residual obstruction。
 
 当前 TPC-262 入口：proof 为
 `research/tpc-big-road/bridge_b_literal_mode_zero_cross_gram.md`，checker 为

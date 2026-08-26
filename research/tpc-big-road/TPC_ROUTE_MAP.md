@@ -2,20 +2,18 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V115 / TPC-262
+当前地图版本：V116 / TPC-263
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-262`（`PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL`）；
+当前编号锚点：`TPC-263`（`PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL`）；
 对应论文目录为
-`papers/tpc-262-literal-mode-zero-cross-gram/`。
-TPC-262 精确锁定 literal signed reduced-residue operator
-`J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`，并给出 weighted four-packet
-cross-Gram/DFT identity 与 phase-character separation。finite operator-image
-witness 显示 identical packet diagonals 仍可产生 mode-zero `16||Y||^2` 或 `0`；
-这是 scoped structural obstruction，不是 growing-shell counterexample。actual
-`beta,w` character estimate、arithmetic `L2`、full Gate B 与 strict global credit
-仍 OPEN/UNPAID。
+`papers/tpc-263-rank-three-physical-cross-gram/`。
+TPC-263 将 TPC-254 的四个 consecutive block-sum fixed-log control 与 TPC-257
+的三个 adjoint coefficients 接到同一个 exact rank-three projection，证明
+`C_3=O(x^(5/3)/(log x)^(M+3))`。exact `C_perp` residual 被保留并成为下一座桥；
+这是 source-backed logarithmic channel，不是 fixed-power payment、arithmetic
+`L2` 或 full Gate-B closure。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -57,9 +55,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V115 / TPC-262                    |
-        | LITERAL SIGNED OPERATOR INTERFACE EXACT       |
-        | phase typing exact; growing cross-Gram OPEN  |
+        | YOU ARE HERE — V116 / TPC-263                    |
+        | RANK-THREE PHYSICAL CHANNEL PAID             |
+        | log-only; orthogonal residual still OPEN    |
         +--------------------------------------------------+
                 |
                 v
@@ -1247,6 +1245,57 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.57 V116 / TPC-263：rank-three physical cross-Gram channel
+
+TPC-263 是 TPC-262 之后的第一条 actual source-to-source physical attachment。
+它把 TPC-254 的 maximal-interval `m=1` extraction 应用于 TPC-257 的四个
+consecutive blocks，因而对同一个 source-only frame `z0,z1,z2` 得到
+
+```text
+|<z_i,w>| <<_(M,K) x^(1/2)/(log x)^M.
+```
+
+同时继承 TPC-257 的三个 literal adjoint asymptotics
+
+```text
+<z_i,A_x beta>=-(9/2*kappa_i+o(1))x^(7/6)/(log x)^3.
+```
+
+令 `P3=sum_i z_i tensor z_i`、`g_x=A_x beta`，则 actual coupling 精确分解为
+
+```text
+<w,g_x>=C_3(x)+C_perp(x),
+C_3(x)=sum_i conjugate(<z_i,w>)<z_i,g_x>,
+C_perp(x)=<(I-P3)w,(I-P3)g_x>.
+```
+
+因此 rank-three physical channel 满足
+`C_3=O_(M,K)(x^(5/3)/(log x)^(M+3))`。这是一个真实的 source-backed
+logarithmic channel advance；它没有 fixed-power credit，且不删除或估计
+正交残差。下一步应攻击 `C_perp`，不能把该 channel 当作 full scalar。
+
+```text
+TPC263_ROUTE_ADVANCE = YES_SCOPED_RANK_THREE_LOG_CHANNEL
+TPC263_W_FRAME_MOMENTS = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC263_ADJOINT_FRAME_COEFFICIENTS = PROVED_SOURCE_BACKED_TPC257
+TPC263_PROJECTION_SPLIT = PROVED_EXACT
+TPC263_RANK_THREE_CHANNEL = PROVED_SOURCE_BACKED_X_5_OVER_3_LOG_M_PLUS_3
+TPC263_ORTHOGONAL_RESIDUAL = OPEN
+TPC263_FIXED_POWER_CREDIT = 0
+TPC263_ARITHMETIC_ADVANCE = YES_SCOPED_FIXED_LOG_ONLY
+TPC263_L2 = NONE
+TPC263_FULL_GATE_B = OPEN
+TPC263_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC263_TWIN_PRIME_RESULT = NONE
+TPC263_STATUS = PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL
+TPC263_ROUND2_CLUE = ATTACK_THE_ORTHOGONAL_COMPLEMENT_AFTER_PAYING_THE_RANK_THREE_LOG_CHANNEL
+```
+
+strongest positive result：同一 literal frame 上的 rank-three physical cross-Gram
+channel 已获 arbitrary fixed-log control。strongest obstruction：`C_perp` 是
+exact nonempty remainder，不能由 `P3` 数据替代。open theorem：正交补的
+cross-Gram estimate 或自然 residual obstruction。
 
 ## 5.56 V115 / TPC-262：literal signed reduced-residue operator and phase-character firewall
 
@@ -3344,7 +3393,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V115 / TPC-262：
+截至 V116 / TPC-263：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -3354,6 +3403,21 @@ TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
 FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 L2 = NONE
 TPC_262_TRIGGER = true
+TPC_263_TRIGGER = true
+TPC263_ROUTE_ADVANCE = YES_SCOPED_RANK_THREE_LOG_CHANNEL
+TPC263_W_FRAME_MOMENTS = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC263_ADJOINT_FRAME_COEFFICIENTS = PROVED_SOURCE_BACKED_TPC257
+TPC263_PROJECTION_SPLIT = PROVED_EXACT
+TPC263_RANK_THREE_CHANNEL = PROVED_SOURCE_BACKED_X_5_OVER_3_LOG_M_PLUS_3
+TPC263_ORTHOGONAL_RESIDUAL = OPEN
+TPC263_FIXED_POWER_CREDIT = 0
+TPC263_ARITHMETIC_ADVANCE = YES_SCOPED_FIXED_LOG_ONLY
+TPC263_L2 = NONE
+TPC263_FULL_GATE_B = OPEN
+TPC263_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC263_TWIN_PRIME_RESULT = NONE
+TPC263_STATUS = PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL
+TPC263_ROUND2_CLUE = ATTACK_THE_ORTHOGONAL_COMPLEMENT_AFTER_PAYING_THE_RANK_THREE_LOG_CHANNEL
 TPC262_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_OPERATOR_INTERFACE
 TPC262_UNIT_CLASS_PROJECTION = PROVED_EXACT_FINITE
 TPC262_CROSS_GRAM_IDENTITY = PROVED_EXACT
@@ -4181,6 +4245,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V116 / TPC-263 | Bridge A / Gate B：rank-three physical cross-Gram channel 已完成；orthogonal residual、arithmetic `L2` 与 full Gate B open | `TPC-263` | 将 TPC-254 的四 block fixed-log hybrid control 与 TPC-257 三个 adjoint asymptotics 在同一 exact `P3` 上相乘，得到 `C_3=O(x^(5/3)/(log x)^(M+3))`；保留 `C_perp`，无 fixed-power credit |
 | 2026-08-26 | V115 / TPC-262 | Bridge A / Gate B：literal signed reduced-residue operator 与 phase-character firewall 已完成；growing `beta,w` cross-Gram、arithmetic `L2` 与 full Gate B open | `TPC-262` | 精确锁定 `J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`、weighted cross-Gram/DFT ledger 与 phase-character separation；finite operator-image witness 显示相同 diagonals 仍允许 mode-zero `16||Y||^2` 或 `0`，不构成 growing-shell counterexample |
 | 2026-08-26 | V114 / TPC-261 | Bridge A / Gate B：strict endpoint-budget compiler 已完成；literal mode-zero/cross-Gram 与 arithmetic `L2` open | `TPC-261` | 将 `E0=5/3` 到 `E*=1997/1200` 的差精确编译为 `1/400`，证明 finite-lane effective saving 必须严格超过该阈值；fixed-log suppression 无 fixed-power credit；scaled TPC-260 witness 保留 structural residual obstruction，full Gate B 与 twin-prime result remain open |
 | 2026-08-26 | V113 / TPC-260 | Bridge A / Gate B：null-compatible four-packet residual completion 与 mode-zero audit；literal estimate/open `L2` | `TPC-260` | 将 TPC-258 null direction 嵌入实际四块 Haar complement，证明 sharp polygon completion 与 four-point DFT mode ledger；相同 packet marginals 与 Haar/null 数据仍允许 residual energy `0` 和 `16`，因此 literal mode-zero/cross-Gram、full Gate B、strict global `1/400` and twin-prime result remain open |

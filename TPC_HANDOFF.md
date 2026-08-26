@@ -1,9 +1,58 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V115_TPC262_LITERAL_SIGNED_OPERATOR_PHASE_FIREWALL_RELEASED`
+交接状态：`BOLD_CHANNEL_V116_TPC263_RANK_THREE_PHYSICAL_CROSS_GRAM_RELEASED`
 
-TPC-262 当前 section：literal signed reduced-residue operator and phase-character firewall
+TPC-263 当前 section：rank-three physical cross-Gram channel
+-----------------------------------------------------------------------------------------------
+
+TPC-263 is the direct continuation of TPC-262.  On the same literal V59
+clock, TPC-254's blockwise fixed-log control for the hybrid `w` is multiplied
+with TPC-257's three source-backed adjoint coefficients.  If `P3` projects
+onto the exact source-only frame `span(z0,z1,z2)`, then
+
+```text
+C_x=<w,A_x beta>=C_3(x)+C_perp(x),
+C_3(x)=<P3 w,P3 A_x beta>
+     =sum_i conjugate(<z_i,w>)<z_i,A_x beta>,
+C_perp(x)=<(I-P3)w,(I-P3)A_x beta>.
+```
+
+For every fixed admissible `K` and fixed `M`, the first channel is now
+source-backed:
+
+```text
+|C_3(x)| <<_(M,K) x^(5/3)/(log x)^(M+3).
+```
+
+The identity is exact, and the nonzero orthogonal residual is deliberately
+retained.  This is logarithmic-only progress: it gives zero fixed-power
+credit and does not close arithmetic `L2`, full Gate B, or the twin-prime
+problem.
+
+```text
+TPC263_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL
+TPC263_ROUTE_ADVANCE = YES_SCOPED_RANK_THREE_LOG_CHANNEL
+TPC263_W_FRAME_MOMENTS = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC263_ADJOINT_FRAME_COEFFICIENTS = PROVED_SOURCE_BACKED_TPC257
+TPC263_PROJECTION_SPLIT = PROVED_EXACT
+TPC263_RANK_THREE_CHANNEL = PROVED_SOURCE_BACKED_X_5_OVER_3_LOG_M_PLUS_3
+TPC263_ORTHOGONAL_RESIDUAL = OPEN
+TPC263_FIXED_POWER_CREDIT = 0
+TPC263_ARITHMETIC_ADVANCE = YES_SCOPED_FIXED_LOG_ONLY
+TPC263_L2 = NONE
+TPC263_FULL_GATE_B = OPEN
+TPC263_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC263_TWIN_PRIME_RESULT = NONE
+TPC263_STATUS = PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL
+TPC263_ROUND2_CLUE = ATTACK_THE_ORTHOGONAL_COMPLEMENT_AFTER_PAYING_THE_RANK_THREE_LOG_CHANNEL
+```
+
+The strongest positive result is a new physical rank-three channel bound; the
+strongest obstruction is the explicit unestimated `C_perp`.  The next minimal
+theorem is an orthogonal-complement estimate or a natural residual obstruction.
+
+TPC-262 上游 section：literal signed reduced-residue operator and phase-character firewall
 -----------------------------------------------------------------------------------------------
 
 TPC-262 is the direct continuation of TPC-261.  It freezes the literal
@@ -8124,8 +8173,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百八十六次（93 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百八十八次（94 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -8319,7 +8368,18 @@ python -O -B research/tpc-big-road/tpc_bridge_b_literal_mode_zero_cross_gram_che
 
 随后优先读取：
 
-最新 TPC-262 入口：
+最新 TPC-263 入口：
+
+```text
+papers/tpc-263-rank-three-physical-cross-gram/README.md
+papers/tpc-263-rank-three-physical-cross-gram/PROOF_PACKAGE.md
+papers/tpc-263-rank-three-physical-cross-gram/notes/theorem_ledger.md
+papers/tpc-263-rank-three-physical-cross-gram/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_rank_three_physical_cross_gram.md
+research/tpc-big-road/tpc_bridge_b_rank_three_physical_cross_gram_checker.py
+```
+
+TPC-262 上游入口：
 
 ```text
 papers/tpc-262-literal-mode-zero-cross-gram/README.md

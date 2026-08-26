@@ -9,7 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-262 在 TPC-261 的 endpoint compiler 之后，把 literal
+当前主线状态：TPC-263 在 TPC-262 的 signed-operator interface 之后，把
+source-backed rank-three Haar channel 与四个物理 block sums 接到同一个 literal
+V59 coupling，严格得到 `C_3=O(x^(5/3)/(log x)^(M+3))`；exact
+`C_perp` residual 被保留并明确成为下一关。该结果是 fixed-log-only，不能支付
+fixed-power `1/400`，arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍
+OPEN/UNPAID/NONE。
+
+TPC-262 在 TPC-261 的 endpoint compiler 之后，把 literal
 reduced-residue signed remainder operator、deleted diagonal、weighted cross-Gram
 与 packet-index phase-character firewall 精确锁定在同一个有限对象上，并用
 actual prime unit-class matrices 做了 finite operator-image adversarial audit。
@@ -39,6 +46,7 @@ OPEN/UNPAID/NONE。
 
 ## 3. Latest Paper
 
+tpc-263-rank-three-physical-cross-gram - 当前阶段 - 将四块 hybrid `w` 的 fixed-log 控制与 TPC-257 三个 adjoint asymptotic 在 exact `P3` 上相乘，支付 rank-three physical cross-Gram channel；正交残差仍 OPEN。
 tpc-262-literal-mode-zero-cross-gram - 当前阶段 - literal signed reduced-residue operator、cross-Gram/DFT ledger 与 phase-character firewall 已精确闭合；growing-shell arithmetic estimate 仍开放。
 `tpc-262-literal-mode-zero-cross-gram` - `PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL` - 精确给出 `J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`、四 packet signed cross-Gram/DFT 恒等式和 phase-character separation；finite operator-image witness 显示相同 diagonals 可有 mode-zero `16||Y||^2` 或 `0`，但 growing `beta,w` estimate 与 arithmetic `L2` 仍 open。
 `tpc-261-strict-endpoint-budget-compiler` - `PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY` - 将 `E0-E*=1/400` 编译为 lane saving-minus-loss 的严格阈值，证明 log-only suppression 无固定幂 credit，并缩放 TPC-260 witness；literal mode-zero/cross-Gram estimate、arithmetic `L2` 与 full Gate B 仍 OPEN。

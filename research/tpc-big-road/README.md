@@ -1,50 +1,70 @@
-# TPC big road V115 / TPC-262: literal signed operator and phase-character firewall
+# TPC big road V116 / TPC-263: rank-three physical cross-Gram channel
 
 更新时间：2026-08-26
 
-状态：`TPC262_PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL / ARITHMETIC_ADVANCE_NO / FULL_GATE_B_OPEN`
+状态：`TPC263_PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-262 proof 为
+当前 TPC-263 proof 为
+`bridge_b_rank_three_physical_cross_gram.md`，checker 为
+`tpc_bridge_b_rank_three_physical_cross_gram_checker.py`，编号论文为
+`../../papers/tpc-263-rank-three-physical-cross-gram/`。
+
+TPC-263 将 TPC-254 的四个 consecutive block-sum fixed-log control 与 TPC-257
+的三个 adjoint coefficients 接到同一个 exact rank-three projection，得到
+`C_3=O_(M,K)(x^(5/3)/(log x)^(M+3))`。exact `C_perp` residual 被保留并成为
+下一关；这是 source-backed logarithmic channel，不是 fixed-power payment、
+arithmetic `L2` 或 full Gate-B closure。strict global `1/400` 与 twin-prime
+result 仍 UNPAID/NONE。
+
+```text
+TPC263_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL
+TPC263_ROUTE_ADVANCE = YES_SCOPED_RANK_THREE_LOG_CHANNEL
+TPC263_W_FRAME_MOMENTS = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC263_ADJOINT_FRAME_COEFFICIENTS = PROVED_SOURCE_BACKED_TPC257
+TPC263_PROJECTION_SPLIT = PROVED_EXACT
+TPC263_RANK_THREE_CHANNEL = PROVED_SOURCE_BACKED_X_5_OVER_3_LOG_M_PLUS_3
+TPC263_ORTHOGONAL_RESIDUAL = OPEN
+TPC263_FIXED_POWER_CREDIT = 0
+TPC263_ARITHMETIC_ADVANCE = YES_SCOPED_FIXED_LOG_ONLY
+TPC263_L2 = NONE
+TPC263_FULL_GATE_B = OPEN
+TPC263_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC263_TWIN_PRIME_RESULT = NONE
+TPC263_STATUS = PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL
+TPC263_ROUND2_CLUE = ATTACK_THE_ORTHOGONAL_COMPLEMENT_AFTER_PAYING_THE_RANK_THREE_LOG_CHANNEL
+```
+
+TPC-262 remains the immediate upstream signed-operator and phase-character
+firewall; its exact operator interface is inherited unchanged.
+
+## V115 upstream: TPC-262 literal signed operator and phase-character firewall
+
+TPC-262 proof 为
 `bridge_b_literal_mode_zero_cross_gram.md`，checker 为
 `tpc_bridge_b_literal_mode_zero_cross_gram_checker.py`，编号论文为
 `../../papers/tpc-262-literal-mode-zero-cross-gram/`。
 
-TPC-262 精确给出 literal signed reduced-residue operator
-`J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`，以及 weighted four-packet
-cross-Gram/DFT identity 和 phase-character separation。实际有限 prime shell 的
-operator-image aligned/alternating witness 具有相同 packet diagonals，却分别有
-`16||Y||^2` 与 `0` 的 mode zero；这是 finite structural obstruction，不是
-growing-shell counterexample。actual `beta,w` character estimate、arithmetic `L2`、
-full Gate B、strict global credit 与 twin-prime result 仍 OPEN/UNPAID/NONE。
+它精确锁定
+`J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`，并给出 weighted four-packet
+cross-Gram/DFT ledger 与 phase-character separation。finite operator-image
+witness 在相同 packet diagonals 下实现 mode-zero `16||Y||^2` 与 `0`；这是
+scoped structural obstruction，不是 growing-shell counterexample，actual
+`beta,w` cross-Gram、arithmetic `L2` 与 full Gate B 仍 OPEN。
 
 ```text
-TPC262_MAXIMUM_CLAIM = PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL
 TPC262_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_OPERATOR_INTERFACE
-TPC262_UNIT_CLASS_PROJECTION = PROVED_EXACT_FINITE
 TPC262_CROSS_GRAM_IDENTITY = PROVED_EXACT
 TPC262_SIGNED_REMAINDER_OPERATOR = PROVED_EXACT_FINITE_X
-TPC262_DELETED_DIAGONAL = PROVED_EXACT_Q_MINUS_2
-TPC262_ENDPOINT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
-TPC262_OPERATOR_IMAGE_WITNESS = NUMERICALLY_CERTIFIED_STRUCTURAL
 TPC262_PHASE_CHARACTER_SEPARATION = PROVED_EXACT
-TPC262_POLARIZED_V59_CHARACTER = OPEN
-TPC262_GROWING_SHELL_COUNTEREXAMPLE = NONE
+TPC262_OPERATOR_IMAGE_WITNESS = NUMERICALLY_CERTIFIED_STRUCTURAL
 TPC262_ARITHMETIC_ADVANCE = NO
-TPC262_FIXED_ATOM_CREDIT = 0
 TPC262_L2 = NONE
 TPC262_FULL_GATE_B = OPEN
-TPC262_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC262_TWIN_PRIME_RESULT = NONE
-TPC262_LITERAL_BETA_W_CROSS_GRAM = OPEN
-TPC262_STATUS = PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL
 TPC262_ROUND2_CLUE = CENSUS_THE_LITERAL_GROWING_PRIME_SHELL_CROSS_GRAM
 ```
-
-TPC-261 remains the immediate upstream endpoint-budget compiler; its strict `1/400`
-gap is inherited unchanged.
 
 ## V113 upstream: TPC-260 null-compatible four-packet residual reassembly
 
