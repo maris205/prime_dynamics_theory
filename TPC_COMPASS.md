@@ -1,19 +1,56 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V114 / STRICT_ENDPOINT_BUDGET_COMPILER`
-claim level：`PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY`
-编号事实终点：TPC-261；TPC-261 trigger：`true`
+状态：`BOLD_CHANNEL_V115 / LITERAL_SIGNED_OPERATOR_PHASE_FIREWALL`
+claim level：`PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL`
+编号事实终点：TPC-262；TPC-262 trigger：`true`
 
-当前 TPC-261 入口：proof 为
+当前 TPC-262 入口：proof 为
+`research/tpc-big-road/bridge_b_literal_mode_zero_cross_gram.md`，checker 为
+`tpc_bridge_b_literal_mode_zero_cross_gram_checker.py`，编号论文为
+`papers/tpc-262-literal-mode-zero-cross-gram/`。它精确锁定
+`J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`，并把四 packet mode zero 写成
+signed cross-Gram/DFT identity；phase-character lemma 明确区分 aggregate mode zero
+与 V59 polarized character。finite operator-image witness 只证明 diagonal/PSD
+不足以支付端点，不是 growing-shell counterexample；actual `beta,w` cross-Gram、
+arithmetic `L2` 与 full Gate B 仍 OPEN。
+
+```text
+TPC262_MAXIMUM_CLAIM = PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL
+TPC262_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_OPERATOR_INTERFACE
+TPC262_UNIT_CLASS_PROJECTION = PROVED_EXACT_FINITE
+TPC262_CROSS_GRAM_IDENTITY = PROVED_EXACT
+TPC262_SIGNED_REMAINDER_OPERATOR = PROVED_EXACT_FINITE_X
+TPC262_DELETED_DIAGONAL = PROVED_EXACT_Q_MINUS_2
+TPC262_ENDPOINT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC262_OPERATOR_IMAGE_WITNESS = NUMERICALLY_CERTIFIED_STRUCTURAL
+TPC262_PHASE_CHARACTER_SEPARATION = PROVED_EXACT
+TPC262_POLARIZED_V59_CHARACTER = OPEN
+TPC262_GROWING_SHELL_COUNTEREXAMPLE = NONE
+TPC262_ARITHMETIC_ADVANCE = NO
+TPC262_FIXED_ATOM_CREDIT = 0
+TPC262_L2 = NONE
+TPC262_FULL_GATE_B = OPEN
+TPC262_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC262_TWIN_PRIME_RESULT = NONE
+TPC262_LITERAL_BETA_W_CROSS_GRAM = OPEN
+TPC262_STATUS = PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL
+TPC262_ROUND2_CLUE = CENSUS_THE_LITERAL_GROWING_PRIME_SHELL_CROSS_GRAM
+```
+
+strongest positive result：literal signed operator and phase typing are exact at
+finite `x`；strongest obstruction：finite literal operator image admits aligned and
+alternating endpoints with identical diagonals；open theorem：growing actual V59
+character-specific cross-Gram estimate with effective saving `>1/400`。
+
+TPC-261 上游入口：proof 为
 `research/tpc-big-road/bridge_b_strict_endpoint_budget_compiler.md`，checker 为
 `tpc_bridge_b_strict_endpoint_budget_compiler_checker.py`，编号论文为
 `papers/tpc-261-strict-endpoint-budget-compiler/`。它把当前 baseline `E0=5/3` 与
 target `E*=1997/1200` 的差距精确写成 `1/400`，证明有限 lane 的 effective
-saving `sigma=min(delta_l-lambda_l)` 必须严格大于 `1/400`；同时证明 fixed-log
-suppression 没有 fixed-power credit，并以 scaled TPC-260 witness 保留 baseline-scale
-residual ambiguity。这是 scoped structural obstruction；literal mode-zero/cross-Gram、
-arithmetic `L2` 与 full Gate B 仍 OPEN。
+saving `sigma=min(delta_l-lambda_l)` 必须严格大于 `1/400`；fixed-log suppression
+没有 fixed-power credit，并以 scaled TPC-260 witness 保留 structural residual
+ambiguity。
 
 ```text
 TPC261_MAXIMUM_CLAIM = PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY

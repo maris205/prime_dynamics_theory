@@ -1,9 +1,58 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V114_TPC261_STRICT_ENDPOINT_BUDGET_COMPILER_RELEASED`
+交接状态：`BOLD_CHANNEL_V115_TPC262_LITERAL_SIGNED_OPERATOR_PHASE_FIREWALL_RELEASED`
 
-TPC-261 当前 section：strict endpoint-budget compiler for the literal V59 four-packet interface
+TPC-262 当前 section：literal signed reduced-residue operator and phase-character firewall
+-----------------------------------------------------------------------------------------------
+
+TPC-262 is the direct continuation of TPC-261.  It freezes the literal
+reduced-residue signed remainder at every finite additive phase:
+
+```text
+J_(q,v)=S_(q,v)^* C_q S_(q,v)-((q-2)/(q-1))P_q,
+C_q=I_(q-1)-(q-1)^(-1)11^T.
+```
+
+The deleted diagonal, unit mask, and outer prime weight are retained.  The
+four-packet mode-zero identity is exactly `D+2R=4||Yhat_0||^2`, while a separate
+phase-character lemma shows that aggregate mode zero is not automatically the
+nontrivial V59 polarized character.  A literal finite operator-image witness on
+`{5,7,11,13}` has identical packet diagonals but mode-zero energies
+`16||Y||^2` and `0`; this is a structural finite-fiber obstruction only.
+
+```text
+TPC262_MAXIMUM_CLAIM = PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL
+TPC262_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_OPERATOR_INTERFACE
+TPC262_UNIT_CLASS_PROJECTION = PROVED_EXACT_FINITE
+TPC262_CROSS_GRAM_IDENTITY = PROVED_EXACT
+TPC262_SIGNED_REMAINDER_OPERATOR = PROVED_EXACT_FINITE_X
+TPC262_DELETED_DIAGONAL = PROVED_EXACT_Q_MINUS_2
+TPC262_ENDPOINT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC262_OPERATOR_IMAGE_WITNESS = NUMERICALLY_CERTIFIED_STRUCTURAL
+TPC262_PHASE_CHARACTER_SEPARATION = PROVED_EXACT
+TPC262_POLARIZED_V59_CHARACTER = OPEN
+TPC262_GROWING_SHELL_COUNTEREXAMPLE = NONE
+TPC262_ARITHMETIC_ADVANCE = NO
+TPC262_FIXED_ATOM_CREDIT = 0
+TPC262_L2 = NONE
+TPC262_FULL_GATE_B = OPEN
+TPC262_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC262_TWIN_PRIME_RESULT = NONE
+TPC262_LITERAL_BETA_W_CROSS_GRAM = OPEN
+TPC262_STATUS = PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL
+TPC262_ROUND2_CLUE = CENSUS_THE_LITERAL_GROWING_PRIME_SHELL_CROSS_GRAM
+```
+
+The strongest positive result is an exact literal finite-`x` signed operator
+interface.  The strongest obstruction is that diagonal/PSD data do not select
+the needed signed character.  The next minimal theorem is a growing-shell
+character-specific cross-Gram estimate with effective saving strictly above
+`1/400`; no arithmetic `L2`, full Gate B, or twin-prime result is claimed.
+
+TPC-261 remains the immediate upstream endpoint-budget compiler.
+
+TPC-261 上游 section：strict endpoint-budget compiler for the literal V59 four-packet interface
 -----------------------------------------------------------------------------------------------
 
 TPC-261 is the direct continuation of TPC-260.  It freezes the current common-clock
@@ -8075,8 +8124,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百八十四次（92 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百八十六次（93 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -8264,11 +8313,24 @@ python -B research/tpc-big-road/tpc_bridge_b_four_packet_residual_reassembly_che
 python -O -B research/tpc-big-road/tpc_bridge_b_four_packet_residual_reassembly_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_strict_endpoint_budget_compiler_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_strict_endpoint_budget_compiler_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_literal_mode_zero_cross_gram_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_literal_mode_zero_cross_gram_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-261 入口：
+最新 TPC-262 入口：
+
+```text
+papers/tpc-262-literal-mode-zero-cross-gram/README.md
+papers/tpc-262-literal-mode-zero-cross-gram/PROOF_PACKAGE.md
+papers/tpc-262-literal-mode-zero-cross-gram/notes/theorem_ledger.md
+papers/tpc-262-literal-mode-zero-cross-gram/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_literal_mode_zero_cross_gram.md
+research/tpc-big-road/tpc_bridge_b_literal_mode_zero_cross_gram_checker.py
+```
+
+TPC-261 上游入口：
 
 ```text
 papers/tpc-261-strict-endpoint-budget-compiler/README.md

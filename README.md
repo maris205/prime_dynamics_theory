@@ -9,7 +9,15 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-261 在 TPC-260 的 four-packet mode-zero audit 之后，把
+当前主线状态：TPC-262 在 TPC-261 的 endpoint compiler 之后，把 literal
+reduced-residue signed remainder operator、deleted diagonal、weighted cross-Gram
+与 packet-index phase-character firewall 精确锁定在同一个有限对象上，并用
+actual prime unit-class matrices 做了 finite operator-image adversarial audit。
+这一步确认 diagonal/PSD 数据不能替代 signed cross-Gram；actual growing V59
+`beta,w` character estimate、arithmetic `L2`、full Gate B、strict global credit 与
+twin-prime conclusion 仍 OPEN/UNPAID/NONE。
+
+TPC-261 在 TPC-260 的 four-packet mode-zero audit 之后，把
 baseline `E0=5/3` 到 target `E*=1997/1200` 的端点义务编译成严格的
 `1/400` effective fixed-power threshold，并证明 fixed-log suppression 不产生
 fixed-power credit。缩放后的 null-compatible plus/alternating witness 仍可在相同
@@ -31,6 +39,8 @@ OPEN/UNPAID/NONE。
 
 ## 3. Latest Paper
 
+tpc-262-literal-mode-zero-cross-gram - 当前阶段 - literal signed reduced-residue operator、cross-Gram/DFT ledger 与 phase-character firewall 已精确闭合；growing-shell arithmetic estimate 仍开放。
+`tpc-262-literal-mode-zero-cross-gram` - `PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL` - 精确给出 `J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`、四 packet signed cross-Gram/DFT 恒等式和 phase-character separation；finite operator-image witness 显示相同 diagonals 可有 mode-zero `16||Y||^2` 或 `0`，但 growing `beta,w` estimate 与 arithmetic `L2` 仍 open。
 `tpc-261-strict-endpoint-budget-compiler` - `PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY` - 将 `E0-E*=1/400` 编译为 lane saving-minus-loss 的严格阈值，证明 log-only suppression 无固定幂 credit，并缩放 TPC-260 witness；literal mode-zero/cross-Gram estimate、arithmetic `L2` 与 full Gate B 仍 OPEN。
 `tpc-260-four-packet-residual-reassembly` - `PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION` - 将 TPC-258/259 的 null direction 放入实际四块 Haar complement，证明四 packet residual 的 sharp polygon completion 和 DFT mode-zero identity；相同 marginals 与 null/Haar 数据仍允许 energy `0` 与 `16`，故 literal mode-zero/cross-Gram estimate 仍是 OPEN。
 `tpc-259-same-clock-null-coupling` - `PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING` - 在同一 literal V59 clock 上将 TPC-258 的 source-frozen null direction 与四块 hybrid `w` moment 精确耦合，证明 signed scalar 的 rank-one null channel 对任意固定 log power 都被压低；同时用 zero-diagonal witness 明确保留 `w_perp` residual，未宣称 full scalar、fixed-power 或 `L2`。

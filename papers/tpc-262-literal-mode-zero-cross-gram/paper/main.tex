@@ -1,0 +1,298 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
+\hbadness=10000
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\Qp}{\mathcal Q}
+\title{A Literal Signed Reduced-Residue Operator and Phase-Character Firewall}
+\author{Liang Wang\\
+School of Mathematics and Statistics, Huazhong University of Science and Technology\\
+Wuhan, China}
+\date{August 26, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+TPC-261 identified a strict fixed-power gap of \(1/400\) between the current
+V59 baseline and target, while TPC-260 identified a four-packet reassembly
+datum.  We now freeze the literal reduced-residue signed operator at each
+additive phase.  With the actual residue synthesis \(S_{q,v}\), unit mask
+\(P_q\), and outer prime weight retained, the operator is
+\(J_{q,v}=S_{q,v}^{*}C_qS_{q,v}-(q-2)(q-1)^{-1}P_q\).  We prove its exact
+quadratic remainder identity and the associated four-phase polarization.
+We also prove that aggregate packet mode zero and the nontrivial polarization
+characters are distinct.  An exact finite operator-image certificate on
+\(\{5,7,11,13\}\) gives identical diagonals with mode-zero energies
+\(16\norm{Y}^2\) and zero.  This is a finite structural obstruction, not a
+growing-shell counterexample or an estimate for the source-frozen packets.
+\end{abstract}
+\section{Scope and motivation}
+The Route-B object is a signed coupling on one V59 clock.  Earlier releases
+constructed the literal source operator, a four-block Haar frame, a
+source-frozen null direction, and an exact endpoint budget
+\cite{tpc247,tpc260,tpc261}.  The remaining question is what exact quantity
+must be controlled before a packet diagonal estimate can be reassembled into
+the physical scalar?
+
+The unit-class centering matrix is a constant-character fiber, not by itself
+the additive variable \(v=0\) of the complete V59 integral.  We retain this
+distinction throughout.  The finite certificate audits \(v=0\), while the
+operator identity is phase-by-phase and the growing integral remains open.
+
+\begin{enumerate}
+\item identify the exact unit-class projection and signed remainder operator;
+\item prove the mode-zero/cross-Gram identity and phase-character separation;
+\item translate the signed expression into the strict \(1/400\) criterion; and
+\item certify a literal finite operator-image adversary with rational
+      arithmetic and an independent checker.
+\end{enumerate}
+\section{The literal reduced-residue fiber}
+For an odd prime \(q\), write \(m_q=q-1\) and let
+\({\bf 1}_q\in{\mathbb R}^{m_q}\) be the all-ones vector.  Define
+\begin{equation}
+C_q=I_{m_q}-\frac{1}{m_q}{\bf 1}_q{\bf 1}_q^{\mathsf T}.
+\label{eq:C}
+\end{equation}
+The rows correspond to the nonzero residue classes; no ordinary residue
+class is inserted.
+
+\begin{lemma}[unit-class projection]
+For every odd prime \(q\), \(C_q\) is symmetric and idempotent, is positive
+semidefinite, has rank \(q-2\), and has kernel
+\({\mathbb R}{\bf 1}_q\).
+\end{lemma}
+\begin{proof}
+Since \({\bf 1}_q^{\mathsf T}{\bf 1}_q=m_q\), direct multiplication gives
+\(C_q^2=C_q\).  For \(v\in{\mathbb R}^{m_q}\),
+\begin{equation}
+v^{\mathsf T}C_qv
+=\norm{v}^2-\frac{|{\bf 1}_q^{\mathsf T}v|^2}{m_q}
+=\frac{1}{m_q}\sum_{r<s}(v_r-v_s)^2\geq0.
+\label{eq:psd}
+\end{equation}
+The constant line is the kernel and its orthogonal complement is fixed, so
+the rank is \(m_q-1=q-2\).
+\end{proof}
+
+For a finite set \(\Qp\) of odd primes, a packet source is
+\(a=(a_q)_{q\in\Qp}\), \(a_q\in{\mathbb R}^{m_q}\).  Its zero-fiber output is
+\begin{equation}
+Y(a)_q=C_qa_q,\qquad
+\ip{Y(a)}{Y(b)}_{\Qp}
+:=\sum_{q\in\Qp}q\,\ip{C_qa_q}{C_qb_q}.
+\label{eq:weighted}
+\end{equation}
+The prime weight is inside the inner product, so no unrecorded normalization
+change is made.
+
+\subsection{The signed remainder operator}
+Let \(I\) be a finite interval and \(v\in\mathbb R\).  For a coefficient
+vector \(a\in\mathbb C^I\), define the physical residue synthesis
+\begin{equation}
+(S_{q,v}a)_r=\sum_{\substack{n\in I\\n\equiv r\pmod q}}
+a_n e(vn/H),\qquad r\in\mathbb F_q^\times.
+\label{eq:synthesis}
+\end{equation}
+Let \(P_q\) be the diagonal projection onto \(q\)-units.  The signed
+reduced-residue remainder is represented exactly by
+\begin{equation}
+J_{q,v}=S_{q,v}^{*}C_qS_{q,v}
+-\frac{q-2}{q-1}P_q.
+\label{eq:J}
+\end{equation}
+The first term is positive semidefinite, but \(J_{q,v}\) is a signed
+Hermitian operator.  Direct expansion gives
+\begin{equation}
+V_q^\times(a;v)-D_q^\times(a;v)
+=\ip{a}{J_{q,v}a},\quad
+V_q^\times(a;v)=\norm{C_qS_{q,v}a}^2,\quad
+D_q^\times(a;v)=\frac{q-2}{q-1}\norm{P_qa}^2.
+\label{eq:remainder}
+\end{equation}
+Consequently the common-clock operator
+\begin{equation}
+\mathcal J_x=\int_{\mathbb R}\psi_+(v)
+\sum_{q\in\mathcal Q_x}qJ_{q,v}\,dv
+\label{eq:Jglobal}
+\end{equation}
+satisfies the exact V59 polarization identity
+\begin{equation}
+\mathfrak C_x=\frac14\sum_{j=0}^3\ii^j
+\ip{a^{(j)}}{\mathcal J_xa^{(j)}},
+\qquad a^{(j)}=\beta+\ii^jw.
+\label{eq:polarizedJ}
+\end{equation}
+This is an exact factorization, not an estimate.
+
+\section{Mode zero is a signed cross-Gram}
+Let \(Y_0,Y_1,Y_2,Y_3\) be four vectors in \eqref{eq:weighted}.  Put
+\begin{equation}
+\Gamma_{jk}=\ip{Y_j}{Y_k}_{\Qp},\qquad
+D=\sum_{j=0}^3\Gamma_{jj},\qquad
+R=\sum_{0\leq j<k\leq3}\operatorname{Re}\Gamma_{jk}.
+\label{eq:gram}
+\end{equation}
+
+\begin{theorem}[literal cross-Gram mode-zero identity]
+With
+\begin{equation}
+\widehat Y_k=\frac12\sum_{j=0}^3\ii^{-jk}Y_j,\qquad 0\leq k\leq3,
+\label{eq:dft}
+\end{equation}
+one has
+\begin{align}
+\norm{Y_0+Y_1+Y_2+Y_3}_{\Qp}^2&=D+2R,\label{eq:modegram}\\
+\sum_{k=0}^3\norm{\widehat Y_k}_{\Qp}^2&=D,\label{eq:parseval}\\
+\norm{Y_0+Y_1+Y_2+Y_3}_{\Qp}^2
+&=4\norm{\widehat Y_0}_{\Qp}^2.\label{eq:modezero}
+\end{align}
+Thus diagonal mass alone does not determine mode zero.
+\end{theorem}
+\begin{proof}
+Expanding the first left side gives the diagonal terms and each off-diagonal
+term with its conjugate, hence \(D+2R\).  Orthogonality of the four roots of
+unity gives Parseval for \eqref{eq:dft}; setting \(k=0\) gives the last
+identity.
+\end{proof}
+
+\subsection{The phase-character firewall}
+The packet index has its own Fourier characters.  For two vectors \(X,Y\)
+write
+\begin{equation}
+E_j=\norm{X+\ii^jY}^2,\qquad
+F_k=\frac14\sum_{j=0}^3\ii^{kj}E_j.
+\label{eq:phase}
+\end{equation}
+With the conjugate-linear-first-slot convention, direct expansion yields
+\begin{equation}
+F_0=\norm{X}^2+\norm{Y}^2,\qquad
+F_1=\ip{Y}{X},\qquad
+F_2=0,\qquad
+F_3=\ip{X}{Y}.
+\label{eq:phasechars}
+\end{equation}
+Thus aggregate packet mode zero and the nontrivial character selected by the
+V59 polarized scalar are different observables.  A theorem must name the
+character it estimates; a mode-zero bound cannot be silently substituted for
+the \(F_1\) or \(F_3\) coupling.
+
+The identity is compatible with the V59 four-packet construction: whenever
+the packet outputs are produced by one literal linear map, every
+\(\Gamma_{jk}\) is a sum over the same primes and reduced-residue unit masks.
+The theorem does not replace the smooth kernel or prove a favorable sign.
+
+\begin{corollary}[endpoint translation]
+The current V59 ledger is
+\begin{equation}
+E_0=\frac53=\frac{2000}{1200},\qquad
+E_*=\frac{1997}{1200},\qquad E_0-E_*=\frac1{400}.
+\label{eq:gap}
+\end{equation}
+If \(D+2R\) has effective fixed-power saving \(\sigma\) after all paid
+losses, the finite-lane endpoint compiler closes when
+\(\sigma>1/400\).
+\end{corollary}
+\begin{proof}
+This is the exact exponent substitution into TPC-261's strict finite-lane
+compiler; strictness absorbs the arbitrary \(x^\varepsilon\) loss.
+\end{proof}
+
+\section{A finite literal operator-image adversary}
+Take the actual finite prime shell
+\begin{equation}
+\Qp=\{5,7,11,13\}.
+\label{eq:shell}
+\end{equation}
+Let \(e\) be the first coordinate in the \(q=5\) fiber and zero elsewhere,
+and let \(Y=Y(e)\).  Equation \eqref{eq:psd} gives \(Y\neq0\), and
+\begin{equation}
+\norm{Y}_{\Qp}^2
+=5\left(\left(\frac34\right)^2+3\left(\frac14\right)^2\right)
+=\frac{15}{4}.
+\label{eq:probe}
+\end{equation}
+Define two families in the same literal operator image:
+\begin{equation}
+Y_j^+=Y,\qquad Y_j^-=(-1)^jY.
+\label{eq:adversary}
+\end{equation}
+Every packet in both families has diagonal \(15/4\), and both have total
+packet energy \(15\), but
+\begin{equation}
+\norm{\sum_jY_j^+}^2=60,\qquad
+\norm{\sum_jY_j^-}^2=0.
+\label{eq:endpoints}
+\end{equation}
+The corresponding \(R\)'s are \(45/2\) and \(-15/2\).  The difference is
+entirely in the signed cross-Gram, not in the diagonal.
+
+This is a finite structural adversary.  Its source probes are freely chosen
+and are not identified with \(\beta+\ii^jw\) on the growing V59 interval.
+It refutes only the shortcut that literal diagonal and PSD information imply
+mode-zero saving.  It does not refute a future theorem using the arithmetic
+of the actual source packets.
+
+\begin{table}[t]
+\centering
+\caption{Exact four-packet fiber audit.}
+\begin{tabular}{lccc}
+\toprule
+Family & diagonal per packet & \(R\) & mode-zero energy\\
+\midrule
+Aligned & \(15/4\) & \(45/2\) & \(60\)\\
+Alternating & \(15/4\) & \(-15/2\) & \(0\)\\
+Mixed \((+,+,-,-)\) & \(15/4\) & \(-15/2\) & \(0\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Route status and conclusion}
+TPC-262 pays one structural interface: the literal signed reduced-residue
+operator, its deleted diagonal, and its packet-index phase typing are now
+written exactly on one common finite object.  It also identifies the exact
+failure mode of a diagonal-only argument after actual prime unit matrices are
+retained.  The aggregate mode-zero identity is useful, but it is not silently
+identified with the nontrivial V59 polarization character.
+
+The next experiment is a census of cross-Gram entries on a growing prime
+shell, restoring the smooth kernel, deleted diagonal, unit masks, and the
+source-frozen \(\beta,w\) inputs.  A positive result must prove negative
+signed cross-Gram cancellation with effective credit strictly larger than
+\(1/400\).  A finite census may instead reveal another obstruction; neither
+outcome is an asymptotic theorem by itself.
+
+\begin{table}[b]
+\centering
+\caption{Claim firewall.}
+\begin{tabular}{p{0.37\linewidth}p{0.49\linewidth}}
+\toprule
+Item & Status\\
+\midrule
+Unit-class projection and signed remainder operator & proved exactly\\
+Mode-zero DFT and cross-Gram ledger & proved exactly\\
+Phase-character separation & proved exactly\\
+Endpoint threshold & proved exactly, conditional on lane bounds\\
+Finite operator-image witness & numerically certified structural\\
+Growing \(\beta,w\) cross-Gram estimate & open\\
+Arithmetic \(L^2\), full Gate B, twin primes & none / open\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The named Session Route-A/Route-B evaluator files are absent from this
+checkout.  The proof package, theorem ledger, exact certificate, bridge
+checker, and \texttt{AGENTS.md} are the available fail-closed authority.
+
+\begin{thebibliography}{9}
+\bibitem{tpc247} L.~Wang, "Literal V59 source-operator attachment,"
+TPC-247 project artifact, 2026.
+\bibitem{tpc260} L.~Wang, "Null-compatible four-packet residual
+reassembly," TPC-260 project artifact, 2026.
+\bibitem{tpc261} L.~Wang, "A strict endpoint-budget compiler,"
+TPC-261 project artifact, 2026.
+\end{thebibliography}
+\end{document}

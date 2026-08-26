@@ -2,19 +2,20 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V114 / TPC-261
+当前地图版本：V115 / TPC-262
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-261`（`PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY`）；
+当前编号锚点：`TPC-262`（`PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL`）；
 对应论文目录为
-`papers/tpc-261-strict-endpoint-budget-compiler/`。
-TPC-261 将 baseline `E0=5/3` 与 target `E*=1997/1200` 的差精确写成 `1/400`，
-证明 finite-lane effective saving `sigma=min(delta_l-lambda_l)` 必须严格大于该
-阈值；fixed-log suppression 没有 fixed-power credit。缩放 TPC-260 witness 仍在
-相同 marginals 与 Haar/null data 下允许 baseline-scale residual `16*x^(5/3)` 或
-`0`，因此这是 scoped structural obstruction；literal mode-zero/cross-Gram、
-arithmetic `L2`、full Gate B 与 strict global credit 仍 OPEN/UNPAID。
+`papers/tpc-262-literal-mode-zero-cross-gram/`。
+TPC-262 精确锁定 literal signed reduced-residue operator
+`J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`，并给出 weighted four-packet
+cross-Gram/DFT identity 与 phase-character separation。finite operator-image
+witness 显示 identical packet diagonals 仍可产生 mode-zero `16||Y||^2` 或 `0`；
+这是 scoped structural obstruction，不是 growing-shell counterexample。actual
+`beta,w` character estimate、arithmetic `L2`、full Gate B 与 strict global credit
+仍 OPEN/UNPAID。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -56,9 +57,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V114 / TPC-261                    |
-        | STRICT ENDPOINT BUDGET COMPILER PAID           |
-        | 1/400 threshold exact; mode-zero still OPEN   |
+        | YOU ARE HERE — V115 / TPC-262                    |
+        | LITERAL SIGNED OPERATOR INTERFACE EXACT       |
+        | phase typing exact; growing cross-Gram OPEN  |
         +--------------------------------------------------+
                 |
                 v
@@ -101,7 +102,7 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V114 / TPC-261。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V115 / TPC-262。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
@@ -1246,6 +1247,43 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.56 V115 / TPC-262：literal signed reduced-residue operator and phase-character firewall
+
+TPC-262 直接承接 TPC-261 的 `1/400` endpoint obligation，并把此前只在
+packet-level 讨论的 signed object 锁回 actual reduced-residue fiber。对每个
+prime `q` 与 additive phase `v`，定义
+
+```text
+J_(q,v)=S_(q,v)^* C_q S_(q,v)-((q-2)/(q-1))P_q,
+C_q=I_(q-1)-(q-1)^(-1)11^T.
+```
+
+这给出含 deleted diagonal、unit mask 与 outer prime weight 的 exact finite-`x`
+remainder identity。对四个 common-clock outputs，mode zero 精确等于
+`D+2R=4||Yhat_0||^2`；另一个 phase-character lemma 证明 aggregate mode zero
+不能冒充 V59 的非平凡 polarized character。实际 finite shell
+`{5,7,11,13}` 的 operator-image witness 在相同 packet diagonals 下实现
+`16||Y||^2` 与 `0` 两个端点，封住 diagonal/PSD-only shortcut。
+
+```text
+TPC262_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_OPERATOR_INTERFACE
+TPC262_SIGNED_REMAINDER_OPERATOR = PROVED_EXACT_FINITE_X
+TPC262_CROSS_GRAM_IDENTITY = PROVED_EXACT
+TPC262_PHASE_CHARACTER_SEPARATION = PROVED_EXACT
+TPC262_OPERATOR_IMAGE_WITNESS = NUMERICALLY_CERTIFIED_STRUCTURAL
+TPC262_ENDPOINT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC262_POLARIZED_V59_CHARACTER = OPEN
+TPC262_ARITHMETIC_ADVANCE = NO
+TPC262_L2 = NONE
+TPC262_FULL_GATE_B = OPEN
+TPC262_ROUND2_CLUE = CENSUS_THE_LITERAL_GROWING_PRIME_SHELL_CROSS_GRAM
+```
+
+strongest positive result：exact literal signed operator and correct phase typing。
+strongest obstruction：finite literal image has identical diagonals but opposite
+mode-zero endpoints。open theorem：actual growing `beta,w` character-specific
+cross-Gram estimate with effective saving `>1/400`。
 
 ## 5.55 V114 / TPC-261：strict endpoint-budget compiler
 
@@ -3306,7 +3344,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V114 / TPC-261：
+截至 V115 / TPC-262：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -3315,6 +3353,26 @@ FIXED_ATOM_CREDIT = 0
 TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
 FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 L2 = NONE
+TPC_262_TRIGGER = true
+TPC262_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_OPERATOR_INTERFACE
+TPC262_UNIT_CLASS_PROJECTION = PROVED_EXACT_FINITE
+TPC262_CROSS_GRAM_IDENTITY = PROVED_EXACT
+TPC262_SIGNED_REMAINDER_OPERATOR = PROVED_EXACT_FINITE_X
+TPC262_DELETED_DIAGONAL = PROVED_EXACT_Q_MINUS_2
+TPC262_ENDPOINT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC262_OPERATOR_IMAGE_WITNESS = NUMERICALLY_CERTIFIED_STRUCTURAL
+TPC262_PHASE_CHARACTER_SEPARATION = PROVED_EXACT
+TPC262_POLARIZED_V59_CHARACTER = OPEN
+TPC262_GROWING_SHELL_COUNTEREXAMPLE = NONE
+TPC262_ARITHMETIC_ADVANCE = NO
+TPC262_FIXED_ATOM_CREDIT = 0
+TPC262_L2 = NONE
+TPC262_FULL_GATE_B = OPEN
+TPC262_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC262_TWIN_PRIME_RESULT = NONE
+TPC262_LITERAL_BETA_W_CROSS_GRAM = OPEN
+TPC262_STATUS = PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL
+TPC262_ROUND2_CLUE = CENSUS_THE_LITERAL_GROWING_PRIME_SHELL_CROSS_GRAM
 TPC_208_TRIGGER = true
 TPC_209_TRIGGER = true
 TPC_210_TRIGGER = true
@@ -4123,6 +4181,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V115 / TPC-262 | Bridge A / Gate B：literal signed reduced-residue operator 与 phase-character firewall 已完成；growing `beta,w` cross-Gram、arithmetic `L2` 与 full Gate B open | `TPC-262` | 精确锁定 `J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`、weighted cross-Gram/DFT ledger 与 phase-character separation；finite operator-image witness 显示相同 diagonals 仍允许 mode-zero `16||Y||^2` 或 `0`，不构成 growing-shell counterexample |
 | 2026-08-26 | V114 / TPC-261 | Bridge A / Gate B：strict endpoint-budget compiler 已完成；literal mode-zero/cross-Gram 与 arithmetic `L2` open | `TPC-261` | 将 `E0=5/3` 到 `E*=1997/1200` 的差精确编译为 `1/400`，证明 finite-lane effective saving 必须严格超过该阈值；fixed-log suppression 无 fixed-power credit；scaled TPC-260 witness 保留 structural residual obstruction，full Gate B 与 twin-prime result remain open |
 | 2026-08-26 | V113 / TPC-260 | Bridge A / Gate B：null-compatible four-packet residual completion 与 mode-zero audit；literal estimate/open `L2` | `TPC-260` | 将 TPC-258 null direction 嵌入实际四块 Haar complement，证明 sharp polygon completion 与 four-point DFT mode ledger；相同 packet marginals 与 Haar/null 数据仍允许 residual energy `0` 和 `16`，因此 literal mode-zero/cross-Gram、full Gate B、strict global `1/400` and twin-prime result remain open |
 | 2026-08-26 | V112 / TPC-259 | Bridge A / Gate B：same-clock signed coupling 的 rank-one null channel paid；orthogonal residual/full `L2` open | `TPC-259` | 将 TPC-258 source-frozen null direction 与四块 literal `w` moment 放到同一时钟，证明 `o(x^(5/3)/log^(M+3)(x))` 的 null channel，精确保留 `w_perp` residual；full four-packet reassembly、strict global `1/400` and twin-prime result remain open |
