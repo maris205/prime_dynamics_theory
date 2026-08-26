@@ -2,22 +2,23 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V123 / TPC-270
+当前地图版本：V124 / TPC-271
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-270`（`NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT`）；
+当前编号锚点：`TPC-271`（`NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT`）；
 对应论文目录为
-`papers/tpc-270-cross-scale-radius-normalization/`。
-TPC-270 固定 TPC-269 的 literal physical operator、registered
-`z_N=floor(log N)` cutoff proxy 与 profile interface，定义
-`Xi=(R_squared)^3/N^10=(R/N^(5/3))^6`。六个 base rows、四个 dyadic ratios、五个
-adjacent ratios 与三个 profile controls 通过 outward interval、独立重算和 stress
-audit；dyadic pattern 为 `DROP_RISE_RISE_DROP`，含 `96->192>23` 与 `64->128<1/4`。
-这是 scoped finite normalization result，source-level radius、arithmetic `L2` 与
-full Gate B 仍 OPEN。
+`papers/tpc-271-phase-radius-decoupling/`。
+TPC-271 在 TPC-270 的同一个 literal physical operator、registered
+`z_N=floor(log N)` cutoff 与 profile interface 上，同时记录 signed scalar、source
+lane 与 output lane。精确恒等式 `Xi=Xi_W*Xi_G`、`Xi/Xi_C=|kappa|^(-6)` 通过
+outward interval、独立重算和 stress audit；9 个 rows 的 phase 全为负实轴，而
+`96->192` 的 radius ratio `>23` 由 source lane `<1/8` 与 output lane `>230` 驱动。
+这是 scoped finite phase-radius decoupling，source-level phase/radius、arithmetic
+`L2` 与 full Gate B 仍 OPEN。
 
-TPC-269 的 growing-cutoff/profile transfer 与 TPC-268 的 16 行 cutoff-sensitivity
+TPC-270 的 cross-scale normalization、TPC-269 的 growing-cutoff/profile transfer 与
+TPC-268 的 16 行 cutoff-sensitivity
 audit 仍是直接上游证书；TPC-268 中心 `z=2`/`z=3`
 flip 解释了为什么本轮必须同时冻结 cutoff rule 与 profile path。
 
@@ -80,9 +81,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V123 / TPC-270                    |
-        | CROSS-SCALE ENDPOINT-NORMALIZED RADIUS         |
-        | DROP-RISE-RISE-DROP; source radius OPEN       |
+        | YOU ARE HERE — V124 / TPC-271                    |
+        | PHASE--RADIUS LANE DECOUPLING                  |
+        | phase locked; output spike; source theorem OPEN|
         +--------------------------------------------------+
                 |
                 v
@@ -125,7 +126,7 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V123 / TPC-270。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V124 / TPC-271。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
@@ -145,9 +146,9 @@ fixed-log promotion、residual deletion、borderline equality 与 subcritical la
 FULL_GATE_B、global strict `1/400`、
 arithmetic `L2`、literal mode-zero estimate、full scalar 与 fixed-atom credit
 继续 OPEN/UNPAID/NONE。TPC-267 的 finite census、TPC-268 的 cutoff flip、TPC-269
-的 growing-proxy/profile flip 与 TPC-270 的 cross-scale radius audit 均未支付
-asymptotic radius 或 fixed-power credit；下一最短任务是 source-level radius upper
-bound with explicit power normalization。**
+的 growing-proxy/profile flip、TPC-270 的 cross-scale radius audit 与 TPC-271 的
+phase-radius lane attribution 均未支付 asymptotic phase/radius 或 fixed-power credit；
+下一最短任务是 source-level signed-phase bound coupled to explicit radius-lane control。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1278,6 +1279,57 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.65 V124 / TPC-271：phase--radius decoupling and lane attribution
+
+TPC-271 是 TPC-270 的直接延续，冻结同一个 literal V59 finite operator、registered
+cutoff 与 profile interface，并把 projected scalar 与两个 residual norm lanes 同时
+记录。设
+
+```text
+Xi_W = W_perp^3/N^5,
+Xi_G = G_perp^3/N^5,
+Xi_C = |C_perp|^6/N^10,
+Xi   = (W_perp G_perp)^3/N^10.
+```
+
+则 `Xi=Xi_W*Xi_G` 与 `Xi/Xi_C=|kappa|^(-6)` 是 exact finite identities。六个
+base rows 与三个 matched profile controls 的 scalar intervals 全部严格为负，phase
+pattern 因而是 `ALL_NEGATIVE_REAL_AXIS`。四个 dyadic lane records 给出
+
+```text
+64->128:  Xi_W<1/2, Xi_G<3/4, Xi<1/4
+96->192:  Xi_W<1/8, Xi_G>230, Xi>23
+128->256: Xi_W<1/2, Xi_G>15, Xi>7
+192->384: Xi_W>1, Xi_G<3/4, 3/4<Xi<1
+```
+
+这证明 finite normalized radius 的最大 spike 是 output-lane dominated，同时 phase
+sign 不变；这里的 decoupling 是有限归因，不是统计独立性或渐近 phase sector。
+
+```text
+TPC271_ROUTE_ADVANCE = YES_SCOPED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+TPC271_LANE_FACTORIZATION = PROVED_EXACT_FINITE
+TPC271_PHASE_SIGN_CENSUS = NUMERICALLY_CERTIFIED_FINITE
+TPC271_PHASE_RADIUS_DECOUPLING = NUMERICALLY_CERTIFIED_FINITE
+TPC271_SOURCE_LANE_PROFILE_INVARIANCE = PROVED_EXACT_FINITE
+TPC271_OUTPUT_LANE_SPIKE = NUMERICALLY_CERTIFIED_FINITE
+TPC271_SOURCE_LEVEL_SIGNED_PHASE = OPEN_ASYMPTOTIC
+TPC271_SOURCE_LEVEL_RADIUS = OPEN_ASYMPTOTIC
+TPC271_FIXED_POWER_CREDIT = 0
+TPC271_ARITHMETIC_ADVANCE = NO
+TPC271_L2 = NONE
+TPC271_FULL_GATE_B = OPEN
+TPC271_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC271_TWIN_PRIME_RESULT = NONE
+TPC271_STATUS = NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+TPC271_ROUND2_CLUE = TEST_SOURCE_LEVEL_SIGNED_PHASE_BOUND_WITH_EXPLICIT_RADIUS_LANE_CONTROL
+```
+
+strongest positive result：exact lane factorization plus a phase-locked output-lane
+spike certificate；strongest obstruction：negative phase sign does not stabilize the
+normalized radius；open theorem：source-compatible signed phase bound coupled to explicit
+radius-lane control。
 
 ## 5.64 V123 / TPC-270：cross-scale endpoint-normalized radius
 
@@ -3718,7 +3770,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V123 / TPC-270：
+截至 V124 / TPC-271：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -3760,6 +3812,22 @@ TPC270_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
 TPC270_TWIN_PRIME_RESULT = NONE
 TPC270_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
 TPC270_ROUND2_CLUE = TEST_SOURCE_LEVEL_RADIUS_UPPER_BOUND_WITH_EXPLICIT_POWER_NORMALIZATION
+TPC271_ROUTE_ADVANCE = YES_SCOPED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+TPC271_LANE_FACTORIZATION = PROVED_EXACT_FINITE
+TPC271_PHASE_SIGN_CENSUS = NUMERICALLY_CERTIFIED_FINITE
+TPC271_PHASE_RADIUS_DECOUPLING = NUMERICALLY_CERTIFIED_FINITE
+TPC271_SOURCE_LANE_PROFILE_INVARIANCE = PROVED_EXACT_FINITE
+TPC271_OUTPUT_LANE_SPIKE = NUMERICALLY_CERTIFIED_FINITE
+TPC271_SOURCE_LEVEL_SIGNED_PHASE = OPEN_ASYMPTOTIC
+TPC271_SOURCE_LEVEL_RADIUS = OPEN_ASYMPTOTIC
+TPC271_FIXED_POWER_CREDIT = 0
+TPC271_ARITHMETIC_ADVANCE = NO
+TPC271_L2 = NONE
+TPC271_FULL_GATE_B = OPEN
+TPC271_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC271_TWIN_PRIME_RESULT = NONE
+TPC271_STATUS = NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+TPC271_ROUND2_CLUE = TEST_SOURCE_LEVEL_SIGNED_PHASE_BOUND_WITH_EXPLICIT_RADIUS_LANE_CONTROL
 TPC268_ROUTE_ADVANCE = YES_SCOPED_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION
 TPC268_FINITE_CUTOFF_OBSTRUCTION = NUMERICALLY CERTIFIED
 TPC268_MATCHED_Z2_CONTROLS = NUMERICALLY CERTIFIED
@@ -4419,14 +4487,20 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
-0. **TPC-270 已完成：cross-scale endpoint-normalized radius**。在 TPC-269 的
+0. **TPC-271 已完成：phase--radius decoupling and lane attribution**。在 TPC-270
+   的同一 finite interface 上证明 `Xi=Xi_W*Xi_G` 与
+   `Xi/Xi_C=|kappa|^(-6)`；9 行 phase 全为负实轴，而 `96->192` 的 radius ratio
+   `>23` 由 source lane `<1/8` 与 output lane `>230` 驱动。下一关是
+   source-level signed-phase bound coupled to explicit radius-lane control；不得将 finite
+   phase lock 冒充渐近 sector 或 arithmetic cancellation。
+0a. **TPC-270 已完成：cross-scale endpoint-normalized radius**。在 TPC-269 的
    registered growing proxy 上定义 exact
    `Xi=(R_squared)^3/N^10=(R/N^(5/3))^6`，并认证六个 base rows、四个 dyadic
    ratios、五个 adjacent ratios 与三个 profile controls；dyadic pattern 为
    `DROP_RISE_RISE_DROP`，同时出现 `96->192>23` 与 `64->128<1/4`。下一关是
    source-level radius upper bound with explicit power and uniformity；不得把有限
    ratio升级为渐近结论。
-0a. **TPC-269 已完成：growing-cutoff and convex-profile transfer**。在注册的
+0b. **TPC-269 已完成：growing-cutoff and convex-profile transfer**。在注册的
    `z_N=floor(log N)` finite proxy 上保留同一 literal operator，并以 exact affine
    identity 连接两个 normalized nonnegative profiles；12 行中 8 个 contraction、4 个
    obstruction，central `theta=9/10`/`24/25` profile flip 证明 finite profile-uniform
@@ -4692,6 +4766,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V124 / TPC-271 | Bridge A / Gate B：finite phase--radius lane attribution 已完成；source-level phase/radius、arithmetic `L2` 与 full Gate B open | `TPC-271` | exact `Xi=Xi_W*Xi_G` 与 `Xi/Xi_C=|kappa|^(-6)`；9 行 phase 全为负实轴，但 `96->192` radius `>23` 由 source `<1/8`、output `>230` 驱动；不构成渐近 phase/radius theorem，下一关为 coupled source-level signed-phase/radius-lane control |
 | 2026-08-27 | V123 / TPC-270 | Bridge A / Gate B：cross-scale endpoint-normalized radius audit 已完成；source-level radius、arithmetic `L2` 与 full Gate B open | `TPC-270` | exact `Xi=(R_squared)^3/N^10`；6 base、4 dyadic、5 adjacent、3 profile controls 通过独立与 stress audit，dyadic `DROP_RISE_RISE_DROP`（含 `>23` rise 与 `<1/4` drop），不构成渐近 radius theorem，下一关为 source-level explicit-power radius bound |
 | 2026-08-26 | V122 / TPC-269 | Bridge A / Gate B：growing-cutoff/profile transfer 已完成；cross-scale radius、arithmetic `L2` 与 full Gate B open | `TPC-269` | 注册 `z_N=floor(log N)` proxy 与 convex profile path 的 12 个 finite rows 中 8 个 contraction、4 个 obstruction；central `9/10`/`24/25` profile flip，仍不构成 source-level growing theorem，下一关为 cross-scale radius normalization |
 | 2026-08-26 | V121 / TPC-268 | Bridge A / Gate B：finite cutoff/profile sensitivity audit 已完成；growing cutoff/profile、arithmetic `L2` 与 full Gate B open | `TPC-268` | 16 个 finite rows 中 10 个 contraction、6 个 obstruction；同一 central clock 的 `z=2`/`z=3` cutoff flip 跨过 `1/4`，不构成 growing counterexample，下一关为 growing cutoff/profile transfer |

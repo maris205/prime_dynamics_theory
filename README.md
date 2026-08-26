@@ -9,7 +9,16 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-270 在同一个 literal V59 finite physical operator 上，把 TPC-269
+当前主线状态：TPC-271 在同一个 literal V59 finite physical operator 上，把 TPC-270
+留下的 normalized radius 与 signed scalar、source lane、output lane 放进同一个
+联合坐标系。六个 base rows 与三个 profile controls 的 residual scalar 全部锁定在
+负实轴；但 `96->192` 的归一化半径比超过 23，source lane 低于 `1/8`、output lane
+高于 230，说明这次有限 spike 是 output-lane dominated。精确恒等式
+`Xi=Xi_W*Xi_G` 与 `Xi/Xi_C=|kappa|^(-6)` 已通过独立重算和 stress audit。
+这是 finite phase-radius decoupling audit，不是 source-level phase/radius theorem；
+fixed-power credit、arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+TPC-270 在同一个 literal V59 finite physical operator 上，把 TPC-269
 留下的 residual radius 跨尺度问题写成 exact endpoint-normalized observable
 `Xi=(R_squared)^3/N^10=(R/N^(5/3))^6`。六个 base rows、四个 dyadic ratios、五个
 adjacent ratios 与三个 profile controls 均完成 outward interval 证书；dyadic pattern
@@ -17,7 +26,7 @@ adjacent ratios 与三个 profile controls 均完成 outward interval 证书；d
 这是 finite normalization audit，不是 source-level radius theorem；fixed-power credit、
 arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
 
-TPC-269 是直接上游：它在同一对象上完成 registered `z_N=floor(log N)` proxy 与
+TPC-269 是 TPC-270 的上游：它在同一对象上完成 registered `z_N=floor(log N)` proxy 与
 exact convex-profile transfer，12 行中 8 个 contraction、4 个 obstruction；中心
 `theta=9/10`/`24/25` 翻过 `rho=1/4`。TPC-270 说明即使 endpoint normalization
 固定，有限尺度仍出现强烈非稳定性，但不把有限比值升级为渐近结论。
@@ -82,6 +91,7 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-271-phase-radius-decoupling - 当前阶段 - 在同一 finite literal V59 operator 上建立 `Xi=Xi_W*Xi_G` 与 `Xi/Xi_C=|kappa|^(-6)` 的 exact lane factorization；9 行 phase 全为负实轴，但 `96->192` 半径比 `>23` 由 output lane `>230` 驱动，仍不构成渐近 theorem。
 tpc-270-cross-scale-radius-normalization - 当前阶段 - 在同一 finite literal V59 operator 上建立 exact `Xi=(R_squared)^3/N^10` endpoint normalization，认证 4 个 dyadic 与 5 个 adjacent scale ratios，得到 `DROP_RISE_RISE_DROP`；profile controls 落在 `(1/2,3/4)`，source-level radius、arithmetic `L2` 与 full Gate B 仍 OPEN。
 tpc-269-growing-cutoff-profile-transfer - 当前阶段 - 在同一 finite literal V59 operator 上引入注册的 growing-cutoff proxy 与 exact convex-profile transfer；12 行中 8 个 contraction、4 个 obstruction，中心 `theta=9/10`/`24/25` 翻转表明 profile-uniform quarter bound 失败，cross-scale radius theorem 仍 OPEN。
 

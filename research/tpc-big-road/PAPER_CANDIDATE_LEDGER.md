@@ -3,13 +3,40 @@
 
 更新时间：2026-08-27
 
-状态：**TPC270_NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC271_NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.64 当前：TPC-270 cross-scale endpoint-normalized radius
+## 0.65 当前：TPC-271 phase--radius decoupling
+
+项目：`papers/tpc-271-phase-radius-decoupling/`
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT**。
+
+TPC-271 承接 TPC-270，冻结同一个 literal V59 finite interface，并把 signed scalar
+`C_perp`、source residual lane `W_perp` 与 output residual lane `G_perp` 放进同一
+证书。定义 `Xi_W=W_perp^3/N^5`、`Xi_G=G_perp^3/N^5`、
+`Xi_C=|C_perp|^6/N^10` 后，精确得到
+`Xi=Xi_W*Xi_G` 与 `Xi/Xi_C=|kappa|^(-6)`。六个 base rows 与三个 profile controls
+的 scalar intervals 全部严格为负实轴；但四个 dyadic lane records 仍呈
+`DROP_RISE_RISE_DROP`。尤其 `96->192` 的 radius ratio 高于 `23`，同时 source lane
+低于 `1/8`、output lane 高于 `230`，因而该有限 spike 被 output lane 归因。
+
+这是一个新的 finite analytic structure 与 numerical certificate，不是 phase/radius
+渐近定理、统计独立性命题或 arithmetic `L2` closure；fixed-power credit 仍为 0，
+full Gate B 与 twin-prime conclusion 仍 open。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_LANE_FACTORIZATION_PLUS_PHASE_LOCKED_OUTPUT_SPIKE_CERTIFICATE
+STRONGEST_OBSTRUCTION = GREATER_THAN_23_RADIUS_RISE_WITH_NEGATIVE_PHASE_PRESERVED
+OPEN_THEOREM = SOURCE_LEVEL_SIGNED_PHASE_BOUND_WITH_EXPLICIT_RADIUS_LANE_CONTROL
+REUSABLE_STRUCTURE = (C_perp,W_perp,G_perp) -> Xi_C,Xi_W,Xi_G -> LANE_RATIO_ATTRIBUTION
+ROUND2_CLUE = TEST_SOURCE_LEVEL_SIGNED_PHASE_BOUND_WITH_EXPLICIT_RADIUS_LANE_CONTROL
+```
+
+## 0.64 已发布：TPC-270 cross-scale endpoint-normalized radius
 
 项目：`papers/tpc-270-cross-scale-radius-normalization/`
 

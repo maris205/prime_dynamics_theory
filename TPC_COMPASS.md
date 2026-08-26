@@ -1,11 +1,50 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V123 / FINITE_CROSS_SCALE_RADIUS_NORMALIZATION`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT`
-编号事实终点：TPC-270；TPC-270 trigger：`true`
+状态：`BOLD_CHANNEL_V124 / FINITE_PHASE_RADIUS_DECOUPLING`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT`
+编号事实终点：TPC-271；TPC-271 trigger：`true`
 
-当前 TPC-270 入口：proof 为
+当前 TPC-271 入口：proof 为
+`research/tpc-big-road/bridge_b_phase_radius_decoupling.md`，checker 为
+`tpc_bridge_b_phase_radius_decoupling_checker.py`，编号论文为
+`papers/tpc-271-phase-radius-decoupling/`。它在 TPC-270 的同一 finite interface
+中同时记录 signed scalar `C_perp`、source lane `W_perp`、output lane `G_perp`，
+并证明 exact finite identities
+`Xi=Xi_W*Xi_G` 与 `Xi/Xi_C=|kappa|^(-6)`。9 个 rows 的 phase 全为
+`NEGATIVE_REAL_AXIS`，但 `96->192` 的 radius ratio `>23` 由 source ratio `<1/8`
+与 output ratio `>230` 的乘积驱动。这是 scoped finite phase-radius decoupling，
+不是 source-level phase/radius theorem；fixed-power credit、arithmetic `L2` 与
+full Gate-B 仍 OPEN/NONE。
+
+```text
+TPC271_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+TPC271_ROUTE_ADVANCE = YES_SCOPED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+TPC271_LANE_FACTORIZATION = PROVED_EXACT_FINITE
+TPC271_PHASE_SIGN_CENSUS = NUMERICALLY_CERTIFIED_FINITE
+TPC271_PHASE_RADIUS_DECOUPLING = NUMERICALLY_CERTIFIED_FINITE
+TPC271_SOURCE_LANE_PROFILE_INVARIANCE = PROVED_EXACT_FINITE
+TPC271_OUTPUT_LANE_SPIKE = NUMERICALLY_CERTIFIED_FINITE
+TPC271_SOURCE_LEVEL_SIGNED_PHASE = OPEN_ASYMPTOTIC
+TPC271_SOURCE_LEVEL_RADIUS = OPEN_ASYMPTOTIC
+TPC271_FIXED_POWER_CREDIT = 0
+TPC271_ARITHMETIC_ADVANCE = NO
+TPC271_L2 = NONE
+TPC271_FULL_GATE_B = OPEN
+TPC271_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC271_TWIN_PRIME_RESULT = NONE
+TPC271_STATUS = NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+TPC271_ROUND2_CLUE = TEST_SOURCE_LEVEL_SIGNED_PHASE_BOUND_WITH_EXPLICIT_RADIUS_LANE_CONTROL
+```
+
+strongest positive result：exact lane factorization plus a phase-locked,
+output-lane-dominated finite spike；strongest obstruction：constant finite phase
+sign does not stabilize normalized radius；open theorem：source-compatible signed
+phase bound coupled to explicit radius-lane control。
+
+## Upstream TPC-270
+
+TPC-270 入口：proof 为
 `research/tpc-big-road/bridge_b_cross_scale_radius_normalization.md`，checker 为
 `tpc_bridge_b_cross_scale_radius_normalization_checker.py`，编号论文为
 `papers/tpc-270-cross-scale-radius-normalization/`。它保持 literal V59 finite

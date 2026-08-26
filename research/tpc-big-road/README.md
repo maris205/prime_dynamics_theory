@@ -1,13 +1,54 @@
-# TPC big road V123 / TPC-270: cross-scale endpoint-normalized radius
+# TPC big road V124 / TPC-271: phase--radius decoupling
 
 更新时间：2026-08-27
 
-状态：`TPC270_NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC271_NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-270 proof 为
+当前 TPC-271 proof 为
+`bridge_b_phase_radius_decoupling.md`，checker 为
+`tpc_bridge_b_phase_radius_decoupling_checker.py`，编号论文为
+`../../papers/tpc-271-phase-radius-decoupling/`。
+
+TPC-271 在 TPC-270 的同一 finite literal V59 interface 中同时记录 signed scalar
+`C_perp`、source lane `W_perp` 与 output lane `G_perp`，并证明
+`Xi=Xi_W*Xi_G`、`Xi/Xi_C=|kappa|^(-6)`。六个 base rows 与三个 profile controls
+的 scalar phase 全为 `NEGATIVE_REAL_AXIS`；四个 dyadic lane records 仍给出
+`DROP_RISE_RISE_DROP`，且 `96->192` 的 radius ratio `>23` 由 source ratio `<1/8`
+与 output ratio `>230` 驱动。outward interval、独立 replay 与 stress audit 全部通过。
+这是 finite phase-radius decoupling audit，不是 source-level phase/radius theorem；
+fixed-power payment、arithmetic `L2`、full Gate-B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC271_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+TPC271_ROUTE_ADVANCE = YES_SCOPED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+TPC271_LANE_FACTORIZATION = PROVED_EXACT_FINITE
+TPC271_PHASE_SIGN_CENSUS = NUMERICALLY_CERTIFIED_FINITE
+TPC271_PHASE_RADIUS_DECOUPLING = NUMERICALLY_CERTIFIED_FINITE
+TPC271_SOURCE_LANE_PROFILE_INVARIANCE = PROVED_EXACT_FINITE
+TPC271_OUTPUT_LANE_SPIKE = NUMERICALLY_CERTIFIED_FINITE
+TPC271_SOURCE_LEVEL_SIGNED_PHASE = OPEN_ASYMPTOTIC
+TPC271_SOURCE_LEVEL_RADIUS = OPEN_ASYMPTOTIC
+TPC271_FIXED_POWER_CREDIT = 0
+TPC271_ARITHMETIC_ADVANCE = NO
+TPC271_L2 = NONE
+TPC271_FULL_GATE_B = OPEN
+TPC271_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC271_TWIN_PRIME_RESULT = NONE
+TPC271_STATUS = NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+TPC271_ROUND2_CLUE = TEST_SOURCE_LEVEL_SIGNED_PHASE_BOUND_WITH_EXPLICIT_RADIUS_LANE_CONTROL
+```
+
+strongest positive result：exact lane factorization plus a phase-locked,
+output-lane-dominated finite spike；strongest obstruction：constant finite phase sign
+does not stabilize normalized radius；open theorem：source-compatible signed phase
+bound coupled to explicit radius-lane control。
+
+## Upstream TPC-270
+
+TPC-270 proof 为
 `bridge_b_cross_scale_radius_normalization.md`，checker 为
 `tpc_bridge_b_cross_scale_radius_normalization_checker.py`，编号论文为
 `../../papers/tpc-270-cross-scale-radius-normalization/`。
@@ -20,30 +61,6 @@ adjacent ratios 与三个 profile controls 经 outward interval、独立重算�
 `64->128` 低于 `1/4`。这是 finite normalization audit，不是 source-level radius
 theorem；fixed-power payment、arithmetic `L2`、full Gate-B 与 twin-prime conclusion
 仍 OPEN/NONE。
-
-```text
-TPC270_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
-TPC270_ROUTE_ADVANCE = YES_SCOPED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
-TPC270_ENDPOINT_NORMALIZATION = PROVED_EXACT_FINITE_IDENTITY
-TPC270_CROSS_SCALE_VARIATION = NUMERICALLY_CERTIFIED_FINITE
-TPC270_PROFILE_CONTROL = NUMERICALLY_CERTIFIED_FINITE
-TPC270_FINITE_STABILITY = REFUTED_SCOPED
-TPC270_SOURCE_LEVEL_RADIUS = OPEN_ASYMPTOTIC
-TPC270_SOURCE_LEVEL_PHASE = OPEN_ASYMPTOTIC
-TPC270_FIXED_POWER_CREDIT = 0
-TPC270_ARITHMETIC_ADVANCE = NO
-TPC270_L2 = NONE
-TPC270_FULL_GATE_B = OPEN
-TPC270_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC270_TWIN_PRIME_RESULT = NONE
-TPC270_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_RADIUS_NORMALIZATION_AUDIT
-TPC270_ROUND2_CLUE = TEST_SOURCE_LEVEL_RADIUS_UPPER_BOUND_WITH_EXPLICIT_POWER_NORMALIZATION
-```
-
-strongest positive result：exact endpoint normalization and threshold-separated
-finite cross-scale certificate；strongest obstruction：the normalized radius has both
-a greater-than-23-fold dyadic rise and a sub-quarter drop；open theorem：a
-source-compatible radius bound with explicit power and uniformity。
 
 ## Upstream TPC-269
 

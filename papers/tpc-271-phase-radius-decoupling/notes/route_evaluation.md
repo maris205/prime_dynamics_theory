@@ -1,0 +1,18 @@
+# Route evaluation
+
+```text
+ROUTE_A = NOT_APPLICABLE_TO_THIS_FINITE_BRIDGE_B_AUDIT
+ROUTE_B = YES_SCOPED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT
+STRONGEST_POSITIVE = EXACT_LANE_FACTORIZATION_PLUS_PHASE_LOCKED_OUTPUT_SPIKE
+STRONGEST_OBSTRUCTION = RADIUS_RISE_ABOVE_23_WITH_PHASE_SIGN_PRESERVED
+OPEN_THEOREM = SOURCE_LEVEL_SIGNED_PHASE_BOUND_WITH_EXPLICIT_RADIUS_LANE_CONTROL
+REUSABLE_STRUCTURE = PROJECTED_SCALAR_AND_TWO_NORMS -> RATIONAL_SIXTH_POWER_LANES
+ROUND2_CLUE = TEST_SOURCE_LEVEL_SIGNED_PHASE_BOUND_WITH_EXPLICIT_RADIUS_LANE_CONTROL
+```
+
+The Session-named `propose.md` and route evaluator files are absent from this
+checkout. The proof package, theorem ledger, interval certificate, independent
+replay, stress audit, bridge checker, and `AGENTS.md` are the fail-closed
+fallback. The finite phase lock is not promoted to a source-level phase sector,
+and no arithmetic Route-B closure is claimed.
