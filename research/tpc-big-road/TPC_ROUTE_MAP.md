@@ -2,13 +2,17 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V117 / TPC-264
+当前地图版本：V118 / TPC-265
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-264`（`PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL`）；
+当前编号锚点：`TPC-265`（`PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER`）；
 对应论文目录为
-`papers/tpc-264-orthogonal-residual-schur-firewall/`。
+`papers/tpc-265-schur-endpoint-budget-compiler/`。
+TPC-265 承接 TPC-264 的 exact Schur residual set，证明 projected center 与
+residual radius 的 sharp endpoint 为 `|c|+R`，并将 center/radius 两 lane 接入
+严格 `1/400` budget compiler；actual V59 radius/phase 仍 OPEN。
+
 TPC-264 承接 TPC-263 的 exact `C_3+C_perp` split，证明固定 projected data 与
 residual norms 下，`C_perp` 的 Schur feasible set 按补空间维数精确分成
 disk/circle/singleton；二维补空间仍允许 endpoint-scale `x^(5/3)` radius。
@@ -55,9 +59,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V117 / TPC-264                    |
-        | SCHUR RESIDUAL FIREWALL PAID                |
-        | disk sharp; literal radius/phase still OPEN |
+        | YOU ARE HERE — V118 / TPC-265                    |
+        | SCHUR ENDPOINT-BUDGET COMPILER PAID         |
+        | |c|+R sharp; literal radius/phase still OPEN|
         +--------------------------------------------------+
                 |
                 v
@@ -100,7 +104,7 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V117 / TPC-264。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V118 / TPC-265。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
@@ -112,7 +116,10 @@ null direction 嵌入四块 Haar complement，给出 null-compatible completion 
 polygon 区间与 four-point DFT mode-zero ledger，并以 `0`/`16` 两端 witness 否定
 marginal-only residual identification。TPC-261 再把 baseline-to-target 的端点义务
 精确编译成 `1/400` 的 strict effective-saving threshold，并证明 fixed-log
-suppression 不产生 fixed-power credit。FULL_GATE_B、global strict `1/400`、
+suppression 不产生 fixed-power credit。TPC-264 精确分类 `C_perp` 的 Schur
+disk/circle/singleton；TPC-265 又证明该 residual geometry 的 sharp radial
+support 是 `|c|+R`，并把 center/radius 两 lane 编译回同一 strict `1/400`
+测试。FULL_GATE_B、global strict `1/400`、
 arithmetic `L2`、literal mode-zero estimate、full scalar 与 fixed-atom credit
 继续 OPEN/UNPAID/NONE。**
 
@@ -1245,6 +1252,50 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.59 V118 / TPC-265：Schur radius to endpoint-budget compiler
+
+TPC-265 是 TPC-264 的自然延续：TPC-264 给出了 residual Schur feasible set，
+本篇把这一个几何集合真正压到 endpoint ledger。固定 projected center `c` 与
+residual radius `R`，则 disk 的 radial support 精确为
+
+```text
+sup_{|z|<=R}|c+z| = |c|+R,
+inf_{|z|<=R}|c+z| = max(|c|-R,0).
+```
+
+free-phase circle 的上端同样达到 `|c|+R`。所以 residual radius 必须作为
+独立 lane 支付，不能从 norm-only information 中扣除 cancellation credit。
+把 center lane 与 radius lane 接到既有 `E0=5/3`、`E*=1997/1200` 后，
+每条 lane 的 effective saving `delta-lambda` 都必须严格大于 `1/400`；
+等号只是 power-level borderline，fixed-log decay 的 credit 仍为零。
+
+```text
+TPC265_ROUTE_ADVANCE = YES_SCOPED_RESIDUAL_RADIUS_BUDGET_COMPILER
+TPC265_SCHUR_RADIAL_ENVELOPE = PROVED_EXACT
+TPC265_DISK_WORST_CASE = PROVED_EXACT
+TPC265_CIRCLE_WORST_CASE = PROVED_EXACT
+TPC265_TWO_LANE_ENDPOINT_COMPILER = PROVED_EXACT_CONDITIONAL
+TPC265_STRICT_PAYMENT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC265_LOG_CENTER_CREDIT = 0
+TPC265_LOG_RADIUS_CREDIT = 0
+TPC265_ACTUAL_V59_RADIUS = OPEN
+TPC265_ACTUAL_V59_PHASE = OPEN
+TPC265_FIXED_POWER_CREDIT = 0
+TPC265_ARITHMETIC_ADVANCE = NO
+TPC265_L2 = NONE
+TPC265_FULL_GATE_B = OPEN
+TPC265_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC265_TWIN_PRIME_RESULT = NONE
+TPC265_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC265_STATUS = PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER
+TPC265_ROUND2_CLUE = TEST_LITERAL_RESIDUAL_RADIUS_OR_PHASE_AGAINST_THE_TWO_LANE_BUDGET
+```
+
+这是一个 exact structural budget theorem，而不是 actual V59 radius/phase
+estimate；它的 strongest obstruction 是 aligned residual endpoint，strongest
+next question 是为 literal residual 找到 source-backed radius 或 signed-phase
+restriction。
 
 ## 5.58 V117 / TPC-264：orthogonal-residual Schur firewall
 
@@ -3436,7 +3487,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V117 / TPC-264：
+截至 V118 / TPC-265：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -3464,6 +3515,25 @@ TPC264_TWIN_PRIME_RESULT = NONE
 TPC264_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
 TPC264_STATUS = PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL
 TPC264_ROUND2_CLUE = TURN_THE_SCHUR_RADIUS_OR_RESIDUAL_PHASE_INTO_A_LITERAL_V59_ESTIMATE
+TPC265_ROUTE_ADVANCE = YES_SCOPED_RESIDUAL_RADIUS_BUDGET_COMPILER
+TPC265_SCHUR_RADIAL_ENVELOPE = PROVED_EXACT
+TPC265_DISK_WORST_CASE = PROVED_EXACT
+TPC265_CIRCLE_WORST_CASE = PROVED_EXACT
+TPC265_TWO_LANE_ENDPOINT_COMPILER = PROVED_EXACT_CONDITIONAL
+TPC265_STRICT_PAYMENT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC265_LOG_CENTER_CREDIT = 0
+TPC265_LOG_RADIUS_CREDIT = 0
+TPC265_ACTUAL_V59_RADIUS = OPEN
+TPC265_ACTUAL_V59_PHASE = OPEN
+TPC265_FIXED_POWER_CREDIT = 0
+TPC265_ARITHMETIC_ADVANCE = NO
+TPC265_L2 = NONE
+TPC265_FULL_GATE_B = OPEN
+TPC265_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC265_TWIN_PRIME_RESULT = NONE
+TPC265_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC265_STATUS = PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER
+TPC265_ROUND2_CLUE = TEST_LITERAL_RESIDUAL_RADIUS_OR_PHASE_AGAINST_THE_TWO_LANE_BUDGET
 TPC263_ROUTE_ADVANCE = YES_SCOPED_RANK_THREE_LOG_CHANNEL
 TPC263_W_FRAME_MOMENTS = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
 TPC263_ADJOINT_FRAME_COEFFICIENTS = PROVED_SOURCE_BACKED_TPC257
@@ -4305,6 +4375,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V118 / TPC-265 | Bridge A / Gate B：Schur residual 的 sharp endpoint-budget compiler 已完成；literal residual radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-265` | 证明 disk/circle 的 radial upper endpoint 恰为 `|c|+R`，并将 center/radius 两 lane 接入严格 `1/400` effective-saving 条件；fixed-log credit 为零 |
 | 2026-08-26 | V117 / TPC-264 | Bridge A / Gate B：orthogonal-residual Schur firewall 已完成；literal residual radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-264` | 对 TPC-263 的 `C_perp` 给出 exact disk/circle/singleton feasible-set theorem；二维补空间的 synthetic endpoint radius 为 `x^(5/3)`，无 fixed-power credit |
 | 2026-08-26 | V116 / TPC-263 | Bridge A / Gate B：rank-three physical cross-Gram channel 已完成；orthogonal residual、arithmetic `L2` 与 full Gate B open | `TPC-263` | 将 TPC-254 的四 block fixed-log hybrid control 与 TPC-257 三个 adjoint asymptotics 在同一 exact `P3` 上相乘，得到 `C_3=O(x^(5/3)/(log x)^(M+3))`；保留 `C_perp`，无 fixed-power credit |
 | 2026-08-26 | V115 / TPC-262 | Bridge A / Gate B：literal signed reduced-residue operator 与 phase-character firewall 已完成；growing `beta,w` cross-Gram、arithmetic `L2` 与 full Gate B open | `TPC-262` | 精确锁定 `J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`、weighted cross-Gram/DFT ledger 与 phase-character separation；finite operator-image witness 显示相同 diagonals 仍允许 mode-zero `16||Y||^2` 或 `0`，不构成 growing-shell counterexample |

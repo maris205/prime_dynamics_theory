@@ -1,13 +1,56 @@
-# TPC big road V117 / TPC-264: orthogonal-residual Schur firewall
+# TPC big road V118 / TPC-265: Schur radius to endpoint-budget compiler
 
 更新时间：2026-08-26
 
-状态：`TPC264_PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC265_PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-264 proof 为
+当前 TPC-265 proof 为
+`bridge_b_schur_endpoint_budget_compiler.md`，checker 为
+`tpc_bridge_b_schur_endpoint_budget_compiler_checker.py`，编号论文为
+`../../papers/tpc-265-schur-endpoint-budget-compiler/`。
+
+TPC-265 承接 TPC-264 的 residual Schur disk，证明 projected center `c` 与
+residual radius `R` 的 uniform radial support 恰为 `|c|+R`（disk 与 free-phase
+circle 的上边界都 sharp），并将 center/radius 两条 lane 编译到
+`E0=5/3`、`E*=1997/1200` 的严格 `1/400` endpoint 条件。fixed-log control
+不产生 fixed-power credit；actual V59 residual radius/phase、arithmetic `L2`
+与 full Gate-B 仍 OPEN/NONE。
+
+```text
+TPC265_MAXIMUM_CLAIM = PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER
+TPC265_ROUTE_ADVANCE = YES_SCOPED_RESIDUAL_RADIUS_BUDGET_COMPILER
+TPC265_SCHUR_RADIAL_ENVELOPE = PROVED_EXACT
+TPC265_DISK_WORST_CASE = PROVED_EXACT
+TPC265_CIRCLE_WORST_CASE = PROVED_EXACT
+TPC265_TWO_LANE_ENDPOINT_COMPILER = PROVED_EXACT_CONDITIONAL
+TPC265_STRICT_PAYMENT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC265_LOG_CENTER_CREDIT = 0
+TPC265_LOG_RADIUS_CREDIT = 0
+TPC265_ACTUAL_V59_RADIUS = OPEN
+TPC265_ACTUAL_V59_PHASE = OPEN
+TPC265_FIXED_POWER_CREDIT = 0
+TPC265_ARITHMETIC_ADVANCE = NO
+TPC265_L2 = NONE
+TPC265_FULL_GATE_B = OPEN
+TPC265_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC265_TWIN_PRIME_RESULT = NONE
+TPC265_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC265_STATUS = PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER
+TPC265_ROUND2_CLUE = TEST_LITERAL_RESIDUAL_RADIUS_OR_PHASE_AGAINST_THE_TWO_LANE_BUDGET
+```
+
+TPC-264 remains the immediate upstream orthogonal-residual firewall:
+
+```text
+Schur feasible set = disk/circle/singleton by complement dimension; literal radius/phase OPEN.
+```
+
+## V117 upstream: TPC-264 orthogonal-residual Schur firewall
+
+TPC-264 proof 为
 `bridge_b_orthogonal_residual_schur_firewall.md`，checker 为
 `tpc_bridge_b_orthogonal_residual_schur_firewall_checker.py`，编号论文为
 `../../papers/tpc-264-orthogonal-residual-schur-firewall/`。

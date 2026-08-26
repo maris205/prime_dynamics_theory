@@ -1,0 +1,274 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\C}{\mathbb C}
+
+\title{TPC-265: Schur Radius to Endpoint-Budget Compiler}
+\author{Liang Wang\\
+School of Mathematics and Statistics, Huazhong University of Science and Technology\\
+Wuhan, China}
+\date{August 26, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-264 identified the exact Schur feasible set of the orthogonal residual left
+by the rank-three physical channel.  We now compile that finite geometry into
+the endpoint ledger.  For a projected center $c$ and a residual disk of radius
+$R$, the worst-case reassembled scalar has the sharp value $|c|+R$, while the
+disk lower edge is $\max(|c|-R,0)$.  The same upper edge holds for a free-phase
+circle.  Combining the two resulting lanes with the V59 baseline
+$E_0=5/3$ and target $E_*=1997/1200$ gives the exact strict payment threshold
+$1/400$ for each power-saving lane.  Fixed logarithmic suppression has zero
+fixed-power credit.  This is an interface theorem and obstruction: it does not
+estimate the literal V59 residual or prove a twin-prime statement.
+\end{abstract}
+
+\section{Scope and motivation}
+
+We use the conjugate-linear-first-slot convention
+\[
+ \ip{u}{v}=\sum_j\overline{u_j}v_j.
+\]
+On the common V59 clock, TPC-263 decomposes the physical coupling as
+\[
+ \ip{w}{g_x}=C_3(x)+C_\perp(x),\qquad g_x=A_x\beta,
+\]
+where the rank-three term satisfies, for fixed $M,K$,
+\[
+ |C_3(x)|\ll_{M,K}\frac{x^{5/3}}{(\log x)^{M+3}},
+\]
+and $C_\perp$ is an exact orthogonal-complement cross-Gram.  TPC-264 showed
+that, after fixing the projected vectors and residual norms, this cross-Gram is
+a point in a disk (or in its dimension-one degeneration).
+
+The present paper answers the next bookkeeping question.  If the residual is
+only known through that feasible set, what is the largest possible full scalar?
+The answer is not a new Cauchy estimate; it is an exact support calculation.
+This matters because endpoint arguments sometimes treat a possible phase
+cancellation as though it were paid by a norm bound.  The support calculation
+separates those two kinds of information.
+
+Our contributions are:
+\begin{enumerate}
+ \item a sharp radial envelope for Schur disks and circles;
+ \item a two-lane endpoint compiler with the exact strict threshold $1/400$;
+ \item a logarithmic/power firewall for both the center and radius lanes; and
+ \item exact rational endpoint and multi-lane audits.
+\end{enumerate}
+
+All conclusions about the literal V59 residual are explicitly left open.
+
+\section{Schur geometry as an endpoint set}
+
+Let $P$ be an orthogonal projection on a complex Hilbert space and write
+\[
+ p=Pw,\quad q=Pg,\quad u=(I-P)w,\quad v=(I-P)g.
+\]
+Set $c=\ip{p}{q}$ and $z=\ip{u}{v}$.  The orthogonal splitting from TPC-264
+is
+\begin{equation}
+ \ip{w}{g}=c+z.
+ \label{eq:split}
+\end{equation}
+If $a=\norm{u}$ and $b=\norm{v}$, the residual Gram matrix is
+\[
+ \begin{pmatrix}a^2&z\\ \overline z&b^2\end{pmatrix}\succeq0,
+ \qquad |z|\leq ab.
+\]
+When the complement has dimension at least two, every point of this disk is
+realizable with the same $p,q,a,b$.  We therefore write its radius as
+\[
+ R=ab,qquad \mathcal D(c,R)=\{c+z:|z|\leq R\}.
+\]
+The one-dimensional complement gives the boundary circle, and a zero
+complement or zero residual norm gives a singleton.
+
+\begin{remark}
+The use of a disk here is conditional on the fixed residual norms.  It does
+not say that the actual V59 residual norms equal a proposed scale.  The point
+of the notation is to make the missing information visible in the endpoint
+ledger.
+\end{remark}
+
+\section{Sharp radial support}
+
+\begin{theorem}[disk radial envelope]
+For $c\in\C$ and $R\geq0$,
+\begin{align}
+ \sup_{y\in\mathcal D(c,R)}|y|&=|c|+R, \label{eq:upper}\\
+ \inf_{y\in\mathcal D(c,R)}|y|&=\max\{|c|-R,0\}. \label{eq:lower}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+The triangle inequality gives $|c+z|\leq|c|+R$.  If $c\neq0$, choose
+the aligned residual $z=Rc/|c|$; if $c=0$, any boundary point gives equality.
+This proves \eqref{eq:upper}.  The reverse triangle inequality gives
+$|c+z|\geq\bigl||c|-|z|\bigr|$.  If $|c|\geq R$, choose the opposite
+boundary point $z=-Rc/|c|$.  If $|c|<R$, choose $z=-c$, which lies in the
+disk.  Both choices attain \eqref{eq:lower}.
+\end{proof}
+
+\begin{theorem}[circle upper edge]
+For the free-phase circle
+\[
+ \mathcal C(c,R)=\{c+z:|z|=R\},
+\]
+\[
+ \sup_{y\in\mathcal C(c,R)}|y|=|c|+R,
+ \qquad
+ \inf_{y\in\mathcal C(c,R)}|y|=\bigl||c|-R\bigr|.
+\]
+\end{theorem}
+
+\begin{proof}
+The aligned and opposite boundary points used above both lie on the circle.
+The triangle and reverse-triangle inequalities are therefore sharp on the
+circle as well.
+\end{proof}
+
+The first theorem is the key obstruction.  If a residual phase is not
+controlled, the aligned point is admissible and the radius must be paid in a
+uniform upper bound.  A phase theorem can change the feasible set, but it is
+additional information rather than a consequence of positive semidefiniteness.
+
+\section{The endpoint-budget compiler}
+
+Fix the inherited exponents
+\[
+ E_0=\frac53,\qquad E_*=\frac{1997}{1200},\qquad
+ \Delta_*=E_0-E_* = \frac1{400}.
+\]
+Suppose the center and radius have power bounds
+\begin{align}
+ |c_x|&\leq C_c(\varepsilon)x^{E_0-\delta_c+\lambda_c+\varepsilon},\\
+ R_x&\leq C_r(\varepsilon)x^{E_0-\delta_r+\lambda_r+\varepsilon}.
+ \label{eq:lanes}
+\end{align}
+
+\begin{theorem}[Schur-derived two-lane compiler]
+If both effective savings satisfy
+\[
+ \delta_c-\lambda_c>\Delta_*\quad\text{and}\quad
+ \delta_r-\lambda_r>\Delta_* ,
+ \label{eq:strict}
+\]
+then every scalar in the disk feasible set is $o(x^{E_*})$.  If either
+effective saving equals $\Delta_*$, that lane is only power-level borderline;
+if either is smaller, the displayed hypotheses do not close the target.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:upper}, every admissible scalar has modulus at most
+$|c_x|+R_x$.  Let $\eta$ be smaller than half the two strict margins in
+\eqref{eq:strict}, and choose $\varepsilon$ smaller than $\eta$.  Each term
+in \eqref{eq:lanes} is then $O(x^{E_*-\eta})$, so their sum is
+$o(x^{E_*})$.  At equality the exponent reaches $E_*$, and below equality it
+exceeds $E_*$; without an additional rate factor neither case gives the
+required strict little-oh conclusion.
+\end{proof}
+
+This compiler differs in role from an abstract lane sum: the residual lane is
+forced by the exact Schur feasible set, and Theorem~1 proves that its radius is
+the sharp worst-case cost.  No norm-only reassembly loss can be silently
+removed.
+
+\section{Logarithmic firewall and finite audit}
+
+For fixed $M$ and $\delta>0$,
+\[
+ \frac{x^{E_0}/(\log x)^M}{x^{E_0-\delta}}
+ =\frac{x^\delta}{(\log x)^M}\longrightarrow\infty.
+\]
+Thus a fixed-log center or radius estimate has zero fixed-power credit.  In
+particular, TPC-263's arbitrary fixed-log bound for $C_3$ cannot be entered as
+a positive $\delta_c$ in the compiler.
+
+The exact certificate uses a real center $c=2$ and radius $R=3$.  The disk has
+supremum $5$ and infimum $0$; its aligned and opposite residuals are $3$ and
+$-3$, and the cancellation point is $-2$.  The free-phase circle has the same
+supremum and infimum $1$.  Three independently free residual lanes with radii
+$1,2,3$ have Minkowski radius $6$, so their sharp upper edge over the same
+center is $8$.  These are exact rational identities, not floating-point
+approximations.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Lane & Saving $\delta$ & Loss $\lambda$ & Classification\\
+\midrule
+Strict radius & $1/320$ & $0$ & strict\\
+Borderline & $1/400$ & $0$ & borderline\\
+Loss test & $1/320$ & $1/1200$ & insufficient\\
+Log-only & $0$ & $0$ & no fixed power\\
+\bottomrule
+\end{tabular}
+\caption{Exact endpoint classifications.}
+\end{table}
+
+\section{Claim firewall and route consequence}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Object & Status\\
+\midrule
+Schur radial envelope & \texttt{PROVED\_EXACT}\\
+Two-lane compiler & \texttt{PROVED\_EXACT\_CONDITIONAL}\\
+Strict threshold & $1/400$\\
+Log center/radius credit & $0$\\
+Literal V59 radius and phase & \texttt{OPEN}\\
+Arithmetic $L^2$ and full Gate B & \texttt{NONE / OPEN}\\
+Twin-prime conclusion & \texttt{NONE}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The phrase ``Schur Radius to Endpoint-Budget Compiler'' records an interface,
+not a completed arithmetic bridge.  The next valid task is to estimate the
+literal residual radius with a fixed-power saving, or to prove a signed phase
+restriction that replaces the disk support.  Either route must retain the
+common clock, hard window, unit masks, and deleted diagonal.
+
+\section{Conclusion}
+
+The Schur residual is a radius lane.  Its exact worst-case contribution is
+additive with the projected center, and the endpoint ledger therefore sees the
+sharp cost $|c|+R$.  The inherited gap is strictly paid only when each relevant
+power lane has effective saving greater than $1/400$.  Fixed logarithms do not
+alter that conclusion.  TPC-265 consequently supplies a reusable budget
+compiler and a precise obstruction while leaving the actual V59 arithmetic
+residual open.
+
+\begin{thebibliography}{9}
+\bibitem{TPC264}
+L.~Wang, ``Orthogonal-residual Schur firewall,'' TPC-264 project,
+repository release, 2026.
+
+\bibitem{TPC263}
+L.~Wang, ``Rank-three physical cross-Gram channel,'' TPC-263 project,
+repository release, 2026.
+
+\bibitem{HornJohnson}
+R.~A. Horn and C.~R. Johnson, \emph{Matrix Analysis}, Cambridge University
+Press, 2012.
+\end{thebibliography}
+
+\end{document}

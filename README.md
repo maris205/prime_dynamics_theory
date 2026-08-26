@@ -9,7 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-264 在 TPC-263 的 rank-three physical channel 之后，精确求出
+当前主线状态：TPC-265 在 TPC-264 的 orthogonal-residual Schur firewall 之后，
+把 residual disk 的 sharp worst-case `|c|+R` 接入 endpoint ledger，并证明中心 lane
+与 radius lane 各自都必须有严格大于 `1/400` 的 effective power saving；fixed-log
+control 仍是零 fixed-power credit。actual V59 radius/phase、arithmetic `L2`、full
+Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+TPC-264 在 TPC-263 的 rank-three physical channel 之后，精确求出
 正交残差的 Schur 可实现集合：二维以上补空间是闭圆盘，一维是圆，退化情形是单点。
 这把 `C_perp` 的缺失信息从“未估计”推进为一个 sharp finite firewall；endpoint-scale
 synthetic radius 仍可达 `x^(5/3)`，因此没有 fixed-power `1/400` credit。actual V59
@@ -52,6 +58,7 @@ OPEN/UNPAID/NONE。
 
 ## 3. Latest Paper
 
+tpc-265-schur-endpoint-budget-compiler - 当前阶段 - 将 Schur residual radius 编译成 sharp `|c|+R` endpoint lane，给出严格 `1/400` 两 lane 支付条件并封住 norm-only cancellation credit；literal V59 radius/phase 仍 OPEN。
 tpc-264-orthogonal-residual-schur-firewall - 当前阶段 - 精确分类 `C_perp` 的 disk/circle/singleton Schur feasible set，量化 rank-three channel 之后仍缺少的 residual radius/phase；synthetic endpoint witness 不产生 arithmetic credit。
 tpc-263-rank-three-physical-cross-gram - 当前阶段 - 将四块 hybrid `w` 的 fixed-log 控制与 TPC-257 三个 adjoint asymptotic 在 exact `P3` 上相乘，支付 rank-three physical cross-Gram channel；正交残差仍 OPEN。
 tpc-262-literal-mode-zero-cross-gram - 当前阶段 - literal signed reduced-residue operator、cross-Gram/DFT ledger 与 phase-character firewall 已精确闭合；growing-shell arithmetic estimate 仍开放。

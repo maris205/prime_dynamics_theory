@@ -1,9 +1,46 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V117 / ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL`
-claim level：`PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL`
-编号事实终点：TPC-264；TPC-264 trigger：`true`
+状态：`BOLD_CHANNEL_V118 / SCHUR_ENDPOINT_BUDGET_COMPILER`
+claim level：`PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER`
+编号事实终点：TPC-265；TPC-265 trigger：`true`
+
+当前 TPC-265 入口：proof 为
+`research/tpc-big-road/bridge_b_schur_endpoint_budget_compiler.md`，checker 为
+`tpc_bridge_b_schur_endpoint_budget_compiler_checker.py`，编号论文为
+`papers/tpc-265-schur-endpoint-budget-compiler/`。它承接 TPC-264 的 Schur
+feasible set，证明 projected center `c` 与 residual radius `R` 的 uniform
+reassembly cost 恰为 `|c|+R`，并把 center/radius 两 lane 接入
+`E0-E*=1/400` 的严格 endpoint compiler。fixed-log center/radius credit 均为零；
+actual V59 radius/phase、arithmetic `L2` 与 full Gate-B 仍 OPEN/NONE。
+
+```text
+TPC265_MAXIMUM_CLAIM = PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER
+TPC265_ROUTE_ADVANCE = YES_SCOPED_RESIDUAL_RADIUS_BUDGET_COMPILER
+TPC265_SCHUR_RADIAL_ENVELOPE = PROVED_EXACT
+TPC265_DISK_WORST_CASE = PROVED_EXACT
+TPC265_CIRCLE_WORST_CASE = PROVED_EXACT
+TPC265_TWO_LANE_ENDPOINT_COMPILER = PROVED_EXACT_CONDITIONAL
+TPC265_STRICT_PAYMENT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC265_LOG_CENTER_CREDIT = 0
+TPC265_LOG_RADIUS_CREDIT = 0
+TPC265_ACTUAL_V59_RADIUS = OPEN
+TPC265_ACTUAL_V59_PHASE = OPEN
+TPC265_FIXED_POWER_CREDIT = 0
+TPC265_ARITHMETIC_ADVANCE = NO
+TPC265_L2 = NONE
+TPC265_FULL_GATE_B = OPEN
+TPC265_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC265_TWIN_PRIME_RESULT = NONE
+TPC265_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC265_STATUS = PROVED_EXACT_SCHUR_TO_ENDPOINT_BUDGET_COMPILER
+TPC265_ROUND2_CLUE = TEST_LITERAL_RESIDUAL_RADIUS_OR_PHASE_AGAINST_THE_TWO_LANE_BUDGET
+```
+
+strongest positive result：Schur radius 的 exact radial support 与 strict two-lane
+budget compiler；strongest obstruction：free residual phase 总能实现 aligned endpoint，
+norm-only data 没有 cancellation credit；open theorem：literal V59 residual radius 或
+signed phase theorem。
 
 当前 TPC-264 入口：proof 为
 `research/tpc-big-road/bridge_b_orthogonal_residual_schur_firewall.md`，checker 为
