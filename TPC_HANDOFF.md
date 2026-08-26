@@ -1,9 +1,62 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V121_TPC268_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION_RELEASED`
+交接状态：`BOLD_CHANNEL_V122_TPC269_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER_RELEASED`
 
-TPC-268 当前 section：finite cutoff-sensitivity obstruction
+TPC-269 当前 section：growing-cutoff and convex-profile transfer
+-----------------------------------------------------------------------------------------------
+
+TPC-269 is the controlled continuation of TPC-268. It freezes the same finite literal V59
+prime shell, outer q weight, unit masks, deleted diagonal, source beta, kernel operator,
+and rank-three Haar projection, replaces the fixed comparison choice by the registered
+finite proxy `z_N=floor(log N)`, and moves along
+`K_theta=(1-theta)K_1+theta K_2`. Outward rational intervals classify 12 rows: 8
+contractions and 4 obstructions.
+
+At the fixed central row `(N,H,Q,z_N)=(64,15,4,4)`,
+
+```text
+theta=9/10: rho^2 in [0.0634078324659, 0.0634208686352]  obstruction
+theta=24/25: rho^2 in [0.0622500850692, 0.0622630874560] contraction
+theta=1:     rho^2 in [0.0614513775060, 0.0614643508731] contraction
+```
+
+The affine profile identity is exact on each finite row, while the quotient denominator
+is quadratic in the profile parameter. Hence the registered growing proxy does not give a
+profile-uniform quarter bound. This is a finite model-relative transfer obstruction, not
+an asymptotic source-level counterexample; cross-scale radius normalization, arithmetic L2,
+full Gate B, fixed-power credit, and the twin-prime conclusion remain open/none.
+
+```text
+TPC269_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER
+TPC269_ROUTE_ADVANCE = YES_SCOPED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER
+TPC269_GROWING_CUTOFF_PROXY = NUMERICALLY_CERTIFIED_FINITE
+TPC269_PROFILE_MIXTURE_IDENTITY = PROVED_EXACT_FINITE
+TPC269_PROFILE_PATH_FLIP = NUMERICALLY_CERTIFIED_FINITE
+TPC269_GROWING_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC269_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC269_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC269_FIXED_POWER_CREDIT = 0
+TPC269_ARITHMETIC_ADVANCE = NO
+TPC269_L2 = NONE
+TPC269_FULL_GATE_B = OPEN
+TPC269_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC269_TWIN_PRIME_RESULT = NONE
+TPC269_STATUS = NUMERICALLY_CERTIFIED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER
+TPC269_ROUND2_CLUE = TEST_CROSS_SCALE_RADIUS_NORMALIZATION_AFTER_SOURCE_COMPATIBLE_PROFILE
+```
+
+Strongest positive result: exact affine profile transfer plus eight independently audited
+finite contractions. Strongest obstruction: the central `9/10` to `24/25` profile path
+crosses `rho=1/4` with cutoff, clock, shell, and projection fixed. Open theorem: a
+source-compatible growing cutoff/profile bound with cross-scale radius control.
+The Session-named `propose.md` and route evaluator files are absent from this checkout;
+the local proof package, theorem ledger, certificate, bridge checker, and `AGENTS.md` are
+the fail-closed fallback authority.
+
+-----------------------------------------------------------------------------------------------
+
+TPC-268 上游 section：finite cutoff-sensitivity obstruction
 -----------------------------------------------------------------------------------------------
 
 TPC-268 is the hostile continuation of TPC-267. It freezes the finite literal V59
@@ -8419,12 +8472,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V121/TPC-268 是当前 release；其 normal/optimized bridge checker 已追加到下列
-curated cascade，故总数从 98 对更新为 99 对。下列长版本链以 V119/TPC-266 开头的
+V122/TPC-269 是当前 release；其 normal/optimized bridge checker 已追加到下列
+curated cascade，故总数从 99 对更新为 100 对。下列长版本链以 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
 
-22项启动回归之后，当前 V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百九十八次（99 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；二百次（100 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -8639,8 +8692,31 @@ python -B research/tpc-big-road/tpc_bridge_b_finite_cutoff_sensitivity_obstructi
 python -O -B research/tpc-big-road/tpc_bridge_b_finite_cutoff_sensitivity_obstruction_checker.py --check
 ```
 
+TPC-269 的项目级 producer、independent replay、profile stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-269-growing-cutoff-profile-transfer/code/tpc269_growing_cutoff_profile_certificate.py --check
+python -O -B papers/tpc-269-growing-cutoff-profile-transfer/code/tpc269_growing_cutoff_profile_certificate.py --check
+python -B papers/tpc-269-growing-cutoff-profile-transfer/experiments/tpc269_independent_checker.py --check
+python -O -B papers/tpc-269-growing-cutoff-profile-transfer/experiments/tpc269_independent_checker.py --check
+python -B papers/tpc-269-growing-cutoff-profile-transfer/experiments/tpc269_profile_stress.py --check
+python -O -B papers/tpc-269-growing-cutoff-profile-transfer/experiments/tpc269_profile_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_growing_cutoff_profile_transfer_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_growing_cutoff_profile_transfer_checker.py --check
+```
 
 随后优先读取：
+
+最新 TPC-269 入口：
+
+```text
+papers/tpc-269-growing-cutoff-profile-transfer/README.md
+papers/tpc-269-growing-cutoff-profile-transfer/PROOF_PACKAGE.md
+papers/tpc-269-growing-cutoff-profile-transfer/notes/theorem_ledger.md
+papers/tpc-269-growing-cutoff-profile-transfer/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_growing_cutoff_profile_transfer.md
+research/tpc-big-road/tpc_bridge_b_growing_cutoff_profile_transfer_checker.py
+```
 
 最新 TPC-268 入口：
 

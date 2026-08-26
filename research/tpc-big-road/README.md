@@ -1,13 +1,52 @@
-# TPC big road V121 / TPC-268: finite cutoff-sensitivity obstruction
+# TPC big road V122 / TPC-269: growing-cutoff and convex-profile transfer
 
 更新时间：2026-08-26
 
-状态：`TPC268_NUMERICALLY_CERTIFIED_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC269_NUMERICALLY_CERTIFIED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-268 proof 为
+当前 TPC-269 proof 为
+`bridge_b_growing_cutoff_profile_transfer.md`，checker 为
+`tpc_bridge_b_growing_cutoff_profile_transfer_checker.py`，编号论文为
+`../../papers/tpc-269-growing-cutoff-profile-transfer/`。
+
+TPC-269 保持 TPC-268 的 finite literal V59 physical operator 不变，把 comparison
+cutoff 换成注册的 `z_N=floor(log N)` proxy，并沿
+`K_theta=(1-theta)K_1+theta K_2` 作 exact convex-profile transfer。12 个 outward
+interval rows 中 8 个 contraction、4 个 obstruction；同一 central row 在
+`theta=9/10` 时 obstruction、`theta=24/25` 时 contraction。这证明 finite profile
+sensitivity 没有因 growing proxy 自动消失，但不是 source-level asymptotic theorem；
+cross-scale radius normalization、fixed-power payment、arithmetic `L2`、full Gate-B
+与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC269_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER
+TPC269_ROUTE_ADVANCE = YES_SCOPED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER
+TPC269_GROWING_CUTOFF_PROXY = NUMERICALLY_CERTIFIED_FINITE
+TPC269_PROFILE_MIXTURE_IDENTITY = PROVED_EXACT_FINITE
+TPC269_PROFILE_PATH_FLIP = NUMERICALLY_CERTIFIED_FINITE
+TPC269_GROWING_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC269_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC269_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC269_FIXED_POWER_CREDIT = 0
+TPC269_ARITHMETIC_ADVANCE = NO
+TPC269_L2 = NONE
+TPC269_FULL_GATE_B = OPEN
+TPC269_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC269_TWIN_PRIME_RESULT = NONE
+TPC269_STATUS = NUMERICALLY_CERTIFIED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER
+TPC269_ROUND2_CLUE = TEST_CROSS_SCALE_RADIUS_NORMALIZATION_AFTER_SOURCE_COMPATIBLE_PROFILE
+```
+
+strongest positive result：exact profile transfer plus eight finite contractions；
+strongest obstruction：the central profile path crosses `1/4`；open theorem：
+cross-scale source-compatible radius/profile uniformity。
+
+## Upstream TPC-268: finite cutoff-sensitivity obstruction
+
+TPC-268 proof 为
 `bridge_b_finite_cutoff_sensitivity_obstruction.md`，checker 为
 `tpc_bridge_b_finite_cutoff_sensitivity_obstruction_checker.py`，编号论文为
 `../../papers/tpc-268-finite-cutoff-sensitivity-obstruction/`。

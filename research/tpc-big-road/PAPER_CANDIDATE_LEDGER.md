@@ -3,13 +3,56 @@
 
 更新时间：2026-08-26
 
-状态：**TPC268_NUMERICALLY_CERTIFIED_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC269_NUMERICALLY_CERTIFIED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.62 当前：TPC-268 finite cutoff-sensitivity obstruction
+## 0.63 当前：TPC-269 growing-cutoff and convex-profile transfer
+
+项目：`papers/tpc-269-growing-cutoff-profile-transfer/`
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER**。
+
+TPC-269 保持 TPC-268 的 finite literal V59 prime shell、outer `q` weight、unit masks、
+deleted diagonal、source `beta` 与 rank-three projection 不变。comparison cutoff 使用
+注册的 finite proxy `z_N=floor(log N)`；两个 normalized nonnegative kernel
+representatives 通过 `A_theta=(1-theta)A_1+theta A_2` exact affine transfer。outward
+rational intervals 对 12 个 rows 给出 8 个 contractions 与 4 个 obstructions。
+
+在同一 `(N,H,Q,z_N)=(64,15,4,4)` 上，`theta=9/10` 的 `rho^2` interval 完全高于
+`1/16`，而 `theta=24/25` 的 interval 完全低于 `1/16`。因此 finite growing proxy
+并不自动给 profile-uniform quarter contraction。这个结果不控制 actual source-level
+cutoff/profile，也不控制跨尺度 residual radius；fixed-power credit 仍为 0，arithmetic
+`L2`、full Gate B 与 twin-prime conclusion 仍 open。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_AFFINE_PROFILE_TRANSFER_PLUS_12_ROW_CERTIFICATE
+STRONGEST_OBSTRUCTION = PROFILE_PATH_FLIP_AT_FIXED_GROWING_CUTOFF
+OPEN_THEOREM = UNIFORM_SOURCE_COMPATIBLE_GROWING_CUTOFF_PROFILE_BOUND
+REUSABLE_STRUCTURE = GROWING_CUTOFF -> AFFINE_PROFILE_PATH -> RHO2_INTERVAL
+ROUND2_CLUE = TEST_CROSS_SCALE_RADIUS_NORMALIZATION_AFTER_SOURCE_COMPATIBLE_PROFILE
+```
+
+```text
+TPC269_ROUTE_ADVANCE = YES_SCOPED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER
+TPC269_GROWING_CUTOFF_PROXY = NUMERICALLY_CERTIFIED_FINITE
+TPC269_PROFILE_MIXTURE_IDENTITY = PROVED_EXACT_FINITE
+TPC269_PROFILE_PATH_FLIP = NUMERICALLY_CERTIFIED_FINITE
+TPC269_GROWING_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC269_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC269_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC269_FIXED_POWER_CREDIT = 0
+TPC269_ARITHMETIC_ADVANCE = NO
+TPC269_L2 = NONE
+TPC269_FULL_GATE_B = OPEN
+TPC269_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC269_TWIN_PRIME_RESULT = NONE
+TPC269_STATUS = NUMERICALLY_CERTIFIED_FINITE_GROWING_CUTOFF_PROFILE_TRANSFER
+```
+
+## 0.62 已发布：TPC-268 finite cutoff-sensitivity obstruction
 
 项目：`papers/tpc-268-finite-cutoff-sensitivity-obstruction/`
 
