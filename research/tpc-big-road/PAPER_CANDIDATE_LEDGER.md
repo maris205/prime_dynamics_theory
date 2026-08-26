@@ -1,14 +1,57 @@
+
 # TPC big-road paper candidate ledger
 
 更新时间：2026-08-26
 
-状态：**TPC267_NUMERICALLY_CERTIFIED_FINITE_LITERAL_RESIDUAL_PHASE_CENSUS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC268_NUMERICALLY_CERTIFIED_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
-它不是 theorem evidence；正式数学状态仍以
-当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
+及 current section 为准。
 
-## 0.61 当前：TPC-267 finite literal V59 residual-radius and signed-phase census
+## 0.62 当前：TPC-268 finite cutoff-sensitivity obstruction
+
+项目：`papers/tpc-268-finite-cutoff-sensitivity-obstruction/`
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_CUTOFF_SENSITIVITY_OBSTRUCTION**。
+
+TPC-268 固定 TPC-267 的实际有限 operator、source beta、prime shell、unit masks、
+deleted diagonal 与 rank-three Haar residual，只改变声明的 local comparison cutoff、
+rounded clock 和 kernel exponent。outward rational intervals 对 16 个 rows 给出 10 个
+contractions 与 6 个 obstructions；同一 central row `(64,15,4,1)` 从 `z=2` 的
+`rho^2<1/16` 翻到 `z=3` 的 `rho^2>1/16`。H=13,15,17 的 z=3 rows 保持
+obstruction，说明这不是单一 clock rounding 事故。
+
+这是 finite、model-relative 的反例/obstruction，不是 growing V59 counterexample。
+`z`、`H`、`s` 都是声明的 finite interface choices；因此不支付 fixed-power credit，
+不产生 arithmetic `L2`，也不关闭 full Gate B 或 twin-prime conclusion。
+
+```text
+STRONGEST_POSITIVE_RESULT = MATCHED_Z2_CONTROLS_REPRODUCED
+STRONGEST_OBSTRUCTION = Z3_CUTOFF_FLIPS_THE_SAME_CENTRAL_ROW_ABOVE_1_OVER_4
+OPEN_THEOREM = GROWING_CUTOFF_AND_PROFILE_UNIFORMITY_FOR_LITERAL_V59
+REUSABLE_STRUCTURE = MATCHED_CONTROL -> DECLARED_PERTURBATION -> OUTWARD_THRESHOLD_SEPARATION
+ROUND2_CLUE = TEST_GROWING_CUTOFF_UNIFORMITY_BEFORE_ANY_PHASE_PROMOTION
+```
+
+```text
+TPC268_ROUTE_ADVANCE = YES_SCOPED_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_FINITE_CUTOFF_OBSTRUCTION = NUMERICALLY_CERTIFIED
+TPC268_MATCHED_Z2_CONTROLS = NUMERICALLY CERTIFIED
+TPC268_CLOCK_STABILITY = REFUTED_SCOPED
+TPC268_KERNEL_STABILITY = REFUTED_SCOPED
+TPC268_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC268_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC268_FIXED_POWER_CREDIT = 0
+TPC268_ARITHMETIC_ADVANCE = NO
+TPC268_L2 = NONE
+TPC268_FULL_GATE_B = OPEN
+TPC268_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC268_TWIN_PRIME_RESULT = NONE
+TPC268_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_CUTOFF_SENSITIVITY_OBSTRUCTION
+```
+
+## 0.61 已发布：TPC-267 finite literal V59 residual-radius and signed-phase census
 
 项目：`papers/tpc-267-literal-v59-residual-radius-census/`
 

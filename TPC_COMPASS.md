@@ -1,11 +1,48 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V120 / FINITE_LITERAL_RESIDUAL_PHASE_CENSUS`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_RESIDUAL_PHASE_CENSUS`
-编号事实终点：TPC-267；TPC-267 trigger：`true`
+状态：`BOLD_CHANNEL_V121 / FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_CUTOFF_SENSITIVITY_OBSTRUCTION`
+编号事实终点：TPC-268；TPC-268 trigger：`true`
 
-当前 TPC-267 入口：proof 为
+当前 TPC-268 入口：proof 为
+`research/tpc-big-road/bridge_b_finite_cutoff_sensitivity_obstruction.md`，checker 为
+`tpc_bridge_b_finite_cutoff_sensitivity_obstruction_checker.py`，编号论文为
+`papers/tpc-268-finite-cutoff-sensitivity-obstruction/`。它固定 TPC-267 的 literal
+physical operator，仅改变声明的 finite cutoff/clock/kernel 参数；16 行中 10 个
+contraction、6 个 obstruction，中心 `z=2`/`z=3` 在同一 `(N,H,Q,s)` 上翻过
+`1/4` 阈值。这是 scoped finite obstruction，不是 growing V59 counterexample，
+fixed-power credit 仍为 0，growing profile uniformity、arithmetic `L2` 与 full Gate-B
+仍 OPEN/NONE。
+
+```text
+TPC268_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_ROUTE_ADVANCE = YES_SCOPED_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_FINITE_CUTOFF_OBSTRUCTION = NUMERICALLY_CERTIFIED
+TPC268_MATCHED_Z2_CONTROLS = NUMERICALLY_CERTIFIED
+TPC268_CLOCK_STABILITY = REFUTED_SCOPED
+TPC268_KERNEL_STABILITY = REFUTED_SCOPED
+TPC268_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC268_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC268_FIXED_POWER_CREDIT = 0
+TPC268_ARITHMETIC_ADVANCE = NO
+TPC268_L2 = NONE
+TPC268_FULL_GATE_B = OPEN
+TPC268_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC268_TWIN_PRIME_RESULT = NONE
+TPC268_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_ROUND2_CLUE = TEST_GROWING_CUTOFF_UNIFORMITY_BEFORE_ANY_PHASE_PROMOTION
+```
+
+strongest positive result：matched `z=2` controls are reproduced while the same
+finite construction is tested under explicit perturbations；strongest obstruction：
+`z=3` flips the central row above the quarter threshold；open theorem：growing
+cutoff/profile uniformity for the literal V59 residual。
+
+
+## Upstream TPC-267: finite literal V59 residual census
+
+TPC-267 入口：proof 为
 `research/tpc-big-road/bridge_b_literal_v59_residual_radius_census.md`，checker 为
 `tpc_bridge_b_literal_v59_residual_radius_census_checker.py`，编号论文为
 `papers/tpc-267-literal-v59-residual-radius-census/`。它在同一 literal V59 有限接口上

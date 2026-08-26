@@ -1,0 +1,241 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\cI}{\mathcal I}
+\title{A Finite Cutoff-Sensitivity Obstruction for the V59 Residual Phase}
+\author{Liang Wang\\School of Mathematics and Statistics\\Huazhong University of Science and Technology (HUST)\\Wuhan, China}
+\date{26 August 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+TPC-267 found a finite quarter contraction for a literal V59 residual using
+the coarse local comparison cutoff \(z=2\). We perform the next hostile test
+while keeping the prime shell, unit masks, deleted diagonal, source
+coefficient, kernel operator, and rank-three projection fixed. Outward
+rational intervals classify sixteen finite rows. Six matched \(z=2\)
+controls contract below \(1/4\), while six perturbed rows are certified
+above \(1/4\). The same central clock
+\((N,H,Q,s)=(64,15,4,1)\) changes from
+\(\rho\leq0.2320126753\) at \(z=2\) to
+\(\rho\geq0.2735126949\) at \(z=3\). This refutes a universal quarter claim
+over the declared finite parameter family, but it is not an asymptotic
+counterexample and pays no fixed-power credit.
+\end{abstract}
+\section{Position and claim firewall}
+The typed end-to-end audit of TPC-266 requires an actual growing V59
+radius or signed-phase estimate before the endpoint budget can be paid.
+TPC-267 supplied a reproducible finite interface and twelve \(z=2\) rows
+with \(\lvert C_\perp\rvert/R<1/4\), while explicitly leaving the growing
+radius and source-specified profile open. The present paper asks whether that
+finite inequality is stable under the interface choices declared as modeling
+choices.
+\begin{center}
+\small\texttt{CUTOFF\_SENSITIVITY\_OBSTRUCTION}\\
+\textit{numerically certified finite result}.
+\end{center}
+\section{The finite physical operator}
+Let \(N\) be even and set
+\[
+ \cI_N=\{N/2+1,\ldots,N\},\qquad
+ \mathcal Q_Q=\{q:q\ {\rm prime},\ Q<q\leq2Q\}.
+\]
+For an integer \(z\geq2\), define
+\[
+ b_N^{(z)}(u)=C_2^{(z)}\,1_{2\nmid u}
+ \prod_{p\leq z}\frac p{p-1}
+ \prod_{\substack{p\mid u\\p>z}}\frac{p-1}{p-2},       \tag{1}
+\]
+with value zero when \(u+2\) has a prime factor at most \(z\), and
+\[
+ C_2^{(z)}=\prod_{p>z}\left(1-\frac1{(p-1)^2}\right).
+\]
+The source coefficient and residual input are
+\[
+ \beta_N(t)=\frac{\Lambda(t)}{\log t}
+ -\sum_{\substack{d\mid t\\d^{400}\leq N^{133}}}\mu(d),
+ \qquad w_N(u)=\Lambda(u+2)-b_N^{(z)}(u).                 \tag{2}
+\]
+For \(s\in\{1,2,3\}\), use
+\[
+ K_{H,s}(h)=\left(1+(h/H)^2\right)^{-s},                 \tag{3}
+\]
+and the literal centered operator
+\[
+ A(u,t)=1_{u\ne t}\sum_{q\in\mathcal Q_Q}qK_{H,s}(u-t)
+ 1_{q\nmid ut}\left(1_{u\equiv t\pmod q}-\frac1{q-1}\right). \tag{4}
+\]
+The prime-only shell, both unit masks, and the deleted diagonal are therefore
+part of every row. Put \(g=A\beta_N\).
+
+\section{Projection and interval decision}
+Partition \(\cI_N\) into four consecutive blocks of size \(B=N/8\).
+Use the three orthogonal contrasts
+\[
+ c_0=(1,1,-1,-1),\quad c_1=(1,-1,0,0),\quad
+ c_2=(0,0,1,-1).                                          \tag{5}
+\]
+For block sums \(W_j,G_j\), define
+\[
+ C=\langle w_N,g\rangle,\quad
+ C_3=\frac{W_0G_0}{4B}+\frac{W_1G_1}{2B}+\frac{W_2G_2}{2B},
+ \quad C_\perp=C-C_3,                                     \tag{6}
+\]
+and
+\[
+ R^2=\norm{(I-P_3)w_N}^2\norm{(I-P_3)g}^2,\qquad
+ \rho^2=\frac{\lvert C_\perp\rvert^2}{R^2}.                \tag{7}
+\]
+
+\begin{proposition}[finite identity]
+For every listed row, (6) is the exact cross-Gram decomposition associated
+with the rank-three block-contrast projection, and \(R^2>0\).
+\end{proposition}
+
+\begin{proof}
+The three vectors in (5) have squared norms \(4B,2B,2B\) and are pairwise
+orthogonal. The orthogonal projection formula gives (6), and subtracting
+the projected cross-Gram gives \(C_\perp\). The two residual norm factors
+are obtained by applying the same formula to each squared norm. Positivity
+is enclosed by the interval computation described below.
+\end{proof}
+
+The finite Euler product is multiplied through \(P=50000\). The tail uses
+\[
+ \prod_{p>P}\left(1-\frac1{(p-1)^2}\right)
+ \geq 1-\sum_{p>P}\frac1{(p-1)^2}
+ >1-\frac1{P-1}.                                         \tag{8}
+\]
+The logarithms are evaluated at 100 decimal digits with a \(10^{-25}\)
+guard. Every endpoint is then rounded outward to a rational grid of width
+\(10^{-30}\). Thus the decision in (7) uses only rational interval
+operations:
+\[
+ \rho^2_{\rm hi}<\frac1{16}\Rightarrow\text{contraction},\qquad
+ \rho^2_{\rm lo}>\frac1{16}\Rightarrow\text{obstruction}. \tag{9}
+\]
+\section{The finite obstruction}
+
+\begin{theorem}[cutoff sensitivity]
+Among the sixteen rows in the certificate, ten are certified contractions
+and six are certified obstructions. In particular,
+\[
+\begin{array}{c|c|c}
+(N,H,Q,s,z)&\rho^2\text{ interval}&\text{classification}\\ \hline
+(64,15,4,1,2)&[0.0538214595269,\,0.0538298814898]&\text{contraction}\\
+(64,15,4,1,3)&[0.0748091943191,\,0.0748218869170]&\text{obstruction}
+\end{array}
+\]
+so changing only the finite cutoff from \(z=2\) to \(z=3\) flips the
+quarter classification. The \(z=3\) obstruction persists at \(H=13\)
+and \(H=17\), and the row \((64,15,4,1,5)\) has
+\(\rho\leq0.3851247936\).
+\end{theorem}
+
+\begin{proof}
+The producer enumerates (1)--(4), computes the exact projection split, and
+propagates the outward intervals through (7). The lower endpoints of the
+six obstruction rows are all larger than \(1/16\), while the upper endpoints
+of the ten contraction rows are all smaller than \(1/16\). The independent
+replay recomputes the same sixteen ratios without importing the producer.
+The central pair and the clock-neighborhood rows are therefore separated
+from the threshold by certified intervals, not by rounded display values.
+\end{proof}
+
+\begin{table}[t]
+\centering
+\caption{Selected rows. Displayed \(\rho\) values are rounded square-root
+upper endpoints from the certificate; the contraction/obstruction decision
+uses the separately stored interval for \(\rho^2\).}
+\small
+\begin{tabular}{rrrrrll}
+\toprule
+N&H&Q&s&z&displayed \(\rho\)&class\\
+\midrule
+64&15&4&1&2&0.2320126753&contract\\
+96&20&5&1&2&0.2138888503&contract\\
+128&24&5&1&2&0.1267919366&contract\\
+192&32&6&1&2&0.0066519390&contract\\
+256&38&6&1&2&0.0093009287&contract\\
+384&50&7&1&2&0.0631257787&contract\\
+64&13&4&1&3&0.2689314328&obstruct\\
+64&15&4&1&3&0.2735358969&obstruct\\
+64&17&4&1&3&0.2758624715&obstruct\\
+96&20&5&1&3&0.2996937679&obstruct\\
+96&20&5&2&3&0.2886875882&obstruct\\
+64&15&4&1&5&0.3851247936&obstruct\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Interpretation}
+
+The central pair gives a clean finite sensitivity statement. The physical
+matrix, source coefficient, clock, shell, masks, and projection are
+identical in the two rows; only the declared local comparison cutoff changes.
+The interval for the first row lies below \(1/16\), whereas the lower
+endpoint for the second row is
+
+\[
+ 0.0748091943191>1/16=0.0625.
+\]
+
+Consequently a universal quarter-sector lemma over this tested finite
+parameter family is false. The clock perturbations \(H=13\) and \(H=17\)
+show that the \(z=3\) obstruction is not a single rounded-clock accident,
+and the \(z=5\) row supplies a stronger finite stress point. These are
+finite statements about the explicitly enumerated rows.
+
+There are two important qualifications. First, \(z\) is a modeling
+parameter here. The source-level V59 construction has a growing local
+cutoff, and this paper does not prove that its finite values are represented
+by any fixed \(z\) in the table. Thus the result is not a source-level
+growing-\(x\) counterexample. Second, the kernel exponent is not monotone in
+this diagnostic: the \(N=64,z=3\) row with \(s=2\) is just below the quarter
+threshold, while the \(N=96,z=3\) row with \(s=2\) is above it. A finite
+contraction therefore cannot be promoted by an informal smoothness or
+monotonicity argument.
+
+The audit also does not pay any endpoint budget. It proves no bound for the
+size of \(R\), gives no fixed-power saving, and supplies no arithmetic
+\(L^2\) estimate or full Gate-B closure. In the notation of the upstream
+firewall, the fixed-power credit remains zero and the twin-prime conclusion
+remains open.
+
+\section{Conclusion}
+
+TPC-268 turns the finite residual census into an adversarial diagnostic. A
+matched \(z=2\) control and \(z=3\) perturbation use the same finite physical
+operator but land on opposite sides of the quarter threshold, with six
+outward-certified obstructions across the sixteen-row family. The natural
+next question is not whether the most favorable finite profile can be made
+to contract, but whether a growing cutoff and a source-compatible smooth
+profile admit a uniform interval theorem. Until that question is answered,
+the observed phase contraction is evidence about a finite interface rather
+than progress toward the asymptotic twin-prime estimate.
+
+\begin{thebibliography}{9}
+\bibitem{hardywright}
+G.~H.~Hardy and E.~M.~Wright,
+\emph{An Introduction to the Theory of Numbers}, 6th ed., Oxford
+University Press, 2008.
+
+\bibitem{montgomeryvaughan}
+H.~L.~Montgomery and R.~C.~Vaughan,
+\emph{Multiplicative Number Theory I: Classical Theory}, Cambridge
+University Press, 2007.
+
+\bibitem{tpc267}
+L.~Wang, ``A finite literal V59 residual-radius and signed-phase census,''
+TPC-267 project release, 2026.
+\end{thebibliography}
+
+\end{document}

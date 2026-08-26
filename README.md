@@ -9,13 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-267 在 TPC-266 的 typed end-to-end firewall 之后，
-首次把 literal V59 的实际 prime shell、unit masks、deleted diagonal、beta、shifted-prime
-comparison 与 rank-three residual 组成有限可复现实验对象；12 个自然有限时钟行均经
-区间证书得到 `|C_perp|/R<1/4`，最大上端为 `0.2320126753`。这只是 finite
-signed-phase census，不支付 fixed-power credit，也不升级为渐近半径/扇区定理；
-clock/profile/cutoff stability、actual V59 radius/phase、arithmetic `L2`、full Gate B
-与 twin-prime conclusion 仍 OPEN/NONE。
+当前主线状态：TPC-268 在 TPC-267 的有限 residual census 之后，固定同一个 literal
+V59 physical operator，只改变声明的有限 local cutoff、rounded clock 与 kernel exponent。
+16 个 rows 经 outward interval、独立 replay 与 adversarial stress 审计，其中 10 个
+contraction、6 个 obstruction；同一 `(N,H,Q,s)=(64,15,4,1)` 从 `z=2` 的
+`rho<=0.2320126753` 翻到 `z=3` 的 `rho^2>1/16`。这是 finite scoped obstruction，
+不支付 fixed-power credit，也不升级为 source-level growing counterexample；growing
+cutoff/profile uniformity、actual V59 radius/phase、arithmetic `L2`、full Gate B 与
+twin-prime conclusion 仍 OPEN/NONE。
 
 TPC-266 在 TPC-265 的 Schur endpoint-budget compiler 之后，
 对 TPC-263→TPC-264→TPC-265 做了 typed end-to-end hostile audit，精确证明
@@ -72,6 +73,7 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-268-finite-cutoff-sensitivity-obstruction - 当前阶段 - 在同一 finite literal V59 operator 上完成 cutoff/clock/kernel sensitivity audit，16 行中 10 个 contraction、6 个 outward-certified obstruction；中心 `z=2`/`z=3` 翻转是 scoped finite result，渐近 theorem 与 full Gate B 仍 OPEN。
 
 tpc-267-literal-v59-residual-radius-census - 当前阶段 - 在实际 prime shell、unit masks、deleted diagonal、beta 与 shifted-prime comparison 上完成 12 行有限区间 residual-radius/signed-phase census，全部得到 `|C_perp|/R<1/4`，但仅为 finite certificate；渐近 radius/phase 与 full Gate B 仍 OPEN。
 tpc-266-end-to-end-claim-firewall - 当前阶段 - 对 TPC-263→TPC-264→TPC-265 建立 exact typed end-to-end claim firewall，完成 fixed-log non-promotion、residual-retention firewall 与 strict `1/400` 六状态 hostile matrix；literal V59 radius/phase 仍 OPEN。

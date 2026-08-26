@@ -2,16 +2,20 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V120 / TPC-267
+当前地图版本：V121 / TPC-268
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-267`（`NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_RESIDUAL_PHASE_CENSUS`）；
+当前编号锚点：`TPC-268`（`NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_CUTOFF_SENSITIVITY_OBSTRUCTION`）；
 对应论文目录为
-`papers/tpc-267-literal-v59-residual-radius-census/`。
-TPC-267 在实际有限 V59 接口上完成 12 行 residual-radius/signed-phase census，
-全部通过 `|C_perp|/R<1/4` 的 outward interval 证书；这是 finite result，渐近 radius/phase、
+`papers/tpc-268-finite-cutoff-sensitivity-obstruction/`。
+TPC-268 固定 TPC-267 的 literal physical operator，仅改变声明的 finite cutoff、clock、
+kernel 参数；16 行中 10 个 contraction、6 个 obstruction，中心 `z=2`/`z=3` 翻过
+`rho=1/4`。这是 scoped finite result，渐近 cutoff/profile uniformity、radius/phase、
 arithmetic `L2` 与 full Gate B 仍 OPEN。
+
+TPC-267 的 12 行 finite residual census 仍是当前上游证书，最大 contraction 上端
+为 `0.2320126753`，但有限 modeling choices 不产生 fixed-power credit。
 
 TPC-266 的 typed chain 仍是上游 claim firewall：
 `papers/tpc-266-end-to-end-claim-firewall/`。
@@ -69,9 +73,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V120 / TPC-267                    |
-        | FINITE LITERAL RESIDUAL CENSUS                 |
-        | 12 rows: rho<1/4; asymptotic radius still OPEN |
+        | YOU ARE HERE — V121 / TPC-268                    |
+        | FINITE CUTOFF-SENSITIVITY OBSTRUCTION           |
+        | 16 rows: 10 contract / 6 obstruct; growth OPEN |
         +--------------------------------------------------+
                 |
                 v
@@ -114,7 +118,7 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V118 / TPC-265。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V121 / TPC-268。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
@@ -1264,6 +1268,49 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.62 V121 / TPC-268：finite cutoff-sensitivity obstruction
+
+TPC-268 是 TPC-267 的直接 hostile continuation。它冻结实际 finite prime shell、outer
+`q` weight、两个 unit masks、deleted diagonal、source `beta`、kernel summation 与
+rank-three Haar projection，只改变声明的 local comparison cutoff `z`、rounded clock
+`H` 与 kernel exponent `s`。证书有 16 行：10 个 contractions、6 个 outward-certified
+obstructions。
+
+最小 matched pair 为
+
+```text
+(N,H,Q,s,z)=(64,15,4,1,2): rho^2 in [0.0538214595269, 0.0538298814898]
+(N,H,Q,s,z)=(64,15,4,1,3): rho^2 in [0.0748091943191, 0.0748218869170]
+```
+
+因此同一 physical row 仅改变有限 `z` 就从 `rho<1/4` 变为 `rho>1/4`；`H=13,15,17`
+的 z=3 rows 都是 obstruction，z=5 stress row 的 stored square-root upper endpoint
+为 `0.3851247936`。独立 replay、mutation audit 与 adversarial stress 均通过。
+
+```text
+TPC268_ROUTE_ADVANCE = YES_SCOPED_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_FINITE_CUTOFF_OBSTRUCTION = NUMERICALLY_CERTIFIED
+TPC268_MATCHED_Z2_CONTROLS = NUMERICALLY CERTIFIED
+TPC268_CLOCK_STABILITY = REFUTED_SCOPED
+TPC268_KERNEL_STABILITY = REFUTED_SCOPED
+TPC268_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC268_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC268_FIXED_POWER_CREDIT = 0
+TPC268_ARITHMETIC_ADVANCE = NO
+TPC268_L2 = NONE
+TPC268_FULL_GATE_B = OPEN
+TPC268_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC268_TWIN_PRIME_RESULT = NONE
+TPC268_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_ROUND2_CLUE = TEST_GROWING_CUTOFF_UNIFORMITY_BEFORE_ANY_PHASE_PROMOTION
+```
+
+strongest positive result：matched `z=2` controls are independently reproduced；
+strongest obstruction：the central `z=2`/`z=3` cutoff flip；open theorem：growing
+cutoff/profile uniformity for the literal V59 residual。
+
+
 
 ## 5.61 V120 / TPC-267：finite literal V59 residual-radius and signed-phase census
 
@@ -3584,7 +3631,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V120 / TPC-267：
+截至 V121 / TPC-268：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -3596,6 +3643,19 @@ L2 = NONE
 TPC_262_TRIGGER = true
 TPC_263_TRIGGER = true
 TPC_264_TRIGGER = true
+TPC268_ROUTE_ADVANCE = YES_SCOPED_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_FINITE_CUTOFF_OBSTRUCTION = NUMERICALLY CERTIFIED
+TPC268_MATCHED_Z2_CONTROLS = NUMERICALLY CERTIFIED
+TPC268_CLOCK_STABILITY = REFUTED_SCOPED
+TPC268_KERNEL_STABILITY = REFUTED_SCOPED
+TPC268_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC268_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC268_FIXED_POWER_CREDIT = 0
+TPC268_ARITHMETIC_ADVANCE = NO
+TPC268_L2 = NONE
+TPC268_FULL_GATE_B = OPEN
+TPC268_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC268_TWIN_PRIME_RESULT = NONE
 TPC267_ROUTE_ADVANCE = YES_SCOPED_FINITE_LITERAL_RESIDUAL_CENSUS
 TPC267_FINITE_RESIDUAL_RADIUS = NUMERICALLY CERTIFIED
 TPC267_FINITE_SIGNED_PHASE = NUMERICALLY CERTIFIED
@@ -4501,6 +4561,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V121 / TPC-268 | Bridge A / Gate B：finite cutoff/profile sensitivity audit 已完成；growing cutoff/profile、arithmetic `L2` 与 full Gate B open | `TPC-268` | 16 个 finite rows 中 10 个 contraction、6 个 obstruction；同一 central clock 的 `z=2`/`z=3` cutoff flip 跨过 `1/4`，不构成 growing counterexample，下一关为 growing cutoff/profile transfer |
 | 2026-08-26 | V120 / TPC-267 | Bridge A / Gate B：literal V59 residual 的有限 physical census 已完成；渐近 radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-267` | 12 个自然 `(N,H,Q,s)` rows 通过 outward interval 的 `|C_perp|/R<1/4`，最大上端 `0.2320126753`；相位变号且有限 modeling choices 不产生 fixed-power credit，下一关为 adversarial stability |
 | 2026-08-26 | V119 / TPC-266 | Bridge A / Gate B：TPC-263→265 typed end-to-end claim firewall 已完成；literal V59 radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-266` | 精确证明 fixed-log non-promotion、residual-retention firewall 与 strict `1/400` six-state hostile composition；无新 arithmetic credit |
 | 2026-08-26 | V118 / TPC-265 | Bridge A / Gate B：Schur residual 的 sharp endpoint-budget compiler 已完成；literal residual radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-265` | 证明 disk/circle 的 radial upper endpoint 恰为 `|c|+R`，并将 center/radius 两 lane 接入严格 `1/400` effective-saving 条件；fixed-log credit 为零 |

@@ -1,9 +1,61 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V120_TPC267_FINITE_LITERAL_RESIDUAL_PHASE_CENSUS_RELEASED`
+交接状态：`BOLD_CHANNEL_V121_TPC268_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION_RELEASED`
 
-TPC-267 当前 section：finite literal V59 residual-radius and signed-phase census
+TPC-268 当前 section：finite cutoff-sensitivity obstruction
+-----------------------------------------------------------------------------------------------
+
+TPC-268 is the hostile continuation of TPC-267. It freezes the finite literal V59
+prime shell, outer q weight, both unit masks, deleted diagonal, source beta, kernel
+operator, and rank-three Haar projection, then varies only declared finite cutoff,
+rounded clock, and kernel-exponent parameters. Outward rational intervals classify
+16 rows: 10 contractions and 6 obstructions.
+
+The matched central rows are
+
+```text
+(N,H,Q,s,z)=(64,15,4,1,2): rho^2 in [0.0538214595269, 0.0538298814898]
+(N,H,Q,s,z)=(64,15,4,1,3): rho^2 in [0.0748091943191, 0.0748218869170]
+```
+
+
+Thus the same finite physical row crosses the quarter threshold when only z changes.
+The z=3 obstruction persists for H=13,15,17, while the z=5 stress row has stored
+square-root upper endpoint 0.3851247936. Independent replay, mutation rejection,
+and adversarial stress all pass. This is a scoped finite obstruction, not a growing
+V59 counterexample; it pays no fixed-power credit and leaves arithmetic L2 and full
+Gate B open.
+
+```text
+TPC268_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_ROUTE_ADVANCE = YES_SCOPED_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_FINITE_CUTOFF_OBSTRUCTION = NUMERICALLY_CERTIFIED
+TPC268_MATCHED_Z2_CONTROLS = NUMERICALLY CERTIFIED
+TPC268_CLOCK_STABILITY = REFUTED_SCOPED
+TPC268_KERNEL_STABILITY = REFUTED_SCOPED
+TPC268_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC268_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC268_FIXED_POWER_CREDIT = 0
+TPC268_ARITHMETIC_ADVANCE = NO
+TPC268_L2 = NONE
+TPC268_FULL_GATE_B = OPEN
+TPC268_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC268_TWIN_PRIME_RESULT = NONE
+TPC268_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_ROUND2_CLUE = TEST_GROWING_CUTOFF_UNIFORMITY_BEFORE_ANY_PHASE_PROMOTION
+```
+
+Strongest positive result: matched z=2 controls survive independent replay.
+Strongest obstruction: z=3 flips the same central row above 1/4.
+Open theorem: a growing-cutoff, source-compatible smooth-profile uniformity bound.
+The Session-named propose.md and route evaluator files are absent from this checkout;
+the local proof package, theorem ledger, certificate, bridge checker, and AGENTS.md
+are the fail-closed fallback authority.
+
+-----------------------------------------------------------------------------------------------
+
+TPC-267 上游 section：finite literal V59 residual-radius and signed-phase census
 -----------------------------------------------------------------------------------------------
 
 TPC-267 is the first finite physical replay of the residual object left open by
@@ -8367,12 +8419,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V120/TPC-267 是当前 release；其 normal/optimized bridge checker 已追加到下列
-curated cascade，故总数从 97 对更新为 98 对。下列长版本链以 V119/TPC-266 开头的
+V121/TPC-268 是当前 release；其 normal/optimized bridge checker 已追加到下列
+curated cascade，故总数从 98 对更新为 99 对。下列长版本链以 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
 
 22项启动回归之后，当前 V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百九十六次（98 对）必须都为零，且每一对 stdout
+执行 normal与 optimized只读 checker；一百九十八次（99 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -8574,11 +8626,32 @@ python -B research/tpc-big-road/tpc_bridge_b_literal_v59_residual_radius_census_
 python -O -B research/tpc-big-road/tpc_bridge_b_literal_v59_residual_radius_census_checker.py --check
 ```
 
+TPC-268 的项目级 producer、independent replay、adversarial stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-268-finite-cutoff-sensitivity-obstruction/code/tpc268_cutoff_sensitivity_certificate.py --check
+python -O -B papers/tpc-268-finite-cutoff-sensitivity-obstruction/code/tpc268_cutoff_sensitivity_certificate.py --check
+python -B papers/tpc-268-finite-cutoff-sensitivity-obstruction/experiments/tpc268_independent_checker.py --check
+python -O -B papers/tpc-268-finite-cutoff-sensitivity-obstruction/experiments/tpc268_independent_checker.py --check
+python -B papers/tpc-268-finite-cutoff-sensitivity-obstruction/experiments/tpc268_adversarial_stress.py --check
+python -O -B papers/tpc-268-finite-cutoff-sensitivity-obstruction/experiments/tpc268_adversarial_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_finite_cutoff_sensitivity_obstruction_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_finite_cutoff_sensitivity_obstruction_checker.py --check
+```
+
+
 随后优先读取：
 
-最新 TPC-267 入口：
+最新 TPC-268 入口：
 
 ```text
+papers/tpc-268-finite-cutoff-sensitivity-obstruction/README.md
+papers/tpc-268-finite-cutoff-sensitivity-obstruction/PROOF_PACKAGE.md
+papers/tpc-268-finite-cutoff-sensitivity-obstruction/notes/theorem_ledger.md
+papers/tpc-268-finite-cutoff-sensitivity-obstruction/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_finite_cutoff_sensitivity_obstruction.md
+research/tpc-big-road/tpc_bridge_b_finite_cutoff_sensitivity_obstruction_checker.py
+
 papers/tpc-267-literal-v59-residual-radius-census/README.md
 papers/tpc-267-literal-v59-residual-radius-census/PROOF_PACKAGE.md
 papers/tpc-267-literal-v59-residual-radius-census/notes/theorem_ledger.md

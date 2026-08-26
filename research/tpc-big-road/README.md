@@ -1,11 +1,49 @@
-# TPC big road V120 / TPC-267: finite literal V59 residual-radius census
+# TPC big road V121 / TPC-268: finite cutoff-sensitivity obstruction
 
 更新时间：2026-08-26
 
-状态：`TPC267_NUMERICALLY_CERTIFIED_FINITE_LITERAL_RESIDUAL_PHASE_CENSUS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC268_NUMERICALLY_CERTIFIED_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-268 proof 为
+`bridge_b_finite_cutoff_sensitivity_obstruction.md`，checker 为
+`tpc_bridge_b_finite_cutoff_sensitivity_obstruction_checker.py`，编号论文为
+`../../papers/tpc-268-finite-cutoff-sensitivity-obstruction/`。
+
+TPC-268 固定 TPC-267 的 literal V59 physical operator，仅改变声明的 finite
+comparison cutoff、rounded clock 与 kernel exponent。16 个 rows 经 outward interval、
+independent replay 与 adversarial stress 审计，得到 10 个 contraction 与 6 个
+obstruction；同一 central clock 在 `z=2`/`z=3` 两行跨过 `rho=1/4`。
+这是 scoped finite sensitivity obstruction，不是 growing V59 counterexample，
+fixed-power credit 仍为 0，growing cutoff/profile uniformity、arithmetic `L2`、
+full Gate-B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC268_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_ROUTE_ADVANCE = YES_SCOPED_FINITE_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_FINITE_CUTOFF_OBSTRUCTION = NUMERICALLY_CERTIFIED
+TPC268_MATCHED_Z2_CONTROLS = NUMERICALLY_CERTIFIED
+TPC268_CLOCK_STABILITY = REFUTED_SCOPED
+TPC268_KERNEL_STABILITY = REFUTED_SCOPED
+TPC268_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC268_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC268_FIXED_POWER_CREDIT = 0
+TPC268_ARITHMETIC_ADVANCE = NO
+TPC268_L2 = NONE
+TPC268_FULL_GATE_B = OPEN
+TPC268_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC268_TWIN_PRIME_RESULT = NONE
+TPC268_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_CUTOFF_SENSITIVITY_OBSTRUCTION
+TPC268_ROUND2_CLUE = TEST_GROWING_CUTOFF_UNIFORMITY_BEFORE_ANY_PHASE_PROMOTION
+```
+
+strongest positive result：matched `z=2` controls survive independent replay；strongest
+obstruction：the central `z=2`/`z=3` cutoff flip；open theorem：a growing cutoff and
+source-compatible smooth profile uniformity theorem。
+
+## Upstream TPC-267: finite literal V59 residual-radius census
 
 当前 TPC-267 proof 为
 `bridge_b_literal_v59_residual_radius_census.md`，checker 为
