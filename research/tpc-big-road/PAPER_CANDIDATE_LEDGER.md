@@ -2,11 +2,61 @@
 
 更新时间：2026-08-26
 
-状态：**TPC258_PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT / FULL_GATE_B_OPEN**
+状态：**TPC259_PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING / RESIDUAL_OPEN / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.53 已发布：TPC-259 same-clock null-channel coupling
+
+项目：`papers/tpc-259-same-clock-null-coupling/`
+
+类型：**PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING**。
+
+TPC-259 places TPC-258's source-frozen null direction and the literal hybrid
+residual on one V59 clock.  TPC-254's maximal-interval theorem applies to each
+of the four consecutive source blocks and gives, for every fixed finite
+`K` and fixed `M>0`，
+
+```text
+|<z_null,w>| <<_(M,K) sqrt(x)/(log x)^M.
+```
+
+Together with `<z_null,A_x beta>=o(x^(7/6)/log^3(x))`，the exact decomposition
+
+```text
+<w,A_x beta>
+ =conjugate(<z_null,w>)<z_null,A_x beta>
+  +<w_perp,A_x beta>
+```
+
+proves that the first rank-one channel is `o(x^(5/3)/log^(M+3)(x))`.  The perpendicular residual is left visible and
+open.  A finite real zero-diagonal witness has zero null channel and nonzero
+full scalar, so projection algebra alone cannot promote the result.
+
+```text
+STRONGEST_POSITIVE_RESULT = THE_SOURCE_FROZEN_NULL_RANK_ONE_SIGNED_COUPLING_CHANNEL_IS_ARBITRARILY_LOG_SMALL_ON_THE_SAME_LITERAL_CLOCK
+STRONGEST_OBSTRUCTION = THE_ORTHOGONAL_RESIDUAL_CAN_CARRY_THE_ENTIRE_SIGNED_SCALAR_EVEN_WITH_ZERO_NULL_CHANNEL
+OPEN_THEOREM = CONTROL_W_PERP_AGAINST_A_X_BETA_OR_REASSEMBLE_ALL_FOUR_SIGNED_PACKETS_WITH_THE_RESIDUAL_RETAINED
+REUSABLE_STRUCTURE = SAME_CLOCK_TO_HAAR_NULL_TO_W_MOMENT_TO_EXACT_RANK_ONE_SPLIT_TO_RESIDUAL_FIREWALL
+ROUND2_CLUE = AUDIT_FULL_FOUR_PACKET_SIGNED_REASSEMBLY_WITH_THE_ORTHOGONAL_RESIDUAL_EXPLICITLY_PRESENT
+```
+
+```text
+TPC259_ROUTE_ADVANCE = YES_SCOPED_NULL_CHANNEL
+TPC259_ARITHMETIC_ADVANCE = YES_SCOPED_SIGNED_COUPLING_CHANNEL
+TPC259_W_NULL_MOMENT = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC259_NULL_CHANNEL = PROVED_SOURCE_BACKED_o_ONE
+TPC259_RESIDUAL_DECOMPOSITION = PROVED_EXACT
+TPC259_RESIDUAL_FULL_SCALAR = OPEN
+TPC259_FIXED_POWER_SAVING = NONE
+TPC259_L2 = NONE
+TPC259_FULL_GATE_B = OPEN
+TPC259_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC259_FIXED_ATOM_CREDIT = 0
+TPC259_TWIN_PRIME_RESULT = NONE
+```
 
 ## 0.52 已发布：TPC-258 source-frozen transverse null direction
 

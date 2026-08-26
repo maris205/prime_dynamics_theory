@@ -1,18 +1,43 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V111 / SOURCE_FROZEN_TRANSVERSE_NULL_CANCELLATION`
-claim level：`PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT`
-编号事实终点：TPC-258；TPC-258 trigger：`true`
+状态：`BOLD_CHANNEL_V112 / SAME_CLOCK_NULL_CHANNEL_COUPLING`
+claim level：`PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING`
+编号事实终点：TPC-259；TPC-259 trigger：`true`
 
-当前 TPC-258 入口：proof 为
+当前 TPC-259 入口：proof 为
+`research/tpc-big-road/bridge_b_same_clock_null_coupling.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_same_clock_null_coupling_checker.py`，编号论文为
+`papers/tpc-259-same-clock-null-coupling/`。它在同一 literal V59 clock 上将
+TPC-258 的 source-frozen `z_null` 与四块 hybrid `w` moment 接入 exact
+rank-one/residual decomposition，证明 null signed-coupling channel 为
+`o(x^(5/3)/log^(M+3)(x))`（每个固定 `M,K`）。这是 scoped source-backed
+advance；`<w_perp,A_x beta>` 仍 OPEN，fixed-power、arithmetic `L2` 与 full Gate B
+仍未支付。
+
+```text
+TPC259_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING
+TPC259_ROUTE_ADVANCE = YES_SCOPED_NULL_CHANNEL
+TPC259_ARITHMETIC_ADVANCE = YES_SCOPED_SIGNED_COUPLING_CHANNEL
+TPC259_W_NULL_MOMENT = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC259_NULL_CHANNEL = PROVED_SOURCE_BACKED_o_ONE
+TPC259_RESIDUAL_DECOMPOSITION = PROVED_EXACT
+TPC259_RESIDUAL_FULL_SCALAR = OPEN
+TPC259_FIXED_POWER_SAVING = NONE
+TPC259_L2 = NONE
+TPC259_FIXED_ATOM_CREDIT = 0
+TPC259_FULL_GATE_B = OPEN
+TPC259_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC259_TWIN_PRIME_RESULT = NONE
+TPC259_STATUS = PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING
+TPC259_ROUND2_CLUE = AUDIT_FULL_FOUR_PACKET_SIGNED_REASSEMBLY_WITH_THE_ORTHOGONAL_RESIDUAL_EXPLICITLY_PRESENT
+```
+
+TPC-258 直接上游入口：proof 为
 `research/tpc-big-road/bridge_b_source_frozen_transverse_null_direction.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_source_frozen_transverse_null_direction_checker.py`，编号论文为
-`papers/tpc-258-source-frozen-transverse-null-direction/`。它沿用 TPC-257 的 literal
-V59 四块 Haar frame，只用两个 source-frozen curvature constants 构造 unit null direction，
-并证明已知 `B_Q` transverse diagonal 的 leading term 精确抵消，得到
-`<z_null,A_x beta>=o(x^(7/6)/log^3(x))`。这是有限投影的 source-backed cancellation，
-不是 fixed-power estimate、arithmetic `L2` 上界或 full Gate B。
+`papers/tpc-258-source-frozen-transverse-null-direction/`。它提供 TPC-259 使用的
+source-frozen unit null direction 与 `o(x^(7/6)/log^3(x))` adjoint moment。
 
 ```text
 TPC258_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT
@@ -31,7 +56,7 @@ TPC258_STATUS = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_L
 TPC258_ROUND2_CLUE = TEST_THE_SOURCE_FROZEN_NULL_DIRECTION_AGAINST_THE_LITERAL_SIGNED_W_BETA_COUPLING_ON_THE_SAME_CLOCK_BEFORE_ANY_FULL_REASSEMBLY
 ```
 
-当前 TPC-257 入口：proof 为
+TPC-257 更上游入口：proof 为
 `research/tpc-big-road/bridge_b_four_block_haar_transverse_norm_floor.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_four_block_haar_transverse_norm_floor_checker.py`，编号论文为
 `papers/tpc-257-four-block-haar-transverse-norm-floor/`。它在同一 literal V59 clock 上

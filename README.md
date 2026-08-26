@@ -9,13 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-258 在 TPC-257 的 two-dimensional transverse Haar plane 中，
-只用 source geometry 的两个曲率常数构造
-`z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2)`，并证明显式 `B_Q` diagonal 在该方向上
-精确抵消：`<z_null,A_x beta>=o(x^(7/6)/log^3(x))`。这是一个真实的、有限投影的
-source-backed cancellation；但没有把 `o(1)` 偷换成 fixed-power saving，full arithmetic
-`L2`、signed `w` coupling、full Gate B、strict global `1/400` 与 twin-prime conclusion
-仍开放。
+当前主线状态：TPC-259 在 TPC-258 的 source-frozen transverse null direction 上，
+把 literal hybrid residual `w` 与 `A_x beta` 放到同一时钟，并对真实 signed scalar
+`<w,A_x beta>` 作 exact rank-one/residual split。TPC-254 的 maximal-interval
+source theorem 使 `|<z_null,w>| << sqrt(x)/(log x)^M`（每个固定 `M,K`），因此
+null rank-one channel 为 `o(x^(5/3)/log^(M+3)(x))`。这是一个 scoped、
+source-backed signed-coupling advance；正交 `w_perp` residual 仍 OPEN，不能把该
+结果升级为 full scalar、fixed-power saving、arithmetic `L2`、full Gate B、strict
+global `1/400` 或 twin-prime conclusion。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -30,6 +31,7 @@ source-backed cancellation；但没有把 `o(1)` 偷换成 fixed-power saving，
 
 ## 3. Latest Paper
 
+`tpc-259-same-clock-null-coupling` - `PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING` - 在同一 literal V59 clock 上将 TPC-258 的 source-frozen null direction 与四块 hybrid `w` moment 精确耦合，证明 signed scalar 的 rank-one null channel 对任意固定 log power 都被压低；同时用 zero-diagonal witness 明确保留 `w_perp` residual，未宣称 full scalar、fixed-power 或 `L2`。
 `tpc-258-source-frozen-transverse-null-direction` - `PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT` - 在 TPC-257 的四块 Haar frame 中以预先冻结的曲率向量构造单位 null direction，证明 transverse `B_Q` diagonal 的 `o(1)` cancellation；明确保留 boundary/rate firewall，未宣称 fixed-power、arithmetic `L2` 或 Gate B。
 
 `tpc-257-four-block-haar-transverse-norm-floor` - `PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT` - 将 TPC-256 的两个 rank children 各再 source-only 二分，证明三向 Haar frame exact orthonormal、三个 literal `beta` curvature constants 显式为正，并由 bounded-variation adjoint compiler 得到 `span(z1,z2)` 的同阶 transverse norm floor；这是下界/obstruction，不是 `L2` 上界或 full Gate-B payment。

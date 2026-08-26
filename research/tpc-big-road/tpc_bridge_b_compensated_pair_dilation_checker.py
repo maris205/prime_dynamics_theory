@@ -141,7 +141,7 @@ DEPENDENCIES = (
     ),
     (
         "research/tpc-big-road/tpc_bridge_b_fold_first_long_mobius_checker.py",
-        "c190df553190ed73203ce4791feae51e195ddf6e8e1c5ad7d93fd66b70791c5f",
+        "e84c58d167d4f657066086fa45995a95ab8606132efe40f44398ca74bc90e930",
     ),
 )
 

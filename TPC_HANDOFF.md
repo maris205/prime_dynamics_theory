@@ -1,70 +1,94 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V111_TPC258_SOURCE_FROZEN_TRANSVERSE_NULL_RELEASED`
+交接状态：`BOLD_CHANNEL_V112_TPC259_SAME_CLOCK_NULL_COUPLING_RELEASED`
 
-TPC-258 当前 section：source-frozen transverse null direction
-------------------------------------------------------------------------
+TPC-259 当前 section：same-clock null-channel coupling
+-------------------------------------------------------
 
-TPC-258 keeps the literal V59 clock, coefficient, prime shell, output-unit
-masks, deleted diagonal and complex kernel from TPC-257.  From the exact
-source-only four-block frame, define
+TPC-259 keeps the literal V59 clock and places the source-frozen TPC-258
+transverse null direction beside the physical hybrid residual
+`w(u)=Lambda(u+2)-b_x^(Z_x)(u)`.  The source-backed maximal-interval theorem
+applies to all four consecutive Haar blocks.  With
 
 ```text
 L1=log(3456/3125), L2=log(884736/823543),
-z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2).
+z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2),
+C_x=<w,A_x beta>,
+w_perp=w-<z_null,w>z_null.
 ```
 
-The vector is exactly unit and lies in the old midpoint's transverse
-complement.  Since `kappa1=L1/2` and `kappa2=L2/2`, the explicit TPC-257
-`B_Q` diagonal cancels symbolically, while all TPC-255 unit, deleted-diagonal,
-hard-window and child-jump lanes remain in the error ledger:
+For every fixed finite `K` and fixed `M>0`, the new same-clock moment is
+source-backed:
 
 ```text
+|<z_null,w>| <<_(M,K) sqrt(x)/(log x)^M
 <z_null,A_x beta>=o(x^(7/6)/log^3(x)).
 ```
 
-This is a source-backed finite projected cancellation.  The explicit
-`O(1/log x)` refinement is conditional; the released theorem does not claim a
-fixed-power saving.  Arithmetic `L2`, signed `w` coupling, full Gate B, the
-strict global `1/400` endpoint, fixed-atom credit and a twin-prime conclusion
-remain open or unpaid.
+The exact conjugate-linear-first-slot identity is
 
 ```text
-TPC258_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT
-TPC258_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_NULL
-TPC258_ARITHMETIC_ADVANCE = YES_SCOPED_LOG_CANCELLATION
-TPC258_NULL_DIRECTION = PROVED_SOURCE_FROZEN_UNIT_VECTOR
-TPC258_LEADING_DIAGONAL_CANCELLATION = PROVED_SOURCE_BACKED
-TPC258_RATE_REFINEMENT = CONDITIONAL_THEOREM_LOG_ONE_OVER_X
-TPC258_FIXED_POWER_SAVING = NONE
+<w,A_x beta>
+ =conjugate(<z_null,w>)<z_null,A_x beta>
+  +<w_perp,A_x beta>.
+```
+
+Hence the first rank-one channel is `o(x^(5/3)/log^(M+3)(x))`; the orthogonal residual is deliberately not
+discarded.  The exponent ledger retains the `1/48` boundary gap.  This is a
+scoped signed-coupling advance, not a full scalar, fixed-power, arithmetic
+`L2`, or Gate-B theorem.
+
+```text
+TPC259_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING
+TPC259_ROUTE_ADVANCE = YES_SCOPED_NULL_CHANNEL
+TPC259_ARITHMETIC_ADVANCE = YES_SCOPED_SIGNED_COUPLING_CHANNEL
+TPC259_W_NULL_MOMENT = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC259_NULL_CHANNEL = PROVED_SOURCE_BACKED_o_ONE
+TPC259_RESIDUAL_DECOMPOSITION = PROVED_EXACT
+TPC259_RESIDUAL_FULL_SCALAR = OPEN
+TPC259_FIXED_POWER_SAVING = NONE
+TPC259_L2 = NONE
+TPC259_FIXED_ATOM_CREDIT = 0
+TPC259_FULL_GATE_B = OPEN
+TPC259_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC259_TWIN_PRIME_RESULT = NONE
+TPC259_STATUS = PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING
+TPC259_ROUND2_CLUE = AUDIT_FULL_FOUR_PACKET_SIGNED_REASSEMBLY_WITH_THE_ORTHOGONAL_RESIDUAL_EXPLICITLY_PRESENT
+```
+
+strongest positive result：same-clock `w`/beta rank-one null channel 对任意固定 log power
+被 source-backed 地压低；strongest obstruction：`w_perp` residual 可承载整个 signed scalar；
+open theorem：估计 residual 或保留它完成 four-packet reassembly；reusable structure：
+same clock -> Haar null -> maximal-interval `w` moment -> exact rank-one split -> residual firewall。
+
+编号论文目录：papers/tpc-259-same-clock-null-coupling/
+
+```text
+papers/tpc-259-same-clock-null-coupling/README.md
+papers/tpc-259-same-clock-null-coupling/PROOF_PACKAGE.md
+papers/tpc-259-same-clock-null-coupling/paper/paper.pdf
+papers/tpc-259-same-clock-null-coupling/results/tpc259_certificate.json
+papers/tpc-259-same-clock-null-coupling/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_same_clock_null_coupling.md
+research/tpc-big-road/tpc_bridge_b_same_clock_null_coupling_checker.py
+```
+
+TPC-258 上游 section：source-frozen transverse null direction
+-------------------------------------------------------------
+
+TPC-258 provides the source-frozen vector and the projected cancellation used
+by TPC-259:
+
+```text
+z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2),
+<z_null,A_x beta>=o(x^(7/6)/log^3(x)).
 TPC258_L2 = NONE
-TPC258_FIXED_ATOM_CREDIT = 0
 TPC258_FULL_GATE_B = OPEN
-TPC258_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC258_TWIN_PRIME_RESULT = NONE
-TPC258_STATUS = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT
-TPC258_ROUND2_CLUE = TEST_THE_SOURCE_FROZEN_NULL_DIRECTION_AGAINST_THE_LITERAL_SIGNED_W_BETA_COUPLING_ON_THE_SAME_CLOCK_BEFORE_ANY_FULL_REASSEMBLY
 ```
 
-strongest positive result：source-frozen transverse null direction cancels the
-known leading diagonal；strongest obstruction：the theorem is only `o(1)` and
-does not pay a fixed-power endpoint；open theorem：control the same-clock
-signed `w/beta` coupling and the remaining full output；reusable structure：
-curvature vector -> exact Haar frame -> null combination -> boundary gap ->
-rate firewall。
-
-编号论文目录：papers/tpc-258-source-frozen-transverse-null-direction/
-
-```text
-papers/tpc-258-source-frozen-transverse-null-direction/README.md
-papers/tpc-258-source-frozen-transverse-null-direction/PROOF_PACKAGE.md
-papers/tpc-258-source-frozen-transverse-null-direction/paper/paper.pdf
-papers/tpc-258-source-frozen-transverse-null-direction/results/tpc258_certificate.json
-papers/tpc-258-source-frozen-transverse-null-direction/notes/theorem_ledger.md
-research/tpc-big-road/bridge_b_source_frozen_transverse_null_direction.md
-research/tpc-big-road/tpc_bridge_b_source_frozen_transverse_null_direction_checker.py
-```
+Its `o(1)` result is retained as a projected theorem only; it does not pay
+fixed-power saving or full output control.
 
 TPC-257 上游 section：four-block Haar lift and a transverse norm floor
 -----------------------------------------------------------------------
@@ -7922,8 +7946,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百七十八次（89 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百八十次（90 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -8105,11 +8129,23 @@ python -B research/tpc-big-road/tpc_bridge_b_four_block_haar_transverse_norm_flo
 python -O -B research/tpc-big-road/tpc_bridge_b_four_block_haar_transverse_norm_floor_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_source_frozen_transverse_null_direction_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_source_frozen_transverse_null_direction_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_same_clock_null_coupling_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_same_clock_null_coupling_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-258 入口：
+最新 TPC-259 入口：
+
+```text
+papers/tpc-259-same-clock-null-coupling/README.md
+papers/tpc-259-same-clock-null-coupling/notes/theorem_ledger.md
+papers/tpc-259-same-clock-null-coupling/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_same_clock_null_coupling.md
+research/tpc-big-road/tpc_bridge_b_same_clock_null_coupling_checker.py
+```
+
+TPC-258 上游入口：
 
 ```text
 papers/tpc-258-source-frozen-transverse-null-direction/README.md

@@ -2,19 +2,20 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V111 / TPC-258
+当前地图版本：V112 / TPC-259
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-258`（`PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT`）；
+当前编号锚点：`TPC-259`（`PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING`）；
 对应论文目录为
-`papers/tpc-258-source-frozen-transverse-null-direction/`。
-TPC-258 沿用 TPC-257 的 literal V59 四块 Haar frame，只由两个 source-only curvature
-constants 构造 unit `z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2)`，证明已知 `B_Q`
-transverse diagonal 的 leading term 精确抵消，得到
-`<z_null,A_x beta>=o(x^(7/6)/log^3(x))`。这是有限投影的 cancellation theorem，
-不是 fixed-power saving 或 full-output 上界；arithmetic `L2`、full Gate B 与 strict
-global `1/400` 仍 OPEN/UNPAID。
+`papers/tpc-259-same-clock-null-coupling/`。
+TPC-259 在同一 literal V59 clock 上把 TPC-258 的 source-frozen null direction 与四块
+hybrid `w` moment 接入真实 signed scalar。对每个固定 `M,K`，
+`|<z_null,w>| << sqrt(x)/(log x)^M`，并以 exact rank-one/residual identity 得到
+`conjugate(<z_null,w>)<z_null,A_x beta>=o(x^(5/3)/log^(M+3)(x))`。
+这是 scoped source-backed signed-coupling channel theorem；`<w_perp,A_x beta>` 仍
+OPEN，不是 full scalar、fixed-power saving 或 arithmetic `L2` 上界；full Gate B 与
+strict global `1/400` 仍 OPEN/UNPAID。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -56,9 +57,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V111 / TPC-258                    |
-        | SOURCE-FROZEN TRANSVERSE NULL CANCELLATION PAID|
-        | projected o(1) proved; fixed power/full L2 OPEN|
+        | YOU ARE HERE — V112 / TPC-259                    |
+        | SAME-CLOCK NULL COUPLING CHANNEL PAID          |
+        | rank-one o(1) proved; residual/full L2 OPEN    |
         +--------------------------------------------------+
                 |
                 v
@@ -101,14 +102,16 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V111 / TPC-258。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V112 / TPC-259。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
 TPC-258 再从这两个 descendant constants 构造 source-frozen null direction，证明该
-已知 diagonal main 在一个 transverse projection 上 `o(1)` 消失，但没有获得 fixed
-power。FULL_GATE_B、global strict `1/400`、arithmetic `L2`、signed `w` coupling 和
-fixed-atom credit 继续 OPEN/UNPAID/NONE。**
+已知 diagonal main 在一个 transverse projection 上 `o(1)` 消失；TPC-259 随后把该
+方向与同一时钟的 literal `w` 接入 signed scalar，证明 rank-one null channel 对任意
+固定 log power 被压低，同时把 `w_perp` residual 明确留在等式中。FULL_GATE_B、
+global strict `1/400`、arithmetic `L2`、full scalar 与 fixed-atom credit 继续
+OPEN/UNPAID/NONE。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1239,6 +1242,60 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.53 V112 / TPC-259：same-clock null-channel coupling
+
+TPC-259 是 TPC-258 的直接延伸：在同一 literal V59 clock 上，将 `z_null` 与物理 hybrid
+residual `w` 放入真实 signed scalar `<w,A_x beta>`。TPC-254 的 maximal-interval
+source theorem 对四个连续 source blocks 分别适用，因此对每个固定 `M,K`
+
+```text
+|<z_null,w>| <<_(M,K) sqrt(x)/(log x)^M
+```
+
+而 TPC-258 提供
+`<z_null,A_x beta>=o(x^(7/6)/log^3(x))`。令
+`c_x=<z_null,w>`、`w_perp=w-c_x z_null`，共轭线性第一槽的精确恒等式为
+
+```text
+<w,A_x beta>
+ =conjugate(c_x)<z_null,A_x beta>+<w_perp,A_x beta>
+```
+
+所以 rank-one null channel 已支付
+`o(x^(5/3)/log^(M+3)(x))`。指数账本为
+`1/2+7/6=5/3=80/48`、`1/2+55/48=79/48`，仍留下
+`1/48` 的边界间隔。一个 exact real zero-diagonal witness 说明
+`<w_perp,A_x beta>` 不能由 projection algebra 自动消失；该 witness 只是
+structural control，不是 literal prime-shell counterexample。
+
+```text
+TPC259_ROUTE_ADVANCE = YES_SCOPED_NULL_CHANNEL
+TPC259_ARITHMETIC_ADVANCE = YES_SCOPED_SIGNED_COUPLING_CHANNEL
+TPC259_W_NULL_MOMENT = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC259_NULL_CHANNEL = PROVED_SOURCE_BACKED_o_ONE
+TPC259_RESIDUAL_DECOMPOSITION = PROVED_EXACT
+TPC259_RESIDUAL_FULL_SCALAR = OPEN
+TPC259_FIXED_POWER_SAVING = NONE
+TPC259_L2 = NONE
+TPC259_FULL_GATE_B = OPEN
+TPC259_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC259_FIXED_ATOM_CREDIT = 0
+TPC259_TWIN_PRIME_RESULT = NONE
+TPC259_STATUS = PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING
+TPC259_ROUND2_CLUE = AUDIT_FULL_FOUR_PACKET_SIGNED_REASSEMBLY_WITH_THE_ORTHOGONAL_RESIDUAL_EXPLICITLY_PRESENT
+```
+
+strongest positive result：same-clock signed coupling 的 rank-one null channel 对任意
+固定 log power 被 source-backed 地压低。strongest obstruction：orthogonal residual
+仍可承载整个 signed scalar。open theorem：估计 `<w_perp,A_x beta>` 或保留 residual
+重组四个 signed packets。reusable structure：same clock -> four-block Haar null ->
+source-backed `w` moment -> exact rank-one split -> residual firewall。
+
+地图位置：**V112 / TPC-259 把 TPC-258 的 projected null cancellation 接到了真实
+same-clock signed `w/beta` channel；下一关是 full four-packet reassembly，
+不能丢弃 `w_perp`。arithmetic `L2`、full Gate B、strict global
+`1/400` 与 twin-prime result 仍 OPEN/UNPAID/NONE。**
 
 ## 5.52 V111 / TPC-258：source-frozen transverse null direction
 
@@ -3146,11 +3203,11 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V111 / TPC-258：
+截至 V112 / TPC-259：
 
 ```text
 ROUTE_ADVANCE = YES
-ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_AND_BETA_ADJOINT_HAAR_LANES_PLUS_TRANSVERSE_NULL
+ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_AND_BETA_ADJOINT_HAAR_LANES_PLUS_TRANSVERSE_NULL_PLUS_SIGNED_NULL_CHANNEL
 FIXED_ATOM_CREDIT = 0
 TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
 FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
@@ -3168,6 +3225,20 @@ TPC_255_TRIGGER = true
 TPC_256_TRIGGER = true
 TPC_257_TRIGGER = true
 TPC_258_TRIGGER = true
+TPC_259_TRIGGER = true
+TPC259_ROUTE_ADVANCE = YES_SCOPED_NULL_CHANNEL
+TPC259_ARITHMETIC_ADVANCE = YES_SCOPED_SIGNED_COUPLING_CHANNEL
+TPC259_W_NULL_MOMENT = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC259_NULL_CHANNEL = PROVED_SOURCE_BACKED_o_ONE
+TPC259_RESIDUAL_DECOMPOSITION = PROVED_EXACT
+TPC259_RESIDUAL_FULL_SCALAR = OPEN
+TPC259_FIXED_POWER_SAVING = NONE
+TPC259_L2 = NONE
+TPC259_FULL_GATE_B = OPEN
+TPC259_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC259_FIXED_ATOM_CREDIT = 0
+TPC259_TWIN_PRIME_RESULT = NONE
+TPC259_STATUS = PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING
 TPC258_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_NULL
 TPC258_ARITHMETIC_ADVANCE = YES_SCOPED_LOG_CANCELLATION
 TPC258_NULL_DIRECTION = PROVED_SOURCE_FROZEN_UNIT_VECTOR
@@ -3915,6 +3986,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V112 / TPC-259 | Bridge A / Gate B：same-clock signed coupling 的 rank-one null channel paid；orthogonal residual/full `L2` open | `TPC-259` | 将 TPC-258 source-frozen null direction 与四块 literal `w` moment 放到同一时钟，证明 `o(x^(5/3)/log^(M+3)(x))` 的 null channel，精确保留 `w_perp` residual；full four-packet reassembly、strict global `1/400` and twin-prime result remain open |
 | 2026-08-26 | V111 / TPC-258 | Bridge A / Gate B：source-frozen transverse null cancellation paid；fixed-power/upper `L2`/full output open | `TPC-258` | 从 TPC-257 two-dimensional transverse Haar floor 提取 source-only unit null direction、证明 `B_Q` leading diagonal exact cancellation、保留 `1/48` boundary gap 与 `o(1)` rate firewall；signed `w` coupling、full Gate B and strict global `1/400` remain open |
 | 2026-08-26 | V110 / TPC-257 | Bridge A / Gate B：four-block Haar transverse lower floor paid；upper `L2`/full output open | `TPC-257` | source-only four-block refinement、exact three-mode Haar frame、three explicit PNT curvature constants、`B_Q` diagonal amplification、bounded-variation extension、same-order transverse obstruction；full Gate B and strict global `1/400` remain open |
 | 2026-08-26 | V109 / TPC-256 | Bridge A / Gate B：literal beta and adjoint midpoint Haar asymptotics paid；transverse/full output open | `TPC-256` | divisor-density endpoint cancellation、second-order PNT curvature、explicit `log(32/27)` main、`B_Q` amplification、`H^2/q` boundary moment、`1/48` separation 与 normalized phase；scoped arithmetic advance |

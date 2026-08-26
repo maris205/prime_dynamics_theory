@@ -1,38 +1,71 @@
-# TPC big road V111 / TPC-258: source-frozen transverse null direction
+# TPC big road V112 / TPC-259: same-clock null-channel coupling
 
 更新时间：2026-08-26
 
-状态：`TPC258_PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT / FULL_GATE_B_OPEN`
+状态：`TPC259_PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING / RESIDUAL_OPEN / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-258 proof 为
-`bridge_b_source_frozen_transverse_null_direction.md`，checker 为
-`tpc_bridge_b_source_frozen_transverse_null_direction_checker.py`，编号论文为
-`../../papers/tpc-258-source-frozen-transverse-null-direction/`。
+当前 TPC-259 proof 为
+`bridge_b_same_clock_null_coupling.md`，checker 为
+`tpc_bridge_b_same_clock_null_coupling_checker.py`，编号论文为
+`../../papers/tpc-259-same-clock-null-coupling/`。
 
-TPC-258 keeps the literal V59 object and the exact four-block Haar frame from
-TPC-257.  From the two source-only curvature constants it forms
-
-```text
-L1=log(3456/3125), L2=log(884736/823543),
-z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2).
-```
-
-The vector is exactly unit and orthogonal to the old midpoint, and the
-TPC-257 leading diagonal cancels symbolically:
+TPC-259 puts TPC-258's source-frozen null direction and the literal hybrid
+residual on one V59 clock.  The four consecutive source blocks satisfy
 
 ```text
+|<z_null,w>| <<_(M,K) sqrt(x)/(log x)^M
 <z_null,A_x beta>=o(x^(7/6)/log^3(x)).
 ```
 
-The result is a finite projected cancellation with a conditional logarithmic
-rate refinement.  It does not claim a fixed-power saving, an arithmetic `L2`
-upper bound, or full Gate B.
+With `c_x=<z_null,w>` and `w_perp=w-c_x z_null`, the full signed scalar
+has the exact decomposition
 
 ```text
-TPC258_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT
+<w,A_x beta>
+ =conjugate(c_x)<z_null,A_x beta>+<w_perp,A_x beta>.
+```
+
+The null rank-one channel is therefore
+`o(x^(5/3)/log^(M+3)(x))` for every fixed `M,K`.  This is a
+source-backed signed-coupling advance for one channel.  The perpendicular
+residual remains open, so fixed-power saving, arithmetic `L2`, full Gate B,
+strict global `1/400`, fixed-atom credit, and a twin-prime result remain unpaid.
+
+```text
+TPC259_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING
+TPC259_ROUTE_ADVANCE = YES_SCOPED_NULL_CHANNEL
+TPC259_ARITHMETIC_ADVANCE = YES_SCOPED_SIGNED_COUPLING_CHANNEL
+TPC259_W_NULL_MOMENT = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
+TPC259_NULL_CHANNEL = PROVED_SOURCE_BACKED_o_ONE
+TPC259_RESIDUAL_DECOMPOSITION = PROVED_EXACT
+TPC259_RESIDUAL_FULL_SCALAR = OPEN
+TPC259_FIXED_POWER_SAVING = NONE
+TPC259_L2 = NONE
+TPC259_FIXED_ATOM_CREDIT = 0
+TPC259_FULL_GATE_B = OPEN
+TPC259_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC259_TWIN_PRIME_RESULT = NONE
+TPC259_STATUS = PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING
+TPC259_ROUND2_CLUE = AUDIT_FULL_FOUR_PACKET_SIGNED_REASSEMBLY_WITH_THE_ORTHOGONAL_RESIDUAL_EXPLICITLY_PRESENT
+```
+
+## V111 upstream: TPC-258 source-frozen transverse null direction
+
+TPC-258 supplies the exact source-frozen unit vector and same-clock adjoint
+moment used above:
+
+```text
+z_null=(L2 z1-L1 z2)/sqrt(L1^2+L2^2),
+<z_null,A_x beta>=o(x^(7/6)/log^3(x)).
+```
+
+Its `o(1)` theorem remains a projected cancellation, not a fixed-power or full-output
+bound.
+
+```text
 TPC258_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_NULL
 TPC258_ARITHMETIC_ADVANCE = YES_SCOPED_LOG_CANCELLATION
 TPC258_NULL_DIRECTION = PROVED_SOURCE_FROZEN_UNIT_VECTOR
@@ -40,12 +73,11 @@ TPC258_LEADING_DIAGONAL_CANCELLATION = PROVED_SOURCE_BACKED
 TPC258_RATE_REFINEMENT = CONDITIONAL_THEOREM_LOG_ONE_OVER_X
 TPC258_FIXED_POWER_SAVING = NONE
 TPC258_L2 = NONE
-TPC258_FIXED_ATOM_CREDIT = 0
 TPC258_FULL_GATE_B = OPEN
 TPC258_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC258_FIXED_ATOM_CREDIT = 0
 TPC258_TWIN_PRIME_RESULT = NONE
 TPC258_STATUS = PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT
-TPC258_ROUND2_CLUE = TEST_THE_SOURCE_FROZEN_NULL_DIRECTION_AGAINST_THE_LITERAL_SIGNED_W_BETA_COUPLING_ON_THE_SAME_CLOCK_BEFORE_ANY_FULL_REASSEMBLY
 ```
 
 ## V110 upstream: TPC-257 four-block Haar lift and transverse norm floor

@@ -1,0 +1,350 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.74in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\Ax}{A_x}
+\newcommand{\e}{\varepsilon}
+\newcommand{\znull}{z_{\mathrm{null}}}
+\newcommand{\wperp}{w_{\perp}}
+\setlength{\emergencystretch}{3em}
+
+\title{A Same-Clock Null-Channel Decomposition\\
+for the Literal V59 Signed Coupling}
+\author{Liang Wang\\
+\small School of Mathematics and Statistics, Huazhong University of Science and Technology (HUST),\\
+\small Wuhan, China}
+\date{August 26, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-258 constructed a source-frozen transverse unit vector
+\(\znull\) for which the leading literal V59 adjoint diagonal cancels:
+\(\ip{\znull}{A_x\beta}=o(x^{7/6}/\log^3x)\).  We now place that
+direction on the same clock as the physical hybrid residual
+\(w(u)=\Lambda(u+2)-b_x^{(Z_x)}(u)\).  A source-backed maximal-interval
+Type-I theorem controls each of the four consecutive Haar blocks and gives,
+for every fixed admissible \(K\) and every fixed \(M>0\),
+\[
+ |\ip{\znull}{w}|\ll_{M,K}\frac{x^{1/2}}{(\log x)^M}.
+\]
+The exact Hilbert decomposition
+\[
+ \ip{w}{A_x\beta}
+ =\overline{\ip{\znull}{w}}\ip{\znull}{A_x\beta}
+   +\ip{\wperp}{A_x\beta}
+\]
+therefore makes the first rank-one channel
+\(o(x^{5/3}/\log^{M+3}x)\).  This is a source-backed advance for one
+literal signed-coupling channel, not for the full scalar.  The orthogonal
+residual remains open, and an exact zero-diagonal finite witness shows that
+it can carry the entire scalar when the null channel vanishes.  No fixed
+power saving, arithmetic \(L^2\), full Gate B, strict global \(1/400\)
+payment, or twin-prime conclusion is claimed.
+\end{abstract}
+
+\section{Problem and claim boundary}
+
+The Route-B scalar needed downstream is not merely a product of two unrelated
+norms.  On the literal V59 clock it has the signed form
+\begin{equation}
+ C_x=\ip{w}{\Ax\beta}.                                      \label{eq:fullscalar}
+\end{equation}
+The preceding papers separately supplied a strong hybrid mean for \(w\)
+and a source-frozen adjoint null direction \cite{tpc254,tpc258}.  The smallest
+honest question is whether these facts suppress a precisely identified
+piece of \eqref{eq:fullscalar} on one and the same clock.
+
+The answer is yes for one rank-one channel and no as a formal inference for
+the full scalar.  We keep the residual in every identity.  In particular,
+the phrase ``null channel'' below refers to the projection onto one fixed
+Haar direction; it never means that \(C_x\) itself is zero or small.
+
+Throughout,
+\[
+ \ip{f}{g}=\sum_u\overline{f(u)}g(u)
+\]
+is conjugate-linear in the first slot.  The literal \(w\) and the Haar
+directions are real, while \(\Ax\beta\) may be complex.
+
+\section{One clock, four blocks, and the frozen null direction}
+
+Let \(x\to\infty\) through real values and put
+\begin{equation}
+ a=\lfloor x/2\rfloor,\qquad b=\lfloor x\rfloor,
+ \qquad I_x=\{a+1,\ldots,b\},\qquad N=b-a.              \label{eq:clock}
+\end{equation}
+Write \(\ell=\lfloor N/2\rfloor\), \(r=N-\ell\), and split the two
+ordered children into four consecutive blocks \(B_1,\ldots,B_4\), of sizes
+\begin{equation}
+ s_1=\lfloor\ell/2\rfloor,\quad s_2=\ell-s_1,
+ \qquad s_3=\lfloor r/2\rfloor,\quad s_4=r-s_3.          \label{eq:sizes}
+\end{equation}
+Thus the blocks cover \(I_x\) exactly for every admissible real clock, and
+\(s_j=x/8+O(1)\).
+
+For adjacent blocks of sizes \(p,q\), define the normalized contrast
+\[
+ h(A,B)=\left(\frac{pq}{p+q}\right)^{1/2}
+ \left(\frac{\one_A}{p}-\frac{\one_B}{q}\right).
+\]
+The two transverse descendants are
+\begin{equation}
+ z_1=h(B_1,B_2),\qquad z_2=h(B_3,B_4),                  \label{eq:descendants}
+\end{equation}
+with normalizations
+\(\rho_1^2=s_1s_2/(s_1+s_2)\) and
+\(\rho_2^2=s_3s_4/(s_3+s_4)\).
+
+Set
+\begin{equation}
+ L_1=\log(3456/3125),\qquad L_2=\log(884736/823543),
+ \qquad L_T=(L_1^2+L_2^2)^{1/2},                       \label{eq:logs}
+\end{equation}
+and freeze
+\begin{equation}
+ \znull=\frac{L_2z_1-L_1z_2}{L_T}.                    \label{eq:null}
+\end{equation}
+
+\begin{lemma}[Exact source geometry]\label{lem:geometry}
+For every sufficiently large real \(x\), the vectors \(z_1,z_2\) are
+exactly orthonormal.  Hence \(\znull\) is an exact unit vector.  It depends
+only on the ordered source coordinates and the two fixed interval constants;
+it is independent of \(w\), \(\beta\), and the observed output.
+\end{lemma}
+
+\begin{proof}
+For a contrast on blocks of sizes \(p,q\), direct counting gives
+\[
+ \|h(A,B)\|_2^2=\frac{pq}{p+q}\left(\frac1p+\frac1q\right)=1.
+\]
+The supports of \(z_1\) and \(z_2\) are disjoint, so their inner product is
+zero.  Equation \eqref{eq:null} then has squared norm
+\((L_2^2+L_1^2)/L_T^2=1\).  Every quantity in its definition is fixed before
+either literal coefficient is inspected.
+\end{proof}
+
+TPC-258 proved, with
+\begin{equation}
+ S_x=\frac{x^{7/6}}{\log^3x},                           \label{eq:scale}
+\end{equation}
+the source-backed cancellation
+\begin{equation}
+ \ip{\znull}{\Ax\beta}=o(S_x).                         \label{eq:tpc258}
+\end{equation}
+It arises because the two leading curvatures are \(L_1/2,L_2/2\), so their
+cross combination cancels exactly.  Equation \eqref{eq:tpc258} is an
+\(o(1)\) statement and is not promoted here to a fixed-power estimate.
+
+\section{Four-block control of the literal hybrid residual}
+
+Fix a finite admissible \(K\) and write
+\begin{equation}
+ Z_x=(\log x)^K,\qquad
+ w(u)=\Lambda(u+2)-b_x^{(Z_x)}(u).                     \label{eq:w}
+\end{equation}
+The source-locked hybrid maximal Type-I theorem, through its nonnegative
+\(m=1\) row, gives for every fixed \(M>0\)
+\begin{equation}
+ \max_{\substack{J\subset I_x\\J\ \mathrm{consecutive}}}
+ \left|\sum_{u\in J}w(u)\right|
+ \ll_{M,K}\frac{x}{(\log x)^M}.                       \label{eq:maximal}
+\end{equation}
+We record the consequence for the frozen transverse direction.
+
+\begin{theorem}[Source-backed null moment]\label{thm:w-null}
+For every fixed admissible \(K\) and every fixed \(M>0\),
+\begin{equation}
+ \boxed{\displaystyle
+ |\ip{\znull}{w}|\ll_{M,K}\frac{x^{1/2}}{(\log x)^M}.} \label{eq:w-null}
+\end{equation}
+The implied constant is not uniform in \(M\) or \(K\).
+\end{theorem}
+
+\begin{proof}
+Let \(W_j=\sum_{u\in B_j}w(u)\).  Each \(B_j\) is one of the consecutive
+intervals admitted in \eqref{eq:maximal}, so
+\begin{equation}
+ |W_j|\ll_{M,K}\frac{x}{(\log x)^M},\qquad 1\le j\le4. \label{eq:blocksum}
+\end{equation}
+The exact Haar formulas are
+\[
+ \ip{z_1}{w}=\rho_1\left(\frac{W_1}{s_1}-\frac{W_2}{s_2}\right),
+ \qquad
+ \ip{z_2}{w}=\rho_2\left(\frac{W_3}{s_3}-\frac{W_4}{s_4}\right).
+\]
+Here \(s_j=x/8+O(1)\), while
+\(\rho_i\le\sqrt{s_{2i-1}+s_{2i}}/2\ll\sqrt{x}\).  Dividing
+\eqref{eq:blocksum} by the block sizes therefore gives
+\[
+ |\ip{z_1}{w}|+|\ip{z_2}{w}|
+ \ll_{M,K}\frac{x^{1/2}}{(\log x)^M}.
+\]
+Finally, \eqref{eq:null} is a fixed linear combination whose coefficient
+\(\ell^1\)-norm is less than two.  This proves \eqref{eq:w-null}.
+\end{proof}
+
+\begin{remark}[Quantifiers]
+The theorem means: first freeze finite \(K\), then choose fixed \(M\), then
+take \(x\ge x_0(M,K)\).  Arbitrary fixed logarithmic saving does not imply
+\(x^{1/2-\delta}\) for any fixed \(\delta>0\).
+\end{remark}
+
+\section{Exact signed-coupling split}
+
+Put
+\begin{equation}
+ c_x=\ip{\znull}{w},\qquad
+ w_{\parallel}=c_x\znull,\qquad
+ \wperp=w-c_x\znull.                                  \label{eq:projection}
+\end{equation}
+Since \(\znull\) is unit, \(\ip{\znull}{\wperp}=0\).  The next identity
+is purely finite-dimensional and requires no symmetry of \(A_x\).
+
+\begin{proposition}[Rank-one/residual identity]\label{prop:split}
+For every finite clock,
+\begin{equation}
+ \boxed{\displaystyle
+ \ip{w}{\Ax\beta}
+ =\overline{c_x}\ip{\znull}{\Ax\beta}
+  +\ip{\wperp}{\Ax\beta}.}                            \label{eq:split}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:projection} gives \(w=c_x\znull+\wperp\).  By
+conjugate-linearity in the first slot,
+\[
+ \ip{c_x\znull}{\Ax\beta}
+ =\overline{c_x}\ip{\znull}{\Ax\beta}.
+\]
+Adding the residual term proves \eqref{eq:split}.
+\end{proof}
+
+\begin{theorem}[Same-clock null-channel suppression]\label{thm:channel}
+For every fixed admissible \(K\) and every fixed \(M>0\), the first term in
+\eqref{eq:split} satisfies
+\begin{equation}
+ \boxed{\displaystyle
+ \overline{\ip{\znull}{w}}\ip{\znull}{\Ax\beta}
+ =o\!\left(\frac{x^{5/3}}{\log^{M+3}x}\right).}       \label{eq:main}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Write \(\ip{\znull}{\Ax\beta}=S_xe(x)\), where \(e(x)\to0\) by
+\eqref{eq:tpc258}.  Theorem~\ref{thm:w-null} gives
+\[
+ \left|\overline{c_x}\ip{\znull}{\Ax\beta}\right|
+ \ll_{M,K}\frac{x^{1/2}}{\log^Mx}\,
+              \frac{x^{7/6}}{\log^3x}|e(x)|.
+\]
+Since \(1/2+7/6=5/3\), this is exactly \eqref{eq:main}.
+\end{proof}
+
+The theorem controls one explicitly identified piece of the literal scalar
+\eqref{eq:fullscalar}.  It says nothing yet about
+\begin{equation}
+ R_x=\ip{\wperp}{\Ax\beta}.                            \label{eq:residual}
+\end{equation}
+This term is not discarded, bounded by wishful orthogonality, or absorbed
+into the little-oh notation.
+
+\section{Conditional rate and the residual obstruction}
+
+TPC-258 isolated the following stronger rate as conditional: if its two
+scalar remainders satisfy
+\[
+ \ip{\znull}{\Ax\beta}
+ \ll_{\psi,\e}\frac{S_x}{\log x}+x^{55/48+\e},
+\]
+then Theorem~\ref{thm:w-null} gives
+\begin{equation}
+ |\overline{c_x}\ip{\znull}{\Ax\beta}|
+ \ll_{M,K,\psi,\e}
+ \frac{x^{5/3}}{\log^{M+4}x}
+ +\frac{x^{79/48+\e}}{\log^Mx}.                       \label{eq:conditional}
+\end{equation}
+Indeed, \(1/2+55/48=79/48\), while \(5/3=80/48\); the boundary exponent
+has a \(1/48\) gap before \(\e\).  Equation \eqref{eq:conditional} is a
+\texttt{CONDITIONAL\_THEOREM}, not an unconditional fixed-power claim.
+
+The open residual cannot be controlled by projection algebra alone.
+
+\begin{proposition}[Exact synthetic non-promotion witness]\label{prop:witness}
+There exist a real unit vector \(z\), real vectors \(w,\beta\), and a real
+zero-diagonal matrix \(A\) such that
+\[
+ \ip{z}{w}=0,\qquad
+ \overline{\ip{z}{w}}\ip{z}{A\beta}=0,\qquad
+ \ip{w}{A\beta}\ne0.
+\]
+\end{proposition}
+
+\begin{proof}
+In \(\mathbb R^2\), choose
+\[
+ z=(1,0),\qquad w=(0,1),\qquad \beta=(1,0),\qquad
+ A=\begin{pmatrix}0&0\\ \lambda&0\end{pmatrix}
+\]
+with \(\lambda\ne0\).  Then \(A\beta=(0,\lambda)\), so
+\(\ip{z}{w}=\ip{z}{A\beta}=0\), while
+\(\ip{w}{A\beta}=\lambda\).  Here \(w_\perp=w\), and the residual carries
+the entire scalar.
+\end{proof}
+
+This witness is structural.  It is not claimed to arise from the literal
+prime shell, and it does not refute any arithmetic estimate.  It refutes only
+the attempted implication from null-channel suppression to full-scalar
+suppression without an additional theorem.
+
+\section{Route evaluation}
+
+The strongest positive result is the source-backed estimate
+\eqref{eq:main} for one same-clock signed channel.  The strongest obstruction
+is exact: the perpendicular residual \eqref{eq:residual} may carry all of a
+general zero-diagonal scalar.  The next open theorem is therefore to estimate
+\(R_x\) for the literal V59 operator, or to reassemble all four signed
+packets while retaining that residual explicitly.
+
+The reusable chain is
+\[
+ \text{same clock}\to\text{four-block Haar null}
+ \to\text{maximal-interval }w\text{ moment}
+ \to\text{exact rank-one split}
+ \to\text{residual firewall}.
+\]
+No step supplies arithmetic \(L^2\), a full Gate-B upper estimate, the
+strict global \(1/400\) endpoint, a fixed atom, or a twin-prime theorem.
+
+\section*{Reproducibility and epistemic labels}
+
+The companion certificate reconstructs the exact real-clock block geometry,
+the source-frozen null weights, the projection identity, the exponent ledger,
+and the zero-diagonal witness.  A separate implementation rejects mutations
+that replace the residual status \texttt{OPEN} by a theorem, and a stress
+family varies integral and nonintegral clocks and both signs of \(\lambda\).
+Finite checks receive no prime-asymptotic proof credit.  The maximum status is
+\[
+\texttt{PROVED\_SOURCE\_BACKED\_SAME\_CLOCK\_NULL\_CHANNEL\_SUPPRESSION\_}
+\]
+\[
+\texttt{FOR\_LITERAL\_V59\_SIGNED\_COUPLING}.
+\]
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
