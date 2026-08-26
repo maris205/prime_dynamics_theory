@@ -1,9 +1,33 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V119 / END_TO_END_CLAIM_FIREWALL`
-claim level：`PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL`
-编号事实终点：TPC-266；TPC-266 trigger：`true`
+状态：`BOLD_CHANNEL_V120 / FINITE_LITERAL_RESIDUAL_PHASE_CENSUS`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_RESIDUAL_PHASE_CENSUS`
+编号事实终点：TPC-267；TPC-267 trigger：`true`
+
+当前 TPC-267 入口：proof 为
+`research/tpc-big-road/bridge_b_literal_v59_residual_radius_census.md`，checker 为
+`tpc_bridge_b_literal_v59_residual_radius_census_checker.py`，编号论文为
+`papers/tpc-267-literal-v59-residual-radius-census/`。它在同一 literal V59 有限接口上
+保留 prime shell、unit masks、deleted diagonal、beta、shifted-prime comparison 与
+rank-three residual，12 个自然有限行全部通过 outward interval 的 `|C_perp|/R<1/4`
+证书；这是 finite signed-phase census，不能升级为渐近 radius/sector theorem，
+fixed-power credit 仍为 0，arithmetic `L2` 与 full Gate-B 仍 OPEN/NONE。
+
+```text
+TPC267_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_RESIDUAL_PHASE_CENSUS
+TPC267_ROUTE_ADVANCE = YES_SCOPED_FINITE_LITERAL_RESIDUAL_CENSUS
+TPC267_FINITE_RESIDUAL_RADIUS = NUMERICALLY_CERTIFIED
+TPC267_FINITE_SIGNED_PHASE = NUMERICALLY_CERTIFIED
+TPC267_QUARTER_CONTRACTION = NUMERICALLY_CERTIFIED_ALL_12_ROWS
+TPC267_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC267_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC267_FIXED_POWER_CREDIT = 0
+TPC267_ARITHMETIC_ADVANCE = NO
+TPC267_L2 = NONE
+TPC267_FULL_GATE_B = OPEN
+TPC267_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_RESIDUAL_PHASE_CENSUS
+```
 
 当前 TPC-266 入口：proof 为
 `research/tpc-big-road/bridge_b_typed_end_to_end_claim_firewall.md`，checker 为

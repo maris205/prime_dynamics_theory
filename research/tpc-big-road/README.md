@@ -1,13 +1,41 @@
-# TPC big road V119 / TPC-266: typed end-to-end claim firewall
+# TPC big road V120 / TPC-267: finite literal V59 residual-radius census
 
 更新时间：2026-08-26
 
-状态：`TPC266_PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC267_NUMERICALLY_CERTIFIED_FINITE_LITERAL_RESIDUAL_PHASE_CENSUS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-266 proof 为
+当前 TPC-267 proof 为
+`bridge_b_literal_v59_residual_radius_census.md`，checker 为
+`tpc_bridge_b_literal_v59_residual_radius_census_checker.py`，编号论文为
+`../../papers/tpc-267-literal-v59-residual-radius-census/`。
+
+TPC-267 在冻结的 V59 有限接口上保留实际 prime shell、outer `q` 权重、两个 unit
+masks、deleted diagonal、source `beta` 与 shifted-prime comparison，并对三块 Haar
+投影后的残差做 outward rational interval audit。12 个自然 `(N,H,Q,s)` 行都满足
+`|C_perp|/R<1/4`，最大存储上端为 `0.2320126753`；10 行为负实相位、2 行为正实
+相位。这个结果是可复核的 finite numerical certificate，不能转成 growing-parameter
+radius/phase theorem，不能支付 fixed-power `1/400`，也不关闭 arithmetic `L2` 或
+full Gate-B。
+
+```text
+TPC267_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_RESIDUAL_PHASE_CENSUS
+TPC267_ROUTE_ADVANCE = YES_SCOPED_FINITE_LITERAL_RESIDUAL_CENSUS
+TPC267_FINITE_RESIDUAL_RADIUS = NUMERICALLY_CERTIFIED
+TPC267_FINITE_SIGNED_PHASE = NUMERICALLY_CERTIFIED
+TPC267_QUARTER_CONTRACTION = NUMERICALLY_CERTIFIED_ALL_12_ROWS
+TPC267_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC267_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC267_FIXED_POWER_CREDIT = 0
+TPC267_ARITHMETIC_ADVANCE = NO
+TPC267_L2 = NONE
+TPC267_FULL_GATE_B = OPEN
+TPC267_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_RESIDUAL_PHASE_CENSUS
+```
+
+TPC-266 proof 为
 `bridge_b_typed_end_to_end_claim_firewall.md`，checker 为
 `tpc_bridge_b_typed_end_to_end_claim_firewall_checker.py`，编号论文为
 `../../papers/tpc-266-end-to-end-claim-firewall/`。

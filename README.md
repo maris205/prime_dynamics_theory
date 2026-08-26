@@ -9,7 +9,15 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-266 在 TPC-265 的 Schur endpoint-budget compiler 之后，
+当前主线状态：TPC-267 在 TPC-266 的 typed end-to-end firewall 之后，
+首次把 literal V59 的实际 prime shell、unit masks、deleted diagonal、beta、shifted-prime
+comparison 与 rank-three residual 组成有限可复现实验对象；12 个自然有限时钟行均经
+区间证书得到 `|C_perp|/R<1/4`，最大上端为 `0.2320126753`。这只是 finite
+signed-phase census，不支付 fixed-power credit，也不升级为渐近半径/扇区定理；
+clock/profile/cutoff stability、actual V59 radius/phase、arithmetic `L2`、full Gate B
+与 twin-prime conclusion 仍 OPEN/NONE。
+
+TPC-266 在 TPC-265 的 Schur endpoint-budget compiler 之后，
 对 TPC-263→TPC-264→TPC-265 做了 typed end-to-end hostile audit，精确证明
 fixed-log center 不能升级为 fixed-power lane、Schur residual 不能删除，且只有
 center/radius 两条 effective saving 都严格大于 `1/400` 时才可返回 conditional
@@ -65,6 +73,7 @@ OPEN/UNPAID/NONE。
 
 ## 3. Latest Paper
 
+tpc-267-literal-v59-residual-radius-census - 当前阶段 - 在实际 prime shell、unit masks、deleted diagonal、beta 与 shifted-prime comparison 上完成 12 行有限区间 residual-radius/signed-phase census，全部得到 `|C_perp|/R<1/4`，但仅为 finite certificate；渐近 radius/phase 与 full Gate B 仍 OPEN。
 tpc-266-end-to-end-claim-firewall - 当前阶段 - 对 TPC-263→TPC-264→TPC-265 建立 exact typed end-to-end claim firewall，完成 fixed-log non-promotion、residual-retention firewall 与 strict `1/400` 六状态 hostile matrix；literal V59 radius/phase 仍 OPEN。
 tpc-265-schur-endpoint-budget-compiler - 当前阶段 - 将 Schur residual radius 编译成 sharp `|c|+R` endpoint lane，给出严格 `1/400` 两 lane 支付条件并封住 norm-only cancellation credit；literal V59 radius/phase 仍 OPEN。
 tpc-264-orthogonal-residual-schur-firewall - 当前阶段 - 精确分类 `C_perp` 的 disk/circle/singleton Schur feasible set，量化 rank-three channel 之后仍缺少的 residual radius/phase；synthetic endpoint witness 不产生 arithmetic credit。

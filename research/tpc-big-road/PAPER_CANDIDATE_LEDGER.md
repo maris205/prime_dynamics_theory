@@ -2,13 +2,59 @@
 
 更新时间：2026-08-26
 
-状态：**TPC266_PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC267_NUMERICALLY_CERTIFIED_FINITE_LITERAL_RESIDUAL_PHASE_CENSUS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
 
-## 0.60 当前：TPC-266 typed end-to-end residual claim firewall
+## 0.61 当前：TPC-267 finite literal V59 residual-radius and signed-phase census
+
+项目：`papers/tpc-267-literal-v59-residual-radius-census/`
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_RESIDUAL_PHASE_CENSUS**。
+
+TPC-267 将 TPC-266 留下的 literal V59 residual radius/phase open input，落实为一个
+可重放的有限 physical object：实际 prime shell、outer `q` weight、两个 unit masks、
+deleted diagonal、source `beta`、`z=2` shifted-prime comparison 与三维 consecutive-block
+Haar projection 全部保留。对 12 个自然有限时钟行，outward rational intervals 认证
+`R^2>0` 且 `|C_perp|/R<1/4`；最大 upper endpoint 为 `0.2320126753`，相位为 10 个
+negative-real 与 2 个 positive-real 行。独立 replay 与 kernel stress 均通过。
+
+这是真实的 finite numerical certificate，而非 growing-parameter theorem：`R` 的
+渐近规模没有得到控制，phase 不形成已证明的 uniform sector，两个 kernel 与 rounded
+clock 是声明的有限 modeling choices。因此 fixed-power credit 仍为 0，arithmetic
+`L2`、full Gate B 与 twin-prime conclusion 仍 open。
+
+```text
+STRONGEST_POSITIVE_RESULT = FINITE_LITERAL_PRIME_SHELL_RESIDUAL_PHASE_CONTRACTION
+STRONGEST_OBSTRUCTION = FINITE_PHASE_CONTRACTION_DOES_NOT_BOUND_THE_ASYMPTOTIC_RADIUS
+OPEN_THEOREM = UNIFORM_LITERAL_V59_RADIUS_OR_SIGNED_PHASE_BOUND_WITH_EFFECTIVE_SAVING_GT_1_OVER_400
+REUSABLE_STRUCTURE = EXACT_A_OPERATOR -> P3_PROJECTION -> RADIUS_SQUARED_INTERVAL -> SIGNED_PHASE_RATIO
+ROUND2_CLUE = REPEAT_THE_CENSUS_WITH_GROWING_LOCAL_CUTOFF_AND_SMOOTH_PROFILE
+```
+
+```text
+TPC267_ROUTE_ADVANCE = YES_SCOPED_FINITE_LITERAL_RESIDUAL_CENSUS
+TPC267_LITERAL_MASK_OPERATOR = PROVED_EXACT_FINITE
+TPC267_BETA_FORMULA = PROVED_EXACT_FINITE
+TPC267_HYBRID_EULER_ENCLOSURE = PROVED_INTERVAL_FINITE
+TPC267_PROJECTION_SPLIT = PROVED_EXACT_FINITE
+TPC267_FINITE_RESIDUAL_RADIUS = NUMERICALLY CERTIFIED
+TPC267_FINITE_SIGNED_PHASE = NUMERICALLY CERTIFIED
+TPC267_QUARTER_CONTRACTION = NUMERICALLY CERTIFIED_ALL_12_ROWS
+TPC267_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC267_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC267_FIXED_POWER_CREDIT = 0
+TPC267_ARITHMETIC_ADVANCE = NO
+TPC267_L2 = NONE
+TPC267_FULL_GATE_B = OPEN
+TPC267_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC267_TWIN_PRIME_RESULT = NONE
+TPC267_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_RESIDUAL_PHASE_CENSUS
+```
+
+## 0.60 已发布：TPC-266 typed end-to-end residual claim firewall
 
 项目：`papers/tpc-266-end-to-end-claim-firewall/`
 

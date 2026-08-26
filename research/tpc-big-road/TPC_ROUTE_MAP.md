@@ -2,12 +2,18 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V119 / TPC-266
+当前地图版本：V120 / TPC-267
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-266`（`PROVED_EXACT_END_TO_END_RESIDUAL_CLAIM_FIREWALL`）；
+当前编号锚点：`TPC-267`（`NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_RESIDUAL_PHASE_CENSUS`）；
 对应论文目录为
+`papers/tpc-267-literal-v59-residual-radius-census/`。
+TPC-267 在实际有限 V59 接口上完成 12 行 residual-radius/signed-phase census，
+全部通过 `|C_perp|/R<1/4` 的 outward interval 证书；这是 finite result，渐近 radius/phase、
+arithmetic `L2` 与 full Gate B 仍 OPEN。
+
+TPC-266 的 typed chain 仍是上游 claim firewall：
 `papers/tpc-266-end-to-end-claim-firewall/`。
 TPC-266 承接 TPC-263→TPC-264→TPC-265 的整条 typed chain，证明 fixed-log
 center 不能升级为 fixed-power、Schur residual 不能删除，且两条有效 lane 都须
@@ -63,9 +69,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V119 / TPC-266                    |
-        | END-TO-END CLAIM FIREWALL PAID              |
-        | typed chain audited; literal radius still OPEN|
+        | YOU ARE HERE — V120 / TPC-267                    |
+        | FINITE LITERAL RESIDUAL CENSUS                 |
+        | 12 rows: rho<1/4; asymptotic radius still OPEN |
         +--------------------------------------------------+
                 |
                 v
@@ -1258,6 +1264,46 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.61 V120 / TPC-267：finite literal V59 residual-radius and signed-phase census
+
+TPC-267 是 TPC-266 之后的第一个 literal physical replay。它冻结
+`I_N=(N/2,N]`、实际 prime shell `Q<q<=2Q`、outer `q` weight、两个 unit masks、
+deleted diagonal、source `beta_N`、`z=2` shifted-prime comparison 与四块中的三维
+Haar contrast span，形成 `g=A beta`、`C=<w,g>`、`C=C_3+C_perp` 的有限对象。
+
+outward rational interval certificate 对 12 个自然 `(N,H,Q,s)` rows 认证
+`R^2>0` 与 `rho^2=|C_perp|^2/R^2<1/16`，故 `|C_perp|/R<1/4`；最大上端
+`0.2320126753`，相位为 10 个 negative-real rows 与 2 个 positive-real rows。
+独立 replay、mutation audit 与 kernel stress 均通过。这里的两个 kernel、rounded
+clock 与 `z=2` cutoff 是明确的有限 modeling choices，不能替代 growing V59
+source-specified smooth-profile theorem。
+
+```text
+TPC267_ROUTE_ADVANCE = YES_SCOPED_FINITE_LITERAL_RESIDUAL_CENSUS
+TPC267_LITERAL_MASK_OPERATOR = PROVED_EXACT_FINITE
+TPC267_BETA_FORMULA = PROVED_EXACT_FINITE
+TPC267_HYBRID_EULER_ENCLOSURE = PROVED_INTERVAL_FINITE
+TPC267_PROJECTION_SPLIT = PROVED_EXACT_FINITE
+TPC267_FINITE_RESIDUAL_RADIUS = NUMERICALLY CERTIFIED
+TPC267_FINITE_SIGNED_PHASE = NUMERICALLY CERTIFIED
+TPC267_QUARTER_CONTRACTION = NUMERICALLY CERTIFIED_ALL_12_ROWS
+TPC267_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC267_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC267_FIXED_POWER_CREDIT = 0
+TPC267_ARITHMETIC_ADVANCE = NO
+TPC267_L2 = NONE
+TPC267_FULL_GATE_B = OPEN
+TPC267_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC267_TWIN_PRIME_RESULT = NONE
+TPC267_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_V59_RESIDUAL_PHASE_CENSUS
+TPC267_ROUND2_CLUE = REPEAT_THE_CENSUS_WITH_GROWING_LOCAL_CUTOFF_AND_SMOOTH_PROFILE
+```
+
+strongest positive result：实际有限 physical residual 在 12 个自然 rows 上有严格
+quarter contraction；strongest obstruction：相位变号且有限 ratio 不控制渐近 radius。
+open theorem：source-specified growing V59 radius 或 signed-phase saving 严格超过
+`1/400`；下一关是 adversarial stability / counterexample search。
 
 ## 5.60 V119 / TPC-266：typed end-to-end residual claim firewall
 
@@ -3538,11 +3584,11 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V119 / TPC-266：
+截至 V120 / TPC-267：
 
 ```text
 ROUTE_ADVANCE = YES
-ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_AND_BETA_ADJOINT_HAAR_LANES_PLUS_TRANSVERSE_NULL_PLUS_SIGNED_NULL_CHANNEL
+ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_AND_BETA_ADJOINT_HAAR_LANES_PLUS_TRANSVERSE_NULL_PLUS_SIGNED_NULL_CHANNEL_PLUS_FINITE_RESIDUAL_CENSUS
 FIXED_ATOM_CREDIT = 0
 TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
 FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
@@ -3550,6 +3596,16 @@ L2 = NONE
 TPC_262_TRIGGER = true
 TPC_263_TRIGGER = true
 TPC_264_TRIGGER = true
+TPC267_ROUTE_ADVANCE = YES_SCOPED_FINITE_LITERAL_RESIDUAL_CENSUS
+TPC267_FINITE_RESIDUAL_RADIUS = NUMERICALLY CERTIFIED
+TPC267_FINITE_SIGNED_PHASE = NUMERICALLY CERTIFIED
+TPC267_QUARTER_CONTRACTION = NUMERICALLY_CERTIFIED_ALL_12_ROWS
+TPC267_ACTUAL_V59_RADIUS = OPEN_ASYMPTOTIC
+TPC267_ACTUAL_V59_PHASE = OPEN_ASYMPTOTIC
+TPC267_FIXED_POWER_CREDIT = 0
+TPC267_ARITHMETIC_ADVANCE = NO
+TPC267_L2 = NONE
+TPC267_FULL_GATE_B = OPEN
 TPC264_ROUTE_ADVANCE = YES_SCOPED_RESIDUAL_SCHUR_FIREWALL
 TPC264_PROJECTION_DATA = PROVED_EXACT
 TPC264_RESIDUAL_GRAM_FEASIBLE_SET = PROVED_EXACT
@@ -4445,6 +4501,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V120 / TPC-267 | Bridge A / Gate B：literal V59 residual 的有限 physical census 已完成；渐近 radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-267` | 12 个自然 `(N,H,Q,s)` rows 通过 outward interval 的 `|C_perp|/R<1/4`，最大上端 `0.2320126753`；相位变号且有限 modeling choices 不产生 fixed-power credit，下一关为 adversarial stability |
 | 2026-08-26 | V119 / TPC-266 | Bridge A / Gate B：TPC-263→265 typed end-to-end claim firewall 已完成；literal V59 radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-266` | 精确证明 fixed-log non-promotion、residual-retention firewall 与 strict `1/400` six-state hostile composition；无新 arithmetic credit |
 | 2026-08-26 | V118 / TPC-265 | Bridge A / Gate B：Schur residual 的 sharp endpoint-budget compiler 已完成；literal residual radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-265` | 证明 disk/circle 的 radial upper endpoint 恰为 `|c|+R`，并将 center/radius 两 lane 接入严格 `1/400` effective-saving 条件；fixed-log credit 为零 |
 | 2026-08-26 | V117 / TPC-264 | Bridge A / Gate B：orthogonal-residual Schur firewall 已完成；literal residual radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-264` | 对 TPC-263 的 `C_perp` 给出 exact disk/circle/singleton feasible-set theorem；二维补空间的 synthetic endpoint radius 为 `x^(5/3)`，无 fixed-power credit |
