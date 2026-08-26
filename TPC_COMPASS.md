@@ -1,9 +1,44 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V116 / RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL`
-claim level：`PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL`
-编号事实终点：TPC-263；TPC-263 trigger：`true`
+状态：`BOLD_CHANNEL_V117 / ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL`
+claim level：`PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL`
+编号事实终点：TPC-264；TPC-264 trigger：`true`
+
+当前 TPC-264 入口：proof 为
+`research/tpc-big-road/bridge_b_orthogonal_residual_schur_firewall.md`，checker 为
+`tpc_bridge_b_orthogonal_residual_schur_firewall_checker.py`，编号论文为
+`papers/tpc-264-orthogonal-residual-schur-firewall/`。它承接 TPC-263 的 exact
+`C_3+C_perp` split，证明在固定 projected data 与 residual norms 下，`C_perp`
+的 Schur feasible set 按补空间维数精确分成 disk/circle/singleton。二维补空间
+仍允许 endpoint-scale `x^(5/3)` residual；这是 structural firewall，不是 literal
+prime-shell counterexample，也不产生 fixed-power、arithmetic `L2` 或 full Gate-B
+payment。
+
+```text
+TPC264_MAXIMUM_CLAIM = PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL
+TPC264_ROUTE_ADVANCE = YES_SCOPED_RESIDUAL_SCHUR_FIREWALL
+TPC264_PROJECTION_DATA = PROVED_EXACT
+TPC264_RESIDUAL_GRAM_FEASIBLE_SET = PROVED_EXACT
+TPC264_COMPLEMENT_DIMENSION_SPLIT = PROVED_EXACT
+TPC264_FULL_SCALAR_FEASIBLE_SET = PROVED_EXACT
+TPC264_ENDPOINT_SCALE_WITNESS = NUMERICALLY_CERTIFIED_STRUCTURAL
+TPC264_FIXED_POWER_CREDIT = 0
+TPC264_ARITHMETIC_ADVANCE = NO
+TPC264_ACTUAL_V59_RESIDUAL = OPEN
+TPC264_L2 = NONE
+TPC264_FULL_GATE_B = OPEN
+TPC264_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC264_TWIN_PRIME_RESULT = NONE
+TPC264_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC264_STATUS = PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL
+TPC264_ROUND2_CLUE = TURN_THE_SCHUR_RADIUS_OR_RESIDUAL_PHASE_INTO_A_LITERAL_V59_ESTIMATE
+```
+
+strongest positive result：正交残差的 Schur disk/circle/singleton 分类 exact 且 sharp；
+strongest obstruction：仅凭 `P3` 数据与 norm-only residual information 不能压缩二维
+补空间中的 full-radius residual；open theorem：actual V59 residual radius 或 signed
+phase estimate。
 
 当前 TPC-263 入口：proof 为
 `research/tpc-big-road/bridge_b_rank_three_physical_cross_gram.md`，checker 为

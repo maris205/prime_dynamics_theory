@@ -1,7 +1,57 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V116_TPC263_RANK_THREE_PHYSICAL_CROSS_GRAM_RELEASED`
+交接状态：`BOLD_CHANNEL_V117_TPC264_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL_RELEASED`
+
+TPC-264 当前 section：orthogonal-residual Schur firewall
+-----------------------------------------------------------------------------------------------
+
+TPC-264 is the direct continuation of TPC-263's exact split.  Let `P3` be the
+rank-three source projection, `p=P3 w`, `q=P3 A_x beta`,
+`u=(I-P3)w`, and `v=(I-P3)A_x beta`.  With
+`a=||u||`, `b=||v||`, `c=<p,q>`, and `z=<u,v>`,
+
+```text
+<w,A_x beta>=c+z,
+Gamma(z)=[[a^2,z],[conjugate(z),b^2]] >= 0,
+|z| <= a b.
+```
+
+The inequality is sharp.  With projected data and residual norms fixed, the
+residual feasible set is the closed disk `|z|<=ab` when the complement has
+dimension at least two, the circle `|z|=ab` in dimension one with `ab>0`, and
+the singleton `{0}` in the degenerate cases.  Thus the full scalar is the
+corresponding translate by `c`.
+
+The endpoint-scale `a=b=x^(5/6)` family is explicitly synthetic and leaves a
+radius `x^(5/3)`.  It proves a norm-only residual firewall, not a literal
+prime-shell counterexample.  No fixed-power credit, arithmetic `L2`, full Gate
+B, or twin-prime conclusion is claimed.
+
+```text
+TPC264_MAXIMUM_CLAIM = PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL
+TPC264_ROUTE_ADVANCE = YES_SCOPED_RESIDUAL_SCHUR_FIREWALL
+TPC264_PROJECTION_DATA = PROVED_EXACT
+TPC264_RESIDUAL_GRAM_FEASIBLE_SET = PROVED_EXACT
+TPC264_COMPLEMENT_DIMENSION_SPLIT = PROVED_EXACT
+TPC264_FULL_SCALAR_FEASIBLE_SET = PROVED_EXACT
+TPC264_ENDPOINT_SCALE_WITNESS = NUMERICALLY_CERTIFIED_STRUCTURAL
+TPC264_FIXED_POWER_CREDIT = 0
+TPC264_ARITHMETIC_ADVANCE = NO
+TPC264_ACTUAL_V59_RESIDUAL = OPEN
+TPC264_L2 = NONE
+TPC264_FULL_GATE_B = OPEN
+TPC264_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC264_TWIN_PRIME_RESULT = NONE
+TPC264_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC264_STATUS = PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL
+TPC264_ROUND2_CLUE = TURN_THE_SCHUR_RADIUS_OR_RESIDUAL_PHASE_INTO_A_LITERAL_V59_ESTIMATE
+```
+
+The strongest positive result is the exact disk/circle/singleton classification;
+the strongest obstruction is that a two-dimensional complement can retain the
+full baseline radius.  The next minimal theorem is a literal residual-radius
+or signed-phase estimate.
 
 TPC-263 当前 section：rank-three physical cross-Gram channel
 -----------------------------------------------------------------------------------------------
@@ -8174,7 +8224,7 @@ certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正
 不得为了启动回归而执行。
 
 22项启动回归之后，当前 V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百八十八次（94 对）必须都为零，且每一对 stdout
+执行 normal与 optimized只读 checker；一百九十次（95 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -8364,11 +8414,24 @@ python -B research/tpc-big-road/tpc_bridge_b_strict_endpoint_budget_compiler_che
 python -O -B research/tpc-big-road/tpc_bridge_b_strict_endpoint_budget_compiler_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_literal_mode_zero_cross_gram_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_literal_mode_zero_cross_gram_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_orthogonal_residual_schur_firewall_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_orthogonal_residual_schur_firewall_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-263 入口：
+最新 TPC-264 入口：
+
+```text
+papers/tpc-264-orthogonal-residual-schur-firewall/README.md
+papers/tpc-264-orthogonal-residual-schur-firewall/PROOF_PACKAGE.md
+papers/tpc-264-orthogonal-residual-schur-firewall/notes/theorem_ledger.md
+papers/tpc-264-orthogonal-residual-schur-firewall/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_orthogonal_residual_schur_firewall.md
+research/tpc-big-road/tpc_bridge_b_orthogonal_residual_schur_firewall_checker.py
+```
+
+TPC-263 上游入口：
 
 ```text
 papers/tpc-263-rank-three-physical-cross-gram/README.md

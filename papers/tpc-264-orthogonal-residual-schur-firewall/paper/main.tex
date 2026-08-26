@@ -1,0 +1,308 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\PP}{P}
+\newcommand{\PPperp}{P^{\perp}}
+\newcommand{\C}{\mathbb C}
+
+\title{TPC-264: Orthogonal-Residual Schur Firewall}
+\author{Liang Wang\\
+School of Mathematics and Statistics, Huazhong University of Science and Technology\\
+Wuhan, China}
+\date{August 26, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding rank-three physical cross-Gram channel controls a projected part
+of the literal V59 coupling but leaves an orthogonal residual.  This paper gives
+an exact finite-dimensional Schur classification of that residual.  If the
+projected vectors and both residual norms are fixed, the residual inner product
+is a closed disk when the complement has dimension at least two, a circle when
+the complement is one-dimensional, and a singleton in the degenerate cases.
+The full coupling is the corresponding translate by the projected inner
+product.  The result is sharp: exact Gaussian-rational witnesses realize the
+disk endpoints, its interior, and the dimension transition.  A synthetic
+endpoint-scale family has radius $x^{5/3}$, so rank-three logarithmic control
+plus norm-only residual data cannot pay a fixed-power saving.  This is a
+structural firewall, not a literal prime-shell counterexample.
+\end{abstract}
+
+\section{Scope and motivation}
+
+We use the conjugate-linear-first-slot convention
+\[
+ \ip{u}{v}=\sum_j\overline{u_j}v_j.
+\]
+The current Route-B object is a common-clock coupling
+\(ip{w}{g_x}\), where $g_x=A_x\beta$.  TPC-263 constructs an exact
+rank-three source frame and proves a source-backed bound for
+\[
+ C_3(x)=\ip{P_3w}{P_3g_x}
+       =O_{M,K}\!\left(\frac{x^{5/3}}{(\log x)^{M+3}}\right).
+\]
+The exact identity still contains
+\[
+ C_\perp(x)=\ip{(I-P_3)w}{(I-P_3)g_x}.
+\]
+The purpose of this paper is not to guess an estimate for $C_\perp$.
+Instead, we determine the complete set of values compatible with the data
+already exposed by the projection.  This makes the missing theorem explicit.
+
+There are two reasons to isolate this finite question.  First, a positive
+semidefinite Gram constraint is an exact source of information, and its sharp
+boundary should be recorded rather than replaced by a loose Cauchy bound.
+Second, the dimension of the unobserved complement changes the geometry: in
+dimension one the residual has fixed modulus, whereas in dimension two it can
+also cancel completely.  These are different obstructions for a future literal
+argument.
+
+Our contributions are:
+\begin{enumerate}
+ \item an exact projection-plus-residual decomposition;
+ \item a Schur feasible-set theorem with a complete dimension split;
+ \item a translated disk/circle/singleton description for the full scalar; and
+ \item an endpoint-scale structural witness and a precise $1/400$ consequence.
+\end{enumerate}
+
+All finite vectors below are audit objects.  They do not model a new prime
+distribution law, and no finite witness is treated as asymptotic evidence.
+
+\section{The projected and residual data}
+
+Let $\HH$ be a complex Hilbert space and let $P$ be an orthogonal projection.
+For two vectors $w,g\in\HH$, define
+\[
+ p=Pw,\qquad q=Pg,\qquad u=(I-P)w,\qquad v=(I-P)g.
+\]
+Then $p,q\in\operatorname{ran}(P)$ and $u,v\in\ker(P)$.  We call
+\[
+ a=\norm{u},\qquad b=\norm{v},\qquad c=\ip{p}{q}
+\]
+the residual radii and projected center.  The unresolved scalar is
+\[
+ z=\ip{u}{v}.
+\]
+
+\begin{lemma}[orthogonal splitting]
+For every $w,g$ and every orthogonal projection $P$,
+\begin{equation}
+ \ip{w}{g}=c+z.
+ \label{eq:split}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write $w=p+u$ and $g=q+v$.  The mixed terms vanish because the range and
+kernel of an orthogonal projection are orthogonal:
+\[
+ \ip{p}{v}=\ip{u}{q}=0.
+\]
+Expanding the inner product gives \eqref{eq:split}.
+\end{proof}
+
+The projected center $c$ is the quantity controlled by TPC-263.  The question
+is how much freedom remains in $z$ after $a$ and $b$ are also specified.
+
+\section{The Schur feasible set}
+
+\begin{definition}[residual Gram matrix]
+For $z\in\C$ and nonnegative $a,b$, set
+\[
+ \Gamma(a,b;z)=
+ \begin{pmatrix}
+  a^2 & z\\
+  \overline z & b^2
+ \end{pmatrix}.
+\]
+The set of $z$ for which this matrix is positive semidefinite is the Schur
+feasible set at radii $(a,b)$.
+\end{definition}
+
+\begin{theorem}[exact Schur feasible set]
+Let $m=\dim\ker(P)$, allowing $m=\infty$.  With $a,b,c,z$ as above, the
+possible residual values, when $p,q,a,b$ are fixed, are as follows.
+\begin{enumerate}
+ \item If $m\geq2$, the set is the closed disk
+ \[
+       \{z\in\C:\ |z|\leq ab\}.
+ \]
+ \item If $m=1$ and $ab>0$, the set is the circle
+ \[
+       \{z\in\C:\ |z|=ab\}.
+ \]
+ \item If $m=0$ or $ab=0$, the set is the singleton $\{0\}$.
+\end{enumerate}
+Consequently, the possible full scalars are obtained by translating these
+sets by $c$.
+\end{theorem}
+
+\begin{proof}
+The residual Gram matrix of $u,v$ is exactly $\Gamma(a,b;z)$, hence it is
+positive semidefinite.  Its determinant is nonnegative, so
+\[
+ a^2b^2-|z|^2\geq0.
+ \label{eq:schur}
+\]
+This proves the upper bound in every dimension.
+
+Suppose first that $m\geq2$ and $a,b>0$.  Choose orthonormal vectors
+$e_1,e_2\in\ker(P)$.  Given any $z$ with $|z|\leq ab$, put
+\[
+ r=\frac{|z|}{ab},\qquad z=ab r e^{i\theta},
+\]
+and define
+\[
+ u=a e_1,\qquad
+ v=b\bigl(r e^{i\theta}e_1+\sqrt{1-r^2}\,e_2\bigr).
+\]
+Then $\norm{u}=a$, $\norm{v}=b$, and the chosen inner-product convention gives
+\(\ip{u}{v}=z\).  Thus every point of the disk is attained.
+
+If $m=1$, write $u=\alpha e$ and $v=\beta e$ for a unit vector $e$.
+Fixed norms give $|\alpha|=a$ and $|\beta|=b$, so
+\[
+ |\ip{u}{v}|=|\overline\alpha\beta|=ab.
+\]
+Varying the relative phase of $\alpha$ and $\beta$ realizes every point on
+the circle.  If $m=0$, both residual vectors vanish.  If $a=0$ or $b=0$,
+the same conclusion follows immediately from Cauchy--Schwarz.  Finally,
+\eqref{eq:split} translates the residual set by $c$.
+\end{proof}
+
+\begin{remark}
+The inequality \eqref{eq:schur} is often called the $2\times2$ Schur or Gram
+condition.  The theorem is stronger than an upper bound: it proves that the
+condition is sufficient in complement dimension at least two.  Thus no hidden
+finite-dimensional constraint has been left in the disk statement.
+\end{remark}
+
+\section{An exact finite audit}
+
+For a concrete fixture take an ambient space with five coordinates and let $P$
+keep the first three.  Fix
+\[
+ p=(1,0,0),\qquad q=(2+i,0,0),\qquad a=\frac32,\qquad b=2.
+\]
+Then $c=\ip{p}{q}=2+i$ and the Schur radius is $ab=3$.  In the last two
+coordinates, use the following residual pairs:
+\[
+\begin{array}{c|c|c|c}
+ \text{label}&u&v&\ip{u}{v}\\ \midrule
+ \text{plus}&(\frac32,0)&(2,0)&3\\
+ \text{minus}&(\frac32,0)&(-2,0)&-3\\
+ \text{zero}&(\frac32,0)&(0,2)&0\\
+ \text{quarter-turn}&(\frac32,0)&(2i,0)&3i
+\end{array}
+\]
+Each row has the same residual norms.  The first and second rows are the two
+Schur boundary endpoints, the third is an interior point, and the fourth
+demonstrates phase freedom.  Their full scalars are respectively
+\(5+i\), \(-1+i\), \(2+i\), and \(2+4i\).
+
+The release certificate recomputes these values with rational arithmetic.  It
+also checks a one-dimensional complement: the zero residual is rejected from
+the positive-radius circle, while the three boundary phases are accepted.  A
+zero residual norm collapses the classification in every complement dimension.
+This finite audit is deliberately small enough to inspect line by line and
+large enough to exercise every branch of the theorem.
+
+\section{Endpoint-scale consequence}
+
+The rank-three channel provides a center that is small in fixed logarithmic
+powers.  The Schur theorem says that this fact is not enough if the residual
+radius is left at the natural baseline scale.  Consider the synthetic choice
+\[
+ a=b=x^{5/6},\qquad ab=x^{5/3}.
+\]
+The disk contains both $z=x^{5/3}$ and $z=-x^{5/3}$.  For any center satisfying
+\(|c|=O(x^{5/3}/(\log x)^M)\), one of these choices has
+\[
+ |c+z|\geq x^{5/3}-|c|.
+\]
+Since $x^\delta/(\log x)^M\to\infty$ for every fixed $\delta>0$, this
+quantity cannot be forced to $O(x^{5/3-\delta})$ from the declared data alone.
+
+The inherited endpoint budget is
+\[
+ \frac53-\frac{1997}{1200}=\frac1{400}.
+\]
+Therefore a future literal theorem needs at least one of the following:
+\begin{enumerate}
+ \item a residual-radius estimate
+ \[
+  \norm{(I-P_3)w}\,\norm{(I-P_3)g_x}
+       \ll x^{5/3-\delta},\qquad \delta>\frac1{400},
+ \]
+ after all reassembly losses; or
+ \item a direct signed estimate for $C_\perp$ with an effective saving greater
+       than $1/400$.
+\end{enumerate}
+The first is a norm theorem and the second is a phase/cross-Gram theorem.  The
+Schur firewall shows why neither can be replaced by a statement about the
+projected channel alone.
+
+\section{Claim firewall and route consequence}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Object & Status\\
+\midrule
+Schur disk/circle/singleton classification & \texttt{PROVED\_EXACT}\\
+Finite Gaussian-rational witnesses & \texttt{NUMERICALLY\_CERTIFIED}\\
+Literal V59 residual radius or phase & \texttt{OPEN}\\
+Fixed-power credit in this paper & $0$\\
+Arithmetic $L^2$ and full Gate B & \texttt{NONE / OPEN}\\
+Twin-prime conclusion & \texttt{NONE}\\
+Literal growing-shell counterexample & \texttt{NONE}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The phrase ``Orthogonal-Residual Schur Firewall'' records the exact role of the
+result: it blocks an invalid promotion from a paid projection to a paid full
+coupling.  It does not block a future literal estimate.  The next natural
+research object is the actual V59 residual radius or its signed phase, with the
+hard window, unit masks, deleted diagonal, and common clock retained.
+
+\section{Conclusion}
+
+TPC-264 turns the unresolved term in TPC-263 into a complete finite geometry.
+The data $(p,q,a,b)$ determine a disk, circle, or singleton according to the
+unobserved dimension, and this description is sharp.  At endpoint scale the
+disk has the full baseline radius unless a new literal theorem shrinks it or
+controls its phase.  The result is therefore a reusable obstruction and a
+minimal specification for the next bridge, while all arithmetic and twin-prime
+claims remain open.
+
+\begin{thebibliography}{9}
+\bibitem{TPC263}
+L.~Wang, ``Rank-three physical cross-Gram channel,'' TPC-263 project,
+repository release, 2026.
+
+\bibitem{HornJohnson}
+R.~A. Horn and C.~R. Johnson, \emph{Matrix Analysis}, Cambridge University
+Press, 2012.
+
+\bibitem{Conway}
+J.~B. Conway, \emph{A Course in Functional Analysis}, Springer, 1990.
+\end{thebibliography}
+
+\end{document}

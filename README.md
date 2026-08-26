@@ -9,7 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-263 在 TPC-262 的 signed-operator interface 之后，把
+当前主线状态：TPC-264 在 TPC-263 的 rank-three physical channel 之后，精确求出
+正交残差的 Schur 可实现集合：二维以上补空间是闭圆盘，一维是圆，退化情形是单点。
+这把 `C_perp` 的缺失信息从“未估计”推进为一个 sharp finite firewall；endpoint-scale
+synthetic radius 仍可达 `x^(5/3)`，因此没有 fixed-power `1/400` credit。actual V59
+residual、arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+TPC-263 在 TPC-262 的 signed-operator interface 之后，把
 source-backed rank-three Haar channel 与四个物理 block sums 接到同一个 literal
 V59 coupling，严格得到 `C_3=O(x^(5/3)/(log x)^(M+3))`；exact
 `C_perp` residual 被保留并明确成为下一关。该结果是 fixed-log-only，不能支付
@@ -46,6 +52,7 @@ OPEN/UNPAID/NONE。
 
 ## 3. Latest Paper
 
+tpc-264-orthogonal-residual-schur-firewall - 当前阶段 - 精确分类 `C_perp` 的 disk/circle/singleton Schur feasible set，量化 rank-three channel 之后仍缺少的 residual radius/phase；synthetic endpoint witness 不产生 arithmetic credit。
 tpc-263-rank-three-physical-cross-gram - 当前阶段 - 将四块 hybrid `w` 的 fixed-log 控制与 TPC-257 三个 adjoint asymptotic 在 exact `P3` 上相乘，支付 rank-three physical cross-Gram channel；正交残差仍 OPEN。
 tpc-262-literal-mode-zero-cross-gram - 当前阶段 - literal signed reduced-residue operator、cross-Gram/DFT ledger 与 phase-character firewall 已精确闭合；growing-shell arithmetic estimate 仍开放。
 `tpc-262-literal-mode-zero-cross-gram` - `PROVED_EXACT_LITERAL_SIGNED_REDUCED_RESIDUE_OPERATOR_AND_PHASE_CHARACTER_FIREWALL` - 精确给出 `J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`、四 packet signed cross-Gram/DFT 恒等式和 phase-character separation；finite operator-image witness 显示相同 diagonals 可有 mode-zero `16||Y||^2` 或 `0`，但 growing `beta,w` estimate 与 arithmetic `L2` 仍 open。

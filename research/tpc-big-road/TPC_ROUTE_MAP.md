@@ -2,18 +2,18 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V116 / TPC-263
+当前地图版本：V117 / TPC-264
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-263`（`PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL`）；
+当前编号锚点：`TPC-264`（`PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL`）；
 对应论文目录为
-`papers/tpc-263-rank-three-physical-cross-gram/`。
-TPC-263 将 TPC-254 的四个 consecutive block-sum fixed-log control 与 TPC-257
-的三个 adjoint coefficients 接到同一个 exact rank-three projection，证明
-`C_3=O(x^(5/3)/(log x)^(M+3))`。exact `C_perp` residual 被保留并成为下一座桥；
-这是 source-backed logarithmic channel，不是 fixed-power payment、arithmetic
-`L2` 或 full Gate-B closure。
+`papers/tpc-264-orthogonal-residual-schur-firewall/`。
+TPC-264 承接 TPC-263 的 exact `C_3+C_perp` split，证明固定 projected data 与
+residual norms 下，`C_perp` 的 Schur feasible set 按补空间维数精确分成
+disk/circle/singleton；二维补空间仍允许 endpoint-scale `x^(5/3)` radius。
+这是 structural residual firewall，不是 fixed-power payment、arithmetic `L2`
+或 full Gate-B closure。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -55,9 +55,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V116 / TPC-263                    |
-        | RANK-THREE PHYSICAL CHANNEL PAID             |
-        | log-only; orthogonal residual still OPEN    |
+        | YOU ARE HERE — V117 / TPC-264                    |
+        | SCHUR RESIDUAL FIREWALL PAID                |
+        | disk sharp; literal radius/phase still OPEN |
         +--------------------------------------------------+
                 |
                 v
@@ -100,7 +100,7 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V115 / TPC-262。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V117 / TPC-264。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
@@ -1245,6 +1245,49 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.58 V117 / TPC-264：orthogonal-residual Schur firewall
+
+TPC-264 直接攻击 TPC-263 留下的 `C_perp`。令 `P=P3`、
+`p=Pw`、`q=P(A_x beta)`、`u=(I-P)w`、`v=(I-P)(A_x beta)`，并记
+`a=||u||`、`b=||v||`、`c=<p,q>`。exact projection identity 与 residual Gram
+matrix 为
+
+```text
+<w,A_x beta>=c+z,
+z=<u,v>,
+Gamma(z)=[[a^2,z],[conjugate(z),b^2]] >= 0.
+```
+
+因此 `|z|<=ab`，且该 bound 在补空间维数至少二时是 sharp：固定 `p,q,a,b`
+后每个圆盘点都能实现；维数一时可实现集合收缩为边界圆，零维或零半径时
+收缩为单点。full scalar 是以 `c` 为中心的平移集合。这个 dimension split
+是新 theorem，不是重复 TPC-260 的四 packet polygon：它刻画的是 rank-three
+projection 之后两向量 residual Gram 的完整可实现性。
+
+```text
+TPC264_ROUTE_ADVANCE = YES_SCOPED_RESIDUAL_SCHUR_FIREWALL
+TPC264_PROJECTION_DATA = PROVED_EXACT
+TPC264_RESIDUAL_GRAM_FEASIBLE_SET = PROVED_EXACT
+TPC264_COMPLEMENT_DIMENSION_SPLIT = PROVED_EXACT
+TPC264_FULL_SCALAR_FEASIBLE_SET = PROVED_EXACT
+TPC264_ENDPOINT_SCALE_WITNESS = NUMERICALLY_CERTIFIED_STRUCTURAL
+TPC264_FIXED_POWER_CREDIT = 0
+TPC264_ARITHMETIC_ADVANCE = NO
+TPC264_ACTUAL_V59_RESIDUAL = OPEN
+TPC264_L2 = NONE
+TPC264_FULL_GATE_B = OPEN
+TPC264_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC264_TWIN_PRIME_RESULT = NONE
+TPC264_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC264_STATUS = PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL
+TPC264_ROUND2_CLUE = TURN_THE_SCHUR_RADIUS_OR_RESIDUAL_PHASE_INTO_A_LITERAL_V59_ESTIMATE
+```
+
+endpoint-scale `a=b=x^(5/6)` 只是 synthetic modeling choice，给出 radius
+`x^(5/3)`；它量化 norm-only promotion 的 obstruction，但不构成 literal
+growing-shell counterexample。下一步要么证明 actual V59 residual radius 的
+fixed-power shrink，要么直接控制 residual signed phase/cross-Gram。
 
 ## 5.57 V116 / TPC-263：rank-three physical cross-Gram channel
 
@@ -3393,7 +3436,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V116 / TPC-263：
+截至 V117 / TPC-264：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -3404,6 +3447,23 @@ FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 L2 = NONE
 TPC_262_TRIGGER = true
 TPC_263_TRIGGER = true
+TPC_264_TRIGGER = true
+TPC264_ROUTE_ADVANCE = YES_SCOPED_RESIDUAL_SCHUR_FIREWALL
+TPC264_PROJECTION_DATA = PROVED_EXACT
+TPC264_RESIDUAL_GRAM_FEASIBLE_SET = PROVED_EXACT
+TPC264_COMPLEMENT_DIMENSION_SPLIT = PROVED_EXACT
+TPC264_FULL_SCALAR_FEASIBLE_SET = PROVED_EXACT
+TPC264_ENDPOINT_SCALE_WITNESS = NUMERICALLY_CERTIFIED_STRUCTURAL
+TPC264_FIXED_POWER_CREDIT = 0
+TPC264_ARITHMETIC_ADVANCE = NO
+TPC264_ACTUAL_V59_RESIDUAL = OPEN
+TPC264_L2 = NONE
+TPC264_FULL_GATE_B = OPEN
+TPC264_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC264_TWIN_PRIME_RESULT = NONE
+TPC264_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC264_STATUS = PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL
+TPC264_ROUND2_CLUE = TURN_THE_SCHUR_RADIUS_OR_RESIDUAL_PHASE_INTO_A_LITERAL_V59_ESTIMATE
 TPC263_ROUTE_ADVANCE = YES_SCOPED_RANK_THREE_LOG_CHANNEL
 TPC263_W_FRAME_MOMENTS = PROVED_SOURCE_BACKED_ARBITRARY_FIXED_LOG_POWER
 TPC263_ADJOINT_FRAME_COEFFICIENTS = PROVED_SOURCE_BACKED_TPC257
@@ -4245,6 +4305,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V117 / TPC-264 | Bridge A / Gate B：orthogonal-residual Schur firewall 已完成；literal residual radius/phase、arithmetic `L2` 与 full Gate B open | `TPC-264` | 对 TPC-263 的 `C_perp` 给出 exact disk/circle/singleton feasible-set theorem；二维补空间的 synthetic endpoint radius 为 `x^(5/3)`，无 fixed-power credit |
 | 2026-08-26 | V116 / TPC-263 | Bridge A / Gate B：rank-three physical cross-Gram channel 已完成；orthogonal residual、arithmetic `L2` 与 full Gate B open | `TPC-263` | 将 TPC-254 的四 block fixed-log hybrid control 与 TPC-257 三个 adjoint asymptotics 在同一 exact `P3` 上相乘，得到 `C_3=O(x^(5/3)/(log x)^(M+3))`；保留 `C_perp`，无 fixed-power credit |
 | 2026-08-26 | V115 / TPC-262 | Bridge A / Gate B：literal signed reduced-residue operator 与 phase-character firewall 已完成；growing `beta,w` cross-Gram、arithmetic `L2` 与 full Gate B open | `TPC-262` | 精确锁定 `J_(q,v)=S_(q,v)^*C_qS_(q,v)-((q-2)/(q-1))P_q`、weighted cross-Gram/DFT ledger 与 phase-character separation；finite operator-image witness 显示相同 diagonals 仍允许 mode-zero `16||Y||^2` 或 `0`，不构成 growing-shell counterexample |
 | 2026-08-26 | V114 / TPC-261 | Bridge A / Gate B：strict endpoint-budget compiler 已完成；literal mode-zero/cross-Gram 与 arithmetic `L2` open | `TPC-261` | 将 `E0=5/3` 到 `E*=1997/1200` 的差精确编译为 `1/400`，证明 finite-lane effective saving 必须严格超过该阈值；fixed-log suppression 无 fixed-power credit；scaled TPC-260 witness 保留 structural residual obstruction，full Gate B 与 twin-prime result remain open |

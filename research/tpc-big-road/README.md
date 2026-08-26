@@ -1,13 +1,54 @@
-# TPC big road V116 / TPC-263: rank-three physical cross-Gram channel
+# TPC big road V117 / TPC-264: orthogonal-residual Schur firewall
 
 更新时间：2026-08-26
 
-状态：`TPC263_PROVED_SOURCE_BACKED_RANK_THREE_PHYSICAL_CROSS_GRAM_CHANNEL / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC264_PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-263 proof 为
+当前 TPC-264 proof 为
+`bridge_b_orthogonal_residual_schur_firewall.md`，checker 为
+`tpc_bridge_b_orthogonal_residual_schur_firewall_checker.py`，编号论文为
+`../../papers/tpc-264-orthogonal-residual-schur-firewall/`。
+
+TPC-264 承接 TPC-263 的 exact `C_3+C_perp` split，固定 projected vectors
+`p=P_3w,q=P_3A_x beta` 与 residual norms `a,b`，证明 residual Gram entry
+`z=<P_3^perp w,P_3^perp A_x beta>` 的完整 feasible set：补空间维数至少二时为
+`|z|<=ab` 的闭圆盘，维数一且 `ab>0` 时为 `|z|=ab` 的圆，维数零或零半径时
+为单点。full scalar 是以 `<p,q>` 为中心的平移集合。二维补空间的 synthetic
+`a=b=x^(5/6)` witness 仍可达到 radius `x^(5/3)`，所以该结果量化 obstruction
+而不支付 fixed-power、arithmetic `L2` 或 full Gate-B。
+
+```text
+TPC264_MAXIMUM_CLAIM = PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL
+TPC264_ROUTE_ADVANCE = YES_SCOPED_RESIDUAL_SCHUR_FIREWALL
+TPC264_PROJECTION_DATA = PROVED_EXACT
+TPC264_RESIDUAL_GRAM_FEASIBLE_SET = PROVED_EXACT
+TPC264_COMPLEMENT_DIMENSION_SPLIT = PROVED_EXACT
+TPC264_FULL_SCALAR_FEASIBLE_SET = PROVED_EXACT
+TPC264_ENDPOINT_SCALE_WITNESS = NUMERICALLY_CERTIFIED_STRUCTURAL
+TPC264_FIXED_POWER_CREDIT = 0
+TPC264_ARITHMETIC_ADVANCE = NO
+TPC264_ACTUAL_V59_RESIDUAL = OPEN
+TPC264_L2 = NONE
+TPC264_FULL_GATE_B = OPEN
+TPC264_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC264_TWIN_PRIME_RESULT = NONE
+TPC264_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC264_STATUS = PROVED_EXACT_ORTHOGONAL_RESIDUAL_SCHUR_FIREWALL
+TPC264_ROUND2_CLUE = TURN_THE_SCHUR_RADIUS_OR_RESIDUAL_PHASE_INTO_A_LITERAL_V59_ESTIMATE
+```
+
+TPC-263 remains the immediate upstream source-backed rank-three channel:
+
+```text
+`C_3=O_(M,K)(x^(5/3)/(log x)^(M+3))`,  `C_perp` explicit and OPEN.
+```
+
+## V116 upstream: TPC-263 rank-three physical cross-Gram channel
+
+TPC-263 proof 为
 `bridge_b_rank_three_physical_cross_gram.md`，checker 为
 `tpc_bridge_b_rank_three_physical_cross_gram_checker.py`，编号论文为
 `../../papers/tpc-263-rank-three-physical-cross-gram/`。
