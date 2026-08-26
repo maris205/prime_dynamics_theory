@@ -1,11 +1,40 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V112 / SAME_CLOCK_NULL_CHANNEL_COUPLING`
-claim level：`PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING`
-编号事实终点：TPC-259；TPC-259 trigger：`true`
+状态：`BOLD_CHANNEL_V113 / FOUR_PACKET_RESIDUAL_REASSEMBLY_AUDIT`
+claim level：`PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION`
+编号事实终点：TPC-260；TPC-260 trigger：`true`
 
-当前 TPC-259 入口：proof 为
+当前 TPC-260 入口：proof 为
+`research/tpc-big-road/bridge_b_four_packet_residual_reassembly.md`，checker 为
+`tpc_bridge_b_four_packet_residual_reassembly_checker.py`，编号论文为
+`papers/tpc-260-four-packet-residual-reassembly/`。它把 TPC-258 的 source-frozen
+null direction 嵌入四块 Haar complement，证明 null-compatible 四 packet completion
+的 sharp polygon interval，并用 four-point DFT 精确标出 mode zero：固定 packet
+marginals 与全部已知 Haar/null projections 仍允许 residual energy `0` 和 `16`。
+这是 scoped structural obstruction；literal mode-zero/cross-Gram、arithmetic `L2`
+与 full Gate B 仍 OPEN。
+
+```text
+TPC260_MAXIMUM_CLAIM = PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION
+TPC260_ROUTE_ADVANCE = YES_SCOPED_MODE_AUDIT
+TPC260_HAAR_COMPLEMENT = PROVED_EXACT_FINITE
+TPC260_POLYGON_COMPLETION = PROVED_EXACT_FINITE
+TPC260_DFT_MODE_LEDGER = PROVED_EXACT
+TPC260_NULL_CHANNEL_COMPATIBILITY = PROVED_EXACT_SYNTHETIC
+TPC260_FULL_RESIDUAL_IDENTIFIABILITY = REFUTED_SCOPED
+TPC260_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC260_ARITHMETIC_ADVANCE = NO
+TPC260_FIXED_ATOM_CREDIT = 0
+TPC260_L2 = NONE
+TPC260_FULL_GATE_B = OPEN
+TPC260_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC260_TWIN_PRIME_RESULT = NONE
+TPC260_STATUS = PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION
+TPC260_ROUND2_CLUE = PROVE_A_LITERAL_MODE_ZERO_OR_CROSS_GRAM_ESTIMATE_FOR_THE_COMMON_V59_FOUR_PACKET_OUTPUT
+```
+
+TPC-259 直接上游入口：proof 为
 `research/tpc-big-road/bridge_b_same_clock_null_coupling.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_same_clock_null_coupling_checker.py`，编号论文为
 `papers/tpc-259-same-clock-null-coupling/`。它在同一 literal V59 clock 上将

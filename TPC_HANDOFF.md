@@ -1,7 +1,73 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V112_TPC259_SAME_CLOCK_NULL_COUPLING_RELEASED`
+交接状态：`BOLD_CHANNEL_V113_TPC260_FOUR_PACKET_RESIDUAL_REASSEMBLY_RELEASED`
+
+TPC-260 当前 section：null-compatible four-packet residual reassembly
+-----------------------------------------------------------------------
+
+TPC-260 is the direct continuation of TPC-259.  It embeds the source-frozen
+TPC-258 null direction in the concrete four-block Haar complement and adds the
+fourth, blockwise scaling mode.  For four packets
+`V_j=d_j exp(i theta_j)w`, with `D=sum_j d_j` and
+`d_max=max_j d_j`, the exact completion range is
+
+```text
+max(2*d_max-D,0) <= |<w,sum_j V_j>| <= D.
+```
+
+The four-point DFT
+
+```text
+Vhat_k=1/2 sum_(j=0)^3 i^(-jk)V_j
+sum_k ||Vhat_k||^2=sum_j||V_j||^2
+sum_j V_j=2 Vhat_0
+||sum_j V_j||^2=4||Vhat_0||^2
+```
+
+identifies mode zero as the missing literal datum.  Equal-norm plus and
+alternating families have the same packet diagonal `(1,1,1,1)`, zero Haar
+contrast projections, and zero TPC-259 null coefficient, but full residual
+energies `16` and `0`.  Thus marginal/null data do not identify the full
+residual in this scoped structural class.
+
+```text
+TPC260_MAXIMUM_CLAIM = PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION
+TPC260_ROUTE_ADVANCE = YES_SCOPED_MODE_AUDIT
+TPC260_HAAR_COMPLEMENT = PROVED_EXACT_FINITE
+TPC260_POLYGON_COMPLETION = PROVED_EXACT_FINITE
+TPC260_DFT_MODE_LEDGER = PROVED_EXACT
+TPC260_NULL_CHANNEL_COMPATIBILITY = PROVED_EXACT_SYNTHETIC
+TPC260_FULL_RESIDUAL_IDENTIFIABILITY = REFUTED_SCOPED
+TPC260_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC260_ARITHMETIC_ADVANCE = NO
+TPC260_FIXED_ATOM_CREDIT = 0
+TPC260_L2 = NONE
+TPC260_FULL_GATE_B = OPEN
+TPC260_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC260_TWIN_PRIME_RESULT = NONE
+TPC260_STATUS = PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION
+TPC260_ROUND2_CLUE = PROVE_A_LITERAL_MODE_ZERO_OR_CROSS_GRAM_ESTIMATE_FOR_THE_COMMON_V59_FOUR_PACKET_OUTPUT
+```
+
+strongest positive result：sharp null-compatible polygon completion and exact
+mode-zero DFT ledger；strongest obstruction：identical marginals and known
+null/Haar projections permit residual energy `0` or `16`；open theorem：prove a
+literal common-clock mode-zero or signed cross-Gram estimate with all masks and
+boundary lanes retained；reusable structure：four-block Haar complement ->
+null-compatible completion -> DFT mode ledger -> residual firewall。
+
+编号论文目录：papers/tpc-260-four-packet-residual-reassembly/
+
+```text
+papers/tpc-260-four-packet-residual-reassembly/README.md
+papers/tpc-260-four-packet-residual-reassembly/PROOF_PACKAGE.md
+papers/tpc-260-four-packet-residual-reassembly/paper/paper.pdf
+papers/tpc-260-four-packet-residual-reassembly/results/tpc260_certificate.json
+papers/tpc-260-four-packet-residual-reassembly/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_four_packet_residual_reassembly.md
+research/tpc-big-road/tpc_bridge_b_four_packet_residual_reassembly_checker.py
+```
 
 TPC-259 当前 section：same-clock null-channel coupling
 -------------------------------------------------------
@@ -7946,8 +8012,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百八十次（90 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百八十二次（91 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -8131,11 +8197,23 @@ python -B research/tpc-big-road/tpc_bridge_b_source_frozen_transverse_null_direc
 python -O -B research/tpc-big-road/tpc_bridge_b_source_frozen_transverse_null_direction_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_same_clock_null_coupling_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_same_clock_null_coupling_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_four_packet_residual_reassembly_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_four_packet_residual_reassembly_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-259 入口：
+最新 TPC-260 入口：
+
+```text
+papers/tpc-260-four-packet-residual-reassembly/README.md
+papers/tpc-260-four-packet-residual-reassembly/notes/theorem_ledger.md
+papers/tpc-260-four-packet-residual-reassembly/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_four_packet_residual_reassembly.md
+research/tpc-big-road/tpc_bridge_b_four_packet_residual_reassembly_checker.py
+```
+
+TPC-259 上游入口：
 
 ```text
 papers/tpc-259-same-clock-null-coupling/README.md

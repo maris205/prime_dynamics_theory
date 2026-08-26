@@ -1,13 +1,55 @@
-# TPC big road V112 / TPC-259: same-clock null-channel coupling
+# TPC big road V113 / TPC-260: null-compatible four-packet residual reassembly
 
 更新时间：2026-08-26
 
-状态：`TPC259_PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING / RESIDUAL_OPEN / FULL_GATE_B_OPEN`
+状态：`TPC260_PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION / FULL_RESIDUAL_REFUTED_SCOPED / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-259 proof 为
+当前 TPC-260 proof 为
+`bridge_b_four_packet_residual_reassembly.md`，checker 为
+`tpc_bridge_b_four_packet_residual_reassembly_checker.py`，编号论文为
+`../../papers/tpc-260-four-packet-residual-reassembly/`。
+
+TPC-260 embeds the TPC-258 source-frozen null direction in the concrete
+four-block Haar complement.  For four signed packets it proves the exact
+null-compatible completion interval
+
+```text
+max(2*d_max-D,0) <= |<w,sum_j V_j>| <= D,
+D=sum_j d_j.
+```
+
+It also proves the four-point DFT mode ledger, including
+`||sum_j V_j||^2=4||Vhat_0||^2`.  Equal packet marginals and zero Haar/null
+projections still permit residual energies `0` and `16`; this is a finite
+structural obstruction, not a literal growing prime-shell counterexample.
+The common-clock mode-zero or signed cross-Gram estimate, arithmetic `L2`,
+full Gate B, strict global `1/400`, and twin-prime result remain open.
+
+```text
+TPC260_MAXIMUM_CLAIM = PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION
+TPC260_ROUTE_ADVANCE = YES_SCOPED_MODE_AUDIT
+TPC260_HAAR_COMPLEMENT = PROVED_EXACT_FINITE
+TPC260_POLYGON_COMPLETION = PROVED_EXACT_FINITE
+TPC260_DFT_MODE_LEDGER = PROVED_EXACT
+TPC260_NULL_CHANNEL_COMPATIBILITY = PROVED_EXACT_SYNTHETIC
+TPC260_FULL_RESIDUAL_IDENTIFIABILITY = REFUTED_SCOPED
+TPC260_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC260_ARITHMETIC_ADVANCE = NO
+TPC260_FIXED_ATOM_CREDIT = 0
+TPC260_L2 = NONE
+TPC260_FULL_GATE_B = OPEN
+TPC260_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC260_TWIN_PRIME_RESULT = NONE
+TPC260_STATUS = PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION
+TPC260_ROUND2_CLUE = PROVE_A_LITERAL_MODE_ZERO_OR_CROSS_GRAM_ESTIMATE_FOR_THE_COMMON_V59_FOUR_PACKET_OUTPUT
+```
+
+## V112 upstream: TPC-259 same-clock null-channel coupling
+
+TPC-259 proof 为
 `bridge_b_same_clock_null_coupling.md`，checker 为
 `tpc_bridge_b_same_clock_null_coupling_checker.py`，编号论文为
 `../../papers/tpc-259-same-clock-null-coupling/`。
