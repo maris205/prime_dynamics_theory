@@ -1,16 +1,51 @@
-# TPC big road V109 / TPC-256: literal beta Haar and diagonal-dominant adjoint asymptotic
+# TPC big road V110 / TPC-257: four-block Haar lift and transverse norm floor
 
 更新时间：2026-08-26
 
-状态：`TPC256_PROVED_SOURCE_BACKED_L1_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC / FULL_GATE_B_OPEN`
+状态：`TPC257_PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-256 proof 为
-`bridge_b_literal_beta_haar_adjoint_asymptotic.md`，checker 为
-`tpc_bridge_b_literal_beta_haar_adjoint_asymptotic_checker.py`，编号论文为
-`../../papers/tpc-256-literal-beta-haar-adjoint-asymptotic/`。
+当前 TPC-257 proof 为
+`bridge_b_four_block_haar_transverse_norm_floor.md`，checker 为
+`tpc_bridge_b_four_block_haar_transverse_norm_floor_checker.py`，编号论文为
+`../../papers/tpc-257-four-block-haar-transverse-norm-floor/`。
+
+TPC-257 keeps the literal V59 object and splits each ordered-rank child once
+more.  The resulting `z0,z1,z2` frame is exactly orthonormal.  Strong PNT
+curvature and the returned `B_Q` diagonal give a same-order lower floor in
+the source-only transverse plane `span(z1,z2)`:
+
+```text
+||P_span(z1,z2) A_x beta||_2
+ =((9/2)sqrt(kappa1^2+kappa2^2)+o(1))x^(7/6)/log^3(x),
+sqrt(kappa1^2+kappa2^2)=0.061792126717520...
+```
+
+This is a lower-bound obstruction to negligible-remainder promotion.  It is
+not an upper `L2` estimate and does not close full Gate B.
+
+```text
+TPC257_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT
+TPC257_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_HAAR
+TPC257_ARITHMETIC_ADVANCE = YES_SCOPED_TRANSVERSE_LOWER_FLOOR
+TPC257_THREE_MODE_HAAR_ORTHOGONALITY = PROVED_EXACT
+TPC257_TRANSVERSE_OUTPUT_FLOOR = PROVED_SOURCE_BACKED
+TPC257_FULL_OUTPUT_NORM_FLOOR = PROVED_SOURCE_BACKED
+TPC257_L2 = NONE
+TPC257_FIXED_ATOM_CREDIT = 0
+TPC257_FULL_GATE_B = OPEN
+TPC257_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC257_TWIN_PRIME_RESULT = NONE
+TPC257_STATUS = PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR
+TPC257_ROUND2_CLUE = USE_THE_EXPLICIT_TWO_DIMENSIONAL_TRANSVERSE_HAAR_FLOOR_TO_SEARCH_FOR_A_SOURCE_FROZEN_DIAGONAL_NULL_DIRECTION_BEFORE_ATTEMPTING_ANY_FULL_GATE_B_UPPER_BOUND
+```
+
+## V109 upstream: TPC-256 literal beta Haar and diagonal-dominant adjoint asymptotic
+
+TPC-256 supplies the midpoint beta curvature and the diagonal-dominant scalar
+that TPC-257 extends to the two descendant Haar directions.
 
 TPC-256 estimates the literal lane exposed by TPC-255.  Consecutive-interval
 divisor densities cancel layer by layer up to `O(U/rho)`, while the second

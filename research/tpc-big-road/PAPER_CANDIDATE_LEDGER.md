@@ -2,11 +2,59 @@
 
 更新时间：2026-08-26
 
-状态：**TPC256_PROVED_SOURCE_BACKED_L1_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC / TRANSVERSE_FULL_OUTPUT_OPEN**
+状态：**TPC257_PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以
 当前 proof、checker、TPC_HANDOFF.md 页首及 current section 为准。
+
+## 0.51 已发布：TPC-257 four-block Haar lift and a transverse norm floor
+
+项目：`papers/tpc-257-four-block-haar-transverse-norm-floor/`
+
+类型：**PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT**。
+
+TPC-257 keeps the literal V59 coefficient, operator, prime shell, and real
+clock from TPC-256.  It splits both ordered-rank children once more, before
+inspecting any coefficient, and forms the exact orthonormal frame
+`z0,z1,z2`.  The same divisor-density cancellation and second-order PNT
+curvature give
+
+```text
+kappa0=log(32/27)/sqrt(2),
+kappa1=log(3456/3125)/2,
+kappa2=log(884736/823543)/2,
+<zi,A_x beta>=-(9/2*kappa_i+o(1))x^(7/6)/log^3(x).
+```
+
+Finite Parseval yields the new source-only transverse floor
+
+```text
+||P_span(z1,z2) A_x beta||_2
+ =((9/2)sqrt(kappa1^2+kappa2^2)+o(1))x^(7/6)/log^3(x),
+sqrt(kappa1^2+kappa2^2)=0.061792126717520...
+```
+
+This is a lower-bound obstruction: it refutes automatic negligible-remainder
+promotion after one midpoint projection, but it is not an upper `L2` theorem.
+
+```text
+STRONGEST_POSITIVE_RESULT = THE_SOURCE_ONLY_TWO_DIMENSIONAL_TRANSVERSE_HAAR_PLANE_HAS_AN_EXPLICIT_SAME_ORDER_LITERAL_ADJOINT_LOWER_FLOOR
+STRONGEST_OBSTRUCTION = THE_TRANSVERSE_COMPONENT_CANNOT_BE_ASSUMED_LOWER_ORDER_AFTER_ONE_MIDPOINT_PROJECTION
+OPEN_THEOREM = FIND_AND_CERTIFY_A_SOURCE_FROZEN_TRANSVERSE_NULL_DIRECTION_OR_PROVE_A_COLLECTIVE_UPPER_BOUND_WITH_ALL_LITERAL_MASKS_AND_BOUNDARIES_RETAINED
+REUSABLE_STRUCTURE = FOUR_BLOCK_RANK_HAAR_FRAME_TO_EXACT_ORTHONORMALITY_TO_SECOND_ORDER_LI_CURVATURE_TABLE_TO_BQ_DIAGONAL_TO_BOUNDED_VARIATION_BOUNDARY_COMPILER_TO_PARSEVAL_FLOOR
+ROUND2_CLUE = USE_THE_EXPLICIT_TWO_DIMENSIONAL_TRANSVERSE_HAAR_FLOOR_TO_SEARCH_FOR_A_SOURCE_FROZEN_DIAGONAL_NULL_DIRECTION_BEFORE_ATTEMPTING_ANY_FULL_GATE_B_UPPER_BOUND
+```
+
+```text
+TPC257_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_HAAR
+TPC257_ARITHMETIC_ADVANCE = YES_SCOPED_TRANSVERSE_LOWER_FLOOR
+TPC257_L2 = NONE
+TPC257_FULL_GATE_B = OPEN
+TPC257_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC257_FIXED_ATOM_CREDIT = 0
+TPC257_TWIN_PRIME_RESULT = NONE
+```
 
 ## 0.50 已发布：TPC-256 literal beta Haar and diagonal-dominant adjoint asymptotic
 

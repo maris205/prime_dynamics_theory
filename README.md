@@ -9,14 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-256 已支付 TPC-255 留下的 literal adjoint Haar lane。两个 consecutive
-rank children 的 truncated Möbius divisor densities 逐层相消到 endpoint error，强 PNT 的
-二阶 prime-density curvature 给出
-`<z_mid,beta>~[log(32/27)/sqrt(2)]sqrt(x)/log^2(x)>0`。TPC-255 返回的 `B_Q`
-diagonal 因而主导，证明 complex scalar
-`<z_mid,A_x beta>~-[9log(32/27)/(2sqrt(2))]x^(7/6)/log^3(x)`；hard-window 与
-child-jump 小 `1/48` 个 fixed power。该结果是第二条 literal Haar lane 的 scoped arithmetic
-advance；full output、arithmetic `L2`、full Gate B 与 strict `1/400` 仍开放。
+当前主线状态：TPC-257 将 TPC-256 的 ordered-rank midpoint 细分成四个 source-only
+consecutive blocks。全局 midpoint `z0` 与两个 within-child Haar directions `z1,z2`
+exact orthonormal；强 PNT 二阶曲率与同一个 `B_Q` diagonal 证明三个 adjoint
+coefficients 都是 `x^(7/6)/log^3(x)` 同阶，并得到 midpoint-transverse plane 的显式
+norm floor，主因子为 `(9/2)*0.061792126717520...`。这严格否定“一个 midpoint
+projection 后 orthogonal output 自动低阶”的捷径；但它只是 lower floor，不是 arithmetic
+`L2` 上界。full Gate B、strict global `1/400` 与 twin-prime conclusion 仍开放。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -30,6 +29,8 @@ advance；full output、arithmetic `L2`、full Gate B 与 strict `1/400` 仍开�
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+
+`tpc-257-four-block-haar-transverse-norm-floor` - `PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT` - 将 TPC-256 的两个 rank children 各再 source-only 二分，证明三向 Haar frame exact orthonormal、三个 literal `beta` curvature constants 显式为正，并由 bounded-variation adjoint compiler 得到 `span(z1,z2)` 的同阶 transverse norm floor；这是下界/obstruction，不是 `L2` 上界或 full Gate-B payment。
 
 `tpc-256-literal-beta-haar-adjoint-asymptotic` - `PROVED_SOURCE_BACKED_L1_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC` - 以 consecutive-interval divisor-density cancellation 和强 PNT 二阶曲率证明 literal `beta` rank-midpoint 的显式正渐近式，再用 TPC-255 的 `B_Q` deleted-diagonal return 与 `H^2/q` boundary first moment 得到 adjoint Haar scalar 的显式负实主项、eventual nonzero 与 normalized phase `->-1`；boundary 有 `1/48` power separation，但仅为一条 Haar 投影，`L2` 与 full Gate B 未支付。
 

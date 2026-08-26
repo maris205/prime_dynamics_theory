@@ -1,17 +1,40 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V109 / LITERAL_BETA_HAAR_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC`
-claim level：`PROVED_SOURCE_BACKED_L1_LITERAL_BETA_RANK_MIDPOINT_AND_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC`
-编号事实终点：TPC-256；TPC-256 trigger：`true`
+状态：`BOLD_CHANNEL_V110 / FOUR_BLOCK_HAAR_TRANSVERSE_NORM_FLOOR`
+claim level：`PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT`
+编号事实终点：TPC-257；TPC-257 trigger：`true`
 
-当前 TPC-256 入口：proof 为
+当前 TPC-257 入口：proof 为
+`research/tpc-big-road/bridge_b_four_block_haar_transverse_norm_floor.md`，checker 为
+`research/tpc-big-road/tpc_bridge_b_four_block_haar_transverse_norm_floor_checker.py`，编号论文为
+`papers/tpc-257-four-block-haar-transverse-norm-floor/`。它在同一 literal V59 clock 上
+把两个 rank children 各 source-only 二分，得到 exact orthonormal 的三向 Haar frame；
+strong PNT curvature 与 `B_Q` diagonal 给出 `z1,z2` transverse plane 的显式同阶
+lower floor。该结果是 obstruction/下界，不是 arithmetic `L2` 上界。
+
+```text
+TPC257_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT
+TPC257_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_HAAR
+TPC257_ARITHMETIC_ADVANCE = YES_SCOPED_TRANSVERSE_LOWER_FLOOR
+TPC257_THREE_MODE_HAAR_ORTHOGONALITY = PROVED_EXACT
+TPC257_TRANSVERSE_OUTPUT_FLOOR = PROVED_SOURCE_BACKED
+TPC257_FULL_OUTPUT_NORM_FLOOR = PROVED_SOURCE_BACKED
+TPC257_L2 = NONE
+TPC257_FIXED_ATOM_CREDIT = 0
+TPC257_FULL_GATE_B = OPEN
+TPC257_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC257_TWIN_PRIME_RESULT = NONE
+TPC257_STATUS = PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR
+TPC257_ROUND2_CLUE = USE_THE_EXPLICIT_TWO_DIMENSIONAL_TRANSVERSE_HAAR_FLOOR_TO_SEARCH_FOR_A_SOURCE_FROZEN_DIAGONAL_NULL_DIRECTION_BEFORE_ATTEMPTING_ANY_FULL_GATE_B_UPPER_BOUND
+```
+
+TPC-256 上游入口：proof 为
 `research/tpc-big-road/bridge_b_literal_beta_haar_adjoint_asymptotic.md`，checker 为
 `research/tpc-big-road/tpc_bridge_b_literal_beta_haar_adjoint_asymptotic_checker.py`，编号论文为
-`papers/tpc-256-literal-beta-haar-adjoint-asymptotic/`。它用 exact divisor-density endpoint
-cancellation 与 strong PNT curvature 证明 literal beta rank-midpoint 的显式正主项，再用
-TPC-255 diagonal/boundary normal form 证明 adjoint Haar scalar 的 complex asymptotic；
-hard/jump 与主项有 exact `1/48` exponent gap。
+`papers/tpc-256-literal-beta-haar-adjoint-asymptotic/`。它支付 literal beta rank-midpoint
+的显式正主项与 adjoint midpoint scalar；TPC-257 证明其正交 descendant plane 也不能
+被当作低阶 remainder。
 
 ```text
 TPC256_LITERAL_BETA_DIVISOR_DENSITY_CANCELLATION = PROVED_EXACT_ENDPOINT_BOUND

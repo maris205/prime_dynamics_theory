@@ -1,9 +1,86 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V109_TPC256_LITERAL_BETA_HAAR_DIAGONAL_DOMINANT_ADJOINT_ASYMPTOTIC_RELEASED`
+交接状态：`BOLD_CHANNEL_V110_TPC257_FOUR_BLOCK_HAAR_TRANSVERSE_NORM_FLOOR_RELEASED`
 
-TPC-256 当前 section：literal beta Haar and diagonal-dominant adjoint asymptotic
+TPC-257 当前 section：four-block Haar lift and a transverse norm floor
+------------------------------------------------------------------------
+
+TPC-257 retains the literal V59 clock, coefficient, prime shell, output-unit
+masks, deleted diagonal and complex kernel from TPC-256.  It splits each of
+the two ordered-rank children into two consecutive source-only blocks before
+looking at any coefficient or sign.  With `h(A,B)` the normalized adjacent
+block contrast, set
+
+```text
+z0=h(B1 union B2,B3 union B4),
+z1=h(B1,B2),
+z2=h(B3,B4).
+```
+
+Exact block arithmetic gives an orthonormal three-vector frame, with
+`span(z1,z2)` orthogonal to the old midpoint `z0`.  The same divisor-density
+endpoint cancellation and second-order PNT expansion used at TPC-256 give
+
+```text
+kappa0=log(32/27)/sqrt(2),
+kappa1=log(3456/3125)/2,
+kappa2=log(884736/823543)/2,
+<zi,A_x beta>=-(9/2*kappa_i+o(1))x^(7/6)/log^3(x).
+```
+
+The bounded-variation extension of TPC-255 retains both unit masks, the
+deleted diagonal, hard-window leakage and child-jump leakage.  Its boundary
+exponent is `55/48`, against the diagonal `56/48`, so the fixed gap remains
+`1/48`.  Parseval therefore proves the source-only lower floor
+
+```text
+||P_span(z1,z2) A_x beta||_2
+ =((9/2)sqrt(kappa1^2+kappa2^2)+o(1))x^(7/6)/log^3(x),
+sqrt(kappa1^2+kappa2^2)=0.061792126717520...
+```
+
+This is a lower-bound obstruction, not an upper `L2` estimate.  In
+particular, the transverse/full-output component cannot be declared lower
+order merely because the TPC-256 midpoint coefficient is nonzero.
+
+```text
+TPC257_MAXIMUM_CLAIM = PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR_FOR_LITERAL_V59_ADJOINT
+TPC257_ROUTE_ADVANCE = YES_SCOPED_TRANSVERSE_HAAR
+TPC257_ARITHMETIC_ADVANCE = YES_SCOPED_TRANSVERSE_LOWER_FLOOR
+TPC257_THREE_MODE_HAAR_ORTHOGONALITY = PROVED_EXACT
+TPC257_TRANSVERSE_OUTPUT_FLOOR = PROVED_SOURCE_BACKED
+TPC257_FULL_OUTPUT_NORM_FLOOR = PROVED_SOURCE_BACKED
+TPC257_L2 = NONE
+TPC257_FIXED_ATOM_CREDIT = 0
+TPC257_FULL_GATE_B = OPEN
+TPC257_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC257_TWIN_PRIME_RESULT = NONE
+TPC257_STATUS = PROVED_SOURCE_BACKED_TRANSVERSE_HAAR_NORM_FLOOR
+TPC257_ROUND2_CLUE = USE_THE_EXPLICIT_TWO_DIMENSIONAL_TRANSVERSE_HAAR_FLOOR_TO_SEARCH_FOR_A_SOURCE_FROZEN_DIAGONAL_NULL_DIRECTION_BEFORE_ATTEMPTING_ANY_FULL_GATE_B_UPPER_BOUND
+```
+
+strongest positive result：the source-only transverse Haar plane has an
+explicit same-order literal adjoint lower floor；strongest obstruction：one
+midpoint projection cannot make the orthogonal output negligible；open
+theorem：find a source-frozen transverse null direction or prove a collective
+upper bound with all literal masks and boundaries retained；reusable
+structure：four-block Haar frame -> curvature table -> `B_Q` diagonal ->
+bounded-variation boundary compiler -> Parseval floor。
+
+编号论文目录：papers/tpc-257-four-block-haar-transverse-norm-floor/
+
+```text
+papers/tpc-257-four-block-haar-transverse-norm-floor/README.md
+papers/tpc-257-four-block-haar-transverse-norm-floor/PROOF_PACKAGE.md
+papers/tpc-257-four-block-haar-transverse-norm-floor/paper/paper.pdf
+papers/tpc-257-four-block-haar-transverse-norm-floor/results/tpc257_certificate.json
+papers/tpc-257-four-block-haar-transverse-norm-floor/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_four_block_haar_transverse_norm_floor.md
+research/tpc-big-road/tpc_bridge_b_four_block_haar_transverse_norm_floor_checker.py
+```
+
+TPC-256 上游 section：literal beta Haar and diagonal-dominant adjoint asymptotic
 --------------------------------------------------------------------------------
 
 For every sufficiently large real `x`, retain TPC-253's ordered-rank children
@@ -7782,8 +7859,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V109/TPC-256 gate、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百七十四次（87 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V110/TPC-257 gate、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百七十六次（88 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -7961,11 +8038,23 @@ python -B research/tpc-big-road/tpc_bridge_b_exact_adjoint_diagonal_boundary_com
 python -O -B research/tpc-big-road/tpc_bridge_b_exact_adjoint_diagonal_boundary_compiler_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_literal_beta_haar_adjoint_asymptotic_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_literal_beta_haar_adjoint_asymptotic_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_four_block_haar_transverse_norm_floor_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_four_block_haar_transverse_norm_floor_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-256 入口：
+最新 TPC-257 入口：
+
+```text
+papers/tpc-257-four-block-haar-transverse-norm-floor/README.md
+papers/tpc-257-four-block-haar-transverse-norm-floor/notes/theorem_ledger.md
+papers/tpc-257-four-block-haar-transverse-norm-floor/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_four_block_haar_transverse_norm_floor.md
+research/tpc-big-road/tpc_bridge_b_four_block_haar_transverse_norm_floor_checker.py
+```
+
+TPC-256 上游入口：
 
 ```text
 papers/tpc-256-literal-beta-haar-adjoint-asymptotic/README.md
