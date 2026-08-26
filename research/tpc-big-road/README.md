@@ -1,13 +1,50 @@
-# TPC big road V113 / TPC-260: null-compatible four-packet residual reassembly
+# TPC big road V114 / TPC-261: strict endpoint-budget compiler
 
 更新时间：2026-08-26
 
-状态：`TPC260_PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION / FULL_RESIDUAL_REFUTED_SCOPED / FULL_GATE_B_OPEN`
+状态：`TPC261_PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY / GLOBAL_FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-260 proof 为
+当前 TPC-261 proof 为
+`bridge_b_strict_endpoint_budget_compiler.md`，checker 为
+`tpc_bridge_b_strict_endpoint_budget_compiler_checker.py`，编号论文为
+`../../papers/tpc-261-strict-endpoint-budget-compiler/`。
+
+TPC-261 将 baseline `E0=5/3` 到 target `E*=1997/1200` 的差距精确编译成
+`1/400`。finite lanes 的 effective saving `sigma=min(delta_l-lambda_l)`
+必须严格大于 `1/400` 才能关闭目标；fixed-log suppression 的 fixed-power
+credit 为零。缩放的 TPC-260 plus/alternating witness 在相同 marginals 与
+Haar/null data 下仍给出 `16*x^(5/3)` 或 `0` 的 full residual，因此这是
+scoped structural obstruction，不是 literal growing prime-shell counterexample。
+literal mode-zero/cross-Gram、arithmetic `L2`、full Gate B、strict global credit
+与 twin-prime result 仍 OPEN/UNPAID/NONE。
+
+```text
+TPC261_MAXIMUM_CLAIM = PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY
+TPC261_ROUTE_ADVANCE = YES_SCOPED_ENDPOINT_BUDGET_COMPILER
+TPC261_BUDGET_IDENTITY = PROVED_EXACT
+TPC261_STRICT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC261_BORDERLINE_EQUALITY = PROVED_EXACT_POWER_LEVEL_ONLY
+TPC261_LOG_ONLY_TO_POWER_PROMOTION = REFUTED_SCOPED
+TPC261_SCALED_NULL_COMPATIBLE_WITNESS = PROVED_STRUCTURAL_SYNTHETIC
+TPC261_GLOBAL_FIXED_POWER_CREDIT = NONE
+TPC261_LITERAL_MODE_ZERO_ESTIMATE = OPEN
+TPC261_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC261_ARITHMETIC_ADVANCE = NO
+TPC261_FIXED_ATOM_CREDIT = 0
+TPC261_L2 = NONE
+TPC261_FULL_GATE_B = OPEN
+TPC261_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC261_TWIN_PRIME_RESULT = NONE
+TPC261_STATUS = PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY
+TPC261_ROUND2_CLUE = PROVE_A_LITERAL_MODE_ZERO_OR_CROSS_GRAM_ESTIMATE_WITH_EFFECTIVE_SAVING_GREATER_THAN_1_OVER_400
+```
+
+## V113 upstream: TPC-260 null-compatible four-packet residual reassembly
+
+TPC-260 proof 为
 `bridge_b_four_packet_residual_reassembly.md`，checker 为
 `tpc_bridge_b_four_packet_residual_reassembly_checker.py`，编号论文为
 `../../papers/tpc-260-four-packet-residual-reassembly/`。

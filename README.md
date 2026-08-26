@@ -9,14 +9,14 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-260 在 TPC-259 的 same-clock null coupling 之后，把
-source-frozen null direction 嵌入实际四块 Haar complement，并对四个 signed packets
-给出精确的 null-compatible polygon completion 与 four-point DFT mode ledger。
-在相同 packet marginals、全部已知 Haar/null 投影为零时，full residual energy 仍可
-覆盖 `[0,16]`；因此下一步必须估计 literal common-clock mode zero 或 signed
-cross-Gram。该结果是一个 scoped structural obstruction，不能升级为 literal
-prime-shell counterexample、arithmetic `L2`、full Gate B、strict global `1/400`
-或 twin-prime conclusion。
+当前主线状态：TPC-261 在 TPC-260 的 four-packet mode-zero audit 之后，把
+baseline `E0=5/3` 到 target `E*=1997/1200` 的端点义务编译成严格的
+`1/400` effective fixed-power threshold，并证明 fixed-log suppression 不产生
+fixed-power credit。缩放后的 null-compatible plus/alternating witness 仍可在相同
+marginals 与 Haar/null data 下产生 baseline-scale residual `16*x^(5/3)` 或 `0`；
+这是 scoped structural obstruction。literal common-clock mode-zero/cross-Gram、
+arithmetic `L2`、full Gate B、strict global credit 与 twin-prime conclusion 仍
+OPEN/UNPAID/NONE。
 
 1. **Goal Reduction** *(Completed)*: Reduce the fixed-gap prime pair problem to proving $B_{h_0,\delta}(X) = o(X)$.
 2. **Carrier Construction** *(Mostly Completed)*: Establish a dynamical-arithmetic decomposition that preserves the fixed gap $h_0$, Möbius sign, actual support, and physical normalization.
@@ -31,6 +31,7 @@ prime-shell counterexample、arithmetic `L2`、full Gate B、strict global `1/40
 
 ## 3. Latest Paper
 
+`tpc-261-strict-endpoint-budget-compiler` - `PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY` - 将 `E0-E*=1/400` 编译为 lane saving-minus-loss 的严格阈值，证明 log-only suppression 无固定幂 credit，并缩放 TPC-260 witness；literal mode-zero/cross-Gram estimate、arithmetic `L2` 与 full Gate B 仍 OPEN。
 `tpc-260-four-packet-residual-reassembly` - `PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION` - 将 TPC-258/259 的 null direction 放入实际四块 Haar complement，证明四 packet residual 的 sharp polygon completion 和 DFT mode-zero identity；相同 marginals 与 null/Haar 数据仍允许 energy `0` 与 `16`，故 literal mode-zero/cross-Gram estimate 仍是 OPEN。
 `tpc-259-same-clock-null-coupling` - `PROVED_SOURCE_BACKED_SAME_CLOCK_NULL_CHANNEL_SUPPRESSION_FOR_LITERAL_V59_SIGNED_COUPLING` - 在同一 literal V59 clock 上将 TPC-258 的 source-frozen null direction 与四块 hybrid `w` moment 精确耦合，证明 signed scalar 的 rank-one null channel 对任意固定 log power 都被压低；同时用 zero-diagonal witness 明确保留 `w_perp` residual，未宣称 full scalar、fixed-power 或 `L2`。
 `tpc-258-source-frozen-transverse-null-direction` - `PROVED_SOURCE_BACKED_TRANSVERSE_DIAGONAL_NULL_CANCELLATION_FOR_LITERAL_V59_ADJOINT` - 在 TPC-257 的四块 Haar frame 中以预先冻结的曲率向量构造单位 null direction，证明 transverse `B_Q` diagonal 的 `o(1)` cancellation；明确保留 boundary/rate firewall，未宣称 fixed-power、arithmetic `L2` 或 Gate B。

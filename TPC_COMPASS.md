@@ -1,11 +1,48 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-26
-状态：`BOLD_CHANNEL_V113 / FOUR_PACKET_RESIDUAL_REASSEMBLY_AUDIT`
-claim level：`PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION`
-编号事实终点：TPC-260；TPC-260 trigger：`true`
+状态：`BOLD_CHANNEL_V114 / STRICT_ENDPOINT_BUDGET_COMPILER`
+claim level：`PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY`
+编号事实终点：TPC-261；TPC-261 trigger：`true`
 
-当前 TPC-260 入口：proof 为
+当前 TPC-261 入口：proof 为
+`research/tpc-big-road/bridge_b_strict_endpoint_budget_compiler.md`，checker 为
+`tpc_bridge_b_strict_endpoint_budget_compiler_checker.py`，编号论文为
+`papers/tpc-261-strict-endpoint-budget-compiler/`。它把当前 baseline `E0=5/3` 与
+target `E*=1997/1200` 的差距精确写成 `1/400`，证明有限 lane 的 effective
+saving `sigma=min(delta_l-lambda_l)` 必须严格大于 `1/400`；同时证明 fixed-log
+suppression 没有 fixed-power credit，并以 scaled TPC-260 witness 保留 baseline-scale
+residual ambiguity。这是 scoped structural obstruction；literal mode-zero/cross-Gram、
+arithmetic `L2` 与 full Gate B 仍 OPEN。
+
+```text
+TPC261_MAXIMUM_CLAIM = PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY
+TPC261_ROUTE_ADVANCE = YES_SCOPED_ENDPOINT_BUDGET_COMPILER
+TPC261_BUDGET_IDENTITY = PROVED_EXACT
+TPC261_STRICT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC261_BORDERLINE_EQUALITY = PROVED_EXACT_POWER_LEVEL_ONLY
+TPC261_LOG_ONLY_TO_POWER_PROMOTION = REFUTED_SCOPED
+TPC261_SCALED_NULL_COMPATIBLE_WITNESS = PROVED_STRUCTURAL_SYNTHETIC
+TPC261_GLOBAL_FIXED_POWER_CREDIT = NONE
+TPC261_LITERAL_MODE_ZERO_ESTIMATE = OPEN
+TPC261_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC261_ARITHMETIC_ADVANCE = NO
+TPC261_FIXED_ATOM_CREDIT = 0
+TPC261_L2 = NONE
+TPC261_FULL_GATE_B = OPEN
+TPC261_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC261_TWIN_PRIME_RESULT = NONE
+TPC261_STATUS = PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY
+TPC261_ROUND2_CLUE = PROVE_A_LITERAL_MODE_ZERO_OR_CROSS_GRAM_ESTIMATE_WITH_EFFECTIVE_SAVING_GREATER_THAN_1_OVER_400
+```
+
+strongest positive result：exact lane-wise endpoint budget compiler；strongest obstruction：
+log-only null suppression 与 scaled null-compatible residual 不能自动支付任何 global
+fixed-power credit；open theorem：literal common-clock mode-zero 或 signed cross-Gram
+estimate with effective saving `>1/400`；reusable structure：gap -> saving-minus-loss
+-> log/power firewall -> scaled witness -> minimum literal theorem。
+
+TPC-260 直接上游入口：proof 为
 `research/tpc-big-road/bridge_b_four_packet_residual_reassembly.md`，checker 为
 `tpc_bridge_b_four_packet_residual_reassembly_checker.py`，编号论文为
 `papers/tpc-260-four-packet-residual-reassembly/`。它把 TPC-258 的 source-frozen

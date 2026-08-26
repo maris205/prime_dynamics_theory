@@ -2,19 +2,19 @@
 
 更新时间：2026-08-26
 
-当前地图版本：V113 / TPC-260
+当前地图版本：V114 / TPC-261
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-260`（`PROVED_STRUCTURAL_NULL_COMPATIBLE_FOUR_PACKET_COMPLETION_OBSTRUCTION`）；
+当前编号锚点：`TPC-261`（`PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY`）；
 对应论文目录为
-`papers/tpc-260-four-packet-residual-reassembly/`。
-TPC-260 将 TPC-258 的 source-frozen null direction 嵌入实际四块 Haar complement，
-对四个 signed packets 证明 sharp null-compatible polygon completion，并用 four-point
-DFT 精确隔离 mode zero。相同 packet marginals 与已知 Haar/null projections 仍可
-产生 residual energy `0` 或 `16`；这是 scoped structural obstruction，literal
-mode-zero/cross-Gram、arithmetic `L2`、full Gate B 与 strict global `1/400` 仍
-OPEN/UNPAID。
+`papers/tpc-261-strict-endpoint-budget-compiler/`。
+TPC-261 将 baseline `E0=5/3` 与 target `E*=1997/1200` 的差精确写成 `1/400`，
+证明 finite-lane effective saving `sigma=min(delta_l-lambda_l)` 必须严格大于该
+阈值；fixed-log suppression 没有 fixed-power credit。缩放 TPC-260 witness 仍在
+相同 marginals 与 Haar/null data 下允许 baseline-scale residual `16*x^(5/3)` 或
+`0`，因此这是 scoped structural obstruction；literal mode-zero/cross-Gram、
+arithmetic `L2`、full Gate B 与 strict global credit 仍 OPEN/UNPAID。
 
 > 仅供路线导航与沟通参考，不构成 theorem evidence、算术进展证明或编号触发。
 
@@ -56,9 +56,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V113 / TPC-260                    |
-        | FOUR-PACKET RESIDUAL MODE AUDIT PAID           |
-        | polygon/DFT exact; literal mode-zero OPEN     |
+        | YOU ARE HERE — V114 / TPC-261                    |
+        | STRICT ENDPOINT BUDGET COMPILER PAID           |
+        | 1/400 threshold exact; mode-zero still OPEN   |
         +--------------------------------------------------+
                 |
                 v
@@ -101,7 +101,7 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V113 / TPC-260。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V114 / TPC-261。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
@@ -111,7 +111,9 @@ TPC-258 再从这两个 descendant constants 构造 source-frozen null direction
 固定 log power 被压低，同时把 `w_perp` residual 明确留在等式中。TPC-260 再将该
 null direction 嵌入四块 Haar complement，给出 null-compatible completion 的 sharp
 polygon 区间与 four-point DFT mode-zero ledger，并以 `0`/`16` 两端 witness 否定
-marginal-only residual identification。FULL_GATE_B、global strict `1/400`、
+marginal-only residual identification。TPC-261 再把 baseline-to-target 的端点义务
+精确编译成 `1/400` 的 strict effective-saving threshold，并证明 fixed-log
+suppression 不产生 fixed-power credit。FULL_GATE_B、global strict `1/400`、
 arithmetic `L2`、literal mode-zero estimate、full scalar 与 fixed-atom credit
 继续 OPEN/UNPAID/NONE。**
 
@@ -1244,6 +1246,49 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.55 V114 / TPC-261：strict endpoint-budget compiler
+
+TPC-261 直接承接 TPC-260 的 mode-zero audit，把当前端点义务编译成一个精确的
+finite-lane theorem。当前 baseline 与 target 为
+
+```text
+E0=5/3=2000/1200, E*=1997/1200, E0-E*=1/400.
+```
+
+若 lane `l` 的 proved saving 为 `delta_l`、reassembly loss 为 `lambda_l`，则
+`sigma_l=delta_l-lambda_l`。对有限 lane 集，`min_l sigma_l>1/400` 才能在
+任意 epsilon 账本下严格推出 target；等号只是 power-level borderline。并且
+`x^delta/(log x)^M -> infinity`，所以 TPC-258/259 的 fixed-log null suppression
+不能支付正的 fixed-power gap。缩放后的 plus/alternating four-packet witness
+具有相同 packet diagonal 和 Haar/null projections，却有 `16*x^(5/3)` 与 `0`
+的 full residual；这是 synthetic structural obstruction，不是 growing prime-shell
+counterexample。
+
+```text
+TPC261_ROUTE_ADVANCE = YES_SCOPED_ENDPOINT_BUDGET_COMPILER
+TPC261_BUDGET_IDENTITY = PROVED_EXACT
+TPC261_STRICT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC261_BORDERLINE_EQUALITY = PROVED_EXACT_POWER_LEVEL_ONLY
+TPC261_LOG_ONLY_TO_POWER_PROMOTION = REFUTED_SCOPED
+TPC261_SCALED_NULL_COMPATIBLE_WITNESS = PROVED_STRUCTURAL_SYNTHETIC
+TPC261_GLOBAL_FIXED_POWER_CREDIT = NONE
+TPC261_LITERAL_MODE_ZERO_ESTIMATE = OPEN
+TPC261_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC261_ARITHMETIC_ADVANCE = NO
+TPC261_FIXED_ATOM_CREDIT = 0
+TPC261_L2 = NONE
+TPC261_FULL_GATE_B = OPEN
+TPC261_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC261_TWIN_PRIME_RESULT = NONE
+TPC261_STATUS = PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY
+TPC261_ROUND2_CLUE = PROVE_A_LITERAL_MODE_ZERO_OR_CROSS_GRAM_ESTIMATE_WITH_EFFECTIVE_SAVING_GREATER_THAN_1_OVER_400
+```
+
+strongest positive result：exact endpoint budget compiler；strongest obstruction：
+log-only suppression 与 marginal/null interface 都不能自动提供 global fixed-power
+credit。当前 open theorem 是 literal common-clock mode-zero 或 signed cross-Gram
+estimate with effective saving `>1/400` after all losses。
 
 ## 5.54 V113 / TPC-260：null-compatible four-packet residual reassembly
 
@@ -3261,7 +3306,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V113 / TPC-260：
+截至 V114 / TPC-261：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -3285,6 +3330,24 @@ TPC_257_TRIGGER = true
 TPC_258_TRIGGER = true
 TPC_259_TRIGGER = true
 TPC_260_TRIGGER = true
+TPC_261_TRIGGER = true
+TPC261_ROUTE_ADVANCE = YES_SCOPED_ENDPOINT_BUDGET_COMPILER
+TPC261_BUDGET_IDENTITY = PROVED_EXACT
+TPC261_STRICT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC261_BORDERLINE_EQUALITY = PROVED_EXACT_POWER_LEVEL_ONLY
+TPC261_LOG_ONLY_TO_POWER_PROMOTION = REFUTED_SCOPED
+TPC261_SCALED_NULL_COMPATIBLE_WITNESS = PROVED_STRUCTURAL_SYNTHETIC
+TPC261_GLOBAL_FIXED_POWER_CREDIT = NONE
+TPC261_LITERAL_MODE_ZERO_ESTIMATE = OPEN
+TPC261_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC261_ARITHMETIC_ADVANCE = NO
+TPC261_FIXED_ATOM_CREDIT = 0
+TPC261_L2 = NONE
+TPC261_FULL_GATE_B = OPEN
+TPC261_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC261_TWIN_PRIME_RESULT = NONE
+TPC261_STATUS = PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY
+TPC261_ROUND2_CLUE = PROVE_A_LITERAL_MODE_ZERO_OR_CROSS_GRAM_ESTIMATE_WITH_EFFECTIVE_SAVING_GREATER_THAN_1_OVER_400
 TPC260_ROUTE_ADVANCE = YES_SCOPED_MODE_AUDIT
 TPC260_HAAR_COMPLEMENT = PROVED_EXACT_FINITE
 TPC260_POLYGON_COMPLETION = PROVED_EXACT_FINITE
@@ -4060,6 +4123,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-26 | V114 / TPC-261 | Bridge A / Gate B：strict endpoint-budget compiler 已完成；literal mode-zero/cross-Gram 与 arithmetic `L2` open | `TPC-261` | 将 `E0=5/3` 到 `E*=1997/1200` 的差精确编译为 `1/400`，证明 finite-lane effective saving 必须严格超过该阈值；fixed-log suppression 无 fixed-power credit；scaled TPC-260 witness 保留 structural residual obstruction，full Gate B 与 twin-prime result remain open |
 | 2026-08-26 | V113 / TPC-260 | Bridge A / Gate B：null-compatible four-packet residual completion 与 mode-zero audit；literal estimate/open `L2` | `TPC-260` | 将 TPC-258 null direction 嵌入实际四块 Haar complement，证明 sharp polygon completion 与 four-point DFT mode ledger；相同 packet marginals 与 Haar/null 数据仍允许 residual energy `0` 和 `16`，因此 literal mode-zero/cross-Gram、full Gate B、strict global `1/400` and twin-prime result remain open |
 | 2026-08-26 | V112 / TPC-259 | Bridge A / Gate B：same-clock signed coupling 的 rank-one null channel paid；orthogonal residual/full `L2` open | `TPC-259` | 将 TPC-258 source-frozen null direction 与四块 literal `w` moment 放到同一时钟，证明 `o(x^(5/3)/log^(M+3)(x))` 的 null channel，精确保留 `w_perp` residual；full four-packet reassembly、strict global `1/400` and twin-prime result remain open |
 | 2026-08-26 | V111 / TPC-258 | Bridge A / Gate B：source-frozen transverse null cancellation paid；fixed-power/upper `L2`/full output open | `TPC-258` | 从 TPC-257 two-dimensional transverse Haar floor 提取 source-only unit null direction、证明 `B_Q` leading diagonal exact cancellation、保留 `1/48` boundary gap 与 `o(1)` rate firewall；signed `w` coupling、full Gate B and strict global `1/400` remain open |

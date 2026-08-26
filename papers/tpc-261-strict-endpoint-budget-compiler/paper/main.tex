@@ -1,0 +1,328 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\Tj}{T_j}
+\newcommand{\ii}{\mathrm i}
+
+\title{A Strict Endpoint-Budget Compiler for the Literal V59 Four-Packet Interface}
+\author{Liang Wang\\
+School of Mathematics and Statistics, Huazhong University of Science and Technology\\
+Wuhan, China}
+\date{August 26, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The recent V59 analysis has reached a precise interface obstruction.  A
+four-packet DFT identifies mode zero as the missing datum, while the known
+same-clock null suppression is only logarithmic.  This paper compiles the
+endpoint arithmetic into an exact finite-lane budget.  The current baseline is
+$E_0=5/3$ and the target is $E_*=1997/1200$, so the required strict saving is
+$E_0-E_*=1/400$.  If lane $j$ saves $\delta_j$ powers and pays a reassembly loss
+$\lambda_j$, the effective credit is $\sigma_j=\delta_j-\lambda_j$ and a finite
+reassembly closes the target only when $\min_j\sigma_j>1/400$.  Equality is
+borderline at the power level.  We also prove that any fixed logarithmic saving
+has zero fixed-power credit.  Finally, a scaled version of the exact TPC-260
+plus/alternating witness has identical packet marginals and Haar/null data but
+full energies $16x^{5/3}$ and $0$.  This is a structural synthetic obstruction,
+not a prime-shell counterexample: the literal mode-zero or signed cross-Gram
+estimate remains open.
+\end{abstract}
+
+\section{Scope and motivation}
+
+The Route-B object is a signed coupling built on one fixed V59 clock.  The
+four-block Haar construction of TPC-257 and the source-frozen transverse null
+direction of TPC-258--259 isolate a useful channel, but they do not by
+themselves control the whole output.  TPC-260 made the missing information
+explicit.  For four packets, packet diagonal energy fixes the sum of Fourier
+mode energies, whereas full reassembly asks for mode zero; equal packet norms
+and all currently observed contrast data can coexist with full residual energy
+zero or sixteen.
+
+The present paper answers the next, narrower question: exactly how much
+effective power saving would a new literal theorem have to provide after every
+lane loss?  This question is elementary once stated, but it is operationally
+important.  It prevents a logarithmic $o(1)$ statement, a local boundary gap,
+or a conditional comparison estimate from being silently counted as global
+endpoint credit.
+
+Our contributions are:
+\begin{enumerate}
+ \item an exact baseline-to-target exponent identity;
+ \item a strict finite-lane endpoint compiler with a sharp $1/400$ threshold;
+ \item a proof-level separation between logarithmic and fixed-power savings;
+ \item a scaled, null-compatible four-packet obstruction; and
+ \item a minimum-sufficient formulation of the next literal theorem.
+\end{enumerate}
+
+All claims are deliberately scoped.  No result here proves arithmetic $L^2$,
+full Gate B, fixed-atom credit, or the twin-prime conjecture.
+
+\section{Endpoint normalization}
+
+We use the unnormalized exponent ledger inherited from the current big road:
+\begin{equation}
+ E_0=\frac53=\frac{2000}{1200},\qquad
+ E_* = \frac{1997}{1200}.
+ \label{eq:endpoints}
+\end{equation}
+Subtracting gives the exact identity
+\begin{equation}
+ \Delta_*:=E_0-E_* = \frac{3}{1200}=\frac1{400}.
+ \label{eq:gap}
+\end{equation}
+The denominator $1200$ is only a common bookkeeping denominator; no
+approximation is involved.  The strict inequality in the next theorem is
+essential because the available analytic estimates are conventionally stated
+with an arbitrary $x^\varepsilon$ loss.
+
+Let $\mathcal L$ be a finite set of lanes.  A lane may represent a packet,
+boundary, mask, deleted diagonal, or a signed reassembly component.  The
+symbols $\delta_j$ and $\lambda_j$ refer to proved quantities on the same
+clock; they are not labels for hoped-for estimates.
+
+\begin{definition}[effective lane credit]
+Suppose lane $j$ has a saving $\delta_j$ and a loss $\lambda_j$.  Its effective
+credit and the bottleneck credit are
+\begin{equation}
+ \sigma_j=\delta_j-\lambda_j,\qquad
+ \sigma=\min_{j\in\mathcal L}\sigma_j.
+ \label{eq:credit}
+\end{equation}
+\end{definition}
+
+\section{The strict budget compiler}
+
+\begin{theorem}[finite-lane endpoint compiler]
+Let $\mathcal L$ be finite and nonempty.  Suppose that for every $j\in\mathcal L$
+and every $\varepsilon>0$, there is a constant $C_{j,\varepsilon}$ such that,
+for all sufficiently large $x$,
+\begin{equation}
+ |T_j(x)|\leq C_{j,\varepsilon}
+ x^{E_0-\delta_j+\lambda_j+\varepsilon}.
+ \label{eq:lane-bound}
+\end{equation}
+If $\sigma>\Delta_*=1/400$, then
+\begin{equation}
+ \sum_{j\in\mathcal L}|T_j(x)|=o(x^{E_*}).
+ \label{eq:target}
+\end{equation}
+If $\sigma=\Delta_*$, the hypotheses are only borderline at the power level;
+if $\sigma<\Delta_*$, the power ledger does not close.
+\end{theorem}
+
+\begin{proof}
+Put $\eta=\sigma-\Delta_*>0$ and choose
+$\varepsilon=\eta/2$.  Since $\sigma_j\geq\sigma$,
+\begin{align*}
+ E_0-\delta_j+\lambda_j+\varepsilon
+ &=E_0-\sigma_j+\varepsilon\\
+ &\leq E_0-\sigma+\varepsilon
+ =E_*-\eta/2.
+\end{align*}
+Thus every term in the finite sum is $O(x^{E_*-\eta/2})$, and the sum has the
+same bound.  Dividing by $x^{E_*}$ gives $O(x^{-\eta/2})\to0$.  At equality,
+the displayed hypotheses leave exponent $E_*+\varepsilon$ for arbitrary
+$\varepsilon>0$ but supply no negative fixed margin.  Below equality the
+resulting exponent is larger than the target.  \end{proof}
+
+The theorem is a compiler, not an estimate of any particular lane.  Its main
+use is to expose the exact obligation: every lane must be attached to one
+common literal object, and the smallest effective saving must be strictly
+larger than $1/400$.
+
+\begin{table}[t]
+\centering
+\caption{Exact budget examples.  ``Local'' and ``conditional'' labels do not
+transfer credit to the current literal whole object.}
+\label{tab:budget}
+\begin{tabular}{lcccc}
+\toprule
+Lane & $\delta$ & $\lambda$ & $\sigma$ & classification\\
+\midrule
+Conditional comparison & $1/100$ & $1/1200$ & $11/1200$ & strict, conditional\\
+Exact threshold & $1/400$ & $0$ & $1/400$ & borderline\\
+Threshold with loss & $1/400$ & $1/1200$ & $1/600$ & insufficient\\
+TPC-257 local boundary & $1/48$ & $0$ & $1/48$ & strict, local only\\
+TPC-259 log-only null & $0$ & $0$ & $0$ & no fixed power\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the first row, the strict margin is
+$11/1200-1/400=1/150$.  The local boundary row has the larger margin
+$1/48-1/400=11/600$, but it is not a global credit until a transfer theorem
+attaches that local estimate to the complete four-packet output.
+
+\section{The logarithmic firewall}
+
+\begin{theorem}[logarithmic savings do not buy a power]
+For every fixed $M>0$ and every fixed $\delta>0$,
+\begin{equation}
+ \frac{x^\delta}{(\log x)^M}\longrightarrow\infty.
+ \label{eq:logpower}
+\end{equation}
+Consequently a bound $x^{E_0}/(\log x)^M$ has zero fixed-power credit in the
+compiler of Theorem~1.
+\end{theorem}
+
+\begin{proof}
+Taking logarithms of the left side of \eqref{eq:logpower} gives
+$\delta\log x-M\log\log x$.  Since $\log\log x/\log x\to0$, this tends to
+infinity.  If a logarithmic bound could pay a fixed $\delta$ power, one could
+choose an $\varepsilon<\delta$ and obtain a uniform comparison with
+$x^{E_0-\delta+\varepsilon}$, contradicting \eqref{eq:logpower}.
+\end{proof}
+
+This distinction is the relevant one for the current route.  TPC-258 and
+TPC-259 provide a source-backed fixed-log suppression for a selected null
+channel.  That is a genuine signed-coupling advance, but it records
+$\delta=0$ in the fixed-power ledger.  It cannot pay the strict $1/400$ gap,
+and it does not estimate the orthogonal residual left by TPC-259.
+
+\section{A scaled four-packet obstruction}
+
+We now show that the endpoint firewall is not merely a bookkeeping convention.
+Let $z,w\in\HH$ be orthonormal, with $z$ the source-frozen null direction and
+$w$ an orthogonal residual direction.  In the four-block Haar space, $w$ may
+be the normalized scaling mode.  Set
+\begin{equation}
+ a(x)=x^{5/6},\qquad
+ V_j^+(x)=a(x)w,\qquad
+ V_j^-(x)=(-1)^j a(x)w,\quad 0\leq j\leq3.
+ \label{eq:scaled}
+\end{equation}
+
+\begin{theorem}[scaled null-compatible witness]
+The two families in \eqref{eq:scaled} have the same packet diagonal, zero
+projection on every Haar contrast orthogonal to $w$, and zero projection on
+$z$.  Their full residual energies are
+\begin{equation}
+ \left\|\sum_{j=0}^3V_j^+(x)\right\|^2=16x^{5/3},\qquad
+ \left\|\sum_{j=0}^3V_j^-(x)\right\|^2=0.
+ \label{eq:scaled-energy}
+\end{equation}
+Therefore those marginal and null data alone cannot imply a universal positive
+fixed-power saving for the full four-packet residual.
+\end{theorem}
+
+\begin{proof}
+Each packet has norm $a(x)$, so each diagonal energy is
+$a(x)^2=x^{5/3}$ in both families.  Orthogonality gives all stated zero
+projections.  The plus sum is $4a(x)w$, whereas the alternating sum cancels
+exactly.  Squaring the norms gives \eqref{eq:scaled-energy}.  In particular,
+for any $\delta>0$ the plus family is at baseline scale and is incompatible
+with a universal upper bound of order $x^{5/3-\delta}$ based only on these
+observables.  \end{proof}
+
+The witness is the TPC-260 finite construction with its amplitude scaled to the
+baseline exponent.  It is a structural synthetic family, not a sequence of
+prime-shell outputs.  The conclusion is therefore a scoped non-identifiability
+statement, not a proof that the literal route is impossible.
+
+For completeness, the four-point DFT makes the same point in mode language:
+\begin{equation}
+ \widehat V_k=\frac12\sum_{j=0}^3\ii^{-jk}V_j,\qquad
+ \sum_k\norm{\widehat V_k}^2=\sum_j\norm{V_j}^2,\qquad
+ \norm{\sum_jV_j}^2=4\norm{\widehat V_0}^2.
+ \label{eq:dft}
+\end{equation}
+The plus family places all packet energy in mode zero, while the alternating
+family places it in mode two.  The diagonal ledger sees the same total in both
+cases and cannot select the required mode.
+
+\section{Current route and the minimum sufficient theorem}
+
+The present evidence can be summarized as follows.  The TPC-257 local boundary
+gap is $1/48$, the TPC-259 null channel is logarithmically small, and TPC-260
+shows that the remaining four-packet mode zero is not determined by current
+marginals.  These facts are compatible: a local gap is not a global saving, and
+null suppression is not residual reassembly.
+
+The minimum sufficient next theorem is consequently precise:
+
+\begin{corollary}[minimum sufficient literal bridge]
+A common-clock estimate for the literal V59 mode-zero output, or an equivalent
+signed cross-Gram estimate, with effective saving strictly greater than
+$1/400$ after all masks, deleted-diagonal, hard-window, boundary, and
+normalization losses, is sufficient to close the finite-lane endpoint compiler.
+\end{corollary}
+
+The corollary is conditional on the displayed literal estimate; no such
+estimate is proved here.  It also explains why the next route should not spend
+the same credit twice: the four packet lanes must be reassembled before a
+global endpoint claim is made.
+
+\begin{table}[b]
+\centering
+\caption{Claim ledger for TPC-261.}
+\label{tab:firewall}
+\begin{tabular}{p{0.31\linewidth}p{0.56\linewidth}}
+\toprule
+Item & Current status\\
+\midrule
+Budget identity & proved exactly\\
+Strict threshold & $\sigma>1/400$, proved exactly\\
+Log-only promotion & refuted in the scoped power sense\\
+Scaled witness & exact structural synthetic certificate\\
+Literal mode-zero estimate & open\\
+Arithmetic $L^2$ / full Gate B & none / open\\
+Twin-prime conclusion & none\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Conclusion}
+
+TPC-261 turns the current endpoint intuition into a reusable theorem.  The
+target gap is exactly $1/400$, and the correct currency is effective fixed-power
+credit, not an isolated logarithm or a local exponent.  The scaled TPC-260
+witness proves that the current marginal/Haar/null interface can leave a
+baseline-scale mode-zero residual.  Thus the next genuine advance must estimate
+that literal mode or its signed cross-Gram on the common clock.  Until then the
+arithmetic $L^2$ gate, full Gate B, fixed-atom credit, and the twin-prime
+conclusion remain open.
+
+The release includes an exact rational certificate, an independent checker, and
+a stress audit.  They verify the finite algebra and claim firewall only; no
+finite computation is treated as asymptotic evidence.
+
+\begin{thebibliography}{9}
+\bibitem{tpc223}
+L.~Wang, ``Two-channel endpoint budget compiler,'' TPC-223 project artifact,
+2026.
+
+\bibitem{tpc257}
+L.~Wang, ``Four-block Haar lift and a transverse norm floor,'' TPC-257 project
+artifact, 2026.
+
+\bibitem{tpc258}
+L.~Wang, ``Source-frozen transverse null direction,'' TPC-258 project artifact,
+2026.
+
+\bibitem{tpc259}
+L.~Wang, ``Same-clock null-channel coupling,'' TPC-259 project artifact, 2026.
+
+\bibitem{tpc260}
+L.~Wang, ``Null-compatible four-packet residual reassembly,'' TPC-260 project
+artifact, 2026.
+\end{thebibliography}
+
+\end{document}

@@ -1,7 +1,70 @@
 # TPC HANDOFF
 
 更新时间：2026-08-26
-交接状态：`BOLD_CHANNEL_V113_TPC260_FOUR_PACKET_RESIDUAL_REASSEMBLY_RELEASED`
+交接状态：`BOLD_CHANNEL_V114_TPC261_STRICT_ENDPOINT_BUDGET_COMPILER_RELEASED`
+
+TPC-261 当前 section：strict endpoint-budget compiler for the literal V59 four-packet interface
+-----------------------------------------------------------------------------------------------
+
+TPC-261 is the direct continuation of TPC-260.  It freezes the current common-clock
+endpoint ledger at
+
+```text
+E0=5/3=2000/1200
+E*=1997/1200
+E0-E*=1/400
+```
+
+For a finite lane `l`, a proved saving `delta_l` and reassembly loss `lambda_l`
+leave `sigma_l=delta_l-lambda_l`.  The exact compiler says that
+`min_l sigma_l > 1/400` is sufficient for the target under the displayed
+epsilon hypotheses; equality is only power-level borderline.  The log/power
+firewall proves that `x^delta/(log x)^M` diverges for every fixed positive
+`delta`, so fixed-log null suppression supplies no fixed-power credit.
+
+The scaled TPC-260 plus/alternating family has identical packet marginals and
+Haar/null projections but residual energies `16*x^(5/3)` and `0`.  It is a
+finite synthetic structural witness, not a literal growing prime-shell
+counterexample.  The literal mode-zero/cross-Gram estimate remains open.
+
+```text
+TPC261_MAXIMUM_CLAIM = PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY
+TPC261_ROUTE_ADVANCE = YES_SCOPED_ENDPOINT_BUDGET_COMPILER
+TPC261_BUDGET_IDENTITY = PROVED_EXACT
+TPC261_STRICT_THRESHOLD = PROVED_EXACT_ONE_OVER_400
+TPC261_BORDERLINE_EQUALITY = PROVED_EXACT_POWER_LEVEL_ONLY
+TPC261_LOG_ONLY_TO_POWER_PROMOTION = REFUTED_SCOPED
+TPC261_SCALED_NULL_COMPATIBLE_WITNESS = PROVED_STRUCTURAL_SYNTHETIC
+TPC261_GLOBAL_FIXED_POWER_CREDIT = NONE
+TPC261_LITERAL_MODE_ZERO_ESTIMATE = OPEN
+TPC261_LITERAL_PRIME_SHELL_COUNTEREXAMPLE = NONE
+TPC261_ARITHMETIC_ADVANCE = NO
+TPC261_FIXED_ATOM_CREDIT = 0
+TPC261_L2 = NONE
+TPC261_FULL_GATE_B = OPEN
+TPC261_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC261_TWIN_PRIME_RESULT = NONE
+TPC261_STATUS = PROVED_STRUCTURAL_ENDPOINT_BUDGET_OBSTRUCTION_FOR_LITERAL_V59_REASSEMBLY
+TPC261_ROUND2_CLUE = PROVE_A_LITERAL_MODE_ZERO_OR_CROSS_GRAM_ESTIMATE_WITH_EFFECTIVE_SAVING_GREATER_THAN_1_OVER_400
+```
+
+strongest positive result：exact finite-lane endpoint compiler and minimum
+sufficient strict threshold；strongest obstruction：log-only suppression and
+the scaled null-compatible residual prevent automatic global fixed-power credit；
+open theorem：literal common-clock mode-zero or signed cross-Gram estimate with
+effective saving greater than `1/400` after all losses。
+
+编号论文目录：papers/tpc-261-strict-endpoint-budget-compiler/
+
+```text
+papers/tpc-261-strict-endpoint-budget-compiler/README.md
+papers/tpc-261-strict-endpoint-budget-compiler/PROOF_PACKAGE.md
+papers/tpc-261-strict-endpoint-budget-compiler/paper/paper.pdf
+papers/tpc-261-strict-endpoint-budget-compiler/results/tpc261_certificate.json
+papers/tpc-261-strict-endpoint-budget-compiler/notes/theorem_ledger.md
+research/tpc-big-road/bridge_b_strict_endpoint_budget_compiler.md
+research/tpc-big-road/tpc_bridge_b_strict_endpoint_budget_compiler_checker.py
+```
 
 TPC-260 当前 section：null-compatible four-packet residual reassembly
 -----------------------------------------------------------------------
@@ -8012,8 +8075,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-22项启动回归之后，当前 V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；一百八十二次（91 对）必须都为零，且每一对 stdout
+22项启动回归之后，当前 V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
+执行 normal与 optimized只读 checker；一百八十四次（92 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -8199,11 +8262,24 @@ python -B research/tpc-big-road/tpc_bridge_b_same_clock_null_coupling_checker.py
 python -O -B research/tpc-big-road/tpc_bridge_b_same_clock_null_coupling_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_four_packet_residual_reassembly_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_four_packet_residual_reassembly_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_strict_endpoint_budget_compiler_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_strict_endpoint_budget_compiler_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-260 入口：
+最新 TPC-261 入口：
+
+```text
+papers/tpc-261-strict-endpoint-budget-compiler/README.md
+papers/tpc-261-strict-endpoint-budget-compiler/PROOF_PACKAGE.md
+papers/tpc-261-strict-endpoint-budget-compiler/notes/theorem_ledger.md
+papers/tpc-261-strict-endpoint-budget-compiler/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_strict_endpoint_budget_compiler.md
+research/tpc-big-road/tpc_bridge_b_strict_endpoint_budget_compiler_checker.py
+```
+
+TPC-260 上游入口：
 
 ```text
 papers/tpc-260-four-packet-residual-reassembly/README.md
