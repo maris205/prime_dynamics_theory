@@ -2,17 +2,34 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V136 / TPC-283
+当前地图版本：V137 / TPC-284
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-283`（`PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT`）；
+当前编号锚点：`TPC-284`（`NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION`）；
 对应论文目录为
-`papers/tpc-283-source-attachment-stability-radius/`。
-TPC-283 承接 TPC-282，证明 source representative 到 zero-attachment hyperplane 的
-精确最短距离公式；在 12 个 registered rows 上，信息模型中的归零半径全部小于
-`3/10`，其中 6 行小于 `1/10`。该方向不自动属于 literal source class，因此
-admissible-source stability、literal arithmetic `L2` 与 full Gate B 仍 open。
+`papers/tpc-284-admissible-source-control-atlas/`。
+TPC-284 承接 TPC-283，声明 `H±2`、`z±1`、`Q±1` 六类 local schedule controls，
+在六个 baseline scales 与两个 kernel exponents 上完成 72-row literal-source atlas。
+所有行的 attachment interval 均与零分离（60 negative、12 positive、0 crossing），
+但有 8 个相对 baseline 的 sign flips；最弱 controlled `rho^2` 下界约为 `1.4118e-5`。
+该图谱是有限、声明式的 control audit，不声称 exhaustive admissible-source class 或
+asymptotic stability；literal arithmetic `L2` 与 full Gate B 仍 open。
+
+```text
+TPC284_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION
+TPC284_ROUTE_ADVANCE = YES_SCOPED_FINITE_CONTROL_ATLAS_AND_SIGN_FLIP_OBSTRUCTION
+TPC284_CONTROL_ATLAS = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC284_CONTROL_SIGN_CENSUS = 60_NEGATIVE_12_POSITIVE_0_CROSSING
+TPC284_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_8_FLIPS
+TPC284_ASYMPTOTIC_CONTROL_STABILITY = OPEN
+TPC284_LITERAL_SOURCE_CLASS_THEOREM = OPEN
+TPC284_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC284_FIXED_POWER_CREDIT = 0
+TPC284_FULL_GATE_B = OPEN
+TPC284_TWIN_PRIME_RESULT = NONE
+TPC284_ROUND2_CLUE = COMPILE_PRIME_SHELL_CONTROL_CONSTRAINTS_BEFORE_ANY_ASYMPTOTIC_STABILITY_CLAIM
+```
 
 ```text
 TPC283_MAXIMUM_CLAIM = PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT
@@ -84,6 +101,36 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.78 V137 / TPC-284：finite admissible source-control atlas
+
+TPC-284 是 TPC-283 的 source-class 收紧版。它声明六类有限 schedule controls：
+`H-2/H+2`、`z-1/z+1`、`Q-1/Q+1`，并在六个 baseline tuples、两个 kernel exponents
+上生成 72 行 literal-source atlas。hash-locked outward replay 认证所有行的附着
+interval 与零分离：60 个 negative、12 个 positive、0 个 crossing；相对 TPC-283
+baseline 有 8 个 sign flips。最弱 controlled `rho^2` 下界约 `1.4118e-5`，所以有限
+non-vanishing 存在，但 sign stability 已被 scoped finite controls 反复挑战。
+
+六类 controls 是 declared test family，不是完整 admissible literal-source class；
+没有从 72 行推广到 growing schedule，也没有支付 arithmetic `L2` 或 fixed-power credit。
+
+```text
+TPC284_ROUTE_ADVANCE = YES_SCOPED_FINITE_CONTROL_ATLAS_AND_SIGN_FLIP_OBSTRUCTION
+TPC284_CONTROL_ATLAS = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC284_CONTROL_SIGN_CENSUS = 60_NEGATIVE_12_POSITIVE_0_CROSSING
+TPC284_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_8_FLIPS
+TPC284_ASYMPTOTIC_CONTROL_STABILITY = OPEN
+TPC284_LITERAL_SOURCE_CLASS_THEOREM = OPEN
+TPC284_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC284_FIXED_POWER_CREDIT = 0
+TPC284_FULL_GATE_B = OPEN
+TPC284_TWIN_PRIME_RESULT = NONE
+TPC284_ROUND2_CLUE = COMPILE_PRIME_SHELL_CONTROL_CONSTRAINTS_BEFORE_ANY_ASYMPTOTIC_STABILITY_CLAIM
+```
+
+地图位置：**V137 / TPC-284 已把 unrestricted zeroing warning 转成 72-row declared
+control atlas，并发现 8 个有限 orientation flips；下一座桥是明确 source class 后的
+growing control-stability / arithmetic `L2` theorem。**
 
 ## 5.77 V136 / TPC-283：source-attachment stability radius and adversarial zeroing
 
@@ -564,9 +611,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V136 / TPC-283                    |
-        | SOURCE-ATTACHMENT STABILITY / ZEROING RADIUS  |
-        | exact radius; admissible source stability OPEN|
+        | YOU ARE HERE — V137 / TPC-284                    |
+        | FINITE SOURCE-CONTROL ATLAS / SIGN FLIPS     |
+        | 72 rows; asymptotic control stability OPEN    |
         +--------------------------------------------------+
                 |
                 v
@@ -5553,6 +5600,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V137 / TPC-284 | Bridge A / Gate B：finite declared source-control atlas 已完成；asymptotic control stability、literal source class、arithmetic `L2` 与 full Gate B open | `TPC-284` | 对 `H±2`、`z±1`、`Q±1` 六类 controls 完成 72-row literal replay（60 negative / 12 positive / 0 crossing），发现 8 个相对 baseline 的 sign flips，最弱 controlled `rho^2` 下界约 `1.4118e-5`，fixed-power credit 为 0，下一步为 source-class constraints 与 growing control-stability theorem |
 | 2026-08-27 | V136 / TPC-283 | Bridge A / Gate B：source-attachment zeroing radius 已精确化；admissible source stability、arithmetic `L2` 与 full Gate B open | `TPC-283` | 证明到 zero-attachment hyperplane 的最短距离公式；TPC-282 的 12 rows 全部在信息模型中小于 `3/10`、6 行小于 `1/10`，fixed-power credit 为 0，下一步为 cutoff/clock/shell controls 的 admissible stability |
 | 2026-08-27 | V135 / TPC-282 | Bridge A / Gate B：literal source attachment finite lock 已完成；uniform nondegeneracy、arithmetic `L2` 与 full Gate B open | `TPC-282` | 在 frozen literal V59 source 上重放 `C=<w_perp,(I-P_3)A beta>`；12 rows 全部 sign-separated（11 negative / 1 positive），最弱 `rho^2` 约 `3.36e-5`，fixed-power credit 为 0，下一步为 attachment stability radius 与 sign-flip audit |
 | 2026-08-27 | V134 / TPC-281 | Bridge A / Gate B：typed arithmetic `L2` interface 已完成；literal source `L2`、typed attachment 与 full Gate B open | `TPC-281` | 将 `A_X:H_X -> ell^2(I_X)`、`||A_X||_(2->2)<=KX^(-sigma)` 精确接入 packet gain budget，得到 output-energy exponent `a-2sigma-kappa`；equal-norm orthogonal functionals 给出 `G^2/0` attachment obstruction，4+4 fixtures 与 12-row parent transfer 通过，fixed-power credit 为 0 |

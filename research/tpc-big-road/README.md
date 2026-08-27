@@ -1,13 +1,43 @@
-# TPC big road V136 / TPC-283: source-attachment stability radius
+# TPC big road V137 / TPC-284: finite admissible source-control atlas
 
 更新时间：2026-08-27
 
-状态：`TPC283_PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC284_NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-283 proof 为
+当前 TPC-284 proof 为
+`bridge_b_admissible_source_control_atlas.md`，checker 为
+`tpc_bridge_b_admissible_source_control_atlas_checker.py`，编号论文为
+`../../papers/tpc-284-admissible-source-control-atlas/`。
+
+TPC-284 承接 TPC-283 的 unrestricted zeroing-radius obstruction，声明六类 local
+schedule controls：`H-2`、`H+2`、`z-1`、`z+1`、`Q-1`、`Q+1`。六个 baseline scales、
+两个 kernel exponents 与六类 controls 组成 72-row literal-source atlas；outward
+interval replay 认证 60 个 negative、12 个 positive、0 个 zero crossing，但有 8
+个相对 baseline 的 sign flips。最弱 controlled `rho^2` 下界约 `1.4118e-5`。这是
+finite control atlas 与 scoped sign-stability obstruction，不声称 controls exhaust
+literal source class，也不提供 asymptotic stability、arithmetic `L2` 或 fixed-power
+credit。
+
+```text
+TPC284_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION
+TPC284_ROUTE_ADVANCE = YES_SCOPED_FINITE_CONTROL_ATLAS_AND_SIGN_FLIP_OBSTRUCTION
+TPC284_CONTROL_ATLAS = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC284_CONTROL_SIGN_CENSUS = 60_NEGATIVE_12_POSITIVE_0_CROSSING
+TPC284_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_8_FLIPS
+TPC284_ASYMPTOTIC_CONTROL_STABILITY = OPEN
+TPC284_LITERAL_SOURCE_CLASS_THEOREM = OPEN
+TPC284_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC284_FIXED_POWER_CREDIT = 0
+TPC284_FULL_GATE_B = OPEN
+TPC284_TWIN_PRIME_RESULT = NONE
+TPC284_STATUS = NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION
+TPC284_ROUND2_CLUE = COMPILE_PRIME_SHELL_CONTROL_CONSTRAINTS_BEFORE_ANY_ASYMPTOTIC_STABILITY_CLAIM
+```
+
+TPC-283 upstream proof 为
 `bridge_b_source_attachment_stability_radius.md`，checker 为
 `tpc_bridge_b_source_attachment_stability_radius_checker.py`，编号论文为
 `../../papers/tpc-283-source-attachment-stability-radius/`。

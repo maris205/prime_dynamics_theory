@@ -9,6 +9,24 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-284 承接 TPC-283，把 unrestricted zeroing obstruction 收紧为六类
+明确的 finite schedule controls：`H-2/H+2`、`z-1/z+1`、`Q-1/Q+1`。在六个
+registered scales 与两个 kernel exponents 上形成 72 行 literal-source control atlas，
+outward interval replay 认证 60 个负附着、12 个正附着、0 个 crossing；但有 8 行相对
+TPC-283 baseline 发生 sign flip，最弱 controlled `rho^2` 下界约为 `1.4118e-5`。
+这是真实的 `NUMERICALLY_CERTIFIED_FINITE` 控制图谱与 sign-stability obstruction，
+不是 exhaustive admissible-source theorem 或渐近稳定性定理；arithmetic `L2`、
+fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC284_CONTROL_ATLAS = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC284_CONTROL_SIGN_CENSUS = 60_NEGATIVE_12_POSITIVE_0_CROSSING
+TPC284_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_8_FLIPS
+TPC284_ASYMPTOTIC_CONTROL_STABILITY = OPEN
+TPC284_FIXED_POWER_CREDIT = 0
+TPC284_FULL_GATE_B = OPEN
+```
+
 当前主线状态：TPC-283 承接 TPC-282，将有限 attachment 读成一个精确的 stability
 radius。对非零 `S`，若 `C=<w,S>`、`W=||w||^2`、`Y=||S||^2`，则到零附着超平面的
 最短相对距离平方严格等于 `C^2/(WY)`，唯一归零点为 `w-(C/Y)S`。转移 TPC-282 的
@@ -198,6 +216,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-284-admissible-source-control-atlas - 当前阶段 - 完成六类 declared schedule controls
+的 72-row literal-source atlas：60 negative、12 positive、0 crossing，8 个相对基线
+sign flips，最弱 controlled `rho^2` 下界约 `1.4118e-5`；这是有限控制图谱与
+sign-stability obstruction，exhaustive source class、asymptotic stability、literal
+arithmetic `L2`、full Gate B 仍 OPEN，fixed-power credit 为 0。
 tpc-281-arithmetic-l2-gate-b-interface-audit - 当前阶段 - 证明 typed arithmetic
 `L2` 到 Gate-B output-energy 的 exact conditional interface，并以 `R^2` 中 equal-norm
 orthogonal functional 给出 full/zero attachment obstruction；4 个 exact packet fixtures、

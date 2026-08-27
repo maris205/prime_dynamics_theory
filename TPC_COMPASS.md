@@ -1,9 +1,35 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V136 / SOURCE_ATTACHMENT_STABILITY_RADIUS`
-claim level：`PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT`
-编号事实终点：TPC-283；TPC-283 trigger：`true`
+状态：`BOLD_CHANNEL_V137 / ADMISSIBLE_SOURCE_CONTROL_ATLAS`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION`
+编号事实终点：TPC-284；TPC-284 trigger：`true`
+
+当前 TPC-284 入口：proof 为
+`research/tpc-big-road/bridge_b_admissible_source_control_atlas.md`，checker 为
+`tpc_bridge_b_admissible_source_control_atlas_checker.py`，编号论文为
+`papers/tpc-284-admissible-source-control-atlas/`。它承接 TPC-283 的 unrestricted
+zeroing radius，声明 `H±2`、`z±1`、`Q±1` 六类 schedule controls，在六个 scales、
+两个 exponents 上完成 72-row literal-source atlas：60 negative、12 positive、0
+crossing，但有 8 个相对 baseline 的 sign flips，最弱 controlled `rho^2` 下界约
+`1.4118e-5`。这是有限控制图谱与 scoped sign-stability obstruction，不是 exhaustive
+admissible-source theorem 或 asymptotic stability；arithmetic `L2`、fixed-power credit
+与 full Gate B 仍 OPEN/NONE。
+
+```text
+TPC284_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION
+TPC284_ROUTE_ADVANCE = YES_SCOPED_FINITE_CONTROL_ATLAS_AND_SIGN_FLIP_OBSTRUCTION
+TPC284_CONTROL_ATLAS = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC284_CONTROL_SIGN_CENSUS = 60_NEGATIVE_12_POSITIVE_0_CROSSING
+TPC284_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_8_FLIPS
+TPC284_ASYMPTOTIC_CONTROL_STABILITY = OPEN
+TPC284_LITERAL_SOURCE_CLASS_THEOREM = OPEN
+TPC284_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC284_FIXED_POWER_CREDIT = 0
+TPC284_FULL_GATE_B = OPEN
+TPC284_TWIN_PRIME_RESULT = NONE
+TPC284_ROUND2_CLUE = COMPILE_PRIME_SHELL_CONTROL_CONSTRAINTS_BEFORE_ANY_ASYMPTOTIC_STABILITY_CLAIM
+```
 
 当前 TPC-283 入口：proof 为
 `research/tpc-big-road/bridge_b_source_attachment_stability_radius.md`，checker 为

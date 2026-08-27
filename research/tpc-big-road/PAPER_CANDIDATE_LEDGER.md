@@ -3,13 +3,55 @@
 
 更新时间：2026-08-27
 
-状态：**TPC283_PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC284_NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.77 当前：TPC-283 source-attachment stability radius and adversarial zeroing
+## 0.78 当前：TPC-284 finite admissible source-control atlas
+
+项目：`papers/tpc-284-admissible-source-control-atlas/`
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION**。
+
+TPC-284 承接 TPC-283 的 unrestricted zeroing-radius obstruction，声明六类局部
+schedule controls：`H-2/H+2`、`z-1/z+1`、`Q-1/Q+1`。六个 registered baseline
+tuples、两个 kernel exponents 与六类 controls 组成 72-row literal-source atlas。
+Hash-locked TPC-268 replay 与独立重放均认证所有行的 attachment interval 与零分离：
+60 个 negative、12 个 positive、0 个 crossing；相对 TPC-283 baseline 有 8 个 sign
+flips。最弱 controlled `rho^2` 下界约为 `1.4118e-5`，最大 upper endpoint 约为
+`0.1539`。
+
+最强正结果是一个可复核的有限 source-control atlas；最强 obstruction 是 named
+controls 下的 8 个 orientation flips，说明 finite non-vanishing 不能替代 sign
+stability。开放定理是明确 source class 上的 growing-schedule stability 与
+arithmetic `L2`；六类 controls 不声称 exhaustive。可复用结构为
+`hashed baseline -> declared control map -> interval sign census`。
+
+```text
+STRONGEST_POSITIVE_RESULT = FINITE_72_ROW_LITERAL_SOURCE_CONTROL_ATLAS
+STRONGEST_OBSTRUCTION = 8_BASELINE_SIGN_FLIPS_UNDER_DECLARED_CONTROLS
+OPEN_THEOREM = GROWING_SCHEDULE_CONTROL_STABILITY_WITH_DECLARED_SOURCE_CLASS
+REUSABLE_STRUCTURE = HASHED_BASELINE -> CONTROL_MAP -> EXACT_INTERVAL_CENSUS
+ROUND2_CLUE = COMPILE_PRIME_SHELL_CONTROL_CONSTRAINTS_BEFORE_ANY_ASYMPTOTIC_STABILITY_CLAIM
+```
+
+```text
+TPC284_ROUTE_ADVANCE = YES_SCOPED_FINITE_CONTROL_ATLAS_AND_SIGN_FLIP_OBSTRUCTION
+TPC284_CONTROL_ATLAS = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC284_CONTROL_SIGN_CENSUS = 60_NEGATIVE_12_POSITIVE_0_CROSSING
+TPC284_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_8_FLIPS
+TPC284_ASYMPTOTIC_CONTROL_STABILITY = OPEN
+TPC284_LITERAL_SOURCE_CLASS_THEOREM = OPEN
+TPC284_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC284_FIXED_POWER_CREDIT = 0
+TPC284_FULL_GATE_B = OPEN
+TPC284_TWIN_PRIME_RESULT = NONE
+TPC284_STATUS = NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION
+```
+
+## 0.77 已发布：TPC-283 source-attachment stability radius and adversarial zeroing
 
 项目：`papers/tpc-283-source-attachment-stability-radius/`
 
