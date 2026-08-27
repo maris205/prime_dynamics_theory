@@ -9,6 +9,29 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-286 承接 TPC-285，把 centered residue block 与 physical
+deleted-diagonal operator 之间的缺项精确拆开。对有限 prime shell，定义含对角项的
+`g_full`、显式对角修正 `g_diag` 与物理输出 `g_phys`，严格证明
+`g_phys=g_full-g_diag`，并由 attachment 的线性得到 `C_phys=C_full-C_diag`。
+在 TPC-284 的全部 72 个 schedule-control rows 上，三类 component interval 全部
+sign-separated：full 49 negative/23 positive，diagonal 34/38，physical 60/12；
+full-versus-physical 有 15 个 sign flips，对角修正与 physical 相反 30 行，严格
+大于 physical 绝对幅度 21 行。这是新的 `PROVED_EXACT` diagonal-split structure
+加 `NUMERICALLY_CERTIFIED_FINITE` sensitivity ledger；asymptotic diagonal dominance、
+signed full-shell cancellation、arithmetic `L2`、fixed-power credit、full Gate B 与
+twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC286_ATTACHMENT_SPLIT = PROVED_EXACT_LINEARITY
+TPC286_COMPONENT_SIGN_LEDGER = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC286_FULL_VS_PHYSICAL_FLIPS = NUMERICALLY_CERTIFIED_FINITE_15_ROWS
+TPC286_DIAGONAL_OPPOSITION = NUMERICALLY_CERTIFIED_FINITE_30_ROWS
+TPC286_DIAGONAL_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_21_ROWS
+TPC286_ASYMPTOTIC_DIAGONAL_DOMINANCE = OPEN
+TPC286_FIXED_POWER_CREDIT = 0
+TPC286_FULL_GATE_B = OPEN
+```
+
 当前主线状态：TPC-285 承接 TPC-284，解释 prime-shell 控制敏感性背后的局部结构。
 对奇素数 `q`，centered residue block 精确分解为
 `B_q=R_q(I-11^T/(q-1))R_q^T`，rank 至多 `q-2`；但物理算子删除 diagonal 后，
@@ -234,6 +257,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-286-diagonal-deletion-attachment-ledger - 当前阶段 - 精确证明
+`g_phys=g_full-g_diag` 与 `C_phys=C_full-C_diag`，并完成 72-row full/diagonal/physical
+component ledger：15 个 full/physical sign flips、30 个 diagonal-opposition rows、
+21 个严格 diagonal-dominance rows；asymptotic dominance、signed full-shell cancellation、
+literal `L2`、full Gate B 仍 OPEN，fixed-power credit 为 0。
 tpc-285-prime-shell-residue-rank-obstruction - 当前阶段 - 精确证明 centered residue
 factorization 与 deleted-diagonal full active rank；20 个 registered prime/exponent rows
 的 kernel Schur blocks 均通过模素数 rank witness，关闭“仅靠 `q-2` 低秩即可得到

@@ -1,0 +1,356 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.82in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{float}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\phys}{\mathrm{phys}}
+\newcommand{\full}{\mathrm{full}}
+\newcommand{\del}{\mathrm{diag}}
+
+\title{A Diagonal-Deletion Attachment Ledger for the Literal Prime-Shell Operator}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{27 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The previous finite control atlas found sign changes in the literal source
+attachment under small schedule perturbations, while the preceding residue
+analysis found a tempting low-rank factorization that does not survive the
+physical diagonal convention.  This paper isolates the missing term.  For a
+finite prime shell we define a diagonal-including output, an explicit
+diagonal correction, and the physical deleted-diagonal output.  A finite-sum
+argument proves the exact identities
+$g_{\phys}=g_{\full}-g_{\del}$ and
+$C_{\phys}=C_{\full}-C_{\del}$ for the declared four-block attachment.
+We then replay all 72 rows obtained from six baseline tuples, two kernel
+exponents, and six local controls.  Every full, diagonal, and physical scalar
+interval is separated from zero.  The full and physical signs differ in 15
+rows; the diagonal correction opposes the physical term in 30 rows and has a
+strictly larger certified absolute magnitude in 21 rows.  These are finite
+certificates, not asymptotic estimates.  The result makes the obstruction
+explicit: any centered-residue proof of the literal arithmetic estimate must
+pay for the deleted diagonal before seeking signed cross-prime cancellation.
+No fixed-power credit, Gate-B passage, or twin-prime conclusion is claimed.
+\end{abstract}
+
+\section{Motivation and contribution}
+
+The literal twin-prime route under study attaches a prime-shell operator to a
+finite source profile.  TPC-284 showed that six natural schedule controls can
+change the sign of the resulting scalar attachment on a registered finite
+atlas~\cite{tpc284}.  TPC-285 then identified an exact algebraic structure: the
+centered residue block for one prime factors through its nonzero residue
+indicators and has rank at most $q-2$, but deleting the diagonal makes the
+active block full rank~\cite{tpc285}.  The two observations leave a precise
+question: how much of the finite sensitivity is carried by the diagonal term
+that the physical operator removes?
+
+This paper answers that question at the level supported by the frozen finite
+model.  Its contributions are:
+
+\begin{enumerate}[leftmargin=1.8em,itemsep=2pt]
+  \item an exact decomposition of the diagonal-including and physical
+        prime-shell outputs, including a closed formula for the deleted
+        diagonal;
+  \item an exact linearity proof for the scalar attachment used throughout
+        the finite route;
+  \item a 72-row, independently replayable ledger of the three components,
+        their signs, sign flips, and interval-certified magnitude comparisons;
+  \item a sharpened route obstruction: finite diagonal sensitivity is real,
+        but it does not by itself settle growing-scale cancellation.
+\end{enumerate}
+
+The main positive result is therefore structural rather than asymptotic.  The
+main negative result is equally specific: a centered low-rank representation
+cannot be substituted for the literal physical block without tracking the
+diagonal correction.
+
+\section{The frozen finite operator}
+
+Let $I$ be a finite interval of integer indices and let $q$ be an odd prime.
+Define the active mask and centered residue block by
+\begin{equation}
+ m_q(u)=\mathbf 1_{q\nmid u},\qquad
+ B_q(u,t)=m_q(u)m_q(t)
+ \left(\mathbf 1_{u\equiv t\pmod q}-\frac{1}{q-1}\right).
+ \label{eq:block}
+\end{equation}
+The physical convention removes the diagonal:
+\begin{equation}
+ D_q=B_q-\diag(B_q).
+ \label{eq:deleted}
+\end{equation}
+For height $H>0$ and exponent $s\in\{1,2\}$, the rational kernel is
+\begin{equation}
+ K_H(h)=\frac{H^{2s}}{(H^2+h^2)^s}.
+ \label{eq:kernel}
+\end{equation}
+For a finite shell $\mathcal S_Q=\{q:Q<q\leq2Q,\ q\text{ prime}\}$ and a
+source vector $\beta$, define the two outputs
+\begin{align}
+ g_{\full}(u)
+  &=\sum_{q\in\mathcal S_Q}\sum_{t\in I}
+       qK_H(u-t)B_q(u,t)\beta(t),\label{eq:full}\\
+ g_{\phys}(u)
+  &=\sum_{q\in\mathcal S_Q}\sum_{t\in I}
+       qK_H(u-t)D_q(u,t)\beta(t).\label{eq:physical}
+\end{align}
+The first sum includes the $t=u$ terms; the second one does not.
+
+The scalar used in the finite certificates is the four-block projected
+attachment.  If $w$ is the interval-valued source weight and $g$ is an output,
+write
+\begin{equation}
+ C(w,g)=\sum_{u\in I}w(u)g(u)
+ -\sum_{r=1}^{3}\frac{W_r(w)G_r(g)}{d_r},
+ \label{eq:attachment}
+\end{equation}
+where $W_r$ and $G_r$ are fixed linear block contrasts and
+$(d_1,d_2,d_3)$ are the corresponding fixed normalizers.  The exact choices
+are the four equal blocks and contrasts inherited from TPC-268~\cite{tpc268}.
+Only linearity in the second argument is used in the theorem below.
+
+\section{Exact diagonal split}
+
+\begin{theorem}[diagonal output and physical split]
+For every finite $I$, finite prime shell $\mathcal S_Q$, source vector $\beta$,
+$H>0$, and integer $s\geq1$, define $g_{\full}$ and $g_{\phys}$ by
+\eqref{eq:full}--\eqref{eq:physical}.  Then
+\begin{equation}
+ g_{\del}(u)=\sum_{q\in\mathcal S_Q}qK_H(0)
+       \frac{q-2}{q-1}m_q(u)\beta(u),
+ \label{eq:diag-output}
+\end{equation}
+and
+\begin{equation}
+ g_{\phys}=g_{\full}-g_{\del}.
+ \label{eq:output-split}
+\end{equation}
+Moreover, every scalar functional linear in its output argument satisfies
+\begin{equation}
+ C(w,g_{\phys})=C(w,g_{\full})-C(w,g_{\del}).
+ \label{eq:scalar-split}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+If $q\mid u$, then the mask in \eqref{eq:block} is zero.  Otherwise the
+congruence indicator on the diagonal is one.  In both cases,
+\begin{equation}
+ B_q(u,u)=m_q(u)\left(1-\frac1{q-1}\right)
+ =m_q(u)\frac{q-2}{q-1}.
+ \label{eq:diagonal-entry}
+\end{equation}
+The $t=u$ part of \eqref{eq:full} is therefore exactly \eqref{eq:diag-output}.
+For $u\ne t$, $D_q(u,t)=B_q(u,t)$, while $D_q(u,u)=0$.  Subtracting the
+diagonal summand from each finite full sum consequently gives
+\begin{equation}
+ g_{\full}(u)-g_{\del}(u)
+ =\sum_{q\in\mathcal S_Q}\sum_{t\in I}
+ qK_H(u-t)D_q(u,t)\beta(t),
+\end{equation}
+which is $g_{\phys}(u)$.  Finally, linearity of $C$ gives
+\begin{equation}
+ C(w,g_{\full}-g_{\del})
+ =C(w,g_{\full})-C(w,g_{\del}).
+\end{equation}
+All sums are finite, so no convergence or rearrangement theorem is required.
+\end{proof}
+
+\begin{remark}
+The theorem is stronger than a numerical coincidence but narrower than an
+asymptotic estimate.  It identifies exactly what must be paid when the
+centered residue block of TPC-285 is replaced by the physical off-diagonal
+operator.  It does not say that the diagonal correction dominates for every
+source scale or every shell.
+\end{remark}
+
+\section{The registered 72-row ledger}
+
+The audit uses the six baseline tuples
+\begin{equation}
+ (64,15,4,4),\ (96,20,5,4),\ (128,24,5,4),\quad
+ (192,32,6,5),\ (256,38,6,5),\ (384,50,7,5),
+ \label{eq:baselines}
+\end{equation}
+where a tuple records $(X,H,Q,z)$.  Each baseline is evaluated at
+$s=1,2$ under the six controls $H-2$, $H+2$, $z-1$, $z+1$, $Q-1$, and
+$Q+1$.  Thus the ledger contains $6\cdot2\cdot6=72$ rows.  The source
+profile, cutoff convention, and interval arithmetic are inherited unchanged
+from the finite operator certificate~\cite{tpc268}.
+
+For each row we compute the exact rational vectors $g_{\full}$ and $g_{\del}$,
+form $g_{\phys}=g_{\full}-g_{\del}$, and apply \eqref{eq:attachment}.  The
+stored intervals use the established decimal serialization; all sign and
+ratio tests are performed on the underlying rational interval endpoints.
+The principal census is shown in Table~\ref{tab:census}.
+
+\begin{table}[H]
+\centering
+\small
+\caption{TPC-286 finite component census.  Every component interval is
+sign-separated from zero.}
+\label{tab:census}
+\begin{tabular}{lrrr}
+\toprule
+Component & Negative & Positive & Total\\
+\midrule
+Full, diagonal included & 49 & 23 & 72\\
+Diagonal correction & 34 & 38 & 72\\
+Physical, diagonal deleted & 60 & 12 & 72\\
+\midrule
+Component-separated rows & \multicolumn{2}{c}{72} & 72\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The decomposition is computationally meaningful, not just notational.  The
+full and physical signs differ in 15 rows.  In 30 rows the diagonal correction
+has the opposite sign from the physical attachment, and in 21 rows its
+certified absolute lower bound is strictly larger than the physical absolute
+upper bound.  The conservative ratio lower bound exceeds $2$ in 13 rows and
+$10$ in 4 rows.  Exact interval subtraction confirms that the reconstructed
+interval
+\begin{equation}
+ [C_{\full}^{-}-C_{\del}^{+},\ C_{\full}^{+}-C_{\del}^{-}]
+ \label{eq:reconstruction}
+\end{equation}
+contains the independently computed physical interval in all 72 rows.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Sensitivity summary for the six local controls.}
+\label{tab:controls}
+\begin{tabular}{lrrr}
+\toprule
+Control & Rows & Full/physical flips & Diagonal opposite\\
+\midrule
+$H-2$ & 12 & 3 & 5\\
+$H+2$ & 12 & 3 & 5\\
+$z-1$ & 12 & 1 & 3\\
+$z+1$ & 12 & 3 & 7\\
+$Q-1$ & 12 & 0 & 2\\
+$Q+1$ & 12 & 5 & 8\\
+\midrule
+Total & 72 & 15 & 30\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:controls} shows that the effect is not confined to one kind of
+perturbation.  Height and shell-endpoint controls produce several flips, while
+the cutoff controls also alter the source weights that multiply the same
+operator.  The table is descriptive of the registered finite family only.
+
+\section{Interpretation and route consequence}
+
+The exact split supplies a clean interface between the two preceding papers.
+TPC-285's centered factorization remains useful for isolating residue modes,
+but the physical operator is obtained only after subtracting
+\begin{equation}
+ \Delta_{\del}(u)=\sum_{q\in\mathcal S_Q}qK_H(0)
+ \frac{q-2}{q-1}m_q(u)\beta(u).
+ \label{eq:delta}
+\end{equation}
+The finite ledger shows why this term cannot be silently absorbed into a
+low-rank argument: it can change the scalar sign, oppose the physical term,
+and exceed its certified magnitude on a substantial subset of the registered
+controls.
+
+There are two asymmetric lessons.  First, the diagonal correction is a
+genuine analytic object with a closed formula, so future full-shell work can
+separate it before estimating any norm.  Second, the finite evidence does not
+choose the eventual asymptotic sign.  A diagonal correction that is large in a
+finite row may cancel across primes, and the 15 sign flips do not constitute a
+counterexample to a growing-scale theorem that has not been stated here.
+
+The next mathematically meaningful target is therefore a signed full-shell
+estimate after the split.  Such a result would need to control at least one of
+the following: cross-prime cancellation, source orthogonality, singular values
+of the full-rank physical blocks, or a uniform bound for the explicit diagonal
+sum.  Separate absolute estimates for $g_{\full}$ and $g_{\del}$ cannot by
+themselves supply the desired cancellation.
+
+\section{Verification, limitations, and conclusion}
+
+The release contains four auditable layers.  The producer locks the TPC-284
+control result, the TPC-285 rank result, and the frozen TPC-268 engine by
+normalized-LF SHA-256 hashes.  The independent checker rebuilds prime shells,
+all three output vectors, all 72 attachments, and the complete census without
+importing the producer.  A hostile stress script rejects mutations to the
+theorem, component intervals, signs, flags, budget, provenance, and row
+census.  Finally, the fail-closed Bridge-B checker runs the producer,
+independent checker, and stress audit in ordinary and optimized Python,
+requiring empty standard error and identical paired output.
+
+The limitations are part of the result.  The source profile is a declared
+finite modeling choice; the interval ledger has no moving-order theorem; the
+diagonal dominance counts have no asymptotic extrapolation; and no arithmetic
+$L^2$ estimate has been proved.  The Session-level Route-A/Route-B evaluator
+files are not present in this checkout, so the local route evaluation is
+explicitly a fail-closed Route-B fallback.
+
+In summary, the paper proves the exact identity needed to bridge centered and
+physical prime-shell operators and certifies its finite sensitivity on all 72
+registered controls.  The strongest reusable structure is
+\[
+ \text{centered residue block}
+ \longrightarrow \text{diagonal correction}
+ \longrightarrow \text{physical attachment ledger}.
+\]
+The next open theorem is signed full-shell cancellation after this split.
+Fixed-power credit remains zero, Gate B remains open, and no twin-prime
+conclusion follows.
+
+\appendix
+\section{Reproducibility details}
+
+The shell parameters and control map are fixed by \eqref{eq:baselines}.  The
+source interval is $I_X=(X/2,X]\cap\mathbb Z$ and the four blocks are equal
+consecutive subintervals.  The three contrasts are
+\[
+ (1,1,-1,-1),\qquad (1,-1,0,0),\qquad (0,0,1,-1),
+\]
+with normalizers $4b,2b,2b$ when each block has size $b$.  The producer uses
+exact rational arithmetic for $\beta$, the kernel, and the residue indicators;
+interval-valued source weights are rounded outward on the frozen grid.  A
+stored component endpoint is checked after normalization against the frozen
+engine's decimal serializer, while the reconstruction test uses the exact
+internal endpoints.
+
+The certificate records the following finite facts:
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.63\linewidth}r}
+\toprule
+Fact & Count\\
+\midrule
+Rows with all three components separated from zero & 72\\
+Rows with full/physical sign flip & 15\\
+Rows with diagonal sign opposite to physical sign & 30\\
+Rows with strict diagonal-over-physical magnitude & 21\\
+Rows with ratio lower bound $>2$ / $>10$ & 13 / 4\\
+Fixed-power credit & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

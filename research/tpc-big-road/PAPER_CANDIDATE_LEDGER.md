@@ -3,13 +3,58 @@
 
 更新时间：2026-08-27
 
-状态：**TPC285_PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC286_PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.79 当前：TPC-285 prime-shell residue factorization and deleted-diagonal rank obstruction
+## 0.80 当前：TPC-286 diagonal-deletion attachment ledger
+
+项目：`papers/tpc-286-diagonal-deletion-attachment-ledger/`
+
+类型：**PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER**。
+
+TPC-286 承接 TPC-285，将 centered residue block 的 diagonal-including output、显式
+diagonal correction 与 physical deleted-diagonal output 分开。对任意声明的有限 shell，
+精确证明 `g_phys=g_full-g_diag`，其中
+`g_diag(u)=sum_q q K_H(0)(q-2)/(q-1)m_q(u)beta(u)`；对四-block linear attachment
+进一步有 `C_phys=C_full-C_diag`。在 TPC-284 的全部 72 个 controls 上，三类 component
+interval 全部 sign-separated：full 为 49 negative/23 positive，diagonal 为 34/38，
+physical 为 60/12；full-versus-physical 有 15 个 sign flips，对角修正与 physical
+相反 30 行，严格大于 physical 绝对幅度 21 行，ratio lower bound 超过 2/10 的行数为
+13/4。
+
+最强正结果是 exact operator/attachment diagonal split；最强 obstruction 是 finite
+diagonal sensitivity can reverse or dominate the physical attachment。该 ledger 不提供
+asymptotic diagonal dominance、signed full-shell cancellation 或 arithmetic `L2`，这些
+仍是 open。可复用结构为 `centered block -> diagonal correction -> physical ledger`。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_OPERATOR_AND_ATTACHMENT_DIAGONAL_SPLIT
+STRONGEST_OBSTRUCTION = FINITE_DIAGONAL_SENSITIVITY_WITH_15_FULL_PHYSICAL_SIGN_FLIPS
+OPEN_THEOREM = SIGNED_FULL_SHELL_CANCELLATION_AFTER_DIAGONAL_SPLIT
+REUSABLE_STRUCTURE = CENTERED_RESIDUE_BLOCK -> DIAGONAL_CORRECTION -> PHYSICAL_LEDGER
+ROUND2_CLUE = SEEK_SIGNED_FULL_SHELL_CANCELLATION_AFTER_DIAGONAL_ATTACHMENT_LEDGER
+```
+
+```text
+TPC286_ROUTE_ADVANCE = YES_SCOPED_EXACT_DIAGONAL_SPLIT_AND_FINITE_SENSITIVITY_LEDGER
+TPC286_ATTACHMENT_SPLIT = PROVED_EXACT_LINEARITY
+TPC286_COMPONENT_SIGN_LEDGER = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC286_FULL_VS_PHYSICAL_FLIPS = NUMERICALLY_CERTIFIED_FINITE_15_ROWS
+TPC286_DIAGONAL_OPPOSITION = NUMERICALLY_CERTIFIED_FINITE_30_ROWS
+TPC286_DIAGONAL_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_21_ROWS
+TPC286_ASYMPTOTIC_DIAGONAL_DOMINANCE = OPEN
+TPC286_SIGNED_FULL_SHELL_CANCELLATION = OPEN
+TPC286_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC286_FIXED_POWER_CREDIT = 0
+TPC286_FULL_GATE_B = OPEN
+TPC286_TWIN_PRIME_RESULT = NONE
+TPC286_STATUS = PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER
+```
+
+## 0.79 已发布：TPC-285 prime-shell residue factorization and deleted-diagonal rank obstruction
 
 项目：`papers/tpc-285-prime-shell-residue-rank-obstruction/`
 

@@ -1,13 +1,45 @@
-# TPC big road V138 / TPC-285: prime-shell residue rank obstruction
+# TPC big road V139 / TPC-286: diagonal-deletion attachment ledger
 
 更新时间：2026-08-27
 
-状态：`TPC285_PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC286_PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-285 proof 为
+当前 TPC-286 proof 为
+`bridge_b_diagonal_deletion_attachment_ledger.md`，checker 为
+`tpc_bridge_b_diagonal_deletion_attachment_ledger_checker.py`，编号论文为
+`../../papers/tpc-286-diagonal-deletion-attachment-ledger/`。
+
+TPC-286 承接 TPC-285，将 centered residue block 与物理 deleted-diagonal operator
+之间的缺项显式写成 diagonal-including output、diagonal correction 与 physical output
+的精确线性分解：`g_phys=g_full-g_diag`，并有 `C_phys=C_full-C_diag`。在 TPC-284
+的全部 72 个 controls 上，三类 component interval 均 sign-separated；full/physical
+有 15 个 sign flips，对角修正与 physical 相反 30 行，严格大于 physical 绝对幅度
+21 行。该结果是有限 sensitivity ledger，不是 asymptotic diagonal dominance 或
+signed full-shell cancellation theorem；arithmetic `L2`、fixed-power credit、full Gate B
+与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC286_MAXIMUM_CLAIM = PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER
+TPC286_ROUTE_ADVANCE = YES_SCOPED_EXACT_DIAGONAL_SPLIT_AND_FINITE_SENSITIVITY_LEDGER
+TPC286_ATTACHMENT_SPLIT = PROVED_EXACT_LINEARITY
+TPC286_COMPONENT_SIGN_LEDGER = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC286_FULL_VS_PHYSICAL_FLIPS = NUMERICALLY_CERTIFIED_FINITE_15_ROWS
+TPC286_DIAGONAL_OPPOSITION = NUMERICALLY_CERTIFIED_FINITE_30_ROWS
+TPC286_DIAGONAL_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_21_ROWS
+TPC286_ASYMPTOTIC_DIAGONAL_DOMINANCE = OPEN
+TPC286_SIGNED_FULL_SHELL_CANCELLATION = OPEN
+TPC286_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC286_FIXED_POWER_CREDIT = 0
+TPC286_FULL_GATE_B = OPEN
+TPC286_TWIN_PRIME_RESULT = NONE
+TPC286_STATUS = PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER
+TPC286_ROUND2_CLUE = SEEK_SIGNED_FULL_SHELL_CANCELLATION_AFTER_DIAGONAL_ATTACHMENT_LEDGER
+```
+
+TPC-285 upstream proof 为
 `bridge_b_prime_shell_residue_rank_obstruction.md`，checker 为
 `tpc_bridge_b_prime_shell_residue_rank_obstruction_checker.py`，编号论文为
 `../../papers/tpc-285-prime-shell-residue-rank-obstruction/`。

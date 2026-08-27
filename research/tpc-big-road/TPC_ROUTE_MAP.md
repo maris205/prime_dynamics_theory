@@ -2,19 +2,38 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V138 / TPC-285
+当前地图版本：V139 / TPC-286
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-285`（`PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK`）；
+当前编号锚点：`TPC-286`（`PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER`）；
 对应论文目录为
-`papers/tpc-285-prime-shell-residue-rank-obstruction/`。
-TPC-285 承接 TPC-284，精确证明 centered residue block
-`B_q=R_q(I-11^T/(q-1))R_q^T` 的 `q-2` rank structure；但物理 deleted-diagonal
-block 在 full nonzero-class coverage 下恢复 full active rank。20 个 registered
-prime/exponent rows 的 kernel Schur blocks 另由模 `1000000007` 的独立 witness 认证
-full active rank。该结果关闭“仅靠 residue low rank 就得到 physical arithmetic `L2`”
-的直接 shortcut，但不关闭 signed cross-prime cancellation 或 full Gate B。
+`papers/tpc-286-diagonal-deletion-attachment-ledger/`。
+TPC-286 承接 TPC-285，精确拆分 diagonal-including prime-shell output、显式 diagonal
+correction 与 physical deleted-diagonal output：`g_phys=g_full-g_diag`，并由 attachment
+linearity 得到 `C_phys=C_full-C_diag`。在 TPC-284 的全部 72 个 controls 上，full、
+diagonal、physical 三类 interval 均 sign-separated；full/physical 有 15 个 flips，
+diagonal 与 physical 相反 30 行，严格大于 physical 绝对幅度 21 行。该结果关闭“可以
+忽略 deleted diagonal”的 shortcut，但不关闭 asymptotic diagonal dominance、signed
+cross-prime cancellation、arithmetic `L2` 或 full Gate B。
+
+```text
+TPC286_MAXIMUM_CLAIM = PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER
+TPC286_ROUTE_ADVANCE = YES_SCOPED_EXACT_DIAGONAL_SPLIT_AND_FINITE_SENSITIVITY_LEDGER
+TPC286_ATTACHMENT_SPLIT = PROVED_EXACT_LINEARITY
+TPC286_COMPONENT_SIGN_LEDGER = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC286_FULL_VS_PHYSICAL_FLIPS = NUMERICALLY_CERTIFIED_FINITE_15_ROWS
+TPC286_DIAGONAL_OPPOSITION = NUMERICALLY_CERTIFIED_FINITE_30_ROWS
+TPC286_DIAGONAL_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_21_ROWS
+TPC286_ASYMPTOTIC_DIAGONAL_DOMINANCE = OPEN
+TPC286_SIGNED_FULL_SHELL_CANCELLATION = OPEN
+TPC286_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC286_FIXED_POWER_CREDIT = 0
+TPC286_FULL_GATE_B = OPEN
+TPC286_TWIN_PRIME_RESULT = NONE
+TPC286_STATUS = PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER
+TPC286_ROUND2_CLUE = SEEK_SIGNED_FULL_SHELL_CANCELLATION_AFTER_DIAGONAL_ATTACHMENT_LEDGER
+```
 
 ```text
 TPC285_MAXIMUM_CLAIM = PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK
@@ -116,6 +135,51 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.80 V139 / TPC-286：diagonal-deletion attachment ledger
+
+TPC-286 是 TPC-285 的直接下一桥。它把 centered residue block 的含对角版本与物理
+deleted-diagonal 版本放在同一个 finite shell 上：
+
+```text
+g_phys = g_full - g_diag,
+g_diag(u) = sum_(q in shell) q K_H(0)(q-2)/(q-1)m_q(u)beta(u),
+C_phys = C_full - C_diag.
+```
+
+第一行是任意有限声明 shell 的 exact linear identity，第三行使用当前四-block
+attachment 对 output 的线性。随后对六个 baseline tuples、两个 kernel exponents 和
+六类 `H±2/z±1/Q±1` controls 做 72-row ledger：full component 为 49 negative/23
+positive，diagonal component 为 34/38，physical component 为 60/12；全部三类 interval
+均与零分离。15 行发生 full/physical sign flip，30 行 diagonal sign 与 physical 相反，
+21 行的 diagonal absolute lower bound 严格超过 physical absolute upper bound，ratio
+lower bound 超过 2 和 10 的行数分别为 13 和 4。
+
+这一步把“diagonal deletion 可能重要”推进为可复核的 component-level obstruction，
+但不把有限 dominance 推成 growing theorem。下一块桥面是：在显式 diagonal correction
+已经分离后，寻找 signed full-shell cancellation 或适用的 singular-value estimate；
+literal arithmetic `L2`、fixed-power credit 与 full Gate B 仍 open。
+
+```text
+TPC286_ROUTE_ADVANCE = YES_SCOPED_EXACT_DIAGONAL_SPLIT_AND_FINITE_SENSITIVITY_LEDGER
+TPC286_ATTACHMENT_SPLIT = PROVED_EXACT_LINEARITY
+TPC286_COMPONENT_SIGN_LEDGER = NUMERICALLY_CERTIFIED_FINITE_72_ROWS
+TPC286_FULL_VS_PHYSICAL_FLIPS = NUMERICALLY_CERTIFIED_FINITE_15_ROWS
+TPC286_DIAGONAL_OPPOSITION = NUMERICALLY_CERTIFIED_FINITE_30_ROWS
+TPC286_DIAGONAL_DOMINANCE = NUMERICALLY_CERTIFIED_FINITE_21_ROWS
+TPC286_ASYMPTOTIC_DIAGONAL_DOMINANCE = OPEN
+TPC286_SIGNED_FULL_SHELL_CANCELLATION = OPEN
+TPC286_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC286_FIXED_POWER_CREDIT = 0
+TPC286_FULL_GATE_B = OPEN
+TPC286_TWIN_PRIME_RESULT = NONE
+TPC286_STATUS = PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER
+TPC286_ROUND2_CLUE = SEEK_SIGNED_FULL_SHELL_CANCELLATION_AFTER_DIAGONAL_ATTACHMENT_LEDGER
+```
+
+地图位置：**V139 / TPC-286 已把 centered/physical 缺项精确拆成 diagonal ledger；
+下一座桥是显式分离后的 signed full-shell cancellation，而不是再使用未付费的低秩
+替代。**
 
 ## 5.79 V138 / TPC-285：prime-shell residue factorization and rank obstruction
 
@@ -657,9 +721,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V138 / TPC-285                    |
-        | RESIDUE FACTORIZATION / DIAGONAL RANK       |
-        | centered low rank; physical full rank       |
+        | YOU ARE HERE — V139 / TPC-286                    |
+        | DIAGONAL SPLIT / ATTACHMENT LEDGER          |
+        | full = physical + diagonal correction      |
         +--------------------------------------------------+
                 |
                 v
@@ -5646,6 +5710,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V139 / TPC-286 | Bridge A / Gate B：diagonal-including 与 physical deleted-diagonal attachment 已精确拆分；asymptotic dominance、signed full-shell cancellation、arithmetic `L2` 与 full Gate B open | `TPC-286` | 证明 `g_phys=g_full-g_diag` 与 `C_phys=C_full-C_diag`；完成 72-row 三分量 ledger（full/diagonal/physical sign-separated），15 个 full/physical flips、30 个 diagonal-opposition rows、21 个严格 diagonal-dominance rows，fixed-power credit 为 0，下一步为 split 后的 signed full-shell cancellation |
 | 2026-08-27 | V138 / TPC-285 | Bridge A / Gate B：prime-shell centered factorization 与 deleted-diagonal full-rank theorem 已完成；signed full-shell cancellation、arithmetic `L2` 与 full Gate B open | `TPC-285` | 精确证明 `B_q=R_q(I-11^T/(q-1))R_q^T`、rank `<=q-2`，并证明 deleted diagonal 在 full class coverage 下恢复 full active rank；20 个 kernel-Schur rows 通过独立模素数 rank witness，fixed-power credit 为 0 |
 | 2026-08-27 | V137 / TPC-284 | Bridge A / Gate B：finite declared source-control atlas 已完成；asymptotic control stability、literal source class、arithmetic `L2` 与 full Gate B open | `TPC-284` | 对 `H±2`、`z±1`、`Q±1` 六类 controls 完成 72-row literal replay（60 negative / 12 positive / 0 crossing），发现 8 个相对 baseline 的 sign flips，最弱 controlled `rho^2` 下界约 `1.4118e-5`，fixed-power credit 为 0，下一步为 source-class constraints 与 growing control-stability theorem |
 | 2026-08-27 | V136 / TPC-283 | Bridge A / Gate B：source-attachment zeroing radius 已精确化；admissible source stability、arithmetic `L2` 与 full Gate B open | `TPC-283` | 证明到 zero-attachment hyperplane 的最短距离公式；TPC-282 的 12 rows 全部在信息模型中小于 `3/10`、6 行小于 `1/10`，fixed-power credit 为 0，下一步为 cutoff/clock/shell controls 的 admissible stability |
