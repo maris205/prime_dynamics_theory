@@ -1,11 +1,48 @@
-# TPC big road V124 / TPC-271: phase--radius decoupling
+# TPC big road V125 / TPC-272: correlation-margin budget
 
 更新时间：2026-08-27
 
-状态：`TPC271_NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC272_PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-272 proof 为
+`bridge_b_correlation_margin_budget.md`，checker 为
+`tpc_bridge_b_correlation_margin_budget_checker.py`，编号论文为
+`../../papers/tpc-272-correlation-margin-budget-compiler/`。
+
+TPC-272 在不改变 TPC-271 physical interface 的前提下定义
+`m=|C_perp|/R`，并由 exact identity `m^6=Xi_C/Xi` 进行 rational interval
+certification。新的 conditional compiler 是：scalar effective saving `sigma`
+与 margin loss `eta` 合并为 endpoint saving `sigma-eta`，严格目标条件为
+`sigma-eta>1/400`。二维 exact witness 表明 negative phase sign alone 不能给出
+任何正的 margin lower bound。9 个 rows 与 4 个 dyadic ratios 通过独立 replay 和
+hostile stress；`96->192` 的 sixth-power margin ratio `<(1/32)^6` 且 phase sign
+保持不变。这是 scoped conditional/finite result，不是 source-level margin theorem；
+fixed-power credit、arithmetic `L2`、full Gate-B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC272_MAXIMUM_CLAIM = PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER
+TPC272_ROUTE_ADVANCE = YES_SCOPED_CONDITIONAL_MARGIN_BUDGET_AND_FINITE_AUDIT
+TPC272_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL
+TPC272_MARGIN_IDENTITY = PROVED_EXACT_FINITE
+TPC272_SHARP_CONVERSE = PROVED_EXACT
+TPC272_FINITE_MARGIN_AUDIT = NUMERICALLY_CERTIFIED
+TPC272_SOURCE_LEVEL_MARGIN = OPEN_ASYMPTOTIC
+TPC272_FIXED_POWER_CREDIT = 0
+TPC272_ARITHMETIC_ADVANCE = NO
+TPC272_L2 = NONE
+TPC272_FULL_GATE_B = OPEN
+TPC272_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC272_TWIN_PRIME_RESULT = NONE
+TPC272_STATUS = PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER
+TPC272_ROUND2_CLUE = AUDIT_SOURCE_LEVEL_MARGIN_LOWER_BOUND_BEFORE_ANY_PHASE_PROMOTION
+```
+
+strongest positive result：`sigma-eta` strict budget compiler；strongest obstruction：
+sign-only phase has no quantitative margin; open theorem：source-level literal V59 margin
+lower bound。
 
 当前 TPC-271 proof 为
 `bridge_b_phase_radius_decoupling.md`，checker 为

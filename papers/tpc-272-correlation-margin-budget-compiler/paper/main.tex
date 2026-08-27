@@ -1,0 +1,264 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\newcommand{\Cp}{C_{\perp}}
+\newcommand{\Wp}{W_{\perp}}
+\newcommand{\Gp}{G_{\perp}}
+\newcommand{\Rtwo}{R^2}
+\newcommand{\XiN}{\mathsf{Xi}}
+\newcommand{\Xic}{\mathsf{Xi}_{C}}
+\newcommand{\marg}{m}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+
+\title{A Correlation-Margin Budget for the V59 Residual}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{27 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The residual endpoint in the twin-prime analytic route contains a signed
+scalar and an orthogonal-complement radius.  A small scalar is useful only if
+its correlation with the radius is quantitatively protected.  We define
+\(m=|C_{\perp}|/R\) and prove an exact conditional compiler: if the scalar has
+effective saving \(\sigma\) and \(m\gg x^{-\eta}\), then the endpoint has
+effective saving \(\sigma-\eta\).  For the current baseline exponent
+\(E_0=5/3\) and target \(E_*=1997/1200\), the strict payment is
+\(\sigma-\eta>1/400\).  A sharp two-dimensional construction proves that a
+negative phase sign alone gives no positive lower bound on \(m\).  Finally,
+we convert the TPC-271 finite certificate to exact rational \(m^6\) intervals:
+the \(96\to192\) sixth-power margin ratio is below \((1/32)^6\) while the
+phase sign remains negative.  The result is a conditional theorem and a
+finite numerical audit, not a source-level estimate or a twin-prime proof.
+\end{abstract}
+
+\section{Position and scope}
+
+The TPC chain studies a literal finite V59 operator with prime shell, unit
+masks, deleted diagonal, source \(\beta\), a registered growing cutoff, and a
+rank-three block projection.  TPC-271 put the signed residual scalar and the
+two residual norm lanes into one certificate.  Its exact coordinates were
+\[
+ \Cp=\langle(I-P_3)w,(I-P_3)g\rangle,\quad
+ \Wp=\|(I-P_3)w\|^2,\quad \Gp=\|(I-P_3)g\|^2,
+\]
+\[
+ \Rtwo=\Wp\Gp,\qquad
+ \XiN=\frac{(\Wp\Gp)^3}{N^{10}},\qquad
+ \Xic=\frac{|\Cp|^6}{N^{10}}.
+\]
+The present paper asks which additional hypothesis would turn a signed
+scalar estimate into an endpoint estimate, and whether the observed phase
+label supplies that hypothesis.
+
+The claim ceiling is explicit:
+\[
+ \texttt{PROVED\_CONDITIONAL},\quad
+ \texttt{PROVED\_EXACT},\quad
+ \texttt{NUMERICALLY\_CERTIFIED},
+\]
+with source-level margin, arithmetic \(L^2\), full Gate B, and the
+twin-prime conclusion all still open.
+
+\section{The correlation coordinate}
+
+On a row with positive residual lanes define
+\[
+ R=\sqrt{\Wp\Gp},\qquad \marg=\frac{|\Cp|}{R}.
+\]
+By Cauchy--Schwarz, \(0\leq\marg\leq1\); the paper works with
+\(\marg>0\).  The sixth-power coordinates eliminate the algebraic square
+root.
+
+\begin{lemma}[exact margin identity]
+On every positive row with \(\Cp\ne0\),
+\[
+ \marg^6=\frac{\Xic}{\XiN},\qquad
+ \frac{\XiN}{\Xic}=\marg^{-6}.
+\]
+\end{lemma}
+
+\begin{proof}
+Substitution gives
+\[
+ \marg^6=\frac{|\Cp|^6}{(\Wp\Gp)^3}
+ =\frac{|\Cp|^6/N^{10}}{(\Wp\Gp)^3/N^{10}}
+ =\frac{\Xic}{\XiN}.
+\]
+The reciprocal identity is immediate.  All divisions are by positive
+quantities.
+\end{proof}
+
+This identity gives a practical certificate: outward intervals for \(\Xic\)
+and \(\XiN\) yield an outward interval for \(\marg^6\), with no floating-point
+root extraction.
+
+\section{The endpoint budget}
+
+We now state the new analytic bridge independently of the finite experiment.
+Let \(E_0=5/3\), \(E_*=1997/1200\), so that
+\[
+ E_0-E_* = \frac{1}{400}.
+\]
+
+\begin{theorem}[conditional correlation-margin compiler]
+Suppose that for all sufficiently large \(x\), with fixed \(A,b>0\),
+\(\sigma\), and \(\eta\geq0\),
+\[
+ |\Cp(x)|\leq A x^{E_0-\sigma+\varepsilon},
+ \qquad
+ \marg(x)\geq b x^{-\eta-\varepsilon}.
+ \tag{2.1}
+\]
+Then
+\[
+ |\Cp(x)|+R(x)
+ \leq A(1+b^{-1})x^{E_0-\sigma+\eta+2\varepsilon}
+ \tag{2.2}
+\]
+after an inessential enlargement of the constant.  In particular, the
+endpoint beats \(E_*\) with a positive power saving whenever
+\[
+ \sigma-\eta>\frac{1}{400}.
+ \tag{2.3}
+\]
+If a raw scalar estimate has saving \(\delta_c\) and loss \(\lambda_c\),
+then \(\sigma=\delta_c-\lambda_c\), and the condition is
+\(\delta_c-\lambda_c-\eta>1/400\).
+\end{theorem}
+
+\begin{proof}
+The definition of the margin gives \(R=|\Cp|/\marg\).  Applying (2.1),
+\[
+ R(x)\leq A b^{-1}x^{E_0-\sigma+\eta+2\varepsilon}.
+\]
+Adding the scalar term proves (2.2), after increasing the constant for
+\(x\geq1\).  Since \(E_0-E_*=1/400\), the exponent in (2.2) is strictly
+below \(E_*\) after choosing \(\varepsilon\) smaller than the strict gap in
+(2.3).  No assertion is made here that either hypothesis in (2.1) holds for
+the growing V59 object.
+\end{proof}
+
+The theorem isolates the missing payment.  A phase or sign statement without
+an exponent for \(\marg\) has no place in (2.3); conversely, a scalar saving
+alone is insufficient because the radius can be larger by \(\marg^{-1}\).
+
+\section{Sharp sign-only converse}
+
+\begin{proposition}[two-dimensional sharpness]
+For every \(W,G>0\) and every \(0<m\leq1\), there are real vectors with
+\(\|w\|^2=W\), \(\|g\|^2=G\), negative scalar phase, and margin exactly
+\(m\).  Consequently, phase sign and the two norm lanes imply no positive
+lower bound for the margin.
+\end{proposition}
+
+\begin{proof}
+In \(\mathbb R^2\), take
+\[
+ w=(\sqrt W,0),\qquad
+ g=\sqrt G\,(-m,\sqrt{1-m^2}).
+\]
+Then \(\langle w,g\rangle=-\sqrt{WG}m\), while the squared norms are \(W\)
+and \(G\).  Hence \(R=\sqrt{WG}\) and \(|\langle w,g\rangle|/R=m\).
+The scalar is strictly negative for every allowed \(m\), and \(m\to0\)
+makes the radius-to-scalar ratio diverge.  This realizes the full interval of
+possible margins and proves sharpness.
+\end{proof}
+
+The proposition is a structural obstruction, not a counterexample to the
+literal V59 source.  It says exactly which extra source-level statement must
+be supplied before the conditional compiler can be activated.
+
+\section{Finite margin audit}
+
+The producer consumes the committed TPC-271 rows without changing their
+operator or cutoff.  It forms \(\Xic/\XiN\) by positive rational interval
+division.  The following table displays decimal approximations; the committed
+JSON stores exact rational endpoints.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{c c c}
+\toprule
+row & interval for \(m^6\) (display) & classification\\
+\midrule
+64 & [4.1866,4.1888]$\times10^{-4}$ & $m>1/8$\\
+96 & [7.2423,7.2455]$\times10^{-4}$ & $m>1/8$\\
+128 & [3.7810,3.7841]$\times10^{-6}$ & $1/32<m<1/8$\\
+192 & [1.4608,1.4755]$\times10^{-13}$ & $m<1/32$\\
+256 & [1.4959,1.4997]$\times10^{-9}$ & $1/32<m<1/8$\\
+384 & [9.0122,9.0325]$\times10^{-10}$ & $m<1/32$\\
+\bottomrule
+\end{tabular}
+\caption{Base-row sixth-power margin intervals.  The thresholds are compared
+exactly in the certificate.}
+\end{table}
+
+For the four dyadic base pairs, the sixth-power margin ratios are approximately
+\[
+ 0.00903,\quad 2.02\times10^{-10},\quad 3.96\times10^{-4},
+ \quad 6.15\times10^3.
+\]
+The second interval is strictly below \((1/32)^6\), while its two endpoint
+phase labels are both \texttt{NEGATIVE\_REAL\_AXIS}.  The last interval is
+strictly above \(4^6\).  Thus the finite data provide a particularly clean hostile
+control for the logical distinction between phase sign and quantitative
+margin.
+
+The parent certificate also contains three \(\theta=1/2\) profile controls;
+the new audit retains them and records nine rows in total.  The independent
+checker reconstructs every fraction from the parent fields, and a separate
+stress script rejects mutations of the collapse threshold, phase lock,
+conditional strictness, converse status, and fixed-power firewall.
+
+\section{Route status and limitations}
+
+The new result has three deliberately different types:
+
+\begin{enumerate}
+\item The margin identity and the two-dimensional converse are exact proofs.
+\item The endpoint compiler is a conditional theorem whose hypotheses are
+      still open for the source-level V59 sequence.
+\item The nine-row margin table is a numerically certified finite audit.
+\end{enumerate}
+
+No finite ratio supplies fixed-power credit.  In particular, the observed
+negative phase is not an eventual phase sector, the finite margin collapse is
+not an asymptotic lower-bound refutation, and the compiler is not an
+arithmetic \(L^2\) estimate.  Route B therefore advances only in the scoped
+conditional sense; full Gate B and the twin-prime conclusion remain open.
+
+\section{Conclusion}
+
+TPC-272 turns the qualitative phrase ``phase--radius coupling'' into an
+explicit budget.  A source-level scalar saving must be accompanied by a
+quantitative margin lower bound, and the two payments combine as
+\(\sigma-\eta\), with strict cost \(1/400\).  The exact converse shows why
+the sign census from TPC-271 cannot fill this gap.  The finite certificate
+confirms the warning: the strongest registered phase-preserving transition
+loses more than a factor 32 in the margin while the radius lane remains
+uncontrolled.  The next admissible task is therefore a source-level margin
+lower-bound audit, not a phase-only promotion.
+
+\begin{thebibliography}{9}
+\bibitem{HW}
+G. H. Hardy and E. M. Wright, \emph{An Introduction to the Theory of Numbers},
+6th ed., Oxford University Press, 2008.
+\bibitem{TPC271}
+L. Wang, ``Phase--Radius Decoupling in a Finite V59 Residual,'' TPC-271
+project release, 2026.
+\end{thebibliography}
+
+\end{document}

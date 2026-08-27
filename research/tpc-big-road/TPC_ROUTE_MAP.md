@@ -2,13 +2,25 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V124 / TPC-271
+当前地图版本：V125 / TPC-272
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-271`（`NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT`）；
+当前编号锚点：`TPC-272`（`PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER`）；
 对应论文目录为
-`papers/tpc-271-phase-radius-decoupling/`。
+`papers/tpc-272-correlation-margin-budget-compiler/`。
+TPC-272 在 TPC-271 的同一个 literal physical operator 上定义
+`m=|C_perp|/R`，证明 `m^6=Xi_C/Xi`，并给出 conditional endpoint compiler：
+scalar effective saving `sigma` 与 margin loss `eta` 合并为 `sigma-eta`，严格目标
+条件为 `sigma-eta>1/400`。二维 sharp converse 证明 negative phase sign alone
+不能给出正的 margin lower bound；9 个 rows/4 个 dyadic ratios 的 finite rational
+audit 中，`96->192` 的 margin sixth-power ratio `<(1/32)^6` 且 phase sign 保持。
+这是 scoped conditional/finite result，source-level margin、arithmetic `L2` 与
+full Gate B 仍 OPEN。
+
+TPC-271 上游 proof 为
+`papers/tpc-271-phase-radius-decoupling/`；它仍保留 exact lane factorization 与
+phase-preserving output-lane spike。
 TPC-271 在 TPC-270 的同一个 literal physical operator、registered
 `z_N=floor(log N)` cutoff 与 profile interface 上，同时记录 signed scalar、source
 lane 与 output lane。精确恒等式 `Xi=Xi_W*Xi_G`、`Xi/Xi_C=|kappa|^(-6)` 通过
@@ -81,9 +93,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V124 / TPC-271                    |
-        | PHASE--RADIUS LANE DECOUPLING                  |
-        | phase locked; output spike; source theorem OPEN|
+        | YOU ARE HERE — V125 / TPC-272                    |
+        | CORRELATION-MARGIN BUDGET                       |
+        | sigma-eta compiler; source margin theorem OPEN |
         +--------------------------------------------------+
                 |
                 v
@@ -1279,6 +1291,50 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.66 V125 / TPC-272：correlation-margin to endpoint-budget compiler
+
+TPC-272 是 TPC-271 的直接分析后续，冻结同一个 literal V59 finite physical
+operator、cutoff、profile interface 与 rank-three projection。定义
+
+```text
+m = |C_perp|/R,
+m^6 = Xi_C/Xi,
+Xi/Xi_C = m^(-6).
+```
+
+在 `E0=5/3`、`E*=1997/1200` 的 endpoint ledger 中，source-level signed scalar
+effective saving `sigma` 与 margin loss `eta` 精确编译为 endpoint saving
+`sigma-eta`；严格目标条件是 `sigma-eta>1/400`。二维 exact witness 证明
+negative phase sign alone 不能给出正的 margin lower bound。由 TPC-271 parent
+certificate 派生的 9 个 rows 与 4 个 dyadic ratios 用 exact rational division
+认证；`96->192` 的 margin sixth-power ratio `<(1/32)^6`，同时 phase sign 保持
+`NEGATIVE_REAL_AXIS`，`192->384` 则 `>4^6`。
+
+这是一个 conditional theorem 与 finite numerical audit 的组合，不是 source-level
+margin theorem、arithmetic `L2` 或 full Gate B closure。
+
+```text
+TPC272_ROUTE_ADVANCE = YES_SCOPED_CONDITIONAL_MARGIN_BUDGET_AND_FINITE_AUDIT
+TPC272_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL
+TPC272_MARGIN_IDENTITY = PROVED_EXACT_FINITE
+TPC272_SHARP_CONVERSE = PROVED_EXACT
+TPC272_FINITE_MARGIN_AUDIT = NUMERICALLY_CERTIFIED
+TPC272_SOURCE_LEVEL_MARGIN = OPEN_ASYMPTOTIC
+TPC272_SOURCE_LEVEL_SIGNED_SCALAR = OPEN_ASYMPTOTIC
+TPC272_FIXED_POWER_CREDIT = 0
+TPC272_ARITHMETIC_ADVANCE = NO
+TPC272_L2 = NONE
+TPC272_FULL_GATE_B = OPEN
+TPC272_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC272_TWIN_PRIME_RESULT = NONE
+TPC272_STATUS = PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER
+TPC272_ROUND2_CLUE = AUDIT_SOURCE_LEVEL_MARGIN_LOWER_BOUND_BEFORE_ANY_PHASE_PROMOTION
+```
+
+地图位置：**V125 / TPC-272 已把 phase--radius 语言压成可计算的
+`sigma-eta` budget；下一座桥是实际证明 source-level margin lower bound，或在
+同一 physical object 上给出其稳定性 obstruction。**
 
 ## 5.65 V124 / TPC-271：phase--radius decoupling and lane attribution
 
@@ -3770,7 +3826,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V124 / TPC-271：
+截至 V125 / TPC-272：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -3779,6 +3835,21 @@ FIXED_ATOM_CREDIT = 0
 TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
 FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 L2 = NONE
+TPC272_ROUTE_ADVANCE = YES_SCOPED_CONDITIONAL_MARGIN_BUDGET_AND_FINITE_AUDIT
+TPC272_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL
+TPC272_MARGIN_IDENTITY = PROVED_EXACT_FINITE
+TPC272_SHARP_CONVERSE = PROVED_EXACT
+TPC272_FINITE_MARGIN_AUDIT = NUMERICALLY_CERTIFIED
+TPC272_SOURCE_LEVEL_MARGIN = OPEN_ASYMPTOTIC
+TPC272_SOURCE_LEVEL_SIGNED_SCALAR = OPEN_ASYMPTOTIC
+TPC272_FIXED_POWER_CREDIT = 0
+TPC272_ARITHMETIC_ADVANCE = NO
+TPC272_L2 = NONE
+TPC272_FULL_GATE_B = OPEN
+TPC272_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC272_TWIN_PRIME_RESULT = NONE
+TPC272_STATUS = PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER
+TPC272_ROUND2_CLUE = AUDIT_SOURCE_LEVEL_MARGIN_LOWER_BOUND_BEFORE_ANY_PHASE_PROMOTION
 TPC_262_TRIGGER = true
 TPC_263_TRIGGER = true
 TPC_264_TRIGGER = true
@@ -4487,7 +4558,15 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
-0. **TPC-271 已完成：phase--radius decoupling and lane attribution**。在 TPC-270
+0. **TPC-272 已完成：correlation-margin to endpoint-budget compiler**。在 TPC-271
+   的同一 finite interface 上定义 `m=|C_perp|/R`，证明 `m^6=Xi_C/Xi`，并将
+   scalar effective saving `sigma` 与 margin loss `eta` 编译为 endpoint saving
+   `sigma-eta`；严格目标条件为 `sigma-eta>1/400`。二维 exact converse 证明
+   negative phase sign alone 不能给出正 margin。9 行/4 个 dyadic finite records 中
+   `96->192` 的 margin sixth-power ratio `<(1/32)^6` 且 phase sign 保持。下一关是
+   source-level margin lower bound；不得把 conditional compiler 当作已支付的
+   source theorem。
+0a. **TPC-271 已完成：phase--radius decoupling and lane attribution**。在 TPC-270
    的同一 finite interface 上证明 `Xi=Xi_W*Xi_G` 与
    `Xi/Xi_C=|kappa|^(-6)`；9 行 phase 全为负实轴，而 `96->192` 的 radius ratio
    `>23` 由 source lane `<1/8` 与 output lane `>230` 驱动。下一关是
@@ -4766,6 +4845,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V125 / TPC-272 | Bridge A / Gate B：correlation-margin endpoint budget 已完成；source-level margin、arithmetic `L2` 与 full Gate B open | `TPC-272` | exact `m^6=Xi_C/Xi`、conditional `sigma-eta>1/400` compiler 与二维 sign-only sharp converse；9 行/4 个 dyadic finite margin audit，`96->192` margin ratio `<(1/32)^6` 且 phase sign 保持；不产生 fixed-power credit，下一关为 source-level margin lower bound |
 | 2026-08-27 | V124 / TPC-271 | Bridge A / Gate B：finite phase--radius lane attribution 已完成；source-level phase/radius、arithmetic `L2` 与 full Gate B open | `TPC-271` | exact `Xi=Xi_W*Xi_G` 与 `Xi/Xi_C=|kappa|^(-6)`；9 行 phase 全为负实轴，但 `96->192` radius `>23` 由 source `<1/8`、output `>230` 驱动；不构成渐近 phase/radius theorem，下一关为 coupled source-level signed-phase/radius-lane control |
 | 2026-08-27 | V123 / TPC-270 | Bridge A / Gate B：cross-scale endpoint-normalized radius audit 已完成；source-level radius、arithmetic `L2` 与 full Gate B open | `TPC-270` | exact `Xi=(R_squared)^3/N^10`；6 base、4 dyadic、5 adjacent、3 profile controls 通过独立与 stress audit，dyadic `DROP_RISE_RISE_DROP`（含 `>23` rise 与 `<1/4` drop），不构成渐近 radius theorem，下一关为 source-level explicit-power radius bound |
 | 2026-08-26 | V122 / TPC-269 | Bridge A / Gate B：growing-cutoff/profile transfer 已完成；cross-scale radius、arithmetic `L2` 与 full Gate B open | `TPC-269` | 注册 `z_N=floor(log N)` proxy 与 convex profile path 的 12 个 finite rows 中 8 个 contraction、4 个 obstruction；central `9/10`/`24/25` profile flip，仍不构成 source-level growing theorem，下一关为 cross-scale radius normalization |

@@ -1,9 +1,62 @@
 # TPC HANDOFF
 
 更新时间：2026-08-27
-交接状态：`BOLD_CHANNEL_V124_TPC271_FINITE_PHASE_RADIUS_DECOUPLING_RELEASED`
+交接状态：`BOLD_CHANNEL_V125_TPC272_CORRELATION_MARGIN_BUDGET_RELEASED`
 
-TPC-271 当前 section：phase--radius decoupling and lane attribution
+TPC-272 当前 section：correlation-margin to endpoint-budget compiler
+-----------------------------------------------------------------------------------------------
+
+TPC-272 is the controlled continuation of TPC-271.  It freezes the same finite literal V59
+operator and defines the quantitative correlation margin
+
+```text
+m = |C_perp|/R
+m^6 = Xi_C/Xi
+Xi/Xi_C = m^(-6)
+```
+
+For `E0=5/3` and `E*=1997/1200`, the exact conditional compiler is
+
+```text
+|C_perp| <= A x^(E0-sigma+epsilon)
+m >= b x^(-eta-epsilon), eta>=0
+    => |C_perp|+R <= A(1+b^(-1)) x^(E0-sigma+eta+2 epsilon)
+    => strict target payment: sigma-eta > 1/400.
+```
+
+The two-dimensional witness `w=(sqrt(W),0)`,
+`g=sqrt(G)*(-m,sqrt(1-m^2))` proves exactly that negative phase sign alone gives
+no positive lower bound on `m`.  The parent TPC-271 certificate supplies nine finite
+rows and four dyadic margin records; `96->192` has sixth-power margin ratio below
+`(1/32)^6` with phase sign preserved, while `192->384` is above `4^6`.
+
+```text
+TPC272_MAXIMUM_CLAIM = PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER
+TPC272_ROUTE_ADVANCE = YES_SCOPED_CONDITIONAL_MARGIN_BUDGET_AND_FINITE_AUDIT
+TPC272_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL
+TPC272_MARGIN_IDENTITY = PROVED_EXACT_FINITE
+TPC272_SHARP_CONVERSE = PROVED_EXACT
+TPC272_FINITE_MARGIN_AUDIT = NUMERICALLY_CERTIFIED
+TPC272_SOURCE_LEVEL_MARGIN = OPEN_ASYMPTOTIC
+TPC272_SOURCE_LEVEL_SIGNED_SCALAR = OPEN_ASYMPTOTIC
+TPC272_FIXED_POWER_CREDIT = 0
+TPC272_ARITHMETIC_ADVANCE = NO
+TPC272_L2 = NONE
+TPC272_FULL_GATE_B = OPEN
+TPC272_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC272_TWIN_PRIME_RESULT = NONE
+TPC272_STATUS = PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER
+TPC272_ROUND2_CLUE = AUDIT_SOURCE_LEVEL_MARGIN_LOWER_BOUND_BEFORE_ANY_PHASE_PROMOTION
+```
+
+Strongest positive result: the `sigma-eta` endpoint budget is now an explicit conditional
+theorem.  Strongest obstruction: a fixed negative phase sign is compatible with an
+arbitrarily small margin.  Open theorem: a source-level margin lower bound for literal V59.
+This paper pays no fixed-power credit and does not close arithmetic `L2`, full Gate B, or
+the twin-prime conclusion.  The Session-named `propose.md` and route evaluator files are
+absent from this checkout; the local proof/checker fallback is authoritative.
+
+TPC-271 上游 section：phase--radius decoupling and lane attribution
 -----------------------------------------------------------------------------------------------
 
 TPC-271 is the controlled continuation of TPC-270. It freezes the same finite literal V59
@@ -8570,12 +8623,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V124/TPC-271 是当前 release；其 normal/optimized bridge checker 已追加到下列
-curated cascade，故总数从 101 对更新为 102 对。下列长版本链以 V119/TPC-266 开头的
+V125/TPC-272 是当前 release；其 normal/optimized bridge checker 已追加到下列
+curated cascade，故总数从 102 对更新为 103 对。下列长版本链以 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；二百零四次（102 对）必须都为零，且每一对 stdout
+执行 normal与 optimized只读 checker；二百零六次（103 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -8829,7 +8882,31 @@ python -B research/tpc-big-road/tpc_bridge_b_phase_radius_decoupling_checker.py 
 python -O -B research/tpc-big-road/tpc_bridge_b_phase_radius_decoupling_checker.py --check
 ```
 
+TPC-272 的项目级 producer、independent replay、margin stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-272-correlation-margin-budget-compiler/code/tpc272_correlation_margin_budget_certificate.py --check
+python -O -B papers/tpc-272-correlation-margin-budget-compiler/code/tpc272_correlation_margin_budget_certificate.py --check
+python -B papers/tpc-272-correlation-margin-budget-compiler/experiments/tpc272_independent_checker.py
+python -O -B papers/tpc-272-correlation-margin-budget-compiler/experiments/tpc272_independent_checker.py
+python -B papers/tpc-272-correlation-margin-budget-compiler/experiments/tpc272_margin_stress.py
+python -O -B papers/tpc-272-correlation-margin-budget-compiler/experiments/tpc272_margin_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_correlation_margin_budget_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_correlation_margin_budget_checker.py --check
+```
+
 随后优先读取：
+
+最新 TPC-272 入口：
+
+```text
+papers/tpc-272-correlation-margin-budget-compiler/README.md
+papers/tpc-272-correlation-margin-budget-compiler/PROOF_PACKAGE.md
+papers/tpc-272-correlation-margin-budget-compiler/notes/theorem_ledger.md
+papers/tpc-272-correlation-margin-budget-compiler/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_correlation_margin_budget.md
+research/tpc-big-road/tpc_bridge_b_correlation_margin_budget_checker.py
+```
 
 最新 TPC-271 入口：
 

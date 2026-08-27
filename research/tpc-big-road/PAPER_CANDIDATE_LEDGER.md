@@ -3,11 +3,39 @@
 
 更新时间：2026-08-27
 
-状态：**TPC271_NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC272_PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
+
+## 0.66 当前：TPC-272 correlation-margin to endpoint-budget compiler
+
+项目：`papers/tpc-272-correlation-margin-budget-compiler/`
+
+类型：**PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER**。
+
+TPC-272 承接 TPC-271 的 phase--radius 坐标，定义
+`m=|C_perp|/R`，并证明 exact finite identity
+`m^6=Xi_C/Xi`。在 `E0=5/3`、`E*=1997/1200` 的 endpoint ledger 中，若
+signed scalar 有 effective saving `sigma`、而 margin 只损失 `eta`，则
+`R=|C_perp|/m` 给出 endpoint saving `sigma-eta`；严格支付条件是
+`sigma-eta>1/400`。二维 exact witness 证明 negative phase sign alone 对 `m`
+没有正下界。
+
+由 TPC-271 parent certificate 进行的 9-row/4-dyadic rational audit 显示：
+`96->192` 的 margin sixth-power ratio 严格小于 `(1/32)^6`，而 phase sign 保持
+`NEGATIVE_REAL_AXIS`；`192->384` 则高于 `4^6`。这是真实的新 conditional theorem
+与 finite numerical certificate，但不激活 source-level margin hypothesis，不支付
+fixed-power credit，也不产生 arithmetic `L2`、full Gate B 或 twin-prime conclusion。
+
+```text
+STRONGEST_POSITIVE_RESULT = CONDITIONAL_SIGMA_MINUS_ETA_ENDPOINT_COMPILER
+STRONGEST_OBSTRUCTION = SIGN_ONLY_PHASE_DOES_NOT_LOWER_BOUND_MARGIN
+OPEN_THEOREM = SOURCE_LEVEL_MARGIN_LOWER_BOUND_COUPLED_TO_SIGNED_SCALAR
+REUSABLE_STRUCTURE = Xi_C/Xi -> MARGIN_SIXTH_POWER -> MARGIN_LOSS -> ENDPOINT_BUDGET
+ROUND2_CLUE = AUDIT_SOURCE_LEVEL_MARGIN_LOWER_BOUND_BEFORE_ANY_PHASE_PROMOTION
+```
 
 ## 0.65 当前：TPC-271 phase--radius decoupling
 

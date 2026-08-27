@@ -1,9 +1,43 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V124 / FINITE_PHASE_RADIUS_DECOUPLING`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_PHASE_RADIUS_DECOUPLING_AUDIT`
-编号事实终点：TPC-271；TPC-271 trigger：`true`
+状态：`BOLD_CHANNEL_V125 / CORRELATION_MARGIN_BUDGET`
+claim level：`PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER`
+编号事实终点：TPC-272；TPC-272 trigger：`true`
+
+当前 TPC-272 入口：proof 为
+`research/tpc-big-road/bridge_b_correlation_margin_budget.md`，checker 为
+`tpc_bridge_b_correlation_margin_budget_checker.py`，编号论文为
+`papers/tpc-272-correlation-margin-budget-compiler/`。它在 TPC-271 的同一有限
+坐标上定义 `m=|C_perp|/R`，证明 `m^6=Xi_C/Xi`，并把 source-level signed scalar
+saving `sigma` 与 margin loss `eta` 编译成 endpoint saving `sigma-eta`；严格目标
+条件是 `sigma-eta>1/400`。二维 sharp converse 证明负 phase sign 本身不能保证
+正 margin。9 行/4 个 dyadic finite records 由 exact rational division 认证，
+其中 `96->192` 的 margin sixth-power ratio `<(1/32)^6` 且 phase sign 保持。
+这是条件 theorem 加 finite audit；source-level margin、arithmetic `L2`、full Gate B
+和 twin-prime conclusion 仍 OPEN/NONE，fixed-power credit 仍为 0。
+
+```text
+TPC272_MAXIMUM_CLAIM = PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER
+TPC272_ROUTE_ADVANCE = YES_SCOPED_CONDITIONAL_MARGIN_BUDGET_AND_FINITE_AUDIT
+TPC272_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL
+TPC272_MARGIN_IDENTITY = PROVED_EXACT_FINITE
+TPC272_SHARP_CONVERSE = PROVED_EXACT
+TPC272_FINITE_MARGIN_AUDIT = NUMERICALLY_CERTIFIED
+TPC272_SOURCE_LEVEL_MARGIN = OPEN_ASYMPTOTIC
+TPC272_FIXED_POWER_CREDIT = 0
+TPC272_ARITHMETIC_ADVANCE = NO
+TPC272_L2 = NONE
+TPC272_FULL_GATE_B = OPEN
+TPC272_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC272_TWIN_PRIME_RESULT = NONE
+TPC272_STATUS = PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER
+TPC272_ROUND2_CLUE = AUDIT_SOURCE_LEVEL_MARGIN_LOWER_BOUND_BEFORE_ANY_PHASE_PROMOTION
+```
+
+strongest positive result：`sigma-eta` endpoint budget compiler；strongest obstruction：
+sign-only phase admits arbitrarily small margin；open theorem：literal V59 source-level
+margin lower bound coupled to the signed scalar estimate。
 
 当前 TPC-271 入口：proof 为
 `research/tpc-big-road/bridge_b_phase_radius_decoupling.md`，checker 为

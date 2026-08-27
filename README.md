@@ -9,7 +9,16 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-271 在同一个 literal V59 finite physical operator 上，把 TPC-270
+当前主线状态：TPC-272 在同一个 literal V59 finite physical operator 上，将 TPC-271
+的 phase--radius 坐标编译成一个严格的条件预算：若 signed scalar 有 effective saving
+`sigma` 且相关性裕量 `m=|C_perp|/R` 只损失 `eta`，则 endpoint saving 为 `sigma-eta`，
+严格目标支付为 `sigma-eta>1/400`。二维 exact converse 证明负相位本身不能给出正的
+margin 下界；由 TPC-271 继承的 9 行有限证书显示 `96->192` 的 `m^6` 比值低于
+`(1/32)^6` 而 phase sign 保持不变。这是 `PROVED_CONDITIONAL` 加
+`NUMERICALLY_CERTIFIED` finite audit，不是 source-level margin theorem；fixed-power
+credit、arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+TPC-271 在同一个 literal V59 finite physical operator 上，把 TPC-270
 留下的 normalized radius 与 signed scalar、source lane、output lane 放进同一个
 联合坐标系。六个 base rows 与三个 profile controls 的 residual scalar 全部锁定在
 负实轴；但 `96->192` 的归一化半径比超过 23，source lane 低于 `1/8`、output lane
@@ -91,6 +100,7 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-272-correlation-margin-budget-compiler - 当前阶段 - 证明 `sigma-eta>1/400` 的条件 correlation-margin endpoint compiler，并用二维 sharp converse 否定 sign-only margin；9 行/4 个 dyadic finite margin audit 通过，source-level margin 与 full Gate B 仍 OPEN。
 tpc-271-phase-radius-decoupling - 当前阶段 - 在同一 finite literal V59 operator 上建立 `Xi=Xi_W*Xi_G` 与 `Xi/Xi_C=|kappa|^(-6)` 的 exact lane factorization；9 行 phase 全为负实轴，但 `96->192` 半径比 `>23` 由 output lane `>230` 驱动，仍不构成渐近 theorem。
 tpc-270-cross-scale-radius-normalization - 当前阶段 - 在同一 finite literal V59 operator 上建立 exact `Xi=(R_squared)^3/N^10` endpoint normalization，认证 4 个 dyadic 与 5 个 adjacent scale ratios，得到 `DROP_RISE_RISE_DROP`；profile controls 落在 `(1/2,3/4)`，source-level radius、arithmetic `L2` 与 full Gate B 仍 OPEN。
 tpc-269-growing-cutoff-profile-transfer - 当前阶段 - 在同一 finite literal V59 operator 上引入注册的 growing-cutoff proxy 与 exact convex-profile transfer；12 行中 8 个 contraction、4 个 obstruction，中心 `theta=9/10`/`24/25` 翻转表明 profile-uniform quarter bound 失败，cross-scale radius theorem 仍 OPEN。
