@@ -1,9 +1,45 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V128 / SIGNED_FOUR_PACKET_REASSEMBLY`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT`
-编号事实终点：TPC-275；TPC-275 trigger：`true`
+状态：`BOLD_CHANNEL_V129 / SIGNED_GAIN_ENDPOINT_BUDGET`
+claim level：`PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER`
+编号事实终点：TPC-276；TPC-276 trigger：`true`
+
+当前 TPC-276 入口：proof 为
+`research/tpc-big-road/bridge_b_signed_gain_endpoint_budget.md`，checker 为
+`tpc_bridge_b_signed_gain_endpoint_budget_checker.py`，编号论文为
+`papers/tpc-276-signed-gain-endpoint-budget/`。它冻结 TPC-275 的实际四包 signed
+output，证明 exact `m^2=(D/G)m_D^2`，并给出带
+`eta_eff=max(0,eta_D-gamma/2)` 的 conditional compiler：严格目标为
+`sigma-eta_eff>1/400`。12 个 rows 全部有 `D/G>1`，3 行超过 `m^2=1/16`、5 行超过
+`m^2=1/64`；这些是 finite exact-rational transfer，不能升级为 source-level power
+bound，fixed-power credit 仍为 0，arithmetic `L2`、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+```text
+TPC276_MAXIMUM_CLAIM = PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER
+TPC276_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_MARGIN_RECOVERY
+TPC276_SIGNED_GAIN_MARGIN_IDENTITY = PROVED_EXACT_FINITE
+TPC276_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL_WITH_EFFECTIVE_LOSS_MAX_ZERO_ETA_D_MINUS_GAMMA_OVER_2
+TPC276_FINITE_SIGNED_MARGIN_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_SIGNED_QUARTER_CROSSING = NUMERICALLY_CERTIFIED_FINITE_THREE_ROWS
+TPC276_SIGNED_EIGHTH_CROSSING = NUMERICALLY_CERTIFIED_FINITE_FIVE_ROWS
+TPC276_GAIN_STRICTLY_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_FINITE_POWER_PROMOTION = REFUTED_SCOPED
+TPC276_FIXED_POWER_CREDIT = 0
+TPC276_SOURCE_LEVEL_SIGNED_GAIN = OPEN_ASYMPTOTIC
+TPC276_ARITHMETIC_ADVANCE = NO
+TPC276_L2 = NONE
+TPC276_FULL_GATE_B = OPEN
+TPC276_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC276_TWIN_PRIME_RESULT = NONE
+TPC276_STATUS = PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER
+TPC276_ROUND2_CLUE = SEEK_UNIFORM_SOURCE_LEVEL_SIGNED_GAIN_LOWER_BOUND
+```
+
+strongest positive result：exact signed gain-to-margin bridge plus conditional half-exponent
+endpoint compiler；strongest obstruction：finite `D/G` values do not pay a fixed power；
+open theorem：uniform source-level signed gain lower bound coupled to the margin lane。
 
 当前 TPC-275 入口：proof 为
 `research/tpc-big-road/bridge_b_signed_four_packet_reassembly.md`，checker 为

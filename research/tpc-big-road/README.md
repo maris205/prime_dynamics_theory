@@ -1,11 +1,49 @@
-# TPC big road V128 / TPC-275: signed four-packet reassembly
+# TPC big road V129 / TPC-276: signed-gain endpoint budget
 
 更新时间：2026-08-27
 
-状态：`TPC275_NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC276_PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-276 proof 为
+`bridge_b_signed_gain_endpoint_budget.md`，checker 为
+`tpc_bridge_b_signed_gain_endpoint_budget_checker.py`，编号论文为
+`../../papers/tpc-276-signed-gain-endpoint-budget/`。
+
+TPC-276 冻结 TPC-275 的四个实际 source-block packets 与 signed Gram output，证明
+exact `m^2=(D/G)m_D^2`。若 source-level `D/G>=b*x^gamma` 后续成立，则 margin 的
+有效损失是 `eta_eff=max(0,eta_D-gamma/2)`，strict endpoint compiler 要求
+`sigma-eta_eff>1/400`。六个 scale triples、`s=1,2` 的 12 rows 由 exact rational
+transfer 认证全部 `D/G>1`，3 行超过 quarter、5 行超过 eighth；有限 gain 不产生
+fixed-power credit，source-level gain、arithmetic `L2`、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+```text
+TPC276_MAXIMUM_CLAIM = PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER
+TPC276_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_MARGIN_RECOVERY
+TPC276_SIGNED_GAIN_MARGIN_IDENTITY = PROVED_EXACT_FINITE
+TPC276_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL_WITH_EFFECTIVE_LOSS_MAX_ZERO_ETA_D_MINUS_GAMMA_OVER_2
+TPC276_FINITE_SIGNED_MARGIN_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_SIGNED_QUARTER_CROSSING = NUMERICALLY_CERTIFIED_FINITE_THREE_ROWS
+TPC276_SIGNED_EIGHTH_CROSSING = NUMERICALLY_CERTIFIED_FINITE_FIVE_ROWS
+TPC276_GAIN_STRICTLY_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_FINITE_POWER_PROMOTION = REFUTED_SCOPED
+TPC276_FIXED_POWER_CREDIT = 0
+TPC276_SOURCE_LEVEL_SIGNED_GAIN = OPEN_ASYMPTOTIC
+TPC276_ARITHMETIC_ADVANCE = NO
+TPC276_L2 = NONE
+TPC276_FULL_GATE_B = OPEN
+TPC276_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC276_TWIN_PRIME_RESULT = NONE
+TPC276_STATUS = PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER
+TPC276_ROUND2_CLUE = SEEK_UNIFORM_SOURCE_LEVEL_SIGNED_GAIN_LOWER_BOUND
+```
+
+strongest positive result：exact `m^2=(D/G)m_D^2` and conditional effective-loss compiler；
+strongest obstruction：finite `D/G` data do not imply a growing power bound；open theorem：
+uniform source-level signed gain with margin control。
 
 当前 TPC-275 proof 为
 `bridge_b_signed_four_packet_reassembly.md`，checker 为

@@ -2,20 +2,106 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V128 / TPC-275
+当前地图版本：V129 / TPC-276
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-275`（`NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT`）；
+当前编号锚点：`TPC-276`（`PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER`）；
 对应论文目录为
-`papers/tpc-275-signed-four-packet-reassembly/`。
-TPC-275 在同一个 literal V59 finite physical operator 上保留四个实际 source-block
-packets `V_j=A_perp beta^(j)`，证明 exact signed Gram、四点 DFT 与 real polarization
-identities，并在 12 个 growing-cutoff rows 上 exact-replay 认证 `G-D<0`、
-`1<D/G<12/5`、`F/G>50` 与 `m_D^2<1/16`。这是 signed reassembly 的
-`YES_SCOPED` finite advance；source-level signed cross-Gram、margin/endpoint payment、
-fixed-power credit、arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+`papers/tpc-276-signed-gain-endpoint-budget/`。
+TPC-276 在同一个 literal V59 finite physical operator 上冻结 TPC-275 的四个实际
+source-block packets，证明 exact `m^2=(D/G)m_D^2`，并给出
+`eta_eff=max(0,eta_D-gamma/2)` 下的 conditional strict budget
+`sigma-eta_eff>1/400`。12 个 rows 全部有 `D/G>1`，其中 3 行超过 `m^2=1/16`、5 行
+超过 `m^2=1/64`；这是 signed-gain margin recovery 的 scoped advance。有限 gain 不
+产生 fixed-power credit，source-level gain、arithmetic `L2`、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
 
+```text
+TPC276_MAXIMUM_CLAIM = PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER
+TPC276_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_MARGIN_RECOVERY
+TPC276_SIGNED_GAIN_MARGIN_IDENTITY = PROVED_EXACT_FINITE
+TPC276_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL_WITH_EFFECTIVE_LOSS_MAX_ZERO_ETA_D_MINUS_GAMMA_OVER_2
+TPC276_FINITE_SIGNED_MARGIN_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_SIGNED_QUARTER_CROSSING = NUMERICALLY_CERTIFIED_FINITE_THREE_ROWS
+TPC276_SIGNED_EIGHTH_CROSSING = NUMERICALLY_CERTIFIED_FINITE_FIVE_ROWS
+TPC276_GAIN_STRICTLY_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_FINITE_POWER_PROMOTION = REFUTED_SCOPED
+TPC276_FIXED_POWER_CREDIT = 0
+TPC276_SOURCE_LEVEL_SIGNED_GAIN = OPEN_ASYMPTOTIC
+TPC276_ARITHMETIC_ADVANCE = NO
+TPC276_L2 = NONE
+TPC276_FULL_GATE_B = OPEN
+TPC276_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC276_TWIN_PRIME_RESULT = NONE
+TPC276_STATUS = PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER
+TPC276_ROUND2_CLUE = SEEK_UNIFORM_SOURCE_LEVEL_SIGNED_GAIN_LOWER_BOUND
+```
+
+strongest positive result：exact signed gain-to-margin bridge and conditional half-exponent
+endpoint compiler；strongest obstruction：finite `D/G` data do not imply a growing power
+bound；open theorem：uniform source-level signed gain lower bound coupled to margin control。
+
+## 5.70 V129 / TPC-276：signed-gain margin recovery and strict endpoint budget
+
+TPC-276 是 TPC-275 的最小 source-attached continuation：不改变 literal V59 physical
+operator、exact beta、prime shell、projection 或 growing-cutoff registry，只把实际四包
+signed output 的能量比接回 margin。若 `D=sum_j||V_j||^2`、
+`G=||sum_jV_j||^2`，则 `r=D/G` 且
+
+```text
+m^2 = r m_D^2.
+```
+
+因此一个真正的 source-level hypothesis `D/G>=b*x^gamma` 会通过平方根把
+`gamma/2` 计入 margin，形成 effective loss
+`eta_eff=max(0,eta_D-gamma/2)` 与 strict target condition
+`sigma-eta_eff>1/400`。这是 conditional theorem，不能把有限表当作该 hypothesis
+的证明。
+
+TPC-275 的 exact rational certificate 被逐行 transfer 到 12 个 rows：12/12 行
+`D/G>1`，3 行 signed margin 高于 quarter (`1/16`)，5 行高于 eighth (`1/64`)，
+没有阈值 crossing。该 finite result 恢复了明确的 signed margin 信息，但 finite gain
+没有 sufficiently-large-x quantifier，故 fixed-power credit 仍为 0。
+
+```text
+TPC276_MAXIMUM_CLAIM = PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER
+TPC276_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_MARGIN_RECOVERY
+TPC276_SIGNED_GAIN_MARGIN_IDENTITY = PROVED_EXACT_FINITE
+TPC276_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL_WITH_EFFECTIVE_LOSS_MAX_ZERO_ETA_D_MINUS_GAMMA_OVER_2
+TPC276_FINITE_SIGNED_MARGIN_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_SIGNED_QUARTER_CROSSING = NUMERICALLY_CERTIFIED_FINITE_THREE_ROWS
+TPC276_SIGNED_EIGHTH_CROSSING = NUMERICALLY_CERTIFIED_FINITE_FIVE_ROWS
+TPC276_GAIN_STRICTLY_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_FINITE_POWER_PROMOTION = REFUTED_SCOPED
+TPC276_FIXED_POWER_CREDIT = 0
+TPC276_SOURCE_LEVEL_SIGNED_GAIN = OPEN_ASYMPTOTIC
+TPC276_ARITHMETIC_ADVANCE = NO
+TPC276_L2 = NONE
+TPC276_FULL_GATE_B = OPEN
+TPC276_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC276_TWIN_PRIME_RESULT = NONE
+TPC276_STATUS = PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER
+TPC276_ROUND2_CLUE = SEEK_UNIFORM_SOURCE_LEVEL_SIGNED_GAIN_LOWER_BOUND
+```
+
+地图位置：**V129 / TPC-276 已把 TPC-275 的 finite signed cancellation 编译成
+一个可审计的 margin/endpoint 条件，并完成 12-row threshold transfer；下一座桥是
+证明 growing source 上的 uniform signed-gain lower bound，同时保留 arithmetic 与
+full Gate-B gates 的独立支付。**
+
+## 5.69 V128 / TPC-275：signed four-packet reassembly
+
+TPC-275 是 TPC-274 的 source-attached continuation：保持 literal V59 physical
+operator、exact beta、projection、prime shell 与 growing-cutoff registry 不变，把
+`A_perp beta` 按四个实际 consecutive source blocks 分解为 `V_j=A_perp beta^(j)`。
+对 packet Gram `Gamma_(j,k)=<V_j,V_k>` 定义 diagonal energy `D` 与 signed output
+energy `G`，并证明 exact Gram expansion、四点 DFT Parseval/mode-zero 与 real
+polarization。6 个 scale triples、`s=1,2` 的 12 rows 与 72 个 pairwise probes 均
+exact-replay 通过，得到 `G-D<0`、`1<D/G<12/5`、`F/G>50`、`m_D^2<1/16`。
+这是实际 source-block signed reassembly 的有限 scoped advance；source-level signed
+cross-Gram、margin/endpoint payment、fixed-power credit、arithmetic `L2`、full Gate B
+与 twin-prime conclusion 仍 open/none。
 ```text
 TPC275_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT
 TPC275_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_FOUR_PACKET_REASSEMBLY
@@ -163,9 +249,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V128 / TPC-275                    |
-        | SIGNED FOUR-PACKET REASSEMBLY                   |
-        | finite signed gain; source cross-Gram OPEN      |
+        | YOU ARE HERE — V129 / TPC-276                    |
+        | SIGNED-GAIN ENDPOINT BUDGET                     |
+        | exact margin bridge; source gain OPEN           |
         +--------------------------------------------------+
                 |
                 v
@@ -208,7 +294,7 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V128 / TPC-275。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V129 / TPC-276。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
@@ -228,10 +314,12 @@ fixed-log promotion、residual deletion、borderline equality 与 subcritical la
 FULL_GATE_B、global strict `1/400`、
 arithmetic `L2`、literal mode-zero estimate、full scalar 与 fixed-atom credit
 继续 OPEN/UNPAID/NONE。TPC-267 的 finite census、TPC-268 的 cutoff flip、TPC-269
-的 growing-proxy/profile flip、TPC-270 的 cross-scale radius audit 与 TPC-271 的
-phase-radius lane attribution、TPC-272 的 margin compiler 与 TPC-273 的 finite margin
-stability matrix 均未支付 asymptotic phase/radius/margin 或 fixed-power credit；下一
-最短任务是 source-level margin uniformity on the literal growing cutoff。**
+的 growing-proxy/profile flip、TPC-270 的 cross-scale radius audit、TPC-271 的
+phase-radius lane attribution、TPC-272 的 margin compiler、TPC-273 的 finite margin
+stability matrix、TPC-274 的 Frobenius gap 与 TPC-275 的 signed four-packet audit
+均未支付 asymptotic phase/radius/margin 或 fixed-power credit；TPC-276 已把 signed
+gain 的精确作用和 strict endpoint budget 写清，但下一最短任务仍是 literal growing
+source 上的 uniform signed-gain lower bound。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -4021,7 +4109,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V128 / TPC-275：
+截至 V129 / TPC-276：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -4030,6 +4118,23 @@ FIXED_ATOM_CREDIT = 0
   TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
   FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
   L2 = NONE
+TPC276_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_MARGIN_RECOVERY
+TPC276_SIGNED_GAIN_MARGIN_IDENTITY = PROVED_EXACT_FINITE
+TPC276_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL_WITH_EFFECTIVE_LOSS_MAX_ZERO_ETA_D_MINUS_GAMMA_OVER_2
+TPC276_FINITE_SIGNED_MARGIN_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_SIGNED_QUARTER_CROSSING = NUMERICALLY_CERTIFIED_FINITE_THREE_ROWS
+TPC276_SIGNED_EIGHTH_CROSSING = NUMERICALLY_CERTIFIED_FINITE_FIVE_ROWS
+TPC276_GAIN_STRICTLY_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_FINITE_POWER_PROMOTION = REFUTED_SCOPED
+TPC276_FIXED_POWER_CREDIT = 0
+TPC276_SOURCE_LEVEL_SIGNED_GAIN = OPEN_ASYMPTOTIC
+TPC276_ARITHMETIC_ADVANCE = NO
+TPC276_L2 = NONE
+TPC276_FULL_GATE_B = OPEN
+TPC276_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC276_TWIN_PRIME_RESULT = NONE
+TPC276_STATUS = PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER
+TPC276_ROUND2_CLUE = SEEK_UNIFORM_SOURCE_LEVEL_SIGNED_GAIN_LOWER_BOUND
 TPC275_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_FOUR_PACKET_REASSEMBLY
 TPC275_SIGNED_GRAM_IDENTITY = PROVED_EXACT_FINITE
 TPC275_DFT_LEDGER = PROVED_EXACT_FINITE
@@ -5088,6 +5193,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V129 / TPC-276 | Bridge A / Gate B：signed-gain margin recovery 与 strict endpoint compiler 已完成；source-level gain、arithmetic `L2` 与 full Gate B open | `TPC-276` | exact `m^2=(D/G)m_D^2`；conditional `eta_eff=max(0,eta_D-gamma/2)` 与 `sigma-eta_eff>1/400`；12 rows 全部 `D/G>1`，3 行超过 quarter、5 行超过 eighth；finite gain 不产生 fixed-power credit，下一步为 uniform source-level signed-gain lower bound |
 | 2026-08-27 | V128 / TPC-275 | Bridge A / Gate B：literal signed four-packet reassembly 已完成；source-level signed cross-Gram、arithmetic `L2` 与 full Gate B open | `TPC-275` | actual source-block packets 的 exact signed Gram、四点 DFT、polarization 与 12 rows 全部认证；`G-D<0`、`1<D/G<12/5`、`F/G>50`、`m_D^2<1/16`，不产生 fixed-power credit，下一关为 signed cross-Gram + margin/endpoint budget compiler |
 | 2026-08-27 | V127 / TPC-274 | Bridge A / Gate B：projected Frobenius envelope gap 已完成；signed output reassembly、arithmetic `L2` 与 full Gate B open | `TPC-274` | 证明 `G_perp<=||A_perp||_F^2||beta||_2^2`；6 个 growing-cutoff scales 与 `s=1,2` 的 12 rows 全部认证 envelope/actual gap `>50`、envelope proxy `m_F^2<1/64`，phase 为 11 negative/1 positive/0 crossing；cancellation-free route 标为 `INSUFFICIENT_SCOPED`，不产生 fixed-power credit，下一关为 signed output reassembly |
 | 2026-08-27 | V126 / TPC-273 | Bridge A / Gate B：finite margin-stability obstruction 已完成；source-level margin、arithmetic `L2` 与 full Gate B open | `TPC-273` | exact `m^2=rho^2` 与 `m^6=(rho^2)^3`；32-row grid 为 12 low/11 middle/9 high，`N=64` 与 `N=128` 各有 cutoff-only 跨带 flip，phase 为 30 negative/2 positive/0 crossing；不产生 fixed-power credit，下一关为 literal growing-cutoff source-level margin uniformity |

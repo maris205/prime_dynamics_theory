@@ -9,6 +9,15 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-276 承接 TPC-275，在同一个锁定的 literal V59 finite physical
+operator 上把 signed packet gain 接入 correlation margin。精确恒等式为
+`m^2=(D/G)m_D^2`；若未来证明 source-level `D/G>=b*x^gamma`，则有效 margin loss
+为 `eta_eff=max(0,eta_D-gamma/2)`，严格 endpoint 条件为
+`sigma-eta_eff>1/400`。TPC-275 的 12 个 rows 经过 exact rational transfer 后，12/12
+有 `D/G>1`，3 行超过 `m^2=1/16`、5 行超过 `m^2=1/64`；但有限 gain 不产生
+fixed-power credit。source-level signed gain、arithmetic `L2`、full Gate B 与
+twin-prime conclusion 仍 OPEN/NONE。
+
 当前主线状态：TPC-275 承接 TPC-274，在同一个锁定的 literal V59 finite physical
 operator 上把四个实际 source-block 输出包保留下来，定义 packet Gram、四点 DFT 与
 polarization，并以 exact rational replay 认证 12 rows 的 `G-D<0`、`1<D/G<12/5`、
@@ -130,6 +139,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-276-signed-gain-endpoint-budget - 当前阶段 - 证明 exact `m^2=(D/G)m_D^2` 与
+conditional strict budget `sigma-eta_eff>1/400`（`eta_eff=max(0,eta_D-gamma/2)`），
+并以 12 行 exact rational transfer 认证 `D/G>1` 全部成立、3 行超过 quarter、5 行
+超过 eighth；finite gain 的 fixed-power credit 明确为 0，source-level lower bound
+仍 OPEN。
 tpc-275-signed-four-packet-reassembly - 当前阶段 - 对四个实际 source-block 输出包建立 exact signed Gram、四点 DFT 与 polarization ledger，并在 12 个 growing-cutoff rows 上认证 `G-D<0`、`1<D/G<12/5`、`F/G>50`、`m_D^2<1/16`；source-level signed cross-Gram 与 endpoint payment 仍 OPEN。
 tpc-274-projected-output-frobenius-envelope - 当前阶段 - 证明 projected Frobenius
 envelope，并在 12 个 growing-cutoff rows 上以 exact rational replay 认证 `G_F/G_perp>50`

@@ -3,11 +3,59 @@
 
 更新时间：2026-08-27
 
-状态：**TPC275_NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC276_PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
+
+## 0.70 当前：TPC-276 signed-gain margin recovery and strict endpoint budget
+
+项目：`papers/tpc-276-signed-gain-endpoint-budget/`
+
+类型：**PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER**。
+
+TPC-276 是 TPC-275 的 source-attached continuation，保持 literal V59 finite physical
+operator、exact beta、prime shell、projection 与 growing-cutoff registry 不变。它把
+四个实际 source-block packet 的 signed energy `G` 与 packet diagonal `D` 接回
+correlation margin，精确证明
+`m^2=(D/G)m_D^2`。进一步，在 source-level hypotheses
+`m_D>=c*x^(-eta_D-epsilon)` 与 `D/G>=b*x^gamma` 下，定义
+`eta_eff=max(0,eta_D-gamma/2)`，得到 strict endpoint compiler
+`sigma-eta_eff>1/400`；gain 的 exponent 以一半进入 margin。
+
+冻结的 TPC-275 certificate 经过 exact rational transfer 形成 12 rows：12/12 行有
+`D/G>1`，3 行的 signed margin 高于 `1/16`，5 行高于 `1/64`，且没有区间跨越阈值。
+这是明确的 finite threshold recovery 与 conditional theorem；有限正 gain 没有
+`sufficiently-large-x` 量词，因此 fixed-power credit 仍为 0。source-level signed
+gain lower bound、arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 open/none。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_SIGNED_GAIN_MARGIN_IDENTITY_PLUS_CONDITIONAL_HALF_EXPONENT_COMPILER
+STRONGEST_OBSTRUCTION = FINITE_SIGNED_GAIN_TABLE_HAS_ZERO_FIXED_POWER_CREDIT
+OPEN_THEOREM = UNIFORM_SOURCE_LEVEL_SIGNED_GAIN_LOWER_BOUND_WITH_MARGIN_CONTROL
+REUSABLE_STRUCTURE = D_OVER_G -> MARGIN_SQUARED -> GAMMA_OVER_2 -> STRICT_ENDPOINT_BUDGET
+ROUND2_CLUE = SEEK_UNIFORM_SOURCE_LEVEL_SIGNED_GAIN_LOWER_BOUND
+```
+
+```text
+TPC276_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_MARGIN_RECOVERY
+TPC276_SIGNED_GAIN_MARGIN_IDENTITY = PROVED_EXACT_FINITE
+TPC276_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL_WITH_EFFECTIVE_LOSS_MAX_ZERO_ETA_D_MINUS_GAMMA_OVER_2
+TPC276_FINITE_SIGNED_MARGIN_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_SIGNED_QUARTER_CROSSING = NUMERICALLY_CERTIFIED_FINITE_THREE_ROWS
+TPC276_SIGNED_EIGHTH_CROSSING = NUMERICALLY_CERTIFIED_FINITE_FIVE_ROWS
+TPC276_GAIN_STRICTLY_ABOVE_ONE = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC276_FINITE_POWER_PROMOTION = REFUTED_SCOPED
+TPC276_FIXED_POWER_CREDIT = 0
+TPC276_SOURCE_LEVEL_SIGNED_GAIN = OPEN_ASYMPTOTIC
+TPC276_ARITHMETIC_ADVANCE = NO
+TPC276_L2 = NONE
+TPC276_FULL_GATE_B = OPEN
+TPC276_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC276_TWIN_PRIME_RESULT = NONE
+TPC276_STATUS = PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER
+```
 
 ## 0.69 当前：TPC-275 signed four-packet reassembly
 

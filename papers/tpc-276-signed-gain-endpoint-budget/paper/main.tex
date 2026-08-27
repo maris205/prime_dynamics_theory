@@ -1,0 +1,232 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.82in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\newcommand{\Cperp}{C_{\perp}}
+\newcommand{\Wperp}{W_{\perp}}
+\newcommand{\Dpack}{D}
+\newcommand{\Gpack}{G}
+\newcommand{\md}{m_D}
+\newcommand{\meff}{\eta_{\mathrm{eff}}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\title{Signed-Gain Margin Recovery and the Strict Endpoint Budget}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{27 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding TPC-275 audit retained the signs of four actual source-block
+packets and found a finite diagonal-to-signed energy gain
+\(r=D/G>1\).  This paper proves the exact margin identity
+\(m^2=r m_D^2\), where \(m_D\) is the margin computed with the packet
+diagonal and \(m\) is the margin computed with the signed output.  A conditional
+endpoint compiler then shows that a uniform source-level gain
+\(D/G\geq b x^\gamma\) contributes \(\gamma/2\) to the margin budget.  The
+strict target condition is
+\(\sigma-\max(0,\eta_D-\gamma/2)>1/400\).  Exact rational transfer of all
+12 TPC-275 rows gives \(r>1\) everywhere, three signed rows above the quarter
+margin threshold, and five above the eighth threshold.  The finite table is not
+an asymptotic gain theorem and supplies zero fixed-power credit.
+\end{abstract}
+
+\section{Question and claim ceiling}
+
+TPC-275 decomposed the projected literal V59 output into four actual
+source-block packets \(V_j\), with packet diagonal energy
+\[
+ \Dpack=\sum_{j=0}^3\|V_j\|_2^2,
+ \qquad \Gpack=\left\|\sum_{j=0}^3V_j\right\|_2^2.
+\]
+Its exact signed Gram audit found \(\Gpack<\Dpack\) on every registered row.
+The present question is narrower and useful for the endpoint ledger: how does
+the ratio \(r=\Dpack/\Gpack\) change the correlation margin, and what would a
+growing lower bound for \(r\) actually buy?
+
+The claim ceiling is
+\[
+ \texttt{PROVED\_CONDITIONAL}\;+
+ \texttt{PROVED\_EXACT\_FINITE}\;+
+ \texttt{NUMERICALLY\_CERTIFIED\_FINITE}.
+\]
+No finite ratio is promoted to a power saving, and no arithmetic \(L^2\) or
+twin-prime conclusion is asserted.
+
+\section{Exact margin recovery}
+
+Let \(\Cperp\) be the signed residual scalar and \(\Wperp>0\) its source
+norm lane.  Define
+\[
+ \md^2=\frac{|\Cperp|^2}{\Wperp\Dpack},
+ \qquad
+ m^2=\frac{|\Cperp|^2}{\Wperp\Gpack},
+ \qquad r=\frac{\Dpack}{\Gpack}.
+\]
+
+\begin{theorem}[signed-gain margin identity]
+Whenever \(\Dpack,\Gpack,\Wperp>0\),
+\[
+ m^2=r\,\md^2.
+\]
+In particular, \(r>1\) makes the diagonal margin proxy strictly
+conservative.
+\end{theorem}
+
+\begin{proof}
+Since \(\Gpack=\Dpack/r\), direct substitution gives
+\[
+ \frac{|\Cperp|^2}{\Wperp\Gpack}
+ =\frac{|\Cperp|^2}{\Wperp(\Dpack/r)}
+ =r\frac{|\Cperp|^2}{\Wperp\Dpack}.
+\]
+All denominators are positive, so this is an exact identity rather than an
+interval or square-root approximation.
+\end{proof}
+
+\section{Conditional strict endpoint compiler}
+
+Write the baseline and target exponents as
+\[
+ E_0=\frac53,\qquad E_*=\frac{1997}{1200},\qquad
+ E_0-E_* = \frac1{400}.
+\]
+
+\begin{theorem}[signed-gain budget]
+Suppose that for sufficiently large \(x\), with constants \(A,b,c>0\),
+\(\gamma\geq0\), and arbitrarily small \(\epsilon>0\),
+\[
+ |\Cperp(x)|\leq A x^{E_0-\sigma+\epsilon},\qquad
+ m_D(x)\geq c x^{-\eta_D-\epsilon},\qquad
+ \frac{\Dpack(x)}{\Gpack(x)}\geq b x^\gamma.
+\]
+Set
+\[
+ \meff=\max\left(0,\eta_D-\frac\gamma2\right).
+\]
+Then, for sufficiently large \(x\),
+\[
+ |\Cperp(x)|+R(x)
+ \leq A\left(1+\frac1{c\sqrt b}\right)
+ x^{E_0-\sigma+\meff+2\epsilon},
+ \qquad R=\frac{|\Cperp|}{m}.
+\]
+Consequently the endpoint is strictly beaten if
+\[
+ \sigma-\meff>\frac1{400}.
+\]
+In the non-overcompensated regime \(\gamma/2\leq\eta_D\), this is the
+equivalent condition \(\sigma-\eta_D+\gamma/2>1/400\).
+\end{theorem}
+
+\begin{proof}
+The identity in Theorem 1 and the two lower bounds imply
+\[
+ m=m_D\sqrt{\Dpack/\Gpack}
+ \geq c\sqrt b\,x^{-\eta_D-\epsilon+\gamma/2}
+ \geq c\sqrt b\,x^{-\meff-\epsilon}.
+\]
+Therefore
+\[
+ R\leq \frac{A}{c\sqrt b}
+ x^{E_0-\sigma+\meff+2\epsilon}.
+\]
+Because \(\meff\geq0\), the assumed scalar bound is no larger than the same
+power after increasing the constant.  Adding the two bounds proves the first
+claim.  If \(\sigma-\meff>1/400\), choose \(\epsilon\) so small that
+\(\sigma-\meff-2\epsilon>1/400\); the resulting exponent is strictly below
+\(E_*\).  The gain enters with coefficient one half because it is a squared
+margin identity.\end{proof}
+
+\section{Finite signed-margin transfer}
+
+The TPC-275 certificate is the frozen source object.  Its rows provide an exact
+rational \(r=\Dpack/\Gpack\) and a positive rational interval for \(\md^2\).
+Multiplying that interval by \(r\) gives the signed-margin interval in the
+table.  Displayed decimals are for readability; the JSON certificate stores
+the rational endpoints and performs all threshold comparisons exactly.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\begin{tabular}{c c r r r c}
+\toprule
+ $N$ & $s$ & $r=D/G$ & upper $m_D^2$ & signed $m^2$ interval & $m>1/4$?\\
+\midrule
+ 64  & 1 & 1.465603 & 0.051052 & 0.074809--0.074822 & yes\\
+ 64  & 2 & 1.144371 & 0.053711 & 0.061451--0.061464 & no\\
+ 96  & 1 & 1.981948 & 0.045317 & 0.089804--0.089816 & yes\\
+ 96  & 2 & 1.577020 & 0.052847 & 0.083329--0.083341 & yes\\
+ 128 & 1 & 2.313882 & 0.006735 & 0.015579--0.015583 & no\\
+ 128 & 2 & 1.873826 & 0.013418 & 0.025136--0.025142 & no\\
+ 192 & 1 & 1.111292 & 0.000048 & 0.000053--0.000053 & no\\
+ 192 & 2 & 1.006248 & 0.001531 & 0.001539--0.001540 & no\\
+ 256 & 1 & 1.161215 & 0.000986 & 0.001144--0.001145 & no\\
+ 256 & 2 & 1.058744 & 0.000032 & 0.000034--0.000034 & no\\
+ 384 & 1 & 1.366701 & 0.000707 & 0.000966--0.000967 & no\\
+ 384 & 2 & 1.124747 & 0.000241 & 0.000270--0.000271 & no\\
+\bottomrule
+\end{tabular}
+\caption{Signed recovery from the 12 exact TPC-275 rows.  The quarter
+threshold is \(m^2=1/16\); the eighth threshold is \(m^2=1/64\).}
+\end{table}
+
+\begin{proposition}[registered finite counts]
+All 12 rows have \(r>1\), while the diagonal proxy is below \(1/16\) on all
+12 rows.  Signed recovery places 3 rows above \(1/16\) and 5 rows above
+\(1/64\), with no interval crossing either threshold.
+\end{proposition}
+
+\begin{proof}
+The producer and independent checker parse the parent rational intervals,
+multiply by the exact positive ratio, and compare the resulting endpoints with
+\(1/16\) and \(1/64\).  The stored theorem counts are respectively
+\(12,12,3,5,0\), and the hostile mutation audit rejects changes to each of
+these fields.\end{proof}
+
+\section{Why the finite gain is not power credit}
+
+The conditional theorem requires a quantified lower bound
+\(\Dpack/\Gpack\geq b x^\gamma\) for all sufficiently large \(x\).  A finite
+list of values at \(N=64,96,128,192,256,384\) has no such quantifier: outside
+those points the gain can be extended by an arbitrary positive function.  Thus
+the finite table proves a useful threshold recovery but assigns
+\[
+ \texttt{TPC276\_FIXED\_POWER\_CREDIT}=0.
+\]
+This is a scoped finite-to-asymptotic obstruction, not a negative theorem about
+the literal growing source.  The missing result is a uniform source-level
+signed-gain lower bound coupled to the margin lane.
+
+\section{Conclusion and route evaluation}
+
+TPC-276 adds one precise edge to the route map.  Signed packet cancellation is
+not merely an output-energy curiosity: exactly, it multiplies the squared
+margin by \(D/G\), and a genuine polynomial gain would enter the strict budget
+with half its exponent.  The finite literal audit recovers the quarter margin
+on three rows and the eighth margin on five rows, but it does not establish a
+growing lower bound.  Therefore the source-level signed gain, arithmetic
+\(L^2\), full Gate B, and the twin-prime conclusion remain open.
+
+\begin{thebibliography}{9}
+\bibitem{HW}
+G. H. Hardy and E. M. Wright, \emph{An Introduction to the Theory of Numbers},
+6th ed., Oxford University Press, 2008.
+\bibitem{TPC275}
+L. Wang, ``Signed Four-Packet Reassembly for the Literal V59 Output,''
+TPC-275 project release, 2026.
+\bibitem{TPC272}
+L. Wang, ``Correlation-Margin to Endpoint-Budget Compiler,''
+TPC-272 project release, 2026.
+\end{thebibliography}
+
+\end{document}
