@@ -1,42 +1,48 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V132 / EXACT_COHERENCE_TO_GAIN_CRITERION`
-claim level：`PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER`
-编号事实终点：TPC-279；TPC-279 trigger：`true`
+状态：`BOLD_CHANNEL_V133 / ADDITIVE_LEAKAGE_ENDPOINT_COMPILER`
+claim level：`PROVED_CONDITIONAL_TWO_TERM_LEAKAGE_ENDPOINT_COMPILER_PLUS_NUMERICALLY_CERTIFIED_TRANSFER`
+编号事实终点：TPC-280；TPC-280 trigger：`true`
 
-当前 TPC-279 入口：proof 为
-`research/tpc-big-road/bridge_b_coherence_to_gain_theorem.md`，checker 为
-`tpc_bridge_b_coherence_to_gain_theorem_checker.py`，编号论文为
-`papers/tpc-279-coherence-to-gain-theorem/`。它在四包 Hilbert 空间中证明 exact
-`r=D/G` criterion、sharp `q<=min(4,1+3mu)` coherence envelope，以及 orthogonal
-and near-cancellation adversaries；对 TPC-278 的 12 行完成 exact reciprocal
-interval transfer（8 positive / 4 negative deficit rows）。这是 source-level
-criterion 与 finite coordinate transfer，不是 asymptotic deficit theorem。
+当前 TPC-280 入口：proof 为
+`research/tpc-big-road/bridge_b_leakage_aware_endpoint_compiler.md`，checker 为
+`tpc_bridge_b_leakage_aware_endpoint_compiler_checker.py`，编号论文为
+`papers/tpc-280-leakage-aware-endpoint-compiler/`。它从
+`D>=dX^a` 与 `G<=B X^(-gamma)D+ell X^(a-delta)` 精确编译出 two-term normalized
+bound、`kappa=min(gamma,delta)` dominant exponent、signed-margin half-exponent
+与 strict `1/400` endpoint test；equality family 证明 information-model sharpness。
+6+4+4 个 rational fixtures 与 TPC-279 的 12-row transfer 通过，但 literal source
+decomposition、arithmetic `L2` 与 full Gate B 仍未支付。
 
 ```text
-TPC279_MAXIMUM_CLAIM = PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
-TPC279_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_TO_GAIN_CRITERION
-TPC279_EXACT_DEFICIT_IDENTITY = PROVED_EXACT_FINITE
-TPC279_PAIRWISE_COHERENCE_ENVELOPE = PROVED_EXACT_SHARP
-TPC279_PAIRWISE_COHERENCE_POWER = REFUTED_EXACT_BY_ORTHOGONAL_WITNESS
-TPC279_NEAR_CANCELLATION_ADVERSARY = PROVED_EXACT_SCALAR_FAMILY
-TPC279_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
-TPC279_FINITE_TRANSFER_CENSUS = 8_POSITIVE_DEFICIT_4_NEGATIVE_DEFICIT
-TPC279_SOURCE_LEVEL_DEFICIT = OPEN_ASYMPTOTIC
-TPC279_FIXED_POWER_CREDIT = 0
-TPC279_ARITHMETIC_ADVANCE = NO
-TPC279_L2 = NONE
-TPC279_FULL_GATE_B = OPEN
-TPC279_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC279_TWIN_PRIME_RESULT = NONE
-TPC279_STATUS = PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
-TPC279_ROUND2_CLUE = COMPILE_ADDITIVE_LEAKAGE_INTO_SOURCE_TO_MARGIN_ENDPOINT_BUDGET
+TPC280_MAXIMUM_CLAIM = PROVED_CONDITIONAL_TWO_TERM_LEAKAGE_ENDPOINT_COMPILER_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC280_ROUTE_ADVANCE = YES_SCOPED_ADDITIVE_LEAKAGE_ENDPOINT_COMPILER
+TPC280_TWO_TERM_COMPILER = PROVED_CONDITIONAL
+TPC280_DOMINANT_EXPONENT = PROVED_KAPPA_EQUALS_MIN_GAMMA_DELTA
+TPC280_MARGIN_COMPILER = PROVED_CONDITIONAL_ETA_EFF_EQUALS_MAX_ZERO_ETA_D_MINUS_KAPPA_OVER_2
+TPC280_LEAKAGE_BOTTLENECK = PROVED_CONDITIONAL_DELTA_LT_GAMMA
+TPC280_SHARPNESS = PROVED_CONDITIONAL_EQUALITY_FAMILY
+TPC280_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC280_FIXED_POWER_CREDIT = 0
+TPC280_ARITHMETIC_ADVANCE = NO
+TPC280_L2 = NONE
+TPC280_FULL_GATE_B = OPEN
+TPC280_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC280_TWIN_PRIME_RESULT = NONE
+TPC280_STATUS = PROVED_CONDITIONAL_TWO_TERM_LEAKAGE_ENDPOINT_COMPILER_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 ```
 
-strongest positive result：exact necessary-and-sufficient deficit criterion plus sharp
-coherence envelope and 12-row transfer；strongest obstruction：absolute coherence alone
-cannot pay a positive power；open theorem：a growing source-level deficit estimate for `G/D`。
+strongest positive result：exact two-term normalization, dominant exponent compiler, and
+sharp equality family；strongest obstruction：a slower additive leakage exponent caps gain;
+open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+TPC-279 upstream entry: proof 为
+`research/tpc-big-road/bridge_b_coherence_to_gain_theorem.md`，checker 为
+`tpc_bridge_b_coherence_to_gain_theorem_checker.py`，编号论文为
+`papers/tpc-279-coherence-to-gain-theorem/`。它提供 TPC-280 的 exact deficit parent
+与 12-row coordinate transfer。
 
 TPC-278 上游入口：proof 为
 `research/tpc-big-road/bridge_b_cross_scale_gain_stability.md`，checker 为

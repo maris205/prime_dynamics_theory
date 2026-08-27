@@ -9,7 +9,18 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-279 将 TPC-278 暴露的缺口精确化为四包 Hilbert 空间中的
+当前主线状态：TPC-280 承接 TPC-279 的 exact deficit criterion，研究 source bound
+中同时出现的 multiplicative main term 与 additive leakage。若
+`D>=dX^a` 且 `G<=B X^(-gamma)D+ell X^(a-delta)`，证明归一化后的 exact two-term
+bound `G/D<=B X^(-gamma)+(ell/d)X^(-delta)`，并将可用 exponent 限制为
+`kappa=min(gamma,delta)`；同一编译器给出 `eta_eff=max(0,eta_D-kappa/2)` 与 strict
+endpoint test。等号 family 证明 two-term denominator 在给定信息模型下 sharp，
+`delta<gamma` 的慢 leakage 是明确 obstruction。6+4+4 个 exact rational fixtures
+及 TPC-279 的 12-row coordinate transfer 已通过 independent/stress checks，但仍
+不产生 literal arithmetic `L2` 或 fixed-power credit。下一关是 typed arithmetic
+`L2`/full Gate-B interface audit；full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+TPC-279 将 TPC-278 暴露的缺口精确化为四包 Hilbert 空间中的
 coherence-to-gain theorem。证明 `q=G/D`、`Delta=1-q=-2E/D` 给出的 gain
 条件是充要的，并证明 pairwise absolute coherence 的 sharp envelope
 `q<=min(4,1+3mu)`；正交包与 near-cancellation scalar family 分别构成 no-power
@@ -140,6 +151,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-280-leakage-aware-endpoint-compiler - 当前阶段 - 证明带 additive leakage 的
+two-term gain/margin compiler：`G/D<=B X^(-gamma)+(ell/d)X^(-delta)`，collapsed
+exponent 为 `min(gamma,delta)`，并以 equality family 认证 sharpness；6+4+4 个
+exact fixtures 与 TPC-279 12-row transfer 通过，literal arithmetic `L2`、full Gate B
+仍 OPEN，fixed-power credit 为 0。
 tpc-279-coherence-to-gain-theorem - 当前阶段 - 证明四包 reassembly 的 exact
 minimal deficit criterion 与 sharp pairwise-coherence envelope；正交包 refute
 coherence-only power promotion，near-cancellation family 给出 sharp adversarial

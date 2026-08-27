@@ -1,7 +1,62 @@
 # TPC HANDOFF
 
 更新时间：2026-08-27
-交接状态：`BOLD_CHANNEL_V132_TPC279_EXACT_COHERENCE_TO_GAIN_RELEASED`
+交接状态：`BOLD_CHANNEL_V133_TPC280_ADDITIVE_LEAKAGE_COMPILER_RELEASED`
+
+TPC-280 当前 section：additive-leakage-aware gain and endpoint compiler
+-----------------------------------------------------------------------------------------------
+
+TPC-280 is the minimal source-budget continuation of TPC-279.  It retains an
+additive remainder instead of assuming a pure multiplicative cancellation:
+
+```text
+D >= d X^a,
+G <= B X^(-gamma) D + ell X^(a-delta).
+```
+
+Exact division by the source floor gives
+`G/D <= B X^(-gamma)+(ell/d)X^(-delta)`.  With
+`kappa=min(gamma,delta)` and `C=B+ell/d`, reciprocal division gives the sharp
+two-term gain bound and the collapsed bound `D/G>=C^(-1)X^kappa`.  Through the
+TPC-279 identity `m^2=(D/G)m_D^2`, the margin lane receives
+`eta_eff=max(0,eta_D-kappa/2)`, so the inherited strict endpoint test is
+`sigma-eta_eff>1/400`.
+
+The formal equality family saturates the two-term compiler.  When `delta<gamma`
+and `ell>0`, additive leakage is therefore an information-model exponent
+bottleneck.  Six exact budget fixtures, four margin fixtures, four endpoint
+fixtures, and a twelve-row TPC-279 coordinate transfer pass independent and
+stress checks.  This is a conditional compiler only: no literal growing source
+decomposition, arithmetic `L2`, full Gate B, fixed-power credit, or twin-prime
+conclusion is claimed.
+
+```text
+TPC280_MAXIMUM_CLAIM = PROVED_CONDITIONAL_TWO_TERM_LEAKAGE_ENDPOINT_COMPILER_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC280_ROUTE_ADVANCE = YES_SCOPED_ADDITIVE_LEAKAGE_ENDPOINT_COMPILER
+TPC280_TWO_TERM_COMPILER = PROVED_CONDITIONAL
+TPC280_DOMINANT_EXPONENT = PROVED_KAPPA_EQUALS_MIN_GAMMA_DELTA
+TPC280_MARGIN_COMPILER = PROVED_CONDITIONAL_ETA_EFF_EQUALS_MAX_ZERO_ETA_D_MINUS_KAPPA_OVER_2
+TPC280_LEAKAGE_BOTTLENECK = PROVED_CONDITIONAL_DELTA_LT_GAMMA
+TPC280_SHARPNESS = PROVED_CONDITIONAL_EQUALITY_FAMILY
+TPC280_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC280_FIXED_POWER_CREDIT = 0
+TPC280_ARITHMETIC_ADVANCE = NO
+TPC280_L2 = NONE
+TPC280_FULL_GATE_B = OPEN
+TPC280_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC280_TWIN_PRIME_RESULT = NONE
+TPC280_STATUS = PROVED_CONDITIONAL_TWO_TERM_LEAKAGE_ENDPOINT_COMPILER_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
+```
+
+Strongest positive result: an exact two-term normalization and conditional
+gain/margin compiler with equality sharpness.  Strongest obstruction: the
+slower leakage exponent caps the gain exponent.  Open theorem: a literal
+growing source decomposition with arithmetic `L2`.  Reusable structure:
+`source floor -> normalize two terms -> min-exponent compiler -> endpoint ledger`.
+The Session-named `propose.md` and evaluator files remain absent; local proof,
+certificate, independent replay, stress audit, bridge checker, and `AGENTS.md`
+are the fail-closed fallback.
 
 TPC-279 当前 section：minimal coherence-to-gain criterion and finite coordinate transfer
 -----------------------------------------------------------------------------------------------
@@ -8977,7 +9032,7 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V132/TPC-279 是当前 release；其 producer、independent replay、stress audit 与
+V133/TPC-280 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
@@ -9301,11 +9356,30 @@ python -B papers/tpc-279-coherence-to-gain-theorem/experiments/tpc279_coherence_
 python -O -B papers/tpc-279-coherence-to-gain-theorem/experiments/tpc279_coherence_stress.py
 python -B research/tpc-big-road/tpc_bridge_b_coherence_to_gain_theorem_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_coherence_to_gain_theorem_checker.py --check
+python -B papers/tpc-280-leakage-aware-endpoint-compiler/code/tpc280_leakage_aware_endpoint_certificate.py --check
+python -O -B papers/tpc-280-leakage-aware-endpoint-compiler/code/tpc280_leakage_aware_endpoint_certificate.py --check
+python -B papers/tpc-280-leakage-aware-endpoint-compiler/experiments/tpc280_independent_checker.py
+python -O -B papers/tpc-280-leakage-aware-endpoint-compiler/experiments/tpc280_independent_checker.py
+python -B papers/tpc-280-leakage-aware-endpoint-compiler/experiments/tpc280_leakage_stress.py
+python -O -B papers/tpc-280-leakage-aware-endpoint-compiler/experiments/tpc280_leakage_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_leakage_aware_endpoint_compiler_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_leakage_aware_endpoint_compiler_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-279 入口：
+最新 TPC-280 入口：
+
+```text
+papers/tpc-280-leakage-aware-endpoint-compiler/README.md
+papers/tpc-280-leakage-aware-endpoint-compiler/PROOF_PACKAGE.md
+papers/tpc-280-leakage-aware-endpoint-compiler/notes/theorem_ledger.md
+papers/tpc-280-leakage-aware-endpoint-compiler/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_leakage_aware_endpoint_compiler.md
+research/tpc-big-road/tpc_bridge_b_leakage_aware_endpoint_compiler_checker.py
+```
+
+TPC-279 upstream 入口：
 
 ```text
 papers/tpc-279-coherence-to-gain-theorem/README.md

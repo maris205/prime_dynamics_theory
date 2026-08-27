@@ -3,13 +3,60 @@
 
 更新时间：2026-08-27
 
-状态：**TPC279_PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC280_PROVED_CONDITIONAL_TWO_TERM_LEAKAGE_ENDPOINT_COMPILER_PLUS_NUMERICALLY_CERTIFIED_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.73 当前：TPC-279 minimal coherence-to-gain criterion and finite coordinate transfer
+## 0.74 当前：TPC-280 additive-leakage-aware gain and endpoint compiler
+
+项目：`papers/tpc-280-leakage-aware-endpoint-compiler/`
+
+类型：**PROVED_CONDITIONAL_TWO_TERM_LEAKAGE_ENDPOINT_COMPILER_PLUS_NUMERICALLY_CERTIFIED_TRANSFER**。
+
+TPC-280 承接 TPC-279 的 exact deficit criterion，处理 source bound 中同时存在的
+multiplicative main term 与 additive leakage。若 `D>=dX^a` 且
+`G<=B X^(-gamma)D+ell X^(a-delta)`，精确归一化为
+`G/D<=B X^(-gamma)+(ell/d)X^(-delta)`，从而得到 two-term reciprocal gain bound。
+令 `kappa=min(gamma,delta)`，可进一步编译为
+`D/G>=(B+ell/d)^(-1)X^kappa`，并通过 TPC-279 的
+`m^2=(D/G)m_D^2` 接回 `eta_eff=max(0,eta_D-kappa/2)` 与 strict
+`sigma-eta_eff>1/400` endpoint budget。
+
+形式 equality family `D=dX^a`、`G=BX^(-gamma)D+ell X^(a-delta)` 证明 two-term
+denominator 在该信息模型下 sharp；当 `delta<gamma` 且 `ell>0` 时，慢 leakage
+是不可绕过的 exponent bottleneck。6 个 budget、4 个 margin、4 个 endpoint
+exact rational fixtures，以及 TPC-279 的 12-row coordinate transfer 均通过
+independent/stress/bridge checks。该结果仍是 conditional compiler，不提供 literal
+source decomposition、arithmetic `L2`、fixed-power credit 或 twin-prime conclusion。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_TWO_TERM_ADDITIVE_LEAKAGE_GAIN_AND_MARGIN_COMPILER
+STRONGEST_OBSTRUCTION = SLOWER_LEAKAGE_EXPONENT_CAPS_THE_GAIN_EXPONENT
+OPEN_THEOREM = LITERAL_GROWING_SOURCE_DECOMPOSITION_WITH_ARITHMETIC_L2
+REUSABLE_STRUCTURE = SOURCE_FLOOR -> NORMALIZE_TWO_TERMS -> DOMINANT_EXPONENT -> ENDPOINT_BUDGET
+ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
+```
+
+```text
+TPC280_ROUTE_ADVANCE = YES_SCOPED_ADDITIVE_LEAKAGE_ENDPOINT_COMPILER
+TPC280_TWO_TERM_COMPILER = PROVED_CONDITIONAL
+TPC280_DOMINANT_EXPONENT = PROVED_KAPPA_EQUALS_MIN_GAMMA_DELTA
+TPC280_MARGIN_COMPILER = PROVED_CONDITIONAL_ETA_EFF_EQUALS_MAX_ZERO_ETA_D_MINUS_KAPPA_OVER_2
+TPC280_LEAKAGE_BOTTLENECK = PROVED_CONDITIONAL_DELTA_LT_GAMMA
+TPC280_SHARPNESS = PROVED_CONDITIONAL_EQUALITY_FAMILY
+TPC280_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC280_FIXED_POWER_CREDIT = 0
+TPC280_ARITHMETIC_ADVANCE = NO
+TPC280_L2 = NONE
+TPC280_FULL_GATE_B = OPEN
+TPC280_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC280_TWIN_PRIME_RESULT = NONE
+TPC280_STATUS = PROVED_CONDITIONAL_TWO_TERM_LEAKAGE_ENDPOINT_COMPILER_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+```
+
+## 0.73 已发布：TPC-279 minimal coherence-to-gain criterion and finite coordinate transfer
 
 项目：`papers/tpc-279-coherence-to-gain-theorem/`
 
