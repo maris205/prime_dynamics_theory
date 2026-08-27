@@ -2,13 +2,34 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V134 / TPC-281
+当前地图版本：V135 / TPC-282
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-281`（`PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT`）；
+当前编号锚点：`TPC-282`（`NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN`）；
 对应论文目录为
-`papers/tpc-281-arithmetic-l2-gate-b-interface-audit/`。
+`papers/tpc-282-literal-source-attachment-audit/`。
+TPC-282 承接 TPC-281，将 actual comparison-weight readout 放回 literal source：
+`S=(I-P_3)A beta`、`w_perp=(I-P_3)w`、`C=<w_perp,S>`。在 12 个 registered rows 上，
+`C` 全部 sign-separated（11 negative、1 positive），但最弱归一化附着平方约为
+`3.36e-5`。这是 finite source-lock 证书；uniform asymptotic nondegeneracy、literal
+arithmetic `L2` 与 full Gate B 仍 open。
+
+```text
+TPC282_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN
+TPC282_ROUTE_ADVANCE = YES_SCOPED_FINITE_SOURCE_ATTACHMENT_AUDIT
+TPC282_SOURCE_ATTACHMENT = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC282_SOURCE_SIGN = 11_NEGATIVE_1_POSITIVE_FINITE
+TPC282_UNIFORM_ASYMPTOTIC_NONDEGENERACY = OPEN
+TPC282_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC282_FIXED_POWER_CREDIT = 0
+TPC282_FULL_GATE_B = OPEN
+TPC282_TWIN_PRIME_RESULT = NONE
+TPC282_ROUND2_CLUE = QUANTIFY_SOURCE_ATTACHMENT_STABILITY_RADIUS_AND_SIGN_FLIPS
+```
+
+TPC-281 remains the immediate typed-interface parent; its historical section
+follows below.
 TPC-281 承接 TPC-280，将下一步 arithmetic `L2` 明确类型化为
 `A_X:H_X -> ell^2(I_X)`、`||A_X||_(2->2)<=K X^(-sigma)`。若
 `G/D<=Q_X` 且 `D<=d_+X^a`，精确得到
@@ -63,6 +84,34 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.76 V135 / TPC-282：literal source attachment and finite source-lock audit
+
+TPC-282 是 TPC-281 的 source-level continuation。它不再用任意 equal-norm functional
+代替 arithmetic readout，而是在 frozen literal V59 operator 上直接定义
+`S=(I-P_3)A beta`、`w_perp=(I-P_3)w`、`C=<w_perp,S>`，并以
+`rho^2=C^2/(||w_perp||^2||S||^2)` 记录附着强度。
+
+六个 registered scales 与 `s=1,2` 的 12 行全部通过 outward interval source-lock：
+`C` 有 11 个负行、1 个正行、0 个 zero crossing；最小 `rho^2` 出现在
+`(256,38,6,2)`，下界约为 `3.36e-5`。因此 actual source identification 在有限
+schedule 上已经可复现，但符号不恒定且 margin 很弱。
+
+```text
+TPC282_ROUTE_ADVANCE = YES_SCOPED_FINITE_SOURCE_ATTACHMENT_AUDIT
+TPC282_SOURCE_ATTACHMENT = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC282_SOURCE_SIGN = 11_NEGATIVE_1_POSITIVE_FINITE
+TPC282_UNIFORM_ASYMPTOTIC_NONDEGENERACY = OPEN
+TPC282_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC282_FIXED_POWER_CREDIT = 0
+TPC282_FULL_GATE_B = OPEN
+TPC282_TWIN_PRIME_RESULT = NONE
+TPC282_ROUND2_CLUE = QUANTIFY_SOURCE_ATTACHMENT_STABILITY_RADIUS_AND_SIGN_FLIPS
+```
+
+地图位置：**V135 / TPC-282 已把 typed attachment 具体化为 literal source readout，
+并完成 12 行有限锁定；下一座桥是稳定半径与归零扰动，而不是把有限非零升级成
+渐近定理。**
 
 ## 5.75 V134 / TPC-281：typed arithmetic `L2` / Gate-B interface audit
 
@@ -488,9 +537,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V134 / TPC-281                    |
-        | TYPED ARITHMETIC L2 / GATE-B INTERFACE AUDIT  |
-        | conditional interface; literal L2 OPEN         |
+        | YOU ARE HERE — V135 / TPC-282                    |
+        | LITERAL SOURCE ATTACHMENT / SOURCE-LOCK AUDIT |
+        | finite lock; uniform nondegeneracy OPEN       |
         +--------------------------------------------------+
                 |
                 v
@@ -5477,6 +5526,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V135 / TPC-282 | Bridge A / Gate B：literal source attachment finite lock 已完成；uniform nondegeneracy、arithmetic `L2` 与 full Gate B open | `TPC-282` | 在 frozen literal V59 source 上重放 `C=<w_perp,(I-P_3)A beta>`；12 rows 全部 sign-separated（11 negative / 1 positive），最弱 `rho^2` 约 `3.36e-5`，fixed-power credit 为 0，下一步为 attachment stability radius 与 sign-flip audit |
 | 2026-08-27 | V134 / TPC-281 | Bridge A / Gate B：typed arithmetic `L2` interface 已完成；literal source `L2`、typed attachment 与 full Gate B open | `TPC-281` | 将 `A_X:H_X -> ell^2(I_X)`、`||A_X||_(2->2)<=KX^(-sigma)` 精确接入 packet gain budget，得到 output-energy exponent `a-2sigma-kappa`；equal-norm orthogonal functionals 给出 `G^2/0` attachment obstruction，4+4 fixtures 与 12-row parent transfer 通过，fixed-power credit 为 0 |
 | 2026-08-27 | V133 / TPC-280 | Bridge A / Gate B：additive-leakage-aware two-term compiler 已完成；literal source decomposition、arithmetic `L2` 与 full Gate B open | `TPC-280` | 从 `D>=dX^a` 与 `G<=B X^(-gamma)D+ell X^(a-delta)` 精确得到 two-term gain、`kappa=min(gamma,delta)`、margin half-exponent 与 strict `1/400` budget；equality family sharp，12-row parent transfer 通过，fixed-power credit 为 0 |
 | 2026-08-27 | V132 / TPC-279 | Bridge A / Gate B：exact coherence-to-gain criterion 已完成；growing source deficit、arithmetic `L2` 与 full Gate B open | `TPC-279` | exact `r>=bX^gamma` 三向等价、sharp `q<=min(4,1+3mu)` envelope、orthogonal/near-cancellation adversaries；TPC-278 的 12 rows 完成 reciprocal transfer（8 positive / 4 negative deficit），fixed-power credit 为 0，下一步为 additive-leakage-aware endpoint compiler |

@@ -1,0 +1,221 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Literal Source Attachment in the Four-Packet TPC Interface}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{27 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The typed $L^2$ interface in the preceding stage leaves a source-identification
+question: does the actual comparison-weight readout see the projected output
+of the literal prime-shell operator?  This note answers the question on the
+registered finite schedule without replacing the source by a model functional.
+For each of six growing-cutoff scales and both recorded kernel exponents, we
+recompute the literal V59 operator, the three-contrast block projection, the
+source profile, and the projected output.  Outward interval arithmetic certifies
+that the actual scalar attachment $C=\langle w_\perp,S\rangle$ is separated
+from zero on all twelve rows: eleven are negative and one is positive.  The
+smallest normalized attachment coefficient $C^2/(\|w_\perp\|^2\|S\|^2)$ is
+only about $3.36\times 10^{-5}$.  Thus the finite source lock is real but weak;
+it supplies neither a uniform asymptotic nondegeneracy theorem nor fixed-power
+credit.  An independent exact replay and hostile mutation audit are included.
+\end{abstract}
+
+\section{Question and scope}
+
+The four-packet analysis records a source vector $\beta$, a literal finite
+operator $A$, and a block projection $P_3$.  The output used by the signed
+reassembly is
+\[
+  S=(I-P_3)A\beta.
+\]
+The arithmetic readout is not an arbitrary dual vector.  It is the actual
+comparison-weight vector $w$ projected onto the same transverse space:
+\[
+  w_\perp=(I-P_3)w,\qquad C=\langle w_\perp,S\rangle.
+\]
+The purpose of this paper is to audit this scalar on the frozen finite source
+chain.  It is not to infer a power law from a finite table.  The distinction is
+important because the typed Gate-B interface of TPC-281 requires an additional
+source-identification or nondegeneracy statement; the present computation
+tests the literal object that such a statement would have to control.  The
+packet and typed-interface inputs are the registered artifacts of
+TPC-275 and TPC-281~\cite{tpc275,tpc281}.
+
+The physical matrix has entries, for distinct indices $u,t$,
+\begin{equation}
+ A(u,t)=\sum_{q\in\mathcal Q}qK_H(u-t)
+  {\bf 1}_{q\nmid u}{\bf 1}_{q\nmid t}
+  \left({\bf 1}_{u\equiv t\pmod q}-\frac{1}{q-1}\right),
+ \label{eq:operator}
+\end{equation}
+with $K_H(h)=H^{2s}(H^2+h^2)^{-s}$.  The six triples $(X,H,Q)$ are
+\[
+ (64,15,4),(96,20,5),(128,24,5),(192,32,6),
+ (256,38,6),(384,50,7),
+\]
+and the comparison cutoff is the registered growing cutoff from the upstream
+source certificate.  The source interval is the outward interval for the
+literal prime-power weight minus the finite comparison profile.
+
+\section{Projection formula and attachment coefficient}
+
+Let the index interval be divided into four consecutive blocks of size $b$.
+The three contrast vectors are
+\[
+ a_1=(1,1,-1,-1),\quad a_2=(1,-1,0,0),\quad
+ a_3=(0,0,1,-1),
+\]
+with denominators $4b,2b,2b$, respectively.  For a block-summed vector $z$,
+the projection energy is the sum of squared contrast sums divided by these
+denominators.  Orthogonality therefore gives the following exact identity.
+
+\begin{proposition}[source-lock identity]
+For the literal output $g=A\beta$ and source weight $w$,
+\[
+ C=\langle w,g\rangle-\langle P_3w,P_3g\rangle
+   =\langle (I-P_3)w,(I-P_3)g\rangle.
+\]
+If $W=\|w_\perp\|^2>0$ and $Y=\|S\|^2>0$, then the normalized attachment
+coefficient is
+\[
+ \rho^2=\frac{C^2}{WY},\qquad 0\leq\rho^2\leq 1.
+ \label{eq:rho}
+\]
+\end{proposition}
+
+\begin{proof}
+The three declared contrasts are mutually orthogonal after block expansion.
+Writing the orthogonal projection as the sum of the three rank-one pieces
+gives the first equality.  The second follows from $S=(I-P_3)g$ and
+$I-P_3$ being self-adjoint and idempotent.  The final inequality is
+Cauchy--Schwarz.
+\end{proof}
+
+The certificate evaluates $C$ and $W$ with outward intervals.  The matrix,
+$\beta$, and $S$ are rational, so $Y$ is exact rational arithmetic.  A row is
+called \emph{sign-separated} when the interval for $C$ lies strictly on one
+side of zero.  This is a finite, reproducible predicate rather than an
+asymptotic assertion.
+
+\section{Finite source-lock result}
+
+\begin{theorem}[registered literal source attachment]
+On the twelve registered rows $(X,H,Q,s)$, every interval for $C$ is
+sign-separated, every $W$ and $Y$ is positive, and every interval for $\rho^2$
+lies strictly inside $(0,1)$.  The sign census is eleven negative rows and one
+positive row.  The smallest lower endpoint of $\rho^2$ occurs at
+$(X,H,Q,s)=(256,38,6,2)$ and is
+\[
+ \frac{167799905983}{5000000000000000}
+ \approx 3.357\times10^{-5}.
+\]
+\end{theorem}
+
+\begin{proof}
+The executable certificate uses the exact operator in \eqref{eq:operator},
+the locked source intervals, and the three projection contrasts.  Its
+independent replay reconstructs the same quantities without importing the
+producer.  The twelve resulting intervals are listed in Table~\ref{tab:rows};
+their endpoints separate zero and the lower endpoint of each $\rho^2$ is
+positive.  Comparing the twelve rational lower endpoints gives the stated
+minimum.  The source code also binds each row to the exact signed output energy
+in the TPC-275 certificate.
+\end{proof}
+
+\begin{table}[t]
+\centering
+\small
+\caption{Outward intervals for the actual attachment and its normalized square.
+The decimal display is shortened; the certificate stores the displayed
+endpoints as exact rational values.}
+\label{tab:rows}
+\begin{tabular}{rrrrrr}
+\toprule
+$X$ & $H$ & $Q$ & $s$ & $C$ interval & $\rho^2$ interval\\
+\midrule
+64&15&4&1&[-27.4261,-27.4250]&[.0748099,.0748212]\\
+64&15&4&2&[-21.8964,-21.8950]&[.0614523,.0614634]\\
+96&20&5&1&[-53.6663,-53.6642]&[.0898041,.0898158]\\
+96&20&5&2&[-45.3984,-45.3966]&[.0833289,.0833401]\\
+128&24&5&1&[-31.1443,-31.1416]&[.0155791,.0155829]\\
+128&24&5&2&[-35.9357,-35.9329]&[.0251363,.0251419]\\
+192&32&6&1&[-7.01681,-7.00582]&[.00005266,.00005284]\\
+192&32&6&2&[-33.1370,-33.1266]&[.0015391,.0015402]\\
+256&38&6&1&[-37.2142,-37.2017]&[.0011437,.0011446]\\
+256&38&6&2&[5.43945,5.45064]&[.00003357,.00003372]\\
+384&50&7&1&[-91.8630,-91.8326]&[.0009659,.0009667]\\
+384&50&7&2&[-43.6411,-43.6139]&[.0002702,.0002706]\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The row at $X=256$, exponent $2$, is not a typo: the finite source attachment
+changes sign there.  A sign change does not invalidate the finite nonzero
+certificate, but it prevents a silent convention that the literal readout has
+one fixed phase on the entire registered schedule.
+
+\section{What the result does and does not buy}
+
+The finite result resolves one ambiguity left by an abstract equal-norm
+functional: the actual source readout is genuinely present on each tested row.
+It does not resolve the uniform question.  In particular, the minimum of
+$\rho^2$ is roughly four orders of magnitude below one, and the sign is not
+constant.  No inequality of the form
+\[
+ |C_X|\geq cX^{-\theta}
+ \quad\text{or}\quad \rho_X^2\geq cX^{-\kappa}
+ \label{eq:open}
+\]
+is proved here.  Such an inequality would have to be uniform on the same
+growing source, shell, height, and projection schedule.
+
+The distinction also matters for TPC-281.  A typed operator estimate
+$\|A_X\|_{2\to2}\leq KX^{-\sigma}$ controls an output from above, while
+the scalar $C$ identifies one particular source direction.  The present
+certificate supplies finite evidence for that identification, but neither the
+operator estimate nor a power-saving lower bound for the attachment.  Therefore
+the arithmetic $L^2$ gate, fixed-power credit, and full Gate B remain open.
+
+\section{Reproducibility and claim firewall}
+
+The producer hash-locks the TPC-275 producer and canonical result, as well as
+the TPC-268 source engine that defines the comparison intervals.  It reruns all
+twelve rows and writes canonical sorted-key JSON.  The independent checker
+reconstructs the matrix output, block projection, scalar, source norm, exact
+output norm, and cosine interval directly.  A hostile checker mutates an
+endpoint, sign, cosine interval, provenance hash, budget flag, and row census;
+all six mutations are rejected.  Normal and optimized Python executions are
+required to have empty standard error and byte-identical output.
+
+These checks establish a finite numerical certificate.  They do not turn a
+finite source scan into a theorem uniform in $X$, and they do not claim a
+twin-prime conclusion.
+
+\section{Conclusion}
+
+The literal source attachment is now source-locked on the complete registered
+TPC-275 schedule: it is nonzero on twelve rows, with eleven negative and one
+positive signs.  The strongest obstruction is quantitative rather than binary:
+the weakest normalized attachment is small.  The next natural problem is to
+compute the exact perturbation radius at which this attachment can vanish and
+to test whether the observed weak margin is stable under nearby source choices.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

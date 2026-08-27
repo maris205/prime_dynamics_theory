@@ -1,9 +1,48 @@
 # TPC HANDOFF
 
 更新时间：2026-08-27
-交接状态：`BOLD_CHANNEL_V134_TPC281_TYPED_ARITHMETIC_L2_INTERFACE_RELEASED`
+交接状态：`BOLD_CHANNEL_V135_TPC282_LITERAL_SOURCE_ATTACHMENT_AUDIT_RELEASED`
 
-TPC-281 当前 section：typed arithmetic `L2` / Gate-B interface audit
+TPC-282 当前 section：literal source attachment and finite source-lock audit
+-----------------------------------------------------------------------------------------------
+
+TPC-282 is the source-level continuation of TPC-281.  It evaluates the actual
+comparison-weight readout on the frozen literal V59 operator:
+
+```text
+S=(I-P_3)A beta,
+w_perp=(I-P_3)w,
+C=<w_perp,S>,
+rho^2=C^2/(||w_perp||^2 ||S||^2).
+```
+
+All twelve registered `(X,H,Q,s)` rows are sign-separated by outward interval
+replay: eleven have negative `C` and one has positive `C`.  The weakest lower
+attachment coefficient is approximately `3.357e-5` at `(256,38,6,2)`.  This
+is a finite literal source-lock result.  It does not prove uniform asymptotic
+nondegeneracy, literal arithmetic `L2`, fixed-power credit, full Gate B, or a
+twin-prime conclusion.
+
+```text
+TPC282_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN
+TPC282_ROUTE_ADVANCE = YES_SCOPED_FINITE_SOURCE_ATTACHMENT_AUDIT
+TPC282_SOURCE_ATTACHMENT = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC282_SOURCE_SIGN = 11_NEGATIVE_1_POSITIVE_FINITE
+TPC282_UNIFORM_ASYMPTOTIC_NONDEGENERACY = OPEN
+TPC282_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC282_FIXED_POWER_CREDIT = 0
+TPC282_FULL_GATE_B = OPEN
+TPC282_TWIN_PRIME_RESULT = NONE
+TPC282_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN
+TPC282_ROUND2_CLUE = QUANTIFY_SOURCE_ATTACHMENT_STABILITY_RADIUS_AND_SIGN_FLIPS
+```
+
+Strongest positive result: the actual source readout is nonzero on the whole
+registered finite schedule.  Strongest obstruction: the normalized attachment
+is weak and changes sign.  The next theorem target is the exact perturbation
+radius and its stability interpretation.
+
+TPC-281 upstream section follows immediately below.
 -----------------------------------------------------------------------------------------------
 
 TPC-281 is the direct continuation of TPC-280.  It makes the next arithmetic
@@ -9087,12 +9126,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V134/TPC-281 是当前 release；其 producer、independent replay、stress audit 与
+V135/TPC-282 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade 共 145 对 normal/optimized 命令、290 次 invocation；TPC-281
-贡献末尾 4 对，且每对要求空 stderr 与 byte-identical stdout。
+当前 curated cascade 共 149 对 normal/optimized 命令、298 次 invocation；TPC-281
+贡献其前 4 对，TPC-282 贡献末尾 4 对，且每对要求空 stderr 与 byte-identical stdout。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
 执行 normal与 optimized只读 checker；每一对必须都为零，且每一对 stdout
@@ -9423,6 +9462,19 @@ python -B research/tpc-big-road/tpc_bridge_b_leakage_aware_endpoint_compiler_che
 python -O -B research/tpc-big-road/tpc_bridge_b_leakage_aware_endpoint_compiler_checker.py --check
 ```
 
+TPC-282 的项目级 producer、independent replay、attachment stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-282-literal-source-attachment-audit/code/tpc282_literal_source_attachment_certificate.py --check
+python -O -B papers/tpc-282-literal-source-attachment-audit/code/tpc282_literal_source_attachment_certificate.py --check
+python -B papers/tpc-282-literal-source-attachment-audit/experiments/tpc282_independent_checker.py
+python -O -B papers/tpc-282-literal-source-attachment-audit/experiments/tpc282_independent_checker.py
+python -B papers/tpc-282-literal-source-attachment-audit/experiments/tpc282_attachment_stress.py
+python -O -B papers/tpc-282-literal-source-attachment-audit/experiments/tpc282_attachment_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_literal_source_attachment_audit_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_literal_source_attachment_audit_checker.py --check
+```
+
 TPC-281 的项目级 producer、independent replay、attachment stress 与 bridge checker：
 
 ```bash
@@ -9438,7 +9490,18 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-281 入口：
+最新 TPC-282 入口：
+
+```text
+papers/tpc-282-literal-source-attachment-audit/README.md
+papers/tpc-282-literal-source-attachment-audit/PROOF_PACKAGE.md
+papers/tpc-282-literal-source-attachment-audit/notes/theorem_ledger.md
+papers/tpc-282-literal-source-attachment-audit/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_literal_source_attachment_audit.md
+research/tpc-big-road/tpc_bridge_b_literal_source_attachment_audit_checker.py
+```
+
+TPC-281 upstream 入口：
 
 ```text
 papers/tpc-281-arithmetic-l2-gate-b-interface-audit/README.md

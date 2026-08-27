@@ -3,13 +3,51 @@
 
 更新时间：2026-08-27
 
-状态：**TPC281_PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC282_NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.75 当前：TPC-281 typed arithmetic `L2` / Gate-B interface audit
+## 0.76 当前：TPC-282 literal source attachment and finite source-lock audit
+
+项目：`papers/tpc-282-literal-source-attachment-audit/`
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN**。
+
+TPC-282 承接 TPC-281，将 typed attachment 的抽象缺口放回实际的 frozen literal V59
+source。令 `S=(I-P_3)A beta`、`w_perp=(I-P_3)w`、`C=<w_perp,S>`，并以
+`rho^2=C^2/(||w_perp||^2||S||^2)` 量化附着。六个 registered growing-cutoff scales
+与两个 kernel exponents 的 12 行均由 outward intervals 重放并与 TPC-275 signed output
+绑定：11 行 `C<0`、1 行 `C>0`、0 行 crossing zero；最弱行 `(256,38,6,2)` 的
+`rho^2` 下界约为 `3.36e-5`。这是真实 source readout 的有限锁定，不是渐近统一下界。
+
+最强正结果是 actual source attachment 在当前 12 行均非零；最强 obstruction 是弱
+归一化附着与一次符号翻转。开放定理是同一 growing schedule 上的 uniform source
+nondegeneracy，另有 literal arithmetic `L2` 未支付。可复用结构为
+`projected source/output -> C,W,Y -> normalized attachment`。
+
+```text
+STRONGEST_POSITIVE_RESULT = ACTUAL_LITERAL_SOURCE_ATTACHMENT_LOCKED_AND_NONZERO_ON_12_ROWS
+STRONGEST_OBSTRUCTION = WEAKEST_RHO_SQUARED_ABOUT_3.36E-5_AND_ONE_SIGN_FLIP
+OPEN_THEOREM = UNIFORM_ASYMPTOTIC_SOURCE_ATTACHMENT_NONDEGENERACY
+REUSABLE_STRUCTURE = PROJECT_SOURCE_AND_OUTPUT -> C,W,Y -> NORMALIZED_ATTACHMENT
+ROUND2_CLUE = QUANTIFY_SOURCE_ATTACHMENT_STABILITY_RADIUS_AND_SIGN_FLIPS
+```
+
+```text
+TPC282_ROUTE_ADVANCE = YES_SCOPED_FINITE_SOURCE_ATTACHMENT_AUDIT
+TPC282_SOURCE_ATTACHMENT = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC282_SOURCE_SIGN = 11_NEGATIVE_1_POSITIVE_FINITE
+TPC282_UNIFORM_ASYMPTOTIC_NONDEGENERACY = OPEN
+TPC282_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC282_FIXED_POWER_CREDIT = 0
+TPC282_FULL_GATE_B = OPEN
+TPC282_TWIN_PRIME_RESULT = NONE
+TPC282_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN
+```
+
+## 0.75 已发布：TPC-281 typed arithmetic `L2` / Gate-B interface audit
 
 项目：`papers/tpc-281-arithmetic-l2-gate-b-interface-audit/`
 

@@ -9,6 +9,23 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-282 承接 TPC-281，首次把 arithmetic interface 的 readout 换回
+literal V59 source 本身。对 `S=(I-P_3)A beta`、`w_perp=(I-P_3)w` 定义
+`C=<w_perp,S>` 与 `rho^2=C^2/(||w_perp||^2||S||^2)`，在六个 registered scales、
+两个 kernel exponents 的 12 行上，outward interval replay 认证 `C` 全部与零分离
+（11 negative、1 positive），但最弱 `rho^2` 仅约 `3.36e-5`。这是
+`NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK` 的明确 source-level
+进展；不升级为 uniform asymptotic nondegeneracy、arithmetic `L2`、fixed-power credit、
+full Gate B 或 twin-prime conclusion。下一关是量化 attachment 的最小归零扰动与符号稳定性。
+
+```text
+TPC282_SOURCE_ATTACHMENT = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC282_SOURCE_SIGN = 11_NEGATIVE_1_POSITIVE_FINITE
+TPC282_UNIFORM_ASYMPTOTIC_NONDEGENERACY = OPEN
+TPC282_FIXED_POWER_CREDIT = 0
+TPC282_FULL_GATE_B = OPEN
+```
+
 当前主线状态：TPC-281 承接 TPC-280，把假设性的 arithmetic `L2` 明确类型化为
 `A_X:H_X -> ell^2(I_X)` 的 operator interface。若
 `||A_X||_(2->2)<=K X^(-sigma)`、`G/D<=Q_X` 且 `D<=d_+X^a`，则严格得到

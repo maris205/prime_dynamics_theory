@@ -1,13 +1,38 @@
-# TPC big road V134 / TPC-281: typed arithmetic L2 Gate-B interface audit
+# TPC big road V135 / TPC-282: literal source attachment audit
 
 更新时间：2026-08-27
 
-状态：`TPC281_PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC282_NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-281 proof 为
+当前 TPC-282 proof 为
+`bridge_b_literal_source_attachment_audit.md`，checker 为
+`tpc_bridge_b_literal_source_attachment_audit_checker.py`，编号论文为
+`../../papers/tpc-282-literal-source-attachment-audit/`。
+
+TPC-282 承接 TPC-281，把抽象的 typed attachment 换回实际的 literal V59 source：
+`S=(I-P_3)A beta`、`w_perp=(I-P_3)w`、`C=<w_perp,S>`。六个 registered scales 与
+两个 kernel exponents 的 12 行均通过 outward interval source-lock，得到 11 个负
+附着、1 个正附着、0 个 zero crossing；最弱 `rho^2=C^2/(||w_perp||^2||S||^2)` 约为
+`3.36e-5`。这是有限 source identification 证书，不是 uniform nondegeneracy theorem。
+
+```text
+TPC282_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN
+TPC282_ROUTE_ADVANCE = YES_SCOPED_FINITE_SOURCE_ATTACHMENT_AUDIT
+TPC282_SOURCE_ATTACHMENT = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC282_SOURCE_SIGN = 11_NEGATIVE_1_POSITIVE_FINITE
+TPC282_UNIFORM_ASYMPTOTIC_NONDEGENERACY = OPEN
+TPC282_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC282_FIXED_POWER_CREDIT = 0
+TPC282_FULL_GATE_B = OPEN
+TPC282_TWIN_PRIME_RESULT = NONE
+TPC282_STATUS = NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN
+TPC282_ROUND2_CLUE = QUANTIFY_SOURCE_ATTACHMENT_STABILITY_RADIUS_AND_SIGN_FLIPS
+```
+
+TPC-281 upstream proof 为
 `bridge_b_arithmetic_l2_gate_b_interface_audit.md`，checker 为
 `tpc_bridge_b_arithmetic_l2_gate_b_interface_audit_checker.py`，编号论文为
 `../../papers/tpc-281-arithmetic-l2-gate-b-interface-audit/`。

@@ -1,9 +1,32 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V134 / TYPED_ARITHMETIC_L2_GATE_B_INTERFACE_AUDIT`
-claim level：`PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT`
-编号事实终点：TPC-281；TPC-281 trigger：`true`
+状态：`BOLD_CHANNEL_V135 / LITERAL_SOURCE_ATTACHMENT_AUDIT`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN`
+编号事实终点：TPC-282；TPC-282 trigger：`true`
+
+当前 TPC-282 入口：proof 为
+`research/tpc-big-road/bridge_b_literal_source_attachment_audit.md`，checker 为
+`tpc_bridge_b_literal_source_attachment_audit_checker.py`，编号论文为
+`papers/tpc-282-literal-source-attachment-audit/`。它在 frozen literal V59 operator
+上直接计算 `C=<w_perp,(I-P_3)A beta>` 与
+`rho^2=C^2/(||w_perp||^2||S||^2)`；12 行全部 sign-separated（11 negative、1 positive），
+但最小 `rho^2` 约 `3.36e-5`。因此 finite source identification 已锁定，uniform
+asymptotic nondegeneracy、literal arithmetic `L2`、fixed-power credit 与 full Gate B
+仍 OPEN/NONE。
+
+```text
+TPC282_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN
+TPC282_ROUTE_ADVANCE = YES_SCOPED_FINITE_SOURCE_ATTACHMENT_AUDIT
+TPC282_SOURCE_ATTACHMENT = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC282_SOURCE_SIGN = 11_NEGATIVE_1_POSITIVE_FINITE
+TPC282_UNIFORM_ASYMPTOTIC_NONDEGENERACY = OPEN
+TPC282_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC282_FIXED_POWER_CREDIT = 0
+TPC282_FULL_GATE_B = OPEN
+TPC282_TWIN_PRIME_RESULT = NONE
+TPC282_ROUND2_CLUE = QUANTIFY_SOURCE_ATTACHMENT_STABILITY_RADIUS_AND_SIGN_FLIPS
+```
 
 当前 TPC-281 入口：proof 为
 `research/tpc-big-road/bridge_b_arithmetic_l2_gate_b_interface_audit.md`，checker 为
