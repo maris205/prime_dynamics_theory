@@ -1,9 +1,67 @@
 # TPC HANDOFF
 
 更新时间：2026-08-27
-交接状态：`BOLD_CHANNEL_V129_TPC276_SIGNED_GAIN_ENDPOINT_BUDGET_RELEASED`
+交接状态：`BOLD_CHANNEL_V130_TPC277_FOUR_PACKET_GAIN_FLOOR_RELEASED`
 
-TPC-276 当前 section：signed-gain margin recovery and strict endpoint budget
+TPC-277 当前 section：four-packet gain floor and source-level lower-bound attack
+-----------------------------------------------------------------------------------------------
+
+TPC-277 directly attacks the source-level signed-gain question left by TPC-276.  It freezes
+the literal TPC-268 prime-shell engine, exact beta source, masks, deleted diagonal,
+rank-three four-block Haar projection, and the four actual TPC-275 source packets.  For
+
+```text
+D=sum_j ||V_j||^2,
+G=||sum_j V_j||^2,
+E=sum_(j<k) Re<V_j,V_k>,
+r=D/G,
+kappa=(D-G)/D,
+```
+
+it proves the sharp universal floor `G<=4D`, hence `r>=1/4`, and the sharper conditional
+floor `E<=0 => G<=D => r>=1`.  The exact coordinate is
+`r=(1-kappa)^(-1)`.  Therefore a positive power gain requires a quantified source theorem
+`G/D<=b^(-1)x^(-gamma)`; a favorable cross-term sign or packet geometry alone cannot pay
+such a power.  Four orthogonal packets give the sharp no-power adversary.
+
+The matrix-free exact-rational producer and an independent column-major replay certify
+eight literal rows at kernel exponent `s=2`, including new scales
+`N=512,768,1024,1536,2048`.  All eight have negative net cross term and `r>1`, while the
+registered `N=192` row has `r<101/100`; the finite gain sequence is nonmonotone.  This is a
+source-attached finite diagnostic and a scoped one-percent-floor obstruction, not an
+asymptotic counterexample.  Fixed-power credit remains zero; arithmetic `L2`, full Gate B,
+and the twin-prime conclusion remain open/none.
+
+```text
+TPC277_MAXIMUM_CLAIM = PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN
+TPC277_ROUTE_ADVANCE = YES_SCOPED_SOURCE_GAIN_FLOOR_AND_FINITE_ATTACK
+TPC277_UNIVERSAL_FOUR_PACKET_FLOOR = PROVED_EXACT_R>=1_OVER_4
+TPC277_NONPOSITIVE_CROSS_FLOOR = PROVED_CONDITIONAL_R>=1
+TPC277_CANCELLATION_COORDINATE = PROVED_EXACT_r=(1-kappa)^(-1)
+TPC277_GEOMETRIC_POWER_PROMOTION = REFUTED_EXACT_BY_ORTHOGONAL_ADVERSARY
+TPC277_SOURCE_SCAN = NUMERICALLY_CERTIFIED_FINITE_ALL_8_ROWS
+TPC277_NATURAL_GAIN_SIGN = NUMERICALLY_CERTIFIED_FINITE_ALL_8_ROWS
+TPC277_ONE_PERCENT_FLOOR = REFUTED_SCOPED_FINITE
+TPC277_SOURCE_LEVEL_POWER_GAIN = OPEN_ASYMPTOTIC
+TPC277_FIXED_POWER_CREDIT = 0
+TPC277_ARITHMETIC_ADVANCE = NO
+TPC277_L2 = NONE
+TPC277_FULL_GATE_B = OPEN
+TPC277_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC277_TWIN_PRIME_RESULT = NONE
+TPC277_STATUS = PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN
+TPC277_ROUND2_CLUE = TEST_CROSS_SCALE_SIGNED_GAIN_STABILITY_AND_SHELL_SENSITIVITY
+```
+
+Strongest positive result: the sharp four-packet floor plus an exact source replay extending
+through `N=2048`.  Strongest obstruction: geometry alone supplies no positive power and the
+finite one-percent floor already fails.  Open theorem: a uniform source-level bound for the
+signed gain deficit `G/D`.  Reusable structure: `D,G,E -> kappa -> r -> endpoint input`.
+The Session-named `propose.md` and evaluator files remain absent; the project proof package,
+certificate, independent replay, stress audit, bridge checker, and `AGENTS.md` are the
+fail-closed local fallback.
+
+TPC-276 上游 section：signed-gain margin recovery and strict endpoint budget
 -----------------------------------------------------------------------------------------------
 
 TPC-276 is the source-attached continuation of TPC-275.  It freezes the same literal V59
@@ -8832,12 +8890,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V129/TPC-276 是当前 release；其 normal/optimized bridge checker 已追加到下列
-curated cascade，故总数从 106 对更新为 107 对。下列长版本链以 V119/TPC-266 开头的
+V130/TPC-277 是当前 release；其 normal/optimized bridge checker 已追加到下列
+curated cascade，故总数从 107 对更新为 108 对。下列长版本链以 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；二百一十四次（107 对）必须都为零，且每一对 stdout
+执行 normal与 optimized只读 checker；二百一十六次（108 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -9143,9 +9201,22 @@ python -B research/tpc-big-road/tpc_bridge_b_signed_four_packet_reassembly_check
 python -O -B research/tpc-big-road/tpc_bridge_b_signed_four_packet_reassembly_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_signed_gain_endpoint_budget_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_signed_gain_endpoint_budget_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_four_packet_gain_floor_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_four_packet_gain_floor_checker.py --check
 ```
 
 随后优先读取：
+
+最新 TPC-277 入口：
+
+```text
+papers/tpc-277-four-packet-gain-floor/README.md
+papers/tpc-277-four-packet-gain-floor/PROOF_PACKAGE.md
+papers/tpc-277-four-packet-gain-floor/notes/theorem_ledger.md
+papers/tpc-277-four-packet-gain-floor/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_four_packet_gain_floor.md
+research/tpc-big-road/tpc_bridge_b_four_packet_gain_floor_checker.py
+```
 
 最新 TPC-276 入口：
 

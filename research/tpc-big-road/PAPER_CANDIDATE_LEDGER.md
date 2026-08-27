@@ -3,11 +3,56 @@
 
 更新时间：2026-08-27
 
-状态：**TPC276_PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC277_PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
+
+## 0.71 当前：TPC-277 four-packet gain floor and source-level lower-bound attack
+
+项目：`papers/tpc-277-four-packet-gain-floor/`
+
+类型：**PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN**。
+
+TPC-277 直接攻击 TPC-276 留下的 source-level signed-gain 问题。对四个实际 packet
+vectors 定义 `D=sum||V_j||^2`、`G=||sum V_j||^2` 与
+`E=sum_{j<k} Re<V_j,V_k>`，精确证明 `G<=4D`、`D/G>=1/4`，并在 `E<=0` 时得到
+`D/G>=1`。新的 cancellation coordinate
+`kappa=(D-G)/D` 满足 `r=D/G=(1-kappa)^(-1)`，因此任何正幂 gain 都要求
+`G/D` 有 quantified near-cancellation，而不是只要求 cross term 为负。
+
+同一 literal TPC source 在 `s=2` 的 8 个 registered/extended rows 上以 exact
+matrix-free rational replay 认证 `E<0`、`r>1` 全部成立；其中 `N=192` 行的
+`r<101/100`，并且跨尺度不单调。这是有限 source diagnostic 与 one-percent
+floor 的 scoped obstruction，不是渐近反例；fixed-power credit、arithmetic `L2`、
+full Gate B 与 twin-prime conclusion 仍为 0/OPEN/NONE。
+
+```text
+STRONGEST_POSITIVE_RESULT = SHARP_FOUR_PACKET_GEOMETRIC_FLOOR_PLUS_EXACT_8_ROW_SOURCE_SCAN
+STRONGEST_OBSTRUCTION = GEOMETRY_ALONE_HAS_NO_POSITIVE_POWER; ONE_PERCENT_FLOOR_REFUTED_SCOPED
+OPEN_THEOREM = UNIFORM_SOURCE_LEVEL_SIGNED_GAIN_OR_G_OVER_D_DEFICIT_BOUND
+REUSABLE_STRUCTURE = D,G,E -> kappa -> r=(1-kappa)^(-1) -> endpoint input
+ROUND2_CLUE = TEST_CROSS_SCALE_SIGNED_GAIN_STABILITY_AND_SHELL_SENSITIVITY
+```
+
+```text
+TPC277_ROUTE_ADVANCE = YES_SCOPED_SOURCE_GAIN_FLOOR_AND_FINITE_ATTACK
+TPC277_UNIVERSAL_FOUR_PACKET_FLOOR = PROVED_EXACT_R>=1_OVER_4
+TPC277_NONPOSITIVE_CROSS_FLOOR = PROVED_CONDITIONAL_R>=1
+TPC277_CANCELLATION_COORDINATE = PROVED_EXACT_r=(1-kappa)^(-1)
+TPC277_GEOMETRIC_POWER_PROMOTION = REFUTED_EXACT_BY_ORTHOGONAL_ADVERSARY
+TPC277_SOURCE_SCAN = NUMERICALLY_CERTIFIED_FINITE_ALL_8_ROWS
+TPC277_ONE_PERCENT_FLOOR = REFUTED_SCOPED_FINITE
+TPC277_SOURCE_LEVEL_POWER_GAIN = OPEN_ASYMPTOTIC
+TPC277_FIXED_POWER_CREDIT = 0
+TPC277_ARITHMETIC_ADVANCE = NO
+TPC277_L2 = NONE
+TPC277_FULL_GATE_B = OPEN
+TPC277_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC277_TWIN_PRIME_RESULT = NONE
+TPC277_STATUS = PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN
+```
 
 ## 0.70 当前：TPC-276 signed-gain margin recovery and strict endpoint budget
 

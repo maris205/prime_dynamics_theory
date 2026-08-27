@@ -1,0 +1,200 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.82in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\newcommand{\Dpack}{D}
+\newcommand{\Gpack}{G}
+\newcommand{\Ecross}{E}
+\newcommand{\kappaC}{\kappa}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\title{Four-Packet Gain Floors and a Source-Level Lower-Bound Attack}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{27 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The previous TPC-276 compiler identified the signed packet gain
+$r=D/G$ as a possible source of endpoint margin.  This paper isolates what
+four-packet geometry can actually provide.  For arbitrary four vectors,
+$G\leq 4D$, hence $r\geq 1/4$; if the net signed cross term is nonpositive,
+then $G\leq D$ and $r\geq 1$.  Writing
+$\kappa=(D-G)/D$ gives the exact inverse coordinate
+$r=(1-\kappa)^{-1}$, so a polynomial gain requires near-total cancellation,
+not merely a favorable sign.  An exact rational replay of the literal
+TPC source at eight registered and extended scales finds negative net cross
+term and $r>1$ on every row, while the smallest row has $r<1.01$.
+The result is a reusable geometric floor and a finite source diagnostic, not
+an asymptotic power gain or a twin-prime proof.
+\end{abstract}
+
+\section{Question and frozen object}
+
+TPC-275 retained the four actual consecutive source-block packets
+$V_0,V_1,V_2,V_3$ of the projected literal V59 operator.  TPC-276 showed
+that their signed energy can improve a margin, but left open whether the
+ratio has a source-level lower bound.  We first remove an ambiguity: which
+part of such a lower bound is forced by geometry, and which part must come
+from arithmetic structure?
+
+Throughout, the source, prime shell, masks, deleted diagonal, beta weights,
+and rank-three four-block Haar projection are exactly those frozen in the
+TPC-268--275 chain.  No synthetic packet is introduced.  The new finite rows
+are a declared extension of the same computation; they are not a claim about
+an already proved asymptotic registry.
+
+\section{The geometric floor}
+
+Let the inner product be linear in either convention and take real parts in
+the complex case.  Define
+\[
+ D=\sum_{j=0}^3\|V_j\|^2,\qquad
+ S=\sum_{j=0}^3V_j,\qquad G=\|S\|^2,
+\]
+and
+\[
+ E=\sum_{0\leq j<k\leq3}\operatorname{Re}\langle V_j,V_k\rangle.
+\]
+Expansion gives $G=D+2E$.
+
+\begin{theorem}[universal four-packet floor]
+If $D>0$ and $G>0$, then
+\[
+ G\leq \left(\sum_{j=0}^3\|V_j\|\right)^2\leq 4D,
+ \qquad r:=\frac{D}{G}\geq\frac14.
+\]
+If in addition $E\leq0$, then $G\leq D$ and $r\geq1$.
+\end{theorem}
+
+\begin{proof}
+The first inequality is the triangle inequality followed by
+Cauchy--Schwarz in $\mathbb R^4$:
+$(\sum_j\|V_j\|)^2\leq4\sum_j\|V_j\|^2$.  The signed assertion follows
+from $G=D+2E\leq D$.  Positivity of $G$ permits division.
+\end{proof}
+
+The constants are sharp.  Four equal aligned vectors attain $r=1/4$.
+Four nonzero mutually orthogonal vectors attain $r=1$.  Thus even the
+stronger signed floor is only a constant statement.
+
+\section{The cancellation coordinate}
+
+Define the dimensionless cancellation fraction
+\[
+ \kappaC=\frac{D-G}{D}=-\frac{2E}{D}.
+\]
+Whenever $G>0$, the preceding expansion is equivalent to
+\[
+ \frac GD=1-\kappaC,\qquad
+ r=\frac1{1-\kappaC}.
+ \tag{1}
+\]
+For a nonpositive cross term, $0\leq\kappaC<1$.  Formula (1) identifies
+the actual missing theorem: a bound $r\geq b x^\gamma$ is equivalent to
+\[
+ \frac GD\leq b^{-1}x^{-\gamma},
+ \tag{2}
+\]
+or $1-\kappaC\leq b^{-1}x^{-\gamma}$.  Merely proving $E\leq0$ gives
+$\kappaC\geq0$ and no positive power.  An orthogonal family has
+$\kappaC=0$ for every scale and is an exact adversary to geometric power
+promotion.
+
+\begin{proposition}[no geometric power credit]
+The four-packet axioms alone imply no inequality
+$r\geq b x^\gamma$ with $b>0$ and $\gamma>0$ on a growing family.
+\end{proposition}
+
+\begin{proof}
+For every $x$, choose four orthogonal unit vectors.  Then $D=G=4$ and
+$r=1$, contradicting $1\geq b x^\gamma$ for sufficiently large $x$.
+\end{proof}
+
+This proposition is not an assertion that the literal prime source is
+orthogonal.  It says that an eventual source theorem must use information
+beyond the packet Gram axioms, such as a quantified arithmetic mechanism
+forcing $G/D$ to decay.
+
+\section{Exact source scan}
+
+The certificate evaluates the actual beta source and prime shell with exact
+rational arithmetic.  For each row it accumulates the four unprojected
+packet outputs, applies the three declared Haar contrasts to each output,
+and forms $D$ and $G$.  The JSON stores outward rational intervals on the
+grid $10^{15}$ and a digest of the exact pair; an independent checker uses
+column-major accumulation.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\begin{tabular}{r r r r r r}
+\toprule
+$N$ & $H$ & $Q$ & $z$ & $r=D/G$ (display) & $\kappaC$ (display)\\
+\midrule
+192 & 32 & 6  & 5  & 1.006248221 & 0.006209423\\
+256 & 38 & 6  & 6  & 1.058743787 & 0.055484422\\
+384 & 50 & 7  & 7  & 1.124746633 & 0.110910875\\
+512 & 64 & 8  & 7  & 1.080616361 & 0.074602203\\
+768 & 86 & 9  & 9  & 1.051461797 & 0.048943098\\
+1024 & 108 & 10 & 10 & 1.054717352 & 0.051878688\\
+1536 & 150 & 12 & 12 & 1.018190110 & 0.017865141\\
+2048 & 170 & 12 & 12 & 1.030357019 & 0.029462622\\
+\bottomrule
+\end{tabular}
+\caption{Exact source replay, kernel exponent $s=2$.  Decimal values are
+display-only; threshold decisions use outward rational intervals.}
+\end{table}
+
+All eight rows have $E<0$ and $r>1$.  The first row nevertheless has
+$r<101/100$.  Consequently this finite registry refutes the stronger
+one-percent floor as a scoped finite claim, while retaining the weaker
+negative-cross-term floor.  The gain is also visibly nonmonotone: the
+sequence falls from $N=384$ to $N=768$ and again from $N=1024$ to $N=1536$.
+Neither observation supplies a growing quantifier.
+
+\section{Implications for the endpoint ledger}
+
+TPC-276 uses $r$ through $m^2=r m_D^2$.  The present result sharpens the
+input firewall.  A signed cross-term estimate can certify $r\geq1$, but a
+positive exponent in the TPC-276 budget requires (2), which is a near-null
+estimate for the reassembled packet sum.  The finite source rows are useful
+for locating that target and for testing implementations; they pay zero
+fixed-power credit.
+
+\section{Conclusion and route evaluation}
+
+The main positive result is the sharp, reusable four-packet floor together
+with an exact source replay at eight scales.  The main obstruction is equally
+precise: geometry alone cannot provide a positive power, and the finite scan
+already fails a one-percent floor.  The next natural experiment is to test
+cross-scale gain stability under controlled prime-shell and clock changes,
+then to formulate a source theorem directly for the deficit $G/D$.
+
+\begin{center}
+\begin{tabular}{ll}
+\texttt{ROUTE-A} & not applicable to this finite gain-floor audit\\
+\texttt{ROUTE-B} & yes, scoped source-gain floor and finite attack\\
+\texttt{FIXED-POWER-CREDIT} & 0\\
+\texttt{ARITHMETIC-L2 / FULL-GATE-B} & open\\
+\texttt{TWIN-PRIME-RESULT} & none
+\end{tabular}
+\end{center}
+
+\begin{thebibliography}{9}
+\bibitem{HW} G. H. Hardy and E. M. Wright, \emph{An Introduction to the
+Theory of Numbers}, 6th ed., Oxford University Press, 2008.
+\bibitem{TPC275} L. Wang, ``Signed Four-Packet Reassembly for the Literal
+V59 Output,'' TPC-275 project release, 2026.
+\end{thebibliography}
+
+\end{document}

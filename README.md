@@ -9,14 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-276 承接 TPC-275，在同一个锁定的 literal V59 finite physical
-operator 上把 signed packet gain 接入 correlation margin。精确恒等式为
-`m^2=(D/G)m_D^2`；若未来证明 source-level `D/G>=b*x^gamma`，则有效 margin loss
-为 `eta_eff=max(0,eta_D-gamma/2)`，严格 endpoint 条件为
-`sigma-eta_eff>1/400`。TPC-275 的 12 个 rows 经过 exact rational transfer 后，12/12
-有 `D/G>1`，3 行超过 `m^2=1/16`、5 行超过 `m^2=1/64`；但有限 gain 不产生
-fixed-power credit。source-level signed gain、arithmetic `L2`、full Gate B 与
-twin-prime conclusion 仍 OPEN/NONE。
+当前主线状态：TPC-277 承接 TPC-276，先攻击 signed packet gain 的 source-level
+下界。对四个实际 source-block packets，精确证明通用几何 floor `G<=4D`、
+`D/G>=1/4`，并在 net cross term 非正时得到 `D/G>=1`；八个同一 literal source
+的 registered/extended rows 由 exact rational replay 认证 `G-D<0`、`D/G>1`，但
+最小行已低于 `1.01`。这把“正幂增益”精确缩为必须证明 `G/D` 衰减的 near-cancellation
+问题；geometry alone 不支付 power，fixed-power credit 仍为 0。source-level
+uniform gain、arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
 
 当前主线状态：TPC-275 承接 TPC-274，在同一个锁定的 literal V59 finite physical
 operator 上把四个实际 source-block 输出包保留下来，定义 packet Gram、四点 DFT 与
@@ -139,6 +138,10 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-277-four-packet-gain-floor - 当前阶段 - 证明四包几何的 sharp gain floor `D/G>=1/4`，
+在非正 signed cross term 下证明 `D/G>=1`，并以 8 个 exact source rows 发现
+`D/G>1` 但 `r>=1.01` 的 finite obstruction；正幂 source theorem、arithmetic `L2`
+与 full Gate B 仍 OPEN，fixed-power credit 为 0。
 tpc-276-signed-gain-endpoint-budget - 当前阶段 - 证明 exact `m^2=(D/G)m_D^2` 与
 conditional strict budget `sigma-eta_eff>1/400`（`eta_eff=max(0,eta_D-gamma/2)`），
 并以 12 行 exact rational transfer 认证 `D/G>1` 全部成立、3 行超过 quarter、5 行

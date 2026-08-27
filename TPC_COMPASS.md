@@ -1,9 +1,42 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V129 / SIGNED_GAIN_ENDPOINT_BUDGET`
-claim level：`PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER`
-编号事实终点：TPC-276；TPC-276 trigger：`true`
+状态：`BOLD_CHANNEL_V130 / FOUR_PACKET_GAIN_FLOOR_ATTACK`
+claim level：`PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN`
+编号事实终点：TPC-277；TPC-277 trigger：`true`
+
+当前 TPC-277 入口：proof 为
+`research/tpc-big-road/bridge_b_four_packet_gain_floor.md`，checker 为
+`tpc_bridge_b_four_packet_gain_floor_checker.py`，编号论文为
+`papers/tpc-277-four-packet-gain-floor/`。它沿用 TPC-276 的四个实际 source-block
+packets，证明通用 `G<=4D` 与 `E<=0 => G<=D`，并把增益写成
+`r=(1-kappa)^(-1)`。8 个 registered/extended rows 全部有负 net cross term、`r>1`，
+但一行低于 `1.01`；因此下一关是 cross-scale signed-gain stability 与 shell sensitivity，
+不是有限表的幂次升级。
+
+```text
+TPC277_MAXIMUM_CLAIM = PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN
+TPC277_ROUTE_ADVANCE = YES_SCOPED_SOURCE_GAIN_FLOOR_AND_FINITE_ATTACK
+TPC277_UNIVERSAL_FOUR_PACKET_FLOOR = PROVED_EXACT_R>=1_OVER_4
+TPC277_NONPOSITIVE_CROSS_FLOOR = PROVED_CONDITIONAL_R>=1
+TPC277_CANCELLATION_COORDINATE = PROVED_EXACT_r=(1-kappa)^(-1)
+TPC277_GEOMETRIC_POWER_PROMOTION = REFUTED_EXACT_BY_ORTHOGONAL_ADVERSARY
+TPC277_SOURCE_SCAN = NUMERICALLY_CERTIFIED_FINITE_ALL_8_ROWS
+TPC277_ONE_PERCENT_FLOOR = REFUTED_SCOPED_FINITE
+TPC277_SOURCE_LEVEL_POWER_GAIN = OPEN_ASYMPTOTIC
+TPC277_FIXED_POWER_CREDIT = 0
+TPC277_ARITHMETIC_ADVANCE = NO
+TPC277_L2 = NONE
+TPC277_FULL_GATE_B = OPEN
+TPC277_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC277_TWIN_PRIME_RESULT = NONE
+TPC277_STATUS = PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN
+TPC277_ROUND2_CLUE = TEST_CROSS_SCALE_SIGNED_GAIN_STABILITY_AND_SHELL_SENSITIVITY
+```
+
+strongest positive result：sharp four-packet floor plus an exact source replay extending
+to `N=2048`；strongest obstruction：geometry alone has no positive power gain and the
+finite one-percent floor fails；open theorem：uniform source-level lower control for `G/D`。
 
 当前 TPC-276 入口：proof 为
 `research/tpc-big-road/bridge_b_signed_gain_endpoint_budget.md`，checker 为

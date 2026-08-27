@@ -1,16 +1,49 @@
-# TPC big road V129 / TPC-276: signed-gain endpoint budget
+# TPC big road V130 / TPC-277: four-packet gain floor attack
 
 更新时间：2026-08-27
 
-状态：`TPC276_PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC277_PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-276 proof 为
-`bridge_b_signed_gain_endpoint_budget.md`，checker 为
-`tpc_bridge_b_signed_gain_endpoint_budget_checker.py`，编号论文为
-`../../papers/tpc-276-signed-gain-endpoint-budget/`。
+当前 TPC-277 proof 为
+`bridge_b_four_packet_gain_floor.md`，checker 为
+`tpc_bridge_b_four_packet_gain_floor_checker.py`，编号论文为
+`../../papers/tpc-277-four-packet-gain-floor/`。
+
+TPC-277 沿用 TPC-276 的四个实际 source-block packets，证明通用四包几何
+`G<=4D`、`D/G>=1/4`，并在负 net cross term 下证明 `D/G>=1`。精确的
+`kappa=(D-G)/D` 坐标给出 `r=(1-kappa)^(-1)`；8 个 registered/extended literal
+source rows 全部有 `G-D<0`、`r>1`，但最小行低于 `1.01`。这是一项 source-level
+finite attack 与 reusable floor，不是渐近 power theorem；source-level uniformity、
+arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC277_MAXIMUM_CLAIM = PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN
+TPC277_ROUTE_ADVANCE = YES_SCOPED_SOURCE_GAIN_FLOOR_AND_FINITE_ATTACK
+TPC277_UNIVERSAL_FOUR_PACKET_FLOOR = PROVED_EXACT_R>=1_OVER_4
+TPC277_NONPOSITIVE_CROSS_FLOOR = PROVED_CONDITIONAL_R>=1
+TPC277_CANCELLATION_COORDINATE = PROVED_EXACT_r=(1-kappa)^(-1)
+TPC277_GEOMETRIC_POWER_PROMOTION = REFUTED_EXACT_BY_ORTHOGONAL_ADVERSARY
+TPC277_SOURCE_SCAN = NUMERICALLY_CERTIFIED_FINITE_ALL_8_ROWS
+TPC277_ONE_PERCENT_FLOOR = REFUTED_SCOPED_FINITE
+TPC277_SOURCE_LEVEL_POWER_GAIN = OPEN_ASYMPTOTIC
+TPC277_FIXED_POWER_CREDIT = 0
+TPC277_ARITHMETIC_ADVANCE = NO
+TPC277_L2 = NONE
+TPC277_FULL_GATE_B = OPEN
+TPC277_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC277_TWIN_PRIME_RESULT = NONE
+TPC277_STATUS = PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN
+TPC277_ROUND2_CLUE = TEST_CROSS_SCALE_SIGNED_GAIN_STABILITY_AND_SHELL_SENSITIVITY
+```
+
+strongest positive result：sharp reusable geometric floor and exact 8-row source scan；
+strongest obstruction：finite gain is nonmonotone and geometry cannot pay a positive power；
+open theorem：uniform source-level gain/deficit control。
+
+TPC-276 的 current section follows for provenance.
 
 TPC-276 冻结 TPC-275 的四个实际 source-block packets 与 signed Gram output，证明
 exact `m^2=(D/G)m_D^2`。若 source-level `D/G>=b*x^gamma` 后续成立，则 margin 的

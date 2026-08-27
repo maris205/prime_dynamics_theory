@@ -2,20 +2,83 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V129 / TPC-276
+当前地图版本：V130 / TPC-277
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-276`（`PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER`）；
+当前编号锚点：`TPC-277`（`PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN`）；
 对应论文目录为
-`papers/tpc-276-signed-gain-endpoint-budget/`。
-TPC-276 在同一个 literal V59 finite physical operator 上冻结 TPC-275 的四个实际
-source-block packets，证明 exact `m^2=(D/G)m_D^2`，并给出
-`eta_eff=max(0,eta_D-gamma/2)` 下的 conditional strict budget
-`sigma-eta_eff>1/400`。12 个 rows 全部有 `D/G>1`，其中 3 行超过 `m^2=1/16`、5 行
-超过 `m^2=1/64`；这是 signed-gain margin recovery 的 scoped advance。有限 gain 不
-产生 fixed-power credit，source-level gain、arithmetic `L2`、full Gate B 与 twin-prime
-conclusion 仍 OPEN/NONE。
+`papers/tpc-277-four-packet-gain-floor/`。
+TPC-277 沿用同一个 literal V59 finite physical operator 与 TPC-275 的四个实际
+source-block packets，证明通用四包几何 `G<=4D`、`D/G>=1/4`，并在 net cross term
+非正时证明 `D/G>=1`。定义 `kappa=(D-G)/D` 后有 exact `r=(1-kappa)^(-1)`；8 个
+registered/extended source rows 全部为负 net cross term 且 `r>1`，但一行低于
+`1.01`。这是一项 source-level finite attack，说明正幂 gain 必须来自 quantified
+near-cancellation；有限数据不产生 fixed-power credit，source-level uniform gain、
+arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC277_MAXIMUM_CLAIM = PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN
+TPC277_ROUTE_ADVANCE = YES_SCOPED_SOURCE_GAIN_FLOOR_AND_FINITE_ATTACK
+TPC277_UNIVERSAL_FOUR_PACKET_FLOOR = PROVED_EXACT_R>=1_OVER_4
+TPC277_NONPOSITIVE_CROSS_FLOOR = PROVED_CONDITIONAL_R>=1
+TPC277_CANCELLATION_COORDINATE = PROVED_EXACT_r=(1-kappa)^(-1)
+TPC277_GEOMETRIC_POWER_PROMOTION = REFUTED_EXACT_BY_ORTHOGONAL_ADVERSARY
+TPC277_SOURCE_SCAN = NUMERICALLY_CERTIFIED_FINITE_ALL_8_ROWS
+TPC277_ONE_PERCENT_FLOOR = REFUTED_SCOPED_FINITE
+TPC277_SOURCE_LEVEL_POWER_GAIN = OPEN_ASYMPTOTIC
+TPC277_FIXED_POWER_CREDIT = 0
+TPC277_ARITHMETIC_ADVANCE = NO
+TPC277_L2 = NONE
+TPC277_FULL_GATE_B = OPEN
+TPC277_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC277_TWIN_PRIME_RESULT = NONE
+TPC277_STATUS = PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN
+TPC277_ROUND2_CLUE = TEST_CROSS_SCALE_SIGNED_GAIN_STABILITY_AND_SHELL_SENSITIVITY
+```
+
+strongest positive result：sharp four-packet floor and exact source replay through `N=2048`；
+strongest obstruction：geometry alone cannot pay a positive power, and the finite one-percent
+floor fails；open theorem：uniform source-level control of the signed gain deficit。
+
+## 5.71 V130 / TPC-277：four-packet gain floor and source-level lower-bound attack
+
+TPC-277 是 TPC-276 的最小 source-level continuation。它不更换 source、shell、projection
+或 packet definition，而是先回答 gain 下界中哪些部分只是几何恒等式。四包 Cauchy
+给出 `G<=4D`，负 net cross term 给出 `G<=D`，而
+`kappa=(D-G)/D` 将 gain 精确改写为 `r=(1-kappa)^(-1)`。因此若要从 TPC-276
+获得 `r>=b*x^gamma`，真正需要的是 `G/D<=b^(-1)x^(-gamma)` 的 source theorem。
+
+8 个 `s=2` rows（含 `512,768,1024,1536,2048` 的扩展尺度）均由 exact rational
+matrix-free replay 得到 `E<0`、`r>1`，但 `N=192` 的 `r` 只有约 `1.006248`，低于
+one-percent floor；有限跨尺度也不单调。这个结果把下一关明确为 shell/clock 敏感性
+与 cross-scale stability，而不是把有限增益直接当成幂次。
+
+```text
+TPC277_MAXIMUM_CLAIM = PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN
+TPC277_ROUTE_ADVANCE = YES_SCOPED_SOURCE_GAIN_FLOOR_AND_FINITE_ATTACK
+TPC277_UNIVERSAL_FOUR_PACKET_FLOOR = PROVED_EXACT_R>=1_OVER_4
+TPC277_NONPOSITIVE_CROSS_FLOOR = PROVED_CONDITIONAL_R>=1
+TPC277_CANCELLATION_COORDINATE = PROVED_EXACT_r=(1-kappa)^(-1)
+TPC277_GEOMETRIC_POWER_PROMOTION = REFUTED_EXACT_BY_ORTHOGONAL_ADVERSARY
+TPC277_SOURCE_SCAN = NUMERICALLY_CERTIFIED_FINITE_ALL_8_ROWS
+TPC277_ONE_PERCENT_FLOOR = REFUTED_SCOPED_FINITE
+TPC277_SOURCE_LEVEL_POWER_GAIN = OPEN_ASYMPTOTIC
+TPC277_FIXED_POWER_CREDIT = 0
+TPC277_ARITHMETIC_ADVANCE = NO
+TPC277_L2 = NONE
+TPC277_FULL_GATE_B = OPEN
+TPC277_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC277_TWIN_PRIME_RESULT = NONE
+TPC277_STATUS = PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN
+TPC277_ROUND2_CLUE = TEST_CROSS_SCALE_SIGNED_GAIN_STABILITY_AND_SHELL_SENSITIVITY
+```
+
+地图位置：**V130 / TPC-277 已把 signed gain 的几何 floor 与真正的 near-cancellation
+缺口分离，并在实际 source 上完成了延伸尺度的 finite attack；下一关测试跨尺度与
+prime-shell/clock 稳定性。**
+
+TPC-276 previous current registry follows for provenance.
 
 ```text
 TPC276_MAXIMUM_CLAIM = PROVED_CONDITIONAL_SIGNED_GAIN_STRICT_ENDPOINT_BUDGET_PLUS_FINITE_TRANSFER
@@ -249,9 +312,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V129 / TPC-276                    |
-        | SIGNED-GAIN ENDPOINT BUDGET                     |
-        | exact margin bridge; source gain OPEN           |
+        | YOU ARE HERE — V130 / TPC-277                    |
+        | FOUR-PACKET GAIN FLOOR ATTACK                   |
+        | exact floor; source power gain OPEN             |
         +--------------------------------------------------+
                 |
                 v
@@ -294,7 +357,7 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V129 / TPC-276。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V130 / TPC-277。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
@@ -4109,7 +4172,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V129 / TPC-276：
+截至 V130 / TPC-277：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -5193,6 +5256,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V130 / TPC-277 | Bridge A / Gate B：four-packet gain floor 与 source-level finite attack 已完成；uniform gain、arithmetic `L2` 与 full Gate B open | `TPC-277` | exact `G<=4D`、`E<=0 => G<=D` 与 `r=(1-kappa)^(-1)`；8 个 literal rows 全部 `r>1`，但 one-percent floor finite-refuted；geometry 无 fixed-power credit，下一步为 shell/clock gain stability |
 | 2026-08-27 | V129 / TPC-276 | Bridge A / Gate B：signed-gain margin recovery 与 strict endpoint compiler 已完成；source-level gain、arithmetic `L2` 与 full Gate B open | `TPC-276` | exact `m^2=(D/G)m_D^2`；conditional `eta_eff=max(0,eta_D-gamma/2)` 与 `sigma-eta_eff>1/400`；12 rows 全部 `D/G>1`，3 行超过 quarter、5 行超过 eighth；finite gain 不产生 fixed-power credit，下一步为 uniform source-level signed-gain lower bound |
 | 2026-08-27 | V128 / TPC-275 | Bridge A / Gate B：literal signed four-packet reassembly 已完成；source-level signed cross-Gram、arithmetic `L2` 与 full Gate B open | `TPC-275` | actual source-block packets 的 exact signed Gram、四点 DFT、polarization 与 12 rows 全部认证；`G-D<0`、`1<D/G<12/5`、`F/G>50`、`m_D^2<1/16`，不产生 fixed-power credit，下一关为 signed cross-Gram + margin/endpoint budget compiler |
 | 2026-08-27 | V127 / TPC-274 | Bridge A / Gate B：projected Frobenius envelope gap 已完成；signed output reassembly、arithmetic `L2` 与 full Gate B open | `TPC-274` | 证明 `G_perp<=||A_perp||_F^2||beta||_2^2`；6 个 growing-cutoff scales 与 `s=1,2` 的 12 rows 全部认证 envelope/actual gap `>50`、envelope proxy `m_F^2<1/64`，phase 为 11 negative/1 positive/0 crossing；cancellation-free route 标为 `INSUFFICIENT_SCOPED`，不产生 fixed-power credit，下一关为 signed output reassembly |
