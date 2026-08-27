@@ -3,13 +3,54 @@
 
 更新时间：2026-08-27
 
-状态：**TPC277_PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC278_NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.71 当前：TPC-277 four-packet gain floor and source-level lower-bound attack
+## 0.72 当前：TPC-278 cross-scale signed-gain stability and shell/clock counterexample
+
+项目：`papers/tpc-278-cross-scale-gain-stability/`
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION**。
+
+TPC-278 冻结 TPC-277 的 literal source、beta、masks、deleted diagonal、四个实际
+packets、rank-three Haar projection 与 `s=2`，只改变有限 prime-shell endpoint `Q`
+或 clock `H`。对 12 个精确有理数 rows，`G-D=2E` 给出 8 个 negative-cross 与
+4 个 positive-cross cases，并认证三条 shell sign-flip paths 与一条 clock sign-flip
+path。三个不变 natural controls 与 TPC-277 hash-locked rows 精确一致。
+
+因此 finite shortcut `D/G>=1` 在声明的邻近 Q/H 接口上被 scoped 否定；这个结论
+既不是 intended growing schedule 的渐近反例，也不提供 fixed-power credit。
+真正的下一输入必须是对精确 source schedule 的 coherence/deficit theorem。
+arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍为 OPEN/OPEN/NONE。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_12_ROW_SOURCE_CENSUS_WITH_FOUR_DECLARED_SIGN_FLIPS
+STRONGEST_OBSTRUCTION = NEARBY_SHELL_OR_CLOCK_CHOICE_CAN_REVERSE_SIGNED_GAIN
+OPEN_THEOREM = SCHEDULE_SPECIFIC_SOURCE_LEVEL_G_OVER_D_DEFICIT_BOUND
+REUSABLE_STRUCTURE = EXACT_SOURCE_REPLAY -> CROSS_SIGN_CENSUS -> STABILITY_FIREWALL
+ROUND2_CLUE = FORMULATE_MINIMAL_SOURCE_LEVEL_COHERENCE_TO_GAIN_THEOREM
+```
+
+```text
+TPC278_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_STABILITY_OBSTRUCTION
+TPC278_LITERAL_SOURCE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC278_NATURAL_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+TPC278_SHELL_CLOCK_FLIPS = NUMERICALLY_CERTIFIED_FINITE_4_FLIPS
+TPC278_SIGNED_GAIN_STABILITY = REFUTED_SCOPED_FINITE
+TPC278_SOURCE_LEVEL_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC278_FIXED_POWER_CREDIT = 0
+TPC278_ARITHMETIC_ADVANCE = NO
+TPC278_L2 = NONE
+TPC278_FULL_GATE_B = OPEN
+TPC278_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC278_TWIN_PRIME_RESULT = NONE
+TPC278_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
+```
+
+## 0.71 已发布：TPC-277 four-packet gain floor and source-level lower-bound attack
 
 项目：`papers/tpc-277-four-packet-gain-floor/`
 

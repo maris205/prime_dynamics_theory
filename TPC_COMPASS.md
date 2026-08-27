@@ -1,11 +1,42 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V130 / FOUR_PACKET_GAIN_FLOOR_ATTACK`
-claim level：`PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN`
-编号事实终点：TPC-277；TPC-277 trigger：`true`
+状态：`BOLD_CHANNEL_V131 / CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION`
+编号事实终点：TPC-278；TPC-278 trigger：`true`
 
-当前 TPC-277 入口：proof 为
+当前 TPC-278 入口：proof 为
+`research/tpc-big-road/bridge_b_cross_scale_gain_stability.md`，checker 为
+`tpc_bridge_b_cross_scale_gain_stability_checker.py`，编号论文为
+`papers/tpc-278-cross-scale-gain-stability/`。它冻结 TPC-277 的 literal source 与
+四包定义，只改有限 shell endpoint `Q` 或 clock `H`。12 行 exact replay 得到
+8 negative / 4 positive net cross terms，并认证三次 shell flip 与一次 clock flip；
+因此有限 `D/G>=1` stability shortcut 被 scoped 否定。下一关是最小
+coherence/deficit-to-gain theorem，而不是把有限 flip 升级为 growing counterexample。
+
+```text
+TPC278_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
+TPC278_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_STABILITY_OBSTRUCTION
+TPC278_LITERAL_SOURCE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC278_NATURAL_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+TPC278_SHELL_CLOCK_FLIPS = NUMERICALLY_CERTIFIED_FINITE_4_FLIPS
+TPC278_SIGNED_GAIN_STABILITY = REFUTED_SCOPED_FINITE
+TPC278_SOURCE_LEVEL_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC278_FIXED_POWER_CREDIT = 0
+TPC278_ARITHMETIC_ADVANCE = NO
+TPC278_L2 = NONE
+TPC278_FULL_GATE_B = OPEN
+TPC278_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC278_TWIN_PRIME_RESULT = NONE
+TPC278_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
+TPC278_ROUND2_CLUE = FORMULATE_MINIMAL_SOURCE_LEVEL_COHERENCE_TO_GAIN_THEOREM
+```
+
+strongest positive result：exact twelve-row source census with four declared sign flips；
+strongest obstruction：nearby shell/clock choices can reverse signed gain；open theorem：
+a schedule-specific source-level estimate for `G/D`。
+
+TPC-277 上游入口：proof 为
 `research/tpc-big-road/bridge_b_four_packet_gain_floor.md`，checker 为
 `tpc_bridge_b_four_packet_gain_floor_checker.py`，编号论文为
 `papers/tpc-277-four-packet-gain-floor/`。它沿用 TPC-276 的四个实际 source-block

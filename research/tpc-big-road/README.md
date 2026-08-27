@@ -1,13 +1,48 @@
-# TPC big road V130 / TPC-277: four-packet gain floor attack
+# TPC big road V131 / TPC-278: cross-scale signed-gain stability obstruction
 
 更新时间：2026-08-27
 
-状态：`TPC277_PROVED_EXACT_UNIVERSAL_FOUR_PACKET_GAIN_FLOOR_PLUS_NUMERICALLY_CERTIFIED_SOURCE_SCAN / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC278_NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-277 proof 为
+当前 TPC-278 proof 为
+`bridge_b_cross_scale_gain_stability.md`，checker 为
+`tpc_bridge_b_cross_scale_gain_stability_checker.py`，编号论文为
+`../../papers/tpc-278-cross-scale-gain-stability/`。
+
+TPC-278 冻结 TPC-277 的 literal source、四包定义、projection 与 `s=2`，只改变
+有限 shell endpoint `Q` 或 clock `H`。12 行 exact rational replay 得到 8 个负、
+4 个正 net cross terms，并认证三次 shell flip 与一次 clock flip。因此有限命题
+`D/G>=1` 在该接口上 `REFUTED_SCOPED`；这不否定 intended growing schedule，且不
+产生 fixed-power credit。下一关是精确刻画足以推出 power gain 的最小
+coherence/deficit hypothesis；arithmetic `L2`、full Gate B 与 twin-prime conclusion
+仍 OPEN/NONE。
+
+```text
+TPC278_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
+TPC278_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_STABILITY_OBSTRUCTION
+TPC278_LITERAL_SOURCE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC278_NATURAL_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+TPC278_SHELL_CLOCK_FLIPS = NUMERICALLY_CERTIFIED_FINITE_4_FLIPS
+TPC278_SIGNED_GAIN_STABILITY = REFUTED_SCOPED_FINITE
+TPC278_SOURCE_LEVEL_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC278_FIXED_POWER_CREDIT = 0
+TPC278_ARITHMETIC_ADVANCE = NO
+TPC278_L2 = NONE
+TPC278_FULL_GATE_B = OPEN
+TPC278_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC278_TWIN_PRIME_RESULT = NONE
+TPC278_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
+TPC278_ROUND2_CLUE = FORMULATE_MINIMAL_SOURCE_LEVEL_COHERENCE_TO_GAIN_THEOREM
+```
+
+strongest positive result：exact twelve-row source census and four finite sign flips；
+strongest obstruction：the signed gain is not stable under nearby declared Q/H choices；
+open theorem：a schedule-specific source-level `G/D` deficit estimate。
+
+TPC-277 upstream proof 为
 `bridge_b_four_packet_gain_floor.md`，checker 为
 `tpc_bridge_b_four_packet_gain_floor_checker.py`，编号论文为
 `../../papers/tpc-277-four-packet-gain-floor/`。

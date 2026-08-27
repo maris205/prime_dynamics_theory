@@ -1,9 +1,50 @@
 # TPC HANDOFF
 
 更新时间：2026-08-27
-交接状态：`BOLD_CHANNEL_V130_TPC277_FOUR_PACKET_GAIN_FLOOR_RELEASED`
+交接状态：`BOLD_CHANNEL_V131_TPC278_CROSS_SCALE_GAIN_STABILITY_RELEASED`
 
-TPC-277 当前 section：four-packet gain floor and source-level lower-bound attack
+TPC-278 当前 section：cross-scale signed-gain stability and shell/clock counterexample
+-----------------------------------------------------------------------------------------------
+
+TPC-278 is the hostile stability continuation of TPC-277.  It freezes the literal source,
+exact beta weights, masks, deleted diagonal, four actual packets, rank-three Haar
+projection, comparison cutoff, and exponent `s=2`; only the finite prime-shell endpoint
+`Q` or clock `H` is changed.  With `G-D=2E`, the sign of the net packet cross term is
+exactly equivalent to whether `D/G` lies above or below one.
+
+An exact-rational twelve-row source replay and an independent column-major reconstruction
+certify eight negative-cross and four positive-cross rows.  Three shell paths and one clock
+path reverse sign.  The three unchanged natural controls agree exactly with the hash-locked
+TPC-277 rows.  Hence finite `D/G>=1` stability under the declared nearby Q/H interface is
+`REFUTED_SCOPED`; this is not an asymptotic counterexample to the intended growing schedule.
+
+```text
+TPC278_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
+TPC278_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_STABILITY_OBSTRUCTION
+TPC278_LITERAL_SOURCE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC278_NATURAL_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
+TPC278_SHELL_CLOCK_FLIPS = NUMERICALLY_CERTIFIED_FINITE_4_FLIPS
+TPC278_SIGNED_GAIN_STABILITY = REFUTED_SCOPED_FINITE
+TPC278_SOURCE_LEVEL_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC278_FIXED_POWER_CREDIT = 0
+TPC278_ARITHMETIC_ADVANCE = NO
+TPC278_L2 = NONE
+TPC278_FULL_GATE_B = OPEN
+TPC278_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC278_TWIN_PRIME_RESULT = NONE
+TPC278_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
+TPC278_ROUND2_CLUE = FORMULATE_MINIMAL_SOURCE_LEVEL_COHERENCE_TO_GAIN_THEOREM
+```
+
+Strongest positive result: an exact twelve-row source census with four declared sign flips.
+Strongest obstruction: a one-step shell or small clock change can reverse signed gain.
+Open theorem: a schedule-specific source-level estimate for `G/D`.  Reusable structure:
+`exact source replay -> cross-sign census -> stability firewall`.  The Session-named
+`propose.md` and evaluator files remain absent; the proof package, theorem ledger,
+certificate, independent replay, stress audit, bridge checker, and `AGENTS.md` are the
+fail-closed local fallback.
+
+TPC-277 上游 section：four-packet gain floor and source-level lower-bound attack
 -----------------------------------------------------------------------------------------------
 
 TPC-277 directly attacks the source-level signed-gain question left by TPC-276.  It freezes
@@ -8890,12 +8931,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V130/TPC-277 是当前 release；其 normal/optimized bridge checker 已追加到下列
-curated cascade，故总数从 107 对更新为 108 对。下列长版本链以 V119/TPC-266 开头的
+V131/TPC-278 是当前 release；其 normal/optimized bridge checker 已追加到下列
+curated cascade，故总数从 108 对更新为 109 对。下列长版本链以 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；二百一十六次（108 对）必须都为零，且每一对 stdout
+执行 normal与 optimized只读 checker；二百一十八次（109 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -9203,9 +9244,22 @@ python -B research/tpc-big-road/tpc_bridge_b_signed_gain_endpoint_budget_checker
 python -O -B research/tpc-big-road/tpc_bridge_b_signed_gain_endpoint_budget_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_four_packet_gain_floor_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_four_packet_gain_floor_checker.py --check
+python -B research/tpc-big-road/tpc_bridge_b_cross_scale_gain_stability_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_cross_scale_gain_stability_checker.py --check
 ```
 
 随后优先读取：
+
+最新 TPC-278 入口：
+
+```text
+papers/tpc-278-cross-scale-gain-stability/README.md
+papers/tpc-278-cross-scale-gain-stability/PROOF_PACKAGE.md
+papers/tpc-278-cross-scale-gain-stability/notes/theorem_ledger.md
+papers/tpc-278-cross-scale-gain-stability/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_cross_scale_gain_stability.md
+research/tpc-big-road/tpc_bridge_b_cross_scale_gain_stability_checker.py
+```
 
 最新 TPC-277 入口：
 

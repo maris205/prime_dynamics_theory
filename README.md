@@ -9,13 +9,13 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-277 承接 TPC-276，先攻击 signed packet gain 的 source-level
-下界。对四个实际 source-block packets，精确证明通用几何 floor `G<=4D`、
-`D/G>=1/4`，并在 net cross term 非正时得到 `D/G>=1`；八个同一 literal source
-的 registered/extended rows 由 exact rational replay 认证 `G-D<0`、`D/G>1`，但
-最小行已低于 `1.01`。这把“正幂增益”精确缩为必须证明 `G/D` 衰减的 near-cancellation
-问题；geometry alone 不支付 power，fixed-power credit 仍为 0。source-level
-uniform gain、arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+当前主线状态：TPC-278 对 TPC-277 的 favorable signed gain 做最小 shell/clock
+稳定性攻击。保持 literal source、beta、masks、deleted diagonal、四包与 `P_3`
+不变，只改有限 shell endpoint `Q` 或 clock `H`；12 行 exact rational replay 得到
+8 个负、4 个正 net cross terms，并认证 3 次 shell flip 与 1 次 clock flip。
+因此有限命题 `D/G>=1` 在该声明接口上 `REFUTED_SCOPED`，但这不是 growing schedule
+的渐近反例。下一关是写出最小 coherence/deficit-to-gain theorem；fixed-power credit
+仍为 0，arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
 
 当前主线状态：TPC-275 承接 TPC-274，在同一个锁定的 literal V59 finite physical
 operator 上把四个实际 source-block 输出包保留下来，定义 packet Gram、四点 DFT 与
@@ -138,6 +138,10 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-278-cross-scale-gain-stability - 当前阶段 - 在同一 literal source 上仅改变有限
+prime-shell endpoint 或 clock，12 行 exact rational replay 认证 8/4 cross-sign census
+与 4 次符号翻转，有限 `D/G>=1` stability 被 scoped 否定；growing source theorem、
+arithmetic `L2` 与 full Gate B 仍 OPEN，fixed-power credit 为 0。
 tpc-277-four-packet-gain-floor - 当前阶段 - 证明四包几何的 sharp gain floor `D/G>=1/4`，
 在非正 signed cross term 下证明 `D/G>=1`，并以 8 个 exact source rows 发现
 `D/G>1` 但 `r>=1.01` 的 finite obstruction；正幂 source theorem、arithmetic `L2`
