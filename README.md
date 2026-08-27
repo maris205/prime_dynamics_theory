@@ -9,6 +9,24 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-283 承接 TPC-282，将有限 attachment 读成一个精确的 stability
+radius。对非零 `S`，若 `C=<w,S>`、`W=||w||^2`、`Y=||S||^2`，则到零附着超平面的
+最短相对距离平方严格等于 `C^2/(WY)`，唯一归零点为 `w-(C/Y)S`。转移 TPC-282 的
+12 行后，所有行的归零半径都小于 `3/10`，其中 6 行小于 `1/10`。这是
+`PROVED_EXACT` 几何定理加 `NUMERICALLY_CERTIFIED_FINITE` 脆弱性审计；归零方向不
+保证属于 literal prime source，因此 admissible-source stability、arithmetic `L2`、
+fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。下一关只扫描
+cutoff/clock/shell 等自然 source controls。
+
+```text
+TPC283_ZEROING_RADIUS = PROVED_EXACT
+TPC283_FINITE_VULNERABILITY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC283_UNRESTRICTED_ADVERSARY = INFORMATION_MODEL_ONLY
+TPC283_ADMISSIBLE_LITERAL_SOURCE_STABILITY = OPEN
+TPC283_FIXED_POWER_CREDIT = 0
+TPC283_FULL_GATE_B = OPEN
+```
+
 当前主线状态：TPC-282 承接 TPC-281，首次把 arithmetic interface 的 readout 换回
 literal V59 source 本身。对 `S=(I-P_3)A beta`、`w_perp=(I-P_3)w` 定义
 `C=<w_perp,S>` 与 `rho^2=C^2/(||w_perp||^2||S||^2)`，在六个 registered scales、

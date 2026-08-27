@@ -1,13 +1,39 @@
-# TPC big road V135 / TPC-282: literal source attachment audit
+# TPC big road V136 / TPC-283: source-attachment stability radius
 
 更新时间：2026-08-27
 
-状态：`TPC282_NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC283_PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-282 proof 为
+当前 TPC-283 proof 为
+`bridge_b_source_attachment_stability_radius.md`，checker 为
+`tpc_bridge_b_source_attachment_stability_radius_checker.py`，编号论文为
+`../../papers/tpc-283-source-attachment-stability-radius/`。
+
+TPC-283 承接 TPC-282 的 actual source-lock，证明到 zero-attachment hyperplane 的
+精确最短距离：`dist^2=|C|^2/||S||^2`，相对平方半径为
+`|C|^2/(||w||^2||S||^2)`，唯一归零扰动沿 `S`。在 TPC-282 的 12 行上，所有相对
+半径均小于 `3/10`，6 行小于 `1/10`。这是 information-model adversary；没有声称
+它保持 literal source class，故 admissible source stability 与 arithmetic `L2` 仍 open。
+
+```text
+TPC283_MAXIMUM_CLAIM = PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT
+TPC283_ROUTE_ADVANCE = YES_SCOPED_EXACT_ZEROING_RADIUS_AND_FINITE_VULNERABILITY_AUDIT
+TPC283_ZEROING_RADIUS = PROVED_EXACT
+TPC283_FINITE_VULNERABILITY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC283_UNRESTRICTED_ADVERSARY = INFORMATION_MODEL_ONLY
+TPC283_ADMISSIBLE_LITERAL_SOURCE_STABILITY = OPEN
+TPC283_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC283_FIXED_POWER_CREDIT = 0
+TPC283_FULL_GATE_B = OPEN
+TPC283_TWIN_PRIME_RESULT = NONE
+TPC283_STATUS = PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT
+TPC283_ROUND2_CLUE = TEST_ADMISSIBLE_LITERAL_SOURCE_CONTROLS_AFTER_UNRESTRICTED_ZEROING_OBSTRUCTION
+```
+
+TPC-282 upstream proof 为
 `bridge_b_literal_source_attachment_audit.md`，checker 为
 `tpc_bridge_b_literal_source_attachment_audit_checker.py`，编号论文为
 `../../papers/tpc-282-literal-source-attachment-audit/`。

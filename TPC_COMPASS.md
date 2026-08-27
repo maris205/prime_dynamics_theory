@@ -1,9 +1,32 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V135 / LITERAL_SOURCE_ATTACHMENT_AUDIT`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN`
-编号事实终点：TPC-282；TPC-282 trigger：`true`
+状态：`BOLD_CHANNEL_V136 / SOURCE_ATTACHMENT_STABILITY_RADIUS`
+claim level：`PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT`
+编号事实终点：TPC-283；TPC-283 trigger：`true`
+
+当前 TPC-283 入口：proof 为
+`research/tpc-big-road/bridge_b_source_attachment_stability_radius.md`，checker 为
+`tpc_bridge_b_source_attachment_stability_radius_checker.py`，编号论文为
+`papers/tpc-283-source-attachment-stability-radius/`。它证明 source representative 到
+zero-attachment hyperplane 的 exact radius formula，并将 TPC-282 的 12-row intervals
+转成 `12/12` under `30%`、`6/12` under `10%` 的 finite vulnerability certificate。
+该 adversary 只在 unrestricted projected Hilbert space 中成立，不替代 admissible
+literal-source theorem；arithmetic `L2`、fixed-power credit 与 full Gate B 仍 OPEN/NONE。
+
+```text
+TPC283_MAXIMUM_CLAIM = PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT
+TPC283_ROUTE_ADVANCE = YES_SCOPED_EXACT_ZEROING_RADIUS_AND_FINITE_VULNERABILITY_AUDIT
+TPC283_ZEROING_RADIUS = PROVED_EXACT
+TPC283_FINITE_VULNERABILITY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC283_UNRESTRICTED_ADVERSARY = INFORMATION_MODEL_ONLY
+TPC283_ADMISSIBLE_LITERAL_SOURCE_STABILITY = OPEN
+TPC283_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC283_FIXED_POWER_CREDIT = 0
+TPC283_FULL_GATE_B = OPEN
+TPC283_TWIN_PRIME_RESULT = NONE
+TPC283_ROUND2_CLUE = TEST_ADMISSIBLE_LITERAL_SOURCE_CONTROLS_AFTER_UNRESTRICTED_ZEROING_OBSTRUCTION
+```
 
 当前 TPC-282 入口：proof 为
 `research/tpc-big-road/bridge_b_literal_source_attachment_audit.md`，checker 为

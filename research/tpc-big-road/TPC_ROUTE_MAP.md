@@ -2,30 +2,30 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V135 / TPC-282
+当前地图版本：V136 / TPC-283
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-282`（`NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN`）；
+当前编号锚点：`TPC-283`（`PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT`）；
 对应论文目录为
-`papers/tpc-282-literal-source-attachment-audit/`。
-TPC-282 承接 TPC-281，将 actual comparison-weight readout 放回 literal source：
-`S=(I-P_3)A beta`、`w_perp=(I-P_3)w`、`C=<w_perp,S>`。在 12 个 registered rows 上，
-`C` 全部 sign-separated（11 negative、1 positive），但最弱归一化附着平方约为
-`3.36e-5`。这是 finite source-lock 证书；uniform asymptotic nondegeneracy、literal
-arithmetic `L2` 与 full Gate B 仍 open。
+`papers/tpc-283-source-attachment-stability-radius/`。
+TPC-283 承接 TPC-282，证明 source representative 到 zero-attachment hyperplane 的
+精确最短距离公式；在 12 个 registered rows 上，信息模型中的归零半径全部小于
+`3/10`，其中 6 行小于 `1/10`。该方向不自动属于 literal source class，因此
+admissible-source stability、literal arithmetic `L2` 与 full Gate B 仍 open。
 
 ```text
-TPC282_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN
-TPC282_ROUTE_ADVANCE = YES_SCOPED_FINITE_SOURCE_ATTACHMENT_AUDIT
-TPC282_SOURCE_ATTACHMENT = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
-TPC282_SOURCE_SIGN = 11_NEGATIVE_1_POSITIVE_FINITE
-TPC282_UNIFORM_ASYMPTOTIC_NONDEGENERACY = OPEN
-TPC282_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
-TPC282_FIXED_POWER_CREDIT = 0
-TPC282_FULL_GATE_B = OPEN
-TPC282_TWIN_PRIME_RESULT = NONE
-TPC282_ROUND2_CLUE = QUANTIFY_SOURCE_ATTACHMENT_STABILITY_RADIUS_AND_SIGN_FLIPS
+TPC283_MAXIMUM_CLAIM = PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT
+TPC283_ROUTE_ADVANCE = YES_SCOPED_EXACT_ZEROING_RADIUS_AND_FINITE_VULNERABILITY_AUDIT
+TPC283_ZEROING_RADIUS = PROVED_EXACT
+TPC283_FINITE_VULNERABILITY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC283_UNRESTRICTED_ADVERSARY = INFORMATION_MODEL_ONLY
+TPC283_ADMISSIBLE_LITERAL_SOURCE_STABILITY = OPEN
+TPC283_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC283_FIXED_POWER_CREDIT = 0
+TPC283_FULL_GATE_B = OPEN
+TPC283_TWIN_PRIME_RESULT = NONE
+TPC283_ROUND2_CLUE = TEST_ADMISSIBLE_LITERAL_SOURCE_CONTROLS_AFTER_UNRESTRICTED_ZEROING_OBSTRUCTION
 ```
 
 TPC-281 remains the immediate typed-interface parent; its historical section
@@ -84,6 +84,33 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.77 V136 / TPC-283：source-attachment stability radius and adversarial zeroing
+
+TPC-283 是 TPC-282 的最小几何延伸。对 `S!=0`、`C=<w,S>`、`W=||w||^2`、
+`Y=||S||^2`，精确证明 zero-attachment hyperplane 的距离为 `|C|^2/Y`，相对平方
+半径为 `|C|^2/(WY)`，最近点为 `w-(C/Y)S`。转移 TPC-282 的实际 intervals 后，
+12/12 行的归零半径小于 `3/10`，6/12 行小于 `1/10`。
+
+这是 unrestricted projected Hilbert space 的信息模型 adversary，并不声称保持
+literal prime source。因而它把下一关明确缩为 admissible cutoff/clock/shell controls
+的稳定性，而不是把几何归零方向误当成物理反例。
+
+```text
+TPC283_ROUTE_ADVANCE = YES_SCOPED_EXACT_ZEROING_RADIUS_AND_FINITE_VULNERABILITY_AUDIT
+TPC283_ZEROING_RADIUS = PROVED_EXACT
+TPC283_FINITE_VULNERABILITY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC283_UNRESTRICTED_ADVERSARY = INFORMATION_MODEL_ONLY
+TPC283_ADMISSIBLE_LITERAL_SOURCE_STABILITY = OPEN
+TPC283_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC283_FIXED_POWER_CREDIT = 0
+TPC283_FULL_GATE_B = OPEN
+TPC283_TWIN_PRIME_RESULT = NONE
+TPC283_ROUND2_CLUE = TEST_ADMISSIBLE_LITERAL_SOURCE_CONTROLS_AFTER_UNRESTRICTED_ZEROING_OBSTRUCTION
+```
+
+地图位置：**V136 / TPC-283 已把“附着弱”精确转成归零半径；下一座桥是自然
+literal controls 的局部稳定性审计。**
 
 ## 5.76 V135 / TPC-282：literal source attachment and finite source-lock audit
 
@@ -537,9 +564,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V135 / TPC-282                    |
-        | LITERAL SOURCE ATTACHMENT / SOURCE-LOCK AUDIT |
-        | finite lock; uniform nondegeneracy OPEN       |
+        | YOU ARE HERE — V136 / TPC-283                    |
+        | SOURCE-ATTACHMENT STABILITY / ZEROING RADIUS  |
+        | exact radius; admissible source stability OPEN|
         +--------------------------------------------------+
                 |
                 v
@@ -5526,6 +5553,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V136 / TPC-283 | Bridge A / Gate B：source-attachment zeroing radius 已精确化；admissible source stability、arithmetic `L2` 与 full Gate B open | `TPC-283` | 证明到 zero-attachment hyperplane 的最短距离公式；TPC-282 的 12 rows 全部在信息模型中小于 `3/10`、6 行小于 `1/10`，fixed-power credit 为 0，下一步为 cutoff/clock/shell controls 的 admissible stability |
 | 2026-08-27 | V135 / TPC-282 | Bridge A / Gate B：literal source attachment finite lock 已完成；uniform nondegeneracy、arithmetic `L2` 与 full Gate B open | `TPC-282` | 在 frozen literal V59 source 上重放 `C=<w_perp,(I-P_3)A beta>`；12 rows 全部 sign-separated（11 negative / 1 positive），最弱 `rho^2` 约 `3.36e-5`，fixed-power credit 为 0，下一步为 attachment stability radius 与 sign-flip audit |
 | 2026-08-27 | V134 / TPC-281 | Bridge A / Gate B：typed arithmetic `L2` interface 已完成；literal source `L2`、typed attachment 与 full Gate B open | `TPC-281` | 将 `A_X:H_X -> ell^2(I_X)`、`||A_X||_(2->2)<=KX^(-sigma)` 精确接入 packet gain budget，得到 output-energy exponent `a-2sigma-kappa`；equal-norm orthogonal functionals 给出 `G^2/0` attachment obstruction，4+4 fixtures 与 12-row parent transfer 通过，fixed-power credit 为 0 |
 | 2026-08-27 | V133 / TPC-280 | Bridge A / Gate B：additive-leakage-aware two-term compiler 已完成；literal source decomposition、arithmetic `L2` 与 full Gate B open | `TPC-280` | 从 `D>=dX^a` 与 `G<=B X^(-gamma)D+ell X^(a-delta)` 精确得到 two-term gain、`kappa=min(gamma,delta)`、margin half-exponent 与 strict `1/400` budget；equality family sharp，12-row parent transfer 通过，fixed-power credit 为 0 |

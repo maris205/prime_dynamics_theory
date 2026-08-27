@@ -3,13 +3,51 @@
 
 更新时间：2026-08-27
 
-状态：**TPC282_NUMERICALLY_CERTIFIED_FINITE_LITERAL_SOURCE_ATTACHMENT_LOCK_PLUS_ASYMPTOTIC_NONDEGENERACY_OPEN / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC283_PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.76 当前：TPC-282 literal source attachment and finite source-lock audit
+## 0.77 当前：TPC-283 source-attachment stability radius and adversarial zeroing
+
+项目：`papers/tpc-283-source-attachment-stability-radius/`
+
+类型：**PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT**。
+
+TPC-283 承接 TPC-282。对非零 projected output `S`、source representative `w`，令
+`C=<w,S>`、`W=||w||^2`、`Y=||S||^2`，精确证明最近 zero-attachment source 为
+`w-(C/Y)S`，且相对平方距离为 `C^2/(WY)`。将 TPC-282 的 12 个 actual-source
+interval 转移后，所有行的相对归零半径严格小于 `3/10`，其中 6 行严格小于 `1/10`。
+
+最强正结果是一个无需有限维假设的 Hilbert-space zeroing theorem；最强 obstruction
+是 unrestricted source direction 的低稳定半径。该方向未证明保持 prime shell、cutoff
+或 Möbius source class，因此只能标为 information-model adversary；admissible literal
+source stability、arithmetic `L2` 与 full Gate B 仍 open。可复用结构为
+`attachment -> zero hyperplane distance -> radius budget`。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_HILBERT_DISTANCE_TO_ZERO_ATTACHMENT
+STRONGEST_OBSTRUCTION = ALL_12_ROWS_ZEROABLE_WITHIN_30_PERCENT_INFORMATION_MODEL
+OPEN_THEOREM = ADMISSIBLE_LITERAL_SOURCE_STABILITY
+REUSABLE_STRUCTURE = ATTACHMENT_C -> HYPERPLANE_DISTANCE -> RADIUS_BUDGET
+ROUND2_CLUE = TEST_ADMISSIBLE_LITERAL_SOURCE_CONTROLS_AFTER_UNRESTRICTED_ZEROING_OBSTRUCTION
+```
+
+```text
+TPC283_ROUTE_ADVANCE = YES_SCOPED_EXACT_ZEROING_RADIUS_AND_FINITE_VULNERABILITY_AUDIT
+TPC283_ZEROING_RADIUS = PROVED_EXACT
+TPC283_FINITE_VULNERABILITY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC283_UNRESTRICTED_ADVERSARY = INFORMATION_MODEL_ONLY
+TPC283_ADMISSIBLE_LITERAL_SOURCE_STABILITY = OPEN
+TPC283_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC283_FIXED_POWER_CREDIT = 0
+TPC283_FULL_GATE_B = OPEN
+TPC283_TWIN_PRIME_RESULT = NONE
+TPC283_STATUS = PROVED_EXACT_HILBERT_SOURCE_ZEROING_RADIUS_PLUS_NUMERICALLY_CERTIFIED_FINITE_VULNERABILITY_AUDIT
+```
+
+## 0.76 已发布：TPC-282 literal source attachment and finite source-lock audit
 
 项目：`papers/tpc-282-literal-source-attachment-audit/`
 
