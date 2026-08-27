@@ -1,18 +1,46 @@
-# TPC big road V133 / TPC-280: additive-leakage endpoint compiler
+# TPC big road V134 / TPC-281: typed arithmetic L2 Gate-B interface audit
 
 更新时间：2026-08-27
 
-状态：`TPC280_PROVED_CONDITIONAL_TWO_TERM_LEAKAGE_ENDPOINT_COMPILER_PLUS_NUMERICALLY_CERTIFIED_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC281_PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-280 proof 为
-`bridge_b_leakage_aware_endpoint_compiler.md`，checker 为
-`tpc_bridge_b_leakage_aware_endpoint_compiler_checker.py`，编号论文为
-`../../papers/tpc-280-leakage-aware-endpoint-compiler/`。
+当前 TPC-281 proof 为
+`bridge_b_arithmetic_l2_gate_b_interface_audit.md`，checker 为
+`tpc_bridge_b_arithmetic_l2_gate_b_interface_audit_checker.py`，编号论文为
+`../../papers/tpc-281-arithmetic-l2-gate-b-interface-audit/`。
 
-TPC-280 承接 TPC-279 的 exact deficit criterion，研究带 additive leakage 的 source
+TPC-281 承接 TPC-280，把 arithmetic `L2` 明确写成 typed operator hypothesis
+`A_X:H_X -> ell^2(I_X)`、`||A_X||_(2->2)<=K X^(-sigma)`。若 packet gain 输入为
+`G/D<=Q_X` 且 `D<=d_+X^a`，精确得到
+`||A_X S||_2^2<=K^2 X^(-2sigma)Q_XD`；代入 TPC-280 的 two-term/collapsed budget
+后得到 `K^2d_+(B+ell/d)X^(a-2sigma-kappa)`。此外，`R^2` 中 equal-norm 的
+parallel/perpendicular rank-one functionals 对同一 packet sum 给出 `G^2/0` attachment，
+所以 geometry 与 operator norm 不能替代 typed attachment/nondegeneracy。4 个 packet、
+4 个 interface cases 与 TPC-280 的 12-row transfer 通过 independent/stress/Bridge-B
+checks，但 literal source `L2`、typed attachment theorem、fixed-power credit 与 full
+Gate-B closure 仍 OPEN/NONE。
+
+```text
+TPC281_MAXIMUM_CLAIM = PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT
+TPC281_ROUTE_ADVANCE = YES_SCOPED_TYPED_ARITHMETIC_L2_GATE_B_INTERFACE_AUDIT
+TPC281_TYPED_ARITHMETIC_L2 = PROVED_CONDITIONAL_INTERFACE_ONLY
+TPC281_ATTACHMENT_IDENTIFIABILITY = REFUTED_EXACT_BY_ORTHOGONAL_FUNCTIONAL
+TPC281_FINITE_ATTACHMENT_AUDIT = NUMERICALLY_CERTIFIED_FINITE_4_PACKET_FIXTURES
+TPC281_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC281_ARITHMETIC_ADVANCE = NO
+TPC281_L2 = OPEN_LITERAL_SOURCE
+TPC281_FIXED_POWER_CREDIT = 0
+TPC281_FULL_GATE_B = OPEN
+TPC281_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC281_TWIN_PRIME_RESULT = NONE
+TPC281_STATUS = PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT
+TPC281_ROUND2_CLUE = REQUIRE_LITERAL_SOURCE_ARITHMETIC_L2_AND_TYPED_ATTACHMENT_NONDEGENERACY
+```
+
+TPC-280 上游承接 TPC-279 的 exact deficit criterion，研究带 additive leakage 的 source
 bound。由 `D>=dX^a` 与 `G<=B X^(-gamma)D+ell X^(a-delta)` 精确得到
 `G/D<=B X^(-gamma)+(ell/d)X^(-delta)`，并编译出 two-term gain、
 `kappa=min(gamma,delta)` dominant exponent、margin half-exponent 与 strict `1/400`

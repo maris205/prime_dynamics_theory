@@ -1,9 +1,43 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V133 / ADDITIVE_LEAKAGE_ENDPOINT_COMPILER`
-claim level：`PROVED_CONDITIONAL_TWO_TERM_LEAKAGE_ENDPOINT_COMPILER_PLUS_NUMERICALLY_CERTIFIED_TRANSFER`
-编号事实终点：TPC-280；TPC-280 trigger：`true`
+状态：`BOLD_CHANNEL_V134 / TYPED_ARITHMETIC_L2_GATE_B_INTERFACE_AUDIT`
+claim level：`PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT`
+编号事实终点：TPC-281；TPC-281 trigger：`true`
+
+当前 TPC-281 入口：proof 为
+`research/tpc-big-road/bridge_b_arithmetic_l2_gate_b_interface_audit.md`，checker 为
+`tpc_bridge_b_arithmetic_l2_gate_b_interface_audit_checker.py`，编号论文为
+`papers/tpc-281-arithmetic-l2-gate-b-interface-audit/`。它把 arithmetic `L2` 明确
+类型化为 `A_X:H_X -> ell^2(I_X)` 的 conditional operator hypothesis，并由
+`D<=d_+X^a`、`G/D<=Q_X` 精确推出
+`||A_X S||_2^2<=K^2 X^(-2sigma)Q_XD`；接入 TPC-280 的 two-term budget 后得到
+`K^2d_+(B+ell/d)X^(a-2sigma-kappa)`。同时，`R^2` 中 equal-norm 的 parallel/
+perpendicular functionals 对同一 packet sum 给出 `G^2/0` attachment，证明 geometry
+与 operator norm 不能替代 typed attachment/nondegeneracy。4+4 个 exact fixtures 与
+TPC-280 的 12-row transfer 通过，但 literal source `L2`、attachment theorem、fixed-power
+credit 与 full Gate B 仍 OPEN/NONE。
+
+```text
+TPC281_MAXIMUM_CLAIM = PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT
+TPC281_ROUTE_ADVANCE = YES_SCOPED_TYPED_ARITHMETIC_L2_GATE_B_INTERFACE_AUDIT
+TPC281_TYPED_ARITHMETIC_L2 = PROVED_CONDITIONAL_INTERFACE_ONLY
+TPC281_ATTACHMENT_IDENTIFIABILITY = REFUTED_EXACT_BY_ORTHOGONAL_FUNCTIONAL
+TPC281_FINITE_ATTACHMENT_AUDIT = NUMERICALLY_CERTIFIED_FINITE_4_PACKET_FIXTURES
+TPC281_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC281_ARITHMETIC_ADVANCE = NO
+TPC281_L2 = OPEN_LITERAL_SOURCE
+TPC281_FIXED_POWER_CREDIT = 0
+TPC281_FULL_GATE_B = OPEN
+TPC281_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC281_TWIN_PRIME_RESULT = NONE
+TPC281_STATUS = PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT
+TPC281_ROUND2_CLUE = REQUIRE_LITERAL_SOURCE_ARITHMETIC_L2_AND_TYPED_ATTACHMENT_NONDEGENERACY
+```
+
+strongest positive result：typed `L2` 到 output-energy 的 exact conditional interface；
+strongest obstruction：equal norm/geometry 仍允许 zero attachment；open theorem：literal
+source arithmetic `L2` 与 typed attachment nondegeneracy。
 
 当前 TPC-280 入口：proof 为
 `research/tpc-big-road/bridge_b_leakage_aware_endpoint_compiler.md`，checker 为

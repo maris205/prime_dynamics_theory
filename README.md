@@ -9,6 +9,18 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-281 承接 TPC-280，把假设性的 arithmetic `L2` 明确类型化为
+`A_X:H_X -> ell^2(I_X)` 的 operator interface。若
+`||A_X||_(2->2)<=K X^(-sigma)`、`G/D<=Q_X` 且 `D<=d_+X^a`，则严格得到
+`||A_X S||_2^2<=K^2 X^(-2sigma)Q_XD`；代入 TPC-280 的 two-term budget 后得到
+`K^2 d_+(B+ell/d)X^(a-2sigma-kappa)`，其中 `kappa=min(gamma,delta)`，scalar
+readout 再由 contraction 控制。另一方面，`R^2` 中 equal-norm 的 parallel/perpendicular
+rank-one functionals 对同一 packet sum 给出 `G^2` 与 `0` 的 attachment，精确否定
+“geometry/operator norm 自动识别 arithmetic attachment”。4 个 packet、4 个 interface
+cases 与 TPC-280 的 12-row transfer 已通过 independent/stress/Bridge-B checks；literal
+source arithmetic `L2`、typed nondegeneracy、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
 当前主线状态：TPC-280 承接 TPC-279 的 exact deficit criterion，研究 source bound
 中同时出现的 multiplicative main term 与 additive leakage。若
 `D>=dX^a` 且 `G<=B X^(-gamma)D+ell X^(a-delta)`，证明归一化后的 exact two-term
@@ -151,6 +163,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-281-arithmetic-l2-gate-b-interface-audit - 当前阶段 - 证明 typed arithmetic
+`L2` 到 Gate-B output-energy 的 exact conditional interface，并以 `R^2` 中 equal-norm
+orthogonal functional 给出 full/zero attachment obstruction；4 个 exact packet fixtures、
+4 个 interface cases 与 TPC-280 全部 12 行 transfer 通过，literal source `L2`、typed
+attachment nondegeneracy、full Gate B 仍 OPEN，fixed-power credit 为 0。
 tpc-280-leakage-aware-endpoint-compiler - 当前阶段 - 证明带 additive leakage 的
 two-term gain/margin compiler：`G/D<=B X^(-gamma)+(ell/d)X^(-delta)`，collapsed
 exponent 为 `min(gamma,delta)`，并以 equality family 认证 sharpness；6+4+4 个

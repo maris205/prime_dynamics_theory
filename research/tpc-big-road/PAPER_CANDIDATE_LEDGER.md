@@ -3,13 +3,62 @@
 
 更新时间：2026-08-27
 
-状态：**TPC280_PROVED_CONDITIONAL_TWO_TERM_LEAKAGE_ENDPOINT_COMPILER_PLUS_NUMERICALLY_CERTIFIED_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC281_PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.74 当前：TPC-280 additive-leakage-aware gain and endpoint compiler
+## 0.75 当前：TPC-281 typed arithmetic `L2` / Gate-B interface audit
+
+项目：`papers/tpc-281-arithmetic-l2-gate-b-interface-audit/`
+
+类型：**PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT**。
+
+TPC-281 承接 TPC-280 的 two-term gain compiler，把下一步所需的 arithmetic `L2` 写成
+明确的 typed hypothesis：`A_X:H_X -> ell^2(I_X)` 且
+`||A_X||_(2->2)<=K X^(-sigma)`。对四个 packet 的
+`S=sum V_j`、`D=sum||V_j||^2`、`G=||S||^2`，若 `G/D<=Q_X`、`D<=d_+X^a`，则由
+operator contraction 精确得到
+`||A_XS||_2^2<=K^2X^(-2sigma)Q_XD`；接入 TPC-280 的
+`Q_X<=(B+ell/d)X^(-kappa)` 后得到 collapsed exponent `a-2sigma-kappa`。
+scalar readout 只再使用 dual-norm contraction。
+
+同时，TPC-281 给出一个 exact attachment firewall：对同一个非零
+`S=(S_1,S_2)`，`u_parallel=S` 与 `u_perp=(-S_2,S_1)` 代表的 rank-one functionals
+具有相同 operator norm，但 attachment squared 分别为 `G^2` 与 `0`。因此 packet
+geometry 加 `L2` norm 不能自动识别 arithmetic attachment，必须另有 typed
+nondegeneracy/source-identification theorem。4 个 exact packet fixtures、4 个
+interface cases 与 TPC-280 全部 12 行 transfer 均通过 independent/stress/Bridge-B
+checks；literal source arithmetic `L2`、typed attachment、fixed-power credit、full Gate B
+与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_TYPED_ARITHMETIC_L2_TO_GATE_B_OUTPUT_INTERFACE
+STRONGEST_OBSTRUCTION = EQUAL_NORM_ORTHOGONAL_ATTACHMENT_CAN_BE_ZERO
+OPEN_THEOREM = LITERAL_SOURCE_ARITHMETIC_L2_PLUS_TYPED_ATTACHMENT_NONDEGENERACY
+REUSABLE_STRUCTURE = PACKET_GEOMETRY -> TYPED_L2 -> OUTPUT_ENERGY -> SCALAR_READOUT
+ROUND2_CLUE = REQUIRE_LITERAL_SOURCE_ARITHMETIC_L2_AND_TYPED_ATTACHMENT_NONDEGENERACY
+```
+
+```text
+TPC281_MAXIMUM_CLAIM = PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT
+TPC281_ROUTE_ADVANCE = YES_SCOPED_TYPED_ARITHMETIC_L2_GATE_B_INTERFACE_AUDIT
+TPC281_TYPED_ARITHMETIC_L2 = PROVED_CONDITIONAL_INTERFACE_ONLY
+TPC281_ATTACHMENT_IDENTIFIABILITY = REFUTED_EXACT_BY_ORTHOGONAL_FUNCTIONAL
+TPC281_FINITE_ATTACHMENT_AUDIT = NUMERICALLY_CERTIFIED_FINITE_4_PACKET_FIXTURES
+TPC281_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC281_ARITHMETIC_ADVANCE = NO
+TPC281_L2 = OPEN_LITERAL_SOURCE
+TPC281_FIXED_POWER_CREDIT = 0
+TPC281_FULL_GATE_B = OPEN
+TPC281_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC281_TWIN_PRIME_RESULT = NONE
+TPC281_STATUS = PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT
+TPC281_ROUND2_CLUE = REQUIRE_LITERAL_SOURCE_ARITHMETIC_L2_AND_TYPED_ATTACHMENT_NONDEGENERACY
+```
+
+## 0.74 已发布：TPC-280 additive-leakage-aware gain and endpoint compiler
 
 项目：`papers/tpc-280-leakage-aware-endpoint-compiler/`
 

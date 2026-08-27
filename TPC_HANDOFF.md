@@ -1,7 +1,62 @@
 # TPC HANDOFF
 
 更新时间：2026-08-27
-交接状态：`BOLD_CHANNEL_V133_TPC280_ADDITIVE_LEAKAGE_COMPILER_RELEASED`
+交接状态：`BOLD_CHANNEL_V134_TPC281_TYPED_ARITHMETIC_L2_INTERFACE_RELEASED`
+
+TPC-281 当前 section：typed arithmetic `L2` / Gate-B interface audit
+-----------------------------------------------------------------------------------------------
+
+TPC-281 is the direct continuation of TPC-280.  It makes the next arithmetic
+input explicit and typed rather than treating it as an unnamed cancellation:
+
+```text
+A_X : H_X -> ell^2(I_X),
+||A_X||_(2->2) <= K X^(-sigma),
+D <= d_+ X^a,
+G/D <= Q_X.
+```
+
+For `S=sum_j V_j`, exact Hilbert-space contraction gives
+`||A_X S||_2^2<=K^2 X^(-2sigma)Q_XD`.  If the TPC-280 two-term budget supplies
+`Q_X<=(B+ell/d)X^(-kappa)`, this becomes
+`K^2d_+(B+ell/d)X^(a-2sigma-kappa)`.  A scalar readout of norm at most one is
+then controlled by dual-norm contraction.
+
+TPC-281 also closes an exact information firewall.  For the same nonzero
+`S` in `R^2`, the parallel and perpendicular rank-one functionals have equal
+operator norm, but their squared attachments are `G^2` and `0`.  Thus packet
+geometry and an operator norm do not identify the arithmetic attachment; a
+typed source-identification/nondegeneracy theorem remains independently
+necessary.  Four exact packet fixtures, four interface cases, and the twelve
+TPC-280 parent rows pass independent and hostile checks.  This is a conditional
+typed interface only: literal source arithmetic `L2`, typed attachment,
+fixed-power credit, full Gate B, and the twin-prime conclusion remain open.
+
+```text
+TPC281_MAXIMUM_CLAIM = PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT
+TPC281_ROUTE_ADVANCE = YES_SCOPED_TYPED_ARITHMETIC_L2_GATE_B_INTERFACE_AUDIT
+TPC281_TYPED_ARITHMETIC_L2 = PROVED_CONDITIONAL_INTERFACE_ONLY
+TPC281_ATTACHMENT_IDENTIFIABILITY = REFUTED_EXACT_BY_ORTHOGONAL_FUNCTIONAL
+TPC281_FINITE_ATTACHMENT_AUDIT = NUMERICALLY_CERTIFIED_FINITE_4_PACKET_FIXTURES
+TPC281_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC281_ARITHMETIC_ADVANCE = NO
+TPC281_L2 = OPEN_LITERAL_SOURCE
+TPC281_FIXED_POWER_CREDIT = 0
+TPC281_FULL_GATE_B = OPEN
+TPC281_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC281_TWIN_PRIME_RESULT = NONE
+TPC281_STATUS = PROVED_EXACT_TYPED_ARITHMETIC_L2_INTERFACE_FIREWALL_PLUS_NUMERICALLY_CERTIFIED_ATTACHMENT_AUDIT
+TPC281_ROUND2_CLUE = REQUIRE_LITERAL_SOURCE_ARITHMETIC_L2_AND_TYPED_ATTACHMENT_NONDEGENERACY
+```
+
+Strongest positive result: the exact typed `L2`-to-output interface.  Strongest
+obstruction: equal norm and equal packet geometry permit zero attachment.  Open
+theorem: literal source arithmetic `L2` plus typed attachment nondegeneracy.
+Reusable structure:
+`packet geometry -> typed L2 -> output energy -> scalar readout`.
+The Session-named `propose.md` and evaluator files remain absent; the local
+proof package, theorem ledger, certificate, independent replay, stress audit,
+bridge checker, and `AGENTS.md` are the fail-closed fallback.
 
 TPC-280 当前 section：additive-leakage-aware gain and endpoint compiler
 -----------------------------------------------------------------------------------------------
@@ -9032,10 +9087,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V133/TPC-280 是当前 release；其 producer、independent replay、stress audit 与
+V134/TPC-281 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
+当前 curated cascade 共 145 对 normal/optimized 命令、290 次 invocation；TPC-281
+贡献末尾 4 对，且每对要求空 stderr 与 byte-identical stdout。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
 执行 normal与 optimized只读 checker；每一对必须都为零，且每一对 stdout
@@ -9366,9 +9423,33 @@ python -B research/tpc-big-road/tpc_bridge_b_leakage_aware_endpoint_compiler_che
 python -O -B research/tpc-big-road/tpc_bridge_b_leakage_aware_endpoint_compiler_checker.py --check
 ```
 
+TPC-281 的项目级 producer、independent replay、attachment stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-281-arithmetic-l2-gate-b-interface-audit/code/tpc281_arithmetic_l2_interface_certificate.py --check
+python -O -B papers/tpc-281-arithmetic-l2-gate-b-interface-audit/code/tpc281_arithmetic_l2_interface_certificate.py --check
+python -B papers/tpc-281-arithmetic-l2-gate-b-interface-audit/experiments/tpc281_independent_checker.py
+python -O -B papers/tpc-281-arithmetic-l2-gate-b-interface-audit/experiments/tpc281_independent_checker.py
+python -B papers/tpc-281-arithmetic-l2-gate-b-interface-audit/experiments/tpc281_attachment_stress.py
+python -O -B papers/tpc-281-arithmetic-l2-gate-b-interface-audit/experiments/tpc281_attachment_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_audit_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_audit_checker.py --check
+```
+
 随后优先读取：
 
-最新 TPC-280 入口：
+最新 TPC-281 入口：
+
+```text
+papers/tpc-281-arithmetic-l2-gate-b-interface-audit/README.md
+papers/tpc-281-arithmetic-l2-gate-b-interface-audit/PROOF_PACKAGE.md
+papers/tpc-281-arithmetic-l2-gate-b-interface-audit/notes/theorem_ledger.md
+papers/tpc-281-arithmetic-l2-gate-b-interface-audit/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_arithmetic_l2_gate_b_interface_audit.md
+research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_audit_checker.py
+```
+
+TPC-280 upstream 入口：
 
 ```text
 papers/tpc-280-leakage-aware-endpoint-compiler/README.md
