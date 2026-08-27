@@ -1,11 +1,53 @@
-# TPC big road V127 / TPC-274: projected output Frobenius envelope gap
+# TPC big road V128 / TPC-275: signed four-packet reassembly
 
 更新时间：2026-08-27
 
-状态：`TPC274_NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC275_NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-275 proof 为
+`bridge_b_signed_four_packet_reassembly.md`，checker 为
+`tpc_bridge_b_signed_four_packet_reassembly_checker.py`，编号论文为
+`../../papers/tpc-275-signed-four-packet-reassembly/`。
+
+TPC-275 冻结 TPC-274 的 literal V59 finite physical operator、exact beta、projection
+与 growing-cutoff registry，保留四个实际 source-block packets
+`V_j=A_perp beta^(j)`，并证明 exact signed Gram、四点 DFT Parseval/mode-zero 与
+real polarization identities。6 个 scale triples 与 `s=1,2` 的 12 rows 由 exact
+rational replay 认证 `G-D<0`、`1<D/G<12/5`、`F/G>50` 与 packet-diagonal proxy
+`m_D^2<1/16`；这是 `YES_SCOPED_LITERAL_SIGNED_FOUR_PACKET_REASSEMBLY` 的 finite
+advance，不是 source-level signed cross-Gram theorem，fixed-power credit、arithmetic
+`L2`、full Gate-B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC275_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT
+TPC275_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_FOUR_PACKET_REASSEMBLY
+TPC275_SIGNED_GRAM_IDENTITY = PROVED_EXACT_FINITE
+TPC275_DFT_LEDGER = PROVED_EXACT_FINITE
+TPC275_POLARIZATION = PROVED_EXACT_FINITE
+TPC275_LITERAL_PACKET_REPLAY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC275_NET_CROSS_TERM = NUMERICALLY_CERTIFIED_FINITE_NEGATIVE_ALL_12_ROWS
+TPC275_DIAGONAL_GAIN = NUMERICALLY_CERTIFIED_FINITE_BETWEEN_1_AND_12_OVER_5
+TPC275_FROBENIUS_COMPARISON = NUMERICALLY_CERTIFIED_FINITE_ABOVE_50
+TPC275_DIAGONAL_MARGIN = NUMERICALLY_CERTIFIED_FINITE_BELOW_QUARTER
+TPC275_DIAGONAL_ROUTE = INSUFFICIENT_SCOPED
+TPC275_SOURCE_LEVEL_SIGNED_CROSS_GRAM = OPEN_ASYMPTOTIC
+TPC275_FIXED_POWER_CREDIT = 0
+TPC275_ARITHMETIC_ADVANCE = NO
+TPC275_L2 = NONE
+TPC275_FULL_GATE_B = OPEN
+TPC275_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC275_TWIN_PRIME_RESULT = NONE
+TPC275_STATUS = NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT
+TPC275_ROUND2_CLUE = COMPILE_SIGNED_CROSS_GRAM_WITH_MARGIN_AND_ENDPOINT_BUDGET
+```
+
+strongest positive result：actual source-block signed Gram/DFT/polarization ledger and
+12-row exact replay；strongest obstruction：the diagonal proxy remains below the quarter
+margin threshold on all rows；open theorem：source-level signed cross-Gram with margin and
+endpoint payment。
 
 当前 TPC-274 proof 为
 `bridge_b_projected_output_frobenius_envelope.md`，checker 为

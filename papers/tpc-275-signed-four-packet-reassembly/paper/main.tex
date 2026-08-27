@@ -1,0 +1,254 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\newcommand{\Aperp}{A_{\perp}}
+\newcommand{\Gperp}{G_{\perp}}
+\newcommand{\Cperp}{C_{\perp}}
+\newcommand{\Wperp}{W_{\perp}}
+\newcommand{\Dpack}{D}
+\newcommand{\Fenv}{F}
+\newtheorem{theorem}{Theorem}
+
+\title{Signed Four-Packet Reassembly for the Literal V59 Output}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{27 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-274 showed that the projected Frobenius estimate is valid but can be more
+than a factor 50 larger than the actual output energy.  We retain the signs of
+the four source-block contributions instead.  For the literal V59 operator,
+let \(V_j=(I-P_3)A\beta^{(j)}\), let \(\Gamma\) be their 4-by-4 Gram matrix,
+and write \(D=\operatorname{tr}\Gamma\) and
+\(G=\|\sum_jV_j\|_2^2\).  We prove the exact Gram, four-point DFT, and real
+two-probe polarization identities.  On six registered growing-cutoff scales
+and two kernel exponents, an exact rational replay certifies \(G-D<0\) on all
+12 rows, \(1<D/G<12/5\), and the older Frobenius ratio \(F/G>50\).  The
+packet-diagonal margin proxy remains below \(1/4\) on every row.  This is a
+source-attached finite signed-reassembly result, not an asymptotic
+cross-Gram theorem or a twin-prime proof.
+\end{abstract}
+
+\section{Question and claim ceiling}
+
+The residual route has a signed scalar \(\Cperp\), a source norm lane
+\(\Wperp\), and an output norm lane \(\Gperp\).  TPC-274 tested the
+cancellation-free bound
+\[
+ \Gperp\leq \|\Aperp\|_F^2\|\beta\|_2^2.
+\]
+The present paper asks the next minimal question: what happens when the
+relative signs of the four source blocks are retained and reassembled through
+their signed cross terms?
+
+The claim ceiling is
+\[
+ \texttt{PROVED\_EXACT\_FINITE}\quad+\quad
+ \texttt{NUMERICALLY\_CERTIFIED\_FINITE}.
+\]
+The finite packet-diagonal route is marked
+\texttt{INSUFFICIENT\_SCOPED}; no finite observation is promoted to a growing
+theorem, and no fixed-power credit is assigned.
+
+\section{Frozen literal object and packet split}
+
+For \(L=N/2\), let \(\beta\) be the exact source vector in the released
+TPC-268 engine.  On the shell \(Q<q\leq 2Q\), the literal matrix is
+\[
+ A_{u,t}=\mathbf 1_{u\ne t}\sum_q qK_{H,s}(u-t)
+ \mathbf 1_{q\nmid u}\mathbf 1_{q\nmid t}
+ \left(\mathbf 1_{u\equiv t\pmod q}-\frac1{q-1}\right),
+ \qquad K_{H,s}(h)=\left(1+(h/H)^2\right)^{-s}.
+\]
+The masks, deleted diagonal, prime shell, and beta are unchanged from the
+parent.  The six scale triples are
+\[
+ (64,15,4),(96,20,5),(128,24,5),
+ (192,32,6),(256,38,6),(384,50,7),
+\]
+with the registered growing cutoffs \(4,4,4,5,5,5\), respectively.
+
+Let \(P_3\) be the orthogonal projection onto the three declared four-block
+Haar contrasts and set \(\Aperp=(I-P_3)A\).  Split \(\beta\) into four
+consecutive blocks \(\beta^{(0)},\ldots,\beta^{(3)}\), padding each block by
+zeros in the full source coordinate space.  Define
+\[
+ V_j=\Aperp\beta^{(j)},\qquad
+ \Gamma_{jk}=\langle V_j,V_k\rangle,qquad
+ \Dpack=\operatorname{tr}\Gamma,qquad
+ G=\left\|\sum_{j=0}^3V_j\right\|_2^2.
+\]
+All these quantities are rational on the registered rows.
+
+\section{Exact signed reassembly identities}
+
+\begin{theorem}[Gram expansion and polarization]
+For real finite packets,
+\[
+ G=\Dpack+2\sum_{0\leq j<k\leq3}\Gamma_{jk},
+ \qquad
+ \Gamma_{jk}=\frac{\|V_j+V_k\|_2^2-\|V_j-V_k\|_2^2}{4}.
+\]
+\end{theorem}
+
+\begin{proof}
+Expand the squared norm of the packet sum.  The diagonal terms are
+\(\operatorname{tr}\Gamma\), and symmetry pairs the off-diagonal terms.
+Expanding the two squared norms in the second identity cancels the diagonal
+terms and leaves four copies of \(\langle V_j,V_k\rangle\).
+\end{proof}
+
+\begin{theorem}[four-point DFT ledger]
+Define
+\[
+ \widehat V_k=\frac12\sum_{j=0}^3 i^{-jk}V_j,\qquad 0\leq k\leq3.
+\]
+Then
+\[
+ \sum_{k=0}^3\|\widehat V_k\|_2^2=\Dpack,
+ \qquad G=4\|\widehat V_0\|_2^2.
+\]
+For real packets, the four mode energies used in the certificate are
+\[
+ E_0=G/4,\quad E_2=\|V_0-V_1+V_2-V_3\|_2^2/4,
+\]
+\[
+ E_1=E_3=\bigl(\|V_0-V_2\|_2^2+\|V_3-V_1\|_2^2\bigr)/4.
+\]
+\end{theorem}
+
+\begin{proof}
+The normalized four-point DFT is unitary, so Parseval gives the first
+identity.  Fourier inversion at zero gives
+\(\sum_jV_j=2\widehat V_0\), proving the second.  Separating real and
+imaginary parts of the modes at frequencies one and three gives the displayed
+real-packet formulas.
+\end{proof}
+
+These identities keep exactly the information discarded by a columnwise
+Frobenius bound.  They are algebraic identities, not estimates for the
+arithmetic source.
+
+\section{Literal finite certificate}
+
+The producer reconstructs \(A\), \(P_3\), and every \(V_j\) with rational
+arithmetic.  It checks the unprojected multiplication against the frozen
+engine, computes the complete Gram matrix, verifies all six plus/minus
+polarization probes, and verifies DFT Parseval and the mode-zero identity.
+The parent TPC-274 payload is digest-locked; its decimal output lane is kept as
+a reference, while the matrix multiplication supplies the exact signed output.
+
+The packet-diagonal envelope is \(\Dpack\), whereas the TPC-274 envelope is
+\[
+ \Fenv=\|\Aperp\|_F^2\|\beta\|_2^2.
+\]
+For positive \(\Wperp\), define the conservative diagonal proxy
+\[
+ m_D^2=\frac{|\Cperp|^2}{\Wperp\Dpack}.
+\]
+When \(G<\Dpack\), it is indeed conservative: \(m_D^2\leq m^2\).
+
+\begin{table}[t]
+\centering
+\scriptsize
+\begin{tabular}{c c r r r c}
+\toprule
+ $N$ & $s$ & lower $\Dpack/G$ & lower $\Fenv/G$ & upper $m_D^2$ & phase\\
+\midrule
+ 64  & 1 & 1.4656 & 63.25  & 0.051052 & negative\\
+ 64  & 2 & 1.1443 & 51.35  & 0.053711 & negative\\
+ 96  & 1 & 1.9819 & 128.83 & 0.045318 & negative\\
+ 128 & 1 & 2.3138 & 237.09 & 0.006735 & negative\\
+ 192 & 2 & 1.0062 & 141.75 & 0.001531 & negative\\
+ 256 & 2 & 1.0587 & 247.09 & 0.000032 & positive\\
+ 384 & 1 & 1.3667 & 479.52 & 0.000708 & negative\\
+\bottomrule
+\end{tabular}
+\caption{Selected exact-rational ratios and transferred interval bounds.  The
+complete certificate has 12 rows and 72 polarization probes.}
+\end{table}
+
+\begin{theorem}[registered signed packet audit]
+On all 12 registered rows,
+\[
+ G-\Dpack<0,\qquad 1<\frac{\Dpack}{G}<\frac{12}{5},\qquad
+ \frac{\Fenv}{G}>50,\qquad m_D^2<\frac1{16}.
+\]
+The packet Gram is symmetric, all 72 polarization probes are exact, and DFT
+Parseval holds on every row.
+\end{theorem}
+
+\begin{proof}
+The exact rational values are generated from the frozen matrix and beta source.
+The independent checker reconstructs the matrix and projection in a separate
+implementation, compares every Gram entry, packet energy, signed cross sum,
+mode energy, and polarization probe, and recomputes the interval for \(m_D^2\).
+The strict inequalities are applied as rational comparisons.  The six rows are
+paired with \(s=1,2\), giving 12 keys; the stored theorem counts are therefore
+the complete registered audit.
+\end{proof}
+
+The net cross term is negative even though individual Gram entries have mixed
+signs.  Thus signed reassembly materially sharpens the finite envelope from a
+factor above 50 to a factor below \(12/5\).  It does not make the diagonal
+envelope sufficient for a quarter-sector margin: \(m_D^2<1/16\) means only
+that this conservative diagonal proof cannot certify \(m>1/4\).  The exact
+signed output itself is retained, so no conclusion about the actual margin is
+drawn from the proxy.
+
+\section{Route evaluation and limits}
+
+TPC-260 supplied a generic DFT and a synthetic null-compatible completion
+obstruction.  The new content here is different: the four packets are the
+actual source-block contributions of the literal V59 matrix and exact beta.
+The result is consequently a finite source attachment, but not a source-level
+cross-Gram theorem.  In particular,
+\[
+ \begin{gathered}
+ \texttt{SOURCE\_LEVEL\_SIGNED\_CROSS\_GRAM}=\texttt{OPEN\_ASYMPTOTIC}\\
+ \texttt{ARITHMETIC\_L2}=\texttt{NONE}\\
+ \texttt{FIXED\_POWER\_CREDIT}=0.
+ \end{gathered}
+\]
+No finite ratio is an exponent in \(N\), and the one positive phase row is
+retained.  The strict \(1/400\) endpoint payment and full Gate B remain open.
+
+The next legitimate bridge is to turn the signed cross-Gram quantity into a
+source-level estimate on the registered growing cutoff, while carrying the
+margin loss explicitly.  That is a new theorem target, not a consequence of
+the present finite table.
+
+\section{Conclusion}
+
+The literal four-packet decomposition contains substantial cancellation that a
+Frobenius envelope erases: every registered row has negative net cross coupling,
+and the packet-diagonal envelope is at most \(12/5\) times the exact signed
+output, versus more than 50 for the Frobenius envelope.  The improvement is
+real and independently reproducible, but the diagonal proxy still cannot pay
+the quarter-margin condition on these rows.  TPC-275 therefore opens the
+correct signed source-level question while keeping the arithmetic and
+asymptotic claim ceiling explicit.
+
+\begin{thebibliography}{9}
+\bibitem{HW}
+G. H. Hardy and E. M. Wright, \emph{An Introduction to the Theory of Numbers},
+6th ed., Oxford University Press, 2008.
+\bibitem{TPC260}
+L. Wang, ``Null-Compatible Four-Packet Residual Reassembly,'' TPC-260 project
+release, 2026.
+\bibitem{TPC274}
+L. Wang, ``A Projected Frobenius Envelope Gap for the Literal V59 Output
+Lane,'' TPC-274 project release, 2026.
+\end{thebibliography}
+
+\end{document}

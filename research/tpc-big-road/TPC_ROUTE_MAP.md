@@ -2,13 +2,44 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V127 / TPC-274
+当前地图版本：V128 / TPC-275
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-274`（`NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP`）；
+当前编号锚点：`TPC-275`（`NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT`）；
 对应论文目录为
-`papers/tpc-274-projected-output-frobenius-envelope/`。
+`papers/tpc-275-signed-four-packet-reassembly/`。
+TPC-275 在同一个 literal V59 finite physical operator 上保留四个实际 source-block
+packets `V_j=A_perp beta^(j)`，证明 exact signed Gram、四点 DFT 与 real polarization
+identities，并在 12 个 growing-cutoff rows 上 exact-replay 认证 `G-D<0`、
+`1<D/G<12/5`、`F/G>50` 与 `m_D^2<1/16`。这是 signed reassembly 的
+`YES_SCOPED` finite advance；source-level signed cross-Gram、margin/endpoint payment、
+fixed-power credit、arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC275_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT
+TPC275_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_FOUR_PACKET_REASSEMBLY
+TPC275_SIGNED_GRAM_IDENTITY = PROVED_EXACT_FINITE
+TPC275_DFT_LEDGER = PROVED_EXACT_FINITE
+TPC275_POLARIZATION = PROVED_EXACT_FINITE
+TPC275_LITERAL_PACKET_REPLAY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC275_NET_CROSS_TERM = NUMERICALLY_CERTIFIED_FINITE_NEGATIVE_ALL_12_ROWS
+TPC275_DIAGONAL_GAIN = NUMERICALLY_CERTIFIED_FINITE_BETWEEN_1_AND_12_OVER_5
+TPC275_FROBENIUS_COMPARISON = NUMERICALLY_CERTIFIED_FINITE_ABOVE_50
+TPC275_DIAGONAL_MARGIN = NUMERICALLY_CERTIFIED_FINITE_BELOW_QUARTER
+TPC275_DIAGONAL_ROUTE = INSUFFICIENT_SCOPED
+TPC275_SOURCE_LEVEL_SIGNED_CROSS_GRAM = OPEN_ASYMPTOTIC
+TPC275_FIXED_POWER_CREDIT = 0
+TPC275_ARITHMETIC_ADVANCE = NO
+TPC275_L2 = NONE
+TPC275_FULL_GATE_B = OPEN
+TPC275_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC275_TWIN_PRIME_RESULT = NONE
+TPC275_STATUS = NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT
+TPC275_ROUND2_CLUE = COMPILE_SIGNED_CROSS_GRAM_WITH_MARGIN_AND_ENDPOINT_BUDGET
+```
+
+TPC-274 remains the immediately preceding cancellation-free envelope checkpoint:
 TPC-274 在同一个 literal V59 finite physical operator 上定义投影后矩阵
 `A_perp=(I-P_3)A`，证明 `G_perp<=||A_perp||_F^2||beta||_2^2`，并在 6 个
 growing-cutoff scales、2 个 kernel exponents 的 12 rows 上 exact-replay 认证
@@ -132,9 +163,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V127 / TPC-274                    |
-        | PROJECTED FROBENIUS ENVELOPE GAP                |
-        | norm-only route closed; signed reassembly OPEN |
+        | YOU ARE HERE — V128 / TPC-275                    |
+        | SIGNED FOUR-PACKET REASSEMBLY                   |
+        | finite signed gain; source cross-Gram OPEN      |
         +--------------------------------------------------+
                 |
                 v
@@ -177,7 +208,7 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V127 / TPC-274。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V128 / TPC-275。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
@@ -1331,6 +1362,49 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.69 V128 / TPC-275：signed four-packet reassembly
+
+TPC-275 是 TPC-274 的 source-attached continuation：保持 literal V59 physical
+operator、exact beta、projection、prime shell 与 growing-cutoff registry 不变，把
+`A_perp beta` 按四个实际 consecutive source blocks 分解为
+`V_j=A_perp beta^(j)`。对 packet Gram `Gamma_(j,k)=<V_j,V_k>` 定义 diagonal energy
+`D` 与 signed output energy `G`，并证明 exact Gram expansion、四点 DFT
+Parseval/mode-zero 与 real two-probe polarization。6 个 scale triples、`s=1,2` 的
+12 rows 和 72 个 pairwise probes 全部 exact-replay 通过，得到
+`G-D<0`、`1<D/G<12/5`、`F/G>50`、`m_D^2<1/16`。
+
+这是真实 source-block signed reassembly 的有限 scoped advance，且与 TPC-260 的
+synthetic null-compatible completion 区分开来；但 `m_D` 仍只是 conservative
+diagonal proxy，不能支付 quarter-margin。source-level signed cross-Gram estimate、
+margin/endpoint budget、fixed-power credit、arithmetic `L2`、full Gate B 与 twin-prime
+conclusion 仍 open/none。
+
+```text
+TPC275_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_FOUR_PACKET_REASSEMBLY
+TPC275_SIGNED_GRAM_IDENTITY = PROVED_EXACT_FINITE
+TPC275_DFT_LEDGER = PROVED_EXACT_FINITE
+TPC275_POLARIZATION = PROVED_EXACT_FINITE
+TPC275_LITERAL_PACKET_REPLAY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC275_NET_CROSS_TERM = NUMERICALLY_CERTIFIED_FINITE_NEGATIVE_ALL_12_ROWS
+TPC275_DIAGONAL_GAIN = NUMERICALLY_CERTIFIED_FINITE_BETWEEN_1_AND_12_OVER_5
+TPC275_FROBENIUS_COMPARISON = NUMERICALLY_CERTIFIED_FINITE_ABOVE_50
+TPC275_DIAGONAL_MARGIN = NUMERICALLY_CERTIFIED_FINITE_BELOW_QUARTER
+TPC275_DIAGONAL_ROUTE = INSUFFICIENT_SCOPED
+TPC275_SOURCE_LEVEL_SIGNED_CROSS_GRAM = OPEN_ASYMPTOTIC
+TPC275_FIXED_POWER_CREDIT = 0
+TPC275_ARITHMETIC_ADVANCE = NO
+TPC275_L2 = NONE
+TPC275_FULL_GATE_B = OPEN
+TPC275_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC275_TWIN_PRIME_RESULT = NONE
+TPC275_STATUS = NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT
+TPC275_ROUND2_CLUE = COMPILE_SIGNED_CROSS_GRAM_WITH_MARGIN_AND_ENDPOINT_BUDGET
+```
+
+地图位置：**V128 / TPC-275 已把 TPC-274 的 norm-only gap 进一步压缩为实际四包
+signed Gram 的有限 audit；下一座桥是把 signed cross-Gram 与 margin/endpoint budget
+在 growing source 上同时支付，而不是把有限 cancellation 当作渐近 savings。**
 
 ## 5.68 V127 / TPC-274：projected output Frobenius envelope gap
 
@@ -3947,7 +4021,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V127 / TPC-274：
+截至 V128 / TPC-275：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -3956,6 +4030,25 @@ FIXED_ATOM_CREDIT = 0
   TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
   FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
   L2 = NONE
+TPC275_ROUTE_ADVANCE = YES_SCOPED_LITERAL_SIGNED_FOUR_PACKET_REASSEMBLY
+TPC275_SIGNED_GRAM_IDENTITY = PROVED_EXACT_FINITE
+TPC275_DFT_LEDGER = PROVED_EXACT_FINITE
+TPC275_POLARIZATION = PROVED_EXACT_FINITE
+TPC275_LITERAL_PACKET_REPLAY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC275_NET_CROSS_TERM = NUMERICALLY_CERTIFIED_FINITE_NEGATIVE_ALL_12_ROWS
+TPC275_DIAGONAL_GAIN = NUMERICALLY_CERTIFIED_FINITE_BETWEEN_1_AND_12_OVER_5
+TPC275_FROBENIUS_COMPARISON = NUMERICALLY_CERTIFIED_FINITE_ABOVE_50
+TPC275_DIAGONAL_MARGIN = NUMERICALLY_CERTIFIED_FINITE_BELOW_QUARTER
+TPC275_DIAGONAL_ROUTE = INSUFFICIENT_SCOPED
+TPC275_SOURCE_LEVEL_SIGNED_CROSS_GRAM = OPEN_ASYMPTOTIC
+TPC275_FIXED_POWER_CREDIT = 0
+TPC275_ARITHMETIC_ADVANCE = NO
+TPC275_L2 = NONE
+TPC275_FULL_GATE_B = OPEN
+TPC275_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC275_TWIN_PRIME_RESULT = NONE
+TPC275_STATUS = NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT
+TPC275_ROUND2_CLUE = COMPILE_SIGNED_CROSS_GRAM_WITH_MARGIN_AND_ENDPOINT_BUDGET
 TPC274_ROUTE_ADVANCE = YES_SCOPED_PROJECTED_FROBENIUS_ENVELOPE_GAP
 TPC274_PROJECTED_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE_INEQUALITY
 TPC274_FINITE_GAP = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
@@ -4995,6 +5088,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V128 / TPC-275 | Bridge A / Gate B：literal signed four-packet reassembly 已完成；source-level signed cross-Gram、arithmetic `L2` 与 full Gate B open | `TPC-275` | actual source-block packets 的 exact signed Gram、四点 DFT、polarization 与 12 rows 全部认证；`G-D<0`、`1<D/G<12/5`、`F/G>50`、`m_D^2<1/16`，不产生 fixed-power credit，下一关为 signed cross-Gram + margin/endpoint budget compiler |
 | 2026-08-27 | V127 / TPC-274 | Bridge A / Gate B：projected Frobenius envelope gap 已完成；signed output reassembly、arithmetic `L2` 与 full Gate B open | `TPC-274` | 证明 `G_perp<=||A_perp||_F^2||beta||_2^2`；6 个 growing-cutoff scales 与 `s=1,2` 的 12 rows 全部认证 envelope/actual gap `>50`、envelope proxy `m_F^2<1/64`，phase 为 11 negative/1 positive/0 crossing；cancellation-free route 标为 `INSUFFICIENT_SCOPED`，不产生 fixed-power credit，下一关为 signed output reassembly |
 | 2026-08-27 | V126 / TPC-273 | Bridge A / Gate B：finite margin-stability obstruction 已完成；source-level margin、arithmetic `L2` 与 full Gate B open | `TPC-273` | exact `m^2=rho^2` 与 `m^6=(rho^2)^3`；32-row grid 为 12 low/11 middle/9 high，`N=64` 与 `N=128` 各有 cutoff-only 跨带 flip，phase 为 30 negative/2 positive/0 crossing；不产生 fixed-power credit，下一关为 literal growing-cutoff source-level margin uniformity |
 | 2026-08-27 | V125 / TPC-272 | Bridge A / Gate B：correlation-margin endpoint budget 已完成；source-level margin、arithmetic `L2` 与 full Gate B open | `TPC-272` | exact `m^6=Xi_C/Xi`、conditional `sigma-eta>1/400` compiler 与二维 sign-only sharp converse；9 行/4 个 dyadic finite margin audit，`96->192` margin ratio `<(1/32)^6` 且 phase sign 保持；不产生 fixed-power credit，下一关为 source-level margin lower bound |

@@ -9,6 +9,15 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-275 承接 TPC-274，在同一个锁定的 literal V59 finite physical
+operator 上把四个实际 source-block 输出包保留下来，定义 packet Gram、四点 DFT 与
+polarization，并以 exact rational replay 认证 12 rows 的 `G-D<0`、`1<D/G<12/5`、
+`F/G>50` 与 packet-diagonal proxy `m_D^2<1/16`。这是
+`NUMERICALLY_CERTIFIED_FINITE_SIGNED_FOUR_PACKET_REASSEMBLY_AUDIT` 的
+`YES_SCOPED_LITERAL_SIGNED_FOUR_PACKET_REASSEMBLY` 进展；source-level signed
+cross-Gram、margin/endpoint payment、fixed-power credit、arithmetic `L2`、full Gate B
+与 twin-prime conclusion 仍 OPEN/NONE。
+
 当前主线状态：TPC-274 承接 TPC-273，在同一个锁定的 literal V59 finite physical
 operator 上把三块 Haar projection 后的输出写成 `A_perp=(I-P_3)A`，并证明精确的
 projected Frobenius envelope `G_perp <= ||A_perp||_F^2 ||beta||_2^2`。在 6 个
@@ -121,6 +130,7 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-275-signed-four-packet-reassembly - 当前阶段 - 对四个实际 source-block 输出包建立 exact signed Gram、四点 DFT 与 polarization ledger，并在 12 个 growing-cutoff rows 上认证 `G-D<0`、`1<D/G<12/5`、`F/G>50`、`m_D^2<1/16`；source-level signed cross-Gram 与 endpoint payment 仍 OPEN。
 tpc-274-projected-output-frobenius-envelope - 当前阶段 - 证明 projected Frobenius
 envelope，并在 12 个 growing-cutoff rows 上以 exact rational replay 认证 `G_F/G_perp>50`
 与 `m_F^2<1/64`；关闭 cancellation-free output shortcut，但 signed reassembly 与
