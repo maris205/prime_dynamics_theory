@@ -9,6 +9,16 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-273 承接 TPC-272，在同一个锁定的 literal V59 finite physical
+operator 上对 4 个尺度、4 个 comparison cutoff 和 2 个 kernel exponent 做 32-row
+outward rational margin matrix。精确转移 `m^2=rho^2`、`m^6=(rho^2)^3`，得到 12 个
+`m<1/8`、11 个 middle-band、9 个 `m>1/4` rows；固定尺度的 cutoff-only 变化在
+`N=64` 与 `N=128` 各产生一次跨带 flip，phase census 为 30 negative-real、2
+positive-real、0 crossing。该结果是 `NUMERICALLY_CERTIFIED_FINITE` 的
+`REFUTED_SCOPED` stability obstruction，不是渐近反例或 source-level theorem；
+source-level margin uniformity、fixed-power credit、arithmetic `L2`、full Gate B 与
+twin-prime conclusion 仍 OPEN/NONE。
+
 当前主线状态：TPC-272 在同一个 literal V59 finite physical operator 上，将 TPC-271
 的 phase--radius 坐标编译成一个严格的条件预算：若 signed scalar 有 effective saving
 `sigma` 且相关性裕量 `m=|C_perp|/R` 只损失 `eta`，则 endpoint saving 为 `sigma-eta`，
@@ -100,6 +110,7 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-273-margin-stability-matrix - 当前阶段 - 在 32-row literal V59 margin matrix 中以 exact `m^2=rho^2` 转移认证 12 low/11 middle/9 high，发现两个 cutoff-only finite stability flips 与 30/2 phase census；source-level margin uniformity仍 OPEN，fixed-power credit为0。
 tpc-272-correlation-margin-budget-compiler - 当前阶段 - 证明 `sigma-eta>1/400` 的条件 correlation-margin endpoint compiler，并用二维 sharp converse 否定 sign-only margin；9 行/4 个 dyadic finite margin audit 通过，source-level margin 与 full Gate B 仍 OPEN。
 tpc-271-phase-radius-decoupling - 当前阶段 - 在同一 finite literal V59 operator 上建立 `Xi=Xi_W*Xi_G` 与 `Xi/Xi_C=|kappa|^(-6)` 的 exact lane factorization；9 行 phase 全为负实轴，但 `96->192` 半径比 `>23` 由 output lane `>230` 驱动，仍不构成渐近 theorem。
 tpc-270-cross-scale-radius-normalization - 当前阶段 - 在同一 finite literal V59 operator 上建立 exact `Xi=(R_squared)^3/N^10` endpoint normalization，认证 4 个 dyadic 与 5 个 adjacent scale ratios，得到 `DROP_RISE_RISE_DROP`；profile controls 落在 `(1/2,3/4)`，source-level radius、arithmetic `L2` 与 full Gate B 仍 OPEN。

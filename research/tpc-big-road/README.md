@@ -1,13 +1,49 @@
-# TPC big road V125 / TPC-272: correlation-margin budget
+# TPC big road V126 / TPC-273: finite margin-stability obstruction
 
 更新时间：2026-08-27
 
-状态：`TPC272_PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC273_NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-272 proof 为
+当前 TPC-273 proof 为
+`bridge_b_margin_stability_matrix.md`，checker 为
+`tpc_bridge_b_margin_stability_matrix_checker.py`，编号论文为
+`../../papers/tpc-273-margin-stability-matrix/`。
+
+TPC-273 冻结 TPC-268 的 literal V59 finite physical operator，仅扫描注册的 4 个
+scale、4 个 comparison cutoff 与 2 个 kernel exponent。利用 exact `m^2=rho^2` 与
+`m^6=(rho^2)^3` 的转移，32 个 outward interval rows 分成 12 low、11 middle、9 high；
+固定尺度的 cutoff-only comparisons 在 `N=64`、`N=128` 各跨越一个 margin band，phase
+census 为 30 negative-real、2 positive-real、0 crossing。该 finite stability
+obstruction 标为 `REFUTED_SCOPED`，不升级为 source-level asymptotic counterexample；
+source-level margin uniformity、fixed-power credit、arithmetic `L2`、full Gate-B 与
+twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC273_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_ROUTE_ADVANCE = YES_SCOPED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_MARGIN_STABILITY_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE
+TPC273_CUTOFF_FLIPS = NUMERICALLY_CERTIFIED
+TPC273_PHASE_FLIP = NUMERICALLY_CERTIFIED_FINITE_TWO_ROWS
+TPC273_SOURCE_LEVEL_MARGIN = OPEN_ASYMPTOTIC
+TPC273_GROWING_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC273_FIXED_POWER_CREDIT = 0
+TPC273_ARITHMETIC_ADVANCE = NO
+TPC273_L2 = NONE
+TPC273_FULL_GATE_B = OPEN
+TPC273_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC273_TWIN_PRIME_RESULT = NONE
+TPC273_STATUS = NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_ROUND2_CLUE = TEST_SOURCE_LEVEL_MARGIN_UNIFORMITY_ON_THE_LITERAL_GROWING_CUTOFF
+```
+
+strongest positive result：exact margin transfer plus independent replay and hostile
+stress；strongest obstruction：cutoff-only finite margin-band flips；open theorem：literal
+growing-cutoff source-level margin uniformity。
+
+TPC-272 上游 proof 为
 `bridge_b_correlation_margin_budget.md`，checker 为
 `tpc_bridge_b_correlation_margin_budget_checker.py`，编号论文为
 `../../papers/tpc-272-correlation-margin-budget-compiler/`。

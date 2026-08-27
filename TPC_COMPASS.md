@@ -1,9 +1,43 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V125 / CORRELATION_MARGIN_BUDGET`
-claim level：`PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER`
-编号事实终点：TPC-272；TPC-272 trigger：`true`
+状态：`BOLD_CHANNEL_V126 / FINITE_MARGIN_STABILITY_OBSTRUCTION`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION`
+编号事实终点：TPC-273；TPC-273 trigger：`true`
+
+当前 TPC-273 入口：proof 为
+`research/tpc-big-road/bridge_b_margin_stability_matrix.md`，checker 为
+`tpc_bridge_b_margin_stability_matrix_checker.py`，编号论文为
+`papers/tpc-273-margin-stability-matrix/`。它冻结 TPC-268 的 literal V59 finite
+physical operator，扫描 4 个尺度、4 个 cutoff 与 2 个 kernel exponent，精确使用
+`m^2=rho^2`、`m^6=(rho^2)^3` 形成 32-row matrix。outward intervals 给出 12 low、11
+middle、9 high rows；`N=64` 和 `N=128` 的 cutoff-only comparisons 各有一个跨带
+flip，phase census 为 30 negative-real、2 positive-real、0 crossing。这是
+`REFUTED_SCOPED` 的 finite stability obstruction，不是 source-level asymptotic
+counterexample；source-level margin uniformity、fixed-power credit、arithmetic `L2`、
+full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC273_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_ROUTE_ADVANCE = YES_SCOPED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_MARGIN_STABILITY_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE
+TPC273_CUTOFF_FLIPS = NUMERICALLY_CERTIFIED
+TPC273_PHASE_FLIP = NUMERICALLY_CERTIFIED_FINITE_TWO_ROWS
+TPC273_SOURCE_LEVEL_MARGIN = OPEN_ASYMPTOTIC
+TPC273_GROWING_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC273_FIXED_POWER_CREDIT = 0
+TPC273_ARITHMETIC_ADVANCE = NO
+TPC273_L2 = NONE
+TPC273_FULL_GATE_B = OPEN
+TPC273_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC273_TWIN_PRIME_RESULT = NONE
+TPC273_STATUS = NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_ROUND2_CLUE = TEST_SOURCE_LEVEL_MARGIN_UNIFORMITY_ON_THE_LITERAL_GROWING_CUTOFF
+```
+
+strongest positive result：exact margin transfer plus independently replayed 32-row
+matrix；strongest obstruction：cutoff-only finite flips across both quantitative bands；
+open theorem：source-level margin uniformity on the literal growing cutoff.
 
 当前 TPC-272 入口：proof 为
 `research/tpc-big-road/bridge_b_correlation_margin_budget.md`，checker 为

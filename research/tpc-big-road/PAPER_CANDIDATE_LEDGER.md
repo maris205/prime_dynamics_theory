@@ -3,11 +3,55 @@
 
 更新时间：2026-08-27
 
-状态：**TPC272_PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC273_NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
+
+## 0.67 当前：TPC-273 finite margin-stability matrix
+
+项目：`papers/tpc-273-margin-stability-matrix/`
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION**。
+
+TPC-273 承接 TPC-272 的 margin coordinate，但把问题从“如何将 margin loss 编译进
+endpoint budget”推进到“声明的有限 interface 是否稳定”。它冻结 TPC-268 的 literal
+V59 finite physical operator，在 4 个 scale、4 个 comparison cutoff、2 个 kernel
+exponent 的 32-row grid 上由 parent outward intervals 精确转移
+`m^2=rho^2`、`m^6=(rho^2)^3`。阈值 `m<1/8` 与 `m>1/4` 给出 12 low、11 middle、9
+high rows；固定 `(N,s)=(64,1)` 的 `z=2 -> 5` 和固定 `(N,s)=(128,1)` 的
+`z=2 -> 3` 均发生 cutoff-only 跨带 flip。phase census 保留 30 negative-real、2
+positive-real、0 crossing，kernel-only control 则不制造高带外的额外解释。
+
+该结果严格是 registered finite family 的 `REFUTED_SCOPED` stability obstruction。
+它不是 growing sequence 的 asymptotic counterexample，也不支付 fixed-power credit；
+source-level margin uniformity、arithmetic `L2`、signed four-packet reassembly、full
+Gate B 与 twin-prime conclusion 仍 open/none。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_MARGIN_TRANSFER_PLUS_32_ROW_OUTWARD_MATRIX
+STRONGEST_OBSTRUCTION = CUTOFF_ONLY_FLIPS_ACROSS_LOW_MIDDLE_HIGH_MARGIN_BANDS
+OPEN_THEOREM = SOURCE_LEVEL_MARGIN_UNIFORMITY_ON_THE_LITERAL_GROWING_CUTOFF
+REUSABLE_STRUCTURE = RHO2_INTERVAL -> MARGIN2 -> TWO_THRESHOLD_BANDS -> HOSTILE_TRANSITION
+ROUND2_CLUE = TEST_SOURCE_LEVEL_MARGIN_UNIFORMITY_ON_THE_LITERAL_GROWING_CUTOFF
+```
+
+```text
+TPC273_ROUTE_ADVANCE = YES_SCOPED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_MARGIN_STABILITY_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE
+TPC273_CUTOFF_FLIPS = NUMERICALLY_CERTIFIED
+TPC273_PHASE_FLIP = NUMERICALLY_CERTIFIED_FINITE_TWO_ROWS
+TPC273_SOURCE_LEVEL_MARGIN = OPEN_ASYMPTOTIC
+TPC273_GROWING_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC273_FIXED_POWER_CREDIT = 0
+TPC273_ARITHMETIC_ADVANCE = NO
+TPC273_L2 = NONE
+TPC273_FULL_GATE_B = OPEN
+TPC273_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC273_TWIN_PRIME_RESULT = NONE
+TPC273_STATUS = NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+```
 
 ## 0.66 当前：TPC-272 correlation-margin to endpoint-budget compiler
 

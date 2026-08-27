@@ -2,13 +2,23 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V125 / TPC-272
+当前地图版本：V126 / TPC-273
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-272`（`PROVED_CONDITIONAL_CORRELATION_MARGIN_TO_RADIUS_BUDGET_COMPILER`）；
+当前编号锚点：`TPC-273`（`NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION`）；
 对应论文目录为
-`papers/tpc-272-correlation-margin-budget-compiler/`。
+`papers/tpc-273-margin-stability-matrix/`。
+TPC-273 冻结 TPC-268 的 literal V59 finite physical operator，在 4 个 scale、4 个
+comparison cutoff 与 2 个 kernel exponent 上建立 32-row outward margin matrix。
+exact `m^2=rho^2`、`m^6=(rho^2)^3` 转移给出 12 low、11 middle、9 high rows；固定尺度
+的 cutoff-only comparisons 在 `N=64` 与 `N=128` 各产生一个跨带 flip，phase census
+为 30 negative-real、2 positive-real、0 crossing。这是 `REFUTED_SCOPED` 的 finite
+stability obstruction，不是 source-level asymptotic counterexample；source-level
+margin uniformity、fixed-power credit、arithmetic `L2`、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+TPC-272 是当前锚点的直接上游，在同一对象上定义
 TPC-272 在 TPC-271 的同一个 literal physical operator 上定义
 `m=|C_perp|/R`，证明 `m^6=Xi_C/Xi`，并给出 conditional endpoint compiler：
 scalar effective saving `sigma` 与 margin loss `eta` 合并为 `sigma-eta`，严格目标
@@ -93,9 +103,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V125 / TPC-272                    |
-        | CORRELATION-MARGIN BUDGET                       |
-        | sigma-eta compiler; source margin theorem OPEN |
+        | YOU ARE HERE — V126 / TPC-273                    |
+        | FINITE MARGIN-STABILITY MATRIX                  |
+        | cutoff flips; source margin theorem OPEN       |
         +--------------------------------------------------+
                 |
                 v
@@ -138,7 +148,7 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V124 / TPC-271。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V126 / TPC-273。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
@@ -159,8 +169,9 @@ FULL_GATE_B、global strict `1/400`、
 arithmetic `L2`、literal mode-zero estimate、full scalar 与 fixed-atom credit
 继续 OPEN/UNPAID/NONE。TPC-267 的 finite census、TPC-268 的 cutoff flip、TPC-269
 的 growing-proxy/profile flip、TPC-270 的 cross-scale radius audit 与 TPC-271 的
-phase-radius lane attribution 均未支付 asymptotic phase/radius 或 fixed-power credit；
-下一最短任务是 source-level signed-phase bound coupled to explicit radius-lane control。**
+phase-radius lane attribution、TPC-272 的 margin compiler 与 TPC-273 的 finite margin
+stability matrix 均未支付 asymptotic phase/radius/margin 或 fixed-power credit；下一
+最短任务是 source-level margin uniformity on the literal growing cutoff。**
 
 一句话定位（V61 历史位置）：**我们已经完成从岛 3、岛 4 到 literal analytic object 的结构层搭桥，
 当时站在岛 2 通往岛 6 的 Bridge A / Gates A--B 接缝；V38 已完成 canonical
@@ -1291,6 +1302,47 @@ TPC217_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
 地图位置：**V70 / TPC-217 已把 TPC-216 的 complete-period envelope 接到 literal
 finite window；下一座桥是保留这份 large-sieve attachment，同时重新引入 literal
 prime-shell 与 four-packet signed reassembly。**
+
+## 5.67 V126 / TPC-273：finite margin-stability matrix
+
+TPC-273 是 TPC-272 的 hostile continuation：不改变 literal V59 finite physical
+operator、masks、prime shell、beta 或 rank-three projection，只在注册的 4 个 scale、4
+个 comparison cutoff 与 2 个 kernel exponent 上做矩阵化审计。由 parent outward
+interval 精确转移
+
+```text
+m^2 = rho^2,
+m^6 = (rho^2)^3.
+```
+
+32 个 rows 的阈值分类为 12 个 `m<1/8`、11 个 middle-band、9 个 `m>1/4`。固定
+`(N,s)=(64,1)` 的 `z=2 -> 5` 从 middle 到 high，固定 `(N,s)=(128,1)` 的
+`z=2 -> 3` 从 middle 到 low；两者都只改变 cutoff。phase census 为 30
+`NEGATIVE_REAL_AXIS`、2 `POSITIVE_REAL_AXIS`、0 crossing；`(N,z)=(96,3)` 的
+kernel-only exponent control 保持 high band。producer、upstream-engine independent
+replay、五项 hostile mutation stress 与 normal/optimized bridge checker 均通过。
+
+```text
+TPC273_ROUTE_ADVANCE = YES_SCOPED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_MARGIN_STABILITY_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE
+TPC273_CUTOFF_FLIPS = NUMERICALLY_CERTIFIED
+TPC273_PHASE_FLIP = NUMERICALLY_CERTIFIED_FINITE_TWO_ROWS
+TPC273_SOURCE_LEVEL_MARGIN = OPEN_ASYMPTOTIC
+TPC273_GROWING_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC273_FIXED_POWER_CREDIT = 0
+TPC273_ARITHMETIC_ADVANCE = NO
+TPC273_L2 = NONE
+TPC273_FULL_GATE_B = OPEN
+TPC273_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC273_TWIN_PRIME_RESULT = NONE
+TPC273_STATUS = NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_ROUND2_CLUE = TEST_SOURCE_LEVEL_MARGIN_UNIFORMITY_ON_THE_LITERAL_GROWING_CUTOFF
+```
+
+地图位置：**V126 / TPC-273 把 TPC-272 的 abstract margin-loss coordinate 变成了
+一个 threshold-separated finite stability test；它排除了“声明的 finite interface
+自动稳定”的捷径，但没有排除 source-level growing margin theorem。下一座最短桥是
+直接审计 literal growing cutoff 上的 source margin uniformity。**
 
 ## 5.66 V125 / TPC-272：correlation-margin to endpoint-budget compiler
 
@@ -3826,15 +3878,29 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V125 / TPC-272：
+截至 V126 / TPC-273：
 
 ```text
 ROUTE_ADVANCE = YES
 ARITHMETIC_ADVANCE = YES_SCOPED_LITERAL_W_AND_BETA_ADJOINT_HAAR_LANES_PLUS_TRANSVERSE_NULL_PLUS_SIGNED_NULL_CHANNEL_PLUS_FINITE_RESIDUAL_CENSUS
 FIXED_ATOM_CREDIT = 0
-TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
-FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
-L2 = NONE
+  TRANSLATION_SUBGATE_STRICT_1_OVER_400 = PAID
+  FULL_GATE_B_STRICT_1_OVER_400 = UNPAID
+  L2 = NONE
+TPC273_ROUTE_ADVANCE = YES_SCOPED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_MARGIN_STABILITY_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE
+TPC273_CUTOFF_FLIPS = NUMERICALLY_CERTIFIED
+TPC273_PHASE_FLIP = NUMERICALLY_CERTIFIED_FINITE_TWO_ROWS
+TPC273_SOURCE_LEVEL_MARGIN = OPEN_ASYMPTOTIC
+TPC273_GROWING_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC273_FIXED_POWER_CREDIT = 0
+TPC273_ARITHMETIC_ADVANCE = NO
+TPC273_L2 = NONE
+TPC273_FULL_GATE_B = OPEN
+TPC273_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC273_TWIN_PRIME_RESULT = NONE
+TPC273_STATUS = NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_ROUND2_CLUE = TEST_SOURCE_LEVEL_MARGIN_UNIFORMITY_ON_THE_LITERAL_GROWING_CUTOFF
 TPC272_ROUTE_ADVANCE = YES_SCOPED_CONDITIONAL_MARGIN_BUDGET_AND_FINITE_AUDIT
 TPC272_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL
 TPC272_MARGIN_IDENTITY = PROVED_EXACT_FINITE
@@ -4845,6 +4911,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V126 / TPC-273 | Bridge A / Gate B：finite margin-stability obstruction 已完成；source-level margin、arithmetic `L2` 与 full Gate B open | `TPC-273` | exact `m^2=rho^2` 与 `m^6=(rho^2)^3`；32-row grid 为 12 low/11 middle/9 high，`N=64` 与 `N=128` 各有 cutoff-only 跨带 flip，phase 为 30 negative/2 positive/0 crossing；不产生 fixed-power credit，下一关为 literal growing-cutoff source-level margin uniformity |
 | 2026-08-27 | V125 / TPC-272 | Bridge A / Gate B：correlation-margin endpoint budget 已完成；source-level margin、arithmetic `L2` 与 full Gate B open | `TPC-272` | exact `m^6=Xi_C/Xi`、conditional `sigma-eta>1/400` compiler 与二维 sign-only sharp converse；9 行/4 个 dyadic finite margin audit，`96->192` margin ratio `<(1/32)^6` 且 phase sign 保持；不产生 fixed-power credit，下一关为 source-level margin lower bound |
 | 2026-08-27 | V124 / TPC-271 | Bridge A / Gate B：finite phase--radius lane attribution 已完成；source-level phase/radius、arithmetic `L2` 与 full Gate B open | `TPC-271` | exact `Xi=Xi_W*Xi_G` 与 `Xi/Xi_C=|kappa|^(-6)`；9 行 phase 全为负实轴，但 `96->192` radius `>23` 由 source `<1/8`、output `>230` 驱动；不构成渐近 phase/radius theorem，下一关为 coupled source-level signed-phase/radius-lane control |
 | 2026-08-27 | V123 / TPC-270 | Bridge A / Gate B：cross-scale endpoint-normalized radius audit 已完成；source-level radius、arithmetic `L2` 与 full Gate B open | `TPC-270` | exact `Xi=(R_squared)^3/N^10`；6 base、4 dyadic、5 adjacent、3 profile controls 通过独立与 stress audit，dyadic `DROP_RISE_RISE_DROP`（含 `>23` rise 与 `<1/4` drop），不构成渐近 radius theorem，下一关为 source-level explicit-power radius bound |

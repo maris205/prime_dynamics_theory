@@ -1,0 +1,223 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\newcommand{\Cperp}{C_{\perp}}
+\newcommand{\Rtwo}{R^2}
+\newcommand{\marg}{m}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+\title{A Finite Margin-Stability Matrix for the Literal V59 Residual}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{27 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-272 identified the correlation margin \(m=|C_{\perp}|/R\) as a necessary
+input for converting a signed residual estimate into an endpoint estimate.
+We now test whether that margin is stable under the declared finite cutoff,
+clock, and kernel choices, while keeping the literal V59 physical operator
+fixed.  On a 32-row grid consisting of four scales, four comparison cutoffs,
+and two kernel exponents, outward rational intervals classify 12 rows with
+\(m<1/8\), 11 middle-band rows, and 9 rows with \(m>1/4\).  At fixed scale
+and exponent, changing only the cutoff crosses from the middle band to the
+high band at \(N=64\), and from the middle band to the low band at \(N=128\).
+The same grid has 30 negative-real and two positive-real scalar phases.  This
+is a certified finite stability obstruction for the declared interface, not
+an asymptotic counterexample, a source-level theorem, or a twin-prime proof.
+\end{abstract}
+
+\section{Question and claim ceiling}
+
+The residual route has a signed scalar \(C_{\perp}\) and a radius
+\(R=\sqrt{W_{\perp}G_{\perp}}\).  TPC-272 proved that a scalar saving and a
+quantitative lower bound on \(m=|C_{\perp}|/R\) combine as a
+\(\sigma-\eta\) endpoint budget.  A finite phase label is not such a lower
+bound.  The present paper makes the next minimal hostile test: hold the
+physical operator, masks, shell, beta, and projection fixed, and vary only
+declared local cutoff and kernel parameters.
+
+The claim ceiling is
+\[
+ \texttt{NUMERICALLY\_CERTIFIED\_FINITE},\qquad
+ \texttt{REFUTED\_SCOPED},
+\]
+for the registered matrix.  ``Scoped'' is part of the statement: the grid
+does not represent a proved growing sequence.  Fixed-power credit,
+arithmetic \(L^2\), full Gate B, and the twin-prime conclusion remain absent.
+
+\section{Frozen finite object}
+
+For each \(N\) we use the same finite literal operator as the parent
+TPC-268 audit: prime shell \(Q<q\leq2Q\), outer weight \(q\), the two unit
+masks, deleted diagonal, exact finite beta, and the four consecutive equal
+blocks with their three Haar contrasts.  The physical scale triples are
+\[
+ (N,H,Q)=(64,15,4),(96,20,5),(128,24,5),(192,32,6).
+\]
+For a cutoff \(z\in\{2,3,4,5\}\) and exponent \(s\in\{1,2\}\), the kernel
+is \(K_H(h)=(1+(h/H)^2)^{-s}\).  No source coefficient is replaced by a
+synthetic random vector.
+
+Let \(P_3\) be the declared rank-three block projection.  The parent engine
+returns the interval for
+\[
+ \rho^2=\frac{|\Cperp|^2}{\|(I-P_3)w\|^2\|(I-P_3)g\|^2}.
+\]
+The residual norm intervals are positive and the scalar interval is separated
+from zero on every registered row.
+
+\begin{lemma}[margin transfer]
+On every registered row,
+\[
+ \marg^2=\rho^2,\qquad \marg^6=(\rho^2)^3.
+\]
+\end{lemma}
+
+\begin{proof}
+Both quantities are the same quotient after substituting
+\(R^2=\|(I-P_3)w\|^2\|(I-P_3)g\|^2\).  Positivity makes squaring and cubing
+monotone, so the parent outward interval transfers directly.  \(\square\)
+\end{proof}
+
+This elementary identity is useful operationally: the certificate never
+extracts a floating-point square root to decide a margin band.
+
+\section{The 32-row matrix}
+
+The low and high tests are deliberately separated:
+\[
+ \rho^2<\frac1{64}\Longrightarrow m<\frac18,qquad
+ \rho^2>\frac1{16}\Longrightarrow m>\frac14.
+\]
+Rows failing both tests are retained as the middle band.  The resulting
+counts are
+\[
+ \begin{array}{c|ccc}
+  &m<1/8&1/8\leq m\leq1/4&m>1/4\\ \hline
+  \text{rows}&12&11&9.
+ \end{array}
+\]
+The exact JSON stores rational endpoints; a few representative intervals are
+shown below in decimal form.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabular}{c c c c c}
+\toprule
+ $N$ & $z$ & $s$ & interval for $m^2$ & phase\\
+\midrule
+ 64 & 2 & 1 & [0.0538214,0.0538299] & negative\\
+ 64 & 5 & 1 & [0.1482570,0.1483212] & negative\\
+ 96 & 3 & 1 & [0.0898035,0.0898164] & negative\\
+ 128 & 3 & 1 & [0.0155789,0.0155831] & negative\\
+ 192 & 3 & 1 & [0.00010335,0.00010354] & positive\\
+ 192 & 5 & 1 & [0.00005266,0.00005285] & negative\\
+\bottomrule
+\end{tabular}
+\caption{Representative outward intervals.  The complete matrix has 32 rows.}
+\end{table}
+
+\begin{theorem}[finite margin-stability obstruction]
+The 32 registered rows have 12 low, 11 middle, and 9 high margin
+classifications.  At fixed \((N,s)=(64,1)\), the cutoff-only transition
+\(z=2\to5\) is middle-to-high.  At fixed \((N,s)=(128,1)\), the
+cutoff-only transition \(z=2\to3\) is middle-to-low.  Each transition is
+separated by its stored outward intervals.  Therefore uniform margin
+stability for this declared finite parameter family is \texttt{REFUTED\_SCOPED}.
+\end{theorem}
+
+\begin{proof}
+The producer evaluates all 32 cases and applies the two rational threshold
+tests above.  The independent checker recomputes each row through the frozen
+parent engine and transfers the interval using Lemma 1.  For \(N=64\), the
+\(z=2\) upper endpoint is below \(1/16\), whereas the \(z=5\) lower endpoint
+is above \(1/16\).  For \(N=128\), the \(z=2\) row lies above \(1/64\),
+whereas the \(z=3\) upper endpoint lies below \(1/64\).  Since only the
+declared cutoff changes in each comparison, the asserted finite instability
+follows.  \(\square\)
+\end{proof}
+
+The corresponding squared-margin ratios are approximately \(2.75\) and
+\(0.969\), respectively.  They are finite transition diagnostics, not
+exponents in \(N\).
+
+\section{Phase census and kernel control}
+
+The scalar phase census contains 30
+\texttt{NEGATIVE\_REAL\_AXIS} rows and two
+\texttt{POSITIVE\_REAL\_AXIS} rows.  The positive rows are exactly
+\[
+ (N,z,s)=(192,3,1),\qquad(192,4,1).
+\]
+They are retained in the matrix because deleting phase flips would make the
+stability test circular.  At \(N=96,z=3\), changing only \(s=1\to2\) keeps
+both rows in the high margin band; the associated squared-margin ratio is
+enclosed near \(0.928\).  Thus the present obstruction is specifically driven
+by cutoff sensitivity in the two displayed transitions, while the kernel
+control provides a matched non-flip.
+
+\begin{theorem}[finite phase census]
+Within the declared grid, the phase counts are 30 negative-real, 2
+positive-real, and 0 zero-crossing intervals.  This census does not imply an
+eventual phase sector and does not imply a positive margin lower bound.
+\end{theorem}
+
+\begin{proof}
+The scalar intervals supplied by each parent-engine evaluation are separated
+from zero.  Counting their signs gives the stated numbers; the independent
+replay checks the same keys and signs.  The final sentence follows from the
+two-dimensional sign-only construction already formalized in TPC-272, and is
+also visible here from the coexistence of low-margin rows with either sign.
+\end{proof}
+
+\section{Interpretation and limits}
+
+The new paper makes one narrow advancement: it converts the qualitative
+``cutoff may matter'' warning into a threshold-separated margin matrix.  It
+does not claim that the finite cutoff values are the source-level growing
+rule, nor that a finite crossing supplies an asymptotic subsequence.  In
+particular,
+
+\begin{enumerate}
+\item no row count is converted into a power saving or loss;
+\item the two positive phase rows are not discarded or averaged away;
+\item the parent operator and its exact beta are unchanged;
+\item arithmetic \(L^2\), signed four-packet reassembly, and full Gate B are
+      untouched.
+\end{enumerate}
+
+The next legitimate source-level question is uniformity on the registered
+growing cutoff itself.  If that theorem fails, its failure must be stated in
+the actual source family rather than inferred from this finite matrix.
+
+\section{Conclusion}
+
+TPC-273 supplies a hostile finite test of the new TPC-272 margin coordinate.
+The same literal finite operator exhibits both low and high correlation bands
+under cutoff-only changes, and it also exhibits two phase sign flips.  The
+result is a useful obstruction to treating a declared finite interface as
+automatically stable.  It leaves the source-level margin lower bound, the
+strict \(1/400\) payment, arithmetic \(L^2\), and the twin-prime problem open.
+
+\begin{thebibliography}{9}
+\bibitem{HW}
+G. H. Hardy and E. M. Wright, \emph{An Introduction to the Theory of Numbers},
+6th ed., Oxford University Press, 2008.
+\bibitem{TPC273}
+L. Wang, ``A Correlation-Margin Budget for the V59 Residual,'' TPC-272
+project release, 2026.
+\end{thebibliography}
+
+\end{document}

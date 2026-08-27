@@ -1,7 +1,61 @@
 # TPC HANDOFF
 
 更新时间：2026-08-27
-交接状态：`BOLD_CHANNEL_V125_TPC272_CORRELATION_MARGIN_BUDGET_RELEASED`
+交接状态：`BOLD_CHANNEL_V126_TPC273_FINITE_MARGIN_STABILITY_OBSTRUCTION_RELEASED`
+
+TPC-273 当前 section：finite margin-stability matrix
+-----------------------------------------------------------------------------------------------
+
+TPC-273 is the controlled hostile continuation of TPC-272.  It freezes the same literal
+V59 finite physical operator inherited from TPC-268 and varies only the registered
+comparison cutoff and kernel exponent on four scale triples:
+
+```text
+(N,H,Q) = (64,15,4), (96,20,5), (128,24,5), (192,32,6)
+z in {2,3,4,5}, s in {1,2}, total rows = 32.
+```
+
+The parent outward intervals transfer exactly through
+
+```text
+m^2 = rho^2,
+m^6 = (rho^2)^3.
+```
+
+Using the separated thresholds `m<1/8` and `m>1/4`, the matrix has 12 low, 11
+middle-band, and 9 high rows.  At fixed `(N,s)=(64,1)`, changing only `z=2 -> 5`
+crosses middle to high; at fixed `(N,s)=(128,1)`, `z=2 -> 3` crosses middle to low.
+The complete phase census is 30 `NEGATIVE_REAL_AXIS`, 2 `POSITIVE_REAL_AXIS`, and
+0 zero-crossing rows.  The producer, independent upstream-engine replay, five-mutation
+stress audit, PDF audit, and normal/optimized bridge checker all pass.
+
+```text
+TPC273_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_ROUTE_ADVANCE = YES_SCOPED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_MARGIN_STABILITY_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE
+TPC273_CUTOFF_FLIPS = NUMERICALLY_CERTIFIED
+TPC273_PHASE_FLIP = NUMERICALLY_CERTIFIED_FINITE_TWO_ROWS
+TPC273_SOURCE_LEVEL_MARGIN = OPEN_ASYMPTOTIC
+TPC273_GROWING_UNIFORMITY = OPEN_ASYMPTOTIC
+TPC273_FIXED_POWER_CREDIT = 0
+TPC273_ARITHMETIC_ADVANCE = NO
+TPC273_L2 = NONE
+TPC273_FULL_GATE_B = OPEN
+TPC273_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC273_TWIN_PRIME_RESULT = NONE
+TPC273_STATUS = NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION
+TPC273_ROUND2_CLUE = TEST_SOURCE_LEVEL_MARGIN_UNIFORMITY_ON_THE_LITERAL_GROWING_CUTOFF
+```
+
+Strongest positive result: exact margin transfer plus an independently replayed 32-row
+threshold matrix.  Strongest obstruction: cutoff-only finite instability in both
+directions, with phase sign changes retained.  Open theorem: source-level margin
+uniformity on the literal growing cutoff.  This is `REFUTED_SCOPED` for the registered
+finite interface only; it is not an asymptotic counterexample, does not pay fixed-power
+credit, and does not close arithmetic `L2`, full Gate B, or the twin-prime conclusion.
+The Session-named `propose.md` and evaluator files remain absent in this checkout; the
+project proof package, theorem ledger, certificate, replay, stress audit, bridge checker,
+and `AGENTS.md` are the fail-closed local fallback.
 
 TPC-272 当前 section：correlation-margin to endpoint-budget compiler
 -----------------------------------------------------------------------------------------------
@@ -8623,12 +8677,12 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V125/TPC-272 是当前 release；其 normal/optimized bridge checker 已追加到下列
-curated cascade，故总数从 102 对更新为 103 对。下列长版本链以 V119/TPC-266 开头的
+V126/TPC-273 是当前 release；其 normal/optimized bridge checker 已追加到下列
+curated cascade，故总数从 103 对更新为 104 对。下列长版本链以 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；二百零六次（103 对）必须都为零，且每一对 stdout
+执行 normal与 optimized只读 checker；二百零八次（104 对）必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -8895,7 +8949,31 @@ python -B research/tpc-big-road/tpc_bridge_b_correlation_margin_budget_checker.p
 python -O -B research/tpc-big-road/tpc_bridge_b_correlation_margin_budget_checker.py --check
 ```
 
+TPC-273 的项目级 producer、independent replay、margin stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-273-margin-stability-matrix/code/tpc273_margin_stability_certificate.py --check
+python -O -B papers/tpc-273-margin-stability-matrix/code/tpc273_margin_stability_certificate.py --check
+python -B papers/tpc-273-margin-stability-matrix/experiments/tpc273_independent_checker.py
+python -O -B papers/tpc-273-margin-stability-matrix/experiments/tpc273_independent_checker.py
+python -B papers/tpc-273-margin-stability-matrix/experiments/tpc273_margin_stress.py
+python -O -B papers/tpc-273-margin-stability-matrix/experiments/tpc273_margin_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_margin_stability_matrix_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_margin_stability_matrix_checker.py --check
+```
+
 随后优先读取：
+
+最新 TPC-273 入口：
+
+```text
+papers/tpc-273-margin-stability-matrix/README.md
+papers/tpc-273-margin-stability-matrix/PROOF_PACKAGE.md
+papers/tpc-273-margin-stability-matrix/notes/theorem_ledger.md
+papers/tpc-273-margin-stability-matrix/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_margin_stability_matrix.md
+research/tpc-big-road/tpc_bridge_b_margin_stability_matrix_checker.py
+```
 
 最新 TPC-272 入口：
 
