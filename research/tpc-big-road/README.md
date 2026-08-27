@@ -1,11 +1,50 @@
-# TPC big road V126 / TPC-273: finite margin-stability obstruction
+# TPC big road V127 / TPC-274: projected output Frobenius envelope gap
 
 更新时间：2026-08-27
 
-状态：`TPC273_NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC274_NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-274 proof 为
+`bridge_b_projected_output_frobenius_envelope.md`，checker 为
+`tpc_bridge_b_projected_output_frobenius_envelope_checker.py`，编号论文为
+`../../papers/tpc-274-projected-output-frobenius-envelope/`。
+
+TPC-274 冻结 TPC-273/TPC-268 的 literal V59 finite physical operator、exact beta
+source、三块 Haar projection 与 TPC-269 growing-cutoff registry，定义
+`A_perp=(I-P_3)A`，并证明 exact projected Frobenius envelope
+`G_perp <= ||A_perp||_F^2 ||beta||_2^2 = G_F`。6 个 scales 与 `s=1,2` 的 12 rows
+由 exact rational matrix replay 认证 `G_F/G_perp>50` 和 conservative envelope
+proxy `m_F^2<1/64` 全部成立；phase census 为 11 negative-real、1 positive-real、0
+crossing。该结果是 cancellation-free route 的 `INSUFFICIENT_SCOPED` finite
+obstruction，不是 actual margin upper bound、渐近反例或 source-level theorem；signed
+output reassembly、fixed-power credit、arithmetic `L2`、full Gate-B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+```text
+TPC274_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP
+TPC274_ROUTE_ADVANCE = YES_SCOPED_PROJECTED_FROBENIUS_ENVELOPE_GAP
+TPC274_PROJECTED_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE_INEQUALITY
+TPC274_FINITE_GAP = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC274_CANCELLATION_FREE_ROUTE = INSUFFICIENT_SCOPED
+TPC274_ENVELOPE_MARGIN = NOT_AN_ACTUAL_MARGIN_UPPER_BOUND
+TPC274_SOURCE_LEVEL_OUTPUT_BOUND = OPEN_ASYMPTOTIC
+TPC274_SIGNED_OUTPUT_REASSEMBLY = OPEN
+TPC274_FIXED_POWER_CREDIT = 0
+TPC274_ARITHMETIC_ADVANCE = NO
+TPC274_L2 = NONE
+TPC274_FULL_GATE_B = OPEN
+TPC274_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC274_TWIN_PRIME_RESULT = NONE
+TPC274_STATUS = NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP
+TPC274_ROUND2_CLUE = TEST_SIGNED_OUTPUT_REASSEMBLY_BEYOND_CANCELLATION_FREE_ENVELOPES
+```
+
+strongest positive result：exact projected Frobenius inequality plus independent replay；
+strongest obstruction：the norm-only envelope has a factor-50-plus gap on every registered
+row；open theorem：source-level signed output reassembly with effective saving。
 
 当前 TPC-273 proof 为
 `bridge_b_margin_stability_matrix.md`，checker 为

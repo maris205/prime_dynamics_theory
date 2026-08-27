@@ -1,9 +1,46 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V126 / FINITE_MARGIN_STABILITY_OBSTRUCTION`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION`
-编号事实终点：TPC-273；TPC-273 trigger：`true`
+状态：`BOLD_CHANNEL_V127 / PROJECTED_FROBENIUS_ENVELOPE_GAP`
+claim level：`NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP`
+编号事实终点：TPC-274；TPC-274 trigger：`true`
+
+当前 TPC-274 入口：proof 为
+`research/tpc-big-road/bridge_b_projected_output_frobenius_envelope.md`，checker 为
+`tpc_bridge_b_projected_output_frobenius_envelope_checker.py`，编号论文为
+`papers/tpc-274-projected-output-frobenius-envelope/`。它冻结 TPC-273/TPC-268 的
+literal V59 finite physical operator、exact beta source、三块 Haar projection 与
+TPC-269 growing-cutoff registry，定义 `A_perp=(I-P_3)A`，并证明
+`G_perp<=||A_perp||_F^2||beta||_2^2=G_F`。6 个 scale、2 个 kernel exponent 的 12
+个 rows 均由 exact rational matrix replay 认证 `G_F/G_perp>50` 与 envelope proxy
+`m_F^2<1/64`；phase census 为 11 negative-real、1 positive-real、0 crossing。这是
+`INSUFFICIENT_SCOPED` 的 cancellation-free envelope obstruction，不是 actual margin
+upper bound、渐近反例或 source-level output theorem；signed output reassembly、fixed-
+power credit、arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC274_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP
+TPC274_ROUTE_ADVANCE = YES_SCOPED_PROJECTED_FROBENIUS_ENVELOPE_GAP
+TPC274_PROJECTED_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE_INEQUALITY
+TPC274_FINITE_GAP = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC274_CANCELLATION_FREE_ROUTE = INSUFFICIENT_SCOPED
+TPC274_ENVELOPE_MARGIN = NOT_AN_ACTUAL_MARGIN_UPPER_BOUND
+TPC274_SOURCE_LEVEL_OUTPUT_BOUND = OPEN_ASYMPTOTIC
+TPC274_SIGNED_OUTPUT_REASSEMBLY = OPEN
+TPC274_FIXED_POWER_CREDIT = 0
+TPC274_ARITHMETIC_ADVANCE = NO
+TPC274_L2 = NONE
+TPC274_FULL_GATE_B = OPEN
+TPC274_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC274_TWIN_PRIME_RESULT = NONE
+TPC274_STATUS = NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP
+TPC274_ROUND2_CLUE = TEST_SIGNED_OUTPUT_REASSEMBLY_BEYOND_CANCELLATION_FREE_ENVELOPES
+```
+
+strongest positive result：exact projected Frobenius inequality plus independent
+12-row matrix replay；strongest obstruction：the cancellation-free envelope loses more
+than a factor of 50 on every registered row；open theorem：source-level signed output
+reassembly with an effective saving and explicit margin control。
 
 当前 TPC-273 入口：proof 为
 `research/tpc-big-road/bridge_b_margin_stability_matrix.md`，checker 为

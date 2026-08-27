@@ -9,6 +9,17 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-274 承接 TPC-273，在同一个锁定的 literal V59 finite physical
+operator 上把三块 Haar projection 后的输出写成 `A_perp=(I-P_3)A`，并证明精确的
+projected Frobenius envelope `G_perp <= ||A_perp||_F^2 ||beta||_2^2`。在 6 个
+registered growing-cutoff scales 与 `s=1,2` 的 12 rows 上，exact rational matrix
+replay 认证 envelope/actual output-energy gap `>50` 全部成立，envelope-induced
+`m_F^2<1/64` 全部成立；phase census 为 11 negative-real、1 positive-real、0
+crossing。这是 `NUMERICALLY_CERTIFIED_FINITE` 的 cancellation-free route
+`INSUFFICIENT_SCOPED` obstruction，不是 actual margin 的上界、渐近反例或 source-level
+theorem；signed output reassembly、fixed-power credit、arithmetic `L2`、full Gate B
+与 twin-prime conclusion 仍 OPEN/NONE。
+
 当前主线状态：TPC-273 承接 TPC-272，在同一个锁定的 literal V59 finite physical
 operator 上对 4 个尺度、4 个 comparison cutoff 和 2 个 kernel exponent 做 32-row
 outward rational margin matrix。精确转移 `m^2=rho^2`、`m^6=(rho^2)^3`，得到 12 个
@@ -110,6 +121,10 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-274-projected-output-frobenius-envelope - 当前阶段 - 证明 projected Frobenius
+envelope，并在 12 个 growing-cutoff rows 上以 exact rational replay 认证 `G_F/G_perp>50`
+与 `m_F^2<1/64`；关闭 cancellation-free output shortcut，但 signed reassembly 与
+source-level output theorem 仍 OPEN。
 tpc-273-margin-stability-matrix - 当前阶段 - 在 32-row literal V59 margin matrix 中以 exact `m^2=rho^2` 转移认证 12 low/11 middle/9 high，发现两个 cutoff-only finite stability flips 与 30/2 phase census；source-level margin uniformity仍 OPEN，fixed-power credit为0。
 tpc-272-correlation-margin-budget-compiler - 当前阶段 - 证明 `sigma-eta>1/400` 的条件 correlation-margin endpoint compiler，并用二维 sharp converse 否定 sign-only margin；9 行/4 个 dyadic finite margin audit 通过，source-level margin 与 full Gate B 仍 OPEN。
 tpc-271-phase-radius-decoupling - 当前阶段 - 在同一 finite literal V59 operator 上建立 `Xi=Xi_W*Xi_G` 与 `Xi/Xi_C=|kappa|^(-6)` 的 exact lane factorization；9 行 phase 全为负实轴，但 `96->192` 半径比 `>23` 由 output lane `>230` 驱动，仍不构成渐近 theorem。

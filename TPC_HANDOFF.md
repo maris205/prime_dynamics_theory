@@ -1,7 +1,52 @@
 # TPC HANDOFF
 
 更新时间：2026-08-27
-交接状态：`BOLD_CHANNEL_V126_TPC273_FINITE_MARGIN_STABILITY_OBSTRUCTION_RELEASED`
+交接状态：`BOLD_CHANNEL_V127_TPC274_PROJECTED_FROBENIUS_ENVELOPE_GAP_RELEASED`
+
+TPC-274 当前 section：projected output Frobenius envelope gap
+-----------------------------------------------------------------------------------------------
+
+TPC-274 is the controlled continuation of TPC-273.  It freezes the literal V59 finite
+physical operator, exact beta source, prime shell, masks, deleted diagonal, three-block
+Haar projection, and TPC-269 growing-cutoff registry.  With
+
+```text
+A_perp=(I-P_3)A,
+G_perp=||A_perp beta||_2^2,
+G_F=||A_perp||_F^2 ||beta||_2^2,
+```
+
+rowwise Cauchy--Schwarz proves the exact finite inequality `G_perp <= G_F`.  On six
+registered scales and kernel exponents `s=1,2`, the exact rational matrix construction and
+parent interval transfer certify 12/12 rows with `G_F/G_perp>50` and the conservative
+envelope proxy `m_F^2=|C_perp|^2/(W_perp G_F)<1/64`.  The phase census is 11
+`NEGATIVE_REAL_AXIS`, 1 `POSITIVE_REAL_AXIS`, and 0 crossings.  The producer, independent
+replay, five-mutation stress audit, PDF audit, and normal/optimized bridge checker pass.
+
+The finite proxy is deliberately not the actual margin upper bound: `m_F^2<1/64` only
+shows that this cancellation-free envelope cannot prove `m>1/8`.  The maximum claim is a
+scoped finite method obstruction; it supplies no fixed-power credit, arithmetic `L2`,
+source-level output theorem, signed four-packet reassembly, full Gate B, or twin-prime
+conclusion.
+
+```text
+TPC274_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP
+TPC274_ROUTE_ADVANCE = YES_SCOPED_PROJECTED_FROBENIUS_ENVELOPE_GAP
+TPC274_PROJECTED_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE_INEQUALITY
+TPC274_FINITE_GAP = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC274_CANCELLATION_FREE_ROUTE = INSUFFICIENT_SCOPED
+TPC274_ENVELOPE_MARGIN = NOT_AN_ACTUAL_MARGIN_UPPER_BOUND
+TPC274_SOURCE_LEVEL_OUTPUT_BOUND = OPEN_ASYMPTOTIC
+TPC274_SIGNED_OUTPUT_REASSEMBLY = OPEN
+TPC274_FIXED_POWER_CREDIT = 0
+TPC274_ARITHMETIC_ADVANCE = NO
+TPC274_L2 = NONE
+TPC274_FULL_GATE_B = OPEN
+TPC274_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC274_TWIN_PRIME_RESULT = NONE
+TPC274_STATUS = NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP
+TPC274_ROUND2_CLUE = TEST_SIGNED_OUTPUT_REASSEMBLY_BEYOND_CANCELLATION_FREE_ENVELOPES
+```
 
 TPC-273 当前 section：finite margin-stability matrix
 -----------------------------------------------------------------------------------------------
@@ -8677,8 +8722,8 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V126/TPC-273 是当前 release；其 normal/optimized bridge checker 已追加到下列
-curated cascade，故总数从 103 对更新为 104 对。下列长版本链以 V119/TPC-266 开头的
+V127/TPC-274 是当前 release；其 normal/optimized bridge checker 已追加到下列
+curated cascade，故总数从 104 对更新为 105 对。下列长版本链以 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
@@ -8962,7 +9007,31 @@ python -B research/tpc-big-road/tpc_bridge_b_margin_stability_matrix_checker.py 
 python -O -B research/tpc-big-road/tpc_bridge_b_margin_stability_matrix_checker.py --check
 ```
 
+TPC-274 的项目级 producer、independent replay、envelope stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-274-projected-output-frobenius-envelope/code/tpc274_projected_output_envelope_certificate.py --check
+python -O -B papers/tpc-274-projected-output-frobenius-envelope/code/tpc274_projected_output_envelope_certificate.py --check
+python -B papers/tpc-274-projected-output-frobenius-envelope/experiments/tpc274_independent_checker.py
+python -O -B papers/tpc-274-projected-output-frobenius-envelope/experiments/tpc274_independent_checker.py
+python -B papers/tpc-274-projected-output-frobenius-envelope/experiments/tpc274_envelope_stress.py
+python -O -B papers/tpc-274-projected-output-frobenius-envelope/experiments/tpc274_envelope_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_projected_output_frobenius_envelope_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_projected_output_frobenius_envelope_checker.py --check
+```
+
 随后优先读取：
+
+最新 TPC-274 入口：
+
+```text
+papers/tpc-274-projected-output-frobenius-envelope/README.md
+papers/tpc-274-projected-output-frobenius-envelope/PROOF_PACKAGE.md
+papers/tpc-274-projected-output-frobenius-envelope/notes/theorem_ledger.md
+papers/tpc-274-projected-output-frobenius-envelope/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_projected_output_frobenius_envelope.md
+research/tpc-big-road/tpc_bridge_b_projected_output_frobenius_envelope_checker.py
+```
 
 最新 TPC-273 入口：
 

@@ -3,11 +3,58 @@
 
 更新时间：2026-08-27
 
-状态：**TPC273_NUMERICALLY_CERTIFIED_FINITE_MARGIN_STABILITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC274_NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
+
+## 0.68 当前：TPC-274 projected output Frobenius envelope
+
+项目：`papers/tpc-274-projected-output-frobenius-envelope/`
+
+类型：**NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP**。
+
+TPC-274 承接 TPC-273 的有限 margin instability，转而审计最便宜的
+cancellation-free output estimate。它冻结 TPC-268 的 literal V59 finite physical
+operator、exact beta source、三块 Haar projection 与 TPC-269 growing-cutoff registry，
+定义 `A_perp=(I-P_3)A`、`G_perp=||A_perp beta||_2^2`，并证明 exact inequality
+`G_perp <= ||A_perp||_F^2 ||beta||_2^2 = G_F`。六个 registered scales 与两个 kernel
+exponents 给出 12 个 rows；exact rational matrix construction、parent interval
+transfer、independent replay 与 five-mutation stress 全部通过。每一行均有
+`G_F/G_perp>50`，且 conservative proxy `m_F^2=|C_perp|^2/(W_perp G_F)<1/64`；phase
+census 为 11 negative-real、1 positive-real、0 crossing。
+
+这关闭的是一个方法级 shortcut，而不是 actual margin 的上界：`m_F^2<1/64` 只说明
+Frobenius envelope 不能证明 `m>1/8`，不说明实际 `m` 小。因而该结果是
+`INSUFFICIENT_SCOPED` 的 finite obstruction，不是渐近反例，不支付 fixed-power
+credit，也不推进 arithmetic `L2`、signed four-packet reassembly、full Gate B 或
+twin-prime conclusion。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_PROJECTED_FROBENIUS_ENVELOPE_PLUS_12_ROW_REPLAY
+STRONGEST_OBSTRUCTION = CANCELLATION_FREE_ENVELOPE_GAP_ABOVE_50_ON_ALL_ROWS
+OPEN_THEOREM = SOURCE_LEVEL_SIGNED_OUTPUT_REASSEMBLY_WITH_EFFECTIVE_SAVING
+REUSABLE_STRUCTURE = A_PERP -> FROBENIUS_ENVELOPE -> MARGIN_PROXY -> GAP_CERTIFICATE
+ROUND2_CLUE = TEST_SIGNED_OUTPUT_REASSEMBLY_BEYOND_CANCELLATION_FREE_ENVELOPES
+```
+
+```text
+TPC274_ROUTE_ADVANCE = YES_SCOPED_PROJECTED_FROBENIUS_ENVELOPE_GAP
+TPC274_PROJECTED_FROBENIUS_ENVELOPE = PROVED_EXACT_FINITE_INEQUALITY
+TPC274_FINITE_GAP = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC274_CANCELLATION_FREE_ROUTE = INSUFFICIENT_SCOPED
+TPC274_ENVELOPE_MARGIN = NOT_AN_ACTUAL_MARGIN_UPPER_BOUND
+TPC274_SOURCE_LEVEL_OUTPUT_BOUND = OPEN_ASYMPTOTIC
+TPC274_SIGNED_OUTPUT_REASSEMBLY = OPEN
+TPC274_FIXED_POWER_CREDIT = 0
+TPC274_ARITHMETIC_ADVANCE = NO
+TPC274_L2 = NONE
+TPC274_FULL_GATE_B = OPEN
+TPC274_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC274_TWIN_PRIME_RESULT = NONE
+TPC274_STATUS = NUMERICALLY_CERTIFIED_FINITE_PROJECTED_FROBENIUS_ENVELOPE_GAP
+```
 
 ## 0.67 当前：TPC-273 finite margin-stability matrix
 
