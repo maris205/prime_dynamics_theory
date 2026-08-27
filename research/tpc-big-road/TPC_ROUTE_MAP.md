@@ -2,19 +2,34 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V137 / TPC-284
+当前地图版本：V138 / TPC-285
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-284`（`NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION`）；
+当前编号锚点：`TPC-285`（`PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK`）；
 对应论文目录为
-`papers/tpc-284-admissible-source-control-atlas/`。
-TPC-284 承接 TPC-283，声明 `H±2`、`z±1`、`Q±1` 六类 local schedule controls，
-在六个 baseline scales 与两个 kernel exponents 上完成 72-row literal-source atlas。
-所有行的 attachment interval 均与零分离（60 negative、12 positive、0 crossing），
-但有 8 个相对 baseline 的 sign flips；最弱 controlled `rho^2` 下界约为 `1.4118e-5`。
-该图谱是有限、声明式的 control audit，不声称 exhaustive admissible-source class 或
-asymptotic stability；literal arithmetic `L2` 与 full Gate B 仍 open。
+`papers/tpc-285-prime-shell-residue-rank-obstruction/`。
+TPC-285 承接 TPC-284，精确证明 centered residue block
+`B_q=R_q(I-11^T/(q-1))R_q^T` 的 `q-2` rank structure；但物理 deleted-diagonal
+block 在 full nonzero-class coverage 下恢复 full active rank。20 个 registered
+prime/exponent rows 的 kernel Schur blocks 另由模 `1000000007` 的独立 witness 认证
+full active rank。该结果关闭“仅靠 residue low rank 就得到 physical arithmetic `L2`”
+的直接 shortcut，但不关闭 signed cross-prime cancellation 或 full Gate B。
+
+```text
+TPC285_MAXIMUM_CLAIM = PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK
+TPC285_ROUTE_ADVANCE = YES_SCOPED_EXACT_RESIDUE_FACTORIZATION_AND_RANK_OBSTRUCTION
+TPC285_RESIDUE_FACTORIZATION = PROVED_EXACT
+TPC285_CENTERED_RANK_BOUND = PROVED_EXACT_RANK_LE_Q_MINUS_2
+TPC285_DELETED_DIAGONAL_FULL_RANK = PROVED_EXACT_UNDER_FULL_CLASS_COVERAGE
+TPC285_KERNEL_SCHUR_FULL_RANK = NUMERICALLY_CERTIFIED_FINITE_20_ROWS
+TPC285_LOW_RANK_TRANSFER = REFUTED_AS_DIRECT_SHORTCUT
+TPC285_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC285_FIXED_POWER_CREDIT = 0
+TPC285_FULL_GATE_B = OPEN
+TPC285_TWIN_PRIME_RESULT = NONE
+TPC285_ROUND2_CLUE = SEPARATE_RESIDUE_MODE_FACTORIZATION_FROM_DELETED_DIAGONAL_AND_KERNEL_RANK_BEFORE_LITERAL_L2
+```
 
 ```text
 TPC284_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION
@@ -101,6 +116,37 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.79 V138 / TPC-285：prime-shell residue factorization and rank obstruction
+
+TPC-285 是 TPC-284 控制图谱之后的结构化追踪。对奇素数 `q`，centered residue
+block 精确写成 `B_q=R_q(I-11^T/(q-1))R_q^T`，因此 rank 不超过 `q-2`；当所有
+nonzero residue classes 出现时，rank 恰为 `q-2`。但物理 operator 删除 diagonal，
+在 within-class zero-sum / block-constant decomposition 下可精确证明 active block
+full rank。20 个 registered prime/exponent rows 的 kernel Schur blocks 还由模
+`1000000007` 的独立 witness 认证 full active rank。
+
+这一步是新的 analytic structure 与 obstruction：低秩 residue shortcut 不经过
+physical deleted diagonal，但 full rank 本身不否定 signed cross-prime cancellation。
+literal arithmetic `L2`、fixed-power credit 与 full Gate B 仍 open。
+
+```text
+TPC285_ROUTE_ADVANCE = YES_SCOPED_EXACT_RESIDUE_FACTORIZATION_AND_RANK_OBSTRUCTION
+TPC285_RESIDUE_FACTORIZATION = PROVED_EXACT
+TPC285_CENTERED_RANK_BOUND = PROVED_EXACT_RANK_LE_Q_MINUS_2
+TPC285_DELETED_DIAGONAL_FULL_RANK = PROVED_EXACT_UNDER_FULL_CLASS_COVERAGE
+TPC285_KERNEL_SCHUR_FULL_RANK = NUMERICALLY_CERTIFIED_FINITE_20_ROWS
+TPC285_LOW_RANK_TRANSFER = REFUTED_AS_DIRECT_SHORTCUT
+TPC285_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC285_FIXED_POWER_CREDIT = 0
+TPC285_FULL_GATE_B = OPEN
+TPC285_TWIN_PRIME_RESULT = NONE
+TPC285_ROUND2_CLUE = SEPARATE_RESIDUE_MODE_FACTORIZATION_FROM_DELETED_DIAGONAL_AND_KERNEL_RANK_BEFORE_LITERAL_L2
+```
+
+地图位置：**V138 / TPC-285 已证明 residue-centered low rank 与 physical diagonal
+deletion 的断裂；下一座桥是利用 signed shell interactions 或 singular values，而
+不是继续假设 rank shortcut。**
 
 ## 5.78 V137 / TPC-284：finite admissible source-control atlas
 
@@ -611,9 +657,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V137 / TPC-284                    |
-        | FINITE SOURCE-CONTROL ATLAS / SIGN FLIPS     |
-        | 72 rows; asymptotic control stability OPEN    |
+        | YOU ARE HERE — V138 / TPC-285                    |
+        | RESIDUE FACTORIZATION / DIAGONAL RANK       |
+        | centered low rank; physical full rank       |
         +--------------------------------------------------+
                 |
                 v
@@ -5600,6 +5646,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V138 / TPC-285 | Bridge A / Gate B：prime-shell centered factorization 与 deleted-diagonal full-rank theorem 已完成；signed full-shell cancellation、arithmetic `L2` 与 full Gate B open | `TPC-285` | 精确证明 `B_q=R_q(I-11^T/(q-1))R_q^T`、rank `<=q-2`，并证明 deleted diagonal 在 full class coverage 下恢复 full active rank；20 个 kernel-Schur rows 通过独立模素数 rank witness，fixed-power credit 为 0 |
 | 2026-08-27 | V137 / TPC-284 | Bridge A / Gate B：finite declared source-control atlas 已完成；asymptotic control stability、literal source class、arithmetic `L2` 与 full Gate B open | `TPC-284` | 对 `H±2`、`z±1`、`Q±1` 六类 controls 完成 72-row literal replay（60 negative / 12 positive / 0 crossing），发现 8 个相对 baseline 的 sign flips，最弱 controlled `rho^2` 下界约 `1.4118e-5`，fixed-power credit 为 0，下一步为 source-class constraints 与 growing control-stability theorem |
 | 2026-08-27 | V136 / TPC-283 | Bridge A / Gate B：source-attachment zeroing radius 已精确化；admissible source stability、arithmetic `L2` 与 full Gate B open | `TPC-283` | 证明到 zero-attachment hyperplane 的最短距离公式；TPC-282 的 12 rows 全部在信息模型中小于 `3/10`、6 行小于 `1/10`，fixed-power credit 为 0，下一步为 cutoff/clock/shell controls 的 admissible stability |
 | 2026-08-27 | V135 / TPC-282 | Bridge A / Gate B：literal source attachment finite lock 已完成；uniform nondegeneracy、arithmetic `L2` 与 full Gate B open | `TPC-282` | 在 frozen literal V59 source 上重放 `C=<w_perp,(I-P_3)A beta>`；12 rows 全部 sign-separated（11 negative / 1 positive），最弱 `rho^2` 约 `3.36e-5`，fixed-power credit 为 0，下一步为 attachment stability radius 与 sign-flip audit |

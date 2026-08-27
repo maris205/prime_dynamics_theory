@@ -9,6 +9,24 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-285 承接 TPC-284，解释 prime-shell 控制敏感性背后的局部结构。
+对奇素数 `q`，centered residue block 精确分解为
+`B_q=R_q(I-11^T/(q-1))R_q^T`，rank 至多 `q-2`；但物理算子删除 diagonal 后，
+在所有非零 residue class 出现时，active block 精确恢复 full rank。对 20 个
+registered prime/exponent rows，kernel Schur product 也由模 `1000000007` 的独立
+精确证书认证为 full active rank。这是新的 `PROVED_EXACT` analytic structure 加
+`NUMERICALLY_CERTIFIED_FINITE` rank obstruction；它不提供 signed full-shell cancellation、
+arithmetic `L2`、fixed-power credit、full Gate B 或 twin-prime conclusion。
+
+```text
+TPC285_RESIDUE_FACTORIZATION = PROVED_EXACT
+TPC285_DELETED_DIAGONAL_FULL_RANK = PROVED_EXACT_UNDER_FULL_CLASS_COVERAGE
+TPC285_KERNEL_SCHUR_FULL_RANK = NUMERICALLY_CERTIFIED_FINITE_20_ROWS
+TPC285_LOW_RANK_TRANSFER = REFUTED_AS_DIRECT_SHORTCUT
+TPC285_FIXED_POWER_CREDIT = 0
+TPC285_FULL_GATE_B = OPEN
+```
+
 当前主线状态：TPC-284 承接 TPC-283，把 unrestricted zeroing obstruction 收紧为六类
 明确的 finite schedule controls：`H-2/H+2`、`z-1/z+1`、`Q-1/Q+1`。在六个
 registered scales 与两个 kernel exponents 上形成 72 行 literal-source control atlas，
@@ -216,6 +234,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-285-prime-shell-residue-rank-obstruction - 当前阶段 - 精确证明 centered residue
+factorization 与 deleted-diagonal full active rank；20 个 registered prime/exponent rows
+的 kernel Schur blocks 均通过模素数 rank witness，关闭“仅靠 `q-2` 低秩即可得到
+physical arithmetic `L2`”的直接捷径；signed full-shell cancellation、literal `L2`、
+full Gate B 仍 OPEN，fixed-power credit 为 0。
 tpc-284-admissible-source-control-atlas - 当前阶段 - 完成六类 declared schedule controls
 的 72-row literal-source atlas：60 negative、12 positive、0 crossing，8 个相对基线
 sign flips，最弱 controlled `rho^2` 下界约 `1.4118e-5`；这是有限控制图谱与

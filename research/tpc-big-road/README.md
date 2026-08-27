@@ -1,13 +1,41 @@
-# TPC big road V137 / TPC-284: finite admissible source-control atlas
+# TPC big road V138 / TPC-285: prime-shell residue rank obstruction
 
 更新时间：2026-08-27
 
-状态：`TPC284_NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC285_PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-284 proof 为
+当前 TPC-285 proof 为
+`bridge_b_prime_shell_residue_rank_obstruction.md`，checker 为
+`tpc_bridge_b_prime_shell_residue_rank_obstruction_checker.py`，编号论文为
+`../../papers/tpc-285-prime-shell-residue-rank-obstruction/`。
+
+TPC-285 承接 TPC-284 的 finite control atlas，精确分解奇素数 centered residue block：
+`B_q=R_q(I-11^T/(q-1))R_q^T`，从而 rank 不超过 `q-2`。但 physical deleted-diagonal
+block 在所有 nonzero residue classes 出现时精确恢复 full active rank；20 个
+registered prime/exponent rows 的 kernel Schur blocks 另由模 `1000000007` 的独立
+rank witness 认证为 full active rank。这关闭了“只数 centered residue modes 就能得到
+physical arithmetic `L2`”的直接 shortcut，但不关闭 signed full-shell cancellation。
+
+```text
+TPC285_MAXIMUM_CLAIM = PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK
+TPC285_ROUTE_ADVANCE = YES_SCOPED_EXACT_RESIDUE_FACTORIZATION_AND_RANK_OBSTRUCTION
+TPC285_RESIDUE_FACTORIZATION = PROVED_EXACT
+TPC285_CENTERED_RANK_BOUND = PROVED_EXACT_RANK_LE_Q_MINUS_2
+TPC285_DELETED_DIAGONAL_FULL_RANK = PROVED_EXACT_UNDER_FULL_CLASS_COVERAGE
+TPC285_KERNEL_SCHUR_FULL_RANK = NUMERICALLY_CERTIFIED_FINITE_20_ROWS
+TPC285_LOW_RANK_TRANSFER = REFUTED_AS_DIRECT_SHORTCUT
+TPC285_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC285_FIXED_POWER_CREDIT = 0
+TPC285_FULL_GATE_B = OPEN
+TPC285_TWIN_PRIME_RESULT = NONE
+TPC285_STATUS = PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK
+TPC285_ROUND2_CLUE = SEPARATE_RESIDUE_MODE_FACTORIZATION_FROM_DELETED_DIAGONAL_AND_KERNEL_RANK_BEFORE_LITERAL_L2
+```
+
+TPC-284 upstream proof 为
 `bridge_b_admissible_source_control_atlas.md`，checker 为
 `tpc_bridge_b_admissible_source_control_atlas_checker.py`，编号论文为
 `../../papers/tpc-284-admissible-source-control-atlas/`。

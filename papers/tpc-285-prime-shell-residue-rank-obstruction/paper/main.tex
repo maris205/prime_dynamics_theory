@@ -1,0 +1,249 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Prime-Shell Residue Factorization and the Deleted-Diagonal Rank Obstruction}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{27 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The finite control atlas of TPC-284 shows that small changes in a prime-shell
+schedule can reverse the sign of a literal source attachment.  This paper
+locates a structural reason why a tempting low-rank explanation is
+insufficient.  For an odd prime $q$, the centered residue block factors
+exactly through the $q-1$ nonzero residue indicators and has rank at most
+$q-2$.  The physical operator, however, deletes its diagonal.  We prove that
+this deletion makes the active residue block full rank whenever every nonzero
+residue class occurs.  The proof splits into within-class zero-sum and
+block-constant subspaces; a matrix-determinant-lemma factor is strictly
+negative.  On the 20 registered prime/exponent rows, an independent modular
+replay further certifies that the rational kernel Schur product has full active
+rank.  Thus the centered $q-2$ modes are a real analytic structure, but they
+do not by themselves furnish the literal arithmetic $L^2$ estimate.  No norm
+bound, asymptotic cancellation, fixed-power credit, or twin-prime conclusion
+is claimed.
+\end{abstract}
+
+\section{Motivation and frozen object}
+
+TPC-284 replaced the unrestricted source perturbation of TPC-283 by six named
+finite schedule controls and found eight baseline sign flips~\cite{tpc284}.
+One possible response is to search for a small-dimensional residue model: a
+prime $q$ has only $q-1$ nonzero residue classes, and centering removes their
+constant mode.  That intuition is algebraically correct before the physical
+diagonal convention is applied.  This paper tracks the convention exactly.
+
+Let $I$ be a finite interval of integer indices and let $q\geq3$ be prime.
+Write
+\begin{equation}
+ m_q(u)={\bf1}_{q\nmid u},\qquad
+ R_q(u,a)=m_q(u){\bf1}_{u\equiv a\pmod q},
+ \quad a=1,\ldots,q-1,
+ \label{eq:R}
+\end{equation}
+and let ${\bf1}$ denote the $(q-1)$-vector of ones.  The centered residue
+block, including its diagonal, is
+\begin{equation}
+ B_q(u,t)=m_q(u)m_q(t)
+ \left({\bf1}_{u\equiv t\pmod q}-\frac{1}{q-1}\right).
+ \label{eq:B}
+\end{equation}
+The literal prime-shell operator uses, for distinct $u,t$,
+\begin{equation}
+ A_q(u,t)=qK_H(u-t)D_q(u,t),\qquad
+ D_q=B_q-\operatorname{diag}(B_q),
+ \label{eq:Aq}
+\end{equation}
+where
+\begin{equation}
+ K_H(h)=\frac{H^{2s}}{(H^2+h^2)^s},\qquad s\in\{1,2\}.
+ \label{eq:K}
+\end{equation}
+The complete shell is a signed sum of these blocks over
+$Q<q\leq2Q$~\cite{tpc268}.  We study one block first; a full-shell estimate
+must still handle signs and interactions between different primes.
+
+\section{Exact centered factorization}
+
+\begin{theorem}[residue-mode factorization]
+For every odd prime $q$ and finite index set $I$,
+\begin{equation}
+ B_q=R_qP_qR_q^{\mathsf T},\qquad
+ P_q=I_{q-1}-\frac{{\bf1}{\bf1}^{\mathsf T}}{q-1}.
+ \label{eq:factor}
+\end{equation}
+Consequently $\operatorname{rank}(B_q)\leq q-2$.  If every nonzero residue
+class modulo $q$ occurs in $I$, then the rank is exactly $q-2$.
+\end{theorem}
+
+\begin{proof}
+The $(u,t)$ entry of $R_qR_q^{\mathsf T}$ is the first masked indicator in
+\eqref{eq:B}, while $R_q{\bf1}=m_q$.  Substitution gives \eqref{eq:factor}.
+The matrix $P_q$ is the orthogonal projection onto
+${\bf1}^{\perp}$ and has rank $q-2$, proving the upper bound.  If all classes
+occur, the columns of $R_q$ have disjoint nonempty supports and are linearly
+independent.  Since $B_q=(R_qP_q)(R_qP_q)^{\mathsf T}$, its rank is the rank of
+$R_qP_q$, namely $q-2$.
+\end{proof}
+
+The theorem identifies the attractive residue-mode structure exactly.  It is
+also the point at which the physical operator makes a nontrivial change.
+
+\section{Diagonal deletion restores full active rank}
+
+Let $J_q=\{u\in I:q\nmid u\}$ and let $n_a$ be the number of indices in
+$J_q$ congruent to $a$ modulo $q$.  Assume $n_a>0$ for every
+$a=1,\ldots,m$, where $m=q-1$.  On the active coordinates, multiply $D_q$ by
+$m$.  Since the diagonal entry of $mB_q$ is $m-1$, we obtain
+\begin{equation}
+ M_q:=mD_q=mR_qR_q^{\mathsf T}-u_qu_q^{\mathsf T}-(m-1)I,
+ \qquad u_q=R_q{\bf1}.
+ \label{eq:M}
+\end{equation}
+
+\begin{theorem}[deleted-diagonal full-rank theorem]
+Under the full-class condition $n_a>0$, the active matrix $D_q$ is invertible.
+In particular,
+\[
+ \operatorname{rank}(D_q)=|J_q|,
+\]
+even though the undeleted centered block has rank $q-2$.
+\end{theorem}
+
+\begin{proof}
+Decompose the active coordinate space into the direct sum of the subspaces
+of vectors whose sum is zero inside each residue class and the space of vectors
+constant on each class.  On the first summand, both $R_qR_q^{\mathsf T}$ and
+$u_qu_q^{\mathsf T}$ vanish, so $M_q$ acts by the nonzero scalar $-(m-1)$.
+
+For a block-constant vector with class values $c_a$, let
+$n=(n_1,\ldots,n_m)^{\mathsf T}$.  The class value of $M_qc$ is
+\[
+ (mn_a-(m-1))c_a-\sum_b n_bc_b.
+\]
+Thus the matrix on this summand is $D-\mathbf{1}n^{\mathsf T}$, where
+$D=\operatorname{diag}(d_a)$ and $d_a=mn_a-(m-1)>0$.  The matrix determinant
+lemma gives
+\begin{equation}
+ \det(D-\mathbf{1}n^{\mathsf T})
+ =\left(\prod_a d_a\right)
+ \left(1-\sum_a\frac{n_a}{d_a}\right).
+ \label{eq:det}
+\end{equation}
+Because $d_a<mn_a$ for $m>1$, each ratio $n_a/d_a$ is strictly larger than
+$1/m$.  There are $m$ classes, so the sum in \eqref{eq:det} is greater than
+one.  The determinant is therefore nonzero.  Both invariant summands are
+invertible, proving the claim.
+\end{proof}
+
+\begin{remark}
+The result is not a claim that diagonal deletion destroys every possible
+cancellation.  It says something more specific and useful: a proof that uses
+only the $q-2$ centered residue modes cannot represent the physical
+off-diagonal block without paying for the deleted diagonal.
+\end{remark}
+
+\section{Finite kernel-Schur audit}
+
+We apply the theorem to the six registered tuples
+\begin{equation}
+ (64,15,4,4), (96,20,5,4), (128,24,5,4),
+ (192,32,6,5), (256,38,6,5), (384,50,7,5),
+ \label{eq:rows}
+\end{equation}
+with $s=1,2$ and each prime in $Q<q\leq2Q$.  There are 20
+$(X,H,Q,s,q)$ rows.  For each row we check every entry of \eqref{eq:factor}
+exactly and record the class sizes.  The following table aggregates the rank
+outcomes; ``active'' is $|J_q|$.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Finite rank audit.  The modular ranks are rational-rank witnesses.}
+\label{tab:ranks}
+\begin{tabular}{rrrrrr}
+\toprule
+$X$ range&$q$ values&rows&active range&rank $B_q$&rank $D_q$, $K_H\circ D_q$\\
+\midrule
+64&5,7&4&26--27&$q-2$&active\\
+96,128&7&4&41--55&$q-2$&active\\
+192,256&7,11&8&82--116&$q-2$&active\\
+384&11,13&4&175--177&$q-2$&active\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For the last two columns we reduce integer-scaled residue matrices and the
+rational kernel matrix modulo $p=1{,}000{,}000{,}007$.  Every denominator
+$H^2+(u-t)^2$ is nonzero modulo $p$.  A full-rank reduction gives a nonzero
+rational minor, so the rational matrix has full active rank.  The certificate
+checks this independently for all 20 rows:
+\begin{equation}
+ \begin{array}{c|c}
+ \text{identity/rank test}&\text{certified rows}\\ \hline
+ B_q=R_qP_qR_q^{\mathsf T}\text{ entrywise}&20\\
+ \operatorname{rank}(B_q)=q-2&20\\
+ \operatorname{rank}(D_q)=|J_q|&20\\
+ \operatorname{rank}(K_H\circ D_q)=|J_q|&20.
+ \end{array}
+ \label{eq:audit}
+\end{equation}
+
+The exact theorem explains the third line; the modular replay is an adversarial
+finite check of the implementation.  The fourth line is intentionally only a
+finite certificate.  No general theorem is asserted for the kernel Schur
+product, even though it is full rank on every registered row.
+
+\section{Consequence for the twin-prime route}
+
+The residue factorization is reusable: it separates a centered prime mode from
+the constant residue direction and can be inserted into a future full-shell
+calculation.  The diagonal theorem is the corresponding obstruction.  The
+physical matrix is not a rank-$q-2$ object after the diagonal convention, and
+the kernel-weighted finite blocks remain full rank.  Therefore a literal
+arithmetic $L^2$ proof must use additional information—signed cross-prime
+cancellation, singular-value estimates, source orthogonality, or another
+structure—not merely count residue modes.
+
+This conclusion fits the TPC-284 sign atlas.  A small change in $Q$ changes
+which full-rank residue blocks are summed, while a change in $H$ changes their
+Schur weights.  The observed finite sign flips are therefore compatible with
+the exact low-dimensional residue identity and do not justify a universal
+orientation claim.  Conversely, full rank alone is not a negative result for
+cancellation; it only closes the low-rank shortcut.
+
+\section{Verification and conclusion}
+
+The release contains a canonical certificate, an independent checker that does
+not import the producer, a hostile mutation audit, and a fail-closed Bridge-B
+checker.  The exact algebraic proof, the 20 modular rank witnesses, and the
+parent hash lock all pass in ordinary and optimized Python with empty standard
+error.  The maximum claim is consequently narrow:
+
+\begin{quote}
+Centered prime-residue modes factor exactly and have rank at most $q-2$;
+physical diagonal deletion restores full active rank, and the registered
+kernel-Schur blocks are finitely certified full rank.
+\end{quote}
+
+The next open theorem is a signed full-shell spectral or $L^2$ bound that uses
+more than this rank information.  Fixed-power credit remains zero, Gate B is
+open, and no twin-prime conclusion follows.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

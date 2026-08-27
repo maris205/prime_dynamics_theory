@@ -1,9 +1,34 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V137 / ADMISSIBLE_SOURCE_CONTROL_ATLAS`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION`
-编号事实终点：TPC-284；TPC-284 trigger：`true`
+状态：`BOLD_CHANNEL_V138 / PRIME_SHELL_RESIDUE_RANK_OBSTRUCTION`
+claim level：`PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK`
+编号事实终点：TPC-285；TPC-285 trigger：`true`
+
+当前 TPC-285 入口：proof 为
+`research/tpc-big-road/bridge_b_prime_shell_residue_rank_obstruction.md`，checker 为
+`tpc_bridge_b_prime_shell_residue_rank_obstruction_checker.py`，编号论文为
+`papers/tpc-285-prime-shell-residue-rank-obstruction/`。它承接 TPC-284 的控制图谱，
+对奇素数 `q` 精确证明 centered residue block 的 `q-2` mode factorization，并证明
+physical deleted-diagonal block 在 full class coverage 下恢复 full active rank；20 个
+registered prime/exponent rows 的 kernel Schur blocks 进一步通过模 `1000000007` 的
+独立 full-rank witness。该结果关闭 low-rank residue shortcut，但不等于 signed
+full-shell cancellation 或 arithmetic `L2`；fixed-power credit 与 full Gate B 仍 OPEN/NONE。
+
+```text
+TPC285_MAXIMUM_CLAIM = PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK
+TPC285_ROUTE_ADVANCE = YES_SCOPED_EXACT_RESIDUE_FACTORIZATION_AND_RANK_OBSTRUCTION
+TPC285_RESIDUE_FACTORIZATION = PROVED_EXACT
+TPC285_CENTERED_RANK_BOUND = PROVED_EXACT_RANK_LE_Q_MINUS_2
+TPC285_DELETED_DIAGONAL_FULL_RANK = PROVED_EXACT_UNDER_FULL_CLASS_COVERAGE
+TPC285_KERNEL_SCHUR_FULL_RANK = NUMERICALLY_CERTIFIED_FINITE_20_ROWS
+TPC285_LOW_RANK_TRANSFER = REFUTED_AS_DIRECT_SHORTCUT
+TPC285_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC285_FIXED_POWER_CREDIT = 0
+TPC285_FULL_GATE_B = OPEN
+TPC285_TWIN_PRIME_RESULT = NONE
+TPC285_ROUND2_CLUE = SEPARATE_RESIDUE_MODE_FACTORIZATION_FROM_DELETED_DIAGONAL_AND_KERNEL_RANK_BEFORE_LITERAL_L2
+```
 
 当前 TPC-284 入口：proof 为
 `research/tpc-big-road/bridge_b_admissible_source_control_atlas.md`，checker 为

@@ -3,13 +3,54 @@
 
 更新时间：2026-08-27
 
-状态：**TPC284_NUMERICALLY_CERTIFIED_FINITE_ADMISSIBLE_CONTROL_ATLAS_PLUS_SIGN_FLIP_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC285_PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.78 当前：TPC-284 finite admissible source-control atlas
+## 0.79 当前：TPC-285 prime-shell residue factorization and deleted-diagonal rank obstruction
+
+项目：`papers/tpc-285-prime-shell-residue-rank-obstruction/`
+
+类型：**PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK**。
+
+TPC-285 承接 TPC-284 的 72-row control atlas，抽出每个 prime-shell residue block 的
+精确结构。对奇素数 `q`，令 `R_q` 为 nonzero residue indicators，则
+`B_q=R_q(I-11^T/(q-1))R_q^T`，rank 至多 `q-2`，full class coverage 时恰为 `q-2`。
+物理矩阵使用 deleted diagonal `D_q=B_q-diag(B_q)`；按 within-class zero-sum 与
+block-constant 子空间分解，matrix-determinant-lemma 因子严格非零，故 `D_q` 在
+active coordinates 上 full rank。20 个 registered `(X,H,Q,s,q)` rows 的 kernel Schur
+blocks 又由模 `1000000007` 的独立 witness 认证 full active rational rank。
+
+最强正结果是 exact deleted-diagonal full-rank theorem；最强 obstruction 是 centered
+`q-2` low-rank shortcut 不经过 physical diagonal deletion。该 obstruction 不否定
+signed cross-prime cancellation、singular-value decay 或 arithmetic `L2`，它们仍是
+open。可复用结构为 `residue factor -> diagonal split -> class subspaces`。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_DELETED_DIAGONAL_FULL_ACTIVE_RANK_THEOREM
+STRONGEST_OBSTRUCTION = CENTERED_Q_MINUS_2_RANK_DOES_NOT_SURVIVE_PHYSICAL_DIAGONAL_DELETION
+OPEN_THEOREM = SIGNED_FULL_SHELL_SPECTRAL_OR_L2_BOUND_USING_MORE_THAN_RANK
+REUSABLE_STRUCTURE = RESIDUE_FACTOR -> DIAGONAL_SPLIT -> CLASS_SUBSPACE_DECOMPOSITION
+ROUND2_CLUE = SEPARATE_RESIDUE_MODE_FACTORIZATION_FROM_DELETED_DIAGONAL_AND_KERNEL_RANK_BEFORE_LITERAL_L2
+```
+
+```text
+TPC285_ROUTE_ADVANCE = YES_SCOPED_EXACT_RESIDUE_FACTORIZATION_AND_RANK_OBSTRUCTION
+TPC285_RESIDUE_FACTORIZATION = PROVED_EXACT
+TPC285_CENTERED_RANK_BOUND = PROVED_EXACT_RANK_LE_Q_MINUS_2
+TPC285_DELETED_DIAGONAL_FULL_RANK = PROVED_EXACT_UNDER_FULL_CLASS_COVERAGE
+TPC285_KERNEL_SCHUR_FULL_RANK = NUMERICALLY_CERTIFIED_FINITE_20_ROWS
+TPC285_LOW_RANK_TRANSFER = REFUTED_AS_DIRECT_SHORTCUT
+TPC285_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC285_FIXED_POWER_CREDIT = 0
+TPC285_FULL_GATE_B = OPEN
+TPC285_TWIN_PRIME_RESULT = NONE
+TPC285_STATUS = PROVED_EXACT_CENTERED_RESIDUE_FACTORIZATION_AND_DELETED_DIAGONAL_FULL_RANK_PLUS_NUMERICALLY_CERTIFIED_KERNEL_RANK
+```
+
+## 0.78 已发布：TPC-284 finite admissible source-control atlas
 
 项目：`papers/tpc-284-admissible-source-control-atlas/`
 
