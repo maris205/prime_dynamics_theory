@@ -2,41 +2,86 @@
 
 更新时间：2026-08-27
 
-当前地图版本：V131 / TPC-278
+当前地图版本：V132 / TPC-279
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-278`（`NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION`）；
+当前编号锚点：`TPC-279`（`PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER`）；
 对应论文目录为
-`papers/tpc-278-cross-scale-gain-stability/`。
-TPC-278 冻结 TPC-277 的 literal source 与四包定义，只改变有限 shell endpoint `Q`
-或 clock `H`。12 行 exact rational replay 得到 8 negative 与 4 positive net cross
-terms，并认证三次 shell flip 与一次 clock flip；因此 finite `D/G>=1` stability
-shortcut 被 scoped 否定。这个结论不否定 intended growing schedule，也不产生
-fixed-power credit。下一关是最小 schedule-specific coherence/deficit-to-gain theorem；
-arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+`papers/tpc-279-coherence-to-gain-theorem/`。
+TPC-279 对四包 Hilbert-space reassembly 精确证明
+`r>=bX^gamma <=> G/D<=b^(-1)X^(-gamma) <=> Delta>=1-b^(-1)X^(-gamma)`，并给出
+sharp pairwise-coherence envelope `G/D<=min(4,1+3mu)`。正交包 refute
+coherence-only power promotion，near-cancellation scalar family 给出 arbitrarily
+large-gain adversary；TPC-278 的 12 rows 完成 reciprocal interval transfer，8 个
+positive-deficit、4 个 negative-deficit。结果是结构性 theorem 加 finite coordinate
+certificate，不产生 asymptotic、arithmetic 或 fixed-power credit；下一关是
+additive-leakage-aware source-to-margin endpoint compiler。
 
 ```text
-TPC278_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
-TPC278_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_STABILITY_OBSTRUCTION
-TPC278_LITERAL_SOURCE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
-TPC278_NATURAL_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
-TPC278_SHELL_CLOCK_FLIPS = NUMERICALLY_CERTIFIED_FINITE_4_FLIPS
-TPC278_SIGNED_GAIN_STABILITY = REFUTED_SCOPED_FINITE
-TPC278_SOURCE_LEVEL_UNIFORMITY = OPEN_ASYMPTOTIC
-TPC278_FIXED_POWER_CREDIT = 0
-TPC278_ARITHMETIC_ADVANCE = NO
-TPC278_L2 = NONE
-TPC278_FULL_GATE_B = OPEN
-TPC278_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC278_TWIN_PRIME_RESULT = NONE
-TPC278_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
-TPC278_ROUND2_CLUE = FORMULATE_MINIMAL_SOURCE_LEVEL_COHERENCE_TO_GAIN_THEOREM
+TPC279_MAXIMUM_CLAIM = PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC279_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_TO_GAIN_CRITERION
+TPC279_EXACT_DEFICIT_IDENTITY = PROVED_EXACT_FINITE
+TPC279_PAIRWISE_COHERENCE_ENVELOPE = PROVED_EXACT_SHARP
+TPC279_PAIRWISE_COHERENCE_POWER = REFUTED_EXACT_BY_ORTHOGONAL_WITNESS
+TPC279_NEAR_CANCELLATION_ADVERSARY = PROVED_EXACT_SCALAR_FAMILY
+TPC279_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC279_FINITE_TRANSFER_CENSUS = 8_POSITIVE_DEFICIT_4_NEGATIVE_DEFICIT
+TPC279_SOURCE_LEVEL_DEFICIT = OPEN_ASYMPTOTIC
+TPC279_FIXED_POWER_CREDIT = 0
+TPC279_ARITHMETIC_ADVANCE = NO
+TPC279_L2 = NONE
+TPC279_FULL_GATE_B = OPEN
+TPC279_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC279_TWIN_PRIME_RESULT = NONE
+TPC279_STATUS = PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC279_ROUND2_CLUE = COMPILE_ADDITIVE_LEAKAGE_INTO_SOURCE_TO_MARGIN_ENDPOINT_BUDGET
 ```
 
-strongest positive result：exact twelve-row source census and four declared sign flips；
-strongest obstruction：nearby Q/H choices can reverse signed gain；open theorem：
-schedule-specific source-level control of `G/D`。
+strongest positive result：exact necessary-and-sufficient deficit criterion, sharp coherence
+envelope, and certified twelve-row transfer；strongest obstruction：absolute coherence alone
+cannot pay a positive power；open theorem：growing source-level deficit control for `G/D`。
+
+## 5.73 V132 / TPC-279：minimal coherence-to-gain criterion
+
+TPC-279 是 TPC-278 的 theorem-level continuation。它不把 finite sign census 外推为
+渐近结论，而是先把目标 gain 的真正 source input 写成无歧义的充要条件。对四个
+packets 令 `D=sum||V_j||^2`、`G=||sum V_j||^2`、`q=G/D`、`Delta=1-q`；当 `G>0` 时
+`r=D/G=(1-Delta)^(-1)`，故任意 power gain 都等价于一个相同尺度的 `G/D` deficit。
+
+同时，pairwise absolute coherence `mu` 只给出 sharp upper envelope
+`q<=min(4,1+3mu)`。equicorrelation Gram family 逐点达到该常数；四个正交包给出
+`mu=0,r=1`，所以 coherence alone 不产生 positive power。相反，scalar family
+`(1,1,1,-(3-epsilon))` 在 `mu=1` 下令 `r` 随 `epsilon->0` 发散，说明 absolute coherence
+也不能控制 gain 的上端。
+
+TPC-278 的 12 个 outward intervals 通过精确倒数映射到 deficit intervals，并与独立
+parent cancellation intervals 取交，得到 8 positive-deficit / 4 negative-deficit
+rows。这完成 source-coordinate transfer，但仍没有 growing quantifier、arithmetic
+`L2` 或 full Gate B。
+
+```text
+TPC279_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_TO_GAIN_CRITERION
+TPC279_EXACT_DEFICIT_IDENTITY = PROVED_EXACT_FINITE
+TPC279_PAIRWISE_COHERENCE_ENVELOPE = PROVED_EXACT_SHARP
+TPC279_PAIRWISE_COHERENCE_POWER = REFUTED_EXACT_BY_ORTHOGONAL_WITNESS
+TPC279_NEAR_CANCELLATION_ADVERSARY = PROVED_EXACT_SCALAR_FAMILY
+TPC279_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC279_FINITE_TRANSFER_CENSUS = 8_POSITIVE_DEFICIT_4_NEGATIVE_DEFICIT
+TPC279_SOURCE_LEVEL_DEFICIT = OPEN_ASYMPTOTIC
+TPC279_FIXED_POWER_CREDIT = 0
+TPC279_ARITHMETIC_ADVANCE = NO
+TPC279_L2 = NONE
+TPC279_FULL_GATE_B = OPEN
+TPC279_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC279_TWIN_PRIME_RESULT = NONE
+TPC279_STATUS = PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC279_ROUND2_CLUE = COMPILE_ADDITIVE_LEAKAGE_INTO_SOURCE_TO_MARGIN_ENDPOINT_BUDGET
+```
+
+地图位置：**V132 / TPC-279 已把 signed-gain 缺口压缩为 exact deficit criterion，并
+证明 pairwise coherence 不是足够替代；下一桥面是处理 source bound 中 additive leakage
+与 margin endpoint 的联合预算。**
 
 ## 5.72 V131 / TPC-278：cross-scale signed-gain stability obstruction
 
@@ -342,9 +387,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V131 / TPC-278                    |
-        | CROSS-SCALE GAIN STABILITY OBSTRUCTION          |
-        | finite flips; source theorem OPEN               |
+        | YOU ARE HERE — V132 / TPC-279                    |
+        | EXACT COHERENCE-TO-GAIN CRITERION               |
+        | deficit criterion proved; growing source OPEN  |
         +--------------------------------------------------+
                 |
                 v
@@ -387,7 +432,7 @@ residue profile；把 `c_D=mu(D)` 和 `B_D=mu(D)U_D^*z` 放回后，coherent-to-
 ratio 恰为 divisor count，profile-aware energy 只能写成 cross-divisor PSD Gram form。
 这里的 aligned family 允许独立 `F_D`，不是 literal coupled TPC coefficient family。
 
-一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V131 / TPC-278。
+一句话定位：**我们仍在岛 2 的 Bridge A / Gate B 接缝；当前位置是 V132 / TPC-279。
 TPC-254 已支付 literal `w` midpoint 到任意固定 log power；TPC-256 支付 literal
 `beta` midpoint 的显式正主项及其负实-leading adjoint scalar；TPC-257 将两个 rank
 children 各再二分，证明 midpoint-transverse Haar plane 也有同阶显式 lower floor。
@@ -4202,7 +4247,7 @@ THEN_C_SYMMETRY_BREAK_RESERVE
 
 ## 7. 当前状态防火墙
 
-截至 V131 / TPC-278：
+截至 V132 / TPC-279：
 
 ```text
 ROUTE_ADVANCE = YES
@@ -4225,6 +4270,22 @@ TPC278_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
 TPC278_TWIN_PRIME_RESULT = NONE
 TPC278_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
 TPC278_ROUND2_CLUE = FORMULATE_MINIMAL_SOURCE_LEVEL_COHERENCE_TO_GAIN_THEOREM
+TPC279_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_TO_GAIN_CRITERION
+TPC279_EXACT_DEFICIT_IDENTITY = PROVED_EXACT_FINITE
+TPC279_PAIRWISE_COHERENCE_ENVELOPE = PROVED_EXACT_SHARP
+TPC279_PAIRWISE_COHERENCE_POWER = REFUTED_EXACT_BY_ORTHOGONAL_WITNESS
+TPC279_NEAR_CANCELLATION_ADVERSARY = PROVED_EXACT_SCALAR_FAMILY
+TPC279_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC279_FINITE_TRANSFER_CENSUS = 8_POSITIVE_DEFICIT_4_NEGATIVE_DEFICIT
+TPC279_SOURCE_LEVEL_DEFICIT = OPEN_ASYMPTOTIC
+TPC279_FIXED_POWER_CREDIT = 0
+TPC279_ARITHMETIC_ADVANCE = NO
+TPC279_L2 = NONE
+TPC279_FULL_GATE_B = OPEN
+TPC279_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC279_TWIN_PRIME_RESULT = NONE
+TPC279_STATUS = PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC279_ROUND2_CLUE = COMPILE_ADDITIVE_LEAKAGE_INTO_SOURCE_TO_MARGIN_ENDPOINT_BUDGET
 TPC276_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_MARGIN_RECOVERY
 TPC276_SIGNED_GAIN_MARGIN_IDENTITY = PROVED_EXACT_FINITE
 TPC276_CONDITIONAL_BUDGET_COMPILER = PROVED_CONDITIONAL_WITH_EFFECTIVE_LOSS_MAX_ZERO_ETA_D_MINUS_GAMMA_OVER_2
@@ -5300,6 +5361,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-27 | V132 / TPC-279 | Bridge A / Gate B：exact coherence-to-gain criterion 已完成；growing source deficit、arithmetic `L2` 与 full Gate B open | `TPC-279` | exact `r>=bX^gamma` 三向等价、sharp `q<=min(4,1+3mu)` envelope、orthogonal/near-cancellation adversaries；TPC-278 的 12 rows 完成 reciprocal transfer（8 positive / 4 negative deficit），fixed-power credit 为 0，下一步为 additive-leakage-aware endpoint compiler |
 | 2026-08-27 | V131 / TPC-278 | Bridge A / Gate B：cross-scale signed-gain stability obstruction 已完成；schedule-specific gain、arithmetic `L2` 与 full Gate B open | `TPC-278` | 同一 literal source 的 12 行 exact Q/H replay 得到 8 negative / 4 positive cross terms 与 4 次 sign flip；finite `D/G>=1` stability 被 scoped 否定，fixed-power credit 为 0，下一步为 minimal coherence/deficit-to-gain theorem |
 | 2026-08-27 | V130 / TPC-277 | Bridge A / Gate B：four-packet gain floor 与 source-level finite attack 已完成；uniform gain、arithmetic `L2` 与 full Gate B open | `TPC-277` | exact `G<=4D`、`E<=0 => G<=D` 与 `r=(1-kappa)^(-1)`；8 个 literal rows 全部 `r>1`，但 one-percent floor finite-refuted；geometry 无 fixed-power credit，下一步为 shell/clock gain stability |
 | 2026-08-27 | V129 / TPC-276 | Bridge A / Gate B：signed-gain margin recovery 与 strict endpoint compiler 已完成；source-level gain、arithmetic `L2` 与 full Gate B open | `TPC-276` | exact `m^2=(D/G)m_D^2`；conditional `eta_eff=max(0,eta_D-gamma/2)` 与 `sigma-eta_eff>1/400`；12 rows 全部 `D/G>1`，3 行超过 quarter、5 行超过 eighth；finite gain 不产生 fixed-power credit，下一步为 uniform source-level signed-gain lower bound |

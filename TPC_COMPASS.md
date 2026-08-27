@@ -1,40 +1,49 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-27
-状态：`BOLD_CHANNEL_V131 / CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION`
-claim level：`NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION`
-编号事实终点：TPC-278；TPC-278 trigger：`true`
+状态：`BOLD_CHANNEL_V132 / EXACT_COHERENCE_TO_GAIN_CRITERION`
+claim level：`PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER`
+编号事实终点：TPC-279；TPC-279 trigger：`true`
 
-当前 TPC-278 入口：proof 为
-`research/tpc-big-road/bridge_b_cross_scale_gain_stability.md`，checker 为
-`tpc_bridge_b_cross_scale_gain_stability_checker.py`，编号论文为
-`papers/tpc-278-cross-scale-gain-stability/`。它冻结 TPC-277 的 literal source 与
-四包定义，只改有限 shell endpoint `Q` 或 clock `H`。12 行 exact replay 得到
-8 negative / 4 positive net cross terms，并认证三次 shell flip 与一次 clock flip；
-因此有限 `D/G>=1` stability shortcut 被 scoped 否定。下一关是最小
-coherence/deficit-to-gain theorem，而不是把有限 flip 升级为 growing counterexample。
+当前 TPC-279 入口：proof 为
+`research/tpc-big-road/bridge_b_coherence_to_gain_theorem.md`，checker 为
+`tpc_bridge_b_coherence_to_gain_theorem_checker.py`，编号论文为
+`papers/tpc-279-coherence-to-gain-theorem/`。它在四包 Hilbert 空间中证明 exact
+`r=D/G` criterion、sharp `q<=min(4,1+3mu)` coherence envelope，以及 orthogonal
+and near-cancellation adversaries；对 TPC-278 的 12 行完成 exact reciprocal
+interval transfer（8 positive / 4 negative deficit rows）。这是 source-level
+criterion 与 finite coordinate transfer，不是 asymptotic deficit theorem。
 
 ```text
-TPC278_MAXIMUM_CLAIM = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
-TPC278_ROUTE_ADVANCE = YES_SCOPED_SIGNED_GAIN_STABILITY_OBSTRUCTION
-TPC278_LITERAL_SOURCE_REPLAY = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
-TPC278_NATURAL_CONTROLS = NUMERICALLY_CERTIFIED_FINITE_3_ROWS
-TPC278_SHELL_CLOCK_FLIPS = NUMERICALLY_CERTIFIED_FINITE_4_FLIPS
-TPC278_SIGNED_GAIN_STABILITY = REFUTED_SCOPED_FINITE
-TPC278_SOURCE_LEVEL_UNIFORMITY = OPEN_ASYMPTOTIC
-TPC278_FIXED_POWER_CREDIT = 0
-TPC278_ARITHMETIC_ADVANCE = NO
-TPC278_L2 = NONE
-TPC278_FULL_GATE_B = OPEN
-TPC278_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
-TPC278_TWIN_PRIME_RESULT = NONE
-TPC278_STATUS = NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION
-TPC278_ROUND2_CLUE = FORMULATE_MINIMAL_SOURCE_LEVEL_COHERENCE_TO_GAIN_THEOREM
+TPC279_MAXIMUM_CLAIM = PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC279_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_TO_GAIN_CRITERION
+TPC279_EXACT_DEFICIT_IDENTITY = PROVED_EXACT_FINITE
+TPC279_PAIRWISE_COHERENCE_ENVELOPE = PROVED_EXACT_SHARP
+TPC279_PAIRWISE_COHERENCE_POWER = REFUTED_EXACT_BY_ORTHOGONAL_WITNESS
+TPC279_NEAR_CANCELLATION_ADVERSARY = PROVED_EXACT_SCALAR_FAMILY
+TPC279_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC279_FINITE_TRANSFER_CENSUS = 8_POSITIVE_DEFICIT_4_NEGATIVE_DEFICIT
+TPC279_SOURCE_LEVEL_DEFICIT = OPEN_ASYMPTOTIC
+TPC279_FIXED_POWER_CREDIT = 0
+TPC279_ARITHMETIC_ADVANCE = NO
+TPC279_L2 = NONE
+TPC279_FULL_GATE_B = OPEN
+TPC279_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC279_TWIN_PRIME_RESULT = NONE
+TPC279_STATUS = PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC279_ROUND2_CLUE = COMPILE_ADDITIVE_LEAKAGE_INTO_SOURCE_TO_MARGIN_ENDPOINT_BUDGET
 ```
 
-strongest positive result：exact twelve-row source census with four declared sign flips；
-strongest obstruction：nearby shell/clock choices can reverse signed gain；open theorem：
-a schedule-specific source-level estimate for `G/D`。
+strongest positive result：exact necessary-and-sufficient deficit criterion plus sharp
+coherence envelope and 12-row transfer；strongest obstruction：absolute coherence alone
+cannot pay a positive power；open theorem：a growing source-level deficit estimate for `G/D`。
+
+TPC-278 上游入口：proof 为
+`research/tpc-big-road/bridge_b_cross_scale_gain_stability.md`，checker 为
+`tpc_bridge_b_cross_scale_gain_stability_checker.py`，编号论文为
+`papers/tpc-278-cross-scale-gain-stability/`。它保留为 TPC-279 的 finite source
+transfer parent；邻近 shell/clock choices 的 four sign flips 仍是 scoped obstruction，
+不提供 asymptotic credit。
 
 TPC-277 上游入口：proof 为
 `research/tpc-big-road/bridge_b_four_packet_gain_floor.md`，checker 为

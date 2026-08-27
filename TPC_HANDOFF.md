@@ -1,7 +1,53 @@
 # TPC HANDOFF
 
 更新时间：2026-08-27
-交接状态：`BOLD_CHANNEL_V131_TPC278_CROSS_SCALE_GAIN_STABILITY_RELEASED`
+交接状态：`BOLD_CHANNEL_V132_TPC279_EXACT_COHERENCE_TO_GAIN_RELEASED`
+
+TPC-279 当前 section：minimal coherence-to-gain criterion and finite coordinate transfer
+-----------------------------------------------------------------------------------------------
+
+TPC-279 is the theorem-level continuation of the TPC-278 stability obstruction.  It keeps
+the four-packet Hilbert-space interface and isolates the exact source input required for a
+power gain.  With `D=sum_j ||V_j||^2`, `G=||sum_j V_j||^2`, `q=G/D`,
+`Delta=1-q`, and `r=D/G`, it proves
+`r>=b X^gamma <=> q<=b^(-1)X^(-gamma) <=> Delta>=1-b^(-1)X^(-gamma)`.
+It also proves the sharp pairwise-absolute-coherence envelope
+`q<=min(4,1+3mu)`.  Orthogonal packets refute coherence-only power promotion, while the
+scalar family `(1,1,1,-(3-epsilon))` shows that even `mu=1` permits arbitrarily large gain.
+
+An exact reciprocal interval transfer of all twelve TPC-278 rows, intersected with the
+independent parent cancellation intervals, certifies eight positive-deficit and four
+negative-deficit rows.  This is a finite coordinate theorem and transfer certificate, not a
+growing source-level estimate; arithmetic `L2`, full Gate B, strict endpoint payment, and
+the twin-prime conclusion remain open/none.
+
+```text
+TPC279_MAXIMUM_CLAIM = PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC279_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_TO_GAIN_CRITERION
+TPC279_EXACT_DEFICIT_IDENTITY = PROVED_EXACT_FINITE
+TPC279_PAIRWISE_COHERENCE_ENVELOPE = PROVED_EXACT_SHARP
+TPC279_PAIRWISE_COHERENCE_POWER = REFUTED_EXACT_BY_ORTHOGONAL_WITNESS
+TPC279_NEAR_CANCELLATION_ADVERSARY = PROVED_EXACT_SCALAR_FAMILY
+TPC279_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC279_FINITE_TRANSFER_CENSUS = 8_POSITIVE_DEFICIT_4_NEGATIVE_DEFICIT
+TPC279_SOURCE_LEVEL_DEFICIT = OPEN_ASYMPTOTIC
+TPC279_FIXED_POWER_CREDIT = 0
+TPC279_ARITHMETIC_ADVANCE = NO
+TPC279_L2 = NONE
+TPC279_FULL_GATE_B = OPEN
+TPC279_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC279_TWIN_PRIME_RESULT = NONE
+TPC279_STATUS = PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+TPC279_ROUND2_CLUE = COMPILE_ADDITIVE_LEAKAGE_INTO_SOURCE_TO_MARGIN_ENDPOINT_BUDGET
+```
+
+Strongest positive result: the exact necessary-and-sufficient deficit criterion together
+with a sharp coherence envelope and a twelve-row transfer.  Strongest obstruction:
+pairwise absolute coherence cannot pay a positive power.  Open theorem: a growing
+source-level deficit bound for `G/D`.  Reusable structure:
+`D,G,E -> q,Delta,r -> endpoint input`.  The Session-named `propose.md` and evaluator
+files remain absent; the project proof package, theorem ledger, certificate, independent
+replay, stress audit, bridge checker, and `AGENTS.md` are the fail-closed local fallback.
 
 TPC-278 当前 section：cross-scale signed-gain stability and shell/clock counterexample
 -----------------------------------------------------------------------------------------------
@@ -8931,12 +8977,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V131/TPC-278 是当前 release；其 normal/optimized bridge checker 已追加到下列
-curated cascade，故总数从 108 对更新为 109 对。下列长版本链以 V119/TPC-266 开头的
+V132/TPC-279 是当前 release；其 producer、independent replay、stress audit 与
+normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
+V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
-执行 normal与 optimized只读 checker；二百一十八次（109 对）必须都为零，且每一对 stdout
+执行 normal与 optimized只读 checker；每一对必须都为零，且每一对 stdout
 byte-identical：
 
 ```bash
@@ -9246,11 +9293,30 @@ python -B research/tpc-big-road/tpc_bridge_b_four_packet_gain_floor_checker.py -
 python -O -B research/tpc-big-road/tpc_bridge_b_four_packet_gain_floor_checker.py --check
 python -B research/tpc-big-road/tpc_bridge_b_cross_scale_gain_stability_checker.py --check
 python -O -B research/tpc-big-road/tpc_bridge_b_cross_scale_gain_stability_checker.py --check
+python -B papers/tpc-279-coherence-to-gain-theorem/code/tpc279_coherence_to_gain_certificate.py --check
+python -O -B papers/tpc-279-coherence-to-gain-theorem/code/tpc279_coherence_to_gain_certificate.py --check
+python -B papers/tpc-279-coherence-to-gain-theorem/experiments/tpc279_independent_checker.py
+python -O -B papers/tpc-279-coherence-to-gain-theorem/experiments/tpc279_independent_checker.py
+python -B papers/tpc-279-coherence-to-gain-theorem/experiments/tpc279_coherence_stress.py
+python -O -B papers/tpc-279-coherence-to-gain-theorem/experiments/tpc279_coherence_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_coherence_to_gain_theorem_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_coherence_to_gain_theorem_checker.py --check
 ```
 
 随后优先读取：
 
-最新 TPC-278 入口：
+最新 TPC-279 入口：
+
+```text
+papers/tpc-279-coherence-to-gain-theorem/README.md
+papers/tpc-279-coherence-to-gain-theorem/PROOF_PACKAGE.md
+papers/tpc-279-coherence-to-gain-theorem/notes/theorem_ledger.md
+papers/tpc-279-coherence-to-gain-theorem/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_coherence_to_gain_theorem.md
+research/tpc-big-road/tpc_bridge_b_coherence_to_gain_theorem_checker.py
+```
+
+TPC-278 upstream 入口：
 
 ```text
 papers/tpc-278-cross-scale-gain-stability/README.md

@@ -9,13 +9,15 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-278 对 TPC-277 的 favorable signed gain 做最小 shell/clock
-稳定性攻击。保持 literal source、beta、masks、deleted diagonal、四包与 `P_3`
-不变，只改有限 shell endpoint `Q` 或 clock `H`；12 行 exact rational replay 得到
-8 个负、4 个正 net cross terms，并认证 3 次 shell flip 与 1 次 clock flip。
-因此有限命题 `D/G>=1` 在该声明接口上 `REFUTED_SCOPED`，但这不是 growing schedule
-的渐近反例。下一关是写出最小 coherence/deficit-to-gain theorem；fixed-power credit
-仍为 0，arithmetic `L2`、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+当前主线状态：TPC-279 将 TPC-278 暴露的缺口精确化为四包 Hilbert 空间中的
+coherence-to-gain theorem。证明 `q=G/D`、`Delta=1-q=-2E/D` 给出的 gain
+条件是充要的，并证明 pairwise absolute coherence 的 sharp envelope
+`q<=min(4,1+3mu)`；正交包与 near-cancellation scalar family 分别构成 no-power
+与 arbitrarily-large-gain adversaries。对 TPC-278 的 12 行做 exact reciprocal
+interval transfer，得到 8 个 positive-deficit、4 个 negative-deficit rows，完成
+坐标级验证但不产生渐近或 arithmetic credit。下一关是把 additive leakage 纳入
+source-to-margin endpoint compiler；fixed-power credit 仍为 0，arithmetic `L2`、
+full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
 
 当前主线状态：TPC-275 承接 TPC-274，在同一个锁定的 literal V59 finite physical
 operator 上把四个实际 source-block 输出包保留下来，定义 packet Gram、四点 DFT 与
@@ -138,6 +140,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-279-coherence-to-gain-theorem - 当前阶段 - 证明四包 reassembly 的 exact
+minimal deficit criterion 与 sharp pairwise-coherence envelope；正交包 refute
+coherence-only power promotion，near-cancellation family 给出 sharp adversarial
+scale，并完成 TPC-278 全部 12 行的 exact reciprocal transfer；source-level
+asymptotic deficit、arithmetic `L2` 与 full Gate B 仍 OPEN，fixed-power credit 为 0。
 tpc-278-cross-scale-gain-stability - 当前阶段 - 在同一 literal source 上仅改变有限
 prime-shell endpoint 或 clock，12 行 exact rational replay 认证 8/4 cross-sign census
 与 4 次符号翻转，有限 `D/G>=1` stability 被 scoped 否定；growing source theorem、

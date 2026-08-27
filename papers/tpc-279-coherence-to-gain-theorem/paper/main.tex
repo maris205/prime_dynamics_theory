@@ -1,0 +1,280 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\title{A Minimal Coherence-to-Gain Criterion for Four-Packet Reassembly}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{27 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-278 showed that a favorable signed packet cross term can change sign under
+a nearby finite shell or clock choice.  This paper isolates the exact
+finite-dimensional input that a growing source theorem would have to provide.
+For four vectors, let $D$ be the packet-diagonal energy, $G$ the energy of
+their sum, and $E$ the net real cross term.  We prove the exact deficit
+identity $\Delta=1-G/D=-2E/D$ and show that a power gain is equivalent to an
+upper bound on $G/D$, or equivalently to $\Delta$ being within the required
+power scale of one.  We also prove the sharp pairwise-coherence envelope
+$G/D\leq\min(4,1+3\mu)$, together with its reciprocal gain floor.  Orthogonal
+packets attain the no-gain endpoint, while explicit near-canceling packets
+attain arbitrarily large gain.  An exact interval transfer of the twelve
+TPC-278 source rows validates the coordinate change but supplies no
+asymptotic or arithmetic credit.  The result is a reusable structural
+theorem and a precise firewall: pairwise absolute coherence alone cannot
+pay a positive power; a schedule-specific aggregate deficit estimate is the
+minimal missing hypothesis.
+\end{abstract}
+
+\section{Motivation and notation}
+
+The four-packet source interface in TPC-277 and TPC-278 produces vectors
+$V_0,V_1,V_2,V_3$ in a real or complex Hilbert space.  The quantities relevant
+to signed reassembly are
+\[
+ D=\sum_{j=0}^3\|V_j\|^2,\qquad
+ G=\left\|\sum_{j=0}^3V_j\right\|^2,qquad
+ E=\sum_{0\leq j<k\leq3}\operatorname{Re}\langle V_j,V_k\rangle.
+\]
+TPC-277 proved the universal floor $G\leq4D$ and found a favorable sign on
+an eight-row finite source scan.  TPC-278 then varied only a declared shell
+endpoint or clock and found four finite sign flips.  Thus the next useful
+question is not whether a sign happens on one table, but what exact source
+inequality is equivalent to the desired gain.
+
+Throughout, assume $D>0$.  When $G>0$ write
+\[
+ r=\frac DG,\qquad q=\frac GD,\qquad
+ \Delta=1-q=\frac{D-G}{D}.
+\]
+
+\section{The exact deficit criterion}
+
+\begin{theorem}[minimal four-packet criterion]
+For any four Hilbert-space vectors with $D>0$,
+\[
+ 0\leq q\leq4,\qquad G-D=2E,\qquad \Delta=-\frac{2E}{D}.
+\]
+If $G>0$, then
+\[
+ r=\frac1q=\frac1{1-\Delta}.
+\]
+Consequently, for $b>0$, $\gamma\geq0$, and $X\geq1$,
+\[
+ r\geq bX^\gamma
+ \quad\Longleftrightarrow\quad
+ q\leq b^{-1}X^{-\gamma}
+ \quad\Longleftrightarrow\quad
+ \Delta\geq1-b^{-1}X^{-\gamma}.
+\]
+\end{theorem}
+
+\begin{proof}
+Expanding the squared norm gives
+\[
+ G=D+2\sum_{j<k}\operatorname{Re}\langle V_j,V_k\rangle=D+2E.
+\]
+The lower bound $G\geq0$ is immediate, while Cauchy--Schwarz gives
+\[
+ G\leq\left(\sum_j\|V_j\|\right)^2
+ \leq4\sum_j\|V_j\|^2=4D.
+\]
+Division by $D$ yields the first two identities and $q\in[0,4]$.
+For $G>0$, reciprocal division gives $r=1/q=(1-\Delta)^{-1}$, and taking
+positive reciprocals proves the three equivalent inequalities.
+\end{proof}
+
+The theorem is an equivalence, rather than merely a sufficient estimate.
+In particular, the sign condition $E\leq0$ gives only $q\leq1$ and hence
+$r\geq1$.  It says nothing about how close $q$ is to zero.  A power gain
+requires the stronger near-cancellation scale
+$q\ll X^{-\gamma}$, or the equivalent deficit condition in the theorem.
+If $G=0$, the sum packet is exactly zero and the same conclusion holds in
+the extended convention $r=+\infty$; the displayed reciprocal formula is
+used only for $G>0$.
+
+\begin{corollary}[sign is not a power estimate]
+No assertion of the form $E\leq0$ alone can imply
+$r\geq bX^\gamma$ for any fixed $b>0$ and $\gamma>0$ on an unbounded scale.
+\end{corollary}
+
+\begin{proof}
+Take four mutually orthogonal unit vectors.  Then $D=G=4$, $E=0$, and
+$r=1$ at every scale.  This also gives $\Delta=0$ in the exact criterion.
+\end{proof}
+
+\section{What pairwise coherence can and cannot prove}
+
+For nonzero packet norms define
+\[
+ \mu=\max_{j<k}
+ \frac{|\langle V_j,V_k\rangle|}{\|V_j\|\,\|V_k\|}\in[0,1],
+\]
+ignoring pairs with a zero norm (their contribution is zero).  This is an
+absolute, phase-blind statistic.
+
+\begin{theorem}[sharp pairwise-coherence envelope]
+For four packets with $D>0$,
+\[
+ G\leq D+2\mu\sum_{j<k}\|V_j\|\,\|V_k\|
+ \leq(1+3\mu)D,
+\]
+and therefore
+\[
+ \frac GD\leq\min\{4,1+3\mu\}.
+\]
+If $G>0$, then
+\[
+ r\geq\max\left\{\frac14,\frac1{1+3\mu}\right\}.
+\]
+The constants are sharp for every $\mu\in[0,1]$.
+\end{theorem}
+
+\begin{proof}
+Put $a_j=\|V_j\|$.  The definition of $\mu$ and the triangle inequality
+give
+\[
+ G=D+2E\leq D+2\mu\sum_{j<k}a_ja_k
+ =D+\mu\left(\left(\sum_ja_j\right)^2-D\right).
+\]
+By Cauchy--Schwarz, $(\sum_ja_j)^2\leq4D$, proving the second inequality.
+Combining it with the universal estimate $G\leq4D$ gives the minimum.
+Taking reciprocals gives the gain floor when $G>0$.
+
+For sharpness, let
+\[
+ \Gamma_\mu=(1-\mu)I_4+\mu\mathbf1\mathbf1^*.
+\]
+Its eigenvalues are $1-\mu$ (multiplicity three) and $1+3\mu$, so it is a
+Gram matrix for every $\mu\in[0,1]$.  Four unit vectors realizing this Gram
+matrix have $D=4$, $G=4(1+3\mu)$, and pairwise coherence exactly $\mu$.
+Thus equality holds in the coherence envelope.  At $\mu=1$ it also attains
+the universal floor $r=1/4$.
+\end{proof}
+
+The envelope is useful as a ceiling, but it is not a signed source theorem.
+At $\mu=0$ it gives $r\geq1$, not a positive power.  More generally, any
+uniform bound on $\mu$ leaves $1/(1+3\mu)$ at constant scale.  The missing
+quantity is the signed aggregate deficit $\Delta$, not an absolute pairwise
+coherence bound.
+
+\section{Sharp adversaries and near cancellation}
+
+The equicorrelated Gram family contains two instructive endpoints.  At
+$\mu=0$ the packets are orthogonal and $r=1$, so no positive power can be
+inferred from coherence information.  At $\mu=1$ they are aligned and
+$r=1/4$, showing that the four-packet universal floor is exact.
+
+The opposite phenomenon, arbitrarily large gain, is also explicit.  For
+$0<\varepsilon<1$, take scalar packets
+\[
+ V_0=V_1=V_2=1,\qquad V_3=-(3-\varepsilon).
+\]
+Then
+\[
+ D=3+(3-\varepsilon)^2,\qquad G=\varepsilon^2,qquad
+ r=\frac{3+(3-\varepsilon)^2}{\varepsilon^2},
+\qquad
+ \Delta=1-\frac{\varepsilon^2}{3+(3-\varepsilon)^2}.
+\]
+As $\varepsilon\downarrow0$, the gain diverges, but $\mu=1$ throughout.
+Thus large gain is compatible with maximal absolute coherence and is
+controlled only by the aggregate cancellation scale.  The certificate uses
+$\varepsilon=1/10$, for which $D=1141/100$, $G=1/100$, and $r=1141$.
+
+\section{Transfer of the TPC-278 source rows}
+
+The TPC-278 certificate contains outward intervals for $r=D/G$ and for the
+independently replayed cancellation fraction.  We transform each positive
+gain interval $[r_-,r_+]$ into the exact reciprocal interval
+$[1/r_+,1/r_-]$ for $q$.  The resulting deficit interval is intersected
+with the independently stored cancellation interval.  This is a certified
+coordinate transfer; displayed decimals below are only midpoints.
+
+\begin{table}[ht]
+\centering
+\scriptsize
+\begin{tabular}{r r r l r r r l}
+\toprule
+$N$ & $H$ & $Q$ & role & $r=D/G$ & $q=G/D$ & $\Delta$ & sign\\
+\midrule
+128 & 24 & 4 & shell$-$ & 1.418569 & 0.704936 & 0.295064 & $+$\\
+128 & 24 & 5 & shell ref. & 1.873826 & 0.533667 & 0.466333 & $+$\\
+128 & 24 & 6 & shell$+$ & 0.952448 & 1.049926 & -0.049926 & $-$\\
+192 & 32 & 5 & shell$-$ & 1.639087 & 0.610096 & 0.389904 & $+$\\
+192 & 32 & 6 & natural & 1.006248 & 0.993791 & 0.006209 & $+$\\
+192 & 32 & 7 & shell$+$ & 0.866928 & 1.153499 & -0.153499 & $-$\\
+256 & 38 & 5 & shell$-$ & 0.912829 & 1.095496 & -0.095496 & $-$\\
+256 & 38 & 6 & natural & 1.058744 & 0.944516 & 0.055484 & $+$\\
+256 & 38 & 7 & shell$+$ & 1.360350 & 0.735105 & 0.264895 & $+$\\
+192 & 29 & 6 & clock$-$ & 0.977376 & 1.023148 & -0.023148 & $-$\\
+192 & 35 & 6 & clock$+$ & 1.031302 & 0.969648 & 0.030352 & $+$\\
+384 & 50 & 7 & natural & 1.124747 & 0.889089 & 0.110911 & $+$\\
+\bottomrule
+\end{tabular}
+\caption{Coordinate transfer from the exact TPC-278 rows.  The sign is the
+sign of the certified deficit interval, and is equivalent to the parent
+cross-term sign.}
+\end{table}
+
+The transfer has eight positive-deficit and four negative-deficit rows,
+matching the parent cross-sign census.  It does not create a growing
+quantifier: the finite values merely illustrate the exact coordinates and
+the instability already certified by TPC-278.  In particular, the natural
+row at $N=192$ has a small positive deficit, while the neighboring shell and
+clock choices cross through zero.
+
+\section{Route consequence and claim firewall}
+
+The exact criterion identifies the next source-level theorem without leaving
+room for a hidden normalization step.  To obtain a gain
+$r\geq bX^\gamma$, one must prove
+\[
+ \frac{G}{D}\leq b^{-1}X^{-\gamma}
+ \quad\text{or equivalently}\quad
+ \Delta\geq1-b^{-1}X^{-\gamma}
+\]
+on the precisely declared shell, clock, masks, and packet schedule.  A
+negative cross-term sign is strictly weaker, and pairwise absolute coherence
+is phase-blind.  The source-level deficit estimate is therefore the minimal
+missing hypothesis for the signed-gain branch.
+
+This paper proves a finite-dimensional theorem and certifies a coordinate
+transfer only.  It does not estimate the arithmetic coefficient, prove an
+$L^2$ bound, pay the strict $1/400$ endpoint, or imply a twin-prime result.
+The Session-named Route-A/Route-B evaluator files are absent in this checkout;
+the local proof package, exact certificate, independent checker, stress audit,
+and Bridge-B checker supply the fail-closed scoped evaluation.
+
+\begin{center}
+\begin{tabular}{ll}
+\texttt{ROUTE-A} & not applicable to this structural Hilbert-space theorem\\
+\texttt{ROUTE-B} & yes, scoped coherence-to-gain criterion\\
+\texttt{PAIRWISE-COHERENCE-POWER} & refuted exactly by orthogonal packets\\
+\texttt{FIXED-POWER-CREDIT} & 0\\
+\texttt{ARITHMETIC-L2 / FULL-GATE-B} & open\\
+\texttt{TWIN-PRIME-RESULT} & none
+\end{tabular}
+\end{center}
+
+\begin{thebibliography}{9}
+\bibitem{TPC278} L. Wang, ``Cross-Scale Signed-Gain Stability and a
+Shell/Clock Counterexample,'' TPC-278 project release, 2026.
+\bibitem{TPC277} L. Wang, ``Four-Packet Gain Floors and a Source-Level
+Lower-Bound Attack,'' TPC-277 project release, 2026.
+\bibitem{HW} G. H. Hardy and E. M. Wright, \emph{An Introduction to the
+Theory of Numbers}, 6th ed., Oxford University Press, 2008.
+\end{thebibliography}
+\end{document}

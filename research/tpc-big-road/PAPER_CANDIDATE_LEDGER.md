@@ -3,13 +3,65 @@
 
 更新时间：2026-08-27
 
-状态：**TPC278_NUMERICALLY_CERTIFIED_FINITE_CROSS_SCALE_GAIN_STABILITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC279_PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.72 当前：TPC-278 cross-scale signed-gain stability and shell/clock counterexample
+## 0.73 当前：TPC-279 minimal coherence-to-gain criterion and finite coordinate transfer
+
+项目：`papers/tpc-279-coherence-to-gain-theorem/`
+
+类型：**PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER**。
+
+TPC-279 承接 TPC-278 暴露的 signed-gain 稳定性缺口，但只研究其最小 source-level
+interface。对四个 Hilbert-space packets 定义 `D=sum||V_j||^2`、`G=||sum V_j||^2`、
+`q=G/D`、`Delta=1-q` 与 `r=D/G`，精确证明
+`r>=b X^gamma` 当且仅当 `q<=b^(-1)X^(-gamma)`，也当且仅当
+`Delta>=1-b^(-1)X^(-gamma)`。这给出 power gain 所需 source input 的必要且充分
+形式，而不隐藏 normalization。
+
+进一步，令 `mu` 为 pairwise absolute coherence，证明 sharp envelope
+`G<=D+2mu sum_{j<k}||V_j||||V_k||<=(1+3mu)D`，与四包 universal bound 合并为
+`q<=min(4,1+3mu)`。equicorrelation Gram family 对每个 `mu in [0,1]` 达到等号；
+正交包说明 coherence alone 不能支付正幂，`(1,1,1,-(3-epsilon))` scalar family
+说明即使 `mu=1` 也可产生 arbitrarily large gain。该 sharp theorem 是 reusable
+structural result，但不是 literal growing source estimate。
+
+TPC-278 的 12 个 outward gain intervals 经过 exact reciprocal transform，并与独立
+存储的 cancellation intervals 取 certified intersection，得到 8 个 positive-deficit
+与 4 个 negative-deficit rows；这是有限坐标 transfer，不升级为 asymptotic theorem。
+arithmetic `L2`、full Gate B、strict endpoint payment 与 twin-prime conclusion 仍为
+OPEN/OPEN/UNPAID/NONE。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_MINIMAL_DEFICIT_CRITERION_PLUS_SHARP_COHERENCE_ENVELOPE
+STRONGEST_OBSTRUCTION = PAIRWISE_ABSOLUTE_COHERENCE_CANNOT_PAY_POSITIVE_POWER
+OPEN_THEOREM = GROWING_SOURCE_LEVEL_DEFICIT_BOUND_FOR_G_OVER_D
+REUSABLE_STRUCTURE = D,G,E -> q,Delta,r -> NECESSARY_AND_SUFFICIENT_GAIN_INPUT
+ROUND2_CLUE = COMPILE_ADDITIVE_LEAKAGE_INTO_SOURCE_TO_MARGIN_ENDPOINT_BUDGET
+```
+
+```text
+TPC279_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_TO_GAIN_CRITERION
+TPC279_EXACT_DEFICIT_IDENTITY = PROVED_EXACT_FINITE
+TPC279_PAIRWISE_COHERENCE_ENVELOPE = PROVED_EXACT_SHARP
+TPC279_PAIRWISE_COHERENCE_POWER = REFUTED_EXACT_BY_ORTHOGONAL_WITNESS
+TPC279_NEAR_CANCELLATION_ADVERSARY = PROVED_EXACT_SCALAR_FAMILY
+TPC279_FINITE_TRANSFER = NUMERICALLY_CERTIFIED_FINITE_ALL_12_ROWS
+TPC279_FINITE_TRANSFER_CENSUS = 8_POSITIVE_DEFICIT_4_NEGATIVE_DEFICIT
+TPC279_SOURCE_LEVEL_DEFICIT = OPEN_ASYMPTOTIC
+TPC279_FIXED_POWER_CREDIT = 0
+TPC279_ARITHMETIC_ADVANCE = NO
+TPC279_L2 = NONE
+TPC279_FULL_GATE_B = OPEN
+TPC279_FULL_GATE_B_STRICT_1_OVER_400 = UNPAID_GLOBAL
+TPC279_TWIN_PRIME_RESULT = NONE
+TPC279_STATUS = PROVED_EXACT_MINIMAL_COHERENCE_TO_GAIN_CRITERION_PLUS_NUMERICALLY_CERTIFIED_TRANSFER
+```
+
+## 0.72 已发布：TPC-278 cross-scale signed-gain stability and shell/clock counterexample
 
 项目：`papers/tpc-278-cross-scale-gain-stability/`
 
