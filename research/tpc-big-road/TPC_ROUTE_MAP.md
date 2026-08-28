@@ -2,13 +2,41 @@
 
 更新时间：2026-08-28
 
-当前地图版本：V147 / TPC-294
+当前地图版本：V148 / TPC-295
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-294`（`PROVED_EXACT_TRACE_NORMALIZED_SIGNED_QUADRATIC_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_GLOBAL_SIGN_ATLAS`）；
+当前编号锚点：`TPC-295`（`PROVED_EXACT_FULL_RANK_IMPLIES_SOURCE_CORRELATION_SURJECTIVITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_MODULAR_FULL_RANK_ATLAS`）；
 对应论文目录为
-`papers/tpc-294-magnitude-weighted-signed-rayleigh-atlas/`。
+`papers/tpc-295-source-correlation-image-audit/`。
+
+TPC-295 承接 TPC-294 的 ambient magnitude-weighted sign minimizer，令 physical shell
+vectors 为 rational matrix `A` 的 columns。严格证明 `G=A^T A` full rank 时
+source-correlation map `A^T:Q^I -> Q^S` surjective，显式 witness `h=A G^(-1)b`
+同时是 least-norm solution。两个独立模数在继承的 18-row literal grid 全部给出
+full-rank certificates；1,380 edges 上 unrestricted finite source image、weighted
+minimizer、unit-edge max-cut 与 all-positive targets 均 18/18 可达。该结论只覆盖
+unrestricted rational source coordinates；native profile、witness norm/growing control、
+arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC295_MAXIMUM_CLAIM = PROVED_EXACT_FULL_RANK_IMPLIES_SOURCE_CORRELATION_SURJECTIVITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_MODULAR_FULL_RANK_ATLAS
+TPC295_ROUTE_ADVANCE = YES_SCOPED_AMBIENT_SIGN_TARGETS_TO_UNRESTRICTED_FINITE_SOURCE_IMAGE
+TPC295_FULL_RANK_IMPLICATION = PROVED_EXACT_FINITE
+TPC295_LEAST_NORM_WITNESS_FORMULA = PROVED_EXACT_FINITE
+TPC295_MODULAR_FULL_RANK_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_TWO_MODULI
+TPC295_UNRESTRICTED_SOURCE_CORRELATION_SURJECTIVITY = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC295_WEIGHTED_MINIMIZER_SOURCE_REALIZABILITY = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_UNRESTRICTED
+TPC295_NATIVE_RESTRICTED_PROFILE = OPEN_LITERAL_SOURCE
+TPC295_SOURCE_WITNESS_NORM = OPEN
+TPC295_GROWING_SOURCE_IMAGE = OPEN
+TPC295_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC295_FIXED_POWER_CREDIT = 0
+TPC295_FULL_GATE_B = OPEN
+TPC295_TWIN_PRIME_RESULT = NONE
+TPC295_STATUS = PROVED_EXACT_FULL_RANK_IMPLIES_SOURCE_CORRELATION_SURJECTIVITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_MODULAR_FULL_RANK_ATLAS
+TPC295_ROUND2_CLUE = TEST_SOURCE_NORM_COST_AND_RESTRICTED_NATIVE_PROFILE_IMAGE
+```
 
 TPC-294 承接 TPC-293 的 whole-shell signed max-cut，把 exact Gram magnitudes 恢复到
 equal-sign trace-normalized quadratic objective。严格证明
@@ -125,8 +153,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V147 / TPC-294
-MAP_LABEL = MAGNITUDE-WEIGHTED SIGNED RAYLEIGH / SOURCE-IMAGE PIER
+YOU ARE HERE = V148 / TPC-295
+MAP_LABEL = SOURCE-CORRELATION IMAGE / LEAST-NORM BUDGET PIER
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -362,6 +390,43 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.89 V148 / TPC-295：source-correlation image and least-norm budget pier
+
+TPC-295 承接 TPC-294 的 ambient magnitude-weighted sign minimizer，把下一道桥坑明确写成
+source-correlation image 问题。令 physical shell vectors 为 rational matrix `A` 的
+columns，`G=A^T A`，并定义 `C=A^T:Q^I -> Q^S`。严格证明 `G` full rank 时 `C`
+surjective，任意 target `b` 都有显式 witness `h=A G^(-1)b`；该 witness 还是所有实数
+解中的 least-norm solution。
+
+在同一 18-row literal grid 的 1,380 edges 上，两个独立模数
+`1000000007`、`998244353` 均给出 18/18 full-rank certificates。因而 unrestricted finite
+rational source coordinates 中，TPC-294 weighted minimizer、unit-edge max-cut 与
+all-positive targets 均 18/18 可达。这个结果把“ambient sign 是否可达”的有限线性代数
+问题关闭，但没有把 witness 放回 native Mobius/comparison profile，也没有给出
+`||A G^(-1)b||` 的 growing-shell 预算。
+
+当前真正的下一座桥是 least-norm/source-profile budget：满秩只说明有路，条件数决定路的
+代价。native profile image、witness norm growth、arithmetic `L2`、fixed-power credit、
+full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC295_ROUTE_ADVANCE = YES_SCOPED_AMBIENT_SIGN_TARGETS_TO_UNRESTRICTED_FINITE_SOURCE_IMAGE
+TPC295_FULL_RANK_IMPLICATION = PROVED_EXACT_FINITE
+TPC295_LEAST_NORM_WITNESS_FORMULA = PROVED_EXACT_FINITE
+TPC295_MODULAR_FULL_RANK_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_TWO_MODULI
+TPC295_UNRESTRICTED_SOURCE_CORRELATION_SURJECTIVITY = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC295_WEIGHTED_MINIMIZER_SOURCE_REALIZABILITY = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_UNRESTRICTED
+TPC295_NATIVE_RESTRICTED_PROFILE = OPEN_LITERAL_SOURCE
+TPC295_SOURCE_WITNESS_NORM = OPEN
+TPC295_GROWING_SOURCE_IMAGE = OPEN
+TPC295_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC295_FIXED_POWER_CREDIT = 0
+TPC295_FULL_GATE_B = OPEN
+TPC295_TWIN_PRIME_RESULT = NONE
+TPC295_STATUS = PROVED_EXACT_FULL_RANK_IMPLIES_SOURCE_CORRELATION_SURJECTIVITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_MODULAR_FULL_RANK_ATLAS
+TPC295_ROUND2_CLUE = TEST_SOURCE_NORM_COST_AND_RESTRICTED_NATIVE_PROFILE_IMAGE
+```
 
 ## 5.88 V147 / TPC-294：magnitude-weighted signed Rayleigh atlas
 
@@ -1285,9 +1350,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V147 / TPC-294                    |
-        | WEIGHTED SIGNED RAYLEIGH                        |
-        | source-image / growing weighted pier           |
+        | YOU ARE HERE — V148 / TPC-295                    |
+        | SOURCE-CORRELATION IMAGE                        |
+        | least-norm / native-profile budget pier       |
         +--------------------------------------------------+
                 |
                 v
@@ -6320,6 +6385,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-28 | V148 / TPC-295 | Bridge A / Gate B：unrestricted finite source-correlation image 已关闭；native profile、least-norm/growing budget、arithmetic `L2` 与 full Gate B open | `TPC-295` | 严格证明 `G=A^T A` full rank `=>` `A^T` surjective 与 least-norm witness `A G^(-1)b`；18 rows / 1,380 edges 通过两个独立模数的 18/18 full-rank atlas，TPC-294 weighted/min-cut/all-positive targets 均 18/18 unrestricted 可达；下一步为 source norm cost 与 restricted native profile image |
 | 2026-08-28 | V147 / TPC-294 | Bridge A / Gate B：finite magnitude-weighted signed Rayleigh layer；source-native image、growing weighted theorem、arithmetic `L2` 与 full Gate B open | `TPC-294` | 严格证明 trace-normalized identity、Gram nonnegativity 与 finite global sign enumeration；18 rows / 1,380 edges 完成 18/18 weighted minima `<1`、18/18 all-positive `>1`、18/18 weighted optima different from unit-edge max-cut，13/18 `<=1/4`、8/18 `<=1/10`；下一步为 source-image attainability audit |
 | 2026-08-28 | V146 / TPC-293 | Bridge A / Gate B：whole-shell signed max-cut；magnitude-weighted objective、source-native arithmetic `L2` 与 full Gate B open | `TPC-293` | 严格证明 all-positive `K_m` max-cut、frustration complement 与 switching invariance；18 rows / 1,380 edges 完成 exact atlas，17/18 rows all-positive，唯一 crossover row 有 `+3` sign-only gain，总 max favorable / minimum unsatisfied 为 `744/636`；下一步为 magnitude-weighted signed Rayleigh 与 source-image feasibility |
 | 2026-08-28 | V145 / TPC-292 | Bridge A / Gate B：three-prime sign-frustration compatibility obstruction；growing signed graph、source-native arithmetic `L2` 与 full Gate B open | `TPC-292` | 严格证明 triangle sign parity 与 three-vector Schur residual；18 rows / 5,727 triples 完成 5,718 frustrated、9 anti-alignable、5,727 positive normalized volumes；下一步为 signed-graph max-cut/frustration index 与 source-image feasibility |

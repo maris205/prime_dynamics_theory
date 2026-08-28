@@ -1,0 +1,301 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+
+\title{Source-Correlation Image and Finite Signed Feasibility\\
+in Literal Twin-Prime Shells}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST)\\
+Wuhan, China}
+\date{28 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+TPC-294 found strong cancellation in an ambient equal-sign cube for the
+exactly weighted Gram form, but did not determine whether its favorable sign
+targets could be produced by a source-side correlation map.  This paper
+isolates that finite linear-algebra question.  Let the physical shell
+vectors be the columns of a rational matrix $A$ and let
+$C=A^{\mathsf T}$ map source coordinates to prime correlations.  We prove
+that nonsingularity of $G=A^{\mathsf T}A$ makes $C$ surjective and gives the
+explicit witness $h=AG^{-1}b$ for every target $b$.  Two independently
+replayed modular determinant certificates establish full column rank on all
+18 inherited rows, covering 1,380 shell edges.  Consequently every
+TPC-294 weighted minimizer, unit-edge max-cut target, and all-positive target
+has an exact witness in the declared unrestricted finite rational source
+space.  This closes only the broad finite image question: admissibility in
+the frozen Mobius/comparison profile, witness-norm growth, arithmetic
+$L^2$, and the twin-prime endpoint remain open.
+\end{abstract}
+
+\section{Position on the route}
+
+The project studies one literal prime-shell dynamical family throughout.
+Earlier releases separated physical prime components and measured their
+cross-prime Gram interaction \cite{tpc287,tpc288,tpc289}.  Adaptive
+nonnegative weighting encountered a coherence wall \cite{tpc290}; signed
+pair cancellation was then tested \cite{tpc291}.  Three-prime parity and
+the complete signed-shell max-cut layer exposed combinatorial obstructions
+\cite{tpc292,tpc293}.  Restoring the true Gram magnitudes in TPC-294 showed
+that the weighted sign optimizer can be substantially better than the
+unit-edge surrogate \cite{tpc294}.
+
+That last result left a precise question.  The signs in TPC-294 were chosen
+in an ambient coefficient cube.  Are they even in the image of a source
+perturbation?  The present paper answers the finite question for an
+explicitly declared broad source space.  The answer is positive because
+the inherited physical columns have full Gram rank.  The qualification
+``broad'' is part of the theorem: no assertion is made here about the
+frozen arithmetic source profile.
+
+\section{Finite physical shell and source map}
+
+Let $I=I_N$ be the frozen integer interval.  For an odd prime $q$, height
+$H$, and exponent $s$, write
+\[
+ K_{H,s}(v)=\frac{H^{2s}}{(H^2+v^2)^s},\qquad
+ B_q(u,t)=\mathbf 1_{q\nmid u}\mathbf 1_{q\nmid t}
+ \left(\mathbf 1_{u\equiv t\pmod q}-\frac1{q-1}\right).
+\]
+The deleted-diagonal physical component inherited from the frozen source
+vector is
+\[
+ (g_q)_u=\sum_{t\in I,\ t\ne u}
+ qK_{H,s}(u-t)B_q(u,t)\,\beta_t,
+ \qquad u\in I.
+ \label{eq:physical}
+\]
+For a finite shell $S=\{q:Q<q\le 2Q\}$, set
+\[
+ A=[g_q]_{q\in S}\in\Q^{I\times S},\qquad
+ G=A^{\mathsf T}A.
+ \label{eq:matrix}
+\]
+Thus $G$ is exactly the Gram matrix used by TPC-294.  The source-side
+correlation map is
+\[
+ C=A^{\mathsf T}:\Q^{I}\longrightarrow\Q^{S},\qquad
+ C(h)=\bigl(\ip{h}{g_q}\bigr)_{q\in S}.
+ \label{eq:correlation}
+\]
+The source space in this release is the full finite rational coordinate
+space $\Q^I$.  Restricting it to a parameterized arithmetic profile is a
+different problem and is not silently built into $C$.
+
+\section{Exact image theorem}
+
+The basic observation is elementary but decisive for the route map.
+
+\begin{theorem}[Full Gram rank gives a full finite source image]
+Let $A\in\Q^{n\times m}$ and $G=A^{\mathsf T}A$.  If $G$ is nonsingular,
+then $C=A^{\mathsf T}:\Q^n\to\Q^m$ is surjective.  For every
+$b\in\Q^m$, one exact preimage is
+\[
+ h_b=AG^{-1}b.
+ \label{eq:witness}
+\]
+\end{theorem}
+
+\begin{proof}
+Nonsingularity gives $G^{-1}$ over $\Q$.  Substitution yields
+\[
+ A^{\mathsf T}h_b=A^{\mathsf T}AG^{-1}b=GG^{-1}b=b.
+\]
+Hence every target has a preimage.
+\end{proof}
+
+\begin{proposition}[The displayed witness is the least-norm witness]
+Under the hypotheses of the theorem, the same vector $h_b$ is the unique
+minimum-$\ell^2$ solution of $A^{\mathsf T}h=b$ over $\R^n$.
+\end{proposition}
+
+\begin{proof}
+The vector $h_b$ belongs to $\operatorname{col}(A)$, while every difference
+of two solutions belongs to $\ker(A^{\mathsf T})$.  These two subspaces are
+orthogonal.  Therefore every real solution has the form $h_b+v$ with
+$v\perp h_b$, and $\norm{h_b+v}^2=\norm{h_b}^2+\norm{v}^2$.
+\end{proof}
+
+The proposition identifies the next quantitative obstruction: exact
+attainability does not imply that the least source cost is small enough for
+an analytic argument.  In particular, the theorem pays no asymptotic power
+credit.
+
+\section{Modular rank certificate}
+
+All entries in \eqref{eq:physical} are rational on the declared finite grid.
+For a prime modulus $p$ avoiding their denominators, reduce $G$ entrywise
+to $G_p$.  We use the following denominator-clearing fact.
+
+\begin{lemma}[Nonzero modular determinant]
+If every entry denominator is invertible modulo $p$ and
+$\det(G_p)\ne0$ in $\mathbb F_p$, then $\det(G)\ne0$ over $\Q$.
+\end{lemma}
+
+\begin{proof}
+Choose a common denominator $D$ with $p\nmid D$.  The integer
+$D^m\det(G)$ reduces to $\det(G_p)$.  A nonzero reduction cannot come from
+the zero integer, so $\det(G)\ne0$.
+\end{proof}
+
+The producer accumulates each $g_q$ target-first, forms the rational Gram
+matrix, and performs Gaussian elimination modulo
+\[
+ p_1=1{,}000{,}000{,}007,\qquad p_2=998{,}244{,}353.
+\]
+The independent replay accumulates the same columns source-first and does
+not import the producer.  Target residuals for the all-positive label, the
+TPC-293 max-cut label, and the TPC-294 minimum label are also checked modulo
+both primes.  These residual checks are a replay guard; exact feasibility
+itself follows from Theorem 1 once the determinant certificate is accepted.
+
+\section{Inherited finite atlas}
+
+The audit contains eight $s=2$ growth rows, four $s=1$ crossover rows, and
+six $s=2$ source-control rows.  The shell cardinalities range from 3 to 17.
+The resulting finite image statement is summarized in
+Table~\ref{tab:headline}.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Finite source-image audit inherited from TPC-294.}
+\label{tab:headline}
+\begin{tabular}{@{}lr@{}}
+\toprule
+quantity & count\\
+\midrule
+rows & 18\\
+shell edges & 1,380\\
+full rank modulo $p_1$ & 18 / 18\\
+full rank modulo $p_2$ & 18 / 18\\
+unrestricted source image surjective & 18 / 18\\
+TPC-294 weighted minimizers feasible & 18 / 18\\
+all-positive targets feasible & 18 / 18\\
+unit-edge max-cut targets feasible & 18 / 18\\
+fixed-power credit & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:rows} records representative rows.  Determinant residues
+are shown only as compact identifiers of the exact modular certificates;
+all source targets were tested with zero residual modulo both moduli.
+
+\begin{table}[ht]
+\centering
+\scriptsize
+\caption{Representative rows and inherited weighted minima.}
+\label{tab:rows}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+axis & $N$ & $H$ & $Q$ & $s$ & $|S|$ & $\det_{p_1}$ & $R_{\min}$\\
+\midrule
+growth &128&24&9 &2&3 &346506124&0.5343\\
+growth &192&32&16&2&5 &316685990&0.4091\\
+growth &384&50&40&2&10&242483411&0.1823\\
+growth &512&58&60&2&13&277057017&0.1078\\
+growth &512&58&90&2&17&98453757&0.04964\\
+crossover&256&38&27&1&7 &973455099&0.5191\\
+control &384&48&70&2&15&109411839&0.05849\\
+control &384&52&70&2&15&413185836&0.06383\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For example, at the late row
+$(N,H,Q,z,s)=(512,58,90,5,2)$, the shell has 17 primes and the two
+determinant residues are $98{,}453{,}757$ and $233{,}740{,}651$, respectively.
+At the exceptional crossover row $(256,38,27,5,1)$ they are
+$973{,}455{,}099$ and $333{,}763{,}173$.  Both are nonzero, so the exact
+source-image theorem applies in each case.
+
+The target transfer is not merely existential at the level of labels.  For
+each row the certificate records zero modular residual for all three target
+families, and the exact witness formula is explicit:
+\[
+ h_{\min}=AG^{-1}a_{\min},\qquad
+ h_{\mathrm{cut}}=AG^{-1}a_{\mathrm{cut}},\qquad
+ h_+=AG^{-1}{\bf 1}.
+\]
+Here $a_{\min}$ is the exact weighted minimizer from TPC-294 and
+$a_{\mathrm{cut}}$ is its unit-edge max-cut comparison.  The statement is
+about unrestricted rational coordinates, not about the original frozen
+choice of $\beta$.
+
+\section{What this does and does not close}
+
+The finite atlas closes a genuine branch of the map: an ambient signed
+target cannot be rejected merely because the finite linear correlation map
+has too small an image.  This is useful because TPC-294's favorable
+weighted directions are now known to possess explicit finite source
+preimages.
+
+It also sharpens the obstruction.  There are at least three remaining
+filters between this theorem and a twin-prime result:
+
+\begin{enumerate}
+\item the witness must belong to the native Mobius/comparison profile or a
+      rigorously justified enlargement of it;
+\item the least-norm cost $\norm{AG^{-1}b}$ must be bounded in a growing
+      shell with the correct normalization;
+\item the resulting source construction must feed the arithmetic $L^2$
+      estimate and the Route-B endpoint without spending more power than it
+      gains.
+\end{enumerate}
+
+The first issue is an image-of-a-profile problem, not a rank problem.  The
+second is a conditioning problem: full rank can coexist with a very large
+inverse Gram matrix.  The third is the original arithmetic bottleneck.
+Accordingly, the result is deliberately recorded as
+\[
+\texttt{PROVED\_EXACT\_FINITE}\quad+\quad
+\texttt{NUMERICALLY\_CERTIFIED\_FINITE},
+\]
+with no asymptotic exponent credit and no twin-prime conclusion.
+
+\section{Reproducibility and conclusion}
+
+From the project directory, run:
+\begin{verbatim}
+export PYTHONDONTWRITEBYTECODE=1
+python -B code/tpc295_source_correlation_image_certificate.py --check
+python -B experiments/tpc295_independent_checker.py
+python -B experiments/tpc295_source_image_stress.py
+\end{verbatim}
+The optimized versions use Python's \texttt{-O} flag and must have
+byte-identical standard output and empty standard error.  The canonical
+finite record is
+\texttt{results/tpc295\_certificate.json}.
+
+The Session-named Route-A/Route-B evaluator files are absent from this
+checkout.  Therefore this paper reports the local proof package, exact
+canonical certificate, independent replay, stress test, and Bridge-B
+checker as the available fail-closed evidence; it does not declare an
+official evaluator pass.
+
+The next route experiment is quantitative rather than another ambient sign
+search: evaluate the least-norm witness cost, compare it with admissible
+source-profile spans, and test whether any normalized budget can reach the
+arithmetic $L^2$ interface.  This is the
+\texttt{ROUND2\_CLUE} recorded by the certificate.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

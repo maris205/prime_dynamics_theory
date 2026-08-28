@@ -1,16 +1,45 @@
-# TPC big road V147 / TPC-294: magnitude-weighted signed Rayleigh atlas
+# TPC big road V148 / TPC-295: source-correlation image and norm-budget pier
 
 更新时间：2026-08-28
 
-状态：`TPC294_PROVED_EXACT_TRACE_NORMALIZED_SIGNED_QUADRATIC_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_GLOBAL_SIGN_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC295_PROVED_EXACT_FULL_RANK_IMPLIES_SOURCE_CORRELATION_SURJECTIVITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_MODULAR_FULL_RANK_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-294 proof 为
-`bridge_b_magnitude_weighted_signed_rayleigh_atlas.md`，checker 为
-`tpc_bridge_b_magnitude_weighted_signed_rayleigh_atlas_checker.py`，编号论文为
-`../../papers/tpc-294-magnitude-weighted-signed-rayleigh-atlas/`。
+当前 TPC-295 proof 为
+`bridge_b_tpc295_source_correlation_image_audit.md`，checker 为
+`tpc_bridge_b_tpc295_source_correlation_image_audit_checker.py`，编号论文为
+`../../papers/tpc-295-source-correlation-image-audit/`。
+
+TPC-295 承接 TPC-294 的 ambient weighted sign minimizer，令物理 shell vectors 为 rational
+matrix `A` 的 columns，严格证明 `G=A^T A` full rank 时 source-correlation map
+`A^T:Q^I -> Q^S` surjective，并给出显式且为 least-norm 的 witness `h=A G^(-1)b`。
+两个独立模数 `1000000007`、`998244353` 在继承的 18-row literal grid 上均给出
+18/18 full-rank certificates；1,380 edges 上 unrestricted finite source image、TPC-294
+weighted minimizer、unit-edge max-cut 与 all-positive targets 均 18/18 可达。这里的
+source space 是明确声明的 unrestricted rational `Q^I`，不是 native Mobius/comparison
+profile；witness norm/growing control、arithmetic `L2`、fixed-power credit、full Gate B
+与 twin-prime theorem 仍 OPEN/NONE。
+
+```text
+TPC295_MAXIMUM_CLAIM = PROVED_EXACT_FULL_RANK_IMPLIES_SOURCE_CORRELATION_SURJECTIVITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_MODULAR_FULL_RANK_ATLAS
+TPC295_ROUTE_ADVANCE = YES_SCOPED_AMBIENT_SIGN_TARGETS_TO_UNRESTRICTED_FINITE_SOURCE_IMAGE
+TPC295_FULL_RANK_IMPLICATION = PROVED_EXACT_FINITE
+TPC295_LEAST_NORM_WITNESS_FORMULA = PROVED_EXACT_FINITE
+TPC295_MODULAR_FULL_RANK_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_TWO_MODULI
+TPC295_UNRESTRICTED_SOURCE_CORRELATION_SURJECTIVITY = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC295_WEIGHTED_MINIMIZER_SOURCE_REALIZABILITY = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_UNRESTRICTED
+TPC295_NATIVE_RESTRICTED_PROFILE = OPEN_LITERAL_SOURCE
+TPC295_SOURCE_WITNESS_NORM = OPEN
+TPC295_GROWING_SOURCE_IMAGE = OPEN
+TPC295_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC295_FIXED_POWER_CREDIT = 0
+TPC295_FULL_GATE_B = OPEN
+TPC295_TWIN_PRIME_RESULT = NONE
+TPC295_STATUS = PROVED_EXACT_FULL_RANK_IMPLIES_SOURCE_CORRELATION_SURJECTIVITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_MODULAR_FULL_RANK_ATLAS
+TPC295_ROUND2_CLUE = TEST_SOURCE_NORM_COST_AND_RESTRICTED_NATIVE_PROFILE_IMAGE
+```
 
 TPC-294 承接 TPC-293 的 whole-shell signed max-cut，把 exact Gram magnitudes 恢复到
 equal-coefficient sign 的 trace-normalized quadratic objective。严格证明

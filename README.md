@@ -9,6 +9,33 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-295 承接 TPC-294 的 magnitude-weighted signed Rayleigh atlas，检查
+ambient weighted minimizer 是否落在一个明确的 source-correlation image 中。令物理 shell
+vectors 为 rational matrix `A` 的 columns，严格证明 `G=A^T A` 非奇异时
+`A^T:Q^I -> Q^S` surjective，且显式 witness 为 `h=A G^(-1)b`；同时证明该 witness
+是实数解中的 least-norm solution。对继承的 18-row literal grid，用两个独立模数
+`1000000007`、`998244353` 完成 18/18 full-rank certificates，1,380 edges 上
+18/18 unrestricted source images surjective，TPC-294 weighted minimizers、unit-edge
+max-cut targets 与 all-positive targets 均 18/18 可达。这里的 source space 是明确声明的
+unrestricted finite `Q^I`；native Mobius/comparison profile、witness norm growth、literal
+arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC295_FULL_RANK_IMPLICATION = PROVED_EXACT_FINITE
+TPC295_LEAST_NORM_WITNESS_FORMULA = PROVED_EXACT_FINITE
+TPC295_MODULAR_FULL_RANK_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_TWO_MODULI
+TPC295_UNRESTRICTED_SOURCE_CORRELATION_SURJECTIVITY = NUMERICALLY_CERTIFIED_FINITE_18_OF_18
+TPC295_WEIGHTED_MINIMIZER_SOURCE_REALIZABILITY = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_UNRESTRICTED
+TPC295_MAXCUT_SOURCE_REALIZABILITY = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_UNRESTRICTED
+TPC295_NATIVE_RESTRICTED_PROFILE = OPEN_LITERAL_SOURCE
+TPC295_SOURCE_WITNESS_NORM = OPEN
+TPC295_GROWING_SOURCE_IMAGE = OPEN
+TPC295_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC295_FIXED_POWER_CREDIT = 0
+TPC295_FULL_GATE_B = OPEN
+TPC295_TWIN_PRIME_RESULT = NONE
+```
+
 当前主线状态：TPC-294 承接 TPC-293 的 whole-shell signed max-cut，把真实 Gram magnitudes
 恢复到 equal-sign quadratic objective。严格证明 trace-normalized identity、Gram
 nonnegativity 与 common-denominator exhaustive sign optimization；同一 18-row literal
