@@ -1,11 +1,47 @@
-# TPC big road V139 / TPC-286: diagonal-deletion attachment ledger
+# TPC big road V140 / TPC-287: prime-shell cancellation depth
 
-更新时间：2026-08-27
+更新时间：2026-08-28
 
-状态：`TPC286_PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC287_PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
+
+当前 TPC-287 proof 为
+`bridge_b_prime_shell_cancellation_depth.md`，checker 为
+`tpc_bridge_b_prime_shell_cancellation_depth_checker.py`，编号论文为
+`../../papers/tpc-287-prime-shell-cancellation-depth/`。
+
+TPC-287 承接 TPC-286 的 diagonal-deletion attachment ledger，把 physical
+deleted-diagonal prime shell 拆成一个素数一个组件。对任意 finite shell 与 linear
+attachment，严格证明 `g_shell=sum_q g_q`、`C_shell=sum_q C_q`，并在 component intervals
+sign-separated 时证明 conditional retention envelope。七个声明的 shell anchors 覆盖
+1--7 个素数；六个 frozen source baselines 与两个 kernel exponents 形成 84 rows / 336
+components。所有 component intervals 均 sign-separated，57 行 mixed-sign，retention
+upper `<1/2/<1/4/<1/10` 为 31/22/8；leave-one-out 产生 48 个非零 sign flips 与 12
+个 zero remainders。这是 finite cancellation-depth map，不是 growing-shell stability
+或 arithmetic `L2` theorem；fixed-power credit 为 0，full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+```text
+TPC287_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER
+TPC287_ROUTE_ADVANCE = YES_SCOPED_PRIME_COMPONENT_LEDGER_AND_FINITE_CANCELLATION_DEPTH
+TPC287_SHELL_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_ATTACHMENT_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_RETENTION_ENVELOPE = PROVED_CONDITIONAL_INTERVAL
+TPC287_COMPONENT_LEDGER = NUMERICALLY_CERTIFIED_FINITE_336_COMPONENTS
+TPC287_MIXED_SIGN_ROWS = NUMERICALLY_CERTIFIED_FINITE_57_OF_84
+TPC287_RETENTION_THRESHOLDS = NUMERICALLY_CERTIFIED_FINITE_31_22_8
+TPC287_LEAVE_ONE_OUT = NUMERICALLY_CERTIFIED_FINITE_48_FLIPS_12_ZERO
+TPC287_GROWING_SHELL_STABILITY = OPEN
+TPC287_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC287_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC287_FIXED_POWER_CREDIT = 0
+TPC287_FULL_GATE_B = OPEN
+TPC287_TWIN_PRIME_RESULT = NONE
+TPC287_STATUS = PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER
+TPC287_ROUND2_CLUE = TEST_CANCELLATION_STABILITY_UNDER_GROWING_SHELL_AND_SOURCE_CONTROLS
+```
 
 当前 TPC-286 proof 为
 `bridge_b_diagonal_deletion_attachment_ledger.md`，checker 为

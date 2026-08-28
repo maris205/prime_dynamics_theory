@@ -1,7 +1,53 @@
 # TPC HANDOFF
 
-更新时间：2026-08-27
-交接状态：`BOLD_CHANNEL_V139_TPC286_DIAGONAL_DELETION_ATTACHMENT_LEDGER_RELEASED`
+更新时间：2026-08-28
+交接状态：`BOLD_CHANNEL_V140_TPC287_PRIME_SHELL_CANCELLATION_DEPTH_RELEASED`
+
+TPC-287 current section: prime-shell cancellation depth
+-----------------------------------------------------------------------------------------------
+
+TPC-287 follows the TPC-286 diagonal-deletion ledger.  It keeps the literal
+physical off-diagonal operator and exposes one component for every prime in a
+finite shell.  For every finite shell and linear output attachment, finite
+regrouping gives `g_shell=sum_q g_q` and `C_shell=sum_q C_q`.  When component
+intervals are separated from zero, the release also proves a conditional
+retention envelope comparing the signed shell attachment with the unsigned
+component mass.  The declared ladder has shell cardinalities 1 through 7;
+paired with six frozen source baselines and two kernel exponents it gives 84
+rows and 336 components.  All components are sign-separated, 57 rows are
+mixed-sign, retention upper bounds below `1/2`, `1/4`, and `1/10` occur in
+31, 22, and 8 rows, and leave-one-prime-out gives 48 nonzero sign flips plus
+12 zero remainders.
+
+```text
+TPC287_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER
+TPC287_ROUTE_ADVANCE = YES_SCOPED_PRIME_COMPONENT_LEDGER_AND_FINITE_CANCELLATION_DEPTH
+TPC287_SHELL_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_ATTACHMENT_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_RETENTION_ENVELOPE = PROVED_CONDITIONAL_INTERVAL
+TPC287_COMPONENT_LEDGER = NUMERICALLY_CERTIFIED_FINITE_336_COMPONENTS
+TPC287_MIXED_SIGN_ROWS = NUMERICALLY_CERTIFIED_FINITE_57_OF_84
+TPC287_RETENTION_THRESHOLDS = NUMERICALLY_CERTIFIED_FINITE_31_22_8
+TPC287_LEAVE_ONE_OUT = NUMERICALLY_CERTIFIED_FINITE_48_FLIPS_12_ZERO
+TPC287_GROWING_SHELL_STABILITY = OPEN
+TPC287_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC287_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC287_FIXED_POWER_CREDIT = 0
+TPC287_FULL_GATE_B = OPEN
+TPC287_TWIN_PRIME_RESULT = NONE
+TPC287_STATUS = PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER
+TPC287_ROUND2_CLUE = TEST_CANCELLATION_STABILITY_UNDER_GROWING_SHELL_AND_SOURCE_CONTROLS
+```
+
+Strongest positive result: exact prime-component and linear-attachment
+additivity, with a finite 57-row mixed-sign cancellation map.  Strongest
+obstruction: cancellation is visibly shell- and source-control-dependent;
+cardinality alone is not monotone.  The next theorem target is uniform
+growing-shell/source-control stability.  This remains a finite route marker:
+literal arithmetic `L2`, fixed-power credit, and full Gate B are open.
+
+TPC-286 remains the immediate upstream section below.
+-----------------------------------------------------------------------------------------------
 
 TPC-286 current section: diagonal-deletion attachment ledger
 -----------------------------------------------------------------------------------------------
@@ -9273,13 +9319,13 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V139/TPC-286 是当前 release；其 producer、independent replay、stress audit 与
+V140/TPC-287 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade 共 165 对 normal/optimized 命令、330 次 invocation；TPC-281
+当前 curated cascade 共 169 对 normal/optimized 命令、338 次 invocation；TPC-281
 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4 对，且每对要求空 stderr
-与 byte-identical stdout。
+与 byte-identical stdout；TPC-287 再追加末尾 4 对。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
 执行 normal与 optimized只读 checker；每一对必须都为零，且每一对 stdout
@@ -9662,6 +9708,19 @@ python -B research/tpc-big-road/tpc_bridge_b_diagonal_deletion_attachment_ledger
 python -O -B research/tpc-big-road/tpc_bridge_b_diagonal_deletion_attachment_ledger_checker.py
 ```
 
+TPC-287 的项目级 producer、independent replay、cancellation stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-287-prime-shell-cancellation-depth/code/tpc287_prime_shell_cancellation_certificate.py --check
+python -O -B papers/tpc-287-prime-shell-cancellation-depth/code/tpc287_prime_shell_cancellation_certificate.py --check
+python -B papers/tpc-287-prime-shell-cancellation-depth/experiments/tpc287_independent_checker.py
+python -O -B papers/tpc-287-prime-shell-cancellation-depth/experiments/tpc287_independent_checker.py
+python -B papers/tpc-287-prime-shell-cancellation-depth/experiments/tpc287_cancellation_stress.py
+python -O -B papers/tpc-287-prime-shell-cancellation-depth/experiments/tpc287_cancellation_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_prime_shell_cancellation_depth_checker.py
+python -O -B research/tpc-big-road/tpc_bridge_b_prime_shell_cancellation_depth_checker.py
+```
+
 TPC-282 的项目级 producer、independent replay、attachment stress 与 bridge checker：
 
 ```bash
@@ -9689,6 +9748,17 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-287 入口：
+
+```text
+papers/tpc-287-prime-shell-cancellation-depth/README.md
+papers/tpc-287-prime-shell-cancellation-depth/PROOF_PACKAGE.md
+papers/tpc-287-prime-shell-cancellation-depth/notes/theorem_ledger.md
+papers/tpc-287-prime-shell-cancellation-depth/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_prime_shell_cancellation_depth.md
+research/tpc-big-road/tpc_bridge_b_prime_shell_cancellation_depth_checker.py
+```
 
 最新 TPC-286 入口：
 

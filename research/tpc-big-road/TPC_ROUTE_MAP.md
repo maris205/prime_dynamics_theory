@@ -1,21 +1,43 @@
 # TPC 文字路线图：从局部算术结构到孪生素数终点
 
-更新时间：2026-08-27
+更新时间：2026-08-28
 
-当前地图版本：V139 / TPC-286
+当前地图版本：V140 / TPC-287
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-286`（`PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER`）；
+当前编号锚点：`TPC-287`（`PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER`）；
 对应论文目录为
-`papers/tpc-286-diagonal-deletion-attachment-ledger/`。
-TPC-286 承接 TPC-285，精确拆分 diagonal-including prime-shell output、显式 diagonal
-correction 与 physical deleted-diagonal output：`g_phys=g_full-g_diag`，并由 attachment
-linearity 得到 `C_phys=C_full-C_diag`。在 TPC-284 的全部 72 个 controls 上，full、
-diagonal、physical 三类 interval 均 sign-separated；full/physical 有 15 个 flips，
-diagonal 与 physical 相反 30 行，严格大于 physical 绝对幅度 21 行。该结果关闭“可以
-忽略 deleted diagonal”的 shortcut，但不关闭 asymptotic diagonal dominance、signed
-cross-prime cancellation、arithmetic `L2` 或 full Gate B。
+`papers/tpc-287-prime-shell-cancellation-depth/`。
+TPC-287 承接 TPC-286，把 physical deleted-diagonal prime shell 拆成一个素数一个
+component，严格证明 finite shell 与 linear attachment 的 additivity，并在
+component-separated intervals 下给出 conditional retention envelope。七个明确声明的
+shell anchors 覆盖 1--7 个素数；六个 frozen source baselines 与两个 exponents 形成
+84 rows / 336 components。所有 component intervals 均 sign-separated，57 行 mixed-sign，
+retention upper `<1/2/<1/4/<1/10` 为 31/22/8，leave-one-out 有 48 个非零 sign flips
+与 12 个 zero remainders。这是 cancellation-depth 的有限地图标记，不是 growing-shell
+theorem；source-control uniformity、arithmetic `L2`、fixed-power credit 与 full Gate B
+仍 open。
+
+```text
+TPC287_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER
+TPC287_ROUTE_ADVANCE = YES_SCOPED_PRIME_COMPONENT_LEDGER_AND_FINITE_CANCELLATION_DEPTH
+TPC287_SHELL_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_ATTACHMENT_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_RETENTION_ENVELOPE = PROVED_CONDITIONAL_INTERVAL
+TPC287_COMPONENT_LEDGER = NUMERICALLY_CERTIFIED_FINITE_336_COMPONENTS
+TPC287_MIXED_SIGN_ROWS = NUMERICALLY_CERTIFIED_FINITE_57_OF_84
+TPC287_RETENTION_THRESHOLDS = NUMERICALLY_CERTIFIED_FINITE_31_22_8
+TPC287_LEAVE_ONE_OUT = NUMERICALLY_CERTIFIED_FINITE_48_FLIPS_12_ZERO
+TPC287_GROWING_SHELL_STABILITY = OPEN
+TPC287_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC287_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC287_FIXED_POWER_CREDIT = 0
+TPC287_FULL_GATE_B = OPEN
+TPC287_TWIN_PRIME_RESULT = NONE
+TPC287_STATUS = PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER
+TPC287_ROUND2_CLUE = TEST_CANCELLATION_STABILITY_UNDER_GROWING_SHELL_AND_SOURCE_CONTROLS
+```
 
 ```text
 TPC286_MAXIMUM_CLAIM = PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER
@@ -135,6 +157,58 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.81 V140 / TPC-287：prime-shell cancellation depth
+
+TPC-287 是 TPC-286 diagonal-split 之后的直接地图勘探。它保持同一个 literal physical
+deleted-diagonal operator，把 finite prime shell 按素数拆成组件 `g_q`，然后对当前
+four-block linear attachment 定义 `C_q=C(w,g_q)` 与 `C_shell`。有限求和与线性给出
+严格恒等式：
+
+```text
+g_shell = sum_q g_q
+C_shell = sum_q C_q
+```
+
+当每个 component interval 与零分离时，`dist(0,J_q)` 与 `max_abs(J_q)` 还给出
+shell-to-unsigned-mass 的 conditional retention envelope。该 envelope 是安全的区间
+上下界，不是 endpoint equality，也不是渐近比例。
+
+本关首次把 shell cardinality 从旧 atlas 的 1--2 项扩到明确的 1--7 项 ladder：
+`Q=3,4,9,10,16,22,27`，对应 shells
+`[5]`、`[5,7]`、`[11,13,17]`、`[11,13,17,19]`、
+`[17,19,23,29,31]`、`[23,29,31,37,41,43]`、
+`[29,31,37,41,43,47,53]`。它们与六个 frozen source baselines、两个 kernel
+exponents 形成 84 rows / 336 components。全部 component intervals sign-separated；
+57/84 行 mixed-sign；retention upper `<1/2/<1/4/<1/10` 的行数为 31/22/8，另有
+5 行低于 `1/20`。leave-one-prime-out 有 48 个非零 sign flips、12 个 zero remainders
+和 276 个 same-sign events。
+
+```text
+TPC287_ROUTE_ADVANCE = YES_SCOPED_PRIME_COMPONENT_LEDGER_AND_FINITE_CANCELLATION_DEPTH
+TPC287_SHELL_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_ATTACHMENT_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_RETENTION_ENVELOPE = PROVED_CONDITIONAL_INTERVAL
+TPC287_COMPONENT_LEDGER = NUMERICALLY_CERTIFIED_FINITE_336_COMPONENTS
+TPC287_MIXED_SIGN_ROWS = NUMERICALLY_CERTIFIED_FINITE_57_OF_84
+TPC287_RETENTION_THRESHOLDS = NUMERICALLY_CERTIFIED_FINITE_31_22_8
+TPC287_LEAVE_ONE_OUT = NUMERICALLY_CERTIFIED_FINITE_48_FLIPS_12_ZERO
+TPC287_GROWING_SHELL_STABILITY = OPEN
+TPC287_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC287_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC287_FIXED_POWER_CREDIT = 0
+TPC287_FULL_GATE_B = OPEN
+TPC287_TWIN_PRIME_RESULT = NONE
+TPC287_STATUS = PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER
+TPC287_ROUND2_CLUE = TEST_CANCELLATION_STABILITY_UNDER_GROWING_SHELL_AND_SOURCE_CONTROLS
+```
+
+最强正结果是 `physical shell -> prime components -> signed sum` 的 exact bridge，
+以及 57 个 mixed-sign finite rows；最强 obstruction 是 cancellation 对 shell anchor
+和 source control 有明显依赖，cardinality 增大并不单调改善 retention。下一关应做
+growing-shell 与 source-control 的 coupled stability audit，而不是把这张有限表直接
+外推为 arithmetic `L2`。当前位置仍在 **岛 2 / Bridge A--B 接缝**：组件级抵消已勘探，
+但 literal arithmetic `L2`、fixed-power credit 与 full Gate B 尚未支付。
 
 ## 5.80 V139 / TPC-286：diagonal-deletion attachment ledger
 
@@ -721,9 +795,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V139 / TPC-286                    |
-        | DIAGONAL SPLIT / ATTACHMENT LEDGER          |
-        | full = physical + diagonal correction      |
+        | YOU ARE HERE — V140 / TPC-287                    |
+        | PRIME-SHELL COMPONENT / CANCELLATION LEDGER |
+        | shell = sum of signed physical components  |
         +--------------------------------------------------+
                 |
                 v
@@ -5423,6 +5497,17 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
+0. **TPC-287 已完成：prime-shell cancellation depth ledger**。在 TPC-286 的 physical
+   deleted-diagonal convention 下，严格证明 finite shell/component 与 linear attachment
+   的 additivity，并以 1--7 prime 的 declared ladder、六个 source baselines、两个
+   exponents 完成 84-row / 336-component audit。全部 component intervals sign-separated，
+   57 行 mixed-sign，retention upper `<1/2/<1/4/<1/10` 为 31/22/8，leave-one-out 有
+   48 个非零 sign flips 与 12 个 zero remainders。该结果只是有限 cancellation-depth
+   地图，不支付 growing-shell stability、literal arithmetic `L2` 或 fixed-power credit。
+   下一关必须在 shell 与 source controls 同时增长时做稳定性/反例审计。
+0a. **TPC-286 已完成：diagonal-deletion attachment split**。显式 diagonal correction
+   已从 physical operator 中分离，有限 72-row sensitivity ledger 仍保留在下方；它是
+   TPC-287 的直接上游，不能被解释成 asymptotic diagonal dominance。
 0. **TPC-272 已完成：correlation-margin to endpoint-budget compiler**。在 TPC-271
    的同一 finite interface 上定义 `m=|C_perp|/R`，证明 `m^6=Xi_C/Xi`，并将
    scalar effective saving `sigma` 与 margin loss `eta` 编译为 endpoint saving
@@ -5710,6 +5795,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-28 | V140 / TPC-287 | Bridge A / Gate B：prime-shell component cancellation depth 已完成；growing-shell/source-control stability、arithmetic `L2` 与 full Gate B open | `TPC-287` | 严格证明 `g_shell=sum_q g_q`、`C_shell=sum_q C_q` 与 conditional retention envelope；1--7 prime declared ladder 完成 84-row / 336-component ledger，全部 components sign-separated，57 mixed-sign rows，retention upper `<1/2/<1/4/<1/10` 为 31/22/8，leave-one-out 为 48 flips / 12 zero，fixed-power credit 为 0，下一步为 coupled growing-shell/source-control stability |
 | 2026-08-27 | V139 / TPC-286 | Bridge A / Gate B：diagonal-including 与 physical deleted-diagonal attachment 已精确拆分；asymptotic dominance、signed full-shell cancellation、arithmetic `L2` 与 full Gate B open | `TPC-286` | 证明 `g_phys=g_full-g_diag` 与 `C_phys=C_full-C_diag`；完成 72-row 三分量 ledger（full/diagonal/physical sign-separated），15 个 full/physical flips、30 个 diagonal-opposition rows、21 个严格 diagonal-dominance rows，fixed-power credit 为 0，下一步为 split 后的 signed full-shell cancellation |
 | 2026-08-27 | V138 / TPC-285 | Bridge A / Gate B：prime-shell centered factorization 与 deleted-diagonal full-rank theorem 已完成；signed full-shell cancellation、arithmetic `L2` 与 full Gate B open | `TPC-285` | 精确证明 `B_q=R_q(I-11^T/(q-1))R_q^T`、rank `<=q-2`，并证明 deleted diagonal 在 full class coverage 下恢复 full active rank；20 个 kernel-Schur rows 通过独立模素数 rank witness，fixed-power credit 为 0 |
 | 2026-08-27 | V137 / TPC-284 | Bridge A / Gate B：finite declared source-control atlas 已完成；asymptotic control stability、literal source class、arithmetic `L2` 与 full Gate B open | `TPC-284` | 对 `H±2`、`z±1`、`Q±1` 六类 controls 完成 72-row literal replay（60 negative / 12 positive / 0 crossing），发现 8 个相对 baseline 的 sign flips，最弱 controlled `rho^2` 下界约 `1.4118e-5`，fixed-power credit 为 0，下一步为 source-class constraints 与 growing control-stability theorem |

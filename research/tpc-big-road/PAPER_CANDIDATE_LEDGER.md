@@ -1,15 +1,63 @@
 
 # TPC big-road paper candidate ledger
 
-更新时间：2026-08-27
+更新时间：2026-08-28
 
-状态：**TPC286_PROVED_EXACT_LINEAR_DIAGONAL_DELETION_ATTACHMENT_SPLIT_PLUS_NUMERICALLY_CERTIFIED_FINITE_DIAGONAL_SENSITIVITY_LEDGER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC287_PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.80 当前：TPC-286 diagonal-deletion attachment ledger
+## 0.81 当前：TPC-287 prime-shell cancellation depth
+
+项目：`papers/tpc-287-prime-shell-cancellation-depth/`
+
+类型：**PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER**。
+
+TPC-287 承接 TPC-286 的 diagonal-deletion ledger，把 physical deleted-diagonal prime
+shell 按素数拆成 `g_q`，并严格证明 finite shell 的 `g_shell=sum_q g_q` 与 linear
+attachment 的 `C_shell=sum_q C_q`。同时给出 component-separated interval 下的
+conditional retention envelope。七个声明的 shell anchors 分别含 1--7 个素数；与六个
+frozen source baselines、两个 kernel exponents 组合成 84 rows / 336 components。
+所有 component intervals 均 sign-separated，57 行 mixed-sign；retention upper 小于
+`1/2`、`1/4`、`1/10` 的行数为 31/22/8，另有 5 行小于 `1/20`。leave-one-prime-out
+产生 48 个非零 sign flips、12 个 zero remainders、276 个 same-sign events。
+
+最强正结果是 exact prime-component/additivity structure 与可复用的 interval retention
+envelope；最强 obstruction 是有限抵消依赖 shell anchor 与 source control，无法自动
+提升为 growing-shell cancellation theorem。可复用结构为
+`physical shell -> prime components -> signed sum -> retention envelope -> leave-one-out`。
+这篇论文明确记录 `ROUND2_CLUE`：测试 growing shell 与 source controls 的抵消稳定性；
+literal arithmetic `L2`、fixed-power credit 与 full Gate B 仍 open。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_FINITE_SHELL_AND_LINEAR_ATTACHMENT_ADDITIVITY_PLUS_57_MIXED_SIGN_ROWS
+STRONGEST_OBSTRUCTION = FINITE_CANCELLATION_IS_SHELL_AND_SOURCE_CONTROL_DEPENDENT
+OPEN_THEOREM = GROWING_SHELL_AND_SOURCE_CONTROL_CANCELLATION_STABILITY
+REUSABLE_STRUCTURE = PRIME_COMPONENTS -> SIGNED SUM -> RETENTION ENVELOPE -> LEAVE_ONE_OUT
+ROUND2_CLUE = TEST_CANCELLATION_STABILITY_UNDER_GROWING_SHELL_AND_SOURCE_CONTROLS
+```
+
+```text
+TPC287_ROUTE_ADVANCE = YES_SCOPED_PRIME_COMPONENT_LEDGER_AND_FINITE_CANCELLATION_DEPTH
+TPC287_SHELL_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_ATTACHMENT_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_RETENTION_ENVELOPE = PROVED_CONDITIONAL_INTERVAL
+TPC287_COMPONENT_LEDGER = NUMERICALLY_CERTIFIED_FINITE_336_COMPONENTS
+TPC287_MIXED_SIGN_ROWS = NUMERICALLY_CERTIFIED_FINITE_57_OF_84
+TPC287_RETENTION_THRESHOLDS = NUMERICALLY_CERTIFIED_FINITE_31_22_8
+TPC287_LEAVE_ONE_OUT = NUMERICALLY_CERTIFIED_FINITE_48_FLIPS_12_ZERO
+TPC287_GROWING_SHELL_STABILITY = OPEN
+TPC287_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC287_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC287_FIXED_POWER_CREDIT = 0
+TPC287_FULL_GATE_B = OPEN
+TPC287_TWIN_PRIME_RESULT = NONE
+TPC287_STATUS = PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER
+```
+
+## 0.80 已发布：TPC-286 diagonal-deletion attachment ledger
 
 项目：`papers/tpc-286-diagonal-deletion-attachment-ledger/`
 

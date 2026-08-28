@@ -9,6 +9,32 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-287 承接 TPC-286，把 physical deleted-diagonal prime shell 按素数
+拆成可审计的 signed components。对七个明确声明的 shell anchor（恰含 1--7 个素数）、
+六个 frozen source baselines 与两个 kernel exponents，形成 84 rows / 336 components：
+所有 component intervals 均 sign-separated，57 行为 mixed-sign，retention upper bound
+低于 `1/2`、`1/4`、`1/10` 的行数分别为 31、22、8；leave-one-prime-out 有 48 个非零
+sign flips 与 12 个 zero remainders。TPC-287 严格证明 finite shell/linear attachment
+的 `g_shell=sum_q g_q`、`C_shell=sum_q C_q`，并给出 conditional interval envelope。
+这是新的 `PROVED_EXACT` additive structure 加 `NUMERICALLY_CERTIFIED_FINITE` cancellation
+depth ledger；growing-shell stability、source-control uniformity、arithmetic `L2`、
+fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC287_SHELL_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_ATTACHMENT_ADDITIVITY = PROVED_EXACT_FINITE
+TPC287_COMPONENT_LEDGER = NUMERICALLY_CERTIFIED_FINITE_336_COMPONENTS
+TPC287_MIXED_SIGN_ROWS = NUMERICALLY_CERTIFIED_FINITE_57_OF_84
+TPC287_RETENTION_THRESHOLDS = NUMERICALLY_CERTIFIED_FINITE_31_22_8
+TPC287_LEAVE_ONE_OUT = NUMERICALLY_CERTIFIED_FINITE_48_FLIPS_12_ZERO
+TPC287_GROWING_SHELL_STABILITY = OPEN
+TPC287_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC287_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC287_FIXED_POWER_CREDIT = 0
+TPC287_FULL_GATE_B = OPEN
+TPC287_TWIN_PRIME_RESULT = NONE
+```
+
 当前主线状态：TPC-286 承接 TPC-285，把 centered residue block 与 physical
 deleted-diagonal operator 之间的缺项精确拆开。对有限 prime shell，定义含对角项的
 `g_full`、显式对角修正 `g_diag` 与物理输出 `g_phys`，严格证明
@@ -257,6 +283,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-287-prime-shell-cancellation-depth - 当前阶段 - 严格证明 finite shell component
+additivity 与 conditional retention envelope；完成 84-row / 336-component ladder，
+57 mixed-sign rows、retention upper `<1/2/<1/4/<1/10` 为 31/22/8，48 个 leave-one-out
+sign flips 与 12 个 zero remainders；growing-shell stability、literal `L2`、full Gate B
+仍 OPEN，fixed-power credit 为 0。
 tpc-286-diagonal-deletion-attachment-ledger - 当前阶段 - 精确证明
 `g_phys=g_full-g_diag` 与 `C_phys=C_full-C_diag`，并完成 72-row full/diagonal/physical
 component ledger：15 个 full/physical sign flips、30 个 diagonal-opposition rows、
