@@ -1,16 +1,46 @@
-# TPC big road V141 / TPC-288: growing-shell Gram obstruction
+# TPC big road V142 / TPC-289: cross-prime Gram coherence
 
 更新时间：2026-08-28
 
-状态：`TPC288_PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC289_PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-288 proof 为
-`bridge_b_growing_shell_gram_obstruction.md`，checker 为
-`tpc_bridge_b_growing_shell_gram_obstruction_checker.py`，编号论文为
-`../../papers/tpc-288-growing-shell-gram-obstruction/`。
+当前 TPC-289 proof 为
+`bridge_b_cross_prime_gram_coherence.md`，checker 为
+`tpc_bridge_b_cross_prime_gram_coherence_checker.py`，编号论文为
+`../../papers/tpc-289-cross-prime-gram-coherence/`。
+
+TPC-289 承接 TPC-288 的 source-output Gram，在同一个 literal physical
+deleted-diagonal operator 上研究跨素数交叉项的 sign 与 normalized coherence。18 个
+growth/exponent/control rows 共 1,380 个 unordered pairs：17/18 rows pairwise positive，
+但早期 `(256,38,27,5,1)` 有 3 个精确 negative pairs，其中一对 squared coherence
+约 `1.3746e-7`；8 个 late-shell rows 满足 `Gamma>=9/25`、`d_min/d_max>=4/5` 的
+finite strong block，18/18 rows 的 aggregate energy ratio 都大于 1。论文严格证明
+Gram PSD、`0<=Gamma<=1` 与 conditional accumulation lower bound；uniform coherence、
+source-restricted arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+```text
+TPC289_MAXIMUM_CLAIM = PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM
+TPC289_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_ENVELOPE_AND_FINITE_SIGN_PHASE_DIAGRAM
+TPC289_EXACT_GRAM_COHERENCE = PROVED_EXACT_FINITE
+TPC289_EXACT_ACCUMULATION_BOUND = PROVED_EXACT_CONDITIONAL
+TPC289_PAIRWISE_POSITIVITY = NUMERICALLY_CERTIFIED_FINITE_17_OF_18_ROWS
+TPC289_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_3_PAIRS_ONE_ROW
+TPC289_STRONG_COHERENCE_BLOCK = NUMERICALLY_CERTIFIED_FINITE_8_ROWS
+TPC289_ENERGY_AMPLIFIED = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ROWS
+TPC289_TOTAL_PAIR_COMPARISONS = 1380
+TPC289_UNIFORM_PAIRWISE_POSITIVITY = REFUTED_FINITE_DECLARED_GRID
+TPC289_GROWING_COHERENCE_STABILITY = OPEN
+TPC289_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC289_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC289_FIXED_POWER_CREDIT = 0
+TPC289_FULL_GATE_B = OPEN
+TPC289_TWIN_PRIME_RESULT = NONE
+TPC289_ROUND2_CLUE = TEST_ADAPTIVE_SHELL_WEIGHTING_OR_SOURCE_RESTRICTED_COHERENCE_BEYOND_FINITE_BLOCK
+```
 
 TPC-288 沿着 TPC-287 的 growing-shell clue，保持同一个 literal physical
 deleted-diagonal operator，把每个 prime component 保留为完整 output vector 并构造

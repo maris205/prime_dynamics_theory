@@ -1,7 +1,52 @@
 # TPC HANDOFF
 
 更新时间：2026-08-28
-交接状态：`BOLD_CHANNEL_V141_TPC288_GROWING_SHELL_GRAM_OBSTRUCTION_RELEASED`
+交接状态：`BOLD_CHANNEL_V142_TPC289_CROSS_PRIME_GRAM_COHERENCE_RELEASED`
+
+TPC-289 current section: cross-prime Gram coherence phase diagram
+-----------------------------------------------------------------------------------------------
+
+TPC-289 follows the TPC-288 physical output Gram and keeps the same literal
+deleted-diagonal prime-component family.  It defines the normalized squared
+coherence `Gamma_(q,r)=G_(q,r)^2/(G_(q,q)G_(r,r))` and proves exactly the
+Cauchy bound `0<=Gamma<=1` plus a conditional accumulation inequality: a
+positive coherence floor and diagonal balance force a lower bound on aggregate
+energy.  The finite certificate covers 18 rows and 1,380 unordered pairs.
+Seventeen rows are pairwise positive; the early `(256,38,27,5,1)` crossover
+has three exact negative pairs, including a near-zero coherence pair.  Eight
+late-shell rows pass the finite `eta=3/5,delta=4/5` strong block, and all 18
+rows have energy ratio greater than one.
+
+```text
+TPC289_MAXIMUM_CLAIM = PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM
+TPC289_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_ENVELOPE_AND_FINITE_SIGN_PHASE_DIAGRAM
+TPC289_EXACT_GRAM_COHERENCE = PROVED_EXACT_FINITE
+TPC289_EXACT_ACCUMULATION_BOUND = PROVED_EXACT_CONDITIONAL
+TPC289_PAIRWISE_POSITIVITY = NUMERICALLY_CERTIFIED_FINITE_17_OF_18_ROWS
+TPC289_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_3_PAIRS_ONE_ROW
+TPC289_STRONG_COHERENCE_BLOCK = NUMERICALLY_CERTIFIED_FINITE_8_ROWS
+TPC289_ENERGY_AMPLIFIED = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ROWS
+TPC289_TOTAL_PAIR_COMPARISONS = 1380
+TPC289_CONTROL_EQUIVALENCE_GROUPS = 2
+TPC289_UNIFORM_PAIRWISE_POSITIVITY = REFUTED_FINITE_DECLARED_GRID
+TPC289_GROWING_COHERENCE_STABILITY = OPEN
+TPC289_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC289_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC289_FIXED_POWER_CREDIT = 0
+TPC289_FULL_GATE_B = OPEN
+TPC289_TWIN_PRIME_RESULT = NONE
+TPC289_STATUS = PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM
+TPC289_ROUND2_CLUE = TEST_ADAPTIVE_SHELL_WEIGHTING_OR_SOURCE_RESTRICTED_COHERENCE_BEYOND_FINITE_BLOCK
+```
+
+Strongest positive result: the exact conditional coherence-accumulation
+envelope and its eight-row late-shell finite block.  Strongest obstruction:
+the three early negative pairs and near-zero coherence, which block a uniform
+positivity shortcut.  The source-restricted/growing-shell theorem, arithmetic
+`L2`, fixed-power credit, full Gate B, and twin-prime conclusion remain open.
+
+TPC-288 remains the immediate upstream section below.
+-----------------------------------------------------------------------------------------------
 
 TPC-288 current section: growing-shell Gram obstruction
 -----------------------------------------------------------------------------------------------
@@ -9364,13 +9409,17 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V141/TPC-288 是当前 release；其 producer、independent replay、stress audit 与
+V142/TPC-289 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade 共 173 对 normal/optimized 命令、346 次 invocation；TPC-281
-贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4 对，且每对要求空 stderr
-与 byte-identical stdout；TPC-287 再追加末尾 4 对，TPC-288 再追加末尾 4 对。
+当前 curated cascade command set 共 177 对 normal/optimized 命令、354 次
+invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
+4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
+对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
+TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对。V141/TPC-288 的 173 对
+全量回归已通过；TPC-289 新增的 4 对已由本项目 bridge 与 standalone tail
+checks 逐项通过，完整 177 对组合尚未因重复计算而再次运行。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
 执行 normal与 optimized只读 checker；每一对必须都为零，且每一对 stdout
@@ -9779,6 +9828,19 @@ python -B research/tpc-big-road/tpc_bridge_b_growing_shell_gram_obstruction_chec
 python -O -B research/tpc-big-road/tpc_bridge_b_growing_shell_gram_obstruction_checker.py
 ```
 
+TPC-289 的项目级 producer、independent replay、coherence stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-289-cross-prime-gram-coherence/code/tpc289_cross_prime_gram_coherence_certificate.py --check
+python -O -B papers/tpc-289-cross-prime-gram-coherence/code/tpc289_cross_prime_gram_coherence_certificate.py --check
+python -B papers/tpc-289-cross-prime-gram-coherence/experiments/tpc289_independent_checker.py
+python -O -B papers/tpc-289-cross-prime-gram-coherence/experiments/tpc289_independent_checker.py
+python -B papers/tpc-289-cross-prime-gram-coherence/experiments/tpc289_coherence_stress.py
+python -O -B papers/tpc-289-cross-prime-gram-coherence/experiments/tpc289_coherence_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_cross_prime_gram_coherence_checker.py
+python -O -B research/tpc-big-road/tpc_bridge_b_cross_prime_gram_coherence_checker.py
+```
+
 TPC-282 的项目级 producer、independent replay、attachment stress 与 bridge checker：
 
 ```bash
@@ -9806,6 +9868,17 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-289 入口：
+
+```text
+papers/tpc-289-cross-prime-gram-coherence/README.md
+papers/tpc-289-cross-prime-gram-coherence/PROOF_PACKAGE.md
+papers/tpc-289-cross-prime-gram-coherence/notes/theorem_ledger.md
+papers/tpc-289-cross-prime-gram-coherence/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_cross_prime_gram_coherence.md
+research/tpc-big-road/tpc_bridge_b_cross_prime_gram_coherence_checker.py
+```
 
 最新 TPC-288 入口：
 

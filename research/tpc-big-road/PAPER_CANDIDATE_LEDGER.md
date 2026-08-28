@@ -3,13 +3,63 @@
 
 更新时间：2026-08-28
 
-状态：**TPC288_PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC289_PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.82 当前：TPC-288 growing-shell Gram obstruction
+## 0.83 当前：TPC-289 cross-prime Gram coherence
+
+项目：`papers/tpc-289-cross-prime-gram-coherence/`
+
+类型：**PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM**。
+
+TPC-289 承接 TPC-288 的 source-output Gram，在同一个 literal physical
+deleted-diagonal operator 上定义
+`Gamma_(q,r)=G_(q,r)^2/(G_(q,q)G_(r,r))`，严格证明 `0<=Gamma<=1` 以及在
+positive coherence floor 与 diagonal balance 下的 conditional accumulation lower bound。
+18 个 growth/exponent/control rows 共 1,380 个 unordered pair comparisons：17/18 rows
+pairwise positive，但 `(256,38,27,5,1)` 的早期 `s=1` crossover 有 3 个精确 negative
+pairs，其中 `(31,53)` 的 squared coherence 约 `1.3746e-7`；8 个 late-shell rows
+满足 `eta=3/5, delta=4/5` strong block，18/18 rows 的 aggregate energy ratio 都大于 1。
+六个 source-control rows 在两个 fixed heights 上形成两组相同的 recorded
+coherence/energy signatures，提示有限 controls 不能直接当作独立 source family。
+
+最强正结果是 exact conditional coherence-accumulation envelope 与 8-row late block；
+最强 obstruction 是早期 sign flip/near-zero coherence，因而 refute 了声明网格上的
+uniform pairwise positivity/coherence-floor shortcut。source-restricted/growing-shell
+coherence、literal arithmetic `L2`、fixed-power credit 与 full Gate B 仍 OPEN/NONE。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_CONDITIONAL_COHERENCE_ACCUMULATION_ENVELOPE_PLUS_8_ROW_LATE_BLOCK
+STRONGEST_OBSTRUCTION = THREE_EXACT_NEGATIVE_CROSS_PRIME_PAIRS_AND_NEAR_ZERO_COHERENCE_AT_N256_S1
+OPEN_THEOREM = SOURCE_RESTRICTED_OR_GROWING_SHELL_COHERENCE_BOUND
+REUSABLE_STRUCTURE = OUTPUT_GRAM -> SIGN_CENSUS -> NORMALIZED_COHERENCE -> CONDITIONAL_ENERGY_ENVELOPE
+ROUND2_CLUE = TEST_ADAPTIVE_SHELL_WEIGHTING_OR_SOURCE_RESTRICTED_COHERENCE_BEYOND_FINITE_BLOCK
+```
+
+```text
+TPC289_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_ENVELOPE_AND_FINITE_SIGN_PHASE_DIAGRAM
+TPC289_EXACT_GRAM_COHERENCE = PROVED_EXACT_FINITE
+TPC289_EXACT_ACCUMULATION_BOUND = PROVED_EXACT_CONDITIONAL
+TPC289_PAIRWISE_POSITIVITY = NUMERICALLY_CERTIFIED_FINITE_17_OF_18_ROWS
+TPC289_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_3_PAIRS_ONE_ROW
+TPC289_STRONG_COHERENCE_BLOCK = NUMERICALLY_CERTIFIED_FINITE_8_ROWS
+TPC289_ENERGY_AMPLIFIED = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ROWS
+TPC289_TOTAL_PAIR_COMPARISONS = 1380
+TPC289_CONTROL_EQUIVALENCE_GROUPS = 2
+TPC289_UNIFORM_PAIRWISE_POSITIVITY = REFUTED_FINITE_DECLARED_GRID
+TPC289_GROWING_COHERENCE_STABILITY = OPEN
+TPC289_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC289_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC289_FIXED_POWER_CREDIT = 0
+TPC289_FULL_GATE_B = OPEN
+TPC289_TWIN_PRIME_RESULT = NONE
+TPC289_STATUS = PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM
+```
+
+## 0.82 已发布：TPC-288 growing-shell Gram obstruction
 
 项目：`papers/tpc-288-growing-shell-gram-obstruction/`
 

@@ -9,6 +9,32 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-289 承接 TPC-288 的 source-output Gram obstruction，在不改变
+literal physical deleted-diagonal operator 的前提下，研究跨素数 Gram 交叉项的符号与
+归一化相干。18 个 growth/exponent/control rows 共 1,380 个 unordered pair comparisons：
+17/18 rows 的全部 cross terms 为正，但 `(N,H,Q,z,s)=(256,38,27,5,1)` 有 3 个精确
+负 pair，其中 `(31,53)` 的 squared coherence 约 `1.3746e-7`；另一方面 8 个 late-shell
+rows 满足 `Gamma>=9/25`、`d_min/d_max>=4/5` 的有限 strong block，且 18/18 rows
+的 aggregate energy ratio 都大于 1。TPC-289 严格证明 Gram PSD、`0<=Gamma<=1` 与
+conditional accumulation lower bound；这把“晚期相干模式”与“早期 sign-flip 坑”分开，
+但 growing-shell/source-restricted coherence、arithmetic `L2`、fixed-power credit、
+full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC289_EXACT_GRAM_COHERENCE = PROVED_EXACT_FINITE
+TPC289_EXACT_ACCUMULATION_BOUND = PROVED_EXACT_CONDITIONAL
+TPC289_PAIRWISE_POSITIVITY = NUMERICALLY_CERTIFIED_FINITE_17_OF_18_ROWS
+TPC289_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_3_PAIRS_ONE_ROW
+TPC289_STRONG_COHERENCE_BLOCK = NUMERICALLY_CERTIFIED_FINITE_8_ROWS
+TPC289_ENERGY_AMPLIFIED = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ROWS
+TPC289_GROWING_COHERENCE_STABILITY = OPEN
+TPC289_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC289_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC289_FIXED_POWER_CREDIT = 0
+TPC289_FULL_GATE_B = OPEN
+TPC289_TWIN_PRIME_RESULT = NONE
+```
+
 当前主线状态：TPC-288 沿着 TPC-287 的 growing-shell clue，把同一个 literal
 physical deleted-diagonal operator 的每个 prime component 保留为完整输出向量，构造
 source-output Gram matrix，并在 34 个 scale/shell/control rows 上做 full-rank audit。
@@ -309,6 +335,12 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-289-cross-prime-gram-coherence - 当前阶段 - 严格证明 normalized Gram coherence
+的 Cauchy bound 与 conditional accumulation envelope；18 个 rows / 1,380 个 pair
+comparisons 中 17/18 rows pairwise positive，早期 crossover 有 3 个 negative pairs，
+8 个 late-shell rows 通过 `eta=3/5, delta=4/5` finite strong block，18/18 rows
+energy ratio `>1`；uniform growing-shell coherence、literal `L2`、full Gate B 仍 OPEN，
+fixed-power credit 为 0。
 tpc-288-growing-shell-gram-obstruction - 当前阶段 - 严格证明 finite operator/output/attachment
 additivity、Gram PSD 与 energy identity；在 34 个 growth/control rows 上认证 34/34
 output Gram full rank、6/6 selected physical active matrices full rank，并发现 13 行

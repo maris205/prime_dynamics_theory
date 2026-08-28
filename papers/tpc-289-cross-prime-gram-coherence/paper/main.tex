@@ -1,0 +1,292 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\Gammaq}{\Gamma_{q,r}}
+
+\title{Cross-Prime Gram Coherence in a Literal\\
+Twin-Prime Dynamics: A Finite Phase Diagram\\
+and Sign-Flip Obstruction}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST)\\
+Wuhan, China}
+\date{28 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding finite shell study found a potentially misleading combination:
+a four-block scalar attachment can be small while the physical output energy
+of the prime shell is amplified.  This paper follows the next structural
+question without changing the literal operator or source.  For the physical
+prime-component output vectors $g_q$ we form the source-native Gram matrix
+$G_{q,r}=\langle g_q,g_r\rangle$ and the normalized squared coherence
+$\Gamma_{q,r}=G_{q,r}^2/(G_{q,q}G_{r,r})$.  We prove exactly a conditional
+coherence-accumulation inequality: a positive coherence floor and diagonal
+balance force a lower bound on the aggregate energy ratio.  An exact-rational
+finite scan of 18 rows and 1,380 unordered pairs then separates two regimes.
+Seventeen rows are pairwise positive, but the early $(N,H,Q,z,s)=(256,38,27,5,1)$
+row contains three negative cross-prime pairs, one with squared coherence about
+$1.37\times 10^{-7}$.  Conversely, eight late-shell rows satisfy the finite
+thresholds $\Gamma_{q,r}\ge 9/25$ and $d_{\min}/d_{\max}\ge4/5$ for every pair,
+while all 18 rows have aggregate energy ratio greater than one.  The result is
+a finite sign/coherence phase diagram and a precise obstruction to promoting
+late-shell behavior to a uniform growing-shell theorem; it is not an
+asymptotic twin-prime result or an arithmetic $L^2$ estimate.
+\end{abstract}
+
+\section{Position on the route map}
+
+The working line studies a single literal dynamical family intended to model a
+prime-shell contribution to the twin-prime problem.  Earlier releases split
+the finite physical operator into prime components and documented scalar
+cancellation.  The immediately preceding release, TPC-288, retained the full
+output vectors and proved the exact Gram identity while certifying full rank on
+a finite growth/control grid \cite{tpc288}.  Its central warning was that a
+small scalar attachment is not an $L^2$ saving.
+
+TPC-289 asks the smallest follow-up question suggested by that warning:
+whether the cross-prime terms themselves have a stable sign and size.  This is
+more informative than another rank computation, but it remains deliberately
+finite.  The distinction between exact identities, finite numerical
+certificates, and open asymptotic gates is maintained throughout.
+
+\section{The frozen physical model}
+
+Let $I=I_N$ be the integer interval used by the frozen source engine and let
+$\beta\in\QQ^I$ be its source vector.  For an odd prime $q$, define the
+centered residue kernel
+\[
+ B_q(u,t)=\mathbf 1_{q\nmid u}\mathbf 1_{q\nmid t}
+ \left(\mathbf 1_{u\equiv t\pmod q}-\frac{1}{q-1}\right).
+\]
+With
+\[
+ K_{H,s}(h)=\frac{H^{2s}}{(H^2+h^2)^s},
+ \qquad
+ D_q(u,t)=\mathbf 1_{u\ne t}B_q(u,t),
+\]
+the literal deleted-diagonal component is
+\[
+ (A_q)_{u,t}=qK_{H,s}(u-t)D_q(u,t),
+ \qquad g_q=A_q\beta.
+\]
+For a finite shell $S$ write
+\[
+ g_S=\sum_{q\in S}g_q,\qquad
+ G_{q,r}=\langle g_q,g_r\rangle,\qquad d_q=G_{q,q}=\norm{g_q}_2^2.
+\]
+No four-block scalar attachment is applied in this paper.  The source, kernel,
+deleted diagonal, and prime shell are exactly those inherited from TPC-288.
+
+For $q\ne r$ with $d_qd_r>0$, define
+\[
+ \Gamma_{q,r}=\frac{G_{q,r}^2}{d_qd_r}.
+\]
+The square records the size of a cross term independently of its sign; the
+sign of $G_{q,r}$ is retained as a separate datum.  Expanding the aggregate
+square gives the exact energy decomposition
+\begin{equation}
+ \frac{\norm{g_S}_2^2}{\sum_{q\in S}d_q}
+ =1+\frac{\sum_{q\ne r}G_{q,r}}{\sum_{q\in S}d_q},
+ \label{eq:energy}
+\end{equation}
+where the off-diagonal sum is over ordered pairs.
+
+\section{Exact coherence structure}
+
+\begin{lemma}[Gram positivity and coherence bound]
+For every finite shell, $G$ is positive semidefinite.  If $d_q,d_r>0$, then
+\begin{equation}
+ 0\leq \Gamma_{q,r}\leq 1.
+ \label{eq:cauchy}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For any real coefficient vector $c$,
+\[
+ c^T Gc=\sum_{q,r}c_qc_r\langle g_q,g_r\rangle
+ =\norm{\sum_qc_qg_q}_2^2\geq0.
+\]
+The lower bound in \eqref{eq:cauchy} is a square and the upper bound is
+Cauchy--Schwarz divided by $d_qd_r>0$.
+\end{proof}
+
+\begin{proposition}[Conditional coherence accumulation]
+Let $k=|S|$, $d_- =\min_{q\in S}d_q$, and
+$d_+=\max_{q\in S}d_q$.  Suppose that for some $0\leq\eta,\delta\leq1$,
+\[
+ G_{q,r}>0,\qquad \Gamma_{q,r}\geq\eta^2\quad(q\ne r),
+ \qquad \frac{d_-}{d_+}\geq\delta.
+ \label{eq:hypotheses}
+\]
+Then
+\begin{equation}
+ \frac{\norm{g_S}_2^2}{\sum_qd_q}
+ \geq 1+\eta\delta(k-1).
+ \label{eq:accumulation}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The positivity assumption selects the positive square-root branch in the
+definition of $\Gamma_{q,r}$, so
+\[
+ G_{q,r}\geq\eta\sqrt{d_qd_r}\geq\eta d_-.
+\]
+There are $k(k-1)$ ordered off-diagonal terms.  Since
+$\sum_qd_q\leq kd_+$, equation \eqref{eq:energy} yields
+\[
+ R_E\geq1+\frac{k(k-1)\eta d_-}{kd_+}
+ \geq1+\eta\delta(k-1).
+\]
+\end{proof}
+
+\begin{remark}
+The proposition is a finite vector lemma, not a claim that its hypotheses
+hold for all prime shells.  If even one cross term is negative, its hypotheses
+fail, irrespective of whether the total energy ratio happens to exceed one.
+This logical separation is the obstruction tested below.
+\end{remark}
+
+\section{Finite protocol}
+
+The certificate uses exact Python `Fraction` arithmetic and the frozen
+TPC-268 engine.  The 18 rows consist of eight $s=2$ growth anchors, four
+selected $s=1$ exponent-crossover rows, and six $s=2$ source-control rows at
+$Q=70$.  The shell anchors range from three to 17 primes.  The six controls
+use $H\in\{48,52\}$ and $z\in\{3,5,7\}$.
+
+For every row the producer reconstructs each $g_q$, forms every rational Gram
+entry, checks \eqref{eq:cauchy}, records the sign census, and computes the
+exact energy ratio in \eqref{eq:energy}.  The finite ``strong block'' test uses
+\[
+ \eta=\frac35,\qquad \delta=\frac45,
+ \qquad \eta^2=\frac9{25}.
+\]
+Thus a 15-prime row passing the test has the conditional lower envelope
+$R_E\geq1+(3/5)(4/5)14=193/25$, while a 17-prime row has
+$R_E\geq217/25$.
+
+The producer locks the TPC-288 source code and result, as well as the frozen
+engine, by normalized-LF SHA-256.  An independent checker reverses the output
+summation order and reconstructs the complete canonical JSON document.  A
+separate stress script rejects ten mutations, including altered signs,
+thresholds, row counts, energy values, and provenance.  Normal and optimized
+Python executions are required to have byte-identical output.
+
+\section{Results: a finite sign/coherence phase diagram}
+
+Table~\ref{tab:representative} gives representative rows.  ``min $\Gamma$''
+is the smallest squared coherence over unordered pairs; ``$+$/$-$'' is the
+pair sign census; and ``strong'' means that all three hypotheses in
+\eqref{eq:hypotheses} pass with the declared $(\eta,\delta)$.
+
+\begin{table}[ht]
+\centering
+\scriptsize
+\begin{tabular}{@{}lrrrrrrrrr@{}}
+\toprule
+axis & $N$ & $H$ & $Q$ & $s$ & $k$ & min $\Gamma$ & $+/-$ & $R_E$ & strong\\
+\midrule
+growth &128&24&9 &2&3 &0.292716&3/0&2.124905&no\\
+growth &192&32&16&2&5 &0.251582&10/0&3.443701&no\\
+growth &256&38&27&2&7 &0.000949&21/0&2.622578&no\\
+growth &384&50&40&2&10&0.207063&45/0&7.106564&no\\
+growth &512&58&60&2&13&0.331366&78/0&10.992677&no\\
+growth &512&58&70&2&15&0.444464&105/0&13.558338&yes\\
+growth &512&58&90&2&17&0.806422&136/0&16.439313&yes\\
+cross &256&38&27&1&7&$1.37\!\times10^{-7}$&18/3&2.166576&no\\
+cross &384&50&40&1&10&0.032697&45/0&4.557433&no\\
+cross &512&58&70&1&15&0.058904&105/0&8.900964&no\\
+control&384&48&70&2&15&0.721183&105/0&14.322934&yes\\
+control&384&52&70&2&15&0.642607&105/0&14.107249&yes\\
+\bottomrule
+\end{tabular}
+\caption{Selected exact-rational rows; decimals are display strings only.}
+\label{tab:representative}
+\end{table}
+
+Across all 18 rows there are 1,380 unordered pair comparisons.  Seventeen
+rows are pairwise positive and one row has three negative pairs; no pair is
+zero.  Every row has $R_E>1$.  The exceptional row is
+$(256,38,27,5,1)$, with shell
+$\{29,31,37,41,43,47,53\}$.  Its negative pairs are
+\[
+ (29,53),\qquad(31,53),\qquad(41,53).
+\]
+The squared coherence of $(31,53)$ is approximately
+$1.3745664\times10^{-7}$, while $(29,53)$ has negative Gram cross term and
+squared coherence approximately $0.0105163$.  Thus the failure is not merely
+a rounding ambiguity: the signs are exact rational signs and one pair is
+nearly orthogonal.
+
+The late block consists of eight rows: the $Q=70$ and $Q=90$ $s=2$ growth
+anchors, together with the six $Q=70$ controls.  Every pair is positive,
+every squared coherence is at least $9/25$, and the diagonal ratio is at least
+$4/5$.  The conditional proposition therefore applies row by row.  The
+finite certificate also finds two exact groups in which the three cutoff
+controls at a fixed height have the same recorded coherence/energy signature;
+this is a warning that these finite controls should not be counted as an
+asymptotically independent source family.
+
+\section{What is and is not established}
+
+The positive late block is useful because it supplies a quantitative mechanism
+for the energy amplification seen in TPC-288: coherent cross terms accumulate
+linearly in the number of components.  The early sign flip is equally useful:
+it refutes the tempting uniform rule
+\[
+ \text{``all declared shell cross terms are positive and have a fixed
+ coherence floor.''}
+\]
+The observed total $R_E>1$ in the exceptional row shows that aggregate
+amplification does not require pairwise positivity either.
+
+The result is therefore an obstruction paper on the route map, not a proof or
+disproof of the twin-prime conjecture.  In particular, we do not claim a
+growing-shell bound, a uniform theorem over literal sources, an arithmetic
+$L^2$ estimate, a fixed-power credit, or a Gate-B conclusion.  The next
+minimal questions are whether an adaptive shell weighting can exploit the
+coherence without violating the physical operator, and whether a restricted
+source class admits a uniform coherence estimate.
+
+\section{Reproducibility and claim firewall}
+
+The complete artifact is in
+\href{../README.md}{the project README}.  The canonical result is
+`results/tpc289\_certificate.json`; the proof and derivation packages state the
+exact scope.  The local fallback evaluator reports:
+
+\begin{verbatim}
+EXACT: Gram PSD, 0 <= Gamma <= 1, conditional accumulation envelope
+FINITE: 17/18 positive rows; 3 negative pairs in one row
+FINITE: 8-row eta=3/5, delta=4/5 strong block; 18/18 R_E > 1
+OPEN: source-restricted/growing-shell coherence and arithmetic L2
+NONE: twin-prime conclusion
+\end{verbatim}
+
+The Session-named Route-A/Route-B evaluator files are not present in this
+checkout, so no official evaluator pass is claimed.  The independent replay,
+mutation audit, and bridge checker are the available fail-closed evidence.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

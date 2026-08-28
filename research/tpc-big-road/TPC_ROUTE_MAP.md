@@ -2,13 +2,50 @@
 
 更新时间：2026-08-28
 
-当前地图版本：V141 / TPC-288
+当前地图版本：V142 / TPC-289
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-288`（`PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION`）；
+当前编号锚点：`TPC-289`（`PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM`）；
 对应论文目录为
-`papers/tpc-288-growing-shell-gram-obstruction/`。
+`papers/tpc-289-cross-prime-gram-coherence/`。
+
+TPC-289 承接 TPC-288 的完整 physical output Gram，保持同一个 literal
+deleted-diagonal operator/source，转而追踪跨素数 Gram 交叉项的 sign 与 normalized
+coherence。18 个 growth/exponent/control rows 共 1,380 个 unordered pairs：17/18 rows
+pairwise positive，但 `(256,38,27,5,1)` 的 `s=1` crossover 有 3 个精确 negative pairs，
+其中 `(31,53)` 的 squared coherence 约 `1.3746e-7`；8 个 late-shell rows 满足
+`Gamma>=9/25` 与 `d_min/d_max>=4/5`，18/18 rows 的 aggregate energy ratio 都大于 1。
+TPC-289 严格证明 `0<=Gamma<=1` 与 conditional accumulation lower bound，因此把晚期
+相干机制和早期 sign-flip 坑分开；source-restricted/growing-shell coherence、arithmetic
+`L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC289_MAXIMUM_CLAIM = PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM
+TPC289_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_ENVELOPE_AND_FINITE_SIGN_PHASE_DIAGRAM
+TPC289_EXACT_GRAM_COHERENCE = PROVED_EXACT_FINITE
+TPC289_EXACT_ACCUMULATION_BOUND = PROVED_EXACT_CONDITIONAL
+TPC289_PAIRWISE_POSITIVITY = NUMERICALLY_CERTIFIED_FINITE_17_OF_18_ROWS
+TPC289_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_3_PAIRS_ONE_ROW
+TPC289_STRONG_COHERENCE_BLOCK = NUMERICALLY_CERTIFIED_FINITE_8_ROWS
+TPC289_ENERGY_AMPLIFIED = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ROWS
+TPC289_TOTAL_PAIR_COMPARISONS = 1380
+TPC289_CONTROL_EQUIVALENCE_GROUPS = 2
+TPC289_UNIFORM_PAIRWISE_POSITIVITY = REFUTED_FINITE_DECLARED_GRID
+TPC289_GROWING_COHERENCE_STABILITY = OPEN
+TPC289_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC289_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC289_FIXED_POWER_CREDIT = 0
+TPC289_FULL_GATE_B = OPEN
+TPC289_TWIN_PRIME_RESULT = NONE
+TPC289_STATUS = PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM
+TPC289_ROUND2_CLUE = TEST_ADAPTIVE_SHELL_WEIGHTING_OR_SOURCE_RESTRICTED_COHERENCE_BEYOND_FINITE_BLOCK
+```
+
+```text
+YOU ARE HERE = V142 / TPC-289
+MAP_LABEL = CROSS-PRIME COHERENCE PHASE DIAGRAM / SIGN-FLIP FIREWALL
+```
 TPC-288 承接 TPC-287，把同一个 physical deleted-diagonal prime shell 的每个 component
 保留为完整 output vector，构造 source-output Gram，并同时审计 aggregate physical
 active matrix。finite operator/output/attachment additivity、Gram PSD 与
@@ -178,6 +215,43 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.83 V142 / TPC-289：cross-prime Gram coherence phase diagram
+
+TPC-289 是 TPC-288 的直接 source-native coherence 追踪，保持同一个 literal physical
+deleted-diagonal operator 与 frozen source。对 `G_(q,r)=<g_q,g_r>` 定义
+`Gamma_(q,r)=G_(q,r)^2/(G_(q,q)G_(r,r))`，严格证明 Gram PSD、`0<=Gamma<=1`，并证明
+若所有 cross terms 为正、`Gamma>=eta^2` 且 `d_min/d_max>=delta`，则
+`R_E>=1+eta*delta*(k-1)`。18 个 growth/exponent/control rows 共 1,380 个 unordered
+pair comparisons：17/18 rows pairwise positive；早期 `(256,38,27,5,1)` 有 3 个精确
+negative pairs，其中 `(31,53)` 的 squared coherence 约 `1.3746e-7`。8 个 late-shell
+rows 满足 `eta=3/5,delta=4/5` finite strong block，18/18 rows energy ratio `>1`。
+
+```text
+TPC289_ROUTE_ADVANCE = YES_SCOPED_EXACT_COHERENCE_ENVELOPE_AND_FINITE_SIGN_PHASE_DIAGRAM
+TPC289_EXACT_GRAM_COHERENCE = PROVED_EXACT_FINITE
+TPC289_EXACT_ACCUMULATION_BOUND = PROVED_EXACT_CONDITIONAL
+TPC289_PAIRWISE_POSITIVITY = NUMERICALLY_CERTIFIED_FINITE_17_OF_18_ROWS
+TPC289_SIGN_FLIP_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_3_PAIRS_ONE_ROW
+TPC289_STRONG_COHERENCE_BLOCK = NUMERICALLY_CERTIFIED_FINITE_8_ROWS
+TPC289_ENERGY_AMPLIFIED = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ROWS
+TPC289_TOTAL_PAIR_COMPARISONS = 1380
+TPC289_CONTROL_EQUIVALENCE_GROUPS = 2
+TPC289_UNIFORM_PAIRWISE_POSITIVITY = REFUTED_FINITE_DECLARED_GRID
+TPC289_GROWING_COHERENCE_STABILITY = OPEN
+TPC289_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC289_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC289_FIXED_POWER_CREDIT = 0
+TPC289_FULL_GATE_B = OPEN
+TPC289_TWIN_PRIME_RESULT = NONE
+TPC289_STATUS = PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM
+TPC289_ROUND2_CLUE = TEST_ADAPTIVE_SHELL_WEIGHTING_OR_SOURCE_RESTRICTED_COHERENCE_BEYOND_FINITE_BLOCK
+```
+
+最强正结果是 late-shell 的有限 coherence accumulation envelope；最强 obstruction 是
+早期 sign flip 与 near-zero pair，说明声明网格上的 uniform positivity/coherence floor
+不能直接成立。source-restricted/growing-shell theorem、arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 open。
 
 ## 5.82 V141 / TPC-288：growing-shell Gram obstruction
 
@@ -866,9 +940,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V141 / TPC-288                    |
-        | GROWING-SHELL GRAM / SCALAR-ENERGY FIREWALL |
-        | full output vectors and active-rank audit    |
+        | YOU ARE HERE — V142 / TPC-289                    |
+        | CROSS-PRIME COHERENCE / SIGN-FLIP FIREWALL    |
+        | normalized Gram and conditional energy bound  |
         +--------------------------------------------------+
                 |
                 v
@@ -5568,6 +5642,13 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
+0. **TPC-289 已完成：cross-prime Gram coherence phase diagram**。在 TPC-288 的
+   source-output Gram 上严格证明 `0<=Gamma<=1` 与 conditional accumulation lower bound；
+   18 个 rows / 1,380 个 unordered pairs 中 17/18 rows pairwise positive，早期 `s=1`
+   crossover 有 3 个 negative pairs，8 个 late-shell rows 通过 `eta=3/5,delta=4/5`
+   strong block，18/18 rows energy ratio 大于 1。该结果 refute 了声明网格上的 uniform
+   positivity/coherence-floor shortcut，但不提供 growing-shell theorem；下一关应测试
+   adaptive shell weighting 或 source-restricted coherence。
 0. **TPC-288 已完成：growing-shell Gram obstruction**。在 TPC-287 的 prime-component
    decomposition 上保留完整 output vectors，严格得到 finite output Gram 的 PSD 与
    `1^T G 1=||g_shell||^2`；34 个 growth/control rows（最大 17-prime shell）中
@@ -5873,6 +5954,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-28 | V142 / TPC-289 | Bridge A / Gate B：cross-prime Gram coherence phase diagram；growing-shell/source-restricted coherence、arithmetic `L2` 与 full Gate B open | `TPC-289` | 严格证明 `0<=Gamma<=1` 与 conditional accumulation lower bound；18 rows / 1,380 unordered pairs 完成 17/18 pairwise-positive rows、3 negative pairs in one early crossover row、8-row `eta=3/5,delta=4/5` strong block、18/18 energy amplification；下一步为 adaptive shell weighting 或 source-restricted coherence |
 | 2026-08-28 | V141 / TPC-288 | Bridge A / Gate B：growing-shell output Gram 与 scalar-energy firewall；source-native cross-prime Gram bound、arithmetic `L2` 与 full Gate B open | `TPC-288` | 严格证明 finite operator/output/attachment additivity、Gram PSD 与 energy identity；34 个 growth/control rows（最大 17-prime shell）完成 34/34 Gram full rank、6/6 selected aggregate active full rank，34/34 energy amplification，13 个 scalar-retention `<1/10` 与 energy `>1` 的 mismatch，fixed-power credit 为 0，下一步为 source-native cross-prime Gram bound |
 | 2026-08-28 | V140 / TPC-287 | Bridge A / Gate B：prime-shell component cancellation depth 已完成；growing-shell/source-control stability、arithmetic `L2` 与 full Gate B open | `TPC-287` | 严格证明 `g_shell=sum_q g_q`、`C_shell=sum_q C_q` 与 conditional retention envelope；1--7 prime declared ladder 完成 84-row / 336-component ledger，全部 components sign-separated，57 mixed-sign rows，retention upper `<1/2/<1/4/<1/10` 为 31/22/8，leave-one-out 为 48 flips / 12 zero，fixed-power credit 为 0，下一步为 coupled growing-shell/source-control stability |
 | 2026-08-27 | V139 / TPC-286 | Bridge A / Gate B：diagonal-including 与 physical deleted-diagonal attachment 已精确拆分；asymptotic dominance、signed full-shell cancellation、arithmetic `L2` 与 full Gate B open | `TPC-286` | 证明 `g_phys=g_full-g_diag` 与 `C_phys=C_full-C_diag`；完成 72-row 三分量 ledger（full/diagonal/physical sign-separated），15 个 full/physical flips、30 个 diagonal-opposition rows、21 个严格 diagonal-dominance rows，fixed-power credit 为 0，下一步为 split 后的 signed full-shell cancellation |
