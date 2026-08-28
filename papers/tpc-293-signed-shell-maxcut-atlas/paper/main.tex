@@ -1,0 +1,256 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.84in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+
+\title{A Signed Max-Cut Obstruction for Multi-Prime Cancellation}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST)\\
+Wuhan, China}
+\date{28 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding pairwise study found exact signed cancellation directions for
+individual physical prime components.  This paper asks whether a whole prime
+shell admits one compatible coefficient-sign assignment.  We formulate the
+question as a signed complete-graph max-cut problem: an edge is favorable
+when its signed Gram cross term becomes nonpositive.  We prove that the
+all-positive $K_m$ benchmark is $\lfloor m^2/4\rfloor$, that the associated
+frustration index is exactly the complement of the signed maximum, and that
+vertex switching preserves the objective.  An exact-rational replay of the
+inherited 18-row literal grid evaluates 1,380 shell edges and 5,727 triangles.
+Seventeen rows are all-positive and attain the benchmark; one early
+exponent-crossover row has three negative edges and a finite sign-only gain of
+three favorable edges.  The result is a structural obstruction and a route
+selection device, not a magnitude-weighted energy estimate, an arithmetic
+$L^2$ theorem, or a twin-prime result.
+\end{abstract}
+
+\section{Position on the twin-prime route}
+
+This release remains in the same literal prime-shell dynamical family.  The
+earlier releases separated physical prime components and measured their Gram
+coherence \cite{tpc287,tpc288,tpc289}.  Nonnegative shell weighting exposed a
+coherence wall \cite{tpc290}, while TPC-291 showed that a single pair can be
+improved by an exact signed Schur direction \cite{tpc291}.  TPC-292 then
+showed that three pair preferences obey a cycle-parity obstruction
+\cite{tpc292}.  The smallest natural next question is global: does the entire
+signed shell have a useful sign assignment, or is the triangle obstruction
+only a local artifact?
+
+We answer this question at the sign layer.  This distinction matters.  The
+physical norm contains the magnitudes of all Gram entries, whereas the graph
+objective below gives every nonzero edge unit weight.  A sign-only gain is
+therefore a diagnostic and a clue for the next weighted experiment, not a
+claim of physical norm reduction.
+
+\section{Physical Gram shell}
+
+Let $I=I_N$ be the frozen integer interval and let $\beta$ be the frozen
+rational source vector.  For an odd prime $q$, height $H$, and exponent $s$,
+write
+\[
+ K_{H,s}(h)=\frac{H^{2s}}{(H^2+h^2)^s},\qquad
+ B_q(u,t)=\mathbf 1_{q\nmid u}\mathbf 1_{q\nmid t}
+ \left(\mathbf 1_{u\equiv t\pmod q}-\frac1{q-1}\right).
+\]
+The deleted-diagonal physical component is $g_q=A_q\beta$, where
+\[
+ (A_q)_{u,t}=qK_{H,s}(u-t)\mathbf 1_{u\ne t}B_q(u,t).
+ \label{eq:model}
+\]
+For a shell $S=\{q:Q<q\leq 2Q\}$, define
+\[
+ d_q=\norm{g_q}^2,\qquad G_{q,r}=\ip{g_q}{g_r},qquad
+ \sigma_{q,r}=\operatorname{sign}(G_{q,r}).
+ \label{eq:gram}
+\]
+All finite calculations use exact rational arithmetic, so no floating-point
+rounding is used to decide an edge sign.
+
+\section{Signed-shell formulation}
+
+For vertex signs $a_q\in\{-1,+1\}$, call an edge favorable when
+\[
+ a_q a_r\sigma_{q,r}=-1.
+\]
+The signed-shell value and frustration index are
+\[
+ F(\sigma)=\max_a\#\{(q,r):a_qa_r\sigma_{q,r}=-1\},qquad
+ \operatorname{fr}(\sigma)=\binom{|S|}{2}-F(\sigma).
+ \label{eq:objective}
+\]
+Fixing one label to $+1$ removes the global reversal symmetry without losing
+an optimum.
+
+\begin{theorem}[All-positive max-cut benchmark]
+If $\sigma_{q,r}=+1$ on every edge of $K_m$, then
+\[
+ F(\sigma)=\left\lfloor\frac{m^2}{4}\right\rfloor.
+\]
+\end{theorem}
+
+\begin{proof}
+Let $r$ vertices have label $+1$.  A favorable edge is exactly an edge
+crossing the induced partition, so its number is $r(m-r)$.  The identity
+\[
+ r(m-r)=\frac{m^2}{4}-\left(r-\frac m2\right)^2
+\]
+gives the upper bound $\lfloor m^2/4\rfloor$, and a partition with
+$r=\lfloor m/2\rfloor$ attains it.
+\end{proof}
+
+\begin{lemma}[Frustration complement and switching]
+For any finite signed graph with $E$ edges, the minimum number of
+unfavorable edges is $E-F(\sigma)$.  If vertex signs $t_q$ switch the graph
+to $\sigma'_{q,r}=t_q\sigma_{q,r}t_r$, then
+$F(\sigma')=F(\sigma)$.
+\end{lemma}
+
+\begin{proof}
+For a fixed labeling every edge is either favorable or unfavorable, hence the
+unfavorable count is $E$ minus the favorable count.  Taking the minimum and
+maximum gives the first assertion.  For the second, map $a_q$ to
+$a'_q=t_qa_q$.  Then
+$a'_qa'_r\sigma'_{q,r}=a_qa_r\sigma_{q,r}$ on every edge, so the map is a
+bijection preserving the objective.
+\end{proof}
+
+\begin{remark}
+The graph objective is deliberately unweighted.  The actual quadratic form
+is
+\[
+ \norm{\sum_q c_qg_q}^2=\sum_qc_q^2d_q+
+ 2\sum_{q<r}c_qc_rG_{q,r},
+\]
+so replacing $|G_{q,r}|$ by one and restricting $c_q$ to signs can change the
+optimizer.  This paper makes that gap explicit.
+\end{remark}
+
+\section{Exact finite protocol}
+
+The certificate inherits eight $s=2$ growth rows, four $s=1$ exponent
+crossover rows, and six $s=2$ source-control rows.  For each row, every
+prime in $Q<q\leq2Q$ is evaluated using the frozen source and physical
+operator.  The resulting Gram matrix is exact; every off-diagonal sign is
+then placed in a complete signed graph.  The producer enumerates all
+$2^{m-1}$ labelings, records one optimum and its count, and computes the
+triangle parity census as a consistency check.
+
+The independent checker imports only the frozen TPC-268 engine and computes
+the physical outputs in source-coordinate-first order.  It reconstructs the
+complete row records rather than importing the TPC-293 producer.  Parent
+code/result hashes and the engine hash are recorded in both checkers.
+
+\section{Finite atlas}
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Global exact-rational signed-shell census.}
+\label{tab:global}
+\begin{tabular}{@{}lr@{}}
+\toprule
+quantity & count\\
+\midrule
+rows & 18\\
+shell edges & 1,380\\
+maximum favorable edges (summed) & 744\\
+minimum unsatisfied edges (summed) & 636\\
+signed gain over all-positive benchmark & 3\\
+all-positive rows & 17\\
+signed-gain rows & 1\\
+triangles & 5,727\\
+sign-frustrated triangles & 5,718\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The edge signs are all positive in 17 rows.  The sole exception is
+$(N,H,Q,z,s)=(256,38,27,5,1)$, whose seven-prime shell is
+$\{29,31,37,41,43,47,53\}$.  Its three negative edges are
+$(29,53)$, $(31,53)$, and $(41,53)$.  Consequently its signed maximum is
+15, compared with the all-positive benchmark 12; its minimum unsatisfied
+count is 6 instead of 9.  The aggregate gain is therefore exactly 3 edges.
+
+\begin{table}[ht]
+\centering
+\scriptsize
+\caption{Representative row records.  The frustration column is the exact
+minimum number of unsatisfied sign edges.}
+\label{tab:rows}
+\begin{tabular}{@{}lrrrrrrrr@{}}
+\toprule
+axis & $N$ & $H$ & $Q$ & $s$ & $|S|$ & $F$ & fr & gain\\
+\midrule
+growth &128&24&9 &2&3 &2 &1 &0\\
+growth &192&32&16&2&5 &6 &4 &0\\
+growth &256&38&27&2&7 &12&9 &0\\
+growth &384&50&40&2&10&25&20&0\\
+growth &512&58&60&2&13&42&36&0\\
+growth &512&58&90&2&17&72&64&0\\
+crossover&256&38&27&1&7 &15&6 &3\\
+control &384&52&70&2&15&56&49&0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The 5,727 triangles contain 5,718 sign-frustrated triangles, consistent with
+the TPC-292 parity census.  In particular, the late row
+$(512,58,90,5,2)$ contributes all 680 possible triangles with `+++` edge
+pattern.  The shell-level optimization therefore does not turn the late
+near-coherent block into a uniformly favorable cancellation direction.
+
+\section{Interpretation and claim firewall}
+
+The result closes one structural uncertainty and leaves the arithmetic road
+unchanged.  On the declared grid, the signed graph is overwhelmingly the
+all-positive graph, for which the exact max-cut benchmark is already sharp.
+The exceptional crossover row is useful precisely because it is small: it
+shows that sign irregularity can exist, but it supplies only a unit-weight
+gain and no evidence that Gram magnitudes or source coefficients exploit it.
+
+The exact claims are the max-cut theorem, the frustration complement, and
+switching invariance.  The finite atlas is certified by exact rational
+reproduction and an independent physical replay.  A growing-shell signed
+graph theorem, a magnitude-weighted Rayleigh estimate, a source-restricted
+coefficient-image theorem, an arithmetic $L^2$ bound, fixed-power credit, and
+the full Gate-B/twin-prime endpoint remain open.  The Session-named Route-A
+and Route-B evaluator files are absent from this checkout; no official
+evaluator pass is claimed.
+
+\section{Reproducibility and conclusion}
+
+From the project directory, run:
+\begin{verbatim}
+export PYTHONDONTWRITEBYTECODE=1
+python -B code/tpc293_signed_shell_maxcut_certificate.py --check
+python -B experiments/tpc293_independent_checker.py
+python -B experiments/tpc293_signed_graph_stress.py
+\end{verbatim}
+The canonical finite result is
+\texttt{results/tpc293\_certificate.json}.  Normal and optimized runs are
+required to have empty standard error and byte-identical standard output.
+
+TPC-293 promotes the route's reusable object from a signed triangle to a
+signed prime-shell graph.  The next logically minimal experiment is to put
+the actual Gram magnitudes back into the objective and test whether the
+finite `+3` sign anomaly survives.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

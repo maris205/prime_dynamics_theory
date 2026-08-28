@@ -1,7 +1,55 @@
 # TPC HANDOFF
 
 更新时间：2026-08-28
-交接状态：`BOLD_CHANNEL_V145_TPC292_THREE_PRIME_SIGN_FRUSTRATION_ATLAS_RELEASED`
+交接状态：`BOLD_CHANNEL_V146_TPC293_SIGNED_SHELL_MAXCUT_ATLAS_RELEASED`
+
+TPC-293 current section: signed shell max-cut atlas
+-----------------------------------------------------------------------------------------------
+
+TPC-293 follows the TPC-292 triangle-parity obstruction and asks for one
+coefficient-sign assignment on the full prime shell.  The exact all-positive
+complete-graph benchmark is `floor(m^2/4)` favorable edges.  The signed
+frustration index is its edge-complement, and vertex switching preserves the
+objective.
+
+The exact-rational finite replay covers 1,380 Gram edges in the inherited
+18-row grid.  Seventeen rows are all-positive and equal the benchmark.  The
+only exception is `(N,H,Q,z,s)=(256,38,27,5,1)`: three negative edges raise
+the signed maximum from 12 to 15.  Across all rows the maximum favorable total
+is 744, the minimum unsatisfied total is 636, and the sign-only gain is 3.
+
+```text
+TPC293_MAXIMUM_CLAIM = PROVED_EXACT_ALL_POSITIVE_MAXCUT_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGNED_SHELL_FRUSTRATION_ATLAS
+TPC293_ROUTE_ADVANCE = YES_SCOPED_THREE_PRIME_TO_WHOLE_SHELL_SIGNED_GRAPH
+TPC293_ALL_POSITIVE_MAXCUT = PROVED_EXACT_CONDITIONAL
+TPC293_SIGNED_OBJECTIVE = PROVED_EXACT_FINITE
+TPC293_SWITCHING_INVARIANCE = PROVED_EXACT_FINITE
+TPC293_SIGNED_MAXCUT_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC293_EDGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_1380_EDGES
+TPC293_MAX_FAVORABLE = NUMERICALLY_CERTIFIED_FINITE_744
+TPC293_MINIMUM_UNSATISFIED = NUMERICALLY_CERTIFIED_FINITE_636
+TPC293_EXCEPTIONAL_GAIN = NUMERICALLY_CERTIFIED_FINITE_PLUS_3_EDGES_ONE_ROW
+TPC293_GROWING_SIGNED_GRAPH = OPEN
+TPC293_MAGNITUDE_WEIGHTED_RAYLEIGH = OPEN
+TPC293_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC293_FIXED_POWER_CREDIT = 0
+TPC293_FULL_GATE_B = OPEN
+TPC293_TWIN_PRIME_RESULT = NONE
+TPC293_STATUS = PROVED_EXACT_ALL_POSITIVE_MAXCUT_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGNED_SHELL_FRUSTRATION_ATLAS
+TPC293_ROUND2_CLUE = TEST_MAGNITUDE_WEIGHTED_SIGNED_RAYLEIGH_AND_SOURCE_IMAGE
+```
+
+Strongest positive result: an exact whole-shell sign compiler with a complete
+finite atlas.  Strongest obstruction: 17/18 shells reduce to the all-positive
+max-cut wall, and the sole exception gains only three unweighted edges.  The
+next open theorem is a magnitude-weighted signed Rayleigh/source-image bound.
+Arithmetic `L2`, fixed-power credit, full Gate B, and the twin-prime endpoint
+remain open.  The Session-named Route-A/Route-B evaluator files are absent;
+local proof/certificate, independent replay, stress, and Bridge-B checks are
+the fail-closed fallback.
+
+TPC-292 remains the immediate upstream section below.
+-----------------------------------------------------------------------------------------------
 
 TPC-292 current section: three-prime sign frustration atlas
 -----------------------------------------------------------------------------------------------
@@ -9541,20 +9589,21 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V145/TPC-292 是当前 release；其 producer、independent replay、stress audit 与
+V146/TPC-293 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade command set 共 189 对 normal/optimized 命令、378 次
+当前 curated cascade command set 共 193 对 normal/optimized 命令、386 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
 TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对，TPC-290 再追加末尾 4 对，
-TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对。
+TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对，TPC-293 再追加末尾 4 对。
 V141/TPC-288 的 173 对
 全量回归已通过；TPC-289 新增的 4 对已由本项目 bridge 与 standalone tail
 checks 逐项通过；TPC-290、TPC-291、TPC-292 的各 4 对均由各自 bridge 与 standalone
-tail checks 逐项通过，完整 189 对组合未因重复计算而再次运行。
+tail checks 逐项通过；TPC-293 的 4 对也由本项目 bridge 与 standalone tail checks
+逐项通过，完整 193 对组合未因重复计算而再次运行。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
 执行 normal与 optimized只读 checker；每一对必须都为零，且每一对 stdout
@@ -10015,6 +10064,19 @@ python -B research/tpc-big-road/tpc_bridge_b_three_prime_sign_frustration_atlas_
 python -O -B research/tpc-big-road/tpc_bridge_b_three_prime_sign_frustration_atlas_checker.py --check
 ```
 
+TPC-293 的项目级 producer、independent replay、signed-graph stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-293-signed-shell-maxcut-atlas/code/tpc293_signed_shell_maxcut_certificate.py --check
+python -O -B papers/tpc-293-signed-shell-maxcut-atlas/code/tpc293_signed_shell_maxcut_certificate.py --check
+python -B papers/tpc-293-signed-shell-maxcut-atlas/experiments/tpc293_independent_checker.py
+python -O -B papers/tpc-293-signed-shell-maxcut-atlas/experiments/tpc293_independent_checker.py
+python -B papers/tpc-293-signed-shell-maxcut-atlas/experiments/tpc293_signed_graph_stress.py
+python -O -B papers/tpc-293-signed-shell-maxcut-atlas/experiments/tpc293_signed_graph_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_signed_shell_maxcut_atlas_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_signed_shell_maxcut_atlas_checker.py --check
+```
+
 TPC-282 的项目级 producer、independent replay、attachment stress 与 bridge checker：
 
 ```bash
@@ -10043,7 +10105,18 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-292 入口：
+最新 TPC-293 入口：
+
+```text
+papers/tpc-293-signed-shell-maxcut-atlas/README.md
+papers/tpc-293-signed-shell-maxcut-atlas/PROOF_PACKAGE.md
+papers/tpc-293-signed-shell-maxcut-atlas/notes/theorem_ledger.md
+papers/tpc-293-signed-shell-maxcut-atlas/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_signed_shell_maxcut_atlas.md
+research/tpc-big-road/tpc_bridge_b_signed_shell_maxcut_atlas_checker.py
+```
+
+TPC-292 入口：
 
 ```text
 papers/tpc-292-three-prime-sign-frustration-atlas/README.md

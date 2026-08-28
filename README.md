@@ -9,6 +9,32 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-293 把 TPC-292 的 triangle parity obstruction 提升到 whole-shell
+signed complete graph。严格证明 all-positive `K_m` 的 favorable-edge maximum 是
+`floor(m^2/4)`，并证明 finite signed frustration complement 与 switching invariance。
+同一 18-row literal grid 的 1,380 个 Gram edges 上，17/18 rows 完全 all-positive；唯一
+`(256,38,27,5,1)` crossover row 的 3 个 negative edges 把 signed maximum 从 12 提到
+15。总计 max favorable 为 744、minimum unsatisfied 为 636、sign-only gain 仅 `+3`。
+这把主要坑定位为 shell-level compatibility，并明确下一关必须恢复 Gram magnitudes；
+growing signed theorem、magnitude-weighted Rayleigh、literal arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC293_ALL_POSITIVE_MAXCUT = PROVED_EXACT_CONDITIONAL
+TPC293_SIGNED_OBJECTIVE = PROVED_EXACT_FINITE
+TPC293_SWITCHING_INVARIANCE = PROVED_EXACT_FINITE
+TPC293_SIGNED_MAXCUT_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC293_EDGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_1380_EDGES
+TPC293_MAX_FAVORABLE = NUMERICALLY_CERTIFIED_FINITE_744
+TPC293_MINIMUM_UNSATISFIED = NUMERICALLY_CERTIFIED_FINITE_636
+TPC293_EXCEPTIONAL_GAIN = NUMERICALLY_CERTIFIED_FINITE_PLUS_3_EDGES_ONE_ROW
+TPC293_MAGNITUDE_WEIGHTED_RAYLEIGH = OPEN
+TPC293_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC293_FIXED_POWER_CREDIT = 0
+TPC293_FULL_GATE_B = OPEN
+TPC293_TWIN_PRIME_RESULT = NONE
+```
+
 当前主线状态：TPC-292 承接 TPC-291 的 pairwise Schur cancellation，把问题推进到三素数
 兼容性。对三个非零 Gram edges，严格证明 coefficient signs 能让三个 pair contributions
 同时非正，当且仅当 edge-sign product 为 `-1`；product 为 `+1` 的三角形是 exact
@@ -410,6 +436,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-293-signed-shell-maxcut-atlas - 当前阶段 - 严格证明 all-positive complete-graph
+max-cut、signed frustration complement 与 switching invariance；18 rows / 1,380 edges
+完成 whole-shell exact-rational atlas（744 favorable、636 unsatisfied），17/18 rows 与
+all-positive benchmark 相同，唯一 crossover row 有 `+3` sign-only gain；magnitude-weighted
+Rayleigh、literal `L2`、full Gate B 仍 OPEN，fixed-power credit 为 0。
 tpc-292-three-prime-sign-frustration-atlas - 当前阶段 - 严格证明 triangle sign parity
 criterion、three-vector Schur residual 与 normalized Gram-volume identity；18 rows / 5,727
 triples 完成 5,718 sign-frustrated、9 anti-alignable、5,727 positive-volume 的

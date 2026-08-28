@@ -2,13 +2,42 @@
 
 更新时间：2026-08-28
 
-当前地图版本：V145 / TPC-292
+当前地图版本：V146 / TPC-293
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-292`（`PROVED_EXACT_TRIANGLE_SIGN_PARITY_AND_THREE_VECTOR_SCHUR_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_FRUSTRATION_ATLAS`）；
+当前编号锚点：`TPC-293`（`PROVED_EXACT_ALL_POSITIVE_MAXCUT_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGNED_SHELL_FRUSTRATION_ATLAS`）；
 对应论文目录为
-`papers/tpc-292-three-prime-sign-frustration-atlas/`。
+`papers/tpc-293-signed-shell-maxcut-atlas/`。
+
+TPC-293 把 TPC-292 的 triangle parity obstruction 提升为 whole-shell signed complete
+graph。严格证明 all-positive `K_m` favorable-edge maximum 为 `floor(m^2/4)`，并证明
+frustration complement 与 switching invariance。18-row literal grid 共 1,380 edges：
+17 rows all-positive；唯一 `(256,38,27,5,1)` crossover row 由 3 个 negative edges
+得到 `+3` sign-only gain。总 max favorable / minimum unsatisfied 为 `744/636`。这把
+主要桥坑定位为 magnitude-weighted compatibility；growing theorem、source-native
+arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC293_MAXIMUM_CLAIM = PROVED_EXACT_ALL_POSITIVE_MAXCUT_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGNED_SHELL_FRUSTRATION_ATLAS
+TPC293_ROUTE_ADVANCE = YES_SCOPED_THREE_PRIME_TO_WHOLE_SHELL_SIGNED_GRAPH
+TPC293_ALL_POSITIVE_MAXCUT = PROVED_EXACT_CONDITIONAL
+TPC293_SIGNED_OBJECTIVE = PROVED_EXACT_FINITE
+TPC293_SWITCHING_INVARIANCE = PROVED_EXACT_FINITE
+TPC293_SIGNED_MAXCUT_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC293_EDGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_1380_EDGES
+TPC293_MAX_FAVORABLE = NUMERICALLY_CERTIFIED_FINITE_744
+TPC293_MINIMUM_UNSATISFIED = NUMERICALLY_CERTIFIED_FINITE_636
+TPC293_EXCEPTIONAL_GAIN = NUMERICALLY_CERTIFIED_FINITE_PLUS_3_EDGES_ONE_ROW
+TPC293_GROWING_SIGNED_GRAPH = OPEN
+TPC293_MAGNITUDE_WEIGHTED_RAYLEIGH = OPEN
+TPC293_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC293_FIXED_POWER_CREDIT = 0
+TPC293_FULL_GATE_B = OPEN
+TPC293_TWIN_PRIME_RESULT = NONE
+TPC293_STATUS = PROVED_EXACT_ALL_POSITIVE_MAXCUT_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGNED_SHELL_FRUSTRATION_ATLAS
+TPC293_ROUND2_CLUE = TEST_MAGNITUDE_WEIGHTED_SIGNED_RAYLEIGH_AND_SOURCE_IMAGE
+```
 
 TPC-292 承接 TPC-291 的 pairwise Schur cancellation，把兼容性推进到三素数。对三个
 非零 Gram edges，严格证明三个 pair contributions 能同时非正，当且仅当 edge-sign
@@ -66,8 +95,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V145 / TPC-292
-MAP_LABEL = THREE-PRIME SIGN FRUSTRATION / SIGNED-GRAPH COMPATIBILITY PIER
+YOU ARE HERE = V146 / TPC-293
+MAP_LABEL = WHOLE-SHELL SIGNED MAXCUT / MAGNITUDE-WEIGHTED PIER
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -303,6 +332,45 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.87 V146 / TPC-293：signed shell max-cut atlas
+
+TPC-293 保持 TPC-292 的 literal physical prime-component vectors，把 triangle parity
+推进成 whole-shell signed complete graph。对 `sigma_ij=sign(G_ij)`，定义 favorable edge
+为 `a_i a_j sigma_ij=-1`。all-positive `K_m` 的 optimum 严格等于
+`floor(m^2/4)`；minimum unsatisfied 是总边数减 optimum，且 switching vertex signs 不
+改变该值。
+
+沿用 18-row literal grid，exact-rational replay 完成 1,380 edges。17 rows 的所有
+cross signs 均为正，故 exact optimum 与 all-positive benchmark 相同。唯一
+`(256,38,27,5,1)` crossover row 有 3 个 negative edges，signed optimum 15 对
+benchmark 12。全局总计 max favorable 744、minimum unsatisfied 636、sign-only gain 3。
+
+```text
+TPC293_ROUTE_ADVANCE = YES_SCOPED_THREE_PRIME_TO_WHOLE_SHELL_SIGNED_GRAPH
+TPC293_ALL_POSITIVE_MAXCUT = PROVED_EXACT_CONDITIONAL
+TPC293_SIGNED_OBJECTIVE = PROVED_EXACT_FINITE
+TPC293_SWITCHING_INVARIANCE = PROVED_EXACT_FINITE
+TPC293_SIGNED_MAXCUT_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC293_EDGE_CENSUS = NUMERICALLY_CERTIFIED_FINITE_1380_EDGES
+TPC293_MAX_FAVORABLE = NUMERICALLY_CERTIFIED_FINITE_744
+TPC293_MINIMUM_UNSATISFIED = NUMERICALLY_CERTIFIED_FINITE_636
+TPC293_EXCEPTIONAL_GAIN = NUMERICALLY_CERTIFIED_FINITE_PLUS_3_EDGES_ONE_ROW
+TPC293_GROWING_SIGNED_GRAPH = OPEN
+TPC293_MAGNITUDE_WEIGHTED_RAYLEIGH = OPEN
+TPC293_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC293_FIXED_POWER_CREDIT = 0
+TPC293_FULL_GATE_B = OPEN
+TPC293_TWIN_PRIME_RESULT = NONE
+TPC293_STATUS = PROVED_EXACT_ALL_POSITIVE_MAXCUT_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGNED_SHELL_FRUSTRATION_ATLAS
+TPC293_ROUND2_CLUE = TEST_MAGNITUDE_WEIGHTED_SIGNED_RAYLEIGH_AND_SOURCE_IMAGE
+```
+
+strongest positive result：exact whole-shell signed max-cut / switching compiler 与完整
+finite edge atlas；strongest obstruction：17/18 shells 落在 all-positive wall，唯一异常
+也只有 unweighted `+3`；open theorem：magnitude-weighted signed Rayleigh bound with
+literal source-image feasibility；reusable structure：`physical Gram -> signed graph ->
+maxcut/frustration -> weighted Rayleigh -> source test`。
 
 ## 5.86 V145 / TPC-292：three-prime sign frustration atlas
 
@@ -1144,9 +1212,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V145 / TPC-292                    |
-        | THREE-PRIME SIGN FRUSTRATION                    |
-        | signed-graph compatibility / source-image pier |
+        | YOU ARE HERE — V146 / TPC-293                    |
+        | WHOLE-SHELL SIGNED MAXCUT                       |
+        | magnitude-weighted / source-image pier         |
         +--------------------------------------------------+
                 |
                 v
@@ -5846,6 +5914,13 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
+0. **TPC-293 已完成：signed shell max-cut atlas**。在 TPC-292 的 triangle parity 之后，
+   严格证明 all-positive `K_m` benchmark、frustration complement 与 switching invariance；
+   18-row grid 的 1,380 edges 完成 exact signed atlas（17/18 rows all-positive，唯一
+   crossover row 仅有 `+3` sign-only gain）。下一关必须把 Gram magnitudes 放回 signed
+   Rayleigh objective，并随后检查 literal source image；不得把 unit-edge gain 当作
+   physical energy 或 arithmetic `L2` credit。
+
 0. **TPC-292 已完成：three-prime sign frustration atlas**。在 TPC-291 的 pairwise
    Schur cancellation 之后，严格证明 triangle edge-sign parity criterion 与
    three-vector Schur residual；18-row grid 的 5,727 个 triples 完成 exact atlas
@@ -6172,6 +6247,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-28 | V146 / TPC-293 | Bridge A / Gate B：whole-shell signed max-cut；magnitude-weighted objective、source-native arithmetic `L2` 与 full Gate B open | `TPC-293` | 严格证明 all-positive `K_m` max-cut、frustration complement 与 switching invariance；18 rows / 1,380 edges 完成 exact atlas，17/18 rows all-positive，唯一 crossover row 有 `+3` sign-only gain，总 max favorable / minimum unsatisfied 为 `744/636`；下一步为 magnitude-weighted signed Rayleigh 与 source-image feasibility |
 | 2026-08-28 | V145 / TPC-292 | Bridge A / Gate B：three-prime sign-frustration compatibility obstruction；growing signed graph、source-native arithmetic `L2` 与 full Gate B open | `TPC-292` | 严格证明 triangle sign parity 与 three-vector Schur residual；18 rows / 5,727 triples 完成 5,718 frustrated、9 anti-alignable、5,727 positive normalized volumes；下一步为 signed-graph max-cut/frustration index 与 source-image feasibility |
 | 2026-08-28 | V144 / TPC-291 | Bridge A / Gate B：signed two-prime Schur cancellation atlas；multi-prime reassembly、growing signed theorem、arithmetic `L2` 与 full Gate B open | `TPC-291` | 严格证明 Schur projection residual `1-Gamma`、signed Rayleigh minimum `1-sqrt(Gamma)` 与 coefficient sign rule；18 rows / 1,380 pairs 完成 1,377 positive、3 negative、0 zero 的 coherence-to-cancellation atlas，residual thresholds `1074/852/477`；下一步为 multi-prime signed null directions 或 source-restricted diffuse weights |
 | 2026-08-28 | V143 / TPC-290 | Bridge A / Gate B：adaptive shell weighting wall 与 sparse sign-flip escape；growing weighted theorem、arithmetic `L2` 与 full Gate B open | `TPC-290` | 证明 weighted Gram identity、nonnegative no-decay 与 effective-support lower bound；18 rows 上 54/54 full-support policies、18/18 leave-one-out minima amplified，3 个 sparse equal-pair subunit witnesses 全在一个 sign-flip row；下一步为 signed two-prime Schur cancellation 或 source-restricted diffuse theorem |
