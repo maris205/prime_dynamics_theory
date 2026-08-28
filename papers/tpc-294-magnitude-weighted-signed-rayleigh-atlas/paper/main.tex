@@ -1,0 +1,253 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.82in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+
+\title{Magnitude-Weighted Signed Rayleigh Cancellation in Finite Prime Shells}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST)\\
+Wuhan, China}
+\date{28 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding signed-shell study treated every nonzero Gram cross term as a
+unit edge.  That sign layer can identify compatible cuts, but it does not
+measure the physical quadratic form.  This paper restores the exact Gram
+magnitudes and studies the trace-normalized quotient over equal coefficient
+signs.  We prove the diagonal-plus-cross-term identity, prove that a
+common-denominator exhaustive enumeration is globally optimal modulo global
+sign reversal, and certify the resulting finite atlas with exact rational
+arithmetic.  On the inherited 18-row literal grid, all 18 globally optimized
+quotients are below one, all 18 all-positive quotients are above one, and the
+weighted optimizer differs from the unit-edge max-cut optimizer on all 18
+rows.  The result is a finite weighted structural diagnostic: source-image
+feasibility, growing-shell control, arithmetic $L^2$ bounds, and the
+twin-prime endpoint remain open.
+\end{abstract}
+
+\section{Position on the twin-prime route}
+
+This release stays inside the same literal prime-shell dynamical family.  The
+earlier papers separated physical prime components and measured their Gram
+coherence \cite{tpc287,tpc288,tpc289}.  Adaptive nonnegative weighting found a
+coherence wall \cite{tpc290}; a signed pair direction was then isolated in
+TPC-291 \cite{tpc291}.  TPC-292 showed that three pairwise preferences obey a
+cycle-parity obstruction \cite{tpc292}, and TPC-293 lifted that sign question
+to a complete signed shell graph \cite{tpc293}.  The present paper performs
+the smallest missing test: put the Gram magnitudes back into the objective.
+
+The distinction is essential.  A unit-weight max-cut label optimizes a
+combinatorial surrogate.  The physical norm weights each cross term by its
+actual magnitude and also carries a fixed diagonal contribution.  We compare
+the two optimizers directly rather than identifying them by assumption.
+
+\section{Physical shell}
+
+Let $I=I_N$ be the frozen integer interval and let $\beta$ be the frozen
+rational source vector.  For an odd prime $q$, height $H$, and exponent $s$,
+write
+\[
+ K_{H,s}(h)=\frac{H^{2s}}{(H^2+h^2)^s},\qquad
+ B_q(u,t)=\mathbf 1_{q\nmid u}\mathbf 1_{q\nmid t}
+ \left(\mathbf 1_{u\equiv t\pmod q}-\frac1{q-1}\right).
+\]
+The deleted-diagonal physical component is $g_q=A_q\beta$, where
+\[
+ (A_q)_{u,t}=qK_{H,s}(u-t)\mathbf 1_{u\ne t}B_q(u,t).
+ \label{eq:model}
+\]
+For a finite prime shell $S=\{q:Q<q\le 2Q\}$, define the exact Gram matrix
+\[
+ G_{q,r}=\ip{g_q}{g_r},\qquad
+ \operatorname{tr}G=\sum_{q\in S}G_{q,q}.
+ \label{eq:gram}
+\]
+All quantities on the declared grid are rational.
+
+\section{Weighted sign quotient}
+
+For an equal-coefficient sign vector $a\in\{-1,+1\}^{S}$, define
+\[
+ R(a)=\frac{a^{\mathsf T}Ga}{\operatorname{tr}G}.
+ \label{eq:rayleigh}
+\]
+The diagonal part is fixed, and symmetry gives the following exact identity.
+
+\begin{theorem}[Trace-normalized signed quadratic identity]
+If $G$ is symmetric with positive trace, then
+\[
+ R(a)=1+\frac{2\sum_{q<r}a_q a_rG_{q,r}}
+ {\operatorname{tr}G}.
+ \label{eq:identity}
+\]
+Moreover $R(a)\ge0$ when $G$ is a Gram matrix.
+\end{theorem}
+
+\begin{proof}
+Expand $a^{\mathsf T}Ga$.  Since $a_q^2=1$, its diagonal contribution is
+$\sum_qG_{q,q}=\operatorname{tr}G$, and symmetry combines the two copies of
+each upper-triangular cross term.  This proves \eqref{eq:identity}.  If $G$
+is a Gram matrix, then $a^{\mathsf T}Ga=\norm{\sum_q a_qg_q}^2\ge0$.
+\end{proof}
+
+The unit-edge objective of TPC-293 keeps only the signs of $G_{q,r}$.  In
+contrast, \eqref{eq:identity} retains the weights $|G_{q,r}|$ and minimizes
+their signed sum.  This is the precise layer at which the two routes can
+separate.
+
+\section{Exact finite optimization}
+
+Let $D$ be the least common multiple of all denominators in $G$ and put
+$M=DG$.  Then $M$ is an integer symmetric matrix and
+\[
+ R(a)=\frac{a^{\mathsf T}Ma}{\operatorname{tr}M}.
+ \label{eq:integer}
+\]
+Global reversal $a\mapsto-a$ leaves this value unchanged.  Thus fixing one
+coordinate, say $a_0=+1$, leaves exactly $2^{|S|-1}$ representatives.
+
+\begin{theorem}[Global finite sign search]
+For rational $G$ with positive trace, exhaustive enumeration of those
+$2^{|S|-1}$ representatives returns the global minimum and maximum of
+$R(a)$ over all sign vectors.
+\end{theorem}
+
+\begin{proof}
+Multiplication by the positive $D$ preserves ordering.  Every sign vector is
+either represented by exactly one vector with first coordinate $+1$ or by its
+global reversal, and the quadratic form is invariant under that reversal.
+The restricted enumeration therefore contains one representative of every
+equivalence class, so its extrema are the unrestricted extrema. \\qed
+\end{proof}
+
+For the producer, a Gray traversal updates an integer quadratic value after a
+single label flip.  If
+$F_v=\sum_{j\ne v}M_{v,j}a_j$ and the old label is $a_v$, then
+\[
+ (a')^{\mathsf T}Ma-a^{\mathsf T}Ma=-4a_vF_v,\\qquad
+ F'_u-F_u=-2a_vM_{u,v}\quad(u\ne v).
+ \label{eq:gray}
+\]
+The independent checker uses direct reflected-binary enumeration and a
+source-coordinate-first physical accumulation, so the certificate does not
+depend on one traversal or one summation order.
+
+\section{Finite protocol and atlas}
+
+The experiment inherits eight $s=2$ growth rows, four $s=1$ exponent
+crossover rows, and six $s=2$ source-control rows.  For every row, all primes
+in $Q<q\le2Q$ are evaluated exactly, their Gram matrix is integerized, and
+every equal-sign labeling is visited.  The unit-edge TPC-293 max-cut witness
+is also evaluated against the weighted matrix.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Global finite audit on the inherited grid.}
+\label{tab:global}
+\begin{tabular}{@{}lr@{}}
+\toprule
+quantity & count\\
+\midrule
+rows & 18\\
+shell edges & 1,380\\
+weighted minima below one & 18 / 18\\
+all-positive quotients above one & 18 / 18\\
+max-cut candidate quotients below one & 18 / 18\\
+weighted optimum differs from max-cut & 18 / 18\\
+weighted optimum at most $1/4$ & 13 / 18\\
+weighted optimum at most $1/10$ & 8 / 18\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:rows} gives representative exact-rational results.  Decimal
+values are display-only; all comparisons in the certificate use fractions.
+
+\begin{table}[ht]
+\centering
+\scriptsize
+\caption{Representative trace-normalized quotients.}
+\label{tab:rows}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+axis & $N$ & $H$ & $Q$ & $s$ & $|S|$ & $R_{+}$ & $R_{\min}$\\
+\midrule
+growth &128&24&9 &2&3 &2.125&0.534\\
+growth &192&32&16&2&5 &3.444&0.409\\
+growth &384&50&40&2&10&7.107&0.182\\
+growth &512&58&60&2&13&10.993&0.108\\
+growth &512&58&90&2&17&16.439&0.0496\\
+crossover&256&38&27&1&7 &2.167&0.519\\
+crossover&512&58&90&1&17&12.363&0.143\\
+control &384&52&70&2&15&14.107&0.0638\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The smallest quotient in the grid is
+$0.0496374497659$ at $(N,H,Q,z,s)=(512,58,90,5,2)$, while the largest
+all-positive quotient is $16.4393131994$ at the same row.  The comparison is
+especially informative at the TPC-293 exceptional row
+$(256,38,27,5,1)$.  Its unit-edge max-cut label gives
+$R=0.988974603760$, but the exact weighted optimum gives
+$R=0.519059163428$.  Across the full grid, the weighted optimum differs from
+the max-cut value in every row.
+
+\section{Interpretation and route boundary}
+
+The finite result closes a genuine missing branch of the map.  The
+sign-frustration atlas did not by itself say whether a favorable edge pattern
+carried enough mass.  TPC-294 answers that finite question affirmatively for
+the ambient equal-sign cube, while simultaneously showing that unit-edge
+max-cut is not the right physical optimizer.
+
+There is a second, equally important boundary.  The signs $a_q$ were
+optimized in the ambient coefficient-sign cube; they were not required to be
+images of a coefficient vector generated by the frozen source map.  The
+source-native image may be much smaller, and no surjectivity or approximation
+theorem is proved here.  Nor does an 18-row atlas imply a growing-shell
+estimate.  Thus the result pays no fixed-power credit and leaves arithmetic
+$L^2$, Gate B, and the twin-prime endpoint open.
+
+The next natural experiment is not another unconstrained sign search.  It is
+an image audit: compute the coefficient/sign patterns induced by admissible
+source perturbations, compare them with the weighted minimizers, and measure
+the least attainable weighted quotient.  This is recorded as the
+\texttt{ROUND2\_CLUE} in the certificate.
+
+\section{Reproducibility and conclusion}
+
+From the project directory, run:
+\begin{verbatim}
+export PYTHONDONTWRITEBYTECODE=1
+python -B code/tpc294_magnitude_weighted_signed_rayleigh_certificate.py --check
+python -B experiments/tpc294_independent_checker.py
+python -B experiments/tpc294_magnitude_weighted_stress.py
+\end{verbatim}
+The canonical result is
+\texttt{results/tpc294\_certificate.json}.  Normal and optimized invocations
+are required to have empty standard error and byte-identical standard output.
+
+The Session-named Route-A/Route-B evaluator files are absent from this
+checkout; the proof package, exact certificate, independent replay, stress
+test, and Bridge-B checker provide the available local fail-closed evidence.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
+`ROUND2_CLUE` in the certificate.
+\texttt{ROUND2\_CLUE} in the certificate.

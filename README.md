@@ -9,6 +9,32 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-294 承接 TPC-293 的 whole-shell signed max-cut，把真实 Gram magnitudes
+恢复到 equal-sign quadratic objective。严格证明 trace-normalized identity、Gram
+nonnegativity 与 common-denominator exhaustive sign optimization；同一 18-row literal
+grid 的 1,380 edges 上，18/18 个 global weighted minima 都小于 1，18/18 个 all-positive
+quotients 都大于 1，且 18/18 个 weighted optima 都不同于 unit-edge max-cut。13/18 个
+minimum 不超过 `1/4`，8/18 不超过 `1/10`；最强 finite minimum 约为 `0.0496374497659`。
+这确认 sign compatibility 与 physical energy compatibility 是两个不同层；source-native
+coefficient image、growing weighted theorem、literal arithmetic `L2`、fixed-power credit、
+full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC294_TRACE_NORMALIZED_IDENTITY = PROVED_EXACT_FINITE
+TPC294_GLOBAL_SIGN_ENUMERATION = PROVED_EXACT_FINITE
+TPC294_GRAM_NONNEGATIVITY = PROVED_EXACT_FINITE
+TPC294_WEIGHTED_RAYLEIGH_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC294_EQUAL_SIGNED_CONTRACTION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_BELOW_ONE
+TPC294_ALL_POSITIVE_AMPLIFICATION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_ONE
+TPC294_WEIGHTED_VS_MAXCUT = NUMERICALLY_CERTIFIED_FINITE_DIFFERENT_18_OF_18
+TPC294_SOURCE_NATIVE_COEFFICIENT_IMAGE = OPEN_LITERAL_SOURCE
+TPC294_GROWING_WEIGHTED_THEOREM = OPEN
+TPC294_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC294_FIXED_POWER_CREDIT = 0
+TPC294_FULL_GATE_B = OPEN
+TPC294_TWIN_PRIME_RESULT = NONE
+```
+
 当前主线状态：TPC-293 把 TPC-292 的 triangle parity obstruction 提升到 whole-shell
 signed complete graph。严格证明 all-positive `K_m` 的 favorable-edge maximum 是
 `floor(m^2/4)`，并证明 finite signed frustration complement 与 switching invariance。
@@ -436,6 +462,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-294-magnitude-weighted-signed-rayleigh-atlas - 当前阶段 - 严格证明 trace-normalized
+signed quadratic identity、Gram nonnegativity 与 finite global sign optimization；18 rows /
+1,380 edges 完成 exact weighted atlas，18/18 weighted minima `<1`、18/18 all-positive
+quotients `>1`、18/18 weighted optima 与 unit-edge max-cut 不同，13/18 `<=1/4`、8/18
+`<=1/10`；source-native image、literal `L2`、full Gate B 仍 OPEN，fixed-power credit 为 0。
 tpc-293-signed-shell-maxcut-atlas - 当前阶段 - 严格证明 all-positive complete-graph
 max-cut、signed frustration complement 与 switching invariance；18 rows / 1,380 edges
 完成 whole-shell exact-rational atlas（744 favorable、636 unsatisfied），17/18 rows 与

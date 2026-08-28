@@ -1,16 +1,44 @@
-# TPC big road V146 / TPC-293: signed shell max-cut atlas
+# TPC big road V147 / TPC-294: magnitude-weighted signed Rayleigh atlas
 
 更新时间：2026-08-28
 
-状态：`TPC293_PROVED_EXACT_ALL_POSITIVE_MAXCUT_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGNED_SHELL_FRUSTRATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC294_PROVED_EXACT_TRACE_NORMALIZED_SIGNED_QUADRATIC_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_GLOBAL_SIGN_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-293 proof 为
-`bridge_b_signed_shell_maxcut_atlas.md`，checker 为
-`tpc_bridge_b_signed_shell_maxcut_atlas_checker.py`，编号论文为
-`../../papers/tpc-293-signed-shell-maxcut-atlas/`。
+当前 TPC-294 proof 为
+`bridge_b_magnitude_weighted_signed_rayleigh_atlas.md`，checker 为
+`tpc_bridge_b_magnitude_weighted_signed_rayleigh_atlas_checker.py`，编号论文为
+`../../papers/tpc-294-magnitude-weighted-signed-rayleigh-atlas/`。
+
+TPC-294 承接 TPC-293 的 whole-shell signed max-cut，把 exact Gram magnitudes 恢复到
+equal-coefficient sign 的 trace-normalized quadratic objective。严格证明
+`R(a)=1+2 sum_(q<r) a_q a_r G_(q,r)/tr(G)`、Gram nonnegativity 与 common-denominator
+finite global enumeration；18-row literal grid 的 1,380 edges 上，18/18 weighted
+minima `<1`，18/18 all-positive quotients `>1`，18/18 weighted optima 与 unit-edge
+max-cut 不同，13/18 不超过 `1/4`、8/18 不超过 `1/10`。这是 finite/source-unconstrained
+structural advance，不是 source-image、growing-shell、arithmetic `L2` 或 twin-prime theorem。
+
+```text
+TPC294_MAXIMUM_CLAIM = PROVED_EXACT_TRACE_NORMALIZED_SIGNED_QUADRATIC_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_GLOBAL_SIGN_ATLAS
+TPC294_ROUTE_ADVANCE = YES_SCOPED_FINITE_SIGN_LAYER_TO_MAGNITUDE_WEIGHTED_RAYLEIGH_LAYER
+TPC294_TRACE_NORMALIZED_IDENTITY = PROVED_EXACT_FINITE
+TPC294_GLOBAL_SIGN_ENUMERATION = PROVED_EXACT_FINITE
+TPC294_GRAM_NONNEGATIVITY = PROVED_EXACT_FINITE
+TPC294_WEIGHTED_RAYLEIGH_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC294_EQUAL_SIGNED_CONTRACTION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_BELOW_ONE
+TPC294_ALL_POSITIVE_AMPLIFICATION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_ONE
+TPC294_WEIGHTED_VS_MAXCUT = NUMERICALLY_CERTIFIED_FINITE_DIFFERENT_18_OF_18
+TPC294_SOURCE_NATIVE_COEFFICIENT_IMAGE = OPEN_LITERAL_SOURCE
+TPC294_GROWING_WEIGHTED_THEOREM = OPEN
+TPC294_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC294_FIXED_POWER_CREDIT = 0
+TPC294_FULL_GATE_B = OPEN
+TPC294_TWIN_PRIME_RESULT = NONE
+TPC294_STATUS = PROVED_EXACT_TRACE_NORMALIZED_SIGNED_QUADRATIC_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_GLOBAL_SIGN_ATLAS
+TPC294_ROUND2_CLUE = TEST_SOURCE_IMAGE_OF_WEIGHTED_OPTIMAL_SIGN_PATTERNS_AND_DIFFUSE_SIGNED_WEIGHTS
+```
 
 TPC-293 把 TPC-292 的 triangle parity 提升为 whole-shell signed complete graph。
 all-positive `K_m` 的 favorable-edge maximum 严格等于 `floor(m^2/4)`；finite signed

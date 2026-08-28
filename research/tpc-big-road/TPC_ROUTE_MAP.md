@@ -2,13 +2,43 @@
 
 更新时间：2026-08-28
 
-当前地图版本：V146 / TPC-293
+当前地图版本：V147 / TPC-294
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-293`（`PROVED_EXACT_ALL_POSITIVE_MAXCUT_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGNED_SHELL_FRUSTRATION_ATLAS`）；
+当前编号锚点：`TPC-294`（`PROVED_EXACT_TRACE_NORMALIZED_SIGNED_QUADRATIC_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_GLOBAL_SIGN_ATLAS`）；
 对应论文目录为
-`papers/tpc-293-signed-shell-maxcut-atlas/`。
+`papers/tpc-294-magnitude-weighted-signed-rayleigh-atlas/`。
+
+TPC-294 承接 TPC-293 的 whole-shell signed max-cut，把 exact Gram magnitudes 恢复到
+equal-sign trace-normalized quadratic objective。严格证明
+`R(a)=1+2 sum_(q<r) a_q a_r G_(q,r)/tr(G)`、Gram nonnegativity 与 common-denominator
+finite global sign enumeration；18-row literal grid 的 1,380 edges 上，18/18 weighted
+minima `<1`、18/18 all-positive quotients `>1`，且 18/18 weighted optima 与 unit-edge
+max-cut 不同，13/18 `<=1/4`、8/18 `<=1/10`。这把当前桥坑从“是否存在 sign pattern”
+收缩为“weighted optimizer 是否可由 native source image 产生”；growing weighted
+theorem、literal arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion
+仍 OPEN/NONE。
+
+```text
+TPC294_MAXIMUM_CLAIM = PROVED_EXACT_TRACE_NORMALIZED_SIGNED_QUADRATIC_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_GLOBAL_SIGN_ATLAS
+TPC294_ROUTE_ADVANCE = YES_SCOPED_FINITE_SIGN_LAYER_TO_MAGNITUDE_WEIGHTED_RAYLEIGH_LAYER
+TPC294_TRACE_NORMALIZED_IDENTITY = PROVED_EXACT_FINITE
+TPC294_GLOBAL_SIGN_ENUMERATION = PROVED_EXACT_FINITE
+TPC294_GRAM_NONNEGATIVITY = PROVED_EXACT_FINITE
+TPC294_WEIGHTED_RAYLEIGH_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC294_EQUAL_SIGNED_CONTRACTION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_BELOW_ONE
+TPC294_ALL_POSITIVE_AMPLIFICATION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_ONE
+TPC294_WEIGHTED_VS_MAXCUT = NUMERICALLY_CERTIFIED_FINITE_DIFFERENT_18_OF_18
+TPC294_SOURCE_NATIVE_COEFFICIENT_IMAGE = OPEN_LITERAL_SOURCE
+TPC294_GROWING_WEIGHTED_THEOREM = OPEN
+TPC294_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC294_FIXED_POWER_CREDIT = 0
+TPC294_FULL_GATE_B = OPEN
+TPC294_TWIN_PRIME_RESULT = NONE
+TPC294_STATUS = PROVED_EXACT_TRACE_NORMALIZED_SIGNED_QUADRATIC_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_GLOBAL_SIGN_ATLAS
+TPC294_ROUND2_CLUE = TEST_SOURCE_IMAGE_OF_WEIGHTED_OPTIMAL_SIGN_PATTERNS_AND_DIFFUSE_SIGNED_WEIGHTS
+```
 
 TPC-293 把 TPC-292 的 triangle parity obstruction 提升为 whole-shell signed complete
 graph。严格证明 all-positive `K_m` favorable-edge maximum 为 `floor(m^2/4)`，并证明
@@ -95,8 +125,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V146 / TPC-293
-MAP_LABEL = WHOLE-SHELL SIGNED MAXCUT / MAGNITUDE-WEIGHTED PIER
+YOU ARE HERE = V147 / TPC-294
+MAP_LABEL = MAGNITUDE-WEIGHTED SIGNED RAYLEIGH / SOURCE-IMAGE PIER
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -332,6 +362,49 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.88 V147 / TPC-294：magnitude-weighted signed Rayleigh atlas
+
+TPC-294 保持 TPC-293 的 literal physical prime-component vectors，把 unit-edge signed
+max-cut 换回真实 Gram magnitudes。对 equal-coefficient sign vector `a` 定义
+`R(a)=a^T G a/tr(G)`；严格证明 trace-normalized diagonal-plus-cross identity、Gram
+nonnegativity，以及 common-denominator exhaustive enumeration 给出每个 finite row 的
+global optimum（modulo global sign reversal）。
+
+同一 18-row literal grid 的 1,380 edges 上，18/18 rows 的 weighted global minima `<1`，
+18/18 rows 的 all-positive quotients `>1`，18/18 rows 的 weighted optima 与 TPC-293
+unit-edge max-cut 不同；13/18 个 minimum `<=1/4`，8/18 个 `<=1/10`。最强 minimum 是
+`(512,58,90,5,2)` row 的 `0.0496374497659`。TPC-293 的 exceptional crossover row
+上，max-cut label 只得到 `0.988974603760`，而 weighted optimum 为 `0.519059163428`。
+
+这关闭了 finite weighted-sign question，但没有关闭 native source image：sign vectors
+是在 ambient coefficient-sign cube 中搜索，尚未证明由 admissible source perturbation
+产生。growing weighted theorem、literal arithmetic `L2`、fixed-power credit、full Gate B
+与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC294_ROUTE_ADVANCE = YES_SCOPED_FINITE_SIGN_LAYER_TO_MAGNITUDE_WEIGHTED_RAYLEIGH_LAYER
+TPC294_TRACE_NORMALIZED_IDENTITY = PROVED_EXACT_FINITE
+TPC294_GLOBAL_SIGN_ENUMERATION = PROVED_EXACT_FINITE
+TPC294_GRAM_NONNEGATIVITY = PROVED_EXACT_FINITE
+TPC294_WEIGHTED_RAYLEIGH_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS
+TPC294_EQUAL_SIGNED_CONTRACTION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_BELOW_ONE
+TPC294_ALL_POSITIVE_AMPLIFICATION = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_ONE
+TPC294_WEIGHTED_VS_MAXCUT = NUMERICALLY_CERTIFIED_FINITE_DIFFERENT_18_OF_18
+TPC294_SOURCE_NATIVE_COEFFICIENT_IMAGE = OPEN_LITERAL_SOURCE
+TPC294_GROWING_WEIGHTED_THEOREM = OPEN
+TPC294_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC294_FIXED_POWER_CREDIT = 0
+TPC294_FULL_GATE_B = OPEN
+TPC294_TWIN_PRIME_RESULT = NONE
+TPC294_STATUS = PROVED_EXACT_TRACE_NORMALIZED_SIGNED_QUADRATIC_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_GLOBAL_SIGN_ATLAS
+TPC294_ROUND2_CLUE = TEST_SOURCE_IMAGE_OF_WEIGHTED_OPTIMAL_SIGN_PATTERNS_AND_DIFFUSE_SIGNED_WEIGHTS
+```
+
+strongest positive result：exact trace-normalized weighted-sign compiler plus 18-row global
+finite atlas；strongest obstruction：ambient weighted minimizers have no source-image theorem；
+open theorem：source-restricted weighted attainability or a growing weighted-shell bound；
+reusable structure：`physical Gram -> signed maxcut -> weighted Rayleigh -> source image audit`。
 
 ## 5.87 V146 / TPC-293：signed shell max-cut atlas
 
@@ -1212,9 +1285,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V146 / TPC-293                    |
-        | WHOLE-SHELL SIGNED MAXCUT                       |
-        | magnitude-weighted / source-image pier         |
+        | YOU ARE HERE — V147 / TPC-294                    |
+        | WEIGHTED SIGNED RAYLEIGH                        |
+        | source-image / growing weighted pier           |
         +--------------------------------------------------+
                 |
                 v
@@ -6247,6 +6320,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-28 | V147 / TPC-294 | Bridge A / Gate B：finite magnitude-weighted signed Rayleigh layer；source-native image、growing weighted theorem、arithmetic `L2` 与 full Gate B open | `TPC-294` | 严格证明 trace-normalized identity、Gram nonnegativity 与 finite global sign enumeration；18 rows / 1,380 edges 完成 18/18 weighted minima `<1`、18/18 all-positive `>1`、18/18 weighted optima different from unit-edge max-cut，13/18 `<=1/4`、8/18 `<=1/10`；下一步为 source-image attainability audit |
 | 2026-08-28 | V146 / TPC-293 | Bridge A / Gate B：whole-shell signed max-cut；magnitude-weighted objective、source-native arithmetic `L2` 与 full Gate B open | `TPC-293` | 严格证明 all-positive `K_m` max-cut、frustration complement 与 switching invariance；18 rows / 1,380 edges 完成 exact atlas，17/18 rows all-positive，唯一 crossover row 有 `+3` sign-only gain，总 max favorable / minimum unsatisfied 为 `744/636`；下一步为 magnitude-weighted signed Rayleigh 与 source-image feasibility |
 | 2026-08-28 | V145 / TPC-292 | Bridge A / Gate B：three-prime sign-frustration compatibility obstruction；growing signed graph、source-native arithmetic `L2` 与 full Gate B open | `TPC-292` | 严格证明 triangle sign parity 与 three-vector Schur residual；18 rows / 5,727 triples 完成 5,718 frustrated、9 anti-alignable、5,727 positive normalized volumes；下一步为 signed-graph max-cut/frustration index 与 source-image feasibility |
 | 2026-08-28 | V144 / TPC-291 | Bridge A / Gate B：signed two-prime Schur cancellation atlas；multi-prime reassembly、growing signed theorem、arithmetic `L2` 与 full Gate B open | `TPC-291` | 严格证明 Schur projection residual `1-Gamma`、signed Rayleigh minimum `1-sqrt(Gamma)` 与 coefficient sign rule；18 rows / 1,380 pairs 完成 1,377 positive、3 negative、0 zero 的 coherence-to-cancellation atlas，residual thresholds `1074/852/477`；下一步为 multi-prime signed null directions 或 source-restricted diffuse weights |
