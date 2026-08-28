@@ -1,16 +1,78 @@
-# TPC big road V142 / TPC-289: cross-prime Gram coherence
+# TPC big road V144 / TPC-291: signed Schur cancellation atlas
 
 更新时间：2026-08-28
 
-状态：`TPC289_PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC291_PROVED_EXACT_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_COHERENCE_TO_CANCELLATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-289 proof 为
-`bridge_b_cross_prime_gram_coherence.md`，checker 为
-`tpc_bridge_b_cross_prime_gram_coherence_checker.py`，编号论文为
-`../../papers/tpc-289-cross-prime-gram-coherence/`。
+当前 TPC-291 proof 为
+`bridge_b_signed_schur_cancellation_atlas.md`，checker 为
+`tpc_bridge_b_signed_schur_cancellation_atlas_checker.py`，编号论文为
+`../../papers/tpc-291-signed-schur-cancellation-atlas/`。
+
+TPC-291 承接 TPC-290 的 weighted-Gram firewall，把 cross-prime coherence 精确转成
+two-prime Schur cancellation：对任意非零 pair，严格证明最小归一化 residual 为
+`1-Gamma`，signed two-vector Rayleigh minimum 为 `1-sqrt(Gamma)`，且 Gram sign 决定
+最优方向是 opposite-sign 或 same-sign。18-row grid 的 1,380 个 pairs 中，1,377 个
+positive、3 个 negative、0 个 zero；residual `<=1/2,1/4,1/10` 的计数为
+`1074/852/477`，最佳 pair `(173,179)` 的 residual 约 `0.0151239493`。这确认
+pairwise signed cancellation 是真实的局部机制，但 multi-prime reassembly、growing
+signed theorem、literal arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+```text
+TPC291_MAXIMUM_CLAIM = PROVED_EXACT_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_COHERENCE_TO_CANCELLATION_ATLAS
+TPC291_ROUTE_ADVANCE = YES_SCOPED_SIGNED_SCHUR_COHERENCE_TO_CANCELLATION_ATLAS
+TPC291_SCHUR_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC291_SIGNED_TWO_PRIME_CANCELLATION = PROVED_EXACT_CONDITIONAL
+TPC291_RESIDUAL_NONNEGATIVITY = PROVED_EXACT_FROM_CAUCHY
+TPC291_COHERENCE_TO_CANCELLATION_ATLAS = NUMERICALLY_CERTIFIED_FINITE_1380_PAIRS
+TPC291_LOW_RESIDUAL_COUNTS = NUMERICALLY_CERTIFIED_FINITE_1074_852_477
+TPC291_SIGN_COST_CENSUS = NUMERICALLY_CERTIFIED_FINITE_1377_OPPOSITE_3_SAME
+TPC291_GROWING_SIGNED_THEOREM = OPEN
+TPC291_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC291_FIXED_POWER_CREDIT = 0
+TPC291_FULL_GATE_B = OPEN
+TPC291_TWIN_PRIME_RESULT = NONE
+TPC291_STATUS = PROVED_EXACT_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_COHERENCE_TO_CANCELLATION_ATLAS
+TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNED_NULL_DIRECTIONS
+```
+
+当前 TPC-290 proof 为
+`bridge_b_adaptive_shell_weighting_obstruction.md`，checker 为
+`tpc_bridge_b_adaptive_shell_weighting_obstruction_checker.py`，编号论文为
+`../../papers/tpc-290-adaptive-shell-weighting-obstruction/`。
+
+TPC-290 承接 TPC-289 的 source-output Gram，把 adaptive weighting 显式写成
+`R(w)=||sum_q w_q g_q||^2/sum_q w_q^2 d_q`。它严格证明 weighted Gram identity、全正
+cross-Gram block 中的 nonnegative no-decay rule，以及带 effective support
+`kappa(w)=(sum w)^2/sum w^2` 的 conditional accumulation bound。沿用 TPC-289 的 18-row
+grid，uniform、inverse-diagonal、linear-taper 三种 full-support policies 共 54/54
+amplified，18/18 leave-one-out minima 仍 amplified；3 个 equal-pair subunit witnesses
+全部位于早期 sign-flip row。这把 adaptive route 分成 diffuse positive branch 与 sparse
+sign-flip escape；growing weighted theorem、source-uniform arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC290_MAXIMUM_CLAIM = PROVED_EXACT_NONNEGATIVE_WEIGHTED_GRAM_NO_DECAY_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_ADAPTIVE_WEIGHTING_OBSTRUCTION
+TPC290_ROUTE_ADVANCE = YES_SCOPED_EFFECTIVE_SUPPORT_WEIGHTED_GRAM_FIREWALL
+TPC290_WEIGHTED_IDENTITY = PROVED_EXACT_FINITE
+TPC290_NONNEGATIVE_NO_DECAY = PROVED_EXACT_CONDITIONAL
+TPC290_DIFFUSE_ACCUMULATION_BOUND = PROVED_EXACT_CONDITIONAL
+TPC290_FULL_SUPPORT_POLICY_SCAN = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_AMPLIFIED
+TPC290_SPARSE_SIGN_FLIP_ESCAPE = NUMERICALLY_CERTIFIED_FINITE_3_PAIRS_ONE_ROW
+TPC290_DROP_ONE_SCAN = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_AMPLIFIED
+TPC290_UNIFORM_NONNEGATIVE_NO_DECAY = REFUTED_FINITE_BY_SPARSE_SIGN_FLIP
+TPC290_GROWING_WEIGHTED_THEOREM = OPEN
+TPC290_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC290_FIXED_POWER_CREDIT = 0
+TPC290_FULL_GATE_B = OPEN
+TPC290_TWIN_PRIME_RESULT = NONE
+TPC290_STATUS = PROVED_EXACT_NONNEGATIVE_WEIGHTED_GRAM_NO_DECAY_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_ADAPTIVE_WEIGHTING_OBSTRUCTION
+TPC290_ROUND2_CLUE = TEST_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_OR_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS
+```
 
 TPC-289 承接 TPC-288 的 source-output Gram，在同一个 literal physical
 deleted-diagonal operator 上研究跨素数交叉项的 sign 与 normalized coherence。18 个

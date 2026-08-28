@@ -3,11 +3,109 @@
 
 更新时间：2026-08-28
 
-状态：**TPC289_PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC291_PROVED_EXACT_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_COHERENCE_TO_CANCELLATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
+
+## 0.85 当前：TPC-291 signed Schur cancellation atlas
+
+项目：`papers/tpc-291-signed-schur-cancellation-atlas/`
+
+类型：**PROVED_EXACT_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_COHERENCE_TO_CANCELLATION_ATLAS**。
+
+TPC-291 承接 TPC-290 的 adaptive weighted-Gram firewall，把 cross-prime coherence 精确
+编译成 two-prime signed cancellation。对任意 nonzero physical component pair，严格证明
+投影系数 `rho*=G_(i,j)/d_j`、归一化 Schur residual `1-Gamma_(i,j)`，以及 signed
+two-vector Rayleigh minimum `1-sqrt(Gamma_(i,j))`；系数符号同时给出 opposite-sign 与
+same-sign cancellation 的必要方向。
+
+沿用 TPC-289 的 18-row literal grid，完整审计 1,380 个 unordered pairs：1,377 个
+positive、3 个 negative、0 个 zero cross terms；Schur residual `<=1/2`、`<=1/4`、
+`<=1/10` 的 pair 数分别为 1,074、852、477，`Gamma>=9/25` 与 `Gamma>=3/4` 的
+pair 数为 1,189、852。全球最佳 pair 是 late growth row
+`(N,H,Q,z,s)=(512,58,90,5,2)` 中的 `(173,179)`，residual 约为 `0.0151239493`；
+三个 same-sign negative witnesses `(29,53),(31,53),(41,53)` 全部位于早期
+`(256,38,27,5,1)` crossover row。
+
+最强正结果是 exact Schur/Rayleigh cancellation compiler 加完整有限 atlas；最强
+obstruction 是 1,377 个高相干正 pair 的方向需要 signed reassembly，而不是自动落在
+nonnegative shell cone 内。multi-prime signed reassembly、growing signed theorem、
+source-native arithmetic `L2`、fixed-power credit 与 full Gate B 仍 OPEN/NONE。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_SCHUR_RESIDUAL_AND_SIGNED_RAYLEIGH_COMPILER_PLUS_1380_PAIR_ATLAS
+STRONGEST_OBSTRUCTION = PAIRWISE_CANCELLATION_DOES_NOT_ASSEMBLE_ITSELF_INTO_FULL_PRIME_SHELL
+OPEN_THEOREM = MULTI_PRIME_SIGNED_REASSEMBLY_WITH_LITERAL_SOURCE_ARITHMETIC_L2
+REUSABLE_STRUCTURE = COHERENCE -> SCHUR RESIDUAL -> SIGN COST -> REASSEMBLY TEST
+ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNED_NULL_DIRECTIONS
+```
+
+```text
+TPC291_ROUTE_ADVANCE = YES_SCOPED_SIGNED_SCHUR_COHERENCE_TO_CANCELLATION_ATLAS
+TPC291_SCHUR_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC291_SIGNED_TWO_PRIME_CANCELLATION = PROVED_EXACT_CONDITIONAL
+TPC291_RESIDUAL_NONNEGATIVITY = PROVED_EXACT_FROM_CAUCHY
+TPC291_COHERENCE_TO_CANCELLATION_ATLAS = NUMERICALLY_CERTIFIED_FINITE_1380_PAIRS
+TPC291_LOW_RESIDUAL_COUNTS = NUMERICALLY_CERTIFIED_FINITE_1074_852_477
+TPC291_SIGN_COST_CENSUS = NUMERICALLY_CERTIFIED_FINITE_1377_OPPOSITE_3_SAME
+TPC291_GROWING_SIGNED_THEOREM = OPEN
+TPC291_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC291_FIXED_POWER_CREDIT = 0
+TPC291_FULL_GATE_B = OPEN
+TPC291_TWIN_PRIME_RESULT = NONE
+TPC291_STATUS = PROVED_EXACT_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_COHERENCE_TO_CANCELLATION_ATLAS
+```
+
+## 0.84 当前：TPC-290 adaptive shell weighting obstruction
+
+项目：`papers/tpc-290-adaptive-shell-weighting-obstruction/`
+
+类型：**PROVED_EXACT_NONNEGATIVE_WEIGHTED_GRAM_NO_DECAY_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_ADAPTIVE_WEIGHTING_OBSTRUCTION**。
+
+TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive shell weighting 写成
+`R(w)=||sum_q w_q g_q||^2/sum_q w_q^2 d_q`，并定义 effective support
+`kappa(w)=(sum_q w_q)^2/sum_q w_q^2`。严格证明 weighted Gram identity；若权重非负且
+所有 cross-Gram entries 非负，则 `R(w)>=1`，在 `Gamma>=9/25` 与
+`d_min/d_max>=4/5` 下进一步有 `R(w)>=1+(3/5)(4/5)(kappa(w)-1)`。
+
+沿用 TPC-289 的 18-row grid，uniform、inverse-diagonal、linear-taper 三种 full-support
+policies 共 54/54 amplified，18/18 leave-one-out minima 仍 amplified；所有 equal
+two-prime supports 中恰有 3 个 subunit witnesses，全部来自早期 `(256,38,27,5,1)` 的
+三个 negative pairs。因而 adaptive route 被严格拆成 diffuse positive branch 与 sparse
+sign-flip escape：前者仍被 coherence wall 拦住，后者只在牺牲 full-shell support 后出现。
+
+最强正结果是 exact effective-support coherence envelope 加 54/54 full-support finite
+obstruction；最强负结果是 sparse equal-pair sign-flip escape，它 refute 了声明网格上
+“所有 nonnegative supports 都不衰减”的无条件说法，但不构成 full-shell saving。growing
+weighted theorem、source-uniform arithmetic `L2`、fixed-power credit 与 full Gate B 仍
+OPEN/NONE。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_EFFECTIVE_SUPPORT_COHERENCE_ENVELOPE_PLUS_54_FULL_SUPPORT_POLICY_OBSTRUCTION
+STRONGEST_OBSTRUCTION = THREE_SPARSE_NONNEGATIVE_EQUAL_PAIR_SUBUNIT_WITNESSES_IN_ONE_SIGN_FLIP_ROW
+OPEN_THEOREM = GROWING_DIFFUSE_WEIGHTED_COHERENCE_OR_SOURCE_RESTRICTION
+REUSABLE_STRUCTURE = WEIGHTED_GRAM -> EFFECTIVE_SUPPORT -> POSITIVE_BLOCK / SPARSE ESCAPE
+ROUND2_CLUE = TEST_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_OR_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS
+```
+
+```text
+TPC290_ROUTE_ADVANCE = YES_SCOPED_EFFECTIVE_SUPPORT_WEIGHTED_GRAM_FIREWALL
+TPC290_WEIGHTED_IDENTITY = PROVED_EXACT_FINITE
+TPC290_NONNEGATIVE_NO_DECAY = PROVED_EXACT_CONDITIONAL
+TPC290_DIFFUSE_ACCUMULATION_BOUND = PROVED_EXACT_CONDITIONAL
+TPC290_FULL_SUPPORT_POLICY_SCAN = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_AMPLIFIED
+TPC290_SPARSE_SIGN_FLIP_ESCAPE = NUMERICALLY_CERTIFIED_FINITE_3_PAIRS_ONE_ROW
+TPC290_DROP_ONE_SCAN = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_AMPLIFIED
+TPC290_UNIFORM_NONNEGATIVE_NO_DECAY = REFUTED_FINITE_BY_SPARSE_SIGN_FLIP
+TPC290_GROWING_WEIGHTED_THEOREM = OPEN
+TPC290_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC290_FIXED_POWER_CREDIT = 0
+TPC290_FULL_GATE_B = OPEN
+TPC290_TWIN_PRIME_RESULT = NONE
+TPC290_STATUS = PROVED_EXACT_NONNEGATIVE_WEIGHTED_GRAM_NO_DECAY_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_ADAPTIVE_WEIGHTING_OBSTRUCTION
+```
 
 ## 0.83 当前：TPC-289 cross-prime Gram coherence
 

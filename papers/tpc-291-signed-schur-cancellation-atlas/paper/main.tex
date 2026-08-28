@@ -1,0 +1,323 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.88in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+
+\title{Signed Schur Cancellation in Cross-Prime Gram Pairs:\\
+ a Finite Coherence-to-Cancellation Atlas}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST)\\
+Wuhan, China}
+\date{28 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding physical Gram experiments found a late-shell regime with
+strong positive cross-prime coherence and an isolated early sign-flip
+regime.  This paper asks what the corresponding two-component cancellation
+directions actually cost.  For two nonzero physical prime-component vectors
+$g_i,g_j$, with $d_k=\norm{g_k}^2$ and
+$G_{ij}=\ip{g_i}{g_j}$, we prove the exact projection identity
+\[
+ \min_{\rho\in\RR}\frac{\norm{g_i-\rho g_j}^2}{d_i}
+ =1-\Gamma_{ij},\qquad
+ \Gamma_{ij}=\frac{G_{ij}^2}{d_i d_j},
+\]
+and the normalized signed two-vector Rayleigh minimum
+$1-\sqrt{\Gamma_{ij}}$.  The sign of the optimal projection coefficient
+then gives an explicit distinction between opposite-sign cancellation for a
+positive cross term and same-sign cancellation for a negative one.  An
+exact-rational replay of the 18-row TPC-289 grid evaluates all 1,380 pairs:
+1,377 are positive and 3 are negative, while 1,074, 852, and 477 pairs have
+Schur residual at most $1/2$, $1/4$, and $1/10$.  The best tested pair has
+$\Gamma\approx0.984876$ and residual $\approx0.015124$.  These results
+quantify a genuine pairwise cancellation mechanism, but do not establish a
+multi-prime signed null direction, an arithmetic $L^2$ estimate, or a
+twin-prime theorem.
+\end{abstract}
+
+\section{Position on the twin-prime route}
+
+This release stays inside the same literal prime-shell dynamical family.
+TPC-287 separated the physical deleted-diagonal output into prime
+components, and TPC-288 showed that retaining those full output vectors
+produces a positive-semidefinite source-output Gram object whose finite
+energy can increase even when a scalar readout is small
+\cite{tpc287,tpc288}.  TPC-289 made the cross terms explicit: most tested
+pairs were positive and a late block had large normalized coherence, but
+three negative pairs appeared at the early crossover row
+\cite{tpc289}.  TPC-290 then proved that diffuse nonnegative shell weights
+cannot cross an all-positive coherence wall \cite{tpc290}.
+
+The next natural question is therefore narrower than ``find a good weight'':
+when a pair is coherent, what is the exact best two-prime cancellation, and
+does its coefficient sign agree with the available shell mechanism?  The
+answer is a clean local compiler.  It also identifies the next bridge
+problem: assemble many such pair directions while preserving the literal
+prime-source arithmetic and the required normalization.
+
+\section{Frozen physical model}
+
+Let $I=I_N$ be the finite integer interval and let $\beta$ be the frozen
+rational source vector inherited from the parent certificate.  For an odd
+prime $q$, height $H$, and kernel exponent $s$, write
+\[
+ K_{H,s}(h)=\frac{H^{2s}}{(H^2+h^2)^s},\qquad
+ B_q(u,t)=\mathbf 1_{q\nmid u}\mathbf 1_{q\nmid t}
+ \left(\mathbf 1_{u\equiv t\pmod q}-\frac1{q-1}\right).
+\]
+The physical deleted-diagonal component is the vector $g_q=A_q\beta$, where
+\[
+ (A_q)_{u,t}=qK_{H,s}(u-t)\mathbf 1_{u\ne t}B_q(u,t).
+ \label{eq:model}
+\]
+For a shell $S$ of primes, define
+\[
+ d_q=\norm{g_q}^2,\qquad G_{q,r}=\ip{g_q}{g_r},
+ \qquad \Gamma_{q,r}=\frac{G_{q,r}^2}{d_qd_r}.
+ \label{eq:gram}
+\]
+The certificate verifies $d_q>0$ on every declared row.  By
+Cauchy--Schwarz, $0\leq\Gamma_{q,r}\leq1$; the square deliberately keeps
+the magnitude of coherence separate from its sign.
+
+\section{Exact two-prime cancellation compiler}
+
+We orient a pair as ``target minus coefficient times reference''.  Thus the
+quantity below is $\norm{g_i-\rho g_j}^2$, with $j$ the reference component.
+
+\begin{lemma}[Schur projection identity]
+For nonzero real vectors $g_i,g_j$, the unique minimizer of
+$\norm{g_i-\rho g_j}^2$ is
+\[
+ \rho_* = \frac{G_{ij}}{d_j},
+ \]
+and
+\begin{equation}
+ \min_{\rho\in\RR}\frac{\norm{g_i-\rho g_j}^2}{d_i}
+ =1-\frac{G_{ij}^2}{d_i d_j}=1-\Gamma_{ij}.
+ \label{eq:schur}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Expanding the square gives
+\[
+ \norm{g_i-\rho g_j}^2=d_i-2\rho G_{ij}+\rho^2d_j.
+\]
+Since $d_j>0$, completing the square gives the unique minimizer
+$\rho_*=G_{ij}/d_j$.  Substitution yields
+$d_i-G_{ij}^2/d_j=d_i(1-\Gamma_{ij})$.
+\end{proof}
+
+\begin{proposition}[Signed two-vector Rayleigh minimum]
+For real $(a,b)\ne(0,0)$,
+\begin{equation}
+ \inf_{(a,b)\ne(0,0)}
+ \frac{\norm{a g_i+b g_j}^2}{a^2d_i+b^2d_j}
+ =1-\sqrt{\Gamma_{ij}}.
+ \label{eq:rayleigh}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Conjugating the two-by-two Gram matrix by
+$\operatorname{diag}(d_i^{-1/2},d_j^{-1/2})$ gives
+\[
+ \begin{pmatrix}1&c\\c&1\end{pmatrix},
+ \qquad c=\frac{G_{ij}}{\sqrt{d_id_j}}.
+\]
+Its eigenvalues are $1+c$ and $1-c$, so the smaller one is
+$1-|c|=1-\sqrt{\Gamma_{ij}}$.
+\end{proof}
+
+\begin{corollary}[Sign cost]
+In the orientation of Lemma~1, $\operatorname{sign}(\rho_*)=
+\operatorname{sign}(G_{ij})$.  A positive cross term therefore uses
+opposite signs in $g_i-\rho_*g_j$, whereas a negative cross term uses
+same-sign coefficients after the subtraction is expanded.
+\end{corollary}
+
+\begin{proof}
+The denominator $d_j$ is positive.  The statement follows directly from
+the formula for $\rho_*$.  Equivalently, the lower eigenvector in
+\eqref{eq:rayleigh} is $(1,-1)$ when $c>0$ and $(1,1)$ when $c<0$.
+\end{proof}
+
+\begin{remark}
+Equation~\eqref{eq:schur} is a two-dimensional statement.  It does not say
+that the individually optimal directions for different pairs are compatible,
+nor that their coefficients are produced by the literal prime source.  This
+compatibility distinction is the central firewall of the present paper.
+\end{remark}
+
+\section{Finite protocol}
+
+The certificate replays eight $s=2$ growth anchors, four $s=1$ crossover
+rows, and six $s=2$ source-control rows, for 18 rows in total.  Each row
+uses the same interval, rational source, kernel, deleted diagonal, and prime
+shell as TPC-289.  Every unordered pair in every shell is evaluated with
+exact rational arithmetic.  The producer records the cross term, its sign,
+$\Gamma$, the exact residual $1-\Gamma$, the projection coefficient, and the
+sign-cost label.  The independent checker reconstructs the physical outputs
+in reverse column-first order.  A ten-mutation hostile audit tests theorem
+fields, threshold counts, sign labels, row deletion, and provenance locks.
+
+The finite thresholds are $1/2$, $1/4$, and $1/10$ for the residual, and
+$9/25$ and $3/4$ for squared coherence.  These are audit thresholds, not
+claimed universal constants.  The parent TPC-290 code, result, and frozen
+TPC-268 engine are SHA-256 locked by the producer.
+
+\section{Results}
+
+\subsection{Global census}
+
+The 18 rows contain 1,380 unordered pairs.  All exact Schur residuals are
+nonnegative, as required by the Gram determinant inequality.  The sign and
+threshold census is:
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Finite pairwise census on the declared 18-row grid.}
+\label{tab:census}
+\begin{tabular}{@{}lr@{}}
+\toprule
+quantity & count \\
+\midrule
+rows & 18 \\
+unordered pairs & 1,380 \\
+positive cross terms & 1,377 \\
+negative cross terms & 3 \\
+zero cross terms & 0 \\
+$1-\Gamma\leq1/2$ & 1,074 \\
+$1-\Gamma\leq1/4$ & 852 \\
+$1-\Gamma\leq1/10$ & 477 \\
+$\Gamma\geq9/25$ & 1,189 \\
+$\Gamma\geq3/4$ & 852 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Thus high coherence is common in this finite probe, but its sign is almost
+always positive.  The sign census matters because the high-coherence
+direction for a positive pair is signed subtraction, while a nonnegative
+shell combination can only directly exploit the exceptional negative pairs.
+
+\subsection{Representative rows}
+
+Table~\ref{tab:rows} reports the most coherent pair on selected rows.  The
+last column gives the sign of the cross term, which is also the sign of the
+optimal projection coefficient in the chosen orientation.
+
+\begin{table}[ht]
+\centering
+\scriptsize
+\caption{Selected best-pair records.  Decimal values are display-only;
+the certificate stores exact fractions.}
+\label{tab:rows}
+\begin{tabular}{@{}lrrrrrrrr@{}}
+\toprule
+axis & $N$ & $H$ & $Q$ & $s$ & pair & $\Gamma$ & $1-\Gamma$ & sign \\
+\midrule
+growth &128&24&9 &2 &(13,17)    &0.364275&0.635725&+\\
+growth &192&32&16&2 &(17,23)    &0.505386&0.494614&+\\
+growth &384&50&40&2 &(71,79)    &0.758148&0.241852&+\\
+growth &512&58&70&2 &(131,137) &0.960038&0.039962&+\\
+growth &512&58&90&2 &(173,179) &0.984876&0.015124&+\\
+crossover&256&38&27&1&(37,47)   &0.236671&0.763329&+\\
+control &384&52&70&2 &(137,139) &0.974785&0.025215&+\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The global best is the late growth row $(N,H,Q,z,s)=(512,58,90,5,2)$,
+with pair $(173,179)$ and residual approximately $0.0151239493$.  The
+largest coherence is therefore a real finite cancellation opportunity in the
+two-dimensional span, but it is not evidence of a prime gap or a shell-wide
+null vector.
+
+\subsection{The exceptional sign-flip row}
+
+The only negative pairs occur at the crossover row
+$(N,H,Q,z,s)=(256,38,27,5,1)$.  They are
+\[
+ (29,53),\qquad(31,53),\qquad(41,53).
+\]
+For equal two-prime support, the physical ratio is
+\[
+ \frac{\norm{g_i+g_j}^2}{d_i+d_j}
+ =1+\frac{2G_{ij}}{d_i+d_j}.
+\]
+Consequently these three negative pairs are precisely the finite
+same-sign subunit witnesses seen by TPC-290.  They do not occur in the
+late positive block, where the low-residual directions require signed
+subtraction.  The apparent ``escape'' is therefore sparse and localized;
+it does not yet provide a diffuse or growing-shell mechanism.
+
+\section{Interpretation and claim firewall}
+
+The results make the local geometry of the map more precise:
+
+\begin{enumerate}
+\item High cross-prime coherence converts exactly into a small two-prime
+      Schur residual.  This is a reusable analytic bridge from the Gram
+      phase diagram to a cancellation direction.
+\item The sign of the cross term is not cosmetic.  In the dominant positive
+      block, cancellation requires signed coefficients; the three same-sign
+      opportunities are confined to one early row.
+\item Pairwise optimality does not compose automatically.  A multi-prime
+      construction must control the compatibility of projection directions,
+      coefficient signs, and the literal source normalization.
+\end{enumerate}
+
+Accordingly, the strongest exact claim is the two-prime projection and
+Rayleigh compiler.  The strongest finite numerical claim is the complete
+1,380-pair coherence-to-cancellation atlas.  The following remain open:
+multi-prime signed reassembly, a growing-shell theorem, a source-native
+arithmetic $L^2$ estimate, fixed-power credit, and the full Gate-B bridge.
+No Route-A or Route-B evaluator pass is claimed here because the
+Session-named evaluator files are absent from this checkout; the local
+proof, exact certificate, independent replay, stress audit, and Bridge-B
+checker are the fail-closed validation package.
+
+\section{Reproducibility and conclusion}
+
+From the project directory, the producer and independent replay can be run
+with:
+\begin{verbatim}
+export PYTHONDONTWRITEBYTECODE=1
+python -B code/tpc291_signed_schur_cancellation_certificate.py --check
+python -B experiments/tpc291_independent_checker.py
+python -B experiments/tpc291_schur_stress.py
+\end{verbatim}
+The canonical result is
+\texttt{results/tpc291\_certificate.json}; normal and optimized runs are
+required to have empty standard error and byte-identical output.
+
+TPC-291 closes one local uncertainty on the broad twin-prime map.  It shows
+that the late coherent island is not missing a two-prime cancellation
+formula; the formula is exact.  The unresolved bridge is higher-dimensional:
+whether compatible signed directions can be assembled from the actual
+prime-shell source while paying the physical $L^2$ and arithmetic budgets.
+That is the next meaningful question, rather than another unstructured
+weight scan.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

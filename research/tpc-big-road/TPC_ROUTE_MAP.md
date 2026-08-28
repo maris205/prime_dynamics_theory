@@ -2,13 +2,74 @@
 
 更新时间：2026-08-28
 
-当前地图版本：V142 / TPC-289
+当前地图版本：V144 / TPC-291
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-289`（`PROVED_EXACT_NORMALIZED_GRAM_COHERENCE_ACCUMULATION_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_PHASE_DIAGRAM`）；
+当前编号锚点：`TPC-291`（`PROVED_EXACT_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_COHERENCE_TO_CANCELLATION_ATLAS`）；
 对应论文目录为
-`papers/tpc-289-cross-prime-gram-coherence/`。
+`papers/tpc-291-signed-schur-cancellation-atlas/`。
+
+TPC-291 承接 TPC-290 的 weighted-Gram firewall，把 cross-prime coherence 精确编译成
+two-prime signed cancellation。对任意 nonzero pair，严格证明 Schur projection residual
+`1-Gamma_(i,j)` 与 signed two-vector Rayleigh minimum `1-sqrt(Gamma_(i,j))`，并由
+Gram sign 判定最优方向需要 opposite-sign 还是 same-sign coefficients。沿用同一 18-row
+literal grid，1,380 个 pairs 的 exact-rational atlas 得到 1,377 positive、3 negative、
+0 zero；residual `<=1/2,1/4,1/10` 的计数为 `1074/852/477`，最佳 pair `(173,179)`
+的 residual 约 `0.0151239493`。这确认了 pairwise signed cancellation mechanism，
+但 multi-prime signed reassembly、growing theorem、source-native arithmetic `L2`、
+fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC291_MAXIMUM_CLAIM = PROVED_EXACT_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_COHERENCE_TO_CANCELLATION_ATLAS
+TPC291_ROUTE_ADVANCE = YES_SCOPED_SIGNED_SCHUR_COHERENCE_TO_CANCELLATION_ATLAS
+TPC291_SCHUR_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC291_SIGNED_TWO_PRIME_CANCELLATION = PROVED_EXACT_CONDITIONAL
+TPC291_RESIDUAL_NONNEGATIVITY = PROVED_EXACT_FROM_CAUCHY
+TPC291_COHERENCE_TO_CANCELLATION_ATLAS = NUMERICALLY_CERTIFIED_FINITE_1380_PAIRS
+TPC291_LOW_RESIDUAL_COUNTS = NUMERICALLY_CERTIFIED_FINITE_1074_852_477
+TPC291_SIGN_COST_CENSUS = NUMERICALLY_CERTIFIED_FINITE_1377_OPPOSITE_3_SAME
+TPC291_GROWING_SIGNED_THEOREM = OPEN
+TPC291_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC291_FIXED_POWER_CREDIT = 0
+TPC291_FULL_GATE_B = OPEN
+TPC291_TWIN_PRIME_RESULT = NONE
+TPC291_STATUS = PROVED_EXACT_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_COHERENCE_TO_CANCELLATION_ATLAS
+TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNED_NULL_DIRECTIONS
+```
+
+```text
+YOU ARE HERE = V144 / TPC-291
+MAP_LABEL = SIGNED TWO-PRIME SCHUR CANCELLATION / MULTI-PRIME REASSEMBLY PIER
+```
+
+TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
+`R(w)=||sum_q w_q g_q||^2/sum_q w_q^2 d_q`。它证明非负权重在全正 cross-Gram block
+中不能制造 decay，并在 positive coherence floor 与 diagonal balance 下证明
+`R(w)>=1+eta*delta*(kappa(w)-1)`。同一 18-row grid 上 3 个 full-support policies 共
+54/54 amplified，18/18 leave-one-out minima 仍 amplified；仅早期 sign-flip row 的
+3 个 equal-pair supports subunit。故当前地图的 adaptive branch 已分成 diffuse positive
+wall 与 sparse sign-flip escape；growing weighted theorem、source-native arithmetic `L2`、
+fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC290_MAXIMUM_CLAIM = PROVED_EXACT_NONNEGATIVE_WEIGHTED_GRAM_NO_DECAY_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_ADAPTIVE_WEIGHTING_OBSTRUCTION
+TPC290_ROUTE_ADVANCE = YES_SCOPED_EFFECTIVE_SUPPORT_WEIGHTED_GRAM_FIREWALL
+TPC290_WEIGHTED_IDENTITY = PROVED_EXACT_FINITE
+TPC290_NONNEGATIVE_NO_DECAY = PROVED_EXACT_CONDITIONAL
+TPC290_DIFFUSE_ACCUMULATION_BOUND = PROVED_EXACT_CONDITIONAL
+TPC290_FULL_SUPPORT_POLICY_SCAN = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_AMPLIFIED
+TPC290_SPARSE_SIGN_FLIP_ESCAPE = NUMERICALLY_CERTIFIED_FINITE_3_PAIRS_ONE_ROW
+TPC290_DROP_ONE_SCAN = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_AMPLIFIED
+TPC290_UNIFORM_NONNEGATIVE_NO_DECAY = REFUTED_FINITE_BY_SPARSE_SIGN_FLIP
+TPC290_GROWING_WEIGHTED_THEOREM = OPEN
+TPC290_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC290_FIXED_POWER_CREDIT = 0
+TPC290_FULL_GATE_B = OPEN
+TPC290_TWIN_PRIME_RESULT = NONE
+TPC290_STATUS = PROVED_EXACT_NONNEGATIVE_WEIGHTED_GRAM_NO_DECAY_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_ADAPTIVE_WEIGHTING_OBSTRUCTION
+TPC290_ROUND2_CLUE = TEST_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_OR_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS
+```
 
 TPC-289 承接 TPC-288 的完整 physical output Gram，保持同一个 literal
 deleted-diagonal operator/source，转而追踪跨素数 Gram 交叉项的 sign 与 normalized
@@ -43,8 +104,8 @@ TPC289_ROUND2_CLUE = TEST_ADAPTIVE_SHELL_WEIGHTING_OR_SOURCE_RESTRICTED_COHERENC
 ```
 
 ```text
-YOU ARE HERE = V142 / TPC-289
-MAP_LABEL = CROSS-PRIME COHERENCE PHASE DIAGRAM / SIGN-FLIP FIREWALL
+TPC290_PREVIOUS_ANCHOR = V143 / TPC-290
+TPC290_MAP_LABEL = ADAPTIVE WEIGHTING WALL / SPARSE SIGN-FLIP ESCAPE
 ```
 TPC-288 承接 TPC-287，把同一个 physical deleted-diagonal prime shell 的每个 component
 保留为完整 output vector，构造 source-output Gram，并同时审计 aggregate physical
@@ -215,6 +276,84 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.85 V144 / TPC-291：signed Schur cancellation atlas
+
+TPC-291 保持 TPC-290 的 literal physical prime-component vectors，把 adaptive route 的
+“sign-flip escape”与 late positive coherence 统一放进 two-prime Schur compiler。对
+`G_(i,j)=<g_i,g_j>`、`d_i=G_(i,i)` 定义 `Gamma_(i,j)=G_(i,j)^2/(d_i d_j)`，严格证明
+`min_rho ||g_i-rho g_j||^2/d_i=1-Gamma_(i,j)`，并证明 signed two-vector Rayleigh
+minimum 为 `1-sqrt(Gamma_(i,j))`。`sign(rho*)=sign(G_(i,j))` 因而把正 cross term
+对应的 opposite-sign subtraction 与负 cross term 对应的 same-sign direction 明确
+分开。
+
+有限 replay 沿用 18 rows、1,380 unordered pairs：1,377 positive、3 negative、0 zero；
+residual `<=1/2,1/4,1/10` 的计数为 `1074/852/477`，coherence `>=9/25,3/4` 的
+计数为 `1189/852`。最佳 pair `(173,179)` 位于 `(N,H,Q,z,s)=(512,58,90,5,2)`，
+residual 约 `0.0151239493`；三个 negative pairs `(29,53),(31,53),(41,53)` 全部
+位于 `(256,38,27,5,1)` crossover row。
+
+```text
+TPC291_ROUTE_ADVANCE = YES_SCOPED_SIGNED_SCHUR_COHERENCE_TO_CANCELLATION_ATLAS
+TPC291_SCHUR_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC291_SIGNED_TWO_PRIME_CANCELLATION = PROVED_EXACT_CONDITIONAL
+TPC291_RESIDUAL_NONNEGATIVITY = PROVED_EXACT_FROM_CAUCHY
+TPC291_COHERENCE_TO_CANCELLATION_ATLAS = NUMERICALLY_CERTIFIED_FINITE_1380_PAIRS
+TPC291_LOW_RESIDUAL_COUNTS = NUMERICALLY_CERTIFIED_FINITE_1074_852_477
+TPC291_SIGN_COST_CENSUS = NUMERICALLY_CERTIFIED_FINITE_1377_OPPOSITE_3_SAME
+TPC291_GROWING_SIGNED_THEOREM = OPEN
+TPC291_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC291_FIXED_POWER_CREDIT = 0
+TPC291_FULL_GATE_B = OPEN
+TPC291_TWIN_PRIME_RESULT = NONE
+TPC291_STATUS = PROVED_EXACT_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_COHERENCE_TO_CANCELLATION_ATLAS
+TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNED_NULL_DIRECTIONS
+```
+
+strongest positive result：exact pairwise Schur/Rayleigh cancellation compiler 与完整
+coherence-to-cancellation atlas；strongest obstruction：绝大多数高相干 pair 的方向
+需要 signed coefficient，pairwise optimum 尚未组装成 full prime-shell direction；open
+theorem：multi-prime signed reassembly with literal source arithmetic `L2`；reusable
+structure：`coherence -> Schur residual -> sign cost -> reassembly test`。
+
+## 5.84 V143 / TPC-290：adaptive shell weighting obstruction
+
+TPC-290 保持 TPC-289 的 literal physical output vectors，定义 weighted ratio
+`R(w)=||sum_q w_q g_q||^2/sum_q w_q^2 d_q` 与 effective support
+`kappa(w)=(sum_q w_q)^2/sum_q w_q^2`。exact weighted identity 给出：若 `w>=0` 且
+所有 off-diagonal `G_(q,r)>=0`，则 `R(w)>=1`；若再有 positive coherence floor 与
+`d_min/d_max>=delta`，则 `R(w)>=1+eta*delta*(kappa(w)-1)`。
+
+finite replay 沿用 18 rows。uniform、inverse-diagonal、linear-taper 三种 full-support
+policies 共 54/54 amplified，18/18 leave-one-out minima 仍 amplified；equal two-prime
+support 中恰有 3 个 subunit witnesses，全部位于早期 sign-flip row，最小
+`R_(29,53)` 约 `0.8975237303`。因此 diffuse nonnegative adaptation 在 positive block
+中被 exact coherence wall 封住，而 sparse support 可利用负 cross term；后者不是
+full-shell saving。
+
+```text
+TPC290_ROUTE_ADVANCE = YES_SCOPED_EFFECTIVE_SUPPORT_WEIGHTED_GRAM_FIREWALL
+TPC290_WEIGHTED_IDENTITY = PROVED_EXACT_FINITE
+TPC290_NONNEGATIVE_NO_DECAY = PROVED_EXACT_CONDITIONAL
+TPC290_DIFFUSE_ACCUMULATION_BOUND = PROVED_EXACT_CONDITIONAL
+TPC290_FULL_SUPPORT_POLICY_SCAN = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_AMPLIFIED
+TPC290_SPARSE_SIGN_FLIP_ESCAPE = NUMERICALLY_CERTIFIED_FINITE_3_PAIRS_ONE_ROW
+TPC290_DROP_ONE_SCAN = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_AMPLIFIED
+TPC290_UNIFORM_NONNEGATIVE_NO_DECAY = REFUTED_FINITE_BY_SPARSE_SIGN_FLIP
+TPC290_GROWING_WEIGHTED_THEOREM = OPEN
+TPC290_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC290_FIXED_POWER_CREDIT = 0
+TPC290_FULL_GATE_B = OPEN
+TPC290_TWIN_PRIME_RESULT = NONE
+TPC290_STATUS = PROVED_EXACT_NONNEGATIVE_WEIGHTED_GRAM_NO_DECAY_BOUND_PLUS_NUMERICALLY_CERTIFIED_FINITE_ADAPTIVE_WEIGHTING_OBSTRUCTION
+TPC290_ROUND2_CLUE = TEST_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_OR_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS
+```
+
+strongest positive result：exact effective-support coherence envelope 与 54 个
+full-support policy obstruction；strongest obstruction：3 个 sparse nonnegative
+sign-flip escapes；open theorem：growing diffuse weighted coherence 或可证明的 source
+restriction；reusable structure：`weighted Gram -> effective support -> positive wall /
+sparse escape`。
 
 ## 5.83 V142 / TPC-289：cross-prime Gram coherence phase diagram
 
@@ -940,9 +1079,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V142 / TPC-289                    |
-        | CROSS-PRIME COHERENCE / SIGN-FLIP FIREWALL    |
-        | normalized Gram and conditional energy bound  |
+        | YOU ARE HERE — V144 / TPC-291                    |
+        | SIGNED TWO-PRIME SCHUR CANCELLATION             |
+        | pairwise direction / multi-prime pier            |
         +--------------------------------------------------+
                 |
                 v
@@ -5642,6 +5781,20 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
+0. **TPC-291 已完成：signed Schur cancellation atlas**。在 TPC-290 的 weighted-Gram
+   firewall 之后，严格证明 two-prime Schur projection residual `1-Gamma`、signed
+   Rayleigh minimum `1-sqrt(Gamma)` 与 coefficient sign rule；18-row grid 的 1,380
+   pairs 完成 exact coherence-to-cancellation atlas（1,377 opposite-sign、3 same-sign，
+   residual thresholds `1/2,1/4,1/10` 为 `1074/852/477`）。下一关必须测试
+   multi-prime signed null directions 或 source-restricted diffuse weights；不能把
+   pairwise compiler 当作 full-shell arithmetic `L2` theorem。
+0. **TPC-290 已完成：adaptive shell weighting obstruction**。严格证明 weighted Gram
+   identity、nonnegative coherence wall 与 effective-support accumulation bound；同一
+   18-row grid 的 uniform/inverse-diagonal/linear-taper policies 共 54/54 amplified，
+   18/18 leave-one-out minima 仍 amplified，仅早期 sign-flip row 的 3 个 equal-pair
+   supports subunit。下一关优先做 signed two-prime Schur cancellation，定量区分
+   高相干 pair 的符号反演收益与物理正权重限制；source-restricted diffuse theorem 保留
+   为并行 open branch。
 0. **TPC-289 已完成：cross-prime Gram coherence phase diagram**。在 TPC-288 的
    source-output Gram 上严格证明 `0<=Gamma<=1` 与 conditional accumulation lower bound；
    18 个 rows / 1,380 个 unordered pairs 中 17/18 rows pairwise positive，早期 `s=1`
@@ -5954,6 +6107,8 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-28 | V144 / TPC-291 | Bridge A / Gate B：signed two-prime Schur cancellation atlas；multi-prime reassembly、growing signed theorem、arithmetic `L2` 与 full Gate B open | `TPC-291` | 严格证明 Schur projection residual `1-Gamma`、signed Rayleigh minimum `1-sqrt(Gamma)` 与 coefficient sign rule；18 rows / 1,380 pairs 完成 1,377 positive、3 negative、0 zero 的 coherence-to-cancellation atlas，residual thresholds `1074/852/477`；下一步为 multi-prime signed null directions 或 source-restricted diffuse weights |
+| 2026-08-28 | V143 / TPC-290 | Bridge A / Gate B：adaptive shell weighting wall 与 sparse sign-flip escape；growing weighted theorem、arithmetic `L2` 与 full Gate B open | `TPC-290` | 证明 weighted Gram identity、nonnegative no-decay 与 effective-support lower bound；18 rows 上 54/54 full-support policies、18/18 leave-one-out minima amplified，3 个 sparse equal-pair subunit witnesses 全在一个 sign-flip row；下一步为 signed two-prime Schur cancellation 或 source-restricted diffuse theorem |
 | 2026-08-28 | V142 / TPC-289 | Bridge A / Gate B：cross-prime Gram coherence phase diagram；growing-shell/source-restricted coherence、arithmetic `L2` 与 full Gate B open | `TPC-289` | 严格证明 `0<=Gamma<=1` 与 conditional accumulation lower bound；18 rows / 1,380 unordered pairs 完成 17/18 pairwise-positive rows、3 negative pairs in one early crossover row、8-row `eta=3/5,delta=4/5` strong block、18/18 energy amplification；下一步为 adaptive shell weighting 或 source-restricted coherence |
 | 2026-08-28 | V141 / TPC-288 | Bridge A / Gate B：growing-shell output Gram 与 scalar-energy firewall；source-native cross-prime Gram bound、arithmetic `L2` 与 full Gate B open | `TPC-288` | 严格证明 finite operator/output/attachment additivity、Gram PSD 与 energy identity；34 个 growth/control rows（最大 17-prime shell）完成 34/34 Gram full rank、6/6 selected aggregate active full rank，34/34 energy amplification，13 个 scalar-retention `<1/10` 与 energy `>1` 的 mismatch，fixed-power credit 为 0，下一步为 source-native cross-prime Gram bound |
 | 2026-08-28 | V140 / TPC-287 | Bridge A / Gate B：prime-shell component cancellation depth 已完成；growing-shell/source-control stability、arithmetic `L2` 与 full Gate B open | `TPC-287` | 严格证明 `g_shell=sum_q g_q`、`C_shell=sum_q C_q` 与 conditional retention envelope；1--7 prime declared ladder 完成 84-row / 336-component ledger，全部 components sign-separated，57 mixed-sign rows，retention upper `<1/2/<1/4/<1/10` 为 31/22/8，leave-one-out 为 48 flips / 12 zero，fixed-power credit 为 0，下一步为 coupled growing-shell/source-control stability |

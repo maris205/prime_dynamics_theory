@@ -9,6 +9,31 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-291 承接 TPC-290 的 adaptive weighted-Gram firewall，把“相干是否
+真的能抵消”精确化为两素数向量的 Schur projection。对任意非零 component pair，严格
+证明最小归一化残差 `1-Gamma` 与 signed two-vector Rayleigh minimum `1-sqrt(Gamma)`，
+并由 Gram 符号判定最优方向需要 opposite-sign 还是 same-sign coefficients。在同一
+18-row grid 的 1,380 个 unordered pairs 上，exact-rational certificate 得到 1,377 个
+positive、3 个 negative、0 个 zero cross terms；残差不超过 `1/2`、`1/4`、`1/10` 的
+pair 数分别为 1,074、852、477，全球最强 pair `(173,179)` 的 residual 约为
+`0.0151239493`。这确认了 pairwise signed cancellation mechanism，但 multi-prime
+reassembly、literal arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+```text
+TPC291_SCHUR_PROJECTION_IDENTITY = PROVED_EXACT_FINITE
+TPC291_SIGNED_TWO_PRIME_CANCELLATION = PROVED_EXACT_CONDITIONAL
+TPC291_RESIDUAL_NONNEGATIVITY = PROVED_EXACT_FROM_CAUCHY
+TPC291_COHERENCE_TO_CANCELLATION_ATLAS = NUMERICALLY_CERTIFIED_FINITE_1380_PAIRS
+TPC291_LOW_RESIDUAL_COUNTS = NUMERICALLY_CERTIFIED_FINITE_1074_852_477
+TPC291_SIGN_COST_CENSUS = NUMERICALLY_CERTIFIED_FINITE_1377_OPPOSITE_3_SAME
+TPC291_GROWING_SIGNED_THEOREM = OPEN
+TPC291_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC291_FIXED_POWER_CREDIT = 0
+TPC291_FULL_GATE_B = OPEN
+TPC291_TWIN_PRIME_RESULT = NONE
+```
+
 当前主线状态：TPC-289 承接 TPC-288 的 source-output Gram obstruction，在不改变
 literal physical deleted-diagonal operator 的前提下，研究跨素数 Gram 交叉项的符号与
 归一化相干。18 个 growth/exponent/control rows 共 1,380 个 unordered pair comparisons：
@@ -33,6 +58,31 @@ TPC289_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
 TPC289_FIXED_POWER_CREDIT = 0
 TPC289_FULL_GATE_B = OPEN
 TPC289_TWIN_PRIME_RESULT = NONE
+```
+
+当前主线状态：TPC-290 承接 TPC-289 的 coherence phase diagram，把 adaptive weighting
+写成加权 physical Gram quotient `R(w)=||sum_q w_q g_q||^2/sum_q w_q^2 d_q`。它严格证明
+非负权重在全正 cross-Gram block 中不能产生 `R(w)<1`，并在 coherence floor 与 diagonal
+balance 下证明 effective-support lower bound `R(w)>=1+eta*delta*(kappa(w)-1)`。在同一
+18-row grid 上，uniform、inverse-diagonal、linear-taper 三种 full-support policies 共
+54/54 amplified，18/18 leave-one-out minima 仍 amplified；恰有 3 个 equal-pair subunit
+witness，全部来自早期 sign-flip row。这把“adaptive”细分为 diffuse positive branch 与
+sparse sign-flip escape，但 growing weighted theorem、literal arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC290_WEIGHTED_IDENTITY = PROVED_EXACT_FINITE
+TPC290_NONNEGATIVE_NO_DECAY = PROVED_EXACT_CONDITIONAL
+TPC290_DIFFUSE_ACCUMULATION_BOUND = PROVED_EXACT_CONDITIONAL
+TPC290_FULL_SUPPORT_POLICY_SCAN = NUMERICALLY_CERTIFIED_FINITE_54_OF_54_AMPLIFIED
+TPC290_SPARSE_SIGN_FLIP_ESCAPE = NUMERICALLY_CERTIFIED_FINITE_3_PAIRS_ONE_ROW
+TPC290_DROP_ONE_SCAN = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_AMPLIFIED
+TPC290_UNIFORM_NONNEGATIVE_NO_DECAY = REFUTED_FINITE_BY_SPARSE_SIGN_FLIP
+TPC290_GROWING_WEIGHTED_THEOREM = OPEN
+TPC290_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC290_FIXED_POWER_CREDIT = 0
+TPC290_FULL_GATE_B = OPEN
+TPC290_TWIN_PRIME_RESULT = NONE
 ```
 
 当前主线状态：TPC-288 沿着 TPC-287 的 growing-shell clue，把同一个 literal
@@ -335,6 +385,16 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-291-signed-schur-cancellation-atlas - 当前阶段 - 严格证明 two-prime Schur projection
+identity、signed Rayleigh minimum 与 coefficient sign rule；18 个 rows / 1,380 个 pairs
+完成 coherence-to-cancellation atlas（1,377 opposite-sign、3 same-sign，残差阈值
+`1/2,1/4,1/10` 为 `1074/852/477`）；multi-prime reassembly、literal `L2`、full Gate B
+仍 OPEN，fixed-power credit 为 0。
+tpc-290-adaptive-shell-weighting-obstruction - 当前阶段 - 严格证明 weighted Gram identity、
+nonnegative coherence wall 与 effective-support accumulation bound；同一 18-row grid 的
+54/54 full-support policies 和 18/18 leave-one-out minima 均 amplified，仅早期 sign-flip
+row 的 3 个 equal-pair supports subunit；growing weighted theorem、literal `L2`、full Gate B
+仍 OPEN，fixed-power credit 为 0。
 tpc-289-cross-prime-gram-coherence - 当前阶段 - 严格证明 normalized Gram coherence
 的 Cauchy bound 与 conditional accumulation envelope；18 个 rows / 1,380 个 pair
 comparisons 中 17/18 rows pairwise positive，早期 crossover 有 3 个 negative pairs，
