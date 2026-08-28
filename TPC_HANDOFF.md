@@ -1,7 +1,55 @@
 # TPC HANDOFF
 
 更新时间：2026-08-28
-交接状态：`BOLD_CHANNEL_V148_TPC295_SOURCE_CORRELATION_IMAGE_RELEASED`
+交接状态：`BOLD_CHANNEL_V149_TPC296_SOURCE_NORM_BUDGET_RELEASED`
+
+TPC-296 current section: least-norm source budget and native-ray obstruction
+-----------------------------------------------------------------------------------------------
+
+TPC-296 follows TPC-295's unrestricted finite source-image result and asks
+how expensive its witnesses are, and whether the cost is aligned with the
+native profile.  For physical columns `A` and `G=A^T A`, the exact theorem is
+
+`S_A(b)=min_{A^T h=b} ||h||_2^2=b^T G^(-1)b`,
+
+with minimizer `h=A G^(-1)b`; hence `S_A(b)<=B` is an iff budget criterion.
+The same finite linear algebra gives the exact tradeoff
+`S_A(b)(b^T G b)>=(b^T b)^2`.  A separate declared proxy measures normalized
+RMS distance to the one-dimensional ray `span{A^T beta}`.
+
+The 70-digit producer and independent source-first replay cover the inherited
+18-row, 1,380-edge grid.  Weighted-minimum, unit-edge max-cut, and
+all-positive targets all have unrestricted cost ratio below `1e-3` on 18/18
+rows; all 54 source-energy tradeoff checks pass.  However, weighted-minimum
+and max-cut targets have one-ray RMS at least `0.9` on 18/18 rows.  Thus the
+finite ambient source budget is cheap under the declared diagnostic, while
+the native profile's dimension/image remains the obstruction.  The threshold
+and frozen ray are modeling choices, not arithmetic or exponent credit.
+
+```text
+TPC296_MAXIMUM_CLAIM = PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS
+TPC296_ROUTE_ADVANCE = YES_SCOPED_SOURCE_IMAGE_TO_LEAST_NORM_BUDGET_AND_PROFILE_GEOMETRY
+TPC296_LEAST_NORM_IDENTITY = PROVED_EXACT_FINITE
+TPC296_BUDGET_FEASIBILITY_CRITERION = PROVED_EXACT_FINITE
+TPC296_SOURCE_ENERGY_TRADEOFF = PROVED_EXACT_FINITE
+TPC296_COST_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS_HIGH_PRECISION_REPLAY
+TPC296_UNRESTRICTED_BUDGET_TEST = NUMERICAL_OBSERVATION_FINITE_18_OF_18_BELOW_1E_MINUS_3
+TPC296_ONE_RAY_PROFILE_OBSTRUCTION = NUMERICAL_OBSERVATION_FINITE_18_OF_18_RMS_AT_LEAST_0_9
+TPC296_NATIVE_RESTRICTED_PROFILE = OPEN_LITERAL_SOURCE
+TPC296_GROWING_SOURCE_BUDGET = OPEN
+TPC296_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC296_FIXED_POWER_CREDIT = 0
+TPC296_FULL_GATE_B = OPEN
+TPC296_TWIN_PRIME_RESULT = NONE
+TPC296_STATUS = PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS
+TPC296_ROUND2_CLUE = TEST_RESTRICTED_PROFILE_DIMENSION_AND_GROWING_SOURCE_BUDGET
+```
+
+The Session-named Route-A/Route-B evaluator files are absent from this
+checkout; this section records the local proof package, canonical
+certificate, independent replay, stress suite, PDF audit, and fail-closed
+Bridge-B checker only.  The next natural bridge is a 2--4 dimensional literal
+native profile basis coupled to a growing source-budget estimate.
 
 TPC-295 current section: source-correlation image and least-norm budget pier
 -----------------------------------------------------------------------------------------------
@@ -9690,22 +9738,25 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V148/TPC-295 是当前 release；其 producer、independent replay、stress audit 与
+V149/TPC-296 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade command set 共 201 对 normal/optimized 命令、402 次
+当前 curated cascade command set 共 205 对 normal/optimized 命令、410 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
 TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对，TPC-290 再追加末尾 4 对，
 TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对，TPC-293 再追加末尾 4 对，
-TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对。V148/TPC-295 的 201 对
+TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对，TPC-296 再追加末尾 4 对。
+V149/TPC-296 的 205 对
 registry 已完成增量回归；TPC-289 新增的 4 对已由本项目 bridge 与 standalone tail
 checks 逐项通过；TPC-290、TPC-291、TPC-292 的各 4 对均由各自 bridge 与 standalone
 tail checks 逐项通过；TPC-293 的 4 对也由本项目 bridge 与 standalone tail checks
 逐项通过；TPC-294 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过，
-完整 201 对组合未因重复计算而再次运行。
+TPC-295 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-296 的
+4 对亦由本项目 bridge 与 standalone tail checks 逐项通过。完整 205 对组合未因
+重复计算而再次运行。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
 执行 normal与 optimized只读 checker；每一对必须都为零，且每一对 stdout
@@ -10205,6 +10256,19 @@ python -B research/tpc-big-road/tpc_bridge_b_tpc295_source_correlation_image_aud
 python -O -B research/tpc-big-road/tpc_bridge_b_tpc295_source_correlation_image_audit_checker.py --check
 ```
 
+TPC-296 的项目级 producer、independent replay、budget stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-296-source-norm-budget-interface/code/tpc296_source_norm_budget_certificate.py --check
+python -O -B papers/tpc-296-source-norm-budget-interface/code/tpc296_source_norm_budget_certificate.py --check
+python -B papers/tpc-296-source-norm-budget-interface/experiments/tpc296_independent_checker.py
+python -O -B papers/tpc-296-source-norm-budget-interface/experiments/tpc296_independent_checker.py
+python -B papers/tpc-296-source-norm-budget-interface/experiments/tpc296_budget_stress.py
+python -O -B papers/tpc-296-source-norm-budget-interface/experiments/tpc296_budget_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc296_source_norm_budget_interface_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc296_source_norm_budget_interface_checker.py --check
+```
+
 TPC-282 的项目级 producer、independent replay、attachment stress 与 bridge checker：
 
 ```bash
@@ -10232,6 +10296,17 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 ```
 
 随后优先读取：
+
+最新 TPC-296 入口：
+
+```text
+papers/tpc-296-source-norm-budget-interface/README.md
+papers/tpc-296-source-norm-budget-interface/PROOF_PACKAGE.md
+papers/tpc-296-source-norm-budget-interface/notes/theorem_ledger.md
+papers/tpc-296-source-norm-budget-interface/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc296_source_norm_budget_interface.md
+research/tpc-big-road/tpc_bridge_b_tpc296_source_norm_budget_interface_checker.py
+```
 
 最新 TPC-295 入口：
 

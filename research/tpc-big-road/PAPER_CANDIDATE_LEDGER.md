@@ -3,11 +3,68 @@
 
 更新时间：2026-08-28
 
-状态：**TPC295_PROVED_EXACT_FULL_RANK_IMPLIES_SOURCE_CORRELATION_SURJECTIVITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_MODULAR_FULL_RANK_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC296_PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
+
+## 0.90 当前：TPC-296 least-norm source budget and native-ray obstruction
+
+项目：`papers/tpc-296-source-norm-budget-interface/`
+
+类型：**PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS**。
+
+TPC-296 承接 TPC-295 的 unrestricted finite source-correlation image，把“存在 witness”
+推进成“witness 需要多少 source budget”。令 physical columns 为 `A`、`G=A^T A`，严格
+证明
+`S_A(b)=min_{A^T h=b}||h||_2^2=b^T G^(-1)b`，显式最小解为 `h=A G^(-1)b`；从而
+`S_A(b)<=B` 是预算可行性的 iff criterion。进一步由 Cauchy--Schwarz 严格得到
+`S_A(b)(b^TGb)>=(b^Tb)^2`，把 source cost 与 physical target energy 接在同一个
+可复用接口上。
+
+在继承的 18-row literal grid、1,380 edges 上，70 位高精度 producer、独立 source-first
+replay 与 exact stress suite 完成 finite audit。weighted minimizer、unit-edge max-cut
+与 all-positive targets 的 unrestricted cost ratio 都低于声明的 `1e-3` 阈值（各 18/18）；
+source-energy tradeoff 的 54 个 target checks 全部通过，最大 finite Gram condition
+number 约为 `2497.29180077`。另一方面，weighted minimizer 与 max-cut 到冻结一维
+proxy `span{A^T beta}` 的 normalized RMS 在 18/18 rows 均至少为 `0.9`；这说明 ambient
+least-norm budget 在有限样本中并非主障碍，真正未支付的是 native profile 的 image/
+dimension 与 growing-shell control。
+
+预算阈值 `1e-3` 与冻结-beta 一维 ray 是明确的 modeling choices，不是 native arithmetic
+profile theorem，也不产生 exponent 或 fixed-power credit。该项目的 strongest positive
+result 是 exact least-norm budget compiler 加 18-row high-precision cost/profile atlas；
+strongest obstruction 是 unrestricted cheap witnesses 仍远离冻结 native ray。下一步最小
+自然问题是构造 2--4 维的 literal native profile basis，并同时审计 growing source budget。
+Session-named Route-A/Route-B evaluator 文件在 checkout 中缺失，因此这里不宣称官方
+evaluator pass；本地 proof package、canonical certificate、independent replay、stress
+与 Bridge-B checker 是 fail-closed fallback。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_LEAST_NORM_BUDGET_COMPILER_PLUS_18_ROW_HIGH_PRECISION_COST_ATLAS
+STRONGEST_OBSTRUCTION = CHEAP_UNRESTRICTED_WITNESSES_ARE_FAR_FROM_THE_FROZEN_NATIVE_RAY
+OPEN_THEOREM = GROWING_RESTRICTED_PROFILE_IMAGE_WITH_A_PAYABLE_SOURCE_NORM_BUDGET
+REUSABLE_STRUCTURE = GRAM_INVERSE -> LEAST_NORM_SOURCE_COST -> ENERGY_TRADEOFF -> PROFILE_PROJECTION
+ROUND2_CLUE = TEST_RESTRICTED_PROFILE_DIMENSION_AND_GROWING_SOURCE_BUDGET
+```
+
+```text
+TPC296_ROUTE_ADVANCE = YES_SCOPED_SOURCE_IMAGE_TO_LEAST_NORM_BUDGET_AND_PROFILE_GEOMETRY
+TPC296_LEAST_NORM_IDENTITY = PROVED_EXACT_FINITE
+TPC296_BUDGET_FEASIBILITY_CRITERION = PROVED_EXACT_FINITE
+TPC296_SOURCE_ENERGY_TRADEOFF = PROVED_EXACT_FINITE
+TPC296_COST_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS_HIGH_PRECISION_REPLAY
+TPC296_UNRESTRICTED_BUDGET_TEST = NUMERICAL_OBSERVATION_FINITE_18_OF_18_BELOW_1E_MINUS_3
+TPC296_ONE_RAY_PROFILE_OBSTRUCTION = NUMERICAL_OBSERVATION_FINITE_18_OF_18_RMS_AT_LEAST_0_9
+TPC296_NATIVE_RESTRICTED_PROFILE = OPEN_LITERAL_SOURCE
+TPC296_GROWING_SOURCE_BUDGET = OPEN
+TPC296_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC296_FIXED_POWER_CREDIT = 0
+TPC296_FULL_GATE_B = OPEN
+TPC296_TWIN_PRIME_RESULT = NONE
+TPC296_STATUS = PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS
+```
 
 ## 0.89 当前：TPC-295 source-correlation image and finite signed feasibility
 

@@ -2,13 +2,43 @@
 
 更新时间：2026-08-28
 
-当前地图版本：V148 / TPC-295
+当前地图版本：V149 / TPC-296
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-295`（`PROVED_EXACT_FULL_RANK_IMPLIES_SOURCE_CORRELATION_SURJECTIVITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_MODULAR_FULL_RANK_ATLAS`）；
+当前编号锚点：`TPC-296`（`PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS`）；
 对应论文目录为
-`papers/tpc-295-source-correlation-image-audit/`。
+`papers/tpc-296-source-norm-budget-interface/`。
+
+TPC-296 承接 TPC-295 的 unrestricted finite source-correlation image，令 physical shell
+vectors 为 rational matrix `A` 的 columns、`G=A^T A`，严格证明 least-norm source cost
+`S_A(b)=min_{A^T h=b}||h||_2^2=b^T G^(-1)b`、预算可行性的 iff criterion，以及
+`S_A(b)(b^TGb)>=(b^Tb)^2` 的 source/physical-energy tradeoff。70 位独立 replay 在
+同一 18-row literal grid、1,380 edges 上得到 weighted/min-cut/all-positive targets 的
+unrestricted cost ratio 均低于声明的 `1e-3`（18/18）；weighted/min-cut 到冻结 ray
+`span{A^T beta}` 的 normalized RMS 均至少为 `0.9`（18/18）。因此当前 finite bridge
+坑已从 ambient source existence 收缩到 native profile 的维数/像与 growing-shell budget；
+arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+阈值和一维 ray 是 modeling choices，不产生 exponent credit。
+
+```text
+TPC296_MAXIMUM_CLAIM = PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS
+TPC296_ROUTE_ADVANCE = YES_SCOPED_SOURCE_IMAGE_TO_LEAST_NORM_BUDGET_AND_PROFILE_GEOMETRY
+TPC296_LEAST_NORM_IDENTITY = PROVED_EXACT_FINITE
+TPC296_BUDGET_FEASIBILITY_CRITERION = PROVED_EXACT_FINITE
+TPC296_SOURCE_ENERGY_TRADEOFF = PROVED_EXACT_FINITE
+TPC296_COST_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS_HIGH_PRECISION_REPLAY
+TPC296_UNRESTRICTED_BUDGET_TEST = NUMERICAL_OBSERVATION_FINITE_18_OF_18_BELOW_1E_MINUS_3
+TPC296_ONE_RAY_PROFILE_OBSTRUCTION = NUMERICAL_OBSERVATION_FINITE_18_OF_18_RMS_AT_LEAST_0_9
+TPC296_NATIVE_RESTRICTED_PROFILE = OPEN_LITERAL_SOURCE
+TPC296_GROWING_SOURCE_BUDGET = OPEN
+TPC296_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC296_FIXED_POWER_CREDIT = 0
+TPC296_FULL_GATE_B = OPEN
+TPC296_TWIN_PRIME_RESULT = NONE
+TPC296_STATUS = PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS
+TPC296_ROUND2_CLUE = TEST_RESTRICTED_PROFILE_DIMENSION_AND_GROWING_SOURCE_BUDGET
+```
 
 TPC-295 承接 TPC-294 的 ambient magnitude-weighted sign minimizer，令 physical shell
 vectors 为 rational matrix `A` 的 columns。严格证明 `G=A^T A` full rank 时
@@ -153,8 +183,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V148 / TPC-295
-MAP_LABEL = SOURCE-CORRELATION IMAGE / LEAST-NORM BUDGET PIER
+YOU ARE HERE = V149 / TPC-296
+MAP_LABEL = LEAST-NORM SOURCE BUDGET / NATIVE-PROFILE DIMENSION PIER
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -390,6 +420,46 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.90 V149 / TPC-296：least-norm source budget and native-ray obstruction
+
+TPC-296 承接 TPC-295 的 source-correlation image，把满秩带来的“存在 witness”进一步量化。
+令 physical shell columns 为 `A`、`G=A^T A`。严格证明 least-norm identity
+`S_A(b)=min_{A^T h=b}||h||_2^2=b^T G^(-1)b`，显式解 `h=A G^(-1)b`，以及预算
+`S_A(b)<=B` 的 iff criterion；再由 Cauchy--Schwarz 得到
+`S_A(b)(b^TGb)>=(b^Tb)^2` 的 source/physical-energy tradeoff。
+
+同一 18-row literal grid 的 1,380 edges 经过 70 位 producer 与独立 source-first replay。
+weighted minimizer、unit-edge max-cut、all-positive 三类 target 的 unrestricted cost ratio
+均在声明的 `1e-3` budget 内（各 18/18），54 个 source-energy tradeoff checks 全部通过，
+最大 finite Gram condition number 约为 `2497.29180077`。但 weighted/min-cut targets 到
+冻结一维 proxy `span{A^T beta}` 的 normalized RMS 在 18/18 rows 均至少为 `0.9`。
+因此这里的正结果是 unrestricted budget compiler，负结果是 native profile 的一维几何
+不足；预算阈值和 ray 都是 finite modeling choices，不产生 arithmetic 或 fixed-power
+credit。
+
+```text
+TPC296_ROUTE_ADVANCE = YES_SCOPED_SOURCE_IMAGE_TO_LEAST_NORM_BUDGET_AND_PROFILE_GEOMETRY
+TPC296_LEAST_NORM_IDENTITY = PROVED_EXACT_FINITE
+TPC296_BUDGET_FEASIBILITY_CRITERION = PROVED_EXACT_FINITE
+TPC296_SOURCE_ENERGY_TRADEOFF = PROVED_EXACT_FINITE
+TPC296_COST_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS_HIGH_PRECISION_REPLAY
+TPC296_UNRESTRICTED_BUDGET_TEST = NUMERICAL_OBSERVATION_FINITE_18_OF_18_BELOW_1E_MINUS_3
+TPC296_ONE_RAY_PROFILE_OBSTRUCTION = NUMERICAL_OBSERVATION_FINITE_18_OF_18_RMS_AT_LEAST_0_9
+TPC296_NATIVE_RESTRICTED_PROFILE = OPEN_LITERAL_SOURCE
+TPC296_GROWING_SOURCE_BUDGET = OPEN
+TPC296_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC296_FIXED_POWER_CREDIT = 0
+TPC296_FULL_GATE_B = OPEN
+TPC296_TWIN_PRIME_RESULT = NONE
+TPC296_STATUS = PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS
+TPC296_ROUND2_CLUE = TEST_RESTRICTED_PROFILE_DIMENSION_AND_GROWING_SOURCE_BUDGET
+```
+
+最强正结果：exact least-norm budget compiler 加 18-row high-precision cost/profile atlas。
+最强 obstruction：cheap unrestricted witnesses 仍远离冻结 native ray。下一座最小桥是
+2--4 维 literal native profile basis 与 growing source-budget 的联合审计；Session-named
+Route-A/Route-B evaluator 文件缺失，故本节只记录 local fail-closed validation。
 
 ## 5.89 V148 / TPC-295：source-correlation image and least-norm budget pier
 
@@ -1350,9 +1420,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V148 / TPC-295                    |
-        | SOURCE-CORRELATION IMAGE                        |
-        | least-norm / native-profile budget pier       |
+        | YOU ARE HERE — V149 / TPC-296                    |
+        | LEAST-NORM SOURCE BUDGET                       |
+        | native-profile dimension pier                  |
         +--------------------------------------------------+
                 |
                 v
@@ -6385,6 +6455,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-28 | V149 / TPC-296 | Bridge A / Gate B：unrestricted least-norm source budget 已在有限图上量化；native profile dimension/image、growing budget、arithmetic `L2` 与 full Gate B open | `TPC-296` | 严格证明 `S_A(b)=b^T G^(-1)b`、budget iff criterion 与 source-energy tradeoff；70 位 replay 在 18 rows / 1,380 edges 上三类 targets 的 unrestricted cost ratio 各 18/18 低于 `1e-3`，但 weighted/max-cut 到 frozen ray 的 RMS 各 18/18 至少 `0.9`；下一步为 restricted profile dimension 与 growing budget |
 | 2026-08-28 | V148 / TPC-295 | Bridge A / Gate B：unrestricted finite source-correlation image 已关闭；native profile、least-norm/growing budget、arithmetic `L2` 与 full Gate B open | `TPC-295` | 严格证明 `G=A^T A` full rank `=>` `A^T` surjective 与 least-norm witness `A G^(-1)b`；18 rows / 1,380 edges 通过两个独立模数的 18/18 full-rank atlas，TPC-294 weighted/min-cut/all-positive targets 均 18/18 unrestricted 可达；下一步为 source norm cost 与 restricted native profile image |
 | 2026-08-28 | V147 / TPC-294 | Bridge A / Gate B：finite magnitude-weighted signed Rayleigh layer；source-native image、growing weighted theorem、arithmetic `L2` 与 full Gate B open | `TPC-294` | 严格证明 trace-normalized identity、Gram nonnegativity 与 finite global sign enumeration；18 rows / 1,380 edges 完成 18/18 weighted minima `<1`、18/18 all-positive `>1`、18/18 weighted optima different from unit-edge max-cut，13/18 `<=1/4`、8/18 `<=1/10`；下一步为 source-image attainability audit |
 | 2026-08-28 | V146 / TPC-293 | Bridge A / Gate B：whole-shell signed max-cut；magnitude-weighted objective、source-native arithmetic `L2` 与 full Gate B open | `TPC-293` | 严格证明 all-positive `K_m` max-cut、frustration complement 与 switching invariance；18 rows / 1,380 edges 完成 exact atlas，17/18 rows all-positive，唯一 crossover row 有 `+3` sign-only gain，总 max favorable / minimum unsatisfied 为 `744/636`；下一步为 magnitude-weighted signed Rayleigh 与 source-image feasibility |

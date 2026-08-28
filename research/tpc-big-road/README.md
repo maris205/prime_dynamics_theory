@@ -1,16 +1,46 @@
-# TPC big road V148 / TPC-295: source-correlation image and norm-budget pier
+# TPC big road V149 / TPC-296: least-norm source budget and native-ray obstruction
 
 更新时间：2026-08-28
 
-状态：`TPC295_PROVED_EXACT_FULL_RANK_IMPLIES_SOURCE_CORRELATION_SURJECTIVITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_MODULAR_FULL_RANK_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC296_PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-295 proof 为
-`bridge_b_tpc295_source_correlation_image_audit.md`，checker 为
-`tpc_bridge_b_tpc295_source_correlation_image_audit_checker.py`，编号论文为
-`../../papers/tpc-295-source-correlation-image-audit/`。
+当前 TPC-296 proof 为
+`bridge_b_tpc296_source_norm_budget_interface.md`，checker 为
+`tpc_bridge_b_tpc296_source_norm_budget_interface_checker.py`，编号论文为
+`../../papers/tpc-296-source-norm-budget-interface/`。
+
+TPC-296 承接 TPC-295 的 unrestricted finite source image，令 physical shell vectors 为
+rational matrix `A` 的 columns、`G=A^T A`，严格证明 least-norm source cost
+`S_A(b)=b^T G^(-1)b`、budget iff criterion 与 exact source/physical-energy tradeoff
+`S_A(b)(b^TGb)>=(b^Tb)^2`。同一 18-row literal grid 的 1,380 edges 经过 70 位
+高精度独立 source-first replay：weighted minimizer、max-cut、all-positive targets 的
+unrestricted cost ratio 均低于声明的 `1e-3`（18/18），但 weighted/min-cut 到冻结
+一维 native-ray proxy `span{A^T beta}` 的 RMS 均至少 `0.9`（18/18）。这说明有限
+ambient source cost 并非当前瓶颈；native profile 的维数/像与 growing-shell budget 才是
+下一座桥。预算阈值和一维 ray 都是 modeling choices，不产生 arithmetic 或 exponent
+credit；native profile、arithmetic `L2`、full Gate B 与 twin-prime theorem 仍 OPEN/NONE。
+
+```text
+TPC296_MAXIMUM_CLAIM = PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS
+TPC296_ROUTE_ADVANCE = YES_SCOPED_SOURCE_IMAGE_TO_LEAST_NORM_BUDGET_AND_PROFILE_GEOMETRY
+TPC296_LEAST_NORM_IDENTITY = PROVED_EXACT_FINITE
+TPC296_BUDGET_FEASIBILITY_CRITERION = PROVED_EXACT_FINITE
+TPC296_SOURCE_ENERGY_TRADEOFF = PROVED_EXACT_FINITE
+TPC296_COST_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS_HIGH_PRECISION_REPLAY
+TPC296_UNRESTRICTED_BUDGET_TEST = NUMERICAL_OBSERVATION_FINITE_18_OF_18_BELOW_1E_MINUS_3
+TPC296_ONE_RAY_PROFILE_OBSTRUCTION = NUMERICAL_OBSERVATION_FINITE_18_OF_18_RMS_AT_LEAST_0_9
+TPC296_NATIVE_RESTRICTED_PROFILE = OPEN_LITERAL_SOURCE
+TPC296_GROWING_SOURCE_BUDGET = OPEN
+TPC296_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC296_FIXED_POWER_CREDIT = 0
+TPC296_FULL_GATE_B = OPEN
+TPC296_TWIN_PRIME_RESULT = NONE
+TPC296_STATUS = PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS
+TPC296_ROUND2_CLUE = TEST_RESTRICTED_PROFILE_DIMENSION_AND_GROWING_SOURCE_BUDGET
+```
 
 TPC-295 承接 TPC-294 的 ambient weighted sign minimizer，令物理 shell vectors 为 rational
 matrix `A` 的 columns，严格证明 `G=A^T A` full rank 时 source-correlation map

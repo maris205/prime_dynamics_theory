@@ -1,9 +1,41 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-28
-状态：`BOLD_CHANNEL_V148 / SOURCE_CORRELATION_IMAGE_AND_NORM_BUDGET_PIER`
-claim level：`PROVED_EXACT_FULL_RANK_IMPLIES_SOURCE_CORRELATION_SURJECTIVITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_MODULAR_FULL_RANK_ATLAS`
-编号事实终点：TPC-295；TPC-295 trigger：`true`
+状态：`BOLD_CHANNEL_V149 / LEAST_NORM_SOURCE_BUDGET_AND_NATIVE_PROFILE_PIER`
+claim level：`PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS`
+编号事实终点：TPC-296；TPC-296 trigger：`true`
+
+当前 TPC-296 入口：proof 为
+`research/tpc-big-road/bridge_b_tpc296_source_norm_budget_interface.md`，checker 为
+`tpc_bridge_b_tpc296_source_norm_budget_interface_checker.py`，编号论文为
+`papers/tpc-296-source-norm-budget-interface/`。它承接 TPC-295 的 unrestricted finite
+source image，令 `G=A^T A`，严格证明 least-norm source cost
+`S_A(b)=b^T G^(-1)b`、预算可行性的 iff criterion，以及
+`S_A(b)(b^TGb)>=(b^Tb)^2` 的 source-energy tradeoff。70 位独立 replay 在 18 rows /
+1,380 edges 上得到 weighted/min-cut/all-positive targets 的 unrestricted budget ratio
+均低于声明的 `1e-3`（18/18）；同时 weighted/min-cut 到冻结 ray `span{A^T beta}` 的
+RMS 均至少 `0.9`（18/18）。这把坑从“是否有 ambient source witness”推进到“native
+profile 是否有足够维数与 growing budget”；native profile、arithmetic `L2`、full Gate B
+与 twin-prime conclusion 仍 OPEN/NONE，fixed-power credit 为 0。Session-named
+Route-A/Route-B evaluator 文件缺失，当前只记录本地 fail-closed validation。
+
+```text
+TPC296_MAXIMUM_CLAIM = PROVED_EXACT_LEAST_NORM_SOURCE_BUDGET_AND_SOURCE_ENERGY_TRADEOFF_PLUS_NUMERICALLY_CERTIFIED_FINITE_COST_PROFILE_ATLAS
+TPC296_ROUTE_ADVANCE = YES_SCOPED_SOURCE_IMAGE_TO_LEAST_NORM_BUDGET_AND_PROFILE_GEOMETRY
+TPC296_LEAST_NORM_IDENTITY = PROVED_EXACT_FINITE
+TPC296_BUDGET_FEASIBILITY_CRITERION = PROVED_EXACT_FINITE
+TPC296_SOURCE_ENERGY_TRADEOFF = PROVED_EXACT_FINITE
+TPC296_COST_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS_HIGH_PRECISION_REPLAY
+TPC296_UNRESTRICTED_BUDGET_TEST = NUMERICAL_OBSERVATION_FINITE_18_OF_18_BELOW_1E_MINUS_3
+TPC296_ONE_RAY_PROFILE_OBSTRUCTION = NUMERICAL_OBSERVATION_FINITE_18_OF_18_RMS_AT_LEAST_0_9
+TPC296_NATIVE_RESTRICTED_PROFILE = OPEN_LITERAL_SOURCE
+TPC296_GROWING_SOURCE_BUDGET = OPEN
+TPC296_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC296_FIXED_POWER_CREDIT = 0
+TPC296_FULL_GATE_B = OPEN
+TPC296_TWIN_PRIME_RESULT = NONE
+TPC296_ROUND2_CLUE = TEST_RESTRICTED_PROFILE_DIMENSION_AND_GROWING_SOURCE_BUDGET
+```
 
 当前 TPC-295 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc295_source_correlation_image_audit.md`，checker 为

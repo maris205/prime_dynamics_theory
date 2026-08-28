@@ -9,6 +9,33 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-296 承接 TPC-295 的 unrestricted finite source-image 结果，继续量化
+source-side least-norm budget 与 native-profile 几何。对 physical column matrix `A`、
+`G=A^T A`，严格证明
+`S_A(b)=min_{A^T h=b}||h||_2^2=b^T G^(-1)b`、预算可行性的 iff 判据，以及
+`S_A(b)(b^TGb)>=(b^Tb)^2` 的 source/physical-energy tradeoff。70 位高精度独立 replay
+在同一 18-row literal grid、1,380 edges 上显示：weighted minimizer、max-cut 与
+all-positive targets 的 unrestricted budget ratio 均在声明的 `1e-3` 阈值内（18/18）；
+但 weighted minimizer 与 max-cut 到冻结一维 ray `span{A^T beta}` 的 RMS 距离分别在
+18/18 行至少为 `0.9`。因此当前有限坑不再是 ambient source norm，而是 native profile
+的维数、像与 growing-shell budget；arithmetic `L2`、fixed-power credit、full Gate B
+与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC296_LEAST_NORM_IDENTITY = PROVED_EXACT_FINITE
+TPC296_BUDGET_FEASIBILITY_CRITERION = PROVED_EXACT_FINITE
+TPC296_SOURCE_ENERGY_TRADEOFF = PROVED_EXACT_FINITE
+TPC296_COST_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_ROWS_HIGH_PRECISION_REPLAY
+TPC296_UNRESTRICTED_BUDGET_TEST = NUMERICAL_OBSERVATION_FINITE_18_OF_18_BELOW_1E_MINUS_3
+TPC296_ONE_RAY_PROFILE_OBSTRUCTION = NUMERICAL_OBSERVATION_FINITE_18_OF_18_RMS_AT_LEAST_0_9
+TPC296_NATIVE_RESTRICTED_PROFILE = OPEN_LITERAL_SOURCE
+TPC296_GROWING_SOURCE_BUDGET = OPEN
+TPC296_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC296_FIXED_POWER_CREDIT = 0
+TPC296_FULL_GATE_B = OPEN
+TPC296_TWIN_PRIME_RESULT = NONE
+```
+
 当前主线状态：TPC-295 承接 TPC-294 的 magnitude-weighted signed Rayleigh atlas，检查
 ambient weighted minimizer 是否落在一个明确的 source-correlation image 中。令物理 shell
 vectors 为 rational matrix `A` 的 columns，严格证明 `G=A^T A` 非奇异时
