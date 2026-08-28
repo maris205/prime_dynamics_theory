@@ -3,13 +3,61 @@
 
 更新时间：2026-08-28
 
-状态：**TPC287_PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC288_PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.81 当前：TPC-287 prime-shell cancellation depth
+## 0.82 当前：TPC-288 growing-shell Gram obstruction
+
+项目：`papers/tpc-288-growing-shell-gram-obstruction/`
+
+类型：**PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION**。
+
+TPC-288 是 TPC-287 的直接增长/谱层追踪。保持同一个 literal physical
+deleted-diagonal operator，把每个 prime component 的完整 output vector `g_q` 保留下来，
+构造 `G_(q,r)=<g_q,g_r>`。finite operator/output/attachment additivity、Gram PSD 与
+`1^T G 1=||g_shell||^2` 均严格证明。8 个 growth-path anchors 加 18 个 height/cutoff
+controls 形成 34 rows，最大 shell 含 17 个素数；34/34 output Gram 通过模
+`1000000007` 的 full-rank witness，6/6 selected aggregate physical active matrices 也
+full rank。所有 34 行的 vector energy ratio `R_E=||g_shell||^2/sum_q||g_q||^2` 都大于
+1，其中 13 行同时有 interval-certified scalar retention upper `R_C^+<1/10`。
+
+这给出一个明确的 scalar-to-energy obstruction：小 scalar attachment 不能自动支付
+physical `L2` saving；但它仍是有限证书，不是 uniform growing-shell theorem。最强正结果
+是 source-output Gram 的 exact structure 与 finite positive spectrum；最强 obstruction
+是 13 个 scalar cancellation / vector amplification 交集。可复用结构为
+`prime components -> output Gram -> active rank -> scalar/energy firewall`。
+
+```text
+STRONGEST_POSITIVE_RESULT = EXACT_OUTPUT_GRAM_PSD_ENERGY_IDENTITY_PLUS_34_FULL_RANK_GRAMS
+STRONGEST_OBSTRUCTION = 13_ROWS_SCALAR_RETENTION_LT_1/10_BUT_VECTOR_ENERGY_GT_1
+OPEN_THEOREM = SOURCE_NATIVE_CROSS_PRIME_GRAM_BOUND_BEYOND_FINITE_FULL_RANK
+REUSABLE_STRUCTURE = PRIME_COMPONENTS -> OUTPUT_GRAM -> ACTIVE_OPERATOR_RANK -> SCALAR_ENERGY_FIREWALL
+ROUND2_CLUE = TEST_SOURCE_NATIVE_CROSS_PRIME_GRAM_BOUNDS_BEYOND_FINITE_FULL_RANK_OBSTRUCTION
+```
+
+```text
+TPC288_ROUTE_ADVANCE = YES_SCOPED_GROWING_SHELL_GRAM_OBSTRUCTION_AND_FULL_RANK_AUDIT
+TPC288_EXACT_OPERATOR_ADDITIVITY = PROVED_EXACT_FINITE
+TPC288_EXACT_OUTPUT_GRAM_IDENTITY = PROVED_EXACT_FINITE
+TPC288_GRAM_PSD = PROVED_EXACT_FINITE
+TPC288_GRAM_FULL_RANK = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC288_OPERATOR_FULL_ACTIVE_RANK = NUMERICALLY_CERTIFIED_FINITE_6_OF_6_SELECTED
+TPC288_SCALAR_ENERGY_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_13_ROWS
+TPC288_ENERGY_AMPLIFIED = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC288_MAX_SHELL_CARDINALITY = 17
+TPC288_GROWING_SHELL_STABILITY = OPEN
+TPC288_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC288_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC288_FIXED_POWER_CREDIT = 0
+TPC288_FULL_GATE_B = OPEN
+TPC288_TWIN_PRIME_RESULT = NONE
+TPC288_STATUS = PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION
+```
+
+## 0.81 已发布：TPC-287 prime-shell cancellation depth
 
 项目：`papers/tpc-287-prime-shell-cancellation-depth/`
 

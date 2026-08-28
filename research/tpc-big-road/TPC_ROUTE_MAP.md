@@ -2,22 +2,43 @@
 
 更新时间：2026-08-28
 
-当前地图版本：V140 / TPC-287
+当前地图版本：V141 / TPC-288
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-287`（`PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER`）；
+当前编号锚点：`TPC-288`（`PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION`）；
 对应论文目录为
-`papers/tpc-287-prime-shell-cancellation-depth/`。
-TPC-287 承接 TPC-286，把 physical deleted-diagonal prime shell 拆成一个素数一个
-component，严格证明 finite shell 与 linear attachment 的 additivity，并在
-component-separated intervals 下给出 conditional retention envelope。七个明确声明的
-shell anchors 覆盖 1--7 个素数；六个 frozen source baselines 与两个 exponents 形成
-84 rows / 336 components。所有 component intervals 均 sign-separated，57 行 mixed-sign，
-retention upper `<1/2/<1/4/<1/10` 为 31/22/8，leave-one-out 有 48 个非零 sign flips
-与 12 个 zero remainders。这是 cancellation-depth 的有限地图标记，不是 growing-shell
-theorem；source-control uniformity、arithmetic `L2`、fixed-power credit 与 full Gate B
+`papers/tpc-288-growing-shell-gram-obstruction/`。
+TPC-288 承接 TPC-287，把同一个 physical deleted-diagonal prime shell 的每个 component
+保留为完整 output vector，构造 source-output Gram，并同时审计 aggregate physical
+active matrix。finite operator/output/attachment additivity、Gram PSD 与
+`1^T G 1=||g_shell||^2` 严格成立；34 个 growth/control rows 的 output Gram 全部
+full rank，6 个 selected aggregate active matrices 全部 full rank，最大 shell 含 17
+个素数。所有 34 行 vector energy ratio 都大于 1，13 行同时有 scalar retention upper
+`<1/10`。这把“scalar cancellation 自动支付 physical `L2`”标成有限 obstruction；
+uniform source-native Gram bound、arithmetic `L2`、fixed-power credit 与 full Gate B
 仍 open。
+
+```text
+TPC288_MAXIMUM_CLAIM = PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION
+TPC288_ROUTE_ADVANCE = YES_SCOPED_GROWING_SHELL_GRAM_OBSTRUCTION_AND_FULL_RANK_AUDIT
+TPC288_EXACT_OPERATOR_ADDITIVITY = PROVED_EXACT_FINITE
+TPC288_EXACT_OUTPUT_GRAM_IDENTITY = PROVED_EXACT_FINITE
+TPC288_GRAM_PSD = PROVED_EXACT_FINITE
+TPC288_GRAM_FULL_RANK = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC288_OPERATOR_FULL_ACTIVE_RANK = NUMERICALLY_CERTIFIED_FINITE_6_OF_6_SELECTED
+TPC288_SCALAR_ENERGY_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_13_ROWS
+TPC288_ENERGY_AMPLIFIED = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC288_MAX_SHELL_CARDINALITY = 17
+TPC288_GROWING_SHELL_STABILITY = OPEN
+TPC288_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC288_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC288_FIXED_POWER_CREDIT = 0
+TPC288_FULL_GATE_B = OPEN
+TPC288_TWIN_PRIME_RESULT = NONE
+TPC288_STATUS = PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION
+TPC288_ROUND2_CLUE = TEST_SOURCE_NATIVE_CROSS_PRIME_GRAM_BOUNDS_BEYOND_FINITE_FULL_RANK_OBSTRUCTION
+```
 
 ```text
 TPC287_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER
@@ -157,6 +178,56 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.82 V141 / TPC-288：growing-shell Gram obstruction
+
+TPC-288 是 TPC-287 的直接谱层追踪，保持同一个 literal physical
+deleted-diagonal operator，不再只看 four-block scalar attachment，而把每个 prime
+component 的完整 output vector `g_q` 保留下来。对
+`G_(q,r)=<g_q,g_r>`，有限求和严格给出
+
+```text
+A_shell = sum_q A_q,
+g_shell = sum_q g_q,
+C_shell = sum_q C_q,
+1^T G 1 = ||g_shell||_2^2,
+a^T G a = ||sum_q a_q g_q||_2^2 >= 0.
+```
+
+8 个 growth-path anchors 加一个 `(N,Q)=(384,70)` 的 18-row source-control grid，
+共 34 rows，最大 shell 含 17 个素数。所有 34 个 output Gram 都通过模
+`1000000007` 的 full-rank witness，因此结合 exact PSD identity 得到 finite positive
+spectrum；6 个 selected aggregate physical active matrices 也 full rank。所有 34 行
+`R_E=||g_shell||^2/sum_q||g_q||^2` 均大于 1，13 行同时有 interval-certified
+`R_C^+<1/10`。
+
+```text
+TPC288_ROUTE_ADVANCE = YES_SCOPED_GROWING_SHELL_GRAM_OBSTRUCTION_AND_FULL_RANK_AUDIT
+TPC288_EXACT_OPERATOR_ADDITIVITY = PROVED_EXACT_FINITE
+TPC288_EXACT_OUTPUT_GRAM_IDENTITY = PROVED_EXACT_FINITE
+TPC288_GRAM_PSD = PROVED_EXACT_FINITE
+TPC288_GRAM_FULL_RANK = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC288_OPERATOR_FULL_ACTIVE_RANK = NUMERICALLY_CERTIFIED_FINITE_6_OF_6_SELECTED
+TPC288_SCALAR_ENERGY_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_13_ROWS
+TPC288_ENERGY_AMPLIFIED = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC288_MAX_SHELL_CARDINALITY = 17
+TPC288_GROWING_SHELL_STABILITY = OPEN
+TPC288_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC288_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC288_FIXED_POWER_CREDIT = 0
+TPC288_FULL_GATE_B = OPEN
+TPC288_TWIN_PRIME_RESULT = NONE
+TPC288_STATUS = PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION
+TPC288_ROUND2_CLUE = TEST_SOURCE_NATIVE_CROSS_PRIME_GRAM_BOUNDS_BEYOND_FINITE_FULL_RANK_OBSTRUCTION
+```
+
+最强正结果是把 cancellation object 提升为 source-output Gram，并在有限 grid 上
+证明 full rank/positive spectrum；最强 obstruction 是 13 行同时满足 scalar retention
+小于 `1/10` 与 vector energy amplification。它只否定
+`small scalar attachment => small physical L2` 这一 shortcut，不否定未来直接估计
+cross-prime Gram 的可能性。当前位置从“组件级抵消”前移到 **Bridge A--B 接缝的
+operator-valued collective estimate**；uniform growing-shell bound、literal arithmetic
+`L2`、fixed-power credit 与 full Gate B 仍未支付。
 
 ## 5.81 V140 / TPC-287：prime-shell cancellation depth
 
@@ -795,9 +866,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V140 / TPC-287                    |
-        | PRIME-SHELL COMPONENT / CANCELLATION LEDGER |
-        | shell = sum of signed physical components  |
+        | YOU ARE HERE — V141 / TPC-288                    |
+        | GROWING-SHELL GRAM / SCALAR-ENERGY FIREWALL |
+        | full output vectors and active-rank audit    |
         +--------------------------------------------------+
                 |
                 v
@@ -5497,6 +5568,13 @@ NUMBERED_RELEASE = TPC-244
 
 优先级更新为：
 
+0. **TPC-288 已完成：growing-shell Gram obstruction**。在 TPC-287 的 prime-component
+   decomposition 上保留完整 output vectors，严格得到 finite output Gram 的 PSD 与
+   `1^T G 1=||g_shell||^2`；34 个 growth/control rows（最大 17-prime shell）中
+   34/34 Gram full rank、6/6 selected aggregate active matrices full rank，且 34/34
+   vector energy ratios 大于 1。13 行同时有 scalar retention upper `<1/10`，因此
+   “small scalar attachment => small physical energy” 已被有限地封口。下一关应直接
+   研究 source-native cross-prime Gram bound；不能再用 scalar cancellation 替代它。
 0. **TPC-287 已完成：prime-shell cancellation depth ledger**。在 TPC-286 的 physical
    deleted-diagonal convention 下，严格证明 finite shell/component 与 linear attachment
    的 additivity，并以 1--7 prime 的 declared ladder、六个 source baselines、两个
@@ -5508,7 +5586,7 @@ NUMBERED_RELEASE = TPC-244
 0a. **TPC-286 已完成：diagonal-deletion attachment split**。显式 diagonal correction
    已从 physical operator 中分离，有限 72-row sensitivity ledger 仍保留在下方；它是
    TPC-287 的直接上游，不能被解释成 asymptotic diagonal dominance。
-0. **TPC-272 已完成：correlation-margin to endpoint-budget compiler**。在 TPC-271
+0b. **TPC-272 已完成：correlation-margin to endpoint-budget compiler**。在 TPC-271
    的同一 finite interface 上定义 `m=|C_perp|/R`，证明 `m^6=Xi_C/Xi`，并将
    scalar effective saving `sigma` 与 margin loss `eta` 编译为 endpoint saving
    `sigma-eta`；严格目标条件为 `sigma-eta>1/400`。二维 exact converse 证明
@@ -5795,6 +5873,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-28 | V141 / TPC-288 | Bridge A / Gate B：growing-shell output Gram 与 scalar-energy firewall；source-native cross-prime Gram bound、arithmetic `L2` 与 full Gate B open | `TPC-288` | 严格证明 finite operator/output/attachment additivity、Gram PSD 与 energy identity；34 个 growth/control rows（最大 17-prime shell）完成 34/34 Gram full rank、6/6 selected aggregate active full rank，34/34 energy amplification，13 个 scalar-retention `<1/10` 与 energy `>1` 的 mismatch，fixed-power credit 为 0，下一步为 source-native cross-prime Gram bound |
 | 2026-08-28 | V140 / TPC-287 | Bridge A / Gate B：prime-shell component cancellation depth 已完成；growing-shell/source-control stability、arithmetic `L2` 与 full Gate B open | `TPC-287` | 严格证明 `g_shell=sum_q g_q`、`C_shell=sum_q C_q` 与 conditional retention envelope；1--7 prime declared ladder 完成 84-row / 336-component ledger，全部 components sign-separated，57 mixed-sign rows，retention upper `<1/2/<1/4/<1/10` 为 31/22/8，leave-one-out 为 48 flips / 12 zero，fixed-power credit 为 0，下一步为 coupled growing-shell/source-control stability |
 | 2026-08-27 | V139 / TPC-286 | Bridge A / Gate B：diagonal-including 与 physical deleted-diagonal attachment 已精确拆分；asymptotic dominance、signed full-shell cancellation、arithmetic `L2` 与 full Gate B open | `TPC-286` | 证明 `g_phys=g_full-g_diag` 与 `C_phys=C_full-C_diag`；完成 72-row 三分量 ledger（full/diagonal/physical sign-separated），15 个 full/physical flips、30 个 diagonal-opposition rows、21 个严格 diagonal-dominance rows，fixed-power credit 为 0，下一步为 split 后的 signed full-shell cancellation |
 | 2026-08-27 | V138 / TPC-285 | Bridge A / Gate B：prime-shell centered factorization 与 deleted-diagonal full-rank theorem 已完成；signed full-shell cancellation、arithmetic `L2` 与 full Gate B open | `TPC-285` | 精确证明 `B_q=R_q(I-11^T/(q-1))R_q^T`、rank `<=q-2`，并证明 deleted diagonal 在 full class coverage 下恢复 full active rank；20 个 kernel-Schur rows 通过独立模素数 rank witness，fixed-power credit 为 0 |

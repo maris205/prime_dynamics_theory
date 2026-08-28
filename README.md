@@ -9,6 +9,32 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-288 沿着 TPC-287 的 growing-shell clue，把同一个 literal
+physical deleted-diagonal operator 的每个 prime component 保留为完整输出向量，构造
+source-output Gram matrix，并在 34 个 scale/shell/control rows 上做 full-rank audit。
+Gram 的 PSD、trace/all-ones energy identity 与 finite shell additivity 均严格证明；
+34/34 个 output Gram 通过模 `1000000007` 的 full-rank witness，6 个 selected aggregate
+physical active matrices 也 full rank。所有 34 行的 vector energy ratio
+`||g_shell||^2/sum_q||g_q||^2>1`，其中 13 行同时有 interval-certified scalar retention
+upper `<1/10`。这是一个明确的 scalar-to-energy obstruction：小 attachment 不能直接
+兑换 physical `L2` saving；growing-shell theorem、source-native Gram bound、arithmetic
+`L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC288_GRAM_IDENTITY = PROVED_EXACT_FINITE
+TPC288_GRAM_FULL_RANK = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC288_OPERATOR_FULL_ACTIVE_RANK = NUMERICALLY_CERTIFIED_FINITE_6_OF_6_SELECTED
+TPC288_SCALAR_ENERGY_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_13_ROWS
+TPC288_ENERGY_AMPLIFIED = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC288_MAX_SHELL_CARDINALITY = 17
+TPC288_GROWING_SHELL_STABILITY = OPEN
+TPC288_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC288_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC288_FIXED_POWER_CREDIT = 0
+TPC288_FULL_GATE_B = OPEN
+TPC288_TWIN_PRIME_RESULT = NONE
+```
+
 当前主线状态：TPC-287 承接 TPC-286，把 physical deleted-diagonal prime shell 按素数
 拆成可审计的 signed components。对七个明确声明的 shell anchor（恰含 1--7 个素数）、
 六个 frozen source baselines 与两个 kernel exponents，形成 84 rows / 336 components：
@@ -283,6 +309,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-288-growing-shell-gram-obstruction - 当前阶段 - 严格证明 finite operator/output/attachment
+additivity、Gram PSD 与 energy identity；在 34 个 growth/control rows 上认证 34/34
+output Gram full rank、6/6 selected physical active matrices full rank，并发现 13 行
+scalar retention upper `<1/10` 但 vector energy ratio `>1` 的 obstruction；uniform
+growing-shell Gram bound、literal `L2`、full Gate B 仍 OPEN，fixed-power credit 为 0。
 tpc-287-prime-shell-cancellation-depth - 当前阶段 - 严格证明 finite shell component
 additivity 与 conditional retention envelope；完成 84-row / 336-component ladder，
 57 mixed-sign rows、retention upper `<1/2/<1/4/<1/10` 为 31/22/8，48 个 leave-one-out

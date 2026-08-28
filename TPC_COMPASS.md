@@ -1,9 +1,41 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-28
-状态：`BOLD_CHANNEL_V140 / PRIME_SHELL_CANCELLATION_DEPTH`
-claim level：`PROVED_EXACT_FINITE_SHELL_ADDITIVE_ATTACHMENT_DECOMPOSITION_PLUS_NUMERICALLY_CERTIFIED_FINITE_CANCELLATION_DEPTH_LEDGER`
-编号事实终点：TPC-287；TPC-287 trigger：`true`
+状态：`BOLD_CHANNEL_V141 / GROWING_SHELL_GRAM_OBSTRUCTION`
+claim level：`PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION`
+编号事实终点：TPC-288；TPC-288 trigger：`true`
+
+当前 TPC-288 入口：proof 为
+`research/tpc-big-road/bridge_b_growing_shell_gram_obstruction.md`，checker 为
+`tpc_bridge_b_growing_shell_gram_obstruction_checker.py`，编号论文为
+`papers/tpc-288-growing-shell-gram-obstruction/`。它沿用 TPC-287 的 literal physical
+deleted-diagonal operator，把每个 prime component 的完整 output vector 保留下来并构造
+source-output Gram。finite operator/output/attachment additivity、Gram PSD 与
+`1^T G 1=||g_shell||^2` 均严格证明；34 个 growth/control rows（最大 shell 17 个素数）
+中 34/34 output Gram full rank，6/6 selected aggregate active matrices full rank；所有
+34 行 energy ratio 都大于 1，13 行同时有 scalar retention upper `<1/10`。这严格封住
+“scalar cancellation 自动支付 physical `L2`”的 shortcut；uniform growing-shell Gram
+bound、source-native arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+```text
+TPC288_MAXIMUM_CLAIM = PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION
+TPC288_ROUTE_ADVANCE = YES_SCOPED_GROWING_SHELL_GRAM_OBSTRUCTION_AND_FULL_RANK_AUDIT
+TPC288_GRAM_IDENTITY = PROVED_EXACT_FINITE
+TPC288_GRAM_FULL_RANK = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC288_OPERATOR_FULL_ACTIVE_RANK = NUMERICALLY_CERTIFIED_FINITE_6_OF_6_SELECTED
+TPC288_SCALAR_ENERGY_MISMATCH = NUMERICALLY_CERTIFIED_FINITE_13_ROWS
+TPC288_ENERGY_AMPLIFIED = NUMERICALLY_CERTIFIED_FINITE_34_OF_34
+TPC288_MAX_SHELL_CARDINALITY = 17
+TPC288_GROWING_SHELL_STABILITY = OPEN
+TPC288_SOURCE_CONTROL_UNIFORMITY = OPEN
+TPC288_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC288_FIXED_POWER_CREDIT = 0
+TPC288_FULL_GATE_B = OPEN
+TPC288_TWIN_PRIME_RESULT = NONE
+TPC288_STATUS = PROVED_EXACT_PHYSICAL_OUTPUT_GRAM_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_GROWING_SHELL_FULL_RANK_OBSTRUCTION
+TPC288_ROUND2_CLUE = TEST_SOURCE_NATIVE_CROSS_PRIME_GRAM_BOUNDS_BEYOND_FINITE_FULL_RANK_OBSTRUCTION
+```
 
 当前 TPC-287 入口：proof 为
 `research/tpc-big-road/bridge_b_prime_shell_cancellation_depth.md`，checker 为
