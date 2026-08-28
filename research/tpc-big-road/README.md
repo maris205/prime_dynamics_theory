@@ -1,16 +1,42 @@
-# TPC big road V144 / TPC-291: signed Schur cancellation atlas
+# TPC big road V145 / TPC-292: three-prime sign frustration atlas
 
 更新时间：2026-08-28
 
-状态：`TPC291_PROVED_EXACT_SIGNED_TWO_PRIME_SCHUR_CANCELLATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_COHERENCE_TO_CANCELLATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC292_PROVED_EXACT_TRIANGLE_SIGN_PARITY_AND_THREE_VECTOR_SCHUR_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_FRUSTRATION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-291 proof 为
-`bridge_b_signed_schur_cancellation_atlas.md`，checker 为
-`tpc_bridge_b_signed_schur_cancellation_atlas_checker.py`，编号论文为
-`../../papers/tpc-291-signed-schur-cancellation-atlas/`。
+当前 TPC-292 proof 为
+`bridge_b_three_prime_sign_frustration_atlas.md`，checker 为
+`tpc_bridge_b_three_prime_sign_frustration_atlas_checker.py`，编号论文为
+`../../papers/tpc-292-three-prime-sign-frustration-atlas/`。
+
+TPC-292 承接 TPC-291 的 pairwise Schur cancellation，把兼容性问题推进到三素数。对
+三个非零 Gram edges，严格证明三个 pair contributions 能否同时非正的 sign-parity
+criterion；并严格证明 three-vector Schur projection residual。18-row literal grid 的
+5,727 个 triples 中，5,718 个 sign-frustrated、9 个 anti-alignable，5,727 个
+normalized volumes 全为正；late growth row 的 680 个 triples 全是 `+++`。这是一项
+明确的 multi-prime compatibility obstruction，不是 growing-shell 或 arithmetic `L2`
+定理。
+
+```text
+TPC292_MAXIMUM_CLAIM = PROVED_EXACT_TRIANGLE_SIGN_PARITY_AND_THREE_VECTOR_SCHUR_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_FRUSTRATION_ATLAS
+TPC292_ROUTE_ADVANCE = YES_SCOPED_PAIRWISE_TO_THREE_PRIME_COMPATIBILITY_OBSTRUCTION
+TPC292_TRIANGLE_SIGN_PARITY = PROVED_EXACT_CONDITIONAL
+TPC292_THREE_VECTOR_SCHUR_IDENTITY = PROVED_EXACT_FINITE
+TPC292_NORMALIZED_VOLUME = PROVED_EXACT_FROM_GRAM_PSD
+TPC292_TRIANGLE_ATLAS = NUMERICALLY_CERTIFIED_FINITE_5727_TRIPLES
+TPC292_SIGN_FRUSTRATION = NUMERICALLY_CERTIFIED_FINITE_5718_OF_5727
+TPC292_ANTI_ALIGNABLE = NUMERICALLY_CERTIFIED_FINITE_9_OF_5727
+TPC292_GROWING_TRIANGLE_COMPATIBILITY = OPEN
+TPC292_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC292_FIXED_POWER_CREDIT = 0
+TPC292_FULL_GATE_B = OPEN
+TPC292_TWIN_PRIME_RESULT = NONE
+TPC292_STATUS = PROVED_EXACT_TRIANGLE_SIGN_PARITY_AND_THREE_VECTOR_SCHUR_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_SIGN_FRUSTRATION_ATLAS
+TPC292_ROUND2_CLUE = TEST_SIGNED_GRAPH_MAXCUT_AND_MULTI_PRIME_RAYLEIGH_COMPATIBILITY
+```
 
 TPC-291 承接 TPC-290 的 weighted-Gram firewall，把 cross-prime coherence 精确转成
 two-prime Schur cancellation：对任意非零 pair，严格证明最小归一化 residual 为

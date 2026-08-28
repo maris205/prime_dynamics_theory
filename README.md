@@ -9,6 +9,31 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-292 承接 TPC-291 的 pairwise Schur cancellation，把问题推进到三素数
+兼容性。对三个非零 Gram edges，严格证明 coefficient signs 能让三个 pair contributions
+同时非正，当且仅当 edge-sign product 为 `-1`；product 为 `+1` 的三角形是 exact
+sign-frustration。对三向量还严格证明 Schur projection residual
+`det(G)/(d_i det(G_(j,k)))`。在同一 18-row literal grid 的 5,727 个 prime triples 上，
+exact-rational certificate 得到 5,718 个 frustrated、9 个 anti-alignable，且 5,727 个
+normalized volumes 全为正；late row 的 680 个 triples 全为 `+++`。这把 pairwise
+cancellation 的主要障碍明确定位为 cycle compatibility，但 growing-shell compatibility、
+literal arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion 仍
+OPEN/NONE。
+
+```text
+TPC292_TRIANGLE_SIGN_PARITY = PROVED_EXACT_CONDITIONAL
+TPC292_THREE_VECTOR_SCHUR_IDENTITY = PROVED_EXACT_FINITE
+TPC292_NORMALIZED_VOLUME = PROVED_EXACT_FROM_GRAM_PSD
+TPC292_TRIANGLE_ATLAS = NUMERICALLY_CERTIFIED_FINITE_5727_TRIPLES
+TPC292_SIGN_FRUSTRATION = NUMERICALLY_CERTIFIED_FINITE_5718_OF_5727
+TPC292_ANTI_ALIGNABLE = NUMERICALLY_CERTIFIED_FINITE_9_OF_5727
+TPC292_GROWING_TRIANGLE_COMPATIBILITY = OPEN
+TPC292_SOURCE_NATIVE_L2 = OPEN_LITERAL_SOURCE
+TPC292_FIXED_POWER_CREDIT = 0
+TPC292_FULL_GATE_B = OPEN
+TPC292_TWIN_PRIME_RESULT = NONE
+```
+
 当前主线状态：TPC-291 承接 TPC-290 的 adaptive weighted-Gram firewall，把“相干是否
 真的能抵消”精确化为两素数向量的 Schur projection。对任意非零 component pair，严格
 证明最小归一化残差 `1-Gamma` 与 signed two-vector Rayleigh minimum `1-sqrt(Gamma)`，
@@ -385,6 +410,11 @@ OPEN/UNPAID/NONE。
 10. **MVP2 Global Audit** *(TPC-120)*: If all gates pass, the conditional Hardy–Littlewood asymptotic for fixed $h_0$ is obtained; the twin prime conclusion follows only if the framework applies completely to $h_0 = 2$.
 
 ## 3. Latest Paper
+tpc-292-three-prime-sign-frustration-atlas - 当前阶段 - 严格证明 triangle sign parity
+criterion、three-vector Schur residual 与 normalized Gram-volume identity；18 rows / 5,727
+triples 完成 5,718 sign-frustrated、9 anti-alignable、5,727 positive-volume 的
+exact-rational atlas；growing signed compatibility、literal `L2`、full Gate B 仍 OPEN，
+fixed-power credit 为 0。
 tpc-291-signed-schur-cancellation-atlas - 当前阶段 - 严格证明 two-prime Schur projection
 identity、signed Rayleigh minimum 与 coefficient sign rule；18 个 rows / 1,380 个 pairs
 完成 coherence-to-cancellation atlas（1,377 opposite-sign、3 same-sign，残差阈值
