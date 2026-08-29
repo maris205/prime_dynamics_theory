@@ -2,27 +2,43 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V159 / TPC-306
+当前地图版本：V160 / TPC-307
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-306`（`PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS`）；
+当前编号锚点：`TPC-307`（`PROVED_EXACT_FINITE_COMMON_AMBIENT_UNION_SHELL_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_BUDGET_HOLDOUT_DISCORDANCE_ATLAS`）；
 对应论文目录为
-`papers/tpc-306-two-way-operator-target-interaction/`。
+`papers/tpc-307-common-ambient-union-shell-holdout/`。
 
-TPC-306 是当前地图位置：承接 TPC-305 的 fixed-operator transported-label atlas，
-把四个正 budget cells 排成 operator-by-target table。定义
-`d_L=log(B_LR/B_LL)`、`d_R=log(B_RR/B_RL)`、`m=(d_L+d_R)/2` 与
-`i=(d_L-d_R)/2`，严格得到 `m^2-i^2=d_Ld_R`；同号 row effects 等价于 target-main
-dominance，异号 row effects 等价于 operator-interaction dominance。18 个 parent cases
-经三种 normalization 形成 54 个 derived rows：target-main `12/18`、interaction
-`6/18`、0 unresolved；中心 `Q=60->70` 为 `5/6` 对 `1/6`，same-prefix 为 `3/3`。
-main-dominant 的 `|i|/|m|` 全部 `<0.88`，interaction-dominant 的全部 `>1.2`。
-这是 finite two-way interaction diagnostic，不是 causal separation 或 asymptotic
-theorem；common-ambient holdout、uniform budget growth、arithmetic `L2`、fixed-power
-credit、full Gate B 与 twin-prime endpoint 仍开放。
+TPC-307 是当前地图位置：承接 TPC-306 的 two-way interaction diagnostic，把每个相邻
+shell pair 放进同一个 union ambient `U`，在 overlap `O` 上分别拟合 aligned directional
+targets，并把 `E_left,E_right` 作为 withheld exclusive holdouts。partition、overlap-only
+fit、holdout separation、global-sign invariance 与 common-prefix feasibility 是 exact
+finite。18 cases、36 directional fits、54 normalizer rows 的 numerical replay 给出
+`13 concordant / 3 discordant / 2 unresolved`；三处 discordance 全部在 `Q=70->90`,
+exponent 1 的三个 tolerance。这是 finite completion-stability diagnostic/obstruction，
+不是 causal separation 或 asymptotic theorem；formal directed-rounding enclosure、uniform
+budget growth、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime endpoint
+仍开放。
 
 ```text
+TPC307_ROUTE_ADVANCE = YES_SCOPED_COMMON_AMBIENT_DIRECTIONAL_HOLDOUT_DIAGNOSTIC
+TPC307_COMMON_AMBIENT_UNION = PROVED_EXACT_FINITE
+TPC307_OVERLAP_ONLY_FIT = PROVED_EXACT_FINITE
+TPC307_EXCLUSIVE_HOLDOUT = PROVED_EXACT_FINITE
+TPC307_FINITE_HOLDOUT_ATLAS = NUMERICALLY_REPRODUCED_FINITE_18_CASES_36_DIRECTIONAL_FITS_54_NORMALIZER_ROWS
+TPC307_AGREEMENT_CENSUS = NUMERICALLY_REPRODUCED_FINITE_CONCORDANT_13_DISCORDANT_3_UNRESOLVED_2
+TPC307_DISCORDANCE_LOCALIZATION = NUMERICALLY_REPRODUCED_FINITE_ALL_3_AT_Q70_TO_90_EXPONENT_1
+TPC307_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC307_CAUSAL_IDENTIFICATION = NONE_DIRECTIONAL_HOLDOUT_DIAGNOSTIC_ONLY
+TPC307_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC307_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC307_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC307_FIXED_POWER_CREDIT = 0
+TPC307_FULL_GATE_B = OPEN
+TPC307_TWIN_PRIME_RESULT = NONE
+TPC307_ROUND2_CLUE = STRESS_COMMON_AMBIENT_HOLDOUT_AGAINST_EXCLUSIVE_COMPLETION_ENVELOPES_AND_PROFILE_PREFIX_PERTURBATIONS_BEFORE_ANY_CAUSAL_PREFERENCE_CLAIM
+
 TPC306_ROUTE_ADVANCE = YES_SCOPED_TWO_WAY_INTERACTION_DECOMPOSITION
 TPC306_LOG_DECOMPOSITION = PROVED_EXACT_FINITE
 TPC306_SQUARED_DOMINANCE_IDENTITY = PROVED_EXACT_FINITE
@@ -380,8 +396,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V159 / TPC-306
-MAP_LABEL = TWO-WAY OPERATOR/TARGET INTERACTION DECOMPOSITION / COMMON-AMBIENT HOLDOUT OPEN
+YOU ARE HERE = V160 / TPC-307
+MAP_LABEL = COMMON-AMBIENT UNION-SHELL HOLDOUT / COMPLETION-STABILITY OBSTRUCTION LOCALIZED
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -617,6 +633,51 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.101 V160 / TPC-307：common-ambient union-shell holdout
+
+TPC-307 是 TPC-306 的最小 common-ambient 延续。对每个相邻 shell pair 构造
+`U=S_left union S_right`，并分解为 overlap `O`、exclusive pieces `E_left,E_right`。
+同一个 `V_U` 同时服务两种方向；aligned left/right target 只在 `O` 上进入 constrained
+profile frontier，系数选择完成后才在自己的 exclusive piece 上计算 withheld holdout。
+由于 overlap 上两个 transported label 可能不一致，协议保留两个 directional target，
+不制造任意的 single union target。
+
+partition、overlap-only fit、holdout separation、global-sign invariance 与 common-prefix
+feasibility 均为 exact finite。锁定 `(N,H,z)=(512,58,5)`、`Q=50,60,70,90`、两种
+exponent、三档 tolerance 和三种 normalizer 后，得到 18 cases、36 directional fits、
+54 normalizer rows。producer 与独立 NumPy replay 的 numerical census 为
+`13 concordant / 3 discordant / 2 unresolved`；三处 discordance 全部定位到
+`Q=70->90`, exponent 1，分别对应三个 tolerance。该结果把 TPC-306 的 interaction
+疑点具体化为 finite completion-stability obstruction，但不构成 causal separation。
+
+```text
+TPC307_ROUTE_ADVANCE = YES_SCOPED_COMMON_AMBIENT_DIRECTIONAL_HOLDOUT_DIAGNOSTIC
+TPC307_COMMON_AMBIENT_UNION = PROVED_EXACT_FINITE
+TPC307_OVERLAP_ONLY_FIT = PROVED_EXACT_FINITE
+TPC307_EXCLUSIVE_HOLDOUT = PROVED_EXACT_FINITE
+TPC307_GLOBAL_SIGN_INVARIANCE = PROVED_EXACT_FINITE
+TPC307_COMMON_PREFIX_FEASIBILITY = PROVED_EXACT_FINITE
+TPC307_FINITE_HOLDOUT_ATLAS = NUMERICALLY_REPRODUCED_FINITE_18_CASES_36_DIRECTIONAL_FITS_54_NORMALIZER_ROWS
+TPC307_AGREEMENT_CENSUS = NUMERICALLY_REPRODUCED_FINITE_CONCORDANT_13_DISCORDANT_3_UNRESOLVED_2
+TPC307_BUDGET_PREFERENCE = NUMERICALLY_REPRODUCED_FINITE_RIGHT_13_LEFT_5_UNRESOLVED_0
+TPC307_HOLDOUT_PREFERENCE = NUMERICALLY_REPRODUCED_FINITE_RIGHT_13_LEFT_3_UNRESOLVED_2
+TPC307_DISCORDANCE_LOCALIZATION = NUMERICALLY_REPRODUCED_FINITE_ALL_3_AT_Q70_TO_90_EXPONENT_1
+TPC307_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC307_CAUSAL_IDENTIFICATION = NONE_DIRECTIONAL_HOLDOUT_DIAGNOSTIC_ONLY
+TPC307_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC307_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC307_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC307_FIXED_POWER_CREDIT = 0
+TPC307_FULL_GATE_B = OPEN
+TPC307_TWIN_PRIME_RESULT = NONE
+TPC307_STATUS = PROVED_EXACT_FINITE_COMMON_AMBIENT_UNION_SHELL_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_BUDGET_HOLDOUT_DISCORDANCE_ATLAS
+TPC307_ROUND2_CLUE = STRESS_COMMON_AMBIENT_HOLDOUT_AGAINST_EXCLUSIVE_COMPLETION_ENVELOPES_AND_PROFILE_PREFIX_PERTURBATIONS_BEFORE_ANY_CAUSAL_PREFERENCE_CLAIM
+```
+
+当前最强正结果是 common `U/O/E` holdout protocol；最强 obstruction 是 budget 与
+exclusive holdout 在三个 `70->90,e=1` cells 上反向。下一座桥是 alternative completion
+envelopes 与 profile-prefix perturbation 的 hostile stability audit。
 
 ## 5.100 V159 / TPC-306：two-way operator/target interaction
 
@@ -2000,9 +2061,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V159 / TPC-306                    |
-        | TWO-WAY OPERATOR/TARGET INTERACTION           |
-        | four-cell log decomposition / holdout open   |
+        | YOU ARE HERE — V160 / TPC-307                    |
+        | COMMON-AMBIENT UNION-SHELL HOLDOUT            |
+        | 13/3/2 agreement / discordance localized     |
         +--------------------------------------------------+
                 |
                 v
@@ -7035,6 +7096,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V160 / TPC-307 | Bridge A / Gate B：common-ambient union-shell holdout protocol 已完成；formal directed-rounding enclosure、completion-invariant preference、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-307` | 同一 union ambient `U` 上 overlap-only directional fit 与 exclusive holdout；18 cases / 36 fits / 54 rows 中 `13/3/2` concordant/discordant/unresolved，三处 discordance 均在 `Q=70->90,e=1`；下一步为 completion envelopes 与 prefix perturbation hostile audit |
 | 2026-08-29 | V159 / TPC-306 | Bridge A / Gate B：two-way operator/target interaction decomposition 已完成；common-ambient holdout、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-306` | 四格 operator-by-target table、精确 `m^2-i^2=d_Ld_R` identity 与 row-scaling invariance；18 cases / 54 derived rows 中 target-main `12/18`、interaction `6/18`，中心 `5/6`、same-prefix `3/3`，下一步为 common-ambient union-shell completion 与 interaction stability |
 | 2026-08-29 | V158 / TPC-305 | Bridge A / Gate B：fixed-operator counterfactual target control 已完成；operator interaction、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-305` | 18 个 target-swap cases、36 个 operator tables；中心 `Q=60->70` 的 right-label-cheaper orientation 为 `5/6`，same-prefix 为 `3/3`；外侧 orientation 为 `(left=4,cross=2)` 与 `(left=3,cross=1,home=2)`；下一步为 two-way operator holdout 与 interaction contrast |
 | 2026-08-29 | V157 / TPC-304 | Bridge A / Gate B：overlapping-shell sign-label transport 已把 fixed-source budget descent 定位到唯一低相关 transition；causal target/operator separation、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-304` | 六个 transport rows，三组 mean aligned correlation `1/2,1/11,1/2`；`Q=60->70` 为 2/2 exponent fracture，并承载 budget descents `15/18` 与全部 same-prefix descents `9/9`；下一步为 counterfactual transported-label budgets |

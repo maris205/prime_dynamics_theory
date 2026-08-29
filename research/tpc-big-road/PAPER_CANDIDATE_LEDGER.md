@@ -3,13 +3,72 @@
 
 更新时间：2026-08-29
 
-状态：**TPC306_PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC307_PROVED_EXACT_FINITE_COMMON_AMBIENT_UNION_SHELL_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_BUDGET_HOLDOUT_DISCORDANCE_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.100 current：TPC-306 two-way operator/target interaction
+## 0.101 current：TPC-307 common-ambient union-shell holdout
+
+项目：`papers/tpc-307-common-ambient-union-shell-holdout/`
+
+类型：**PROVED_EXACT_FINITE_COMMON_AMBIENT_UNION_SHELL_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_BUDGET_HOLDOUT_DISCORDANCE_ATLAS**。
+
+TPC-307 承接 TPC-306 的 two-way operator/target interaction diagnostic。对每个相邻
+`Q` pair 构造一个共同 ambient union `U`，并分解为 overlap `O` 与 exclusive pieces
+`E_left,E_right`。两种 aligned directional target 只在 `O` 上进入 constrained profile
+frontier；系数选定后，分别在自己的 exclusive piece 上作 withheld holdout。这样得到
+一个可审计的有限 holdout protocol，而不是把 overlap 上可能冲突的两个 label 任意拼成
+一个 union target。
+
+协议的 partition、overlap-only separation、global-sign invariance 与 common-prefix
+feasibility 为 exact finite。锁定 TPC-302/305/306 的 source、shell、profile 与 kernel
+conventions 后，18 个 cases 产生 36 个 directional fits 与 54 个 normalizer rows。
+独立 NumPy replay 与 producer 一致：budget/holdout preference 为 `13 concordant`、
+`3 discordant`、`2 unresolved`；三处 discordance 全部位于 `Q=70->90`、exponent 1，
+恰对应三个 tolerance。由于物理矩阵使用 vectorized float64 重放再做高精度 frontier，
+该数值结论标为 `NUMERICALLY_REPRODUCED_FINITE`，不是 directed-rounding formal
+certificate。
+
+最强正结果：common-ambient directional holdout 把拟合域和检验域严格分开，并给出可
+复现的有限 atlas。
+
+最强 obstruction：即使 ambient operator 已共享，三处 budget orientation 在 exclusive
+holdout 上反转，另有两处 holdout unresolved；因此 completion-invariant 或 causal
+preference 仍不可宣称。
+
+开放定理：在明确的 alternative off-overlap completion envelopes 与 profile-prefix
+perturbations 下检验这三处 discordance 是否保持；formal directed-rounding enclosure、
+uniform asymptotic budget、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+可复用结构：`U/O/E partition -> overlap constrained frontier -> exclusive holdout ->
+ratio classification and discordance localization`。
+
+ROUND2_CLUE：`STRESS_COMMON_AMBIENT_HOLDOUT_AGAINST_EXCLUSIVE_COMPLETION_ENVELOPES_AND_PROFILE_PREFIX_PERTURBATIONS_BEFORE_ANY_CAUSAL_PREFERENCE_CLAIM`。
+
+```text
+TPC307_ROUTE_ADVANCE = YES_SCOPED_COMMON_AMBIENT_DIRECTIONAL_HOLDOUT_DIAGNOSTIC
+TPC307_COMMON_AMBIENT_UNION = PROVED_EXACT_FINITE
+TPC307_OVERLAP_ONLY_FIT = PROVED_EXACT_FINITE
+TPC307_EXCLUSIVE_HOLDOUT = PROVED_EXACT_FINITE
+TPC307_FINITE_HOLDOUT_ATLAS = NUMERICALLY_REPRODUCED_FINITE_18_CASES_36_DIRECTIONAL_FITS_54_NORMALIZER_ROWS
+TPC307_AGREEMENT_CENSUS = NUMERICALLY_REPRODUCED_FINITE_CONCORDANT_13_DISCORDANT_3_UNRESOLVED_2
+TPC307_DISCORDANCE_LOCALIZATION = NUMERICALLY_REPRODUCED_FINITE_ALL_3_AT_Q70_TO_90_EXPONENT_1
+TPC307_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC307_CAUSAL_IDENTIFICATION = NONE_DIRECTIONAL_HOLDOUT_DIAGNOSTIC_ONLY
+TPC307_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC307_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC307_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC307_FIXED_POWER_CREDIT = 0
+TPC307_FULL_GATE_B = OPEN
+TPC307_TWIN_PRIME_RESULT = NONE
+TPC307_STATUS = PROVED_EXACT_FINITE_COMMON_AMBIENT_UNION_SHELL_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_BUDGET_HOLDOUT_DISCORDANCE_ATLAS
+TPC307_ROUND2_CLUE = STRESS_COMMON_AMBIENT_HOLDOUT_AGAINST_EXCLUSIVE_COMPLETION_ENVELOPES_AND_PROFILE_PREFIX_PERTURBATIONS_BEFORE_ANY_CAUSAL_PREFERENCE_CLAIM
+```
+
+## 0.100 previous：TPC-306 two-way operator/target interaction
 
 项目：`papers/tpc-306-two-way-operator-target-interaction/`
 

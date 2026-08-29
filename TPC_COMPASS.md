@@ -1,24 +1,46 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-29
-状态：`BOLD_CHANNEL_V159 / TWO_WAY_OPERATOR_TARGET_INTERACTION`
-claim level：`PROVED_EXACT_TWO_WAY_LOG_BUDGET_DECOMPOSITION_AND_DOMINANCE_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_FINITE_OPERATOR_TARGET_INTERACTION_ATLAS`
-编号事实终点：TPC-306；TPC-306 trigger：`true`
+状态：`BOLD_CHANNEL_V160 / COMMON_AMBIENT_UNION_SHELL_HOLDOUT`
+claim level：`PROVED_EXACT_FINITE_COMMON_AMBIENT_UNION_SHELL_HOLDOUT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_BUDGET_HOLDOUT_DISCORDANCE_ATLAS`
+编号事实终点：TPC-307；TPC-307 trigger：`true`
 
-当前 TPC-306 入口：proof 为
-`research/tpc-big-road/bridge_b_tpc306_two_way_operator_target_interaction.md`，checker 为
-`tpc_bridge_b_tpc306_two_way_operator_target_interaction_checker.py`，编号论文为
-`papers/tpc-306-two-way-operator-target-interaction/`。它承接 TPC-305 的
-fixed-operator transported-label atlas，将四个正 budget cells 排成 operator-by-target
-table，定义 `d_L=log(B_LR/B_LL)`、`d_R=log(B_RR/B_RL)`，以及 target-main contrast
-`m=(d_L+d_R)/2` 与 operator-interaction contrast `i=(d_L-d_R)/2`。严格恒等式
-`m^2-i^2=d_Ld_R` 给出同号/异号 dominance criterion；在锁定的 18 cases、54 derived
-rows 上，target-main 为 `12/18`、interaction 为 `6/18`，中心 `Q=60->70` 为 `5/6`
-对 `1/6`，same-prefix 为 `3/3`。这是 finite algebraic interaction diagnostic；
-common-ambient holdout、uniform budget、arithmetic `L2`、fixed-power credit、full
+当前 TPC-307 入口：proof 为
+`research/tpc-big-road/bridge_b_tpc307_common_ambient_union_shell_holdout.md`，checker 为
+`tpc_bridge_b_tpc307_common_ambient_union_shell_holdout_checker.py`，编号论文为
+`papers/tpc-307-common-ambient-union-shell-holdout/`。它承接 TPC-306 的 interaction
+diagnostic，把每个相邻 shell pair 放进同一个 union ambient `U`，在 overlap `O` 上
+分别拟合 aligned left/right directional targets，并在 `E_left,E_right` 上做 withheld
+exclusive holdout。partition、overlap-only fit、holdout separation、global-sign
+invariance 与 common-prefix feasibility 是 exact finite；18 cases、36 directional fits、
+54 normalizer rows 的 numerical replay 为 `13 concordant / 3 discordant / 2 unresolved`，
+且三处 discordance 全在 `Q=70->90`, exponent 1 的三个 tolerance。这是 finite
+completion-stability diagnostic/obstruction，不是 causal 或 asymptotic theorem；formal
+directed-rounding enclosure、uniform budget、arithmetic `L2`、fixed-power credit、full
 Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
 
 ```text
+TPC307_ROUTE_ADVANCE = YES_SCOPED_COMMON_AMBIENT_DIRECTIONAL_HOLDOUT_DIAGNOSTIC
+TPC307_COMMON_AMBIENT_UNION = PROVED_EXACT_FINITE
+TPC307_OVERLAP_ONLY_FIT = PROVED_EXACT_FINITE
+TPC307_EXCLUSIVE_HOLDOUT = PROVED_EXACT_FINITE
+TPC307_GLOBAL_SIGN_INVARIANCE = PROVED_EXACT_FINITE
+TPC307_COMMON_PREFIX_FEASIBILITY = PROVED_EXACT_FINITE
+TPC307_FINITE_HOLDOUT_ATLAS = NUMERICALLY_REPRODUCED_FINITE_18_CASES_36_DIRECTIONAL_FITS_54_NORMALIZER_ROWS
+TPC307_AGREEMENT_CENSUS = NUMERICALLY_REPRODUCED_FINITE_CONCORDANT_13_DISCORDANT_3_UNRESOLVED_2
+TPC307_BUDGET_PREFERENCE = NUMERICALLY_REPRODUCED_FINITE_RIGHT_13_LEFT_5_UNRESOLVED_0
+TPC307_HOLDOUT_PREFERENCE = NUMERICALLY_REPRODUCED_FINITE_RIGHT_13_LEFT_3_UNRESOLVED_2
+TPC307_DISCORDANCE_LOCALIZATION = NUMERICALLY_REPRODUCED_FINITE_ALL_3_AT_Q70_TO_90_EXPONENT_1
+TPC307_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC307_CAUSAL_IDENTIFICATION = NONE_DIRECTIONAL_HOLDOUT_DIAGNOSTIC_ONLY
+TPC307_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC307_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC307_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC307_FIXED_POWER_CREDIT = 0
+TPC307_FULL_GATE_B = OPEN
+TPC307_TWIN_PRIME_RESULT = NONE
+TPC307_ROUND2_CLUE = STRESS_COMMON_AMBIENT_HOLDOUT_AGAINST_EXCLUSIVE_COMPLETION_ENVELOPES_AND_PROFILE_PREFIX_PERTURBATIONS_BEFORE_ANY_CAUSAL_PREFERENCE_CLAIM
+
 TPC306_ROUTE_ADVANCE = YES_SCOPED_TWO_WAY_INTERACTION_DECOMPOSITION
 TPC306_LOG_DECOMPOSITION = PROVED_EXACT_FINITE
 TPC306_SQUARED_DOMINANCE_IDENTITY = PROVED_EXACT_FINITE
