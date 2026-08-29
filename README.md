@@ -9,6 +9,37 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-304 承接 TPC-303 的 fixed-source cardinality obstruction，把相邻
+moving prime shells 限制到公共素数上，先消除各自 source-first sign label 的 global-sign
+gauge，再计算 overlap transport。六个 label-transport rows 的三组平均对齐相关度为
+`1/2, 1/11, 1/2`（`Q=50→60, 60→70, 70→90`）；`Q=60→70` 是唯一的
+`rho<=1/3` fracture。TPC-303 的 budget descent census 同步为 `3,15,3`，same-prefix
+descent 为 `0,9,0`，因此全部 9 个 same-prefix descent 都落在中间 fracture。这个
+结果是 finite localization crosswalk，不是因果分离或 asymptotic theorem；需要
+counterfactual transported-label budget 才能区分 target switching 与 physical
+operator change。arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE。
+
+```text
+TPC304_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION
+TPC304_ROUTE_ADVANCE = YES_SCOPED_OVERLAPPING_SHELL_LOCALIZATION
+TPC304_OVERLAP_CORRELATION_IDENTITY = PROVED_EXACT_FINITE
+TPC304_GLOBAL_SIGN_GAUGE_INVARIANCE = PROVED_EXACT_FINITE
+TPC304_LABEL_TRANSPORT_CROSSWALK = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+TPC304_TRANSPORT_FRACTURE = NUMERICALLY_CERTIFIED_FINITE_Q60_TO_70_2_OF_2_EXPONENTS
+TPC304_BUDGET_DESCENT_LOCALIZATION = NUMERICALLY_CERTIFIED_FINITE_15_3_3_AND_SAME_PREFIX_9_0_0
+TPC304_CAUSAL_SEPARATION = OPEN
+TPC304_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC304_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC304_FIXED_POWER_CREDIT = 0
+TPC304_FULL_GATE_B = OPEN
+TPC304_TWIN_PRIME_RESULT = NONE
+TPC304_STATUS = PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION
+TPC304_ROUND2_CLUE = COMPUTE_COUNTERFACTUAL_TRANSPORTED_LABEL_BUDGETS_TO_SEPARATE_TARGET_SWITCHING_FROM_OPERATOR_CHANGE
+```
+
+`tpc-304-overlapping-shell-label-transport` - `PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION` - 六个 overlap rows 的平均相关度为 `1/2,1/11,1/2`，中间 transition 同时承载 `15/18` budget descent 与全部 `9` 个 same-prefix descent。
+
 当前主线状态：TPC-303 在 TPC-302 的 growing-shell budget-gap stability 之后，冻结
 `(N,H,z)=(512,58,5)` 与 `Q=50,60,70,90` 的 moving-shell spine，直接测试“shell
 cardinality 增大就迫使 native weighted budget 增大”的 shortcut。两种 kernel exponent、

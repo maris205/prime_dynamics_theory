@@ -3,13 +3,64 @@
 
 更新时间：2026-08-29
 
-状态：**TPC303_PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC304_PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.97 当前：TPC-303 fixed-source cardinality-monotonicity obstruction
+## 0.98 当前：TPC-304 overlapping-shell sign-label transport
+
+项目：`papers/tpc-304-overlapping-shell-label-transport/`
+
+类型：**PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION**。
+
+TPC-304 承接 TPC-303 的 fixed-source cardinality obstruction，直接把相邻 moving
+prime shells 的 source-first weighted labels 限制到公共素数上。对两个独立的 global
+sign gauge 做最优对齐后，严格得到 binary-label overlap correlation
+`rho=|sum a(p)b(p)|/|O|` 与 aligned disagreement `d=(1-rho)/2`，从而消除了首个
+shell prime 的 arbitrary gauge。
+
+在冻结 `(N,H,z)=(512,58,5)`、`Q=50,60,70,90`、kernel exponent `1,2` 的六个
+transport rows 上，三组 transition 的 mean correlation 精确为 `1/2,1/11,1/2`。
+因此 `Q=60->70` 是唯一的低相关 fracture（两种 exponent 均为 `1/11`，公共重叠
+大小为 11）；TPC-303 的 independently replayed budget descent census 同步为
+`3,15,3`，same-prefix descent 为 `0,9,0`。中间 transition 同时是 correlation
+最小组、descent 最大组，并承载全部 9 个 same-prefix descent。
+
+最强正结果：global-sign-invariant transport observable 与 parent budget census
+在同一个 finite transition 上精确对齐，且不是单一 exponent 的现象。
+
+最强 obstruction：该 coincidence 仍不能区分 target-label switching 与 physical
+shell/operator change；当前尚未计算 transported label 的 counterfactual native budget。
+
+开放定理：固定 physical shell/operator，运输相邻 shell label 并重算 native budget，
+以建立或否定 target/operator separation principle；uniform profile-budget growth 与
+arithmetic `L2` 也仍开放。
+
+可复用结构：`overlap -> global-sign gauge alignment -> exact mismatch census ->
+parent budget crosswalk`。
+
+ROUND2_CLUE：`COMPUTE_COUNTERFACTUAL_TRANSPORTED_LABEL_BUDGETS_TO_SEPARATE_TARGET_SWITCHING_FROM_OPERATOR_CHANGE`。
+
+```text
+TPC304_ROUTE_ADVANCE = YES_SCOPED_OVERLAPPING_SHELL_LOCALIZATION
+TPC304_OVERLAP_CORRELATION_IDENTITY = PROVED_EXACT_FINITE
+TPC304_GLOBAL_SIGN_GAUGE_INVARIANCE = PROVED_EXACT_FINITE
+TPC304_LABEL_TRANSPORT_CROSSWALK = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+TPC304_TRANSPORT_FRACTURE = NUMERICALLY_CERTIFIED_FINITE_Q60_TO_70_2_OF_2_EXPONENTS
+TPC304_BUDGET_DESCENT_LOCALIZATION = NUMERICALLY_CERTIFIED_FINITE_15_3_3_AND_SAME_PREFIX_9_0_0
+TPC304_CAUSAL_SEPARATION = OPEN
+TPC304_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC304_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC304_FIXED_POWER_CREDIT = 0
+TPC304_FULL_GATE_B = OPEN
+TPC304_TWIN_PRIME_RESULT = NONE
+TPC304_STATUS = PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION
+TPC304_ROUND2_CLUE = COMPUTE_COUNTERFACTUAL_TRANSPORTED_LABEL_BUDGETS_TO_SEPARATE_TARGET_SWITCHING_FROM_OPERATOR_CHANGE
+```
+
+## 0.97 previous: TPC-303 fixed-source cardinality-monotonicity obstruction
 
 项目：`papers/tpc-303-cardinality-monotonicity-obstruction/`
 

@@ -2,15 +2,40 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V156 / TPC-303
+当前地图版本：V157 / TPC-304
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-303`（`PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION`）；
+当前编号锚点：`TPC-304`（`PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION`）；
 对应论文目录为
-`papers/tpc-303-cardinality-monotonicity-obstruction/`。
+`papers/tpc-304-overlapping-shell-label-transport/`。
 
-TPC-303 是当前地图位置：在 TPC-302 的 finite growing-grid stability 之后，冻结
+TPC-304 是当前地图位置：承接 TPC-303 的 cardinality obstruction，把相邻 moving
+prime shells 限制到公共素数，先消除 source-first sign labels 的 global-sign gauge，
+再将 label transport 与 parent budget census 对齐。六个 transport rows 的三组平均
+aligned correlation 为 `1/2,1/11,1/2`；`Q=60->70` 是唯一 `rho<=1/3` fracture，
+并同时承载 TPC-303 的 `15/18` budget descents 与全部 `9` 个 same-prefix descents。
+这是 finite localization crosswalk，不是 causal separation 或 asymptotic theorem；
+counterfactual transported-label budget、arithmetic `L2`、full Gate B 与 twin-prime
+endpoint 仍开放。
+
+```text
+TPC304_ROUTE_ADVANCE = YES_SCOPED_OVERLAPPING_SHELL_LOCALIZATION
+TPC304_OVERLAP_CORRELATION_IDENTITY = PROVED_EXACT_FINITE
+TPC304_GLOBAL_SIGN_GAUGE_INVARIANCE = PROVED_EXACT_FINITE
+TPC304_LABEL_TRANSPORT_CROSSWALK = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+TPC304_TRANSPORT_FRACTURE = NUMERICALLY_CERTIFIED_FINITE_Q60_TO_70_2_OF_2_EXPONENTS
+TPC304_BUDGET_DESCENT_LOCALIZATION = NUMERICALLY_CERTIFIED_FINITE_15_3_3_AND_SAME_PREFIX_9_0_0
+TPC304_CAUSAL_SEPARATION = OPEN
+TPC304_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC304_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC304_FIXED_POWER_CREDIT = 0
+TPC304_FULL_GATE_B = OPEN
+TPC304_TWIN_PRIME_RESULT = NONE
+TPC304_ROUND2_CLUE = COMPUTE_COUNTERFACTUAL_TRANSPORTED_LABEL_BUDGETS_TO_SEPARATE_TARGET_SWITCHING_FROM_OPERATOR_CHANGE
+```
+
+TPC-303 是上一位置：在 TPC-302 的 finite growing-grid stability 之后，冻结
 `(N,H,z)=(512,58,5)`，沿 `Q=50,60,70,90` 的 moving-shell spine 检验
 cardinality-only native weighted-budget monotonicity。54 个 adjacent transitions
 中有 21 个 interval-certified descent、33 个 ascent、0 个 unresolved；18/18
@@ -329,7 +354,7 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V156 / TPC-303
+YOU ARE HERE = V157 / TPC-304
 MAP_LABEL = GROWING-SHELL SOURCE-FIRST BUDGET-GAP STABILITY / UNIFORM-BUDGET OPEN GATE
 ```
 
@@ -566,6 +591,38 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.98 V157 / TPC-304：overlapping-shell sign-label transport
+
+TPC-304 是 TPC-303 的下一桥：不再只观察 native budget 的下降，而是把相邻
+moving shells 的 source-first weighted labels 投影到公共素数上。对两个独立
+global-sign gauge 做最优对齐后，六个 exponent/pair rows 的三组平均 correlation
+为 `1/2,1/11,1/2`，中间 `Q=60->70` 是唯一的粗粒度 fracture。
+
+```text
+TPC304_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION
+TPC304_ROUTE_ADVANCE = YES_SCOPED_OVERLAPPING_SHELL_LOCALIZATION
+TPC304_OVERLAP_CORRELATION_IDENTITY = PROVED_EXACT_FINITE
+TPC304_GLOBAL_SIGN_GAUGE_INVARIANCE = PROVED_EXACT_FINITE
+TPC304_LABEL_TRANSPORT_CROSSWALK = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+TPC304_TRANSPORT_FRACTURE = NUMERICALLY_CERTIFIED_FINITE_Q60_TO_70_2_OF_2_EXPONENTS
+TPC304_BUDGET_DESCENT_LOCALIZATION = NUMERICALLY_CERTIFIED_FINITE_15_3_3_AND_SAME_PREFIX_9_0_0
+TPC304_CAUSAL_SEPARATION = OPEN
+TPC304_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC304_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC304_FIXED_POWER_CREDIT = 0
+TPC304_FULL_GATE_B = OPEN
+TPC304_TWIN_PRIME_RESULT = NONE
+TPC304_STATUS = PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION
+TPC304_ROUND2_CLUE = COMPUTE_COUNTERFACTUAL_TRANSPORTED_LABEL_BUDGETS_TO_SEPARATE_TARGET_SWITCHING_FROM_OPERATOR_CHANGE
+```
+
+The inherited TPC-303 descent counts by Q transition are `3,15,3`, and the
+same-prefix counts are `0,9,0`; hence the unique minimum transport correlation
+and the maximum budget-descent concentration coincide. This is a finite
+localization crosswalk, not a causal statement. The next bridge must recompute
+counterfactual native budgets after transporting a neighboring label while
+holding the physical operator fixed.
 
 ## 5.97 V156 / TPC-303：fixed-source cardinality-monotonicity obstruction
 
@@ -6871,6 +6928,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V157 / TPC-304 | Bridge A / Gate B：overlapping-shell sign-label transport 已把 fixed-source budget descent 定位到唯一低相关 transition；causal target/operator separation、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-304` | 六个 transport rows，三组 mean aligned correlation `1/2,1/11,1/2`；`Q=60->70` 为 2/2 exponent fracture，并承载 budget descents `15/18` 与全部 same-prefix descents `9/9`；下一步为 counterfactual transported-label budgets |
 | 2026-08-29 | V156 / TPC-303 | Bridge A / Gate B：固定 source spine 上的 cardinality-only native weighted-budget monotonicity 已被 scoped finite obstruction 否定；uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-303` | `(N,H,z)=(512,58,5)`、`Q=50,60,70,90` 上 54 个 adjacent transitions 中 21 descent、33 ascent、0 unresolved；18/18 series nonmonotone，9 个 same-prefix descent，最大同前缀 contraction `<0.284422`；下一步为 overlapping-shell sign-label transport |
 | 2026-08-29 | V155 / TPC-302 | Bridge A / Gate B：source-first growing/control grid 上的 native weighted/positive budget gap 已通过三档 tolerance 与 common-prefix normalization audit；uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-302` | 34 rows、430 explicit shell targets、612 frontier cases；每行从物理 Gram 精确重编 equal-sign weighted label，common gap 三档均 34/34 >`10`，三种 normalizer 的 common weighted budget 102/102 >`1e-5`；fixed-power credit 为 0，下一步为 uniform native-budget growth/反例攻击 |
 | 2026-08-29 | V154 / TPC-301 | Bridge A / Gate B：native weighted/positive budget gap 已通过 tolerance、common-prefix 与 source-normalization hostile audit；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-301` | 严格证明 tolerance nesting、relative homogeneity、threshold-prefix nesting 与 common-prefix normalization invariance；18 rows / 219 explicit shell targets（inherited grid count 1,380 单独记录），324 frontier cases 上三档容差的 common gap 均 18/18 >`10`，weighted common budget 三种 normalizer 均 54/54 >`3e-5`；fixed-power credit 为 0，下一步为 growing-shell robustness 与 arithmetic `L2` interface |

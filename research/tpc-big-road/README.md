@@ -1,13 +1,46 @@
-# TPC big road V156 / TPC-303: fixed-source cardinality-monotonicity obstruction
+# TPC big road V157 / TPC-304: overlapping-shell sign-label transport
 
 更新时间：2026-08-29
 
-状态：`TPC303_PROVED_EXACT_INTERVAL_DESCENT_CRITERION_PLUS_NUMERICALLY_CERTIFIED_FIXED_SOURCE_CARDINALITY_MONOTONICITY_OBSTRUCTION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC304_PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-303 proof 为
+当前 TPC-304 proof 为
+`bridge_b_tpc304_overlapping_shell_label_transport.md`，checker 为
+`tpc_bridge_b_tpc304_overlapping_shell_label_transport_checker.py`，编号论文为
+`../../papers/tpc-304-overlapping-shell-label-transport/`。
+
+TPC-304 承接 TPC-303 的 fixed-source cardinality obstruction，把 TPC-302 的
+source-first weighted labels 限制到相邻 moving-shell 的公共素数上，并对两个独立
+global-sign gauge 做最优对齐。六个 exponent/pair rows 的三组平均 aligned
+correlation 为 `1/2`、`1/11`、`1/2`（`Q=50->60`、`60->70`、`70->90`）；中间
+transition 是唯一 `rho<=1/3` fracture。TPC-303 的 inherited budget descent census
+为 `3,15,3`，same-prefix descent 为 `0,9,0`，所以全部 9 个 same-prefix descent
+都落在该 fracture。这是 finite localization crosswalk，不是 causal separation；
+counterfactual transported-label budget、uniform profile-budget growth、arithmetic
+`L2`、fixed-power credit、full Gate B 与 twin-prime theorem 仍 OPEN/NONE。
+
+```text
+TPC304_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION
+TPC304_ROUTE_ADVANCE = YES_SCOPED_OVERLAPPING_SHELL_LOCALIZATION
+TPC304_OVERLAP_CORRELATION_IDENTITY = PROVED_EXACT_FINITE
+TPC304_GLOBAL_SIGN_GAUGE_INVARIANCE = PROVED_EXACT_FINITE
+TPC304_LABEL_TRANSPORT_CROSSWALK = NUMERICALLY_CERTIFIED_FINITE_6_ROWS
+TPC304_TRANSPORT_FRACTURE = NUMERICALLY_CERTIFIED_FINITE_Q60_TO_70_2_OF_2_EXPONENTS
+TPC304_BUDGET_DESCENT_LOCALIZATION = NUMERICALLY_CERTIFIED_FINITE_15_3_3_AND_SAME_PREFIX_9_0_0
+TPC304_CAUSAL_SEPARATION = OPEN
+TPC304_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC304_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC304_FIXED_POWER_CREDIT = 0
+TPC304_FULL_GATE_B = OPEN
+TPC304_TWIN_PRIME_RESULT = NONE
+TPC304_STATUS = PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION
+TPC304_ROUND2_CLUE = COMPUTE_COUNTERFACTUAL_TRANSPORTED_LABEL_BUDGETS_TO_SEPARATE_TARGET_SWITCHING_FROM_OPERATOR_CHANGE
+```
+
+此前 TPC-303 proof 为
 `bridge_b_tpc303_cardinality_monotonicity_obstruction.md`，checker 为
 `tpc_bridge_b_tpc303_cardinality_monotonicity_obstruction_checker.py`，编号论文为
 `../../papers/tpc-303-cardinality-monotonicity-obstruction/`。
