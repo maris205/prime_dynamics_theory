@@ -1,11 +1,39 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-29
-状态：`BOLD_CHANNEL_V157 / OVERLAPPING_SHELL_LABEL_TRANSPORT`
-claim level：`PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION`
-编号事实终点：TPC-304；TPC-304 trigger：`true`
+状态：`BOLD_CHANNEL_V158 / COUNTERFACTUAL_TRANSPORTED_LABEL_BUDGET`
+claim level：`PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS`
+编号事实终点：TPC-305；TPC-305 trigger：`true`
 
-当前 TPC-304 入口：proof 为
+当前 TPC-305 入口：proof 为
+`research/tpc-big-road/bridge_b_tpc305_counterfactual_transported_label_budget.md`，checker 为
+`tpc_bridge_b_tpc305_counterfactual_transported_label_budget_checker.py`，编号论文为
+`papers/tpc-305-counterfactual-transported-label-budget/`。它承接 TPC-304 的
+overlap fracture，在每个 full physical operator 内只替换 target：公共素数上使用
+optimally aligned neighboring label，off-overlap 保留 native label，再以 native 与
+transported target 的共同 feasible prefix 重算 budget。18 个 cases、36 个 operator
+tables 在三种 normalization 下均有严格一致的 orientation；中心 `Q=60->70` 为
+right-label-cheaper `5/6`、home `1/6`，且 same-prefix `3/3` 全为 right。该结果是
+finite partial counterfactual control，不是 causal separation；operator interaction、
+uniform profile-budget growth、arithmetic `L2`、full Gate B 与 twin-prime conclusion
+仍 OPEN/NONE。
+
+```text
+TPC305_ROUTE_ADVANCE = YES_SCOPED_COUNTERFACTUAL_TARGET_CONTROL
+TPC305_FIXED_OPERATOR_TARGET_SWAP = PROVED_EXACT_FINITE
+TPC305_COUNTERFACTUAL_BUDGET_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_CASES_36_TABLES
+TPC305_MIDDLE_TARGET_ORIENTATION = NUMERICALLY_CERTIFIED_FINITE_RIGHT_LABEL_CHEAPER_5_OF_6
+TPC305_MIDDLE_SAME_PREFIX_ORIENTATION = NUMERICALLY_CERTIFIED_FINITE_RIGHT_LABEL_CHEAPER_3_OF_3
+TPC305_CAUSAL_SEPARATION = PARTIAL_COUNTERFACTUAL_ONLY
+TPC305_OPERATOR_INTERACTION_TERM = OPEN
+TPC305_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC305_FIXED_POWER_CREDIT = 0
+TPC305_FULL_GATE_B = OPEN
+TPC305_TWIN_PRIME_RESULT = NONE
+TPC305_ROUND2_CLUE = TEST_TWO_WAY_OPERATOR_HOLDOUT_AND_INTERACTION_TERM_BEFORE_ANY_CAUSAL_TARGET_OPERATOR_CLAIM
+```
+
+此前 TPC-304 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc304_overlapping_shell_label_transport.md`，checker 为
 `tpc_bridge_b_tpc304_overlapping_shell_label_transport_checker.py`，编号论文为
 `papers/tpc-304-overlapping-shell-label-transport/`。它承接 TPC-303 的 fixed-source

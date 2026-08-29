@@ -9,6 +9,42 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-305 承接 TPC-304 的 overlap fracture，构造 full-shell
+counterfactual transported target：在相邻 shell 的公共素数上使用最优 global-sign 对齐
+标签，非公共素数保留 native label；随后在每个固定 physical operator 上，以 native
+与 transported 两者的共同可行 profile prefix 重算 native budget。冻结
+`(N,H,z)=(512,58,5)`、`Q=50,60,70,90`、两种 kernel exponent、三档 tolerance 与
+三种 source normalization，共得到 18 个 target-swap cases、36 个 operator tables。
+中心 `Q=60→70` 的 6 个 cases 中，right-neighbor label 在两侧 fixed operator 上均更便宜
+的有 `5/6`，home-operator-favored 有 `1/6`；TPC-303 的 `3/3` same-prefix cases
+全部落入 right-label-cheaper 类别。外侧 orientation 分别为 `(left=4,cross=2)` 与
+`(left=3,cross=1,home=2)`。这是 finite partial counterfactual control，不是 causal
+separation 或 asymptotic theorem；operator interaction、arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC305_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS
+TPC305_ROUTE_ADVANCE = YES_SCOPED_COUNTERFACTUAL_TARGET_CONTROL
+TPC305_ALIGNMENT_EXTENSION = PROVED_EXACT_FINITE
+TPC305_COMMON_PREFIX_FEASIBILITY = PROVED_EXACT_FINITE
+TPC305_FIXED_OPERATOR_TARGET_SWAP = PROVED_EXACT_FINITE
+TPC305_COUNTERFACTUAL_BUDGET_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_CASES_36_TABLES
+TPC305_MIDDLE_TARGET_ORIENTATION = NUMERICALLY_CERTIFIED_FINITE_RIGHT_LABEL_CHEAPER_5_OF_6
+TPC305_MIDDLE_SAME_PREFIX_ORIENTATION = NUMERICALLY_CERTIFIED_FINITE_RIGHT_LABEL_CHEAPER_3_OF_3
+TPC305_OUTER_ORIENTATION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_4_2__5_1__3_1_2
+TPC305_CAUSAL_SEPARATION = PARTIAL_COUNTERFACTUAL_ONLY
+TPC305_OPERATOR_INTERACTION_TERM = OPEN
+TPC305_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC305_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC305_FIXED_POWER_CREDIT = 0
+TPC305_FULL_GATE_B = OPEN
+TPC305_TWIN_PRIME_RESULT = NONE
+TPC305_STATUS = PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS
+TPC305_ROUND2_CLUE = TEST_TWO_WAY_OPERATOR_HOLDOUT_AND_INTERACTION_TERM_BEFORE_ANY_CAUSAL_TARGET_OPERATOR_CLAIM
+```
+
+`tpc-305-counterfactual-transported-label-budget` - `PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS` - 固定 operator 的 18-case target-swap atlas，中心 transition 为 right-label-cheaper `5/6`，same-prefix `3/3`。
+
 当前主线状态：TPC-304 承接 TPC-303 的 fixed-source cardinality obstruction，把相邻
 moving prime shells 限制到公共素数上，先消除各自 source-first sign label 的 global-sign
 gauge，再计算 overlap transport。六个 label-transport rows 的三组平均对齐相关度为

@@ -3,13 +3,67 @@
 
 更新时间：2026-08-29
 
-状态：**TPC304_PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC305_PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.98 当前：TPC-304 overlapping-shell sign-label transport
+## 0.99 current：TPC-305 counterfactual transported-label native budget
+
+项目：`papers/tpc-305-counterfactual-transported-label-budget/`
+
+类型：**PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS**。
+
+TPC-305 承接 TPC-304 的 overlap fracture，构造 full-shell counterfactual：在相邻 shell
+的公共素数上使用 optimally aligned neighboring label，off-overlap 保留 native label，
+然后在每个固定 physical operator 上，将 native 与 transported target 放在同一个
+最大可行 profile prefix 中重算约束 native budget。冻结 `(N,H,z)=(512,58,5)`、
+`Q=50,60,70,90`、两种 exponent、三档 tolerance 与三种 source normalization，共有
+18 个 target-swap cases、36 个 operator tables。
+
+中心 `Q=60->70` 的 six-case orientation census 为 right-label-cheaper `5/6`、
+home-operator-favored `1/6`；TPC-303 继承的 three same-prefix cases 全部为
+right-label-cheaper。外侧分别为 `(left=4,cross=2)` 与
+`(left=3,cross=1,home=2)`，且所有三种 normalizer 给出同一严格分类。这是 finite
+partial counterfactual control：within-row target effect 已被隔离，但两个 shell 的
+physical operator 仍不同，故不能称为 causal separation 或 asymptotic theorem。
+
+最强正结果：中间 fracture 上五个 case 在两侧 fixed operator 都偏向 right-neighbor
+label，且所有 same-prefix parent descent 都落入该类。
+
+最强 obstruction：外侧 orientation 发生反转/混合，说明 target identity 与 operator
+identity 仍有 interaction；当前尚无 two-way holdout 的 interaction contrast。
+
+开放定理：在四格 operator/target holdout table 上定义并解释 home effect、target
+effect 与 interaction term；uniform profile-budget growth、arithmetic `L2` 仍 OPEN。
+
+可复用结构：`overlap alignment -> native off-overlap extension -> common prefix ->
+fixed-operator budget -> two-row orientation atlas`。
+
+ROUND2_CLUE：`TEST_TWO_WAY_OPERATOR_HOLDOUT_AND_INTERACTION_TERM_BEFORE_ANY_CAUSAL_TARGET_OPERATOR_CLAIM`。
+
+```text
+TPC305_ROUTE_ADVANCE = YES_SCOPED_COUNTERFACTUAL_TARGET_CONTROL
+TPC305_ALIGNMENT_EXTENSION = PROVED_EXACT_FINITE
+TPC305_COMMON_PREFIX_FEASIBILITY = PROVED_EXACT_FINITE
+TPC305_FIXED_OPERATOR_TARGET_SWAP = PROVED_EXACT_FINITE
+TPC305_COUNTERFACTUAL_BUDGET_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_CASES_36_TABLES
+TPC305_MIDDLE_TARGET_ORIENTATION = NUMERICALLY_CERTIFIED_FINITE_RIGHT_LABEL_CHEAPER_5_OF_6
+TPC305_MIDDLE_SAME_PREFIX_ORIENTATION = NUMERICALLY_CERTIFIED_FINITE_RIGHT_LABEL_CHEAPER_3_OF_3
+TPC305_OUTER_ORIENTATION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_4_2__5_1__3_1_2
+TPC305_CAUSAL_SEPARATION = PARTIAL_COUNTERFACTUAL_ONLY
+TPC305_OPERATOR_INTERACTION_TERM = OPEN
+TPC305_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC305_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC305_FIXED_POWER_CREDIT = 0
+TPC305_FULL_GATE_B = OPEN
+TPC305_TWIN_PRIME_RESULT = NONE
+TPC305_STATUS = PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS
+TPC305_ROUND2_CLUE = TEST_TWO_WAY_OPERATOR_HOLDOUT_AND_INTERACTION_TERM_BEFORE_ANY_CAUSAL_TARGET_OPERATOR_CLAIM
+```
+
+## 0.98 previous：TPC-304 overlapping-shell sign-label transport
 
 项目：`papers/tpc-304-overlapping-shell-label-transport/`
 

@@ -1,0 +1,268 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=0.92in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,tabularx}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\title{A Fixed-Operator Counterfactual for\
+Overlapping Prime-Shell Labels}
+\author{Liang Wang\\
+School of Mathematics and Statistics\\
+Huazhong University of Science and Technology (HUST), Wuhan, China}
+\date{29 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The preceding finite crosswalk found that the $Q=60\to70$ transition is the
+unique low-correlation fracture of source-first sign labels and carries every
+same-prefix native-budget descent, but that crosswalk changes the physical
+shell/operator and the target simultaneously.  We introduce a finite
+counterfactual that holds each full physical operator fixed and swaps only the
+neighboring, globally aligned label on the shell overlap; native labels are
+retained off the overlap.  The native and transported targets are then passed
+through the same constrained profile-budget program at a common feasible
+prefix.  On the locked $(N,H,z)=(512,58,5)$ spine, with two kernel exponents,
+three tolerances, and three source normalizers, this gives 18 cases and 36
+operator tables.  At $Q=60\to70$, the right-neighbor label is cheaper on both
+fixed operators in 5 of 6 cases, while one case favors each home operator; all
+three inherited same-prefix cases are in the former class.  This is a
+numerically certified finite target-swap atlas and a partial counterfactual
+control.  The cross-operator interaction term, uniform asymptotics, and any
+twin-prime conclusion remain open.
+\end{abstract}
+
+\section{Position of the question}
+
+We work on the finite source-first prime-shell line developed in the local
+releases TPC-302 and TPC-303 \cite{tpc302,tpc303}.  TPC-302 constructs a signed
+label by exhaustive minimization of the physical Gram quadratic form, while
+TPC-303 shows that the resulting constrained native budget is not a function
+of shell cardinality alone on the declared spine.  TPC-304 aligns labels on
+adjacent shell overlaps and localizes the strongest label fracture at
+$Q=60\to70$ \cite{tpc304}.  Its two observables, however, move together:
+changing $Q$ changes both the physical operator and the source-first target.
+
+The present question is deliberately narrower:
+\begin{quote}
+Within one physical operator row, what happens if the target is replaced by the
+neighboring shell's aligned label on the shared primes?
+\end{quote}
+This is a target-swap experiment, not a claim that the two physical operators
+represent the same asymptotic object.
+
+We freeze source scale $N=512$, height $H=58$, literal source cutoff $z=5$,
+the moving shells $Q\in\{50,60,70,90\}$, exponents $e\in\{1,2\}$, tolerances
+$\tau\in\{1/4,1/2,3/4\}$, and the 17 nested prime-profile cutoffs
+\[
+  3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61.
+\]
+All parent labels and certificates are hash-locked in the accompanying code.
+
+\section{Counterfactual protocol}
+
+Let $S_L,S_R$ be adjacent prime shells and let
+$a_L:S_L\to\{-1,1\}$ and $a_R:S_R\to\{-1,1\}$ be their locked labels.  Put
+$O=S_L\cap S_R$ and define
+\[
+ u=\sum_{p\in O}a_L(p)a_R(p),\qquad
+ \sigma=\begin{cases}1,&u\geq0,\\-1,&u<0.\end{cases}
+\]
+The deterministic $+1$ choice at a zero tie fixes a convention without
+affecting any invariant correlation.  Define full-shell transported targets
+\[
+ t_L(p)=\begin{cases}\sigma a_R(p),&p\in O,\\a_L(p),&p\in S_L\setminus O,\end{cases}
+ \quad
+ t_R(p)=\begin{cases}\sigma a_L(p),&p\in O,\\a_R(p),&p\in S_R\setminus O.\end{cases}
+ \tag{1}
+\]
+The left operator is consequently compared on $(a_L,t_L)$ and the right
+operator on $(a_R,t_R)$.  Equation (1) is the key scope restriction: it changes
+the target vector inside an operator row and does not rebuild that row.
+
+For completeness, let $V_Q$ denote the finite physical-output/profile matrix
+whose rows are indexed by $S_Q$, and let $M$ be the source profile Gram matrix.
+For a prefix of $k$ profiles write $V_{Q,k}$ and $M_k$ for the corresponding
+submatrices.  The native profile budget is
+\[
+ B_{Q,k,\tau}(b)=\min_c c^{\mathsf T}M_kc
+ \quad\text{subject to}\quad
+ \|V_{Q,k}c-b\|_2\leq\tau\|b\|_2.                         \tag{2}
+\]
+For each of $b=a_Q,t_Q$, the first least-squares-feasible prefix is recorded as
+$k_{Q,\mathrm{native}}$ or $k_{Q,\mathrm{transport}}$.  Both targets are
+compared at
+\[
+ k=\max\{k_{Q,\mathrm{native}},k_{Q,\mathrm{transport}}\}. \tag{3}
+\]
+The TPC-302 ridge/KKT frontier evaluates (2) at this common prefix.  We report
+the ratio
+\[
+ R_Q=\frac{B_{Q,k,\tau}(t_Q)}{B_{Q,k,\tau}(a_Q)},                 \tag{4}
+\]
+using each of three positive normalizers: $\|\beta\|_2^2$, the prefix trace
+mean of $M$, and the first profile norm.  The same normalizer is used in the
+numerator and denominator of a row.
+
+For a shell pair, $R_L$ uses the left operator and $R_R$ the right operator.
+We call the four strict orientation patterns
+\[
+\begin{array}{c|c}
+ (R_L<1,R_R>1)&\text{right label cheaper on both operators}\\
+ (R_L>1,R_R<1)&\text{left label cheaper on both operators}\\
+ (R_L>1,R_R>1)&\text{home operator favored}\\
+ (R_L<1,R_R<1)&\text{cross target favored}.
+\end{array}                                                   \tag{5}
+\]
+An interval touching one would be unresolved rather than assigned a class.
+
+\section{Finite exact statements}
+
+\begin{proposition}[Alignment and extension]
+For every nonempty overlap, (1) is a well-defined binary full-shell target and
+maximizes the overlap inner product over the two global sign choices.  A
+simultaneous global sign change of either parent label changes $\sigma$ so that
+the transported vectors and all overlap mismatch counts are unchanged up to
+the same gauge convention.
+\end{proposition}
+\begin{proof}
+The two possible overlap inner products are $u$ and $-u$, so the displayed
+choice of $\sigma$ selects the nonnegative one, with a deterministic choice at
+$u=0$.  Every coordinate in (1) is a product of signs or a copied sign, hence
+is binary.  Flipping one parent label flips $u$ and the corresponding aligned
+neighboring label, leaving the aligned products invariant.  The off-overlap
+coordinates are native by definition.
+\end{proof}
+
+\begin{proposition}[Common-prefix target comparison]
+For fixed $V_Q$, $M$, and $\tau$, the two quantities in (4) are values of the
+same finite constrained quadratic program with only its target vector changed.
+The prefix in (3) is feasible for both targets whenever their individual first
+feasible prefixes exist.
+\end{proposition}
+\begin{proof}
+Adding a profile column enlarges the coefficient space, so the least-squares
+residual cannot increase with $k$.  Thus a target feasible at its first
+feasible prefix is feasible at every larger prefix, in particular at (3).
+The matrices $V_Q$ and $M$ are held fixed within each numerator/denominator
+pair; only $b$ is replaced.
+\end{proof}
+
+\begin{proposition}[Orientation logic]
+Under strict interval separation from one, the four labels in (5) are exactly
+the four possible combinations of which neighboring target is cheaper on the
+left and right fixed operators.
+\end{proposition}
+\begin{proof}
+On the left row, $R_L<1$ means the aligned right target has lower budget than
+the native left target.  On the right row, $R_R>1$ means the aligned left
+target has higher budget than the native right target, so the right target is
+cheaper there.  The other three cases follow by reversing one or both
+inequalities.
+\end{proof}
+
+\section{Certified finite atlas}
+
+The high-precision producer uses 55 decimal digits, 130 frontier bisection
+steps, and relative output enclosures of $10^{-11}$.  The certificate contains
+all labels, overlap primes, alignment signs, threshold prefixes, budgets,
+ratios, and classifications.  The independent replay does not import the
+TPC-305 producer: it reconstructs the finite target protocol and checks every
+stored interval and orientation.  The stress suite includes exhaustive small
+binary labels, global-sign flips, a negative-alignment fixture, and the
+orientation truth table.
+
+There are 18 cases, two fixed operators per case, and three normalizers.  The
+pair-level census is shown in Table~\ref{tab:pairs}.
+
+\begin{table}[t]
+\centering\small
+\caption{Target-swap orientation census.}
+\label{tab:pairs}
+\begin{tabular}{c c c c c c}
+\toprule
+transition & left & right & home & cross & unresolved\\
+\midrule
+$50\to60$ & 4 & 0 & 0 & 2 & 0\\
+$60\to70$ & 0 & 5 & 1 & 0 & 0\\
+$70\to90$ & 3 & 0 & 2 & 1 & 0\\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\footnotesize Here ``left'' and ``right'' mean the corresponding neighboring
+label is cheaper on both fixed operators; ``home'' and ``cross'' are the last
+two strict patterns in (5).
+\end{table}
+
+The central fracture is the most relevant group.  Table~\ref{tab:middle}
+reports the $\|\beta\|_2^2$-normalized ratio intervals by their central values;
+the certificate stores the full 38-digit endpoint strings.  The profile-trace
+and first-profile normalizers give the same strict side of one in every row.
+
+\begin{table}[t]
+\centering\small
+\caption{Central $Q=60\to70$ fixed-operator ratios.}
+\label{tab:middle}
+\begin{tabular}{c c r r l}
+\toprule
+exponent & $\tau$ & $R_L$ & $R_R$ & orientation\\
+\midrule
+1 & .25 & 1.34649 & 2.02276 & home\\
+1 & .50 & .709463 & 1.07892 & right\\
+1 & .75 & .149193 & 1.90434 & right\\
+2 & .25 & .100203 & 1.15964 & right\\
+2 & .50 & .058495 & 4.78239 & right\\
+2 & .75 & .006411 & 3.84215 & right\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The central right-label-cheaper cases include all three parent TPC-303
+same-prefix descents: $(e,\tau)=(1,.50),(1,.75),(2,.75)$.  This is a useful
+within-row target signal because those parent descents cannot be explained by
+an increase in the common profile dimension.  It is still not a causal proof:
+the left and right physical matrices differ, and the orientation changes on
+the outer transitions.
+
+For scale, the six central common-prefix pairs are
+$(13,15),(11,15),(8,9)$ for $e=1$ and $(12,14),(9,10),(6,6)$ for $e=2$.
+Each pair lists the left and right maximum prefix in the certificate.  These
+finite index changes are part of the declared protocol, not an asymptotic
+dimension law.
+
+\section{Interpretation and obstruction}
+
+The strongest positive result is a clean target-swap signal at the previously
+localized fracture: in five of six central cases, the aligned right label is
+cheaper on both fixed physical operators.  The exact protocol makes this
+statement stronger than the TPC-304 coincidence because each comparison holds
+one operator row fixed and changes only its target.
+
+The strongest obstruction is equally clear.  A two-row table has two sources
+of variation: target identity and operator identity.  TPC-305 controls the
+target variation within each row but does not make $V_L=V_R$.  The outer-pair
+orientations also reverse or become mixed, so the central pattern cannot be
+promoted to a universal target-causality principle.  The natural next object is
+the two-way holdout table: evaluate both target labels on both physical
+operators and form an explicit interaction contrast before assigning causal
+language.
+
+Nothing here supplies arithmetic $L^2$ control, a fixed power saving, a full
+Route-B Gate-B theorem, or a twin-prime result.  The Session-named Route-A and
+Route-B evaluator files are absent from this checkout; the claim level is the
+local fail-closed level recorded in the route-evaluation note.
+
+\section*{Reproducibility}
+
+The canonical certificate is
+\texttt{results/tpc305\_certificate.json}.  The producer,
+independent checker, stress suite, and Bridge-B checker are all included in
+the project directory.  Parent TPC-302 and TPC-303 source/certificate hashes
+are embedded in the certificate.  The manuscript is intentionally a finite
+research report: no claim is made that the observed orientations persist as
+$Q$ or the source scale grows.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

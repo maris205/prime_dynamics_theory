@@ -1,13 +1,50 @@
-# TPC big road V157 / TPC-304: overlapping-shell sign-label transport
+# TPC big road V158 / TPC-305: counterfactual transported-label budget
 
 更新时间：2026-08-29
 
-状态：`TPC304_PROVED_EXACT_FINITE_GAUGE_INVARIANT_OVERLAP_CORRELATION_IDENTITY_PLUS_NUMERICALLY_CERTIFIED_LABEL_TRANSPORT_FRACTURE_AND_BUDGET_DESCENT_LOCALIZATION / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC305_PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-304 proof 为
+当前 TPC-305 proof 为
+`bridge_b_tpc305_counterfactual_transported_label_budget.md`，checker 为
+`tpc_bridge_b_tpc305_counterfactual_transported_label_budget_checker.py`，编号论文为
+`../../papers/tpc-305-counterfactual-transported-label-budget/`。
+
+TPC-305 承接 TPC-304 的 overlap fracture，在每个 full physical shell/operator 内只
+替换 target：公共素数上采用 optimally aligned neighboring label，off-overlap 保留
+native label，并在 native/transported 两者的共同 feasible profile prefix 上重算约束
+budget。固定 `(N,H,z)=(512,58,5)`、`Q=50,60,70,90`、两种 exponent、三档 tolerance
+与三种 normalization 共得到 18 个 cases、36 个 operator tables。中心 `Q=60->70`
+中 right-label-cheaper 为 `5/6`、home 为 `1/6`，TPC-303 的 same-prefix `3/3` 全部
+为 right-label-cheaper；外侧 orientation 为 `(left=4,cross=2)` 与
+`(left=3,cross=1,home=2)`。这是 finite partial counterfactual control，不是 causal
+separation；operator interaction、uniform profile-budget growth、arithmetic `L2`、
+fixed-power credit、full Gate B 与 twin-prime theorem 仍 OPEN/NONE。
+
+```text
+TPC305_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS
+TPC305_ROUTE_ADVANCE = YES_SCOPED_COUNTERFACTUAL_TARGET_CONTROL
+TPC305_ALIGNMENT_EXTENSION = PROVED_EXACT_FINITE
+TPC305_COMMON_PREFIX_FEASIBILITY = PROVED_EXACT_FINITE
+TPC305_FIXED_OPERATOR_TARGET_SWAP = PROVED_EXACT_FINITE
+TPC305_COUNTERFACTUAL_BUDGET_ATLAS = NUMERICALLY_CERTIFIED_FINITE_18_CASES_36_TABLES
+TPC305_MIDDLE_TARGET_ORIENTATION = NUMERICALLY_CERTIFIED_FINITE_RIGHT_LABEL_CHEAPER_5_OF_6
+TPC305_MIDDLE_SAME_PREFIX_ORIENTATION = NUMERICALLY_CERTIFIED_FINITE_RIGHT_LABEL_CHEAPER_3_OF_3
+TPC305_OUTER_ORIENTATION_CENSUS = NUMERICALLY_CERTIFIED_FINITE_4_2__5_1__3_1_2
+TPC305_CAUSAL_SEPARATION = PARTIAL_COUNTERFACTUAL_ONLY
+TPC305_OPERATOR_INTERACTION_TERM = OPEN
+TPC305_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC305_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC305_FIXED_POWER_CREDIT = 0
+TPC305_FULL_GATE_B = OPEN
+TPC305_TWIN_PRIME_RESULT = NONE
+TPC305_STATUS = PROVED_EXACT_FINITE_COUNTERFACTUAL_TARGET_SWAP_PROTOCOL_PLUS_NUMERICALLY_CERTIFIED_FIXED_OPERATOR_TRANSPORTED_LABEL_BUDGET_ATLAS
+TPC305_ROUND2_CLUE = TEST_TWO_WAY_OPERATOR_HOLDOUT_AND_INTERACTION_TERM_BEFORE_ANY_CAUSAL_TARGET_OPERATOR_CLAIM
+```
+
+此前 TPC-304 proof 为
 `bridge_b_tpc304_overlapping_shell_label_transport.md`，checker 为
 `tpc_bridge_b_tpc304_overlapping_shell_label_transport_checker.py`，编号论文为
 `../../papers/tpc-304-overlapping-shell-label-transport/`。
