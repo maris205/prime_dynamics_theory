@@ -9,6 +9,47 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
+当前主线状态：TPC-309 承接 TPC-308，检验 common-ambient holdout 对 source-profile prefix
+选择的敏感性。在同一个 19-prime cutoff pool 中，使用相邻的 17-cutoff windows
+`LOW/BASE/HIGH`，保持 shell、labels、alignment、exclusive completion protocol 不变，
+但对每个 ladder 重新计算 feasible common prefix、frontier、budget 与 holdout envelope。
+三种 ladder 共 54 个 profile cases、162 个 envelope observations，候选数跨 ladder 为
+`108/558/1440`。BASE 在三个半径上精确恢复 TPC-308 的 `13/3/2`、`11/2/5`、
+`10/1/7`；LOW/HIGH 把 strict discordance 移到更早 transition 或扩大 unresolved band，
+说明该 finite obstruction 在声明的 profile shifts 下不具 location-invariance。这是
+finite model-selection sensitivity obstruction，不是 causal、asymptotic、arithmetic 或
+twin-prime theorem；formal directed-rounding enclosure、profile-independent preference、
+uniform budget、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion
+仍 OPEN/NONE。
+
+```text
+TPC309_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS
+TPC309_ROUTE_ADVANCE = YES_SCOPED_PROFILE_SENSITIVITY_OBSTRUCTION
+TPC309_WINDOW_PROTOCOL = PROVED_EXACT_FINITE
+TPC309_PREFIX_NESTING = PROVED_EXACT_FINITE
+TPC309_HAMMING_EXTREMA = PROVED_EXACT_FINITE
+TPC309_NORMALIZER_INVARIANCE = PROVED_EXACT_FINITE
+TPC309_PROFILE_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_PROFILE_CASES_162_ENVELOPES
+TPC309_BASELINE_RECOVERY = NUMERICALLY_REPRODUCED_FINITE_TPC308_CLASSES
+TPC309_PROFILE_ROBUSTNESS = OPEN_PROFILE_INDEPENDENT_PREFERENCE
+TPC309_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC309_CAUSAL_IDENTIFICATION = NONE_PROFILE_SENSITIVITY_DIAGNOSTIC_ONLY
+TPC309_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC309_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC309_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC309_FIXED_POWER_CREDIT = 0
+TPC309_FULL_GATE_B = OPEN
+TPC309_TWIN_PRIME_RESULT = NONE
+TPC309_STATUS = PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS
+TPC309_ROUND2_CLUE = TEST_CROSS_HOLDOUT_AGGREGATION_AND_PROFILE_ROBUSTNESS_BEFORE_ANY_PREFERENCE_CLAIM
+```
+
+`papers/tpc-309-profile-prefix-shift-sensitivity` - TPC-309 current project，包含三窗口
+profile sensitivity atlas、独立 replay、exact stress suite、proof package、PDF 与本地
+Bridge-B checker。Session-named evaluator files absent，故不宣称 official pass。
+
+此前 TPC-308：
+
 当前主线状态：TPC-308 在 TPC-307 的 common-ambient holdout 上做 adversarial
 exclusive-completion envelope。冻结 overlap fit、coefficients、profile prefix 与 budget
 class，对每个 exclusive holdout 枚举 Hamming radii `r=0,1,2` 的全部 binary completions。

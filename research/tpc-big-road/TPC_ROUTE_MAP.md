@@ -2,15 +2,46 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V161 / TPC-308
+当前地图版本：V162 / TPC-309
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-308`（`PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS`）；
+当前编号锚点：`TPC-309`（`PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS`）；
 对应论文目录为
-`papers/tpc-308-adversarial-exclusive-completion-envelope/`。
+`papers/tpc-309-profile-prefix-shift-sensitivity/`。
 
-TPC-308 是当前地图位置：承接 TPC-307 的 common-ambient overlap-fit/exclusive-holdout
+TPC-309 是当前地图位置：承接 TPC-308 的 common-ambient holdout 与 Hamming completion
+envelope，在一个 19-prime cutoff pool 中取相邻的 `LOW/BASE/HIGH` 三个 17-cutoff
+profile windows。shell、labels、alignment 与 completion rule 冻结，但每个 ladder 重新
+计算 feasible common prefix、frontier、profile-dependent budget 和 exclusive holdout。
+三窗口形成 54 profile cases、162 envelope observations，候选总数为 `108/558/1440`。
+BASE 恢复 TPC-308 的 `13/3/2`、`11/2/5`、`10/1/7`；LOW/HIGH 改变 strict discordance
+位置并扩大 unresolved band。这个结果是 finite profile-sensitivity obstruction，不是
+causal、asymptotic、arithmetic 或 twin-prime theorem；profile-independent preference、
+formal directed-rounding certificate、uniform budget、arithmetic `L2`、fixed-power credit、
+full Gate B 与 twin-prime endpoint 仍开放。
+
+```text
+TPC309_ROUTE_ADVANCE = YES_SCOPED_PROFILE_SENSITIVITY_OBSTRUCTION
+TPC309_WINDOW_PROTOCOL = PROVED_EXACT_FINITE
+TPC309_PREFIX_NESTING = PROVED_EXACT_FINITE
+TPC309_HAMMING_EXTREMA = PROVED_EXACT_FINITE
+TPC309_NORMALIZER_INVARIANCE = PROVED_EXACT_FINITE
+TPC309_PROFILE_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_PROFILE_CASES_162_ENVELOPES
+TPC309_BASELINE_RECOVERY = NUMERICALLY_REPRODUCED_FINITE_TPC308_CLASSES
+TPC309_PROFILE_ROBUSTNESS = OPEN_PROFILE_INDEPENDENT_PREFERENCE
+TPC309_CAUSAL_IDENTIFICATION = NONE_PROFILE_SENSITIVITY_DIAGNOSTIC_ONLY
+TPC309_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC309_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC309_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC309_FIXED_POWER_CREDIT = 0
+TPC309_FULL_GATE_B = OPEN
+TPC309_TWIN_PRIME_RESULT = NONE
+TPC309_STATUS = PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS
+TPC309_ROUND2_CLUE = TEST_CROSS_HOLDOUT_AGGREGATION_AND_PROFILE_ROBUSTNESS_BEFORE_ANY_PREFERENCE_CLAIM
+```
+
+此前 TPC-308 是上一位置：承接 TPC-307 的 common-ambient overlap-fit/exclusive-holdout
 diagnostic，冻结 fitted predictions、profile prefix 与 budget class，只对两个 exclusive
 holdouts 枚举 Hamming radii `0,1,2` 的全部 binary completions。Hamming protocol、候选
 计数、fixed-prediction extrema、radius monotonicity、radius-zero recovery 与 sign
@@ -425,8 +456,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V161 / TPC-308
-MAP_LABEL = ADVERSARIAL EXCLUSIVE-COMPLETION ENVELOPE / FINAL-TRANSITION OBSTRUCTION SURVIVES
+YOU ARE HERE = V162 / TPC-309
+MAP_LABEL = PROFILE-PREFIX SHIFT SENSITIVITY / DISCORDANCE LOCATION IS NOT INVARIANT
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -662,6 +693,47 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.103 V162 / TPC-309：profile-prefix shift sensitivity
+
+TPC-309 是 TPC-308 的下一座小桥：保持 common-ambient union/overlap/exclusive
+partition、source-first labels、alignment 和 Hamming completion protocol 不变，只把
+17 个 source-backed profile cutoffs 在固定 19-prime pool 中向下、居中、向上平移一格，
+得到 `LOW/BASE/HIGH` 三个相邻 ladder。每个 ladder 重新计算 feasible common prefix、
+frontier、profile-dependent budget 与 holdout envelope。
+
+三窗口共 54 profile cases、162 envelope observations，候选数跨 ladder 为
+`108/558/1440`。BASE 恢复上一个位置的 `13/3/2`、`11/2/5`、`10/1/7` agreement
+census；LOW 在三个半径上为 `13/4/1`、`10/2/6`、`8/1/9`，HIGH 为
+`10/5/3`、`5/0/13`、`5/0/13`。radius-zero strict discordance over
+`(50->60,60->70,70->90)` 为 LOW `(2,1,1)`、BASE `(0,0,3)`、HIGH `(2,2,1)`；
+radius-two 为 LOW `(1,0,0)`、BASE `(0,0,1)`、HIGH `(0,0,0)`。因此 BASE 的
+final-transition obstruction 在声明的 profile shifts 下不具 location-invariance 或
+uniform survival。
+
+```text
+TPC309_ROUTE_ADVANCE = YES_SCOPED_PROFILE_SENSITIVITY_OBSTRUCTION
+TPC309_WINDOW_PROTOCOL = PROVED_EXACT_FINITE
+TPC309_PREFIX_NESTING = PROVED_EXACT_FINITE
+TPC309_HAMMING_EXTREMA = PROVED_EXACT_FINITE
+TPC309_NORMALIZER_INVARIANCE = PROVED_EXACT_FINITE
+TPC309_PROFILE_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_PROFILE_CASES_162_ENVELOPES
+TPC309_BASELINE_RECOVERY = NUMERICALLY_REPRODUCED_FINITE_TPC308_CLASSES
+TPC309_PROFILE_ROBUSTNESS = OPEN_PROFILE_INDEPENDENT_PREFERENCE
+TPC309_CAUSAL_IDENTIFICATION = NONE_PROFILE_SENSITIVITY_DIAGNOSTIC_ONLY
+TPC309_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC309_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC309_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC309_FIXED_POWER_CREDIT = 0
+TPC309_FULL_GATE_B = OPEN
+TPC309_TWIN_PRIME_RESULT = NONE
+TPC309_STATUS = PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS
+TPC309_ROUND2_CLUE = TEST_CROSS_HOLDOUT_AGGREGATION_AND_PROFILE_ROBUSTNESS_BEFORE_ANY_PREFERENCE_CLAIM
+```
+
+最强正结果：profile perturbation 是同维度、source-backed、相邻且有独立 replay 的
+finite protocol。最强 obstruction：strict discordance 的位置和 radius-two survival
+随 ladder 改变；profile-independent preference 仍是 OPEN。
 
 ## 5.102 V161 / TPC-308：adversarial exclusive-completion envelope
 
@@ -2134,9 +2206,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V161 / TPC-308                    |
-        | ADVERSARIAL EXCLUSIVE-COMPLETION ENVELOPE   |
-        | 13/3/2 -> 11/2/5 -> 10/1/7 by radius        |
+        | YOU ARE HERE — V162 / TPC-309                    |
+        | PROFILE-PREFIX SHIFT SENSITIVITY            |
+        | LOW/BASE/HIGH: location not invariant       |
         +--------------------------------------------------+
                 |
                 v
@@ -7169,6 +7241,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V162 / TPC-309 | Bridge A / Gate B：profile-prefix shift sensitivity 已完成；profile-independent preference、formal directed-rounding certificate、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-309` | 在固定 19-prime pool 中比较 LOW/BASE/HIGH 三个相邻 17-cutoff ladders；54 profile cases、162 envelope observations、候选 `108/558/1440`，BASE 恢复 TPC-308 classes，而 strict discordance location 与 radius-two survival 随 profile 改变；下一步为 cross-holdout aggregation 与 profile robustness audit |
 | 2026-08-29 | V161 / TPC-308 | Bridge A / Gate B：adversarial exclusive-completion envelope 已完成；formal interval certificate、completion generation、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-308` | 冻结 TPC-307 的 common ambient 与 overlap fit，在 18 cells 上枚举 Hamming radii `0,1,2`；54 observations、候选 `36/186/480`，agreement `13/3/2`、`11/2/5`、`10/1/7`，discordance `3->2->1` 且全在 `70->90,e=1`；下一步为 profile-prefix perturbation 与 completion invariance audit |
 | 2026-08-29 | V160 / TPC-307 | Bridge A / Gate B：common-ambient union-shell holdout protocol 已完成；formal directed-rounding enclosure、completion-invariant preference、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-307` | 同一 union ambient `U` 上 overlap-only directional fit 与 exclusive holdout；18 cases / 36 fits / 54 rows 中 `13/3/2` concordant/discordant/unresolved，三处 discordance 均在 `Q=70->90,e=1`；下一步为 completion envelopes 与 prefix perturbation hostile audit |
 | 2026-08-29 | V159 / TPC-306 | Bridge A / Gate B：two-way operator/target interaction decomposition 已完成；common-ambient holdout、uniform profile budget、arithmetic `L2` 与 full Gate B open | `TPC-306` | 四格 operator-by-target table、精确 `m^2-i^2=d_Ld_R` identity 与 row-scaling invariance；18 cases / 54 derived rows 中 target-main `12/18`、interaction `6/18`，中心 `5/6`、same-prefix `3/3`，下一步为 common-ambient union-shell completion 与 interaction stability |

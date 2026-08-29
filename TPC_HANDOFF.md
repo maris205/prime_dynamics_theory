@@ -1,7 +1,73 @@
 # TPC HANDOFF
 
 更新时间：2026-08-29
-交接状态：`BOLD_CHANNEL_V161_TPC308_ADVERSARIAL_EXCLUSIVE_COMPLETION_ENVELOPE_RELEASED`
+交接状态：`BOLD_CHANNEL_V162_TPC309_PROFILE_PREFIX_SHIFT_SENSITIVITY_RELEASED`
+
+TPC-309 current section: profile-prefix shift sensitivity
+-----------------------------------------------------------------------------------------------
+
+TPC-309 is the direct profile-selection continuation of TPC-308.  It freezes the
+common-ambient operator, source-first shell labels, alignment, exclusive
+partition, and Hamming completion protocol, while shifting the 17 source-backed
+profile cutoffs through three adjacent windows in one 19-prime pool:
+`LOW=(p_1,...,p_17)`, `BASE=(p_2,...,p_18)`, and
+`HIGH=(p_3,...,p_19)`.  Each ladder recomputes its feasible common prefix,
+frontier, profile-dependent budget, and exclusive holdout envelope.
+
+The finite atlas has 54 profile cases and 162 envelope observations, with
+candidate totals `108/558/1440` at radii `0,1,2`.  BASE exactly recovers
+TPC-308's agreement classes `13/3/2`, `11/2/5`, and `10/1/7`.  LOW gives
+`13/4/1`, `10/2/6`, `8/1/9`, while HIGH gives `10/5/3`, `5/0/13`,
+`5/0/13`.  At radius zero the strict-discordance transition counts over
+`50->60,60->70,70->90` are LOW `(2,1,1)`, BASE `(0,0,3)`, and HIGH
+`(2,2,1)`; at radius two they are `(1,0,0)`, `(0,0,1)`, and `(0,0,0)`.
+Thus the baseline final-transition obstruction is not location-invariant or
+uniformly persistent under the declared profile shifts, and the wider
+completion envelope enlarges the unresolved band.
+
+The neighboring-window definition, prefix nesting, Hamming extrema,
+radius-zero recovery, radius monotonicity, positive interval class rule, and
+common-normalizer cancellation are exact finite statements.  The atlas is a
+numerically reproduced float replay with padded enclosures, not a directed-
+rounding certificate.  Target-generation leakage inherited from TPC-302,
+profile-independent preference, causal identification, uniform asymptotic
+budget, arithmetic `L2`, fixed-power credit, full Gate B, and a twin-prime
+conclusion remain OPEN/NONE.  The Session-named `propose.md` and Route-A/
+Route-B evaluator files are absent, so no official evaluator pass is asserted.
+
+```text
+TPC309_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS
+TPC309_ROUTE_ADVANCE = YES_SCOPED_PROFILE_SENSITIVITY_OBSTRUCTION
+TPC309_WINDOW_PROTOCOL = PROVED_EXACT_FINITE
+TPC309_PREFIX_NESTING = PROVED_EXACT_FINITE
+TPC309_HAMMING_EXTREMA = PROVED_EXACT_FINITE
+TPC309_NORMALIZER_INVARIANCE = PROVED_EXACT_FINITE
+TPC309_PROFILE_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_PROFILE_CASES_162_ENVELOPES
+TPC309_BASELINE_RECOVERY = NUMERICALLY_REPRODUCED_FINITE_TPC308_CLASSES
+TPC309_PROFILE_ROBUSTNESS = OPEN_PROFILE_INDEPENDENT_PREFERENCE
+TPC309_TARGET_GENERATION_LEAKAGE = INHERITED_TPC302_PHYSICAL_GRAM_DEPENDENT_LABELS
+TPC309_CAUSAL_IDENTIFICATION = NONE_PROFILE_SENSITIVITY_DIAGNOSTIC_ONLY
+TPC309_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC309_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC309_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC309_FIXED_POWER_CREDIT = 0
+TPC309_FULL_GATE_B = OPEN
+TPC309_TWIN_PRIME_RESULT = NONE
+TPC309_STATUS = PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS
+TPC309_ROUND2_CLUE = TEST_CROSS_HOLDOUT_AGGREGATION_AND_PROFILE_ROBUSTNESS_BEFORE_ANY_PREFERENCE_CLAIM
+```
+
+Strongest positive result: a same-dimensional, source-backed neighboring
+profile perturbation has an exact finite protocol and independent replay.
+Strongest obstruction: strict-discordance location and radius-two survival
+change across LOW/BASE/HIGH, so no profile-independent preference follows.
+Open theorem: an arithmetically justified profile-selection law with stable
+growing-regime holdout preference.  Reusable structure:
+`source-backed cutoff windows -> common-prefix frontier -> budget/holdout
+interval -> Hamming envelope -> discordance-location census`.
+
+TPC-308 previous section: adversarial exclusive-completion envelope
+-----------------------------------------------------------------------------------------------
 
 TPC-308 current section: adversarial exclusive-completion envelope
 -----------------------------------------------------------------------------------------------
@@ -10320,18 +10386,18 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V161/TPC-308 是当前 release；其 producer、independent replay、stress audit 与
+V162/TPC-309 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade command set 共 253 对 normal/optimized 命令、506 次
+当前 curated cascade command set 共 257 对 normal/optimized 命令、514 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
 TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对，TPC-290 再追加末尾 4 对，
 TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对，TPC-293 再追加末尾 4 对，
 TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对，TPC-296 再追加末尾 4 对，
-TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对，TPC-302 再追加末尾 4 对，TPC-303 再追加末尾 4 对，TPC-304 再追加末尾 4 对，TPC-305 再追加末尾 4 对，TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追加末尾 4 对。V161/TPC-308 的 253 对
+TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，TPC-300 再追加末尾 4 对，TPC-301 再追加末尾 4 对，TPC-302 再追加末尾 4 对，TPC-303 再追加末尾 4 对，TPC-304 再追加末尾 4 对，TPC-305 再追加末尾 4 对，TPC-306 再追加末尾 4 对，TPC-307 再追加末尾 4 对，TPC-308 再追加末尾 4 对，TPC-309 再追加末尾 4 对。V162/TPC-309 的 257 对
 registry 已完成增量回归；TPC-289 新增的 4 对已由本项目 bridge 与 standalone tail
 checks 逐项通过；TPC-290、TPC-291、TPC-292 的各 4 对均由各自 bridge 与 standalone
 tail checks 逐项通过；TPC-293 的 4 对也由本项目 bridge 与 standalone tail checks
@@ -10341,7 +10407,7 @@ TPC-295 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过�
 bridge 与 standalone tail checks 逐项通过；TPC-298 的 4 对亦由本项目 bridge 与
 standalone tail checks 逐项通过；TPC-299 的 4 对亦由本项目 bridge 与 standalone
 tail checks 逐项通过；TPC-300 的 4 对亦由本项目 bridge 与 standalone tail
-checks 逐项通过；TPC-301 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-302 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-303 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-304 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-305 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-306 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-307 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-308 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过。完整 253 对组合未因
+checks 逐项通过；TPC-301 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-302 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-303 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-304 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-305 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-306 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-307 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-308 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-309 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过。完整 257 对组合未因
 重复计算而再次运行。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
@@ -11008,6 +11074,24 @@ Bridge-B）共 8 次 invocation 均返回零，stderr 为空，normal/optimized 
 byte-identical；Bridge-B 输出 `18 cases / 54 observations / 36,186,480 candidates /
 r0=13/3/2, r1=11/2/5, r2=10/1/7`。
 
+TPC-309 的项目级 producer、independent replay、profile-shift stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-309-profile-prefix-shift-sensitivity/code/tpc309_profile_prefix_shift_sensitivity.py --check
+python -O -B papers/tpc-309-profile-prefix-shift-sensitivity/code/tpc309_profile_prefix_shift_sensitivity.py --check
+python -B papers/tpc-309-profile-prefix-shift-sensitivity/experiments/tpc309_independent_checker.py --check
+python -O -B papers/tpc-309-profile-prefix-shift-sensitivity/experiments/tpc309_independent_checker.py --check
+python -B papers/tpc-309-profile-prefix-shift-sensitivity/experiments/tpc309_profile_shift_stress.py --check
+python -O -B papers/tpc-309-profile-prefix-shift-sensitivity/experiments/tpc309_profile_shift_stress.py --check
+python -B research/tpc-big-road/tpc_bridge_b_tpc309_profile_prefix_shift_sensitivity_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc309_profile_prefix_shift_sensitivity_checker.py --check
+```
+
+TPC-309 增量 tail audit：上述 4 对（producer、independent replay、profile-shift stress、
+Bridge-B）共 8 次 invocation 均返回零，stderr 为空，normal/optimized stdout 逐对
+byte-identical；Bridge-B 输出 `3 ladders / 54 cases / 162 envelopes / 108,558,1,440
+candidates`，并锁定 LOW/BASE/HIGH 的 agreement 与 discordance-location census。
+
 此前 TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
 
 ```bash
@@ -11049,7 +11133,26 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-308 入口：
+最新 TPC-309 入口：
+
+```text
+papers/tpc-309-profile-prefix-shift-sensitivity/README.md
+papers/tpc-309-profile-prefix-shift-sensitivity/PROOF_PACKAGE.md
+papers/tpc-309-profile-prefix-shift-sensitivity/notes/theorem_ledger.md
+papers/tpc-309-profile-prefix-shift-sensitivity/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc309_profile_prefix_shift_sensitivity.md
+research/tpc-big-road/tpc_bridge_b_tpc309_profile_prefix_shift_sensitivity_checker.py
+```
+
+TPC-309 是当前 profile-prefix shift sensitivity release；它的 3 个相邻
+source-backed ladders、54 cases、162 envelope observations 与
+`108/558/1440` candidate totals 已由 producer、独立 replay、stress suite
+和 Bridge-B 锁定。BASE 恢复 TPC-308 的 finite classes，而 LOW/HIGH 改变
+discordance location 或扩大 unresolved band。profile-independent preference、
+directed rounding、uniform asymptotic budget、arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+此前 TPC-308 入口：
 
 ```text
 papers/tpc-308-adversarial-exclusive-completion-envelope/README.md

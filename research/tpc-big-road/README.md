@@ -1,13 +1,28 @@
-# TPC big road V161 / TPC-308: adversarial exclusive-completion envelope
+# TPC big road V162 / TPC-309: profile-prefix shift sensitivity
 
 更新时间：2026-08-29
 
-状态：`TPC308_PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
+状态：`TPC309_PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN`
 
 高层、可持续更新的岛屿/桥梁文字路线图见 [`TPC_ROUTE_MAP.md`](TPC_ROUTE_MAP.md)。
 该地图用于导航；当前数学事实仍由根目录 `TPC_HANDOFF.md` 与当前 proof/checker 控制。
 
-当前 TPC-308 proof 为
+当前 TPC-309 proof 为
+`bridge_b_tpc309_profile_prefix_shift_sensitivity.md`，checker 为
+`tpc_bridge_b_tpc309_profile_prefix_shift_sensitivity_checker.py`，编号论文为
+`../../papers/tpc-309-profile-prefix-shift-sensitivity/`。
+
+TPC-309 承接 TPC-308 的 common-ambient holdout 与 Hamming completion envelope，在同一个
+19-prime cutoff pool 中定义相邻的 `LOW/BASE/HIGH` 三个 17-cutoff profile windows。shell、
+labels、alignment 与 completion rule 冻结，但每个 ladder 重新计算 feasible common prefix、
+frontier、profile-dependent budget 和 exclusive holdout。三窗口共 54 profile cases、162
+envelope observations，候选总数跨 ladder 为 `108/558/1440`；BASE 恢复 TPC-308 的
+`13/3/2`、`11/2/5`、`10/1/7`，而 LOW/HIGH 改变 strict discordance 的位置并扩大
+unresolved band。这是 finite profile-sensitivity obstruction，不是 causal、asymptotic、
+arithmetic 或 twin-prime theorem；formal directed-rounding certificate、profile-independent
+preference、uniform budget、arithmetic `L2`、fixed-power credit 与 full Gate B 仍 OPEN/NONE。
+
+此前 TPC-308 proof 为
 `bridge_b_tpc308_adversarial_exclusive_completion_envelope.md`，checker 为
 `tpc_bridge_b_tpc308_adversarial_exclusive_completion_envelope_checker.py`，编号论文为
 `../../papers/tpc-308-adversarial-exclusive-completion-envelope/`。

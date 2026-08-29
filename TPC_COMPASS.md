@@ -1,11 +1,51 @@
 # TPC distilled map and bold channel
 
 更新时间：2026-08-29
-状态：`BOLD_CHANNEL_V161 / ADVERSARIAL_EXCLUSIVE_COMPLETION_ENVELOPE`
-claim level：`PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS`
-编号事实终点：TPC-308；TPC-308 trigger：`true`
+状态：`BOLD_CHANNEL_V162 / PROFILE_PREFIX_SHIFT_SENSITIVITY`
+claim level：`PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS`
+编号事实终点：TPC-309；TPC-309 trigger：`true`
 
-当前 TPC-308 入口：proof 为
+当前 TPC-309 入口：proof 为
+`research/tpc-big-road/bridge_b_tpc309_profile_prefix_shift_sensitivity.md`，checker 为
+`tpc_bridge_b_tpc309_profile_prefix_shift_sensitivity_checker.py`，编号论文为
+`papers/tpc-309-profile-prefix-shift-sensitivity/`。它承接 TPC-308 的 common-ambient
+holdout 与 Hamming completion envelope，在同一个 19-prime cutoff pool 中测试相邻的
+`LOW/BASE/HIGH` 三个 17-cutoff profile windows；shell、labels、alignment 与 completion
+规则冻结，但每个 ladder 重新求 feasible prefix、frontier、budget 和 holdout。三窗口
+共 54 profile cases、162 envelope observations，候选数 `108/558/1440`；BASE 恢复
+TPC-308 的 `13/3/2`、`11/2/5`、`10/1/7`，LOW/HIGH 则改变 strict discordance 的位置
+并扩大 unresolved band。这是 finite profile-sensitivity obstruction，不是 causal 或
+asymptotic theorem；profile-independent preference、formal directed-rounding certificate、
+uniform budget、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion
+仍 OPEN/NONE。Session-named evaluator files absent，故不宣称 official pass。
+
+```text
+TPC309_ROUTE_ADVANCE = YES_SCOPED_PROFILE_SENSITIVITY_OBSTRUCTION
+TPC309_WINDOW_PROTOCOL = PROVED_EXACT_FINITE
+TPC309_PREFIX_NESTING = PROVED_EXACT_FINITE
+TPC309_HAMMING_EXTREMA = PROVED_EXACT_FINITE
+TPC309_NORMALIZER_INVARIANCE = PROVED_EXACT_FINITE
+TPC309_PROFILE_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_PROFILE_CASES_162_ENVELOPES
+TPC309_BASELINE_RECOVERY = NUMERICALLY_REPRODUCED_FINITE_TPC308_CLASSES
+TPC309_PROFILE_ROBUSTNESS = OPEN_PROFILE_INDEPENDENT_PREFERENCE
+TPC309_CAUSAL_IDENTIFICATION = NONE_PROFILE_SENSITIVITY_DIAGNOSTIC_ONLY
+TPC309_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC309_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC309_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC309_FIXED_POWER_CREDIT = 0
+TPC309_FULL_GATE_B = OPEN
+TPC309_TWIN_PRIME_RESULT = NONE
+TPC309_STATUS = PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS
+TPC309_ROUND2_CLUE = TEST_CROSS_HOLDOUT_AGGREGATION_AND_PROFILE_ROBUSTNESS_BEFORE_ANY_PREFERENCE_CLAIM
+```
+
+TPC-309 的 strongest positive 是同维度、相邻、source-backed profile perturbation 的
+独立 finite replay；strongest obstruction 是 BASE 的 final-transition discordance 在
+LOW/HIGH 下迁移或消失，且 radius-two 的 unresolved band 明显扩大。
+
+此前 TPC-308 入口：
+
+此前 TPC-308 入口：proof 为
 `research/tpc-big-road/bridge_b_tpc308_adversarial_exclusive_completion_envelope.md`，checker 为
 `tpc_bridge_b_tpc308_adversarial_exclusive_completion_envelope_checker.py`，编号论文为
 `papers/tpc-308-adversarial-exclusive-completion-envelope/`。它承接 TPC-307 的 common-

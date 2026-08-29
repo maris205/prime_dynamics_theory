@@ -3,13 +3,68 @@
 
 更新时间：2026-08-29
 
-状态：**TPC308_PROVED_EXACT_FINITE_HAMMING_COMPLETION_ENVELOPE_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_HOLDOUT_STABILITY_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
+状态：**TPC309_PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS / FIXED_POWER_CREDIT_NONE / FULL_GATE_B_OPEN**
 
 本文件与路线图平行维护，作用是把连续探索中的可发表材料从长篇 handoff 中逐步抽出。
 它不是 theorem evidence；正式数学状态仍以当前 proof、checker、TPC_HANDOFF.md 页首
 及 current section 为准。
 
-## 0.102 current：TPC-308 adversarial exclusive-completion envelope
+## 0.103 current：TPC-309 profile-prefix shift sensitivity
+
+项目：`papers/tpc-309-profile-prefix-shift-sensitivity/`
+
+类型：**PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS**。
+
+TPC-309 承接 TPC-308 的 common-ambient holdout 与 Hamming completion envelope。它在一个
+19-prime cutoff pool 中取相邻的三个 17-cutoff windows：`LOW/BASE/HIGH`；shell、labels、
+alignment、union/overlap/exclusive partition 与 completion radii 冻结，但每个 profile ladder
+重新求 feasible common prefix、frontier、source-budget ratio 与 holdout envelope。
+
+三窗口共 54 profile cases、162 envelope observations，候选数跨 ladder 为 `108/558/1440`
+(radii `0/1/2`)。BASE 在三个半径上恢复 TPC-308 的 `13/3/2`、`11/2/5`、`10/1/7`。
+LOW 的 agreement 为 `13/4/1`、`10/2/6`、`8/1/9`，HIGH 为 `10/5/3`、`5/0/13`、
+`5/0/13`。radius-zero strict discordance 在 LOW/BASE/HIGH 的 transition counts 分别为
+`(2,1,1)`、`(0,0,3)`、`(2,2,1)`；radius-two 为 `(1,0,0)`、`(0,0,1)`、`(0,0,0)`。
+因此 BASE 的 final-transition obstruction 在声明的相邻 profile shifts 下不具位置或
+持续性不变性；这是 finite model-selection obstruction，不是 profile-independent theorem。
+
+最强正结果：同维度、source-backed、相邻的 profile perturbation 协议有 exact finite
+定义、独立 NumPy replay、exact stress suite 与 PDF/Bridge-B release。
+
+最强 obstruction：改变 profile ladder 会迁移 strict discordance，并在较宽 completion
+envelope 下显著扩大 unresolved band；不能从 BASE 选择推出 profile-independent preference。
+
+开放定理：是否存在有独立算术依据的 profile-selection law，使 holdout preference 在
+growing regime 中稳定；formal directed-rounding enclosure、causal identification、uniform
+asymptotic budget、arithmetic `L2`、fixed-power credit、full Gate B 与 twin-prime conclusion
+仍 OPEN/NONE。
+
+可复用结构：`source-backed cutoff windows -> common-prefix frontier -> budget/holdout
+interval -> Hamming completion envelope -> discordance-location census`。
+
+ROUND2_CLUE：`TEST_CROSS_HOLDOUT_AGGREGATION_AND_PROFILE_ROBUSTNESS_BEFORE_ANY_PREFERENCE_CLAIM`。
+
+```text
+TPC309_ROUTE_ADVANCE = YES_SCOPED_PROFILE_SENSITIVITY_OBSTRUCTION
+TPC309_WINDOW_PROTOCOL = PROVED_EXACT_FINITE
+TPC309_PREFIX_NESTING = PROVED_EXACT_FINITE
+TPC309_HAMMING_EXTREMA = PROVED_EXACT_FINITE
+TPC309_NORMALIZER_INVARIANCE = PROVED_EXACT_FINITE
+TPC309_PROFILE_ATLAS = NUMERICALLY_REPRODUCED_FINITE_54_PROFILE_CASES_162_ENVELOPES
+TPC309_BASELINE_RECOVERY = NUMERICALLY_REPRODUCED_FINITE_TPC308_CLASSES
+TPC309_PROFILE_ROBUSTNESS = OPEN_PROFILE_INDEPENDENT_PREFERENCE
+TPC309_CAUSAL_IDENTIFICATION = NONE_PROFILE_SENSITIVITY_DIAGNOSTIC_ONLY
+TPC309_FORMAL_INTERVAL_CERTIFICATE = OPEN_FLOAT_REPLAY_NOT_DIRECTED_ROUNDING
+TPC309_UNIFORM_ASYMPTOTIC_BUDGET = OPEN
+TPC309_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC309_FIXED_POWER_CREDIT = 0
+TPC309_FULL_GATE_B = OPEN
+TPC309_TWIN_PRIME_RESULT = NONE
+TPC309_STATUS = PROVED_EXACT_FINITE_PROFILE_LADDER_SHIFT_PROTOCOL_PLUS_NUMERICALLY_REPRODUCED_FINITE_PROFILE_SENSITIVITY_ATLAS
+TPC309_ROUND2_CLUE = TEST_CROSS_HOLDOUT_AGGREGATION_AND_PROFILE_ROBUSTNESS_BEFORE_ANY_PREFERENCE_CLAIM
+```
+
+## 0.102 previous：TPC-308 adversarial exclusive-completion envelope
 
 项目：`papers/tpc-308-adversarial-exclusive-completion-envelope/`
 
