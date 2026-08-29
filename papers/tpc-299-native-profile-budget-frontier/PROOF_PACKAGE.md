@@ -66,6 +66,16 @@ coordinates `a_j` of the target,
   = sum_j (sigma_j/(sigma_j^2+lambda))^2 a_j^2.
 ```
 
+## Notation erratum recorded by TPC-300
+
+In the displayed ridge path, the parameter called `lambda` is a ridge
+parameter `rho`, not the KKT multiplier itself.  If `mu` multiplies the
+constraint in the Lagrangian, stationarity is
+`M c + mu V^T(Vc-b)=0`, hence the ridge system is
+`(V^T V + rho M)c=V^T b` with `rho=1/mu`.  The TPC-299 numerical path uses
+`rho`; all of its frontier values remain unchanged.  TPC-300 supplies the
+dual formula and an exact rational audit of this reciprocal convention.
+
 ## Theorem 3 — nested budget monotonicity
 
 If `U_k` consists of the first columns of `U_l`, then

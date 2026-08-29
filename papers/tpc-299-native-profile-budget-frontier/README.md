@@ -29,6 +29,15 @@ This is a finite restricted-profile obstruction.  It does not prove a
 growing native budget theorem, arithmetic `L2`, Gate B, a fixed power, or
 the twin-prime conjecture.
 
+## Notation erratum (TPC-300)
+
+The producer field named `lagrange_multiplier` records the positive ridge
+parameter `rho` in `(V^T V + rho M)c = V^T b`.  The KKT multiplier for the
+constraint `||Vc-b||^2 <= R^2` is instead `mu=1/rho`.  TPC-300 proves this
+reciprocity and compiles the frozen values as exact dual lower-bound
+certificates.  This is a notation correction only: the TPC-299 frontier
+budgets and its finite numerical certificate are unchanged.
+
 ## Claim ceiling
 
 ```

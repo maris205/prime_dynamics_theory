@@ -9,7 +9,37 @@
 
 ## 2. Exploring the Twin Prime Conjecture
 
-当前主线状态：TPC-299 承接 TPC-298 的 profile-angle/dimension ladder，把“达到目标需要
+当前主线状态：TPC-300 承接 TPC-299 的 native budget frontier，把 primal budget obstacle
+进一步编译成可独立核验的 target-space dual certificate。对有限 source Gram `M`、physical
+image `V`、radius `R` 和任意正 ridge parameter `rho`，严格证明
+`D_rho=(||b||^2-R^2-b^T V c_rho)/rho <= B_R(b)`，active frontier 上取等号，并校正
+KKT multiplier 与 ridge parameter 的 reciprocal 关系 `mu=1/rho`。72 个 exact rational
+dual witnesses 在继承的 18-row、1,380-edge grid 上通过 source-first replay；最小
+dual/primal lower-bound ratio 约为 `0.9999999999999623`，weighted threshold 的
+`18/15/14` 与 full-prefix `11` 个 `1e-3` obstruction 全部保留。该进展仍是 finite
+restricted structural certificate；profile-budget growth、arithmetic `L2`、fixed-power
+credit、full Gate B 与 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC300_DUAL_LOWER_BOUND = PROVED_EXACT_FINITE
+TPC300_STRONG_DUALITY_ACTIVE_FRONTIER = PROVED_EXACT_FINITE_SLATER
+TPC300_RIDGE_KKT_RECIPROCITY = PROVED_EXACT_FINITE
+TPC300_TPC299_PARAMETER_LABEL = CORRECTED_SCOPED_RIDGE_PARAMETER_NOT_KKT_MULTIPLIER
+TPC300_RATIONAL_DUAL_WITNESSES = NUMERICALLY_CERTIFIED_FINITE_72_OF_72
+TPC300_DUAL_TIGHTNESS = NUMERICALLY_CERTIFIED_FINITE_72_OF_72_ABOVE_0_999999999
+TPC300_WEIGHTED_THRESHOLD_DUAL_FLOOR = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_9E_MINUS_5
+TPC300_WEIGHTED_THRESHOLD_DUAL_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_14_OF_18_ABOVE_1E_MINUS_3
+TPC300_WEIGHTED_FULL_PREFIX_DUAL_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_11_OF_18_ABOVE_1E_MINUS_3
+TPC300_PROFILE_BUDGET_GROWTH = OPEN
+TPC300_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC300_FIXED_POWER_CREDIT = 0
+TPC300_FULL_GATE_B = OPEN
+TPC300_TWIN_PRIME_RESULT = NONE
+```
+
+`tpc-300-native-budget-dual-certificate` - `PROVED_EXACT_FINITE_NATIVE_BUDGET_DUALITY_AND_RECIPROCAL_MULTIPLIER_CORRECTION_PLUS_NUMERICALLY_CERTIFIED_FINITE_RATIONAL_DUAL_WITNESS_ATLAS` - 72 个 exact rational dual cases 全部通过；对偶下界紧度、参数 reciprocal correction 与 weighted budget obstruction 均被锁定。
+
+此前 TPC-299 承接 TPC-298 的 profile-angle/dimension ladder，把“达到目标需要
 多少个方向”进一步编译成“实际 native source 向量需要多少预算”。对 literal prefix
 `U_k`、物理像 `V_k=A^T U_k` 与 source Gram `M_k=U_k^T U_k`，严格证明
 quadratically constrained least-norm frontier 的 KKT/ridge 表达、预算可行性 iff 判据与

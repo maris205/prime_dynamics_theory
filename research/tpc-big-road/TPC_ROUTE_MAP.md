@@ -2,23 +2,45 @@
 
 更新时间：2026-08-29
 
-当前地图版本：V152 / TPC-299
+当前地图版本：V153 / TPC-300
 
 性质：`LIVING_DESCRIPTIVE_MAP / NON_AUTHORITATIVE_SUMMARY`
 
-当前编号锚点：`TPC-299`（`PROVED_EXACT_FINITE_PROFILE_BUDGET_KKT_FRONTIER_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_OBSTRUCTION_ATLAS`）；
+当前编号锚点：`TPC-300`（`PROVED_EXACT_FINITE_NATIVE_BUDGET_DUALITY_AND_RECIPROCAL_MULTIPLIER_CORRECTION_PLUS_NUMERICALLY_CERTIFIED_FINITE_RATIONAL_DUAL_WITNESS_ATLAS`）；
 对应论文目录为
-`papers/tpc-299-native-profile-budget-frontier/`。
+`papers/tpc-300-native-budget-dual-certificate/`。
 
-TPC-299 承接 TPC-298 的 17-profile angle/dimension ladder，把目标容差编译为实际
-native source budget。令 `V_k=A^T U_k`、`M_k=U_k^T U_k`，严格证明
-`B_(k,tau)(b)=min{c^T M_k c: ||V_kc-b||<=tau||b||}` 的 KKT/ridge frontier、
-budget feasibility iff 判据与 nested-prefix monotonicity。18-row、1,380-edge finite
-grid 的 `tau=1/2` audit 显示 weighted threshold budget 在 18/18 行超过
-`9e-5||beta||^2`，14/18 行超过 `1e-3`，full prefix 仍 11/18；all-positive
-control 在 18/18 行低于 `1e-4`，weighted/positive gap 在 18/18 行超过 20。这是
-restricted finite native-budget obstruction；growing budget、arithmetic `L2`、full
-Gate B 与 twin-prime conclusion 仍 OPEN/NONE，fixed-power credit 为 0。
+TPC-300 承接 TPC-299 的 native profile budget frontier，把 primal budget 编译为
+target-space dual certificate。对 `(V^T V+rho M)c_rho=V^T b` 与
+`D_rho=(||b||^2-R^2-b^T Vc_rho)/rho`，严格证明任意正 `rho` 给出
+`D_rho<=B_R(b)`，active finite frontier 上取等号，并校正 `mu=1/rho` 的
+KKT/ridge reciprocal。18-row、1,380-edge finite grid 上，72 个 exact rational
+dual witnesses 全部通过 source-first replay；最小 dual/primal lower-bound ratio
+约为 `0.9999999999999623`，weighted threshold dual obstruction 为 18/18、
+14/18（`9e-5`、`1e-3`），full-prefix `1e-3` 为 11/18。这是 restricted finite
+structural certificate；growing budget、arithmetic `L2`、full Gate B 与 twin-prime
+conclusion 仍 OPEN/NONE，fixed-power credit 为 0。
+
+```text
+TPC300_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_NATIVE_BUDGET_DUALITY_AND_RECIPROCAL_MULTIPLIER_CORRECTION_PLUS_NUMERICALLY_CERTIFIED_FINITE_RATIONAL_DUAL_WITNESS_ATLAS
+TPC300_ROUTE_ADVANCE = YES_SCOPED_PRIMAL_FRONTIER_TO_RATIONAL_DUAL_CERTIFICATE
+TPC300_DUAL_LOWER_BOUND = PROVED_EXACT_FINITE
+TPC300_STRONG_DUALITY_ACTIVE_FRONTIER = PROVED_EXACT_FINITE_SLATER
+TPC300_RIDGE_KKT_RECIPROCITY = PROVED_EXACT_FINITE
+TPC300_TPC299_PARAMETER_LABEL = CORRECTED_SCOPED_RIDGE_PARAMETER_NOT_KKT_MULTIPLIER
+TPC300_RATIONAL_DUAL_WITNESSES = NUMERICALLY_CERTIFIED_FINITE_72_OF_72
+TPC300_DUAL_TIGHTNESS = NUMERICALLY_CERTIFIED_FINITE_72_OF_72_ABOVE_0_999999999
+TPC300_WEIGHTED_THRESHOLD_DUAL_FLOOR = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_9E_MINUS_5
+TPC300_WEIGHTED_THRESHOLD_DUAL_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_14_OF_18_ABOVE_1E_MINUS_3
+TPC300_WEIGHTED_FULL_PREFIX_DUAL_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_11_OF_18_ABOVE_1E_MINUS_3
+TPC300_PROFILE_BUDGET_GROWTH = OPEN
+TPC300_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC300_FIXED_POWER_CREDIT = 0
+TPC300_FULL_GATE_B = OPEN
+TPC300_TWIN_PRIME_RESULT = NONE
+TPC300_STATUS = PROVED_EXACT_FINITE_NATIVE_BUDGET_DUALITY_AND_RECIPROCAL_MULTIPLIER_CORRECTION_PLUS_NUMERICALLY_CERTIFIED_FINITE_RATIONAL_DUAL_WITNESS_ATLAS
+TPC300_ROUND2_CLUE = HOSTILE_TEST_THE_DUAL_BUDGET_GAP_ACROSS_TOLERANCE_AND_SOURCE_NORMALIZATION_LADDERS
+```
 
 ```text
 TPC299_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_PROFILE_BUDGET_KKT_FRONTIER_PLUS_NUMERICALLY_CERTIFIED_FINITE_NATIVE_BUDGET_OBSTRUCTION_ATLAS
@@ -232,8 +254,8 @@ TPC291_ROUND2_CLUE = TEST_SOURCE_RESTRICTED_DIFFUSE_WEIGHTS_OR_MULTI_PRIME_SIGNE
 ```
 
 ```text
-YOU ARE HERE = V152 / TPC-299
-MAP_LABEL = NATIVE PROFILE BUDGET FRONTIER / WEIGHTED-TARGET BUDGET OBSTRUCTION
+YOU ARE HERE = V153 / TPC-300
+MAP_LABEL = NATIVE BUDGET DUAL CERTIFICATE / RECIPROCAL KKT-RIDGE FIREWALL
 ```
 
 TPC-290 承接 TPC-289 的 physical output Gram，把 adaptive weighting 精确写成
@@ -469,6 +491,43 @@ TPC280_ROUND2_CLUE = AUDIT_TYPED_ARITHMETIC_L2_INTERFACE_FOR_FULL_GATE_B
 strongest positive result：exact two-term normalization, dominant exponent and margin
 compiler with equality sharpness；strongest obstruction：slow additive leakage caps the
 gain exponent；open theorem：literal source-level leakage decomposition with arithmetic `L2`。
+
+## 5.94 V153 / TPC-300：native budget dual certificate
+
+TPC-300 是 TPC-299 的直接下一桥：它不再只读取 primal QCQP frontier，而是把
+每个正 ridge 参数编译为 target-space dual lower bound。对
+`(V^T V+rho M)c_rho=V^T b`，定义
+`D_rho=(||b||^2-R^2-b^T Vc_rho)/rho`；严格证明 `D_rho<=B_R(b)`，
+并在 strict active finite frontier 上由 Slater/KKT 取等号。关键记号为
+KKT multiplier `mu=1/rho`，从而修正 TPC-299 中 producer 字段的语义，而不改
+其预算值。
+
+继承的 18-row / 1,380-edge grid 上，20-significant-digit rational midpoint
+产生 72 个 exact rational dual fractions；producer、independent replay 与
+stress 的 normal/optimized 双模均通过。最小 dual/primal lower-bound ratio
+约为 `0.9999999999999623`；weighted threshold dual obstruction 保留
+`18/15/14` 的 `9e-5/5e-4/1e-3` floors，full-prefix `1e-3` 保留 `11/18`。
+这是 finite restricted structural certificate，growing budget、arithmetic
+`L2`、full Gate B 和 twin-prime conclusion 仍 OPEN/NONE。
+
+```text
+TPC300_ROUTE_ADVANCE = YES_SCOPED_PRIMAL_FRONTIER_TO_RATIONAL_DUAL_CERTIFICATE
+TPC300_DUAL_LOWER_BOUND = PROVED_EXACT_FINITE
+TPC300_STRONG_DUALITY_ACTIVE_FRONTIER = PROVED_EXACT_FINITE_SLATER
+TPC300_RIDGE_KKT_RECIPROCITY = PROVED_EXACT_FINITE
+TPC300_TPC299_PARAMETER_LABEL = CORRECTED_SCOPED_RIDGE_PARAMETER_NOT_KKT_MULTIPLIER
+TPC300_RATIONAL_DUAL_WITNESSES = NUMERICALLY_CERTIFIED_FINITE_72_OF_72
+TPC300_DUAL_TIGHTNESS = NUMERICALLY_CERTIFIED_FINITE_72_OF_72_ABOVE_0_999999999
+TPC300_WEIGHTED_THRESHOLD_DUAL_FLOOR = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_9E_MINUS_5
+TPC300_WEIGHTED_THRESHOLD_DUAL_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_14_OF_18_ABOVE_1E_MINUS_3
+TPC300_WEIGHTED_FULL_PREFIX_DUAL_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_11_OF_18_ABOVE_1E_MINUS_3
+TPC300_PROFILE_BUDGET_GROWTH = OPEN
+TPC300_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC300_FIXED_POWER_CREDIT = 0
+TPC300_FULL_GATE_B = OPEN
+TPC300_TWIN_PRIME_RESULT = NONE
+TPC300_ROUND2_CLUE = HOSTILE_TEST_THE_DUAL_BUDGET_GAP_ACROSS_TOLERANCE_AND_SOURCE_NORMALIZATION_LADDERS
+```
 
 ## 5.93 V152 / TPC-299：native profile budget frontier
 
@@ -1582,9 +1641,9 @@ Markdown。它用于回答三个问题：已经走过哪些结构层、当前站
                 |
                 v
         +--------------------------------------------------+
-        | YOU ARE HERE — V152 / TPC-299                    |
-        | NATIVE PROFILE BUDGET FRONTIER                 |
-        | weighted half-RMS budget obstruction           |
+        | YOU ARE HERE — V153 / TPC-300                    |
+        | NATIVE BUDGET DUAL CERTIFICATE                 |
+        | rational dual witness / KKT-ridge firewall    |
         +--------------------------------------------------+
                 |
                 v
@@ -6617,6 +6676,7 @@ NO_THEOREM_JOINTLY_COMPILES_THE_COMPLETE_ORIENTED_D_K_ADDITIVE_EDGE_FRAME_OF_THE
 
 | 日期 | 地图版本 | 当前位置 | Release anchor | 变化 |
 |---|---|---|---|---|
+| 2026-08-29 | V153 / TPC-300 | Bridge A / Gate B：native budget dual certificate 已在有限图上完成；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-300` | 严格证明 weak/strong finite duality、`mu=1/rho` reciprocal correction 与 rational dual compiler；18 rows / 1,380 edges 上 72/72 exact dual witnesses 紧度 >`0.999999999`，weighted threshold floors `18/15/14`，full-prefix obstruction `11/18`；fixed-power credit 为 0，下一步为 tolerance/normalization hostile audit |
 | 2026-08-29 | V152 / TPC-299 | Bridge A / Gate B：native profile budget frontier 已在有限图上完成；growing profile budget、arithmetic `L2` 与 full Gate B open | `TPC-299` | 严格证明 QCQP/KKT/ridge budget frontier、budget feasibility iff 与 nested-prefix monotonicity；18 rows / 1,380 edges 上 weighted half-RMS threshold budget 各行 >`9e-5`，14/18 >`1e-3`，full prefix 11/18 >`1e-3`，positive control 18/18 <`1e-4`，gap 18/18 >20；fixed-power credit 为 0，下一步为 exact dual budget witness |
 | 2026-08-29 | V151 / TPC-298 | Bridge A / Gate B：literal source-profile angle/dimension ladder 已在有限图上完成；growing dimension、conditioning/source budget、arithmetic `L2` 与 full Gate B open | `TPC-298` | 严格证明 principal-angle identity 与 nested-prefix monotonicity；17 个 literal cutoff prefixes 在 18 rows 上完成 306 项双模 rank ladder，weighted half-RMS dimension ratio 各行至少 `2/3`，all-positive 各行至多 6，full finite capture 18/18；fixed-power credit 为 0，下一步为 profile dimension 与 least-norm budget/conditioning 联合审计 |
 | 2026-08-29 | V151 / TPC-298 | Bridge A / Gate B：literal source-profile angle/dimension ladder 已在有限图上完成；growing dimension、conditioning/source budget、arithmetic `L2` 与 full Gate B open | `TPC-298` | 严格证明 principal-angle identity 与 nested-prefix monotonicity；17 个 literal cutoff prefixes 在 18 rows 上完成 306 项双模 rank ladder，weighted half-RMS dimension ratio 各行至少 `2/3`，all-positive 各行至多 6，full finite capture 18/18；fixed-power credit 为 0，下一步为 profile dimension 与 least-norm budget/conditioning 联合审计 |

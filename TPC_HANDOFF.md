@@ -1,9 +1,54 @@
 # TPC HANDOFF
 
 更新时间：2026-08-29
-交接状态：`BOLD_CHANNEL_V152_TPC299_NATIVE_PROFILE_BUDGET_FRONTIER_RELEASED`
+交接状态：`BOLD_CHANNEL_V153_TPC300_NATIVE_BUDGET_DUAL_CERTIFICATE_RELEASED`
 
-TPC-299 current section: native profile budget frontier
+TPC-300 current section: native budget dual certificate
+-----------------------------------------------------------------------------------------------
+
+TPC-300 follows TPC-299's native profile budget frontier and exports its
+primal obstruction as a target-space dual witness.  For the finite source
+Gram M and physical image V, define the ridge point by
+`(V^T V+rho M)c_rho=V^T b` and
+
+`D_rho=(||b||^2-R^2-b^T Vc_rho)/rho.`
+
+Weak duality gives `D_rho<=B_R(b)` for every positive rho, and strict active
+finite frontiers attain equality.  The KKT multiplier is `mu=1/rho`; this
+records the scoped notation correction for the TPC-299 producer field
+without changing any TPC-299 budget value.
+
+The inherited 18-row / 1,380-edge grid has 72 cases: threshold
+minimum/max-cut/positive targets and full-prefix weighted minimum.  A
+20-significant-digit rational midpoint of each frozen ridge interval is
+replayed by exact Fraction Gauss--Jordan elimination.  All 72 dual fractions
+and coefficient hashes pass independent source-first replay; the smallest
+dual-to-parent-primal lower bound is
+`0.999999999999962310666478`.  Weighted dual floors retain 18/15/14 rows
+above `9e-5`/`5e-4`/`1e-3`, and full-prefix `1e-3` retains 11/18.
+
+```text
+TPC300_MAXIMUM_CLAIM = PROVED_EXACT_FINITE_NATIVE_BUDGET_DUALITY_AND_RECIPROCAL_MULTIPLIER_CORRECTION_PLUS_NUMERICALLY_CERTIFIED_FINITE_RATIONAL_DUAL_WITNESS_ATLAS
+TPC300_ROUTE_ADVANCE = YES_SCOPED_PRIMAL_FRONTIER_TO_RATIONAL_DUAL_CERTIFICATE
+TPC300_DUAL_LOWER_BOUND = PROVED_EXACT_FINITE
+TPC300_STRONG_DUALITY_ACTIVE_FRONTIER = PROVED_EXACT_FINITE_SLATER
+TPC300_RIDGE_KKT_RECIPROCITY = PROVED_EXACT_FINITE
+TPC300_TPC299_PARAMETER_LABEL = CORRECTED_SCOPED_RIDGE_PARAMETER_NOT_KKT_MULTIPLIER
+TPC300_RATIONAL_DUAL_WITNESSES = NUMERICALLY_CERTIFIED_FINITE_72_OF_72
+TPC300_DUAL_TIGHTNESS = NUMERICALLY_CERTIFIED_FINITE_72_OF_72_ABOVE_0_999999999
+TPC300_WEIGHTED_THRESHOLD_DUAL_FLOOR = NUMERICALLY_CERTIFIED_FINITE_18_OF_18_ABOVE_9E_MINUS_5
+TPC300_WEIGHTED_THRESHOLD_DUAL_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_14_OF_18_ABOVE_1E_MINUS_3
+TPC300_WEIGHTED_FULL_PREFIX_DUAL_OBSTRUCTION = NUMERICALLY_CERTIFIED_FINITE_11_OF_18_ABOVE_1E_MINUS_3
+TPC300_PROFILE_BUDGET_GROWTH = OPEN
+TPC300_ARITHMETIC_L2 = OPEN_LITERAL_SOURCE
+TPC300_FIXED_POWER_CREDIT = 0
+TPC300_FULL_GATE_B = OPEN
+TPC300_TWIN_PRIME_RESULT = NONE
+TPC300_STATUS = PROVED_EXACT_FINITE_NATIVE_BUDGET_DUALITY_AND_RECIPROCAL_MULTIPLIER_CORRECTION_PLUS_NUMERICALLY_CERTIFIED_FINITE_RATIONAL_DUAL_WITNESS_ATLAS
+TPC300_ROUND2_CLUE = HOSTILE_TEST_THE_DUAL_BUDGET_GAP_ACROSS_TOLERANCE_AND_SOURCE_NORMALIZATION_LADDERS
+```
+
+TPC-299 previous section: native profile budget frontier
 -----------------------------------------------------------------------------------------------
 
 TPC-299 follows TPC-298's complete literal profile prefix ladder and turns target
@@ -9871,18 +9916,18 @@ TPC-105 的 `__pycache__/`、TPC-63 构建产物与 `tmp/`。TPC-27--32 legacy
 certificates 没有只读 `--check` 且会无条件重写 JSON，在新增真正只读入口前
 不得为了启动回归而执行。
 
-V152/TPC-299 是当前 release；其 producer、independent replay、stress audit 与
+V153/TPC-300 是当前 release；其 producer、independent replay、stress audit 与
 normal/optimized bridge checker 已追加到下列 curated cascade。下列长版本链以
 V119/TPC-266 开头的
 旧文本保留为 upstream release 顺序记录，由本句与页首 current section 覆盖。
-当前 curated cascade command set 共 217 对 normal/optimized 命令、434 次
+当前 curated cascade command set 共 221 对 normal/optimized 命令、442 次
 invocation；TPC-281 贡献其前 4 对，TPC-282 贡献接续 4 对，TPC-283 贡献再接续
 4 对，TPC-284 贡献再接续 4 对，TPC-285 贡献接续 4 对，TPC-286 贡献末尾 4
 对，且每对要求空 stderr 与 byte-identical stdout；TPC-287 再追加末尾 4 对，
 TPC-288 再追加末尾 4 对，TPC-289 再追加末尾 4 对，TPC-290 再追加末尾 4 对，
 TPC-291 再追加末尾 4 对，TPC-292 再追加末尾 4 对，TPC-293 再追加末尾 4 对，
 TPC-294 再追加末尾 4 对，TPC-295 再追加末尾 4 对，TPC-296 再追加末尾 4 对，
-TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对。V152/TPC-299 的 217 对
+TPC-297 再追加末尾 4 对，TPC-298 再追加末尾 4 对，TPC-299 再追加末尾 4 对，TPC-300 再追加末尾 4 对。V153/TPC-300 的 221 对
 registry 已完成增量回归；TPC-289 新增的 4 对已由本项目 bridge 与 standalone tail
 checks 逐项通过；TPC-290、TPC-291、TPC-292 的各 4 对均由各自 bridge 与 standalone
 tail checks 逐项通过；TPC-293 的 4 对也由本项目 bridge 与 standalone tail checks
@@ -9891,7 +9936,8 @@ TPC-295 的 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过�
 4 对亦由本项目 bridge 与 standalone tail checks 逐项通过；TPC-297 的 4 对亦由本项目
 bridge 与 standalone tail checks 逐项通过；TPC-298 的 4 对亦由本项目 bridge 与
 standalone tail checks 逐项通过；TPC-299 的 4 对亦由本项目 bridge 与 standalone
-tail checks 逐项通过。完整 217 对组合未因
+tail checks 逐项通过；TPC-300 的 4 对亦由本项目 bridge 与 standalone tail
+checks 逐项通过。完整 221 对组合未因
 重复计算而再次运行。
 
 22项启动回归之后，当前 V124/TPC-271、V123/TPC-270、V122/TPC-269、V121/TPC-268、V120/TPC-267、V119/TPC-266、V118/TPC-265、V117/TPC-264、V116/TPC-263、V115/TPC-262、V114/TPC-261、V113/TPC-260、V112/TPC-259、V111/TPC-258、V110/TPC-257、V109/TPC-256、V108/TPC-255、V107/TPC-254、V106/TPC-253、V105/TPC-252、V104/TPC-251、V103/TPC-250、V102/TPC-249、V101/TPC-248、V100/TPC-247、V99/TPC-246、V98/TPC-245、V97/TPC-244、V96/TPC-243、V95/TPC-242、V94/TPC-241、V93/TPC-240、V92/TPC-239、V91/TPC-238、V90/TPC-237、V89/TPC-236、V88/TPC-235、V87/TPC-234、V86/TPC-233、V85/TPC-232、V84/TPC-231、V83/TPC-230、V82/TPC-229、V81/TPC-228、V80/TPC-227、V79/TPC-226、V78/TPC-225、V77/TPC-224、V76/TPC-223 及其 V75/TPC-222、V74/TPC-221、V73/TPC-220、V72/TPC-219、V71/TPC-218、V70/TPC-217、V69/TPC-216、V68/TPC-215、V67/TPC-214、V66/TPC-213、V65/TPC-212、V64/TPC-211、V63/TPC-210、V62/TPC-209、V61/V60/V59/V58/V57/V56/V55/V54/V53/V52/V51/V50/V49/V48/V47/V46/V45/V44/V43/V42/V41/V40/V39/V38/V37/V36/V35/V34/V33/V32/V31/V30/V29/V28/V27/V26/V25/V24/V23 dependencies还须分别
@@ -10444,6 +10490,19 @@ python -B research/tpc-big-road/tpc_bridge_b_tpc299_native_profile_budget_fronti
 python -O -B research/tpc-big-road/tpc_bridge_b_tpc299_native_profile_budget_frontier_checker.py --check
 ```
 
+TPC-300 的项目级 producer、independent exact replay、dual stress 与 bridge checker：
+
+```bash
+python -B papers/tpc-300-native-budget-dual-certificate/code/tpc300_native_budget_dual_certificate.py --check
+python -O -B papers/tpc-300-native-budget-dual-certificate/code/tpc300_native_budget_dual_certificate.py --check
+python -B papers/tpc-300-native-budget-dual-certificate/experiments/tpc300_independent_checker.py
+python -O -B papers/tpc-300-native-budget-dual-certificate/experiments/tpc300_independent_checker.py
+python -B papers/tpc-300-native-budget-dual-certificate/experiments/tpc300_dual_stress.py
+python -O -B papers/tpc-300-native-budget-dual-certificate/experiments/tpc300_dual_stress.py
+python -B research/tpc-big-road/tpc_bridge_b_tpc300_native_budget_dual_certificate_checker.py --check
+python -O -B research/tpc-big-road/tpc_bridge_b_tpc300_native_budget_dual_certificate_checker.py --check
+```
+
 TPC-282 的项目级 producer、independent replay、attachment stress 与 bridge checker：
 
 ```bash
@@ -10472,7 +10531,18 @@ python -O -B research/tpc-big-road/tpc_bridge_b_arithmetic_l2_gate_b_interface_a
 
 随后优先读取：
 
-最新 TPC-299 入口：
+最新 TPC-300 入口：
+
+```text
+papers/tpc-300-native-budget-dual-certificate/README.md
+papers/tpc-300-native-budget-dual-certificate/PROOF_PACKAGE.md
+papers/tpc-300-native-budget-dual-certificate/notes/theorem_ledger.md
+papers/tpc-300-native-budget-dual-certificate/notes/route_evaluation.md
+research/tpc-big-road/bridge_b_tpc300_native_budget_dual_certificate.md
+research/tpc-big-road/tpc_bridge_b_tpc300_native_budget_dual_certificate_checker.py
+```
+
+此前 TPC-299 入口：
 
 ```text
 papers/tpc-299-native-profile-budget-frontier/README.md
